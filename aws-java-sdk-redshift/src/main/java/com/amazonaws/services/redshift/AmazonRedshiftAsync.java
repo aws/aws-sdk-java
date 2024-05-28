@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -749,6 +749,43 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
+     * Used to create a custom domain name for a cluster. Properties include the custom domain name, the cluster the
+     * custom domain is associated with, and the certificate Amazon Resource Name (ARN).
+     * </p>
+     * 
+     * @param createCustomDomainAssociationRequest
+     * @return A Java Future containing the result of the CreateCustomDomainAssociation operation returned by the
+     *         service.
+     * @sample AmazonRedshiftAsync.CreateCustomDomainAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateCustomDomainAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCustomDomainAssociationResult> createCustomDomainAssociationAsync(
+            CreateCustomDomainAssociationRequest createCustomDomainAssociationRequest);
+
+    /**
+     * <p>
+     * Used to create a custom domain name for a cluster. Properties include the custom domain name, the cluster the
+     * custom domain is associated with, and the certificate Amazon Resource Name (ARN).
+     * </p>
+     * 
+     * @param createCustomDomainAssociationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateCustomDomainAssociation operation returned by the
+     *         service.
+     * @sample AmazonRedshiftAsyncHandler.CreateCustomDomainAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateCustomDomainAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCustomDomainAssociationResult> createCustomDomainAssociationAsync(
+            CreateCustomDomainAssociationRequest createCustomDomainAssociationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateCustomDomainAssociationRequest, CreateCustomDomainAssociationResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a Redshift-managed VPC endpoint.
      * </p>
      * 
@@ -936,6 +973,41 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      */
     java.util.concurrent.Future<HsmConfiguration> createHsmConfigurationAsync(CreateHsmConfigurationRequest createHsmConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<CreateHsmConfigurationRequest, HsmConfiguration> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an Amazon Redshift application for use with IAM Identity Center.
+     * </p>
+     * 
+     * @param createRedshiftIdcApplicationRequest
+     * @return A Java Future containing the result of the CreateRedshiftIdcApplication operation returned by the
+     *         service.
+     * @sample AmazonRedshiftAsync.CreateRedshiftIdcApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateRedshiftIdcApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RedshiftIdcApplication> createRedshiftIdcApplicationAsync(
+            CreateRedshiftIdcApplicationRequest createRedshiftIdcApplicationRequest);
+
+    /**
+     * <p>
+     * Creates an Amazon Redshift application for use with IAM Identity Center.
+     * </p>
+     * 
+     * @param createRedshiftIdcApplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateRedshiftIdcApplication operation returned by the
+     *         service.
+     * @sample AmazonRedshiftAsyncHandler.CreateRedshiftIdcApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateRedshiftIdcApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RedshiftIdcApplication> createRedshiftIdcApplicationAsync(
+            CreateRedshiftIdcApplicationRequest createRedshiftIdcApplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateRedshiftIdcApplicationRequest, RedshiftIdcApplication> asyncHandler);
 
     /**
      * <p>
@@ -1435,6 +1507,41 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
+     * Contains information about deleting a custom domain association for a cluster.
+     * </p>
+     * 
+     * @param deleteCustomDomainAssociationRequest
+     * @return A Java Future containing the result of the DeleteCustomDomainAssociation operation returned by the
+     *         service.
+     * @sample AmazonRedshiftAsync.DeleteCustomDomainAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteCustomDomainAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCustomDomainAssociationResult> deleteCustomDomainAssociationAsync(
+            DeleteCustomDomainAssociationRequest deleteCustomDomainAssociationRequest);
+
+    /**
+     * <p>
+     * Contains information about deleting a custom domain association for a cluster.
+     * </p>
+     * 
+     * @param deleteCustomDomainAssociationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCustomDomainAssociation operation returned by the
+     *         service.
+     * @sample AmazonRedshiftAsyncHandler.DeleteCustomDomainAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteCustomDomainAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCustomDomainAssociationResult> deleteCustomDomainAssociationAsync(
+            DeleteCustomDomainAssociationRequest deleteCustomDomainAssociationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteCustomDomainAssociationRequest, DeleteCustomDomainAssociationResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a Redshift-managed VPC endpoint.
      * </p>
      * 
@@ -1591,6 +1698,72 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      */
     java.util.concurrent.Future<DeletePartnerResult> deletePartnerAsync(DeletePartnerRequest deletePartnerRequest,
             com.amazonaws.handlers.AsyncHandler<DeletePartnerRequest, DeletePartnerResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an Amazon Redshift IAM Identity Center application.
+     * </p>
+     * 
+     * @param deleteRedshiftIdcApplicationRequest
+     * @return A Java Future containing the result of the DeleteRedshiftIdcApplication operation returned by the
+     *         service.
+     * @sample AmazonRedshiftAsync.DeleteRedshiftIdcApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteRedshiftIdcApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRedshiftIdcApplicationResult> deleteRedshiftIdcApplicationAsync(
+            DeleteRedshiftIdcApplicationRequest deleteRedshiftIdcApplicationRequest);
+
+    /**
+     * <p>
+     * Deletes an Amazon Redshift IAM Identity Center application.
+     * </p>
+     * 
+     * @param deleteRedshiftIdcApplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRedshiftIdcApplication operation returned by the
+     *         service.
+     * @sample AmazonRedshiftAsyncHandler.DeleteRedshiftIdcApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteRedshiftIdcApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRedshiftIdcApplicationResult> deleteRedshiftIdcApplicationAsync(
+            DeleteRedshiftIdcApplicationRequest deleteRedshiftIdcApplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRedshiftIdcApplicationRequest, DeleteRedshiftIdcApplicationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the resource policy for a specified resource.
+     * </p>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @return A Java Future containing the result of the DeleteResourcePolicy operation returned by the service.
+     * @sample AmazonRedshiftAsync.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteResourcePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest deleteResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Deletes the resource policy for a specified resource.
+     * </p>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteResourcePolicy operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteResourcePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest deleteResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteResourcePolicyRequest, DeleteResourcePolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -2384,6 +2557,41 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
+     * Contains information about custom domain associations for a cluster.
+     * </p>
+     * 
+     * @param describeCustomDomainAssociationsRequest
+     * @return A Java Future containing the result of the DescribeCustomDomainAssociations operation returned by the
+     *         service.
+     * @sample AmazonRedshiftAsync.DescribeCustomDomainAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeCustomDomainAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeCustomDomainAssociationsResult> describeCustomDomainAssociationsAsync(
+            DescribeCustomDomainAssociationsRequest describeCustomDomainAssociationsRequest);
+
+    /**
+     * <p>
+     * Contains information about custom domain associations for a cluster.
+     * </p>
+     * 
+     * @param describeCustomDomainAssociationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeCustomDomainAssociations operation returned by the
+     *         service.
+     * @sample AmazonRedshiftAsyncHandler.DescribeCustomDomainAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeCustomDomainAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeCustomDomainAssociationsResult> describeCustomDomainAssociationsAsync(
+            DescribeCustomDomainAssociationsRequest describeCustomDomainAssociationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeCustomDomainAssociationsRequest, DescribeCustomDomainAssociationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Shows the status of any inbound or outbound datashares available in the specified account.
      * </p>
      * 
@@ -2911,6 +3119,39 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
+     * Returns a list of inbound integrations.
+     * </p>
+     * 
+     * @param describeInboundIntegrationsRequest
+     * @return A Java Future containing the result of the DescribeInboundIntegrations operation returned by the service.
+     * @sample AmazonRedshiftAsync.DescribeInboundIntegrations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeInboundIntegrations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInboundIntegrationsResult> describeInboundIntegrationsAsync(
+            DescribeInboundIntegrationsRequest describeInboundIntegrationsRequest);
+
+    /**
+     * <p>
+     * Returns a list of inbound integrations.
+     * </p>
+     * 
+     * @param describeInboundIntegrationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeInboundIntegrations operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.DescribeInboundIntegrations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeInboundIntegrations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInboundIntegrationsResult> describeInboundIntegrationsAsync(
+            DescribeInboundIntegrationsRequest describeInboundIntegrationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeInboundIntegrationsRequest, DescribeInboundIntegrationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes whether information, such as queries and connection attempts, is being logged for the specified Amazon
      * Redshift cluster.
      * </p>
@@ -3072,6 +3313,41 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      */
     java.util.concurrent.Future<DescribePartnersResult> describePartnersAsync(DescribePartnersRequest describePartnersRequest,
             com.amazonaws.handlers.AsyncHandler<DescribePartnersRequest, DescribePartnersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the Amazon Redshift IAM Identity Center applications.
+     * </p>
+     * 
+     * @param describeRedshiftIdcApplicationsRequest
+     * @return A Java Future containing the result of the DescribeRedshiftIdcApplications operation returned by the
+     *         service.
+     * @sample AmazonRedshiftAsync.DescribeRedshiftIdcApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeRedshiftIdcApplications"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRedshiftIdcApplicationsResult> describeRedshiftIdcApplicationsAsync(
+            DescribeRedshiftIdcApplicationsRequest describeRedshiftIdcApplicationsRequest);
+
+    /**
+     * <p>
+     * Lists the Amazon Redshift IAM Identity Center applications.
+     * </p>
+     * 
+     * @param describeRedshiftIdcApplicationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeRedshiftIdcApplications operation returned by the
+     *         service.
+     * @sample AmazonRedshiftAsyncHandler.DescribeRedshiftIdcApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeRedshiftIdcApplications"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRedshiftIdcApplicationsResult> describeRedshiftIdcApplicationsAsync(
+            DescribeRedshiftIdcApplicationsRequest describeRedshiftIdcApplicationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeRedshiftIdcApplicationsRequest, DescribeRedshiftIdcApplicationsResult> asyncHandler);
 
     /**
      * <p>
@@ -3838,6 +4114,37 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
+     * Fails over the primary compute unit of the specified Multi-AZ cluster to another Availability Zone.
+     * </p>
+     * 
+     * @param failoverPrimaryComputeRequest
+     * @return A Java Future containing the result of the FailoverPrimaryCompute operation returned by the service.
+     * @sample AmazonRedshiftAsync.FailoverPrimaryCompute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/FailoverPrimaryCompute"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<Cluster> failoverPrimaryComputeAsync(FailoverPrimaryComputeRequest failoverPrimaryComputeRequest);
+
+    /**
+     * <p>
+     * Fails over the primary compute unit of the specified Multi-AZ cluster to another Availability Zone.
+     * </p>
+     * 
+     * @param failoverPrimaryComputeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the FailoverPrimaryCompute operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.FailoverPrimaryCompute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/FailoverPrimaryCompute"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<Cluster> failoverPrimaryComputeAsync(FailoverPrimaryComputeRequest failoverPrimaryComputeRequest,
+            com.amazonaws.handlers.AsyncHandler<FailoverPrimaryComputeRequest, Cluster> asyncHandler);
+
+    /**
+     * <p>
      * Returns a database user name and temporary password with temporary authorization to log on to an Amazon Redshift
      * database. The action returns the database user name prefixed with <code>IAM:</code> if <code>AutoCreate</code> is
      * <code>False</code> or <code>IAMA:</code> if <code>AutoCreate</code> is <code>True</code>. You can optionally
@@ -4053,6 +4360,70 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
     java.util.concurrent.Future<GetReservedNodeExchangeOfferingsResult> getReservedNodeExchangeOfferingsAsync(
             GetReservedNodeExchangeOfferingsRequest getReservedNodeExchangeOfferingsRequest,
             com.amazonaws.handlers.AsyncHandler<GetReservedNodeExchangeOfferingsRequest, GetReservedNodeExchangeOfferingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get the resource policy for a specified resource.
+     * </p>
+     * 
+     * @param getResourcePolicyRequest
+     * @return A Java Future containing the result of the GetResourcePolicy operation returned by the service.
+     * @sample AmazonRedshiftAsync.GetResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetResourcePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest getResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Get the resource policy for a specified resource.
+     * </p>
+     * 
+     * @param getResourcePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetResourcePolicy operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.GetResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetResourcePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest getResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetResourcePolicyRequest, GetResourcePolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * List the Amazon Redshift Advisor recommendations for one or multiple Amazon Redshift clusters in an Amazon Web
+     * Services account.
+     * </p>
+     * 
+     * @param listRecommendationsRequest
+     * @return A Java Future containing the result of the ListRecommendations operation returned by the service.
+     * @sample AmazonRedshiftAsync.ListRecommendations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ListRecommendations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRecommendationsResult> listRecommendationsAsync(ListRecommendationsRequest listRecommendationsRequest);
+
+    /**
+     * <p>
+     * List the Amazon Redshift Advisor recommendations for one or multiple Amazon Redshift clusters in an Amazon Web
+     * Services account.
+     * </p>
+     * 
+     * @param listRecommendationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListRecommendations operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.ListRecommendations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ListRecommendations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRecommendationsResult> listRecommendationsAsync(ListRecommendationsRequest listRecommendationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListRecommendationsRequest, ListRecommendationsResult> asyncHandler);
 
     /**
      * <p>
@@ -4432,6 +4803,41 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
 
     /**
      * <p>
+     * Contains information for changing a custom domain association.
+     * </p>
+     * 
+     * @param modifyCustomDomainAssociationRequest
+     * @return A Java Future containing the result of the ModifyCustomDomainAssociation operation returned by the
+     *         service.
+     * @sample AmazonRedshiftAsync.ModifyCustomDomainAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyCustomDomainAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyCustomDomainAssociationResult> modifyCustomDomainAssociationAsync(
+            ModifyCustomDomainAssociationRequest modifyCustomDomainAssociationRequest);
+
+    /**
+     * <p>
+     * Contains information for changing a custom domain association.
+     * </p>
+     * 
+     * @param modifyCustomDomainAssociationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyCustomDomainAssociation operation returned by the
+     *         service.
+     * @sample AmazonRedshiftAsyncHandler.ModifyCustomDomainAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyCustomDomainAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyCustomDomainAssociationResult> modifyCustomDomainAssociationAsync(
+            ModifyCustomDomainAssociationRequest modifyCustomDomainAssociationRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyCustomDomainAssociationRequest, ModifyCustomDomainAssociationResult> asyncHandler);
+
+    /**
+     * <p>
      * Modifies a Redshift-managed VPC endpoint.
      * </p>
      * 
@@ -4491,6 +4897,41 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      */
     java.util.concurrent.Future<EventSubscription> modifyEventSubscriptionAsync(ModifyEventSubscriptionRequest modifyEventSubscriptionRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyEventSubscriptionRequest, EventSubscription> asyncHandler);
+
+    /**
+     * <p>
+     * Changes an existing Amazon Redshift IAM Identity Center application.
+     * </p>
+     * 
+     * @param modifyRedshiftIdcApplicationRequest
+     * @return A Java Future containing the result of the ModifyRedshiftIdcApplication operation returned by the
+     *         service.
+     * @sample AmazonRedshiftAsync.ModifyRedshiftIdcApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyRedshiftIdcApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RedshiftIdcApplication> modifyRedshiftIdcApplicationAsync(
+            ModifyRedshiftIdcApplicationRequest modifyRedshiftIdcApplicationRequest);
+
+    /**
+     * <p>
+     * Changes an existing Amazon Redshift IAM Identity Center application.
+     * </p>
+     * 
+     * @param modifyRedshiftIdcApplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyRedshiftIdcApplication operation returned by the
+     *         service.
+     * @sample AmazonRedshiftAsyncHandler.ModifyRedshiftIdcApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyRedshiftIdcApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RedshiftIdcApplication> modifyRedshiftIdcApplicationAsync(
+            ModifyRedshiftIdcApplicationRequest modifyRedshiftIdcApplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyRedshiftIdcApplicationRequest, RedshiftIdcApplication> asyncHandler);
 
     /**
      * <p>
@@ -4713,6 +5154,37 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      */
     java.util.concurrent.Future<ReservedNode> purchaseReservedNodeOfferingAsync(PurchaseReservedNodeOfferingRequest purchaseReservedNodeOfferingRequest,
             com.amazonaws.handlers.AsyncHandler<PurchaseReservedNodeOfferingRequest, ReservedNode> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the resource policy for a specified resource.
+     * </p>
+     * 
+     * @param putResourcePolicyRequest
+     * @return A Java Future containing the result of the PutResourcePolicy operation returned by the service.
+     * @sample AmazonRedshiftAsync.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PutResourcePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest putResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Updates the resource policy for a specified resource.
+     * </p>
+     * 
+     * @param putResourcePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutResourcePolicy operation returned by the service.
+     * @sample AmazonRedshiftAsyncHandler.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PutResourcePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest putResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<PutResourcePolicyRequest, PutResourcePolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -5057,6 +5529,11 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * <code>RestoreTableFromClusterSnapshot</code>. This way, you can replace the original table with the table created
      * from the snapshot.
      * </p>
+     * <p>
+     * You can't use this operation to restore tables with <a
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/t_Sorting_data.html#t_Sorting_data-interleaved">interleaved
+     * sort keys</a>.
+     * </p>
      * 
      * @param restoreTableFromClusterSnapshotRequest
      * @return A Java Future containing the result of the RestoreTableFromClusterSnapshot operation returned by the
@@ -5081,6 +5558,11 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * then you can pass the original name of the table as the <code>NewTableName</code> parameter value in the call to
      * <code>RestoreTableFromClusterSnapshot</code>. This way, you can replace the original table with the table created
      * from the snapshot.
+     * </p>
+     * <p>
+     * You can't use this operation to restore tables with <a
+     * href="https://docs.aws.amazon.com/redshift/latest/dg/t_Sorting_data.html#t_Sorting_data-interleaved">interleaved
+     * sort keys</a>.
      * </p>
      * 
      * @param restoreTableFromClusterSnapshotRequest

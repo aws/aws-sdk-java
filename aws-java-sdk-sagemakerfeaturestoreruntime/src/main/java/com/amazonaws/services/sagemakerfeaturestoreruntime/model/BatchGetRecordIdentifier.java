@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,8 @@ public class BatchGetRecordIdentifier implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A <code>FeatureGroupName</code> containing Records you are retrieving in a batch.
+     * The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> containing the records you are retrieving
+     * in a batch.
      * </p>
      */
     private String featureGroupName;
@@ -50,11 +51,13 @@ public class BatchGetRecordIdentifier implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A <code>FeatureGroupName</code> containing Records you are retrieving in a batch.
+     * The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> containing the records you are retrieving
+     * in a batch.
      * </p>
      * 
      * @param featureGroupName
-     *        A <code>FeatureGroupName</code> containing Records you are retrieving in a batch.
+     *        The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> containing the records you are
+     *        retrieving in a batch.
      */
 
     public void setFeatureGroupName(String featureGroupName) {
@@ -63,10 +66,12 @@ public class BatchGetRecordIdentifier implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A <code>FeatureGroupName</code> containing Records you are retrieving in a batch.
+     * The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> containing the records you are retrieving
+     * in a batch.
      * </p>
      * 
-     * @return A <code>FeatureGroupName</code> containing Records you are retrieving in a batch.
+     * @return The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> containing the records you are
+     *         retrieving in a batch.
      */
 
     public String getFeatureGroupName() {
@@ -75,11 +80,13 @@ public class BatchGetRecordIdentifier implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A <code>FeatureGroupName</code> containing Records you are retrieving in a batch.
+     * The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> containing the records you are retrieving
+     * in a batch.
      * </p>
      * 
      * @param featureGroupName
-     *        A <code>FeatureGroupName</code> containing Records you are retrieving in a batch.
+     *        The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> containing the records you are
+     *        retrieving in a batch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

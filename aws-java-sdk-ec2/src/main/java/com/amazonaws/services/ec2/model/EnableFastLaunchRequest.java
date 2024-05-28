@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,21 +27,21 @@ public class EnableFastLaunchRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The ID of the image for which you’re enabling faster launching.
+     * Specify the ID of the image for which to enable Windows fast launch.
      * </p>
      */
     private String imageId;
     /**
      * <p>
-     * The type of resource to use for pre-provisioning the Windows AMI for faster launching. Supported values include:
+     * The type of resource to use for pre-provisioning the AMI for Windows fast launch. Supported values include:
      * <code>snapshot</code>, which is the default value.
      * </p>
      */
     private String resourceType;
     /**
      * <p>
-     * Configuration settings for creating and managing the snapshots that are used for pre-provisioning the Windows AMI
-     * for faster launching. The associated <code>ResourceType</code> must be <code>snapshot</code>.
+     * Configuration settings for creating and managing the snapshots that are used for pre-provisioning the AMI for
+     * Windows fast launch. The associated <code>ResourceType</code> must be <code>snapshot</code>.
      * </p>
      */
     private FastLaunchSnapshotConfigurationRequest snapshotConfiguration;
@@ -54,19 +54,19 @@ public class EnableFastLaunchRequest extends AmazonWebServiceRequest implements 
     private FastLaunchLaunchTemplateSpecificationRequest launchTemplate;
     /**
      * <p>
-     * The maximum number of parallel instances to launch for creating resources. Value must be <code>6</code> or
-     * greater.
+     * The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots
+     * for Windows fast launch. Value must be <code>6</code> or greater.
      * </p>
      */
     private Integer maxParallelLaunches;
 
     /**
      * <p>
-     * The ID of the image for which you’re enabling faster launching.
+     * Specify the ID of the image for which to enable Windows fast launch.
      * </p>
      * 
      * @param imageId
-     *        The ID of the image for which you’re enabling faster launching.
+     *        Specify the ID of the image for which to enable Windows fast launch.
      */
 
     public void setImageId(String imageId) {
@@ -75,10 +75,10 @@ public class EnableFastLaunchRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The ID of the image for which you’re enabling faster launching.
+     * Specify the ID of the image for which to enable Windows fast launch.
      * </p>
      * 
-     * @return The ID of the image for which you’re enabling faster launching.
+     * @return Specify the ID of the image for which to enable Windows fast launch.
      */
 
     public String getImageId() {
@@ -87,11 +87,11 @@ public class EnableFastLaunchRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The ID of the image for which you’re enabling faster launching.
+     * Specify the ID of the image for which to enable Windows fast launch.
      * </p>
      * 
      * @param imageId
-     *        The ID of the image for which you’re enabling faster launching.
+     *        Specify the ID of the image for which to enable Windows fast launch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,12 +102,12 @@ public class EnableFastLaunchRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The type of resource to use for pre-provisioning the Windows AMI for faster launching. Supported values include:
+     * The type of resource to use for pre-provisioning the AMI for Windows fast launch. Supported values include:
      * <code>snapshot</code>, which is the default value.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource to use for pre-provisioning the Windows AMI for faster launching. Supported values
+     *        The type of resource to use for pre-provisioning the AMI for Windows fast launch. Supported values
      *        include: <code>snapshot</code>, which is the default value.
      */
 
@@ -117,11 +117,11 @@ public class EnableFastLaunchRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The type of resource to use for pre-provisioning the Windows AMI for faster launching. Supported values include:
+     * The type of resource to use for pre-provisioning the AMI for Windows fast launch. Supported values include:
      * <code>snapshot</code>, which is the default value.
      * </p>
      * 
-     * @return The type of resource to use for pre-provisioning the Windows AMI for faster launching. Supported values
+     * @return The type of resource to use for pre-provisioning the AMI for Windows fast launch. Supported values
      *         include: <code>snapshot</code>, which is the default value.
      */
 
@@ -131,12 +131,12 @@ public class EnableFastLaunchRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The type of resource to use for pre-provisioning the Windows AMI for faster launching. Supported values include:
+     * The type of resource to use for pre-provisioning the AMI for Windows fast launch. Supported values include:
      * <code>snapshot</code>, which is the default value.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource to use for pre-provisioning the Windows AMI for faster launching. Supported values
+     *        The type of resource to use for pre-provisioning the AMI for Windows fast launch. Supported values
      *        include: <code>snapshot</code>, which is the default value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -148,13 +148,13 @@ public class EnableFastLaunchRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * Configuration settings for creating and managing the snapshots that are used for pre-provisioning the Windows AMI
-     * for faster launching. The associated <code>ResourceType</code> must be <code>snapshot</code>.
+     * Configuration settings for creating and managing the snapshots that are used for pre-provisioning the AMI for
+     * Windows fast launch. The associated <code>ResourceType</code> must be <code>snapshot</code>.
      * </p>
      * 
      * @param snapshotConfiguration
-     *        Configuration settings for creating and managing the snapshots that are used for pre-provisioning the
-     *        Windows AMI for faster launching. The associated <code>ResourceType</code> must be <code>snapshot</code>.
+     *        Configuration settings for creating and managing the snapshots that are used for pre-provisioning the AMI
+     *        for Windows fast launch. The associated <code>ResourceType</code> must be <code>snapshot</code>.
      */
 
     public void setSnapshotConfiguration(FastLaunchSnapshotConfigurationRequest snapshotConfiguration) {
@@ -163,12 +163,12 @@ public class EnableFastLaunchRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * Configuration settings for creating and managing the snapshots that are used for pre-provisioning the Windows AMI
-     * for faster launching. The associated <code>ResourceType</code> must be <code>snapshot</code>.
+     * Configuration settings for creating and managing the snapshots that are used for pre-provisioning the AMI for
+     * Windows fast launch. The associated <code>ResourceType</code> must be <code>snapshot</code>.
      * </p>
      * 
-     * @return Configuration settings for creating and managing the snapshots that are used for pre-provisioning the
-     *         Windows AMI for faster launching. The associated <code>ResourceType</code> must be <code>snapshot</code>.
+     * @return Configuration settings for creating and managing the snapshots that are used for pre-provisioning the AMI
+     *         for Windows fast launch. The associated <code>ResourceType</code> must be <code>snapshot</code>.
      */
 
     public FastLaunchSnapshotConfigurationRequest getSnapshotConfiguration() {
@@ -177,13 +177,13 @@ public class EnableFastLaunchRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * Configuration settings for creating and managing the snapshots that are used for pre-provisioning the Windows AMI
-     * for faster launching. The associated <code>ResourceType</code> must be <code>snapshot</code>.
+     * Configuration settings for creating and managing the snapshots that are used for pre-provisioning the AMI for
+     * Windows fast launch. The associated <code>ResourceType</code> must be <code>snapshot</code>.
      * </p>
      * 
      * @param snapshotConfiguration
-     *        Configuration settings for creating and managing the snapshots that are used for pre-provisioning the
-     *        Windows AMI for faster launching. The associated <code>ResourceType</code> must be <code>snapshot</code>.
+     *        Configuration settings for creating and managing the snapshots that are used for pre-provisioning the AMI
+     *        for Windows fast launch. The associated <code>ResourceType</code> must be <code>snapshot</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -240,13 +240,13 @@ public class EnableFastLaunchRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The maximum number of parallel instances to launch for creating resources. Value must be <code>6</code> or
-     * greater.
+     * The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots
+     * for Windows fast launch. Value must be <code>6</code> or greater.
      * </p>
      * 
      * @param maxParallelLaunches
-     *        The maximum number of parallel instances to launch for creating resources. Value must be <code>6</code> or
-     *        greater.
+     *        The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned
+     *        snapshots for Windows fast launch. Value must be <code>6</code> or greater.
      */
 
     public void setMaxParallelLaunches(Integer maxParallelLaunches) {
@@ -255,12 +255,12 @@ public class EnableFastLaunchRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The maximum number of parallel instances to launch for creating resources. Value must be <code>6</code> or
-     * greater.
+     * The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots
+     * for Windows fast launch. Value must be <code>6</code> or greater.
      * </p>
      * 
-     * @return The maximum number of parallel instances to launch for creating resources. Value must be <code>6</code>
-     *         or greater.
+     * @return The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned
+     *         snapshots for Windows fast launch. Value must be <code>6</code> or greater.
      */
 
     public Integer getMaxParallelLaunches() {
@@ -269,13 +269,13 @@ public class EnableFastLaunchRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The maximum number of parallel instances to launch for creating resources. Value must be <code>6</code> or
-     * greater.
+     * The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots
+     * for Windows fast launch. Value must be <code>6</code> or greater.
      * </p>
      * 
      * @param maxParallelLaunches
-     *        The maximum number of parallel instances to launch for creating resources. Value must be <code>6</code> or
-     *        greater.
+     *        The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned
+     *        snapshots for Windows fast launch. Value must be <code>6</code> or greater.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

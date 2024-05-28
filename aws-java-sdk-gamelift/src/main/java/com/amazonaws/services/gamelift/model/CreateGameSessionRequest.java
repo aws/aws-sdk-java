@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Represents the input for a request operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateGameSession" target="_top">AWS API
  *      Documentation</a>
@@ -56,27 +53,40 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
     private String name;
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>).
+     * A set of key-value pairs that can store custom data in a game session. For example:
+     * <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example, see <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create"
+     * >Create a game session with custom properties</a>.
      * </p>
      */
     private java.util.List<GameProperty> gameProperties;
     /**
      * <p>
-     * A unique identifier for a player or entity creating the game session. This parameter is required when requesting
-     * a new game session on a fleet with a resource creation limit policy. This type of policy limits the number of
-     * concurrent active game sessions that one player can create within a certain time span. GameLift uses the
-     * CreatorId to evaluate the new request against the policy.
+     * A unique identifier for a player or entity creating the game session.
+     * </p>
+     * <p>
+     * If you add a resource creation limit policy to a fleet, the <code>CreateGameSession</code> operation requires a
+     * <code>CreatorId</code>. Amazon GameLift limits the number of game session creation requests with the same
+     * <code>CreatorId</code> in a specified time period.
+     * </p>
+     * <p>
+     * If you your fleet doesn't have a resource creation limit policy and you provide a <code>CreatorId</code> in your
+     * <code>CreateGameSession</code> requests, Amazon GameLift limits requests to one request per
+     * <code>CreatorId</code> per second.
+     * </p>
+     * <p>
+     * To not limit <code>CreateGameSession</code> requests with the same <code>CreatorId</code>, don't provide a
+     * <code>CreatorId</code> in your <code>CreateGameSession</code> request.
      * </p>
      */
     private String creatorId;
     /**
      * <p>
-     * <i>This parameter is no longer preferred. Please use <code>IdempotencyToken</code> instead.</i> Custom string
-     * that uniquely identifies a request for a new game session. Maximum token length is 48 characters. If provided,
-     * this string is included in the new game session's ID.
+     * <i>This parameter is deprecated. Use <code>IdempotencyToken</code> instead.</i>
+     * </p>
+     * <p>
+     * Custom string that uniquely identifies a request for a new game session. Maximum token length is 48 characters.
+     * If provided, this string is included in the new game session's ID.
      * </p>
      */
     private String gameSessionId;
@@ -96,7 +106,7 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * A set of custom game session properties, formatted as a single string value. This data is passed to a game server
-     * process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     * process with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>).
      * </p>
@@ -106,7 +116,8 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is
      * placed in the fleet's home Region. Specify a remote location with an Amazon Web Services Region code such as
-     * <code>us-west-2</code>.
+     * <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required and must be set to the Anywhere
+     * fleet's custom location.
      * </p>
      */
     private String location;
@@ -286,17 +297,16 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>).
+     * A set of key-value pairs that can store custom data in a game session. For example:
+     * <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example, see <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create"
+     * >Create a game session with custom properties</a>.
      * </p>
      * 
-     * @return A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
-     *         to a game server process in the <a>GameSession</a> object with a request to start a new game session (see
-     *         <a href=
-     *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *         >Start a Game Session</a>).
+     * @return A set of key-value pairs that can store custom data in a game session. For example:
+     *         <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example, see <a href=
+     *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create"
+     *         >Create a game session with custom properties</a>.
      */
 
     public java.util.List<GameProperty> getGameProperties() {
@@ -305,18 +315,17 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>).
+     * A set of key-value pairs that can store custom data in a game session. For example:
+     * <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example, see <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create"
+     * >Create a game session with custom properties</a>.
      * </p>
      * 
      * @param gameProperties
-     *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
-     *        to a game server process in the <a>GameSession</a> object with a request to start a new game session (see
-     *        <a href=
-     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *        >Start a Game Session</a>).
+     *        A set of key-value pairs that can store custom data in a game session. For example:
+     *        <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example, see <a href=
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create"
+     *        >Create a game session with custom properties</a>.
      */
 
     public void setGameProperties(java.util.Collection<GameProperty> gameProperties) {
@@ -330,10 +339,10 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>).
+     * A set of key-value pairs that can store custom data in a game session. For example:
+     * <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example, see <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create"
+     * >Create a game session with custom properties</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -342,11 +351,10 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param gameProperties
-     *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
-     *        to a game server process in the <a>GameSession</a> object with a request to start a new game session (see
-     *        <a href=
-     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *        >Start a Game Session</a>).
+     *        A set of key-value pairs that can store custom data in a game session. For example:
+     *        <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example, see <a href=
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create"
+     *        >Create a game session with custom properties</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -362,18 +370,17 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>).
+     * A set of key-value pairs that can store custom data in a game session. For example:
+     * <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example, see <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create"
+     * >Create a game session with custom properties</a>.
      * </p>
      * 
      * @param gameProperties
-     *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
-     *        to a game server process in the <a>GameSession</a> object with a request to start a new game session (see
-     *        <a href=
-     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *        >Start a Game Session</a>).
+     *        A set of key-value pairs that can store custom data in a game session. For example:
+     *        <code>{"Key": "difficulty", "Value": "novice"}</code>. For an example, see <a href=
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-create"
+     *        >Create a game session with custom properties</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -384,17 +391,38 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A unique identifier for a player or entity creating the game session. This parameter is required when requesting
-     * a new game session on a fleet with a resource creation limit policy. This type of policy limits the number of
-     * concurrent active game sessions that one player can create within a certain time span. GameLift uses the
-     * CreatorId to evaluate the new request against the policy.
+     * A unique identifier for a player or entity creating the game session.
+     * </p>
+     * <p>
+     * If you add a resource creation limit policy to a fleet, the <code>CreateGameSession</code> operation requires a
+     * <code>CreatorId</code>. Amazon GameLift limits the number of game session creation requests with the same
+     * <code>CreatorId</code> in a specified time period.
+     * </p>
+     * <p>
+     * If you your fleet doesn't have a resource creation limit policy and you provide a <code>CreatorId</code> in your
+     * <code>CreateGameSession</code> requests, Amazon GameLift limits requests to one request per
+     * <code>CreatorId</code> per second.
+     * </p>
+     * <p>
+     * To not limit <code>CreateGameSession</code> requests with the same <code>CreatorId</code>, don't provide a
+     * <code>CreatorId</code> in your <code>CreateGameSession</code> request.
      * </p>
      * 
      * @param creatorId
-     *        A unique identifier for a player or entity creating the game session. This parameter is required when
-     *        requesting a new game session on a fleet with a resource creation limit policy. This type of policy limits
-     *        the number of concurrent active game sessions that one player can create within a certain time span.
-     *        GameLift uses the CreatorId to evaluate the new request against the policy.
+     *        A unique identifier for a player or entity creating the game session. </p>
+     *        <p>
+     *        If you add a resource creation limit policy to a fleet, the <code>CreateGameSession</code> operation
+     *        requires a <code>CreatorId</code>. Amazon GameLift limits the number of game session creation requests
+     *        with the same <code>CreatorId</code> in a specified time period.
+     *        </p>
+     *        <p>
+     *        If you your fleet doesn't have a resource creation limit policy and you provide a <code>CreatorId</code>
+     *        in your <code>CreateGameSession</code> requests, Amazon GameLift limits requests to one request per
+     *        <code>CreatorId</code> per second.
+     *        </p>
+     *        <p>
+     *        To not limit <code>CreateGameSession</code> requests with the same <code>CreatorId</code>, don't provide a
+     *        <code>CreatorId</code> in your <code>CreateGameSession</code> request.
      */
 
     public void setCreatorId(String creatorId) {
@@ -403,16 +431,37 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A unique identifier for a player or entity creating the game session. This parameter is required when requesting
-     * a new game session on a fleet with a resource creation limit policy. This type of policy limits the number of
-     * concurrent active game sessions that one player can create within a certain time span. GameLift uses the
-     * CreatorId to evaluate the new request against the policy.
+     * A unique identifier for a player or entity creating the game session.
+     * </p>
+     * <p>
+     * If you add a resource creation limit policy to a fleet, the <code>CreateGameSession</code> operation requires a
+     * <code>CreatorId</code>. Amazon GameLift limits the number of game session creation requests with the same
+     * <code>CreatorId</code> in a specified time period.
+     * </p>
+     * <p>
+     * If you your fleet doesn't have a resource creation limit policy and you provide a <code>CreatorId</code> in your
+     * <code>CreateGameSession</code> requests, Amazon GameLift limits requests to one request per
+     * <code>CreatorId</code> per second.
+     * </p>
+     * <p>
+     * To not limit <code>CreateGameSession</code> requests with the same <code>CreatorId</code>, don't provide a
+     * <code>CreatorId</code> in your <code>CreateGameSession</code> request.
      * </p>
      * 
-     * @return A unique identifier for a player or entity creating the game session. This parameter is required when
-     *         requesting a new game session on a fleet with a resource creation limit policy. This type of policy
-     *         limits the number of concurrent active game sessions that one player can create within a certain time
-     *         span. GameLift uses the CreatorId to evaluate the new request against the policy.
+     * @return A unique identifier for a player or entity creating the game session. </p>
+     *         <p>
+     *         If you add a resource creation limit policy to a fleet, the <code>CreateGameSession</code> operation
+     *         requires a <code>CreatorId</code>. Amazon GameLift limits the number of game session creation requests
+     *         with the same <code>CreatorId</code> in a specified time period.
+     *         </p>
+     *         <p>
+     *         If you your fleet doesn't have a resource creation limit policy and you provide a <code>CreatorId</code>
+     *         in your <code>CreateGameSession</code> requests, Amazon GameLift limits requests to one request per
+     *         <code>CreatorId</code> per second.
+     *         </p>
+     *         <p>
+     *         To not limit <code>CreateGameSession</code> requests with the same <code>CreatorId</code>, don't provide
+     *         a <code>CreatorId</code> in your <code>CreateGameSession</code> request.
      */
 
     public String getCreatorId() {
@@ -421,17 +470,38 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A unique identifier for a player or entity creating the game session. This parameter is required when requesting
-     * a new game session on a fleet with a resource creation limit policy. This type of policy limits the number of
-     * concurrent active game sessions that one player can create within a certain time span. GameLift uses the
-     * CreatorId to evaluate the new request against the policy.
+     * A unique identifier for a player or entity creating the game session.
+     * </p>
+     * <p>
+     * If you add a resource creation limit policy to a fleet, the <code>CreateGameSession</code> operation requires a
+     * <code>CreatorId</code>. Amazon GameLift limits the number of game session creation requests with the same
+     * <code>CreatorId</code> in a specified time period.
+     * </p>
+     * <p>
+     * If you your fleet doesn't have a resource creation limit policy and you provide a <code>CreatorId</code> in your
+     * <code>CreateGameSession</code> requests, Amazon GameLift limits requests to one request per
+     * <code>CreatorId</code> per second.
+     * </p>
+     * <p>
+     * To not limit <code>CreateGameSession</code> requests with the same <code>CreatorId</code>, don't provide a
+     * <code>CreatorId</code> in your <code>CreateGameSession</code> request.
      * </p>
      * 
      * @param creatorId
-     *        A unique identifier for a player or entity creating the game session. This parameter is required when
-     *        requesting a new game session on a fleet with a resource creation limit policy. This type of policy limits
-     *        the number of concurrent active game sessions that one player can create within a certain time span.
-     *        GameLift uses the CreatorId to evaluate the new request against the policy.
+     *        A unique identifier for a player or entity creating the game session. </p>
+     *        <p>
+     *        If you add a resource creation limit policy to a fleet, the <code>CreateGameSession</code> operation
+     *        requires a <code>CreatorId</code>. Amazon GameLift limits the number of game session creation requests
+     *        with the same <code>CreatorId</code> in a specified time period.
+     *        </p>
+     *        <p>
+     *        If you your fleet doesn't have a resource creation limit policy and you provide a <code>CreatorId</code>
+     *        in your <code>CreateGameSession</code> requests, Amazon GameLift limits requests to one request per
+     *        <code>CreatorId</code> per second.
+     *        </p>
+     *        <p>
+     *        To not limit <code>CreateGameSession</code> requests with the same <code>CreatorId</code>, don't provide a
+     *        <code>CreatorId</code> in your <code>CreateGameSession</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -442,15 +512,18 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * <i>This parameter is no longer preferred. Please use <code>IdempotencyToken</code> instead.</i> Custom string
-     * that uniquely identifies a request for a new game session. Maximum token length is 48 characters. If provided,
-     * this string is included in the new game session's ID.
+     * <i>This parameter is deprecated. Use <code>IdempotencyToken</code> instead.</i>
+     * </p>
+     * <p>
+     * Custom string that uniquely identifies a request for a new game session. Maximum token length is 48 characters.
+     * If provided, this string is included in the new game session's ID.
      * </p>
      * 
      * @param gameSessionId
-     *        <i>This parameter is no longer preferred. Please use <code>IdempotencyToken</code> instead.</i> Custom
-     *        string that uniquely identifies a request for a new game session. Maximum token length is 48 characters.
-     *        If provided, this string is included in the new game session's ID.
+     *        <i>This parameter is deprecated. Use <code>IdempotencyToken</code> instead.</i> </p>
+     *        <p>
+     *        Custom string that uniquely identifies a request for a new game session. Maximum token length is 48
+     *        characters. If provided, this string is included in the new game session's ID.
      */
 
     public void setGameSessionId(String gameSessionId) {
@@ -459,14 +532,17 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * <i>This parameter is no longer preferred. Please use <code>IdempotencyToken</code> instead.</i> Custom string
-     * that uniquely identifies a request for a new game session. Maximum token length is 48 characters. If provided,
-     * this string is included in the new game session's ID.
+     * <i>This parameter is deprecated. Use <code>IdempotencyToken</code> instead.</i>
+     * </p>
+     * <p>
+     * Custom string that uniquely identifies a request for a new game session. Maximum token length is 48 characters.
+     * If provided, this string is included in the new game session's ID.
      * </p>
      * 
-     * @return <i>This parameter is no longer preferred. Please use <code>IdempotencyToken</code> instead.</i> Custom
-     *         string that uniquely identifies a request for a new game session. Maximum token length is 48 characters.
-     *         If provided, this string is included in the new game session's ID.
+     * @return <i>This parameter is deprecated. Use <code>IdempotencyToken</code> instead.</i> </p>
+     *         <p>
+     *         Custom string that uniquely identifies a request for a new game session. Maximum token length is 48
+     *         characters. If provided, this string is included in the new game session's ID.
      */
 
     public String getGameSessionId() {
@@ -475,15 +551,18 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * <i>This parameter is no longer preferred. Please use <code>IdempotencyToken</code> instead.</i> Custom string
-     * that uniquely identifies a request for a new game session. Maximum token length is 48 characters. If provided,
-     * this string is included in the new game session's ID.
+     * <i>This parameter is deprecated. Use <code>IdempotencyToken</code> instead.</i>
+     * </p>
+     * <p>
+     * Custom string that uniquely identifies a request for a new game session. Maximum token length is 48 characters.
+     * If provided, this string is included in the new game session's ID.
      * </p>
      * 
      * @param gameSessionId
-     *        <i>This parameter is no longer preferred. Please use <code>IdempotencyToken</code> instead.</i> Custom
-     *        string that uniquely identifies a request for a new game session. Maximum token length is 48 characters.
-     *        If provided, this string is included in the new game session's ID.
+     *        <i>This parameter is deprecated. Use <code>IdempotencyToken</code> instead.</i> </p>
+     *        <p>
+     *        Custom string that uniquely identifies a request for a new game session. Maximum token length is 48
+     *        characters. If provided, this string is included in the new game session's ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -577,14 +656,14 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * A set of custom game session properties, formatted as a single string value. This data is passed to a game server
-     * process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     * process with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>).
      * </p>
      * 
      * @param gameSessionData
      *        A set of custom game session properties, formatted as a single string value. This data is passed to a game
-     *        server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     *        server process with a request to start a new game session (see <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      *        >Start a Game Session</a>).
      */
@@ -596,14 +675,13 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * A set of custom game session properties, formatted as a single string value. This data is passed to a game server
-     * process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     * process with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>).
      * </p>
      * 
      * @return A set of custom game session properties, formatted as a single string value. This data is passed to a
-     *         game server process in the <a>GameSession</a> object with a request to start a new game session (see <a
-     *         href=
+     *         game server process with a request to start a new game session (see <a href=
      *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      *         >Start a Game Session</a>).
      */
@@ -615,14 +693,14 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * A set of custom game session properties, formatted as a single string value. This data is passed to a game server
-     * process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     * process with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>).
      * </p>
      * 
      * @param gameSessionData
      *        A set of custom game session properties, formatted as a single string value. This data is passed to a game
-     *        server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     *        server process with a request to start a new game session (see <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      *        >Start a Game Session</a>).
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -637,13 +715,15 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is
      * placed in the fleet's home Region. Specify a remote location with an Amazon Web Services Region code such as
-     * <code>us-west-2</code>.
+     * <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required and must be set to the Anywhere
+     * fleet's custom location.
      * </p>
      * 
      * @param location
      *        A fleet's remote location to place the new game session in. If this parameter is not set, the new game
      *        session is placed in the fleet's home Region. Specify a remote location with an Amazon Web Services Region
-     *        code such as <code>us-west-2</code>.
+     *        code such as <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required and must be
+     *        set to the Anywhere fleet's custom location.
      */
 
     public void setLocation(String location) {
@@ -654,12 +734,14 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is
      * placed in the fleet's home Region. Specify a remote location with an Amazon Web Services Region code such as
-     * <code>us-west-2</code>.
+     * <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required and must be set to the Anywhere
+     * fleet's custom location.
      * </p>
      * 
      * @return A fleet's remote location to place the new game session in. If this parameter is not set, the new game
      *         session is placed in the fleet's home Region. Specify a remote location with an Amazon Web Services
-     *         Region code such as <code>us-west-2</code>.
+     *         Region code such as <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required and
+     *         must be set to the Anywhere fleet's custom location.
      */
 
     public String getLocation() {
@@ -670,13 +752,15 @@ public class CreateGameSessionRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * A fleet's remote location to place the new game session in. If this parameter is not set, the new game session is
      * placed in the fleet's home Region. Specify a remote location with an Amazon Web Services Region code such as
-     * <code>us-west-2</code>.
+     * <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required and must be set to the Anywhere
+     * fleet's custom location.
      * </p>
      * 
      * @param location
      *        A fleet's remote location to place the new game session in. If this parameter is not set, the new game
      *        session is placed in the fleet's home Region. Specify a remote location with an Amazon Web Services Region
-     *        code such as <code>us-west-2</code>.
+     *        code such as <code>us-west-2</code>. When using an Anywhere fleet, this parameter is required and must be
+     *        set to the Anywhere fleet's custom location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

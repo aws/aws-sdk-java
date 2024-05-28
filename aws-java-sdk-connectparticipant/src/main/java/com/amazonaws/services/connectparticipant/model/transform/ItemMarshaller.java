@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,12 @@ public class ItemMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ParticipantRole").build();
     private static final MarshallingInfo<List> ATTACHMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Attachments").build();
+    private static final MarshallingInfo<StructuredPojo> MESSAGEMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MessageMetadata").build();
+    private static final MarshallingInfo<String> RELATEDCONTACTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RelatedContactId").build();
+    private static final MarshallingInfo<String> CONTACTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ContactId").build();
 
     private static final ItemMarshaller instance = new ItemMarshaller();
 
@@ -72,6 +78,9 @@ public class ItemMarshaller {
             protocolMarshaller.marshall(item.getDisplayName(), DISPLAYNAME_BINDING);
             protocolMarshaller.marshall(item.getParticipantRole(), PARTICIPANTROLE_BINDING);
             protocolMarshaller.marshall(item.getAttachments(), ATTACHMENTS_BINDING);
+            protocolMarshaller.marshall(item.getMessageMetadata(), MESSAGEMETADATA_BINDING);
+            protocolMarshaller.marshall(item.getRelatedContactId(), RELATEDCONTACTID_BINDING);
+            protocolMarshaller.marshall(item.getContactId(), CONTACTID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

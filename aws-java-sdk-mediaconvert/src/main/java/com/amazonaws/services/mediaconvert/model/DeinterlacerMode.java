@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,9 +15,9 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Use Deinterlacer (DeinterlaceMode) to choose how the service will do deinterlacing. Default is Deinterlace. -
- * Deinterlace converts interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive
- * 23.976p. - Adaptive auto-detects and converts to progressive.
+ * Use Deinterlacer to choose how the service will do deinterlacing. Default is Deinterlace. - Deinterlace converts
+ * interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive 23.976p. - Adaptive
+ * auto-detects and converts to progressive.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DeinterlacerMode {

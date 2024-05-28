@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -248,7 +248,7 @@ public class UpdateAssessmentControlSetStatusRequest extends com.amazonaws.Amazo
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getComment() != null)
-            sb.append("Comment: ").append(getComment());
+            sb.append("Comment: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

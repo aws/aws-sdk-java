@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,11 +18,6 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <important>
- * <p>
- * Does not apply to RabbitMQ brokers.
- * </p>
- * </important>
  * <p>
  * Encryption options for the broker.
  * </p>
@@ -35,28 +30,28 @@ public class EncryptionOptions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The customer master key (CMK) to use for the AWS Key Management Service (KMS). This key is used to encrypt your
-     * data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.
+     * The customer master key (CMK) to use for the A KMS (KMS). This key is used to encrypt your data at rest. If not
+     * provided, Amazon MQ will use a default CMK to encrypt your data.
      * </p>
      */
     private String kmsKeyId;
     /**
      * <p>
-     * Enables the use of an AWS owned CMK using AWS Key Management Service (KMS). Set to true by default, if no value
-     * is provided, for example, for RabbitMQ brokers.
+     * Enables the use of an Amazon Web Services owned CMK using KMS (KMS). Set to true by default, if no value is
+     * provided, for example, for RabbitMQ brokers.
      * </p>
      */
     private Boolean useAwsOwnedKey;
 
     /**
      * <p>
-     * The customer master key (CMK) to use for the AWS Key Management Service (KMS). This key is used to encrypt your
-     * data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.
+     * The customer master key (CMK) to use for the A KMS (KMS). This key is used to encrypt your data at rest. If not
+     * provided, Amazon MQ will use a default CMK to encrypt your data.
      * </p>
      * 
      * @param kmsKeyId
-     *        The customer master key (CMK) to use for the AWS Key Management Service (KMS). This key is used to encrypt
-     *        your data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.
+     *        The customer master key (CMK) to use for the A KMS (KMS). This key is used to encrypt your data at rest.
+     *        If not provided, Amazon MQ will use a default CMK to encrypt your data.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -65,12 +60,12 @@ public class EncryptionOptions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The customer master key (CMK) to use for the AWS Key Management Service (KMS). This key is used to encrypt your
-     * data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.
+     * The customer master key (CMK) to use for the A KMS (KMS). This key is used to encrypt your data at rest. If not
+     * provided, Amazon MQ will use a default CMK to encrypt your data.
      * </p>
      * 
-     * @return The customer master key (CMK) to use for the AWS Key Management Service (KMS). This key is used to
-     *         encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.
+     * @return The customer master key (CMK) to use for the A KMS (KMS). This key is used to encrypt your data at rest.
+     *         If not provided, Amazon MQ will use a default CMK to encrypt your data.
      */
 
     public String getKmsKeyId() {
@@ -79,13 +74,13 @@ public class EncryptionOptions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The customer master key (CMK) to use for the AWS Key Management Service (KMS). This key is used to encrypt your
-     * data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.
+     * The customer master key (CMK) to use for the A KMS (KMS). This key is used to encrypt your data at rest. If not
+     * provided, Amazon MQ will use a default CMK to encrypt your data.
      * </p>
      * 
      * @param kmsKeyId
-     *        The customer master key (CMK) to use for the AWS Key Management Service (KMS). This key is used to encrypt
-     *        your data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.
+     *        The customer master key (CMK) to use for the A KMS (KMS). This key is used to encrypt your data at rest.
+     *        If not provided, Amazon MQ will use a default CMK to encrypt your data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,13 +91,13 @@ public class EncryptionOptions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Enables the use of an AWS owned CMK using AWS Key Management Service (KMS). Set to true by default, if no value
-     * is provided, for example, for RabbitMQ brokers.
+     * Enables the use of an Amazon Web Services owned CMK using KMS (KMS). Set to true by default, if no value is
+     * provided, for example, for RabbitMQ brokers.
      * </p>
      * 
      * @param useAwsOwnedKey
-     *        Enables the use of an AWS owned CMK using AWS Key Management Service (KMS). Set to true by default, if no
-     *        value is provided, for example, for RabbitMQ brokers.
+     *        Enables the use of an Amazon Web Services owned CMK using KMS (KMS). Set to true by default, if no value
+     *        is provided, for example, for RabbitMQ brokers.
      */
 
     public void setUseAwsOwnedKey(Boolean useAwsOwnedKey) {
@@ -111,12 +106,12 @@ public class EncryptionOptions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Enables the use of an AWS owned CMK using AWS Key Management Service (KMS). Set to true by default, if no value
-     * is provided, for example, for RabbitMQ brokers.
+     * Enables the use of an Amazon Web Services owned CMK using KMS (KMS). Set to true by default, if no value is
+     * provided, for example, for RabbitMQ brokers.
      * </p>
      * 
-     * @return Enables the use of an AWS owned CMK using AWS Key Management Service (KMS). Set to true by default, if no
-     *         value is provided, for example, for RabbitMQ brokers.
+     * @return Enables the use of an Amazon Web Services owned CMK using KMS (KMS). Set to true by default, if no value
+     *         is provided, for example, for RabbitMQ brokers.
      */
 
     public Boolean getUseAwsOwnedKey() {
@@ -125,13 +120,13 @@ public class EncryptionOptions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Enables the use of an AWS owned CMK using AWS Key Management Service (KMS). Set to true by default, if no value
-     * is provided, for example, for RabbitMQ brokers.
+     * Enables the use of an Amazon Web Services owned CMK using KMS (KMS). Set to true by default, if no value is
+     * provided, for example, for RabbitMQ brokers.
      * </p>
      * 
      * @param useAwsOwnedKey
-     *        Enables the use of an AWS owned CMK using AWS Key Management Service (KMS). Set to true by default, if no
-     *        value is provided, for example, for RabbitMQ brokers.
+     *        Enables the use of an Amazon Web Services owned CMK using KMS (KMS). Set to true by default, if no value
+     *        is provided, for example, for RabbitMQ brokers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,12 +137,12 @@ public class EncryptionOptions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Enables the use of an AWS owned CMK using AWS Key Management Service (KMS). Set to true by default, if no value
-     * is provided, for example, for RabbitMQ brokers.
+     * Enables the use of an Amazon Web Services owned CMK using KMS (KMS). Set to true by default, if no value is
+     * provided, for example, for RabbitMQ brokers.
      * </p>
      * 
-     * @return Enables the use of an AWS owned CMK using AWS Key Management Service (KMS). Set to true by default, if no
-     *         value is provided, for example, for RabbitMQ brokers.
+     * @return Enables the use of an Amazon Web Services owned CMK using KMS (KMS). Set to true by default, if no value
+     *         is provided, for example, for RabbitMQ brokers.
      */
 
     public Boolean isUseAwsOwnedKey() {

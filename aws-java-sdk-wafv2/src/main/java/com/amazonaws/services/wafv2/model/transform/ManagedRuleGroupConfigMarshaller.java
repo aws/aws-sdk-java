@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,10 @@ public class ManagedRuleGroupConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PasswordField").build();
     private static final MarshallingInfo<StructuredPojo> AWSMANAGEDRULESBOTCONTROLRULESET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AWSManagedRulesBotControlRuleSet").build();
+    private static final MarshallingInfo<StructuredPojo> AWSMANAGEDRULESATPRULESET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AWSManagedRulesATPRuleSet").build();
+    private static final MarshallingInfo<StructuredPojo> AWSMANAGEDRULESACFPRULESET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AWSManagedRulesACFPRuleSet").build();
 
     private static final ManagedRuleGroupConfigMarshaller instance = new ManagedRuleGroupConfigMarshaller();
 
@@ -59,6 +63,8 @@ public class ManagedRuleGroupConfigMarshaller {
             protocolMarshaller.marshall(managedRuleGroupConfig.getUsernameField(), USERNAMEFIELD_BINDING);
             protocolMarshaller.marshall(managedRuleGroupConfig.getPasswordField(), PASSWORDFIELD_BINDING);
             protocolMarshaller.marshall(managedRuleGroupConfig.getAWSManagedRulesBotControlRuleSet(), AWSMANAGEDRULESBOTCONTROLRULESET_BINDING);
+            protocolMarshaller.marshall(managedRuleGroupConfig.getAWSManagedRulesATPRuleSet(), AWSMANAGEDRULESATPRULESET_BINDING);
+            protocolMarshaller.marshall(managedRuleGroupConfig.getAWSManagedRulesACFPRuleSet(), AWSMANAGEDRULESACFPRULESET_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

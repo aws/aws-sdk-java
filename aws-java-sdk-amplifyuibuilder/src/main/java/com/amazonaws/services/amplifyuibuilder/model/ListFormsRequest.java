@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,16 +39,16 @@ public class ListFormsRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String environmentName;
     /**
      * <p>
-     * The maximum number of forms to retrieve.
-     * </p>
-     */
-    private Integer maxResults;
-    /**
-     * <p>
      * The token to request the next page of results.
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * The maximum number of forms to retrieve.
+     * </p>
+     */
+    private Integer maxResults;
 
     /**
      * <p>
@@ -132,46 +132,6 @@ public class ListFormsRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The maximum number of forms to retrieve.
-     * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of forms to retrieve.
-     */
-
-    public void setMaxResults(Integer maxResults) {
-        this.maxResults = maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of forms to retrieve.
-     * </p>
-     * 
-     * @return The maximum number of forms to retrieve.
-     */
-
-    public Integer getMaxResults() {
-        return this.maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of forms to retrieve.
-     * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of forms to retrieve.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListFormsRequest withMaxResults(Integer maxResults) {
-        setMaxResults(maxResults);
-        return this;
-    }
-
-    /**
-     * <p>
      * The token to request the next page of results.
      * </p>
      * 
@@ -211,6 +171,46 @@ public class ListFormsRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * The maximum number of forms to retrieve.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of forms to retrieve.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of forms to retrieve.
+     * </p>
+     * 
+     * @return The maximum number of forms to retrieve.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of forms to retrieve.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of forms to retrieve.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListFormsRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -226,10 +226,10 @@ public class ListFormsRequest extends com.amazonaws.AmazonWebServiceRequest impl
             sb.append("AppId: ").append(getAppId()).append(",");
         if (getEnvironmentName() != null)
             sb.append("EnvironmentName: ").append(getEnvironmentName()).append(",");
-        if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults());
         sb.append("}");
         return sb.toString();
     }
@@ -252,13 +252,13 @@ public class ListFormsRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getEnvironmentName() != null && other.getEnvironmentName().equals(this.getEnvironmentName()) == false)
             return false;
-        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
-            return false;
-        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
-            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         return true;
     }
@@ -270,8 +270,8 @@ public class ListFormsRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
         hashCode = prime * hashCode + ((getAppId() == null) ? 0 : getAppId().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentName() == null) ? 0 : getEnvironmentName().hashCode());
-        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;
     }
 

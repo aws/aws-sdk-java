@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,17 +27,10 @@ public class CreateEntityRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * An object that maps strings to the components in the entity. Each string in the mapping must be unique to this
-     * object.
+     * The ID of the workspace that contains the entity.
      * </p>
      */
-    private java.util.Map<String, ComponentRequest> components;
-    /**
-     * <p>
-     * The description of the entity.
-     * </p>
-     */
-    private String description;
+    private String workspaceId;
     /**
      * <p>
      * The ID of the entity.
@@ -52,6 +45,26 @@ public class CreateEntityRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String entityName;
     /**
      * <p>
+     * The description of the entity.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
+     * An object that maps strings to the components in the entity. Each string in the mapping must be unique to this
+     * object.
+     * </p>
+     */
+    private java.util.Map<String, ComponentRequest> components;
+    /**
+     * <p>
+     * This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key of the
+     * map represents the <code>componentPath</code> of the <code>compositeComponent</code>.
+     * </p>
+     */
+    private java.util.Map<String, CompositeComponentRequest> compositeComponents;
+    /**
+     * <p>
      * The ID of the entity's parent entity.
      * </p>
      */
@@ -62,124 +75,44 @@ public class CreateEntityRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private java.util.Map<String, String> tags;
+
     /**
      * <p>
      * The ID of the workspace that contains the entity.
      * </p>
-     */
-    private String workspaceId;
-
-    /**
-     * <p>
-     * An object that maps strings to the components in the entity. Each string in the mapping must be unique to this
-     * object.
-     * </p>
      * 
-     * @return An object that maps strings to the components in the entity. Each string in the mapping must be unique to
-     *         this object.
+     * @param workspaceId
+     *        The ID of the workspace that contains the entity.
      */
 
-    public java.util.Map<String, ComponentRequest> getComponents() {
-        return components;
+    public void setWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
     }
 
     /**
      * <p>
-     * An object that maps strings to the components in the entity. Each string in the mapping must be unique to this
-     * object.
+     * The ID of the workspace that contains the entity.
      * </p>
      * 
-     * @param components
-     *        An object that maps strings to the components in the entity. Each string in the mapping must be unique to
-     *        this object.
+     * @return The ID of the workspace that contains the entity.
      */
 
-    public void setComponents(java.util.Map<String, ComponentRequest> components) {
-        this.components = components;
+    public String getWorkspaceId() {
+        return this.workspaceId;
     }
 
     /**
      * <p>
-     * An object that maps strings to the components in the entity. Each string in the mapping must be unique to this
-     * object.
+     * The ID of the workspace that contains the entity.
      * </p>
      * 
-     * @param components
-     *        An object that maps strings to the components in the entity. Each string in the mapping must be unique to
-     *        this object.
+     * @param workspaceId
+     *        The ID of the workspace that contains the entity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateEntityRequest withComponents(java.util.Map<String, ComponentRequest> components) {
-        setComponents(components);
-        return this;
-    }
-
-    /**
-     * Add a single Components entry
-     *
-     * @see CreateEntityRequest#withComponents
-     * @returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateEntityRequest addComponentsEntry(String key, ComponentRequest value) {
-        if (null == this.components) {
-            this.components = new java.util.HashMap<String, ComponentRequest>();
-        }
-        if (this.components.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.components.put(key, value);
-        return this;
-    }
-
-    /**
-     * Removes all the entries added into Components.
-     *
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateEntityRequest clearComponentsEntries() {
-        this.components = null;
-        return this;
-    }
-
-    /**
-     * <p>
-     * The description of the entity.
-     * </p>
-     * 
-     * @param description
-     *        The description of the entity.
-     */
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    /**
-     * <p>
-     * The description of the entity.
-     * </p>
-     * 
-     * @return The description of the entity.
-     */
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    /**
-     * <p>
-     * The description of the entity.
-     * </p>
-     * 
-     * @param description
-     *        The description of the entity.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateEntityRequest withDescription(String description) {
-        setDescription(description);
+    public CreateEntityRequest withWorkspaceId(String workspaceId) {
+        setWorkspaceId(workspaceId);
         return this;
     }
 
@@ -260,6 +193,194 @@ public class CreateEntityRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     public CreateEntityRequest withEntityName(String entityName) {
         setEntityName(entityName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The description of the entity.
+     * </p>
+     * 
+     * @param description
+     *        The description of the entity.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * The description of the entity.
+     * </p>
+     * 
+     * @return The description of the entity.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * The description of the entity.
+     * </p>
+     * 
+     * @param description
+     *        The description of the entity.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEntityRequest withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object that maps strings to the components in the entity. Each string in the mapping must be unique to this
+     * object.
+     * </p>
+     * 
+     * @return An object that maps strings to the components in the entity. Each string in the mapping must be unique to
+     *         this object.
+     */
+
+    public java.util.Map<String, ComponentRequest> getComponents() {
+        return components;
+    }
+
+    /**
+     * <p>
+     * An object that maps strings to the components in the entity. Each string in the mapping must be unique to this
+     * object.
+     * </p>
+     * 
+     * @param components
+     *        An object that maps strings to the components in the entity. Each string in the mapping must be unique to
+     *        this object.
+     */
+
+    public void setComponents(java.util.Map<String, ComponentRequest> components) {
+        this.components = components;
+    }
+
+    /**
+     * <p>
+     * An object that maps strings to the components in the entity. Each string in the mapping must be unique to this
+     * object.
+     * </p>
+     * 
+     * @param components
+     *        An object that maps strings to the components in the entity. Each string in the mapping must be unique to
+     *        this object.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEntityRequest withComponents(java.util.Map<String, ComponentRequest> components) {
+        setComponents(components);
+        return this;
+    }
+
+    /**
+     * Add a single Components entry
+     *
+     * @see CreateEntityRequest#withComponents
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEntityRequest addComponentsEntry(String key, ComponentRequest value) {
+        if (null == this.components) {
+            this.components = new java.util.HashMap<String, ComponentRequest>();
+        }
+        if (this.components.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.components.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Components.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEntityRequest clearComponentsEntries() {
+        this.components = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key of the
+     * map represents the <code>componentPath</code> of the <code>compositeComponent</code>.
+     * </p>
+     * 
+     * @return This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key
+     *         of the map represents the <code>componentPath</code> of the <code>compositeComponent</code>.
+     */
+
+    public java.util.Map<String, CompositeComponentRequest> getCompositeComponents() {
+        return compositeComponents;
+    }
+
+    /**
+     * <p>
+     * This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key of the
+     * map represents the <code>componentPath</code> of the <code>compositeComponent</code>.
+     * </p>
+     * 
+     * @param compositeComponents
+     *        This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key of
+     *        the map represents the <code>componentPath</code> of the <code>compositeComponent</code>.
+     */
+
+    public void setCompositeComponents(java.util.Map<String, CompositeComponentRequest> compositeComponents) {
+        this.compositeComponents = compositeComponents;
+    }
+
+    /**
+     * <p>
+     * This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key of the
+     * map represents the <code>componentPath</code> of the <code>compositeComponent</code>.
+     * </p>
+     * 
+     * @param compositeComponents
+     *        This is an object that maps strings to <code>compositeComponent</code> updates in the request. Each key of
+     *        the map represents the <code>componentPath</code> of the <code>compositeComponent</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEntityRequest withCompositeComponents(java.util.Map<String, CompositeComponentRequest> compositeComponents) {
+        setCompositeComponents(compositeComponents);
+        return this;
+    }
+
+    /**
+     * Add a single CompositeComponents entry
+     *
+     * @see CreateEntityRequest#withCompositeComponents
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEntityRequest addCompositeComponentsEntry(String key, CompositeComponentRequest value) {
+        if (null == this.compositeComponents) {
+            this.compositeComponents = new java.util.HashMap<String, CompositeComponentRequest>();
+        }
+        if (this.compositeComponents.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.compositeComponents.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into CompositeComponents.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEntityRequest clearCompositeComponentsEntries() {
+        this.compositeComponents = null;
         return this;
     }
 
@@ -372,46 +493,6 @@ public class CreateEntityRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * <p>
-     * The ID of the workspace that contains the entity.
-     * </p>
-     * 
-     * @param workspaceId
-     *        The ID of the workspace that contains the entity.
-     */
-
-    public void setWorkspaceId(String workspaceId) {
-        this.workspaceId = workspaceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the workspace that contains the entity.
-     * </p>
-     * 
-     * @return The ID of the workspace that contains the entity.
-     */
-
-    public String getWorkspaceId() {
-        return this.workspaceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the workspace that contains the entity.
-     * </p>
-     * 
-     * @param workspaceId
-     *        The ID of the workspace that contains the entity.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateEntityRequest withWorkspaceId(String workspaceId) {
-        setWorkspaceId(workspaceId);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -423,20 +504,22 @@ public class CreateEntityRequest extends com.amazonaws.AmazonWebServiceRequest i
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getComponents() != null)
-            sb.append("Components: ").append(getComponents()).append(",");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
+        if (getWorkspaceId() != null)
+            sb.append("WorkspaceId: ").append(getWorkspaceId()).append(",");
         if (getEntityId() != null)
             sb.append("EntityId: ").append(getEntityId()).append(",");
         if (getEntityName() != null)
             sb.append("EntityName: ").append(getEntityName()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getComponents() != null)
+            sb.append("Components: ").append(getComponents()).append(",");
+        if (getCompositeComponents() != null)
+            sb.append("CompositeComponents: ").append(getCompositeComponents()).append(",");
         if (getParentEntityId() != null)
             sb.append("ParentEntityId: ").append(getParentEntityId()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags()).append(",");
-        if (getWorkspaceId() != null)
-            sb.append("WorkspaceId: ").append(getWorkspaceId());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -451,13 +534,9 @@ public class CreateEntityRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (obj instanceof CreateEntityRequest == false)
             return false;
         CreateEntityRequest other = (CreateEntityRequest) obj;
-        if (other.getComponents() == null ^ this.getComponents() == null)
+        if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
             return false;
-        if (other.getComponents() != null && other.getComponents().equals(this.getComponents()) == false)
-            return false;
-        if (other.getDescription() == null ^ this.getDescription() == null)
-            return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
             return false;
         if (other.getEntityId() == null ^ this.getEntityId() == null)
             return false;
@@ -467,6 +546,18 @@ public class CreateEntityRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getEntityName() != null && other.getEntityName().equals(this.getEntityName()) == false)
             return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getComponents() == null ^ this.getComponents() == null)
+            return false;
+        if (other.getComponents() != null && other.getComponents().equals(this.getComponents()) == false)
+            return false;
+        if (other.getCompositeComponents() == null ^ this.getCompositeComponents() == null)
+            return false;
+        if (other.getCompositeComponents() != null && other.getCompositeComponents().equals(this.getCompositeComponents()) == false)
+            return false;
         if (other.getParentEntityId() == null ^ this.getParentEntityId() == null)
             return false;
         if (other.getParentEntityId() != null && other.getParentEntityId().equals(this.getParentEntityId()) == false)
@@ -474,10 +565,6 @@ public class CreateEntityRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
-            return false;
-        if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
-            return false;
-        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
             return false;
         return true;
     }
@@ -487,13 +574,14 @@ public class CreateEntityRequest extends com.amazonaws.AmazonWebServiceRequest i
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getComponents() == null) ? 0 : getComponents().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
         hashCode = prime * hashCode + ((getEntityId() == null) ? 0 : getEntityId().hashCode());
         hashCode = prime * hashCode + ((getEntityName() == null) ? 0 : getEntityName().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getComponents() == null) ? 0 : getComponents().hashCode());
+        hashCode = prime * hashCode + ((getCompositeComponents() == null) ? 0 : getCompositeComponents().hashCode());
         hashCode = prime * hashCode + ((getParentEntityId() == null) ? 0 : getParentEntityId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
-        hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
         return hashCode;
     }
 

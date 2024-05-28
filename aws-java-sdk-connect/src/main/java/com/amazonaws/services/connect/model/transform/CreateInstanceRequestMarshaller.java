@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -11,6 +11,8 @@
  * and limitations under the License.
  */
 package com.amazonaws.services.connect.model.transform;
+
+import java.util.Map;
 
 import javax.annotation.Generated;
 
@@ -39,6 +41,8 @@ public class CreateInstanceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InboundCallsEnabled").build();
     private static final MarshallingInfo<Boolean> OUTBOUNDCALLSENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutboundCallsEnabled").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateInstanceRequestMarshaller instance = new CreateInstanceRequestMarshaller();
 
@@ -62,6 +66,7 @@ public class CreateInstanceRequestMarshaller {
             protocolMarshaller.marshall(createInstanceRequest.getDirectoryId(), DIRECTORYID_BINDING);
             protocolMarshaller.marshall(createInstanceRequest.getInboundCallsEnabled(), INBOUNDCALLSENABLED_BINDING);
             protocolMarshaller.marshall(createInstanceRequest.getOutboundCallsEnabled(), OUTBOUNDCALLSENABLED_BINDING);
+            protocolMarshaller.marshall(createInstanceRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -103,6 +103,12 @@ public class UpdateQuerySuggestionsConfigRequest extends com.amazonaws.AmazonWeb
      * </p>
      */
     private Integer minimumQueryCount;
+    /**
+     * <p>
+     * Configuration information for the document fields/attributes that you want to base query suggestions on.
+     * </p>
+     */
+    private AttributeSuggestionsUpdateConfig attributeSuggestionsConfig;
 
     /**
      * <p>
@@ -656,6 +662,46 @@ public class UpdateQuerySuggestionsConfigRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * Configuration information for the document fields/attributes that you want to base query suggestions on.
+     * </p>
+     * 
+     * @param attributeSuggestionsConfig
+     *        Configuration information for the document fields/attributes that you want to base query suggestions on.
+     */
+
+    public void setAttributeSuggestionsConfig(AttributeSuggestionsUpdateConfig attributeSuggestionsConfig) {
+        this.attributeSuggestionsConfig = attributeSuggestionsConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration information for the document fields/attributes that you want to base query suggestions on.
+     * </p>
+     * 
+     * @return Configuration information for the document fields/attributes that you want to base query suggestions on.
+     */
+
+    public AttributeSuggestionsUpdateConfig getAttributeSuggestionsConfig() {
+        return this.attributeSuggestionsConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration information for the document fields/attributes that you want to base query suggestions on.
+     * </p>
+     * 
+     * @param attributeSuggestionsConfig
+     *        Configuration information for the document fields/attributes that you want to base query suggestions on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateQuerySuggestionsConfigRequest withAttributeSuggestionsConfig(AttributeSuggestionsUpdateConfig attributeSuggestionsConfig) {
+        setAttributeSuggestionsConfig(attributeSuggestionsConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -678,7 +724,9 @@ public class UpdateQuerySuggestionsConfigRequest extends com.amazonaws.AmazonWeb
         if (getMinimumNumberOfQueryingUsers() != null)
             sb.append("MinimumNumberOfQueryingUsers: ").append(getMinimumNumberOfQueryingUsers()).append(",");
         if (getMinimumQueryCount() != null)
-            sb.append("MinimumQueryCount: ").append(getMinimumQueryCount());
+            sb.append("MinimumQueryCount: ").append(getMinimumQueryCount()).append(",");
+        if (getAttributeSuggestionsConfig() != null)
+            sb.append("AttributeSuggestionsConfig: ").append(getAttributeSuggestionsConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -718,6 +766,10 @@ public class UpdateQuerySuggestionsConfigRequest extends com.amazonaws.AmazonWeb
             return false;
         if (other.getMinimumQueryCount() != null && other.getMinimumQueryCount().equals(this.getMinimumQueryCount()) == false)
             return false;
+        if (other.getAttributeSuggestionsConfig() == null ^ this.getAttributeSuggestionsConfig() == null)
+            return false;
+        if (other.getAttributeSuggestionsConfig() != null && other.getAttributeSuggestionsConfig().equals(this.getAttributeSuggestionsConfig()) == false)
+            return false;
         return true;
     }
 
@@ -732,6 +784,7 @@ public class UpdateQuerySuggestionsConfigRequest extends com.amazonaws.AmazonWeb
         hashCode = prime * hashCode + ((getIncludeQueriesWithoutUserInformation() == null) ? 0 : getIncludeQueriesWithoutUserInformation().hashCode());
         hashCode = prime * hashCode + ((getMinimumNumberOfQueryingUsers() == null) ? 0 : getMinimumNumberOfQueryingUsers().hashCode());
         hashCode = prime * hashCode + ((getMinimumQueryCount() == null) ? 0 : getMinimumQueryCount().hashCode());
+        hashCode = prime * hashCode + ((getAttributeSuggestionsConfig() == null) ? 0 : getAttributeSuggestionsConfig().hashCode());
         return hashCode;
     }
 

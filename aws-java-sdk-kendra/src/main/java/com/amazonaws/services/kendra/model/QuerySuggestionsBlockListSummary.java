@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,13 +56,13 @@ public class QuerySuggestionsBlockListSummary implements Serializable, Cloneable
     private String status;
     /**
      * <p>
-     * The date-time summary information for a query suggestions block list was last created.
+     * The Unix timestamp when the block list was created.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * The date-time the block list was last updated.
+     * The Unix timestamp when the block list was last updated.
      * </p>
      */
     private java.util.Date updatedAt;
@@ -214,11 +214,11 @@ public class QuerySuggestionsBlockListSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The date-time summary information for a query suggestions block list was last created.
+     * The Unix timestamp when the block list was created.
      * </p>
      * 
      * @param createdAt
-     *        The date-time summary information for a query suggestions block list was last created.
+     *        The Unix timestamp when the block list was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -227,10 +227,10 @@ public class QuerySuggestionsBlockListSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The date-time summary information for a query suggestions block list was last created.
+     * The Unix timestamp when the block list was created.
      * </p>
      * 
-     * @return The date-time summary information for a query suggestions block list was last created.
+     * @return The Unix timestamp when the block list was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -239,11 +239,11 @@ public class QuerySuggestionsBlockListSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The date-time summary information for a query suggestions block list was last created.
+     * The Unix timestamp when the block list was created.
      * </p>
      * 
      * @param createdAt
-     *        The date-time summary information for a query suggestions block list was last created.
+     *        The Unix timestamp when the block list was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -254,11 +254,11 @@ public class QuerySuggestionsBlockListSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The date-time the block list was last updated.
+     * The Unix timestamp when the block list was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        The date-time the block list was last updated.
+     *        The Unix timestamp when the block list was last updated.
      */
 
     public void setUpdatedAt(java.util.Date updatedAt) {
@@ -267,10 +267,10 @@ public class QuerySuggestionsBlockListSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The date-time the block list was last updated.
+     * The Unix timestamp when the block list was last updated.
      * </p>
      * 
-     * @return The date-time the block list was last updated.
+     * @return The Unix timestamp when the block list was last updated.
      */
 
     public java.util.Date getUpdatedAt() {
@@ -279,11 +279,11 @@ public class QuerySuggestionsBlockListSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The date-time the block list was last updated.
+     * The Unix timestamp when the block list was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        The date-time the block list was last updated.
+     *        The Unix timestamp when the block list was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

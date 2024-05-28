@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -89,7 +89,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The severity to assign to findings that the custom data identifier produces, based on the number of occurrences
-     * of text that matches the custom data identifier's detection criteria. You can specify as many as three
+     * of text that match the custom data identifier's detection criteria. You can specify as many as three
      * SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify more than one,
      * the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH. For example, 1 for
      * LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than the lowest specified
@@ -577,7 +577,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The severity to assign to findings that the custom data identifier produces, based on the number of occurrences
-     * of text that matches the custom data identifier's detection criteria. You can specify as many as three
+     * of text that match the custom data identifier's detection criteria. You can specify as many as three
      * SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify more than one,
      * the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH. For example, 1 for
      * LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than the lowest specified
@@ -589,7 +589,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @return The severity to assign to findings that the custom data identifier produces, based on the number of
-     *         occurrences of text that matches the custom data identifier's detection criteria. You can specify as many
+     *         occurrences of text that match the custom data identifier's detection criteria. You can specify as many
      *         as three SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify
      *         more than one, the occurrences thresholds must be in ascending order by severity, moving from LOW to
      *         HIGH. For example, 1 for LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences
@@ -607,7 +607,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The severity to assign to findings that the custom data identifier produces, based on the number of occurrences
-     * of text that matches the custom data identifier's detection criteria. You can specify as many as three
+     * of text that match the custom data identifier's detection criteria. You can specify as many as three
      * SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify more than one,
      * the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH. For example, 1 for
      * LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than the lowest specified
@@ -620,8 +620,8 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * 
      * @param severityLevels
      *        The severity to assign to findings that the custom data identifier produces, based on the number of
-     *        occurrences of text that matches the custom data identifier's detection criteria. You can specify as many
-     *        as three SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify
+     *        occurrences of text that match the custom data identifier's detection criteria. You can specify as many as
+     *        three SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify
      *        more than one, the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH.
      *        For example, 1 for LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than
      *        the lowest specified threshold, Amazon Macie doesn't create a finding.</p>
@@ -643,7 +643,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The severity to assign to findings that the custom data identifier produces, based on the number of occurrences
-     * of text that matches the custom data identifier's detection criteria. You can specify as many as three
+     * of text that match the custom data identifier's detection criteria. You can specify as many as three
      * SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify more than one,
      * the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH. For example, 1 for
      * LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than the lowest specified
@@ -661,8 +661,8 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * 
      * @param severityLevels
      *        The severity to assign to findings that the custom data identifier produces, based on the number of
-     *        occurrences of text that matches the custom data identifier's detection criteria. You can specify as many
-     *        as three SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify
+     *        occurrences of text that match the custom data identifier's detection criteria. You can specify as many as
+     *        three SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify
      *        more than one, the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH.
      *        For example, 1 for LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than
      *        the lowest specified threshold, Amazon Macie doesn't create a finding.</p>
@@ -686,7 +686,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * The severity to assign to findings that the custom data identifier produces, based on the number of occurrences
-     * of text that matches the custom data identifier's detection criteria. You can specify as many as three
+     * of text that match the custom data identifier's detection criteria. You can specify as many as three
      * SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify more than one,
      * the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH. For example, 1 for
      * LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than the lowest specified
@@ -699,8 +699,8 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * 
      * @param severityLevels
      *        The severity to assign to findings that the custom data identifier produces, based on the number of
-     *        occurrences of text that matches the custom data identifier's detection criteria. You can specify as many
-     *        as three SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify
+     *        occurrences of text that match the custom data identifier's detection criteria. You can specify as many as
+     *        three SeverityLevel objects in this array, one for each severity: LOW, MEDIUM, or HIGH. If you specify
      *        more than one, the occurrences thresholds must be in ascending order by severity, moving from LOW to HIGH.
      *        For example, 1 for LOW, 50 for MEDIUM, and 100 for HIGH. If an S3 object contains fewer occurrences than
      *        the lowest specified threshold, Amazon Macie doesn't create a finding.</p>

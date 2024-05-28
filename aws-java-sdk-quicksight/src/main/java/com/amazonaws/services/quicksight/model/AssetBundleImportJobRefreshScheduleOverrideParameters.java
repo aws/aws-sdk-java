@@ -1,0 +1,266 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.quicksight.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * A list of overrides for a specific <code>RefreshsSchedule</code> resource that is present in the asset bundle that is
+ * imported.
+ * </p>
+ * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AssetBundleImportJobRefreshScheduleOverrideParameters"
+ *      target="_top">AWS API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class AssetBundleImportJobRefreshScheduleOverrideParameters implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * A partial identifier for the specific <code>RefreshSchedule</code> resource that is being overridden. This
+     * structure is used together with the <code>ScheduleID</code> structure.
+     * </p>
+     */
+    private String dataSetId;
+    /**
+     * <p>
+     * A partial identifier for the specific <code>RefreshSchedule</code> resource being overridden. This structure is
+     * used together with the <code>DataSetId</code> structure.
+     * </p>
+     */
+    private String scheduleId;
+    /**
+     * <p>
+     * An override for the <code>StartAfterDateTime</code> of a <code>RefreshSchedule</code>. Make sure that the
+     * <code>StartAfterDateTime</code> is set to a time that takes place in the future.
+     * </p>
+     */
+    private java.util.Date startAfterDateTime;
+
+    /**
+     * <p>
+     * A partial identifier for the specific <code>RefreshSchedule</code> resource that is being overridden. This
+     * structure is used together with the <code>ScheduleID</code> structure.
+     * </p>
+     * 
+     * @param dataSetId
+     *        A partial identifier for the specific <code>RefreshSchedule</code> resource that is being overridden. This
+     *        structure is used together with the <code>ScheduleID</code> structure.
+     */
+
+    public void setDataSetId(String dataSetId) {
+        this.dataSetId = dataSetId;
+    }
+
+    /**
+     * <p>
+     * A partial identifier for the specific <code>RefreshSchedule</code> resource that is being overridden. This
+     * structure is used together with the <code>ScheduleID</code> structure.
+     * </p>
+     * 
+     * @return A partial identifier for the specific <code>RefreshSchedule</code> resource that is being overridden.
+     *         This structure is used together with the <code>ScheduleID</code> structure.
+     */
+
+    public String getDataSetId() {
+        return this.dataSetId;
+    }
+
+    /**
+     * <p>
+     * A partial identifier for the specific <code>RefreshSchedule</code> resource that is being overridden. This
+     * structure is used together with the <code>ScheduleID</code> structure.
+     * </p>
+     * 
+     * @param dataSetId
+     *        A partial identifier for the specific <code>RefreshSchedule</code> resource that is being overridden. This
+     *        structure is used together with the <code>ScheduleID</code> structure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetBundleImportJobRefreshScheduleOverrideParameters withDataSetId(String dataSetId) {
+        setDataSetId(dataSetId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A partial identifier for the specific <code>RefreshSchedule</code> resource being overridden. This structure is
+     * used together with the <code>DataSetId</code> structure.
+     * </p>
+     * 
+     * @param scheduleId
+     *        A partial identifier for the specific <code>RefreshSchedule</code> resource being overridden. This
+     *        structure is used together with the <code>DataSetId</code> structure.
+     */
+
+    public void setScheduleId(String scheduleId) {
+        this.scheduleId = scheduleId;
+    }
+
+    /**
+     * <p>
+     * A partial identifier for the specific <code>RefreshSchedule</code> resource being overridden. This structure is
+     * used together with the <code>DataSetId</code> structure.
+     * </p>
+     * 
+     * @return A partial identifier for the specific <code>RefreshSchedule</code> resource being overridden. This
+     *         structure is used together with the <code>DataSetId</code> structure.
+     */
+
+    public String getScheduleId() {
+        return this.scheduleId;
+    }
+
+    /**
+     * <p>
+     * A partial identifier for the specific <code>RefreshSchedule</code> resource being overridden. This structure is
+     * used together with the <code>DataSetId</code> structure.
+     * </p>
+     * 
+     * @param scheduleId
+     *        A partial identifier for the specific <code>RefreshSchedule</code> resource being overridden. This
+     *        structure is used together with the <code>DataSetId</code> structure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetBundleImportJobRefreshScheduleOverrideParameters withScheduleId(String scheduleId) {
+        setScheduleId(scheduleId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An override for the <code>StartAfterDateTime</code> of a <code>RefreshSchedule</code>. Make sure that the
+     * <code>StartAfterDateTime</code> is set to a time that takes place in the future.
+     * </p>
+     * 
+     * @param startAfterDateTime
+     *        An override for the <code>StartAfterDateTime</code> of a <code>RefreshSchedule</code>. Make sure that the
+     *        <code>StartAfterDateTime</code> is set to a time that takes place in the future.
+     */
+
+    public void setStartAfterDateTime(java.util.Date startAfterDateTime) {
+        this.startAfterDateTime = startAfterDateTime;
+    }
+
+    /**
+     * <p>
+     * An override for the <code>StartAfterDateTime</code> of a <code>RefreshSchedule</code>. Make sure that the
+     * <code>StartAfterDateTime</code> is set to a time that takes place in the future.
+     * </p>
+     * 
+     * @return An override for the <code>StartAfterDateTime</code> of a <code>RefreshSchedule</code>. Make sure that the
+     *         <code>StartAfterDateTime</code> is set to a time that takes place in the future.
+     */
+
+    public java.util.Date getStartAfterDateTime() {
+        return this.startAfterDateTime;
+    }
+
+    /**
+     * <p>
+     * An override for the <code>StartAfterDateTime</code> of a <code>RefreshSchedule</code>. Make sure that the
+     * <code>StartAfterDateTime</code> is set to a time that takes place in the future.
+     * </p>
+     * 
+     * @param startAfterDateTime
+     *        An override for the <code>StartAfterDateTime</code> of a <code>RefreshSchedule</code>. Make sure that the
+     *        <code>StartAfterDateTime</code> is set to a time that takes place in the future.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetBundleImportJobRefreshScheduleOverrideParameters withStartAfterDateTime(java.util.Date startAfterDateTime) {
+        setStartAfterDateTime(startAfterDateTime);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getDataSetId() != null)
+            sb.append("DataSetId: ").append(getDataSetId()).append(",");
+        if (getScheduleId() != null)
+            sb.append("ScheduleId: ").append(getScheduleId()).append(",");
+        if (getStartAfterDateTime() != null)
+            sb.append("StartAfterDateTime: ").append(getStartAfterDateTime());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof AssetBundleImportJobRefreshScheduleOverrideParameters == false)
+            return false;
+        AssetBundleImportJobRefreshScheduleOverrideParameters other = (AssetBundleImportJobRefreshScheduleOverrideParameters) obj;
+        if (other.getDataSetId() == null ^ this.getDataSetId() == null)
+            return false;
+        if (other.getDataSetId() != null && other.getDataSetId().equals(this.getDataSetId()) == false)
+            return false;
+        if (other.getScheduleId() == null ^ this.getScheduleId() == null)
+            return false;
+        if (other.getScheduleId() != null && other.getScheduleId().equals(this.getScheduleId()) == false)
+            return false;
+        if (other.getStartAfterDateTime() == null ^ this.getStartAfterDateTime() == null)
+            return false;
+        if (other.getStartAfterDateTime() != null && other.getStartAfterDateTime().equals(this.getStartAfterDateTime()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getDataSetId() == null) ? 0 : getDataSetId().hashCode());
+        hashCode = prime * hashCode + ((getScheduleId() == null) ? 0 : getScheduleId().hashCode());
+        hashCode = prime * hashCode + ((getStartAfterDateTime() == null) ? 0 : getStartAfterDateTime().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public AssetBundleImportJobRefreshScheduleOverrideParameters clone() {
+        try {
+            return (AssetBundleImportJobRefreshScheduleOverrideParameters) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.quicksight.model.transform.AssetBundleImportJobRefreshScheduleOverrideParametersMarshaller.getInstance().marshall(this,
+                protocolMarshaller);
+    }
+}

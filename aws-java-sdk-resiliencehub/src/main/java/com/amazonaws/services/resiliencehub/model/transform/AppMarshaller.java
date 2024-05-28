@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -13,7 +13,7 @@
 package com.amazonaws.services.resiliencehub.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -39,16 +39,28 @@ public class AppMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<String> DRIFTSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("driftStatus").build();
+    private static final MarshallingInfo<List> EVENTSUBSCRIPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("eventSubscriptions").build();
     private static final MarshallingInfo<java.util.Date> LASTAPPCOMPLIANCEEVALUATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastAppComplianceEvaluationTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> LASTDRIFTEVALUATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastDriftEvaluationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTRESILIENCYSCOREEVALUATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastResiliencyScoreEvaluationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<StructuredPojo> PERMISSIONMODEL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("permissionModel").build();
     private static final MarshallingInfo<String> POLICYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("policyArn").build();
     private static final MarshallingInfo<Double> RESILIENCYSCORE_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resiliencyScore").build();
+    private static final MarshallingInfo<Integer> RPOINSECS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rpoInSecs").build();
+    private static final MarshallingInfo<Integer> RTOINSECS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rtoInSecs").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -75,11 +87,17 @@ public class AppMarshaller {
             protocolMarshaller.marshall(app.getComplianceStatus(), COMPLIANCESTATUS_BINDING);
             protocolMarshaller.marshall(app.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(app.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(app.getDriftStatus(), DRIFTSTATUS_BINDING);
+            protocolMarshaller.marshall(app.getEventSubscriptions(), EVENTSUBSCRIPTIONS_BINDING);
             protocolMarshaller.marshall(app.getLastAppComplianceEvaluationTime(), LASTAPPCOMPLIANCEEVALUATIONTIME_BINDING);
+            protocolMarshaller.marshall(app.getLastDriftEvaluationTime(), LASTDRIFTEVALUATIONTIME_BINDING);
             protocolMarshaller.marshall(app.getLastResiliencyScoreEvaluationTime(), LASTRESILIENCYSCOREEVALUATIONTIME_BINDING);
             protocolMarshaller.marshall(app.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(app.getPermissionModel(), PERMISSIONMODEL_BINDING);
             protocolMarshaller.marshall(app.getPolicyArn(), POLICYARN_BINDING);
             protocolMarshaller.marshall(app.getResiliencyScore(), RESILIENCYSCORE_BINDING);
+            protocolMarshaller.marshall(app.getRpoInSecs(), RPOINSECS_BINDING);
+            protocolMarshaller.marshall(app.getRtoInSecs(), RTOINSECS_BINDING);
             protocolMarshaller.marshall(app.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(app.getTags(), TAGS_BINDING);
         } catch (Exception e) {

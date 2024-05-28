@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,12 @@ public class UpdateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
+     * Update Launch configuration Account ID.
+     * </p>
+     */
+    private String accountID;
+    /**
+     * <p>
      * Update Launch configuration boot mode request.
      * </p>
      */
@@ -45,6 +51,12 @@ public class UpdateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     private Boolean copyTags;
     /**
      * <p>
+     * Enable map auto tagging.
+     * </p>
+     */
+    private Boolean enableMapAutoTagging;
+    /**
+     * <p>
      * Update Launch configuration launch disposition request.
      * </p>
      */
@@ -55,6 +67,12 @@ public class UpdateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private Licensing licensing;
+    /**
+     * <p>
+     * Launch configuration map auto tagging MPE ID.
+     * </p>
+     */
+    private String mapAutoTaggingMpeID;
     /**
      * <p>
      * Update Launch configuration name request.
@@ -75,6 +93,46 @@ public class UpdateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private String targetInstanceTypeRightSizingMethod;
+
+    /**
+     * <p>
+     * Update Launch configuration Account ID.
+     * </p>
+     * 
+     * @param accountID
+     *        Update Launch configuration Account ID.
+     */
+
+    public void setAccountID(String accountID) {
+        this.accountID = accountID;
+    }
+
+    /**
+     * <p>
+     * Update Launch configuration Account ID.
+     * </p>
+     * 
+     * @return Update Launch configuration Account ID.
+     */
+
+    public String getAccountID() {
+        return this.accountID;
+    }
+
+    /**
+     * <p>
+     * Update Launch configuration Account ID.
+     * </p>
+     * 
+     * @param accountID
+     *        Update Launch configuration Account ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateLaunchConfigurationRequest withAccountID(String accountID) {
+        setAccountID(accountID);
+        return this;
+    }
 
     /**
      * <p>
@@ -241,6 +299,58 @@ public class UpdateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
+     * Enable map auto tagging.
+     * </p>
+     * 
+     * @param enableMapAutoTagging
+     *        Enable map auto tagging.
+     */
+
+    public void setEnableMapAutoTagging(Boolean enableMapAutoTagging) {
+        this.enableMapAutoTagging = enableMapAutoTagging;
+    }
+
+    /**
+     * <p>
+     * Enable map auto tagging.
+     * </p>
+     * 
+     * @return Enable map auto tagging.
+     */
+
+    public Boolean getEnableMapAutoTagging() {
+        return this.enableMapAutoTagging;
+    }
+
+    /**
+     * <p>
+     * Enable map auto tagging.
+     * </p>
+     * 
+     * @param enableMapAutoTagging
+     *        Enable map auto tagging.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateLaunchConfigurationRequest withEnableMapAutoTagging(Boolean enableMapAutoTagging) {
+        setEnableMapAutoTagging(enableMapAutoTagging);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enable map auto tagging.
+     * </p>
+     * 
+     * @return Enable map auto tagging.
+     */
+
+    public Boolean isEnableMapAutoTagging() {
+        return this.enableMapAutoTagging;
+    }
+
+    /**
+     * <p>
      * Update Launch configuration launch disposition request.
      * </p>
      * 
@@ -335,6 +445,46 @@ public class UpdateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     public UpdateLaunchConfigurationRequest withLicensing(Licensing licensing) {
         setLicensing(licensing);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Launch configuration map auto tagging MPE ID.
+     * </p>
+     * 
+     * @param mapAutoTaggingMpeID
+     *        Launch configuration map auto tagging MPE ID.
+     */
+
+    public void setMapAutoTaggingMpeID(String mapAutoTaggingMpeID) {
+        this.mapAutoTaggingMpeID = mapAutoTaggingMpeID;
+    }
+
+    /**
+     * <p>
+     * Launch configuration map auto tagging MPE ID.
+     * </p>
+     * 
+     * @return Launch configuration map auto tagging MPE ID.
+     */
+
+    public String getMapAutoTaggingMpeID() {
+        return this.mapAutoTaggingMpeID;
+    }
+
+    /**
+     * <p>
+     * Launch configuration map auto tagging MPE ID.
+     * </p>
+     * 
+     * @param mapAutoTaggingMpeID
+     *        Launch configuration map auto tagging MPE ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateLaunchConfigurationRequest withMapAutoTaggingMpeID(String mapAutoTaggingMpeID) {
+        setMapAutoTaggingMpeID(mapAutoTaggingMpeID);
         return this;
     }
 
@@ -515,16 +665,22 @@ public class UpdateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccountID() != null)
+            sb.append("AccountID: ").append(getAccountID()).append(",");
         if (getBootMode() != null)
             sb.append("BootMode: ").append(getBootMode()).append(",");
         if (getCopyPrivateIp() != null)
             sb.append("CopyPrivateIp: ").append(getCopyPrivateIp()).append(",");
         if (getCopyTags() != null)
             sb.append("CopyTags: ").append(getCopyTags()).append(",");
+        if (getEnableMapAutoTagging() != null)
+            sb.append("EnableMapAutoTagging: ").append(getEnableMapAutoTagging()).append(",");
         if (getLaunchDisposition() != null)
             sb.append("LaunchDisposition: ").append(getLaunchDisposition()).append(",");
         if (getLicensing() != null)
             sb.append("Licensing: ").append(getLicensing()).append(",");
+        if (getMapAutoTaggingMpeID() != null)
+            sb.append("MapAutoTaggingMpeID: ").append(getMapAutoTaggingMpeID()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getPostLaunchActions() != null)
@@ -547,6 +703,10 @@ public class UpdateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
         if (obj instanceof UpdateLaunchConfigurationRequest == false)
             return false;
         UpdateLaunchConfigurationRequest other = (UpdateLaunchConfigurationRequest) obj;
+        if (other.getAccountID() == null ^ this.getAccountID() == null)
+            return false;
+        if (other.getAccountID() != null && other.getAccountID().equals(this.getAccountID()) == false)
+            return false;
         if (other.getBootMode() == null ^ this.getBootMode() == null)
             return false;
         if (other.getBootMode() != null && other.getBootMode().equals(this.getBootMode()) == false)
@@ -559,6 +719,10 @@ public class UpdateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getCopyTags() != null && other.getCopyTags().equals(this.getCopyTags()) == false)
             return false;
+        if (other.getEnableMapAutoTagging() == null ^ this.getEnableMapAutoTagging() == null)
+            return false;
+        if (other.getEnableMapAutoTagging() != null && other.getEnableMapAutoTagging().equals(this.getEnableMapAutoTagging()) == false)
+            return false;
         if (other.getLaunchDisposition() == null ^ this.getLaunchDisposition() == null)
             return false;
         if (other.getLaunchDisposition() != null && other.getLaunchDisposition().equals(this.getLaunchDisposition()) == false)
@@ -566,6 +730,10 @@ public class UpdateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
         if (other.getLicensing() == null ^ this.getLicensing() == null)
             return false;
         if (other.getLicensing() != null && other.getLicensing().equals(this.getLicensing()) == false)
+            return false;
+        if (other.getMapAutoTaggingMpeID() == null ^ this.getMapAutoTaggingMpeID() == null)
+            return false;
+        if (other.getMapAutoTaggingMpeID() != null && other.getMapAutoTaggingMpeID().equals(this.getMapAutoTaggingMpeID()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
@@ -592,11 +760,14 @@ public class UpdateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccountID() == null) ? 0 : getAccountID().hashCode());
         hashCode = prime * hashCode + ((getBootMode() == null) ? 0 : getBootMode().hashCode());
         hashCode = prime * hashCode + ((getCopyPrivateIp() == null) ? 0 : getCopyPrivateIp().hashCode());
         hashCode = prime * hashCode + ((getCopyTags() == null) ? 0 : getCopyTags().hashCode());
+        hashCode = prime * hashCode + ((getEnableMapAutoTagging() == null) ? 0 : getEnableMapAutoTagging().hashCode());
         hashCode = prime * hashCode + ((getLaunchDisposition() == null) ? 0 : getLaunchDisposition().hashCode());
         hashCode = prime * hashCode + ((getLicensing() == null) ? 0 : getLicensing().hashCode());
+        hashCode = prime * hashCode + ((getMapAutoTaggingMpeID() == null) ? 0 : getMapAutoTaggingMpeID().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getPostLaunchActions() == null) ? 0 : getPostLaunchActions().hashCode());
         hashCode = prime * hashCode + ((getSourceServerID() == null) ? 0 : getSourceServerID().hashCode());

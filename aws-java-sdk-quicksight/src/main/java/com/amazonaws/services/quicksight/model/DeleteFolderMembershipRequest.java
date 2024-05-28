@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,13 +39,13 @@ public class DeleteFolderMembershipRequest extends com.amazonaws.AmazonWebServic
     private String folderId;
     /**
      * <p>
-     * The ID of the asset (the dashboard, analysis, or dataset) that you want to delete.
+     * The ID of the asset that you want to delete.
      * </p>
      */
     private String memberId;
     /**
      * <p>
-     * The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>
+     * The member type of the asset that you want to delete from a folder.
      * </p>
      */
     private String memberType;
@@ -132,11 +132,11 @@ public class DeleteFolderMembershipRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the asset (the dashboard, analysis, or dataset) that you want to delete.
+     * The ID of the asset that you want to delete.
      * </p>
      * 
      * @param memberId
-     *        The ID of the asset (the dashboard, analysis, or dataset) that you want to delete.
+     *        The ID of the asset that you want to delete.
      */
 
     public void setMemberId(String memberId) {
@@ -145,10 +145,10 @@ public class DeleteFolderMembershipRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the asset (the dashboard, analysis, or dataset) that you want to delete.
+     * The ID of the asset that you want to delete.
      * </p>
      * 
-     * @return The ID of the asset (the dashboard, analysis, or dataset) that you want to delete.
+     * @return The ID of the asset that you want to delete.
      */
 
     public String getMemberId() {
@@ -157,11 +157,11 @@ public class DeleteFolderMembershipRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the asset (the dashboard, analysis, or dataset) that you want to delete.
+     * The ID of the asset that you want to delete.
      * </p>
      * 
      * @param memberId
-     *        The ID of the asset (the dashboard, analysis, or dataset) that you want to delete.
+     *        The ID of the asset that you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,11 +172,11 @@ public class DeleteFolderMembershipRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>
+     * The member type of the asset that you want to delete from a folder.
      * </p>
      * 
      * @param memberType
-     *        The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>
+     *        The member type of the asset that you want to delete from a folder.
      * @see MemberType
      */
 
@@ -186,10 +186,10 @@ public class DeleteFolderMembershipRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>
+     * The member type of the asset that you want to delete from a folder.
      * </p>
      * 
-     * @return The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>
+     * @return The member type of the asset that you want to delete from a folder.
      * @see MemberType
      */
 
@@ -199,11 +199,11 @@ public class DeleteFolderMembershipRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>
+     * The member type of the asset that you want to delete from a folder.
      * </p>
      * 
      * @param memberType
-     *        The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>
+     *        The member type of the asset that you want to delete from a folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MemberType
      */
@@ -215,11 +215,11 @@ public class DeleteFolderMembershipRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>
+     * The member type of the asset that you want to delete from a folder.
      * </p>
      * 
      * @param memberType
-     *        The type of the member, including <code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>
+     *        The member type of the asset that you want to delete from a folder.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MemberType
      */

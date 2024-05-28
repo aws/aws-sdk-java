@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,10 @@ public class BatchInferenceJobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("batchInferenceJobConfig").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("roleArn").build();
+    private static final MarshallingInfo<String> BATCHINFERENCEJOBMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("batchInferenceJobMode").build();
+    private static final MarshallingInfo<StructuredPojo> THEMEGENERATIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("themeGenerationConfig").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
     private static final MarshallingInfo<java.util.Date> CREATIONDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -80,6 +84,8 @@ public class BatchInferenceJobMarshaller {
             protocolMarshaller.marshall(batchInferenceJob.getJobOutput(), JOBOUTPUT_BINDING);
             protocolMarshaller.marshall(batchInferenceJob.getBatchInferenceJobConfig(), BATCHINFERENCEJOBCONFIG_BINDING);
             protocolMarshaller.marshall(batchInferenceJob.getRoleArn(), ROLEARN_BINDING);
+            protocolMarshaller.marshall(batchInferenceJob.getBatchInferenceJobMode(), BATCHINFERENCEJOBMODE_BINDING);
+            protocolMarshaller.marshall(batchInferenceJob.getThemeGenerationConfig(), THEMEGENERATIONCONFIG_BINDING);
             protocolMarshaller.marshall(batchInferenceJob.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(batchInferenceJob.getCreationDateTime(), CREATIONDATETIME_BINDING);
             protocolMarshaller.marshall(batchInferenceJob.getLastUpdatedDateTime(), LASTUPDATEDDATETIME_BINDING);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,7 +52,7 @@ public class CreateResourceShareRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code>
      * </p>
@@ -110,6 +110,10 @@ public class CreateResourceShareRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * If you don't provide this value, then Amazon Web Services generates a random one for you.
      * </p>
+     * <p>
+     * If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails
+     * with an <code>IdempotentParameterMismatch</code> error.
+     * </p>
      */
     private String clientToken;
     /**
@@ -121,6 +125,12 @@ public class CreateResourceShareRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private java.util.List<String> permissionArns;
+    /**
+     * <p>
+     * Specifies from which source accounts the service principal has access to the resources in this resource share.
+     * </p>
+     */
+    private java.util.List<String> sources;
 
     /**
      * <p>
@@ -247,7 +257,7 @@ public class CreateResourceShareRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code>
      * </p>
@@ -289,7 +299,7 @@ public class CreateResourceShareRequest extends com.amazonaws.AmazonWebServiceRe
      *         </li>
      *         <li>
      *         <p>
-     *         An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *         An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *         Name (ARN)</a> of an organization in Organizations, for example:
      *         <code>organizations::123456789012:organization/o-exampleorgid</code>
      *         </p>
@@ -338,7 +348,7 @@ public class CreateResourceShareRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code>
      * </p>
@@ -381,7 +391,7 @@ public class CreateResourceShareRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *        Name (ARN)</a> of an organization in Organizations, for example:
      *        <code>organizations::123456789012:organization/o-exampleorgid</code>
      *        </p>
@@ -435,7 +445,7 @@ public class CreateResourceShareRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code>
      * </p>
@@ -483,7 +493,7 @@ public class CreateResourceShareRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *        Name (ARN)</a> of an organization in Organizations, for example:
      *        <code>organizations::123456789012:organization/o-exampleorgid</code>
      *        </p>
@@ -539,7 +549,7 @@ public class CreateResourceShareRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code>
      * </p>
@@ -582,7 +592,7 @@ public class CreateResourceShareRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *        Name (ARN)</a> of an organization in Organizations, for example:
      *        <code>organizations::123456789012:organization/o-exampleorgid</code>
      *        </p>
@@ -783,6 +793,10 @@ public class CreateResourceShareRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * If you don't provide this value, then Amazon Web Services generates a random one for you.
      * </p>
+     * <p>
+     * If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails
+     * with an <code>IdempotentParameterMismatch</code> error.
+     * </p>
      * 
      * @param clientToken
      *        Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
@@ -792,6 +806,10 @@ public class CreateResourceShareRequest extends com.amazonaws.AmazonWebServiceRe
      *        href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
      *        <p>
      *        If you don't provide this value, then Amazon Web Services generates a random one for you.
+     *        </p>
+     *        <p>
+     *        If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the
+     *        retry fails with an <code>IdempotentParameterMismatch</code> error.
      */
 
     public void setClientToken(String clientToken) {
@@ -809,6 +827,10 @@ public class CreateResourceShareRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * If you don't provide this value, then Amazon Web Services generates a random one for you.
      * </p>
+     * <p>
+     * If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails
+     * with an <code>IdempotentParameterMismatch</code> error.
+     * </p>
      * 
      * @return Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      *         This lets you safely retry the request without accidentally performing the same operation a second time.
@@ -817,6 +839,10 @@ public class CreateResourceShareRequest extends com.amazonaws.AmazonWebServiceRe
      *         href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
      *         <p>
      *         If you don't provide this value, then Amazon Web Services generates a random one for you.
+     *         </p>
+     *         <p>
+     *         If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the
+     *         retry fails with an <code>IdempotentParameterMismatch</code> error.
      */
 
     public String getClientToken() {
@@ -834,6 +860,10 @@ public class CreateResourceShareRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * If you don't provide this value, then Amazon Web Services generates a random one for you.
      * </p>
+     * <p>
+     * If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails
+     * with an <code>IdempotentParameterMismatch</code> error.
+     * </p>
      * 
      * @param clientToken
      *        Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
@@ -843,6 +873,10 @@ public class CreateResourceShareRequest extends com.amazonaws.AmazonWebServiceRe
      *        href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
      *        <p>
      *        If you don't provide this value, then Amazon Web Services generates a random one for you.
+     *        </p>
+     *        <p>
+     *        If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the
+     *        retry fails with an <code>IdempotentParameterMismatch</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -950,6 +984,80 @@ public class CreateResourceShareRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Specifies from which source accounts the service principal has access to the resources in this resource share.
+     * </p>
+     * 
+     * @return Specifies from which source accounts the service principal has access to the resources in this resource
+     *         share.
+     */
+
+    public java.util.List<String> getSources() {
+        return sources;
+    }
+
+    /**
+     * <p>
+     * Specifies from which source accounts the service principal has access to the resources in this resource share.
+     * </p>
+     * 
+     * @param sources
+     *        Specifies from which source accounts the service principal has access to the resources in this resource
+     *        share.
+     */
+
+    public void setSources(java.util.Collection<String> sources) {
+        if (sources == null) {
+            this.sources = null;
+            return;
+        }
+
+        this.sources = new java.util.ArrayList<String>(sources);
+    }
+
+    /**
+     * <p>
+     * Specifies from which source accounts the service principal has access to the resources in this resource share.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSources(java.util.Collection)} or {@link #withSources(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param sources
+     *        Specifies from which source accounts the service principal has access to the resources in this resource
+     *        share.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateResourceShareRequest withSources(String... sources) {
+        if (this.sources == null) {
+            setSources(new java.util.ArrayList<String>(sources.length));
+        }
+        for (String ele : sources) {
+            this.sources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies from which source accounts the service principal has access to the resources in this resource share.
+     * </p>
+     * 
+     * @param sources
+     *        Specifies from which source accounts the service principal has access to the resources in this resource
+     *        share.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateResourceShareRequest withSources(java.util.Collection<String> sources) {
+        setSources(sources);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -974,7 +1082,9 @@ public class CreateResourceShareRequest extends com.amazonaws.AmazonWebServiceRe
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getPermissionArns() != null)
-            sb.append("PermissionArns: ").append(getPermissionArns());
+            sb.append("PermissionArns: ").append(getPermissionArns()).append(",");
+        if (getSources() != null)
+            sb.append("Sources: ").append(getSources());
         sb.append("}");
         return sb.toString();
     }
@@ -1017,6 +1127,10 @@ public class CreateResourceShareRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getPermissionArns() != null && other.getPermissionArns().equals(this.getPermissionArns()) == false)
             return false;
+        if (other.getSources() == null ^ this.getSources() == null)
+            return false;
+        if (other.getSources() != null && other.getSources().equals(this.getSources()) == false)
+            return false;
         return true;
     }
 
@@ -1032,6 +1146,7 @@ public class CreateResourceShareRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getAllowExternalPrincipals() == null) ? 0 : getAllowExternalPrincipals().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getPermissionArns() == null) ? 0 : getPermissionArns().hashCode());
+        hashCode = prime * hashCode + ((getSources() == null) ? 0 : getSources().hashCode());
         return hashCode;
     }
 

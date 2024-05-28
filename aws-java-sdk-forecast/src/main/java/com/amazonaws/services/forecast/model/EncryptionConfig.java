@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An AWS Key Management Service (KMS) key and an AWS Identity and Access Management (IAM) role that Amazon Forecast can
- * assume to access the key. You can specify this optional object in the <a>CreateDataset</a> and <a>CreatePredictor</a>
+ * An Key Management Service (KMS) key and an Identity and Access Management (IAM) role that Amazon Forecast can assume
+ * to access the key. You can specify this optional object in the <a>CreateDataset</a> and <a>CreatePredictor</a>
  * requests.
  * </p>
  * 
@@ -32,11 +32,11 @@ public class EncryptionConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ARN of the IAM role that Amazon Forecast can assume to access the AWS KMS key.
+     * The ARN of the IAM role that Amazon Forecast can assume to access the KMS key.
      * </p>
      * <p>
-     * Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an
-     * <code>InvalidInputException</code> error.
+     * Passing a role across Amazon Web Services accounts is not allowed. If you pass a role that isn't in your account,
+     * you get an <code>InvalidInputException</code> error.
      * </p>
      */
     private String roleArn;
@@ -49,18 +49,18 @@ public class EncryptionConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ARN of the IAM role that Amazon Forecast can assume to access the AWS KMS key.
+     * The ARN of the IAM role that Amazon Forecast can assume to access the KMS key.
      * </p>
      * <p>
-     * Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an
-     * <code>InvalidInputException</code> error.
+     * Passing a role across Amazon Web Services accounts is not allowed. If you pass a role that isn't in your account,
+     * you get an <code>InvalidInputException</code> error.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the IAM role that Amazon Forecast can assume to access the AWS KMS key.</p>
+     *        The ARN of the IAM role that Amazon Forecast can assume to access the KMS key.</p>
      *        <p>
-     *        Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get
-     *        an <code>InvalidInputException</code> error.
+     *        Passing a role across Amazon Web Services accounts is not allowed. If you pass a role that isn't in your
+     *        account, you get an <code>InvalidInputException</code> error.
      */
 
     public void setRoleArn(String roleArn) {
@@ -69,17 +69,17 @@ public class EncryptionConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ARN of the IAM role that Amazon Forecast can assume to access the AWS KMS key.
+     * The ARN of the IAM role that Amazon Forecast can assume to access the KMS key.
      * </p>
      * <p>
-     * Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an
-     * <code>InvalidInputException</code> error.
+     * Passing a role across Amazon Web Services accounts is not allowed. If you pass a role that isn't in your account,
+     * you get an <code>InvalidInputException</code> error.
      * </p>
      * 
-     * @return The ARN of the IAM role that Amazon Forecast can assume to access the AWS KMS key.</p>
+     * @return The ARN of the IAM role that Amazon Forecast can assume to access the KMS key.</p>
      *         <p>
-     *         Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get
-     *         an <code>InvalidInputException</code> error.
+     *         Passing a role across Amazon Web Services accounts is not allowed. If you pass a role that isn't in your
+     *         account, you get an <code>InvalidInputException</code> error.
      */
 
     public String getRoleArn() {
@@ -88,18 +88,18 @@ public class EncryptionConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ARN of the IAM role that Amazon Forecast can assume to access the AWS KMS key.
+     * The ARN of the IAM role that Amazon Forecast can assume to access the KMS key.
      * </p>
      * <p>
-     * Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an
-     * <code>InvalidInputException</code> error.
+     * Passing a role across Amazon Web Services accounts is not allowed. If you pass a role that isn't in your account,
+     * you get an <code>InvalidInputException</code> error.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the IAM role that Amazon Forecast can assume to access the AWS KMS key.</p>
+     *        The ARN of the IAM role that Amazon Forecast can assume to access the KMS key.</p>
      *        <p>
-     *        Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get
-     *        an <code>InvalidInputException</code> error.
+     *        Passing a role across Amazon Web Services accounts is not allowed. If you pass a role that isn't in your
+     *        account, you get an <code>InvalidInputException</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

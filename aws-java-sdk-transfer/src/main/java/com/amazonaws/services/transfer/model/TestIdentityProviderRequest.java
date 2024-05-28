@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,24 +55,29 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
      * File Transfer Protocol (FTP)
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Applicability Statement 2 (AS2)
+     * </p>
+     * </li>
      * </ul>
      */
     private String serverProtocol;
     /**
      * <p>
-     * The source IP address of the user account to be tested.
+     * The source IP address of the account to be tested.
      * </p>
      */
     private String sourceIp;
     /**
      * <p>
-     * The name of the user account to be tested.
+     * The name of the account to be tested.
      * </p>
      */
     private String userName;
     /**
      * <p>
-     * The password of the user account to be tested.
+     * The password of the account to be tested.
      * </p>
      */
     private String userPassword;
@@ -146,6 +151,11 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
      * File Transfer Protocol (FTP)
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Applicability Statement 2 (AS2)
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param serverProtocol
@@ -167,6 +177,11 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
      *        <li>
      *        <p>
      *        File Transfer Protocol (FTP)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Applicability Statement 2 (AS2)
      *        </p>
      *        </li>
      * @see Protocol
@@ -199,6 +214,11 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
      * File Transfer Protocol (FTP)
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Applicability Statement 2 (AS2)
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The type of file transfer protocol to be tested.</p>
@@ -219,6 +239,11 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
      *         <li>
      *         <p>
      *         File Transfer Protocol (FTP)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Applicability Statement 2 (AS2)
      *         </p>
      *         </li>
      * @see Protocol
@@ -251,6 +276,11 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
      * File Transfer Protocol (FTP)
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Applicability Statement 2 (AS2)
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param serverProtocol
@@ -272,6 +302,11 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
      *        <li>
      *        <p>
      *        File Transfer Protocol (FTP)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Applicability Statement 2 (AS2)
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -306,6 +341,11 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
      * File Transfer Protocol (FTP)
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Applicability Statement 2 (AS2)
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param serverProtocol
@@ -329,6 +369,11 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
      *        File Transfer Protocol (FTP)
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        Applicability Statement 2 (AS2)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Protocol
      */
@@ -340,11 +385,11 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The source IP address of the user account to be tested.
+     * The source IP address of the account to be tested.
      * </p>
      * 
      * @param sourceIp
-     *        The source IP address of the user account to be tested.
+     *        The source IP address of the account to be tested.
      */
 
     public void setSourceIp(String sourceIp) {
@@ -353,10 +398,10 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The source IP address of the user account to be tested.
+     * The source IP address of the account to be tested.
      * </p>
      * 
-     * @return The source IP address of the user account to be tested.
+     * @return The source IP address of the account to be tested.
      */
 
     public String getSourceIp() {
@@ -365,11 +410,11 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The source IP address of the user account to be tested.
+     * The source IP address of the account to be tested.
      * </p>
      * 
      * @param sourceIp
-     *        The source IP address of the user account to be tested.
+     *        The source IP address of the account to be tested.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -380,11 +425,11 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the user account to be tested.
+     * The name of the account to be tested.
      * </p>
      * 
      * @param userName
-     *        The name of the user account to be tested.
+     *        The name of the account to be tested.
      */
 
     public void setUserName(String userName) {
@@ -393,10 +438,10 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the user account to be tested.
+     * The name of the account to be tested.
      * </p>
      * 
-     * @return The name of the user account to be tested.
+     * @return The name of the account to be tested.
      */
 
     public String getUserName() {
@@ -405,11 +450,11 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the user account to be tested.
+     * The name of the account to be tested.
      * </p>
      * 
      * @param userName
-     *        The name of the user account to be tested.
+     *        The name of the account to be tested.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -420,11 +465,11 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The password of the user account to be tested.
+     * The password of the account to be tested.
      * </p>
      * 
      * @param userPassword
-     *        The password of the user account to be tested.
+     *        The password of the account to be tested.
      */
 
     public void setUserPassword(String userPassword) {
@@ -433,10 +478,10 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The password of the user account to be tested.
+     * The password of the account to be tested.
      * </p>
      * 
-     * @return The password of the user account to be tested.
+     * @return The password of the account to be tested.
      */
 
     public String getUserPassword() {
@@ -445,11 +490,11 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The password of the user account to be tested.
+     * The password of the account to be tested.
      * </p>
      * 
      * @param userPassword
-     *        The password of the user account to be tested.
+     *        The password of the account to be tested.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

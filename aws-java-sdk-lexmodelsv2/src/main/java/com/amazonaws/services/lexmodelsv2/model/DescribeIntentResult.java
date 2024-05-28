@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -131,8 +131,18 @@ public class DescribeIntentResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private java.util.Date lastUpdatedDateTime;
-    /** <p/> */
+    /**
+     * <p>
+     * Configuration setting for a response sent to the user before Amazon Lex starts eliciting slots.
+     * </p>
+     */
     private InitialResponseSetting initialResponseSetting;
+    /**
+     * <p>
+     * Details about the configuration of the built-in <code>Amazon.QnAIntent</code>.
+     * </p>
+     */
+    private QnAIntentConfiguration qnAIntentConfiguration;
 
     /**
      * <p>
@@ -975,9 +985,12 @@ public class DescribeIntentResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * <p/>
+     * <p>
+     * Configuration setting for a response sent to the user before Amazon Lex starts eliciting slots.
+     * </p>
      * 
      * @param initialResponseSetting
+     *        Configuration setting for a response sent to the user before Amazon Lex starts eliciting slots.
      */
 
     public void setInitialResponseSetting(InitialResponseSetting initialResponseSetting) {
@@ -985,9 +998,11 @@ public class DescribeIntentResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * <p/>
+     * <p>
+     * Configuration setting for a response sent to the user before Amazon Lex starts eliciting slots.
+     * </p>
      * 
-     * @return
+     * @return Configuration setting for a response sent to the user before Amazon Lex starts eliciting slots.
      */
 
     public InitialResponseSetting getInitialResponseSetting() {
@@ -995,14 +1010,57 @@ public class DescribeIntentResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * <p/>
+     * <p>
+     * Configuration setting for a response sent to the user before Amazon Lex starts eliciting slots.
+     * </p>
      * 
      * @param initialResponseSetting
+     *        Configuration setting for a response sent to the user before Amazon Lex starts eliciting slots.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeIntentResult withInitialResponseSetting(InitialResponseSetting initialResponseSetting) {
         setInitialResponseSetting(initialResponseSetting);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about the configuration of the built-in <code>Amazon.QnAIntent</code>.
+     * </p>
+     * 
+     * @param qnAIntentConfiguration
+     *        Details about the configuration of the built-in <code>Amazon.QnAIntent</code>.
+     */
+
+    public void setQnAIntentConfiguration(QnAIntentConfiguration qnAIntentConfiguration) {
+        this.qnAIntentConfiguration = qnAIntentConfiguration;
+    }
+
+    /**
+     * <p>
+     * Details about the configuration of the built-in <code>Amazon.QnAIntent</code>.
+     * </p>
+     * 
+     * @return Details about the configuration of the built-in <code>Amazon.QnAIntent</code>.
+     */
+
+    public QnAIntentConfiguration getQnAIntentConfiguration() {
+        return this.qnAIntentConfiguration;
+    }
+
+    /**
+     * <p>
+     * Details about the configuration of the built-in <code>Amazon.QnAIntent</code>.
+     * </p>
+     * 
+     * @param qnAIntentConfiguration
+     *        Details about the configuration of the built-in <code>Amazon.QnAIntent</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeIntentResult withQnAIntentConfiguration(QnAIntentConfiguration qnAIntentConfiguration) {
+        setQnAIntentConfiguration(qnAIntentConfiguration);
         return this;
     }
 
@@ -1055,7 +1113,9 @@ public class DescribeIntentResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getLastUpdatedDateTime() != null)
             sb.append("LastUpdatedDateTime: ").append(getLastUpdatedDateTime()).append(",");
         if (getInitialResponseSetting() != null)
-            sb.append("InitialResponseSetting: ").append(getInitialResponseSetting());
+            sb.append("InitialResponseSetting: ").append(getInitialResponseSetting()).append(",");
+        if (getQnAIntentConfiguration() != null)
+            sb.append("QnAIntentConfiguration: ").append(getQnAIntentConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1146,6 +1206,10 @@ public class DescribeIntentResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getInitialResponseSetting() != null && other.getInitialResponseSetting().equals(this.getInitialResponseSetting()) == false)
             return false;
+        if (other.getQnAIntentConfiguration() == null ^ this.getQnAIntentConfiguration() == null)
+            return false;
+        if (other.getQnAIntentConfiguration() != null && other.getQnAIntentConfiguration().equals(this.getQnAIntentConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1173,6 +1237,7 @@ public class DescribeIntentResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedDateTime() == null) ? 0 : getLastUpdatedDateTime().hashCode());
         hashCode = prime * hashCode + ((getInitialResponseSetting() == null) ? 0 : getInitialResponseSetting().hashCode());
+        hashCode = prime * hashCode + ((getQnAIntentConfiguration() == null) ? 0 : getQnAIntentConfiguration().hashCode());
         return hashCode;
     }
 

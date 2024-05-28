@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of actions required for a broker.
+     * Actions required for a broker.
      * </p>
      */
     private java.util.List<ActionRequired> actionsRequired;
@@ -63,9 +63,9 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     private java.util.List<BrokerInstance> brokerInstances;
     /**
      * <p>
-     * The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only
-     * letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or
-     * special characters.
+     * The broker's name. This value must be unique in your Amazon Web Services account account, 1-50 characters long,
+     * must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets,
+     * wildcard characters, or special characters.
      * </p>
      */
     private String brokerName;
@@ -95,7 +95,7 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     private String deploymentMode;
     /**
      * <p>
-     * Encryption options for the broker. Does not apply to RabbitMQ brokers.
+     * Encryption options for the broker.
      * </p>
      */
     private EncryptionOptions encryptionOptions;
@@ -206,13 +206,39 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private java.util.List<UserSummary> users;
+    /**
+     * <p>
+     * The replication details of the data replication-enabled broker. Only returned if dataReplicationMode is set to
+     * CRDR.
+     * </p>
+     */
+    private DataReplicationMetadataOutput dataReplicationMetadata;
+    /**
+     * <p>
+     * Describes whether this broker is a part of a data replication pair.
+     * </p>
+     */
+    private String dataReplicationMode;
+    /**
+     * <p>
+     * The pending replication details of the data replication-enabled broker. Only returned if
+     * pendingDataReplicationMode is set to CRDR.
+     * </p>
+     */
+    private DataReplicationMetadataOutput pendingDataReplicationMetadata;
+    /**
+     * <p>
+     * Describes whether this broker will be a part of a data replication pair after reboot.
+     * </p>
+     */
+    private String pendingDataReplicationMode;
 
     /**
      * <p>
-     * A list of actions required for a broker.
+     * Actions required for a broker.
      * </p>
      * 
-     * @return A list of actions required for a broker.
+     * @return Actions required for a broker.
      */
 
     public java.util.List<ActionRequired> getActionsRequired() {
@@ -221,11 +247,11 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of actions required for a broker.
+     * Actions required for a broker.
      * </p>
      * 
      * @param actionsRequired
-     *        A list of actions required for a broker.
+     *        Actions required for a broker.
      */
 
     public void setActionsRequired(java.util.Collection<ActionRequired> actionsRequired) {
@@ -239,7 +265,7 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of actions required for a broker.
+     * Actions required for a broker.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -248,7 +274,7 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param actionsRequired
-     *        A list of actions required for a broker.
+     *        Actions required for a broker.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -264,11 +290,11 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of actions required for a broker.
+     * Actions required for a broker.
      * </p>
      * 
      * @param actionsRequired
-     *        A list of actions required for a broker.
+     *        Actions required for a broker.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -556,15 +582,15 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only
-     * letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or
-     * special characters.
+     * The broker's name. This value must be unique in your Amazon Web Services account account, 1-50 characters long,
+     * must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets,
+     * wildcard characters, or special characters.
      * </p>
      * 
      * @param brokerName
-     *        The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only
-     *        letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard
-     *        characters, or special characters.
+     *        The broker's name. This value must be unique in your Amazon Web Services account account, 1-50 characters
+     *        long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces,
+     *        brackets, wildcard characters, or special characters.
      */
 
     public void setBrokerName(String brokerName) {
@@ -573,14 +599,14 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only
-     * letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or
-     * special characters.
+     * The broker's name. This value must be unique in your Amazon Web Services account account, 1-50 characters long,
+     * must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets,
+     * wildcard characters, or special characters.
      * </p>
      * 
-     * @return The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only
-     *         letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard
-     *         characters, or special characters.
+     * @return The broker's name. This value must be unique in your Amazon Web Services account account, 1-50 characters
+     *         long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces,
+     *         brackets, wildcard characters, or special characters.
      */
 
     public String getBrokerName() {
@@ -589,15 +615,15 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only
-     * letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters, or
-     * special characters.
+     * The broker's name. This value must be unique in your Amazon Web Services account account, 1-50 characters long,
+     * must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets,
+     * wildcard characters, or special characters.
      * </p>
      * 
      * @param brokerName
-     *        The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain only
-     *        letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard
-     *        characters, or special characters.
+     *        The broker's name. This value must be unique in your Amazon Web Services account account, 1-50 characters
+     *        long, must contain only letters, numbers, dashes, and underscores, and must not contain white spaces,
+     *        brackets, wildcard characters, or special characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -806,11 +832,11 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Encryption options for the broker. Does not apply to RabbitMQ brokers.
+     * Encryption options for the broker.
      * </p>
      * 
      * @param encryptionOptions
-     *        Encryption options for the broker. Does not apply to RabbitMQ brokers.
+     *        Encryption options for the broker.
      */
 
     public void setEncryptionOptions(EncryptionOptions encryptionOptions) {
@@ -819,10 +845,10 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Encryption options for the broker. Does not apply to RabbitMQ brokers.
+     * Encryption options for the broker.
      * </p>
      * 
-     * @return Encryption options for the broker. Does not apply to RabbitMQ brokers.
+     * @return Encryption options for the broker.
      */
 
     public EncryptionOptions getEncryptionOptions() {
@@ -831,11 +857,11 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Encryption options for the broker. Does not apply to RabbitMQ brokers.
+     * Encryption options for the broker.
      * </p>
      * 
      * @param encryptionOptions
-     *        Encryption options for the broker. Does not apply to RabbitMQ brokers.
+     *        Encryption options for the broker.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1782,6 +1808,216 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * The replication details of the data replication-enabled broker. Only returned if dataReplicationMode is set to
+     * CRDR.
+     * </p>
+     * 
+     * @param dataReplicationMetadata
+     *        The replication details of the data replication-enabled broker. Only returned if dataReplicationMode is
+     *        set to CRDR.
+     */
+
+    public void setDataReplicationMetadata(DataReplicationMetadataOutput dataReplicationMetadata) {
+        this.dataReplicationMetadata = dataReplicationMetadata;
+    }
+
+    /**
+     * <p>
+     * The replication details of the data replication-enabled broker. Only returned if dataReplicationMode is set to
+     * CRDR.
+     * </p>
+     * 
+     * @return The replication details of the data replication-enabled broker. Only returned if dataReplicationMode is
+     *         set to CRDR.
+     */
+
+    public DataReplicationMetadataOutput getDataReplicationMetadata() {
+        return this.dataReplicationMetadata;
+    }
+
+    /**
+     * <p>
+     * The replication details of the data replication-enabled broker. Only returned if dataReplicationMode is set to
+     * CRDR.
+     * </p>
+     * 
+     * @param dataReplicationMetadata
+     *        The replication details of the data replication-enabled broker. Only returned if dataReplicationMode is
+     *        set to CRDR.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBrokerResult withDataReplicationMetadata(DataReplicationMetadataOutput dataReplicationMetadata) {
+        setDataReplicationMetadata(dataReplicationMetadata);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes whether this broker is a part of a data replication pair.
+     * </p>
+     * 
+     * @param dataReplicationMode
+     *        Describes whether this broker is a part of a data replication pair.
+     * @see DataReplicationMode
+     */
+
+    public void setDataReplicationMode(String dataReplicationMode) {
+        this.dataReplicationMode = dataReplicationMode;
+    }
+
+    /**
+     * <p>
+     * Describes whether this broker is a part of a data replication pair.
+     * </p>
+     * 
+     * @return Describes whether this broker is a part of a data replication pair.
+     * @see DataReplicationMode
+     */
+
+    public String getDataReplicationMode() {
+        return this.dataReplicationMode;
+    }
+
+    /**
+     * <p>
+     * Describes whether this broker is a part of a data replication pair.
+     * </p>
+     * 
+     * @param dataReplicationMode
+     *        Describes whether this broker is a part of a data replication pair.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DataReplicationMode
+     */
+
+    public DescribeBrokerResult withDataReplicationMode(String dataReplicationMode) {
+        setDataReplicationMode(dataReplicationMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes whether this broker is a part of a data replication pair.
+     * </p>
+     * 
+     * @param dataReplicationMode
+     *        Describes whether this broker is a part of a data replication pair.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DataReplicationMode
+     */
+
+    public DescribeBrokerResult withDataReplicationMode(DataReplicationMode dataReplicationMode) {
+        this.dataReplicationMode = dataReplicationMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The pending replication details of the data replication-enabled broker. Only returned if
+     * pendingDataReplicationMode is set to CRDR.
+     * </p>
+     * 
+     * @param pendingDataReplicationMetadata
+     *        The pending replication details of the data replication-enabled broker. Only returned if
+     *        pendingDataReplicationMode is set to CRDR.
+     */
+
+    public void setPendingDataReplicationMetadata(DataReplicationMetadataOutput pendingDataReplicationMetadata) {
+        this.pendingDataReplicationMetadata = pendingDataReplicationMetadata;
+    }
+
+    /**
+     * <p>
+     * The pending replication details of the data replication-enabled broker. Only returned if
+     * pendingDataReplicationMode is set to CRDR.
+     * </p>
+     * 
+     * @return The pending replication details of the data replication-enabled broker. Only returned if
+     *         pendingDataReplicationMode is set to CRDR.
+     */
+
+    public DataReplicationMetadataOutput getPendingDataReplicationMetadata() {
+        return this.pendingDataReplicationMetadata;
+    }
+
+    /**
+     * <p>
+     * The pending replication details of the data replication-enabled broker. Only returned if
+     * pendingDataReplicationMode is set to CRDR.
+     * </p>
+     * 
+     * @param pendingDataReplicationMetadata
+     *        The pending replication details of the data replication-enabled broker. Only returned if
+     *        pendingDataReplicationMode is set to CRDR.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBrokerResult withPendingDataReplicationMetadata(DataReplicationMetadataOutput pendingDataReplicationMetadata) {
+        setPendingDataReplicationMetadata(pendingDataReplicationMetadata);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes whether this broker will be a part of a data replication pair after reboot.
+     * </p>
+     * 
+     * @param pendingDataReplicationMode
+     *        Describes whether this broker will be a part of a data replication pair after reboot.
+     * @see DataReplicationMode
+     */
+
+    public void setPendingDataReplicationMode(String pendingDataReplicationMode) {
+        this.pendingDataReplicationMode = pendingDataReplicationMode;
+    }
+
+    /**
+     * <p>
+     * Describes whether this broker will be a part of a data replication pair after reboot.
+     * </p>
+     * 
+     * @return Describes whether this broker will be a part of a data replication pair after reboot.
+     * @see DataReplicationMode
+     */
+
+    public String getPendingDataReplicationMode() {
+        return this.pendingDataReplicationMode;
+    }
+
+    /**
+     * <p>
+     * Describes whether this broker will be a part of a data replication pair after reboot.
+     * </p>
+     * 
+     * @param pendingDataReplicationMode
+     *        Describes whether this broker will be a part of a data replication pair after reboot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DataReplicationMode
+     */
+
+    public DescribeBrokerResult withPendingDataReplicationMode(String pendingDataReplicationMode) {
+        setPendingDataReplicationMode(pendingDataReplicationMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes whether this broker will be a part of a data replication pair after reboot.
+     * </p>
+     * 
+     * @param pendingDataReplicationMode
+     *        Describes whether this broker will be a part of a data replication pair after reboot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DataReplicationMode
+     */
+
+    public DescribeBrokerResult withPendingDataReplicationMode(DataReplicationMode pendingDataReplicationMode) {
+        this.pendingDataReplicationMode = pendingDataReplicationMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1850,7 +2086,15 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getUsers() != null)
-            sb.append("Users: ").append(getUsers());
+            sb.append("Users: ").append(getUsers()).append(",");
+        if (getDataReplicationMetadata() != null)
+            sb.append("DataReplicationMetadata: ").append(getDataReplicationMetadata()).append(",");
+        if (getDataReplicationMode() != null)
+            sb.append("DataReplicationMode: ").append(getDataReplicationMode()).append(",");
+        if (getPendingDataReplicationMetadata() != null)
+            sb.append("PendingDataReplicationMetadata: ").append(getPendingDataReplicationMetadata()).append(",");
+        if (getPendingDataReplicationMode() != null)
+            sb.append("PendingDataReplicationMode: ").append(getPendingDataReplicationMode());
         sb.append("}");
         return sb.toString();
     }
@@ -1982,6 +2226,23 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getUsers() != null && other.getUsers().equals(this.getUsers()) == false)
             return false;
+        if (other.getDataReplicationMetadata() == null ^ this.getDataReplicationMetadata() == null)
+            return false;
+        if (other.getDataReplicationMetadata() != null && other.getDataReplicationMetadata().equals(this.getDataReplicationMetadata()) == false)
+            return false;
+        if (other.getDataReplicationMode() == null ^ this.getDataReplicationMode() == null)
+            return false;
+        if (other.getDataReplicationMode() != null && other.getDataReplicationMode().equals(this.getDataReplicationMode()) == false)
+            return false;
+        if (other.getPendingDataReplicationMetadata() == null ^ this.getPendingDataReplicationMetadata() == null)
+            return false;
+        if (other.getPendingDataReplicationMetadata() != null
+                && other.getPendingDataReplicationMetadata().equals(this.getPendingDataReplicationMetadata()) == false)
+            return false;
+        if (other.getPendingDataReplicationMode() == null ^ this.getPendingDataReplicationMode() == null)
+            return false;
+        if (other.getPendingDataReplicationMode() != null && other.getPendingDataReplicationMode().equals(this.getPendingDataReplicationMode()) == false)
+            return false;
         return true;
     }
 
@@ -2019,6 +2280,10 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getUsers() == null) ? 0 : getUsers().hashCode());
+        hashCode = prime * hashCode + ((getDataReplicationMetadata() == null) ? 0 : getDataReplicationMetadata().hashCode());
+        hashCode = prime * hashCode + ((getDataReplicationMode() == null) ? 0 : getDataReplicationMode().hashCode());
+        hashCode = prime * hashCode + ((getPendingDataReplicationMetadata() == null) ? 0 : getPendingDataReplicationMetadata().hashCode());
+        hashCode = prime * hashCode + ((getPendingDataReplicationMode() == null) ? 0 : getPendingDataReplicationMode().hashCode());
         return hashCode;
     }
 

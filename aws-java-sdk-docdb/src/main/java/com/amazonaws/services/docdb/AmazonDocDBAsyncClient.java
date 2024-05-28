@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,9 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Amazon DocumentDB API documentation
+ * Amazon DocumentDB is a fast, reliable, and fully managed database service. Amazon DocumentDB makes it easy to set up,
+ * operate, and scale MongoDB-compatible databases in the cloud. With Amazon DocumentDB, you can run the same
+ * application code and use the same drivers and tools that you use with MongoDB.
  * </p>
  */
 @ThreadSafe
@@ -1820,6 +1822,39 @@ public class AmazonDocDBAsyncClient extends AmazonDocDBClient implements AmazonD
 
                 try {
                     result = executeStopDBCluster(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GlobalCluster> switchoverGlobalClusterAsync(SwitchoverGlobalClusterRequest request) {
+
+        return switchoverGlobalClusterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GlobalCluster> switchoverGlobalClusterAsync(final SwitchoverGlobalClusterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SwitchoverGlobalClusterRequest, GlobalCluster> asyncHandler) {
+        final SwitchoverGlobalClusterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GlobalCluster>() {
+            @Override
+            public GlobalCluster call() throws Exception {
+                GlobalCluster result = null;
+
+                try {
+                    result = executeSwitchoverGlobalCluster(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

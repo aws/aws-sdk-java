@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class OriginEndpointMarshaller {
             .marshallLocationName("channelId").build();
     private static final MarshallingInfo<StructuredPojo> CMAFPACKAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cmafPackage").build();
+    private static final MarshallingInfo<String> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("createdAt").build();
     private static final MarshallingInfo<StructuredPojo> DASHPACKAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dashPackage").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -82,6 +84,7 @@ public class OriginEndpointMarshaller {
             protocolMarshaller.marshall(originEndpoint.getAuthorization(), AUTHORIZATION_BINDING);
             protocolMarshaller.marshall(originEndpoint.getChannelId(), CHANNELID_BINDING);
             protocolMarshaller.marshall(originEndpoint.getCmafPackage(), CMAFPACKAGE_BINDING);
+            protocolMarshaller.marshall(originEndpoint.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(originEndpoint.getDashPackage(), DASHPACKAGE_BINDING);
             protocolMarshaller.marshall(originEndpoint.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(originEndpoint.getHlsPackage(), HLSPACKAGE_BINDING);

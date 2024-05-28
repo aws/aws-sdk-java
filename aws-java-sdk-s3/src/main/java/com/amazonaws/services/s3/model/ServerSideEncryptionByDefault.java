@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -97,9 +97,9 @@ public class ServerSideEncryptionByDefault implements Serializable, Cloneable {
      * </ul>
      * <important>
      * <p>
-     * Amazon S3 only supports symmetric KMS keys and not asymmetric KMS keys. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
-     * asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
+     * Amazon S3 only supports symmetric encryption KMS keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric keys in Amazon
+     * Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
      * </p>
      * </important>
      *
@@ -130,9 +130,9 @@ public class ServerSideEncryptionByDefault implements Serializable, Cloneable {
      *         </ul>
      *         <important>
      *         <p>
-     *         Amazon S3 only supports symmetric KMS keys and not asymmetric KMS keys. For more information, see <a
-     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric
-     *         and asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
+     *         Amazon S3 only supports symmetric encryption KMS keys. For more information, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric keys in Amazon
+     *         Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
      *         </p>
      */
     public String getKMSMasterKeyID() {
@@ -169,9 +169,9 @@ public class ServerSideEncryptionByDefault implements Serializable, Cloneable {
      * </ul>
      * <important>
      * <p>
-     * Amazon S3 only supports symmetric KMS keys and not asymmetric KMS keys. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
-     * asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
+     * Amazon S3 only supports symmetric encryption KMS keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric keys in Amazon
+     * Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
      * </p>
      * </important>
      *
@@ -203,9 +203,9 @@ public class ServerSideEncryptionByDefault implements Serializable, Cloneable {
      *        </ul>
      *        <important>
      *        <p>
-     *        Amazon S3 only supports symmetric KMS keys and not asymmetric KMS keys. For more information, see <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric
-     *        and asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
+     *        Amazon S3 only supports symmetric encryption KMS keys. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric keys in Amazon
+     *        Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
      *        </p>
      */
     public void setKMSMasterKeyID(String kmsMasterKeyID) {
@@ -242,9 +242,9 @@ public class ServerSideEncryptionByDefault implements Serializable, Cloneable {
      * </ul>
      * <important>
      * <p>
-     * Amazon S3 only supports symmetric KMS keys and not asymmetric KMS keys. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
-     * asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
+     * Amazon S3 only supports symmetric encryption KMS keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric keys in Amazon
+     * Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
      * </p>
      * </important>
      *
@@ -276,9 +276,9 @@ public class ServerSideEncryptionByDefault implements Serializable, Cloneable {
      *        </ul>
      *        <important>
      *        <p>
-     *        Amazon S3 only supports symmetric KMS keys and not asymmetric KMS keys. For more information, see <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric
-     *        and asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
+     *        Amazon S3 only supports symmetric encryption KMS keys. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric keys in Amazon
+     *        Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,14 +25,14 @@ public class CreateTokenResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An opaque token to access IAM Identity Center resources assigned to a user.
+     * A bearer token to access Amazon Web Services accounts and applications assigned to a user.
      * </p>
      */
     private String accessToken;
     /**
      * <p>
-     * Used to notify the client that the returned token is an access token. The supported type is
-     * <code>BearerToken</code>.
+     * Used to notify the client that the returned token is an access token. The supported token type is
+     * <code>Bearer</code>.
      * </p>
      */
     private String tokenType;
@@ -44,36 +44,36 @@ public class CreateTokenResult extends com.amazonaws.AmazonWebServiceResult<com.
     private Integer expiresIn;
     /**
      * <p>
-     * Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the
-     * features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using
-     * this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
-     * Identity Center OIDC API Reference</a>.
+     * A token that, if present, can be used to refresh a previously issued access token that might have expired.
      * </p>
      * <p>
-     * A token that, if present, can be used to refresh a previously issued access token that might have expired.
+     * For more information about the features and limitations of the current IAM Identity Center OIDC implementation,
+     * see <i>Considerations for Using this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API
+     * Reference</a>.
      * </p>
      */
     private String refreshToken;
     /**
      * <p>
-     * Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the
-     * features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using
-     * this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
-     * Identity Center OIDC API Reference</a>.
+     * The <code>idToken</code> is not implemented or supported. For more information about the features and limitations
+     * of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API
+     * Reference</a>.
      * </p>
      * <p>
-     * The identifier of the user that associated with the access token, if present.
+     * A JSON Web Token (JWT) that identifies who is associated with the issued access token.
      * </p>
      */
     private String idToken;
 
     /**
      * <p>
-     * An opaque token to access IAM Identity Center resources assigned to a user.
+     * A bearer token to access Amazon Web Services accounts and applications assigned to a user.
      * </p>
      * 
      * @param accessToken
-     *        An opaque token to access IAM Identity Center resources assigned to a user.
+     *        A bearer token to access Amazon Web Services accounts and applications assigned to a user.
      */
 
     public void setAccessToken(String accessToken) {
@@ -82,10 +82,10 @@ public class CreateTokenResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An opaque token to access IAM Identity Center resources assigned to a user.
+     * A bearer token to access Amazon Web Services accounts and applications assigned to a user.
      * </p>
      * 
-     * @return An opaque token to access IAM Identity Center resources assigned to a user.
+     * @return A bearer token to access Amazon Web Services accounts and applications assigned to a user.
      */
 
     public String getAccessToken() {
@@ -94,11 +94,11 @@ public class CreateTokenResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An opaque token to access IAM Identity Center resources assigned to a user.
+     * A bearer token to access Amazon Web Services accounts and applications assigned to a user.
      * </p>
      * 
      * @param accessToken
-     *        An opaque token to access IAM Identity Center resources assigned to a user.
+     *        A bearer token to access Amazon Web Services accounts and applications assigned to a user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,13 +109,13 @@ public class CreateTokenResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Used to notify the client that the returned token is an access token. The supported type is
-     * <code>BearerToken</code>.
+     * Used to notify the client that the returned token is an access token. The supported token type is
+     * <code>Bearer</code>.
      * </p>
      * 
      * @param tokenType
-     *        Used to notify the client that the returned token is an access token. The supported type is
-     *        <code>BearerToken</code>.
+     *        Used to notify the client that the returned token is an access token. The supported token type is
+     *        <code>Bearer</code>.
      */
 
     public void setTokenType(String tokenType) {
@@ -124,12 +124,12 @@ public class CreateTokenResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Used to notify the client that the returned token is an access token. The supported type is
-     * <code>BearerToken</code>.
+     * Used to notify the client that the returned token is an access token. The supported token type is
+     * <code>Bearer</code>.
      * </p>
      * 
-     * @return Used to notify the client that the returned token is an access token. The supported type is
-     *         <code>BearerToken</code>.
+     * @return Used to notify the client that the returned token is an access token. The supported token type is
+     *         <code>Bearer</code>.
      */
 
     public String getTokenType() {
@@ -138,13 +138,13 @@ public class CreateTokenResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Used to notify the client that the returned token is an access token. The supported type is
-     * <code>BearerToken</code>.
+     * Used to notify the client that the returned token is an access token. The supported token type is
+     * <code>Bearer</code>.
      * </p>
      * 
      * @param tokenType
-     *        Used to notify the client that the returned token is an access token. The supported type is
-     *        <code>BearerToken</code>.
+     *        Used to notify the client that the returned token is an access token. The supported token type is
+     *        <code>Bearer</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -195,23 +195,23 @@ public class CreateTokenResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the
-     * features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using
-     * this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
-     * Identity Center OIDC API Reference</a>.
+     * A token that, if present, can be used to refresh a previously issued access token that might have expired.
      * </p>
      * <p>
-     * A token that, if present, can be used to refresh a previously issued access token that might have expired.
+     * For more information about the features and limitations of the current IAM Identity Center OIDC implementation,
+     * see <i>Considerations for Using this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API
+     * Reference</a>.
      * </p>
      * 
      * @param refreshToken
-     *        Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information
-     *        about the features and limitations of the current IAM Identity Center OIDC implementation, see
-     *        <i>Considerations for Using this Guide</i> in the <a
-     *        href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center
-     *        OIDC API Reference</a>.</p>
+     *        A token that, if present, can be used to refresh a previously issued access token that might have
+     *        expired.</p>
      *        <p>
-     *        A token that, if present, can be used to refresh a previously issued access token that might have expired.
+     *        For more information about the features and limitations of the current IAM Identity Center OIDC
+     *        implementation, see <i>Considerations for Using this Guide</i> in the <a
+     *        href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center
+     *        OIDC API Reference</a>.
      */
 
     public void setRefreshToken(String refreshToken) {
@@ -220,23 +220,22 @@ public class CreateTokenResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the
-     * features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using
-     * this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
-     * Identity Center OIDC API Reference</a>.
-     * </p>
-     * <p>
      * A token that, if present, can be used to refresh a previously issued access token that might have expired.
      * </p>
+     * <p>
+     * For more information about the features and limitations of the current IAM Identity Center OIDC implementation,
+     * see <i>Considerations for Using this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API
+     * Reference</a>.
+     * </p>
      * 
-     * @return Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information
-     *         about the features and limitations of the current IAM Identity Center OIDC implementation, see
-     *         <i>Considerations for Using this Guide</i> in the <a
-     *         href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center
-     *         OIDC API Reference</a>.</p>
+     * @return A token that, if present, can be used to refresh a previously issued access token that might have
+     *         expired.</p>
      *         <p>
-     *         A token that, if present, can be used to refresh a previously issued access token that might have
-     *         expired.
+     *         For more information about the features and limitations of the current IAM Identity Center OIDC
+     *         implementation, see <i>Considerations for Using this Guide</i> in the <a
+     *         href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center
+     *         OIDC API Reference</a>.
      */
 
     public String getRefreshToken() {
@@ -245,23 +244,23 @@ public class CreateTokenResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the
-     * features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using
-     * this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
-     * Identity Center OIDC API Reference</a>.
+     * A token that, if present, can be used to refresh a previously issued access token that might have expired.
      * </p>
      * <p>
-     * A token that, if present, can be used to refresh a previously issued access token that might have expired.
+     * For more information about the features and limitations of the current IAM Identity Center OIDC implementation,
+     * see <i>Considerations for Using this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API
+     * Reference</a>.
      * </p>
      * 
      * @param refreshToken
-     *        Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information
-     *        about the features and limitations of the current IAM Identity Center OIDC implementation, see
-     *        <i>Considerations for Using this Guide</i> in the <a
-     *        href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center
-     *        OIDC API Reference</a>.</p>
+     *        A token that, if present, can be used to refresh a previously issued access token that might have
+     *        expired.</p>
      *        <p>
-     *        A token that, if present, can be used to refresh a previously issued access token that might have expired.
+     *        For more information about the features and limitations of the current IAM Identity Center OIDC
+     *        implementation, see <i>Considerations for Using this Guide</i> in the <a
+     *        href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center
+     *        OIDC API Reference</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -272,23 +271,23 @@ public class CreateTokenResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the
-     * features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using
-     * this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
-     * Identity Center OIDC API Reference</a>.
+     * The <code>idToken</code> is not implemented or supported. For more information about the features and limitations
+     * of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API
+     * Reference</a>.
      * </p>
      * <p>
-     * The identifier of the user that associated with the access token, if present.
+     * A JSON Web Token (JWT) that identifies who is associated with the issued access token.
      * </p>
      * 
      * @param idToken
-     *        Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about
-     *        the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations
-     *        for Using this Guide</i> in the <a
+     *        The <code>idToken</code> is not implemented or supported. For more information about the features and
+     *        limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this
+     *        Guide</i> in the <a
      *        href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center
      *        OIDC API Reference</a>.</p>
      *        <p>
-     *        The identifier of the user that associated with the access token, if present.
+     *        A JSON Web Token (JWT) that identifies who is associated with the issued access token.
      */
 
     public void setIdToken(String idToken) {
@@ -297,22 +296,22 @@ public class CreateTokenResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the
-     * features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using
-     * this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
-     * Identity Center OIDC API Reference</a>.
+     * The <code>idToken</code> is not implemented or supported. For more information about the features and limitations
+     * of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API
+     * Reference</a>.
      * </p>
      * <p>
-     * The identifier of the user that associated with the access token, if present.
+     * A JSON Web Token (JWT) that identifies who is associated with the issued access token.
      * </p>
      * 
-     * @return Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about
-     *         the features and limitations of the current IAM Identity Center OIDC implementation, see
-     *         <i>Considerations for Using this Guide</i> in the <a
+     * @return The <code>idToken</code> is not implemented or supported. For more information about the features and
+     *         limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this
+     *         Guide</i> in the <a
      *         href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center
      *         OIDC API Reference</a>.</p>
      *         <p>
-     *         The identifier of the user that associated with the access token, if present.
+     *         A JSON Web Token (JWT) that identifies who is associated with the issued access token.
      */
 
     public String getIdToken() {
@@ -321,23 +320,23 @@ public class CreateTokenResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about the
-     * features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using
-     * this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
-     * Identity Center OIDC API Reference</a>.
+     * The <code>idToken</code> is not implemented or supported. For more information about the features and limitations
+     * of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API
+     * Reference</a>.
      * </p>
      * <p>
-     * The identifier of the user that associated with the access token, if present.
+     * A JSON Web Token (JWT) that identifies who is associated with the issued access token.
      * </p>
      * 
      * @param idToken
-     *        Currently, <code>idToken</code> is not yet implemented and is not supported. For more information about
-     *        the features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations
-     *        for Using this Guide</i> in the <a
+     *        The <code>idToken</code> is not implemented or supported. For more information about the features and
+     *        limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using this
+     *        Guide</i> in the <a
      *        href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center
      *        OIDC API Reference</a>.</p>
      *        <p>
-     *        The identifier of the user that associated with the access token, if present.
+     *        A JSON Web Token (JWT) that identifies who is associated with the issued access token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -359,15 +358,15 @@ public class CreateTokenResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccessToken() != null)
-            sb.append("AccessToken: ").append(getAccessToken()).append(",");
+            sb.append("AccessToken: ").append("***Sensitive Data Redacted***").append(",");
         if (getTokenType() != null)
             sb.append("TokenType: ").append(getTokenType()).append(",");
         if (getExpiresIn() != null)
             sb.append("ExpiresIn: ").append(getExpiresIn()).append(",");
         if (getRefreshToken() != null)
-            sb.append("RefreshToken: ").append(getRefreshToken()).append(",");
+            sb.append("RefreshToken: ").append("***Sensitive Data Redacted***").append(",");
         if (getIdToken() != null)
-            sb.append("IdToken: ").append(getIdToken());
+            sb.append("IdToken: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

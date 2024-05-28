@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,12 @@ public class FilterCriterion implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * An enum value representing possible scan properties to match with given scan entries.
      * </p>
+     * <note>
+     * <p>
+     * Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code>
+     * has been deprecated.
+     * </p>
+     * </note>
      */
     private String criterionKey;
     /**
@@ -47,9 +53,19 @@ public class FilterCriterion implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * An enum value representing possible scan properties to match with given scan entries.
      * </p>
+     * <note>
+     * <p>
+     * Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code>
+     * has been deprecated.
+     * </p>
+     * </note>
      * 
      * @param criterionKey
-     *        An enum value representing possible scan properties to match with given scan entries.
+     *        An enum value representing possible scan properties to match with given scan entries.</p> <note>
+     *        <p>
+     *        Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>.
+     *        <code>CLUSTER_NAME</code> has been deprecated.
+     *        </p>
      * @see CriterionKey
      */
 
@@ -61,8 +77,18 @@ public class FilterCriterion implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * An enum value representing possible scan properties to match with given scan entries.
      * </p>
+     * <note>
+     * <p>
+     * Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code>
+     * has been deprecated.
+     * </p>
+     * </note>
      * 
-     * @return An enum value representing possible scan properties to match with given scan entries.
+     * @return An enum value representing possible scan properties to match with given scan entries.</p> <note>
+     *         <p>
+     *         Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>.
+     *         <code>CLUSTER_NAME</code> has been deprecated.
+     *         </p>
      * @see CriterionKey
      */
 
@@ -74,9 +100,19 @@ public class FilterCriterion implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * An enum value representing possible scan properties to match with given scan entries.
      * </p>
+     * <note>
+     * <p>
+     * Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code>
+     * has been deprecated.
+     * </p>
+     * </note>
      * 
      * @param criterionKey
-     *        An enum value representing possible scan properties to match with given scan entries.
+     *        An enum value representing possible scan properties to match with given scan entries.</p> <note>
+     *        <p>
+     *        Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>.
+     *        <code>CLUSTER_NAME</code> has been deprecated.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CriterionKey
      */
@@ -90,9 +126,19 @@ public class FilterCriterion implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * An enum value representing possible scan properties to match with given scan entries.
      * </p>
+     * <note>
+     * <p>
+     * Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code>
+     * has been deprecated.
+     * </p>
+     * </note>
      * 
      * @param criterionKey
-     *        An enum value representing possible scan properties to match with given scan entries.
+     *        An enum value representing possible scan properties to match with given scan entries.</p> <note>
+     *        <p>
+     *        Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>.
+     *        <code>CLUSTER_NAME</code> has been deprecated.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CriterionKey
      */

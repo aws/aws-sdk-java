@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.mediatailor.AWSMediaTailorClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.mediatailor.model.*;
+
 import com.amazonaws.services.mediatailor.model.transform.*;
 
 /**
@@ -135,6 +136,63 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/mediatailor/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/mediatailor/request.handler2s"));
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * Configures Amazon CloudWatch log settings for a channel.
+     * </p>
+     * 
+     * @param configureLogsForChannelRequest
+     * @return Result of the ConfigureLogsForChannel operation returned by the service.
+     * @sample AWSMediaTailor.ConfigureLogsForChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ConfigureLogsForChannel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ConfigureLogsForChannelResult configureLogsForChannel(ConfigureLogsForChannelRequest request) {
+        request = beforeClientExecution(request);
+        return executeConfigureLogsForChannel(request);
+    }
+
+    @SdkInternalApi
+    final ConfigureLogsForChannelResult executeConfigureLogsForChannel(ConfigureLogsForChannelRequest configureLogsForChannelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(configureLogsForChannelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ConfigureLogsForChannelRequest> request = null;
+        Response<ConfigureLogsForChannelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ConfigureLogsForChannelRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(configureLogsForChannelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ConfigureLogsForChannel");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ConfigureLogsForChannelResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ConfigureLogsForChannelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -2402,6 +2460,61 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateLiveSourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateLiveSourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a program within a channel.
+     * </p>
+     * 
+     * @param updateProgramRequest
+     * @return Result of the UpdateProgram operation returned by the service.
+     * @sample AWSMediaTailor.UpdateProgram
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateProgram" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateProgramResult updateProgram(UpdateProgramRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateProgram(request);
+    }
+
+    @SdkInternalApi
+    final UpdateProgramResult executeUpdateProgram(UpdateProgramRequest updateProgramRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateProgramRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateProgramRequest> request = null;
+        Response<UpdateProgramResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateProgramRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateProgramRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaTailor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateProgram");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateProgramResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateProgramResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

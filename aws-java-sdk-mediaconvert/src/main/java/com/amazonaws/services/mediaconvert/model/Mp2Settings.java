@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value MP2.
+ * Required when you set Codec to the value MP2.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Mp2Settings" target="_top">AWS API
  *      Documentation</a>
@@ -29,11 +29,11 @@ public class Mp2Settings implements Serializable, Cloneable, StructuredPojo {
     /** Specify the average bitrate in bits per second. */
     private Integer bitrate;
     /**
-     * Set Channels to specify the number of channels in this output audio track. Choosing Mono in the console will give
-     * you 1 output channel; choosing Stereo will give you 2. In the API, valid values are 1 and 2.
+     * Set Channels to specify the number of channels in this output audio track. Choosing Mono in will give you 1
+     * output channel; choosing Stereo will give you 2. In the API, valid values are 1 and 2.
      */
     private Integer channels;
-    /** Sample rate in hz. */
+    /** Sample rate in Hz. */
     private Integer sampleRate;
 
     /**
@@ -71,12 +71,12 @@ public class Mp2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Set Channels to specify the number of channels in this output audio track. Choosing Mono in the console will give
-     * you 1 output channel; choosing Stereo will give you 2. In the API, valid values are 1 and 2.
+     * Set Channels to specify the number of channels in this output audio track. Choosing Mono in will give you 1
+     * output channel; choosing Stereo will give you 2. In the API, valid values are 1 and 2.
      * 
      * @param channels
-     *        Set Channels to specify the number of channels in this output audio track. Choosing Mono in the console
-     *        will give you 1 output channel; choosing Stereo will give you 2. In the API, valid values are 1 and 2.
+     *        Set Channels to specify the number of channels in this output audio track. Choosing Mono in will give you
+     *        1 output channel; choosing Stereo will give you 2. In the API, valid values are 1 and 2.
      */
 
     public void setChannels(Integer channels) {
@@ -84,11 +84,11 @@ public class Mp2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Set Channels to specify the number of channels in this output audio track. Choosing Mono in the console will give
-     * you 1 output channel; choosing Stereo will give you 2. In the API, valid values are 1 and 2.
+     * Set Channels to specify the number of channels in this output audio track. Choosing Mono in will give you 1
+     * output channel; choosing Stereo will give you 2. In the API, valid values are 1 and 2.
      * 
-     * @return Set Channels to specify the number of channels in this output audio track. Choosing Mono in the console
-     *         will give you 1 output channel; choosing Stereo will give you 2. In the API, valid values are 1 and 2.
+     * @return Set Channels to specify the number of channels in this output audio track. Choosing Mono in will give you
+     *         1 output channel; choosing Stereo will give you 2. In the API, valid values are 1 and 2.
      */
 
     public Integer getChannels() {
@@ -96,12 +96,12 @@ public class Mp2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Set Channels to specify the number of channels in this output audio track. Choosing Mono in the console will give
-     * you 1 output channel; choosing Stereo will give you 2. In the API, valid values are 1 and 2.
+     * Set Channels to specify the number of channels in this output audio track. Choosing Mono in will give you 1
+     * output channel; choosing Stereo will give you 2. In the API, valid values are 1 and 2.
      * 
      * @param channels
-     *        Set Channels to specify the number of channels in this output audio track. Choosing Mono in the console
-     *        will give you 1 output channel; choosing Stereo will give you 2. In the API, valid values are 1 and 2.
+     *        Set Channels to specify the number of channels in this output audio track. Choosing Mono in will give you
+     *        1 output channel; choosing Stereo will give you 2. In the API, valid values are 1 and 2.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,10 +111,10 @@ public class Mp2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Sample rate in hz.
+     * Sample rate in Hz.
      * 
      * @param sampleRate
-     *        Sample rate in hz.
+     *        Sample rate in Hz.
      */
 
     public void setSampleRate(Integer sampleRate) {
@@ -122,9 +122,9 @@ public class Mp2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Sample rate in hz.
+     * Sample rate in Hz.
      * 
-     * @return Sample rate in hz.
+     * @return Sample rate in Hz.
      */
 
     public Integer getSampleRate() {
@@ -132,10 +132,10 @@ public class Mp2Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Sample rate in hz.
+     * Sample rate in Hz.
      * 
      * @param sampleRate
-     *        Sample rate in hz.
+     *        Sample rate in Hz.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

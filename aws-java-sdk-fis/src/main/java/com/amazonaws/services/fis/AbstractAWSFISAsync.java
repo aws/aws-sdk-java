@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,21 @@ public class AbstractAWSFISAsync extends AbstractAWSFIS implements AWSFISAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateTargetAccountConfigurationResult> createTargetAccountConfigurationAsync(
+            CreateTargetAccountConfigurationRequest request) {
+
+        return createTargetAccountConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTargetAccountConfigurationResult> createTargetAccountConfigurationAsync(
+            CreateTargetAccountConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateTargetAccountConfigurationRequest, CreateTargetAccountConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteExperimentTemplateResult> deleteExperimentTemplateAsync(DeleteExperimentTemplateRequest request) {
 
         return deleteExperimentTemplateAsync(request, null);
@@ -48,6 +63,21 @@ public class AbstractAWSFISAsync extends AbstractAWSFIS implements AWSFISAsync {
     @Override
     public java.util.concurrent.Future<DeleteExperimentTemplateResult> deleteExperimentTemplateAsync(DeleteExperimentTemplateRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteExperimentTemplateRequest, DeleteExperimentTemplateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTargetAccountConfigurationResult> deleteTargetAccountConfigurationAsync(
+            DeleteTargetAccountConfigurationRequest request) {
+
+        return deleteTargetAccountConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTargetAccountConfigurationResult> deleteTargetAccountConfigurationAsync(
+            DeleteTargetAccountConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteTargetAccountConfigurationRequest, DeleteTargetAccountConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -79,6 +109,21 @@ public class AbstractAWSFISAsync extends AbstractAWSFIS implements AWSFISAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetExperimentTargetAccountConfigurationResult> getExperimentTargetAccountConfigurationAsync(
+            GetExperimentTargetAccountConfigurationRequest request) {
+
+        return getExperimentTargetAccountConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExperimentTargetAccountConfigurationResult> getExperimentTargetAccountConfigurationAsync(
+            GetExperimentTargetAccountConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetExperimentTargetAccountConfigurationRequest, GetExperimentTargetAccountConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetExperimentTemplateResult> getExperimentTemplateAsync(GetExperimentTemplateRequest request) {
 
         return getExperimentTemplateAsync(request, null);
@@ -87,6 +132,19 @@ public class AbstractAWSFISAsync extends AbstractAWSFIS implements AWSFISAsync {
     @Override
     public java.util.concurrent.Future<GetExperimentTemplateResult> getExperimentTemplateAsync(GetExperimentTemplateRequest request,
             com.amazonaws.handlers.AsyncHandler<GetExperimentTemplateRequest, GetExperimentTemplateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTargetAccountConfigurationResult> getTargetAccountConfigurationAsync(GetTargetAccountConfigurationRequest request) {
+
+        return getTargetAccountConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTargetAccountConfigurationResult> getTargetAccountConfigurationAsync(GetTargetAccountConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetTargetAccountConfigurationRequest, GetTargetAccountConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -113,6 +171,34 @@ public class AbstractAWSFISAsync extends AbstractAWSFIS implements AWSFISAsync {
     @Override
     public java.util.concurrent.Future<ListActionsResult> listActionsAsync(ListActionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListActionsRequest, ListActionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExperimentResolvedTargetsResult> listExperimentResolvedTargetsAsync(ListExperimentResolvedTargetsRequest request) {
+
+        return listExperimentResolvedTargetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExperimentResolvedTargetsResult> listExperimentResolvedTargetsAsync(ListExperimentResolvedTargetsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListExperimentResolvedTargetsRequest, ListExperimentResolvedTargetsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExperimentTargetAccountConfigurationsResult> listExperimentTargetAccountConfigurationsAsync(
+            ListExperimentTargetAccountConfigurationsRequest request) {
+
+        return listExperimentTargetAccountConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExperimentTargetAccountConfigurationsResult> listExperimentTargetAccountConfigurationsAsync(
+            ListExperimentTargetAccountConfigurationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListExperimentTargetAccountConfigurationsRequest, ListExperimentTargetAccountConfigurationsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -152,6 +238,21 @@ public class AbstractAWSFISAsync extends AbstractAWSFIS implements AWSFISAsync {
     @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTargetAccountConfigurationsResult> listTargetAccountConfigurationsAsync(
+            ListTargetAccountConfigurationsRequest request) {
+
+        return listTargetAccountConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTargetAccountConfigurationsResult> listTargetAccountConfigurationsAsync(
+            ListTargetAccountConfigurationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTargetAccountConfigurationsRequest, ListTargetAccountConfigurationsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -230,6 +331,21 @@ public class AbstractAWSFISAsync extends AbstractAWSFIS implements AWSFISAsync {
     @Override
     public java.util.concurrent.Future<UpdateExperimentTemplateResult> updateExperimentTemplateAsync(UpdateExperimentTemplateRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateExperimentTemplateRequest, UpdateExperimentTemplateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTargetAccountConfigurationResult> updateTargetAccountConfigurationAsync(
+            UpdateTargetAccountConfigurationRequest request) {
+
+        return updateTargetAccountConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTargetAccountConfigurationResult> updateTargetAccountConfigurationAsync(
+            UpdateTargetAccountConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateTargetAccountConfigurationRequest, UpdateTargetAccountConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

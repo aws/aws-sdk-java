@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -88,6 +88,12 @@ public class Grant implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<String> grantedOperations;
+    /**
+     * <p>
+     * The options specified for the grant.
+     * </p>
+     */
+    private Options options;
 
     /**
      * <p>
@@ -567,6 +573,46 @@ public class Grant implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The options specified for the grant.
+     * </p>
+     * 
+     * @param options
+     *        The options specified for the grant.
+     */
+
+    public void setOptions(Options options) {
+        this.options = options;
+    }
+
+    /**
+     * <p>
+     * The options specified for the grant.
+     * </p>
+     * 
+     * @return The options specified for the grant.
+     */
+
+    public Options getOptions() {
+        return this.options;
+    }
+
+    /**
+     * <p>
+     * The options specified for the grant.
+     * </p>
+     * 
+     * @param options
+     *        The options specified for the grant.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Grant withOptions(Options options) {
+        setOptions(options);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -597,7 +643,9 @@ public class Grant implements Serializable, Cloneable, StructuredPojo {
         if (getVersion() != null)
             sb.append("Version: ").append(getVersion()).append(",");
         if (getGrantedOperations() != null)
-            sb.append("GrantedOperations: ").append(getGrantedOperations());
+            sb.append("GrantedOperations: ").append(getGrantedOperations()).append(",");
+        if (getOptions() != null)
+            sb.append("Options: ").append(getOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -652,6 +700,10 @@ public class Grant implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getGrantedOperations() != null && other.getGrantedOperations().equals(this.getGrantedOperations()) == false)
             return false;
+        if (other.getOptions() == null ^ this.getOptions() == null)
+            return false;
+        if (other.getOptions() != null && other.getOptions().equals(this.getOptions()) == false)
+            return false;
         return true;
     }
 
@@ -670,6 +722,7 @@ public class Grant implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getGrantedOperations() == null) ? 0 : getGrantedOperations().hashCode());
+        hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode());
         return hashCode;
     }
 

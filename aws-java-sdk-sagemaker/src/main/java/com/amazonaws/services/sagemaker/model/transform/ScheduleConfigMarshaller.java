@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,10 @@ public class ScheduleConfigMarshaller {
 
     private static final MarshallingInfo<String> SCHEDULEEXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScheduleExpression").build();
+    private static final MarshallingInfo<String> DATAANALYSISSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataAnalysisStartTime").build();
+    private static final MarshallingInfo<String> DATAANALYSISENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataAnalysisEndTime").build();
 
     private static final ScheduleConfigMarshaller instance = new ScheduleConfigMarshaller();
 
@@ -47,6 +51,8 @@ public class ScheduleConfigMarshaller {
 
         try {
             protocolMarshaller.marshall(scheduleConfig.getScheduleExpression(), SCHEDULEEXPRESSION_BINDING);
+            protocolMarshaller.marshall(scheduleConfig.getDataAnalysisStartTime(), DATAANALYSISSTARTTIME_BINDING);
+            protocolMarshaller.marshall(scheduleConfig.getDataAnalysisEndTime(), DATAANALYSISENDTIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -98,6 +98,12 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String customerOwnedIpv4Pool;
+    /**
+     * <p>
+     * The failure reason, if any, for a create or delete endpoint operation.
+     * </p>
+     */
+    private FailedReason failedReason;
 
     /**
      * <p>
@@ -608,6 +614,46 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The failure reason, if any, for a create or delete endpoint operation.
+     * </p>
+     * 
+     * @param failedReason
+     *        The failure reason, if any, for a create or delete endpoint operation.
+     */
+
+    public void setFailedReason(FailedReason failedReason) {
+        this.failedReason = failedReason;
+    }
+
+    /**
+     * <p>
+     * The failure reason, if any, for a create or delete endpoint operation.
+     * </p>
+     * 
+     * @return The failure reason, if any, for a create or delete endpoint operation.
+     */
+
+    public FailedReason getFailedReason() {
+        return this.failedReason;
+    }
+
+    /**
+     * <p>
+     * The failure reason, if any, for a create or delete endpoint operation.
+     * </p>
+     * 
+     * @param failedReason
+     *        The failure reason, if any, for a create or delete endpoint operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withFailedReason(FailedReason failedReason) {
+        setFailedReason(failedReason);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -640,7 +686,9 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
         if (getAccessType() != null)
             sb.append("AccessType: ").append(getAccessType()).append(",");
         if (getCustomerOwnedIpv4Pool() != null)
-            sb.append("CustomerOwnedIpv4Pool: ").append(getCustomerOwnedIpv4Pool());
+            sb.append("CustomerOwnedIpv4Pool: ").append(getCustomerOwnedIpv4Pool()).append(",");
+        if (getFailedReason() != null)
+            sb.append("FailedReason: ").append(getFailedReason());
         sb.append("}");
         return sb.toString();
     }
@@ -699,6 +747,10 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCustomerOwnedIpv4Pool() != null && other.getCustomerOwnedIpv4Pool().equals(this.getCustomerOwnedIpv4Pool()) == false)
             return false;
+        if (other.getFailedReason() == null ^ this.getFailedReason() == null)
+            return false;
+        if (other.getFailedReason() != null && other.getFailedReason().equals(this.getFailedReason()) == false)
+            return false;
         return true;
     }
 
@@ -718,6 +770,7 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSecurityGroupId() == null) ? 0 : getSecurityGroupId().hashCode());
         hashCode = prime * hashCode + ((getAccessType() == null) ? 0 : getAccessType().hashCode());
         hashCode = prime * hashCode + ((getCustomerOwnedIpv4Pool() == null) ? 0 : getCustomerOwnedIpv4Pool().hashCode());
+        hashCode = prime * hashCode + ((getFailedReason() == null) ? 0 : getFailedReason().hashCode());
         return hashCode;
     }
 

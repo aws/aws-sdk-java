@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,6 +65,16 @@ public class PostgreSQLSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerSecretId").build();
     private static final MarshallingInfo<Boolean> TRIMSPACEINCHAR_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrimSpaceInChar").build();
+    private static final MarshallingInfo<Boolean> MAPBOOLEANASBOOLEAN_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MapBooleanAsBoolean").build();
+    private static final MarshallingInfo<Boolean> MAPJSONBASCLOB_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MapJsonbAsClob").build();
+    private static final MarshallingInfo<String> MAPLONGVARCHARAS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MapLongVarcharAs").build();
+    private static final MarshallingInfo<String> DATABASEMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatabaseMode").build();
+    private static final MarshallingInfo<String> BABELFISHDATABASENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BabelfishDatabaseName").build();
 
     private static final PostgreSQLSettingsMarshaller instance = new PostgreSQLSettingsMarshaller();
 
@@ -101,6 +111,11 @@ public class PostgreSQLSettingsMarshaller {
             protocolMarshaller.marshall(postgreSQLSettings.getSecretsManagerAccessRoleArn(), SECRETSMANAGERACCESSROLEARN_BINDING);
             protocolMarshaller.marshall(postgreSQLSettings.getSecretsManagerSecretId(), SECRETSMANAGERSECRETID_BINDING);
             protocolMarshaller.marshall(postgreSQLSettings.getTrimSpaceInChar(), TRIMSPACEINCHAR_BINDING);
+            protocolMarshaller.marshall(postgreSQLSettings.getMapBooleanAsBoolean(), MAPBOOLEANASBOOLEAN_BINDING);
+            protocolMarshaller.marshall(postgreSQLSettings.getMapJsonbAsClob(), MAPJSONBASCLOB_BINDING);
+            protocolMarshaller.marshall(postgreSQLSettings.getMapLongVarcharAs(), MAPLONGVARCHARAS_BINDING);
+            protocolMarshaller.marshall(postgreSQLSettings.getDatabaseMode(), DATABASEMODE_BINDING);
+            protocolMarshaller.marshall(postgreSQLSettings.getBabelfishDatabaseName(), BABELFISHDATABASENAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,9 +64,7 @@ public class PutAccountDetailsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the
-     * sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send
-     * in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your
-     * maximum sending rate) is 1.
+     * sandbox, you can only send email to verified identities.
      * </p>
      * <p>
      * If the value is <code>true</code>, then your account has production access. When your account has production
@@ -353,9 +351,7 @@ public class PutAccountDetailsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the
-     * sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send
-     * in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your
-     * maximum sending rate) is 1.
+     * sandbox, you can only send email to verified identities.
      * </p>
      * <p>
      * If the value is <code>true</code>, then your account has production access. When your account has production
@@ -368,9 +364,7 @@ public class PutAccountDetailsRequest extends com.amazonaws.AmazonWebServiceRequ
      *        Region.</p>
      *        <p>
      *        If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in
-     *        the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails
-     *        you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can
-     *        send per second (your maximum sending rate) is 1.
+     *        the sandbox, you can only send email to verified identities.
      *        </p>
      *        <p>
      *        If the value is <code>true</code>, then your account has production access. When your account has
@@ -388,9 +382,7 @@ public class PutAccountDetailsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the
-     * sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send
-     * in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your
-     * maximum sending rate) is 1.
+     * sandbox, you can only send email to verified identities.
      * </p>
      * <p>
      * If the value is <code>true</code>, then your account has production access. When your account has production
@@ -402,9 +394,7 @@ public class PutAccountDetailsRequest extends com.amazonaws.AmazonWebServiceRequ
      *         Region.</p>
      *         <p>
      *         If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in
-     *         the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails
-     *         you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can
-     *         send per second (your maximum sending rate) is 1.
+     *         the sandbox, you can only send email to verified identities.
      *         </p>
      *         <p>
      *         If the value is <code>true</code>, then your account has production access. When your account has
@@ -422,9 +412,7 @@ public class PutAccountDetailsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the
-     * sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send
-     * in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your
-     * maximum sending rate) is 1.
+     * sandbox, you can only send email to verified identities.
      * </p>
      * <p>
      * If the value is <code>true</code>, then your account has production access. When your account has production
@@ -437,9 +425,7 @@ public class PutAccountDetailsRequest extends com.amazonaws.AmazonWebServiceRequ
      *        Region.</p>
      *        <p>
      *        If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in
-     *        the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails
-     *        you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can
-     *        send per second (your maximum sending rate) is 1.
+     *        the sandbox, you can only send email to verified identities.
      *        </p>
      *        <p>
      *        If the value is <code>true</code>, then your account has production access. When your account has
@@ -459,9 +445,7 @@ public class PutAccountDetailsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in the
-     * sandbox, you can only send email to verified identities. Additionally, the maximum number of emails you can send
-     * in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can send per second (your
-     * maximum sending rate) is 1.
+     * sandbox, you can only send email to verified identities.
      * </p>
      * <p>
      * If the value is <code>true</code>, then your account has production access. When your account has production
@@ -473,9 +457,7 @@ public class PutAccountDetailsRequest extends com.amazonaws.AmazonWebServiceRequ
      *         Region.</p>
      *         <p>
      *         If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When your account is in
-     *         the sandbox, you can only send email to verified identities. Additionally, the maximum number of emails
-     *         you can send in a 24-hour period (your sending quota) is 200, and the maximum number of emails you can
-     *         send per second (your maximum sending rate) is 1.
+     *         the sandbox, you can only send email to verified identities.
      *         </p>
      *         <p>
      *         If the value is <code>true</code>, then your account has production access. When your account has

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,10 @@ public class TargetAddressMarshaller {
             .marshallLocationName("Ip").build();
     private static final MarshallingInfo<Integer> PORT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Port").build();
+    private static final MarshallingInfo<String> IPV6_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Ipv6").build();
+    private static final MarshallingInfo<String> PROTOCOL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Protocol").build();
 
     private static final TargetAddressMarshaller instance = new TargetAddressMarshaller();
 
@@ -50,6 +54,8 @@ public class TargetAddressMarshaller {
         try {
             protocolMarshaller.marshall(targetAddress.getIp(), IP_BINDING);
             protocolMarshaller.marshall(targetAddress.getPort(), PORT_BINDING);
+            protocolMarshaller.marshall(targetAddress.getIpv6(), IPV6_BINDING);
+            protocolMarshaller.marshall(targetAddress.getProtocol(), PROTOCOL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

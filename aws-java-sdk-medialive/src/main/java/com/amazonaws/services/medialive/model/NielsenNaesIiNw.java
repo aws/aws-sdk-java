@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,11 @@ public class NielsenNaesIiNw implements Serializable, Cloneable, StructuredPojo 
     private String checkDigitString;
     /** Enter the Nielsen Source ID (SID) to include in the watermark */
     private Double sid;
+    /**
+     * Choose the timezone for the time stamps in the watermark. If not provided, the timestamps will be in Coordinated
+     * Universal Time (UTC)
+     */
+    private String timezone;
 
     /**
      * Enter the check digit string for the watermark
@@ -100,6 +105,65 @@ public class NielsenNaesIiNw implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * Choose the timezone for the time stamps in the watermark. If not provided, the timestamps will be in Coordinated
+     * Universal Time (UTC)
+     * 
+     * @param timezone
+     *        Choose the timezone for the time stamps in the watermark. If not provided, the timestamps will be in
+     *        Coordinated Universal Time (UTC)
+     * @see NielsenWatermarkTimezones
+     */
+
+    public void setTimezone(String timezone) {
+        this.timezone = timezone;
+    }
+
+    /**
+     * Choose the timezone for the time stamps in the watermark. If not provided, the timestamps will be in Coordinated
+     * Universal Time (UTC)
+     * 
+     * @return Choose the timezone for the time stamps in the watermark. If not provided, the timestamps will be in
+     *         Coordinated Universal Time (UTC)
+     * @see NielsenWatermarkTimezones
+     */
+
+    public String getTimezone() {
+        return this.timezone;
+    }
+
+    /**
+     * Choose the timezone for the time stamps in the watermark. If not provided, the timestamps will be in Coordinated
+     * Universal Time (UTC)
+     * 
+     * @param timezone
+     *        Choose the timezone for the time stamps in the watermark. If not provided, the timestamps will be in
+     *        Coordinated Universal Time (UTC)
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see NielsenWatermarkTimezones
+     */
+
+    public NielsenNaesIiNw withTimezone(String timezone) {
+        setTimezone(timezone);
+        return this;
+    }
+
+    /**
+     * Choose the timezone for the time stamps in the watermark. If not provided, the timestamps will be in Coordinated
+     * Universal Time (UTC)
+     * 
+     * @param timezone
+     *        Choose the timezone for the time stamps in the watermark. If not provided, the timestamps will be in
+     *        Coordinated Universal Time (UTC)
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see NielsenWatermarkTimezones
+     */
+
+    public NielsenNaesIiNw withTimezone(NielsenWatermarkTimezones timezone) {
+        this.timezone = timezone.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -114,7 +178,9 @@ public class NielsenNaesIiNw implements Serializable, Cloneable, StructuredPojo 
         if (getCheckDigitString() != null)
             sb.append("CheckDigitString: ").append(getCheckDigitString()).append(",");
         if (getSid() != null)
-            sb.append("Sid: ").append(getSid());
+            sb.append("Sid: ").append(getSid()).append(",");
+        if (getTimezone() != null)
+            sb.append("Timezone: ").append(getTimezone());
         sb.append("}");
         return sb.toString();
     }
@@ -137,6 +203,10 @@ public class NielsenNaesIiNw implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getSid() != null && other.getSid().equals(this.getSid()) == false)
             return false;
+        if (other.getTimezone() == null ^ this.getTimezone() == null)
+            return false;
+        if (other.getTimezone() != null && other.getTimezone().equals(this.getTimezone()) == false)
+            return false;
         return true;
     }
 
@@ -147,6 +217,7 @@ public class NielsenNaesIiNw implements Serializable, Cloneable, StructuredPojo 
 
         hashCode = prime * hashCode + ((getCheckDigitString() == null) ? 0 : getCheckDigitString().hashCode());
         hashCode = prime * hashCode + ((getSid() == null) ? 0 : getSid().hashCode());
+        hashCode = prime * hashCode + ((getTimezone() == null) ? 0 : getTimezone().hashCode());
         return hashCode;
     }
 

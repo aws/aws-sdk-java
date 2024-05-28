@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -125,7 +125,8 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     private Boolean agentConnected;
     /**
      * <p>
-     * The number of tasks on the container instance that are in the <code>RUNNING</code> status.
+     * The number of tasks on the container instance that have a desired status (<code>desiredStatus</code>) of
+     * <code>RUNNING</code>.
      * </p>
      */
     private Integer runningTasksCount;
@@ -935,11 +936,13 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The number of tasks on the container instance that are in the <code>RUNNING</code> status.
+     * The number of tasks on the container instance that have a desired status (<code>desiredStatus</code>) of
+     * <code>RUNNING</code>.
      * </p>
      * 
      * @param runningTasksCount
-     *        The number of tasks on the container instance that are in the <code>RUNNING</code> status.
+     *        The number of tasks on the container instance that have a desired status (<code>desiredStatus</code>) of
+     *        <code>RUNNING</code>.
      */
 
     public void setRunningTasksCount(Integer runningTasksCount) {
@@ -948,10 +951,12 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The number of tasks on the container instance that are in the <code>RUNNING</code> status.
+     * The number of tasks on the container instance that have a desired status (<code>desiredStatus</code>) of
+     * <code>RUNNING</code>.
      * </p>
      * 
-     * @return The number of tasks on the container instance that are in the <code>RUNNING</code> status.
+     * @return The number of tasks on the container instance that have a desired status (<code>desiredStatus</code>) of
+     *         <code>RUNNING</code>.
      */
 
     public Integer getRunningTasksCount() {
@@ -960,11 +965,13 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The number of tasks on the container instance that are in the <code>RUNNING</code> status.
+     * The number of tasks on the container instance that have a desired status (<code>desiredStatus</code>) of
+     * <code>RUNNING</code>.
      * </p>
      * 
      * @param runningTasksCount
-     *        The number of tasks on the container instance that are in the <code>RUNNING</code> status.
+     *        The number of tasks on the container instance that have a desired status (<code>desiredStatus</code>) of
+     *        <code>RUNNING</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

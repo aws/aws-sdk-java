@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     private String nodegroupArn;
     /**
      * <p>
-     * The name of the cluster that the managed node group resides in.
+     * The name of your cluster.
      * </p>
      */
     private String clusterName;
@@ -62,13 +62,13 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     private String releaseVersion;
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the managed node group was created.
+     * The Unix epoch timestamp at object creation.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the managed node group was last modified.
+     * The Unix epoch timestamp for the last modification to the object.
      * </p>
      */
     private java.util.Date modifiedAt;
@@ -129,12 +129,12 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     private String nodeRole;
     /**
      * <p>
-     * The Kubernetes labels applied to the nodes in the node group.
+     * The Kubernetes <code>labels</code> applied to the nodes in the node group.
      * </p>
      * <note>
      * <p>
-     * Only labels that are applied with the Amazon EKS API are shown here. There may be other Kubernetes labels applied
-     * to the nodes in this group.
+     * Only <code>labels</code> that are applied with the Amazon EKS API are shown here. There may be other Kubernetes
+     * <code>labels</code> applied to the nodes in this group.
      * </p>
      * </note>
      */
@@ -182,9 +182,8 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     private LaunchTemplateSpecification launchTemplate;
     /**
      * <p>
-     * The metadata applied to the node group to assist with categorization and organization. Each tag consists of a key
-     * and an optional value. You define both. Node group tags do not propagate to any other resources associated with
-     * the node group, such as the Amazon EC2 instances or subnets.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -271,11 +270,11 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the cluster that the managed node group resides in.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The name of the cluster that the managed node group resides in.
+     *        The name of your cluster.
      */
 
     public void setClusterName(String clusterName) {
@@ -284,10 +283,10 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the cluster that the managed node group resides in.
+     * The name of your cluster.
      * </p>
      * 
-     * @return The name of the cluster that the managed node group resides in.
+     * @return The name of your cluster.
      */
 
     public String getClusterName() {
@@ -296,11 +295,11 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the cluster that the managed node group resides in.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The name of the cluster that the managed node group resides in.
+     *        The name of your cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -403,11 +402,11 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the managed node group was created.
+     * The Unix epoch timestamp at object creation.
      * </p>
      * 
      * @param createdAt
-     *        The Unix epoch timestamp in seconds for when the managed node group was created.
+     *        The Unix epoch timestamp at object creation.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -416,10 +415,10 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the managed node group was created.
+     * The Unix epoch timestamp at object creation.
      * </p>
      * 
-     * @return The Unix epoch timestamp in seconds for when the managed node group was created.
+     * @return The Unix epoch timestamp at object creation.
      */
 
     public java.util.Date getCreatedAt() {
@@ -428,11 +427,11 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the managed node group was created.
+     * The Unix epoch timestamp at object creation.
      * </p>
      * 
      * @param createdAt
-     *        The Unix epoch timestamp in seconds for when the managed node group was created.
+     *        The Unix epoch timestamp at object creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -443,11 +442,11 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the managed node group was last modified.
+     * The Unix epoch timestamp for the last modification to the object.
      * </p>
      * 
      * @param modifiedAt
-     *        The Unix epoch timestamp in seconds for when the managed node group was last modified.
+     *        The Unix epoch timestamp for the last modification to the object.
      */
 
     public void setModifiedAt(java.util.Date modifiedAt) {
@@ -456,10 +455,10 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the managed node group was last modified.
+     * The Unix epoch timestamp for the last modification to the object.
      * </p>
      * 
-     * @return The Unix epoch timestamp in seconds for when the managed node group was last modified.
+     * @return The Unix epoch timestamp for the last modification to the object.
      */
 
     public java.util.Date getModifiedAt() {
@@ -468,11 +467,11 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the managed node group was last modified.
+     * The Unix epoch timestamp for the last modification to the object.
      * </p>
      * 
      * @param modifiedAt
-     *        The Unix epoch timestamp in seconds for when the managed node group was last modified.
+     *        The Unix epoch timestamp for the last modification to the object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -972,19 +971,19 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Kubernetes labels applied to the nodes in the node group.
+     * The Kubernetes <code>labels</code> applied to the nodes in the node group.
      * </p>
      * <note>
      * <p>
-     * Only labels that are applied with the Amazon EKS API are shown here. There may be other Kubernetes labels applied
-     * to the nodes in this group.
+     * Only <code>labels</code> that are applied with the Amazon EKS API are shown here. There may be other Kubernetes
+     * <code>labels</code> applied to the nodes in this group.
      * </p>
      * </note>
      * 
-     * @return The Kubernetes labels applied to the nodes in the node group.</p> <note>
+     * @return The Kubernetes <code>labels</code> applied to the nodes in the node group.</p> <note>
      *         <p>
-     *         Only labels that are applied with the Amazon EKS API are shown here. There may be other Kubernetes labels
-     *         applied to the nodes in this group.
+     *         Only <code>labels</code> that are applied with the Amazon EKS API are shown here. There may be other
+     *         Kubernetes <code>labels</code> applied to the nodes in this group.
      *         </p>
      */
 
@@ -994,20 +993,20 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Kubernetes labels applied to the nodes in the node group.
+     * The Kubernetes <code>labels</code> applied to the nodes in the node group.
      * </p>
      * <note>
      * <p>
-     * Only labels that are applied with the Amazon EKS API are shown here. There may be other Kubernetes labels applied
-     * to the nodes in this group.
+     * Only <code>labels</code> that are applied with the Amazon EKS API are shown here. There may be other Kubernetes
+     * <code>labels</code> applied to the nodes in this group.
      * </p>
      * </note>
      * 
      * @param labels
-     *        The Kubernetes labels applied to the nodes in the node group.</p> <note>
+     *        The Kubernetes <code>labels</code> applied to the nodes in the node group.</p> <note>
      *        <p>
-     *        Only labels that are applied with the Amazon EKS API are shown here. There may be other Kubernetes labels
-     *        applied to the nodes in this group.
+     *        Only <code>labels</code> that are applied with the Amazon EKS API are shown here. There may be other
+     *        Kubernetes <code>labels</code> applied to the nodes in this group.
      *        </p>
      */
 
@@ -1017,20 +1016,20 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Kubernetes labels applied to the nodes in the node group.
+     * The Kubernetes <code>labels</code> applied to the nodes in the node group.
      * </p>
      * <note>
      * <p>
-     * Only labels that are applied with the Amazon EKS API are shown here. There may be other Kubernetes labels applied
-     * to the nodes in this group.
+     * Only <code>labels</code> that are applied with the Amazon EKS API are shown here. There may be other Kubernetes
+     * <code>labels</code> applied to the nodes in this group.
      * </p>
      * </note>
      * 
      * @param labels
-     *        The Kubernetes labels applied to the nodes in the node group.</p> <note>
+     *        The Kubernetes <code>labels</code> applied to the nodes in the node group.</p> <note>
      *        <p>
-     *        Only labels that are applied with the Amazon EKS API are shown here. There may be other Kubernetes labels
-     *        applied to the nodes in this group.
+     *        Only <code>labels</code> that are applied with the Amazon EKS API are shown here. There may be other
+     *        Kubernetes <code>labels</code> applied to the nodes in this group.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1388,14 +1387,12 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The metadata applied to the node group to assist with categorization and organization. Each tag consists of a key
-     * and an optional value. You define both. Node group tags do not propagate to any other resources associated with
-     * the node group, such as the Amazon EC2 instances or subnets.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * 
-     * @return The metadata applied to the node group to assist with categorization and organization. Each tag consists
-     *         of a key and an optional value. You define both. Node group tags do not propagate to any other resources
-     *         associated with the node group, such as the Amazon EC2 instances or subnets.
+     * @return Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *         value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -1404,15 +1401,13 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The metadata applied to the node group to assist with categorization and organization. Each tag consists of a key
-     * and an optional value. You define both. Node group tags do not propagate to any other resources associated with
-     * the node group, such as the Amazon EC2 instances or subnets.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * 
      * @param tags
-     *        The metadata applied to the node group to assist with categorization and organization. Each tag consists
-     *        of a key and an optional value. You define both. Node group tags do not propagate to any other resources
-     *        associated with the node group, such as the Amazon EC2 instances or subnets.
+     *        Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *        value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -1421,15 +1416,13 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The metadata applied to the node group to assist with categorization and organization. Each tag consists of a key
-     * and an optional value. You define both. Node group tags do not propagate to any other resources associated with
-     * the node group, such as the Amazon EC2 instances or subnets.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * 
      * @param tags
-     *        The metadata applied to the node group to assist with categorization and organization. Each tag consists
-     *        of a key and an optional value. You define both. Node group tags do not propagate to any other resources
-     *        associated with the node group, such as the Amazon EC2 instances or subnets.
+     *        Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *        value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

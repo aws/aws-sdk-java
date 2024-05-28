@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,13 +45,13 @@ public class DescribeSavingsPlansOfferingsRequest extends com.amazonaws.AmazonWe
     private String productType;
     /**
      * <p>
-     * The plan type.
+     * The plan types.
      * </p>
      */
     private java.util.List<String> planTypes;
     /**
      * <p>
-     * The durations, in seconds.
+     * The duration, in seconds.
      * </p>
      */
     private java.util.List<Long> durations;
@@ -81,7 +81,7 @@ public class DescribeSavingsPlansOfferingsRequest extends com.amazonaws.AmazonWe
     private java.util.List<String> usageTypes;
     /**
      * <p>
-     * The specific AWS operation for the line item in the billing report.
+     * The specific Amazon Web Services operation for the line item in the billing report.
      * </p>
      */
     private java.util.List<String> operations;
@@ -334,10 +334,10 @@ public class DescribeSavingsPlansOfferingsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The plan type.
+     * The plan types.
      * </p>
      * 
-     * @return The plan type.
+     * @return The plan types.
      * @see SavingsPlanType
      */
 
@@ -347,11 +347,11 @@ public class DescribeSavingsPlansOfferingsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The plan type.
+     * The plan types.
      * </p>
      * 
      * @param planTypes
-     *        The plan type.
+     *        The plan types.
      * @see SavingsPlanType
      */
 
@@ -366,7 +366,7 @@ public class DescribeSavingsPlansOfferingsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The plan type.
+     * The plan types.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -375,7 +375,7 @@ public class DescribeSavingsPlansOfferingsRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param planTypes
-     *        The plan type.
+     *        The plan types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SavingsPlanType
      */
@@ -392,11 +392,11 @@ public class DescribeSavingsPlansOfferingsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The plan type.
+     * The plan types.
      * </p>
      * 
      * @param planTypes
-     *        The plan type.
+     *        The plan types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SavingsPlanType
      */
@@ -408,11 +408,11 @@ public class DescribeSavingsPlansOfferingsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The plan type.
+     * The plan types.
      * </p>
      * 
      * @param planTypes
-     *        The plan type.
+     *        The plan types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SavingsPlanType
      */
@@ -432,10 +432,10 @@ public class DescribeSavingsPlansOfferingsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The durations, in seconds.
+     * The duration, in seconds.
      * </p>
      * 
-     * @return The durations, in seconds.
+     * @return The duration, in seconds.
      */
 
     public java.util.List<Long> getDurations() {
@@ -444,11 +444,11 @@ public class DescribeSavingsPlansOfferingsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The durations, in seconds.
+     * The duration, in seconds.
      * </p>
      * 
      * @param durations
-     *        The durations, in seconds.
+     *        The duration, in seconds.
      */
 
     public void setDurations(java.util.Collection<Long> durations) {
@@ -462,7 +462,7 @@ public class DescribeSavingsPlansOfferingsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The durations, in seconds.
+     * The duration, in seconds.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -471,7 +471,7 @@ public class DescribeSavingsPlansOfferingsRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param durations
-     *        The durations, in seconds.
+     *        The duration, in seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -487,11 +487,11 @@ public class DescribeSavingsPlansOfferingsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The durations, in seconds.
+     * The duration, in seconds.
      * </p>
      * 
      * @param durations
-     *        The durations, in seconds.
+     *        The duration, in seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -810,10 +810,10 @@ public class DescribeSavingsPlansOfferingsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The specific AWS operation for the line item in the billing report.
+     * The specific Amazon Web Services operation for the line item in the billing report.
      * </p>
      * 
-     * @return The specific AWS operation for the line item in the billing report.
+     * @return The specific Amazon Web Services operation for the line item in the billing report.
      */
 
     public java.util.List<String> getOperations() {
@@ -822,11 +822,11 @@ public class DescribeSavingsPlansOfferingsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The specific AWS operation for the line item in the billing report.
+     * The specific Amazon Web Services operation for the line item in the billing report.
      * </p>
      * 
      * @param operations
-     *        The specific AWS operation for the line item in the billing report.
+     *        The specific Amazon Web Services operation for the line item in the billing report.
      */
 
     public void setOperations(java.util.Collection<String> operations) {
@@ -840,7 +840,7 @@ public class DescribeSavingsPlansOfferingsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The specific AWS operation for the line item in the billing report.
+     * The specific Amazon Web Services operation for the line item in the billing report.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -849,7 +849,7 @@ public class DescribeSavingsPlansOfferingsRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param operations
-     *        The specific AWS operation for the line item in the billing report.
+     *        The specific Amazon Web Services operation for the line item in the billing report.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -865,11 +865,11 @@ public class DescribeSavingsPlansOfferingsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The specific AWS operation for the line item in the billing report.
+     * The specific Amazon Web Services operation for the line item in the billing report.
      * </p>
      * 
      * @param operations
-     *        The specific AWS operation for the line item in the billing report.
+     *        The specific Amazon Web Services operation for the line item in the billing report.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

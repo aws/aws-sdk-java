@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,6 +24,12 @@ public class DeleteFacesResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private java.util.List<String> deletedFaces;
+    /**
+     * <p>
+     * An array of any faces that weren't deleted.
+     * </p>
+     */
+    private java.util.List<UnsuccessfulFaceDeletion> unsuccessfulFaceDeletions;
 
     /**
      * <p>
@@ -96,6 +102,76 @@ public class DeleteFacesResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * An array of any faces that weren't deleted.
+     * </p>
+     * 
+     * @return An array of any faces that weren't deleted.
+     */
+
+    public java.util.List<UnsuccessfulFaceDeletion> getUnsuccessfulFaceDeletions() {
+        return unsuccessfulFaceDeletions;
+    }
+
+    /**
+     * <p>
+     * An array of any faces that weren't deleted.
+     * </p>
+     * 
+     * @param unsuccessfulFaceDeletions
+     *        An array of any faces that weren't deleted.
+     */
+
+    public void setUnsuccessfulFaceDeletions(java.util.Collection<UnsuccessfulFaceDeletion> unsuccessfulFaceDeletions) {
+        if (unsuccessfulFaceDeletions == null) {
+            this.unsuccessfulFaceDeletions = null;
+            return;
+        }
+
+        this.unsuccessfulFaceDeletions = new java.util.ArrayList<UnsuccessfulFaceDeletion>(unsuccessfulFaceDeletions);
+    }
+
+    /**
+     * <p>
+     * An array of any faces that weren't deleted.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUnsuccessfulFaceDeletions(java.util.Collection)} or
+     * {@link #withUnsuccessfulFaceDeletions(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param unsuccessfulFaceDeletions
+     *        An array of any faces that weren't deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteFacesResult withUnsuccessfulFaceDeletions(UnsuccessfulFaceDeletion... unsuccessfulFaceDeletions) {
+        if (this.unsuccessfulFaceDeletions == null) {
+            setUnsuccessfulFaceDeletions(new java.util.ArrayList<UnsuccessfulFaceDeletion>(unsuccessfulFaceDeletions.length));
+        }
+        for (UnsuccessfulFaceDeletion ele : unsuccessfulFaceDeletions) {
+            this.unsuccessfulFaceDeletions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of any faces that weren't deleted.
+     * </p>
+     * 
+     * @param unsuccessfulFaceDeletions
+     *        An array of any faces that weren't deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteFacesResult withUnsuccessfulFaceDeletions(java.util.Collection<UnsuccessfulFaceDeletion> unsuccessfulFaceDeletions) {
+        setUnsuccessfulFaceDeletions(unsuccessfulFaceDeletions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -108,7 +184,9 @@ public class DeleteFacesResult extends com.amazonaws.AmazonWebServiceResult<com.
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDeletedFaces() != null)
-            sb.append("DeletedFaces: ").append(getDeletedFaces());
+            sb.append("DeletedFaces: ").append(getDeletedFaces()).append(",");
+        if (getUnsuccessfulFaceDeletions() != null)
+            sb.append("UnsuccessfulFaceDeletions: ").append(getUnsuccessfulFaceDeletions());
         sb.append("}");
         return sb.toString();
     }
@@ -127,6 +205,10 @@ public class DeleteFacesResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getDeletedFaces() != null && other.getDeletedFaces().equals(this.getDeletedFaces()) == false)
             return false;
+        if (other.getUnsuccessfulFaceDeletions() == null ^ this.getUnsuccessfulFaceDeletions() == null)
+            return false;
+        if (other.getUnsuccessfulFaceDeletions() != null && other.getUnsuccessfulFaceDeletions().equals(this.getUnsuccessfulFaceDeletions()) == false)
+            return false;
         return true;
     }
 
@@ -136,6 +218,7 @@ public class DeleteFacesResult extends com.amazonaws.AmazonWebServiceResult<com.
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDeletedFaces() == null) ? 0 : getDeletedFaces().hashCode());
+        hashCode = prime * hashCode + ((getUnsuccessfulFaceDeletions() == null) ? 0 : getUnsuccessfulFaceDeletions().hashCode());
         return hashCode;
     }
 

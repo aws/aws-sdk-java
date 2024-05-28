@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -135,7 +135,7 @@ import java.util.concurrent.ExecutorService;
  * </p>
  * <note>
  * <p>
- * We replaced the term "master account" with the term "administrator account." An administrator account is used to
+ * We replaced the term "master account" with the term "administrator account". An administrator account is used to
  * centrally manage multiple accounts. In the case of Detective, the administrator account manages the accounts in their
  * behavior graph.
  * </p>
@@ -558,6 +558,39 @@ public class AmazonDetectiveAsyncClient extends AmazonDetectiveClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetInvestigationResult> getInvestigationAsync(GetInvestigationRequest request) {
+
+        return getInvestigationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInvestigationResult> getInvestigationAsync(final GetInvestigationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetInvestigationRequest, GetInvestigationResult> asyncHandler) {
+        final GetInvestigationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetInvestigationResult>() {
+            @Override
+            public GetInvestigationResult call() throws Exception {
+                GetInvestigationResult result = null;
+
+                try {
+                    result = executeGetInvestigation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetMembersResult> getMembersAsync(GetMembersRequest request) {
 
         return getMembersAsync(request, null);
@@ -641,6 +674,72 @@ public class AmazonDetectiveAsyncClient extends AmazonDetectiveClient implements
 
                 try {
                     result = executeListGraphs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListIndicatorsResult> listIndicatorsAsync(ListIndicatorsRequest request) {
+
+        return listIndicatorsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListIndicatorsResult> listIndicatorsAsync(final ListIndicatorsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListIndicatorsRequest, ListIndicatorsResult> asyncHandler) {
+        final ListIndicatorsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListIndicatorsResult>() {
+            @Override
+            public ListIndicatorsResult call() throws Exception {
+                ListIndicatorsResult result = null;
+
+                try {
+                    result = executeListIndicators(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInvestigationsResult> listInvestigationsAsync(ListInvestigationsRequest request) {
+
+        return listInvestigationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInvestigationsResult> listInvestigationsAsync(final ListInvestigationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListInvestigationsRequest, ListInvestigationsResult> asyncHandler) {
+        final ListInvestigationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListInvestigationsResult>() {
+            @Override
+            public ListInvestigationsResult call() throws Exception {
+                ListInvestigationsResult result = null;
+
+                try {
+                    result = executeListInvestigations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -823,6 +922,39 @@ public class AmazonDetectiveAsyncClient extends AmazonDetectiveClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<StartInvestigationResult> startInvestigationAsync(StartInvestigationRequest request) {
+
+        return startInvestigationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartInvestigationResult> startInvestigationAsync(final StartInvestigationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartInvestigationRequest, StartInvestigationResult> asyncHandler) {
+        final StartInvestigationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartInvestigationResult>() {
+            @Override
+            public StartInvestigationResult call() throws Exception {
+                StartInvestigationResult result = null;
+
+                try {
+                    result = executeStartInvestigation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartMonitoringMemberResult> startMonitoringMemberAsync(StartMonitoringMemberRequest request) {
 
         return startMonitoringMemberAsync(request, null);
@@ -939,6 +1071,39 @@ public class AmazonDetectiveAsyncClient extends AmazonDetectiveClient implements
 
                 try {
                     result = executeUpdateDatasourcePackages(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInvestigationStateResult> updateInvestigationStateAsync(UpdateInvestigationStateRequest request) {
+
+        return updateInvestigationStateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInvestigationStateResult> updateInvestigationStateAsync(final UpdateInvestigationStateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateInvestigationStateRequest, UpdateInvestigationStateResult> asyncHandler) {
+        final UpdateInvestigationStateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateInvestigationStateResult>() {
+            @Override
+            public UpdateInvestigationStateResult call() throws Exception {
+                UpdateInvestigationStateResult result = null;
+
+                try {
+                    result = executeUpdateInvestigationState(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

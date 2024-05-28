@@ -1,0 +1,268 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.applicationdiscovery.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * An object representing the agent or data collector that failed to delete, each containing agentId, errorMessage, and
+ * errorCode.
+ * </p>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class BatchDeleteAgentError implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * The ID of the agent or data collector to delete.
+     * </p>
+     */
+    private String agentId;
+    /**
+     * <p>
+     * The description of the error that occurred for the delete failed agent.
+     * </p>
+     */
+    private String errorMessage;
+    /**
+     * <p>
+     * The type of error that occurred for the delete failed agent. Valid status are: AGENT_IN_USE | NOT_FOUND |
+     * INTERNAL_SERVER_ERROR.
+     * </p>
+     */
+    private String errorCode;
+
+    /**
+     * <p>
+     * The ID of the agent or data collector to delete.
+     * </p>
+     * 
+     * @param agentId
+     *        The ID of the agent or data collector to delete.
+     */
+
+    public void setAgentId(String agentId) {
+        this.agentId = agentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the agent or data collector to delete.
+     * </p>
+     * 
+     * @return The ID of the agent or data collector to delete.
+     */
+
+    public String getAgentId() {
+        return this.agentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the agent or data collector to delete.
+     * </p>
+     * 
+     * @param agentId
+     *        The ID of the agent or data collector to delete.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchDeleteAgentError withAgentId(String agentId) {
+        setAgentId(agentId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The description of the error that occurred for the delete failed agent.
+     * </p>
+     * 
+     * @param errorMessage
+     *        The description of the error that occurred for the delete failed agent.
+     */
+
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+    }
+
+    /**
+     * <p>
+     * The description of the error that occurred for the delete failed agent.
+     * </p>
+     * 
+     * @return The description of the error that occurred for the delete failed agent.
+     */
+
+    public String getErrorMessage() {
+        return this.errorMessage;
+    }
+
+    /**
+     * <p>
+     * The description of the error that occurred for the delete failed agent.
+     * </p>
+     * 
+     * @param errorMessage
+     *        The description of the error that occurred for the delete failed agent.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchDeleteAgentError withErrorMessage(String errorMessage) {
+        setErrorMessage(errorMessage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of error that occurred for the delete failed agent. Valid status are: AGENT_IN_USE | NOT_FOUND |
+     * INTERNAL_SERVER_ERROR.
+     * </p>
+     * 
+     * @param errorCode
+     *        The type of error that occurred for the delete failed agent. Valid status are: AGENT_IN_USE | NOT_FOUND |
+     *        INTERNAL_SERVER_ERROR.
+     * @see DeleteAgentErrorCode
+     */
+
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+    }
+
+    /**
+     * <p>
+     * The type of error that occurred for the delete failed agent. Valid status are: AGENT_IN_USE | NOT_FOUND |
+     * INTERNAL_SERVER_ERROR.
+     * </p>
+     * 
+     * @return The type of error that occurred for the delete failed agent. Valid status are: AGENT_IN_USE | NOT_FOUND |
+     *         INTERNAL_SERVER_ERROR.
+     * @see DeleteAgentErrorCode
+     */
+
+    public String getErrorCode() {
+        return this.errorCode;
+    }
+
+    /**
+     * <p>
+     * The type of error that occurred for the delete failed agent. Valid status are: AGENT_IN_USE | NOT_FOUND |
+     * INTERNAL_SERVER_ERROR.
+     * </p>
+     * 
+     * @param errorCode
+     *        The type of error that occurred for the delete failed agent. Valid status are: AGENT_IN_USE | NOT_FOUND |
+     *        INTERNAL_SERVER_ERROR.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeleteAgentErrorCode
+     */
+
+    public BatchDeleteAgentError withErrorCode(String errorCode) {
+        setErrorCode(errorCode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of error that occurred for the delete failed agent. Valid status are: AGENT_IN_USE | NOT_FOUND |
+     * INTERNAL_SERVER_ERROR.
+     * </p>
+     * 
+     * @param errorCode
+     *        The type of error that occurred for the delete failed agent. Valid status are: AGENT_IN_USE | NOT_FOUND |
+     *        INTERNAL_SERVER_ERROR.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeleteAgentErrorCode
+     */
+
+    public BatchDeleteAgentError withErrorCode(DeleteAgentErrorCode errorCode) {
+        this.errorCode = errorCode.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getAgentId() != null)
+            sb.append("AgentId: ").append(getAgentId()).append(",");
+        if (getErrorMessage() != null)
+            sb.append("ErrorMessage: ").append(getErrorMessage()).append(",");
+        if (getErrorCode() != null)
+            sb.append("ErrorCode: ").append(getErrorCode());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof BatchDeleteAgentError == false)
+            return false;
+        BatchDeleteAgentError other = (BatchDeleteAgentError) obj;
+        if (other.getAgentId() == null ^ this.getAgentId() == null)
+            return false;
+        if (other.getAgentId() != null && other.getAgentId().equals(this.getAgentId()) == false)
+            return false;
+        if (other.getErrorMessage() == null ^ this.getErrorMessage() == null)
+            return false;
+        if (other.getErrorMessage() != null && other.getErrorMessage().equals(this.getErrorMessage()) == false)
+            return false;
+        if (other.getErrorCode() == null ^ this.getErrorCode() == null)
+            return false;
+        if (other.getErrorCode() != null && other.getErrorCode().equals(this.getErrorCode()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getAgentId() == null) ? 0 : getAgentId().hashCode());
+        hashCode = prime * hashCode + ((getErrorMessage() == null) ? 0 : getErrorMessage().hashCode());
+        hashCode = prime * hashCode + ((getErrorCode() == null) ? 0 : getErrorCode().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public BatchDeleteAgentError clone() {
+        try {
+            return (BatchDeleteAgentError) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.applicationdiscovery.model.transform.BatchDeleteAgentErrorMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

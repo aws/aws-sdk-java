@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,10 +30,56 @@ public class EcrContainerImageMetadata implements Serializable, Cloneable, Struc
 
     /**
      * <p>
+     * The date an image was last pulled at.
+     * </p>
+     */
+    private java.util.Date imagePulledAt;
+    /**
+     * <p>
      * Tags associated with the Amazon ECR image metadata.
      * </p>
      */
     private java.util.List<String> tags;
+
+    /**
+     * <p>
+     * The date an image was last pulled at.
+     * </p>
+     * 
+     * @param imagePulledAt
+     *        The date an image was last pulled at.
+     */
+
+    public void setImagePulledAt(java.util.Date imagePulledAt) {
+        this.imagePulledAt = imagePulledAt;
+    }
+
+    /**
+     * <p>
+     * The date an image was last pulled at.
+     * </p>
+     * 
+     * @return The date an image was last pulled at.
+     */
+
+    public java.util.Date getImagePulledAt() {
+        return this.imagePulledAt;
+    }
+
+    /**
+     * <p>
+     * The date an image was last pulled at.
+     * </p>
+     * 
+     * @param imagePulledAt
+     *        The date an image was last pulled at.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EcrContainerImageMetadata withImagePulledAt(java.util.Date imagePulledAt) {
+        setImagePulledAt(imagePulledAt);
+        return this;
+    }
 
     /**
      * <p>
@@ -117,6 +163,8 @@ public class EcrContainerImageMetadata implements Serializable, Cloneable, Struc
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getImagePulledAt() != null)
+            sb.append("ImagePulledAt: ").append(getImagePulledAt()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -133,6 +181,10 @@ public class EcrContainerImageMetadata implements Serializable, Cloneable, Struc
         if (obj instanceof EcrContainerImageMetadata == false)
             return false;
         EcrContainerImageMetadata other = (EcrContainerImageMetadata) obj;
+        if (other.getImagePulledAt() == null ^ this.getImagePulledAt() == null)
+            return false;
+        if (other.getImagePulledAt() != null && other.getImagePulledAt().equals(this.getImagePulledAt()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -145,6 +197,7 @@ public class EcrContainerImageMetadata implements Serializable, Cloneable, Struc
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getImagePulledAt() == null) ? 0 : getImagePulledAt().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

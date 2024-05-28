@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Modifies the <code>CertPolicyId</code> of a <code>PolicyInformation</code> object with a qualifier. ACM Private CA
- * supports the certification practice statement (CPS) qualifier.
+ * Modifies the <code>CertPolicyId</code> of a <code>PolicyInformation</code> object with a qualifier. Amazon Web
+ * Services Private CA supports the certification practice statement (CPS) qualifier.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/PolicyQualifierInfo" target="_top">AWS API
@@ -37,7 +37,8 @@ public class PolicyQualifierInfo implements Serializable, Cloneable, StructuredP
     private String policyQualifierId;
     /**
      * <p>
-     * Defines the qualifier type. ACM Private CA supports the use of a URI for a CPS qualifier in this field.
+     * Defines the qualifier type. Amazon Web Services Private CA supports the use of a URI for a CPS qualifier in this
+     * field.
      * </p>
      */
     private Qualifier qualifier;
@@ -103,11 +104,13 @@ public class PolicyQualifierInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Defines the qualifier type. ACM Private CA supports the use of a URI for a CPS qualifier in this field.
+     * Defines the qualifier type. Amazon Web Services Private CA supports the use of a URI for a CPS qualifier in this
+     * field.
      * </p>
      * 
      * @param qualifier
-     *        Defines the qualifier type. ACM Private CA supports the use of a URI for a CPS qualifier in this field.
+     *        Defines the qualifier type. Amazon Web Services Private CA supports the use of a URI for a CPS qualifier
+     *        in this field.
      */
 
     public void setQualifier(Qualifier qualifier) {
@@ -116,10 +119,12 @@ public class PolicyQualifierInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Defines the qualifier type. ACM Private CA supports the use of a URI for a CPS qualifier in this field.
+     * Defines the qualifier type. Amazon Web Services Private CA supports the use of a URI for a CPS qualifier in this
+     * field.
      * </p>
      * 
-     * @return Defines the qualifier type. ACM Private CA supports the use of a URI for a CPS qualifier in this field.
+     * @return Defines the qualifier type. Amazon Web Services Private CA supports the use of a URI for a CPS qualifier
+     *         in this field.
      */
 
     public Qualifier getQualifier() {
@@ -128,11 +133,13 @@ public class PolicyQualifierInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Defines the qualifier type. ACM Private CA supports the use of a URI for a CPS qualifier in this field.
+     * Defines the qualifier type. Amazon Web Services Private CA supports the use of a URI for a CPS qualifier in this
+     * field.
      * </p>
      * 
      * @param qualifier
-     *        Defines the qualifier type. ACM Private CA supports the use of a URI for a CPS qualifier in this field.
+     *        Defines the qualifier type. Amazon Web Services Private CA supports the use of a URI for a CPS qualifier
+     *        in this field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

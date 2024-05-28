@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,10 @@ public class ResourceInfoMarshaller {
             .marshallLocationName("RoleArn").build();
     private static final MarshallingInfo<java.util.Date> LASTMODIFIED_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModified").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<Boolean> WITHFEDERATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WithFederation").build();
+    private static final MarshallingInfo<Boolean> HYBRIDACCESSENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HybridAccessEnabled").build();
 
     private static final ResourceInfoMarshaller instance = new ResourceInfoMarshaller();
 
@@ -53,6 +57,8 @@ public class ResourceInfoMarshaller {
             protocolMarshaller.marshall(resourceInfo.getResourceArn(), RESOURCEARN_BINDING);
             protocolMarshaller.marshall(resourceInfo.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(resourceInfo.getLastModified(), LASTMODIFIED_BINDING);
+            protocolMarshaller.marshall(resourceInfo.getWithFederation(), WITHFEDERATION_BINDING);
+            protocolMarshaller.marshall(resourceInfo.getHybridAccessEnabled(), HYBRIDACCESSENABLED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

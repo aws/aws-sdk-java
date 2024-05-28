@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,27 +27,25 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resources are
-     * Amazon EKS clusters and managed node groups.
+     * The Amazon Resource Name (ARN) of the resource to add tags to.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * The tags to add to the resource. A tag is an array of key-value pairs.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      */
     private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resources are
-     * Amazon EKS clusters and managed node groups.
+     * The Amazon Resource Name (ARN) of the resource to add tags to.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resources
-     *        are Amazon EKS clusters and managed node groups.
+     *        The Amazon Resource Name (ARN) of the resource to add tags to.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -56,12 +54,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resources are
-     * Amazon EKS clusters and managed node groups.
+     * The Amazon Resource Name (ARN) of the resource to add tags to.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resources
-     *         are Amazon EKS clusters and managed node groups.
+     * @return The Amazon Resource Name (ARN) of the resource to add tags to.
      */
 
     public String getResourceArn() {
@@ -70,13 +66,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resources are
-     * Amazon EKS clusters and managed node groups.
+     * The Amazon Resource Name (ARN) of the resource to add tags to.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the supported resources
-     *        are Amazon EKS clusters and managed node groups.
+     *        The Amazon Resource Name (ARN) of the resource to add tags to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,10 +81,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags to add to the resource. A tag is an array of key-value pairs.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * 
-     * @return The tags to add to the resource. A tag is an array of key-value pairs.
+     * @return Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *         value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -99,11 +95,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags to add to the resource. A tag is an array of key-value pairs.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * 
      * @param tags
-     *        The tags to add to the resource. A tag is an array of key-value pairs.
+     *        Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *        value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -112,11 +110,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags to add to the resource. A tag is an array of key-value pairs.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * 
      * @param tags
-     *        The tags to add to the resource. A tag is an array of key-value pairs.
+     *        Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *        value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

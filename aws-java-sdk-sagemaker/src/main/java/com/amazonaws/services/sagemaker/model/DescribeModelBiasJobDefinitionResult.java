@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -73,8 +73,8 @@ public class DescribeModelBiasJobDefinitionResult extends com.amazonaws.AmazonWe
     private MonitoringNetworkConfig networkConfig;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that has read
-     * permission to the input data location and write permission to the output data location in Amazon S3.
+     * The Amazon Resource Name (ARN) of the IAM role that has read permission to the input data location and write
+     * permission to the output data location in Amazon S3.
      * </p>
      */
     private String roleArn;
@@ -421,14 +421,13 @@ public class DescribeModelBiasJobDefinitionResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that has read
-     * permission to the input data location and write permission to the output data location in Amazon S3.
+     * The Amazon Resource Name (ARN) of the IAM role that has read permission to the input data location and write
+     * permission to the output data location in Amazon S3.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that
-     *        has read permission to the input data location and write permission to the output data location in Amazon
-     *        S3.
+     *        The Amazon Resource Name (ARN) of the IAM role that has read permission to the input data location and
+     *        write permission to the output data location in Amazon S3.
      */
 
     public void setRoleArn(String roleArn) {
@@ -437,13 +436,12 @@ public class DescribeModelBiasJobDefinitionResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that has read
-     * permission to the input data location and write permission to the output data location in Amazon S3.
+     * The Amazon Resource Name (ARN) of the IAM role that has read permission to the input data location and write
+     * permission to the output data location in Amazon S3.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that
-     *         has read permission to the input data location and write permission to the output data location in Amazon
-     *         S3.
+     * @return The Amazon Resource Name (ARN) of the IAM role that has read permission to the input data location and
+     *         write permission to the output data location in Amazon S3.
      */
 
     public String getRoleArn() {
@@ -452,14 +450,13 @@ public class DescribeModelBiasJobDefinitionResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that has read
-     * permission to the input data location and write permission to the output data location in Amazon S3.
+     * The Amazon Resource Name (ARN) of the IAM role that has read permission to the input data location and write
+     * permission to the output data location in Amazon S3.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that
-     *        has read permission to the input data location and write permission to the output data location in Amazon
-     *        S3.
+     *        The Amazon Resource Name (ARN) of the IAM role that has read permission to the input data location and
+     *        write permission to the output data location in Amazon S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

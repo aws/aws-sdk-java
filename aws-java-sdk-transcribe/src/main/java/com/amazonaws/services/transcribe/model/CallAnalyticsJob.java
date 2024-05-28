@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,12 +62,18 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
     private String callAnalyticsJobStatus;
     /**
      * <p>
+     * Provides detailed information about a call analytics job, including information about skipped analytics features.
+     * </p>
+     */
+    private CallAnalyticsJobDetails callAnalyticsJobDetails;
+    /**
+     * <p>
      * The language code used to create your Call Analytics job. For a list of supported languages and their associated
      * language codes, refer to the <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
      * </p>
      * <p>
-     * If you don't know the language spoken in your media file, you can omit this field and let Amazon Transcribe
+     * If you do not know the language spoken in your media file, you can omit this field and let Amazon Transcribe
      * automatically identify the language of your media. To improve the accuracy of language identification, you can
      * include several language codes and Amazon Transcribe chooses the closest match for your transcription.
      * </p>
@@ -75,7 +81,7 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
     private String languageCode;
     /**
      * <p>
-     * The sample rate, in Hertz, of the audio track in your input media file.
+     * The sample rate, in hertz, of the audio track in your input media file.
      * </p>
      */
     private Integer mediaSampleRateHertz;
@@ -85,7 +91,11 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String mediaFormat;
-
+    /**
+     * <p>
+     * Provides the Amazon S3 location of the media file you used in your Call Analytics request.
+     * </p>
+     */
     private Media media;
 
     private Transcript transcript;
@@ -136,8 +146,8 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      * <code>Unsupported media format</code>.
      * </p>
      * <p>
-     * The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b> for a list of
-     * supported formats.
+     * The media format specified in <code>MediaFormat</code> isn't valid. Refer to refer to the
+     * <code>MediaFormat</code> parameter for a list of supported formats.
      * </p>
      * </li>
      * <li>
@@ -155,7 +165,7 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 8,000
-     * and 48,000 Hertz.
+     * and 48,000 hertz.
      * </p>
      * </li>
      * <li>
@@ -173,7 +183,7 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * The size of your media file is larger than what Amazon Transcribe can process. For more information, refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service quotas</a>.
      * </p>
      * </li>
      * <li>
@@ -182,7 +192,7 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service quotas</a>.
      * </p>
      * </li>
      * </ul>
@@ -190,17 +200,7 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
     private String failureReason;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains
-     * your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon
-     * S3 location, your request fails.
-     * </p>
-     * <p>
-     * IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
-     * <code>arn:aws:iam::111122223333:role/Admin</code>.
-     * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.
+     * The Amazon Resource Name (ARN) you included in your request.
      * </p>
      */
     private String dataAccessRoleArn;
@@ -216,16 +216,14 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
     private Float identifiedLanguageScore;
     /**
      * <p>
-     * Allows additional optional settings in your request, including content redaction; allows you to apply custom
-     * language models, vocabulary filters, and custom vocabularies to your Call Analytics job.
+     * Provides information on any additional settings that were included in your request. Additional settings include
+     * content redaction and language identification settings.
      * </p>
      */
     private CallAnalyticsJobSettings settings;
     /**
      * <p>
-     * Allows you to specify which speaker is on which channel in your Call Analytics job request. For example, if your
-     * agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the
-     * first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).
+     * Indicates which speaker is on which channel.
      * </p>
      */
     private java.util.List<ChannelDefinition> channelDefinitions;
@@ -381,12 +379,55 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * Provides detailed information about a call analytics job, including information about skipped analytics features.
+     * </p>
+     * 
+     * @param callAnalyticsJobDetails
+     *        Provides detailed information about a call analytics job, including information about skipped analytics
+     *        features.
+     */
+
+    public void setCallAnalyticsJobDetails(CallAnalyticsJobDetails callAnalyticsJobDetails) {
+        this.callAnalyticsJobDetails = callAnalyticsJobDetails;
+    }
+
+    /**
+     * <p>
+     * Provides detailed information about a call analytics job, including information about skipped analytics features.
+     * </p>
+     * 
+     * @return Provides detailed information about a call analytics job, including information about skipped analytics
+     *         features.
+     */
+
+    public CallAnalyticsJobDetails getCallAnalyticsJobDetails() {
+        return this.callAnalyticsJobDetails;
+    }
+
+    /**
+     * <p>
+     * Provides detailed information about a call analytics job, including information about skipped analytics features.
+     * </p>
+     * 
+     * @param callAnalyticsJobDetails
+     *        Provides detailed information about a call analytics job, including information about skipped analytics
+     *        features.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CallAnalyticsJob withCallAnalyticsJobDetails(CallAnalyticsJobDetails callAnalyticsJobDetails) {
+        setCallAnalyticsJobDetails(callAnalyticsJobDetails);
+        return this;
+    }
+
+    /**
+     * <p>
      * The language code used to create your Call Analytics job. For a list of supported languages and their associated
      * language codes, refer to the <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
      * </p>
      * <p>
-     * If you don't know the language spoken in your media file, you can omit this field and let Amazon Transcribe
+     * If you do not know the language spoken in your media file, you can omit this field and let Amazon Transcribe
      * automatically identify the language of your media. To improve the accuracy of language identification, you can
      * include several language codes and Amazon Transcribe chooses the closest match for your transcription.
      * </p>
@@ -397,7 +438,7 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      *        href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>
      *        table.</p>
      *        <p>
-     *        If you don't know the language spoken in your media file, you can omit this field and let Amazon
+     *        If you do not know the language spoken in your media file, you can omit this field and let Amazon
      *        Transcribe automatically identify the language of your media. To improve the accuracy of language
      *        identification, you can include several language codes and Amazon Transcribe chooses the closest match for
      *        your transcription.
@@ -415,7 +456,7 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
      * </p>
      * <p>
-     * If you don't know the language spoken in your media file, you can omit this field and let Amazon Transcribe
+     * If you do not know the language spoken in your media file, you can omit this field and let Amazon Transcribe
      * automatically identify the language of your media. To improve the accuracy of language identification, you can
      * include several language codes and Amazon Transcribe chooses the closest match for your transcription.
      * </p>
@@ -425,7 +466,7 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      *         href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>
      *         table.</p>
      *         <p>
-     *         If you don't know the language spoken in your media file, you can omit this field and let Amazon
+     *         If you do not know the language spoken in your media file, you can omit this field and let Amazon
      *         Transcribe automatically identify the language of your media. To improve the accuracy of language
      *         identification, you can include several language codes and Amazon Transcribe chooses the closest match
      *         for your transcription.
@@ -443,7 +484,7 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
      * </p>
      * <p>
-     * If you don't know the language spoken in your media file, you can omit this field and let Amazon Transcribe
+     * If you do not know the language spoken in your media file, you can omit this field and let Amazon Transcribe
      * automatically identify the language of your media. To improve the accuracy of language identification, you can
      * include several language codes and Amazon Transcribe chooses the closest match for your transcription.
      * </p>
@@ -454,7 +495,7 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      *        href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>
      *        table.</p>
      *        <p>
-     *        If you don't know the language spoken in your media file, you can omit this field and let Amazon
+     *        If you do not know the language spoken in your media file, you can omit this field and let Amazon
      *        Transcribe automatically identify the language of your media. To improve the accuracy of language
      *        identification, you can include several language codes and Amazon Transcribe chooses the closest match for
      *        your transcription.
@@ -474,7 +515,7 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
      * </p>
      * <p>
-     * If you don't know the language spoken in your media file, you can omit this field and let Amazon Transcribe
+     * If you do not know the language spoken in your media file, you can omit this field and let Amazon Transcribe
      * automatically identify the language of your media. To improve the accuracy of language identification, you can
      * include several language codes and Amazon Transcribe chooses the closest match for your transcription.
      * </p>
@@ -485,7 +526,7 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      *        href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>
      *        table.</p>
      *        <p>
-     *        If you don't know the language spoken in your media file, you can omit this field and let Amazon
+     *        If you do not know the language spoken in your media file, you can omit this field and let Amazon
      *        Transcribe automatically identify the language of your media. To improve the accuracy of language
      *        identification, you can include several language codes and Amazon Transcribe chooses the closest match for
      *        your transcription.
@@ -500,11 +541,11 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The sample rate, in Hertz, of the audio track in your input media file.
+     * The sample rate, in hertz, of the audio track in your input media file.
      * </p>
      * 
      * @param mediaSampleRateHertz
-     *        The sample rate, in Hertz, of the audio track in your input media file.
+     *        The sample rate, in hertz, of the audio track in your input media file.
      */
 
     public void setMediaSampleRateHertz(Integer mediaSampleRateHertz) {
@@ -513,10 +554,10 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The sample rate, in Hertz, of the audio track in your input media file.
+     * The sample rate, in hertz, of the audio track in your input media file.
      * </p>
      * 
-     * @return The sample rate, in Hertz, of the audio track in your input media file.
+     * @return The sample rate, in hertz, of the audio track in your input media file.
      */
 
     public Integer getMediaSampleRateHertz() {
@@ -525,11 +566,11 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The sample rate, in Hertz, of the audio track in your input media file.
+     * The sample rate, in hertz, of the audio track in your input media file.
      * </p>
      * 
      * @param mediaSampleRateHertz
-     *        The sample rate, in Hertz, of the audio track in your input media file.
+     *        The sample rate, in hertz, of the audio track in your input media file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -598,7 +639,12 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Provides the Amazon S3 location of the media file you used in your Call Analytics request.
+     * </p>
+     * 
      * @param media
+     *        Provides the Amazon S3 location of the media file you used in your Call Analytics request.
      */
 
     public void setMedia(Media media) {
@@ -606,7 +652,11 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * <p>
+     * Provides the Amazon S3 location of the media file you used in your Call Analytics request.
+     * </p>
+     * 
+     * @return Provides the Amazon S3 location of the media file you used in your Call Analytics request.
      */
 
     public Media getMedia() {
@@ -614,7 +664,12 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Provides the Amazon S3 location of the media file you used in your Call Analytics request.
+     * </p>
+     * 
      * @param media
+     *        Provides the Amazon S3 location of the media file you used in your Call Analytics request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -864,8 +919,8 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      * <code>Unsupported media format</code>.
      * </p>
      * <p>
-     * The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b> for a list of
-     * supported formats.
+     * The media format specified in <code>MediaFormat</code> isn't valid. Refer to refer to the
+     * <code>MediaFormat</code> parameter for a list of supported formats.
      * </p>
      * </li>
      * <li>
@@ -883,7 +938,7 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 8,000
-     * and 48,000 Hertz.
+     * and 48,000 hertz.
      * </p>
      * </li>
      * <li>
@@ -901,7 +956,7 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * The size of your media file is larger than what Amazon Transcribe can process. For more information, refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service quotas</a>.
      * </p>
      * </li>
      * <li>
@@ -910,7 +965,7 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service quotas</a>.
      * </p>
      * </li>
      * </ul>
@@ -927,8 +982,8 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      *        <code>Unsupported media format</code>.
      *        </p>
      *        <p>
-     *        The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b> for a list
-     *        of supported formats.
+     *        The media format specified in <code>MediaFormat</code> isn't valid. Refer to refer to the
+     *        <code>MediaFormat</code> parameter for a list of supported formats.
      *        </p>
      *        </li>
      *        <li>
@@ -946,7 +1001,7 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      *        </p>
      *        <p>
      *        The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be
-     *        between 8,000 and 48,000 Hertz.
+     *        between 8,000 and 48,000 hertz.
      *        </p>
      *        </li>
      *        <li>
@@ -964,7 +1019,8 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      *        </p>
      *        <p>
      *        The size of your media file is larger than what Amazon Transcribe can process. For more information, refer
-     *        to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and
+     *        to <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service
      *        quotas</a>.
      *        </p>
      *        </li>
@@ -974,7 +1030,8 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      *        </p>
      *        <p>
      *        Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer
-     *        to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and
+     *        to <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service
      *        quotas</a>.
      *        </p>
      *        </li>
@@ -998,8 +1055,8 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      * <code>Unsupported media format</code>.
      * </p>
      * <p>
-     * The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b> for a list of
-     * supported formats.
+     * The media format specified in <code>MediaFormat</code> isn't valid. Refer to refer to the
+     * <code>MediaFormat</code> parameter for a list of supported formats.
      * </p>
      * </li>
      * <li>
@@ -1017,7 +1074,7 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 8,000
-     * and 48,000 Hertz.
+     * and 48,000 hertz.
      * </p>
      * </li>
      * <li>
@@ -1035,7 +1092,7 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * The size of your media file is larger than what Amazon Transcribe can process. For more information, refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service quotas</a>.
      * </p>
      * </li>
      * <li>
@@ -1044,7 +1101,7 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service quotas</a>.
      * </p>
      * </li>
      * </ul>
@@ -1060,8 +1117,8 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      *         <code>Unsupported media format</code>.
      *         </p>
      *         <p>
-     *         The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b> for a
-     *         list of supported formats.
+     *         The media format specified in <code>MediaFormat</code> isn't valid. Refer to refer to the
+     *         <code>MediaFormat</code> parameter for a list of supported formats.
      *         </p>
      *         </li>
      *         <li>
@@ -1079,7 +1136,7 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      *         </p>
      *         <p>
      *         The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be
-     *         between 8,000 and 48,000 Hertz.
+     *         between 8,000 and 48,000 hertz.
      *         </p>
      *         </li>
      *         <li>
@@ -1098,7 +1155,7 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      *         <p>
      *         The size of your media file is larger than what Amazon Transcribe can process. For more information,
      *         refer to <a
-     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and
+     *         href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service
      *         quotas</a>.
      *         </p>
      *         </li>
@@ -1108,8 +1165,9 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      *         </p>
      *         <p>
      *         Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer
-     *         to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
-     *         and quotas</a>.
+     *         to <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service
+     *         quotas</a>.
      *         </p>
      *         </li>
      */
@@ -1132,8 +1190,8 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      * <code>Unsupported media format</code>.
      * </p>
      * <p>
-     * The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b> for a list of
-     * supported formats.
+     * The media format specified in <code>MediaFormat</code> isn't valid. Refer to refer to the
+     * <code>MediaFormat</code> parameter for a list of supported formats.
      * </p>
      * </li>
      * <li>
@@ -1151,7 +1209,7 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 8,000
-     * and 48,000 Hertz.
+     * and 48,000 hertz.
      * </p>
      * </li>
      * <li>
@@ -1169,7 +1227,7 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * The size of your media file is larger than what Amazon Transcribe can process. For more information, refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service quotas</a>.
      * </p>
      * </li>
      * <li>
@@ -1178,7 +1236,7 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service quotas</a>.
      * </p>
      * </li>
      * </ul>
@@ -1195,8 +1253,8 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      *        <code>Unsupported media format</code>.
      *        </p>
      *        <p>
-     *        The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b> for a list
-     *        of supported formats.
+     *        The media format specified in <code>MediaFormat</code> isn't valid. Refer to refer to the
+     *        <code>MediaFormat</code> parameter for a list of supported formats.
      *        </p>
      *        </li>
      *        <li>
@@ -1214,7 +1272,7 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      *        </p>
      *        <p>
      *        The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be
-     *        between 8,000 and 48,000 Hertz.
+     *        between 8,000 and 48,000 hertz.
      *        </p>
      *        </li>
      *        <li>
@@ -1232,7 +1290,8 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      *        </p>
      *        <p>
      *        The size of your media file is larger than what Amazon Transcribe can process. For more information, refer
-     *        to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and
+     *        to <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service
      *        quotas</a>.
      *        </p>
      *        </li>
@@ -1242,7 +1301,8 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      *        </p>
      *        <p>
      *        Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer
-     *        to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and
+     *        to <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service
      *        quotas</a>.
      *        </p>
      *        </li>
@@ -1256,31 +1316,11 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains
-     * your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon
-     * S3 location, your request fails.
-     * </p>
-     * <p>
-     * IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
-     * <code>arn:aws:iam::111122223333:role/Admin</code>.
-     * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.
+     * The Amazon Resource Name (ARN) you included in your request.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that
-     *        contains your input files. If the role you specify doesn’t have the appropriate permissions to access the
-     *        specified Amazon S3 location, your request fails.</p>
-     *        <p>
-     *        IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For
-     *        example: <code>arn:aws:iam::111122223333:role/Admin</code>.
-     *        </p>
-     *        <p>
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
-     *        ARNs</a>.
+     *        The Amazon Resource Name (ARN) you included in your request.
      */
 
     public void setDataAccessRoleArn(String dataAccessRoleArn) {
@@ -1289,30 +1329,10 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains
-     * your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon
-     * S3 location, your request fails.
-     * </p>
-     * <p>
-     * IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
-     * <code>arn:aws:iam::111122223333:role/Admin</code>.
-     * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.
+     * The Amazon Resource Name (ARN) you included in your request.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that
-     *         contains your input files. If the role you specify doesn’t have the appropriate permissions to access the
-     *         specified Amazon S3 location, your request fails.</p>
-     *         <p>
-     *         IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For
-     *         example: <code>arn:aws:iam::111122223333:role/Admin</code>.
-     *         </p>
-     *         <p>
-     *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
-     *         ARNs</a>.
+     * @return The Amazon Resource Name (ARN) you included in your request.
      */
 
     public String getDataAccessRoleArn() {
@@ -1321,31 +1341,11 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains
-     * your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon
-     * S3 location, your request fails.
-     * </p>
-     * <p>
-     * IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
-     * <code>arn:aws:iam::111122223333:role/Admin</code>.
-     * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a>.
+     * The Amazon Resource Name (ARN) you included in your request.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that
-     *        contains your input files. If the role you specify doesn’t have the appropriate permissions to access the
-     *        specified Amazon S3 location, your request fails.</p>
-     *        <p>
-     *        IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For
-     *        example: <code>arn:aws:iam::111122223333:role/Admin</code>.
-     *        </p>
-     *        <p>
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
-     *        ARNs</a>.
+     *        The Amazon Resource Name (ARN) you included in your request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1417,13 +1417,13 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Allows additional optional settings in your request, including content redaction; allows you to apply custom
-     * language models, vocabulary filters, and custom vocabularies to your Call Analytics job.
+     * Provides information on any additional settings that were included in your request. Additional settings include
+     * content redaction and language identification settings.
      * </p>
      * 
      * @param settings
-     *        Allows additional optional settings in your request, including content redaction; allows you to apply
-     *        custom language models, vocabulary filters, and custom vocabularies to your Call Analytics job.
+     *        Provides information on any additional settings that were included in your request. Additional settings
+     *        include content redaction and language identification settings.
      */
 
     public void setSettings(CallAnalyticsJobSettings settings) {
@@ -1432,12 +1432,12 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Allows additional optional settings in your request, including content redaction; allows you to apply custom
-     * language models, vocabulary filters, and custom vocabularies to your Call Analytics job.
+     * Provides information on any additional settings that were included in your request. Additional settings include
+     * content redaction and language identification settings.
      * </p>
      * 
-     * @return Allows additional optional settings in your request, including content redaction; allows you to apply
-     *         custom language models, vocabulary filters, and custom vocabularies to your Call Analytics job.
+     * @return Provides information on any additional settings that were included in your request. Additional settings
+     *         include content redaction and language identification settings.
      */
 
     public CallAnalyticsJobSettings getSettings() {
@@ -1446,13 +1446,13 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Allows additional optional settings in your request, including content redaction; allows you to apply custom
-     * language models, vocabulary filters, and custom vocabularies to your Call Analytics job.
+     * Provides information on any additional settings that were included in your request. Additional settings include
+     * content redaction and language identification settings.
      * </p>
      * 
      * @param settings
-     *        Allows additional optional settings in your request, including content redaction; allows you to apply
-     *        custom language models, vocabulary filters, and custom vocabularies to your Call Analytics job.
+     *        Provides information on any additional settings that were included in your request. Additional settings
+     *        include content redaction and language identification settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1463,15 +1463,10 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Allows you to specify which speaker is on which channel in your Call Analytics job request. For example, if your
-     * agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the
-     * first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).
+     * Indicates which speaker is on which channel.
      * </p>
      * 
-     * @return Allows you to specify which speaker is on which channel in your Call Analytics job request. For example,
-     *         if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code>
-     *         (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that
-     *         it's the agent speaking).
+     * @return Indicates which speaker is on which channel.
      */
 
     public java.util.List<ChannelDefinition> getChannelDefinitions() {
@@ -1480,16 +1475,11 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Allows you to specify which speaker is on which channel in your Call Analytics job request. For example, if your
-     * agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the
-     * first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).
+     * Indicates which speaker is on which channel.
      * </p>
      * 
      * @param channelDefinitions
-     *        Allows you to specify which speaker is on which channel in your Call Analytics job request. For example,
-     *        if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code>
-     *        (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that
-     *        it's the agent speaking).
+     *        Indicates which speaker is on which channel.
      */
 
     public void setChannelDefinitions(java.util.Collection<ChannelDefinition> channelDefinitions) {
@@ -1503,9 +1493,7 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Allows you to specify which speaker is on which channel in your Call Analytics job request. For example, if your
-     * agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the
-     * first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).
+     * Indicates which speaker is on which channel.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1514,10 +1502,7 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param channelDefinitions
-     *        Allows you to specify which speaker is on which channel in your Call Analytics job request. For example,
-     *        if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code>
-     *        (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that
-     *        it's the agent speaking).
+     *        Indicates which speaker is on which channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1533,16 +1518,11 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Allows you to specify which speaker is on which channel in your Call Analytics job request. For example, if your
-     * agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the
-     * first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).
+     * Indicates which speaker is on which channel.
      * </p>
      * 
      * @param channelDefinitions
-     *        Allows you to specify which speaker is on which channel in your Call Analytics job request. For example,
-     *        if your agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code>
-     *        (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that
-     *        it's the agent speaking).
+     *        Indicates which speaker is on which channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1567,6 +1547,8 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
             sb.append("CallAnalyticsJobName: ").append(getCallAnalyticsJobName()).append(",");
         if (getCallAnalyticsJobStatus() != null)
             sb.append("CallAnalyticsJobStatus: ").append(getCallAnalyticsJobStatus()).append(",");
+        if (getCallAnalyticsJobDetails() != null)
+            sb.append("CallAnalyticsJobDetails: ").append(getCallAnalyticsJobDetails()).append(",");
         if (getLanguageCode() != null)
             sb.append("LanguageCode: ").append(getLanguageCode()).append(",");
         if (getMediaSampleRateHertz() != null)
@@ -1614,6 +1596,10 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
         if (other.getCallAnalyticsJobStatus() == null ^ this.getCallAnalyticsJobStatus() == null)
             return false;
         if (other.getCallAnalyticsJobStatus() != null && other.getCallAnalyticsJobStatus().equals(this.getCallAnalyticsJobStatus()) == false)
+            return false;
+        if (other.getCallAnalyticsJobDetails() == null ^ this.getCallAnalyticsJobDetails() == null)
+            return false;
+        if (other.getCallAnalyticsJobDetails() != null && other.getCallAnalyticsJobDetails().equals(this.getCallAnalyticsJobDetails()) == false)
             return false;
         if (other.getLanguageCode() == null ^ this.getLanguageCode() == null)
             return false;
@@ -1677,6 +1663,7 @@ public class CallAnalyticsJob implements Serializable, Cloneable, StructuredPojo
 
         hashCode = prime * hashCode + ((getCallAnalyticsJobName() == null) ? 0 : getCallAnalyticsJobName().hashCode());
         hashCode = prime * hashCode + ((getCallAnalyticsJobStatus() == null) ? 0 : getCallAnalyticsJobStatus().hashCode());
+        hashCode = prime * hashCode + ((getCallAnalyticsJobDetails() == null) ? 0 : getCallAnalyticsJobDetails().hashCode());
         hashCode = prime * hashCode + ((getLanguageCode() == null) ? 0 : getLanguageCode().hashCode());
         hashCode = prime * hashCode + ((getMediaSampleRateHertz() == null) ? 0 : getMediaSampleRateHertz().hashCode());
         hashCode = prime * hashCode + ((getMediaFormat() == null) ? 0 : getMediaFormat().hashCode());

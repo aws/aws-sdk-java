@@ -1,0 +1,217 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.eks.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * An object representing the term duration and term unit type of your subscription. This determines the term length of
+ * your subscription. Valid values are MONTHS for term unit and 12 or 36 for term duration, indicating a 12 month or 36
+ * month subscription.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/EksAnywhereSubscriptionTerm" target="_top">AWS
+ *      API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class EksAnywhereSubscriptionTerm implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * The duration of the subscription term. Valid values are 12 and 36, indicating a 12 month or 36 month
+     * subscription.
+     * </p>
+     */
+    private Integer duration;
+    /**
+     * <p>
+     * The term unit of the subscription. Valid value is <code>MONTHS</code>.
+     * </p>
+     */
+    private String unit;
+
+    /**
+     * <p>
+     * The duration of the subscription term. Valid values are 12 and 36, indicating a 12 month or 36 month
+     * subscription.
+     * </p>
+     * 
+     * @param duration
+     *        The duration of the subscription term. Valid values are 12 and 36, indicating a 12 month or 36 month
+     *        subscription.
+     */
+
+    public void setDuration(Integer duration) {
+        this.duration = duration;
+    }
+
+    /**
+     * <p>
+     * The duration of the subscription term. Valid values are 12 and 36, indicating a 12 month or 36 month
+     * subscription.
+     * </p>
+     * 
+     * @return The duration of the subscription term. Valid values are 12 and 36, indicating a 12 month or 36 month
+     *         subscription.
+     */
+
+    public Integer getDuration() {
+        return this.duration;
+    }
+
+    /**
+     * <p>
+     * The duration of the subscription term. Valid values are 12 and 36, indicating a 12 month or 36 month
+     * subscription.
+     * </p>
+     * 
+     * @param duration
+     *        The duration of the subscription term. Valid values are 12 and 36, indicating a 12 month or 36 month
+     *        subscription.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EksAnywhereSubscriptionTerm withDuration(Integer duration) {
+        setDuration(duration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The term unit of the subscription. Valid value is <code>MONTHS</code>.
+     * </p>
+     * 
+     * @param unit
+     *        The term unit of the subscription. Valid value is <code>MONTHS</code>.
+     * @see EksAnywhereSubscriptionTermUnit
+     */
+
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+
+    /**
+     * <p>
+     * The term unit of the subscription. Valid value is <code>MONTHS</code>.
+     * </p>
+     * 
+     * @return The term unit of the subscription. Valid value is <code>MONTHS</code>.
+     * @see EksAnywhereSubscriptionTermUnit
+     */
+
+    public String getUnit() {
+        return this.unit;
+    }
+
+    /**
+     * <p>
+     * The term unit of the subscription. Valid value is <code>MONTHS</code>.
+     * </p>
+     * 
+     * @param unit
+     *        The term unit of the subscription. Valid value is <code>MONTHS</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EksAnywhereSubscriptionTermUnit
+     */
+
+    public EksAnywhereSubscriptionTerm withUnit(String unit) {
+        setUnit(unit);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The term unit of the subscription. Valid value is <code>MONTHS</code>.
+     * </p>
+     * 
+     * @param unit
+     *        The term unit of the subscription. Valid value is <code>MONTHS</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EksAnywhereSubscriptionTermUnit
+     */
+
+    public EksAnywhereSubscriptionTerm withUnit(EksAnywhereSubscriptionTermUnit unit) {
+        this.unit = unit.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getDuration() != null)
+            sb.append("Duration: ").append(getDuration()).append(",");
+        if (getUnit() != null)
+            sb.append("Unit: ").append(getUnit());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof EksAnywhereSubscriptionTerm == false)
+            return false;
+        EksAnywhereSubscriptionTerm other = (EksAnywhereSubscriptionTerm) obj;
+        if (other.getDuration() == null ^ this.getDuration() == null)
+            return false;
+        if (other.getDuration() != null && other.getDuration().equals(this.getDuration()) == false)
+            return false;
+        if (other.getUnit() == null ^ this.getUnit() == null)
+            return false;
+        if (other.getUnit() != null && other.getUnit().equals(this.getUnit()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode());
+        hashCode = prime * hashCode + ((getUnit() == null) ? 0 : getUnit().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public EksAnywhereSubscriptionTerm clone() {
+        try {
+            return (EksAnywhereSubscriptionTerm) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.eks.model.transform.EksAnywhereSubscriptionTermMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

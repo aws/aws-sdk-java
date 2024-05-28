@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,7 +54,7 @@ public interface AmazonTimestreamQuery {
      * @throws AccessDeniedException
      *         You are not authorized to perform this action.
      * @throws InternalServerException
-     *         Timestream was unable to fully process this request because of an internal server error.
+     *         The service was unable to fully process this request because of an internal server error.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ValidationException
@@ -82,7 +82,7 @@ public interface AmazonTimestreamQuery {
      * @throws ConflictException
      *         Unable to poll results for a cancelled query.
      * @throws InternalServerException
-     *         Timestream was unable to fully process this request because of an internal server error.
+     *         The service was unable to fully process this request because of an internal server error.
      * @throws ServiceQuotaExceededException
      *         You have exceeded the service quota.
      * @throws ThrottlingException
@@ -107,7 +107,7 @@ public interface AmazonTimestreamQuery {
      * @throws AccessDeniedException
      *         You are not authorized to perform this action.
      * @throws InternalServerException
-     *         Timestream was unable to fully process this request because of an internal server error.
+     *         The service was unable to fully process this request because of an internal server error.
      * @throws ResourceNotFoundException
      *         The requested resource could not be found.
      * @throws ThrottlingException
@@ -121,6 +121,31 @@ public interface AmazonTimestreamQuery {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteScheduledQueryResult deleteScheduledQuery(DeleteScheduledQueryRequest deleteScheduledQueryRequest);
+
+    /**
+     * <p>
+     * Describes the settings for your account that include the query pricing model and the configured maximum TCUs the
+     * service can use for your query workload.
+     * </p>
+     * <p>
+     * You're charged only for the duration of compute units used for your workloads.
+     * </p>
+     * 
+     * @param describeAccountSettingsRequest
+     * @return Result of the DescribeAccountSettings operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform this action.
+     * @throws InternalServerException
+     *         The service was unable to fully process this request because of an internal server error.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InvalidEndpointException
+     *         The requested endpoint was not valid.
+     * @sample AmazonTimestreamQuery.DescribeAccountSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/DescribeAccountSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeAccountSettingsResult describeAccountSettings(DescribeAccountSettingsRequest describeAccountSettingsRequest);
 
     /**
      * <p>
@@ -158,7 +183,7 @@ public interface AmazonTimestreamQuery {
      * @param describeEndpointsRequest
      * @return Result of the DescribeEndpoints operation returned by the service.
      * @throws InternalServerException
-     *         Timestream was unable to fully process this request because of an internal server error.
+     *         The service was unable to fully process this request because of an internal server error.
      * @throws ValidationException
      *         Invalid or malformed request.
      * @throws ThrottlingException
@@ -179,7 +204,7 @@ public interface AmazonTimestreamQuery {
      * @throws AccessDeniedException
      *         You are not authorized to perform this action.
      * @throws InternalServerException
-     *         Timestream was unable to fully process this request because of an internal server error.
+     *         The service was unable to fully process this request because of an internal server error.
      * @throws ResourceNotFoundException
      *         The requested resource could not be found.
      * @throws ThrottlingException
@@ -204,7 +229,7 @@ public interface AmazonTimestreamQuery {
      * @throws AccessDeniedException
      *         You are not authorized to perform this action.
      * @throws InternalServerException
-     *         Timestream was unable to fully process this request because of an internal server error.
+     *         The service was unable to fully process this request because of an internal server error.
      * @throws ResourceNotFoundException
      *         The requested resource could not be found.
      * @throws ThrottlingException
@@ -230,7 +255,7 @@ public interface AmazonTimestreamQuery {
      * @throws AccessDeniedException
      *         You are not authorized to perform this action.
      * @throws InternalServerException
-     *         Timestream was unable to fully process this request because of an internal server error.
+     *         The service was unable to fully process this request because of an internal server error.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ValidationException
@@ -267,8 +292,7 @@ public interface AmazonTimestreamQuery {
     /**
      * <p>
      * A synchronous operation that allows you to submit a query with parameters to be stored by Timestream for later
-     * running. Timestream only supports using this operation with the <code>PrepareQueryRequest$ValidateOnly</code> set
-     * to <code>true</code>.
+     * running. Timestream only supports using this operation with <code>ValidateOnly</code> set to <code>true</code>.
      * </p>
      * 
      * @param prepareQueryRequest
@@ -276,7 +300,7 @@ public interface AmazonTimestreamQuery {
      * @throws AccessDeniedException
      *         You are not authorized to perform this action.
      * @throws InternalServerException
-     *         Timestream was unable to fully process this request because of an internal server error.
+     *         The service was unable to fully process this request because of an internal server error.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ValidationException
@@ -337,7 +361,7 @@ public interface AmazonTimestreamQuery {
      * @throws ConflictException
      *         Unable to poll results for a cancelled query.
      * @throws InternalServerException
-     *         Timestream was unable to fully process this request because of an internal server error.
+     *         The service was unable to fully process this request because of an internal server error.
      * @throws QueryExecutionException
      *         Timestream was unable to run the query successfully.
      * @throws ThrottlingException
@@ -399,6 +423,37 @@ public interface AmazonTimestreamQuery {
 
     /**
      * <p>
+     * Transitions your account to use TCUs for query pricing and modifies the maximum query compute units that you've
+     * configured. If you reduce the value of <code>MaxQueryTCU</code> to a desired configuration, the new value can
+     * take up to 24 hours to be effective.
+     * </p>
+     * <note>
+     * <p>
+     * After you've transitioned your account to use TCUs for query pricing, you can't transition to using bytes scanned
+     * for query pricing.
+     * </p>
+     * </note>
+     * 
+     * @param updateAccountSettingsRequest
+     * @return Result of the UpdateAccountSettings operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform this action.
+     * @throws InternalServerException
+     *         The service was unable to fully process this request because of an internal server error.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         Invalid or malformed request.
+     * @throws InvalidEndpointException
+     *         The requested endpoint was not valid.
+     * @sample AmazonTimestreamQuery.UpdateAccountSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/UpdateAccountSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateAccountSettingsResult updateAccountSettings(UpdateAccountSettingsRequest updateAccountSettingsRequest);
+
+    /**
+     * <p>
      * Update a scheduled query.
      * </p>
      * 
@@ -407,7 +462,7 @@ public interface AmazonTimestreamQuery {
      * @throws AccessDeniedException
      *         You are not authorized to perform this action.
      * @throws InternalServerException
-     *         Timestream was unable to fully process this request because of an internal server error.
+     *         The service was unable to fully process this request because of an internal server error.
      * @throws ResourceNotFoundException
      *         The requested resource could not be found.
      * @throws ThrottlingException

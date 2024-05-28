@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,10 +38,24 @@ public class GCMChannelRequest implements Serializable, Cloneable, StructuredPoj
     private String apiKey;
     /**
      * <p>
+     * The default authentication method used for GCM. Values are either "TOKEN" or "KEY". Defaults to "KEY".
+     * </p>
+     */
+    private String defaultAuthenticationMethod;
+    /**
+     * <p>
      * Specifies whether to enable the GCM channel for the application.
      * </p>
      */
     private Boolean enabled;
+    /**
+     * <p>
+     * The contents of the JSON file provided by Google during registration in order to generate an access token for
+     * authentication. For more information see <a
+     * href="https://firebase.google.com/docs/cloud-messaging/migrate-v1">Migrate from legacy FCM APIs to HTTP v1</a>.
+     * </p>
+     */
+    private String serviceJson;
 
     /**
      * <p>
@@ -86,6 +100,46 @@ public class GCMChannelRequest implements Serializable, Cloneable, StructuredPoj
 
     public GCMChannelRequest withApiKey(String apiKey) {
         setApiKey(apiKey);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The default authentication method used for GCM. Values are either "TOKEN" or "KEY". Defaults to "KEY".
+     * </p>
+     * 
+     * @param defaultAuthenticationMethod
+     *        The default authentication method used for GCM. Values are either "TOKEN" or "KEY". Defaults to "KEY".
+     */
+
+    public void setDefaultAuthenticationMethod(String defaultAuthenticationMethod) {
+        this.defaultAuthenticationMethod = defaultAuthenticationMethod;
+    }
+
+    /**
+     * <p>
+     * The default authentication method used for GCM. Values are either "TOKEN" or "KEY". Defaults to "KEY".
+     * </p>
+     * 
+     * @return The default authentication method used for GCM. Values are either "TOKEN" or "KEY". Defaults to "KEY".
+     */
+
+    public String getDefaultAuthenticationMethod() {
+        return this.defaultAuthenticationMethod;
+    }
+
+    /**
+     * <p>
+     * The default authentication method used for GCM. Values are either "TOKEN" or "KEY". Defaults to "KEY".
+     * </p>
+     * 
+     * @param defaultAuthenticationMethod
+     *        The default authentication method used for GCM. Values are either "TOKEN" or "KEY". Defaults to "KEY".
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GCMChannelRequest withDefaultAuthenticationMethod(String defaultAuthenticationMethod) {
+        setDefaultAuthenticationMethod(defaultAuthenticationMethod);
         return this;
     }
 
@@ -142,6 +196,61 @@ public class GCMChannelRequest implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The contents of the JSON file provided by Google during registration in order to generate an access token for
+     * authentication. For more information see <a
+     * href="https://firebase.google.com/docs/cloud-messaging/migrate-v1">Migrate from legacy FCM APIs to HTTP v1</a>.
+     * </p>
+     * 
+     * @param serviceJson
+     *        The contents of the JSON file provided by Google during registration in order to generate an access token
+     *        for authentication. For more information see <a
+     *        href="https://firebase.google.com/docs/cloud-messaging/migrate-v1">Migrate from legacy FCM APIs to HTTP
+     *        v1</a>.
+     */
+
+    public void setServiceJson(String serviceJson) {
+        this.serviceJson = serviceJson;
+    }
+
+    /**
+     * <p>
+     * The contents of the JSON file provided by Google during registration in order to generate an access token for
+     * authentication. For more information see <a
+     * href="https://firebase.google.com/docs/cloud-messaging/migrate-v1">Migrate from legacy FCM APIs to HTTP v1</a>.
+     * </p>
+     * 
+     * @return The contents of the JSON file provided by Google during registration in order to generate an access token
+     *         for authentication. For more information see <a
+     *         href="https://firebase.google.com/docs/cloud-messaging/migrate-v1">Migrate from legacy FCM APIs to HTTP
+     *         v1</a>.
+     */
+
+    public String getServiceJson() {
+        return this.serviceJson;
+    }
+
+    /**
+     * <p>
+     * The contents of the JSON file provided by Google during registration in order to generate an access token for
+     * authentication. For more information see <a
+     * href="https://firebase.google.com/docs/cloud-messaging/migrate-v1">Migrate from legacy FCM APIs to HTTP v1</a>.
+     * </p>
+     * 
+     * @param serviceJson
+     *        The contents of the JSON file provided by Google during registration in order to generate an access token
+     *        for authentication. For more information see <a
+     *        href="https://firebase.google.com/docs/cloud-messaging/migrate-v1">Migrate from legacy FCM APIs to HTTP
+     *        v1</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GCMChannelRequest withServiceJson(String serviceJson) {
+        setServiceJson(serviceJson);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -155,8 +264,12 @@ public class GCMChannelRequest implements Serializable, Cloneable, StructuredPoj
         sb.append("{");
         if (getApiKey() != null)
             sb.append("ApiKey: ").append(getApiKey()).append(",");
+        if (getDefaultAuthenticationMethod() != null)
+            sb.append("DefaultAuthenticationMethod: ").append(getDefaultAuthenticationMethod()).append(",");
         if (getEnabled() != null)
-            sb.append("Enabled: ").append(getEnabled());
+            sb.append("Enabled: ").append(getEnabled()).append(",");
+        if (getServiceJson() != null)
+            sb.append("ServiceJson: ").append(getServiceJson());
         sb.append("}");
         return sb.toString();
     }
@@ -175,9 +288,17 @@ public class GCMChannelRequest implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getApiKey() != null && other.getApiKey().equals(this.getApiKey()) == false)
             return false;
+        if (other.getDefaultAuthenticationMethod() == null ^ this.getDefaultAuthenticationMethod() == null)
+            return false;
+        if (other.getDefaultAuthenticationMethod() != null && other.getDefaultAuthenticationMethod().equals(this.getDefaultAuthenticationMethod()) == false)
+            return false;
         if (other.getEnabled() == null ^ this.getEnabled() == null)
             return false;
         if (other.getEnabled() != null && other.getEnabled().equals(this.getEnabled()) == false)
+            return false;
+        if (other.getServiceJson() == null ^ this.getServiceJson() == null)
+            return false;
+        if (other.getServiceJson() != null && other.getServiceJson().equals(this.getServiceJson()) == false)
             return false;
         return true;
     }
@@ -188,7 +309,9 @@ public class GCMChannelRequest implements Serializable, Cloneable, StructuredPoj
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApiKey() == null) ? 0 : getApiKey().hashCode());
+        hashCode = prime * hashCode + ((getDefaultAuthenticationMethod() == null) ? 0 : getDefaultAuthenticationMethod().hashCode());
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
+        hashCode = prime * hashCode + ((getServiceJson() == null) ? 0 : getServiceJson().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,8 +21,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Burn-in is a captions delivery method, rather than a captions format. Burn-in writes the captions directly on your
  * video frames, replacing pixels of video content with the captions. Set up burn-in captions in the same output as your
  * video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/burn-in-output-captions.html.
- * When you work directly in your JSON job specification, include this object and any required children when you set
- * destinationType to BURN_IN.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/BurninDestinationSettings"
  *      target="_top">AWS API Documentation</a>
@@ -38,55 +36,70 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
      */
     private String alignment;
     /**
-     * Ignore this setting unless Style passthrough (StylePassthrough) is set to Enabled and Font color (FontColor) set
-     * to Black, Yellow, Red, Green, Blue, or Hex. Use Apply font color (ApplyFontColor) for additional font color
-     * controls. When you choose White text only (WHITE_TEXT_ONLY), or leave blank, your font color setting only applies
-     * to white text in your input captions. For example, if your font color setting is Yellow, and your input captions
-     * have red and white text, your output captions will have red and yellow text. When you choose ALL_TEXT, your font
-     * color setting applies to all of your output captions text.
+     * Ignore this setting unless Style passthrough is set to Enabled and Font color set to Black, Yellow, Red, Green,
+     * Blue, or Hex. Use Apply font color for additional font color controls. When you choose White text only, or leave
+     * blank, your font color setting only applies to white text in your input captions. For example, if your font color
+     * setting is Yellow, and your input captions have red and white text, your output captions will have red and yellow
+     * text. When you choose ALL_TEXT, your font color setting applies to all of your output captions text.
      */
     private String applyFontColor;
     /**
-     * Specify the color of the rectangle behind the captions. Leave background color (BackgroundColor) blank and set
-     * Style passthrough (StylePassthrough) to enabled to use the background color data from your input captions, if
-     * present.
+     * Specify the color of the rectangle behind the captions. Leave background color blank and set Style passthrough to
+     * enabled to use the background color data from your input captions, if present.
      */
     private String backgroundColor;
     /**
      * Specify the opacity of the background rectangle. Enter a value from 0 to 255, where 0 is transparent and 255 is
-     * opaque. If Style passthrough (StylePassthrough) is set to enabled, leave blank to pass through the background
-     * style information in your input captions to your output captions. If Style passthrough is set to disabled, leave
-     * blank to use a value of 0 and remove all backgrounds from your output captions.
+     * opaque. If Style passthrough is set to enabled, leave blank to pass through the background style information in
+     * your input captions to your output captions. If Style passthrough is set to disabled, leave blank to use a value
+     * of 0 and remove all backgrounds from your output captions.
      */
     private Integer backgroundOpacity;
     /**
      * Specify the font that you want the service to use for your burn in captions when your input captions specify a
-     * font that MediaConvert doesn't support. When you set Fallback font (FallbackFont) to best match (BEST_MATCH), or
-     * leave blank, MediaConvert uses a supported font that most closely matches the font that your input captions
-     * specify. When there are multiple unsupported fonts in your input captions, MediaConvert matches each font with the
-     * supported font that matches best. When you explicitly choose a replacement font, MediaConvert uses that font to
-     * replace all unsupported fonts from your input.
+     * font that MediaConvert doesn't support. When you set Fallback font to best match, or leave blank, MediaConvert
+     * uses a supported font that most closely matches the font that your input captions specify. When there are multiple
+     * unsupported fonts in your input captions, MediaConvert matches each font with the supported font that matches
+     * best. When you explicitly choose a replacement font, MediaConvert uses that font to replace all unsupported fonts
+     * from your input.
      */
     private String fallbackFont;
     /**
-     * Specify the color of the burned-in captions text. Leave Font color (FontColor) blank and set Style passthrough
-     * (StylePassthrough) to enabled to use the font color data from your input captions, if present.
+     * Specify the color of the burned-in captions text. Leave Font color blank and set Style passthrough to enabled to
+     * use the font color data from your input captions, if present.
      */
     private String fontColor;
+    /**
+     * Specify a bold TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL.
+     * When you do, you must also separately specify a regular, an italic, and a bold italic font file.
+     */
+    private String fontFileBold;
+    /**
+     * Specify a bold italic TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS
+     * URL. When you do, you must also separately specify a regular, a bold, and an italic font file.
+     */
+    private String fontFileBoldItalic;
+    /**
+     * Specify an italic TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL.
+     * When you do, you must also separately specify a regular, a bold, and a bold italic font file.
+     */
+    private String fontFileItalic;
+    /**
+     * Specify a regular TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL.
+     * When you do, you must also separately specify a bold, an italic, and a bold italic font file.
+     */
+    private String fontFileRegular;
     /** Specify the opacity of the burned-in captions. 255 is opaque; 0 is transparent. */
     private Integer fontOpacity;
-    /** Specify the Font resolution (FontResolution) in DPI (dots per inch). */
+    /** Specify the Font resolution in DPI (dots per inch). */
     private Integer fontResolution;
     /**
-     * Set Font script (FontScript) to Automatically determined (AUTOMATIC), or leave blank, to automatically determine
-     * the font script in your input captions. Otherwise, set to Simplified Chinese (HANS) or Traditional Chinese (HANT)
-     * if your input font script uses Simplified or Traditional Chinese.
+     * Set Font script to Automatically determined, or leave blank, to automatically determine the font script in your
+     * input captions. Otherwise, set to Simplified Chinese (HANS) or Traditional Chinese (HANT) if your input font
+     * script uses Simplified or Traditional Chinese.
      */
     private String fontScript;
-    /**
-     * Specify the Font size (FontSize) in pixels. Must be a positive integer. Set to 0, or leave blank, for automatic
-     * font size.
-     */
+    /** Specify the Font size in pixels. Must be a positive integer. Set to 0, or leave blank, for automatic font size. */
     private Integer fontSize;
     /**
      * Ignore this setting unless your Font color is set to Hex. Enter either six or eight hexidecimal digits,
@@ -95,25 +108,25 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
      */
     private String hexFontColor;
     /**
-     * Specify font outline color. Leave Outline color (OutlineColor) blank and set Style passthrough (StylePassthrough)
-     * to enabled to use the font outline color data from your input captions, if present.
+     * Specify font outline color. Leave Outline color blank and set Style passthrough to enabled to use the font
+     * outline color data from your input captions, if present.
      */
     private String outlineColor;
     /**
-     * Specify the Outline size (OutlineSize) of the caption text, in pixels. Leave Outline size blank and set Style
-     * passthrough (StylePassthrough) to enabled to use the outline size data from your input captions, if present.
+     * Specify the Outline size of the caption text, in pixels. Leave Outline size blank and set Style passthrough to
+     * enabled to use the outline size data from your input captions, if present.
      */
     private Integer outlineSize;
     /**
-     * Specify the color of the shadow cast by the captions. Leave Shadow color (ShadowColor) blank and set Style
-     * passthrough (StylePassthrough) to enabled to use the shadow color data from your input captions, if present.
+     * Specify the color of the shadow cast by the captions. Leave Shadow color blank and set Style passthrough to
+     * enabled to use the shadow color data from your input captions, if present.
      */
     private String shadowColor;
     /**
      * Specify the opacity of the shadow. Enter a value from 0 to 255, where 0 is transparent and 255 is opaque. If
-     * Style passthrough (StylePassthrough) is set to Enabled, leave Shadow opacity (ShadowOpacity) blank to pass
-     * through the shadow style information in your input captions to your output captions. If Style passthrough is set
-     * to disabled, leave blank to use a value of 0 and remove all shadows from your output captions.
+     * Style passthrough is set to Enabled, leave Shadow opacity blank to pass through the shadow style information in
+     * your input captions to your output captions. If Style passthrough is set to disabled, leave blank to use a value
+     * of 0 and remove all shadows from your output captions.
      */
     private Integer shadowOpacity;
     /**
@@ -123,35 +136,36 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     private Integer shadowXOffset;
     /**
      * Specify the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a
-     * shadow offset 2 pixels above the text. Leave Shadow y-offset (ShadowYOffset) blank and set Style passthrough
-     * (StylePassthrough) to enabled to use the shadow y-offset data from your input captions, if present.
+     * shadow offset 2 pixels above the text. Leave Shadow y-offset blank and set Style passthrough to enabled to use
+     * the shadow y-offset data from your input captions, if present.
      */
     private Integer shadowYOffset;
     /**
-     * Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position information
-     * from your input captions. MediaConvert uses default settings for any missing style and position information in
-     * your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position
-     * information from your input captions and use default settings: white text with black outlining, bottom-center
+     * To use the available style, color, and position information from your input captions: Set Style passthrough to
+     * Enabled. Note that MediaConvert uses default settings for any missing style or position information in your input
+     * captions To ignore the style and position information from your input captions and use default settings: Leave
+     * blank or keep the default value, Disabled. Default settings include white text with black outlining, bottom-center
      * positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to
-     * manually override any of the individual style and position settings.
+     * manually override any of the individual style and position settings. You can also override any fonts by manually
+     * specifying custom font files.
      */
     private String stylePassthrough;
     /**
-     * Specify whether the text spacing (TeletextSpacing) in your captions is set by the captions grid, or varies
-     * depending on letter width. Choose fixed grid (FIXED_GRID) to conform to the spacing specified in the captions
-     * file more accurately. Choose proportional (PROPORTIONAL) to make the text easier to read for closed captions.
+     * Specify whether the text spacing in your captions is set by the captions grid, or varies depending on letter
+     * width. Choose fixed grid to conform to the spacing specified in the captions file more accurately. Choose
+     * proportional to make the text easier to read for closed captions.
      */
     private String teletextSpacing;
     /**
-     * Specify the horizontal position (XPosition) of the captions, relative to the left side of the output in pixels. A
-     * value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit
-     * x_position is provided, the horizontal caption position will be determined by the alignment parameter.
+     * Specify the horizontal position of the captions, relative to the left side of the output in pixels. A value of 10
+     * would result in the captions starting 10 pixels from the left of the output. If no explicit x_position is
+     * provided, the horizontal caption position will be determined by the alignment parameter.
      */
     private Integer xPosition;
     /**
-     * Specify the vertical position (YPosition) of the captions, relative to the top of the output in pixels. A value
-     * of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit y_position is
-     * provided, the caption will be positioned towards the bottom of the output.
+     * Specify the vertical position of the captions, relative to the top of the output in pixels. A value of 10 would
+     * result in the captions starting 10 pixels from the top of the output. If no explicit y_position is provided, the
+     * caption will be positioned towards the bottom of the output.
      */
     private Integer yPosition;
 
@@ -235,21 +249,19 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Ignore this setting unless Style passthrough (StylePassthrough) is set to Enabled and Font color (FontColor) set
-     * to Black, Yellow, Red, Green, Blue, or Hex. Use Apply font color (ApplyFontColor) for additional font color
-     * controls. When you choose White text only (WHITE_TEXT_ONLY), or leave blank, your font color setting only applies
-     * to white text in your input captions. For example, if your font color setting is Yellow, and your input captions
-     * have red and white text, your output captions will have red and yellow text. When you choose ALL_TEXT, your font
-     * color setting applies to all of your output captions text.
+     * Ignore this setting unless Style passthrough is set to Enabled and Font color set to Black, Yellow, Red, Green,
+     * Blue, or Hex. Use Apply font color for additional font color controls. When you choose White text only, or leave
+     * blank, your font color setting only applies to white text in your input captions. For example, if your font color
+     * setting is Yellow, and your input captions have red and white text, your output captions will have red and yellow
+     * text. When you choose ALL_TEXT, your font color setting applies to all of your output captions text.
      * 
      * @param applyFontColor
-     *        Ignore this setting unless Style passthrough (StylePassthrough) is set to Enabled and Font color
-     *        (FontColor) set to Black, Yellow, Red, Green, Blue, or Hex. Use Apply font color (ApplyFontColor) for
-     *        additional font color controls. When you choose White text only (WHITE_TEXT_ONLY), or leave blank, your
-     *        font color setting only applies to white text in your input captions. For example, if your font color
-     *        setting is Yellow, and your input captions have red and white text, your output captions will have red and
-     *        yellow text. When you choose ALL_TEXT, your font color setting applies to all of your output captions
-     *        text.
+     *        Ignore this setting unless Style passthrough is set to Enabled and Font color set to Black, Yellow, Red,
+     *        Green, Blue, or Hex. Use Apply font color for additional font color controls. When you choose White text
+     *        only, or leave blank, your font color setting only applies to white text in your input captions. For
+     *        example, if your font color setting is Yellow, and your input captions have red and white text, your
+     *        output captions will have red and yellow text. When you choose ALL_TEXT, your font color setting applies
+     *        to all of your output captions text.
      * @see BurninSubtitleApplyFontColor
      */
 
@@ -258,20 +270,18 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Ignore this setting unless Style passthrough (StylePassthrough) is set to Enabled and Font color (FontColor) set
-     * to Black, Yellow, Red, Green, Blue, or Hex. Use Apply font color (ApplyFontColor) for additional font color
-     * controls. When you choose White text only (WHITE_TEXT_ONLY), or leave blank, your font color setting only applies
-     * to white text in your input captions. For example, if your font color setting is Yellow, and your input captions
-     * have red and white text, your output captions will have red and yellow text. When you choose ALL_TEXT, your font
-     * color setting applies to all of your output captions text.
+     * Ignore this setting unless Style passthrough is set to Enabled and Font color set to Black, Yellow, Red, Green,
+     * Blue, or Hex. Use Apply font color for additional font color controls. When you choose White text only, or leave
+     * blank, your font color setting only applies to white text in your input captions. For example, if your font color
+     * setting is Yellow, and your input captions have red and white text, your output captions will have red and yellow
+     * text. When you choose ALL_TEXT, your font color setting applies to all of your output captions text.
      * 
-     * @return Ignore this setting unless Style passthrough (StylePassthrough) is set to Enabled and Font color
-     *         (FontColor) set to Black, Yellow, Red, Green, Blue, or Hex. Use Apply font color (ApplyFontColor) for
-     *         additional font color controls. When you choose White text only (WHITE_TEXT_ONLY), or leave blank, your
-     *         font color setting only applies to white text in your input captions. For example, if your font color
-     *         setting is Yellow, and your input captions have red and white text, your output captions will have red
-     *         and yellow text. When you choose ALL_TEXT, your font color setting applies to all of your output captions
-     *         text.
+     * @return Ignore this setting unless Style passthrough is set to Enabled and Font color set to Black, Yellow, Red,
+     *         Green, Blue, or Hex. Use Apply font color for additional font color controls. When you choose White text
+     *         only, or leave blank, your font color setting only applies to white text in your input captions. For
+     *         example, if your font color setting is Yellow, and your input captions have red and white text, your
+     *         output captions will have red and yellow text. When you choose ALL_TEXT, your font color setting applies
+     *         to all of your output captions text.
      * @see BurninSubtitleApplyFontColor
      */
 
@@ -280,21 +290,19 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Ignore this setting unless Style passthrough (StylePassthrough) is set to Enabled and Font color (FontColor) set
-     * to Black, Yellow, Red, Green, Blue, or Hex. Use Apply font color (ApplyFontColor) for additional font color
-     * controls. When you choose White text only (WHITE_TEXT_ONLY), or leave blank, your font color setting only applies
-     * to white text in your input captions. For example, if your font color setting is Yellow, and your input captions
-     * have red and white text, your output captions will have red and yellow text. When you choose ALL_TEXT, your font
-     * color setting applies to all of your output captions text.
+     * Ignore this setting unless Style passthrough is set to Enabled and Font color set to Black, Yellow, Red, Green,
+     * Blue, or Hex. Use Apply font color for additional font color controls. When you choose White text only, or leave
+     * blank, your font color setting only applies to white text in your input captions. For example, if your font color
+     * setting is Yellow, and your input captions have red and white text, your output captions will have red and yellow
+     * text. When you choose ALL_TEXT, your font color setting applies to all of your output captions text.
      * 
      * @param applyFontColor
-     *        Ignore this setting unless Style passthrough (StylePassthrough) is set to Enabled and Font color
-     *        (FontColor) set to Black, Yellow, Red, Green, Blue, or Hex. Use Apply font color (ApplyFontColor) for
-     *        additional font color controls. When you choose White text only (WHITE_TEXT_ONLY), or leave blank, your
-     *        font color setting only applies to white text in your input captions. For example, if your font color
-     *        setting is Yellow, and your input captions have red and white text, your output captions will have red and
-     *        yellow text. When you choose ALL_TEXT, your font color setting applies to all of your output captions
-     *        text.
+     *        Ignore this setting unless Style passthrough is set to Enabled and Font color set to Black, Yellow, Red,
+     *        Green, Blue, or Hex. Use Apply font color for additional font color controls. When you choose White text
+     *        only, or leave blank, your font color setting only applies to white text in your input captions. For
+     *        example, if your font color setting is Yellow, and your input captions have red and white text, your
+     *        output captions will have red and yellow text. When you choose ALL_TEXT, your font color setting applies
+     *        to all of your output captions text.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BurninSubtitleApplyFontColor
      */
@@ -305,21 +313,19 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Ignore this setting unless Style passthrough (StylePassthrough) is set to Enabled and Font color (FontColor) set
-     * to Black, Yellow, Red, Green, Blue, or Hex. Use Apply font color (ApplyFontColor) for additional font color
-     * controls. When you choose White text only (WHITE_TEXT_ONLY), or leave blank, your font color setting only applies
-     * to white text in your input captions. For example, if your font color setting is Yellow, and your input captions
-     * have red and white text, your output captions will have red and yellow text. When you choose ALL_TEXT, your font
-     * color setting applies to all of your output captions text.
+     * Ignore this setting unless Style passthrough is set to Enabled and Font color set to Black, Yellow, Red, Green,
+     * Blue, or Hex. Use Apply font color for additional font color controls. When you choose White text only, or leave
+     * blank, your font color setting only applies to white text in your input captions. For example, if your font color
+     * setting is Yellow, and your input captions have red and white text, your output captions will have red and yellow
+     * text. When you choose ALL_TEXT, your font color setting applies to all of your output captions text.
      * 
      * @param applyFontColor
-     *        Ignore this setting unless Style passthrough (StylePassthrough) is set to Enabled and Font color
-     *        (FontColor) set to Black, Yellow, Red, Green, Blue, or Hex. Use Apply font color (ApplyFontColor) for
-     *        additional font color controls. When you choose White text only (WHITE_TEXT_ONLY), or leave blank, your
-     *        font color setting only applies to white text in your input captions. For example, if your font color
-     *        setting is Yellow, and your input captions have red and white text, your output captions will have red and
-     *        yellow text. When you choose ALL_TEXT, your font color setting applies to all of your output captions
-     *        text.
+     *        Ignore this setting unless Style passthrough is set to Enabled and Font color set to Black, Yellow, Red,
+     *        Green, Blue, or Hex. Use Apply font color for additional font color controls. When you choose White text
+     *        only, or leave blank, your font color setting only applies to white text in your input captions. For
+     *        example, if your font color setting is Yellow, and your input captions have red and white text, your
+     *        output captions will have red and yellow text. When you choose ALL_TEXT, your font color setting applies
+     *        to all of your output captions text.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BurninSubtitleApplyFontColor
      */
@@ -330,14 +336,12 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify the color of the rectangle behind the captions. Leave background color (BackgroundColor) blank and set
-     * Style passthrough (StylePassthrough) to enabled to use the background color data from your input captions, if
-     * present.
+     * Specify the color of the rectangle behind the captions. Leave background color blank and set Style passthrough to
+     * enabled to use the background color data from your input captions, if present.
      * 
      * @param backgroundColor
-     *        Specify the color of the rectangle behind the captions. Leave background color (BackgroundColor) blank and
-     *        set Style passthrough (StylePassthrough) to enabled to use the background color data from your input
-     *        captions, if present.
+     *        Specify the color of the rectangle behind the captions. Leave background color blank and set Style
+     *        passthrough to enabled to use the background color data from your input captions, if present.
      * @see BurninSubtitleBackgroundColor
      */
 
@@ -346,13 +350,11 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify the color of the rectangle behind the captions. Leave background color (BackgroundColor) blank and set
-     * Style passthrough (StylePassthrough) to enabled to use the background color data from your input captions, if
-     * present.
+     * Specify the color of the rectangle behind the captions. Leave background color blank and set Style passthrough to
+     * enabled to use the background color data from your input captions, if present.
      * 
-     * @return Specify the color of the rectangle behind the captions. Leave background color (BackgroundColor) blank
-     *         and set Style passthrough (StylePassthrough) to enabled to use the background color data from your input
-     *         captions, if present.
+     * @return Specify the color of the rectangle behind the captions. Leave background color blank and set Style
+     *         passthrough to enabled to use the background color data from your input captions, if present.
      * @see BurninSubtitleBackgroundColor
      */
 
@@ -361,14 +363,12 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify the color of the rectangle behind the captions. Leave background color (BackgroundColor) blank and set
-     * Style passthrough (StylePassthrough) to enabled to use the background color data from your input captions, if
-     * present.
+     * Specify the color of the rectangle behind the captions. Leave background color blank and set Style passthrough to
+     * enabled to use the background color data from your input captions, if present.
      * 
      * @param backgroundColor
-     *        Specify the color of the rectangle behind the captions. Leave background color (BackgroundColor) blank and
-     *        set Style passthrough (StylePassthrough) to enabled to use the background color data from your input
-     *        captions, if present.
+     *        Specify the color of the rectangle behind the captions. Leave background color blank and set Style
+     *        passthrough to enabled to use the background color data from your input captions, if present.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BurninSubtitleBackgroundColor
      */
@@ -379,14 +379,12 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify the color of the rectangle behind the captions. Leave background color (BackgroundColor) blank and set
-     * Style passthrough (StylePassthrough) to enabled to use the background color data from your input captions, if
-     * present.
+     * Specify the color of the rectangle behind the captions. Leave background color blank and set Style passthrough to
+     * enabled to use the background color data from your input captions, if present.
      * 
      * @param backgroundColor
-     *        Specify the color of the rectangle behind the captions. Leave background color (BackgroundColor) blank and
-     *        set Style passthrough (StylePassthrough) to enabled to use the background color data from your input
-     *        captions, if present.
+     *        Specify the color of the rectangle behind the captions. Leave background color blank and set Style
+     *        passthrough to enabled to use the background color data from your input captions, if present.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BurninSubtitleBackgroundColor
      */
@@ -398,15 +396,15 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
 
     /**
      * Specify the opacity of the background rectangle. Enter a value from 0 to 255, where 0 is transparent and 255 is
-     * opaque. If Style passthrough (StylePassthrough) is set to enabled, leave blank to pass through the background
-     * style information in your input captions to your output captions. If Style passthrough is set to disabled, leave
-     * blank to use a value of 0 and remove all backgrounds from your output captions.
+     * opaque. If Style passthrough is set to enabled, leave blank to pass through the background style information in
+     * your input captions to your output captions. If Style passthrough is set to disabled, leave blank to use a value
+     * of 0 and remove all backgrounds from your output captions.
      * 
      * @param backgroundOpacity
      *        Specify the opacity of the background rectangle. Enter a value from 0 to 255, where 0 is transparent and
-     *        255 is opaque. If Style passthrough (StylePassthrough) is set to enabled, leave blank to pass through the
-     *        background style information in your input captions to your output captions. If Style passthrough is set
-     *        to disabled, leave blank to use a value of 0 and remove all backgrounds from your output captions.
+     *        255 is opaque. If Style passthrough is set to enabled, leave blank to pass through the background style
+     *        information in your input captions to your output captions. If Style passthrough is set to disabled, leave
+     *        blank to use a value of 0 and remove all backgrounds from your output captions.
      */
 
     public void setBackgroundOpacity(Integer backgroundOpacity) {
@@ -415,14 +413,14 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
 
     /**
      * Specify the opacity of the background rectangle. Enter a value from 0 to 255, where 0 is transparent and 255 is
-     * opaque. If Style passthrough (StylePassthrough) is set to enabled, leave blank to pass through the background
-     * style information in your input captions to your output captions. If Style passthrough is set to disabled, leave
-     * blank to use a value of 0 and remove all backgrounds from your output captions.
+     * opaque. If Style passthrough is set to enabled, leave blank to pass through the background style information in
+     * your input captions to your output captions. If Style passthrough is set to disabled, leave blank to use a value
+     * of 0 and remove all backgrounds from your output captions.
      * 
      * @return Specify the opacity of the background rectangle. Enter a value from 0 to 255, where 0 is transparent and
-     *         255 is opaque. If Style passthrough (StylePassthrough) is set to enabled, leave blank to pass through the
-     *         background style information in your input captions to your output captions. If Style passthrough is set
-     *         to disabled, leave blank to use a value of 0 and remove all backgrounds from your output captions.
+     *         255 is opaque. If Style passthrough is set to enabled, leave blank to pass through the background style
+     *         information in your input captions to your output captions. If Style passthrough is set to disabled,
+     *         leave blank to use a value of 0 and remove all backgrounds from your output captions.
      */
 
     public Integer getBackgroundOpacity() {
@@ -431,15 +429,15 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
 
     /**
      * Specify the opacity of the background rectangle. Enter a value from 0 to 255, where 0 is transparent and 255 is
-     * opaque. If Style passthrough (StylePassthrough) is set to enabled, leave blank to pass through the background
-     * style information in your input captions to your output captions. If Style passthrough is set to disabled, leave
-     * blank to use a value of 0 and remove all backgrounds from your output captions.
+     * opaque. If Style passthrough is set to enabled, leave blank to pass through the background style information in
+     * your input captions to your output captions. If Style passthrough is set to disabled, leave blank to use a value
+     * of 0 and remove all backgrounds from your output captions.
      * 
      * @param backgroundOpacity
      *        Specify the opacity of the background rectangle. Enter a value from 0 to 255, where 0 is transparent and
-     *        255 is opaque. If Style passthrough (StylePassthrough) is set to enabled, leave blank to pass through the
-     *        background style information in your input captions to your output captions. If Style passthrough is set
-     *        to disabled, leave blank to use a value of 0 and remove all backgrounds from your output captions.
+     *        255 is opaque. If Style passthrough is set to enabled, leave blank to pass through the background style
+     *        information in your input captions to your output captions. If Style passthrough is set to disabled, leave
+     *        blank to use a value of 0 and remove all backgrounds from your output captions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -450,19 +448,19 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
 
     /**
      * Specify the font that you want the service to use for your burn in captions when your input captions specify a
-     * font that MediaConvert doesn't support. When you set Fallback font (FallbackFont) to best match (BEST_MATCH), or
-     * leave blank, MediaConvert uses a supported font that most closely matches the font that your input captions
-     * specify. When there are multiple unsupported fonts in your input captions, MediaConvert matches each font with the
-     * supported font that matches best. When you explicitly choose a replacement font, MediaConvert uses that font to
-     * replace all unsupported fonts from your input.
+     * font that MediaConvert doesn't support. When you set Fallback font to best match, or leave blank, MediaConvert
+     * uses a supported font that most closely matches the font that your input captions specify. When there are multiple
+     * unsupported fonts in your input captions, MediaConvert matches each font with the supported font that matches
+     * best. When you explicitly choose a replacement font, MediaConvert uses that font to replace all unsupported fonts
+     * from your input.
      * 
      * @param fallbackFont
      *        Specify the font that you want the service to use for your burn in captions when your input captions
-     *        specify a font that MediaConvert doesn't support. When you set Fallback font (FallbackFont) to best match
-     *        (BEST_MATCH), or leave blank, MediaConvert uses a supported font that most closely matches the font that
-     *        your input captions specify. When there are multiple unsupported fonts in your input captions,
-     *        MediaConvert matches each font with the supported font that matches best. When you explicitly choose a
-     *        replacement font, MediaConvert uses that font to replace all unsupported fonts from your input.
+     *        specify a font that MediaConvert doesn't support. When you set Fallback font to best match, or leave
+     *        blank, MediaConvert uses a supported font that most closely matches the font that your input captions
+     *        specify. When there are multiple unsupported fonts in your input captions, MediaConvert matches each font
+     *        with the supported font that matches best. When you explicitly choose a replacement font, MediaConvert
+     *        uses that font to replace all unsupported fonts from your input.
      * @see BurninSubtitleFallbackFont
      */
 
@@ -472,18 +470,18 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
 
     /**
      * Specify the font that you want the service to use for your burn in captions when your input captions specify a
-     * font that MediaConvert doesn't support. When you set Fallback font (FallbackFont) to best match (BEST_MATCH), or
-     * leave blank, MediaConvert uses a supported font that most closely matches the font that your input captions
-     * specify. When there are multiple unsupported fonts in your input captions, MediaConvert matches each font with the
-     * supported font that matches best. When you explicitly choose a replacement font, MediaConvert uses that font to
-     * replace all unsupported fonts from your input.
+     * font that MediaConvert doesn't support. When you set Fallback font to best match, or leave blank, MediaConvert
+     * uses a supported font that most closely matches the font that your input captions specify. When there are multiple
+     * unsupported fonts in your input captions, MediaConvert matches each font with the supported font that matches
+     * best. When you explicitly choose a replacement font, MediaConvert uses that font to replace all unsupported fonts
+     * from your input.
      * 
      * @return Specify the font that you want the service to use for your burn in captions when your input captions
-     *         specify a font that MediaConvert doesn't support. When you set Fallback font (FallbackFont) to best match
-     *         (BEST_MATCH), or leave blank, MediaConvert uses a supported font that most closely matches the font that
-     *         your input captions specify. When there are multiple unsupported fonts in your input captions,
-     *         MediaConvert matches each font with the supported font that matches best. When you explicitly choose a
-     *         replacement font, MediaConvert uses that font to replace all unsupported fonts from your input.
+     *         specify a font that MediaConvert doesn't support. When you set Fallback font to best match, or leave
+     *         blank, MediaConvert uses a supported font that most closely matches the font that your input captions
+     *         specify. When there are multiple unsupported fonts in your input captions, MediaConvert matches each font
+     *         with the supported font that matches best. When you explicitly choose a replacement font, MediaConvert
+     *         uses that font to replace all unsupported fonts from your input.
      * @see BurninSubtitleFallbackFont
      */
 
@@ -493,19 +491,19 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
 
     /**
      * Specify the font that you want the service to use for your burn in captions when your input captions specify a
-     * font that MediaConvert doesn't support. When you set Fallback font (FallbackFont) to best match (BEST_MATCH), or
-     * leave blank, MediaConvert uses a supported font that most closely matches the font that your input captions
-     * specify. When there are multiple unsupported fonts in your input captions, MediaConvert matches each font with the
-     * supported font that matches best. When you explicitly choose a replacement font, MediaConvert uses that font to
-     * replace all unsupported fonts from your input.
+     * font that MediaConvert doesn't support. When you set Fallback font to best match, or leave blank, MediaConvert
+     * uses a supported font that most closely matches the font that your input captions specify. When there are multiple
+     * unsupported fonts in your input captions, MediaConvert matches each font with the supported font that matches
+     * best. When you explicitly choose a replacement font, MediaConvert uses that font to replace all unsupported fonts
+     * from your input.
      * 
      * @param fallbackFont
      *        Specify the font that you want the service to use for your burn in captions when your input captions
-     *        specify a font that MediaConvert doesn't support. When you set Fallback font (FallbackFont) to best match
-     *        (BEST_MATCH), or leave blank, MediaConvert uses a supported font that most closely matches the font that
-     *        your input captions specify. When there are multiple unsupported fonts in your input captions,
-     *        MediaConvert matches each font with the supported font that matches best. When you explicitly choose a
-     *        replacement font, MediaConvert uses that font to replace all unsupported fonts from your input.
+     *        specify a font that MediaConvert doesn't support. When you set Fallback font to best match, or leave
+     *        blank, MediaConvert uses a supported font that most closely matches the font that your input captions
+     *        specify. When there are multiple unsupported fonts in your input captions, MediaConvert matches each font
+     *        with the supported font that matches best. When you explicitly choose a replacement font, MediaConvert
+     *        uses that font to replace all unsupported fonts from your input.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BurninSubtitleFallbackFont
      */
@@ -517,19 +515,19 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
 
     /**
      * Specify the font that you want the service to use for your burn in captions when your input captions specify a
-     * font that MediaConvert doesn't support. When you set Fallback font (FallbackFont) to best match (BEST_MATCH), or
-     * leave blank, MediaConvert uses a supported font that most closely matches the font that your input captions
-     * specify. When there are multiple unsupported fonts in your input captions, MediaConvert matches each font with the
-     * supported font that matches best. When you explicitly choose a replacement font, MediaConvert uses that font to
-     * replace all unsupported fonts from your input.
+     * font that MediaConvert doesn't support. When you set Fallback font to best match, or leave blank, MediaConvert
+     * uses a supported font that most closely matches the font that your input captions specify. When there are multiple
+     * unsupported fonts in your input captions, MediaConvert matches each font with the supported font that matches
+     * best. When you explicitly choose a replacement font, MediaConvert uses that font to replace all unsupported fonts
+     * from your input.
      * 
      * @param fallbackFont
      *        Specify the font that you want the service to use for your burn in captions when your input captions
-     *        specify a font that MediaConvert doesn't support. When you set Fallback font (FallbackFont) to best match
-     *        (BEST_MATCH), or leave blank, MediaConvert uses a supported font that most closely matches the font that
-     *        your input captions specify. When there are multiple unsupported fonts in your input captions,
-     *        MediaConvert matches each font with the supported font that matches best. When you explicitly choose a
-     *        replacement font, MediaConvert uses that font to replace all unsupported fonts from your input.
+     *        specify a font that MediaConvert doesn't support. When you set Fallback font to best match, or leave
+     *        blank, MediaConvert uses a supported font that most closely matches the font that your input captions
+     *        specify. When there are multiple unsupported fonts in your input captions, MediaConvert matches each font
+     *        with the supported font that matches best. When you explicitly choose a replacement font, MediaConvert
+     *        uses that font to replace all unsupported fonts from your input.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BurninSubtitleFallbackFont
      */
@@ -540,12 +538,12 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify the color of the burned-in captions text. Leave Font color (FontColor) blank and set Style passthrough
-     * (StylePassthrough) to enabled to use the font color data from your input captions, if present.
+     * Specify the color of the burned-in captions text. Leave Font color blank and set Style passthrough to enabled to
+     * use the font color data from your input captions, if present.
      * 
      * @param fontColor
-     *        Specify the color of the burned-in captions text. Leave Font color (FontColor) blank and set Style
-     *        passthrough (StylePassthrough) to enabled to use the font color data from your input captions, if present.
+     *        Specify the color of the burned-in captions text. Leave Font color blank and set Style passthrough to
+     *        enabled to use the font color data from your input captions, if present.
      * @see BurninSubtitleFontColor
      */
 
@@ -554,12 +552,11 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify the color of the burned-in captions text. Leave Font color (FontColor) blank and set Style passthrough
-     * (StylePassthrough) to enabled to use the font color data from your input captions, if present.
+     * Specify the color of the burned-in captions text. Leave Font color blank and set Style passthrough to enabled to
+     * use the font color data from your input captions, if present.
      * 
-     * @return Specify the color of the burned-in captions text. Leave Font color (FontColor) blank and set Style
-     *         passthrough (StylePassthrough) to enabled to use the font color data from your input captions, if
-     *         present.
+     * @return Specify the color of the burned-in captions text. Leave Font color blank and set Style passthrough to
+     *         enabled to use the font color data from your input captions, if present.
      * @see BurninSubtitleFontColor
      */
 
@@ -568,12 +565,12 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify the color of the burned-in captions text. Leave Font color (FontColor) blank and set Style passthrough
-     * (StylePassthrough) to enabled to use the font color data from your input captions, if present.
+     * Specify the color of the burned-in captions text. Leave Font color blank and set Style passthrough to enabled to
+     * use the font color data from your input captions, if present.
      * 
      * @param fontColor
-     *        Specify the color of the burned-in captions text. Leave Font color (FontColor) blank and set Style
-     *        passthrough (StylePassthrough) to enabled to use the font color data from your input captions, if present.
+     *        Specify the color of the burned-in captions text. Leave Font color blank and set Style passthrough to
+     *        enabled to use the font color data from your input captions, if present.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BurninSubtitleFontColor
      */
@@ -584,18 +581,178 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify the color of the burned-in captions text. Leave Font color (FontColor) blank and set Style passthrough
-     * (StylePassthrough) to enabled to use the font color data from your input captions, if present.
+     * Specify the color of the burned-in captions text. Leave Font color blank and set Style passthrough to enabled to
+     * use the font color data from your input captions, if present.
      * 
      * @param fontColor
-     *        Specify the color of the burned-in captions text. Leave Font color (FontColor) blank and set Style
-     *        passthrough (StylePassthrough) to enabled to use the font color data from your input captions, if present.
+     *        Specify the color of the burned-in captions text. Leave Font color blank and set Style passthrough to
+     *        enabled to use the font color data from your input captions, if present.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BurninSubtitleFontColor
      */
 
     public BurninDestinationSettings withFontColor(BurninSubtitleFontColor fontColor) {
         this.fontColor = fontColor.toString();
+        return this;
+    }
+
+    /**
+     * Specify a bold TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL.
+     * When you do, you must also separately specify a regular, an italic, and a bold italic font file.
+     * 
+     * @param fontFileBold
+     *        Specify a bold TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS
+     *        URL. When you do, you must also separately specify a regular, an italic, and a bold italic font file.
+     */
+
+    public void setFontFileBold(String fontFileBold) {
+        this.fontFileBold = fontFileBold;
+    }
+
+    /**
+     * Specify a bold TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL.
+     * When you do, you must also separately specify a regular, an italic, and a bold italic font file.
+     * 
+     * @return Specify a bold TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS
+     *         URL. When you do, you must also separately specify a regular, an italic, and a bold italic font file.
+     */
+
+    public String getFontFileBold() {
+        return this.fontFileBold;
+    }
+
+    /**
+     * Specify a bold TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL.
+     * When you do, you must also separately specify a regular, an italic, and a bold italic font file.
+     * 
+     * @param fontFileBold
+     *        Specify a bold TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS
+     *        URL. When you do, you must also separately specify a regular, an italic, and a bold italic font file.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BurninDestinationSettings withFontFileBold(String fontFileBold) {
+        setFontFileBold(fontFileBold);
+        return this;
+    }
+
+    /**
+     * Specify a bold italic TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS
+     * URL. When you do, you must also separately specify a regular, a bold, and an italic font file.
+     * 
+     * @param fontFileBoldItalic
+     *        Specify a bold italic TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or
+     *        HTTPS URL. When you do, you must also separately specify a regular, a bold, and an italic font file.
+     */
+
+    public void setFontFileBoldItalic(String fontFileBoldItalic) {
+        this.fontFileBoldItalic = fontFileBoldItalic;
+    }
+
+    /**
+     * Specify a bold italic TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS
+     * URL. When you do, you must also separately specify a regular, a bold, and an italic font file.
+     * 
+     * @return Specify a bold italic TrueType font file to use when rendering your output captions. Enter an S3, HTTP,
+     *         or HTTPS URL. When you do, you must also separately specify a regular, a bold, and an italic font file.
+     */
+
+    public String getFontFileBoldItalic() {
+        return this.fontFileBoldItalic;
+    }
+
+    /**
+     * Specify a bold italic TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS
+     * URL. When you do, you must also separately specify a regular, a bold, and an italic font file.
+     * 
+     * @param fontFileBoldItalic
+     *        Specify a bold italic TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or
+     *        HTTPS URL. When you do, you must also separately specify a regular, a bold, and an italic font file.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BurninDestinationSettings withFontFileBoldItalic(String fontFileBoldItalic) {
+        setFontFileBoldItalic(fontFileBoldItalic);
+        return this;
+    }
+
+    /**
+     * Specify an italic TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL.
+     * When you do, you must also separately specify a regular, a bold, and a bold italic font file.
+     * 
+     * @param fontFileItalic
+     *        Specify an italic TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or
+     *        HTTPS URL. When you do, you must also separately specify a regular, a bold, and a bold italic font file.
+     */
+
+    public void setFontFileItalic(String fontFileItalic) {
+        this.fontFileItalic = fontFileItalic;
+    }
+
+    /**
+     * Specify an italic TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL.
+     * When you do, you must also separately specify a regular, a bold, and a bold italic font file.
+     * 
+     * @return Specify an italic TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or
+     *         HTTPS URL. When you do, you must also separately specify a regular, a bold, and a bold italic font file.
+     */
+
+    public String getFontFileItalic() {
+        return this.fontFileItalic;
+    }
+
+    /**
+     * Specify an italic TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL.
+     * When you do, you must also separately specify a regular, a bold, and a bold italic font file.
+     * 
+     * @param fontFileItalic
+     *        Specify an italic TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or
+     *        HTTPS URL. When you do, you must also separately specify a regular, a bold, and a bold italic font file.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BurninDestinationSettings withFontFileItalic(String fontFileItalic) {
+        setFontFileItalic(fontFileItalic);
+        return this;
+    }
+
+    /**
+     * Specify a regular TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL.
+     * When you do, you must also separately specify a bold, an italic, and a bold italic font file.
+     * 
+     * @param fontFileRegular
+     *        Specify a regular TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or
+     *        HTTPS URL. When you do, you must also separately specify a bold, an italic, and a bold italic font file.
+     */
+
+    public void setFontFileRegular(String fontFileRegular) {
+        this.fontFileRegular = fontFileRegular;
+    }
+
+    /**
+     * Specify a regular TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL.
+     * When you do, you must also separately specify a bold, an italic, and a bold italic font file.
+     * 
+     * @return Specify a regular TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or
+     *         HTTPS URL. When you do, you must also separately specify a bold, an italic, and a bold italic font file.
+     */
+
+    public String getFontFileRegular() {
+        return this.fontFileRegular;
+    }
+
+    /**
+     * Specify a regular TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or HTTPS URL.
+     * When you do, you must also separately specify a bold, an italic, and a bold italic font file.
+     * 
+     * @param fontFileRegular
+     *        Specify a regular TrueType font file to use when rendering your output captions. Enter an S3, HTTP, or
+     *        HTTPS URL. When you do, you must also separately specify a bold, an italic, and a bold italic font file.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BurninDestinationSettings withFontFileRegular(String fontFileRegular) {
+        setFontFileRegular(fontFileRegular);
         return this;
     }
 
@@ -634,10 +791,10 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify the Font resolution (FontResolution) in DPI (dots per inch).
+     * Specify the Font resolution in DPI (dots per inch).
      * 
      * @param fontResolution
-     *        Specify the Font resolution (FontResolution) in DPI (dots per inch).
+     *        Specify the Font resolution in DPI (dots per inch).
      */
 
     public void setFontResolution(Integer fontResolution) {
@@ -645,9 +802,9 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify the Font resolution (FontResolution) in DPI (dots per inch).
+     * Specify the Font resolution in DPI (dots per inch).
      * 
-     * @return Specify the Font resolution (FontResolution) in DPI (dots per inch).
+     * @return Specify the Font resolution in DPI (dots per inch).
      */
 
     public Integer getFontResolution() {
@@ -655,10 +812,10 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify the Font resolution (FontResolution) in DPI (dots per inch).
+     * Specify the Font resolution in DPI (dots per inch).
      * 
      * @param fontResolution
-     *        Specify the Font resolution (FontResolution) in DPI (dots per inch).
+     *        Specify the Font resolution in DPI (dots per inch).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -668,14 +825,14 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Set Font script (FontScript) to Automatically determined (AUTOMATIC), or leave blank, to automatically determine
-     * the font script in your input captions. Otherwise, set to Simplified Chinese (HANS) or Traditional Chinese (HANT)
-     * if your input font script uses Simplified or Traditional Chinese.
+     * Set Font script to Automatically determined, or leave blank, to automatically determine the font script in your
+     * input captions. Otherwise, set to Simplified Chinese (HANS) or Traditional Chinese (HANT) if your input font
+     * script uses Simplified or Traditional Chinese.
      * 
      * @param fontScript
-     *        Set Font script (FontScript) to Automatically determined (AUTOMATIC), or leave blank, to automatically
-     *        determine the font script in your input captions. Otherwise, set to Simplified Chinese (HANS) or
-     *        Traditional Chinese (HANT) if your input font script uses Simplified or Traditional Chinese.
+     *        Set Font script to Automatically determined, or leave blank, to automatically determine the font script in
+     *        your input captions. Otherwise, set to Simplified Chinese (HANS) or Traditional Chinese (HANT) if your
+     *        input font script uses Simplified or Traditional Chinese.
      * @see FontScript
      */
 
@@ -684,13 +841,13 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Set Font script (FontScript) to Automatically determined (AUTOMATIC), or leave blank, to automatically determine
-     * the font script in your input captions. Otherwise, set to Simplified Chinese (HANS) or Traditional Chinese (HANT)
-     * if your input font script uses Simplified or Traditional Chinese.
+     * Set Font script to Automatically determined, or leave blank, to automatically determine the font script in your
+     * input captions. Otherwise, set to Simplified Chinese (HANS) or Traditional Chinese (HANT) if your input font
+     * script uses Simplified or Traditional Chinese.
      * 
-     * @return Set Font script (FontScript) to Automatically determined (AUTOMATIC), or leave blank, to automatically
-     *         determine the font script in your input captions. Otherwise, set to Simplified Chinese (HANS) or
-     *         Traditional Chinese (HANT) if your input font script uses Simplified or Traditional Chinese.
+     * @return Set Font script to Automatically determined, or leave blank, to automatically determine the font script
+     *         in your input captions. Otherwise, set to Simplified Chinese (HANS) or Traditional Chinese (HANT) if your
+     *         input font script uses Simplified or Traditional Chinese.
      * @see FontScript
      */
 
@@ -699,14 +856,14 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Set Font script (FontScript) to Automatically determined (AUTOMATIC), or leave blank, to automatically determine
-     * the font script in your input captions. Otherwise, set to Simplified Chinese (HANS) or Traditional Chinese (HANT)
-     * if your input font script uses Simplified or Traditional Chinese.
+     * Set Font script to Automatically determined, or leave blank, to automatically determine the font script in your
+     * input captions. Otherwise, set to Simplified Chinese (HANS) or Traditional Chinese (HANT) if your input font
+     * script uses Simplified or Traditional Chinese.
      * 
      * @param fontScript
-     *        Set Font script (FontScript) to Automatically determined (AUTOMATIC), or leave blank, to automatically
-     *        determine the font script in your input captions. Otherwise, set to Simplified Chinese (HANS) or
-     *        Traditional Chinese (HANT) if your input font script uses Simplified or Traditional Chinese.
+     *        Set Font script to Automatically determined, or leave blank, to automatically determine the font script in
+     *        your input captions. Otherwise, set to Simplified Chinese (HANS) or Traditional Chinese (HANT) if your
+     *        input font script uses Simplified or Traditional Chinese.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FontScript
      */
@@ -717,14 +874,14 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Set Font script (FontScript) to Automatically determined (AUTOMATIC), or leave blank, to automatically determine
-     * the font script in your input captions. Otherwise, set to Simplified Chinese (HANS) or Traditional Chinese (HANT)
-     * if your input font script uses Simplified or Traditional Chinese.
+     * Set Font script to Automatically determined, or leave blank, to automatically determine the font script in your
+     * input captions. Otherwise, set to Simplified Chinese (HANS) or Traditional Chinese (HANT) if your input font
+     * script uses Simplified or Traditional Chinese.
      * 
      * @param fontScript
-     *        Set Font script (FontScript) to Automatically determined (AUTOMATIC), or leave blank, to automatically
-     *        determine the font script in your input captions. Otherwise, set to Simplified Chinese (HANS) or
-     *        Traditional Chinese (HANT) if your input font script uses Simplified or Traditional Chinese.
+     *        Set Font script to Automatically determined, or leave blank, to automatically determine the font script in
+     *        your input captions. Otherwise, set to Simplified Chinese (HANS) or Traditional Chinese (HANT) if your
+     *        input font script uses Simplified or Traditional Chinese.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FontScript
      */
@@ -735,12 +892,11 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify the Font size (FontSize) in pixels. Must be a positive integer. Set to 0, or leave blank, for automatic
-     * font size.
+     * Specify the Font size in pixels. Must be a positive integer. Set to 0, or leave blank, for automatic font size.
      * 
      * @param fontSize
-     *        Specify the Font size (FontSize) in pixels. Must be a positive integer. Set to 0, or leave blank, for
-     *        automatic font size.
+     *        Specify the Font size in pixels. Must be a positive integer. Set to 0, or leave blank, for automatic font
+     *        size.
      */
 
     public void setFontSize(Integer fontSize) {
@@ -748,11 +904,10 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify the Font size (FontSize) in pixels. Must be a positive integer. Set to 0, or leave blank, for automatic
-     * font size.
+     * Specify the Font size in pixels. Must be a positive integer. Set to 0, or leave blank, for automatic font size.
      * 
-     * @return Specify the Font size (FontSize) in pixels. Must be a positive integer. Set to 0, or leave blank, for
-     *         automatic font size.
+     * @return Specify the Font size in pixels. Must be a positive integer. Set to 0, or leave blank, for automatic font
+     *         size.
      */
 
     public Integer getFontSize() {
@@ -760,12 +915,11 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify the Font size (FontSize) in pixels. Must be a positive integer. Set to 0, or leave blank, for automatic
-     * font size.
+     * Specify the Font size in pixels. Must be a positive integer. Set to 0, or leave blank, for automatic font size.
      * 
      * @param fontSize
-     *        Specify the Font size (FontSize) in pixels. Must be a positive integer. Set to 0, or leave blank, for
-     *        automatic font size.
+     *        Specify the Font size in pixels. Must be a positive integer. Set to 0, or leave blank, for automatic font
+     *        size.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -821,12 +975,12 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify font outline color. Leave Outline color (OutlineColor) blank and set Style passthrough (StylePassthrough)
-     * to enabled to use the font outline color data from your input captions, if present.
+     * Specify font outline color. Leave Outline color blank and set Style passthrough to enabled to use the font
+     * outline color data from your input captions, if present.
      * 
      * @param outlineColor
-     *        Specify font outline color. Leave Outline color (OutlineColor) blank and set Style passthrough
-     *        (StylePassthrough) to enabled to use the font outline color data from your input captions, if present.
+     *        Specify font outline color. Leave Outline color blank and set Style passthrough to enabled to use the font
+     *        outline color data from your input captions, if present.
      * @see BurninSubtitleOutlineColor
      */
 
@@ -835,11 +989,11 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify font outline color. Leave Outline color (OutlineColor) blank and set Style passthrough (StylePassthrough)
-     * to enabled to use the font outline color data from your input captions, if present.
+     * Specify font outline color. Leave Outline color blank and set Style passthrough to enabled to use the font
+     * outline color data from your input captions, if present.
      * 
-     * @return Specify font outline color. Leave Outline color (OutlineColor) blank and set Style passthrough
-     *         (StylePassthrough) to enabled to use the font outline color data from your input captions, if present.
+     * @return Specify font outline color. Leave Outline color blank and set Style passthrough to enabled to use the
+     *         font outline color data from your input captions, if present.
      * @see BurninSubtitleOutlineColor
      */
 
@@ -848,12 +1002,12 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify font outline color. Leave Outline color (OutlineColor) blank and set Style passthrough (StylePassthrough)
-     * to enabled to use the font outline color data from your input captions, if present.
+     * Specify font outline color. Leave Outline color blank and set Style passthrough to enabled to use the font
+     * outline color data from your input captions, if present.
      * 
      * @param outlineColor
-     *        Specify font outline color. Leave Outline color (OutlineColor) blank and set Style passthrough
-     *        (StylePassthrough) to enabled to use the font outline color data from your input captions, if present.
+     *        Specify font outline color. Leave Outline color blank and set Style passthrough to enabled to use the font
+     *        outline color data from your input captions, if present.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BurninSubtitleOutlineColor
      */
@@ -864,12 +1018,12 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify font outline color. Leave Outline color (OutlineColor) blank and set Style passthrough (StylePassthrough)
-     * to enabled to use the font outline color data from your input captions, if present.
+     * Specify font outline color. Leave Outline color blank and set Style passthrough to enabled to use the font
+     * outline color data from your input captions, if present.
      * 
      * @param outlineColor
-     *        Specify font outline color. Leave Outline color (OutlineColor) blank and set Style passthrough
-     *        (StylePassthrough) to enabled to use the font outline color data from your input captions, if present.
+     *        Specify font outline color. Leave Outline color blank and set Style passthrough to enabled to use the font
+     *        outline color data from your input captions, if present.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BurninSubtitleOutlineColor
      */
@@ -880,13 +1034,12 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify the Outline size (OutlineSize) of the caption text, in pixels. Leave Outline size blank and set Style
-     * passthrough (StylePassthrough) to enabled to use the outline size data from your input captions, if present.
+     * Specify the Outline size of the caption text, in pixels. Leave Outline size blank and set Style passthrough to
+     * enabled to use the outline size data from your input captions, if present.
      * 
      * @param outlineSize
-     *        Specify the Outline size (OutlineSize) of the caption text, in pixels. Leave Outline size blank and set
-     *        Style passthrough (StylePassthrough) to enabled to use the outline size data from your input captions, if
-     *        present.
+     *        Specify the Outline size of the caption text, in pixels. Leave Outline size blank and set Style
+     *        passthrough to enabled to use the outline size data from your input captions, if present.
      */
 
     public void setOutlineSize(Integer outlineSize) {
@@ -894,12 +1047,11 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify the Outline size (OutlineSize) of the caption text, in pixels. Leave Outline size blank and set Style
-     * passthrough (StylePassthrough) to enabled to use the outline size data from your input captions, if present.
+     * Specify the Outline size of the caption text, in pixels. Leave Outline size blank and set Style passthrough to
+     * enabled to use the outline size data from your input captions, if present.
      * 
-     * @return Specify the Outline size (OutlineSize) of the caption text, in pixels. Leave Outline size blank and set
-     *         Style passthrough (StylePassthrough) to enabled to use the outline size data from your input captions, if
-     *         present.
+     * @return Specify the Outline size of the caption text, in pixels. Leave Outline size blank and set Style
+     *         passthrough to enabled to use the outline size data from your input captions, if present.
      */
 
     public Integer getOutlineSize() {
@@ -907,13 +1059,12 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify the Outline size (OutlineSize) of the caption text, in pixels. Leave Outline size blank and set Style
-     * passthrough (StylePassthrough) to enabled to use the outline size data from your input captions, if present.
+     * Specify the Outline size of the caption text, in pixels. Leave Outline size blank and set Style passthrough to
+     * enabled to use the outline size data from your input captions, if present.
      * 
      * @param outlineSize
-     *        Specify the Outline size (OutlineSize) of the caption text, in pixels. Leave Outline size blank and set
-     *        Style passthrough (StylePassthrough) to enabled to use the outline size data from your input captions, if
-     *        present.
+     *        Specify the Outline size of the caption text, in pixels. Leave Outline size blank and set Style
+     *        passthrough to enabled to use the outline size data from your input captions, if present.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -923,13 +1074,12 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify the color of the shadow cast by the captions. Leave Shadow color (ShadowColor) blank and set Style
-     * passthrough (StylePassthrough) to enabled to use the shadow color data from your input captions, if present.
+     * Specify the color of the shadow cast by the captions. Leave Shadow color blank and set Style passthrough to
+     * enabled to use the shadow color data from your input captions, if present.
      * 
      * @param shadowColor
-     *        Specify the color of the shadow cast by the captions. Leave Shadow color (ShadowColor) blank and set Style
-     *        passthrough (StylePassthrough) to enabled to use the shadow color data from your input captions, if
-     *        present.
+     *        Specify the color of the shadow cast by the captions. Leave Shadow color blank and set Style passthrough
+     *        to enabled to use the shadow color data from your input captions, if present.
      * @see BurninSubtitleShadowColor
      */
 
@@ -938,12 +1088,11 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify the color of the shadow cast by the captions. Leave Shadow color (ShadowColor) blank and set Style
-     * passthrough (StylePassthrough) to enabled to use the shadow color data from your input captions, if present.
+     * Specify the color of the shadow cast by the captions. Leave Shadow color blank and set Style passthrough to
+     * enabled to use the shadow color data from your input captions, if present.
      * 
-     * @return Specify the color of the shadow cast by the captions. Leave Shadow color (ShadowColor) blank and set
-     *         Style passthrough (StylePassthrough) to enabled to use the shadow color data from your input captions, if
-     *         present.
+     * @return Specify the color of the shadow cast by the captions. Leave Shadow color blank and set Style passthrough
+     *         to enabled to use the shadow color data from your input captions, if present.
      * @see BurninSubtitleShadowColor
      */
 
@@ -952,13 +1101,12 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify the color of the shadow cast by the captions. Leave Shadow color (ShadowColor) blank and set Style
-     * passthrough (StylePassthrough) to enabled to use the shadow color data from your input captions, if present.
+     * Specify the color of the shadow cast by the captions. Leave Shadow color blank and set Style passthrough to
+     * enabled to use the shadow color data from your input captions, if present.
      * 
      * @param shadowColor
-     *        Specify the color of the shadow cast by the captions. Leave Shadow color (ShadowColor) blank and set Style
-     *        passthrough (StylePassthrough) to enabled to use the shadow color data from your input captions, if
-     *        present.
+     *        Specify the color of the shadow cast by the captions. Leave Shadow color blank and set Style passthrough
+     *        to enabled to use the shadow color data from your input captions, if present.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BurninSubtitleShadowColor
      */
@@ -969,13 +1117,12 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify the color of the shadow cast by the captions. Leave Shadow color (ShadowColor) blank and set Style
-     * passthrough (StylePassthrough) to enabled to use the shadow color data from your input captions, if present.
+     * Specify the color of the shadow cast by the captions. Leave Shadow color blank and set Style passthrough to
+     * enabled to use the shadow color data from your input captions, if present.
      * 
      * @param shadowColor
-     *        Specify the color of the shadow cast by the captions. Leave Shadow color (ShadowColor) blank and set Style
-     *        passthrough (StylePassthrough) to enabled to use the shadow color data from your input captions, if
-     *        present.
+     *        Specify the color of the shadow cast by the captions. Leave Shadow color blank and set Style passthrough
+     *        to enabled to use the shadow color data from your input captions, if present.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BurninSubtitleShadowColor
      */
@@ -987,16 +1134,15 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
 
     /**
      * Specify the opacity of the shadow. Enter a value from 0 to 255, where 0 is transparent and 255 is opaque. If
-     * Style passthrough (StylePassthrough) is set to Enabled, leave Shadow opacity (ShadowOpacity) blank to pass
-     * through the shadow style information in your input captions to your output captions. If Style passthrough is set
-     * to disabled, leave blank to use a value of 0 and remove all shadows from your output captions.
+     * Style passthrough is set to Enabled, leave Shadow opacity blank to pass through the shadow style information in
+     * your input captions to your output captions. If Style passthrough is set to disabled, leave blank to use a value
+     * of 0 and remove all shadows from your output captions.
      * 
      * @param shadowOpacity
      *        Specify the opacity of the shadow. Enter a value from 0 to 255, where 0 is transparent and 255 is opaque.
-     *        If Style passthrough (StylePassthrough) is set to Enabled, leave Shadow opacity (ShadowOpacity) blank to
-     *        pass through the shadow style information in your input captions to your output captions. If Style
-     *        passthrough is set to disabled, leave blank to use a value of 0 and remove all shadows from your output
-     *        captions.
+     *        If Style passthrough is set to Enabled, leave Shadow opacity blank to pass through the shadow style
+     *        information in your input captions to your output captions. If Style passthrough is set to disabled, leave
+     *        blank to use a value of 0 and remove all shadows from your output captions.
      */
 
     public void setShadowOpacity(Integer shadowOpacity) {
@@ -1005,15 +1151,14 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
 
     /**
      * Specify the opacity of the shadow. Enter a value from 0 to 255, where 0 is transparent and 255 is opaque. If
-     * Style passthrough (StylePassthrough) is set to Enabled, leave Shadow opacity (ShadowOpacity) blank to pass
-     * through the shadow style information in your input captions to your output captions. If Style passthrough is set
-     * to disabled, leave blank to use a value of 0 and remove all shadows from your output captions.
+     * Style passthrough is set to Enabled, leave Shadow opacity blank to pass through the shadow style information in
+     * your input captions to your output captions. If Style passthrough is set to disabled, leave blank to use a value
+     * of 0 and remove all shadows from your output captions.
      * 
      * @return Specify the opacity of the shadow. Enter a value from 0 to 255, where 0 is transparent and 255 is opaque.
-     *         If Style passthrough (StylePassthrough) is set to Enabled, leave Shadow opacity (ShadowOpacity) blank to
-     *         pass through the shadow style information in your input captions to your output captions. If Style
-     *         passthrough is set to disabled, leave blank to use a value of 0 and remove all shadows from your output
-     *         captions.
+     *         If Style passthrough is set to Enabled, leave Shadow opacity blank to pass through the shadow style
+     *         information in your input captions to your output captions. If Style passthrough is set to disabled,
+     *         leave blank to use a value of 0 and remove all shadows from your output captions.
      */
 
     public Integer getShadowOpacity() {
@@ -1022,16 +1167,15 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
 
     /**
      * Specify the opacity of the shadow. Enter a value from 0 to 255, where 0 is transparent and 255 is opaque. If
-     * Style passthrough (StylePassthrough) is set to Enabled, leave Shadow opacity (ShadowOpacity) blank to pass
-     * through the shadow style information in your input captions to your output captions. If Style passthrough is set
-     * to disabled, leave blank to use a value of 0 and remove all shadows from your output captions.
+     * Style passthrough is set to Enabled, leave Shadow opacity blank to pass through the shadow style information in
+     * your input captions to your output captions. If Style passthrough is set to disabled, leave blank to use a value
+     * of 0 and remove all shadows from your output captions.
      * 
      * @param shadowOpacity
      *        Specify the opacity of the shadow. Enter a value from 0 to 255, where 0 is transparent and 255 is opaque.
-     *        If Style passthrough (StylePassthrough) is set to Enabled, leave Shadow opacity (ShadowOpacity) blank to
-     *        pass through the shadow style information in your input captions to your output captions. If Style
-     *        passthrough is set to disabled, leave blank to use a value of 0 and remove all shadows from your output
-     *        captions.
+     *        If Style passthrough is set to Enabled, leave Shadow opacity blank to pass through the shadow style
+     *        information in your input captions to your output captions. If Style passthrough is set to disabled, leave
+     *        blank to use a value of 0 and remove all shadows from your output captions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1082,14 +1226,13 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
 
     /**
      * Specify the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a
-     * shadow offset 2 pixels above the text. Leave Shadow y-offset (ShadowYOffset) blank and set Style passthrough
-     * (StylePassthrough) to enabled to use the shadow y-offset data from your input captions, if present.
+     * shadow offset 2 pixels above the text. Leave Shadow y-offset blank and set Style passthrough to enabled to use
+     * the shadow y-offset data from your input captions, if present.
      * 
      * @param shadowYOffset
      *        Specify the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result
-     *        in a shadow offset 2 pixels above the text. Leave Shadow y-offset (ShadowYOffset) blank and set Style
-     *        passthrough (StylePassthrough) to enabled to use the shadow y-offset data from your input captions, if
-     *        present.
+     *        in a shadow offset 2 pixels above the text. Leave Shadow y-offset blank and set Style passthrough to
+     *        enabled to use the shadow y-offset data from your input captions, if present.
      */
 
     public void setShadowYOffset(Integer shadowYOffset) {
@@ -1098,13 +1241,12 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
 
     /**
      * Specify the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a
-     * shadow offset 2 pixels above the text. Leave Shadow y-offset (ShadowYOffset) blank and set Style passthrough
-     * (StylePassthrough) to enabled to use the shadow y-offset data from your input captions, if present.
+     * shadow offset 2 pixels above the text. Leave Shadow y-offset blank and set Style passthrough to enabled to use
+     * the shadow y-offset data from your input captions, if present.
      * 
      * @return Specify the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result
-     *         in a shadow offset 2 pixels above the text. Leave Shadow y-offset (ShadowYOffset) blank and set Style
-     *         passthrough (StylePassthrough) to enabled to use the shadow y-offset data from your input captions, if
-     *         present.
+     *         in a shadow offset 2 pixels above the text. Leave Shadow y-offset blank and set Style passthrough to
+     *         enabled to use the shadow y-offset data from your input captions, if present.
      */
 
     public Integer getShadowYOffset() {
@@ -1113,14 +1255,13 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
 
     /**
      * Specify the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a
-     * shadow offset 2 pixels above the text. Leave Shadow y-offset (ShadowYOffset) blank and set Style passthrough
-     * (StylePassthrough) to enabled to use the shadow y-offset data from your input captions, if present.
+     * shadow offset 2 pixels above the text. Leave Shadow y-offset blank and set Style passthrough to enabled to use
+     * the shadow y-offset data from your input captions, if present.
      * 
      * @param shadowYOffset
      *        Specify the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result
-     *        in a shadow offset 2 pixels above the text. Leave Shadow y-offset (ShadowYOffset) blank and set Style
-     *        passthrough (StylePassthrough) to enabled to use the shadow y-offset data from your input captions, if
-     *        present.
+     *        in a shadow offset 2 pixels above the text. Leave Shadow y-offset blank and set Style passthrough to
+     *        enabled to use the shadow y-offset data from your input captions, if present.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1130,21 +1271,22 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position information
-     * from your input captions. MediaConvert uses default settings for any missing style and position information in
-     * your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position
-     * information from your input captions and use default settings: white text with black outlining, bottom-center
+     * To use the available style, color, and position information from your input captions: Set Style passthrough to
+     * Enabled. Note that MediaConvert uses default settings for any missing style or position information in your input
+     * captions To ignore the style and position information from your input captions and use default settings: Leave
+     * blank or keep the default value, Disabled. Default settings include white text with black outlining, bottom-center
      * positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to
-     * manually override any of the individual style and position settings.
+     * manually override any of the individual style and position settings. You can also override any fonts by manually
+     * specifying custom font files.
      * 
      * @param stylePassthrough
-     *        Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position
-     *        information from your input captions. MediaConvert uses default settings for any missing style and
-     *        position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore
-     *        the style and position information from your input captions and use default settings: white text with
-     *        black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to
-     *        enabled or not, you can also choose to manually override any of the individual style and position
-     *        settings.
+     *        To use the available style, color, and position information from your input captions: Set Style
+     *        passthrough to Enabled. Note that MediaConvert uses default settings for any missing style or position
+     *        information in your input captions To ignore the style and position information from your input captions
+     *        and use default settings: Leave blank or keep the default value, Disabled. Default settings include white
+     *        text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style
+     *        passthrough to enabled or not, you can also choose to manually override any of the individual style and
+     *        position settings. You can also override any fonts by manually specifying custom font files.
      * @see BurnInSubtitleStylePassthrough
      */
 
@@ -1153,20 +1295,21 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position information
-     * from your input captions. MediaConvert uses default settings for any missing style and position information in
-     * your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position
-     * information from your input captions and use default settings: white text with black outlining, bottom-center
+     * To use the available style, color, and position information from your input captions: Set Style passthrough to
+     * Enabled. Note that MediaConvert uses default settings for any missing style or position information in your input
+     * captions To ignore the style and position information from your input captions and use default settings: Leave
+     * blank or keep the default value, Disabled. Default settings include white text with black outlining, bottom-center
      * positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to
-     * manually override any of the individual style and position settings.
+     * manually override any of the individual style and position settings. You can also override any fonts by manually
+     * specifying custom font files.
      * 
-     * @return Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position
-     *         information from your input captions. MediaConvert uses default settings for any missing style and
-     *         position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore
-     *         the style and position information from your input captions and use default settings: white text with
-     *         black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to
-     *         enabled or not, you can also choose to manually override any of the individual style and position
-     *         settings.
+     * @return To use the available style, color, and position information from your input captions: Set Style
+     *         passthrough to Enabled. Note that MediaConvert uses default settings for any missing style or position
+     *         information in your input captions To ignore the style and position information from your input captions
+     *         and use default settings: Leave blank or keep the default value, Disabled. Default settings include white
+     *         text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style
+     *         passthrough to enabled or not, you can also choose to manually override any of the individual style and
+     *         position settings. You can also override any fonts by manually specifying custom font files.
      * @see BurnInSubtitleStylePassthrough
      */
 
@@ -1175,21 +1318,22 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position information
-     * from your input captions. MediaConvert uses default settings for any missing style and position information in
-     * your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position
-     * information from your input captions and use default settings: white text with black outlining, bottom-center
+     * To use the available style, color, and position information from your input captions: Set Style passthrough to
+     * Enabled. Note that MediaConvert uses default settings for any missing style or position information in your input
+     * captions To ignore the style and position information from your input captions and use default settings: Leave
+     * blank or keep the default value, Disabled. Default settings include white text with black outlining, bottom-center
      * positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to
-     * manually override any of the individual style and position settings.
+     * manually override any of the individual style and position settings. You can also override any fonts by manually
+     * specifying custom font files.
      * 
      * @param stylePassthrough
-     *        Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position
-     *        information from your input captions. MediaConvert uses default settings for any missing style and
-     *        position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore
-     *        the style and position information from your input captions and use default settings: white text with
-     *        black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to
-     *        enabled or not, you can also choose to manually override any of the individual style and position
-     *        settings.
+     *        To use the available style, color, and position information from your input captions: Set Style
+     *        passthrough to Enabled. Note that MediaConvert uses default settings for any missing style or position
+     *        information in your input captions To ignore the style and position information from your input captions
+     *        and use default settings: Leave blank or keep the default value, Disabled. Default settings include white
+     *        text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style
+     *        passthrough to enabled or not, you can also choose to manually override any of the individual style and
+     *        position settings. You can also override any fonts by manually specifying custom font files.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BurnInSubtitleStylePassthrough
      */
@@ -1200,21 +1344,22 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position information
-     * from your input captions. MediaConvert uses default settings for any missing style and position information in
-     * your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position
-     * information from your input captions and use default settings: white text with black outlining, bottom-center
+     * To use the available style, color, and position information from your input captions: Set Style passthrough to
+     * Enabled. Note that MediaConvert uses default settings for any missing style or position information in your input
+     * captions To ignore the style and position information from your input captions and use default settings: Leave
+     * blank or keep the default value, Disabled. Default settings include white text with black outlining, bottom-center
      * positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to
-     * manually override any of the individual style and position settings.
+     * manually override any of the individual style and position settings. You can also override any fonts by manually
+     * specifying custom font files.
      * 
      * @param stylePassthrough
-     *        Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position
-     *        information from your input captions. MediaConvert uses default settings for any missing style and
-     *        position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore
-     *        the style and position information from your input captions and use default settings: white text with
-     *        black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to
-     *        enabled or not, you can also choose to manually override any of the individual style and position
-     *        settings.
+     *        To use the available style, color, and position information from your input captions: Set Style
+     *        passthrough to Enabled. Note that MediaConvert uses default settings for any missing style or position
+     *        information in your input captions To ignore the style and position information from your input captions
+     *        and use default settings: Leave blank or keep the default value, Disabled. Default settings include white
+     *        text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style
+     *        passthrough to enabled or not, you can also choose to manually override any of the individual style and
+     *        position settings. You can also override any fonts by manually specifying custom font files.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BurnInSubtitleStylePassthrough
      */
@@ -1225,15 +1370,14 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify whether the text spacing (TeletextSpacing) in your captions is set by the captions grid, or varies
-     * depending on letter width. Choose fixed grid (FIXED_GRID) to conform to the spacing specified in the captions
-     * file more accurately. Choose proportional (PROPORTIONAL) to make the text easier to read for closed captions.
+     * Specify whether the text spacing in your captions is set by the captions grid, or varies depending on letter
+     * width. Choose fixed grid to conform to the spacing specified in the captions file more accurately. Choose
+     * proportional to make the text easier to read for closed captions.
      * 
      * @param teletextSpacing
-     *        Specify whether the text spacing (TeletextSpacing) in your captions is set by the captions grid, or varies
-     *        depending on letter width. Choose fixed grid (FIXED_GRID) to conform to the spacing specified in the
-     *        captions file more accurately. Choose proportional (PROPORTIONAL) to make the text easier to read for
-     *        closed captions.
+     *        Specify whether the text spacing in your captions is set by the captions grid, or varies depending on
+     *        letter width. Choose fixed grid to conform to the spacing specified in the captions file more accurately.
+     *        Choose proportional to make the text easier to read for closed captions.
      * @see BurninSubtitleTeletextSpacing
      */
 
@@ -1242,14 +1386,13 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify whether the text spacing (TeletextSpacing) in your captions is set by the captions grid, or varies
-     * depending on letter width. Choose fixed grid (FIXED_GRID) to conform to the spacing specified in the captions
-     * file more accurately. Choose proportional (PROPORTIONAL) to make the text easier to read for closed captions.
+     * Specify whether the text spacing in your captions is set by the captions grid, or varies depending on letter
+     * width. Choose fixed grid to conform to the spacing specified in the captions file more accurately. Choose
+     * proportional to make the text easier to read for closed captions.
      * 
-     * @return Specify whether the text spacing (TeletextSpacing) in your captions is set by the captions grid, or
-     *         varies depending on letter width. Choose fixed grid (FIXED_GRID) to conform to the spacing specified in
-     *         the captions file more accurately. Choose proportional (PROPORTIONAL) to make the text easier to read for
-     *         closed captions.
+     * @return Specify whether the text spacing in your captions is set by the captions grid, or varies depending on
+     *         letter width. Choose fixed grid to conform to the spacing specified in the captions file more accurately.
+     *         Choose proportional to make the text easier to read for closed captions.
      * @see BurninSubtitleTeletextSpacing
      */
 
@@ -1258,15 +1401,14 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify whether the text spacing (TeletextSpacing) in your captions is set by the captions grid, or varies
-     * depending on letter width. Choose fixed grid (FIXED_GRID) to conform to the spacing specified in the captions
-     * file more accurately. Choose proportional (PROPORTIONAL) to make the text easier to read for closed captions.
+     * Specify whether the text spacing in your captions is set by the captions grid, or varies depending on letter
+     * width. Choose fixed grid to conform to the spacing specified in the captions file more accurately. Choose
+     * proportional to make the text easier to read for closed captions.
      * 
      * @param teletextSpacing
-     *        Specify whether the text spacing (TeletextSpacing) in your captions is set by the captions grid, or varies
-     *        depending on letter width. Choose fixed grid (FIXED_GRID) to conform to the spacing specified in the
-     *        captions file more accurately. Choose proportional (PROPORTIONAL) to make the text easier to read for
-     *        closed captions.
+     *        Specify whether the text spacing in your captions is set by the captions grid, or varies depending on
+     *        letter width. Choose fixed grid to conform to the spacing specified in the captions file more accurately.
+     *        Choose proportional to make the text easier to read for closed captions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BurninSubtitleTeletextSpacing
      */
@@ -1277,15 +1419,14 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify whether the text spacing (TeletextSpacing) in your captions is set by the captions grid, or varies
-     * depending on letter width. Choose fixed grid (FIXED_GRID) to conform to the spacing specified in the captions
-     * file more accurately. Choose proportional (PROPORTIONAL) to make the text easier to read for closed captions.
+     * Specify whether the text spacing in your captions is set by the captions grid, or varies depending on letter
+     * width. Choose fixed grid to conform to the spacing specified in the captions file more accurately. Choose
+     * proportional to make the text easier to read for closed captions.
      * 
      * @param teletextSpacing
-     *        Specify whether the text spacing (TeletextSpacing) in your captions is set by the captions grid, or varies
-     *        depending on letter width. Choose fixed grid (FIXED_GRID) to conform to the spacing specified in the
-     *        captions file more accurately. Choose proportional (PROPORTIONAL) to make the text easier to read for
-     *        closed captions.
+     *        Specify whether the text spacing in your captions is set by the captions grid, or varies depending on
+     *        letter width. Choose fixed grid to conform to the spacing specified in the captions file more accurately.
+     *        Choose proportional to make the text easier to read for closed captions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BurninSubtitleTeletextSpacing
      */
@@ -1296,15 +1437,14 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify the horizontal position (XPosition) of the captions, relative to the left side of the output in pixels. A
-     * value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit
-     * x_position is provided, the horizontal caption position will be determined by the alignment parameter.
+     * Specify the horizontal position of the captions, relative to the left side of the output in pixels. A value of 10
+     * would result in the captions starting 10 pixels from the left of the output. If no explicit x_position is
+     * provided, the horizontal caption position will be determined by the alignment parameter.
      * 
      * @param xPosition
-     *        Specify the horizontal position (XPosition) of the captions, relative to the left side of the output in
-     *        pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no
-     *        explicit x_position is provided, the horizontal caption position will be determined by the alignment
-     *        parameter.
+     *        Specify the horizontal position of the captions, relative to the left side of the output in pixels. A
+     *        value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit
+     *        x_position is provided, the horizontal caption position will be determined by the alignment parameter.
      */
 
     public void setXPosition(Integer xPosition) {
@@ -1312,14 +1452,13 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify the horizontal position (XPosition) of the captions, relative to the left side of the output in pixels. A
-     * value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit
-     * x_position is provided, the horizontal caption position will be determined by the alignment parameter.
+     * Specify the horizontal position of the captions, relative to the left side of the output in pixels. A value of 10
+     * would result in the captions starting 10 pixels from the left of the output. If no explicit x_position is
+     * provided, the horizontal caption position will be determined by the alignment parameter.
      * 
-     * @return Specify the horizontal position (XPosition) of the captions, relative to the left side of the output in
-     *         pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no
-     *         explicit x_position is provided, the horizontal caption position will be determined by the alignment
-     *         parameter.
+     * @return Specify the horizontal position of the captions, relative to the left side of the output in pixels. A
+     *         value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit
+     *         x_position is provided, the horizontal caption position will be determined by the alignment parameter.
      */
 
     public Integer getXPosition() {
@@ -1327,15 +1466,14 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify the horizontal position (XPosition) of the captions, relative to the left side of the output in pixels. A
-     * value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit
-     * x_position is provided, the horizontal caption position will be determined by the alignment parameter.
+     * Specify the horizontal position of the captions, relative to the left side of the output in pixels. A value of 10
+     * would result in the captions starting 10 pixels from the left of the output. If no explicit x_position is
+     * provided, the horizontal caption position will be determined by the alignment parameter.
      * 
      * @param xPosition
-     *        Specify the horizontal position (XPosition) of the captions, relative to the left side of the output in
-     *        pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no
-     *        explicit x_position is provided, the horizontal caption position will be determined by the alignment
-     *        parameter.
+     *        Specify the horizontal position of the captions, relative to the left side of the output in pixels. A
+     *        value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit
+     *        x_position is provided, the horizontal caption position will be determined by the alignment parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1345,14 +1483,14 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify the vertical position (YPosition) of the captions, relative to the top of the output in pixels. A value
-     * of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit y_position is
-     * provided, the caption will be positioned towards the bottom of the output.
+     * Specify the vertical position of the captions, relative to the top of the output in pixels. A value of 10 would
+     * result in the captions starting 10 pixels from the top of the output. If no explicit y_position is provided, the
+     * caption will be positioned towards the bottom of the output.
      * 
      * @param yPosition
-     *        Specify the vertical position (YPosition) of the captions, relative to the top of the output in pixels. A
-     *        value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit
-     *        y_position is provided, the caption will be positioned towards the bottom of the output.
+     *        Specify the vertical position of the captions, relative to the top of the output in pixels. A value of 10
+     *        would result in the captions starting 10 pixels from the top of the output. If no explicit y_position is
+     *        provided, the caption will be positioned towards the bottom of the output.
      */
 
     public void setYPosition(Integer yPosition) {
@@ -1360,13 +1498,13 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify the vertical position (YPosition) of the captions, relative to the top of the output in pixels. A value
-     * of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit y_position is
-     * provided, the caption will be positioned towards the bottom of the output.
+     * Specify the vertical position of the captions, relative to the top of the output in pixels. A value of 10 would
+     * result in the captions starting 10 pixels from the top of the output. If no explicit y_position is provided, the
+     * caption will be positioned towards the bottom of the output.
      * 
-     * @return Specify the vertical position (YPosition) of the captions, relative to the top of the output in pixels. A
-     *         value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit
-     *         y_position is provided, the caption will be positioned towards the bottom of the output.
+     * @return Specify the vertical position of the captions, relative to the top of the output in pixels. A value of 10
+     *         would result in the captions starting 10 pixels from the top of the output. If no explicit y_position is
+     *         provided, the caption will be positioned towards the bottom of the output.
      */
 
     public Integer getYPosition() {
@@ -1374,14 +1512,14 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
     }
 
     /**
-     * Specify the vertical position (YPosition) of the captions, relative to the top of the output in pixels. A value
-     * of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit y_position is
-     * provided, the caption will be positioned towards the bottom of the output.
+     * Specify the vertical position of the captions, relative to the top of the output in pixels. A value of 10 would
+     * result in the captions starting 10 pixels from the top of the output. If no explicit y_position is provided, the
+     * caption will be positioned towards the bottom of the output.
      * 
      * @param yPosition
-     *        Specify the vertical position (YPosition) of the captions, relative to the top of the output in pixels. A
-     *        value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit
-     *        y_position is provided, the caption will be positioned towards the bottom of the output.
+     *        Specify the vertical position of the captions, relative to the top of the output in pixels. A value of 10
+     *        would result in the captions starting 10 pixels from the top of the output. If no explicit y_position is
+     *        provided, the caption will be positioned towards the bottom of the output.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1414,6 +1552,14 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
             sb.append("FallbackFont: ").append(getFallbackFont()).append(",");
         if (getFontColor() != null)
             sb.append("FontColor: ").append(getFontColor()).append(",");
+        if (getFontFileBold() != null)
+            sb.append("FontFileBold: ").append(getFontFileBold()).append(",");
+        if (getFontFileBoldItalic() != null)
+            sb.append("FontFileBoldItalic: ").append(getFontFileBoldItalic()).append(",");
+        if (getFontFileItalic() != null)
+            sb.append("FontFileItalic: ").append(getFontFileItalic()).append(",");
+        if (getFontFileRegular() != null)
+            sb.append("FontFileRegular: ").append(getFontFileRegular()).append(",");
         if (getFontOpacity() != null)
             sb.append("FontOpacity: ").append(getFontOpacity()).append(",");
         if (getFontResolution() != null)
@@ -1481,6 +1627,22 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
         if (other.getFontColor() == null ^ this.getFontColor() == null)
             return false;
         if (other.getFontColor() != null && other.getFontColor().equals(this.getFontColor()) == false)
+            return false;
+        if (other.getFontFileBold() == null ^ this.getFontFileBold() == null)
+            return false;
+        if (other.getFontFileBold() != null && other.getFontFileBold().equals(this.getFontFileBold()) == false)
+            return false;
+        if (other.getFontFileBoldItalic() == null ^ this.getFontFileBoldItalic() == null)
+            return false;
+        if (other.getFontFileBoldItalic() != null && other.getFontFileBoldItalic().equals(this.getFontFileBoldItalic()) == false)
+            return false;
+        if (other.getFontFileItalic() == null ^ this.getFontFileItalic() == null)
+            return false;
+        if (other.getFontFileItalic() != null && other.getFontFileItalic().equals(this.getFontFileItalic()) == false)
+            return false;
+        if (other.getFontFileRegular() == null ^ this.getFontFileRegular() == null)
+            return false;
+        if (other.getFontFileRegular() != null && other.getFontFileRegular().equals(this.getFontFileRegular()) == false)
             return false;
         if (other.getFontOpacity() == null ^ this.getFontOpacity() == null)
             return false;
@@ -1556,6 +1718,10 @@ public class BurninDestinationSettings implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getBackgroundOpacity() == null) ? 0 : getBackgroundOpacity().hashCode());
         hashCode = prime * hashCode + ((getFallbackFont() == null) ? 0 : getFallbackFont().hashCode());
         hashCode = prime * hashCode + ((getFontColor() == null) ? 0 : getFontColor().hashCode());
+        hashCode = prime * hashCode + ((getFontFileBold() == null) ? 0 : getFontFileBold().hashCode());
+        hashCode = prime * hashCode + ((getFontFileBoldItalic() == null) ? 0 : getFontFileBoldItalic().hashCode());
+        hashCode = prime * hashCode + ((getFontFileItalic() == null) ? 0 : getFontFileItalic().hashCode());
+        hashCode = prime * hashCode + ((getFontFileRegular() == null) ? 0 : getFontFileRegular().hashCode());
         hashCode = prime * hashCode + ((getFontOpacity() == null) ? 0 : getFontOpacity().hashCode());
         hashCode = prime * hashCode + ((getFontResolution() == null) ? 0 : getFontResolution().hashCode());
         hashCode = prime * hashCode + ((getFontScript() == null) ? 0 : getFontScript().hashCode());

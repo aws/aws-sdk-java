@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A dataset group is a collection of related datasets (Interactions, User, and Item). You create a dataset group by
- * calling <a
+ * A dataset group is a collection of related datasets (Item interactions, Users, Items, Actions, Action interactions).
+ * You create a dataset group by calling <a
  * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>. You then
  * create a dataset and add it to a dataset group by calling <a
  * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>. The dataset group
@@ -73,7 +73,8 @@ public class DatasetGroup implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * The ARN of the IAM role that has permissions to create the dataset group.
+     * The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management
+     * Service (KMS) key. Supplying an IAM role is only valid when also specifying a KMS key.
      * </p>
      */
     private String roleArn;
@@ -317,11 +318,13 @@ public class DatasetGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the IAM role that has permissions to create the dataset group.
+     * The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management
+     * Service (KMS) key. Supplying an IAM role is only valid when also specifying a KMS key.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the IAM role that has permissions to create the dataset group.
+     *        The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management
+     *        Service (KMS) key. Supplying an IAM role is only valid when also specifying a KMS key.
      */
 
     public void setRoleArn(String roleArn) {
@@ -330,10 +333,12 @@ public class DatasetGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the IAM role that has permissions to create the dataset group.
+     * The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management
+     * Service (KMS) key. Supplying an IAM role is only valid when also specifying a KMS key.
      * </p>
      * 
-     * @return The ARN of the IAM role that has permissions to create the dataset group.
+     * @return The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key
+     *         Management Service (KMS) key. Supplying an IAM role is only valid when also specifying a KMS key.
      */
 
     public String getRoleArn() {
@@ -342,11 +347,13 @@ public class DatasetGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the IAM role that has permissions to create the dataset group.
+     * The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management
+     * Service (KMS) key. Supplying an IAM role is only valid when also specifying a KMS key.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the IAM role that has permissions to create the dataset group.
+     *        The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management
+     *        Service (KMS) key. Supplying an IAM role is only valid when also specifying a KMS key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,17 @@ public class DeleteAutoScalingConfigurationRequest extends com.amazonaws.AmazonW
      * </p>
      */
     private String autoScalingConfigurationArn;
+    /**
+     * <p>
+     * Set to <code>true</code> to delete all of the revisions associated with the
+     * <code>AutoScalingConfigurationArn</code> parameter value.
+     * </p>
+     * <p>
+     * When <code>DeleteAllRevisions</code> is set to <code>true</code>, the only valid value for the Amazon Resource
+     * Name (ARN) is a partial ARN ending with: <code>.../name</code>.
+     * </p>
+     */
+    private Boolean deleteAllRevisions;
 
     /**
      * <p>
@@ -105,6 +116,94 @@ public class DeleteAutoScalingConfigurationRequest extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * Set to <code>true</code> to delete all of the revisions associated with the
+     * <code>AutoScalingConfigurationArn</code> parameter value.
+     * </p>
+     * <p>
+     * When <code>DeleteAllRevisions</code> is set to <code>true</code>, the only valid value for the Amazon Resource
+     * Name (ARN) is a partial ARN ending with: <code>.../name</code>.
+     * </p>
+     * 
+     * @param deleteAllRevisions
+     *        Set to <code>true</code> to delete all of the revisions associated with the
+     *        <code>AutoScalingConfigurationArn</code> parameter value.</p>
+     *        <p>
+     *        When <code>DeleteAllRevisions</code> is set to <code>true</code>, the only valid value for the Amazon
+     *        Resource Name (ARN) is a partial ARN ending with: <code>.../name</code>.
+     */
+
+    public void setDeleteAllRevisions(Boolean deleteAllRevisions) {
+        this.deleteAllRevisions = deleteAllRevisions;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to delete all of the revisions associated with the
+     * <code>AutoScalingConfigurationArn</code> parameter value.
+     * </p>
+     * <p>
+     * When <code>DeleteAllRevisions</code> is set to <code>true</code>, the only valid value for the Amazon Resource
+     * Name (ARN) is a partial ARN ending with: <code>.../name</code>.
+     * </p>
+     * 
+     * @return Set to <code>true</code> to delete all of the revisions associated with the
+     *         <code>AutoScalingConfigurationArn</code> parameter value.</p>
+     *         <p>
+     *         When <code>DeleteAllRevisions</code> is set to <code>true</code>, the only valid value for the Amazon
+     *         Resource Name (ARN) is a partial ARN ending with: <code>.../name</code>.
+     */
+
+    public Boolean getDeleteAllRevisions() {
+        return this.deleteAllRevisions;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to delete all of the revisions associated with the
+     * <code>AutoScalingConfigurationArn</code> parameter value.
+     * </p>
+     * <p>
+     * When <code>DeleteAllRevisions</code> is set to <code>true</code>, the only valid value for the Amazon Resource
+     * Name (ARN) is a partial ARN ending with: <code>.../name</code>.
+     * </p>
+     * 
+     * @param deleteAllRevisions
+     *        Set to <code>true</code> to delete all of the revisions associated with the
+     *        <code>AutoScalingConfigurationArn</code> parameter value.</p>
+     *        <p>
+     *        When <code>DeleteAllRevisions</code> is set to <code>true</code>, the only valid value for the Amazon
+     *        Resource Name (ARN) is a partial ARN ending with: <code>.../name</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteAutoScalingConfigurationRequest withDeleteAllRevisions(Boolean deleteAllRevisions) {
+        setDeleteAllRevisions(deleteAllRevisions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to delete all of the revisions associated with the
+     * <code>AutoScalingConfigurationArn</code> parameter value.
+     * </p>
+     * <p>
+     * When <code>DeleteAllRevisions</code> is set to <code>true</code>, the only valid value for the Amazon Resource
+     * Name (ARN) is a partial ARN ending with: <code>.../name</code>.
+     * </p>
+     * 
+     * @return Set to <code>true</code> to delete all of the revisions associated with the
+     *         <code>AutoScalingConfigurationArn</code> parameter value.</p>
+     *         <p>
+     *         When <code>DeleteAllRevisions</code> is set to <code>true</code>, the only valid value for the Amazon
+     *         Resource Name (ARN) is a partial ARN ending with: <code>.../name</code>.
+     */
+
+    public Boolean isDeleteAllRevisions() {
+        return this.deleteAllRevisions;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -117,7 +216,9 @@ public class DeleteAutoScalingConfigurationRequest extends com.amazonaws.AmazonW
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAutoScalingConfigurationArn() != null)
-            sb.append("AutoScalingConfigurationArn: ").append(getAutoScalingConfigurationArn());
+            sb.append("AutoScalingConfigurationArn: ").append(getAutoScalingConfigurationArn()).append(",");
+        if (getDeleteAllRevisions() != null)
+            sb.append("DeleteAllRevisions: ").append(getDeleteAllRevisions());
         sb.append("}");
         return sb.toString();
     }
@@ -136,6 +237,10 @@ public class DeleteAutoScalingConfigurationRequest extends com.amazonaws.AmazonW
             return false;
         if (other.getAutoScalingConfigurationArn() != null && other.getAutoScalingConfigurationArn().equals(this.getAutoScalingConfigurationArn()) == false)
             return false;
+        if (other.getDeleteAllRevisions() == null ^ this.getDeleteAllRevisions() == null)
+            return false;
+        if (other.getDeleteAllRevisions() != null && other.getDeleteAllRevisions().equals(this.getDeleteAllRevisions()) == false)
+            return false;
         return true;
     }
 
@@ -145,6 +250,7 @@ public class DeleteAutoScalingConfigurationRequest extends com.amazonaws.AmazonW
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAutoScalingConfigurationArn() == null) ? 0 : getAutoScalingConfigurationArn().hashCode());
+        hashCode = prime * hashCode + ((getDeleteAllRevisions() == null) ? 0 : getDeleteAllRevisions().hashCode());
         return hashCode;
     }
 

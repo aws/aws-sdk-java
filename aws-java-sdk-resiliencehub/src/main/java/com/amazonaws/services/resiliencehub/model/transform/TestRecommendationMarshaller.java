@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,8 @@ public class TestRecommendationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("prerequisite").build();
     private static final MarshallingInfo<String> RECOMMENDATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("recommendationId").build();
+    private static final MarshallingInfo<String> RECOMMENDATIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("recommendationStatus").build();
     private static final MarshallingInfo<String> REFERENCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("referenceId").build();
     private static final MarshallingInfo<String> RISK_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -75,6 +77,7 @@ public class TestRecommendationMarshaller {
             protocolMarshaller.marshall(testRecommendation.getName(), NAME_BINDING);
             protocolMarshaller.marshall(testRecommendation.getPrerequisite(), PREREQUISITE_BINDING);
             protocolMarshaller.marshall(testRecommendation.getRecommendationId(), RECOMMENDATIONID_BINDING);
+            protocolMarshaller.marshall(testRecommendation.getRecommendationStatus(), RECOMMENDATIONSTATUS_BINDING);
             protocolMarshaller.marshall(testRecommendation.getReferenceId(), REFERENCEID_BINDING);
             protocolMarshaller.marshall(testRecommendation.getRisk(), RISK_BINDING);
             protocolMarshaller.marshall(testRecommendation.getType(), TYPE_BINDING);

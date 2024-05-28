@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,10 +26,10 @@ public class ImportResourcesToDraftAppVersionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     * :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     * <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more
+     * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      */
     private String appArn;
@@ -41,36 +41,43 @@ public class ImportResourcesToDraftAppVersionResult extends com.amazonaws.Amazon
     private String appVersion;
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) for the resources that you imported.
+     * The input sources of the Amazon Elastic Kubernetes Service resources you have imported.
+     * </p>
+     */
+    private java.util.List<EksSource> eksSources;
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) for the resources you have imported.
      * </p>
      */
     private java.util.List<String> sourceArns;
     /**
      * <p>
-     * The status of the action.
+     * Status of the action.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * A list of terraform file s3 URLs you need to import.
+     * A list of terraform file s3 URLs you have imported.
      * </p>
      */
     private java.util.List<TerraformSource> terraformSources;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     * :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     * <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more
+     * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
      * @param appArn
-     *        The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     *        :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information
-     *        about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     *        Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     *        <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For
+     *        more information about ARNs, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      */
 
     public void setAppArn(String appArn) {
@@ -79,16 +86,17 @@ public class ImportResourcesToDraftAppVersionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     * :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     * <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more
+     * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     *         :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information
-     *         about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     *         Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * @return Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     *         <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+     *         For more information about ARNs, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     *         (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      */
 
     public String getAppArn() {
@@ -97,17 +105,18 @@ public class ImportResourcesToDraftAppVersionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     * :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     * <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more
+     * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
      * @param appArn
-     *        The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     *        :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information
-     *        about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     *        Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     *        <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For
+     *        more information about ARNs, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -158,10 +167,80 @@ public class ImportResourcesToDraftAppVersionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) for the resources that you imported.
+     * The input sources of the Amazon Elastic Kubernetes Service resources you have imported.
      * </p>
      * 
-     * @return The Amazon Resource Names (ARNs) for the resources that you imported.
+     * @return The input sources of the Amazon Elastic Kubernetes Service resources you have imported.
+     */
+
+    public java.util.List<EksSource> getEksSources() {
+        return eksSources;
+    }
+
+    /**
+     * <p>
+     * The input sources of the Amazon Elastic Kubernetes Service resources you have imported.
+     * </p>
+     * 
+     * @param eksSources
+     *        The input sources of the Amazon Elastic Kubernetes Service resources you have imported.
+     */
+
+    public void setEksSources(java.util.Collection<EksSource> eksSources) {
+        if (eksSources == null) {
+            this.eksSources = null;
+            return;
+        }
+
+        this.eksSources = new java.util.ArrayList<EksSource>(eksSources);
+    }
+
+    /**
+     * <p>
+     * The input sources of the Amazon Elastic Kubernetes Service resources you have imported.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEksSources(java.util.Collection)} or {@link #withEksSources(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param eksSources
+     *        The input sources of the Amazon Elastic Kubernetes Service resources you have imported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportResourcesToDraftAppVersionResult withEksSources(EksSource... eksSources) {
+        if (this.eksSources == null) {
+            setEksSources(new java.util.ArrayList<EksSource>(eksSources.length));
+        }
+        for (EksSource ele : eksSources) {
+            this.eksSources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The input sources of the Amazon Elastic Kubernetes Service resources you have imported.
+     * </p>
+     * 
+     * @param eksSources
+     *        The input sources of the Amazon Elastic Kubernetes Service resources you have imported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportResourcesToDraftAppVersionResult withEksSources(java.util.Collection<EksSource> eksSources) {
+        setEksSources(eksSources);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) for the resources you have imported.
+     * </p>
+     * 
+     * @return The Amazon Resource Names (ARNs) for the resources you have imported.
      */
 
     public java.util.List<String> getSourceArns() {
@@ -170,11 +249,11 @@ public class ImportResourcesToDraftAppVersionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) for the resources that you imported.
+     * The Amazon Resource Names (ARNs) for the resources you have imported.
      * </p>
      * 
      * @param sourceArns
-     *        The Amazon Resource Names (ARNs) for the resources that you imported.
+     *        The Amazon Resource Names (ARNs) for the resources you have imported.
      */
 
     public void setSourceArns(java.util.Collection<String> sourceArns) {
@@ -188,7 +267,7 @@ public class ImportResourcesToDraftAppVersionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) for the resources that you imported.
+     * The Amazon Resource Names (ARNs) for the resources you have imported.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -197,7 +276,7 @@ public class ImportResourcesToDraftAppVersionResult extends com.amazonaws.Amazon
      * </p>
      * 
      * @param sourceArns
-     *        The Amazon Resource Names (ARNs) for the resources that you imported.
+     *        The Amazon Resource Names (ARNs) for the resources you have imported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -213,11 +292,11 @@ public class ImportResourcesToDraftAppVersionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) for the resources that you imported.
+     * The Amazon Resource Names (ARNs) for the resources you have imported.
      * </p>
      * 
      * @param sourceArns
-     *        The Amazon Resource Names (ARNs) for the resources that you imported.
+     *        The Amazon Resource Names (ARNs) for the resources you have imported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -228,11 +307,11 @@ public class ImportResourcesToDraftAppVersionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The status of the action.
+     * Status of the action.
      * </p>
      * 
      * @param status
-     *        The status of the action.
+     *        Status of the action.
      * @see ResourceImportStatusType
      */
 
@@ -242,10 +321,10 @@ public class ImportResourcesToDraftAppVersionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The status of the action.
+     * Status of the action.
      * </p>
      * 
-     * @return The status of the action.
+     * @return Status of the action.
      * @see ResourceImportStatusType
      */
 
@@ -255,11 +334,11 @@ public class ImportResourcesToDraftAppVersionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The status of the action.
+     * Status of the action.
      * </p>
      * 
      * @param status
-     *        The status of the action.
+     *        Status of the action.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceImportStatusType
      */
@@ -271,11 +350,11 @@ public class ImportResourcesToDraftAppVersionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The status of the action.
+     * Status of the action.
      * </p>
      * 
      * @param status
-     *        The status of the action.
+     *        Status of the action.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceImportStatusType
      */
@@ -287,10 +366,10 @@ public class ImportResourcesToDraftAppVersionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A list of terraform file s3 URLs you need to import.
+     * A list of terraform file s3 URLs you have imported.
      * </p>
      * 
-     * @return A list of terraform file s3 URLs you need to import.
+     * @return A list of terraform file s3 URLs you have imported.
      */
 
     public java.util.List<TerraformSource> getTerraformSources() {
@@ -299,11 +378,11 @@ public class ImportResourcesToDraftAppVersionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A list of terraform file s3 URLs you need to import.
+     * A list of terraform file s3 URLs you have imported.
      * </p>
      * 
      * @param terraformSources
-     *        A list of terraform file s3 URLs you need to import.
+     *        A list of terraform file s3 URLs you have imported.
      */
 
     public void setTerraformSources(java.util.Collection<TerraformSource> terraformSources) {
@@ -317,7 +396,7 @@ public class ImportResourcesToDraftAppVersionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A list of terraform file s3 URLs you need to import.
+     * A list of terraform file s3 URLs you have imported.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -326,7 +405,7 @@ public class ImportResourcesToDraftAppVersionResult extends com.amazonaws.Amazon
      * </p>
      * 
      * @param terraformSources
-     *        A list of terraform file s3 URLs you need to import.
+     *        A list of terraform file s3 URLs you have imported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -342,11 +421,11 @@ public class ImportResourcesToDraftAppVersionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * A list of terraform file s3 URLs you need to import.
+     * A list of terraform file s3 URLs you have imported.
      * </p>
      * 
      * @param terraformSources
-     *        A list of terraform file s3 URLs you need to import.
+     *        A list of terraform file s3 URLs you have imported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -371,6 +450,8 @@ public class ImportResourcesToDraftAppVersionResult extends com.amazonaws.Amazon
             sb.append("AppArn: ").append(getAppArn()).append(",");
         if (getAppVersion() != null)
             sb.append("AppVersion: ").append(getAppVersion()).append(",");
+        if (getEksSources() != null)
+            sb.append("EksSources: ").append(getEksSources()).append(",");
         if (getSourceArns() != null)
             sb.append("SourceArns: ").append(getSourceArns()).append(",");
         if (getStatus() != null)
@@ -399,6 +480,10 @@ public class ImportResourcesToDraftAppVersionResult extends com.amazonaws.Amazon
             return false;
         if (other.getAppVersion() != null && other.getAppVersion().equals(this.getAppVersion()) == false)
             return false;
+        if (other.getEksSources() == null ^ this.getEksSources() == null)
+            return false;
+        if (other.getEksSources() != null && other.getEksSources().equals(this.getEksSources()) == false)
+            return false;
         if (other.getSourceArns() == null ^ this.getSourceArns() == null)
             return false;
         if (other.getSourceArns() != null && other.getSourceArns().equals(this.getSourceArns()) == false)
@@ -421,6 +506,7 @@ public class ImportResourcesToDraftAppVersionResult extends com.amazonaws.Amazon
 
         hashCode = prime * hashCode + ((getAppArn() == null) ? 0 : getAppArn().hashCode());
         hashCode = prime * hashCode + ((getAppVersion() == null) ? 0 : getAppVersion().hashCode());
+        hashCode = prime * hashCode + ((getEksSources() == null) ? 0 : getEksSources().hashCode());
         hashCode = prime * hashCode + ((getSourceArns() == null) ? 0 : getSourceArns().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getTerraformSources() == null) ? 0 : getTerraformSources().hashCode());

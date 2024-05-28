@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -268,7 +268,7 @@ public class DiskImageDetail implements Serializable, Cloneable {
         if (getFormat() != null)
             sb.append("Format: ").append(getFormat()).append(",");
         if (getImportManifestUrl() != null)
-            sb.append("ImportManifestUrl: ").append(getImportManifestUrl());
+            sb.append("ImportManifestUrl: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

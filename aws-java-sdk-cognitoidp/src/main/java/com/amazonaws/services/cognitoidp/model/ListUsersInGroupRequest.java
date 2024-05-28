@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class ListUsersInGroupRequest extends com.amazonaws.AmazonWebServiceReque
     private String groupName;
     /**
      * <p>
-     * The limit of the request to list users.
+     * The maximum number of users that you want to retrieve before pagination.
      * </p>
      */
     private Integer limit;
@@ -133,11 +133,11 @@ public class ListUsersInGroupRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The limit of the request to list users.
+     * The maximum number of users that you want to retrieve before pagination.
      * </p>
      * 
      * @param limit
-     *        The limit of the request to list users.
+     *        The maximum number of users that you want to retrieve before pagination.
      */
 
     public void setLimit(Integer limit) {
@@ -146,10 +146,10 @@ public class ListUsersInGroupRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The limit of the request to list users.
+     * The maximum number of users that you want to retrieve before pagination.
      * </p>
      * 
-     * @return The limit of the request to list users.
+     * @return The maximum number of users that you want to retrieve before pagination.
      */
 
     public Integer getLimit() {
@@ -158,11 +158,11 @@ public class ListUsersInGroupRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The limit of the request to list users.
+     * The maximum number of users that you want to retrieve before pagination.
      * </p>
      * 
      * @param limit
-     *        The limit of the request to list users.
+     *        The maximum number of users that you want to retrieve before pagination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

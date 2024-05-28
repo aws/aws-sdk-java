@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,10 +29,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class PackagingGroupMarshaller {
 
+    private static final MarshallingInfo<Integer> APPROXIMATEASSETCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("approximateAssetCount").build();
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
     private static final MarshallingInfo<StructuredPojo> AUTHORIZATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authorization").build();
+    private static final MarshallingInfo<String> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("createdAt").build();
     private static final MarshallingInfo<String> DOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("domainName").build();
     private static final MarshallingInfo<StructuredPojo> EGRESSACCESSLOGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -58,8 +62,10 @@ public class PackagingGroupMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(packagingGroup.getApproximateAssetCount(), APPROXIMATEASSETCOUNT_BINDING);
             protocolMarshaller.marshall(packagingGroup.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(packagingGroup.getAuthorization(), AUTHORIZATION_BINDING);
+            protocolMarshaller.marshall(packagingGroup.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(packagingGroup.getDomainName(), DOMAINNAME_BINDING);
             protocolMarshaller.marshall(packagingGroup.getEgressAccessLogs(), EGRESSACCESSLOGS_BINDING);
             protocolMarshaller.marshall(packagingGroup.getId(), ID_BINDING);

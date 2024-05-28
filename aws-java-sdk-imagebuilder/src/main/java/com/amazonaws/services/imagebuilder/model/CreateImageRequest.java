@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -73,10 +73,31 @@ public class CreateImageRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The idempotency token used to make this request idempotent.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.
      * </p>
      */
     private String clientToken;
+    /**
+     * <p>
+     * Contains settings for vulnerability scans.
+     * </p>
+     */
+    private ImageScanningConfiguration imageScanningConfiguration;
+    /**
+     * <p>
+     * Contains an array of workflow configuration objects.
+     * </p>
+     */
+    private java.util.List<WorkflowConfiguration> workflows;
+    /**
+     * <p>
+     * The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform
+     * workflow actions.
+     * </p>
+     */
+    private String executionRole;
 
     /**
      * <p>
@@ -431,11 +452,16 @@ public class CreateImageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The idempotency token used to make this request idempotent.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.
      * </p>
      * 
      * @param clientToken
-     *        The idempotency token used to make this request idempotent.
+     *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
+     *        see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        idempotency</a> in the <i>Amazon EC2 API Reference</i>.
      */
 
     public void setClientToken(String clientToken) {
@@ -444,10 +470,15 @@ public class CreateImageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The idempotency token used to make this request idempotent.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.
      * </p>
      * 
-     * @return The idempotency token used to make this request idempotent.
+     * @return Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
+     *         see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *         idempotency</a> in the <i>Amazon EC2 API Reference</i>.
      */
 
     public String getClientToken() {
@@ -456,16 +487,177 @@ public class CreateImageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The idempotency token used to make this request idempotent.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.
      * </p>
      * 
      * @param clientToken
-     *        The idempotency token used to make this request idempotent.
+     *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
+     *        see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        idempotency</a> in the <i>Amazon EC2 API Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateImageRequest withClientToken(String clientToken) {
         setClientToken(clientToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains settings for vulnerability scans.
+     * </p>
+     * 
+     * @param imageScanningConfiguration
+     *        Contains settings for vulnerability scans.
+     */
+
+    public void setImageScanningConfiguration(ImageScanningConfiguration imageScanningConfiguration) {
+        this.imageScanningConfiguration = imageScanningConfiguration;
+    }
+
+    /**
+     * <p>
+     * Contains settings for vulnerability scans.
+     * </p>
+     * 
+     * @return Contains settings for vulnerability scans.
+     */
+
+    public ImageScanningConfiguration getImageScanningConfiguration() {
+        return this.imageScanningConfiguration;
+    }
+
+    /**
+     * <p>
+     * Contains settings for vulnerability scans.
+     * </p>
+     * 
+     * @param imageScanningConfiguration
+     *        Contains settings for vulnerability scans.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateImageRequest withImageScanningConfiguration(ImageScanningConfiguration imageScanningConfiguration) {
+        setImageScanningConfiguration(imageScanningConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains an array of workflow configuration objects.
+     * </p>
+     * 
+     * @return Contains an array of workflow configuration objects.
+     */
+
+    public java.util.List<WorkflowConfiguration> getWorkflows() {
+        return workflows;
+    }
+
+    /**
+     * <p>
+     * Contains an array of workflow configuration objects.
+     * </p>
+     * 
+     * @param workflows
+     *        Contains an array of workflow configuration objects.
+     */
+
+    public void setWorkflows(java.util.Collection<WorkflowConfiguration> workflows) {
+        if (workflows == null) {
+            this.workflows = null;
+            return;
+        }
+
+        this.workflows = new java.util.ArrayList<WorkflowConfiguration>(workflows);
+    }
+
+    /**
+     * <p>
+     * Contains an array of workflow configuration objects.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setWorkflows(java.util.Collection)} or {@link #withWorkflows(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param workflows
+     *        Contains an array of workflow configuration objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateImageRequest withWorkflows(WorkflowConfiguration... workflows) {
+        if (this.workflows == null) {
+            setWorkflows(new java.util.ArrayList<WorkflowConfiguration>(workflows.length));
+        }
+        for (WorkflowConfiguration ele : workflows) {
+            this.workflows.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains an array of workflow configuration objects.
+     * </p>
+     * 
+     * @param workflows
+     *        Contains an array of workflow configuration objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateImageRequest withWorkflows(java.util.Collection<WorkflowConfiguration> workflows) {
+        setWorkflows(workflows);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform
+     * workflow actions.
+     * </p>
+     * 
+     * @param executionRole
+     *        The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to
+     *        perform workflow actions.
+     */
+
+    public void setExecutionRole(String executionRole) {
+        this.executionRole = executionRole;
+    }
+
+    /**
+     * <p>
+     * The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform
+     * workflow actions.
+     * </p>
+     * 
+     * @return The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to
+     *         perform workflow actions.
+     */
+
+    public String getExecutionRole() {
+        return this.executionRole;
+    }
+
+    /**
+     * <p>
+     * The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform
+     * workflow actions.
+     * </p>
+     * 
+     * @param executionRole
+     *        The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to
+     *        perform workflow actions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateImageRequest withExecutionRole(String executionRole) {
+        setExecutionRole(executionRole);
         return this;
     }
 
@@ -496,7 +688,13 @@ public class CreateImageRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getImageScanningConfiguration() != null)
+            sb.append("ImageScanningConfiguration: ").append(getImageScanningConfiguration()).append(",");
+        if (getWorkflows() != null)
+            sb.append("Workflows: ").append(getWorkflows()).append(",");
+        if (getExecutionRole() != null)
+            sb.append("ExecutionRole: ").append(getExecutionRole());
         sb.append("}");
         return sb.toString();
     }
@@ -544,6 +742,18 @@ public class CreateImageRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
+        if (other.getImageScanningConfiguration() == null ^ this.getImageScanningConfiguration() == null)
+            return false;
+        if (other.getImageScanningConfiguration() != null && other.getImageScanningConfiguration().equals(this.getImageScanningConfiguration()) == false)
+            return false;
+        if (other.getWorkflows() == null ^ this.getWorkflows() == null)
+            return false;
+        if (other.getWorkflows() != null && other.getWorkflows().equals(this.getWorkflows()) == false)
+            return false;
+        if (other.getExecutionRole() == null ^ this.getExecutionRole() == null)
+            return false;
+        if (other.getExecutionRole() != null && other.getExecutionRole().equals(this.getExecutionRole()) == false)
+            return false;
         return true;
     }
 
@@ -560,6 +770,9 @@ public class CreateImageRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getEnhancedImageMetadataEnabled() == null) ? 0 : getEnhancedImageMetadataEnabled().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getImageScanningConfiguration() == null) ? 0 : getImageScanningConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getWorkflows() == null) ? 0 : getWorkflows().hashCode());
+        hashCode = prime * hashCode + ((getExecutionRole() == null) ? 0 : getExecutionRole().hashCode());
         return hashCode;
     }
 

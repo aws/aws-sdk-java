@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides a relative ranking that indicates how confident Amazon Kendra is that the response matches the query.
+ * Provides a relative ranking that indicates how confident Amazon Kendra is that the response is relevant to the query.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ScoreAttributes" target="_top">AWS API
@@ -30,18 +30,18 @@ public class ScoreAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A relative ranking for how well the response matches the query.
+     * A relative ranking for how relevant the response is to the query.
      * </p>
      */
     private String scoreConfidence;
 
     /**
      * <p>
-     * A relative ranking for how well the response matches the query.
+     * A relative ranking for how relevant the response is to the query.
      * </p>
      * 
      * @param scoreConfidence
-     *        A relative ranking for how well the response matches the query.
+     *        A relative ranking for how relevant the response is to the query.
      * @see ScoreConfidence
      */
 
@@ -51,10 +51,10 @@ public class ScoreAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A relative ranking for how well the response matches the query.
+     * A relative ranking for how relevant the response is to the query.
      * </p>
      * 
-     * @return A relative ranking for how well the response matches the query.
+     * @return A relative ranking for how relevant the response is to the query.
      * @see ScoreConfidence
      */
 
@@ -64,11 +64,11 @@ public class ScoreAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A relative ranking for how well the response matches the query.
+     * A relative ranking for how relevant the response is to the query.
      * </p>
      * 
      * @param scoreConfidence
-     *        A relative ranking for how well the response matches the query.
+     *        A relative ranking for how relevant the response is to the query.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScoreConfidence
      */
@@ -80,11 +80,11 @@ public class ScoreAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A relative ranking for how well the response matches the query.
+     * A relative ranking for how relevant the response is to the query.
      * </p>
      * 
      * @param scoreConfidence
-     *        A relative ranking for how well the response matches the query.
+     *        A relative ranking for how relevant the response is to the query.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScoreConfidence
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -105,7 +105,7 @@ public class WindowsAuditLogCreateConfiguration implements Serializable, Cloneab
      * <li>
      * <p>
      * The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix. The name of
-     * the Amazon Kinesis Data Firehouse delivery stream must begin with the <code>aws-fsx</code> prefix.
+     * the Amazon Kinesis Data Firehose delivery stream must begin with the <code>aws-fsx</code> prefix.
      * </p>
      * </li>
      * <li>
@@ -623,7 +623,7 @@ public class WindowsAuditLogCreateConfiguration implements Serializable, Cloneab
      * <li>
      * <p>
      * The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix. The name of
-     * the Amazon Kinesis Data Firehouse delivery stream must begin with the <code>aws-fsx</code> prefix.
+     * the Amazon Kinesis Data Firehose delivery stream must begin with the <code>aws-fsx</code> prefix.
      * </p>
      * </li>
      * <li>
@@ -663,7 +663,7 @@ public class WindowsAuditLogCreateConfiguration implements Serializable, Cloneab
      *        <li>
      *        <p>
      *        The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix. The
-     *        name of the Amazon Kinesis Data Firehouse delivery stream must begin with the <code>aws-fsx</code> prefix.
+     *        name of the Amazon Kinesis Data Firehose delivery stream must begin with the <code>aws-fsx</code> prefix.
      *        </p>
      *        </li>
      *        <li>
@@ -709,7 +709,7 @@ public class WindowsAuditLogCreateConfiguration implements Serializable, Cloneab
      * <li>
      * <p>
      * The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix. The name of
-     * the Amazon Kinesis Data Firehouse delivery stream must begin with the <code>aws-fsx</code> prefix.
+     * the Amazon Kinesis Data Firehose delivery stream must begin with the <code>aws-fsx</code> prefix.
      * </p>
      * </li>
      * <li>
@@ -748,8 +748,7 @@ public class WindowsAuditLogCreateConfiguration implements Serializable, Cloneab
      *         <li>
      *         <p>
      *         The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix. The
-     *         name of the Amazon Kinesis Data Firehouse delivery stream must begin with the <code>aws-fsx</code>
-     *         prefix.
+     *         name of the Amazon Kinesis Data Firehose delivery stream must begin with the <code>aws-fsx</code> prefix.
      *         </p>
      *         </li>
      *         <li>
@@ -795,7 +794,7 @@ public class WindowsAuditLogCreateConfiguration implements Serializable, Cloneab
      * <li>
      * <p>
      * The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix. The name of
-     * the Amazon Kinesis Data Firehouse delivery stream must begin with the <code>aws-fsx</code> prefix.
+     * the Amazon Kinesis Data Firehose delivery stream must begin with the <code>aws-fsx</code> prefix.
      * </p>
      * </li>
      * <li>
@@ -835,7 +834,7 @@ public class WindowsAuditLogCreateConfiguration implements Serializable, Cloneab
      *        <li>
      *        <p>
      *        The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code> prefix. The
-     *        name of the Amazon Kinesis Data Firehouse delivery stream must begin with the <code>aws-fsx</code> prefix.
+     *        name of the Amazon Kinesis Data Firehose delivery stream must begin with the <code>aws-fsx</code> prefix.
      *        </p>
      *        </li>
      *        <li>

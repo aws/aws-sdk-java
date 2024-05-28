@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,8 +57,7 @@ public class StartPiiEntitiesDetectionJobRequest extends com.amazonaws.AmazonWeb
     private RedactionConfig redactionConfig;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend
-     * read access to your input data.
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.
      * </p>
      */
     private String dataAccessRoleArn;
@@ -70,7 +69,7 @@ public class StartPiiEntitiesDetectionJobRequest extends com.amazonaws.AmazonWeb
     private String jobName;
     /**
      * <p>
-     * The language of the input documents. Currently, English is the only valid language.
+     * The language of the input documents. Enter the language code for English (en) or Spanish (es).
      * </p>
      */
     private String languageCode;
@@ -82,9 +81,9 @@ public class StartPiiEntitiesDetectionJobRequest extends com.amazonaws.AmazonWeb
     private String clientRequestToken;
     /**
      * <p>
-     * Tags to be associated with the PII entities detection job. A tag is a key-value pair that adds metadata to a
-     * resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to
-     * indicate its use by the sales department.
+     * Tags to associate with the PII entities detection job. A tag is a key-value pair that adds metadata to a resource
+     * used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate
+     * its use by the sales department.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -305,13 +304,12 @@ public class StartPiiEntitiesDetectionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend
-     * read access to your input data.
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon
-     *        Comprehend read access to your input data.
+     *        The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input
+     *        data.
      */
 
     public void setDataAccessRoleArn(String dataAccessRoleArn) {
@@ -320,12 +318,11 @@ public class StartPiiEntitiesDetectionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend
-     * read access to your input data.
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon
-     *         Comprehend read access to your input data.
+     * @return The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input
+     *         data.
      */
 
     public String getDataAccessRoleArn() {
@@ -334,13 +331,12 @@ public class StartPiiEntitiesDetectionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend
-     * read access to your input data.
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon
-     *        Comprehend read access to your input data.
+     *        The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input
+     *        data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -391,11 +387,11 @@ public class StartPiiEntitiesDetectionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The language of the input documents. Currently, English is the only valid language.
+     * The language of the input documents. Enter the language code for English (en) or Spanish (es).
      * </p>
      * 
      * @param languageCode
-     *        The language of the input documents. Currently, English is the only valid language.
+     *        The language of the input documents. Enter the language code for English (en) or Spanish (es).
      * @see LanguageCode
      */
 
@@ -405,10 +401,10 @@ public class StartPiiEntitiesDetectionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The language of the input documents. Currently, English is the only valid language.
+     * The language of the input documents. Enter the language code for English (en) or Spanish (es).
      * </p>
      * 
-     * @return The language of the input documents. Currently, English is the only valid language.
+     * @return The language of the input documents. Enter the language code for English (en) or Spanish (es).
      * @see LanguageCode
      */
 
@@ -418,11 +414,11 @@ public class StartPiiEntitiesDetectionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The language of the input documents. Currently, English is the only valid language.
+     * The language of the input documents. Enter the language code for English (en) or Spanish (es).
      * </p>
      * 
      * @param languageCode
-     *        The language of the input documents. Currently, English is the only valid language.
+     *        The language of the input documents. Enter the language code for English (en) or Spanish (es).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -434,11 +430,11 @@ public class StartPiiEntitiesDetectionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The language of the input documents. Currently, English is the only valid language.
+     * The language of the input documents. Enter the language code for English (en) or Spanish (es).
      * </p>
      * 
      * @param languageCode
-     *        The language of the input documents. Currently, English is the only valid language.
+     *        The language of the input documents. Enter the language code for English (en) or Spanish (es).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -493,13 +489,13 @@ public class StartPiiEntitiesDetectionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Tags to be associated with the PII entities detection job. A tag is a key-value pair that adds metadata to a
-     * resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to
-     * indicate its use by the sales department.
+     * Tags to associate with the PII entities detection job. A tag is a key-value pair that adds metadata to a resource
+     * used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate
+     * its use by the sales department.
      * </p>
      * 
-     * @return Tags to be associated with the PII entities detection job. A tag is a key-value pair that adds metadata
-     *         to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     * @return Tags to associate with the PII entities detection job. A tag is a key-value pair that adds metadata to a
+     *         resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
      *         resource to indicate its use by the sales department.
      */
 
@@ -509,14 +505,14 @@ public class StartPiiEntitiesDetectionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Tags to be associated with the PII entities detection job. A tag is a key-value pair that adds metadata to a
-     * resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to
-     * indicate its use by the sales department.
+     * Tags to associate with the PII entities detection job. A tag is a key-value pair that adds metadata to a resource
+     * used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate
+     * its use by the sales department.
      * </p>
      * 
      * @param tags
-     *        Tags to be associated with the PII entities detection job. A tag is a key-value pair that adds metadata to
-     *        a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     *        Tags to associate with the PII entities detection job. A tag is a key-value pair that adds metadata to a
+     *        resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
      *        resource to indicate its use by the sales department.
      */
 
@@ -531,9 +527,9 @@ public class StartPiiEntitiesDetectionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Tags to be associated with the PII entities detection job. A tag is a key-value pair that adds metadata to a
-     * resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to
-     * indicate its use by the sales department.
+     * Tags to associate with the PII entities detection job. A tag is a key-value pair that adds metadata to a resource
+     * used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate
+     * its use by the sales department.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -542,8 +538,8 @@ public class StartPiiEntitiesDetectionJobRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param tags
-     *        Tags to be associated with the PII entities detection job. A tag is a key-value pair that adds metadata to
-     *        a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     *        Tags to associate with the PII entities detection job. A tag is a key-value pair that adds metadata to a
+     *        resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
      *        resource to indicate its use by the sales department.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -560,14 +556,14 @@ public class StartPiiEntitiesDetectionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Tags to be associated with the PII entities detection job. A tag is a key-value pair that adds metadata to a
-     * resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to
-     * indicate its use by the sales department.
+     * Tags to associate with the PII entities detection job. A tag is a key-value pair that adds metadata to a resource
+     * used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate
+     * its use by the sales department.
      * </p>
      * 
      * @param tags
-     *        Tags to be associated with the PII entities detection job. A tag is a key-value pair that adds metadata to
-     *        a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     *        Tags to associate with the PII entities detection job. A tag is a key-value pair that adds metadata to a
+     *        resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
      *        resource to indicate its use by the sales department.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

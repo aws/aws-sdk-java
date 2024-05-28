@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,12 @@ public class SensorMarshaller {
             .marshallLocationName("min").build();
     private static final MarshallingInfo<Double> MAX_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("max").build();
+    private static final MarshallingInfo<String> DEPRECATIONMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deprecationMessage").build();
+    private static final MarshallingInfo<String> COMMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("comment").build();
+    private static final MarshallingInfo<String> STRUCTFULLYQUALIFIEDNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("structFullyQualifiedName").build();
 
     private static final SensorMarshaller instance = new SensorMarshaller();
 
@@ -66,6 +72,9 @@ public class SensorMarshaller {
             protocolMarshaller.marshall(sensor.getAllowedValues(), ALLOWEDVALUES_BINDING);
             protocolMarshaller.marshall(sensor.getMin(), MIN_BINDING);
             protocolMarshaller.marshall(sensor.getMax(), MAX_BINDING);
+            protocolMarshaller.marshall(sensor.getDeprecationMessage(), DEPRECATIONMESSAGE_BINDING);
+            protocolMarshaller.marshall(sensor.getComment(), COMMENT_BINDING);
+            protocolMarshaller.marshall(sensor.getStructFullyQualifiedName(), STRUCTFULLYQUALIFIEDNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

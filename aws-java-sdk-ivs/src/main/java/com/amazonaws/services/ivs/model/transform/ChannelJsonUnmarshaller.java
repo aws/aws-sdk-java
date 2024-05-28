@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,6 +60,10 @@ public class ChannelJsonUnmarshaller implements Unmarshaller<Channel, JsonUnmars
                     context.nextToken();
                     channel.setIngestEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("insecureIngest", targetDepth)) {
+                    context.nextToken();
+                    channel.setInsecureIngest(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("latencyMode", targetDepth)) {
                     context.nextToken();
                     channel.setLatencyMode(context.getUnmarshaller(String.class).unmarshall(context));
@@ -68,13 +72,25 @@ public class ChannelJsonUnmarshaller implements Unmarshaller<Channel, JsonUnmars
                     context.nextToken();
                     channel.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("playbackRestrictionPolicyArn", targetDepth)) {
+                    context.nextToken();
+                    channel.setPlaybackRestrictionPolicyArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("playbackUrl", targetDepth)) {
                     context.nextToken();
                     channel.setPlaybackUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("preset", targetDepth)) {
+                    context.nextToken();
+                    channel.setPreset(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("recordingConfigurationArn", targetDepth)) {
                     context.nextToken();
                     channel.setRecordingConfigurationArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("srt", targetDepth)) {
+                    context.nextToken();
+                    channel.setSrt(SrtJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ package com.amazonaws.services.s3.model;
 public enum SSEAlgorithm {
     AES256("AES256"),
     KMS("aws:kms"),
+    DSSE("aws:kms:dsse"),
     ;
 
     private final String algorithm;

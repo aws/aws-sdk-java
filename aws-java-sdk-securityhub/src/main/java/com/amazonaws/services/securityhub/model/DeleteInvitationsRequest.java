@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,17 +27,17 @@ public class DeleteInvitationsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The list of the account IDs that sent the invitations to delete.
+     * The list of member account IDs that received the invitations you want to delete.
      * </p>
      */
     private java.util.List<String> accountIds;
 
     /**
      * <p>
-     * The list of the account IDs that sent the invitations to delete.
+     * The list of member account IDs that received the invitations you want to delete.
      * </p>
      * 
-     * @return The list of the account IDs that sent the invitations to delete.
+     * @return The list of member account IDs that received the invitations you want to delete.
      */
 
     public java.util.List<String> getAccountIds() {
@@ -46,11 +46,11 @@ public class DeleteInvitationsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The list of the account IDs that sent the invitations to delete.
+     * The list of member account IDs that received the invitations you want to delete.
      * </p>
      * 
      * @param accountIds
-     *        The list of the account IDs that sent the invitations to delete.
+     *        The list of member account IDs that received the invitations you want to delete.
      */
 
     public void setAccountIds(java.util.Collection<String> accountIds) {
@@ -64,7 +64,7 @@ public class DeleteInvitationsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The list of the account IDs that sent the invitations to delete.
+     * The list of member account IDs that received the invitations you want to delete.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +73,7 @@ public class DeleteInvitationsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param accountIds
-     *        The list of the account IDs that sent the invitations to delete.
+     *        The list of member account IDs that received the invitations you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class DeleteInvitationsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The list of the account IDs that sent the invitations to delete.
+     * The list of member account IDs that received the invitations you want to delete.
      * </p>
      * 
      * @param accountIds
-     *        The list of the account IDs that sent the invitations to delete.
+     *        The list of member account IDs that received the invitations you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

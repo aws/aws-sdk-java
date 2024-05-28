@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,20 +27,8 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:
+     * The identity type that your Amazon QuickSight account uses to manage the identity of users.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.
-     * </p>
-     * </li>
-     * </ul>
      */
     private String identityType;
     /**
@@ -67,6 +55,26 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>READER_PRO</code>: Reader Pro adds Generative BI capabilities to the Reader role. Reader Pros have access
+     * to Amazon Q in Amazon QuickSight, can build stories with Amazon Q, and can generate executive summaries from
+     * dashboards.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AUTHOR_PRO</code>: Author Pro adds Generative BI capabilities to the Author role. Author Pros can author
+     * dashboards with natural language with Amazon Q, build stories with Amazon Q, create Topics for Q&amp;A, and
+     * generate executive summaries from dashboards.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ADMIN_PRO</code>: Admin Pros are Author Pros who can also manage Amazon QuickSight administrative settings.
+     * Admin Pro users are billed at Author Pro pricing.
      * </p>
      * </li>
      * <li>
@@ -158,7 +166,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions
      * typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon
-     * QuickSight (admin, author, reader).
+     * QuickSight (admin, author, reader, admin pro, author pro, reader pro).
      * </p>
      * <p>
      * This feature is available only to Amazon QuickSight Enterprise edition subscriptions.
@@ -202,38 +210,20 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String externalLoginId;
+    /**
+     * <p>
+     * The tags to associate with the user.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:
+     * The identity type that your Amazon QuickSight account uses to manage the identity of users.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param identityType
-     *        Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two
-     *        values:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.
-     *        </p>
-     *        </li>
+     *        The identity type that your Amazon QuickSight account uses to manage the identity of users.
      * @see IdentityType
      */
 
@@ -243,34 +233,10 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:
+     * The identity type that your Amazon QuickSight account uses to manage the identity of users.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two
-     *         values:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.
-     *         </p>
-     *         </li>
+     * @return The identity type that your Amazon QuickSight account uses to manage the identity of users.
      * @see IdentityType
      */
 
@@ -280,35 +246,11 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:
+     * The identity type that your Amazon QuickSight account uses to manage the identity of users.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param identityType
-     *        Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two
-     *        values:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.
-     *        </p>
-     *        </li>
+     *        The identity type that your Amazon QuickSight account uses to manage the identity of users.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityType
      */
@@ -320,35 +262,11 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two values:
+     * The identity type that your Amazon QuickSight account uses to manage the identity of users.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param identityType
-     *        Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts two
-     *        values:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>IAM</code>: A user whose identity maps to an existing IAM user or role.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by Amazon QuickSight.
-     *        </p>
-     *        </li>
+     *        The identity type that your Amazon QuickSight account uses to manage the identity of users.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityType
      */
@@ -420,6 +338,26 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
+     * <code>READER_PRO</code>: Reader Pro adds Generative BI capabilities to the Reader role. Reader Pros have access
+     * to Amazon Q in Amazon QuickSight, can build stories with Amazon Q, and can generate executive summaries from
+     * dashboards.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AUTHOR_PRO</code>: Author Pro adds Generative BI capabilities to the Author role. Author Pros can author
+     * dashboards with natural language with Amazon Q, build stories with Amazon Q, create Topics for Q&amp;A, and
+     * generate executive summaries from dashboards.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ADMIN_PRO</code>: Admin Pros are Author Pros who can also manage Amazon QuickSight administrative settings.
+     * Admin Pro users are billed at Author Pro pricing.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>RESTRICTED_READER</code>: This role isn't currently available for use.
      * </p>
      * </li>
@@ -446,6 +384,26 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>READER_PRO</code>: Reader Pro adds Generative BI capabilities to the Reader role. Reader Pros have
+     *        access to Amazon Q in Amazon QuickSight, can build stories with Amazon Q, and can generate executive
+     *        summaries from dashboards.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AUTHOR_PRO</code>: Author Pro adds Generative BI capabilities to the Author role. Author Pros can
+     *        author dashboards with natural language with Amazon Q, build stories with Amazon Q, create Topics for
+     *        Q&amp;A, and generate executive summaries from dashboards.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ADMIN_PRO</code>: Admin Pros are Author Pros who can also manage Amazon QuickSight administrative
+     *        settings. Admin Pro users are billed at Author Pro pricing.
      *        </p>
      *        </li>
      *        <li>
@@ -487,6 +445,26 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
+     * <code>READER_PRO</code>: Reader Pro adds Generative BI capabilities to the Reader role. Reader Pros have access
+     * to Amazon Q in Amazon QuickSight, can build stories with Amazon Q, and can generate executive summaries from
+     * dashboards.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AUTHOR_PRO</code>: Author Pro adds Generative BI capabilities to the Author role. Author Pros can author
+     * dashboards with natural language with Amazon Q, build stories with Amazon Q, create Topics for Q&amp;A, and
+     * generate executive summaries from dashboards.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ADMIN_PRO</code>: Admin Pros are Author Pros who can also manage Amazon QuickSight administrative settings.
+     * Admin Pro users are billed at Author Pro pricing.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>RESTRICTED_READER</code>: This role isn't currently available for use.
      * </p>
      * </li>
@@ -512,6 +490,26 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <li>
      *         <p>
      *         <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>READER_PRO</code>: Reader Pro adds Generative BI capabilities to the Reader role. Reader Pros have
+     *         access to Amazon Q in Amazon QuickSight, can build stories with Amazon Q, and can generate executive
+     *         summaries from dashboards.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AUTHOR_PRO</code>: Author Pro adds Generative BI capabilities to the Author role. Author Pros can
+     *         author dashboards with natural language with Amazon Q, build stories with Amazon Q, create Topics for
+     *         Q&amp;A, and generate executive summaries from dashboards.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ADMIN_PRO</code>: Admin Pros are Author Pros who can also manage Amazon QuickSight administrative
+     *         settings. Admin Pro users are billed at Author Pro pricing.
      *         </p>
      *         </li>
      *         <li>
@@ -553,6 +551,26 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
+     * <code>READER_PRO</code>: Reader Pro adds Generative BI capabilities to the Reader role. Reader Pros have access
+     * to Amazon Q in Amazon QuickSight, can build stories with Amazon Q, and can generate executive summaries from
+     * dashboards.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AUTHOR_PRO</code>: Author Pro adds Generative BI capabilities to the Author role. Author Pros can author
+     * dashboards with natural language with Amazon Q, build stories with Amazon Q, create Topics for Q&amp;A, and
+     * generate executive summaries from dashboards.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ADMIN_PRO</code>: Admin Pros are Author Pros who can also manage Amazon QuickSight administrative settings.
+     * Admin Pro users are billed at Author Pro pricing.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>RESTRICTED_READER</code>: This role isn't currently available for use.
      * </p>
      * </li>
@@ -579,6 +597,26 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>READER_PRO</code>: Reader Pro adds Generative BI capabilities to the Reader role. Reader Pros have
+     *        access to Amazon Q in Amazon QuickSight, can build stories with Amazon Q, and can generate executive
+     *        summaries from dashboards.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AUTHOR_PRO</code>: Author Pro adds Generative BI capabilities to the Author role. Author Pros can
+     *        author dashboards with natural language with Amazon Q, build stories with Amazon Q, create Topics for
+     *        Q&amp;A, and generate executive summaries from dashboards.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ADMIN_PRO</code>: Admin Pros are Author Pros who can also manage Amazon QuickSight administrative
+     *        settings. Admin Pro users are billed at Author Pro pricing.
      *        </p>
      *        </li>
      *        <li>
@@ -622,6 +660,26 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
+     * <code>READER_PRO</code>: Reader Pro adds Generative BI capabilities to the Reader role. Reader Pros have access
+     * to Amazon Q in Amazon QuickSight, can build stories with Amazon Q, and can generate executive summaries from
+     * dashboards.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AUTHOR_PRO</code>: Author Pro adds Generative BI capabilities to the Author role. Author Pros can author
+     * dashboards with natural language with Amazon Q, build stories with Amazon Q, create Topics for Q&amp;A, and
+     * generate executive summaries from dashboards.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ADMIN_PRO</code>: Admin Pros are Author Pros who can also manage Amazon QuickSight administrative settings.
+     * Admin Pro users are billed at Author Pro pricing.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>RESTRICTED_READER</code>: This role isn't currently available for use.
      * </p>
      * </li>
@@ -648,6 +706,26 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight settings.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>READER_PRO</code>: Reader Pro adds Generative BI capabilities to the Reader role. Reader Pros have
+     *        access to Amazon Q in Amazon QuickSight, can build stories with Amazon Q, and can generate executive
+     *        summaries from dashboards.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AUTHOR_PRO</code>: Author Pro adds Generative BI capabilities to the Author role. Author Pros can
+     *        author dashboards with natural language with Amazon Q, build stories with Amazon Q, create Topics for
+     *        Q&amp;A, and generate executive summaries from dashboards.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ADMIN_PRO</code>: Admin Pros are Author Pros who can also manage Amazon QuickSight administrative
+     *        settings. Admin Pro users are billed at Author Pro pricing.
      *        </p>
      *        </li>
      *        <li>
@@ -945,7 +1023,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions
      * typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon
-     * QuickSight (admin, author, reader).
+     * QuickSight (admin, author, reader, admin pro, author pro, reader pro).
      * </p>
      * <p>
      * This feature is available only to Amazon QuickSight Enterprise edition subscriptions.
@@ -991,7 +1069,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the
      *        permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts
-     *        in Amazon QuickSight (admin, author, reader).
+     *        in Amazon QuickSight (admin, author, reader, admin pro, author pro, reader pro).
      *        </p>
      *        <p>
      *        This feature is available only to Amazon QuickSight Enterprise edition subscriptions.
@@ -1041,7 +1119,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions
      * typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon
-     * QuickSight (admin, author, reader).
+     * QuickSight (admin, author, reader, admin pro, author pro, reader pro).
      * </p>
      * <p>
      * This feature is available only to Amazon QuickSight Enterprise edition subscriptions.
@@ -1086,7 +1164,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <p>
      *         Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the
      *         permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts
-     *         in Amazon QuickSight (admin, author, reader).
+     *         in Amazon QuickSight (admin, author, reader, admin pro, author pro, reader pro).
      *         </p>
      *         <p>
      *         This feature is available only to Amazon QuickSight Enterprise edition subscriptions.
@@ -1136,7 +1214,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions
      * typically granted by assigning Amazon QuickSight users to one of the default security cohorts in Amazon
-     * QuickSight (admin, author, reader).
+     * QuickSight (admin, author, reader, admin pro, author pro, reader pro).
      * </p>
      * <p>
      * This feature is available only to Amazon QuickSight Enterprise edition subscriptions.
@@ -1182,7 +1260,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        Amazon QuickSight custom permissions are applied through IAM policies. Therefore, they override the
      *        permissions typically granted by assigning Amazon QuickSight users to one of the default security cohorts
-     *        in Amazon QuickSight (admin, author, reader).
+     *        in Amazon QuickSight (admin, author, reader, admin pro, author pro, reader pro).
      *        </p>
      *        <p>
      *        This feature is available only to Amazon QuickSight Enterprise edition subscriptions.
@@ -1429,6 +1507,76 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The tags to associate with the user.
+     * </p>
+     * 
+     * @return The tags to associate with the user.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags to associate with the user.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to associate with the user.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags to associate with the user.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to associate with the user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterUserRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to associate with the user.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to associate with the user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterUserRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1463,7 +1611,9 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getCustomFederationProviderUrl() != null)
             sb.append("CustomFederationProviderUrl: ").append(getCustomFederationProviderUrl()).append(",");
         if (getExternalLoginId() != null)
-            sb.append("ExternalLoginId: ").append(getExternalLoginId());
+            sb.append("ExternalLoginId: ").append(getExternalLoginId()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -1527,6 +1677,10 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getExternalLoginId() != null && other.getExternalLoginId().equals(this.getExternalLoginId()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -1547,6 +1701,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getExternalLoginFederationProviderType() == null) ? 0 : getExternalLoginFederationProviderType().hashCode());
         hashCode = prime * hashCode + ((getCustomFederationProviderUrl() == null) ? 0 : getCustomFederationProviderUrl().hashCode());
         hashCode = prime * hashCode + ((getExternalLoginId() == null) ? 0 : getExternalLoginId().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,8 @@ public class OrderMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkSiteArn").build();
     private static final MarshallingInfo<String> ORDERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("orderArn").build();
+    private static final MarshallingInfo<List> ORDEREDRESOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("orderedResources").build();
     private static final MarshallingInfo<StructuredPojo> SHIPPINGADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("shippingAddress").build();
     private static final MarshallingInfo<List> TRACKINGINFORMATION_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -64,6 +66,7 @@ public class OrderMarshaller {
             protocolMarshaller.marshall(order.getNetworkArn(), NETWORKARN_BINDING);
             protocolMarshaller.marshall(order.getNetworkSiteArn(), NETWORKSITEARN_BINDING);
             protocolMarshaller.marshall(order.getOrderArn(), ORDERARN_BINDING);
+            protocolMarshaller.marshall(order.getOrderedResources(), ORDEREDRESOURCES_BINDING);
             protocolMarshaller.marshall(order.getShippingAddress(), SHIPPINGADDRESS_BINDING);
             protocolMarshaller.marshall(order.getTrackingInformation(), TRACKINGINFORMATION_BINDING);
         } catch (Exception e) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DescribeSourceServersRequestMarshaller {
 
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("accountID").build();
     private static final MarshallingInfo<StructuredPojo> FILTERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("filters").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -50,6 +52,7 @@ public class DescribeSourceServersRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(describeSourceServersRequest.getAccountID(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(describeSourceServersRequest.getFilters(), FILTERS_BINDING);
             protocolMarshaller.marshall(describeSourceServersRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(describeSourceServersRequest.getNextToken(), NEXTTOKEN_BINDING);

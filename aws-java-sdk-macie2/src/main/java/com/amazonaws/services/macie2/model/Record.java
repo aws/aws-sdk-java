@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,7 +38,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If Amazon Macie detects sensitive data in the name of any element in the path, Macie omits this field. If the
-     * name of an element exceeds 20 characters, Macie truncates the name by removing characters from the beginning of
+     * name of an element exceeds 240 characters, Macie truncates the name by removing characters from the beginning of
      * the name. If the resulting full path exceeds 250 characters, Macie also truncates the path, starting with the
      * first element in the path, until the path contains 250 or fewer characters.
      * </p>
@@ -62,7 +62,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If Amazon Macie detects sensitive data in the name of any element in the path, Macie omits this field. If the
-     * name of an element exceeds 20 characters, Macie truncates the name by removing characters from the beginning of
+     * name of an element exceeds 240 characters, Macie truncates the name by removing characters from the beginning of
      * the name. If the resulting full path exceeds 250 characters, Macie also truncates the path, starting with the
      * first element in the path, until the path contains 250 or fewer characters.
      * </p>
@@ -74,7 +74,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      *        the path also indicates which value contains the data.</p>
      *        <p>
      *        If Amazon Macie detects sensitive data in the name of any element in the path, Macie omits this field. If
-     *        the name of an element exceeds 20 characters, Macie truncates the name by removing characters from the
+     *        the name of an element exceeds 240 characters, Macie truncates the name by removing characters from the
      *        beginning of the name. If the resulting full path exceeds 250 characters, Macie also truncates the path,
      *        starting with the first element in the path, until the path contains 250 or fewer characters.
      */
@@ -92,7 +92,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If Amazon Macie detects sensitive data in the name of any element in the path, Macie omits this field. If the
-     * name of an element exceeds 20 characters, Macie truncates the name by removing characters from the beginning of
+     * name of an element exceeds 240 characters, Macie truncates the name by removing characters from the beginning of
      * the name. If the resulting full path exceeds 250 characters, Macie also truncates the path, starting with the
      * first element in the path, until the path contains 250 or fewer characters.
      * </p>
@@ -103,7 +103,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      *         array, the path also indicates which value contains the data.</p>
      *         <p>
      *         If Amazon Macie detects sensitive data in the name of any element in the path, Macie omits this field. If
-     *         the name of an element exceeds 20 characters, Macie truncates the name by removing characters from the
+     *         the name of an element exceeds 240 characters, Macie truncates the name by removing characters from the
      *         beginning of the name. If the resulting full path exceeds 250 characters, Macie also truncates the path,
      *         starting with the first element in the path, until the path contains 250 or fewer characters.
      */
@@ -121,7 +121,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If Amazon Macie detects sensitive data in the name of any element in the path, Macie omits this field. If the
-     * name of an element exceeds 20 characters, Macie truncates the name by removing characters from the beginning of
+     * name of an element exceeds 240 characters, Macie truncates the name by removing characters from the beginning of
      * the name. If the resulting full path exceeds 250 characters, Macie also truncates the path, starting with the
      * first element in the path, until the path contains 250 or fewer characters.
      * </p>
@@ -133,7 +133,7 @@ public class Record implements Serializable, Cloneable, StructuredPojo {
      *        the path also indicates which value contains the data.</p>
      *        <p>
      *        If Amazon Macie detects sensitive data in the name of any element in the path, Macie omits this field. If
-     *        the name of an element exceeds 20 characters, Macie truncates the name by removing characters from the
+     *        the name of an element exceeds 240 characters, Macie truncates the name by removing characters from the
      *        beginning of the name. If the resulting full path exceeds 250 characters, Macie also truncates the path,
      *        starting with the first element in the path, until the path contains 250 or fewer characters.
      * @return Returns a reference to this object so that method calls can be chained together.

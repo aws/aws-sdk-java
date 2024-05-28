@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String description;
     /**
      * <p>
-     * Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.
+     * Specifies whether the Studio authenticates users using IAM or IAM Identity Center.
      * </p>
      */
     private String authMode;
@@ -67,7 +67,7 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a
-     * <code>UserRole</code> when you use Amazon Web Services SSO authentication. The permissions attached to the
+     * <code>UserRole</code> when you use IAM Identity Center authentication. The permissions attached to the
      * <code>UserRole</code> can be scoped down for each user or group using session policies.
      * </p>
      */
@@ -118,6 +118,34 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is
+     * <code>false</code>.
+     * </p>
+     */
+    private Boolean trustedIdentityPropagationEnabled;
+    /**
+     * <p>
+     * Specifies whether IAM Identity Center user assignment is <code>REQUIRED</code> or <code>OPTIONAL</code>. If the
+     * value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application to access the
+     * Studio.
+     * </p>
+     */
+    private String idcUserAssignment;
+    /**
+     * <p>
+     * The ARN of the IAM Identity Center instance to create the Studio application.
+     * </p>
+     */
+    private String idcInstanceArn;
+    /**
+     * <p>
+     * The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to
+     * Amazon S3.
+     * </p>
+     */
+    private String encryptionKeyArn;
 
     /**
      * <p>
@@ -201,11 +229,11 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.
+     * Specifies whether the Studio authenticates users using IAM or IAM Identity Center.
      * </p>
      * 
      * @param authMode
-     *        Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.
+     *        Specifies whether the Studio authenticates users using IAM or IAM Identity Center.
      * @see AuthMode
      */
 
@@ -215,10 +243,10 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.
+     * Specifies whether the Studio authenticates users using IAM or IAM Identity Center.
      * </p>
      * 
-     * @return Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.
+     * @return Specifies whether the Studio authenticates users using IAM or IAM Identity Center.
      * @see AuthMode
      */
 
@@ -228,11 +256,11 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.
+     * Specifies whether the Studio authenticates users using IAM or IAM Identity Center.
      * </p>
      * 
      * @param authMode
-     *        Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.
+     *        Specifies whether the Studio authenticates users using IAM or IAM Identity Center.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthMode
      */
@@ -244,11 +272,11 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.
+     * Specifies whether the Studio authenticates users using IAM or IAM Identity Center.
      * </p>
      * 
      * @param authMode
-     *        Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.
+     *        Specifies whether the Studio authenticates users using IAM or IAM Identity Center.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthMode
      */
@@ -436,13 +464,13 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a
-     * <code>UserRole</code> when you use Amazon Web Services SSO authentication. The permissions attached to the
+     * <code>UserRole</code> when you use IAM Identity Center authentication. The permissions attached to the
      * <code>UserRole</code> can be scoped down for each user or group using session policies.
      * </p>
      * 
      * @param userRole
      *        The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a
-     *        <code>UserRole</code> when you use Amazon Web Services SSO authentication. The permissions attached to the
+     *        <code>UserRole</code> when you use IAM Identity Center authentication. The permissions attached to the
      *        <code>UserRole</code> can be scoped down for each user or group using session policies.
      */
 
@@ -453,13 +481,13 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a
-     * <code>UserRole</code> when you use Amazon Web Services SSO authentication. The permissions attached to the
+     * <code>UserRole</code> when you use IAM Identity Center authentication. The permissions attached to the
      * <code>UserRole</code> can be scoped down for each user or group using session policies.
      * </p>
      * 
      * @return The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a
-     *         <code>UserRole</code> when you use Amazon Web Services SSO authentication. The permissions attached to
-     *         the <code>UserRole</code> can be scoped down for each user or group using session policies.
+     *         <code>UserRole</code> when you use IAM Identity Center authentication. The permissions attached to the
+     *         <code>UserRole</code> can be scoped down for each user or group using session policies.
      */
 
     public String getUserRole() {
@@ -469,13 +497,13 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a
-     * <code>UserRole</code> when you use Amazon Web Services SSO authentication. The permissions attached to the
+     * <code>UserRole</code> when you use IAM Identity Center authentication. The permissions attached to the
      * <code>UserRole</code> can be scoped down for each user or group using session policies.
      * </p>
      * 
      * @param userRole
      *        The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a
-     *        <code>UserRole</code> when you use Amazon Web Services SSO authentication. The permissions attached to the
+     *        <code>UserRole</code> when you use IAM Identity Center authentication. The permissions attached to the
      *        <code>UserRole</code> can be scoped down for each user or group using session policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -824,6 +852,227 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is
+     * <code>false</code>.
+     * </p>
+     * 
+     * @param trustedIdentityPropagationEnabled
+     *        A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is
+     *        <code>false</code>.
+     */
+
+    public void setTrustedIdentityPropagationEnabled(Boolean trustedIdentityPropagationEnabled) {
+        this.trustedIdentityPropagationEnabled = trustedIdentityPropagationEnabled;
+    }
+
+    /**
+     * <p>
+     * A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is
+     * <code>false</code>.
+     * </p>
+     * 
+     * @return A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is
+     *         <code>false</code>.
+     */
+
+    public Boolean getTrustedIdentityPropagationEnabled() {
+        return this.trustedIdentityPropagationEnabled;
+    }
+
+    /**
+     * <p>
+     * A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is
+     * <code>false</code>.
+     * </p>
+     * 
+     * @param trustedIdentityPropagationEnabled
+     *        A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is
+     *        <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStudioRequest withTrustedIdentityPropagationEnabled(Boolean trustedIdentityPropagationEnabled) {
+        setTrustedIdentityPropagationEnabled(trustedIdentityPropagationEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is
+     * <code>false</code>.
+     * </p>
+     * 
+     * @return A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is
+     *         <code>false</code>.
+     */
+
+    public Boolean isTrustedIdentityPropagationEnabled() {
+        return this.trustedIdentityPropagationEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether IAM Identity Center user assignment is <code>REQUIRED</code> or <code>OPTIONAL</code>. If the
+     * value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application to access the
+     * Studio.
+     * </p>
+     * 
+     * @param idcUserAssignment
+     *        Specifies whether IAM Identity Center user assignment is <code>REQUIRED</code> or <code>OPTIONAL</code>.
+     *        If the value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application
+     *        to access the Studio.
+     * @see IdcUserAssignment
+     */
+
+    public void setIdcUserAssignment(String idcUserAssignment) {
+        this.idcUserAssignment = idcUserAssignment;
+    }
+
+    /**
+     * <p>
+     * Specifies whether IAM Identity Center user assignment is <code>REQUIRED</code> or <code>OPTIONAL</code>. If the
+     * value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application to access the
+     * Studio.
+     * </p>
+     * 
+     * @return Specifies whether IAM Identity Center user assignment is <code>REQUIRED</code> or <code>OPTIONAL</code>.
+     *         If the value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application
+     *         to access the Studio.
+     * @see IdcUserAssignment
+     */
+
+    public String getIdcUserAssignment() {
+        return this.idcUserAssignment;
+    }
+
+    /**
+     * <p>
+     * Specifies whether IAM Identity Center user assignment is <code>REQUIRED</code> or <code>OPTIONAL</code>. If the
+     * value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application to access the
+     * Studio.
+     * </p>
+     * 
+     * @param idcUserAssignment
+     *        Specifies whether IAM Identity Center user assignment is <code>REQUIRED</code> or <code>OPTIONAL</code>.
+     *        If the value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application
+     *        to access the Studio.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IdcUserAssignment
+     */
+
+    public CreateStudioRequest withIdcUserAssignment(String idcUserAssignment) {
+        setIdcUserAssignment(idcUserAssignment);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether IAM Identity Center user assignment is <code>REQUIRED</code> or <code>OPTIONAL</code>. If the
+     * value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application to access the
+     * Studio.
+     * </p>
+     * 
+     * @param idcUserAssignment
+     *        Specifies whether IAM Identity Center user assignment is <code>REQUIRED</code> or <code>OPTIONAL</code>.
+     *        If the value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application
+     *        to access the Studio.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IdcUserAssignment
+     */
+
+    public CreateStudioRequest withIdcUserAssignment(IdcUserAssignment idcUserAssignment) {
+        this.idcUserAssignment = idcUserAssignment.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IAM Identity Center instance to create the Studio application.
+     * </p>
+     * 
+     * @param idcInstanceArn
+     *        The ARN of the IAM Identity Center instance to create the Studio application.
+     */
+
+    public void setIdcInstanceArn(String idcInstanceArn) {
+        this.idcInstanceArn = idcInstanceArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IAM Identity Center instance to create the Studio application.
+     * </p>
+     * 
+     * @return The ARN of the IAM Identity Center instance to create the Studio application.
+     */
+
+    public String getIdcInstanceArn() {
+        return this.idcInstanceArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IAM Identity Center instance to create the Studio application.
+     * </p>
+     * 
+     * @param idcInstanceArn
+     *        The ARN of the IAM Identity Center instance to create the Studio application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStudioRequest withIdcInstanceArn(String idcInstanceArn) {
+        setIdcInstanceArn(idcInstanceArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to
+     * Amazon S3.
+     * </p>
+     * 
+     * @param encryptionKeyArn
+     *        The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up
+     *        to Amazon S3.
+     */
+
+    public void setEncryptionKeyArn(String encryptionKeyArn) {
+        this.encryptionKeyArn = encryptionKeyArn;
+    }
+
+    /**
+     * <p>
+     * The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to
+     * Amazon S3.
+     * </p>
+     * 
+     * @return The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed
+     *         up to Amazon S3.
+     */
+
+    public String getEncryptionKeyArn() {
+        return this.encryptionKeyArn;
+    }
+
+    /**
+     * <p>
+     * The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to
+     * Amazon S3.
+     * </p>
+     * 
+     * @param encryptionKeyArn
+     *        The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up
+     *        to Amazon S3.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStudioRequest withEncryptionKeyArn(String encryptionKeyArn) {
+        setEncryptionKeyArn(encryptionKeyArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -860,7 +1109,15 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getIdpRelayStateParameterName() != null)
             sb.append("IdpRelayStateParameterName: ").append(getIdpRelayStateParameterName()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getTrustedIdentityPropagationEnabled() != null)
+            sb.append("TrustedIdentityPropagationEnabled: ").append(getTrustedIdentityPropagationEnabled()).append(",");
+        if (getIdcUserAssignment() != null)
+            sb.append("IdcUserAssignment: ").append(getIdcUserAssignment()).append(",");
+        if (getIdcInstanceArn() != null)
+            sb.append("IdcInstanceArn: ").append(getIdcInstanceArn()).append(",");
+        if (getEncryptionKeyArn() != null)
+            sb.append("EncryptionKeyArn: ").append(getEncryptionKeyArn());
         sb.append("}");
         return sb.toString();
     }
@@ -927,6 +1184,23 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getTrustedIdentityPropagationEnabled() == null ^ this.getTrustedIdentityPropagationEnabled() == null)
+            return false;
+        if (other.getTrustedIdentityPropagationEnabled() != null
+                && other.getTrustedIdentityPropagationEnabled().equals(this.getTrustedIdentityPropagationEnabled()) == false)
+            return false;
+        if (other.getIdcUserAssignment() == null ^ this.getIdcUserAssignment() == null)
+            return false;
+        if (other.getIdcUserAssignment() != null && other.getIdcUserAssignment().equals(this.getIdcUserAssignment()) == false)
+            return false;
+        if (other.getIdcInstanceArn() == null ^ this.getIdcInstanceArn() == null)
+            return false;
+        if (other.getIdcInstanceArn() != null && other.getIdcInstanceArn().equals(this.getIdcInstanceArn()) == false)
+            return false;
+        if (other.getEncryptionKeyArn() == null ^ this.getEncryptionKeyArn() == null)
+            return false;
+        if (other.getEncryptionKeyArn() != null && other.getEncryptionKeyArn().equals(this.getEncryptionKeyArn()) == false)
+            return false;
         return true;
     }
 
@@ -948,6 +1222,10 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getIdpAuthUrl() == null) ? 0 : getIdpAuthUrl().hashCode());
         hashCode = prime * hashCode + ((getIdpRelayStateParameterName() == null) ? 0 : getIdpRelayStateParameterName().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getTrustedIdentityPropagationEnabled() == null) ? 0 : getTrustedIdentityPropagationEnabled().hashCode());
+        hashCode = prime * hashCode + ((getIdcUserAssignment() == null) ? 0 : getIdcUserAssignment().hashCode());
+        hashCode = prime * hashCode + ((getIdcInstanceArn() == null) ? 0 : getIdcInstanceArn().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionKeyArn() == null) ? 0 : getEncryptionKeyArn().hashCode());
         return hashCode;
     }
 

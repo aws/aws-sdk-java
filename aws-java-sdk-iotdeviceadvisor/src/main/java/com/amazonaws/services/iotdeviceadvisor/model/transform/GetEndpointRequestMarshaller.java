@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,10 @@ public class GetEndpointRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("thingArn").build();
     private static final MarshallingInfo<String> CERTIFICATEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("certificateArn").build();
+    private static final MarshallingInfo<String> DEVICEROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("deviceRoleArn").build();
+    private static final MarshallingInfo<String> AUTHENTICATIONMETHOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("authenticationMethod").build();
 
     private static final GetEndpointRequestMarshaller instance = new GetEndpointRequestMarshaller();
 
@@ -50,6 +54,8 @@ public class GetEndpointRequestMarshaller {
         try {
             protocolMarshaller.marshall(getEndpointRequest.getThingArn(), THINGARN_BINDING);
             protocolMarshaller.marshall(getEndpointRequest.getCertificateArn(), CERTIFICATEARN_BINDING);
+            protocolMarshaller.marshall(getEndpointRequest.getDeviceRoleArn(), DEVICEROLEARN_BINDING);
+            protocolMarshaller.marshall(getEndpointRequest.getAuthenticationMethod(), AUTHENTICATIONMETHOD_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

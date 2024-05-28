@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class DescribeObservationRequestMarshaller {
 
     private static final MarshallingInfo<String> OBSERVATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ObservationId").build();
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AccountId").build();
 
     private static final DescribeObservationRequestMarshaller instance = new DescribeObservationRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class DescribeObservationRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(describeObservationRequest.getObservationId(), OBSERVATIONID_BINDING);
+            protocolMarshaller.marshall(describeObservationRequest.getAccountId(), ACCOUNTID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

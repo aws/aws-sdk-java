@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,7 +43,7 @@ public class DescribeUserProfileResult extends com.amazonaws.AmazonWebServiceRes
     private String userProfileName;
     /**
      * <p>
-     * The ID of the user's profile in the Amazon Elastic File System (EFS) volume.
+     * The ID of the user's profile in the Amazon Elastic File System volume.
      * </p>
      */
     private String homeEfsFileSystemUid;
@@ -212,11 +212,11 @@ public class DescribeUserProfileResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The ID of the user's profile in the Amazon Elastic File System (EFS) volume.
+     * The ID of the user's profile in the Amazon Elastic File System volume.
      * </p>
      * 
      * @param homeEfsFileSystemUid
-     *        The ID of the user's profile in the Amazon Elastic File System (EFS) volume.
+     *        The ID of the user's profile in the Amazon Elastic File System volume.
      */
 
     public void setHomeEfsFileSystemUid(String homeEfsFileSystemUid) {
@@ -225,10 +225,10 @@ public class DescribeUserProfileResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The ID of the user's profile in the Amazon Elastic File System (EFS) volume.
+     * The ID of the user's profile in the Amazon Elastic File System volume.
      * </p>
      * 
-     * @return The ID of the user's profile in the Amazon Elastic File System (EFS) volume.
+     * @return The ID of the user's profile in the Amazon Elastic File System volume.
      */
 
     public String getHomeEfsFileSystemUid() {
@@ -237,11 +237,11 @@ public class DescribeUserProfileResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The ID of the user's profile in the Amazon Elastic File System (EFS) volume.
+     * The ID of the user's profile in the Amazon Elastic File System volume.
      * </p>
      * 
      * @param homeEfsFileSystemUid
-     *        The ID of the user's profile in the Amazon Elastic File System (EFS) volume.
+     *        The ID of the user's profile in the Amazon Elastic File System volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

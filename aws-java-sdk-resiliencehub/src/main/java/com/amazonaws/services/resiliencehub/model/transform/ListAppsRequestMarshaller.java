@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,12 +29,18 @@ public class ListAppsRequestMarshaller {
 
     private static final MarshallingInfo<String> APPARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("appArn").build();
+    private static final MarshallingInfo<java.util.Date> FROMLASTASSESSMENTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("fromLastAssessmentTime").timestampFormat("iso8601").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Boolean> REVERSEORDER_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("reverseOrder").build();
+    private static final MarshallingInfo<java.util.Date> TOLASTASSESSMENTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("toLastAssessmentTime").timestampFormat("iso8601").build();
 
     private static final ListAppsRequestMarshaller instance = new ListAppsRequestMarshaller();
 
@@ -53,9 +59,12 @@ public class ListAppsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listAppsRequest.getAppArn(), APPARN_BINDING);
+            protocolMarshaller.marshall(listAppsRequest.getFromLastAssessmentTime(), FROMLASTASSESSMENTTIME_BINDING);
             protocolMarshaller.marshall(listAppsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listAppsRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(listAppsRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listAppsRequest.getReverseOrder(), REVERSEORDER_BINDING);
+            protocolMarshaller.marshall(listAppsRequest.getToLastAssessmentTime(), TOLASTASSESSMENTTIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

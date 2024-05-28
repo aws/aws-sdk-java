@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the agent.
+     * The ARN of the agent.
      * </p>
      */
     private String agentArn;
@@ -40,46 +40,67 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
     private String name;
     /**
      * <p>
-     * The status of the agent. If the status is ONLINE, then the agent is configured properly and is available to use.
-     * The Running status is the normal running status for an agent. If the status is OFFLINE, the agent's VM is turned
-     * off or the agent is in an unhealthy state. When the issue that caused the unhealthy state is resolved, the agent
-     * returns to ONLINE status.
+     * The status of the agent.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or
+     * longer. This can happen for a few reasons. For more information, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline"
+     * >What do I do if my agent is offline?</a>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String status;
     /**
      * <p>
-     * The time that the agent last connected to DataSync.
+     * The last time that the agent was communicating with the DataSync service.
      * </p>
      */
     private java.util.Date lastConnectionTime;
     /**
      * <p>
-     * The time that the agent was activated (that is, created in your account).
+     * The time that the agent was <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">activated</a>.
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not
-     * accessible over the public internet.
+     * The type of <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html">service
+     * endpoint</a> that your agent is connected to.
      * </p>
      */
     private String endpointType;
     /**
      * <p>
-     * The subnet and the security group that DataSync used to access a VPC endpoint.
+     * The network configuration that the agent uses when connecting to a <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc"
+     * >VPC service endpoint</a>.
      * </p>
      */
     private PrivateLinkConfig privateLinkConfig;
+    /**
+     * <p>
+     * The platform-related details about the agent, such as the version number.
+     * </p>
+     */
+    private Platform platform;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the agent.
+     * The ARN of the agent.
      * </p>
      * 
      * @param agentArn
-     *        The Amazon Resource Name (ARN) of the agent.
+     *        The ARN of the agent.
      */
 
     public void setAgentArn(String agentArn) {
@@ -88,10 +109,10 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the agent.
+     * The ARN of the agent.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the agent.
+     * @return The ARN of the agent.
      */
 
     public String getAgentArn() {
@@ -100,11 +121,11 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the agent.
+     * The ARN of the agent.
      * </p>
      * 
      * @param agentArn
-     *        The Amazon Resource Name (ARN) of the agent.
+     *        The ARN of the agent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -155,17 +176,40 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The status of the agent. If the status is ONLINE, then the agent is configured properly and is available to use.
-     * The Running status is the normal running status for an agent. If the status is OFFLINE, the agent's VM is turned
-     * off or the agent is in an unhealthy state. When the issue that caused the unhealthy state is resolved, the agent
-     * returns to ONLINE status.
+     * The status of the agent.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or
+     * longer. This can happen for a few reasons. For more information, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline"
+     * >What do I do if my agent is offline?</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The status of the agent. If the status is ONLINE, then the agent is configured properly and is available
-     *        to use. The Running status is the normal running status for an agent. If the status is OFFLINE, the
-     *        agent's VM is turned off or the agent is in an unhealthy state. When the issue that caused the unhealthy
-     *        state is resolved, the agent returns to ONLINE status.
+     *        The status of the agent.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or
+     *        longer. This can happen for a few reasons. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline"
+     *        >What do I do if my agent is offline?</a>
+     *        </p>
+     *        </li>
      * @see AgentStatus
      */
 
@@ -175,16 +219,39 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The status of the agent. If the status is ONLINE, then the agent is configured properly and is available to use.
-     * The Running status is the normal running status for an agent. If the status is OFFLINE, the agent's VM is turned
-     * off or the agent is in an unhealthy state. When the issue that caused the unhealthy state is resolved, the agent
-     * returns to ONLINE status.
+     * The status of the agent.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or
+     * longer. This can happen for a few reasons. For more information, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline"
+     * >What do I do if my agent is offline?</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The status of the agent. If the status is ONLINE, then the agent is configured properly and is available
-     *         to use. The Running status is the normal running status for an agent. If the status is OFFLINE, the
-     *         agent's VM is turned off or the agent is in an unhealthy state. When the issue that caused the unhealthy
-     *         state is resolved, the agent returns to ONLINE status.
+     * @return The status of the agent.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes
+     *         or longer. This can happen for a few reasons. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline"
+     *         >What do I do if my agent is offline?</a>
+     *         </p>
+     *         </li>
      * @see AgentStatus
      */
 
@@ -194,17 +261,40 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The status of the agent. If the status is ONLINE, then the agent is configured properly and is available to use.
-     * The Running status is the normal running status for an agent. If the status is OFFLINE, the agent's VM is turned
-     * off or the agent is in an unhealthy state. When the issue that caused the unhealthy state is resolved, the agent
-     * returns to ONLINE status.
+     * The status of the agent.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or
+     * longer. This can happen for a few reasons. For more information, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline"
+     * >What do I do if my agent is offline?</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The status of the agent. If the status is ONLINE, then the agent is configured properly and is available
-     *        to use. The Running status is the normal running status for an agent. If the status is OFFLINE, the
-     *        agent's VM is turned off or the agent is in an unhealthy state. When the issue that caused the unhealthy
-     *        state is resolved, the agent returns to ONLINE status.
+     *        The status of the agent.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or
+     *        longer. This can happen for a few reasons. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline"
+     *        >What do I do if my agent is offline?</a>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AgentStatus
      */
@@ -216,17 +306,40 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The status of the agent. If the status is ONLINE, then the agent is configured properly and is available to use.
-     * The Running status is the normal running status for an agent. If the status is OFFLINE, the agent's VM is turned
-     * off or the agent is in an unhealthy state. When the issue that caused the unhealthy state is resolved, the agent
-     * returns to ONLINE status.
+     * The status of the agent.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or
+     * longer. This can happen for a few reasons. For more information, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline"
+     * >What do I do if my agent is offline?</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The status of the agent. If the status is ONLINE, then the agent is configured properly and is available
-     *        to use. The Running status is the normal running status for an agent. If the status is OFFLINE, the
-     *        agent's VM is turned off or the agent is in an unhealthy state. When the issue that caused the unhealthy
-     *        state is resolved, the agent returns to ONLINE status.
+     *        The status of the agent.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or
+     *        longer. This can happen for a few reasons. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline"
+     *        >What do I do if my agent is offline?</a>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AgentStatus
      */
@@ -238,11 +351,11 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The time that the agent last connected to DataSync.
+     * The last time that the agent was communicating with the DataSync service.
      * </p>
      * 
      * @param lastConnectionTime
-     *        The time that the agent last connected to DataSync.
+     *        The last time that the agent was communicating with the DataSync service.
      */
 
     public void setLastConnectionTime(java.util.Date lastConnectionTime) {
@@ -251,10 +364,10 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The time that the agent last connected to DataSync.
+     * The last time that the agent was communicating with the DataSync service.
      * </p>
      * 
-     * @return The time that the agent last connected to DataSync.
+     * @return The last time that the agent was communicating with the DataSync service.
      */
 
     public java.util.Date getLastConnectionTime() {
@@ -263,11 +376,11 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The time that the agent last connected to DataSync.
+     * The last time that the agent was communicating with the DataSync service.
      * </p>
      * 
      * @param lastConnectionTime
-     *        The time that the agent last connected to DataSync.
+     *        The last time that the agent was communicating with the DataSync service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -278,11 +391,13 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The time that the agent was activated (that is, created in your account).
+     * The time that the agent was <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">activated</a>.
      * </p>
      * 
      * @param creationTime
-     *        The time that the agent was activated (that is, created in your account).
+     *        The time that the agent was <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">activated</a>.
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -291,10 +406,12 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The time that the agent was activated (that is, created in your account).
+     * The time that the agent was <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">activated</a>.
      * </p>
      * 
-     * @return The time that the agent was activated (that is, created in your account).
+     * @return The time that the agent was <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">activated</a>.
      */
 
     public java.util.Date getCreationTime() {
@@ -303,11 +420,13 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The time that the agent was activated (that is, created in your account).
+     * The time that the agent was <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">activated</a>.
      * </p>
      * 
      * @param creationTime
-     *        The time that the agent was activated (that is, created in your account).
+     *        The time that the agent was <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/activate-agent.html">activated</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -318,13 +437,14 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not
-     * accessible over the public internet.
+     * The type of <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html">service
+     * endpoint</a> that your agent is connected to.
      * </p>
      * 
      * @param endpointType
-     *        The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not
-     *        accessible over the public internet.
+     *        The type of <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html">service
+     *        endpoint</a> that your agent is connected to.
      * @see EndpointType
      */
 
@@ -334,12 +454,13 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not
-     * accessible over the public internet.
+     * The type of <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html">service
+     * endpoint</a> that your agent is connected to.
      * </p>
      * 
-     * @return The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not
-     *         accessible over the public internet.
+     * @return The type of <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html">service
+     *         endpoint</a> that your agent is connected to.
      * @see EndpointType
      */
 
@@ -349,13 +470,14 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not
-     * accessible over the public internet.
+     * The type of <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html">service
+     * endpoint</a> that your agent is connected to.
      * </p>
      * 
      * @param endpointType
-     *        The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not
-     *        accessible over the public internet.
+     *        The type of <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html">service
+     *        endpoint</a> that your agent is connected to.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EndpointType
      */
@@ -367,13 +489,14 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not
-     * accessible over the public internet.
+     * The type of <a href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html">service
+     * endpoint</a> that your agent is connected to.
      * </p>
      * 
      * @param endpointType
-     *        The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not
-     *        accessible over the public internet.
+     *        The type of <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html">service
+     *        endpoint</a> that your agent is connected to.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EndpointType
      */
@@ -385,11 +508,15 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The subnet and the security group that DataSync used to access a VPC endpoint.
+     * The network configuration that the agent uses when connecting to a <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc"
+     * >VPC service endpoint</a>.
      * </p>
      * 
      * @param privateLinkConfig
-     *        The subnet and the security group that DataSync used to access a VPC endpoint.
+     *        The network configuration that the agent uses when connecting to a <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc"
+     *        >VPC service endpoint</a>.
      */
 
     public void setPrivateLinkConfig(PrivateLinkConfig privateLinkConfig) {
@@ -398,10 +525,14 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The subnet and the security group that DataSync used to access a VPC endpoint.
+     * The network configuration that the agent uses when connecting to a <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc"
+     * >VPC service endpoint</a>.
      * </p>
      * 
-     * @return The subnet and the security group that DataSync used to access a VPC endpoint.
+     * @return The network configuration that the agent uses when connecting to a <a href=
+     *         "https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc"
+     *         >VPC service endpoint</a>.
      */
 
     public PrivateLinkConfig getPrivateLinkConfig() {
@@ -410,16 +541,60 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The subnet and the security group that DataSync used to access a VPC endpoint.
+     * The network configuration that the agent uses when connecting to a <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc"
+     * >VPC service endpoint</a>.
      * </p>
      * 
      * @param privateLinkConfig
-     *        The subnet and the security group that DataSync used to access a VPC endpoint.
+     *        The network configuration that the agent uses when connecting to a <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc"
+     *        >VPC service endpoint</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAgentResult withPrivateLinkConfig(PrivateLinkConfig privateLinkConfig) {
         setPrivateLinkConfig(privateLinkConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The platform-related details about the agent, such as the version number.
+     * </p>
+     * 
+     * @param platform
+     *        The platform-related details about the agent, such as the version number.
+     */
+
+    public void setPlatform(Platform platform) {
+        this.platform = platform;
+    }
+
+    /**
+     * <p>
+     * The platform-related details about the agent, such as the version number.
+     * </p>
+     * 
+     * @return The platform-related details about the agent, such as the version number.
+     */
+
+    public Platform getPlatform() {
+        return this.platform;
+    }
+
+    /**
+     * <p>
+     * The platform-related details about the agent, such as the version number.
+     * </p>
+     * 
+     * @param platform
+     *        The platform-related details about the agent, such as the version number.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAgentResult withPlatform(Platform platform) {
+        setPlatform(platform);
         return this;
     }
 
@@ -448,7 +623,9 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
         if (getEndpointType() != null)
             sb.append("EndpointType: ").append(getEndpointType()).append(",");
         if (getPrivateLinkConfig() != null)
-            sb.append("PrivateLinkConfig: ").append(getPrivateLinkConfig());
+            sb.append("PrivateLinkConfig: ").append(getPrivateLinkConfig()).append(",");
+        if (getPlatform() != null)
+            sb.append("Platform: ").append(getPlatform());
         sb.append("}");
         return sb.toString();
     }
@@ -491,6 +668,10 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getPrivateLinkConfig() != null && other.getPrivateLinkConfig().equals(this.getPrivateLinkConfig()) == false)
             return false;
+        if (other.getPlatform() == null ^ this.getPlatform() == null)
+            return false;
+        if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false)
+            return false;
         return true;
     }
 
@@ -506,6 +687,7 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getEndpointType() == null) ? 0 : getEndpointType().hashCode());
         hashCode = prime * hashCode + ((getPrivateLinkConfig() == null) ? 0 : getPrivateLinkConfig().hashCode());
+        hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
         return hashCode;
     }
 

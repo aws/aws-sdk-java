@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class UpdateAttendeeCapabilitiesRequest extends com.amazonaws.AmazonWebSe
     private String attendeeId;
     /**
      * <p>
-     * The capabilties that you want to update.
+     * The capabilities that you want to update.
      * </p>
      */
     private AttendeeCapabilities capabilities;
@@ -126,11 +126,11 @@ public class UpdateAttendeeCapabilitiesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The capabilties that you want to update.
+     * The capabilities that you want to update.
      * </p>
      * 
      * @param capabilities
-     *        The capabilties that you want to update.
+     *        The capabilities that you want to update.
      */
 
     public void setCapabilities(AttendeeCapabilities capabilities) {
@@ -139,10 +139,10 @@ public class UpdateAttendeeCapabilitiesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The capabilties that you want to update.
+     * The capabilities that you want to update.
      * </p>
      * 
-     * @return The capabilties that you want to update.
+     * @return The capabilities that you want to update.
      */
 
     public AttendeeCapabilities getCapabilities() {
@@ -151,11 +151,11 @@ public class UpdateAttendeeCapabilitiesRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The capabilties that you want to update.
+     * The capabilities that you want to update.
      * </p>
      * 
      * @param capabilities
-     *        The capabilties that you want to update.
+     *        The capabilities that you want to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

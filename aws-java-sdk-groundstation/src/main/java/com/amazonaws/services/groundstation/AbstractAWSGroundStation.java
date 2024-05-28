@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,6 +16,7 @@ import javax.annotation.Generated;
 
 import com.amazonaws.services.groundstation.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.groundstation.waiters.AWSGroundStationWaiters;
 
 /**
  * Abstract implementation of {@code AWSGroundStation}. Convenient method forms pass through to the corresponding
@@ -43,6 +44,11 @@ public class AbstractAWSGroundStation implements AWSGroundStation {
     }
 
     @Override
+    public CreateEphemerisResult createEphemeris(CreateEphemerisRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateMissionProfileResult createMissionProfile(CreateMissionProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -58,12 +64,27 @@ public class AbstractAWSGroundStation implements AWSGroundStation {
     }
 
     @Override
+    public DeleteEphemerisResult deleteEphemeris(DeleteEphemerisRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteMissionProfileResult deleteMissionProfile(DeleteMissionProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DescribeContactResult describeContact(DescribeContactRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeEphemerisResult describeEphemeris(DescribeEphemerisRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAgentConfigurationResult getAgentConfiguration(GetAgentConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -108,6 +129,11 @@ public class AbstractAWSGroundStation implements AWSGroundStation {
     }
 
     @Override
+    public ListEphemeridesResult listEphemerides(ListEphemeridesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListGroundStationsResult listGroundStations(ListGroundStationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -128,6 +154,11 @@ public class AbstractAWSGroundStation implements AWSGroundStation {
     }
 
     @Override
+    public RegisterAgentResult registerAgent(RegisterAgentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ReserveContactResult reserveContact(ReserveContactRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -143,7 +174,17 @@ public class AbstractAWSGroundStation implements AWSGroundStation {
     }
 
     @Override
+    public UpdateAgentStatusResult updateAgentStatus(UpdateAgentStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateConfigResult updateConfig(UpdateConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateEphemerisResult updateEphemeris(UpdateEphemerisRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -159,6 +200,11 @@ public class AbstractAWSGroundStation implements AWSGroundStation {
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AWSGroundStationWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 

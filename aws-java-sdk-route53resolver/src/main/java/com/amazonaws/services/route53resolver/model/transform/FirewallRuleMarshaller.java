@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,10 @@ public class FirewallRuleMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTime").build();
     private static final MarshallingInfo<String> MODIFICATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModificationTime").build();
+    private static final MarshallingInfo<String> FIREWALLDOMAINREDIRECTIONACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FirewallDomainRedirectionAction").build();
+    private static final MarshallingInfo<String> QTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Qtype").build();
 
     private static final FirewallRuleMarshaller instance = new FirewallRuleMarshaller();
 
@@ -80,6 +84,8 @@ public class FirewallRuleMarshaller {
             protocolMarshaller.marshall(firewallRule.getCreatorRequestId(), CREATORREQUESTID_BINDING);
             protocolMarshaller.marshall(firewallRule.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(firewallRule.getModificationTime(), MODIFICATIONTIME_BINDING);
+            protocolMarshaller.marshall(firewallRule.getFirewallDomainRedirectionAction(), FIREWALLDOMAINREDIRECTIONACTION_BINDING);
+            protocolMarshaller.marshall(firewallRule.getQtype(), QTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,22 +54,28 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
     private DashboardVersion version;
     /**
      * <p>
-     * The time that this dataset was created.
+     * The time that this dashboard was created.
      * </p>
      */
     private java.util.Date createdTime;
     /**
      * <p>
-     * The last time that this dataset was published.
+     * The last time that this dashboard was published.
      * </p>
      */
     private java.util.Date lastPublishedTime;
     /**
      * <p>
-     * The last time that this dataset was updated.
+     * The last time that this dashboard was updated.
      * </p>
      */
     private java.util.Date lastUpdatedTime;
+    /**
+     * <p>
+     * A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     * </p>
+     */
+    private java.util.List<String> linkEntities;
 
     /**
      * <p>
@@ -233,11 +239,11 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time that this dataset was created.
+     * The time that this dashboard was created.
      * </p>
      * 
      * @param createdTime
-     *        The time that this dataset was created.
+     *        The time that this dashboard was created.
      */
 
     public void setCreatedTime(java.util.Date createdTime) {
@@ -246,10 +252,10 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time that this dataset was created.
+     * The time that this dashboard was created.
      * </p>
      * 
-     * @return The time that this dataset was created.
+     * @return The time that this dashboard was created.
      */
 
     public java.util.Date getCreatedTime() {
@@ -258,11 +264,11 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time that this dataset was created.
+     * The time that this dashboard was created.
      * </p>
      * 
      * @param createdTime
-     *        The time that this dataset was created.
+     *        The time that this dashboard was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -273,11 +279,11 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last time that this dataset was published.
+     * The last time that this dashboard was published.
      * </p>
      * 
      * @param lastPublishedTime
-     *        The last time that this dataset was published.
+     *        The last time that this dashboard was published.
      */
 
     public void setLastPublishedTime(java.util.Date lastPublishedTime) {
@@ -286,10 +292,10 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last time that this dataset was published.
+     * The last time that this dashboard was published.
      * </p>
      * 
-     * @return The last time that this dataset was published.
+     * @return The last time that this dashboard was published.
      */
 
     public java.util.Date getLastPublishedTime() {
@@ -298,11 +304,11 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last time that this dataset was published.
+     * The last time that this dashboard was published.
      * </p>
      * 
      * @param lastPublishedTime
-     *        The last time that this dataset was published.
+     *        The last time that this dashboard was published.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -313,11 +319,11 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last time that this dataset was updated.
+     * The last time that this dashboard was updated.
      * </p>
      * 
      * @param lastUpdatedTime
-     *        The last time that this dataset was updated.
+     *        The last time that this dashboard was updated.
      */
 
     public void setLastUpdatedTime(java.util.Date lastUpdatedTime) {
@@ -326,10 +332,10 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last time that this dataset was updated.
+     * The last time that this dashboard was updated.
      * </p>
      * 
-     * @return The last time that this dataset was updated.
+     * @return The last time that this dashboard was updated.
      */
 
     public java.util.Date getLastUpdatedTime() {
@@ -338,16 +344,86 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last time that this dataset was updated.
+     * The last time that this dashboard was updated.
      * </p>
      * 
      * @param lastUpdatedTime
-     *        The last time that this dataset was updated.
+     *        The last time that this dashboard was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Dashboard withLastUpdatedTime(java.util.Date lastUpdatedTime) {
         setLastUpdatedTime(lastUpdatedTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     * </p>
+     * 
+     * @return A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     */
+
+    public java.util.List<String> getLinkEntities() {
+        return linkEntities;
+    }
+
+    /**
+     * <p>
+     * A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     * </p>
+     * 
+     * @param linkEntities
+     *        A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     */
+
+    public void setLinkEntities(java.util.Collection<String> linkEntities) {
+        if (linkEntities == null) {
+            this.linkEntities = null;
+            return;
+        }
+
+        this.linkEntities = new java.util.ArrayList<String>(linkEntities);
+    }
+
+    /**
+     * <p>
+     * A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLinkEntities(java.util.Collection)} or {@link #withLinkEntities(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param linkEntities
+     *        A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Dashboard withLinkEntities(String... linkEntities) {
+        if (this.linkEntities == null) {
+            setLinkEntities(new java.util.ArrayList<String>(linkEntities.length));
+        }
+        for (String ele : linkEntities) {
+            this.linkEntities.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     * </p>
+     * 
+     * @param linkEntities
+     *        A list of analysis Amazon Resource Names (ARNs) to be linked to the dashboard.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Dashboard withLinkEntities(java.util.Collection<String> linkEntities) {
+        setLinkEntities(linkEntities);
         return this;
     }
 
@@ -376,7 +452,9 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
         if (getLastPublishedTime() != null)
             sb.append("LastPublishedTime: ").append(getLastPublishedTime()).append(",");
         if (getLastUpdatedTime() != null)
-            sb.append("LastUpdatedTime: ").append(getLastUpdatedTime());
+            sb.append("LastUpdatedTime: ").append(getLastUpdatedTime()).append(",");
+        if (getLinkEntities() != null)
+            sb.append("LinkEntities: ").append(getLinkEntities());
         sb.append("}");
         return sb.toString();
     }
@@ -419,6 +497,10 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLastUpdatedTime() != null && other.getLastUpdatedTime().equals(this.getLastUpdatedTime()) == false)
             return false;
+        if (other.getLinkEntities() == null ^ this.getLinkEntities() == null)
+            return false;
+        if (other.getLinkEntities() != null && other.getLinkEntities().equals(this.getLinkEntities()) == false)
+            return false;
         return true;
     }
 
@@ -434,6 +516,7 @@ public class Dashboard implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         hashCode = prime * hashCode + ((getLastPublishedTime() == null) ? 0 : getLastPublishedTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
+        hashCode = prime * hashCode + ((getLinkEntities() == null) ? 0 : getLinkEntities().hashCode());
         return hashCode;
     }
 

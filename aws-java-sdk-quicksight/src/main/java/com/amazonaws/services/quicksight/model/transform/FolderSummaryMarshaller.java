@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,8 @@ public class FolderSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdatedTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> SHARINGMODEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SharingModel").build();
 
     private static final FolderSummaryMarshaller instance = new FolderSummaryMarshaller();
 
@@ -62,6 +64,7 @@ public class FolderSummaryMarshaller {
             protocolMarshaller.marshall(folderSummary.getFolderType(), FOLDERTYPE_BINDING);
             protocolMarshaller.marshall(folderSummary.getCreatedTime(), CREATEDTIME_BINDING);
             protocolMarshaller.marshall(folderSummary.getLastUpdatedTime(), LASTUPDATEDTIME_BINDING);
+            protocolMarshaller.marshall(folderSummary.getSharingModel(), SHARINGMODEL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,6 +60,10 @@ public class CreateCustomDBEngineVersionRequestMarshaller implements
                     StringUtils.fromString(createCustomDBEngineVersionRequest.getDatabaseInstallationFilesS3Prefix()));
         }
 
+        if (createCustomDBEngineVersionRequest.getImageId() != null) {
+            request.addParameter("ImageId", StringUtils.fromString(createCustomDBEngineVersionRequest.getImageId()));
+        }
+
         if (createCustomDBEngineVersionRequest.getKMSKeyId() != null) {
             request.addParameter("KMSKeyId", StringUtils.fromString(createCustomDBEngineVersionRequest.getKMSKeyId()));
         }
@@ -90,6 +94,15 @@ public class CreateCustomDBEngineVersionRequestMarshaller implements
                 }
                 tagsListIndex++;
             }
+        }
+
+        if (createCustomDBEngineVersionRequest.getSourceCustomDbEngineVersionIdentifier() != null) {
+            request.addParameter("SourceCustomDbEngineVersionIdentifier",
+                    StringUtils.fromString(createCustomDBEngineVersionRequest.getSourceCustomDbEngineVersionIdentifier()));
+        }
+
+        if (createCustomDBEngineVersionRequest.getUseAwsProvidedLatestImage() != null) {
+            request.addParameter("UseAwsProvidedLatestImage", StringUtils.fromBoolean(createCustomDBEngineVersionRequest.getUseAwsProvidedLatestImage()));
         }
 
         return request;

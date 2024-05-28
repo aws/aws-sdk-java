@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,9 @@ public class UpdateContactRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      */
     private String instanceId;
@@ -59,11 +61,15 @@ public class UpdateContactRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     *        The identifier of the Amazon Connect instance. You can <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *        ID</a> in the Amazon Resource Name (ARN) of the instance.
      */
 
     public void setInstanceId(String instanceId) {
@@ -72,10 +78,14 @@ public class UpdateContactRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
-     * @return The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * @return The identifier of the Amazon Connect instance. You can <a
+     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *         ID</a> in the Amazon Resource Name (ARN) of the instance.
      */
 
     public String getInstanceId() {
@@ -84,11 +94,15 @@ public class UpdateContactRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     *        The identifier of the Amazon Connect instance. You can <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *        ID</a> in the Amazon Resource Name (ARN) of the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -308,9 +322,9 @@ public class UpdateContactRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getContactId() != null)
             sb.append("ContactId: ").append(getContactId()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
+            sb.append("Name: ").append("***Sensitive Data Redacted***").append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
+            sb.append("Description: ").append("***Sensitive Data Redacted***").append(",");
         if (getReferences() != null)
             sb.append("References: ").append(getReferences());
         sb.append("}");

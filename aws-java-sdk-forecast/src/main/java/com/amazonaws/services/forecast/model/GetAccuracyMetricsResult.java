@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,8 +38,8 @@ public class GetAccuracyMetricsResult extends com.amazonaws.AmazonWebServiceResu
     /**
      * <note>
      * <p>
-     * The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support
-     * or your account manager to learn more about access privileges.
+     * The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web
+     * Services Support or your account manager to learn more about access privileges.
      * </p>
      * </note>
      * <p>
@@ -183,8 +183,8 @@ public class GetAccuracyMetricsResult extends com.amazonaws.AmazonWebServiceResu
     /**
      * <note>
      * <p>
-     * The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support
-     * or your account manager to learn more about access privileges.
+     * The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web
+     * Services Support or your account manager to learn more about access privileges.
      * </p>
      * </note>
      * <p>
@@ -197,8 +197,8 @@ public class GetAccuracyMetricsResult extends com.amazonaws.AmazonWebServiceResu
      * 
      * @param autoMLOverrideStrategy
      *        <p>
-     *        The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS
-     *        Support or your account manager to learn more about access privileges.
+     *        The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact
+     *        Amazon Web Services Support or your account manager to learn more about access privileges.
      *        </p>
      *        </note>
      *        <p>
@@ -217,8 +217,8 @@ public class GetAccuracyMetricsResult extends com.amazonaws.AmazonWebServiceResu
     /**
      * <note>
      * <p>
-     * The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support
-     * or your account manager to learn more about access privileges.
+     * The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web
+     * Services Support or your account manager to learn more about access privileges.
      * </p>
      * </note>
      * <p>
@@ -230,8 +230,8 @@ public class GetAccuracyMetricsResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @return <p>
-     *         The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS
-     *         Support or your account manager to learn more about access privileges.
+     *         The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact
+     *         Amazon Web Services Support or your account manager to learn more about access privileges.
      *         </p>
      *         </note>
      *         <p>
@@ -250,8 +250,8 @@ public class GetAccuracyMetricsResult extends com.amazonaws.AmazonWebServiceResu
     /**
      * <note>
      * <p>
-     * The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support
-     * or your account manager to learn more about access privileges.
+     * The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web
+     * Services Support or your account manager to learn more about access privileges.
      * </p>
      * </note>
      * <p>
@@ -264,8 +264,8 @@ public class GetAccuracyMetricsResult extends com.amazonaws.AmazonWebServiceResu
      * 
      * @param autoMLOverrideStrategy
      *        <p>
-     *        The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS
-     *        Support or your account manager to learn more about access privileges.
+     *        The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact
+     *        Amazon Web Services Support or your account manager to learn more about access privileges.
      *        </p>
      *        </note>
      *        <p>
@@ -286,8 +286,8 @@ public class GetAccuracyMetricsResult extends com.amazonaws.AmazonWebServiceResu
     /**
      * <note>
      * <p>
-     * The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS Support
-     * or your account manager to learn more about access privileges.
+     * The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact Amazon Web
+     * Services Support or your account manager to learn more about access privileges.
      * </p>
      * </note>
      * <p>
@@ -300,8 +300,8 @@ public class GetAccuracyMetricsResult extends com.amazonaws.AmazonWebServiceResu
      * 
      * @param autoMLOverrideStrategy
      *        <p>
-     *        The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact AWS
-     *        Support or your account manager to learn more about access privileges.
+     *        The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta. Contact
+     *        Amazon Web Services Support or your account manager to learn more about access privileges.
      *        </p>
      *        </note>
      *        <p>

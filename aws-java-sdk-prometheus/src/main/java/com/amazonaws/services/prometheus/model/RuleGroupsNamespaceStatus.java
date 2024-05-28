@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents the status of a namespace.
+ * The status information about a rule groups namespace.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/RuleGroupsNamespaceStatus" target="_top">AWS API
@@ -30,24 +30,24 @@ public class RuleGroupsNamespaceStatus implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Status code of this namespace.
+     * The current status of the namespace.
      * </p>
      */
     private String statusCode;
     /**
      * <p>
-     * The reason for failure if any.
+     * The reason for the failure, if any.
      * </p>
      */
     private String statusReason;
 
     /**
      * <p>
-     * Status code of this namespace.
+     * The current status of the namespace.
      * </p>
      * 
      * @param statusCode
-     *        Status code of this namespace.
+     *        The current status of the namespace.
      * @see RuleGroupsNamespaceStatusCode
      */
 
@@ -57,10 +57,10 @@ public class RuleGroupsNamespaceStatus implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Status code of this namespace.
+     * The current status of the namespace.
      * </p>
      * 
-     * @return Status code of this namespace.
+     * @return The current status of the namespace.
      * @see RuleGroupsNamespaceStatusCode
      */
 
@@ -70,11 +70,11 @@ public class RuleGroupsNamespaceStatus implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Status code of this namespace.
+     * The current status of the namespace.
      * </p>
      * 
      * @param statusCode
-     *        Status code of this namespace.
+     *        The current status of the namespace.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuleGroupsNamespaceStatusCode
      */
@@ -86,11 +86,11 @@ public class RuleGroupsNamespaceStatus implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Status code of this namespace.
+     * The current status of the namespace.
      * </p>
      * 
      * @param statusCode
-     *        Status code of this namespace.
+     *        The current status of the namespace.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuleGroupsNamespaceStatusCode
      */
@@ -102,11 +102,11 @@ public class RuleGroupsNamespaceStatus implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The reason for failure if any.
+     * The reason for the failure, if any.
      * </p>
      * 
      * @param statusReason
-     *        The reason for failure if any.
+     *        The reason for the failure, if any.
      */
 
     public void setStatusReason(String statusReason) {
@@ -115,10 +115,10 @@ public class RuleGroupsNamespaceStatus implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The reason for failure if any.
+     * The reason for the failure, if any.
      * </p>
      * 
-     * @return The reason for failure if any.
+     * @return The reason for the failure, if any.
      */
 
     public String getStatusReason() {
@@ -127,11 +127,11 @@ public class RuleGroupsNamespaceStatus implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The reason for failure if any.
+     * The reason for the failure, if any.
      * </p>
      * 
      * @param statusReason
-     *        The reason for failure if any.
+     *        The reason for the failure, if any.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

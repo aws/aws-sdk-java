@@ -39,7 +39,7 @@ import com.amazonaws.annotation.SdkInternalApi;
  */
 @SdkInternalApi
 public class ReflectionMethodInvoker<T, R> {
-    private final Class<T> clazz;
+    private final Class<? extends T> clazz;
     private final String methodName;
     private final Class<R> returnType;
     private final Class<?>[] parameterTypes;
@@ -57,7 +57,7 @@ public class ReflectionMethodInvoker<T, R> {
      * @param methodName The name of the method to invoke.
      * @param parameterTypes The classes of the parameters of the method to invoke.
      */
-    public ReflectionMethodInvoker(Class<T> clazz,
+    public ReflectionMethodInvoker(Class<? extends T> clazz,
                                    Class<R> returnType,
                                    String methodName,
                                    Class<?>... parameterTypes) {

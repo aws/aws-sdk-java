@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -2137,6 +2137,107 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
+     * Retrieves (queries) pre-aggregated data for a standard run execution metric that applies to a journey activity.
+     * </p>
+     * 
+     * @param getJourneyRunExecutionActivityMetricsRequest
+     * @return A Java Future containing the result of the GetJourneyRunExecutionActivityMetrics operation returned by
+     *         the service.
+     * @sample AmazonPinpointAsync.GetJourneyRunExecutionActivityMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRunExecutionActivityMetrics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetJourneyRunExecutionActivityMetricsResult> getJourneyRunExecutionActivityMetricsAsync(
+            GetJourneyRunExecutionActivityMetricsRequest getJourneyRunExecutionActivityMetricsRequest);
+
+    /**
+     * <p>
+     * Retrieves (queries) pre-aggregated data for a standard run execution metric that applies to a journey activity.
+     * </p>
+     * 
+     * @param getJourneyRunExecutionActivityMetricsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetJourneyRunExecutionActivityMetrics operation returned by
+     *         the service.
+     * @sample AmazonPinpointAsyncHandler.GetJourneyRunExecutionActivityMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRunExecutionActivityMetrics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetJourneyRunExecutionActivityMetricsResult> getJourneyRunExecutionActivityMetricsAsync(
+            GetJourneyRunExecutionActivityMetricsRequest getJourneyRunExecutionActivityMetricsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetJourneyRunExecutionActivityMetricsRequest, GetJourneyRunExecutionActivityMetricsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves (queries) pre-aggregated data for a standard run execution metric that applies to a journey.
+     * </p>
+     * 
+     * @param getJourneyRunExecutionMetricsRequest
+     * @return A Java Future containing the result of the GetJourneyRunExecutionMetrics operation returned by the
+     *         service.
+     * @sample AmazonPinpointAsync.GetJourneyRunExecutionMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRunExecutionMetrics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetJourneyRunExecutionMetricsResult> getJourneyRunExecutionMetricsAsync(
+            GetJourneyRunExecutionMetricsRequest getJourneyRunExecutionMetricsRequest);
+
+    /**
+     * <p>
+     * Retrieves (queries) pre-aggregated data for a standard run execution metric that applies to a journey.
+     * </p>
+     * 
+     * @param getJourneyRunExecutionMetricsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetJourneyRunExecutionMetrics operation returned by the
+     *         service.
+     * @sample AmazonPinpointAsyncHandler.GetJourneyRunExecutionMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRunExecutionMetrics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetJourneyRunExecutionMetricsResult> getJourneyRunExecutionMetricsAsync(
+            GetJourneyRunExecutionMetricsRequest getJourneyRunExecutionMetricsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetJourneyRunExecutionMetricsRequest, GetJourneyRunExecutionMetricsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides information about the runs of a journey.
+     * </p>
+     * 
+     * @param getJourneyRunsRequest
+     * @return A Java Future containing the result of the GetJourneyRuns operation returned by the service.
+     * @sample AmazonPinpointAsync.GetJourneyRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRuns" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetJourneyRunsResult> getJourneyRunsAsync(GetJourneyRunsRequest getJourneyRunsRequest);
+
+    /**
+     * <p>
+     * Provides information about the runs of a journey.
+     * </p>
+     * 
+     * @param getJourneyRunsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetJourneyRuns operation returned by the service.
+     * @sample AmazonPinpointAsyncHandler.GetJourneyRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRuns" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetJourneyRunsResult> getJourneyRunsAsync(GetJourneyRunsRequest getJourneyRunsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetJourneyRunsRequest, GetJourneyRunsResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves the content and settings of a message template for messages that are sent through a push notification
      * channel.
      * </p>
@@ -2814,8 +2915,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Removes one or more attributes, of the same attribute type, from all the endpoints that are associated with an
-     * application.
+     * Removes one or more custom attributes, of the same attribute type, from the application. Existing endpoints still
+     * have the attributes but Amazon Pinpoint will stop capturing new or changed values for these attributes.
      * </p>
      * 
      * @param removeAttributesRequest
@@ -2828,8 +2929,8 @@ public interface AmazonPinpointAsync extends AmazonPinpoint {
 
     /**
      * <p>
-     * Removes one or more attributes, of the same attribute type, from all the endpoints that are associated with an
-     * application.
+     * Removes one or more custom attributes, of the same attribute type, from the application. Existing endpoints still
+     * have the attributes but Amazon Pinpoint will stop capturing new or changed values for these attributes.
      * </p>
      * 
      * @param removeAttributesRequest

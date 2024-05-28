@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,10 +28,9 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * This is the <i>Resource Access Manager API Reference</i>. This documentation provides descriptions and syntax for
  * each of the actions and data types in RAM. RAM is a service that helps you securely share your Amazon Web Services
- * resources across Amazon Web Services accounts. If you have multiple Amazon Web Services accounts, you can use RAM to
- * share those resources with other accounts. If you use Organizations to manage your accounts, then you share your
- * resources with your organization or organizational units (OUs). For supported resource types, you can also share
- * resources with individual Identity and Access Management (IAM) roles an users.
+ * resources to other Amazon Web Services accounts. If you use Organizations to manage your accounts, then you can share
+ * your resources with your entire organization or to organizational units (OUs). For supported resource types, you can
+ * also share resources with individual Identity and Access Management (IAM) roles and users.
  * </p>
  * <p>
  * To learn more about RAM, see the following resources:
@@ -196,6 +195,72 @@ public class AWSRAMAsyncClient extends AWSRAMClient implements AWSRAMAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreatePermissionResult> createPermissionAsync(CreatePermissionRequest request) {
+
+        return createPermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePermissionResult> createPermissionAsync(final CreatePermissionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreatePermissionRequest, CreatePermissionResult> asyncHandler) {
+        final CreatePermissionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreatePermissionResult>() {
+            @Override
+            public CreatePermissionResult call() throws Exception {
+                CreatePermissionResult result = null;
+
+                try {
+                    result = executeCreatePermission(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePermissionVersionResult> createPermissionVersionAsync(CreatePermissionVersionRequest request) {
+
+        return createPermissionVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePermissionVersionResult> createPermissionVersionAsync(final CreatePermissionVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreatePermissionVersionRequest, CreatePermissionVersionResult> asyncHandler) {
+        final CreatePermissionVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreatePermissionVersionResult>() {
+            @Override
+            public CreatePermissionVersionResult call() throws Exception {
+                CreatePermissionVersionResult result = null;
+
+                try {
+                    result = executeCreatePermissionVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateResourceShareResult> createResourceShareAsync(CreateResourceShareRequest request) {
 
         return createResourceShareAsync(request, null);
@@ -213,6 +278,72 @@ public class AWSRAMAsyncClient extends AWSRAMClient implements AWSRAMAsync {
 
                 try {
                     result = executeCreateResourceShare(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePermissionResult> deletePermissionAsync(DeletePermissionRequest request) {
+
+        return deletePermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePermissionResult> deletePermissionAsync(final DeletePermissionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeletePermissionRequest, DeletePermissionResult> asyncHandler) {
+        final DeletePermissionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeletePermissionResult>() {
+            @Override
+            public DeletePermissionResult call() throws Exception {
+                DeletePermissionResult result = null;
+
+                try {
+                    result = executeDeletePermission(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePermissionVersionResult> deletePermissionVersionAsync(DeletePermissionVersionRequest request) {
+
+        return deletePermissionVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePermissionVersionResult> deletePermissionVersionAsync(final DeletePermissionVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeletePermissionVersionRequest, DeletePermissionVersionResult> asyncHandler) {
+        final DeletePermissionVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeletePermissionVersionResult>() {
+            @Override
+            public DeletePermissionVersionResult call() throws Exception {
+                DeletePermissionVersionResult result = null;
+
+                try {
+                    result = executeDeletePermissionVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -564,6 +695,39 @@ public class AWSRAMAsyncClient extends AWSRAMClient implements AWSRAMAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListPermissionAssociationsResult> listPermissionAssociationsAsync(ListPermissionAssociationsRequest request) {
+
+        return listPermissionAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPermissionAssociationsResult> listPermissionAssociationsAsync(final ListPermissionAssociationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPermissionAssociationsRequest, ListPermissionAssociationsResult> asyncHandler) {
+        final ListPermissionAssociationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPermissionAssociationsResult>() {
+            @Override
+            public ListPermissionAssociationsResult call() throws Exception {
+                ListPermissionAssociationsResult result = null;
+
+                try {
+                    result = executeListPermissionAssociations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPermissionVersionsResult> listPermissionVersionsAsync(ListPermissionVersionsRequest request) {
 
         return listPermissionVersionsAsync(request, null);
@@ -647,6 +811,41 @@ public class AWSRAMAsyncClient extends AWSRAMClient implements AWSRAMAsync {
 
                 try {
                     result = executeListPrincipals(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListReplacePermissionAssociationsWorkResult> listReplacePermissionAssociationsWorkAsync(
+            ListReplacePermissionAssociationsWorkRequest request) {
+
+        return listReplacePermissionAssociationsWorkAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListReplacePermissionAssociationsWorkResult> listReplacePermissionAssociationsWorkAsync(
+            final ListReplacePermissionAssociationsWorkRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListReplacePermissionAssociationsWorkRequest, ListReplacePermissionAssociationsWorkResult> asyncHandler) {
+        final ListReplacePermissionAssociationsWorkRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListReplacePermissionAssociationsWorkResult>() {
+            @Override
+            public ListReplacePermissionAssociationsWorkResult call() throws Exception {
+                ListReplacePermissionAssociationsWorkResult result = null;
+
+                try {
+                    result = executeListReplacePermissionAssociationsWork(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -762,6 +961,41 @@ public class AWSRAMAsyncClient extends AWSRAMClient implements AWSRAMAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<PromotePermissionCreatedFromPolicyResult> promotePermissionCreatedFromPolicyAsync(
+            PromotePermissionCreatedFromPolicyRequest request) {
+
+        return promotePermissionCreatedFromPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PromotePermissionCreatedFromPolicyResult> promotePermissionCreatedFromPolicyAsync(
+            final PromotePermissionCreatedFromPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PromotePermissionCreatedFromPolicyRequest, PromotePermissionCreatedFromPolicyResult> asyncHandler) {
+        final PromotePermissionCreatedFromPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PromotePermissionCreatedFromPolicyResult>() {
+            @Override
+            public PromotePermissionCreatedFromPolicyResult call() throws Exception {
+                PromotePermissionCreatedFromPolicyResult result = null;
+
+                try {
+                    result = executePromotePermissionCreatedFromPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PromoteResourceShareCreatedFromPolicyResult> promoteResourceShareCreatedFromPolicyAsync(
             PromoteResourceShareCreatedFromPolicyRequest request) {
 
@@ -815,6 +1049,73 @@ public class AWSRAMAsyncClient extends AWSRAMClient implements AWSRAMAsync {
 
                 try {
                     result = executeRejectResourceShareInvitation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReplacePermissionAssociationsResult> replacePermissionAssociationsAsync(ReplacePermissionAssociationsRequest request) {
+
+        return replacePermissionAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReplacePermissionAssociationsResult> replacePermissionAssociationsAsync(
+            final ReplacePermissionAssociationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ReplacePermissionAssociationsRequest, ReplacePermissionAssociationsResult> asyncHandler) {
+        final ReplacePermissionAssociationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ReplacePermissionAssociationsResult>() {
+            @Override
+            public ReplacePermissionAssociationsResult call() throws Exception {
+                ReplacePermissionAssociationsResult result = null;
+
+                try {
+                    result = executeReplacePermissionAssociations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetDefaultPermissionVersionResult> setDefaultPermissionVersionAsync(SetDefaultPermissionVersionRequest request) {
+
+        return setDefaultPermissionVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetDefaultPermissionVersionResult> setDefaultPermissionVersionAsync(final SetDefaultPermissionVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SetDefaultPermissionVersionRequest, SetDefaultPermissionVersionResult> asyncHandler) {
+        final SetDefaultPermissionVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SetDefaultPermissionVersionResult>() {
+            @Override
+            public SetDefaultPermissionVersionResult call() throws Exception {
+                SetDefaultPermissionVersionResult result = null;
+
+                try {
+                    result = executeSetDefaultPermissionVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

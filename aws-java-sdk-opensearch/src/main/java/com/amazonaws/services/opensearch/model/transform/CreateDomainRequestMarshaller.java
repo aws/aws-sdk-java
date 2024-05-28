@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,8 @@ public class CreateDomainRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EBSOptions").build();
     private static final MarshallingInfo<String> ACCESSPOLICIES_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccessPolicies").build();
+    private static final MarshallingInfo<String> IPADDRESSTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IPAddressType").build();
     private static final MarshallingInfo<StructuredPojo> SNAPSHOTOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnapshotOptions").build();
     private static final MarshallingInfo<StructuredPojo> VPCOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -61,6 +63,10 @@ public class CreateDomainRequestMarshaller {
             .marshallLocationName("TagList").build();
     private static final MarshallingInfo<StructuredPojo> AUTOTUNEOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoTuneOptions").build();
+    private static final MarshallingInfo<StructuredPojo> OFFPEAKWINDOWOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OffPeakWindowOptions").build();
+    private static final MarshallingInfo<StructuredPojo> SOFTWAREUPDATEOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SoftwareUpdateOptions").build();
 
     private static final CreateDomainRequestMarshaller instance = new CreateDomainRequestMarshaller();
 
@@ -83,6 +89,7 @@ public class CreateDomainRequestMarshaller {
             protocolMarshaller.marshall(createDomainRequest.getClusterConfig(), CLUSTERCONFIG_BINDING);
             protocolMarshaller.marshall(createDomainRequest.getEBSOptions(), EBSOPTIONS_BINDING);
             protocolMarshaller.marshall(createDomainRequest.getAccessPolicies(), ACCESSPOLICIES_BINDING);
+            protocolMarshaller.marshall(createDomainRequest.getIPAddressType(), IPADDRESSTYPE_BINDING);
             protocolMarshaller.marshall(createDomainRequest.getSnapshotOptions(), SNAPSHOTOPTIONS_BINDING);
             protocolMarshaller.marshall(createDomainRequest.getVPCOptions(), VPCOPTIONS_BINDING);
             protocolMarshaller.marshall(createDomainRequest.getCognitoOptions(), COGNITOOPTIONS_BINDING);
@@ -94,6 +101,8 @@ public class CreateDomainRequestMarshaller {
             protocolMarshaller.marshall(createDomainRequest.getAdvancedSecurityOptions(), ADVANCEDSECURITYOPTIONS_BINDING);
             protocolMarshaller.marshall(createDomainRequest.getTagList(), TAGLIST_BINDING);
             protocolMarshaller.marshall(createDomainRequest.getAutoTuneOptions(), AUTOTUNEOPTIONS_BINDING);
+            protocolMarshaller.marshall(createDomainRequest.getOffPeakWindowOptions(), OFFPEAKWINDOWOPTIONS_BINDING);
+            protocolMarshaller.marshall(createDomainRequest.getSoftwareUpdateOptions(), SOFTWAREUPDATEOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

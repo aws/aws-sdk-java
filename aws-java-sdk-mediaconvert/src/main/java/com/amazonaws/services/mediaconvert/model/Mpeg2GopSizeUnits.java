@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,8 +15,8 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Specify the units for GOP size (GopSize). If you don't specify a value here, by default the encoder measures GOP size
- * in frames.
+ * Specify the units for GOP size. If you don't specify a value here, by default the encoder measures GOP size in
+ * frames.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Mpeg2GopSizeUnits {

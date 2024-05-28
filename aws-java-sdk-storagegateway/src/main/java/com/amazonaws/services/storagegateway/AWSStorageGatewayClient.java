@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.storagegateway.AWSStorageGatewayClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.storagegateway.model.*;
+
 import com.amazonaws.services.storagegateway.model.transform.*;
 
 /**
@@ -2999,9 +3000,8 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Returns metadata about a gateway such as its name, network interfaces, configured time zone, and the state
-     * (whether the gateway is running or not). To specify which gateway to describe, use the Amazon Resource Name (ARN)
-     * of the gateway in your request.
+     * Returns metadata about a gateway such as its name, network interfaces, time zone, status, and software version.
+     * To specify which gateway to describe, use the Amazon Resource Name (ARN) of the gateway in your request.
      * </p>
      * 
      * @param describeGatewayInformationRequest
@@ -3593,9 +3593,15 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Returns a description of the specified Amazon Resource Name (ARN) of virtual tapes. If a <code>TapeARN</code> is
-     * not specified, returns a description of all virtual tapes associated with the specified gateway. This operation
-     * is only supported in the tape gateway type.
+     * Returns a description of virtual tapes that correspond to the specified Amazon Resource Names (ARNs). If
+     * <code>TapeARN</code> is not specified, returns a description of the virtual tapes associated with the specified
+     * gateway. This operation is only supported for the tape gateway type.
+     * </p>
+     * <p>
+     * The operation supports pagination. By default, the operation returns a maximum of up to 100 tapes. You can
+     * optionally specify the <code>Limit</code> field in the body to limit the number of tapes in the response. If the
+     * number of tapes returned in the response is truncated, the response includes a <code>Marker</code> field. You can
+     * use this <code>Marker</code> value in your subsequent request to retrieve the next set of tapes.
      * </p>
      * 
      * @param describeTapesRequest
@@ -4068,6 +4074,18 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * Adds a file gateway to an Active Directory domain. This operation is only supported for file gateways that
      * support the SMB file protocol.
      * </p>
+     * <note>
+     * <p>
+     * Joining a domain creates an Active Directory computer account in the default organizational unit, using the
+     * gateway's <b>Gateway ID</b> as the account name (for example, SGW-1234ADE). If your Active Directory environment
+     * requires that you pre-stage accounts to facilitate the join domain process, you will need to create this account
+     * ahead of time.
+     * </p>
+     * <p>
+     * To create the gateway's computer account in an organizational unit other than the default, you must specify the
+     * organizational unit when joining the domain.
+     * </p>
+     * </note>
      * 
      * @param joinDomainRequest
      *        JoinDomainInput
@@ -4197,7 +4215,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Gets a list of the file shares for a specific S3 File Gateway, or the list of file shares that belong to the
-     * calling user account. This operation is only supported for S3 File Gateways.
+     * calling Amazon Web Services account. This operation is only supported for S3 File Gateways.
      * </p>
      * 
      * @param listFileSharesRequest
@@ -4918,7 +4936,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Sends you notification through CloudWatch Events when all files written to your file share have been uploaded to
-     * S3. Amazon S3.
+     * Amazon S3.
      * </p>
      * <p>
      * Storage Gateway can send a notification through Amazon CloudWatch Events when all files written to your file
@@ -4929,9 +4947,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * Gateways.
      * </p>
      * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-upload-notification"
-     * >Getting file upload notification</a> in the <i>Storage Gateway User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/filegateway/latest/files3/monitoring-file-gateway.html#get-notification"
+     * >Getting file upload notification</a> in the <i>Amazon S3 File Gateway User Guide</i>.
      * </p>
      * 
      * @param notifyWhenUploadedRequest
@@ -5000,10 +5018,10 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * You can subscribe to be notified through an Amazon CloudWatch event when your <code>RefreshCache</code> operation
-     * completes. For more information, see <a href=
-     * "https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification"
-     * >Getting notified about file operations</a> in the <i>Storage Gateway User Guide</i>. This operation is Only
-     * supported for S3 File Gateways.
+     * completes. For more information, see <a
+     * href="https://docs.aws.amazon.com/filegateway/latest/files3/monitoring-file-gateway.html#get-notification"
+     * >Getting notified about file operations</a> in the <i>Amazon S3 File Gateway User Guide</i>. This operation is
+     * Only supported for S3 File Gateways.
      * </p>
      * <p>
      * When this API is called, it only initiates the refresh operation. When the API call completes and returns a
@@ -5015,21 +5033,15 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * <p>
      * Throttle limit: This API is asynchronous, so the gateway will accept no more than two refreshes at any time. We
      * recommend using the refresh-complete CloudWatch event notification before issuing additional requests. For more
-     * information, see <a href=
-     * "https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification"
-     * >Getting notified about file operations</a> in the <i>Storage Gateway User Guide</i>.
+     * information, see <a
+     * href="https://docs.aws.amazon.com/filegateway/latest/files3/monitoring-file-gateway.html#get-notification"
+     * >Getting notified about file operations</a> in the <i>Amazon S3 File Gateway User Guide</i>.
      * </p>
      * <important>
      * <ul>
      * <li>
      * <p>
      * Wait at least 60 seconds between consecutive RefreshCache API requests.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * RefreshCache does not evict cache entries if invoked consecutively within 60 seconds of a previous RefreshCache
-     * request.
      * </p>
      * </li>
      * <li>
@@ -5045,9 +5057,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * </p>
      * </note>
      * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification"
-     * >Getting notified about file operations</a> in the <i>Storage Gateway User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/filegateway/latest/files3/monitoring-file-gateway.html#get-notification"
+     * >Getting notified about file operations</a> in the <i>Amazon S3 File Gateway User Guide</i>.
      * </p>
      * 
      * @param refreshCacheRequest
@@ -5525,9 +5537,14 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Shuts down a gateway. To specify which gateway to shut down, use the Amazon Resource Name (ARN) of the gateway in
-     * the body of your request.
+     * Shuts down a Tape Gateway or Volume Gateway. To specify which gateway to shut down, use the Amazon Resource Name
+     * (ARN) of the gateway in the body of your request.
      * </p>
+     * <note>
+     * <p>
+     * This API action cannot be used to shut down S3 File Gateway or FSx File Gateway.
+     * </p>
+     * </note>
      * <p>
      * The operation shuts down the gateway service component running in the gateway's virtual machine (VM) and not the
      * host VM.
@@ -5919,8 +5936,9 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
      * <p>
      * Updates the bandwidth rate limit schedule for a specified gateway. By default, gateways do not have bandwidth
      * rate limit schedules, which means no bandwidth rate limiting is in effect. Use this to initiate or update a
-     * gateway's bandwidth rate limit schedule. This operation is supported only for volume, tape and S3 file gateways.
-     * FSx file gateways do not support bandwidth rate limits.
+     * gateway's bandwidth rate limit schedule. This operation is supported for volume, tape, and S3 file gateways. S3
+     * file gateways support bandwidth rate limits for upload only. FSx file gateways do not support bandwidth rate
+     * limits.
      * </p>
      * 
      * @param updateBandwidthRateLimitScheduleRequest

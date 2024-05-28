@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,26 +25,254 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Specified only if the base tables belong to a different Amazon Web Services Region.
+     * </p>
+     */
+    private String region;
+    /**
+     * <p>
+     * The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account ID is
+     * used by default.
+     * </p>
+     */
     private String catalogId;
-
+    /**
+     * <p>
+     * The name of the catalog database where the partitions reside.
+     * </p>
+     */
     private String databaseName;
-
+    /**
+     * <p>
+     * The name of the table that contains the partition.
+     * </p>
+     */
     private String tableName;
-
+    /**
+     * <p>
+     * An expression that filters the partitions to be returned.
+     * </p>
+     * <p>
+     * The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a
+     * href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression.
+     * </p>
+     * <p>
+     * <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API call:
+     * </p>
+     * <dl>
+     * <dt>=</dt>
+     * <dd>
+     * <p>
+     * Checks whether the values of the two operands are equal; if yes, then the condition becomes true.
+     * </p>
+     * <p>
+     * Example: Assume 'variable a' holds 10 and 'variable b' holds 20.
+     * </p>
+     * <p>
+     * (a = b) is not true.
+     * </p>
+     * </dd>
+     * <dt>&lt; &gt;</dt>
+     * <dd>
+     * <p>
+     * Checks whether the values of two operands are equal; if the values are not equal, then the condition becomes
+     * true.
+     * </p>
+     * <p>
+     * Example: (a &lt; &gt; b) is true.
+     * </p>
+     * </dd>
+     * <dt>&gt;</dt>
+     * <dd>
+     * <p>
+     * Checks whether the value of the left operand is greater than the value of the right operand; if yes, then the
+     * condition becomes true.
+     * </p>
+     * <p>
+     * Example: (a &gt; b) is not true.
+     * </p>
+     * </dd>
+     * <dt>&lt;</dt>
+     * <dd>
+     * <p>
+     * Checks whether the value of the left operand is less than the value of the right operand; if yes, then the
+     * condition becomes true.
+     * </p>
+     * <p>
+     * Example: (a &lt; b) is true.
+     * </p>
+     * </dd>
+     * <dt>&gt;=</dt>
+     * <dd>
+     * <p>
+     * Checks whether the value of the left operand is greater than or equal to the value of the right operand; if yes,
+     * then the condition becomes true.
+     * </p>
+     * <p>
+     * Example: (a &gt;= b) is not true.
+     * </p>
+     * </dd>
+     * <dt>&lt;=</dt>
+     * <dd>
+     * <p>
+     * Checks whether the value of the left operand is less than or equal to the value of the right operand; if yes,
+     * then the condition becomes true.
+     * </p>
+     * <p>
+     * Example: (a &lt;= b) is true.
+     * </p>
+     * </dd>
+     * <dt>AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL</dt>
+     * <dd>
+     * <p>
+     * Logical operators.
+     * </p>
+     * </dd>
+     * </dl>
+     * <p>
+     * <i>Supported Partition Key Types</i>: The following are the supported partition keys.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>string</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>date</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>timestamp</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>int</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>bigint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>long</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tinyint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>smallint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>decimal</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If an type is encountered that is not valid, an exception is thrown.
+     * </p>
+     */
     private String expression;
-
+    /**
+     * <p>
+     * A structure containing Lake Formation audit context information.
+     * </p>
+     */
     private AuditContext auditContext;
-
+    /**
+     * <p>
+     * A list of supported permission types.
+     * </p>
+     */
     private java.util.List<String> supportedPermissionTypes;
-
+    /**
+     * <p>
+     * A continuation token, if this is not the first call to retrieve these partitions.
+     * </p>
+     */
     private String nextToken;
-
+    /**
+     * <p>
+     * The segment of the table's partitions to scan in this request.
+     * </p>
+     */
     private Segment segment;
-
+    /**
+     * <p>
+     * The maximum number of partitions to return in a single response.
+     * </p>
+     */
     private Integer maxResults;
+    /**
+     * <p>
+     * A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation
+     * generated authorization identifier and information from the request's authorization context.
+     * </p>
+     */
+    private QuerySessionContext querySessionContext;
 
     /**
+     * <p>
+     * Specified only if the base tables belong to a different Amazon Web Services Region.
+     * </p>
+     * 
+     * @param region
+     *        Specified only if the base tables belong to a different Amazon Web Services Region.
+     */
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    /**
+     * <p>
+     * Specified only if the base tables belong to a different Amazon Web Services Region.
+     * </p>
+     * 
+     * @return Specified only if the base tables belong to a different Amazon Web Services Region.
+     */
+
+    public String getRegion() {
+        return this.region;
+    }
+
+    /**
+     * <p>
+     * Specified only if the base tables belong to a different Amazon Web Services Region.
+     * </p>
+     * 
+     * @param region
+     *        Specified only if the base tables belong to a different Amazon Web Services Region.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetUnfilteredPartitionsMetadataRequest withRegion(String region) {
+        setRegion(region);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account ID is
+     * used by default.
+     * </p>
+     * 
      * @param catalogId
+     *        The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account
+     *        ID is used by default.
      */
 
     public void setCatalogId(String catalogId) {
@@ -52,7 +280,13 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account ID is
+     * used by default.
+     * </p>
+     * 
+     * @return The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account
+     *         ID is used by default.
      */
 
     public String getCatalogId() {
@@ -60,7 +294,14 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account ID is
+     * used by default.
+     * </p>
+     * 
      * @param catalogId
+     *        The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account
+     *        ID is used by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -70,7 +311,12 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * The name of the catalog database where the partitions reside.
+     * </p>
+     * 
      * @param databaseName
+     *        The name of the catalog database where the partitions reside.
      */
 
     public void setDatabaseName(String databaseName) {
@@ -78,7 +324,11 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the catalog database where the partitions reside.
+     * </p>
+     * 
+     * @return The name of the catalog database where the partitions reside.
      */
 
     public String getDatabaseName() {
@@ -86,7 +336,12 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * The name of the catalog database where the partitions reside.
+     * </p>
+     * 
      * @param databaseName
+     *        The name of the catalog database where the partitions reside.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,7 +351,12 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * The name of the table that contains the partition.
+     * </p>
+     * 
      * @param tableName
+     *        The name of the table that contains the partition.
      */
 
     public void setTableName(String tableName) {
@@ -104,7 +364,11 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the table that contains the partition.
+     * </p>
+     * 
+     * @return The name of the table that contains the partition.
      */
 
     public String getTableName() {
@@ -112,7 +376,12 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * The name of the table that contains the partition.
+     * </p>
+     * 
      * @param tableName
+     *        The name of the table that contains the partition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,7 +391,272 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * An expression that filters the partitions to be returned.
+     * </p>
+     * <p>
+     * The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a
+     * href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression.
+     * </p>
+     * <p>
+     * <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API call:
+     * </p>
+     * <dl>
+     * <dt>=</dt>
+     * <dd>
+     * <p>
+     * Checks whether the values of the two operands are equal; if yes, then the condition becomes true.
+     * </p>
+     * <p>
+     * Example: Assume 'variable a' holds 10 and 'variable b' holds 20.
+     * </p>
+     * <p>
+     * (a = b) is not true.
+     * </p>
+     * </dd>
+     * <dt>&lt; &gt;</dt>
+     * <dd>
+     * <p>
+     * Checks whether the values of two operands are equal; if the values are not equal, then the condition becomes
+     * true.
+     * </p>
+     * <p>
+     * Example: (a &lt; &gt; b) is true.
+     * </p>
+     * </dd>
+     * <dt>&gt;</dt>
+     * <dd>
+     * <p>
+     * Checks whether the value of the left operand is greater than the value of the right operand; if yes, then the
+     * condition becomes true.
+     * </p>
+     * <p>
+     * Example: (a &gt; b) is not true.
+     * </p>
+     * </dd>
+     * <dt>&lt;</dt>
+     * <dd>
+     * <p>
+     * Checks whether the value of the left operand is less than the value of the right operand; if yes, then the
+     * condition becomes true.
+     * </p>
+     * <p>
+     * Example: (a &lt; b) is true.
+     * </p>
+     * </dd>
+     * <dt>&gt;=</dt>
+     * <dd>
+     * <p>
+     * Checks whether the value of the left operand is greater than or equal to the value of the right operand; if yes,
+     * then the condition becomes true.
+     * </p>
+     * <p>
+     * Example: (a &gt;= b) is not true.
+     * </p>
+     * </dd>
+     * <dt>&lt;=</dt>
+     * <dd>
+     * <p>
+     * Checks whether the value of the left operand is less than or equal to the value of the right operand; if yes,
+     * then the condition becomes true.
+     * </p>
+     * <p>
+     * Example: (a &lt;= b) is true.
+     * </p>
+     * </dd>
+     * <dt>AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL</dt>
+     * <dd>
+     * <p>
+     * Logical operators.
+     * </p>
+     * </dd>
+     * </dl>
+     * <p>
+     * <i>Supported Partition Key Types</i>: The following are the supported partition keys.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>string</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>date</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>timestamp</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>int</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>bigint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>long</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tinyint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>smallint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>decimal</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If an type is encountered that is not valid, an exception is thrown.
+     * </p>
+     * 
      * @param expression
+     *        An expression that filters the partitions to be returned.</p>
+     *        <p>
+     *        The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement
+     *        parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression.
+     *        </p>
+     *        <p>
+     *        <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API
+     *        call:
+     *        </p>
+     *        <dl>
+     *        <dt>=</dt>
+     *        <dd>
+     *        <p>
+     *        Checks whether the values of the two operands are equal; if yes, then the condition becomes true.
+     *        </p>
+     *        <p>
+     *        Example: Assume 'variable a' holds 10 and 'variable b' holds 20.
+     *        </p>
+     *        <p>
+     *        (a = b) is not true.
+     *        </p>
+     *        </dd>
+     *        <dt>&lt; &gt;</dt>
+     *        <dd>
+     *        <p>
+     *        Checks whether the values of two operands are equal; if the values are not equal, then the condition
+     *        becomes true.
+     *        </p>
+     *        <p>
+     *        Example: (a &lt; &gt; b) is true.
+     *        </p>
+     *        </dd>
+     *        <dt>&gt;</dt>
+     *        <dd>
+     *        <p>
+     *        Checks whether the value of the left operand is greater than the value of the right operand; if yes, then
+     *        the condition becomes true.
+     *        </p>
+     *        <p>
+     *        Example: (a &gt; b) is not true.
+     *        </p>
+     *        </dd>
+     *        <dt>&lt;</dt>
+     *        <dd>
+     *        <p>
+     *        Checks whether the value of the left operand is less than the value of the right operand; if yes, then the
+     *        condition becomes true.
+     *        </p>
+     *        <p>
+     *        Example: (a &lt; b) is true.
+     *        </p>
+     *        </dd>
+     *        <dt>&gt;=</dt>
+     *        <dd>
+     *        <p>
+     *        Checks whether the value of the left operand is greater than or equal to the value of the right operand;
+     *        if yes, then the condition becomes true.
+     *        </p>
+     *        <p>
+     *        Example: (a &gt;= b) is not true.
+     *        </p>
+     *        </dd>
+     *        <dt>&lt;=</dt>
+     *        <dd>
+     *        <p>
+     *        Checks whether the value of the left operand is less than or equal to the value of the right operand; if
+     *        yes, then the condition becomes true.
+     *        </p>
+     *        <p>
+     *        Example: (a &lt;= b) is true.
+     *        </p>
+     *        </dd>
+     *        <dt>AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL</dt>
+     *        <dd>
+     *        <p>
+     *        Logical operators.
+     *        </p>
+     *        </dd>
+     *        </dl>
+     *        <p>
+     *        <i>Supported Partition Key Types</i>: The following are the supported partition keys.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>string</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>date</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>timestamp</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>int</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>bigint</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>long</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tinyint</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>smallint</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>decimal</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If an type is encountered that is not valid, an exception is thrown.
      */
 
     public void setExpression(String expression) {
@@ -130,7 +664,271 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * @return
+     * <p>
+     * An expression that filters the partitions to be returned.
+     * </p>
+     * <p>
+     * The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a
+     * href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression.
+     * </p>
+     * <p>
+     * <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API call:
+     * </p>
+     * <dl>
+     * <dt>=</dt>
+     * <dd>
+     * <p>
+     * Checks whether the values of the two operands are equal; if yes, then the condition becomes true.
+     * </p>
+     * <p>
+     * Example: Assume 'variable a' holds 10 and 'variable b' holds 20.
+     * </p>
+     * <p>
+     * (a = b) is not true.
+     * </p>
+     * </dd>
+     * <dt>&lt; &gt;</dt>
+     * <dd>
+     * <p>
+     * Checks whether the values of two operands are equal; if the values are not equal, then the condition becomes
+     * true.
+     * </p>
+     * <p>
+     * Example: (a &lt; &gt; b) is true.
+     * </p>
+     * </dd>
+     * <dt>&gt;</dt>
+     * <dd>
+     * <p>
+     * Checks whether the value of the left operand is greater than the value of the right operand; if yes, then the
+     * condition becomes true.
+     * </p>
+     * <p>
+     * Example: (a &gt; b) is not true.
+     * </p>
+     * </dd>
+     * <dt>&lt;</dt>
+     * <dd>
+     * <p>
+     * Checks whether the value of the left operand is less than the value of the right operand; if yes, then the
+     * condition becomes true.
+     * </p>
+     * <p>
+     * Example: (a &lt; b) is true.
+     * </p>
+     * </dd>
+     * <dt>&gt;=</dt>
+     * <dd>
+     * <p>
+     * Checks whether the value of the left operand is greater than or equal to the value of the right operand; if yes,
+     * then the condition becomes true.
+     * </p>
+     * <p>
+     * Example: (a &gt;= b) is not true.
+     * </p>
+     * </dd>
+     * <dt>&lt;=</dt>
+     * <dd>
+     * <p>
+     * Checks whether the value of the left operand is less than or equal to the value of the right operand; if yes,
+     * then the condition becomes true.
+     * </p>
+     * <p>
+     * Example: (a &lt;= b) is true.
+     * </p>
+     * </dd>
+     * <dt>AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL</dt>
+     * <dd>
+     * <p>
+     * Logical operators.
+     * </p>
+     * </dd>
+     * </dl>
+     * <p>
+     * <i>Supported Partition Key Types</i>: The following are the supported partition keys.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>string</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>date</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>timestamp</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>int</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>bigint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>long</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tinyint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>smallint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>decimal</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If an type is encountered that is not valid, an exception is thrown.
+     * </p>
+     * 
+     * @return An expression that filters the partitions to be returned.</p>
+     *         <p>
+     *         The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement
+     *         parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression.
+     *         </p>
+     *         <p>
+     *         <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API
+     *         call:
+     *         </p>
+     *         <dl>
+     *         <dt>=</dt>
+     *         <dd>
+     *         <p>
+     *         Checks whether the values of the two operands are equal; if yes, then the condition becomes true.
+     *         </p>
+     *         <p>
+     *         Example: Assume 'variable a' holds 10 and 'variable b' holds 20.
+     *         </p>
+     *         <p>
+     *         (a = b) is not true.
+     *         </p>
+     *         </dd>
+     *         <dt>&lt; &gt;</dt>
+     *         <dd>
+     *         <p>
+     *         Checks whether the values of two operands are equal; if the values are not equal, then the condition
+     *         becomes true.
+     *         </p>
+     *         <p>
+     *         Example: (a &lt; &gt; b) is true.
+     *         </p>
+     *         </dd>
+     *         <dt>&gt;</dt>
+     *         <dd>
+     *         <p>
+     *         Checks whether the value of the left operand is greater than the value of the right operand; if yes, then
+     *         the condition becomes true.
+     *         </p>
+     *         <p>
+     *         Example: (a &gt; b) is not true.
+     *         </p>
+     *         </dd>
+     *         <dt>&lt;</dt>
+     *         <dd>
+     *         <p>
+     *         Checks whether the value of the left operand is less than the value of the right operand; if yes, then
+     *         the condition becomes true.
+     *         </p>
+     *         <p>
+     *         Example: (a &lt; b) is true.
+     *         </p>
+     *         </dd>
+     *         <dt>&gt;=</dt>
+     *         <dd>
+     *         <p>
+     *         Checks whether the value of the left operand is greater than or equal to the value of the right operand;
+     *         if yes, then the condition becomes true.
+     *         </p>
+     *         <p>
+     *         Example: (a &gt;= b) is not true.
+     *         </p>
+     *         </dd>
+     *         <dt>&lt;=</dt>
+     *         <dd>
+     *         <p>
+     *         Checks whether the value of the left operand is less than or equal to the value of the right operand; if
+     *         yes, then the condition becomes true.
+     *         </p>
+     *         <p>
+     *         Example: (a &lt;= b) is true.
+     *         </p>
+     *         </dd>
+     *         <dt>AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL</dt>
+     *         <dd>
+     *         <p>
+     *         Logical operators.
+     *         </p>
+     *         </dd>
+     *         </dl>
+     *         <p>
+     *         <i>Supported Partition Key Types</i>: The following are the supported partition keys.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>string</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>date</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>timestamp</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>int</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>bigint</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>long</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>tinyint</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>smallint</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>decimal</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If an type is encountered that is not valid, an exception is thrown.
      */
 
     public String getExpression() {
@@ -138,7 +936,272 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * An expression that filters the partitions to be returned.
+     * </p>
+     * <p>
+     * The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a
+     * href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression.
+     * </p>
+     * <p>
+     * <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API call:
+     * </p>
+     * <dl>
+     * <dt>=</dt>
+     * <dd>
+     * <p>
+     * Checks whether the values of the two operands are equal; if yes, then the condition becomes true.
+     * </p>
+     * <p>
+     * Example: Assume 'variable a' holds 10 and 'variable b' holds 20.
+     * </p>
+     * <p>
+     * (a = b) is not true.
+     * </p>
+     * </dd>
+     * <dt>&lt; &gt;</dt>
+     * <dd>
+     * <p>
+     * Checks whether the values of two operands are equal; if the values are not equal, then the condition becomes
+     * true.
+     * </p>
+     * <p>
+     * Example: (a &lt; &gt; b) is true.
+     * </p>
+     * </dd>
+     * <dt>&gt;</dt>
+     * <dd>
+     * <p>
+     * Checks whether the value of the left operand is greater than the value of the right operand; if yes, then the
+     * condition becomes true.
+     * </p>
+     * <p>
+     * Example: (a &gt; b) is not true.
+     * </p>
+     * </dd>
+     * <dt>&lt;</dt>
+     * <dd>
+     * <p>
+     * Checks whether the value of the left operand is less than the value of the right operand; if yes, then the
+     * condition becomes true.
+     * </p>
+     * <p>
+     * Example: (a &lt; b) is true.
+     * </p>
+     * </dd>
+     * <dt>&gt;=</dt>
+     * <dd>
+     * <p>
+     * Checks whether the value of the left operand is greater than or equal to the value of the right operand; if yes,
+     * then the condition becomes true.
+     * </p>
+     * <p>
+     * Example: (a &gt;= b) is not true.
+     * </p>
+     * </dd>
+     * <dt>&lt;=</dt>
+     * <dd>
+     * <p>
+     * Checks whether the value of the left operand is less than or equal to the value of the right operand; if yes,
+     * then the condition becomes true.
+     * </p>
+     * <p>
+     * Example: (a &lt;= b) is true.
+     * </p>
+     * </dd>
+     * <dt>AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL</dt>
+     * <dd>
+     * <p>
+     * Logical operators.
+     * </p>
+     * </dd>
+     * </dl>
+     * <p>
+     * <i>Supported Partition Key Types</i>: The following are the supported partition keys.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>string</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>date</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>timestamp</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>int</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>bigint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>long</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tinyint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>smallint</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>decimal</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If an type is encountered that is not valid, an exception is thrown.
+     * </p>
+     * 
      * @param expression
+     *        An expression that filters the partitions to be returned.</p>
+     *        <p>
+     *        The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement
+     *        parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression.
+     *        </p>
+     *        <p>
+     *        <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API
+     *        call:
+     *        </p>
+     *        <dl>
+     *        <dt>=</dt>
+     *        <dd>
+     *        <p>
+     *        Checks whether the values of the two operands are equal; if yes, then the condition becomes true.
+     *        </p>
+     *        <p>
+     *        Example: Assume 'variable a' holds 10 and 'variable b' holds 20.
+     *        </p>
+     *        <p>
+     *        (a = b) is not true.
+     *        </p>
+     *        </dd>
+     *        <dt>&lt; &gt;</dt>
+     *        <dd>
+     *        <p>
+     *        Checks whether the values of two operands are equal; if the values are not equal, then the condition
+     *        becomes true.
+     *        </p>
+     *        <p>
+     *        Example: (a &lt; &gt; b) is true.
+     *        </p>
+     *        </dd>
+     *        <dt>&gt;</dt>
+     *        <dd>
+     *        <p>
+     *        Checks whether the value of the left operand is greater than the value of the right operand; if yes, then
+     *        the condition becomes true.
+     *        </p>
+     *        <p>
+     *        Example: (a &gt; b) is not true.
+     *        </p>
+     *        </dd>
+     *        <dt>&lt;</dt>
+     *        <dd>
+     *        <p>
+     *        Checks whether the value of the left operand is less than the value of the right operand; if yes, then the
+     *        condition becomes true.
+     *        </p>
+     *        <p>
+     *        Example: (a &lt; b) is true.
+     *        </p>
+     *        </dd>
+     *        <dt>&gt;=</dt>
+     *        <dd>
+     *        <p>
+     *        Checks whether the value of the left operand is greater than or equal to the value of the right operand;
+     *        if yes, then the condition becomes true.
+     *        </p>
+     *        <p>
+     *        Example: (a &gt;= b) is not true.
+     *        </p>
+     *        </dd>
+     *        <dt>&lt;=</dt>
+     *        <dd>
+     *        <p>
+     *        Checks whether the value of the left operand is less than or equal to the value of the right operand; if
+     *        yes, then the condition becomes true.
+     *        </p>
+     *        <p>
+     *        Example: (a &lt;= b) is true.
+     *        </p>
+     *        </dd>
+     *        <dt>AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL</dt>
+     *        <dd>
+     *        <p>
+     *        Logical operators.
+     *        </p>
+     *        </dd>
+     *        </dl>
+     *        <p>
+     *        <i>Supported Partition Key Types</i>: The following are the supported partition keys.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>string</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>date</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>timestamp</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>int</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>bigint</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>long</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tinyint</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>smallint</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>decimal</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If an type is encountered that is not valid, an exception is thrown.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,7 +1211,12 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * A structure containing Lake Formation audit context information.
+     * </p>
+     * 
      * @param auditContext
+     *        A structure containing Lake Formation audit context information.
      */
 
     public void setAuditContext(AuditContext auditContext) {
@@ -156,7 +1224,11 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * @return
+     * <p>
+     * A structure containing Lake Formation audit context information.
+     * </p>
+     * 
+     * @return A structure containing Lake Formation audit context information.
      */
 
     public AuditContext getAuditContext() {
@@ -164,7 +1236,12 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * A structure containing Lake Formation audit context information.
+     * </p>
+     * 
      * @param auditContext
+     *        A structure containing Lake Formation audit context information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -174,7 +1251,11 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * @return
+     * <p>
+     * A list of supported permission types.
+     * </p>
+     * 
+     * @return A list of supported permission types.
      * @see PermissionType
      */
 
@@ -183,7 +1264,12 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * A list of supported permission types.
+     * </p>
+     * 
      * @param supportedPermissionTypes
+     *        A list of supported permission types.
      * @see PermissionType
      */
 
@@ -198,12 +1284,16 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
+     * A list of supported permission types.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSupportedPermissionTypes(java.util.Collection)} or
      * {@link #withSupportedPermissionTypes(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param supportedPermissionTypes
+     *        A list of supported permission types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PermissionType
      */
@@ -219,7 +1309,12 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * A list of supported permission types.
+     * </p>
+     * 
      * @param supportedPermissionTypes
+     *        A list of supported permission types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PermissionType
      */
@@ -230,7 +1325,12 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * A list of supported permission types.
+     * </p>
+     * 
      * @param supportedPermissionTypes
+     *        A list of supported permission types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PermissionType
      */
@@ -249,7 +1349,12 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * A continuation token, if this is not the first call to retrieve these partitions.
+     * </p>
+     * 
      * @param nextToken
+     *        A continuation token, if this is not the first call to retrieve these partitions.
      */
 
     public void setNextToken(String nextToken) {
@@ -257,7 +1362,11 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * @return
+     * <p>
+     * A continuation token, if this is not the first call to retrieve these partitions.
+     * </p>
+     * 
+     * @return A continuation token, if this is not the first call to retrieve these partitions.
      */
 
     public String getNextToken() {
@@ -265,7 +1374,12 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * A continuation token, if this is not the first call to retrieve these partitions.
+     * </p>
+     * 
      * @param nextToken
+     *        A continuation token, if this is not the first call to retrieve these partitions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -275,7 +1389,12 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * The segment of the table's partitions to scan in this request.
+     * </p>
+     * 
      * @param segment
+     *        The segment of the table's partitions to scan in this request.
      */
 
     public void setSegment(Segment segment) {
@@ -283,7 +1402,11 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * @return
+     * <p>
+     * The segment of the table's partitions to scan in this request.
+     * </p>
+     * 
+     * @return The segment of the table's partitions to scan in this request.
      */
 
     public Segment getSegment() {
@@ -291,7 +1414,12 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * The segment of the table's partitions to scan in this request.
+     * </p>
+     * 
      * @param segment
+     *        The segment of the table's partitions to scan in this request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -301,7 +1429,12 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * The maximum number of partitions to return in a single response.
+     * </p>
+     * 
      * @param maxResults
+     *        The maximum number of partitions to return in a single response.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -309,7 +1442,11 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * @return
+     * <p>
+     * The maximum number of partitions to return in a single response.
+     * </p>
+     * 
+     * @return The maximum number of partitions to return in a single response.
      */
 
     public Integer getMaxResults() {
@@ -317,12 +1454,63 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * The maximum number of partitions to return in a single response.
+     * </p>
+     * 
      * @param maxResults
+     *        The maximum number of partitions to return in a single response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetUnfilteredPartitionsMetadataRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation
+     * generated authorization identifier and information from the request's authorization context.
+     * </p>
+     * 
+     * @param querySessionContext
+     *        A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake
+     *        Formation generated authorization identifier and information from the request's authorization context.
+     */
+
+    public void setQuerySessionContext(QuerySessionContext querySessionContext) {
+        this.querySessionContext = querySessionContext;
+    }
+
+    /**
+     * <p>
+     * A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation
+     * generated authorization identifier and information from the request's authorization context.
+     * </p>
+     * 
+     * @return A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake
+     *         Formation generated authorization identifier and information from the request's authorization context.
+     */
+
+    public QuerySessionContext getQuerySessionContext() {
+        return this.querySessionContext;
+    }
+
+    /**
+     * <p>
+     * A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake Formation
+     * generated authorization identifier and information from the request's authorization context.
+     * </p>
+     * 
+     * @param querySessionContext
+     *        A structure used as a protocol between query engines and Lake Formation or Glue. Contains both a Lake
+     *        Formation generated authorization identifier and information from the request's authorization context.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetUnfilteredPartitionsMetadataRequest withQuerySessionContext(QuerySessionContext querySessionContext) {
+        setQuerySessionContext(querySessionContext);
         return this;
     }
 
@@ -338,6 +1526,8 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getRegion() != null)
+            sb.append("Region: ").append(getRegion()).append(",");
         if (getCatalogId() != null)
             sb.append("CatalogId: ").append(getCatalogId()).append(",");
         if (getDatabaseName() != null)
@@ -355,7 +1545,9 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
         if (getSegment() != null)
             sb.append("Segment: ").append(getSegment()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getQuerySessionContext() != null)
+            sb.append("QuerySessionContext: ").append(getQuerySessionContext());
         sb.append("}");
         return sb.toString();
     }
@@ -370,6 +1562,10 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
         if (obj instanceof GetUnfilteredPartitionsMetadataRequest == false)
             return false;
         GetUnfilteredPartitionsMetadataRequest other = (GetUnfilteredPartitionsMetadataRequest) obj;
+        if (other.getRegion() == null ^ this.getRegion() == null)
+            return false;
+        if (other.getRegion() != null && other.getRegion().equals(this.getRegion()) == false)
+            return false;
         if (other.getCatalogId() == null ^ this.getCatalogId() == null)
             return false;
         if (other.getCatalogId() != null && other.getCatalogId().equals(this.getCatalogId()) == false)
@@ -406,6 +1602,10 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getQuerySessionContext() == null ^ this.getQuerySessionContext() == null)
+            return false;
+        if (other.getQuerySessionContext() != null && other.getQuerySessionContext().equals(this.getQuerySessionContext()) == false)
+            return false;
         return true;
     }
 
@@ -414,6 +1614,7 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
         hashCode = prime * hashCode + ((getCatalogId() == null) ? 0 : getCatalogId().hashCode());
         hashCode = prime * hashCode + ((getDatabaseName() == null) ? 0 : getDatabaseName().hashCode());
         hashCode = prime * hashCode + ((getTableName() == null) ? 0 : getTableName().hashCode());
@@ -423,6 +1624,7 @@ public class GetUnfilteredPartitionsMetadataRequest extends com.amazonaws.Amazon
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getSegment() == null) ? 0 : getSegment().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getQuerySessionContext() == null) ? 0 : getQuerySessionContext().hashCode());
         return hashCode;
     }
 

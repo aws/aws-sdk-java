@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.fis.AWSFISClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.fis.model.*;
+
 import com.amazonaws.services.fis.model.transform.*;
 
 /**
@@ -51,9 +52,9 @@ import com.amazonaws.services.fis.model.transform.*;
  * service call completes.
  * <p>
  * <p>
- * Fault Injection Simulator is a managed service that enables you to perform fault injection experiments on your Amazon
+ * Fault Injection Service is a managed service that enables you to perform fault injection experiments on your Amazon
  * Web Services workloads. For more information, see the <a
- * href="https://docs.aws.amazon.com/fis/latest/userguide/">Fault Injection Simulator User Guide</a>.
+ * href="https://docs.aws.amazon.com/fis/latest/userguide/">Fault Injection Service User Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -80,6 +81,9 @@ public class AWSFISClient extends AmazonWebServiceClient implements AWSFIS {
                     .withSupportsIon(false)
                     .withContentTypeOverride("application/json")
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fis.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.fis.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -88,9 +92,6 @@ public class AWSFISClient extends AmazonWebServiceClient implements AWSFIS {
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.fis.model.transform.ValidationExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.fis.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.fis.model.AWSFISException.class));
 
     public static AWSFISClientBuilder builder() {
@@ -168,8 +169,8 @@ public class AWSFISClient extends AmazonWebServiceClient implements AWSFIS {
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">Experiment templates</a> in the
-     * <i>Fault Injection Simulator User Guide</i>.
+     * href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">experiment templates</a> in the
+     * <i>Fault Injection Service User Guide</i>.
      * </p>
      * 
      * @param createExperimentTemplateRequest
@@ -234,6 +235,76 @@ public class AWSFISClient extends AmazonWebServiceClient implements AWSFIS {
 
     /**
      * <p>
+     * Creates a target account configuration for the experiment template. A target account configuration is required
+     * when <code>accountTargeting</code> of <code>experimentOptions</code> is set to <code>multi-account</code>. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-options.html">experiment options</a> in the
+     * <i>Fault Injection Service User Guide</i>.
+     * </p>
+     * 
+     * @param createTargetAccountConfigurationRequest
+     * @return Result of the CreateTargetAccountConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The specified input is not valid, or fails to satisfy the constraints for the request.
+     * @throws ConflictException
+     *         The request could not be processed because of a conflict.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found.
+     * @throws ServiceQuotaExceededException
+     *         You have exceeded your service quota.
+     * @sample AWSFIS.CreateTargetAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/CreateTargetAccountConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateTargetAccountConfigurationResult createTargetAccountConfiguration(CreateTargetAccountConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTargetAccountConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final CreateTargetAccountConfigurationResult executeCreateTargetAccountConfiguration(
+            CreateTargetAccountConfigurationRequest createTargetAccountConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createTargetAccountConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateTargetAccountConfigurationRequest> request = null;
+        Response<CreateTargetAccountConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateTargetAccountConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createTargetAccountConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "fis");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTargetAccountConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateTargetAccountConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateTargetAccountConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified experiment template.
      * </p>
      * 
@@ -283,6 +354,68 @@ public class AWSFISClient extends AmazonWebServiceClient implements AWSFIS {
             HttpResponseHandler<AmazonWebServiceResponse<DeleteExperimentTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteExperimentTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified target account configuration of the experiment template.
+     * </p>
+     * 
+     * @param deleteTargetAccountConfigurationRequest
+     * @return Result of the DeleteTargetAccountConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The specified input is not valid, or fails to satisfy the constraints for the request.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found.
+     * @sample AWSFIS.DeleteTargetAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/DeleteTargetAccountConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteTargetAccountConfigurationResult deleteTargetAccountConfiguration(DeleteTargetAccountConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTargetAccountConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTargetAccountConfigurationResult executeDeleteTargetAccountConfiguration(
+            DeleteTargetAccountConfigurationRequest deleteTargetAccountConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteTargetAccountConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteTargetAccountConfigurationRequest> request = null;
+        Response<DeleteTargetAccountConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteTargetAccountConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteTargetAccountConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "fis");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTargetAccountConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteTargetAccountConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteTargetAccountConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -413,6 +546,68 @@ public class AWSFISClient extends AmazonWebServiceClient implements AWSFIS {
 
     /**
      * <p>
+     * Gets information about the specified target account configuration of the experiment.
+     * </p>
+     * 
+     * @param getExperimentTargetAccountConfigurationRequest
+     * @return Result of the GetExperimentTargetAccountConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found.
+     * @throws ValidationException
+     *         The specified input is not valid, or fails to satisfy the constraints for the request.
+     * @sample AWSFIS.GetExperimentTargetAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetExperimentTargetAccountConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetExperimentTargetAccountConfigurationResult getExperimentTargetAccountConfiguration(GetExperimentTargetAccountConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetExperimentTargetAccountConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetExperimentTargetAccountConfigurationResult executeGetExperimentTargetAccountConfiguration(
+            GetExperimentTargetAccountConfigurationRequest getExperimentTargetAccountConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getExperimentTargetAccountConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetExperimentTargetAccountConfigurationRequest> request = null;
+        Response<GetExperimentTargetAccountConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetExperimentTargetAccountConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getExperimentTargetAccountConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "fis");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetExperimentTargetAccountConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetExperimentTargetAccountConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new GetExperimentTargetAccountConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets information about the specified experiment template.
      * </p>
      * 
@@ -461,6 +656,67 @@ public class AWSFISClient extends AmazonWebServiceClient implements AWSFIS {
             HttpResponseHandler<AmazonWebServiceResponse<GetExperimentTemplateResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new GetExperimentTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets information about the specified target account configuration of the experiment template.
+     * </p>
+     * 
+     * @param getTargetAccountConfigurationRequest
+     * @return Result of the GetTargetAccountConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found.
+     * @throws ValidationException
+     *         The specified input is not valid, or fails to satisfy the constraints for the request.
+     * @sample AWSFIS.GetTargetAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetTargetAccountConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetTargetAccountConfigurationResult getTargetAccountConfiguration(GetTargetAccountConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetTargetAccountConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetTargetAccountConfigurationResult executeGetTargetAccountConfiguration(GetTargetAccountConfigurationRequest getTargetAccountConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getTargetAccountConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetTargetAccountConfigurationRequest> request = null;
+        Response<GetTargetAccountConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetTargetAccountConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getTargetAccountConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "fis");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTargetAccountConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetTargetAccountConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetTargetAccountConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -578,6 +834,129 @@ public class AWSFISClient extends AmazonWebServiceClient implements AWSFIS {
 
             HttpResponseHandler<AmazonWebServiceResponse<ListActionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListActionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the resolved targets information of the specified experiment.
+     * </p>
+     * 
+     * @param listExperimentResolvedTargetsRequest
+     * @return Result of the ListExperimentResolvedTargets operation returned by the service.
+     * @throws ValidationException
+     *         The specified input is not valid, or fails to satisfy the constraints for the request.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found.
+     * @sample AWSFIS.ListExperimentResolvedTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListExperimentResolvedTargets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListExperimentResolvedTargetsResult listExperimentResolvedTargets(ListExperimentResolvedTargetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListExperimentResolvedTargets(request);
+    }
+
+    @SdkInternalApi
+    final ListExperimentResolvedTargetsResult executeListExperimentResolvedTargets(ListExperimentResolvedTargetsRequest listExperimentResolvedTargetsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listExperimentResolvedTargetsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListExperimentResolvedTargetsRequest> request = null;
+        Response<ListExperimentResolvedTargetsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListExperimentResolvedTargetsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listExperimentResolvedTargetsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "fis");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListExperimentResolvedTargets");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListExperimentResolvedTargetsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListExperimentResolvedTargetsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the target account configurations of the specified experiment.
+     * </p>
+     * 
+     * @param listExperimentTargetAccountConfigurationsRequest
+     * @return Result of the ListExperimentTargetAccountConfigurations operation returned by the service.
+     * @throws ValidationException
+     *         The specified input is not valid, or fails to satisfy the constraints for the request.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found.
+     * @sample AWSFIS.ListExperimentTargetAccountConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListExperimentTargetAccountConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListExperimentTargetAccountConfigurationsResult listExperimentTargetAccountConfigurations(ListExperimentTargetAccountConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListExperimentTargetAccountConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final ListExperimentTargetAccountConfigurationsResult executeListExperimentTargetAccountConfigurations(
+            ListExperimentTargetAccountConfigurationsRequest listExperimentTargetAccountConfigurationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listExperimentTargetAccountConfigurationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListExperimentTargetAccountConfigurationsRequest> request = null;
+        Response<ListExperimentTargetAccountConfigurationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListExperimentTargetAccountConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listExperimentTargetAccountConfigurationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "fis");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListExperimentTargetAccountConfigurations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListExperimentTargetAccountConfigurationsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListExperimentTargetAccountConfigurationsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -749,6 +1128,68 @@ public class AWSFISClient extends AmazonWebServiceClient implements AWSFIS {
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the target account configurations of the specified experiment template.
+     * </p>
+     * 
+     * @param listTargetAccountConfigurationsRequest
+     * @return Result of the ListTargetAccountConfigurations operation returned by the service.
+     * @throws ValidationException
+     *         The specified input is not valid, or fails to satisfy the constraints for the request.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found.
+     * @sample AWSFIS.ListTargetAccountConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListTargetAccountConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTargetAccountConfigurationsResult listTargetAccountConfigurations(ListTargetAccountConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTargetAccountConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final ListTargetAccountConfigurationsResult executeListTargetAccountConfigurations(
+            ListTargetAccountConfigurationsRequest listTargetAccountConfigurationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTargetAccountConfigurationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTargetAccountConfigurationsRequest> request = null;
+        Response<ListTargetAccountConfigurationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTargetAccountConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listTargetAccountConfigurationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "fis");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTargetAccountConfigurations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTargetAccountConfigurationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListTargetAccountConfigurationsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1103,6 +1544,68 @@ public class AWSFISClient extends AmazonWebServiceClient implements AWSFIS {
             HttpResponseHandler<AmazonWebServiceResponse<UpdateExperimentTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateExperimentTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the target account configuration for the specified experiment template.
+     * </p>
+     * 
+     * @param updateTargetAccountConfigurationRequest
+     * @return Result of the UpdateTargetAccountConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The specified input is not valid, or fails to satisfy the constraints for the request.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found.
+     * @sample AWSFIS.UpdateTargetAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/UpdateTargetAccountConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateTargetAccountConfigurationResult updateTargetAccountConfiguration(UpdateTargetAccountConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTargetAccountConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final UpdateTargetAccountConfigurationResult executeUpdateTargetAccountConfiguration(
+            UpdateTargetAccountConfigurationRequest updateTargetAccountConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateTargetAccountConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateTargetAccountConfigurationRequest> request = null;
+        Response<UpdateTargetAccountConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateTargetAccountConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateTargetAccountConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "fis");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTargetAccountConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateTargetAccountConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateTargetAccountConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

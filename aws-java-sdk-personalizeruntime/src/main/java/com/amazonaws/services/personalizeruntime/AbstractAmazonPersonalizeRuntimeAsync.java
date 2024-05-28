@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,19 @@ import com.amazonaws.services.personalizeruntime.model.*;
 public class AbstractAmazonPersonalizeRuntimeAsync extends AbstractAmazonPersonalizeRuntime implements AmazonPersonalizeRuntimeAsync {
 
     protected AbstractAmazonPersonalizeRuntimeAsync() {
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetActionRecommendationsResult> getActionRecommendationsAsync(GetActionRecommendationsRequest request) {
+
+        return getActionRecommendationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetActionRecommendationsResult> getActionRecommendationsAsync(GetActionRecommendationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetActionRecommendationsRequest, GetActionRecommendationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

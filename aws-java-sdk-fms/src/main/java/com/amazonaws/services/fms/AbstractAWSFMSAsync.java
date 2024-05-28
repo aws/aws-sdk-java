@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,32 @@ public class AbstractAWSFMSAsync extends AbstractAWSFMS implements AWSFMSAsync {
     @Override
     public java.util.concurrent.Future<AssociateThirdPartyFirewallResult> associateThirdPartyFirewallAsync(AssociateThirdPartyFirewallRequest request,
             com.amazonaws.handlers.AsyncHandler<AssociateThirdPartyFirewallRequest, AssociateThirdPartyFirewallResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchAssociateResourceResult> batchAssociateResourceAsync(BatchAssociateResourceRequest request) {
+
+        return batchAssociateResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchAssociateResourceResult> batchAssociateResourceAsync(BatchAssociateResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchAssociateResourceRequest, BatchAssociateResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDisassociateResourceResult> batchDisassociateResourceAsync(BatchDisassociateResourceRequest request) {
+
+        return batchDisassociateResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDisassociateResourceResult> batchDisassociateResourceAsync(BatchDisassociateResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchDisassociateResourceRequest, BatchDisassociateResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -105,6 +131,19 @@ public class AbstractAWSFMSAsync extends AbstractAWSFMS implements AWSFMSAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteResourceSetResult> deleteResourceSetAsync(DeleteResourceSetRequest request) {
+
+        return deleteResourceSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourceSetResult> deleteResourceSetAsync(DeleteResourceSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteResourceSetRequest, DeleteResourceSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateAdminAccountResult> disassociateAdminAccountAsync(DisassociateAdminAccountRequest request) {
 
         return disassociateAdminAccountAsync(request, null);
@@ -139,6 +178,19 @@ public class AbstractAWSFMSAsync extends AbstractAWSFMS implements AWSFMSAsync {
     @Override
     public java.util.concurrent.Future<GetAdminAccountResult> getAdminAccountAsync(GetAdminAccountRequest request,
             com.amazonaws.handlers.AsyncHandler<GetAdminAccountRequest, GetAdminAccountResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAdminScopeResult> getAdminScopeAsync(GetAdminScopeRequest request) {
+
+        return getAdminScopeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAdminScopeResult> getAdminScopeAsync(GetAdminScopeRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetAdminScopeRequest, GetAdminScopeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -222,6 +274,19 @@ public class AbstractAWSFMSAsync extends AbstractAWSFMS implements AWSFMSAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetResourceSetResult> getResourceSetAsync(GetResourceSetRequest request) {
+
+        return getResourceSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourceSetResult> getResourceSetAsync(GetResourceSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetResourceSetRequest, GetResourceSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetThirdPartyFirewallAssociationStatusResult> getThirdPartyFirewallAssociationStatusAsync(
             GetThirdPartyFirewallAssociationStatusRequest request) {
 
@@ -250,6 +315,34 @@ public class AbstractAWSFMSAsync extends AbstractAWSFMS implements AWSFMSAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListAdminAccountsForOrganizationResult> listAdminAccountsForOrganizationAsync(
+            ListAdminAccountsForOrganizationRequest request) {
+
+        return listAdminAccountsForOrganizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAdminAccountsForOrganizationResult> listAdminAccountsForOrganizationAsync(
+            ListAdminAccountsForOrganizationRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAdminAccountsForOrganizationRequest, ListAdminAccountsForOrganizationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAdminsManagingAccountResult> listAdminsManagingAccountAsync(ListAdminsManagingAccountRequest request) {
+
+        return listAdminsManagingAccountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAdminsManagingAccountResult> listAdminsManagingAccountAsync(ListAdminsManagingAccountRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAdminsManagingAccountRequest, ListAdminsManagingAccountResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAppsListsResult> listAppsListsAsync(ListAppsListsRequest request) {
 
         return listAppsListsAsync(request, null);
@@ -271,6 +364,19 @@ public class AbstractAWSFMSAsync extends AbstractAWSFMS implements AWSFMSAsync {
     @Override
     public java.util.concurrent.Future<ListComplianceStatusResult> listComplianceStatusAsync(ListComplianceStatusRequest request,
             com.amazonaws.handlers.AsyncHandler<ListComplianceStatusRequest, ListComplianceStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDiscoveredResourcesResult> listDiscoveredResourcesAsync(ListDiscoveredResourcesRequest request) {
+
+        return listDiscoveredResourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDiscoveredResourcesResult> listDiscoveredResourcesAsync(ListDiscoveredResourcesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDiscoveredResourcesRequest, ListDiscoveredResourcesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -315,6 +421,32 @@ public class AbstractAWSFMSAsync extends AbstractAWSFMS implements AWSFMSAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListResourceSetResourcesResult> listResourceSetResourcesAsync(ListResourceSetResourcesRequest request) {
+
+        return listResourceSetResourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourceSetResourcesResult> listResourceSetResourcesAsync(ListResourceSetResourcesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListResourceSetResourcesRequest, ListResourceSetResourcesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourceSetsResult> listResourceSetsAsync(ListResourceSetsRequest request) {
+
+        return listResourceSetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourceSetsResult> listResourceSetsAsync(ListResourceSetsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListResourceSetsRequest, ListResourceSetsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -338,6 +470,19 @@ public class AbstractAWSFMSAsync extends AbstractAWSFMS implements AWSFMSAsync {
     public java.util.concurrent.Future<ListThirdPartyFirewallFirewallPoliciesResult> listThirdPartyFirewallFirewallPoliciesAsync(
             ListThirdPartyFirewallFirewallPoliciesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListThirdPartyFirewallFirewallPoliciesRequest, ListThirdPartyFirewallFirewallPoliciesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAdminAccountResult> putAdminAccountAsync(PutAdminAccountRequest request) {
+
+        return putAdminAccountAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAdminAccountResult> putAdminAccountAsync(PutAdminAccountRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutAdminAccountRequest, PutAdminAccountResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -390,6 +535,19 @@ public class AbstractAWSFMSAsync extends AbstractAWSFMS implements AWSFMSAsync {
     @Override
     public java.util.concurrent.Future<PutProtocolsListResult> putProtocolsListAsync(PutProtocolsListRequest request,
             com.amazonaws.handlers.AsyncHandler<PutProtocolsListRequest, PutProtocolsListResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutResourceSetResult> putResourceSetAsync(PutResourceSetRequest request) {
+
+        return putResourceSetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutResourceSetResult> putResourceSetAsync(PutResourceSetRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutResourceSetRequest, PutResourceSetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

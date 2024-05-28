@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,7 +48,8 @@ public class ProviderDescription implements Serializable, Cloneable, StructuredP
     private java.util.Date lastModifiedDate;
     /**
      * <p>
-     * The date the provider was added to the user pool.
+     * The date and time when the item was created. Amazon Cognito returns this timestamp in UNIX epoch time format.
+     * Your SDK might render the output in a human-readable format like ISO 8601 or a Java <code>Date</code> object.
      * </p>
      */
     private java.util.Date creationDate;
@@ -208,11 +209,14 @@ public class ProviderDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The date the provider was added to the user pool.
+     * The date and time when the item was created. Amazon Cognito returns this timestamp in UNIX epoch time format.
+     * Your SDK might render the output in a human-readable format like ISO 8601 or a Java <code>Date</code> object.
      * </p>
      * 
      * @param creationDate
-     *        The date the provider was added to the user pool.
+     *        The date and time when the item was created. Amazon Cognito returns this timestamp in UNIX epoch time
+     *        format. Your SDK might render the output in a human-readable format like ISO 8601 or a Java
+     *        <code>Date</code> object.
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -221,10 +225,13 @@ public class ProviderDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The date the provider was added to the user pool.
+     * The date and time when the item was created. Amazon Cognito returns this timestamp in UNIX epoch time format.
+     * Your SDK might render the output in a human-readable format like ISO 8601 or a Java <code>Date</code> object.
      * </p>
      * 
-     * @return The date the provider was added to the user pool.
+     * @return The date and time when the item was created. Amazon Cognito returns this timestamp in UNIX epoch time
+     *         format. Your SDK might render the output in a human-readable format like ISO 8601 or a Java
+     *         <code>Date</code> object.
      */
 
     public java.util.Date getCreationDate() {
@@ -233,11 +240,14 @@ public class ProviderDescription implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The date the provider was added to the user pool.
+     * The date and time when the item was created. Amazon Cognito returns this timestamp in UNIX epoch time format.
+     * Your SDK might render the output in a human-readable format like ISO 8601 or a Java <code>Date</code> object.
      * </p>
      * 
      * @param creationDate
-     *        The date the provider was added to the user pool.
+     *        The date and time when the item was created. Amazon Cognito returns this timestamp in UNIX epoch time
+     *        format. Your SDK might render the output in a human-readable format like ISO 8601 or a Java
+     *        <code>Date</code> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

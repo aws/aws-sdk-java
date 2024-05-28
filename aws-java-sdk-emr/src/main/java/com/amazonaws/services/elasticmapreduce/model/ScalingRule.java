@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,8 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * A scale-in or scale-out rule that defines scaling activity, including the CloudWatch metric alarm that triggers
- * activity, how EC2 instances are added or removed, and the periodicity of adjustments. The automatic scaling policy
- * for an instance group can comprise one or more automatic scaling rules.
+ * activity, how Amazon EC2 instances are added or removed, and the periodicity of adjustments. The automatic scaling
+ * policy for an instance group can comprise one or more automatic scaling rules.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ScalingRule" target="_top">AWS API

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,10 +26,10 @@ import com.amazonaws.services.savingsplans.model.*;
  * </p>
  * <p>
  * <p>
- * Savings Plans are a pricing model that offer significant savings on AWS usage (for example, on Amazon EC2 instances).
- * You commit to a consistent amount of usage, in USD per hour, for a term of 1 or 3 years, and receive a lower price
- * for that usage. For more information, see the <a
- * href="https://docs.aws.amazon.com/savingsplans/latest/userguide/">AWS Savings Plans User Guide</a>.
+ * Savings Plans are a pricing model that offer significant savings on Amazon Web Services usage (for example, on Amazon
+ * EC2 instances). You commit to a consistent amount of usage per hour, in the specified currency, for a term of one or
+ * three years, and receive a lower price for that usage. For more information, see the <a
+ * href="https://docs.aws.amazon.com/savingsplans/latest/userguide/">Amazon Web Services Savings Plans User Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -99,7 +99,7 @@ public interface AWSSavingsPlansAsync extends AWSSavingsPlans {
 
     /**
      * <p>
-     * Describes the specified Savings Plans rates.
+     * Describes the rates for the specified Savings Plan.
      * </p>
      * 
      * @param describeSavingsPlanRatesRequest
@@ -112,7 +112,7 @@ public interface AWSSavingsPlansAsync extends AWSSavingsPlans {
 
     /**
      * <p>
-     * Describes the specified Savings Plans rates.
+     * Describes the rates for the specified Savings Plan.
      * </p>
      * 
      * @param describeSavingsPlanRatesRequest
@@ -161,7 +161,7 @@ public interface AWSSavingsPlansAsync extends AWSSavingsPlans {
 
     /**
      * <p>
-     * Describes the specified Savings Plans offering rates.
+     * Describes the offering rates for the specified Savings Plans.
      * </p>
      * 
      * @param describeSavingsPlansOfferingRatesRequest
@@ -176,7 +176,7 @@ public interface AWSSavingsPlansAsync extends AWSSavingsPlans {
 
     /**
      * <p>
-     * Describes the specified Savings Plans offering rates.
+     * Describes the offering rates for the specified Savings Plans.
      * </p>
      * 
      * @param describeSavingsPlansOfferingRatesRequest
@@ -196,7 +196,7 @@ public interface AWSSavingsPlansAsync extends AWSSavingsPlans {
 
     /**
      * <p>
-     * Describes the specified Savings Plans offerings.
+     * Describes the offerings for the specified Savings Plans.
      * </p>
      * 
      * @param describeSavingsPlansOfferingsRequest
@@ -211,7 +211,7 @@ public interface AWSSavingsPlansAsync extends AWSSavingsPlans {
 
     /**
      * <p>
-     * Describes the specified Savings Plans offerings.
+     * Describes the offerings for the specified Savings Plans.
      * </p>
      * 
      * @param describeSavingsPlansOfferingsRequest
@@ -259,6 +259,37 @@ public interface AWSSavingsPlansAsync extends AWSSavingsPlans {
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the specified Savings Plan.
+     * </p>
+     * 
+     * @param returnSavingsPlanRequest
+     * @return A Java Future containing the result of the ReturnSavingsPlan operation returned by the service.
+     * @sample AWSSavingsPlansAsync.ReturnSavingsPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/ReturnSavingsPlan" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ReturnSavingsPlanResult> returnSavingsPlanAsync(ReturnSavingsPlanRequest returnSavingsPlanRequest);
+
+    /**
+     * <p>
+     * Returns the specified Savings Plan.
+     * </p>
+     * 
+     * @param returnSavingsPlanRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ReturnSavingsPlan operation returned by the service.
+     * @sample AWSSavingsPlansAsyncHandler.ReturnSavingsPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/ReturnSavingsPlan" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ReturnSavingsPlanResult> returnSavingsPlanAsync(ReturnSavingsPlanRequest returnSavingsPlanRequest,
+            com.amazonaws.handlers.AsyncHandler<ReturnSavingsPlanRequest, ReturnSavingsPlanResult> asyncHandler);
 
     /**
      * <p>

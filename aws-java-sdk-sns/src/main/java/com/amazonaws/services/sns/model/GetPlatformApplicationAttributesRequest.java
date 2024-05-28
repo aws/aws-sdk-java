@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Input for GetPlatformApplicationAttributes action.
+ * Input for <code>GetPlatformApplicationAttributes</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetPlatformApplicationAttributes"
@@ -30,18 +30,18 @@ public class GetPlatformApplicationAttributesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * PlatformApplicationArn for GetPlatformApplicationAttributesInput.
+     * <code>PlatformApplicationArn</code> for GetPlatformApplicationAttributesInput.
      * </p>
      */
     private String platformApplicationArn;
 
     /**
      * <p>
-     * PlatformApplicationArn for GetPlatformApplicationAttributesInput.
+     * <code>PlatformApplicationArn</code> for GetPlatformApplicationAttributesInput.
      * </p>
      * 
      * @param platformApplicationArn
-     *        PlatformApplicationArn for GetPlatformApplicationAttributesInput.
+     *        <code>PlatformApplicationArn</code> for GetPlatformApplicationAttributesInput.
      */
 
     public void setPlatformApplicationArn(String platformApplicationArn) {
@@ -50,10 +50,10 @@ public class GetPlatformApplicationAttributesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * PlatformApplicationArn for GetPlatformApplicationAttributesInput.
+     * <code>PlatformApplicationArn</code> for GetPlatformApplicationAttributesInput.
      * </p>
      * 
-     * @return PlatformApplicationArn for GetPlatformApplicationAttributesInput.
+     * @return <code>PlatformApplicationArn</code> for GetPlatformApplicationAttributesInput.
      */
 
     public String getPlatformApplicationArn() {
@@ -62,11 +62,11 @@ public class GetPlatformApplicationAttributesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * PlatformApplicationArn for GetPlatformApplicationAttributesInput.
+     * <code>PlatformApplicationArn</code> for GetPlatformApplicationAttributesInput.
      * </p>
      * 
      * @param platformApplicationArn
-     *        PlatformApplicationArn for GetPlatformApplicationAttributesInput.
+     *        <code>PlatformApplicationArn</code> for GetPlatformApplicationAttributesInput.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

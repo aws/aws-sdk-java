@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -217,6 +217,26 @@ public class CreateDBClusterRequestMarshaller implements Marshaller<Request<Crea
             }
         }
 
+        {
+            RdsCustomClusterConfiguration rdsCustomClusterConfiguration = createDBClusterRequest.getRdsCustomClusterConfiguration();
+            if (rdsCustomClusterConfiguration != null) {
+
+                if (rdsCustomClusterConfiguration.getInterconnectSubnetId() != null) {
+                    request.addParameter("RdsCustomClusterConfiguration.InterconnectSubnetId",
+                            StringUtils.fromString(rdsCustomClusterConfiguration.getInterconnectSubnetId()));
+                }
+
+                if (rdsCustomClusterConfiguration.getTransitGatewayMulticastDomainId() != null) {
+                    request.addParameter("RdsCustomClusterConfiguration.TransitGatewayMulticastDomainId",
+                            StringUtils.fromString(rdsCustomClusterConfiguration.getTransitGatewayMulticastDomainId()));
+                }
+
+                if (rdsCustomClusterConfiguration.getReplicaMode() != null) {
+                    request.addParameter("RdsCustomClusterConfiguration.ReplicaMode", StringUtils.fromString(rdsCustomClusterConfiguration.getReplicaMode()));
+                }
+            }
+        }
+
         if (createDBClusterRequest.getDeletionProtection() != null) {
             request.addParameter("DeletionProtection", StringUtils.fromBoolean(createDBClusterRequest.getDeletionProtection()));
         }
@@ -289,6 +309,10 @@ public class CreateDBClusterRequestMarshaller implements Marshaller<Request<Crea
             request.addParameter("PerformanceInsightsRetentionPeriod", StringUtils.fromInteger(createDBClusterRequest.getPerformanceInsightsRetentionPeriod()));
         }
 
+        if (createDBClusterRequest.getEnableLimitlessDatabase() != null) {
+            request.addParameter("EnableLimitlessDatabase", StringUtils.fromBoolean(createDBClusterRequest.getEnableLimitlessDatabase()));
+        }
+
         {
             ServerlessV2ScalingConfiguration serverlessV2ScalingConfiguration = createDBClusterRequest.getServerlessV2ScalingConfiguration();
             if (serverlessV2ScalingConfiguration != null) {
@@ -307,6 +331,30 @@ public class CreateDBClusterRequestMarshaller implements Marshaller<Request<Crea
 
         if (createDBClusterRequest.getNetworkType() != null) {
             request.addParameter("NetworkType", StringUtils.fromString(createDBClusterRequest.getNetworkType()));
+        }
+
+        if (createDBClusterRequest.getDBSystemId() != null) {
+            request.addParameter("DBSystemId", StringUtils.fromString(createDBClusterRequest.getDBSystemId()));
+        }
+
+        if (createDBClusterRequest.getManageMasterUserPassword() != null) {
+            request.addParameter("ManageMasterUserPassword", StringUtils.fromBoolean(createDBClusterRequest.getManageMasterUserPassword()));
+        }
+
+        if (createDBClusterRequest.getMasterUserSecretKmsKeyId() != null) {
+            request.addParameter("MasterUserSecretKmsKeyId", StringUtils.fromString(createDBClusterRequest.getMasterUserSecretKmsKeyId()));
+        }
+
+        if (createDBClusterRequest.getEnableLocalWriteForwarding() != null) {
+            request.addParameter("EnableLocalWriteForwarding", StringUtils.fromBoolean(createDBClusterRequest.getEnableLocalWriteForwarding()));
+        }
+
+        if (createDBClusterRequest.getCACertificateIdentifier() != null) {
+            request.addParameter("CACertificateIdentifier", StringUtils.fromString(createDBClusterRequest.getCACertificateIdentifier()));
+        }
+
+        if (createDBClusterRequest.getEngineLifecycleSupport() != null) {
+            request.addParameter("EngineLifecycleSupport", StringUtils.fromString(createDBClusterRequest.getEngineLifecycleSupport()));
         }
 
         if (createDBClusterRequest.getSourceRegion() != null) {

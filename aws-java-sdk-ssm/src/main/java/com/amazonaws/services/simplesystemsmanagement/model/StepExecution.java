@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -165,6 +165,18 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private TargetLocation targetLocation;
+    /**
+     * <p>
+     * The CloudWatch alarms that were invoked by the automation.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<AlarmStateInformation> triggeredAlarms;
+    /**
+     * <p>
+     * Information about the parent step.
+     * </p>
+     */
+    private ParentStepDetails parentStepDetails;
 
     /**
      * <p>
@@ -1293,6 +1305,119 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The CloudWatch alarms that were invoked by the automation.
+     * </p>
+     * 
+     * @return The CloudWatch alarms that were invoked by the automation.
+     */
+
+    public java.util.List<AlarmStateInformation> getTriggeredAlarms() {
+        if (triggeredAlarms == null) {
+            triggeredAlarms = new com.amazonaws.internal.SdkInternalList<AlarmStateInformation>();
+        }
+        return triggeredAlarms;
+    }
+
+    /**
+     * <p>
+     * The CloudWatch alarms that were invoked by the automation.
+     * </p>
+     * 
+     * @param triggeredAlarms
+     *        The CloudWatch alarms that were invoked by the automation.
+     */
+
+    public void setTriggeredAlarms(java.util.Collection<AlarmStateInformation> triggeredAlarms) {
+        if (triggeredAlarms == null) {
+            this.triggeredAlarms = null;
+            return;
+        }
+
+        this.triggeredAlarms = new com.amazonaws.internal.SdkInternalList<AlarmStateInformation>(triggeredAlarms);
+    }
+
+    /**
+     * <p>
+     * The CloudWatch alarms that were invoked by the automation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTriggeredAlarms(java.util.Collection)} or {@link #withTriggeredAlarms(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param triggeredAlarms
+     *        The CloudWatch alarms that were invoked by the automation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StepExecution withTriggeredAlarms(AlarmStateInformation... triggeredAlarms) {
+        if (this.triggeredAlarms == null) {
+            setTriggeredAlarms(new com.amazonaws.internal.SdkInternalList<AlarmStateInformation>(triggeredAlarms.length));
+        }
+        for (AlarmStateInformation ele : triggeredAlarms) {
+            this.triggeredAlarms.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The CloudWatch alarms that were invoked by the automation.
+     * </p>
+     * 
+     * @param triggeredAlarms
+     *        The CloudWatch alarms that were invoked by the automation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StepExecution withTriggeredAlarms(java.util.Collection<AlarmStateInformation> triggeredAlarms) {
+        setTriggeredAlarms(triggeredAlarms);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the parent step.
+     * </p>
+     * 
+     * @param parentStepDetails
+     *        Information about the parent step.
+     */
+
+    public void setParentStepDetails(ParentStepDetails parentStepDetails) {
+        this.parentStepDetails = parentStepDetails;
+    }
+
+    /**
+     * <p>
+     * Information about the parent step.
+     * </p>
+     * 
+     * @return Information about the parent step.
+     */
+
+    public ParentStepDetails getParentStepDetails() {
+        return this.parentStepDetails;
+    }
+
+    /**
+     * <p>
+     * Information about the parent step.
+     * </p>
+     * 
+     * @param parentStepDetails
+     *        Information about the parent step.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StepExecution withParentStepDetails(ParentStepDetails parentStepDetails) {
+        setParentStepDetails(parentStepDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1347,7 +1472,11 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
         if (getTargets() != null)
             sb.append("Targets: ").append(getTargets()).append(",");
         if (getTargetLocation() != null)
-            sb.append("TargetLocation: ").append(getTargetLocation());
+            sb.append("TargetLocation: ").append(getTargetLocation()).append(",");
+        if (getTriggeredAlarms() != null)
+            sb.append("TriggeredAlarms: ").append(getTriggeredAlarms()).append(",");
+        if (getParentStepDetails() != null)
+            sb.append("ParentStepDetails: ").append(getParentStepDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -1450,6 +1579,14 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTargetLocation() != null && other.getTargetLocation().equals(this.getTargetLocation()) == false)
             return false;
+        if (other.getTriggeredAlarms() == null ^ this.getTriggeredAlarms() == null)
+            return false;
+        if (other.getTriggeredAlarms() != null && other.getTriggeredAlarms().equals(this.getTriggeredAlarms()) == false)
+            return false;
+        if (other.getParentStepDetails() == null ^ this.getParentStepDetails() == null)
+            return false;
+        if (other.getParentStepDetails() != null && other.getParentStepDetails().equals(this.getParentStepDetails()) == false)
+            return false;
         return true;
     }
 
@@ -1480,6 +1617,8 @@ public class StepExecution implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getValidNextSteps() == null) ? 0 : getValidNextSteps().hashCode());
         hashCode = prime * hashCode + ((getTargets() == null) ? 0 : getTargets().hashCode());
         hashCode = prime * hashCode + ((getTargetLocation() == null) ? 0 : getTargetLocation().hashCode());
+        hashCode = prime * hashCode + ((getTriggeredAlarms() == null) ? 0 : getTriggeredAlarms().hashCode());
+        hashCode = prime * hashCode + ((getParentStepDetails() == null) ? 0 : getParentStepDetails().hashCode());
         return hashCode;
     }
 

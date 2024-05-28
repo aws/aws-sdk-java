@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,8 +37,8 @@ public class ModifyCertificatesRequest extends com.amazonaws.AmazonWebServiceReq
     private String certificateIdentifier;
     /**
      * <p>
-     * A value that indicates whether to remove the override for the default certificate. If the override is removed,
-     * the default certificate is the system default.
+     * Specifies whether to remove the override for the default certificate. If the override is removed, the default
+     * certificate is the system default.
      * </p>
      */
     private Boolean removeCustomerOverride;
@@ -106,13 +106,13 @@ public class ModifyCertificatesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A value that indicates whether to remove the override for the default certificate. If the override is removed,
-     * the default certificate is the system default.
+     * Specifies whether to remove the override for the default certificate. If the override is removed, the default
+     * certificate is the system default.
      * </p>
      * 
      * @param removeCustomerOverride
-     *        A value that indicates whether to remove the override for the default certificate. If the override is
-     *        removed, the default certificate is the system default.
+     *        Specifies whether to remove the override for the default certificate. If the override is removed, the
+     *        default certificate is the system default.
      */
 
     public void setRemoveCustomerOverride(Boolean removeCustomerOverride) {
@@ -121,12 +121,12 @@ public class ModifyCertificatesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A value that indicates whether to remove the override for the default certificate. If the override is removed,
-     * the default certificate is the system default.
+     * Specifies whether to remove the override for the default certificate. If the override is removed, the default
+     * certificate is the system default.
      * </p>
      * 
-     * @return A value that indicates whether to remove the override for the default certificate. If the override is
-     *         removed, the default certificate is the system default.
+     * @return Specifies whether to remove the override for the default certificate. If the override is removed, the
+     *         default certificate is the system default.
      */
 
     public Boolean getRemoveCustomerOverride() {
@@ -135,13 +135,13 @@ public class ModifyCertificatesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A value that indicates whether to remove the override for the default certificate. If the override is removed,
-     * the default certificate is the system default.
+     * Specifies whether to remove the override for the default certificate. If the override is removed, the default
+     * certificate is the system default.
      * </p>
      * 
      * @param removeCustomerOverride
-     *        A value that indicates whether to remove the override for the default certificate. If the override is
-     *        removed, the default certificate is the system default.
+     *        Specifies whether to remove the override for the default certificate. If the override is removed, the
+     *        default certificate is the system default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,12 +152,12 @@ public class ModifyCertificatesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A value that indicates whether to remove the override for the default certificate. If the override is removed,
-     * the default certificate is the system default.
+     * Specifies whether to remove the override for the default certificate. If the override is removed, the default
+     * certificate is the system default.
      * </p>
      * 
-     * @return A value that indicates whether to remove the override for the default certificate. If the override is
-     *         removed, the default certificate is the system default.
+     * @return Specifies whether to remove the override for the default certificate. If the override is removed, the
+     *         default certificate is the system default.
      */
 
     public Boolean isRemoveCustomerOverride() {

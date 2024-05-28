@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,21 +28,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/StatisticSet" target="_top">AWS API
  *      Documentation</a>
  */
+@Deprecated
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class StatisticSet implements Serializable, Cloneable, StructuredPojo {
 
-    /**
-     * <p>
-     * <b>Internal only</b>. The maximum value of the sample set.
-     * </p>
-     */
-    private Double maximum;
-    /**
-     * <p>
-     * <b>Internal only</b>. The minimum value of the sample set.
-     * </p>
-     */
-    private Double minimum;
     /**
      * <p>
      * <b>Internal only</b>. The number of samples used for the statistic set.
@@ -55,86 +44,18 @@ public class StatisticSet implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Double sum;
-
-    /**
-     * <p>
-     * <b>Internal only</b>. The maximum value of the sample set.
-     * </p>
-     * 
-     * @param maximum
-     *        <b>Internal only</b>. The maximum value of the sample set.
-     */
-
-    public void setMaximum(Double maximum) {
-        this.maximum = maximum;
-    }
-
-    /**
-     * <p>
-     * <b>Internal only</b>. The maximum value of the sample set.
-     * </p>
-     * 
-     * @return <b>Internal only</b>. The maximum value of the sample set.
-     */
-
-    public Double getMaximum() {
-        return this.maximum;
-    }
-
-    /**
-     * <p>
-     * <b>Internal only</b>. The maximum value of the sample set.
-     * </p>
-     * 
-     * @param maximum
-     *        <b>Internal only</b>. The maximum value of the sample set.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public StatisticSet withMaximum(Double maximum) {
-        setMaximum(maximum);
-        return this;
-    }
-
     /**
      * <p>
      * <b>Internal only</b>. The minimum value of the sample set.
      * </p>
-     * 
-     * @param minimum
-     *        <b>Internal only</b>. The minimum value of the sample set.
      */
-
-    public void setMinimum(Double minimum) {
-        this.minimum = minimum;
-    }
-
+    private Double minimum;
     /**
      * <p>
-     * <b>Internal only</b>. The minimum value of the sample set.
+     * <b>Internal only</b>. The maximum value of the sample set.
      * </p>
-     * 
-     * @return <b>Internal only</b>. The minimum value of the sample set.
      */
-
-    public Double getMinimum() {
-        return this.minimum;
-    }
-
-    /**
-     * <p>
-     * <b>Internal only</b>. The minimum value of the sample set.
-     * </p>
-     * 
-     * @param minimum
-     *        <b>Internal only</b>. The minimum value of the sample set.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public StatisticSet withMinimum(Double minimum) {
-        setMinimum(minimum);
-        return this;
-    }
+    private Double maximum;
 
     /**
      * <p>
@@ -217,6 +138,86 @@ public class StatisticSet implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * <b>Internal only</b>. The minimum value of the sample set.
+     * </p>
+     * 
+     * @param minimum
+     *        <b>Internal only</b>. The minimum value of the sample set.
+     */
+
+    public void setMinimum(Double minimum) {
+        this.minimum = minimum;
+    }
+
+    /**
+     * <p>
+     * <b>Internal only</b>. The minimum value of the sample set.
+     * </p>
+     * 
+     * @return <b>Internal only</b>. The minimum value of the sample set.
+     */
+
+    public Double getMinimum() {
+        return this.minimum;
+    }
+
+    /**
+     * <p>
+     * <b>Internal only</b>. The minimum value of the sample set.
+     * </p>
+     * 
+     * @param minimum
+     *        <b>Internal only</b>. The minimum value of the sample set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StatisticSet withMinimum(Double minimum) {
+        setMinimum(minimum);
+        return this;
+    }
+
+    /**
+     * <p>
+     * <b>Internal only</b>. The maximum value of the sample set.
+     * </p>
+     * 
+     * @param maximum
+     *        <b>Internal only</b>. The maximum value of the sample set.
+     */
+
+    public void setMaximum(Double maximum) {
+        this.maximum = maximum;
+    }
+
+    /**
+     * <p>
+     * <b>Internal only</b>. The maximum value of the sample set.
+     * </p>
+     * 
+     * @return <b>Internal only</b>. The maximum value of the sample set.
+     */
+
+    public Double getMaximum() {
+        return this.maximum;
+    }
+
+    /**
+     * <p>
+     * <b>Internal only</b>. The maximum value of the sample set.
+     * </p>
+     * 
+     * @param maximum
+     *        <b>Internal only</b>. The maximum value of the sample set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StatisticSet withMaximum(Double maximum) {
+        setMaximum(maximum);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -228,14 +229,14 @@ public class StatisticSet implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getMaximum() != null)
-            sb.append("Maximum: ").append(getMaximum()).append(",");
-        if (getMinimum() != null)
-            sb.append("Minimum: ").append(getMinimum()).append(",");
         if (getSampleCount() != null)
             sb.append("SampleCount: ").append(getSampleCount()).append(",");
         if (getSum() != null)
-            sb.append("Sum: ").append(getSum());
+            sb.append("Sum: ").append(getSum()).append(",");
+        if (getMinimum() != null)
+            sb.append("Minimum: ").append(getMinimum()).append(",");
+        if (getMaximum() != null)
+            sb.append("Maximum: ").append(getMaximum());
         sb.append("}");
         return sb.toString();
     }
@@ -250,14 +251,6 @@ public class StatisticSet implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof StatisticSet == false)
             return false;
         StatisticSet other = (StatisticSet) obj;
-        if (other.getMaximum() == null ^ this.getMaximum() == null)
-            return false;
-        if (other.getMaximum() != null && other.getMaximum().equals(this.getMaximum()) == false)
-            return false;
-        if (other.getMinimum() == null ^ this.getMinimum() == null)
-            return false;
-        if (other.getMinimum() != null && other.getMinimum().equals(this.getMinimum()) == false)
-            return false;
         if (other.getSampleCount() == null ^ this.getSampleCount() == null)
             return false;
         if (other.getSampleCount() != null && other.getSampleCount().equals(this.getSampleCount()) == false)
@@ -265,6 +258,14 @@ public class StatisticSet implements Serializable, Cloneable, StructuredPojo {
         if (other.getSum() == null ^ this.getSum() == null)
             return false;
         if (other.getSum() != null && other.getSum().equals(this.getSum()) == false)
+            return false;
+        if (other.getMinimum() == null ^ this.getMinimum() == null)
+            return false;
+        if (other.getMinimum() != null && other.getMinimum().equals(this.getMinimum()) == false)
+            return false;
+        if (other.getMaximum() == null ^ this.getMaximum() == null)
+            return false;
+        if (other.getMaximum() != null && other.getMaximum().equals(this.getMaximum()) == false)
             return false;
         return true;
     }
@@ -274,10 +275,10 @@ public class StatisticSet implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getMaximum() == null) ? 0 : getMaximum().hashCode());
-        hashCode = prime * hashCode + ((getMinimum() == null) ? 0 : getMinimum().hashCode());
         hashCode = prime * hashCode + ((getSampleCount() == null) ? 0 : getSampleCount().hashCode());
         hashCode = prime * hashCode + ((getSum() == null) ? 0 : getSum().hashCode());
+        hashCode = prime * hashCode + ((getMinimum() == null) ? 0 : getMinimum().hashCode());
+        hashCode = prime * hashCode + ((getMaximum() == null) ? 0 : getMaximum().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,22 +37,55 @@ public class IdentityProviderDetails implements Serializable, Cloneable, Structu
     private String url;
     /**
      * <p>
-     * Provides the type of <code>InvocationRole</code> used to authenticate the user account.
+     * This parameter is only applicable if your <code>IdentityProviderType</code> is <code>API_GATEWAY</code>. Provides
+     * the type of <code>InvocationRole</code> used to authenticate the user account.
      * </p>
      */
     private String invocationRole;
     /**
      * <p>
-     * The identifier of the Directory Service directory that you want to stop sharing.
+     * The identifier of the Directory Service directory that you want to use as your identity provider.
      * </p>
      */
     private String directoryId;
     /**
      * <p>
-     * The ARN for a lambda function to use for the Identity provider.
+     * The ARN for a Lambda function to use for the Identity provider.
      * </p>
      */
     private String function;
+    /**
+     * <p>
+     * For SFTP-enabled servers, and for custom identity providers <i>only</i>, you can specify whether to authenticate
+     * using a password, SSH key pair, or both.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PASSWORD</code> - users must provide their password to connect.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PUBLIC_KEY</code> - users must provide their private key to connect.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PUBLIC_KEY_OR_PASSWORD</code> - users can authenticate with either their password or their key. This is the
+     * default value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PUBLIC_KEY_AND_PASSWORD</code> - users must provide both their private key and their password to connect.
+     * The server checks the key first, and then if the key is valid, the system prompts for a password. If the private
+     * key provided does not match the public key that is stored, authentication fails.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String sftpAuthenticationMethods;
 
     /**
      * <p>
@@ -96,10 +129,12 @@ public class IdentityProviderDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Provides the type of <code>InvocationRole</code> used to authenticate the user account.
+     * This parameter is only applicable if your <code>IdentityProviderType</code> is <code>API_GATEWAY</code>. Provides
+     * the type of <code>InvocationRole</code> used to authenticate the user account.
      * </p>
      * 
      * @param invocationRole
+     *        This parameter is only applicable if your <code>IdentityProviderType</code> is <code>API_GATEWAY</code>.
      *        Provides the type of <code>InvocationRole</code> used to authenticate the user account.
      */
 
@@ -109,10 +144,12 @@ public class IdentityProviderDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Provides the type of <code>InvocationRole</code> used to authenticate the user account.
+     * This parameter is only applicable if your <code>IdentityProviderType</code> is <code>API_GATEWAY</code>. Provides
+     * the type of <code>InvocationRole</code> used to authenticate the user account.
      * </p>
      * 
-     * @return Provides the type of <code>InvocationRole</code> used to authenticate the user account.
+     * @return This parameter is only applicable if your <code>IdentityProviderType</code> is <code>API_GATEWAY</code>.
+     *         Provides the type of <code>InvocationRole</code> used to authenticate the user account.
      */
 
     public String getInvocationRole() {
@@ -121,10 +158,12 @@ public class IdentityProviderDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Provides the type of <code>InvocationRole</code> used to authenticate the user account.
+     * This parameter is only applicable if your <code>IdentityProviderType</code> is <code>API_GATEWAY</code>. Provides
+     * the type of <code>InvocationRole</code> used to authenticate the user account.
      * </p>
      * 
      * @param invocationRole
+     *        This parameter is only applicable if your <code>IdentityProviderType</code> is <code>API_GATEWAY</code>.
      *        Provides the type of <code>InvocationRole</code> used to authenticate the user account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -136,11 +175,11 @@ public class IdentityProviderDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The identifier of the Directory Service directory that you want to stop sharing.
+     * The identifier of the Directory Service directory that you want to use as your identity provider.
      * </p>
      * 
      * @param directoryId
-     *        The identifier of the Directory Service directory that you want to stop sharing.
+     *        The identifier of the Directory Service directory that you want to use as your identity provider.
      */
 
     public void setDirectoryId(String directoryId) {
@@ -149,10 +188,10 @@ public class IdentityProviderDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The identifier of the Directory Service directory that you want to stop sharing.
+     * The identifier of the Directory Service directory that you want to use as your identity provider.
      * </p>
      * 
-     * @return The identifier of the Directory Service directory that you want to stop sharing.
+     * @return The identifier of the Directory Service directory that you want to use as your identity provider.
      */
 
     public String getDirectoryId() {
@@ -161,11 +200,11 @@ public class IdentityProviderDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The identifier of the Directory Service directory that you want to stop sharing.
+     * The identifier of the Directory Service directory that you want to use as your identity provider.
      * </p>
      * 
      * @param directoryId
-     *        The identifier of the Directory Service directory that you want to stop sharing.
+     *        The identifier of the Directory Service directory that you want to use as your identity provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -176,11 +215,11 @@ public class IdentityProviderDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The ARN for a lambda function to use for the Identity provider.
+     * The ARN for a Lambda function to use for the Identity provider.
      * </p>
      * 
      * @param function
-     *        The ARN for a lambda function to use for the Identity provider.
+     *        The ARN for a Lambda function to use for the Identity provider.
      */
 
     public void setFunction(String function) {
@@ -189,10 +228,10 @@ public class IdentityProviderDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The ARN for a lambda function to use for the Identity provider.
+     * The ARN for a Lambda function to use for the Identity provider.
      * </p>
      * 
-     * @return The ARN for a lambda function to use for the Identity provider.
+     * @return The ARN for a Lambda function to use for the Identity provider.
      */
 
     public String getFunction() {
@@ -201,16 +240,279 @@ public class IdentityProviderDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The ARN for a lambda function to use for the Identity provider.
+     * The ARN for a Lambda function to use for the Identity provider.
      * </p>
      * 
      * @param function
-     *        The ARN for a lambda function to use for the Identity provider.
+     *        The ARN for a Lambda function to use for the Identity provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public IdentityProviderDetails withFunction(String function) {
         setFunction(function);
+        return this;
+    }
+
+    /**
+     * <p>
+     * For SFTP-enabled servers, and for custom identity providers <i>only</i>, you can specify whether to authenticate
+     * using a password, SSH key pair, or both.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PASSWORD</code> - users must provide their password to connect.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PUBLIC_KEY</code> - users must provide their private key to connect.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PUBLIC_KEY_OR_PASSWORD</code> - users can authenticate with either their password or their key. This is the
+     * default value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PUBLIC_KEY_AND_PASSWORD</code> - users must provide both their private key and their password to connect.
+     * The server checks the key first, and then if the key is valid, the system prompts for a password. If the private
+     * key provided does not match the public key that is stored, authentication fails.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param sftpAuthenticationMethods
+     *        For SFTP-enabled servers, and for custom identity providers <i>only</i>, you can specify whether to
+     *        authenticate using a password, SSH key pair, or both.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PASSWORD</code> - users must provide their password to connect.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PUBLIC_KEY</code> - users must provide their private key to connect.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PUBLIC_KEY_OR_PASSWORD</code> - users can authenticate with either their password or their key. This
+     *        is the default value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PUBLIC_KEY_AND_PASSWORD</code> - users must provide both their private key and their password to
+     *        connect. The server checks the key first, and then if the key is valid, the system prompts for a password.
+     *        If the private key provided does not match the public key that is stored, authentication fails.
+     *        </p>
+     *        </li>
+     * @see SftpAuthenticationMethods
+     */
+
+    public void setSftpAuthenticationMethods(String sftpAuthenticationMethods) {
+        this.sftpAuthenticationMethods = sftpAuthenticationMethods;
+    }
+
+    /**
+     * <p>
+     * For SFTP-enabled servers, and for custom identity providers <i>only</i>, you can specify whether to authenticate
+     * using a password, SSH key pair, or both.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PASSWORD</code> - users must provide their password to connect.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PUBLIC_KEY</code> - users must provide their private key to connect.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PUBLIC_KEY_OR_PASSWORD</code> - users can authenticate with either their password or their key. This is the
+     * default value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PUBLIC_KEY_AND_PASSWORD</code> - users must provide both their private key and their password to connect.
+     * The server checks the key first, and then if the key is valid, the system prompts for a password. If the private
+     * key provided does not match the public key that is stored, authentication fails.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return For SFTP-enabled servers, and for custom identity providers <i>only</i>, you can specify whether to
+     *         authenticate using a password, SSH key pair, or both.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>PASSWORD</code> - users must provide their password to connect.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PUBLIC_KEY</code> - users must provide their private key to connect.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PUBLIC_KEY_OR_PASSWORD</code> - users can authenticate with either their password or their key.
+     *         This is the default value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PUBLIC_KEY_AND_PASSWORD</code> - users must provide both their private key and their password to
+     *         connect. The server checks the key first, and then if the key is valid, the system prompts for a
+     *         password. If the private key provided does not match the public key that is stored, authentication fails.
+     *         </p>
+     *         </li>
+     * @see SftpAuthenticationMethods
+     */
+
+    public String getSftpAuthenticationMethods() {
+        return this.sftpAuthenticationMethods;
+    }
+
+    /**
+     * <p>
+     * For SFTP-enabled servers, and for custom identity providers <i>only</i>, you can specify whether to authenticate
+     * using a password, SSH key pair, or both.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PASSWORD</code> - users must provide their password to connect.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PUBLIC_KEY</code> - users must provide their private key to connect.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PUBLIC_KEY_OR_PASSWORD</code> - users can authenticate with either their password or their key. This is the
+     * default value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PUBLIC_KEY_AND_PASSWORD</code> - users must provide both their private key and their password to connect.
+     * The server checks the key first, and then if the key is valid, the system prompts for a password. If the private
+     * key provided does not match the public key that is stored, authentication fails.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param sftpAuthenticationMethods
+     *        For SFTP-enabled servers, and for custom identity providers <i>only</i>, you can specify whether to
+     *        authenticate using a password, SSH key pair, or both.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PASSWORD</code> - users must provide their password to connect.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PUBLIC_KEY</code> - users must provide their private key to connect.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PUBLIC_KEY_OR_PASSWORD</code> - users can authenticate with either their password or their key. This
+     *        is the default value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PUBLIC_KEY_AND_PASSWORD</code> - users must provide both their private key and their password to
+     *        connect. The server checks the key first, and then if the key is valid, the system prompts for a password.
+     *        If the private key provided does not match the public key that is stored, authentication fails.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SftpAuthenticationMethods
+     */
+
+    public IdentityProviderDetails withSftpAuthenticationMethods(String sftpAuthenticationMethods) {
+        setSftpAuthenticationMethods(sftpAuthenticationMethods);
+        return this;
+    }
+
+    /**
+     * <p>
+     * For SFTP-enabled servers, and for custom identity providers <i>only</i>, you can specify whether to authenticate
+     * using a password, SSH key pair, or both.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PASSWORD</code> - users must provide their password to connect.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PUBLIC_KEY</code> - users must provide their private key to connect.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PUBLIC_KEY_OR_PASSWORD</code> - users can authenticate with either their password or their key. This is the
+     * default value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PUBLIC_KEY_AND_PASSWORD</code> - users must provide both their private key and their password to connect.
+     * The server checks the key first, and then if the key is valid, the system prompts for a password. If the private
+     * key provided does not match the public key that is stored, authentication fails.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param sftpAuthenticationMethods
+     *        For SFTP-enabled servers, and for custom identity providers <i>only</i>, you can specify whether to
+     *        authenticate using a password, SSH key pair, or both.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PASSWORD</code> - users must provide their password to connect.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PUBLIC_KEY</code> - users must provide their private key to connect.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PUBLIC_KEY_OR_PASSWORD</code> - users can authenticate with either their password or their key. This
+     *        is the default value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PUBLIC_KEY_AND_PASSWORD</code> - users must provide both their private key and their password to
+     *        connect. The server checks the key first, and then if the key is valid, the system prompts for a password.
+     *        If the private key provided does not match the public key that is stored, authentication fails.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SftpAuthenticationMethods
+     */
+
+    public IdentityProviderDetails withSftpAuthenticationMethods(SftpAuthenticationMethods sftpAuthenticationMethods) {
+        this.sftpAuthenticationMethods = sftpAuthenticationMethods.toString();
         return this;
     }
 
@@ -233,7 +535,9 @@ public class IdentityProviderDetails implements Serializable, Cloneable, Structu
         if (getDirectoryId() != null)
             sb.append("DirectoryId: ").append(getDirectoryId()).append(",");
         if (getFunction() != null)
-            sb.append("Function: ").append(getFunction());
+            sb.append("Function: ").append(getFunction()).append(",");
+        if (getSftpAuthenticationMethods() != null)
+            sb.append("SftpAuthenticationMethods: ").append(getSftpAuthenticationMethods());
         sb.append("}");
         return sb.toString();
     }
@@ -264,6 +568,10 @@ public class IdentityProviderDetails implements Serializable, Cloneable, Structu
             return false;
         if (other.getFunction() != null && other.getFunction().equals(this.getFunction()) == false)
             return false;
+        if (other.getSftpAuthenticationMethods() == null ^ this.getSftpAuthenticationMethods() == null)
+            return false;
+        if (other.getSftpAuthenticationMethods() != null && other.getSftpAuthenticationMethods().equals(this.getSftpAuthenticationMethods()) == false)
+            return false;
         return true;
     }
 
@@ -276,6 +584,7 @@ public class IdentityProviderDetails implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getInvocationRole() == null) ? 0 : getInvocationRole().hashCode());
         hashCode = prime * hashCode + ((getDirectoryId() == null) ? 0 : getDirectoryId().hashCode());
         hashCode = prime * hashCode + ((getFunction() == null) ? 0 : getFunction().hashCode());
+        hashCode = prime * hashCode + ((getSftpAuthenticationMethods() == null) ? 0 : getSftpAuthenticationMethods().hashCode());
         return hashCode;
     }
 

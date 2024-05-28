@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,11 +19,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * AWS OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>,
- * <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each
- * event. In addition, you can provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom
- * event recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a
- * particular layer to be run in response to each of the five events.
+ * OpsWorks Stacks supports five lifecycle events: <b>setup</b>, <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>,
+ * and <b>shutdown</b>. For each layer, OpsWorks Stacks runs a set of standard recipes for each event. In addition, you
+ * can provide custom recipes for any or all layers and events. OpsWorks Stacks runs custom event recipes after the
+ * standard recipes. <code>LayerCustomRecipes</code> specifies the custom recipes for a particular layer to be run in
+ * response to each of the five events.
  * </p>
  * <p>
  * To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name,

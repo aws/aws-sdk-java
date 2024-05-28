@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,10 @@ public class UpdateFeatureRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Specified users that should always be served a specific variation of a feature. Each user is specified by a
      * key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier.
      * For the value, specify the name of the variation that they are to be served.
+     * </p>
+     * <p>
+     * This parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit includes an overhead of 6 bytes
+     * per override.
      * </p>
      */
     private java.util.Map<String, String> entityOverrides;
@@ -266,10 +270,17 @@ public class UpdateFeatureRequest extends com.amazonaws.AmazonWebServiceRequest 
      * key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier.
      * For the value, specify the name of the variation that they are to be served.
      * </p>
+     * <p>
+     * This parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit includes an overhead of 6 bytes
+     * per override.
+     * </p>
      * 
      * @return Specified users that should always be served a specific variation of a feature. Each user is specified by
      *         a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other
-     *         identifier. For the value, specify the name of the variation that they are to be served.
+     *         identifier. For the value, specify the name of the variation that they are to be served.</p>
+     *         <p>
+     *         This parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit includes an overhead of 6
+     *         bytes per override.
      */
 
     public java.util.Map<String, String> getEntityOverrides() {
@@ -282,11 +293,18 @@ public class UpdateFeatureRequest extends com.amazonaws.AmazonWebServiceRequest 
      * key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier.
      * For the value, specify the name of the variation that they are to be served.
      * </p>
+     * <p>
+     * This parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit includes an overhead of 6 bytes
+     * per override.
+     * </p>
      * 
      * @param entityOverrides
      *        Specified users that should always be served a specific variation of a feature. Each user is specified by
      *        a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other
-     *        identifier. For the value, specify the name of the variation that they are to be served.
+     *        identifier. For the value, specify the name of the variation that they are to be served.</p>
+     *        <p>
+     *        This parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit includes an overhead of 6
+     *        bytes per override.
      */
 
     public void setEntityOverrides(java.util.Map<String, String> entityOverrides) {
@@ -299,11 +317,18 @@ public class UpdateFeatureRequest extends com.amazonaws.AmazonWebServiceRequest 
      * key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier.
      * For the value, specify the name of the variation that they are to be served.
      * </p>
+     * <p>
+     * This parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit includes an overhead of 6 bytes
+     * per override.
+     * </p>
      * 
      * @param entityOverrides
      *        Specified users that should always be served a specific variation of a feature. Each user is specified by
      *        a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other
-     *        identifier. For the value, specify the name of the variation that they are to be served.
+     *        identifier. For the value, specify the name of the variation that they are to be served.</p>
+     *        <p>
+     *        This parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit includes an overhead of 6
+     *        bytes per override.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

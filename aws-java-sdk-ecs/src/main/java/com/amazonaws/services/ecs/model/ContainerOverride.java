@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,6 +22,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * The overrides that are sent to a container. An empty container override can be passed in. An example of an empty
  * container override is <code>{"containerOverrides": [ ] }</code>. If a non-empty container override is specified, the
  * <code>name</code> parameter must be included.
+ * </p>
+ * <p>
+ * You can use Secrets Manager or Amazon Web Services Systems Manager Parameter Store to store the sensitive data. For
+ * more information, see <a
+ * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/secrets-envvar.html">Retrieve secrets through
+ * environment variables</a> in the Amazon ECS Developer Guide.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ContainerOverride" target="_top">AWS API

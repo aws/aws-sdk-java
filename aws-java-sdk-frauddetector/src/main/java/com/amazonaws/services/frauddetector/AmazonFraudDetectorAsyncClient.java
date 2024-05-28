@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,8 +40,8 @@ import java.util.concurrent.ExecutorService;
  * who prefer to build applications using language-specific APIs instead of submitting a request over HTTP or HTTPS.
  * These libraries provide basic functions that automatically take care of tasks such as cryptographically signing your
  * requests, retrying requests, and handling error responses, so that it is easier for you to get started. For more
- * information about the AWS SDKs, see <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/tools/">Tools to build
- * on AWS</a>.
+ * information about the AWS SDKs, go to <a href="https://aws.amazon.com/developer/tools/">Tools to build on AWS</a>
+ * page, scroll down to the <b>SDK</b> section, and choose plus (+) sign to expand the section.
  * </p>
  */
 @ThreadSafe
@@ -306,6 +306,39 @@ public class AmazonFraudDetectorAsyncClient extends AmazonFraudDetectorClient im
 
                 try {
                     result = executeCreateDetectorVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateListResult> createListAsync(CreateListRequest request) {
+
+        return createListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateListResult> createListAsync(final CreateListRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateListRequest, CreateListResult> asyncHandler) {
+        final CreateListRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateListResult>() {
+            @Override
+            public CreateListResult call() throws Exception {
+                CreateListResult result = null;
+
+                try {
+                    result = executeCreateList(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -768,6 +801,39 @@ public class AmazonFraudDetectorAsyncClient extends AmazonFraudDetectorClient im
 
                 try {
                     result = executeDeleteLabel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteListResult> deleteListAsync(DeleteListRequest request) {
+
+        return deleteListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteListResult> deleteListAsync(final DeleteListRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteListRequest, DeleteListResult> asyncHandler) {
+        final DeleteListRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteListResult>() {
+            @Override
+            public DeleteListResult call() throws Exception {
+                DeleteListResult result = null;
+
+                try {
+                    result = executeDeleteList(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1430,6 +1496,72 @@ public class AmazonFraudDetectorAsyncClient extends AmazonFraudDetectorClient im
 
                 try {
                     result = executeGetLabels(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetListElementsResult> getListElementsAsync(GetListElementsRequest request) {
+
+        return getListElementsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetListElementsResult> getListElementsAsync(final GetListElementsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetListElementsRequest, GetListElementsResult> asyncHandler) {
+        final GetListElementsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetListElementsResult>() {
+            @Override
+            public GetListElementsResult call() throws Exception {
+                GetListElementsResult result = null;
+
+                try {
+                    result = executeGetListElements(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetListsMetadataResult> getListsMetadataAsync(GetListsMetadataRequest request) {
+
+        return getListsMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetListsMetadataResult> getListsMetadataAsync(final GetListsMetadataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetListsMetadataRequest, GetListsMetadataResult> asyncHandler) {
+        final GetListsMetadataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetListsMetadataResult>() {
+            @Override
+            public GetListsMetadataResult call() throws Exception {
+                GetListsMetadataResult result = null;
+
+                try {
+                    result = executeGetListsMetadata(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2124,6 +2256,39 @@ public class AmazonFraudDetectorAsyncClient extends AmazonFraudDetectorClient im
 
                 try {
                     result = executeUpdateEventLabel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateListResult> updateListAsync(UpdateListRequest request) {
+
+        return updateListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateListResult> updateListAsync(final UpdateListRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateListRequest, UpdateListResult> asyncHandler) {
+        final UpdateListRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateListResult>() {
+            @Override
+            public UpdateListResult call() throws Exception {
+                UpdateListResult result = null;
+
+                try {
+                    result = executeUpdateList(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

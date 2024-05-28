@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,19 +28,45 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Campaign implements Serializable, Cloneable, StructuredPojo {
 
+    private String id;
+
     private String arn;
+
+    private String name;
 
     private String connectInstanceId;
 
     private DialerConfig dialerConfig;
 
-    private String id;
-
-    private String name;
-
     private OutboundCallConfig outboundCallConfig;
 
     private java.util.Map<String, String> tags;
+
+    /**
+     * @param id
+     */
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getId() {
+        return this.id;
+    }
+
+    /**
+     * @param id
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Campaign withId(String id) {
+        setId(id);
+        return this;
+    }
 
     /**
      * @param arn
@@ -65,6 +91,32 @@ public class Campaign implements Serializable, Cloneable, StructuredPojo {
 
     public Campaign withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * @param name
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * @param name
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Campaign withName(String name) {
+        setName(name);
         return this;
     }
 
@@ -117,58 +169,6 @@ public class Campaign implements Serializable, Cloneable, StructuredPojo {
 
     public Campaign withDialerConfig(DialerConfig dialerConfig) {
         setDialerConfig(dialerConfig);
-        return this;
-    }
-
-    /**
-     * @param id
-     */
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    /**
-     * @return
-     */
-
-    public String getId() {
-        return this.id;
-    }
-
-    /**
-     * @param id
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Campaign withId(String id) {
-        setId(id);
-        return this;
-    }
-
-    /**
-     * @param name
-     */
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * @return
-     */
-
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * @param name
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Campaign withName(String name) {
-        setName(name);
         return this;
     }
 
@@ -264,16 +264,16 @@ public class Campaign implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getId() != null)
+            sb.append("Id: ").append(getId()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
         if (getConnectInstanceId() != null)
             sb.append("ConnectInstanceId: ").append(getConnectInstanceId()).append(",");
         if (getDialerConfig() != null)
             sb.append("DialerConfig: ").append(getDialerConfig()).append(",");
-        if (getId() != null)
-            sb.append("Id: ").append(getId()).append(",");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
         if (getOutboundCallConfig() != null)
             sb.append("OutboundCallConfig: ").append(getOutboundCallConfig()).append(",");
         if (getTags() != null)
@@ -292,9 +292,17 @@ public class Campaign implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Campaign == false)
             return false;
         Campaign other = (Campaign) obj;
+        if (other.getId() == null ^ this.getId() == null)
+            return false;
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
+            return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getConnectInstanceId() == null ^ this.getConnectInstanceId() == null)
             return false;
@@ -303,14 +311,6 @@ public class Campaign implements Serializable, Cloneable, StructuredPojo {
         if (other.getDialerConfig() == null ^ this.getDialerConfig() == null)
             return false;
         if (other.getDialerConfig() != null && other.getDialerConfig().equals(this.getDialerConfig()) == false)
-            return false;
-        if (other.getId() == null ^ this.getId() == null)
-            return false;
-        if (other.getId() != null && other.getId().equals(this.getId()) == false)
-            return false;
-        if (other.getName() == null ^ this.getName() == null)
-            return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getOutboundCallConfig() == null ^ this.getOutboundCallConfig() == null)
             return false;
@@ -328,11 +328,11 @@ public class Campaign implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getConnectInstanceId() == null) ? 0 : getConnectInstanceId().hashCode());
         hashCode = prime * hashCode + ((getDialerConfig() == null) ? 0 : getDialerConfig().hashCode());
-        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getOutboundCallConfig() == null) ? 0 : getOutboundCallConfig().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,9 +63,8 @@ public class CreateSnapshotsRequest extends AmazonWebServiceRequest implements S
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot">
-     * Create multi-volume local snapshots from instances on an Outpost</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-multivol-snapshot"> Create
+     * multi-volume local snapshots from instances on an Outpost</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      */
     private String outpostArn;
@@ -188,9 +187,8 @@ public class CreateSnapshotsRequest extends AmazonWebServiceRequest implements S
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot">
-     * Create multi-volume local snapshots from instances on an Outpost</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-multivol-snapshot"> Create
+     * multi-volume local snapshots from instances on an Outpost</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param outpostArn
@@ -216,10 +214,9 @@ public class CreateSnapshotsRequest extends AmazonWebServiceRequest implements S
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information, see <a href=
-     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot">
-     *        Create multi-volume local snapshots from instances on an Outpost</a> in the <i>Amazon Elastic Compute
-     *        Cloud User Guide</i>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-multivol-snapshot">
+     *        Create multi-volume local snapshots from instances on an Outpost</a> in the <i>Amazon EBS User Guide</i>.
      */
 
     public void setOutpostArn(String outpostArn) {
@@ -252,9 +249,8 @@ public class CreateSnapshotsRequest extends AmazonWebServiceRequest implements S
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot">
-     * Create multi-volume local snapshots from instances on an Outpost</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-multivol-snapshot"> Create
+     * multi-volume local snapshots from instances on an Outpost</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the Outpost on which to create the local snapshots.</p>
@@ -280,9 +276,8 @@ public class CreateSnapshotsRequest extends AmazonWebServiceRequest implements S
      *         </ul>
      *         <p>
      *         For more information, see <a href=
-     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot">
-     *         Create multi-volume local snapshots from instances on an Outpost</a> in the <i>Amazon Elastic Compute
-     *         Cloud User Guide</i>.
+     *         "https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-multivol-snapshot">
+     *         Create multi-volume local snapshots from instances on an Outpost</a> in the <i>Amazon EBS User Guide</i>.
      */
 
     public String getOutpostArn() {
@@ -315,9 +310,8 @@ public class CreateSnapshotsRequest extends AmazonWebServiceRequest implements S
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot">
-     * Create multi-volume local snapshots from instances on an Outpost</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-multivol-snapshot"> Create
+     * multi-volume local snapshots from instances on an Outpost</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param outpostArn
@@ -343,10 +337,9 @@ public class CreateSnapshotsRequest extends AmazonWebServiceRequest implements S
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information, see <a href=
-     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot">
-     *        Create multi-volume local snapshots from instances on an Outpost</a> in the <i>Amazon Elastic Compute
-     *        Cloud User Guide</i>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-multivol-snapshot">
+     *        Create multi-volume local snapshots from instances on an Outpost</a> in the <i>Amazon EBS User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

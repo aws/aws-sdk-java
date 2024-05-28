@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,18 +30,18 @@ public class PutConfigurationRecorderRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The configuration recorder object that records each configuration change made to the resources.
+     * An object for the configuration recorder to record configuration changes for specified resource types.
      * </p>
      */
     private ConfigurationRecorder configurationRecorder;
 
     /**
      * <p>
-     * The configuration recorder object that records each configuration change made to the resources.
+     * An object for the configuration recorder to record configuration changes for specified resource types.
      * </p>
      * 
      * @param configurationRecorder
-     *        The configuration recorder object that records each configuration change made to the resources.
+     *        An object for the configuration recorder to record configuration changes for specified resource types.
      */
 
     public void setConfigurationRecorder(ConfigurationRecorder configurationRecorder) {
@@ -50,10 +50,10 @@ public class PutConfigurationRecorderRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The configuration recorder object that records each configuration change made to the resources.
+     * An object for the configuration recorder to record configuration changes for specified resource types.
      * </p>
      * 
-     * @return The configuration recorder object that records each configuration change made to the resources.
+     * @return An object for the configuration recorder to record configuration changes for specified resource types.
      */
 
     public ConfigurationRecorder getConfigurationRecorder() {
@@ -62,11 +62,11 @@ public class PutConfigurationRecorderRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The configuration recorder object that records each configuration change made to the resources.
+     * An object for the configuration recorder to record configuration changes for specified resource types.
      * </p>
      * 
      * @param configurationRecorder
-     *        The configuration recorder object that records each configuration change made to the resources.
+     *        An object for the configuration recorder to record configuration changes for specified resource types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

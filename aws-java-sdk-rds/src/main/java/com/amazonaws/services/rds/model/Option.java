@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Option details.
+ * The details of an option.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Option" target="_top">AWS API Documentation</a>
@@ -39,13 +39,13 @@ public class Option implements Serializable, Cloneable {
     private String optionDescription;
     /**
      * <p>
-     * Indicate if this option is persistent.
+     * Indicates whether this option is persistent.
      * </p>
      */
     private Boolean persistent;
     /**
      * <p>
-     * Indicate if this option is permanent.
+     * Indicates whether this option is permanent.
      * </p>
      */
     private Boolean permanent;
@@ -162,11 +162,11 @@ public class Option implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicate if this option is persistent.
+     * Indicates whether this option is persistent.
      * </p>
      * 
      * @param persistent
-     *        Indicate if this option is persistent.
+     *        Indicates whether this option is persistent.
      */
 
     public void setPersistent(Boolean persistent) {
@@ -175,10 +175,10 @@ public class Option implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicate if this option is persistent.
+     * Indicates whether this option is persistent.
      * </p>
      * 
-     * @return Indicate if this option is persistent.
+     * @return Indicates whether this option is persistent.
      */
 
     public Boolean getPersistent() {
@@ -187,11 +187,11 @@ public class Option implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicate if this option is persistent.
+     * Indicates whether this option is persistent.
      * </p>
      * 
      * @param persistent
-     *        Indicate if this option is persistent.
+     *        Indicates whether this option is persistent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,10 +202,10 @@ public class Option implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicate if this option is persistent.
+     * Indicates whether this option is persistent.
      * </p>
      * 
-     * @return Indicate if this option is persistent.
+     * @return Indicates whether this option is persistent.
      */
 
     public Boolean isPersistent() {
@@ -214,11 +214,11 @@ public class Option implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicate if this option is permanent.
+     * Indicates whether this option is permanent.
      * </p>
      * 
      * @param permanent
-     *        Indicate if this option is permanent.
+     *        Indicates whether this option is permanent.
      */
 
     public void setPermanent(Boolean permanent) {
@@ -227,10 +227,10 @@ public class Option implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicate if this option is permanent.
+     * Indicates whether this option is permanent.
      * </p>
      * 
-     * @return Indicate if this option is permanent.
+     * @return Indicates whether this option is permanent.
      */
 
     public Boolean getPermanent() {
@@ -239,11 +239,11 @@ public class Option implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicate if this option is permanent.
+     * Indicates whether this option is permanent.
      * </p>
      * 
      * @param permanent
-     *        Indicate if this option is permanent.
+     *        Indicates whether this option is permanent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -254,10 +254,10 @@ public class Option implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicate if this option is permanent.
+     * Indicates whether this option is permanent.
      * </p>
      * 
-     * @return Indicate if this option is permanent.
+     * @return Indicates whether this option is permanent.
      */
 
     public Boolean isPermanent() {

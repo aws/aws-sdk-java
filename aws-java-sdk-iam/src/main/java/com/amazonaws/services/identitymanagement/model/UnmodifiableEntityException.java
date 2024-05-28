@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,9 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The request was rejected because only the service that depends on the service-linked role can modify or delete the
- * role on your behalf. The error message includes the name of the service that depends on this service-linked role. You
- * must request the change through that service.
+ * The request was rejected because service-linked roles are protected Amazon Web Services resources. Only the service
+ * that depends on the service-linked role can modify or delete the role on your behalf. The error message includes the
+ * name of the service that depends on this service-linked role. You must request the change through that service.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

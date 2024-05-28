@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,26 @@ public class AssetModelHierarchy implements Serializable, Cloneable, StructuredP
      * <p>
      * The ID of the asset model hierarchy. This ID is a <code>hierarchyId</code>.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you are callling <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     * >UpdateAssetModel</a> to create a <i>new</i> hierarchy: You can specify its ID here, if desired. IoT SiteWise
+     * automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to
+     * supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be
+     * globally unique.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you are calling UpdateAssetModel to modify an <i>existing</i> hierarchy: This can be either the actual ID in
+     * UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information,
+     * see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">
+     * Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String id;
     /**
@@ -47,19 +67,80 @@ public class AssetModelHierarchy implements Serializable, Cloneable, StructuredP
     private String name;
     /**
      * <p>
-     * The ID of the asset model. All assets in this hierarchy must be instances of the <code>childAssetModelId</code>
-     * asset model.
+     * The ID of the asset model, in UUID format. All assets in this hierarchy must be instances of the
+     * <code>childAssetModelId</code> asset model. IoT SiteWise will always return the actual asset model ID for this
+     * value. However, when you are specifying this value as part of a call to <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     * >UpdateAssetModel</a>, you may provide either the asset model ID or else <code>externalId:</code> followed by the
+     * asset model's external ID. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      */
     private String childAssetModelId;
+    /**
+     * <p>
+     * The external ID (if any) provided in the <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html"
+     * >CreateAssetModel</a> or <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     * >UpdateAssetModel</a> operation. You can assign an external ID by specifying this value as part of a call to <a
+     * href
+     * ="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>.
+     * However, you can't change the external ID if one is already assigned. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     */
+    private String externalId;
 
     /**
      * <p>
      * The ID of the asset model hierarchy. This ID is a <code>hierarchyId</code>.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you are callling <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     * >UpdateAssetModel</a> to create a <i>new</i> hierarchy: You can specify its ID here, if desired. IoT SiteWise
+     * automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to
+     * supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be
+     * globally unique.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you are calling UpdateAssetModel to modify an <i>existing</i> hierarchy: This can be either the actual ID in
+     * UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information,
+     * see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">
+     * Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param id
-     *        The ID of the asset model hierarchy. This ID is a <code>hierarchyId</code>.
+     *        The ID of the asset model hierarchy. This ID is a <code>hierarchyId</code>.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you are callling <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     *        >UpdateAssetModel</a> to create a <i>new</i> hierarchy: You can specify its ID here, if desired. IoT
+     *        SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if you
+     *        prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own ID,
+     *        it must be globally unique.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you are calling UpdateAssetModel to modify an <i>existing</i> hierarchy: This can be either the actual
+     *        ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     *        >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     *        </p>
+     *        </li>
      */
 
     public void setId(String id) {
@@ -70,8 +151,48 @@ public class AssetModelHierarchy implements Serializable, Cloneable, StructuredP
      * <p>
      * The ID of the asset model hierarchy. This ID is a <code>hierarchyId</code>.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you are callling <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     * >UpdateAssetModel</a> to create a <i>new</i> hierarchy: You can specify its ID here, if desired. IoT SiteWise
+     * automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to
+     * supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be
+     * globally unique.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you are calling UpdateAssetModel to modify an <i>existing</i> hierarchy: This can be either the actual ID in
+     * UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information,
+     * see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">
+     * Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The ID of the asset model hierarchy. This ID is a <code>hierarchyId</code>.
+     * @return The ID of the asset model hierarchy. This ID is a <code>hierarchyId</code>.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If you are callling <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     *         >UpdateAssetModel</a> to create a <i>new</i> hierarchy: You can specify its ID here, if desired. IoT
+     *         SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if
+     *         you prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own
+     *         ID, it must be globally unique.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you are calling UpdateAssetModel to modify an <i>existing</i> hierarchy: This can be either the actual
+     *         ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     *         >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     *         </p>
+     *         </li>
      */
 
     public String getId() {
@@ -82,9 +203,49 @@ public class AssetModelHierarchy implements Serializable, Cloneable, StructuredP
      * <p>
      * The ID of the asset model hierarchy. This ID is a <code>hierarchyId</code>.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you are callling <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     * >UpdateAssetModel</a> to create a <i>new</i> hierarchy: You can specify its ID here, if desired. IoT SiteWise
+     * automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to
+     * supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be
+     * globally unique.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you are calling UpdateAssetModel to modify an <i>existing</i> hierarchy: This can be either the actual ID in
+     * UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information,
+     * see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">
+     * Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param id
-     *        The ID of the asset model hierarchy. This ID is a <code>hierarchyId</code>.
+     *        The ID of the asset model hierarchy. This ID is a <code>hierarchyId</code>.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you are callling <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     *        >UpdateAssetModel</a> to create a <i>new</i> hierarchy: You can specify its ID here, if desired. IoT
+     *        SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if you
+     *        prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own ID,
+     *        it must be globally unique.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you are calling UpdateAssetModel to modify an <i>existing</i> hierarchy: This can be either the actual
+     *        ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     *        >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,13 +320,25 @@ public class AssetModelHierarchy implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The ID of the asset model. All assets in this hierarchy must be instances of the <code>childAssetModelId</code>
-     * asset model.
+     * The ID of the asset model, in UUID format. All assets in this hierarchy must be instances of the
+     * <code>childAssetModelId</code> asset model. IoT SiteWise will always return the actual asset model ID for this
+     * value. However, when you are specifying this value as part of a call to <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     * >UpdateAssetModel</a>, you may provide either the asset model ID or else <code>externalId:</code> followed by the
+     * asset model's external ID. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param childAssetModelId
-     *        The ID of the asset model. All assets in this hierarchy must be instances of the
-     *        <code>childAssetModelId</code> asset model.
+     *        The ID of the asset model, in UUID format. All assets in this hierarchy must be instances of the
+     *        <code>childAssetModelId</code> asset model. IoT SiteWise will always return the actual asset model ID for
+     *        this value. However, when you are specifying this value as part of a call to <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     *        >UpdateAssetModel</a>, you may provide either the asset model ID or else <code>externalId:</code> followed
+     *        by the asset model's external ID. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *        external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public void setChildAssetModelId(String childAssetModelId) {
@@ -174,12 +347,24 @@ public class AssetModelHierarchy implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The ID of the asset model. All assets in this hierarchy must be instances of the <code>childAssetModelId</code>
-     * asset model.
+     * The ID of the asset model, in UUID format. All assets in this hierarchy must be instances of the
+     * <code>childAssetModelId</code> asset model. IoT SiteWise will always return the actual asset model ID for this
+     * value. However, when you are specifying this value as part of a call to <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     * >UpdateAssetModel</a>, you may provide either the asset model ID or else <code>externalId:</code> followed by the
+     * asset model's external ID. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
-     * @return The ID of the asset model. All assets in this hierarchy must be instances of the
-     *         <code>childAssetModelId</code> asset model.
+     * @return The ID of the asset model, in UUID format. All assets in this hierarchy must be instances of the
+     *         <code>childAssetModelId</code> asset model. IoT SiteWise will always return the actual asset model ID for
+     *         this value. However, when you are specifying this value as part of a call to <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     *         >UpdateAssetModel</a>, you may provide either the asset model ID or else <code>externalId:</code>
+     *         followed by the asset model's external ID. For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *         external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public String getChildAssetModelId() {
@@ -188,18 +373,124 @@ public class AssetModelHierarchy implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The ID of the asset model. All assets in this hierarchy must be instances of the <code>childAssetModelId</code>
-     * asset model.
+     * The ID of the asset model, in UUID format. All assets in this hierarchy must be instances of the
+     * <code>childAssetModelId</code> asset model. IoT SiteWise will always return the actual asset model ID for this
+     * value. However, when you are specifying this value as part of a call to <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     * >UpdateAssetModel</a>, you may provide either the asset model ID or else <code>externalId:</code> followed by the
+     * asset model's external ID. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param childAssetModelId
-     *        The ID of the asset model. All assets in this hierarchy must be instances of the
-     *        <code>childAssetModelId</code> asset model.
+     *        The ID of the asset model, in UUID format. All assets in this hierarchy must be instances of the
+     *        <code>childAssetModelId</code> asset model. IoT SiteWise will always return the actual asset model ID for
+     *        this value. However, when you are specifying this value as part of a call to <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     *        >UpdateAssetModel</a>, you may provide either the asset model ID or else <code>externalId:</code> followed
+     *        by the asset model's external ID. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *        external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AssetModelHierarchy withChildAssetModelId(String childAssetModelId) {
         setChildAssetModelId(childAssetModelId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The external ID (if any) provided in the <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html"
+     * >CreateAssetModel</a> or <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     * >UpdateAssetModel</a> operation. You can assign an external ID by specifying this value as part of a call to <a
+     * href
+     * ="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>.
+     * However, you can't change the external ID if one is already assigned. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param externalId
+     *        The external ID (if any) provided in the <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html"
+     *        >CreateAssetModel</a> or <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     *        >UpdateAssetModel</a> operation. You can assign an external ID by specifying this value as part of a call
+     *        to <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">
+     *        UpdateAssetModel</a>. However, you can't change the external ID if one is already assigned. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *        external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     */
+
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
+    }
+
+    /**
+     * <p>
+     * The external ID (if any) provided in the <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html"
+     * >CreateAssetModel</a> or <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     * >UpdateAssetModel</a> operation. You can assign an external ID by specifying this value as part of a call to <a
+     * href
+     * ="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>.
+     * However, you can't change the external ID if one is already assigned. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @return The external ID (if any) provided in the <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html"
+     *         >CreateAssetModel</a> or <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     *         >UpdateAssetModel</a> operation. You can assign an external ID by specifying this value as part of a call
+     *         to <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">
+     *         UpdateAssetModel</a>. However, you can't change the external ID if one is already assigned. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *         external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     */
+
+    public String getExternalId() {
+        return this.externalId;
+    }
+
+    /**
+     * <p>
+     * The external ID (if any) provided in the <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html"
+     * >CreateAssetModel</a> or <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     * >UpdateAssetModel</a> operation. You can assign an external ID by specifying this value as part of a call to <a
+     * href
+     * ="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>.
+     * However, you can't change the external ID if one is already assigned. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param externalId
+     *        The external ID (if any) provided in the <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html"
+     *        >CreateAssetModel</a> or <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     *        >UpdateAssetModel</a> operation. You can assign an external ID by specifying this value as part of a call
+     *        to <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">
+     *        UpdateAssetModel</a>. However, you can't change the external ID if one is already assigned. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *        external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetModelHierarchy withExternalId(String externalId) {
+        setExternalId(externalId);
         return this;
     }
 
@@ -220,7 +511,9 @@ public class AssetModelHierarchy implements Serializable, Cloneable, StructuredP
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getChildAssetModelId() != null)
-            sb.append("ChildAssetModelId: ").append(getChildAssetModelId());
+            sb.append("ChildAssetModelId: ").append(getChildAssetModelId()).append(",");
+        if (getExternalId() != null)
+            sb.append("ExternalId: ").append(getExternalId());
         sb.append("}");
         return sb.toString();
     }
@@ -247,6 +540,10 @@ public class AssetModelHierarchy implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getChildAssetModelId() != null && other.getChildAssetModelId().equals(this.getChildAssetModelId()) == false)
             return false;
+        if (other.getExternalId() == null ^ this.getExternalId() == null)
+            return false;
+        if (other.getExternalId() != null && other.getExternalId().equals(this.getExternalId()) == false)
+            return false;
         return true;
     }
 
@@ -258,6 +555,7 @@ public class AssetModelHierarchy implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getChildAssetModelId() == null) ? 0 : getChildAssetModelId().hashCode());
+        hashCode = prime * hashCode + ((getExternalId() == null) ? 0 : getExternalId().hashCode());
         return hashCode;
     }
 

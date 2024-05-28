@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,8 +28,8 @@ public class RegisterTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * The identifier for this registration request.
      * </p>
      * <p>
-     * Use this registration token when calling <code> <a>DescribeTypeRegistration</a> </code>, which returns
-     * information about the status and IDs of the extension registration.
+     * Use this registration token when calling <a>DescribeTypeRegistration</a>, which returns information about the
+     * status and IDs of the extension registration.
      * </p>
      */
     private String registrationToken;
@@ -39,15 +39,15 @@ public class RegisterTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * The identifier for this registration request.
      * </p>
      * <p>
-     * Use this registration token when calling <code> <a>DescribeTypeRegistration</a> </code>, which returns
-     * information about the status and IDs of the extension registration.
+     * Use this registration token when calling <a>DescribeTypeRegistration</a>, which returns information about the
+     * status and IDs of the extension registration.
      * </p>
      * 
      * @param registrationToken
      *        The identifier for this registration request.</p>
      *        <p>
-     *        Use this registration token when calling <code> <a>DescribeTypeRegistration</a> </code>, which returns
-     *        information about the status and IDs of the extension registration.
+     *        Use this registration token when calling <a>DescribeTypeRegistration</a>, which returns information about
+     *        the status and IDs of the extension registration.
      */
 
     public void setRegistrationToken(String registrationToken) {
@@ -59,14 +59,14 @@ public class RegisterTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * The identifier for this registration request.
      * </p>
      * <p>
-     * Use this registration token when calling <code> <a>DescribeTypeRegistration</a> </code>, which returns
-     * information about the status and IDs of the extension registration.
+     * Use this registration token when calling <a>DescribeTypeRegistration</a>, which returns information about the
+     * status and IDs of the extension registration.
      * </p>
      * 
      * @return The identifier for this registration request.</p>
      *         <p>
-     *         Use this registration token when calling <code> <a>DescribeTypeRegistration</a> </code>, which returns
-     *         information about the status and IDs of the extension registration.
+     *         Use this registration token when calling <a>DescribeTypeRegistration</a>, which returns information about
+     *         the status and IDs of the extension registration.
      */
 
     public String getRegistrationToken() {
@@ -78,15 +78,15 @@ public class RegisterTypeResult extends com.amazonaws.AmazonWebServiceResult<com
      * The identifier for this registration request.
      * </p>
      * <p>
-     * Use this registration token when calling <code> <a>DescribeTypeRegistration</a> </code>, which returns
-     * information about the status and IDs of the extension registration.
+     * Use this registration token when calling <a>DescribeTypeRegistration</a>, which returns information about the
+     * status and IDs of the extension registration.
      * </p>
      * 
      * @param registrationToken
      *        The identifier for this registration request.</p>
      *        <p>
-     *        Use this registration token when calling <code> <a>DescribeTypeRegistration</a> </code>, which returns
-     *        information about the status and IDs of the extension registration.
+     *        Use this registration token when calling <a>DescribeTypeRegistration</a>, which returns information about
+     *        the status and IDs of the extension registration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

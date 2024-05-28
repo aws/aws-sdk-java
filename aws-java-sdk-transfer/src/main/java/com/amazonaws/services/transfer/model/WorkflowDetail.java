@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,9 +22,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the workflow.
  * </p>
  * <p>
- * In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also
+ * In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code> can also
  * contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs when
- * a file is open when the session disconnects.
+ * the server session disconnects while the file is still being uploaded.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/WorkflowDetail" target="_top">AWS API

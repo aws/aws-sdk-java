@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A service configuration associated with a resource group. The configuration options are determined by the AWS service
- * that defines the <code>Type</code>, and specifies which resources can be included in the group. You can add a service
- * configuration when you create the group by using <a>CreateGroup</a>, or later by using the
+ * A service configuration associated with a resource group. The configuration options are determined by the Amazon Web
+ * Services service that defines the <code>Type</code>, and specifies which resources can be included in the group. You
+ * can add a service configuration when you create the group by using <a>CreateGroup</a>, or later by using the
  * <a>PutGroupConfiguration</a> operation. For details about group service configuration syntax, see <a
  * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource
  * groups</a>.

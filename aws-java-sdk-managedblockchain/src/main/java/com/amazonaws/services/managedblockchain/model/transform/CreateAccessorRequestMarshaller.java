@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -11,6 +11,8 @@
  * and limitations under the License.
  */
 package com.amazonaws.services.managedblockchain.model.transform;
+
+import java.util.Map;
 
 import javax.annotation.Generated;
 
@@ -34,6 +36,10 @@ public class CreateAccessorRequestMarshaller {
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<String> ACCESSORTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccessorType").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> NETWORKTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NetworkType").build();
 
     private static final CreateAccessorRequestMarshaller instance = new CreateAccessorRequestMarshaller();
 
@@ -53,6 +59,8 @@ public class CreateAccessorRequestMarshaller {
         try {
             protocolMarshaller.marshall(createAccessorRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(createAccessorRequest.getAccessorType(), ACCESSORTYPE_BINDING);
+            protocolMarshaller.marshall(createAccessorRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createAccessorRequest.getNetworkType(), NETWORKTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

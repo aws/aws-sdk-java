@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,14 +27,35 @@ public class CreateCustomDBEngineVersionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The database engine to use for your custom engine version (CEV). The only supported value is
-     * <code>custom-oracle-ee</code>.
+     * The database engine. RDS Custom for Oracle supports the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>custom-oracle-ee</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-ee-cdb</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-se2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-se2-cdb</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String engine;
     /**
      * <p>
-     * The name of your CEV. The name format is <code>19.<i>customized_string</i> </code>. For example, a valid name is
+     * The name of your CEV. The name format is 19.<i>customized_string</i>. For example, a valid CEV name is
      * <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS. The
      * combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.
      * </p>
@@ -54,6 +75,16 @@ public class CreateCustomDBEngineVersionRequest extends com.amazonaws.AmazonWebS
      * </p>
      */
     private String databaseInstallationFilesS3Prefix;
+    /**
+     * <p>
+     * The ID of the Amazon Machine Image (AMI). For RDS Custom for SQL Server, an AMI ID is required to create a CEV.
+     * For RDS Custom for Oracle, the default is the most recent AMI available, but you can specify an AMI ID that was
+     * used in a different Oracle CEV. Find the AMIs used by your CEVs by calling the <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBEngineVersions.html"
+     * >DescribeDBEngineVersions</a> operation.
+     * </p>
+     */
+    private String imageId;
     /**
      * <p>
      * The Amazon Web Services KMS key identifier for an encrypted CEV. A symmetric encryption KMS key is required for
@@ -129,16 +160,72 @@ public class CreateCustomDBEngineVersionRequest extends com.amazonaws.AmazonWebS
     private String manifest;
 
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The ARN of a CEV to use as a source for creating a new CEV. You can specify a different Amazon Machine Imagine
+     * (AMI) by using either <code>Source</code> or <code>UseAwsProvidedLatestImage</code>. You can't specify a
+     * different JSON manifest when you specify <code>SourceCustomDbEngineVersionIdentifier</code>.
+     * </p>
+     */
+    private String sourceCustomDbEngineVersionIdentifier;
+    /**
+     * <p>
+     * Specifies whether to use the latest service-provided Amazon Machine Image (AMI) for the CEV. If you specify
+     * <code>UseAwsProvidedLatestImage</code>, you can't also specify <code>ImageId</code>.
+     * </p>
+     */
+    private Boolean useAwsProvidedLatestImage;
 
     /**
      * <p>
-     * The database engine to use for your custom engine version (CEV). The only supported value is
-     * <code>custom-oracle-ee</code>.
+     * The database engine. RDS Custom for Oracle supports the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>custom-oracle-ee</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-ee-cdb</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-se2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-se2-cdb</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param engine
-     *        The database engine to use for your custom engine version (CEV). The only supported value is
-     *        <code>custom-oracle-ee</code>.
+     *        The database engine. RDS Custom for Oracle supports the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>custom-oracle-ee</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>custom-oracle-ee-cdb</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>custom-oracle-se2</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>custom-oracle-se2-cdb</code>
+     *        </p>
+     *        </li>
      */
 
     public void setEngine(String engine) {
@@ -147,12 +234,53 @@ public class CreateCustomDBEngineVersionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The database engine to use for your custom engine version (CEV). The only supported value is
-     * <code>custom-oracle-ee</code>.
+     * The database engine. RDS Custom for Oracle supports the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>custom-oracle-ee</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-ee-cdb</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-se2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-se2-cdb</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The database engine to use for your custom engine version (CEV). The only supported value is
-     *         <code>custom-oracle-ee</code>.
+     * @return The database engine. RDS Custom for Oracle supports the following values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>custom-oracle-ee</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>custom-oracle-ee-cdb</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>custom-oracle-se2</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>custom-oracle-se2-cdb</code>
+     *         </p>
+     *         </li>
      */
 
     public String getEngine() {
@@ -161,13 +289,54 @@ public class CreateCustomDBEngineVersionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The database engine to use for your custom engine version (CEV). The only supported value is
-     * <code>custom-oracle-ee</code>.
+     * The database engine. RDS Custom for Oracle supports the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>custom-oracle-ee</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-ee-cdb</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-se2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-se2-cdb</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param engine
-     *        The database engine to use for your custom engine version (CEV). The only supported value is
-     *        <code>custom-oracle-ee</code>.
+     *        The database engine. RDS Custom for Oracle supports the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>custom-oracle-ee</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>custom-oracle-ee-cdb</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>custom-oracle-se2</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>custom-oracle-se2-cdb</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,16 +347,15 @@ public class CreateCustomDBEngineVersionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of your CEV. The name format is <code>19.<i>customized_string</i> </code>. For example, a valid name is
+     * The name of your CEV. The name format is 19.<i>customized_string</i>. For example, a valid CEV name is
      * <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS. The
      * combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.
      * </p>
      * 
      * @param engineVersion
-     *        The name of your CEV. The name format is <code>19.<i>customized_string</i> </code>. For example, a valid
-     *        name is <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for
-     *        Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer
-     *        per Region.
+     *        The name of your CEV. The name format is 19.<i>customized_string</i>. For example, a valid CEV name is
+     *        <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS.
+     *        The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -196,15 +364,14 @@ public class CreateCustomDBEngineVersionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of your CEV. The name format is <code>19.<i>customized_string</i> </code>. For example, a valid name is
+     * The name of your CEV. The name format is 19.<i>customized_string</i>. For example, a valid CEV name is
      * <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS. The
      * combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.
      * </p>
      * 
-     * @return The name of your CEV. The name format is <code>19.<i>customized_string</i> </code>. For example, a valid
-     *         name is <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for
-     *         Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer
-     *         per Region.
+     * @return The name of your CEV. The name format is 19.<i>customized_string</i>. For example, a valid CEV name is
+     *         <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS.
+     *         The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.
      */
 
     public String getEngineVersion() {
@@ -213,16 +380,15 @@ public class CreateCustomDBEngineVersionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of your CEV. The name format is <code>19.<i>customized_string</i> </code>. For example, a valid name is
+     * The name of your CEV. The name format is 19.<i>customized_string</i>. For example, a valid CEV name is
      * <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS. The
      * combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.
      * </p>
      * 
      * @param engineVersion
-     *        The name of your CEV. The name format is <code>19.<i>customized_string</i> </code>. For example, a valid
-     *        name is <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for
-     *        Amazon RDS. The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer
-     *        per Region.
+     *        The name of your CEV. The name format is 19.<i>customized_string</i>. For example, a valid CEV name is
+     *        <code>19.my_cev1</code>. This setting is required for RDS Custom for Oracle, but optional for Amazon RDS.
+     *        The combination of <code>Engine</code> and <code>EngineVersion</code> is unique per customer per Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -320,6 +486,70 @@ public class CreateCustomDBEngineVersionRequest extends com.amazonaws.AmazonWebS
 
     public CreateCustomDBEngineVersionRequest withDatabaseInstallationFilesS3Prefix(String databaseInstallationFilesS3Prefix) {
         setDatabaseInstallationFilesS3Prefix(databaseInstallationFilesS3Prefix);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the Amazon Machine Image (AMI). For RDS Custom for SQL Server, an AMI ID is required to create a CEV.
+     * For RDS Custom for Oracle, the default is the most recent AMI available, but you can specify an AMI ID that was
+     * used in a different Oracle CEV. Find the AMIs used by your CEVs by calling the <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBEngineVersions.html"
+     * >DescribeDBEngineVersions</a> operation.
+     * </p>
+     * 
+     * @param imageId
+     *        The ID of the Amazon Machine Image (AMI). For RDS Custom for SQL Server, an AMI ID is required to create a
+     *        CEV. For RDS Custom for Oracle, the default is the most recent AMI available, but you can specify an AMI
+     *        ID that was used in a different Oracle CEV. Find the AMIs used by your CEVs by calling the <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBEngineVersions.html"
+     *        >DescribeDBEngineVersions</a> operation.
+     */
+
+    public void setImageId(String imageId) {
+        this.imageId = imageId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Amazon Machine Image (AMI). For RDS Custom for SQL Server, an AMI ID is required to create a CEV.
+     * For RDS Custom for Oracle, the default is the most recent AMI available, but you can specify an AMI ID that was
+     * used in a different Oracle CEV. Find the AMIs used by your CEVs by calling the <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBEngineVersions.html"
+     * >DescribeDBEngineVersions</a> operation.
+     * </p>
+     * 
+     * @return The ID of the Amazon Machine Image (AMI). For RDS Custom for SQL Server, an AMI ID is required to create
+     *         a CEV. For RDS Custom for Oracle, the default is the most recent AMI available, but you can specify an
+     *         AMI ID that was used in a different Oracle CEV. Find the AMIs used by your CEVs by calling the <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBEngineVersions.html"
+     *         >DescribeDBEngineVersions</a> operation.
+     */
+
+    public String getImageId() {
+        return this.imageId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Amazon Machine Image (AMI). For RDS Custom for SQL Server, an AMI ID is required to create a CEV.
+     * For RDS Custom for Oracle, the default is the most recent AMI available, but you can specify an AMI ID that was
+     * used in a different Oracle CEV. Find the AMIs used by your CEVs by calling the <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBEngineVersions.html"
+     * >DescribeDBEngineVersions</a> operation.
+     * </p>
+     * 
+     * @param imageId
+     *        The ID of the Amazon Machine Image (AMI). For RDS Custom for SQL Server, an AMI ID is required to create a
+     *        CEV. For RDS Custom for Oracle, the default is the most recent AMI available, but you can specify an AMI
+     *        ID that was used in a different Oracle CEV. Find the AMIs used by your CEVs by calling the <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBEngineVersions.html"
+     *        >DescribeDBEngineVersions</a> operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCustomDBEngineVersionRequest withImageId(String imageId) {
+        setImageId(imageId);
         return this;
     }
 
@@ -826,6 +1056,118 @@ public class CreateCustomDBEngineVersionRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * The ARN of a CEV to use as a source for creating a new CEV. You can specify a different Amazon Machine Imagine
+     * (AMI) by using either <code>Source</code> or <code>UseAwsProvidedLatestImage</code>. You can't specify a
+     * different JSON manifest when you specify <code>SourceCustomDbEngineVersionIdentifier</code>.
+     * </p>
+     * 
+     * @param sourceCustomDbEngineVersionIdentifier
+     *        The ARN of a CEV to use as a source for creating a new CEV. You can specify a different Amazon Machine
+     *        Imagine (AMI) by using either <code>Source</code> or <code>UseAwsProvidedLatestImage</code>. You can't
+     *        specify a different JSON manifest when you specify <code>SourceCustomDbEngineVersionIdentifier</code>.
+     */
+
+    public void setSourceCustomDbEngineVersionIdentifier(String sourceCustomDbEngineVersionIdentifier) {
+        this.sourceCustomDbEngineVersionIdentifier = sourceCustomDbEngineVersionIdentifier;
+    }
+
+    /**
+     * <p>
+     * The ARN of a CEV to use as a source for creating a new CEV. You can specify a different Amazon Machine Imagine
+     * (AMI) by using either <code>Source</code> or <code>UseAwsProvidedLatestImage</code>. You can't specify a
+     * different JSON manifest when you specify <code>SourceCustomDbEngineVersionIdentifier</code>.
+     * </p>
+     * 
+     * @return The ARN of a CEV to use as a source for creating a new CEV. You can specify a different Amazon Machine
+     *         Imagine (AMI) by using either <code>Source</code> or <code>UseAwsProvidedLatestImage</code>. You can't
+     *         specify a different JSON manifest when you specify <code>SourceCustomDbEngineVersionIdentifier</code>.
+     */
+
+    public String getSourceCustomDbEngineVersionIdentifier() {
+        return this.sourceCustomDbEngineVersionIdentifier;
+    }
+
+    /**
+     * <p>
+     * The ARN of a CEV to use as a source for creating a new CEV. You can specify a different Amazon Machine Imagine
+     * (AMI) by using either <code>Source</code> or <code>UseAwsProvidedLatestImage</code>. You can't specify a
+     * different JSON manifest when you specify <code>SourceCustomDbEngineVersionIdentifier</code>.
+     * </p>
+     * 
+     * @param sourceCustomDbEngineVersionIdentifier
+     *        The ARN of a CEV to use as a source for creating a new CEV. You can specify a different Amazon Machine
+     *        Imagine (AMI) by using either <code>Source</code> or <code>UseAwsProvidedLatestImage</code>. You can't
+     *        specify a different JSON manifest when you specify <code>SourceCustomDbEngineVersionIdentifier</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCustomDBEngineVersionRequest withSourceCustomDbEngineVersionIdentifier(String sourceCustomDbEngineVersionIdentifier) {
+        setSourceCustomDbEngineVersionIdentifier(sourceCustomDbEngineVersionIdentifier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to use the latest service-provided Amazon Machine Image (AMI) for the CEV. If you specify
+     * <code>UseAwsProvidedLatestImage</code>, you can't also specify <code>ImageId</code>.
+     * </p>
+     * 
+     * @param useAwsProvidedLatestImage
+     *        Specifies whether to use the latest service-provided Amazon Machine Image (AMI) for the CEV. If you
+     *        specify <code>UseAwsProvidedLatestImage</code>, you can't also specify <code>ImageId</code>.
+     */
+
+    public void setUseAwsProvidedLatestImage(Boolean useAwsProvidedLatestImage) {
+        this.useAwsProvidedLatestImage = useAwsProvidedLatestImage;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to use the latest service-provided Amazon Machine Image (AMI) for the CEV. If you specify
+     * <code>UseAwsProvidedLatestImage</code>, you can't also specify <code>ImageId</code>.
+     * </p>
+     * 
+     * @return Specifies whether to use the latest service-provided Amazon Machine Image (AMI) for the CEV. If you
+     *         specify <code>UseAwsProvidedLatestImage</code>, you can't also specify <code>ImageId</code>.
+     */
+
+    public Boolean getUseAwsProvidedLatestImage() {
+        return this.useAwsProvidedLatestImage;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to use the latest service-provided Amazon Machine Image (AMI) for the CEV. If you specify
+     * <code>UseAwsProvidedLatestImage</code>, you can't also specify <code>ImageId</code>.
+     * </p>
+     * 
+     * @param useAwsProvidedLatestImage
+     *        Specifies whether to use the latest service-provided Amazon Machine Image (AMI) for the CEV. If you
+     *        specify <code>UseAwsProvidedLatestImage</code>, you can't also specify <code>ImageId</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCustomDBEngineVersionRequest withUseAwsProvidedLatestImage(Boolean useAwsProvidedLatestImage) {
+        setUseAwsProvidedLatestImage(useAwsProvidedLatestImage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to use the latest service-provided Amazon Machine Image (AMI) for the CEV. If you specify
+     * <code>UseAwsProvidedLatestImage</code>, you can't also specify <code>ImageId</code>.
+     * </p>
+     * 
+     * @return Specifies whether to use the latest service-provided Amazon Machine Image (AMI) for the CEV. If you
+     *         specify <code>UseAwsProvidedLatestImage</code>, you can't also specify <code>ImageId</code>.
+     */
+
+    public Boolean isUseAwsProvidedLatestImage() {
+        return this.useAwsProvidedLatestImage;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -845,6 +1187,8 @@ public class CreateCustomDBEngineVersionRequest extends com.amazonaws.AmazonWebS
             sb.append("DatabaseInstallationFilesS3BucketName: ").append(getDatabaseInstallationFilesS3BucketName()).append(",");
         if (getDatabaseInstallationFilesS3Prefix() != null)
             sb.append("DatabaseInstallationFilesS3Prefix: ").append(getDatabaseInstallationFilesS3Prefix()).append(",");
+        if (getImageId() != null)
+            sb.append("ImageId: ").append(getImageId()).append(",");
         if (getKMSKeyId() != null)
             sb.append("KMSKeyId: ").append(getKMSKeyId()).append(",");
         if (getDescription() != null)
@@ -852,7 +1196,11 @@ public class CreateCustomDBEngineVersionRequest extends com.amazonaws.AmazonWebS
         if (getManifest() != null)
             sb.append("Manifest: ").append(getManifest()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getSourceCustomDbEngineVersionIdentifier() != null)
+            sb.append("SourceCustomDbEngineVersionIdentifier: ").append(getSourceCustomDbEngineVersionIdentifier()).append(",");
+        if (getUseAwsProvidedLatestImage() != null)
+            sb.append("UseAwsProvidedLatestImage: ").append(getUseAwsProvidedLatestImage());
         sb.append("}");
         return sb.toString();
     }
@@ -885,6 +1233,10 @@ public class CreateCustomDBEngineVersionRequest extends com.amazonaws.AmazonWebS
         if (other.getDatabaseInstallationFilesS3Prefix() != null
                 && other.getDatabaseInstallationFilesS3Prefix().equals(this.getDatabaseInstallationFilesS3Prefix()) == false)
             return false;
+        if (other.getImageId() == null ^ this.getImageId() == null)
+            return false;
+        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false)
+            return false;
         if (other.getKMSKeyId() == null ^ this.getKMSKeyId() == null)
             return false;
         if (other.getKMSKeyId() != null && other.getKMSKeyId().equals(this.getKMSKeyId()) == false)
@@ -901,6 +1253,15 @@ public class CreateCustomDBEngineVersionRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getSourceCustomDbEngineVersionIdentifier() == null ^ this.getSourceCustomDbEngineVersionIdentifier() == null)
+            return false;
+        if (other.getSourceCustomDbEngineVersionIdentifier() != null
+                && other.getSourceCustomDbEngineVersionIdentifier().equals(this.getSourceCustomDbEngineVersionIdentifier()) == false)
+            return false;
+        if (other.getUseAwsProvidedLatestImage() == null ^ this.getUseAwsProvidedLatestImage() == null)
+            return false;
+        if (other.getUseAwsProvidedLatestImage() != null && other.getUseAwsProvidedLatestImage().equals(this.getUseAwsProvidedLatestImage()) == false)
+            return false;
         return true;
     }
 
@@ -913,10 +1274,13 @@ public class CreateCustomDBEngineVersionRequest extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
         hashCode = prime * hashCode + ((getDatabaseInstallationFilesS3BucketName() == null) ? 0 : getDatabaseInstallationFilesS3BucketName().hashCode());
         hashCode = prime * hashCode + ((getDatabaseInstallationFilesS3Prefix() == null) ? 0 : getDatabaseInstallationFilesS3Prefix().hashCode());
+        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode());
         hashCode = prime * hashCode + ((getKMSKeyId() == null) ? 0 : getKMSKeyId().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getManifest() == null) ? 0 : getManifest().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getSourceCustomDbEngineVersionIdentifier() == null) ? 0 : getSourceCustomDbEngineVersionIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getUseAwsProvidedLatestImage() == null) ? 0 : getUseAwsProvidedLatestImage().hashCode());
         return hashCode;
     }
 

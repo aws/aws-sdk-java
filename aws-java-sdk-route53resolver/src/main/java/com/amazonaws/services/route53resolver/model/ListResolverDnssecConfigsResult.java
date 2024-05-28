@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,7 +41,7 @@ public class ListResolverDnssecConfigsResult extends com.amazonaws.AmazonWebServ
      * An array that contains one <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html"
      * >ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the
-     * current Amazon Web Services account.
+     * current Amazon Web Services account. It doesn't contain disabled DNSSEC configurations for the resource.
      * </p>
      */
     private java.util.List<ResolverDnssecConfig> resolverDnssecConfigs;
@@ -133,13 +133,14 @@ public class ListResolverDnssecConfigsResult extends com.amazonaws.AmazonWebServ
      * An array that contains one <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html"
      * >ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the
-     * current Amazon Web Services account.
+     * current Amazon Web Services account. It doesn't contain disabled DNSSEC configurations for the resource.
      * </p>
      * 
      * @return An array that contains one <a
      *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html"
      *         >ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with
-     *         the current Amazon Web Services account.
+     *         the current Amazon Web Services account. It doesn't contain disabled DNSSEC configurations for the
+     *         resource.
      */
 
     public java.util.List<ResolverDnssecConfig> getResolverDnssecConfigs() {
@@ -151,14 +152,14 @@ public class ListResolverDnssecConfigsResult extends com.amazonaws.AmazonWebServ
      * An array that contains one <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html"
      * >ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the
-     * current Amazon Web Services account.
+     * current Amazon Web Services account. It doesn't contain disabled DNSSEC configurations for the resource.
      * </p>
      * 
      * @param resolverDnssecConfigs
      *        An array that contains one <a
      *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html"
      *        >ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the
-     *        current Amazon Web Services account.
+     *        current Amazon Web Services account. It doesn't contain disabled DNSSEC configurations for the resource.
      */
 
     public void setResolverDnssecConfigs(java.util.Collection<ResolverDnssecConfig> resolverDnssecConfigs) {
@@ -175,7 +176,7 @@ public class ListResolverDnssecConfigsResult extends com.amazonaws.AmazonWebServ
      * An array that contains one <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html"
      * >ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the
-     * current Amazon Web Services account.
+     * current Amazon Web Services account. It doesn't contain disabled DNSSEC configurations for the resource.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -187,7 +188,7 @@ public class ListResolverDnssecConfigsResult extends com.amazonaws.AmazonWebServ
      *        An array that contains one <a
      *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html"
      *        >ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the
-     *        current Amazon Web Services account.
+     *        current Amazon Web Services account. It doesn't contain disabled DNSSEC configurations for the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -206,14 +207,14 @@ public class ListResolverDnssecConfigsResult extends com.amazonaws.AmazonWebServ
      * An array that contains one <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html"
      * >ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the
-     * current Amazon Web Services account.
+     * current Amazon Web Services account. It doesn't contain disabled DNSSEC configurations for the resource.
      * </p>
      * 
      * @param resolverDnssecConfigs
      *        An array that contains one <a
      *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html"
      *        >ResolverDnssecConfig</a> element for each configuration for DNSSEC validation that is associated with the
-     *        current Amazon Web Services account.
+     *        current Amazon Web Services account. It doesn't contain disabled DNSSEC configurations for the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

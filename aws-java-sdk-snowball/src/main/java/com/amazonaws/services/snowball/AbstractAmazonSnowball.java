@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -139,6 +139,16 @@ public class AbstractAmazonSnowball implements AmazonSnowball {
 
     @Override
     public ListLongTermPricingResult listLongTermPricing(ListLongTermPricingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListPickupLocationsResult listPickupLocations(ListPickupLocationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListServiceVersionsResult listServiceVersions(ListServiceVersionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

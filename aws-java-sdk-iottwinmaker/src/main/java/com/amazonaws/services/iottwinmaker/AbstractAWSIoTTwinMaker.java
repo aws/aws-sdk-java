@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,11 @@ public class AbstractAWSIoTTwinMaker implements AWSIoTTwinMaker {
     }
 
     @Override
+    public CancelMetadataTransferJobResult cancelMetadataTransferJob(CancelMetadataTransferJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateComponentTypeResult createComponentType(CreateComponentTypeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -43,7 +48,17 @@ public class AbstractAWSIoTTwinMaker implements AWSIoTTwinMaker {
     }
 
     @Override
+    public CreateMetadataTransferJobResult createMetadataTransferJob(CreateMetadataTransferJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateSceneResult createScene(CreateSceneRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateSyncJobResult createSyncJob(CreateSyncJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -68,7 +83,17 @@ public class AbstractAWSIoTTwinMaker implements AWSIoTTwinMaker {
     }
 
     @Override
+    public DeleteSyncJobResult deleteSyncJob(DeleteSyncJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteWorkspaceResult deleteWorkspace(DeleteWorkspaceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ExecuteQueryResult executeQuery(ExecuteQueryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -79,6 +104,16 @@ public class AbstractAWSIoTTwinMaker implements AWSIoTTwinMaker {
 
     @Override
     public GetEntityResult getEntity(GetEntityRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetMetadataTransferJobResult getMetadataTransferJob(GetMetadataTransferJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetPricingPlanResult getPricingPlan(GetPricingPlanRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -98,6 +133,11 @@ public class AbstractAWSIoTTwinMaker implements AWSIoTTwinMaker {
     }
 
     @Override
+    public GetSyncJobResult getSyncJob(GetSyncJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetWorkspaceResult getWorkspace(GetWorkspaceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -108,12 +148,37 @@ public class AbstractAWSIoTTwinMaker implements AWSIoTTwinMaker {
     }
 
     @Override
+    public ListComponentsResult listComponents(ListComponentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListEntitiesResult listEntities(ListEntitiesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public ListMetadataTransferJobsResult listMetadataTransferJobs(ListMetadataTransferJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListPropertiesResult listProperties(ListPropertiesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListScenesResult listScenes(ListScenesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListSyncJobsResult listSyncJobs(ListSyncJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListSyncResourcesResult listSyncResources(ListSyncResourcesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -144,6 +209,11 @@ public class AbstractAWSIoTTwinMaker implements AWSIoTTwinMaker {
 
     @Override
     public UpdateEntityResult updateEntity(UpdateEntityRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdatePricingPlanResult updatePricingPlan(UpdatePricingPlanRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

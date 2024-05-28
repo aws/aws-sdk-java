@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,8 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.List<AttributeDefinition> attributeDefinitions;
     /**
      * <p>
-     * The name of the table to be updated.
+     * The name of the table to be updated. You can also provide the Amazon Resource Name (ARN) of the table in this
+     * parameter.
      * </p>
      */
     private String tableName;
@@ -52,17 +53,17 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads.
-     * <code>PROVISIONED</code> sets the billing mode to <a href=
-     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual"
-     * >Provisioned Mode</a>.
+     * <code>PROVISIONED</code> sets the billing mode to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html"
+     * >Provisioned capacity mode</a>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
-     * <code>PAY_PER_REQUEST</code> sets the billing mode to <a href=
-     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand"
-     * >On-Demand Mode</a>.
+     * <code>PAY_PER_REQUEST</code> sets the billing mode to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html">On-demand
+     * capacity mode</a>.
      * </p>
      * </li>
      * </ul>
@@ -112,7 +113,7 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <note>
      * <p>
-     * You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already has a
+     * You receive a <code>ValidationException</code> if you try to enable a stream on a table that already has a
      * stream, or if you try to disable a stream on a table that doesn't have a stream.
      * </p>
      * </note>
@@ -130,9 +131,7 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <note>
      * <p>
-     * This property only applies to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-     * 2019.11.21</a> of global tables.
+     * For global tables, this property only applies to global tables using Version 2019.11.21 (Current version).
      * </p>
      * </note>
      */
@@ -144,6 +143,19 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String tableClass;
+    /**
+     * <p>
+     * Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.
+     * </p>
+     */
+    private Boolean deletionProtectionEnabled;
+    /**
+     * <p>
+     * Updates the maximum number of read and write units for the specified table in on-demand capacity mode. If you use
+     * this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.
+     * </p>
+     */
+    private OnDemandThroughput onDemandThroughput;
 
     /**
      * Default constructor for UpdateTableRequest object. Callers should use the setter or fluent setter (with...)
@@ -157,7 +169,8 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * initialize any additional object members.
      * 
      * @param tableName
-     *        The name of the table to be updated.
+     *        The name of the table to be updated. You can also provide the Amazon Resource Name (ARN) of the table in
+     *        this parameter.
      * @param provisionedThroughput
      *        The new provisioned throughput settings for the specified table or index.
      */
@@ -250,11 +263,13 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the table to be updated.
+     * The name of the table to be updated. You can also provide the Amazon Resource Name (ARN) of the table in this
+     * parameter.
      * </p>
      * 
      * @param tableName
-     *        The name of the table to be updated.
+     *        The name of the table to be updated. You can also provide the Amazon Resource Name (ARN) of the table in
+     *        this parameter.
      */
 
     public void setTableName(String tableName) {
@@ -263,10 +278,12 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the table to be updated.
+     * The name of the table to be updated. You can also provide the Amazon Resource Name (ARN) of the table in this
+     * parameter.
      * </p>
      * 
-     * @return The name of the table to be updated.
+     * @return The name of the table to be updated. You can also provide the Amazon Resource Name (ARN) of the table in
+     *         this parameter.
      */
 
     public String getTableName() {
@@ -275,11 +292,13 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the table to be updated.
+     * The name of the table to be updated. You can also provide the Amazon Resource Name (ARN) of the table in this
+     * parameter.
      * </p>
      * 
      * @param tableName
-     *        The name of the table to be updated.
+     *        The name of the table to be updated. You can also provide the Amazon Resource Name (ARN) of the table in
+     *        this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -299,17 +318,17 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads.
-     * <code>PROVISIONED</code> sets the billing mode to <a href=
-     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual"
-     * >Provisioned Mode</a>.
+     * <code>PROVISIONED</code> sets the billing mode to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html"
+     * >Provisioned capacity mode</a>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
-     * <code>PAY_PER_REQUEST</code> sets the billing mode to <a href=
-     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand"
-     * >On-Demand Mode</a>.
+     * <code>PAY_PER_REQUEST</code> sets the billing mode to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html">On-demand
+     * capacity mode</a>.
      * </p>
      * </li>
      * </ul>
@@ -323,17 +342,17 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads.
-     *        <code>PROVISIONED</code> sets the billing mode to <a href=
-     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual"
-     *        >Provisioned Mode</a>.
+     *        <code>PROVISIONED</code> sets the billing mode to <a
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html"
+     *        >Provisioned capacity mode</a>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable
-     *        workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href=
-     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand"
-     *        >On-Demand Mode</a>.
+     *        workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html"
+     *        >On-demand capacity mode</a>.
      *        </p>
      *        </li>
      * @see BillingMode
@@ -354,17 +373,17 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads.
-     * <code>PROVISIONED</code> sets the billing mode to <a href=
-     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual"
-     * >Provisioned Mode</a>.
+     * <code>PROVISIONED</code> sets the billing mode to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html"
+     * >Provisioned capacity mode</a>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
-     * <code>PAY_PER_REQUEST</code> sets the billing mode to <a href=
-     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand"
-     * >On-Demand Mode</a>.
+     * <code>PAY_PER_REQUEST</code> sets the billing mode to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html">On-demand
+     * capacity mode</a>.
      * </p>
      * </li>
      * </ul>
@@ -377,17 +396,17 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <li>
      *         <p>
      *         <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads.
-     *         <code>PROVISIONED</code> sets the billing mode to <a href=
-     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual"
-     *         >Provisioned Mode</a>.
+     *         <code>PROVISIONED</code> sets the billing mode to <a
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html"
+     *         >Provisioned capacity mode</a>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable
-     *         workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href=
-     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand"
-     *         >On-Demand Mode</a>.
+     *         workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html"
+     *         >On-demand capacity mode</a>.
      *         </p>
      *         </li>
      * @see BillingMode
@@ -408,17 +427,17 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads.
-     * <code>PROVISIONED</code> sets the billing mode to <a href=
-     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual"
-     * >Provisioned Mode</a>.
+     * <code>PROVISIONED</code> sets the billing mode to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html"
+     * >Provisioned capacity mode</a>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
-     * <code>PAY_PER_REQUEST</code> sets the billing mode to <a href=
-     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand"
-     * >On-Demand Mode</a>.
+     * <code>PAY_PER_REQUEST</code> sets the billing mode to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html">On-demand
+     * capacity mode</a>.
      * </p>
      * </li>
      * </ul>
@@ -432,17 +451,17 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads.
-     *        <code>PROVISIONED</code> sets the billing mode to <a href=
-     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual"
-     *        >Provisioned Mode</a>.
+     *        <code>PROVISIONED</code> sets the billing mode to <a
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html"
+     *        >Provisioned capacity mode</a>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable
-     *        workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href=
-     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand"
-     *        >On-Demand Mode</a>.
+     *        workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html"
+     *        >On-demand capacity mode</a>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -465,17 +484,17 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads.
-     * <code>PROVISIONED</code> sets the billing mode to <a href=
-     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual"
-     * >Provisioned Mode</a>.
+     * <code>PROVISIONED</code> sets the billing mode to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html"
+     * >Provisioned capacity mode</a>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads.
-     * <code>PAY_PER_REQUEST</code> sets the billing mode to <a href=
-     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand"
-     * >On-Demand Mode</a>.
+     * <code>PAY_PER_REQUEST</code> sets the billing mode to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html">On-demand
+     * capacity mode</a>.
      * </p>
      * </li>
      * </ul>
@@ -489,17 +508,17 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable workloads.
-     *        <code>PROVISIONED</code> sets the billing mode to <a href=
-     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual"
-     *        >Provisioned Mode</a>.
+     *        <code>PROVISIONED</code> sets the billing mode to <a
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html"
+     *        >Provisioned capacity mode</a>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for unpredictable
-     *        workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a href=
-     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand"
-     *        >On-Demand Mode</a>.
+     *        workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html"
+     *        >On-demand capacity mode</a>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -831,7 +850,7 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <note>
      * <p>
-     * You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already has a
+     * You receive a <code>ValidationException</code> if you try to enable a stream on a table that already has a
      * stream, or if you try to disable a stream on a table that doesn't have a stream.
      * </p>
      * </note>
@@ -839,8 +858,8 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param streamSpecification
      *        Represents the DynamoDB Streams configuration for the table.</p> <note>
      *        <p>
-     *        You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already
-     *        has a stream, or if you try to disable a stream on a table that doesn't have a stream.
+     *        You receive a <code>ValidationException</code> if you try to enable a stream on a table that already has a
+     *        stream, or if you try to disable a stream on a table that doesn't have a stream.
      *        </p>
      */
 
@@ -854,15 +873,15 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <note>
      * <p>
-     * You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already has a
+     * You receive a <code>ValidationException</code> if you try to enable a stream on a table that already has a
      * stream, or if you try to disable a stream on a table that doesn't have a stream.
      * </p>
      * </note>
      * 
      * @return Represents the DynamoDB Streams configuration for the table.</p> <note>
      *         <p>
-     *         You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already
-     *         has a stream, or if you try to disable a stream on a table that doesn't have a stream.
+     *         You receive a <code>ValidationException</code> if you try to enable a stream on a table that already has
+     *         a stream, or if you try to disable a stream on a table that doesn't have a stream.
      *         </p>
      */
 
@@ -876,7 +895,7 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <note>
      * <p>
-     * You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already has a
+     * You receive a <code>ValidationException</code> if you try to enable a stream on a table that already has a
      * stream, or if you try to disable a stream on a table that doesn't have a stream.
      * </p>
      * </note>
@@ -884,8 +903,8 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param streamSpecification
      *        Represents the DynamoDB Streams configuration for the table.</p> <note>
      *        <p>
-     *        You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already
-     *        has a stream, or if you try to disable a stream on a table that doesn't have a stream.
+     *        You receive a <code>ValidationException</code> if you try to enable a stream on a table that already has a
+     *        stream, or if you try to disable a stream on a table that doesn't have a stream.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -941,17 +960,14 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <note>
      * <p>
-     * This property only applies to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-     * 2019.11.21</a> of global tables.
+     * For global tables, this property only applies to global tables using Version 2019.11.21 (Current version).
      * </p>
      * </note>
      * 
      * @return A list of replica update actions (create, delete, or update) for the table.</p> <note>
      *         <p>
-     *         This property only applies to <a
-     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-     *         2019.11.21</a> of global tables.
+     *         For global tables, this property only applies to global tables using Version 2019.11.21 (Current
+     *         version).
      *         </p>
      */
 
@@ -965,18 +981,14 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <note>
      * <p>
-     * This property only applies to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-     * 2019.11.21</a> of global tables.
+     * For global tables, this property only applies to global tables using Version 2019.11.21 (Current version).
      * </p>
      * </note>
      * 
      * @param replicaUpdates
      *        A list of replica update actions (create, delete, or update) for the table.</p> <note>
      *        <p>
-     *        This property only applies to <a
-     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-     *        2019.11.21</a> of global tables.
+     *        For global tables, this property only applies to global tables using Version 2019.11.21 (Current version).
      *        </p>
      */
 
@@ -995,9 +1007,7 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <note>
      * <p>
-     * This property only applies to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-     * 2019.11.21</a> of global tables.
+     * For global tables, this property only applies to global tables using Version 2019.11.21 (Current version).
      * </p>
      * </note>
      * <p>
@@ -1009,9 +1019,7 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param replicaUpdates
      *        A list of replica update actions (create, delete, or update) for the table.</p> <note>
      *        <p>
-     *        This property only applies to <a
-     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-     *        2019.11.21</a> of global tables.
+     *        For global tables, this property only applies to global tables using Version 2019.11.21 (Current version).
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1032,18 +1040,14 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <note>
      * <p>
-     * This property only applies to <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-     * 2019.11.21</a> of global tables.
+     * For global tables, this property only applies to global tables using Version 2019.11.21 (Current version).
      * </p>
      * </note>
      * 
      * @param replicaUpdates
      *        A list of replica update actions (create, delete, or update) for the table.</p> <note>
      *        <p>
-     *        This property only applies to <a
-     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-     *        2019.11.21</a> of global tables.
+     *        For global tables, this property only applies to global tables using Version 2019.11.21 (Current version).
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1121,6 +1125,107 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.
+     * </p>
+     * 
+     * @param deletionProtectionEnabled
+     *        Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.
+     */
+
+    public void setDeletionProtectionEnabled(Boolean deletionProtectionEnabled) {
+        this.deletionProtectionEnabled = deletionProtectionEnabled;
+    }
+
+    /**
+     * <p>
+     * Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.
+     * </p>
+     * 
+     * @return Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.
+     */
+
+    public Boolean getDeletionProtectionEnabled() {
+        return this.deletionProtectionEnabled;
+    }
+
+    /**
+     * <p>
+     * Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.
+     * </p>
+     * 
+     * @param deletionProtectionEnabled
+     *        Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateTableRequest withDeletionProtectionEnabled(Boolean deletionProtectionEnabled) {
+        setDeletionProtectionEnabled(deletionProtectionEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.
+     * </p>
+     * 
+     * @return Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.
+     */
+
+    public Boolean isDeletionProtectionEnabled() {
+        return this.deletionProtectionEnabled;
+    }
+
+    /**
+     * <p>
+     * Updates the maximum number of read and write units for the specified table in on-demand capacity mode. If you use
+     * this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.
+     * </p>
+     * 
+     * @param onDemandThroughput
+     *        Updates the maximum number of read and write units for the specified table in on-demand capacity mode. If
+     *        you use this parameter, you must specify <code>MaxReadRequestUnits</code>,
+     *        <code>MaxWriteRequestUnits</code>, or both.
+     */
+
+    public void setOnDemandThroughput(OnDemandThroughput onDemandThroughput) {
+        this.onDemandThroughput = onDemandThroughput;
+    }
+
+    /**
+     * <p>
+     * Updates the maximum number of read and write units for the specified table in on-demand capacity mode. If you use
+     * this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.
+     * </p>
+     * 
+     * @return Updates the maximum number of read and write units for the specified table in on-demand capacity mode. If
+     *         you use this parameter, you must specify <code>MaxReadRequestUnits</code>,
+     *         <code>MaxWriteRequestUnits</code>, or both.
+     */
+
+    public OnDemandThroughput getOnDemandThroughput() {
+        return this.onDemandThroughput;
+    }
+
+    /**
+     * <p>
+     * Updates the maximum number of read and write units for the specified table in on-demand capacity mode. If you use
+     * this parameter, you must specify <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or both.
+     * </p>
+     * 
+     * @param onDemandThroughput
+     *        Updates the maximum number of read and write units for the specified table in on-demand capacity mode. If
+     *        you use this parameter, you must specify <code>MaxReadRequestUnits</code>,
+     *        <code>MaxWriteRequestUnits</code>, or both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateTableRequest withOnDemandThroughput(OnDemandThroughput onDemandThroughput) {
+        setOnDemandThroughput(onDemandThroughput);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1149,7 +1254,11 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getReplicaUpdates() != null)
             sb.append("ReplicaUpdates: ").append(getReplicaUpdates()).append(",");
         if (getTableClass() != null)
-            sb.append("TableClass: ").append(getTableClass());
+            sb.append("TableClass: ").append(getTableClass()).append(",");
+        if (getDeletionProtectionEnabled() != null)
+            sb.append("DeletionProtectionEnabled: ").append(getDeletionProtectionEnabled()).append(",");
+        if (getOnDemandThroughput() != null)
+            sb.append("OnDemandThroughput: ").append(getOnDemandThroughput());
         sb.append("}");
         return sb.toString();
     }
@@ -1200,6 +1309,14 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getTableClass() != null && other.getTableClass().equals(this.getTableClass()) == false)
             return false;
+        if (other.getDeletionProtectionEnabled() == null ^ this.getDeletionProtectionEnabled() == null)
+            return false;
+        if (other.getDeletionProtectionEnabled() != null && other.getDeletionProtectionEnabled().equals(this.getDeletionProtectionEnabled()) == false)
+            return false;
+        if (other.getOnDemandThroughput() == null ^ this.getOnDemandThroughput() == null)
+            return false;
+        if (other.getOnDemandThroughput() != null && other.getOnDemandThroughput().equals(this.getOnDemandThroughput()) == false)
+            return false;
         return true;
     }
 
@@ -1217,6 +1334,8 @@ public class UpdateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getSSESpecification() == null) ? 0 : getSSESpecification().hashCode());
         hashCode = prime * hashCode + ((getReplicaUpdates() == null) ? 0 : getReplicaUpdates().hashCode());
         hashCode = prime * hashCode + ((getTableClass() == null) ? 0 : getTableClass().hashCode());
+        hashCode = prime * hashCode + ((getDeletionProtectionEnabled() == null) ? 0 : getDeletionProtectionEnabled().hashCode());
+        hashCode = prime * hashCode + ((getOnDemandThroughput() == null) ? 0 : getOnDemandThroughput().hashCode());
         return hashCode;
     }
 

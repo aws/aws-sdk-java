@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,9 +26,9 @@ import com.amazonaws.services.fis.model.*;
  * </p>
  * <p>
  * <p>
- * Fault Injection Simulator is a managed service that enables you to perform fault injection experiments on your Amazon
+ * Fault Injection Service is a managed service that enables you to perform fault injection experiments on your Amazon
  * Web Services workloads. For more information, see the <a
- * href="https://docs.aws.amazon.com/fis/latest/userguide/">Fault Injection Simulator User Guide</a>.
+ * href="https://docs.aws.amazon.com/fis/latest/userguide/">Fault Injection Service User Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -63,8 +63,8 @@ public interface AWSFISAsync extends AWSFIS {
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">Experiment templates</a> in the
-     * <i>Fault Injection Simulator User Guide</i>.
+     * href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">experiment templates</a> in the
+     * <i>Fault Injection Service User Guide</i>.
      * </p>
      * 
      * @param createExperimentTemplateRequest
@@ -104,8 +104,8 @@ public interface AWSFISAsync extends AWSFIS {
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">Experiment templates</a> in the
-     * <i>Fault Injection Simulator User Guide</i>.
+     * href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">experiment templates</a> in the
+     * <i>Fault Injection Service User Guide</i>.
      * </p>
      * 
      * @param createExperimentTemplateRequest
@@ -120,6 +120,49 @@ public interface AWSFISAsync extends AWSFIS {
      */
     java.util.concurrent.Future<CreateExperimentTemplateResult> createExperimentTemplateAsync(CreateExperimentTemplateRequest createExperimentTemplateRequest,
             com.amazonaws.handlers.AsyncHandler<CreateExperimentTemplateRequest, CreateExperimentTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a target account configuration for the experiment template. A target account configuration is required
+     * when <code>accountTargeting</code> of <code>experimentOptions</code> is set to <code>multi-account</code>. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-options.html">experiment options</a> in the
+     * <i>Fault Injection Service User Guide</i>.
+     * </p>
+     * 
+     * @param createTargetAccountConfigurationRequest
+     * @return A Java Future containing the result of the CreateTargetAccountConfiguration operation returned by the
+     *         service.
+     * @sample AWSFISAsync.CreateTargetAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/CreateTargetAccountConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTargetAccountConfigurationResult> createTargetAccountConfigurationAsync(
+            CreateTargetAccountConfigurationRequest createTargetAccountConfigurationRequest);
+
+    /**
+     * <p>
+     * Creates a target account configuration for the experiment template. A target account configuration is required
+     * when <code>accountTargeting</code> of <code>experimentOptions</code> is set to <code>multi-account</code>. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-options.html">experiment options</a> in the
+     * <i>Fault Injection Service User Guide</i>.
+     * </p>
+     * 
+     * @param createTargetAccountConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTargetAccountConfiguration operation returned by the
+     *         service.
+     * @sample AWSFISAsyncHandler.CreateTargetAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/CreateTargetAccountConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTargetAccountConfigurationResult> createTargetAccountConfigurationAsync(
+            CreateTargetAccountConfigurationRequest createTargetAccountConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateTargetAccountConfigurationRequest, CreateTargetAccountConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -151,6 +194,41 @@ public interface AWSFISAsync extends AWSFIS {
      */
     java.util.concurrent.Future<DeleteExperimentTemplateResult> deleteExperimentTemplateAsync(DeleteExperimentTemplateRequest deleteExperimentTemplateRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteExperimentTemplateRequest, DeleteExperimentTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified target account configuration of the experiment template.
+     * </p>
+     * 
+     * @param deleteTargetAccountConfigurationRequest
+     * @return A Java Future containing the result of the DeleteTargetAccountConfiguration operation returned by the
+     *         service.
+     * @sample AWSFISAsync.DeleteTargetAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/DeleteTargetAccountConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTargetAccountConfigurationResult> deleteTargetAccountConfigurationAsync(
+            DeleteTargetAccountConfigurationRequest deleteTargetAccountConfigurationRequest);
+
+    /**
+     * <p>
+     * Deletes the specified target account configuration of the experiment template.
+     * </p>
+     * 
+     * @param deleteTargetAccountConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTargetAccountConfiguration operation returned by the
+     *         service.
+     * @sample AWSFISAsyncHandler.DeleteTargetAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/DeleteTargetAccountConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTargetAccountConfigurationResult> deleteTargetAccountConfigurationAsync(
+            DeleteTargetAccountConfigurationRequest deleteTargetAccountConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTargetAccountConfigurationRequest, DeleteTargetAccountConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -216,6 +294,41 @@ public interface AWSFISAsync extends AWSFIS {
 
     /**
      * <p>
+     * Gets information about the specified target account configuration of the experiment.
+     * </p>
+     * 
+     * @param getExperimentTargetAccountConfigurationRequest
+     * @return A Java Future containing the result of the GetExperimentTargetAccountConfiguration operation returned by
+     *         the service.
+     * @sample AWSFISAsync.GetExperimentTargetAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetExperimentTargetAccountConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetExperimentTargetAccountConfigurationResult> getExperimentTargetAccountConfigurationAsync(
+            GetExperimentTargetAccountConfigurationRequest getExperimentTargetAccountConfigurationRequest);
+
+    /**
+     * <p>
+     * Gets information about the specified target account configuration of the experiment.
+     * </p>
+     * 
+     * @param getExperimentTargetAccountConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetExperimentTargetAccountConfiguration operation returned by
+     *         the service.
+     * @sample AWSFISAsyncHandler.GetExperimentTargetAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetExperimentTargetAccountConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetExperimentTargetAccountConfigurationResult> getExperimentTargetAccountConfigurationAsync(
+            GetExperimentTargetAccountConfigurationRequest getExperimentTargetAccountConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetExperimentTargetAccountConfigurationRequest, GetExperimentTargetAccountConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about the specified experiment template.
      * </p>
      * 
@@ -244,6 +357,41 @@ public interface AWSFISAsync extends AWSFIS {
      */
     java.util.concurrent.Future<GetExperimentTemplateResult> getExperimentTemplateAsync(GetExperimentTemplateRequest getExperimentTemplateRequest,
             com.amazonaws.handlers.AsyncHandler<GetExperimentTemplateRequest, GetExperimentTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information about the specified target account configuration of the experiment template.
+     * </p>
+     * 
+     * @param getTargetAccountConfigurationRequest
+     * @return A Java Future containing the result of the GetTargetAccountConfiguration operation returned by the
+     *         service.
+     * @sample AWSFISAsync.GetTargetAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetTargetAccountConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetTargetAccountConfigurationResult> getTargetAccountConfigurationAsync(
+            GetTargetAccountConfigurationRequest getTargetAccountConfigurationRequest);
+
+    /**
+     * <p>
+     * Gets information about the specified target account configuration of the experiment template.
+     * </p>
+     * 
+     * @param getTargetAccountConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetTargetAccountConfiguration operation returned by the
+     *         service.
+     * @sample AWSFISAsyncHandler.GetTargetAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetTargetAccountConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetTargetAccountConfigurationResult> getTargetAccountConfigurationAsync(
+            GetTargetAccountConfigurationRequest getTargetAccountConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetTargetAccountConfigurationRequest, GetTargetAccountConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -306,6 +454,76 @@ public interface AWSFISAsync extends AWSFIS {
      */
     java.util.concurrent.Future<ListActionsResult> listActionsAsync(ListActionsRequest listActionsRequest,
             com.amazonaws.handlers.AsyncHandler<ListActionsRequest, ListActionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the resolved targets information of the specified experiment.
+     * </p>
+     * 
+     * @param listExperimentResolvedTargetsRequest
+     * @return A Java Future containing the result of the ListExperimentResolvedTargets operation returned by the
+     *         service.
+     * @sample AWSFISAsync.ListExperimentResolvedTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListExperimentResolvedTargets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListExperimentResolvedTargetsResult> listExperimentResolvedTargetsAsync(
+            ListExperimentResolvedTargetsRequest listExperimentResolvedTargetsRequest);
+
+    /**
+     * <p>
+     * Lists the resolved targets information of the specified experiment.
+     * </p>
+     * 
+     * @param listExperimentResolvedTargetsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListExperimentResolvedTargets operation returned by the
+     *         service.
+     * @sample AWSFISAsyncHandler.ListExperimentResolvedTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListExperimentResolvedTargets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListExperimentResolvedTargetsResult> listExperimentResolvedTargetsAsync(
+            ListExperimentResolvedTargetsRequest listExperimentResolvedTargetsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListExperimentResolvedTargetsRequest, ListExperimentResolvedTargetsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the target account configurations of the specified experiment.
+     * </p>
+     * 
+     * @param listExperimentTargetAccountConfigurationsRequest
+     * @return A Java Future containing the result of the ListExperimentTargetAccountConfigurations operation returned
+     *         by the service.
+     * @sample AWSFISAsync.ListExperimentTargetAccountConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListExperimentTargetAccountConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListExperimentTargetAccountConfigurationsResult> listExperimentTargetAccountConfigurationsAsync(
+            ListExperimentTargetAccountConfigurationsRequest listExperimentTargetAccountConfigurationsRequest);
+
+    /**
+     * <p>
+     * Lists the target account configurations of the specified experiment.
+     * </p>
+     * 
+     * @param listExperimentTargetAccountConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListExperimentTargetAccountConfigurations operation returned
+     *         by the service.
+     * @sample AWSFISAsyncHandler.ListExperimentTargetAccountConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListExperimentTargetAccountConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListExperimentTargetAccountConfigurationsResult> listExperimentTargetAccountConfigurationsAsync(
+            ListExperimentTargetAccountConfigurationsRequest listExperimentTargetAccountConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListExperimentTargetAccountConfigurationsRequest, ListExperimentTargetAccountConfigurationsResult> asyncHandler);
 
     /**
      * <p>
@@ -399,6 +617,41 @@ public interface AWSFISAsync extends AWSFIS {
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the target account configurations of the specified experiment template.
+     * </p>
+     * 
+     * @param listTargetAccountConfigurationsRequest
+     * @return A Java Future containing the result of the ListTargetAccountConfigurations operation returned by the
+     *         service.
+     * @sample AWSFISAsync.ListTargetAccountConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListTargetAccountConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTargetAccountConfigurationsResult> listTargetAccountConfigurationsAsync(
+            ListTargetAccountConfigurationsRequest listTargetAccountConfigurationsRequest);
+
+    /**
+     * <p>
+     * Lists the target account configurations of the specified experiment template.
+     * </p>
+     * 
+     * @param listTargetAccountConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTargetAccountConfigurations operation returned by the
+     *         service.
+     * @sample AWSFISAsyncHandler.ListTargetAccountConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListTargetAccountConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTargetAccountConfigurationsResult> listTargetAccountConfigurationsAsync(
+            ListTargetAccountConfigurationsRequest listTargetAccountConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTargetAccountConfigurationsRequest, ListTargetAccountConfigurationsResult> asyncHandler);
 
     /**
      * <p>
@@ -585,5 +838,40 @@ public interface AWSFISAsync extends AWSFIS {
      */
     java.util.concurrent.Future<UpdateExperimentTemplateResult> updateExperimentTemplateAsync(UpdateExperimentTemplateRequest updateExperimentTemplateRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateExperimentTemplateRequest, UpdateExperimentTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the target account configuration for the specified experiment template.
+     * </p>
+     * 
+     * @param updateTargetAccountConfigurationRequest
+     * @return A Java Future containing the result of the UpdateTargetAccountConfiguration operation returned by the
+     *         service.
+     * @sample AWSFISAsync.UpdateTargetAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/UpdateTargetAccountConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTargetAccountConfigurationResult> updateTargetAccountConfigurationAsync(
+            UpdateTargetAccountConfigurationRequest updateTargetAccountConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates the target account configuration for the specified experiment template.
+     * </p>
+     * 
+     * @param updateTargetAccountConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateTargetAccountConfiguration operation returned by the
+     *         service.
+     * @sample AWSFISAsyncHandler.UpdateTargetAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/UpdateTargetAccountConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTargetAccountConfigurationResult> updateTargetAccountConfigurationAsync(
+            UpdateTargetAccountConfigurationRequest updateTargetAccountConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateTargetAccountConfigurationRequest, UpdateTargetAccountConfigurationResult> asyncHandler);
 
 }

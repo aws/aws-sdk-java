@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,12 @@ public class GetInlinePolicyForPermissionSetResult extends com.amazonaws.AmazonW
      * <p>
      * The inline policy that is attached to the permission set.
      * </p>
+     * <note>
+     * <p>
+     * For <code>Length Constraints</code>, if a valid ARN is provided for a permission set, it is possible for an empty
+     * inline policy to be returned.
+     * </p>
+     * </note>
      */
     private String inlinePolicy;
 
@@ -35,9 +41,19 @@ public class GetInlinePolicyForPermissionSetResult extends com.amazonaws.AmazonW
      * <p>
      * The inline policy that is attached to the permission set.
      * </p>
+     * <note>
+     * <p>
+     * For <code>Length Constraints</code>, if a valid ARN is provided for a permission set, it is possible for an empty
+     * inline policy to be returned.
+     * </p>
+     * </note>
      * 
      * @param inlinePolicy
-     *        The inline policy that is attached to the permission set.
+     *        The inline policy that is attached to the permission set.</p> <note>
+     *        <p>
+     *        For <code>Length Constraints</code>, if a valid ARN is provided for a permission set, it is possible for
+     *        an empty inline policy to be returned.
+     *        </p>
      */
 
     public void setInlinePolicy(String inlinePolicy) {
@@ -48,8 +64,18 @@ public class GetInlinePolicyForPermissionSetResult extends com.amazonaws.AmazonW
      * <p>
      * The inline policy that is attached to the permission set.
      * </p>
+     * <note>
+     * <p>
+     * For <code>Length Constraints</code>, if a valid ARN is provided for a permission set, it is possible for an empty
+     * inline policy to be returned.
+     * </p>
+     * </note>
      * 
-     * @return The inline policy that is attached to the permission set.
+     * @return The inline policy that is attached to the permission set.</p> <note>
+     *         <p>
+     *         For <code>Length Constraints</code>, if a valid ARN is provided for a permission set, it is possible for
+     *         an empty inline policy to be returned.
+     *         </p>
      */
 
     public String getInlinePolicy() {
@@ -60,9 +86,19 @@ public class GetInlinePolicyForPermissionSetResult extends com.amazonaws.AmazonW
      * <p>
      * The inline policy that is attached to the permission set.
      * </p>
+     * <note>
+     * <p>
+     * For <code>Length Constraints</code>, if a valid ARN is provided for a permission set, it is possible for an empty
+     * inline policy to be returned.
+     * </p>
+     * </note>
      * 
      * @param inlinePolicy
-     *        The inline policy that is attached to the permission set.
+     *        The inline policy that is attached to the permission set.</p> <note>
+     *        <p>
+     *        For <code>Length Constraints</code>, if a valid ARN is provided for a permission set, it is possible for
+     *        an empty inline policy to be returned.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

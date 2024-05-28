@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,8 @@ public class Ac3SettingsMarshaller {
             .marshallLocationName("lfeFilter").build();
     private static final MarshallingInfo<String> METADATACONTROL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("metadataControl").build();
+    private static final MarshallingInfo<String> ATTENUATIONCONTROL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("attenuationControl").build();
 
     private static final Ac3SettingsMarshaller instance = new Ac3SettingsMarshaller();
 
@@ -65,6 +67,7 @@ public class Ac3SettingsMarshaller {
             protocolMarshaller.marshall(ac3Settings.getDrcProfile(), DRCPROFILE_BINDING);
             protocolMarshaller.marshall(ac3Settings.getLfeFilter(), LFEFILTER_BINDING);
             protocolMarshaller.marshall(ac3Settings.getMetadataControl(), METADATACONTROL_BINDING);
+            protocolMarshaller.marshall(ac3Settings.getAttenuationControl(), ATTENUATIONCONTROL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -11,6 +11,8 @@
  * and limitations under the License.
  */
 package com.amazonaws.services.controltower.model.transform;
+
+import java.util.Map;
 
 import javax.annotation.Generated;
 
@@ -29,6 +31,8 @@ public class EnableControlRequestMarshaller {
 
     private static final MarshallingInfo<String> CONTROLIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("controlIdentifier").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> TARGETIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("targetIdentifier").build();
 
@@ -49,6 +53,7 @@ public class EnableControlRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(enableControlRequest.getControlIdentifier(), CONTROLIDENTIFIER_BINDING);
+            protocolMarshaller.marshall(enableControlRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(enableControlRequest.getTargetIdentifier(), TARGETIDENTIFIER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

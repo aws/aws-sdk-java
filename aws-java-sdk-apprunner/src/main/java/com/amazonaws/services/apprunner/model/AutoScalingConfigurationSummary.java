@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,6 +54,37 @@ public class AutoScalingConfigurationSummary implements Serializable, Cloneable,
      * </p>
      */
     private Integer autoScalingConfigurationRevision;
+    /**
+     * <p>
+     * The current state of the auto scaling configuration. If the status of a configuration revision is
+     * <code>INACTIVE</code>, it was deleted and can't be used. Inactive configuration revisions are permanently removed
+     * some time after they are deleted.
+     * </p>
+     */
+    private String status;
+    /**
+     * <p>
+     * The time when the auto scaling configuration was created. It's in Unix time stamp format.
+     * </p>
+     */
+    private java.util.Date createdAt;
+    /**
+     * <p>
+     * Indicates if this auto scaling configuration has an App Runner service associated with it. A value of
+     * <code>true</code> indicates one or more services are associated. A value of <code>false</code> indicates no
+     * services are associated.
+     * </p>
+     */
+    private Boolean hasAssociatedService;
+    /**
+     * <p>
+     * Indicates if this auto scaling configuration should be used as the default for a new App Runner service that does
+     * not have an auto scaling configuration ARN specified during creation. Each account can have only one default
+     * <code>AutoScalingConfiguration</code> per region. The default <code>AutoScalingConfiguration</code> can be any
+     * revision under the same <code>AutoScalingConfigurationName</code>.
+     * </p>
+     */
+    private Boolean isDefault;
 
     /**
      * <p>
@@ -185,6 +216,269 @@ public class AutoScalingConfigurationSummary implements Serializable, Cloneable,
     }
 
     /**
+     * <p>
+     * The current state of the auto scaling configuration. If the status of a configuration revision is
+     * <code>INACTIVE</code>, it was deleted and can't be used. Inactive configuration revisions are permanently removed
+     * some time after they are deleted.
+     * </p>
+     * 
+     * @param status
+     *        The current state of the auto scaling configuration. If the status of a configuration revision is
+     *        <code>INACTIVE</code>, it was deleted and can't be used. Inactive configuration revisions are permanently
+     *        removed some time after they are deleted.
+     * @see AutoScalingConfigurationStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The current state of the auto scaling configuration. If the status of a configuration revision is
+     * <code>INACTIVE</code>, it was deleted and can't be used. Inactive configuration revisions are permanently removed
+     * some time after they are deleted.
+     * </p>
+     * 
+     * @return The current state of the auto scaling configuration. If the status of a configuration revision is
+     *         <code>INACTIVE</code>, it was deleted and can't be used. Inactive configuration revisions are permanently
+     *         removed some time after they are deleted.
+     * @see AutoScalingConfigurationStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The current state of the auto scaling configuration. If the status of a configuration revision is
+     * <code>INACTIVE</code>, it was deleted and can't be used. Inactive configuration revisions are permanently removed
+     * some time after they are deleted.
+     * </p>
+     * 
+     * @param status
+     *        The current state of the auto scaling configuration. If the status of a configuration revision is
+     *        <code>INACTIVE</code>, it was deleted and can't be used. Inactive configuration revisions are permanently
+     *        removed some time after they are deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AutoScalingConfigurationStatus
+     */
+
+    public AutoScalingConfigurationSummary withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current state of the auto scaling configuration. If the status of a configuration revision is
+     * <code>INACTIVE</code>, it was deleted and can't be used. Inactive configuration revisions are permanently removed
+     * some time after they are deleted.
+     * </p>
+     * 
+     * @param status
+     *        The current state of the auto scaling configuration. If the status of a configuration revision is
+     *        <code>INACTIVE</code>, it was deleted and can't be used. Inactive configuration revisions are permanently
+     *        removed some time after they are deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AutoScalingConfigurationStatus
+     */
+
+    public AutoScalingConfigurationSummary withStatus(AutoScalingConfigurationStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time when the auto scaling configuration was created. It's in Unix time stamp format.
+     * </p>
+     * 
+     * @param createdAt
+     *        The time when the auto scaling configuration was created. It's in Unix time stamp format.
+     */
+
+    public void setCreatedAt(java.util.Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    /**
+     * <p>
+     * The time when the auto scaling configuration was created. It's in Unix time stamp format.
+     * </p>
+     * 
+     * @return The time when the auto scaling configuration was created. It's in Unix time stamp format.
+     */
+
+    public java.util.Date getCreatedAt() {
+        return this.createdAt;
+    }
+
+    /**
+     * <p>
+     * The time when the auto scaling configuration was created. It's in Unix time stamp format.
+     * </p>
+     * 
+     * @param createdAt
+     *        The time when the auto scaling configuration was created. It's in Unix time stamp format.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoScalingConfigurationSummary withCreatedAt(java.util.Date createdAt) {
+        setCreatedAt(createdAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates if this auto scaling configuration has an App Runner service associated with it. A value of
+     * <code>true</code> indicates one or more services are associated. A value of <code>false</code> indicates no
+     * services are associated.
+     * </p>
+     * 
+     * @param hasAssociatedService
+     *        Indicates if this auto scaling configuration has an App Runner service associated with it. A value of
+     *        <code>true</code> indicates one or more services are associated. A value of <code>false</code> indicates
+     *        no services are associated.
+     */
+
+    public void setHasAssociatedService(Boolean hasAssociatedService) {
+        this.hasAssociatedService = hasAssociatedService;
+    }
+
+    /**
+     * <p>
+     * Indicates if this auto scaling configuration has an App Runner service associated with it. A value of
+     * <code>true</code> indicates one or more services are associated. A value of <code>false</code> indicates no
+     * services are associated.
+     * </p>
+     * 
+     * @return Indicates if this auto scaling configuration has an App Runner service associated with it. A value of
+     *         <code>true</code> indicates one or more services are associated. A value of <code>false</code> indicates
+     *         no services are associated.
+     */
+
+    public Boolean getHasAssociatedService() {
+        return this.hasAssociatedService;
+    }
+
+    /**
+     * <p>
+     * Indicates if this auto scaling configuration has an App Runner service associated with it. A value of
+     * <code>true</code> indicates one or more services are associated. A value of <code>false</code> indicates no
+     * services are associated.
+     * </p>
+     * 
+     * @param hasAssociatedService
+     *        Indicates if this auto scaling configuration has an App Runner service associated with it. A value of
+     *        <code>true</code> indicates one or more services are associated. A value of <code>false</code> indicates
+     *        no services are associated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoScalingConfigurationSummary withHasAssociatedService(Boolean hasAssociatedService) {
+        setHasAssociatedService(hasAssociatedService);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates if this auto scaling configuration has an App Runner service associated with it. A value of
+     * <code>true</code> indicates one or more services are associated. A value of <code>false</code> indicates no
+     * services are associated.
+     * </p>
+     * 
+     * @return Indicates if this auto scaling configuration has an App Runner service associated with it. A value of
+     *         <code>true</code> indicates one or more services are associated. A value of <code>false</code> indicates
+     *         no services are associated.
+     */
+
+    public Boolean isHasAssociatedService() {
+        return this.hasAssociatedService;
+    }
+
+    /**
+     * <p>
+     * Indicates if this auto scaling configuration should be used as the default for a new App Runner service that does
+     * not have an auto scaling configuration ARN specified during creation. Each account can have only one default
+     * <code>AutoScalingConfiguration</code> per region. The default <code>AutoScalingConfiguration</code> can be any
+     * revision under the same <code>AutoScalingConfigurationName</code>.
+     * </p>
+     * 
+     * @param isDefault
+     *        Indicates if this auto scaling configuration should be used as the default for a new App Runner service
+     *        that does not have an auto scaling configuration ARN specified during creation. Each account can have only
+     *        one default <code>AutoScalingConfiguration</code> per region. The default
+     *        <code>AutoScalingConfiguration</code> can be any revision under the same
+     *        <code>AutoScalingConfigurationName</code>.
+     */
+
+    public void setIsDefault(Boolean isDefault) {
+        this.isDefault = isDefault;
+    }
+
+    /**
+     * <p>
+     * Indicates if this auto scaling configuration should be used as the default for a new App Runner service that does
+     * not have an auto scaling configuration ARN specified during creation. Each account can have only one default
+     * <code>AutoScalingConfiguration</code> per region. The default <code>AutoScalingConfiguration</code> can be any
+     * revision under the same <code>AutoScalingConfigurationName</code>.
+     * </p>
+     * 
+     * @return Indicates if this auto scaling configuration should be used as the default for a new App Runner service
+     *         that does not have an auto scaling configuration ARN specified during creation. Each account can have
+     *         only one default <code>AutoScalingConfiguration</code> per region. The default
+     *         <code>AutoScalingConfiguration</code> can be any revision under the same
+     *         <code>AutoScalingConfigurationName</code>.
+     */
+
+    public Boolean getIsDefault() {
+        return this.isDefault;
+    }
+
+    /**
+     * <p>
+     * Indicates if this auto scaling configuration should be used as the default for a new App Runner service that does
+     * not have an auto scaling configuration ARN specified during creation. Each account can have only one default
+     * <code>AutoScalingConfiguration</code> per region. The default <code>AutoScalingConfiguration</code> can be any
+     * revision under the same <code>AutoScalingConfigurationName</code>.
+     * </p>
+     * 
+     * @param isDefault
+     *        Indicates if this auto scaling configuration should be used as the default for a new App Runner service
+     *        that does not have an auto scaling configuration ARN specified during creation. Each account can have only
+     *        one default <code>AutoScalingConfiguration</code> per region. The default
+     *        <code>AutoScalingConfiguration</code> can be any revision under the same
+     *        <code>AutoScalingConfigurationName</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoScalingConfigurationSummary withIsDefault(Boolean isDefault) {
+        setIsDefault(isDefault);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates if this auto scaling configuration should be used as the default for a new App Runner service that does
+     * not have an auto scaling configuration ARN specified during creation. Each account can have only one default
+     * <code>AutoScalingConfiguration</code> per region. The default <code>AutoScalingConfiguration</code> can be any
+     * revision under the same <code>AutoScalingConfigurationName</code>.
+     * </p>
+     * 
+     * @return Indicates if this auto scaling configuration should be used as the default for a new App Runner service
+     *         that does not have an auto scaling configuration ARN specified during creation. Each account can have
+     *         only one default <code>AutoScalingConfiguration</code> per region. The default
+     *         <code>AutoScalingConfiguration</code> can be any revision under the same
+     *         <code>AutoScalingConfigurationName</code>.
+     */
+
+    public Boolean isDefault() {
+        return this.isDefault;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -201,7 +495,15 @@ public class AutoScalingConfigurationSummary implements Serializable, Cloneable,
         if (getAutoScalingConfigurationName() != null)
             sb.append("AutoScalingConfigurationName: ").append(getAutoScalingConfigurationName()).append(",");
         if (getAutoScalingConfigurationRevision() != null)
-            sb.append("AutoScalingConfigurationRevision: ").append(getAutoScalingConfigurationRevision());
+            sb.append("AutoScalingConfigurationRevision: ").append(getAutoScalingConfigurationRevision()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getCreatedAt() != null)
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
+        if (getHasAssociatedService() != null)
+            sb.append("HasAssociatedService: ").append(getHasAssociatedService()).append(",");
+        if (getIsDefault() != null)
+            sb.append("IsDefault: ").append(getIsDefault());
         sb.append("}");
         return sb.toString();
     }
@@ -229,6 +531,22 @@ public class AutoScalingConfigurationSummary implements Serializable, Cloneable,
         if (other.getAutoScalingConfigurationRevision() != null
                 && other.getAutoScalingConfigurationRevision().equals(this.getAutoScalingConfigurationRevision()) == false)
             return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
+            return false;
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+            return false;
+        if (other.getHasAssociatedService() == null ^ this.getHasAssociatedService() == null)
+            return false;
+        if (other.getHasAssociatedService() != null && other.getHasAssociatedService().equals(this.getHasAssociatedService()) == false)
+            return false;
+        if (other.getIsDefault() == null ^ this.getIsDefault() == null)
+            return false;
+        if (other.getIsDefault() != null && other.getIsDefault().equals(this.getIsDefault()) == false)
+            return false;
         return true;
     }
 
@@ -240,6 +558,10 @@ public class AutoScalingConfigurationSummary implements Serializable, Cloneable,
         hashCode = prime * hashCode + ((getAutoScalingConfigurationArn() == null) ? 0 : getAutoScalingConfigurationArn().hashCode());
         hashCode = prime * hashCode + ((getAutoScalingConfigurationName() == null) ? 0 : getAutoScalingConfigurationName().hashCode());
         hashCode = prime * hashCode + ((getAutoScalingConfigurationRevision() == null) ? 0 : getAutoScalingConfigurationRevision().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getHasAssociatedService() == null) ? 0 : getHasAssociatedService().hashCode());
+        hashCode = prime * hashCode + ((getIsDefault() == null) ? 0 : getIsDefault().hashCode());
         return hashCode;
     }
 

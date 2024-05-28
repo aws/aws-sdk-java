@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,6 +18,13 @@ import javax.annotation.Generated;
 /**
  * <p>
  * A CA certificate for an Amazon Web Services account.
+ * </p>
+ * <p>
+ * For more information, see <a
+ * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a
+ * connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a
+ * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a
+ * connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Certificate" target="_top">AWS API
@@ -64,7 +71,7 @@ public class Certificate implements Serializable, Cloneable {
     private String certificateArn;
     /**
      * <p>
-     * Whether there is an override for the default certificate identifier.
+     * Indicates whether there is an override for the default certificate identifier.
      * </p>
      */
     private Boolean customerOverride;
@@ -317,11 +324,11 @@ public class Certificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether there is an override for the default certificate identifier.
+     * Indicates whether there is an override for the default certificate identifier.
      * </p>
      * 
      * @param customerOverride
-     *        Whether there is an override for the default certificate identifier.
+     *        Indicates whether there is an override for the default certificate identifier.
      */
 
     public void setCustomerOverride(Boolean customerOverride) {
@@ -330,10 +337,10 @@ public class Certificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether there is an override for the default certificate identifier.
+     * Indicates whether there is an override for the default certificate identifier.
      * </p>
      * 
-     * @return Whether there is an override for the default certificate identifier.
+     * @return Indicates whether there is an override for the default certificate identifier.
      */
 
     public Boolean getCustomerOverride() {
@@ -342,11 +349,11 @@ public class Certificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether there is an override for the default certificate identifier.
+     * Indicates whether there is an override for the default certificate identifier.
      * </p>
      * 
      * @param customerOverride
-     *        Whether there is an override for the default certificate identifier.
+     *        Indicates whether there is an override for the default certificate identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -357,10 +364,10 @@ public class Certificate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether there is an override for the default certificate identifier.
+     * Indicates whether there is an override for the default certificate identifier.
      * </p>
      * 
-     * @return Whether there is an override for the default certificate identifier.
+     * @return Indicates whether there is an override for the default certificate identifier.
      */
 
     public Boolean isCustomerOverride() {

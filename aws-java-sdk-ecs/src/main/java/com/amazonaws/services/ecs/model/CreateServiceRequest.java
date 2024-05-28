@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,11 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * A task definition must be specified if the service uses either the <code>ECS</code> or <code>CODE_DEPLOY</code>
      * deployment controllers.
+     * </p>
+     * <p>
+     * For more information about deployment types, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS deployment
+     * types</a>.
      * </p>
      */
     private String taskDefinition;
@@ -115,7 +120,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private com.amazonaws.internal.SdkInternalList<ServiceRegistry> serviceRegistries;
     /**
      * <p>
-     * The number of instantiations of the specified task definition to place and keep running on your cluster.
+     * The number of instantiations of the specified task definition to place and keep running in your service.
      * </p>
      * <p>
      * This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't specified. If
@@ -126,7 +131,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * An identifier that you provide to ensure the idempotency of the request. It must be unique and is case sensitive.
-     * Up to 32 ASCII characters are allowed.
+     * Up to 36 ASCII characters in the range of 33-126 (inclusive) are allowed.
      * </p>
      */
     private String clientToken;
@@ -143,8 +148,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate capacity
-     * providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      * </note>
      * <p>
@@ -251,8 +256,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * value, the default value of <code>0</code> is used.
      * </p>
      * <p>
-     * If you do not use an Elastic Load Balancing, we recomend that you use the <code>startPeriod</code> in the task
-     * definition healtch check parameters. For more information, see <a
+     * If you do not use an Elastic Load Balancing, we recommend that you use the <code>startPeriod</code> in the task
+     * definition health check parameters. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health check</a>.
      * </p>
      * <p>
@@ -361,23 +366,57 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon ECS
      * resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <p>
+     * When you use Amazon ECS managed tags, you need to set the <code>propagateTags</code> request parameter.
+     * </p>
      */
     private Boolean enableECSManagedTags;
     /**
      * <p>
      * Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags
      * aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task
-     * creation, use the <a>TagResource</a> API action.
+     * creation, use the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a> API action.
+     * </p>
+     * <p>
+     * You must set this to a value other than <code>NONE</code> when you use Cost Explorer. For more information, see
+     * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/usage-reports.html">Amazon ECS usage
+     * reports</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * The default is <code>NONE</code>.
      * </p>
      */
     private String propagateTags;
     /**
      * <p>
-     * Determines whether the execute command functionality is enabled for the service. If <code>true</code>, this
+     * Determines whether the execute command functionality is turned on for the service. If <code>true</code>, this
      * enables execute command functionality on all containers in the service tasks.
      * </p>
      */
     private Boolean enableExecuteCommand;
+    /**
+     * <p>
+     * The configuration for this service to discover and connect to services, and be discovered by, and connected from,
+     * other services within a namespace.
+     * </p>
+     * <p>
+     * Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to
+     * services across all of the clusters in the namespace. Tasks connect through a managed proxy container that
+     * collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported
+     * with Service Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     */
+    private ServiceConnectConfiguration serviceConnectConfiguration;
+    /**
+     * <p>
+     * The configuration for a volume specified in the task definition as a volume that is configured at launch time.
+     * Currently, the only supported volume type is an Amazon EBS volume.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ServiceVolumeConfiguration> volumeConfigurations;
 
     /**
      * <p>
@@ -487,6 +526,11 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * A task definition must be specified if the service uses either the <code>ECS</code> or <code>CODE_DEPLOY</code>
      * deployment controllers.
      * </p>
+     * <p>
+     * For more information about deployment types, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS deployment
+     * types</a>.
+     * </p>
      * 
      * @param taskDefinition
      *        The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
@@ -495,6 +539,11 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        A task definition must be specified if the service uses either the <code>ECS</code> or
      *        <code>CODE_DEPLOY</code> deployment controllers.
+     *        </p>
+     *        <p>
+     *        For more information about deployment types, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS
+     *        deployment types</a>.
      */
 
     public void setTaskDefinition(String taskDefinition) {
@@ -511,6 +560,11 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * A task definition must be specified if the service uses either the <code>ECS</code> or <code>CODE_DEPLOY</code>
      * deployment controllers.
      * </p>
+     * <p>
+     * For more information about deployment types, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS deployment
+     * types</a>.
+     * </p>
      * 
      * @return The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
      *         definition to run in your service. If a <code>revision</code> isn't specified, the latest
@@ -518,6 +572,11 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <p>
      *         A task definition must be specified if the service uses either the <code>ECS</code> or
      *         <code>CODE_DEPLOY</code> deployment controllers.
+     *         </p>
+     *         <p>
+     *         For more information about deployment types, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS
+     *         deployment types</a>.
      */
 
     public String getTaskDefinition() {
@@ -534,6 +593,11 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * A task definition must be specified if the service uses either the <code>ECS</code> or <code>CODE_DEPLOY</code>
      * deployment controllers.
      * </p>
+     * <p>
+     * For more information about deployment types, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS deployment
+     * types</a>.
+     * </p>
      * 
      * @param taskDefinition
      *        The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task
@@ -542,6 +606,11 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        A task definition must be specified if the service uses either the <code>ECS</code> or
      *        <code>CODE_DEPLOY</code> deployment controllers.
+     *        </p>
+     *        <p>
+     *        For more information about deployment types, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS
+     *        deployment types</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1095,7 +1164,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The number of instantiations of the specified task definition to place and keep running on your cluster.
+     * The number of instantiations of the specified task definition to place and keep running in your service.
      * </p>
      * <p>
      * This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't specified. If
@@ -1103,8 +1172,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param desiredCount
-     *        The number of instantiations of the specified task definition to place and keep running on your
-     *        cluster.</p>
+     *        The number of instantiations of the specified task definition to place and keep running in your
+     *        service.</p>
      *        <p>
      *        This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't specified. If
      *        <code>schedulingStrategy</code> is <code>DAEMON</code> then this isn't required.
@@ -1116,15 +1185,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The number of instantiations of the specified task definition to place and keep running on your cluster.
+     * The number of instantiations of the specified task definition to place and keep running in your service.
      * </p>
      * <p>
      * This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't specified. If
      * <code>schedulingStrategy</code> is <code>DAEMON</code> then this isn't required.
      * </p>
      * 
-     * @return The number of instantiations of the specified task definition to place and keep running on your
-     *         cluster.</p>
+     * @return The number of instantiations of the specified task definition to place and keep running in your
+     *         service.</p>
      *         <p>
      *         This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't specified. If
      *         <code>schedulingStrategy</code> is <code>DAEMON</code> then this isn't required.
@@ -1136,7 +1205,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The number of instantiations of the specified task definition to place and keep running on your cluster.
+     * The number of instantiations of the specified task definition to place and keep running in your service.
      * </p>
      * <p>
      * This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't specified. If
@@ -1144,8 +1213,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param desiredCount
-     *        The number of instantiations of the specified task definition to place and keep running on your
-     *        cluster.</p>
+     *        The number of instantiations of the specified task definition to place and keep running in your
+     *        service.</p>
      *        <p>
      *        This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't specified. If
      *        <code>schedulingStrategy</code> is <code>DAEMON</code> then this isn't required.
@@ -1160,12 +1229,12 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * An identifier that you provide to ensure the idempotency of the request. It must be unique and is case sensitive.
-     * Up to 32 ASCII characters are allowed.
+     * Up to 36 ASCII characters in the range of 33-126 (inclusive) are allowed.
      * </p>
      * 
      * @param clientToken
      *        An identifier that you provide to ensure the idempotency of the request. It must be unique and is case
-     *        sensitive. Up to 32 ASCII characters are allowed.
+     *        sensitive. Up to 36 ASCII characters in the range of 33-126 (inclusive) are allowed.
      */
 
     public void setClientToken(String clientToken) {
@@ -1175,11 +1244,11 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * An identifier that you provide to ensure the idempotency of the request. It must be unique and is case sensitive.
-     * Up to 32 ASCII characters are allowed.
+     * Up to 36 ASCII characters in the range of 33-126 (inclusive) are allowed.
      * </p>
      * 
      * @return An identifier that you provide to ensure the idempotency of the request. It must be unique and is case
-     *         sensitive. Up to 32 ASCII characters are allowed.
+     *         sensitive. Up to 36 ASCII characters in the range of 33-126 (inclusive) are allowed.
      */
 
     public String getClientToken() {
@@ -1189,12 +1258,12 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * An identifier that you provide to ensure the idempotency of the request. It must be unique and is case sensitive.
-     * Up to 32 ASCII characters are allowed.
+     * Up to 36 ASCII characters in the range of 33-126 (inclusive) are allowed.
      * </p>
      * 
      * @param clientToken
      *        An identifier that you provide to ensure the idempotency of the request. It must be unique and is case
-     *        sensitive. Up to 32 ASCII characters are allowed.
+     *        sensitive. Up to 36 ASCII characters in the range of 33-126 (inclusive) are allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1216,8 +1285,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate capacity
-     * providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      * </note>
      * <p>
@@ -1243,8 +1312,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
-     *        capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
+     *        capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.
      *        </p>
      *        </note>
      *        <p>
@@ -1277,8 +1346,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate capacity
-     * providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      * </note>
      * <p>
@@ -1303,8 +1372,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <p>
      *         Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
      *         information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
-     *         capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html"
+     *         >Fargate capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.
      *         </p>
      *         </note>
      *         <p>
@@ -1337,8 +1406,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate capacity
-     * providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      * </note>
      * <p>
@@ -1364,8 +1433,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
-     *        capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
+     *        capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.
      *        </p>
      *        </note>
      *        <p>
@@ -1400,8 +1469,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate capacity
-     * providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      * </note>
      * <p>
@@ -1427,8 +1496,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
-     *        capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
+     *        capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.
      *        </p>
      *        </note>
      *        <p>
@@ -2100,8 +2169,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * value, the default value of <code>0</code> is used.
      * </p>
      * <p>
-     * If you do not use an Elastic Load Balancing, we recomend that you use the <code>startPeriod</code> in the task
-     * definition healtch check parameters. For more information, see <a
+     * If you do not use an Elastic Load Balancing, we recommend that you use the <code>startPeriod</code> in the task
+     * definition health check parameters. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health check</a>.
      * </p>
      * <p>
@@ -2117,8 +2186,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        configured to use a load balancer. If your service has a load balancer defined and you don't specify a
      *        health check grace period value, the default value of <code>0</code> is used.</p>
      *        <p>
-     *        If you do not use an Elastic Load Balancing, we recomend that you use the <code>startPeriod</code> in the
-     *        task definition healtch check parameters. For more information, see <a
+     *        If you do not use an Elastic Load Balancing, we recommend that you use the <code>startPeriod</code> in the
+     *        task definition health check parameters. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health check</a>.
      *        </p>
      *        <p>
@@ -2140,8 +2209,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * value, the default value of <code>0</code> is used.
      * </p>
      * <p>
-     * If you do not use an Elastic Load Balancing, we recomend that you use the <code>startPeriod</code> in the task
-     * definition healtch check parameters. For more information, see <a
+     * If you do not use an Elastic Load Balancing, we recommend that you use the <code>startPeriod</code> in the task
+     * definition health check parameters. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health check</a>.
      * </p>
      * <p>
@@ -2156,8 +2225,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         configured to use a load balancer. If your service has a load balancer defined and you don't specify a
      *         health check grace period value, the default value of <code>0</code> is used.</p>
      *         <p>
-     *         If you do not use an Elastic Load Balancing, we recomend that you use the <code>startPeriod</code> in the
-     *         task definition healtch check parameters. For more information, see <a
+     *         If you do not use an Elastic Load Balancing, we recommend that you use the <code>startPeriod</code> in
+     *         the task definition health check parameters. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health check</a>.
      *         </p>
      *         <p>
@@ -2179,8 +2248,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * value, the default value of <code>0</code> is used.
      * </p>
      * <p>
-     * If you do not use an Elastic Load Balancing, we recomend that you use the <code>startPeriod</code> in the task
-     * definition healtch check parameters. For more information, see <a
+     * If you do not use an Elastic Load Balancing, we recommend that you use the <code>startPeriod</code> in the task
+     * definition health check parameters. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health check</a>.
      * </p>
      * <p>
@@ -2196,8 +2265,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        configured to use a load balancer. If your service has a load balancer defined and you don't specify a
      *        health check grace period value, the default value of <code>0</code> is used.</p>
      *        <p>
-     *        If you do not use an Elastic Load Balancing, we recomend that you use the <code>startPeriod</code> in the
-     *        task definition healtch check parameters. For more information, see <a
+     *        If you do not use an Elastic Load Balancing, we recommend that you use the <code>startPeriod</code> in the
+     *        task definition health check parameters. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health check</a>.
      *        </p>
      *        <p>
@@ -2982,12 +3051,17 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon ECS
      * resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <p>
+     * When you use Amazon ECS managed tags, you need to set the <code>propagateTags</code> request parameter.
+     * </p>
      * 
      * @param enableECSManagedTags
      *        Specifies whether to turn on Amazon ECS managed tags for the tasks within the service. For more
      *        information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon
-     *        ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     *        <p>
+     *        When you use Amazon ECS managed tags, you need to set the <code>propagateTags</code> request parameter.
      */
 
     public void setEnableECSManagedTags(Boolean enableECSManagedTags) {
@@ -3000,11 +3074,16 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon ECS
      * resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <p>
+     * When you use Amazon ECS managed tags, you need to set the <code>propagateTags</code> request parameter.
+     * </p>
      * 
      * @return Specifies whether to turn on Amazon ECS managed tags for the tasks within the service. For more
      *         information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your
-     *         Amazon ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         Amazon ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     *         <p>
+     *         When you use Amazon ECS managed tags, you need to set the <code>propagateTags</code> request parameter.
      */
 
     public Boolean getEnableECSManagedTags() {
@@ -3017,12 +3096,17 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon ECS
      * resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <p>
+     * When you use Amazon ECS managed tags, you need to set the <code>propagateTags</code> request parameter.
+     * </p>
      * 
      * @param enableECSManagedTags
      *        Specifies whether to turn on Amazon ECS managed tags for the tasks within the service. For more
      *        information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon
-     *        ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     *        <p>
+     *        When you use Amazon ECS managed tags, you need to set the <code>propagateTags</code> request parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3037,11 +3121,16 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your Amazon ECS
      * resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * <p>
+     * When you use Amazon ECS managed tags, you need to set the <code>propagateTags</code> request parameter.
+     * </p>
      * 
      * @return Specifies whether to turn on Amazon ECS managed tags for the tasks within the service. For more
      *         information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging your
-     *         Amazon ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         Amazon ECS resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+     *         <p>
+     *         When you use Amazon ECS managed tags, you need to set the <code>propagateTags</code> request parameter.
      */
 
     public Boolean isEnableECSManagedTags() {
@@ -3052,13 +3141,32 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags
      * aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task
-     * creation, use the <a>TagResource</a> API action.
+     * creation, use the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a> API action.
+     * </p>
+     * <p>
+     * You must set this to a value other than <code>NONE</code> when you use Cost Explorer. For more information, see
+     * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/usage-reports.html">Amazon ECS usage
+     * reports</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * The default is <code>NONE</code>.
      * </p>
      * 
      * @param propagateTags
      *        Specifies whether to propagate the tags from the task definition to the task. If no value is specified,
      *        the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a
-     *        task after task creation, use the <a>TagResource</a> API action.
+     *        task after task creation, use the <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a> API
+     *        action.</p>
+     *        <p>
+     *        You must set this to a value other than <code>NONE</code> when you use Cost Explorer. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/usage-reports.html">Amazon ECS usage
+     *        reports</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        The default is <code>NONE</code>.
      * @see PropagateTags
      */
 
@@ -3070,12 +3178,31 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags
      * aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task
-     * creation, use the <a>TagResource</a> API action.
+     * creation, use the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a> API action.
+     * </p>
+     * <p>
+     * You must set this to a value other than <code>NONE</code> when you use Cost Explorer. For more information, see
+     * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/usage-reports.html">Amazon ECS usage
+     * reports</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * The default is <code>NONE</code>.
      * </p>
      * 
      * @return Specifies whether to propagate the tags from the task definition to the task. If no value is specified,
      *         the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to
-     *         a task after task creation, use the <a>TagResource</a> API action.
+     *         a task after task creation, use the <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a> API
+     *         action.</p>
+     *         <p>
+     *         You must set this to a value other than <code>NONE</code> when you use Cost Explorer. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/usage-reports.html">Amazon ECS usage
+     *         reports</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         </p>
+     *         <p>
+     *         The default is <code>NONE</code>.
      * @see PropagateTags
      */
 
@@ -3087,13 +3214,32 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags
      * aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task
-     * creation, use the <a>TagResource</a> API action.
+     * creation, use the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a> API action.
+     * </p>
+     * <p>
+     * You must set this to a value other than <code>NONE</code> when you use Cost Explorer. For more information, see
+     * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/usage-reports.html">Amazon ECS usage
+     * reports</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * The default is <code>NONE</code>.
      * </p>
      * 
      * @param propagateTags
      *        Specifies whether to propagate the tags from the task definition to the task. If no value is specified,
      *        the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a
-     *        task after task creation, use the <a>TagResource</a> API action.
+     *        task after task creation, use the <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a> API
+     *        action.</p>
+     *        <p>
+     *        You must set this to a value other than <code>NONE</code> when you use Cost Explorer. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/usage-reports.html">Amazon ECS usage
+     *        reports</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        The default is <code>NONE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PropagateTags
      */
@@ -3107,13 +3253,32 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags
      * aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task
-     * creation, use the <a>TagResource</a> API action.
+     * creation, use the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a> API action.
+     * </p>
+     * <p>
+     * You must set this to a value other than <code>NONE</code> when you use Cost Explorer. For more information, see
+     * <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/usage-reports.html">Amazon ECS usage
+     * reports</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * The default is <code>NONE</code>.
      * </p>
      * 
      * @param propagateTags
      *        Specifies whether to propagate the tags from the task definition to the task. If no value is specified,
      *        the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a
-     *        task after task creation, use the <a>TagResource</a> API action.
+     *        task after task creation, use the <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a> API
+     *        action.</p>
+     *        <p>
+     *        You must set this to a value other than <code>NONE</code> when you use Cost Explorer. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/usage-reports.html">Amazon ECS usage
+     *        reports</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        The default is <code>NONE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PropagateTags
      */
@@ -3125,12 +3290,12 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Determines whether the execute command functionality is enabled for the service. If <code>true</code>, this
+     * Determines whether the execute command functionality is turned on for the service. If <code>true</code>, this
      * enables execute command functionality on all containers in the service tasks.
      * </p>
      * 
      * @param enableExecuteCommand
-     *        Determines whether the execute command functionality is enabled for the service. If <code>true</code>,
+     *        Determines whether the execute command functionality is turned on for the service. If <code>true</code>,
      *        this enables execute command functionality on all containers in the service tasks.
      */
 
@@ -3140,11 +3305,11 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Determines whether the execute command functionality is enabled for the service. If <code>true</code>, this
+     * Determines whether the execute command functionality is turned on for the service. If <code>true</code>, this
      * enables execute command functionality on all containers in the service tasks.
      * </p>
      * 
-     * @return Determines whether the execute command functionality is enabled for the service. If <code>true</code>,
+     * @return Determines whether the execute command functionality is turned on for the service. If <code>true</code>,
      *         this enables execute command functionality on all containers in the service tasks.
      */
 
@@ -3154,12 +3319,12 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Determines whether the execute command functionality is enabled for the service. If <code>true</code>, this
+     * Determines whether the execute command functionality is turned on for the service. If <code>true</code>, this
      * enables execute command functionality on all containers in the service tasks.
      * </p>
      * 
      * @param enableExecuteCommand
-     *        Determines whether the execute command functionality is enabled for the service. If <code>true</code>,
+     *        Determines whether the execute command functionality is turned on for the service. If <code>true</code>,
      *        this enables execute command functionality on all containers in the service tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -3171,16 +3336,188 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Determines whether the execute command functionality is enabled for the service. If <code>true</code>, this
+     * Determines whether the execute command functionality is turned on for the service. If <code>true</code>, this
      * enables execute command functionality on all containers in the service tasks.
      * </p>
      * 
-     * @return Determines whether the execute command functionality is enabled for the service. If <code>true</code>,
+     * @return Determines whether the execute command functionality is turned on for the service. If <code>true</code>,
      *         this enables execute command functionality on all containers in the service tasks.
      */
 
     public Boolean isEnableExecuteCommand() {
         return this.enableExecuteCommand;
+    }
+
+    /**
+     * <p>
+     * The configuration for this service to discover and connect to services, and be discovered by, and connected from,
+     * other services within a namespace.
+     * </p>
+     * <p>
+     * Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to
+     * services across all of the clusters in the namespace. Tasks connect through a managed proxy container that
+     * collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported
+     * with Service Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param serviceConnectConfiguration
+     *        The configuration for this service to discover and connect to services, and be discovered by, and
+     *        connected from, other services within a namespace.</p>
+     *        <p>
+     *        Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can
+     *        connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy
+     *        container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services
+     *        create are supported with Service Connect. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     *        Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public void setServiceConnectConfiguration(ServiceConnectConfiguration serviceConnectConfiguration) {
+        this.serviceConnectConfiguration = serviceConnectConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration for this service to discover and connect to services, and be discovered by, and connected from,
+     * other services within a namespace.
+     * </p>
+     * <p>
+     * Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to
+     * services across all of the clusters in the namespace. Tasks connect through a managed proxy container that
+     * collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported
+     * with Service Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return The configuration for this service to discover and connect to services, and be discovered by, and
+     *         connected from, other services within a namespace.</p>
+     *         <p>
+     *         Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can
+     *         connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy
+     *         container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS
+     *         services create are supported with Service Connect. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     *         Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public ServiceConnectConfiguration getServiceConnectConfiguration() {
+        return this.serviceConnectConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration for this service to discover and connect to services, and be discovered by, and connected from,
+     * other services within a namespace.
+     * </p>
+     * <p>
+     * Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to
+     * services across all of the clusters in the namespace. Tasks connect through a managed proxy container that
+     * collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported
+     * with Service Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param serviceConnectConfiguration
+     *        The configuration for this service to discover and connect to services, and be discovered by, and
+     *        connected from, other services within a namespace.</p>
+     *        <p>
+     *        Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can
+     *        connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy
+     *        container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services
+     *        create are supported with Service Connect. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     *        Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateServiceRequest withServiceConnectConfiguration(ServiceConnectConfiguration serviceConnectConfiguration) {
+        setServiceConnectConfiguration(serviceConnectConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration for a volume specified in the task definition as a volume that is configured at launch time.
+     * Currently, the only supported volume type is an Amazon EBS volume.
+     * </p>
+     * 
+     * @return The configuration for a volume specified in the task definition as a volume that is configured at launch
+     *         time. Currently, the only supported volume type is an Amazon EBS volume.
+     */
+
+    public java.util.List<ServiceVolumeConfiguration> getVolumeConfigurations() {
+        if (volumeConfigurations == null) {
+            volumeConfigurations = new com.amazonaws.internal.SdkInternalList<ServiceVolumeConfiguration>();
+        }
+        return volumeConfigurations;
+    }
+
+    /**
+     * <p>
+     * The configuration for a volume specified in the task definition as a volume that is configured at launch time.
+     * Currently, the only supported volume type is an Amazon EBS volume.
+     * </p>
+     * 
+     * @param volumeConfigurations
+     *        The configuration for a volume specified in the task definition as a volume that is configured at launch
+     *        time. Currently, the only supported volume type is an Amazon EBS volume.
+     */
+
+    public void setVolumeConfigurations(java.util.Collection<ServiceVolumeConfiguration> volumeConfigurations) {
+        if (volumeConfigurations == null) {
+            this.volumeConfigurations = null;
+            return;
+        }
+
+        this.volumeConfigurations = new com.amazonaws.internal.SdkInternalList<ServiceVolumeConfiguration>(volumeConfigurations);
+    }
+
+    /**
+     * <p>
+     * The configuration for a volume specified in the task definition as a volume that is configured at launch time.
+     * Currently, the only supported volume type is an Amazon EBS volume.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVolumeConfigurations(java.util.Collection)} or {@link #withVolumeConfigurations(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param volumeConfigurations
+     *        The configuration for a volume specified in the task definition as a volume that is configured at launch
+     *        time. Currently, the only supported volume type is an Amazon EBS volume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateServiceRequest withVolumeConfigurations(ServiceVolumeConfiguration... volumeConfigurations) {
+        if (this.volumeConfigurations == null) {
+            setVolumeConfigurations(new com.amazonaws.internal.SdkInternalList<ServiceVolumeConfiguration>(volumeConfigurations.length));
+        }
+        for (ServiceVolumeConfiguration ele : volumeConfigurations) {
+            this.volumeConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration for a volume specified in the task definition as a volume that is configured at launch time.
+     * Currently, the only supported volume type is an Amazon EBS volume.
+     * </p>
+     * 
+     * @param volumeConfigurations
+     *        The configuration for a volume specified in the task definition as a volume that is configured at launch
+     *        time. Currently, the only supported volume type is an Amazon EBS volume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateServiceRequest withVolumeConfigurations(java.util.Collection<ServiceVolumeConfiguration> volumeConfigurations) {
+        setVolumeConfigurations(volumeConfigurations);
+        return this;
     }
 
     /**
@@ -3238,7 +3575,11 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getPropagateTags() != null)
             sb.append("PropagateTags: ").append(getPropagateTags()).append(",");
         if (getEnableExecuteCommand() != null)
-            sb.append("EnableExecuteCommand: ").append(getEnableExecuteCommand());
+            sb.append("EnableExecuteCommand: ").append(getEnableExecuteCommand()).append(",");
+        if (getServiceConnectConfiguration() != null)
+            sb.append("ServiceConnectConfiguration: ").append(getServiceConnectConfiguration()).append(",");
+        if (getVolumeConfigurations() != null)
+            sb.append("VolumeConfigurations: ").append(getVolumeConfigurations());
         sb.append("}");
         return sb.toString();
     }
@@ -3342,6 +3683,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getEnableExecuteCommand() != null && other.getEnableExecuteCommand().equals(this.getEnableExecuteCommand()) == false)
             return false;
+        if (other.getServiceConnectConfiguration() == null ^ this.getServiceConnectConfiguration() == null)
+            return false;
+        if (other.getServiceConnectConfiguration() != null && other.getServiceConnectConfiguration().equals(this.getServiceConnectConfiguration()) == false)
+            return false;
+        if (other.getVolumeConfigurations() == null ^ this.getVolumeConfigurations() == null)
+            return false;
+        if (other.getVolumeConfigurations() != null && other.getVolumeConfigurations().equals(this.getVolumeConfigurations()) == false)
+            return false;
         return true;
     }
 
@@ -3372,6 +3721,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getEnableECSManagedTags() == null) ? 0 : getEnableECSManagedTags().hashCode());
         hashCode = prime * hashCode + ((getPropagateTags() == null) ? 0 : getPropagateTags().hashCode());
         hashCode = prime * hashCode + ((getEnableExecuteCommand() == null) ? 0 : getEnableExecuteCommand().hashCode());
+        hashCode = prime * hashCode + ((getServiceConnectConfiguration() == null) ? 0 : getServiceConnectConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getVolumeConfigurations() == null) ? 0 : getVolumeConfigurations().hashCode());
         return hashCode;
     }
 

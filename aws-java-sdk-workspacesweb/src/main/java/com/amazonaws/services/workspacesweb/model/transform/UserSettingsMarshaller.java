@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.workspacesweb.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -28,10 +29,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UserSettingsMarshaller {
 
+    private static final MarshallingInfo<Map> ADDITIONALENCRYPTIONCONTEXT_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("additionalEncryptionContext").build();
     private static final MarshallingInfo<List> ASSOCIATEDPORTALARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("associatedPortalArns").build();
+    private static final MarshallingInfo<StructuredPojo> COOKIESYNCHRONIZATIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cookieSynchronizationConfiguration").build();
     private static final MarshallingInfo<String> COPYALLOWED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("copyAllowed").build();
+    private static final MarshallingInfo<String> CUSTOMERMANAGEDKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customerManagedKey").build();
     private static final MarshallingInfo<Integer> DISCONNECTTIMEOUTINMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("disconnectTimeoutInMinutes").build();
     private static final MarshallingInfo<String> DOWNLOADALLOWED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -63,8 +70,11 @@ public class UserSettingsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(userSettings.getAdditionalEncryptionContext(), ADDITIONALENCRYPTIONCONTEXT_BINDING);
             protocolMarshaller.marshall(userSettings.getAssociatedPortalArns(), ASSOCIATEDPORTALARNS_BINDING);
+            protocolMarshaller.marshall(userSettings.getCookieSynchronizationConfiguration(), COOKIESYNCHRONIZATIONCONFIGURATION_BINDING);
             protocolMarshaller.marshall(userSettings.getCopyAllowed(), COPYALLOWED_BINDING);
+            protocolMarshaller.marshall(userSettings.getCustomerManagedKey(), CUSTOMERMANAGEDKEY_BINDING);
             protocolMarshaller.marshall(userSettings.getDisconnectTimeoutInMinutes(), DISCONNECTTIMEOUTINMINUTES_BINDING);
             protocolMarshaller.marshall(userSettings.getDownloadAllowed(), DOWNLOADALLOWED_BINDING);
             protocolMarshaller.marshall(userSettings.getIdleDisconnectTimeoutInMinutes(), IDLEDISCONNECTTIMEOUTINMINUTES_BINDING);

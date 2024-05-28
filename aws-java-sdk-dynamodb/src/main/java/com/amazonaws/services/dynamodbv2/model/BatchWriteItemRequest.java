@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A map of one or more table names and, for each table, a list of operations to be performed (
+     * A map of one or more table names or table ARNs and, for each table, a list of operations to be performed (
      * <code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the following:
      * </p>
      * <ul>
@@ -96,7 +96,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      * to initialize any additional object members.
      * 
      * @param requestItems
-     *        A map of one or more table names and, for each table, a list of operations to be performed (
+     *        A map of one or more table names or table ARNs and, for each table, a list of operations to be performed (
      *        <code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the
      *        following:</p>
      *        <ul>
@@ -144,7 +144,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A map of one or more table names and, for each table, a list of operations to be performed (
+     * A map of one or more table names or table ARNs and, for each table, a list of operations to be performed (
      * <code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the following:
      * </p>
      * <ul>
@@ -186,8 +186,8 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * 
-     * @return A map of one or more table names and, for each table, a list of operations to be performed (
-     *         <code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the
+     * @return A map of one or more table names or table ARNs and, for each table, a list of operations to be performed
+     *         (<code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the
      *         following:</p>
      *         <ul>
      *         <li>
@@ -235,7 +235,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A map of one or more table names and, for each table, a list of operations to be performed (
+     * A map of one or more table names or table ARNs and, for each table, a list of operations to be performed (
      * <code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the following:
      * </p>
      * <ul>
@@ -278,7 +278,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * 
      * @param requestItems
-     *        A map of one or more table names and, for each table, a list of operations to be performed (
+     *        A map of one or more table names or table ARNs and, for each table, a list of operations to be performed (
      *        <code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the
      *        following:</p>
      *        <ul>
@@ -327,7 +327,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A map of one or more table names and, for each table, a list of operations to be performed (
+     * A map of one or more table names or table ARNs and, for each table, a list of operations to be performed (
      * <code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the following:
      * </p>
      * <ul>
@@ -370,7 +370,7 @@ public class BatchWriteItemRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * 
      * @param requestItems
-     *        A map of one or more table names and, for each table, a list of operations to be performed (
+     *        A map of one or more table names or table ARNs and, for each table, a list of operations to be performed (
      *        <code>DeleteRequest</code> or <code>PutRequest</code>). Each element in the map consists of the
      *        following:</p>
      *        <ul>

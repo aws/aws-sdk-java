@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.iotwireless.AWSIoTWirelessClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.iotwireless.model.*;
+
 import com.amazonaws.services.iotwireless.model.transform.*;
 
 /**
@@ -65,6 +66,11 @@ import com.amazonaws.services.iotwireless.model.transform.*;
  * downlink message to devices in the group. By using Firmware Updates Over-The-Air (FUOTA) API operations, you can
  * create a FUOTA task and schedule a session to update the firmware of individual devices or an entire group of devices
  * in a multicast group.
+ * </p>
+ * <p>
+ * To connect to the AWS IoT Wireless Service, use the Service endpoints as described in <a
+ * href="https://docs.aws.amazon.com/general/latest/gr/iot-lorawan.html#iot-wireless_region">IoT Wireless Service
+ * endpoints</a> in the <i>AWS General Reference</i>.
  * </p>
  */
 @ThreadSafe
@@ -94,23 +100,23 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotwireless.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.iotwireless.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotwireless.model.transform.ValidationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotwireless.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.iotwireless.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotwireless.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotwireless.model.transform.TooManyTagsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iotwireless.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iotwireless.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.iotwireless.model.AWSIoTWirelessException.class));
 
     public static AWSIoTWirelessClientBuilder builder() {
@@ -1193,6 +1199,27 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
      * <p>
      * Provisions a wireless gateway.
      * </p>
+     * <note>
+     * <p>
+     * When provisioning a wireless gateway, you might run into duplication errors for the following reasons.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you specify a <code>GatewayEui</code> value that already exists.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you used a <code>ClientRequestToken</code> with the same parameters within the last 10 minutes.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To avoid this error, make sure that you use unique identifiers and parameters for each request within the
+     * specified time period.
+     * </p>
+     * </note>
      * 
      * @param createWirelessGatewayRequest
      * @return Result of the CreateWirelessGateway operation returned by the service.
@@ -1929,8 +1956,98 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
+     * Delete an import task.
+     * </p>
+     * 
+     * @param deleteWirelessDeviceImportTaskRequest
+     * @return Result of the DeleteWirelessDeviceImportTask operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.DeleteWirelessDeviceImportTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteWirelessDeviceImportTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteWirelessDeviceImportTaskResult deleteWirelessDeviceImportTask(DeleteWirelessDeviceImportTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteWirelessDeviceImportTask(request);
+    }
+
+    @SdkInternalApi
+    final DeleteWirelessDeviceImportTaskResult executeDeleteWirelessDeviceImportTask(DeleteWirelessDeviceImportTaskRequest deleteWirelessDeviceImportTaskRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteWirelessDeviceImportTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteWirelessDeviceImportTaskRequest> request = null;
+        Response<DeleteWirelessDeviceImportTaskResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteWirelessDeviceImportTaskRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteWirelessDeviceImportTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Wireless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteWirelessDeviceImportTask");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteWirelessDeviceImportTaskResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteWirelessDeviceImportTaskResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a wireless gateway.
      * </p>
+     * <note>
+     * <p>
+     * When deleting a wireless gateway, you might run into duplication errors for the following reasons.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you specify a <code>GatewayEui</code> value that already exists.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you used a <code>ClientRequestToken</code> with the same parameters within the last 10 minutes.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To avoid this error, make sure that you use unique identifiers and parameters for each request within the
+     * specified time period.
+     * </p>
+     * </note>
      * 
      * @param deleteWirelessGatewayRequest
      * @return Result of the DeleteWirelessGateway operation returned by the service.
@@ -2119,6 +2236,71 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
             HttpResponseHandler<AmazonWebServiceResponse<DeleteWirelessGatewayTaskDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteWirelessGatewayTaskDefinitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deregister a wireless device from AWS IoT Wireless.
+     * </p>
+     * 
+     * @param deregisterWirelessDeviceRequest
+     * @return Result of the DeregisterWirelessDevice operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.DeregisterWirelessDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeregisterWirelessDevice"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeregisterWirelessDeviceResult deregisterWirelessDevice(DeregisterWirelessDeviceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeregisterWirelessDevice(request);
+    }
+
+    @SdkInternalApi
+    final DeregisterWirelessDeviceResult executeDeregisterWirelessDevice(DeregisterWirelessDeviceRequest deregisterWirelessDeviceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deregisterWirelessDeviceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeregisterWirelessDeviceRequest> request = null;
+        Response<DeregisterWirelessDeviceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeregisterWirelessDeviceRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deregisterWirelessDeviceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Wireless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterWirelessDevice");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeregisterWirelessDeviceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeregisterWirelessDeviceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2945,6 +3127,141 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
+     * Get the metric configuration status for this AWS account.
+     * </p>
+     * 
+     * @param getMetricConfigurationRequest
+     * @return Result of the GetMetricConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.GetMetricConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMetricConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetMetricConfigurationResult getMetricConfiguration(GetMetricConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetMetricConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetMetricConfigurationResult executeGetMetricConfiguration(GetMetricConfigurationRequest getMetricConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getMetricConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetMetricConfigurationRequest> request = null;
+        Response<GetMetricConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetMetricConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMetricConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Wireless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMetricConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetMetricConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetMetricConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Get the summary metrics for this AWS account.
+     * </p>
+     * 
+     * @param getMetricsRequest
+     * @return Result of the GetMetrics operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.GetMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMetrics" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetMetricsResult getMetrics(GetMetricsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetMetrics(request);
+    }
+
+    @SdkInternalApi
+    final GetMetricsResult executeGetMetrics(GetMetricsRequest getMetricsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getMetricsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetMetricsRequest> request = null;
+        Response<GetMetricsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetMetricsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMetricsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Wireless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMetrics");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetMetricsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetMetricsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets information about a multicast group.
      * </p>
      * 
@@ -3211,6 +3528,13 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
      * <p>
      * Get the position information for a given resource.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to retrieve the position information should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html"
+     * >GetResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param getPositionRequest
      * @return Result of the GetPosition operation returned by the service.
@@ -3229,6 +3553,7 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public GetPositionResult getPosition(GetPositionRequest request) {
         request = beforeClientExecution(request);
         return executeGetPosition(request);
@@ -3276,6 +3601,13 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
      * <p>
      * Get position configuration for a given resource.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to retrieve the position configuration should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html"
+     * >GetResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param getPositionConfigurationRequest
      * @return Result of the GetPositionConfiguration operation returned by the service.
@@ -3294,6 +3626,7 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetPositionConfigurationResult getPositionConfiguration(GetPositionConfigurationRequest request) {
         request = beforeClientExecution(request);
         return executeGetPositionConfiguration(request);
@@ -3329,6 +3662,72 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
             HttpResponseHandler<AmazonWebServiceResponse<GetPositionConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetPositionConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Get estimated position information as a payload in GeoJSON format. The payload measurement data is resolved using
+     * solvers that are provided by third-party vendors.
+     * </p>
+     * 
+     * @param getPositionEstimateRequest
+     * @return Result of the GetPositionEstimate operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSIoTWireless.GetPositionEstimate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPositionEstimate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetPositionEstimateResult getPositionEstimate(GetPositionEstimateRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetPositionEstimate(request);
+    }
+
+    @SdkInternalApi
+    final GetPositionEstimateResult executeGetPositionEstimate(GetPositionEstimateRequest getPositionEstimateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getPositionEstimateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetPositionEstimateRequest> request = null;
+        Response<GetPositionEstimateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetPositionEstimateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPositionEstimateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Wireless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPositionEstimate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetPositionEstimateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(false).withHasStreamingSuccessResponse(false), new GetPositionEstimateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3462,6 +3861,72 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
 
             HttpResponseHandler<AmazonWebServiceResponse<GetResourceLogLevelResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetResourceLogLevelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Get the position information for a given wireless device or a wireless gateway resource. The position information
+     * uses the <a href="https://gisgeography.com/wgs84-world-geodetic-system/"> World Geodetic System (WGS84)</a>.
+     * </p>
+     * 
+     * @param getResourcePositionRequest
+     * @return Result of the GetResourcePosition operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSIoTWireless.GetResourcePosition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourcePosition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetResourcePositionResult getResourcePosition(GetResourcePositionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetResourcePosition(request);
+    }
+
+    @SdkInternalApi
+    final GetResourcePositionResult executeGetResourcePosition(GetResourcePositionRequest getResourcePositionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getResourcePositionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetResourcePositionRequest> request = null;
+        Response<GetResourcePositionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetResourcePositionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getResourcePositionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Wireless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourcePosition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetResourcePositionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(false).withHasStreamingSuccessResponse(false), new GetResourcePositionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3656,6 +4121,75 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
 
             HttpResponseHandler<AmazonWebServiceResponse<GetWirelessDeviceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetWirelessDeviceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Get information about an import task and count of device onboarding summary information for the import task.
+     * </p>
+     * 
+     * @param getWirelessDeviceImportTaskRequest
+     * @return Result of the GetWirelessDeviceImportTask operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.GetWirelessDeviceImportTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetWirelessDeviceImportTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetWirelessDeviceImportTaskResult getWirelessDeviceImportTask(GetWirelessDeviceImportTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetWirelessDeviceImportTask(request);
+    }
+
+    @SdkInternalApi
+    final GetWirelessDeviceImportTaskResult executeGetWirelessDeviceImportTask(GetWirelessDeviceImportTaskRequest getWirelessDeviceImportTaskRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getWirelessDeviceImportTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetWirelessDeviceImportTaskRequest> request = null;
+        Response<GetWirelessDeviceImportTaskResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetWirelessDeviceImportTaskRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getWirelessDeviceImportTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Wireless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetWirelessDeviceImportTask");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetWirelessDeviceImportTaskResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetWirelessDeviceImportTaskResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4263,6 +4797,77 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
+     * List the Sidewalk devices in an import task and their onboarding status.
+     * </p>
+     * 
+     * @param listDevicesForWirelessDeviceImportTaskRequest
+     * @return Result of the ListDevicesForWirelessDeviceImportTask operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.ListDevicesForWirelessDeviceImportTask
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListDevicesForWirelessDeviceImportTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListDevicesForWirelessDeviceImportTaskResult listDevicesForWirelessDeviceImportTask(ListDevicesForWirelessDeviceImportTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDevicesForWirelessDeviceImportTask(request);
+    }
+
+    @SdkInternalApi
+    final ListDevicesForWirelessDeviceImportTaskResult executeListDevicesForWirelessDeviceImportTask(
+            ListDevicesForWirelessDeviceImportTaskRequest listDevicesForWirelessDeviceImportTaskRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDevicesForWirelessDeviceImportTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDevicesForWirelessDeviceImportTaskRequest> request = null;
+        Response<ListDevicesForWirelessDeviceImportTaskResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDevicesForWirelessDeviceImportTaskRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listDevicesForWirelessDeviceImportTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Wireless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDevicesForWirelessDeviceImportTask");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDevicesForWirelessDeviceImportTaskResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListDevicesForWirelessDeviceImportTaskResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * List event configurations where at least one event topic has been enabled.
      * </p>
      * 
@@ -4652,6 +5257,13 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
      * <p>
      * List position configurations for a given resource, such as positioning solvers.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to retrieve position information should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html"
+     * >GetResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param listPositionConfigurationsRequest
      * @return Result of the ListPositionConfigurations operation returned by the service.
@@ -4668,6 +5280,7 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public ListPositionConfigurationsResult listPositionConfigurations(ListPositionConfigurationsRequest request) {
         request = beforeClientExecution(request);
         return executeListPositionConfigurations(request);
@@ -4908,6 +5521,75 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
+     * List wireless devices that have been added to an import task.
+     * </p>
+     * 
+     * @param listWirelessDeviceImportTasksRequest
+     * @return Result of the ListWirelessDeviceImportTasks operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.ListWirelessDeviceImportTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListWirelessDeviceImportTasks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListWirelessDeviceImportTasksResult listWirelessDeviceImportTasks(ListWirelessDeviceImportTasksRequest request) {
+        request = beforeClientExecution(request);
+        return executeListWirelessDeviceImportTasks(request);
+    }
+
+    @SdkInternalApi
+    final ListWirelessDeviceImportTasksResult executeListWirelessDeviceImportTasks(ListWirelessDeviceImportTasksRequest listWirelessDeviceImportTasksRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listWirelessDeviceImportTasksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListWirelessDeviceImportTasksRequest> request = null;
+        Response<ListWirelessDeviceImportTasksResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListWirelessDeviceImportTasksRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listWirelessDeviceImportTasksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Wireless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWirelessDeviceImportTasks");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListWirelessDeviceImportTasksResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListWirelessDeviceImportTasksResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the wireless devices registered to your AWS account.
      * </p>
      * 
@@ -5102,6 +5784,13 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
      * <p>
      * Put position configuration for a given resource.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to update the position configuration should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html"
+     * >UpdateResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param putPositionConfigurationRequest
      * @return Result of the PutPositionConfiguration operation returned by the service.
@@ -5120,6 +5809,7 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public PutPositionConfigurationResult putPositionConfiguration(PutPositionConfigurationRequest request) {
         request = beforeClientExecution(request);
         return executePutPositionConfiguration(request);
@@ -5777,6 +6467,145 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
+     * Start import task for a single wireless device.
+     * </p>
+     * 
+     * @param startSingleWirelessDeviceImportTaskRequest
+     * @return Result of the StartSingleWirelessDeviceImportTask operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.StartSingleWirelessDeviceImportTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartSingleWirelessDeviceImportTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartSingleWirelessDeviceImportTaskResult startSingleWirelessDeviceImportTask(StartSingleWirelessDeviceImportTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartSingleWirelessDeviceImportTask(request);
+    }
+
+    @SdkInternalApi
+    final StartSingleWirelessDeviceImportTaskResult executeStartSingleWirelessDeviceImportTask(
+            StartSingleWirelessDeviceImportTaskRequest startSingleWirelessDeviceImportTaskRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startSingleWirelessDeviceImportTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartSingleWirelessDeviceImportTaskRequest> request = null;
+        Response<StartSingleWirelessDeviceImportTaskResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartSingleWirelessDeviceImportTaskRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startSingleWirelessDeviceImportTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Wireless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartSingleWirelessDeviceImportTask");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartSingleWirelessDeviceImportTaskResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartSingleWirelessDeviceImportTaskResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Start import task for provisioning Sidewalk devices in bulk using an S3 CSV file.
+     * </p>
+     * 
+     * @param startWirelessDeviceImportTaskRequest
+     * @return Result of the StartWirelessDeviceImportTask operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.StartWirelessDeviceImportTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartWirelessDeviceImportTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartWirelessDeviceImportTaskResult startWirelessDeviceImportTask(StartWirelessDeviceImportTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartWirelessDeviceImportTask(request);
+    }
+
+    @SdkInternalApi
+    final StartWirelessDeviceImportTaskResult executeStartWirelessDeviceImportTask(StartWirelessDeviceImportTaskRequest startWirelessDeviceImportTaskRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startWirelessDeviceImportTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartWirelessDeviceImportTaskRequest> request = null;
+        Response<StartWirelessDeviceImportTaskResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartWirelessDeviceImportTaskRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startWirelessDeviceImportTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Wireless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartWirelessDeviceImportTask");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartWirelessDeviceImportTaskResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartWirelessDeviceImportTaskResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Adds a tag to a resource.
      * </p>
      * 
@@ -6241,6 +7070,75 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
+     * Update the summary metric configuration.
+     * </p>
+     * 
+     * @param updateMetricConfigurationRequest
+     * @return Result of the UpdateMetricConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.UpdateMetricConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateMetricConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateMetricConfigurationResult updateMetricConfiguration(UpdateMetricConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateMetricConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final UpdateMetricConfigurationResult executeUpdateMetricConfiguration(UpdateMetricConfigurationRequest updateMetricConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateMetricConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateMetricConfigurationRequest> request = null;
+        Response<UpdateMetricConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateMetricConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateMetricConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Wireless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMetricConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateMetricConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateMetricConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates properties of a multicast group session.
      * </p>
      * 
@@ -6441,6 +7339,13 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
      * <p>
      * Update the position information of a resource.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to update the position information should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html"
+     * >UpdateResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param updatePositionRequest
      * @return Result of the UpdatePosition operation returned by the service.
@@ -6459,6 +7364,7 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public UpdatePositionResult updatePosition(UpdatePositionRequest request) {
         request = beforeClientExecution(request);
         return executeUpdatePosition(request);
@@ -6574,6 +7480,74 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
+     * Update the position information of a given wireless device or a wireless gateway resource. The position
+     * coordinates are based on the <a href="https://gisgeography.com/wgs84-world-geodetic-system/"> World Geodetic
+     * System (WGS84)</a>.
+     * </p>
+     * 
+     * @param updateResourcePositionRequest
+     * @return Result of the UpdateResourcePosition operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSIoTWireless.UpdateResourcePosition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateResourcePosition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateResourcePositionResult updateResourcePosition(UpdateResourcePositionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateResourcePosition(request);
+    }
+
+    @SdkInternalApi
+    final UpdateResourcePositionResult executeUpdateResourcePosition(UpdateResourcePositionRequest updateResourcePositionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateResourcePositionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateResourcePositionRequest> request = null;
+        Response<UpdateResourcePositionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateResourcePositionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateResourcePositionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Wireless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateResourcePosition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateResourcePositionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateResourcePositionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates properties of a wireless device.
      * </p>
      * 
@@ -6627,6 +7601,75 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateWirelessDeviceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateWirelessDeviceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Update an import task to add more devices to the task.
+     * </p>
+     * 
+     * @param updateWirelessDeviceImportTaskRequest
+     * @return Result of the UpdateWirelessDeviceImportTask operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.UpdateWirelessDeviceImportTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateWirelessDeviceImportTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateWirelessDeviceImportTaskResult updateWirelessDeviceImportTask(UpdateWirelessDeviceImportTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateWirelessDeviceImportTask(request);
+    }
+
+    @SdkInternalApi
+    final UpdateWirelessDeviceImportTaskResult executeUpdateWirelessDeviceImportTask(UpdateWirelessDeviceImportTaskRequest updateWirelessDeviceImportTaskRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateWirelessDeviceImportTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateWirelessDeviceImportTaskRequest> request = null;
+        Response<UpdateWirelessDeviceImportTaskResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateWirelessDeviceImportTaskRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateWirelessDeviceImportTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Wireless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateWirelessDeviceImportTask");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateWirelessDeviceImportTaskResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateWirelessDeviceImportTaskResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

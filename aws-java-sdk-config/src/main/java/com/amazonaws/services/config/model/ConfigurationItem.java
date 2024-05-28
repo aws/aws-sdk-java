@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,13 +42,13 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
     private String accountId;
     /**
      * <p>
-     * The time when the configuration recording was initiated.
+     * The time when the recording of configuration changes was initiated for the resource.
      * </p>
      */
     private java.util.Date configurationItemCaptureTime;
     /**
      * <p>
-     * The configuration item status. The valid values are:
+     * The configuration item status. Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -64,7 +64,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * <li>
      * <p>
      * ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder
-     * excludes the recording of resources of this type
+     * doesn't record resources of this type
      * </p>
      * </li>
      * <li>
@@ -75,15 +75,10 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * <li>
      * <p>
      * ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder
-     * excludes the recording of resources of this type
+     * doesn't record resources of this type
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * The CIs do not incur any cost.
-     * </p>
-     * </note>
      */
     private String configurationItemStatus;
     /**
@@ -187,6 +182,28 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private java.util.Map<String, String> supplementaryConfiguration;
+    /**
+     * <p>
+     * The recording frequency that Config uses to record configuration changes for the resource.
+     * </p>
+     */
+    private String recordingFrequency;
+    /**
+     * <p>
+     * The time when configuration changes for the resource were delivered.
+     * </p>
+     * <note>
+     * <p>
+     * This field is optional and is not guaranteed to be present in a configuration item (CI). If you are using daily
+     * recording, this field will be populated. However, if you are using continuous recording, this field will be
+     * omitted since the delivery time is instantaneous as the CI is available right away. For more information on daily
+     * recording and continuous recording, see <a href=
+     * "https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-recording-frequency"
+     * >Recording Frequency</a> in the <i>Config Developer Guide</i>.
+     * </p>
+     * </note>
+     */
+    private java.util.Date configurationItemDeliveryTime;
 
     /**
      * <p>
@@ -270,11 +287,11 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The time when the configuration recording was initiated.
+     * The time when the recording of configuration changes was initiated for the resource.
      * </p>
      * 
      * @param configurationItemCaptureTime
-     *        The time when the configuration recording was initiated.
+     *        The time when the recording of configuration changes was initiated for the resource.
      */
 
     public void setConfigurationItemCaptureTime(java.util.Date configurationItemCaptureTime) {
@@ -283,10 +300,10 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The time when the configuration recording was initiated.
+     * The time when the recording of configuration changes was initiated for the resource.
      * </p>
      * 
-     * @return The time when the configuration recording was initiated.
+     * @return The time when the recording of configuration changes was initiated for the resource.
      */
 
     public java.util.Date getConfigurationItemCaptureTime() {
@@ -295,11 +312,11 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The time when the configuration recording was initiated.
+     * The time when the recording of configuration changes was initiated for the resource.
      * </p>
      * 
      * @param configurationItemCaptureTime
-     *        The time when the configuration recording was initiated.
+     *        The time when the recording of configuration changes was initiated for the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -310,7 +327,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The configuration item status. The valid values are:
+     * The configuration item status. Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -326,7 +343,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * <li>
      * <p>
      * ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder
-     * excludes the recording of resources of this type
+     * doesn't record resources of this type
      * </p>
      * </li>
      * <li>
@@ -337,18 +354,13 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * <li>
      * <p>
      * ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder
-     * excludes the recording of resources of this type
+     * doesn't record resources of this type
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * The CIs do not incur any cost.
-     * </p>
-     * </note>
      * 
      * @param configurationItemStatus
-     *        The configuration item status. The valid values are:</p>
+     *        The configuration item status. Valid values include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -363,7 +375,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      *        <li>
      *        <p>
      *        ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the
-     *        recorder excludes the recording of resources of this type
+     *        recorder doesn't record resources of this type
      *        </p>
      *        </li>
      *        <li>
@@ -374,14 +386,9 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      *        <li>
      *        <p>
      *        ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the
-     *        recorder excludes the recording of resources of this type
+     *        recorder doesn't record resources of this type
      *        </p>
      *        </li>
-     *        </ul>
-     *        <note>
-     *        <p>
-     *        The CIs do not incur any cost.
-     *        </p>
      * @see ConfigurationItemStatus
      */
 
@@ -391,7 +398,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The configuration item status. The valid values are:
+     * The configuration item status. Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -407,7 +414,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * <li>
      * <p>
      * ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder
-     * excludes the recording of resources of this type
+     * doesn't record resources of this type
      * </p>
      * </li>
      * <li>
@@ -418,17 +425,12 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * <li>
      * <p>
      * ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder
-     * excludes the recording of resources of this type
+     * doesn't record resources of this type
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * The CIs do not incur any cost.
-     * </p>
-     * </note>
      * 
-     * @return The configuration item status. The valid values are:</p>
+     * @return The configuration item status. Valid values include:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -443,7 +445,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      *         <li>
      *         <p>
      *         ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the
-     *         recorder excludes the recording of resources of this type
+     *         recorder doesn't record resources of this type
      *         </p>
      *         </li>
      *         <li>
@@ -454,14 +456,9 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      *         <li>
      *         <p>
      *         ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the
-     *         recorder excludes the recording of resources of this type
+     *         recorder doesn't record resources of this type
      *         </p>
      *         </li>
-     *         </ul>
-     *         <note>
-     *         <p>
-     *         The CIs do not incur any cost.
-     *         </p>
      * @see ConfigurationItemStatus
      */
 
@@ -471,7 +468,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The configuration item status. The valid values are:
+     * The configuration item status. Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -487,7 +484,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * <li>
      * <p>
      * ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder
-     * excludes the recording of resources of this type
+     * doesn't record resources of this type
      * </p>
      * </li>
      * <li>
@@ -498,18 +495,13 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * <li>
      * <p>
      * ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder
-     * excludes the recording of resources of this type
+     * doesn't record resources of this type
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * The CIs do not incur any cost.
-     * </p>
-     * </note>
      * 
      * @param configurationItemStatus
-     *        The configuration item status. The valid values are:</p>
+     *        The configuration item status. Valid values include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -524,7 +516,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      *        <li>
      *        <p>
      *        ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the
-     *        recorder excludes the recording of resources of this type
+     *        recorder doesn't record resources of this type
      *        </p>
      *        </li>
      *        <li>
@@ -535,14 +527,9 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      *        <li>
      *        <p>
      *        ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the
-     *        recorder excludes the recording of resources of this type
+     *        recorder doesn't record resources of this type
      *        </p>
      *        </li>
-     *        </ul>
-     *        <note>
-     *        <p>
-     *        The CIs do not incur any cost.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfigurationItemStatus
      */
@@ -554,7 +541,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The configuration item status. The valid values are:
+     * The configuration item status. Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -570,7 +557,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * <li>
      * <p>
      * ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder
-     * excludes the recording of resources of this type
+     * doesn't record resources of this type
      * </p>
      * </li>
      * <li>
@@ -581,18 +568,13 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * <li>
      * <p>
      * ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder
-     * excludes the recording of resources of this type
+     * doesn't record resources of this type
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * The CIs do not incur any cost.
-     * </p>
-     * </note>
      * 
      * @param configurationItemStatus
-     *        The configuration item status. The valid values are:</p>
+     *        The configuration item status. Valid values include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -607,7 +589,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      *        <li>
      *        <p>
      *        ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the
-     *        recorder excludes the recording of resources of this type
+     *        recorder doesn't record resources of this type
      *        </p>
      *        </li>
      *        <li>
@@ -618,14 +600,9 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      *        <li>
      *        <p>
      *        ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the
-     *        recorder excludes the recording of resources of this type
+     *        recorder doesn't record resources of this type
      *        </p>
      *        </li>
-     *        </ul>
-     *        <note>
-     *        <p>
-     *        The CIs do not incur any cost.
-     *        </p>
      * @see ConfigurationItemStatus
      */
 
@@ -635,7 +612,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The configuration item status. The valid values are:
+     * The configuration item status. Valid values include:
      * </p>
      * <ul>
      * <li>
@@ -651,7 +628,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * <li>
      * <p>
      * ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder
-     * excludes the recording of resources of this type
+     * doesn't record resources of this type
      * </p>
      * </li>
      * <li>
@@ -662,18 +639,13 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      * <li>
      * <p>
      * ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder
-     * excludes the recording of resources of this type
+     * doesn't record resources of this type
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * The CIs do not incur any cost.
-     * </p>
-     * </note>
      * 
      * @param configurationItemStatus
-     *        The configuration item status. The valid values are:</p>
+     *        The configuration item status. Valid values include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -688,7 +660,7 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      *        <li>
      *        <p>
      *        ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the
-     *        recorder excludes the recording of resources of this type
+     *        recorder doesn't record resources of this type
      *        </p>
      *        </li>
      *        <li>
@@ -699,14 +671,9 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
      *        <li>
      *        <p>
      *        ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the
-     *        recorder excludes the recording of resources of this type
+     *        recorder doesn't record resources of this type
      *        </p>
      *        </li>
-     *        </ul>
-     *        <note>
-     *        <p>
-     *        The CIs do not incur any cost.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfigurationItemStatus
      */
@@ -1551,6 +1518,173 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The recording frequency that Config uses to record configuration changes for the resource.
+     * </p>
+     * 
+     * @param recordingFrequency
+     *        The recording frequency that Config uses to record configuration changes for the resource.
+     * @see RecordingFrequency
+     */
+
+    public void setRecordingFrequency(String recordingFrequency) {
+        this.recordingFrequency = recordingFrequency;
+    }
+
+    /**
+     * <p>
+     * The recording frequency that Config uses to record configuration changes for the resource.
+     * </p>
+     * 
+     * @return The recording frequency that Config uses to record configuration changes for the resource.
+     * @see RecordingFrequency
+     */
+
+    public String getRecordingFrequency() {
+        return this.recordingFrequency;
+    }
+
+    /**
+     * <p>
+     * The recording frequency that Config uses to record configuration changes for the resource.
+     * </p>
+     * 
+     * @param recordingFrequency
+     *        The recording frequency that Config uses to record configuration changes for the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RecordingFrequency
+     */
+
+    public ConfigurationItem withRecordingFrequency(String recordingFrequency) {
+        setRecordingFrequency(recordingFrequency);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The recording frequency that Config uses to record configuration changes for the resource.
+     * </p>
+     * 
+     * @param recordingFrequency
+     *        The recording frequency that Config uses to record configuration changes for the resource.
+     * @see RecordingFrequency
+     */
+
+    public void setRecordingFrequency(RecordingFrequency recordingFrequency) {
+        withRecordingFrequency(recordingFrequency);
+    }
+
+    /**
+     * <p>
+     * The recording frequency that Config uses to record configuration changes for the resource.
+     * </p>
+     * 
+     * @param recordingFrequency
+     *        The recording frequency that Config uses to record configuration changes for the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RecordingFrequency
+     */
+
+    public ConfigurationItem withRecordingFrequency(RecordingFrequency recordingFrequency) {
+        this.recordingFrequency = recordingFrequency.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time when configuration changes for the resource were delivered.
+     * </p>
+     * <note>
+     * <p>
+     * This field is optional and is not guaranteed to be present in a configuration item (CI). If you are using daily
+     * recording, this field will be populated. However, if you are using continuous recording, this field will be
+     * omitted since the delivery time is instantaneous as the CI is available right away. For more information on daily
+     * recording and continuous recording, see <a href=
+     * "https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-recording-frequency"
+     * >Recording Frequency</a> in the <i>Config Developer Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param configurationItemDeliveryTime
+     *        The time when configuration changes for the resource were delivered.</p> <note>
+     *        <p>
+     *        This field is optional and is not guaranteed to be present in a configuration item (CI). If you are using
+     *        daily recording, this field will be populated. However, if you are using continuous recording, this field
+     *        will be omitted since the delivery time is instantaneous as the CI is available right away. For more
+     *        information on daily recording and continuous recording, see <a href=
+     *        "https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-recording-frequency"
+     *        >Recording Frequency</a> in the <i>Config Developer Guide</i>.
+     *        </p>
+     */
+
+    public void setConfigurationItemDeliveryTime(java.util.Date configurationItemDeliveryTime) {
+        this.configurationItemDeliveryTime = configurationItemDeliveryTime;
+    }
+
+    /**
+     * <p>
+     * The time when configuration changes for the resource were delivered.
+     * </p>
+     * <note>
+     * <p>
+     * This field is optional and is not guaranteed to be present in a configuration item (CI). If you are using daily
+     * recording, this field will be populated. However, if you are using continuous recording, this field will be
+     * omitted since the delivery time is instantaneous as the CI is available right away. For more information on daily
+     * recording and continuous recording, see <a href=
+     * "https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-recording-frequency"
+     * >Recording Frequency</a> in the <i>Config Developer Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @return The time when configuration changes for the resource were delivered.</p> <note>
+     *         <p>
+     *         This field is optional and is not guaranteed to be present in a configuration item (CI). If you are using
+     *         daily recording, this field will be populated. However, if you are using continuous recording, this field
+     *         will be omitted since the delivery time is instantaneous as the CI is available right away. For more
+     *         information on daily recording and continuous recording, see <a href=
+     *         "https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-recording-frequency"
+     *         >Recording Frequency</a> in the <i>Config Developer Guide</i>.
+     *         </p>
+     */
+
+    public java.util.Date getConfigurationItemDeliveryTime() {
+        return this.configurationItemDeliveryTime;
+    }
+
+    /**
+     * <p>
+     * The time when configuration changes for the resource were delivered.
+     * </p>
+     * <note>
+     * <p>
+     * This field is optional and is not guaranteed to be present in a configuration item (CI). If you are using daily
+     * recording, this field will be populated. However, if you are using continuous recording, this field will be
+     * omitted since the delivery time is instantaneous as the CI is available right away. For more information on daily
+     * recording and continuous recording, see <a href=
+     * "https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-recording-frequency"
+     * >Recording Frequency</a> in the <i>Config Developer Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param configurationItemDeliveryTime
+     *        The time when configuration changes for the resource were delivered.</p> <note>
+     *        <p>
+     *        This field is optional and is not guaranteed to be present in a configuration item (CI). If you are using
+     *        daily recording, this field will be populated. However, if you are using continuous recording, this field
+     *        will be omitted since the delivery time is instantaneous as the CI is available right away. For more
+     *        information on daily recording and continuous recording, see <a href=
+     *        "https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html#select-resources-recording-frequency"
+     *        >Recording Frequency</a> in the <i>Config Developer Guide</i>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConfigurationItem withConfigurationItemDeliveryTime(java.util.Date configurationItemDeliveryTime) {
+        setConfigurationItemDeliveryTime(configurationItemDeliveryTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1597,7 +1731,11 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
         if (getConfiguration() != null)
             sb.append("Configuration: ").append(getConfiguration()).append(",");
         if (getSupplementaryConfiguration() != null)
-            sb.append("SupplementaryConfiguration: ").append(getSupplementaryConfiguration());
+            sb.append("SupplementaryConfiguration: ").append(getSupplementaryConfiguration()).append(",");
+        if (getRecordingFrequency() != null)
+            sb.append("RecordingFrequency: ").append(getRecordingFrequency()).append(",");
+        if (getConfigurationItemDeliveryTime() != null)
+            sb.append("ConfigurationItemDeliveryTime: ").append(getConfigurationItemDeliveryTime());
         sb.append("}");
         return sb.toString();
     }
@@ -1684,6 +1822,15 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getSupplementaryConfiguration() != null && other.getSupplementaryConfiguration().equals(this.getSupplementaryConfiguration()) == false)
             return false;
+        if (other.getRecordingFrequency() == null ^ this.getRecordingFrequency() == null)
+            return false;
+        if (other.getRecordingFrequency() != null && other.getRecordingFrequency().equals(this.getRecordingFrequency()) == false)
+            return false;
+        if (other.getConfigurationItemDeliveryTime() == null ^ this.getConfigurationItemDeliveryTime() == null)
+            return false;
+        if (other.getConfigurationItemDeliveryTime() != null
+                && other.getConfigurationItemDeliveryTime().equals(this.getConfigurationItemDeliveryTime()) == false)
+            return false;
         return true;
     }
 
@@ -1710,6 +1857,8 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getRelationships() == null) ? 0 : getRelationships().hashCode());
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
         hashCode = prime * hashCode + ((getSupplementaryConfiguration() == null) ? 0 : getSupplementaryConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getRecordingFrequency() == null) ? 0 : getRecordingFrequency().hashCode());
+        hashCode = prime * hashCode + ((getConfigurationItemDeliveryTime() == null) ? 0 : getConfigurationItemDeliveryTime().hashCode());
         return hashCode;
     }
 

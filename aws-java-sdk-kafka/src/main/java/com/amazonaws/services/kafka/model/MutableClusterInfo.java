@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -102,6 +102,12 @@ public class MutableClusterInfo implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String storageMode;
+    /**
+     * <p>
+     * Describes brokers being changed during a broker count update.
+     * </p>
+     */
+    private BrokerCountUpdateInfo brokerCountUpdateInfo;
 
     /**
      * <p>
@@ -737,6 +743,52 @@ public class MutableClusterInfo implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * Describes brokers being changed during a broker count update.
+     * </p>
+     * 
+     * @param brokerCountUpdateInfo
+     *        <p>
+     *        Describes brokers being changed during a broker count update.
+     *        </p>
+     */
+
+    public void setBrokerCountUpdateInfo(BrokerCountUpdateInfo brokerCountUpdateInfo) {
+        this.brokerCountUpdateInfo = brokerCountUpdateInfo;
+    }
+
+    /**
+     * <p>
+     * Describes brokers being changed during a broker count update.
+     * </p>
+     * 
+     * @return <p>
+     *         Describes brokers being changed during a broker count update.
+     *         </p>
+     */
+
+    public BrokerCountUpdateInfo getBrokerCountUpdateInfo() {
+        return this.brokerCountUpdateInfo;
+    }
+
+    /**
+     * <p>
+     * Describes brokers being changed during a broker count update.
+     * </p>
+     * 
+     * @param brokerCountUpdateInfo
+     *        <p>
+     *        Describes brokers being changed during a broker count update.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MutableClusterInfo withBrokerCountUpdateInfo(BrokerCountUpdateInfo brokerCountUpdateInfo) {
+        setBrokerCountUpdateInfo(brokerCountUpdateInfo);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -771,7 +823,9 @@ public class MutableClusterInfo implements Serializable, Cloneable, StructuredPo
         if (getConnectivityInfo() != null)
             sb.append("ConnectivityInfo: ").append(getConnectivityInfo()).append(",");
         if (getStorageMode() != null)
-            sb.append("StorageMode: ").append(getStorageMode());
+            sb.append("StorageMode: ").append(getStorageMode()).append(",");
+        if (getBrokerCountUpdateInfo() != null)
+            sb.append("BrokerCountUpdateInfo: ").append(getBrokerCountUpdateInfo());
         sb.append("}");
         return sb.toString();
     }
@@ -834,6 +888,10 @@ public class MutableClusterInfo implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getStorageMode() != null && other.getStorageMode().equals(this.getStorageMode()) == false)
             return false;
+        if (other.getBrokerCountUpdateInfo() == null ^ this.getBrokerCountUpdateInfo() == null)
+            return false;
+        if (other.getBrokerCountUpdateInfo() != null && other.getBrokerCountUpdateInfo().equals(this.getBrokerCountUpdateInfo()) == false)
+            return false;
         return true;
     }
 
@@ -854,6 +912,7 @@ public class MutableClusterInfo implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getEncryptionInfo() == null) ? 0 : getEncryptionInfo().hashCode());
         hashCode = prime * hashCode + ((getConnectivityInfo() == null) ? 0 : getConnectivityInfo().hashCode());
         hashCode = prime * hashCode + ((getStorageMode() == null) ? 0 : getStorageMode().hashCode());
+        hashCode = prime * hashCode + ((getBrokerCountUpdateInfo() == null) ? 0 : getBrokerCountUpdateInfo().hashCode());
         return hashCode;
     }
 

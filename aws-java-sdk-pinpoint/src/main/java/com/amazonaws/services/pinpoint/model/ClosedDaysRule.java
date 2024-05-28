@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Closed Days Rule. Part of Journey sending schedule.
+ * Specifies the rule settings for when messages can't be sent.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ClosedDaysRule" target="_top">AWS API
@@ -30,30 +30,30 @@ public class ClosedDaysRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the rule.
+     * The name of the closed day rule.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Start Datetime in ISO 8601 format.
+     * Start DateTime ISO 8601 format
      * </p>
      */
     private String startDateTime;
     /**
      * <p>
-     * End Datetime in ISO 8601 format.
+     * End DateTime ISO 8601 format
      * </p>
      */
     private String endDateTime;
 
     /**
      * <p>
-     * Name of the rule.
+     * The name of the closed day rule.
      * </p>
      * 
      * @param name
-     *        Name of the rule.
+     *        The name of the closed day rule.
      */
 
     public void setName(String name) {
@@ -62,10 +62,10 @@ public class ClosedDaysRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the rule.
+     * The name of the closed day rule.
      * </p>
      * 
-     * @return Name of the rule.
+     * @return The name of the closed day rule.
      */
 
     public String getName() {
@@ -74,11 +74,11 @@ public class ClosedDaysRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the rule.
+     * The name of the closed day rule.
      * </p>
      * 
      * @param name
-     *        Name of the rule.
+     *        The name of the closed day rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class ClosedDaysRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Start Datetime in ISO 8601 format.
+     * Start DateTime ISO 8601 format
      * </p>
      * 
      * @param startDateTime
-     *        Start Datetime in ISO 8601 format.
+     *        Start DateTime ISO 8601 format
      */
 
     public void setStartDateTime(String startDateTime) {
@@ -102,10 +102,10 @@ public class ClosedDaysRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Start Datetime in ISO 8601 format.
+     * Start DateTime ISO 8601 format
      * </p>
      * 
-     * @return Start Datetime in ISO 8601 format.
+     * @return Start DateTime ISO 8601 format
      */
 
     public String getStartDateTime() {
@@ -114,11 +114,11 @@ public class ClosedDaysRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Start Datetime in ISO 8601 format.
+     * Start DateTime ISO 8601 format
      * </p>
      * 
      * @param startDateTime
-     *        Start Datetime in ISO 8601 format.
+     *        Start DateTime ISO 8601 format
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class ClosedDaysRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * End Datetime in ISO 8601 format.
+     * End DateTime ISO 8601 format
      * </p>
      * 
      * @param endDateTime
-     *        End Datetime in ISO 8601 format.
+     *        End DateTime ISO 8601 format
      */
 
     public void setEndDateTime(String endDateTime) {
@@ -142,10 +142,10 @@ public class ClosedDaysRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * End Datetime in ISO 8601 format.
+     * End DateTime ISO 8601 format
      * </p>
      * 
-     * @return End Datetime in ISO 8601 format.
+     * @return End DateTime ISO 8601 format
      */
 
     public String getEndDateTime() {
@@ -154,11 +154,11 @@ public class ClosedDaysRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * End Datetime in ISO 8601 format.
+     * End DateTime ISO 8601 format
      * </p>
      * 
      * @param endDateTime
-     *        End Datetime in ISO 8601 format.
+     *        End DateTime ISO 8601 format
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

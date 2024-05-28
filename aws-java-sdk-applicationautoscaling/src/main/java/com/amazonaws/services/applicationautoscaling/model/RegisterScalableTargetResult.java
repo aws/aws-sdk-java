@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,6 +24,53 @@ import javax.annotation.Generated;
 public class RegisterScalableTargetResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
+     * <p>
+     * The ARN of the scalable target.
+     * </p>
+     */
+    private String scalableTargetARN;
+
+    /**
+     * <p>
+     * The ARN of the scalable target.
+     * </p>
+     * 
+     * @param scalableTargetARN
+     *        The ARN of the scalable target.
+     */
+
+    public void setScalableTargetARN(String scalableTargetARN) {
+        this.scalableTargetARN = scalableTargetARN;
+    }
+
+    /**
+     * <p>
+     * The ARN of the scalable target.
+     * </p>
+     * 
+     * @return The ARN of the scalable target.
+     */
+
+    public String getScalableTargetARN() {
+        return this.scalableTargetARN;
+    }
+
+    /**
+     * <p>
+     * The ARN of the scalable target.
+     * </p>
+     * 
+     * @param scalableTargetARN
+     *        The ARN of the scalable target.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterScalableTargetResult withScalableTargetARN(String scalableTargetARN) {
+        setScalableTargetARN(scalableTargetARN);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -35,6 +82,8 @@ public class RegisterScalableTargetResult extends com.amazonaws.AmazonWebService
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getScalableTargetARN() != null)
+            sb.append("ScalableTargetARN: ").append(getScalableTargetARN());
         sb.append("}");
         return sb.toString();
     }
@@ -49,6 +98,10 @@ public class RegisterScalableTargetResult extends com.amazonaws.AmazonWebService
         if (obj instanceof RegisterScalableTargetResult == false)
             return false;
         RegisterScalableTargetResult other = (RegisterScalableTargetResult) obj;
+        if (other.getScalableTargetARN() == null ^ this.getScalableTargetARN() == null)
+            return false;
+        if (other.getScalableTargetARN() != null && other.getScalableTargetARN().equals(this.getScalableTargetARN()) == false)
+            return false;
         return true;
     }
 
@@ -57,6 +110,7 @@ public class RegisterScalableTargetResult extends com.amazonaws.AmazonWebService
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getScalableTargetARN() == null) ? 0 : getScalableTargetARN().hashCode());
         return hashCode;
     }
 

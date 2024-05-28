@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,11 +46,11 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
     private String datasetImportJobName;
     /**
      * <p>
-     * The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon
-     * Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.
+     * The location of the training data to import and an Identity and Access Management (IAM) role that Amazon Forecast
+     * can assume to access the data. The training data must be stored in an Amazon S3 bucket.
      * </p>
      * <p>
-     * If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.
+     * If encryption is used, <code>DataSource</code> includes an Key Management Service (KMS) key.
      * </p>
      */
     private DataSource dataSource;
@@ -127,6 +127,12 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
      * </ul>
      */
     private java.util.Date lastModificationTime;
+    /**
+     * <p>
+     * The import mode of the dataset import job, FULL or INCREMENTAL.
+     * </p>
+     */
+    private String importMode;
 
     /**
      * <p>
@@ -210,19 +216,18 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon
-     * Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.
+     * The location of the training data to import and an Identity and Access Management (IAM) role that Amazon Forecast
+     * can assume to access the data. The training data must be stored in an Amazon S3 bucket.
      * </p>
      * <p>
-     * If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.
+     * If encryption is used, <code>DataSource</code> includes an Key Management Service (KMS) key.
      * </p>
      * 
      * @param dataSource
-     *        The location of the training data to import and an AWS Identity and Access Management (IAM) role that
-     *        Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3
-     *        bucket.</p>
+     *        The location of the training data to import and an Identity and Access Management (IAM) role that Amazon
+     *        Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
      *        <p>
-     *        If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.
+     *        If encryption is used, <code>DataSource</code> includes an Key Management Service (KMS) key.
      */
 
     public void setDataSource(DataSource dataSource) {
@@ -231,18 +236,17 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon
-     * Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.
+     * The location of the training data to import and an Identity and Access Management (IAM) role that Amazon Forecast
+     * can assume to access the data. The training data must be stored in an Amazon S3 bucket.
      * </p>
      * <p>
-     * If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.
+     * If encryption is used, <code>DataSource</code> includes an Key Management Service (KMS) key.
      * </p>
      * 
-     * @return The location of the training data to import and an AWS Identity and Access Management (IAM) role that
-     *         Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3
-     *         bucket.</p>
+     * @return The location of the training data to import and an Identity and Access Management (IAM) role that Amazon
+     *         Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
      *         <p>
-     *         If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.
+     *         If encryption is used, <code>DataSource</code> includes an Key Management Service (KMS) key.
      */
 
     public DataSource getDataSource() {
@@ -251,19 +255,18 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon
-     * Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.
+     * The location of the training data to import and an Identity and Access Management (IAM) role that Amazon Forecast
+     * can assume to access the data. The training data must be stored in an Amazon S3 bucket.
      * </p>
      * <p>
-     * If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.
+     * If encryption is used, <code>DataSource</code> includes an Key Management Service (KMS) key.
      * </p>
      * 
      * @param dataSource
-     *        The location of the training data to import and an AWS Identity and Access Management (IAM) role that
-     *        Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3
-     *        bucket.</p>
+     *        The location of the training data to import and an Identity and Access Management (IAM) role that Amazon
+     *        Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
      *        <p>
-     *        If encryption is used, <code>DataSource</code> includes an AWS Key Management Service (KMS) key.
+     *        If encryption is used, <code>DataSource</code> includes an Key Management Service (KMS) key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -721,6 +724,65 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * The import mode of the dataset import job, FULL or INCREMENTAL.
+     * </p>
+     * 
+     * @param importMode
+     *        The import mode of the dataset import job, FULL or INCREMENTAL.
+     * @see ImportMode
+     */
+
+    public void setImportMode(String importMode) {
+        this.importMode = importMode;
+    }
+
+    /**
+     * <p>
+     * The import mode of the dataset import job, FULL or INCREMENTAL.
+     * </p>
+     * 
+     * @return The import mode of the dataset import job, FULL or INCREMENTAL.
+     * @see ImportMode
+     */
+
+    public String getImportMode() {
+        return this.importMode;
+    }
+
+    /**
+     * <p>
+     * The import mode of the dataset import job, FULL or INCREMENTAL.
+     * </p>
+     * 
+     * @param importMode
+     *        The import mode of the dataset import job, FULL or INCREMENTAL.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImportMode
+     */
+
+    public DatasetImportJobSummary withImportMode(String importMode) {
+        setImportMode(importMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The import mode of the dataset import job, FULL or INCREMENTAL.
+     * </p>
+     * 
+     * @param importMode
+     *        The import mode of the dataset import job, FULL or INCREMENTAL.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImportMode
+     */
+
+    public DatasetImportJobSummary withImportMode(ImportMode importMode) {
+        this.importMode = importMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -745,7 +807,9 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getLastModificationTime() != null)
-            sb.append("LastModificationTime: ").append(getLastModificationTime());
+            sb.append("LastModificationTime: ").append(getLastModificationTime()).append(",");
+        if (getImportMode() != null)
+            sb.append("ImportMode: ").append(getImportMode());
         sb.append("}");
         return sb.toString();
     }
@@ -788,6 +852,10 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
             return false;
         if (other.getLastModificationTime() != null && other.getLastModificationTime().equals(this.getLastModificationTime()) == false)
             return false;
+        if (other.getImportMode() == null ^ this.getImportMode() == null)
+            return false;
+        if (other.getImportMode() != null && other.getImportMode().equals(this.getImportMode()) == false)
+            return false;
         return true;
     }
 
@@ -803,6 +871,7 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastModificationTime() == null) ? 0 : getLastModificationTime().hashCode());
+        hashCode = prime * hashCode + ((getImportMode() == null) ? 0 : getImportMode().hashCode());
         return hashCode;
     }
 

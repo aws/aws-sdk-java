@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,18 @@ public class AgentStatusSummary implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String type;
+    /**
+     * <p>
+     * The timestamp when this resource was last modified.
+     * </p>
+     */
+    private java.util.Date lastModifiedTime;
+    /**
+     * <p>
+     * The Amazon Web Services Region where this resource was last modified.
+     * </p>
+     */
+    private String lastModifiedRegion;
 
     /**
      * <p>
@@ -233,6 +245,86 @@ public class AgentStatusSummary implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The timestamp when this resource was last modified.
+     * </p>
+     * 
+     * @param lastModifiedTime
+     *        The timestamp when this resource was last modified.
+     */
+
+    public void setLastModifiedTime(java.util.Date lastModifiedTime) {
+        this.lastModifiedTime = lastModifiedTime;
+    }
+
+    /**
+     * <p>
+     * The timestamp when this resource was last modified.
+     * </p>
+     * 
+     * @return The timestamp when this resource was last modified.
+     */
+
+    public java.util.Date getLastModifiedTime() {
+        return this.lastModifiedTime;
+    }
+
+    /**
+     * <p>
+     * The timestamp when this resource was last modified.
+     * </p>
+     * 
+     * @param lastModifiedTime
+     *        The timestamp when this resource was last modified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AgentStatusSummary withLastModifiedTime(java.util.Date lastModifiedTime) {
+        setLastModifiedTime(lastModifiedTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services Region where this resource was last modified.
+     * </p>
+     * 
+     * @param lastModifiedRegion
+     *        The Amazon Web Services Region where this resource was last modified.
+     */
+
+    public void setLastModifiedRegion(String lastModifiedRegion) {
+        this.lastModifiedRegion = lastModifiedRegion;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services Region where this resource was last modified.
+     * </p>
+     * 
+     * @return The Amazon Web Services Region where this resource was last modified.
+     */
+
+    public String getLastModifiedRegion() {
+        return this.lastModifiedRegion;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services Region where this resource was last modified.
+     * </p>
+     * 
+     * @param lastModifiedRegion
+     *        The Amazon Web Services Region where this resource was last modified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AgentStatusSummary withLastModifiedRegion(String lastModifiedRegion) {
+        setLastModifiedRegion(lastModifiedRegion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -251,7 +343,11 @@ public class AgentStatusSummary implements Serializable, Cloneable, StructuredPo
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getLastModifiedTime() != null)
+            sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
+        if (getLastModifiedRegion() != null)
+            sb.append("LastModifiedRegion: ").append(getLastModifiedRegion());
         sb.append("}");
         return sb.toString();
     }
@@ -282,6 +378,14 @@ public class AgentStatusSummary implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getLastModifiedTime() == null ^ this.getLastModifiedTime() == null)
+            return false;
+        if (other.getLastModifiedTime() != null && other.getLastModifiedTime().equals(this.getLastModifiedTime()) == false)
+            return false;
+        if (other.getLastModifiedRegion() == null ^ this.getLastModifiedRegion() == null)
+            return false;
+        if (other.getLastModifiedRegion() != null && other.getLastModifiedRegion().equals(this.getLastModifiedRegion()) == false)
+            return false;
         return true;
     }
 
@@ -294,6 +398,8 @@ public class AgentStatusSummary implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
+        hashCode = prime * hashCode + ((getLastModifiedRegion() == null) ? 0 : getLastModifiedRegion().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,14 +26,12 @@ import com.amazonaws.services.connectcases.model.*;
  * </p>
  * <p>
  * <p>
- * Welcome to the Amazon Connect Cases API Reference. This guide provides information about the Amazon Connect Cases
- * API, which you can use to create, update, get, and list Cases domains, fields, field options, layouts, templates,
- * cases, related items, and tags.
+ * With Amazon Connect Cases, your agents can track and manage customer issues that require multiple interactions,
+ * follow-up tasks, and teams in your contact center. A case represents a customer issue. It records the issue, the
+ * steps and interactions taken to resolve the issue, and the outcome. For more information, see <a
+ * href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Amazon Connect Cases</a> in the <i>Amazon
+ * Connect Administrator Guide</i>.
  * </p>
- * 
- * <pre>
- * <code> &lt;p&gt;For more information about Amazon Connect Cases, see &lt;a href=&quot;https://docs.aws.amazon.com/connect/latest/adminguide/cases.html&quot;&gt;Amazon Connect Cases&lt;/a&gt; in the &lt;i&gt;Amazon Connect Administrator Guide&lt;/i&gt;. &lt;/p&gt; </code>
- * </pre>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonConnectCasesAsync extends AmazonConnectCases {
@@ -101,15 +99,17 @@ public interface AmazonConnectCasesAsync extends AmazonConnectCases {
             com.amazonaws.handlers.AsyncHandler<BatchPutFieldOptionsRequest, BatchPutFieldOptionsResult> asyncHandler);
 
     /**
-     * <p>
-     * Creates a case in the specified Cases domain. Case system and custom fields are taken as an array id/value pairs
-     * with a declared data types.
-     * </p>
      * <note>
      * <p>
-     * <code>customer_id</code> is a required field when creating a case.
+     * If you provide a value for <code>PerformedBy.UserArn</code> you must also have <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
+     * permission on the User ARN resource that you provide
      * </p>
      * </note>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;Creates a case in the specified Cases domain. Case system and custom fields are taken as an array id/value pairs with a declared data types.&lt;/p&gt; &lt;p&gt;The following fields are required when creating a case:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;customer_id&lt;/code&gt; - You must provide the full customer profile ARN in this format: &lt;code&gt;arn:aws:profile:your_AWS_Region:your_AWS_account ID:domains/your_profiles_domain_name/profiles/profile_ID&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;title&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
+     * </pre>
      * 
      * @param createCaseRequest
      * @return A Java Future containing the result of the CreateCase operation returned by the service.
@@ -120,15 +120,17 @@ public interface AmazonConnectCasesAsync extends AmazonConnectCases {
     java.util.concurrent.Future<CreateCaseResult> createCaseAsync(CreateCaseRequest createCaseRequest);
 
     /**
-     * <p>
-     * Creates a case in the specified Cases domain. Case system and custom fields are taken as an array id/value pairs
-     * with a declared data types.
-     * </p>
      * <note>
      * <p>
-     * <code>customer_id</code> is a required field when creating a case.
+     * If you provide a value for <code>PerformedBy.UserArn</code> you must also have <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
+     * permission on the User ARN resource that you provide
      * </p>
      * </note>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;Creates a case in the specified Cases domain. Case system and custom fields are taken as an array id/value pairs with a declared data types.&lt;/p&gt; &lt;p&gt;The following fields are required when creating a case:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;customer_id&lt;/code&gt; - You must provide the full customer profile ARN in this format: &lt;code&gt;arn:aws:profile:your_AWS_Region:your_AWS_account ID:domains/your_profiles_domain_name/profiles/profile_ID&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;title&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
+     * </pre>
      * 
      * @param createCaseRequest
      * @param asyncHandler
@@ -152,9 +154,15 @@ public interface AmazonConnectCasesAsync extends AmazonConnectCases {
      * <p>
      * This will not associate your connect instance to Cases domain. Instead, use the Amazon Connect <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateIntegrationAssociation.html"
-     * >CreateIntegrationAssociation</a> API.
+     * >CreateIntegrationAssociation</a> API. You need specific IAM permissions to successfully associate the Cases
+     * domain. For more information, see <a href=
+     * "https://docs.aws.amazon.com/connect/latest/adminguide/required-permissions-iam-cases.html#onboard-cases-iam"
+     * >Onboard to Cases</a>.
      * </p>
-     * </important>
+     * 
+     * <pre>
+     * <code> &lt;/important&gt; </code>
+     * </pre>
      * 
      * @param createDomainRequest
      * @return A Java Future containing the result of the CreateDomain operation returned by the service.
@@ -173,9 +181,15 @@ public interface AmazonConnectCasesAsync extends AmazonConnectCases {
      * <p>
      * This will not associate your connect instance to Cases domain. Instead, use the Amazon Connect <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateIntegrationAssociation.html"
-     * >CreateIntegrationAssociation</a> API.
+     * >CreateIntegrationAssociation</a> API. You need specific IAM permissions to successfully associate the Cases
+     * domain. For more information, see <a href=
+     * "https://docs.aws.amazon.com/connect/latest/adminguide/required-permissions-iam-cases.html#onboard-cases-iam"
+     * >Onboard to Cases</a>.
      * </p>
-     * </important>
+     * 
+     * <pre>
+     * <code> &lt;/important&gt; </code>
+     * </pre>
      * 
      * @param createDomainRequest
      * @param asyncHandler
@@ -295,13 +309,27 @@ public interface AmazonConnectCasesAsync extends AmazonConnectCases {
      * Creates a related item (comments, tasks, and contacts) and associates it with a case.
      * </p>
      * <note>
+     * <ul>
+     * <li>
      * <p>
      * A Related Item is a resource that is associated with a case. It may or may not have an external identifier
      * linking it to an external resource (for example, a <code>contactArn</code>). All Related Items have their own
      * internal identifier, the <code>relatedItemArn</code>. Examples of related items include <code>comments</code> and
      * <code>contacts</code>.
      * </p>
-     * </note>
+     * </li>
+     * <li>
+     * <p>
+     * If you provide a value for <code>performedBy.userArn</code> you must also have <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a> permission
+     * on the ARN of the user that you provide.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * <pre>
+     * <code> &lt;/note&gt; </code>
+     * </pre>
      * 
      * @param createRelatedItemRequest
      * @return A Java Future containing the result of the CreateRelatedItem operation returned by the service.
@@ -316,13 +344,27 @@ public interface AmazonConnectCasesAsync extends AmazonConnectCases {
      * Creates a related item (comments, tasks, and contacts) and associates it with a case.
      * </p>
      * <note>
+     * <ul>
+     * <li>
      * <p>
      * A Related Item is a resource that is associated with a case. It may or may not have an external identifier
      * linking it to an external resource (for example, a <code>contactArn</code>). All Related Items have their own
      * internal identifier, the <code>relatedItemArn</code>. Examples of related items include <code>comments</code> and
      * <code>contacts</code>.
      * </p>
-     * </note>
+     * </li>
+     * <li>
+     * <p>
+     * If you provide a value for <code>performedBy.userArn</code> you must also have <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a> permission
+     * on the ARN of the user that you provide.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * <pre>
+     * <code> &lt;/note&gt; </code>
+     * </pre>
      * 
      * @param createRelatedItemRequest
      * @param asyncHandler
@@ -339,10 +381,11 @@ public interface AmazonConnectCasesAsync extends AmazonConnectCases {
 
     /**
      * <p>
-     * Creates a template in the Cases domain. This template is used to define the case object model (that is, define
+     * Creates a template in the Cases domain. This template is used to define the case object model (that is, to define
      * what data can be captured on cases) in a Cases domain. A template must have a unique name within a domain, and it
      * must reference existing field IDs and layout IDs. Additionally, multiple fields with same IDs are not allowed
-     * within the same Template.
+     * within the same Template. A template can be either Active or Inactive, as indicated by its status. Inactive
+     * templates cannot be used to create cases.
      * </p>
      * 
      * @param createTemplateRequest
@@ -355,10 +398,11 @@ public interface AmazonConnectCasesAsync extends AmazonConnectCases {
 
     /**
      * <p>
-     * Creates a template in the Cases domain. This template is used to define the case object model (that is, define
+     * Creates a template in the Cases domain. This template is used to define the case object model (that is, to define
      * what data can be captured on cases) in a Cases domain. A template must have a unique name within a domain, and it
      * must reference existing field IDs and layout IDs. Additionally, multiple fields with same IDs are not allowed
-     * within the same Template.
+     * within the same Template. A template can be either Active or Inactive, as indicated by its status. Inactive
+     * templates cannot be used to create cases.
      * </p>
      * 
      * @param createTemplateRequest
@@ -373,6 +417,296 @@ public interface AmazonConnectCasesAsync extends AmazonConnectCases {
      */
     java.util.concurrent.Future<CreateTemplateResult> createTemplateAsync(CreateTemplateRequest createTemplateRequest,
             com.amazonaws.handlers.AsyncHandler<CreateTemplateRequest, CreateTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a Cases domain.
+     * </p>
+     * 
+     * <pre>
+     * <code> &lt;note&gt; &lt;p&gt;After deleting your domain you must disassociate the deleted domain from your Amazon Connect instance with another API call before being able to use Cases again with this Amazon Connect instance. See &lt;a href=&quot;https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteIntegrationAssociation.html&quot;&gt;DeleteIntegrationAssociation&lt;/a&gt;.&lt;/p&gt; &lt;/note&gt; </code>
+     * </pre>
+     * 
+     * @param deleteDomainRequest
+     * @return A Java Future containing the result of the DeleteDomain operation returned by the service.
+     * @sample AmazonConnectCasesAsync.DeleteDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteDomain" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDomainResult> deleteDomainAsync(DeleteDomainRequest deleteDomainRequest);
+
+    /**
+     * <p>
+     * Deletes a Cases domain.
+     * </p>
+     * 
+     * <pre>
+     * <code> &lt;note&gt; &lt;p&gt;After deleting your domain you must disassociate the deleted domain from your Amazon Connect instance with another API call before being able to use Cases again with this Amazon Connect instance. See &lt;a href=&quot;https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteIntegrationAssociation.html&quot;&gt;DeleteIntegrationAssociation&lt;/a&gt;.&lt;/p&gt; &lt;/note&gt; </code>
+     * </pre>
+     * 
+     * @param deleteDomainRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDomain operation returned by the service.
+     * @sample AmazonConnectCasesAsyncHandler.DeleteDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteDomain" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDomainResult> deleteDomainAsync(DeleteDomainRequest deleteDomainRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDomainRequest, DeleteDomainResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a field from a cases template. You can delete up to 100 fields per domain.
+     * </p>
+     * <p>
+     * After a field is deleted:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can still retrieve the field by calling <code>BatchGetField</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You cannot update a deleted field by calling <code>UpdateField</code>; it throws a
+     * <code>ValidationException</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Deleted fields are not included in the <code>ListFields</code> response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>CreateCase</code> with a deleted field throws a <code>ValidationException</code> denoting which
+     * field IDs in the request have been deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>GetCase</code> with a deleted field ID returns the deleted field's value if one exists.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>UpdateCase</code> with a deleted field ID throws a <code>ValidationException</code> if the case
+     * does not already contain a value for the deleted field. Otherwise it succeeds, allowing you to update or remove
+     * (using <code>emptyValue: {}</code>) the field's value from the case.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetTemplate</code> does not return field IDs for deleted fields.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetLayout</code> does not return field IDs for deleted fields.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>SearchCases</code> with the deleted field ID as a filter returns any cases that have a value for
+     * the deleted field that matches the filter criteria.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>SearchCases</code> with a <code>searchTerm</code> value that matches a deleted field's value on a
+     * case returns the case in the response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>BatchPutFieldOptions</code> with a deleted field ID throw a <code>ValidationException</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>GetCaseEventConfiguration</code> does not return field IDs for deleted fields.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteFieldRequest
+     * @return A Java Future containing the result of the DeleteField operation returned by the service.
+     * @sample AmazonConnectCasesAsync.DeleteField
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteField" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFieldResult> deleteFieldAsync(DeleteFieldRequest deleteFieldRequest);
+
+    /**
+     * <p>
+     * Deletes a field from a cases template. You can delete up to 100 fields per domain.
+     * </p>
+     * <p>
+     * After a field is deleted:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can still retrieve the field by calling <code>BatchGetField</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You cannot update a deleted field by calling <code>UpdateField</code>; it throws a
+     * <code>ValidationException</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Deleted fields are not included in the <code>ListFields</code> response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>CreateCase</code> with a deleted field throws a <code>ValidationException</code> denoting which
+     * field IDs in the request have been deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>GetCase</code> with a deleted field ID returns the deleted field's value if one exists.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>UpdateCase</code> with a deleted field ID throws a <code>ValidationException</code> if the case
+     * does not already contain a value for the deleted field. Otherwise it succeeds, allowing you to update or remove
+     * (using <code>emptyValue: {}</code>) the field's value from the case.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetTemplate</code> does not return field IDs for deleted fields.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GetLayout</code> does not return field IDs for deleted fields.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>SearchCases</code> with the deleted field ID as a filter returns any cases that have a value for
+     * the deleted field that matches the filter criteria.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>SearchCases</code> with a <code>searchTerm</code> value that matches a deleted field's value on a
+     * case returns the case in the response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>BatchPutFieldOptions</code> with a deleted field ID throw a <code>ValidationException</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Calling <code>GetCaseEventConfiguration</code> does not return field IDs for deleted fields.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteFieldRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteField operation returned by the service.
+     * @sample AmazonConnectCasesAsyncHandler.DeleteField
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteField" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFieldResult> deleteFieldAsync(DeleteFieldRequest deleteFieldRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteFieldRequest, DeleteFieldResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a layout from a cases template. You can delete up to 100 layouts per domain.
+     * </p>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;After a layout is deleted:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can still retrieve the layout by calling &lt;code&gt;GetLayout&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You cannot update a deleted layout by calling &lt;code&gt;UpdateLayout&lt;/code&gt;; it throws a &lt;code&gt;ValidationException&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;Deleted layouts are not included in the &lt;code&gt;ListLayouts&lt;/code&gt; response.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
+     * </pre>
+     * 
+     * @param deleteLayoutRequest
+     * @return A Java Future containing the result of the DeleteLayout operation returned by the service.
+     * @sample AmazonConnectCasesAsync.DeleteLayout
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteLayout" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLayoutResult> deleteLayoutAsync(DeleteLayoutRequest deleteLayoutRequest);
+
+    /**
+     * <p>
+     * Deletes a layout from a cases template. You can delete up to 100 layouts per domain.
+     * </p>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;After a layout is deleted:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can still retrieve the layout by calling &lt;code&gt;GetLayout&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You cannot update a deleted layout by calling &lt;code&gt;UpdateLayout&lt;/code&gt;; it throws a &lt;code&gt;ValidationException&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;Deleted layouts are not included in the &lt;code&gt;ListLayouts&lt;/code&gt; response.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
+     * </pre>
+     * 
+     * @param deleteLayoutRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteLayout operation returned by the service.
+     * @sample AmazonConnectCasesAsyncHandler.DeleteLayout
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteLayout" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLayoutResult> deleteLayoutAsync(DeleteLayoutRequest deleteLayoutRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteLayoutRequest, DeleteLayoutResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a cases template. You can delete up to 100 templates per domain.
+     * </p>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;After a cases template is deleted:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can still retrieve the template by calling &lt;code&gt;GetTemplate&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You cannot update the template. &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You cannot create a case by using the deleted template.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;Deleted templates are not included in the &lt;code&gt;ListTemplates&lt;/code&gt; response.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
+     * </pre>
+     * 
+     * @param deleteTemplateRequest
+     * @return A Java Future containing the result of the DeleteTemplate operation returned by the service.
+     * @sample AmazonConnectCasesAsync.DeleteTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteTemplate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTemplateResult> deleteTemplateAsync(DeleteTemplateRequest deleteTemplateRequest);
+
+    /**
+     * <p>
+     * Deletes a cases template. You can delete up to 100 templates per domain.
+     * </p>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;After a cases template is deleted:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You can still retrieve the template by calling &lt;code&gt;GetTemplate&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You cannot update the template. &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;You cannot create a case by using the deleted template.&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;Deleted templates are not included in the &lt;code&gt;ListTemplates&lt;/code&gt; response.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
+     * </pre>
+     * 
+     * @param deleteTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTemplate operation returned by the service.
+     * @sample AmazonConnectCasesAsyncHandler.DeleteTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/DeleteTemplate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTemplateResult> deleteTemplateAsync(DeleteTemplateRequest deleteTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTemplateRequest, DeleteTemplateResult> asyncHandler);
 
     /**
      * <p>
@@ -404,6 +738,37 @@ public interface AmazonConnectCasesAsync extends AmazonConnectCases {
      */
     java.util.concurrent.Future<GetCaseResult> getCaseAsync(GetCaseRequest getCaseRequest,
             com.amazonaws.handlers.AsyncHandler<GetCaseRequest, GetCaseResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the audit history about a specific case if it exists.
+     * </p>
+     * 
+     * @param getCaseAuditEventsRequest
+     * @return A Java Future containing the result of the GetCaseAuditEvents operation returned by the service.
+     * @sample AmazonConnectCasesAsync.GetCaseAuditEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/GetCaseAuditEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCaseAuditEventsResult> getCaseAuditEventsAsync(GetCaseAuditEventsRequest getCaseAuditEventsRequest);
+
+    /**
+     * <p>
+     * Returns the audit history about a specific case if it exists.
+     * </p>
+     * 
+     * @param getCaseAuditEventsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCaseAuditEvents operation returned by the service.
+     * @sample AmazonConnectCasesAsyncHandler.GetCaseAuditEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/GetCaseAuditEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCaseAuditEventsResult> getCaseAuditEventsAsync(GetCaseAuditEventsRequest getCaseAuditEventsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCaseAuditEventsRequest, GetCaseAuditEventsResult> asyncHandler);
 
     /**
      * <p>
@@ -752,7 +1117,9 @@ public interface AmazonConnectCasesAsync extends AmazonConnectCases {
 
     /**
      * <p>
-     * API for adding case event publishing configuration
+     * Adds case event publishing configuration. For a complete list of fields you can add to the event message, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/case-fields.html">Create case fields</a> in the
+     * <i>Amazon Connect Administrator Guide</i>
      * </p>
      * 
      * @param putCaseEventConfigurationRequest
@@ -766,7 +1133,9 @@ public interface AmazonConnectCasesAsync extends AmazonConnectCases {
 
     /**
      * <p>
-     * API for adding case event publishing configuration
+     * Adds case event publishing configuration. For a complete list of fields you can add to the event message, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/case-fields.html">Create case fields</a> in the
+     * <i>Amazon Connect Administrator Guide</i>
      * </p>
      * 
      * @param putCaseEventConfigurationRequest
@@ -788,6 +1157,13 @@ public interface AmazonConnectCasesAsync extends AmazonConnectCases {
      * Searches for cases within their associated Cases domain. Search results are returned as a paginated list of
      * abridged case documents.
      * </p>
+     * <note>
+     * <p>
+     * For <code>customer_id</code> you must provide the full customer profile ARN in this format:
+     * <code> arn:aws:profile:your AWS Region:your AWS account ID:domains/profiles domain name/profiles/profile ID</code>
+     * .
+     * </p>
+     * </note>
      * 
      * @param searchCasesRequest
      * @return A Java Future containing the result of the SearchCases operation returned by the service.
@@ -802,6 +1178,13 @@ public interface AmazonConnectCasesAsync extends AmazonConnectCases {
      * Searches for cases within their associated Cases domain. Search results are returned as a paginated list of
      * abridged case documents.
      * </p>
+     * <note>
+     * <p>
+     * For <code>customer_id</code> you must provide the full customer profile ARN in this format:
+     * <code> arn:aws:profile:your AWS Region:your AWS account ID:domains/profiles domain name/profiles/profile ID</code>
+     * .
+     * </p>
+     * </note>
      * 
      * @param searchCasesRequest
      * @param asyncHandler
@@ -920,13 +1303,17 @@ public interface AmazonConnectCasesAsync extends AmazonConnectCases {
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
+     * <note>
      * <p>
-     * Updates the values of fields on a case. Fields to be updated are received as an array of id/value pairs identical
-     * to the <code>CreateCase</code> input .
+     * If you provide a value for <code>PerformedBy.UserArn</code> you must also have <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
+     * permission on the User ARN resource that you provide
      * </p>
-     * <p>
-     * If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
-     * </p>
+     * </note>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;Updates the values of fields on a case. Fields to be updated are received as an array of id/value pairs identical to the &lt;code&gt;CreateCase&lt;/code&gt; input .&lt;/p&gt; &lt;p&gt;If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.&lt;/p&gt; </code>
+     * </pre>
      * 
      * @param updateCaseRequest
      * @return A Java Future containing the result of the UpdateCase operation returned by the service.
@@ -937,13 +1324,17 @@ public interface AmazonConnectCasesAsync extends AmazonConnectCases {
     java.util.concurrent.Future<UpdateCaseResult> updateCaseAsync(UpdateCaseRequest updateCaseRequest);
 
     /**
+     * <note>
      * <p>
-     * Updates the values of fields on a case. Fields to be updated are received as an array of id/value pairs identical
-     * to the <code>CreateCase</code> input .
+     * If you provide a value for <code>PerformedBy.UserArn</code> you must also have <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
+     * permission on the User ARN resource that you provide
      * </p>
-     * <p>
-     * If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.
-     * </p>
+     * </note>
+     * 
+     * <pre>
+     * <code> &lt;p&gt;Updates the values of fields on a case. Fields to be updated are received as an array of id/value pairs identical to the &lt;code&gt;CreateCase&lt;/code&gt; input .&lt;/p&gt; &lt;p&gt;If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.&lt;/p&gt; </code>
+     * </pre>
      * 
      * @param updateCaseRequest
      * @param asyncHandler
@@ -1045,9 +1436,9 @@ public interface AmazonConnectCasesAsync extends AmazonConnectCases {
     /**
      * <p>
      * Updates the attributes of an existing template. The template attributes that can be modified include
-     * <code>name</code>, <code>description</code>, <code>layouts</code>, and <code>requiredFields</code>. At least one
-     * of these attributes must not be null. If a null value is provided for a given attribute, that attribute is
-     * ignored and its current value is preserved.
+     * <code>name</code>, <code>description</code>, <code>layoutConfiguration</code>, <code>requiredFields</code>, and
+     * <code>status</code>. At least one of these attributes must not be null. If a null value is provided for a given
+     * attribute, that attribute is ignored and its current value is preserved.
      * </p>
      * 
      * @param updateTemplateRequest
@@ -1061,9 +1452,9 @@ public interface AmazonConnectCasesAsync extends AmazonConnectCases {
     /**
      * <p>
      * Updates the attributes of an existing template. The template attributes that can be modified include
-     * <code>name</code>, <code>description</code>, <code>layouts</code>, and <code>requiredFields</code>. At least one
-     * of these attributes must not be null. If a null value is provided for a given attribute, that attribute is
-     * ignored and its current value is preserved.
+     * <code>name</code>, <code>description</code>, <code>layoutConfiguration</code>, <code>requiredFields</code>, and
+     * <code>status</code>. At least one of these attributes must not be null. If a null value is provided for a given
+     * attribute, that attribute is ignored and its current value is preserved.
      * </p>
      * 
      * @param updateTemplateRequest

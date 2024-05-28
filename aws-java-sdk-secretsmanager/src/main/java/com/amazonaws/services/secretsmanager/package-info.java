@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,6 +26,11 @@
  * </p>
  * <p>
  * This version of the Secrets Manager API Reference documents the Secrets Manager API version 2017-10-17.
+ * </p>
+ * <p>
+ * For a list of endpoints, see <a
+ * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/asm_access.html#endpoints">Amazon Web Services
+ * Secrets Manager endpoints</a>.
  * </p>
  * <p>
  * <b>Support and Feedback for Amazon Web Services Secrets Manager</b>

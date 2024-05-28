@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,10 @@ public class ListEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String catalog;
     /**
      * <p>
-     * The type of entities to retrieve.
+     * The type of entities to retrieve. Valid values are: <code>AmiProduct</code>, <code>ContainerProduct</code>,
+     * <code>DataProduct</code>, <code>SaaSProduct</code>, <code>ProcurementPolicy</code>, <code>Experience</code>,
+     * <code>Audience</code>, <code>BrandingSettings</code>, <code>Offer</code>, <code>Seller</code>,
+     * <code>ResaleAuthorization</code>.
      * </p>
      */
     private String entityType;
@@ -62,6 +65,31 @@ public class ListEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * Filters the returned set of entities based on their owner. The default is <code>SELF</code>. To list entities
+     * shared with you through AWS Resource Access Manager (AWS RAM), set to <code>SHARED</code>. Entities shared
+     * through the AWS Marketplace Catalog API <code>PutResourcePolicy</code> operation can't be discovered through the
+     * <code>SHARED</code> parameter.
+     * </p>
+     */
+    private String ownershipType;
+    /**
+     * <p>
+     * A Union object containing filter shapes for all <code>EntityType</code>s. Each <code>EntityTypeFilter</code>
+     * shape will have filters applicable for that <code>EntityType</code> that can be used to search or filter
+     * entities.
+     * </p>
+     */
+    private EntityTypeFilters entityTypeFilters;
+    /**
+     * <p>
+     * A Union object containing <code>Sort</code> shapes for all <code>EntityType</code>s. Each
+     * <code>EntityTypeSort</code> shape will have <code>SortBy</code> and <code>SortOrder</code> applicable for fields
+     * on that <code>EntityType</code>. This can be used to sort the results of the filter query.
+     * </p>
+     */
+    private EntityTypeSort entityTypeSort;
 
     /**
      * <p>
@@ -105,11 +133,17 @@ public class ListEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of entities to retrieve.
+     * The type of entities to retrieve. Valid values are: <code>AmiProduct</code>, <code>ContainerProduct</code>,
+     * <code>DataProduct</code>, <code>SaaSProduct</code>, <code>ProcurementPolicy</code>, <code>Experience</code>,
+     * <code>Audience</code>, <code>BrandingSettings</code>, <code>Offer</code>, <code>Seller</code>,
+     * <code>ResaleAuthorization</code>.
      * </p>
      * 
      * @param entityType
-     *        The type of entities to retrieve.
+     *        The type of entities to retrieve. Valid values are: <code>AmiProduct</code>, <code>ContainerProduct</code>
+     *        , <code>DataProduct</code>, <code>SaaSProduct</code>, <code>ProcurementPolicy</code>,
+     *        <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>, <code>Offer</code>,
+     *        <code>Seller</code>, <code>ResaleAuthorization</code>.
      */
 
     public void setEntityType(String entityType) {
@@ -118,10 +152,16 @@ public class ListEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of entities to retrieve.
+     * The type of entities to retrieve. Valid values are: <code>AmiProduct</code>, <code>ContainerProduct</code>,
+     * <code>DataProduct</code>, <code>SaaSProduct</code>, <code>ProcurementPolicy</code>, <code>Experience</code>,
+     * <code>Audience</code>, <code>BrandingSettings</code>, <code>Offer</code>, <code>Seller</code>,
+     * <code>ResaleAuthorization</code>.
      * </p>
      * 
-     * @return The type of entities to retrieve.
+     * @return The type of entities to retrieve. Valid values are: <code>AmiProduct</code>,
+     *         <code>ContainerProduct</code>, <code>DataProduct</code>, <code>SaaSProduct</code>,
+     *         <code>ProcurementPolicy</code>, <code>Experience</code>, <code>Audience</code>,
+     *         <code>BrandingSettings</code>, <code>Offer</code>, <code>Seller</code>, <code>ResaleAuthorization</code>.
      */
 
     public String getEntityType() {
@@ -130,11 +170,17 @@ public class ListEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The type of entities to retrieve.
+     * The type of entities to retrieve. Valid values are: <code>AmiProduct</code>, <code>ContainerProduct</code>,
+     * <code>DataProduct</code>, <code>SaaSProduct</code>, <code>ProcurementPolicy</code>, <code>Experience</code>,
+     * <code>Audience</code>, <code>BrandingSettings</code>, <code>Offer</code>, <code>Seller</code>,
+     * <code>ResaleAuthorization</code>.
      * </p>
      * 
      * @param entityType
-     *        The type of entities to retrieve.
+     *        The type of entities to retrieve. Valid values are: <code>AmiProduct</code>, <code>ContainerProduct</code>
+     *        , <code>DataProduct</code>, <code>SaaSProduct</code>, <code>ProcurementPolicy</code>,
+     *        <code>Experience</code>, <code>Audience</code>, <code>BrandingSettings</code>, <code>Offer</code>,
+     *        <code>Seller</code>, <code>ResaleAuthorization</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -345,6 +391,193 @@ public class ListEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * Filters the returned set of entities based on their owner. The default is <code>SELF</code>. To list entities
+     * shared with you through AWS Resource Access Manager (AWS RAM), set to <code>SHARED</code>. Entities shared
+     * through the AWS Marketplace Catalog API <code>PutResourcePolicy</code> operation can't be discovered through the
+     * <code>SHARED</code> parameter.
+     * </p>
+     * 
+     * @param ownershipType
+     *        Filters the returned set of entities based on their owner. The default is <code>SELF</code>. To list
+     *        entities shared with you through AWS Resource Access Manager (AWS RAM), set to <code>SHARED</code>.
+     *        Entities shared through the AWS Marketplace Catalog API <code>PutResourcePolicy</code> operation can't be
+     *        discovered through the <code>SHARED</code> parameter.
+     * @see OwnershipType
+     */
+
+    public void setOwnershipType(String ownershipType) {
+        this.ownershipType = ownershipType;
+    }
+
+    /**
+     * <p>
+     * Filters the returned set of entities based on their owner. The default is <code>SELF</code>. To list entities
+     * shared with you through AWS Resource Access Manager (AWS RAM), set to <code>SHARED</code>. Entities shared
+     * through the AWS Marketplace Catalog API <code>PutResourcePolicy</code> operation can't be discovered through the
+     * <code>SHARED</code> parameter.
+     * </p>
+     * 
+     * @return Filters the returned set of entities based on their owner. The default is <code>SELF</code>. To list
+     *         entities shared with you through AWS Resource Access Manager (AWS RAM), set to <code>SHARED</code>.
+     *         Entities shared through the AWS Marketplace Catalog API <code>PutResourcePolicy</code> operation can't be
+     *         discovered through the <code>SHARED</code> parameter.
+     * @see OwnershipType
+     */
+
+    public String getOwnershipType() {
+        return this.ownershipType;
+    }
+
+    /**
+     * <p>
+     * Filters the returned set of entities based on their owner. The default is <code>SELF</code>. To list entities
+     * shared with you through AWS Resource Access Manager (AWS RAM), set to <code>SHARED</code>. Entities shared
+     * through the AWS Marketplace Catalog API <code>PutResourcePolicy</code> operation can't be discovered through the
+     * <code>SHARED</code> parameter.
+     * </p>
+     * 
+     * @param ownershipType
+     *        Filters the returned set of entities based on their owner. The default is <code>SELF</code>. To list
+     *        entities shared with you through AWS Resource Access Manager (AWS RAM), set to <code>SHARED</code>.
+     *        Entities shared through the AWS Marketplace Catalog API <code>PutResourcePolicy</code> operation can't be
+     *        discovered through the <code>SHARED</code> parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OwnershipType
+     */
+
+    public ListEntitiesRequest withOwnershipType(String ownershipType) {
+        setOwnershipType(ownershipType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filters the returned set of entities based on their owner. The default is <code>SELF</code>. To list entities
+     * shared with you through AWS Resource Access Manager (AWS RAM), set to <code>SHARED</code>. Entities shared
+     * through the AWS Marketplace Catalog API <code>PutResourcePolicy</code> operation can't be discovered through the
+     * <code>SHARED</code> parameter.
+     * </p>
+     * 
+     * @param ownershipType
+     *        Filters the returned set of entities based on their owner. The default is <code>SELF</code>. To list
+     *        entities shared with you through AWS Resource Access Manager (AWS RAM), set to <code>SHARED</code>.
+     *        Entities shared through the AWS Marketplace Catalog API <code>PutResourcePolicy</code> operation can't be
+     *        discovered through the <code>SHARED</code> parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OwnershipType
+     */
+
+    public ListEntitiesRequest withOwnershipType(OwnershipType ownershipType) {
+        this.ownershipType = ownershipType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Union object containing filter shapes for all <code>EntityType</code>s. Each <code>EntityTypeFilter</code>
+     * shape will have filters applicable for that <code>EntityType</code> that can be used to search or filter
+     * entities.
+     * </p>
+     * 
+     * @param entityTypeFilters
+     *        A Union object containing filter shapes for all <code>EntityType</code>s. Each
+     *        <code>EntityTypeFilter</code> shape will have filters applicable for that <code>EntityType</code> that can
+     *        be used to search or filter entities.
+     */
+
+    public void setEntityTypeFilters(EntityTypeFilters entityTypeFilters) {
+        this.entityTypeFilters = entityTypeFilters;
+    }
+
+    /**
+     * <p>
+     * A Union object containing filter shapes for all <code>EntityType</code>s. Each <code>EntityTypeFilter</code>
+     * shape will have filters applicable for that <code>EntityType</code> that can be used to search or filter
+     * entities.
+     * </p>
+     * 
+     * @return A Union object containing filter shapes for all <code>EntityType</code>s. Each
+     *         <code>EntityTypeFilter</code> shape will have filters applicable for that <code>EntityType</code> that
+     *         can be used to search or filter entities.
+     */
+
+    public EntityTypeFilters getEntityTypeFilters() {
+        return this.entityTypeFilters;
+    }
+
+    /**
+     * <p>
+     * A Union object containing filter shapes for all <code>EntityType</code>s. Each <code>EntityTypeFilter</code>
+     * shape will have filters applicable for that <code>EntityType</code> that can be used to search or filter
+     * entities.
+     * </p>
+     * 
+     * @param entityTypeFilters
+     *        A Union object containing filter shapes for all <code>EntityType</code>s. Each
+     *        <code>EntityTypeFilter</code> shape will have filters applicable for that <code>EntityType</code> that can
+     *        be used to search or filter entities.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListEntitiesRequest withEntityTypeFilters(EntityTypeFilters entityTypeFilters) {
+        setEntityTypeFilters(entityTypeFilters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Union object containing <code>Sort</code> shapes for all <code>EntityType</code>s. Each
+     * <code>EntityTypeSort</code> shape will have <code>SortBy</code> and <code>SortOrder</code> applicable for fields
+     * on that <code>EntityType</code>. This can be used to sort the results of the filter query.
+     * </p>
+     * 
+     * @param entityTypeSort
+     *        A Union object containing <code>Sort</code> shapes for all <code>EntityType</code>s. Each
+     *        <code>EntityTypeSort</code> shape will have <code>SortBy</code> and <code>SortOrder</code> applicable for
+     *        fields on that <code>EntityType</code>. This can be used to sort the results of the filter query.
+     */
+
+    public void setEntityTypeSort(EntityTypeSort entityTypeSort) {
+        this.entityTypeSort = entityTypeSort;
+    }
+
+    /**
+     * <p>
+     * A Union object containing <code>Sort</code> shapes for all <code>EntityType</code>s. Each
+     * <code>EntityTypeSort</code> shape will have <code>SortBy</code> and <code>SortOrder</code> applicable for fields
+     * on that <code>EntityType</code>. This can be used to sort the results of the filter query.
+     * </p>
+     * 
+     * @return A Union object containing <code>Sort</code> shapes for all <code>EntityType</code>s. Each
+     *         <code>EntityTypeSort</code> shape will have <code>SortBy</code> and <code>SortOrder</code> applicable for
+     *         fields on that <code>EntityType</code>. This can be used to sort the results of the filter query.
+     */
+
+    public EntityTypeSort getEntityTypeSort() {
+        return this.entityTypeSort;
+    }
+
+    /**
+     * <p>
+     * A Union object containing <code>Sort</code> shapes for all <code>EntityType</code>s. Each
+     * <code>EntityTypeSort</code> shape will have <code>SortBy</code> and <code>SortOrder</code> applicable for fields
+     * on that <code>EntityType</code>. This can be used to sort the results of the filter query.
+     * </p>
+     * 
+     * @param entityTypeSort
+     *        A Union object containing <code>Sort</code> shapes for all <code>EntityType</code>s. Each
+     *        <code>EntityTypeSort</code> shape will have <code>SortBy</code> and <code>SortOrder</code> applicable for
+     *        fields on that <code>EntityType</code>. This can be used to sort the results of the filter query.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListEntitiesRequest withEntityTypeSort(EntityTypeSort entityTypeSort) {
+        setEntityTypeSort(entityTypeSort);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -367,7 +600,13 @@ public class ListEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getOwnershipType() != null)
+            sb.append("OwnershipType: ").append(getOwnershipType()).append(",");
+        if (getEntityTypeFilters() != null)
+            sb.append("EntityTypeFilters: ").append(getEntityTypeFilters()).append(",");
+        if (getEntityTypeSort() != null)
+            sb.append("EntityTypeSort: ").append(getEntityTypeSort());
         sb.append("}");
         return sb.toString();
     }
@@ -406,6 +645,18 @@ public class ListEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getOwnershipType() == null ^ this.getOwnershipType() == null)
+            return false;
+        if (other.getOwnershipType() != null && other.getOwnershipType().equals(this.getOwnershipType()) == false)
+            return false;
+        if (other.getEntityTypeFilters() == null ^ this.getEntityTypeFilters() == null)
+            return false;
+        if (other.getEntityTypeFilters() != null && other.getEntityTypeFilters().equals(this.getEntityTypeFilters()) == false)
+            return false;
+        if (other.getEntityTypeSort() == null ^ this.getEntityTypeSort() == null)
+            return false;
+        if (other.getEntityTypeSort() != null && other.getEntityTypeSort().equals(this.getEntityTypeSort()) == false)
+            return false;
         return true;
     }
 
@@ -420,6 +671,9 @@ public class ListEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getSort() == null) ? 0 : getSort().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getOwnershipType() == null) ? 0 : getOwnershipType().hashCode());
+        hashCode = prime * hashCode + ((getEntityTypeFilters() == null) ? 0 : getEntityTypeFilters().hashCode());
+        hashCode = prime * hashCode + ((getEntityTypeSort() == null) ? 0 : getEntityTypeSort().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,13 @@ public class InputColumn implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String type;
+    /**
+     * <p>
+     * The sub data type of the column. Sub types are only available for decimal columns that are part of a SPICE
+     * dataset.
+     * </p>
+     */
+    private String subType;
 
     /**
      * <p>
@@ -141,6 +148,73 @@ public class InputColumn implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The sub data type of the column. Sub types are only available for decimal columns that are part of a SPICE
+     * dataset.
+     * </p>
+     * 
+     * @param subType
+     *        The sub data type of the column. Sub types are only available for decimal columns that are part of a SPICE
+     *        dataset.
+     * @see ColumnDataSubType
+     */
+
+    public void setSubType(String subType) {
+        this.subType = subType;
+    }
+
+    /**
+     * <p>
+     * The sub data type of the column. Sub types are only available for decimal columns that are part of a SPICE
+     * dataset.
+     * </p>
+     * 
+     * @return The sub data type of the column. Sub types are only available for decimal columns that are part of a
+     *         SPICE dataset.
+     * @see ColumnDataSubType
+     */
+
+    public String getSubType() {
+        return this.subType;
+    }
+
+    /**
+     * <p>
+     * The sub data type of the column. Sub types are only available for decimal columns that are part of a SPICE
+     * dataset.
+     * </p>
+     * 
+     * @param subType
+     *        The sub data type of the column. Sub types are only available for decimal columns that are part of a SPICE
+     *        dataset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ColumnDataSubType
+     */
+
+    public InputColumn withSubType(String subType) {
+        setSubType(subType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The sub data type of the column. Sub types are only available for decimal columns that are part of a SPICE
+     * dataset.
+     * </p>
+     * 
+     * @param subType
+     *        The sub data type of the column. Sub types are only available for decimal columns that are part of a SPICE
+     *        dataset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ColumnDataSubType
+     */
+
+    public InputColumn withSubType(ColumnDataSubType subType) {
+        this.subType = subType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -155,7 +229,9 @@ public class InputColumn implements Serializable, Cloneable, StructuredPojo {
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getSubType() != null)
+            sb.append("SubType: ").append(getSubType());
         sb.append("}");
         return sb.toString();
     }
@@ -178,6 +254,10 @@ public class InputColumn implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getSubType() == null ^ this.getSubType() == null)
+            return false;
+        if (other.getSubType() != null && other.getSubType().equals(this.getSubType()) == false)
+            return false;
         return true;
     }
 
@@ -188,6 +268,7 @@ public class InputColumn implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getSubType() == null) ? 0 : getSubType().hashCode());
         return hashCode;
     }
 

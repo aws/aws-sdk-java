@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,7 +60,7 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
     private ModelStepMetadata model;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the model package the model was registered to by this step execution.
+     * The Amazon Resource Name (ARN) of the model package that the model was registered to by this step execution.
      * </p>
      */
     private RegisterModelStepMetadata registerModel;
@@ -86,12 +86,18 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
     private LambdaStepMetadata lambda;
     /**
      * <p>
+     * The configurations and outcomes of an Amazon EMR step execution.
+     * </p>
+     */
+    private EMRStepMetadata eMR;
+    /**
+     * <p>
      * The configurations and outcomes of the check step execution. This includes:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The type of the check conducted,
+     * The type of the check conducted.
      * </p>
      * </li>
      * <li>
@@ -121,7 +127,7 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
      * </li>
      * <li>
      * <p>
-     * The boolean flags indicating if the drift check is skipped.
+     * The Boolean flags indicating if the drift check is skipped.
      * </p>
      * </li>
      * <li>
@@ -183,16 +189,16 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
     private ClarifyCheckStepMetadata clarifyCheck;
     /**
      * <p>
-     * The configurations and outcomes of an EMR step execution.
-     * </p>
-     */
-    private EMRStepMetadata eMR;
-    /**
-     * <p>
      * The configurations and outcomes of a Fail step execution.
      * </p>
      */
     private FailStepMetadata fail;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the AutoML job that was run by this step.
+     * </p>
+     */
+    private AutoMLJobStepMetadata autoMLJob;
 
     /**
      * <p>
@@ -396,11 +402,12 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the model package the model was registered to by this step execution.
+     * The Amazon Resource Name (ARN) of the model package that the model was registered to by this step execution.
      * </p>
      * 
      * @param registerModel
-     *        The Amazon Resource Name (ARN) of the model package the model was registered to by this step execution.
+     *        The Amazon Resource Name (ARN) of the model package that the model was registered to by this step
+     *        execution.
      */
 
     public void setRegisterModel(RegisterModelStepMetadata registerModel) {
@@ -409,10 +416,11 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the model package the model was registered to by this step execution.
+     * The Amazon Resource Name (ARN) of the model package that the model was registered to by this step execution.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the model package the model was registered to by this step execution.
+     * @return The Amazon Resource Name (ARN) of the model package that the model was registered to by this step
+     *         execution.
      */
 
     public RegisterModelStepMetadata getRegisterModel() {
@@ -421,11 +429,12 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the model package the model was registered to by this step execution.
+     * The Amazon Resource Name (ARN) of the model package that the model was registered to by this step execution.
      * </p>
      * 
      * @param registerModel
-     *        The Amazon Resource Name (ARN) of the model package the model was registered to by this step execution.
+     *        The Amazon Resource Name (ARN) of the model package that the model was registered to by this step
+     *        execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -568,12 +577,52 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
 
     /**
      * <p>
+     * The configurations and outcomes of an Amazon EMR step execution.
+     * </p>
+     * 
+     * @param eMR
+     *        The configurations and outcomes of an Amazon EMR step execution.
+     */
+
+    public void setEMR(EMRStepMetadata eMR) {
+        this.eMR = eMR;
+    }
+
+    /**
+     * <p>
+     * The configurations and outcomes of an Amazon EMR step execution.
+     * </p>
+     * 
+     * @return The configurations and outcomes of an Amazon EMR step execution.
+     */
+
+    public EMRStepMetadata getEMR() {
+        return this.eMR;
+    }
+
+    /**
+     * <p>
+     * The configurations and outcomes of an Amazon EMR step execution.
+     * </p>
+     * 
+     * @param eMR
+     *        The configurations and outcomes of an Amazon EMR step execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PipelineExecutionStepMetadata withEMR(EMRStepMetadata eMR) {
+        setEMR(eMR);
+        return this;
+    }
+
+    /**
+     * <p>
      * The configurations and outcomes of the check step execution. This includes:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The type of the check conducted,
+     * The type of the check conducted.
      * </p>
      * </li>
      * <li>
@@ -603,7 +652,7 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
      * </li>
      * <li>
      * <p>
-     * The boolean flags indicating if the drift check is skipped.
+     * The Boolean flags indicating if the drift check is skipped.
      * </p>
      * </li>
      * <li>
@@ -618,7 +667,7 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
      *        <ul>
      *        <li>
      *        <p>
-     *        The type of the check conducted,
+     *        The type of the check conducted.
      *        </p>
      *        </li>
      *        <li>
@@ -648,7 +697,7 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
      *        </li>
      *        <li>
      *        <p>
-     *        The boolean flags indicating if the drift check is skipped.
+     *        The Boolean flags indicating if the drift check is skipped.
      *        </p>
      *        </li>
      *        <li>
@@ -670,7 +719,7 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
      * <ul>
      * <li>
      * <p>
-     * The type of the check conducted,
+     * The type of the check conducted.
      * </p>
      * </li>
      * <li>
@@ -700,7 +749,7 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
      * </li>
      * <li>
      * <p>
-     * The boolean flags indicating if the drift check is skipped.
+     * The Boolean flags indicating if the drift check is skipped.
      * </p>
      * </li>
      * <li>
@@ -714,7 +763,7 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
      *         <ul>
      *         <li>
      *         <p>
-     *         The type of the check conducted,
+     *         The type of the check conducted.
      *         </p>
      *         </li>
      *         <li>
@@ -744,7 +793,7 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
      *         </li>
      *         <li>
      *         <p>
-     *         The boolean flags indicating if the drift check is skipped.
+     *         The Boolean flags indicating if the drift check is skipped.
      *         </p>
      *         </li>
      *         <li>
@@ -766,7 +815,7 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
      * <ul>
      * <li>
      * <p>
-     * The type of the check conducted,
+     * The type of the check conducted.
      * </p>
      * </li>
      * <li>
@@ -796,7 +845,7 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
      * </li>
      * <li>
      * <p>
-     * The boolean flags indicating if the drift check is skipped.
+     * The Boolean flags indicating if the drift check is skipped.
      * </p>
      * </li>
      * <li>
@@ -811,7 +860,7 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
      *        <ul>
      *        <li>
      *        <p>
-     *        The type of the check conducted,
+     *        The type of the check conducted.
      *        </p>
      *        </li>
      *        <li>
@@ -841,7 +890,7 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
      *        </li>
      *        <li>
      *        <p>
-     *        The boolean flags indicating if the drift check is skipped.
+     *        The Boolean flags indicating if the drift check is skipped.
      *        </p>
      *        </li>
      *        <li>
@@ -1158,46 +1207,6 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The configurations and outcomes of an EMR step execution.
-     * </p>
-     * 
-     * @param eMR
-     *        The configurations and outcomes of an EMR step execution.
-     */
-
-    public void setEMR(EMRStepMetadata eMR) {
-        this.eMR = eMR;
-    }
-
-    /**
-     * <p>
-     * The configurations and outcomes of an EMR step execution.
-     * </p>
-     * 
-     * @return The configurations and outcomes of an EMR step execution.
-     */
-
-    public EMRStepMetadata getEMR() {
-        return this.eMR;
-    }
-
-    /**
-     * <p>
-     * The configurations and outcomes of an EMR step execution.
-     * </p>
-     * 
-     * @param eMR
-     *        The configurations and outcomes of an EMR step execution.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PipelineExecutionStepMetadata withEMR(EMRStepMetadata eMR) {
-        setEMR(eMR);
-        return this;
-    }
-
-    /**
-     * <p>
      * The configurations and outcomes of a Fail step execution.
      * </p>
      * 
@@ -1237,6 +1246,46 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the AutoML job that was run by this step.
+     * </p>
+     * 
+     * @param autoMLJob
+     *        The Amazon Resource Name (ARN) of the AutoML job that was run by this step.
+     */
+
+    public void setAutoMLJob(AutoMLJobStepMetadata autoMLJob) {
+        this.autoMLJob = autoMLJob;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the AutoML job that was run by this step.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the AutoML job that was run by this step.
+     */
+
+    public AutoMLJobStepMetadata getAutoMLJob() {
+        return this.autoMLJob;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the AutoML job that was run by this step.
+     * </p>
+     * 
+     * @param autoMLJob
+     *        The Amazon Resource Name (ARN) of the AutoML job that was run by this step.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PipelineExecutionStepMetadata withAutoMLJob(AutoMLJobStepMetadata autoMLJob) {
+        setAutoMLJob(autoMLJob);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1266,14 +1315,16 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
             sb.append("Callback: ").append(getCallback()).append(",");
         if (getLambda() != null)
             sb.append("Lambda: ").append(getLambda()).append(",");
+        if (getEMR() != null)
+            sb.append("EMR: ").append(getEMR()).append(",");
         if (getQualityCheck() != null)
             sb.append("QualityCheck: ").append(getQualityCheck()).append(",");
         if (getClarifyCheck() != null)
             sb.append("ClarifyCheck: ").append(getClarifyCheck()).append(",");
-        if (getEMR() != null)
-            sb.append("EMR: ").append(getEMR()).append(",");
         if (getFail() != null)
-            sb.append("Fail: ").append(getFail());
+            sb.append("Fail: ").append(getFail()).append(",");
+        if (getAutoMLJob() != null)
+            sb.append("AutoMLJob: ").append(getAutoMLJob());
         sb.append("}");
         return sb.toString();
     }
@@ -1324,6 +1375,10 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
             return false;
         if (other.getLambda() != null && other.getLambda().equals(this.getLambda()) == false)
             return false;
+        if (other.getEMR() == null ^ this.getEMR() == null)
+            return false;
+        if (other.getEMR() != null && other.getEMR().equals(this.getEMR()) == false)
+            return false;
         if (other.getQualityCheck() == null ^ this.getQualityCheck() == null)
             return false;
         if (other.getQualityCheck() != null && other.getQualityCheck().equals(this.getQualityCheck()) == false)
@@ -1332,13 +1387,13 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
             return false;
         if (other.getClarifyCheck() != null && other.getClarifyCheck().equals(this.getClarifyCheck()) == false)
             return false;
-        if (other.getEMR() == null ^ this.getEMR() == null)
-            return false;
-        if (other.getEMR() != null && other.getEMR().equals(this.getEMR()) == false)
-            return false;
         if (other.getFail() == null ^ this.getFail() == null)
             return false;
         if (other.getFail() != null && other.getFail().equals(this.getFail()) == false)
+            return false;
+        if (other.getAutoMLJob() == null ^ this.getAutoMLJob() == null)
+            return false;
+        if (other.getAutoMLJob() != null && other.getAutoMLJob().equals(this.getAutoMLJob()) == false)
             return false;
         return true;
     }
@@ -1357,10 +1412,11 @@ public class PipelineExecutionStepMetadata implements Serializable, Cloneable, S
         hashCode = prime * hashCode + ((getCondition() == null) ? 0 : getCondition().hashCode());
         hashCode = prime * hashCode + ((getCallback() == null) ? 0 : getCallback().hashCode());
         hashCode = prime * hashCode + ((getLambda() == null) ? 0 : getLambda().hashCode());
+        hashCode = prime * hashCode + ((getEMR() == null) ? 0 : getEMR().hashCode());
         hashCode = prime * hashCode + ((getQualityCheck() == null) ? 0 : getQualityCheck().hashCode());
         hashCode = prime * hashCode + ((getClarifyCheck() == null) ? 0 : getClarifyCheck().hashCode());
-        hashCode = prime * hashCode + ((getEMR() == null) ? 0 : getEMR().hashCode());
         hashCode = prime * hashCode + ((getFail() == null) ? 0 : getFail().hashCode());
+        hashCode = prime * hashCode + ((getAutoMLJob() == null) ? 0 : getAutoMLJob().hashCode());
         return hashCode;
     }
 

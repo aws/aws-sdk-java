@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,19 +21,14 @@ import javax.annotation.Generated;
  * <ul>
  * <li>
  * <p>
- * The request would cause the number of member accounts in the behavior graph to exceed the maximum allowed. A behavior
- * graph cannot have more than 1200 member accounts.
+ * This request cannot be completed if it would cause the number of member accounts in the behavior graph to exceed the
+ * maximum allowed. A behavior graph cannot have more than 1,200 member accounts.
  * </p>
  * </li>
  * <li>
  * <p>
- * The request would cause the data rate for the behavior graph to exceed the maximum allowed.
- * </p>
- * </li>
- * <li>
- * <p>
- * Detective is unable to verify the data rate for the member account. This is usually because the member account is not
- * enrolled in Amazon GuardDuty.
+ * This request cannot be completed if the current volume ingested is above the limit of 10 TB per day. Detective will
+ * not allow you to add additional member accounts.
  * </p>
  * </li>
  * </ul>

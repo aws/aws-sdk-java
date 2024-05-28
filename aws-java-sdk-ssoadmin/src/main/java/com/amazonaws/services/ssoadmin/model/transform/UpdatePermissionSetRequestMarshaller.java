@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,16 +27,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdatePermissionSetRequestMarshaller {
 
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<String> INSTANCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceArn").build();
     private static final MarshallingInfo<String> PERMISSIONSETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PermissionSetArn").build();
-    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
-    private static final MarshallingInfo<String> SESSIONDURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SessionDuration").build();
     private static final MarshallingInfo<String> RELAYSTATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RelayState").build();
+    private static final MarshallingInfo<String> SESSIONDURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SessionDuration").build();
 
     private static final UpdatePermissionSetRequestMarshaller instance = new UpdatePermissionSetRequestMarshaller();
 
@@ -54,11 +54,11 @@ public class UpdatePermissionSetRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(updatePermissionSetRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(updatePermissionSetRequest.getInstanceArn(), INSTANCEARN_BINDING);
             protocolMarshaller.marshall(updatePermissionSetRequest.getPermissionSetArn(), PERMISSIONSETARN_BINDING);
-            protocolMarshaller.marshall(updatePermissionSetRequest.getDescription(), DESCRIPTION_BINDING);
-            protocolMarshaller.marshall(updatePermissionSetRequest.getSessionDuration(), SESSIONDURATION_BINDING);
             protocolMarshaller.marshall(updatePermissionSetRequest.getRelayState(), RELAYSTATE_BINDING);
+            protocolMarshaller.marshall(updatePermissionSetRequest.getSessionDuration(), SESSIONDURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

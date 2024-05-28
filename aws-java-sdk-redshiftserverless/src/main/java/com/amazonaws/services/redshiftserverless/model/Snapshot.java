@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,19 @@ public class Snapshot implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Double actualIncrementalBackupSizeInMegaBytes;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the namespace's admin user credentials secret.
+     * </p>
+     */
+    private String adminPasswordSecretArn;
+    /**
+     * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials
+     * secret.
+     * </p>
+     */
+    private String adminPasswordSecretKmsKeyId;
     /**
      * <p>
      * The username of the database within a snapshot.
@@ -327,6 +340,92 @@ public class Snapshot implements Serializable, Cloneable, StructuredPojo {
 
     public Snapshot withActualIncrementalBackupSizeInMegaBytes(Double actualIncrementalBackupSizeInMegaBytes) {
         setActualIncrementalBackupSizeInMegaBytes(actualIncrementalBackupSizeInMegaBytes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the namespace's admin user credentials secret.
+     * </p>
+     * 
+     * @param adminPasswordSecretArn
+     *        The Amazon Resource Name (ARN) for the namespace's admin user credentials secret.
+     */
+
+    public void setAdminPasswordSecretArn(String adminPasswordSecretArn) {
+        this.adminPasswordSecretArn = adminPasswordSecretArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the namespace's admin user credentials secret.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the namespace's admin user credentials secret.
+     */
+
+    public String getAdminPasswordSecretArn() {
+        return this.adminPasswordSecretArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the namespace's admin user credentials secret.
+     * </p>
+     * 
+     * @param adminPasswordSecretArn
+     *        The Amazon Resource Name (ARN) for the namespace's admin user credentials secret.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Snapshot withAdminPasswordSecretArn(String adminPasswordSecretArn) {
+        setAdminPasswordSecretArn(adminPasswordSecretArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials
+     * secret.
+     * </p>
+     * 
+     * @param adminPasswordSecretKmsKeyId
+     *        The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials
+     *        secret.
+     */
+
+    public void setAdminPasswordSecretKmsKeyId(String adminPasswordSecretKmsKeyId) {
+        this.adminPasswordSecretKmsKeyId = adminPasswordSecretKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials
+     * secret.
+     * </p>
+     * 
+     * @return The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin
+     *         credentials secret.
+     */
+
+    public String getAdminPasswordSecretKmsKeyId() {
+        return this.adminPasswordSecretKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials
+     * secret.
+     * </p>
+     * 
+     * @param adminPasswordSecretKmsKeyId
+     *        The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials
+     *        secret.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Snapshot withAdminPasswordSecretKmsKeyId(String adminPasswordSecretKmsKeyId) {
+        setAdminPasswordSecretKmsKeyId(adminPasswordSecretKmsKeyId);
         return this;
     }
 
@@ -1047,6 +1146,10 @@ public class Snapshot implements Serializable, Cloneable, StructuredPojo {
             sb.append("AccountsWithRestoreAccess: ").append(getAccountsWithRestoreAccess()).append(",");
         if (getActualIncrementalBackupSizeInMegaBytes() != null)
             sb.append("ActualIncrementalBackupSizeInMegaBytes: ").append(getActualIncrementalBackupSizeInMegaBytes()).append(",");
+        if (getAdminPasswordSecretArn() != null)
+            sb.append("AdminPasswordSecretArn: ").append(getAdminPasswordSecretArn()).append(",");
+        if (getAdminPasswordSecretKmsKeyId() != null)
+            sb.append("AdminPasswordSecretKmsKeyId: ").append(getAdminPasswordSecretKmsKeyId()).append(",");
         if (getAdminUsername() != null)
             sb.append("AdminUsername: ").append(getAdminUsername()).append(",");
         if (getBackupProgressInMegaBytes() != null)
@@ -1108,6 +1211,14 @@ public class Snapshot implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getActualIncrementalBackupSizeInMegaBytes() != null
                 && other.getActualIncrementalBackupSizeInMegaBytes().equals(this.getActualIncrementalBackupSizeInMegaBytes()) == false)
+            return false;
+        if (other.getAdminPasswordSecretArn() == null ^ this.getAdminPasswordSecretArn() == null)
+            return false;
+        if (other.getAdminPasswordSecretArn() != null && other.getAdminPasswordSecretArn().equals(this.getAdminPasswordSecretArn()) == false)
+            return false;
+        if (other.getAdminPasswordSecretKmsKeyId() == null ^ this.getAdminPasswordSecretKmsKeyId() == null)
+            return false;
+        if (other.getAdminPasswordSecretKmsKeyId() != null && other.getAdminPasswordSecretKmsKeyId().equals(this.getAdminPasswordSecretKmsKeyId()) == false)
             return false;
         if (other.getAdminUsername() == null ^ this.getAdminUsername() == null)
             return false;
@@ -1189,6 +1300,8 @@ public class Snapshot implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAccountsWithProvisionedRestoreAccess() == null) ? 0 : getAccountsWithProvisionedRestoreAccess().hashCode());
         hashCode = prime * hashCode + ((getAccountsWithRestoreAccess() == null) ? 0 : getAccountsWithRestoreAccess().hashCode());
         hashCode = prime * hashCode + ((getActualIncrementalBackupSizeInMegaBytes() == null) ? 0 : getActualIncrementalBackupSizeInMegaBytes().hashCode());
+        hashCode = prime * hashCode + ((getAdminPasswordSecretArn() == null) ? 0 : getAdminPasswordSecretArn().hashCode());
+        hashCode = prime * hashCode + ((getAdminPasswordSecretKmsKeyId() == null) ? 0 : getAdminPasswordSecretKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getAdminUsername() == null) ? 0 : getAdminUsername().hashCode());
         hashCode = prime * hashCode + ((getBackupProgressInMegaBytes() == null) ? 0 : getBackupProgressInMegaBytes().hashCode());
         hashCode = prime * hashCode + ((getCurrentBackupRateInMegaBytesPerSecond() == null) ? 0 : getCurrentBackupRateInMegaBytesPerSecond().hashCode());

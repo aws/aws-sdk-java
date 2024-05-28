@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,30 +30,30 @@ public class GrammarSlotTypeSource implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the S3 bucket that contains the grammar source.
+     * The name of the Amazon S3 bucket that contains the grammar source.
      * </p>
      */
     private String s3BucketName;
     /**
      * <p>
-     * The path to the grammar in the S3 bucket.
+     * The path to the grammar in the Amazon S3 bucket.
      * </p>
      */
     private String s3ObjectKey;
     /**
      * <p>
-     * The Amazon KMS key required to decrypt the contents of the grammar, if any.
+     * The KMS key required to decrypt the contents of the grammar, if any.
      * </p>
      */
     private String kmsKeyArn;
 
     /**
      * <p>
-     * The name of the S3 bucket that contains the grammar source.
+     * The name of the Amazon S3 bucket that contains the grammar source.
      * </p>
      * 
      * @param s3BucketName
-     *        The name of the S3 bucket that contains the grammar source.
+     *        The name of the Amazon S3 bucket that contains the grammar source.
      */
 
     public void setS3BucketName(String s3BucketName) {
@@ -62,10 +62,10 @@ public class GrammarSlotTypeSource implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the S3 bucket that contains the grammar source.
+     * The name of the Amazon S3 bucket that contains the grammar source.
      * </p>
      * 
-     * @return The name of the S3 bucket that contains the grammar source.
+     * @return The name of the Amazon S3 bucket that contains the grammar source.
      */
 
     public String getS3BucketName() {
@@ -74,11 +74,11 @@ public class GrammarSlotTypeSource implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the S3 bucket that contains the grammar source.
+     * The name of the Amazon S3 bucket that contains the grammar source.
      * </p>
      * 
      * @param s3BucketName
-     *        The name of the S3 bucket that contains the grammar source.
+     *        The name of the Amazon S3 bucket that contains the grammar source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class GrammarSlotTypeSource implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The path to the grammar in the S3 bucket.
+     * The path to the grammar in the Amazon S3 bucket.
      * </p>
      * 
      * @param s3ObjectKey
-     *        The path to the grammar in the S3 bucket.
+     *        The path to the grammar in the Amazon S3 bucket.
      */
 
     public void setS3ObjectKey(String s3ObjectKey) {
@@ -102,10 +102,10 @@ public class GrammarSlotTypeSource implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The path to the grammar in the S3 bucket.
+     * The path to the grammar in the Amazon S3 bucket.
      * </p>
      * 
-     * @return The path to the grammar in the S3 bucket.
+     * @return The path to the grammar in the Amazon S3 bucket.
      */
 
     public String getS3ObjectKey() {
@@ -114,11 +114,11 @@ public class GrammarSlotTypeSource implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The path to the grammar in the S3 bucket.
+     * The path to the grammar in the Amazon S3 bucket.
      * </p>
      * 
      * @param s3ObjectKey
-     *        The path to the grammar in the S3 bucket.
+     *        The path to the grammar in the Amazon S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class GrammarSlotTypeSource implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon KMS key required to decrypt the contents of the grammar, if any.
+     * The KMS key required to decrypt the contents of the grammar, if any.
      * </p>
      * 
      * @param kmsKeyArn
-     *        The Amazon KMS key required to decrypt the contents of the grammar, if any.
+     *        The KMS key required to decrypt the contents of the grammar, if any.
      */
 
     public void setKmsKeyArn(String kmsKeyArn) {
@@ -142,10 +142,10 @@ public class GrammarSlotTypeSource implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon KMS key required to decrypt the contents of the grammar, if any.
+     * The KMS key required to decrypt the contents of the grammar, if any.
      * </p>
      * 
-     * @return The Amazon KMS key required to decrypt the contents of the grammar, if any.
+     * @return The KMS key required to decrypt the contents of the grammar, if any.
      */
 
     public String getKmsKeyArn() {
@@ -154,11 +154,11 @@ public class GrammarSlotTypeSource implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon KMS key required to decrypt the contents of the grammar, if any.
+     * The KMS key required to decrypt the contents of the grammar, if any.
      * </p>
      * 
      * @param kmsKeyArn
-     *        The Amazon KMS key required to decrypt the contents of the grammar, if any.
+     *        The KMS key required to decrypt the contents of the grammar, if any.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

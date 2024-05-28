@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,12 @@ public class StartChatContactResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private String participantToken;
+    /**
+     * <p>
+     * The contactId from which a persistent chat session is started. This field is populated only for persistent chats.
+     * </p>
+     */
+    private String continuedFromContactId;
 
     /**
      * <p>
@@ -184,6 +190,49 @@ public class StartChatContactResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The contactId from which a persistent chat session is started. This field is populated only for persistent chats.
+     * </p>
+     * 
+     * @param continuedFromContactId
+     *        The contactId from which a persistent chat session is started. This field is populated only for persistent
+     *        chats.
+     */
+
+    public void setContinuedFromContactId(String continuedFromContactId) {
+        this.continuedFromContactId = continuedFromContactId;
+    }
+
+    /**
+     * <p>
+     * The contactId from which a persistent chat session is started. This field is populated only for persistent chats.
+     * </p>
+     * 
+     * @return The contactId from which a persistent chat session is started. This field is populated only for
+     *         persistent chats.
+     */
+
+    public String getContinuedFromContactId() {
+        return this.continuedFromContactId;
+    }
+
+    /**
+     * <p>
+     * The contactId from which a persistent chat session is started. This field is populated only for persistent chats.
+     * </p>
+     * 
+     * @param continuedFromContactId
+     *        The contactId from which a persistent chat session is started. This field is populated only for persistent
+     *        chats.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartChatContactResult withContinuedFromContactId(String continuedFromContactId) {
+        setContinuedFromContactId(continuedFromContactId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -200,7 +249,9 @@ public class StartChatContactResult extends com.amazonaws.AmazonWebServiceResult
         if (getParticipantId() != null)
             sb.append("ParticipantId: ").append(getParticipantId()).append(",");
         if (getParticipantToken() != null)
-            sb.append("ParticipantToken: ").append(getParticipantToken());
+            sb.append("ParticipantToken: ").append(getParticipantToken()).append(",");
+        if (getContinuedFromContactId() != null)
+            sb.append("ContinuedFromContactId: ").append(getContinuedFromContactId());
         sb.append("}");
         return sb.toString();
     }
@@ -227,6 +278,10 @@ public class StartChatContactResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getParticipantToken() != null && other.getParticipantToken().equals(this.getParticipantToken()) == false)
             return false;
+        if (other.getContinuedFromContactId() == null ^ this.getContinuedFromContactId() == null)
+            return false;
+        if (other.getContinuedFromContactId() != null && other.getContinuedFromContactId().equals(this.getContinuedFromContactId()) == false)
+            return false;
         return true;
     }
 
@@ -238,6 +293,7 @@ public class StartChatContactResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getContactId() == null) ? 0 : getContactId().hashCode());
         hashCode = prime * hashCode + ((getParticipantId() == null) ? 0 : getParticipantId().hashCode());
         hashCode = prime * hashCode + ((getParticipantToken() == null) ? 0 : getParticipantToken().hashCode());
+        hashCode = prime * hashCode + ((getContinuedFromContactId() == null) ? 0 : getContinuedFromContactId().hashCode());
         return hashCode;
     }
 

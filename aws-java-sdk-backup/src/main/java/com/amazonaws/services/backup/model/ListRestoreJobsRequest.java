@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class ListRestoreJobsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The next item following a partial list of returned items. For example, if a request is made to return
-     * <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list
+     * <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list
      * starting at the location pointed to by the next token.
      * </p>
      */
@@ -45,6 +45,94 @@ public class ListRestoreJobsRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String byAccountId;
+    /**
+     * <p>
+     * Include this parameter to return only restore jobs for the specified resources:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Aurora</code> for Amazon Aurora
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CloudFormation</code> for CloudFormation
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DynamoDB</code> for Amazon DynamoDB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EBS</code> for Amazon Elastic Block Store
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EFS</code> for Amazon Elastic File System
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FSx</code> for Amazon FSx
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Neptune</code> for Amazon Neptune
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Redshift</code> for Amazon Redshift
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RDS</code> for Amazon Relational Database Service
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SAP HANA on Amazon EC2</code> for SAP HANA databases
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Storage Gateway</code> for Storage Gateway
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>S3</code> for Amazon S3
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Timestream</code> for Amazon Timestream
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VirtualMachine</code> for virtual machines
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String byResourceType;
     /**
      * <p>
      * Returns only restore jobs that were created before the specified date.
@@ -75,17 +163,23 @@ public class ListRestoreJobsRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private java.util.Date byCompleteAfter;
+    /**
+     * <p>
+     * This returns only restore testing jobs that match the specified resource Amazon Resource Name (ARN).
+     * </p>
+     */
+    private String byRestoreTestingPlanArn;
 
     /**
      * <p>
      * The next item following a partial list of returned items. For example, if a request is made to return
-     * <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list
+     * <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list
      * starting at the location pointed to by the next token.
      * </p>
      * 
      * @param nextToken
      *        The next item following a partial list of returned items. For example, if a request is made to return
-     *        <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your
+     *        <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your
      *        list starting at the location pointed to by the next token.
      */
 
@@ -96,12 +190,12 @@ public class ListRestoreJobsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The next item following a partial list of returned items. For example, if a request is made to return
-     * <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list
+     * <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list
      * starting at the location pointed to by the next token.
      * </p>
      * 
      * @return The next item following a partial list of returned items. For example, if a request is made to return
-     *         <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your
+     *         <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your
      *         list starting at the location pointed to by the next token.
      */
 
@@ -112,13 +206,13 @@ public class ListRestoreJobsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The next item following a partial list of returned items. For example, if a request is made to return
-     * <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list
+     * <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list
      * starting at the location pointed to by the next token.
      * </p>
      * 
      * @param nextToken
      *        The next item following a partial list of returned items. For example, if a request is made to return
-     *        <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your
+     *        <code>MaxResults</code> number of items, <code>NextToken</code> allows you to return more items in your
      *        list starting at the location pointed to by the next token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -205,6 +299,535 @@ public class ListRestoreJobsRequest extends com.amazonaws.AmazonWebServiceReques
 
     public ListRestoreJobsRequest withByAccountId(String byAccountId) {
         setByAccountId(byAccountId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Include this parameter to return only restore jobs for the specified resources:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Aurora</code> for Amazon Aurora
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CloudFormation</code> for CloudFormation
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DynamoDB</code> for Amazon DynamoDB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EBS</code> for Amazon Elastic Block Store
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EFS</code> for Amazon Elastic File System
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FSx</code> for Amazon FSx
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Neptune</code> for Amazon Neptune
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Redshift</code> for Amazon Redshift
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RDS</code> for Amazon Relational Database Service
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SAP HANA on Amazon EC2</code> for SAP HANA databases
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Storage Gateway</code> for Storage Gateway
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>S3</code> for Amazon S3
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Timestream</code> for Amazon Timestream
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VirtualMachine</code> for virtual machines
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param byResourceType
+     *        Include this parameter to return only restore jobs for the specified resources:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Aurora</code> for Amazon Aurora
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CloudFormation</code> for CloudFormation
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DynamoDB</code> for Amazon DynamoDB
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EBS</code> for Amazon Elastic Block Store
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EC2</code> for Amazon Elastic Compute Cloud
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EFS</code> for Amazon Elastic File System
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FSx</code> for Amazon FSx
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Neptune</code> for Amazon Neptune
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Redshift</code> for Amazon Redshift
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RDS</code> for Amazon Relational Database Service
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SAP HANA on Amazon EC2</code> for SAP HANA databases
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Storage Gateway</code> for Storage Gateway
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>S3</code> for Amazon S3
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Timestream</code> for Amazon Timestream
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>VirtualMachine</code> for virtual machines
+     *        </p>
+     *        </li>
+     */
+
+    public void setByResourceType(String byResourceType) {
+        this.byResourceType = byResourceType;
+    }
+
+    /**
+     * <p>
+     * Include this parameter to return only restore jobs for the specified resources:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Aurora</code> for Amazon Aurora
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CloudFormation</code> for CloudFormation
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DynamoDB</code> for Amazon DynamoDB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EBS</code> for Amazon Elastic Block Store
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EFS</code> for Amazon Elastic File System
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FSx</code> for Amazon FSx
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Neptune</code> for Amazon Neptune
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Redshift</code> for Amazon Redshift
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RDS</code> for Amazon Relational Database Service
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SAP HANA on Amazon EC2</code> for SAP HANA databases
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Storage Gateway</code> for Storage Gateway
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>S3</code> for Amazon S3
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Timestream</code> for Amazon Timestream
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VirtualMachine</code> for virtual machines
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Include this parameter to return only restore jobs for the specified resources:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Aurora</code> for Amazon Aurora
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CloudFormation</code> for CloudFormation
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DynamoDB</code> for Amazon DynamoDB
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>EBS</code> for Amazon Elastic Block Store
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>EC2</code> for Amazon Elastic Compute Cloud
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>EFS</code> for Amazon Elastic File System
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>FSx</code> for Amazon FSx
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Neptune</code> for Amazon Neptune
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Redshift</code> for Amazon Redshift
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>RDS</code> for Amazon Relational Database Service
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SAP HANA on Amazon EC2</code> for SAP HANA databases
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Storage Gateway</code> for Storage Gateway
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>S3</code> for Amazon S3
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Timestream</code> for Amazon Timestream
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>VirtualMachine</code> for virtual machines
+     *         </p>
+     *         </li>
+     */
+
+    public String getByResourceType() {
+        return this.byResourceType;
+    }
+
+    /**
+     * <p>
+     * Include this parameter to return only restore jobs for the specified resources:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Aurora</code> for Amazon Aurora
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CloudFormation</code> for CloudFormation
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DynamoDB</code> for Amazon DynamoDB
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EBS</code> for Amazon Elastic Block Store
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>EFS</code> for Amazon Elastic File System
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FSx</code> for Amazon FSx
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Neptune</code> for Amazon Neptune
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Redshift</code> for Amazon Redshift
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RDS</code> for Amazon Relational Database Service
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SAP HANA on Amazon EC2</code> for SAP HANA databases
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Storage Gateway</code> for Storage Gateway
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>S3</code> for Amazon S3
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Timestream</code> for Amazon Timestream
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VirtualMachine</code> for virtual machines
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param byResourceType
+     *        Include this parameter to return only restore jobs for the specified resources:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Aurora</code> for Amazon Aurora
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CloudFormation</code> for CloudFormation
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DynamoDB</code> for Amazon DynamoDB
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EBS</code> for Amazon Elastic Block Store
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EC2</code> for Amazon Elastic Compute Cloud
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>EFS</code> for Amazon Elastic File System
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FSx</code> for Amazon FSx
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Neptune</code> for Amazon Neptune
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Redshift</code> for Amazon Redshift
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RDS</code> for Amazon Relational Database Service
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SAP HANA on Amazon EC2</code> for SAP HANA databases
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Storage Gateway</code> for Storage Gateway
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>S3</code> for Amazon S3
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Timestream</code> for Amazon Timestream
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>VirtualMachine</code> for virtual machines
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListRestoreJobsRequest withByResourceType(String byResourceType) {
+        setByResourceType(byResourceType);
         return this;
     }
 
@@ -434,6 +1057,46 @@ public class ListRestoreJobsRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * This returns only restore testing jobs that match the specified resource Amazon Resource Name (ARN).
+     * </p>
+     * 
+     * @param byRestoreTestingPlanArn
+     *        This returns only restore testing jobs that match the specified resource Amazon Resource Name (ARN).
+     */
+
+    public void setByRestoreTestingPlanArn(String byRestoreTestingPlanArn) {
+        this.byRestoreTestingPlanArn = byRestoreTestingPlanArn;
+    }
+
+    /**
+     * <p>
+     * This returns only restore testing jobs that match the specified resource Amazon Resource Name (ARN).
+     * </p>
+     * 
+     * @return This returns only restore testing jobs that match the specified resource Amazon Resource Name (ARN).
+     */
+
+    public String getByRestoreTestingPlanArn() {
+        return this.byRestoreTestingPlanArn;
+    }
+
+    /**
+     * <p>
+     * This returns only restore testing jobs that match the specified resource Amazon Resource Name (ARN).
+     * </p>
+     * 
+     * @param byRestoreTestingPlanArn
+     *        This returns only restore testing jobs that match the specified resource Amazon Resource Name (ARN).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListRestoreJobsRequest withByRestoreTestingPlanArn(String byRestoreTestingPlanArn) {
+        setByRestoreTestingPlanArn(byRestoreTestingPlanArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -451,6 +1114,8 @@ public class ListRestoreJobsRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getByAccountId() != null)
             sb.append("ByAccountId: ").append(getByAccountId()).append(",");
+        if (getByResourceType() != null)
+            sb.append("ByResourceType: ").append(getByResourceType()).append(",");
         if (getByCreatedBefore() != null)
             sb.append("ByCreatedBefore: ").append(getByCreatedBefore()).append(",");
         if (getByCreatedAfter() != null)
@@ -460,7 +1125,9 @@ public class ListRestoreJobsRequest extends com.amazonaws.AmazonWebServiceReques
         if (getByCompleteBefore() != null)
             sb.append("ByCompleteBefore: ").append(getByCompleteBefore()).append(",");
         if (getByCompleteAfter() != null)
-            sb.append("ByCompleteAfter: ").append(getByCompleteAfter());
+            sb.append("ByCompleteAfter: ").append(getByCompleteAfter()).append(",");
+        if (getByRestoreTestingPlanArn() != null)
+            sb.append("ByRestoreTestingPlanArn: ").append(getByRestoreTestingPlanArn());
         sb.append("}");
         return sb.toString();
     }
@@ -487,6 +1154,10 @@ public class ListRestoreJobsRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getByAccountId() != null && other.getByAccountId().equals(this.getByAccountId()) == false)
             return false;
+        if (other.getByResourceType() == null ^ this.getByResourceType() == null)
+            return false;
+        if (other.getByResourceType() != null && other.getByResourceType().equals(this.getByResourceType()) == false)
+            return false;
         if (other.getByCreatedBefore() == null ^ this.getByCreatedBefore() == null)
             return false;
         if (other.getByCreatedBefore() != null && other.getByCreatedBefore().equals(this.getByCreatedBefore()) == false)
@@ -507,6 +1178,10 @@ public class ListRestoreJobsRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getByCompleteAfter() != null && other.getByCompleteAfter().equals(this.getByCompleteAfter()) == false)
             return false;
+        if (other.getByRestoreTestingPlanArn() == null ^ this.getByRestoreTestingPlanArn() == null)
+            return false;
+        if (other.getByRestoreTestingPlanArn() != null && other.getByRestoreTestingPlanArn().equals(this.getByRestoreTestingPlanArn()) == false)
+            return false;
         return true;
     }
 
@@ -518,11 +1193,13 @@ public class ListRestoreJobsRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getByAccountId() == null) ? 0 : getByAccountId().hashCode());
+        hashCode = prime * hashCode + ((getByResourceType() == null) ? 0 : getByResourceType().hashCode());
         hashCode = prime * hashCode + ((getByCreatedBefore() == null) ? 0 : getByCreatedBefore().hashCode());
         hashCode = prime * hashCode + ((getByCreatedAfter() == null) ? 0 : getByCreatedAfter().hashCode());
         hashCode = prime * hashCode + ((getByStatus() == null) ? 0 : getByStatus().hashCode());
         hashCode = prime * hashCode + ((getByCompleteBefore() == null) ? 0 : getByCompleteBefore().hashCode());
         hashCode = prime * hashCode + ((getByCompleteAfter() == null) ? 0 : getByCompleteAfter().hashCode());
+        hashCode = prime * hashCode + ((getByRestoreTestingPlanArn() == null) ? 0 : getByRestoreTestingPlanArn().hashCode());
         return hashCode;
     }
 

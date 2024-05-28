@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,8 @@ public class CreateFeatureGroupRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OnlineStoreConfig").build();
     private static final MarshallingInfo<StructuredPojo> OFFLINESTORECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OfflineStoreConfig").build();
+    private static final MarshallingInfo<StructuredPojo> THROUGHPUTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ThroughputConfig").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("RoleArn").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -69,6 +71,7 @@ public class CreateFeatureGroupRequestMarshaller {
             protocolMarshaller.marshall(createFeatureGroupRequest.getFeatureDefinitions(), FEATUREDEFINITIONS_BINDING);
             protocolMarshaller.marshall(createFeatureGroupRequest.getOnlineStoreConfig(), ONLINESTORECONFIG_BINDING);
             protocolMarshaller.marshall(createFeatureGroupRequest.getOfflineStoreConfig(), OFFLINESTORECONFIG_BINDING);
+            protocolMarshaller.marshall(createFeatureGroupRequest.getThroughputConfig(), THROUGHPUTCONFIG_BINDING);
             protocolMarshaller.marshall(createFeatureGroupRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(createFeatureGroupRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createFeatureGroupRequest.getTags(), TAGS_BINDING);

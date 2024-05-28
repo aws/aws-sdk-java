@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,12 @@ public class ConversionProperties implements Serializable, Cloneable, Structured
      * </p>
      */
     private java.util.Map<String, java.util.Map<String, String>> volumeToConversionMap;
+    /**
+     * <p>
+     * A mapping between the volumes being converted and the product codes associated with them
+     * </p>
+     */
+    private java.util.Map<String, java.util.List<ProductCode>> volumeToProductCodes;
     /**
      * <p>
      * A mapping between the volumes and their sizes
@@ -261,6 +267,74 @@ public class ConversionProperties implements Serializable, Cloneable, Structured
 
     /**
      * <p>
+     * A mapping between the volumes being converted and the product codes associated with them
+     * </p>
+     * 
+     * @return A mapping between the volumes being converted and the product codes associated with them
+     */
+
+    public java.util.Map<String, java.util.List<ProductCode>> getVolumeToProductCodes() {
+        return volumeToProductCodes;
+    }
+
+    /**
+     * <p>
+     * A mapping between the volumes being converted and the product codes associated with them
+     * </p>
+     * 
+     * @param volumeToProductCodes
+     *        A mapping between the volumes being converted and the product codes associated with them
+     */
+
+    public void setVolumeToProductCodes(java.util.Map<String, java.util.List<ProductCode>> volumeToProductCodes) {
+        this.volumeToProductCodes = volumeToProductCodes;
+    }
+
+    /**
+     * <p>
+     * A mapping between the volumes being converted and the product codes associated with them
+     * </p>
+     * 
+     * @param volumeToProductCodes
+     *        A mapping between the volumes being converted and the product codes associated with them
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConversionProperties withVolumeToProductCodes(java.util.Map<String, java.util.List<ProductCode>> volumeToProductCodes) {
+        setVolumeToProductCodes(volumeToProductCodes);
+        return this;
+    }
+
+    /**
+     * Add a single VolumeToProductCodes entry
+     *
+     * @see ConversionProperties#withVolumeToProductCodes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConversionProperties addVolumeToProductCodesEntry(String key, java.util.List<ProductCode> value) {
+        if (null == this.volumeToProductCodes) {
+            this.volumeToProductCodes = new java.util.HashMap<String, java.util.List<ProductCode>>();
+        }
+        if (this.volumeToProductCodes.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.volumeToProductCodes.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into VolumeToProductCodes.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConversionProperties clearVolumeToProductCodesEntries() {
+        this.volumeToProductCodes = null;
+        return this;
+    }
+
+    /**
+     * <p>
      * A mapping between the volumes and their sizes
      * </p>
      * 
@@ -347,6 +421,8 @@ public class ConversionProperties implements Serializable, Cloneable, Structured
             sb.append("RootVolumeName: ").append(getRootVolumeName()).append(",");
         if (getVolumeToConversionMap() != null)
             sb.append("VolumeToConversionMap: ").append(getVolumeToConversionMap()).append(",");
+        if (getVolumeToProductCodes() != null)
+            sb.append("VolumeToProductCodes: ").append(getVolumeToProductCodes()).append(",");
         if (getVolumeToVolumeSize() != null)
             sb.append("VolumeToVolumeSize: ").append(getVolumeToVolumeSize());
         sb.append("}");
@@ -379,6 +455,10 @@ public class ConversionProperties implements Serializable, Cloneable, Structured
             return false;
         if (other.getVolumeToConversionMap() != null && other.getVolumeToConversionMap().equals(this.getVolumeToConversionMap()) == false)
             return false;
+        if (other.getVolumeToProductCodes() == null ^ this.getVolumeToProductCodes() == null)
+            return false;
+        if (other.getVolumeToProductCodes() != null && other.getVolumeToProductCodes().equals(this.getVolumeToProductCodes()) == false)
+            return false;
         if (other.getVolumeToVolumeSize() == null ^ this.getVolumeToVolumeSize() == null)
             return false;
         if (other.getVolumeToVolumeSize() != null && other.getVolumeToVolumeSize().equals(this.getVolumeToVolumeSize()) == false)
@@ -395,6 +475,7 @@ public class ConversionProperties implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getForceUefi() == null) ? 0 : getForceUefi().hashCode());
         hashCode = prime * hashCode + ((getRootVolumeName() == null) ? 0 : getRootVolumeName().hashCode());
         hashCode = prime * hashCode + ((getVolumeToConversionMap() == null) ? 0 : getVolumeToConversionMap().hashCode());
+        hashCode = prime * hashCode + ((getVolumeToProductCodes() == null) ? 0 : getVolumeToProductCodes().hashCode());
         hashCode = prime * hashCode + ((getVolumeToVolumeSize() == null) ? 0 : getVolumeToVolumeSize().hashCode());
         return hashCode;
     }

@@ -1,0 +1,136 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.cleanrooms.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * Contains configurations for protected query results.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ProtectedQueryResultConfiguration"
+ *      target="_top">AWS API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ProtectedQueryResultConfiguration implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * Configuration for protected query results.
+     * </p>
+     */
+    private ProtectedQueryOutputConfiguration outputConfiguration;
+
+    /**
+     * <p>
+     * Configuration for protected query results.
+     * </p>
+     * 
+     * @param outputConfiguration
+     *        Configuration for protected query results.
+     */
+
+    public void setOutputConfiguration(ProtectedQueryOutputConfiguration outputConfiguration) {
+        this.outputConfiguration = outputConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration for protected query results.
+     * </p>
+     * 
+     * @return Configuration for protected query results.
+     */
+
+    public ProtectedQueryOutputConfiguration getOutputConfiguration() {
+        return this.outputConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration for protected query results.
+     * </p>
+     * 
+     * @param outputConfiguration
+     *        Configuration for protected query results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProtectedQueryResultConfiguration withOutputConfiguration(ProtectedQueryOutputConfiguration outputConfiguration) {
+        setOutputConfiguration(outputConfiguration);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getOutputConfiguration() != null)
+            sb.append("OutputConfiguration: ").append(getOutputConfiguration());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ProtectedQueryResultConfiguration == false)
+            return false;
+        ProtectedQueryResultConfiguration other = (ProtectedQueryResultConfiguration) obj;
+        if (other.getOutputConfiguration() == null ^ this.getOutputConfiguration() == null)
+            return false;
+        if (other.getOutputConfiguration() != null && other.getOutputConfiguration().equals(this.getOutputConfiguration()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getOutputConfiguration() == null) ? 0 : getOutputConfiguration().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public ProtectedQueryResultConfiguration clone() {
+        try {
+            return (ProtectedQueryResultConfiguration) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.cleanrooms.model.transform.ProtectedQueryResultConfigurationMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

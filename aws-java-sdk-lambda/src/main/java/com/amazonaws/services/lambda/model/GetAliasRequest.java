@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class GetAliasRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The name of the Lambda function.
+     * The name or ARN of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -64,7 +64,7 @@ public class GetAliasRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The name of the Lambda function.
+     * The name or ARN of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -92,7 +92,7 @@ public class GetAliasRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * </p>
      * 
      * @param functionName
-     *        The name of the Lambda function.</p>
+     *        The name or ARN of the Lambda function.</p>
      *        <p class="title">
      *        <b>Name formats</b>
      *        </p>
@@ -124,7 +124,7 @@ public class GetAliasRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The name of the Lambda function.
+     * The name or ARN of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -151,7 +151,7 @@ public class GetAliasRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * characters in length.
      * </p>
      * 
-     * @return The name of the Lambda function.</p>
+     * @return The name or ARN of the Lambda function.</p>
      *         <p class="title">
      *         <b>Name formats</b>
      *         </p>
@@ -183,7 +183,7 @@ public class GetAliasRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The name of the Lambda function.
+     * The name or ARN of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -211,7 +211,7 @@ public class GetAliasRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * </p>
      * 
      * @param functionName
-     *        The name of the Lambda function.</p>
+     *        The name or ARN of the Lambda function.</p>
      *        <p class="title">
      *        <b>Name formats</b>
      *        </p>

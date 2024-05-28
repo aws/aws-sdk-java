@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,11 +38,6 @@ public class DeleteServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -54,6 +49,13 @@ public class DeleteServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      * </ul>
      */
     private String acceptLanguage;
+    /**
+     * <p>
+     * A unique identifier that you provide to ensure idempotency. If multiple requests from the same Amazon Web
+     * Services account use the same idempotency token, the same response is returned for each repeated request.
+     * </p>
+     */
+    private String idempotencyToken;
 
     /**
      * <p>
@@ -102,11 +104,6 @@ public class DeleteServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -120,11 +117,6 @@ public class DeleteServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      * @param acceptLanguage
      *        The language code.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>en</code> - English (default)
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>jp</code> - Japanese
@@ -148,11 +140,6 @@ public class DeleteServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -165,11 +152,6 @@ public class DeleteServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @return The language code.</p>
      *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>en</code> - English (default)
-     *         </p>
-     *         </li>
      *         <li>
      *         <p>
      *         <code>jp</code> - Japanese
@@ -193,11 +175,6 @@ public class DeleteServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -211,11 +188,6 @@ public class DeleteServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      * @param acceptLanguage
      *        The language code.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>en</code> - English (default)
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>jp</code> - Japanese
@@ -235,6 +207,52 @@ public class DeleteServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * A unique identifier that you provide to ensure idempotency. If multiple requests from the same Amazon Web
+     * Services account use the same idempotency token, the same response is returned for each repeated request.
+     * </p>
+     * 
+     * @param idempotencyToken
+     *        A unique identifier that you provide to ensure idempotency. If multiple requests from the same Amazon Web
+     *        Services account use the same idempotency token, the same response is returned for each repeated request.
+     */
+
+    public void setIdempotencyToken(String idempotencyToken) {
+        this.idempotencyToken = idempotencyToken;
+    }
+
+    /**
+     * <p>
+     * A unique identifier that you provide to ensure idempotency. If multiple requests from the same Amazon Web
+     * Services account use the same idempotency token, the same response is returned for each repeated request.
+     * </p>
+     * 
+     * @return A unique identifier that you provide to ensure idempotency. If multiple requests from the same Amazon Web
+     *         Services account use the same idempotency token, the same response is returned for each repeated request.
+     */
+
+    public String getIdempotencyToken() {
+        return this.idempotencyToken;
+    }
+
+    /**
+     * <p>
+     * A unique identifier that you provide to ensure idempotency. If multiple requests from the same Amazon Web
+     * Services account use the same idempotency token, the same response is returned for each repeated request.
+     * </p>
+     * 
+     * @param idempotencyToken
+     *        A unique identifier that you provide to ensure idempotency. If multiple requests from the same Amazon Web
+     *        Services account use the same idempotency token, the same response is returned for each repeated request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteServiceActionRequest withIdempotencyToken(String idempotencyToken) {
+        setIdempotencyToken(idempotencyToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -249,7 +267,9 @@ public class DeleteServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getAcceptLanguage() != null)
-            sb.append("AcceptLanguage: ").append(getAcceptLanguage());
+            sb.append("AcceptLanguage: ").append(getAcceptLanguage()).append(",");
+        if (getIdempotencyToken() != null)
+            sb.append("IdempotencyToken: ").append(getIdempotencyToken());
         sb.append("}");
         return sb.toString();
     }
@@ -272,6 +292,10 @@ public class DeleteServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getAcceptLanguage() != null && other.getAcceptLanguage().equals(this.getAcceptLanguage()) == false)
             return false;
+        if (other.getIdempotencyToken() == null ^ this.getIdempotencyToken() == null)
+            return false;
+        if (other.getIdempotencyToken() != null && other.getIdempotencyToken().equals(this.getIdempotencyToken()) == false)
+            return false;
         return true;
     }
 
@@ -282,6 +306,7 @@ public class DeleteServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
 
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getAcceptLanguage() == null) ? 0 : getAcceptLanguage().hashCode());
+        hashCode = prime * hashCode + ((getIdempotencyToken() == null) ? 0 : getIdempotencyToken().hashCode());
         return hashCode;
     }
 

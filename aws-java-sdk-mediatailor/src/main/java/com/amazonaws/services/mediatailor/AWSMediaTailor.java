@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,19 @@ public interface AWSMediaTailor {
      * @see RegionUtils#getRegionsForService(String)
      */
     String ENDPOINT_PREFIX = "api.mediatailor";
+
+    /**
+     * <p>
+     * Configures Amazon CloudWatch log settings for a channel.
+     * </p>
+     * 
+     * @param configureLogsForChannelRequest
+     * @return Result of the ConfigureLogsForChannel operation returned by the service.
+     * @sample AWSMediaTailor.ConfigureLogsForChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ConfigureLogsForChannel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ConfigureLogsForChannelResult configureLogsForChannel(ConfigureLogsForChannelRequest configureLogsForChannelRequest);
 
     /**
      * <p>
@@ -630,6 +643,19 @@ public interface AWSMediaTailor {
      *      API Documentation</a>
      */
     UpdateLiveSourceResult updateLiveSource(UpdateLiveSourceRequest updateLiveSourceRequest);
+
+    /**
+     * <p>
+     * Updates a program within a channel.
+     * </p>
+     * 
+     * @param updateProgramRequest
+     * @return Result of the UpdateProgram operation returned by the service.
+     * @sample AWSMediaTailor.UpdateProgram
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateProgram" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateProgramResult updateProgram(UpdateProgramRequest updateProgramRequest);
 
     /**
      * <p>

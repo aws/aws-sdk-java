@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,27 +27,24 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported resources are
-     * Amazon EKS clusters and managed node groups.
+     * The Amazon Resource Name (ARN) of the resource to delete tags from.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * The keys of the tags to be removed.
+     * The keys of the tags to remove.
      * </p>
      */
     private java.util.List<String> tagKeys;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported resources are
-     * Amazon EKS clusters and managed node groups.
+     * The Amazon Resource Name (ARN) of the resource to delete tags from.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported
-     *        resources are Amazon EKS clusters and managed node groups.
+     *        The Amazon Resource Name (ARN) of the resource to delete tags from.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -56,12 +53,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported resources are
-     * Amazon EKS clusters and managed node groups.
+     * The Amazon Resource Name (ARN) of the resource to delete tags from.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported
-     *         resources are Amazon EKS clusters and managed node groups.
+     * @return The Amazon Resource Name (ARN) of the resource to delete tags from.
      */
 
     public String getResourceArn() {
@@ -70,13 +65,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported resources are
-     * Amazon EKS clusters and managed node groups.
+     * The Amazon Resource Name (ARN) of the resource to delete tags from.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported
-     *        resources are Amazon EKS clusters and managed node groups.
+     *        The Amazon Resource Name (ARN) of the resource to delete tags from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,10 +80,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The keys of the tags to be removed.
+     * The keys of the tags to remove.
      * </p>
      * 
-     * @return The keys of the tags to be removed.
+     * @return The keys of the tags to remove.
      */
 
     public java.util.List<String> getTagKeys() {
@@ -99,11 +92,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The keys of the tags to be removed.
+     * The keys of the tags to remove.
      * </p>
      * 
      * @param tagKeys
-     *        The keys of the tags to be removed.
+     *        The keys of the tags to remove.
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -117,7 +110,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The keys of the tags to be removed.
+     * The keys of the tags to remove.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -126,7 +119,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param tagKeys
-     *        The keys of the tags to be removed.
+     *        The keys of the tags to remove.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,11 +135,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The keys of the tags to be removed.
+     * The keys of the tags to remove.
      * </p>
      * 
      * @param tagKeys
-     *        The keys of the tags to be removed.
+     *        The keys of the tags to remove.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

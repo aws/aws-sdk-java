@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,10 +30,29 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the status of the destination Amazon EFS file system. If the status is <code>ERROR</code>, the
-     * destination file system in the replication configuration is in a failed state and is unrecoverable. To access the
-     * file system data, restore a backup of the failed file system to a new file system.
+     * Describes the status of the destination EFS file system.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The <code>Paused</code> state occurs as a result of opting out of the source or destination Region after the
+     * replication configuration was created. To resume replication for the file system, you need to again opt in to the
+     * Amazon Web Services Region. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing Amazon Web
+     * Services Regions</a> in the <i>Amazon Web Services General Reference Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Error</code> state occurs when either the source or the destination file system (or both) is in a
+     * failed state and is unrecoverable. For more information, see <a href=
+     * "https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html"
+     * >Monitoring replication status</a> in the <i>Amazon EFS User Guide</i>. You must delete the replication
+     * configuration, and then restore the most recent backup of the failed file system (either the source or the
+     * destination) to a new file system.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String status;
     /**
@@ -59,15 +78,52 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the status of the destination Amazon EFS file system. If the status is <code>ERROR</code>, the
-     * destination file system in the replication configuration is in a failed state and is unrecoverable. To access the
-     * file system data, restore a backup of the failed file system to a new file system.
+     * Describes the status of the destination EFS file system.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The <code>Paused</code> state occurs as a result of opting out of the source or destination Region after the
+     * replication configuration was created. To resume replication for the file system, you need to again opt in to the
+     * Amazon Web Services Region. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing Amazon Web
+     * Services Regions</a> in the <i>Amazon Web Services General Reference Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Error</code> state occurs when either the source or the destination file system (or both) is in a
+     * failed state and is unrecoverable. For more information, see <a href=
+     * "https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html"
+     * >Monitoring replication status</a> in the <i>Amazon EFS User Guide</i>. You must delete the replication
+     * configuration, and then restore the most recent backup of the failed file system (either the source or the
+     * destination) to a new file system.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        Describes the status of the destination Amazon EFS file system. If the status is <code>ERROR</code>, the
-     *        destination file system in the replication configuration is in a failed state and is unrecoverable. To
-     *        access the file system data, restore a backup of the failed file system to a new file system.
+     *        Describes the status of the destination EFS file system.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The <code>Paused</code> state occurs as a result of opting out of the source or destination Region after
+     *        the replication configuration was created. To resume replication for the file system, you need to again
+     *        opt in to the Amazon Web Services Region. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing Amazon
+     *        Web Services Regions</a> in the <i>Amazon Web Services General Reference Guide</i>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The <code>Error</code> state occurs when either the source or the destination file system (or both) is in
+     *        a failed state and is unrecoverable. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html"
+     *        >Monitoring replication status</a> in the <i>Amazon EFS User Guide</i>. You must delete the replication
+     *        configuration, and then restore the most recent backup of the failed file system (either the source or the
+     *        destination) to a new file system.
+     *        </p>
+     *        </li>
      * @see ReplicationStatus
      */
 
@@ -77,14 +133,51 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the status of the destination Amazon EFS file system. If the status is <code>ERROR</code>, the
-     * destination file system in the replication configuration is in a failed state and is unrecoverable. To access the
-     * file system data, restore a backup of the failed file system to a new file system.
+     * Describes the status of the destination EFS file system.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The <code>Paused</code> state occurs as a result of opting out of the source or destination Region after the
+     * replication configuration was created. To resume replication for the file system, you need to again opt in to the
+     * Amazon Web Services Region. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing Amazon Web
+     * Services Regions</a> in the <i>Amazon Web Services General Reference Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Error</code> state occurs when either the source or the destination file system (or both) is in a
+     * failed state and is unrecoverable. For more information, see <a href=
+     * "https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html"
+     * >Monitoring replication status</a> in the <i>Amazon EFS User Guide</i>. You must delete the replication
+     * configuration, and then restore the most recent backup of the failed file system (either the source or the
+     * destination) to a new file system.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Describes the status of the destination Amazon EFS file system. If the status is <code>ERROR</code>, the
-     *         destination file system in the replication configuration is in a failed state and is unrecoverable. To
-     *         access the file system data, restore a backup of the failed file system to a new file system.
+     * @return Describes the status of the destination EFS file system.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The <code>Paused</code> state occurs as a result of opting out of the source or destination Region after
+     *         the replication configuration was created. To resume replication for the file system, you need to again
+     *         opt in to the Amazon Web Services Region. For more information, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing
+     *         Amazon Web Services Regions</a> in the <i>Amazon Web Services General Reference Guide</i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>Error</code> state occurs when either the source or the destination file system (or both) is in
+     *         a failed state and is unrecoverable. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html"
+     *         >Monitoring replication status</a> in the <i>Amazon EFS User Guide</i>. You must delete the replication
+     *         configuration, and then restore the most recent backup of the failed file system (either the source or
+     *         the destination) to a new file system.
+     *         </p>
+     *         </li>
      * @see ReplicationStatus
      */
 
@@ -94,15 +187,52 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the status of the destination Amazon EFS file system. If the status is <code>ERROR</code>, the
-     * destination file system in the replication configuration is in a failed state and is unrecoverable. To access the
-     * file system data, restore a backup of the failed file system to a new file system.
+     * Describes the status of the destination EFS file system.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The <code>Paused</code> state occurs as a result of opting out of the source or destination Region after the
+     * replication configuration was created. To resume replication for the file system, you need to again opt in to the
+     * Amazon Web Services Region. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing Amazon Web
+     * Services Regions</a> in the <i>Amazon Web Services General Reference Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Error</code> state occurs when either the source or the destination file system (or both) is in a
+     * failed state and is unrecoverable. For more information, see <a href=
+     * "https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html"
+     * >Monitoring replication status</a> in the <i>Amazon EFS User Guide</i>. You must delete the replication
+     * configuration, and then restore the most recent backup of the failed file system (either the source or the
+     * destination) to a new file system.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        Describes the status of the destination Amazon EFS file system. If the status is <code>ERROR</code>, the
-     *        destination file system in the replication configuration is in a failed state and is unrecoverable. To
-     *        access the file system data, restore a backup of the failed file system to a new file system.
+     *        Describes the status of the destination EFS file system.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The <code>Paused</code> state occurs as a result of opting out of the source or destination Region after
+     *        the replication configuration was created. To resume replication for the file system, you need to again
+     *        opt in to the Amazon Web Services Region. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing Amazon
+     *        Web Services Regions</a> in the <i>Amazon Web Services General Reference Guide</i>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The <code>Error</code> state occurs when either the source or the destination file system (or both) is in
+     *        a failed state and is unrecoverable. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html"
+     *        >Monitoring replication status</a> in the <i>Amazon EFS User Guide</i>. You must delete the replication
+     *        configuration, and then restore the most recent backup of the failed file system (either the source or the
+     *        destination) to a new file system.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReplicationStatus
      */
@@ -114,15 +244,52 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the status of the destination Amazon EFS file system. If the status is <code>ERROR</code>, the
-     * destination file system in the replication configuration is in a failed state and is unrecoverable. To access the
-     * file system data, restore a backup of the failed file system to a new file system.
+     * Describes the status of the destination EFS file system.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The <code>Paused</code> state occurs as a result of opting out of the source or destination Region after the
+     * replication configuration was created. To resume replication for the file system, you need to again opt in to the
+     * Amazon Web Services Region. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing Amazon Web
+     * Services Regions</a> in the <i>Amazon Web Services General Reference Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Error</code> state occurs when either the source or the destination file system (or both) is in a
+     * failed state and is unrecoverable. For more information, see <a href=
+     * "https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html"
+     * >Monitoring replication status</a> in the <i>Amazon EFS User Guide</i>. You must delete the replication
+     * configuration, and then restore the most recent backup of the failed file system (either the source or the
+     * destination) to a new file system.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        Describes the status of the destination Amazon EFS file system. If the status is <code>ERROR</code>, the
-     *        destination file system in the replication configuration is in a failed state and is unrecoverable. To
-     *        access the file system data, restore a backup of the failed file system to a new file system.
+     *        Describes the status of the destination EFS file system.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The <code>Paused</code> state occurs as a result of opting out of the source or destination Region after
+     *        the replication configuration was created. To resume replication for the file system, you need to again
+     *        opt in to the Amazon Web Services Region. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing Amazon
+     *        Web Services Regions</a> in the <i>Amazon Web Services General Reference Guide</i>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The <code>Error</code> state occurs when either the source or the destination file system (or both) is in
+     *        a failed state and is unrecoverable. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html"
+     *        >Monitoring replication status</a> in the <i>Amazon EFS User Guide</i>. You must delete the replication
+     *        configuration, and then restore the most recent backup of the failed file system (either the source or the
+     *        destination) to a new file system.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReplicationStatus
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,22 +28,22 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ComponentBindingPropertiesValuePropertiesMarshaller {
 
-    private static final MarshallingInfo<String> BUCKET_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("bucket").build();
-    private static final MarshallingInfo<String> DEFAULTVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultValue").build();
-    private static final MarshallingInfo<String> FIELD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("field").build();
-    private static final MarshallingInfo<String> KEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("key").build();
     private static final MarshallingInfo<String> MODEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("model").build();
+    private static final MarshallingInfo<String> FIELD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("field").build();
     private static final MarshallingInfo<List> PREDICATES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("predicates").build();
-    private static final MarshallingInfo<String> SLOTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("slotName").build();
     private static final MarshallingInfo<String> USERATTRIBUTE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("userAttribute").build();
+    private static final MarshallingInfo<String> BUCKET_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("bucket").build();
+    private static final MarshallingInfo<String> KEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("key").build();
+    private static final MarshallingInfo<String> DEFAULTVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultValue").build();
+    private static final MarshallingInfo<String> SLOTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("slotName").build();
 
     private static final ComponentBindingPropertiesValuePropertiesMarshaller instance = new ComponentBindingPropertiesValuePropertiesMarshaller();
 
@@ -61,14 +61,14 @@ public class ComponentBindingPropertiesValuePropertiesMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(componentBindingPropertiesValueProperties.getBucket(), BUCKET_BINDING);
-            protocolMarshaller.marshall(componentBindingPropertiesValueProperties.getDefaultValue(), DEFAULTVALUE_BINDING);
-            protocolMarshaller.marshall(componentBindingPropertiesValueProperties.getField(), FIELD_BINDING);
-            protocolMarshaller.marshall(componentBindingPropertiesValueProperties.getKey(), KEY_BINDING);
             protocolMarshaller.marshall(componentBindingPropertiesValueProperties.getModel(), MODEL_BINDING);
+            protocolMarshaller.marshall(componentBindingPropertiesValueProperties.getField(), FIELD_BINDING);
             protocolMarshaller.marshall(componentBindingPropertiesValueProperties.getPredicates(), PREDICATES_BINDING);
-            protocolMarshaller.marshall(componentBindingPropertiesValueProperties.getSlotName(), SLOTNAME_BINDING);
             protocolMarshaller.marshall(componentBindingPropertiesValueProperties.getUserAttribute(), USERATTRIBUTE_BINDING);
+            protocolMarshaller.marshall(componentBindingPropertiesValueProperties.getBucket(), BUCKET_BINDING);
+            protocolMarshaller.marshall(componentBindingPropertiesValueProperties.getKey(), KEY_BINDING);
+            protocolMarshaller.marshall(componentBindingPropertiesValueProperties.getDefaultValue(), DEFAULTVALUE_BINDING);
+            protocolMarshaller.marshall(componentBindingPropertiesValueProperties.getSlotName(), SLOTNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

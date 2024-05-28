@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,23 +20,20 @@ public class StopDataCollectionByAgentIdsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Information about the agents or connector that were instructed to stop collecting data. Information includes the
-     * agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was
-     * updated.
+     * Information about the agents that were instructed to stop collecting data. Information includes the agent ID, a
+     * description of the operation performed, and whether the agent configuration was updated.
      * </p>
      */
     private java.util.List<AgentConfigurationStatus> agentsConfigurationStatus;
 
     /**
      * <p>
-     * Information about the agents or connector that were instructed to stop collecting data. Information includes the
-     * agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was
-     * updated.
+     * Information about the agents that were instructed to stop collecting data. Information includes the agent ID, a
+     * description of the operation performed, and whether the agent configuration was updated.
      * </p>
      * 
-     * @return Information about the agents or connector that were instructed to stop collecting data. Information
-     *         includes the agent/connector ID, a description of the operation performed, and whether the
-     *         agent/connector configuration was updated.
+     * @return Information about the agents that were instructed to stop collecting data. Information includes the agent
+     *         ID, a description of the operation performed, and whether the agent configuration was updated.
      */
 
     public java.util.List<AgentConfigurationStatus> getAgentsConfigurationStatus() {
@@ -45,15 +42,13 @@ public class StopDataCollectionByAgentIdsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Information about the agents or connector that were instructed to stop collecting data. Information includes the
-     * agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was
-     * updated.
+     * Information about the agents that were instructed to stop collecting data. Information includes the agent ID, a
+     * description of the operation performed, and whether the agent configuration was updated.
      * </p>
      * 
      * @param agentsConfigurationStatus
-     *        Information about the agents or connector that were instructed to stop collecting data. Information
-     *        includes the agent/connector ID, a description of the operation performed, and whether the agent/connector
-     *        configuration was updated.
+     *        Information about the agents that were instructed to stop collecting data. Information includes the agent
+     *        ID, a description of the operation performed, and whether the agent configuration was updated.
      */
 
     public void setAgentsConfigurationStatus(java.util.Collection<AgentConfigurationStatus> agentsConfigurationStatus) {
@@ -67,9 +62,8 @@ public class StopDataCollectionByAgentIdsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Information about the agents or connector that were instructed to stop collecting data. Information includes the
-     * agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was
-     * updated.
+     * Information about the agents that were instructed to stop collecting data. Information includes the agent ID, a
+     * description of the operation performed, and whether the agent configuration was updated.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,9 +72,8 @@ public class StopDataCollectionByAgentIdsResult extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param agentsConfigurationStatus
-     *        Information about the agents or connector that were instructed to stop collecting data. Information
-     *        includes the agent/connector ID, a description of the operation performed, and whether the agent/connector
-     *        configuration was updated.
+     *        Information about the agents that were instructed to stop collecting data. Information includes the agent
+     *        ID, a description of the operation performed, and whether the agent configuration was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,15 +89,13 @@ public class StopDataCollectionByAgentIdsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Information about the agents or connector that were instructed to stop collecting data. Information includes the
-     * agent/connector ID, a description of the operation performed, and whether the agent/connector configuration was
-     * updated.
+     * Information about the agents that were instructed to stop collecting data. Information includes the agent ID, a
+     * description of the operation performed, and whether the agent configuration was updated.
      * </p>
      * 
      * @param agentsConfigurationStatus
-     *        Information about the agents or connector that were instructed to stop collecting data. Information
-     *        includes the agent/connector ID, a description of the operation performed, and whether the agent/connector
-     *        configuration was updated.
+     *        Information about the agents that were instructed to stop collecting data. Information includes the agent
+     *        ID, a description of the operation performed, and whether the agent configuration was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,6 +14,8 @@ package com.amazonaws.services.sqs.model;
 
 import java.io.Serializable;
 import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
@@ -24,11 +26,11 @@ import javax.annotation.Generated;
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteMessageBatchRequestEntry implements Serializable, Cloneable {
+public class DeleteMessageBatchRequestEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An identifier for this particular receipt handle. This is used to communicate the result.
+     * The identifier for this particular receipt handle. This is used to communicate the result.
      * </p>
      * <note>
      * <p>
@@ -60,7 +62,7 @@ public class DeleteMessageBatchRequestEntry implements Serializable, Cloneable {
      * methods to initialize any additional object members.
      * 
      * @param id
-     *        An identifier for this particular receipt handle. This is used to communicate the result.</p> <note>
+     *        The identifier for this particular receipt handle. This is used to communicate the result.</p> <note>
      *        <p>
      *        The <code>Id</code>s of a batch request need to be unique within a request.
      *        </p>
@@ -78,7 +80,7 @@ public class DeleteMessageBatchRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An identifier for this particular receipt handle. This is used to communicate the result.
+     * The identifier for this particular receipt handle. This is used to communicate the result.
      * </p>
      * <note>
      * <p>
@@ -91,7 +93,7 @@ public class DeleteMessageBatchRequestEntry implements Serializable, Cloneable {
      * </note>
      * 
      * @param id
-     *        An identifier for this particular receipt handle. This is used to communicate the result.</p> <note>
+     *        The identifier for this particular receipt handle. This is used to communicate the result.</p> <note>
      *        <p>
      *        The <code>Id</code>s of a batch request need to be unique within a request.
      *        </p>
@@ -107,7 +109,7 @@ public class DeleteMessageBatchRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An identifier for this particular receipt handle. This is used to communicate the result.
+     * The identifier for this particular receipt handle. This is used to communicate the result.
      * </p>
      * <note>
      * <p>
@@ -119,7 +121,7 @@ public class DeleteMessageBatchRequestEntry implements Serializable, Cloneable {
      * </p>
      * </note>
      * 
-     * @return An identifier for this particular receipt handle. This is used to communicate the result.</p> <note>
+     * @return The identifier for this particular receipt handle. This is used to communicate the result.</p> <note>
      *         <p>
      *         The <code>Id</code>s of a batch request need to be unique within a request.
      *         </p>
@@ -135,7 +137,7 @@ public class DeleteMessageBatchRequestEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An identifier for this particular receipt handle. This is used to communicate the result.
+     * The identifier for this particular receipt handle. This is used to communicate the result.
      * </p>
      * <note>
      * <p>
@@ -148,7 +150,7 @@ public class DeleteMessageBatchRequestEntry implements Serializable, Cloneable {
      * </note>
      * 
      * @param id
-     *        An identifier for this particular receipt handle. This is used to communicate the result.</p> <note>
+     *        The identifier for this particular receipt handle. This is used to communicate the result.</p> <note>
      *        <p>
      *        The <code>Id</code>s of a batch request need to be unique within a request.
      *        </p>
@@ -264,4 +266,9 @@ public class DeleteMessageBatchRequestEntry implements Serializable, Cloneable {
         }
     }
 
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.sqs.model.transform.DeleteMessageBatchRequestEntryMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
 }

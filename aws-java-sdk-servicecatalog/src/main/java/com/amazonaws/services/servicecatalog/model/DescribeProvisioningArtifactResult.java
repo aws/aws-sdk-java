@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class DescribeProvisioningArtifactResult extends com.amazonaws.AmazonWebS
     private ProvisioningArtifactDetail provisioningArtifactDetail;
     /**
      * <p>
-     * The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.
+     * The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.
      * </p>
      */
     private java.util.Map<String, String> info;
@@ -41,6 +41,12 @@ public class DescribeProvisioningArtifactResult extends com.amazonaws.AmazonWebS
      * </p>
      */
     private String status;
+    /**
+     * <p>
+     * Information about the parameters used to provision the product.
+     * </p>
+     */
+    private java.util.List<ProvisioningArtifactParameter> provisioningArtifactParameters;
 
     /**
      * <p>
@@ -84,11 +90,10 @@ public class DescribeProvisioningArtifactResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.
+     * The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.
      * </p>
      * 
-     * @return The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON
-     *         format.
+     * @return The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.
      */
 
     public java.util.Map<String, String> getInfo() {
@@ -97,12 +102,11 @@ public class DescribeProvisioningArtifactResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.
+     * The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.
      * </p>
      * 
      * @param info
-     *        The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON
-     *        format.
+     *        The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.
      */
 
     public void setInfo(java.util.Map<String, String> info) {
@@ -111,12 +115,11 @@ public class DescribeProvisioningArtifactResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.
+     * The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.
      * </p>
      * 
      * @param info
-     *        The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON
-     *        format.
+     *        The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,6 +230,77 @@ public class DescribeProvisioningArtifactResult extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * Information about the parameters used to provision the product.
+     * </p>
+     * 
+     * @return Information about the parameters used to provision the product.
+     */
+
+    public java.util.List<ProvisioningArtifactParameter> getProvisioningArtifactParameters() {
+        return provisioningArtifactParameters;
+    }
+
+    /**
+     * <p>
+     * Information about the parameters used to provision the product.
+     * </p>
+     * 
+     * @param provisioningArtifactParameters
+     *        Information about the parameters used to provision the product.
+     */
+
+    public void setProvisioningArtifactParameters(java.util.Collection<ProvisioningArtifactParameter> provisioningArtifactParameters) {
+        if (provisioningArtifactParameters == null) {
+            this.provisioningArtifactParameters = null;
+            return;
+        }
+
+        this.provisioningArtifactParameters = new java.util.ArrayList<ProvisioningArtifactParameter>(provisioningArtifactParameters);
+    }
+
+    /**
+     * <p>
+     * Information about the parameters used to provision the product.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProvisioningArtifactParameters(java.util.Collection)} or
+     * {@link #withProvisioningArtifactParameters(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param provisioningArtifactParameters
+     *        Information about the parameters used to provision the product.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProvisioningArtifactResult withProvisioningArtifactParameters(ProvisioningArtifactParameter... provisioningArtifactParameters) {
+        if (this.provisioningArtifactParameters == null) {
+            setProvisioningArtifactParameters(new java.util.ArrayList<ProvisioningArtifactParameter>(provisioningArtifactParameters.length));
+        }
+        for (ProvisioningArtifactParameter ele : provisioningArtifactParameters) {
+            this.provisioningArtifactParameters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the parameters used to provision the product.
+     * </p>
+     * 
+     * @param provisioningArtifactParameters
+     *        Information about the parameters used to provision the product.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProvisioningArtifactResult withProvisioningArtifactParameters(
+            java.util.Collection<ProvisioningArtifactParameter> provisioningArtifactParameters) {
+        setProvisioningArtifactParameters(provisioningArtifactParameters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -243,7 +317,9 @@ public class DescribeProvisioningArtifactResult extends com.amazonaws.AmazonWebS
         if (getInfo() != null)
             sb.append("Info: ").append(getInfo()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getProvisioningArtifactParameters() != null)
+            sb.append("ProvisioningArtifactParameters: ").append(getProvisioningArtifactParameters());
         sb.append("}");
         return sb.toString();
     }
@@ -270,6 +346,11 @@ public class DescribeProvisioningArtifactResult extends com.amazonaws.AmazonWebS
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getProvisioningArtifactParameters() == null ^ this.getProvisioningArtifactParameters() == null)
+            return false;
+        if (other.getProvisioningArtifactParameters() != null
+                && other.getProvisioningArtifactParameters().equals(this.getProvisioningArtifactParameters()) == false)
+            return false;
         return true;
     }
 
@@ -281,6 +362,7 @@ public class DescribeProvisioningArtifactResult extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getProvisioningArtifactDetail() == null) ? 0 : getProvisioningArtifactDetail().hashCode());
         hashCode = prime * hashCode + ((getInfo() == null) ? 0 : getInfo().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getProvisioningArtifactParameters() == null) ? 0 : getProvisioningArtifactParameters().hashCode());
         return hashCode;
     }
 

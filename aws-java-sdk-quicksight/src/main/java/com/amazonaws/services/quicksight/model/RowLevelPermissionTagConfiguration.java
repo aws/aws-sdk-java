@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,14 @@ public class RowLevelPermissionTagConfiguration implements Serializable, Cloneab
      * </p>
      */
     private java.util.List<RowLevelPermissionTagRule> tagRules;
+    /**
+     * <p>
+     * A list of tag configuration rules to apply to a dataset. All tag configurations have the OR condition. Tags
+     * within each tile will be joined (AND). At least one rule in this structure must have all tag values assigned to
+     * it to apply Row-level security (RLS) to the dataset.
+     * </p>
+     */
+    private java.util.List<java.util.List<String>> tagRuleConfigurations;
 
     /**
      * <p>
@@ -184,6 +192,92 @@ public class RowLevelPermissionTagConfiguration implements Serializable, Cloneab
     }
 
     /**
+     * <p>
+     * A list of tag configuration rules to apply to a dataset. All tag configurations have the OR condition. Tags
+     * within each tile will be joined (AND). At least one rule in this structure must have all tag values assigned to
+     * it to apply Row-level security (RLS) to the dataset.
+     * </p>
+     * 
+     * @return A list of tag configuration rules to apply to a dataset. All tag configurations have the OR condition.
+     *         Tags within each tile will be joined (AND). At least one rule in this structure must have all tag values
+     *         assigned to it to apply Row-level security (RLS) to the dataset.
+     */
+
+    public java.util.List<java.util.List<String>> getTagRuleConfigurations() {
+        return tagRuleConfigurations;
+    }
+
+    /**
+     * <p>
+     * A list of tag configuration rules to apply to a dataset. All tag configurations have the OR condition. Tags
+     * within each tile will be joined (AND). At least one rule in this structure must have all tag values assigned to
+     * it to apply Row-level security (RLS) to the dataset.
+     * </p>
+     * 
+     * @param tagRuleConfigurations
+     *        A list of tag configuration rules to apply to a dataset. All tag configurations have the OR condition.
+     *        Tags within each tile will be joined (AND). At least one rule in this structure must have all tag values
+     *        assigned to it to apply Row-level security (RLS) to the dataset.
+     */
+
+    public void setTagRuleConfigurations(java.util.Collection<java.util.List<String>> tagRuleConfigurations) {
+        if (tagRuleConfigurations == null) {
+            this.tagRuleConfigurations = null;
+            return;
+        }
+
+        this.tagRuleConfigurations = new java.util.ArrayList<java.util.List<String>>(tagRuleConfigurations);
+    }
+
+    /**
+     * <p>
+     * A list of tag configuration rules to apply to a dataset. All tag configurations have the OR condition. Tags
+     * within each tile will be joined (AND). At least one rule in this structure must have all tag values assigned to
+     * it to apply Row-level security (RLS) to the dataset.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagRuleConfigurations(java.util.Collection)} or
+     * {@link #withTagRuleConfigurations(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param tagRuleConfigurations
+     *        A list of tag configuration rules to apply to a dataset. All tag configurations have the OR condition.
+     *        Tags within each tile will be joined (AND). At least one rule in this structure must have all tag values
+     *        assigned to it to apply Row-level security (RLS) to the dataset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RowLevelPermissionTagConfiguration withTagRuleConfigurations(java.util.List<String>... tagRuleConfigurations) {
+        if (this.tagRuleConfigurations == null) {
+            setTagRuleConfigurations(new java.util.ArrayList<java.util.List<String>>(tagRuleConfigurations.length));
+        }
+        for (java.util.List<String> ele : tagRuleConfigurations) {
+            this.tagRuleConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of tag configuration rules to apply to a dataset. All tag configurations have the OR condition. Tags
+     * within each tile will be joined (AND). At least one rule in this structure must have all tag values assigned to
+     * it to apply Row-level security (RLS) to the dataset.
+     * </p>
+     * 
+     * @param tagRuleConfigurations
+     *        A list of tag configuration rules to apply to a dataset. All tag configurations have the OR condition.
+     *        Tags within each tile will be joined (AND). At least one rule in this structure must have all tag values
+     *        assigned to it to apply Row-level security (RLS) to the dataset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RowLevelPermissionTagConfiguration withTagRuleConfigurations(java.util.Collection<java.util.List<String>> tagRuleConfigurations) {
+        setTagRuleConfigurations(tagRuleConfigurations);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -198,7 +292,9 @@ public class RowLevelPermissionTagConfiguration implements Serializable, Cloneab
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getTagRules() != null)
-            sb.append("TagRules: ").append(getTagRules());
+            sb.append("TagRules: ").append(getTagRules()).append(",");
+        if (getTagRuleConfigurations() != null)
+            sb.append("TagRuleConfigurations: ").append(getTagRuleConfigurations());
         sb.append("}");
         return sb.toString();
     }
@@ -221,6 +317,10 @@ public class RowLevelPermissionTagConfiguration implements Serializable, Cloneab
             return false;
         if (other.getTagRules() != null && other.getTagRules().equals(this.getTagRules()) == false)
             return false;
+        if (other.getTagRuleConfigurations() == null ^ this.getTagRuleConfigurations() == null)
+            return false;
+        if (other.getTagRuleConfigurations() != null && other.getTagRuleConfigurations().equals(this.getTagRuleConfigurations()) == false)
+            return false;
         return true;
     }
 
@@ -231,6 +331,7 @@ public class RowLevelPermissionTagConfiguration implements Serializable, Cloneab
 
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getTagRules() == null) ? 0 : getTagRules().hashCode());
+        hashCode = prime * hashCode + ((getTagRuleConfigurations() == null) ? 0 : getTagRuleConfigurations().hashCode());
         return hashCode;
     }
 

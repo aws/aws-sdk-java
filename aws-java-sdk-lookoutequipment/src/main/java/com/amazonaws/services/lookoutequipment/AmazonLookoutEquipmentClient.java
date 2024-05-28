@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.lookoutequipment.AmazonLookoutEquipmentClientBuild
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.lookoutequipment.model.*;
+
 import com.amazonaws.services.lookoutequipment.model.transform.*;
 
 /**
@@ -149,16 +150,16 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
     /**
      * <p>
      * Creates a container for a collection of data being ingested for analysis. The dataset contains the metadata
-     * describing where the data is and what the data actually looks like. In other words, it contains the location of
-     * the data source, the data schema, and other information. A dataset also contains any tags associated with the
+     * describing where the data is and what the data actually looks like. For example, it contains the location of the
+     * data source, the data schema, and other information. A dataset also contains any tags associated with the
      * ingested data.
      * </p>
      * 
      * @param createDatasetRequest
      * @return Result of the CreateDataset operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
-     *         that's being utilized.
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @throws ConflictException
      *         The request could not be completed due to a conflict with the current state of the target resource.
      * @throws ThrottlingException
@@ -232,8 +233,8 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
      * @throws ResourceNotFoundException
      *         The resource requested could not be found. Verify the resource ID and retry your request.
      * @throws ValidationException
-     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
-     *         that's being utilized.
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @throws ServiceQuotaExceededException
      *         Resource limitations have been exceeded.
      * @throws ThrottlingException
@@ -300,8 +301,8 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
      * @param createLabelRequest
      * @return Result of the CreateLabel operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
-     *         that's being utilized.
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @throws ResourceNotFoundException
      *         The resource requested could not be found. Verify the resource ID and retry your request.
      * @throws ConflictException
@@ -370,8 +371,8 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
      * @param createLabelGroupRequest
      * @return Result of the CreateLabelGroup operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
-     *         that's being utilized.
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @throws ConflictException
      *         The request could not be completed due to a conflict with the current state of the target resource.
      * @throws ThrottlingException
@@ -432,7 +433,7 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Creates an ML model for data inference.
+     * Creates a machine learning model for data inference.
      * </p>
      * <p>
      * A machine-learning (ML) model is a mathematical model that finds patterns in your data. In Amazon Lookout for
@@ -449,8 +450,8 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
      * @param createModelRequest
      * @return Result of the CreateModel operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
-     *         that's being utilized.
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @throws ConflictException
      *         The request could not be completed due to a conflict with the current state of the target resource.
      * @throws ThrottlingException
@@ -513,6 +514,76 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Creates a retraining scheduler on the specified model.
+     * </p>
+     * 
+     * @param createRetrainingSchedulerRequest
+     * @return Result of the CreateRetrainingScheduler operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.CreateRetrainingScheduler
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/CreateRetrainingScheduler"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateRetrainingSchedulerResult createRetrainingScheduler(CreateRetrainingSchedulerRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateRetrainingScheduler(request);
+    }
+
+    @SdkInternalApi
+    final CreateRetrainingSchedulerResult executeCreateRetrainingScheduler(CreateRetrainingSchedulerRequest createRetrainingSchedulerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createRetrainingSchedulerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateRetrainingSchedulerRequest> request = null;
+        Response<CreateRetrainingSchedulerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateRetrainingSchedulerRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createRetrainingSchedulerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutEquipment");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRetrainingScheduler");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateRetrainingSchedulerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateRetrainingSchedulerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a dataset and associated artifacts. The operation will check to see if any inference scheduler or data
      * ingestion job is currently using the dataset, and if there isn't, the dataset, its metadata, and any associated
      * data stored in S3 will be deleted. This does not affect any models that used this dataset for training and
@@ -531,6 +602,9 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
      *         The request could not be completed because you do not have access to the resource.
      * @throws ConflictException
      *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @sample AmazonLookoutEquipment.DeleteDataset
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteDataset" target="_top">AWS
      *      API Documentation</a>
@@ -581,14 +655,14 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Deletes an inference scheduler that has been set up. Already processed output results are not affected.
+     * Deletes an inference scheduler that has been set up. Prior inference results will not be deleted.
      * </p>
      * 
      * @param deleteInferenceSchedulerRequest
      * @return Result of the DeleteInferenceScheduler operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
-     *         that's being utilized.
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @throws ResourceNotFoundException
      *         The resource requested could not be found. Verify the resource ID and retry your request.
      * @throws ConflictException
@@ -666,6 +740,9 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
      *         The request could not be completed because you do not have access to the resource.
      * @throws ConflictException
      *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @sample AmazonLookoutEquipment.DeleteLabel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabel" target="_top">AWS
      *      API Documentation</a>
@@ -731,6 +808,9 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
      *         The request could not be completed because you do not have access to the resource.
      * @throws ConflictException
      *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @sample AmazonLookoutEquipment.DeleteLabelGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabelGroup"
      *      target="_top">AWS API Documentation</a>
@@ -781,8 +861,8 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Deletes an ML model currently available for Amazon Lookout for Equipment. This will prevent it from being used
-     * with an inference scheduler, even one that is already set up.
+     * Deletes a machine learning model currently available for Amazon Lookout for Equipment. This will prevent it from
+     * being used with an inference scheduler, even one that is already set up.
      * </p>
      * 
      * @param deleteModelRequest
@@ -797,6 +877,9 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
      *         The request could not be completed due to a conflict with the current state of the target resource.
      * @throws AccessDeniedException
      *         The request could not be completed because you do not have access to the resource.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @sample AmazonLookoutEquipment.DeleteModel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteModel" target="_top">AWS
      *      API Documentation</a>
@@ -847,14 +930,152 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Deletes the resource policy attached to the resource.
+     * </p>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @return Result of the DeleteResourcePolicy operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
+     * @sample AmazonLookoutEquipment.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteResourcePolicyResult deleteResourcePolicy(DeleteResourcePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteResourcePolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteResourcePolicyResult executeDeleteResourcePolicy(DeleteResourcePolicyRequest deleteResourcePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteResourcePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteResourcePolicyRequest> request = null;
+        Response<DeleteResourcePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteResourcePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteResourcePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutEquipment");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteResourcePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteResourcePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteResourcePolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a retraining scheduler from a model. The retraining scheduler must be in the <code>STOPPED</code> status.
+     * </p>
+     * 
+     * @param deleteRetrainingSchedulerRequest
+     * @return Result of the DeleteRetrainingScheduler operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.DeleteRetrainingScheduler
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteRetrainingScheduler"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteRetrainingSchedulerResult deleteRetrainingScheduler(DeleteRetrainingSchedulerRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRetrainingScheduler(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRetrainingSchedulerResult executeDeleteRetrainingScheduler(DeleteRetrainingSchedulerRequest deleteRetrainingSchedulerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteRetrainingSchedulerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteRetrainingSchedulerRequest> request = null;
+        Response<DeleteRetrainingSchedulerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteRetrainingSchedulerRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteRetrainingSchedulerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutEquipment");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRetrainingScheduler");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteRetrainingSchedulerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteRetrainingSchedulerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Provides information on a specific data ingestion job such as creation time, dataset ARN, and status.
      * </p>
      * 
      * @param describeDataIngestionJobRequest
      * @return Result of the DescribeDataIngestionJob operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
-     *         that's being utilized.
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @throws ResourceNotFoundException
      *         The resource requested could not be found. Verify the resource ID and retry your request.
      * @throws ThrottlingException
@@ -922,8 +1143,8 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
      * @param describeDatasetRequest
      * @return Result of the DescribeDataset operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
-     *         that's being utilized.
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @throws ResourceNotFoundException
      *         The resource requested could not be found. Verify the resource ID and retry your request.
      * @throws ThrottlingException
@@ -989,8 +1210,8 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
      * @param describeInferenceSchedulerRequest
      * @return Result of the DescribeInferenceScheduler operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
-     *         that's being utilized.
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @throws ResourceNotFoundException
      *         The resource requested could not be found. Verify the resource ID and retry your request.
      * @throws ThrottlingException
@@ -1057,8 +1278,8 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
      * @param describeLabelRequest
      * @return Result of the DescribeLabel operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
-     *         that's being utilized.
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @throws ResourceNotFoundException
      *         The resource requested could not be found. Verify the resource ID and retry your request.
      * @throws ThrottlingException
@@ -1123,8 +1344,8 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
      * @param describeLabelGroupRequest
      * @return Result of the DescribeLabelGroup operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
-     *         that's being utilized.
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @throws ResourceNotFoundException
      *         The resource requested could not be found. Verify the resource ID and retry your request.
      * @throws ThrottlingException
@@ -1183,15 +1404,15 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Provides a JSON containing the overall information about a specific ML model, including model name and ARN,
-     * dataset, training and evaluation information, status, and so on.
+     * Provides a JSON containing the overall information about a specific machine learning model, including model name
+     * and ARN, dataset, training and evaluation information, status, and so on.
      * </p>
      * 
      * @param describeModelRequest
      * @return Result of the DescribeModel operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
-     *         that's being utilized.
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @throws ResourceNotFoundException
      *         The resource requested could not be found. Verify the resource ID and retry your request.
      * @throws ThrottlingException
@@ -1250,6 +1471,348 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Retrieves information about a specific machine learning model version.
+     * </p>
+     * 
+     * @param describeModelVersionRequest
+     * @return Result of the DescribeModelVersion operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.DescribeModelVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeModelVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeModelVersionResult describeModelVersion(DescribeModelVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeModelVersion(request);
+    }
+
+    @SdkInternalApi
+    final DescribeModelVersionResult executeDescribeModelVersion(DescribeModelVersionRequest describeModelVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeModelVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeModelVersionRequest> request = null;
+        Response<DescribeModelVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeModelVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeModelVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutEquipment");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeModelVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeModelVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeModelVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provides the details of a resource policy attached to a resource.
+     * </p>
+     * 
+     * @param describeResourcePolicyRequest
+     * @return Result of the DescribeResourcePolicy operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.DescribeResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeResourcePolicyResult describeResourcePolicy(DescribeResourcePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeResourcePolicy(request);
+    }
+
+    @SdkInternalApi
+    final DescribeResourcePolicyResult executeDescribeResourcePolicy(DescribeResourcePolicyRequest describeResourcePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeResourcePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeResourcePolicyRequest> request = null;
+        Response<DescribeResourcePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeResourcePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeResourcePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutEquipment");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeResourcePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeResourcePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeResourcePolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provides a description of the retraining scheduler, including information such as the model name and retraining
+     * parameters.
+     * </p>
+     * 
+     * @param describeRetrainingSchedulerRequest
+     * @return Result of the DescribeRetrainingScheduler operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.DescribeRetrainingScheduler
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeRetrainingScheduler"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeRetrainingSchedulerResult describeRetrainingScheduler(DescribeRetrainingSchedulerRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeRetrainingScheduler(request);
+    }
+
+    @SdkInternalApi
+    final DescribeRetrainingSchedulerResult executeDescribeRetrainingScheduler(DescribeRetrainingSchedulerRequest describeRetrainingSchedulerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeRetrainingSchedulerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeRetrainingSchedulerRequest> request = null;
+        Response<DescribeRetrainingSchedulerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeRetrainingSchedulerRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeRetrainingSchedulerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutEquipment");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRetrainingScheduler");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeRetrainingSchedulerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeRetrainingSchedulerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Imports a dataset.
+     * </p>
+     * 
+     * @param importDatasetRequest
+     * @return Result of the ImportDataset operation returned by the service.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
+     * @throws ServiceQuotaExceededException
+     *         Resource limitations have been exceeded.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.ImportDataset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ImportDataset" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ImportDatasetResult importDataset(ImportDatasetRequest request) {
+        request = beforeClientExecution(request);
+        return executeImportDataset(request);
+    }
+
+    @SdkInternalApi
+    final ImportDatasetResult executeImportDataset(ImportDatasetRequest importDatasetRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(importDatasetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ImportDatasetRequest> request = null;
+        Response<ImportDatasetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ImportDatasetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(importDatasetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutEquipment");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportDataset");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ImportDatasetResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ImportDatasetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Imports a model that has been trained successfully.
+     * </p>
+     * 
+     * @param importModelVersionRequest
+     * @return Result of the ImportModelVersion operation returned by the service.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
+     * @throws ServiceQuotaExceededException
+     *         Resource limitations have been exceeded.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.ImportModelVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ImportModelVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ImportModelVersionResult importModelVersion(ImportModelVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeImportModelVersion(request);
+    }
+
+    @SdkInternalApi
+    final ImportModelVersionResult executeImportModelVersion(ImportModelVersionRequest importModelVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(importModelVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ImportModelVersionRequest> request = null;
+        Response<ImportModelVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ImportModelVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(importModelVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutEquipment");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportModelVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ImportModelVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ImportModelVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Provides a list of all data ingestion jobs, including dataset name and ARN, S3 location of the input data,
      * status, and so on.
      * </p>
@@ -1257,8 +1820,8 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
      * @param listDataIngestionJobsRequest
      * @return Result of the ListDataIngestionJobs operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
-     *         that's being utilized.
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws AccessDeniedException
@@ -1322,8 +1885,8 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
      * @param listDatasetsRequest
      * @return Result of the ListDatasets operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
-     *         that's being utilized.
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws AccessDeniedException
@@ -1386,8 +1949,8 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
      * @param listInferenceEventsRequest
      * @return Result of the ListInferenceEvents operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
-     *         that's being utilized.
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ResourceNotFoundException
@@ -1452,8 +2015,8 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
      * @param listInferenceExecutionsRequest
      * @return Result of the ListInferenceExecutions operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
-     *         that's being utilized.
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ResourceNotFoundException
@@ -1520,8 +2083,8 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
      * @param listInferenceSchedulersRequest
      * @return Result of the ListInferenceSchedulers operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
-     *         that's being utilized.
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws AccessDeniedException
@@ -1586,8 +2149,8 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
      * @param listLabelGroupsRequest
      * @return Result of the ListLabelGroups operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
-     *         that's being utilized.
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws AccessDeniedException
@@ -1650,8 +2213,8 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
      * @param listLabelsRequest
      * @return Result of the ListLabels operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
-     *         that's being utilized.
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws AccessDeniedException
@@ -1708,14 +2271,82 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Generates a list of all model versions for a given model, including the model version, model version ARN, and
+     * status. To list a subset of versions, use the <code>MaxModelVersion</code> and <code>MinModelVersion</code>
+     * fields.
+     * </p>
+     * 
+     * @param listModelVersionsRequest
+     * @return Result of the ListModelVersions operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.ListModelVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListModelVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListModelVersionsResult listModelVersions(ListModelVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListModelVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListModelVersionsResult executeListModelVersions(ListModelVersionsRequest listModelVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listModelVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListModelVersionsRequest> request = null;
+        Response<ListModelVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListModelVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listModelVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutEquipment");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListModelVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListModelVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListModelVersionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Generates a list of all models in the account, including model name and ARN, dataset, and status.
      * </p>
      * 
      * @param listModelsRequest
      * @return Result of the ListModels operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
-     *         that's being utilized.
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws AccessDeniedException
@@ -1772,6 +2403,72 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Lists all retraining schedulers in your account, filtering by model name prefix and status.
+     * </p>
+     * 
+     * @param listRetrainingSchedulersRequest
+     * @return Result of the ListRetrainingSchedulers operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.ListRetrainingSchedulers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListRetrainingSchedulers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListRetrainingSchedulersResult listRetrainingSchedulers(ListRetrainingSchedulersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRetrainingSchedulers(request);
+    }
+
+    @SdkInternalApi
+    final ListRetrainingSchedulersResult executeListRetrainingSchedulers(ListRetrainingSchedulersRequest listRetrainingSchedulersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listRetrainingSchedulersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListRetrainingSchedulersRequest> request = null;
+        Response<ListRetrainingSchedulersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListRetrainingSchedulersRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listRetrainingSchedulersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutEquipment");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRetrainingSchedulers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListRetrainingSchedulersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListRetrainingSchedulersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists statistics about the data collected for each of the sensors that have been successfully ingested in the
      * particular dataset. Can also be used to retreive Sensor Statistics for a previous ingestion job.
      * </p>
@@ -1779,8 +2476,8 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
      * @param listSensorStatisticsRequest
      * @return Result of the ListSensorStatistics operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
-     *         that's being utilized.
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @throws ResourceNotFoundException
      *         The resource requested could not be found. Verify the resource ID and retry your request.
      * @throws ThrottlingException
@@ -1845,8 +2542,8 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
-     *         that's being utilized.
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @throws ResourceNotFoundException
      *         The resource requested could not be found. Verify the resource ID and retry your request.
      * @throws ThrottlingException
@@ -1905,14 +2602,84 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Creates a resource control policy for a given resource.
+     * </p>
+     * 
+     * @param putResourcePolicyRequest
+     * @return Result of the PutResourcePolicy operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ServiceQuotaExceededException
+     *         Resource limitations have been exceeded.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/PutResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutResourcePolicyResult putResourcePolicy(PutResourcePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutResourcePolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutResourcePolicyResult executePutResourcePolicy(PutResourcePolicyRequest putResourcePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putResourcePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutResourcePolicyRequest> request = null;
+        Response<PutResourcePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutResourcePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putResourcePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutEquipment");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutResourcePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutResourcePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutResourcePolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Starts a data ingestion job. Amazon Lookout for Equipment returns the job status.
      * </p>
      * 
      * @param startDataIngestionJobRequest
      * @return Result of the StartDataIngestionJob operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
-     *         that's being utilized.
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @throws ResourceNotFoundException
      *         The resource requested could not be found. Verify the resource ID and retry your request.
      * @throws ConflictException
@@ -1982,8 +2749,8 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
      * @param startInferenceSchedulerRequest
      * @return Result of the StartInferenceScheduler operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
-     *         that's being utilized.
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @throws ConflictException
      *         The request could not be completed due to a conflict with the current state of the target resource.
      * @throws ResourceNotFoundException
@@ -2046,14 +2813,84 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Starts a retraining scheduler.
+     * </p>
+     * 
+     * @param startRetrainingSchedulerRequest
+     * @return Result of the StartRetrainingScheduler operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.StartRetrainingScheduler
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StartRetrainingScheduler"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartRetrainingSchedulerResult startRetrainingScheduler(StartRetrainingSchedulerRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartRetrainingScheduler(request);
+    }
+
+    @SdkInternalApi
+    final StartRetrainingSchedulerResult executeStartRetrainingScheduler(StartRetrainingSchedulerRequest startRetrainingSchedulerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startRetrainingSchedulerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartRetrainingSchedulerRequest> request = null;
+        Response<StartRetrainingSchedulerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartRetrainingSchedulerRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startRetrainingSchedulerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutEquipment");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartRetrainingScheduler");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartRetrainingSchedulerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartRetrainingSchedulerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Stops an inference scheduler.
      * </p>
      * 
      * @param stopInferenceSchedulerRequest
      * @return Result of the StopInferenceScheduler operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
-     *         that's being utilized.
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @throws ConflictException
      *         The request could not be completed due to a conflict with the current state of the target resource.
      * @throws ResourceNotFoundException
@@ -2115,6 +2952,76 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Stops a retraining scheduler.
+     * </p>
+     * 
+     * @param stopRetrainingSchedulerRequest
+     * @return Result of the StopRetrainingScheduler operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.StopRetrainingScheduler
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/StopRetrainingScheduler"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StopRetrainingSchedulerResult stopRetrainingScheduler(StopRetrainingSchedulerRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopRetrainingScheduler(request);
+    }
+
+    @SdkInternalApi
+    final StopRetrainingSchedulerResult executeStopRetrainingScheduler(StopRetrainingSchedulerRequest stopRetrainingSchedulerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopRetrainingSchedulerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopRetrainingSchedulerRequest> request = null;
+        Response<StopRetrainingSchedulerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopRetrainingSchedulerRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(stopRetrainingSchedulerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutEquipment");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopRetrainingScheduler");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopRetrainingSchedulerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StopRetrainingSchedulerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Associates a given tag to a resource in your account. A tag is a key-value pair which can be added to an Amazon
      * Lookout for Equipment resource as metadata. Tags can be used for organizing your resources as well as helping you
      * to search and filter by tag. Multiple tags can be added to a resource, either when you create it, or later. Up to
@@ -2124,8 +3031,8 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
-     *         that's being utilized.
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @throws ResourceNotFoundException
      *         The resource requested could not be found. Verify the resource ID and retry your request.
      * @throws ServiceQuotaExceededException
@@ -2192,8 +3099,8 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
-     *         that's being utilized.
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @throws ResourceNotFoundException
      *         The resource requested could not be found. Verify the resource ID and retry your request.
      * @throws ThrottlingException
@@ -2252,6 +3159,76 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Sets the active model version for a given machine learning model.
+     * </p>
+     * 
+     * @param updateActiveModelVersionRequest
+     * @return Result of the UpdateActiveModelVersion operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AmazonLookoutEquipment.UpdateActiveModelVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateActiveModelVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateActiveModelVersionResult updateActiveModelVersion(UpdateActiveModelVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateActiveModelVersion(request);
+    }
+
+    @SdkInternalApi
+    final UpdateActiveModelVersionResult executeUpdateActiveModelVersion(UpdateActiveModelVersionRequest updateActiveModelVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateActiveModelVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateActiveModelVersionRequest> request = null;
+        Response<UpdateActiveModelVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateActiveModelVersionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateActiveModelVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutEquipment");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateActiveModelVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateActiveModelVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateActiveModelVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates an inference scheduler.
      * </p>
      * 
@@ -2262,8 +3239,8 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
      * @throws ResourceNotFoundException
      *         The resource requested could not be found. Verify the resource ID and retry your request.
      * @throws ValidationException
-     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
-     *         that's being utilized.
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws AccessDeniedException
@@ -2332,8 +3309,8 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
      * @throws ResourceNotFoundException
      *         The resource requested could not be found. Verify the resource ID and retry your request.
      * @throws ValidationException
-     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
-     *         that's being utilized.
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws AccessDeniedException
@@ -2378,6 +3355,144 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateLabelGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateLabelGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a model in the account.
+     * </p>
+     * 
+     * @param updateModelRequest
+     * @return Result of the UpdateModel operation returned by the service.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.UpdateModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateModel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateModelResult updateModel(UpdateModelRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateModel(request);
+    }
+
+    @SdkInternalApi
+    final UpdateModelResult executeUpdateModel(UpdateModelRequest updateModelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateModelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateModelRequest> request = null;
+        Response<UpdateModelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateModelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutEquipment");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateModel");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateModelResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateModelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a retraining scheduler.
+     * </p>
+     * 
+     * @param updateRetrainingSchedulerRequest
+     * @return Result of the UpdateRetrainingScheduler operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related Amazon Web
+     *         Services service that's being utilized.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.UpdateRetrainingScheduler
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateRetrainingScheduler"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateRetrainingSchedulerResult updateRetrainingScheduler(UpdateRetrainingSchedulerRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateRetrainingScheduler(request);
+    }
+
+    @SdkInternalApi
+    final UpdateRetrainingSchedulerResult executeUpdateRetrainingScheduler(UpdateRetrainingSchedulerRequest updateRetrainingSchedulerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateRetrainingSchedulerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateRetrainingSchedulerRequest> request = null;
+        Response<UpdateRetrainingSchedulerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateRetrainingSchedulerRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateRetrainingSchedulerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutEquipment");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRetrainingScheduler");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateRetrainingSchedulerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateRetrainingSchedulerResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

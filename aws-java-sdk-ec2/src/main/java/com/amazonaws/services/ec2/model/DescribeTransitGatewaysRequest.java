@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -96,6 +96,14 @@ public class DescribeTransitGatewaysRequest extends AmazonWebServiceRequest impl
      * <li>
      * <p>
      * <code>transit-gateway-id</code> - The ID of the transit gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag-key </code>- The key/value combination of a tag assigned to the resource. Use the tag key in the filter
+     * name and the tag value as the filter value. For example, to find all resources that have a tag with the key
+     * <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.
      * </p>
      * </li>
      * </ul>
@@ -254,6 +262,14 @@ public class DescribeTransitGatewaysRequest extends AmazonWebServiceRequest impl
      * <code>transit-gateway-id</code> - The ID of the transit gateway.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>tag-key </code>- The key/value combination of a tag assigned to the resource. Use the tag key in the filter
+     * name and the tag value as the filter value. For example, to find all resources that have a tag with the key
+     * <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return One or more filters. The possible values are:</p>
@@ -319,6 +335,14 @@ public class DescribeTransitGatewaysRequest extends AmazonWebServiceRequest impl
      *         <li>
      *         <p>
      *         <code>transit-gateway-id</code> - The ID of the transit gateway.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>tag-key </code>- The key/value combination of a tag assigned to the resource. Use the tag key in
+     *         the filter name and the tag value as the filter value. For example, to find all resources that have a tag
+     *         with the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the
+     *         filter name and <code>TeamA</code> for the filter value.
      *         </p>
      *         </li>
      */
@@ -396,6 +420,14 @@ public class DescribeTransitGatewaysRequest extends AmazonWebServiceRequest impl
      * <code>transit-gateway-id</code> - The ID of the transit gateway.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>tag-key </code>- The key/value combination of a tag assigned to the resource. Use the tag key in the filter
+     * name and the tag value as the filter value. For example, to find all resources that have a tag with the key
+     * <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param filters
@@ -462,6 +494,14 @@ public class DescribeTransitGatewaysRequest extends AmazonWebServiceRequest impl
      *        <li>
      *        <p>
      *        <code>transit-gateway-id</code> - The ID of the transit gateway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag-key </code>- The key/value combination of a tag assigned to the resource. Use the tag key in the
+     *        filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     *        the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter
+     *        name and <code>TeamA</code> for the filter value.
      *        </p>
      *        </li>
      */
@@ -541,6 +581,14 @@ public class DescribeTransitGatewaysRequest extends AmazonWebServiceRequest impl
      * <code>transit-gateway-id</code> - The ID of the transit gateway.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>tag-key </code>- The key/value combination of a tag assigned to the resource. Use the tag key in the filter
+     * name and the tag value as the filter value. For example, to find all resources that have a tag with the key
+     * <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -612,6 +660,14 @@ public class DescribeTransitGatewaysRequest extends AmazonWebServiceRequest impl
      *        <li>
      *        <p>
      *        <code>transit-gateway-id</code> - The ID of the transit gateway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag-key </code>- The key/value combination of a tag assigned to the resource. Use the tag key in the
+     *        filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     *        the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter
+     *        name and <code>TeamA</code> for the filter value.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -693,6 +749,14 @@ public class DescribeTransitGatewaysRequest extends AmazonWebServiceRequest impl
      * <code>transit-gateway-id</code> - The ID of the transit gateway.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>tag-key </code>- The key/value combination of a tag assigned to the resource. Use the tag key in the filter
+     * name and the tag value as the filter value. For example, to find all resources that have a tag with the key
+     * <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param filters
@@ -759,6 +823,14 @@ public class DescribeTransitGatewaysRequest extends AmazonWebServiceRequest impl
      *        <li>
      *        <p>
      *        <code>transit-gateway-id</code> - The ID of the transit gateway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tag-key </code>- The key/value combination of a tag assigned to the resource. Use the tag key in the
+     *        filter name and the tag value as the filter value. For example, to find all resources that have a tag with
+     *        the key <code>Owner</code> and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter
+     *        name and <code>TeamA</code> for the filter value.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

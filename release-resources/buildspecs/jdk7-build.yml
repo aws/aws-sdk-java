@@ -11,6 +11,12 @@ phases:
       - update-alternatives --install /usr/bin/java java $jvm_path/bin/java 2 && update-alternatives --set java $jvm_path/bin/java
       - export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:/bin/java::") && export PATH=$JAVA_HOME/bin:$PATH
       - export JAVA_TOOL_OPTIONS="$JAVA_TOOL_OPTIONS"
+      - MAVEN_RELEASE_ZIP=$MAVEN_RELEASE-bin.zip
+      - aws s3 cp s3://$S3_RELEASE_RESOURCES/$MAVEN_RELEASE_ZIP .
+      - unzip $MAVEN_RELEASE_ZIP -d /usr/local/bin
+      - export MAVEN_HOME=/usr/local/bin/$MAVEN_RELEASE/bin
+      - export PATH=$MAVEN_HOME:$PATH
+      - echo $PATH
   build:
     commands:
       - mvn -pl "!aws-java-sdk-opensdk,!aws-java-sdk-codegen-maven-plugin,!aws-java-sdk-code-generator" clean package -DskipTests -DfailIfNoTests=false -T1C

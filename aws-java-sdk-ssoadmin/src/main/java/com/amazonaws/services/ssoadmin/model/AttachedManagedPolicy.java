@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A structure that stores the details of the AWS managed policy.
+ * A structure that stores the details of the Amazon Web Services managed policy.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/AttachedManagedPolicy" target="_top">AWS
@@ -30,70 +30,30 @@ public class AttachedManagedPolicy implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the AWS managed policy.
-     * </p>
-     */
-    private String name;
-    /**
-     * <p>
-     * The ARN of the AWS managed policy. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
-     * Namespaces</a> in the <i>AWS General Reference</i>.
+     * The ARN of the Amazon Web Services managed policy. For more information about ARNs, see <a
+     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
+     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     private String arn;
-
     /**
      * <p>
-     * The name of the AWS managed policy.
+     * The name of the Amazon Web Services managed policy.
      * </p>
-     * 
-     * @param name
-     *        The name of the AWS managed policy.
      */
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    private String name;
 
     /**
      * <p>
-     * The name of the AWS managed policy.
-     * </p>
-     * 
-     * @return The name of the AWS managed policy.
-     */
-
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * <p>
-     * The name of the AWS managed policy.
-     * </p>
-     * 
-     * @param name
-     *        The name of the AWS managed policy.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public AttachedManagedPolicy withName(String name) {
-        setName(name);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The ARN of the AWS managed policy. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
-     * Namespaces</a> in the <i>AWS General Reference</i>.
+     * The ARN of the Amazon Web Services managed policy. For more information about ARNs, see <a
+     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
+     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param arn
-     *        The ARN of the AWS managed policy. For more information about ARNs, see <a
-     *        href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
-     *        Namespaces</a> in the <i>AWS General Reference</i>.
+     *        The ARN of the Amazon Web Services managed policy. For more information about ARNs, see <a
+     *        href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web
+     *        Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public void setArn(String arn) {
@@ -102,14 +62,14 @@ public class AttachedManagedPolicy implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ARN of the AWS managed policy. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
-     * Namespaces</a> in the <i>AWS General Reference</i>.
+     * The ARN of the Amazon Web Services managed policy. For more information about ARNs, see <a
+     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
+     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
-     * @return The ARN of the AWS managed policy. For more information about ARNs, see <a
-     *         href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
-     *         Namespaces</a> in the <i>AWS General Reference</i>.
+     * @return The ARN of the Amazon Web Services managed policy. For more information about ARNs, see <a
+     *         href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web
+     *         Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public String getArn() {
@@ -118,20 +78,60 @@ public class AttachedManagedPolicy implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ARN of the AWS managed policy. For more information about ARNs, see <a
-     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
-     * Namespaces</a> in the <i>AWS General Reference</i>.
+     * The ARN of the Amazon Web Services managed policy. For more information about ARNs, see <a
+     * href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
+     * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param arn
-     *        The ARN of the AWS managed policy. For more information about ARNs, see <a
-     *        href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service
-     *        Namespaces</a> in the <i>AWS General Reference</i>.
+     *        The ARN of the Amazon Web Services managed policy. For more information about ARNs, see <a
+     *        href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web
+     *        Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AttachedManagedPolicy withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the Amazon Web Services managed policy.
+     * </p>
+     * 
+     * @param name
+     *        The name of the Amazon Web Services managed policy.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The name of the Amazon Web Services managed policy.
+     * </p>
+     * 
+     * @return The name of the Amazon Web Services managed policy.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of the Amazon Web Services managed policy.
+     * </p>
+     * 
+     * @param name
+     *        The name of the Amazon Web Services managed policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AttachedManagedPolicy withName(String name) {
+        setName(name);
         return this;
     }
 
@@ -147,10 +147,10 @@ public class AttachedManagedPolicy implements Serializable, Cloneable, Structure
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
         if (getArn() != null)
-            sb.append("Arn: ").append(getArn());
+            sb.append("Arn: ").append(getArn()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName());
         sb.append("}");
         return sb.toString();
     }
@@ -165,13 +165,13 @@ public class AttachedManagedPolicy implements Serializable, Cloneable, Structure
         if (obj instanceof AttachedManagedPolicy == false)
             return false;
         AttachedManagedPolicy other = (AttachedManagedPolicy) obj;
-        if (other.getName() == null ^ this.getName() == null)
-            return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
-            return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         return true;
     }
@@ -181,8 +181,8 @@ public class AttachedManagedPolicy implements Serializable, Cloneable, Structure
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         return hashCode;
     }
 

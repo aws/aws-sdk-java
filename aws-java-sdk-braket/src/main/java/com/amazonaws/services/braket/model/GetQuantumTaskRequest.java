@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,122 @@ public class GetQuantumTaskRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * the ARN of the task to retrieve.
+     * A list of attributes to return information for.
+     * </p>
+     */
+    private java.util.List<String> additionalAttributeNames;
+    /**
+     * <p>
+     * The ARN of the task to retrieve.
      * </p>
      */
     private String quantumTaskArn;
 
     /**
      * <p>
-     * the ARN of the task to retrieve.
+     * A list of attributes to return information for.
+     * </p>
+     * 
+     * @return A list of attributes to return information for.
+     * @see QuantumTaskAdditionalAttributeName
+     */
+
+    public java.util.List<String> getAdditionalAttributeNames() {
+        return additionalAttributeNames;
+    }
+
+    /**
+     * <p>
+     * A list of attributes to return information for.
+     * </p>
+     * 
+     * @param additionalAttributeNames
+     *        A list of attributes to return information for.
+     * @see QuantumTaskAdditionalAttributeName
+     */
+
+    public void setAdditionalAttributeNames(java.util.Collection<String> additionalAttributeNames) {
+        if (additionalAttributeNames == null) {
+            this.additionalAttributeNames = null;
+            return;
+        }
+
+        this.additionalAttributeNames = new java.util.ArrayList<String>(additionalAttributeNames);
+    }
+
+    /**
+     * <p>
+     * A list of attributes to return information for.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAdditionalAttributeNames(java.util.Collection)} or
+     * {@link #withAdditionalAttributeNames(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param additionalAttributeNames
+     *        A list of attributes to return information for.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see QuantumTaskAdditionalAttributeName
+     */
+
+    public GetQuantumTaskRequest withAdditionalAttributeNames(String... additionalAttributeNames) {
+        if (this.additionalAttributeNames == null) {
+            setAdditionalAttributeNames(new java.util.ArrayList<String>(additionalAttributeNames.length));
+        }
+        for (String ele : additionalAttributeNames) {
+            this.additionalAttributeNames.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of attributes to return information for.
+     * </p>
+     * 
+     * @param additionalAttributeNames
+     *        A list of attributes to return information for.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see QuantumTaskAdditionalAttributeName
+     */
+
+    public GetQuantumTaskRequest withAdditionalAttributeNames(java.util.Collection<String> additionalAttributeNames) {
+        setAdditionalAttributeNames(additionalAttributeNames);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of attributes to return information for.
+     * </p>
+     * 
+     * @param additionalAttributeNames
+     *        A list of attributes to return information for.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see QuantumTaskAdditionalAttributeName
+     */
+
+    public GetQuantumTaskRequest withAdditionalAttributeNames(QuantumTaskAdditionalAttributeName... additionalAttributeNames) {
+        java.util.ArrayList<String> additionalAttributeNamesCopy = new java.util.ArrayList<String>(additionalAttributeNames.length);
+        for (QuantumTaskAdditionalAttributeName value : additionalAttributeNames) {
+            additionalAttributeNamesCopy.add(value.toString());
+        }
+        if (getAdditionalAttributeNames() == null) {
+            setAdditionalAttributeNames(additionalAttributeNamesCopy);
+        } else {
+            getAdditionalAttributeNames().addAll(additionalAttributeNamesCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the task to retrieve.
      * </p>
      * 
      * @param quantumTaskArn
-     *        the ARN of the task to retrieve.
+     *        The ARN of the task to retrieve.
      */
 
     public void setQuantumTaskArn(String quantumTaskArn) {
@@ -47,10 +151,10 @@ public class GetQuantumTaskRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * the ARN of the task to retrieve.
+     * The ARN of the task to retrieve.
      * </p>
      * 
-     * @return the ARN of the task to retrieve.
+     * @return The ARN of the task to retrieve.
      */
 
     public String getQuantumTaskArn() {
@@ -59,11 +163,11 @@ public class GetQuantumTaskRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * the ARN of the task to retrieve.
+     * The ARN of the task to retrieve.
      * </p>
      * 
      * @param quantumTaskArn
-     *        the ARN of the task to retrieve.
+     *        The ARN of the task to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,6 +188,8 @@ public class GetQuantumTaskRequest extends com.amazonaws.AmazonWebServiceRequest
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAdditionalAttributeNames() != null)
+            sb.append("AdditionalAttributeNames: ").append(getAdditionalAttributeNames()).append(",");
         if (getQuantumTaskArn() != null)
             sb.append("QuantumTaskArn: ").append(getQuantumTaskArn());
         sb.append("}");
@@ -100,6 +206,10 @@ public class GetQuantumTaskRequest extends com.amazonaws.AmazonWebServiceRequest
         if (obj instanceof GetQuantumTaskRequest == false)
             return false;
         GetQuantumTaskRequest other = (GetQuantumTaskRequest) obj;
+        if (other.getAdditionalAttributeNames() == null ^ this.getAdditionalAttributeNames() == null)
+            return false;
+        if (other.getAdditionalAttributeNames() != null && other.getAdditionalAttributeNames().equals(this.getAdditionalAttributeNames()) == false)
+            return false;
         if (other.getQuantumTaskArn() == null ^ this.getQuantumTaskArn() == null)
             return false;
         if (other.getQuantumTaskArn() != null && other.getQuantumTaskArn().equals(this.getQuantumTaskArn()) == false)
@@ -112,6 +222,7 @@ public class GetQuantumTaskRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAdditionalAttributeNames() == null) ? 0 : getAdditionalAttributeNames().hashCode());
         hashCode = prime * hashCode + ((getQuantumTaskArn() == null) ? 0 : getQuantumTaskArn().hashCode());
         return hashCode;
     }

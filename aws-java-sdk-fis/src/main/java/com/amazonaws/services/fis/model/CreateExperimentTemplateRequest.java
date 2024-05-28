@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -74,6 +74,12 @@ public class CreateExperimentTemplateRequest extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private CreateExperimentTemplateLogConfigurationInput logConfiguration;
+    /**
+     * <p>
+     * The experiment options for the experiment template.
+     * </p>
+     */
+    private CreateExperimentTemplateExperimentOptionsInput experimentOptions;
 
     /**
      * <p>
@@ -516,6 +522,46 @@ public class CreateExperimentTemplateRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * The experiment options for the experiment template.
+     * </p>
+     * 
+     * @param experimentOptions
+     *        The experiment options for the experiment template.
+     */
+
+    public void setExperimentOptions(CreateExperimentTemplateExperimentOptionsInput experimentOptions) {
+        this.experimentOptions = experimentOptions;
+    }
+
+    /**
+     * <p>
+     * The experiment options for the experiment template.
+     * </p>
+     * 
+     * @return The experiment options for the experiment template.
+     */
+
+    public CreateExperimentTemplateExperimentOptionsInput getExperimentOptions() {
+        return this.experimentOptions;
+    }
+
+    /**
+     * <p>
+     * The experiment options for the experiment template.
+     * </p>
+     * 
+     * @param experimentOptions
+     *        The experiment options for the experiment template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateExperimentTemplateRequest withExperimentOptions(CreateExperimentTemplateExperimentOptionsInput experimentOptions) {
+        setExperimentOptions(experimentOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -542,7 +588,9 @@ public class CreateExperimentTemplateRequest extends com.amazonaws.AmazonWebServ
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getLogConfiguration() != null)
-            sb.append("LogConfiguration: ").append(getLogConfiguration());
+            sb.append("LogConfiguration: ").append(getLogConfiguration()).append(",");
+        if (getExperimentOptions() != null)
+            sb.append("ExperimentOptions: ").append(getExperimentOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -589,6 +637,10 @@ public class CreateExperimentTemplateRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getLogConfiguration() != null && other.getLogConfiguration().equals(this.getLogConfiguration()) == false)
             return false;
+        if (other.getExperimentOptions() == null ^ this.getExperimentOptions() == null)
+            return false;
+        if (other.getExperimentOptions() != null && other.getExperimentOptions().equals(this.getExperimentOptions()) == false)
+            return false;
         return true;
     }
 
@@ -605,6 +657,7 @@ public class CreateExperimentTemplateRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getLogConfiguration() == null) ? 0 : getLogConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getExperimentOptions() == null) ? 0 : getExperimentOptions().hashCode());
         return hashCode;
     }
 

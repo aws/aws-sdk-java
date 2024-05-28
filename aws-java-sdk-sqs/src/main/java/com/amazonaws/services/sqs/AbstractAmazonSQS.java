@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,11 @@ public class AbstractAmazonSQS implements AmazonSQS {
     @Override
     public AddPermissionResult addPermission(String queueUrl, String label, java.util.List<String> aWSAccountIds, java.util.List<String> actions) {
         return addPermission(new AddPermissionRequest().withQueueUrl(queueUrl).withLabel(label).withAWSAccountIds(aWSAccountIds).withActions(actions));
+    }
+
+    @Override
+    public CancelMessageMoveTaskResult cancelMessageMoveTask(CancelMessageMoveTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -134,6 +139,11 @@ public class AbstractAmazonSQS implements AmazonSQS {
     }
 
     @Override
+    public ListMessageMoveTasksResult listMessageMoveTasks(ListMessageMoveTasksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListQueueTagsResult listQueueTags(ListQueueTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -211,6 +221,11 @@ public class AbstractAmazonSQS implements AmazonSQS {
     @Override
     public SetQueueAttributesResult setQueueAttributes(String queueUrl, java.util.Map<String, String> attributes) {
         return setQueueAttributes(new SetQueueAttributesRequest().withQueueUrl(queueUrl).withAttributes(attributes));
+    }
+
+    @Override
+    public StartMessageMoveTaskResult startMessageMoveTask(StartMessageMoveTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

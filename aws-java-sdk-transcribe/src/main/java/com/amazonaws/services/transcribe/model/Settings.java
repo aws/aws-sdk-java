@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Allows additional optional settings in your request, including channel identification, alternative transcriptions,
- * and speaker labeling; allows you to apply custom vocabularies to your transcription job.
+ * and speaker partitioning. You can use that to apply custom vocabularies to your transcription job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/Settings" target="_top">AWS API
@@ -38,30 +38,26 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
     private String vocabularyName;
     /**
      * <p>
-     * Enables speaker identification (diarization) in your transcription output. Speaker identification labels the
-     * speech from individual speakers in your media file.
+     * Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech
+     * from individual speakers in your media file.
      * </p>
      * <p>
      * If you enable <code>ShowSpeakerLabels</code> in your request, you must also include <code>MaxSpeakerLabels</code>
      * .
      * </p>
      * <p>
-     * You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request.
-     * Including both parameters returns a <code>BadRequestException</code>.
-     * </p>
-     * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying
-     * speakers (diarization)</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.
      * </p>
      */
     private Boolean showSpeakerLabels;
     /**
      * <p>
-     * Specify the maximum number of speakers you want to identify in your media.
+     * Specify the maximum number of speakers you want to partition in your media.
      * </p>
      * <p>
-     * Note that if your media contains more speakers than the specified number, multiple speakers will be identified as
-     * a single speaker.
+     * Note that if your media contains more speakers than the specified number, multiple speakers are treated as a
+     * single speaker.
      * </p>
      * <p>
      * If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code> field to
@@ -76,10 +72,6 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Channel identification transcribes the audio on each channel independently, then appends the output for each
      * channel into one transcript.
-     * </p>
-     * <p>
-     * You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request.
-     * Including both parameters returns a <code>BadRequestException</code>.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing
@@ -138,7 +130,7 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
     private String vocabularyFilterName;
     /**
      * <p>
-     * Specify how you want your vocabulary filter applied to your transcript.
+     * Specify how you want your custom vocabulary filter applied to your transcript.
      * </p>
      * <p>
      * To replace words with <code>***</code>, choose <code>mask</code>.
@@ -200,36 +192,28 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enables speaker identification (diarization) in your transcription output. Speaker identification labels the
-     * speech from individual speakers in your media file.
+     * Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech
+     * from individual speakers in your media file.
      * </p>
      * <p>
      * If you enable <code>ShowSpeakerLabels</code> in your request, you must also include <code>MaxSpeakerLabels</code>
      * .
      * </p>
      * <p>
-     * You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request.
-     * Including both parameters returns a <code>BadRequestException</code>.
-     * </p>
-     * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying
-     * speakers (diarization)</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.
      * </p>
      * 
      * @param showSpeakerLabels
-     *        Enables speaker identification (diarization) in your transcription output. Speaker identification labels
-     *        the speech from individual speakers in your media file.</p>
+     *        Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the
+     *        speech from individual speakers in your media file.</p>
      *        <p>
      *        If you enable <code>ShowSpeakerLabels</code> in your request, you must also include
      *        <code>MaxSpeakerLabels</code>.
      *        </p>
      *        <p>
-     *        You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same
-     *        request. Including both parameters returns a <code>BadRequestException</code>.
-     *        </p>
-     *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying speakers
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers
      *        (diarization)</a>.
      */
 
@@ -239,35 +223,27 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enables speaker identification (diarization) in your transcription output. Speaker identification labels the
-     * speech from individual speakers in your media file.
+     * Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech
+     * from individual speakers in your media file.
      * </p>
      * <p>
      * If you enable <code>ShowSpeakerLabels</code> in your request, you must also include <code>MaxSpeakerLabels</code>
      * .
      * </p>
      * <p>
-     * You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request.
-     * Including both parameters returns a <code>BadRequestException</code>.
-     * </p>
-     * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying
-     * speakers (diarization)</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.
      * </p>
      * 
-     * @return Enables speaker identification (diarization) in your transcription output. Speaker identification labels
-     *         the speech from individual speakers in your media file.</p>
+     * @return Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the
+     *         speech from individual speakers in your media file.</p>
      *         <p>
      *         If you enable <code>ShowSpeakerLabels</code> in your request, you must also include
      *         <code>MaxSpeakerLabels</code>.
      *         </p>
      *         <p>
-     *         You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same
-     *         request. Including both parameters returns a <code>BadRequestException</code>.
-     *         </p>
-     *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying speakers
+     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers
      *         (diarization)</a>.
      */
 
@@ -277,36 +253,28 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enables speaker identification (diarization) in your transcription output. Speaker identification labels the
-     * speech from individual speakers in your media file.
+     * Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech
+     * from individual speakers in your media file.
      * </p>
      * <p>
      * If you enable <code>ShowSpeakerLabels</code> in your request, you must also include <code>MaxSpeakerLabels</code>
      * .
      * </p>
      * <p>
-     * You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request.
-     * Including both parameters returns a <code>BadRequestException</code>.
-     * </p>
-     * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying
-     * speakers (diarization)</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.
      * </p>
      * 
      * @param showSpeakerLabels
-     *        Enables speaker identification (diarization) in your transcription output. Speaker identification labels
-     *        the speech from individual speakers in your media file.</p>
+     *        Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the
+     *        speech from individual speakers in your media file.</p>
      *        <p>
      *        If you enable <code>ShowSpeakerLabels</code> in your request, you must also include
      *        <code>MaxSpeakerLabels</code>.
      *        </p>
      *        <p>
-     *        You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same
-     *        request. Including both parameters returns a <code>BadRequestException</code>.
-     *        </p>
-     *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying speakers
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers
      *        (diarization)</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -318,35 +286,27 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Enables speaker identification (diarization) in your transcription output. Speaker identification labels the
-     * speech from individual speakers in your media file.
+     * Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech
+     * from individual speakers in your media file.
      * </p>
      * <p>
      * If you enable <code>ShowSpeakerLabels</code> in your request, you must also include <code>MaxSpeakerLabels</code>
      * .
      * </p>
      * <p>
-     * You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request.
-     * Including both parameters returns a <code>BadRequestException</code>.
-     * </p>
-     * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying
-     * speakers (diarization)</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.
      * </p>
      * 
-     * @return Enables speaker identification (diarization) in your transcription output. Speaker identification labels
-     *         the speech from individual speakers in your media file.</p>
+     * @return Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the
+     *         speech from individual speakers in your media file.</p>
      *         <p>
      *         If you enable <code>ShowSpeakerLabels</code> in your request, you must also include
      *         <code>MaxSpeakerLabels</code>.
      *         </p>
      *         <p>
-     *         You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same
-     *         request. Including both parameters returns a <code>BadRequestException</code>.
-     *         </p>
-     *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying speakers
+     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers
      *         (diarization)</a>.
      */
 
@@ -356,11 +316,11 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specify the maximum number of speakers you want to identify in your media.
+     * Specify the maximum number of speakers you want to partition in your media.
      * </p>
      * <p>
-     * Note that if your media contains more speakers than the specified number, multiple speakers will be identified as
-     * a single speaker.
+     * Note that if your media contains more speakers than the specified number, multiple speakers are treated as a
+     * single speaker.
      * </p>
      * <p>
      * If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code> field to
@@ -368,10 +328,10 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param maxSpeakerLabels
-     *        Specify the maximum number of speakers you want to identify in your media.</p>
+     *        Specify the maximum number of speakers you want to partition in your media.</p>
      *        <p>
-     *        Note that if your media contains more speakers than the specified number, multiple speakers will be
-     *        identified as a single speaker.
+     *        Note that if your media contains more speakers than the specified number, multiple speakers are treated as
+     *        a single speaker.
      *        </p>
      *        <p>
      *        If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code>
@@ -384,21 +344,21 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specify the maximum number of speakers you want to identify in your media.
+     * Specify the maximum number of speakers you want to partition in your media.
      * </p>
      * <p>
-     * Note that if your media contains more speakers than the specified number, multiple speakers will be identified as
-     * a single speaker.
+     * Note that if your media contains more speakers than the specified number, multiple speakers are treated as a
+     * single speaker.
      * </p>
      * <p>
      * If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code> field to
      * true.
      * </p>
      * 
-     * @return Specify the maximum number of speakers you want to identify in your media.</p>
+     * @return Specify the maximum number of speakers you want to partition in your media.</p>
      *         <p>
-     *         Note that if your media contains more speakers than the specified number, multiple speakers will be
-     *         identified as a single speaker.
+     *         Note that if your media contains more speakers than the specified number, multiple speakers are treated
+     *         as a single speaker.
      *         </p>
      *         <p>
      *         If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code>
@@ -411,11 +371,11 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specify the maximum number of speakers you want to identify in your media.
+     * Specify the maximum number of speakers you want to partition in your media.
      * </p>
      * <p>
-     * Note that if your media contains more speakers than the specified number, multiple speakers will be identified as
-     * a single speaker.
+     * Note that if your media contains more speakers than the specified number, multiple speakers are treated as a
+     * single speaker.
      * </p>
      * <p>
      * If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code> field to
@@ -423,10 +383,10 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param maxSpeakerLabels
-     *        Specify the maximum number of speakers you want to identify in your media.</p>
+     *        Specify the maximum number of speakers you want to partition in your media.</p>
      *        <p>
-     *        Note that if your media contains more speakers than the specified number, multiple speakers will be
-     *        identified as a single speaker.
+     *        Note that if your media contains more speakers than the specified number, multiple speakers are treated as
+     *        a single speaker.
      *        </p>
      *        <p>
      *        If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code>
@@ -448,10 +408,6 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
      * channel into one transcript.
      * </p>
      * <p>
-     * You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request.
-     * Including both parameters returns a <code>BadRequestException</code>.
-     * </p>
-     * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing
      * multi-channel audio</a>.
      * </p>
@@ -461,10 +417,6 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        Channel identification transcribes the audio on each channel independently, then appends the output for
      *        each channel into one transcript.
-     *        </p>
-     *        <p>
-     *        You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same
-     *        request. Including both parameters returns a <code>BadRequestException</code>.
      *        </p>
      *        <p>
      *        For more information, see <a
@@ -485,10 +437,6 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
      * channel into one transcript.
      * </p>
      * <p>
-     * You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request.
-     * Including both parameters returns a <code>BadRequestException</code>.
-     * </p>
-     * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing
      * multi-channel audio</a>.
      * </p>
@@ -497,10 +445,6 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         Channel identification transcribes the audio on each channel independently, then appends the output for
      *         each channel into one transcript.
-     *         </p>
-     *         <p>
-     *         You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same
-     *         request. Including both parameters returns a <code>BadRequestException</code>.
      *         </p>
      *         <p>
      *         For more information, see <a
@@ -521,10 +465,6 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
      * channel into one transcript.
      * </p>
      * <p>
-     * You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request.
-     * Including both parameters returns a <code>BadRequestException</code>.
-     * </p>
-     * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing
      * multi-channel audio</a>.
      * </p>
@@ -534,10 +474,6 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        Channel identification transcribes the audio on each channel independently, then appends the output for
      *        each channel into one transcript.
-     *        </p>
-     *        <p>
-     *        You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same
-     *        request. Including both parameters returns a <code>BadRequestException</code>.
      *        </p>
      *        <p>
      *        For more information, see <a
@@ -560,10 +496,6 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
      * channel into one transcript.
      * </p>
      * <p>
-     * You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request.
-     * Including both parameters returns a <code>BadRequestException</code>.
-     * </p>
-     * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing
      * multi-channel audio</a>.
      * </p>
@@ -572,10 +504,6 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         Channel identification transcribes the audio on each channel independently, then appends the output for
      *         each channel into one transcript.
-     *         </p>
-     *         <p>
-     *         You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same
-     *         request. Including both parameters returns a <code>BadRequestException</code>.
      *         </p>
      *         <p>
      *         For more information, see <a
@@ -930,7 +858,7 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specify how you want your vocabulary filter applied to your transcript.
+     * Specify how you want your custom vocabulary filter applied to your transcript.
      * </p>
      * <p>
      * To replace words with <code>***</code>, choose <code>mask</code>.
@@ -943,7 +871,7 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param vocabularyFilterMethod
-     *        Specify how you want your vocabulary filter applied to your transcript.</p>
+     *        Specify how you want your custom vocabulary filter applied to your transcript.</p>
      *        <p>
      *        To replace words with <code>***</code>, choose <code>mask</code>.
      *        </p>
@@ -961,7 +889,7 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specify how you want your vocabulary filter applied to your transcript.
+     * Specify how you want your custom vocabulary filter applied to your transcript.
      * </p>
      * <p>
      * To replace words with <code>***</code>, choose <code>mask</code>.
@@ -973,7 +901,7 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
      * To flag words without changing them, choose <code>tag</code>.
      * </p>
      * 
-     * @return Specify how you want your vocabulary filter applied to your transcript.</p>
+     * @return Specify how you want your custom vocabulary filter applied to your transcript.</p>
      *         <p>
      *         To replace words with <code>***</code>, choose <code>mask</code>.
      *         </p>
@@ -991,7 +919,7 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specify how you want your vocabulary filter applied to your transcript.
+     * Specify how you want your custom vocabulary filter applied to your transcript.
      * </p>
      * <p>
      * To replace words with <code>***</code>, choose <code>mask</code>.
@@ -1004,7 +932,7 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param vocabularyFilterMethod
-     *        Specify how you want your vocabulary filter applied to your transcript.</p>
+     *        Specify how you want your custom vocabulary filter applied to your transcript.</p>
      *        <p>
      *        To replace words with <code>***</code>, choose <code>mask</code>.
      *        </p>
@@ -1024,7 +952,7 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specify how you want your vocabulary filter applied to your transcript.
+     * Specify how you want your custom vocabulary filter applied to your transcript.
      * </p>
      * <p>
      * To replace words with <code>***</code>, choose <code>mask</code>.
@@ -1037,7 +965,7 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param vocabularyFilterMethod
-     *        Specify how you want your vocabulary filter applied to your transcript.</p>
+     *        Specify how you want your custom vocabulary filter applied to your transcript.</p>
      *        <p>
      *        To replace words with <code>***</code>, choose <code>mask</code>.
      *        </p>

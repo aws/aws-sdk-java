@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,6 +62,12 @@ public class Face implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String indexFacesModelVersion;
+    /**
+     * <p>
+     * Unique identifier assigned to the user.
+     * </p>
+     */
+    private String userId;
 
     /**
      * <p>
@@ -304,6 +310,46 @@ public class Face implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Unique identifier assigned to the user.
+     * </p>
+     * 
+     * @param userId
+     *        Unique identifier assigned to the user.
+     */
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    /**
+     * <p>
+     * Unique identifier assigned to the user.
+     * </p>
+     * 
+     * @return Unique identifier assigned to the user.
+     */
+
+    public String getUserId() {
+        return this.userId;
+    }
+
+    /**
+     * <p>
+     * Unique identifier assigned to the user.
+     * </p>
+     * 
+     * @param userId
+     *        Unique identifier assigned to the user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Face withUserId(String userId) {
+        setUserId(userId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -326,7 +372,9 @@ public class Face implements Serializable, Cloneable, StructuredPojo {
         if (getConfidence() != null)
             sb.append("Confidence: ").append(getConfidence()).append(",");
         if (getIndexFacesModelVersion() != null)
-            sb.append("IndexFacesModelVersion: ").append(getIndexFacesModelVersion());
+            sb.append("IndexFacesModelVersion: ").append(getIndexFacesModelVersion()).append(",");
+        if (getUserId() != null)
+            sb.append("UserId: ").append(getUserId());
         sb.append("}");
         return sb.toString();
     }
@@ -365,6 +413,10 @@ public class Face implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getIndexFacesModelVersion() != null && other.getIndexFacesModelVersion().equals(this.getIndexFacesModelVersion()) == false)
             return false;
+        if (other.getUserId() == null ^ this.getUserId() == null)
+            return false;
+        if (other.getUserId() != null && other.getUserId().equals(this.getUserId()) == false)
+            return false;
         return true;
     }
 
@@ -379,6 +431,7 @@ public class Face implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getExternalImageId() == null) ? 0 : getExternalImageId().hashCode());
         hashCode = prime * hashCode + ((getConfidence() == null) ? 0 : getConfidence().hashCode());
         hashCode = prime * hashCode + ((getIndexFacesModelVersion() == null) ? 0 : getIndexFacesModelVersion().hashCode());
+        hashCode = prime * hashCode + ((getUserId() == null) ? 0 : getUserId().hashCode());
         return hashCode;
     }
 

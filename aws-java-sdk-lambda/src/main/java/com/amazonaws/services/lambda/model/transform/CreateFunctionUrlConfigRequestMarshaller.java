@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class CreateFunctionUrlConfigRequestMarshaller {
             .marshallLocationName("AuthType").build();
     private static final MarshallingInfo<StructuredPojo> CORS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Cors").build();
+    private static final MarshallingInfo<String> INVOKEMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InvokeMode").build();
 
     private static final CreateFunctionUrlConfigRequestMarshaller instance = new CreateFunctionUrlConfigRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class CreateFunctionUrlConfigRequestMarshaller {
             protocolMarshaller.marshall(createFunctionUrlConfigRequest.getQualifier(), QUALIFIER_BINDING);
             protocolMarshaller.marshall(createFunctionUrlConfigRequest.getAuthType(), AUTHTYPE_BINDING);
             protocolMarshaller.marshall(createFunctionUrlConfigRequest.getCors(), CORS_BINDING);
+            protocolMarshaller.marshall(createFunctionUrlConfigRequest.getInvokeMode(), INVOKEMODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

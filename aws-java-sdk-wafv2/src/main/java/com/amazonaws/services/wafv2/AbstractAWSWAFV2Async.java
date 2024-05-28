@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,6 +53,19 @@ public class AbstractAWSWAFV2Async extends AbstractAWSWAFV2 implements AWSWAFV2A
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAPIKeyResult> createAPIKeyAsync(CreateAPIKeyRequest request) {
+
+        return createAPIKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAPIKeyResult> createAPIKeyAsync(CreateAPIKeyRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateAPIKeyRequest, CreateAPIKeyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateIPSetResult> createIPSetAsync(CreateIPSetRequest request) {
 
         return createIPSetAsync(request, null);
@@ -100,6 +113,19 @@ public class AbstractAWSWAFV2Async extends AbstractAWSWAFV2 implements AWSWAFV2A
     @Override
     public java.util.concurrent.Future<CreateWebACLResult> createWebACLAsync(CreateWebACLRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateWebACLRequest, CreateWebACLResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAPIKeyResult> deleteAPIKeyAsync(DeleteAPIKeyRequest request) {
+
+        return deleteAPIKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAPIKeyResult> deleteAPIKeyAsync(DeleteAPIKeyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAPIKeyRequest, DeleteAPIKeyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -198,6 +224,34 @@ public class AbstractAWSWAFV2Async extends AbstractAWSWAFV2 implements AWSWAFV2A
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAllManagedProductsResult> describeAllManagedProductsAsync(DescribeAllManagedProductsRequest request) {
+
+        return describeAllManagedProductsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAllManagedProductsResult> describeAllManagedProductsAsync(DescribeAllManagedProductsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAllManagedProductsRequest, DescribeAllManagedProductsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeManagedProductsByVendorResult> describeManagedProductsByVendorAsync(
+            DescribeManagedProductsByVendorRequest request) {
+
+        return describeManagedProductsByVendorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeManagedProductsByVendorResult> describeManagedProductsByVendorAsync(
+            DescribeManagedProductsByVendorRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeManagedProductsByVendorRequest, DescribeManagedProductsByVendorResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeManagedRuleGroupResult> describeManagedRuleGroupAsync(DescribeManagedRuleGroupRequest request) {
 
         return describeManagedRuleGroupAsync(request, null);
@@ -232,6 +286,19 @@ public class AbstractAWSWAFV2Async extends AbstractAWSWAFV2 implements AWSWAFV2A
     @Override
     public java.util.concurrent.Future<GenerateMobileSdkReleaseUrlResult> generateMobileSdkReleaseUrlAsync(GenerateMobileSdkReleaseUrlRequest request,
             com.amazonaws.handlers.AsyncHandler<GenerateMobileSdkReleaseUrlRequest, GenerateMobileSdkReleaseUrlResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDecryptedAPIKeyResult> getDecryptedAPIKeyAsync(GetDecryptedAPIKeyRequest request) {
+
+        return getDecryptedAPIKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDecryptedAPIKeyResult> getDecryptedAPIKeyAsync(GetDecryptedAPIKeyRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDecryptedAPIKeyRequest, GetDecryptedAPIKeyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -377,6 +444,19 @@ public class AbstractAWSWAFV2Async extends AbstractAWSWAFV2 implements AWSWAFV2A
     @Override
     public java.util.concurrent.Future<GetWebACLForResourceResult> getWebACLForResourceAsync(GetWebACLForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<GetWebACLForResourceRequest, GetWebACLForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAPIKeysResult> listAPIKeysAsync(ListAPIKeysRequest request) {
+
+        return listAPIKeysAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAPIKeysResult> listAPIKeysAsync(ListAPIKeysRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAPIKeysRequest, ListAPIKeysResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

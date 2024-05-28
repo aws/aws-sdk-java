@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,6 +58,12 @@ public class Order implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String orderArn;
+    /**
+     * <p>
+     * A list of the network resources placed in the order.
+     * </p>
+     */
+    private java.util.List<OrderedResourceDefinition> orderedResources;
     /**
      * <p>
      * The shipping address of the order.
@@ -292,6 +298,76 @@ public class Order implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * A list of the network resources placed in the order.
+     * </p>
+     * 
+     * @return A list of the network resources placed in the order.
+     */
+
+    public java.util.List<OrderedResourceDefinition> getOrderedResources() {
+        return orderedResources;
+    }
+
+    /**
+     * <p>
+     * A list of the network resources placed in the order.
+     * </p>
+     * 
+     * @param orderedResources
+     *        A list of the network resources placed in the order.
+     */
+
+    public void setOrderedResources(java.util.Collection<OrderedResourceDefinition> orderedResources) {
+        if (orderedResources == null) {
+            this.orderedResources = null;
+            return;
+        }
+
+        this.orderedResources = new java.util.ArrayList<OrderedResourceDefinition>(orderedResources);
+    }
+
+    /**
+     * <p>
+     * A list of the network resources placed in the order.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setOrderedResources(java.util.Collection)} or {@link #withOrderedResources(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param orderedResources
+     *        A list of the network resources placed in the order.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Order withOrderedResources(OrderedResourceDefinition... orderedResources) {
+        if (this.orderedResources == null) {
+            setOrderedResources(new java.util.ArrayList<OrderedResourceDefinition>(orderedResources.length));
+        }
+        for (OrderedResourceDefinition ele : orderedResources) {
+            this.orderedResources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the network resources placed in the order.
+     * </p>
+     * 
+     * @param orderedResources
+     *        A list of the network resources placed in the order.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Order withOrderedResources(java.util.Collection<OrderedResourceDefinition> orderedResources) {
+        setOrderedResources(orderedResources);
+        return this;
+    }
+
+    /**
+     * <p>
      * The shipping address of the order.
      * </p>
      * 
@@ -422,6 +498,8 @@ public class Order implements Serializable, Cloneable, StructuredPojo {
             sb.append("NetworkSiteArn: ").append(getNetworkSiteArn()).append(",");
         if (getOrderArn() != null)
             sb.append("OrderArn: ").append(getOrderArn()).append(",");
+        if (getOrderedResources() != null)
+            sb.append("OrderedResources: ").append(getOrderedResources()).append(",");
         if (getShippingAddress() != null)
             sb.append("ShippingAddress: ").append(getShippingAddress()).append(",");
         if (getTrackingInformation() != null)
@@ -460,6 +538,10 @@ public class Order implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getOrderArn() != null && other.getOrderArn().equals(this.getOrderArn()) == false)
             return false;
+        if (other.getOrderedResources() == null ^ this.getOrderedResources() == null)
+            return false;
+        if (other.getOrderedResources() != null && other.getOrderedResources().equals(this.getOrderedResources()) == false)
+            return false;
         if (other.getShippingAddress() == null ^ this.getShippingAddress() == null)
             return false;
         if (other.getShippingAddress() != null && other.getShippingAddress().equals(this.getShippingAddress()) == false)
@@ -481,6 +563,7 @@ public class Order implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getNetworkArn() == null) ? 0 : getNetworkArn().hashCode());
         hashCode = prime * hashCode + ((getNetworkSiteArn() == null) ? 0 : getNetworkSiteArn().hashCode());
         hashCode = prime * hashCode + ((getOrderArn() == null) ? 0 : getOrderArn().hashCode());
+        hashCode = prime * hashCode + ((getOrderedResources() == null) ? 0 : getOrderedResources().hashCode());
         hashCode = prime * hashCode + ((getShippingAddress() == null) ? 0 : getShippingAddress().hashCode());
         hashCode = prime * hashCode + ((getTrackingInformation() == null) ? 0 : getTrackingInformation().hashCode());
         return hashCode;

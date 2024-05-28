@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -84,6 +84,11 @@ public class AbstractAWSIoTSiteWise implements AWSIoTSiteWise {
     }
 
     @Override
+    public CreateAssetModelCompositeModelResult createAssetModelCompositeModel(CreateAssetModelCompositeModelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateBulkImportJobResult createBulkImportJob(CreateBulkImportJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -124,6 +129,11 @@ public class AbstractAWSIoTSiteWise implements AWSIoTSiteWise {
     }
 
     @Override
+    public DeleteAssetModelCompositeModelResult deleteAssetModelCompositeModel(DeleteAssetModelCompositeModelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteDashboardResult deleteDashboard(DeleteDashboardRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -154,12 +164,27 @@ public class AbstractAWSIoTSiteWise implements AWSIoTSiteWise {
     }
 
     @Override
+    public DescribeActionResult describeAction(DescribeActionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeAssetResult describeAsset(DescribeAssetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public DescribeAssetCompositeModelResult describeAssetCompositeModel(DescribeAssetCompositeModelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeAssetModelResult describeAssetModel(DescribeAssetModelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAssetModelCompositeModelResult describeAssetModelCompositeModel(DescribeAssetModelCompositeModelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -229,6 +254,16 @@ public class AbstractAWSIoTSiteWise implements AWSIoTSiteWise {
     }
 
     @Override
+    public ExecuteActionResult executeAction(ExecuteActionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ExecuteQueryResult executeQuery(ExecuteQueryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetAssetPropertyAggregatesResult getAssetPropertyAggregates(GetAssetPropertyAggregatesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -250,6 +285,16 @@ public class AbstractAWSIoTSiteWise implements AWSIoTSiteWise {
 
     @Override
     public ListAccessPoliciesResult listAccessPolicies(ListAccessPoliciesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListActionsResult listActions(ListActionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAssetModelCompositeModelsResult listAssetModelCompositeModels(ListAssetModelCompositeModelsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -285,6 +330,11 @@ public class AbstractAWSIoTSiteWise implements AWSIoTSiteWise {
 
     @Override
     public ListBulkImportJobsResult listBulkImportJobs(ListBulkImportJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCompositionRelationshipsResult listCompositionRelationships(ListCompositionRelationshipsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -360,6 +410,11 @@ public class AbstractAWSIoTSiteWise implements AWSIoTSiteWise {
 
     @Override
     public UpdateAssetModelResult updateAssetModel(UpdateAssetModelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAssetModelCompositeModelResult updateAssetModelCompositeModel(UpdateAssetModelCompositeModelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

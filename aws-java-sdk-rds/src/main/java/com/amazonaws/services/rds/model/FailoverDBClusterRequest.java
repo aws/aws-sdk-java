@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class FailoverDBClusterRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A DB cluster identifier to force a failover for. This parameter isn't case-sensitive.
+     * The identifier of the DB cluster to force a failover for. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -36,7 +36,7 @@ public class FailoverDBClusterRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * Must match the identifier of an existing DBCluster.
+     * Must match the identifier of an existing DB cluster.
      * </p>
      * </li>
      * </ul>
@@ -58,7 +58,7 @@ public class FailoverDBClusterRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A DB cluster identifier to force a failover for. This parameter isn't case-sensitive.
+     * The identifier of the DB cluster to force a failover for. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -66,20 +66,20 @@ public class FailoverDBClusterRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * Must match the identifier of an existing DBCluster.
+     * Must match the identifier of an existing DB cluster.
      * </p>
      * </li>
      * </ul>
      * 
      * @param dBClusterIdentifier
-     *        A DB cluster identifier to force a failover for. This parameter isn't case-sensitive.</p>
+     *        The identifier of the DB cluster to force a failover for. This parameter isn't case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Must match the identifier of an existing DBCluster.
+     *        Must match the identifier of an existing DB cluster.
      *        </p>
      *        </li>
      */
@@ -90,7 +90,7 @@ public class FailoverDBClusterRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A DB cluster identifier to force a failover for. This parameter isn't case-sensitive.
+     * The identifier of the DB cluster to force a failover for. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -98,19 +98,19 @@ public class FailoverDBClusterRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * Must match the identifier of an existing DBCluster.
+     * Must match the identifier of an existing DB cluster.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return A DB cluster identifier to force a failover for. This parameter isn't case-sensitive.</p>
+     * @return The identifier of the DB cluster to force a failover for. This parameter isn't case-sensitive.</p>
      *         <p>
      *         Constraints:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Must match the identifier of an existing DBCluster.
+     *         Must match the identifier of an existing DB cluster.
      *         </p>
      *         </li>
      */
@@ -121,7 +121,7 @@ public class FailoverDBClusterRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A DB cluster identifier to force a failover for. This parameter isn't case-sensitive.
+     * The identifier of the DB cluster to force a failover for. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -129,20 +129,20 @@ public class FailoverDBClusterRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * Must match the identifier of an existing DBCluster.
+     * Must match the identifier of an existing DB cluster.
      * </p>
      * </li>
      * </ul>
      * 
      * @param dBClusterIdentifier
-     *        A DB cluster identifier to force a failover for. This parameter isn't case-sensitive.</p>
+     *        The identifier of the DB cluster to force a failover for. This parameter isn't case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Must match the identifier of an existing DBCluster.
+     *        Must match the identifier of an existing DB cluster.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

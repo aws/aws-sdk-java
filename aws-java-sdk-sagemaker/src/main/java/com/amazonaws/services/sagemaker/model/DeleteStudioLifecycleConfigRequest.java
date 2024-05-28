@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,18 @@ public class DeleteStudioLifecycleConfigRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the Studio Lifecycle Configuration to delete.
+     * The name of the Amazon SageMaker Studio Lifecycle Configuration to delete.
      * </p>
      */
     private String studioLifecycleConfigName;
 
     /**
      * <p>
-     * The name of the Studio Lifecycle Configuration to delete.
+     * The name of the Amazon SageMaker Studio Lifecycle Configuration to delete.
      * </p>
      * 
      * @param studioLifecycleConfigName
-     *        The name of the Studio Lifecycle Configuration to delete.
+     *        The name of the Amazon SageMaker Studio Lifecycle Configuration to delete.
      */
 
     public void setStudioLifecycleConfigName(String studioLifecycleConfigName) {
@@ -47,10 +47,10 @@ public class DeleteStudioLifecycleConfigRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the Studio Lifecycle Configuration to delete.
+     * The name of the Amazon SageMaker Studio Lifecycle Configuration to delete.
      * </p>
      * 
-     * @return The name of the Studio Lifecycle Configuration to delete.
+     * @return The name of the Amazon SageMaker Studio Lifecycle Configuration to delete.
      */
 
     public String getStudioLifecycleConfigName() {
@@ -59,11 +59,11 @@ public class DeleteStudioLifecycleConfigRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the Studio Lifecycle Configuration to delete.
+     * The name of the Amazon SageMaker Studio Lifecycle Configuration to delete.
      * </p>
      * 
      * @param studioLifecycleConfigName
-     *        The name of the Studio Lifecycle Configuration to delete.
+     *        The name of the Amazon SageMaker Studio Lifecycle Configuration to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

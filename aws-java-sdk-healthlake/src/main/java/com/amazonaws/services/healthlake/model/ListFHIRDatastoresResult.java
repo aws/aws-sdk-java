@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class ListFHIRDatastoresResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * All properties associated with the listed Data Stores.
+     * All properties associated with the listed data stores.
      * </p>
      */
     private java.util.List<DatastoreProperties> datastorePropertiesList;
@@ -38,10 +38,10 @@ public class ListFHIRDatastoresResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * All properties associated with the listed Data Stores.
+     * All properties associated with the listed data stores.
      * </p>
      * 
-     * @return All properties associated with the listed Data Stores.
+     * @return All properties associated with the listed data stores.
      */
 
     public java.util.List<DatastoreProperties> getDatastorePropertiesList() {
@@ -50,11 +50,11 @@ public class ListFHIRDatastoresResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * All properties associated with the listed Data Stores.
+     * All properties associated with the listed data stores.
      * </p>
      * 
      * @param datastorePropertiesList
-     *        All properties associated with the listed Data Stores.
+     *        All properties associated with the listed data stores.
      */
 
     public void setDatastorePropertiesList(java.util.Collection<DatastoreProperties> datastorePropertiesList) {
@@ -68,7 +68,7 @@ public class ListFHIRDatastoresResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * All properties associated with the listed Data Stores.
+     * All properties associated with the listed data stores.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListFHIRDatastoresResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param datastorePropertiesList
-     *        All properties associated with the listed Data Stores.
+     *        All properties associated with the listed data stores.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListFHIRDatastoresResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * All properties associated with the listed Data Stores.
+     * All properties associated with the listed data stores.
      * </p>
      * 
      * @param datastorePropertiesList
-     *        All properties associated with the listed Data Stores.
+     *        All properties associated with the listed data stores.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

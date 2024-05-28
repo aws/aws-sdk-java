@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,6 +71,42 @@ public class ModelSummaryJsonUnmarshaller implements Unmarshaller<ModelSummary, 
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
                     modelSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("ActiveModelVersion", targetDepth)) {
+                    context.nextToken();
+                    modelSummary.setActiveModelVersion(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("ActiveModelVersionArn", targetDepth)) {
+                    context.nextToken();
+                    modelSummary.setActiveModelVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LatestScheduledRetrainingStatus", targetDepth)) {
+                    context.nextToken();
+                    modelSummary.setLatestScheduledRetrainingStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LatestScheduledRetrainingModelVersion", targetDepth)) {
+                    context.nextToken();
+                    modelSummary.setLatestScheduledRetrainingModelVersion(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("LatestScheduledRetrainingStartTime", targetDepth)) {
+                    context.nextToken();
+                    modelSummary.setLatestScheduledRetrainingStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("NextScheduledRetrainingStartDate", targetDepth)) {
+                    context.nextToken();
+                    modelSummary.setNextScheduledRetrainingStartDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("RetrainingSchedulerStatus", targetDepth)) {
+                    context.nextToken();
+                    modelSummary.setRetrainingSchedulerStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ModelDiagnosticsOutputConfiguration", targetDepth)) {
+                    context.nextToken();
+                    modelSummary.setModelDiagnosticsOutputConfiguration(ModelDiagnosticsOutputConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ModelQuality", targetDepth)) {
+                    context.nextToken();
+                    modelSummary.setModelQuality(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

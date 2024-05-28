@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,7 +63,8 @@ public class BatchExecuteStatementResult extends com.amazonaws.AmazonWebServiceR
     private String secretArn;
     /**
      * <p>
-     * The serverless workgroup name. This element is not returned when connecting to a provisioned cluster.
+     * The serverless workgroup name or Amazon Resource Name (ARN). This element is not returned when connecting to a
+     * provisioned cluster.
      * </p>
      */
     private String workgroupName;
@@ -322,11 +323,13 @@ public class BatchExecuteStatementResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The serverless workgroup name. This element is not returned when connecting to a provisioned cluster.
+     * The serverless workgroup name or Amazon Resource Name (ARN). This element is not returned when connecting to a
+     * provisioned cluster.
      * </p>
      * 
      * @param workgroupName
-     *        The serverless workgroup name. This element is not returned when connecting to a provisioned cluster.
+     *        The serverless workgroup name or Amazon Resource Name (ARN). This element is not returned when connecting
+     *        to a provisioned cluster.
      */
 
     public void setWorkgroupName(String workgroupName) {
@@ -335,10 +338,12 @@ public class BatchExecuteStatementResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The serverless workgroup name. This element is not returned when connecting to a provisioned cluster.
+     * The serverless workgroup name or Amazon Resource Name (ARN). This element is not returned when connecting to a
+     * provisioned cluster.
      * </p>
      * 
-     * @return The serverless workgroup name. This element is not returned when connecting to a provisioned cluster.
+     * @return The serverless workgroup name or Amazon Resource Name (ARN). This element is not returned when connecting
+     *         to a provisioned cluster.
      */
 
     public String getWorkgroupName() {
@@ -347,11 +352,13 @@ public class BatchExecuteStatementResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The serverless workgroup name. This element is not returned when connecting to a provisioned cluster.
+     * The serverless workgroup name or Amazon Resource Name (ARN). This element is not returned when connecting to a
+     * provisioned cluster.
      * </p>
      * 
      * @param workgroupName
-     *        The serverless workgroup name. This element is not returned when connecting to a provisioned cluster.
+     *        The serverless workgroup name or Amazon Resource Name (ARN). This element is not returned when connecting
+     *        to a provisioned cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

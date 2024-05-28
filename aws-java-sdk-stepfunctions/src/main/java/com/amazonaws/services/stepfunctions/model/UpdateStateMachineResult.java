@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,21 @@ public class UpdateStateMachineResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private java.util.Date updateDate;
+    /**
+     * <p>
+     * The revision identifier for the updated state machine.
+     * </p>
+     */
+    private String revisionId;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the published state machine version.
+     * </p>
+     * <p>
+     * If the <code>publish</code> parameter isn't set to <code>true</code>, this field returns null.
+     * </p>
+     */
+    private String stateMachineVersionArn;
 
     /**
      * <p>
@@ -71,6 +86,101 @@ public class UpdateStateMachineResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The revision identifier for the updated state machine.
+     * </p>
+     * 
+     * @param revisionId
+     *        The revision identifier for the updated state machine.
+     */
+
+    public void setRevisionId(String revisionId) {
+        this.revisionId = revisionId;
+    }
+
+    /**
+     * <p>
+     * The revision identifier for the updated state machine.
+     * </p>
+     * 
+     * @return The revision identifier for the updated state machine.
+     */
+
+    public String getRevisionId() {
+        return this.revisionId;
+    }
+
+    /**
+     * <p>
+     * The revision identifier for the updated state machine.
+     * </p>
+     * 
+     * @param revisionId
+     *        The revision identifier for the updated state machine.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateStateMachineResult withRevisionId(String revisionId) {
+        setRevisionId(revisionId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the published state machine version.
+     * </p>
+     * <p>
+     * If the <code>publish</code> parameter isn't set to <code>true</code>, this field returns null.
+     * </p>
+     * 
+     * @param stateMachineVersionArn
+     *        The Amazon Resource Name (ARN) of the published state machine version.</p>
+     *        <p>
+     *        If the <code>publish</code> parameter isn't set to <code>true</code>, this field returns null.
+     */
+
+    public void setStateMachineVersionArn(String stateMachineVersionArn) {
+        this.stateMachineVersionArn = stateMachineVersionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the published state machine version.
+     * </p>
+     * <p>
+     * If the <code>publish</code> parameter isn't set to <code>true</code>, this field returns null.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the published state machine version.</p>
+     *         <p>
+     *         If the <code>publish</code> parameter isn't set to <code>true</code>, this field returns null.
+     */
+
+    public String getStateMachineVersionArn() {
+        return this.stateMachineVersionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the published state machine version.
+     * </p>
+     * <p>
+     * If the <code>publish</code> parameter isn't set to <code>true</code>, this field returns null.
+     * </p>
+     * 
+     * @param stateMachineVersionArn
+     *        The Amazon Resource Name (ARN) of the published state machine version.</p>
+     *        <p>
+     *        If the <code>publish</code> parameter isn't set to <code>true</code>, this field returns null.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateStateMachineResult withStateMachineVersionArn(String stateMachineVersionArn) {
+        setStateMachineVersionArn(stateMachineVersionArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -83,7 +193,11 @@ public class UpdateStateMachineResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getUpdateDate() != null)
-            sb.append("UpdateDate: ").append(getUpdateDate());
+            sb.append("UpdateDate: ").append(getUpdateDate()).append(",");
+        if (getRevisionId() != null)
+            sb.append("RevisionId: ").append(getRevisionId()).append(",");
+        if (getStateMachineVersionArn() != null)
+            sb.append("StateMachineVersionArn: ").append(getStateMachineVersionArn());
         sb.append("}");
         return sb.toString();
     }
@@ -102,6 +216,14 @@ public class UpdateStateMachineResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getUpdateDate() != null && other.getUpdateDate().equals(this.getUpdateDate()) == false)
             return false;
+        if (other.getRevisionId() == null ^ this.getRevisionId() == null)
+            return false;
+        if (other.getRevisionId() != null && other.getRevisionId().equals(this.getRevisionId()) == false)
+            return false;
+        if (other.getStateMachineVersionArn() == null ^ this.getStateMachineVersionArn() == null)
+            return false;
+        if (other.getStateMachineVersionArn() != null && other.getStateMachineVersionArn().equals(this.getStateMachineVersionArn()) == false)
+            return false;
         return true;
     }
 
@@ -111,6 +233,8 @@ public class UpdateStateMachineResult extends com.amazonaws.AmazonWebServiceResu
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getUpdateDate() == null) ? 0 : getUpdateDate().hashCode());
+        hashCode = prime * hashCode + ((getRevisionId() == null) ? 0 : getRevisionId().hashCode());
+        hashCode = prime * hashCode + ((getStateMachineVersionArn() == null) ? 0 : getStateMachineVersionArn().hashCode());
         return hashCode;
     }
 

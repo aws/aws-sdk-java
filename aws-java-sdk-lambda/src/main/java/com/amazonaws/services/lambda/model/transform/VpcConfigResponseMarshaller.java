@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,8 @@ public class VpcConfigResponseMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecurityGroupIds").build();
     private static final MarshallingInfo<String> VPCID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("VpcId").build();
+    private static final MarshallingInfo<Boolean> IPV6ALLOWEDFORDUALSTACK_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Ipv6AllowedForDualStack").build();
 
     private static final VpcConfigResponseMarshaller instance = new VpcConfigResponseMarshaller();
 
@@ -54,6 +56,7 @@ public class VpcConfigResponseMarshaller {
             protocolMarshaller.marshall(vpcConfigResponse.getSubnetIds(), SUBNETIDS_BINDING);
             protocolMarshaller.marshall(vpcConfigResponse.getSecurityGroupIds(), SECURITYGROUPIDS_BINDING);
             protocolMarshaller.marshall(vpcConfigResponse.getVpcId(), VPCID_BINDING);
+            protocolMarshaller.marshall(vpcConfigResponse.getIpv6AllowedForDualStack(), IPV6ALLOWEDFORDUALSTACK_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

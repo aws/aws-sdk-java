@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A list of nested <a>Filter</a> objects. A resource must satisfy the conditions of all filters to be included in the
- * results returned from the <a>Search</a> API.
+ * A list of nested <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Filter.html">Filter</a>
+ * objects. A resource must satisfy the conditions of all filters to be included in the results returned from the <a
+ * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API.
  * </p>
  * <p>
  * For example, to filter on a training job's <code>InputDataConfig</code> property with a specific channel name and

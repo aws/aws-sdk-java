@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,16 @@ public class ComputeCapacity implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private Integer desiredInstances;
+    /**
+     * <p>
+     * The desired number of user sessions for a multi-session fleet. This is not allowed for single-session fleets.
+     * </p>
+     * <p>
+     * When you create a fleet, you must set either the DesiredSessions or DesiredInstances attribute, based on the type
+     * of fleet you create. You can’t define both attributes or leave both attributes blank.
+     * </p>
+     */
+    private Integer desiredSessions;
 
     /**
      * <p>
@@ -76,6 +86,70 @@ public class ComputeCapacity implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The desired number of user sessions for a multi-session fleet. This is not allowed for single-session fleets.
+     * </p>
+     * <p>
+     * When you create a fleet, you must set either the DesiredSessions or DesiredInstances attribute, based on the type
+     * of fleet you create. You can’t define both attributes or leave both attributes blank.
+     * </p>
+     * 
+     * @param desiredSessions
+     *        The desired number of user sessions for a multi-session fleet. This is not allowed for single-session
+     *        fleets.</p>
+     *        <p>
+     *        When you create a fleet, you must set either the DesiredSessions or DesiredInstances attribute, based on
+     *        the type of fleet you create. You can’t define both attributes or leave both attributes blank.
+     */
+
+    public void setDesiredSessions(Integer desiredSessions) {
+        this.desiredSessions = desiredSessions;
+    }
+
+    /**
+     * <p>
+     * The desired number of user sessions for a multi-session fleet. This is not allowed for single-session fleets.
+     * </p>
+     * <p>
+     * When you create a fleet, you must set either the DesiredSessions or DesiredInstances attribute, based on the type
+     * of fleet you create. You can’t define both attributes or leave both attributes blank.
+     * </p>
+     * 
+     * @return The desired number of user sessions for a multi-session fleet. This is not allowed for single-session
+     *         fleets.</p>
+     *         <p>
+     *         When you create a fleet, you must set either the DesiredSessions or DesiredInstances attribute, based on
+     *         the type of fleet you create. You can’t define both attributes or leave both attributes blank.
+     */
+
+    public Integer getDesiredSessions() {
+        return this.desiredSessions;
+    }
+
+    /**
+     * <p>
+     * The desired number of user sessions for a multi-session fleet. This is not allowed for single-session fleets.
+     * </p>
+     * <p>
+     * When you create a fleet, you must set either the DesiredSessions or DesiredInstances attribute, based on the type
+     * of fleet you create. You can’t define both attributes or leave both attributes blank.
+     * </p>
+     * 
+     * @param desiredSessions
+     *        The desired number of user sessions for a multi-session fleet. This is not allowed for single-session
+     *        fleets.</p>
+     *        <p>
+     *        When you create a fleet, you must set either the DesiredSessions or DesiredInstances attribute, based on
+     *        the type of fleet you create. You can’t define both attributes or leave both attributes blank.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComputeCapacity withDesiredSessions(Integer desiredSessions) {
+        setDesiredSessions(desiredSessions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +162,9 @@ public class ComputeCapacity implements Serializable, Cloneable, StructuredPojo 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDesiredInstances() != null)
-            sb.append("DesiredInstances: ").append(getDesiredInstances());
+            sb.append("DesiredInstances: ").append(getDesiredInstances()).append(",");
+        if (getDesiredSessions() != null)
+            sb.append("DesiredSessions: ").append(getDesiredSessions());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +183,10 @@ public class ComputeCapacity implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getDesiredInstances() != null && other.getDesiredInstances().equals(this.getDesiredInstances()) == false)
             return false;
+        if (other.getDesiredSessions() == null ^ this.getDesiredSessions() == null)
+            return false;
+        if (other.getDesiredSessions() != null && other.getDesiredSessions().equals(this.getDesiredSessions()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +196,7 @@ public class ComputeCapacity implements Serializable, Cloneable, StructuredPojo 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDesiredInstances() == null) ? 0 : getDesiredInstances().hashCode());
+        hashCode = prime * hashCode + ((getDesiredSessions() == null) ? 0 : getDesiredSessions().hashCode());
         return hashCode;
     }
 

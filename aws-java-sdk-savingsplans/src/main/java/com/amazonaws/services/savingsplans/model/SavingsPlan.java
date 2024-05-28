@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,13 +66,13 @@ public class SavingsPlan implements Serializable, Cloneable, StructuredPojo {
     private String end;
     /**
      * <p>
-     * The state.
+     * The current state.
      * </p>
      */
     private String state;
     /**
      * <p>
-     * The AWS Region.
+     * The Amazon Web Services Region.
      * </p>
      */
     private String region;
@@ -108,7 +108,7 @@ public class SavingsPlan implements Serializable, Cloneable, StructuredPojo {
     private String currency;
     /**
      * <p>
-     * The hourly commitment, in USD.
+     * The hourly commitment amount in the specified currency.
      * </p>
      */
     private String commitment;
@@ -136,6 +136,13 @@ public class SavingsPlan implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The time until when a return for the Savings Plan can be requested. If the Savings Plan is not returnable, the
+     * field reflects the Savings Plan start time.
+     * </p>
+     */
+    private String returnableUntil;
 
     /**
      * <p>
@@ -379,11 +386,11 @@ public class SavingsPlan implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The state.
+     * The current state.
      * </p>
      * 
      * @param state
-     *        The state.
+     *        The current state.
      * @see SavingsPlanState
      */
 
@@ -393,10 +400,10 @@ public class SavingsPlan implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The state.
+     * The current state.
      * </p>
      * 
-     * @return The state.
+     * @return The current state.
      * @see SavingsPlanState
      */
 
@@ -406,11 +413,11 @@ public class SavingsPlan implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The state.
+     * The current state.
      * </p>
      * 
      * @param state
-     *        The state.
+     *        The current state.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SavingsPlanState
      */
@@ -422,11 +429,11 @@ public class SavingsPlan implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The state.
+     * The current state.
      * </p>
      * 
      * @param state
-     *        The state.
+     *        The current state.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SavingsPlanState
      */
@@ -438,11 +445,11 @@ public class SavingsPlan implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Region.
+     * The Amazon Web Services Region.
      * </p>
      * 
      * @param region
-     *        The AWS Region.
+     *        The Amazon Web Services Region.
      */
 
     public void setRegion(String region) {
@@ -451,10 +458,10 @@ public class SavingsPlan implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Region.
+     * The Amazon Web Services Region.
      * </p>
      * 
-     * @return The AWS Region.
+     * @return The Amazon Web Services Region.
      */
 
     public String getRegion() {
@@ -463,11 +470,11 @@ public class SavingsPlan implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Region.
+     * The Amazon Web Services Region.
      * </p>
      * 
      * @param region
-     *        The AWS Region.
+     *        The Amazon Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -793,11 +800,11 @@ public class SavingsPlan implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The hourly commitment, in USD.
+     * The hourly commitment amount in the specified currency.
      * </p>
      * 
      * @param commitment
-     *        The hourly commitment, in USD.
+     *        The hourly commitment amount in the specified currency.
      */
 
     public void setCommitment(String commitment) {
@@ -806,10 +813,10 @@ public class SavingsPlan implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The hourly commitment, in USD.
+     * The hourly commitment amount in the specified currency.
      * </p>
      * 
-     * @return The hourly commitment, in USD.
+     * @return The hourly commitment amount in the specified currency.
      */
 
     public String getCommitment() {
@@ -818,11 +825,11 @@ public class SavingsPlan implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The hourly commitment, in USD.
+     * The hourly commitment amount in the specified currency.
      * </p>
      * 
      * @param commitment
-     *        The hourly commitment, in USD.
+     *        The hourly commitment amount in the specified currency.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1020,6 +1027,52 @@ public class SavingsPlan implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The time until when a return for the Savings Plan can be requested. If the Savings Plan is not returnable, the
+     * field reflects the Savings Plan start time.
+     * </p>
+     * 
+     * @param returnableUntil
+     *        The time until when a return for the Savings Plan can be requested. If the Savings Plan is not returnable,
+     *        the field reflects the Savings Plan start time.
+     */
+
+    public void setReturnableUntil(String returnableUntil) {
+        this.returnableUntil = returnableUntil;
+    }
+
+    /**
+     * <p>
+     * The time until when a return for the Savings Plan can be requested. If the Savings Plan is not returnable, the
+     * field reflects the Savings Plan start time.
+     * </p>
+     * 
+     * @return The time until when a return for the Savings Plan can be requested. If the Savings Plan is not
+     *         returnable, the field reflects the Savings Plan start time.
+     */
+
+    public String getReturnableUntil() {
+        return this.returnableUntil;
+    }
+
+    /**
+     * <p>
+     * The time until when a return for the Savings Plan can be requested. If the Savings Plan is not returnable, the
+     * field reflects the Savings Plan start time.
+     * </p>
+     * 
+     * @param returnableUntil
+     *        The time until when a return for the Savings Plan can be requested. If the Savings Plan is not returnable,
+     *        the field reflects the Savings Plan start time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SavingsPlan withReturnableUntil(String returnableUntil) {
+        setReturnableUntil(returnableUntil);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1066,7 +1119,9 @@ public class SavingsPlan implements Serializable, Cloneable, StructuredPojo {
         if (getTermDurationInSeconds() != null)
             sb.append("TermDurationInSeconds: ").append(getTermDurationInSeconds()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getReturnableUntil() != null)
+            sb.append("ReturnableUntil: ").append(getReturnableUntil());
         sb.append("}");
         return sb.toString();
     }
@@ -1153,6 +1208,10 @@ public class SavingsPlan implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getReturnableUntil() == null ^ this.getReturnableUntil() == null)
+            return false;
+        if (other.getReturnableUntil() != null && other.getReturnableUntil().equals(this.getReturnableUntil()) == false)
+            return false;
         return true;
     }
 
@@ -1179,6 +1238,7 @@ public class SavingsPlan implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRecurringPaymentAmount() == null) ? 0 : getRecurringPaymentAmount().hashCode());
         hashCode = prime * hashCode + ((getTermDurationInSeconds() == null) ? 0 : getTermDurationInSeconds().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getReturnableUntil() == null) ? 0 : getReturnableUntil().hashCode());
         return hashCode;
     }
 

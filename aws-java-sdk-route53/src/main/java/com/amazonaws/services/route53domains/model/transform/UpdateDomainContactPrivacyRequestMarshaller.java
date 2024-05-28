@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class UpdateDomainContactPrivacyRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RegistrantPrivacy").build();
     private static final MarshallingInfo<Boolean> TECHPRIVACY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TechPrivacy").build();
+    private static final MarshallingInfo<Boolean> BILLINGPRIVACY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BillingPrivacy").build();
 
     private static final UpdateDomainContactPrivacyRequestMarshaller instance = new UpdateDomainContactPrivacyRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class UpdateDomainContactPrivacyRequestMarshaller {
             protocolMarshaller.marshall(updateDomainContactPrivacyRequest.getAdminPrivacy(), ADMINPRIVACY_BINDING);
             protocolMarshaller.marshall(updateDomainContactPrivacyRequest.getRegistrantPrivacy(), REGISTRANTPRIVACY_BINDING);
             protocolMarshaller.marshall(updateDomainContactPrivacyRequest.getTechPrivacy(), TECHPRIVACY_BINDING);
+            protocolMarshaller.marshall(updateDomainContactPrivacyRequest.getBillingPrivacy(), BILLINGPRIVACY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

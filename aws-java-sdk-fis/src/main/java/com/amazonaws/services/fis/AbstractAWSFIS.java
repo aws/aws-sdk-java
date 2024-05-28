@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,17 @@ public class AbstractAWSFIS implements AWSFIS {
     }
 
     @Override
+    public CreateTargetAccountConfigurationResult createTargetAccountConfiguration(CreateTargetAccountConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteExperimentTemplateResult deleteExperimentTemplate(DeleteExperimentTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteTargetAccountConfigurationResult deleteTargetAccountConfiguration(DeleteTargetAccountConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -48,7 +58,17 @@ public class AbstractAWSFIS implements AWSFIS {
     }
 
     @Override
+    public GetExperimentTargetAccountConfigurationResult getExperimentTargetAccountConfiguration(GetExperimentTargetAccountConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetExperimentTemplateResult getExperimentTemplate(GetExperimentTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetTargetAccountConfigurationResult getTargetAccountConfiguration(GetTargetAccountConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -59,6 +79,16 @@ public class AbstractAWSFIS implements AWSFIS {
 
     @Override
     public ListActionsResult listActions(ListActionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListExperimentResolvedTargetsResult listExperimentResolvedTargets(ListExperimentResolvedTargetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListExperimentTargetAccountConfigurationsResult listExperimentTargetAccountConfigurations(ListExperimentTargetAccountConfigurationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -74,6 +104,11 @@ public class AbstractAWSFIS implements AWSFIS {
 
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTargetAccountConfigurationsResult listTargetAccountConfigurations(ListTargetAccountConfigurationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -104,6 +139,11 @@ public class AbstractAWSFIS implements AWSFIS {
 
     @Override
     public UpdateExperimentTemplateResult updateExperimentTemplate(UpdateExperimentTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateTargetAccountConfigurationResult updateTargetAccountConfiguration(UpdateTargetAccountConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

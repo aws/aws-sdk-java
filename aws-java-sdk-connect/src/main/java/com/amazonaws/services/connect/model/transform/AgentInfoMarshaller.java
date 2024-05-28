@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class AgentInfoMarshaller {
             .marshallLocationName("Id").build();
     private static final MarshallingInfo<java.util.Date> CONNECTEDTOAGENTTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConnectedToAgentTimestamp").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<Integer> AGENTPAUSEDURATIONINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AgentPauseDurationInSeconds").build();
 
     private static final AgentInfoMarshaller instance = new AgentInfoMarshaller();
 
@@ -50,6 +52,7 @@ public class AgentInfoMarshaller {
         try {
             protocolMarshaller.marshall(agentInfo.getId(), ID_BINDING);
             protocolMarshaller.marshall(agentInfo.getConnectedToAgentTimestamp(), CONNECTEDTOAGENTTIMESTAMP_BINDING);
+            protocolMarshaller.marshall(agentInfo.getAgentPauseDurationInSeconds(), AGENTPAUSEDURATIONINSECONDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

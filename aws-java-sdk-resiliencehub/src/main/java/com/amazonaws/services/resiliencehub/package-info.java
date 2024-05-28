@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -13,10 +13,10 @@
 
 /**
  * <p>
- * AWS Resilience Hub helps you proactively prepare and protect your Amazon Web Services applications from disruptions.
- * Resilience Hub offers continuous resiliency assessment and validation that integrates into your software development
- * lifecycle. This enables you to uncover resiliency weaknesses, ensure recovery time objective (RTO) and recovery point
- * objective (RPO) targets for your applications are met, and resolve issues before they are released into production.
+ * Resilience Hub helps you proactively prepare and protect your Amazon Web Services applications from disruptions. It
+ * offers continual resiliency assessment and validation that integrates into your software development lifecycle. This
+ * enables you to uncover resiliency weaknesses, ensure recovery time objective (RTO) and recovery point objective (RPO)
+ * targets for your applications are met, and resolve issues before they are released into production.
  * </p>
  */
 package com.amazonaws.services.resiliencehub;

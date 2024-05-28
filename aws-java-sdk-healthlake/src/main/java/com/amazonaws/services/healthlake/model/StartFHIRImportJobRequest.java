@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,13 +41,13 @@ public class StartFHIRImportJobRequest extends com.amazonaws.AmazonWebServiceReq
     private OutputDataConfig jobOutputDataConfig;
     /**
      * <p>
-     * The AWS-generated Data Store ID.
+     * The AWS-generated data store ID.
      * </p>
      */
     private String datastoreId;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.
+     * The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.
      * </p>
      */
     private String dataAccessRoleArn;
@@ -166,11 +166,11 @@ public class StartFHIRImportJobRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The AWS-generated Data Store ID.
+     * The AWS-generated data store ID.
      * </p>
      * 
      * @param datastoreId
-     *        The AWS-generated Data Store ID.
+     *        The AWS-generated data store ID.
      */
 
     public void setDatastoreId(String datastoreId) {
@@ -179,10 +179,10 @@ public class StartFHIRImportJobRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The AWS-generated Data Store ID.
+     * The AWS-generated data store ID.
      * </p>
      * 
-     * @return The AWS-generated Data Store ID.
+     * @return The AWS-generated data store ID.
      */
 
     public String getDatastoreId() {
@@ -191,11 +191,11 @@ public class StartFHIRImportJobRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The AWS-generated Data Store ID.
+     * The AWS-generated data store ID.
      * </p>
      * 
      * @param datastoreId
-     *        The AWS-generated Data Store ID.
+     *        The AWS-generated data store ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -206,11 +206,11 @@ public class StartFHIRImportJobRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.
+     * The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.
+     *        The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.
      */
 
     public void setDataAccessRoleArn(String dataAccessRoleArn) {
@@ -219,10 +219,10 @@ public class StartFHIRImportJobRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.
+     * The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.
+     * @return The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.
      */
 
     public String getDataAccessRoleArn() {
@@ -231,11 +231,11 @@ public class StartFHIRImportJobRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.
+     * The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) that gives Amazon HealthLake access permission.
+     *        The Amazon Resource Name (ARN) that gives AWS HealthLake access permission.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

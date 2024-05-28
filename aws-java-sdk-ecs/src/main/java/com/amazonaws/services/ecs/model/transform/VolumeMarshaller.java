@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class VolumeMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("efsVolumeConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> FSXWINDOWSFILESERVERVOLUMECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fsxWindowsFileServerVolumeConfiguration").build();
+    private static final MarshallingInfo<Boolean> CONFIGUREDATLAUNCH_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configuredAtLaunch").build();
 
     private static final VolumeMarshaller instance = new VolumeMarshaller();
 
@@ -59,6 +61,7 @@ public class VolumeMarshaller {
             protocolMarshaller.marshall(volume.getDockerVolumeConfiguration(), DOCKERVOLUMECONFIGURATION_BINDING);
             protocolMarshaller.marshall(volume.getEfsVolumeConfiguration(), EFSVOLUMECONFIGURATION_BINDING);
             protocolMarshaller.marshall(volume.getFsxWindowsFileServerVolumeConfiguration(), FSXWINDOWSFILESERVERVOLUMECONFIGURATION_BINDING);
+            protocolMarshaller.marshall(volume.getConfiguredAtLaunch(), CONFIGUREDATLAUNCH_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization
- * is failing, such as a connected Active Directory.
+ * The Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is
+ * failing, such as a connected Active Directory.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

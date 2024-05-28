@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,10 @@ public class UpdateTaskRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CloudWatchLogGroupArn").build();
     private static final MarshallingInfo<List> INCLUDES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Includes").build();
+    private static final MarshallingInfo<StructuredPojo> MANIFESTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ManifestConfig").build();
+    private static final MarshallingInfo<StructuredPojo> TASKREPORTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TaskReportConfig").build();
 
     private static final UpdateTaskRequestMarshaller instance = new UpdateTaskRequestMarshaller();
 
@@ -66,6 +70,8 @@ public class UpdateTaskRequestMarshaller {
             protocolMarshaller.marshall(updateTaskRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(updateTaskRequest.getCloudWatchLogGroupArn(), CLOUDWATCHLOGGROUPARN_BINDING);
             protocolMarshaller.marshall(updateTaskRequest.getIncludes(), INCLUDES_BINDING);
+            protocolMarshaller.marshall(updateTaskRequest.getManifestConfig(), MANIFESTCONFIG_BINDING);
+            protocolMarshaller.marshall(updateTaskRequest.getTaskReportConfig(), TASKREPORTCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

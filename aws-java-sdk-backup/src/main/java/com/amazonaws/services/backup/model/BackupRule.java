@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,7 +57,14 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully.
-     * This value is optional.
+     * This value is optional. If this value is included, it must be at least 60 minutes to avoid errors.
+     * </p>
+     * <p>
+     * During the start window, the backup job status remains in <code>CREATED</code> status until it has successfully
+     * begun or until the start window time has run out. If within the start window time Backup receives an error that
+     * allows the job to be retried, Backup will automatically retry to begin the job at least every 10 minutes until
+     * the backup successfully begins (the job status changes to <code>RUNNING</code>) or until the job status changes
+     * to <code>EXPIRED</code> (which is expected to occur when the start window time is over).
      * </p>
      */
     private Long startWindowMinutes;
@@ -112,6 +119,13 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Boolean enableContinuousBackup;
+    /**
+     * <p>
+     * This is the timezone in which the schedule expression is set. By default, ScheduleExpressions are in UTC. You can
+     * modify this to a specified timezone.
+     * </p>
+     */
+    private String scheduleExpressionTimezone;
 
     /**
      * <p>
@@ -284,12 +298,27 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully.
-     * This value is optional.
+     * This value is optional. If this value is included, it must be at least 60 minutes to avoid errors.
+     * </p>
+     * <p>
+     * During the start window, the backup job status remains in <code>CREATED</code> status until it has successfully
+     * begun or until the start window time has run out. If within the start window time Backup receives an error that
+     * allows the job to be retried, Backup will automatically retry to begin the job at least every 10 minutes until
+     * the backup successfully begins (the job status changes to <code>RUNNING</code>) or until the job status changes
+     * to <code>EXPIRED</code> (which is expected to occur when the start window time is over).
      * </p>
      * 
      * @param startWindowMinutes
      *        A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start
-     *        successfully. This value is optional.
+     *        successfully. This value is optional. If this value is included, it must be at least 60 minutes to avoid
+     *        errors.</p>
+     *        <p>
+     *        During the start window, the backup job status remains in <code>CREATED</code> status until it has
+     *        successfully begun or until the start window time has run out. If within the start window time Backup
+     *        receives an error that allows the job to be retried, Backup will automatically retry to begin the job at
+     *        least every 10 minutes until the backup successfully begins (the job status changes to
+     *        <code>RUNNING</code>) or until the job status changes to <code>EXPIRED</code> (which is expected to occur
+     *        when the start window time is over).
      */
 
     public void setStartWindowMinutes(Long startWindowMinutes) {
@@ -299,11 +328,26 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully.
-     * This value is optional.
+     * This value is optional. If this value is included, it must be at least 60 minutes to avoid errors.
+     * </p>
+     * <p>
+     * During the start window, the backup job status remains in <code>CREATED</code> status until it has successfully
+     * begun or until the start window time has run out. If within the start window time Backup receives an error that
+     * allows the job to be retried, Backup will automatically retry to begin the job at least every 10 minutes until
+     * the backup successfully begins (the job status changes to <code>RUNNING</code>) or until the job status changes
+     * to <code>EXPIRED</code> (which is expected to occur when the start window time is over).
      * </p>
      * 
      * @return A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start
-     *         successfully. This value is optional.
+     *         successfully. This value is optional. If this value is included, it must be at least 60 minutes to avoid
+     *         errors.</p>
+     *         <p>
+     *         During the start window, the backup job status remains in <code>CREATED</code> status until it has
+     *         successfully begun or until the start window time has run out. If within the start window time Backup
+     *         receives an error that allows the job to be retried, Backup will automatically retry to begin the job at
+     *         least every 10 minutes until the backup successfully begins (the job status changes to
+     *         <code>RUNNING</code>) or until the job status changes to <code>EXPIRED</code> (which is expected to occur
+     *         when the start window time is over).
      */
 
     public Long getStartWindowMinutes() {
@@ -313,12 +357,27 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully.
-     * This value is optional.
+     * This value is optional. If this value is included, it must be at least 60 minutes to avoid errors.
+     * </p>
+     * <p>
+     * During the start window, the backup job status remains in <code>CREATED</code> status until it has successfully
+     * begun or until the start window time has run out. If within the start window time Backup receives an error that
+     * allows the job to be retried, Backup will automatically retry to begin the job at least every 10 minutes until
+     * the backup successfully begins (the job status changes to <code>RUNNING</code>) or until the job status changes
+     * to <code>EXPIRED</code> (which is expected to occur when the start window time is over).
      * </p>
      * 
      * @param startWindowMinutes
      *        A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start
-     *        successfully. This value is optional.
+     *        successfully. This value is optional. If this value is included, it must be at least 60 minutes to avoid
+     *        errors.</p>
+     *        <p>
+     *        During the start window, the backup job status remains in <code>CREATED</code> status until it has
+     *        successfully begun or until the start window time has run out. If within the start window time Backup
+     *        receives an error that allows the job to be retried, Backup will automatically retry to begin the job at
+     *        least every 10 minutes until the backup successfully begins (the job status changes to
+     *        <code>RUNNING</code>) or until the job status changes to <code>EXPIRED</code> (which is expected to occur
+     *        when the start window time is over).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -731,6 +790,52 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * This is the timezone in which the schedule expression is set. By default, ScheduleExpressions are in UTC. You can
+     * modify this to a specified timezone.
+     * </p>
+     * 
+     * @param scheduleExpressionTimezone
+     *        This is the timezone in which the schedule expression is set. By default, ScheduleExpressions are in UTC.
+     *        You can modify this to a specified timezone.
+     */
+
+    public void setScheduleExpressionTimezone(String scheduleExpressionTimezone) {
+        this.scheduleExpressionTimezone = scheduleExpressionTimezone;
+    }
+
+    /**
+     * <p>
+     * This is the timezone in which the schedule expression is set. By default, ScheduleExpressions are in UTC. You can
+     * modify this to a specified timezone.
+     * </p>
+     * 
+     * @return This is the timezone in which the schedule expression is set. By default, ScheduleExpressions are in UTC.
+     *         You can modify this to a specified timezone.
+     */
+
+    public String getScheduleExpressionTimezone() {
+        return this.scheduleExpressionTimezone;
+    }
+
+    /**
+     * <p>
+     * This is the timezone in which the schedule expression is set. By default, ScheduleExpressions are in UTC. You can
+     * modify this to a specified timezone.
+     * </p>
+     * 
+     * @param scheduleExpressionTimezone
+     *        This is the timezone in which the schedule expression is set. By default, ScheduleExpressions are in UTC.
+     *        You can modify this to a specified timezone.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BackupRule withScheduleExpressionTimezone(String scheduleExpressionTimezone) {
+        setScheduleExpressionTimezone(scheduleExpressionTimezone);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -761,7 +866,9 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
         if (getCopyActions() != null)
             sb.append("CopyActions: ").append(getCopyActions()).append(",");
         if (getEnableContinuousBackup() != null)
-            sb.append("EnableContinuousBackup: ").append(getEnableContinuousBackup());
+            sb.append("EnableContinuousBackup: ").append(getEnableContinuousBackup()).append(",");
+        if (getScheduleExpressionTimezone() != null)
+            sb.append("ScheduleExpressionTimezone: ").append(getScheduleExpressionTimezone());
         sb.append("}");
         return sb.toString();
     }
@@ -816,6 +923,10 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEnableContinuousBackup() != null && other.getEnableContinuousBackup().equals(this.getEnableContinuousBackup()) == false)
             return false;
+        if (other.getScheduleExpressionTimezone() == null ^ this.getScheduleExpressionTimezone() == null)
+            return false;
+        if (other.getScheduleExpressionTimezone() != null && other.getScheduleExpressionTimezone().equals(this.getScheduleExpressionTimezone()) == false)
+            return false;
         return true;
     }
 
@@ -834,6 +945,7 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRuleId() == null) ? 0 : getRuleId().hashCode());
         hashCode = prime * hashCode + ((getCopyActions() == null) ? 0 : getCopyActions().hashCode());
         hashCode = prime * hashCode + ((getEnableContinuousBackup() == null) ? 0 : getEnableContinuousBackup().hashCode());
+        hashCode = prime * hashCode + ((getScheduleExpressionTimezone() == null) ? 0 : getScheduleExpressionTimezone().hashCode());
         return hashCode;
     }
 

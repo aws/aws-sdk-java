@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,10 +31,10 @@ public class ComponentConditionProperty implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The value to assign to the property if the condition is not met.
+     * The name of the conditional property.
      * </p>
      */
-    private ComponentProperty elseValue;
+    private String property;
     /**
      * <p>
      * The name of a field. Specify this when the property is a data model.
@@ -43,72 +43,72 @@ public class ComponentConditionProperty implements Serializable, Cloneable, Stru
     private String field;
     /**
      * <p>
-     * The value of the property to evaluate.
-     * </p>
-     */
-    private String operand;
-    /**
-     * <p>
-     * The type of the property to evaluate.
-     * </p>
-     */
-    private String operandType;
-    /**
-     * <p>
      * The operator to use to perform the evaluation, such as <code>eq</code> to represent equals.
      * </p>
      */
     private String operator;
     /**
      * <p>
-     * The name of the conditional property.
+     * The value of the property to evaluate.
      * </p>
      */
-    private String property;
+    private String operand;
     /**
      * <p>
      * The value to assign to the property if the condition is met.
      * </p>
      */
     private ComponentProperty then;
-
     /**
      * <p>
      * The value to assign to the property if the condition is not met.
      * </p>
+     */
+    private ComponentProperty elseValue;
+    /**
+     * <p>
+     * The type of the property to evaluate.
+     * </p>
+     */
+    private String operandType;
+
+    /**
+     * <p>
+     * The name of the conditional property.
+     * </p>
      * 
-     * @param elseValue
-     *        The value to assign to the property if the condition is not met.
+     * @param property
+     *        The name of the conditional property.
      */
 
-    public void setElse(ComponentProperty elseValue) {
-        this.elseValue = elseValue;
+    public void setProperty(String property) {
+        this.property = property;
     }
 
     /**
      * <p>
-     * The value to assign to the property if the condition is not met.
+     * The name of the conditional property.
      * </p>
      * 
-     * @return The value to assign to the property if the condition is not met.
+     * @return The name of the conditional property.
      */
 
-    public ComponentProperty getElse() {
-        return this.elseValue;
+    public String getProperty() {
+        return this.property;
     }
 
     /**
      * <p>
-     * The value to assign to the property if the condition is not met.
+     * The name of the conditional property.
      * </p>
      * 
-     * @param elseValue
-     *        The value to assign to the property if the condition is not met.
+     * @param property
+     *        The name of the conditional property.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ComponentConditionProperty withElse(ComponentProperty elseValue) {
-        setElse(elseValue);
+    public ComponentConditionProperty withProperty(String property) {
+        setProperty(property);
         return this;
     }
 
@@ -154,86 +154,6 @@ public class ComponentConditionProperty implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The value of the property to evaluate.
-     * </p>
-     * 
-     * @param operand
-     *        The value of the property to evaluate.
-     */
-
-    public void setOperand(String operand) {
-        this.operand = operand;
-    }
-
-    /**
-     * <p>
-     * The value of the property to evaluate.
-     * </p>
-     * 
-     * @return The value of the property to evaluate.
-     */
-
-    public String getOperand() {
-        return this.operand;
-    }
-
-    /**
-     * <p>
-     * The value of the property to evaluate.
-     * </p>
-     * 
-     * @param operand
-     *        The value of the property to evaluate.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ComponentConditionProperty withOperand(String operand) {
-        setOperand(operand);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The type of the property to evaluate.
-     * </p>
-     * 
-     * @param operandType
-     *        The type of the property to evaluate.
-     */
-
-    public void setOperandType(String operandType) {
-        this.operandType = operandType;
-    }
-
-    /**
-     * <p>
-     * The type of the property to evaluate.
-     * </p>
-     * 
-     * @return The type of the property to evaluate.
-     */
-
-    public String getOperandType() {
-        return this.operandType;
-    }
-
-    /**
-     * <p>
-     * The type of the property to evaluate.
-     * </p>
-     * 
-     * @param operandType
-     *        The type of the property to evaluate.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ComponentConditionProperty withOperandType(String operandType) {
-        setOperandType(operandType);
-        return this;
-    }
-
-    /**
-     * <p>
      * The operator to use to perform the evaluation, such as <code>eq</code> to represent equals.
      * </p>
      * 
@@ -274,41 +194,41 @@ public class ComponentConditionProperty implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The name of the conditional property.
+     * The value of the property to evaluate.
      * </p>
      * 
-     * @param property
-     *        The name of the conditional property.
+     * @param operand
+     *        The value of the property to evaluate.
      */
 
-    public void setProperty(String property) {
-        this.property = property;
+    public void setOperand(String operand) {
+        this.operand = operand;
     }
 
     /**
      * <p>
-     * The name of the conditional property.
+     * The value of the property to evaluate.
      * </p>
      * 
-     * @return The name of the conditional property.
+     * @return The value of the property to evaluate.
      */
 
-    public String getProperty() {
-        return this.property;
+    public String getOperand() {
+        return this.operand;
     }
 
     /**
      * <p>
-     * The name of the conditional property.
+     * The value of the property to evaluate.
      * </p>
      * 
-     * @param property
-     *        The name of the conditional property.
+     * @param operand
+     *        The value of the property to evaluate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ComponentConditionProperty withProperty(String property) {
-        setProperty(property);
+    public ComponentConditionProperty withOperand(String operand) {
+        setOperand(operand);
         return this;
     }
 
@@ -353,6 +273,86 @@ public class ComponentConditionProperty implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * The value to assign to the property if the condition is not met.
+     * </p>
+     * 
+     * @param elseValue
+     *        The value to assign to the property if the condition is not met.
+     */
+
+    public void setElse(ComponentProperty elseValue) {
+        this.elseValue = elseValue;
+    }
+
+    /**
+     * <p>
+     * The value to assign to the property if the condition is not met.
+     * </p>
+     * 
+     * @return The value to assign to the property if the condition is not met.
+     */
+
+    public ComponentProperty getElse() {
+        return this.elseValue;
+    }
+
+    /**
+     * <p>
+     * The value to assign to the property if the condition is not met.
+     * </p>
+     * 
+     * @param elseValue
+     *        The value to assign to the property if the condition is not met.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentConditionProperty withElse(ComponentProperty elseValue) {
+        setElse(elseValue);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of the property to evaluate.
+     * </p>
+     * 
+     * @param operandType
+     *        The type of the property to evaluate.
+     */
+
+    public void setOperandType(String operandType) {
+        this.operandType = operandType;
+    }
+
+    /**
+     * <p>
+     * The type of the property to evaluate.
+     * </p>
+     * 
+     * @return The type of the property to evaluate.
+     */
+
+    public String getOperandType() {
+        return this.operandType;
+    }
+
+    /**
+     * <p>
+     * The type of the property to evaluate.
+     * </p>
+     * 
+     * @param operandType
+     *        The type of the property to evaluate.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentConditionProperty withOperandType(String operandType) {
+        setOperandType(operandType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -364,20 +364,20 @@ public class ComponentConditionProperty implements Serializable, Cloneable, Stru
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getElse() != null)
-            sb.append("Else: ").append(getElse()).append(",");
-        if (getField() != null)
-            sb.append("Field: ").append(getField()).append(",");
-        if (getOperand() != null)
-            sb.append("Operand: ").append(getOperand()).append(",");
-        if (getOperandType() != null)
-            sb.append("OperandType: ").append(getOperandType()).append(",");
-        if (getOperator() != null)
-            sb.append("Operator: ").append(getOperator()).append(",");
         if (getProperty() != null)
             sb.append("Property: ").append(getProperty()).append(",");
+        if (getField() != null)
+            sb.append("Field: ").append(getField()).append(",");
+        if (getOperator() != null)
+            sb.append("Operator: ").append(getOperator()).append(",");
+        if (getOperand() != null)
+            sb.append("Operand: ").append(getOperand()).append(",");
         if (getThen() != null)
-            sb.append("Then: ").append(getThen());
+            sb.append("Then: ").append(getThen()).append(",");
+        if (getElse() != null)
+            sb.append("Else: ").append(getElse()).append(",");
+        if (getOperandType() != null)
+            sb.append("OperandType: ").append(getOperandType());
         sb.append("}");
         return sb.toString();
     }
@@ -392,33 +392,33 @@ public class ComponentConditionProperty implements Serializable, Cloneable, Stru
         if (obj instanceof ComponentConditionProperty == false)
             return false;
         ComponentConditionProperty other = (ComponentConditionProperty) obj;
-        if (other.getElse() == null ^ this.getElse() == null)
+        if (other.getProperty() == null ^ this.getProperty() == null)
             return false;
-        if (other.getElse() != null && other.getElse().equals(this.getElse()) == false)
+        if (other.getProperty() != null && other.getProperty().equals(this.getProperty()) == false)
             return false;
         if (other.getField() == null ^ this.getField() == null)
             return false;
         if (other.getField() != null && other.getField().equals(this.getField()) == false)
             return false;
-        if (other.getOperand() == null ^ this.getOperand() == null)
-            return false;
-        if (other.getOperand() != null && other.getOperand().equals(this.getOperand()) == false)
-            return false;
-        if (other.getOperandType() == null ^ this.getOperandType() == null)
-            return false;
-        if (other.getOperandType() != null && other.getOperandType().equals(this.getOperandType()) == false)
-            return false;
         if (other.getOperator() == null ^ this.getOperator() == null)
             return false;
         if (other.getOperator() != null && other.getOperator().equals(this.getOperator()) == false)
             return false;
-        if (other.getProperty() == null ^ this.getProperty() == null)
+        if (other.getOperand() == null ^ this.getOperand() == null)
             return false;
-        if (other.getProperty() != null && other.getProperty().equals(this.getProperty()) == false)
+        if (other.getOperand() != null && other.getOperand().equals(this.getOperand()) == false)
             return false;
         if (other.getThen() == null ^ this.getThen() == null)
             return false;
         if (other.getThen() != null && other.getThen().equals(this.getThen()) == false)
+            return false;
+        if (other.getElse() == null ^ this.getElse() == null)
+            return false;
+        if (other.getElse() != null && other.getElse().equals(this.getElse()) == false)
+            return false;
+        if (other.getOperandType() == null ^ this.getOperandType() == null)
+            return false;
+        if (other.getOperandType() != null && other.getOperandType().equals(this.getOperandType()) == false)
             return false;
         return true;
     }
@@ -428,13 +428,13 @@ public class ComponentConditionProperty implements Serializable, Cloneable, Stru
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getElse() == null) ? 0 : getElse().hashCode());
-        hashCode = prime * hashCode + ((getField() == null) ? 0 : getField().hashCode());
-        hashCode = prime * hashCode + ((getOperand() == null) ? 0 : getOperand().hashCode());
-        hashCode = prime * hashCode + ((getOperandType() == null) ? 0 : getOperandType().hashCode());
-        hashCode = prime * hashCode + ((getOperator() == null) ? 0 : getOperator().hashCode());
         hashCode = prime * hashCode + ((getProperty() == null) ? 0 : getProperty().hashCode());
+        hashCode = prime * hashCode + ((getField() == null) ? 0 : getField().hashCode());
+        hashCode = prime * hashCode + ((getOperator() == null) ? 0 : getOperator().hashCode());
+        hashCode = prime * hashCode + ((getOperand() == null) ? 0 : getOperand().hashCode());
         hashCode = prime * hashCode + ((getThen() == null) ? 0 : getThen().hashCode());
+        hashCode = prime * hashCode + ((getElse() == null) ? 0 : getElse().hashCode());
+        hashCode = prime * hashCode + ((getOperandType() == null) ? 0 : getOperandType().hashCode());
         return hashCode;
     }
 

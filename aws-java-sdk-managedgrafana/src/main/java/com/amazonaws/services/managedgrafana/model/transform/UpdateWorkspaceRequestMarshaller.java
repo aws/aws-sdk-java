@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,12 +30,20 @@ public class UpdateWorkspaceRequestMarshaller {
 
     private static final MarshallingInfo<String> ACCOUNTACCESSTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("accountAccessType").build();
+    private static final MarshallingInfo<StructuredPojo> NETWORKACCESSCONTROL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkAccessControl").build();
     private static final MarshallingInfo<String> ORGANIZATIONROLENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("organizationRoleName").build();
     private static final MarshallingInfo<String> PERMISSIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("permissionType").build();
+    private static final MarshallingInfo<Boolean> REMOVENETWORKACCESSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("removeNetworkAccessConfiguration").build();
+    private static final MarshallingInfo<Boolean> REMOVEVPCCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("removeVpcConfiguration").build();
     private static final MarshallingInfo<String> STACKSETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stackSetName").build();
+    private static final MarshallingInfo<StructuredPojo> VPCCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vpcConfiguration").build();
     private static final MarshallingInfo<List> WORKSPACEDATASOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("workspaceDataSources").build();
     private static final MarshallingInfo<String> WORKSPACEDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -68,9 +76,13 @@ public class UpdateWorkspaceRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(updateWorkspaceRequest.getAccountAccessType(), ACCOUNTACCESSTYPE_BINDING);
+            protocolMarshaller.marshall(updateWorkspaceRequest.getNetworkAccessControl(), NETWORKACCESSCONTROL_BINDING);
             protocolMarshaller.marshall(updateWorkspaceRequest.getOrganizationRoleName(), ORGANIZATIONROLENAME_BINDING);
             protocolMarshaller.marshall(updateWorkspaceRequest.getPermissionType(), PERMISSIONTYPE_BINDING);
+            protocolMarshaller.marshall(updateWorkspaceRequest.getRemoveNetworkAccessConfiguration(), REMOVENETWORKACCESSCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(updateWorkspaceRequest.getRemoveVpcConfiguration(), REMOVEVPCCONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateWorkspaceRequest.getStackSetName(), STACKSETNAME_BINDING);
+            protocolMarshaller.marshall(updateWorkspaceRequest.getVpcConfiguration(), VPCCONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateWorkspaceRequest.getWorkspaceDataSources(), WORKSPACEDATASOURCES_BINDING);
             protocolMarshaller.marshall(updateWorkspaceRequest.getWorkspaceDescription(), WORKSPACEDESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateWorkspaceRequest.getWorkspaceId(), WORKSPACEID_BINDING);

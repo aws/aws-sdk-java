@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,8 @@ public class NumberAttributeConstraintsType implements Serializable, Cloneable, 
     private String minValue;
     /**
      * <p>
-     * The maximum value of an attribute that is of the number data type.
+     * The maximum length of a number attribute value. Must be a number less than or equal to <code>2^1023</code>,
+     * represented as a string with a length of 131072 characters or fewer.
      * </p>
      */
     private String maxValue;
@@ -83,11 +84,13 @@ public class NumberAttributeConstraintsType implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The maximum value of an attribute that is of the number data type.
+     * The maximum length of a number attribute value. Must be a number less than or equal to <code>2^1023</code>,
+     * represented as a string with a length of 131072 characters or fewer.
      * </p>
      * 
      * @param maxValue
-     *        The maximum value of an attribute that is of the number data type.
+     *        The maximum length of a number attribute value. Must be a number less than or equal to <code>2^1023</code>
+     *        , represented as a string with a length of 131072 characters or fewer.
      */
 
     public void setMaxValue(String maxValue) {
@@ -96,10 +99,12 @@ public class NumberAttributeConstraintsType implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The maximum value of an attribute that is of the number data type.
+     * The maximum length of a number attribute value. Must be a number less than or equal to <code>2^1023</code>,
+     * represented as a string with a length of 131072 characters or fewer.
      * </p>
      * 
-     * @return The maximum value of an attribute that is of the number data type.
+     * @return The maximum length of a number attribute value. Must be a number less than or equal to
+     *         <code>2^1023</code>, represented as a string with a length of 131072 characters or fewer.
      */
 
     public String getMaxValue() {
@@ -108,11 +113,13 @@ public class NumberAttributeConstraintsType implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The maximum value of an attribute that is of the number data type.
+     * The maximum length of a number attribute value. Must be a number less than or equal to <code>2^1023</code>,
+     * represented as a string with a length of 131072 characters or fewer.
      * </p>
      * 
      * @param maxValue
-     *        The maximum value of an attribute that is of the number data type.
+     *        The maximum length of a number attribute value. Must be a number less than or equal to <code>2^1023</code>
+     *        , represented as a string with a length of 131072 characters or fewer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

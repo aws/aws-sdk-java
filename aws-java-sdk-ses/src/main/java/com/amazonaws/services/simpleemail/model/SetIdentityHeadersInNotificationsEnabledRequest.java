@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,8 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents a request to set whether Amazon SES includes the original email headers in the Amazon SNS notifications of
  * a specified type. For information about notifications, see the <a
- * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-sns.html">Amazon SES Developer
- * Guide</a>.
+ * href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity-using-notifications-sns.html">Amazon SES
+ * Developer Guide</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityHeadersInNotificationsEnabled"
@@ -47,8 +47,8 @@ public class SetIdentityHeadersInNotificationsEnabledRequest extends com.amazona
     /**
      * <p>
      * Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the specified
-     * notification type. A value of <code>true</code> specifies that Amazon SES will include headers in notifications,
-     * and a value of <code>false</code> specifies that Amazon SES will not include headers in notifications.
+     * notification type. A value of <code>true</code> specifies that Amazon SES includes headers in notifications, and
+     * a value of <code>false</code> specifies that Amazon SES does not include headers in notifications.
      * </p>
      * <p>
      * This value can only be set when <code>NotificationType</code> is already set to use a particular Amazon SNS
@@ -179,8 +179,8 @@ public class SetIdentityHeadersInNotificationsEnabledRequest extends com.amazona
     /**
      * <p>
      * Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the specified
-     * notification type. A value of <code>true</code> specifies that Amazon SES will include headers in notifications,
-     * and a value of <code>false</code> specifies that Amazon SES will not include headers in notifications.
+     * notification type. A value of <code>true</code> specifies that Amazon SES includes headers in notifications, and
+     * a value of <code>false</code> specifies that Amazon SES does not include headers in notifications.
      * </p>
      * <p>
      * This value can only be set when <code>NotificationType</code> is already set to use a particular Amazon SNS
@@ -189,8 +189,8 @@ public class SetIdentityHeadersInNotificationsEnabledRequest extends com.amazona
      * 
      * @param enabled
      *        Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the specified
-     *        notification type. A value of <code>true</code> specifies that Amazon SES will include headers in
-     *        notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in
+     *        notification type. A value of <code>true</code> specifies that Amazon SES includes headers in
+     *        notifications, and a value of <code>false</code> specifies that Amazon SES does not include headers in
      *        notifications.</p>
      *        <p>
      *        This value can only be set when <code>NotificationType</code> is already set to use a particular Amazon
@@ -204,8 +204,8 @@ public class SetIdentityHeadersInNotificationsEnabledRequest extends com.amazona
     /**
      * <p>
      * Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the specified
-     * notification type. A value of <code>true</code> specifies that Amazon SES will include headers in notifications,
-     * and a value of <code>false</code> specifies that Amazon SES will not include headers in notifications.
+     * notification type. A value of <code>true</code> specifies that Amazon SES includes headers in notifications, and
+     * a value of <code>false</code> specifies that Amazon SES does not include headers in notifications.
      * </p>
      * <p>
      * This value can only be set when <code>NotificationType</code> is already set to use a particular Amazon SNS
@@ -213,8 +213,8 @@ public class SetIdentityHeadersInNotificationsEnabledRequest extends com.amazona
      * </p>
      * 
      * @return Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the specified
-     *         notification type. A value of <code>true</code> specifies that Amazon SES will include headers in
-     *         notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in
+     *         notification type. A value of <code>true</code> specifies that Amazon SES includes headers in
+     *         notifications, and a value of <code>false</code> specifies that Amazon SES does not include headers in
      *         notifications.</p>
      *         <p>
      *         This value can only be set when <code>NotificationType</code> is already set to use a particular Amazon
@@ -228,8 +228,8 @@ public class SetIdentityHeadersInNotificationsEnabledRequest extends com.amazona
     /**
      * <p>
      * Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the specified
-     * notification type. A value of <code>true</code> specifies that Amazon SES will include headers in notifications,
-     * and a value of <code>false</code> specifies that Amazon SES will not include headers in notifications.
+     * notification type. A value of <code>true</code> specifies that Amazon SES includes headers in notifications, and
+     * a value of <code>false</code> specifies that Amazon SES does not include headers in notifications.
      * </p>
      * <p>
      * This value can only be set when <code>NotificationType</code> is already set to use a particular Amazon SNS
@@ -238,8 +238,8 @@ public class SetIdentityHeadersInNotificationsEnabledRequest extends com.amazona
      * 
      * @param enabled
      *        Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the specified
-     *        notification type. A value of <code>true</code> specifies that Amazon SES will include headers in
-     *        notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in
+     *        notification type. A value of <code>true</code> specifies that Amazon SES includes headers in
+     *        notifications, and a value of <code>false</code> specifies that Amazon SES does not include headers in
      *        notifications.</p>
      *        <p>
      *        This value can only be set when <code>NotificationType</code> is already set to use a particular Amazon
@@ -255,8 +255,8 @@ public class SetIdentityHeadersInNotificationsEnabledRequest extends com.amazona
     /**
      * <p>
      * Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the specified
-     * notification type. A value of <code>true</code> specifies that Amazon SES will include headers in notifications,
-     * and a value of <code>false</code> specifies that Amazon SES will not include headers in notifications.
+     * notification type. A value of <code>true</code> specifies that Amazon SES includes headers in notifications, and
+     * a value of <code>false</code> specifies that Amazon SES does not include headers in notifications.
      * </p>
      * <p>
      * This value can only be set when <code>NotificationType</code> is already set to use a particular Amazon SNS
@@ -264,8 +264,8 @@ public class SetIdentityHeadersInNotificationsEnabledRequest extends com.amazona
      * </p>
      * 
      * @return Sets whether Amazon SES includes the original email headers in Amazon SNS notifications of the specified
-     *         notification type. A value of <code>true</code> specifies that Amazon SES will include headers in
-     *         notifications, and a value of <code>false</code> specifies that Amazon SES will not include headers in
+     *         notification type. A value of <code>true</code> specifies that Amazon SES includes headers in
+     *         notifications, and a value of <code>false</code> specifies that Amazon SES does not include headers in
      *         notifications.</p>
      *         <p>
      *         This value can only be set when <code>NotificationType</code> is already set to use a particular Amazon

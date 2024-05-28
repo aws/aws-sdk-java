@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,10 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
      * The name to use for the repository. The repository name may be specified on its own (such as
      * <code>nginx-web-app</code>) or it can be prepended with a namespace to group the repository into a category (such
      * as <code>project-a/nginx-web-app</code>).
+     * </p>
+     * <p>
+     * The repository name must start with a letter and can only contain lowercase letters, numbers, hyphens,
+     * underscores, and forward slashes.
      * </p>
      */
     private String repositoryName;
@@ -123,11 +127,18 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>nginx-web-app</code>) or it can be prepended with a namespace to group the repository into a category (such
      * as <code>project-a/nginx-web-app</code>).
      * </p>
+     * <p>
+     * The repository name must start with a letter and can only contain lowercase letters, numbers, hyphens,
+     * underscores, and forward slashes.
+     * </p>
      * 
      * @param repositoryName
      *        The name to use for the repository. The repository name may be specified on its own (such as
      *        <code>nginx-web-app</code>) or it can be prepended with a namespace to group the repository into a
-     *        category (such as <code>project-a/nginx-web-app</code>).
+     *        category (such as <code>project-a/nginx-web-app</code>).</p>
+     *        <p>
+     *        The repository name must start with a letter and can only contain lowercase letters, numbers, hyphens,
+     *        underscores, and forward slashes.
      */
 
     public void setRepositoryName(String repositoryName) {
@@ -140,10 +151,17 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>nginx-web-app</code>) or it can be prepended with a namespace to group the repository into a category (such
      * as <code>project-a/nginx-web-app</code>).
      * </p>
+     * <p>
+     * The repository name must start with a letter and can only contain lowercase letters, numbers, hyphens,
+     * underscores, and forward slashes.
+     * </p>
      * 
      * @return The name to use for the repository. The repository name may be specified on its own (such as
      *         <code>nginx-web-app</code>) or it can be prepended with a namespace to group the repository into a
-     *         category (such as <code>project-a/nginx-web-app</code>).
+     *         category (such as <code>project-a/nginx-web-app</code>).</p>
+     *         <p>
+     *         The repository name must start with a letter and can only contain lowercase letters, numbers, hyphens,
+     *         underscores, and forward slashes.
      */
 
     public String getRepositoryName() {
@@ -156,11 +174,18 @@ public class CreateRepositoryRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>nginx-web-app</code>) or it can be prepended with a namespace to group the repository into a category (such
      * as <code>project-a/nginx-web-app</code>).
      * </p>
+     * <p>
+     * The repository name must start with a letter and can only contain lowercase letters, numbers, hyphens,
+     * underscores, and forward slashes.
+     * </p>
      * 
      * @param repositoryName
      *        The name to use for the repository. The repository name may be specified on its own (such as
      *        <code>nginx-web-app</code>) or it can be prepended with a namespace to group the repository into a
-     *        category (such as <code>project-a/nginx-web-app</code>).
+     *        category (such as <code>project-a/nginx-web-app</code>).</p>
+     *        <p>
+     *        The repository name must start with a letter and can only contain lowercase letters, numbers, hyphens,
+     *        underscores, and forward slashes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

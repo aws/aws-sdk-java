@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class ContainerServicePower implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ID of the power (e.g., <code>nano-1</code>).
+     * The ID of the power (<code>nano-1</code>).
      * </p>
      */
     private String powerId;
@@ -57,7 +57,7 @@ public class ContainerServicePower implements Serializable, Cloneable, Structure
     private Float ramSizeInGb;
     /**
      * <p>
-     * The friendly name of the power (e.g., <code>nano</code>).
+     * The friendly name of the power (<code>nano</code>).
      * </p>
      */
     private String name;
@@ -70,11 +70,11 @@ public class ContainerServicePower implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ID of the power (e.g., <code>nano-1</code>).
+     * The ID of the power (<code>nano-1</code>).
      * </p>
      * 
      * @param powerId
-     *        The ID of the power (e.g., <code>nano-1</code>).
+     *        The ID of the power (<code>nano-1</code>).
      */
 
     public void setPowerId(String powerId) {
@@ -83,10 +83,10 @@ public class ContainerServicePower implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ID of the power (e.g., <code>nano-1</code>).
+     * The ID of the power (<code>nano-1</code>).
      * </p>
      * 
-     * @return The ID of the power (e.g., <code>nano-1</code>).
+     * @return The ID of the power (<code>nano-1</code>).
      */
 
     public String getPowerId() {
@@ -95,11 +95,11 @@ public class ContainerServicePower implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ID of the power (e.g., <code>nano-1</code>).
+     * The ID of the power (<code>nano-1</code>).
      * </p>
      * 
      * @param powerId
-     *        The ID of the power (e.g., <code>nano-1</code>).
+     *        The ID of the power (<code>nano-1</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -230,11 +230,11 @@ public class ContainerServicePower implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The friendly name of the power (e.g., <code>nano</code>).
+     * The friendly name of the power (<code>nano</code>).
      * </p>
      * 
      * @param name
-     *        The friendly name of the power (e.g., <code>nano</code>).
+     *        The friendly name of the power (<code>nano</code>).
      */
 
     public void setName(String name) {
@@ -243,10 +243,10 @@ public class ContainerServicePower implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The friendly name of the power (e.g., <code>nano</code>).
+     * The friendly name of the power (<code>nano</code>).
      * </p>
      * 
-     * @return The friendly name of the power (e.g., <code>nano</code>).
+     * @return The friendly name of the power (<code>nano</code>).
      */
 
     public String getName() {
@@ -255,11 +255,11 @@ public class ContainerServicePower implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The friendly name of the power (e.g., <code>nano</code>).
+     * The friendly name of the power (<code>nano</code>).
      * </p>
      * 
      * @param name
-     *        The friendly name of the power (e.g., <code>nano</code>).
+     *        The friendly name of the power (<code>nano</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

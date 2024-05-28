@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -153,6 +153,11 @@ public class AbstractAWSAppRunner implements AWSAppRunner {
     }
 
     @Override
+    public ListServicesForAutoScalingConfigurationResult listServicesForAutoScalingConfiguration(ListServicesForAutoScalingConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -189,6 +194,11 @@ public class AbstractAWSAppRunner implements AWSAppRunner {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateDefaultAutoScalingConfigurationResult updateDefaultAutoScalingConfiguration(UpdateDefaultAutoScalingConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,8 +15,10 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * You can add a tag for this mono-channel audio track to mimic its placement in a multi-channel layout. For example, if
- * this track is the left surround channel, choose Left surround (LS).
+ * Specify the QuickTime audio channel layout tags for the audio channels in this audio track. Enter channel layout tags
+ * in the same order as your output's audio channel order. For example, if your output audio track has a left and a
+ * right channel, enter Left (L) for the first channel and Right (R) for the second. If your output has multiple
+ * single-channel audio tracks, enter a single channel layout tag for each track.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum AudioChannelTag {
@@ -35,7 +37,20 @@ public enum AudioChannelTag {
     TCS("TCS"),
     VHL("VHL"),
     VHC("VHC"),
-    VHR("VHR");
+    VHR("VHR"),
+    TBL("TBL"),
+    TBC("TBC"),
+    TBR("TBR"),
+    RSL("RSL"),
+    RSR("RSR"),
+    LW("LW"),
+    RW("RW"),
+    LFE2("LFE2"),
+    LT("LT"),
+    RT("RT"),
+    HI("HI"),
+    NAR("NAR"),
+    M("M");
 
     private String value;
 

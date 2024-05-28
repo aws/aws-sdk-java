@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,8 +30,8 @@ public class HttpEndpointRequestConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * Kinesis Data Firehose uses the content encoding to compress the body of a request before sending the request to
-     * the destination. For more information, see <a
+     * Firehose uses the content encoding to compress the body of a request before sending the request to the
+     * destination. For more information, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding">Content-Encoding</a> in MDN Web
      * Docs, the official Mozilla documentation.
      * </p>
@@ -46,15 +46,15 @@ public class HttpEndpointRequestConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * Kinesis Data Firehose uses the content encoding to compress the body of a request before sending the request to
-     * the destination. For more information, see <a
+     * Firehose uses the content encoding to compress the body of a request before sending the request to the
+     * destination. For more information, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding">Content-Encoding</a> in MDN Web
      * Docs, the official Mozilla documentation.
      * </p>
      * 
      * @param contentEncoding
-     *        Kinesis Data Firehose uses the content encoding to compress the body of a request before sending the
-     *        request to the destination. For more information, see <a
+     *        Firehose uses the content encoding to compress the body of a request before sending the request to the
+     *        destination. For more information, see <a
      *        href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding">Content-Encoding</a> in
      *        MDN Web Docs, the official Mozilla documentation.
      * @see ContentEncoding
@@ -66,14 +66,14 @@ public class HttpEndpointRequestConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * Kinesis Data Firehose uses the content encoding to compress the body of a request before sending the request to
-     * the destination. For more information, see <a
+     * Firehose uses the content encoding to compress the body of a request before sending the request to the
+     * destination. For more information, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding">Content-Encoding</a> in MDN Web
      * Docs, the official Mozilla documentation.
      * </p>
      * 
-     * @return Kinesis Data Firehose uses the content encoding to compress the body of a request before sending the
-     *         request to the destination. For more information, see <a
+     * @return Firehose uses the content encoding to compress the body of a request before sending the request to the
+     *         destination. For more information, see <a
      *         href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding">Content-Encoding</a> in
      *         MDN Web Docs, the official Mozilla documentation.
      * @see ContentEncoding
@@ -85,15 +85,15 @@ public class HttpEndpointRequestConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * Kinesis Data Firehose uses the content encoding to compress the body of a request before sending the request to
-     * the destination. For more information, see <a
+     * Firehose uses the content encoding to compress the body of a request before sending the request to the
+     * destination. For more information, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding">Content-Encoding</a> in MDN Web
      * Docs, the official Mozilla documentation.
      * </p>
      * 
      * @param contentEncoding
-     *        Kinesis Data Firehose uses the content encoding to compress the body of a request before sending the
-     *        request to the destination. For more information, see <a
+     *        Firehose uses the content encoding to compress the body of a request before sending the request to the
+     *        destination. For more information, see <a
      *        href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding">Content-Encoding</a> in
      *        MDN Web Docs, the official Mozilla documentation.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -107,15 +107,15 @@ public class HttpEndpointRequestConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * Kinesis Data Firehose uses the content encoding to compress the body of a request before sending the request to
-     * the destination. For more information, see <a
+     * Firehose uses the content encoding to compress the body of a request before sending the request to the
+     * destination. For more information, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding">Content-Encoding</a> in MDN Web
      * Docs, the official Mozilla documentation.
      * </p>
      * 
      * @param contentEncoding
-     *        Kinesis Data Firehose uses the content encoding to compress the body of a request before sending the
-     *        request to the destination. For more information, see <a
+     *        Firehose uses the content encoding to compress the body of a request before sending the request to the
+     *        destination. For more information, see <a
      *        href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding">Content-Encoding</a> in
      *        MDN Web Docs, the official Mozilla documentation.
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,13 @@ public class BatchStatementError implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String message;
+    /**
+     * <p>
+     * The item which caused the condition check to fail. This will be set if ReturnValuesOnConditionCheckFailure is
+     * specified as <code>ALL_OLD</code>.
+     * </p>
+     */
+    private java.util.Map<String, AttributeValue> item;
 
     /**
      * <p>
@@ -141,6 +148,80 @@ public class BatchStatementError implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The item which caused the condition check to fail. This will be set if ReturnValuesOnConditionCheckFailure is
+     * specified as <code>ALL_OLD</code>.
+     * </p>
+     * 
+     * @return The item which caused the condition check to fail. This will be set if
+     *         ReturnValuesOnConditionCheckFailure is specified as <code>ALL_OLD</code>.
+     */
+
+    public java.util.Map<String, AttributeValue> getItem() {
+        return item;
+    }
+
+    /**
+     * <p>
+     * The item which caused the condition check to fail. This will be set if ReturnValuesOnConditionCheckFailure is
+     * specified as <code>ALL_OLD</code>.
+     * </p>
+     * 
+     * @param item
+     *        The item which caused the condition check to fail. This will be set if ReturnValuesOnConditionCheckFailure
+     *        is specified as <code>ALL_OLD</code>.
+     */
+
+    public void setItem(java.util.Map<String, AttributeValue> item) {
+        this.item = item;
+    }
+
+    /**
+     * <p>
+     * The item which caused the condition check to fail. This will be set if ReturnValuesOnConditionCheckFailure is
+     * specified as <code>ALL_OLD</code>.
+     * </p>
+     * 
+     * @param item
+     *        The item which caused the condition check to fail. This will be set if ReturnValuesOnConditionCheckFailure
+     *        is specified as <code>ALL_OLD</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchStatementError withItem(java.util.Map<String, AttributeValue> item) {
+        setItem(item);
+        return this;
+    }
+
+    /**
+     * Add a single Item entry
+     *
+     * @see BatchStatementError#withItem
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchStatementError addItemEntry(String key, AttributeValue value) {
+        if (null == this.item) {
+            this.item = new java.util.HashMap<String, AttributeValue>();
+        }
+        if (this.item.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.item.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Item.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchStatementError clearItemEntries() {
+        this.item = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -155,7 +236,9 @@ public class BatchStatementError implements Serializable, Cloneable, StructuredP
         if (getCode() != null)
             sb.append("Code: ").append(getCode()).append(",");
         if (getMessage() != null)
-            sb.append("Message: ").append(getMessage());
+            sb.append("Message: ").append(getMessage()).append(",");
+        if (getItem() != null)
+            sb.append("Item: ").append(getItem());
         sb.append("}");
         return sb.toString();
     }
@@ -178,6 +261,10 @@ public class BatchStatementError implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
             return false;
+        if (other.getItem() == null ^ this.getItem() == null)
+            return false;
+        if (other.getItem() != null && other.getItem().equals(this.getItem()) == false)
+            return false;
         return true;
     }
 
@@ -188,6 +275,7 @@ public class BatchStatementError implements Serializable, Cloneable, StructuredP
 
         hashCode = prime * hashCode + ((getCode() == null) ? 0 : getCode().hashCode());
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        hashCode = prime * hashCode + ((getItem() == null) ? 0 : getItem().hashCode());
         return hashCode;
     }
 

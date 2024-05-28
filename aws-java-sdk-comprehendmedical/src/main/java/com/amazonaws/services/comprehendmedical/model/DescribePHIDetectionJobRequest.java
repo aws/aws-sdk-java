@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,20 +27,20 @@ public class DescribePHIDetectionJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The identifier that Comprehend Medical; generated for the job. The <code>StartPHIDetectionJob</code> operation
-     * returns this identifier in its response.
+     * The identifier that Amazon Comprehend Medical generated for the job. The <code>StartPHIDetectionJob</code>
+     * operation returns this identifier in its response.
      * </p>
      */
     private String jobId;
 
     /**
      * <p>
-     * The identifier that Comprehend Medical; generated for the job. The <code>StartPHIDetectionJob</code> operation
-     * returns this identifier in its response.
+     * The identifier that Amazon Comprehend Medical generated for the job. The <code>StartPHIDetectionJob</code>
+     * operation returns this identifier in its response.
      * </p>
      * 
      * @param jobId
-     *        The identifier that Comprehend Medical; generated for the job. The <code>StartPHIDetectionJob</code>
+     *        The identifier that Amazon Comprehend Medical generated for the job. The <code>StartPHIDetectionJob</code>
      *        operation returns this identifier in its response.
      */
 
@@ -50,12 +50,12 @@ public class DescribePHIDetectionJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The identifier that Comprehend Medical; generated for the job. The <code>StartPHIDetectionJob</code> operation
-     * returns this identifier in its response.
+     * The identifier that Amazon Comprehend Medical generated for the job. The <code>StartPHIDetectionJob</code>
+     * operation returns this identifier in its response.
      * </p>
      * 
-     * @return The identifier that Comprehend Medical; generated for the job. The <code>StartPHIDetectionJob</code>
-     *         operation returns this identifier in its response.
+     * @return The identifier that Amazon Comprehend Medical generated for the job. The
+     *         <code>StartPHIDetectionJob</code> operation returns this identifier in its response.
      */
 
     public String getJobId() {
@@ -64,12 +64,12 @@ public class DescribePHIDetectionJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The identifier that Comprehend Medical; generated for the job. The <code>StartPHIDetectionJob</code> operation
-     * returns this identifier in its response.
+     * The identifier that Amazon Comprehend Medical generated for the job. The <code>StartPHIDetectionJob</code>
+     * operation returns this identifier in its response.
      * </p>
      * 
      * @param jobId
-     *        The identifier that Comprehend Medical; generated for the job. The <code>StartPHIDetectionJob</code>
+     *        The identifier that Amazon Comprehend Medical generated for the job. The <code>StartPHIDetectionJob</code>
      *        operation returns this identifier in its response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

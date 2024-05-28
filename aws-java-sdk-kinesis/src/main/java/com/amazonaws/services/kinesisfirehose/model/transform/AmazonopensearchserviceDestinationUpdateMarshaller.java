@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,8 @@ public class AmazonopensearchserviceDestinationUpdateMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProcessingConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> CLOUDWATCHLOGGINGOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CloudWatchLoggingOptions").build();
+    private static final MarshallingInfo<StructuredPojo> DOCUMENTIDOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentIdOptions").build();
 
     private static final AmazonopensearchserviceDestinationUpdateMarshaller instance = new AmazonopensearchserviceDestinationUpdateMarshaller();
 
@@ -77,6 +79,7 @@ public class AmazonopensearchserviceDestinationUpdateMarshaller {
             protocolMarshaller.marshall(amazonopensearchserviceDestinationUpdate.getS3Update(), S3UPDATE_BINDING);
             protocolMarshaller.marshall(amazonopensearchserviceDestinationUpdate.getProcessingConfiguration(), PROCESSINGCONFIGURATION_BINDING);
             protocolMarshaller.marshall(amazonopensearchserviceDestinationUpdate.getCloudWatchLoggingOptions(), CLOUDWATCHLOGGINGOPTIONS_BINDING);
+            protocolMarshaller.marshall(amazonopensearchserviceDestinationUpdate.getDocumentIdOptions(), DOCUMENTIDOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

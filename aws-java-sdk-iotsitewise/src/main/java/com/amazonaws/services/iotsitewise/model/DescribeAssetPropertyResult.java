@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class DescribeAssetPropertyResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the asset.
+     * The ID of the asset, in UUID format.
      * </p>
      */
     private String assetId;
@@ -37,7 +37,7 @@ public class DescribeAssetPropertyResult extends com.amazonaws.AmazonWebServiceR
     private String assetName;
     /**
      * <p>
-     * The ID of the asset model.
+     * The ID of the asset model, in UUID format.
      * </p>
      */
     private String assetModelId;
@@ -53,18 +53,26 @@ public class DescribeAssetPropertyResult extends com.amazonaws.AmazonWebServiceR
     private Property assetProperty;
     /**
      * <p>
-     * The composite asset model that declares this asset property, if this asset property exists in a composite model.
+     * The composite model that declares this asset property, if this asset property exists in a composite model.
      * </p>
      */
     private CompositeModelProperty compositeModel;
+    /**
+     * <p>
+     * The external ID of the asset. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     */
+    private String assetExternalId;
 
     /**
      * <p>
-     * The ID of the asset.
+     * The ID of the asset, in UUID format.
      * </p>
      * 
      * @param assetId
-     *        The ID of the asset.
+     *        The ID of the asset, in UUID format.
      */
 
     public void setAssetId(String assetId) {
@@ -73,10 +81,10 @@ public class DescribeAssetPropertyResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the asset.
+     * The ID of the asset, in UUID format.
      * </p>
      * 
-     * @return The ID of the asset.
+     * @return The ID of the asset, in UUID format.
      */
 
     public String getAssetId() {
@@ -85,11 +93,11 @@ public class DescribeAssetPropertyResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the asset.
+     * The ID of the asset, in UUID format.
      * </p>
      * 
      * @param assetId
-     *        The ID of the asset.
+     *        The ID of the asset, in UUID format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,11 +148,11 @@ public class DescribeAssetPropertyResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the asset model.
+     * The ID of the asset model, in UUID format.
      * </p>
      * 
      * @param assetModelId
-     *        The ID of the asset model.
+     *        The ID of the asset model, in UUID format.
      */
 
     public void setAssetModelId(String assetModelId) {
@@ -153,10 +161,10 @@ public class DescribeAssetPropertyResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the asset model.
+     * The ID of the asset model, in UUID format.
      * </p>
      * 
-     * @return The ID of the asset model.
+     * @return The ID of the asset model, in UUID format.
      */
 
     public String getAssetModelId() {
@@ -165,11 +173,11 @@ public class DescribeAssetPropertyResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the asset model.
+     * The ID of the asset model, in UUID format.
      * </p>
      * 
      * @param assetModelId
-     *        The ID of the asset model.
+     *        The ID of the asset model, in UUID format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -241,12 +249,11 @@ public class DescribeAssetPropertyResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The composite asset model that declares this asset property, if this asset property exists in a composite model.
+     * The composite model that declares this asset property, if this asset property exists in a composite model.
      * </p>
      * 
      * @param compositeModel
-     *        The composite asset model that declares this asset property, if this asset property exists in a composite
-     *        model.
+     *        The composite model that declares this asset property, if this asset property exists in a composite model.
      */
 
     public void setCompositeModel(CompositeModelProperty compositeModel) {
@@ -255,10 +262,10 @@ public class DescribeAssetPropertyResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The composite asset model that declares this asset property, if this asset property exists in a composite model.
+     * The composite model that declares this asset property, if this asset property exists in a composite model.
      * </p>
      * 
-     * @return The composite asset model that declares this asset property, if this asset property exists in a composite
+     * @return The composite model that declares this asset property, if this asset property exists in a composite
      *         model.
      */
 
@@ -268,17 +275,68 @@ public class DescribeAssetPropertyResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The composite asset model that declares this asset property, if this asset property exists in a composite model.
+     * The composite model that declares this asset property, if this asset property exists in a composite model.
      * </p>
      * 
      * @param compositeModel
-     *        The composite asset model that declares this asset property, if this asset property exists in a composite
-     *        model.
+     *        The composite model that declares this asset property, if this asset property exists in a composite model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAssetPropertyResult withCompositeModel(CompositeModelProperty compositeModel) {
         setCompositeModel(compositeModel);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The external ID of the asset. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param assetExternalId
+     *        The external ID of the asset. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *        external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     */
+
+    public void setAssetExternalId(String assetExternalId) {
+        this.assetExternalId = assetExternalId;
+    }
+
+    /**
+     * <p>
+     * The external ID of the asset. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @return The external ID of the asset. For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *         external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     */
+
+    public String getAssetExternalId() {
+        return this.assetExternalId;
+    }
+
+    /**
+     * <p>
+     * The external ID of the asset. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param assetExternalId
+     *        The external ID of the asset. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *        external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAssetPropertyResult withAssetExternalId(String assetExternalId) {
+        setAssetExternalId(assetExternalId);
         return this;
     }
 
@@ -303,7 +361,9 @@ public class DescribeAssetPropertyResult extends com.amazonaws.AmazonWebServiceR
         if (getAssetProperty() != null)
             sb.append("AssetProperty: ").append(getAssetProperty()).append(",");
         if (getCompositeModel() != null)
-            sb.append("CompositeModel: ").append(getCompositeModel());
+            sb.append("CompositeModel: ").append(getCompositeModel()).append(",");
+        if (getAssetExternalId() != null)
+            sb.append("AssetExternalId: ").append(getAssetExternalId());
         sb.append("}");
         return sb.toString();
     }
@@ -338,6 +398,10 @@ public class DescribeAssetPropertyResult extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getCompositeModel() != null && other.getCompositeModel().equals(this.getCompositeModel()) == false)
             return false;
+        if (other.getAssetExternalId() == null ^ this.getAssetExternalId() == null)
+            return false;
+        if (other.getAssetExternalId() != null && other.getAssetExternalId().equals(this.getAssetExternalId()) == false)
+            return false;
         return true;
     }
 
@@ -351,6 +415,7 @@ public class DescribeAssetPropertyResult extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getAssetModelId() == null) ? 0 : getAssetModelId().hashCode());
         hashCode = prime * hashCode + ((getAssetProperty() == null) ? 0 : getAssetProperty().hashCode());
         hashCode = prime * hashCode + ((getCompositeModel() == null) ? 0 : getCompositeModel().hashCode());
+        hashCode = prime * hashCode + ((getAssetExternalId() == null) ? 0 : getAssetExternalId().hashCode());
         return hashCode;
     }
 

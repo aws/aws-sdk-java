@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,13 +30,13 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the principal.
+     * The ID of the principal that can be associated with a resource share.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of a resource share the principal is associated with.
      * </p>
      */
@@ -49,25 +49,37 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date creationTime;
     /**
      * <p>
-     * The date and time when the association was last updated.
+     * The date and time when the association between the resource share and the principal was last updated.
      * </p>
      */
     private java.util.Date lastUpdatedTime;
     /**
      * <p>
-     * Indicates whether the principal belongs to the same organization in Organizations as the Amazon Web Services
-     * account that owns the resource share.
+     * Indicates the relationship between the Amazon Web Services account the principal belongs to and the account that
+     * owns the resource share:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>True</code> – The two accounts belong to same organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>False</code> – The two accounts do not belong to the same organization.
+     * </p>
+     * </li>
+     * </ul>
      */
     private Boolean external;
 
     /**
      * <p>
-     * The ID of the principal.
+     * The ID of the principal that can be associated with a resource share.
      * </p>
      * 
      * @param id
-     *        The ID of the principal.
+     *        The ID of the principal that can be associated with a resource share.
      */
 
     public void setId(String id) {
@@ -76,10 +88,10 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the principal.
+     * The ID of the principal that can be associated with a resource share.
      * </p>
      * 
-     * @return The ID of the principal.
+     * @return The ID of the principal that can be associated with a resource share.
      */
 
     public String getId() {
@@ -88,11 +100,11 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the principal.
+     * The ID of the principal that can be associated with a resource share.
      * </p>
      * 
      * @param id
-     *        The ID of the principal.
+     *        The ID of the principal that can be associated with a resource share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,12 +115,12 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of a resource share the principal is associated with.
      * </p>
      * 
      * @param resourceShareArn
-     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *        Name (ARN)</a> of a resource share the principal is associated with.
      */
 
@@ -118,11 +130,11 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of a resource share the principal is associated with.
      * </p>
      * 
-     * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *         Name (ARN)</a> of a resource share the principal is associated with.
      */
 
@@ -132,12 +144,12 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of a resource share the principal is associated with.
      * </p>
      * 
      * @param resourceShareArn
-     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *        Name (ARN)</a> of a resource share the principal is associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -189,11 +201,11 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time when the association was last updated.
+     * The date and time when the association between the resource share and the principal was last updated.
      * </p>
      * 
      * @param lastUpdatedTime
-     *        The date and time when the association was last updated.
+     *        The date and time when the association between the resource share and the principal was last updated.
      */
 
     public void setLastUpdatedTime(java.util.Date lastUpdatedTime) {
@@ -202,10 +214,10 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time when the association was last updated.
+     * The date and time when the association between the resource share and the principal was last updated.
      * </p>
      * 
-     * @return The date and time when the association was last updated.
+     * @return The date and time when the association between the resource share and the principal was last updated.
      */
 
     public java.util.Date getLastUpdatedTime() {
@@ -214,11 +226,11 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time when the association was last updated.
+     * The date and time when the association between the resource share and the principal was last updated.
      * </p>
      * 
      * @param lastUpdatedTime
-     *        The date and time when the association was last updated.
+     *        The date and time when the association between the resource share and the principal was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -229,13 +241,36 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether the principal belongs to the same organization in Organizations as the Amazon Web Services
-     * account that owns the resource share.
+     * Indicates the relationship between the Amazon Web Services account the principal belongs to and the account that
+     * owns the resource share:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>True</code> – The two accounts belong to same organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>False</code> – The two accounts do not belong to the same organization.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param external
-     *        Indicates whether the principal belongs to the same organization in Organizations as the Amazon Web
-     *        Services account that owns the resource share.
+     *        Indicates the relationship between the Amazon Web Services account the principal belongs to and the
+     *        account that owns the resource share:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>True</code> – The two accounts belong to same organization.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>False</code> – The two accounts do not belong to the same organization.
+     *        </p>
+     *        </li>
      */
 
     public void setExternal(Boolean external) {
@@ -244,12 +279,35 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether the principal belongs to the same organization in Organizations as the Amazon Web Services
-     * account that owns the resource share.
+     * Indicates the relationship between the Amazon Web Services account the principal belongs to and the account that
+     * owns the resource share:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>True</code> – The two accounts belong to same organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>False</code> – The two accounts do not belong to the same organization.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Indicates whether the principal belongs to the same organization in Organizations as the Amazon Web
-     *         Services account that owns the resource share.
+     * @return Indicates the relationship between the Amazon Web Services account the principal belongs to and the
+     *         account that owns the resource share:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>True</code> – The two accounts belong to same organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>False</code> – The two accounts do not belong to the same organization.
+     *         </p>
+     *         </li>
      */
 
     public Boolean getExternal() {
@@ -258,13 +316,36 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether the principal belongs to the same organization in Organizations as the Amazon Web Services
-     * account that owns the resource share.
+     * Indicates the relationship between the Amazon Web Services account the principal belongs to and the account that
+     * owns the resource share:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>True</code> – The two accounts belong to same organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>False</code> – The two accounts do not belong to the same organization.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param external
-     *        Indicates whether the principal belongs to the same organization in Organizations as the Amazon Web
-     *        Services account that owns the resource share.
+     *        Indicates the relationship between the Amazon Web Services account the principal belongs to and the
+     *        account that owns the resource share:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>True</code> – The two accounts belong to same organization.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>False</code> – The two accounts do not belong to the same organization.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -275,12 +356,35 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether the principal belongs to the same organization in Organizations as the Amazon Web Services
-     * account that owns the resource share.
+     * Indicates the relationship between the Amazon Web Services account the principal belongs to and the account that
+     * owns the resource share:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>True</code> – The two accounts belong to same organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>False</code> – The two accounts do not belong to the same organization.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Indicates whether the principal belongs to the same organization in Organizations as the Amazon Web
-     *         Services account that owns the resource share.
+     * @return Indicates the relationship between the Amazon Web Services account the principal belongs to and the
+     *         account that owns the resource share:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>True</code> – The two accounts belong to same organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>False</code> – The two accounts do not belong to the same organization.
+     *         </p>
+     *         </li>
      */
 
     public Boolean isExternal() {

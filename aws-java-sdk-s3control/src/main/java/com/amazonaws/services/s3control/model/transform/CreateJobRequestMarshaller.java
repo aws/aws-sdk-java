@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -81,6 +81,32 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
 
                                 if (lambdaInvoke.getFunctionArn() != null) {
                                     xmlWriter.startElement("FunctionArn").value(lambdaInvoke.getFunctionArn()).endElement();
+                                }
+
+                                if (lambdaInvoke.getInvocationSchemaVersion() != null) {
+                                    xmlWriter.startElement("InvocationSchemaVersion").value(lambdaInvoke.getInvocationSchemaVersion()).endElement();
+                                }
+
+                                java.util.HashMap<String, String> lambdaInvokeOperationUserArgumentsMap = (java.util.HashMap<String, String>) lambdaInvoke
+                                        .getUserArguments();
+                                if (lambdaInvokeOperationUserArgumentsMap != null) {
+                                    xmlWriter.startElement("UserArguments");
+
+                                    for (Map.Entry<String, String> lambdaInvokeOperationUserArgumentsMapValue : lambdaInvokeOperationUserArgumentsMap
+                                            .entrySet()) {
+                                        if (lambdaInvokeOperationUserArgumentsMapValue == null) {
+                                            continue;
+                                        }
+                                        xmlWriter.startElement("entry");
+                                        xmlWriter.startElement("key");
+                                        xmlWriter.value(lambdaInvokeOperationUserArgumentsMapValue.getKey());
+                                        xmlWriter.endElement();
+                                        xmlWriter.startElement("value");
+                                        xmlWriter.value(lambdaInvokeOperationUserArgumentsMapValue.getValue());
+                                        xmlWriter.endElement();
+                                        xmlWriter.endElement();
+                                    }
+                                    xmlWriter.endElement();
                                 }
                                 xmlWriter.endElement();
                             }
@@ -680,6 +706,70 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                                             for (String jobManifestGeneratorFilterObjectReplicationStatusesListValue : jobManifestGeneratorFilterObjectReplicationStatusesList) {
                                                 xmlWriter.startElement("member");
                                                 xmlWriter.value(jobManifestGeneratorFilterObjectReplicationStatusesListValue);
+                                                xmlWriter.endElement();
+                                            }
+                                            xmlWriter.endElement();
+                                        }
+
+                                        {
+                                            KeyNameConstraint keyNameConstraint = filter.getKeyNameConstraint();
+                                            if (keyNameConstraint != null) {
+                                                xmlWriter.startElement("KeyNameConstraint");
+
+                                                java.util.List<String> keyNameConstraintMatchAnyPrefixList = keyNameConstraint.getMatchAnyPrefix();
+                                                if (keyNameConstraintMatchAnyPrefixList != null) {
+                                                    xmlWriter.startElement("MatchAnyPrefix");
+
+                                                    for (String keyNameConstraintMatchAnyPrefixListValue : keyNameConstraintMatchAnyPrefixList) {
+                                                        xmlWriter.startElement("member");
+                                                        xmlWriter.value(keyNameConstraintMatchAnyPrefixListValue);
+                                                        xmlWriter.endElement();
+                                                    }
+                                                    xmlWriter.endElement();
+                                                }
+
+                                                java.util.List<String> keyNameConstraintMatchAnySuffixList = keyNameConstraint.getMatchAnySuffix();
+                                                if (keyNameConstraintMatchAnySuffixList != null) {
+                                                    xmlWriter.startElement("MatchAnySuffix");
+
+                                                    for (String keyNameConstraintMatchAnySuffixListValue : keyNameConstraintMatchAnySuffixList) {
+                                                        xmlWriter.startElement("member");
+                                                        xmlWriter.value(keyNameConstraintMatchAnySuffixListValue);
+                                                        xmlWriter.endElement();
+                                                    }
+                                                    xmlWriter.endElement();
+                                                }
+
+                                                java.util.List<String> keyNameConstraintMatchAnySubstringList = keyNameConstraint.getMatchAnySubstring();
+                                                if (keyNameConstraintMatchAnySubstringList != null) {
+                                                    xmlWriter.startElement("MatchAnySubstring");
+
+                                                    for (String keyNameConstraintMatchAnySubstringListValue : keyNameConstraintMatchAnySubstringList) {
+                                                        xmlWriter.startElement("member");
+                                                        xmlWriter.value(keyNameConstraintMatchAnySubstringListValue);
+                                                        xmlWriter.endElement();
+                                                    }
+                                                    xmlWriter.endElement();
+                                                }
+                                                xmlWriter.endElement();
+                                            }
+                                        }
+
+                                        if (filter.getObjectSizeGreaterThanBytes() != null) {
+                                            xmlWriter.startElement("ObjectSizeGreaterThanBytes").value(filter.getObjectSizeGreaterThanBytes()).endElement();
+                                        }
+
+                                        if (filter.getObjectSizeLessThanBytes() != null) {
+                                            xmlWriter.startElement("ObjectSizeLessThanBytes").value(filter.getObjectSizeLessThanBytes()).endElement();
+                                        }
+
+                                        java.util.List<String> jobManifestGeneratorFilterMatchAnyStorageClassList = filter.getMatchAnyStorageClass();
+                                        if (jobManifestGeneratorFilterMatchAnyStorageClassList != null) {
+                                            xmlWriter.startElement("MatchAnyStorageClass");
+
+                                            for (String jobManifestGeneratorFilterMatchAnyStorageClassListValue : jobManifestGeneratorFilterMatchAnyStorageClassList) {
+                                                xmlWriter.startElement("member");
+                                                xmlWriter.value(jobManifestGeneratorFilterMatchAnyStorageClassListValue);
                                                 xmlWriter.endElement();
                                             }
                                             xmlWriter.endElement();

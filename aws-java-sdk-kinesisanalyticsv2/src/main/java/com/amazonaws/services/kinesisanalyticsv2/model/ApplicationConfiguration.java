@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the creation parameters for a Kinesis Data Analytics application.
+ * Specifies the creation parameters for a Managed Service for Apache Flink application.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ApplicationConfiguration"
@@ -36,25 +36,25 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
     private SqlApplicationConfiguration sqlApplicationConfiguration;
     /**
      * <p>
-     * The creation and update parameters for a Flink-based Kinesis Data Analytics application.
+     * The creation and update parameters for a Managed Service for Apache Flink application.
      * </p>
      */
     private FlinkApplicationConfiguration flinkApplicationConfiguration;
     /**
      * <p>
-     * Describes execution properties for a Flink-based Kinesis Data Analytics application.
+     * Describes execution properties for a Managed Service for Apache Flink application.
      * </p>
      */
     private EnvironmentProperties environmentProperties;
     /**
      * <p>
-     * The code location and type parameters for a Flink-based Kinesis Data Analytics application.
+     * The code location and type parameters for a Managed Service for Apache Flink application.
      * </p>
      */
     private ApplicationCodeConfiguration applicationCodeConfiguration;
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Managed Service for Apache Flink application.
      * </p>
      */
     private ApplicationSnapshotConfiguration applicationSnapshotConfiguration;
@@ -66,7 +66,7 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
     private java.util.List<VpcConfiguration> vpcConfigurations;
     /**
      * <p>
-     * The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     * The configuration parameters for a Managed Service for Apache Flink Studio notebook.
      * </p>
      */
     private ZeppelinApplicationConfiguration zeppelinApplicationConfiguration;
@@ -113,11 +113,11 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The creation and update parameters for a Flink-based Kinesis Data Analytics application.
+     * The creation and update parameters for a Managed Service for Apache Flink application.
      * </p>
      * 
      * @param flinkApplicationConfiguration
-     *        The creation and update parameters for a Flink-based Kinesis Data Analytics application.
+     *        The creation and update parameters for a Managed Service for Apache Flink application.
      */
 
     public void setFlinkApplicationConfiguration(FlinkApplicationConfiguration flinkApplicationConfiguration) {
@@ -126,10 +126,10 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The creation and update parameters for a Flink-based Kinesis Data Analytics application.
+     * The creation and update parameters for a Managed Service for Apache Flink application.
      * </p>
      * 
-     * @return The creation and update parameters for a Flink-based Kinesis Data Analytics application.
+     * @return The creation and update parameters for a Managed Service for Apache Flink application.
      */
 
     public FlinkApplicationConfiguration getFlinkApplicationConfiguration() {
@@ -138,11 +138,11 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The creation and update parameters for a Flink-based Kinesis Data Analytics application.
+     * The creation and update parameters for a Managed Service for Apache Flink application.
      * </p>
      * 
      * @param flinkApplicationConfiguration
-     *        The creation and update parameters for a Flink-based Kinesis Data Analytics application.
+     *        The creation and update parameters for a Managed Service for Apache Flink application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,11 +153,11 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Describes execution properties for a Flink-based Kinesis Data Analytics application.
+     * Describes execution properties for a Managed Service for Apache Flink application.
      * </p>
      * 
      * @param environmentProperties
-     *        Describes execution properties for a Flink-based Kinesis Data Analytics application.
+     *        Describes execution properties for a Managed Service for Apache Flink application.
      */
 
     public void setEnvironmentProperties(EnvironmentProperties environmentProperties) {
@@ -166,10 +166,10 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Describes execution properties for a Flink-based Kinesis Data Analytics application.
+     * Describes execution properties for a Managed Service for Apache Flink application.
      * </p>
      * 
-     * @return Describes execution properties for a Flink-based Kinesis Data Analytics application.
+     * @return Describes execution properties for a Managed Service for Apache Flink application.
      */
 
     public EnvironmentProperties getEnvironmentProperties() {
@@ -178,11 +178,11 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Describes execution properties for a Flink-based Kinesis Data Analytics application.
+     * Describes execution properties for a Managed Service for Apache Flink application.
      * </p>
      * 
      * @param environmentProperties
-     *        Describes execution properties for a Flink-based Kinesis Data Analytics application.
+     *        Describes execution properties for a Managed Service for Apache Flink application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,11 +193,11 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The code location and type parameters for a Flink-based Kinesis Data Analytics application.
+     * The code location and type parameters for a Managed Service for Apache Flink application.
      * </p>
      * 
      * @param applicationCodeConfiguration
-     *        The code location and type parameters for a Flink-based Kinesis Data Analytics application.
+     *        The code location and type parameters for a Managed Service for Apache Flink application.
      */
 
     public void setApplicationCodeConfiguration(ApplicationCodeConfiguration applicationCodeConfiguration) {
@@ -206,10 +206,10 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The code location and type parameters for a Flink-based Kinesis Data Analytics application.
+     * The code location and type parameters for a Managed Service for Apache Flink application.
      * </p>
      * 
-     * @return The code location and type parameters for a Flink-based Kinesis Data Analytics application.
+     * @return The code location and type parameters for a Managed Service for Apache Flink application.
      */
 
     public ApplicationCodeConfiguration getApplicationCodeConfiguration() {
@@ -218,11 +218,11 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The code location and type parameters for a Flink-based Kinesis Data Analytics application.
+     * The code location and type parameters for a Managed Service for Apache Flink application.
      * </p>
      * 
      * @param applicationCodeConfiguration
-     *        The code location and type parameters for a Flink-based Kinesis Data Analytics application.
+     *        The code location and type parameters for a Managed Service for Apache Flink application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -233,11 +233,11 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Managed Service for Apache Flink application.
      * </p>
      * 
      * @param applicationSnapshotConfiguration
-     *        Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+     *        Describes whether snapshots are enabled for a Managed Service for Apache Flink application.
      */
 
     public void setApplicationSnapshotConfiguration(ApplicationSnapshotConfiguration applicationSnapshotConfiguration) {
@@ -246,10 +246,10 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Managed Service for Apache Flink application.
      * </p>
      * 
-     * @return Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+     * @return Describes whether snapshots are enabled for a Managed Service for Apache Flink application.
      */
 
     public ApplicationSnapshotConfiguration getApplicationSnapshotConfiguration() {
@@ -258,11 +258,11 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Managed Service for Apache Flink application.
      * </p>
      * 
      * @param applicationSnapshotConfiguration
-     *        Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+     *        Describes whether snapshots are enabled for a Managed Service for Apache Flink application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -343,11 +343,11 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     * The configuration parameters for a Managed Service for Apache Flink Studio notebook.
      * </p>
      * 
      * @param zeppelinApplicationConfiguration
-     *        The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     *        The configuration parameters for a Managed Service for Apache Flink Studio notebook.
      */
 
     public void setZeppelinApplicationConfiguration(ZeppelinApplicationConfiguration zeppelinApplicationConfiguration) {
@@ -356,10 +356,10 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     * The configuration parameters for a Managed Service for Apache Flink Studio notebook.
      * </p>
      * 
-     * @return The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     * @return The configuration parameters for a Managed Service for Apache Flink Studio notebook.
      */
 
     public ZeppelinApplicationConfiguration getZeppelinApplicationConfiguration() {
@@ -368,11 +368,11 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     * The configuration parameters for a Managed Service for Apache Flink Studio notebook.
      * </p>
      * 
      * @param zeppelinApplicationConfiguration
-     *        The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     *        The configuration parameters for a Managed Service for Apache Flink Studio notebook.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

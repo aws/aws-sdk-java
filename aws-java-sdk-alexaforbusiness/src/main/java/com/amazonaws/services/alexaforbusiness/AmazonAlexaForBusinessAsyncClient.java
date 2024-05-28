@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,13 +26,7 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Alexa for Business helps you use Alexa in your organization. Alexa for Business provides you with the tools to manage
- * Alexa devices, enroll your users, and assign skills, at scale. You can build your own context-aware voice skills
- * using the Alexa Skills Kit and the Alexa for Business API operations. You can also make these available as private
- * skills for your organization. Alexa for Business makes it efficient to voice-enable your products and services, thus
- * providing context-aware voice experiences for your customers. Device makers building with the Alexa Voice Service
- * (AVS) can create fully integrated solutions, register their products with Alexa for Business, and manage them as
- * shared devices in their organization.
+ * Alexa for Business has been retired and is no longer supported.
  * </p>
  */
 @ThreadSafe
@@ -82,12 +76,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ApproveSkillResult> approveSkillAsync(ApproveSkillRequest request) {
 
         return approveSkillAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ApproveSkillResult> approveSkillAsync(final ApproveSkillRequest request,
             final com.amazonaws.handlers.AsyncHandler<ApproveSkillRequest, ApproveSkillResult> asyncHandler) {
         final ApproveSkillRequest finalRequest = beforeClientExecution(request);
@@ -115,6 +111,7 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<AssociateContactWithAddressBookResult> associateContactWithAddressBookAsync(
             AssociateContactWithAddressBookRequest request) {
 
@@ -122,6 +119,7 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<AssociateContactWithAddressBookResult> associateContactWithAddressBookAsync(
             final AssociateContactWithAddressBookRequest request,
             final com.amazonaws.handlers.AsyncHandler<AssociateContactWithAddressBookRequest, AssociateContactWithAddressBookResult> asyncHandler) {
@@ -150,6 +148,7 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<AssociateDeviceWithNetworkProfileResult> associateDeviceWithNetworkProfileAsync(
             AssociateDeviceWithNetworkProfileRequest request) {
 
@@ -157,6 +156,7 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<AssociateDeviceWithNetworkProfileResult> associateDeviceWithNetworkProfileAsync(
             final AssociateDeviceWithNetworkProfileRequest request,
             final com.amazonaws.handlers.AsyncHandler<AssociateDeviceWithNetworkProfileRequest, AssociateDeviceWithNetworkProfileResult> asyncHandler) {
@@ -185,12 +185,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<AssociateDeviceWithRoomResult> associateDeviceWithRoomAsync(AssociateDeviceWithRoomRequest request) {
 
         return associateDeviceWithRoomAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<AssociateDeviceWithRoomResult> associateDeviceWithRoomAsync(final AssociateDeviceWithRoomRequest request,
             final com.amazonaws.handlers.AsyncHandler<AssociateDeviceWithRoomRequest, AssociateDeviceWithRoomResult> asyncHandler) {
         final AssociateDeviceWithRoomRequest finalRequest = beforeClientExecution(request);
@@ -218,12 +220,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<AssociateSkillGroupWithRoomResult> associateSkillGroupWithRoomAsync(AssociateSkillGroupWithRoomRequest request) {
 
         return associateSkillGroupWithRoomAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<AssociateSkillGroupWithRoomResult> associateSkillGroupWithRoomAsync(final AssociateSkillGroupWithRoomRequest request,
             final com.amazonaws.handlers.AsyncHandler<AssociateSkillGroupWithRoomRequest, AssociateSkillGroupWithRoomResult> asyncHandler) {
         final AssociateSkillGroupWithRoomRequest finalRequest = beforeClientExecution(request);
@@ -251,12 +255,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<AssociateSkillWithSkillGroupResult> associateSkillWithSkillGroupAsync(AssociateSkillWithSkillGroupRequest request) {
 
         return associateSkillWithSkillGroupAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<AssociateSkillWithSkillGroupResult> associateSkillWithSkillGroupAsync(final AssociateSkillWithSkillGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<AssociateSkillWithSkillGroupRequest, AssociateSkillWithSkillGroupResult> asyncHandler) {
         final AssociateSkillWithSkillGroupRequest finalRequest = beforeClientExecution(request);
@@ -284,12 +290,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<AssociateSkillWithUsersResult> associateSkillWithUsersAsync(AssociateSkillWithUsersRequest request) {
 
         return associateSkillWithUsersAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<AssociateSkillWithUsersResult> associateSkillWithUsersAsync(final AssociateSkillWithUsersRequest request,
             final com.amazonaws.handlers.AsyncHandler<AssociateSkillWithUsersRequest, AssociateSkillWithUsersResult> asyncHandler) {
         final AssociateSkillWithUsersRequest finalRequest = beforeClientExecution(request);
@@ -317,12 +325,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateAddressBookResult> createAddressBookAsync(CreateAddressBookRequest request) {
 
         return createAddressBookAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateAddressBookResult> createAddressBookAsync(final CreateAddressBookRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateAddressBookRequest, CreateAddressBookResult> asyncHandler) {
         final CreateAddressBookRequest finalRequest = beforeClientExecution(request);
@@ -350,12 +360,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateBusinessReportScheduleResult> createBusinessReportScheduleAsync(CreateBusinessReportScheduleRequest request) {
 
         return createBusinessReportScheduleAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateBusinessReportScheduleResult> createBusinessReportScheduleAsync(final CreateBusinessReportScheduleRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateBusinessReportScheduleRequest, CreateBusinessReportScheduleResult> asyncHandler) {
         final CreateBusinessReportScheduleRequest finalRequest = beforeClientExecution(request);
@@ -383,12 +395,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateConferenceProviderResult> createConferenceProviderAsync(CreateConferenceProviderRequest request) {
 
         return createConferenceProviderAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateConferenceProviderResult> createConferenceProviderAsync(final CreateConferenceProviderRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateConferenceProviderRequest, CreateConferenceProviderResult> asyncHandler) {
         final CreateConferenceProviderRequest finalRequest = beforeClientExecution(request);
@@ -416,12 +430,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateContactResult> createContactAsync(CreateContactRequest request) {
 
         return createContactAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateContactResult> createContactAsync(final CreateContactRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateContactRequest, CreateContactResult> asyncHandler) {
         final CreateContactRequest finalRequest = beforeClientExecution(request);
@@ -449,12 +465,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateGatewayGroupResult> createGatewayGroupAsync(CreateGatewayGroupRequest request) {
 
         return createGatewayGroupAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateGatewayGroupResult> createGatewayGroupAsync(final CreateGatewayGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateGatewayGroupRequest, CreateGatewayGroupResult> asyncHandler) {
         final CreateGatewayGroupRequest finalRequest = beforeClientExecution(request);
@@ -482,12 +500,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateNetworkProfileResult> createNetworkProfileAsync(CreateNetworkProfileRequest request) {
 
         return createNetworkProfileAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateNetworkProfileResult> createNetworkProfileAsync(final CreateNetworkProfileRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateNetworkProfileRequest, CreateNetworkProfileResult> asyncHandler) {
         final CreateNetworkProfileRequest finalRequest = beforeClientExecution(request);
@@ -515,12 +535,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateProfileResult> createProfileAsync(CreateProfileRequest request) {
 
         return createProfileAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateProfileResult> createProfileAsync(final CreateProfileRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateProfileRequest, CreateProfileResult> asyncHandler) {
         final CreateProfileRequest finalRequest = beforeClientExecution(request);
@@ -548,12 +570,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateRoomResult> createRoomAsync(CreateRoomRequest request) {
 
         return createRoomAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateRoomResult> createRoomAsync(final CreateRoomRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateRoomRequest, CreateRoomResult> asyncHandler) {
         final CreateRoomRequest finalRequest = beforeClientExecution(request);
@@ -581,12 +605,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateSkillGroupResult> createSkillGroupAsync(CreateSkillGroupRequest request) {
 
         return createSkillGroupAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateSkillGroupResult> createSkillGroupAsync(final CreateSkillGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateSkillGroupRequest, CreateSkillGroupResult> asyncHandler) {
         final CreateSkillGroupRequest finalRequest = beforeClientExecution(request);
@@ -614,12 +640,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateUserResult> createUserAsync(CreateUserRequest request) {
 
         return createUserAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateUserResult> createUserAsync(final CreateUserRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateUserRequest, CreateUserResult> asyncHandler) {
         final CreateUserRequest finalRequest = beforeClientExecution(request);
@@ -647,12 +675,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteAddressBookResult> deleteAddressBookAsync(DeleteAddressBookRequest request) {
 
         return deleteAddressBookAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteAddressBookResult> deleteAddressBookAsync(final DeleteAddressBookRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteAddressBookRequest, DeleteAddressBookResult> asyncHandler) {
         final DeleteAddressBookRequest finalRequest = beforeClientExecution(request);
@@ -680,12 +710,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteBusinessReportScheduleResult> deleteBusinessReportScheduleAsync(DeleteBusinessReportScheduleRequest request) {
 
         return deleteBusinessReportScheduleAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteBusinessReportScheduleResult> deleteBusinessReportScheduleAsync(final DeleteBusinessReportScheduleRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteBusinessReportScheduleRequest, DeleteBusinessReportScheduleResult> asyncHandler) {
         final DeleteBusinessReportScheduleRequest finalRequest = beforeClientExecution(request);
@@ -713,12 +745,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteConferenceProviderResult> deleteConferenceProviderAsync(DeleteConferenceProviderRequest request) {
 
         return deleteConferenceProviderAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteConferenceProviderResult> deleteConferenceProviderAsync(final DeleteConferenceProviderRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteConferenceProviderRequest, DeleteConferenceProviderResult> asyncHandler) {
         final DeleteConferenceProviderRequest finalRequest = beforeClientExecution(request);
@@ -746,12 +780,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteContactResult> deleteContactAsync(DeleteContactRequest request) {
 
         return deleteContactAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteContactResult> deleteContactAsync(final DeleteContactRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteContactRequest, DeleteContactResult> asyncHandler) {
         final DeleteContactRequest finalRequest = beforeClientExecution(request);
@@ -779,12 +815,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteDeviceResult> deleteDeviceAsync(DeleteDeviceRequest request) {
 
         return deleteDeviceAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteDeviceResult> deleteDeviceAsync(final DeleteDeviceRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteDeviceRequest, DeleteDeviceResult> asyncHandler) {
         final DeleteDeviceRequest finalRequest = beforeClientExecution(request);
@@ -812,12 +850,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteDeviceUsageDataResult> deleteDeviceUsageDataAsync(DeleteDeviceUsageDataRequest request) {
 
         return deleteDeviceUsageDataAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteDeviceUsageDataResult> deleteDeviceUsageDataAsync(final DeleteDeviceUsageDataRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteDeviceUsageDataRequest, DeleteDeviceUsageDataResult> asyncHandler) {
         final DeleteDeviceUsageDataRequest finalRequest = beforeClientExecution(request);
@@ -845,12 +885,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteGatewayGroupResult> deleteGatewayGroupAsync(DeleteGatewayGroupRequest request) {
 
         return deleteGatewayGroupAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteGatewayGroupResult> deleteGatewayGroupAsync(final DeleteGatewayGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteGatewayGroupRequest, DeleteGatewayGroupResult> asyncHandler) {
         final DeleteGatewayGroupRequest finalRequest = beforeClientExecution(request);
@@ -878,12 +920,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteNetworkProfileResult> deleteNetworkProfileAsync(DeleteNetworkProfileRequest request) {
 
         return deleteNetworkProfileAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteNetworkProfileResult> deleteNetworkProfileAsync(final DeleteNetworkProfileRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteNetworkProfileRequest, DeleteNetworkProfileResult> asyncHandler) {
         final DeleteNetworkProfileRequest finalRequest = beforeClientExecution(request);
@@ -911,12 +955,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteProfileResult> deleteProfileAsync(DeleteProfileRequest request) {
 
         return deleteProfileAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteProfileResult> deleteProfileAsync(final DeleteProfileRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteProfileRequest, DeleteProfileResult> asyncHandler) {
         final DeleteProfileRequest finalRequest = beforeClientExecution(request);
@@ -944,12 +990,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteRoomResult> deleteRoomAsync(DeleteRoomRequest request) {
 
         return deleteRoomAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteRoomResult> deleteRoomAsync(final DeleteRoomRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteRoomRequest, DeleteRoomResult> asyncHandler) {
         final DeleteRoomRequest finalRequest = beforeClientExecution(request);
@@ -977,12 +1025,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteRoomSkillParameterResult> deleteRoomSkillParameterAsync(DeleteRoomSkillParameterRequest request) {
 
         return deleteRoomSkillParameterAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteRoomSkillParameterResult> deleteRoomSkillParameterAsync(final DeleteRoomSkillParameterRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteRoomSkillParameterRequest, DeleteRoomSkillParameterResult> asyncHandler) {
         final DeleteRoomSkillParameterRequest finalRequest = beforeClientExecution(request);
@@ -1010,12 +1060,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteSkillAuthorizationResult> deleteSkillAuthorizationAsync(DeleteSkillAuthorizationRequest request) {
 
         return deleteSkillAuthorizationAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteSkillAuthorizationResult> deleteSkillAuthorizationAsync(final DeleteSkillAuthorizationRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteSkillAuthorizationRequest, DeleteSkillAuthorizationResult> asyncHandler) {
         final DeleteSkillAuthorizationRequest finalRequest = beforeClientExecution(request);
@@ -1043,12 +1095,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteSkillGroupResult> deleteSkillGroupAsync(DeleteSkillGroupRequest request) {
 
         return deleteSkillGroupAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteSkillGroupResult> deleteSkillGroupAsync(final DeleteSkillGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteSkillGroupRequest, DeleteSkillGroupResult> asyncHandler) {
         final DeleteSkillGroupRequest finalRequest = beforeClientExecution(request);
@@ -1076,12 +1130,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(DeleteUserRequest request) {
 
         return deleteUserAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(final DeleteUserRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteUserRequest, DeleteUserResult> asyncHandler) {
         final DeleteUserRequest finalRequest = beforeClientExecution(request);
@@ -1109,6 +1165,7 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DisassociateContactFromAddressBookResult> disassociateContactFromAddressBookAsync(
             DisassociateContactFromAddressBookRequest request) {
 
@@ -1116,6 +1173,7 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DisassociateContactFromAddressBookResult> disassociateContactFromAddressBookAsync(
             final DisassociateContactFromAddressBookRequest request,
             final com.amazonaws.handlers.AsyncHandler<DisassociateContactFromAddressBookRequest, DisassociateContactFromAddressBookResult> asyncHandler) {
@@ -1144,12 +1202,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DisassociateDeviceFromRoomResult> disassociateDeviceFromRoomAsync(DisassociateDeviceFromRoomRequest request) {
 
         return disassociateDeviceFromRoomAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DisassociateDeviceFromRoomResult> disassociateDeviceFromRoomAsync(final DisassociateDeviceFromRoomRequest request,
             final com.amazonaws.handlers.AsyncHandler<DisassociateDeviceFromRoomRequest, DisassociateDeviceFromRoomResult> asyncHandler) {
         final DisassociateDeviceFromRoomRequest finalRequest = beforeClientExecution(request);
@@ -1177,6 +1237,7 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DisassociateSkillFromSkillGroupResult> disassociateSkillFromSkillGroupAsync(
             DisassociateSkillFromSkillGroupRequest request) {
 
@@ -1184,6 +1245,7 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DisassociateSkillFromSkillGroupResult> disassociateSkillFromSkillGroupAsync(
             final DisassociateSkillFromSkillGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<DisassociateSkillFromSkillGroupRequest, DisassociateSkillFromSkillGroupResult> asyncHandler) {
@@ -1212,12 +1274,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DisassociateSkillFromUsersResult> disassociateSkillFromUsersAsync(DisassociateSkillFromUsersRequest request) {
 
         return disassociateSkillFromUsersAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DisassociateSkillFromUsersResult> disassociateSkillFromUsersAsync(final DisassociateSkillFromUsersRequest request,
             final com.amazonaws.handlers.AsyncHandler<DisassociateSkillFromUsersRequest, DisassociateSkillFromUsersResult> asyncHandler) {
         final DisassociateSkillFromUsersRequest finalRequest = beforeClientExecution(request);
@@ -1245,12 +1309,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DisassociateSkillGroupFromRoomResult> disassociateSkillGroupFromRoomAsync(DisassociateSkillGroupFromRoomRequest request) {
 
         return disassociateSkillGroupFromRoomAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DisassociateSkillGroupFromRoomResult> disassociateSkillGroupFromRoomAsync(
             final DisassociateSkillGroupFromRoomRequest request,
             final com.amazonaws.handlers.AsyncHandler<DisassociateSkillGroupFromRoomRequest, DisassociateSkillGroupFromRoomResult> asyncHandler) {
@@ -1279,12 +1345,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ForgetSmartHomeAppliancesResult> forgetSmartHomeAppliancesAsync(ForgetSmartHomeAppliancesRequest request) {
 
         return forgetSmartHomeAppliancesAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ForgetSmartHomeAppliancesResult> forgetSmartHomeAppliancesAsync(final ForgetSmartHomeAppliancesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ForgetSmartHomeAppliancesRequest, ForgetSmartHomeAppliancesResult> asyncHandler) {
         final ForgetSmartHomeAppliancesRequest finalRequest = beforeClientExecution(request);
@@ -1312,12 +1380,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetAddressBookResult> getAddressBookAsync(GetAddressBookRequest request) {
 
         return getAddressBookAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetAddressBookResult> getAddressBookAsync(final GetAddressBookRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetAddressBookRequest, GetAddressBookResult> asyncHandler) {
         final GetAddressBookRequest finalRequest = beforeClientExecution(request);
@@ -1345,12 +1415,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetConferencePreferenceResult> getConferencePreferenceAsync(GetConferencePreferenceRequest request) {
 
         return getConferencePreferenceAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetConferencePreferenceResult> getConferencePreferenceAsync(final GetConferencePreferenceRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetConferencePreferenceRequest, GetConferencePreferenceResult> asyncHandler) {
         final GetConferencePreferenceRequest finalRequest = beforeClientExecution(request);
@@ -1378,12 +1450,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetConferenceProviderResult> getConferenceProviderAsync(GetConferenceProviderRequest request) {
 
         return getConferenceProviderAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetConferenceProviderResult> getConferenceProviderAsync(final GetConferenceProviderRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetConferenceProviderRequest, GetConferenceProviderResult> asyncHandler) {
         final GetConferenceProviderRequest finalRequest = beforeClientExecution(request);
@@ -1411,12 +1485,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetContactResult> getContactAsync(GetContactRequest request) {
 
         return getContactAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetContactResult> getContactAsync(final GetContactRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetContactRequest, GetContactResult> asyncHandler) {
         final GetContactRequest finalRequest = beforeClientExecution(request);
@@ -1444,12 +1520,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetDeviceResult> getDeviceAsync(GetDeviceRequest request) {
 
         return getDeviceAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetDeviceResult> getDeviceAsync(final GetDeviceRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetDeviceRequest, GetDeviceResult> asyncHandler) {
         final GetDeviceRequest finalRequest = beforeClientExecution(request);
@@ -1477,12 +1555,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetGatewayResult> getGatewayAsync(GetGatewayRequest request) {
 
         return getGatewayAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetGatewayResult> getGatewayAsync(final GetGatewayRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetGatewayRequest, GetGatewayResult> asyncHandler) {
         final GetGatewayRequest finalRequest = beforeClientExecution(request);
@@ -1510,12 +1590,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetGatewayGroupResult> getGatewayGroupAsync(GetGatewayGroupRequest request) {
 
         return getGatewayGroupAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetGatewayGroupResult> getGatewayGroupAsync(final GetGatewayGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetGatewayGroupRequest, GetGatewayGroupResult> asyncHandler) {
         final GetGatewayGroupRequest finalRequest = beforeClientExecution(request);
@@ -1543,12 +1625,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetInvitationConfigurationResult> getInvitationConfigurationAsync(GetInvitationConfigurationRequest request) {
 
         return getInvitationConfigurationAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetInvitationConfigurationResult> getInvitationConfigurationAsync(final GetInvitationConfigurationRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetInvitationConfigurationRequest, GetInvitationConfigurationResult> asyncHandler) {
         final GetInvitationConfigurationRequest finalRequest = beforeClientExecution(request);
@@ -1576,12 +1660,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetNetworkProfileResult> getNetworkProfileAsync(GetNetworkProfileRequest request) {
 
         return getNetworkProfileAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetNetworkProfileResult> getNetworkProfileAsync(final GetNetworkProfileRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetNetworkProfileRequest, GetNetworkProfileResult> asyncHandler) {
         final GetNetworkProfileRequest finalRequest = beforeClientExecution(request);
@@ -1609,12 +1695,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetProfileResult> getProfileAsync(GetProfileRequest request) {
 
         return getProfileAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetProfileResult> getProfileAsync(final GetProfileRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetProfileRequest, GetProfileResult> asyncHandler) {
         final GetProfileRequest finalRequest = beforeClientExecution(request);
@@ -1642,12 +1730,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetRoomResult> getRoomAsync(GetRoomRequest request) {
 
         return getRoomAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetRoomResult> getRoomAsync(final GetRoomRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetRoomRequest, GetRoomResult> asyncHandler) {
         final GetRoomRequest finalRequest = beforeClientExecution(request);
@@ -1675,12 +1765,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetRoomSkillParameterResult> getRoomSkillParameterAsync(GetRoomSkillParameterRequest request) {
 
         return getRoomSkillParameterAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetRoomSkillParameterResult> getRoomSkillParameterAsync(final GetRoomSkillParameterRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetRoomSkillParameterRequest, GetRoomSkillParameterResult> asyncHandler) {
         final GetRoomSkillParameterRequest finalRequest = beforeClientExecution(request);
@@ -1708,12 +1800,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetSkillGroupResult> getSkillGroupAsync(GetSkillGroupRequest request) {
 
         return getSkillGroupAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetSkillGroupResult> getSkillGroupAsync(final GetSkillGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetSkillGroupRequest, GetSkillGroupResult> asyncHandler) {
         final GetSkillGroupRequest finalRequest = beforeClientExecution(request);
@@ -1741,12 +1835,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListBusinessReportSchedulesResult> listBusinessReportSchedulesAsync(ListBusinessReportSchedulesRequest request) {
 
         return listBusinessReportSchedulesAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListBusinessReportSchedulesResult> listBusinessReportSchedulesAsync(final ListBusinessReportSchedulesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListBusinessReportSchedulesRequest, ListBusinessReportSchedulesResult> asyncHandler) {
         final ListBusinessReportSchedulesRequest finalRequest = beforeClientExecution(request);
@@ -1774,12 +1870,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListConferenceProvidersResult> listConferenceProvidersAsync(ListConferenceProvidersRequest request) {
 
         return listConferenceProvidersAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListConferenceProvidersResult> listConferenceProvidersAsync(final ListConferenceProvidersRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListConferenceProvidersRequest, ListConferenceProvidersResult> asyncHandler) {
         final ListConferenceProvidersRequest finalRequest = beforeClientExecution(request);
@@ -1807,12 +1905,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListDeviceEventsResult> listDeviceEventsAsync(ListDeviceEventsRequest request) {
 
         return listDeviceEventsAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListDeviceEventsResult> listDeviceEventsAsync(final ListDeviceEventsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListDeviceEventsRequest, ListDeviceEventsResult> asyncHandler) {
         final ListDeviceEventsRequest finalRequest = beforeClientExecution(request);
@@ -1840,12 +1940,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListGatewayGroupsResult> listGatewayGroupsAsync(ListGatewayGroupsRequest request) {
 
         return listGatewayGroupsAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListGatewayGroupsResult> listGatewayGroupsAsync(final ListGatewayGroupsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListGatewayGroupsRequest, ListGatewayGroupsResult> asyncHandler) {
         final ListGatewayGroupsRequest finalRequest = beforeClientExecution(request);
@@ -1873,12 +1975,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListGatewaysResult> listGatewaysAsync(ListGatewaysRequest request) {
 
         return listGatewaysAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListGatewaysResult> listGatewaysAsync(final ListGatewaysRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListGatewaysRequest, ListGatewaysResult> asyncHandler) {
         final ListGatewaysRequest finalRequest = beforeClientExecution(request);
@@ -1906,12 +2010,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListSkillsResult> listSkillsAsync(ListSkillsRequest request) {
 
         return listSkillsAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListSkillsResult> listSkillsAsync(final ListSkillsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListSkillsRequest, ListSkillsResult> asyncHandler) {
         final ListSkillsRequest finalRequest = beforeClientExecution(request);
@@ -1939,12 +2045,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListSkillsStoreCategoriesResult> listSkillsStoreCategoriesAsync(ListSkillsStoreCategoriesRequest request) {
 
         return listSkillsStoreCategoriesAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListSkillsStoreCategoriesResult> listSkillsStoreCategoriesAsync(final ListSkillsStoreCategoriesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListSkillsStoreCategoriesRequest, ListSkillsStoreCategoriesResult> asyncHandler) {
         final ListSkillsStoreCategoriesRequest finalRequest = beforeClientExecution(request);
@@ -1972,6 +2080,7 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListSkillsStoreSkillsByCategoryResult> listSkillsStoreSkillsByCategoryAsync(
             ListSkillsStoreSkillsByCategoryRequest request) {
 
@@ -1979,6 +2088,7 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListSkillsStoreSkillsByCategoryResult> listSkillsStoreSkillsByCategoryAsync(
             final ListSkillsStoreSkillsByCategoryRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListSkillsStoreSkillsByCategoryRequest, ListSkillsStoreSkillsByCategoryResult> asyncHandler) {
@@ -2007,12 +2117,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListSmartHomeAppliancesResult> listSmartHomeAppliancesAsync(ListSmartHomeAppliancesRequest request) {
 
         return listSmartHomeAppliancesAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListSmartHomeAppliancesResult> listSmartHomeAppliancesAsync(final ListSmartHomeAppliancesRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListSmartHomeAppliancesRequest, ListSmartHomeAppliancesResult> asyncHandler) {
         final ListSmartHomeAppliancesRequest finalRequest = beforeClientExecution(request);
@@ -2040,12 +2152,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest request) {
 
         return listTagsAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListTagsResult> listTagsAsync(final ListTagsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListTagsRequest, ListTagsResult> asyncHandler) {
         final ListTagsRequest finalRequest = beforeClientExecution(request);
@@ -2073,12 +2187,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<PutConferencePreferenceResult> putConferencePreferenceAsync(PutConferencePreferenceRequest request) {
 
         return putConferencePreferenceAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<PutConferencePreferenceResult> putConferencePreferenceAsync(final PutConferencePreferenceRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutConferencePreferenceRequest, PutConferencePreferenceResult> asyncHandler) {
         final PutConferencePreferenceRequest finalRequest = beforeClientExecution(request);
@@ -2106,12 +2222,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<PutInvitationConfigurationResult> putInvitationConfigurationAsync(PutInvitationConfigurationRequest request) {
 
         return putInvitationConfigurationAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<PutInvitationConfigurationResult> putInvitationConfigurationAsync(final PutInvitationConfigurationRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutInvitationConfigurationRequest, PutInvitationConfigurationResult> asyncHandler) {
         final PutInvitationConfigurationRequest finalRequest = beforeClientExecution(request);
@@ -2139,12 +2257,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<PutRoomSkillParameterResult> putRoomSkillParameterAsync(PutRoomSkillParameterRequest request) {
 
         return putRoomSkillParameterAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<PutRoomSkillParameterResult> putRoomSkillParameterAsync(final PutRoomSkillParameterRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutRoomSkillParameterRequest, PutRoomSkillParameterResult> asyncHandler) {
         final PutRoomSkillParameterRequest finalRequest = beforeClientExecution(request);
@@ -2172,12 +2292,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<PutSkillAuthorizationResult> putSkillAuthorizationAsync(PutSkillAuthorizationRequest request) {
 
         return putSkillAuthorizationAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<PutSkillAuthorizationResult> putSkillAuthorizationAsync(final PutSkillAuthorizationRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutSkillAuthorizationRequest, PutSkillAuthorizationResult> asyncHandler) {
         final PutSkillAuthorizationRequest finalRequest = beforeClientExecution(request);
@@ -2205,12 +2327,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<RegisterAVSDeviceResult> registerAVSDeviceAsync(RegisterAVSDeviceRequest request) {
 
         return registerAVSDeviceAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<RegisterAVSDeviceResult> registerAVSDeviceAsync(final RegisterAVSDeviceRequest request,
             final com.amazonaws.handlers.AsyncHandler<RegisterAVSDeviceRequest, RegisterAVSDeviceResult> asyncHandler) {
         final RegisterAVSDeviceRequest finalRequest = beforeClientExecution(request);
@@ -2238,12 +2362,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<RejectSkillResult> rejectSkillAsync(RejectSkillRequest request) {
 
         return rejectSkillAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<RejectSkillResult> rejectSkillAsync(final RejectSkillRequest request,
             final com.amazonaws.handlers.AsyncHandler<RejectSkillRequest, RejectSkillResult> asyncHandler) {
         final RejectSkillRequest finalRequest = beforeClientExecution(request);
@@ -2271,12 +2397,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ResolveRoomResult> resolveRoomAsync(ResolveRoomRequest request) {
 
         return resolveRoomAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ResolveRoomResult> resolveRoomAsync(final ResolveRoomRequest request,
             final com.amazonaws.handlers.AsyncHandler<ResolveRoomRequest, ResolveRoomResult> asyncHandler) {
         final ResolveRoomRequest finalRequest = beforeClientExecution(request);
@@ -2304,12 +2432,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<RevokeInvitationResult> revokeInvitationAsync(RevokeInvitationRequest request) {
 
         return revokeInvitationAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<RevokeInvitationResult> revokeInvitationAsync(final RevokeInvitationRequest request,
             final com.amazonaws.handlers.AsyncHandler<RevokeInvitationRequest, RevokeInvitationResult> asyncHandler) {
         final RevokeInvitationRequest finalRequest = beforeClientExecution(request);
@@ -2337,12 +2467,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<SearchAddressBooksResult> searchAddressBooksAsync(SearchAddressBooksRequest request) {
 
         return searchAddressBooksAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<SearchAddressBooksResult> searchAddressBooksAsync(final SearchAddressBooksRequest request,
             final com.amazonaws.handlers.AsyncHandler<SearchAddressBooksRequest, SearchAddressBooksResult> asyncHandler) {
         final SearchAddressBooksRequest finalRequest = beforeClientExecution(request);
@@ -2370,12 +2502,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<SearchContactsResult> searchContactsAsync(SearchContactsRequest request) {
 
         return searchContactsAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<SearchContactsResult> searchContactsAsync(final SearchContactsRequest request,
             final com.amazonaws.handlers.AsyncHandler<SearchContactsRequest, SearchContactsResult> asyncHandler) {
         final SearchContactsRequest finalRequest = beforeClientExecution(request);
@@ -2403,12 +2537,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<SearchDevicesResult> searchDevicesAsync(SearchDevicesRequest request) {
 
         return searchDevicesAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<SearchDevicesResult> searchDevicesAsync(final SearchDevicesRequest request,
             final com.amazonaws.handlers.AsyncHandler<SearchDevicesRequest, SearchDevicesResult> asyncHandler) {
         final SearchDevicesRequest finalRequest = beforeClientExecution(request);
@@ -2436,12 +2572,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<SearchNetworkProfilesResult> searchNetworkProfilesAsync(SearchNetworkProfilesRequest request) {
 
         return searchNetworkProfilesAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<SearchNetworkProfilesResult> searchNetworkProfilesAsync(final SearchNetworkProfilesRequest request,
             final com.amazonaws.handlers.AsyncHandler<SearchNetworkProfilesRequest, SearchNetworkProfilesResult> asyncHandler) {
         final SearchNetworkProfilesRequest finalRequest = beforeClientExecution(request);
@@ -2469,12 +2607,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<SearchProfilesResult> searchProfilesAsync(SearchProfilesRequest request) {
 
         return searchProfilesAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<SearchProfilesResult> searchProfilesAsync(final SearchProfilesRequest request,
             final com.amazonaws.handlers.AsyncHandler<SearchProfilesRequest, SearchProfilesResult> asyncHandler) {
         final SearchProfilesRequest finalRequest = beforeClientExecution(request);
@@ -2502,12 +2642,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<SearchRoomsResult> searchRoomsAsync(SearchRoomsRequest request) {
 
         return searchRoomsAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<SearchRoomsResult> searchRoomsAsync(final SearchRoomsRequest request,
             final com.amazonaws.handlers.AsyncHandler<SearchRoomsRequest, SearchRoomsResult> asyncHandler) {
         final SearchRoomsRequest finalRequest = beforeClientExecution(request);
@@ -2535,12 +2677,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<SearchSkillGroupsResult> searchSkillGroupsAsync(SearchSkillGroupsRequest request) {
 
         return searchSkillGroupsAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<SearchSkillGroupsResult> searchSkillGroupsAsync(final SearchSkillGroupsRequest request,
             final com.amazonaws.handlers.AsyncHandler<SearchSkillGroupsRequest, SearchSkillGroupsResult> asyncHandler) {
         final SearchSkillGroupsRequest finalRequest = beforeClientExecution(request);
@@ -2568,12 +2712,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<SearchUsersResult> searchUsersAsync(SearchUsersRequest request) {
 
         return searchUsersAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<SearchUsersResult> searchUsersAsync(final SearchUsersRequest request,
             final com.amazonaws.handlers.AsyncHandler<SearchUsersRequest, SearchUsersResult> asyncHandler) {
         final SearchUsersRequest finalRequest = beforeClientExecution(request);
@@ -2634,12 +2780,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<SendInvitationResult> sendInvitationAsync(SendInvitationRequest request) {
 
         return sendInvitationAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<SendInvitationResult> sendInvitationAsync(final SendInvitationRequest request,
             final com.amazonaws.handlers.AsyncHandler<SendInvitationRequest, SendInvitationResult> asyncHandler) {
         final SendInvitationRequest finalRequest = beforeClientExecution(request);
@@ -2667,12 +2815,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<StartDeviceSyncResult> startDeviceSyncAsync(StartDeviceSyncRequest request) {
 
         return startDeviceSyncAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<StartDeviceSyncResult> startDeviceSyncAsync(final StartDeviceSyncRequest request,
             final com.amazonaws.handlers.AsyncHandler<StartDeviceSyncRequest, StartDeviceSyncResult> asyncHandler) {
         final StartDeviceSyncRequest finalRequest = beforeClientExecution(request);
@@ -2700,6 +2850,7 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<StartSmartHomeApplianceDiscoveryResult> startSmartHomeApplianceDiscoveryAsync(
             StartSmartHomeApplianceDiscoveryRequest request) {
 
@@ -2707,6 +2858,7 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<StartSmartHomeApplianceDiscoveryResult> startSmartHomeApplianceDiscoveryAsync(
             final StartSmartHomeApplianceDiscoveryRequest request,
             final com.amazonaws.handlers.AsyncHandler<StartSmartHomeApplianceDiscoveryRequest, StartSmartHomeApplianceDiscoveryResult> asyncHandler) {
@@ -2735,12 +2887,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(final TagResourceRequest request,
             final com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
         final TagResourceRequest finalRequest = beforeClientExecution(request);
@@ -2768,12 +2922,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
 
         return untagResourceAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(final UntagResourceRequest request,
             final com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
         final UntagResourceRequest finalRequest = beforeClientExecution(request);
@@ -2801,12 +2957,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdateAddressBookResult> updateAddressBookAsync(UpdateAddressBookRequest request) {
 
         return updateAddressBookAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdateAddressBookResult> updateAddressBookAsync(final UpdateAddressBookRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateAddressBookRequest, UpdateAddressBookResult> asyncHandler) {
         final UpdateAddressBookRequest finalRequest = beforeClientExecution(request);
@@ -2834,12 +2992,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdateBusinessReportScheduleResult> updateBusinessReportScheduleAsync(UpdateBusinessReportScheduleRequest request) {
 
         return updateBusinessReportScheduleAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdateBusinessReportScheduleResult> updateBusinessReportScheduleAsync(final UpdateBusinessReportScheduleRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateBusinessReportScheduleRequest, UpdateBusinessReportScheduleResult> asyncHandler) {
         final UpdateBusinessReportScheduleRequest finalRequest = beforeClientExecution(request);
@@ -2867,12 +3027,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdateConferenceProviderResult> updateConferenceProviderAsync(UpdateConferenceProviderRequest request) {
 
         return updateConferenceProviderAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdateConferenceProviderResult> updateConferenceProviderAsync(final UpdateConferenceProviderRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateConferenceProviderRequest, UpdateConferenceProviderResult> asyncHandler) {
         final UpdateConferenceProviderRequest finalRequest = beforeClientExecution(request);
@@ -2900,12 +3062,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdateContactResult> updateContactAsync(UpdateContactRequest request) {
 
         return updateContactAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdateContactResult> updateContactAsync(final UpdateContactRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateContactRequest, UpdateContactResult> asyncHandler) {
         final UpdateContactRequest finalRequest = beforeClientExecution(request);
@@ -2933,12 +3097,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdateDeviceResult> updateDeviceAsync(UpdateDeviceRequest request) {
 
         return updateDeviceAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdateDeviceResult> updateDeviceAsync(final UpdateDeviceRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateDeviceRequest, UpdateDeviceResult> asyncHandler) {
         final UpdateDeviceRequest finalRequest = beforeClientExecution(request);
@@ -2966,12 +3132,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdateGatewayResult> updateGatewayAsync(UpdateGatewayRequest request) {
 
         return updateGatewayAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdateGatewayResult> updateGatewayAsync(final UpdateGatewayRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateGatewayRequest, UpdateGatewayResult> asyncHandler) {
         final UpdateGatewayRequest finalRequest = beforeClientExecution(request);
@@ -2999,12 +3167,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdateGatewayGroupResult> updateGatewayGroupAsync(UpdateGatewayGroupRequest request) {
 
         return updateGatewayGroupAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdateGatewayGroupResult> updateGatewayGroupAsync(final UpdateGatewayGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateGatewayGroupRequest, UpdateGatewayGroupResult> asyncHandler) {
         final UpdateGatewayGroupRequest finalRequest = beforeClientExecution(request);
@@ -3032,12 +3202,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdateNetworkProfileResult> updateNetworkProfileAsync(UpdateNetworkProfileRequest request) {
 
         return updateNetworkProfileAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdateNetworkProfileResult> updateNetworkProfileAsync(final UpdateNetworkProfileRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateNetworkProfileRequest, UpdateNetworkProfileResult> asyncHandler) {
         final UpdateNetworkProfileRequest finalRequest = beforeClientExecution(request);
@@ -3065,12 +3237,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdateProfileResult> updateProfileAsync(UpdateProfileRequest request) {
 
         return updateProfileAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdateProfileResult> updateProfileAsync(final UpdateProfileRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateProfileRequest, UpdateProfileResult> asyncHandler) {
         final UpdateProfileRequest finalRequest = beforeClientExecution(request);
@@ -3098,12 +3272,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdateRoomResult> updateRoomAsync(UpdateRoomRequest request) {
 
         return updateRoomAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdateRoomResult> updateRoomAsync(final UpdateRoomRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateRoomRequest, UpdateRoomResult> asyncHandler) {
         final UpdateRoomRequest finalRequest = beforeClientExecution(request);
@@ -3131,12 +3307,14 @@ public class AmazonAlexaForBusinessAsyncClient extends AmazonAlexaForBusinessCli
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdateSkillGroupResult> updateSkillGroupAsync(UpdateSkillGroupRequest request) {
 
         return updateSkillGroupAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdateSkillGroupResult> updateSkillGroupAsync(final UpdateSkillGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateSkillGroupRequest, UpdateSkillGroupResult> asyncHandler) {
         final UpdateSkillGroupRequest finalRequest = beforeClientExecution(request);

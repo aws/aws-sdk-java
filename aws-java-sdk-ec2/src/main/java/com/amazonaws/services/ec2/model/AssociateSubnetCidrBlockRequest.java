@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class AssociateSubnetCidrBlockRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix length.
+     * The IPv6 CIDR block for your subnet.
      * </p>
      */
     private String ipv6CidrBlock;
@@ -38,14 +38,26 @@ public class AssociateSubnetCidrBlockRequest extends AmazonWebServiceRequest imp
      * </p>
      */
     private String subnetId;
+    /**
+     * <p>
+     * An IPv6 IPAM pool ID.
+     * </p>
+     */
+    private String ipv6IpamPoolId;
+    /**
+     * <p>
+     * An IPv6 netmask length.
+     * </p>
+     */
+    private Integer ipv6NetmaskLength;
 
     /**
      * <p>
-     * The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix length.
+     * The IPv6 CIDR block for your subnet.
      * </p>
      * 
      * @param ipv6CidrBlock
-     *        The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix length.
+     *        The IPv6 CIDR block for your subnet.
      */
 
     public void setIpv6CidrBlock(String ipv6CidrBlock) {
@@ -54,10 +66,10 @@ public class AssociateSubnetCidrBlockRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix length.
+     * The IPv6 CIDR block for your subnet.
      * </p>
      * 
-     * @return The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix length.
+     * @return The IPv6 CIDR block for your subnet.
      */
 
     public String getIpv6CidrBlock() {
@@ -66,11 +78,11 @@ public class AssociateSubnetCidrBlockRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix length.
+     * The IPv6 CIDR block for your subnet.
      * </p>
      * 
      * @param ipv6CidrBlock
-     *        The IPv6 CIDR block for your subnet. The subnet must have a /64 prefix length.
+     *        The IPv6 CIDR block for your subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,6 +132,86 @@ public class AssociateSubnetCidrBlockRequest extends AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * An IPv6 IPAM pool ID.
+     * </p>
+     * 
+     * @param ipv6IpamPoolId
+     *        An IPv6 IPAM pool ID.
+     */
+
+    public void setIpv6IpamPoolId(String ipv6IpamPoolId) {
+        this.ipv6IpamPoolId = ipv6IpamPoolId;
+    }
+
+    /**
+     * <p>
+     * An IPv6 IPAM pool ID.
+     * </p>
+     * 
+     * @return An IPv6 IPAM pool ID.
+     */
+
+    public String getIpv6IpamPoolId() {
+        return this.ipv6IpamPoolId;
+    }
+
+    /**
+     * <p>
+     * An IPv6 IPAM pool ID.
+     * </p>
+     * 
+     * @param ipv6IpamPoolId
+     *        An IPv6 IPAM pool ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociateSubnetCidrBlockRequest withIpv6IpamPoolId(String ipv6IpamPoolId) {
+        setIpv6IpamPoolId(ipv6IpamPoolId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An IPv6 netmask length.
+     * </p>
+     * 
+     * @param ipv6NetmaskLength
+     *        An IPv6 netmask length.
+     */
+
+    public void setIpv6NetmaskLength(Integer ipv6NetmaskLength) {
+        this.ipv6NetmaskLength = ipv6NetmaskLength;
+    }
+
+    /**
+     * <p>
+     * An IPv6 netmask length.
+     * </p>
+     * 
+     * @return An IPv6 netmask length.
+     */
+
+    public Integer getIpv6NetmaskLength() {
+        return this.ipv6NetmaskLength;
+    }
+
+    /**
+     * <p>
+     * An IPv6 netmask length.
+     * </p>
+     * 
+     * @param ipv6NetmaskLength
+     *        An IPv6 netmask length.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociateSubnetCidrBlockRequest withIpv6NetmaskLength(Integer ipv6NetmaskLength) {
+        setIpv6NetmaskLength(ipv6NetmaskLength);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -145,7 +237,11 @@ public class AssociateSubnetCidrBlockRequest extends AmazonWebServiceRequest imp
         if (getIpv6CidrBlock() != null)
             sb.append("Ipv6CidrBlock: ").append(getIpv6CidrBlock()).append(",");
         if (getSubnetId() != null)
-            sb.append("SubnetId: ").append(getSubnetId());
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
+        if (getIpv6IpamPoolId() != null)
+            sb.append("Ipv6IpamPoolId: ").append(getIpv6IpamPoolId()).append(",");
+        if (getIpv6NetmaskLength() != null)
+            sb.append("Ipv6NetmaskLength: ").append(getIpv6NetmaskLength());
         sb.append("}");
         return sb.toString();
     }
@@ -168,6 +264,14 @@ public class AssociateSubnetCidrBlockRequest extends AmazonWebServiceRequest imp
             return false;
         if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
             return false;
+        if (other.getIpv6IpamPoolId() == null ^ this.getIpv6IpamPoolId() == null)
+            return false;
+        if (other.getIpv6IpamPoolId() != null && other.getIpv6IpamPoolId().equals(this.getIpv6IpamPoolId()) == false)
+            return false;
+        if (other.getIpv6NetmaskLength() == null ^ this.getIpv6NetmaskLength() == null)
+            return false;
+        if (other.getIpv6NetmaskLength() != null && other.getIpv6NetmaskLength().equals(this.getIpv6NetmaskLength()) == false)
+            return false;
         return true;
     }
 
@@ -178,6 +282,8 @@ public class AssociateSubnetCidrBlockRequest extends AmazonWebServiceRequest imp
 
         hashCode = prime * hashCode + ((getIpv6CidrBlock() == null) ? 0 : getIpv6CidrBlock().hashCode());
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
+        hashCode = prime * hashCode + ((getIpv6IpamPoolId() == null) ? 0 : getIpv6IpamPoolId().hashCode());
+        hashCode = prime * hashCode + ((getIpv6NetmaskLength() == null) ? 0 : getIpv6NetmaskLength().hashCode());
         return hashCode;
     }
 

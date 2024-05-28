@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,10 @@ public class RefreshCacheRequest extends com.amazonaws.AmazonWebServiceRequest i
      * A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>"/"</code>]. The
      * default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code> is set to
      * <code>true</code>, the entire S3 bucket that the file share has access to is refreshed.
+     * </p>
+     * <p>
+     * Do not include <code>/</code> when specifying folder names. For example, you would specify
+     * <code>samplefolder</code> rather than <code>samplefolder/</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> folderList;
@@ -102,11 +106,18 @@ public class RefreshCacheRequest extends com.amazonaws.AmazonWebServiceRequest i
      * default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code> is set to
      * <code>true</code>, the entire S3 bucket that the file share has access to is refreshed.
      * </p>
+     * <p>
+     * Do not include <code>/</code> when specifying folder names. For example, you would specify
+     * <code>samplefolder</code> rather than <code>samplefolder/</code>.
+     * </p>
      * 
      * @return A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>"/"</code>
      *         ]. The default refreshes objects and folders at the root of the Amazon S3 bucket. If
      *         <code>Recursive</code> is set to <code>true</code>, the entire S3 bucket that the file share has access
-     *         to is refreshed.
+     *         to is refreshed.</p>
+     *         <p>
+     *         Do not include <code>/</code> when specifying folder names. For example, you would specify
+     *         <code>samplefolder</code> rather than <code>samplefolder/</code>.
      */
 
     public java.util.List<String> getFolderList() {
@@ -122,11 +133,18 @@ public class RefreshCacheRequest extends com.amazonaws.AmazonWebServiceRequest i
      * default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code> is set to
      * <code>true</code>, the entire S3 bucket that the file share has access to is refreshed.
      * </p>
+     * <p>
+     * Do not include <code>/</code> when specifying folder names. For example, you would specify
+     * <code>samplefolder</code> rather than <code>samplefolder/</code>.
+     * </p>
      * 
      * @param folderList
      *        A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>"/"</code>].
      *        The default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code>
-     *        is set to <code>true</code>, the entire S3 bucket that the file share has access to is refreshed.
+     *        is set to <code>true</code>, the entire S3 bucket that the file share has access to is refreshed.</p>
+     *        <p>
+     *        Do not include <code>/</code> when specifying folder names. For example, you would specify
+     *        <code>samplefolder</code> rather than <code>samplefolder/</code>.
      */
 
     public void setFolderList(java.util.Collection<String> folderList) {
@@ -145,6 +163,10 @@ public class RefreshCacheRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>true</code>, the entire S3 bucket that the file share has access to is refreshed.
      * </p>
      * <p>
+     * Do not include <code>/</code> when specifying folder names. For example, you would specify
+     * <code>samplefolder</code> rather than <code>samplefolder/</code>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFolderList(java.util.Collection)} or {@link #withFolderList(java.util.Collection)} if you want to
      * override the existing values.
@@ -153,7 +175,10 @@ public class RefreshCacheRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param folderList
      *        A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>"/"</code>].
      *        The default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code>
-     *        is set to <code>true</code>, the entire S3 bucket that the file share has access to is refreshed.
+     *        is set to <code>true</code>, the entire S3 bucket that the file share has access to is refreshed.</p>
+     *        <p>
+     *        Do not include <code>/</code> when specifying folder names. For example, you would specify
+     *        <code>samplefolder</code> rather than <code>samplefolder/</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,11 +198,18 @@ public class RefreshCacheRequest extends com.amazonaws.AmazonWebServiceRequest i
      * default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code> is set to
      * <code>true</code>, the entire S3 bucket that the file share has access to is refreshed.
      * </p>
+     * <p>
+     * Do not include <code>/</code> when specifying folder names. For example, you would specify
+     * <code>samplefolder</code> rather than <code>samplefolder/</code>.
+     * </p>
      * 
      * @param folderList
      *        A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>"/"</code>].
      *        The default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code>
-     *        is set to <code>true</code>, the entire S3 bucket that the file share has access to is refreshed.
+     *        is set to <code>true</code>, the entire S3 bucket that the file share has access to is refreshed.</p>
+     *        <p>
+     *        Do not include <code>/</code> when specifying folder names. For example, you would specify
+     *        <code>samplefolder</code> rather than <code>samplefolder/</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

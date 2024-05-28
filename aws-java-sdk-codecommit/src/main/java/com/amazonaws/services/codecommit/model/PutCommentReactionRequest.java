@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,10 +34,9 @@ public class PutCommentReactionRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can
-     * also provide the value of none. For information about emoji reaction values supported in AWS CodeCommit, see the
-     * <a
+     * also provide the value of none. For information about emoji reaction values supported in CodeCommit, see the <a
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">
-     * AWS CodeCommit User Guide</a>.
+     * CodeCommit User Guide</a>.
      * </p>
      */
     private String reactionValue;
@@ -85,18 +84,17 @@ public class PutCommentReactionRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can
-     * also provide the value of none. For information about emoji reaction values supported in AWS CodeCommit, see the
-     * <a
+     * also provide the value of none. For information about emoji reaction values supported in CodeCommit, see the <a
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">
-     * AWS CodeCommit User Guide</a>.
+     * CodeCommit User Guide</a>.
      * </p>
      * 
      * @param reactionValue
      *        The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You
-     *        can also provide the value of none. For information about emoji reaction values supported in AWS
-     *        CodeCommit, see the <a href=
+     *        can also provide the value of none. For information about emoji reaction values supported in CodeCommit,
+     *        see the <a href=
      *        "https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table"
-     *        >AWS CodeCommit User Guide</a>.
+     *        >CodeCommit User Guide</a>.
      */
 
     public void setReactionValue(String reactionValue) {
@@ -106,17 +104,16 @@ public class PutCommentReactionRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can
-     * also provide the value of none. For information about emoji reaction values supported in AWS CodeCommit, see the
-     * <a
+     * also provide the value of none. For information about emoji reaction values supported in CodeCommit, see the <a
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">
-     * AWS CodeCommit User Guide</a>.
+     * CodeCommit User Guide</a>.
      * </p>
      * 
      * @return The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You
-     *         can also provide the value of none. For information about emoji reaction values supported in AWS
-     *         CodeCommit, see the <a href=
+     *         can also provide the value of none. For information about emoji reaction values supported in CodeCommit,
+     *         see the <a href=
      *         "https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table"
-     *         >AWS CodeCommit User Guide</a>.
+     *         >CodeCommit User Guide</a>.
      */
 
     public String getReactionValue() {
@@ -126,18 +123,17 @@ public class PutCommentReactionRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can
-     * also provide the value of none. For information about emoji reaction values supported in AWS CodeCommit, see the
-     * <a
+     * also provide the value of none. For information about emoji reaction values supported in CodeCommit, see the <a
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">
-     * AWS CodeCommit User Guide</a>.
+     * CodeCommit User Guide</a>.
      * </p>
      * 
      * @param reactionValue
      *        The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You
-     *        can also provide the value of none. For information about emoji reaction values supported in AWS
-     *        CodeCommit, see the <a href=
+     *        can also provide the value of none. For information about emoji reaction values supported in CodeCommit,
+     *        see the <a href=
      *        "https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table"
-     *        >AWS CodeCommit User Guide</a>.
+     *        >CodeCommit User Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

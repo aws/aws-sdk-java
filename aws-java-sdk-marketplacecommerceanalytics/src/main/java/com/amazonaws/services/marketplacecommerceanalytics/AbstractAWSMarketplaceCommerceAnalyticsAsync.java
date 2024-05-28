@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,12 +41,14 @@ public class AbstractAWSMarketplaceCommerceAnalyticsAsync extends AbstractAWSMar
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<StartSupportDataExportResult> startSupportDataExportAsync(StartSupportDataExportRequest request) {
 
         return startSupportDataExportAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<StartSupportDataExportResult> startSupportDataExportAsync(StartSupportDataExportRequest request,
             com.amazonaws.handlers.AsyncHandler<StartSupportDataExportRequest, StartSupportDataExportResult> asyncHandler) {
 

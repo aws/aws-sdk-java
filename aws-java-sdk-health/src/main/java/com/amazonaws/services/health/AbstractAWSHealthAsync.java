@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -78,6 +78,21 @@ public class AbstractAWSHealthAsync extends AbstractAWSHealth implements AWSHeal
     @Override
     public java.util.concurrent.Future<DescribeEntityAggregatesResult> describeEntityAggregatesAsync(DescribeEntityAggregatesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEntityAggregatesRequest, DescribeEntityAggregatesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEntityAggregatesForOrganizationResult> describeEntityAggregatesForOrganizationAsync(
+            DescribeEntityAggregatesForOrganizationRequest request) {
+
+        return describeEntityAggregatesForOrganizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEntityAggregatesForOrganizationResult> describeEntityAggregatesForOrganizationAsync(
+            DescribeEntityAggregatesForOrganizationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeEntityAggregatesForOrganizationRequest, DescribeEntityAggregatesForOrganizationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

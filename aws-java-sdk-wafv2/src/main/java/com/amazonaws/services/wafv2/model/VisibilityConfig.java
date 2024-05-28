@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,38 +30,63 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A boolean indicating whether WAF should store a sampling of the web requests that match the rules. You can view
-     * the sampled requests through the WAF console.
+     * Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the sampled
+     * requests through the WAF console.
      * </p>
+     * <note>
+     * <p>
+     * Request sampling doesn't provide a field redaction option, and any field redaction that you specify in your
+     * logging configuration doesn't affect sampling. The only way to exclude fields from request sampling is by
+     * disabling sampling in the web ACL visibility configuration.
+     * </p>
+     * </note>
      */
     private Boolean sampledRequestsEnabled;
     /**
      * <p>
-     * A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of
-     * available metrics, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF
-     * Metrics</a>.
+     * Indicates whether the associated resource sends metrics to Amazon CloudWatch. For the list of available metrics,
+     * see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF
+     * Metrics</a> in the <i>WAF Developer Guide</i>.
+     * </p>
+     * <p>
+     * For web ACLs, the metrics are for web requests that have the web ACL default action applied. WAF applies the
+     * default action to web requests that pass the inspection of all rules in the web ACL without being either allowed
+     * or blocked. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-default-action.html">The web ACL default
+     * action</a> in the <i>WAF Developer Guide</i>.
      * </p>
      */
     private Boolean cloudWatchMetricsEnabled;
     /**
      * <p>
-     * A name of the Amazon CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and
-     * _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names
-     * reserved for WAF, for example <code>All</code> and <code>Default_Action</code>.
+     * A name of the Amazon CloudWatch metric dimension. The name can contain only the characters: A-Z, a-z, 0-9, -
+     * (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or
+     * metric names that are reserved for WAF, for example <code>All</code> and <code>Default_Action</code>.
      * </p>
      */
     private String metricName;
 
     /**
      * <p>
-     * A boolean indicating whether WAF should store a sampling of the web requests that match the rules. You can view
-     * the sampled requests through the WAF console.
+     * Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the sampled
+     * requests through the WAF console.
      * </p>
+     * <note>
+     * <p>
+     * Request sampling doesn't provide a field redaction option, and any field redaction that you specify in your
+     * logging configuration doesn't affect sampling. The only way to exclude fields from request sampling is by
+     * disabling sampling in the web ACL visibility configuration.
+     * </p>
+     * </note>
      * 
      * @param sampledRequestsEnabled
-     *        A boolean indicating whether WAF should store a sampling of the web requests that match the rules. You can
-     *        view the sampled requests through the WAF console.
+     *        Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the
+     *        sampled requests through the WAF console. </p> <note>
+     *        <p>
+     *        Request sampling doesn't provide a field redaction option, and any field redaction that you specify in
+     *        your logging configuration doesn't affect sampling. The only way to exclude fields from request sampling
+     *        is by disabling sampling in the web ACL visibility configuration.
+     *        </p>
      */
 
     public void setSampledRequestsEnabled(Boolean sampledRequestsEnabled) {
@@ -70,12 +95,24 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A boolean indicating whether WAF should store a sampling of the web requests that match the rules. You can view
-     * the sampled requests through the WAF console.
+     * Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the sampled
+     * requests through the WAF console.
      * </p>
+     * <note>
+     * <p>
+     * Request sampling doesn't provide a field redaction option, and any field redaction that you specify in your
+     * logging configuration doesn't affect sampling. The only way to exclude fields from request sampling is by
+     * disabling sampling in the web ACL visibility configuration.
+     * </p>
+     * </note>
      * 
-     * @return A boolean indicating whether WAF should store a sampling of the web requests that match the rules. You
-     *         can view the sampled requests through the WAF console.
+     * @return Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the
+     *         sampled requests through the WAF console. </p> <note>
+     *         <p>
+     *         Request sampling doesn't provide a field redaction option, and any field redaction that you specify in
+     *         your logging configuration doesn't affect sampling. The only way to exclude fields from request sampling
+     *         is by disabling sampling in the web ACL visibility configuration.
+     *         </p>
      */
 
     public Boolean getSampledRequestsEnabled() {
@@ -84,13 +121,25 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A boolean indicating whether WAF should store a sampling of the web requests that match the rules. You can view
-     * the sampled requests through the WAF console.
+     * Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the sampled
+     * requests through the WAF console.
      * </p>
+     * <note>
+     * <p>
+     * Request sampling doesn't provide a field redaction option, and any field redaction that you specify in your
+     * logging configuration doesn't affect sampling. The only way to exclude fields from request sampling is by
+     * disabling sampling in the web ACL visibility configuration.
+     * </p>
+     * </note>
      * 
      * @param sampledRequestsEnabled
-     *        A boolean indicating whether WAF should store a sampling of the web requests that match the rules. You can
-     *        view the sampled requests through the WAF console.
+     *        Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the
+     *        sampled requests through the WAF console. </p> <note>
+     *        <p>
+     *        Request sampling doesn't provide a field redaction option, and any field redaction that you specify in
+     *        your logging configuration doesn't affect sampling. The only way to exclude fields from request sampling
+     *        is by disabling sampling in the web ACL visibility configuration.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,12 +150,24 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A boolean indicating whether WAF should store a sampling of the web requests that match the rules. You can view
-     * the sampled requests through the WAF console.
+     * Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the sampled
+     * requests through the WAF console.
      * </p>
+     * <note>
+     * <p>
+     * Request sampling doesn't provide a field redaction option, and any field redaction that you specify in your
+     * logging configuration doesn't affect sampling. The only way to exclude fields from request sampling is by
+     * disabling sampling in the web ACL visibility configuration.
+     * </p>
+     * </note>
      * 
-     * @return A boolean indicating whether WAF should store a sampling of the web requests that match the rules. You
-     *         can view the sampled requests through the WAF console.
+     * @return Indicates whether WAF should store a sampling of the web requests that match the rules. You can view the
+     *         sampled requests through the WAF console. </p> <note>
+     *         <p>
+     *         Request sampling doesn't provide a field redaction option, and any field redaction that you specify in
+     *         your logging configuration doesn't affect sampling. The only way to exclude fields from request sampling
+     *         is by disabling sampling in the web ACL visibility configuration.
+     *         </p>
      */
 
     public Boolean isSampledRequestsEnabled() {
@@ -115,17 +176,29 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of
-     * available metrics, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF
-     * Metrics</a>.
+     * Indicates whether the associated resource sends metrics to Amazon CloudWatch. For the list of available metrics,
+     * see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF
+     * Metrics</a> in the <i>WAF Developer Guide</i>.
+     * </p>
+     * <p>
+     * For web ACLs, the metrics are for web requests that have the web ACL default action applied. WAF applies the
+     * default action to web requests that pass the inspection of all rules in the web ACL without being either allowed
+     * or blocked. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-default-action.html">The web ACL default
+     * action</a> in the <i>WAF Developer Guide</i>.
      * </p>
      * 
      * @param cloudWatchMetricsEnabled
-     *        A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of
-     *        available metrics, see <a
+     *        Indicates whether the associated resource sends metrics to Amazon CloudWatch. For the list of available
+     *        metrics, see <a
      *        href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF
-     *        Metrics</a>.
+     *        Metrics</a> in the <i>WAF Developer Guide</i>.</p>
+     *        <p>
+     *        For web ACLs, the metrics are for web requests that have the web ACL default action applied. WAF applies
+     *        the default action to web requests that pass the inspection of all rules in the web ACL without being
+     *        either allowed or blocked. For more information, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-default-action.html">The web ACL
+     *        default action</a> in the <i>WAF Developer Guide</i>.
      */
 
     public void setCloudWatchMetricsEnabled(Boolean cloudWatchMetricsEnabled) {
@@ -134,16 +207,28 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of
-     * available metrics, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF
-     * Metrics</a>.
+     * Indicates whether the associated resource sends metrics to Amazon CloudWatch. For the list of available metrics,
+     * see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF
+     * Metrics</a> in the <i>WAF Developer Guide</i>.
+     * </p>
+     * <p>
+     * For web ACLs, the metrics are for web requests that have the web ACL default action applied. WAF applies the
+     * default action to web requests that pass the inspection of all rules in the web ACL without being either allowed
+     * or blocked. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-default-action.html">The web ACL default
+     * action</a> in the <i>WAF Developer Guide</i>.
      * </p>
      * 
-     * @return A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of
-     *         available metrics, see <a
+     * @return Indicates whether the associated resource sends metrics to Amazon CloudWatch. For the list of available
+     *         metrics, see <a
      *         href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF
-     *         Metrics</a>.
+     *         Metrics</a> in the <i>WAF Developer Guide</i>.</p>
+     *         <p>
+     *         For web ACLs, the metrics are for web requests that have the web ACL default action applied. WAF applies
+     *         the default action to web requests that pass the inspection of all rules in the web ACL without being
+     *         either allowed or blocked. For more information, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-default-action.html">The web ACL
+     *         default action</a> in the <i>WAF Developer Guide</i>.
      */
 
     public Boolean getCloudWatchMetricsEnabled() {
@@ -152,17 +237,29 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of
-     * available metrics, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF
-     * Metrics</a>.
+     * Indicates whether the associated resource sends metrics to Amazon CloudWatch. For the list of available metrics,
+     * see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF
+     * Metrics</a> in the <i>WAF Developer Guide</i>.
+     * </p>
+     * <p>
+     * For web ACLs, the metrics are for web requests that have the web ACL default action applied. WAF applies the
+     * default action to web requests that pass the inspection of all rules in the web ACL without being either allowed
+     * or blocked. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-default-action.html">The web ACL default
+     * action</a> in the <i>WAF Developer Guide</i>.
      * </p>
      * 
      * @param cloudWatchMetricsEnabled
-     *        A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of
-     *        available metrics, see <a
+     *        Indicates whether the associated resource sends metrics to Amazon CloudWatch. For the list of available
+     *        metrics, see <a
      *        href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF
-     *        Metrics</a>.
+     *        Metrics</a> in the <i>WAF Developer Guide</i>.</p>
+     *        <p>
+     *        For web ACLs, the metrics are for web requests that have the web ACL default action applied. WAF applies
+     *        the default action to web requests that pass the inspection of all rules in the web ACL without being
+     *        either allowed or blocked. For more information, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-default-action.html">The web ACL
+     *        default action</a> in the <i>WAF Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,16 +270,28 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of
-     * available metrics, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF
-     * Metrics</a>.
+     * Indicates whether the associated resource sends metrics to Amazon CloudWatch. For the list of available metrics,
+     * see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF
+     * Metrics</a> in the <i>WAF Developer Guide</i>.
+     * </p>
+     * <p>
+     * For web ACLs, the metrics are for web requests that have the web ACL default action applied. WAF applies the
+     * default action to web requests that pass the inspection of all rules in the web ACL without being either allowed
+     * or blocked. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-default-action.html">The web ACL default
+     * action</a> in the <i>WAF Developer Guide</i>.
      * </p>
      * 
-     * @return A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch. For the list of
-     *         available metrics, see <a
+     * @return Indicates whether the associated resource sends metrics to Amazon CloudWatch. For the list of available
+     *         metrics, see <a
      *         href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF
-     *         Metrics</a>.
+     *         Metrics</a> in the <i>WAF Developer Guide</i>.</p>
+     *         <p>
+     *         For web ACLs, the metrics are for web requests that have the web ACL default action applied. WAF applies
+     *         the default action to web requests that pass the inspection of all rules in the web ACL without being
+     *         either allowed or blocked. For more information, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-default-action.html">The web ACL
+     *         default action</a> in the <i>WAF Developer Guide</i>.
      */
 
     public Boolean isCloudWatchMetricsEnabled() {
@@ -191,15 +300,16 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A name of the Amazon CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and
-     * _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names
-     * reserved for WAF, for example <code>All</code> and <code>Default_Action</code>.
+     * A name of the Amazon CloudWatch metric dimension. The name can contain only the characters: A-Z, a-z, 0-9, -
+     * (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or
+     * metric names that are reserved for WAF, for example <code>All</code> and <code>Default_Action</code>.
      * </p>
      * 
      * @param metricName
-     *        A name of the Amazon CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, -
-     *        (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace
-     *        or metric names reserved for WAF, for example <code>All</code> and <code>Default_Action</code>.
+     *        A name of the Amazon CloudWatch metric dimension. The name can contain only the characters: A-Z, a-z, 0-9,
+     *        - (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain
+     *        whitespace or metric names that are reserved for WAF, for example <code>All</code> and
+     *        <code>Default_Action</code>.
      */
 
     public void setMetricName(String metricName) {
@@ -208,15 +318,15 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A name of the Amazon CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and
-     * _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names
-     * reserved for WAF, for example <code>All</code> and <code>Default_Action</code>.
+     * A name of the Amazon CloudWatch metric dimension. The name can contain only the characters: A-Z, a-z, 0-9, -
+     * (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or
+     * metric names that are reserved for WAF, for example <code>All</code> and <code>Default_Action</code>.
      * </p>
      * 
-     * @return A name of the Amazon CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, -
-     *         (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain
-     *         whitespace or metric names reserved for WAF, for example <code>All</code> and <code>Default_Action</code>
-     *         .
+     * @return A name of the Amazon CloudWatch metric dimension. The name can contain only the characters: A-Z, a-z,
+     *         0-9, - (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain
+     *         whitespace or metric names that are reserved for WAF, for example <code>All</code> and
+     *         <code>Default_Action</code>.
      */
 
     public String getMetricName() {
@@ -225,15 +335,16 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A name of the Amazon CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and
-     * _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names
-     * reserved for WAF, for example <code>All</code> and <code>Default_Action</code>.
+     * A name of the Amazon CloudWatch metric dimension. The name can contain only the characters: A-Z, a-z, 0-9, -
+     * (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or
+     * metric names that are reserved for WAF, for example <code>All</code> and <code>Default_Action</code>.
      * </p>
      * 
      * @param metricName
-     *        A name of the Amazon CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, -
-     *        (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace
-     *        or metric names reserved for WAF, for example <code>All</code> and <code>Default_Action</code>.
+     *        A name of the Amazon CloudWatch metric dimension. The name can contain only the characters: A-Z, a-z, 0-9,
+     *        - (hyphen), and _ (underscore). The name can be from one to 128 characters long. It can't contain
+     *        whitespace or metric names that are reserved for WAF, for example <code>All</code> and
+     *        <code>Default_Action</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

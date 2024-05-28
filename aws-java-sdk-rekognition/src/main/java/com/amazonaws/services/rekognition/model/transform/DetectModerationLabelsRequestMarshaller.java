@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class DetectModerationLabelsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MinConfidence").build();
     private static final MarshallingInfo<StructuredPojo> HUMANLOOPCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HumanLoopConfig").build();
+    private static final MarshallingInfo<String> PROJECTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProjectVersion").build();
 
     private static final DetectModerationLabelsRequestMarshaller instance = new DetectModerationLabelsRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class DetectModerationLabelsRequestMarshaller {
             protocolMarshaller.marshall(detectModerationLabelsRequest.getImage(), IMAGE_BINDING);
             protocolMarshaller.marshall(detectModerationLabelsRequest.getMinConfidence(), MINCONFIDENCE_BINDING);
             protocolMarshaller.marshall(detectModerationLabelsRequest.getHumanLoopConfig(), HUMANLOOPCONFIG_BINDING);
+            protocolMarshaller.marshall(detectModerationLabelsRequest.getProjectVersion(), PROJECTVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

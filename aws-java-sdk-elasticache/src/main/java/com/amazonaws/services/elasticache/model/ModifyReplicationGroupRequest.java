@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -325,6 +325,47 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<LogDeliveryConfigurationRequest> logDeliveryConfigurations;
+    /**
+     * <p>
+     * The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is
+     * supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances
+     * built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     */
+    private String ipDiscovery;
+    /**
+     * <p>
+     * A flag that enables in-transit encryption when set to true. If you are enabling in-transit encryption for an
+     * existing cluster, you must also set <code>TransitEncryptionMode</code> to <code>preferred</code>.
+     * </p>
+     */
+    private Boolean transitEncryptionEnabled;
+    /**
+     * <p>
+     * A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.
+     * </p>
+     * <p>
+     * You must set <code>TransitEncryptionEnabled</code> to <code>true</code>, for your existing cluster, and set
+     * <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request to allow both encrypted and
+     * unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted connections
+     * you can set the value to <code>required</code> to allow encrypted connections only.
+     * </p>
+     * <p>
+     * Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to
+     * first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set
+     * <code>TransitEncryptionMode</code> to <code>required</code>.
+     * </p>
+     */
+    private String transitEncryptionMode;
+    /**
+     * <p>
+     * Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to
+     * Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode
+     * disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode
+     * configuration and set the cluster mode to Enabled.
+     * </p>
+     */
+    private String clusterMode;
 
     /**
      * <p>
@@ -2502,6 +2543,367 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is
+     * supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances
+     * built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @param ipDiscovery
+     *        The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6
+     *        is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     *        instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * @see IpDiscovery
+     */
+
+    public void setIpDiscovery(String ipDiscovery) {
+        this.ipDiscovery = ipDiscovery;
+    }
+
+    /**
+     * <p>
+     * The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is
+     * supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances
+     * built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @return The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6
+     *         is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     *         instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * @see IpDiscovery
+     */
+
+    public String getIpDiscovery() {
+        return this.ipDiscovery;
+    }
+
+    /**
+     * <p>
+     * The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is
+     * supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances
+     * built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @param ipDiscovery
+     *        The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6
+     *        is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     *        instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpDiscovery
+     */
+
+    public ModifyReplicationGroupRequest withIpDiscovery(String ipDiscovery) {
+        setIpDiscovery(ipDiscovery);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is
+     * supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances
+     * built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @param ipDiscovery
+     *        The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6
+     *        is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     *        instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpDiscovery
+     */
+
+    public ModifyReplicationGroupRequest withIpDiscovery(IpDiscovery ipDiscovery) {
+        this.ipDiscovery = ipDiscovery.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A flag that enables in-transit encryption when set to true. If you are enabling in-transit encryption for an
+     * existing cluster, you must also set <code>TransitEncryptionMode</code> to <code>preferred</code>.
+     * </p>
+     * 
+     * @param transitEncryptionEnabled
+     *        A flag that enables in-transit encryption when set to true. If you are enabling in-transit encryption for
+     *        an existing cluster, you must also set <code>TransitEncryptionMode</code> to <code>preferred</code>.
+     */
+
+    public void setTransitEncryptionEnabled(Boolean transitEncryptionEnabled) {
+        this.transitEncryptionEnabled = transitEncryptionEnabled;
+    }
+
+    /**
+     * <p>
+     * A flag that enables in-transit encryption when set to true. If you are enabling in-transit encryption for an
+     * existing cluster, you must also set <code>TransitEncryptionMode</code> to <code>preferred</code>.
+     * </p>
+     * 
+     * @return A flag that enables in-transit encryption when set to true. If you are enabling in-transit encryption for
+     *         an existing cluster, you must also set <code>TransitEncryptionMode</code> to <code>preferred</code>.
+     */
+
+    public Boolean getTransitEncryptionEnabled() {
+        return this.transitEncryptionEnabled;
+    }
+
+    /**
+     * <p>
+     * A flag that enables in-transit encryption when set to true. If you are enabling in-transit encryption for an
+     * existing cluster, you must also set <code>TransitEncryptionMode</code> to <code>preferred</code>.
+     * </p>
+     * 
+     * @param transitEncryptionEnabled
+     *        A flag that enables in-transit encryption when set to true. If you are enabling in-transit encryption for
+     *        an existing cluster, you must also set <code>TransitEncryptionMode</code> to <code>preferred</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyReplicationGroupRequest withTransitEncryptionEnabled(Boolean transitEncryptionEnabled) {
+        setTransitEncryptionEnabled(transitEncryptionEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A flag that enables in-transit encryption when set to true. If you are enabling in-transit encryption for an
+     * existing cluster, you must also set <code>TransitEncryptionMode</code> to <code>preferred</code>.
+     * </p>
+     * 
+     * @return A flag that enables in-transit encryption when set to true. If you are enabling in-transit encryption for
+     *         an existing cluster, you must also set <code>TransitEncryptionMode</code> to <code>preferred</code>.
+     */
+
+    public Boolean isTransitEncryptionEnabled() {
+        return this.transitEncryptionEnabled;
+    }
+
+    /**
+     * <p>
+     * A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.
+     * </p>
+     * <p>
+     * You must set <code>TransitEncryptionEnabled</code> to <code>true</code>, for your existing cluster, and set
+     * <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request to allow both encrypted and
+     * unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted connections
+     * you can set the value to <code>required</code> to allow encrypted connections only.
+     * </p>
+     * <p>
+     * Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to
+     * first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set
+     * <code>TransitEncryptionMode</code> to <code>required</code>.
+     * </p>
+     * 
+     * @param transitEncryptionMode
+     *        A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
+     *        <p>
+     *        You must set <code>TransitEncryptionEnabled</code> to <code>true</code>, for your existing cluster, and
+     *        set <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request to allow both
+     *        encrypted and unencrypted connections at the same time. Once you migrate all your Redis clients to use
+     *        encrypted connections you can set the value to <code>required</code> to allow encrypted connections only.
+     *        </p>
+     *        <p>
+     *        Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires
+     *        you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set
+     *        <code>TransitEncryptionMode</code> to <code>required</code>.
+     * @see TransitEncryptionMode
+     */
+
+    public void setTransitEncryptionMode(String transitEncryptionMode) {
+        this.transitEncryptionMode = transitEncryptionMode;
+    }
+
+    /**
+     * <p>
+     * A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.
+     * </p>
+     * <p>
+     * You must set <code>TransitEncryptionEnabled</code> to <code>true</code>, for your existing cluster, and set
+     * <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request to allow both encrypted and
+     * unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted connections
+     * you can set the value to <code>required</code> to allow encrypted connections only.
+     * </p>
+     * <p>
+     * Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to
+     * first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set
+     * <code>TransitEncryptionMode</code> to <code>required</code>.
+     * </p>
+     * 
+     * @return A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
+     *         <p>
+     *         You must set <code>TransitEncryptionEnabled</code> to <code>true</code>, for your existing cluster, and
+     *         set <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request to allow both
+     *         encrypted and unencrypted connections at the same time. Once you migrate all your Redis clients to use
+     *         encrypted connections you can set the value to <code>required</code> to allow encrypted connections only.
+     *         </p>
+     *         <p>
+     *         Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires
+     *         you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set
+     *         <code>TransitEncryptionMode</code> to <code>required</code>.
+     * @see TransitEncryptionMode
+     */
+
+    public String getTransitEncryptionMode() {
+        return this.transitEncryptionMode;
+    }
+
+    /**
+     * <p>
+     * A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.
+     * </p>
+     * <p>
+     * You must set <code>TransitEncryptionEnabled</code> to <code>true</code>, for your existing cluster, and set
+     * <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request to allow both encrypted and
+     * unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted connections
+     * you can set the value to <code>required</code> to allow encrypted connections only.
+     * </p>
+     * <p>
+     * Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to
+     * first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set
+     * <code>TransitEncryptionMode</code> to <code>required</code>.
+     * </p>
+     * 
+     * @param transitEncryptionMode
+     *        A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
+     *        <p>
+     *        You must set <code>TransitEncryptionEnabled</code> to <code>true</code>, for your existing cluster, and
+     *        set <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request to allow both
+     *        encrypted and unencrypted connections at the same time. Once you migrate all your Redis clients to use
+     *        encrypted connections you can set the value to <code>required</code> to allow encrypted connections only.
+     *        </p>
+     *        <p>
+     *        Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires
+     *        you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set
+     *        <code>TransitEncryptionMode</code> to <code>required</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TransitEncryptionMode
+     */
+
+    public ModifyReplicationGroupRequest withTransitEncryptionMode(String transitEncryptionMode) {
+        setTransitEncryptionMode(transitEncryptionMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.
+     * </p>
+     * <p>
+     * You must set <code>TransitEncryptionEnabled</code> to <code>true</code>, for your existing cluster, and set
+     * <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request to allow both encrypted and
+     * unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted connections
+     * you can set the value to <code>required</code> to allow encrypted connections only.
+     * </p>
+     * <p>
+     * Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to
+     * first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set
+     * <code>TransitEncryptionMode</code> to <code>required</code>.
+     * </p>
+     * 
+     * @param transitEncryptionMode
+     *        A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
+     *        <p>
+     *        You must set <code>TransitEncryptionEnabled</code> to <code>true</code>, for your existing cluster, and
+     *        set <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request to allow both
+     *        encrypted and unencrypted connections at the same time. Once you migrate all your Redis clients to use
+     *        encrypted connections you can set the value to <code>required</code> to allow encrypted connections only.
+     *        </p>
+     *        <p>
+     *        Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires
+     *        you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set
+     *        <code>TransitEncryptionMode</code> to <code>required</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TransitEncryptionMode
+     */
+
+    public ModifyReplicationGroupRequest withTransitEncryptionMode(TransitEncryptionMode transitEncryptionMode) {
+        this.transitEncryptionMode = transitEncryptionMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to
+     * Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode
+     * disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode
+     * configuration and set the cluster mode to Enabled.
+     * </p>
+     * 
+     * @param clusterMode
+     *        Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode
+     *        to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and
+     *        cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then
+     *        complete cluster mode configuration and set the cluster mode to Enabled.
+     * @see ClusterMode
+     */
+
+    public void setClusterMode(String clusterMode) {
+        this.clusterMode = clusterMode;
+    }
+
+    /**
+     * <p>
+     * Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to
+     * Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode
+     * disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode
+     * configuration and set the cluster mode to Enabled.
+     * </p>
+     * 
+     * @return Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode
+     *         to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and
+     *         cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then
+     *         complete cluster mode configuration and set the cluster mode to Enabled.
+     * @see ClusterMode
+     */
+
+    public String getClusterMode() {
+        return this.clusterMode;
+    }
+
+    /**
+     * <p>
+     * Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to
+     * Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode
+     * disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode
+     * configuration and set the cluster mode to Enabled.
+     * </p>
+     * 
+     * @param clusterMode
+     *        Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode
+     *        to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and
+     *        cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then
+     *        complete cluster mode configuration and set the cluster mode to Enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ClusterMode
+     */
+
+    public ModifyReplicationGroupRequest withClusterMode(String clusterMode) {
+        setClusterMode(clusterMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to
+     * Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode
+     * disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode
+     * configuration and set the cluster mode to Enabled.
+     * </p>
+     * 
+     * @param clusterMode
+     *        Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode
+     *        to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and
+     *        cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then
+     *        complete cluster mode configuration and set the cluster mode to Enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ClusterMode
+     */
+
+    public ModifyReplicationGroupRequest withClusterMode(ClusterMode clusterMode) {
+        this.clusterMode = clusterMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2562,7 +2964,15 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         if (getRemoveUserGroups() != null)
             sb.append("RemoveUserGroups: ").append(getRemoveUserGroups()).append(",");
         if (getLogDeliveryConfigurations() != null)
-            sb.append("LogDeliveryConfigurations: ").append(getLogDeliveryConfigurations());
+            sb.append("LogDeliveryConfigurations: ").append(getLogDeliveryConfigurations()).append(",");
+        if (getIpDiscovery() != null)
+            sb.append("IpDiscovery: ").append(getIpDiscovery()).append(",");
+        if (getTransitEncryptionEnabled() != null)
+            sb.append("TransitEncryptionEnabled: ").append(getTransitEncryptionEnabled()).append(",");
+        if (getTransitEncryptionMode() != null)
+            sb.append("TransitEncryptionMode: ").append(getTransitEncryptionMode()).append(",");
+        if (getClusterMode() != null)
+            sb.append("ClusterMode: ").append(getClusterMode());
         sb.append("}");
         return sb.toString();
     }
@@ -2677,6 +3087,22 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getLogDeliveryConfigurations() != null && other.getLogDeliveryConfigurations().equals(this.getLogDeliveryConfigurations()) == false)
             return false;
+        if (other.getIpDiscovery() == null ^ this.getIpDiscovery() == null)
+            return false;
+        if (other.getIpDiscovery() != null && other.getIpDiscovery().equals(this.getIpDiscovery()) == false)
+            return false;
+        if (other.getTransitEncryptionEnabled() == null ^ this.getTransitEncryptionEnabled() == null)
+            return false;
+        if (other.getTransitEncryptionEnabled() != null && other.getTransitEncryptionEnabled().equals(this.getTransitEncryptionEnabled()) == false)
+            return false;
+        if (other.getTransitEncryptionMode() == null ^ this.getTransitEncryptionMode() == null)
+            return false;
+        if (other.getTransitEncryptionMode() != null && other.getTransitEncryptionMode().equals(this.getTransitEncryptionMode()) == false)
+            return false;
+        if (other.getClusterMode() == null ^ this.getClusterMode() == null)
+            return false;
+        if (other.getClusterMode() != null && other.getClusterMode().equals(this.getClusterMode()) == false)
+            return false;
         return true;
     }
 
@@ -2710,6 +3136,10 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getUserGroupIdsToRemove() == null) ? 0 : getUserGroupIdsToRemove().hashCode());
         hashCode = prime * hashCode + ((getRemoveUserGroups() == null) ? 0 : getRemoveUserGroups().hashCode());
         hashCode = prime * hashCode + ((getLogDeliveryConfigurations() == null) ? 0 : getLogDeliveryConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getIpDiscovery() == null) ? 0 : getIpDiscovery().hashCode());
+        hashCode = prime * hashCode + ((getTransitEncryptionEnabled() == null) ? 0 : getTransitEncryptionEnabled().hashCode());
+        hashCode = prime * hashCode + ((getTransitEncryptionMode() == null) ? 0 : getTransitEncryptionMode().hashCode());
+        hashCode = prime * hashCode + ((getClusterMode() == null) ? 0 : getClusterMode().hashCode());
         return hashCode;
     }
 

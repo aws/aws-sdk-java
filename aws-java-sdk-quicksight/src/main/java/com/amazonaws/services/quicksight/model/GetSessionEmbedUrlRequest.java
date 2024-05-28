@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -96,8 +96,8 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated Single
-     * Sign-On using SAML, OpenID Connect, or IAM federation
+     * IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect,
+     * or IAM federation
      * </p>
      * </li>
      * </ol>
@@ -450,8 +450,8 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated Single
-     * Sign-On using SAML, OpenID Connect, or IAM federation
+     * IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect,
+     * or IAM federation
      * </p>
      * </li>
      * </ol>
@@ -476,8 +476,8 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated
-     *        Single Sign-On using SAML, OpenID Connect, or IAM federation
+     *        IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID
+     *        Connect, or IAM federation
      *        </p>
      *        </li>
      *        </ol>
@@ -508,8 +508,8 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated Single
-     * Sign-On using SAML, OpenID Connect, or IAM federation
+     * IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect,
+     * or IAM federation
      * </p>
      * </li>
      * </ol>
@@ -533,8 +533,8 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         <li>
      *         <p>
-     *         Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated
-     *         Single Sign-On using SAML, OpenID Connect, or IAM federation
+     *         IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID
+     *         Connect, or IAM federation
      *         </p>
      *         </li>
      *         </ol>
@@ -565,8 +565,8 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated Single
-     * Sign-On using SAML, OpenID Connect, or IAM federation
+     * IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect,
+     * or IAM federation
      * </p>
      * </li>
      * </ol>
@@ -591,8 +591,8 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated
-     *        Single Sign-On using SAML, OpenID Connect, or IAM federation
+     *        IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID
+     *        Connect, or IAM federation
      *        </p>
      *        </li>
      *        </ol>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -81,9 +81,9 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>SSO</code> – The portal uses IAM Identity Center (successor to Single Sign-On) to authenticate users and
-     * manage user permissions. Before you can create a portal that uses IAM Identity Center, you must enable IAM
-     * Identity Center. For more information, see <a
+     * <code>SSO</code> – The portal uses IAM Identity Center to authenticate users and manage user permissions. Before
+     * you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling IAM
      * Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services
      * Regions other than the China Regions.
@@ -489,9 +489,9 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>SSO</code> – The portal uses IAM Identity Center (successor to Single Sign-On) to authenticate users and
-     * manage user permissions. Before you can create a portal that uses IAM Identity Center, you must enable IAM
-     * Identity Center. For more information, see <a
+     * <code>SSO</code> – The portal uses IAM Identity Center to authenticate users and manage user permissions. Before
+     * you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling IAM
      * Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services
      * Regions other than the China Regions.
@@ -516,9 +516,9 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>SSO</code> – The portal uses IAM Identity Center (successor to Single Sign-On) to authenticate users
-     *        and manage user permissions. Before you can create a portal that uses IAM Identity Center, you must enable
-     *        IAM Identity Center. For more information, see <a
+     *        <code>SSO</code> – The portal uses IAM Identity Center to authenticate users and manage user permissions.
+     *        Before you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For
+     *        more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso"
      *        >Enabling IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in
      *        Amazon Web Services Regions other than the China Regions.
@@ -550,9 +550,9 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>SSO</code> – The portal uses IAM Identity Center (successor to Single Sign-On) to authenticate users and
-     * manage user permissions. Before you can create a portal that uses IAM Identity Center, you must enable IAM
-     * Identity Center. For more information, see <a
+     * <code>SSO</code> – The portal uses IAM Identity Center to authenticate users and manage user permissions. Before
+     * you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling IAM
      * Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services
      * Regions other than the China Regions.
@@ -576,9 +576,9 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>SSO</code> – The portal uses IAM Identity Center (successor to Single Sign-On) to authenticate
-     *         users and manage user permissions. Before you can create a portal that uses IAM Identity Center, you must
-     *         enable IAM Identity Center. For more information, see <a
+     *         <code>SSO</code> – The portal uses IAM Identity Center to authenticate users and manage user permissions.
+     *         Before you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For
+     *         more information, see <a
      *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso"
      *         >Enabling IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in
      *         Amazon Web Services Regions other than the China Regions.
@@ -610,9 +610,9 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>SSO</code> – The portal uses IAM Identity Center (successor to Single Sign-On) to authenticate users and
-     * manage user permissions. Before you can create a portal that uses IAM Identity Center, you must enable IAM
-     * Identity Center. For more information, see <a
+     * <code>SSO</code> – The portal uses IAM Identity Center to authenticate users and manage user permissions. Before
+     * you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling IAM
      * Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services
      * Regions other than the China Regions.
@@ -637,9 +637,9 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>SSO</code> – The portal uses IAM Identity Center (successor to Single Sign-On) to authenticate users
-     *        and manage user permissions. Before you can create a portal that uses IAM Identity Center, you must enable
-     *        IAM Identity Center. For more information, see <a
+     *        <code>SSO</code> – The portal uses IAM Identity Center to authenticate users and manage user permissions.
+     *        Before you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For
+     *        more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso"
      *        >Enabling IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in
      *        Amazon Web Services Regions other than the China Regions.
@@ -673,9 +673,9 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * <code>SSO</code> – The portal uses IAM Identity Center (successor to Single Sign-On) to authenticate users and
-     * manage user permissions. Before you can create a portal that uses IAM Identity Center, you must enable IAM
-     * Identity Center. For more information, see <a
+     * <code>SSO</code> – The portal uses IAM Identity Center to authenticate users and manage user permissions. Before
+     * you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling IAM
      * Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services
      * Regions other than the China Regions.
@@ -700,9 +700,9 @@ public class CreatePortalRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>SSO</code> – The portal uses IAM Identity Center (successor to Single Sign-On) to authenticate users
-     *        and manage user permissions. Before you can create a portal that uses IAM Identity Center, you must enable
-     *        IAM Identity Center. For more information, see <a
+     *        <code>SSO</code> – The portal uses IAM Identity Center to authenticate users and manage user permissions.
+     *        Before you can create a portal that uses IAM Identity Center, you must enable IAM Identity Center. For
+     *        more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso"
      *        >Enabling IAM Identity Center</a> in the <i>IoT SiteWise User Guide</i>. This option is only available in
      *        Amazon Web Services Regions other than the China Regions.

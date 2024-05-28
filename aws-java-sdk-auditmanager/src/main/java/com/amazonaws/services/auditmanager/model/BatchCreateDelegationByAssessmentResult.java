@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -190,9 +190,9 @@ public class BatchCreateDelegationByAssessmentResult extends com.amazonaws.Amazo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDelegations() != null)
-            sb.append("Delegations: ").append(getDelegations()).append(",");
+            sb.append("Delegations: ").append("***Sensitive Data Redacted***").append(",");
         if (getErrors() != null)
-            sb.append("Errors: ").append(getErrors());
+            sb.append("Errors: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

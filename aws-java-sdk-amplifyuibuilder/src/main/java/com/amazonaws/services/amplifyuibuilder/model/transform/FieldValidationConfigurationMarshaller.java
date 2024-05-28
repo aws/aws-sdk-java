@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,12 +28,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class FieldValidationConfigurationMarshaller {
 
-    private static final MarshallingInfo<List> NUMVALUES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("numValues").build();
-    private static final MarshallingInfo<List> STRVALUES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("strValues").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("type").build();
+    private static final MarshallingInfo<List> STRVALUES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("strValues").build();
+    private static final MarshallingInfo<List> NUMVALUES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("numValues").build();
     private static final MarshallingInfo<String> VALIDATIONMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("validationMessage").build();
 
@@ -53,9 +53,9 @@ public class FieldValidationConfigurationMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(fieldValidationConfiguration.getNumValues(), NUMVALUES_BINDING);
-            protocolMarshaller.marshall(fieldValidationConfiguration.getStrValues(), STRVALUES_BINDING);
             protocolMarshaller.marshall(fieldValidationConfiguration.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(fieldValidationConfiguration.getStrValues(), STRVALUES_BINDING);
+            protocolMarshaller.marshall(fieldValidationConfiguration.getNumValues(), NUMVALUES_BINDING);
             protocolMarshaller.marshall(fieldValidationConfiguration.getValidationMessage(), VALIDATIONMESSAGE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

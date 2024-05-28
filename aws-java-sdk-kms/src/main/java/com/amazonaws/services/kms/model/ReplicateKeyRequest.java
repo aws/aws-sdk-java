@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -104,22 +104,22 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must give the caller
-     * <code>kms:PutKeyPolicy</code> permission on the replica key. This reduces the risk that the KMS key becomes
-     * unmanageable. For more information, refer to the scenario in the <a href=
-     * "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
-     * >Default Key Policy</a> section of the <i> <i>Key Management Service Developer Guide</i> </i>.
+     * The key policy must allow the calling principal to make a subsequent <code>PutKeyPolicy</code> request on the KMS
+     * key. This reduces the risk that the KMS key becomes unmanageable. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key"
+     * >Default key policy</a> in the <i>Key Management Service Developer Guide</i>. (To omit this condition, set
+     * <code>BypassPolicyLockoutSafetyCheck</code> to true.)
      * </p>
      * </li>
      * <li>
      * <p>
      * Each statement in the key policy must contain one or more principals. The principals in the key policy must exist
-     * and be visible to KMS. When you create a new Amazon Web Services principal (for example, an IAM user or role),
-     * you might need to enforce a delay before including the new principal in a key policy because the new principal
-     * might not be immediately visible to KMS. For more information, see <a href=
+     * and be visible to KMS. When you create a new Amazon Web Services principal, you might need to enforce a delay
+     * before including the new principal in a key policy because the new principal might not be immediately visible to
+     * KMS. For more information, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
-     * >Changes that I make are not always immediately visible</a> in the <i> <i>Identity and Access Management User
-     * Guide</i> </i>.
+     * >Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access
+     * Management User Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -156,7 +156,7 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String policy;
     /**
      * <p>
-     * A flag to indicate whether to bypass the key policy lockout safety check.
+     * Skips ("bypasses") the key policy lockout safety check. The default value is false.
      * </p>
      * <important>
      * <p>
@@ -164,17 +164,15 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * true indiscriminately.
      * </p>
      * <p>
-     * For more information, refer to the scenario in the <a href=
-     * "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
-     * >Default Key Policy</a> section in the <i>Key Management Service Developer Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key"
+     * >Default key policy</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
      * </important>
      * <p>
      * Use this parameter only when you intend to prevent the principal that is making the request from making a
-     * subsequent <code>PutKeyPolicy</code> request on the KMS key.
-     * </p>
-     * <p>
-     * The default value is false.
+     * subsequent <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a>
+     * request on the KMS key.
      * </p>
      */
     private Boolean bypassPolicyLockoutSafetyCheck;
@@ -182,6 +180,12 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * A description of the KMS key. The default value is an empty string (no description).
      * </p>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important>
      * <p>
      * The description is not a shared property of multi-Region keys. You can specify the same description or a
      * different description for each key in a set of related multi-Region keys. KMS does not synchronize this property.
@@ -193,10 +197,15 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Assigns one or more tags to the replica key. Use this parameter to tag the KMS key when it is created. To tag an
      * existing KMS key, use the <a>TagResource</a> operation.
      * </p>
-     * <note>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important> <note>
      * <p>
      * Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in KMS</a> in the <i>Key Management
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management
      * Service Developer Guide</i>.
      * </p>
      * </note>
@@ -617,22 +626,22 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must give the caller
-     * <code>kms:PutKeyPolicy</code> permission on the replica key. This reduces the risk that the KMS key becomes
-     * unmanageable. For more information, refer to the scenario in the <a href=
-     * "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
-     * >Default Key Policy</a> section of the <i> <i>Key Management Service Developer Guide</i> </i>.
+     * The key policy must allow the calling principal to make a subsequent <code>PutKeyPolicy</code> request on the KMS
+     * key. This reduces the risk that the KMS key becomes unmanageable. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key"
+     * >Default key policy</a> in the <i>Key Management Service Developer Guide</i>. (To omit this condition, set
+     * <code>BypassPolicyLockoutSafetyCheck</code> to true.)
      * </p>
      * </li>
      * <li>
      * <p>
      * Each statement in the key policy must contain one or more principals. The principals in the key policy must exist
-     * and be visible to KMS. When you create a new Amazon Web Services principal (for example, an IAM user or role),
-     * you might need to enforce a delay before including the new principal in a key policy because the new principal
-     * might not be immediately visible to KMS. For more information, see <a href=
+     * and be visible to KMS. When you create a new Amazon Web Services principal, you might need to enforce a delay
+     * before including the new principal in a key policy because the new principal might not be immediately visible to
+     * KMS. For more information, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
-     * >Changes that I make are not always immediately visible</a> in the <i> <i>Identity and Access Management User
-     * Guide</i> </i>.
+     * >Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access
+     * Management User Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -682,22 +691,23 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
-     *        If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must give the caller
-     *        <code>kms:PutKeyPolicy</code> permission on the replica key. This reduces the risk that the KMS key
-     *        becomes unmanageable. For more information, refer to the scenario in the <a href=
-     *        "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
-     *        >Default Key Policy</a> section of the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *        The key policy must allow the calling principal to make a subsequent <code>PutKeyPolicy</code> request on
+     *        the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, see <a
+     *        href
+     *        ="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key"
+     *        >Default key policy</a> in the <i>Key Management Service Developer Guide</i>. (To omit this condition, set
+     *        <code>BypassPolicyLockoutSafetyCheck</code> to true.)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        Each statement in the key policy must contain one or more principals. The principals in the key policy
-     *        must exist and be visible to KMS. When you create a new Amazon Web Services principal (for example, an IAM
-     *        user or role), you might need to enforce a delay before including the new principal in a key policy
-     *        because the new principal might not be immediately visible to KMS. For more information, see <a href=
+     *        must exist and be visible to KMS. When you create a new Amazon Web Services principal, you might need to
+     *        enforce a delay before including the new principal in a key policy because the new principal might not be
+     *        immediately visible to KMS. For more information, see <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
-     *        >Changes that I make are not always immediately visible</a> in the <i> <i>Identity and Access Management
-     *        User Guide</i> </i>.
+     *        >Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and
+     *        Access Management User Guide</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -753,22 +763,22 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must give the caller
-     * <code>kms:PutKeyPolicy</code> permission on the replica key. This reduces the risk that the KMS key becomes
-     * unmanageable. For more information, refer to the scenario in the <a href=
-     * "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
-     * >Default Key Policy</a> section of the <i> <i>Key Management Service Developer Guide</i> </i>.
+     * The key policy must allow the calling principal to make a subsequent <code>PutKeyPolicy</code> request on the KMS
+     * key. This reduces the risk that the KMS key becomes unmanageable. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key"
+     * >Default key policy</a> in the <i>Key Management Service Developer Guide</i>. (To omit this condition, set
+     * <code>BypassPolicyLockoutSafetyCheck</code> to true.)
      * </p>
      * </li>
      * <li>
      * <p>
      * Each statement in the key policy must contain one or more principals. The principals in the key policy must exist
-     * and be visible to KMS. When you create a new Amazon Web Services principal (for example, an IAM user or role),
-     * you might need to enforce a delay before including the new principal in a key policy because the new principal
-     * might not be immediately visible to KMS. For more information, see <a href=
+     * and be visible to KMS. When you create a new Amazon Web Services principal, you might need to enforce a delay
+     * before including the new principal in a key policy because the new principal might not be immediately visible to
+     * KMS. For more information, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
-     * >Changes that I make are not always immediately visible</a> in the <i> <i>Identity and Access Management User
-     * Guide</i> </i>.
+     * >Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access
+     * Management User Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -817,22 +827,23 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <ul>
      *         <li>
      *         <p>
-     *         If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must give the caller
-     *         <code>kms:PutKeyPolicy</code> permission on the replica key. This reduces the risk that the KMS key
-     *         becomes unmanageable. For more information, refer to the scenario in the <a href=
-     *         "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
-     *         >Default Key Policy</a> section of the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         The key policy must allow the calling principal to make a subsequent <code>PutKeyPolicy</code> request on
+     *         the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key"
+     *         >Default key policy</a> in the <i>Key Management Service Developer Guide</i>. (To omit this condition,
+     *         set <code>BypassPolicyLockoutSafetyCheck</code> to true.)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         Each statement in the key policy must contain one or more principals. The principals in the key policy
-     *         must exist and be visible to KMS. When you create a new Amazon Web Services principal (for example, an
-     *         IAM user or role), you might need to enforce a delay before including the new principal in a key policy
-     *         because the new principal might not be immediately visible to KMS. For more information, see <a href=
+     *         must exist and be visible to KMS. When you create a new Amazon Web Services principal, you might need to
+     *         enforce a delay before including the new principal in a key policy because the new principal might not be
+     *         immediately visible to KMS. For more information, see <a href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
-     *         >Changes that I make are not always immediately visible</a> in the <i> <i>Identity and Access Management
-     *         User Guide</i> </i>.
+     *         >Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and
+     *         Access Management User Guide</i>.
      *         </p>
      *         </li>
      *         </ul>
@@ -888,22 +899,22 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
-     * If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must give the caller
-     * <code>kms:PutKeyPolicy</code> permission on the replica key. This reduces the risk that the KMS key becomes
-     * unmanageable. For more information, refer to the scenario in the <a href=
-     * "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
-     * >Default Key Policy</a> section of the <i> <i>Key Management Service Developer Guide</i> </i>.
+     * The key policy must allow the calling principal to make a subsequent <code>PutKeyPolicy</code> request on the KMS
+     * key. This reduces the risk that the KMS key becomes unmanageable. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key"
+     * >Default key policy</a> in the <i>Key Management Service Developer Guide</i>. (To omit this condition, set
+     * <code>BypassPolicyLockoutSafetyCheck</code> to true.)
      * </p>
      * </li>
      * <li>
      * <p>
      * Each statement in the key policy must contain one or more principals. The principals in the key policy must exist
-     * and be visible to KMS. When you create a new Amazon Web Services principal (for example, an IAM user or role),
-     * you might need to enforce a delay before including the new principal in a key policy because the new principal
-     * might not be immediately visible to KMS. For more information, see <a href=
+     * and be visible to KMS. When you create a new Amazon Web Services principal, you might need to enforce a delay
+     * before including the new principal in a key policy because the new principal might not be immediately visible to
+     * KMS. For more information, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
-     * >Changes that I make are not always immediately visible</a> in the <i> <i>Identity and Access Management User
-     * Guide</i> </i>.
+     * >Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access
+     * Management User Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -953,22 +964,23 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
-     *        If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must give the caller
-     *        <code>kms:PutKeyPolicy</code> permission on the replica key. This reduces the risk that the KMS key
-     *        becomes unmanageable. For more information, refer to the scenario in the <a href=
-     *        "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
-     *        >Default Key Policy</a> section of the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *        The key policy must allow the calling principal to make a subsequent <code>PutKeyPolicy</code> request on
+     *        the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, see <a
+     *        href
+     *        ="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key"
+     *        >Default key policy</a> in the <i>Key Management Service Developer Guide</i>. (To omit this condition, set
+     *        <code>BypassPolicyLockoutSafetyCheck</code> to true.)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        Each statement in the key policy must contain one or more principals. The principals in the key policy
-     *        must exist and be visible to KMS. When you create a new Amazon Web Services principal (for example, an IAM
-     *        user or role), you might need to enforce a delay before including the new principal in a key policy
-     *        because the new principal might not be immediately visible to KMS. For more information, see <a href=
+     *        must exist and be visible to KMS. When you create a new Amazon Web Services principal, you might need to
+     *        enforce a delay before including the new principal in a key policy because the new principal might not be
+     *        immediately visible to KMS. For more information, see <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency"
-     *        >Changes that I make are not always immediately visible</a> in the <i> <i>Identity and Access Management
-     *        User Guide</i> </i>.
+     *        >Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and
+     *        Access Management User Guide</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -1011,7 +1023,7 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A flag to indicate whether to bypass the key policy lockout safety check.
+     * Skips ("bypasses") the key policy lockout safety check. The default value is false.
      * </p>
      * <important>
      * <p>
@@ -1019,37 +1031,34 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * true indiscriminately.
      * </p>
      * <p>
-     * For more information, refer to the scenario in the <a href=
-     * "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
-     * >Default Key Policy</a> section in the <i>Key Management Service Developer Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key"
+     * >Default key policy</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
      * </important>
      * <p>
      * Use this parameter only when you intend to prevent the principal that is making the request from making a
-     * subsequent <code>PutKeyPolicy</code> request on the KMS key.
-     * </p>
-     * <p>
-     * The default value is false.
+     * subsequent <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a>
+     * request on the KMS key.
      * </p>
      * 
      * @param bypassPolicyLockoutSafetyCheck
-     *        A flag to indicate whether to bypass the key policy lockout safety check.</p> <important>
+     *        Skips ("bypasses") the key policy lockout safety check. The default value is false.</p> <important>
      *        <p>
      *        Setting this value to true increases the risk that the KMS key becomes unmanageable. Do not set this value
      *        to true indiscriminately.
      *        </p>
      *        <p>
-     *        For more information, refer to the scenario in the <a href=
-     *        "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
-     *        >Default Key Policy</a> section in the <i>Key Management Service Developer Guide</i>.
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key"
+     *        >Default key policy</a> in the <i>Key Management Service Developer Guide</i>.
      *        </p>
      *        </important>
      *        <p>
      *        Use this parameter only when you intend to prevent the principal that is making the request from making a
-     *        subsequent <code>PutKeyPolicy</code> request on the KMS key.
-     *        </p>
-     *        <p>
-     *        The default value is false.
+     *        subsequent <a
+     *        href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a> request
+     *        on the KMS key.
      */
 
     public void setBypassPolicyLockoutSafetyCheck(Boolean bypassPolicyLockoutSafetyCheck) {
@@ -1058,7 +1067,7 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A flag to indicate whether to bypass the key policy lockout safety check.
+     * Skips ("bypasses") the key policy lockout safety check. The default value is false.
      * </p>
      * <important>
      * <p>
@@ -1066,36 +1075,33 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * true indiscriminately.
      * </p>
      * <p>
-     * For more information, refer to the scenario in the <a href=
-     * "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
-     * >Default Key Policy</a> section in the <i>Key Management Service Developer Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key"
+     * >Default key policy</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
      * </important>
      * <p>
      * Use this parameter only when you intend to prevent the principal that is making the request from making a
-     * subsequent <code>PutKeyPolicy</code> request on the KMS key.
-     * </p>
-     * <p>
-     * The default value is false.
+     * subsequent <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a>
+     * request on the KMS key.
      * </p>
      * 
-     * @return A flag to indicate whether to bypass the key policy lockout safety check.</p> <important>
+     * @return Skips ("bypasses") the key policy lockout safety check. The default value is false.</p> <important>
      *         <p>
      *         Setting this value to true increases the risk that the KMS key becomes unmanageable. Do not set this
      *         value to true indiscriminately.
      *         </p>
      *         <p>
-     *         For more information, refer to the scenario in the <a href=
-     *         "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
-     *         >Default Key Policy</a> section in the <i>Key Management Service Developer Guide</i>.
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key"
+     *         >Default key policy</a> in the <i>Key Management Service Developer Guide</i>.
      *         </p>
      *         </important>
      *         <p>
      *         Use this parameter only when you intend to prevent the principal that is making the request from making a
-     *         subsequent <code>PutKeyPolicy</code> request on the KMS key.
-     *         </p>
-     *         <p>
-     *         The default value is false.
+     *         subsequent <a
+     *         href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a> request
+     *         on the KMS key.
      */
 
     public Boolean getBypassPolicyLockoutSafetyCheck() {
@@ -1104,7 +1110,7 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A flag to indicate whether to bypass the key policy lockout safety check.
+     * Skips ("bypasses") the key policy lockout safety check. The default value is false.
      * </p>
      * <important>
      * <p>
@@ -1112,37 +1118,34 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * true indiscriminately.
      * </p>
      * <p>
-     * For more information, refer to the scenario in the <a href=
-     * "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
-     * >Default Key Policy</a> section in the <i>Key Management Service Developer Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key"
+     * >Default key policy</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
      * </important>
      * <p>
      * Use this parameter only when you intend to prevent the principal that is making the request from making a
-     * subsequent <code>PutKeyPolicy</code> request on the KMS key.
-     * </p>
-     * <p>
-     * The default value is false.
+     * subsequent <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a>
+     * request on the KMS key.
      * </p>
      * 
      * @param bypassPolicyLockoutSafetyCheck
-     *        A flag to indicate whether to bypass the key policy lockout safety check.</p> <important>
+     *        Skips ("bypasses") the key policy lockout safety check. The default value is false.</p> <important>
      *        <p>
      *        Setting this value to true increases the risk that the KMS key becomes unmanageable. Do not set this value
      *        to true indiscriminately.
      *        </p>
      *        <p>
-     *        For more information, refer to the scenario in the <a href=
-     *        "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
-     *        >Default Key Policy</a> section in the <i>Key Management Service Developer Guide</i>.
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key"
+     *        >Default key policy</a> in the <i>Key Management Service Developer Guide</i>.
      *        </p>
      *        </important>
      *        <p>
      *        Use this parameter only when you intend to prevent the principal that is making the request from making a
-     *        subsequent <code>PutKeyPolicy</code> request on the KMS key.
-     *        </p>
-     *        <p>
-     *        The default value is false.
+     *        subsequent <a
+     *        href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a> request
+     *        on the KMS key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1153,7 +1156,7 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A flag to indicate whether to bypass the key policy lockout safety check.
+     * Skips ("bypasses") the key policy lockout safety check. The default value is false.
      * </p>
      * <important>
      * <p>
@@ -1161,36 +1164,33 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * true indiscriminately.
      * </p>
      * <p>
-     * For more information, refer to the scenario in the <a href=
-     * "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
-     * >Default Key Policy</a> section in the <i>Key Management Service Developer Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key"
+     * >Default key policy</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
      * </important>
      * <p>
      * Use this parameter only when you intend to prevent the principal that is making the request from making a
-     * subsequent <code>PutKeyPolicy</code> request on the KMS key.
-     * </p>
-     * <p>
-     * The default value is false.
+     * subsequent <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a>
+     * request on the KMS key.
      * </p>
      * 
-     * @return A flag to indicate whether to bypass the key policy lockout safety check.</p> <important>
+     * @return Skips ("bypasses") the key policy lockout safety check. The default value is false.</p> <important>
      *         <p>
      *         Setting this value to true increases the risk that the KMS key becomes unmanageable. Do not set this
      *         value to true indiscriminately.
      *         </p>
      *         <p>
-     *         For more information, refer to the scenario in the <a href=
-     *         "https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam"
-     *         >Default Key Policy</a> section in the <i>Key Management Service Developer Guide</i>.
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key"
+     *         >Default key policy</a> in the <i>Key Management Service Developer Guide</i>.
      *         </p>
      *         </important>
      *         <p>
      *         Use this parameter only when you intend to prevent the principal that is making the request from making a
-     *         subsequent <code>PutKeyPolicy</code> request on the KMS key.
-     *         </p>
-     *         <p>
-     *         The default value is false.
+     *         subsequent <a
+     *         href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a> request
+     *         on the KMS key.
      */
 
     public Boolean isBypassPolicyLockoutSafetyCheck() {
@@ -1201,13 +1201,24 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * A description of the KMS key. The default value is an empty string (no description).
      * </p>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important>
      * <p>
      * The description is not a shared property of multi-Region keys. You can specify the same description or a
      * different description for each key in a set of related multi-Region keys. KMS does not synchronize this property.
      * </p>
      * 
      * @param description
-     *        A description of the KMS key. The default value is an empty string (no description).</p>
+     *        A description of the KMS key. The default value is an empty string (no description).</p> <important>
+     *        <p>
+     *        Do not include confidential or sensitive information in this field. This field may be displayed in
+     *        plaintext in CloudTrail logs and other output.
+     *        </p>
+     *        </important>
      *        <p>
      *        The description is not a shared property of multi-Region keys. You can specify the same description or a
      *        different description for each key in a set of related multi-Region keys. KMS does not synchronize this
@@ -1222,12 +1233,23 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * A description of the KMS key. The default value is an empty string (no description).
      * </p>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important>
      * <p>
      * The description is not a shared property of multi-Region keys. You can specify the same description or a
      * different description for each key in a set of related multi-Region keys. KMS does not synchronize this property.
      * </p>
      * 
-     * @return A description of the KMS key. The default value is an empty string (no description).</p>
+     * @return A description of the KMS key. The default value is an empty string (no description).</p> <important>
+     *         <p>
+     *         Do not include confidential or sensitive information in this field. This field may be displayed in
+     *         plaintext in CloudTrail logs and other output.
+     *         </p>
+     *         </important>
      *         <p>
      *         The description is not a shared property of multi-Region keys. You can specify the same description or a
      *         different description for each key in a set of related multi-Region keys. KMS does not synchronize this
@@ -1242,13 +1264,24 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * A description of the KMS key. The default value is an empty string (no description).
      * </p>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important>
      * <p>
      * The description is not a shared property of multi-Region keys. You can specify the same description or a
      * different description for each key in a set of related multi-Region keys. KMS does not synchronize this property.
      * </p>
      * 
      * @param description
-     *        A description of the KMS key. The default value is an empty string (no description).</p>
+     *        A description of the KMS key. The default value is an empty string (no description).</p> <important>
+     *        <p>
+     *        Do not include confidential or sensitive information in this field. This field may be displayed in
+     *        plaintext in CloudTrail logs and other output.
+     *        </p>
+     *        </important>
      *        <p>
      *        The description is not a shared property of multi-Region keys. You can specify the same description or a
      *        different description for each key in a set of related multi-Region keys. KMS does not synchronize this
@@ -1266,10 +1299,15 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Assigns one or more tags to the replica key. Use this parameter to tag the KMS key when it is created. To tag an
      * existing KMS key, use the <a>TagResource</a> operation.
      * </p>
-     * <note>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important> <note>
      * <p>
      * Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in KMS</a> in the <i>Key Management
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management
      * Service Developer Guide</i>.
      * </p>
      * </note>
@@ -1295,10 +1333,15 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @return Assigns one or more tags to the replica key. Use this parameter to tag the KMS key when it is created. To
-     *         tag an existing KMS key, use the <a>TagResource</a> operation.</p> <note>
+     *         tag an existing KMS key, use the <a>TagResource</a> operation.</p> <important>
+     *         <p>
+     *         Do not include confidential or sensitive information in this field. This field may be displayed in
+     *         plaintext in CloudTrail logs and other output.
+     *         </p>
+     *         </important> <note>
      *         <p>
      *         Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a
-     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in KMS</a> in the <i>Key
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key
      *         Management Service Developer Guide</i>.
      *         </p>
      *         </note>
@@ -1336,10 +1379,15 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Assigns one or more tags to the replica key. Use this parameter to tag the KMS key when it is created. To tag an
      * existing KMS key, use the <a>TagResource</a> operation.
      * </p>
-     * <note>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important> <note>
      * <p>
      * Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in KMS</a> in the <i>Key Management
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management
      * Service Developer Guide</i>.
      * </p>
      * </note>
@@ -1366,10 +1414,15 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param tags
      *        Assigns one or more tags to the replica key. Use this parameter to tag the KMS key when it is created. To
-     *        tag an existing KMS key, use the <a>TagResource</a> operation.</p> <note>
+     *        tag an existing KMS key, use the <a>TagResource</a> operation.</p> <important>
+     *        <p>
+     *        Do not include confidential or sensitive information in this field. This field may be displayed in
+     *        plaintext in CloudTrail logs and other output.
+     *        </p>
+     *        </important> <note>
      *        <p>
      *        Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in KMS</a> in the <i>Key
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key
      *        Management Service Developer Guide</i>.
      *        </p>
      *        </note>
@@ -1409,10 +1462,15 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Assigns one or more tags to the replica key. Use this parameter to tag the KMS key when it is created. To tag an
      * existing KMS key, use the <a>TagResource</a> operation.
      * </p>
-     * <note>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important> <note>
      * <p>
      * Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in KMS</a> in the <i>Key Management
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management
      * Service Developer Guide</i>.
      * </p>
      * </note>
@@ -1444,10 +1502,15 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param tags
      *        Assigns one or more tags to the replica key. Use this parameter to tag the KMS key when it is created. To
-     *        tag an existing KMS key, use the <a>TagResource</a> operation.</p> <note>
+     *        tag an existing KMS key, use the <a>TagResource</a> operation.</p> <important>
+     *        <p>
+     *        Do not include confidential or sensitive information in this field. This field may be displayed in
+     *        plaintext in CloudTrail logs and other output.
+     *        </p>
+     *        </important> <note>
      *        <p>
      *        Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in KMS</a> in the <i>Key
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key
      *        Management Service Developer Guide</i>.
      *        </p>
      *        </note>
@@ -1489,10 +1552,15 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Assigns one or more tags to the replica key. Use this parameter to tag the KMS key when it is created. To tag an
      * existing KMS key, use the <a>TagResource</a> operation.
      * </p>
-     * <note>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important> <note>
      * <p>
      * Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in KMS</a> in the <i>Key Management
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management
      * Service Developer Guide</i>.
      * </p>
      * </note>
@@ -1519,10 +1587,15 @@ public class ReplicateKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param tags
      *        Assigns one or more tags to the replica key. Use this parameter to tag the KMS key when it is created. To
-     *        tag an existing KMS key, use the <a>TagResource</a> operation.</p> <note>
+     *        tag an existing KMS key, use the <a>TagResource</a> operation.</p> <important>
+     *        <p>
+     *        Do not include confidential or sensitive information in this field. This field may be displayed in
+     *        plaintext in CloudTrail logs and other output.
+     *        </p>
+     *        </important> <note>
      *        <p>
      *        Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in KMS</a> in the <i>Key
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key
      *        Management Service Developer Guide</i>.
      *        </p>
      *        </note>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,6 +71,72 @@ public class AWSMediaConnectAsyncClient extends AWSMediaConnectClient implements
      */
     public ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddBridgeOutputsResult> addBridgeOutputsAsync(AddBridgeOutputsRequest request) {
+
+        return addBridgeOutputsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddBridgeOutputsResult> addBridgeOutputsAsync(final AddBridgeOutputsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AddBridgeOutputsRequest, AddBridgeOutputsResult> asyncHandler) {
+        final AddBridgeOutputsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AddBridgeOutputsResult>() {
+            @Override
+            public AddBridgeOutputsResult call() throws Exception {
+                AddBridgeOutputsResult result = null;
+
+                try {
+                    result = executeAddBridgeOutputs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddBridgeSourcesResult> addBridgeSourcesAsync(AddBridgeSourcesRequest request) {
+
+        return addBridgeSourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddBridgeSourcesResult> addBridgeSourcesAsync(final AddBridgeSourcesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AddBridgeSourcesRequest, AddBridgeSourcesResult> asyncHandler) {
+        final AddBridgeSourcesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AddBridgeSourcesResult>() {
+            @Override
+            public AddBridgeSourcesResult call() throws Exception {
+                AddBridgeSourcesResult result = null;
+
+                try {
+                    result = executeAddBridgeSources(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -206,6 +272,39 @@ public class AWSMediaConnectAsyncClient extends AWSMediaConnectClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateBridgeResult> createBridgeAsync(CreateBridgeRequest request) {
+
+        return createBridgeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateBridgeResult> createBridgeAsync(final CreateBridgeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateBridgeRequest, CreateBridgeResult> asyncHandler) {
+        final CreateBridgeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateBridgeResult>() {
+            @Override
+            public CreateBridgeResult call() throws Exception {
+                CreateBridgeResult result = null;
+
+                try {
+                    result = executeCreateBridge(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateFlowResult> createFlowAsync(CreateFlowRequest request) {
 
         return createFlowAsync(request, null);
@@ -223,6 +322,72 @@ public class AWSMediaConnectAsyncClient extends AWSMediaConnectClient implements
 
                 try {
                     result = executeCreateFlow(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateGatewayResult> createGatewayAsync(CreateGatewayRequest request) {
+
+        return createGatewayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateGatewayResult> createGatewayAsync(final CreateGatewayRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateGatewayRequest, CreateGatewayResult> asyncHandler) {
+        final CreateGatewayRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateGatewayResult>() {
+            @Override
+            public CreateGatewayResult call() throws Exception {
+                CreateGatewayResult result = null;
+
+                try {
+                    result = executeCreateGateway(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBridgeResult> deleteBridgeAsync(DeleteBridgeRequest request) {
+
+        return deleteBridgeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBridgeResult> deleteBridgeAsync(final DeleteBridgeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteBridgeRequest, DeleteBridgeResult> asyncHandler) {
+        final DeleteBridgeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteBridgeResult>() {
+            @Override
+            public DeleteBridgeResult call() throws Exception {
+                DeleteBridgeResult result = null;
+
+                try {
+                    result = executeDeleteBridge(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -272,6 +437,105 @@ public class AWSMediaConnectAsyncClient extends AWSMediaConnectClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteGatewayResult> deleteGatewayAsync(DeleteGatewayRequest request) {
+
+        return deleteGatewayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteGatewayResult> deleteGatewayAsync(final DeleteGatewayRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteGatewayRequest, DeleteGatewayResult> asyncHandler) {
+        final DeleteGatewayRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteGatewayResult>() {
+            @Override
+            public DeleteGatewayResult call() throws Exception {
+                DeleteGatewayResult result = null;
+
+                try {
+                    result = executeDeleteGateway(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterGatewayInstanceResult> deregisterGatewayInstanceAsync(DeregisterGatewayInstanceRequest request) {
+
+        return deregisterGatewayInstanceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterGatewayInstanceResult> deregisterGatewayInstanceAsync(final DeregisterGatewayInstanceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeregisterGatewayInstanceRequest, DeregisterGatewayInstanceResult> asyncHandler) {
+        final DeregisterGatewayInstanceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeregisterGatewayInstanceResult>() {
+            @Override
+            public DeregisterGatewayInstanceResult call() throws Exception {
+                DeregisterGatewayInstanceResult result = null;
+
+                try {
+                    result = executeDeregisterGatewayInstance(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBridgeResult> describeBridgeAsync(DescribeBridgeRequest request) {
+
+        return describeBridgeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBridgeResult> describeBridgeAsync(final DescribeBridgeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeBridgeRequest, DescribeBridgeResult> asyncHandler) {
+        final DescribeBridgeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeBridgeResult>() {
+            @Override
+            public DescribeBridgeResult call() throws Exception {
+                DescribeBridgeResult result = null;
+
+                try {
+                    result = executeDescribeBridge(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeFlowResult> describeFlowAsync(DescribeFlowRequest request) {
 
         return describeFlowAsync(request, null);
@@ -289,6 +553,105 @@ public class AWSMediaConnectAsyncClient extends AWSMediaConnectClient implements
 
                 try {
                     result = executeDescribeFlow(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFlowSourceMetadataResult> describeFlowSourceMetadataAsync(DescribeFlowSourceMetadataRequest request) {
+
+        return describeFlowSourceMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFlowSourceMetadataResult> describeFlowSourceMetadataAsync(final DescribeFlowSourceMetadataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeFlowSourceMetadataRequest, DescribeFlowSourceMetadataResult> asyncHandler) {
+        final DescribeFlowSourceMetadataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeFlowSourceMetadataResult>() {
+            @Override
+            public DescribeFlowSourceMetadataResult call() throws Exception {
+                DescribeFlowSourceMetadataResult result = null;
+
+                try {
+                    result = executeDescribeFlowSourceMetadata(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeGatewayResult> describeGatewayAsync(DescribeGatewayRequest request) {
+
+        return describeGatewayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeGatewayResult> describeGatewayAsync(final DescribeGatewayRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeGatewayRequest, DescribeGatewayResult> asyncHandler) {
+        final DescribeGatewayRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeGatewayResult>() {
+            @Override
+            public DescribeGatewayResult call() throws Exception {
+                DescribeGatewayResult result = null;
+
+                try {
+                    result = executeDescribeGateway(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeGatewayInstanceResult> describeGatewayInstanceAsync(DescribeGatewayInstanceRequest request) {
+
+        return describeGatewayInstanceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeGatewayInstanceResult> describeGatewayInstanceAsync(final DescribeGatewayInstanceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeGatewayInstanceRequest, DescribeGatewayInstanceResult> asyncHandler) {
+        final DescribeGatewayInstanceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeGatewayInstanceResult>() {
+            @Override
+            public DescribeGatewayInstanceResult call() throws Exception {
+                DescribeGatewayInstanceResult result = null;
+
+                try {
+                    result = executeDescribeGatewayInstance(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -404,6 +767,39 @@ public class AWSMediaConnectAsyncClient extends AWSMediaConnectClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListBridgesResult> listBridgesAsync(ListBridgesRequest request) {
+
+        return listBridgesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBridgesResult> listBridgesAsync(final ListBridgesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListBridgesRequest, ListBridgesResult> asyncHandler) {
+        final ListBridgesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListBridgesResult>() {
+            @Override
+            public ListBridgesResult call() throws Exception {
+                ListBridgesResult result = null;
+
+                try {
+                    result = executeListBridges(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListEntitlementsResult> listEntitlementsAsync(ListEntitlementsRequest request) {
 
         return listEntitlementsAsync(request, null);
@@ -454,6 +850,72 @@ public class AWSMediaConnectAsyncClient extends AWSMediaConnectClient implements
 
                 try {
                     result = executeListFlows(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGatewayInstancesResult> listGatewayInstancesAsync(ListGatewayInstancesRequest request) {
+
+        return listGatewayInstancesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGatewayInstancesResult> listGatewayInstancesAsync(final ListGatewayInstancesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListGatewayInstancesRequest, ListGatewayInstancesResult> asyncHandler) {
+        final ListGatewayInstancesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListGatewayInstancesResult>() {
+            @Override
+            public ListGatewayInstancesResult call() throws Exception {
+                ListGatewayInstancesResult result = null;
+
+                try {
+                    result = executeListGatewayInstances(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGatewaysResult> listGatewaysAsync(ListGatewaysRequest request) {
+
+        return listGatewaysAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGatewaysResult> listGatewaysAsync(final ListGatewaysRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListGatewaysRequest, ListGatewaysResult> asyncHandler) {
+        final ListGatewaysRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListGatewaysResult>() {
+            @Override
+            public ListGatewaysResult call() throws Exception {
+                ListGatewaysResult result = null;
+
+                try {
+                    result = executeListGateways(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -586,6 +1048,72 @@ public class AWSMediaConnectAsyncClient extends AWSMediaConnectClient implements
 
                 try {
                     result = executePurchaseOffering(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveBridgeOutputResult> removeBridgeOutputAsync(RemoveBridgeOutputRequest request) {
+
+        return removeBridgeOutputAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveBridgeOutputResult> removeBridgeOutputAsync(final RemoveBridgeOutputRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RemoveBridgeOutputRequest, RemoveBridgeOutputResult> asyncHandler) {
+        final RemoveBridgeOutputRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RemoveBridgeOutputResult>() {
+            @Override
+            public RemoveBridgeOutputResult call() throws Exception {
+                RemoveBridgeOutputResult result = null;
+
+                try {
+                    result = executeRemoveBridgeOutput(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveBridgeSourceResult> removeBridgeSourceAsync(RemoveBridgeSourceRequest request) {
+
+        return removeBridgeSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveBridgeSourceResult> removeBridgeSourceAsync(final RemoveBridgeSourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RemoveBridgeSourceRequest, RemoveBridgeSourceResult> asyncHandler) {
+        final RemoveBridgeSourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RemoveBridgeSourceResult>() {
+            @Override
+            public RemoveBridgeSourceResult call() throws Exception {
+                RemoveBridgeSourceResult result = null;
+
+                try {
+                    result = executeRemoveBridgeSource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -899,6 +1427,138 @@ public class AWSMediaConnectAsyncClient extends AWSMediaConnectClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateBridgeResult> updateBridgeAsync(UpdateBridgeRequest request) {
+
+        return updateBridgeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBridgeResult> updateBridgeAsync(final UpdateBridgeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateBridgeRequest, UpdateBridgeResult> asyncHandler) {
+        final UpdateBridgeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateBridgeResult>() {
+            @Override
+            public UpdateBridgeResult call() throws Exception {
+                UpdateBridgeResult result = null;
+
+                try {
+                    result = executeUpdateBridge(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBridgeOutputResult> updateBridgeOutputAsync(UpdateBridgeOutputRequest request) {
+
+        return updateBridgeOutputAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBridgeOutputResult> updateBridgeOutputAsync(final UpdateBridgeOutputRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateBridgeOutputRequest, UpdateBridgeOutputResult> asyncHandler) {
+        final UpdateBridgeOutputRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateBridgeOutputResult>() {
+            @Override
+            public UpdateBridgeOutputResult call() throws Exception {
+                UpdateBridgeOutputResult result = null;
+
+                try {
+                    result = executeUpdateBridgeOutput(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBridgeSourceResult> updateBridgeSourceAsync(UpdateBridgeSourceRequest request) {
+
+        return updateBridgeSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBridgeSourceResult> updateBridgeSourceAsync(final UpdateBridgeSourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateBridgeSourceRequest, UpdateBridgeSourceResult> asyncHandler) {
+        final UpdateBridgeSourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateBridgeSourceResult>() {
+            @Override
+            public UpdateBridgeSourceResult call() throws Exception {
+                UpdateBridgeSourceResult result = null;
+
+                try {
+                    result = executeUpdateBridgeSource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBridgeStateResult> updateBridgeStateAsync(UpdateBridgeStateRequest request) {
+
+        return updateBridgeStateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateBridgeStateResult> updateBridgeStateAsync(final UpdateBridgeStateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateBridgeStateRequest, UpdateBridgeStateResult> asyncHandler) {
+        final UpdateBridgeStateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateBridgeStateResult>() {
+            @Override
+            public UpdateBridgeStateResult call() throws Exception {
+                UpdateBridgeStateResult result = null;
+
+                try {
+                    result = executeUpdateBridgeState(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateFlowResult> updateFlowAsync(UpdateFlowRequest request) {
 
         return updateFlowAsync(request, null);
@@ -1048,6 +1708,39 @@ public class AWSMediaConnectAsyncClient extends AWSMediaConnectClient implements
 
                 try {
                     result = executeUpdateFlowSource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGatewayInstanceResult> updateGatewayInstanceAsync(UpdateGatewayInstanceRequest request) {
+
+        return updateGatewayInstanceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGatewayInstanceResult> updateGatewayInstanceAsync(final UpdateGatewayInstanceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateGatewayInstanceRequest, UpdateGatewayInstanceResult> asyncHandler) {
+        final UpdateGatewayInstanceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateGatewayInstanceResult>() {
+            @Override
+            public UpdateGatewayInstanceResult call() throws Exception {
+                UpdateGatewayInstanceResult result = null;
+
+                try {
+                    result = executeUpdateGatewayInstance(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

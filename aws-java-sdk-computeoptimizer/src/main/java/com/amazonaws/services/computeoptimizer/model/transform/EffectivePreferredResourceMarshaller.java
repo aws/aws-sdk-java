@@ -1,0 +1,65 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.computeoptimizer.model.transform;
+
+import java.util.List;
+import javax.annotation.Generated;
+
+import com.amazonaws.SdkClientException;
+import com.amazonaws.services.computeoptimizer.model.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
+
+/**
+ * EffectivePreferredResourceMarshaller
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class EffectivePreferredResourceMarshaller {
+
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
+    private static final MarshallingInfo<List> INCLUDELIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("includeList").build();
+    private static final MarshallingInfo<List> EFFECTIVEINCLUDELIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("effectiveIncludeList").build();
+    private static final MarshallingInfo<List> EXCLUDELIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("excludeList").build();
+
+    private static final EffectivePreferredResourceMarshaller instance = new EffectivePreferredResourceMarshaller();
+
+    public static EffectivePreferredResourceMarshaller getInstance() {
+        return instance;
+    }
+
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(EffectivePreferredResource effectivePreferredResource, ProtocolMarshaller protocolMarshaller) {
+
+        if (effectivePreferredResource == null) {
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
+        }
+
+        try {
+            protocolMarshaller.marshall(effectivePreferredResource.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(effectivePreferredResource.getIncludeList(), INCLUDELIST_BINDING);
+            protocolMarshaller.marshall(effectivePreferredResource.getEffectiveIncludeList(), EFFECTIVEINCLUDELIST_BINDING);
+            protocolMarshaller.marshall(effectivePreferredResource.getExcludeList(), EXCLUDELIST_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
+        }
+    }
+
+}

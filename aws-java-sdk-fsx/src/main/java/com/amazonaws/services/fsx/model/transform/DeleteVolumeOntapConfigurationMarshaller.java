@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,8 @@ public class DeleteVolumeOntapConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SkipFinalBackup").build();
     private static final MarshallingInfo<List> FINALBACKUPTAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FinalBackupTags").build();
+    private static final MarshallingInfo<Boolean> BYPASSSNAPLOCKENTERPRISERETENTION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BypassSnaplockEnterpriseRetention").build();
 
     private static final DeleteVolumeOntapConfigurationMarshaller instance = new DeleteVolumeOntapConfigurationMarshaller();
 
@@ -51,6 +53,7 @@ public class DeleteVolumeOntapConfigurationMarshaller {
         try {
             protocolMarshaller.marshall(deleteVolumeOntapConfiguration.getSkipFinalBackup(), SKIPFINALBACKUP_BINDING);
             protocolMarshaller.marshall(deleteVolumeOntapConfiguration.getFinalBackupTags(), FINALBACKUPTAGS_BINDING);
+            protocolMarshaller.marshall(deleteVolumeOntapConfiguration.getBypassSnaplockEnterpriseRetention(), BYPASSSNAPLOCKENTERPRISERETENTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

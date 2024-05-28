@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes an IPv4 range.
+ * Describes an IPv4 address range.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/IpRange" target="_top">AWS API Documentation</a>
@@ -27,7 +27,7 @@ public class IpRange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IPv4 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify a
+     * The IPv4 address range. You can either specify a CIDR block or a source security group, not both. To specify a
      * single IPv4 address, use the /32 prefix length.
      * </p>
      */
@@ -45,13 +45,13 @@ public class IpRange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IPv4 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify a
+     * The IPv4 address range. You can either specify a CIDR block or a source security group, not both. To specify a
      * single IPv4 address, use the /32 prefix length.
      * </p>
      * 
      * @param cidrIp
-     *        The IPv4 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify
-     *        a single IPv4 address, use the /32 prefix length.
+     *        The IPv4 address range. You can either specify a CIDR block or a source security group, not both. To
+     *        specify a single IPv4 address, use the /32 prefix length.
      */
 
     public void setCidrIp(String cidrIp) {
@@ -60,12 +60,12 @@ public class IpRange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IPv4 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify a
+     * The IPv4 address range. You can either specify a CIDR block or a source security group, not both. To specify a
      * single IPv4 address, use the /32 prefix length.
      * </p>
      * 
-     * @return The IPv4 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify
-     *         a single IPv4 address, use the /32 prefix length.
+     * @return The IPv4 address range. You can either specify a CIDR block or a source security group, not both. To
+     *         specify a single IPv4 address, use the /32 prefix length.
      */
 
     public String getCidrIp() {
@@ -74,13 +74,13 @@ public class IpRange implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IPv4 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify a
+     * The IPv4 address range. You can either specify a CIDR block or a source security group, not both. To specify a
      * single IPv4 address, use the /32 prefix length.
      * </p>
      * 
      * @param cidrIp
-     *        The IPv4 CIDR range. You can either specify a CIDR range or a source security group, not both. To specify
-     *        a single IPv4 address, use the /32 prefix length.
+     *        The IPv4 address range. You can either specify a CIDR block or a source security group, not both. To
+     *        specify a single IPv4 address, use the /32 prefix length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

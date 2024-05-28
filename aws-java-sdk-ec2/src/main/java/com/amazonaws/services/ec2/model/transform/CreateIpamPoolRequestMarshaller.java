@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -140,6 +140,30 @@ public class CreateIpamPoolRequestMarshaller implements Marshaller<Request<Creat
 
         if (createIpamPoolRequest.getAwsService() != null) {
             request.addParameter("AwsService", StringUtils.fromString(createIpamPoolRequest.getAwsService()));
+        }
+
+        if (createIpamPoolRequest.getPublicIpSource() != null) {
+            request.addParameter("PublicIpSource", StringUtils.fromString(createIpamPoolRequest.getPublicIpSource()));
+        }
+
+        IpamPoolSourceResourceRequest sourceResource = createIpamPoolRequest.getSourceResource();
+        if (sourceResource != null) {
+
+            if (sourceResource.getResourceId() != null) {
+                request.addParameter("SourceResource.ResourceId", StringUtils.fromString(sourceResource.getResourceId()));
+            }
+
+            if (sourceResource.getResourceType() != null) {
+                request.addParameter("SourceResource.ResourceType", StringUtils.fromString(sourceResource.getResourceType()));
+            }
+
+            if (sourceResource.getResourceRegion() != null) {
+                request.addParameter("SourceResource.ResourceRegion", StringUtils.fromString(sourceResource.getResourceRegion()));
+            }
+
+            if (sourceResource.getResourceOwner() != null) {
+                request.addParameter("SourceResource.ResourceOwner", StringUtils.fromString(sourceResource.getResourceOwner()));
+            }
         }
 
         return request;

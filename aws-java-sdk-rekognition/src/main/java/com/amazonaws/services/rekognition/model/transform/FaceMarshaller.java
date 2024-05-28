@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,8 @@ public class FaceMarshaller {
             .marshallLocationName("Confidence").build();
     private static final MarshallingInfo<String> INDEXFACESMODELVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IndexFacesModelVersion").build();
+    private static final MarshallingInfo<String> USERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("UserId").build();
 
     private static final FaceMarshaller instance = new FaceMarshaller();
 
@@ -62,6 +64,7 @@ public class FaceMarshaller {
             protocolMarshaller.marshall(face.getExternalImageId(), EXTERNALIMAGEID_BINDING);
             protocolMarshaller.marshall(face.getConfidence(), CONFIDENCE_BINDING);
             protocolMarshaller.marshall(face.getIndexFacesModelVersion(), INDEXFACESMODELVERSION_BINDING);
+            protocolMarshaller.marshall(face.getUserId(), USERID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

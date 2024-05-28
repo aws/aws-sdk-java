@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,8 +30,8 @@ public class InstanceAccessDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * For SSH access, the public key to use when accessing your instance For OpenSSH clients (e.g., command line SSH),
-     * you should save this value to <code>tempkey-cert.pub</code>.
+     * For SSH access, the public key to use when accessing your instance For OpenSSH clients (command line SSH), you
+     * should save this value to <code>tempkey-cert.pub</code>.
      * </p>
      */
     private String certKey;
@@ -47,6 +47,12 @@ public class InstanceAccessDetails implements Serializable, Cloneable, Structure
      * </p>
      */
     private String ipAddress;
+    /**
+     * <p>
+     * The IPv6 address of the Amazon Lightsail instance.
+     * </p>
+     */
+    private java.util.List<String> ipv6Addresses;
     /**
      * <p>
      * For RDP access, the password for your Amazon Lightsail instance. Password will be an empty string if the password
@@ -76,8 +82,8 @@ public class InstanceAccessDetails implements Serializable, Cloneable, Structure
     private PasswordData passwordData;
     /**
      * <p>
-     * For SSH access, the temporary private key. For OpenSSH clients (e.g., command line SSH), you should save this
-     * value to <code>tempkey</code>).
+     * For SSH access, the temporary private key. For OpenSSH clients (command line SSH), you should save this value to
+     * <code>tempkey</code>).
      * </p>
      */
     private String privateKey;
@@ -108,13 +114,13 @@ public class InstanceAccessDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * For SSH access, the public key to use when accessing your instance For OpenSSH clients (e.g., command line SSH),
-     * you should save this value to <code>tempkey-cert.pub</code>.
+     * For SSH access, the public key to use when accessing your instance For OpenSSH clients (command line SSH), you
+     * should save this value to <code>tempkey-cert.pub</code>.
      * </p>
      * 
      * @param certKey
-     *        For SSH access, the public key to use when accessing your instance For OpenSSH clients (e.g., command line
-     *        SSH), you should save this value to <code>tempkey-cert.pub</code>.
+     *        For SSH access, the public key to use when accessing your instance For OpenSSH clients (command line SSH),
+     *        you should save this value to <code>tempkey-cert.pub</code>.
      */
 
     public void setCertKey(String certKey) {
@@ -123,12 +129,12 @@ public class InstanceAccessDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * For SSH access, the public key to use when accessing your instance For OpenSSH clients (e.g., command line SSH),
-     * you should save this value to <code>tempkey-cert.pub</code>.
+     * For SSH access, the public key to use when accessing your instance For OpenSSH clients (command line SSH), you
+     * should save this value to <code>tempkey-cert.pub</code>.
      * </p>
      * 
-     * @return For SSH access, the public key to use when accessing your instance For OpenSSH clients (e.g., command
-     *         line SSH), you should save this value to <code>tempkey-cert.pub</code>.
+     * @return For SSH access, the public key to use when accessing your instance For OpenSSH clients (command line
+     *         SSH), you should save this value to <code>tempkey-cert.pub</code>.
      */
 
     public String getCertKey() {
@@ -137,13 +143,13 @@ public class InstanceAccessDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * For SSH access, the public key to use when accessing your instance For OpenSSH clients (e.g., command line SSH),
-     * you should save this value to <code>tempkey-cert.pub</code>.
+     * For SSH access, the public key to use when accessing your instance For OpenSSH clients (command line SSH), you
+     * should save this value to <code>tempkey-cert.pub</code>.
      * </p>
      * 
      * @param certKey
-     *        For SSH access, the public key to use when accessing your instance For OpenSSH clients (e.g., command line
-     *        SSH), you should save this value to <code>tempkey-cert.pub</code>.
+     *        For SSH access, the public key to use when accessing your instance For OpenSSH clients (command line SSH),
+     *        you should save this value to <code>tempkey-cert.pub</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -229,6 +235,76 @@ public class InstanceAccessDetails implements Serializable, Cloneable, Structure
 
     public InstanceAccessDetails withIpAddress(String ipAddress) {
         setIpAddress(ipAddress);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IPv6 address of the Amazon Lightsail instance.
+     * </p>
+     * 
+     * @return The IPv6 address of the Amazon Lightsail instance.
+     */
+
+    public java.util.List<String> getIpv6Addresses() {
+        return ipv6Addresses;
+    }
+
+    /**
+     * <p>
+     * The IPv6 address of the Amazon Lightsail instance.
+     * </p>
+     * 
+     * @param ipv6Addresses
+     *        The IPv6 address of the Amazon Lightsail instance.
+     */
+
+    public void setIpv6Addresses(java.util.Collection<String> ipv6Addresses) {
+        if (ipv6Addresses == null) {
+            this.ipv6Addresses = null;
+            return;
+        }
+
+        this.ipv6Addresses = new java.util.ArrayList<String>(ipv6Addresses);
+    }
+
+    /**
+     * <p>
+     * The IPv6 address of the Amazon Lightsail instance.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIpv6Addresses(java.util.Collection)} or {@link #withIpv6Addresses(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param ipv6Addresses
+     *        The IPv6 address of the Amazon Lightsail instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceAccessDetails withIpv6Addresses(String... ipv6Addresses) {
+        if (this.ipv6Addresses == null) {
+            setIpv6Addresses(new java.util.ArrayList<String>(ipv6Addresses.length));
+        }
+        for (String ele : ipv6Addresses) {
+            this.ipv6Addresses.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IPv6 address of the Amazon Lightsail instance.
+     * </p>
+     * 
+     * @param ipv6Addresses
+     *        The IPv6 address of the Amazon Lightsail instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceAccessDetails withIpv6Addresses(java.util.Collection<String> ipv6Addresses) {
+        setIpv6Addresses(ipv6Addresses);
         return this;
     }
 
@@ -399,13 +475,13 @@ public class InstanceAccessDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * For SSH access, the temporary private key. For OpenSSH clients (e.g., command line SSH), you should save this
-     * value to <code>tempkey</code>).
+     * For SSH access, the temporary private key. For OpenSSH clients (command line SSH), you should save this value to
+     * <code>tempkey</code>).
      * </p>
      * 
      * @param privateKey
-     *        For SSH access, the temporary private key. For OpenSSH clients (e.g., command line SSH), you should save
-     *        this value to <code>tempkey</code>).
+     *        For SSH access, the temporary private key. For OpenSSH clients (command line SSH), you should save this
+     *        value to <code>tempkey</code>).
      */
 
     public void setPrivateKey(String privateKey) {
@@ -414,12 +490,12 @@ public class InstanceAccessDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * For SSH access, the temporary private key. For OpenSSH clients (e.g., command line SSH), you should save this
-     * value to <code>tempkey</code>).
+     * For SSH access, the temporary private key. For OpenSSH clients (command line SSH), you should save this value to
+     * <code>tempkey</code>).
      * </p>
      * 
-     * @return For SSH access, the temporary private key. For OpenSSH clients (e.g., command line SSH), you should save
-     *         this value to <code>tempkey</code>).
+     * @return For SSH access, the temporary private key. For OpenSSH clients (command line SSH), you should save this
+     *         value to <code>tempkey</code>).
      */
 
     public String getPrivateKey() {
@@ -428,13 +504,13 @@ public class InstanceAccessDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * For SSH access, the temporary private key. For OpenSSH clients (e.g., command line SSH), you should save this
-     * value to <code>tempkey</code>).
+     * For SSH access, the temporary private key. For OpenSSH clients (command line SSH), you should save this value to
+     * <code>tempkey</code>).
      * </p>
      * 
      * @param privateKey
-     *        For SSH access, the temporary private key. For OpenSSH clients (e.g., command line SSH), you should save
-     *        this value to <code>tempkey</code>).
+     *        For SSH access, the temporary private key. For OpenSSH clients (command line SSH), you should save this
+     *        value to <code>tempkey</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -684,6 +760,8 @@ public class InstanceAccessDetails implements Serializable, Cloneable, Structure
             sb.append("ExpiresAt: ").append(getExpiresAt()).append(",");
         if (getIpAddress() != null)
             sb.append("IpAddress: ").append(getIpAddress()).append(",");
+        if (getIpv6Addresses() != null)
+            sb.append("Ipv6Addresses: ").append(getIpv6Addresses()).append(",");
         if (getPassword() != null)
             sb.append("Password: ").append(getPassword()).append(",");
         if (getPasswordData() != null)
@@ -724,6 +802,10 @@ public class InstanceAccessDetails implements Serializable, Cloneable, Structure
             return false;
         if (other.getIpAddress() != null && other.getIpAddress().equals(this.getIpAddress()) == false)
             return false;
+        if (other.getIpv6Addresses() == null ^ this.getIpv6Addresses() == null)
+            return false;
+        if (other.getIpv6Addresses() != null && other.getIpv6Addresses().equals(this.getIpv6Addresses()) == false)
+            return false;
         if (other.getPassword() == null ^ this.getPassword() == null)
             return false;
         if (other.getPassword() != null && other.getPassword().equals(this.getPassword()) == false)
@@ -763,6 +845,7 @@ public class InstanceAccessDetails implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getCertKey() == null) ? 0 : getCertKey().hashCode());
         hashCode = prime * hashCode + ((getExpiresAt() == null) ? 0 : getExpiresAt().hashCode());
         hashCode = prime * hashCode + ((getIpAddress() == null) ? 0 : getIpAddress().hashCode());
+        hashCode = prime * hashCode + ((getIpv6Addresses() == null) ? 0 : getIpv6Addresses().hashCode());
         hashCode = prime * hashCode + ((getPassword() == null) ? 0 : getPassword().hashCode());
         hashCode = prime * hashCode + ((getPasswordData() == null) ? 0 : getPasswordData().hashCode());
         hashCode = prime * hashCode + ((getPrivateKey() == null) ? 0 : getPrivateKey().hashCode());

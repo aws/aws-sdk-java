@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class DisassociateResourceShareResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * An array of objects that contain information about the updated associations for this resource share.
+     * An array of objects with information about the updated associations for this resource share.
      * </p>
      */
     private java.util.List<ResourceShareAssociation> resourceShareAssociations;
@@ -40,10 +40,10 @@ public class DisassociateResourceShareResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * An array of objects that contain information about the updated associations for this resource share.
+     * An array of objects with information about the updated associations for this resource share.
      * </p>
      * 
-     * @return An array of objects that contain information about the updated associations for this resource share.
+     * @return An array of objects with information about the updated associations for this resource share.
      */
 
     public java.util.List<ResourceShareAssociation> getResourceShareAssociations() {
@@ -52,11 +52,11 @@ public class DisassociateResourceShareResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * An array of objects that contain information about the updated associations for this resource share.
+     * An array of objects with information about the updated associations for this resource share.
      * </p>
      * 
      * @param resourceShareAssociations
-     *        An array of objects that contain information about the updated associations for this resource share.
+     *        An array of objects with information about the updated associations for this resource share.
      */
 
     public void setResourceShareAssociations(java.util.Collection<ResourceShareAssociation> resourceShareAssociations) {
@@ -70,7 +70,7 @@ public class DisassociateResourceShareResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * An array of objects that contain information about the updated associations for this resource share.
+     * An array of objects with information about the updated associations for this resource share.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,7 +79,7 @@ public class DisassociateResourceShareResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param resourceShareAssociations
-     *        An array of objects that contain information about the updated associations for this resource share.
+     *        An array of objects with information about the updated associations for this resource share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class DisassociateResourceShareResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * An array of objects that contain information about the updated associations for this resource share.
+     * An array of objects with information about the updated associations for this resource share.
      * </p>
      * 
      * @param resourceShareAssociations
-     *        An array of objects that contain information about the updated associations for this resource share.
+     *        An array of objects with information about the updated associations for this resource share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

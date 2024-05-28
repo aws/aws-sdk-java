@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,8 @@ public class SettingEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of directory setting. For example, <code>Protocol</code> or <code>Cipher</code>.
+     * The type, or category, of a directory setting. Similar settings have the same type. For example,
+     * <code>Protocol</code>, <code>Cipher</code>, or <code>Certificate-Based Authentication</code>.
      * </p>
      */
     private String type;
@@ -45,7 +46,8 @@ public class SettingEntry implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The valid range of values for the directory setting.
+     * The valid range of values for the directory setting. These values depend on the <code>DataType</code> of your
+     * directory.
      * </p>
      */
     private String allowedValues;
@@ -93,14 +95,23 @@ public class SettingEntry implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date lastRequestedDateTime;
+    /**
+     * <p>
+     * The data type of a directory setting. This is used to define the <code>AllowedValues</code> of a setting. For
+     * example a data type can be <code>Boolean</code>, <code>DurationInSeconds</code>, or <code>Enum</code>.
+     * </p>
+     */
+    private String dataType;
 
     /**
      * <p>
-     * The type of directory setting. For example, <code>Protocol</code> or <code>Cipher</code>.
+     * The type, or category, of a directory setting. Similar settings have the same type. For example,
+     * <code>Protocol</code>, <code>Cipher</code>, or <code>Certificate-Based Authentication</code>.
      * </p>
      * 
      * @param type
-     *        The type of directory setting. For example, <code>Protocol</code> or <code>Cipher</code>.
+     *        The type, or category, of a directory setting. Similar settings have the same type. For example,
+     *        <code>Protocol</code>, <code>Cipher</code>, or <code>Certificate-Based Authentication</code>.
      */
 
     public void setType(String type) {
@@ -109,10 +120,12 @@ public class SettingEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of directory setting. For example, <code>Protocol</code> or <code>Cipher</code>.
+     * The type, or category, of a directory setting. Similar settings have the same type. For example,
+     * <code>Protocol</code>, <code>Cipher</code>, or <code>Certificate-Based Authentication</code>.
      * </p>
      * 
-     * @return The type of directory setting. For example, <code>Protocol</code> or <code>Cipher</code>.
+     * @return The type, or category, of a directory setting. Similar settings have the same type. For example,
+     *         <code>Protocol</code>, <code>Cipher</code>, or <code>Certificate-Based Authentication</code>.
      */
 
     public String getType() {
@@ -121,11 +134,13 @@ public class SettingEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of directory setting. For example, <code>Protocol</code> or <code>Cipher</code>.
+     * The type, or category, of a directory setting. Similar settings have the same type. For example,
+     * <code>Protocol</code>, <code>Cipher</code>, or <code>Certificate-Based Authentication</code>.
      * </p>
      * 
      * @param type
-     *        The type of directory setting. For example, <code>Protocol</code> or <code>Cipher</code>.
+     *        The type, or category, of a directory setting. Similar settings have the same type. For example,
+     *        <code>Protocol</code>, <code>Cipher</code>, or <code>Certificate-Based Authentication</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -191,11 +206,13 @@ public class SettingEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The valid range of values for the directory setting.
+     * The valid range of values for the directory setting. These values depend on the <code>DataType</code> of your
+     * directory.
      * </p>
      * 
      * @param allowedValues
-     *        The valid range of values for the directory setting.
+     *        The valid range of values for the directory setting. These values depend on the <code>DataType</code> of
+     *        your directory.
      */
 
     public void setAllowedValues(String allowedValues) {
@@ -204,10 +221,12 @@ public class SettingEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The valid range of values for the directory setting.
+     * The valid range of values for the directory setting. These values depend on the <code>DataType</code> of your
+     * directory.
      * </p>
      * 
-     * @return The valid range of values for the directory setting.
+     * @return The valid range of values for the directory setting. These values depend on the <code>DataType</code> of
+     *         your directory.
      */
 
     public String getAllowedValues() {
@@ -216,11 +235,13 @@ public class SettingEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The valid range of values for the directory setting.
+     * The valid range of values for the directory setting. These values depend on the <code>DataType</code> of your
+     * directory.
      * </p>
      * 
      * @param allowedValues
-     *        The valid range of values for the directory setting.
+     *        The valid range of values for the directory setting. These values depend on the <code>DataType</code> of
+     *        your directory.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -578,6 +599,53 @@ public class SettingEntry implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The data type of a directory setting. This is used to define the <code>AllowedValues</code> of a setting. For
+     * example a data type can be <code>Boolean</code>, <code>DurationInSeconds</code>, or <code>Enum</code>.
+     * </p>
+     * 
+     * @param dataType
+     *        The data type of a directory setting. This is used to define the <code>AllowedValues</code> of a setting.
+     *        For example a data type can be <code>Boolean</code>, <code>DurationInSeconds</code>, or <code>Enum</code>.
+     */
+
+    public void setDataType(String dataType) {
+        this.dataType = dataType;
+    }
+
+    /**
+     * <p>
+     * The data type of a directory setting. This is used to define the <code>AllowedValues</code> of a setting. For
+     * example a data type can be <code>Boolean</code>, <code>DurationInSeconds</code>, or <code>Enum</code>.
+     * </p>
+     * 
+     * @return The data type of a directory setting. This is used to define the <code>AllowedValues</code> of a setting.
+     *         For example a data type can be <code>Boolean</code>, <code>DurationInSeconds</code>, or <code>Enum</code>
+     *         .
+     */
+
+    public String getDataType() {
+        return this.dataType;
+    }
+
+    /**
+     * <p>
+     * The data type of a directory setting. This is used to define the <code>AllowedValues</code> of a setting. For
+     * example a data type can be <code>Boolean</code>, <code>DurationInSeconds</code>, or <code>Enum</code>.
+     * </p>
+     * 
+     * @param dataType
+     *        The data type of a directory setting. This is used to define the <code>AllowedValues</code> of a setting.
+     *        For example a data type can be <code>Boolean</code>, <code>DurationInSeconds</code>, or <code>Enum</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SettingEntry withDataType(String dataType) {
+        setDataType(dataType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -608,7 +676,9 @@ public class SettingEntry implements Serializable, Cloneable, StructuredPojo {
         if (getLastUpdatedDateTime() != null)
             sb.append("LastUpdatedDateTime: ").append(getLastUpdatedDateTime()).append(",");
         if (getLastRequestedDateTime() != null)
-            sb.append("LastRequestedDateTime: ").append(getLastRequestedDateTime());
+            sb.append("LastRequestedDateTime: ").append(getLastRequestedDateTime()).append(",");
+        if (getDataType() != null)
+            sb.append("DataType: ").append(getDataType());
         sb.append("}");
         return sb.toString();
     }
@@ -663,6 +733,10 @@ public class SettingEntry implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLastRequestedDateTime() != null && other.getLastRequestedDateTime().equals(this.getLastRequestedDateTime()) == false)
             return false;
+        if (other.getDataType() == null ^ this.getDataType() == null)
+            return false;
+        if (other.getDataType() != null && other.getDataType().equals(this.getDataType()) == false)
+            return false;
         return true;
     }
 
@@ -681,6 +755,7 @@ public class SettingEntry implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRequestStatusMessage() == null) ? 0 : getRequestStatusMessage().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedDateTime() == null) ? 0 : getLastUpdatedDateTime().hashCode());
         hashCode = prime * hashCode + ((getLastRequestedDateTime() == null) ? 0 : getLastRequestedDateTime().hashCode());
+        hashCode = prime * hashCode + ((getDataType() == null) ? 0 : getDataType().hashCode());
         return hashCode;
     }
 

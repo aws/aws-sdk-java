@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,8 +34,8 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code> characters
-     * aren't allowed in <code>BudgetName</code>.
+     * The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code>
+     * characters, and the "/action/" substring, aren't allowed in <code>BudgetName</code>.
      * </p>
      */
     private String budgetName;
@@ -95,8 +95,8 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, Spend> plannedBudgetLimits;
     /**
      * <p>
-     * The cost filters, such as <code>Region</code>, <code>Service</code>, <code>member account</code>,
-     * <code>Tag</code>, or <code>Cost Category</code>, that are applied to a budget.
+     * The cost filters, such as <code>Region</code>, <code>Service</code>, <code>LinkedAccount</code>, <code>Tag</code>
+     * , or <code>CostCategory</code>, that are applied to a budget.
      * </p>
      * <p>
      * Amazon Web Services Budgets supports the following services as a <code>Service</code> filter for RI budgets:
@@ -196,13 +196,13 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code> characters
-     * aren't allowed in <code>BudgetName</code>.
+     * The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code>
+     * characters, and the "/action/" substring, aren't allowed in <code>BudgetName</code>.
      * </p>
      * 
      * @param budgetName
      *        The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code>
-     *        characters aren't allowed in <code>BudgetName</code>.
+     *        characters, and the "/action/" substring, aren't allowed in <code>BudgetName</code>.
      */
 
     public void setBudgetName(String budgetName) {
@@ -211,12 +211,12 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code> characters
-     * aren't allowed in <code>BudgetName</code>.
+     * The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code>
+     * characters, and the "/action/" substring, aren't allowed in <code>BudgetName</code>.
      * </p>
      * 
      * @return The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code>
-     *         characters aren't allowed in <code>BudgetName</code>.
+     *         characters, and the "/action/" substring, aren't allowed in <code>BudgetName</code>.
      */
 
     public String getBudgetName() {
@@ -225,13 +225,13 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code> characters
-     * aren't allowed in <code>BudgetName</code>.
+     * The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code>
+     * characters, and the "/action/" substring, aren't allowed in <code>BudgetName</code>.
      * </p>
      * 
      * @param budgetName
      *        The name of a budget. The name must be unique within an account. The <code>:</code> and <code>\</code>
-     *        characters aren't allowed in <code>BudgetName</code>.
+     *        characters, and the "/action/" substring, aren't allowed in <code>BudgetName</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -596,8 +596,8 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cost filters, such as <code>Region</code>, <code>Service</code>, <code>member account</code>,
-     * <code>Tag</code>, or <code>Cost Category</code>, that are applied to a budget.
+     * The cost filters, such as <code>Region</code>, <code>Service</code>, <code>LinkedAccount</code>, <code>Tag</code>
+     * , or <code>CostCategory</code>, that are applied to a budget.
      * </p>
      * <p>
      * Amazon Web Services Budgets supports the following services as a <code>Service</code> filter for RI budgets:
@@ -630,8 +630,8 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return The cost filters, such as <code>Region</code>, <code>Service</code>, <code>member account</code>,
-     *         <code>Tag</code>, or <code>Cost Category</code>, that are applied to a budget.</p>
+     * @return The cost filters, such as <code>Region</code>, <code>Service</code>, <code>LinkedAccount</code>,
+     *         <code>Tag</code>, or <code>CostCategory</code>, that are applied to a budget.</p>
      *         <p>
      *         Amazon Web Services Budgets supports the following services as a <code>Service</code> filter for RI
      *         budgets:
@@ -670,8 +670,8 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cost filters, such as <code>Region</code>, <code>Service</code>, <code>member account</code>,
-     * <code>Tag</code>, or <code>Cost Category</code>, that are applied to a budget.
+     * The cost filters, such as <code>Region</code>, <code>Service</code>, <code>LinkedAccount</code>, <code>Tag</code>
+     * , or <code>CostCategory</code>, that are applied to a budget.
      * </p>
      * <p>
      * Amazon Web Services Budgets supports the following services as a <code>Service</code> filter for RI budgets:
@@ -705,8 +705,8 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param costFilters
-     *        The cost filters, such as <code>Region</code>, <code>Service</code>, <code>member account</code>,
-     *        <code>Tag</code>, or <code>Cost Category</code>, that are applied to a budget.</p>
+     *        The cost filters, such as <code>Region</code>, <code>Service</code>, <code>LinkedAccount</code>,
+     *        <code>Tag</code>, or <code>CostCategory</code>, that are applied to a budget.</p>
      *        <p>
      *        Amazon Web Services Budgets supports the following services as a <code>Service</code> filter for RI
      *        budgets:
@@ -745,8 +745,8 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cost filters, such as <code>Region</code>, <code>Service</code>, <code>member account</code>,
-     * <code>Tag</code>, or <code>Cost Category</code>, that are applied to a budget.
+     * The cost filters, such as <code>Region</code>, <code>Service</code>, <code>LinkedAccount</code>, <code>Tag</code>
+     * , or <code>CostCategory</code>, that are applied to a budget.
      * </p>
      * <p>
      * Amazon Web Services Budgets supports the following services as a <code>Service</code> filter for RI budgets:
@@ -780,8 +780,8 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param costFilters
-     *        The cost filters, such as <code>Region</code>, <code>Service</code>, <code>member account</code>,
-     *        <code>Tag</code>, or <code>Cost Category</code>, that are applied to a budget.</p>
+     *        The cost filters, such as <code>Region</code>, <code>Service</code>, <code>LinkedAccount</code>,
+     *        <code>Tag</code>, or <code>CostCategory</code>, that are applied to a budget.</p>
      *        <p>
      *        Amazon Web Services Budgets supports the following services as a <code>Service</code> filter for RI
      *        budgets:

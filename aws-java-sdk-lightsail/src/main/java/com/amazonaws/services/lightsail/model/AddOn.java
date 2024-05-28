@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,28 @@ public class AddOn implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String nextSnapshotTimeOfDay;
+    /**
+     * <p>
+     * The trigger threshold of the action.
+     * </p>
+     * <important>
+     * <p>
+     * This add-on only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     */
+    private String threshold;
+    /**
+     * <p>
+     * The amount of idle time in minutes after which your virtual computer will automatically stop.
+     * </p>
+     * <important>
+     * <p>
+     * This add-on only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     */
+    private String duration;
 
     /**
      * <p>
@@ -292,6 +314,137 @@ public class AddOn implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The trigger threshold of the action.
+     * </p>
+     * <important>
+     * <p>
+     * This add-on only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     * 
+     * @param threshold
+     *        The trigger threshold of the action.</p> <important>
+     *        <p>
+     *        This add-on only applies to Lightsail for Research resources.
+     *        </p>
+     */
+
+    public void setThreshold(String threshold) {
+        this.threshold = threshold;
+    }
+
+    /**
+     * <p>
+     * The trigger threshold of the action.
+     * </p>
+     * <important>
+     * <p>
+     * This add-on only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     * 
+     * @return The trigger threshold of the action.</p> <important>
+     *         <p>
+     *         This add-on only applies to Lightsail for Research resources.
+     *         </p>
+     */
+
+    public String getThreshold() {
+        return this.threshold;
+    }
+
+    /**
+     * <p>
+     * The trigger threshold of the action.
+     * </p>
+     * <important>
+     * <p>
+     * This add-on only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     * 
+     * @param threshold
+     *        The trigger threshold of the action.</p> <important>
+     *        <p>
+     *        This add-on only applies to Lightsail for Research resources.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AddOn withThreshold(String threshold) {
+        setThreshold(threshold);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The amount of idle time in minutes after which your virtual computer will automatically stop.
+     * </p>
+     * <important>
+     * <p>
+     * This add-on only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     * 
+     * @param duration
+     *        The amount of idle time in minutes after which your virtual computer will automatically stop.</p>
+     *        <important>
+     *        <p>
+     *        This add-on only applies to Lightsail for Research resources.
+     *        </p>
+     */
+
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
+
+    /**
+     * <p>
+     * The amount of idle time in minutes after which your virtual computer will automatically stop.
+     * </p>
+     * <important>
+     * <p>
+     * This add-on only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     * 
+     * @return The amount of idle time in minutes after which your virtual computer will automatically stop.</p>
+     *         <important>
+     *         <p>
+     *         This add-on only applies to Lightsail for Research resources.
+     *         </p>
+     */
+
+    public String getDuration() {
+        return this.duration;
+    }
+
+    /**
+     * <p>
+     * The amount of idle time in minutes after which your virtual computer will automatically stop.
+     * </p>
+     * <important>
+     * <p>
+     * This add-on only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     * 
+     * @param duration
+     *        The amount of idle time in minutes after which your virtual computer will automatically stop.</p>
+     *        <important>
+     *        <p>
+     *        This add-on only applies to Lightsail for Research resources.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AddOn withDuration(String duration) {
+        setDuration(duration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -310,7 +463,11 @@ public class AddOn implements Serializable, Cloneable, StructuredPojo {
         if (getSnapshotTimeOfDay() != null)
             sb.append("SnapshotTimeOfDay: ").append(getSnapshotTimeOfDay()).append(",");
         if (getNextSnapshotTimeOfDay() != null)
-            sb.append("NextSnapshotTimeOfDay: ").append(getNextSnapshotTimeOfDay());
+            sb.append("NextSnapshotTimeOfDay: ").append(getNextSnapshotTimeOfDay()).append(",");
+        if (getThreshold() != null)
+            sb.append("Threshold: ").append(getThreshold()).append(",");
+        if (getDuration() != null)
+            sb.append("Duration: ").append(getDuration());
         sb.append("}");
         return sb.toString();
     }
@@ -341,6 +498,14 @@ public class AddOn implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNextSnapshotTimeOfDay() != null && other.getNextSnapshotTimeOfDay().equals(this.getNextSnapshotTimeOfDay()) == false)
             return false;
+        if (other.getThreshold() == null ^ this.getThreshold() == null)
+            return false;
+        if (other.getThreshold() != null && other.getThreshold().equals(this.getThreshold()) == false)
+            return false;
+        if (other.getDuration() == null ^ this.getDuration() == null)
+            return false;
+        if (other.getDuration() != null && other.getDuration().equals(this.getDuration()) == false)
+            return false;
         return true;
     }
 
@@ -353,6 +518,8 @@ public class AddOn implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getSnapshotTimeOfDay() == null) ? 0 : getSnapshotTimeOfDay().hashCode());
         hashCode = prime * hashCode + ((getNextSnapshotTimeOfDay() == null) ? 0 : getNextSnapshotTimeOfDay().hashCode());
+        hashCode = prime * hashCode + ((getThreshold() == null) ? 0 : getThreshold().hashCode());
+        hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode());
         return hashCode;
     }
 

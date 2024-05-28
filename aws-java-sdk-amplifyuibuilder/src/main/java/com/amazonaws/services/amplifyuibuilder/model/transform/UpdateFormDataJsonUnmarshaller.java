@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,39 +48,43 @@ public class UpdateFormDataJsonUnmarshaller implements Unmarshaller<UpdateFormDa
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("cta", targetDepth)) {
+                if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
-                    updateFormData.setCta(FormCTAJsonUnmarshaller.getInstance().unmarshall(context));
+                    updateFormData.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("dataType", targetDepth)) {
                     context.nextToken();
                     updateFormData.setDataType(FormDataTypeConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("formActionType", targetDepth)) {
+                    context.nextToken();
+                    updateFormData.setFormActionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("fields", targetDepth)) {
                     context.nextToken();
                     updateFormData.setFields(new MapUnmarshaller<String, FieldConfig>(context.getUnmarshaller(String.class), FieldConfigJsonUnmarshaller
                             .getInstance()).unmarshall(context));
                 }
-                if (context.testExpression("formActionType", targetDepth)) {
+                if (context.testExpression("style", targetDepth)) {
                     context.nextToken();
-                    updateFormData.setFormActionType(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("name", targetDepth)) {
-                    context.nextToken();
-                    updateFormData.setName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("schemaVersion", targetDepth)) {
-                    context.nextToken();
-                    updateFormData.setSchemaVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                    updateFormData.setStyle(FormStyleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sectionalElements", targetDepth)) {
                     context.nextToken();
                     updateFormData.setSectionalElements(new MapUnmarshaller<String, SectionalElement>(context.getUnmarshaller(String.class),
                             SectionalElementJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
-                if (context.testExpression("style", targetDepth)) {
+                if (context.testExpression("schemaVersion", targetDepth)) {
                     context.nextToken();
-                    updateFormData.setStyle(FormStyleJsonUnmarshaller.getInstance().unmarshall(context));
+                    updateFormData.setSchemaVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("cta", targetDepth)) {
+                    context.nextToken();
+                    updateFormData.setCta(FormCTAJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("labelDecorator", targetDepth)) {
+                    context.nextToken();
+                    updateFormData.setLabelDecorator(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

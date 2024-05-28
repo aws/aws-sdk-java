@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,7 +59,7 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
     private ResourceLocation location;
     /**
      * <p>
-     * The Lightsail resource type (e.g., <code>Alarm</code>).
+     * The Lightsail resource type of the alarm.
      * </p>
      */
     private String resourceType;
@@ -401,11 +401,11 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Lightsail resource type (e.g., <code>Alarm</code>).
+     * The Lightsail resource type of the alarm.
      * </p>
      * 
      * @param resourceType
-     *        The Lightsail resource type (e.g., <code>Alarm</code>).
+     *        The Lightsail resource type of the alarm.
      * @see ResourceType
      */
 
@@ -415,10 +415,10 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Lightsail resource type (e.g., <code>Alarm</code>).
+     * The Lightsail resource type of the alarm.
      * </p>
      * 
-     * @return The Lightsail resource type (e.g., <code>Alarm</code>).
+     * @return The Lightsail resource type of the alarm.
      * @see ResourceType
      */
 
@@ -428,11 +428,11 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Lightsail resource type (e.g., <code>Alarm</code>).
+     * The Lightsail resource type of the alarm.
      * </p>
      * 
      * @param resourceType
-     *        The Lightsail resource type (e.g., <code>Alarm</code>).
+     *        The Lightsail resource type of the alarm.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -444,11 +444,11 @@ public class Alarm implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Lightsail resource type (e.g., <code>Alarm</code>).
+     * The Lightsail resource type of the alarm.
      * </p>
      * 
      * @param resourceType
-     *        The Lightsail resource type (e.g., <code>Alarm</code>).
+     *        The Lightsail resource type of the alarm.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */

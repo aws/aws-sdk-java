@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,8 @@ public class JobFlowInstancesConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KeepJobFlowAliveWhenNoSteps").build();
     private static final MarshallingInfo<Boolean> TERMINATIONPROTECTED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TerminationProtected").build();
+    private static final MarshallingInfo<Boolean> UNHEALTHYNODEREPLACEMENT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UnhealthyNodeReplacement").build();
     private static final MarshallingInfo<String> HADOOPVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HadoopVersion").build();
     private static final MarshallingInfo<String> EC2SUBNETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -88,6 +90,7 @@ public class JobFlowInstancesConfigMarshaller {
             protocolMarshaller.marshall(jobFlowInstancesConfig.getPlacement(), PLACEMENT_BINDING);
             protocolMarshaller.marshall(jobFlowInstancesConfig.getKeepJobFlowAliveWhenNoSteps(), KEEPJOBFLOWALIVEWHENNOSTEPS_BINDING);
             protocolMarshaller.marshall(jobFlowInstancesConfig.getTerminationProtected(), TERMINATIONPROTECTED_BINDING);
+            protocolMarshaller.marshall(jobFlowInstancesConfig.getUnhealthyNodeReplacement(), UNHEALTHYNODEREPLACEMENT_BINDING);
             protocolMarshaller.marshall(jobFlowInstancesConfig.getHadoopVersion(), HADOOPVERSION_BINDING);
             protocolMarshaller.marshall(jobFlowInstancesConfig.getEc2SubnetId(), EC2SUBNETID_BINDING);
             protocolMarshaller.marshall(jobFlowInstancesConfig.getEc2SubnetIds(), EC2SUBNETIDS_BINDING);

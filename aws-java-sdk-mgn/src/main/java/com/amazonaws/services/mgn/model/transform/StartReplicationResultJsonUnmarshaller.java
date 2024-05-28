@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,13 +48,25 @@ public class StartReplicationResultJsonUnmarshaller implements Unmarshaller<Star
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("applicationID", targetDepth)) {
+                    context.nextToken();
+                    startReplicationResult.setApplicationID(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
                     startReplicationResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("connectorAction", targetDepth)) {
+                    context.nextToken();
+                    startReplicationResult.setConnectorAction(SourceServerConnectorActionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("dataReplicationInfo", targetDepth)) {
                     context.nextToken();
                     startReplicationResult.setDataReplicationInfo(DataReplicationInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("fqdnForActionFramework", targetDepth)) {
+                    context.nextToken();
+                    startReplicationResult.setFqdnForActionFramework(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("isArchived", targetDepth)) {
                     context.nextToken();
@@ -84,6 +96,10 @@ public class StartReplicationResultJsonUnmarshaller implements Unmarshaller<Star
                     context.nextToken();
                     startReplicationResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("userProvidedID", targetDepth)) {
+                    context.nextToken();
+                    startReplicationResult.setUserProvidedID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vcenterClientID", targetDepth)) {
                     context.nextToken();

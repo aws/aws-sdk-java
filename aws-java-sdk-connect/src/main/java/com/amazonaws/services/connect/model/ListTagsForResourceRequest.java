@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,27 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource.
+     * The Amazon Resource Name (ARN) of the resource. All Amazon Connect resources (instances, queues, flows, routing
+     * profiles, etc) have an ARN. To locate the ARN for an instance, for example, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">Find your Amazon Connect
+     * instance ID/ARN</a>.
      * </p>
      */
     private String resourceArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource.
+     * The Amazon Resource Name (ARN) of the resource. All Amazon Connect resources (instances, queues, flows, routing
+     * profiles, etc) have an ARN. To locate the ARN for an instance, for example, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">Find your Amazon Connect
+     * instance ID/ARN</a>.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource.
+     *        The Amazon Resource Name (ARN) of the resource. All Amazon Connect resources (instances, queues, flows,
+     *        routing profiles, etc) have an ARN. To locate the ARN for an instance, for example, see <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">Find your Amazon
+     *        Connect instance ID/ARN</a>.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -47,10 +56,16 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource.
+     * The Amazon Resource Name (ARN) of the resource. All Amazon Connect resources (instances, queues, flows, routing
+     * profiles, etc) have an ARN. To locate the ARN for an instance, for example, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">Find your Amazon Connect
+     * instance ID/ARN</a>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource.
+     * @return The Amazon Resource Name (ARN) of the resource. All Amazon Connect resources (instances, queues, flows,
+     *         routing profiles, etc) have an ARN. To locate the ARN for an instance, for example, see <a
+     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">Find your Amazon
+     *         Connect instance ID/ARN</a>.
      */
 
     public String getResourceArn() {
@@ -59,11 +74,17 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource.
+     * The Amazon Resource Name (ARN) of the resource. All Amazon Connect resources (instances, queues, flows, routing
+     * profiles, etc) have an ARN. To locate the ARN for an instance, for example, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">Find your Amazon Connect
+     * instance ID/ARN</a>.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource.
+     *        The Amazon Resource Name (ARN) of the resource. All Amazon Connect resources (instances, queues, flows,
+     *        routing profiles, etc) have an ARN. To locate the ARN for an instance, for example, see <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">Find your Amazon
+     *        Connect instance ID/ARN</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

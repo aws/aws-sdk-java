@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,24 +26,24 @@ public class DescribeInstanceTypeOfferingsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The instance types offered.
+     * The instance types offered in the location.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceTypeOffering> instanceTypeOfferings;
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * The token to include in another request to get the next page of items. This value is <code>null</code> when there
+     * are no more items to return.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The instance types offered.
+     * The instance types offered in the location.
      * </p>
      * 
-     * @return The instance types offered.
+     * @return The instance types offered in the location.
      */
 
     public java.util.List<InstanceTypeOffering> getInstanceTypeOfferings() {
@@ -55,11 +55,11 @@ public class DescribeInstanceTypeOfferingsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The instance types offered.
+     * The instance types offered in the location.
      * </p>
      * 
      * @param instanceTypeOfferings
-     *        The instance types offered.
+     *        The instance types offered in the location.
      */
 
     public void setInstanceTypeOfferings(java.util.Collection<InstanceTypeOffering> instanceTypeOfferings) {
@@ -73,7 +73,7 @@ public class DescribeInstanceTypeOfferingsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The instance types offered.
+     * The instance types offered in the location.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class DescribeInstanceTypeOfferingsResult extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param instanceTypeOfferings
-     *        The instance types offered.
+     *        The instance types offered in the location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class DescribeInstanceTypeOfferingsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The instance types offered.
+     * The instance types offered in the location.
      * </p>
      * 
      * @param instanceTypeOfferings
-     *        The instance types offered.
+     *        The instance types offered in the location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,13 +113,13 @@ public class DescribeInstanceTypeOfferingsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * The token to include in another request to get the next page of items. This value is <code>null</code> when there
+     * are no more items to return.
      * </p>
      * 
      * @param nextToken
-     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *        more results to return.
+     *        The token to include in another request to get the next page of items. This value is <code>null</code>
+     *        when there are no more items to return.
      */
 
     public void setNextToken(String nextToken) {
@@ -128,12 +128,12 @@ public class DescribeInstanceTypeOfferingsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * The token to include in another request to get the next page of items. This value is <code>null</code> when there
+     * are no more items to return.
      * </p>
      * 
-     * @return The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *         more results to return.
+     * @return The token to include in another request to get the next page of items. This value is <code>null</code>
+     *         when there are no more items to return.
      */
 
     public String getNextToken() {
@@ -142,13 +142,13 @@ public class DescribeInstanceTypeOfferingsResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * The token to include in another request to get the next page of items. This value is <code>null</code> when there
+     * are no more items to return.
      * </p>
      * 
      * @param nextToken
-     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
-     *        more results to return.
+     *        The token to include in another request to get the next page of items. This value is <code>null</code>
+     *        when there are no more items to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

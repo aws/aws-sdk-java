@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,22 +35,18 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private java.util.List<String> targets;
     /**
      * <p>
-     * An S3 link to the job document. Required if you don't specify a value for <code>document</code>.
-     * </p>
-     * <note>
-     * <p>
-     * If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.
+     * An S3 link, or S3 object URL, to the job document. The link is an Amazon S3 object URL and is required if you
+     * don't specify a value for <code>document</code>.
      * </p>
      * <p>
-     * The placeholder link is of the following form:
+     * For example,
+     * <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code>
      * </p>
      * <p>
-     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html">Methods for accessing a
+     * bucket</a>.
      * </p>
-     * <p>
-     * where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.
-     * </p>
-     * </note>
      */
     private String documentSource;
     /**
@@ -125,7 +121,9 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * <note>
      * <p>
-     * The <code>namespaceId</code> feature is in public preview.
+     * The <code>namespaceId</code> feature is only supported by IoT Greengrass at this time. For more information, see
+     * <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting up IoT Greengrass core
+     * devices.</a>
      * </p>
      * </note>
      */
@@ -154,6 +152,26 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </note>
      */
     private java.util.Map<String, String> documentParameters;
+    /**
+     * <p>
+     * The configuration that allows you to schedule a job for a future date and time in addition to specifying the end
+     * behavior for each job execution.
+     * </p>
+     */
+    private SchedulingConfig schedulingConfig;
+    /**
+     * <p>
+     * The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully
+     * completes. The package version must be in either the Published or Deprecated state when the job deploys. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     * >Package version lifecycle</a>.
+     * </p>
+     * <p>
+     * <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.
+     * </p>
+     */
+    private java.util.List<String> destinationPackageVersions;
 
     /**
      * <p>
@@ -273,39 +291,30 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * An S3 link to the job document. Required if you don't specify a value for <code>document</code>.
-     * </p>
-     * <note>
-     * <p>
-     * If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.
+     * An S3 link, or S3 object URL, to the job document. The link is an Amazon S3 object URL and is required if you
+     * don't specify a value for <code>document</code>.
      * </p>
      * <p>
-     * The placeholder link is of the following form:
+     * For example,
+     * <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code>
      * </p>
      * <p>
-     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html">Methods for accessing a
+     * bucket</a>.
      * </p>
-     * <p>
-     * where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.
-     * </p>
-     * </note>
      * 
      * @param documentSource
-     *        An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p>
-     *        <note>
+     *        An S3 link, or S3 object URL, to the job document. The link is an Amazon S3 object URL and is required if
+     *        you don't specify a value for <code>document</code>.</p>
      *        <p>
-     *        If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.
+     *        For example,
+     *        <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code>
      *        </p>
      *        <p>
-     *        The placeholder link is of the following form:
-     *        </p>
-     *        <p>
-     *        <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-     *        </p>
-     *        <p>
-     *        where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are
-     *        linking.
-     *        </p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html">Methods for
+     *        accessing a bucket</a>.
      */
 
     public void setDocumentSource(String documentSource) {
@@ -314,39 +323,29 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * An S3 link to the job document. Required if you don't specify a value for <code>document</code>.
-     * </p>
-     * <note>
-     * <p>
-     * If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.
+     * An S3 link, or S3 object URL, to the job document. The link is an Amazon S3 object URL and is required if you
+     * don't specify a value for <code>document</code>.
      * </p>
      * <p>
-     * The placeholder link is of the following form:
+     * For example,
+     * <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code>
      * </p>
      * <p>
-     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html">Methods for accessing a
+     * bucket</a>.
      * </p>
-     * <p>
-     * where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.
-     * </p>
-     * </note>
      * 
-     * @return An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p>
-     *         <note>
+     * @return An S3 link, or S3 object URL, to the job document. The link is an Amazon S3 object URL and is required if
+     *         you don't specify a value for <code>document</code>.</p>
      *         <p>
-     *         If the job document resides in an S3 bucket, you must use a placeholder link when specifying the
-     *         document.
+     *         For example,
+     *         <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code>
      *         </p>
      *         <p>
-     *         The placeholder link is of the following form:
-     *         </p>
-     *         <p>
-     *         <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-     *         </p>
-     *         <p>
-     *         where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are
-     *         linking.
-     *         </p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html">Methods for
+     *         accessing a bucket</a>.
      */
 
     public String getDocumentSource() {
@@ -355,39 +354,30 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * An S3 link to the job document. Required if you don't specify a value for <code>document</code>.
-     * </p>
-     * <note>
-     * <p>
-     * If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.
+     * An S3 link, or S3 object URL, to the job document. The link is an Amazon S3 object URL and is required if you
+     * don't specify a value for <code>document</code>.
      * </p>
      * <p>
-     * The placeholder link is of the following form:
+     * For example,
+     * <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code>
      * </p>
      * <p>
-     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html">Methods for accessing a
+     * bucket</a>.
      * </p>
-     * <p>
-     * where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.
-     * </p>
-     * </note>
      * 
      * @param documentSource
-     *        An S3 link to the job document. Required if you don't specify a value for <code>document</code>.</p>
-     *        <note>
+     *        An S3 link, or S3 object URL, to the job document. The link is an Amazon S3 object URL and is required if
+     *        you don't specify a value for <code>document</code>.</p>
      *        <p>
-     *        If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.
+     *        For example,
+     *        <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code>
      *        </p>
      *        <p>
-     *        The placeholder link is of the following form:
-     *        </p>
-     *        <p>
-     *        <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
-     *        </p>
-     *        <p>
-     *        where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are
-     *        linking.
-     *        </p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html">Methods for
+     *        accessing a bucket</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -859,7 +849,9 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * <note>
      * <p>
-     * The <code>namespaceId</code> feature is in public preview.
+     * The <code>namespaceId</code> feature is only supported by IoT Greengrass at this time. For more information, see
+     * <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting up IoT Greengrass core
+     * devices.</a>
      * </p>
      * </note>
      * 
@@ -874,7 +866,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </p>
      *        <note>
      *        <p>
-     *        The <code>namespaceId</code> feature is in public preview.
+     *        The <code>namespaceId</code> feature is only supported by IoT Greengrass at this time. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting up IoT Greengrass
+     *        core devices.</a>
      *        </p>
      */
 
@@ -895,7 +890,9 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * <note>
      * <p>
-     * The <code>namespaceId</code> feature is in public preview.
+     * The <code>namespaceId</code> feature is only supported by IoT Greengrass at this time. For more information, see
+     * <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting up IoT Greengrass core
+     * devices.</a>
      * </p>
      * </note>
      * 
@@ -909,7 +906,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         </p>
      *         <note>
      *         <p>
-     *         The <code>namespaceId</code> feature is in public preview.
+     *         The <code>namespaceId</code> feature is only supported by IoT Greengrass at this time. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting up IoT Greengrass
+     *         core devices.</a>
      *         </p>
      */
 
@@ -930,7 +930,9 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * <note>
      * <p>
-     * The <code>namespaceId</code> feature is in public preview.
+     * The <code>namespaceId</code> feature is only supported by IoT Greengrass at this time. For more information, see
+     * <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting up IoT Greengrass core
+     * devices.</a>
      * </p>
      * </note>
      * 
@@ -945,7 +947,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        </p>
      *        <note>
      *        <p>
-     *        The <code>namespaceId</code> feature is in public preview.
+     *        The <code>namespaceId</code> feature is only supported by IoT Greengrass at this time. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting up IoT Greengrass
+     *        core devices.</a>
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1137,6 +1142,178 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * The configuration that allows you to schedule a job for a future date and time in addition to specifying the end
+     * behavior for each job execution.
+     * </p>
+     * 
+     * @param schedulingConfig
+     *        The configuration that allows you to schedule a job for a future date and time in addition to specifying
+     *        the end behavior for each job execution.
+     */
+
+    public void setSchedulingConfig(SchedulingConfig schedulingConfig) {
+        this.schedulingConfig = schedulingConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration that allows you to schedule a job for a future date and time in addition to specifying the end
+     * behavior for each job execution.
+     * </p>
+     * 
+     * @return The configuration that allows you to schedule a job for a future date and time in addition to specifying
+     *         the end behavior for each job execution.
+     */
+
+    public SchedulingConfig getSchedulingConfig() {
+        return this.schedulingConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration that allows you to schedule a job for a future date and time in addition to specifying the end
+     * behavior for each job execution.
+     * </p>
+     * 
+     * @param schedulingConfig
+     *        The configuration that allows you to schedule a job for a future date and time in addition to specifying
+     *        the end behavior for each job execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobRequest withSchedulingConfig(SchedulingConfig schedulingConfig) {
+        setSchedulingConfig(schedulingConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully
+     * completes. The package version must be in either the Published or Deprecated state when the job deploys. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     * >Package version lifecycle</a>.
+     * </p>
+     * <p>
+     * <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.
+     * </p>
+     * 
+     * @return The package version Amazon Resource Names (ARNs) that are installed on the device when the job
+     *         successfully completes. The package version must be in either the Published or Deprecated state when the
+     *         job deploys. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     *         >Package version lifecycle</a>. </p>
+     *         <p>
+     *         <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are
+     *         allowed.
+     */
+
+    public java.util.List<String> getDestinationPackageVersions() {
+        return destinationPackageVersions;
+    }
+
+    /**
+     * <p>
+     * The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully
+     * completes. The package version must be in either the Published or Deprecated state when the job deploys. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     * >Package version lifecycle</a>.
+     * </p>
+     * <p>
+     * <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.
+     * </p>
+     * 
+     * @param destinationPackageVersions
+     *        The package version Amazon Resource Names (ARNs) that are installed on the device when the job
+     *        successfully completes. The package version must be in either the Published or Deprecated state when the
+     *        job deploys. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     *        >Package version lifecycle</a>. </p>
+     *        <p>
+     *        <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are
+     *        allowed.
+     */
+
+    public void setDestinationPackageVersions(java.util.Collection<String> destinationPackageVersions) {
+        if (destinationPackageVersions == null) {
+            this.destinationPackageVersions = null;
+            return;
+        }
+
+        this.destinationPackageVersions = new java.util.ArrayList<String>(destinationPackageVersions);
+    }
+
+    /**
+     * <p>
+     * The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully
+     * completes. The package version must be in either the Published or Deprecated state when the job deploys. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     * >Package version lifecycle</a>.
+     * </p>
+     * <p>
+     * <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDestinationPackageVersions(java.util.Collection)} or
+     * {@link #withDestinationPackageVersions(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param destinationPackageVersions
+     *        The package version Amazon Resource Names (ARNs) that are installed on the device when the job
+     *        successfully completes. The package version must be in either the Published or Deprecated state when the
+     *        job deploys. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     *        >Package version lifecycle</a>. </p>
+     *        <p>
+     *        <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are
+     *        allowed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobRequest withDestinationPackageVersions(String... destinationPackageVersions) {
+        if (this.destinationPackageVersions == null) {
+            setDestinationPackageVersions(new java.util.ArrayList<String>(destinationPackageVersions.length));
+        }
+        for (String ele : destinationPackageVersions) {
+            this.destinationPackageVersions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully
+     * completes. The package version must be in either the Published or Deprecated state when the job deploys. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     * >Package version lifecycle</a>.
+     * </p>
+     * <p>
+     * <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.
+     * </p>
+     * 
+     * @param destinationPackageVersions
+     *        The package version Amazon Resource Names (ARNs) that are installed on the device when the job
+     *        successfully completes. The package version must be in either the Published or Deprecated state when the
+     *        job deploys. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     *        >Package version lifecycle</a>. </p>
+     *        <p>
+     *        <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are
+     *        allowed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobRequest withDestinationPackageVersions(java.util.Collection<String> destinationPackageVersions) {
+        setDestinationPackageVersions(destinationPackageVersions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1177,7 +1354,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getJobExecutionsRetryConfig() != null)
             sb.append("JobExecutionsRetryConfig: ").append(getJobExecutionsRetryConfig()).append(",");
         if (getDocumentParameters() != null)
-            sb.append("DocumentParameters: ").append(getDocumentParameters());
+            sb.append("DocumentParameters: ").append(getDocumentParameters()).append(",");
+        if (getSchedulingConfig() != null)
+            sb.append("SchedulingConfig: ").append(getSchedulingConfig()).append(",");
+        if (getDestinationPackageVersions() != null)
+            sb.append("DestinationPackageVersions: ").append(getDestinationPackageVersions());
         sb.append("}");
         return sb.toString();
     }
@@ -1252,6 +1433,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getDocumentParameters() != null && other.getDocumentParameters().equals(this.getDocumentParameters()) == false)
             return false;
+        if (other.getSchedulingConfig() == null ^ this.getSchedulingConfig() == null)
+            return false;
+        if (other.getSchedulingConfig() != null && other.getSchedulingConfig().equals(this.getSchedulingConfig()) == false)
+            return false;
+        if (other.getDestinationPackageVersions() == null ^ this.getDestinationPackageVersions() == null)
+            return false;
+        if (other.getDestinationPackageVersions() != null && other.getDestinationPackageVersions().equals(this.getDestinationPackageVersions()) == false)
+            return false;
         return true;
     }
 
@@ -1275,6 +1464,8 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getJobTemplateArn() == null) ? 0 : getJobTemplateArn().hashCode());
         hashCode = prime * hashCode + ((getJobExecutionsRetryConfig() == null) ? 0 : getJobExecutionsRetryConfig().hashCode());
         hashCode = prime * hashCode + ((getDocumentParameters() == null) ? 0 : getDocumentParameters().hashCode());
+        hashCode = prime * hashCode + ((getSchedulingConfig() == null) ? 0 : getSchedulingConfig().hashCode());
+        hashCode = prime * hashCode + ((getDestinationPackageVersions() == null) ? 0 : getDestinationPackageVersions().hashCode());
         return hashCode;
     }
 

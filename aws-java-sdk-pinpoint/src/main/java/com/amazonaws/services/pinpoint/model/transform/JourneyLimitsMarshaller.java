@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,10 @@ public class JourneyLimitsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MessagesPerSecond").build();
     private static final MarshallingInfo<String> ENDPOINTREENTRYINTERVAL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointReentryInterval").build();
+    private static final MarshallingInfo<StructuredPojo> TIMEFRAMECAP_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimeframeCap").build();
+    private static final MarshallingInfo<Integer> TOTALCAP_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TotalCap").build();
 
     private static final JourneyLimitsMarshaller instance = new JourneyLimitsMarshaller();
 
@@ -56,6 +60,8 @@ public class JourneyLimitsMarshaller {
             protocolMarshaller.marshall(journeyLimits.getEndpointReentryCap(), ENDPOINTREENTRYCAP_BINDING);
             protocolMarshaller.marshall(journeyLimits.getMessagesPerSecond(), MESSAGESPERSECOND_BINDING);
             protocolMarshaller.marshall(journeyLimits.getEndpointReentryInterval(), ENDPOINTREENTRYINTERVAL_BINDING);
+            protocolMarshaller.marshall(journeyLimits.getTimeframeCap(), TIMEFRAMECAP_BINDING);
+            protocolMarshaller.marshall(journeyLimits.getTotalCap(), TOTALCAP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

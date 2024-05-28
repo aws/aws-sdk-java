@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,8 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * Settings to let you create a clip of the file input, in order to set up the input to ingest only a portion of the
- * file.
+ * Whether the SCTE-35 input should be the active input or a fixed input.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Scte35InputMode {

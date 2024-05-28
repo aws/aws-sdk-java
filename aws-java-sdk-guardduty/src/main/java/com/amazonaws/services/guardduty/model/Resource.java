@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,8 +31,8 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM access key details (IAM user information) of a user that engaged in the activity that prompted GuardDuty
-     * to generate a finding.
+     * The IAM access key details (user information) of a user that engaged in the activity that prompted GuardDuty to
+     * generate a finding.
      * </p>
      */
     private AccessKeyDetails accessKeyDetails;
@@ -81,15 +81,33 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     private EcsClusterDetails ecsClusterDetails;
 
     private Container containerDetails;
+    /**
+     * <p>
+     * Contains information about the database instance to which an anomalous login attempt was made.
+     * </p>
+     */
+    private RdsDbInstanceDetails rdsDbInstanceDetails;
+    /**
+     * <p>
+     * Contains information about the user details through which anomalous login attempt was made.
+     * </p>
+     */
+    private RdsDbUserDetails rdsDbUserDetails;
+    /**
+     * <p>
+     * Contains information about the Lambda function that was involved in a finding.
+     * </p>
+     */
+    private LambdaDetails lambdaDetails;
 
     /**
      * <p>
-     * The IAM access key details (IAM user information) of a user that engaged in the activity that prompted GuardDuty
-     * to generate a finding.
+     * The IAM access key details (user information) of a user that engaged in the activity that prompted GuardDuty to
+     * generate a finding.
      * </p>
      * 
      * @param accessKeyDetails
-     *        The IAM access key details (IAM user information) of a user that engaged in the activity that prompted
+     *        The IAM access key details (user information) of a user that engaged in the activity that prompted
      *        GuardDuty to generate a finding.
      */
 
@@ -99,11 +117,11 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM access key details (IAM user information) of a user that engaged in the activity that prompted GuardDuty
-     * to generate a finding.
+     * The IAM access key details (user information) of a user that engaged in the activity that prompted GuardDuty to
+     * generate a finding.
      * </p>
      * 
-     * @return The IAM access key details (IAM user information) of a user that engaged in the activity that prompted
+     * @return The IAM access key details (user information) of a user that engaged in the activity that prompted
      *         GuardDuty to generate a finding.
      */
 
@@ -113,12 +131,12 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM access key details (IAM user information) of a user that engaged in the activity that prompted GuardDuty
-     * to generate a finding.
+     * The IAM access key details (user information) of a user that engaged in the activity that prompted GuardDuty to
+     * generate a finding.
      * </p>
      * 
      * @param accessKeyDetails
-     *        The IAM access key details (IAM user information) of a user that engaged in the activity that prompted
+     *        The IAM access key details (user information) of a user that engaged in the activity that prompted
      *        GuardDuty to generate a finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -471,6 +489,126 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains information about the database instance to which an anomalous login attempt was made.
+     * </p>
+     * 
+     * @param rdsDbInstanceDetails
+     *        Contains information about the database instance to which an anomalous login attempt was made.
+     */
+
+    public void setRdsDbInstanceDetails(RdsDbInstanceDetails rdsDbInstanceDetails) {
+        this.rdsDbInstanceDetails = rdsDbInstanceDetails;
+    }
+
+    /**
+     * <p>
+     * Contains information about the database instance to which an anomalous login attempt was made.
+     * </p>
+     * 
+     * @return Contains information about the database instance to which an anomalous login attempt was made.
+     */
+
+    public RdsDbInstanceDetails getRdsDbInstanceDetails() {
+        return this.rdsDbInstanceDetails;
+    }
+
+    /**
+     * <p>
+     * Contains information about the database instance to which an anomalous login attempt was made.
+     * </p>
+     * 
+     * @param rdsDbInstanceDetails
+     *        Contains information about the database instance to which an anomalous login attempt was made.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Resource withRdsDbInstanceDetails(RdsDbInstanceDetails rdsDbInstanceDetails) {
+        setRdsDbInstanceDetails(rdsDbInstanceDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains information about the user details through which anomalous login attempt was made.
+     * </p>
+     * 
+     * @param rdsDbUserDetails
+     *        Contains information about the user details through which anomalous login attempt was made.
+     */
+
+    public void setRdsDbUserDetails(RdsDbUserDetails rdsDbUserDetails) {
+        this.rdsDbUserDetails = rdsDbUserDetails;
+    }
+
+    /**
+     * <p>
+     * Contains information about the user details through which anomalous login attempt was made.
+     * </p>
+     * 
+     * @return Contains information about the user details through which anomalous login attempt was made.
+     */
+
+    public RdsDbUserDetails getRdsDbUserDetails() {
+        return this.rdsDbUserDetails;
+    }
+
+    /**
+     * <p>
+     * Contains information about the user details through which anomalous login attempt was made.
+     * </p>
+     * 
+     * @param rdsDbUserDetails
+     *        Contains information about the user details through which anomalous login attempt was made.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Resource withRdsDbUserDetails(RdsDbUserDetails rdsDbUserDetails) {
+        setRdsDbUserDetails(rdsDbUserDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains information about the Lambda function that was involved in a finding.
+     * </p>
+     * 
+     * @param lambdaDetails
+     *        Contains information about the Lambda function that was involved in a finding.
+     */
+
+    public void setLambdaDetails(LambdaDetails lambdaDetails) {
+        this.lambdaDetails = lambdaDetails;
+    }
+
+    /**
+     * <p>
+     * Contains information about the Lambda function that was involved in a finding.
+     * </p>
+     * 
+     * @return Contains information about the Lambda function that was involved in a finding.
+     */
+
+    public LambdaDetails getLambdaDetails() {
+        return this.lambdaDetails;
+    }
+
+    /**
+     * <p>
+     * Contains information about the Lambda function that was involved in a finding.
+     * </p>
+     * 
+     * @param lambdaDetails
+     *        Contains information about the Lambda function that was involved in a finding.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Resource withLambdaDetails(LambdaDetails lambdaDetails) {
+        setLambdaDetails(lambdaDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -499,7 +637,13 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
         if (getEcsClusterDetails() != null)
             sb.append("EcsClusterDetails: ").append(getEcsClusterDetails()).append(",");
         if (getContainerDetails() != null)
-            sb.append("ContainerDetails: ").append(getContainerDetails());
+            sb.append("ContainerDetails: ").append(getContainerDetails()).append(",");
+        if (getRdsDbInstanceDetails() != null)
+            sb.append("RdsDbInstanceDetails: ").append(getRdsDbInstanceDetails()).append(",");
+        if (getRdsDbUserDetails() != null)
+            sb.append("RdsDbUserDetails: ").append(getRdsDbUserDetails()).append(",");
+        if (getLambdaDetails() != null)
+            sb.append("LambdaDetails: ").append(getLambdaDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -550,6 +694,18 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getContainerDetails() != null && other.getContainerDetails().equals(this.getContainerDetails()) == false)
             return false;
+        if (other.getRdsDbInstanceDetails() == null ^ this.getRdsDbInstanceDetails() == null)
+            return false;
+        if (other.getRdsDbInstanceDetails() != null && other.getRdsDbInstanceDetails().equals(this.getRdsDbInstanceDetails()) == false)
+            return false;
+        if (other.getRdsDbUserDetails() == null ^ this.getRdsDbUserDetails() == null)
+            return false;
+        if (other.getRdsDbUserDetails() != null && other.getRdsDbUserDetails().equals(this.getRdsDbUserDetails()) == false)
+            return false;
+        if (other.getLambdaDetails() == null ^ this.getLambdaDetails() == null)
+            return false;
+        if (other.getLambdaDetails() != null && other.getLambdaDetails().equals(this.getLambdaDetails()) == false)
+            return false;
         return true;
     }
 
@@ -567,6 +723,9 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEbsVolumeDetails() == null) ? 0 : getEbsVolumeDetails().hashCode());
         hashCode = prime * hashCode + ((getEcsClusterDetails() == null) ? 0 : getEcsClusterDetails().hashCode());
         hashCode = prime * hashCode + ((getContainerDetails() == null) ? 0 : getContainerDetails().hashCode());
+        hashCode = prime * hashCode + ((getRdsDbInstanceDetails() == null) ? 0 : getRdsDbInstanceDetails().hashCode());
+        hashCode = prime * hashCode + ((getRdsDbUserDetails() == null) ? 0 : getRdsDbUserDetails().hashCode());
+        hashCode = prime * hashCode + ((getLambdaDetails() == null) ? 0 : getLambdaDetails().hashCode());
         return hashCode;
     }
 

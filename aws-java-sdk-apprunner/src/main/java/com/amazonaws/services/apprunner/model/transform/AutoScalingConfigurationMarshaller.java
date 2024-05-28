@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,10 @@ public class AutoScalingConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> DELETEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeletedAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<Boolean> HASASSOCIATEDSERVICE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HasAssociatedService").build();
+    private static final MarshallingInfo<Boolean> ISDEFAULT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IsDefault").build();
 
     private static final AutoScalingConfigurationMarshaller instance = new AutoScalingConfigurationMarshaller();
 
@@ -74,6 +78,8 @@ public class AutoScalingConfigurationMarshaller {
             protocolMarshaller.marshall(autoScalingConfiguration.getMaxSize(), MAXSIZE_BINDING);
             protocolMarshaller.marshall(autoScalingConfiguration.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(autoScalingConfiguration.getDeletedAt(), DELETEDAT_BINDING);
+            protocolMarshaller.marshall(autoScalingConfiguration.getHasAssociatedService(), HASASSOCIATEDSERVICE_BINDING);
+            protocolMarshaller.marshall(autoScalingConfiguration.getIsDefault(), ISDEFAULT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

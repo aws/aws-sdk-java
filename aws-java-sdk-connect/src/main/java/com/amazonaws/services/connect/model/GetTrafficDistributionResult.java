@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,19 @@ public class GetTrafficDistributionResult extends com.amazonaws.AmazonWebService
      * </p>
      */
     private String arn;
+    /**
+     * <p>
+     * The distribution that determines which Amazon Web Services Regions should be used to sign in agents in to both
+     * the instance and its replica(s).
+     * </p>
+     */
+    private SignInConfig signInConfig;
+    /**
+     * <p>
+     * The distribution of agents between the instance and its replica(s).
+     * </p>
+     */
+    private AgentConfig agentConfig;
 
     /**
      * <p>
@@ -177,6 +190,92 @@ public class GetTrafficDistributionResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The distribution that determines which Amazon Web Services Regions should be used to sign in agents in to both
+     * the instance and its replica(s).
+     * </p>
+     * 
+     * @param signInConfig
+     *        The distribution that determines which Amazon Web Services Regions should be used to sign in agents in to
+     *        both the instance and its replica(s).
+     */
+
+    public void setSignInConfig(SignInConfig signInConfig) {
+        this.signInConfig = signInConfig;
+    }
+
+    /**
+     * <p>
+     * The distribution that determines which Amazon Web Services Regions should be used to sign in agents in to both
+     * the instance and its replica(s).
+     * </p>
+     * 
+     * @return The distribution that determines which Amazon Web Services Regions should be used to sign in agents in to
+     *         both the instance and its replica(s).
+     */
+
+    public SignInConfig getSignInConfig() {
+        return this.signInConfig;
+    }
+
+    /**
+     * <p>
+     * The distribution that determines which Amazon Web Services Regions should be used to sign in agents in to both
+     * the instance and its replica(s).
+     * </p>
+     * 
+     * @param signInConfig
+     *        The distribution that determines which Amazon Web Services Regions should be used to sign in agents in to
+     *        both the instance and its replica(s).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTrafficDistributionResult withSignInConfig(SignInConfig signInConfig) {
+        setSignInConfig(signInConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The distribution of agents between the instance and its replica(s).
+     * </p>
+     * 
+     * @param agentConfig
+     *        The distribution of agents between the instance and its replica(s).
+     */
+
+    public void setAgentConfig(AgentConfig agentConfig) {
+        this.agentConfig = agentConfig;
+    }
+
+    /**
+     * <p>
+     * The distribution of agents between the instance and its replica(s).
+     * </p>
+     * 
+     * @return The distribution of agents between the instance and its replica(s).
+     */
+
+    public AgentConfig getAgentConfig() {
+        return this.agentConfig;
+    }
+
+    /**
+     * <p>
+     * The distribution of agents between the instance and its replica(s).
+     * </p>
+     * 
+     * @param agentConfig
+     *        The distribution of agents between the instance and its replica(s).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTrafficDistributionResult withAgentConfig(AgentConfig agentConfig) {
+        setAgentConfig(agentConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -193,7 +292,11 @@ public class GetTrafficDistributionResult extends com.amazonaws.AmazonWebService
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getArn() != null)
-            sb.append("Arn: ").append(getArn());
+            sb.append("Arn: ").append(getArn()).append(",");
+        if (getSignInConfig() != null)
+            sb.append("SignInConfig: ").append(getSignInConfig()).append(",");
+        if (getAgentConfig() != null)
+            sb.append("AgentConfig: ").append(getAgentConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -220,6 +323,14 @@ public class GetTrafficDistributionResult extends com.amazonaws.AmazonWebService
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
+        if (other.getSignInConfig() == null ^ this.getSignInConfig() == null)
+            return false;
+        if (other.getSignInConfig() != null && other.getSignInConfig().equals(this.getSignInConfig()) == false)
+            return false;
+        if (other.getAgentConfig() == null ^ this.getAgentConfig() == null)
+            return false;
+        if (other.getAgentConfig() != null && other.getAgentConfig().equals(this.getAgentConfig()) == false)
+            return false;
         return true;
     }
 
@@ -231,6 +342,8 @@ public class GetTrafficDistributionResult extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getTelephonyConfig() == null) ? 0 : getTelephonyConfig().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getSignInConfig() == null) ? 0 : getSignInConfig().hashCode());
+        hashCode = prime * hashCode + ((getAgentConfig() == null) ? 0 : getAgentConfig().hashCode());
         return hashCode;
     }
 

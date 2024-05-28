@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,8 +33,8 @@ import com.amazonaws.services.lightsail.model.*;
  * domains, and resource snapshots (backups) - for a low, predictable monthly price.
  * </p>
  * <p>
- * You can manage your Lightsail resources using the Lightsail console, Lightsail API, AWS Command Line Interface (AWS
- * CLI), or SDKs. For more information about Lightsail concepts and tasks, see the <a href=
+ * You can manage your Lightsail resources using the Lightsail console, Lightsail API, Command Line Interface (CLI), or
+ * SDKs. For more information about Lightsail concepts and tasks, see the <a href=
  * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli"
  * >Amazon Lightsail Developer Guide</a>.
  * </p>
@@ -880,8 +880,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Creates a block storage disk that can be attached to an Amazon Lightsail instance in the same Availability Zone
-     * (e.g., <code>us-east-2a</code>).
+     * Creates a block storage disk that can be attached to an Amazon Lightsail instance in the same Availability Zone (
+     * <code>us-east-2a</code>).
      * </p>
      * <p>
      * The <code>create disk</code> operation supports tag-based access control via request tags. For more information,
@@ -900,8 +900,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Creates a block storage disk that can be attached to an Amazon Lightsail instance in the same Availability Zone
-     * (e.g., <code>us-east-2a</code>).
+     * Creates a block storage disk that can be attached to an Amazon Lightsail instance in the same Availability Zone (
+     * <code>us-east-2a</code>).
      * </p>
      * <p>
      * The <code>create disk</code> operation supports tag-based access control via request tags. For more information,
@@ -926,7 +926,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
     /**
      * <p>
      * Creates a block storage disk from a manual or automatic snapshot of a disk. The resulting disk can be attached to
-     * an Amazon Lightsail instance in the same Availability Zone (e.g., <code>us-east-2a</code>).
+     * an Amazon Lightsail instance in the same Availability Zone (<code>us-east-2a</code>).
      * </p>
      * <p>
      * The <code>create disk from snapshot</code> operation supports tag-based access control via request tags and
@@ -947,7 +947,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
     /**
      * <p>
      * Creates a block storage disk from a manual or automatic snapshot of a disk. The resulting disk can be attached to
-     * an Amazon Lightsail instance in the same Availability Zone (e.g., <code>us-east-2a</code>).
+     * an Amazon Lightsail instance in the same Availability Zone (<code>us-east-2a</code>).
      * </p>
      * <p>
      * The <code>create disk from snapshot</code> operation supports tag-based access control via request tags and
@@ -1094,7 +1094,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Creates a domain resource for the specified domain (e.g., example.com).
+     * Creates a domain resource for the specified domain (example.com).
      * </p>
      * <p>
      * The <code>create domain</code> operation supports tag-based access control via request tags. For more
@@ -1113,7 +1113,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Creates a domain resource for the specified domain (e.g., example.com).
+     * Creates a domain resource for the specified domain (example.com).
      * </p>
      * <p>
      * The <code>create domain</code> operation supports tag-based access control via request tags. For more
@@ -1179,6 +1179,51 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      */
     java.util.concurrent.Future<CreateDomainEntryResult> createDomainEntryAsync(CreateDomainEntryRequest createDomainEntryRequest,
             com.amazonaws.handlers.AsyncHandler<CreateDomainEntryRequest, CreateDomainEntryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates two URLs that are used to access a virtual computer’s graphical user interface (GUI) session. The primary
+     * URL initiates a web-based NICE DCV session to the virtual computer's application. The secondary URL initiates a
+     * web-based NICE DCV session to the virtual computer's operating session.
+     * </p>
+     * <p>
+     * Use <code>StartGUISession</code> to open the session.
+     * </p>
+     * 
+     * @param createGUISessionAccessDetailsRequest
+     * @return A Java Future containing the result of the CreateGUISessionAccessDetails operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.CreateGUISessionAccessDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateGUISessionAccessDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateGUISessionAccessDetailsResult> createGUISessionAccessDetailsAsync(
+            CreateGUISessionAccessDetailsRequest createGUISessionAccessDetailsRequest);
+
+    /**
+     * <p>
+     * Creates two URLs that are used to access a virtual computer’s graphical user interface (GUI) session. The primary
+     * URL initiates a web-based NICE DCV session to the virtual computer's application. The secondary URL initiates a
+     * web-based NICE DCV session to the virtual computer's operating session.
+     * </p>
+     * <p>
+     * Use <code>StartGUISession</code> to open the session.
+     * </p>
+     * 
+     * @param createGUISessionAccessDetailsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateGUISessionAccessDetails operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.CreateGUISessionAccessDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateGUISessionAccessDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateGUISessionAccessDetailsResult> createGUISessionAccessDetailsAsync(
+            CreateGUISessionAccessDetailsRequest createGUISessionAccessDetailsRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateGUISessionAccessDetailsRequest, CreateGUISessionAccessDetailsResult> asyncHandler);
 
     /**
      * <p>
@@ -3305,7 +3350,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * </p>
      * <note>
      * <p>
-     * To get a summary of a certificate, ommit <code>includeCertificateDetails</code> from your request. The response
+     * To get a summary of a certificate, omit <code>includeCertificateDetails</code> from your request. The response
      * will include only the certificate Amazon Resource Name (ARN), certificate name, domain name, and tags.
      * </p>
      * </note>
@@ -3324,7 +3369,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * </p>
      * <note>
      * <p>
-     * To get a summary of a certificate, ommit <code>includeCertificateDetails</code> from your request. The response
+     * To get a summary of a certificate, omit <code>includeCertificateDetails</code> from your request. The response
      * will include only the certificate Amazon Resource Name (ARN), certificate name, domain name, and tags.
      * </p>
      * </note>
@@ -3524,7 +3569,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Container logs are retained for a certain amount of time. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail endpoints and quotas</a> in
-     * the <i>AWS General Reference</i>.
+     * the <i>Amazon Web Services General Reference</i>.
      * </p>
      * </note>
      * 
@@ -3548,7 +3593,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Container logs are retained for a certain amount of time. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail endpoints and quotas</a> in
-     * the <i>AWS General Reference</i>.
+     * the <i>Amazon Web Services General Reference</i>.
      * </p>
      * </note>
      * 
@@ -3581,7 +3626,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * A set number of deployments are kept before the oldest one is replaced with the newest one. For more information,
      * see <a href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail endpoints and
-     * quotas</a> in the <i>AWS General Reference</i>.
+     * quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * </note>
      * 
@@ -3611,7 +3656,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * A set number of deployments are kept before the oldest one is replaced with the newest one. For more information,
      * see <a href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail endpoints and
-     * quotas</a> in the <i>AWS General Reference</i>.
+     * quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * </note>
      * 
@@ -3742,6 +3787,39 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      */
     java.util.concurrent.Future<GetContainerServicesResult> getContainerServicesAsync(GetContainerServicesRequest getContainerServicesRequest,
             com.amazonaws.handlers.AsyncHandler<GetContainerServicesRequest, GetContainerServicesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves information about the cost estimate for a specified resource. A cost estimate will not generate for a
+     * resource that has been deleted.
+     * </p>
+     * 
+     * @param getCostEstimateRequest
+     * @return A Java Future containing the result of the GetCostEstimate operation returned by the service.
+     * @sample AmazonLightsailAsync.GetCostEstimate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetCostEstimate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetCostEstimateResult> getCostEstimateAsync(GetCostEstimateRequest getCostEstimateRequest);
+
+    /**
+     * <p>
+     * Retrieves information about the cost estimate for a specified resource. A cost estimate will not generate for a
+     * resource that has been deleted.
+     * </p>
+     * 
+     * @param getCostEstimateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCostEstimate operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.GetCostEstimate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetCostEstimate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetCostEstimateResult> getCostEstimateAsync(GetCostEstimateRequest getCostEstimateRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCostEstimateRequest, GetCostEstimateResult> asyncHandler);
 
     /**
      * <p>
@@ -4721,7 +4799,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Gets operations for a specific resource (e.g., an instance or a static IP).
+     * Gets operations for a specific resource (an instance or a static IP).
      * </p>
      * 
      * @param getOperationsForResourceRequest
@@ -4734,7 +4812,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Gets operations for a specific resource (e.g., an instance or a static IP).
+     * Gets operations for a specific resource (an instance or a static IP).
      * </p>
      * 
      * @param getOperationsForResourceRequest
@@ -5238,6 +5316,39 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      */
     java.util.concurrent.Future<GetRelationalDatabasesResult> getRelationalDatabasesAsync(GetRelationalDatabasesRequest getRelationalDatabasesRequest,
             com.amazonaws.handlers.AsyncHandler<GetRelationalDatabasesRequest, GetRelationalDatabasesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns detailed information for five of the most recent <code>SetupInstanceHttps</code> requests that were ran
+     * on the target instance.
+     * </p>
+     * 
+     * @param getSetupHistoryRequest
+     * @return A Java Future containing the result of the GetSetupHistory operation returned by the service.
+     * @sample AmazonLightsailAsync.GetSetupHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetSetupHistory" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetSetupHistoryResult> getSetupHistoryAsync(GetSetupHistoryRequest getSetupHistoryRequest);
+
+    /**
+     * <p>
+     * Returns detailed information for five of the most recent <code>SetupInstanceHttps</code> requests that were ran
+     * on the target instance.
+     * </p>
+     * 
+     * @param getSetupHistoryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSetupHistory operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.GetSetupHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetSetupHistory" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetSetupHistoryResult> getSetupHistoryAsync(GetSetupHistoryRequest getSetupHistoryRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSetupHistoryRequest, GetSetupHistoryResult> asyncHandler);
 
     /**
      * <p>
@@ -5909,6 +6020,80 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
+     * Creates an SSL/TLS certificate that secures traffic for your website. After the certificate is created, it is
+     * installed on the specified Lightsail instance.
+     * </p>
+     * <p>
+     * If you provide more than one domain name in the request, at least one name must be less than or equal to 63
+     * characters in length.
+     * </p>
+     * 
+     * @param setupInstanceHttpsRequest
+     * @return A Java Future containing the result of the SetupInstanceHttps operation returned by the service.
+     * @sample AmazonLightsailAsync.SetupInstanceHttps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SetupInstanceHttps" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<SetupInstanceHttpsResult> setupInstanceHttpsAsync(SetupInstanceHttpsRequest setupInstanceHttpsRequest);
+
+    /**
+     * <p>
+     * Creates an SSL/TLS certificate that secures traffic for your website. After the certificate is created, it is
+     * installed on the specified Lightsail instance.
+     * </p>
+     * <p>
+     * If you provide more than one domain name in the request, at least one name must be less than or equal to 63
+     * characters in length.
+     * </p>
+     * 
+     * @param setupInstanceHttpsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SetupInstanceHttps operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.SetupInstanceHttps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/SetupInstanceHttps" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<SetupInstanceHttpsResult> setupInstanceHttpsAsync(SetupInstanceHttpsRequest setupInstanceHttpsRequest,
+            com.amazonaws.handlers.AsyncHandler<SetupInstanceHttpsRequest, SetupInstanceHttpsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Initiates a graphical user interface (GUI) session that’s used to access a virtual computer’s operating system
+     * and application. The session will be active for 1 hour. Use this action to resume the session after it expires.
+     * </p>
+     * 
+     * @param startGUISessionRequest
+     * @return A Java Future containing the result of the StartGUISession operation returned by the service.
+     * @sample AmazonLightsailAsync.StartGUISession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartGUISession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartGUISessionResult> startGUISessionAsync(StartGUISessionRequest startGUISessionRequest);
+
+    /**
+     * <p>
+     * Initiates a graphical user interface (GUI) session that’s used to access a virtual computer’s operating system
+     * and application. The session will be active for 1 hour. Use this action to resume the session after it expires.
+     * </p>
+     * 
+     * @param startGUISessionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartGUISession operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.StartGUISession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartGUISession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartGUISessionResult> startGUISessionAsync(StartGUISessionRequest startGUISessionRequest,
+            com.amazonaws.handlers.AsyncHandler<StartGUISessionRequest, StartGUISessionResult> asyncHandler);
+
+    /**
+     * <p>
      * Starts a specific Amazon Lightsail instance from a stopped state. To restart an instance, use the
      * <code>reboot instance</code> operation.
      * </p>
@@ -6014,6 +6199,39 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      */
     java.util.concurrent.Future<StartRelationalDatabaseResult> startRelationalDatabaseAsync(StartRelationalDatabaseRequest startRelationalDatabaseRequest,
             com.amazonaws.handlers.AsyncHandler<StartRelationalDatabaseRequest, StartRelationalDatabaseResult> asyncHandler);
+
+    /**
+     * <p>
+     * Terminates a web-based NICE DCV session that’s used to access a virtual computer’s operating system or
+     * application. The session will close and any unsaved data will be lost.
+     * </p>
+     * 
+     * @param stopGUISessionRequest
+     * @return A Java Future containing the result of the StopGUISession operation returned by the service.
+     * @sample AmazonLightsailAsync.StopGUISession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopGUISession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StopGUISessionResult> stopGUISessionAsync(StopGUISessionRequest stopGUISessionRequest);
+
+    /**
+     * <p>
+     * Terminates a web-based NICE DCV session that’s used to access a virtual computer’s operating system or
+     * application. The session will close and any unsaved data will be lost.
+     * </p>
+     * 
+     * @param stopGUISessionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopGUISession operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.StopGUISession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopGUISession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StopGUISessionResult> stopGUISessionAsync(StopGUISessionRequest stopGUISessionRequest,
+            com.amazonaws.handlers.AsyncHandler<StopGUISessionRequest, StopGUISessionResult> asyncHandler);
 
     /**
      * <p>
@@ -6336,8 +6554,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * </p>
      * <p>
      * A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket. You can update a
-     * bucket's bundle only one time within a monthly AWS billing cycle. To determine if you can update a bucket's
-     * bundle, use the <a
+     * bucket's bundle only one time within a monthly Amazon Web Services billing cycle. To determine if you can update
+     * a bucket's bundle, use the <a
      * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBuckets.html">GetBuckets</a> action.
      * The <code>ableToUpdateBundle</code> parameter in the response will indicate whether you can currently update a
      * bucket's bundle.
@@ -6364,8 +6582,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * </p>
      * <p>
      * A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket. You can update a
-     * bucket's bundle only one time within a monthly AWS billing cycle. To determine if you can update a bucket's
-     * bundle, use the <a
+     * bucket's bundle only one time within a monthly Amazon Web Services billing cycle. To determine if you can update
+     * a bucket's bundle, use the <a
      * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBuckets.html">GetBuckets</a> action.
      * The <code>ableToUpdateBundle</code> parameter in the response will indicate whether you can currently update a
      * bucket's bundle.
@@ -6473,8 +6691,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * incurring an overage fee.
      * </p>
      * <p>
-     * You can update your distribution's bundle only one time within your monthly AWS billing cycle. To determine if
-     * you can update your distribution's bundle, use the <code>GetDistributions</code> action. The
+     * You can update your distribution's bundle only one time within your monthly Amazon Web Services billing cycle. To
+     * determine if you can update your distribution's bundle, use the <code>GetDistributions</code> action. The
      * <code>ableToUpdateBundle</code> parameter in the result will indicate whether you can currently update your
      * distribution's bundle.
      * </p>
@@ -6499,8 +6717,8 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * incurring an overage fee.
      * </p>
      * <p>
-     * You can update your distribution's bundle only one time within your monthly AWS billing cycle. To determine if
-     * you can update your distribution's bundle, use the <code>GetDistributions</code> action. The
+     * You can update your distribution's bundle only one time within your monthly Amazon Web Services billing cycle. To
+     * determine if you can update your distribution's bundle, use the <code>GetDistributions</code> action. The
      * <code>ableToUpdateBundle</code> parameter in the result will indicate whether you can currently update your
      * distribution's bundle.
      * </p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,10 +43,16 @@ public class GetDataSetDetailsResult extends com.amazonaws.AmazonWebServiceResul
     private String dataSetName;
     /**
      * <p>
-     * The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or unknown.
+     * The type of data set. The only supported value is VSAM.
      * </p>
      */
     private DatasetDetailOrgAttributes dataSetOrg;
+    /**
+     * <p>
+     * File size of the dataset.
+     * </p>
+     */
+    private Long fileSize;
     /**
      * <p>
      * The last time the data set was referenced.
@@ -61,7 +67,7 @@ public class GetDataSetDetailsResult extends com.amazonaws.AmazonWebServiceResul
     private java.util.Date lastUpdatedTime;
     /**
      * <p>
-     * The locaion where the data set is stored.
+     * The location where the data set is stored.
      * </p>
      */
     private String location;
@@ -194,11 +200,11 @@ public class GetDataSetDetailsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or unknown.
+     * The type of data set. The only supported value is VSAM.
      * </p>
      * 
      * @param dataSetOrg
-     *        The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or unknown.
+     *        The type of data set. The only supported value is VSAM.
      */
 
     public void setDataSetOrg(DatasetDetailOrgAttributes dataSetOrg) {
@@ -207,10 +213,10 @@ public class GetDataSetDetailsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or unknown.
+     * The type of data set. The only supported value is VSAM.
      * </p>
      * 
-     * @return The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or unknown.
+     * @return The type of data set. The only supported value is VSAM.
      */
 
     public DatasetDetailOrgAttributes getDataSetOrg() {
@@ -219,16 +225,56 @@ public class GetDataSetDetailsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or unknown.
+     * The type of data set. The only supported value is VSAM.
      * </p>
      * 
      * @param dataSetOrg
-     *        The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or unknown.
+     *        The type of data set. The only supported value is VSAM.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetDataSetDetailsResult withDataSetOrg(DatasetDetailOrgAttributes dataSetOrg) {
         setDataSetOrg(dataSetOrg);
+        return this;
+    }
+
+    /**
+     * <p>
+     * File size of the dataset.
+     * </p>
+     * 
+     * @param fileSize
+     *        File size of the dataset.
+     */
+
+    public void setFileSize(Long fileSize) {
+        this.fileSize = fileSize;
+    }
+
+    /**
+     * <p>
+     * File size of the dataset.
+     * </p>
+     * 
+     * @return File size of the dataset.
+     */
+
+    public Long getFileSize() {
+        return this.fileSize;
+    }
+
+    /**
+     * <p>
+     * File size of the dataset.
+     * </p>
+     * 
+     * @param fileSize
+     *        File size of the dataset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDataSetDetailsResult withFileSize(Long fileSize) {
+        setFileSize(fileSize);
         return this;
     }
 
@@ -314,11 +360,11 @@ public class GetDataSetDetailsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The locaion where the data set is stored.
+     * The location where the data set is stored.
      * </p>
      * 
      * @param location
-     *        The locaion where the data set is stored.
+     *        The location where the data set is stored.
      */
 
     public void setLocation(String location) {
@@ -327,10 +373,10 @@ public class GetDataSetDetailsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The locaion where the data set is stored.
+     * The location where the data set is stored.
      * </p>
      * 
-     * @return The locaion where the data set is stored.
+     * @return The location where the data set is stored.
      */
 
     public String getLocation() {
@@ -339,11 +385,11 @@ public class GetDataSetDetailsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The locaion where the data set is stored.
+     * The location where the data set is stored.
      * </p>
      * 
      * @param location
-     *        The locaion where the data set is stored.
+     *        The location where the data set is stored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -412,6 +458,8 @@ public class GetDataSetDetailsResult extends com.amazonaws.AmazonWebServiceResul
             sb.append("DataSetName: ").append(getDataSetName()).append(",");
         if (getDataSetOrg() != null)
             sb.append("DataSetOrg: ").append(getDataSetOrg()).append(",");
+        if (getFileSize() != null)
+            sb.append("FileSize: ").append(getFileSize()).append(",");
         if (getLastReferencedTime() != null)
             sb.append("LastReferencedTime: ").append(getLastReferencedTime()).append(",");
         if (getLastUpdatedTime() != null)
@@ -450,6 +498,10 @@ public class GetDataSetDetailsResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getDataSetOrg() != null && other.getDataSetOrg().equals(this.getDataSetOrg()) == false)
             return false;
+        if (other.getFileSize() == null ^ this.getFileSize() == null)
+            return false;
+        if (other.getFileSize() != null && other.getFileSize().equals(this.getFileSize()) == false)
+            return false;
         if (other.getLastReferencedTime() == null ^ this.getLastReferencedTime() == null)
             return false;
         if (other.getLastReferencedTime() != null && other.getLastReferencedTime().equals(this.getLastReferencedTime()) == false)
@@ -478,6 +530,7 @@ public class GetDataSetDetailsResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getDataSetName() == null) ? 0 : getDataSetName().hashCode());
         hashCode = prime * hashCode + ((getDataSetOrg() == null) ? 0 : getDataSetOrg().hashCode());
+        hashCode = prime * hashCode + ((getFileSize() == null) ? 0 : getFileSize().hashCode());
         hashCode = prime * hashCode + ((getLastReferencedTime() == null) ? 0 : getLastReferencedTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());

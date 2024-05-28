@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -79,6 +79,18 @@ public class UpdateBotResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      */
     private java.util.Date lastUpdatedDateTime;
+    /**
+     * <p>
+     * The type of the bot that was updated.
+     * </p>
+     */
+    private String botType;
+    /**
+     * <p>
+     * The list of bot members in the network that was updated.
+     * </p>
+     */
+    private java.util.List<BotMember> botMembers;
 
     /**
      * <p>
@@ -476,6 +488,135 @@ public class UpdateBotResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
+     * <p>
+     * The type of the bot that was updated.
+     * </p>
+     * 
+     * @param botType
+     *        The type of the bot that was updated.
+     * @see BotType
+     */
+
+    public void setBotType(String botType) {
+        this.botType = botType;
+    }
+
+    /**
+     * <p>
+     * The type of the bot that was updated.
+     * </p>
+     * 
+     * @return The type of the bot that was updated.
+     * @see BotType
+     */
+
+    public String getBotType() {
+        return this.botType;
+    }
+
+    /**
+     * <p>
+     * The type of the bot that was updated.
+     * </p>
+     * 
+     * @param botType
+     *        The type of the bot that was updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BotType
+     */
+
+    public UpdateBotResult withBotType(String botType) {
+        setBotType(botType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of the bot that was updated.
+     * </p>
+     * 
+     * @param botType
+     *        The type of the bot that was updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BotType
+     */
+
+    public UpdateBotResult withBotType(BotType botType) {
+        this.botType = botType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of bot members in the network that was updated.
+     * </p>
+     * 
+     * @return The list of bot members in the network that was updated.
+     */
+
+    public java.util.List<BotMember> getBotMembers() {
+        return botMembers;
+    }
+
+    /**
+     * <p>
+     * The list of bot members in the network that was updated.
+     * </p>
+     * 
+     * @param botMembers
+     *        The list of bot members in the network that was updated.
+     */
+
+    public void setBotMembers(java.util.Collection<BotMember> botMembers) {
+        if (botMembers == null) {
+            this.botMembers = null;
+            return;
+        }
+
+        this.botMembers = new java.util.ArrayList<BotMember>(botMembers);
+    }
+
+    /**
+     * <p>
+     * The list of bot members in the network that was updated.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBotMembers(java.util.Collection)} or {@link #withBotMembers(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param botMembers
+     *        The list of bot members in the network that was updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateBotResult withBotMembers(BotMember... botMembers) {
+        if (this.botMembers == null) {
+            setBotMembers(new java.util.ArrayList<BotMember>(botMembers.length));
+        }
+        for (BotMember ele : botMembers) {
+            this.botMembers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of bot members in the network that was updated.
+     * </p>
+     * 
+     * @param botMembers
+     *        The list of bot members in the network that was updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateBotResult withBotMembers(java.util.Collection<BotMember> botMembers) {
+        setBotMembers(botMembers);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -504,7 +645,11 @@ public class UpdateBotResult extends com.amazonaws.AmazonWebServiceResult<com.am
         if (getCreationDateTime() != null)
             sb.append("CreationDateTime: ").append(getCreationDateTime()).append(",");
         if (getLastUpdatedDateTime() != null)
-            sb.append("LastUpdatedDateTime: ").append(getLastUpdatedDateTime());
+            sb.append("LastUpdatedDateTime: ").append(getLastUpdatedDateTime()).append(",");
+        if (getBotType() != null)
+            sb.append("BotType: ").append(getBotType()).append(",");
+        if (getBotMembers() != null)
+            sb.append("BotMembers: ").append(getBotMembers());
         sb.append("}");
         return sb.toString();
     }
@@ -555,6 +700,14 @@ public class UpdateBotResult extends com.amazonaws.AmazonWebServiceResult<com.am
             return false;
         if (other.getLastUpdatedDateTime() != null && other.getLastUpdatedDateTime().equals(this.getLastUpdatedDateTime()) == false)
             return false;
+        if (other.getBotType() == null ^ this.getBotType() == null)
+            return false;
+        if (other.getBotType() != null && other.getBotType().equals(this.getBotType()) == false)
+            return false;
+        if (other.getBotMembers() == null ^ this.getBotMembers() == null)
+            return false;
+        if (other.getBotMembers() != null && other.getBotMembers().equals(this.getBotMembers()) == false)
+            return false;
         return true;
     }
 
@@ -572,6 +725,8 @@ public class UpdateBotResult extends com.amazonaws.AmazonWebServiceResult<com.am
         hashCode = prime * hashCode + ((getBotStatus() == null) ? 0 : getBotStatus().hashCode());
         hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedDateTime() == null) ? 0 : getLastUpdatedDateTime().hashCode());
+        hashCode = prime * hashCode + ((getBotType() == null) ? 0 : getBotType().hashCode());
+        hashCode = prime * hashCode + ((getBotMembers() == null) ? 0 : getBotMembers().hashCode());
         return hashCode;
     }
 

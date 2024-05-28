@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -28,10 +28,10 @@ import java.util.Set;
  * <pre>
  * {
  *     &#064;code
- *     Map&lt;String, AttibuteValue&gt; item = new ImmutableMapParameter.Builder&lt;String, AttibuteValue&gt;()
- *             .put(&quot;one&quot;, new AttibuteValue(&quot;1&quot;))
- *             .put(&quot;two&quot;, new AttibuteValue(&quot;2&quot;))
- *             .put(&quot;three&quot;, new AttibuteValue(&quot;3&quot;)).build();
+ *     Map&lt;String, AttributeValue&gt; item = new ImmutableMapParameter.Builder&lt;String, AttributeValue&gt;()
+ *             .put(&quot;one&quot;, new AttributeValue(&quot;1&quot;))
+ *             .put(&quot;two&quot;, new AttributeValue(&quot;2&quot;))
+ *             .put(&quot;three&quot;, new AttributeValue(&quot;3&quot;)).build();
  * }
  * </pre>
  * 
@@ -40,7 +40,7 @@ import java.util.Set;
  * 
  * <pre>
  * {@code
- *   Map<String, AttibuteValue> item =
+ *   Map<String, AttributeValue> item =
  *       ImmutableMapParameter
  *           .of("one", new AttributeValue("1"), 
  *               "two", new AttributeValue("2"),

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -182,8 +182,8 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
     private String preSignedUrl;
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the source DB cluster snapshot to the target DB cluster
-     * snapshot. By default, tags are not copied.
+     * Specifies whether to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot. By
+     * default, tags are not copied.
      * </p>
      */
     private Boolean copyTags;
@@ -1128,13 +1128,13 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the source DB cluster snapshot to the target DB cluster
-     * snapshot. By default, tags are not copied.
+     * Specifies whether to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot. By
+     * default, tags are not copied.
      * </p>
      * 
      * @param copyTags
-     *        A value that indicates whether to copy all tags from the source DB cluster snapshot to the target DB
-     *        cluster snapshot. By default, tags are not copied.
+     *        Specifies whether to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot.
+     *        By default, tags are not copied.
      */
 
     public void setCopyTags(Boolean copyTags) {
@@ -1143,12 +1143,12 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the source DB cluster snapshot to the target DB cluster
-     * snapshot. By default, tags are not copied.
+     * Specifies whether to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot. By
+     * default, tags are not copied.
      * </p>
      * 
-     * @return A value that indicates whether to copy all tags from the source DB cluster snapshot to the target DB
-     *         cluster snapshot. By default, tags are not copied.
+     * @return Specifies whether to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot.
+     *         By default, tags are not copied.
      */
 
     public Boolean getCopyTags() {
@@ -1157,13 +1157,13 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the source DB cluster snapshot to the target DB cluster
-     * snapshot. By default, tags are not copied.
+     * Specifies whether to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot. By
+     * default, tags are not copied.
      * </p>
      * 
      * @param copyTags
-     *        A value that indicates whether to copy all tags from the source DB cluster snapshot to the target DB
-     *        cluster snapshot. By default, tags are not copied.
+     *        Specifies whether to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot.
+     *        By default, tags are not copied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1174,12 +1174,12 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the source DB cluster snapshot to the target DB cluster
-     * snapshot. By default, tags are not copied.
+     * Specifies whether to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot. By
+     * default, tags are not copied.
      * </p>
      * 
-     * @return A value that indicates whether to copy all tags from the source DB cluster snapshot to the target DB
-     *         cluster snapshot. By default, tags are not copied.
+     * @return Specifies whether to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot.
+     *         By default, tags are not copied.
      */
 
     public Boolean isCopyTags() {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class ExperimentTemplateMarshaller {
 
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("id").build();
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("arn").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<Map> TARGETS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -49,6 +51,10 @@ public class ExperimentTemplateMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<StructuredPojo> LOGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> EXPERIMENTOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("experimentOptions").build();
+    private static final MarshallingInfo<Long> TARGETACCOUNTCONFIGURATIONSCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("targetAccountConfigurationsCount").build();
 
     private static final ExperimentTemplateMarshaller instance = new ExperimentTemplateMarshaller();
 
@@ -67,6 +73,7 @@ public class ExperimentTemplateMarshaller {
 
         try {
             protocolMarshaller.marshall(experimentTemplate.getId(), ID_BINDING);
+            protocolMarshaller.marshall(experimentTemplate.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(experimentTemplate.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(experimentTemplate.getTargets(), TARGETS_BINDING);
             protocolMarshaller.marshall(experimentTemplate.getActions(), ACTIONS_BINDING);
@@ -76,6 +83,8 @@ public class ExperimentTemplateMarshaller {
             protocolMarshaller.marshall(experimentTemplate.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(experimentTemplate.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(experimentTemplate.getLogConfiguration(), LOGCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(experimentTemplate.getExperimentOptions(), EXPERIMENTOPTIONS_BINDING);
+            protocolMarshaller.marshall(experimentTemplate.getTargetAccountConfigurationsCount(), TARGETACCOUNTCONFIGURATIONSCOUNT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

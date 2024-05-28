@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,7 +67,8 @@ public class CreateContainerRecipeRequest extends com.amazonaws.AmazonWebService
     private String semanticVersion;
     /**
      * <p>
-     * Components for build and test that are included in the container recipe.
+     * Components for build and test that are included in the container recipe. Recipes require a minimum of one build
+     * component, and can have a maximum of 20 build and test components in any combination.
      * </p>
      */
     private java.util.List<ComponentConfiguration> components;
@@ -133,7 +134,9 @@ public class CreateContainerRecipeRequest extends com.amazonaws.AmazonWebService
     private String kmsKeyId;
     /**
      * <p>
-     * The client token used to make this request idempotent.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.
      * </p>
      */
     private String clientToken;
@@ -410,10 +413,12 @@ public class CreateContainerRecipeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Components for build and test that are included in the container recipe.
+     * Components for build and test that are included in the container recipe. Recipes require a minimum of one build
+     * component, and can have a maximum of 20 build and test components in any combination.
      * </p>
      * 
-     * @return Components for build and test that are included in the container recipe.
+     * @return Components for build and test that are included in the container recipe. Recipes require a minimum of one
+     *         build component, and can have a maximum of 20 build and test components in any combination.
      */
 
     public java.util.List<ComponentConfiguration> getComponents() {
@@ -422,11 +427,13 @@ public class CreateContainerRecipeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Components for build and test that are included in the container recipe.
+     * Components for build and test that are included in the container recipe. Recipes require a minimum of one build
+     * component, and can have a maximum of 20 build and test components in any combination.
      * </p>
      * 
      * @param components
-     *        Components for build and test that are included in the container recipe.
+     *        Components for build and test that are included in the container recipe. Recipes require a minimum of one
+     *        build component, and can have a maximum of 20 build and test components in any combination.
      */
 
     public void setComponents(java.util.Collection<ComponentConfiguration> components) {
@@ -440,7 +447,8 @@ public class CreateContainerRecipeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Components for build and test that are included in the container recipe.
+     * Components for build and test that are included in the container recipe. Recipes require a minimum of one build
+     * component, and can have a maximum of 20 build and test components in any combination.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -449,7 +457,8 @@ public class CreateContainerRecipeRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param components
-     *        Components for build and test that are included in the container recipe.
+     *        Components for build and test that are included in the container recipe. Recipes require a minimum of one
+     *        build component, and can have a maximum of 20 build and test components in any combination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -465,11 +474,13 @@ public class CreateContainerRecipeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Components for build and test that are included in the container recipe.
+     * Components for build and test that are included in the container recipe. Recipes require a minimum of one build
+     * component, and can have a maximum of 20 build and test components in any combination.
      * </p>
      * 
      * @param components
-     *        Components for build and test that are included in the container recipe.
+     *        Components for build and test that are included in the container recipe. Recipes require a minimum of one
+     *        build component, and can have a maximum of 20 build and test components in any combination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -927,11 +938,16 @@ public class CreateContainerRecipeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The client token used to make this request idempotent.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.
      * </p>
      * 
      * @param clientToken
-     *        The client token used to make this request idempotent.
+     *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
+     *        see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        idempotency</a> in the <i>Amazon EC2 API Reference</i>.
      */
 
     public void setClientToken(String clientToken) {
@@ -940,10 +956,15 @@ public class CreateContainerRecipeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The client token used to make this request idempotent.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.
      * </p>
      * 
-     * @return The client token used to make this request idempotent.
+     * @return Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
+     *         see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *         idempotency</a> in the <i>Amazon EC2 API Reference</i>.
      */
 
     public String getClientToken() {
@@ -952,11 +973,16 @@ public class CreateContainerRecipeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The client token used to make this request idempotent.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.
      * </p>
      * 
      * @param clientToken
-     *        The client token used to make this request idempotent.
+     *        Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information,
+     *        see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        idempotency</a> in the <i>Amazon EC2 API Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

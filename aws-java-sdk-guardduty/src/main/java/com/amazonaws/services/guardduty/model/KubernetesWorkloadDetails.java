@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,6 +70,24 @@ public class KubernetesWorkloadDetails implements Serializable, Cloneable, Struc
      * </p>
      */
     private java.util.List<Volume> volumes;
+    /**
+     * <p>
+     * The service account name that is associated with a Kubernetes workload.
+     * </p>
+     */
+    private String serviceAccountName;
+    /**
+     * <p>
+     * Whether the host IPC flag is enabled for the pods in the workload.
+     * </p>
+     */
+    private Boolean hostIPC;
+    /**
+     * <p>
+     * Whether the host PID flag is enabled for the pods in the workload.
+     * </p>
+     */
+    private Boolean hostPID;
 
     /**
      * <p>
@@ -424,6 +442,150 @@ public class KubernetesWorkloadDetails implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The service account name that is associated with a Kubernetes workload.
+     * </p>
+     * 
+     * @param serviceAccountName
+     *        The service account name that is associated with a Kubernetes workload.
+     */
+
+    public void setServiceAccountName(String serviceAccountName) {
+        this.serviceAccountName = serviceAccountName;
+    }
+
+    /**
+     * <p>
+     * The service account name that is associated with a Kubernetes workload.
+     * </p>
+     * 
+     * @return The service account name that is associated with a Kubernetes workload.
+     */
+
+    public String getServiceAccountName() {
+        return this.serviceAccountName;
+    }
+
+    /**
+     * <p>
+     * The service account name that is associated with a Kubernetes workload.
+     * </p>
+     * 
+     * @param serviceAccountName
+     *        The service account name that is associated with a Kubernetes workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KubernetesWorkloadDetails withServiceAccountName(String serviceAccountName) {
+        setServiceAccountName(serviceAccountName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the host IPC flag is enabled for the pods in the workload.
+     * </p>
+     * 
+     * @param hostIPC
+     *        Whether the host IPC flag is enabled for the pods in the workload.
+     */
+
+    public void setHostIPC(Boolean hostIPC) {
+        this.hostIPC = hostIPC;
+    }
+
+    /**
+     * <p>
+     * Whether the host IPC flag is enabled for the pods in the workload.
+     * </p>
+     * 
+     * @return Whether the host IPC flag is enabled for the pods in the workload.
+     */
+
+    public Boolean getHostIPC() {
+        return this.hostIPC;
+    }
+
+    /**
+     * <p>
+     * Whether the host IPC flag is enabled for the pods in the workload.
+     * </p>
+     * 
+     * @param hostIPC
+     *        Whether the host IPC flag is enabled for the pods in the workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KubernetesWorkloadDetails withHostIPC(Boolean hostIPC) {
+        setHostIPC(hostIPC);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the host IPC flag is enabled for the pods in the workload.
+     * </p>
+     * 
+     * @return Whether the host IPC flag is enabled for the pods in the workload.
+     */
+
+    public Boolean isHostIPC() {
+        return this.hostIPC;
+    }
+
+    /**
+     * <p>
+     * Whether the host PID flag is enabled for the pods in the workload.
+     * </p>
+     * 
+     * @param hostPID
+     *        Whether the host PID flag is enabled for the pods in the workload.
+     */
+
+    public void setHostPID(Boolean hostPID) {
+        this.hostPID = hostPID;
+    }
+
+    /**
+     * <p>
+     * Whether the host PID flag is enabled for the pods in the workload.
+     * </p>
+     * 
+     * @return Whether the host PID flag is enabled for the pods in the workload.
+     */
+
+    public Boolean getHostPID() {
+        return this.hostPID;
+    }
+
+    /**
+     * <p>
+     * Whether the host PID flag is enabled for the pods in the workload.
+     * </p>
+     * 
+     * @param hostPID
+     *        Whether the host PID flag is enabled for the pods in the workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KubernetesWorkloadDetails withHostPID(Boolean hostPID) {
+        setHostPID(hostPID);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the host PID flag is enabled for the pods in the workload.
+     * </p>
+     * 
+     * @return Whether the host PID flag is enabled for the pods in the workload.
+     */
+
+    public Boolean isHostPID() {
+        return this.hostPID;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -448,7 +610,13 @@ public class KubernetesWorkloadDetails implements Serializable, Cloneable, Struc
         if (getContainers() != null)
             sb.append("Containers: ").append(getContainers()).append(",");
         if (getVolumes() != null)
-            sb.append("Volumes: ").append(getVolumes());
+            sb.append("Volumes: ").append(getVolumes()).append(",");
+        if (getServiceAccountName() != null)
+            sb.append("ServiceAccountName: ").append(getServiceAccountName()).append(",");
+        if (getHostIPC() != null)
+            sb.append("HostIPC: ").append(getHostIPC()).append(",");
+        if (getHostPID() != null)
+            sb.append("HostPID: ").append(getHostPID());
         sb.append("}");
         return sb.toString();
     }
@@ -491,6 +659,18 @@ public class KubernetesWorkloadDetails implements Serializable, Cloneable, Struc
             return false;
         if (other.getVolumes() != null && other.getVolumes().equals(this.getVolumes()) == false)
             return false;
+        if (other.getServiceAccountName() == null ^ this.getServiceAccountName() == null)
+            return false;
+        if (other.getServiceAccountName() != null && other.getServiceAccountName().equals(this.getServiceAccountName()) == false)
+            return false;
+        if (other.getHostIPC() == null ^ this.getHostIPC() == null)
+            return false;
+        if (other.getHostIPC() != null && other.getHostIPC().equals(this.getHostIPC()) == false)
+            return false;
+        if (other.getHostPID() == null ^ this.getHostPID() == null)
+            return false;
+        if (other.getHostPID() != null && other.getHostPID().equals(this.getHostPID()) == false)
+            return false;
         return true;
     }
 
@@ -506,6 +686,9 @@ public class KubernetesWorkloadDetails implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getHostNetwork() == null) ? 0 : getHostNetwork().hashCode());
         hashCode = prime * hashCode + ((getContainers() == null) ? 0 : getContainers().hashCode());
         hashCode = prime * hashCode + ((getVolumes() == null) ? 0 : getVolumes().hashCode());
+        hashCode = prime * hashCode + ((getServiceAccountName() == null) ? 0 : getServiceAccountName().hashCode());
+        hashCode = prime * hashCode + ((getHostIPC() == null) ? 0 : getHostIPC().hashCode());
+        hashCode = prime * hashCode + ((getHostPID() == null) ? 0 : getHostPID().hashCode());
         return hashCode;
     }
 

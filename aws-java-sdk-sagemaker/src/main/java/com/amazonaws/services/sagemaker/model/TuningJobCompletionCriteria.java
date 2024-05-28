@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,20 @@ public class TuningJobCompletionCriteria implements Serializable, Cloneable, Str
      * </p>
      */
     private Float targetObjectiveMetricValue;
+    /**
+     * <p>
+     * A flag to stop your hyperparameter tuning job if model performance fails to improve as evaluated against an
+     * objective function.
+     * </p>
+     */
+    private BestObjectiveNotImproving bestObjectiveNotImproving;
+    /**
+     * <p>
+     * A flag to top your hyperparameter tuning job if automatic model tuning (AMT) has detected that your model has
+     * converged as evaluated against your objective function.
+     * </p>
+     */
+    private ConvergenceDetected convergenceDetected;
 
     /**
      * <p>
@@ -76,6 +90,98 @@ public class TuningJobCompletionCriteria implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * A flag to stop your hyperparameter tuning job if model performance fails to improve as evaluated against an
+     * objective function.
+     * </p>
+     * 
+     * @param bestObjectiveNotImproving
+     *        A flag to stop your hyperparameter tuning job if model performance fails to improve as evaluated against
+     *        an objective function.
+     */
+
+    public void setBestObjectiveNotImproving(BestObjectiveNotImproving bestObjectiveNotImproving) {
+        this.bestObjectiveNotImproving = bestObjectiveNotImproving;
+    }
+
+    /**
+     * <p>
+     * A flag to stop your hyperparameter tuning job if model performance fails to improve as evaluated against an
+     * objective function.
+     * </p>
+     * 
+     * @return A flag to stop your hyperparameter tuning job if model performance fails to improve as evaluated against
+     *         an objective function.
+     */
+
+    public BestObjectiveNotImproving getBestObjectiveNotImproving() {
+        return this.bestObjectiveNotImproving;
+    }
+
+    /**
+     * <p>
+     * A flag to stop your hyperparameter tuning job if model performance fails to improve as evaluated against an
+     * objective function.
+     * </p>
+     * 
+     * @param bestObjectiveNotImproving
+     *        A flag to stop your hyperparameter tuning job if model performance fails to improve as evaluated against
+     *        an objective function.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TuningJobCompletionCriteria withBestObjectiveNotImproving(BestObjectiveNotImproving bestObjectiveNotImproving) {
+        setBestObjectiveNotImproving(bestObjectiveNotImproving);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A flag to top your hyperparameter tuning job if automatic model tuning (AMT) has detected that your model has
+     * converged as evaluated against your objective function.
+     * </p>
+     * 
+     * @param convergenceDetected
+     *        A flag to top your hyperparameter tuning job if automatic model tuning (AMT) has detected that your model
+     *        has converged as evaluated against your objective function.
+     */
+
+    public void setConvergenceDetected(ConvergenceDetected convergenceDetected) {
+        this.convergenceDetected = convergenceDetected;
+    }
+
+    /**
+     * <p>
+     * A flag to top your hyperparameter tuning job if automatic model tuning (AMT) has detected that your model has
+     * converged as evaluated against your objective function.
+     * </p>
+     * 
+     * @return A flag to top your hyperparameter tuning job if automatic model tuning (AMT) has detected that your model
+     *         has converged as evaluated against your objective function.
+     */
+
+    public ConvergenceDetected getConvergenceDetected() {
+        return this.convergenceDetected;
+    }
+
+    /**
+     * <p>
+     * A flag to top your hyperparameter tuning job if automatic model tuning (AMT) has detected that your model has
+     * converged as evaluated against your objective function.
+     * </p>
+     * 
+     * @param convergenceDetected
+     *        A flag to top your hyperparameter tuning job if automatic model tuning (AMT) has detected that your model
+     *        has converged as evaluated against your objective function.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TuningJobCompletionCriteria withConvergenceDetected(ConvergenceDetected convergenceDetected) {
+        setConvergenceDetected(convergenceDetected);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +194,11 @@ public class TuningJobCompletionCriteria implements Serializable, Cloneable, Str
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTargetObjectiveMetricValue() != null)
-            sb.append("TargetObjectiveMetricValue: ").append(getTargetObjectiveMetricValue());
+            sb.append("TargetObjectiveMetricValue: ").append(getTargetObjectiveMetricValue()).append(",");
+        if (getBestObjectiveNotImproving() != null)
+            sb.append("BestObjectiveNotImproving: ").append(getBestObjectiveNotImproving()).append(",");
+        if (getConvergenceDetected() != null)
+            sb.append("ConvergenceDetected: ").append(getConvergenceDetected());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +217,14 @@ public class TuningJobCompletionCriteria implements Serializable, Cloneable, Str
             return false;
         if (other.getTargetObjectiveMetricValue() != null && other.getTargetObjectiveMetricValue().equals(this.getTargetObjectiveMetricValue()) == false)
             return false;
+        if (other.getBestObjectiveNotImproving() == null ^ this.getBestObjectiveNotImproving() == null)
+            return false;
+        if (other.getBestObjectiveNotImproving() != null && other.getBestObjectiveNotImproving().equals(this.getBestObjectiveNotImproving()) == false)
+            return false;
+        if (other.getConvergenceDetected() == null ^ this.getConvergenceDetected() == null)
+            return false;
+        if (other.getConvergenceDetected() != null && other.getConvergenceDetected().equals(this.getConvergenceDetected()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +234,8 @@ public class TuningJobCompletionCriteria implements Serializable, Cloneable, Str
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getTargetObjectiveMetricValue() == null) ? 0 : getTargetObjectiveMetricValue().hashCode());
+        hashCode = prime * hashCode + ((getBestObjectiveNotImproving() == null) ? 0 : getBestObjectiveNotImproving().hashCode());
+        hashCode = prime * hashCode + ((getConvergenceDetected() == null) ? 0 : getConvergenceDetected().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,21 +25,21 @@ public class DisableFastLaunchResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The ID of the image for which faster-launching has been turned off.
+     * The ID of the image for which Windows fast launch was disabled.
      * </p>
      */
     private String imageId;
     /**
      * <p>
-     * The pre-provisioning resource type that must be cleaned after turning off faster launching for the Windows AMI.
-     * Supported values include: <code>snapshot</code>.
+     * The pre-provisioning resource type that must be cleaned after turning off Windows fast launch for the Windows
+     * AMI. Supported values include: <code>snapshot</code>.
      * </p>
      */
     private String resourceType;
     /**
      * <p>
-     * Parameters that were used for faster launching for the Windows AMI before faster launching was turned off. This
-     * informs the clean-up process.
+     * Parameters that were used for Windows fast launch for the Windows AMI before Windows fast launch was disabled.
+     * This informs the clean-up process.
      * </p>
      */
     private FastLaunchSnapshotConfigurationResponse snapshotConfiguration;
@@ -51,42 +51,43 @@ public class DisableFastLaunchResult extends com.amazonaws.AmazonWebServiceResul
     private FastLaunchLaunchTemplateSpecificationResponse launchTemplate;
     /**
      * <p>
-     * The maximum number of parallel instances to launch for creating resources.
+     * The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots
+     * for Windows fast launch.
      * </p>
      */
     private Integer maxParallelLaunches;
     /**
      * <p>
-     * The owner of the Windows AMI for which faster launching was turned off.
+     * The owner of the Windows AMI for which Windows fast launch was disabled.
      * </p>
      */
     private String ownerId;
     /**
      * <p>
-     * The current state of faster launching for the specified Windows AMI.
+     * The current state of Windows fast launch for the specified Windows AMI.
      * </p>
      */
     private String state;
     /**
      * <p>
-     * The reason that the state changed for faster launching for the Windows AMI.
+     * The reason that the state changed for Windows fast launch for the Windows AMI.
      * </p>
      */
     private String stateTransitionReason;
     /**
      * <p>
-     * The time that the state changed for faster launching for the Windows AMI.
+     * The time that the state changed for Windows fast launch for the Windows AMI.
      * </p>
      */
     private java.util.Date stateTransitionTime;
 
     /**
      * <p>
-     * The ID of the image for which faster-launching has been turned off.
+     * The ID of the image for which Windows fast launch was disabled.
      * </p>
      * 
      * @param imageId
-     *        The ID of the image for which faster-launching has been turned off.
+     *        The ID of the image for which Windows fast launch was disabled.
      */
 
     public void setImageId(String imageId) {
@@ -95,10 +96,10 @@ public class DisableFastLaunchResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The ID of the image for which faster-launching has been turned off.
+     * The ID of the image for which Windows fast launch was disabled.
      * </p>
      * 
-     * @return The ID of the image for which faster-launching has been turned off.
+     * @return The ID of the image for which Windows fast launch was disabled.
      */
 
     public String getImageId() {
@@ -107,11 +108,11 @@ public class DisableFastLaunchResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The ID of the image for which faster-launching has been turned off.
+     * The ID of the image for which Windows fast launch was disabled.
      * </p>
      * 
      * @param imageId
-     *        The ID of the image for which faster-launching has been turned off.
+     *        The ID of the image for which Windows fast launch was disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,13 +123,13 @@ public class DisableFastLaunchResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The pre-provisioning resource type that must be cleaned after turning off faster launching for the Windows AMI.
-     * Supported values include: <code>snapshot</code>.
+     * The pre-provisioning resource type that must be cleaned after turning off Windows fast launch for the Windows
+     * AMI. Supported values include: <code>snapshot</code>.
      * </p>
      * 
      * @param resourceType
-     *        The pre-provisioning resource type that must be cleaned after turning off faster launching for the Windows
-     *        AMI. Supported values include: <code>snapshot</code>.
+     *        The pre-provisioning resource type that must be cleaned after turning off Windows fast launch for the
+     *        Windows AMI. Supported values include: <code>snapshot</code>.
      * @see FastLaunchResourceType
      */
 
@@ -138,11 +139,11 @@ public class DisableFastLaunchResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The pre-provisioning resource type that must be cleaned after turning off faster launching for the Windows AMI.
-     * Supported values include: <code>snapshot</code>.
+     * The pre-provisioning resource type that must be cleaned after turning off Windows fast launch for the Windows
+     * AMI. Supported values include: <code>snapshot</code>.
      * </p>
      * 
-     * @return The pre-provisioning resource type that must be cleaned after turning off faster launching for the
+     * @return The pre-provisioning resource type that must be cleaned after turning off Windows fast launch for the
      *         Windows AMI. Supported values include: <code>snapshot</code>.
      * @see FastLaunchResourceType
      */
@@ -153,13 +154,13 @@ public class DisableFastLaunchResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The pre-provisioning resource type that must be cleaned after turning off faster launching for the Windows AMI.
-     * Supported values include: <code>snapshot</code>.
+     * The pre-provisioning resource type that must be cleaned after turning off Windows fast launch for the Windows
+     * AMI. Supported values include: <code>snapshot</code>.
      * </p>
      * 
      * @param resourceType
-     *        The pre-provisioning resource type that must be cleaned after turning off faster launching for the Windows
-     *        AMI. Supported values include: <code>snapshot</code>.
+     *        The pre-provisioning resource type that must be cleaned after turning off Windows fast launch for the
+     *        Windows AMI. Supported values include: <code>snapshot</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FastLaunchResourceType
      */
@@ -171,13 +172,13 @@ public class DisableFastLaunchResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The pre-provisioning resource type that must be cleaned after turning off faster launching for the Windows AMI.
-     * Supported values include: <code>snapshot</code>.
+     * The pre-provisioning resource type that must be cleaned after turning off Windows fast launch for the Windows
+     * AMI. Supported values include: <code>snapshot</code>.
      * </p>
      * 
      * @param resourceType
-     *        The pre-provisioning resource type that must be cleaned after turning off faster launching for the Windows
-     *        AMI. Supported values include: <code>snapshot</code>.
+     *        The pre-provisioning resource type that must be cleaned after turning off Windows fast launch for the
+     *        Windows AMI. Supported values include: <code>snapshot</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FastLaunchResourceType
      */
@@ -189,13 +190,13 @@ public class DisableFastLaunchResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Parameters that were used for faster launching for the Windows AMI before faster launching was turned off. This
-     * informs the clean-up process.
+     * Parameters that were used for Windows fast launch for the Windows AMI before Windows fast launch was disabled.
+     * This informs the clean-up process.
      * </p>
      * 
      * @param snapshotConfiguration
-     *        Parameters that were used for faster launching for the Windows AMI before faster launching was turned off.
-     *        This informs the clean-up process.
+     *        Parameters that were used for Windows fast launch for the Windows AMI before Windows fast launch was
+     *        disabled. This informs the clean-up process.
      */
 
     public void setSnapshotConfiguration(FastLaunchSnapshotConfigurationResponse snapshotConfiguration) {
@@ -204,12 +205,12 @@ public class DisableFastLaunchResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Parameters that were used for faster launching for the Windows AMI before faster launching was turned off. This
-     * informs the clean-up process.
+     * Parameters that were used for Windows fast launch for the Windows AMI before Windows fast launch was disabled.
+     * This informs the clean-up process.
      * </p>
      * 
-     * @return Parameters that were used for faster launching for the Windows AMI before faster launching was turned
-     *         off. This informs the clean-up process.
+     * @return Parameters that were used for Windows fast launch for the Windows AMI before Windows fast launch was
+     *         disabled. This informs the clean-up process.
      */
 
     public FastLaunchSnapshotConfigurationResponse getSnapshotConfiguration() {
@@ -218,13 +219,13 @@ public class DisableFastLaunchResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Parameters that were used for faster launching for the Windows AMI before faster launching was turned off. This
-     * informs the clean-up process.
+     * Parameters that were used for Windows fast launch for the Windows AMI before Windows fast launch was disabled.
+     * This informs the clean-up process.
      * </p>
      * 
      * @param snapshotConfiguration
-     *        Parameters that were used for faster launching for the Windows AMI before faster launching was turned off.
-     *        This informs the clean-up process.
+     *        Parameters that were used for Windows fast launch for the Windows AMI before Windows fast launch was
+     *        disabled. This informs the clean-up process.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -275,11 +276,13 @@ public class DisableFastLaunchResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The maximum number of parallel instances to launch for creating resources.
+     * The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots
+     * for Windows fast launch.
      * </p>
      * 
      * @param maxParallelLaunches
-     *        The maximum number of parallel instances to launch for creating resources.
+     *        The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned
+     *        snapshots for Windows fast launch.
      */
 
     public void setMaxParallelLaunches(Integer maxParallelLaunches) {
@@ -288,10 +291,12 @@ public class DisableFastLaunchResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The maximum number of parallel instances to launch for creating resources.
+     * The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots
+     * for Windows fast launch.
      * </p>
      * 
-     * @return The maximum number of parallel instances to launch for creating resources.
+     * @return The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned
+     *         snapshots for Windows fast launch.
      */
 
     public Integer getMaxParallelLaunches() {
@@ -300,11 +305,13 @@ public class DisableFastLaunchResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The maximum number of parallel instances to launch for creating resources.
+     * The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots
+     * for Windows fast launch.
      * </p>
      * 
      * @param maxParallelLaunches
-     *        The maximum number of parallel instances to launch for creating resources.
+     *        The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned
+     *        snapshots for Windows fast launch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -315,11 +322,11 @@ public class DisableFastLaunchResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The owner of the Windows AMI for which faster launching was turned off.
+     * The owner of the Windows AMI for which Windows fast launch was disabled.
      * </p>
      * 
      * @param ownerId
-     *        The owner of the Windows AMI for which faster launching was turned off.
+     *        The owner of the Windows AMI for which Windows fast launch was disabled.
      */
 
     public void setOwnerId(String ownerId) {
@@ -328,10 +335,10 @@ public class DisableFastLaunchResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The owner of the Windows AMI for which faster launching was turned off.
+     * The owner of the Windows AMI for which Windows fast launch was disabled.
      * </p>
      * 
-     * @return The owner of the Windows AMI for which faster launching was turned off.
+     * @return The owner of the Windows AMI for which Windows fast launch was disabled.
      */
 
     public String getOwnerId() {
@@ -340,11 +347,11 @@ public class DisableFastLaunchResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The owner of the Windows AMI for which faster launching was turned off.
+     * The owner of the Windows AMI for which Windows fast launch was disabled.
      * </p>
      * 
      * @param ownerId
-     *        The owner of the Windows AMI for which faster launching was turned off.
+     *        The owner of the Windows AMI for which Windows fast launch was disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,11 +362,11 @@ public class DisableFastLaunchResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The current state of faster launching for the specified Windows AMI.
+     * The current state of Windows fast launch for the specified Windows AMI.
      * </p>
      * 
      * @param state
-     *        The current state of faster launching for the specified Windows AMI.
+     *        The current state of Windows fast launch for the specified Windows AMI.
      * @see FastLaunchStateCode
      */
 
@@ -369,10 +376,10 @@ public class DisableFastLaunchResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The current state of faster launching for the specified Windows AMI.
+     * The current state of Windows fast launch for the specified Windows AMI.
      * </p>
      * 
-     * @return The current state of faster launching for the specified Windows AMI.
+     * @return The current state of Windows fast launch for the specified Windows AMI.
      * @see FastLaunchStateCode
      */
 
@@ -382,11 +389,11 @@ public class DisableFastLaunchResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The current state of faster launching for the specified Windows AMI.
+     * The current state of Windows fast launch for the specified Windows AMI.
      * </p>
      * 
      * @param state
-     *        The current state of faster launching for the specified Windows AMI.
+     *        The current state of Windows fast launch for the specified Windows AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FastLaunchStateCode
      */
@@ -398,11 +405,11 @@ public class DisableFastLaunchResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The current state of faster launching for the specified Windows AMI.
+     * The current state of Windows fast launch for the specified Windows AMI.
      * </p>
      * 
      * @param state
-     *        The current state of faster launching for the specified Windows AMI.
+     *        The current state of Windows fast launch for the specified Windows AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FastLaunchStateCode
      */
@@ -414,11 +421,11 @@ public class DisableFastLaunchResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The reason that the state changed for faster launching for the Windows AMI.
+     * The reason that the state changed for Windows fast launch for the Windows AMI.
      * </p>
      * 
      * @param stateTransitionReason
-     *        The reason that the state changed for faster launching for the Windows AMI.
+     *        The reason that the state changed for Windows fast launch for the Windows AMI.
      */
 
     public void setStateTransitionReason(String stateTransitionReason) {
@@ -427,10 +434,10 @@ public class DisableFastLaunchResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The reason that the state changed for faster launching for the Windows AMI.
+     * The reason that the state changed for Windows fast launch for the Windows AMI.
      * </p>
      * 
-     * @return The reason that the state changed for faster launching for the Windows AMI.
+     * @return The reason that the state changed for Windows fast launch for the Windows AMI.
      */
 
     public String getStateTransitionReason() {
@@ -439,11 +446,11 @@ public class DisableFastLaunchResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The reason that the state changed for faster launching for the Windows AMI.
+     * The reason that the state changed for Windows fast launch for the Windows AMI.
      * </p>
      * 
      * @param stateTransitionReason
-     *        The reason that the state changed for faster launching for the Windows AMI.
+     *        The reason that the state changed for Windows fast launch for the Windows AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -454,11 +461,11 @@ public class DisableFastLaunchResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The time that the state changed for faster launching for the Windows AMI.
+     * The time that the state changed for Windows fast launch for the Windows AMI.
      * </p>
      * 
      * @param stateTransitionTime
-     *        The time that the state changed for faster launching for the Windows AMI.
+     *        The time that the state changed for Windows fast launch for the Windows AMI.
      */
 
     public void setStateTransitionTime(java.util.Date stateTransitionTime) {
@@ -467,10 +474,10 @@ public class DisableFastLaunchResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The time that the state changed for faster launching for the Windows AMI.
+     * The time that the state changed for Windows fast launch for the Windows AMI.
      * </p>
      * 
-     * @return The time that the state changed for faster launching for the Windows AMI.
+     * @return The time that the state changed for Windows fast launch for the Windows AMI.
      */
 
     public java.util.Date getStateTransitionTime() {
@@ -479,11 +486,11 @@ public class DisableFastLaunchResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The time that the state changed for faster launching for the Windows AMI.
+     * The time that the state changed for Windows fast launch for the Windows AMI.
      * </p>
      * 
      * @param stateTransitionTime
-     *        The time that the state changed for faster launching for the Windows AMI.
+     *        The time that the state changed for Windows fast launch for the Windows AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

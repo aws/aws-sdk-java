@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.kafkaconnect.AWSKafkaConnectClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.kafkaconnect.model.*;
+
 import com.amazonaws.services.kafkaconnect.model.transform.*;
 
 /**
@@ -76,17 +77,17 @@ public class AWSKafkaConnectClient extends AmazonWebServiceClient implements AWS
                     .withSupportsIon(false)
                     .withContentTypeOverride("application/json")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.kafkaconnect.model.transform.ConflictExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kafkaconnect.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.kafkaconnect.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("UnauthorizedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kafkaconnect.model.transform.UnauthorizedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kafkaconnect.model.transform.ConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kafkaconnect.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ForbiddenException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kafkaconnect.model.transform.ForbiddenExceptionUnmarshaller.getInstance()))
@@ -505,6 +506,77 @@ public class AWSKafkaConnectClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Deletes the specified worker configuration.
+     * </p>
+     * 
+     * @param deleteWorkerConfigurationRequest
+     * @return Result of the DeleteWorkerConfiguration operation returned by the service.
+     * @throws NotFoundException
+     *         HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.
+     * @throws BadRequestException
+     *         HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.
+     * @throws ForbiddenException
+     *         HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.
+     * @throws ServiceUnavailableException
+     *         HTTP Status Code 503: Service Unavailable. Retrying your request in some time might resolve the issue.
+     * @throws TooManyRequestsException
+     *         HTTP Status Code 429: Limit exceeded. Resource limit reached.
+     * @throws UnauthorizedException
+     *         HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.
+     * @throws InternalServerErrorException
+     *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
+     * @sample AWSKafkaConnect.DeleteWorkerConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/DeleteWorkerConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteWorkerConfigurationResult deleteWorkerConfiguration(DeleteWorkerConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteWorkerConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteWorkerConfigurationResult executeDeleteWorkerConfiguration(DeleteWorkerConfigurationRequest deleteWorkerConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteWorkerConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteWorkerConfigurationRequest> request = null;
+        Response<DeleteWorkerConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteWorkerConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteWorkerConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KafkaConnect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteWorkerConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteWorkerConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteWorkerConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns summary information about the connector.
      * </p>
      * 
@@ -853,6 +925,75 @@ public class AWSKafkaConnectClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Lists all the tags attached to the specified resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws NotFoundException
+     *         HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.
+     * @throws BadRequestException
+     *         HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.
+     * @throws ForbiddenException
+     *         HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.
+     * @throws ServiceUnavailableException
+     *         HTTP Status Code 503: Service Unavailable. Retrying your request in some time might resolve the issue.
+     * @throws TooManyRequestsException
+     *         HTTP Status Code 429: Limit exceeded. Resource limit reached.
+     * @throws UnauthorizedException
+     *         HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.
+     * @throws InternalServerErrorException
+     *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
+     * @sample AWSKafkaConnect.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KafkaConnect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of all of the worker configurations in this account and Region.
      * </p>
      * 
@@ -912,6 +1053,147 @@ public class AWSKafkaConnectClient extends AmazonWebServiceClient implements AWS
             HttpResponseHandler<AmazonWebServiceResponse<ListWorkerConfigurationsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListWorkerConfigurationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Attaches tags to the specified resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws NotFoundException
+     *         HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.
+     * @throws ConflictException
+     *         HTTP Status Code 409: Conflict. A resource with this name already exists. Retry your request with another
+     *         name.
+     * @throws BadRequestException
+     *         HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.
+     * @throws ForbiddenException
+     *         HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.
+     * @throws ServiceUnavailableException
+     *         HTTP Status Code 503: Service Unavailable. Retrying your request in some time might resolve the issue.
+     * @throws TooManyRequestsException
+     *         HTTP Status Code 429: Limit exceeded. Resource limit reached.
+     * @throws UnauthorizedException
+     *         HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.
+     * @throws InternalServerErrorException
+     *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
+     * @sample AWSKafkaConnect.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KafkaConnect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes tags from the specified resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws NotFoundException
+     *         HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.
+     * @throws BadRequestException
+     *         HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.
+     * @throws ForbiddenException
+     *         HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.
+     * @throws ServiceUnavailableException
+     *         HTTP Status Code 503: Service Unavailable. Retrying your request in some time might resolve the issue.
+     * @throws TooManyRequestsException
+     *         HTTP Status Code 429: Limit exceeded. Resource limit reached.
+     * @throws UnauthorizedException
+     *         HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.
+     * @throws InternalServerErrorException
+     *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
+     * @sample AWSKafkaConnect.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafkaconnect-2021-09-14/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KafkaConnect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -78,9 +78,9 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * <code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks
-     * stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as
-     * many as four versions.
+     * <code>rollback</code> Roll the app back to the previous version. When you update an app, OpsWorks Stacks stores
+     * the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as
+     * four versions.
      * </p>
      * </li>
      * <li>
@@ -119,24 +119,23 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to
-     * upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to
-     * true.
+     * <code>upgrade_os_to</code> - Specifies the Amazon Linux version that you want instances to run, such as
+     * <code>Amazon Linux 2</code>. You must also set the <code>allow_reboot</code> argument to true.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if necessary,
+     * <code>allow_reboot</code> - Specifies whether to allow OpsWorks Stacks to reboot the instances if necessary,
      * after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The
      * default value is <code>false</code>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.
+     * For example, to upgrade an instance to Amazon Linux 2018.03, set <code>Args</code> to the following.
      * </p>
      * <p>
-     * <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code>
+     * <code> { "upgrade_os_to":["Amazon Linux 2018.03"], "allow_reboot":["true"] } </code>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, java.util.List<String>> args;
@@ -191,9 +190,9 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * <code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks
-     * stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as
-     * many as four versions.
+     * <code>rollback</code> Roll the app back to the previous version. When you update an app, OpsWorks Stacks stores
+     * the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as
+     * four versions.
      * </p>
      * </li>
      * <li>
@@ -267,9 +266,9 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        <code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks
-     *        Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an
-     *        app back as many as four versions.
+     *        <code>rollback</code> Roll the app back to the previous version. When you update an app, OpsWorks Stacks
+     *        stores the previous version, up to a maximum of five versions. You can use this command to roll an app
+     *        back as many as four versions.
      *        </p>
      *        </li>
      *        <li>
@@ -349,9 +348,9 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * <code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks
-     * stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as
-     * many as four versions.
+     * <code>rollback</code> Roll the app back to the previous version. When you update an app, OpsWorks Stacks stores
+     * the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as
+     * four versions.
      * </p>
      * </li>
      * <li>
@@ -424,9 +423,9 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      *         </li>
      *         <li>
      *         <p>
-     *         <code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks
-     *         Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an
-     *         app back as many as four versions.
+     *         <code>rollback</code> Roll the app back to the previous version. When you update an app, OpsWorks Stacks
+     *         stores the previous version, up to a maximum of five versions. You can use this command to roll an app
+     *         back as many as four versions.
      *         </p>
      *         </li>
      *         <li>
@@ -506,9 +505,9 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * <code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks
-     * stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as
-     * many as four versions.
+     * <code>rollback</code> Roll the app back to the previous version. When you update an app, OpsWorks Stacks stores
+     * the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as
+     * four versions.
      * </p>
      * </li>
      * <li>
@@ -582,9 +581,9 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        <code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks
-     *        Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an
-     *        app back as many as four versions.
+     *        <code>rollback</code> Roll the app back to the previous version. When you update an app, OpsWorks Stacks
+     *        stores the previous version, up to a maximum of five versions. You can use this command to roll an app
+     *        back as many as four versions.
      *        </p>
      *        </li>
      *        <li>
@@ -666,9 +665,9 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * <code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks
-     * stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as
-     * many as four versions.
+     * <code>rollback</code> Roll the app back to the previous version. When you update an app, OpsWorks Stacks stores
+     * the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as
+     * four versions.
      * </p>
      * </li>
      * <li>
@@ -742,9 +741,9 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        <code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks
-     *        Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an
-     *        app back as many as four versions.
+     *        <code>rollback</code> Roll the app back to the previous version. When you update an app, OpsWorks Stacks
+     *        stores the previous version, up to a maximum of five versions. You can use this command to roll an app
+     *        back as many as four versions.
      *        </p>
      *        </li>
      *        <li>
@@ -824,9 +823,9 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * <code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks Stacks
-     * stores the previous version, up to a maximum of five versions. You can use this command to roll an app back as
-     * many as four versions.
+     * <code>rollback</code> Roll the app back to the previous version. When you update an app, OpsWorks Stacks stores
+     * the previous version, up to a maximum of five versions. You can use this command to roll an app back as many as
+     * four versions.
      * </p>
      * </li>
      * <li>
@@ -900,9 +899,9 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        <code>rollback</code> Roll the app back to the previous version. When you update an app, AWS OpsWorks
-     *        Stacks stores the previous version, up to a maximum of five versions. You can use this command to roll an
-     *        app back as many as four versions.
+     *        <code>rollback</code> Roll the app back to the previous version. When you update an app, OpsWorks Stacks
+     *        stores the previous version, up to a maximum of five versions. You can use this command to roll an app
+     *        back as many as four versions.
      *        </p>
      *        </li>
      *        <li>
@@ -947,24 +946,23 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to
-     * upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to
-     * true.
+     * <code>upgrade_os_to</code> - Specifies the Amazon Linux version that you want instances to run, such as
+     * <code>Amazon Linux 2</code>. You must also set the <code>allow_reboot</code> argument to true.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if necessary,
+     * <code>allow_reboot</code> - Specifies whether to allow OpsWorks Stacks to reboot the instances if necessary,
      * after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The
      * default value is <code>false</code>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.
+     * For example, to upgrade an instance to Amazon Linux 2018.03, set <code>Args</code> to the following.
      * </p>
      * <p>
-     * <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code>
+     * <code> { "upgrade_os_to":["Amazon Linux 2018.03"], "allow_reboot":["true"] } </code>
      * </p>
      * 
      * @return The arguments of those commands that take arguments. It should be set to a JSON object with the following
@@ -978,24 +976,23 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want
-     *         to upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code>
-     *         argument to true.
+     *         <code>upgrade_os_to</code> - Specifies the Amazon Linux version that you want instances to run, such as
+     *         <code>Amazon Linux 2</code>. You must also set the <code>allow_reboot</code> argument to true.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if
+     *         <code>allow_reboot</code> - Specifies whether to allow OpsWorks Stacks to reboot the instances if
      *         necessary, after installing the updates. This argument can be set to either <code>true</code> or
      *         <code>false</code>. The default value is <code>false</code>.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.
+     *         For example, to upgrade an instance to Amazon Linux 2018.03, set <code>Args</code> to the following.
      *         </p>
      *         <p>
-     *         <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code>
+     *         <code> { "upgrade_os_to":["Amazon Linux 2018.03"], "allow_reboot":["true"] } </code>
      */
 
     public java.util.Map<String, java.util.List<String>> getArgs() {
@@ -1018,24 +1015,23 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to
-     * upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to
-     * true.
+     * <code>upgrade_os_to</code> - Specifies the Amazon Linux version that you want instances to run, such as
+     * <code>Amazon Linux 2</code>. You must also set the <code>allow_reboot</code> argument to true.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if necessary,
+     * <code>allow_reboot</code> - Specifies whether to allow OpsWorks Stacks to reboot the instances if necessary,
      * after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The
      * default value is <code>false</code>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.
+     * For example, to upgrade an instance to Amazon Linux 2018.03, set <code>Args</code> to the following.
      * </p>
      * <p>
-     * <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code>
+     * <code> { "upgrade_os_to":["Amazon Linux 2018.03"], "allow_reboot":["true"] } </code>
      * </p>
      * 
      * @param args
@@ -1050,24 +1046,23 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to
-     *        upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code>
-     *        argument to true.
+     *        <code>upgrade_os_to</code> - Specifies the Amazon Linux version that you want instances to run, such as
+     *        <code>Amazon Linux 2</code>. You must also set the <code>allow_reboot</code> argument to true.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if
+     *        <code>allow_reboot</code> - Specifies whether to allow OpsWorks Stacks to reboot the instances if
      *        necessary, after installing the updates. This argument can be set to either <code>true</code> or
      *        <code>false</code>. The default value is <code>false</code>.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.
+     *        For example, to upgrade an instance to Amazon Linux 2018.03, set <code>Args</code> to the following.
      *        </p>
      *        <p>
-     *        <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code>
+     *        <code> { "upgrade_os_to":["Amazon Linux 2018.03"], "allow_reboot":["true"] } </code>
      */
 
     public void setArgs(java.util.Map<String, java.util.List<String>> args) {
@@ -1087,24 +1082,23 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to
-     * upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code> argument to
-     * true.
+     * <code>upgrade_os_to</code> - Specifies the Amazon Linux version that you want instances to run, such as
+     * <code>Amazon Linux 2</code>. You must also set the <code>allow_reboot</code> argument to true.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if necessary,
+     * <code>allow_reboot</code> - Specifies whether to allow OpsWorks Stacks to reboot the instances if necessary,
      * after installing the updates. This argument can be set to either <code>true</code> or <code>false</code>. The
      * default value is <code>false</code>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.
+     * For example, to upgrade an instance to Amazon Linux 2018.03, set <code>Args</code> to the following.
      * </p>
      * <p>
-     * <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code>
+     * <code> { "upgrade_os_to":["Amazon Linux 2018.03"], "allow_reboot":["true"] } </code>
      * </p>
      * 
      * @param args
@@ -1119,24 +1113,23 @@ public class DeploymentCommand implements Serializable, Cloneable, StructuredPoj
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>upgrade_os_to</code> - Specifies the desired Amazon Linux version for instances whose OS you want to
-     *        upgrade, such as <code>Amazon Linux 2016.09</code>. You must also set the <code>allow_reboot</code>
-     *        argument to true.
+     *        <code>upgrade_os_to</code> - Specifies the Amazon Linux version that you want instances to run, such as
+     *        <code>Amazon Linux 2</code>. You must also set the <code>allow_reboot</code> argument to true.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>allow_reboot</code> - Specifies whether to allow AWS OpsWorks Stacks to reboot the instances if
+     *        <code>allow_reboot</code> - Specifies whether to allow OpsWorks Stacks to reboot the instances if
      *        necessary, after installing the updates. This argument can be set to either <code>true</code> or
      *        <code>false</code>. The default value is <code>false</code>.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        For example, to upgrade an instance to Amazon Linux 2016.09, set <code>Args</code> to the following.
+     *        For example, to upgrade an instance to Amazon Linux 2018.03, set <code>Args</code> to the following.
      *        </p>
      *        <p>
-     *        <code> { "upgrade_os_to":["Amazon Linux 2016.09"], "allow_reboot":["true"] } </code>
+     *        <code> { "upgrade_os_to":["Amazon Linux 2018.03"], "allow_reboot":["true"] } </code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

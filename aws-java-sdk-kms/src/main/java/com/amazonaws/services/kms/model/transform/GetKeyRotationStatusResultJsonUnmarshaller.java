@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,22 @@ public class GetKeyRotationStatusResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("KeyRotationEnabled", targetDepth)) {
                     context.nextToken();
                     getKeyRotationStatusResult.setKeyRotationEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("KeyId", targetDepth)) {
+                    context.nextToken();
+                    getKeyRotationStatusResult.setKeyId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("RotationPeriodInDays", targetDepth)) {
+                    context.nextToken();
+                    getKeyRotationStatusResult.setRotationPeriodInDays(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("NextRotationDate", targetDepth)) {
+                    context.nextToken();
+                    getKeyRotationStatusResult.setNextRotationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("OnDemandRotationStartDate", targetDepth)) {
+                    context.nextToken();
+                    getKeyRotationStatusResult.setOnDemandRotationStartDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

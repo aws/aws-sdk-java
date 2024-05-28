@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -127,6 +127,12 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private DataSetUsageConfiguration dataSetUsageConfiguration;
+    /**
+     * <p>
+     * The parameters that are declared in a dataset.
+     * </p>
+     */
+    private java.util.List<DatasetParameter> datasetParameters;
 
     /**
      * <p>
@@ -990,6 +996,76 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The parameters that are declared in a dataset.
+     * </p>
+     * 
+     * @return The parameters that are declared in a dataset.
+     */
+
+    public java.util.List<DatasetParameter> getDatasetParameters() {
+        return datasetParameters;
+    }
+
+    /**
+     * <p>
+     * The parameters that are declared in a dataset.
+     * </p>
+     * 
+     * @param datasetParameters
+     *        The parameters that are declared in a dataset.
+     */
+
+    public void setDatasetParameters(java.util.Collection<DatasetParameter> datasetParameters) {
+        if (datasetParameters == null) {
+            this.datasetParameters = null;
+            return;
+        }
+
+        this.datasetParameters = new java.util.ArrayList<DatasetParameter>(datasetParameters);
+    }
+
+    /**
+     * <p>
+     * The parameters that are declared in a dataset.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDatasetParameters(java.util.Collection)} or {@link #withDatasetParameters(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param datasetParameters
+     *        The parameters that are declared in a dataset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSet withDatasetParameters(DatasetParameter... datasetParameters) {
+        if (this.datasetParameters == null) {
+            setDatasetParameters(new java.util.ArrayList<DatasetParameter>(datasetParameters.length));
+        }
+        for (DatasetParameter ele : datasetParameters) {
+            this.datasetParameters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The parameters that are declared in a dataset.
+     * </p>
+     * 
+     * @param datasetParameters
+     *        The parameters that are declared in a dataset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSet withDatasetParameters(java.util.Collection<DatasetParameter> datasetParameters) {
+        setDatasetParameters(datasetParameters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1032,7 +1108,9 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
         if (getColumnLevelPermissionRules() != null)
             sb.append("ColumnLevelPermissionRules: ").append(getColumnLevelPermissionRules()).append(",");
         if (getDataSetUsageConfiguration() != null)
-            sb.append("DataSetUsageConfiguration: ").append(getDataSetUsageConfiguration());
+            sb.append("DataSetUsageConfiguration: ").append(getDataSetUsageConfiguration()).append(",");
+        if (getDatasetParameters() != null)
+            sb.append("DatasetParameters: ").append(getDatasetParameters());
         sb.append("}");
         return sb.toString();
     }
@@ -1112,6 +1190,10 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDataSetUsageConfiguration() != null && other.getDataSetUsageConfiguration().equals(this.getDataSetUsageConfiguration()) == false)
             return false;
+        if (other.getDatasetParameters() == null ^ this.getDatasetParameters() == null)
+            return false;
+        if (other.getDatasetParameters() != null && other.getDatasetParameters().equals(this.getDatasetParameters()) == false)
+            return false;
         return true;
     }
 
@@ -1136,6 +1218,7 @@ public class DataSet implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRowLevelPermissionTagConfiguration() == null) ? 0 : getRowLevelPermissionTagConfiguration().hashCode());
         hashCode = prime * hashCode + ((getColumnLevelPermissionRules() == null) ? 0 : getColumnLevelPermissionRules().hashCode());
         hashCode = prime * hashCode + ((getDataSetUsageConfiguration() == null) ? 0 : getDataSetUsageConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getDatasetParameters() == null) ? 0 : getDatasetParameters().hashCode());
         return hashCode;
     }
 

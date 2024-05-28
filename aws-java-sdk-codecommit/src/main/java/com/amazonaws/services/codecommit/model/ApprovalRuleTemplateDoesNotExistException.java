@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The specified approval rule template does not exist. Verify that the name is correct and that you are signed in to
- * the AWS Region where the template was created, and then try again.
+ * the Amazon Web Services Region where the template was created, and then try again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

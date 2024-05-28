@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,7 +64,7 @@ public class CreateBotResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * <p>
      * Shows the current status of the bot. The bot is first in the <code>Creating</code> status. Once the bot is read
      * for use, it changes to the <code>Available</code> status. After the bot is created, you can use the
-     * <code>Draft</code> version of the bot.
+     * <code>DRAFT</code> version of the bot.
      * </p>
      */
     private String botStatus;
@@ -86,6 +86,18 @@ public class CreateBotResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      */
     private java.util.Map<String, String> testBotAliasTags;
+    /**
+     * <p>
+     * The type of a bot that was created.
+     * </p>
+     */
+    private String botType;
+    /**
+     * <p>
+     * The list of bots in a network that was created.
+     * </p>
+     */
+    private java.util.List<BotMember> botMembers;
 
     /**
      * <p>
@@ -337,13 +349,13 @@ public class CreateBotResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * <p>
      * Shows the current status of the bot. The bot is first in the <code>Creating</code> status. Once the bot is read
      * for use, it changes to the <code>Available</code> status. After the bot is created, you can use the
-     * <code>Draft</code> version of the bot.
+     * <code>DRAFT</code> version of the bot.
      * </p>
      * 
      * @param botStatus
      *        Shows the current status of the bot. The bot is first in the <code>Creating</code> status. Once the bot is
      *        read for use, it changes to the <code>Available</code> status. After the bot is created, you can use the
-     *        <code>Draft</code> version of the bot.
+     *        <code>DRAFT</code> version of the bot.
      * @see BotStatus
      */
 
@@ -355,12 +367,12 @@ public class CreateBotResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * <p>
      * Shows the current status of the bot. The bot is first in the <code>Creating</code> status. Once the bot is read
      * for use, it changes to the <code>Available</code> status. After the bot is created, you can use the
-     * <code>Draft</code> version of the bot.
+     * <code>DRAFT</code> version of the bot.
      * </p>
      * 
      * @return Shows the current status of the bot. The bot is first in the <code>Creating</code> status. Once the bot
      *         is read for use, it changes to the <code>Available</code> status. After the bot is created, you can use
-     *         the <code>Draft</code> version of the bot.
+     *         the <code>DRAFT</code> version of the bot.
      * @see BotStatus
      */
 
@@ -372,13 +384,13 @@ public class CreateBotResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * <p>
      * Shows the current status of the bot. The bot is first in the <code>Creating</code> status. Once the bot is read
      * for use, it changes to the <code>Available</code> status. After the bot is created, you can use the
-     * <code>Draft</code> version of the bot.
+     * <code>DRAFT</code> version of the bot.
      * </p>
      * 
      * @param botStatus
      *        Shows the current status of the bot. The bot is first in the <code>Creating</code> status. Once the bot is
      *        read for use, it changes to the <code>Available</code> status. After the bot is created, you can use the
-     *        <code>Draft</code> version of the bot.
+     *        <code>DRAFT</code> version of the bot.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BotStatus
      */
@@ -392,13 +404,13 @@ public class CreateBotResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * <p>
      * Shows the current status of the bot. The bot is first in the <code>Creating</code> status. Once the bot is read
      * for use, it changes to the <code>Available</code> status. After the bot is created, you can use the
-     * <code>Draft</code> version of the bot.
+     * <code>DRAFT</code> version of the bot.
      * </p>
      * 
      * @param botStatus
      *        Shows the current status of the bot. The bot is first in the <code>Creating</code> status. Once the bot is
      *        read for use, it changes to the <code>Available</code> status. After the bot is created, you can use the
-     *        <code>Draft</code> version of the bot.
+     *        <code>DRAFT</code> version of the bot.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BotStatus
      */
@@ -585,6 +597,135 @@ public class CreateBotResult extends com.amazonaws.AmazonWebServiceResult<com.am
     }
 
     /**
+     * <p>
+     * The type of a bot that was created.
+     * </p>
+     * 
+     * @param botType
+     *        The type of a bot that was created.
+     * @see BotType
+     */
+
+    public void setBotType(String botType) {
+        this.botType = botType;
+    }
+
+    /**
+     * <p>
+     * The type of a bot that was created.
+     * </p>
+     * 
+     * @return The type of a bot that was created.
+     * @see BotType
+     */
+
+    public String getBotType() {
+        return this.botType;
+    }
+
+    /**
+     * <p>
+     * The type of a bot that was created.
+     * </p>
+     * 
+     * @param botType
+     *        The type of a bot that was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BotType
+     */
+
+    public CreateBotResult withBotType(String botType) {
+        setBotType(botType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of a bot that was created.
+     * </p>
+     * 
+     * @param botType
+     *        The type of a bot that was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BotType
+     */
+
+    public CreateBotResult withBotType(BotType botType) {
+        this.botType = botType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of bots in a network that was created.
+     * </p>
+     * 
+     * @return The list of bots in a network that was created.
+     */
+
+    public java.util.List<BotMember> getBotMembers() {
+        return botMembers;
+    }
+
+    /**
+     * <p>
+     * The list of bots in a network that was created.
+     * </p>
+     * 
+     * @param botMembers
+     *        The list of bots in a network that was created.
+     */
+
+    public void setBotMembers(java.util.Collection<BotMember> botMembers) {
+        if (botMembers == null) {
+            this.botMembers = null;
+            return;
+        }
+
+        this.botMembers = new java.util.ArrayList<BotMember>(botMembers);
+    }
+
+    /**
+     * <p>
+     * The list of bots in a network that was created.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setBotMembers(java.util.Collection)} or {@link #withBotMembers(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param botMembers
+     *        The list of bots in a network that was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateBotResult withBotMembers(BotMember... botMembers) {
+        if (this.botMembers == null) {
+            setBotMembers(new java.util.ArrayList<BotMember>(botMembers.length));
+        }
+        for (BotMember ele : botMembers) {
+            this.botMembers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of bots in a network that was created.
+     * </p>
+     * 
+     * @param botMembers
+     *        The list of bots in a network that was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateBotResult withBotMembers(java.util.Collection<BotMember> botMembers) {
+        setBotMembers(botMembers);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -615,7 +756,11 @@ public class CreateBotResult extends com.amazonaws.AmazonWebServiceResult<com.am
         if (getBotTags() != null)
             sb.append("BotTags: ").append(getBotTags()).append(",");
         if (getTestBotAliasTags() != null)
-            sb.append("TestBotAliasTags: ").append(getTestBotAliasTags());
+            sb.append("TestBotAliasTags: ").append(getTestBotAliasTags()).append(",");
+        if (getBotType() != null)
+            sb.append("BotType: ").append(getBotType()).append(",");
+        if (getBotMembers() != null)
+            sb.append("BotMembers: ").append(getBotMembers());
         sb.append("}");
         return sb.toString();
     }
@@ -670,6 +815,14 @@ public class CreateBotResult extends com.amazonaws.AmazonWebServiceResult<com.am
             return false;
         if (other.getTestBotAliasTags() != null && other.getTestBotAliasTags().equals(this.getTestBotAliasTags()) == false)
             return false;
+        if (other.getBotType() == null ^ this.getBotType() == null)
+            return false;
+        if (other.getBotType() != null && other.getBotType().equals(this.getBotType()) == false)
+            return false;
+        if (other.getBotMembers() == null ^ this.getBotMembers() == null)
+            return false;
+        if (other.getBotMembers() != null && other.getBotMembers().equals(this.getBotMembers()) == false)
+            return false;
         return true;
     }
 
@@ -688,6 +841,8 @@ public class CreateBotResult extends com.amazonaws.AmazonWebServiceResult<com.am
         hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());
         hashCode = prime * hashCode + ((getBotTags() == null) ? 0 : getBotTags().hashCode());
         hashCode = prime * hashCode + ((getTestBotAliasTags() == null) ? 0 : getTestBotAliasTags().hashCode());
+        hashCode = prime * hashCode + ((getBotType() == null) ? 0 : getBotType().hashCode());
+        hashCode = prime * hashCode + ((getBotMembers() == null) ? 0 : getBotMembers().hashCode());
         return hashCode;
     }
 

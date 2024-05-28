@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,26 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters
      * from [a-zA-Z0-9_-.\@]+.
      * </p>
+     * <p>
+     * Username can include @ only if used in an email format. For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Correct: testuser
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Correct: testuser@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Incorrect: testuser@example
+     * </p>
+     * </li>
+     * </ul>
      */
     private String username;
     /**
@@ -86,13 +106,15 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String hierarchyGroupId;
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      */
     private String instanceId;
     /**
      * <p>
-     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1",
      * "key2":"value2"} }.
      * </p>
      */
@@ -104,11 +126,50 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters
      * from [a-zA-Z0-9_-.\@]+.
      * </p>
+     * <p>
+     * Username can include @ only if used in an email format. For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Correct: testuser
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Correct: testuser@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Incorrect: testuser@example
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param username
      *        The user name for the account. For instances not using SAML for identity management, the user name can
      *        include up to 20 characters. If you are using SAML for identity management, the user name can include up
-     *        to 64 characters from [a-zA-Z0-9_-.\@]+.
+     *        to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
+     *        <p>
+     *        Username can include @ only if used in an email format. For example:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Correct: testuser
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Correct: testuser@example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Incorrect: testuser@example
+     *        </p>
+     *        </li>
      */
 
     public void setUsername(String username) {
@@ -121,10 +182,49 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters
      * from [a-zA-Z0-9_-.\@]+.
      * </p>
+     * <p>
+     * Username can include @ only if used in an email format. For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Correct: testuser
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Correct: testuser@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Incorrect: testuser@example
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The user name for the account. For instances not using SAML for identity management, the user name can
      *         include up to 20 characters. If you are using SAML for identity management, the user name can include up
-     *         to 64 characters from [a-zA-Z0-9_-.\@]+.
+     *         to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
+     *         <p>
+     *         Username can include @ only if used in an email format. For example:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Correct: testuser
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Correct: testuser@example.com
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Incorrect: testuser@example
+     *         </p>
+     *         </li>
      */
 
     public String getUsername() {
@@ -137,11 +237,50 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters
      * from [a-zA-Z0-9_-.\@]+.
      * </p>
+     * <p>
+     * Username can include @ only if used in an email format. For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Correct: testuser
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Correct: testuser@example.com
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Incorrect: testuser@example
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param username
      *        The user name for the account. For instances not using SAML for identity management, the user name can
      *        include up to 20 characters. If you are using SAML for identity management, the user name can include up
-     *        to 64 characters from [a-zA-Z0-9_-.\@]+.
+     *        to 64 characters from [a-zA-Z0-9_-.\@]+.</p>
+     *        <p>
+     *        Username can include @ only if used in an email format. For example:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Correct: testuser
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Correct: testuser@example.com
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Incorrect: testuser@example
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -513,11 +652,15 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     *        The identifier of the Amazon Connect instance. You can <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *        ID</a> in the Amazon Resource Name (ARN) of the instance.
      */
 
     public void setInstanceId(String instanceId) {
@@ -526,10 +669,14 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
-     * @return The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * @return The identifier of the Amazon Connect instance. You can <a
+     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *         ID</a> in the Amazon Resource Name (ARN) of the instance.
      */
 
     public String getInstanceId() {
@@ -538,11 +685,15 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     *        The identifier of the Amazon Connect instance. You can <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *        ID</a> in the Amazon Resource Name (ARN) of the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -553,11 +704,11 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1",
      * "key2":"value2"} }.
      * </p>
      * 
-     * @return The tags used to organize, track, or control access for this resource. For example, { "tags":
+     * @return The tags used to organize, track, or control access for this resource. For example, { "Tags":
      *         {"key1":"value1", "key2":"value2"} }.
      */
 
@@ -567,12 +718,12 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1",
      * "key2":"value2"} }.
      * </p>
      * 
      * @param tags
-     *        The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *        The tags used to organize, track, or control access for this resource. For example, { "Tags":
      *        {"key1":"value1", "key2":"value2"} }.
      */
 
@@ -582,12 +733,12 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1",
      * "key2":"value2"} }.
      * </p>
      * 
      * @param tags
-     *        The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *        The tags used to organize, track, or control access for this resource. For example, { "Tags":
      *        {"key1":"value1", "key2":"value2"} }.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -640,7 +791,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getUsername() != null)
             sb.append("Username: ").append(getUsername()).append(",");
         if (getPassword() != null)
-            sb.append("Password: ").append(getPassword()).append(",");
+            sb.append("Password: ").append("***Sensitive Data Redacted***").append(",");
         if (getIdentityInfo() != null)
             sb.append("IdentityInfo: ").append(getIdentityInfo()).append(",");
         if (getPhoneConfig() != null)

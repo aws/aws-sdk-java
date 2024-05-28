@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The client token for the created component.
+     * </p>
+     */
+    private String clientToken;
     /**
      * <p>
      * An optional customer-provided description of the component.
@@ -95,6 +101,46 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
      * </note>
      */
     private String templateFile;
+
+    /**
+     * <p>
+     * The client token for the created component.
+     * </p>
+     * 
+     * @param clientToken
+     *        The client token for the created component.
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * <p>
+     * The client token for the created component.
+     * </p>
+     * 
+     * @return The client token for the created component.
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * <p>
+     * The client token for the created component.
+     * </p>
+     * 
+     * @param clientToken
+     *        The client token for the created component.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateComponentRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -603,6 +649,8 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append("***Sensitive Data Redacted***").append(",");
         if (getEnvironmentName() != null)
@@ -635,6 +683,10 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
         if (obj instanceof CreateComponentRequest == false)
             return false;
         CreateComponentRequest other = (CreateComponentRequest) obj;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
@@ -679,6 +731,7 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentName() == null) ? 0 : getEnvironmentName().hashCode());
         hashCode = prime * hashCode + ((getManifest() == null) ? 0 : getManifest().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,8 +25,8 @@ public class ListTrackersResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Contains tracker resources in your AWS account. Details include tracker name, description and timestamps for when
-     * the tracker was created and last updated.
+     * Contains tracker resources in your Amazon Web Services account. Details include tracker name, description and
+     * timestamps for when the tracker was created and last updated.
      * </p>
      */
     private java.util.List<ListTrackersResponseEntry> entries;
@@ -40,12 +40,12 @@ public class ListTrackersResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Contains tracker resources in your AWS account. Details include tracker name, description and timestamps for when
-     * the tracker was created and last updated.
+     * Contains tracker resources in your Amazon Web Services account. Details include tracker name, description and
+     * timestamps for when the tracker was created and last updated.
      * </p>
      * 
-     * @return Contains tracker resources in your AWS account. Details include tracker name, description and timestamps
-     *         for when the tracker was created and last updated.
+     * @return Contains tracker resources in your Amazon Web Services account. Details include tracker name, description
+     *         and timestamps for when the tracker was created and last updated.
      */
 
     public java.util.List<ListTrackersResponseEntry> getEntries() {
@@ -54,13 +54,13 @@ public class ListTrackersResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Contains tracker resources in your AWS account. Details include tracker name, description and timestamps for when
-     * the tracker was created and last updated.
+     * Contains tracker resources in your Amazon Web Services account. Details include tracker name, description and
+     * timestamps for when the tracker was created and last updated.
      * </p>
      * 
      * @param entries
-     *        Contains tracker resources in your AWS account. Details include tracker name, description and timestamps
-     *        for when the tracker was created and last updated.
+     *        Contains tracker resources in your Amazon Web Services account. Details include tracker name, description
+     *        and timestamps for when the tracker was created and last updated.
      */
 
     public void setEntries(java.util.Collection<ListTrackersResponseEntry> entries) {
@@ -74,8 +74,8 @@ public class ListTrackersResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Contains tracker resources in your AWS account. Details include tracker name, description and timestamps for when
-     * the tracker was created and last updated.
+     * Contains tracker resources in your Amazon Web Services account. Details include tracker name, description and
+     * timestamps for when the tracker was created and last updated.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -84,8 +84,8 @@ public class ListTrackersResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param entries
-     *        Contains tracker resources in your AWS account. Details include tracker name, description and timestamps
-     *        for when the tracker was created and last updated.
+     *        Contains tracker resources in your Amazon Web Services account. Details include tracker name, description
+     *        and timestamps for when the tracker was created and last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,13 +101,13 @@ public class ListTrackersResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Contains tracker resources in your AWS account. Details include tracker name, description and timestamps for when
-     * the tracker was created and last updated.
+     * Contains tracker resources in your Amazon Web Services account. Details include tracker name, description and
+     * timestamps for when the tracker was created and last updated.
      * </p>
      * 
      * @param entries
-     *        Contains tracker resources in your AWS account. Details include tracker name, description and timestamps
-     *        for when the tracker was created and last updated.
+     *        Contains tracker resources in your Amazon Web Services account. Details include tracker name, description
+     *        and timestamps for when the tracker was created and last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

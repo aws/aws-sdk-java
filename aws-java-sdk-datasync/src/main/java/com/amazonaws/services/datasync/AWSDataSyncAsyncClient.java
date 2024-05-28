@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,9 +27,8 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * <fullname>DataSync</fullname>
  * <p>
- * DataSync is a managed data transfer service that makes it simpler for you to automate moving data between on-premises
- * storage and Amazon Web Services storage services. You also can use DataSync to transfer data between other cloud
- * providers and Amazon Web Services storage services.
+ * DataSync is an online data movement and discovery service that simplifies data migration and helps you quickly,
+ * easily, and securely transfer your file or object data to, from, and between Amazon Web Services storage services.
  * </p>
  * <p>
  * This API interface reference includes documentation for using DataSync programmatically. For complete information,
@@ -79,6 +78,39 @@ public class AWSDataSyncAsyncClient extends AWSDataSyncClient implements AWSData
      */
     public ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddStorageSystemResult> addStorageSystemAsync(AddStorageSystemRequest request) {
+
+        return addStorageSystemAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddStorageSystemResult> addStorageSystemAsync(final AddStorageSystemRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AddStorageSystemRequest, AddStorageSystemResult> asyncHandler) {
+        final AddStorageSystemRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AddStorageSystemResult>() {
+            @Override
+            public AddStorageSystemResult call() throws Exception {
+                AddStorageSystemResult result = null;
+
+                try {
+                    result = executeAddStorageSystem(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -132,6 +164,39 @@ public class AWSDataSyncAsyncClient extends AWSDataSyncClient implements AWSData
 
                 try {
                     result = executeCreateAgent(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLocationAzureBlobResult> createLocationAzureBlobAsync(CreateLocationAzureBlobRequest request) {
+
+        return createLocationAzureBlobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLocationAzureBlobResult> createLocationAzureBlobAsync(final CreateLocationAzureBlobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateLocationAzureBlobRequest, CreateLocationAzureBlobResult> asyncHandler) {
+        final CreateLocationAzureBlobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateLocationAzureBlobResult>() {
+            @Override
+            public CreateLocationAzureBlobResult call() throws Exception {
+                CreateLocationAzureBlobResult result = null;
+
+                try {
+                    result = executeCreateLocationAzureBlob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -643,6 +708,72 @@ public class AWSDataSyncAsyncClient extends AWSDataSyncClient implements AWSData
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeDiscoveryJobResult> describeDiscoveryJobAsync(DescribeDiscoveryJobRequest request) {
+
+        return describeDiscoveryJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDiscoveryJobResult> describeDiscoveryJobAsync(final DescribeDiscoveryJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeDiscoveryJobRequest, DescribeDiscoveryJobResult> asyncHandler) {
+        final DescribeDiscoveryJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeDiscoveryJobResult>() {
+            @Override
+            public DescribeDiscoveryJobResult call() throws Exception {
+                DescribeDiscoveryJobResult result = null;
+
+                try {
+                    result = executeDescribeDiscoveryJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLocationAzureBlobResult> describeLocationAzureBlobAsync(DescribeLocationAzureBlobRequest request) {
+
+        return describeLocationAzureBlobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLocationAzureBlobResult> describeLocationAzureBlobAsync(final DescribeLocationAzureBlobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeLocationAzureBlobRequest, DescribeLocationAzureBlobResult> asyncHandler) {
+        final DescribeLocationAzureBlobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeLocationAzureBlobResult>() {
+            @Override
+            public DescribeLocationAzureBlobResult call() throws Exception {
+                DescribeLocationAzureBlobResult result = null;
+
+                try {
+                    result = executeDescribeLocationAzureBlob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeLocationEfsResult> describeLocationEfsAsync(DescribeLocationEfsRequest request) {
 
         return describeLocationEfsAsync(request, null);
@@ -974,6 +1105,108 @@ public class AWSDataSyncAsyncClient extends AWSDataSyncClient implements AWSData
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeStorageSystemResult> describeStorageSystemAsync(DescribeStorageSystemRequest request) {
+
+        return describeStorageSystemAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStorageSystemResult> describeStorageSystemAsync(final DescribeStorageSystemRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeStorageSystemRequest, DescribeStorageSystemResult> asyncHandler) {
+        final DescribeStorageSystemRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeStorageSystemResult>() {
+            @Override
+            public DescribeStorageSystemResult call() throws Exception {
+                DescribeStorageSystemResult result = null;
+
+                try {
+                    result = executeDescribeStorageSystem(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStorageSystemResourceMetricsResult> describeStorageSystemResourceMetricsAsync(
+            DescribeStorageSystemResourceMetricsRequest request) {
+
+        return describeStorageSystemResourceMetricsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStorageSystemResourceMetricsResult> describeStorageSystemResourceMetricsAsync(
+            final DescribeStorageSystemResourceMetricsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeStorageSystemResourceMetricsRequest, DescribeStorageSystemResourceMetricsResult> asyncHandler) {
+        final DescribeStorageSystemResourceMetricsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeStorageSystemResourceMetricsResult>() {
+            @Override
+            public DescribeStorageSystemResourceMetricsResult call() throws Exception {
+                DescribeStorageSystemResourceMetricsResult result = null;
+
+                try {
+                    result = executeDescribeStorageSystemResourceMetrics(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStorageSystemResourcesResult> describeStorageSystemResourcesAsync(DescribeStorageSystemResourcesRequest request) {
+
+        return describeStorageSystemResourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStorageSystemResourcesResult> describeStorageSystemResourcesAsync(
+            final DescribeStorageSystemResourcesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeStorageSystemResourcesRequest, DescribeStorageSystemResourcesResult> asyncHandler) {
+        final DescribeStorageSystemResourcesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeStorageSystemResourcesResult>() {
+            @Override
+            public DescribeStorageSystemResourcesResult call() throws Exception {
+                DescribeStorageSystemResourcesResult result = null;
+
+                try {
+                    result = executeDescribeStorageSystemResources(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeTaskResult> describeTaskAsync(DescribeTaskRequest request) {
 
         return describeTaskAsync(request, null);
@@ -1040,6 +1273,39 @@ public class AWSDataSyncAsyncClient extends AWSDataSyncClient implements AWSData
     }
 
     @Override
+    public java.util.concurrent.Future<GenerateRecommendationsResult> generateRecommendationsAsync(GenerateRecommendationsRequest request) {
+
+        return generateRecommendationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateRecommendationsResult> generateRecommendationsAsync(final GenerateRecommendationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GenerateRecommendationsRequest, GenerateRecommendationsResult> asyncHandler) {
+        final GenerateRecommendationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GenerateRecommendationsResult>() {
+            @Override
+            public GenerateRecommendationsResult call() throws Exception {
+                GenerateRecommendationsResult result = null;
+
+                try {
+                    result = executeGenerateRecommendations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAgentsResult> listAgentsAsync(ListAgentsRequest request) {
 
         return listAgentsAsync(request, null);
@@ -1073,6 +1339,39 @@ public class AWSDataSyncAsyncClient extends AWSDataSyncClient implements AWSData
     }
 
     @Override
+    public java.util.concurrent.Future<ListDiscoveryJobsResult> listDiscoveryJobsAsync(ListDiscoveryJobsRequest request) {
+
+        return listDiscoveryJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDiscoveryJobsResult> listDiscoveryJobsAsync(final ListDiscoveryJobsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDiscoveryJobsRequest, ListDiscoveryJobsResult> asyncHandler) {
+        final ListDiscoveryJobsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListDiscoveryJobsResult>() {
+            @Override
+            public ListDiscoveryJobsResult call() throws Exception {
+                ListDiscoveryJobsResult result = null;
+
+                try {
+                    result = executeListDiscoveryJobs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListLocationsResult> listLocationsAsync(ListLocationsRequest request) {
 
         return listLocationsAsync(request, null);
@@ -1090,6 +1389,39 @@ public class AWSDataSyncAsyncClient extends AWSDataSyncClient implements AWSData
 
                 try {
                     result = executeListLocations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStorageSystemsResult> listStorageSystemsAsync(ListStorageSystemsRequest request) {
+
+        return listStorageSystemsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStorageSystemsResult> listStorageSystemsAsync(final ListStorageSystemsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListStorageSystemsRequest, ListStorageSystemsResult> asyncHandler) {
+        final ListStorageSystemsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListStorageSystemsResult>() {
+            @Override
+            public ListStorageSystemsResult call() throws Exception {
+                ListStorageSystemsResult result = null;
+
+                try {
+                    result = executeListStorageSystems(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1205,6 +1537,72 @@ public class AWSDataSyncAsyncClient extends AWSDataSyncClient implements AWSData
     }
 
     @Override
+    public java.util.concurrent.Future<RemoveStorageSystemResult> removeStorageSystemAsync(RemoveStorageSystemRequest request) {
+
+        return removeStorageSystemAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveStorageSystemResult> removeStorageSystemAsync(final RemoveStorageSystemRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RemoveStorageSystemRequest, RemoveStorageSystemResult> asyncHandler) {
+        final RemoveStorageSystemRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RemoveStorageSystemResult>() {
+            @Override
+            public RemoveStorageSystemResult call() throws Exception {
+                RemoveStorageSystemResult result = null;
+
+                try {
+                    result = executeRemoveStorageSystem(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartDiscoveryJobResult> startDiscoveryJobAsync(StartDiscoveryJobRequest request) {
+
+        return startDiscoveryJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartDiscoveryJobResult> startDiscoveryJobAsync(final StartDiscoveryJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartDiscoveryJobRequest, StartDiscoveryJobResult> asyncHandler) {
+        final StartDiscoveryJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartDiscoveryJobResult>() {
+            @Override
+            public StartDiscoveryJobResult call() throws Exception {
+                StartDiscoveryJobResult result = null;
+
+                try {
+                    result = executeStartDiscoveryJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartTaskExecutionResult> startTaskExecutionAsync(StartTaskExecutionRequest request) {
 
         return startTaskExecutionAsync(request, null);
@@ -1222,6 +1620,39 @@ public class AWSDataSyncAsyncClient extends AWSDataSyncClient implements AWSData
 
                 try {
                     result = executeStartTaskExecution(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopDiscoveryJobResult> stopDiscoveryJobAsync(StopDiscoveryJobRequest request) {
+
+        return stopDiscoveryJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopDiscoveryJobResult> stopDiscoveryJobAsync(final StopDiscoveryJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopDiscoveryJobRequest, StopDiscoveryJobResult> asyncHandler) {
+        final StopDiscoveryJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopDiscoveryJobResult>() {
+            @Override
+            public StopDiscoveryJobResult call() throws Exception {
+                StopDiscoveryJobResult result = null;
+
+                try {
+                    result = executeStopDiscoveryJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1321,6 +1752,72 @@ public class AWSDataSyncAsyncClient extends AWSDataSyncClient implements AWSData
 
                 try {
                     result = executeUpdateAgent(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDiscoveryJobResult> updateDiscoveryJobAsync(UpdateDiscoveryJobRequest request) {
+
+        return updateDiscoveryJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDiscoveryJobResult> updateDiscoveryJobAsync(final UpdateDiscoveryJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateDiscoveryJobRequest, UpdateDiscoveryJobResult> asyncHandler) {
+        final UpdateDiscoveryJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateDiscoveryJobResult>() {
+            @Override
+            public UpdateDiscoveryJobResult call() throws Exception {
+                UpdateDiscoveryJobResult result = null;
+
+                try {
+                    result = executeUpdateDiscoveryJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLocationAzureBlobResult> updateLocationAzureBlobAsync(UpdateLocationAzureBlobRequest request) {
+
+        return updateLocationAzureBlobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLocationAzureBlobResult> updateLocationAzureBlobAsync(final UpdateLocationAzureBlobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateLocationAzureBlobRequest, UpdateLocationAzureBlobResult> asyncHandler) {
+        final UpdateLocationAzureBlobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateLocationAzureBlobResult>() {
+            @Override
+            public UpdateLocationAzureBlobResult call() throws Exception {
+                UpdateLocationAzureBlobResult result = null;
+
+                try {
+                    result = executeUpdateLocationAzureBlob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1453,6 +1950,39 @@ public class AWSDataSyncAsyncClient extends AWSDataSyncClient implements AWSData
 
                 try {
                     result = executeUpdateLocationSmb(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStorageSystemResult> updateStorageSystemAsync(UpdateStorageSystemRequest request) {
+
+        return updateStorageSystemAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStorageSystemResult> updateStorageSystemAsync(final UpdateStorageSystemRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateStorageSystemRequest, UpdateStorageSystemResult> asyncHandler) {
+        final UpdateStorageSystemRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateStorageSystemResult>() {
+            @Override
+            public UpdateStorageSystemResult call() throws Exception {
+                UpdateStorageSystemResult result = null;
+
+                try {
+                    result = executeUpdateStorageSystem(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

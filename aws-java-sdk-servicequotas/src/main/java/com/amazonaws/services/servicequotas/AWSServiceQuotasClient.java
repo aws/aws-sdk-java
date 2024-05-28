@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.servicequotas.AWSServiceQuotasClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.servicequotas.model.*;
+
 import com.amazonaws.services.servicequotas.model.transform.*;
 
 /**
@@ -51,9 +52,10 @@ import com.amazonaws.services.servicequotas.model.transform.*;
  * the service call completes.
  * <p>
  * <p>
- * With Service Quotas, you can view and manage your quotas easily as your AWS workloads grow. Quotas, also referred to
- * as limits, are the maximum number of resources that you can create in your AWS account. For more information, see the
- * <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/">Service Quotas User Guide</a>.
+ * With Service Quotas, you can view and manage your quotas easily as your Amazon Web Services workloads grow. Quotas,
+ * also referred to as limits, are the maximum number of resources that you can create in your Amazon Web Services
+ * account. For more information, see the <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/">Service
+ * Quotas User Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -179,9 +181,9 @@ public class AWSServiceQuotasClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Associates your quota request template with your organization. When a new account is created in your
-     * organization, the quota increase requests in the template are automatically applied to the account. You can add a
-     * quota increase request for any adjustable quota to your template.
+     * Associates your quota request template with your organization. When a new Amazon Web Services account is created
+     * in your organization, the quota increase requests in the template are automatically applied to the account. You
+     * can add a quota increase request for any adjustable quota to your template.
      * </p>
      * 
      * @param associateServiceQuotaTemplateRequest
@@ -199,11 +201,11 @@ public class AWSServiceQuotasClient extends AmazonWebServiceClient implements AW
      *         The action you attempted is not allowed unless Service Access with Service Quotas is enabled in your
      *         organization.
      * @throws OrganizationNotInAllFeaturesModeException
-     *         The organization that your account belongs to is not in All Features mode.
+     *         The organization that your Amazon Web Services account belongs to is not in All Features mode.
      * @throws TemplatesNotAvailableInRegionException
-     *         The Service Quotas template is not available in this AWS Region.
+     *         The Service Quotas template is not available in this Amazon Web Services Region.
      * @throws NoAvailableOrganizationException
-     *         The account making this call is not a member of an organization.
+     *         The Amazon Web Services account making this call is not a member of an organization.
      * @sample AWSServiceQuotas.AssociateServiceQuotaTemplate
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/AssociateServiceQuotaTemplate"
      *      target="_top">AWS API Documentation</a>
@@ -278,9 +280,9 @@ public class AWSServiceQuotasClient extends AmazonWebServiceClient implements AW
      *         The action you attempted is not allowed unless Service Access with Service Quotas is enabled in your
      *         organization.
      * @throws TemplatesNotAvailableInRegionException
-     *         The Service Quotas template is not available in this AWS Region.
+     *         The Service Quotas template is not available in this Amazon Web Services Region.
      * @throws NoAvailableOrganizationException
-     *         The account making this call is not a member of an organization.
+     *         The Amazon Web Services account making this call is not a member of an organization.
      * @sample AWSServiceQuotas.DeleteServiceQuotaIncreaseRequestFromTemplate
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/DeleteServiceQuotaIncreaseRequestFromTemplate"
@@ -337,8 +339,8 @@ public class AWSServiceQuotasClient extends AmazonWebServiceClient implements AW
     /**
      * <p>
      * Disables your quota request template. After a template is disabled, the quota increase requests in the template
-     * are not applied to new accounts in your organization. Disabling a quota request template does not apply its quota
-     * increase requests.
+     * are not applied to new Amazon Web Services accounts in your organization. Disabling a quota request template does
+     * not apply its quota increase requests.
      * </p>
      * 
      * @param disassociateServiceQuotaTemplateRequest
@@ -358,9 +360,9 @@ public class AWSServiceQuotasClient extends AmazonWebServiceClient implements AW
      *         The action you attempted is not allowed unless Service Access with Service Quotas is enabled in your
      *         organization.
      * @throws TemplatesNotAvailableInRegionException
-     *         The Service Quotas template is not available in this AWS Region.
+     *         The Service Quotas template is not available in this Amazon Web Services Region.
      * @throws NoAvailableOrganizationException
-     *         The account making this call is not a member of an organization.
+     *         The Amazon Web Services account making this call is not a member of an organization.
      * @sample AWSServiceQuotas.DisassociateServiceQuotaTemplate
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/DisassociateServiceQuotaTemplate"
      *      target="_top">AWS API Documentation</a>
@@ -502,9 +504,9 @@ public class AWSServiceQuotasClient extends AmazonWebServiceClient implements AW
      *         The action you attempted is not allowed unless Service Access with Service Quotas is enabled in your
      *         organization.
      * @throws TemplatesNotAvailableInRegionException
-     *         The Service Quotas template is not available in this AWS Region.
+     *         The Service Quotas template is not available in this Amazon Web Services Region.
      * @throws NoAvailableOrganizationException
-     *         The account making this call is not a member of an organization.
+     *         The Amazon Web Services account making this call is not a member of an organization.
      * @sample AWSServiceQuotas.GetAssociationForServiceQuotaTemplate
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/GetAssociationForServiceQuotaTemplate"
@@ -716,9 +718,9 @@ public class AWSServiceQuotasClient extends AmazonWebServiceClient implements AW
      *         The action you attempted is not allowed unless Service Access with Service Quotas is enabled in your
      *         organization.
      * @throws TemplatesNotAvailableInRegionException
-     *         The Service Quotas template is not available in this AWS Region.
+     *         The Service Quotas template is not available in this Amazon Web Services Region.
      * @throws NoAvailableOrganizationException
-     *         The account making this call is not a member of an organization.
+     *         The Amazon Web Services account making this call is not a member of an organization.
      * @sample AWSServiceQuotas.GetServiceQuotaIncreaseRequestFromTemplate
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/GetServiceQuotaIncreaseRequestFromTemplate"
@@ -773,8 +775,8 @@ public class AWSServiceQuotasClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Lists the default values for the quotas for the specified AWS service. A default value does not reflect any quota
-     * increases.
+     * Lists the default values for the quotas for the specified Amazon Web Service. A default value does not reflect
+     * any quota increases.
      * </p>
      * 
      * @param listAWSDefaultServiceQuotasRequest
@@ -844,7 +846,7 @@ public class AWSServiceQuotasClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Retrieves the quota increase requests for the specified service.
+     * Retrieves the quota increase requests for the specified Amazon Web Service.
      * </p>
      * 
      * @param listRequestedServiceQuotaChangeHistoryRequest
@@ -1009,9 +1011,9 @@ public class AWSServiceQuotasClient extends AmazonWebServiceClient implements AW
      *         The action you attempted is not allowed unless Service Access with Service Quotas is enabled in your
      *         organization.
      * @throws TemplatesNotAvailableInRegionException
-     *         The Service Quotas template is not available in this AWS Region.
+     *         The Service Quotas template is not available in this Amazon Web Services Region.
      * @throws NoAvailableOrganizationException
-     *         The account making this call is not a member of an organization.
+     *         The Amazon Web Services account making this call is not a member of an organization.
      * @sample AWSServiceQuotas.ListServiceQuotaIncreaseRequestsInTemplate
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/ListServiceQuotaIncreaseRequestsInTemplate"
@@ -1066,7 +1068,7 @@ public class AWSServiceQuotasClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Lists the applied quota values for the specified AWS service. For some quotas, only the default values are
+     * Lists the applied quota values for the specified Amazon Web Service. For some quotas, only the default values are
      * available. If the applied quota value is not available for a quota, the quota is not retrieved.
      * </p>
      * 
@@ -1135,7 +1137,7 @@ public class AWSServiceQuotasClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Lists the names and codes for the services integrated with Service Quotas.
+     * Lists the names and codes for the Amazon Web Services integrated with Service Quotas.
      * </p>
      * 
      * @param listServicesRequest
@@ -1292,9 +1294,9 @@ public class AWSServiceQuotasClient extends AmazonWebServiceClient implements AW
      *         The action you attempted is not allowed unless Service Access with Service Quotas is enabled in your
      *         organization.
      * @throws TemplatesNotAvailableInRegionException
-     *         The Service Quotas template is not available in this AWS Region.
+     *         The Service Quotas template is not available in this Amazon Web Services Region.
      * @throws NoAvailableOrganizationException
-     *         The account making this call is not a member of an organization.
+     *         The Amazon Web Services account making this call is not a member of an organization.
      * @sample AWSServiceQuotas.PutServiceQuotaIncreaseRequestIntoTemplate
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/PutServiceQuotaIncreaseRequestIntoTemplate"

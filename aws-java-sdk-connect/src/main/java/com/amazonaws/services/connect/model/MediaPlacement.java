@@ -1,0 +1,348 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.connect.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * A set of endpoints used by clients to connect to the media service group for an Amazon Chime SDK meeting.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/MediaPlacement" target="_top">AWS API
+ *      Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class MediaPlacement implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * The audio host URL.
+     * </p>
+     */
+    private String audioHostUrl;
+    /**
+     * <p>
+     * The audio fallback URL.
+     * </p>
+     */
+    private String audioFallbackUrl;
+    /**
+     * <p>
+     * The signaling URL.
+     * </p>
+     */
+    private String signalingUrl;
+    /**
+     * <p>
+     * The turn control URL.
+     * </p>
+     */
+    private String turnControlUrl;
+    /**
+     * <p>
+     * The event ingestion URL to which you send client meeting events.
+     * </p>
+     */
+    private String eventIngestionUrl;
+
+    /**
+     * <p>
+     * The audio host URL.
+     * </p>
+     * 
+     * @param audioHostUrl
+     *        The audio host URL.
+     */
+
+    public void setAudioHostUrl(String audioHostUrl) {
+        this.audioHostUrl = audioHostUrl;
+    }
+
+    /**
+     * <p>
+     * The audio host URL.
+     * </p>
+     * 
+     * @return The audio host URL.
+     */
+
+    public String getAudioHostUrl() {
+        return this.audioHostUrl;
+    }
+
+    /**
+     * <p>
+     * The audio host URL.
+     * </p>
+     * 
+     * @param audioHostUrl
+     *        The audio host URL.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MediaPlacement withAudioHostUrl(String audioHostUrl) {
+        setAudioHostUrl(audioHostUrl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The audio fallback URL.
+     * </p>
+     * 
+     * @param audioFallbackUrl
+     *        The audio fallback URL.
+     */
+
+    public void setAudioFallbackUrl(String audioFallbackUrl) {
+        this.audioFallbackUrl = audioFallbackUrl;
+    }
+
+    /**
+     * <p>
+     * The audio fallback URL.
+     * </p>
+     * 
+     * @return The audio fallback URL.
+     */
+
+    public String getAudioFallbackUrl() {
+        return this.audioFallbackUrl;
+    }
+
+    /**
+     * <p>
+     * The audio fallback URL.
+     * </p>
+     * 
+     * @param audioFallbackUrl
+     *        The audio fallback URL.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MediaPlacement withAudioFallbackUrl(String audioFallbackUrl) {
+        setAudioFallbackUrl(audioFallbackUrl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The signaling URL.
+     * </p>
+     * 
+     * @param signalingUrl
+     *        The signaling URL.
+     */
+
+    public void setSignalingUrl(String signalingUrl) {
+        this.signalingUrl = signalingUrl;
+    }
+
+    /**
+     * <p>
+     * The signaling URL.
+     * </p>
+     * 
+     * @return The signaling URL.
+     */
+
+    public String getSignalingUrl() {
+        return this.signalingUrl;
+    }
+
+    /**
+     * <p>
+     * The signaling URL.
+     * </p>
+     * 
+     * @param signalingUrl
+     *        The signaling URL.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MediaPlacement withSignalingUrl(String signalingUrl) {
+        setSignalingUrl(signalingUrl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The turn control URL.
+     * </p>
+     * 
+     * @param turnControlUrl
+     *        The turn control URL.
+     */
+
+    public void setTurnControlUrl(String turnControlUrl) {
+        this.turnControlUrl = turnControlUrl;
+    }
+
+    /**
+     * <p>
+     * The turn control URL.
+     * </p>
+     * 
+     * @return The turn control URL.
+     */
+
+    public String getTurnControlUrl() {
+        return this.turnControlUrl;
+    }
+
+    /**
+     * <p>
+     * The turn control URL.
+     * </p>
+     * 
+     * @param turnControlUrl
+     *        The turn control URL.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MediaPlacement withTurnControlUrl(String turnControlUrl) {
+        setTurnControlUrl(turnControlUrl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The event ingestion URL to which you send client meeting events.
+     * </p>
+     * 
+     * @param eventIngestionUrl
+     *        The event ingestion URL to which you send client meeting events.
+     */
+
+    public void setEventIngestionUrl(String eventIngestionUrl) {
+        this.eventIngestionUrl = eventIngestionUrl;
+    }
+
+    /**
+     * <p>
+     * The event ingestion URL to which you send client meeting events.
+     * </p>
+     * 
+     * @return The event ingestion URL to which you send client meeting events.
+     */
+
+    public String getEventIngestionUrl() {
+        return this.eventIngestionUrl;
+    }
+
+    /**
+     * <p>
+     * The event ingestion URL to which you send client meeting events.
+     * </p>
+     * 
+     * @param eventIngestionUrl
+     *        The event ingestion URL to which you send client meeting events.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MediaPlacement withEventIngestionUrl(String eventIngestionUrl) {
+        setEventIngestionUrl(eventIngestionUrl);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getAudioHostUrl() != null)
+            sb.append("AudioHostUrl: ").append(getAudioHostUrl()).append(",");
+        if (getAudioFallbackUrl() != null)
+            sb.append("AudioFallbackUrl: ").append(getAudioFallbackUrl()).append(",");
+        if (getSignalingUrl() != null)
+            sb.append("SignalingUrl: ").append(getSignalingUrl()).append(",");
+        if (getTurnControlUrl() != null)
+            sb.append("TurnControlUrl: ").append(getTurnControlUrl()).append(",");
+        if (getEventIngestionUrl() != null)
+            sb.append("EventIngestionUrl: ").append(getEventIngestionUrl());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof MediaPlacement == false)
+            return false;
+        MediaPlacement other = (MediaPlacement) obj;
+        if (other.getAudioHostUrl() == null ^ this.getAudioHostUrl() == null)
+            return false;
+        if (other.getAudioHostUrl() != null && other.getAudioHostUrl().equals(this.getAudioHostUrl()) == false)
+            return false;
+        if (other.getAudioFallbackUrl() == null ^ this.getAudioFallbackUrl() == null)
+            return false;
+        if (other.getAudioFallbackUrl() != null && other.getAudioFallbackUrl().equals(this.getAudioFallbackUrl()) == false)
+            return false;
+        if (other.getSignalingUrl() == null ^ this.getSignalingUrl() == null)
+            return false;
+        if (other.getSignalingUrl() != null && other.getSignalingUrl().equals(this.getSignalingUrl()) == false)
+            return false;
+        if (other.getTurnControlUrl() == null ^ this.getTurnControlUrl() == null)
+            return false;
+        if (other.getTurnControlUrl() != null && other.getTurnControlUrl().equals(this.getTurnControlUrl()) == false)
+            return false;
+        if (other.getEventIngestionUrl() == null ^ this.getEventIngestionUrl() == null)
+            return false;
+        if (other.getEventIngestionUrl() != null && other.getEventIngestionUrl().equals(this.getEventIngestionUrl()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getAudioHostUrl() == null) ? 0 : getAudioHostUrl().hashCode());
+        hashCode = prime * hashCode + ((getAudioFallbackUrl() == null) ? 0 : getAudioFallbackUrl().hashCode());
+        hashCode = prime * hashCode + ((getSignalingUrl() == null) ? 0 : getSignalingUrl().hashCode());
+        hashCode = prime * hashCode + ((getTurnControlUrl() == null) ? 0 : getTurnControlUrl().hashCode());
+        hashCode = prime * hashCode + ((getEventIngestionUrl() == null) ? 0 : getEventIngestionUrl().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public MediaPlacement clone() {
+        try {
+            return (MediaPlacement) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.connect.model.transform.MediaPlacementMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

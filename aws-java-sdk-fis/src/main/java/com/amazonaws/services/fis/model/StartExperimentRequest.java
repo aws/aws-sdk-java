@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,12 @@ public class StartExperimentRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String experimentTemplateId;
+    /**
+     * <p>
+     * The experiment options for running the experiment.
+     * </p>
+     */
+    private StartExperimentExperimentOptionsInput experimentOptions;
     /**
      * <p>
      * The tags to apply to the experiment.
@@ -126,6 +132,46 @@ public class StartExperimentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
+     * The experiment options for running the experiment.
+     * </p>
+     * 
+     * @param experimentOptions
+     *        The experiment options for running the experiment.
+     */
+
+    public void setExperimentOptions(StartExperimentExperimentOptionsInput experimentOptions) {
+        this.experimentOptions = experimentOptions;
+    }
+
+    /**
+     * <p>
+     * The experiment options for running the experiment.
+     * </p>
+     * 
+     * @return The experiment options for running the experiment.
+     */
+
+    public StartExperimentExperimentOptionsInput getExperimentOptions() {
+        return this.experimentOptions;
+    }
+
+    /**
+     * <p>
+     * The experiment options for running the experiment.
+     * </p>
+     * 
+     * @param experimentOptions
+     *        The experiment options for running the experiment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartExperimentRequest withExperimentOptions(StartExperimentExperimentOptionsInput experimentOptions) {
+        setExperimentOptions(experimentOptions);
+        return this;
+    }
+
+    /**
+     * <p>
      * The tags to apply to the experiment.
      * </p>
      * 
@@ -208,6 +254,8 @@ public class StartExperimentRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getExperimentTemplateId() != null)
             sb.append("ExperimentTemplateId: ").append(getExperimentTemplateId()).append(",");
+        if (getExperimentOptions() != null)
+            sb.append("ExperimentOptions: ").append(getExperimentOptions()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -232,6 +280,10 @@ public class StartExperimentRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getExperimentTemplateId() != null && other.getExperimentTemplateId().equals(this.getExperimentTemplateId()) == false)
             return false;
+        if (other.getExperimentOptions() == null ^ this.getExperimentOptions() == null)
+            return false;
+        if (other.getExperimentOptions() != null && other.getExperimentOptions().equals(this.getExperimentOptions()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -246,6 +298,7 @@ public class StartExperimentRequest extends com.amazonaws.AmazonWebServiceReques
 
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getExperimentTemplateId() == null) ? 0 : getExperimentTemplateId().hashCode());
+        hashCode = prime * hashCode + ((getExperimentOptions() == null) ? 0 : getExperimentOptions().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

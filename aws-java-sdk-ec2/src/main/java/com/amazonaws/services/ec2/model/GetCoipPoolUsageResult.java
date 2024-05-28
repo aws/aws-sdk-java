@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,13 @@ public class GetCoipPoolUsageResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private String localGatewayRouteTableId;
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     */
+    private String nextToken;
 
     /**
      * <p>
@@ -196,6 +203,52 @@ public class GetCoipPoolUsageResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *        more results to return.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @return The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *         more results to return.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more
+     * results to return.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token to use to retrieve the next page of results. This value is <code>null</code> when there are no
+     *        more results to return.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetCoipPoolUsageResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -212,7 +265,9 @@ public class GetCoipPoolUsageResult extends com.amazonaws.AmazonWebServiceResult
         if (getCoipAddressUsages() != null)
             sb.append("CoipAddressUsages: ").append(getCoipAddressUsages()).append(",");
         if (getLocalGatewayRouteTableId() != null)
-            sb.append("LocalGatewayRouteTableId: ").append(getLocalGatewayRouteTableId());
+            sb.append("LocalGatewayRouteTableId: ").append(getLocalGatewayRouteTableId()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -239,6 +294,10 @@ public class GetCoipPoolUsageResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getLocalGatewayRouteTableId() != null && other.getLocalGatewayRouteTableId().equals(this.getLocalGatewayRouteTableId()) == false)
             return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         return true;
     }
 
@@ -250,6 +309,7 @@ public class GetCoipPoolUsageResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getCoipPoolId() == null) ? 0 : getCoipPoolId().hashCode());
         hashCode = prime * hashCode + ((getCoipAddressUsages() == null) ? 0 : getCoipAddressUsages().hashCode());
         hashCode = prime * hashCode + ((getLocalGatewayRouteTableId() == null) ? 0 : getLocalGatewayRouteTableId().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

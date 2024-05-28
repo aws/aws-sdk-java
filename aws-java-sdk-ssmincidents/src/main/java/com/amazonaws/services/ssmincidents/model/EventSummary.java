@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,19 +36,25 @@ public class EventSummary implements Serializable, Cloneable, StructuredPojo {
     private String eventId;
     /**
      * <p>
-     * The time that the event occurred.
+     * A list of references in a <code>TimelineEvent</code>.
+     * </p>
+     */
+    private java.util.List<EventReference> eventReferences;
+    /**
+     * <p>
+     * The timestamp for when the event occurred.
      * </p>
      */
     private java.util.Date eventTime;
     /**
      * <p>
-     * The type of event. The timeline event must be <code>Custom Event</code>.
+     * The type of event. The timeline event must be <code>Custom Event</code> or <code>Note</code>.
      * </p>
      */
     private String eventType;
     /**
      * <p>
-     * The time that the timeline event was last updated.
+     * The timestamp for when the timeline event was last updated.
      * </p>
      */
     private java.util.Date eventUpdatedTime;
@@ -101,11 +107,81 @@ public class EventSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time that the event occurred.
+     * A list of references in a <code>TimelineEvent</code>.
+     * </p>
+     * 
+     * @return A list of references in a <code>TimelineEvent</code>.
+     */
+
+    public java.util.List<EventReference> getEventReferences() {
+        return eventReferences;
+    }
+
+    /**
+     * <p>
+     * A list of references in a <code>TimelineEvent</code>.
+     * </p>
+     * 
+     * @param eventReferences
+     *        A list of references in a <code>TimelineEvent</code>.
+     */
+
+    public void setEventReferences(java.util.Collection<EventReference> eventReferences) {
+        if (eventReferences == null) {
+            this.eventReferences = null;
+            return;
+        }
+
+        this.eventReferences = new java.util.ArrayList<EventReference>(eventReferences);
+    }
+
+    /**
+     * <p>
+     * A list of references in a <code>TimelineEvent</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEventReferences(java.util.Collection)} or {@link #withEventReferences(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param eventReferences
+     *        A list of references in a <code>TimelineEvent</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EventSummary withEventReferences(EventReference... eventReferences) {
+        if (this.eventReferences == null) {
+            setEventReferences(new java.util.ArrayList<EventReference>(eventReferences.length));
+        }
+        for (EventReference ele : eventReferences) {
+            this.eventReferences.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of references in a <code>TimelineEvent</code>.
+     * </p>
+     * 
+     * @param eventReferences
+     *        A list of references in a <code>TimelineEvent</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EventSummary withEventReferences(java.util.Collection<EventReference> eventReferences) {
+        setEventReferences(eventReferences);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The timestamp for when the event occurred.
      * </p>
      * 
      * @param eventTime
-     *        The time that the event occurred.
+     *        The timestamp for when the event occurred.
      */
 
     public void setEventTime(java.util.Date eventTime) {
@@ -114,10 +190,10 @@ public class EventSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time that the event occurred.
+     * The timestamp for when the event occurred.
      * </p>
      * 
-     * @return The time that the event occurred.
+     * @return The timestamp for when the event occurred.
      */
 
     public java.util.Date getEventTime() {
@@ -126,11 +202,11 @@ public class EventSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time that the event occurred.
+     * The timestamp for when the event occurred.
      * </p>
      * 
      * @param eventTime
-     *        The time that the event occurred.
+     *        The timestamp for when the event occurred.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +217,11 @@ public class EventSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of event. The timeline event must be <code>Custom Event</code>.
+     * The type of event. The timeline event must be <code>Custom Event</code> or <code>Note</code>.
      * </p>
      * 
      * @param eventType
-     *        The type of event. The timeline event must be <code>Custom Event</code>.
+     *        The type of event. The timeline event must be <code>Custom Event</code> or <code>Note</code>.
      */
 
     public void setEventType(String eventType) {
@@ -154,10 +230,10 @@ public class EventSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of event. The timeline event must be <code>Custom Event</code>.
+     * The type of event. The timeline event must be <code>Custom Event</code> or <code>Note</code>.
      * </p>
      * 
-     * @return The type of event. The timeline event must be <code>Custom Event</code>.
+     * @return The type of event. The timeline event must be <code>Custom Event</code> or <code>Note</code>.
      */
 
     public String getEventType() {
@@ -166,11 +242,11 @@ public class EventSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of event. The timeline event must be <code>Custom Event</code>.
+     * The type of event. The timeline event must be <code>Custom Event</code> or <code>Note</code>.
      * </p>
      * 
      * @param eventType
-     *        The type of event. The timeline event must be <code>Custom Event</code>.
+     *        The type of event. The timeline event must be <code>Custom Event</code> or <code>Note</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,11 +257,11 @@ public class EventSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time that the timeline event was last updated.
+     * The timestamp for when the timeline event was last updated.
      * </p>
      * 
      * @param eventUpdatedTime
-     *        The time that the timeline event was last updated.
+     *        The timestamp for when the timeline event was last updated.
      */
 
     public void setEventUpdatedTime(java.util.Date eventUpdatedTime) {
@@ -194,10 +270,10 @@ public class EventSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time that the timeline event was last updated.
+     * The timestamp for when the timeline event was last updated.
      * </p>
      * 
-     * @return The time that the timeline event was last updated.
+     * @return The timestamp for when the timeline event was last updated.
      */
 
     public java.util.Date getEventUpdatedTime() {
@@ -206,11 +282,11 @@ public class EventSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time that the timeline event was last updated.
+     * The timestamp for when the timeline event was last updated.
      * </p>
      * 
      * @param eventUpdatedTime
-     *        The time that the timeline event was last updated.
+     *        The timestamp for when the timeline event was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -273,6 +349,8 @@ public class EventSummary implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getEventId() != null)
             sb.append("EventId: ").append(getEventId()).append(",");
+        if (getEventReferences() != null)
+            sb.append("EventReferences: ").append(getEventReferences()).append(",");
         if (getEventTime() != null)
             sb.append("EventTime: ").append(getEventTime()).append(",");
         if (getEventType() != null)
@@ -299,6 +377,10 @@ public class EventSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEventId() != null && other.getEventId().equals(this.getEventId()) == false)
             return false;
+        if (other.getEventReferences() == null ^ this.getEventReferences() == null)
+            return false;
+        if (other.getEventReferences() != null && other.getEventReferences().equals(this.getEventReferences()) == false)
+            return false;
         if (other.getEventTime() == null ^ this.getEventTime() == null)
             return false;
         if (other.getEventTime() != null && other.getEventTime().equals(this.getEventTime()) == false)
@@ -324,6 +406,7 @@ public class EventSummary implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getEventId() == null) ? 0 : getEventId().hashCode());
+        hashCode = prime * hashCode + ((getEventReferences() == null) ? 0 : getEventReferences().hashCode());
         hashCode = prime * hashCode + ((getEventTime() == null) ? 0 : getEventTime().hashCode());
         hashCode = prime * hashCode + ((getEventType() == null) ? 0 : getEventType().hashCode());
         hashCode = prime * hashCode + ((getEventUpdatedTime() == null) ? 0 : getEventUpdatedTime().hashCode());

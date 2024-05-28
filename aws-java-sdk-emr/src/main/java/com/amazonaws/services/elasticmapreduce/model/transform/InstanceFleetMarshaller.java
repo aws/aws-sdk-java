@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,8 @@ public class InstanceFleetMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceTypeSpecifications").build();
     private static final MarshallingInfo<StructuredPojo> LAUNCHSPECIFICATIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LaunchSpecifications").build();
+    private static final MarshallingInfo<StructuredPojo> RESIZESPECIFICATIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResizeSpecifications").build();
 
     private static final InstanceFleetMarshaller instance = new InstanceFleetMarshaller();
 
@@ -75,6 +77,7 @@ public class InstanceFleetMarshaller {
             protocolMarshaller.marshall(instanceFleet.getProvisionedSpotCapacity(), PROVISIONEDSPOTCAPACITY_BINDING);
             protocolMarshaller.marshall(instanceFleet.getInstanceTypeSpecifications(), INSTANCETYPESPECIFICATIONS_BINDING);
             protocolMarshaller.marshall(instanceFleet.getLaunchSpecifications(), LAUNCHSPECIFICATIONS_BINDING);
+            protocolMarshaller.marshall(instanceFleet.getResizeSpecifications(), RESIZESPECIFICATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

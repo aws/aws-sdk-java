@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,24 +30,27 @@ public class ListAgentsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of agents to list.
+     * Specifies the maximum number of DataSync agents to list in a response. By default, a response shows a maximum of
+     * 100 agents.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin the next list of agents.
+     * Specifies an opaque string that indicates the position to begin the next list of results in the response.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The maximum number of agents to list.
+     * Specifies the maximum number of DataSync agents to list in a response. By default, a response shows a maximum of
+     * 100 agents.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of agents to list.
+     *        Specifies the maximum number of DataSync agents to list in a response. By default, a response shows a
+     *        maximum of 100 agents.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -56,10 +59,12 @@ public class ListAgentsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of agents to list.
+     * Specifies the maximum number of DataSync agents to list in a response. By default, a response shows a maximum of
+     * 100 agents.
      * </p>
      * 
-     * @return The maximum number of agents to list.
+     * @return Specifies the maximum number of DataSync agents to list in a response. By default, a response shows a
+     *         maximum of 100 agents.
      */
 
     public Integer getMaxResults() {
@@ -68,11 +73,13 @@ public class ListAgentsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of agents to list.
+     * Specifies the maximum number of DataSync agents to list in a response. By default, a response shows a maximum of
+     * 100 agents.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of agents to list.
+     *        Specifies the maximum number of DataSync agents to list in a response. By default, a response shows a
+     *        maximum of 100 agents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +90,11 @@ public class ListAgentsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin the next list of agents.
+     * Specifies an opaque string that indicates the position to begin the next list of results in the response.
      * </p>
      * 
      * @param nextToken
-     *        An opaque string that indicates the position at which to begin the next list of agents.
+     *        Specifies an opaque string that indicates the position to begin the next list of results in the response.
      */
 
     public void setNextToken(String nextToken) {
@@ -96,10 +103,10 @@ public class ListAgentsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin the next list of agents.
+     * Specifies an opaque string that indicates the position to begin the next list of results in the response.
      * </p>
      * 
-     * @return An opaque string that indicates the position at which to begin the next list of agents.
+     * @return Specifies an opaque string that indicates the position to begin the next list of results in the response.
      */
 
     public String getNextToken() {
@@ -108,11 +115,11 @@ public class ListAgentsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin the next list of agents.
+     * Specifies an opaque string that indicates the position to begin the next list of results in the response.
      * </p>
      * 
      * @param nextToken
-     *        An opaque string that indicates the position at which to begin the next list of agents.
+     *        Specifies an opaque string that indicates the position to begin the next list of results in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

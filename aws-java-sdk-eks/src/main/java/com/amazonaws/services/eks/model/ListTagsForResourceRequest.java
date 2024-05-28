@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,21 +27,18 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported
-     * resources are Amazon EKS clusters and managed node groups.
+     * The Amazon Resource Name (ARN) that identifies the resource to list tags for.
      * </p>
      */
     private String resourceArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported
-     * resources are Amazon EKS clusters and managed node groups.
+     * The Amazon Resource Name (ARN) that identifies the resource to list tags for.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
-     *        supported resources are Amazon EKS clusters and managed node groups.
+     *        The Amazon Resource Name (ARN) that identifies the resource to list tags for.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -50,12 +47,10 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported
-     * resources are Amazon EKS clusters and managed node groups.
+     * The Amazon Resource Name (ARN) that identifies the resource to list tags for.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
-     *         supported resources are Amazon EKS clusters and managed node groups.
+     * @return The Amazon Resource Name (ARN) that identifies the resource to list tags for.
      */
 
     public String getResourceArn() {
@@ -64,13 +59,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported
-     * resources are Amazon EKS clusters and managed node groups.
+     * The Amazon Resource Name (ARN) that identifies the resource to list tags for.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the
-     *        supported resources are Amazon EKS clusters and managed node groups.
+     *        The Amazon Resource Name (ARN) that identifies the resource to list tags for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

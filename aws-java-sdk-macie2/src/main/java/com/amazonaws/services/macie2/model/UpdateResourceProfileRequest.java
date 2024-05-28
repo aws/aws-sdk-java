@@ -1,0 +1,191 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.macie2.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+import com.amazonaws.AmazonWebServiceRequest;
+
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateResourceProfile" target="_top">AWS API
+ *      Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class UpdateResourceProfileRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.
+     * </p>
+     */
+    private String resourceArn;
+    /**
+     * <p>
+     * The new sensitivity score for the bucket. Valid values are: 100, assign the maximum score and apply the
+     * <i>Sensitive</i> label to the bucket; and, null (empty), assign a score that Amazon Macie calculates
+     * automatically after you submit the request.
+     * </p>
+     */
+    private Integer sensitivityScoreOverride;
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.
+     * </p>
+     * 
+     * @param resourceArn
+     *        The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.
+     */
+
+    public void setResourceArn(String resourceArn) {
+        this.resourceArn = resourceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.
+     */
+
+    public String getResourceArn() {
+        return this.resourceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.
+     * </p>
+     * 
+     * @param resourceArn
+     *        The Amazon Resource Name (ARN) of the S3 bucket that the request applies to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateResourceProfileRequest withResourceArn(String resourceArn) {
+        setResourceArn(resourceArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The new sensitivity score for the bucket. Valid values are: 100, assign the maximum score and apply the
+     * <i>Sensitive</i> label to the bucket; and, null (empty), assign a score that Amazon Macie calculates
+     * automatically after you submit the request.
+     * </p>
+     * 
+     * @param sensitivityScoreOverride
+     *        The new sensitivity score for the bucket. Valid values are: 100, assign the maximum score and apply the
+     *        <i>Sensitive</i> label to the bucket; and, null (empty), assign a score that Amazon Macie calculates
+     *        automatically after you submit the request.
+     */
+
+    public void setSensitivityScoreOverride(Integer sensitivityScoreOverride) {
+        this.sensitivityScoreOverride = sensitivityScoreOverride;
+    }
+
+    /**
+     * <p>
+     * The new sensitivity score for the bucket. Valid values are: 100, assign the maximum score and apply the
+     * <i>Sensitive</i> label to the bucket; and, null (empty), assign a score that Amazon Macie calculates
+     * automatically after you submit the request.
+     * </p>
+     * 
+     * @return The new sensitivity score for the bucket. Valid values are: 100, assign the maximum score and apply the
+     *         <i>Sensitive</i> label to the bucket; and, null (empty), assign a score that Amazon Macie calculates
+     *         automatically after you submit the request.
+     */
+
+    public Integer getSensitivityScoreOverride() {
+        return this.sensitivityScoreOverride;
+    }
+
+    /**
+     * <p>
+     * The new sensitivity score for the bucket. Valid values are: 100, assign the maximum score and apply the
+     * <i>Sensitive</i> label to the bucket; and, null (empty), assign a score that Amazon Macie calculates
+     * automatically after you submit the request.
+     * </p>
+     * 
+     * @param sensitivityScoreOverride
+     *        The new sensitivity score for the bucket. Valid values are: 100, assign the maximum score and apply the
+     *        <i>Sensitive</i> label to the bucket; and, null (empty), assign a score that Amazon Macie calculates
+     *        automatically after you submit the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateResourceProfileRequest withSensitivityScoreOverride(Integer sensitivityScoreOverride) {
+        setSensitivityScoreOverride(sensitivityScoreOverride);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getResourceArn() != null)
+            sb.append("ResourceArn: ").append(getResourceArn()).append(",");
+        if (getSensitivityScoreOverride() != null)
+            sb.append("SensitivityScoreOverride: ").append(getSensitivityScoreOverride());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof UpdateResourceProfileRequest == false)
+            return false;
+        UpdateResourceProfileRequest other = (UpdateResourceProfileRequest) obj;
+        if (other.getResourceArn() == null ^ this.getResourceArn() == null)
+            return false;
+        if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
+            return false;
+        if (other.getSensitivityScoreOverride() == null ^ this.getSensitivityScoreOverride() == null)
+            return false;
+        if (other.getSensitivityScoreOverride() != null && other.getSensitivityScoreOverride().equals(this.getSensitivityScoreOverride()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
+        hashCode = prime * hashCode + ((getSensitivityScoreOverride() == null) ? 0 : getSensitivityScoreOverride().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public UpdateResourceProfileRequest clone() {
+        return (UpdateResourceProfileRequest) super.clone();
+    }
+
+}

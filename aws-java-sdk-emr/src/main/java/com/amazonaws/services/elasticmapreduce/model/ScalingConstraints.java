@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The upper and lower EC2 instance limits for an automatic scaling policy. Automatic scaling activities triggered by
- * automatic scaling rules will not cause an instance group to grow above or below these limits.
+ * The upper and lower Amazon EC2 instance limits for an automatic scaling policy. Automatic scaling activities
+ * triggered by automatic scaling rules will not cause an instance group to grow above or below these limits.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ScalingConstraints"
@@ -31,28 +31,28 @@ public class ScalingConstraints implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The lower boundary of EC2 instances in an instance group below which scaling activities are not allowed to
+     * The lower boundary of Amazon EC2 instances in an instance group below which scaling activities are not allowed to
      * shrink. Scale-in activities will not terminate instances below this boundary.
      * </p>
      */
     private Integer minCapacity;
     /**
      * <p>
-     * The upper boundary of EC2 instances in an instance group beyond which scaling activities are not allowed to grow.
-     * Scale-out activities will not add instances beyond this boundary.
+     * The upper boundary of Amazon EC2 instances in an instance group beyond which scaling activities are not allowed
+     * to grow. Scale-out activities will not add instances beyond this boundary.
      * </p>
      */
     private Integer maxCapacity;
 
     /**
      * <p>
-     * The lower boundary of EC2 instances in an instance group below which scaling activities are not allowed to
+     * The lower boundary of Amazon EC2 instances in an instance group below which scaling activities are not allowed to
      * shrink. Scale-in activities will not terminate instances below this boundary.
      * </p>
      * 
      * @param minCapacity
-     *        The lower boundary of EC2 instances in an instance group below which scaling activities are not allowed to
-     *        shrink. Scale-in activities will not terminate instances below this boundary.
+     *        The lower boundary of Amazon EC2 instances in an instance group below which scaling activities are not
+     *        allowed to shrink. Scale-in activities will not terminate instances below this boundary.
      */
 
     public void setMinCapacity(Integer minCapacity) {
@@ -61,12 +61,12 @@ public class ScalingConstraints implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The lower boundary of EC2 instances in an instance group below which scaling activities are not allowed to
+     * The lower boundary of Amazon EC2 instances in an instance group below which scaling activities are not allowed to
      * shrink. Scale-in activities will not terminate instances below this boundary.
      * </p>
      * 
-     * @return The lower boundary of EC2 instances in an instance group below which scaling activities are not allowed
-     *         to shrink. Scale-in activities will not terminate instances below this boundary.
+     * @return The lower boundary of Amazon EC2 instances in an instance group below which scaling activities are not
+     *         allowed to shrink. Scale-in activities will not terminate instances below this boundary.
      */
 
     public Integer getMinCapacity() {
@@ -75,13 +75,13 @@ public class ScalingConstraints implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The lower boundary of EC2 instances in an instance group below which scaling activities are not allowed to
+     * The lower boundary of Amazon EC2 instances in an instance group below which scaling activities are not allowed to
      * shrink. Scale-in activities will not terminate instances below this boundary.
      * </p>
      * 
      * @param minCapacity
-     *        The lower boundary of EC2 instances in an instance group below which scaling activities are not allowed to
-     *        shrink. Scale-in activities will not terminate instances below this boundary.
+     *        The lower boundary of Amazon EC2 instances in an instance group below which scaling activities are not
+     *        allowed to shrink. Scale-in activities will not terminate instances below this boundary.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,13 +92,13 @@ public class ScalingConstraints implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The upper boundary of EC2 instances in an instance group beyond which scaling activities are not allowed to grow.
-     * Scale-out activities will not add instances beyond this boundary.
+     * The upper boundary of Amazon EC2 instances in an instance group beyond which scaling activities are not allowed
+     * to grow. Scale-out activities will not add instances beyond this boundary.
      * </p>
      * 
      * @param maxCapacity
-     *        The upper boundary of EC2 instances in an instance group beyond which scaling activities are not allowed
-     *        to grow. Scale-out activities will not add instances beyond this boundary.
+     *        The upper boundary of Amazon EC2 instances in an instance group beyond which scaling activities are not
+     *        allowed to grow. Scale-out activities will not add instances beyond this boundary.
      */
 
     public void setMaxCapacity(Integer maxCapacity) {
@@ -107,12 +107,12 @@ public class ScalingConstraints implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The upper boundary of EC2 instances in an instance group beyond which scaling activities are not allowed to grow.
-     * Scale-out activities will not add instances beyond this boundary.
+     * The upper boundary of Amazon EC2 instances in an instance group beyond which scaling activities are not allowed
+     * to grow. Scale-out activities will not add instances beyond this boundary.
      * </p>
      * 
-     * @return The upper boundary of EC2 instances in an instance group beyond which scaling activities are not allowed
-     *         to grow. Scale-out activities will not add instances beyond this boundary.
+     * @return The upper boundary of Amazon EC2 instances in an instance group beyond which scaling activities are not
+     *         allowed to grow. Scale-out activities will not add instances beyond this boundary.
      */
 
     public Integer getMaxCapacity() {
@@ -121,13 +121,13 @@ public class ScalingConstraints implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The upper boundary of EC2 instances in an instance group beyond which scaling activities are not allowed to grow.
-     * Scale-out activities will not add instances beyond this boundary.
+     * The upper boundary of Amazon EC2 instances in an instance group beyond which scaling activities are not allowed
+     * to grow. Scale-out activities will not add instances beyond this boundary.
      * </p>
      * 
      * @param maxCapacity
-     *        The upper boundary of EC2 instances in an instance group beyond which scaling activities are not allowed
-     *        to grow. Scale-out activities will not add instances beyond this boundary.
+     *        The upper boundary of Amazon EC2 instances in an instance group beyond which scaling activities are not
+     *        allowed to grow. Scale-out activities will not add instances beyond this boundary.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

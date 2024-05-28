@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1248,8 +1248,8 @@ public interface AmazonCloudWatchEvents {
      * </li>
      * </ul>
      * <p>
-     * Creating rules with built-in targets is supported only in the Management Console. The built-in targets are
-     * <code>EC2 CreateSnapshot API call</code>, <code>EC2 RebootInstances API call</code>,
+     * Creating rules with built-in targets is supported only in the Amazon Web Services Management Console. The
+     * built-in targets are <code>EC2 CreateSnapshot API call</code>, <code>EC2 RebootInstances API call</code>,
      * <code>EC2 StopInstances API call</code>, and <code>EC2 TerminateInstances API call</code>.
      * </p>
      * <p>

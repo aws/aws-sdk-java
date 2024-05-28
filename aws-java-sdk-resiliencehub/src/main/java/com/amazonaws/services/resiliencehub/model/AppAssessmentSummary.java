@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,96 +30,109 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     * :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     * <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more
+     * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      */
     private String appArn;
     /**
      * <p>
-     * The version of the application.
+     * Version of an application.
      * </p>
      */
     private String appVersion;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
+     * Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
      * :resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information
      * about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      */
     private String assessmentArn;
     /**
      * <p>
-     * The name of the assessment.
+     * Name of the assessment.
      * </p>
      */
     private String assessmentName;
     /**
      * <p>
-     * The current status of the assessment for the resiliency policy.
+     * Current status of the assessment for the resiliency policy.
      * </p>
      */
     private String assessmentStatus;
     /**
      * <p>
-     * The current status of compliance for the resiliency policy.
+     * TCurrent status of compliance for the resiliency policy.
      * </p>
      */
     private String complianceStatus;
     /**
      * <p>
-     * The cost for the application.
+     * Cost for an application.
      * </p>
      */
     private Cost cost;
     /**
      * <p>
-     * The end time for the action.
+     * Indicates if compliance drifts (deviations) were detected while running an assessment for your application.
+     * </p>
+     */
+    private String driftStatus;
+    /**
+     * <p>
+     * End time for the action.
      * </p>
      */
     private java.util.Date endTime;
     /**
      * <p>
-     * The entity that invoked the assessment.
+     * Entity that invoked the assessment.
      * </p>
      */
     private String invoker;
     /**
      * <p>
-     * The message from the assessment run.
+     * Message from the assessment run.
      * </p>
      */
     private String message;
     /**
      * <p>
-     * The current resiliency score for the application.
+     * Current resiliency score for the application.
      * </p>
      */
     private Double resiliencyScore;
     /**
      * <p>
-     * The starting time for the action.
+     * Starting time for the action.
      * </p>
      */
     private java.util.Date startTime;
+    /**
+     * <p>
+     * Name of an application version.
+     * </p>
+     */
+    private String versionName;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     * :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     * <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more
+     * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
      * @param appArn
-     *        The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     *        :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information
-     *        about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     *        Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     *        <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For
+     *        more information about ARNs, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      */
 
     public void setAppArn(String appArn) {
@@ -128,16 +141,17 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     * :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     * <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more
+     * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     *         :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information
-     *         about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     *         Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * @return Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     *         <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+     *         For more information about ARNs, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     *         (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      */
 
     public String getAppArn() {
@@ -146,17 +160,18 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     * :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     * <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more
+     * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
      * @param appArn
-     *        The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     *        :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information
-     *        about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     *        Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     *        <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For
+     *        more information about ARNs, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -167,11 +182,11 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The version of the application.
+     * Version of an application.
      * </p>
      * 
      * @param appVersion
-     *        The version of the application.
+     *        Version of an application.
      */
 
     public void setAppVersion(String appVersion) {
@@ -180,10 +195,10 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The version of the application.
+     * Version of an application.
      * </p>
      * 
-     * @return The version of the application.
+     * @return Version of an application.
      */
 
     public String getAppVersion() {
@@ -192,11 +207,11 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The version of the application.
+     * Version of an application.
      * </p>
      * 
      * @param appVersion
-     *        The version of the application.
+     *        Version of an application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -207,18 +222,18 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
+     * Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
      * :resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information
      * about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
      * @param assessmentArn
-     *        The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
+     *        Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
      *        :resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more
      *        information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     *        (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      */
 
     public void setAssessmentArn(String assessmentArn) {
@@ -227,17 +242,17 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
+     * Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
      * :resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information
      * about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
+     * @return Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
      *         :resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more
      *         information about ARNs, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     *         (ARNs)</a> in the <i>AWS General Reference</i>.
+     *         (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      */
 
     public String getAssessmentArn() {
@@ -246,18 +261,18 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
+     * Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
      * :resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information
      * about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon
-     * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
      * @param assessmentArn
-     *        The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
+     *        Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>
      *        :resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more
      *        information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     *        (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -268,11 +283,11 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the assessment.
+     * Name of the assessment.
      * </p>
      * 
      * @param assessmentName
-     *        The name of the assessment.
+     *        Name of the assessment.
      */
 
     public void setAssessmentName(String assessmentName) {
@@ -281,10 +296,10 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the assessment.
+     * Name of the assessment.
      * </p>
      * 
-     * @return The name of the assessment.
+     * @return Name of the assessment.
      */
 
     public String getAssessmentName() {
@@ -293,11 +308,11 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the assessment.
+     * Name of the assessment.
      * </p>
      * 
      * @param assessmentName
-     *        The name of the assessment.
+     *        Name of the assessment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -308,11 +323,11 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The current status of the assessment for the resiliency policy.
+     * Current status of the assessment for the resiliency policy.
      * </p>
      * 
      * @param assessmentStatus
-     *        The current status of the assessment for the resiliency policy.
+     *        Current status of the assessment for the resiliency policy.
      * @see AssessmentStatus
      */
 
@@ -322,10 +337,10 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The current status of the assessment for the resiliency policy.
+     * Current status of the assessment for the resiliency policy.
      * </p>
      * 
-     * @return The current status of the assessment for the resiliency policy.
+     * @return Current status of the assessment for the resiliency policy.
      * @see AssessmentStatus
      */
 
@@ -335,11 +350,11 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The current status of the assessment for the resiliency policy.
+     * Current status of the assessment for the resiliency policy.
      * </p>
      * 
      * @param assessmentStatus
-     *        The current status of the assessment for the resiliency policy.
+     *        Current status of the assessment for the resiliency policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AssessmentStatus
      */
@@ -351,11 +366,11 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The current status of the assessment for the resiliency policy.
+     * Current status of the assessment for the resiliency policy.
      * </p>
      * 
      * @param assessmentStatus
-     *        The current status of the assessment for the resiliency policy.
+     *        Current status of the assessment for the resiliency policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AssessmentStatus
      */
@@ -367,11 +382,11 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The current status of compliance for the resiliency policy.
+     * TCurrent status of compliance for the resiliency policy.
      * </p>
      * 
      * @param complianceStatus
-     *        The current status of compliance for the resiliency policy.
+     *        TCurrent status of compliance for the resiliency policy.
      * @see ComplianceStatus
      */
 
@@ -381,10 +396,10 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The current status of compliance for the resiliency policy.
+     * TCurrent status of compliance for the resiliency policy.
      * </p>
      * 
-     * @return The current status of compliance for the resiliency policy.
+     * @return TCurrent status of compliance for the resiliency policy.
      * @see ComplianceStatus
      */
 
@@ -394,11 +409,11 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The current status of compliance for the resiliency policy.
+     * TCurrent status of compliance for the resiliency policy.
      * </p>
      * 
      * @param complianceStatus
-     *        The current status of compliance for the resiliency policy.
+     *        TCurrent status of compliance for the resiliency policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceStatus
      */
@@ -410,11 +425,11 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The current status of compliance for the resiliency policy.
+     * TCurrent status of compliance for the resiliency policy.
      * </p>
      * 
      * @param complianceStatus
-     *        The current status of compliance for the resiliency policy.
+     *        TCurrent status of compliance for the resiliency policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceStatus
      */
@@ -426,11 +441,11 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The cost for the application.
+     * Cost for an application.
      * </p>
      * 
      * @param cost
-     *        The cost for the application.
+     *        Cost for an application.
      */
 
     public void setCost(Cost cost) {
@@ -439,10 +454,10 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The cost for the application.
+     * Cost for an application.
      * </p>
      * 
-     * @return The cost for the application.
+     * @return Cost for an application.
      */
 
     public Cost getCost() {
@@ -451,11 +466,11 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The cost for the application.
+     * Cost for an application.
      * </p>
      * 
      * @param cost
-     *        The cost for the application.
+     *        Cost for an application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -466,11 +481,74 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The end time for the action.
+     * Indicates if compliance drifts (deviations) were detected while running an assessment for your application.
+     * </p>
+     * 
+     * @param driftStatus
+     *        Indicates if compliance drifts (deviations) were detected while running an assessment for your
+     *        application.
+     * @see DriftStatus
+     */
+
+    public void setDriftStatus(String driftStatus) {
+        this.driftStatus = driftStatus;
+    }
+
+    /**
+     * <p>
+     * Indicates if compliance drifts (deviations) were detected while running an assessment for your application.
+     * </p>
+     * 
+     * @return Indicates if compliance drifts (deviations) were detected while running an assessment for your
+     *         application.
+     * @see DriftStatus
+     */
+
+    public String getDriftStatus() {
+        return this.driftStatus;
+    }
+
+    /**
+     * <p>
+     * Indicates if compliance drifts (deviations) were detected while running an assessment for your application.
+     * </p>
+     * 
+     * @param driftStatus
+     *        Indicates if compliance drifts (deviations) were detected while running an assessment for your
+     *        application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DriftStatus
+     */
+
+    public AppAssessmentSummary withDriftStatus(String driftStatus) {
+        setDriftStatus(driftStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates if compliance drifts (deviations) were detected while running an assessment for your application.
+     * </p>
+     * 
+     * @param driftStatus
+     *        Indicates if compliance drifts (deviations) were detected while running an assessment for your
+     *        application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DriftStatus
+     */
+
+    public AppAssessmentSummary withDriftStatus(DriftStatus driftStatus) {
+        this.driftStatus = driftStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * End time for the action.
      * </p>
      * 
      * @param endTime
-     *        The end time for the action.
+     *        End time for the action.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -479,10 +557,10 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The end time for the action.
+     * End time for the action.
      * </p>
      * 
-     * @return The end time for the action.
+     * @return End time for the action.
      */
 
     public java.util.Date getEndTime() {
@@ -491,11 +569,11 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The end time for the action.
+     * End time for the action.
      * </p>
      * 
      * @param endTime
-     *        The end time for the action.
+     *        End time for the action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -506,11 +584,11 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The entity that invoked the assessment.
+     * Entity that invoked the assessment.
      * </p>
      * 
      * @param invoker
-     *        The entity that invoked the assessment.
+     *        Entity that invoked the assessment.
      * @see AssessmentInvoker
      */
 
@@ -520,10 +598,10 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The entity that invoked the assessment.
+     * Entity that invoked the assessment.
      * </p>
      * 
-     * @return The entity that invoked the assessment.
+     * @return Entity that invoked the assessment.
      * @see AssessmentInvoker
      */
 
@@ -533,11 +611,11 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The entity that invoked the assessment.
+     * Entity that invoked the assessment.
      * </p>
      * 
      * @param invoker
-     *        The entity that invoked the assessment.
+     *        Entity that invoked the assessment.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AssessmentInvoker
      */
@@ -549,11 +627,11 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The entity that invoked the assessment.
+     * Entity that invoked the assessment.
      * </p>
      * 
      * @param invoker
-     *        The entity that invoked the assessment.
+     *        Entity that invoked the assessment.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AssessmentInvoker
      */
@@ -565,11 +643,11 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The message from the assessment run.
+     * Message from the assessment run.
      * </p>
      * 
      * @param message
-     *        The message from the assessment run.
+     *        Message from the assessment run.
      */
 
     public void setMessage(String message) {
@@ -578,10 +656,10 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The message from the assessment run.
+     * Message from the assessment run.
      * </p>
      * 
-     * @return The message from the assessment run.
+     * @return Message from the assessment run.
      */
 
     public String getMessage() {
@@ -590,11 +668,11 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The message from the assessment run.
+     * Message from the assessment run.
      * </p>
      * 
      * @param message
-     *        The message from the assessment run.
+     *        Message from the assessment run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -605,11 +683,11 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The current resiliency score for the application.
+     * Current resiliency score for the application.
      * </p>
      * 
      * @param resiliencyScore
-     *        The current resiliency score for the application.
+     *        Current resiliency score for the application.
      */
 
     public void setResiliencyScore(Double resiliencyScore) {
@@ -618,10 +696,10 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The current resiliency score for the application.
+     * Current resiliency score for the application.
      * </p>
      * 
-     * @return The current resiliency score for the application.
+     * @return Current resiliency score for the application.
      */
 
     public Double getResiliencyScore() {
@@ -630,11 +708,11 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The current resiliency score for the application.
+     * Current resiliency score for the application.
      * </p>
      * 
      * @param resiliencyScore
-     *        The current resiliency score for the application.
+     *        Current resiliency score for the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -645,11 +723,11 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The starting time for the action.
+     * Starting time for the action.
      * </p>
      * 
      * @param startTime
-     *        The starting time for the action.
+     *        Starting time for the action.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -658,10 +736,10 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The starting time for the action.
+     * Starting time for the action.
      * </p>
      * 
-     * @return The starting time for the action.
+     * @return Starting time for the action.
      */
 
     public java.util.Date getStartTime() {
@@ -670,16 +748,56 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The starting time for the action.
+     * Starting time for the action.
      * </p>
      * 
      * @param startTime
-     *        The starting time for the action.
+     *        Starting time for the action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AppAssessmentSummary withStartTime(java.util.Date startTime) {
         setStartTime(startTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Name of an application version.
+     * </p>
+     * 
+     * @param versionName
+     *        Name of an application version.
+     */
+
+    public void setVersionName(String versionName) {
+        this.versionName = versionName;
+    }
+
+    /**
+     * <p>
+     * Name of an application version.
+     * </p>
+     * 
+     * @return Name of an application version.
+     */
+
+    public String getVersionName() {
+        return this.versionName;
+    }
+
+    /**
+     * <p>
+     * Name of an application version.
+     * </p>
+     * 
+     * @param versionName
+     *        Name of an application version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AppAssessmentSummary withVersionName(String versionName) {
+        setVersionName(versionName);
         return this;
     }
 
@@ -709,6 +827,8 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
             sb.append("ComplianceStatus: ").append(getComplianceStatus()).append(",");
         if (getCost() != null)
             sb.append("Cost: ").append(getCost()).append(",");
+        if (getDriftStatus() != null)
+            sb.append("DriftStatus: ").append(getDriftStatus()).append(",");
         if (getEndTime() != null)
             sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getInvoker() != null)
@@ -718,7 +838,9 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
         if (getResiliencyScore() != null)
             sb.append("ResiliencyScore: ").append(getResiliencyScore()).append(",");
         if (getStartTime() != null)
-            sb.append("StartTime: ").append(getStartTime());
+            sb.append("StartTime: ").append(getStartTime()).append(",");
+        if (getVersionName() != null)
+            sb.append("VersionName: ").append(getVersionName());
         sb.append("}");
         return sb.toString();
     }
@@ -761,6 +883,10 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
             return false;
         if (other.getCost() != null && other.getCost().equals(this.getCost()) == false)
             return false;
+        if (other.getDriftStatus() == null ^ this.getDriftStatus() == null)
+            return false;
+        if (other.getDriftStatus() != null && other.getDriftStatus().equals(this.getDriftStatus()) == false)
+            return false;
         if (other.getEndTime() == null ^ this.getEndTime() == null)
             return false;
         if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false)
@@ -781,6 +907,10 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
             return false;
         if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
             return false;
+        if (other.getVersionName() == null ^ this.getVersionName() == null)
+            return false;
+        if (other.getVersionName() != null && other.getVersionName().equals(this.getVersionName()) == false)
+            return false;
         return true;
     }
 
@@ -796,11 +926,13 @@ public class AppAssessmentSummary implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getAssessmentStatus() == null) ? 0 : getAssessmentStatus().hashCode());
         hashCode = prime * hashCode + ((getComplianceStatus() == null) ? 0 : getComplianceStatus().hashCode());
         hashCode = prime * hashCode + ((getCost() == null) ? 0 : getCost().hashCode());
+        hashCode = prime * hashCode + ((getDriftStatus() == null) ? 0 : getDriftStatus().hashCode());
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         hashCode = prime * hashCode + ((getInvoker() == null) ? 0 : getInvoker().hashCode());
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
         hashCode = prime * hashCode + ((getResiliencyScore() == null) ? 0 : getResiliencyScore().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
+        hashCode = prime * hashCode + ((getVersionName() == null) ? 0 : getVersionName().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,6 +71,45 @@ public class AbstractAWSSSOAdminAsync extends AbstractAWSSSOAdmin implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest request) {
+
+        return createApplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateApplicationRequest, CreateApplicationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateApplicationAssignmentResult> createApplicationAssignmentAsync(CreateApplicationAssignmentRequest request) {
+
+        return createApplicationAssignmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateApplicationAssignmentResult> createApplicationAssignmentAsync(CreateApplicationAssignmentRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateApplicationAssignmentRequest, CreateApplicationAssignmentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateInstanceResult> createInstanceAsync(CreateInstanceRequest request) {
+
+        return createInstanceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateInstanceResult> createInstanceAsync(CreateInstanceRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateInstanceRequest, CreateInstanceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateInstanceAccessControlAttributeConfigurationResult> createInstanceAccessControlAttributeConfigurationAsync(
             CreateInstanceAccessControlAttributeConfigurationRequest request) {
 
@@ -99,6 +138,19 @@ public class AbstractAWSSSOAdminAsync extends AbstractAWSSSOAdmin implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<CreateTrustedTokenIssuerResult> createTrustedTokenIssuerAsync(CreateTrustedTokenIssuerRequest request) {
+
+        return createTrustedTokenIssuerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTrustedTokenIssuerResult> createTrustedTokenIssuerAsync(CreateTrustedTokenIssuerRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateTrustedTokenIssuerRequest, CreateTrustedTokenIssuerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteAccountAssignmentResult> deleteAccountAssignmentAsync(DeleteAccountAssignmentRequest request) {
 
         return deleteAccountAssignmentAsync(request, null);
@@ -107,6 +159,73 @@ public class AbstractAWSSSOAdminAsync extends AbstractAWSSSOAdmin implements AWS
     @Override
     public java.util.concurrent.Future<DeleteAccountAssignmentResult> deleteAccountAssignmentAsync(DeleteAccountAssignmentRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteAccountAssignmentRequest, DeleteAccountAssignmentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(DeleteApplicationRequest request) {
+
+        return deleteApplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(DeleteApplicationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationAccessScopeResult> deleteApplicationAccessScopeAsync(DeleteApplicationAccessScopeRequest request) {
+
+        return deleteApplicationAccessScopeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationAccessScopeResult> deleteApplicationAccessScopeAsync(DeleteApplicationAccessScopeRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteApplicationAccessScopeRequest, DeleteApplicationAccessScopeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationAssignmentResult> deleteApplicationAssignmentAsync(DeleteApplicationAssignmentRequest request) {
+
+        return deleteApplicationAssignmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationAssignmentResult> deleteApplicationAssignmentAsync(DeleteApplicationAssignmentRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteApplicationAssignmentRequest, DeleteApplicationAssignmentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationAuthenticationMethodResult> deleteApplicationAuthenticationMethodAsync(
+            DeleteApplicationAuthenticationMethodRequest request) {
+
+        return deleteApplicationAuthenticationMethodAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationAuthenticationMethodResult> deleteApplicationAuthenticationMethodAsync(
+            DeleteApplicationAuthenticationMethodRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteApplicationAuthenticationMethodRequest, DeleteApplicationAuthenticationMethodResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationGrantResult> deleteApplicationGrantAsync(DeleteApplicationGrantRequest request) {
+
+        return deleteApplicationGrantAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationGrantResult> deleteApplicationGrantAsync(DeleteApplicationGrantRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteApplicationGrantRequest, DeleteApplicationGrantResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -122,6 +241,19 @@ public class AbstractAWSSSOAdminAsync extends AbstractAWSSSOAdmin implements AWS
     public java.util.concurrent.Future<DeleteInlinePolicyFromPermissionSetResult> deleteInlinePolicyFromPermissionSetAsync(
             DeleteInlinePolicyFromPermissionSetRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteInlinePolicyFromPermissionSetRequest, DeleteInlinePolicyFromPermissionSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteInstanceResult> deleteInstanceAsync(DeleteInstanceRequest request) {
+
+        return deleteInstanceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteInstanceResult> deleteInstanceAsync(DeleteInstanceRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteInstanceRequest, DeleteInstanceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -170,6 +302,19 @@ public class AbstractAWSSSOAdminAsync extends AbstractAWSSSOAdmin implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteTrustedTokenIssuerResult> deleteTrustedTokenIssuerAsync(DeleteTrustedTokenIssuerRequest request) {
+
+        return deleteTrustedTokenIssuerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTrustedTokenIssuerResult> deleteTrustedTokenIssuerAsync(DeleteTrustedTokenIssuerRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteTrustedTokenIssuerRequest, DeleteTrustedTokenIssuerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAccountAssignmentCreationStatusResult> describeAccountAssignmentCreationStatusAsync(
             DescribeAccountAssignmentCreationStatusRequest request) {
 
@@ -195,6 +340,58 @@ public class AbstractAWSSSOAdminAsync extends AbstractAWSSSOAdmin implements AWS
     public java.util.concurrent.Future<DescribeAccountAssignmentDeletionStatusResult> describeAccountAssignmentDeletionStatusAsync(
             DescribeAccountAssignmentDeletionStatusRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAccountAssignmentDeletionStatusRequest, DescribeAccountAssignmentDeletionStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeApplicationResult> describeApplicationAsync(DescribeApplicationRequest request) {
+
+        return describeApplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeApplicationResult> describeApplicationAsync(DescribeApplicationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeApplicationRequest, DescribeApplicationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeApplicationAssignmentResult> describeApplicationAssignmentAsync(DescribeApplicationAssignmentRequest request) {
+
+        return describeApplicationAssignmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeApplicationAssignmentResult> describeApplicationAssignmentAsync(DescribeApplicationAssignmentRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeApplicationAssignmentRequest, DescribeApplicationAssignmentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeApplicationProviderResult> describeApplicationProviderAsync(DescribeApplicationProviderRequest request) {
+
+        return describeApplicationProviderAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeApplicationProviderResult> describeApplicationProviderAsync(DescribeApplicationProviderRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeApplicationProviderRequest, DescribeApplicationProviderResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInstanceResult> describeInstanceAsync(DescribeInstanceRequest request) {
+
+        return describeInstanceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInstanceResult> describeInstanceAsync(DescribeInstanceRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeInstanceRequest, DescribeInstanceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -243,6 +440,19 @@ public class AbstractAWSSSOAdminAsync extends AbstractAWSSSOAdmin implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeTrustedTokenIssuerResult> describeTrustedTokenIssuerAsync(DescribeTrustedTokenIssuerRequest request) {
+
+        return describeTrustedTokenIssuerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTrustedTokenIssuerResult> describeTrustedTokenIssuerAsync(DescribeTrustedTokenIssuerRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeTrustedTokenIssuerRequest, DescribeTrustedTokenIssuerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DetachCustomerManagedPolicyReferenceFromPermissionSetResult> detachCustomerManagedPolicyReferenceFromPermissionSetAsync(
             DetachCustomerManagedPolicyReferenceFromPermissionSetRequest request) {
 
@@ -268,6 +478,62 @@ public class AbstractAWSSSOAdminAsync extends AbstractAWSSSOAdmin implements AWS
     public java.util.concurrent.Future<DetachManagedPolicyFromPermissionSetResult> detachManagedPolicyFromPermissionSetAsync(
             DetachManagedPolicyFromPermissionSetRequest request,
             com.amazonaws.handlers.AsyncHandler<DetachManagedPolicyFromPermissionSetRequest, DetachManagedPolicyFromPermissionSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetApplicationAccessScopeResult> getApplicationAccessScopeAsync(GetApplicationAccessScopeRequest request) {
+
+        return getApplicationAccessScopeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetApplicationAccessScopeResult> getApplicationAccessScopeAsync(GetApplicationAccessScopeRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetApplicationAccessScopeRequest, GetApplicationAccessScopeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetApplicationAssignmentConfigurationResult> getApplicationAssignmentConfigurationAsync(
+            GetApplicationAssignmentConfigurationRequest request) {
+
+        return getApplicationAssignmentConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetApplicationAssignmentConfigurationResult> getApplicationAssignmentConfigurationAsync(
+            GetApplicationAssignmentConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetApplicationAssignmentConfigurationRequest, GetApplicationAssignmentConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetApplicationAuthenticationMethodResult> getApplicationAuthenticationMethodAsync(
+            GetApplicationAuthenticationMethodRequest request) {
+
+        return getApplicationAuthenticationMethodAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetApplicationAuthenticationMethodResult> getApplicationAuthenticationMethodAsync(
+            GetApplicationAuthenticationMethodRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetApplicationAuthenticationMethodRequest, GetApplicationAuthenticationMethodResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetApplicationGrantResult> getApplicationGrantAsync(GetApplicationGrantRequest request) {
+
+        return getApplicationGrantAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetApplicationGrantResult> getApplicationGrantAsync(GetApplicationGrantRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetApplicationGrantRequest, GetApplicationGrantResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -346,6 +612,21 @@ public class AbstractAWSSSOAdminAsync extends AbstractAWSSSOAdmin implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<ListAccountAssignmentsForPrincipalResult> listAccountAssignmentsForPrincipalAsync(
+            ListAccountAssignmentsForPrincipalRequest request) {
+
+        return listAccountAssignmentsForPrincipalAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccountAssignmentsForPrincipalResult> listAccountAssignmentsForPrincipalAsync(
+            ListAccountAssignmentsForPrincipalRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAccountAssignmentsForPrincipalRequest, ListAccountAssignmentsForPrincipalResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAccountsForProvisionedPermissionSetResult> listAccountsForProvisionedPermissionSetAsync(
             ListAccountsForProvisionedPermissionSetRequest request) {
 
@@ -356,6 +637,101 @@ public class AbstractAWSSSOAdminAsync extends AbstractAWSSSOAdmin implements AWS
     public java.util.concurrent.Future<ListAccountsForProvisionedPermissionSetResult> listAccountsForProvisionedPermissionSetAsync(
             ListAccountsForProvisionedPermissionSetRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAccountsForProvisionedPermissionSetRequest, ListAccountsForProvisionedPermissionSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApplicationAccessScopesResult> listApplicationAccessScopesAsync(ListApplicationAccessScopesRequest request) {
+
+        return listApplicationAccessScopesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApplicationAccessScopesResult> listApplicationAccessScopesAsync(ListApplicationAccessScopesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListApplicationAccessScopesRequest, ListApplicationAccessScopesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApplicationAssignmentsResult> listApplicationAssignmentsAsync(ListApplicationAssignmentsRequest request) {
+
+        return listApplicationAssignmentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApplicationAssignmentsResult> listApplicationAssignmentsAsync(ListApplicationAssignmentsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListApplicationAssignmentsRequest, ListApplicationAssignmentsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApplicationAssignmentsForPrincipalResult> listApplicationAssignmentsForPrincipalAsync(
+            ListApplicationAssignmentsForPrincipalRequest request) {
+
+        return listApplicationAssignmentsForPrincipalAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApplicationAssignmentsForPrincipalResult> listApplicationAssignmentsForPrincipalAsync(
+            ListApplicationAssignmentsForPrincipalRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListApplicationAssignmentsForPrincipalRequest, ListApplicationAssignmentsForPrincipalResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApplicationAuthenticationMethodsResult> listApplicationAuthenticationMethodsAsync(
+            ListApplicationAuthenticationMethodsRequest request) {
+
+        return listApplicationAuthenticationMethodsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApplicationAuthenticationMethodsResult> listApplicationAuthenticationMethodsAsync(
+            ListApplicationAuthenticationMethodsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListApplicationAuthenticationMethodsRequest, ListApplicationAuthenticationMethodsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApplicationGrantsResult> listApplicationGrantsAsync(ListApplicationGrantsRequest request) {
+
+        return listApplicationGrantsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApplicationGrantsResult> listApplicationGrantsAsync(ListApplicationGrantsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListApplicationGrantsRequest, ListApplicationGrantsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApplicationProvidersResult> listApplicationProvidersAsync(ListApplicationProvidersRequest request) {
+
+        return listApplicationProvidersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApplicationProvidersResult> listApplicationProvidersAsync(ListApplicationProvidersRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListApplicationProvidersRequest, ListApplicationProvidersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(ListApplicationsRequest request) {
+
+        return listApplicationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(ListApplicationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListApplicationsRequest, ListApplicationsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -460,6 +836,19 @@ public class AbstractAWSSSOAdminAsync extends AbstractAWSSSOAdmin implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<ListTrustedTokenIssuersResult> listTrustedTokenIssuersAsync(ListTrustedTokenIssuersRequest request) {
+
+        return listTrustedTokenIssuersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTrustedTokenIssuersResult> listTrustedTokenIssuersAsync(ListTrustedTokenIssuersRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTrustedTokenIssuersRequest, ListTrustedTokenIssuersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ProvisionPermissionSetResult> provisionPermissionSetAsync(ProvisionPermissionSetRequest request) {
 
         return provisionPermissionSetAsync(request, null);
@@ -468,6 +857,62 @@ public class AbstractAWSSSOAdminAsync extends AbstractAWSSSOAdmin implements AWS
     @Override
     public java.util.concurrent.Future<ProvisionPermissionSetResult> provisionPermissionSetAsync(ProvisionPermissionSetRequest request,
             com.amazonaws.handlers.AsyncHandler<ProvisionPermissionSetRequest, ProvisionPermissionSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutApplicationAccessScopeResult> putApplicationAccessScopeAsync(PutApplicationAccessScopeRequest request) {
+
+        return putApplicationAccessScopeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutApplicationAccessScopeResult> putApplicationAccessScopeAsync(PutApplicationAccessScopeRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutApplicationAccessScopeRequest, PutApplicationAccessScopeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutApplicationAssignmentConfigurationResult> putApplicationAssignmentConfigurationAsync(
+            PutApplicationAssignmentConfigurationRequest request) {
+
+        return putApplicationAssignmentConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutApplicationAssignmentConfigurationResult> putApplicationAssignmentConfigurationAsync(
+            PutApplicationAssignmentConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutApplicationAssignmentConfigurationRequest, PutApplicationAssignmentConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutApplicationAuthenticationMethodResult> putApplicationAuthenticationMethodAsync(
+            PutApplicationAuthenticationMethodRequest request) {
+
+        return putApplicationAuthenticationMethodAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutApplicationAuthenticationMethodResult> putApplicationAuthenticationMethodAsync(
+            PutApplicationAuthenticationMethodRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutApplicationAuthenticationMethodRequest, PutApplicationAuthenticationMethodResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutApplicationGrantResult> putApplicationGrantAsync(PutApplicationGrantRequest request) {
+
+        return putApplicationGrantAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutApplicationGrantResult> putApplicationGrantAsync(PutApplicationGrantRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutApplicationGrantRequest, PutApplicationGrantResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -527,6 +972,32 @@ public class AbstractAWSSSOAdminAsync extends AbstractAWSSSOAdmin implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest request) {
+
+        return updateApplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInstanceResult> updateInstanceAsync(UpdateInstanceRequest request) {
+
+        return updateInstanceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInstanceResult> updateInstanceAsync(UpdateInstanceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateInstanceRequest, UpdateInstanceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateInstanceAccessControlAttributeConfigurationResult> updateInstanceAccessControlAttributeConfigurationAsync(
             UpdateInstanceAccessControlAttributeConfigurationRequest request) {
 
@@ -550,6 +1021,19 @@ public class AbstractAWSSSOAdminAsync extends AbstractAWSSSOAdmin implements AWS
     @Override
     public java.util.concurrent.Future<UpdatePermissionSetResult> updatePermissionSetAsync(UpdatePermissionSetRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdatePermissionSetRequest, UpdatePermissionSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTrustedTokenIssuerResult> updateTrustedTokenIssuerAsync(UpdateTrustedTokenIssuerRequest request) {
+
+        return updateTrustedTokenIssuerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTrustedTokenIssuerResult> updateTrustedTokenIssuerAsync(UpdateTrustedTokenIssuerRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateTrustedTokenIssuerRequest, UpdateTrustedTokenIssuerResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

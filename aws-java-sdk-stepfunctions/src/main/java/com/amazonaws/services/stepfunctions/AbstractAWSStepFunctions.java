@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,12 +48,27 @@ public class AbstractAWSStepFunctions implements AWSStepFunctions {
     }
 
     @Override
+    public CreateStateMachineAliasResult createStateMachineAlias(CreateStateMachineAliasRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteActivityResult deleteActivity(DeleteActivityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteStateMachineResult deleteStateMachine(DeleteStateMachineRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteStateMachineAliasResult deleteStateMachineAlias(DeleteStateMachineAliasRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteStateMachineVersionResult deleteStateMachineVersion(DeleteStateMachineVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -68,7 +83,17 @@ public class AbstractAWSStepFunctions implements AWSStepFunctions {
     }
 
     @Override
+    public DescribeMapRunResult describeMapRun(DescribeMapRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeStateMachineResult describeStateMachine(DescribeStateMachineRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeStateMachineAliasResult describeStateMachineAlias(DescribeStateMachineAliasRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -98,12 +123,37 @@ public class AbstractAWSStepFunctions implements AWSStepFunctions {
     }
 
     @Override
+    public ListMapRunsResult listMapRuns(ListMapRunsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListStateMachineAliasesResult listStateMachineAliases(ListStateMachineAliasesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListStateMachineVersionsResult listStateMachineVersions(ListStateMachineVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListStateMachinesResult listStateMachines(ListStateMachinesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PublishStateMachineVersionResult publishStateMachineVersion(PublishStateMachineVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RedriveExecutionResult redriveExecution(RedriveExecutionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -143,12 +193,32 @@ public class AbstractAWSStepFunctions implements AWSStepFunctions {
     }
 
     @Override
+    public TestStateResult testState(TestStateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public UpdateMapRunResult updateMapRun(UpdateMapRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateStateMachineResult updateStateMachine(UpdateStateMachineRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateStateMachineAliasResult updateStateMachineAlias(UpdateStateMachineAliasRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ValidateStateMachineDefinitionResult validateStateMachineDefinition(ValidateStateMachineDefinitionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

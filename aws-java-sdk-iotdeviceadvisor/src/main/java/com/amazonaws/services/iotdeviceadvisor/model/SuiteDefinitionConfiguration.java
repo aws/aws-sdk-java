@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Gets Suite Definition Configuration.
+ * Gets the suite definition configuration.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/SuiteDefinitionConfiguration"
@@ -30,7 +30,7 @@ public class SuiteDefinitionConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Gets Suite Definition Configuration name.
+     * Gets the suite definition name. This is a required parameter.
      * </p>
      */
     private String suiteDefinitionName;
@@ -54,30 +54,38 @@ public class SuiteDefinitionConfiguration implements Serializable, Cloneable, St
     private Boolean isLongDurationTest;
     /**
      * <p>
-     * Gets test suite root group.
+     * Gets the test suite root group. This is a required parameter. For updating or creating the latest qualification
+     * suite, if <code>intendedForQualification</code> is set to true, <code>rootGroup</code> can be an empty string. If
+     * <code>intendedForQualification</code> is false, <code>rootGroup</code> cannot be an empty string. If
+     * <code>rootGroup</code> is empty, and <code>intendedForQualification</code> is set to true, all the qualification
+     * tests are included, and the configuration is default.
+     * </p>
+     * <p>
+     * For a qualification suite, the minimum length is 0, and the maximum is 2048. For a non-qualification suite, the
+     * minimum length is 1, and the maximum is 2048.
      * </p>
      */
     private String rootGroup;
     /**
      * <p>
-     * Gets the device permission ARN.
+     * Gets the device permission ARN. This is a required parameter.
      * </p>
      */
     private String devicePermissionRoleArn;
     /**
      * <p>
-     * Gets the MQTT protocol that is configured in the suite definition.
+     * Sets the MQTT protocol that is configured in the suite definition.
      * </p>
      */
     private String protocol;
 
     /**
      * <p>
-     * Gets Suite Definition Configuration name.
+     * Gets the suite definition name. This is a required parameter.
      * </p>
      * 
      * @param suiteDefinitionName
-     *        Gets Suite Definition Configuration name.
+     *        Gets the suite definition name. This is a required parameter.
      */
 
     public void setSuiteDefinitionName(String suiteDefinitionName) {
@@ -86,10 +94,10 @@ public class SuiteDefinitionConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Gets Suite Definition Configuration name.
+     * Gets the suite definition name. This is a required parameter.
      * </p>
      * 
-     * @return Gets Suite Definition Configuration name.
+     * @return Gets the suite definition name. This is a required parameter.
      */
 
     public String getSuiteDefinitionName() {
@@ -98,11 +106,11 @@ public class SuiteDefinitionConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Gets Suite Definition Configuration name.
+     * Gets the suite definition name. This is a required parameter.
      * </p>
      * 
      * @param suiteDefinitionName
-     *        Gets Suite Definition Configuration name.
+     *        Gets the suite definition name. This is a required parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -287,11 +295,26 @@ public class SuiteDefinitionConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Gets test suite root group.
+     * Gets the test suite root group. This is a required parameter. For updating or creating the latest qualification
+     * suite, if <code>intendedForQualification</code> is set to true, <code>rootGroup</code> can be an empty string. If
+     * <code>intendedForQualification</code> is false, <code>rootGroup</code> cannot be an empty string. If
+     * <code>rootGroup</code> is empty, and <code>intendedForQualification</code> is set to true, all the qualification
+     * tests are included, and the configuration is default.
+     * </p>
+     * <p>
+     * For a qualification suite, the minimum length is 0, and the maximum is 2048. For a non-qualification suite, the
+     * minimum length is 1, and the maximum is 2048.
      * </p>
      * 
      * @param rootGroup
-     *        Gets test suite root group.
+     *        Gets the test suite root group. This is a required parameter. For updating or creating the latest
+     *        qualification suite, if <code>intendedForQualification</code> is set to true, <code>rootGroup</code> can
+     *        be an empty string. If <code>intendedForQualification</code> is false, <code>rootGroup</code> cannot be an
+     *        empty string. If <code>rootGroup</code> is empty, and <code>intendedForQualification</code> is set to
+     *        true, all the qualification tests are included, and the configuration is default.</p>
+     *        <p>
+     *        For a qualification suite, the minimum length is 0, and the maximum is 2048. For a non-qualification
+     *        suite, the minimum length is 1, and the maximum is 2048.
      */
 
     public void setRootGroup(String rootGroup) {
@@ -300,10 +323,25 @@ public class SuiteDefinitionConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Gets test suite root group.
+     * Gets the test suite root group. This is a required parameter. For updating or creating the latest qualification
+     * suite, if <code>intendedForQualification</code> is set to true, <code>rootGroup</code> can be an empty string. If
+     * <code>intendedForQualification</code> is false, <code>rootGroup</code> cannot be an empty string. If
+     * <code>rootGroup</code> is empty, and <code>intendedForQualification</code> is set to true, all the qualification
+     * tests are included, and the configuration is default.
+     * </p>
+     * <p>
+     * For a qualification suite, the minimum length is 0, and the maximum is 2048. For a non-qualification suite, the
+     * minimum length is 1, and the maximum is 2048.
      * </p>
      * 
-     * @return Gets test suite root group.
+     * @return Gets the test suite root group. This is a required parameter. For updating or creating the latest
+     *         qualification suite, if <code>intendedForQualification</code> is set to true, <code>rootGroup</code> can
+     *         be an empty string. If <code>intendedForQualification</code> is false, <code>rootGroup</code> cannot be
+     *         an empty string. If <code>rootGroup</code> is empty, and <code>intendedForQualification</code> is set to
+     *         true, all the qualification tests are included, and the configuration is default.</p>
+     *         <p>
+     *         For a qualification suite, the minimum length is 0, and the maximum is 2048. For a non-qualification
+     *         suite, the minimum length is 1, and the maximum is 2048.
      */
 
     public String getRootGroup() {
@@ -312,11 +350,26 @@ public class SuiteDefinitionConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Gets test suite root group.
+     * Gets the test suite root group. This is a required parameter. For updating or creating the latest qualification
+     * suite, if <code>intendedForQualification</code> is set to true, <code>rootGroup</code> can be an empty string. If
+     * <code>intendedForQualification</code> is false, <code>rootGroup</code> cannot be an empty string. If
+     * <code>rootGroup</code> is empty, and <code>intendedForQualification</code> is set to true, all the qualification
+     * tests are included, and the configuration is default.
+     * </p>
+     * <p>
+     * For a qualification suite, the minimum length is 0, and the maximum is 2048. For a non-qualification suite, the
+     * minimum length is 1, and the maximum is 2048.
      * </p>
      * 
      * @param rootGroup
-     *        Gets test suite root group.
+     *        Gets the test suite root group. This is a required parameter. For updating or creating the latest
+     *        qualification suite, if <code>intendedForQualification</code> is set to true, <code>rootGroup</code> can
+     *        be an empty string. If <code>intendedForQualification</code> is false, <code>rootGroup</code> cannot be an
+     *        empty string. If <code>rootGroup</code> is empty, and <code>intendedForQualification</code> is set to
+     *        true, all the qualification tests are included, and the configuration is default.</p>
+     *        <p>
+     *        For a qualification suite, the minimum length is 0, and the maximum is 2048. For a non-qualification
+     *        suite, the minimum length is 1, and the maximum is 2048.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -327,11 +380,11 @@ public class SuiteDefinitionConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Gets the device permission ARN.
+     * Gets the device permission ARN. This is a required parameter.
      * </p>
      * 
      * @param devicePermissionRoleArn
-     *        Gets the device permission ARN.
+     *        Gets the device permission ARN. This is a required parameter.
      */
 
     public void setDevicePermissionRoleArn(String devicePermissionRoleArn) {
@@ -340,10 +393,10 @@ public class SuiteDefinitionConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Gets the device permission ARN.
+     * Gets the device permission ARN. This is a required parameter.
      * </p>
      * 
-     * @return Gets the device permission ARN.
+     * @return Gets the device permission ARN. This is a required parameter.
      */
 
     public String getDevicePermissionRoleArn() {
@@ -352,11 +405,11 @@ public class SuiteDefinitionConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Gets the device permission ARN.
+     * Gets the device permission ARN. This is a required parameter.
      * </p>
      * 
      * @param devicePermissionRoleArn
-     *        Gets the device permission ARN.
+     *        Gets the device permission ARN. This is a required parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -367,11 +420,11 @@ public class SuiteDefinitionConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Gets the MQTT protocol that is configured in the suite definition.
+     * Sets the MQTT protocol that is configured in the suite definition.
      * </p>
      * 
      * @param protocol
-     *        Gets the MQTT protocol that is configured in the suite definition.
+     *        Sets the MQTT protocol that is configured in the suite definition.
      * @see Protocol
      */
 
@@ -381,10 +434,10 @@ public class SuiteDefinitionConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Gets the MQTT protocol that is configured in the suite definition.
+     * Sets the MQTT protocol that is configured in the suite definition.
      * </p>
      * 
-     * @return Gets the MQTT protocol that is configured in the suite definition.
+     * @return Sets the MQTT protocol that is configured in the suite definition.
      * @see Protocol
      */
 
@@ -394,11 +447,11 @@ public class SuiteDefinitionConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Gets the MQTT protocol that is configured in the suite definition.
+     * Sets the MQTT protocol that is configured in the suite definition.
      * </p>
      * 
      * @param protocol
-     *        Gets the MQTT protocol that is configured in the suite definition.
+     *        Sets the MQTT protocol that is configured in the suite definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Protocol
      */
@@ -410,11 +463,11 @@ public class SuiteDefinitionConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Gets the MQTT protocol that is configured in the suite definition.
+     * Sets the MQTT protocol that is configured in the suite definition.
      * </p>
      * 
      * @param protocol
-     *        Gets the MQTT protocol that is configured in the suite definition.
+     *        Sets the MQTT protocol that is configured in the suite definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Protocol
      */

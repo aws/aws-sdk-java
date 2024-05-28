@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,11 +30,16 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service setting to reset. For example,
+     * The Amazon Resource Name (ARN) of the service setting to update. For example,
      * <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>. The
      * setting ID can be one of the following.
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>/ssm/managed-instance/default-ec2-instance-management-role</code>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>/ssm/automation/customer-script-log-destination</code>
@@ -71,6 +76,13 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * Permissions to update the <code>/ssm/managed-instance/default-ec2-instance-management-role</code> setting should
+     * only be provided to administrators. Implement least privilege access when allowing individuals to configure or
+     * modify the Default Host Management Configuration.
+     * </p>
+     * </note>
      */
     private String settingId;
     /**
@@ -81,38 +93,45 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
-     * <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code>
+     * For <code>/ssm/managed-instance/default-ec2-instance-management-role</code>, enter the name of an IAM role.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/automation/customer-script-log-group-name</code>: the name of an Amazon CloudWatch Logs log group
+     * For <code>/ssm/automation/customer-script-log-destination</code>, enter <code>CloudWatch</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code>
+     * For <code>/ssm/automation/customer-script-log-group-name</code>, enter the name of an Amazon CloudWatch Logs log
+     * group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code>
+     * For <code>/ssm/documents/console/public-sharing-permission</code>, enter <code>Enable</code> or
+     * <code>Disable</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code>
+     * For <code>/ssm/managed-instance/activation-tier</code>, enter <code>standard</code> or <code>advanced</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>,
-     * <code>Intelligent-Tiering</code>
+     * For <code>/ssm/opsinsights/opscenter</code>, enter <code>Enabled</code> or <code>Disabled</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code>
+     * For <code>/ssm/parameter-store/default-parameter-tier</code>, enter <code>Standard</code>, <code>Advanced</code>,
+     * or <code>Intelligent-Tiering</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>/ssm/parameter-store/high-throughput-enabled</code>, enter <code>true</code> or <code>false</code>.
      * </p>
      * </li>
      * </ul>
@@ -121,11 +140,16 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service setting to reset. For example,
+     * The Amazon Resource Name (ARN) of the service setting to update. For example,
      * <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>. The
      * setting ID can be one of the following.
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>/ssm/managed-instance/default-ec2-instance-management-role</code>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>/ssm/automation/customer-script-log-destination</code>
@@ -162,12 +186,24 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * Permissions to update the <code>/ssm/managed-instance/default-ec2-instance-management-role</code> setting should
+     * only be provided to administrators. Implement least privilege access when allowing individuals to configure or
+     * modify the Default Host Management Configuration.
+     * </p>
+     * </note>
      * 
      * @param settingId
-     *        The Amazon Resource Name (ARN) of the service setting to reset. For example,
+     *        The Amazon Resource Name (ARN) of the service setting to update. For example,
      *        <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>
      *        . The setting ID can be one of the following.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>/ssm/managed-instance/default-ec2-instance-management-role</code>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>/ssm/automation/customer-script-log-destination</code>
@@ -203,6 +239,13 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      *        <code>/ssm/parameter-store/high-throughput-enabled</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        Permissions to update the <code>/ssm/managed-instance/default-ec2-instance-management-role</code> setting
+     *        should only be provided to administrators. Implement least privilege access when allowing individuals to
+     *        configure or modify the Default Host Management Configuration.
+     *        </p>
      */
 
     public void setSettingId(String settingId) {
@@ -211,11 +254,16 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service setting to reset. For example,
+     * The Amazon Resource Name (ARN) of the service setting to update. For example,
      * <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>. The
      * setting ID can be one of the following.
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>/ssm/managed-instance/default-ec2-instance-management-role</code>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>/ssm/automation/customer-script-log-destination</code>
@@ -252,11 +300,23 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * Permissions to update the <code>/ssm/managed-instance/default-ec2-instance-management-role</code> setting should
+     * only be provided to administrators. Implement least privilege access when allowing individuals to configure or
+     * modify the Default Host Management Configuration.
+     * </p>
+     * </note>
      * 
-     * @return The Amazon Resource Name (ARN) of the service setting to reset. For example,
+     * @return The Amazon Resource Name (ARN) of the service setting to update. For example,
      *         <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>
      *         . The setting ID can be one of the following.</p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>/ssm/managed-instance/default-ec2-instance-management-role</code>
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <code>/ssm/automation/customer-script-log-destination</code>
@@ -292,6 +352,13 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      *         <code>/ssm/parameter-store/high-throughput-enabled</code>
      *         </p>
      *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         Permissions to update the <code>/ssm/managed-instance/default-ec2-instance-management-role</code> setting
+     *         should only be provided to administrators. Implement least privilege access when allowing individuals to
+     *         configure or modify the Default Host Management Configuration.
+     *         </p>
      */
 
     public String getSettingId() {
@@ -300,11 +367,16 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service setting to reset. For example,
+     * The Amazon Resource Name (ARN) of the service setting to update. For example,
      * <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>. The
      * setting ID can be one of the following.
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>/ssm/managed-instance/default-ec2-instance-management-role</code>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>/ssm/automation/customer-script-log-destination</code>
@@ -341,12 +413,24 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * Permissions to update the <code>/ssm/managed-instance/default-ec2-instance-management-role</code> setting should
+     * only be provided to administrators. Implement least privilege access when allowing individuals to configure or
+     * modify the Default Host Management Configuration.
+     * </p>
+     * </note>
      * 
      * @param settingId
-     *        The Amazon Resource Name (ARN) of the service setting to reset. For example,
+     *        The Amazon Resource Name (ARN) of the service setting to update. For example,
      *        <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>
      *        . The setting ID can be one of the following.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>/ssm/managed-instance/default-ec2-instance-management-role</code>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>/ssm/automation/customer-script-log-destination</code>
@@ -382,6 +466,13 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      *        <code>/ssm/parameter-store/high-throughput-enabled</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        Permissions to update the <code>/ssm/managed-instance/default-ec2-instance-management-role</code> setting
+     *        should only be provided to administrators. Implement least privilege access when allowing individuals to
+     *        configure or modify the Default Host Management Configuration.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -398,38 +489,45 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
-     * <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code>
+     * For <code>/ssm/managed-instance/default-ec2-instance-management-role</code>, enter the name of an IAM role.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/automation/customer-script-log-group-name</code>: the name of an Amazon CloudWatch Logs log group
+     * For <code>/ssm/automation/customer-script-log-destination</code>, enter <code>CloudWatch</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code>
+     * For <code>/ssm/automation/customer-script-log-group-name</code>, enter the name of an Amazon CloudWatch Logs log
+     * group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code>
+     * For <code>/ssm/documents/console/public-sharing-permission</code>, enter <code>Enable</code> or
+     * <code>Disable</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code>
+     * For <code>/ssm/managed-instance/activation-tier</code>, enter <code>standard</code> or <code>advanced</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>,
-     * <code>Intelligent-Tiering</code>
+     * For <code>/ssm/opsinsights/opscenter</code>, enter <code>Enabled</code> or <code>Disabled</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code>
+     * For <code>/ssm/parameter-store/default-parameter-tier</code>, enter <code>Standard</code>, <code>Advanced</code>,
+     * or <code>Intelligent-Tiering</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>/ssm/parameter-store/high-throughput-enabled</code>, enter <code>true</code> or <code>false</code>.
      * </p>
      * </li>
      * </ul>
@@ -440,39 +538,48 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code>
+     *        For <code>/ssm/managed-instance/default-ec2-instance-management-role</code>, enter the name of an IAM
+     *        role.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>/ssm/automation/customer-script-log-group-name</code>: the name of an Amazon CloudWatch Logs log
-     *        group
+     *        For <code>/ssm/automation/customer-script-log-destination</code>, enter <code>CloudWatch</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code>
+     *        For <code>/ssm/automation/customer-script-log-group-name</code>, enter the name of an Amazon CloudWatch
+     *        Logs log group.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code>
+     *        For <code>/ssm/documents/console/public-sharing-permission</code>, enter <code>Enable</code> or
+     *        <code>Disable</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code>
+     *        For <code>/ssm/managed-instance/activation-tier</code>, enter <code>standard</code> or
+     *        <code>advanced</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>,
-     *        <code>Intelligent-Tiering</code>
+     *        For <code>/ssm/opsinsights/opscenter</code>, enter <code>Enabled</code> or <code>Disabled</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code>
+     *        For <code>/ssm/parameter-store/default-parameter-tier</code>, enter <code>Standard</code>,
+     *        <code>Advanced</code>, or <code>Intelligent-Tiering</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>/ssm/parameter-store/high-throughput-enabled</code>, enter <code>true</code> or
+     *        <code>false</code>.
      *        </p>
      *        </li>
      */
@@ -489,38 +596,45 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
-     * <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code>
+     * For <code>/ssm/managed-instance/default-ec2-instance-management-role</code>, enter the name of an IAM role.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/automation/customer-script-log-group-name</code>: the name of an Amazon CloudWatch Logs log group
+     * For <code>/ssm/automation/customer-script-log-destination</code>, enter <code>CloudWatch</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code>
+     * For <code>/ssm/automation/customer-script-log-group-name</code>, enter the name of an Amazon CloudWatch Logs log
+     * group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code>
+     * For <code>/ssm/documents/console/public-sharing-permission</code>, enter <code>Enable</code> or
+     * <code>Disable</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code>
+     * For <code>/ssm/managed-instance/activation-tier</code>, enter <code>standard</code> or <code>advanced</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>,
-     * <code>Intelligent-Tiering</code>
+     * For <code>/ssm/opsinsights/opscenter</code>, enter <code>Enabled</code> or <code>Disabled</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code>
+     * For <code>/ssm/parameter-store/default-parameter-tier</code>, enter <code>Standard</code>, <code>Advanced</code>,
+     * or <code>Intelligent-Tiering</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>/ssm/parameter-store/high-throughput-enabled</code>, enter <code>true</code> or <code>false</code>.
      * </p>
      * </li>
      * </ul>
@@ -530,40 +644,48 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code>
+     *         For <code>/ssm/managed-instance/default-ec2-instance-management-role</code>, enter the name of an IAM
+     *         role.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>/ssm/automation/customer-script-log-group-name</code>: the name of an Amazon CloudWatch Logs log
-     *         group
+     *         For <code>/ssm/automation/customer-script-log-destination</code>, enter <code>CloudWatch</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or
-     *         <code>Disable</code>
+     *         For <code>/ssm/automation/customer-script-log-group-name</code>, enter the name of an Amazon CloudWatch
+     *         Logs log group.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code>
+     *         For <code>/ssm/documents/console/public-sharing-permission</code>, enter <code>Enable</code> or
+     *         <code>Disable</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code>
+     *         For <code>/ssm/managed-instance/activation-tier</code>, enter <code>standard</code> or
+     *         <code>advanced</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>,
-     *         <code>Intelligent-Tiering</code>
+     *         For <code>/ssm/opsinsights/opscenter</code>, enter <code>Enabled</code> or <code>Disabled</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code>
+     *         For <code>/ssm/parameter-store/default-parameter-tier</code>, enter <code>Standard</code>,
+     *         <code>Advanced</code>, or <code>Intelligent-Tiering</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For <code>/ssm/parameter-store/high-throughput-enabled</code>, enter <code>true</code> or
+     *         <code>false</code>.
      *         </p>
      *         </li>
      */
@@ -580,38 +702,45 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
-     * <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code>
+     * For <code>/ssm/managed-instance/default-ec2-instance-management-role</code>, enter the name of an IAM role.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/automation/customer-script-log-group-name</code>: the name of an Amazon CloudWatch Logs log group
+     * For <code>/ssm/automation/customer-script-log-destination</code>, enter <code>CloudWatch</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code>
+     * For <code>/ssm/automation/customer-script-log-group-name</code>, enter the name of an Amazon CloudWatch Logs log
+     * group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code>
+     * For <code>/ssm/documents/console/public-sharing-permission</code>, enter <code>Enable</code> or
+     * <code>Disable</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code>
+     * For <code>/ssm/managed-instance/activation-tier</code>, enter <code>standard</code> or <code>advanced</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>,
-     * <code>Intelligent-Tiering</code>
+     * For <code>/ssm/opsinsights/opscenter</code>, enter <code>Enabled</code> or <code>Disabled</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code>
+     * For <code>/ssm/parameter-store/default-parameter-tier</code>, enter <code>Standard</code>, <code>Advanced</code>,
+     * or <code>Intelligent-Tiering</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>/ssm/parameter-store/high-throughput-enabled</code>, enter <code>true</code> or <code>false</code>.
      * </p>
      * </li>
      * </ul>
@@ -622,39 +751,48 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code>
+     *        For <code>/ssm/managed-instance/default-ec2-instance-management-role</code>, enter the name of an IAM
+     *        role.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>/ssm/automation/customer-script-log-group-name</code>: the name of an Amazon CloudWatch Logs log
-     *        group
+     *        For <code>/ssm/automation/customer-script-log-destination</code>, enter <code>CloudWatch</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code>
+     *        For <code>/ssm/automation/customer-script-log-group-name</code>, enter the name of an Amazon CloudWatch
+     *        Logs log group.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code>
+     *        For <code>/ssm/documents/console/public-sharing-permission</code>, enter <code>Enable</code> or
+     *        <code>Disable</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code>
+     *        For <code>/ssm/managed-instance/activation-tier</code>, enter <code>standard</code> or
+     *        <code>advanced</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>,
-     *        <code>Intelligent-Tiering</code>
+     *        For <code>/ssm/opsinsights/opscenter</code>, enter <code>Enabled</code> or <code>Disabled</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code>
+     *        For <code>/ssm/parameter-store/default-parameter-tier</code>, enter <code>Standard</code>,
+     *        <code>Advanced</code>, or <code>Intelligent-Tiering</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>/ssm/parameter-store/high-throughput-enabled</code>, enter <code>true</code> or
+     *        <code>false</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

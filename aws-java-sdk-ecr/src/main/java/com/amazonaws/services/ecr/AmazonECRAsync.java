@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -277,8 +277,10 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Creates a pull through cache rule. A pull through cache rule provides a way to cache images from an external
-     * public registry in your Amazon ECR private registry.
+     * Creates a pull through cache rule. A pull through cache rule provides a way to cache images from an upstream
+     * registry source in your Amazon ECR private registry. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/pull-through-cache.html">Using pull through cache
+     * rules</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
      * </p>
      * 
      * @param createPullThroughCacheRuleRequest
@@ -292,8 +294,10 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Creates a pull through cache rule. A pull through cache rule provides a way to cache images from an external
-     * public registry in your Amazon ECR private registry.
+     * Creates a pull through cache rule. A pull through cache rule provides a way to cache images from an upstream
+     * registry source in your Amazon ECR private registry. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/pull-through-cache.html">Using pull through cache
+     * rules</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
      * </p>
      * 
      * @param createPullThroughCacheRuleRequest
@@ -442,8 +446,9 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Deletes a repository. If the repository contains images, you must either delete all images in the repository or
-     * use the <code>force</code> option to delete the repository.
+     * Deletes a repository. If the repository isn't empty, you must either delete the contents of the repository or use
+     * the <code>force</code> option to delete the repository and have Amazon ECR delete all of its contents on your
+     * behalf.
      * </p>
      * 
      * @param deleteRepositoryRequest
@@ -456,8 +461,9 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
-     * Deletes a repository. If the repository contains images, you must either delete all images in the repository or
-     * use the <code>force</code> option to delete the repository.
+     * Deletes a repository. If the repository isn't empty, you must either delete the contents of the repository or use
+     * the <code>force</code> option to delete the repository and have Amazon ECR delete all of its contents on your
+     * behalf.
      * </p>
      * 
      * @param deleteRepositoryRequest
@@ -1584,6 +1590,39 @@ public interface AmazonECRAsync extends AmazonECR {
 
     /**
      * <p>
+     * Updates an existing pull through cache rule.
+     * </p>
+     * 
+     * @param updatePullThroughCacheRuleRequest
+     * @return A Java Future containing the result of the UpdatePullThroughCacheRule operation returned by the service.
+     * @sample AmazonECRAsync.UpdatePullThroughCacheRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UpdatePullThroughCacheRule" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePullThroughCacheRuleResult> updatePullThroughCacheRuleAsync(
+            UpdatePullThroughCacheRuleRequest updatePullThroughCacheRuleRequest);
+
+    /**
+     * <p>
+     * Updates an existing pull through cache rule.
+     * </p>
+     * 
+     * @param updatePullThroughCacheRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdatePullThroughCacheRule operation returned by the service.
+     * @sample AmazonECRAsyncHandler.UpdatePullThroughCacheRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UpdatePullThroughCacheRule" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePullThroughCacheRuleResult> updatePullThroughCacheRuleAsync(
+            UpdatePullThroughCacheRuleRequest updatePullThroughCacheRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdatePullThroughCacheRuleRequest, UpdatePullThroughCacheRuleResult> asyncHandler);
+
+    /**
+     * <p>
      * Uploads an image layer part to Amazon ECR.
      * </p>
      * <p>
@@ -1632,5 +1671,44 @@ public interface AmazonECRAsync extends AmazonECR {
      */
     java.util.concurrent.Future<UploadLayerPartResult> uploadLayerPartAsync(UploadLayerPartRequest uploadLayerPartRequest,
             com.amazonaws.handlers.AsyncHandler<UploadLayerPartRequest, UploadLayerPartResult> asyncHandler);
+
+    /**
+     * <p>
+     * Validates an existing pull through cache rule for an upstream registry that requires authentication. This will
+     * retrieve the contents of the Amazon Web Services Secrets Manager secret, verify the syntax, and then validate
+     * that authentication to the upstream registry is successful.
+     * </p>
+     * 
+     * @param validatePullThroughCacheRuleRequest
+     * @return A Java Future containing the result of the ValidatePullThroughCacheRule operation returned by the
+     *         service.
+     * @sample AmazonECRAsync.ValidatePullThroughCacheRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ValidatePullThroughCacheRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ValidatePullThroughCacheRuleResult> validatePullThroughCacheRuleAsync(
+            ValidatePullThroughCacheRuleRequest validatePullThroughCacheRuleRequest);
+
+    /**
+     * <p>
+     * Validates an existing pull through cache rule for an upstream registry that requires authentication. This will
+     * retrieve the contents of the Amazon Web Services Secrets Manager secret, verify the syntax, and then validate
+     * that authentication to the upstream registry is successful.
+     * </p>
+     * 
+     * @param validatePullThroughCacheRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ValidatePullThroughCacheRule operation returned by the
+     *         service.
+     * @sample AmazonECRAsyncHandler.ValidatePullThroughCacheRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ValidatePullThroughCacheRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ValidatePullThroughCacheRuleResult> validatePullThroughCacheRuleAsync(
+            ValidatePullThroughCacheRuleRequest validatePullThroughCacheRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<ValidatePullThroughCacheRuleRequest, ValidatePullThroughCacheRuleResult> asyncHandler);
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class UpdateGameServerGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.
+     * A unique identifier for the game server group. Use either the name or ARN value.
      * </p>
      */
     private String gameServerGroupName;
@@ -41,11 +41,11 @@ public class UpdateGameServerGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * An updated list of Amazon EC2 instance types to use in the Auto Scaling group. The instance definitions must
-     * specify at least two different instance types that are supported by GameLift FleetIQ. This updated list replaces
-     * the entire current list of instance definitions for the game server group. For more information on instance
-     * types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance
-     * Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance
-     * type. If no weight value is specified for an instance type, it is set to the default value "1". For more
+     * specify at least two different instance types that are supported by Amazon GameLift FleetIQ. This updated list
+     * replaces the entire current list of instance definitions for the game server group. For more information on
+     * instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
+     * Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each
+     * instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more
      * information about capacity weighting, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for
      * Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.
@@ -65,8 +65,8 @@ public class UpdateGameServerGroupRequest extends com.amazonaws.AmazonWebService
     private String gameServerProtectionPolicy;
     /**
      * <p>
-     * Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server
-     * group. Method options include the following:
+     * Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game
+     * server group. Method options include the following:
      * </p>
      * <ul>
      * <li>
@@ -97,11 +97,11 @@ public class UpdateGameServerGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.
+     * A unique identifier for the game server group. Use either the name or ARN value.
      * </p>
      * 
      * @param gameServerGroupName
-     *        A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.
+     *        A unique identifier for the game server group. Use either the name or ARN value.
      */
 
     public void setGameServerGroupName(String gameServerGroupName) {
@@ -110,10 +110,10 @@ public class UpdateGameServerGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.
+     * A unique identifier for the game server group. Use either the name or ARN value.
      * </p>
      * 
-     * @return A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.
+     * @return A unique identifier for the game server group. Use either the name or ARN value.
      */
 
     public String getGameServerGroupName() {
@@ -122,11 +122,11 @@ public class UpdateGameServerGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.
+     * A unique identifier for the game server group. Use either the name or ARN value.
      * </p>
      * 
      * @param gameServerGroupName
-     *        A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.
+     *        A unique identifier for the game server group. Use either the name or ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,19 +187,19 @@ public class UpdateGameServerGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * An updated list of Amazon EC2 instance types to use in the Auto Scaling group. The instance definitions must
-     * specify at least two different instance types that are supported by GameLift FleetIQ. This updated list replaces
-     * the entire current list of instance definitions for the game server group. For more information on instance
-     * types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance
-     * Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance
-     * type. If no weight value is specified for an instance type, it is set to the default value "1". For more
+     * specify at least two different instance types that are supported by Amazon GameLift FleetIQ. This updated list
+     * replaces the entire current list of instance definitions for the game server group. For more information on
+     * instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
+     * Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each
+     * instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more
      * information about capacity weighting, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for
      * Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.
      * </p>
      * 
      * @return An updated list of Amazon EC2 instance types to use in the Auto Scaling group. The instance definitions
-     *         must specify at least two different instance types that are supported by GameLift FleetIQ. This updated
-     *         list replaces the entire current list of instance definitions for the game server group. For more
+     *         must specify at least two different instance types that are supported by Amazon GameLift FleetIQ. This
+     *         updated list replaces the entire current list of instance definitions for the game server group. For more
      *         information on instance types, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in
      *         the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type.
@@ -216,11 +216,11 @@ public class UpdateGameServerGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * An updated list of Amazon EC2 instance types to use in the Auto Scaling group. The instance definitions must
-     * specify at least two different instance types that are supported by GameLift FleetIQ. This updated list replaces
-     * the entire current list of instance definitions for the game server group. For more information on instance
-     * types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance
-     * Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance
-     * type. If no weight value is specified for an instance type, it is set to the default value "1". For more
+     * specify at least two different instance types that are supported by Amazon GameLift FleetIQ. This updated list
+     * replaces the entire current list of instance definitions for the game server group. For more information on
+     * instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
+     * Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each
+     * instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more
      * information about capacity weighting, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for
      * Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.
@@ -228,8 +228,8 @@ public class UpdateGameServerGroupRequest extends com.amazonaws.AmazonWebService
      * 
      * @param instanceDefinitions
      *        An updated list of Amazon EC2 instance types to use in the Auto Scaling group. The instance definitions
-     *        must specify at least two different instance types that are supported by GameLift FleetIQ. This updated
-     *        list replaces the entire current list of instance definitions for the game server group. For more
+     *        must specify at least two different instance types that are supported by Amazon GameLift FleetIQ. This
+     *        updated list replaces the entire current list of instance definitions for the game server group. For more
      *        information on instance types, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in
      *        the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If
@@ -251,11 +251,11 @@ public class UpdateGameServerGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * An updated list of Amazon EC2 instance types to use in the Auto Scaling group. The instance definitions must
-     * specify at least two different instance types that are supported by GameLift FleetIQ. This updated list replaces
-     * the entire current list of instance definitions for the game server group. For more information on instance
-     * types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance
-     * Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance
-     * type. If no weight value is specified for an instance type, it is set to the default value "1". For more
+     * specify at least two different instance types that are supported by Amazon GameLift FleetIQ. This updated list
+     * replaces the entire current list of instance definitions for the game server group. For more information on
+     * instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
+     * Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each
+     * instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more
      * information about capacity weighting, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for
      * Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.
@@ -268,8 +268,8 @@ public class UpdateGameServerGroupRequest extends com.amazonaws.AmazonWebService
      * 
      * @param instanceDefinitions
      *        An updated list of Amazon EC2 instance types to use in the Auto Scaling group. The instance definitions
-     *        must specify at least two different instance types that are supported by GameLift FleetIQ. This updated
-     *        list replaces the entire current list of instance definitions for the game server group. For more
+     *        must specify at least two different instance types that are supported by Amazon GameLift FleetIQ. This
+     *        updated list replaces the entire current list of instance definitions for the game server group. For more
      *        information on instance types, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in
      *        the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If
@@ -293,11 +293,11 @@ public class UpdateGameServerGroupRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * An updated list of Amazon EC2 instance types to use in the Auto Scaling group. The instance definitions must
-     * specify at least two different instance types that are supported by GameLift FleetIQ. This updated list replaces
-     * the entire current list of instance definitions for the game server group. For more information on instance
-     * types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance
-     * Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance
-     * type. If no weight value is specified for an instance type, it is set to the default value "1". For more
+     * specify at least two different instance types that are supported by Amazon GameLift FleetIQ. This updated list
+     * replaces the entire current list of instance definitions for the game server group. For more information on
+     * instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
+     * Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each
+     * instance type. If no weight value is specified for an instance type, it is set to the default value "1". For more
      * information about capacity weighting, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html"> Instance Weighting for
      * Amazon EC2 Auto Scaling</a> in the Amazon EC2 Auto Scaling User Guide.
@@ -305,8 +305,8 @@ public class UpdateGameServerGroupRequest extends com.amazonaws.AmazonWebService
      * 
      * @param instanceDefinitions
      *        An updated list of Amazon EC2 instance types to use in the Auto Scaling group. The instance definitions
-     *        must specify at least two different instance types that are supported by GameLift FleetIQ. This updated
-     *        list replaces the entire current list of instance definitions for the game server group. For more
+     *        must specify at least two different instance types that are supported by Amazon GameLift FleetIQ. This
+     *        updated list replaces the entire current list of instance definitions for the game server group. For more
      *        information on instance types, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2 Instance Types</a> in
      *        the <i>Amazon EC2 User Guide</i>. You can optionally specify capacity weighting for each instance type. If
@@ -423,8 +423,8 @@ public class UpdateGameServerGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server
-     * group. Method options include the following:
+     * Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game
+     * server group. Method options include the following:
      * </p>
      * <ul>
      * <li>
@@ -452,8 +452,8 @@ public class UpdateGameServerGroupRequest extends com.amazonaws.AmazonWebService
      * </ul>
      * 
      * @param balancingStrategy
-     *        Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game
-     *        server group. Method options include the following:</p>
+     *        Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the
+     *        game server group. Method options include the following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -486,8 +486,8 @@ public class UpdateGameServerGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server
-     * group. Method options include the following:
+     * Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game
+     * server group. Method options include the following:
      * </p>
      * <ul>
      * <li>
@@ -514,8 +514,8 @@ public class UpdateGameServerGroupRequest extends com.amazonaws.AmazonWebService
      * </li>
      * </ul>
      * 
-     * @return Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game
-     *         server group. Method options include the following:</p>
+     * @return Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the
+     *         game server group. Method options include the following:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -548,8 +548,8 @@ public class UpdateGameServerGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server
-     * group. Method options include the following:
+     * Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game
+     * server group. Method options include the following:
      * </p>
      * <ul>
      * <li>
@@ -577,8 +577,8 @@ public class UpdateGameServerGroupRequest extends com.amazonaws.AmazonWebService
      * </ul>
      * 
      * @param balancingStrategy
-     *        Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game
-     *        server group. Method options include the following:</p>
+     *        Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the
+     *        game server group. Method options include the following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -613,8 +613,8 @@ public class UpdateGameServerGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game server
-     * group. Method options include the following:
+     * Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game
+     * server group. Method options include the following:
      * </p>
      * <ul>
      * <li>
@@ -642,8 +642,8 @@ public class UpdateGameServerGroupRequest extends com.amazonaws.AmazonWebService
      * </ul>
      * 
      * @param balancingStrategy
-     *        Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the game
-     *        server group. Method options include the following:</p>
+     *        Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances in the
+     *        game server group. Method options include the following:</p>
      *        <ul>
      *        <li>
      *        <p>

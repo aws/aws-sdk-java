@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The object that represents any node overrides to a job definition that's used in a <a>SubmitJob</a> API operation.
+ * The object that represents any node overrides to a job definition that's used in a <a
+ * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a> API operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/NodePropertyOverride" target="_top">AWS API
@@ -43,6 +44,18 @@ public class NodePropertyOverride implements Serializable, Cloneable, Structured
      * </p>
      */
     private ContainerOverrides containerOverrides;
+    /**
+     * <p>
+     * An object that contains the properties that you want to replace for the existing Amazon ECS resources of a job.
+     * </p>
+     */
+    private EcsPropertiesOverride ecsPropertiesOverride;
+    /**
+     * <p>
+     * An object that contains the instance types that you want to replace for the existing resources of a job.
+     * </p>
+     */
+    private java.util.List<String> instanceTypes;
 
     /**
      * <p>
@@ -143,6 +156,119 @@ public class NodePropertyOverride implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * An object that contains the properties that you want to replace for the existing Amazon ECS resources of a job.
+     * </p>
+     * 
+     * @param ecsPropertiesOverride
+     *        An object that contains the properties that you want to replace for the existing Amazon ECS resources of a
+     *        job.
+     */
+
+    public void setEcsPropertiesOverride(EcsPropertiesOverride ecsPropertiesOverride) {
+        this.ecsPropertiesOverride = ecsPropertiesOverride;
+    }
+
+    /**
+     * <p>
+     * An object that contains the properties that you want to replace for the existing Amazon ECS resources of a job.
+     * </p>
+     * 
+     * @return An object that contains the properties that you want to replace for the existing Amazon ECS resources of
+     *         a job.
+     */
+
+    public EcsPropertiesOverride getEcsPropertiesOverride() {
+        return this.ecsPropertiesOverride;
+    }
+
+    /**
+     * <p>
+     * An object that contains the properties that you want to replace for the existing Amazon ECS resources of a job.
+     * </p>
+     * 
+     * @param ecsPropertiesOverride
+     *        An object that contains the properties that you want to replace for the existing Amazon ECS resources of a
+     *        job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NodePropertyOverride withEcsPropertiesOverride(EcsPropertiesOverride ecsPropertiesOverride) {
+        setEcsPropertiesOverride(ecsPropertiesOverride);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object that contains the instance types that you want to replace for the existing resources of a job.
+     * </p>
+     * 
+     * @return An object that contains the instance types that you want to replace for the existing resources of a job.
+     */
+
+    public java.util.List<String> getInstanceTypes() {
+        return instanceTypes;
+    }
+
+    /**
+     * <p>
+     * An object that contains the instance types that you want to replace for the existing resources of a job.
+     * </p>
+     * 
+     * @param instanceTypes
+     *        An object that contains the instance types that you want to replace for the existing resources of a job.
+     */
+
+    public void setInstanceTypes(java.util.Collection<String> instanceTypes) {
+        if (instanceTypes == null) {
+            this.instanceTypes = null;
+            return;
+        }
+
+        this.instanceTypes = new java.util.ArrayList<String>(instanceTypes);
+    }
+
+    /**
+     * <p>
+     * An object that contains the instance types that you want to replace for the existing resources of a job.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInstanceTypes(java.util.Collection)} or {@link #withInstanceTypes(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param instanceTypes
+     *        An object that contains the instance types that you want to replace for the existing resources of a job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NodePropertyOverride withInstanceTypes(String... instanceTypes) {
+        if (this.instanceTypes == null) {
+            setInstanceTypes(new java.util.ArrayList<String>(instanceTypes.length));
+        }
+        for (String ele : instanceTypes) {
+            this.instanceTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object that contains the instance types that you want to replace for the existing resources of a job.
+     * </p>
+     * 
+     * @param instanceTypes
+     *        An object that contains the instance types that you want to replace for the existing resources of a job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NodePropertyOverride withInstanceTypes(java.util.Collection<String> instanceTypes) {
+        setInstanceTypes(instanceTypes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -157,7 +283,11 @@ public class NodePropertyOverride implements Serializable, Cloneable, Structured
         if (getTargetNodes() != null)
             sb.append("TargetNodes: ").append(getTargetNodes()).append(",");
         if (getContainerOverrides() != null)
-            sb.append("ContainerOverrides: ").append(getContainerOverrides());
+            sb.append("ContainerOverrides: ").append(getContainerOverrides()).append(",");
+        if (getEcsPropertiesOverride() != null)
+            sb.append("EcsPropertiesOverride: ").append(getEcsPropertiesOverride()).append(",");
+        if (getInstanceTypes() != null)
+            sb.append("InstanceTypes: ").append(getInstanceTypes());
         sb.append("}");
         return sb.toString();
     }
@@ -180,6 +310,14 @@ public class NodePropertyOverride implements Serializable, Cloneable, Structured
             return false;
         if (other.getContainerOverrides() != null && other.getContainerOverrides().equals(this.getContainerOverrides()) == false)
             return false;
+        if (other.getEcsPropertiesOverride() == null ^ this.getEcsPropertiesOverride() == null)
+            return false;
+        if (other.getEcsPropertiesOverride() != null && other.getEcsPropertiesOverride().equals(this.getEcsPropertiesOverride()) == false)
+            return false;
+        if (other.getInstanceTypes() == null ^ this.getInstanceTypes() == null)
+            return false;
+        if (other.getInstanceTypes() != null && other.getInstanceTypes().equals(this.getInstanceTypes()) == false)
+            return false;
         return true;
     }
 
@@ -190,6 +328,8 @@ public class NodePropertyOverride implements Serializable, Cloneable, Structured
 
         hashCode = prime * hashCode + ((getTargetNodes() == null) ? 0 : getTargetNodes().hashCode());
         hashCode = prime * hashCode + ((getContainerOverrides() == null) ? 0 : getContainerOverrides().hashCode());
+        hashCode = prime * hashCode + ((getEcsPropertiesOverride() == null) ? 0 : getEcsPropertiesOverride().hashCode());
+        hashCode = prime * hashCode + ((getInstanceTypes() == null) ? 0 : getInstanceTypes().hashCode());
         return hashCode;
     }
 

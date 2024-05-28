@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details about the ECR automated re-scan duration setting for your environment
+ * Details about the ECR automated re-scan duration setting for your environment.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/EcrConfiguration" target="_top">AWS API
@@ -30,25 +30,83 @@ public class EcrConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector.
-     * When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring
-     * state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.
+     * The rescan duration configured for image pull date.
+     * </p>
+     */
+    private String pullDateRescanDuration;
+    /**
+     * <p>
+     * The rescan duration configured for image push date.
      * </p>
      */
     private String rescanDuration;
 
     /**
      * <p>
-     * The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector.
-     * When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring
-     * state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.
+     * The rescan duration configured for image pull date.
+     * </p>
+     * 
+     * @param pullDateRescanDuration
+     *        The rescan duration configured for image pull date.
+     * @see EcrPullDateRescanDuration
+     */
+
+    public void setPullDateRescanDuration(String pullDateRescanDuration) {
+        this.pullDateRescanDuration = pullDateRescanDuration;
+    }
+
+    /**
+     * <p>
+     * The rescan duration configured for image pull date.
+     * </p>
+     * 
+     * @return The rescan duration configured for image pull date.
+     * @see EcrPullDateRescanDuration
+     */
+
+    public String getPullDateRescanDuration() {
+        return this.pullDateRescanDuration;
+    }
+
+    /**
+     * <p>
+     * The rescan duration configured for image pull date.
+     * </p>
+     * 
+     * @param pullDateRescanDuration
+     *        The rescan duration configured for image pull date.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EcrPullDateRescanDuration
+     */
+
+    public EcrConfiguration withPullDateRescanDuration(String pullDateRescanDuration) {
+        setPullDateRescanDuration(pullDateRescanDuration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The rescan duration configured for image pull date.
+     * </p>
+     * 
+     * @param pullDateRescanDuration
+     *        The rescan duration configured for image pull date.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EcrPullDateRescanDuration
+     */
+
+    public EcrConfiguration withPullDateRescanDuration(EcrPullDateRescanDuration pullDateRescanDuration) {
+        this.pullDateRescanDuration = pullDateRescanDuration.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The rescan duration configured for image push date.
      * </p>
      * 
      * @param rescanDuration
-     *        The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon
-     *        Inspector. When the number of days since an image was last pushed exceeds the automated re-scan duration
-     *        the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled
-     *        for closure.
+     *        The rescan duration configured for image push date.
      * @see EcrRescanDuration
      */
 
@@ -58,15 +116,10 @@ public class EcrConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector.
-     * When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring
-     * state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.
+     * The rescan duration configured for image push date.
      * </p>
      * 
-     * @return The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon
-     *         Inspector. When the number of days since an image was last pushed exceeds the automated re-scan duration
-     *         the monitoring state of that image becomes <code>inactive</code> and all associated findings are
-     *         scheduled for closure.
+     * @return The rescan duration configured for image push date.
      * @see EcrRescanDuration
      */
 
@@ -76,16 +129,11 @@ public class EcrConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector.
-     * When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring
-     * state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.
+     * The rescan duration configured for image push date.
      * </p>
      * 
      * @param rescanDuration
-     *        The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon
-     *        Inspector. When the number of days since an image was last pushed exceeds the automated re-scan duration
-     *        the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled
-     *        for closure.
+     *        The rescan duration configured for image push date.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EcrRescanDuration
      */
@@ -97,16 +145,11 @@ public class EcrConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon Inspector.
-     * When the number of days since an image was last pushed exceeds the automated re-scan duration the monitoring
-     * state of that image becomes <code>inactive</code> and all associated findings are scheduled for closure.
+     * The rescan duration configured for image push date.
      * </p>
      * 
      * @param rescanDuration
-     *        The ECR automated re-scan duration defines how long an ECR image will be actively scanned by Amazon
-     *        Inspector. When the number of days since an image was last pushed exceeds the automated re-scan duration
-     *        the monitoring state of that image becomes <code>inactive</code> and all associated findings are scheduled
-     *        for closure.
+     *        The rescan duration configured for image push date.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EcrRescanDuration
      */
@@ -128,6 +171,8 @@ public class EcrConfiguration implements Serializable, Cloneable, StructuredPojo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getPullDateRescanDuration() != null)
+            sb.append("PullDateRescanDuration: ").append(getPullDateRescanDuration()).append(",");
         if (getRescanDuration() != null)
             sb.append("RescanDuration: ").append(getRescanDuration());
         sb.append("}");
@@ -144,6 +189,10 @@ public class EcrConfiguration implements Serializable, Cloneable, StructuredPojo
         if (obj instanceof EcrConfiguration == false)
             return false;
         EcrConfiguration other = (EcrConfiguration) obj;
+        if (other.getPullDateRescanDuration() == null ^ this.getPullDateRescanDuration() == null)
+            return false;
+        if (other.getPullDateRescanDuration() != null && other.getPullDateRescanDuration().equals(this.getPullDateRescanDuration()) == false)
+            return false;
         if (other.getRescanDuration() == null ^ this.getRescanDuration() == null)
             return false;
         if (other.getRescanDuration() != null && other.getRescanDuration().equals(this.getRescanDuration()) == false)
@@ -156,6 +205,7 @@ public class EcrConfiguration implements Serializable, Cloneable, StructuredPojo
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getPullDateRescanDuration() == null) ? 0 : getPullDateRescanDuration().hashCode());
         hashCode = prime * hashCode + ((getRescanDuration() == null) ? 0 : getRescanDuration().hashCode());
         return hashCode;
     }

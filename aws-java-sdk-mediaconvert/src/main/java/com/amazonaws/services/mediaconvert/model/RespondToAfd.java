@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,11 +15,11 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Use Respond to AFD (RespondToAfd) to specify how the service changes the video itself in response to AFD values in
- * the input. * Choose Respond to clip the input video frame according to the AFD value, input display aspect ratio, and
- * output display aspect ratio. * Choose Passthrough to include the input AFD values. Do not choose this when
- * AfdSignaling is set to (NONE). A preferred implementation of this workflow is to set RespondToAfd to (NONE) and set
- * AfdSignaling to (AUTO). * Choose None to remove all input AFD values from this output.
+ * Use Respond to AFD to specify how the service changes the video itself in response to AFD values in the input. *
+ * Choose Respond to clip the input video frame according to the AFD value, input display aspect ratio, and output
+ * display aspect ratio. * Choose Passthrough to include the input AFD values. Do not choose this when AfdSignaling is
+ * set to NONE. A preferred implementation of this workflow is to set RespondToAfd to and set AfdSignaling to AUTO. *
+ * Choose None to remove all input AFD values from this output.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum RespondToAfd {

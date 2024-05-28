@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,7 +44,15 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you
-     * omit this parameter, only metric alarms are returned.
+     * omit this parameter, only metric alarms are returned, even if composite alarms exist in the account.
+     * </p>
+     * <p>
+     * For example, if you omit this parameter or specify <code>MetricAlarms</code>, the operation returns only a list
+     * of metric alarms. It does not return any composite alarms, even if composite alarms exist in the account.
+     * </p>
+     * <p>
+     * If you specify <code>CompositeAlarms</code>, the operation returns only a list of composite alarms, and does not
+     * return any metric alarms.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> alarmTypes;
@@ -252,11 +260,28 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you
-     * omit this parameter, only metric alarms are returned.
+     * omit this parameter, only metric alarms are returned, even if composite alarms exist in the account.
+     * </p>
+     * <p>
+     * For example, if you omit this parameter or specify <code>MetricAlarms</code>, the operation returns only a list
+     * of metric alarms. It does not return any composite alarms, even if composite alarms exist in the account.
+     * </p>
+     * <p>
+     * If you specify <code>CompositeAlarms</code>, the operation returns only a list of composite alarms, and does not
+     * return any metric alarms.
      * </p>
      * 
      * @return Use this parameter to specify whether you want the operation to return metric alarms or composite alarms.
-     *         If you omit this parameter, only metric alarms are returned.
+     *         If you omit this parameter, only metric alarms are returned, even if composite alarms exist in the
+     *         account.</p>
+     *         <p>
+     *         For example, if you omit this parameter or specify <code>MetricAlarms</code>, the operation returns only
+     *         a list of metric alarms. It does not return any composite alarms, even if composite alarms exist in the
+     *         account.
+     *         </p>
+     *         <p>
+     *         If you specify <code>CompositeAlarms</code>, the operation returns only a list of composite alarms, and
+     *         does not return any metric alarms.
      * @see AlarmType
      */
 
@@ -270,12 +295,29 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you
-     * omit this parameter, only metric alarms are returned.
+     * omit this parameter, only metric alarms are returned, even if composite alarms exist in the account.
+     * </p>
+     * <p>
+     * For example, if you omit this parameter or specify <code>MetricAlarms</code>, the operation returns only a list
+     * of metric alarms. It does not return any composite alarms, even if composite alarms exist in the account.
+     * </p>
+     * <p>
+     * If you specify <code>CompositeAlarms</code>, the operation returns only a list of composite alarms, and does not
+     * return any metric alarms.
      * </p>
      * 
      * @param alarmTypes
      *        Use this parameter to specify whether you want the operation to return metric alarms or composite alarms.
-     *        If you omit this parameter, only metric alarms are returned.
+     *        If you omit this parameter, only metric alarms are returned, even if composite alarms exist in the
+     *        account.</p>
+     *        <p>
+     *        For example, if you omit this parameter or specify <code>MetricAlarms</code>, the operation returns only a
+     *        list of metric alarms. It does not return any composite alarms, even if composite alarms exist in the
+     *        account.
+     *        </p>
+     *        <p>
+     *        If you specify <code>CompositeAlarms</code>, the operation returns only a list of composite alarms, and
+     *        does not return any metric alarms.
      * @see AlarmType
      */
 
@@ -291,7 +333,15 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you
-     * omit this parameter, only metric alarms are returned.
+     * omit this parameter, only metric alarms are returned, even if composite alarms exist in the account.
+     * </p>
+     * <p>
+     * For example, if you omit this parameter or specify <code>MetricAlarms</code>, the operation returns only a list
+     * of metric alarms. It does not return any composite alarms, even if composite alarms exist in the account.
+     * </p>
+     * <p>
+     * If you specify <code>CompositeAlarms</code>, the operation returns only a list of composite alarms, and does not
+     * return any metric alarms.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -301,7 +351,16 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param alarmTypes
      *        Use this parameter to specify whether you want the operation to return metric alarms or composite alarms.
-     *        If you omit this parameter, only metric alarms are returned.
+     *        If you omit this parameter, only metric alarms are returned, even if composite alarms exist in the
+     *        account.</p>
+     *        <p>
+     *        For example, if you omit this parameter or specify <code>MetricAlarms</code>, the operation returns only a
+     *        list of metric alarms. It does not return any composite alarms, even if composite alarms exist in the
+     *        account.
+     *        </p>
+     *        <p>
+     *        If you specify <code>CompositeAlarms</code>, the operation returns only a list of composite alarms, and
+     *        does not return any metric alarms.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AlarmType
      */
@@ -319,12 +378,29 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you
-     * omit this parameter, only metric alarms are returned.
+     * omit this parameter, only metric alarms are returned, even if composite alarms exist in the account.
+     * </p>
+     * <p>
+     * For example, if you omit this parameter or specify <code>MetricAlarms</code>, the operation returns only a list
+     * of metric alarms. It does not return any composite alarms, even if composite alarms exist in the account.
+     * </p>
+     * <p>
+     * If you specify <code>CompositeAlarms</code>, the operation returns only a list of composite alarms, and does not
+     * return any metric alarms.
      * </p>
      * 
      * @param alarmTypes
      *        Use this parameter to specify whether you want the operation to return metric alarms or composite alarms.
-     *        If you omit this parameter, only metric alarms are returned.
+     *        If you omit this parameter, only metric alarms are returned, even if composite alarms exist in the
+     *        account.</p>
+     *        <p>
+     *        For example, if you omit this parameter or specify <code>MetricAlarms</code>, the operation returns only a
+     *        list of metric alarms. It does not return any composite alarms, even if composite alarms exist in the
+     *        account.
+     *        </p>
+     *        <p>
+     *        If you specify <code>CompositeAlarms</code>, the operation returns only a list of composite alarms, and
+     *        does not return any metric alarms.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AlarmType
      */
@@ -337,12 +413,29 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Use this parameter to specify whether you want the operation to return metric alarms or composite alarms. If you
-     * omit this parameter, only metric alarms are returned.
+     * omit this parameter, only metric alarms are returned, even if composite alarms exist in the account.
+     * </p>
+     * <p>
+     * For example, if you omit this parameter or specify <code>MetricAlarms</code>, the operation returns only a list
+     * of metric alarms. It does not return any composite alarms, even if composite alarms exist in the account.
+     * </p>
+     * <p>
+     * If you specify <code>CompositeAlarms</code>, the operation returns only a list of composite alarms, and does not
+     * return any metric alarms.
      * </p>
      * 
      * @param alarmTypes
      *        Use this parameter to specify whether you want the operation to return metric alarms or composite alarms.
-     *        If you omit this parameter, only metric alarms are returned.
+     *        If you omit this parameter, only metric alarms are returned, even if composite alarms exist in the
+     *        account.</p>
+     *        <p>
+     *        For example, if you omit this parameter or specify <code>MetricAlarms</code>, the operation returns only a
+     *        list of metric alarms. It does not return any composite alarms, even if composite alarms exist in the
+     *        account.
+     *        </p>
+     *        <p>
+     *        If you specify <code>CompositeAlarms</code>, the operation returns only a list of composite alarms, and
+     *        does not return any metric alarms.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AlarmType
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -97,6 +97,39 @@ public class AmazonWorkSpacesWebAsyncClient extends AmazonWorkSpacesWebClient im
 
                 try {
                     result = executeAssociateBrowserSettings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateIpAccessSettingsResult> associateIpAccessSettingsAsync(AssociateIpAccessSettingsRequest request) {
+
+        return associateIpAccessSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateIpAccessSettingsResult> associateIpAccessSettingsAsync(final AssociateIpAccessSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateIpAccessSettingsRequest, AssociateIpAccessSettingsResult> asyncHandler) {
+        final AssociateIpAccessSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateIpAccessSettingsResult>() {
+            @Override
+            public AssociateIpAccessSettingsResult call() throws Exception {
+                AssociateIpAccessSettingsResult result = null;
+
+                try {
+                    result = executeAssociateIpAccessSettings(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -297,6 +330,39 @@ public class AmazonWorkSpacesWebAsyncClient extends AmazonWorkSpacesWebClient im
 
                 try {
                     result = executeCreateIdentityProvider(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateIpAccessSettingsResult> createIpAccessSettingsAsync(CreateIpAccessSettingsRequest request) {
+
+        return createIpAccessSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateIpAccessSettingsResult> createIpAccessSettingsAsync(final CreateIpAccessSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateIpAccessSettingsRequest, CreateIpAccessSettingsResult> asyncHandler) {
+        final CreateIpAccessSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateIpAccessSettingsResult>() {
+            @Override
+            public CreateIpAccessSettingsResult call() throws Exception {
+                CreateIpAccessSettingsResult result = null;
+
+                try {
+                    result = executeCreateIpAccessSettings(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -546,6 +612,39 @@ public class AmazonWorkSpacesWebAsyncClient extends AmazonWorkSpacesWebClient im
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteIpAccessSettingsResult> deleteIpAccessSettingsAsync(DeleteIpAccessSettingsRequest request) {
+
+        return deleteIpAccessSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteIpAccessSettingsResult> deleteIpAccessSettingsAsync(final DeleteIpAccessSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteIpAccessSettingsRequest, DeleteIpAccessSettingsResult> asyncHandler) {
+        final DeleteIpAccessSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteIpAccessSettingsResult>() {
+            @Override
+            public DeleteIpAccessSettingsResult call() throws Exception {
+                DeleteIpAccessSettingsResult result = null;
+
+                try {
+                    result = executeDeleteIpAccessSettings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteNetworkSettingsResult> deleteNetworkSettingsAsync(DeleteNetworkSettingsRequest request) {
 
         return deleteNetworkSettingsAsync(request, null);
@@ -746,6 +845,39 @@ public class AmazonWorkSpacesWebAsyncClient extends AmazonWorkSpacesWebClient im
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateIpAccessSettingsResult> disassociateIpAccessSettingsAsync(DisassociateIpAccessSettingsRequest request) {
+
+        return disassociateIpAccessSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateIpAccessSettingsResult> disassociateIpAccessSettingsAsync(final DisassociateIpAccessSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateIpAccessSettingsRequest, DisassociateIpAccessSettingsResult> asyncHandler) {
+        final DisassociateIpAccessSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateIpAccessSettingsResult>() {
+            @Override
+            public DisassociateIpAccessSettingsResult call() throws Exception {
+                DisassociateIpAccessSettingsResult result = null;
+
+                try {
+                    result = executeDisassociateIpAccessSettings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateNetworkSettingsResult> disassociateNetworkSettingsAsync(DisassociateNetworkSettingsRequest request) {
 
         return disassociateNetworkSettingsAsync(request, null);
@@ -930,6 +1062,39 @@ public class AmazonWorkSpacesWebAsyncClient extends AmazonWorkSpacesWebClient im
 
                 try {
                     result = executeGetIdentityProvider(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetIpAccessSettingsResult> getIpAccessSettingsAsync(GetIpAccessSettingsRequest request) {
+
+        return getIpAccessSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetIpAccessSettingsResult> getIpAccessSettingsAsync(final GetIpAccessSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetIpAccessSettingsRequest, GetIpAccessSettingsResult> asyncHandler) {
+        final GetIpAccessSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetIpAccessSettingsResult>() {
+            @Override
+            public GetIpAccessSettingsResult call() throws Exception {
+                GetIpAccessSettingsResult result = null;
+
+                try {
+                    result = executeGetIpAccessSettings(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1229,6 +1394,39 @@ public class AmazonWorkSpacesWebAsyncClient extends AmazonWorkSpacesWebClient im
 
                 try {
                     result = executeListIdentityProviders(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListIpAccessSettingsResult> listIpAccessSettingsAsync(ListIpAccessSettingsRequest request) {
+
+        return listIpAccessSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListIpAccessSettingsResult> listIpAccessSettingsAsync(final ListIpAccessSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListIpAccessSettingsRequest, ListIpAccessSettingsResult> asyncHandler) {
+        final ListIpAccessSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListIpAccessSettingsResult>() {
+            @Override
+            public ListIpAccessSettingsResult call() throws Exception {
+                ListIpAccessSettingsResult result = null;
+
+                try {
+                    result = executeListIpAccessSettings(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1593,6 +1791,39 @@ public class AmazonWorkSpacesWebAsyncClient extends AmazonWorkSpacesWebClient im
 
                 try {
                     result = executeUpdateIdentityProvider(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateIpAccessSettingsResult> updateIpAccessSettingsAsync(UpdateIpAccessSettingsRequest request) {
+
+        return updateIpAccessSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateIpAccessSettingsResult> updateIpAccessSettingsAsync(final UpdateIpAccessSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateIpAccessSettingsRequest, UpdateIpAccessSettingsResult> asyncHandler) {
+        final UpdateIpAccessSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateIpAccessSettingsResult>() {
+            @Override
+            public UpdateIpAccessSettingsResult call() throws Exception {
+                UpdateIpAccessSettingsResult result = null;
+
+                try {
+                    result = executeUpdateIpAccessSettings(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

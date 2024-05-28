@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -13,7 +13,7 @@
 package com.amazonaws.services.pinpoint.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -43,6 +43,8 @@ public class EmailTemplateResponseMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecommenderId").build();
     private static final MarshallingInfo<String> SUBJECT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Subject").build();
+    private static final MarshallingInfo<List> HEADERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Headers").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> TEMPLATEDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -79,6 +81,7 @@ public class EmailTemplateResponseMarshaller {
             protocolMarshaller.marshall(emailTemplateResponse.getLastModifiedDate(), LASTMODIFIEDDATE_BINDING);
             protocolMarshaller.marshall(emailTemplateResponse.getRecommenderId(), RECOMMENDERID_BINDING);
             protocolMarshaller.marshall(emailTemplateResponse.getSubject(), SUBJECT_BINDING);
+            protocolMarshaller.marshall(emailTemplateResponse.getHeaders(), HEADERS_BINDING);
             protocolMarshaller.marshall(emailTemplateResponse.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(emailTemplateResponse.getTemplateDescription(), TEMPLATEDESCRIPTION_BINDING);
             protocolMarshaller.marshall(emailTemplateResponse.getTemplateName(), TEMPLATENAME_BINDING);

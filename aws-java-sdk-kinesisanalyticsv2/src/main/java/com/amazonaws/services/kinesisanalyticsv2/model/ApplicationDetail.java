@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,8 +49,7 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     private String applicationName;
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
-     * , or <code>FLINK-1_11</code>).
+     * The runtime environment for the application.
      * </p>
      */
     private String runtimeEnvironment;
@@ -68,8 +67,8 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     private String applicationStatus;
     /**
      * <p>
-     * Provides the current application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code>
-     * each time you update the application.
+     * Provides the current application version. Managed Service for Apache Flink updates the
+     * <code>ApplicationVersionId</code> each time you update the application.
      * </p>
      */
     private Long applicationVersionId;
@@ -87,7 +86,8 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     private java.util.Date lastUpdateTimestamp;
     /**
      * <p>
-     * Describes details about the application code and starting parameters for a Kinesis Data Analytics application.
+     * Describes details about the application code and starting parameters for a Managed Service for Apache Flink
+     * application.
      * </p>
      */
     private ApplicationConfigurationDescription applicationConfigurationDescription;
@@ -131,8 +131,8 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     private Long applicationVersionRolledBackTo;
     /**
      * <p>
-     * To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However,
-     * for a Kinesis Data Analytics for Apache Flink application, the mode is optional.
+     * To create a Managed Service for Apache Flink Studio notebook, you must set the mode to <code>INTERACTIVE</code>.
+     * However, for a Managed Service for Apache Flink application, the mode is optional.
      * </p>
      */
     private String applicationMode;
@@ -259,13 +259,11 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
-     * , or <code>FLINK-1_11</code>).
+     * The runtime environment for the application.
      * </p>
      * 
      * @param runtimeEnvironment
-     *        The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>,
-     *        <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).
+     *        The runtime environment for the application.
      * @see RuntimeEnvironment
      */
 
@@ -275,12 +273,10 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
-     * , or <code>FLINK-1_11</code>).
+     * The runtime environment for the application.
      * </p>
      * 
-     * @return The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>,
-     *         <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).
+     * @return The runtime environment for the application.
      * @see RuntimeEnvironment
      */
 
@@ -290,13 +286,11 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
-     * , or <code>FLINK-1_11</code>).
+     * The runtime environment for the application.
      * </p>
      * 
      * @param runtimeEnvironment
-     *        The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>,
-     *        <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).
+     *        The runtime environment for the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuntimeEnvironment
      */
@@ -308,13 +302,11 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
-     * , or <code>FLINK-1_11</code>).
+     * The runtime environment for the application.
      * </p>
      * 
      * @param runtimeEnvironment
-     *        The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>,
-     *        <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).
+     *        The runtime environment for the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuntimeEnvironment
      */
@@ -425,12 +417,12 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Provides the current application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code>
-     * each time you update the application.
+     * Provides the current application version. Managed Service for Apache Flink updates the
+     * <code>ApplicationVersionId</code> each time you update the application.
      * </p>
      * 
      * @param applicationVersionId
-     *        Provides the current application version. Kinesis Data Analytics updates the
+     *        Provides the current application version. Managed Service for Apache Flink updates the
      *        <code>ApplicationVersionId</code> each time you update the application.
      */
 
@@ -440,11 +432,11 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Provides the current application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code>
-     * each time you update the application.
+     * Provides the current application version. Managed Service for Apache Flink updates the
+     * <code>ApplicationVersionId</code> each time you update the application.
      * </p>
      * 
-     * @return Provides the current application version. Kinesis Data Analytics updates the
+     * @return Provides the current application version. Managed Service for Apache Flink updates the
      *         <code>ApplicationVersionId</code> each time you update the application.
      */
 
@@ -454,12 +446,12 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Provides the current application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code>
-     * each time you update the application.
+     * Provides the current application version. Managed Service for Apache Flink updates the
+     * <code>ApplicationVersionId</code> each time you update the application.
      * </p>
      * 
      * @param applicationVersionId
-     *        Provides the current application version. Kinesis Data Analytics updates the
+     *        Provides the current application version. Managed Service for Apache Flink updates the
      *        <code>ApplicationVersionId</code> each time you update the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -551,12 +543,13 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Describes details about the application code and starting parameters for a Kinesis Data Analytics application.
+     * Describes details about the application code and starting parameters for a Managed Service for Apache Flink
+     * application.
      * </p>
      * 
      * @param applicationConfigurationDescription
-     *        Describes details about the application code and starting parameters for a Kinesis Data Analytics
-     *        application.
+     *        Describes details about the application code and starting parameters for a Managed Service for Apache
+     *        Flink application.
      */
 
     public void setApplicationConfigurationDescription(ApplicationConfigurationDescription applicationConfigurationDescription) {
@@ -565,11 +558,12 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Describes details about the application code and starting parameters for a Kinesis Data Analytics application.
+     * Describes details about the application code and starting parameters for a Managed Service for Apache Flink
+     * application.
      * </p>
      * 
-     * @return Describes details about the application code and starting parameters for a Kinesis Data Analytics
-     *         application.
+     * @return Describes details about the application code and starting parameters for a Managed Service for Apache
+     *         Flink application.
      */
 
     public ApplicationConfigurationDescription getApplicationConfigurationDescription() {
@@ -578,12 +572,13 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Describes details about the application code and starting parameters for a Kinesis Data Analytics application.
+     * Describes details about the application code and starting parameters for a Managed Service for Apache Flink
+     * application.
      * </p>
      * 
      * @param applicationConfigurationDescription
-     *        Describes details about the application code and starting parameters for a Kinesis Data Analytics
-     *        application.
+     *        Describes details about the application code and starting parameters for a Managed Service for Apache
+     *        Flink application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -879,13 +874,14 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However,
-     * for a Kinesis Data Analytics for Apache Flink application, the mode is optional.
+     * To create a Managed Service for Apache Flink Studio notebook, you must set the mode to <code>INTERACTIVE</code>.
+     * However, for a Managed Service for Apache Flink application, the mode is optional.
      * </p>
      * 
      * @param applicationMode
-     *        To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>.
-     *        However, for a Kinesis Data Analytics for Apache Flink application, the mode is optional.
+     *        To create a Managed Service for Apache Flink Studio notebook, you must set the mode to
+     *        <code>INTERACTIVE</code>. However, for a Managed Service for Apache Flink application, the mode is
+     *        optional.
      * @see ApplicationMode
      */
 
@@ -895,12 +891,13 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However,
-     * for a Kinesis Data Analytics for Apache Flink application, the mode is optional.
+     * To create a Managed Service for Apache Flink Studio notebook, you must set the mode to <code>INTERACTIVE</code>.
+     * However, for a Managed Service for Apache Flink application, the mode is optional.
      * </p>
      * 
-     * @return To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>.
-     *         However, for a Kinesis Data Analytics for Apache Flink application, the mode is optional.
+     * @return To create a Managed Service for Apache Flink Studio notebook, you must set the mode to
+     *         <code>INTERACTIVE</code>. However, for a Managed Service for Apache Flink application, the mode is
+     *         optional.
      * @see ApplicationMode
      */
 
@@ -910,13 +907,14 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However,
-     * for a Kinesis Data Analytics for Apache Flink application, the mode is optional.
+     * To create a Managed Service for Apache Flink Studio notebook, you must set the mode to <code>INTERACTIVE</code>.
+     * However, for a Managed Service for Apache Flink application, the mode is optional.
      * </p>
      * 
      * @param applicationMode
-     *        To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>.
-     *        However, for a Kinesis Data Analytics for Apache Flink application, the mode is optional.
+     *        To create a Managed Service for Apache Flink Studio notebook, you must set the mode to
+     *        <code>INTERACTIVE</code>. However, for a Managed Service for Apache Flink application, the mode is
+     *        optional.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ApplicationMode
      */
@@ -928,13 +926,14 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However,
-     * for a Kinesis Data Analytics for Apache Flink application, the mode is optional.
+     * To create a Managed Service for Apache Flink Studio notebook, you must set the mode to <code>INTERACTIVE</code>.
+     * However, for a Managed Service for Apache Flink application, the mode is optional.
      * </p>
      * 
      * @param applicationMode
-     *        To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>.
-     *        However, for a Kinesis Data Analytics for Apache Flink application, the mode is optional.
+     *        To create a Managed Service for Apache Flink Studio notebook, you must set the mode to
+     *        <code>INTERACTIVE</code>. However, for a Managed Service for Apache Flink application, the mode is
+     *        optional.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ApplicationMode
      */

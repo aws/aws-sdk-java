@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -369,6 +369,26 @@ public class CreateReplicationGroupRequestMarshaller implements Marshaller<Reque
 
         if (createReplicationGroupRequest.getDataTieringEnabled() != null) {
             request.addParameter("DataTieringEnabled", StringUtils.fromBoolean(createReplicationGroupRequest.getDataTieringEnabled()));
+        }
+
+        if (createReplicationGroupRequest.getNetworkType() != null) {
+            request.addParameter("NetworkType", StringUtils.fromString(createReplicationGroupRequest.getNetworkType()));
+        }
+
+        if (createReplicationGroupRequest.getIpDiscovery() != null) {
+            request.addParameter("IpDiscovery", StringUtils.fromString(createReplicationGroupRequest.getIpDiscovery()));
+        }
+
+        if (createReplicationGroupRequest.getTransitEncryptionMode() != null) {
+            request.addParameter("TransitEncryptionMode", StringUtils.fromString(createReplicationGroupRequest.getTransitEncryptionMode()));
+        }
+
+        if (createReplicationGroupRequest.getClusterMode() != null) {
+            request.addParameter("ClusterMode", StringUtils.fromString(createReplicationGroupRequest.getClusterMode()));
+        }
+
+        if (createReplicationGroupRequest.getServerlessCacheSnapshotName() != null) {
+            request.addParameter("ServerlessCacheSnapshotName", StringUtils.fromString(createReplicationGroupRequest.getServerlessCacheSnapshotName()));
         }
 
         return request;

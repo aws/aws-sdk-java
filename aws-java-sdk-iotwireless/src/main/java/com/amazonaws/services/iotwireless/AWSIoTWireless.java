@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,11 @@ import com.amazonaws.services.iotwireless.model.*;
  * downlink message to devices in the group. By using Firmware Updates Over-The-Air (FUOTA) API operations, you can
  * create a FUOTA task and schedule a session to update the firmware of individual devices or an entire group of devices
  * in a multicast group.
+ * </p>
+ * <p>
+ * To connect to the AWS IoT Wireless Service, use the Service endpoints as described in <a
+ * href="https://docs.aws.amazon.com/general/latest/gr/iot-lorawan.html#iot-wireless_region">IoT Wireless Service
+ * endpoints</a> in the <i>AWS General Reference</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -438,6 +443,27 @@ public interface AWSIoTWireless {
      * <p>
      * Provisions a wireless gateway.
      * </p>
+     * <note>
+     * <p>
+     * When provisioning a wireless gateway, you might run into duplication errors for the following reasons.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you specify a <code>GatewayEui</code> value that already exists.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you used a <code>ClientRequestToken</code> with the same parameters within the last 10 minutes.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To avoid this error, make sure that you use unique identifiers and parameters for each request within the
+     * specified time period.
+     * </p>
+     * </note>
      * 
      * @param createWirelessGatewayRequest
      * @return Result of the CreateWirelessGateway operation returned by the service.
@@ -705,8 +731,54 @@ public interface AWSIoTWireless {
 
     /**
      * <p>
+     * Delete an import task.
+     * </p>
+     * 
+     * @param deleteWirelessDeviceImportTaskRequest
+     * @return Result of the DeleteWirelessDeviceImportTask operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.DeleteWirelessDeviceImportTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteWirelessDeviceImportTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteWirelessDeviceImportTaskResult deleteWirelessDeviceImportTask(DeleteWirelessDeviceImportTaskRequest deleteWirelessDeviceImportTaskRequest);
+
+    /**
+     * <p>
      * Deletes a wireless gateway.
      * </p>
+     * <note>
+     * <p>
+     * When deleting a wireless gateway, you might run into duplication errors for the following reasons.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you specify a <code>GatewayEui</code> value that already exists.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you used a <code>ClientRequestToken</code> with the same parameters within the last 10 minutes.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To avoid this error, make sure that you use unique identifiers and parameters for each request within the
+     * specified time period.
+     * </p>
+     * </note>
      * 
      * @param deleteWirelessGatewayRequest
      * @return Result of the DeleteWirelessGateway operation returned by the service.
@@ -773,6 +845,27 @@ public interface AWSIoTWireless {
      */
     DeleteWirelessGatewayTaskDefinitionResult deleteWirelessGatewayTaskDefinition(
             DeleteWirelessGatewayTaskDefinitionRequest deleteWirelessGatewayTaskDefinitionRequest);
+
+    /**
+     * <p>
+     * Deregister a wireless device from AWS IoT Wireless.
+     * </p>
+     * 
+     * @param deregisterWirelessDeviceRequest
+     * @return Result of the DeregisterWirelessDevice operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.DeregisterWirelessDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeregisterWirelessDevice"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeregisterWirelessDeviceResult deregisterWirelessDevice(DeregisterWirelessDeviceRequest deregisterWirelessDeviceRequest);
 
     /**
      * <p>
@@ -1067,6 +1160,56 @@ public interface AWSIoTWireless {
 
     /**
      * <p>
+     * Get the metric configuration status for this AWS account.
+     * </p>
+     * 
+     * @param getMetricConfigurationRequest
+     * @return Result of the GetMetricConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.GetMetricConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMetricConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetMetricConfigurationResult getMetricConfiguration(GetMetricConfigurationRequest getMetricConfigurationRequest);
+
+    /**
+     * <p>
+     * Get the summary metrics for this AWS account.
+     * </p>
+     * 
+     * @param getMetricsRequest
+     * @return Result of the GetMetrics operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.GetMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMetrics" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetMetricsResult getMetrics(GetMetricsRequest getMetricsRequest);
+
+    /**
+     * <p>
      * Gets information about a multicast group.
      * </p>
      * 
@@ -1160,6 +1303,13 @@ public interface AWSIoTWireless {
      * <p>
      * Get the position information for a given resource.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to retrieve the position information should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html"
+     * >GetResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param getPositionRequest
      * @return Result of the GetPosition operation returned by the service.
@@ -1177,12 +1327,20 @@ public interface AWSIoTWireless {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPosition" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     GetPositionResult getPosition(GetPositionRequest getPositionRequest);
 
     /**
      * <p>
      * Get position configuration for a given resource.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to retrieve the position configuration should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html"
+     * >GetResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param getPositionConfigurationRequest
      * @return Result of the GetPositionConfiguration operation returned by the service.
@@ -1200,7 +1358,32 @@ public interface AWSIoTWireless {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPositionConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     GetPositionConfigurationResult getPositionConfiguration(GetPositionConfigurationRequest getPositionConfigurationRequest);
+
+    /**
+     * <p>
+     * Get estimated position information as a payload in GeoJSON format. The payload measurement data is resolved using
+     * solvers that are provided by third-party vendors.
+     * </p>
+     * 
+     * @param getPositionEstimateRequest
+     * @return Result of the GetPositionEstimate operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSIoTWireless.GetPositionEstimate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPositionEstimate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetPositionEstimateResult getPositionEstimate(GetPositionEstimateRequest getPositionEstimateRequest);
 
     /**
      * <p>
@@ -1248,6 +1431,30 @@ public interface AWSIoTWireless {
      *      target="_top">AWS API Documentation</a>
      */
     GetResourceLogLevelResult getResourceLogLevel(GetResourceLogLevelRequest getResourceLogLevelRequest);
+
+    /**
+     * <p>
+     * Get the position information for a given wireless device or a wireless gateway resource. The position information
+     * uses the <a href="https://gisgeography.com/wgs84-world-geodetic-system/"> World Geodetic System (WGS84)</a>.
+     * </p>
+     * 
+     * @param getResourcePositionRequest
+     * @return Result of the GetResourcePosition operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSIoTWireless.GetResourcePosition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourcePosition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetResourcePositionResult getResourcePosition(GetResourcePositionRequest getResourcePositionRequest);
 
     /**
      * <p>
@@ -1316,6 +1523,31 @@ public interface AWSIoTWireless {
      *      API Documentation</a>
      */
     GetWirelessDeviceResult getWirelessDevice(GetWirelessDeviceRequest getWirelessDeviceRequest);
+
+    /**
+     * <p>
+     * Get information about an import task and count of device onboarding summary information for the import task.
+     * </p>
+     * 
+     * @param getWirelessDeviceImportTaskRequest
+     * @return Result of the GetWirelessDeviceImportTask operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.GetWirelessDeviceImportTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetWirelessDeviceImportTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetWirelessDeviceImportTaskResult getWirelessDeviceImportTask(GetWirelessDeviceImportTaskRequest getWirelessDeviceImportTaskRequest);
 
     /**
      * <p>
@@ -1524,6 +1756,33 @@ public interface AWSIoTWireless {
 
     /**
      * <p>
+     * List the Sidewalk devices in an import task and their onboarding status.
+     * </p>
+     * 
+     * @param listDevicesForWirelessDeviceImportTaskRequest
+     * @return Result of the ListDevicesForWirelessDeviceImportTask operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.ListDevicesForWirelessDeviceImportTask
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListDevicesForWirelessDeviceImportTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListDevicesForWirelessDeviceImportTaskResult listDevicesForWirelessDeviceImportTask(
+            ListDevicesForWirelessDeviceImportTaskRequest listDevicesForWirelessDeviceImportTaskRequest);
+
+    /**
+     * <p>
      * List event configurations where at least one event topic has been enabled.
      * </p>
      * 
@@ -1654,6 +1913,13 @@ public interface AWSIoTWireless {
      * <p>
      * List position configurations for a given resource, such as positioning solvers.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to retrieve position information should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html"
+     * >GetResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param listPositionConfigurationsRequest
      * @return Result of the ListPositionConfigurations operation returned by the service.
@@ -1669,6 +1935,7 @@ public interface AWSIoTWireless {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListPositionConfigurations"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     ListPositionConfigurationsResult listPositionConfigurations(ListPositionConfigurationsRequest listPositionConfigurationsRequest);
 
     /**
@@ -1740,6 +2007,31 @@ public interface AWSIoTWireless {
 
     /**
      * <p>
+     * List wireless devices that have been added to an import task.
+     * </p>
+     * 
+     * @param listWirelessDeviceImportTasksRequest
+     * @return Result of the ListWirelessDeviceImportTasks operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.ListWirelessDeviceImportTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListWirelessDeviceImportTasks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListWirelessDeviceImportTasksResult listWirelessDeviceImportTasks(ListWirelessDeviceImportTasksRequest listWirelessDeviceImportTasksRequest);
+
+    /**
+     * <p>
      * Lists the wireless devices registered to your AWS account.
      * </p>
      * 
@@ -1806,6 +2098,13 @@ public interface AWSIoTWireless {
      * <p>
      * Put position configuration for a given resource.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to update the position configuration should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html"
+     * >UpdateResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param putPositionConfigurationRequest
      * @return Result of the PutPositionConfiguration operation returned by the service.
@@ -1823,6 +2122,7 @@ public interface AWSIoTWireless {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PutPositionConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     PutPositionConfigurationResult putPositionConfiguration(PutPositionConfigurationRequest putPositionConfigurationRequest);
 
     /**
@@ -2044,6 +2344,57 @@ public interface AWSIoTWireless {
 
     /**
      * <p>
+     * Start import task for a single wireless device.
+     * </p>
+     * 
+     * @param startSingleWirelessDeviceImportTaskRequest
+     * @return Result of the StartSingleWirelessDeviceImportTask operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.StartSingleWirelessDeviceImportTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartSingleWirelessDeviceImportTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartSingleWirelessDeviceImportTaskResult startSingleWirelessDeviceImportTask(
+            StartSingleWirelessDeviceImportTaskRequest startSingleWirelessDeviceImportTaskRequest);
+
+    /**
+     * <p>
+     * Start import task for provisioning Sidewalk devices in bulk using an S3 CSV file.
+     * </p>
+     * 
+     * @param startWirelessDeviceImportTaskRequest
+     * @return Result of the StartWirelessDeviceImportTask operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.StartWirelessDeviceImportTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartWirelessDeviceImportTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartWirelessDeviceImportTaskResult startWirelessDeviceImportTask(StartWirelessDeviceImportTaskRequest startWirelessDeviceImportTaskRequest);
+
+    /**
+     * <p>
      * Adds a tag to a resource.
      * </p>
      * 
@@ -2210,6 +2561,31 @@ public interface AWSIoTWireless {
 
     /**
      * <p>
+     * Update the summary metric configuration.
+     * </p>
+     * 
+     * @param updateMetricConfigurationRequest
+     * @return Result of the UpdateMetricConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.UpdateMetricConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateMetricConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateMetricConfigurationResult updateMetricConfiguration(UpdateMetricConfigurationRequest updateMetricConfigurationRequest);
+
+    /**
+     * <p>
      * Updates properties of a multicast group session.
      * </p>
      * 
@@ -2282,6 +2658,13 @@ public interface AWSIoTWireless {
      * <p>
      * Update the position information of a resource.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to update the position information should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html"
+     * >UpdateResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param updatePositionRequest
      * @return Result of the UpdatePosition operation returned by the service.
@@ -2299,6 +2682,7 @@ public interface AWSIoTWireless {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdatePosition" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     UpdatePositionResult updatePosition(UpdatePositionRequest updatePositionRequest);
 
     /**
@@ -2328,6 +2712,31 @@ public interface AWSIoTWireless {
 
     /**
      * <p>
+     * Update the position information of a given wireless device or a wireless gateway resource. The position
+     * coordinates are based on the <a href="https://gisgeography.com/wgs84-world-geodetic-system/"> World Geodetic
+     * System (WGS84)</a>.
+     * </p>
+     * 
+     * @param updateResourcePositionRequest
+     * @return Result of the UpdateResourcePosition operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSIoTWireless.UpdateResourcePosition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateResourcePosition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateResourcePositionResult updateResourcePosition(UpdateResourcePositionRequest updateResourcePositionRequest);
+
+    /**
+     * <p>
      * Updates properties of a wireless device.
      * </p>
      * 
@@ -2348,6 +2757,31 @@ public interface AWSIoTWireless {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateWirelessDeviceResult updateWirelessDevice(UpdateWirelessDeviceRequest updateWirelessDeviceRequest);
+
+    /**
+     * <p>
+     * Update an import task to add more devices to the task.
+     * </p>
+     * 
+     * @param updateWirelessDeviceImportTaskRequest
+     * @return Result of the UpdateWirelessDeviceImportTask operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ConflictException
+     *         Adding, updating, or deleting the resource can cause an inconsistent state.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @sample AWSIoTWireless.UpdateWirelessDeviceImportTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateWirelessDeviceImportTask"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateWirelessDeviceImportTaskResult updateWirelessDeviceImportTask(UpdateWirelessDeviceImportTaskRequest updateWirelessDeviceImportTaskRequest);
 
     /**
      * <p>

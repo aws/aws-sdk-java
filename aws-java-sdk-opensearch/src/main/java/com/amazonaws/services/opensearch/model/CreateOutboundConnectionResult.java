@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The result of a <code> <a>CreateOutboundConnection</a> </code> request. Contains the details about the newly created
- * cross-cluster connection.
+ * The result of a <code>CreateOutboundConnection</code> request. Contains details about the newly created cross-cluster
+ * connection.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -26,42 +26,55 @@ public class CreateOutboundConnectionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch domain.
+     * Information about the source (local) domain.
      * </p>
      */
     private DomainInformationContainer localDomainInfo;
     /**
      * <p>
-     * The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch domain.
+     * Information about the destination (remote) domain.
      * </p>
      */
     private DomainInformationContainer remoteDomainInfo;
     /**
      * <p>
-     * The connection alias provided during the create connection request.
+     * Name of the connection.
      * </p>
      */
     private String connectionAlias;
     /**
      * <p>
-     * The <code> <a>OutboundConnectionStatus</a> </code> for the newly created connection.
+     * The status of the connection.
      * </p>
      */
     private OutboundConnectionStatus connectionStatus;
     /**
      * <p>
-     * The unique ID for the created outbound connection, which is used for subsequent operations on the connection.
+     * The unique identifier for the created outbound connection, which is used for subsequent operations on the
+     * connection.
      * </p>
      */
     private String connectionId;
+    /**
+     * <p>
+     * The connection mode.
+     * </p>
+     */
+    private String connectionMode;
+    /**
+     * <p>
+     * The <code>ConnectionProperties</code> for the newly created connection.
+     * </p>
+     */
+    private ConnectionProperties connectionProperties;
 
     /**
      * <p>
-     * The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch domain.
+     * Information about the source (local) domain.
      * </p>
      * 
      * @param localDomainInfo
-     *        The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch domain.
+     *        Information about the source (local) domain.
      */
 
     public void setLocalDomainInfo(DomainInformationContainer localDomainInfo) {
@@ -70,10 +83,10 @@ public class CreateOutboundConnectionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch domain.
+     * Information about the source (local) domain.
      * </p>
      * 
-     * @return The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch domain.
+     * @return Information about the source (local) domain.
      */
 
     public DomainInformationContainer getLocalDomainInfo() {
@@ -82,11 +95,11 @@ public class CreateOutboundConnectionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch domain.
+     * Information about the source (local) domain.
      * </p>
      * 
      * @param localDomainInfo
-     *        The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch domain.
+     *        Information about the source (local) domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +110,11 @@ public class CreateOutboundConnectionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch domain.
+     * Information about the destination (remote) domain.
      * </p>
      * 
      * @param remoteDomainInfo
-     *        The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch domain.
+     *        Information about the destination (remote) domain.
      */
 
     public void setRemoteDomainInfo(DomainInformationContainer remoteDomainInfo) {
@@ -110,10 +123,10 @@ public class CreateOutboundConnectionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch domain.
+     * Information about the destination (remote) domain.
      * </p>
      * 
-     * @return The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch domain.
+     * @return Information about the destination (remote) domain.
      */
 
     public DomainInformationContainer getRemoteDomainInfo() {
@@ -122,11 +135,11 @@ public class CreateOutboundConnectionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch domain.
+     * Information about the destination (remote) domain.
      * </p>
      * 
      * @param remoteDomainInfo
-     *        The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch domain.
+     *        Information about the destination (remote) domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,11 +150,11 @@ public class CreateOutboundConnectionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The connection alias provided during the create connection request.
+     * Name of the connection.
      * </p>
      * 
      * @param connectionAlias
-     *        The connection alias provided during the create connection request.
+     *        Name of the connection.
      */
 
     public void setConnectionAlias(String connectionAlias) {
@@ -150,10 +163,10 @@ public class CreateOutboundConnectionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The connection alias provided during the create connection request.
+     * Name of the connection.
      * </p>
      * 
-     * @return The connection alias provided during the create connection request.
+     * @return Name of the connection.
      */
 
     public String getConnectionAlias() {
@@ -162,11 +175,11 @@ public class CreateOutboundConnectionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The connection alias provided during the create connection request.
+     * Name of the connection.
      * </p>
      * 
      * @param connectionAlias
-     *        The connection alias provided during the create connection request.
+     *        Name of the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -177,11 +190,11 @@ public class CreateOutboundConnectionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The <code> <a>OutboundConnectionStatus</a> </code> for the newly created connection.
+     * The status of the connection.
      * </p>
      * 
      * @param connectionStatus
-     *        The <code> <a>OutboundConnectionStatus</a> </code> for the newly created connection.
+     *        The status of the connection.
      */
 
     public void setConnectionStatus(OutboundConnectionStatus connectionStatus) {
@@ -190,10 +203,10 @@ public class CreateOutboundConnectionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The <code> <a>OutboundConnectionStatus</a> </code> for the newly created connection.
+     * The status of the connection.
      * </p>
      * 
-     * @return The <code> <a>OutboundConnectionStatus</a> </code> for the newly created connection.
+     * @return The status of the connection.
      */
 
     public OutboundConnectionStatus getConnectionStatus() {
@@ -202,11 +215,11 @@ public class CreateOutboundConnectionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The <code> <a>OutboundConnectionStatus</a> </code> for the newly created connection.
+     * The status of the connection.
      * </p>
      * 
      * @param connectionStatus
-     *        The <code> <a>OutboundConnectionStatus</a> </code> for the newly created connection.
+     *        The status of the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -217,11 +230,12 @@ public class CreateOutboundConnectionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The unique ID for the created outbound connection, which is used for subsequent operations on the connection.
+     * The unique identifier for the created outbound connection, which is used for subsequent operations on the
+     * connection.
      * </p>
      * 
      * @param connectionId
-     *        The unique ID for the created outbound connection, which is used for subsequent operations on the
+     *        The unique identifier for the created outbound connection, which is used for subsequent operations on the
      *        connection.
      */
 
@@ -231,10 +245,11 @@ public class CreateOutboundConnectionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The unique ID for the created outbound connection, which is used for subsequent operations on the connection.
+     * The unique identifier for the created outbound connection, which is used for subsequent operations on the
+     * connection.
      * </p>
      * 
-     * @return The unique ID for the created outbound connection, which is used for subsequent operations on the
+     * @return The unique identifier for the created outbound connection, which is used for subsequent operations on the
      *         connection.
      */
 
@@ -244,17 +259,117 @@ public class CreateOutboundConnectionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The unique ID for the created outbound connection, which is used for subsequent operations on the connection.
+     * The unique identifier for the created outbound connection, which is used for subsequent operations on the
+     * connection.
      * </p>
      * 
      * @param connectionId
-     *        The unique ID for the created outbound connection, which is used for subsequent operations on the
+     *        The unique identifier for the created outbound connection, which is used for subsequent operations on the
      *        connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateOutboundConnectionResult withConnectionId(String connectionId) {
         setConnectionId(connectionId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The connection mode.
+     * </p>
+     * 
+     * @param connectionMode
+     *        The connection mode.
+     * @see ConnectionMode
+     */
+
+    public void setConnectionMode(String connectionMode) {
+        this.connectionMode = connectionMode;
+    }
+
+    /**
+     * <p>
+     * The connection mode.
+     * </p>
+     * 
+     * @return The connection mode.
+     * @see ConnectionMode
+     */
+
+    public String getConnectionMode() {
+        return this.connectionMode;
+    }
+
+    /**
+     * <p>
+     * The connection mode.
+     * </p>
+     * 
+     * @param connectionMode
+     *        The connection mode.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConnectionMode
+     */
+
+    public CreateOutboundConnectionResult withConnectionMode(String connectionMode) {
+        setConnectionMode(connectionMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The connection mode.
+     * </p>
+     * 
+     * @param connectionMode
+     *        The connection mode.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConnectionMode
+     */
+
+    public CreateOutboundConnectionResult withConnectionMode(ConnectionMode connectionMode) {
+        this.connectionMode = connectionMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The <code>ConnectionProperties</code> for the newly created connection.
+     * </p>
+     * 
+     * @param connectionProperties
+     *        The <code>ConnectionProperties</code> for the newly created connection.
+     */
+
+    public void setConnectionProperties(ConnectionProperties connectionProperties) {
+        this.connectionProperties = connectionProperties;
+    }
+
+    /**
+     * <p>
+     * The <code>ConnectionProperties</code> for the newly created connection.
+     * </p>
+     * 
+     * @return The <code>ConnectionProperties</code> for the newly created connection.
+     */
+
+    public ConnectionProperties getConnectionProperties() {
+        return this.connectionProperties;
+    }
+
+    /**
+     * <p>
+     * The <code>ConnectionProperties</code> for the newly created connection.
+     * </p>
+     * 
+     * @param connectionProperties
+     *        The <code>ConnectionProperties</code> for the newly created connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateOutboundConnectionResult withConnectionProperties(ConnectionProperties connectionProperties) {
+        setConnectionProperties(connectionProperties);
         return this;
     }
 
@@ -279,7 +394,11 @@ public class CreateOutboundConnectionResult extends com.amazonaws.AmazonWebServi
         if (getConnectionStatus() != null)
             sb.append("ConnectionStatus: ").append(getConnectionStatus()).append(",");
         if (getConnectionId() != null)
-            sb.append("ConnectionId: ").append(getConnectionId());
+            sb.append("ConnectionId: ").append(getConnectionId()).append(",");
+        if (getConnectionMode() != null)
+            sb.append("ConnectionMode: ").append(getConnectionMode()).append(",");
+        if (getConnectionProperties() != null)
+            sb.append("ConnectionProperties: ").append(getConnectionProperties());
         sb.append("}");
         return sb.toString();
     }
@@ -314,6 +433,14 @@ public class CreateOutboundConnectionResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getConnectionId() != null && other.getConnectionId().equals(this.getConnectionId()) == false)
             return false;
+        if (other.getConnectionMode() == null ^ this.getConnectionMode() == null)
+            return false;
+        if (other.getConnectionMode() != null && other.getConnectionMode().equals(this.getConnectionMode()) == false)
+            return false;
+        if (other.getConnectionProperties() == null ^ this.getConnectionProperties() == null)
+            return false;
+        if (other.getConnectionProperties() != null && other.getConnectionProperties().equals(this.getConnectionProperties()) == false)
+            return false;
         return true;
     }
 
@@ -327,6 +454,8 @@ public class CreateOutboundConnectionResult extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getConnectionAlias() == null) ? 0 : getConnectionAlias().hashCode());
         hashCode = prime * hashCode + ((getConnectionStatus() == null) ? 0 : getConnectionStatus().hashCode());
         hashCode = prime * hashCode + ((getConnectionId() == null) ? 0 : getConnectionId().hashCode());
+        hashCode = prime * hashCode + ((getConnectionMode() == null) ? 0 : getConnectionMode().hashCode());
+        hashCode = prime * hashCode + ((getConnectionProperties() == null) ? 0 : getConnectionProperties().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,9 +44,10 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code> value, include
      * <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>,
      * <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>,
-     * <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
-     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
-     * <code>"docdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.
+     * <code>"s3"</code>, <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
+     * <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and
+     * <code>"babelfish"</code>.
      * </p>
      */
     private String engineName;
@@ -329,6 +330,12 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private GcpMySQLSettings gcpMySQLSettings;
+    /**
+     * <p>
+     * Settings in JSON format for the target Amazon Timestream endpoint.
+     * </p>
+     */
+    private TimestreamSettings timestreamSettings;
 
     /**
      * <p>
@@ -454,19 +461,20 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code> value, include
      * <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>,
      * <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>,
-     * <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
-     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
-     * <code>"docdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.
+     * <code>"s3"</code>, <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
+     * <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and
+     * <code>"babelfish"</code>.
      * </p>
      * 
      * @param engineName
      *        The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code> value,
      *        include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>,
      *        <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
-     *        <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>,
-     *        <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
-     *        <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>, and
-     *        <code>"neptune"</code>.
+     *        <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"db2-zos"</code>,
+     *        <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
+     *        <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>,
+     *        <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>.
      */
 
     public void setEngineName(String engineName) {
@@ -478,18 +486,19 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code> value, include
      * <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>,
      * <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>,
-     * <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
-     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
-     * <code>"docdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.
+     * <code>"s3"</code>, <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
+     * <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and
+     * <code>"babelfish"</code>.
      * </p>
      * 
      * @return The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code> value,
      *         include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>,
      *         <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
-     *         <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>,
-     *         <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
-     *         <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>, and
-     *         <code>"neptune"</code>.
+     *         <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"db2-zos"</code>,
+     *         <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
+     *         <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>,
+     *         <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>.
      */
 
     public String getEngineName() {
@@ -501,19 +510,20 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code> value, include
      * <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>,
      * <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>, <code>"redshift"</code>,
-     * <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
-     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
-     * <code>"docdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.
+     * <code>"s3"</code>, <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>,
+     * <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>,
+     * <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and
+     * <code>"babelfish"</code>.
      * </p>
      * 
      * @param engineName
      *        The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code> value,
      *        include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>,
      *        <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
-     *        <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>,
-     *        <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
-     *        <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>, <code>"sqlserver"</code>, and
-     *        <code>"neptune"</code>.
+     *        <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"db2-zos"</code>,
+     *        <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
+     *        <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>,
+     *        <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2414,6 +2424,46 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Settings in JSON format for the target Amazon Timestream endpoint.
+     * </p>
+     * 
+     * @param timestreamSettings
+     *        Settings in JSON format for the target Amazon Timestream endpoint.
+     */
+
+    public void setTimestreamSettings(TimestreamSettings timestreamSettings) {
+        this.timestreamSettings = timestreamSettings;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the target Amazon Timestream endpoint.
+     * </p>
+     * 
+     * @return Settings in JSON format for the target Amazon Timestream endpoint.
+     */
+
+    public TimestreamSettings getTimestreamSettings() {
+        return this.timestreamSettings;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the target Amazon Timestream endpoint.
+     * </p>
+     * 
+     * @param timestreamSettings
+     *        Settings in JSON format for the target Amazon Timestream endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEndpointRequest withTimestreamSettings(TimestreamSettings timestreamSettings) {
+        setTimestreamSettings(timestreamSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2492,7 +2542,9 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getRedisSettings() != null)
             sb.append("RedisSettings: ").append(getRedisSettings()).append(",");
         if (getGcpMySQLSettings() != null)
-            sb.append("GcpMySQLSettings: ").append(getGcpMySQLSettings());
+            sb.append("GcpMySQLSettings: ").append(getGcpMySQLSettings()).append(",");
+        if (getTimestreamSettings() != null)
+            sb.append("TimestreamSettings: ").append(getTimestreamSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -2643,6 +2695,10 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getGcpMySQLSettings() != null && other.getGcpMySQLSettings().equals(this.getGcpMySQLSettings()) == false)
             return false;
+        if (other.getTimestreamSettings() == null ^ this.getTimestreamSettings() == null)
+            return false;
+        if (other.getTimestreamSettings() != null && other.getTimestreamSettings().equals(this.getTimestreamSettings()) == false)
+            return false;
         return true;
     }
 
@@ -2685,6 +2741,7 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getDocDbSettings() == null) ? 0 : getDocDbSettings().hashCode());
         hashCode = prime * hashCode + ((getRedisSettings() == null) ? 0 : getRedisSettings().hashCode());
         hashCode = prime * hashCode + ((getGcpMySQLSettings() == null) ? 0 : getGcpMySQLSettings().hashCode());
+        hashCode = prime * hashCode + ((getTimestreamSettings() == null) ? 0 : getTimestreamSettings().hashCode());
         return hashCode;
     }
 

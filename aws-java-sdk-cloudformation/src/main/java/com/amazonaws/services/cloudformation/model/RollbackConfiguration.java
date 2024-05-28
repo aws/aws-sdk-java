@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,7 +24,7 @@ import javax.annotation.Generated;
  * Rollback triggers enable you to have CloudFormation monitor the state of your application during stack creation and
  * updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've
  * specified. For more information, see <a
- * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor and
+ * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html">Monitor and
  * Roll Back Stack Operations</a>.
  * </p>
  * 

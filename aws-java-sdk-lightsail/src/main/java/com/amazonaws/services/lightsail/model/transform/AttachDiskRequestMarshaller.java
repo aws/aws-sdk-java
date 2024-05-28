@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class AttachDiskRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceName").build();
     private static final MarshallingInfo<String> DISKPATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("diskPath").build();
+    private static final MarshallingInfo<Boolean> AUTOMOUNTING_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoMounting").build();
 
     private static final AttachDiskRequestMarshaller instance = new AttachDiskRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class AttachDiskRequestMarshaller {
             protocolMarshaller.marshall(attachDiskRequest.getDiskName(), DISKNAME_BINDING);
             protocolMarshaller.marshall(attachDiskRequest.getInstanceName(), INSTANCENAME_BINDING);
             protocolMarshaller.marshall(attachDiskRequest.getDiskPath(), DISKPATH_BINDING);
+            protocolMarshaller.marshall(attachDiskRequest.getAutoMounting(), AUTOMOUNTING_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

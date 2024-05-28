@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,12 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private Boolean autoConfigEnabled;
+    /**
+     * <p>
+     * If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.
+     * </p>
+     */
+    private Boolean attachMissingPermission;
 
     /**
      * <p>
@@ -367,6 +373,62 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.
+     * </p>
+     * 
+     * @param attachMissingPermission
+     *        If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are
+     *        missing.
+     */
+
+    public void setAttachMissingPermission(Boolean attachMissingPermission) {
+        this.attachMissingPermission = attachMissingPermission;
+    }
+
+    /**
+     * <p>
+     * If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.
+     * </p>
+     * 
+     * @return If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are
+     *         missing.
+     */
+
+    public Boolean getAttachMissingPermission() {
+        return this.attachMissingPermission;
+    }
+
+    /**
+     * <p>
+     * If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.
+     * </p>
+     * 
+     * @param attachMissingPermission
+     *        If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are
+     *        missing.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateApplicationRequest withAttachMissingPermission(Boolean attachMissingPermission) {
+        setAttachMissingPermission(attachMissingPermission);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are missing.
+     * </p>
+     * 
+     * @return If set to true, the managed policies for SSM and CW will be attached to the instance roles if they are
+     *         missing.
+     */
+
+    public Boolean isAttachMissingPermission() {
+        return this.attachMissingPermission;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -389,7 +451,9 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getRemoveSNSTopic() != null)
             sb.append("RemoveSNSTopic: ").append(getRemoveSNSTopic()).append(",");
         if (getAutoConfigEnabled() != null)
-            sb.append("AutoConfigEnabled: ").append(getAutoConfigEnabled());
+            sb.append("AutoConfigEnabled: ").append(getAutoConfigEnabled()).append(",");
+        if (getAttachMissingPermission() != null)
+            sb.append("AttachMissingPermission: ").append(getAttachMissingPermission());
         sb.append("}");
         return sb.toString();
     }
@@ -428,6 +492,10 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getAutoConfigEnabled() != null && other.getAutoConfigEnabled().equals(this.getAutoConfigEnabled()) == false)
             return false;
+        if (other.getAttachMissingPermission() == null ^ this.getAttachMissingPermission() == null)
+            return false;
+        if (other.getAttachMissingPermission() != null && other.getAttachMissingPermission().equals(this.getAttachMissingPermission()) == false)
+            return false;
         return true;
     }
 
@@ -442,6 +510,7 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getOpsItemSNSTopicArn() == null) ? 0 : getOpsItemSNSTopicArn().hashCode());
         hashCode = prime * hashCode + ((getRemoveSNSTopic() == null) ? 0 : getRemoveSNSTopic().hashCode());
         hashCode = prime * hashCode + ((getAutoConfigEnabled() == null) ? 0 : getAutoConfigEnabled().hashCode());
+        hashCode = prime * hashCode + ((getAttachMissingPermission() == null) ? 0 : getAttachMissingPermission().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,19 @@ public class ListBillingGroupsFilter implements Serializable, Cloneable, Structu
      * </p>
      */
     private String pricingPlan;
+    /**
+     * <p>
+     * A list of billing groups to retrieve their current status for a specific time range
+     * </p>
+     */
+    private java.util.List<String> statuses;
+    /**
+     * <p>
+     * Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join
+     * your consolidated billing family.
+     * </p>
+     */
+    private Boolean autoAssociate;
 
     /**
      * <p>
@@ -152,6 +165,164 @@ public class ListBillingGroupsFilter implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * A list of billing groups to retrieve their current status for a specific time range
+     * </p>
+     * 
+     * @return A list of billing groups to retrieve their current status for a specific time range
+     * @see BillingGroupStatus
+     */
+
+    public java.util.List<String> getStatuses() {
+        return statuses;
+    }
+
+    /**
+     * <p>
+     * A list of billing groups to retrieve their current status for a specific time range
+     * </p>
+     * 
+     * @param statuses
+     *        A list of billing groups to retrieve their current status for a specific time range
+     * @see BillingGroupStatus
+     */
+
+    public void setStatuses(java.util.Collection<String> statuses) {
+        if (statuses == null) {
+            this.statuses = null;
+            return;
+        }
+
+        this.statuses = new java.util.ArrayList<String>(statuses);
+    }
+
+    /**
+     * <p>
+     * A list of billing groups to retrieve their current status for a specific time range
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setStatuses(java.util.Collection)} or {@link #withStatuses(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param statuses
+     *        A list of billing groups to retrieve their current status for a specific time range
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BillingGroupStatus
+     */
+
+    public ListBillingGroupsFilter withStatuses(String... statuses) {
+        if (this.statuses == null) {
+            setStatuses(new java.util.ArrayList<String>(statuses.length));
+        }
+        for (String ele : statuses) {
+            this.statuses.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of billing groups to retrieve their current status for a specific time range
+     * </p>
+     * 
+     * @param statuses
+     *        A list of billing groups to retrieve their current status for a specific time range
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BillingGroupStatus
+     */
+
+    public ListBillingGroupsFilter withStatuses(java.util.Collection<String> statuses) {
+        setStatuses(statuses);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of billing groups to retrieve their current status for a specific time range
+     * </p>
+     * 
+     * @param statuses
+     *        A list of billing groups to retrieve their current status for a specific time range
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BillingGroupStatus
+     */
+
+    public ListBillingGroupsFilter withStatuses(BillingGroupStatus... statuses) {
+        java.util.ArrayList<String> statusesCopy = new java.util.ArrayList<String>(statuses.length);
+        for (BillingGroupStatus value : statuses) {
+            statusesCopy.add(value.toString());
+        }
+        if (getStatuses() == null) {
+            setStatuses(statusesCopy);
+        } else {
+            getStatuses().addAll(statusesCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join
+     * your consolidated billing family.
+     * </p>
+     * 
+     * @param autoAssociate
+     *        Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that
+     *        join your consolidated billing family.
+     */
+
+    public void setAutoAssociate(Boolean autoAssociate) {
+        this.autoAssociate = autoAssociate;
+    }
+
+    /**
+     * <p>
+     * Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join
+     * your consolidated billing family.
+     * </p>
+     * 
+     * @return Specifies if this billing group will automatically associate newly added Amazon Web Services accounts
+     *         that join your consolidated billing family.
+     */
+
+    public Boolean getAutoAssociate() {
+        return this.autoAssociate;
+    }
+
+    /**
+     * <p>
+     * Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join
+     * your consolidated billing family.
+     * </p>
+     * 
+     * @param autoAssociate
+     *        Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that
+     *        join your consolidated billing family.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListBillingGroupsFilter withAutoAssociate(Boolean autoAssociate) {
+        setAutoAssociate(autoAssociate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join
+     * your consolidated billing family.
+     * </p>
+     * 
+     * @return Specifies if this billing group will automatically associate newly added Amazon Web Services accounts
+     *         that join your consolidated billing family.
+     */
+
+    public Boolean isAutoAssociate() {
+        return this.autoAssociate;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -166,7 +337,11 @@ public class ListBillingGroupsFilter implements Serializable, Cloneable, Structu
         if (getArns() != null)
             sb.append("Arns: ").append(getArns()).append(",");
         if (getPricingPlan() != null)
-            sb.append("PricingPlan: ").append(getPricingPlan());
+            sb.append("PricingPlan: ").append(getPricingPlan()).append(",");
+        if (getStatuses() != null)
+            sb.append("Statuses: ").append(getStatuses()).append(",");
+        if (getAutoAssociate() != null)
+            sb.append("AutoAssociate: ").append(getAutoAssociate());
         sb.append("}");
         return sb.toString();
     }
@@ -189,6 +364,14 @@ public class ListBillingGroupsFilter implements Serializable, Cloneable, Structu
             return false;
         if (other.getPricingPlan() != null && other.getPricingPlan().equals(this.getPricingPlan()) == false)
             return false;
+        if (other.getStatuses() == null ^ this.getStatuses() == null)
+            return false;
+        if (other.getStatuses() != null && other.getStatuses().equals(this.getStatuses()) == false)
+            return false;
+        if (other.getAutoAssociate() == null ^ this.getAutoAssociate() == null)
+            return false;
+        if (other.getAutoAssociate() != null && other.getAutoAssociate().equals(this.getAutoAssociate()) == false)
+            return false;
         return true;
     }
 
@@ -199,6 +382,8 @@ public class ListBillingGroupsFilter implements Serializable, Cloneable, Structu
 
         hashCode = prime * hashCode + ((getArns() == null) ? 0 : getArns().hashCode());
         hashCode = prime * hashCode + ((getPricingPlan() == null) ? 0 : getPricingPlan().hashCode());
+        hashCode = prime * hashCode + ((getStatuses() == null) ? 0 : getStatuses().hashCode());
+        hashCode = prime * hashCode + ((getAutoAssociate() == null) ? 0 : getAutoAssociate().hashCode());
         return hashCode;
     }
 

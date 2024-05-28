@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,10 +33,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String resourceArn;
     /**
      * <p>
-     * Array of tags to be added or updated. See <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
-     * for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon
-     * IVS has no service-specific constraints beyond what is documented there.
+     * Array of tags to be added or updated. Array of maps, each of the form <code>string:string (key:value)</code>. See
+     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     * Resources</a> for more information, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented
+     * there.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -83,13 +84,15 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Array of tags to be added or updated. See <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
-     * for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon
-     * IVS has no service-specific constraints beyond what is documented there.
+     * Array of tags to be added or updated. Array of maps, each of the form <code>string:string (key:value)</code>. See
+     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     * Resources</a> for more information, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented
+     * there.
      * </p>
      * 
-     * @return Array of tags to be added or updated. See <a
+     * @return Array of tags to be added or updated. Array of maps, each of the form
+     *         <code>string:string (key:value)</code>. See <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
      *         Resources</a> for more information, including restrictions that apply to tags and
      *         "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is
@@ -102,14 +105,16 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Array of tags to be added or updated. See <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
-     * for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon
-     * IVS has no service-specific constraints beyond what is documented there.
+     * Array of tags to be added or updated. Array of maps, each of the form <code>string:string (key:value)</code>. See
+     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     * Resources</a> for more information, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented
+     * there.
      * </p>
      * 
      * @param tags
-     *        Array of tags to be added or updated. See <a
+     *        Array of tags to be added or updated. Array of maps, each of the form
+     *        <code>string:string (key:value)</code>. See <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
      *        Resources</a> for more information, including restrictions that apply to tags and
      *        "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is
@@ -122,14 +127,16 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Array of tags to be added or updated. See <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
-     * for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon
-     * IVS has no service-specific constraints beyond what is documented there.
+     * Array of tags to be added or updated. Array of maps, each of the form <code>string:string (key:value)</code>. See
+     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     * Resources</a> for more information, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented
+     * there.
      * </p>
      * 
      * @param tags
-     *        Array of tags to be added or updated. See <a
+     *        Array of tags to be added or updated. Array of maps, each of the form
+     *        <code>string:string (key:value)</code>. See <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
      *        Resources</a> for more information, including restrictions that apply to tags and
      *        "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is

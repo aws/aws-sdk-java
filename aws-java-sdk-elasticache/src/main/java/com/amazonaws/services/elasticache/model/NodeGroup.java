@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,7 @@ public class NodeGroup implements Serializable, Cloneable {
     private Endpoint primaryEndpoint;
     /**
      * <p>
-     * The endpoint of the replica nodes in this node group (shard).
+     * The endpoint of the replica nodes in this node group (shard). This value is read-only.
      * </p>
      */
     private Endpoint readerEndpoint;
@@ -210,11 +210,11 @@ public class NodeGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The endpoint of the replica nodes in this node group (shard).
+     * The endpoint of the replica nodes in this node group (shard). This value is read-only.
      * </p>
      * 
      * @param readerEndpoint
-     *        The endpoint of the replica nodes in this node group (shard).
+     *        The endpoint of the replica nodes in this node group (shard). This value is read-only.
      */
 
     public void setReaderEndpoint(Endpoint readerEndpoint) {
@@ -223,10 +223,10 @@ public class NodeGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The endpoint of the replica nodes in this node group (shard).
+     * The endpoint of the replica nodes in this node group (shard). This value is read-only.
      * </p>
      * 
-     * @return The endpoint of the replica nodes in this node group (shard).
+     * @return The endpoint of the replica nodes in this node group (shard). This value is read-only.
      */
 
     public Endpoint getReaderEndpoint() {
@@ -235,11 +235,11 @@ public class NodeGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The endpoint of the replica nodes in this node group (shard).
+     * The endpoint of the replica nodes in this node group (shard). This value is read-only.
      * </p>
      * 
      * @param readerEndpoint
-     *        The endpoint of the replica nodes in this node group (shard).
+     *        The endpoint of the replica nodes in this node group (shard). This value is read-only.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

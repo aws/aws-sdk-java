@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,11 +34,6 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      * Valid Values:
      * </p>
      * <ul>
-     * <li>
-     * <p>
-     * <code>aurora5.6</code>
-     * </p>
-     * </li>
      * <li>
      * <p>
      * <code>aurora-mysql5.7</code>
@@ -77,6 +72,21 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      * <li>
      * <p>
      * <code>custom-oracle-ee-19</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-ee-cdb-19</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>db2-ae</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>db2-se</code>
      * </p>
      * </li>
      * <li>
@@ -320,11 +330,6 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>aurora5.6</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>aurora-mysql5.7</code>
      *        </p>
      *        </li>
@@ -361,6 +366,21 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      *        <li>
      *        <p>
      *        <code>custom-oracle-ee-19</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>custom-oracle-ee-cdb-19</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>db2-ae</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>db2-se</code>
      *        </p>
      *        </li>
      *        <li>
@@ -568,11 +588,6 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <code>aurora5.6</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>aurora-mysql5.7</code>
      * </p>
      * </li>
@@ -609,6 +624,21 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      * <li>
      * <p>
      * <code>custom-oracle-ee-19</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-ee-cdb-19</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>db2-ae</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>db2-se</code>
      * </p>
      * </li>
      * <li>
@@ -811,11 +841,6 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>aurora5.6</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>aurora-mysql5.7</code>
      *        </p>
      *        </li>
@@ -852,6 +877,21 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      *        <li>
      *        <p>
      *        <code>custom-oracle-ee-19</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>custom-oracle-ee-cdb-19</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>db2-ae</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>db2-se</code>
      *        </p>
      *        </li>
      *        <li>
@@ -1060,11 +1100,6 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <code>aurora5.6</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>aurora-mysql5.7</code>
      * </p>
      * </li>
@@ -1101,6 +1136,21 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      * <li>
      * <p>
      * <code>custom-oracle-ee-19</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-ee-cdb-19</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>db2-ae</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>db2-se</code>
      * </p>
      * </li>
      * <li>
@@ -1302,11 +1352,6 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>aurora5.6</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         <code>aurora-mysql5.7</code>
      *         </p>
      *         </li>
@@ -1343,6 +1388,21 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      *         <li>
      *         <p>
      *         <code>custom-oracle-ee-19</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>custom-oracle-ee-cdb-19</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>db2-ae</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>db2-se</code>
      *         </p>
      *         </li>
      *         <li>
@@ -1551,11 +1611,6 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <code>aurora5.6</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>aurora-mysql5.7</code>
      * </p>
      * </li>
@@ -1592,6 +1647,21 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      * <li>
      * <p>
      * <code>custom-oracle-ee-19</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-ee-cdb-19</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>db2-ae</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>db2-se</code>
      * </p>
      * </li>
      * <li>
@@ -1794,11 +1864,6 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>aurora5.6</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>aurora-mysql5.7</code>
      *        </p>
      *        </li>
@@ -1835,6 +1900,21 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      *        <li>
      *        <p>
      *        <code>custom-oracle-ee-19</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>custom-oracle-ee-cdb-19</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>db2-ae</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>db2-se</code>
      *        </p>
      *        </li>
      *        <li>

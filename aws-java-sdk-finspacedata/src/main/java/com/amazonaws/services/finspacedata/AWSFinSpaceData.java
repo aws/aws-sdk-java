@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,7 +43,7 @@ public interface AWSFinSpaceData {
 
     /**
      * <p>
-     * Adds a user account to a permission group to grant permissions for actions a user can perform in FinSpace.
+     * Adds a user to a permission group to grant permissions for actions a user can perform in FinSpace.
      * </p>
      * 
      * @param associateUserToPermissionGroupRequest
@@ -64,6 +64,7 @@ public interface AWSFinSpaceData {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/AssociateUserToPermissionGroup"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     AssociateUserToPermissionGroupResult associateUserToPermissionGroup(AssociateUserToPermissionGroupRequest associateUserToPermissionGroupRequest);
 
     /**
@@ -92,6 +93,7 @@ public interface AWSFinSpaceData {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateChangeset" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     CreateChangesetResult createChangeset(CreateChangesetRequest createChangesetRequest);
 
     /**
@@ -118,6 +120,7 @@ public interface AWSFinSpaceData {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateDataView" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     CreateDataViewResult createDataView(CreateDataViewRequest createDataViewRequest);
 
     /**
@@ -146,6 +149,7 @@ public interface AWSFinSpaceData {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateDataset" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     CreateDatasetResult createDataset(CreateDatasetRequest createDatasetRequest);
 
     /**
@@ -171,6 +175,7 @@ public interface AWSFinSpaceData {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreatePermissionGroup" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     CreatePermissionGroupResult createPermissionGroup(CreatePermissionGroupRequest createPermissionGroupRequest);
 
     /**
@@ -196,6 +201,7 @@ public interface AWSFinSpaceData {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/CreateUser" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     CreateUserResult createUser(CreateUserRequest createUserRequest);
 
     /**
@@ -224,6 +230,7 @@ public interface AWSFinSpaceData {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DeleteDataset" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     DeleteDatasetResult deleteDataset(DeleteDatasetRequest deleteDatasetRequest);
 
     /**
@@ -251,6 +258,7 @@ public interface AWSFinSpaceData {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DeletePermissionGroup" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     DeletePermissionGroupResult deletePermissionGroup(DeletePermissionGroupRequest deletePermissionGroupRequest);
 
     /**
@@ -276,11 +284,12 @@ public interface AWSFinSpaceData {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DisableUser" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     DisableUserResult disableUser(DisableUserRequest disableUserRequest);
 
     /**
      * <p>
-     * Removes a user account from a permission group.
+     * Removes a user from a permission group.
      * </p>
      * 
      * @param disassociateUserFromPermissionGroupRequest
@@ -301,6 +310,7 @@ public interface AWSFinSpaceData {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/DisassociateUserFromPermissionGroup"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     DisassociateUserFromPermissionGroupResult disassociateUserFromPermissionGroup(
             DisassociateUserFromPermissionGroupRequest disassociateUserFromPermissionGroupRequest);
 
@@ -329,6 +339,7 @@ public interface AWSFinSpaceData {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/EnableUser" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     EnableUserResult enableUser(EnableUserRequest enableUserRequest);
 
     /**
@@ -355,6 +366,7 @@ public interface AWSFinSpaceData {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetChangeset" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     GetChangesetResult getChangeset(GetChangesetRequest getChangesetRequest);
 
     /**
@@ -379,6 +391,7 @@ public interface AWSFinSpaceData {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetDataView" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     GetDataViewResult getDataView(GetDataViewRequest getDataViewRequest);
 
     /**
@@ -405,6 +418,7 @@ public interface AWSFinSpaceData {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetDataset" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     GetDatasetResult getDataset(GetDatasetRequest getDatasetRequest);
 
     /**
@@ -441,6 +455,7 @@ public interface AWSFinSpaceData {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetExternalDataViewAccessDetails"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     GetExternalDataViewAccessDetailsResult getExternalDataViewAccessDetails(GetExternalDataViewAccessDetailsRequest getExternalDataViewAccessDetailsRequest);
 
     /**
@@ -464,11 +479,14 @@ public interface AWSFinSpaceData {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetPermissionGroup" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     GetPermissionGroupResult getPermissionGroup(GetPermissionGroupRequest getPermissionGroupRequest);
 
     /**
      * <p>
-     * Request programmatic credentials to use with FinSpace SDK.
+     * Request programmatic credentials to use with FinSpace SDK. For more information, see <a href=
+     * "https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#accessing-credentials">Step
+     * 2. Access credentials programmatically using IAM access key id and secret access key</a>.
      * </p>
      * 
      * @param getProgrammaticAccessCredentialsRequest
@@ -486,6 +504,7 @@ public interface AWSFinSpaceData {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetProgrammaticAccessCredentials"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     GetProgrammaticAccessCredentialsResult getProgrammaticAccessCredentials(GetProgrammaticAccessCredentialsRequest getProgrammaticAccessCredentialsRequest);
 
     /**
@@ -509,6 +528,7 @@ public interface AWSFinSpaceData {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetUser" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     GetUserResult getUser(GetUserRequest getUserRequest);
 
     /**
@@ -531,6 +551,7 @@ public interface AWSFinSpaceData {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/GetWorkingLocation" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     GetWorkingLocationResult getWorkingLocation(GetWorkingLocationRequest getWorkingLocationRequest);
 
     /**
@@ -557,6 +578,7 @@ public interface AWSFinSpaceData {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListChangesets" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     ListChangesetsResult listChangesets(ListChangesetsRequest listChangesetsRequest);
 
     /**
@@ -581,6 +603,7 @@ public interface AWSFinSpaceData {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListDataViews" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     ListDataViewsResult listDataViews(ListDataViewsRequest listDataViewsRequest);
 
     /**
@@ -605,6 +628,7 @@ public interface AWSFinSpaceData {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListDatasets" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     ListDatasetsResult listDatasets(ListDatasetsRequest listDatasetsRequest);
 
     /**
@@ -626,11 +650,12 @@ public interface AWSFinSpaceData {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListPermissionGroups" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     ListPermissionGroupsResult listPermissionGroups(ListPermissionGroupsRequest listPermissionGroupsRequest);
 
     /**
      * <p>
-     * Lists all the permission groups that are associated with a specific user account.
+     * Lists all the permission groups that are associated with a specific user.
      * </p>
      * 
      * @param listPermissionGroupsByUserRequest
@@ -649,11 +674,12 @@ public interface AWSFinSpaceData {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListPermissionGroupsByUser"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     ListPermissionGroupsByUserResult listPermissionGroupsByUser(ListPermissionGroupsByUserRequest listPermissionGroupsByUserRequest);
 
     /**
      * <p>
-     * Lists all available user accounts in FinSpace.
+     * Lists all available users in FinSpace.
      * </p>
      * 
      * @param listUsersRequest
@@ -670,6 +696,7 @@ public interface AWSFinSpaceData {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListUsers" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     ListUsersResult listUsers(ListUsersRequest listUsersRequest);
 
     /**
@@ -693,6 +720,7 @@ public interface AWSFinSpaceData {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ListUsersByPermissionGroup"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     ListUsersByPermissionGroupResult listUsersByPermissionGroup(ListUsersByPermissionGroupRequest listUsersByPermissionGroupRequest);
 
     /**
@@ -719,6 +747,7 @@ public interface AWSFinSpaceData {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/ResetUserPassword" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     ResetUserPasswordResult resetUserPassword(ResetUserPasswordRequest resetUserPasswordRequest);
 
     /**
@@ -745,6 +774,7 @@ public interface AWSFinSpaceData {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdateChangeset" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     UpdateChangesetResult updateChangeset(UpdateChangesetRequest updateChangesetRequest);
 
     /**
@@ -771,6 +801,7 @@ public interface AWSFinSpaceData {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdateDataset" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     UpdateDatasetResult updateDataset(UpdateDatasetRequest updateDatasetRequest);
 
     /**
@@ -796,11 +827,12 @@ public interface AWSFinSpaceData {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdatePermissionGroup" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     UpdatePermissionGroupResult updatePermissionGroup(UpdatePermissionGroupRequest updatePermissionGroupRequest);
 
     /**
      * <p>
-     * Modifies the details of the specified user account. You cannot update the <code>userId</code> for a user.
+     * Modifies the details of the specified user. You cannot update the <code>userId</code> for a user.
      * </p>
      * 
      * @param updateUserRequest
@@ -821,6 +853,7 @@ public interface AWSFinSpaceData {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/UpdateUser" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     UpdateUserResult updateUser(UpdateUserRequest updateUserRequest);
 
     /**

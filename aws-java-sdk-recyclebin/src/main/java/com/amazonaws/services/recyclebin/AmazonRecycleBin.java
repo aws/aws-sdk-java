@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,9 +40,8 @@ import com.amazonaws.services.recyclebin.model.*;
  * resource from the Recycle Bin, the resource is removed from the Recycle Bin, and you can then use it in the same way
  * you use any other resource of that type in your account. If the retention period expires and the resource is not
  * restored, the resource is permanently deleted from the Recycle Bin and is no longer available for recovery. For more
- * information about Recycle Bin, see <a
- * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-recycle-bin.html"> Recycle Bin</a> in the
- * <i>Amazon Elastic Compute Cloud User Guide</i>.
+ * information about Recycle Bin, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">
+ * Recycle Bin</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -92,6 +91,8 @@ public interface AmazonRecycleBin {
      *         The specified resource was not found.
      * @throws ValidationException
      *         One or more of the parameters in the request is not valid.
+     * @throws ConflictException
+     *         The specified retention rule lock request can't be completed.
      * @sample AmazonRecycleBin.DeleteRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/DeleteRule" target="_top">AWS API
      *      Documentation</a>
@@ -155,6 +156,27 @@ public interface AmazonRecycleBin {
 
     /**
      * <p>
+     * Locks a retention rule. A locked retention rule can't be modified or deleted.
+     * </p>
+     * 
+     * @param lockRuleRequest
+     * @return Result of the LockRule operation returned by the service.
+     * @throws InternalServerException
+     *         The service could not respond to the request due to an internal problem.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ValidationException
+     *         One or more of the parameters in the request is not valid.
+     * @throws ConflictException
+     *         The specified retention rule lock request can't be completed.
+     * @sample AmazonRecycleBin.LockRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/LockRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    LockRuleResult lockRule(LockRuleRequest lockRuleRequest);
+
+    /**
+     * <p>
      * Assigns tags to the specified retention rule.
      * </p>
      * 
@@ -173,6 +195,28 @@ public interface AmazonRecycleBin {
      *      Documentation</a>
      */
     TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Unlocks a retention rule. After a retention rule is unlocked, it can be modified or deleted only after the unlock
+     * delay period expires.
+     * </p>
+     * 
+     * @param unlockRuleRequest
+     * @return Result of the UnlockRule operation returned by the service.
+     * @throws InternalServerException
+     *         The service could not respond to the request due to an internal problem.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ValidationException
+     *         One or more of the parameters in the request is not valid.
+     * @throws ConflictException
+     *         The specified retention rule lock request can't be completed.
+     * @sample AmazonRecycleBin.UnlockRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/UnlockRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UnlockRuleResult unlockRule(UnlockRuleRequest unlockRuleRequest);
 
     /**
      * <p>
@@ -195,7 +239,9 @@ public interface AmazonRecycleBin {
 
     /**
      * <p>
-     * Updates an existing Recycle Bin retention rule. For more information, see <a href=
+     * Updates an existing Recycle Bin retention rule. You can update a retention rule's description, resource tags, and
+     * retention period at any time after creation. You can't update a retention rule's resource type after creation.
+     * For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-update-rule"
      * > Update Recycle Bin retention rules</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -208,6 +254,10 @@ public interface AmazonRecycleBin {
      *         The service could not respond to the request due to an internal problem.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws ConflictException
+     *         The specified retention rule lock request can't be completed.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause a service quota for the number of tags per resource to be exceeded.
      * @sample AmazonRecycleBin.UpdateRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/UpdateRule" target="_top">AWS API
      *      Documentation</a>

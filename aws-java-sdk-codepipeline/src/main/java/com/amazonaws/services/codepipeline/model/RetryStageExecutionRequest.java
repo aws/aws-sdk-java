@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,7 +49,7 @@ public class RetryStageExecutionRequest extends com.amazonaws.AmazonWebServiceRe
     private String pipelineExecutionId;
     /**
      * <p>
-     * The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.
+     * The scope of the retry attempt.
      * </p>
      */
     private String retryMode;
@@ -182,11 +182,11 @@ public class RetryStageExecutionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.
+     * The scope of the retry attempt.
      * </p>
      * 
      * @param retryMode
-     *        The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.
+     *        The scope of the retry attempt.
      * @see StageRetryMode
      */
 
@@ -196,10 +196,10 @@ public class RetryStageExecutionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.
+     * The scope of the retry attempt.
      * </p>
      * 
-     * @return The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.
+     * @return The scope of the retry attempt.
      * @see StageRetryMode
      */
 
@@ -209,11 +209,11 @@ public class RetryStageExecutionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.
+     * The scope of the retry attempt.
      * </p>
      * 
      * @param retryMode
-     *        The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.
+     *        The scope of the retry attempt.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StageRetryMode
      */
@@ -225,11 +225,11 @@ public class RetryStageExecutionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.
+     * The scope of the retry attempt.
      * </p>
      * 
      * @param retryMode
-     *        The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.
+     *        The scope of the retry attempt.
      * @see StageRetryMode
      */
 
@@ -239,11 +239,11 @@ public class RetryStageExecutionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.
+     * The scope of the retry attempt.
      * </p>
      * 
      * @param retryMode
-     *        The scope of the retry attempt. Currently, the only supported value is FAILED_ACTIONS.
+     *        The scope of the retry attempt.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StageRetryMode
      */

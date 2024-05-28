@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,20 +27,29 @@ public class BatchGetRecordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and
-     * Feature name that have been requested to be retrieved in batch.
+     * A list containing the name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code>, the list of names of
+     * <code>Feature</code>s to be retrieved, and the corresponding <code>RecordIdentifier</code> values as strings.
      * </p>
      */
     private java.util.List<BatchGetRecordIdentifier> identifiers;
+    /**
+     * <p>
+     * Parameter to request <code>ExpiresAt</code> in response. If <code>Enabled</code>, <code>BatchGetRecord</code>
+     * will return the value of <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null,
+     * <code>BatchGetRecord</code> will return null.
+     * </p>
+     */
+    private String expirationTimeResponse;
 
     /**
      * <p>
-     * A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and
-     * Feature name that have been requested to be retrieved in batch.
+     * A list containing the name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code>, the list of names of
+     * <code>Feature</code>s to be retrieved, and the corresponding <code>RecordIdentifier</code> values as strings.
      * </p>
      * 
-     * @return A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value,
-     *         and Feature name that have been requested to be retrieved in batch.
+     * @return A list containing the name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code>, the list of
+     *         names of <code>Feature</code>s to be retrieved, and the corresponding <code>RecordIdentifier</code>
+     *         values as strings.
      */
 
     public java.util.List<BatchGetRecordIdentifier> getIdentifiers() {
@@ -49,13 +58,14 @@ public class BatchGetRecordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and
-     * Feature name that have been requested to be retrieved in batch.
+     * A list containing the name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code>, the list of names of
+     * <code>Feature</code>s to be retrieved, and the corresponding <code>RecordIdentifier</code> values as strings.
      * </p>
      * 
      * @param identifiers
-     *        A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value,
-     *        and Feature name that have been requested to be retrieved in batch.
+     *        A list containing the name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code>, the list of
+     *        names of <code>Feature</code>s to be retrieved, and the corresponding <code>RecordIdentifier</code> values
+     *        as strings.
      */
 
     public void setIdentifiers(java.util.Collection<BatchGetRecordIdentifier> identifiers) {
@@ -69,8 +79,8 @@ public class BatchGetRecordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and
-     * Feature name that have been requested to be retrieved in batch.
+     * A list containing the name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code>, the list of names of
+     * <code>Feature</code>s to be retrieved, and the corresponding <code>RecordIdentifier</code> values as strings.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,8 +89,9 @@ public class BatchGetRecordRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param identifiers
-     *        A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value,
-     *        and Feature name that have been requested to be retrieved in batch.
+     *        A list containing the name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code>, the list of
+     *        names of <code>Feature</code>s to be retrieved, and the corresponding <code>RecordIdentifier</code> values
+     *        as strings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,18 +107,94 @@ public class BatchGetRecordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value, and
-     * Feature name that have been requested to be retrieved in batch.
+     * A list containing the name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code>, the list of names of
+     * <code>Feature</code>s to be retrieved, and the corresponding <code>RecordIdentifier</code> values as strings.
      * </p>
      * 
      * @param identifiers
-     *        A list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code> value,
-     *        and Feature name that have been requested to be retrieved in batch.
+     *        A list containing the name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code>, the list of
+     *        names of <code>Feature</code>s to be retrieved, and the corresponding <code>RecordIdentifier</code> values
+     *        as strings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BatchGetRecordRequest withIdentifiers(java.util.Collection<BatchGetRecordIdentifier> identifiers) {
         setIdentifiers(identifiers);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Parameter to request <code>ExpiresAt</code> in response. If <code>Enabled</code>, <code>BatchGetRecord</code>
+     * will return the value of <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null,
+     * <code>BatchGetRecord</code> will return null.
+     * </p>
+     * 
+     * @param expirationTimeResponse
+     *        Parameter to request <code>ExpiresAt</code> in response. If <code>Enabled</code>,
+     *        <code>BatchGetRecord</code> will return the value of <code>ExpiresAt</code>, if it is not null. If
+     *        <code>Disabled</code> and null, <code>BatchGetRecord</code> will return null.
+     * @see ExpirationTimeResponse
+     */
+
+    public void setExpirationTimeResponse(String expirationTimeResponse) {
+        this.expirationTimeResponse = expirationTimeResponse;
+    }
+
+    /**
+     * <p>
+     * Parameter to request <code>ExpiresAt</code> in response. If <code>Enabled</code>, <code>BatchGetRecord</code>
+     * will return the value of <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null,
+     * <code>BatchGetRecord</code> will return null.
+     * </p>
+     * 
+     * @return Parameter to request <code>ExpiresAt</code> in response. If <code>Enabled</code>,
+     *         <code>BatchGetRecord</code> will return the value of <code>ExpiresAt</code>, if it is not null. If
+     *         <code>Disabled</code> and null, <code>BatchGetRecord</code> will return null.
+     * @see ExpirationTimeResponse
+     */
+
+    public String getExpirationTimeResponse() {
+        return this.expirationTimeResponse;
+    }
+
+    /**
+     * <p>
+     * Parameter to request <code>ExpiresAt</code> in response. If <code>Enabled</code>, <code>BatchGetRecord</code>
+     * will return the value of <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null,
+     * <code>BatchGetRecord</code> will return null.
+     * </p>
+     * 
+     * @param expirationTimeResponse
+     *        Parameter to request <code>ExpiresAt</code> in response. If <code>Enabled</code>,
+     *        <code>BatchGetRecord</code> will return the value of <code>ExpiresAt</code>, if it is not null. If
+     *        <code>Disabled</code> and null, <code>BatchGetRecord</code> will return null.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExpirationTimeResponse
+     */
+
+    public BatchGetRecordRequest withExpirationTimeResponse(String expirationTimeResponse) {
+        setExpirationTimeResponse(expirationTimeResponse);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Parameter to request <code>ExpiresAt</code> in response. If <code>Enabled</code>, <code>BatchGetRecord</code>
+     * will return the value of <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null,
+     * <code>BatchGetRecord</code> will return null.
+     * </p>
+     * 
+     * @param expirationTimeResponse
+     *        Parameter to request <code>ExpiresAt</code> in response. If <code>Enabled</code>,
+     *        <code>BatchGetRecord</code> will return the value of <code>ExpiresAt</code>, if it is not null. If
+     *        <code>Disabled</code> and null, <code>BatchGetRecord</code> will return null.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExpirationTimeResponse
+     */
+
+    public BatchGetRecordRequest withExpirationTimeResponse(ExpirationTimeResponse expirationTimeResponse) {
+        this.expirationTimeResponse = expirationTimeResponse.toString();
         return this;
     }
 
@@ -124,7 +211,9 @@ public class BatchGetRecordRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIdentifiers() != null)
-            sb.append("Identifiers: ").append(getIdentifiers());
+            sb.append("Identifiers: ").append(getIdentifiers()).append(",");
+        if (getExpirationTimeResponse() != null)
+            sb.append("ExpirationTimeResponse: ").append(getExpirationTimeResponse());
         sb.append("}");
         return sb.toString();
     }
@@ -143,6 +232,10 @@ public class BatchGetRecordRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getIdentifiers() != null && other.getIdentifiers().equals(this.getIdentifiers()) == false)
             return false;
+        if (other.getExpirationTimeResponse() == null ^ this.getExpirationTimeResponse() == null)
+            return false;
+        if (other.getExpirationTimeResponse() != null && other.getExpirationTimeResponse().equals(this.getExpirationTimeResponse()) == false)
+            return false;
         return true;
     }
 
@@ -152,6 +245,7 @@ public class BatchGetRecordRequest extends com.amazonaws.AmazonWebServiceRequest
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getIdentifiers() == null) ? 0 : getIdentifiers().hashCode());
+        hashCode = prime * hashCode + ((getExpirationTimeResponse() == null) ? 0 : getExpirationTimeResponse().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,7 +65,7 @@ public class EndpointDescription implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false. The
-     * default value is true for new accelerators.
+     * default value is true for Application Load Balancers endpoints.
      * </p>
      * <p>
      * If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code> request
@@ -73,7 +73,8 @@ public class EndpointDescription implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * Client IP address preservation is supported, in specific Amazon Web Services Regions, for endpoints that are
-     * Application Load Balancers and Amazon EC2 instances.
+     * Application Load Balancers, Amazon EC2 instances, and Network Load Balancers with security groups. IMPORTANT: You
+     * cannot use client IP address preservation with Network Load Balancers with TLS listeners.
      * </p>
      * <p>
      * For more information, see <a
@@ -325,7 +326,7 @@ public class EndpointDescription implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false. The
-     * default value is true for new accelerators.
+     * default value is true for Application Load Balancers endpoints.
      * </p>
      * <p>
      * If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code> request
@@ -333,7 +334,8 @@ public class EndpointDescription implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * Client IP address preservation is supported, in specific Amazon Web Services Regions, for endpoints that are
-     * Application Load Balancers and Amazon EC2 instances.
+     * Application Load Balancers, Amazon EC2 instances, and Network Load Balancers with security groups. IMPORTANT: You
+     * cannot use client IP address preservation with Network Load Balancers with TLS listeners.
      * </p>
      * <p>
      * For more information, see <a
@@ -343,14 +345,15 @@ public class EndpointDescription implements Serializable, Cloneable, StructuredP
      * 
      * @param clientIPPreservationEnabled
      *        Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false.
-     *        The default value is true for new accelerators. </p>
+     *        The default value is true for Application Load Balancers endpoints. </p>
      *        <p>
      *        If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code>
      *        request header as traffic travels to applications on the endpoint fronted by the accelerator.
      *        </p>
      *        <p>
      *        Client IP address preservation is supported, in specific Amazon Web Services Regions, for endpoints that
-     *        are Application Load Balancers and Amazon EC2 instances.
+     *        are Application Load Balancers, Amazon EC2 instances, and Network Load Balancers with security groups.
+     *        IMPORTANT: You cannot use client IP address preservation with Network Load Balancers with TLS listeners.
      *        </p>
      *        <p>
      *        For more information, see <a
@@ -365,7 +368,7 @@ public class EndpointDescription implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false. The
-     * default value is true for new accelerators.
+     * default value is true for Application Load Balancers endpoints.
      * </p>
      * <p>
      * If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code> request
@@ -373,7 +376,8 @@ public class EndpointDescription implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * Client IP address preservation is supported, in specific Amazon Web Services Regions, for endpoints that are
-     * Application Load Balancers and Amazon EC2 instances.
+     * Application Load Balancers, Amazon EC2 instances, and Network Load Balancers with security groups. IMPORTANT: You
+     * cannot use client IP address preservation with Network Load Balancers with TLS listeners.
      * </p>
      * <p>
      * For more information, see <a
@@ -382,14 +386,15 @@ public class EndpointDescription implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @return Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false.
-     *         The default value is true for new accelerators. </p>
+     *         The default value is true for Application Load Balancers endpoints. </p>
      *         <p>
      *         If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code>
      *         request header as traffic travels to applications on the endpoint fronted by the accelerator.
      *         </p>
      *         <p>
      *         Client IP address preservation is supported, in specific Amazon Web Services Regions, for endpoints that
-     *         are Application Load Balancers and Amazon EC2 instances.
+     *         are Application Load Balancers, Amazon EC2 instances, and Network Load Balancers with security groups.
+     *         IMPORTANT: You cannot use client IP address preservation with Network Load Balancers with TLS listeners.
      *         </p>
      *         <p>
      *         For more information, see <a
@@ -404,7 +409,7 @@ public class EndpointDescription implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false. The
-     * default value is true for new accelerators.
+     * default value is true for Application Load Balancers endpoints.
      * </p>
      * <p>
      * If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code> request
@@ -412,7 +417,8 @@ public class EndpointDescription implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * Client IP address preservation is supported, in specific Amazon Web Services Regions, for endpoints that are
-     * Application Load Balancers and Amazon EC2 instances.
+     * Application Load Balancers, Amazon EC2 instances, and Network Load Balancers with security groups. IMPORTANT: You
+     * cannot use client IP address preservation with Network Load Balancers with TLS listeners.
      * </p>
      * <p>
      * For more information, see <a
@@ -422,14 +428,15 @@ public class EndpointDescription implements Serializable, Cloneable, StructuredP
      * 
      * @param clientIPPreservationEnabled
      *        Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false.
-     *        The default value is true for new accelerators. </p>
+     *        The default value is true for Application Load Balancers endpoints. </p>
      *        <p>
      *        If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code>
      *        request header as traffic travels to applications on the endpoint fronted by the accelerator.
      *        </p>
      *        <p>
      *        Client IP address preservation is supported, in specific Amazon Web Services Regions, for endpoints that
-     *        are Application Load Balancers and Amazon EC2 instances.
+     *        are Application Load Balancers, Amazon EC2 instances, and Network Load Balancers with security groups.
+     *        IMPORTANT: You cannot use client IP address preservation with Network Load Balancers with TLS listeners.
      *        </p>
      *        <p>
      *        For more information, see <a
@@ -446,7 +453,7 @@ public class EndpointDescription implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false. The
-     * default value is true for new accelerators.
+     * default value is true for Application Load Balancers endpoints.
      * </p>
      * <p>
      * If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code> request
@@ -454,7 +461,8 @@ public class EndpointDescription implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * Client IP address preservation is supported, in specific Amazon Web Services Regions, for endpoints that are
-     * Application Load Balancers and Amazon EC2 instances.
+     * Application Load Balancers, Amazon EC2 instances, and Network Load Balancers with security groups. IMPORTANT: You
+     * cannot use client IP address preservation with Network Load Balancers with TLS listeners.
      * </p>
      * <p>
      * For more information, see <a
@@ -463,14 +471,15 @@ public class EndpointDescription implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @return Indicates whether client IP address preservation is enabled for an endpoint. The value is true or false.
-     *         The default value is true for new accelerators. </p>
+     *         The default value is true for Application Load Balancers endpoints. </p>
      *         <p>
      *         If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code>
      *         request header as traffic travels to applications on the endpoint fronted by the accelerator.
      *         </p>
      *         <p>
      *         Client IP address preservation is supported, in specific Amazon Web Services Regions, for endpoints that
-     *         are Application Load Balancers and Amazon EC2 instances.
+     *         are Application Load Balancers, Amazon EC2 instances, and Network Load Balancers with security groups.
+     *         IMPORTANT: You cannot use client IP address preservation with Network Load Balancers with TLS listeners.
      *         </p>
      *         <p>
      *         For more information, see <a

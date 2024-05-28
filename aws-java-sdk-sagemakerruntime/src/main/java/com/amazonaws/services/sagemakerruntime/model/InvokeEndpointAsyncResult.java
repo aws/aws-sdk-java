@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,12 @@ public class InvokeEndpointAsyncResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private String outputLocation;
+    /**
+     * <p>
+     * The Amazon S3 URI where the inference failure response payload is stored.
+     * </p>
+     */
+    private String failureLocation;
 
     /**
      * <p>
@@ -124,6 +130,46 @@ public class InvokeEndpointAsyncResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * The Amazon S3 URI where the inference failure response payload is stored.
+     * </p>
+     * 
+     * @param failureLocation
+     *        The Amazon S3 URI where the inference failure response payload is stored.
+     */
+
+    public void setFailureLocation(String failureLocation) {
+        this.failureLocation = failureLocation;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 URI where the inference failure response payload is stored.
+     * </p>
+     * 
+     * @return The Amazon S3 URI where the inference failure response payload is stored.
+     */
+
+    public String getFailureLocation() {
+        return this.failureLocation;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 URI where the inference failure response payload is stored.
+     * </p>
+     * 
+     * @param failureLocation
+     *        The Amazon S3 URI where the inference failure response payload is stored.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InvokeEndpointAsyncResult withFailureLocation(String failureLocation) {
+        setFailureLocation(failureLocation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -138,7 +184,9 @@ public class InvokeEndpointAsyncResult extends com.amazonaws.AmazonWebServiceRes
         if (getInferenceId() != null)
             sb.append("InferenceId: ").append(getInferenceId()).append(",");
         if (getOutputLocation() != null)
-            sb.append("OutputLocation: ").append(getOutputLocation());
+            sb.append("OutputLocation: ").append(getOutputLocation()).append(",");
+        if (getFailureLocation() != null)
+            sb.append("FailureLocation: ").append(getFailureLocation());
         sb.append("}");
         return sb.toString();
     }
@@ -161,6 +209,10 @@ public class InvokeEndpointAsyncResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getOutputLocation() != null && other.getOutputLocation().equals(this.getOutputLocation()) == false)
             return false;
+        if (other.getFailureLocation() == null ^ this.getFailureLocation() == null)
+            return false;
+        if (other.getFailureLocation() != null && other.getFailureLocation().equals(this.getFailureLocation()) == false)
+            return false;
         return true;
     }
 
@@ -171,6 +223,7 @@ public class InvokeEndpointAsyncResult extends com.amazonaws.AmazonWebServiceRes
 
         hashCode = prime * hashCode + ((getInferenceId() == null) ? 0 : getInferenceId().hashCode());
         hashCode = prime * hashCode + ((getOutputLocation() == null) ? 0 : getOutputLocation().hashCode());
+        hashCode = prime * hashCode + ((getFailureLocation() == null) ? 0 : getFailureLocation().hashCode());
         return hashCode;
     }
 

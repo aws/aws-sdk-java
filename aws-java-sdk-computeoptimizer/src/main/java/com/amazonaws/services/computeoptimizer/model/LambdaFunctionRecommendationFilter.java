@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,21 @@ public class LambdaFunctionRecommendationFilter implements Serializable, Cloneab
      * Specify <code>FindingReasonCode</code> to return recommendations with a specific finding reason code (for
      * example, <code>MemoryUnderprovisioned</code>).
      * </p>
+     * <p>
+     * You can filter your Lambda function recommendations by <code>tag:key</code> and <code>tag-key</code> tags.
+     * </p>
+     * <p>
+     * A <code>tag:key</code> is a key and value combination of a tag assigned to your Lambda function recommendations.
+     * Use the tag key in the filter name and the tag value as the filter value. For example, to find all Lambda
+     * function recommendations that have a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>,
+     * specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.
+     * </p>
+     * <p>
+     * A <code>tag-key</code> is the key of a tag assigned to your Lambda function recommendations. Use this filter to
+     * find all of your Lambda function recommendations that have a tag with a specific key. This doesn’t consider the
+     * tag value. For example, you can find your Lambda function recommendations with a tag key value of
+     * <code>Owner</code> or without any tag keys assigned.
+     * </p>
      */
     private String name;
     /**
@@ -85,6 +100,21 @@ public class LambdaFunctionRecommendationFilter implements Serializable, Cloneab
      * Specify <code>FindingReasonCode</code> to return recommendations with a specific finding reason code (for
      * example, <code>MemoryUnderprovisioned</code>).
      * </p>
+     * <p>
+     * You can filter your Lambda function recommendations by <code>tag:key</code> and <code>tag-key</code> tags.
+     * </p>
+     * <p>
+     * A <code>tag:key</code> is a key and value combination of a tag assigned to your Lambda function recommendations.
+     * Use the tag key in the filter name and the tag value as the filter value. For example, to find all Lambda
+     * function recommendations that have a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>,
+     * specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.
+     * </p>
+     * <p>
+     * A <code>tag-key</code> is the key of a tag assigned to your Lambda function recommendations. Use this filter to
+     * find all of your Lambda function recommendations that have a tag with a specific key. This doesn’t consider the
+     * tag value. For example, you can find your Lambda function recommendations with a tag key value of
+     * <code>Owner</code> or without any tag keys assigned.
+     * </p>
      * 
      * @param name
      *        The name of the filter.</p>
@@ -95,6 +125,22 @@ public class LambdaFunctionRecommendationFilter implements Serializable, Cloneab
      *        <p>
      *        Specify <code>FindingReasonCode</code> to return recommendations with a specific finding reason code (for
      *        example, <code>MemoryUnderprovisioned</code>).
+     *        </p>
+     *        <p>
+     *        You can filter your Lambda function recommendations by <code>tag:key</code> and <code>tag-key</code> tags.
+     *        </p>
+     *        <p>
+     *        A <code>tag:key</code> is a key and value combination of a tag assigned to your Lambda function
+     *        recommendations. Use the tag key in the filter name and the tag value as the filter value. For example, to
+     *        find all Lambda function recommendations that have a tag with the key of <code>Owner</code> and the value
+     *        of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the
+     *        filter value.
+     *        </p>
+     *        <p>
+     *        A <code>tag-key</code> is the key of a tag assigned to your Lambda function recommendations. Use this
+     *        filter to find all of your Lambda function recommendations that have a tag with a specific key. This
+     *        doesn’t consider the tag value. For example, you can find your Lambda function recommendations with a tag
+     *        key value of <code>Owner</code> or without any tag keys assigned.
      * @see LambdaFunctionRecommendationFilterName
      */
 
@@ -114,6 +160,21 @@ public class LambdaFunctionRecommendationFilter implements Serializable, Cloneab
      * Specify <code>FindingReasonCode</code> to return recommendations with a specific finding reason code (for
      * example, <code>MemoryUnderprovisioned</code>).
      * </p>
+     * <p>
+     * You can filter your Lambda function recommendations by <code>tag:key</code> and <code>tag-key</code> tags.
+     * </p>
+     * <p>
+     * A <code>tag:key</code> is a key and value combination of a tag assigned to your Lambda function recommendations.
+     * Use the tag key in the filter name and the tag value as the filter value. For example, to find all Lambda
+     * function recommendations that have a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>,
+     * specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.
+     * </p>
+     * <p>
+     * A <code>tag-key</code> is the key of a tag assigned to your Lambda function recommendations. Use this filter to
+     * find all of your Lambda function recommendations that have a tag with a specific key. This doesn’t consider the
+     * tag value. For example, you can find your Lambda function recommendations with a tag key value of
+     * <code>Owner</code> or without any tag keys assigned.
+     * </p>
      * 
      * @return The name of the filter.</p>
      *         <p>
@@ -123,6 +184,23 @@ public class LambdaFunctionRecommendationFilter implements Serializable, Cloneab
      *         <p>
      *         Specify <code>FindingReasonCode</code> to return recommendations with a specific finding reason code (for
      *         example, <code>MemoryUnderprovisioned</code>).
+     *         </p>
+     *         <p>
+     *         You can filter your Lambda function recommendations by <code>tag:key</code> and <code>tag-key</code>
+     *         tags.
+     *         </p>
+     *         <p>
+     *         A <code>tag:key</code> is a key and value combination of a tag assigned to your Lambda function
+     *         recommendations. Use the tag key in the filter name and the tag value as the filter value. For example,
+     *         to find all Lambda function recommendations that have a tag with the key of <code>Owner</code> and the
+     *         value of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code>
+     *         for the filter value.
+     *         </p>
+     *         <p>
+     *         A <code>tag-key</code> is the key of a tag assigned to your Lambda function recommendations. Use this
+     *         filter to find all of your Lambda function recommendations that have a tag with a specific key. This
+     *         doesn’t consider the tag value. For example, you can find your Lambda function recommendations with a tag
+     *         key value of <code>Owner</code> or without any tag keys assigned.
      * @see LambdaFunctionRecommendationFilterName
      */
 
@@ -142,6 +220,21 @@ public class LambdaFunctionRecommendationFilter implements Serializable, Cloneab
      * Specify <code>FindingReasonCode</code> to return recommendations with a specific finding reason code (for
      * example, <code>MemoryUnderprovisioned</code>).
      * </p>
+     * <p>
+     * You can filter your Lambda function recommendations by <code>tag:key</code> and <code>tag-key</code> tags.
+     * </p>
+     * <p>
+     * A <code>tag:key</code> is a key and value combination of a tag assigned to your Lambda function recommendations.
+     * Use the tag key in the filter name and the tag value as the filter value. For example, to find all Lambda
+     * function recommendations that have a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>,
+     * specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.
+     * </p>
+     * <p>
+     * A <code>tag-key</code> is the key of a tag assigned to your Lambda function recommendations. Use this filter to
+     * find all of your Lambda function recommendations that have a tag with a specific key. This doesn’t consider the
+     * tag value. For example, you can find your Lambda function recommendations with a tag key value of
+     * <code>Owner</code> or without any tag keys assigned.
+     * </p>
      * 
      * @param name
      *        The name of the filter.</p>
@@ -152,6 +245,22 @@ public class LambdaFunctionRecommendationFilter implements Serializable, Cloneab
      *        <p>
      *        Specify <code>FindingReasonCode</code> to return recommendations with a specific finding reason code (for
      *        example, <code>MemoryUnderprovisioned</code>).
+     *        </p>
+     *        <p>
+     *        You can filter your Lambda function recommendations by <code>tag:key</code> and <code>tag-key</code> tags.
+     *        </p>
+     *        <p>
+     *        A <code>tag:key</code> is a key and value combination of a tag assigned to your Lambda function
+     *        recommendations. Use the tag key in the filter name and the tag value as the filter value. For example, to
+     *        find all Lambda function recommendations that have a tag with the key of <code>Owner</code> and the value
+     *        of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the
+     *        filter value.
+     *        </p>
+     *        <p>
+     *        A <code>tag-key</code> is the key of a tag assigned to your Lambda function recommendations. Use this
+     *        filter to find all of your Lambda function recommendations that have a tag with a specific key. This
+     *        doesn’t consider the tag value. For example, you can find your Lambda function recommendations with a tag
+     *        key value of <code>Owner</code> or without any tag keys assigned.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LambdaFunctionRecommendationFilterName
      */
@@ -173,6 +282,21 @@ public class LambdaFunctionRecommendationFilter implements Serializable, Cloneab
      * Specify <code>FindingReasonCode</code> to return recommendations with a specific finding reason code (for
      * example, <code>MemoryUnderprovisioned</code>).
      * </p>
+     * <p>
+     * You can filter your Lambda function recommendations by <code>tag:key</code> and <code>tag-key</code> tags.
+     * </p>
+     * <p>
+     * A <code>tag:key</code> is a key and value combination of a tag assigned to your Lambda function recommendations.
+     * Use the tag key in the filter name and the tag value as the filter value. For example, to find all Lambda
+     * function recommendations that have a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>,
+     * specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.
+     * </p>
+     * <p>
+     * A <code>tag-key</code> is the key of a tag assigned to your Lambda function recommendations. Use this filter to
+     * find all of your Lambda function recommendations that have a tag with a specific key. This doesn’t consider the
+     * tag value. For example, you can find your Lambda function recommendations with a tag key value of
+     * <code>Owner</code> or without any tag keys assigned.
+     * </p>
      * 
      * @param name
      *        The name of the filter.</p>
@@ -183,6 +307,22 @@ public class LambdaFunctionRecommendationFilter implements Serializable, Cloneab
      *        <p>
      *        Specify <code>FindingReasonCode</code> to return recommendations with a specific finding reason code (for
      *        example, <code>MemoryUnderprovisioned</code>).
+     *        </p>
+     *        <p>
+     *        You can filter your Lambda function recommendations by <code>tag:key</code> and <code>tag-key</code> tags.
+     *        </p>
+     *        <p>
+     *        A <code>tag:key</code> is a key and value combination of a tag assigned to your Lambda function
+     *        recommendations. Use the tag key in the filter name and the tag value as the filter value. For example, to
+     *        find all Lambda function recommendations that have a tag with the key of <code>Owner</code> and the value
+     *        of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the
+     *        filter value.
+     *        </p>
+     *        <p>
+     *        A <code>tag-key</code> is the key of a tag assigned to your Lambda function recommendations. Use this
+     *        filter to find all of your Lambda function recommendations that have a tag with a specific key. This
+     *        doesn’t consider the tag value. For example, you can find your Lambda function recommendations with a tag
+     *        key value of <code>Owner</code> or without any tag keys assigned.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LambdaFunctionRecommendationFilterName
      */

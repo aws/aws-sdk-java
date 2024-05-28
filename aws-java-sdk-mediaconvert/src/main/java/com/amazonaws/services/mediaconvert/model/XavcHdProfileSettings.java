@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Required when you set (Profile) under (VideoDescription)>(CodecSettings)>(XavcSettings) to the value XAVC_HD.
+ * Required when you set Profile to the value XAVC_HD.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/XavcHdProfileSettings" target="_top">AWS
  *      API Documentation</a>
@@ -32,22 +32,21 @@ public class XavcHdProfileSettings implements Serializable, Cloneable, Structure
      */
     private String bitrateClass;
     /**
-     * The best way to set up adaptive quantization is to keep the default value, Auto (AUTO), for the setting Adaptive
-     * quantization (XavcAdaptiveQuantization). When you do so, MediaConvert automatically applies the best types of
-     * quantization for your video content. Include this setting in your JSON job specification only when you choose to
-     * change the default value for Adaptive quantization. Enable this setting to have the encoder reduce I-frame pop.
-     * I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks
-     * many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder
-     * updates these macroblocks slightly more often to smooth out the flicker. This setting is disabled by default.
-     * Related setting: In addition to enabling this setting, you must also set Adaptive quantization
-     * (adaptiveQuantization) to a value other than Off (OFF) or Auto (AUTO). Use Adaptive quantization to adjust the
-     * degree of smoothing that Flicker adaptive quantization provides.
+     * The best way to set up adaptive quantization is to keep the default value, Auto, for the setting Adaptive
+     * quantization. When you do so, MediaConvert automatically applies the best types of quantization for your video
+     * content. Include this setting in your JSON job specification only when you choose to change the default value for
+     * Adaptive quantization. Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears as a visual
+     * flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and
+     * then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly
+     * more often to smooth out the flicker. This setting is disabled by default. Related setting: In addition to
+     * enabling this setting, you must also set Adaptive quantization to a value other than Off or Auto. Use Adaptive
+     * quantization to adjust the degree of smoothing that Flicker adaptive quantization provides.
      */
     private String flickerAdaptiveQuantization;
     /**
-     * Specify whether the encoder uses B-frames as reference frames for other pictures in the same GOP. Choose Allow
-     * (ENABLED) to allow the encoder to use B-frames as reference frames. Choose Don't allow (DISABLED) to prevent the
-     * encoder from using B-frames as reference frames.
+     * Specify whether the encoder uses B-frames as reference frames for other pictures in the same GOP. Choose Allow to
+     * allow the encoder to use B-frames as reference frames. Choose Don't allow to prevent the encoder from using
+     * B-frames as reference frames.
      */
     private String gopBReference;
     /**
@@ -63,19 +62,18 @@ public class XavcHdProfileSettings implements Serializable, Cloneable, Structure
      */
     private Integer hrdBufferSize;
     /**
-     * Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a
-     * progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field
-     * first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow,
-     * default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same
-     * field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the
-     * course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will
-     * be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced
-     * with top field bottom field first, depending on which of the Follow options you choose.
+     * Choose the scan line type for the output. Keep the default value, Progressive to create a progressive output,
+     * regardless of the scan type of your input. Use Top field first or Bottom field first to create an output that's
+     * interlaced with the same field polarity throughout. Use Follow, default top or Follow, default bottom to produce
+     * outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity
+     * might change over the course of the output. Follow behavior depends on the input scan type. If the source is
+     * interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the
+     * output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
      */
     private String interlaceMode;
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for
-     * output video quality. The default behavior is faster, lower quality, single-pass encoding.
+     * Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality.
+     * The default behavior is faster, lower quality, single-pass encoding.
      */
     private String qualityTuningLevel;
     /**
@@ -85,8 +83,7 @@ public class XavcHdProfileSettings implements Serializable, Cloneable, Structure
     private Integer slices;
     /**
      * Ignore this setting unless you set Frame rate (framerateNumerator divided by framerateDenominator) to 29.970. If
-     * your input framerate is 23.976, choose Hard (HARD). Otherwise, keep the default value None (NONE). For more
-     * information, see
+     * your input framerate is 23.976, choose Hard. Otherwise, keep the default value None. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-telecine-and-inverse-telecine.html.
      */
     private String telecine;
@@ -151,29 +148,27 @@ public class XavcHdProfileSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * The best way to set up adaptive quantization is to keep the default value, Auto (AUTO), for the setting Adaptive
-     * quantization (XavcAdaptiveQuantization). When you do so, MediaConvert automatically applies the best types of
-     * quantization for your video content. Include this setting in your JSON job specification only when you choose to
-     * change the default value for Adaptive quantization. Enable this setting to have the encoder reduce I-frame pop.
-     * I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks
-     * many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder
-     * updates these macroblocks slightly more often to smooth out the flicker. This setting is disabled by default.
-     * Related setting: In addition to enabling this setting, you must also set Adaptive quantization
-     * (adaptiveQuantization) to a value other than Off (OFF) or Auto (AUTO). Use Adaptive quantization to adjust the
-     * degree of smoothing that Flicker adaptive quantization provides.
+     * The best way to set up adaptive quantization is to keep the default value, Auto, for the setting Adaptive
+     * quantization. When you do so, MediaConvert automatically applies the best types of quantization for your video
+     * content. Include this setting in your JSON job specification only when you choose to change the default value for
+     * Adaptive quantization. Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears as a visual
+     * flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and
+     * then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly
+     * more often to smooth out the flicker. This setting is disabled by default. Related setting: In addition to
+     * enabling this setting, you must also set Adaptive quantization to a value other than Off or Auto. Use Adaptive
+     * quantization to adjust the degree of smoothing that Flicker adaptive quantization provides.
      * 
      * @param flickerAdaptiveQuantization
-     *        The best way to set up adaptive quantization is to keep the default value, Auto (AUTO), for the setting
-     *        Adaptive quantization (XavcAdaptiveQuantization). When you do so, MediaConvert automatically applies the
-     *        best types of quantization for your video content. Include this setting in your JSON job specification
-     *        only when you choose to change the default value for Adaptive quantization. Enable this setting to have
-     *        the encoder reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder
-     *        saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the
-     *        I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth
-     *        out the flicker. This setting is disabled by default. Related setting: In addition to enabling this
-     *        setting, you must also set Adaptive quantization (adaptiveQuantization) to a value other than Off (OFF) or
-     *        Auto (AUTO). Use Adaptive quantization to adjust the degree of smoothing that Flicker adaptive
-     *        quantization provides.
+     *        The best way to set up adaptive quantization is to keep the default value, Auto, for the setting Adaptive
+     *        quantization. When you do so, MediaConvert automatically applies the best types of quantization for your
+     *        video content. Include this setting in your JSON job specification only when you choose to change the
+     *        default value for Adaptive quantization. Enable this setting to have the encoder reduce I-frame pop.
+     *        I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some
+     *        macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this
+     *        setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. This setting
+     *        is disabled by default. Related setting: In addition to enabling this setting, you must also set Adaptive
+     *        quantization to a value other than Off or Auto. Use Adaptive quantization to adjust the degree of
+     *        smoothing that Flicker adaptive quantization provides.
      * @see XavcFlickerAdaptiveQuantization
      */
 
@@ -182,28 +177,26 @@ public class XavcHdProfileSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * The best way to set up adaptive quantization is to keep the default value, Auto (AUTO), for the setting Adaptive
-     * quantization (XavcAdaptiveQuantization). When you do so, MediaConvert automatically applies the best types of
-     * quantization for your video content. Include this setting in your JSON job specification only when you choose to
-     * change the default value for Adaptive quantization. Enable this setting to have the encoder reduce I-frame pop.
-     * I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks
-     * many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder
-     * updates these macroblocks slightly more often to smooth out the flicker. This setting is disabled by default.
-     * Related setting: In addition to enabling this setting, you must also set Adaptive quantization
-     * (adaptiveQuantization) to a value other than Off (OFF) or Auto (AUTO). Use Adaptive quantization to adjust the
-     * degree of smoothing that Flicker adaptive quantization provides.
+     * The best way to set up adaptive quantization is to keep the default value, Auto, for the setting Adaptive
+     * quantization. When you do so, MediaConvert automatically applies the best types of quantization for your video
+     * content. Include this setting in your JSON job specification only when you choose to change the default value for
+     * Adaptive quantization. Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears as a visual
+     * flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and
+     * then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly
+     * more often to smooth out the flicker. This setting is disabled by default. Related setting: In addition to
+     * enabling this setting, you must also set Adaptive quantization to a value other than Off or Auto. Use Adaptive
+     * quantization to adjust the degree of smoothing that Flicker adaptive quantization provides.
      * 
-     * @return The best way to set up adaptive quantization is to keep the default value, Auto (AUTO), for the setting
-     *         Adaptive quantization (XavcAdaptiveQuantization). When you do so, MediaConvert automatically applies the
-     *         best types of quantization for your video content. Include this setting in your JSON job specification
-     *         only when you choose to change the default value for Adaptive quantization. Enable this setting to have
-     *         the encoder reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder
-     *         saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the
-     *         I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to
-     *         smooth out the flicker. This setting is disabled by default. Related setting: In addition to enabling
-     *         this setting, you must also set Adaptive quantization (adaptiveQuantization) to a value other than Off
-     *         (OFF) or Auto (AUTO). Use Adaptive quantization to adjust the degree of smoothing that Flicker adaptive
-     *         quantization provides.
+     * @return The best way to set up adaptive quantization is to keep the default value, Auto, for the setting Adaptive
+     *         quantization. When you do so, MediaConvert automatically applies the best types of quantization for your
+     *         video content. Include this setting in your JSON job specification only when you choose to change the
+     *         default value for Adaptive quantization. Enable this setting to have the encoder reduce I-frame pop.
+     *         I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some
+     *         macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this
+     *         setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. This
+     *         setting is disabled by default. Related setting: In addition to enabling this setting, you must also set
+     *         Adaptive quantization to a value other than Off or Auto. Use Adaptive quantization to adjust the degree
+     *         of smoothing that Flicker adaptive quantization provides.
      * @see XavcFlickerAdaptiveQuantization
      */
 
@@ -212,29 +205,27 @@ public class XavcHdProfileSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * The best way to set up adaptive quantization is to keep the default value, Auto (AUTO), for the setting Adaptive
-     * quantization (XavcAdaptiveQuantization). When you do so, MediaConvert automatically applies the best types of
-     * quantization for your video content. Include this setting in your JSON job specification only when you choose to
-     * change the default value for Adaptive quantization. Enable this setting to have the encoder reduce I-frame pop.
-     * I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks
-     * many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder
-     * updates these macroblocks slightly more often to smooth out the flicker. This setting is disabled by default.
-     * Related setting: In addition to enabling this setting, you must also set Adaptive quantization
-     * (adaptiveQuantization) to a value other than Off (OFF) or Auto (AUTO). Use Adaptive quantization to adjust the
-     * degree of smoothing that Flicker adaptive quantization provides.
+     * The best way to set up adaptive quantization is to keep the default value, Auto, for the setting Adaptive
+     * quantization. When you do so, MediaConvert automatically applies the best types of quantization for your video
+     * content. Include this setting in your JSON job specification only when you choose to change the default value for
+     * Adaptive quantization. Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears as a visual
+     * flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and
+     * then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly
+     * more often to smooth out the flicker. This setting is disabled by default. Related setting: In addition to
+     * enabling this setting, you must also set Adaptive quantization to a value other than Off or Auto. Use Adaptive
+     * quantization to adjust the degree of smoothing that Flicker adaptive quantization provides.
      * 
      * @param flickerAdaptiveQuantization
-     *        The best way to set up adaptive quantization is to keep the default value, Auto (AUTO), for the setting
-     *        Adaptive quantization (XavcAdaptiveQuantization). When you do so, MediaConvert automatically applies the
-     *        best types of quantization for your video content. Include this setting in your JSON job specification
-     *        only when you choose to change the default value for Adaptive quantization. Enable this setting to have
-     *        the encoder reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder
-     *        saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the
-     *        I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth
-     *        out the flicker. This setting is disabled by default. Related setting: In addition to enabling this
-     *        setting, you must also set Adaptive quantization (adaptiveQuantization) to a value other than Off (OFF) or
-     *        Auto (AUTO). Use Adaptive quantization to adjust the degree of smoothing that Flicker adaptive
-     *        quantization provides.
+     *        The best way to set up adaptive quantization is to keep the default value, Auto, for the setting Adaptive
+     *        quantization. When you do so, MediaConvert automatically applies the best types of quantization for your
+     *        video content. Include this setting in your JSON job specification only when you choose to change the
+     *        default value for Adaptive quantization. Enable this setting to have the encoder reduce I-frame pop.
+     *        I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some
+     *        macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this
+     *        setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. This setting
+     *        is disabled by default. Related setting: In addition to enabling this setting, you must also set Adaptive
+     *        quantization to a value other than Off or Auto. Use Adaptive quantization to adjust the degree of
+     *        smoothing that Flicker adaptive quantization provides.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see XavcFlickerAdaptiveQuantization
      */
@@ -245,29 +236,27 @@ public class XavcHdProfileSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * The best way to set up adaptive quantization is to keep the default value, Auto (AUTO), for the setting Adaptive
-     * quantization (XavcAdaptiveQuantization). When you do so, MediaConvert automatically applies the best types of
-     * quantization for your video content. Include this setting in your JSON job specification only when you choose to
-     * change the default value for Adaptive quantization. Enable this setting to have the encoder reduce I-frame pop.
-     * I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks
-     * many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder
-     * updates these macroblocks slightly more often to smooth out the flicker. This setting is disabled by default.
-     * Related setting: In addition to enabling this setting, you must also set Adaptive quantization
-     * (adaptiveQuantization) to a value other than Off (OFF) or Auto (AUTO). Use Adaptive quantization to adjust the
-     * degree of smoothing that Flicker adaptive quantization provides.
+     * The best way to set up adaptive quantization is to keep the default value, Auto, for the setting Adaptive
+     * quantization. When you do so, MediaConvert automatically applies the best types of quantization for your video
+     * content. Include this setting in your JSON job specification only when you choose to change the default value for
+     * Adaptive quantization. Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears as a visual
+     * flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and
+     * then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly
+     * more often to smooth out the flicker. This setting is disabled by default. Related setting: In addition to
+     * enabling this setting, you must also set Adaptive quantization to a value other than Off or Auto. Use Adaptive
+     * quantization to adjust the degree of smoothing that Flicker adaptive quantization provides.
      * 
      * @param flickerAdaptiveQuantization
-     *        The best way to set up adaptive quantization is to keep the default value, Auto (AUTO), for the setting
-     *        Adaptive quantization (XavcAdaptiveQuantization). When you do so, MediaConvert automatically applies the
-     *        best types of quantization for your video content. Include this setting in your JSON job specification
-     *        only when you choose to change the default value for Adaptive quantization. Enable this setting to have
-     *        the encoder reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder
-     *        saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the
-     *        I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth
-     *        out the flicker. This setting is disabled by default. Related setting: In addition to enabling this
-     *        setting, you must also set Adaptive quantization (adaptiveQuantization) to a value other than Off (OFF) or
-     *        Auto (AUTO). Use Adaptive quantization to adjust the degree of smoothing that Flicker adaptive
-     *        quantization provides.
+     *        The best way to set up adaptive quantization is to keep the default value, Auto, for the setting Adaptive
+     *        quantization. When you do so, MediaConvert automatically applies the best types of quantization for your
+     *        video content. Include this setting in your JSON job specification only when you choose to change the
+     *        default value for Adaptive quantization. Enable this setting to have the encoder reduce I-frame pop.
+     *        I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some
+     *        macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this
+     *        setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. This setting
+     *        is disabled by default. Related setting: In addition to enabling this setting, you must also set Adaptive
+     *        quantization to a value other than Off or Auto. Use Adaptive quantization to adjust the degree of
+     *        smoothing that Flicker adaptive quantization provides.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see XavcFlickerAdaptiveQuantization
      */
@@ -278,14 +267,14 @@ public class XavcHdProfileSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Specify whether the encoder uses B-frames as reference frames for other pictures in the same GOP. Choose Allow
-     * (ENABLED) to allow the encoder to use B-frames as reference frames. Choose Don't allow (DISABLED) to prevent the
-     * encoder from using B-frames as reference frames.
+     * Specify whether the encoder uses B-frames as reference frames for other pictures in the same GOP. Choose Allow to
+     * allow the encoder to use B-frames as reference frames. Choose Don't allow to prevent the encoder from using
+     * B-frames as reference frames.
      * 
      * @param gopBReference
      *        Specify whether the encoder uses B-frames as reference frames for other pictures in the same GOP. Choose
-     *        Allow (ENABLED) to allow the encoder to use B-frames as reference frames. Choose Don't allow (DISABLED) to
-     *        prevent the encoder from using B-frames as reference frames.
+     *        Allow to allow the encoder to use B-frames as reference frames. Choose Don't allow to prevent the encoder
+     *        from using B-frames as reference frames.
      * @see XavcGopBReference
      */
 
@@ -294,13 +283,13 @@ public class XavcHdProfileSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Specify whether the encoder uses B-frames as reference frames for other pictures in the same GOP. Choose Allow
-     * (ENABLED) to allow the encoder to use B-frames as reference frames. Choose Don't allow (DISABLED) to prevent the
-     * encoder from using B-frames as reference frames.
+     * Specify whether the encoder uses B-frames as reference frames for other pictures in the same GOP. Choose Allow to
+     * allow the encoder to use B-frames as reference frames. Choose Don't allow to prevent the encoder from using
+     * B-frames as reference frames.
      * 
      * @return Specify whether the encoder uses B-frames as reference frames for other pictures in the same GOP. Choose
-     *         Allow (ENABLED) to allow the encoder to use B-frames as reference frames. Choose Don't allow (DISABLED)
-     *         to prevent the encoder from using B-frames as reference frames.
+     *         Allow to allow the encoder to use B-frames as reference frames. Choose Don't allow to prevent the encoder
+     *         from using B-frames as reference frames.
      * @see XavcGopBReference
      */
 
@@ -309,14 +298,14 @@ public class XavcHdProfileSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Specify whether the encoder uses B-frames as reference frames for other pictures in the same GOP. Choose Allow
-     * (ENABLED) to allow the encoder to use B-frames as reference frames. Choose Don't allow (DISABLED) to prevent the
-     * encoder from using B-frames as reference frames.
+     * Specify whether the encoder uses B-frames as reference frames for other pictures in the same GOP. Choose Allow to
+     * allow the encoder to use B-frames as reference frames. Choose Don't allow to prevent the encoder from using
+     * B-frames as reference frames.
      * 
      * @param gopBReference
      *        Specify whether the encoder uses B-frames as reference frames for other pictures in the same GOP. Choose
-     *        Allow (ENABLED) to allow the encoder to use B-frames as reference frames. Choose Don't allow (DISABLED) to
-     *        prevent the encoder from using B-frames as reference frames.
+     *        Allow to allow the encoder to use B-frames as reference frames. Choose Don't allow to prevent the encoder
+     *        from using B-frames as reference frames.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see XavcGopBReference
      */
@@ -327,14 +316,14 @@ public class XavcHdProfileSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Specify whether the encoder uses B-frames as reference frames for other pictures in the same GOP. Choose Allow
-     * (ENABLED) to allow the encoder to use B-frames as reference frames. Choose Don't allow (DISABLED) to prevent the
-     * encoder from using B-frames as reference frames.
+     * Specify whether the encoder uses B-frames as reference frames for other pictures in the same GOP. Choose Allow to
+     * allow the encoder to use B-frames as reference frames. Choose Don't allow to prevent the encoder from using
+     * B-frames as reference frames.
      * 
      * @param gopBReference
      *        Specify whether the encoder uses B-frames as reference frames for other pictures in the same GOP. Choose
-     *        Allow (ENABLED) to allow the encoder to use B-frames as reference frames. Choose Don't allow (DISABLED) to
-     *        prevent the encoder from using B-frames as reference frames.
+     *        Allow to allow the encoder to use B-frames as reference frames. Choose Don't allow to prevent the encoder
+     *        from using B-frames as reference frames.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see XavcGopBReference
      */
@@ -437,25 +426,23 @@ public class XavcHdProfileSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a
-     * progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field
-     * first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow,
-     * default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same
-     * field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the
-     * course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will
-     * be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced
-     * with top field bottom field first, depending on which of the Follow options you choose.
+     * Choose the scan line type for the output. Keep the default value, Progressive to create a progressive output,
+     * regardless of the scan type of your input. Use Top field first or Bottom field first to create an output that's
+     * interlaced with the same field polarity throughout. Use Follow, default top or Follow, default bottom to produce
+     * outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity
+     * might change over the course of the output. Follow behavior depends on the input scan type. If the source is
+     * interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the
+     * output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
      * 
      * @param interlaceMode
-     *        Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a
-     *        progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom
-     *        field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout.
-     *        Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce
-     *        outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field
-     *        polarity might change over the course of the output. Follow behavior depends on the input scan type. If
-     *        the source is interlaced, the output will be interlaced with the same polarity as the source. If the
-     *        source is progressive, the output will be interlaced with top field bottom field first, depending on which
-     *        of the Follow options you choose.
+     *        Choose the scan line type for the output. Keep the default value, Progressive to create a progressive
+     *        output, regardless of the scan type of your input. Use Top field first or Bottom field first to create an
+     *        output that's interlaced with the same field polarity throughout. Use Follow, default top or Follow,
+     *        default bottom to produce outputs with the same field polarity as the source. For jobs that have multiple
+     *        inputs, the output field polarity might change over the course of the output. Follow behavior depends on
+     *        the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as
+     *        the source. If the source is progressive, the output will be interlaced with top field bottom field first,
+     *        depending on which of the Follow options you choose.
      * @see XavcInterlaceMode
      */
 
@@ -464,24 +451,22 @@ public class XavcHdProfileSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a
-     * progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field
-     * first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow,
-     * default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same
-     * field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the
-     * course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will
-     * be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced
-     * with top field bottom field first, depending on which of the Follow options you choose.
+     * Choose the scan line type for the output. Keep the default value, Progressive to create a progressive output,
+     * regardless of the scan type of your input. Use Top field first or Bottom field first to create an output that's
+     * interlaced with the same field polarity throughout. Use Follow, default top or Follow, default bottom to produce
+     * outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity
+     * might change over the course of the output. Follow behavior depends on the input scan type. If the source is
+     * interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the
+     * output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
      * 
-     * @return Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a
-     *         progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom
-     *         field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout.
-     *         Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce
-     *         outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field
-     *         polarity might change over the course of the output. Follow behavior depends on the input scan type. If
-     *         the source is interlaced, the output will be interlaced with the same polarity as the source. If the
-     *         source is progressive, the output will be interlaced with top field bottom field first, depending on
-     *         which of the Follow options you choose.
+     * @return Choose the scan line type for the output. Keep the default value, Progressive to create a progressive
+     *         output, regardless of the scan type of your input. Use Top field first or Bottom field first to create an
+     *         output that's interlaced with the same field polarity throughout. Use Follow, default top or Follow,
+     *         default bottom to produce outputs with the same field polarity as the source. For jobs that have multiple
+     *         inputs, the output field polarity might change over the course of the output. Follow behavior depends on
+     *         the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as
+     *         the source. If the source is progressive, the output will be interlaced with top field bottom field
+     *         first, depending on which of the Follow options you choose.
      * @see XavcInterlaceMode
      */
 
@@ -490,25 +475,23 @@ public class XavcHdProfileSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a
-     * progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field
-     * first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow,
-     * default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same
-     * field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the
-     * course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will
-     * be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced
-     * with top field bottom field first, depending on which of the Follow options you choose.
+     * Choose the scan line type for the output. Keep the default value, Progressive to create a progressive output,
+     * regardless of the scan type of your input. Use Top field first or Bottom field first to create an output that's
+     * interlaced with the same field polarity throughout. Use Follow, default top or Follow, default bottom to produce
+     * outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity
+     * might change over the course of the output. Follow behavior depends on the input scan type. If the source is
+     * interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the
+     * output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
      * 
      * @param interlaceMode
-     *        Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a
-     *        progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom
-     *        field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout.
-     *        Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce
-     *        outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field
-     *        polarity might change over the course of the output. Follow behavior depends on the input scan type. If
-     *        the source is interlaced, the output will be interlaced with the same polarity as the source. If the
-     *        source is progressive, the output will be interlaced with top field bottom field first, depending on which
-     *        of the Follow options you choose.
+     *        Choose the scan line type for the output. Keep the default value, Progressive to create a progressive
+     *        output, regardless of the scan type of your input. Use Top field first or Bottom field first to create an
+     *        output that's interlaced with the same field polarity throughout. Use Follow, default top or Follow,
+     *        default bottom to produce outputs with the same field polarity as the source. For jobs that have multiple
+     *        inputs, the output field polarity might change over the course of the output. Follow behavior depends on
+     *        the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as
+     *        the source. If the source is progressive, the output will be interlaced with top field bottom field first,
+     *        depending on which of the Follow options you choose.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see XavcInterlaceMode
      */
@@ -519,25 +502,23 @@ public class XavcHdProfileSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a
-     * progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field
-     * first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow,
-     * default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same
-     * field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the
-     * course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will
-     * be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced
-     * with top field bottom field first, depending on which of the Follow options you choose.
+     * Choose the scan line type for the output. Keep the default value, Progressive to create a progressive output,
+     * regardless of the scan type of your input. Use Top field first or Bottom field first to create an output that's
+     * interlaced with the same field polarity throughout. Use Follow, default top or Follow, default bottom to produce
+     * outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity
+     * might change over the course of the output. Follow behavior depends on the input scan type. If the source is
+     * interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the
+     * output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
      * 
      * @param interlaceMode
-     *        Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a
-     *        progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom
-     *        field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout.
-     *        Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce
-     *        outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field
-     *        polarity might change over the course of the output. Follow behavior depends on the input scan type. If
-     *        the source is interlaced, the output will be interlaced with the same polarity as the source. If the
-     *        source is progressive, the output will be interlaced with top field bottom field first, depending on which
-     *        of the Follow options you choose.
+     *        Choose the scan line type for the output. Keep the default value, Progressive to create a progressive
+     *        output, regardless of the scan type of your input. Use Top field first or Bottom field first to create an
+     *        output that's interlaced with the same field polarity throughout. Use Follow, default top or Follow,
+     *        default bottom to produce outputs with the same field polarity as the source. For jobs that have multiple
+     *        inputs, the output field polarity might change over the course of the output. Follow behavior depends on
+     *        the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as
+     *        the source. If the source is progressive, the output will be interlaced with top field bottom field first,
+     *        depending on which of the Follow options you choose.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see XavcInterlaceMode
      */
@@ -548,12 +529,12 @@ public class XavcHdProfileSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for
-     * output video quality. The default behavior is faster, lower quality, single-pass encoding.
+     * Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality.
+     * The default behavior is faster, lower quality, single-pass encoding.
      * 
      * @param qualityTuningLevel
-     *        Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed
-     *        for output video quality. The default behavior is faster, lower quality, single-pass encoding.
+     *        Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video
+     *        quality. The default behavior is faster, lower quality, single-pass encoding.
      * @see XavcHdProfileQualityTuningLevel
      */
 
@@ -562,11 +543,11 @@ public class XavcHdProfileSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for
-     * output video quality. The default behavior is faster, lower quality, single-pass encoding.
+     * Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality.
+     * The default behavior is faster, lower quality, single-pass encoding.
      * 
-     * @return Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding
-     *         speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
+     * @return Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video
+     *         quality. The default behavior is faster, lower quality, single-pass encoding.
      * @see XavcHdProfileQualityTuningLevel
      */
 
@@ -575,12 +556,12 @@ public class XavcHdProfileSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for
-     * output video quality. The default behavior is faster, lower quality, single-pass encoding.
+     * Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality.
+     * The default behavior is faster, lower quality, single-pass encoding.
      * 
      * @param qualityTuningLevel
-     *        Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed
-     *        for output video quality. The default behavior is faster, lower quality, single-pass encoding.
+     *        Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video
+     *        quality. The default behavior is faster, lower quality, single-pass encoding.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see XavcHdProfileQualityTuningLevel
      */
@@ -591,12 +572,12 @@ public class XavcHdProfileSettings implements Serializable, Cloneable, Structure
     }
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for
-     * output video quality. The default behavior is faster, lower quality, single-pass encoding.
+     * Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality.
+     * The default behavior is faster, lower quality, single-pass encoding.
      * 
      * @param qualityTuningLevel
-     *        Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed
-     *        for output video quality. The default behavior is faster, lower quality, single-pass encoding.
+     *        Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video
+     *        quality. The default behavior is faster, lower quality, single-pass encoding.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see XavcHdProfileQualityTuningLevel
      */
@@ -648,14 +629,13 @@ public class XavcHdProfileSettings implements Serializable, Cloneable, Structure
 
     /**
      * Ignore this setting unless you set Frame rate (framerateNumerator divided by framerateDenominator) to 29.970. If
-     * your input framerate is 23.976, choose Hard (HARD). Otherwise, keep the default value None (NONE). For more
-     * information, see
+     * your input framerate is 23.976, choose Hard. Otherwise, keep the default value None. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-telecine-and-inverse-telecine.html.
      * 
      * @param telecine
      *        Ignore this setting unless you set Frame rate (framerateNumerator divided by framerateDenominator) to
-     *        29.970. If your input framerate is 23.976, choose Hard (HARD). Otherwise, keep the default value None
-     *        (NONE). For more information, see
+     *        29.970. If your input framerate is 23.976, choose Hard. Otherwise, keep the default value None. For more
+     *        information, see
      *        https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-telecine-and-inverse-telecine.html.
      * @see XavcHdProfileTelecine
      */
@@ -666,13 +646,12 @@ public class XavcHdProfileSettings implements Serializable, Cloneable, Structure
 
     /**
      * Ignore this setting unless you set Frame rate (framerateNumerator divided by framerateDenominator) to 29.970. If
-     * your input framerate is 23.976, choose Hard (HARD). Otherwise, keep the default value None (NONE). For more
-     * information, see
+     * your input framerate is 23.976, choose Hard. Otherwise, keep the default value None. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-telecine-and-inverse-telecine.html.
      * 
      * @return Ignore this setting unless you set Frame rate (framerateNumerator divided by framerateDenominator) to
-     *         29.970. If your input framerate is 23.976, choose Hard (HARD). Otherwise, keep the default value None
-     *         (NONE). For more information, see
+     *         29.970. If your input framerate is 23.976, choose Hard. Otherwise, keep the default value None. For more
+     *         information, see
      *         https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-telecine-and-inverse-telecine.html.
      * @see XavcHdProfileTelecine
      */
@@ -683,14 +662,13 @@ public class XavcHdProfileSettings implements Serializable, Cloneable, Structure
 
     /**
      * Ignore this setting unless you set Frame rate (framerateNumerator divided by framerateDenominator) to 29.970. If
-     * your input framerate is 23.976, choose Hard (HARD). Otherwise, keep the default value None (NONE). For more
-     * information, see
+     * your input framerate is 23.976, choose Hard. Otherwise, keep the default value None. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-telecine-and-inverse-telecine.html.
      * 
      * @param telecine
      *        Ignore this setting unless you set Frame rate (framerateNumerator divided by framerateDenominator) to
-     *        29.970. If your input framerate is 23.976, choose Hard (HARD). Otherwise, keep the default value None
-     *        (NONE). For more information, see
+     *        29.970. If your input framerate is 23.976, choose Hard. Otherwise, keep the default value None. For more
+     *        information, see
      *        https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-telecine-and-inverse-telecine.html.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see XavcHdProfileTelecine
@@ -703,14 +681,13 @@ public class XavcHdProfileSettings implements Serializable, Cloneable, Structure
 
     /**
      * Ignore this setting unless you set Frame rate (framerateNumerator divided by framerateDenominator) to 29.970. If
-     * your input framerate is 23.976, choose Hard (HARD). Otherwise, keep the default value None (NONE). For more
-     * information, see
+     * your input framerate is 23.976, choose Hard. Otherwise, keep the default value None. For more information, see
      * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-telecine-and-inverse-telecine.html.
      * 
      * @param telecine
      *        Ignore this setting unless you set Frame rate (framerateNumerator divided by framerateDenominator) to
-     *        29.970. If your input framerate is 23.976, choose Hard (HARD). Otherwise, keep the default value None
-     *        (NONE). For more information, see
+     *        29.970. If your input framerate is 23.976, choose Hard. Otherwise, keep the default value None. For more
+     *        information, see
      *        https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-telecine-and-inverse-telecine.html.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see XavcHdProfileTelecine

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,6 +76,12 @@ public class BrokerNodeGroupInfo implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private ConnectivityInfo connectivityInfo;
+    /**
+     * <p>
+     * The list of zoneIds for the cluster in the virtual private cloud (VPC).
+     * </p>
+     */
+    private java.util.List<String> zoneIds;
 
     /**
      * <p>
@@ -530,6 +536,85 @@ public class BrokerNodeGroupInfo implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The list of zoneIds for the cluster in the virtual private cloud (VPC).
+     * </p>
+     * 
+     * @return <p>
+     *         The list of zoneIds for the cluster in the virtual private cloud (VPC).
+     *         </p>
+     */
+
+    public java.util.List<String> getZoneIds() {
+        return zoneIds;
+    }
+
+    /**
+     * <p>
+     * The list of zoneIds for the cluster in the virtual private cloud (VPC).
+     * </p>
+     * 
+     * @param zoneIds
+     *        <p>
+     *        The list of zoneIds for the cluster in the virtual private cloud (VPC).
+     *        </p>
+     */
+
+    public void setZoneIds(java.util.Collection<String> zoneIds) {
+        if (zoneIds == null) {
+            this.zoneIds = null;
+            return;
+        }
+
+        this.zoneIds = new java.util.ArrayList<String>(zoneIds);
+    }
+
+    /**
+     * <p>
+     * The list of zoneIds for the cluster in the virtual private cloud (VPC).
+     * </p>
+     * 
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setZoneIds(java.util.Collection)} or {@link #withZoneIds(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param zoneIds
+     *        <p>
+     *        The list of zoneIds for the cluster in the virtual private cloud (VPC).
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BrokerNodeGroupInfo withZoneIds(String... zoneIds) {
+        if (this.zoneIds == null) {
+            setZoneIds(new java.util.ArrayList<String>(zoneIds.length));
+        }
+        for (String ele : zoneIds) {
+            this.zoneIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of zoneIds for the cluster in the virtual private cloud (VPC).
+     * </p>
+     * 
+     * @param zoneIds
+     *        <p>
+     *        The list of zoneIds for the cluster in the virtual private cloud (VPC).
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BrokerNodeGroupInfo withZoneIds(java.util.Collection<String> zoneIds) {
+        setZoneIds(zoneIds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -552,7 +637,9 @@ public class BrokerNodeGroupInfo implements Serializable, Cloneable, StructuredP
         if (getStorageInfo() != null)
             sb.append("StorageInfo: ").append(getStorageInfo()).append(",");
         if (getConnectivityInfo() != null)
-            sb.append("ConnectivityInfo: ").append(getConnectivityInfo());
+            sb.append("ConnectivityInfo: ").append(getConnectivityInfo()).append(",");
+        if (getZoneIds() != null)
+            sb.append("ZoneIds: ").append(getZoneIds());
         sb.append("}");
         return sb.toString();
     }
@@ -591,6 +678,10 @@ public class BrokerNodeGroupInfo implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getConnectivityInfo() != null && other.getConnectivityInfo().equals(this.getConnectivityInfo()) == false)
             return false;
+        if (other.getZoneIds() == null ^ this.getZoneIds() == null)
+            return false;
+        if (other.getZoneIds() != null && other.getZoneIds().equals(this.getZoneIds()) == false)
+            return false;
         return true;
     }
 
@@ -605,6 +696,7 @@ public class BrokerNodeGroupInfo implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
         hashCode = prime * hashCode + ((getStorageInfo() == null) ? 0 : getStorageInfo().hashCode());
         hashCode = prime * hashCode + ((getConnectivityInfo() == null) ? 0 : getConnectivityInfo().hashCode());
+        hashCode = prime * hashCode + ((getZoneIds() == null) ? 0 : getZoneIds().hashCode());
         return hashCode;
     }
 

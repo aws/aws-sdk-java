@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
     private String bucketName;
     /**
      * <p>
-     * The prefix of the KMS key used to export findings.
+     * The prefix that the findings will be written under.
      * </p>
      */
     private String keyPrefix;
@@ -89,11 +89,11 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The prefix of the KMS key used to export findings.
+     * The prefix that the findings will be written under.
      * </p>
      * 
      * @param keyPrefix
-     *        The prefix of the KMS key used to export findings.
+     *        The prefix that the findings will be written under.
      */
 
     public void setKeyPrefix(String keyPrefix) {
@@ -102,10 +102,10 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The prefix of the KMS key used to export findings.
+     * The prefix that the findings will be written under.
      * </p>
      * 
-     * @return The prefix of the KMS key used to export findings.
+     * @return The prefix that the findings will be written under.
      */
 
     public String getKeyPrefix() {
@@ -114,11 +114,11 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The prefix of the KMS key used to export findings.
+     * The prefix that the findings will be written under.
      * </p>
      * 
      * @param keyPrefix
-     *        The prefix of the KMS key used to export findings.
+     *        The prefix that the findings will be written under.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

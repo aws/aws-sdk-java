@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,9 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * Represents the input for a request operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopFleetActions" target="_top">AWS API
  *      Documentation</a>
@@ -35,8 +32,9 @@ public class StopFleetActionsResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
-     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
+     * .
      * </p>
      */
     private String fleetArn;
@@ -84,14 +82,15 @@ public class StopFleetActionsResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
-     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
+     * .
      * </p>
      * 
      * @param fleetArn
      *        The Amazon Resource Name (<a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
-     *        GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *        Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
      *        <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      */
 
@@ -102,13 +101,14 @@ public class StopFleetActionsResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
-     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
+     * .
      * </p>
      * 
      * @return The Amazon Resource Name (<a
      *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
-     *         GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *         Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
      *         <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      */
 
@@ -119,14 +119,15 @@ public class StopFleetActionsResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
-     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
+     * .
      * </p>
      * 
      * @param fleetArn
      *        The Amazon Resource Name (<a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
-     *        GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *        Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
      *        <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

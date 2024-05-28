@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,8 +44,8 @@ public class HyperParameterTuningInstanceConfig implements Serializable, Cloneab
      * <p>
      * The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count larger than
      * 1 for distributed training algorithms. See <a
-     * href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker distributed training jobs</a> for more
-     * information.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">Step 2: Launch a SageMaker
+     * Distributed Training Job Using the SageMaker Python SDK</a> for more information.
      * </p>
      */
     private Integer instanceCount;
@@ -151,15 +151,15 @@ public class HyperParameterTuningInstanceConfig implements Serializable, Cloneab
      * <p>
      * The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count larger than
      * 1 for distributed training algorithms. See <a
-     * href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker distributed training jobs</a> for more
-     * information.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">Step 2: Launch a SageMaker
+     * Distributed Training Job Using the SageMaker Python SDK</a> for more information.
      * </p>
      * 
      * @param instanceCount
      *        The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count
      *        larger than 1 for distributed training algorithms. See <a
-     *        href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker distributed training jobs</a> for
-     *        more information.
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">Step 2: Launch a
+     *        SageMaker Distributed Training Job Using the SageMaker Python SDK</a> for more information.
      */
 
     public void setInstanceCount(Integer instanceCount) {
@@ -170,14 +170,14 @@ public class HyperParameterTuningInstanceConfig implements Serializable, Cloneab
      * <p>
      * The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count larger than
      * 1 for distributed training algorithms. See <a
-     * href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker distributed training jobs</a> for more
-     * information.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">Step 2: Launch a SageMaker
+     * Distributed Training Job Using the SageMaker Python SDK</a> for more information.
      * </p>
      * 
      * @return The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count
      *         larger than 1 for distributed training algorithms. See <a
-     *         href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker distributed training jobs</a> for
-     *         more information.
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">Step 2: Launch a
+     *         SageMaker Distributed Training Job Using the SageMaker Python SDK</a> for more information.
      */
 
     public Integer getInstanceCount() {
@@ -188,15 +188,15 @@ public class HyperParameterTuningInstanceConfig implements Serializable, Cloneab
      * <p>
      * The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count larger than
      * 1 for distributed training algorithms. See <a
-     * href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker distributed training jobs</a> for more
-     * information.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">Step 2: Launch a SageMaker
+     * Distributed Training Job Using the SageMaker Python SDK</a> for more information.
      * </p>
      * 
      * @param instanceCount
      *        The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count
      *        larger than 1 for distributed training algorithms. See <a
-     *        href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker distributed training jobs</a> for
-     *        more information.
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel-use-api.html">Step 2: Launch a
+     *        SageMaker Distributed Training Job Using the SageMaker Python SDK</a> for more information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

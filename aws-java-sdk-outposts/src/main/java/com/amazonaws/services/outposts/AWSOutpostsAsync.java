@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,37 @@ import com.amazonaws.services.outposts.model.*;
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSOutpostsAsync extends AWSOutposts {
+
+    /**
+     * <p>
+     * Cancels the capacity task.
+     * </p>
+     * 
+     * @param cancelCapacityTaskRequest
+     * @return A Java Future containing the result of the CancelCapacityTask operation returned by the service.
+     * @sample AWSOutpostsAsync.CancelCapacityTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CancelCapacityTask" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelCapacityTaskResult> cancelCapacityTaskAsync(CancelCapacityTaskRequest cancelCapacityTaskRequest);
+
+    /**
+     * <p>
+     * Cancels the capacity task.
+     * </p>
+     * 
+     * @param cancelCapacityTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelCapacityTask operation returned by the service.
+     * @sample AWSOutpostsAsyncHandler.CancelCapacityTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CancelCapacityTask" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelCapacityTaskResult> cancelCapacityTaskAsync(CancelCapacityTaskRequest cancelCapacityTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelCapacityTaskRequest, CancelCapacityTaskResult> asyncHandler);
 
     /**
      * <p>
@@ -230,6 +261,37 @@ public interface AWSOutpostsAsync extends AWSOutposts {
 
     /**
      * <p>
+     * Gets details of the specified capacity task.
+     * </p>
+     * 
+     * @param getCapacityTaskRequest
+     * @return A Java Future containing the result of the GetCapacityTask operation returned by the service.
+     * @sample AWSOutpostsAsync.GetCapacityTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetCapacityTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetCapacityTaskResult> getCapacityTaskAsync(GetCapacityTaskRequest getCapacityTaskRequest);
+
+    /**
+     * <p>
+     * Gets details of the specified capacity task.
+     * </p>
+     * 
+     * @param getCapacityTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCapacityTask operation returned by the service.
+     * @sample AWSOutpostsAsyncHandler.GetCapacityTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetCapacityTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetCapacityTaskResult> getCapacityTaskAsync(GetCapacityTaskRequest getCapacityTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCapacityTaskRequest, GetCapacityTaskResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about the specified catalog item.
      * </p>
      * 
@@ -413,6 +475,45 @@ public interface AWSOutpostsAsync extends AWSOutposts {
 
     /**
      * <p>
+     * Gets the instance types that an Outpost can support in <code>InstanceTypeCapacity</code>. This will generally
+     * include instance types that are not currently configured and therefore cannot be launched with the current
+     * Outpost capacity configuration.
+     * </p>
+     * 
+     * @param getOutpostSupportedInstanceTypesRequest
+     * @return A Java Future containing the result of the GetOutpostSupportedInstanceTypes operation returned by the
+     *         service.
+     * @sample AWSOutpostsAsync.GetOutpostSupportedInstanceTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetOutpostSupportedInstanceTypes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetOutpostSupportedInstanceTypesResult> getOutpostSupportedInstanceTypesAsync(
+            GetOutpostSupportedInstanceTypesRequest getOutpostSupportedInstanceTypesRequest);
+
+    /**
+     * <p>
+     * Gets the instance types that an Outpost can support in <code>InstanceTypeCapacity</code>. This will generally
+     * include instance types that are not currently configured and therefore cannot be launched with the current
+     * Outpost capacity configuration.
+     * </p>
+     * 
+     * @param getOutpostSupportedInstanceTypesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetOutpostSupportedInstanceTypes operation returned by the
+     *         service.
+     * @sample AWSOutpostsAsyncHandler.GetOutpostSupportedInstanceTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetOutpostSupportedInstanceTypes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetOutpostSupportedInstanceTypesResult> getOutpostSupportedInstanceTypesAsync(
+            GetOutpostSupportedInstanceTypesRequest getOutpostSupportedInstanceTypesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetOutpostSupportedInstanceTypesRequest, GetOutpostSupportedInstanceTypesResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about the specified Outpost site.
      * </p>
      * 
@@ -513,6 +614,47 @@ public interface AWSOutpostsAsync extends AWSOutposts {
      */
     java.util.concurrent.Future<ListAssetsResult> listAssetsAsync(ListAssetsRequest listAssetsRequest,
             com.amazonaws.handlers.AsyncHandler<ListAssetsRequest, ListAssetsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the capacity tasks for your Amazon Web Services account.
+     * </p>
+     * <p>
+     * Use filters to return specific results. If you specify multiple filters, the results include only the resources
+     * that match all of the specified filters. For a filter where you can specify multiple values, the results include
+     * items that match any of the values that you specify for the filter.
+     * </p>
+     * 
+     * @param listCapacityTasksRequest
+     * @return A Java Future containing the result of the ListCapacityTasks operation returned by the service.
+     * @sample AWSOutpostsAsync.ListCapacityTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListCapacityTasks" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListCapacityTasksResult> listCapacityTasksAsync(ListCapacityTasksRequest listCapacityTasksRequest);
+
+    /**
+     * <p>
+     * Lists the capacity tasks for your Amazon Web Services account.
+     * </p>
+     * <p>
+     * Use filters to return specific results. If you specify multiple filters, the results include only the resources
+     * that match all of the specified filters. For a filter where you can specify multiple values, the results include
+     * items that match any of the values that you specify for the filter.
+     * </p>
+     * 
+     * @param listCapacityTasksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCapacityTasks operation returned by the service.
+     * @sample AWSOutpostsAsyncHandler.ListCapacityTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListCapacityTasks" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListCapacityTasksResult> listCapacityTasksAsync(ListCapacityTasksRequest listCapacityTasksRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCapacityTasksRequest, ListCapacityTasksResult> asyncHandler);
 
     /**
      * <p>
@@ -698,6 +840,37 @@ public interface AWSOutpostsAsync extends AWSOutposts {
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts the specified capacity task. You can have one active capacity task for an order.
+     * </p>
+     * 
+     * @param startCapacityTaskRequest
+     * @return A Java Future containing the result of the StartCapacityTask operation returned by the service.
+     * @sample AWSOutpostsAsync.StartCapacityTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/StartCapacityTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartCapacityTaskResult> startCapacityTaskAsync(StartCapacityTaskRequest startCapacityTaskRequest);
+
+    /**
+     * <p>
+     * Starts the specified capacity task. You can have one active capacity task for an order.
+     * </p>
+     * 
+     * @param startCapacityTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartCapacityTask operation returned by the service.
+     * @sample AWSOutpostsAsyncHandler.StartCapacityTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/StartCapacityTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartCapacityTaskResult> startCapacityTaskAsync(StartCapacityTaskRequest startCapacityTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<StartCapacityTaskRequest, StartCapacityTaskResult> asyncHandler);
 
     /**
      * <note>

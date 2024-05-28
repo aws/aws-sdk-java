@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes configuration parameters for Amazon CloudWatch logging for a Kinesis Data Analytics Studio notebook. For
- * more information about CloudWatch logging, see <a
+ * Describes configuration parameters for Amazon CloudWatch logging for a Managed Service for Apache Flink Studio
+ * notebook. For more information about CloudWatch logging, see <a
  * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/monitoring-overview.html">Monitoring</a>.
  * </p>
  * 

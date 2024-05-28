@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,13 @@ public class CodeRepository implements Serializable, Cloneable, StructuredPojo {
      * </note>
      */
     private CodeConfiguration codeConfiguration;
+    /**
+     * <p>
+     * The path of the directory that stores source code and configuration files. The build and start commands also
+     * execute from here. The path is absolute from root and, if not specified, defaults to the repository root.
+     * </p>
+     */
+    private String sourceDirectory;
 
     /**
      * <p>
@@ -197,6 +204,55 @@ public class CodeRepository implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The path of the directory that stores source code and configuration files. The build and start commands also
+     * execute from here. The path is absolute from root and, if not specified, defaults to the repository root.
+     * </p>
+     * 
+     * @param sourceDirectory
+     *        The path of the directory that stores source code and configuration files. The build and start commands
+     *        also execute from here. The path is absolute from root and, if not specified, defaults to the repository
+     *        root.
+     */
+
+    public void setSourceDirectory(String sourceDirectory) {
+        this.sourceDirectory = sourceDirectory;
+    }
+
+    /**
+     * <p>
+     * The path of the directory that stores source code and configuration files. The build and start commands also
+     * execute from here. The path is absolute from root and, if not specified, defaults to the repository root.
+     * </p>
+     * 
+     * @return The path of the directory that stores source code and configuration files. The build and start commands
+     *         also execute from here. The path is absolute from root and, if not specified, defaults to the repository
+     *         root.
+     */
+
+    public String getSourceDirectory() {
+        return this.sourceDirectory;
+    }
+
+    /**
+     * <p>
+     * The path of the directory that stores source code and configuration files. The build and start commands also
+     * execute from here. The path is absolute from root and, if not specified, defaults to the repository root.
+     * </p>
+     * 
+     * @param sourceDirectory
+     *        The path of the directory that stores source code and configuration files. The build and start commands
+     *        also execute from here. The path is absolute from root and, if not specified, defaults to the repository
+     *        root.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeRepository withSourceDirectory(String sourceDirectory) {
+        setSourceDirectory(sourceDirectory);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -213,7 +269,9 @@ public class CodeRepository implements Serializable, Cloneable, StructuredPojo {
         if (getSourceCodeVersion() != null)
             sb.append("SourceCodeVersion: ").append(getSourceCodeVersion()).append(",");
         if (getCodeConfiguration() != null)
-            sb.append("CodeConfiguration: ").append(getCodeConfiguration());
+            sb.append("CodeConfiguration: ").append(getCodeConfiguration()).append(",");
+        if (getSourceDirectory() != null)
+            sb.append("SourceDirectory: ").append(getSourceDirectory());
         sb.append("}");
         return sb.toString();
     }
@@ -240,6 +298,10 @@ public class CodeRepository implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCodeConfiguration() != null && other.getCodeConfiguration().equals(this.getCodeConfiguration()) == false)
             return false;
+        if (other.getSourceDirectory() == null ^ this.getSourceDirectory() == null)
+            return false;
+        if (other.getSourceDirectory() != null && other.getSourceDirectory().equals(this.getSourceDirectory()) == false)
+            return false;
         return true;
     }
 
@@ -251,6 +313,7 @@ public class CodeRepository implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRepositoryUrl() == null) ? 0 : getRepositoryUrl().hashCode());
         hashCode = prime * hashCode + ((getSourceCodeVersion() == null) ? 0 : getSourceCodeVersion().hashCode());
         hashCode = prime * hashCode + ((getCodeConfiguration() == null) ? 0 : getCodeConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getSourceDirectory() == null) ? 0 : getSourceDirectory().hashCode());
         return hashCode;
     }
 

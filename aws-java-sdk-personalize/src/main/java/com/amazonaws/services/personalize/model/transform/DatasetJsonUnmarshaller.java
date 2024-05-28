@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -79,6 +79,14 @@ public class DatasetJsonUnmarshaller implements Unmarshaller<Dataset, JsonUnmars
                 if (context.testExpression("lastUpdatedDateTime", targetDepth)) {
                     context.nextToken();
                     dataset.setLastUpdatedDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("latestDatasetUpdate", targetDepth)) {
+                    context.nextToken();
+                    dataset.setLatestDatasetUpdate(DatasetUpdateSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("trackingId", targetDepth)) {
+                    context.nextToken();
+                    dataset.setTrackingId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

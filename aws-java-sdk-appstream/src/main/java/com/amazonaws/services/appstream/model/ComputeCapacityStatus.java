@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,50 @@ public class ComputeCapacityStatus implements Serializable, Cloneable, Structure
      * </p>
      */
     private Integer available;
+    /**
+     * <p>
+     * The total number of sessions slots that are either running or pending. This represents the total number of
+     * concurrent streaming sessions your fleet can support in a steady state.
+     * </p>
+     * <p>
+     * DesiredUserSessionCapacity = ActualUserSessionCapacity + PendingUserSessionCapacity
+     * </p>
+     * <p>
+     * This only applies to multi-session fleets.
+     * </p>
+     */
+    private Integer desiredUserSessions;
+    /**
+     * <p>
+     * The number of idle session slots currently available for user sessions.
+     * </p>
+     * <p>
+     * AvailableUserSessionCapacity = ActualUserSessionCapacity - ActiveUserSessions
+     * </p>
+     * <p>
+     * This only applies to multi-session fleets.
+     * </p>
+     */
+    private Integer availableUserSessions;
+    /**
+     * <p>
+     * The number of user sessions currently being used for streaming sessions. This only applies to multi-session
+     * fleets.
+     * </p>
+     */
+    private Integer activeUserSessions;
+    /**
+     * <p>
+     * The total number of session slots that are available for streaming or are currently streaming.
+     * </p>
+     * <p>
+     * ActualUserSessionCapacity = AvailableUserSessionCapacity + ActiveUserSessions
+     * </p>
+     * <p>
+     * This only applies to multi-session fleets.
+     * </p>
+     */
+    private Integer actualUserSessions;
 
     /**
      * <p>
@@ -214,6 +258,277 @@ public class ComputeCapacityStatus implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The total number of sessions slots that are either running or pending. This represents the total number of
+     * concurrent streaming sessions your fleet can support in a steady state.
+     * </p>
+     * <p>
+     * DesiredUserSessionCapacity = ActualUserSessionCapacity + PendingUserSessionCapacity
+     * </p>
+     * <p>
+     * This only applies to multi-session fleets.
+     * </p>
+     * 
+     * @param desiredUserSessions
+     *        The total number of sessions slots that are either running or pending. This represents the total number of
+     *        concurrent streaming sessions your fleet can support in a steady state.</p>
+     *        <p>
+     *        DesiredUserSessionCapacity = ActualUserSessionCapacity + PendingUserSessionCapacity
+     *        </p>
+     *        <p>
+     *        This only applies to multi-session fleets.
+     */
+
+    public void setDesiredUserSessions(Integer desiredUserSessions) {
+        this.desiredUserSessions = desiredUserSessions;
+    }
+
+    /**
+     * <p>
+     * The total number of sessions slots that are either running or pending. This represents the total number of
+     * concurrent streaming sessions your fleet can support in a steady state.
+     * </p>
+     * <p>
+     * DesiredUserSessionCapacity = ActualUserSessionCapacity + PendingUserSessionCapacity
+     * </p>
+     * <p>
+     * This only applies to multi-session fleets.
+     * </p>
+     * 
+     * @return The total number of sessions slots that are either running or pending. This represents the total number
+     *         of concurrent streaming sessions your fleet can support in a steady state.</p>
+     *         <p>
+     *         DesiredUserSessionCapacity = ActualUserSessionCapacity + PendingUserSessionCapacity
+     *         </p>
+     *         <p>
+     *         This only applies to multi-session fleets.
+     */
+
+    public Integer getDesiredUserSessions() {
+        return this.desiredUserSessions;
+    }
+
+    /**
+     * <p>
+     * The total number of sessions slots that are either running or pending. This represents the total number of
+     * concurrent streaming sessions your fleet can support in a steady state.
+     * </p>
+     * <p>
+     * DesiredUserSessionCapacity = ActualUserSessionCapacity + PendingUserSessionCapacity
+     * </p>
+     * <p>
+     * This only applies to multi-session fleets.
+     * </p>
+     * 
+     * @param desiredUserSessions
+     *        The total number of sessions slots that are either running or pending. This represents the total number of
+     *        concurrent streaming sessions your fleet can support in a steady state.</p>
+     *        <p>
+     *        DesiredUserSessionCapacity = ActualUserSessionCapacity + PendingUserSessionCapacity
+     *        </p>
+     *        <p>
+     *        This only applies to multi-session fleets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComputeCapacityStatus withDesiredUserSessions(Integer desiredUserSessions) {
+        setDesiredUserSessions(desiredUserSessions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of idle session slots currently available for user sessions.
+     * </p>
+     * <p>
+     * AvailableUserSessionCapacity = ActualUserSessionCapacity - ActiveUserSessions
+     * </p>
+     * <p>
+     * This only applies to multi-session fleets.
+     * </p>
+     * 
+     * @param availableUserSessions
+     *        The number of idle session slots currently available for user sessions.</p>
+     *        <p>
+     *        AvailableUserSessionCapacity = ActualUserSessionCapacity - ActiveUserSessions
+     *        </p>
+     *        <p>
+     *        This only applies to multi-session fleets.
+     */
+
+    public void setAvailableUserSessions(Integer availableUserSessions) {
+        this.availableUserSessions = availableUserSessions;
+    }
+
+    /**
+     * <p>
+     * The number of idle session slots currently available for user sessions.
+     * </p>
+     * <p>
+     * AvailableUserSessionCapacity = ActualUserSessionCapacity - ActiveUserSessions
+     * </p>
+     * <p>
+     * This only applies to multi-session fleets.
+     * </p>
+     * 
+     * @return The number of idle session slots currently available for user sessions.</p>
+     *         <p>
+     *         AvailableUserSessionCapacity = ActualUserSessionCapacity - ActiveUserSessions
+     *         </p>
+     *         <p>
+     *         This only applies to multi-session fleets.
+     */
+
+    public Integer getAvailableUserSessions() {
+        return this.availableUserSessions;
+    }
+
+    /**
+     * <p>
+     * The number of idle session slots currently available for user sessions.
+     * </p>
+     * <p>
+     * AvailableUserSessionCapacity = ActualUserSessionCapacity - ActiveUserSessions
+     * </p>
+     * <p>
+     * This only applies to multi-session fleets.
+     * </p>
+     * 
+     * @param availableUserSessions
+     *        The number of idle session slots currently available for user sessions.</p>
+     *        <p>
+     *        AvailableUserSessionCapacity = ActualUserSessionCapacity - ActiveUserSessions
+     *        </p>
+     *        <p>
+     *        This only applies to multi-session fleets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComputeCapacityStatus withAvailableUserSessions(Integer availableUserSessions) {
+        setAvailableUserSessions(availableUserSessions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of user sessions currently being used for streaming sessions. This only applies to multi-session
+     * fleets.
+     * </p>
+     * 
+     * @param activeUserSessions
+     *        The number of user sessions currently being used for streaming sessions. This only applies to
+     *        multi-session fleets.
+     */
+
+    public void setActiveUserSessions(Integer activeUserSessions) {
+        this.activeUserSessions = activeUserSessions;
+    }
+
+    /**
+     * <p>
+     * The number of user sessions currently being used for streaming sessions. This only applies to multi-session
+     * fleets.
+     * </p>
+     * 
+     * @return The number of user sessions currently being used for streaming sessions. This only applies to
+     *         multi-session fleets.
+     */
+
+    public Integer getActiveUserSessions() {
+        return this.activeUserSessions;
+    }
+
+    /**
+     * <p>
+     * The number of user sessions currently being used for streaming sessions. This only applies to multi-session
+     * fleets.
+     * </p>
+     * 
+     * @param activeUserSessions
+     *        The number of user sessions currently being used for streaming sessions. This only applies to
+     *        multi-session fleets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComputeCapacityStatus withActiveUserSessions(Integer activeUserSessions) {
+        setActiveUserSessions(activeUserSessions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The total number of session slots that are available for streaming or are currently streaming.
+     * </p>
+     * <p>
+     * ActualUserSessionCapacity = AvailableUserSessionCapacity + ActiveUserSessions
+     * </p>
+     * <p>
+     * This only applies to multi-session fleets.
+     * </p>
+     * 
+     * @param actualUserSessions
+     *        The total number of session slots that are available for streaming or are currently streaming.</p>
+     *        <p>
+     *        ActualUserSessionCapacity = AvailableUserSessionCapacity + ActiveUserSessions
+     *        </p>
+     *        <p>
+     *        This only applies to multi-session fleets.
+     */
+
+    public void setActualUserSessions(Integer actualUserSessions) {
+        this.actualUserSessions = actualUserSessions;
+    }
+
+    /**
+     * <p>
+     * The total number of session slots that are available for streaming or are currently streaming.
+     * </p>
+     * <p>
+     * ActualUserSessionCapacity = AvailableUserSessionCapacity + ActiveUserSessions
+     * </p>
+     * <p>
+     * This only applies to multi-session fleets.
+     * </p>
+     * 
+     * @return The total number of session slots that are available for streaming or are currently streaming.</p>
+     *         <p>
+     *         ActualUserSessionCapacity = AvailableUserSessionCapacity + ActiveUserSessions
+     *         </p>
+     *         <p>
+     *         This only applies to multi-session fleets.
+     */
+
+    public Integer getActualUserSessions() {
+        return this.actualUserSessions;
+    }
+
+    /**
+     * <p>
+     * The total number of session slots that are available for streaming or are currently streaming.
+     * </p>
+     * <p>
+     * ActualUserSessionCapacity = AvailableUserSessionCapacity + ActiveUserSessions
+     * </p>
+     * <p>
+     * This only applies to multi-session fleets.
+     * </p>
+     * 
+     * @param actualUserSessions
+     *        The total number of session slots that are available for streaming or are currently streaming.</p>
+     *        <p>
+     *        ActualUserSessionCapacity = AvailableUserSessionCapacity + ActiveUserSessions
+     *        </p>
+     *        <p>
+     *        This only applies to multi-session fleets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComputeCapacityStatus withActualUserSessions(Integer actualUserSessions) {
+        setActualUserSessions(actualUserSessions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -232,7 +547,15 @@ public class ComputeCapacityStatus implements Serializable, Cloneable, Structure
         if (getInUse() != null)
             sb.append("InUse: ").append(getInUse()).append(",");
         if (getAvailable() != null)
-            sb.append("Available: ").append(getAvailable());
+            sb.append("Available: ").append(getAvailable()).append(",");
+        if (getDesiredUserSessions() != null)
+            sb.append("DesiredUserSessions: ").append(getDesiredUserSessions()).append(",");
+        if (getAvailableUserSessions() != null)
+            sb.append("AvailableUserSessions: ").append(getAvailableUserSessions()).append(",");
+        if (getActiveUserSessions() != null)
+            sb.append("ActiveUserSessions: ").append(getActiveUserSessions()).append(",");
+        if (getActualUserSessions() != null)
+            sb.append("ActualUserSessions: ").append(getActualUserSessions());
         sb.append("}");
         return sb.toString();
     }
@@ -263,6 +586,22 @@ public class ComputeCapacityStatus implements Serializable, Cloneable, Structure
             return false;
         if (other.getAvailable() != null && other.getAvailable().equals(this.getAvailable()) == false)
             return false;
+        if (other.getDesiredUserSessions() == null ^ this.getDesiredUserSessions() == null)
+            return false;
+        if (other.getDesiredUserSessions() != null && other.getDesiredUserSessions().equals(this.getDesiredUserSessions()) == false)
+            return false;
+        if (other.getAvailableUserSessions() == null ^ this.getAvailableUserSessions() == null)
+            return false;
+        if (other.getAvailableUserSessions() != null && other.getAvailableUserSessions().equals(this.getAvailableUserSessions()) == false)
+            return false;
+        if (other.getActiveUserSessions() == null ^ this.getActiveUserSessions() == null)
+            return false;
+        if (other.getActiveUserSessions() != null && other.getActiveUserSessions().equals(this.getActiveUserSessions()) == false)
+            return false;
+        if (other.getActualUserSessions() == null ^ this.getActualUserSessions() == null)
+            return false;
+        if (other.getActualUserSessions() != null && other.getActualUserSessions().equals(this.getActualUserSessions()) == false)
+            return false;
         return true;
     }
 
@@ -275,6 +614,10 @@ public class ComputeCapacityStatus implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getRunning() == null) ? 0 : getRunning().hashCode());
         hashCode = prime * hashCode + ((getInUse() == null) ? 0 : getInUse().hashCode());
         hashCode = prime * hashCode + ((getAvailable() == null) ? 0 : getAvailable().hashCode());
+        hashCode = prime * hashCode + ((getDesiredUserSessions() == null) ? 0 : getDesiredUserSessions().hashCode());
+        hashCode = prime * hashCode + ((getAvailableUserSessions() == null) ? 0 : getAvailableUserSessions().hashCode());
+        hashCode = prime * hashCode + ((getActiveUserSessions() == null) ? 0 : getActiveUserSessions().hashCode());
+        hashCode = prime * hashCode + ((getActualUserSessions() == null) ? 0 : getActualUserSessions().hashCode());
         return hashCode;
     }
 

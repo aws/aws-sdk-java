@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The user pool add-ons type.
+ * User pool add-ons. Contains settings for activation of advanced security features. To log user security information
+ * but take no action, set to <code>AUDIT</code>. To configure automatic security responses to risky traffic to your
+ * user pool, set to <code>ENFORCED</code>.
+ * </p>
+ * <p>
+ * For more information, see <a
+ * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"
+ * >Adding advanced security to a user pool</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserPoolAddOnsType" target="_top">AWS API
@@ -30,18 +37,18 @@ public class UserPoolAddOnsType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The advanced security mode.
+     * The operating mode of advanced security features in your user pool.
      * </p>
      */
     private String advancedSecurityMode;
 
     /**
      * <p>
-     * The advanced security mode.
+     * The operating mode of advanced security features in your user pool.
      * </p>
      * 
      * @param advancedSecurityMode
-     *        The advanced security mode.
+     *        The operating mode of advanced security features in your user pool.
      * @see AdvancedSecurityModeType
      */
 
@@ -51,10 +58,10 @@ public class UserPoolAddOnsType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The advanced security mode.
+     * The operating mode of advanced security features in your user pool.
      * </p>
      * 
-     * @return The advanced security mode.
+     * @return The operating mode of advanced security features in your user pool.
      * @see AdvancedSecurityModeType
      */
 
@@ -64,11 +71,11 @@ public class UserPoolAddOnsType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The advanced security mode.
+     * The operating mode of advanced security features in your user pool.
      * </p>
      * 
      * @param advancedSecurityMode
-     *        The advanced security mode.
+     *        The operating mode of advanced security features in your user pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AdvancedSecurityModeType
      */
@@ -80,11 +87,11 @@ public class UserPoolAddOnsType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The advanced security mode.
+     * The operating mode of advanced security features in your user pool.
      * </p>
      * 
      * @param advancedSecurityMode
-     *        The advanced security mode.
+     *        The operating mode of advanced security features in your user pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AdvancedSecurityModeType
      */

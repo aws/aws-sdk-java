@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -182,6 +182,28 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private String performanceInsightsKMSKeyId;
+    /**
+     * <p>
+     * Specifies whether the DB instance is restarted when you rotate your SSL/TLS certificate.
+     * </p>
+     * <p>
+     * By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not updated
+     * until the DB instance is restarted.
+     * </p>
+     * <important>
+     * <p>
+     * Set this parameter only if you are <i>not</i> using SSL/TLS to connect to the DB instance.
+     * </p>
+     * </important>
+     * <p>
+     * If you are using SSL/TLS to connect to the DB instance, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon
+     * DocumentDB TLS Certificates</a> and <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data
+     * in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.
+     * </p>
+     */
+    private Boolean certificateRotationRestart;
 
     /**
      * <p>
@@ -1211,6 +1233,182 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * Specifies whether the DB instance is restarted when you rotate your SSL/TLS certificate.
+     * </p>
+     * <p>
+     * By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not updated
+     * until the DB instance is restarted.
+     * </p>
+     * <important>
+     * <p>
+     * Set this parameter only if you are <i>not</i> using SSL/TLS to connect to the DB instance.
+     * </p>
+     * </important>
+     * <p>
+     * If you are using SSL/TLS to connect to the DB instance, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon
+     * DocumentDB TLS Certificates</a> and <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data
+     * in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.
+     * </p>
+     * 
+     * @param certificateRotationRestart
+     *        Specifies whether the DB instance is restarted when you rotate your SSL/TLS certificate.</p>
+     *        <p>
+     *        By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not
+     *        updated until the DB instance is restarted.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        Set this parameter only if you are <i>not</i> using SSL/TLS to connect to the DB instance.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        If you are using SSL/TLS to connect to the DB instance, see <a
+     *        href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your
+     *        Amazon DocumentDB TLS Certificates</a> and <a
+     *        href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html">
+     *        Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.
+     */
+
+    public void setCertificateRotationRestart(Boolean certificateRotationRestart) {
+        this.certificateRotationRestart = certificateRotationRestart;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the DB instance is restarted when you rotate your SSL/TLS certificate.
+     * </p>
+     * <p>
+     * By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not updated
+     * until the DB instance is restarted.
+     * </p>
+     * <important>
+     * <p>
+     * Set this parameter only if you are <i>not</i> using SSL/TLS to connect to the DB instance.
+     * </p>
+     * </important>
+     * <p>
+     * If you are using SSL/TLS to connect to the DB instance, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon
+     * DocumentDB TLS Certificates</a> and <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data
+     * in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.
+     * </p>
+     * 
+     * @return Specifies whether the DB instance is restarted when you rotate your SSL/TLS certificate.</p>
+     *         <p>
+     *         By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not
+     *         updated until the DB instance is restarted.
+     *         </p>
+     *         <important>
+     *         <p>
+     *         Set this parameter only if you are <i>not</i> using SSL/TLS to connect to the DB instance.
+     *         </p>
+     *         </important>
+     *         <p>
+     *         If you are using SSL/TLS to connect to the DB instance, see <a
+     *         href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your
+     *         Amazon DocumentDB TLS Certificates</a> and <a
+     *         href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html">
+     *         Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.
+     */
+
+    public Boolean getCertificateRotationRestart() {
+        return this.certificateRotationRestart;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the DB instance is restarted when you rotate your SSL/TLS certificate.
+     * </p>
+     * <p>
+     * By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not updated
+     * until the DB instance is restarted.
+     * </p>
+     * <important>
+     * <p>
+     * Set this parameter only if you are <i>not</i> using SSL/TLS to connect to the DB instance.
+     * </p>
+     * </important>
+     * <p>
+     * If you are using SSL/TLS to connect to the DB instance, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon
+     * DocumentDB TLS Certificates</a> and <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data
+     * in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.
+     * </p>
+     * 
+     * @param certificateRotationRestart
+     *        Specifies whether the DB instance is restarted when you rotate your SSL/TLS certificate.</p>
+     *        <p>
+     *        By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not
+     *        updated until the DB instance is restarted.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        Set this parameter only if you are <i>not</i> using SSL/TLS to connect to the DB instance.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        If you are using SSL/TLS to connect to the DB instance, see <a
+     *        href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your
+     *        Amazon DocumentDB TLS Certificates</a> and <a
+     *        href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html">
+     *        Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyDBInstanceRequest withCertificateRotationRestart(Boolean certificateRotationRestart) {
+        setCertificateRotationRestart(certificateRotationRestart);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the DB instance is restarted when you rotate your SSL/TLS certificate.
+     * </p>
+     * <p>
+     * By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not updated
+     * until the DB instance is restarted.
+     * </p>
+     * <important>
+     * <p>
+     * Set this parameter only if you are <i>not</i> using SSL/TLS to connect to the DB instance.
+     * </p>
+     * </important>
+     * <p>
+     * If you are using SSL/TLS to connect to the DB instance, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your Amazon
+     * DocumentDB TLS Certificates</a> and <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html"> Encrypting Data
+     * in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.
+     * </p>
+     * 
+     * @return Specifies whether the DB instance is restarted when you rotate your SSL/TLS certificate.</p>
+     *         <p>
+     *         By default, the DB instance is restarted when you rotate your SSL/TLS certificate. The certificate is not
+     *         updated until the DB instance is restarted.
+     *         </p>
+     *         <important>
+     *         <p>
+     *         Set this parameter only if you are <i>not</i> using SSL/TLS to connect to the DB instance.
+     *         </p>
+     *         </important>
+     *         <p>
+     *         If you are using SSL/TLS to connect to the DB instance, see <a
+     *         href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating Your
+     *         Amazon DocumentDB TLS Certificates</a> and <a
+     *         href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html">
+     *         Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer Guide</i>.
+     */
+
+    public Boolean isCertificateRotationRestart() {
+        return this.certificateRotationRestart;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1243,7 +1441,9 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
         if (getEnablePerformanceInsights() != null)
             sb.append("EnablePerformanceInsights: ").append(getEnablePerformanceInsights()).append(",");
         if (getPerformanceInsightsKMSKeyId() != null)
-            sb.append("PerformanceInsightsKMSKeyId: ").append(getPerformanceInsightsKMSKeyId());
+            sb.append("PerformanceInsightsKMSKeyId: ").append(getPerformanceInsightsKMSKeyId()).append(",");
+        if (getCertificateRotationRestart() != null)
+            sb.append("CertificateRotationRestart: ").append(getCertificateRotationRestart());
         sb.append("}");
         return sb.toString();
     }
@@ -1302,6 +1502,10 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getPerformanceInsightsKMSKeyId() != null && other.getPerformanceInsightsKMSKeyId().equals(this.getPerformanceInsightsKMSKeyId()) == false)
             return false;
+        if (other.getCertificateRotationRestart() == null ^ this.getCertificateRotationRestart() == null)
+            return false;
+        if (other.getCertificateRotationRestart() != null && other.getCertificateRotationRestart().equals(this.getCertificateRotationRestart()) == false)
+            return false;
         return true;
     }
 
@@ -1321,6 +1525,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getPromotionTier() == null) ? 0 : getPromotionTier().hashCode());
         hashCode = prime * hashCode + ((getEnablePerformanceInsights() == null) ? 0 : getEnablePerformanceInsights().hashCode());
         hashCode = prime * hashCode + ((getPerformanceInsightsKMSKeyId() == null) ? 0 : getPerformanceInsightsKMSKeyId().hashCode());
+        hashCode = prime * hashCode + ((getCertificateRotationRestart() == null) ? 0 : getCertificateRotationRestart().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information of a test device. A thing ARN or a certificate ARN is required.
+ * Information of a test device. A thing ARN, certificate ARN or device role ARN is required.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotdeviceadvisor-2020-09-18/DeviceUnderTest" target="_top">AWS
@@ -30,24 +30,30 @@ public class DeviceUnderTest implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Lists devices thing ARN.
+     * Lists device's thing ARN.
      * </p>
      */
     private String thingArn;
     /**
      * <p>
-     * Lists devices certificate ARN.
+     * Lists device's certificate ARN.
      * </p>
      */
     private String certificateArn;
+    /**
+     * <p>
+     * Lists device's role ARN.
+     * </p>
+     */
+    private String deviceRoleArn;
 
     /**
      * <p>
-     * Lists devices thing ARN.
+     * Lists device's thing ARN.
      * </p>
      * 
      * @param thingArn
-     *        Lists devices thing ARN.
+     *        Lists device's thing ARN.
      */
 
     public void setThingArn(String thingArn) {
@@ -56,10 +62,10 @@ public class DeviceUnderTest implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Lists devices thing ARN.
+     * Lists device's thing ARN.
      * </p>
      * 
-     * @return Lists devices thing ARN.
+     * @return Lists device's thing ARN.
      */
 
     public String getThingArn() {
@@ -68,11 +74,11 @@ public class DeviceUnderTest implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Lists devices thing ARN.
+     * Lists device's thing ARN.
      * </p>
      * 
      * @param thingArn
-     *        Lists devices thing ARN.
+     *        Lists device's thing ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +89,11 @@ public class DeviceUnderTest implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Lists devices certificate ARN.
+     * Lists device's certificate ARN.
      * </p>
      * 
      * @param certificateArn
-     *        Lists devices certificate ARN.
+     *        Lists device's certificate ARN.
      */
 
     public void setCertificateArn(String certificateArn) {
@@ -96,10 +102,10 @@ public class DeviceUnderTest implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Lists devices certificate ARN.
+     * Lists device's certificate ARN.
      * </p>
      * 
-     * @return Lists devices certificate ARN.
+     * @return Lists device's certificate ARN.
      */
 
     public String getCertificateArn() {
@@ -108,16 +114,56 @@ public class DeviceUnderTest implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Lists devices certificate ARN.
+     * Lists device's certificate ARN.
      * </p>
      * 
      * @param certificateArn
-     *        Lists devices certificate ARN.
+     *        Lists device's certificate ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeviceUnderTest withCertificateArn(String certificateArn) {
         setCertificateArn(certificateArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Lists device's role ARN.
+     * </p>
+     * 
+     * @param deviceRoleArn
+     *        Lists device's role ARN.
+     */
+
+    public void setDeviceRoleArn(String deviceRoleArn) {
+        this.deviceRoleArn = deviceRoleArn;
+    }
+
+    /**
+     * <p>
+     * Lists device's role ARN.
+     * </p>
+     * 
+     * @return Lists device's role ARN.
+     */
+
+    public String getDeviceRoleArn() {
+        return this.deviceRoleArn;
+    }
+
+    /**
+     * <p>
+     * Lists device's role ARN.
+     * </p>
+     * 
+     * @param deviceRoleArn
+     *        Lists device's role ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeviceUnderTest withDeviceRoleArn(String deviceRoleArn) {
+        setDeviceRoleArn(deviceRoleArn);
         return this;
     }
 
@@ -136,7 +182,9 @@ public class DeviceUnderTest implements Serializable, Cloneable, StructuredPojo 
         if (getThingArn() != null)
             sb.append("ThingArn: ").append(getThingArn()).append(",");
         if (getCertificateArn() != null)
-            sb.append("CertificateArn: ").append(getCertificateArn());
+            sb.append("CertificateArn: ").append(getCertificateArn()).append(",");
+        if (getDeviceRoleArn() != null)
+            sb.append("DeviceRoleArn: ").append(getDeviceRoleArn());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +207,10 @@ public class DeviceUnderTest implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getCertificateArn() != null && other.getCertificateArn().equals(this.getCertificateArn()) == false)
             return false;
+        if (other.getDeviceRoleArn() == null ^ this.getDeviceRoleArn() == null)
+            return false;
+        if (other.getDeviceRoleArn() != null && other.getDeviceRoleArn().equals(this.getDeviceRoleArn()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +221,7 @@ public class DeviceUnderTest implements Serializable, Cloneable, StructuredPojo 
 
         hashCode = prime * hashCode + ((getThingArn() == null) ? 0 : getThingArn().hashCode());
         hashCode = prime * hashCode + ((getCertificateArn() == null) ? 0 : getCertificateArn().hashCode());
+        hashCode = prime * hashCode + ((getDeviceRoleArn() == null) ? 0 : getDeviceRoleArn().hashCode());
         return hashCode;
     }
 

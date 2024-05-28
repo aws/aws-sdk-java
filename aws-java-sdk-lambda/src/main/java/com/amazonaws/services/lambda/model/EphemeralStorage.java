@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between 512
- * and 10240 MB.
+ * The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number
+ * between 512 and 10,240 MB. For more information, see <a href=
+ * "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage"
+ * >Configuring ephemeral storage (console)</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EphemeralStorage" target="_top">AWS API
@@ -31,18 +33,18 @@ public class EphemeralStorage implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The size of the function’s /tmp directory.
+     * The size of the function's <code>/tmp</code> directory.
      * </p>
      */
     private Integer size;
 
     /**
      * <p>
-     * The size of the function’s /tmp directory.
+     * The size of the function's <code>/tmp</code> directory.
      * </p>
      * 
      * @param size
-     *        The size of the function’s /tmp directory.
+     *        The size of the function's <code>/tmp</code> directory.
      */
 
     public void setSize(Integer size) {
@@ -51,10 +53,10 @@ public class EphemeralStorage implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The size of the function’s /tmp directory.
+     * The size of the function's <code>/tmp</code> directory.
      * </p>
      * 
-     * @return The size of the function’s /tmp directory.
+     * @return The size of the function's <code>/tmp</code> directory.
      */
 
     public Integer getSize() {
@@ -63,11 +65,11 @@ public class EphemeralStorage implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The size of the function’s /tmp directory.
+     * The size of the function's <code>/tmp</code> directory.
      * </p>
      * 
      * @param size
-     *        The size of the function’s /tmp directory.
+     *        The size of the function's <code>/tmp</code> directory.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

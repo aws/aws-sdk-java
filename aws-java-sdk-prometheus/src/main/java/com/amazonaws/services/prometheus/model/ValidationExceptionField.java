@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Stores information about a field passed inside a request that resulted in an exception.
+ * Information about a field passed into a request that resulted in an exception.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ValidationExceptionField" target="_top">AWS API
@@ -30,24 +30,24 @@ public class ValidationExceptionField implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Message describing why the field failed validation.
+     * A message describing why the field caused an exception.
      * </p>
      */
     private String message;
     /**
      * <p>
-     * The field name.
+     * The name of the field that caused an exception.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * Message describing why the field failed validation.
+     * A message describing why the field caused an exception.
      * </p>
      * 
      * @param message
-     *        Message describing why the field failed validation.
+     *        A message describing why the field caused an exception.
      */
 
     public void setMessage(String message) {
@@ -56,10 +56,10 @@ public class ValidationExceptionField implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Message describing why the field failed validation.
+     * A message describing why the field caused an exception.
      * </p>
      * 
-     * @return Message describing why the field failed validation.
+     * @return A message describing why the field caused an exception.
      */
 
     public String getMessage() {
@@ -68,11 +68,11 @@ public class ValidationExceptionField implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Message describing why the field failed validation.
+     * A message describing why the field caused an exception.
      * </p>
      * 
      * @param message
-     *        Message describing why the field failed validation.
+     *        A message describing why the field caused an exception.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class ValidationExceptionField implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The field name.
+     * The name of the field that caused an exception.
      * </p>
      * 
      * @param name
-     *        The field name.
+     *        The name of the field that caused an exception.
      */
 
     public void setName(String name) {
@@ -96,10 +96,10 @@ public class ValidationExceptionField implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The field name.
+     * The name of the field that caused an exception.
      * </p>
      * 
-     * @return The field name.
+     * @return The name of the field that caused an exception.
      */
 
     public String getName() {
@@ -108,11 +108,11 @@ public class ValidationExceptionField implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The field name.
+     * The name of the field that caused an exception.
      * </p>
      * 
      * @param name
-     *        The field name.
+     *        The name of the field that caused an exception.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,22 @@ public class AbstractAWSResilienceHub implements AWSResilienceHub {
     }
 
     @Override
+    public BatchUpdateRecommendationStatusResult batchUpdateRecommendationStatus(BatchUpdateRecommendationStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateAppResult createApp(CreateAppRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateAppVersionAppComponentResult createAppVersionAppComponent(CreateAppVersionAppComponentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateAppVersionResourceResult createAppVersionResource(CreateAppVersionResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -58,6 +73,21 @@ public class AbstractAWSResilienceHub implements AWSResilienceHub {
     }
 
     @Override
+    public DeleteAppInputSourceResult deleteAppInputSource(DeleteAppInputSourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAppVersionAppComponentResult deleteAppVersionAppComponent(DeleteAppVersionAppComponentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAppVersionResourceResult deleteAppVersionResource(DeleteAppVersionResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteRecommendationTemplateResult deleteRecommendationTemplate(DeleteRecommendationTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -74,6 +104,21 @@ public class AbstractAWSResilienceHub implements AWSResilienceHub {
 
     @Override
     public DescribeAppAssessmentResult describeAppAssessment(DescribeAppAssessmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAppVersionResult describeAppVersion(DescribeAppVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAppVersionAppComponentResult describeAppVersionAppComponent(DescribeAppVersionAppComponentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAppVersionResourceResult describeAppVersionResource(DescribeAppVersionResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -110,6 +155,16 @@ public class AbstractAWSResilienceHub implements AWSResilienceHub {
     }
 
     @Override
+    public ListAppAssessmentComplianceDriftsResult listAppAssessmentComplianceDrifts(ListAppAssessmentComplianceDriftsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAppAssessmentResourceDriftsResult listAppAssessmentResourceDrifts(ListAppAssessmentResourceDriftsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListAppAssessmentsResult listAppAssessments(ListAppAssessmentsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -121,6 +176,16 @@ public class AbstractAWSResilienceHub implements AWSResilienceHub {
 
     @Override
     public ListAppComponentRecommendationsResult listAppComponentRecommendations(ListAppComponentRecommendationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAppInputSourcesResult listAppInputSources(ListAppInputSourcesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAppVersionAppComponentsResult listAppVersionAppComponents(ListAppVersionAppComponentsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -216,6 +281,21 @@ public class AbstractAWSResilienceHub implements AWSResilienceHub {
 
     @Override
     public UpdateAppResult updateApp(UpdateAppRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAppVersionResult updateAppVersion(UpdateAppVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAppVersionAppComponentResult updateAppVersionAppComponent(UpdateAppVersionAppComponentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAppVersionResourceResult updateAppVersionResource(UpdateAppVersionResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,6 +67,23 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      * them. For more information, see <a
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization
      * with the CloudWatch Agent</a>.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * <code>GPU</code> - The percentage of allocated GPUs that currently run on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GPU_MEMORY</code> - The percentage of total GPU memory that currently runs on the instance.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>GPU</code> and <code>GPU_MEMORY</code> metrics are only returned for resources with the unified
+     * CloudWatch Agent installed on them. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling NVIDIA GPU
+     * utilization with the CloudWatch Agent</a>.
      * </p>
      * </note></li>
      * <li>
@@ -238,6 +255,23 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      * </note></li>
      * <li>
      * <p>
+     * <code>GPU</code> - The percentage of allocated GPUs that currently run on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GPU_MEMORY</code> - The percentage of total GPU memory that currently runs on the instance.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>GPU</code> and <code>GPU_MEMORY</code> metrics are only returned for resources with the unified
+     * CloudWatch Agent installed on them. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling NVIDIA GPU
+     * utilization with the CloudWatch Agent</a>.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
      * <code>EBS_READ_OPS_PER_SECOND</code> - The completed read operations from all EBS volumes attached to the
      * instance in a specified period of time.
      * </p>
@@ -371,6 +405,23 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      *        installed on them. For more information, see <a
      *        href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory
      *        Utilization with the CloudWatch Agent</a>.
+     *        </p>
+     *        </note></li>
+     *        <li>
+     *        <p>
+     *        <code>GPU</code> - The percentage of allocated GPUs that currently run on the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GPU_MEMORY</code> - The percentage of total GPU memory that currently runs on the instance.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The <code>GPU</code> and <code>GPU_MEMORY</code> metrics are only returned for resources with the unified
+     *        CloudWatch Agent installed on them. For more information, see <a
+     *        href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling
+     *        NVIDIA GPU utilization with the CloudWatch Agent</a>.
      *        </p>
      *        </note></li>
      *        <li>
@@ -519,6 +570,23 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      * </note></li>
      * <li>
      * <p>
+     * <code>GPU</code> - The percentage of allocated GPUs that currently run on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GPU_MEMORY</code> - The percentage of total GPU memory that currently runs on the instance.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>GPU</code> and <code>GPU_MEMORY</code> metrics are only returned for resources with the unified
+     * CloudWatch Agent installed on them. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling NVIDIA GPU
+     * utilization with the CloudWatch Agent</a>.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
      * <code>EBS_READ_OPS_PER_SECOND</code> - The completed read operations from all EBS volumes attached to the
      * instance in a specified period of time.
      * </p>
@@ -651,6 +719,23 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      *         installed on them. For more information, see <a
      *         href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory
      *         Utilization with the CloudWatch Agent</a>.
+     *         </p>
+     *         </note></li>
+     *         <li>
+     *         <p>
+     *         <code>GPU</code> - The percentage of allocated GPUs that currently run on the instance.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>GPU_MEMORY</code> - The percentage of total GPU memory that currently runs on the instance.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         The <code>GPU</code> and <code>GPU_MEMORY</code> metrics are only returned for resources with the unified
+     *         CloudWatch Agent installed on them. For more information, see <a
+     *         href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling
+     *         NVIDIA GPU utilization with the CloudWatch Agent</a>.
      *         </p>
      *         </note></li>
      *         <li>
@@ -799,6 +884,23 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      * </note></li>
      * <li>
      * <p>
+     * <code>GPU</code> - The percentage of allocated GPUs that currently run on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GPU_MEMORY</code> - The percentage of total GPU memory that currently runs on the instance.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>GPU</code> and <code>GPU_MEMORY</code> metrics are only returned for resources with the unified
+     * CloudWatch Agent installed on them. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling NVIDIA GPU
+     * utilization with the CloudWatch Agent</a>.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
      * <code>EBS_READ_OPS_PER_SECOND</code> - The completed read operations from all EBS volumes attached to the
      * instance in a specified period of time.
      * </p>
@@ -932,6 +1034,23 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      *        installed on them. For more information, see <a
      *        href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory
      *        Utilization with the CloudWatch Agent</a>.
+     *        </p>
+     *        </note></li>
+     *        <li>
+     *        <p>
+     *        <code>GPU</code> - The percentage of allocated GPUs that currently run on the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GPU_MEMORY</code> - The percentage of total GPU memory that currently runs on the instance.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The <code>GPU</code> and <code>GPU_MEMORY</code> metrics are only returned for resources with the unified
+     *        CloudWatch Agent installed on them. For more information, see <a
+     *        href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling
+     *        NVIDIA GPU utilization with the CloudWatch Agent</a>.
      *        </p>
      *        </note></li>
      *        <li>
@@ -1082,6 +1201,23 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      * </note></li>
      * <li>
      * <p>
+     * <code>GPU</code> - The percentage of allocated GPUs that currently run on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GPU_MEMORY</code> - The percentage of total GPU memory that currently runs on the instance.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>GPU</code> and <code>GPU_MEMORY</code> metrics are only returned for resources with the unified
+     * CloudWatch Agent installed on them. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling NVIDIA GPU
+     * utilization with the CloudWatch Agent</a>.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
      * <code>EBS_READ_OPS_PER_SECOND</code> - The completed read operations from all EBS volumes attached to the
      * instance in a specified period of time.
      * </p>
@@ -1215,6 +1351,23 @@ public class UtilizationMetric implements Serializable, Cloneable, StructuredPoj
      *        installed on them. For more information, see <a
      *        href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory
      *        Utilization with the CloudWatch Agent</a>.
+     *        </p>
+     *        </note></li>
+     *        <li>
+     *        <p>
+     *        <code>GPU</code> - The percentage of allocated GPUs that currently run on the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GPU_MEMORY</code> - The percentage of total GPU memory that currently runs on the instance.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The <code>GPU</code> and <code>GPU_MEMORY</code> metrics are only returned for resources with the unified
+     *        CloudWatch Agent installed on them. For more information, see <a
+     *        href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling
+     *        NVIDIA GPU utilization with the CloudWatch Agent</a>.
      *        </p>
      *        </note></li>
      *        <li>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,10 @@ public class CreateWirelessDeviceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LoRaWAN").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> POSITIONING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Positioning").build();
+    private static final MarshallingInfo<StructuredPojo> SIDEWALK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Sidewalk").build();
 
     private static final CreateWirelessDeviceRequestMarshaller instance = new CreateWirelessDeviceRequestMarshaller();
 
@@ -69,6 +73,8 @@ public class CreateWirelessDeviceRequestMarshaller {
             protocolMarshaller.marshall(createWirelessDeviceRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(createWirelessDeviceRequest.getLoRaWAN(), LORAWAN_BINDING);
             protocolMarshaller.marshall(createWirelessDeviceRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createWirelessDeviceRequest.getPositioning(), POSITIONING_BINDING);
+            protocolMarshaller.marshall(createWirelessDeviceRequest.getSidewalk(), SIDEWALK_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

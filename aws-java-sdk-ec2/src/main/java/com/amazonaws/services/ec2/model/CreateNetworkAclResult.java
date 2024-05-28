@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,13 @@ public class CreateNetworkAclResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private NetworkAcl networkAcl;
+    /**
+     * <p>
+     * Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was
+     * provided in the request.
+     * </p>
+     */
+    private String clientToken;
 
     /**
      * <p>
@@ -71,6 +78,52 @@ public class CreateNetworkAclResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was
+     * provided in the request.
+     * </p>
+     * 
+     * @param clientToken
+     *        Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client
+     *        token was provided in the request.
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * <p>
+     * Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was
+     * provided in the request.
+     * </p>
+     * 
+     * @return Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client
+     *         token was provided in the request.
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * <p>
+     * Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client token was
+     * provided in the request.
+     * </p>
+     * 
+     * @param clientToken
+     *        Unique, case-sensitive identifier to ensure the idempotency of the request. Only returned if a client
+     *        token was provided in the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNetworkAclResult withClientToken(String clientToken) {
+        setClientToken(clientToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -83,7 +136,9 @@ public class CreateNetworkAclResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getNetworkAcl() != null)
-            sb.append("NetworkAcl: ").append(getNetworkAcl());
+            sb.append("NetworkAcl: ").append(getNetworkAcl()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }
@@ -102,6 +157,10 @@ public class CreateNetworkAclResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getNetworkAcl() != null && other.getNetworkAcl().equals(this.getNetworkAcl()) == false)
             return false;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
         return true;
     }
 
@@ -111,6 +170,7 @@ public class CreateNetworkAclResult extends com.amazonaws.AmazonWebServiceResult
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getNetworkAcl() == null) ? 0 : getNetworkAcl().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }
 

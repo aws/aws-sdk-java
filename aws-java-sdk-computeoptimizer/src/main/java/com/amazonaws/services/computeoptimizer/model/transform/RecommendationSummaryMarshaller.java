@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,8 @@ public class RecommendationSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("savingsOpportunity").build();
     private static final MarshallingInfo<StructuredPojo> CURRENTPERFORMANCERISKRATINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("currentPerformanceRiskRatings").build();
+    private static final MarshallingInfo<List> INFERREDWORKLOADSAVINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inferredWorkloadSavings").build();
 
     private static final RecommendationSummaryMarshaller instance = new RecommendationSummaryMarshaller();
 
@@ -60,6 +62,7 @@ public class RecommendationSummaryMarshaller {
             protocolMarshaller.marshall(recommendationSummary.getAccountId(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(recommendationSummary.getSavingsOpportunity(), SAVINGSOPPORTUNITY_BINDING);
             protocolMarshaller.marshall(recommendationSummary.getCurrentPerformanceRiskRatings(), CURRENTPERFORMANCERISKRATINGS_BINDING);
+            protocolMarshaller.marshall(recommendationSummary.getInferredWorkloadSavings(), INFERREDWORKLOADSAVINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

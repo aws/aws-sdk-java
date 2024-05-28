@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -227,7 +227,6 @@ public class DeleteChannelResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types
      * (HLS, for example), there is one destination per packager.
-     * 
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setDestinations(java.util.Collection)} or {@link #withDestinations(java.util.Collection)} if you want to

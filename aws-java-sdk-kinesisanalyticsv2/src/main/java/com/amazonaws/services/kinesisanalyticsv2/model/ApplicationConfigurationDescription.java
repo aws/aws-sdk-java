@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes details about the application code and starting parameters for a Kinesis Data Analytics application.
+ * Describes details about the application code and starting parameters for a Managed Service for Apache Flink
+ * application.
  * </p>
  * 
  * @see <a
@@ -37,31 +38,31 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
     private SqlApplicationConfigurationDescription sqlApplicationConfigurationDescription;
     /**
      * <p>
-     * The details about the application code for a Flink-based Kinesis Data Analytics application.
+     * The details about the application code for a Managed Service for Apache Flink application.
      * </p>
      */
     private ApplicationCodeConfigurationDescription applicationCodeConfigurationDescription;
     /**
      * <p>
-     * The details about the starting properties for a Kinesis Data Analytics application.
+     * The details about the starting properties for a Managed Service for Apache Flink application.
      * </p>
      */
     private RunConfigurationDescription runConfigurationDescription;
     /**
      * <p>
-     * The details about a Flink-based Kinesis Data Analytics application.
+     * The details about a Managed Service for Apache Flink application.
      * </p>
      */
     private FlinkApplicationConfigurationDescription flinkApplicationConfigurationDescription;
     /**
      * <p>
-     * Describes execution properties for a Flink-based Kinesis Data Analytics application.
+     * Describes execution properties for a Managed Service for Apache Flink application.
      * </p>
      */
     private EnvironmentPropertyDescriptions environmentPropertyDescriptions;
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Managed Service for Apache Flink application.
      * </p>
      */
     private ApplicationSnapshotConfigurationDescription applicationSnapshotConfigurationDescription;
@@ -73,7 +74,7 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
     private java.util.List<VpcConfigurationDescription> vpcConfigurationDescriptions;
     /**
      * <p>
-     * The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     * The configuration parameters for a Managed Service for Apache Flink Studio notebook.
      * </p>
      */
     private ZeppelinApplicationConfigurationDescription zeppelinApplicationConfigurationDescription;
@@ -124,11 +125,11 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The details about the application code for a Flink-based Kinesis Data Analytics application.
+     * The details about the application code for a Managed Service for Apache Flink application.
      * </p>
      * 
      * @param applicationCodeConfigurationDescription
-     *        The details about the application code for a Flink-based Kinesis Data Analytics application.
+     *        The details about the application code for a Managed Service for Apache Flink application.
      */
 
     public void setApplicationCodeConfigurationDescription(ApplicationCodeConfigurationDescription applicationCodeConfigurationDescription) {
@@ -137,10 +138,10 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The details about the application code for a Flink-based Kinesis Data Analytics application.
+     * The details about the application code for a Managed Service for Apache Flink application.
      * </p>
      * 
-     * @return The details about the application code for a Flink-based Kinesis Data Analytics application.
+     * @return The details about the application code for a Managed Service for Apache Flink application.
      */
 
     public ApplicationCodeConfigurationDescription getApplicationCodeConfigurationDescription() {
@@ -149,11 +150,11 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The details about the application code for a Flink-based Kinesis Data Analytics application.
+     * The details about the application code for a Managed Service for Apache Flink application.
      * </p>
      * 
      * @param applicationCodeConfigurationDescription
-     *        The details about the application code for a Flink-based Kinesis Data Analytics application.
+     *        The details about the application code for a Managed Service for Apache Flink application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,11 +166,11 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The details about the starting properties for a Kinesis Data Analytics application.
+     * The details about the starting properties for a Managed Service for Apache Flink application.
      * </p>
      * 
      * @param runConfigurationDescription
-     *        The details about the starting properties for a Kinesis Data Analytics application.
+     *        The details about the starting properties for a Managed Service for Apache Flink application.
      */
 
     public void setRunConfigurationDescription(RunConfigurationDescription runConfigurationDescription) {
@@ -178,10 +179,10 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The details about the starting properties for a Kinesis Data Analytics application.
+     * The details about the starting properties for a Managed Service for Apache Flink application.
      * </p>
      * 
-     * @return The details about the starting properties for a Kinesis Data Analytics application.
+     * @return The details about the starting properties for a Managed Service for Apache Flink application.
      */
 
     public RunConfigurationDescription getRunConfigurationDescription() {
@@ -190,11 +191,11 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The details about the starting properties for a Kinesis Data Analytics application.
+     * The details about the starting properties for a Managed Service for Apache Flink application.
      * </p>
      * 
      * @param runConfigurationDescription
-     *        The details about the starting properties for a Kinesis Data Analytics application.
+     *        The details about the starting properties for a Managed Service for Apache Flink application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -205,11 +206,11 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The details about a Flink-based Kinesis Data Analytics application.
+     * The details about a Managed Service for Apache Flink application.
      * </p>
      * 
      * @param flinkApplicationConfigurationDescription
-     *        The details about a Flink-based Kinesis Data Analytics application.
+     *        The details about a Managed Service for Apache Flink application.
      */
 
     public void setFlinkApplicationConfigurationDescription(FlinkApplicationConfigurationDescription flinkApplicationConfigurationDescription) {
@@ -218,10 +219,10 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The details about a Flink-based Kinesis Data Analytics application.
+     * The details about a Managed Service for Apache Flink application.
      * </p>
      * 
-     * @return The details about a Flink-based Kinesis Data Analytics application.
+     * @return The details about a Managed Service for Apache Flink application.
      */
 
     public FlinkApplicationConfigurationDescription getFlinkApplicationConfigurationDescription() {
@@ -230,11 +231,11 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The details about a Flink-based Kinesis Data Analytics application.
+     * The details about a Managed Service for Apache Flink application.
      * </p>
      * 
      * @param flinkApplicationConfigurationDescription
-     *        The details about a Flink-based Kinesis Data Analytics application.
+     *        The details about a Managed Service for Apache Flink application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -246,11 +247,11 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Describes execution properties for a Flink-based Kinesis Data Analytics application.
+     * Describes execution properties for a Managed Service for Apache Flink application.
      * </p>
      * 
      * @param environmentPropertyDescriptions
-     *        Describes execution properties for a Flink-based Kinesis Data Analytics application.
+     *        Describes execution properties for a Managed Service for Apache Flink application.
      */
 
     public void setEnvironmentPropertyDescriptions(EnvironmentPropertyDescriptions environmentPropertyDescriptions) {
@@ -259,10 +260,10 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Describes execution properties for a Flink-based Kinesis Data Analytics application.
+     * Describes execution properties for a Managed Service for Apache Flink application.
      * </p>
      * 
-     * @return Describes execution properties for a Flink-based Kinesis Data Analytics application.
+     * @return Describes execution properties for a Managed Service for Apache Flink application.
      */
 
     public EnvironmentPropertyDescriptions getEnvironmentPropertyDescriptions() {
@@ -271,11 +272,11 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Describes execution properties for a Flink-based Kinesis Data Analytics application.
+     * Describes execution properties for a Managed Service for Apache Flink application.
      * </p>
      * 
      * @param environmentPropertyDescriptions
-     *        Describes execution properties for a Flink-based Kinesis Data Analytics application.
+     *        Describes execution properties for a Managed Service for Apache Flink application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -286,11 +287,11 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Managed Service for Apache Flink application.
      * </p>
      * 
      * @param applicationSnapshotConfigurationDescription
-     *        Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+     *        Describes whether snapshots are enabled for a Managed Service for Apache Flink application.
      */
 
     public void setApplicationSnapshotConfigurationDescription(ApplicationSnapshotConfigurationDescription applicationSnapshotConfigurationDescription) {
@@ -299,10 +300,10 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Managed Service for Apache Flink application.
      * </p>
      * 
-     * @return Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+     * @return Describes whether snapshots are enabled for a Managed Service for Apache Flink application.
      */
 
     public ApplicationSnapshotConfigurationDescription getApplicationSnapshotConfigurationDescription() {
@@ -311,11 +312,11 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Managed Service for Apache Flink application.
      * </p>
      * 
      * @param applicationSnapshotConfigurationDescription
-     *        Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+     *        Describes whether snapshots are enabled for a Managed Service for Apache Flink application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -397,11 +398,11 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     * The configuration parameters for a Managed Service for Apache Flink Studio notebook.
      * </p>
      * 
      * @param zeppelinApplicationConfigurationDescription
-     *        The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     *        The configuration parameters for a Managed Service for Apache Flink Studio notebook.
      */
 
     public void setZeppelinApplicationConfigurationDescription(ZeppelinApplicationConfigurationDescription zeppelinApplicationConfigurationDescription) {
@@ -410,10 +411,10 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     * The configuration parameters for a Managed Service for Apache Flink Studio notebook.
      * </p>
      * 
-     * @return The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     * @return The configuration parameters for a Managed Service for Apache Flink Studio notebook.
      */
 
     public ZeppelinApplicationConfigurationDescription getZeppelinApplicationConfigurationDescription() {
@@ -422,11 +423,11 @@ public class ApplicationConfigurationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     * The configuration parameters for a Managed Service for Apache Flink Studio notebook.
      * </p>
      * 
      * @param zeppelinApplicationConfigurationDescription
-     *        The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     *        The configuration parameters for a Managed Service for Apache Flink Studio notebook.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

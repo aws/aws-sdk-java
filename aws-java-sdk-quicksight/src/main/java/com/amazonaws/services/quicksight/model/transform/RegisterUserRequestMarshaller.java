@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.quicksight.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -51,6 +52,8 @@ public class RegisterUserRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomFederationProviderUrl").build();
     private static final MarshallingInfo<String> EXTERNALLOGINID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExternalLoginId").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final RegisterUserRequestMarshaller instance = new RegisterUserRequestMarshaller();
 
@@ -80,6 +83,7 @@ public class RegisterUserRequestMarshaller {
             protocolMarshaller.marshall(registerUserRequest.getExternalLoginFederationProviderType(), EXTERNALLOGINFEDERATIONPROVIDERTYPE_BINDING);
             protocolMarshaller.marshall(registerUserRequest.getCustomFederationProviderUrl(), CUSTOMFEDERATIONPROVIDERURL_BINDING);
             protocolMarshaller.marshall(registerUserRequest.getExternalLoginId(), EXTERNALLOGINID_BINDING);
+            protocolMarshaller.marshall(registerUserRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

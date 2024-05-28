@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,7 @@ public class TranslateTextResult extends com.amazonaws.AmazonWebServiceResult<co
     private java.util.List<AppliedTerminology> appliedTerminologies;
     /**
      * <p>
-     * Settings that configure the translation output.
+     * Optional settings that modify the translation output.
      * </p>
      */
     private TranslationSettings appliedSettings;
@@ -255,11 +255,11 @@ public class TranslateTextResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Settings that configure the translation output.
+     * Optional settings that modify the translation output.
      * </p>
      * 
      * @param appliedSettings
-     *        Settings that configure the translation output.
+     *        Optional settings that modify the translation output.
      */
 
     public void setAppliedSettings(TranslationSettings appliedSettings) {
@@ -268,10 +268,10 @@ public class TranslateTextResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Settings that configure the translation output.
+     * Optional settings that modify the translation output.
      * </p>
      * 
-     * @return Settings that configure the translation output.
+     * @return Optional settings that modify the translation output.
      */
 
     public TranslationSettings getAppliedSettings() {
@@ -280,11 +280,11 @@ public class TranslateTextResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Settings that configure the translation output.
+     * Optional settings that modify the translation output.
      * </p>
      * 
      * @param appliedSettings
-     *        Settings that configure the translation output.
+     *        Optional settings that modify the translation output.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class CustomStepDetails implements Serializable, Cloneable, StructuredPoj
     private String name;
     /**
      * <p>
-     * The ARN for the lambda function that is being called.
+     * The ARN for the Lambda function that is being called.
      * </p>
      */
     private String target;
@@ -54,13 +54,13 @@ public class CustomStepDetails implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses
+     * To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses
      * the output file from the previous workflow step as input. This is the default value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     * To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.
      * </p>
      * </li>
      * </ul>
@@ -109,11 +109,11 @@ public class CustomStepDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ARN for the lambda function that is being called.
+     * The ARN for the Lambda function that is being called.
      * </p>
      * 
      * @param target
-     *        The ARN for the lambda function that is being called.
+     *        The ARN for the Lambda function that is being called.
      */
 
     public void setTarget(String target) {
@@ -122,10 +122,10 @@ public class CustomStepDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ARN for the lambda function that is being called.
+     * The ARN for the Lambda function that is being called.
      * </p>
      * 
-     * @return The ARN for the lambda function that is being called.
+     * @return The ARN for the Lambda function that is being called.
      */
 
     public String getTarget() {
@@ -134,11 +134,11 @@ public class CustomStepDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ARN for the lambda function that is being called.
+     * The ARN for the Lambda function that is being called.
      * </p>
      * 
      * @param target
-     *        The ARN for the lambda function that is being called.
+     *        The ARN for the Lambda function that is being called.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -195,13 +195,13 @@ public class CustomStepDetails implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses
+     * To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses
      * the output file from the previous workflow step as input. This is the default value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     * To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.
      * </p>
      * </li>
      * </ul>
@@ -212,13 +212,13 @@ public class CustomStepDetails implements Serializable, Cloneable, StructuredPoj
      *        <ul>
      *        <li>
      *        <p>
-     *        Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow
+     *        To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow
      *        step uses the output file from the previous workflow step as input. This is the default value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     *        To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.
      *        </p>
      *        </li>
      */
@@ -235,13 +235,13 @@ public class CustomStepDetails implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses
+     * To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses
      * the output file from the previous workflow step as input. This is the default value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     * To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.
      * </p>
      * </li>
      * </ul>
@@ -251,13 +251,13 @@ public class CustomStepDetails implements Serializable, Cloneable, StructuredPoj
      *         <ul>
      *         <li>
      *         <p>
-     *         Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow
+     *         To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow
      *         step uses the output file from the previous workflow step as input. This is the default value.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     *         To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.
      *         </p>
      *         </li>
      */
@@ -274,13 +274,13 @@ public class CustomStepDetails implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses
+     * To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses
      * the output file from the previous workflow step as input. This is the default value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     * To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.
      * </p>
      * </li>
      * </ul>
@@ -291,13 +291,13 @@ public class CustomStepDetails implements Serializable, Cloneable, StructuredPoj
      *        <ul>
      *        <li>
      *        <p>
-     *        Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow
+     *        To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow
      *        step uses the output file from the previous workflow step as input. This is the default value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     *        To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,9 +50,8 @@ public class CreateRealtimeLogConfigRequest extends com.amazonaws.AmazonWebServi
     private String name;
     /**
      * <p>
-     * The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer
-     * requests that are represented in the real-time log data. You must provide an integer between 1 and 100,
-     * inclusive.
+     * The sampling rate for this real-time log configuration. You can specify a whole number between 1 and 100
+     * (inclusive) to determine the percentage of viewer requests that are represented in the real-time log data.
      * </p>
      */
     private Long samplingRate;
@@ -281,15 +280,13 @@ public class CreateRealtimeLogConfigRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer
-     * requests that are represented in the real-time log data. You must provide an integer between 1 and 100,
-     * inclusive.
+     * The sampling rate for this real-time log configuration. You can specify a whole number between 1 and 100
+     * (inclusive) to determine the percentage of viewer requests that are represented in the real-time log data.
      * </p>
      * 
      * @param samplingRate
-     *        The sampling rate for this real-time log configuration. The sampling rate determines the percentage of
-     *        viewer requests that are represented in the real-time log data. You must provide an integer between 1 and
-     *        100, inclusive.
+     *        The sampling rate for this real-time log configuration. You can specify a whole number between 1 and 100
+     *        (inclusive) to determine the percentage of viewer requests that are represented in the real-time log data.
      */
 
     public void setSamplingRate(Long samplingRate) {
@@ -298,14 +295,13 @@ public class CreateRealtimeLogConfigRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer
-     * requests that are represented in the real-time log data. You must provide an integer between 1 and 100,
-     * inclusive.
+     * The sampling rate for this real-time log configuration. You can specify a whole number between 1 and 100
+     * (inclusive) to determine the percentage of viewer requests that are represented in the real-time log data.
      * </p>
      * 
-     * @return The sampling rate for this real-time log configuration. The sampling rate determines the percentage of
-     *         viewer requests that are represented in the real-time log data. You must provide an integer between 1 and
-     *         100, inclusive.
+     * @return The sampling rate for this real-time log configuration. You can specify a whole number between 1 and 100
+     *         (inclusive) to determine the percentage of viewer requests that are represented in the real-time log
+     *         data.
      */
 
     public Long getSamplingRate() {
@@ -314,15 +310,13 @@ public class CreateRealtimeLogConfigRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The sampling rate for this real-time log configuration. The sampling rate determines the percentage of viewer
-     * requests that are represented in the real-time log data. You must provide an integer between 1 and 100,
-     * inclusive.
+     * The sampling rate for this real-time log configuration. You can specify a whole number between 1 and 100
+     * (inclusive) to determine the percentage of viewer requests that are represented in the real-time log data.
      * </p>
      * 
      * @param samplingRate
-     *        The sampling rate for this real-time log configuration. The sampling rate determines the percentage of
-     *        viewer requests that are represented in the real-time log data. You must provide an integer between 1 and
-     *        100, inclusive.
+     *        The sampling rate for this real-time log configuration. You can specify a whole number between 1 and 100
+     *        (inclusive) to determine the percentage of viewer requests that are represented in the real-time log data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

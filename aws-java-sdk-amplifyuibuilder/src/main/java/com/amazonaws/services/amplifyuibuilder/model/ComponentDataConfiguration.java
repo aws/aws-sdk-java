@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,17 +30,16 @@ public class ComponentDataConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * A list of IDs to use to bind data to a component. Use this property to bind specifically chosen data, rather than
-     * data retrieved from a query.
-     * </p>
-     */
-    private java.util.List<String> identifiers;
-    /**
-     * <p>
      * The name of the data model to use to bind data to a component.
      * </p>
      */
     private String model;
+    /**
+     * <p>
+     * Describes how to sort the component's properties.
+     * </p>
+     */
+    private java.util.List<SortProperty> sort;
     /**
      * <p>
      * Represents the conditional logic to use when binding data to a component. Use this property to retrieve only a
@@ -50,10 +49,167 @@ public class ComponentDataConfiguration implements Serializable, Cloneable, Stru
     private Predicate predicate;
     /**
      * <p>
-     * Describes how to sort the component's properties.
+     * A list of IDs to use to bind data to a component. Use this property to bind specifically chosen data, rather than
+     * data retrieved from a query.
      * </p>
      */
-    private java.util.List<SortProperty> sort;
+    private java.util.List<String> identifiers;
+
+    /**
+     * <p>
+     * The name of the data model to use to bind data to a component.
+     * </p>
+     * 
+     * @param model
+     *        The name of the data model to use to bind data to a component.
+     */
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    /**
+     * <p>
+     * The name of the data model to use to bind data to a component.
+     * </p>
+     * 
+     * @return The name of the data model to use to bind data to a component.
+     */
+
+    public String getModel() {
+        return this.model;
+    }
+
+    /**
+     * <p>
+     * The name of the data model to use to bind data to a component.
+     * </p>
+     * 
+     * @param model
+     *        The name of the data model to use to bind data to a component.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentDataConfiguration withModel(String model) {
+        setModel(model);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes how to sort the component's properties.
+     * </p>
+     * 
+     * @return Describes how to sort the component's properties.
+     */
+
+    public java.util.List<SortProperty> getSort() {
+        return sort;
+    }
+
+    /**
+     * <p>
+     * Describes how to sort the component's properties.
+     * </p>
+     * 
+     * @param sort
+     *        Describes how to sort the component's properties.
+     */
+
+    public void setSort(java.util.Collection<SortProperty> sort) {
+        if (sort == null) {
+            this.sort = null;
+            return;
+        }
+
+        this.sort = new java.util.ArrayList<SortProperty>(sort);
+    }
+
+    /**
+     * <p>
+     * Describes how to sort the component's properties.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSort(java.util.Collection)} or {@link #withSort(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param sort
+     *        Describes how to sort the component's properties.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentDataConfiguration withSort(SortProperty... sort) {
+        if (this.sort == null) {
+            setSort(new java.util.ArrayList<SortProperty>(sort.length));
+        }
+        for (SortProperty ele : sort) {
+            this.sort.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes how to sort the component's properties.
+     * </p>
+     * 
+     * @param sort
+     *        Describes how to sort the component's properties.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentDataConfiguration withSort(java.util.Collection<SortProperty> sort) {
+        setSort(sort);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Represents the conditional logic to use when binding data to a component. Use this property to retrieve only a
+     * subset of the data in a collection.
+     * </p>
+     * 
+     * @param predicate
+     *        Represents the conditional logic to use when binding data to a component. Use this property to retrieve
+     *        only a subset of the data in a collection.
+     */
+
+    public void setPredicate(Predicate predicate) {
+        this.predicate = predicate;
+    }
+
+    /**
+     * <p>
+     * Represents the conditional logic to use when binding data to a component. Use this property to retrieve only a
+     * subset of the data in a collection.
+     * </p>
+     * 
+     * @return Represents the conditional logic to use when binding data to a component. Use this property to retrieve
+     *         only a subset of the data in a collection.
+     */
+
+    public Predicate getPredicate() {
+        return this.predicate;
+    }
+
+    /**
+     * <p>
+     * Represents the conditional logic to use when binding data to a component. Use this property to retrieve only a
+     * subset of the data in a collection.
+     * </p>
+     * 
+     * @param predicate
+     *        Represents the conditional logic to use when binding data to a component. Use this property to retrieve
+     *        only a subset of the data in a collection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentDataConfiguration withPredicate(Predicate predicate) {
+        setPredicate(predicate);
+        return this;
+    }
 
     /**
      * <p>
@@ -134,162 +290,6 @@ public class ComponentDataConfiguration implements Serializable, Cloneable, Stru
     }
 
     /**
-     * <p>
-     * The name of the data model to use to bind data to a component.
-     * </p>
-     * 
-     * @param model
-     *        The name of the data model to use to bind data to a component.
-     */
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    /**
-     * <p>
-     * The name of the data model to use to bind data to a component.
-     * </p>
-     * 
-     * @return The name of the data model to use to bind data to a component.
-     */
-
-    public String getModel() {
-        return this.model;
-    }
-
-    /**
-     * <p>
-     * The name of the data model to use to bind data to a component.
-     * </p>
-     * 
-     * @param model
-     *        The name of the data model to use to bind data to a component.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ComponentDataConfiguration withModel(String model) {
-        setModel(model);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Represents the conditional logic to use when binding data to a component. Use this property to retrieve only a
-     * subset of the data in a collection.
-     * </p>
-     * 
-     * @param predicate
-     *        Represents the conditional logic to use when binding data to a component. Use this property to retrieve
-     *        only a subset of the data in a collection.
-     */
-
-    public void setPredicate(Predicate predicate) {
-        this.predicate = predicate;
-    }
-
-    /**
-     * <p>
-     * Represents the conditional logic to use when binding data to a component. Use this property to retrieve only a
-     * subset of the data in a collection.
-     * </p>
-     * 
-     * @return Represents the conditional logic to use when binding data to a component. Use this property to retrieve
-     *         only a subset of the data in a collection.
-     */
-
-    public Predicate getPredicate() {
-        return this.predicate;
-    }
-
-    /**
-     * <p>
-     * Represents the conditional logic to use when binding data to a component. Use this property to retrieve only a
-     * subset of the data in a collection.
-     * </p>
-     * 
-     * @param predicate
-     *        Represents the conditional logic to use when binding data to a component. Use this property to retrieve
-     *        only a subset of the data in a collection.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ComponentDataConfiguration withPredicate(Predicate predicate) {
-        setPredicate(predicate);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Describes how to sort the component's properties.
-     * </p>
-     * 
-     * @return Describes how to sort the component's properties.
-     */
-
-    public java.util.List<SortProperty> getSort() {
-        return sort;
-    }
-
-    /**
-     * <p>
-     * Describes how to sort the component's properties.
-     * </p>
-     * 
-     * @param sort
-     *        Describes how to sort the component's properties.
-     */
-
-    public void setSort(java.util.Collection<SortProperty> sort) {
-        if (sort == null) {
-            this.sort = null;
-            return;
-        }
-
-        this.sort = new java.util.ArrayList<SortProperty>(sort);
-    }
-
-    /**
-     * <p>
-     * Describes how to sort the component's properties.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setSort(java.util.Collection)} or {@link #withSort(java.util.Collection)} if you want to override the
-     * existing values.
-     * </p>
-     * 
-     * @param sort
-     *        Describes how to sort the component's properties.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ComponentDataConfiguration withSort(SortProperty... sort) {
-        if (this.sort == null) {
-            setSort(new java.util.ArrayList<SortProperty>(sort.length));
-        }
-        for (SortProperty ele : sort) {
-            this.sort.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * Describes how to sort the component's properties.
-     * </p>
-     * 
-     * @param sort
-     *        Describes how to sort the component's properties.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ComponentDataConfiguration withSort(java.util.Collection<SortProperty> sort) {
-        setSort(sort);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -301,14 +301,14 @@ public class ComponentDataConfiguration implements Serializable, Cloneable, Stru
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getIdentifiers() != null)
-            sb.append("Identifiers: ").append(getIdentifiers()).append(",");
         if (getModel() != null)
             sb.append("Model: ").append(getModel()).append(",");
+        if (getSort() != null)
+            sb.append("Sort: ").append(getSort()).append(",");
         if (getPredicate() != null)
             sb.append("Predicate: ").append(getPredicate()).append(",");
-        if (getSort() != null)
-            sb.append("Sort: ").append(getSort());
+        if (getIdentifiers() != null)
+            sb.append("Identifiers: ").append(getIdentifiers());
         sb.append("}");
         return sb.toString();
     }
@@ -323,21 +323,21 @@ public class ComponentDataConfiguration implements Serializable, Cloneable, Stru
         if (obj instanceof ComponentDataConfiguration == false)
             return false;
         ComponentDataConfiguration other = (ComponentDataConfiguration) obj;
-        if (other.getIdentifiers() == null ^ this.getIdentifiers() == null)
-            return false;
-        if (other.getIdentifiers() != null && other.getIdentifiers().equals(this.getIdentifiers()) == false)
-            return false;
         if (other.getModel() == null ^ this.getModel() == null)
             return false;
         if (other.getModel() != null && other.getModel().equals(this.getModel()) == false)
+            return false;
+        if (other.getSort() == null ^ this.getSort() == null)
+            return false;
+        if (other.getSort() != null && other.getSort().equals(this.getSort()) == false)
             return false;
         if (other.getPredicate() == null ^ this.getPredicate() == null)
             return false;
         if (other.getPredicate() != null && other.getPredicate().equals(this.getPredicate()) == false)
             return false;
-        if (other.getSort() == null ^ this.getSort() == null)
+        if (other.getIdentifiers() == null ^ this.getIdentifiers() == null)
             return false;
-        if (other.getSort() != null && other.getSort().equals(this.getSort()) == false)
+        if (other.getIdentifiers() != null && other.getIdentifiers().equals(this.getIdentifiers()) == false)
             return false;
         return true;
     }
@@ -347,10 +347,10 @@ public class ComponentDataConfiguration implements Serializable, Cloneable, Stru
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getIdentifiers() == null) ? 0 : getIdentifiers().hashCode());
         hashCode = prime * hashCode + ((getModel() == null) ? 0 : getModel().hashCode());
-        hashCode = prime * hashCode + ((getPredicate() == null) ? 0 : getPredicate().hashCode());
         hashCode = prime * hashCode + ((getSort() == null) ? 0 : getSort().hashCode());
+        hashCode = prime * hashCode + ((getPredicate() == null) ? 0 : getPredicate().hashCode());
+        hashCode = prime * hashCode + ((getIdentifiers() == null) ? 0 : getIdentifiers().hashCode());
         return hashCode;
     }
 

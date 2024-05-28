@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -80,6 +80,39 @@ public class AWSMediaTailorAsyncClient extends AWSMediaTailorClient implements A
      */
     public ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConfigureLogsForChannelResult> configureLogsForChannelAsync(ConfigureLogsForChannelRequest request) {
+
+        return configureLogsForChannelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConfigureLogsForChannelResult> configureLogsForChannelAsync(final ConfigureLogsForChannelRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ConfigureLogsForChannelRequest, ConfigureLogsForChannelResult> asyncHandler) {
+        final ConfigureLogsForChannelRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ConfigureLogsForChannelResult>() {
+            @Override
+            public ConfigureLogsForChannelResult call() throws Exception {
+                ConfigureLogsForChannelResult result = null;
+
+                try {
+                    result = executeConfigureLogsForChannel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -1389,6 +1422,39 @@ public class AWSMediaTailorAsyncClient extends AWSMediaTailorClient implements A
 
                 try {
                     result = executeUpdateLiveSource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProgramResult> updateProgramAsync(UpdateProgramRequest request) {
+
+        return updateProgramAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProgramResult> updateProgramAsync(final UpdateProgramRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateProgramRequest, UpdateProgramResult> asyncHandler) {
+        final UpdateProgramRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateProgramResult>() {
+            @Override
+            public UpdateProgramResult call() throws Exception {
+                UpdateProgramResult result = null;
+
+                try {
+                    result = executeUpdateProgram(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

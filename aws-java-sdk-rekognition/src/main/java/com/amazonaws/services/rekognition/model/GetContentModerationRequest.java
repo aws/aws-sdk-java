@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,13 @@ public class GetContentModerationRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private String sortBy;
+    /**
+     * <p>
+     * Defines how to aggregate results of the StartContentModeration request. Default aggregation option is TIMESTAMPS.
+     * SEGMENTS mode aggregates moderation labels over time.
+     * </p>
+     */
+    private String aggregateBy;
 
     /**
      * <p>
@@ -280,6 +287,73 @@ public class GetContentModerationRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * Defines how to aggregate results of the StartContentModeration request. Default aggregation option is TIMESTAMPS.
+     * SEGMENTS mode aggregates moderation labels over time.
+     * </p>
+     * 
+     * @param aggregateBy
+     *        Defines how to aggregate results of the StartContentModeration request. Default aggregation option is
+     *        TIMESTAMPS. SEGMENTS mode aggregates moderation labels over time.
+     * @see ContentModerationAggregateBy
+     */
+
+    public void setAggregateBy(String aggregateBy) {
+        this.aggregateBy = aggregateBy;
+    }
+
+    /**
+     * <p>
+     * Defines how to aggregate results of the StartContentModeration request. Default aggregation option is TIMESTAMPS.
+     * SEGMENTS mode aggregates moderation labels over time.
+     * </p>
+     * 
+     * @return Defines how to aggregate results of the StartContentModeration request. Default aggregation option is
+     *         TIMESTAMPS. SEGMENTS mode aggregates moderation labels over time.
+     * @see ContentModerationAggregateBy
+     */
+
+    public String getAggregateBy() {
+        return this.aggregateBy;
+    }
+
+    /**
+     * <p>
+     * Defines how to aggregate results of the StartContentModeration request. Default aggregation option is TIMESTAMPS.
+     * SEGMENTS mode aggregates moderation labels over time.
+     * </p>
+     * 
+     * @param aggregateBy
+     *        Defines how to aggregate results of the StartContentModeration request. Default aggregation option is
+     *        TIMESTAMPS. SEGMENTS mode aggregates moderation labels over time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ContentModerationAggregateBy
+     */
+
+    public GetContentModerationRequest withAggregateBy(String aggregateBy) {
+        setAggregateBy(aggregateBy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Defines how to aggregate results of the StartContentModeration request. Default aggregation option is TIMESTAMPS.
+     * SEGMENTS mode aggregates moderation labels over time.
+     * </p>
+     * 
+     * @param aggregateBy
+     *        Defines how to aggregate results of the StartContentModeration request. Default aggregation option is
+     *        TIMESTAMPS. SEGMENTS mode aggregates moderation labels over time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ContentModerationAggregateBy
+     */
+
+    public GetContentModerationRequest withAggregateBy(ContentModerationAggregateBy aggregateBy) {
+        this.aggregateBy = aggregateBy.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -298,7 +372,9 @@ public class GetContentModerationRequest extends com.amazonaws.AmazonWebServiceR
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getSortBy() != null)
-            sb.append("SortBy: ").append(getSortBy());
+            sb.append("SortBy: ").append(getSortBy()).append(",");
+        if (getAggregateBy() != null)
+            sb.append("AggregateBy: ").append(getAggregateBy());
         sb.append("}");
         return sb.toString();
     }
@@ -329,6 +405,10 @@ public class GetContentModerationRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getSortBy() != null && other.getSortBy().equals(this.getSortBy()) == false)
             return false;
+        if (other.getAggregateBy() == null ^ this.getAggregateBy() == null)
+            return false;
+        if (other.getAggregateBy() != null && other.getAggregateBy().equals(this.getAggregateBy()) == false)
+            return false;
         return true;
     }
 
@@ -341,6 +421,7 @@ public class GetContentModerationRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getSortBy() == null) ? 0 : getSortBy().hashCode());
+        hashCode = prime * hashCode + ((getAggregateBy() == null) ? 0 : getAggregateBy().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,16 +27,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListPermissionSetsProvisionedToAccountRequestMarshaller {
 
-    private static final MarshallingInfo<String> INSTANCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceArn").build();
     private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("AccountId").build();
-    private static final MarshallingInfo<String> PROVISIONINGSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisioningStatus").build();
+    private static final MarshallingInfo<String> INSTANCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceArn").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<String> PROVISIONINGSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisioningStatus").build();
 
     private static final ListPermissionSetsProvisionedToAccountRequestMarshaller instance = new ListPermissionSetsProvisionedToAccountRequestMarshaller();
 
@@ -54,11 +54,11 @@ public class ListPermissionSetsProvisionedToAccountRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(listPermissionSetsProvisionedToAccountRequest.getInstanceArn(), INSTANCEARN_BINDING);
             protocolMarshaller.marshall(listPermissionSetsProvisionedToAccountRequest.getAccountId(), ACCOUNTID_BINDING);
-            protocolMarshaller.marshall(listPermissionSetsProvisionedToAccountRequest.getProvisioningStatus(), PROVISIONINGSTATUS_BINDING);
+            protocolMarshaller.marshall(listPermissionSetsProvisionedToAccountRequest.getInstanceArn(), INSTANCEARN_BINDING);
             protocolMarshaller.marshall(listPermissionSetsProvisionedToAccountRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listPermissionSetsProvisionedToAccountRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listPermissionSetsProvisionedToAccountRequest.getProvisioningStatus(), PROVISIONINGSTATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class DescribeFHIRExportJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS generated ID for the Data Store from which files are being exported from for an export job.
+     * The AWS generated ID for the data store from which files are being exported from for an export job.
      * </p>
      */
     private String datastoreId;
@@ -40,11 +40,11 @@ public class DescribeFHIRExportJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS generated ID for the Data Store from which files are being exported from for an export job.
+     * The AWS generated ID for the data store from which files are being exported from for an export job.
      * </p>
      * 
      * @param datastoreId
-     *        The AWS generated ID for the Data Store from which files are being exported from for an export job.
+     *        The AWS generated ID for the data store from which files are being exported from for an export job.
      */
 
     public void setDatastoreId(String datastoreId) {
@@ -53,10 +53,10 @@ public class DescribeFHIRExportJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS generated ID for the Data Store from which files are being exported from for an export job.
+     * The AWS generated ID for the data store from which files are being exported from for an export job.
      * </p>
      * 
-     * @return The AWS generated ID for the Data Store from which files are being exported from for an export job.
+     * @return The AWS generated ID for the data store from which files are being exported from for an export job.
      */
 
     public String getDatastoreId() {
@@ -65,11 +65,11 @@ public class DescribeFHIRExportJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS generated ID for the Data Store from which files are being exported from for an export job.
+     * The AWS generated ID for the data store from which files are being exported from for an export job.
      * </p>
      * 
      * @param datastoreId
-     *        The AWS generated ID for the Data Store from which files are being exported from for an export job.
+     *        The AWS generated ID for the data store from which files are being exported from for an export job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

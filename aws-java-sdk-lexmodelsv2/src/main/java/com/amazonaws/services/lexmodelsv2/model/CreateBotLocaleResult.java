@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -91,6 +91,8 @@ public class CreateBotLocaleResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      */
     private java.util.Date creationDateTime;
+
+    private GenerativeAISettings generativeAISettings;
 
     /**
      * <p>
@@ -578,6 +580,32 @@ public class CreateBotLocaleResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
+     * @param generativeAISettings
+     */
+
+    public void setGenerativeAISettings(GenerativeAISettings generativeAISettings) {
+        this.generativeAISettings = generativeAISettings;
+    }
+
+    /**
+     * @return
+     */
+
+    public GenerativeAISettings getGenerativeAISettings() {
+        return this.generativeAISettings;
+    }
+
+    /**
+     * @param generativeAISettings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateBotLocaleResult withGenerativeAISettings(GenerativeAISettings generativeAISettings) {
+        setGenerativeAISettings(generativeAISettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -606,7 +634,9 @@ public class CreateBotLocaleResult extends com.amazonaws.AmazonWebServiceResult<
         if (getBotLocaleStatus() != null)
             sb.append("BotLocaleStatus: ").append(getBotLocaleStatus()).append(",");
         if (getCreationDateTime() != null)
-            sb.append("CreationDateTime: ").append(getCreationDateTime());
+            sb.append("CreationDateTime: ").append(getCreationDateTime()).append(",");
+        if (getGenerativeAISettings() != null)
+            sb.append("GenerativeAISettings: ").append(getGenerativeAISettings());
         sb.append("}");
         return sb.toString();
     }
@@ -657,6 +687,10 @@ public class CreateBotLocaleResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getCreationDateTime() != null && other.getCreationDateTime().equals(this.getCreationDateTime()) == false)
             return false;
+        if (other.getGenerativeAISettings() == null ^ this.getGenerativeAISettings() == null)
+            return false;
+        if (other.getGenerativeAISettings() != null && other.getGenerativeAISettings().equals(this.getGenerativeAISettings()) == false)
+            return false;
         return true;
     }
 
@@ -674,6 +708,7 @@ public class CreateBotLocaleResult extends com.amazonaws.AmazonWebServiceResult<
         hashCode = prime * hashCode + ((getVoiceSettings() == null) ? 0 : getVoiceSettings().hashCode());
         hashCode = prime * hashCode + ((getBotLocaleStatus() == null) ? 0 : getBotLocaleStatus().hashCode());
         hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());
+        hashCode = prime * hashCode + ((getGenerativeAISettings() == null) ? 0 : getGenerativeAISettings().hashCode());
         return hashCode;
     }
 

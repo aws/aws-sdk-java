@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class DeleteCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
     private String category;
     /**
      * <p>
-     * The provider of the service used in the custom action, such as AWS CodeDeploy.
+     * The provider of the service used in the custom action, such as CodeDeploy.
      * </p>
      */
     private String provider;
@@ -122,11 +122,11 @@ public class DeleteCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The provider of the service used in the custom action, such as AWS CodeDeploy.
+     * The provider of the service used in the custom action, such as CodeDeploy.
      * </p>
      * 
      * @param provider
-     *        The provider of the service used in the custom action, such as AWS CodeDeploy.
+     *        The provider of the service used in the custom action, such as CodeDeploy.
      */
 
     public void setProvider(String provider) {
@@ -135,10 +135,10 @@ public class DeleteCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The provider of the service used in the custom action, such as AWS CodeDeploy.
+     * The provider of the service used in the custom action, such as CodeDeploy.
      * </p>
      * 
-     * @return The provider of the service used in the custom action, such as AWS CodeDeploy.
+     * @return The provider of the service used in the custom action, such as CodeDeploy.
      */
 
     public String getProvider() {
@@ -147,11 +147,11 @@ public class DeleteCustomActionTypeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The provider of the service used in the custom action, such as AWS CodeDeploy.
+     * The provider of the service used in the custom action, such as CodeDeploy.
      * </p>
      * 
      * @param provider
-     *        The provider of the service used in the custom action, such as AWS CodeDeploy.
+     *        The provider of the service used in the custom action, such as CodeDeploy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,8 @@ public class AlarmRecommendationMarshaller {
 
     private static final MarshallingInfo<String> APPCOMPONENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("appComponentName").build();
+    private static final MarshallingInfo<List> APPCOMPONENTNAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("appComponentNames").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<List> ITEMS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -40,6 +42,8 @@ public class AlarmRecommendationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("prerequisite").build();
     private static final MarshallingInfo<String> RECOMMENDATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("recommendationId").build();
+    private static final MarshallingInfo<String> RECOMMENDATIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("recommendationStatus").build();
     private static final MarshallingInfo<String> REFERENCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("referenceId").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -62,11 +66,13 @@ public class AlarmRecommendationMarshaller {
 
         try {
             protocolMarshaller.marshall(alarmRecommendation.getAppComponentName(), APPCOMPONENTNAME_BINDING);
+            protocolMarshaller.marshall(alarmRecommendation.getAppComponentNames(), APPCOMPONENTNAMES_BINDING);
             protocolMarshaller.marshall(alarmRecommendation.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(alarmRecommendation.getItems(), ITEMS_BINDING);
             protocolMarshaller.marshall(alarmRecommendation.getName(), NAME_BINDING);
             protocolMarshaller.marshall(alarmRecommendation.getPrerequisite(), PREREQUISITE_BINDING);
             protocolMarshaller.marshall(alarmRecommendation.getRecommendationId(), RECOMMENDATIONID_BINDING);
+            protocolMarshaller.marshall(alarmRecommendation.getRecommendationStatus(), RECOMMENDATIONSTATUS_BINDING);
             protocolMarshaller.marshall(alarmRecommendation.getReferenceId(), REFERENCEID_BINDING);
             protocolMarshaller.marshall(alarmRecommendation.getType(), TYPE_BINDING);
         } catch (Exception e) {

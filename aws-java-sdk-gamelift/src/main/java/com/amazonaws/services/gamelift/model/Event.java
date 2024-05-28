@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,14 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Log entry describing an event that involves GameLift resources (such as a fleet). In addition to tracking activity,
- * event codes and messages can provide additional information for troubleshooting and debugging problems.
- * </p>
- * <p>
- * <b>Related actions</b>
- * </p>
- * <p>
- * <a>DescribeFleetEvents</a>
+ * Log entry describing an event that involves Amazon GameLift resources (such as a fleet). In addition to tracking
+ * activity, event codes and messages can provide additional information for troubleshooting and debugging problems.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Event" target="_top">AWS API
@@ -69,21 +63,21 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>. GameLift
-     * has successfully downloaded the build and is now validating the build files.
+     * FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>. Amazon
+     * GameLift has successfully downloaded the build and is now validating the build files.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>. GameLift has
-     * successfully verified the build files and is now running the installation scripts.
+     * FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>. Amazon
+     * GameLift has successfully verified the build files and is now running the installation scripts.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>. GameLift is
-     * trying to launch an instance and test the connectivity between the build and the GameLift Service via the Server
-     * SDK.
+     * FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>. Amazon
+     * GameLift is trying to launch an instance and test the connectivity between the build and the Amazon GameLift
+     * Service via the Server SDK.
      * </p>
      * </li>
      * <li>
@@ -128,10 +122,10 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now verifying
      * that the game server launch paths, which are specified in the fleet's runtime configuration, exist. If any listed
-     * launch path exists, GameLift tries to launch a game server process and waits for the process to report ready.
-     * Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the
-     * launch paths in the runtime configuration and indicate whether each is found. Access the logs by using the URL in
-     * <i>PreSignedLogUrl</i>.
+     * launch path exists, Amazon GameLift tries to launch a game server process and waits for the process to report
+     * ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list
+     * the launch paths in the runtime configuration and indicate whether each is found. Access the logs by using the
+     * URL in <i>PreSignedLogUrl</i>.
      * </p>
      * </li>
      * <li>
@@ -180,16 +174,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an GameLift
-     * fleet and a VPC in your Amazon Web Services account.
+     * FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an Amazon
+     * GameLift fleet and a VPC in your Amazon Web Services account.
      * </p>
      * </li>
      * <li>
      * <p>
      * FLEET_VPC_PEERING_FAILED -- A requested VPC peering connection has failed. Event details and status information
-     * (see <a>DescribeVpcPeeringConnections</a>) provide additional detail. A common reason for peering failure is that
-     * the two VPCs have overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR block for the VPC
-     * in your Amazon Web Services account. For more information on VPC peering failures, see <a
+     * provide additional detail. A common reason for peering failure is that the two VPCs have overlapping CIDR blocks
+     * of IPv4 addresses. To resolve this, change the CIDR block for the VPC in your Amazon Web Services account. For
+     * more information on VPC peering failures, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html"
      * >https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      * </p>
@@ -209,9 +203,15 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * INSTANCE_RECYCLED -- A spot instance was determined to have a high risk of interruption and is scheduled to be
+     * recycled once it has no active game sessions.
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * <b>Spot process events:</b>
+     * <b>Server process events:</b>
      * </p>
      * <ul>
      * <li>
@@ -222,20 +222,21 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call InitSDK() within the time expected.
-     * Check your game session log to see why InitSDK() was not called in time.
+     * SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call <code>InitSDK()</code> within the
+     * time expected (5 minutes). Check your game session log to see why <code>InitSDK()</code> was not called in time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call ProcessReady() within the time expected
-     * after calling InitSDK(). Check your game session log to see why ProcessReady() was not called in time.
+     * SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call <code>ProcessReady()</code> within the
+     * time expected (5 minutes) after calling <code>InitSDK()</code>. Check your game session log to see why
+     * <code>ProcessReady()</code> was not called in time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SERVER_PROCESS_CRASHED -- The server process exited without calling ProcessEnding(). Check your game session log
-     * to see why ProcessEnding() was not called.
+     * SERVER_PROCESS_CRASHED -- The server process exited without calling <code>ProcessEnding()</code>. Check your game
+     * session log to see why <code>ProcessEnding()</code> was not called.
      * </p>
      * </li>
      * <li>
@@ -247,14 +248,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly after OnProcessTerminate() was sent
-     * within the time expected. Check your game session log to see why termination took longer than expected.
+     * SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly within the time expected after
+     * <code>OnProcessTerminate()</code> was sent. Check your game session log to see why termination took longer than
+     * expected.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SERVER_PROCESS_PROCESS_EXIT_TIMEOUT -- The server process did not exit cleanly within the time expected after
-     * calling ProcessEnding(). Check your game session log to see why termination took longer than expected.
+     * SERVER_PROCESS_PROCESS_EXIT_TIMEOUT -- The server process did not exit cleanly within the time expected (30
+     * seconds) after calling <code>ProcessEnding()</code>. Check your game session log to see why termination took
+     * longer than expected.
      * </p>
      * </li>
      * </ul>
@@ -265,7 +268,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * GAME_SESSION_ACTIVATION_TIMEOUT -- GameSession failed to activate within the expected time. Check your game
-     * session log to see why ActivateGameSession() took longer to complete than expected.
+     * session log to see why <code>ActivateGameSession()</code> took longer to complete than expected.
      * </p>
      * </li>
      * </ul>
@@ -314,10 +317,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Location of stored logs with additional detail that is related to the event. This is useful for debugging issues.
-     * The URL is valid for 15 minutes. You can also access fleet creation logs through the GameLift console.
+     * The URL is valid for 15 minutes. You can also access fleet creation logs through the Amazon GameLift console.
      * </p>
      */
     private String preSignedLogUrl;
+    /**
+     * <p>
+     * The number of times that this event occurred.
+     * </p>
+     */
+    private Long count;
 
     /**
      * <p>
@@ -421,21 +430,21 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>. GameLift
-     * has successfully downloaded the build and is now validating the build files.
+     * FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>. Amazon
+     * GameLift has successfully downloaded the build and is now validating the build files.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>. GameLift has
-     * successfully verified the build files and is now running the installation scripts.
+     * FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>. Amazon
+     * GameLift has successfully verified the build files and is now running the installation scripts.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>. GameLift is
-     * trying to launch an instance and test the connectivity between the build and the GameLift Service via the Server
-     * SDK.
+     * FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>. Amazon
+     * GameLift is trying to launch an instance and test the connectivity between the build and the Amazon GameLift
+     * Service via the Server SDK.
      * </p>
      * </li>
      * <li>
@@ -480,10 +489,10 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now verifying
      * that the game server launch paths, which are specified in the fleet's runtime configuration, exist. If any listed
-     * launch path exists, GameLift tries to launch a game server process and waits for the process to report ready.
-     * Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the
-     * launch paths in the runtime configuration and indicate whether each is found. Access the logs by using the URL in
-     * <i>PreSignedLogUrl</i>.
+     * launch path exists, Amazon GameLift tries to launch a game server process and waits for the process to report
+     * ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list
+     * the launch paths in the runtime configuration and indicate whether each is found. Access the logs by using the
+     * URL in <i>PreSignedLogUrl</i>.
      * </p>
      * </li>
      * <li>
@@ -532,16 +541,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an GameLift
-     * fleet and a VPC in your Amazon Web Services account.
+     * FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an Amazon
+     * GameLift fleet and a VPC in your Amazon Web Services account.
      * </p>
      * </li>
      * <li>
      * <p>
      * FLEET_VPC_PEERING_FAILED -- A requested VPC peering connection has failed. Event details and status information
-     * (see <a>DescribeVpcPeeringConnections</a>) provide additional detail. A common reason for peering failure is that
-     * the two VPCs have overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR block for the VPC
-     * in your Amazon Web Services account. For more information on VPC peering failures, see <a
+     * provide additional detail. A common reason for peering failure is that the two VPCs have overlapping CIDR blocks
+     * of IPv4 addresses. To resolve this, change the CIDR block for the VPC in your Amazon Web Services account. For
+     * more information on VPC peering failures, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html"
      * >https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      * </p>
@@ -561,9 +570,15 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * INSTANCE_RECYCLED -- A spot instance was determined to have a high risk of interruption and is scheduled to be
+     * recycled once it has no active game sessions.
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * <b>Spot process events:</b>
+     * <b>Server process events:</b>
      * </p>
      * <ul>
      * <li>
@@ -574,20 +589,21 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call InitSDK() within the time expected.
-     * Check your game session log to see why InitSDK() was not called in time.
+     * SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call <code>InitSDK()</code> within the
+     * time expected (5 minutes). Check your game session log to see why <code>InitSDK()</code> was not called in time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call ProcessReady() within the time expected
-     * after calling InitSDK(). Check your game session log to see why ProcessReady() was not called in time.
+     * SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call <code>ProcessReady()</code> within the
+     * time expected (5 minutes) after calling <code>InitSDK()</code>. Check your game session log to see why
+     * <code>ProcessReady()</code> was not called in time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SERVER_PROCESS_CRASHED -- The server process exited without calling ProcessEnding(). Check your game session log
-     * to see why ProcessEnding() was not called.
+     * SERVER_PROCESS_CRASHED -- The server process exited without calling <code>ProcessEnding()</code>. Check your game
+     * session log to see why <code>ProcessEnding()</code> was not called.
      * </p>
      * </li>
      * <li>
@@ -599,14 +615,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly after OnProcessTerminate() was sent
-     * within the time expected. Check your game session log to see why termination took longer than expected.
+     * SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly within the time expected after
+     * <code>OnProcessTerminate()</code> was sent. Check your game session log to see why termination took longer than
+     * expected.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SERVER_PROCESS_PROCESS_EXIT_TIMEOUT -- The server process did not exit cleanly within the time expected after
-     * calling ProcessEnding(). Check your game session log to see why termination took longer than expected.
+     * SERVER_PROCESS_PROCESS_EXIT_TIMEOUT -- The server process did not exit cleanly within the time expected (30
+     * seconds) after calling <code>ProcessEnding()</code>. Check your game session log to see why termination took
+     * longer than expected.
      * </p>
      * </li>
      * </ul>
@@ -617,7 +635,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * GAME_SESSION_ACTIVATION_TIMEOUT -- GameSession failed to activate within the expected time. Check your game
-     * session log to see why ActivateGameSession() took longer to complete than expected.
+     * session log to see why <code>ActivateGameSession()</code> took longer to complete than expected.
      * </p>
      * </li>
      * </ul>
@@ -670,20 +688,20 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>.
-     *        GameLift has successfully downloaded the build and is now validating the build files.
+     *        Amazon GameLift has successfully downloaded the build and is now validating the build files.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>.
+     *        FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>. Amazon
      *        GameLift has successfully verified the build files and is now running the installation scripts.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>.
-     *        GameLift is trying to launch an instance and test the connectivity between the build and the GameLift
-     *        Service via the Server SDK.
+     *        Amazon GameLift is trying to launch an instance and test the connectivity between the build and the Amazon
+     *        GameLift Service via the Server SDK.
      *        </p>
      *        </li>
      *        <li>
@@ -728,10 +746,10 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now
      *        verifying that the game server launch paths, which are specified in the fleet's runtime configuration,
-     *        exist. If any listed launch path exists, GameLift tries to launch a game server process and waits for the
-     *        process to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status.
-     *        Logs for this stage list the launch paths in the runtime configuration and indicate whether each is found.
-     *        Access the logs by using the URL in <i>PreSignedLogUrl</i>.
+     *        exist. If any listed launch path exists, Amazon GameLift tries to launch a game server process and waits
+     *        for the process to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code>
+     *        status. Logs for this stage list the launch paths in the runtime configuration and indicate whether each
+     *        is found. Access the logs by using the URL in <i>PreSignedLogUrl</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -782,17 +800,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an
+     *        FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an Amazon
      *        GameLift fleet and a VPC in your Amazon Web Services account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        FLEET_VPC_PEERING_FAILED -- A requested VPC peering connection has failed. Event details and status
-     *        information (see <a>DescribeVpcPeeringConnections</a>) provide additional detail. A common reason for
-     *        peering failure is that the two VPCs have overlapping CIDR blocks of IPv4 addresses. To resolve this,
-     *        change the CIDR block for the VPC in your Amazon Web Services account. For more information on VPC peering
-     *        failures, see <a
+     *        information provide additional detail. A common reason for peering failure is that the two VPCs have
+     *        overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR block for the VPC in your
+     *        Amazon Web Services account. For more information on VPC peering failures, see <a
      *        href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html"
      *        >https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      *        </p>
@@ -812,9 +829,15 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        INSTANCE_RECYCLED -- A spot instance was determined to have a high risk of interruption and is scheduled
+     *        to be recycled once it has no active game sessions.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
-     *        <b>Spot process events:</b>
+     *        <b>Server process events:</b>
      *        </p>
      *        <ul>
      *        <li>
@@ -825,21 +848,22 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call InitSDK() within the time
-     *        expected. Check your game session log to see why InitSDK() was not called in time.
+     *        SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call <code>InitSDK()</code> within
+     *        the time expected (5 minutes). Check your game session log to see why <code>InitSDK()</code> was not
+     *        called in time.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call ProcessReady() within the time
-     *        expected after calling InitSDK(). Check your game session log to see why ProcessReady() was not called in
-     *        time.
+     *        SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call <code>ProcessReady()</code> within
+     *        the time expected (5 minutes) after calling <code>InitSDK()</code>. Check your game session log to see why
+     *        <code>ProcessReady()</code> was not called in time.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SERVER_PROCESS_CRASHED -- The server process exited without calling ProcessEnding(). Check your game
-     *        session log to see why ProcessEnding() was not called.
+     *        SERVER_PROCESS_CRASHED -- The server process exited without calling <code>ProcessEnding()</code>. Check
+     *        your game session log to see why <code>ProcessEnding()</code> was not called.
      *        </p>
      *        </li>
      *        <li>
@@ -851,16 +875,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly after OnProcessTerminate() was
-     *        sent within the time expected. Check your game session log to see why termination took longer than
-     *        expected.
+     *        SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly within the time expected after
+     *        <code>OnProcessTerminate()</code> was sent. Check your game session log to see why termination took longer
+     *        than expected.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        SERVER_PROCESS_PROCESS_EXIT_TIMEOUT -- The server process did not exit cleanly within the time expected
-     *        after calling ProcessEnding(). Check your game session log to see why termination took longer than
-     *        expected.
+     *        (30 seconds) after calling <code>ProcessEnding()</code>. Check your game session log to see why
+     *        termination took longer than expected.
      *        </p>
      *        </li>
      *        </ul>
@@ -871,7 +895,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        GAME_SESSION_ACTIVATION_TIMEOUT -- GameSession failed to activate within the expected time. Check your
-     *        game session log to see why ActivateGameSession() took longer to complete than expected.
+     *        game session log to see why <code>ActivateGameSession()</code> took longer to complete than expected.
      *        </p>
      *        </li>
      *        </ul>
@@ -930,21 +954,21 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>. GameLift
-     * has successfully downloaded the build and is now validating the build files.
+     * FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>. Amazon
+     * GameLift has successfully downloaded the build and is now validating the build files.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>. GameLift has
-     * successfully verified the build files and is now running the installation scripts.
+     * FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>. Amazon
+     * GameLift has successfully verified the build files and is now running the installation scripts.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>. GameLift is
-     * trying to launch an instance and test the connectivity between the build and the GameLift Service via the Server
-     * SDK.
+     * FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>. Amazon
+     * GameLift is trying to launch an instance and test the connectivity between the build and the Amazon GameLift
+     * Service via the Server SDK.
      * </p>
      * </li>
      * <li>
@@ -989,10 +1013,10 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now verifying
      * that the game server launch paths, which are specified in the fleet's runtime configuration, exist. If any listed
-     * launch path exists, GameLift tries to launch a game server process and waits for the process to report ready.
-     * Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the
-     * launch paths in the runtime configuration and indicate whether each is found. Access the logs by using the URL in
-     * <i>PreSignedLogUrl</i>.
+     * launch path exists, Amazon GameLift tries to launch a game server process and waits for the process to report
+     * ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list
+     * the launch paths in the runtime configuration and indicate whether each is found. Access the logs by using the
+     * URL in <i>PreSignedLogUrl</i>.
      * </p>
      * </li>
      * <li>
@@ -1041,16 +1065,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an GameLift
-     * fleet and a VPC in your Amazon Web Services account.
+     * FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an Amazon
+     * GameLift fleet and a VPC in your Amazon Web Services account.
      * </p>
      * </li>
      * <li>
      * <p>
      * FLEET_VPC_PEERING_FAILED -- A requested VPC peering connection has failed. Event details and status information
-     * (see <a>DescribeVpcPeeringConnections</a>) provide additional detail. A common reason for peering failure is that
-     * the two VPCs have overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR block for the VPC
-     * in your Amazon Web Services account. For more information on VPC peering failures, see <a
+     * provide additional detail. A common reason for peering failure is that the two VPCs have overlapping CIDR blocks
+     * of IPv4 addresses. To resolve this, change the CIDR block for the VPC in your Amazon Web Services account. For
+     * more information on VPC peering failures, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html"
      * >https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      * </p>
@@ -1070,9 +1094,15 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * INSTANCE_RECYCLED -- A spot instance was determined to have a high risk of interruption and is scheduled to be
+     * recycled once it has no active game sessions.
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * <b>Spot process events:</b>
+     * <b>Server process events:</b>
      * </p>
      * <ul>
      * <li>
@@ -1083,20 +1113,21 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call InitSDK() within the time expected.
-     * Check your game session log to see why InitSDK() was not called in time.
+     * SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call <code>InitSDK()</code> within the
+     * time expected (5 minutes). Check your game session log to see why <code>InitSDK()</code> was not called in time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call ProcessReady() within the time expected
-     * after calling InitSDK(). Check your game session log to see why ProcessReady() was not called in time.
+     * SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call <code>ProcessReady()</code> within the
+     * time expected (5 minutes) after calling <code>InitSDK()</code>. Check your game session log to see why
+     * <code>ProcessReady()</code> was not called in time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SERVER_PROCESS_CRASHED -- The server process exited without calling ProcessEnding(). Check your game session log
-     * to see why ProcessEnding() was not called.
+     * SERVER_PROCESS_CRASHED -- The server process exited without calling <code>ProcessEnding()</code>. Check your game
+     * session log to see why <code>ProcessEnding()</code> was not called.
      * </p>
      * </li>
      * <li>
@@ -1108,14 +1139,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly after OnProcessTerminate() was sent
-     * within the time expected. Check your game session log to see why termination took longer than expected.
+     * SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly within the time expected after
+     * <code>OnProcessTerminate()</code> was sent. Check your game session log to see why termination took longer than
+     * expected.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SERVER_PROCESS_PROCESS_EXIT_TIMEOUT -- The server process did not exit cleanly within the time expected after
-     * calling ProcessEnding(). Check your game session log to see why termination took longer than expected.
+     * SERVER_PROCESS_PROCESS_EXIT_TIMEOUT -- The server process did not exit cleanly within the time expected (30
+     * seconds) after calling <code>ProcessEnding()</code>. Check your game session log to see why termination took
+     * longer than expected.
      * </p>
      * </li>
      * </ul>
@@ -1126,7 +1159,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * GAME_SESSION_ACTIVATION_TIMEOUT -- GameSession failed to activate within the expected time. Check your game
-     * session log to see why ActivateGameSession() took longer to complete than expected.
+     * session log to see why <code>ActivateGameSession()</code> took longer to complete than expected.
      * </p>
      * </li>
      * </ul>
@@ -1178,20 +1211,20 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>.
-     *         GameLift has successfully downloaded the build and is now validating the build files.
+     *         Amazon GameLift has successfully downloaded the build and is now validating the build files.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>.
-     *         GameLift has successfully verified the build files and is now running the installation scripts.
+     *         Amazon GameLift has successfully verified the build files and is now running the installation scripts.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>.
-     *         GameLift is trying to launch an instance and test the connectivity between the build and the GameLift
-     *         Service via the Server SDK.
+     *         Amazon GameLift is trying to launch an instance and test the connectivity between the build and the
+     *         Amazon GameLift Service via the Server SDK.
      *         </p>
      *         </li>
      *         <li>
@@ -1236,10 +1269,10 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now
      *         verifying that the game server launch paths, which are specified in the fleet's runtime configuration,
-     *         exist. If any listed launch path exists, GameLift tries to launch a game server process and waits for the
-     *         process to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code>
-     *         status. Logs for this stage list the launch paths in the runtime configuration and indicate whether each
-     *         is found. Access the logs by using the URL in <i>PreSignedLogUrl</i>.
+     *         exist. If any listed launch path exists, Amazon GameLift tries to launch a game server process and waits
+     *         for the process to report ready. Failures in this stage prevent a fleet from moving to
+     *         <code>ACTIVE</code> status. Logs for this stage list the launch paths in the runtime configuration and
+     *         indicate whether each is found. Access the logs by using the URL in <i>PreSignedLogUrl</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -1291,16 +1324,15 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an
-     *         GameLift fleet and a VPC in your Amazon Web Services account.
+     *         Amazon GameLift fleet and a VPC in your Amazon Web Services account.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         FLEET_VPC_PEERING_FAILED -- A requested VPC peering connection has failed. Event details and status
-     *         information (see <a>DescribeVpcPeeringConnections</a>) provide additional detail. A common reason for
-     *         peering failure is that the two VPCs have overlapping CIDR blocks of IPv4 addresses. To resolve this,
-     *         change the CIDR block for the VPC in your Amazon Web Services account. For more information on VPC
-     *         peering failures, see <a
+     *         information provide additional detail. A common reason for peering failure is that the two VPCs have
+     *         overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR block for the VPC in your
+     *         Amazon Web Services account. For more information on VPC peering failures, see <a
      *         href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html"
      *         >https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      *         </p>
@@ -1320,9 +1352,15 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *         INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         INSTANCE_RECYCLED -- A spot instance was determined to have a high risk of interruption and is scheduled
+     *         to be recycled once it has no active game sessions.
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
-     *         <b>Spot process events:</b>
+     *         <b>Server process events:</b>
      *         </p>
      *         <ul>
      *         <li>
@@ -1333,21 +1371,22 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call InitSDK() within the time
-     *         expected. Check your game session log to see why InitSDK() was not called in time.
+     *         SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call <code>InitSDK()</code>
+     *         within the time expected (5 minutes). Check your game session log to see why <code>InitSDK()</code> was
+     *         not called in time.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call ProcessReady() within the time
-     *         expected after calling InitSDK(). Check your game session log to see why ProcessReady() was not called in
-     *         time.
+     *         SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call <code>ProcessReady()</code>
+     *         within the time expected (5 minutes) after calling <code>InitSDK()</code>. Check your game session log to
+     *         see why <code>ProcessReady()</code> was not called in time.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         SERVER_PROCESS_CRASHED -- The server process exited without calling ProcessEnding(). Check your game
-     *         session log to see why ProcessEnding() was not called.
+     *         SERVER_PROCESS_CRASHED -- The server process exited without calling <code>ProcessEnding()</code>. Check
+     *         your game session log to see why <code>ProcessEnding()</code> was not called.
      *         </p>
      *         </li>
      *         <li>
@@ -1359,16 +1398,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly after OnProcessTerminate() was
-     *         sent within the time expected. Check your game session log to see why termination took longer than
-     *         expected.
+     *         SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly within the time expected after
+     *         <code>OnProcessTerminate()</code> was sent. Check your game session log to see why termination took
+     *         longer than expected.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         SERVER_PROCESS_PROCESS_EXIT_TIMEOUT -- The server process did not exit cleanly within the time expected
-     *         after calling ProcessEnding(). Check your game session log to see why termination took longer than
-     *         expected.
+     *         (30 seconds) after calling <code>ProcessEnding()</code>. Check your game session log to see why
+     *         termination took longer than expected.
      *         </p>
      *         </li>
      *         </ul>
@@ -1379,7 +1418,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         GAME_SESSION_ACTIVATION_TIMEOUT -- GameSession failed to activate within the expected time. Check your
-     *         game session log to see why ActivateGameSession() took longer to complete than expected.
+     *         game session log to see why <code>ActivateGameSession()</code> took longer to complete than expected.
      *         </p>
      *         </li>
      *         </ul>
@@ -1438,21 +1477,21 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>. GameLift
-     * has successfully downloaded the build and is now validating the build files.
+     * FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>. Amazon
+     * GameLift has successfully downloaded the build and is now validating the build files.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>. GameLift has
-     * successfully verified the build files and is now running the installation scripts.
+     * FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>. Amazon
+     * GameLift has successfully verified the build files and is now running the installation scripts.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>. GameLift is
-     * trying to launch an instance and test the connectivity between the build and the GameLift Service via the Server
-     * SDK.
+     * FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>. Amazon
+     * GameLift is trying to launch an instance and test the connectivity between the build and the Amazon GameLift
+     * Service via the Server SDK.
      * </p>
      * </li>
      * <li>
@@ -1497,10 +1536,10 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now verifying
      * that the game server launch paths, which are specified in the fleet's runtime configuration, exist. If any listed
-     * launch path exists, GameLift tries to launch a game server process and waits for the process to report ready.
-     * Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the
-     * launch paths in the runtime configuration and indicate whether each is found. Access the logs by using the URL in
-     * <i>PreSignedLogUrl</i>.
+     * launch path exists, Amazon GameLift tries to launch a game server process and waits for the process to report
+     * ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list
+     * the launch paths in the runtime configuration and indicate whether each is found. Access the logs by using the
+     * URL in <i>PreSignedLogUrl</i>.
      * </p>
      * </li>
      * <li>
@@ -1549,16 +1588,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an GameLift
-     * fleet and a VPC in your Amazon Web Services account.
+     * FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an Amazon
+     * GameLift fleet and a VPC in your Amazon Web Services account.
      * </p>
      * </li>
      * <li>
      * <p>
      * FLEET_VPC_PEERING_FAILED -- A requested VPC peering connection has failed. Event details and status information
-     * (see <a>DescribeVpcPeeringConnections</a>) provide additional detail. A common reason for peering failure is that
-     * the two VPCs have overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR block for the VPC
-     * in your Amazon Web Services account. For more information on VPC peering failures, see <a
+     * provide additional detail. A common reason for peering failure is that the two VPCs have overlapping CIDR blocks
+     * of IPv4 addresses. To resolve this, change the CIDR block for the VPC in your Amazon Web Services account. For
+     * more information on VPC peering failures, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html"
      * >https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      * </p>
@@ -1578,9 +1617,15 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * INSTANCE_RECYCLED -- A spot instance was determined to have a high risk of interruption and is scheduled to be
+     * recycled once it has no active game sessions.
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * <b>Spot process events:</b>
+     * <b>Server process events:</b>
      * </p>
      * <ul>
      * <li>
@@ -1591,20 +1636,21 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call InitSDK() within the time expected.
-     * Check your game session log to see why InitSDK() was not called in time.
+     * SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call <code>InitSDK()</code> within the
+     * time expected (5 minutes). Check your game session log to see why <code>InitSDK()</code> was not called in time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call ProcessReady() within the time expected
-     * after calling InitSDK(). Check your game session log to see why ProcessReady() was not called in time.
+     * SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call <code>ProcessReady()</code> within the
+     * time expected (5 minutes) after calling <code>InitSDK()</code>. Check your game session log to see why
+     * <code>ProcessReady()</code> was not called in time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SERVER_PROCESS_CRASHED -- The server process exited without calling ProcessEnding(). Check your game session log
-     * to see why ProcessEnding() was not called.
+     * SERVER_PROCESS_CRASHED -- The server process exited without calling <code>ProcessEnding()</code>. Check your game
+     * session log to see why <code>ProcessEnding()</code> was not called.
      * </p>
      * </li>
      * <li>
@@ -1616,14 +1662,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly after OnProcessTerminate() was sent
-     * within the time expected. Check your game session log to see why termination took longer than expected.
+     * SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly within the time expected after
+     * <code>OnProcessTerminate()</code> was sent. Check your game session log to see why termination took longer than
+     * expected.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SERVER_PROCESS_PROCESS_EXIT_TIMEOUT -- The server process did not exit cleanly within the time expected after
-     * calling ProcessEnding(). Check your game session log to see why termination took longer than expected.
+     * SERVER_PROCESS_PROCESS_EXIT_TIMEOUT -- The server process did not exit cleanly within the time expected (30
+     * seconds) after calling <code>ProcessEnding()</code>. Check your game session log to see why termination took
+     * longer than expected.
      * </p>
      * </li>
      * </ul>
@@ -1634,7 +1682,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * GAME_SESSION_ACTIVATION_TIMEOUT -- GameSession failed to activate within the expected time. Check your game
-     * session log to see why ActivateGameSession() took longer to complete than expected.
+     * session log to see why <code>ActivateGameSession()</code> took longer to complete than expected.
      * </p>
      * </li>
      * </ul>
@@ -1687,20 +1735,20 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>.
-     *        GameLift has successfully downloaded the build and is now validating the build files.
+     *        Amazon GameLift has successfully downloaded the build and is now validating the build files.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>.
+     *        FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>. Amazon
      *        GameLift has successfully verified the build files and is now running the installation scripts.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>.
-     *        GameLift is trying to launch an instance and test the connectivity between the build and the GameLift
-     *        Service via the Server SDK.
+     *        Amazon GameLift is trying to launch an instance and test the connectivity between the build and the Amazon
+     *        GameLift Service via the Server SDK.
      *        </p>
      *        </li>
      *        <li>
@@ -1745,10 +1793,10 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now
      *        verifying that the game server launch paths, which are specified in the fleet's runtime configuration,
-     *        exist. If any listed launch path exists, GameLift tries to launch a game server process and waits for the
-     *        process to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status.
-     *        Logs for this stage list the launch paths in the runtime configuration and indicate whether each is found.
-     *        Access the logs by using the URL in <i>PreSignedLogUrl</i>.
+     *        exist. If any listed launch path exists, Amazon GameLift tries to launch a game server process and waits
+     *        for the process to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code>
+     *        status. Logs for this stage list the launch paths in the runtime configuration and indicate whether each
+     *        is found. Access the logs by using the URL in <i>PreSignedLogUrl</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -1799,17 +1847,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an
+     *        FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an Amazon
      *        GameLift fleet and a VPC in your Amazon Web Services account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        FLEET_VPC_PEERING_FAILED -- A requested VPC peering connection has failed. Event details and status
-     *        information (see <a>DescribeVpcPeeringConnections</a>) provide additional detail. A common reason for
-     *        peering failure is that the two VPCs have overlapping CIDR blocks of IPv4 addresses. To resolve this,
-     *        change the CIDR block for the VPC in your Amazon Web Services account. For more information on VPC peering
-     *        failures, see <a
+     *        information provide additional detail. A common reason for peering failure is that the two VPCs have
+     *        overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR block for the VPC in your
+     *        Amazon Web Services account. For more information on VPC peering failures, see <a
      *        href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html"
      *        >https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      *        </p>
@@ -1829,9 +1876,15 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        INSTANCE_RECYCLED -- A spot instance was determined to have a high risk of interruption and is scheduled
+     *        to be recycled once it has no active game sessions.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
-     *        <b>Spot process events:</b>
+     *        <b>Server process events:</b>
      *        </p>
      *        <ul>
      *        <li>
@@ -1842,21 +1895,22 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call InitSDK() within the time
-     *        expected. Check your game session log to see why InitSDK() was not called in time.
+     *        SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call <code>InitSDK()</code> within
+     *        the time expected (5 minutes). Check your game session log to see why <code>InitSDK()</code> was not
+     *        called in time.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call ProcessReady() within the time
-     *        expected after calling InitSDK(). Check your game session log to see why ProcessReady() was not called in
-     *        time.
+     *        SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call <code>ProcessReady()</code> within
+     *        the time expected (5 minutes) after calling <code>InitSDK()</code>. Check your game session log to see why
+     *        <code>ProcessReady()</code> was not called in time.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SERVER_PROCESS_CRASHED -- The server process exited without calling ProcessEnding(). Check your game
-     *        session log to see why ProcessEnding() was not called.
+     *        SERVER_PROCESS_CRASHED -- The server process exited without calling <code>ProcessEnding()</code>. Check
+     *        your game session log to see why <code>ProcessEnding()</code> was not called.
      *        </p>
      *        </li>
      *        <li>
@@ -1868,16 +1922,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly after OnProcessTerminate() was
-     *        sent within the time expected. Check your game session log to see why termination took longer than
-     *        expected.
+     *        SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly within the time expected after
+     *        <code>OnProcessTerminate()</code> was sent. Check your game session log to see why termination took longer
+     *        than expected.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        SERVER_PROCESS_PROCESS_EXIT_TIMEOUT -- The server process did not exit cleanly within the time expected
-     *        after calling ProcessEnding(). Check your game session log to see why termination took longer than
-     *        expected.
+     *        (30 seconds) after calling <code>ProcessEnding()</code>. Check your game session log to see why
+     *        termination took longer than expected.
      *        </p>
      *        </li>
      *        </ul>
@@ -1888,7 +1942,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        GAME_SESSION_ACTIVATION_TIMEOUT -- GameSession failed to activate within the expected time. Check your
-     *        game session log to see why ActivateGameSession() took longer to complete than expected.
+     *        game session log to see why <code>ActivateGameSession()</code> took longer to complete than expected.
      *        </p>
      *        </li>
      *        </ul>
@@ -1949,21 +2003,21 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>. GameLift
-     * has successfully downloaded the build and is now validating the build files.
+     * FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>. Amazon
+     * GameLift has successfully downloaded the build and is now validating the build files.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>. GameLift has
-     * successfully verified the build files and is now running the installation scripts.
+     * FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>. Amazon
+     * GameLift has successfully verified the build files and is now running the installation scripts.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>. GameLift is
-     * trying to launch an instance and test the connectivity between the build and the GameLift Service via the Server
-     * SDK.
+     * FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>. Amazon
+     * GameLift is trying to launch an instance and test the connectivity between the build and the Amazon GameLift
+     * Service via the Server SDK.
      * </p>
      * </li>
      * <li>
@@ -2008,10 +2062,10 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now verifying
      * that the game server launch paths, which are specified in the fleet's runtime configuration, exist. If any listed
-     * launch path exists, GameLift tries to launch a game server process and waits for the process to report ready.
-     * Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the
-     * launch paths in the runtime configuration and indicate whether each is found. Access the logs by using the URL in
-     * <i>PreSignedLogUrl</i>.
+     * launch path exists, Amazon GameLift tries to launch a game server process and waits for the process to report
+     * ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list
+     * the launch paths in the runtime configuration and indicate whether each is found. Access the logs by using the
+     * URL in <i>PreSignedLogUrl</i>.
      * </p>
      * </li>
      * <li>
@@ -2060,16 +2114,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an GameLift
-     * fleet and a VPC in your Amazon Web Services account.
+     * FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an Amazon
+     * GameLift fleet and a VPC in your Amazon Web Services account.
      * </p>
      * </li>
      * <li>
      * <p>
      * FLEET_VPC_PEERING_FAILED -- A requested VPC peering connection has failed. Event details and status information
-     * (see <a>DescribeVpcPeeringConnections</a>) provide additional detail. A common reason for peering failure is that
-     * the two VPCs have overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR block for the VPC
-     * in your Amazon Web Services account. For more information on VPC peering failures, see <a
+     * provide additional detail. A common reason for peering failure is that the two VPCs have overlapping CIDR blocks
+     * of IPv4 addresses. To resolve this, change the CIDR block for the VPC in your Amazon Web Services account. For
+     * more information on VPC peering failures, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html"
      * >https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      * </p>
@@ -2089,9 +2143,15 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * INSTANCE_RECYCLED -- A spot instance was determined to have a high risk of interruption and is scheduled to be
+     * recycled once it has no active game sessions.
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * <b>Spot process events:</b>
+     * <b>Server process events:</b>
      * </p>
      * <ul>
      * <li>
@@ -2102,20 +2162,21 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call InitSDK() within the time expected.
-     * Check your game session log to see why InitSDK() was not called in time.
+     * SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call <code>InitSDK()</code> within the
+     * time expected (5 minutes). Check your game session log to see why <code>InitSDK()</code> was not called in time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call ProcessReady() within the time expected
-     * after calling InitSDK(). Check your game session log to see why ProcessReady() was not called in time.
+     * SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call <code>ProcessReady()</code> within the
+     * time expected (5 minutes) after calling <code>InitSDK()</code>. Check your game session log to see why
+     * <code>ProcessReady()</code> was not called in time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SERVER_PROCESS_CRASHED -- The server process exited without calling ProcessEnding(). Check your game session log
-     * to see why ProcessEnding() was not called.
+     * SERVER_PROCESS_CRASHED -- The server process exited without calling <code>ProcessEnding()</code>. Check your game
+     * session log to see why <code>ProcessEnding()</code> was not called.
      * </p>
      * </li>
      * <li>
@@ -2127,14 +2188,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly after OnProcessTerminate() was sent
-     * within the time expected. Check your game session log to see why termination took longer than expected.
+     * SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly within the time expected after
+     * <code>OnProcessTerminate()</code> was sent. Check your game session log to see why termination took longer than
+     * expected.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SERVER_PROCESS_PROCESS_EXIT_TIMEOUT -- The server process did not exit cleanly within the time expected after
-     * calling ProcessEnding(). Check your game session log to see why termination took longer than expected.
+     * SERVER_PROCESS_PROCESS_EXIT_TIMEOUT -- The server process did not exit cleanly within the time expected (30
+     * seconds) after calling <code>ProcessEnding()</code>. Check your game session log to see why termination took
+     * longer than expected.
      * </p>
      * </li>
      * </ul>
@@ -2145,7 +2208,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * GAME_SESSION_ACTIVATION_TIMEOUT -- GameSession failed to activate within the expected time. Check your game
-     * session log to see why ActivateGameSession() took longer to complete than expected.
+     * session log to see why <code>ActivateGameSession()</code> took longer to complete than expected.
      * </p>
      * </li>
      * </ul>
@@ -2198,20 +2261,20 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>.
-     *        GameLift has successfully downloaded the build and is now validating the build files.
+     *        Amazon GameLift has successfully downloaded the build and is now validating the build files.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>.
+     *        FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>. Amazon
      *        GameLift has successfully verified the build files and is now running the installation scripts.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>.
-     *        GameLift is trying to launch an instance and test the connectivity between the build and the GameLift
-     *        Service via the Server SDK.
+     *        Amazon GameLift is trying to launch an instance and test the connectivity between the build and the Amazon
+     *        GameLift Service via the Server SDK.
      *        </p>
      *        </li>
      *        <li>
@@ -2256,10 +2319,10 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now
      *        verifying that the game server launch paths, which are specified in the fleet's runtime configuration,
-     *        exist. If any listed launch path exists, GameLift tries to launch a game server process and waits for the
-     *        process to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status.
-     *        Logs for this stage list the launch paths in the runtime configuration and indicate whether each is found.
-     *        Access the logs by using the URL in <i>PreSignedLogUrl</i>.
+     *        exist. If any listed launch path exists, Amazon GameLift tries to launch a game server process and waits
+     *        for the process to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code>
+     *        status. Logs for this stage list the launch paths in the runtime configuration and indicate whether each
+     *        is found. Access the logs by using the URL in <i>PreSignedLogUrl</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -2310,17 +2373,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an
+     *        FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an Amazon
      *        GameLift fleet and a VPC in your Amazon Web Services account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        FLEET_VPC_PEERING_FAILED -- A requested VPC peering connection has failed. Event details and status
-     *        information (see <a>DescribeVpcPeeringConnections</a>) provide additional detail. A common reason for
-     *        peering failure is that the two VPCs have overlapping CIDR blocks of IPv4 addresses. To resolve this,
-     *        change the CIDR block for the VPC in your Amazon Web Services account. For more information on VPC peering
-     *        failures, see <a
+     *        information provide additional detail. A common reason for peering failure is that the two VPCs have
+     *        overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR block for the VPC in your
+     *        Amazon Web Services account. For more information on VPC peering failures, see <a
      *        href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html"
      *        >https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      *        </p>
@@ -2340,9 +2402,15 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        INSTANCE_RECYCLED -- A spot instance was determined to have a high risk of interruption and is scheduled
+     *        to be recycled once it has no active game sessions.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
-     *        <b>Spot process events:</b>
+     *        <b>Server process events:</b>
      *        </p>
      *        <ul>
      *        <li>
@@ -2353,21 +2421,22 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call InitSDK() within the time
-     *        expected. Check your game session log to see why InitSDK() was not called in time.
+     *        SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call <code>InitSDK()</code> within
+     *        the time expected (5 minutes). Check your game session log to see why <code>InitSDK()</code> was not
+     *        called in time.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call ProcessReady() within the time
-     *        expected after calling InitSDK(). Check your game session log to see why ProcessReady() was not called in
-     *        time.
+     *        SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call <code>ProcessReady()</code> within
+     *        the time expected (5 minutes) after calling <code>InitSDK()</code>. Check your game session log to see why
+     *        <code>ProcessReady()</code> was not called in time.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SERVER_PROCESS_CRASHED -- The server process exited without calling ProcessEnding(). Check your game
-     *        session log to see why ProcessEnding() was not called.
+     *        SERVER_PROCESS_CRASHED -- The server process exited without calling <code>ProcessEnding()</code>. Check
+     *        your game session log to see why <code>ProcessEnding()</code> was not called.
      *        </p>
      *        </li>
      *        <li>
@@ -2379,16 +2448,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly after OnProcessTerminate() was
-     *        sent within the time expected. Check your game session log to see why termination took longer than
-     *        expected.
+     *        SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly within the time expected after
+     *        <code>OnProcessTerminate()</code> was sent. Check your game session log to see why termination took longer
+     *        than expected.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        SERVER_PROCESS_PROCESS_EXIT_TIMEOUT -- The server process did not exit cleanly within the time expected
-     *        after calling ProcessEnding(). Check your game session log to see why termination took longer than
-     *        expected.
+     *        (30 seconds) after calling <code>ProcessEnding()</code>. Check your game session log to see why
+     *        termination took longer than expected.
      *        </p>
      *        </li>
      *        </ul>
@@ -2399,7 +2468,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        GAME_SESSION_ACTIVATION_TIMEOUT -- GameSession failed to activate within the expected time. Check your
-     *        game session log to see why ActivateGameSession() took longer to complete than expected.
+     *        game session log to see why <code>ActivateGameSession()</code> took longer to complete than expected.
      *        </p>
      *        </li>
      *        </ul>
@@ -2458,21 +2527,21 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>. GameLift
-     * has successfully downloaded the build and is now validating the build files.
+     * FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>. Amazon
+     * GameLift has successfully downloaded the build and is now validating the build files.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>. GameLift has
-     * successfully verified the build files and is now running the installation scripts.
+     * FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>. Amazon
+     * GameLift has successfully verified the build files and is now running the installation scripts.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>. GameLift is
-     * trying to launch an instance and test the connectivity between the build and the GameLift Service via the Server
-     * SDK.
+     * FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>. Amazon
+     * GameLift is trying to launch an instance and test the connectivity between the build and the Amazon GameLift
+     * Service via the Server SDK.
      * </p>
      * </li>
      * <li>
@@ -2517,10 +2586,10 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now verifying
      * that the game server launch paths, which are specified in the fleet's runtime configuration, exist. If any listed
-     * launch path exists, GameLift tries to launch a game server process and waits for the process to report ready.
-     * Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the
-     * launch paths in the runtime configuration and indicate whether each is found. Access the logs by using the URL in
-     * <i>PreSignedLogUrl</i>.
+     * launch path exists, Amazon GameLift tries to launch a game server process and waits for the process to report
+     * ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list
+     * the launch paths in the runtime configuration and indicate whether each is found. Access the logs by using the
+     * URL in <i>PreSignedLogUrl</i>.
      * </p>
      * </li>
      * <li>
@@ -2569,16 +2638,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an GameLift
-     * fleet and a VPC in your Amazon Web Services account.
+     * FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an Amazon
+     * GameLift fleet and a VPC in your Amazon Web Services account.
      * </p>
      * </li>
      * <li>
      * <p>
      * FLEET_VPC_PEERING_FAILED -- A requested VPC peering connection has failed. Event details and status information
-     * (see <a>DescribeVpcPeeringConnections</a>) provide additional detail. A common reason for peering failure is that
-     * the two VPCs have overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR block for the VPC
-     * in your Amazon Web Services account. For more information on VPC peering failures, see <a
+     * provide additional detail. A common reason for peering failure is that the two VPCs have overlapping CIDR blocks
+     * of IPv4 addresses. To resolve this, change the CIDR block for the VPC in your Amazon Web Services account. For
+     * more information on VPC peering failures, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html"
      * >https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      * </p>
@@ -2598,9 +2667,15 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * INSTANCE_RECYCLED -- A spot instance was determined to have a high risk of interruption and is scheduled to be
+     * recycled once it has no active game sessions.
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * <b>Spot process events:</b>
+     * <b>Server process events:</b>
      * </p>
      * <ul>
      * <li>
@@ -2611,20 +2686,21 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call InitSDK() within the time expected.
-     * Check your game session log to see why InitSDK() was not called in time.
+     * SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call <code>InitSDK()</code> within the
+     * time expected (5 minutes). Check your game session log to see why <code>InitSDK()</code> was not called in time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call ProcessReady() within the time expected
-     * after calling InitSDK(). Check your game session log to see why ProcessReady() was not called in time.
+     * SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call <code>ProcessReady()</code> within the
+     * time expected (5 minutes) after calling <code>InitSDK()</code>. Check your game session log to see why
+     * <code>ProcessReady()</code> was not called in time.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SERVER_PROCESS_CRASHED -- The server process exited without calling ProcessEnding(). Check your game session log
-     * to see why ProcessEnding() was not called.
+     * SERVER_PROCESS_CRASHED -- The server process exited without calling <code>ProcessEnding()</code>. Check your game
+     * session log to see why <code>ProcessEnding()</code> was not called.
      * </p>
      * </li>
      * <li>
@@ -2636,14 +2712,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly after OnProcessTerminate() was sent
-     * within the time expected. Check your game session log to see why termination took longer than expected.
+     * SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly within the time expected after
+     * <code>OnProcessTerminate()</code> was sent. Check your game session log to see why termination took longer than
+     * expected.
      * </p>
      * </li>
      * <li>
      * <p>
-     * SERVER_PROCESS_PROCESS_EXIT_TIMEOUT -- The server process did not exit cleanly within the time expected after
-     * calling ProcessEnding(). Check your game session log to see why termination took longer than expected.
+     * SERVER_PROCESS_PROCESS_EXIT_TIMEOUT -- The server process did not exit cleanly within the time expected (30
+     * seconds) after calling <code>ProcessEnding()</code>. Check your game session log to see why termination took
+     * longer than expected.
      * </p>
      * </li>
      * </ul>
@@ -2654,7 +2732,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * GAME_SESSION_ACTIVATION_TIMEOUT -- GameSession failed to activate within the expected time. Check your game
-     * session log to see why ActivateGameSession() took longer to complete than expected.
+     * session log to see why <code>ActivateGameSession()</code> took longer to complete than expected.
      * </p>
      * </li>
      * </ul>
@@ -2707,20 +2785,20 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>.
-     *        GameLift has successfully downloaded the build and is now validating the build files.
+     *        Amazon GameLift has successfully downloaded the build and is now validating the build files.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>.
+     *        FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>. Amazon
      *        GameLift has successfully verified the build files and is now running the installation scripts.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>.
-     *        GameLift is trying to launch an instance and test the connectivity between the build and the GameLift
-     *        Service via the Server SDK.
+     *        Amazon GameLift is trying to launch an instance and test the connectivity between the build and the Amazon
+     *        GameLift Service via the Server SDK.
      *        </p>
      *        </li>
      *        <li>
@@ -2765,10 +2843,10 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now
      *        verifying that the game server launch paths, which are specified in the fleet's runtime configuration,
-     *        exist. If any listed launch path exists, GameLift tries to launch a game server process and waits for the
-     *        process to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status.
-     *        Logs for this stage list the launch paths in the runtime configuration and indicate whether each is found.
-     *        Access the logs by using the URL in <i>PreSignedLogUrl</i>.
+     *        exist. If any listed launch path exists, Amazon GameLift tries to launch a game server process and waits
+     *        for the process to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code>
+     *        status. Logs for this stage list the launch paths in the runtime configuration and indicate whether each
+     *        is found. Access the logs by using the URL in <i>PreSignedLogUrl</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -2819,17 +2897,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an
+     *        FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an Amazon
      *        GameLift fleet and a VPC in your Amazon Web Services account.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        FLEET_VPC_PEERING_FAILED -- A requested VPC peering connection has failed. Event details and status
-     *        information (see <a>DescribeVpcPeeringConnections</a>) provide additional detail. A common reason for
-     *        peering failure is that the two VPCs have overlapping CIDR blocks of IPv4 addresses. To resolve this,
-     *        change the CIDR block for the VPC in your Amazon Web Services account. For more information on VPC peering
-     *        failures, see <a
+     *        information provide additional detail. A common reason for peering failure is that the two VPCs have
+     *        overlapping CIDR blocks of IPv4 addresses. To resolve this, change the CIDR block for the VPC in your
+     *        Amazon Web Services account. For more information on VPC peering failures, see <a
      *        href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html"
      *        >https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      *        </p>
@@ -2849,9 +2926,15 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2 with a two-minute notification.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        INSTANCE_RECYCLED -- A spot instance was determined to have a high risk of interruption and is scheduled
+     *        to be recycled once it has no active game sessions.
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
-     *        <b>Spot process events:</b>
+     *        <b>Server process events:</b>
      *        </p>
      *        <ul>
      *        <li>
@@ -2862,21 +2945,22 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call InitSDK() within the time
-     *        expected. Check your game session log to see why InitSDK() was not called in time.
+     *        SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call <code>InitSDK()</code> within
+     *        the time expected (5 minutes). Check your game session log to see why <code>InitSDK()</code> was not
+     *        called in time.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call ProcessReady() within the time
-     *        expected after calling InitSDK(). Check your game session log to see why ProcessReady() was not called in
-     *        time.
+     *        SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call <code>ProcessReady()</code> within
+     *        the time expected (5 minutes) after calling <code>InitSDK()</code>. Check your game session log to see why
+     *        <code>ProcessReady()</code> was not called in time.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SERVER_PROCESS_CRASHED -- The server process exited without calling ProcessEnding(). Check your game
-     *        session log to see why ProcessEnding() was not called.
+     *        SERVER_PROCESS_CRASHED -- The server process exited without calling <code>ProcessEnding()</code>. Check
+     *        your game session log to see why <code>ProcessEnding()</code> was not called.
      *        </p>
      *        </li>
      *        <li>
@@ -2888,16 +2972,16 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly after OnProcessTerminate() was
-     *        sent within the time expected. Check your game session log to see why termination took longer than
-     *        expected.
+     *        SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly within the time expected after
+     *        <code>OnProcessTerminate()</code> was sent. Check your game session log to see why termination took longer
+     *        than expected.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        SERVER_PROCESS_PROCESS_EXIT_TIMEOUT -- The server process did not exit cleanly within the time expected
-     *        after calling ProcessEnding(). Check your game session log to see why termination took longer than
-     *        expected.
+     *        (30 seconds) after calling <code>ProcessEnding()</code>. Check your game session log to see why
+     *        termination took longer than expected.
      *        </p>
      *        </li>
      *        </ul>
@@ -2908,7 +2992,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        GAME_SESSION_ACTIVATION_TIMEOUT -- GameSession failed to activate within the expected time. Check your
-     *        game session log to see why ActivateGameSession() took longer to complete than expected.
+     *        game session log to see why <code>ActivateGameSession()</code> took longer to complete than expected.
      *        </p>
      *        </li>
      *        </ul>
@@ -3036,13 +3120,13 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Location of stored logs with additional detail that is related to the event. This is useful for debugging issues.
-     * The URL is valid for 15 minutes. You can also access fleet creation logs through the GameLift console.
+     * The URL is valid for 15 minutes. You can also access fleet creation logs through the Amazon GameLift console.
      * </p>
      * 
      * @param preSignedLogUrl
      *        Location of stored logs with additional detail that is related to the event. This is useful for debugging
-     *        issues. The URL is valid for 15 minutes. You can also access fleet creation logs through the GameLift
-     *        console.
+     *        issues. The URL is valid for 15 minutes. You can also access fleet creation logs through the Amazon
+     *        GameLift console.
      */
 
     public void setPreSignedLogUrl(String preSignedLogUrl) {
@@ -3052,12 +3136,12 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Location of stored logs with additional detail that is related to the event. This is useful for debugging issues.
-     * The URL is valid for 15 minutes. You can also access fleet creation logs through the GameLift console.
+     * The URL is valid for 15 minutes. You can also access fleet creation logs through the Amazon GameLift console.
      * </p>
      * 
      * @return Location of stored logs with additional detail that is related to the event. This is useful for debugging
-     *         issues. The URL is valid for 15 minutes. You can also access fleet creation logs through the GameLift
-     *         console.
+     *         issues. The URL is valid for 15 minutes. You can also access fleet creation logs through the Amazon
+     *         GameLift console.
      */
 
     public String getPreSignedLogUrl() {
@@ -3067,18 +3151,58 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Location of stored logs with additional detail that is related to the event. This is useful for debugging issues.
-     * The URL is valid for 15 minutes. You can also access fleet creation logs through the GameLift console.
+     * The URL is valid for 15 minutes. You can also access fleet creation logs through the Amazon GameLift console.
      * </p>
      * 
      * @param preSignedLogUrl
      *        Location of stored logs with additional detail that is related to the event. This is useful for debugging
-     *        issues. The URL is valid for 15 minutes. You can also access fleet creation logs through the GameLift
-     *        console.
+     *        issues. The URL is valid for 15 minutes. You can also access fleet creation logs through the Amazon
+     *        GameLift console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Event withPreSignedLogUrl(String preSignedLogUrl) {
         setPreSignedLogUrl(preSignedLogUrl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of times that this event occurred.
+     * </p>
+     * 
+     * @param count
+     *        The number of times that this event occurred.
+     */
+
+    public void setCount(Long count) {
+        this.count = count;
+    }
+
+    /**
+     * <p>
+     * The number of times that this event occurred.
+     * </p>
+     * 
+     * @return The number of times that this event occurred.
+     */
+
+    public Long getCount() {
+        return this.count;
+    }
+
+    /**
+     * <p>
+     * The number of times that this event occurred.
+     * </p>
+     * 
+     * @param count
+     *        The number of times that this event occurred.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Event withCount(Long count) {
+        setCount(count);
         return this;
     }
 
@@ -3105,7 +3229,9 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
         if (getEventTime() != null)
             sb.append("EventTime: ").append(getEventTime()).append(",");
         if (getPreSignedLogUrl() != null)
-            sb.append("PreSignedLogUrl: ").append(getPreSignedLogUrl());
+            sb.append("PreSignedLogUrl: ").append(getPreSignedLogUrl()).append(",");
+        if (getCount() != null)
+            sb.append("Count: ").append(getCount());
         sb.append("}");
         return sb.toString();
     }
@@ -3144,6 +3270,10 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPreSignedLogUrl() != null && other.getPreSignedLogUrl().equals(this.getPreSignedLogUrl()) == false)
             return false;
+        if (other.getCount() == null ^ this.getCount() == null)
+            return false;
+        if (other.getCount() != null && other.getCount().equals(this.getCount()) == false)
+            return false;
         return true;
     }
 
@@ -3158,6 +3288,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
         hashCode = prime * hashCode + ((getEventTime() == null) ? 0 : getEventTime().hashCode());
         hashCode = prime * hashCode + ((getPreSignedLogUrl() == null) ? 0 : getPreSignedLogUrl().hashCode());
+        hashCode = prime * hashCode + ((getCount() == null) ? 0 : getCount().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,8 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * The filter settings used with image replication. Specifying a repository filter to a replication rule provides a
- * method for controlling which repositories in a private registry are replicated. If no repository filter is specified,
- * all images in the repository are replicated.
+ * method for controlling which repositories in a private registry are replicated. If no filters are added, the contents
+ * of all repositories are replicated.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/RepositoryFilter" target="_top">AWS API

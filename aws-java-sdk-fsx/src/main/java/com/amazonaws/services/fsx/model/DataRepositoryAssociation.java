@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,8 +41,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * </ul>
  * <p>
- * Data repository associations are supported only for an Amazon FSx for Lustre file system with the
- * <code>Persistent_2</code> deployment type and for an Amazon File Cache resource.
+ * Data repository associations are supported on Amazon File Cache resources and all FSx for Lustre 2.12 and 2.15 file
+ * systems, excluding <code>scratch_1</code> deployment type.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DataRepositoryAssociation" target="_top">AWS API

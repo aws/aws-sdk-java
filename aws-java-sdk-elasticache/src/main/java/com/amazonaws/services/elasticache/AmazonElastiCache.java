@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -149,6 +149,14 @@ public interface AmazonElastiCache {
      *         The user does not exist or could not be found.
      * @throws UserGroupNotFoundException
      *         The user group was not found or does not exist
+     * @throws ServerlessCacheNotFoundException
+     *         The serverless cache was not found or does not exist.
+     * @throws InvalidServerlessCacheStateException
+     *         The account for these credentials is not currently active.
+     * @throws ServerlessCacheSnapshotNotFoundException
+     *         This serverless cache snapshot could not be found or does not exist. Available for Redis only.
+     * @throws InvalidServerlessCacheSnapshotStateException
+     *         The state of the serverless cache snapshot was not received. Available for Redis only.
      * @throws TagQuotaPerResourceExceededException
      *         The request cannot be processed because it would cause the resource to have more than the allowed number
      *         of tags. The maximum number of tags permitted on a resource is 50.
@@ -247,6 +255,36 @@ public interface AmazonElastiCache {
      *      API Documentation</a>
      */
     ReplicationGroup completeMigration(CompleteMigrationRequest completeMigrationRequest);
+
+    /**
+     * <p>
+     * Creates a copy of an existing serverless cache’s snapshot. Available for Redis only.
+     * </p>
+     * 
+     * @param copyServerlessCacheSnapshotRequest
+     * @return Result of the CopyServerlessCacheSnapshot operation returned by the service.
+     * @throws ServerlessCacheSnapshotAlreadyExistsException
+     *         A serverless cache snapshot with this name already exists. Available for Redis only.
+     * @throws ServerlessCacheSnapshotNotFoundException
+     *         This serverless cache snapshot could not be found or does not exist. Available for Redis only.
+     * @throws ServerlessCacheSnapshotQuotaExceededException
+     *         The number of serverless cache snapshots exceeds the customer snapshot quota. Available for Redis only.
+     * @throws InvalidServerlessCacheSnapshotStateException
+     *         The state of the serverless cache snapshot was not received. Available for Redis only.
+     * @throws ServiceLinkedRoleNotFoundException
+     *         The specified service linked role (SLR) was not found.
+     * @throws TagQuotaPerResourceExceededException
+     *         The request cannot be processed because it would cause the resource to have more than the allowed number
+     *         of tags. The maximum number of tags permitted on a resource is 50.
+     * @throws InvalidParameterValueException
+     *         The value for a parameter is invalid.
+     * @throws InvalidParameterCombinationException
+     *         Two or more incompatible parameters were specified.
+     * @sample AmazonElastiCache.CopyServerlessCacheSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CopyServerlessCacheSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CopyServerlessCacheSnapshotResult copyServerlessCacheSnapshot(CopyServerlessCacheSnapshotRequest copyServerlessCacheSnapshotRequest);
 
     /**
      * <p>
@@ -594,7 +632,7 @@ public interface AmazonElastiCache {
      * associated with a Global datastore.
      * </p>
      * <p>
-     * A Redis (cluster mode disabled) replication group is a collection of clusters, where one of the clusters is a
+     * A Redis (cluster mode disabled) replication group is a collection of nodes, where one of the nodes is a
      * read/write primary and the others are read-only replicas. Writes to the primary are asynchronously propagated to
      * the replicas.
      * </p>
@@ -682,6 +720,72 @@ public interface AmazonElastiCache {
      *      target="_top">AWS API Documentation</a>
      */
     ReplicationGroup createReplicationGroup(CreateReplicationGroupRequest createReplicationGroupRequest);
+
+    /**
+     * <p>
+     * Creates a serverless cache.
+     * </p>
+     * 
+     * @param createServerlessCacheRequest
+     * @return Result of the CreateServerlessCache operation returned by the service.
+     * @throws ServerlessCacheNotFoundException
+     *         The serverless cache was not found or does not exist.
+     * @throws InvalidServerlessCacheStateException
+     *         The account for these credentials is not currently active.
+     * @throws ServerlessCacheAlreadyExistsException
+     *         A serverless cache with this name already exists.
+     * @throws ServerlessCacheQuotaForCustomerExceededException
+     *         The number of serverless caches exceeds the customer quota.
+     * @throws InvalidParameterValueException
+     *         The value for a parameter is invalid.
+     * @throws InvalidParameterCombinationException
+     *         Two or more incompatible parameters were specified.
+     * @throws InvalidCredentialsException
+     *         You must enter valid credentials.
+     * @throws InvalidUserGroupStateException
+     *         The user group is not in an active state.
+     * @throws UserGroupNotFoundException
+     *         The user group was not found or does not exist
+     * @throws TagQuotaPerResourceExceededException
+     *         The request cannot be processed because it would cause the resource to have more than the allowed number
+     *         of tags. The maximum number of tags permitted on a resource is 50.
+     * @throws ServiceLinkedRoleNotFoundException
+     *         The specified service linked role (SLR) was not found.
+     * @sample AmazonElastiCache.CreateServerlessCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateServerlessCache"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateServerlessCacheResult createServerlessCache(CreateServerlessCacheRequest createServerlessCacheRequest);
+
+    /**
+     * <p>
+     * This API creates a copy of an entire ServerlessCache at a specific moment in time. Available for Redis only.
+     * </p>
+     * 
+     * @param createServerlessCacheSnapshotRequest
+     * @return Result of the CreateServerlessCacheSnapshot operation returned by the service.
+     * @throws ServerlessCacheSnapshotAlreadyExistsException
+     *         A serverless cache snapshot with this name already exists. Available for Redis only.
+     * @throws ServerlessCacheNotFoundException
+     *         The serverless cache was not found or does not exist.
+     * @throws InvalidServerlessCacheStateException
+     *         The account for these credentials is not currently active.
+     * @throws ServerlessCacheSnapshotQuotaExceededException
+     *         The number of serverless cache snapshots exceeds the customer snapshot quota. Available for Redis only.
+     * @throws ServiceLinkedRoleNotFoundException
+     *         The specified service linked role (SLR) was not found.
+     * @throws TagQuotaPerResourceExceededException
+     *         The request cannot be processed because it would cause the resource to have more than the allowed number
+     *         of tags. The maximum number of tags permitted on a resource is 50.
+     * @throws InvalidParameterValueException
+     *         The value for a parameter is invalid.
+     * @throws InvalidParameterCombinationException
+     *         Two or more incompatible parameters were specified.
+     * @sample AmazonElastiCache.CreateServerlessCacheSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/CreateServerlessCacheSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateServerlessCacheSnapshotResult createServerlessCacheSnapshot(CreateServerlessCacheSnapshotRequest createServerlessCacheSnapshotRequest);
 
     /**
      * <p>
@@ -1121,6 +1225,54 @@ public interface AmazonElastiCache {
 
     /**
      * <p>
+     * Deletes a specified existing serverless cache.
+     * </p>
+     * 
+     * @param deleteServerlessCacheRequest
+     * @return Result of the DeleteServerlessCache operation returned by the service.
+     * @throws ServerlessCacheNotFoundException
+     *         The serverless cache was not found or does not exist.
+     * @throws InvalidServerlessCacheStateException
+     *         The account for these credentials is not currently active.
+     * @throws ServerlessCacheSnapshotAlreadyExistsException
+     *         A serverless cache snapshot with this name already exists. Available for Redis only.
+     * @throws InvalidParameterValueException
+     *         The value for a parameter is invalid.
+     * @throws InvalidParameterCombinationException
+     *         Two or more incompatible parameters were specified.
+     * @throws InvalidCredentialsException
+     *         You must enter valid credentials.
+     * @throws ServiceLinkedRoleNotFoundException
+     *         The specified service linked role (SLR) was not found.
+     * @sample AmazonElastiCache.DeleteServerlessCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteServerlessCache"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteServerlessCacheResult deleteServerlessCache(DeleteServerlessCacheRequest deleteServerlessCacheRequest);
+
+    /**
+     * <p>
+     * Deletes an existing serverless cache snapshot. Available for Redis only.
+     * </p>
+     * 
+     * @param deleteServerlessCacheSnapshotRequest
+     * @return Result of the DeleteServerlessCacheSnapshot operation returned by the service.
+     * @throws ServiceLinkedRoleNotFoundException
+     *         The specified service linked role (SLR) was not found.
+     * @throws ServerlessCacheSnapshotNotFoundException
+     *         This serverless cache snapshot could not be found or does not exist. Available for Redis only.
+     * @throws InvalidServerlessCacheSnapshotStateException
+     *         The state of the serverless cache snapshot was not received. Available for Redis only.
+     * @throws InvalidParameterValueException
+     *         The value for a parameter is invalid.
+     * @sample AmazonElastiCache.DeleteServerlessCacheSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DeleteServerlessCacheSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteServerlessCacheSnapshotResult deleteServerlessCacheSnapshot(DeleteServerlessCacheSnapshotRequest deleteServerlessCacheSnapshotRequest);
+
+    /**
+     * <p>
      * Deletes an existing snapshot. When you receive a successful response from this operation, ElastiCache immediately
      * begins deleting the snapshot; you cannot cancel or revert this operation.
      * </p>
@@ -1527,6 +1679,49 @@ public interface AmazonElastiCache {
 
     /**
      * <p>
+     * Returns information about serverless cache snapshots. By default, this API lists all of the customer’s serverless
+     * cache snapshots. It can also describe a single serverless cache snapshot, or the snapshots associated with a
+     * particular serverless cache. Available for Redis only.
+     * </p>
+     * 
+     * @param describeServerlessCacheSnapshotsRequest
+     * @return Result of the DescribeServerlessCacheSnapshots operation returned by the service.
+     * @throws ServerlessCacheNotFoundException
+     *         The serverless cache was not found or does not exist.
+     * @throws ServerlessCacheSnapshotNotFoundException
+     *         This serverless cache snapshot could not be found or does not exist. Available for Redis only.
+     * @throws InvalidParameterValueException
+     *         The value for a parameter is invalid.
+     * @throws InvalidParameterCombinationException
+     *         Two or more incompatible parameters were specified.
+     * @sample AmazonElastiCache.DescribeServerlessCacheSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeServerlessCacheSnapshots"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeServerlessCacheSnapshotsResult describeServerlessCacheSnapshots(DescribeServerlessCacheSnapshotsRequest describeServerlessCacheSnapshotsRequest);
+
+    /**
+     * <p>
+     * Returns information about a specific serverless cache. If no identifier is specified, then the API returns
+     * information on all the serverless caches belonging to this Amazon Web Services account.
+     * </p>
+     * 
+     * @param describeServerlessCachesRequest
+     * @return Result of the DescribeServerlessCaches operation returned by the service.
+     * @throws ServerlessCacheNotFoundException
+     *         The serverless cache was not found or does not exist.
+     * @throws InvalidParameterValueException
+     *         The value for a parameter is invalid.
+     * @throws InvalidParameterCombinationException
+     *         Two or more incompatible parameters were specified.
+     * @sample AmazonElastiCache.DescribeServerlessCaches
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeServerlessCaches"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeServerlessCachesResult describeServerlessCaches(DescribeServerlessCachesRequest describeServerlessCachesRequest);
+
+    /**
+     * <p>
      * Returns details of the service updates
      * </p>
      * 
@@ -1660,8 +1855,29 @@ public interface AmazonElastiCache {
 
     /**
      * <p>
-     * Used to failover the primary region to a selected secondary region. The selected secondary region will become
-     * primary, and all other clusters will become secondary.
+     * Provides the functionality to export the serverless cache snapshot data to Amazon S3. Available for Redis only.
+     * </p>
+     * 
+     * @param exportServerlessCacheSnapshotRequest
+     * @return Result of the ExportServerlessCacheSnapshot operation returned by the service.
+     * @throws ServerlessCacheSnapshotNotFoundException
+     *         This serverless cache snapshot could not be found or does not exist. Available for Redis only.
+     * @throws InvalidServerlessCacheSnapshotStateException
+     *         The state of the serverless cache snapshot was not received. Available for Redis only.
+     * @throws ServiceLinkedRoleNotFoundException
+     *         The specified service linked role (SLR) was not found.
+     * @throws InvalidParameterValueException
+     *         The value for a parameter is invalid.
+     * @sample AmazonElastiCache.ExportServerlessCacheSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ExportServerlessCacheSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ExportServerlessCacheSnapshotResult exportServerlessCacheSnapshot(ExportServerlessCacheSnapshotRequest exportServerlessCacheSnapshotRequest);
+
+    /**
+     * <p>
+     * Used to failover the primary region to a secondary region. The secondary region will become primary, and all
+     * other clusters will become secondary.
      * </p>
      * 
      * @param failoverGlobalReplicationGroupRequest
@@ -1817,6 +2033,14 @@ public interface AmazonElastiCache {
      *         The user does not exist or could not be found.
      * @throws UserGroupNotFoundException
      *         The user group was not found or does not exist
+     * @throws ServerlessCacheNotFoundException
+     *         The serverless cache was not found or does not exist.
+     * @throws InvalidServerlessCacheStateException
+     *         The account for these credentials is not currently active.
+     * @throws ServerlessCacheSnapshotNotFoundException
+     *         This serverless cache snapshot could not be found or does not exist. Available for Redis only.
+     * @throws InvalidServerlessCacheSnapshotStateException
+     *         The state of the serverless cache snapshot was not received. Available for Redis only.
      * @throws InvalidARNException
      *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
      * @sample AmazonElastiCache.ListTagsForResource
@@ -1939,7 +2163,7 @@ public interface AmazonElastiCache {
 
     /**
      * <p>
-     * Modifies the settings for a replication group.
+     * Modifies the settings for a replication group. This is limited to Redis 7 and newer.
      * </p>
      * <ul>
      * <li>
@@ -2046,6 +2270,35 @@ public interface AmazonElastiCache {
      *      target="_top">AWS API Documentation</a>
      */
     ReplicationGroup modifyReplicationGroupShardConfiguration(ModifyReplicationGroupShardConfigurationRequest modifyReplicationGroupShardConfigurationRequest);
+
+    /**
+     * <p>
+     * This API modifies the attributes of a serverless cache.
+     * </p>
+     * 
+     * @param modifyServerlessCacheRequest
+     * @return Result of the ModifyServerlessCache operation returned by the service.
+     * @throws ServerlessCacheNotFoundException
+     *         The serverless cache was not found or does not exist.
+     * @throws InvalidServerlessCacheStateException
+     *         The account for these credentials is not currently active.
+     * @throws InvalidParameterValueException
+     *         The value for a parameter is invalid.
+     * @throws InvalidParameterCombinationException
+     *         Two or more incompatible parameters were specified.
+     * @throws InvalidCredentialsException
+     *         You must enter valid credentials.
+     * @throws InvalidUserGroupStateException
+     *         The user group is not in an active state.
+     * @throws UserGroupNotFoundException
+     *         The user group was not found or does not exist
+     * @throws ServiceLinkedRoleNotFoundException
+     *         The specified service linked role (SLR) was not found.
+     * @sample AmazonElastiCache.ModifyServerlessCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/ModifyServerlessCache"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ModifyServerlessCacheResult modifyServerlessCache(ModifyServerlessCacheRequest modifyServerlessCacheRequest);
 
     /**
      * <p>
@@ -2220,6 +2473,14 @@ public interface AmazonElastiCache {
      *         The user does not exist or could not be found.
      * @throws UserGroupNotFoundException
      *         The user group was not found or does not exist
+     * @throws ServerlessCacheNotFoundException
+     *         The serverless cache was not found or does not exist.
+     * @throws InvalidServerlessCacheStateException
+     *         The account for these credentials is not currently active.
+     * @throws ServerlessCacheSnapshotNotFoundException
+     *         This serverless cache snapshot could not be found or does not exist. Available for Redis only.
+     * @throws InvalidServerlessCacheSnapshotStateException
+     *         The state of the serverless cache snapshot was not received. Available for Redis only.
      * @throws InvalidARNException
      *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
      * @throws TagNotFoundException
@@ -2422,6 +2683,27 @@ public interface AmazonElastiCache {
      *      Documentation</a>
      */
     ReplicationGroup testFailover(TestFailoverRequest testFailoverRequest);
+
+    /**
+     * <p>
+     * Async API to test connection between source and target replication group.
+     * </p>
+     * 
+     * @param testMigrationRequest
+     * @return Result of the TestMigration operation returned by the service.
+     * @throws ReplicationGroupNotFoundException
+     *         The specified replication group does not exist.
+     * @throws InvalidReplicationGroupStateException
+     *         The requested replication group is not in the <code>available</code> state.
+     * @throws ReplicationGroupAlreadyUnderMigrationException
+     *         The targeted replication group is not available.
+     * @throws InvalidParameterValueException
+     *         The value for a parameter is invalid.
+     * @sample AmazonElastiCache.TestMigration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TestMigration" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ReplicationGroup testMigration(TestMigrationRequest testMigrationRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

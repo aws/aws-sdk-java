@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -80,6 +80,22 @@ public class GetConfigurationProfileResult extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String type;
+    /**
+     * <p>
+     * The Amazon Resource Name of the Key Management Service key to encrypt new configuration data versions in the
+     * AppConfig hosted configuration store. This attribute is only used for <code>hosted</code> configuration types. To
+     * encrypt data managed in other configuration stores, see the documentation for how to specify an KMS key for that
+     * particular service.
+     * </p>
+     */
+    private String kmsKeyArn;
+    /**
+     * <p>
+     * The Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was created
+     * or updated.
+     * </p>
+     */
+    private String kmsKeyIdentifier;
 
     /**
      * <p>
@@ -486,6 +502,110 @@ public class GetConfigurationProfileResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name of the Key Management Service key to encrypt new configuration data versions in the
+     * AppConfig hosted configuration store. This attribute is only used for <code>hosted</code> configuration types. To
+     * encrypt data managed in other configuration stores, see the documentation for how to specify an KMS key for that
+     * particular service.
+     * </p>
+     * 
+     * @param kmsKeyArn
+     *        The Amazon Resource Name of the Key Management Service key to encrypt new configuration data versions in
+     *        the AppConfig hosted configuration store. This attribute is only used for <code>hosted</code>
+     *        configuration types. To encrypt data managed in other configuration stores, see the documentation for how
+     *        to specify an KMS key for that particular service.
+     */
+
+    public void setKmsKeyArn(String kmsKeyArn) {
+        this.kmsKeyArn = kmsKeyArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name of the Key Management Service key to encrypt new configuration data versions in the
+     * AppConfig hosted configuration store. This attribute is only used for <code>hosted</code> configuration types. To
+     * encrypt data managed in other configuration stores, see the documentation for how to specify an KMS key for that
+     * particular service.
+     * </p>
+     * 
+     * @return The Amazon Resource Name of the Key Management Service key to encrypt new configuration data versions in
+     *         the AppConfig hosted configuration store. This attribute is only used for <code>hosted</code>
+     *         configuration types. To encrypt data managed in other configuration stores, see the documentation for how
+     *         to specify an KMS key for that particular service.
+     */
+
+    public String getKmsKeyArn() {
+        return this.kmsKeyArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name of the Key Management Service key to encrypt new configuration data versions in the
+     * AppConfig hosted configuration store. This attribute is only used for <code>hosted</code> configuration types. To
+     * encrypt data managed in other configuration stores, see the documentation for how to specify an KMS key for that
+     * particular service.
+     * </p>
+     * 
+     * @param kmsKeyArn
+     *        The Amazon Resource Name of the Key Management Service key to encrypt new configuration data versions in
+     *        the AppConfig hosted configuration store. This attribute is only used for <code>hosted</code>
+     *        configuration types. To encrypt data managed in other configuration stores, see the documentation for how
+     *        to specify an KMS key for that particular service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetConfigurationProfileResult withKmsKeyArn(String kmsKeyArn) {
+        setKmsKeyArn(kmsKeyArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was created
+     * or updated.
+     * </p>
+     * 
+     * @param kmsKeyIdentifier
+     *        The Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was
+     *        created or updated.
+     */
+
+    public void setKmsKeyIdentifier(String kmsKeyIdentifier) {
+        this.kmsKeyIdentifier = kmsKeyIdentifier;
+    }
+
+    /**
+     * <p>
+     * The Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was created
+     * or updated.
+     * </p>
+     * 
+     * @return The Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was
+     *         created or updated.
+     */
+
+    public String getKmsKeyIdentifier() {
+        return this.kmsKeyIdentifier;
+    }
+
+    /**
+     * <p>
+     * The Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was created
+     * or updated.
+     * </p>
+     * 
+     * @param kmsKeyIdentifier
+     *        The Key Management Service key identifier (key ID, key alias, or key ARN) provided when the resource was
+     *        created or updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetConfigurationProfileResult withKmsKeyIdentifier(String kmsKeyIdentifier) {
+        setKmsKeyIdentifier(kmsKeyIdentifier);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -512,7 +632,11 @@ public class GetConfigurationProfileResult extends com.amazonaws.AmazonWebServic
         if (getValidators() != null)
             sb.append("Validators: ").append(getValidators()).append(",");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getKmsKeyArn() != null)
+            sb.append("KmsKeyArn: ").append(getKmsKeyArn()).append(",");
+        if (getKmsKeyIdentifier() != null)
+            sb.append("KmsKeyIdentifier: ").append(getKmsKeyIdentifier());
         sb.append("}");
         return sb.toString();
     }
@@ -559,6 +683,14 @@ public class GetConfigurationProfileResult extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getKmsKeyArn() == null ^ this.getKmsKeyArn() == null)
+            return false;
+        if (other.getKmsKeyArn() != null && other.getKmsKeyArn().equals(this.getKmsKeyArn()) == false)
+            return false;
+        if (other.getKmsKeyIdentifier() == null ^ this.getKmsKeyIdentifier() == null)
+            return false;
+        if (other.getKmsKeyIdentifier() != null && other.getKmsKeyIdentifier().equals(this.getKmsKeyIdentifier()) == false)
+            return false;
         return true;
     }
 
@@ -575,6 +707,8 @@ public class GetConfigurationProfileResult extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getRetrievalRoleArn() == null) ? 0 : getRetrievalRoleArn().hashCode());
         hashCode = prime * hashCode + ((getValidators() == null) ? 0 : getValidators().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyArn() == null) ? 0 : getKmsKeyArn().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyIdentifier() == null) ? 0 : getKmsKeyIdentifier().hashCode());
         return hashCode;
     }
 

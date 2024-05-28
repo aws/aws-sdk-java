@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,8 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the private workforce that you want to update. You can find your workforce name by using the
+     * The name of the private workforce that you want to update. You can find your workforce name by using the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListWorkforces.html">ListWorkforces</a>
      * operation.
      * </p>
      */
@@ -59,13 +60,16 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the private workforce that you want to update. You can find your workforce name by using the
+     * The name of the private workforce that you want to update. You can find your workforce name by using the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListWorkforces.html">ListWorkforces</a>
      * operation.
      * </p>
      * 
      * @param workforceName
      *        The name of the private workforce that you want to update. You can find your workforce name by using the
-     *        operation.
+     *        <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListWorkforces.html">ListWorkforces<
+     *        /a> operation.
      */
 
     public void setWorkforceName(String workforceName) {
@@ -74,12 +78,15 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the private workforce that you want to update. You can find your workforce name by using the
+     * The name of the private workforce that you want to update. You can find your workforce name by using the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListWorkforces.html">ListWorkforces</a>
      * operation.
      * </p>
      * 
      * @return The name of the private workforce that you want to update. You can find your workforce name by using the
-     *         operation.
+     *         <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListWorkforces.html">ListWorkforces
+     *         </a> operation.
      */
 
     public String getWorkforceName() {
@@ -88,13 +95,16 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the private workforce that you want to update. You can find your workforce name by using the
+     * The name of the private workforce that you want to update. You can find your workforce name by using the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListWorkforces.html">ListWorkforces</a>
      * operation.
      * </p>
      * 
      * @param workforceName
      *        The name of the private workforce that you want to update. You can find your workforce name by using the
-     *        operation.
+     *        <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListWorkforces.html">ListWorkforces<
+     *        /a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

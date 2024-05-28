@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class FraudsterRegistrationJob implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A timestamp showing the creation time of the fraudster registration job.
+     * A timestamp of when the fraudster registration job was created.
      * </p>
      */
     private java.util.Date createdAt;
@@ -43,13 +43,13 @@ public class FraudsterRegistrationJob implements Serializable, Cloneable, Struct
     private String dataAccessRoleArn;
     /**
      * <p>
-     * The identifier of the domain containing the fraudster registration job.
+     * The identifier of the domain that contains the fraudster registration job.
      * </p>
      */
     private String domainId;
     /**
      * <p>
-     * A timestamp showing when the fraudster registration job ended.
+     * A timestamp of when the fraudster registration job ended.
      * </p>
      */
     private java.util.Date endedAt;
@@ -110,11 +110,11 @@ public class FraudsterRegistrationJob implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A timestamp showing the creation time of the fraudster registration job.
+     * A timestamp of when the fraudster registration job was created.
      * </p>
      * 
      * @param createdAt
-     *        A timestamp showing the creation time of the fraudster registration job.
+     *        A timestamp of when the fraudster registration job was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -123,10 +123,10 @@ public class FraudsterRegistrationJob implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A timestamp showing the creation time of the fraudster registration job.
+     * A timestamp of when the fraudster registration job was created.
      * </p>
      * 
-     * @return A timestamp showing the creation time of the fraudster registration job.
+     * @return A timestamp of when the fraudster registration job was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -135,11 +135,11 @@ public class FraudsterRegistrationJob implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A timestamp showing the creation time of the fraudster registration job.
+     * A timestamp of when the fraudster registration job was created.
      * </p>
      * 
      * @param createdAt
-     *        A timestamp showing the creation time of the fraudster registration job.
+     *        A timestamp of when the fraudster registration job was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -196,11 +196,11 @@ public class FraudsterRegistrationJob implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The identifier of the domain containing the fraudster registration job.
+     * The identifier of the domain that contains the fraudster registration job.
      * </p>
      * 
      * @param domainId
-     *        The identifier of the domain containing the fraudster registration job.
+     *        The identifier of the domain that contains the fraudster registration job.
      */
 
     public void setDomainId(String domainId) {
@@ -209,10 +209,10 @@ public class FraudsterRegistrationJob implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The identifier of the domain containing the fraudster registration job.
+     * The identifier of the domain that contains the fraudster registration job.
      * </p>
      * 
-     * @return The identifier of the domain containing the fraudster registration job.
+     * @return The identifier of the domain that contains the fraudster registration job.
      */
 
     public String getDomainId() {
@@ -221,11 +221,11 @@ public class FraudsterRegistrationJob implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The identifier of the domain containing the fraudster registration job.
+     * The identifier of the domain that contains the fraudster registration job.
      * </p>
      * 
      * @param domainId
-     *        The identifier of the domain containing the fraudster registration job.
+     *        The identifier of the domain that contains the fraudster registration job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -236,11 +236,11 @@ public class FraudsterRegistrationJob implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A timestamp showing when the fraudster registration job ended.
+     * A timestamp of when the fraudster registration job ended.
      * </p>
      * 
      * @param endedAt
-     *        A timestamp showing when the fraudster registration job ended.
+     *        A timestamp of when the fraudster registration job ended.
      */
 
     public void setEndedAt(java.util.Date endedAt) {
@@ -249,10 +249,10 @@ public class FraudsterRegistrationJob implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A timestamp showing when the fraudster registration job ended.
+     * A timestamp of when the fraudster registration job ended.
      * </p>
      * 
-     * @return A timestamp showing when the fraudster registration job ended.
+     * @return A timestamp of when the fraudster registration job ended.
      */
 
     public java.util.Date getEndedAt() {
@@ -261,11 +261,11 @@ public class FraudsterRegistrationJob implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * A timestamp showing when the fraudster registration job ended.
+     * A timestamp of when the fraudster registration job ended.
      * </p>
      * 
      * @param endedAt
-     *        A timestamp showing when the fraudster registration job ended.
+     *        A timestamp of when the fraudster registration job ended.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

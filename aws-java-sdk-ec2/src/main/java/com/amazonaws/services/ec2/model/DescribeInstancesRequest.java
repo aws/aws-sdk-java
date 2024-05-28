@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>block-device-mapping.attach-time</code> - The attach time for an EBS volume mapped to the instance, for
-     * example, <code>2010-09-15T17:15:20.000Z</code>.
+     * example, <code>2022-09-15T17:15:20.000Z</code>.
      * </p>
      * </li>
      * <li>
@@ -78,7 +78,31 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>boot-mode</code> - The boot mode that was specified by the AMI (<code>legacy-bios</code> |
+     * <code>uefi</code> | <code>uefi-preferred</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>capacity-reservation-id</code> - The ID of the Capacity Reservation into which the instance was launched.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>capacity-reservation-specification.capacity-reservation-preference</code> - The instance's Capacity
+     * Reservation preference (<code>open</code> | <code>none</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>capacity-reservation-specification.capacity-reservation-target.capacity-reservation-id</code> - The ID of
+     * the targeted Capacity Reservation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>capacity-reservation-specification.capacity-reservation-target.capacity-reservation-resource-group-arn</code>
+     * - The ARN of the targeted Capacity Reservation group.
      * </p>
      * </li>
      * <li>
@@ -88,17 +112,30 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>current-instance-boot-mode</code> - The boot mode that is used to launch the instance at launch or start (
+     * <code>legacy-bios</code> | <code>uefi</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>dns-name</code> - The public DNS name of the instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>group-id</code> - The ID of the security group for the instance. EC2-Classic only.
+     * <code>ebs-optimized</code> - A Boolean that indicates whether the instance is optimized for Amazon EBS I/O.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>group-name</code> - The name of the security group for the instance. EC2-Classic only.
+     * <code>ena-support</code> - A Boolean that indicates whether the instance is enabled for enhanced networking with
+     * ENA.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>enclave-options.enabled</code> - A Boolean that indicates whether the instance is enabled for Amazon Web
+     * Services Nitro Enclaves.
      * </p>
      * </li>
      * <li>
@@ -125,6 +162,16 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>iam-instance-profile.id</code> - The instance profile associated with the instance. Specified as an ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>iam-instance-profile.name</code> - The instance profile associated with the instance. Specified as an name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>image-id</code> - The ID of the image used to launch the instance.
      * </p>
      * </li>
@@ -135,8 +182,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a Scheduled Instance (
-     * <code>spot</code> | <code>scheduled</code>).
+     * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance, a Scheduled Instance, or a Capacity
+     * Block (<code>spot</code> | <code>scheduled</code> | <code>capacity-block</code>).
      * </p>
      * </li>
      * <li>
@@ -174,6 +221,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>ipv6-address</code> - The IPv6 address of the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>kernel-id</code> - The kernel ID.
      * </p>
      * </li>
@@ -197,20 +249,50 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>maintenance-options.auto-recovery</code> - The current automatic recovery behavior of the instance (
+     * <code>disabled</code> | <code>default</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-options.http-endpoint</code> - The status of access to the HTTP metadata endpoint on your instance
+     * (<code>enabled</code> | <code>disabled</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-options.http-protocol-ipv4</code> - Indicates whether the IPv4 endpoint is enabled (
+     * <code>disabled</code> | <code>enabled</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-options.http-protocol-ipv6</code> - Indicates whether the IPv6 endpoint is enabled (
+     * <code>disabled</code> | <code>enabled</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-options.http-put-response-hop-limit</code> - The HTTP metadata request put response hop limit
+     * (integer, possible values <code>1</code> to <code>64</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>metadata-options.http-tokens</code> - The metadata request authorization state (<code>optional</code> |
      * <code>required</code>)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>metadata-options.http-put-response-hop-limit</code> - The http metadata request put response hop limit
-     * (integer, possible values <code>1</code> to <code>64</code>)
+     * <code>metadata-options.instance-metadata-tags</code> - The status of access to instance tags from the instance
+     * metadata (<code>enabled</code> | <code>disabled</code>)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>metadata-options.http-endpoint</code> - Enable or disable metadata access on http endpoint (
-     * <code>enabled</code> | <code>disabled</code>)
+     * <code>metadata-options.state</code> - The state of the metadata option changes (<code>pending</code> |
+     * <code>applied</code>).
      * </p>
      * </li>
      * <li>
@@ -221,20 +303,22 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.addresses.private-ip-address</code> - The private IPv4 address associated with the
-     * network interface.
+     * <code>network-interface.addresses.association.allocation-id</code> - The allocation ID.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.addresses.primary</code> - Specifies whether the IPv4 address of the network interface is
-     * the primary private IPv4 address.
+     * <code>network-interface.addresses.association.association-id</code> - The association ID.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.addresses.association.public-ip</code> - The ID of the association of an Elastic IP
-     * address (IPv4) with a network interface.
+     * <code>network-interface.addresses.association.carrier-ip</code> - The carrier IP address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.addresses.association.customer-owned-ip</code> - The customer-owned IP address.
      * </p>
      * </li>
      * <li>
@@ -245,14 +329,30 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.association.public-ip</code> - The address of the Elastic IP address (IPv4) bound to the
-     * network interface.
+     * <code>network-interface.addresses.association.public-dns-name</code> - The public DNS name.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4) associated
-     * with the network interface.
+     * <code>network-interface.addresses.association.public-ip</code> - The ID of the association of an Elastic IP
+     * address (IPv4) with a network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.addresses.primary</code> - Specifies whether the IPv4 address of the network interface is
+     * the primary private IPv4 address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.addresses.private-dns-name</code> - The private DNS name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.addresses.private-ip-address</code> - The private IPv4 address associated with the
+     * network interface.
      * </p>
      * </li>
      * <li>
@@ -269,7 +369,52 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>network-interface.association.carrier-ip</code> - The customer-owned IP address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.customer-owned-ip</code> - The customer-owned IP address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4) associated
+     * with the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.public-dns-name</code> - The public DNS name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.public-ip</code> - The address of the Elastic IP address (IPv4) bound to the
+     * network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.attachment.attach-time</code> - The time that the network interface was attached to an
+     * instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-interface.attachment.attachment-id</code> - The ID of the interface attachment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.attachment.delete-on-termination</code> - Specifies whether the attachment is deleted
+     * when an instance is terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.attachment.device-index</code> - The device index to which the network interface is
+     * attached.
      * </p>
      * </li>
      * <li>
@@ -286,8 +431,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.attachment.device-index</code> - The device index to which the network interface is
-     * attached.
+     * <code>network-interface.attachment.network-card-index</code> - The index of the network card.
      * </p>
      * </li>
      * <li>
@@ -298,19 +442,13 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.attachment.attach-time</code> - The time that the network interface was attached to an
-     * instance.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>network-interface.attachment.delete-on-termination</code> - Specifies whether the attachment is deleted
-     * when an instance is terminated.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>network-interface.availability-zone</code> - The Availability Zone for the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.deny-all-igw-traffic</code> - A Boolean that indicates whether a network interface with
+     * an IPv6 address is unreachable from the public internet.
      * </p>
      * </li>
      * <li>
@@ -330,8 +468,36 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>network-interface.ipv4-prefixes.ipv4-prefix</code> - The IPv4 prefixes that are assigned to the network
+     * interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.ipv6-address</code> - The IPv6 address associated with the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-interface.ipv6-addresses.ipv6-address</code> - The IPv6 address associated with the network
      * interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.ipv6-addresses.is-primary-ipv6</code> - A Boolean that indicates whether this is the
+     * primary IPv6 address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.ipv6-native</code> - A Boolean that indicates whether this is an IPv6 only network
+     * interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.ipv6-prefixes.ipv6-prefix</code> - The IPv6 prefix assigned to the network interface.
      * </p>
      * </li>
      * <li>
@@ -346,12 +512,27 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>network-interface.outpost-arn</code> - The ARN of the Outpost.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-interface.owner-id</code> - The ID of the owner of the network interface.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>network-interface.private-dns-name</code> - The private DNS name of the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.private-ip-address</code> - The private IPv4 address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.public-dns-name</code> - The public DNS name.
      * </p>
      * </li>
      * <li>
@@ -386,6 +567,16 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>network-interface.tag-key</code> - The key of a tag assigned to the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.tag-value</code> - The value of a tag assigned to the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-interface.vpc-id</code> - The ID of the VPC for the network interface.
      * </p>
      * </li>
@@ -416,7 +607,40 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>platform-details</code> - The platform (<code>Linux/UNIX</code> | <code>Red Hat BYOL Linux</code> |
+     * <code> Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux with HA</code> |
+     * <code>Red Hat Enterprise Linux with SQL Server Standard and HA</code> |
+     * <code>Red Hat Enterprise Linux with SQL Server Enterprise and HA</code> |
+     * <code>Red Hat Enterprise Linux with SQL Server Standard</code> |
+     * <code>Red Hat Enterprise Linux with SQL Server Web</code> |
+     * <code>Red Hat Enterprise Linux with SQL Server Enterprise</code> | <code>SQL Server Enterprise</code> |
+     * <code>SQL Server Standard</code> | <code>SQL Server Web</code> | <code>SUSE Linux</code> |
+     * <code>Ubuntu Pro</code> | <code>Windows</code> | <code>Windows BYOL</code> |
+     * <code>Windows with SQL Server Enterprise</code> | <code>Windows with SQL Server Standard</code> |
+     * <code>Windows with SQL Server Web</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>private-dns-name</code> - The private IPv4 DNS name of the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>private-dns-name-options.enable-resource-name-dns-a-record</code> - A Boolean that indicates whether to
+     * respond to DNS queries for instance hostnames with DNS A records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>private-dns-name-options.enable-resource-name-dns-aaaa-record</code> - A Boolean that indicates whether to
+     * respond to DNS queries for instance hostnames with DNS AAAA records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>private-dns-name-options.hostname-type</code> - The type of hostname (<code>ip-name</code> |
+     * <code>resource-name</code>).
      * </p>
      * </li>
      * <li>
@@ -520,6 +744,28 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>tpm-support</code> - Indicates if the instance is configured for NitroTPM support (<code>v2.0</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>usage-operation</code> - The usage operation value for the instance (<code>RunInstances</code> |
+     * <code>RunInstances:00g0</code> | <code>RunInstances:0010</code> | <code>RunInstances:1010</code> |
+     * <code>RunInstances:1014</code> | <code>RunInstances:1110</code> | <code>RunInstances:0014</code> |
+     * <code>RunInstances:0210</code> | <code>RunInstances:0110</code> | <code>RunInstances:0100</code> |
+     * <code>RunInstances:0004</code> | <code>RunInstances:0200</code> | <code>RunInstances:000g</code> |
+     * <code>RunInstances:0g00</code> | <code>RunInstances:0002</code> | <code>RunInstances:0800</code> |
+     * <code>RunInstances:0102</code> | <code>RunInstances:0006</code> | <code>RunInstances:0202</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>usage-operation-update-time</code> - The time that the usage operation was last updated, for example,
+     * <code>2022-09-15T17:15:20.000Z</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>virtualization-type</code> - The virtualization type of the instance (<code>paravirtual</code> |
      * <code>hvm</code>).
      * </p>
@@ -543,15 +789,19 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
     private com.amazonaws.internal.SdkInternalList<String> instanceIds;
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     * with the returned <code>NextToken</code> value. This value can be between 5 and 1000. You cannot specify this
-     * parameter and the instance IDs parameter in the same call.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
+     * </p>
+     * <p>
+     * You cannot specify this parameter and the instance IDs parameter in the same request.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The token to request the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      */
     private String nextToken;
@@ -581,7 +831,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>block-device-mapping.attach-time</code> - The attach time for an EBS volume mapped to the instance, for
-     * example, <code>2010-09-15T17:15:20.000Z</code>.
+     * example, <code>2022-09-15T17:15:20.000Z</code>.
      * </p>
      * </li>
      * <li>
@@ -609,7 +859,31 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>boot-mode</code> - The boot mode that was specified by the AMI (<code>legacy-bios</code> |
+     * <code>uefi</code> | <code>uefi-preferred</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>capacity-reservation-id</code> - The ID of the Capacity Reservation into which the instance was launched.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>capacity-reservation-specification.capacity-reservation-preference</code> - The instance's Capacity
+     * Reservation preference (<code>open</code> | <code>none</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>capacity-reservation-specification.capacity-reservation-target.capacity-reservation-id</code> - The ID of
+     * the targeted Capacity Reservation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>capacity-reservation-specification.capacity-reservation-target.capacity-reservation-resource-group-arn</code>
+     * - The ARN of the targeted Capacity Reservation group.
      * </p>
      * </li>
      * <li>
@@ -619,17 +893,30 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>current-instance-boot-mode</code> - The boot mode that is used to launch the instance at launch or start (
+     * <code>legacy-bios</code> | <code>uefi</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>dns-name</code> - The public DNS name of the instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>group-id</code> - The ID of the security group for the instance. EC2-Classic only.
+     * <code>ebs-optimized</code> - A Boolean that indicates whether the instance is optimized for Amazon EBS I/O.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>group-name</code> - The name of the security group for the instance. EC2-Classic only.
+     * <code>ena-support</code> - A Boolean that indicates whether the instance is enabled for enhanced networking with
+     * ENA.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>enclave-options.enabled</code> - A Boolean that indicates whether the instance is enabled for Amazon Web
+     * Services Nitro Enclaves.
      * </p>
      * </li>
      * <li>
@@ -656,6 +943,16 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>iam-instance-profile.id</code> - The instance profile associated with the instance. Specified as an ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>iam-instance-profile.name</code> - The instance profile associated with the instance. Specified as an name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>image-id</code> - The ID of the image used to launch the instance.
      * </p>
      * </li>
@@ -666,8 +963,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a Scheduled Instance (
-     * <code>spot</code> | <code>scheduled</code>).
+     * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance, a Scheduled Instance, or a Capacity
+     * Block (<code>spot</code> | <code>scheduled</code> | <code>capacity-block</code>).
      * </p>
      * </li>
      * <li>
@@ -705,6 +1002,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>ipv6-address</code> - The IPv6 address of the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>kernel-id</code> - The kernel ID.
      * </p>
      * </li>
@@ -728,20 +1030,50 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>maintenance-options.auto-recovery</code> - The current automatic recovery behavior of the instance (
+     * <code>disabled</code> | <code>default</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-options.http-endpoint</code> - The status of access to the HTTP metadata endpoint on your instance
+     * (<code>enabled</code> | <code>disabled</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-options.http-protocol-ipv4</code> - Indicates whether the IPv4 endpoint is enabled (
+     * <code>disabled</code> | <code>enabled</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-options.http-protocol-ipv6</code> - Indicates whether the IPv6 endpoint is enabled (
+     * <code>disabled</code> | <code>enabled</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-options.http-put-response-hop-limit</code> - The HTTP metadata request put response hop limit
+     * (integer, possible values <code>1</code> to <code>64</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>metadata-options.http-tokens</code> - The metadata request authorization state (<code>optional</code> |
      * <code>required</code>)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>metadata-options.http-put-response-hop-limit</code> - The http metadata request put response hop limit
-     * (integer, possible values <code>1</code> to <code>64</code>)
+     * <code>metadata-options.instance-metadata-tags</code> - The status of access to instance tags from the instance
+     * metadata (<code>enabled</code> | <code>disabled</code>)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>metadata-options.http-endpoint</code> - Enable or disable metadata access on http endpoint (
-     * <code>enabled</code> | <code>disabled</code>)
+     * <code>metadata-options.state</code> - The state of the metadata option changes (<code>pending</code> |
+     * <code>applied</code>).
      * </p>
      * </li>
      * <li>
@@ -752,20 +1084,22 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.addresses.private-ip-address</code> - The private IPv4 address associated with the
-     * network interface.
+     * <code>network-interface.addresses.association.allocation-id</code> - The allocation ID.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.addresses.primary</code> - Specifies whether the IPv4 address of the network interface is
-     * the primary private IPv4 address.
+     * <code>network-interface.addresses.association.association-id</code> - The association ID.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.addresses.association.public-ip</code> - The ID of the association of an Elastic IP
-     * address (IPv4) with a network interface.
+     * <code>network-interface.addresses.association.carrier-ip</code> - The carrier IP address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.addresses.association.customer-owned-ip</code> - The customer-owned IP address.
      * </p>
      * </li>
      * <li>
@@ -776,14 +1110,30 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.association.public-ip</code> - The address of the Elastic IP address (IPv4) bound to the
-     * network interface.
+     * <code>network-interface.addresses.association.public-dns-name</code> - The public DNS name.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4) associated
-     * with the network interface.
+     * <code>network-interface.addresses.association.public-ip</code> - The ID of the association of an Elastic IP
+     * address (IPv4) with a network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.addresses.primary</code> - Specifies whether the IPv4 address of the network interface is
+     * the primary private IPv4 address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.addresses.private-dns-name</code> - The private DNS name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.addresses.private-ip-address</code> - The private IPv4 address associated with the
+     * network interface.
      * </p>
      * </li>
      * <li>
@@ -800,7 +1150,52 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>network-interface.association.carrier-ip</code> - The customer-owned IP address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.customer-owned-ip</code> - The customer-owned IP address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4) associated
+     * with the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.public-dns-name</code> - The public DNS name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.public-ip</code> - The address of the Elastic IP address (IPv4) bound to the
+     * network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.attachment.attach-time</code> - The time that the network interface was attached to an
+     * instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-interface.attachment.attachment-id</code> - The ID of the interface attachment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.attachment.delete-on-termination</code> - Specifies whether the attachment is deleted
+     * when an instance is terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.attachment.device-index</code> - The device index to which the network interface is
+     * attached.
      * </p>
      * </li>
      * <li>
@@ -817,8 +1212,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.attachment.device-index</code> - The device index to which the network interface is
-     * attached.
+     * <code>network-interface.attachment.network-card-index</code> - The index of the network card.
      * </p>
      * </li>
      * <li>
@@ -829,19 +1223,13 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.attachment.attach-time</code> - The time that the network interface was attached to an
-     * instance.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>network-interface.attachment.delete-on-termination</code> - Specifies whether the attachment is deleted
-     * when an instance is terminated.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>network-interface.availability-zone</code> - The Availability Zone for the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.deny-all-igw-traffic</code> - A Boolean that indicates whether a network interface with
+     * an IPv6 address is unreachable from the public internet.
      * </p>
      * </li>
      * <li>
@@ -861,8 +1249,36 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>network-interface.ipv4-prefixes.ipv4-prefix</code> - The IPv4 prefixes that are assigned to the network
+     * interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.ipv6-address</code> - The IPv6 address associated with the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-interface.ipv6-addresses.ipv6-address</code> - The IPv6 address associated with the network
      * interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.ipv6-addresses.is-primary-ipv6</code> - A Boolean that indicates whether this is the
+     * primary IPv6 address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.ipv6-native</code> - A Boolean that indicates whether this is an IPv6 only network
+     * interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.ipv6-prefixes.ipv6-prefix</code> - The IPv6 prefix assigned to the network interface.
      * </p>
      * </li>
      * <li>
@@ -877,12 +1293,27 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>network-interface.outpost-arn</code> - The ARN of the Outpost.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-interface.owner-id</code> - The ID of the owner of the network interface.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>network-interface.private-dns-name</code> - The private DNS name of the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.private-ip-address</code> - The private IPv4 address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.public-dns-name</code> - The public DNS name.
      * </p>
      * </li>
      * <li>
@@ -917,6 +1348,16 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>network-interface.tag-key</code> - The key of a tag assigned to the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.tag-value</code> - The value of a tag assigned to the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-interface.vpc-id</code> - The ID of the VPC for the network interface.
      * </p>
      * </li>
@@ -947,7 +1388,40 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>platform-details</code> - The platform (<code>Linux/UNIX</code> | <code>Red Hat BYOL Linux</code> |
+     * <code> Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux with HA</code> |
+     * <code>Red Hat Enterprise Linux with SQL Server Standard and HA</code> |
+     * <code>Red Hat Enterprise Linux with SQL Server Enterprise and HA</code> |
+     * <code>Red Hat Enterprise Linux with SQL Server Standard</code> |
+     * <code>Red Hat Enterprise Linux with SQL Server Web</code> |
+     * <code>Red Hat Enterprise Linux with SQL Server Enterprise</code> | <code>SQL Server Enterprise</code> |
+     * <code>SQL Server Standard</code> | <code>SQL Server Web</code> | <code>SUSE Linux</code> |
+     * <code>Ubuntu Pro</code> | <code>Windows</code> | <code>Windows BYOL</code> |
+     * <code>Windows with SQL Server Enterprise</code> | <code>Windows with SQL Server Standard</code> |
+     * <code>Windows with SQL Server Web</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>private-dns-name</code> - The private IPv4 DNS name of the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>private-dns-name-options.enable-resource-name-dns-a-record</code> - A Boolean that indicates whether to
+     * respond to DNS queries for instance hostnames with DNS A records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>private-dns-name-options.enable-resource-name-dns-aaaa-record</code> - A Boolean that indicates whether to
+     * respond to DNS queries for instance hostnames with DNS AAAA records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>private-dns-name-options.hostname-type</code> - The type of hostname (<code>ip-name</code> |
+     * <code>resource-name</code>).
      * </p>
      * </li>
      * <li>
@@ -1047,6 +1521,28 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <p>
      * <code>tenancy</code> - The tenancy of an instance (<code>dedicated</code> | <code>default</code> |
      * <code>host</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tpm-support</code> - Indicates if the instance is configured for NitroTPM support (<code>v2.0</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>usage-operation</code> - The usage operation value for the instance (<code>RunInstances</code> |
+     * <code>RunInstances:00g0</code> | <code>RunInstances:0010</code> | <code>RunInstances:1010</code> |
+     * <code>RunInstances:1014</code> | <code>RunInstances:1110</code> | <code>RunInstances:0014</code> |
+     * <code>RunInstances:0210</code> | <code>RunInstances:0110</code> | <code>RunInstances:0100</code> |
+     * <code>RunInstances:0004</code> | <code>RunInstances:0200</code> | <code>RunInstances:000g</code> |
+     * <code>RunInstances:0g00</code> | <code>RunInstances:0002</code> | <code>RunInstances:0800</code> |
+     * <code>RunInstances:0102</code> | <code>RunInstances:0006</code> | <code>RunInstances:0202</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>usage-operation-update-time</code> - The time that the usage operation was last updated, for example,
+     * <code>2022-09-15T17:15:20.000Z</code>.
      * </p>
      * </li>
      * <li>
@@ -1084,7 +1580,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         <li>
      *         <p>
      *         <code>block-device-mapping.attach-time</code> - The attach time for an EBS volume mapped to the instance,
-     *         for example, <code>2010-09-15T17:15:20.000Z</code>.
+     *         for example, <code>2022-09-15T17:15:20.000Z</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -1112,8 +1608,32 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
+     *         <code>boot-mode</code> - The boot mode that was specified by the AMI (<code>legacy-bios</code> |
+     *         <code>uefi</code> | <code>uefi-preferred</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>capacity-reservation-id</code> - The ID of the Capacity Reservation into which the instance was
      *         launched.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>capacity-reservation-specification.capacity-reservation-preference</code> - The instance's Capacity
+     *         Reservation preference (<code>open</code> | <code>none</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>capacity-reservation-specification.capacity-reservation-target.capacity-reservation-id</code> - The
+     *         ID of the targeted Capacity Reservation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>capacity-reservation-specification.capacity-reservation-target.capacity-reservation-resource-group-arn</code>
+     *         - The ARN of the targeted Capacity Reservation group.
      *         </p>
      *         </li>
      *         <li>
@@ -1123,17 +1643,31 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
+     *         <code>current-instance-boot-mode</code> - The boot mode that is used to launch the instance at launch or
+     *         start (<code>legacy-bios</code> | <code>uefi</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>dns-name</code> - The public DNS name of the instance.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>group-id</code> - The ID of the security group for the instance. EC2-Classic only.
+     *         <code>ebs-optimized</code> - A Boolean that indicates whether the instance is optimized for Amazon EBS
+     *         I/O.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>group-name</code> - The name of the security group for the instance. EC2-Classic only.
+     *         <code>ena-support</code> - A Boolean that indicates whether the instance is enabled for enhanced
+     *         networking with ENA.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>enclave-options.enabled</code> - A Boolean that indicates whether the instance is enabled for
+     *         Amazon Web Services Nitro Enclaves.
      *         </p>
      *         </li>
      *         <li>
@@ -1161,6 +1695,18 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
+     *         <code>iam-instance-profile.id</code> - The instance profile associated with the instance. Specified as an
+     *         ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>iam-instance-profile.name</code> - The instance profile associated with the instance. Specified as
+     *         an name.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>image-id</code> - The ID of the image used to launch the instance.
      *         </p>
      *         </li>
@@ -1171,8 +1717,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a Scheduled Instance (
-     *         <code>spot</code> | <code>scheduled</code>).
+     *         <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance, a Scheduled Instance, or a
+     *         Capacity Block (<code>spot</code> | <code>scheduled</code> | <code>capacity-block</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -1211,6 +1757,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
+     *         <code>ipv6-address</code> - The IPv6 address of the instance.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>kernel-id</code> - The kernel ID.
      *         </p>
      *         </li>
@@ -1234,20 +1785,50 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
+     *         <code>maintenance-options.auto-recovery</code> - The current automatic recovery behavior of the instance
+     *         (<code>disabled</code> | <code>default</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>metadata-options.http-endpoint</code> - The status of access to the HTTP metadata endpoint on your
+     *         instance (<code>enabled</code> | <code>disabled</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>metadata-options.http-protocol-ipv4</code> - Indicates whether the IPv4 endpoint is enabled (
+     *         <code>disabled</code> | <code>enabled</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>metadata-options.http-protocol-ipv6</code> - Indicates whether the IPv6 endpoint is enabled (
+     *         <code>disabled</code> | <code>enabled</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>metadata-options.http-put-response-hop-limit</code> - The HTTP metadata request put response hop
+     *         limit (integer, possible values <code>1</code> to <code>64</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>metadata-options.http-tokens</code> - The metadata request authorization state (
      *         <code>optional</code> | <code>required</code>)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>metadata-options.http-put-response-hop-limit</code> - The http metadata request put response hop
-     *         limit (integer, possible values <code>1</code> to <code>64</code>)
+     *         <code>metadata-options.instance-metadata-tags</code> - The status of access to instance tags from the
+     *         instance metadata (<code>enabled</code> | <code>disabled</code>)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>metadata-options.http-endpoint</code> - Enable or disable metadata access on http endpoint (
-     *         <code>enabled</code> | <code>disabled</code>)
+     *         <code>metadata-options.state</code> - The state of the metadata option changes (<code>pending</code> |
+     *         <code>applied</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -1258,20 +1839,22 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         <code>network-interface.addresses.private-ip-address</code> - The private IPv4 address associated with
-     *         the network interface.
+     *         <code>network-interface.addresses.association.allocation-id</code> - The allocation ID.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>network-interface.addresses.primary</code> - Specifies whether the IPv4 address of the network
-     *         interface is the primary private IPv4 address.
+     *         <code>network-interface.addresses.association.association-id</code> - The association ID.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>network-interface.addresses.association.public-ip</code> - The ID of the association of an Elastic
-     *         IP address (IPv4) with a network interface.
+     *         <code>network-interface.addresses.association.carrier-ip</code> - The carrier IP address.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>network-interface.addresses.association.customer-owned-ip</code> - The customer-owned IP address.
      *         </p>
      *         </li>
      *         <li>
@@ -1282,14 +1865,30 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         <code>network-interface.association.public-ip</code> - The address of the Elastic IP address (IPv4) bound
-     *         to the network interface.
+     *         <code>network-interface.addresses.association.public-dns-name</code> - The public DNS name.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>network-interface.association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4)
-     *         associated with the network interface.
+     *         <code>network-interface.addresses.association.public-ip</code> - The ID of the association of an Elastic
+     *         IP address (IPv4) with a network interface.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>network-interface.addresses.primary</code> - Specifies whether the IPv4 address of the network
+     *         interface is the primary private IPv4 address.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>network-interface.addresses.private-dns-name</code> - The private DNS name.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>network-interface.addresses.private-ip-address</code> - The private IPv4 address associated with
+     *         the network interface.
      *         </p>
      *         </li>
      *         <li>
@@ -1306,7 +1905,52 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
+     *         <code>network-interface.association.carrier-ip</code> - The customer-owned IP address.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>network-interface.association.customer-owned-ip</code> - The customer-owned IP address.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>network-interface.association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4)
+     *         associated with the network interface.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>network-interface.association.public-dns-name</code> - The public DNS name.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>network-interface.association.public-ip</code> - The address of the Elastic IP address (IPv4) bound
+     *         to the network interface.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>network-interface.attachment.attach-time</code> - The time that the network interface was attached
+     *         to an instance.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>network-interface.attachment.attachment-id</code> - The ID of the interface attachment.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>network-interface.attachment.delete-on-termination</code> - Specifies whether the attachment is
+     *         deleted when an instance is terminated.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>network-interface.attachment.device-index</code> - The device index to which the network interface
+     *         is attached.
      *         </p>
      *         </li>
      *         <li>
@@ -1323,8 +1967,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         <code>network-interface.attachment.device-index</code> - The device index to which the network interface
-     *         is attached.
+     *         <code>network-interface.attachment.network-card-index</code> - The index of the network card.
      *         </p>
      *         </li>
      *         <li>
@@ -1335,19 +1978,13 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         <code>network-interface.attachment.attach-time</code> - The time that the network interface was attached
-     *         to an instance.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>network-interface.attachment.delete-on-termination</code> - Specifies whether the attachment is
-     *         deleted when an instance is terminated.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         <code>network-interface.availability-zone</code> - The Availability Zone for the network interface.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>network-interface.deny-all-igw-traffic</code> - A Boolean that indicates whether a network
+     *         interface with an IPv6 address is unreachable from the public internet.
      *         </p>
      *         </li>
      *         <li>
@@ -1369,7 +2006,36 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
+     *         <code>network-interface.ipv4-prefixes.ipv4-prefix</code> - The IPv4 prefixes that are assigned to the
+     *         network interface.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>network-interface.ipv6-address</code> - The IPv6 address associated with the network interface.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>network-interface.ipv6-addresses.ipv6-address</code> - The IPv6 address associated with the network
+     *         interface.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>network-interface.ipv6-addresses.is-primary-ipv6</code> - A Boolean that indicates whether this is
+     *         the primary IPv6 address.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>network-interface.ipv6-native</code> - A Boolean that indicates whether this is an IPv6 only
+     *         network interface.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>network-interface.ipv6-prefixes.ipv6-prefix</code> - The IPv6 prefix assigned to the network
      *         interface.
      *         </p>
      *         </li>
@@ -1385,12 +2051,27 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
+     *         <code>network-interface.outpost-arn</code> - The ARN of the Outpost.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>network-interface.owner-id</code> - The ID of the owner of the network interface.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>network-interface.private-dns-name</code> - The private DNS name of the network interface.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>network-interface.private-ip-address</code> - The private IPv4 address.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>network-interface.public-dns-name</code> - The public DNS name.
      *         </p>
      *         </li>
      *         <li>
@@ -1425,6 +2106,16 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
+     *         <code>network-interface.tag-key</code> - The key of a tag assigned to the network interface.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>network-interface.tag-value</code> - The value of a tag assigned to the network interface.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>network-interface.vpc-id</code> - The ID of the VPC for the network interface.
      *         </p>
      *         </li>
@@ -1455,7 +2146,40 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
+     *         <code>platform-details</code> - The platform (<code>Linux/UNIX</code> | <code>Red Hat BYOL Linux</code> |
+     *         <code> Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux with HA</code> |
+     *         <code>Red Hat Enterprise Linux with SQL Server Standard and HA</code> |
+     *         <code>Red Hat Enterprise Linux with SQL Server Enterprise and HA</code> |
+     *         <code>Red Hat Enterprise Linux with SQL Server Standard</code> |
+     *         <code>Red Hat Enterprise Linux with SQL Server Web</code> |
+     *         <code>Red Hat Enterprise Linux with SQL Server Enterprise</code> | <code>SQL Server Enterprise</code> |
+     *         <code>SQL Server Standard</code> | <code>SQL Server Web</code> | <code>SUSE Linux</code> |
+     *         <code>Ubuntu Pro</code> | <code>Windows</code> | <code>Windows BYOL</code> |
+     *         <code>Windows with SQL Server Enterprise</code> | <code>Windows with SQL Server Standard</code> |
+     *         <code>Windows with SQL Server Web</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>private-dns-name</code> - The private IPv4 DNS name of the instance.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>private-dns-name-options.enable-resource-name-dns-a-record</code> - A Boolean that indicates
+     *         whether to respond to DNS queries for instance hostnames with DNS A records.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>private-dns-name-options.enable-resource-name-dns-aaaa-record</code> - A Boolean that indicates
+     *         whether to respond to DNS queries for instance hostnames with DNS AAAA records.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>private-dns-name-options.hostname-type</code> - The type of hostname (<code>ip-name</code> |
+     *         <code>resource-name</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -1563,6 +2287,29 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
+     *         <code>tpm-support</code> - Indicates if the instance is configured for NitroTPM support (
+     *         <code>v2.0</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>usage-operation</code> - The usage operation value for the instance (<code>RunInstances</code> |
+     *         <code>RunInstances:00g0</code> | <code>RunInstances:0010</code> | <code>RunInstances:1010</code> |
+     *         <code>RunInstances:1014</code> | <code>RunInstances:1110</code> | <code>RunInstances:0014</code> |
+     *         <code>RunInstances:0210</code> | <code>RunInstances:0110</code> | <code>RunInstances:0100</code> |
+     *         <code>RunInstances:0004</code> | <code>RunInstances:0200</code> | <code>RunInstances:000g</code> |
+     *         <code>RunInstances:0g00</code> | <code>RunInstances:0002</code> | <code>RunInstances:0800</code> |
+     *         <code>RunInstances:0102</code> | <code>RunInstances:0006</code> | <code>RunInstances:0202</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>usage-operation-update-time</code> - The time that the usage operation was last updated, for
+     *         example, <code>2022-09-15T17:15:20.000Z</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>virtualization-type</code> - The virtualization type of the instance (<code>paravirtual</code> |
      *         <code>hvm</code>).
      *         </p>
@@ -1606,7 +2353,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>block-device-mapping.attach-time</code> - The attach time for an EBS volume mapped to the instance, for
-     * example, <code>2010-09-15T17:15:20.000Z</code>.
+     * example, <code>2022-09-15T17:15:20.000Z</code>.
      * </p>
      * </li>
      * <li>
@@ -1634,7 +2381,31 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>boot-mode</code> - The boot mode that was specified by the AMI (<code>legacy-bios</code> |
+     * <code>uefi</code> | <code>uefi-preferred</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>capacity-reservation-id</code> - The ID of the Capacity Reservation into which the instance was launched.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>capacity-reservation-specification.capacity-reservation-preference</code> - The instance's Capacity
+     * Reservation preference (<code>open</code> | <code>none</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>capacity-reservation-specification.capacity-reservation-target.capacity-reservation-id</code> - The ID of
+     * the targeted Capacity Reservation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>capacity-reservation-specification.capacity-reservation-target.capacity-reservation-resource-group-arn</code>
+     * - The ARN of the targeted Capacity Reservation group.
      * </p>
      * </li>
      * <li>
@@ -1644,17 +2415,30 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>current-instance-boot-mode</code> - The boot mode that is used to launch the instance at launch or start (
+     * <code>legacy-bios</code> | <code>uefi</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>dns-name</code> - The public DNS name of the instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>group-id</code> - The ID of the security group for the instance. EC2-Classic only.
+     * <code>ebs-optimized</code> - A Boolean that indicates whether the instance is optimized for Amazon EBS I/O.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>group-name</code> - The name of the security group for the instance. EC2-Classic only.
+     * <code>ena-support</code> - A Boolean that indicates whether the instance is enabled for enhanced networking with
+     * ENA.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>enclave-options.enabled</code> - A Boolean that indicates whether the instance is enabled for Amazon Web
+     * Services Nitro Enclaves.
      * </p>
      * </li>
      * <li>
@@ -1681,6 +2465,16 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>iam-instance-profile.id</code> - The instance profile associated with the instance. Specified as an ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>iam-instance-profile.name</code> - The instance profile associated with the instance. Specified as an name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>image-id</code> - The ID of the image used to launch the instance.
      * </p>
      * </li>
@@ -1691,8 +2485,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a Scheduled Instance (
-     * <code>spot</code> | <code>scheduled</code>).
+     * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance, a Scheduled Instance, or a Capacity
+     * Block (<code>spot</code> | <code>scheduled</code> | <code>capacity-block</code>).
      * </p>
      * </li>
      * <li>
@@ -1730,6 +2524,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>ipv6-address</code> - The IPv6 address of the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>kernel-id</code> - The kernel ID.
      * </p>
      * </li>
@@ -1753,20 +2552,50 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>maintenance-options.auto-recovery</code> - The current automatic recovery behavior of the instance (
+     * <code>disabled</code> | <code>default</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-options.http-endpoint</code> - The status of access to the HTTP metadata endpoint on your instance
+     * (<code>enabled</code> | <code>disabled</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-options.http-protocol-ipv4</code> - Indicates whether the IPv4 endpoint is enabled (
+     * <code>disabled</code> | <code>enabled</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-options.http-protocol-ipv6</code> - Indicates whether the IPv6 endpoint is enabled (
+     * <code>disabled</code> | <code>enabled</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-options.http-put-response-hop-limit</code> - The HTTP metadata request put response hop limit
+     * (integer, possible values <code>1</code> to <code>64</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>metadata-options.http-tokens</code> - The metadata request authorization state (<code>optional</code> |
      * <code>required</code>)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>metadata-options.http-put-response-hop-limit</code> - The http metadata request put response hop limit
-     * (integer, possible values <code>1</code> to <code>64</code>)
+     * <code>metadata-options.instance-metadata-tags</code> - The status of access to instance tags from the instance
+     * metadata (<code>enabled</code> | <code>disabled</code>)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>metadata-options.http-endpoint</code> - Enable or disable metadata access on http endpoint (
-     * <code>enabled</code> | <code>disabled</code>)
+     * <code>metadata-options.state</code> - The state of the metadata option changes (<code>pending</code> |
+     * <code>applied</code>).
      * </p>
      * </li>
      * <li>
@@ -1777,20 +2606,22 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.addresses.private-ip-address</code> - The private IPv4 address associated with the
-     * network interface.
+     * <code>network-interface.addresses.association.allocation-id</code> - The allocation ID.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.addresses.primary</code> - Specifies whether the IPv4 address of the network interface is
-     * the primary private IPv4 address.
+     * <code>network-interface.addresses.association.association-id</code> - The association ID.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.addresses.association.public-ip</code> - The ID of the association of an Elastic IP
-     * address (IPv4) with a network interface.
+     * <code>network-interface.addresses.association.carrier-ip</code> - The carrier IP address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.addresses.association.customer-owned-ip</code> - The customer-owned IP address.
      * </p>
      * </li>
      * <li>
@@ -1801,14 +2632,30 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.association.public-ip</code> - The address of the Elastic IP address (IPv4) bound to the
-     * network interface.
+     * <code>network-interface.addresses.association.public-dns-name</code> - The public DNS name.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4) associated
-     * with the network interface.
+     * <code>network-interface.addresses.association.public-ip</code> - The ID of the association of an Elastic IP
+     * address (IPv4) with a network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.addresses.primary</code> - Specifies whether the IPv4 address of the network interface is
+     * the primary private IPv4 address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.addresses.private-dns-name</code> - The private DNS name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.addresses.private-ip-address</code> - The private IPv4 address associated with the
+     * network interface.
      * </p>
      * </li>
      * <li>
@@ -1825,7 +2672,52 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>network-interface.association.carrier-ip</code> - The customer-owned IP address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.customer-owned-ip</code> - The customer-owned IP address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4) associated
+     * with the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.public-dns-name</code> - The public DNS name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.public-ip</code> - The address of the Elastic IP address (IPv4) bound to the
+     * network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.attachment.attach-time</code> - The time that the network interface was attached to an
+     * instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-interface.attachment.attachment-id</code> - The ID of the interface attachment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.attachment.delete-on-termination</code> - Specifies whether the attachment is deleted
+     * when an instance is terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.attachment.device-index</code> - The device index to which the network interface is
+     * attached.
      * </p>
      * </li>
      * <li>
@@ -1842,8 +2734,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.attachment.device-index</code> - The device index to which the network interface is
-     * attached.
+     * <code>network-interface.attachment.network-card-index</code> - The index of the network card.
      * </p>
      * </li>
      * <li>
@@ -1854,19 +2745,13 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.attachment.attach-time</code> - The time that the network interface was attached to an
-     * instance.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>network-interface.attachment.delete-on-termination</code> - Specifies whether the attachment is deleted
-     * when an instance is terminated.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>network-interface.availability-zone</code> - The Availability Zone for the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.deny-all-igw-traffic</code> - A Boolean that indicates whether a network interface with
+     * an IPv6 address is unreachable from the public internet.
      * </p>
      * </li>
      * <li>
@@ -1886,8 +2771,36 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>network-interface.ipv4-prefixes.ipv4-prefix</code> - The IPv4 prefixes that are assigned to the network
+     * interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.ipv6-address</code> - The IPv6 address associated with the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-interface.ipv6-addresses.ipv6-address</code> - The IPv6 address associated with the network
      * interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.ipv6-addresses.is-primary-ipv6</code> - A Boolean that indicates whether this is the
+     * primary IPv6 address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.ipv6-native</code> - A Boolean that indicates whether this is an IPv6 only network
+     * interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.ipv6-prefixes.ipv6-prefix</code> - The IPv6 prefix assigned to the network interface.
      * </p>
      * </li>
      * <li>
@@ -1902,12 +2815,27 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>network-interface.outpost-arn</code> - The ARN of the Outpost.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-interface.owner-id</code> - The ID of the owner of the network interface.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>network-interface.private-dns-name</code> - The private DNS name of the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.private-ip-address</code> - The private IPv4 address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.public-dns-name</code> - The public DNS name.
      * </p>
      * </li>
      * <li>
@@ -1942,6 +2870,16 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>network-interface.tag-key</code> - The key of a tag assigned to the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.tag-value</code> - The value of a tag assigned to the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-interface.vpc-id</code> - The ID of the VPC for the network interface.
      * </p>
      * </li>
@@ -1972,7 +2910,40 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>platform-details</code> - The platform (<code>Linux/UNIX</code> | <code>Red Hat BYOL Linux</code> |
+     * <code> Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux with HA</code> |
+     * <code>Red Hat Enterprise Linux with SQL Server Standard and HA</code> |
+     * <code>Red Hat Enterprise Linux with SQL Server Enterprise and HA</code> |
+     * <code>Red Hat Enterprise Linux with SQL Server Standard</code> |
+     * <code>Red Hat Enterprise Linux with SQL Server Web</code> |
+     * <code>Red Hat Enterprise Linux with SQL Server Enterprise</code> | <code>SQL Server Enterprise</code> |
+     * <code>SQL Server Standard</code> | <code>SQL Server Web</code> | <code>SUSE Linux</code> |
+     * <code>Ubuntu Pro</code> | <code>Windows</code> | <code>Windows BYOL</code> |
+     * <code>Windows with SQL Server Enterprise</code> | <code>Windows with SQL Server Standard</code> |
+     * <code>Windows with SQL Server Web</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>private-dns-name</code> - The private IPv4 DNS name of the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>private-dns-name-options.enable-resource-name-dns-a-record</code> - A Boolean that indicates whether to
+     * respond to DNS queries for instance hostnames with DNS A records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>private-dns-name-options.enable-resource-name-dns-aaaa-record</code> - A Boolean that indicates whether to
+     * respond to DNS queries for instance hostnames with DNS AAAA records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>private-dns-name-options.hostname-type</code> - The type of hostname (<code>ip-name</code> |
+     * <code>resource-name</code>).
      * </p>
      * </li>
      * <li>
@@ -2076,6 +3047,28 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>tpm-support</code> - Indicates if the instance is configured for NitroTPM support (<code>v2.0</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>usage-operation</code> - The usage operation value for the instance (<code>RunInstances</code> |
+     * <code>RunInstances:00g0</code> | <code>RunInstances:0010</code> | <code>RunInstances:1010</code> |
+     * <code>RunInstances:1014</code> | <code>RunInstances:1110</code> | <code>RunInstances:0014</code> |
+     * <code>RunInstances:0210</code> | <code>RunInstances:0110</code> | <code>RunInstances:0100</code> |
+     * <code>RunInstances:0004</code> | <code>RunInstances:0200</code> | <code>RunInstances:000g</code> |
+     * <code>RunInstances:0g00</code> | <code>RunInstances:0002</code> | <code>RunInstances:0800</code> |
+     * <code>RunInstances:0102</code> | <code>RunInstances:0006</code> | <code>RunInstances:0202</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>usage-operation-update-time</code> - The time that the usage operation was last updated, for example,
+     * <code>2022-09-15T17:15:20.000Z</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>virtualization-type</code> - The virtualization type of the instance (<code>paravirtual</code> |
      * <code>hvm</code>).
      * </p>
@@ -2110,7 +3103,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>block-device-mapping.attach-time</code> - The attach time for an EBS volume mapped to the instance,
-     *        for example, <code>2010-09-15T17:15:20.000Z</code>.
+     *        for example, <code>2022-09-15T17:15:20.000Z</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -2138,8 +3131,32 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>boot-mode</code> - The boot mode that was specified by the AMI (<code>legacy-bios</code> |
+     *        <code>uefi</code> | <code>uefi-preferred</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>capacity-reservation-id</code> - The ID of the Capacity Reservation into which the instance was
      *        launched.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>capacity-reservation-specification.capacity-reservation-preference</code> - The instance's Capacity
+     *        Reservation preference (<code>open</code> | <code>none</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>capacity-reservation-specification.capacity-reservation-target.capacity-reservation-id</code> - The
+     *        ID of the targeted Capacity Reservation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>capacity-reservation-specification.capacity-reservation-target.capacity-reservation-resource-group-arn</code>
+     *        - The ARN of the targeted Capacity Reservation group.
      *        </p>
      *        </li>
      *        <li>
@@ -2149,17 +3166,31 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>current-instance-boot-mode</code> - The boot mode that is used to launch the instance at launch or
+     *        start (<code>legacy-bios</code> | <code>uefi</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>dns-name</code> - The public DNS name of the instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>group-id</code> - The ID of the security group for the instance. EC2-Classic only.
+     *        <code>ebs-optimized</code> - A Boolean that indicates whether the instance is optimized for Amazon EBS
+     *        I/O.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>group-name</code> - The name of the security group for the instance. EC2-Classic only.
+     *        <code>ena-support</code> - A Boolean that indicates whether the instance is enabled for enhanced
+     *        networking with ENA.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>enclave-options.enabled</code> - A Boolean that indicates whether the instance is enabled for Amazon
+     *        Web Services Nitro Enclaves.
      *        </p>
      *        </li>
      *        <li>
@@ -2187,6 +3218,18 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>iam-instance-profile.id</code> - The instance profile associated with the instance. Specified as an
+     *        ID.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>iam-instance-profile.name</code> - The instance profile associated with the instance. Specified as
+     *        an name.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>image-id</code> - The ID of the image used to launch the instance.
      *        </p>
      *        </li>
@@ -2197,8 +3240,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a Scheduled Instance (
-     *        <code>spot</code> | <code>scheduled</code>).
+     *        <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance, a Scheduled Instance, or a
+     *        Capacity Block (<code>spot</code> | <code>scheduled</code> | <code>capacity-block</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -2237,6 +3280,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>ipv6-address</code> - The IPv6 address of the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>kernel-id</code> - The kernel ID.
      *        </p>
      *        </li>
@@ -2260,20 +3308,50 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>maintenance-options.auto-recovery</code> - The current automatic recovery behavior of the instance (
+     *        <code>disabled</code> | <code>default</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>metadata-options.http-endpoint</code> - The status of access to the HTTP metadata endpoint on your
+     *        instance (<code>enabled</code> | <code>disabled</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>metadata-options.http-protocol-ipv4</code> - Indicates whether the IPv4 endpoint is enabled (
+     *        <code>disabled</code> | <code>enabled</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>metadata-options.http-protocol-ipv6</code> - Indicates whether the IPv6 endpoint is enabled (
+     *        <code>disabled</code> | <code>enabled</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>metadata-options.http-put-response-hop-limit</code> - The HTTP metadata request put response hop
+     *        limit (integer, possible values <code>1</code> to <code>64</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>metadata-options.http-tokens</code> - The metadata request authorization state (
      *        <code>optional</code> | <code>required</code>)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>metadata-options.http-put-response-hop-limit</code> - The http metadata request put response hop
-     *        limit (integer, possible values <code>1</code> to <code>64</code>)
+     *        <code>metadata-options.instance-metadata-tags</code> - The status of access to instance tags from the
+     *        instance metadata (<code>enabled</code> | <code>disabled</code>)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>metadata-options.http-endpoint</code> - Enable or disable metadata access on http endpoint (
-     *        <code>enabled</code> | <code>disabled</code>)
+     *        <code>metadata-options.state</code> - The state of the metadata option changes (<code>pending</code> |
+     *        <code>applied</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -2284,20 +3362,22 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.addresses.private-ip-address</code> - The private IPv4 address associated with the
-     *        network interface.
+     *        <code>network-interface.addresses.association.allocation-id</code> - The allocation ID.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.addresses.primary</code> - Specifies whether the IPv4 address of the network
-     *        interface is the primary private IPv4 address.
+     *        <code>network-interface.addresses.association.association-id</code> - The association ID.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.addresses.association.public-ip</code> - The ID of the association of an Elastic
-     *        IP address (IPv4) with a network interface.
+     *        <code>network-interface.addresses.association.carrier-ip</code> - The carrier IP address.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.addresses.association.customer-owned-ip</code> - The customer-owned IP address.
      *        </p>
      *        </li>
      *        <li>
@@ -2308,14 +3388,30 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.association.public-ip</code> - The address of the Elastic IP address (IPv4) bound
-     *        to the network interface.
+     *        <code>network-interface.addresses.association.public-dns-name</code> - The public DNS name.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4)
-     *        associated with the network interface.
+     *        <code>network-interface.addresses.association.public-ip</code> - The ID of the association of an Elastic
+     *        IP address (IPv4) with a network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.addresses.primary</code> - Specifies whether the IPv4 address of the network
+     *        interface is the primary private IPv4 address.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.addresses.private-dns-name</code> - The private DNS name.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.addresses.private-ip-address</code> - The private IPv4 address associated with the
+     *        network interface.
      *        </p>
      *        </li>
      *        <li>
@@ -2332,7 +3428,52 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>network-interface.association.carrier-ip</code> - The customer-owned IP address.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.association.customer-owned-ip</code> - The customer-owned IP address.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4)
+     *        associated with the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.association.public-dns-name</code> - The public DNS name.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.association.public-ip</code> - The address of the Elastic IP address (IPv4) bound
+     *        to the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.attachment.attach-time</code> - The time that the network interface was attached
+     *        to an instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>network-interface.attachment.attachment-id</code> - The ID of the interface attachment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.attachment.delete-on-termination</code> - Specifies whether the attachment is
+     *        deleted when an instance is terminated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.attachment.device-index</code> - The device index to which the network interface
+     *        is attached.
      *        </p>
      *        </li>
      *        <li>
@@ -2349,8 +3490,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.attachment.device-index</code> - The device index to which the network interface
-     *        is attached.
+     *        <code>network-interface.attachment.network-card-index</code> - The index of the network card.
      *        </p>
      *        </li>
      *        <li>
@@ -2361,19 +3501,13 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.attachment.attach-time</code> - The time that the network interface was attached
-     *        to an instance.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>network-interface.attachment.delete-on-termination</code> - Specifies whether the attachment is
-     *        deleted when an instance is terminated.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>network-interface.availability-zone</code> - The Availability Zone for the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.deny-all-igw-traffic</code> - A Boolean that indicates whether a network interface
+     *        with an IPv6 address is unreachable from the public internet.
      *        </p>
      *        </li>
      *        <li>
@@ -2395,7 +3529,36 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>network-interface.ipv4-prefixes.ipv4-prefix</code> - The IPv4 prefixes that are assigned to the
+     *        network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.ipv6-address</code> - The IPv6 address associated with the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>network-interface.ipv6-addresses.ipv6-address</code> - The IPv6 address associated with the network
+     *        interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.ipv6-addresses.is-primary-ipv6</code> - A Boolean that indicates whether this is
+     *        the primary IPv6 address.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.ipv6-native</code> - A Boolean that indicates whether this is an IPv6 only network
+     *        interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.ipv6-prefixes.ipv6-prefix</code> - The IPv6 prefix assigned to the network
      *        interface.
      *        </p>
      *        </li>
@@ -2411,12 +3574,27 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>network-interface.outpost-arn</code> - The ARN of the Outpost.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>network-interface.owner-id</code> - The ID of the owner of the network interface.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>network-interface.private-dns-name</code> - The private DNS name of the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.private-ip-address</code> - The private IPv4 address.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.public-dns-name</code> - The public DNS name.
      *        </p>
      *        </li>
      *        <li>
@@ -2451,6 +3629,16 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>network-interface.tag-key</code> - The key of a tag assigned to the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.tag-value</code> - The value of a tag assigned to the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>network-interface.vpc-id</code> - The ID of the VPC for the network interface.
      *        </p>
      *        </li>
@@ -2481,7 +3669,40 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>platform-details</code> - The platform (<code>Linux/UNIX</code> | <code>Red Hat BYOL Linux</code> |
+     *        <code> Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux with HA</code> |
+     *        <code>Red Hat Enterprise Linux with SQL Server Standard and HA</code> |
+     *        <code>Red Hat Enterprise Linux with SQL Server Enterprise and HA</code> |
+     *        <code>Red Hat Enterprise Linux with SQL Server Standard</code> |
+     *        <code>Red Hat Enterprise Linux with SQL Server Web</code> |
+     *        <code>Red Hat Enterprise Linux with SQL Server Enterprise</code> | <code>SQL Server Enterprise</code> |
+     *        <code>SQL Server Standard</code> | <code>SQL Server Web</code> | <code>SUSE Linux</code> |
+     *        <code>Ubuntu Pro</code> | <code>Windows</code> | <code>Windows BYOL</code> |
+     *        <code>Windows with SQL Server Enterprise</code> | <code>Windows with SQL Server Standard</code> |
+     *        <code>Windows with SQL Server Web</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>private-dns-name</code> - The private IPv4 DNS name of the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>private-dns-name-options.enable-resource-name-dns-a-record</code> - A Boolean that indicates whether
+     *        to respond to DNS queries for instance hostnames with DNS A records.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>private-dns-name-options.enable-resource-name-dns-aaaa-record</code> - A Boolean that indicates
+     *        whether to respond to DNS queries for instance hostnames with DNS AAAA records.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>private-dns-name-options.hostname-type</code> - The type of hostname (<code>ip-name</code> |
+     *        <code>resource-name</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -2584,6 +3805,29 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        <code>tenancy</code> - The tenancy of an instance (<code>dedicated</code> | <code>default</code> |
      *        <code>host</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tpm-support</code> - Indicates if the instance is configured for NitroTPM support (<code>v2.0</code>
+     *        ).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>usage-operation</code> - The usage operation value for the instance (<code>RunInstances</code> |
+     *        <code>RunInstances:00g0</code> | <code>RunInstances:0010</code> | <code>RunInstances:1010</code> |
+     *        <code>RunInstances:1014</code> | <code>RunInstances:1110</code> | <code>RunInstances:0014</code> |
+     *        <code>RunInstances:0210</code> | <code>RunInstances:0110</code> | <code>RunInstances:0100</code> |
+     *        <code>RunInstances:0004</code> | <code>RunInstances:0200</code> | <code>RunInstances:000g</code> |
+     *        <code>RunInstances:0g00</code> | <code>RunInstances:0002</code> | <code>RunInstances:0800</code> |
+     *        <code>RunInstances:0102</code> | <code>RunInstances:0006</code> | <code>RunInstances:0202</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>usage-operation-update-time</code> - The time that the usage operation was last updated, for
+     *        example, <code>2022-09-15T17:15:20.000Z</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -2633,7 +3877,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>block-device-mapping.attach-time</code> - The attach time for an EBS volume mapped to the instance, for
-     * example, <code>2010-09-15T17:15:20.000Z</code>.
+     * example, <code>2022-09-15T17:15:20.000Z</code>.
      * </p>
      * </li>
      * <li>
@@ -2661,7 +3905,31 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>boot-mode</code> - The boot mode that was specified by the AMI (<code>legacy-bios</code> |
+     * <code>uefi</code> | <code>uefi-preferred</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>capacity-reservation-id</code> - The ID of the Capacity Reservation into which the instance was launched.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>capacity-reservation-specification.capacity-reservation-preference</code> - The instance's Capacity
+     * Reservation preference (<code>open</code> | <code>none</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>capacity-reservation-specification.capacity-reservation-target.capacity-reservation-id</code> - The ID of
+     * the targeted Capacity Reservation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>capacity-reservation-specification.capacity-reservation-target.capacity-reservation-resource-group-arn</code>
+     * - The ARN of the targeted Capacity Reservation group.
      * </p>
      * </li>
      * <li>
@@ -2671,17 +3939,30 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>current-instance-boot-mode</code> - The boot mode that is used to launch the instance at launch or start (
+     * <code>legacy-bios</code> | <code>uefi</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>dns-name</code> - The public DNS name of the instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>group-id</code> - The ID of the security group for the instance. EC2-Classic only.
+     * <code>ebs-optimized</code> - A Boolean that indicates whether the instance is optimized for Amazon EBS I/O.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>group-name</code> - The name of the security group for the instance. EC2-Classic only.
+     * <code>ena-support</code> - A Boolean that indicates whether the instance is enabled for enhanced networking with
+     * ENA.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>enclave-options.enabled</code> - A Boolean that indicates whether the instance is enabled for Amazon Web
+     * Services Nitro Enclaves.
      * </p>
      * </li>
      * <li>
@@ -2708,6 +3989,16 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>iam-instance-profile.id</code> - The instance profile associated with the instance. Specified as an ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>iam-instance-profile.name</code> - The instance profile associated with the instance. Specified as an name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>image-id</code> - The ID of the image used to launch the instance.
      * </p>
      * </li>
@@ -2718,8 +4009,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a Scheduled Instance (
-     * <code>spot</code> | <code>scheduled</code>).
+     * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance, a Scheduled Instance, or a Capacity
+     * Block (<code>spot</code> | <code>scheduled</code> | <code>capacity-block</code>).
      * </p>
      * </li>
      * <li>
@@ -2757,6 +4048,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>ipv6-address</code> - The IPv6 address of the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>kernel-id</code> - The kernel ID.
      * </p>
      * </li>
@@ -2780,20 +4076,50 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>maintenance-options.auto-recovery</code> - The current automatic recovery behavior of the instance (
+     * <code>disabled</code> | <code>default</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-options.http-endpoint</code> - The status of access to the HTTP metadata endpoint on your instance
+     * (<code>enabled</code> | <code>disabled</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-options.http-protocol-ipv4</code> - Indicates whether the IPv4 endpoint is enabled (
+     * <code>disabled</code> | <code>enabled</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-options.http-protocol-ipv6</code> - Indicates whether the IPv6 endpoint is enabled (
+     * <code>disabled</code> | <code>enabled</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-options.http-put-response-hop-limit</code> - The HTTP metadata request put response hop limit
+     * (integer, possible values <code>1</code> to <code>64</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>metadata-options.http-tokens</code> - The metadata request authorization state (<code>optional</code> |
      * <code>required</code>)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>metadata-options.http-put-response-hop-limit</code> - The http metadata request put response hop limit
-     * (integer, possible values <code>1</code> to <code>64</code>)
+     * <code>metadata-options.instance-metadata-tags</code> - The status of access to instance tags from the instance
+     * metadata (<code>enabled</code> | <code>disabled</code>)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>metadata-options.http-endpoint</code> - Enable or disable metadata access on http endpoint (
-     * <code>enabled</code> | <code>disabled</code>)
+     * <code>metadata-options.state</code> - The state of the metadata option changes (<code>pending</code> |
+     * <code>applied</code>).
      * </p>
      * </li>
      * <li>
@@ -2804,20 +4130,22 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.addresses.private-ip-address</code> - The private IPv4 address associated with the
-     * network interface.
+     * <code>network-interface.addresses.association.allocation-id</code> - The allocation ID.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.addresses.primary</code> - Specifies whether the IPv4 address of the network interface is
-     * the primary private IPv4 address.
+     * <code>network-interface.addresses.association.association-id</code> - The association ID.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.addresses.association.public-ip</code> - The ID of the association of an Elastic IP
-     * address (IPv4) with a network interface.
+     * <code>network-interface.addresses.association.carrier-ip</code> - The carrier IP address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.addresses.association.customer-owned-ip</code> - The customer-owned IP address.
      * </p>
      * </li>
      * <li>
@@ -2828,14 +4156,30 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.association.public-ip</code> - The address of the Elastic IP address (IPv4) bound to the
-     * network interface.
+     * <code>network-interface.addresses.association.public-dns-name</code> - The public DNS name.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4) associated
-     * with the network interface.
+     * <code>network-interface.addresses.association.public-ip</code> - The ID of the association of an Elastic IP
+     * address (IPv4) with a network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.addresses.primary</code> - Specifies whether the IPv4 address of the network interface is
+     * the primary private IPv4 address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.addresses.private-dns-name</code> - The private DNS name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.addresses.private-ip-address</code> - The private IPv4 address associated with the
+     * network interface.
      * </p>
      * </li>
      * <li>
@@ -2852,7 +4196,52 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>network-interface.association.carrier-ip</code> - The customer-owned IP address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.customer-owned-ip</code> - The customer-owned IP address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4) associated
+     * with the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.public-dns-name</code> - The public DNS name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.public-ip</code> - The address of the Elastic IP address (IPv4) bound to the
+     * network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.attachment.attach-time</code> - The time that the network interface was attached to an
+     * instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-interface.attachment.attachment-id</code> - The ID of the interface attachment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.attachment.delete-on-termination</code> - Specifies whether the attachment is deleted
+     * when an instance is terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.attachment.device-index</code> - The device index to which the network interface is
+     * attached.
      * </p>
      * </li>
      * <li>
@@ -2869,8 +4258,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.attachment.device-index</code> - The device index to which the network interface is
-     * attached.
+     * <code>network-interface.attachment.network-card-index</code> - The index of the network card.
      * </p>
      * </li>
      * <li>
@@ -2881,19 +4269,13 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.attachment.attach-time</code> - The time that the network interface was attached to an
-     * instance.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>network-interface.attachment.delete-on-termination</code> - Specifies whether the attachment is deleted
-     * when an instance is terminated.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>network-interface.availability-zone</code> - The Availability Zone for the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.deny-all-igw-traffic</code> - A Boolean that indicates whether a network interface with
+     * an IPv6 address is unreachable from the public internet.
      * </p>
      * </li>
      * <li>
@@ -2913,8 +4295,36 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>network-interface.ipv4-prefixes.ipv4-prefix</code> - The IPv4 prefixes that are assigned to the network
+     * interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.ipv6-address</code> - The IPv6 address associated with the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-interface.ipv6-addresses.ipv6-address</code> - The IPv6 address associated with the network
      * interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.ipv6-addresses.is-primary-ipv6</code> - A Boolean that indicates whether this is the
+     * primary IPv6 address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.ipv6-native</code> - A Boolean that indicates whether this is an IPv6 only network
+     * interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.ipv6-prefixes.ipv6-prefix</code> - The IPv6 prefix assigned to the network interface.
      * </p>
      * </li>
      * <li>
@@ -2929,12 +4339,27 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>network-interface.outpost-arn</code> - The ARN of the Outpost.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-interface.owner-id</code> - The ID of the owner of the network interface.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>network-interface.private-dns-name</code> - The private DNS name of the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.private-ip-address</code> - The private IPv4 address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.public-dns-name</code> - The public DNS name.
      * </p>
      * </li>
      * <li>
@@ -2969,6 +4394,16 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>network-interface.tag-key</code> - The key of a tag assigned to the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.tag-value</code> - The value of a tag assigned to the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-interface.vpc-id</code> - The ID of the VPC for the network interface.
      * </p>
      * </li>
@@ -2999,7 +4434,40 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>platform-details</code> - The platform (<code>Linux/UNIX</code> | <code>Red Hat BYOL Linux</code> |
+     * <code> Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux with HA</code> |
+     * <code>Red Hat Enterprise Linux with SQL Server Standard and HA</code> |
+     * <code>Red Hat Enterprise Linux with SQL Server Enterprise and HA</code> |
+     * <code>Red Hat Enterprise Linux with SQL Server Standard</code> |
+     * <code>Red Hat Enterprise Linux with SQL Server Web</code> |
+     * <code>Red Hat Enterprise Linux with SQL Server Enterprise</code> | <code>SQL Server Enterprise</code> |
+     * <code>SQL Server Standard</code> | <code>SQL Server Web</code> | <code>SUSE Linux</code> |
+     * <code>Ubuntu Pro</code> | <code>Windows</code> | <code>Windows BYOL</code> |
+     * <code>Windows with SQL Server Enterprise</code> | <code>Windows with SQL Server Standard</code> |
+     * <code>Windows with SQL Server Web</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>private-dns-name</code> - The private IPv4 DNS name of the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>private-dns-name-options.enable-resource-name-dns-a-record</code> - A Boolean that indicates whether to
+     * respond to DNS queries for instance hostnames with DNS A records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>private-dns-name-options.enable-resource-name-dns-aaaa-record</code> - A Boolean that indicates whether to
+     * respond to DNS queries for instance hostnames with DNS AAAA records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>private-dns-name-options.hostname-type</code> - The type of hostname (<code>ip-name</code> |
+     * <code>resource-name</code>).
      * </p>
      * </li>
      * <li>
@@ -3103,6 +4571,28 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>tpm-support</code> - Indicates if the instance is configured for NitroTPM support (<code>v2.0</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>usage-operation</code> - The usage operation value for the instance (<code>RunInstances</code> |
+     * <code>RunInstances:00g0</code> | <code>RunInstances:0010</code> | <code>RunInstances:1010</code> |
+     * <code>RunInstances:1014</code> | <code>RunInstances:1110</code> | <code>RunInstances:0014</code> |
+     * <code>RunInstances:0210</code> | <code>RunInstances:0110</code> | <code>RunInstances:0100</code> |
+     * <code>RunInstances:0004</code> | <code>RunInstances:0200</code> | <code>RunInstances:000g</code> |
+     * <code>RunInstances:0g00</code> | <code>RunInstances:0002</code> | <code>RunInstances:0800</code> |
+     * <code>RunInstances:0102</code> | <code>RunInstances:0006</code> | <code>RunInstances:0202</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>usage-operation-update-time</code> - The time that the usage operation was last updated, for example,
+     * <code>2022-09-15T17:15:20.000Z</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>virtualization-type</code> - The virtualization type of the instance (<code>paravirtual</code> |
      * <code>hvm</code>).
      * </p>
@@ -3142,7 +4632,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>block-device-mapping.attach-time</code> - The attach time for an EBS volume mapped to the instance,
-     *        for example, <code>2010-09-15T17:15:20.000Z</code>.
+     *        for example, <code>2022-09-15T17:15:20.000Z</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -3170,8 +4660,32 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>boot-mode</code> - The boot mode that was specified by the AMI (<code>legacy-bios</code> |
+     *        <code>uefi</code> | <code>uefi-preferred</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>capacity-reservation-id</code> - The ID of the Capacity Reservation into which the instance was
      *        launched.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>capacity-reservation-specification.capacity-reservation-preference</code> - The instance's Capacity
+     *        Reservation preference (<code>open</code> | <code>none</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>capacity-reservation-specification.capacity-reservation-target.capacity-reservation-id</code> - The
+     *        ID of the targeted Capacity Reservation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>capacity-reservation-specification.capacity-reservation-target.capacity-reservation-resource-group-arn</code>
+     *        - The ARN of the targeted Capacity Reservation group.
      *        </p>
      *        </li>
      *        <li>
@@ -3181,17 +4695,31 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>current-instance-boot-mode</code> - The boot mode that is used to launch the instance at launch or
+     *        start (<code>legacy-bios</code> | <code>uefi</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>dns-name</code> - The public DNS name of the instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>group-id</code> - The ID of the security group for the instance. EC2-Classic only.
+     *        <code>ebs-optimized</code> - A Boolean that indicates whether the instance is optimized for Amazon EBS
+     *        I/O.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>group-name</code> - The name of the security group for the instance. EC2-Classic only.
+     *        <code>ena-support</code> - A Boolean that indicates whether the instance is enabled for enhanced
+     *        networking with ENA.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>enclave-options.enabled</code> - A Boolean that indicates whether the instance is enabled for Amazon
+     *        Web Services Nitro Enclaves.
      *        </p>
      *        </li>
      *        <li>
@@ -3219,6 +4747,18 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>iam-instance-profile.id</code> - The instance profile associated with the instance. Specified as an
+     *        ID.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>iam-instance-profile.name</code> - The instance profile associated with the instance. Specified as
+     *        an name.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>image-id</code> - The ID of the image used to launch the instance.
      *        </p>
      *        </li>
@@ -3229,8 +4769,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a Scheduled Instance (
-     *        <code>spot</code> | <code>scheduled</code>).
+     *        <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance, a Scheduled Instance, or a
+     *        Capacity Block (<code>spot</code> | <code>scheduled</code> | <code>capacity-block</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -3269,6 +4809,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>ipv6-address</code> - The IPv6 address of the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>kernel-id</code> - The kernel ID.
      *        </p>
      *        </li>
@@ -3292,20 +4837,50 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>maintenance-options.auto-recovery</code> - The current automatic recovery behavior of the instance (
+     *        <code>disabled</code> | <code>default</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>metadata-options.http-endpoint</code> - The status of access to the HTTP metadata endpoint on your
+     *        instance (<code>enabled</code> | <code>disabled</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>metadata-options.http-protocol-ipv4</code> - Indicates whether the IPv4 endpoint is enabled (
+     *        <code>disabled</code> | <code>enabled</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>metadata-options.http-protocol-ipv6</code> - Indicates whether the IPv6 endpoint is enabled (
+     *        <code>disabled</code> | <code>enabled</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>metadata-options.http-put-response-hop-limit</code> - The HTTP metadata request put response hop
+     *        limit (integer, possible values <code>1</code> to <code>64</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>metadata-options.http-tokens</code> - The metadata request authorization state (
      *        <code>optional</code> | <code>required</code>)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>metadata-options.http-put-response-hop-limit</code> - The http metadata request put response hop
-     *        limit (integer, possible values <code>1</code> to <code>64</code>)
+     *        <code>metadata-options.instance-metadata-tags</code> - The status of access to instance tags from the
+     *        instance metadata (<code>enabled</code> | <code>disabled</code>)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>metadata-options.http-endpoint</code> - Enable or disable metadata access on http endpoint (
-     *        <code>enabled</code> | <code>disabled</code>)
+     *        <code>metadata-options.state</code> - The state of the metadata option changes (<code>pending</code> |
+     *        <code>applied</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -3316,20 +4891,22 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.addresses.private-ip-address</code> - The private IPv4 address associated with the
-     *        network interface.
+     *        <code>network-interface.addresses.association.allocation-id</code> - The allocation ID.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.addresses.primary</code> - Specifies whether the IPv4 address of the network
-     *        interface is the primary private IPv4 address.
+     *        <code>network-interface.addresses.association.association-id</code> - The association ID.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.addresses.association.public-ip</code> - The ID of the association of an Elastic
-     *        IP address (IPv4) with a network interface.
+     *        <code>network-interface.addresses.association.carrier-ip</code> - The carrier IP address.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.addresses.association.customer-owned-ip</code> - The customer-owned IP address.
      *        </p>
      *        </li>
      *        <li>
@@ -3340,14 +4917,30 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.association.public-ip</code> - The address of the Elastic IP address (IPv4) bound
-     *        to the network interface.
+     *        <code>network-interface.addresses.association.public-dns-name</code> - The public DNS name.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4)
-     *        associated with the network interface.
+     *        <code>network-interface.addresses.association.public-ip</code> - The ID of the association of an Elastic
+     *        IP address (IPv4) with a network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.addresses.primary</code> - Specifies whether the IPv4 address of the network
+     *        interface is the primary private IPv4 address.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.addresses.private-dns-name</code> - The private DNS name.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.addresses.private-ip-address</code> - The private IPv4 address associated with the
+     *        network interface.
      *        </p>
      *        </li>
      *        <li>
@@ -3364,7 +4957,52 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>network-interface.association.carrier-ip</code> - The customer-owned IP address.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.association.customer-owned-ip</code> - The customer-owned IP address.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4)
+     *        associated with the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.association.public-dns-name</code> - The public DNS name.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.association.public-ip</code> - The address of the Elastic IP address (IPv4) bound
+     *        to the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.attachment.attach-time</code> - The time that the network interface was attached
+     *        to an instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>network-interface.attachment.attachment-id</code> - The ID of the interface attachment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.attachment.delete-on-termination</code> - Specifies whether the attachment is
+     *        deleted when an instance is terminated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.attachment.device-index</code> - The device index to which the network interface
+     *        is attached.
      *        </p>
      *        </li>
      *        <li>
@@ -3381,8 +5019,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.attachment.device-index</code> - The device index to which the network interface
-     *        is attached.
+     *        <code>network-interface.attachment.network-card-index</code> - The index of the network card.
      *        </p>
      *        </li>
      *        <li>
@@ -3393,19 +5030,13 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.attachment.attach-time</code> - The time that the network interface was attached
-     *        to an instance.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>network-interface.attachment.delete-on-termination</code> - Specifies whether the attachment is
-     *        deleted when an instance is terminated.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>network-interface.availability-zone</code> - The Availability Zone for the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.deny-all-igw-traffic</code> - A Boolean that indicates whether a network interface
+     *        with an IPv6 address is unreachable from the public internet.
      *        </p>
      *        </li>
      *        <li>
@@ -3427,7 +5058,36 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>network-interface.ipv4-prefixes.ipv4-prefix</code> - The IPv4 prefixes that are assigned to the
+     *        network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.ipv6-address</code> - The IPv6 address associated with the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>network-interface.ipv6-addresses.ipv6-address</code> - The IPv6 address associated with the network
+     *        interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.ipv6-addresses.is-primary-ipv6</code> - A Boolean that indicates whether this is
+     *        the primary IPv6 address.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.ipv6-native</code> - A Boolean that indicates whether this is an IPv6 only network
+     *        interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.ipv6-prefixes.ipv6-prefix</code> - The IPv6 prefix assigned to the network
      *        interface.
      *        </p>
      *        </li>
@@ -3443,12 +5103,27 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>network-interface.outpost-arn</code> - The ARN of the Outpost.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>network-interface.owner-id</code> - The ID of the owner of the network interface.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>network-interface.private-dns-name</code> - The private DNS name of the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.private-ip-address</code> - The private IPv4 address.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.public-dns-name</code> - The public DNS name.
      *        </p>
      *        </li>
      *        <li>
@@ -3483,6 +5158,16 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>network-interface.tag-key</code> - The key of a tag assigned to the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.tag-value</code> - The value of a tag assigned to the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>network-interface.vpc-id</code> - The ID of the VPC for the network interface.
      *        </p>
      *        </li>
@@ -3513,7 +5198,40 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>platform-details</code> - The platform (<code>Linux/UNIX</code> | <code>Red Hat BYOL Linux</code> |
+     *        <code> Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux with HA</code> |
+     *        <code>Red Hat Enterprise Linux with SQL Server Standard and HA</code> |
+     *        <code>Red Hat Enterprise Linux with SQL Server Enterprise and HA</code> |
+     *        <code>Red Hat Enterprise Linux with SQL Server Standard</code> |
+     *        <code>Red Hat Enterprise Linux with SQL Server Web</code> |
+     *        <code>Red Hat Enterprise Linux with SQL Server Enterprise</code> | <code>SQL Server Enterprise</code> |
+     *        <code>SQL Server Standard</code> | <code>SQL Server Web</code> | <code>SUSE Linux</code> |
+     *        <code>Ubuntu Pro</code> | <code>Windows</code> | <code>Windows BYOL</code> |
+     *        <code>Windows with SQL Server Enterprise</code> | <code>Windows with SQL Server Standard</code> |
+     *        <code>Windows with SQL Server Web</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>private-dns-name</code> - The private IPv4 DNS name of the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>private-dns-name-options.enable-resource-name-dns-a-record</code> - A Boolean that indicates whether
+     *        to respond to DNS queries for instance hostnames with DNS A records.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>private-dns-name-options.enable-resource-name-dns-aaaa-record</code> - A Boolean that indicates
+     *        whether to respond to DNS queries for instance hostnames with DNS AAAA records.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>private-dns-name-options.hostname-type</code> - The type of hostname (<code>ip-name</code> |
+     *        <code>resource-name</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -3616,6 +5334,29 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        <code>tenancy</code> - The tenancy of an instance (<code>dedicated</code> | <code>default</code> |
      *        <code>host</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tpm-support</code> - Indicates if the instance is configured for NitroTPM support (<code>v2.0</code>
+     *        ).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>usage-operation</code> - The usage operation value for the instance (<code>RunInstances</code> |
+     *        <code>RunInstances:00g0</code> | <code>RunInstances:0010</code> | <code>RunInstances:1010</code> |
+     *        <code>RunInstances:1014</code> | <code>RunInstances:1110</code> | <code>RunInstances:0014</code> |
+     *        <code>RunInstances:0210</code> | <code>RunInstances:0110</code> | <code>RunInstances:0100</code> |
+     *        <code>RunInstances:0004</code> | <code>RunInstances:0200</code> | <code>RunInstances:000g</code> |
+     *        <code>RunInstances:0g00</code> | <code>RunInstances:0002</code> | <code>RunInstances:0800</code> |
+     *        <code>RunInstances:0102</code> | <code>RunInstances:0006</code> | <code>RunInstances:0202</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>usage-operation-update-time</code> - The time that the usage operation was last updated, for
+     *        example, <code>2022-09-15T17:15:20.000Z</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -3667,7 +5408,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>block-device-mapping.attach-time</code> - The attach time for an EBS volume mapped to the instance, for
-     * example, <code>2010-09-15T17:15:20.000Z</code>.
+     * example, <code>2022-09-15T17:15:20.000Z</code>.
      * </p>
      * </li>
      * <li>
@@ -3695,7 +5436,31 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>boot-mode</code> - The boot mode that was specified by the AMI (<code>legacy-bios</code> |
+     * <code>uefi</code> | <code>uefi-preferred</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>capacity-reservation-id</code> - The ID of the Capacity Reservation into which the instance was launched.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>capacity-reservation-specification.capacity-reservation-preference</code> - The instance's Capacity
+     * Reservation preference (<code>open</code> | <code>none</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>capacity-reservation-specification.capacity-reservation-target.capacity-reservation-id</code> - The ID of
+     * the targeted Capacity Reservation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>capacity-reservation-specification.capacity-reservation-target.capacity-reservation-resource-group-arn</code>
+     * - The ARN of the targeted Capacity Reservation group.
      * </p>
      * </li>
      * <li>
@@ -3705,17 +5470,30 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>current-instance-boot-mode</code> - The boot mode that is used to launch the instance at launch or start (
+     * <code>legacy-bios</code> | <code>uefi</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>dns-name</code> - The public DNS name of the instance.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>group-id</code> - The ID of the security group for the instance. EC2-Classic only.
+     * <code>ebs-optimized</code> - A Boolean that indicates whether the instance is optimized for Amazon EBS I/O.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>group-name</code> - The name of the security group for the instance. EC2-Classic only.
+     * <code>ena-support</code> - A Boolean that indicates whether the instance is enabled for enhanced networking with
+     * ENA.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>enclave-options.enabled</code> - A Boolean that indicates whether the instance is enabled for Amazon Web
+     * Services Nitro Enclaves.
      * </p>
      * </li>
      * <li>
@@ -3742,6 +5520,16 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>iam-instance-profile.id</code> - The instance profile associated with the instance. Specified as an ID.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>iam-instance-profile.name</code> - The instance profile associated with the instance. Specified as an name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>image-id</code> - The ID of the image used to launch the instance.
      * </p>
      * </li>
@@ -3752,8 +5540,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a Scheduled Instance (
-     * <code>spot</code> | <code>scheduled</code>).
+     * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance, a Scheduled Instance, or a Capacity
+     * Block (<code>spot</code> | <code>scheduled</code> | <code>capacity-block</code>).
      * </p>
      * </li>
      * <li>
@@ -3791,6 +5579,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>ipv6-address</code> - The IPv6 address of the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>kernel-id</code> - The kernel ID.
      * </p>
      * </li>
@@ -3814,20 +5607,50 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>maintenance-options.auto-recovery</code> - The current automatic recovery behavior of the instance (
+     * <code>disabled</code> | <code>default</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-options.http-endpoint</code> - The status of access to the HTTP metadata endpoint on your instance
+     * (<code>enabled</code> | <code>disabled</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-options.http-protocol-ipv4</code> - Indicates whether the IPv4 endpoint is enabled (
+     * <code>disabled</code> | <code>enabled</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-options.http-protocol-ipv6</code> - Indicates whether the IPv6 endpoint is enabled (
+     * <code>disabled</code> | <code>enabled</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>metadata-options.http-put-response-hop-limit</code> - The HTTP metadata request put response hop limit
+     * (integer, possible values <code>1</code> to <code>64</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>metadata-options.http-tokens</code> - The metadata request authorization state (<code>optional</code> |
      * <code>required</code>)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>metadata-options.http-put-response-hop-limit</code> - The http metadata request put response hop limit
-     * (integer, possible values <code>1</code> to <code>64</code>)
+     * <code>metadata-options.instance-metadata-tags</code> - The status of access to instance tags from the instance
+     * metadata (<code>enabled</code> | <code>disabled</code>)
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>metadata-options.http-endpoint</code> - Enable or disable metadata access on http endpoint (
-     * <code>enabled</code> | <code>disabled</code>)
+     * <code>metadata-options.state</code> - The state of the metadata option changes (<code>pending</code> |
+     * <code>applied</code>).
      * </p>
      * </li>
      * <li>
@@ -3838,20 +5661,22 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.addresses.private-ip-address</code> - The private IPv4 address associated with the
-     * network interface.
+     * <code>network-interface.addresses.association.allocation-id</code> - The allocation ID.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.addresses.primary</code> - Specifies whether the IPv4 address of the network interface is
-     * the primary private IPv4 address.
+     * <code>network-interface.addresses.association.association-id</code> - The association ID.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.addresses.association.public-ip</code> - The ID of the association of an Elastic IP
-     * address (IPv4) with a network interface.
+     * <code>network-interface.addresses.association.carrier-ip</code> - The carrier IP address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.addresses.association.customer-owned-ip</code> - The customer-owned IP address.
      * </p>
      * </li>
      * <li>
@@ -3862,14 +5687,30 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.association.public-ip</code> - The address of the Elastic IP address (IPv4) bound to the
-     * network interface.
+     * <code>network-interface.addresses.association.public-dns-name</code> - The public DNS name.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4) associated
-     * with the network interface.
+     * <code>network-interface.addresses.association.public-ip</code> - The ID of the association of an Elastic IP
+     * address (IPv4) with a network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.addresses.primary</code> - Specifies whether the IPv4 address of the network interface is
+     * the primary private IPv4 address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.addresses.private-dns-name</code> - The private DNS name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.addresses.private-ip-address</code> - The private IPv4 address associated with the
+     * network interface.
      * </p>
      * </li>
      * <li>
@@ -3886,7 +5727,52 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>network-interface.association.carrier-ip</code> - The customer-owned IP address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.customer-owned-ip</code> - The customer-owned IP address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4) associated
+     * with the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.public-dns-name</code> - The public DNS name.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.association.public-ip</code> - The address of the Elastic IP address (IPv4) bound to the
+     * network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.attachment.attach-time</code> - The time that the network interface was attached to an
+     * instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-interface.attachment.attachment-id</code> - The ID of the interface attachment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.attachment.delete-on-termination</code> - Specifies whether the attachment is deleted
+     * when an instance is terminated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.attachment.device-index</code> - The device index to which the network interface is
+     * attached.
      * </p>
      * </li>
      * <li>
@@ -3903,8 +5789,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.attachment.device-index</code> - The device index to which the network interface is
-     * attached.
+     * <code>network-interface.attachment.network-card-index</code> - The index of the network card.
      * </p>
      * </li>
      * <li>
@@ -3915,19 +5800,13 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-interface.attachment.attach-time</code> - The time that the network interface was attached to an
-     * instance.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>network-interface.attachment.delete-on-termination</code> - Specifies whether the attachment is deleted
-     * when an instance is terminated.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>network-interface.availability-zone</code> - The Availability Zone for the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.deny-all-igw-traffic</code> - A Boolean that indicates whether a network interface with
+     * an IPv6 address is unreachable from the public internet.
      * </p>
      * </li>
      * <li>
@@ -3947,8 +5826,36 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>network-interface.ipv4-prefixes.ipv4-prefix</code> - The IPv4 prefixes that are assigned to the network
+     * interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.ipv6-address</code> - The IPv6 address associated with the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-interface.ipv6-addresses.ipv6-address</code> - The IPv6 address associated with the network
      * interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.ipv6-addresses.is-primary-ipv6</code> - A Boolean that indicates whether this is the
+     * primary IPv6 address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.ipv6-native</code> - A Boolean that indicates whether this is an IPv6 only network
+     * interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.ipv6-prefixes.ipv6-prefix</code> - The IPv6 prefix assigned to the network interface.
      * </p>
      * </li>
      * <li>
@@ -3963,12 +5870,27 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>network-interface.outpost-arn</code> - The ARN of the Outpost.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-interface.owner-id</code> - The ID of the owner of the network interface.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>network-interface.private-dns-name</code> - The private DNS name of the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.private-ip-address</code> - The private IPv4 address.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.public-dns-name</code> - The public DNS name.
      * </p>
      * </li>
      * <li>
@@ -4003,6 +5925,16 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>network-interface.tag-key</code> - The key of a tag assigned to the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-interface.tag-value</code> - The value of a tag assigned to the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>network-interface.vpc-id</code> - The ID of the VPC for the network interface.
      * </p>
      * </li>
@@ -4033,7 +5965,40 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>platform-details</code> - The platform (<code>Linux/UNIX</code> | <code>Red Hat BYOL Linux</code> |
+     * <code> Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux with HA</code> |
+     * <code>Red Hat Enterprise Linux with SQL Server Standard and HA</code> |
+     * <code>Red Hat Enterprise Linux with SQL Server Enterprise and HA</code> |
+     * <code>Red Hat Enterprise Linux with SQL Server Standard</code> |
+     * <code>Red Hat Enterprise Linux with SQL Server Web</code> |
+     * <code>Red Hat Enterprise Linux with SQL Server Enterprise</code> | <code>SQL Server Enterprise</code> |
+     * <code>SQL Server Standard</code> | <code>SQL Server Web</code> | <code>SUSE Linux</code> |
+     * <code>Ubuntu Pro</code> | <code>Windows</code> | <code>Windows BYOL</code> |
+     * <code>Windows with SQL Server Enterprise</code> | <code>Windows with SQL Server Standard</code> |
+     * <code>Windows with SQL Server Web</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>private-dns-name</code> - The private IPv4 DNS name of the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>private-dns-name-options.enable-resource-name-dns-a-record</code> - A Boolean that indicates whether to
+     * respond to DNS queries for instance hostnames with DNS A records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>private-dns-name-options.enable-resource-name-dns-aaaa-record</code> - A Boolean that indicates whether to
+     * respond to DNS queries for instance hostnames with DNS AAAA records.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>private-dns-name-options.hostname-type</code> - The type of hostname (<code>ip-name</code> |
+     * <code>resource-name</code>).
      * </p>
      * </li>
      * <li>
@@ -4137,6 +6102,28 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>tpm-support</code> - Indicates if the instance is configured for NitroTPM support (<code>v2.0</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>usage-operation</code> - The usage operation value for the instance (<code>RunInstances</code> |
+     * <code>RunInstances:00g0</code> | <code>RunInstances:0010</code> | <code>RunInstances:1010</code> |
+     * <code>RunInstances:1014</code> | <code>RunInstances:1110</code> | <code>RunInstances:0014</code> |
+     * <code>RunInstances:0210</code> | <code>RunInstances:0110</code> | <code>RunInstances:0100</code> |
+     * <code>RunInstances:0004</code> | <code>RunInstances:0200</code> | <code>RunInstances:000g</code> |
+     * <code>RunInstances:0g00</code> | <code>RunInstances:0002</code> | <code>RunInstances:0800</code> |
+     * <code>RunInstances:0102</code> | <code>RunInstances:0006</code> | <code>RunInstances:0202</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>usage-operation-update-time</code> - The time that the usage operation was last updated, for example,
+     * <code>2022-09-15T17:15:20.000Z</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>virtualization-type</code> - The virtualization type of the instance (<code>paravirtual</code> |
      * <code>hvm</code>).
      * </p>
@@ -4171,7 +6158,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>block-device-mapping.attach-time</code> - The attach time for an EBS volume mapped to the instance,
-     *        for example, <code>2010-09-15T17:15:20.000Z</code>.
+     *        for example, <code>2022-09-15T17:15:20.000Z</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -4199,8 +6186,32 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>boot-mode</code> - The boot mode that was specified by the AMI (<code>legacy-bios</code> |
+     *        <code>uefi</code> | <code>uefi-preferred</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>capacity-reservation-id</code> - The ID of the Capacity Reservation into which the instance was
      *        launched.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>capacity-reservation-specification.capacity-reservation-preference</code> - The instance's Capacity
+     *        Reservation preference (<code>open</code> | <code>none</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>capacity-reservation-specification.capacity-reservation-target.capacity-reservation-id</code> - The
+     *        ID of the targeted Capacity Reservation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>capacity-reservation-specification.capacity-reservation-target.capacity-reservation-resource-group-arn</code>
+     *        - The ARN of the targeted Capacity Reservation group.
      *        </p>
      *        </li>
      *        <li>
@@ -4210,17 +6221,31 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>current-instance-boot-mode</code> - The boot mode that is used to launch the instance at launch or
+     *        start (<code>legacy-bios</code> | <code>uefi</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>dns-name</code> - The public DNS name of the instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>group-id</code> - The ID of the security group for the instance. EC2-Classic only.
+     *        <code>ebs-optimized</code> - A Boolean that indicates whether the instance is optimized for Amazon EBS
+     *        I/O.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>group-name</code> - The name of the security group for the instance. EC2-Classic only.
+     *        <code>ena-support</code> - A Boolean that indicates whether the instance is enabled for enhanced
+     *        networking with ENA.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>enclave-options.enabled</code> - A Boolean that indicates whether the instance is enabled for Amazon
+     *        Web Services Nitro Enclaves.
      *        </p>
      *        </li>
      *        <li>
@@ -4248,6 +6273,18 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>iam-instance-profile.id</code> - The instance profile associated with the instance. Specified as an
+     *        ID.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>iam-instance-profile.name</code> - The instance profile associated with the instance. Specified as
+     *        an name.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>image-id</code> - The ID of the image used to launch the instance.
      *        </p>
      *        </li>
@@ -4258,8 +6295,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a Scheduled Instance (
-     *        <code>spot</code> | <code>scheduled</code>).
+     *        <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance, a Scheduled Instance, or a
+     *        Capacity Block (<code>spot</code> | <code>scheduled</code> | <code>capacity-block</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -4298,6 +6335,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>ipv6-address</code> - The IPv6 address of the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>kernel-id</code> - The kernel ID.
      *        </p>
      *        </li>
@@ -4321,20 +6363,50 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>maintenance-options.auto-recovery</code> - The current automatic recovery behavior of the instance (
+     *        <code>disabled</code> | <code>default</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>metadata-options.http-endpoint</code> - The status of access to the HTTP metadata endpoint on your
+     *        instance (<code>enabled</code> | <code>disabled</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>metadata-options.http-protocol-ipv4</code> - Indicates whether the IPv4 endpoint is enabled (
+     *        <code>disabled</code> | <code>enabled</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>metadata-options.http-protocol-ipv6</code> - Indicates whether the IPv6 endpoint is enabled (
+     *        <code>disabled</code> | <code>enabled</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>metadata-options.http-put-response-hop-limit</code> - The HTTP metadata request put response hop
+     *        limit (integer, possible values <code>1</code> to <code>64</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>metadata-options.http-tokens</code> - The metadata request authorization state (
      *        <code>optional</code> | <code>required</code>)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>metadata-options.http-put-response-hop-limit</code> - The http metadata request put response hop
-     *        limit (integer, possible values <code>1</code> to <code>64</code>)
+     *        <code>metadata-options.instance-metadata-tags</code> - The status of access to instance tags from the
+     *        instance metadata (<code>enabled</code> | <code>disabled</code>)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>metadata-options.http-endpoint</code> - Enable or disable metadata access on http endpoint (
-     *        <code>enabled</code> | <code>disabled</code>)
+     *        <code>metadata-options.state</code> - The state of the metadata option changes (<code>pending</code> |
+     *        <code>applied</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -4345,20 +6417,22 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.addresses.private-ip-address</code> - The private IPv4 address associated with the
-     *        network interface.
+     *        <code>network-interface.addresses.association.allocation-id</code> - The allocation ID.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.addresses.primary</code> - Specifies whether the IPv4 address of the network
-     *        interface is the primary private IPv4 address.
+     *        <code>network-interface.addresses.association.association-id</code> - The association ID.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.addresses.association.public-ip</code> - The ID of the association of an Elastic
-     *        IP address (IPv4) with a network interface.
+     *        <code>network-interface.addresses.association.carrier-ip</code> - The carrier IP address.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.addresses.association.customer-owned-ip</code> - The customer-owned IP address.
      *        </p>
      *        </li>
      *        <li>
@@ -4369,14 +6443,30 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.association.public-ip</code> - The address of the Elastic IP address (IPv4) bound
-     *        to the network interface.
+     *        <code>network-interface.addresses.association.public-dns-name</code> - The public DNS name.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4)
-     *        associated with the network interface.
+     *        <code>network-interface.addresses.association.public-ip</code> - The ID of the association of an Elastic
+     *        IP address (IPv4) with a network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.addresses.primary</code> - Specifies whether the IPv4 address of the network
+     *        interface is the primary private IPv4 address.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.addresses.private-dns-name</code> - The private DNS name.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.addresses.private-ip-address</code> - The private IPv4 address associated with the
+     *        network interface.
      *        </p>
      *        </li>
      *        <li>
@@ -4393,7 +6483,52 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>network-interface.association.carrier-ip</code> - The customer-owned IP address.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.association.customer-owned-ip</code> - The customer-owned IP address.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.association.ip-owner-id</code> - The owner of the Elastic IP address (IPv4)
+     *        associated with the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.association.public-dns-name</code> - The public DNS name.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.association.public-ip</code> - The address of the Elastic IP address (IPv4) bound
+     *        to the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.attachment.attach-time</code> - The time that the network interface was attached
+     *        to an instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>network-interface.attachment.attachment-id</code> - The ID of the interface attachment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.attachment.delete-on-termination</code> - Specifies whether the attachment is
+     *        deleted when an instance is terminated.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.attachment.device-index</code> - The device index to which the network interface
+     *        is attached.
      *        </p>
      *        </li>
      *        <li>
@@ -4410,8 +6545,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.attachment.device-index</code> - The device index to which the network interface
-     *        is attached.
+     *        <code>network-interface.attachment.network-card-index</code> - The index of the network card.
      *        </p>
      *        </li>
      *        <li>
@@ -4422,19 +6556,13 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-interface.attachment.attach-time</code> - The time that the network interface was attached
-     *        to an instance.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>network-interface.attachment.delete-on-termination</code> - Specifies whether the attachment is
-     *        deleted when an instance is terminated.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>network-interface.availability-zone</code> - The Availability Zone for the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.deny-all-igw-traffic</code> - A Boolean that indicates whether a network interface
+     *        with an IPv6 address is unreachable from the public internet.
      *        </p>
      *        </li>
      *        <li>
@@ -4456,7 +6584,36 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>network-interface.ipv4-prefixes.ipv4-prefix</code> - The IPv4 prefixes that are assigned to the
+     *        network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.ipv6-address</code> - The IPv6 address associated with the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>network-interface.ipv6-addresses.ipv6-address</code> - The IPv6 address associated with the network
+     *        interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.ipv6-addresses.is-primary-ipv6</code> - A Boolean that indicates whether this is
+     *        the primary IPv6 address.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.ipv6-native</code> - A Boolean that indicates whether this is an IPv6 only network
+     *        interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.ipv6-prefixes.ipv6-prefix</code> - The IPv6 prefix assigned to the network
      *        interface.
      *        </p>
      *        </li>
@@ -4472,12 +6629,27 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>network-interface.outpost-arn</code> - The ARN of the Outpost.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>network-interface.owner-id</code> - The ID of the owner of the network interface.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>network-interface.private-dns-name</code> - The private DNS name of the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.private-ip-address</code> - The private IPv4 address.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.public-dns-name</code> - The public DNS name.
      *        </p>
      *        </li>
      *        <li>
@@ -4512,6 +6684,16 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>network-interface.tag-key</code> - The key of a tag assigned to the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-interface.tag-value</code> - The value of a tag assigned to the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>network-interface.vpc-id</code> - The ID of the VPC for the network interface.
      *        </p>
      *        </li>
@@ -4542,7 +6724,40 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
+     *        <code>platform-details</code> - The platform (<code>Linux/UNIX</code> | <code>Red Hat BYOL Linux</code> |
+     *        <code> Red Hat Enterprise Linux</code> | <code>Red Hat Enterprise Linux with HA</code> |
+     *        <code>Red Hat Enterprise Linux with SQL Server Standard and HA</code> |
+     *        <code>Red Hat Enterprise Linux with SQL Server Enterprise and HA</code> |
+     *        <code>Red Hat Enterprise Linux with SQL Server Standard</code> |
+     *        <code>Red Hat Enterprise Linux with SQL Server Web</code> |
+     *        <code>Red Hat Enterprise Linux with SQL Server Enterprise</code> | <code>SQL Server Enterprise</code> |
+     *        <code>SQL Server Standard</code> | <code>SQL Server Web</code> | <code>SUSE Linux</code> |
+     *        <code>Ubuntu Pro</code> | <code>Windows</code> | <code>Windows BYOL</code> |
+     *        <code>Windows with SQL Server Enterprise</code> | <code>Windows with SQL Server Standard</code> |
+     *        <code>Windows with SQL Server Web</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>private-dns-name</code> - The private IPv4 DNS name of the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>private-dns-name-options.enable-resource-name-dns-a-record</code> - A Boolean that indicates whether
+     *        to respond to DNS queries for instance hostnames with DNS A records.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>private-dns-name-options.enable-resource-name-dns-aaaa-record</code> - A Boolean that indicates
+     *        whether to respond to DNS queries for instance hostnames with DNS AAAA records.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>private-dns-name-options.hostname-type</code> - The type of hostname (<code>ip-name</code> |
+     *        <code>resource-name</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -4645,6 +6860,29 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <p>
      *        <code>tenancy</code> - The tenancy of an instance (<code>dedicated</code> | <code>default</code> |
      *        <code>host</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tpm-support</code> - Indicates if the instance is configured for NitroTPM support (<code>v2.0</code>
+     *        ).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>usage-operation</code> - The usage operation value for the instance (<code>RunInstances</code> |
+     *        <code>RunInstances:00g0</code> | <code>RunInstances:0010</code> | <code>RunInstances:1010</code> |
+     *        <code>RunInstances:1014</code> | <code>RunInstances:1110</code> | <code>RunInstances:0014</code> |
+     *        <code>RunInstances:0210</code> | <code>RunInstances:0110</code> | <code>RunInstances:0100</code> |
+     *        <code>RunInstances:0004</code> | <code>RunInstances:0200</code> | <code>RunInstances:000g</code> |
+     *        <code>RunInstances:0g00</code> | <code>RunInstances:0002</code> | <code>RunInstances:0800</code> |
+     *        <code>RunInstances:0102</code> | <code>RunInstances:0006</code> | <code>RunInstances:0202</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>usage-operation-update-time</code> - The time that the usage operation was last updated, for
+     *        example, <code>2022-09-15T17:15:20.000Z</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -4761,15 +6999,21 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     * with the returned <code>NextToken</code> value. This value can be between 5 and 1000. You cannot specify this
-     * parameter and the instance IDs parameter in the same call.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
+     * </p>
+     * <p>
+     * You cannot specify this parameter and the instance IDs parameter in the same request.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *        call with the returned <code>NextToken</code> value. This value can be between 5 and 1000. You cannot
-     *        specify this parameter and the instance IDs parameter in the same call.
+     *        The maximum number of items to return for this request. To get the next page of items, make another
+     *        request with the token returned in the output. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *        >Pagination</a>.</p>
+     *        <p>
+     *        You cannot specify this parameter and the instance IDs parameter in the same request.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -4778,14 +7022,20 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     * with the returned <code>NextToken</code> value. This value can be between 5 and 1000. You cannot specify this
-     * parameter and the instance IDs parameter in the same call.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
+     * </p>
+     * <p>
+     * You cannot specify this parameter and the instance IDs parameter in the same request.
      * </p>
      * 
-     * @return The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *         call with the returned <code>NextToken</code> value. This value can be between 5 and 1000. You cannot
-     *         specify this parameter and the instance IDs parameter in the same call.
+     * @return The maximum number of items to return for this request. To get the next page of items, make another
+     *         request with the token returned in the output. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *         >Pagination</a>.</p>
+     *         <p>
+     *         You cannot specify this parameter and the instance IDs parameter in the same request.
      */
 
     public Integer getMaxResults() {
@@ -4794,15 +7044,21 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     * with the returned <code>NextToken</code> value. This value can be between 5 and 1000. You cannot specify this
-     * parameter and the instance IDs parameter in the same call.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
+     * </p>
+     * <p>
+     * You cannot specify this parameter and the instance IDs parameter in the same request.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *        call with the returned <code>NextToken</code> value. This value can be between 5 and 1000. You cannot
-     *        specify this parameter and the instance IDs parameter in the same call.
+     *        The maximum number of items to return for this request. To get the next page of items, make another
+     *        request with the token returned in the output. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *        >Pagination</a>.</p>
+     *        <p>
+     *        You cannot specify this parameter and the instance IDs parameter in the same request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -4813,11 +7069,13 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The token to request the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
      * @param nextToken
-     *        The token to request the next page of results.
+     *        The token returned from a previous paginated request. Pagination continues from the end of the items
+     *        returned by the previous request.
      */
 
     public void setNextToken(String nextToken) {
@@ -4826,10 +7084,12 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The token to request the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
-     * @return The token to request the next page of results.
+     * @return The token returned from a previous paginated request. Pagination continues from the end of the items
+     *         returned by the previous request.
      */
 
     public String getNextToken() {
@@ -4838,11 +7098,13 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The token to request the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
      * @param nextToken
-     *        The token to request the next page of results.
+     *        The token returned from a previous paginated request. Pagination continues from the end of the items
+     *        returned by the previous request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

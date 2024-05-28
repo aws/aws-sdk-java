@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,19 @@ public class UpdateIpRestrictionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private java.util.Map<String, String> ipRestrictionRuleMap;
+    /**
+     * <p>
+     * A map of VPC IDs and their corresponding rules. When you configure this parameter, traffic from all VPC endpoints
+     * that are present in the specified VPC is allowed.
+     * </p>
+     */
+    private java.util.Map<String, String> vpcIdRestrictionRuleMap;
+    /**
+     * <p>
+     * A map of allowed VPC endpoint IDs and their corresponding rule descriptions.
+     * </p>
+     */
+    private java.util.Map<String, String> vpcEndpointIdRestrictionRuleMap;
     /**
      * <p>
      * A value that specifies whether IP rules are turned on.
@@ -154,6 +167,148 @@ public class UpdateIpRestrictionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * A map of VPC IDs and their corresponding rules. When you configure this parameter, traffic from all VPC endpoints
+     * that are present in the specified VPC is allowed.
+     * </p>
+     * 
+     * @return A map of VPC IDs and their corresponding rules. When you configure this parameter, traffic from all VPC
+     *         endpoints that are present in the specified VPC is allowed.
+     */
+
+    public java.util.Map<String, String> getVpcIdRestrictionRuleMap() {
+        return vpcIdRestrictionRuleMap;
+    }
+
+    /**
+     * <p>
+     * A map of VPC IDs and their corresponding rules. When you configure this parameter, traffic from all VPC endpoints
+     * that are present in the specified VPC is allowed.
+     * </p>
+     * 
+     * @param vpcIdRestrictionRuleMap
+     *        A map of VPC IDs and their corresponding rules. When you configure this parameter, traffic from all VPC
+     *        endpoints that are present in the specified VPC is allowed.
+     */
+
+    public void setVpcIdRestrictionRuleMap(java.util.Map<String, String> vpcIdRestrictionRuleMap) {
+        this.vpcIdRestrictionRuleMap = vpcIdRestrictionRuleMap;
+    }
+
+    /**
+     * <p>
+     * A map of VPC IDs and their corresponding rules. When you configure this parameter, traffic from all VPC endpoints
+     * that are present in the specified VPC is allowed.
+     * </p>
+     * 
+     * @param vpcIdRestrictionRuleMap
+     *        A map of VPC IDs and their corresponding rules. When you configure this parameter, traffic from all VPC
+     *        endpoints that are present in the specified VPC is allowed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateIpRestrictionRequest withVpcIdRestrictionRuleMap(java.util.Map<String, String> vpcIdRestrictionRuleMap) {
+        setVpcIdRestrictionRuleMap(vpcIdRestrictionRuleMap);
+        return this;
+    }
+
+    /**
+     * Add a single VpcIdRestrictionRuleMap entry
+     *
+     * @see UpdateIpRestrictionRequest#withVpcIdRestrictionRuleMap
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateIpRestrictionRequest addVpcIdRestrictionRuleMapEntry(String key, String value) {
+        if (null == this.vpcIdRestrictionRuleMap) {
+            this.vpcIdRestrictionRuleMap = new java.util.HashMap<String, String>();
+        }
+        if (this.vpcIdRestrictionRuleMap.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.vpcIdRestrictionRuleMap.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into VpcIdRestrictionRuleMap.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateIpRestrictionRequest clearVpcIdRestrictionRuleMapEntries() {
+        this.vpcIdRestrictionRuleMap = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * A map of allowed VPC endpoint IDs and their corresponding rule descriptions.
+     * </p>
+     * 
+     * @return A map of allowed VPC endpoint IDs and their corresponding rule descriptions.
+     */
+
+    public java.util.Map<String, String> getVpcEndpointIdRestrictionRuleMap() {
+        return vpcEndpointIdRestrictionRuleMap;
+    }
+
+    /**
+     * <p>
+     * A map of allowed VPC endpoint IDs and their corresponding rule descriptions.
+     * </p>
+     * 
+     * @param vpcEndpointIdRestrictionRuleMap
+     *        A map of allowed VPC endpoint IDs and their corresponding rule descriptions.
+     */
+
+    public void setVpcEndpointIdRestrictionRuleMap(java.util.Map<String, String> vpcEndpointIdRestrictionRuleMap) {
+        this.vpcEndpointIdRestrictionRuleMap = vpcEndpointIdRestrictionRuleMap;
+    }
+
+    /**
+     * <p>
+     * A map of allowed VPC endpoint IDs and their corresponding rule descriptions.
+     * </p>
+     * 
+     * @param vpcEndpointIdRestrictionRuleMap
+     *        A map of allowed VPC endpoint IDs and their corresponding rule descriptions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateIpRestrictionRequest withVpcEndpointIdRestrictionRuleMap(java.util.Map<String, String> vpcEndpointIdRestrictionRuleMap) {
+        setVpcEndpointIdRestrictionRuleMap(vpcEndpointIdRestrictionRuleMap);
+        return this;
+    }
+
+    /**
+     * Add a single VpcEndpointIdRestrictionRuleMap entry
+     *
+     * @see UpdateIpRestrictionRequest#withVpcEndpointIdRestrictionRuleMap
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateIpRestrictionRequest addVpcEndpointIdRestrictionRuleMapEntry(String key, String value) {
+        if (null == this.vpcEndpointIdRestrictionRuleMap) {
+            this.vpcEndpointIdRestrictionRuleMap = new java.util.HashMap<String, String>();
+        }
+        if (this.vpcEndpointIdRestrictionRuleMap.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.vpcEndpointIdRestrictionRuleMap.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into VpcEndpointIdRestrictionRuleMap.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateIpRestrictionRequest clearVpcEndpointIdRestrictionRuleMapEntries() {
+        this.vpcEndpointIdRestrictionRuleMap = null;
+        return this;
+    }
+
+    /**
+     * <p>
      * A value that specifies whether IP rules are turned on.
      * </p>
      * 
@@ -220,6 +375,10 @@ public class UpdateIpRestrictionRequest extends com.amazonaws.AmazonWebServiceRe
             sb.append("AwsAccountId: ").append(getAwsAccountId()).append(",");
         if (getIpRestrictionRuleMap() != null)
             sb.append("IpRestrictionRuleMap: ").append(getIpRestrictionRuleMap()).append(",");
+        if (getVpcIdRestrictionRuleMap() != null)
+            sb.append("VpcIdRestrictionRuleMap: ").append(getVpcIdRestrictionRuleMap()).append(",");
+        if (getVpcEndpointIdRestrictionRuleMap() != null)
+            sb.append("VpcEndpointIdRestrictionRuleMap: ").append(getVpcEndpointIdRestrictionRuleMap()).append(",");
         if (getEnabled() != null)
             sb.append("Enabled: ").append(getEnabled());
         sb.append("}");
@@ -244,6 +403,15 @@ public class UpdateIpRestrictionRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getIpRestrictionRuleMap() != null && other.getIpRestrictionRuleMap().equals(this.getIpRestrictionRuleMap()) == false)
             return false;
+        if (other.getVpcIdRestrictionRuleMap() == null ^ this.getVpcIdRestrictionRuleMap() == null)
+            return false;
+        if (other.getVpcIdRestrictionRuleMap() != null && other.getVpcIdRestrictionRuleMap().equals(this.getVpcIdRestrictionRuleMap()) == false)
+            return false;
+        if (other.getVpcEndpointIdRestrictionRuleMap() == null ^ this.getVpcEndpointIdRestrictionRuleMap() == null)
+            return false;
+        if (other.getVpcEndpointIdRestrictionRuleMap() != null
+                && other.getVpcEndpointIdRestrictionRuleMap().equals(this.getVpcEndpointIdRestrictionRuleMap()) == false)
+            return false;
         if (other.getEnabled() == null ^ this.getEnabled() == null)
             return false;
         if (other.getEnabled() != null && other.getEnabled().equals(this.getEnabled()) == false)
@@ -258,6 +426,8 @@ public class UpdateIpRestrictionRequest extends com.amazonaws.AmazonWebServiceRe
 
         hashCode = prime * hashCode + ((getAwsAccountId() == null) ? 0 : getAwsAccountId().hashCode());
         hashCode = prime * hashCode + ((getIpRestrictionRuleMap() == null) ? 0 : getIpRestrictionRuleMap().hashCode());
+        hashCode = prime * hashCode + ((getVpcIdRestrictionRuleMap() == null) ? 0 : getVpcIdRestrictionRuleMap().hashCode());
+        hashCode = prime * hashCode + ((getVpcEndpointIdRestrictionRuleMap() == null) ? 0 : getVpcEndpointIdRestrictionRuleMap().hashCode());
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
         return hashCode;
     }

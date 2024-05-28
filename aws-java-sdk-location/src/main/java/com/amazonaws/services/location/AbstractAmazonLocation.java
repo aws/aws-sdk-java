@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -78,6 +78,11 @@ public class AbstractAmazonLocation implements AmazonLocation {
     }
 
     @Override
+    public CreateKeyResult createKey(CreateKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateMapResult createMap(CreateMapRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -103,6 +108,11 @@ public class AbstractAmazonLocation implements AmazonLocation {
     }
 
     @Override
+    public DeleteKeyResult deleteKey(DeleteKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteMapResult deleteMap(DeleteMapRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -124,6 +134,11 @@ public class AbstractAmazonLocation implements AmazonLocation {
 
     @Override
     public DescribeGeofenceCollectionResult describeGeofenceCollection(DescribeGeofenceCollectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeKeyResult describeKey(DescribeKeyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -208,6 +223,11 @@ public class AbstractAmazonLocation implements AmazonLocation {
     }
 
     @Override
+    public ListKeysResult listKeys(ListKeysRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListMapsResult listMaps(ListMapsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -269,6 +289,11 @@ public class AbstractAmazonLocation implements AmazonLocation {
 
     @Override
     public UpdateGeofenceCollectionResult updateGeofenceCollection(UpdateGeofenceCollectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateKeyResult updateKey(UpdateKeyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

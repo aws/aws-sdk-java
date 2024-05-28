@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,12 +51,22 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
+     * <code>GITHUB</code>: The source code is in a GitHub repository.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GITLAB</code>: The source code is in a GitLab repository.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GITLAB_SELF_MANAGED</code>: The source code is in a self-managed GitLab repository.
      * </p>
      * </li>
      * <li>
@@ -124,6 +134,19 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * For source code in an GitLab or self-managed GitLab repository, the HTTPS clone URL to the repository that
+     * contains the source and the buildspec file. You must connect your Amazon Web Services account to your GitLab
+     * account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or
+     * reconnect) with GitLab, on the Connections <b>Authorize application</b> page, choose <b>Authorize</b>. Then on
+     * the CodeConnections <b>Create GitLab connection</b> page, choose <b>Connect to GitLab</b>. (After you have
+     * connected to your GitLab account, you do not need to finish creating the build project. You can leave the
+     * CodeBuild console.) To instruct CodeBuild to override the default connection and use this connection instead, set
+     * the <code>auth</code> object's <code>type</code> value to <code>CODECONNECTIONS</code> in the <code>source</code>
+     * object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the
      * buildspec file. You must connect your Amazon Web Services account to your Bitbucket account. Use the CodeBuild
      * console to start creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on
@@ -181,8 +204,8 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Set to true to report the status of a build's start and finish to your source provider. This option is valid only
-     * when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different
-     * source provider, an <code>invalidInputException</code> is thrown.
+     * when your source provider is GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket. If this is set
+     * and you use a different source provider, an <code>invalidInputException</code> is thrown.
      * </p>
      * <p>
      * To be able to report the build status to the source provider, the user associated with the source provider must
@@ -244,12 +267,22 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
+     * <code>GITHUB</code>: The source code is in a GitHub repository.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GITLAB</code>: The source code is in a GitLab repository.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GITLAB_SELF_MANAGED</code>: The source code is in a self-managed GitLab repository.
      * </p>
      * </li>
      * <li>
@@ -285,12 +318,22 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
+     *        <code>GITHUB</code>: The source code is in a GitHub repository.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GITLAB</code>: The source code is in a GitLab repository.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GITLAB_SELF_MANAGED</code>: The source code is in a self-managed GitLab repository.
      *        </p>
      *        </li>
      *        <li>
@@ -333,12 +376,22 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
+     * <code>GITHUB</code>: The source code is in a GitHub repository.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GITLAB</code>: The source code is in a GitLab repository.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GITLAB_SELF_MANAGED</code>: The source code is in a self-managed GitLab repository.
      * </p>
      * </li>
      * <li>
@@ -373,12 +426,22 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
+     *         <code>GITHUB</code>: The source code is in a GitHub repository.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>GITLAB</code>: The source code is in a GitLab repository.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>GITLAB_SELF_MANAGED</code>: The source code is in a self-managed GitLab repository.
      *         </p>
      *         </li>
      *         <li>
@@ -421,12 +484,22 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
+     * <code>GITHUB</code>: The source code is in a GitHub repository.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GITLAB</code>: The source code is in a GitLab repository.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GITLAB_SELF_MANAGED</code>: The source code is in a self-managed GitLab repository.
      * </p>
      * </li>
      * <li>
@@ -462,12 +535,22 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
+     *        <code>GITHUB</code>: The source code is in a GitHub repository.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GITLAB</code>: The source code is in a GitLab repository.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GITLAB_SELF_MANAGED</code>: The source code is in a self-managed GitLab repository.
      *        </p>
      *        </li>
      *        <li>
@@ -512,12 +595,22 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
+     * <code>GITHUB</code>: The source code is in a GitHub repository.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GITLAB</code>: The source code is in a GitLab repository.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GITLAB_SELF_MANAGED</code>: The source code is in a self-managed GitLab repository.
      * </p>
      * </li>
      * <li>
@@ -553,12 +646,22 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
+     *        <code>GITHUB</code>: The source code is in a GitHub repository.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GITLAB</code>: The source code is in a GitLab repository.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GITLAB_SELF_MANAGED</code>: The source code is in a self-managed GitLab repository.
      *        </p>
      *        </li>
      *        <li>
@@ -601,12 +704,22 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
+     * <code>GITHUB</code>: The source code is in a GitHub repository.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GITLAB</code>: The source code is in a GitLab repository.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GITLAB_SELF_MANAGED</code>: The source code is in a self-managed GitLab repository.
      * </p>
      * </li>
      * <li>
@@ -642,12 +755,22 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
+     *        <code>GITHUB</code>: The source code is in a GitHub repository.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GITLAB</code>: The source code is in a GitLab repository.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GITLAB_SELF_MANAGED</code>: The source code is in a self-managed GitLab repository.
      *        </p>
      *        </li>
      *        <li>
@@ -721,6 +844,19 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * For source code in an GitLab or self-managed GitLab repository, the HTTPS clone URL to the repository that
+     * contains the source and the buildspec file. You must connect your Amazon Web Services account to your GitLab
+     * account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or
+     * reconnect) with GitLab, on the Connections <b>Authorize application</b> page, choose <b>Authorize</b>. Then on
+     * the CodeConnections <b>Create GitLab connection</b> page, choose <b>Connect to GitLab</b>. (After you have
+     * connected to your GitLab account, you do not need to finish creating the build project. You can leave the
+     * CodeBuild console.) To instruct CodeBuild to override the default connection and use this connection instead, set
+     * the <code>auth</code> object's <code>type</code> value to <code>CODECONNECTIONS</code> in the <code>source</code>
+     * object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the
      * buildspec file. You must connect your Amazon Web Services account to your Bitbucket account. Use the CodeBuild
      * console to start creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on
@@ -783,6 +919,19 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this
      *        connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value
      *        to <code>OAUTH</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For source code in an GitLab or self-managed GitLab repository, the HTTPS clone URL to the repository that
+     *        contains the source and the buildspec file. You must connect your Amazon Web Services account to your
+     *        GitLab account. Use the CodeBuild console to start creating a build project. When you use the console to
+     *        connect (or reconnect) with GitLab, on the Connections <b>Authorize application</b> page, choose
+     *        <b>Authorize</b>. Then on the CodeConnections <b>Create GitLab connection</b> page, choose <b>Connect to
+     *        GitLab</b>. (After you have connected to your GitLab account, you do not need to finish creating the build
+     *        project. You can leave the CodeBuild console.) To instruct CodeBuild to override the default connection
+     *        and use this connection instead, set the <code>auth</code> object's <code>type</code> value to
+     *        <code>CODECONNECTIONS</code> in the <code>source</code> object.
      *        </p>
      *        </li>
      *        <li>
@@ -859,6 +1008,19 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * For source code in an GitLab or self-managed GitLab repository, the HTTPS clone URL to the repository that
+     * contains the source and the buildspec file. You must connect your Amazon Web Services account to your GitLab
+     * account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or
+     * reconnect) with GitLab, on the Connections <b>Authorize application</b> page, choose <b>Authorize</b>. Then on
+     * the CodeConnections <b>Create GitLab connection</b> page, choose <b>Connect to GitLab</b>. (After you have
+     * connected to your GitLab account, you do not need to finish creating the build project. You can leave the
+     * CodeBuild console.) To instruct CodeBuild to override the default connection and use this connection instead, set
+     * the <code>auth</code> object's <code>type</code> value to <code>CODECONNECTIONS</code> in the <code>source</code>
+     * object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the
      * buildspec file. You must connect your Amazon Web Services account to your Bitbucket account. Use the CodeBuild
      * console to start creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on
@@ -920,6 +1082,19 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *         finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use
      *         this connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code>
      *         value to <code>OAUTH</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For source code in an GitLab or self-managed GitLab repository, the HTTPS clone URL to the repository
+     *         that contains the source and the buildspec file. You must connect your Amazon Web Services account to
+     *         your GitLab account. Use the CodeBuild console to start creating a build project. When you use the
+     *         console to connect (or reconnect) with GitLab, on the Connections <b>Authorize application</b> page,
+     *         choose <b>Authorize</b>. Then on the CodeConnections <b>Create GitLab connection</b> page, choose
+     *         <b>Connect to GitLab</b>. (After you have connected to your GitLab account, you do not need to finish
+     *         creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to override the
+     *         default connection and use this connection instead, set the <code>auth</code> object's <code>type</code>
+     *         value to <code>CODECONNECTIONS</code> in the <code>source</code> object.
      *         </p>
      *         </li>
      *         <li>
@@ -996,6 +1171,19 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * For source code in an GitLab or self-managed GitLab repository, the HTTPS clone URL to the repository that
+     * contains the source and the buildspec file. You must connect your Amazon Web Services account to your GitLab
+     * account. Use the CodeBuild console to start creating a build project. When you use the console to connect (or
+     * reconnect) with GitLab, on the Connections <b>Authorize application</b> page, choose <b>Authorize</b>. Then on
+     * the CodeConnections <b>Create GitLab connection</b> page, choose <b>Connect to GitLab</b>. (After you have
+     * connected to your GitLab account, you do not need to finish creating the build project. You can leave the
+     * CodeBuild console.) To instruct CodeBuild to override the default connection and use this connection instead, set
+     * the <code>auth</code> object's <code>type</code> value to <code>CODECONNECTIONS</code> in the <code>source</code>
+     * object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the
      * buildspec file. You must connect your Amazon Web Services account to your Bitbucket account. Use the CodeBuild
      * console to start creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on
@@ -1058,6 +1246,19 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        finish creating the build project. You can leave the CodeBuild console.) To instruct CodeBuild to use this
      *        connection, in the <code>source</code> object, set the <code>auth</code> object's <code>type</code> value
      *        to <code>OAUTH</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For source code in an GitLab or self-managed GitLab repository, the HTTPS clone URL to the repository that
+     *        contains the source and the buildspec file. You must connect your Amazon Web Services account to your
+     *        GitLab account. Use the CodeBuild console to start creating a build project. When you use the console to
+     *        connect (or reconnect) with GitLab, on the Connections <b>Authorize application</b> page, choose
+     *        <b>Authorize</b>. Then on the CodeConnections <b>Create GitLab connection</b> page, choose <b>Connect to
+     *        GitLab</b>. (After you have connected to your GitLab account, you do not need to finish creating the build
+     *        project. You can leave the CodeBuild console.) To instruct CodeBuild to override the default connection
+     *        and use this connection instead, set the <code>auth</code> object's <code>type</code> value to
+     *        <code>CODECONNECTIONS</code> in the <code>source</code> object.
      *        </p>
      *        </li>
      *        <li>
@@ -1328,8 +1529,8 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Set to true to report the status of a build's start and finish to your source provider. This option is valid only
-     * when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different
-     * source provider, an <code>invalidInputException</code> is thrown.
+     * when your source provider is GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket. If this is set
+     * and you use a different source provider, an <code>invalidInputException</code> is thrown.
      * </p>
      * <p>
      * To be able to report the build status to the source provider, the user associated with the source provider must
@@ -1347,8 +1548,9 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param reportBuildStatus
      *        Set to true to report the status of a build's start and finish to your source provider. This option is
-     *        valid only when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you
-     *        use a different source provider, an <code>invalidInputException</code> is thrown. </p>
+     *        valid only when your source provider is GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or
+     *        Bitbucket. If this is set and you use a different source provider, an <code>invalidInputException</code>
+     *        is thrown. </p>
      *        <p>
      *        To be able to report the build status to the source provider, the user associated with the source provider
      *        must have write access to the repo. If the user does not have write access, the build status cannot be
@@ -1371,8 +1573,8 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Set to true to report the status of a build's start and finish to your source provider. This option is valid only
-     * when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different
-     * source provider, an <code>invalidInputException</code> is thrown.
+     * when your source provider is GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket. If this is set
+     * and you use a different source provider, an <code>invalidInputException</code> is thrown.
      * </p>
      * <p>
      * To be able to report the build status to the source provider, the user associated with the source provider must
@@ -1389,8 +1591,9 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @return Set to true to report the status of a build's start and finish to your source provider. This option is
-     *         valid only when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you
-     *         use a different source provider, an <code>invalidInputException</code> is thrown. </p>
+     *         valid only when your source provider is GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or
+     *         Bitbucket. If this is set and you use a different source provider, an <code>invalidInputException</code>
+     *         is thrown. </p>
      *         <p>
      *         To be able to report the build status to the source provider, the user associated with the source
      *         provider must have write access to the repo. If the user does not have write access, the build status
@@ -1413,8 +1616,8 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Set to true to report the status of a build's start and finish to your source provider. This option is valid only
-     * when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different
-     * source provider, an <code>invalidInputException</code> is thrown.
+     * when your source provider is GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket. If this is set
+     * and you use a different source provider, an <code>invalidInputException</code> is thrown.
      * </p>
      * <p>
      * To be able to report the build status to the source provider, the user associated with the source provider must
@@ -1432,8 +1635,9 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param reportBuildStatus
      *        Set to true to report the status of a build's start and finish to your source provider. This option is
-     *        valid only when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you
-     *        use a different source provider, an <code>invalidInputException</code> is thrown. </p>
+     *        valid only when your source provider is GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or
+     *        Bitbucket. If this is set and you use a different source provider, an <code>invalidInputException</code>
+     *        is thrown. </p>
      *        <p>
      *        To be able to report the build status to the source provider, the user associated with the source provider
      *        must have write access to the repo. If the user does not have write access, the build status cannot be
@@ -1458,8 +1662,8 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Set to true to report the status of a build's start and finish to your source provider. This option is valid only
-     * when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different
-     * source provider, an <code>invalidInputException</code> is thrown.
+     * when your source provider is GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket. If this is set
+     * and you use a different source provider, an <code>invalidInputException</code> is thrown.
      * </p>
      * <p>
      * To be able to report the build status to the source provider, the user associated with the source provider must
@@ -1476,8 +1680,9 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @return Set to true to report the status of a build's start and finish to your source provider. This option is
-     *         valid only when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you
-     *         use a different source provider, an <code>invalidInputException</code> is thrown. </p>
+     *         valid only when your source provider is GitHub, GitHub Enterprise, GitLab, GitLab Self Managed, or
+     *         Bitbucket. If this is set and you use a different source provider, an <code>invalidInputException</code>
+     *         is thrown. </p>
      *         <p>
      *         To be able to report the build status to the source provider, the user associated with the source
      *         provider must have write access to the repo. If the user does not have write access, the build status

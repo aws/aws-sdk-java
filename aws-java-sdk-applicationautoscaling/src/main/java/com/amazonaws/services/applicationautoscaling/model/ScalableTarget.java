@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -140,6 +140,18 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      * Example: <code>cluster:mycluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier
+     * is the resource ID. Example: <code>inference-component/my-inference-component</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String resourceId;
@@ -199,7 +211,7 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -259,6 +271,18 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      */
     private String scalableDimension;
@@ -286,8 +310,18 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date creationTime;
-
+    /**
+     * <p>
+     * Specifies whether the scaling activities for a scalable target are in a suspended state.
+     * </p>
+     */
     private SuspendedState suspendedState;
+    /**
+     * <p>
+     * The ARN of the scalable target.
+     * </p>
+     */
+    private String scalableTargetARN;
 
     /**
      * <p>
@@ -473,6 +507,18 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      * Example: <code>cluster:mycluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier
+     * is the resource ID. Example: <code>inference-component/my-inference-component</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -579,6 +625,18 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
      *        Example: <code>cluster:mycluster</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     *        resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SageMaker inference component - The resource type is <code>inference-component</code> and the unique
+     *        identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.
      *        </p>
      *        </li>
      */
@@ -693,6 +751,18 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      * Example: <code>cluster:mycluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier
+     * is the resource ID. Example: <code>inference-component/my-inference-component</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The identifier of the resource associated with the scalable target. This string consists of the resource
@@ -799,6 +869,18 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster
      *         name. Example: <code>cluster:mycluster</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is
+     *         the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SageMaker inference component - The resource type is <code>inference-component</code> and the unique
+     *         identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.
      *         </p>
      *         </li>
      */
@@ -913,6 +995,18 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      * Example: <code>cluster:mycluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier
+     * is the resource ID. Example: <code>inference-component/my-inference-component</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -1021,6 +1115,18 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      *        Example: <code>cluster:mycluster</code>.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     *        resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SageMaker inference component - The resource type is <code>inference-component</code> and the unique
+     *        identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1085,7 +1191,7 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1145,6 +1251,18 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1201,7 +1319,7 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -1262,6 +1380,18 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
      *        cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     *        Serverless endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for
+     *        a SageMaker inference component.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -1327,7 +1457,7 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1387,6 +1517,18 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The scalable dimension associated with the scalable target. This string consists of the service
@@ -1442,7 +1584,7 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *         <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *         endpoint variant.
      *         </p>
      *         </li>
@@ -1503,6 +1645,18 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
      *         cluster.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a
+     *         SageMaker Serverless endpoint.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for
+     *         a SageMaker inference component.
      *         </p>
      *         </li>
      * @see ScalableDimension
@@ -1568,7 +1722,7 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1628,6 +1782,18 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1684,7 +1850,7 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -1745,6 +1911,18 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
      *        cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     *        Serverless endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for
+     *        a SageMaker inference component.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1812,7 +1990,7 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1872,6 +2050,18 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1928,7 +2118,7 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -1989,6 +2179,18 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
      *        cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     *        Serverless endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for
+     *        a SageMaker inference component.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -2054,7 +2256,7 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -2114,6 +2316,18 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -2170,7 +2384,7 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -2231,6 +2445,18 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
      *        cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     *        Serverless endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for
+     *        a SageMaker inference component.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2403,7 +2629,12 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies whether the scaling activities for a scalable target are in a suspended state.
+     * </p>
+     * 
      * @param suspendedState
+     *        Specifies whether the scaling activities for a scalable target are in a suspended state.
      */
 
     public void setSuspendedState(SuspendedState suspendedState) {
@@ -2411,7 +2642,11 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies whether the scaling activities for a scalable target are in a suspended state.
+     * </p>
+     * 
+     * @return Specifies whether the scaling activities for a scalable target are in a suspended state.
      */
 
     public SuspendedState getSuspendedState() {
@@ -2419,12 +2654,57 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies whether the scaling activities for a scalable target are in a suspended state.
+     * </p>
+     * 
      * @param suspendedState
+     *        Specifies whether the scaling activities for a scalable target are in a suspended state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScalableTarget withSuspendedState(SuspendedState suspendedState) {
         setSuspendedState(suspendedState);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the scalable target.
+     * </p>
+     * 
+     * @param scalableTargetARN
+     *        The ARN of the scalable target.
+     */
+
+    public void setScalableTargetARN(String scalableTargetARN) {
+        this.scalableTargetARN = scalableTargetARN;
+    }
+
+    /**
+     * <p>
+     * The ARN of the scalable target.
+     * </p>
+     * 
+     * @return The ARN of the scalable target.
+     */
+
+    public String getScalableTargetARN() {
+        return this.scalableTargetARN;
+    }
+
+    /**
+     * <p>
+     * The ARN of the scalable target.
+     * </p>
+     * 
+     * @param scalableTargetARN
+     *        The ARN of the scalable target.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScalableTarget withScalableTargetARN(String scalableTargetARN) {
+        setScalableTargetARN(scalableTargetARN);
         return this;
     }
 
@@ -2455,7 +2735,9 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getSuspendedState() != null)
-            sb.append("SuspendedState: ").append(getSuspendedState());
+            sb.append("SuspendedState: ").append(getSuspendedState()).append(",");
+        if (getScalableTargetARN() != null)
+            sb.append("ScalableTargetARN: ").append(getScalableTargetARN());
         sb.append("}");
         return sb.toString();
     }
@@ -2502,6 +2784,10 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSuspendedState() != null && other.getSuspendedState().equals(this.getSuspendedState()) == false)
             return false;
+        if (other.getScalableTargetARN() == null ^ this.getScalableTargetARN() == null)
+            return false;
+        if (other.getScalableTargetARN() != null && other.getScalableTargetARN().equals(this.getScalableTargetARN()) == false)
+            return false;
         return true;
     }
 
@@ -2518,6 +2804,7 @@ public class ScalableTarget implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRoleARN() == null) ? 0 : getRoleARN().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getSuspendedState() == null) ? 0 : getSuspendedState().hashCode());
+        hashCode = prime * hashCode + ((getScalableTargetARN() == null) ? 0 : getScalableTargetARN().hashCode());
         return hashCode;
     }
 

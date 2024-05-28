@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -87,14 +87,14 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private Logging logging;
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      */
     private String clientRequestToken;
     /**
      * <p>
-     * The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key
-     * and an optional value. You define both.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -108,12 +108,18 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost.
      * Before creating a local cluster on an Outpost, review <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon EKS
-     * cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't available
-     * for creating Amazon EKS clusters on the Amazon Web Services cloud.
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local clusters
+     * for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS User Guide</i>. This object isn't
+     * available for creating Amazon EKS clusters on the Amazon Web Services cloud.
      * </p>
      */
     private OutpostConfigRequest outpostConfig;
+    /**
+     * <p>
+     * The access configuration for the cluster.
+     * </p>
+     */
+    private CreateAccessConfigRequest accessConfig;
 
     /**
      * <p>
@@ -489,11 +495,11 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
      * @param clientRequestToken
-     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -502,10 +508,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
-     * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      */
 
     public String getClientRequestToken() {
@@ -514,11 +520,11 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
      * @param clientRequestToken
-     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -529,12 +535,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key
-     * and an optional value. You define both.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * 
-     * @return The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of
-     *         a key and an optional value. You define both.
+     * @return Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *         value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -543,13 +549,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key
-     * and an optional value. You define both.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * 
      * @param tags
-     *        The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of
-     *        a key and an optional value. You define both.
+     *        Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *        value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -558,13 +564,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of a key
-     * and an optional value. You define both.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * 
      * @param tags
-     *        The metadata to apply to the cluster to assist with categorization and organization. Each tag consists of
-     *        a key and an optional value. You define both.
+     *        Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *        value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -675,17 +681,17 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost.
      * Before creating a local cluster on an Outpost, review <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon EKS
-     * cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't available
-     * for creating Amazon EKS clusters on the Amazon Web Services cloud.
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local clusters
+     * for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS User Guide</i>. This object isn't
+     * available for creating Amazon EKS clusters on the Amazon Web Services cloud.
      * </p>
      * 
      * @param outpostConfig
      *        An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services
      *        Outpost. Before creating a local cluster on an Outpost, review <a
-     *        href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon EKS
-     *        cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't
-     *        available for creating Amazon EKS clusters on the Amazon Web Services cloud.
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local
+     *        clusters for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS User Guide</i>. This
+     *        object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.
      */
 
     public void setOutpostConfig(OutpostConfigRequest outpostConfig) {
@@ -696,16 +702,16 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost.
      * Before creating a local cluster on an Outpost, review <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon EKS
-     * cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't available
-     * for creating Amazon EKS clusters on the Amazon Web Services cloud.
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local clusters
+     * for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS User Guide</i>. This object isn't
+     * available for creating Amazon EKS clusters on the Amazon Web Services cloud.
      * </p>
      * 
      * @return An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services
      *         Outpost. Before creating a local cluster on an Outpost, review <a
-     *         href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon
-     *         EKS cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't
-     *         available for creating Amazon EKS clusters on the Amazon Web Services cloud.
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local
+     *         clusters for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS User Guide</i>. This
+     *         object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.
      */
 
     public OutpostConfigRequest getOutpostConfig() {
@@ -716,22 +722,62 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost.
      * Before creating a local cluster on an Outpost, review <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon EKS
-     * cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't available
-     * for creating Amazon EKS clusters on the Amazon Web Services cloud.
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local clusters
+     * for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS User Guide</i>. This object isn't
+     * available for creating Amazon EKS clusters on the Amazon Web Services cloud.
      * </p>
      * 
      * @param outpostConfig
      *        An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services
      *        Outpost. Before creating a local cluster on an Outpost, review <a
-     *        href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon EKS
-     *        cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't
-     *        available for creating Amazon EKS clusters on the Amazon Web Services cloud.
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local
+     *        clusters for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS User Guide</i>. This
+     *        object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateClusterRequest withOutpostConfig(OutpostConfigRequest outpostConfig) {
         setOutpostConfig(outpostConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The access configuration for the cluster.
+     * </p>
+     * 
+     * @param accessConfig
+     *        The access configuration for the cluster.
+     */
+
+    public void setAccessConfig(CreateAccessConfigRequest accessConfig) {
+        this.accessConfig = accessConfig;
+    }
+
+    /**
+     * <p>
+     * The access configuration for the cluster.
+     * </p>
+     * 
+     * @return The access configuration for the cluster.
+     */
+
+    public CreateAccessConfigRequest getAccessConfig() {
+        return this.accessConfig;
+    }
+
+    /**
+     * <p>
+     * The access configuration for the cluster.
+     * </p>
+     * 
+     * @param accessConfig
+     *        The access configuration for the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClusterRequest withAccessConfig(CreateAccessConfigRequest accessConfig) {
+        setAccessConfig(accessConfig);
         return this;
     }
 
@@ -766,7 +812,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getEncryptionConfig() != null)
             sb.append("EncryptionConfig: ").append(getEncryptionConfig()).append(",");
         if (getOutpostConfig() != null)
-            sb.append("OutpostConfig: ").append(getOutpostConfig());
+            sb.append("OutpostConfig: ").append(getOutpostConfig()).append(",");
+        if (getAccessConfig() != null)
+            sb.append("AccessConfig: ").append(getAccessConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -821,6 +869,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getOutpostConfig() != null && other.getOutpostConfig().equals(this.getOutpostConfig()) == false)
             return false;
+        if (other.getAccessConfig() == null ^ this.getAccessConfig() == null)
+            return false;
+        if (other.getAccessConfig() != null && other.getAccessConfig().equals(this.getAccessConfig()) == false)
+            return false;
         return true;
     }
 
@@ -839,6 +891,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getEncryptionConfig() == null) ? 0 : getEncryptionConfig().hashCode());
         hashCode = prime * hashCode + ((getOutpostConfig() == null) ? 0 : getOutpostConfig().hashCode());
+        hashCode = prime * hashCode + ((getAccessConfig() == null) ? 0 : getAccessConfig().hashCode());
         return hashCode;
     }
 

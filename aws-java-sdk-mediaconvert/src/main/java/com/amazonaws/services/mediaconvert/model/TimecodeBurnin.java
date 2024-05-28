@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,26 +26,23 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TimecodeBurnin implements Serializable, Cloneable, StructuredPojo {
 
-    /** Use Font Size (FontSize) to set the font size of any burned-in timecode. Valid values are 10, 16, 32, 48. */
+    /** Use Font size to set the font size of any burned-in timecode. Valid values are 10, 16, 32, 48. */
     private Integer fontSize;
-    /**
-     * Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the burned-in
-     * timecode on output video.
-     */
+    /** Use Position under Timecode burn-in to specify the location the burned-in timecode on output video. */
     private String position;
     /**
-     * Use Prefix (Prefix) to place ASCII characters before any burned-in timecode. For example, a prefix of "EZ-" will
-     * result in the timecode "EZ-00:00:00:00". Provide either the characters themselves or the ASCII code equivalents.
-     * The supported range of characters is 0x20 through 0x7e. This includes letters, numbers, and all special characters
+     * Use Prefix to place ASCII characters before any burned-in timecode. For example, a prefix of "EZ-" will result in
+     * the timecode "EZ-00:00:00:00". Provide either the characters themselves or the ASCII code equivalents. The
+     * supported range of characters is 0x20 through 0x7e. This includes letters, numbers, and all special characters
      * represented on a standard English keyboard.
      */
     private String prefix;
 
     /**
-     * Use Font Size (FontSize) to set the font size of any burned-in timecode. Valid values are 10, 16, 32, 48.
+     * Use Font size to set the font size of any burned-in timecode. Valid values are 10, 16, 32, 48.
      * 
      * @param fontSize
-     *        Use Font Size (FontSize) to set the font size of any burned-in timecode. Valid values are 10, 16, 32, 48.
+     *        Use Font size to set the font size of any burned-in timecode. Valid values are 10, 16, 32, 48.
      */
 
     public void setFontSize(Integer fontSize) {
@@ -53,9 +50,9 @@ public class TimecodeBurnin implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Font Size (FontSize) to set the font size of any burned-in timecode. Valid values are 10, 16, 32, 48.
+     * Use Font size to set the font size of any burned-in timecode. Valid values are 10, 16, 32, 48.
      * 
-     * @return Use Font Size (FontSize) to set the font size of any burned-in timecode. Valid values are 10, 16, 32, 48.
+     * @return Use Font size to set the font size of any burned-in timecode. Valid values are 10, 16, 32, 48.
      */
 
     public Integer getFontSize() {
@@ -63,10 +60,10 @@ public class TimecodeBurnin implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Font Size (FontSize) to set the font size of any burned-in timecode. Valid values are 10, 16, 32, 48.
+     * Use Font size to set the font size of any burned-in timecode. Valid values are 10, 16, 32, 48.
      * 
      * @param fontSize
-     *        Use Font Size (FontSize) to set the font size of any burned-in timecode. Valid values are 10, 16, 32, 48.
+     *        Use Font size to set the font size of any burned-in timecode. Valid values are 10, 16, 32, 48.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -76,12 +73,10 @@ public class TimecodeBurnin implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the burned-in
-     * timecode on output video.
+     * Use Position under Timecode burn-in to specify the location the burned-in timecode on output video.
      * 
      * @param position
-     *        Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the
-     *        burned-in timecode on output video.
+     *        Use Position under Timecode burn-in to specify the location the burned-in timecode on output video.
      * @see TimecodeBurninPosition
      */
 
@@ -90,11 +85,9 @@ public class TimecodeBurnin implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the burned-in
-     * timecode on output video.
+     * Use Position under Timecode burn-in to specify the location the burned-in timecode on output video.
      * 
-     * @return Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the
-     *         burned-in timecode on output video.
+     * @return Use Position under Timecode burn-in to specify the location the burned-in timecode on output video.
      * @see TimecodeBurninPosition
      */
 
@@ -103,12 +96,10 @@ public class TimecodeBurnin implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the burned-in
-     * timecode on output video.
+     * Use Position under Timecode burn-in to specify the location the burned-in timecode on output video.
      * 
      * @param position
-     *        Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the
-     *        burned-in timecode on output video.
+     *        Use Position under Timecode burn-in to specify the location the burned-in timecode on output video.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimecodeBurninPosition
      */
@@ -119,12 +110,10 @@ public class TimecodeBurnin implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the burned-in
-     * timecode on output video.
+     * Use Position under Timecode burn-in to specify the location the burned-in timecode on output video.
      * 
      * @param position
-     *        Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the
-     *        burned-in timecode on output video.
+     *        Use Position under Timecode burn-in to specify the location the burned-in timecode on output video.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimecodeBurninPosition
      */
@@ -135,16 +124,16 @@ public class TimecodeBurnin implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Prefix (Prefix) to place ASCII characters before any burned-in timecode. For example, a prefix of "EZ-" will
-     * result in the timecode "EZ-00:00:00:00". Provide either the characters themselves or the ASCII code equivalents.
-     * The supported range of characters is 0x20 through 0x7e. This includes letters, numbers, and all special characters
+     * Use Prefix to place ASCII characters before any burned-in timecode. For example, a prefix of "EZ-" will result in
+     * the timecode "EZ-00:00:00:00". Provide either the characters themselves or the ASCII code equivalents. The
+     * supported range of characters is 0x20 through 0x7e. This includes letters, numbers, and all special characters
      * represented on a standard English keyboard.
      * 
      * @param prefix
-     *        Use Prefix (Prefix) to place ASCII characters before any burned-in timecode. For example, a prefix of
-     *        "EZ-" will result in the timecode "EZ-00:00:00:00". Provide either the characters themselves or the ASCII
-     *        code equivalents. The supported range of characters is 0x20 through 0x7e. This includes letters, numbers,
-     *        and all special characters represented on a standard English keyboard.
+     *        Use Prefix to place ASCII characters before any burned-in timecode. For example, a prefix of "EZ-" will
+     *        result in the timecode "EZ-00:00:00:00". Provide either the characters themselves or the ASCII code
+     *        equivalents. The supported range of characters is 0x20 through 0x7e. This includes letters, numbers, and
+     *        all special characters represented on a standard English keyboard.
      */
 
     public void setPrefix(String prefix) {
@@ -152,15 +141,15 @@ public class TimecodeBurnin implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Prefix (Prefix) to place ASCII characters before any burned-in timecode. For example, a prefix of "EZ-" will
-     * result in the timecode "EZ-00:00:00:00". Provide either the characters themselves or the ASCII code equivalents.
-     * The supported range of characters is 0x20 through 0x7e. This includes letters, numbers, and all special characters
+     * Use Prefix to place ASCII characters before any burned-in timecode. For example, a prefix of "EZ-" will result in
+     * the timecode "EZ-00:00:00:00". Provide either the characters themselves or the ASCII code equivalents. The
+     * supported range of characters is 0x20 through 0x7e. This includes letters, numbers, and all special characters
      * represented on a standard English keyboard.
      * 
-     * @return Use Prefix (Prefix) to place ASCII characters before any burned-in timecode. For example, a prefix of
-     *         "EZ-" will result in the timecode "EZ-00:00:00:00". Provide either the characters themselves or the ASCII
-     *         code equivalents. The supported range of characters is 0x20 through 0x7e. This includes letters, numbers,
-     *         and all special characters represented on a standard English keyboard.
+     * @return Use Prefix to place ASCII characters before any burned-in timecode. For example, a prefix of "EZ-" will
+     *         result in the timecode "EZ-00:00:00:00". Provide either the characters themselves or the ASCII code
+     *         equivalents. The supported range of characters is 0x20 through 0x7e. This includes letters, numbers, and
+     *         all special characters represented on a standard English keyboard.
      */
 
     public String getPrefix() {
@@ -168,16 +157,16 @@ public class TimecodeBurnin implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Prefix (Prefix) to place ASCII characters before any burned-in timecode. For example, a prefix of "EZ-" will
-     * result in the timecode "EZ-00:00:00:00". Provide either the characters themselves or the ASCII code equivalents.
-     * The supported range of characters is 0x20 through 0x7e. This includes letters, numbers, and all special characters
+     * Use Prefix to place ASCII characters before any burned-in timecode. For example, a prefix of "EZ-" will result in
+     * the timecode "EZ-00:00:00:00". Provide either the characters themselves or the ASCII code equivalents. The
+     * supported range of characters is 0x20 through 0x7e. This includes letters, numbers, and all special characters
      * represented on a standard English keyboard.
      * 
      * @param prefix
-     *        Use Prefix (Prefix) to place ASCII characters before any burned-in timecode. For example, a prefix of
-     *        "EZ-" will result in the timecode "EZ-00:00:00:00". Provide either the characters themselves or the ASCII
-     *        code equivalents. The supported range of characters is 0x20 through 0x7e. This includes letters, numbers,
-     *        and all special characters represented on a standard English keyboard.
+     *        Use Prefix to place ASCII characters before any burned-in timecode. For example, a prefix of "EZ-" will
+     *        result in the timecode "EZ-00:00:00:00". Provide either the characters themselves or the ASCII code
+     *        equivalents. The supported range of characters is 0x20 through 0x7e. This includes letters, numbers, and
+     *        all special characters represented on a standard English keyboard.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

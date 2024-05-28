@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,12 @@ public class CreateEventBusRequestMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> EVENTSOURCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventSourceName").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<String> KMSKEYIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KmsKeyIdentifier").build();
+    private static final MarshallingInfo<StructuredPojo> DEADLETTERCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeadLetterConfig").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
 
@@ -53,6 +59,9 @@ public class CreateEventBusRequestMarshaller {
         try {
             protocolMarshaller.marshall(createEventBusRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createEventBusRequest.getEventSourceName(), EVENTSOURCENAME_BINDING);
+            protocolMarshaller.marshall(createEventBusRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createEventBusRequest.getKmsKeyIdentifier(), KMSKEYIDENTIFIER_BINDING);
+            protocolMarshaller.marshall(createEventBusRequest.getDeadLetterConfig(), DEADLETTERCONFIG_BINDING);
             protocolMarshaller.marshall(createEventBusRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

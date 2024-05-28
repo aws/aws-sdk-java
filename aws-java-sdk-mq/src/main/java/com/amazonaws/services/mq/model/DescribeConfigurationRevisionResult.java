@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,7 +38,7 @@ public class DescribeConfigurationRevisionResult extends com.amazonaws.AmazonWeb
     private java.util.Date created;
     /**
      * <p>
-     * Required. The base64-encoded XML configuration.
+     * Amazon MQ for ActiveMQ: the base64-encoded XML configuration. Amazon MQ for RabbitMQ: base64-encoded Cuttlefish.
      * </p>
      */
     private String data;
@@ -131,11 +131,12 @@ public class DescribeConfigurationRevisionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Required. The base64-encoded XML configuration.
+     * Amazon MQ for ActiveMQ: the base64-encoded XML configuration. Amazon MQ for RabbitMQ: base64-encoded Cuttlefish.
      * </p>
      * 
      * @param data
-     *        Required. The base64-encoded XML configuration.
+     *        Amazon MQ for ActiveMQ: the base64-encoded XML configuration. Amazon MQ for RabbitMQ: base64-encoded
+     *        Cuttlefish.
      */
 
     public void setData(String data) {
@@ -144,10 +145,11 @@ public class DescribeConfigurationRevisionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Required. The base64-encoded XML configuration.
+     * Amazon MQ for ActiveMQ: the base64-encoded XML configuration. Amazon MQ for RabbitMQ: base64-encoded Cuttlefish.
      * </p>
      * 
-     * @return Required. The base64-encoded XML configuration.
+     * @return Amazon MQ for ActiveMQ: the base64-encoded XML configuration. Amazon MQ for RabbitMQ: base64-encoded
+     *         Cuttlefish.
      */
 
     public String getData() {
@@ -156,11 +158,12 @@ public class DescribeConfigurationRevisionResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Required. The base64-encoded XML configuration.
+     * Amazon MQ for ActiveMQ: the base64-encoded XML configuration. Amazon MQ for RabbitMQ: base64-encoded Cuttlefish.
      * </p>
      * 
      * @param data
-     *        Required. The base64-encoded XML configuration.
+     *        Amazon MQ for ActiveMQ: the base64-encoded XML configuration. Amazon MQ for RabbitMQ: base64-encoded
+     *        Cuttlefish.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,10 +33,14 @@ public class GCMChannelResponseMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationDate").build();
     private static final MarshallingInfo<String> CREDENTIAL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Credential").build();
+    private static final MarshallingInfo<String> DEFAULTAUTHENTICATIONMETHOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultAuthenticationMethod").build();
     private static final MarshallingInfo<Boolean> ENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Enabled").build();
     private static final MarshallingInfo<Boolean> HASCREDENTIAL_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HasCredential").build();
+    private static final MarshallingInfo<Boolean> HASFCMSERVICECREDENTIALS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HasFcmServiceCredentials").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Id").build();
     private static final MarshallingInfo<Boolean> ISARCHIVED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -69,8 +73,10 @@ public class GCMChannelResponseMarshaller {
             protocolMarshaller.marshall(gCMChannelResponse.getApplicationId(), APPLICATIONID_BINDING);
             protocolMarshaller.marshall(gCMChannelResponse.getCreationDate(), CREATIONDATE_BINDING);
             protocolMarshaller.marshall(gCMChannelResponse.getCredential(), CREDENTIAL_BINDING);
+            protocolMarshaller.marshall(gCMChannelResponse.getDefaultAuthenticationMethod(), DEFAULTAUTHENTICATIONMETHOD_BINDING);
             protocolMarshaller.marshall(gCMChannelResponse.getEnabled(), ENABLED_BINDING);
             protocolMarshaller.marshall(gCMChannelResponse.getHasCredential(), HASCREDENTIAL_BINDING);
+            protocolMarshaller.marshall(gCMChannelResponse.getHasFcmServiceCredentials(), HASFCMSERVICECREDENTIALS_BINDING);
             protocolMarshaller.marshall(gCMChannelResponse.getId(), ID_BINDING);
             protocolMarshaller.marshall(gCMChannelResponse.getIsArchived(), ISARCHIVED_BINDING);
             protocolMarshaller.marshall(gCMChannelResponse.getLastModifiedBy(), LASTMODIFIEDBY_BINDING);

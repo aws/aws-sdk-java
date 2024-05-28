@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,8 +36,9 @@ public class FinalAutoMLJobObjectiveMetric implements Serializable, Cloneable, S
     private String type;
     /**
      * <p>
-     * The name of the metric with the best result. For a description of the possible objective metrics, see
-     * <a>AutoMLJobObjective$MetricName</a>.
+     * The name of the metric with the best result. For a description of the possible objective metrics, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html"
+     * >AutoMLJobObjective$MetricName</a>.
      * </p>
      */
     private String metricName;
@@ -47,6 +48,14 @@ public class FinalAutoMLJobObjectiveMetric implements Serializable, Cloneable, S
      * </p>
      */
     private Float value;
+    /**
+     * <p>
+     * The name of the standard metric. For a description of the standard metrics, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics"
+     * >Autopilot candidate metrics</a>.
+     * </p>
+     */
+    private String standardMetricName;
 
     /**
      * <p>
@@ -109,13 +118,15 @@ public class FinalAutoMLJobObjectiveMetric implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The name of the metric with the best result. For a description of the possible objective metrics, see
-     * <a>AutoMLJobObjective$MetricName</a>.
+     * The name of the metric with the best result. For a description of the possible objective metrics, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html"
+     * >AutoMLJobObjective$MetricName</a>.
      * </p>
      * 
      * @param metricName
-     *        The name of the metric with the best result. For a description of the possible objective metrics, see
-     *        <a>AutoMLJobObjective$MetricName</a>.
+     *        The name of the metric with the best result. For a description of the possible objective metrics, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">
+     *        AutoMLJobObjective$MetricName</a>.
      * @see AutoMLMetricEnum
      */
 
@@ -125,12 +136,14 @@ public class FinalAutoMLJobObjectiveMetric implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The name of the metric with the best result. For a description of the possible objective metrics, see
-     * <a>AutoMLJobObjective$MetricName</a>.
+     * The name of the metric with the best result. For a description of the possible objective metrics, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html"
+     * >AutoMLJobObjective$MetricName</a>.
      * </p>
      * 
-     * @return The name of the metric with the best result. For a description of the possible objective metrics, see
-     *         <a>AutoMLJobObjective$MetricName</a>.
+     * @return The name of the metric with the best result. For a description of the possible objective metrics, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">
+     *         AutoMLJobObjective$MetricName</a>.
      * @see AutoMLMetricEnum
      */
 
@@ -140,13 +153,15 @@ public class FinalAutoMLJobObjectiveMetric implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The name of the metric with the best result. For a description of the possible objective metrics, see
-     * <a>AutoMLJobObjective$MetricName</a>.
+     * The name of the metric with the best result. For a description of the possible objective metrics, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html"
+     * >AutoMLJobObjective$MetricName</a>.
      * </p>
      * 
      * @param metricName
-     *        The name of the metric with the best result. For a description of the possible objective metrics, see
-     *        <a>AutoMLJobObjective$MetricName</a>.
+     *        The name of the metric with the best result. For a description of the possible objective metrics, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">
+     *        AutoMLJobObjective$MetricName</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLMetricEnum
      */
@@ -158,13 +173,15 @@ public class FinalAutoMLJobObjectiveMetric implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The name of the metric with the best result. For a description of the possible objective metrics, see
-     * <a>AutoMLJobObjective$MetricName</a>.
+     * The name of the metric with the best result. For a description of the possible objective metrics, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html"
+     * >AutoMLJobObjective$MetricName</a>.
      * </p>
      * 
      * @param metricName
-     *        The name of the metric with the best result. For a description of the possible objective metrics, see
-     *        <a>AutoMLJobObjective$MetricName</a>.
+     *        The name of the metric with the best result. For a description of the possible objective metrics, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">
+     *        AutoMLJobObjective$MetricName</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLMetricEnum
      */
@@ -215,6 +232,81 @@ public class FinalAutoMLJobObjectiveMetric implements Serializable, Cloneable, S
     }
 
     /**
+     * <p>
+     * The name of the standard metric. For a description of the standard metrics, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics"
+     * >Autopilot candidate metrics</a>.
+     * </p>
+     * 
+     * @param standardMetricName
+     *        The name of the standard metric. For a description of the standard metrics, see <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics"
+     *        >Autopilot candidate metrics</a>.
+     * @see AutoMLMetricEnum
+     */
+
+    public void setStandardMetricName(String standardMetricName) {
+        this.standardMetricName = standardMetricName;
+    }
+
+    /**
+     * <p>
+     * The name of the standard metric. For a description of the standard metrics, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics"
+     * >Autopilot candidate metrics</a>.
+     * </p>
+     * 
+     * @return The name of the standard metric. For a description of the standard metrics, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics"
+     *         >Autopilot candidate metrics</a>.
+     * @see AutoMLMetricEnum
+     */
+
+    public String getStandardMetricName() {
+        return this.standardMetricName;
+    }
+
+    /**
+     * <p>
+     * The name of the standard metric. For a description of the standard metrics, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics"
+     * >Autopilot candidate metrics</a>.
+     * </p>
+     * 
+     * @param standardMetricName
+     *        The name of the standard metric. For a description of the standard metrics, see <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics"
+     *        >Autopilot candidate metrics</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AutoMLMetricEnum
+     */
+
+    public FinalAutoMLJobObjectiveMetric withStandardMetricName(String standardMetricName) {
+        setStandardMetricName(standardMetricName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the standard metric. For a description of the standard metrics, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics"
+     * >Autopilot candidate metrics</a>.
+     * </p>
+     * 
+     * @param standardMetricName
+     *        The name of the standard metric. For a description of the standard metrics, see <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics"
+     *        >Autopilot candidate metrics</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AutoMLMetricEnum
+     */
+
+    public FinalAutoMLJobObjectiveMetric withStandardMetricName(AutoMLMetricEnum standardMetricName) {
+        this.standardMetricName = standardMetricName.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -231,7 +323,9 @@ public class FinalAutoMLJobObjectiveMetric implements Serializable, Cloneable, S
         if (getMetricName() != null)
             sb.append("MetricName: ").append(getMetricName()).append(",");
         if (getValue() != null)
-            sb.append("Value: ").append(getValue());
+            sb.append("Value: ").append(getValue()).append(",");
+        if (getStandardMetricName() != null)
+            sb.append("StandardMetricName: ").append(getStandardMetricName());
         sb.append("}");
         return sb.toString();
     }
@@ -258,6 +352,10 @@ public class FinalAutoMLJobObjectiveMetric implements Serializable, Cloneable, S
             return false;
         if (other.getValue() != null && other.getValue().equals(this.getValue()) == false)
             return false;
+        if (other.getStandardMetricName() == null ^ this.getStandardMetricName() == null)
+            return false;
+        if (other.getStandardMetricName() != null && other.getStandardMetricName().equals(this.getStandardMetricName()) == false)
+            return false;
         return true;
     }
 
@@ -269,6 +367,7 @@ public class FinalAutoMLJobObjectiveMetric implements Serializable, Cloneable, S
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getMetricName() == null) ? 0 : getMetricName().hashCode());
         hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
+        hashCode = prime * hashCode + ((getStandardMetricName() == null) ? 0 : getStandardMetricName().hashCode());
         return hashCode;
     }
 

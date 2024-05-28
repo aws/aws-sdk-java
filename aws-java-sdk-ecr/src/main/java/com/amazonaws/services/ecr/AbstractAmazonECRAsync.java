@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -553,6 +553,19 @@ public class AbstractAmazonECRAsync extends AbstractAmazonECR implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<UpdatePullThroughCacheRuleResult> updatePullThroughCacheRuleAsync(UpdatePullThroughCacheRuleRequest request) {
+
+        return updatePullThroughCacheRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePullThroughCacheRuleResult> updatePullThroughCacheRuleAsync(UpdatePullThroughCacheRuleRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdatePullThroughCacheRuleRequest, UpdatePullThroughCacheRuleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UploadLayerPartResult> uploadLayerPartAsync(UploadLayerPartRequest request) {
 
         return uploadLayerPartAsync(request, null);
@@ -561,6 +574,19 @@ public class AbstractAmazonECRAsync extends AbstractAmazonECR implements AmazonE
     @Override
     public java.util.concurrent.Future<UploadLayerPartResult> uploadLayerPartAsync(UploadLayerPartRequest request,
             com.amazonaws.handlers.AsyncHandler<UploadLayerPartRequest, UploadLayerPartResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidatePullThroughCacheRuleResult> validatePullThroughCacheRuleAsync(ValidatePullThroughCacheRuleRequest request) {
+
+        return validatePullThroughCacheRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidatePullThroughCacheRuleResult> validatePullThroughCacheRuleAsync(ValidatePullThroughCacheRuleRequest request,
+            com.amazonaws.handlers.AsyncHandler<ValidatePullThroughCacheRuleRequest, ValidatePullThroughCacheRuleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

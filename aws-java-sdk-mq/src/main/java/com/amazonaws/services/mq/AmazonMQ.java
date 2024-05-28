@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -123,8 +123,8 @@ public interface AmazonMQ {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/amazon-mq-setting-up.html#create-iam-user"
-     * >Create an IAM User and Get Your AWS Credentials</a> and <a href=
-     * "https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/connecting-to-amazon-mq.html#never-modify-delete-elastic-network-interface"
+     * >Create an IAM User and Get Your Amazon Web Services Credentials</a> and <a href=
+     * "https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/connecting-to-amazon-mq.html#never-modify-delete-elastic-network-interface"
      * >Never Modify or Delete the Amazon MQ Elastic Network Interface</a> in the <i>Amazon MQ Developer Guide</i>.
      * </p>
      * 
@@ -197,6 +197,13 @@ public interface AmazonMQ {
      * <p>
      * Creates an ActiveMQ user.
      * </p>
+     * <important>
+     * <p>
+     * Do not add personally identifiable information (PII) or other confidential or sensitive information in broker
+     * usernames. Broker usernames are accessible to other Amazon Web Services services, including CloudWatch Logs.
+     * Broker usernames are not intended to be used for private or sensitive data.
+     * </p>
+     * </important>
      * 
      * @param createUserRequest
      *        Creates a new ActiveMQ user.
@@ -502,6 +509,28 @@ public interface AmazonMQ {
      *      Documentation</a>
      */
     ListUsersResult listUsers(ListUsersRequest listUsersRequest);
+
+    /**
+     * <p>
+     * Promotes a data replication replica broker to the primary broker role.
+     * </p>
+     * 
+     * @param promoteRequest
+     *        Promotes a data replication replica broker to the primary broker role.
+     * @return Result of the Promote operation returned by the service.
+     * @throws NotFoundException
+     *         HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.
+     * @throws BadRequestException
+     *         HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.
+     * @throws InternalServerErrorException
+     *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
+     * @throws ForbiddenException
+     *         HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.
+     * @sample AmazonMQ.Promote
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/Promote" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PromoteResult promote(PromoteRequest promoteRequest);
 
     /**
      * <p>

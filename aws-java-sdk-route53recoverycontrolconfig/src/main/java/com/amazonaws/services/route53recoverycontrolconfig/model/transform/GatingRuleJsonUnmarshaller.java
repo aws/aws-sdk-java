@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -83,6 +83,10 @@ public class GatingRuleJsonUnmarshaller implements Unmarshaller<GatingRule, Json
                 if (context.testExpression("WaitPeriodMs", targetDepth)) {
                     context.nextToken();
                     gatingRule.setWaitPeriodMs(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("Owner", targetDepth)) {
+                    context.nextToken();
+                    gatingRule.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

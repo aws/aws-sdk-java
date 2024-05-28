@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Configuration specifing an S3 location.
+ * The configuration that specifies an S3 location.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/S3Configuration" target="_top">AWS
@@ -30,37 +30,37 @@ public class S3Configuration implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * &gt;Bucket name of the customer S3 bucket.
+     * The bucket name of the customer S3 bucket.
      * </p>
      */
     private String bucketName;
     /**
      * <p>
-     * Object key preview for the customer S3 location.
+     * The object key preview for the customer S3 location.
      * </p>
      */
     private String objectKeyPrefix;
     /**
      * <p>
-     * Encryption option for the customer s3 location. Options are S3 server side encryption with an S3-managed key or
-     * KMS managed key.
+     * The encryption option for the customer S3 location. Options are S3 server-side encryption with an S3 managed key
+     * or Amazon Web Services managed key.
      * </p>
      */
     private String encryptionOption;
     /**
      * <p>
-     * KMS key id for the customer s3 location when encrypting with a KMS managed key.
+     * The KMS key ID for the customer S3 location when encrypting with an Amazon Web Services managed key.
      * </p>
      */
     private String kmsKeyId;
 
     /**
      * <p>
-     * &gt;Bucket name of the customer S3 bucket.
+     * The bucket name of the customer S3 bucket.
      * </p>
      * 
      * @param bucketName
-     *        &gt;Bucket name of the customer S3 bucket.
+     *        The bucket name of the customer S3 bucket.
      */
 
     public void setBucketName(String bucketName) {
@@ -69,10 +69,10 @@ public class S3Configuration implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * &gt;Bucket name of the customer S3 bucket.
+     * The bucket name of the customer S3 bucket.
      * </p>
      * 
-     * @return &gt;Bucket name of the customer S3 bucket.
+     * @return The bucket name of the customer S3 bucket.
      */
 
     public String getBucketName() {
@@ -81,11 +81,11 @@ public class S3Configuration implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * &gt;Bucket name of the customer S3 bucket.
+     * The bucket name of the customer S3 bucket.
      * </p>
      * 
      * @param bucketName
-     *        &gt;Bucket name of the customer S3 bucket.
+     *        The bucket name of the customer S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +96,11 @@ public class S3Configuration implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Object key preview for the customer S3 location.
+     * The object key preview for the customer S3 location.
      * </p>
      * 
      * @param objectKeyPrefix
-     *        Object key preview for the customer S3 location.
+     *        The object key preview for the customer S3 location.
      */
 
     public void setObjectKeyPrefix(String objectKeyPrefix) {
@@ -109,10 +109,10 @@ public class S3Configuration implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Object key preview for the customer S3 location.
+     * The object key preview for the customer S3 location.
      * </p>
      * 
-     * @return Object key preview for the customer S3 location.
+     * @return The object key preview for the customer S3 location.
      */
 
     public String getObjectKeyPrefix() {
@@ -121,11 +121,11 @@ public class S3Configuration implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Object key preview for the customer S3 location.
+     * The object key preview for the customer S3 location.
      * </p>
      * 
      * @param objectKeyPrefix
-     *        Object key preview for the customer S3 location.
+     *        The object key preview for the customer S3 location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,13 +136,13 @@ public class S3Configuration implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Encryption option for the customer s3 location. Options are S3 server side encryption with an S3-managed key or
-     * KMS managed key.
+     * The encryption option for the customer S3 location. Options are S3 server-side encryption with an S3 managed key
+     * or Amazon Web Services managed key.
      * </p>
      * 
      * @param encryptionOption
-     *        Encryption option for the customer s3 location. Options are S3 server side encryption with an S3-managed
-     *        key or KMS managed key.
+     *        The encryption option for the customer S3 location. Options are S3 server-side encryption with an S3
+     *        managed key or Amazon Web Services managed key.
      * @see S3EncryptionOption
      */
 
@@ -152,12 +152,12 @@ public class S3Configuration implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Encryption option for the customer s3 location. Options are S3 server side encryption with an S3-managed key or
-     * KMS managed key.
+     * The encryption option for the customer S3 location. Options are S3 server-side encryption with an S3 managed key
+     * or Amazon Web Services managed key.
      * </p>
      * 
-     * @return Encryption option for the customer s3 location. Options are S3 server side encryption with an S3-managed
-     *         key or KMS managed key.
+     * @return The encryption option for the customer S3 location. Options are S3 server-side encryption with an S3
+     *         managed key or Amazon Web Services managed key.
      * @see S3EncryptionOption
      */
 
@@ -167,13 +167,13 @@ public class S3Configuration implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Encryption option for the customer s3 location. Options are S3 server side encryption with an S3-managed key or
-     * KMS managed key.
+     * The encryption option for the customer S3 location. Options are S3 server-side encryption with an S3 managed key
+     * or Amazon Web Services managed key.
      * </p>
      * 
      * @param encryptionOption
-     *        Encryption option for the customer s3 location. Options are S3 server side encryption with an S3-managed
-     *        key or KMS managed key.
+     *        The encryption option for the customer S3 location. Options are S3 server-side encryption with an S3
+     *        managed key or Amazon Web Services managed key.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see S3EncryptionOption
      */
@@ -185,13 +185,13 @@ public class S3Configuration implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Encryption option for the customer s3 location. Options are S3 server side encryption with an S3-managed key or
-     * KMS managed key.
+     * The encryption option for the customer S3 location. Options are S3 server-side encryption with an S3 managed key
+     * or Amazon Web Services managed key.
      * </p>
      * 
      * @param encryptionOption
-     *        Encryption option for the customer s3 location. Options are S3 server side encryption with an S3-managed
-     *        key or KMS managed key.
+     *        The encryption option for the customer S3 location. Options are S3 server-side encryption with an S3
+     *        managed key or Amazon Web Services managed key.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see S3EncryptionOption
      */
@@ -203,11 +203,11 @@ public class S3Configuration implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * KMS key id for the customer s3 location when encrypting with a KMS managed key.
+     * The KMS key ID for the customer S3 location when encrypting with an Amazon Web Services managed key.
      * </p>
      * 
      * @param kmsKeyId
-     *        KMS key id for the customer s3 location when encrypting with a KMS managed key.
+     *        The KMS key ID for the customer S3 location when encrypting with an Amazon Web Services managed key.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -216,10 +216,10 @@ public class S3Configuration implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * KMS key id for the customer s3 location when encrypting with a KMS managed key.
+     * The KMS key ID for the customer S3 location when encrypting with an Amazon Web Services managed key.
      * </p>
      * 
-     * @return KMS key id for the customer s3 location when encrypting with a KMS managed key.
+     * @return The KMS key ID for the customer S3 location when encrypting with an Amazon Web Services managed key.
      */
 
     public String getKmsKeyId() {
@@ -228,11 +228,11 @@ public class S3Configuration implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * KMS key id for the customer s3 location when encrypting with a KMS managed key.
+     * The KMS key ID for the customer S3 location when encrypting with an Amazon Web Services managed key.
      * </p>
      * 
      * @param kmsKeyId
-     *        KMS key id for the customer s3 location when encrypting with a KMS managed key.
+     *        The KMS key ID for the customer S3 location when encrypting with an Amazon Web Services managed key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

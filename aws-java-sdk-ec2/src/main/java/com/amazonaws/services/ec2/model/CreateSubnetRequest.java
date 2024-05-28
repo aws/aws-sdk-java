@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,9 +41,8 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * <p>
      * To create a subnet in a Local Zone, set this value to the Local Zone ID, for example
-     * <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a href=
-     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions"
-     * >Available Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a
+     * href="http://aws.amazon.com/about-aws/global-infrastructure/localzones/locations/">Local Zones locations</a>.
      * </p>
      * <p>
      * To create a subnet in an Outpost, set this value to the Availability Zone for the Outpost and specify the Outpost
@@ -70,10 +69,7 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
     private String cidrBlock;
     /**
      * <p>
-     * The IPv6 network range for the subnet, in CIDR notation. The subnet size must use a /64 prefix length.
-     * </p>
-     * <p>
-     * This parameter is required for an IPv6 only subnet.
+     * The IPv6 network range for the subnet, in CIDR notation. This parameter is required for an IPv6 only subnet.
      * </p>
      */
     private String ipv6CidrBlock;
@@ -96,6 +92,30 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      */
     private Boolean ipv6Native;
+    /**
+     * <p>
+     * An IPv4 IPAM pool ID for the subnet.
+     * </p>
+     */
+    private String ipv4IpamPoolId;
+    /**
+     * <p>
+     * An IPv4 netmask length for the subnet.
+     * </p>
+     */
+    private Integer ipv4NetmaskLength;
+    /**
+     * <p>
+     * An IPv6 IPAM pool ID for the subnet.
+     * </p>
+     */
+    private String ipv6IpamPoolId;
+    /**
+     * <p>
+     * An IPv6 netmask length for the subnet.
+     * </p>
+     */
+    private Integer ipv6NetmaskLength;
 
     /**
      * Default constructor for CreateSubnetRequest object. Callers should use the setter or fluent setter (with...)
@@ -205,9 +225,8 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * <p>
      * To create a subnet in a Local Zone, set this value to the Local Zone ID, for example
-     * <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a href=
-     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions"
-     * >Available Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a
+     * href="http://aws.amazon.com/about-aws/global-infrastructure/localzones/locations/">Local Zones locations</a>.
      * </p>
      * <p>
      * To create a subnet in an Outpost, set this value to the Availability Zone for the Outpost and specify the Outpost
@@ -222,9 +241,9 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
      *        </p>
      *        <p>
      *        To create a subnet in a Local Zone, set this value to the Local Zone ID, for example
-     *        <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a href=
-     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions"
-     *        >Available Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a
+     *        href="http://aws.amazon.com/about-aws/global-infrastructure/localzones/locations/">Local Zones
+     *        locations</a>.
      *        </p>
      *        <p>
      *        To create a subnet in an Outpost, set this value to the Availability Zone for the Outpost and specify the
@@ -245,9 +264,8 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * <p>
      * To create a subnet in a Local Zone, set this value to the Local Zone ID, for example
-     * <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a href=
-     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions"
-     * >Available Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a
+     * href="http://aws.amazon.com/about-aws/global-infrastructure/localzones/locations/">Local Zones locations</a>.
      * </p>
      * <p>
      * To create a subnet in an Outpost, set this value to the Availability Zone for the Outpost and specify the Outpost
@@ -261,9 +279,9 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
      *         </p>
      *         <p>
      *         To create a subnet in a Local Zone, set this value to the Local Zone ID, for example
-     *         <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a href=
-     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions"
-     *         >Available Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a
+     *         href="http://aws.amazon.com/about-aws/global-infrastructure/localzones/locations/">Local Zones
+     *         locations</a>.
      *         </p>
      *         <p>
      *         To create a subnet in an Outpost, set this value to the Availability Zone for the Outpost and specify the
@@ -284,9 +302,8 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * <p>
      * To create a subnet in a Local Zone, set this value to the Local Zone ID, for example
-     * <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a href=
-     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions"
-     * >Available Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a
+     * href="http://aws.amazon.com/about-aws/global-infrastructure/localzones/locations/">Local Zones locations</a>.
      * </p>
      * <p>
      * To create a subnet in an Outpost, set this value to the Availability Zone for the Outpost and specify the Outpost
@@ -301,9 +318,9 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
      *        </p>
      *        <p>
      *        To create a subnet in a Local Zone, set this value to the Local Zone ID, for example
-     *        <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a href=
-     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions"
-     *        >Available Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        <code>us-west-2-lax-1a</code>. For information about the Regions that support Local Zones, see <a
+     *        href="http://aws.amazon.com/about-aws/global-infrastructure/localzones/locations/">Local Zones
+     *        locations</a>.
      *        </p>
      *        <p>
      *        To create a subnet in an Outpost, set this value to the Availability Zone for the Outpost and specify the
@@ -425,16 +442,12 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The IPv6 network range for the subnet, in CIDR notation. The subnet size must use a /64 prefix length.
-     * </p>
-     * <p>
-     * This parameter is required for an IPv6 only subnet.
+     * The IPv6 network range for the subnet, in CIDR notation. This parameter is required for an IPv6 only subnet.
      * </p>
      * 
      * @param ipv6CidrBlock
-     *        The IPv6 network range for the subnet, in CIDR notation. The subnet size must use a /64 prefix length.</p>
-     *        <p>
-     *        This parameter is required for an IPv6 only subnet.
+     *        The IPv6 network range for the subnet, in CIDR notation. This parameter is required for an IPv6 only
+     *        subnet.
      */
 
     public void setIpv6CidrBlock(String ipv6CidrBlock) {
@@ -443,16 +456,11 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The IPv6 network range for the subnet, in CIDR notation. The subnet size must use a /64 prefix length.
-     * </p>
-     * <p>
-     * This parameter is required for an IPv6 only subnet.
+     * The IPv6 network range for the subnet, in CIDR notation. This parameter is required for an IPv6 only subnet.
      * </p>
      * 
-     * @return The IPv6 network range for the subnet, in CIDR notation. The subnet size must use a /64 prefix
-     *         length.</p>
-     *         <p>
-     *         This parameter is required for an IPv6 only subnet.
+     * @return The IPv6 network range for the subnet, in CIDR notation. This parameter is required for an IPv6 only
+     *         subnet.
      */
 
     public String getIpv6CidrBlock() {
@@ -461,16 +469,12 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The IPv6 network range for the subnet, in CIDR notation. The subnet size must use a /64 prefix length.
-     * </p>
-     * <p>
-     * This parameter is required for an IPv6 only subnet.
+     * The IPv6 network range for the subnet, in CIDR notation. This parameter is required for an IPv6 only subnet.
      * </p>
      * 
      * @param ipv6CidrBlock
-     *        The IPv6 network range for the subnet, in CIDR notation. The subnet size must use a /64 prefix length.</p>
-     *        <p>
-     *        This parameter is required for an IPv6 only subnet.
+     *        The IPv6 network range for the subnet, in CIDR notation. This parameter is required for an IPv6 only
+     *        subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -618,6 +622,166 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
+     * <p>
+     * An IPv4 IPAM pool ID for the subnet.
+     * </p>
+     * 
+     * @param ipv4IpamPoolId
+     *        An IPv4 IPAM pool ID for the subnet.
+     */
+
+    public void setIpv4IpamPoolId(String ipv4IpamPoolId) {
+        this.ipv4IpamPoolId = ipv4IpamPoolId;
+    }
+
+    /**
+     * <p>
+     * An IPv4 IPAM pool ID for the subnet.
+     * </p>
+     * 
+     * @return An IPv4 IPAM pool ID for the subnet.
+     */
+
+    public String getIpv4IpamPoolId() {
+        return this.ipv4IpamPoolId;
+    }
+
+    /**
+     * <p>
+     * An IPv4 IPAM pool ID for the subnet.
+     * </p>
+     * 
+     * @param ipv4IpamPoolId
+     *        An IPv4 IPAM pool ID for the subnet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSubnetRequest withIpv4IpamPoolId(String ipv4IpamPoolId) {
+        setIpv4IpamPoolId(ipv4IpamPoolId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An IPv4 netmask length for the subnet.
+     * </p>
+     * 
+     * @param ipv4NetmaskLength
+     *        An IPv4 netmask length for the subnet.
+     */
+
+    public void setIpv4NetmaskLength(Integer ipv4NetmaskLength) {
+        this.ipv4NetmaskLength = ipv4NetmaskLength;
+    }
+
+    /**
+     * <p>
+     * An IPv4 netmask length for the subnet.
+     * </p>
+     * 
+     * @return An IPv4 netmask length for the subnet.
+     */
+
+    public Integer getIpv4NetmaskLength() {
+        return this.ipv4NetmaskLength;
+    }
+
+    /**
+     * <p>
+     * An IPv4 netmask length for the subnet.
+     * </p>
+     * 
+     * @param ipv4NetmaskLength
+     *        An IPv4 netmask length for the subnet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSubnetRequest withIpv4NetmaskLength(Integer ipv4NetmaskLength) {
+        setIpv4NetmaskLength(ipv4NetmaskLength);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An IPv6 IPAM pool ID for the subnet.
+     * </p>
+     * 
+     * @param ipv6IpamPoolId
+     *        An IPv6 IPAM pool ID for the subnet.
+     */
+
+    public void setIpv6IpamPoolId(String ipv6IpamPoolId) {
+        this.ipv6IpamPoolId = ipv6IpamPoolId;
+    }
+
+    /**
+     * <p>
+     * An IPv6 IPAM pool ID for the subnet.
+     * </p>
+     * 
+     * @return An IPv6 IPAM pool ID for the subnet.
+     */
+
+    public String getIpv6IpamPoolId() {
+        return this.ipv6IpamPoolId;
+    }
+
+    /**
+     * <p>
+     * An IPv6 IPAM pool ID for the subnet.
+     * </p>
+     * 
+     * @param ipv6IpamPoolId
+     *        An IPv6 IPAM pool ID for the subnet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSubnetRequest withIpv6IpamPoolId(String ipv6IpamPoolId) {
+        setIpv6IpamPoolId(ipv6IpamPoolId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An IPv6 netmask length for the subnet.
+     * </p>
+     * 
+     * @param ipv6NetmaskLength
+     *        An IPv6 netmask length for the subnet.
+     */
+
+    public void setIpv6NetmaskLength(Integer ipv6NetmaskLength) {
+        this.ipv6NetmaskLength = ipv6NetmaskLength;
+    }
+
+    /**
+     * <p>
+     * An IPv6 netmask length for the subnet.
+     * </p>
+     * 
+     * @return An IPv6 netmask length for the subnet.
+     */
+
+    public Integer getIpv6NetmaskLength() {
+        return this.ipv6NetmaskLength;
+    }
+
+    /**
+     * <p>
+     * An IPv6 netmask length for the subnet.
+     * </p>
+     * 
+     * @param ipv6NetmaskLength
+     *        An IPv6 netmask length for the subnet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSubnetRequest withIpv6NetmaskLength(Integer ipv6NetmaskLength) {
+        setIpv6NetmaskLength(ipv6NetmaskLength);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -655,7 +819,15 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
         if (getVpcId() != null)
             sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getIpv6Native() != null)
-            sb.append("Ipv6Native: ").append(getIpv6Native());
+            sb.append("Ipv6Native: ").append(getIpv6Native()).append(",");
+        if (getIpv4IpamPoolId() != null)
+            sb.append("Ipv4IpamPoolId: ").append(getIpv4IpamPoolId()).append(",");
+        if (getIpv4NetmaskLength() != null)
+            sb.append("Ipv4NetmaskLength: ").append(getIpv4NetmaskLength()).append(",");
+        if (getIpv6IpamPoolId() != null)
+            sb.append("Ipv6IpamPoolId: ").append(getIpv6IpamPoolId()).append(",");
+        if (getIpv6NetmaskLength() != null)
+            sb.append("Ipv6NetmaskLength: ").append(getIpv6NetmaskLength());
         sb.append("}");
         return sb.toString();
     }
@@ -702,6 +874,22 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
             return false;
         if (other.getIpv6Native() != null && other.getIpv6Native().equals(this.getIpv6Native()) == false)
             return false;
+        if (other.getIpv4IpamPoolId() == null ^ this.getIpv4IpamPoolId() == null)
+            return false;
+        if (other.getIpv4IpamPoolId() != null && other.getIpv4IpamPoolId().equals(this.getIpv4IpamPoolId()) == false)
+            return false;
+        if (other.getIpv4NetmaskLength() == null ^ this.getIpv4NetmaskLength() == null)
+            return false;
+        if (other.getIpv4NetmaskLength() != null && other.getIpv4NetmaskLength().equals(this.getIpv4NetmaskLength()) == false)
+            return false;
+        if (other.getIpv6IpamPoolId() == null ^ this.getIpv6IpamPoolId() == null)
+            return false;
+        if (other.getIpv6IpamPoolId() != null && other.getIpv6IpamPoolId().equals(this.getIpv6IpamPoolId()) == false)
+            return false;
+        if (other.getIpv6NetmaskLength() == null ^ this.getIpv6NetmaskLength() == null)
+            return false;
+        if (other.getIpv6NetmaskLength() != null && other.getIpv6NetmaskLength().equals(this.getIpv6NetmaskLength()) == false)
+            return false;
         return true;
     }
 
@@ -718,6 +906,10 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest implements Seri
         hashCode = prime * hashCode + ((getOutpostArn() == null) ? 0 : getOutpostArn().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         hashCode = prime * hashCode + ((getIpv6Native() == null) ? 0 : getIpv6Native().hashCode());
+        hashCode = prime * hashCode + ((getIpv4IpamPoolId() == null) ? 0 : getIpv4IpamPoolId().hashCode());
+        hashCode = prime * hashCode + ((getIpv4NetmaskLength() == null) ? 0 : getIpv4NetmaskLength().hashCode());
+        hashCode = prime * hashCode + ((getIpv6IpamPoolId() == null) ? 0 : getIpv6IpamPoolId().hashCode());
+        hashCode = prime * hashCode + ((getIpv6NetmaskLength() == null) ? 0 : getIpv6NetmaskLength().hashCode());
         return hashCode;
     }
 

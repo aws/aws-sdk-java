@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -79,8 +79,7 @@ public class CaptchaAction implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For information about customizing web requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
-     * requests and responses in WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
+     * requests and responses in WAF</a> in the <i>WAF Developer Guide</i>.
      * </p>
      */
     private CustomRequestHandling customRequestHandling;
@@ -93,8 +92,7 @@ public class CaptchaAction implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For information about customizing web requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
-     * requests and responses in WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
+     * requests and responses in WAF</a> in the <i>WAF Developer Guide</i>.
      * </p>
      * 
      * @param customRequestHandling
@@ -103,8 +101,7 @@ public class CaptchaAction implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        For information about customizing web requests and responses, see <a
      *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     *        web requests and responses in WAF</a> in the <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
+     *        web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>.
      */
 
     public void setCustomRequestHandling(CustomRequestHandling customRequestHandling) {
@@ -119,8 +116,7 @@ public class CaptchaAction implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For information about customizing web requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
-     * requests and responses in WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
+     * requests and responses in WAF</a> in the <i>WAF Developer Guide</i>.
      * </p>
      * 
      * @return Defines custom handling for the web request, used when the <code>CAPTCHA</code> inspection determines
@@ -128,8 +124,7 @@ public class CaptchaAction implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         For information about customizing web requests and responses, see <a
      *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     *         web requests and responses in WAF</a> in the <a
-     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
+     *         web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>.
      */
 
     public CustomRequestHandling getCustomRequestHandling() {
@@ -144,8 +139,7 @@ public class CaptchaAction implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For information about customizing web requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
-     * requests and responses in WAF</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
+     * requests and responses in WAF</a> in the <i>WAF Developer Guide</i>.
      * </p>
      * 
      * @param customRequestHandling
@@ -154,8 +148,7 @@ public class CaptchaAction implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        For information about customizing web requests and responses, see <a
      *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     *        web requests and responses in WAF</a> in the <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
+     *        web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

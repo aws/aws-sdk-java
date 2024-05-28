@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -160,6 +160,22 @@ public class ModifyClusterRequestMarshaller implements Marshaller<Request<Modify
 
         if (modifyClusterRequest.getPort() != null) {
             request.addParameter("Port", StringUtils.fromInteger(modifyClusterRequest.getPort()));
+        }
+
+        if (modifyClusterRequest.getManageMasterPassword() != null) {
+            request.addParameter("ManageMasterPassword", StringUtils.fromBoolean(modifyClusterRequest.getManageMasterPassword()));
+        }
+
+        if (modifyClusterRequest.getMasterPasswordSecretKmsKeyId() != null) {
+            request.addParameter("MasterPasswordSecretKmsKeyId", StringUtils.fromString(modifyClusterRequest.getMasterPasswordSecretKmsKeyId()));
+        }
+
+        if (modifyClusterRequest.getIpAddressType() != null) {
+            request.addParameter("IpAddressType", StringUtils.fromString(modifyClusterRequest.getIpAddressType()));
+        }
+
+        if (modifyClusterRequest.getMultiAZ() != null) {
+            request.addParameter("MultiAZ", StringUtils.fromBoolean(modifyClusterRequest.getMultiAZ()));
         }
 
         return request;

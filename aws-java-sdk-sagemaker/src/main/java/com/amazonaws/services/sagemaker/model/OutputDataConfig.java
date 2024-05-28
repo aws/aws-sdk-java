@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,12 +71,11 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * <p>
      * If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role must include permissions to
      * call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, SageMaker uses the default KMS key for Amazon
-     * S3 for your role's account. SageMaker uses server-side encryption with KMS-managed keys for
-     * <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only
-     * allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code>
-     * to <code>"aws:kms"</code>. For more information, see <a
+     * S3 for your role's account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed Encryption
-     * Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * Keys</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. If the output data is stored in Amazon S3
+     * Express One Zone, it is encrypted with server-side encryption with Amazon S3 managed keys (SSE-S3). KMS key is
+     * not supported for Amazon S3 Express One Zone
      * </p>
      * <p>
      * The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTrainingJob</code>,
@@ -93,6 +92,13 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String s3OutputPath;
+    /**
+     * <p>
+     * The model output compression type. Select <code>None</code> to output an uncompressed model, recommended for
+     * large model outputs. Defaults to gzip.
+     * </p>
+     */
+    private String compressionType;
 
     /**
      * <p>
@@ -137,12 +143,11 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * <p>
      * If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role must include permissions to
      * call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, SageMaker uses the default KMS key for Amazon
-     * S3 for your role's account. SageMaker uses server-side encryption with KMS-managed keys for
-     * <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only
-     * allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code>
-     * to <code>"aws:kms"</code>. For more information, see <a
+     * S3 for your role's account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed Encryption
-     * Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * Keys</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. If the output data is stored in Amazon S3
+     * Express One Zone, it is encrypted with server-side encryption with Amazon S3 managed keys (SSE-S3). KMS key is
+     * not supported for Amazon S3 Express One Zone
      * </p>
      * <p>
      * The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTrainingJob</code>,
@@ -192,12 +197,11 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role must include permissions
      *        to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, SageMaker uses the default KMS key
-     *        for Amazon S3 for your role's account. SageMaker uses server-side encryption with KMS-managed keys for
-     *        <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission
-     *        that only allows objects with server-side encryption, set the condition key of
-     *        <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a
+     *        for Amazon S3 for your role's account. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
-     *        Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     *        Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. If the output data is
+     *        stored in Amazon S3 Express One Zone, it is encrypted with server-side encryption with Amazon S3 managed
+     *        keys (SSE-S3). KMS key is not supported for Amazon S3 Express One Zone
      *        </p>
      *        <p>
      *        The KMS key policy must grant permission to the IAM role that you specify in your
@@ -254,12 +258,11 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * <p>
      * If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role must include permissions to
      * call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, SageMaker uses the default KMS key for Amazon
-     * S3 for your role's account. SageMaker uses server-side encryption with KMS-managed keys for
-     * <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only
-     * allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code>
-     * to <code>"aws:kms"</code>. For more information, see <a
+     * S3 for your role's account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed Encryption
-     * Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * Keys</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. If the output data is stored in Amazon S3
+     * Express One Zone, it is encrypted with server-side encryption with Amazon S3 managed keys (SSE-S3). KMS key is
+     * not supported for Amazon S3 Express One Zone
      * </p>
      * <p>
      * The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTrainingJob</code>,
@@ -308,13 +311,11 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      *         <p>
      *         If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role must include
      *         permissions to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, SageMaker uses the
-     *         default KMS key for Amazon S3 for your role's account. SageMaker uses server-side encryption with
-     *         KMS-managed keys for <code>OutputDataConfig</code>. If you use a bucket policy with an
-     *         <code>s3:PutObject</code> permission that only allows objects with server-side encryption, set the
-     *         condition key of <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more
-     *         information, see <a
+     *         default KMS key for Amazon S3 for your role's account. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
-     *         Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     *         Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. If the output data is
+     *         stored in Amazon S3 Express One Zone, it is encrypted with server-side encryption with Amazon S3 managed
+     *         keys (SSE-S3). KMS key is not supported for Amazon S3 Express One Zone
      *         </p>
      *         <p>
      *         The KMS key policy must grant permission to the IAM role that you specify in your
@@ -371,12 +372,11 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * <p>
      * If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role must include permissions to
      * call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, SageMaker uses the default KMS key for Amazon
-     * S3 for your role's account. SageMaker uses server-side encryption with KMS-managed keys for
-     * <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission that only
-     * allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code>
-     * to <code>"aws:kms"</code>. For more information, see <a
+     * S3 for your role's account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed Encryption
-     * Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * Keys</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. If the output data is stored in Amazon S3
+     * Express One Zone, it is encrypted with server-side encryption with Amazon S3 managed keys (SSE-S3). KMS key is
+     * not supported for Amazon S3 Express One Zone
      * </p>
      * <p>
      * The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTrainingJob</code>,
@@ -426,12 +426,11 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role must include permissions
      *        to call <code>kms:Encrypt</code>. If you don't provide a KMS key ID, SageMaker uses the default KMS key
-     *        for Amazon S3 for your role's account. SageMaker uses server-side encryption with KMS-managed keys for
-     *        <code>OutputDataConfig</code>. If you use a bucket policy with an <code>s3:PutObject</code> permission
-     *        that only allows objects with server-side encryption, set the condition key of
-     *        <code>s3:x-amz-server-side-encryption</code> to <code>"aws:kms"</code>. For more information, see <a
+     *        for Amazon S3 for your role's account. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
-     *        Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     *        Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. If the output data is
+     *        stored in Amazon S3 Express One Zone, it is encrypted with server-side encryption with Amazon S3 managed
+     *        keys (SSE-S3). KMS key is not supported for Amazon S3 Express One Zone
      *        </p>
      *        <p>
      *        The KMS key policy must grant permission to the IAM role that you specify in your
@@ -494,6 +493,73 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The model output compression type. Select <code>None</code> to output an uncompressed model, recommended for
+     * large model outputs. Defaults to gzip.
+     * </p>
+     * 
+     * @param compressionType
+     *        The model output compression type. Select <code>None</code> to output an uncompressed model, recommended
+     *        for large model outputs. Defaults to gzip.
+     * @see OutputCompressionType
+     */
+
+    public void setCompressionType(String compressionType) {
+        this.compressionType = compressionType;
+    }
+
+    /**
+     * <p>
+     * The model output compression type. Select <code>None</code> to output an uncompressed model, recommended for
+     * large model outputs. Defaults to gzip.
+     * </p>
+     * 
+     * @return The model output compression type. Select <code>None</code> to output an uncompressed model, recommended
+     *         for large model outputs. Defaults to gzip.
+     * @see OutputCompressionType
+     */
+
+    public String getCompressionType() {
+        return this.compressionType;
+    }
+
+    /**
+     * <p>
+     * The model output compression type. Select <code>None</code> to output an uncompressed model, recommended for
+     * large model outputs. Defaults to gzip.
+     * </p>
+     * 
+     * @param compressionType
+     *        The model output compression type. Select <code>None</code> to output an uncompressed model, recommended
+     *        for large model outputs. Defaults to gzip.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OutputCompressionType
+     */
+
+    public OutputDataConfig withCompressionType(String compressionType) {
+        setCompressionType(compressionType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The model output compression type. Select <code>None</code> to output an uncompressed model, recommended for
+     * large model outputs. Defaults to gzip.
+     * </p>
+     * 
+     * @param compressionType
+     *        The model output compression type. Select <code>None</code> to output an uncompressed model, recommended
+     *        for large model outputs. Defaults to gzip.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OutputCompressionType
+     */
+
+    public OutputDataConfig withCompressionType(OutputCompressionType compressionType) {
+        this.compressionType = compressionType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -508,7 +574,9 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getS3OutputPath() != null)
-            sb.append("S3OutputPath: ").append(getS3OutputPath());
+            sb.append("S3OutputPath: ").append(getS3OutputPath()).append(",");
+        if (getCompressionType() != null)
+            sb.append("CompressionType: ").append(getCompressionType());
         sb.append("}");
         return sb.toString();
     }
@@ -531,6 +599,10 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getS3OutputPath() != null && other.getS3OutputPath().equals(this.getS3OutputPath()) == false)
             return false;
+        if (other.getCompressionType() == null ^ this.getCompressionType() == null)
+            return false;
+        if (other.getCompressionType() != null && other.getCompressionType().equals(this.getCompressionType()) == false)
+            return false;
         return true;
     }
 
@@ -541,6 +613,7 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
 
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getS3OutputPath() == null) ? 0 : getS3OutputPath().hashCode());
+        hashCode = prime * hashCode + ((getCompressionType() == null) ? 0 : getCompressionType().hashCode());
         return hashCode;
     }
 

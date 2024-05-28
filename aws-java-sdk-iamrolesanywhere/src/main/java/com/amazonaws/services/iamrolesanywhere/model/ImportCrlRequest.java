@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class ImportCrlRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The x509 v3 specified certificate revocation list
+     * The x509 v3 specified certificate revocation list (CRL).
      * </p>
      */
     private java.nio.ByteBuffer crlData;
@@ -58,7 +58,7 @@ public class ImportCrlRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The x509 v3 specified certificate revocation list
+     * The x509 v3 specified certificate revocation list (CRL).
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -72,7 +72,7 @@ public class ImportCrlRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param crlData
-     *        The x509 v3 specified certificate revocation list
+     *        The x509 v3 specified certificate revocation list (CRL).
      */
 
     public void setCrlData(java.nio.ByteBuffer crlData) {
@@ -81,7 +81,7 @@ public class ImportCrlRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The x509 v3 specified certificate revocation list
+     * The x509 v3 specified certificate revocation list (CRL).
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -91,7 +91,7 @@ public class ImportCrlRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * {@code position}.
      * </p>
      * 
-     * @return The x509 v3 specified certificate revocation list
+     * @return The x509 v3 specified certificate revocation list (CRL).
      */
 
     public java.nio.ByteBuffer getCrlData() {
@@ -100,7 +100,7 @@ public class ImportCrlRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The x509 v3 specified certificate revocation list
+     * The x509 v3 specified certificate revocation list (CRL).
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -114,7 +114,7 @@ public class ImportCrlRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param crlData
-     *        The x509 v3 specified certificate revocation list
+     *        The x509 v3 specified certificate revocation list (CRL).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

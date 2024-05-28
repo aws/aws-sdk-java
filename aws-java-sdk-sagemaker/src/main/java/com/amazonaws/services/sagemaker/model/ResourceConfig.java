@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the resources, including ML compute instances and ML storage volumes, to use for model training.
+ * Describes the resources, including machine learning (ML) compute instances and ML storage volumes, to use for model
+ * training.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ResourceConfig" target="_top">AWS API
@@ -32,6 +33,35 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The ML compute instance type.
      * </p>
+     * <note>
+     * <p>
+     * SageMaker Training on Amazon Elastic Compute Cloud (EC2) P4de instances is in preview release starting December
+     * 9th, 2022.
+     * </p>
+     * <p>
+     * <a href="http://aws.amazon.com/ec2/instance-types/p4/">Amazon EC2 P4de instances</a> (currently in preview) are
+     * powered by 8 NVIDIA A100 GPUs with 80GB high-performance HBM2e GPU memory, which accelerate the speed of training
+     * ML models that need to be trained on large datasets of high-resolution data. In this preview release, Amazon
+     * SageMaker supports ML training jobs on P4de instances (<code>ml.p4de.24xlarge</code>) to reduce model training
+     * time. The <code>ml.p4de.24xlarge</code> instances are available in the following Amazon Web Services Regions.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * US East (N. Virginia) (us-east-1)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * US West (Oregon) (us-west-2)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To request quota limit increase and start using P4de instances, contact the SageMaker Training service team
+     * through your account team.
+     * </p>
+     * </note>
      */
     private String instanceType;
     /**
@@ -121,24 +151,81 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
     private String volumeKmsKeyId;
     /**
      * <p>
-     * The configuration of a heterogeneous cluster in JSON format.
-     * </p>
-     */
-    private java.util.List<InstanceGroup> instanceGroups;
-    /**
-     * <p>
      * The duration of time in seconds to retain configured resources in a warm pool for subsequent training jobs.
      * </p>
      */
     private Integer keepAlivePeriodInSeconds;
+    /**
+     * <p>
+     * The configuration of a heterogeneous cluster in JSON format.
+     * </p>
+     */
+    private java.util.List<InstanceGroup> instanceGroups;
 
     /**
      * <p>
      * The ML compute instance type.
      * </p>
+     * <note>
+     * <p>
+     * SageMaker Training on Amazon Elastic Compute Cloud (EC2) P4de instances is in preview release starting December
+     * 9th, 2022.
+     * </p>
+     * <p>
+     * <a href="http://aws.amazon.com/ec2/instance-types/p4/">Amazon EC2 P4de instances</a> (currently in preview) are
+     * powered by 8 NVIDIA A100 GPUs with 80GB high-performance HBM2e GPU memory, which accelerate the speed of training
+     * ML models that need to be trained on large datasets of high-resolution data. In this preview release, Amazon
+     * SageMaker supports ML training jobs on P4de instances (<code>ml.p4de.24xlarge</code>) to reduce model training
+     * time. The <code>ml.p4de.24xlarge</code> instances are available in the following Amazon Web Services Regions.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * US East (N. Virginia) (us-east-1)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * US West (Oregon) (us-west-2)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To request quota limit increase and start using P4de instances, contact the SageMaker Training service team
+     * through your account team.
+     * </p>
+     * </note>
      * 
      * @param instanceType
-     *        The ML compute instance type.
+     *        The ML compute instance type. </p> <note>
+     *        <p>
+     *        SageMaker Training on Amazon Elastic Compute Cloud (EC2) P4de instances is in preview release starting
+     *        December 9th, 2022.
+     *        </p>
+     *        <p>
+     *        <a href="http://aws.amazon.com/ec2/instance-types/p4/">Amazon EC2 P4de instances</a> (currently in
+     *        preview) are powered by 8 NVIDIA A100 GPUs with 80GB high-performance HBM2e GPU memory, which accelerate
+     *        the speed of training ML models that need to be trained on large datasets of high-resolution data. In this
+     *        preview release, Amazon SageMaker supports ML training jobs on P4de instances (
+     *        <code>ml.p4de.24xlarge</code>) to reduce model training time. The <code>ml.p4de.24xlarge</code> instances
+     *        are available in the following Amazon Web Services Regions.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        US East (N. Virginia) (us-east-1)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        US West (Oregon) (us-west-2)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        To request quota limit increase and start using P4de instances, contact the SageMaker Training service
+     *        team through your account team.
+     *        </p>
      * @see TrainingInstanceType
      */
 
@@ -150,8 +237,65 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The ML compute instance type.
      * </p>
+     * <note>
+     * <p>
+     * SageMaker Training on Amazon Elastic Compute Cloud (EC2) P4de instances is in preview release starting December
+     * 9th, 2022.
+     * </p>
+     * <p>
+     * <a href="http://aws.amazon.com/ec2/instance-types/p4/">Amazon EC2 P4de instances</a> (currently in preview) are
+     * powered by 8 NVIDIA A100 GPUs with 80GB high-performance HBM2e GPU memory, which accelerate the speed of training
+     * ML models that need to be trained on large datasets of high-resolution data. In this preview release, Amazon
+     * SageMaker supports ML training jobs on P4de instances (<code>ml.p4de.24xlarge</code>) to reduce model training
+     * time. The <code>ml.p4de.24xlarge</code> instances are available in the following Amazon Web Services Regions.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * US East (N. Virginia) (us-east-1)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * US West (Oregon) (us-west-2)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To request quota limit increase and start using P4de instances, contact the SageMaker Training service team
+     * through your account team.
+     * </p>
+     * </note>
      * 
-     * @return The ML compute instance type.
+     * @return The ML compute instance type. </p> <note>
+     *         <p>
+     *         SageMaker Training on Amazon Elastic Compute Cloud (EC2) P4de instances is in preview release starting
+     *         December 9th, 2022.
+     *         </p>
+     *         <p>
+     *         <a href="http://aws.amazon.com/ec2/instance-types/p4/">Amazon EC2 P4de instances</a> (currently in
+     *         preview) are powered by 8 NVIDIA A100 GPUs with 80GB high-performance HBM2e GPU memory, which accelerate
+     *         the speed of training ML models that need to be trained on large datasets of high-resolution data. In
+     *         this preview release, Amazon SageMaker supports ML training jobs on P4de instances (
+     *         <code>ml.p4de.24xlarge</code>) to reduce model training time. The <code>ml.p4de.24xlarge</code> instances
+     *         are available in the following Amazon Web Services Regions.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         US East (N. Virginia) (us-east-1)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         US West (Oregon) (us-west-2)
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         To request quota limit increase and start using P4de instances, contact the SageMaker Training service
+     *         team through your account team.
+     *         </p>
      * @see TrainingInstanceType
      */
 
@@ -163,9 +307,66 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The ML compute instance type.
      * </p>
+     * <note>
+     * <p>
+     * SageMaker Training on Amazon Elastic Compute Cloud (EC2) P4de instances is in preview release starting December
+     * 9th, 2022.
+     * </p>
+     * <p>
+     * <a href="http://aws.amazon.com/ec2/instance-types/p4/">Amazon EC2 P4de instances</a> (currently in preview) are
+     * powered by 8 NVIDIA A100 GPUs with 80GB high-performance HBM2e GPU memory, which accelerate the speed of training
+     * ML models that need to be trained on large datasets of high-resolution data. In this preview release, Amazon
+     * SageMaker supports ML training jobs on P4de instances (<code>ml.p4de.24xlarge</code>) to reduce model training
+     * time. The <code>ml.p4de.24xlarge</code> instances are available in the following Amazon Web Services Regions.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * US East (N. Virginia) (us-east-1)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * US West (Oregon) (us-west-2)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To request quota limit increase and start using P4de instances, contact the SageMaker Training service team
+     * through your account team.
+     * </p>
+     * </note>
      * 
      * @param instanceType
-     *        The ML compute instance type.
+     *        The ML compute instance type. </p> <note>
+     *        <p>
+     *        SageMaker Training on Amazon Elastic Compute Cloud (EC2) P4de instances is in preview release starting
+     *        December 9th, 2022.
+     *        </p>
+     *        <p>
+     *        <a href="http://aws.amazon.com/ec2/instance-types/p4/">Amazon EC2 P4de instances</a> (currently in
+     *        preview) are powered by 8 NVIDIA A100 GPUs with 80GB high-performance HBM2e GPU memory, which accelerate
+     *        the speed of training ML models that need to be trained on large datasets of high-resolution data. In this
+     *        preview release, Amazon SageMaker supports ML training jobs on P4de instances (
+     *        <code>ml.p4de.24xlarge</code>) to reduce model training time. The <code>ml.p4de.24xlarge</code> instances
+     *        are available in the following Amazon Web Services Regions.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        US East (N. Virginia) (us-east-1)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        US West (Oregon) (us-west-2)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        To request quota limit increase and start using P4de instances, contact the SageMaker Training service
+     *        team through your account team.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrainingInstanceType
      */
@@ -179,9 +380,66 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The ML compute instance type.
      * </p>
+     * <note>
+     * <p>
+     * SageMaker Training on Amazon Elastic Compute Cloud (EC2) P4de instances is in preview release starting December
+     * 9th, 2022.
+     * </p>
+     * <p>
+     * <a href="http://aws.amazon.com/ec2/instance-types/p4/">Amazon EC2 P4de instances</a> (currently in preview) are
+     * powered by 8 NVIDIA A100 GPUs with 80GB high-performance HBM2e GPU memory, which accelerate the speed of training
+     * ML models that need to be trained on large datasets of high-resolution data. In this preview release, Amazon
+     * SageMaker supports ML training jobs on P4de instances (<code>ml.p4de.24xlarge</code>) to reduce model training
+     * time. The <code>ml.p4de.24xlarge</code> instances are available in the following Amazon Web Services Regions.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * US East (N. Virginia) (us-east-1)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * US West (Oregon) (us-west-2)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To request quota limit increase and start using P4de instances, contact the SageMaker Training service team
+     * through your account team.
+     * </p>
+     * </note>
      * 
      * @param instanceType
-     *        The ML compute instance type.
+     *        The ML compute instance type. </p> <note>
+     *        <p>
+     *        SageMaker Training on Amazon Elastic Compute Cloud (EC2) P4de instances is in preview release starting
+     *        December 9th, 2022.
+     *        </p>
+     *        <p>
+     *        <a href="http://aws.amazon.com/ec2/instance-types/p4/">Amazon EC2 P4de instances</a> (currently in
+     *        preview) are powered by 8 NVIDIA A100 GPUs with 80GB high-performance HBM2e GPU memory, which accelerate
+     *        the speed of training ML models that need to be trained on large datasets of high-resolution data. In this
+     *        preview release, Amazon SageMaker supports ML training jobs on P4de instances (
+     *        <code>ml.p4de.24xlarge</code>) to reduce model training time. The <code>ml.p4de.24xlarge</code> instances
+     *        are available in the following Amazon Web Services Regions.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        US East (N. Virginia) (us-east-1)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        US West (Oregon) (us-west-2)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        To request quota limit increase and start using P4de instances, contact the SageMaker Training service
+     *        team through your account team.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrainingInstanceType
      */
@@ -704,6 +962,49 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The duration of time in seconds to retain configured resources in a warm pool for subsequent training jobs.
+     * </p>
+     * 
+     * @param keepAlivePeriodInSeconds
+     *        The duration of time in seconds to retain configured resources in a warm pool for subsequent training
+     *        jobs.
+     */
+
+    public void setKeepAlivePeriodInSeconds(Integer keepAlivePeriodInSeconds) {
+        this.keepAlivePeriodInSeconds = keepAlivePeriodInSeconds;
+    }
+
+    /**
+     * <p>
+     * The duration of time in seconds to retain configured resources in a warm pool for subsequent training jobs.
+     * </p>
+     * 
+     * @return The duration of time in seconds to retain configured resources in a warm pool for subsequent training
+     *         jobs.
+     */
+
+    public Integer getKeepAlivePeriodInSeconds() {
+        return this.keepAlivePeriodInSeconds;
+    }
+
+    /**
+     * <p>
+     * The duration of time in seconds to retain configured resources in a warm pool for subsequent training jobs.
+     * </p>
+     * 
+     * @param keepAlivePeriodInSeconds
+     *        The duration of time in seconds to retain configured resources in a warm pool for subsequent training
+     *        jobs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceConfig withKeepAlivePeriodInSeconds(Integer keepAlivePeriodInSeconds) {
+        setKeepAlivePeriodInSeconds(keepAlivePeriodInSeconds);
+        return this;
+    }
+
+    /**
+     * <p>
      * The configuration of a heterogeneous cluster in JSON format.
      * </p>
      * 
@@ -773,49 +1074,6 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * The duration of time in seconds to retain configured resources in a warm pool for subsequent training jobs.
-     * </p>
-     * 
-     * @param keepAlivePeriodInSeconds
-     *        The duration of time in seconds to retain configured resources in a warm pool for subsequent training
-     *        jobs.
-     */
-
-    public void setKeepAlivePeriodInSeconds(Integer keepAlivePeriodInSeconds) {
-        this.keepAlivePeriodInSeconds = keepAlivePeriodInSeconds;
-    }
-
-    /**
-     * <p>
-     * The duration of time in seconds to retain configured resources in a warm pool for subsequent training jobs.
-     * </p>
-     * 
-     * @return The duration of time in seconds to retain configured resources in a warm pool for subsequent training
-     *         jobs.
-     */
-
-    public Integer getKeepAlivePeriodInSeconds() {
-        return this.keepAlivePeriodInSeconds;
-    }
-
-    /**
-     * <p>
-     * The duration of time in seconds to retain configured resources in a warm pool for subsequent training jobs.
-     * </p>
-     * 
-     * @param keepAlivePeriodInSeconds
-     *        The duration of time in seconds to retain configured resources in a warm pool for subsequent training
-     *        jobs.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ResourceConfig withKeepAlivePeriodInSeconds(Integer keepAlivePeriodInSeconds) {
-        setKeepAlivePeriodInSeconds(keepAlivePeriodInSeconds);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -835,10 +1093,10 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
             sb.append("VolumeSizeInGB: ").append(getVolumeSizeInGB()).append(",");
         if (getVolumeKmsKeyId() != null)
             sb.append("VolumeKmsKeyId: ").append(getVolumeKmsKeyId()).append(",");
-        if (getInstanceGroups() != null)
-            sb.append("InstanceGroups: ").append(getInstanceGroups()).append(",");
         if (getKeepAlivePeriodInSeconds() != null)
-            sb.append("KeepAlivePeriodInSeconds: ").append(getKeepAlivePeriodInSeconds());
+            sb.append("KeepAlivePeriodInSeconds: ").append(getKeepAlivePeriodInSeconds()).append(",");
+        if (getInstanceGroups() != null)
+            sb.append("InstanceGroups: ").append(getInstanceGroups());
         sb.append("}");
         return sb.toString();
     }
@@ -869,13 +1127,13 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getVolumeKmsKeyId() != null && other.getVolumeKmsKeyId().equals(this.getVolumeKmsKeyId()) == false)
             return false;
-        if (other.getInstanceGroups() == null ^ this.getInstanceGroups() == null)
-            return false;
-        if (other.getInstanceGroups() != null && other.getInstanceGroups().equals(this.getInstanceGroups()) == false)
-            return false;
         if (other.getKeepAlivePeriodInSeconds() == null ^ this.getKeepAlivePeriodInSeconds() == null)
             return false;
         if (other.getKeepAlivePeriodInSeconds() != null && other.getKeepAlivePeriodInSeconds().equals(this.getKeepAlivePeriodInSeconds()) == false)
+            return false;
+        if (other.getInstanceGroups() == null ^ this.getInstanceGroups() == null)
+            return false;
+        if (other.getInstanceGroups() != null && other.getInstanceGroups().equals(this.getInstanceGroups()) == false)
             return false;
         return true;
     }
@@ -889,8 +1147,8 @@ public class ResourceConfig implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode());
         hashCode = prime * hashCode + ((getVolumeSizeInGB() == null) ? 0 : getVolumeSizeInGB().hashCode());
         hashCode = prime * hashCode + ((getVolumeKmsKeyId() == null) ? 0 : getVolumeKmsKeyId().hashCode());
-        hashCode = prime * hashCode + ((getInstanceGroups() == null) ? 0 : getInstanceGroups().hashCode());
         hashCode = prime * hashCode + ((getKeepAlivePeriodInSeconds() == null) ? 0 : getKeepAlivePeriodInSeconds().hashCode());
+        hashCode = prime * hashCode + ((getInstanceGroups() == null) ? 0 : getInstanceGroups().hashCode());
         return hashCode;
     }
 

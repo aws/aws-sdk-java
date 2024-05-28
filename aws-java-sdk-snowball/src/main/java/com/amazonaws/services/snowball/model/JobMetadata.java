@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -178,6 +178,24 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private OnDeviceServiceConfiguration onDeviceServiceConfiguration;
+    /**
+     * <p>
+     * The highest impact level of data that will be stored or processed on the device, provided at job creation.
+     * </p>
+     */
+    private String impactLevel;
+    /**
+     * <p>
+     * Information identifying the person picking up the device.
+     * </p>
+     */
+    private PickupDetails pickupDetails;
+    /**
+     * <p>
+     * Unique ID associated with a device.
+     * </p>
+     */
+    private String snowballId;
 
     /**
      * <p>
@@ -1380,6 +1398,160 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The highest impact level of data that will be stored or processed on the device, provided at job creation.
+     * </p>
+     * 
+     * @param impactLevel
+     *        The highest impact level of data that will be stored or processed on the device, provided at job creation.
+     * @see ImpactLevel
+     */
+
+    public void setImpactLevel(String impactLevel) {
+        this.impactLevel = impactLevel;
+    }
+
+    /**
+     * <p>
+     * The highest impact level of data that will be stored or processed on the device, provided at job creation.
+     * </p>
+     * 
+     * @return The highest impact level of data that will be stored or processed on the device, provided at job
+     *         creation.
+     * @see ImpactLevel
+     */
+
+    public String getImpactLevel() {
+        return this.impactLevel;
+    }
+
+    /**
+     * <p>
+     * The highest impact level of data that will be stored or processed on the device, provided at job creation.
+     * </p>
+     * 
+     * @param impactLevel
+     *        The highest impact level of data that will be stored or processed on the device, provided at job creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImpactLevel
+     */
+
+    public JobMetadata withImpactLevel(String impactLevel) {
+        setImpactLevel(impactLevel);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The highest impact level of data that will be stored or processed on the device, provided at job creation.
+     * </p>
+     * 
+     * @param impactLevel
+     *        The highest impact level of data that will be stored or processed on the device, provided at job creation.
+     * @see ImpactLevel
+     */
+
+    public void setImpactLevel(ImpactLevel impactLevel) {
+        withImpactLevel(impactLevel);
+    }
+
+    /**
+     * <p>
+     * The highest impact level of data that will be stored or processed on the device, provided at job creation.
+     * </p>
+     * 
+     * @param impactLevel
+     *        The highest impact level of data that will be stored or processed on the device, provided at job creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImpactLevel
+     */
+
+    public JobMetadata withImpactLevel(ImpactLevel impactLevel) {
+        this.impactLevel = impactLevel.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information identifying the person picking up the device.
+     * </p>
+     * 
+     * @param pickupDetails
+     *        Information identifying the person picking up the device.
+     */
+
+    public void setPickupDetails(PickupDetails pickupDetails) {
+        this.pickupDetails = pickupDetails;
+    }
+
+    /**
+     * <p>
+     * Information identifying the person picking up the device.
+     * </p>
+     * 
+     * @return Information identifying the person picking up the device.
+     */
+
+    public PickupDetails getPickupDetails() {
+        return this.pickupDetails;
+    }
+
+    /**
+     * <p>
+     * Information identifying the person picking up the device.
+     * </p>
+     * 
+     * @param pickupDetails
+     *        Information identifying the person picking up the device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobMetadata withPickupDetails(PickupDetails pickupDetails) {
+        setPickupDetails(pickupDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Unique ID associated with a device.
+     * </p>
+     * 
+     * @param snowballId
+     *        Unique ID associated with a device.
+     */
+
+    public void setSnowballId(String snowballId) {
+        this.snowballId = snowballId;
+    }
+
+    /**
+     * <p>
+     * Unique ID associated with a device.
+     * </p>
+     * 
+     * @return Unique ID associated with a device.
+     */
+
+    public String getSnowballId() {
+        return this.snowballId;
+    }
+
+    /**
+     * <p>
+     * Unique ID associated with a device.
+     * </p>
+     * 
+     * @param snowballId
+     *        Unique ID associated with a device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobMetadata withSnowballId(String snowballId) {
+        setSnowballId(snowballId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1434,7 +1606,13 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
         if (getLongTermPricingId() != null)
             sb.append("LongTermPricingId: ").append(getLongTermPricingId()).append(",");
         if (getOnDeviceServiceConfiguration() != null)
-            sb.append("OnDeviceServiceConfiguration: ").append(getOnDeviceServiceConfiguration());
+            sb.append("OnDeviceServiceConfiguration: ").append(getOnDeviceServiceConfiguration()).append(",");
+        if (getImpactLevel() != null)
+            sb.append("ImpactLevel: ").append(getImpactLevel()).append(",");
+        if (getPickupDetails() != null)
+            sb.append("PickupDetails: ").append(getPickupDetails()).append(",");
+        if (getSnowballId() != null)
+            sb.append("SnowballId: ").append(getSnowballId());
         sb.append("}");
         return sb.toString();
     }
@@ -1537,6 +1715,18 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getOnDeviceServiceConfiguration() != null && other.getOnDeviceServiceConfiguration().equals(this.getOnDeviceServiceConfiguration()) == false)
             return false;
+        if (other.getImpactLevel() == null ^ this.getImpactLevel() == null)
+            return false;
+        if (other.getImpactLevel() != null && other.getImpactLevel().equals(this.getImpactLevel()) == false)
+            return false;
+        if (other.getPickupDetails() == null ^ this.getPickupDetails() == null)
+            return false;
+        if (other.getPickupDetails() != null && other.getPickupDetails().equals(this.getPickupDetails()) == false)
+            return false;
+        if (other.getSnowballId() == null ^ this.getSnowballId() == null)
+            return false;
+        if (other.getSnowballId() != null && other.getSnowballId().equals(this.getSnowballId()) == false)
+            return false;
         return true;
     }
 
@@ -1567,6 +1757,9 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRemoteManagement() == null) ? 0 : getRemoteManagement().hashCode());
         hashCode = prime * hashCode + ((getLongTermPricingId() == null) ? 0 : getLongTermPricingId().hashCode());
         hashCode = prime * hashCode + ((getOnDeviceServiceConfiguration() == null) ? 0 : getOnDeviceServiceConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getImpactLevel() == null) ? 0 : getImpactLevel().hashCode());
+        hashCode = prime * hashCode + ((getPickupDetails() == null) ? 0 : getPickupDetails().hashCode());
+        hashCode = prime * hashCode + ((getSnowballId() == null) ? 0 : getSnowballId().hashCode());
         return hashCode;
     }
 

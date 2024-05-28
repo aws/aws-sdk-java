@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,8 @@ public class SearchPlaceIndexForSuggestionsSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataSource").build();
     private static final MarshallingInfo<List> FILTERBBOX_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("FilterBBox").build();
+    private static final MarshallingInfo<List> FILTERCATEGORIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FilterCategories").build();
     private static final MarshallingInfo<List> FILTERCOUNTRIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FilterCountries").build();
     private static final MarshallingInfo<String> LANGUAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -62,6 +64,7 @@ public class SearchPlaceIndexForSuggestionsSummaryMarshaller {
             protocolMarshaller.marshall(searchPlaceIndexForSuggestionsSummary.getBiasPosition(), BIASPOSITION_BINDING);
             protocolMarshaller.marshall(searchPlaceIndexForSuggestionsSummary.getDataSource(), DATASOURCE_BINDING);
             protocolMarshaller.marshall(searchPlaceIndexForSuggestionsSummary.getFilterBBox(), FILTERBBOX_BINDING);
+            protocolMarshaller.marshall(searchPlaceIndexForSuggestionsSummary.getFilterCategories(), FILTERCATEGORIES_BINDING);
             protocolMarshaller.marshall(searchPlaceIndexForSuggestionsSummary.getFilterCountries(), FILTERCOUNTRIES_BINDING);
             protocolMarshaller.marshall(searchPlaceIndexForSuggestionsSummary.getLanguage(), LANGUAGE_BINDING);
             protocolMarshaller.marshall(searchPlaceIndexForSuggestionsSummary.getMaxResults(), MAXRESULTS_BINDING);

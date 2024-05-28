@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -139,6 +139,11 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public CreateCertificateProviderResult createCertificateProvider(CreateCertificateProviderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateCustomMetricResult createCustomMetric(CreateCustomMetricRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -185,6 +190,16 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public CreateOTAUpdateResult createOTAUpdate(CreateOTAUpdateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreatePackageResult createPackage(CreatePackageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreatePackageVersionResult createPackageVersion(CreatePackageVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -289,6 +304,11 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public DeleteCertificateProviderResult deleteCertificateProvider(DeleteCertificateProviderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteCustomMetricResult deleteCustomMetric(DeleteCustomMetricRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -335,6 +355,16 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public DeleteOTAUpdateResult deleteOTAUpdate(DeleteOTAUpdateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeletePackageResult deletePackage(DeletePackageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeletePackageVersionResult deletePackageVersion(DeletePackageVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -460,6 +490,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public DescribeCertificateResult describeCertificate(DescribeCertificateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeCertificateProviderResult describeCertificateProvider(DescribeCertificateProviderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -655,6 +690,21 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public GetPackageResult getPackage(GetPackageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetPackageConfigurationResult getPackageConfiguration(GetPackageConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetPackageVersionResult getPackageVersion(GetPackageVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetPercentilesResult getPercentiles(GetPercentilesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -741,6 +791,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public ListCACertificatesResult listCACertificates(ListCACertificatesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCertificateProvidersResult listCertificateProviders(ListCertificateProvidersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -835,6 +890,16 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public ListPackageVersionsResult listPackageVersions(ListPackageVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListPackagesResult listPackages(ListPackagesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListPoliciesResult listPolicies(ListPoliciesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -868,6 +933,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public ListProvisioningTemplatesResult listProvisioningTemplates(ListProvisioningTemplatesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListRelatedResourcesForAuditFindingResult listRelatedResourcesForAuditFinding(ListRelatedResourcesForAuditFindingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -1132,6 +1202,11 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public UpdateCertificateProviderResult updateCertificateProvider(UpdateCertificateProviderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateCustomMetricResult updateCustomMetric(UpdateCustomMetricRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1173,6 +1248,21 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public UpdateMitigationActionResult updateMitigationAction(UpdateMitigationActionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdatePackageResult updatePackage(UpdatePackageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdatePackageConfigurationResult updatePackageConfiguration(UpdatePackageConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdatePackageVersionResult updatePackageVersion(UpdatePackageVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

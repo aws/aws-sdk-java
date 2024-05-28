@@ -1,0 +1,1028 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.deadline.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/GetFleet" target="_top">AWS API
+ *      Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GetFleetResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * The Auto Scaling status of the fleet. Either <code>GROWING</code>, <code>STEADY</code>, or <code>SHRINKING</code>
+     * .
+     * </p>
+     */
+    private String autoScalingStatus;
+    /**
+     * <p>
+     * Outlines what the fleet is capable of for minimums, maximums, and naming, in addition to attribute names and
+     * values.
+     * </p>
+     */
+    private FleetCapabilities capabilities;
+    /**
+     * <p>
+     * The configuration setting for the fleet.
+     * </p>
+     */
+    private FleetConfiguration configuration;
+    /**
+     * <p>
+     * The date and time the resource was created.
+     * </p>
+     */
+    private java.util.Date createdAt;
+    /**
+     * <p>
+     * The user or system that created this resource.
+     * </p>
+     */
+    private String createdBy;
+    /**
+     * <p>
+     * The description of the fleet.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
+     * The display name of the fleet.
+     * </p>
+     */
+    private String displayName;
+    /**
+     * <p>
+     * The farm ID of the farm in the fleet.
+     * </p>
+     */
+    private String farmId;
+    /**
+     * <p>
+     * The fleet ID.
+     * </p>
+     */
+    private String fleetId;
+    /**
+     * <p>
+     * The maximum number of workers specified in the fleet.
+     * </p>
+     */
+    private Integer maxWorkerCount;
+    /**
+     * <p>
+     * The minimum number of workers specified in the fleet.
+     * </p>
+     */
+    private Integer minWorkerCount;
+    /**
+     * <p>
+     * The IAM role ARN.
+     * </p>
+     */
+    private String roleArn;
+    /**
+     * <p>
+     * The Auto Scaling status of the fleet.
+     * </p>
+     */
+    private String status;
+    /**
+     * <p>
+     * The number of target workers in the fleet.
+     * </p>
+     */
+    private Integer targetWorkerCount;
+    /**
+     * <p>
+     * The date and time the resource was updated.
+     * </p>
+     */
+    private java.util.Date updatedAt;
+    /**
+     * <p>
+     * The user or system that updated this resource.
+     * </p>
+     */
+    private String updatedBy;
+    /**
+     * <p>
+     * The number of workers in the fleet.
+     * </p>
+     */
+    private Integer workerCount;
+
+    /**
+     * <p>
+     * The Auto Scaling status of the fleet. Either <code>GROWING</code>, <code>STEADY</code>, or <code>SHRINKING</code>
+     * .
+     * </p>
+     * 
+     * @param autoScalingStatus
+     *        The Auto Scaling status of the fleet. Either <code>GROWING</code>, <code>STEADY</code>, or
+     *        <code>SHRINKING</code>.
+     * @see AutoScalingStatus
+     */
+
+    public void setAutoScalingStatus(String autoScalingStatus) {
+        this.autoScalingStatus = autoScalingStatus;
+    }
+
+    /**
+     * <p>
+     * The Auto Scaling status of the fleet. Either <code>GROWING</code>, <code>STEADY</code>, or <code>SHRINKING</code>
+     * .
+     * </p>
+     * 
+     * @return The Auto Scaling status of the fleet. Either <code>GROWING</code>, <code>STEADY</code>, or
+     *         <code>SHRINKING</code>.
+     * @see AutoScalingStatus
+     */
+
+    public String getAutoScalingStatus() {
+        return this.autoScalingStatus;
+    }
+
+    /**
+     * <p>
+     * The Auto Scaling status of the fleet. Either <code>GROWING</code>, <code>STEADY</code>, or <code>SHRINKING</code>
+     * .
+     * </p>
+     * 
+     * @param autoScalingStatus
+     *        The Auto Scaling status of the fleet. Either <code>GROWING</code>, <code>STEADY</code>, or
+     *        <code>SHRINKING</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AutoScalingStatus
+     */
+
+    public GetFleetResult withAutoScalingStatus(String autoScalingStatus) {
+        setAutoScalingStatus(autoScalingStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Auto Scaling status of the fleet. Either <code>GROWING</code>, <code>STEADY</code>, or <code>SHRINKING</code>
+     * .
+     * </p>
+     * 
+     * @param autoScalingStatus
+     *        The Auto Scaling status of the fleet. Either <code>GROWING</code>, <code>STEADY</code>, or
+     *        <code>SHRINKING</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AutoScalingStatus
+     */
+
+    public GetFleetResult withAutoScalingStatus(AutoScalingStatus autoScalingStatus) {
+        this.autoScalingStatus = autoScalingStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Outlines what the fleet is capable of for minimums, maximums, and naming, in addition to attribute names and
+     * values.
+     * </p>
+     * 
+     * @param capabilities
+     *        Outlines what the fleet is capable of for minimums, maximums, and naming, in addition to attribute names
+     *        and values.
+     */
+
+    public void setCapabilities(FleetCapabilities capabilities) {
+        this.capabilities = capabilities;
+    }
+
+    /**
+     * <p>
+     * Outlines what the fleet is capable of for minimums, maximums, and naming, in addition to attribute names and
+     * values.
+     * </p>
+     * 
+     * @return Outlines what the fleet is capable of for minimums, maximums, and naming, in addition to attribute names
+     *         and values.
+     */
+
+    public FleetCapabilities getCapabilities() {
+        return this.capabilities;
+    }
+
+    /**
+     * <p>
+     * Outlines what the fleet is capable of for minimums, maximums, and naming, in addition to attribute names and
+     * values.
+     * </p>
+     * 
+     * @param capabilities
+     *        Outlines what the fleet is capable of for minimums, maximums, and naming, in addition to attribute names
+     *        and values.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFleetResult withCapabilities(FleetCapabilities capabilities) {
+        setCapabilities(capabilities);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration setting for the fleet.
+     * </p>
+     * 
+     * @param configuration
+     *        The configuration setting for the fleet.
+     */
+
+    public void setConfiguration(FleetConfiguration configuration) {
+        this.configuration = configuration;
+    }
+
+    /**
+     * <p>
+     * The configuration setting for the fleet.
+     * </p>
+     * 
+     * @return The configuration setting for the fleet.
+     */
+
+    public FleetConfiguration getConfiguration() {
+        return this.configuration;
+    }
+
+    /**
+     * <p>
+     * The configuration setting for the fleet.
+     * </p>
+     * 
+     * @param configuration
+     *        The configuration setting for the fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFleetResult withConfiguration(FleetConfiguration configuration) {
+        setConfiguration(configuration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time the resource was created.
+     * </p>
+     * 
+     * @param createdAt
+     *        The date and time the resource was created.
+     */
+
+    public void setCreatedAt(java.util.Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    /**
+     * <p>
+     * The date and time the resource was created.
+     * </p>
+     * 
+     * @return The date and time the resource was created.
+     */
+
+    public java.util.Date getCreatedAt() {
+        return this.createdAt;
+    }
+
+    /**
+     * <p>
+     * The date and time the resource was created.
+     * </p>
+     * 
+     * @param createdAt
+     *        The date and time the resource was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFleetResult withCreatedAt(java.util.Date createdAt) {
+        setCreatedAt(createdAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user or system that created this resource.
+     * </p>
+     * 
+     * @param createdBy
+     *        The user or system that created this resource.
+     */
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    /**
+     * <p>
+     * The user or system that created this resource.
+     * </p>
+     * 
+     * @return The user or system that created this resource.
+     */
+
+    public String getCreatedBy() {
+        return this.createdBy;
+    }
+
+    /**
+     * <p>
+     * The user or system that created this resource.
+     * </p>
+     * 
+     * @param createdBy
+     *        The user or system that created this resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFleetResult withCreatedBy(String createdBy) {
+        setCreatedBy(createdBy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The description of the fleet.
+     * </p>
+     * 
+     * @param description
+     *        The description of the fleet.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * The description of the fleet.
+     * </p>
+     * 
+     * @return The description of the fleet.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * The description of the fleet.
+     * </p>
+     * 
+     * @param description
+     *        The description of the fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFleetResult withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The display name of the fleet.
+     * </p>
+     * 
+     * @param displayName
+     *        The display name of the fleet.
+     */
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
+
+    /**
+     * <p>
+     * The display name of the fleet.
+     * </p>
+     * 
+     * @return The display name of the fleet.
+     */
+
+    public String getDisplayName() {
+        return this.displayName;
+    }
+
+    /**
+     * <p>
+     * The display name of the fleet.
+     * </p>
+     * 
+     * @param displayName
+     *        The display name of the fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFleetResult withDisplayName(String displayName) {
+        setDisplayName(displayName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The farm ID of the farm in the fleet.
+     * </p>
+     * 
+     * @param farmId
+     *        The farm ID of the farm in the fleet.
+     */
+
+    public void setFarmId(String farmId) {
+        this.farmId = farmId;
+    }
+
+    /**
+     * <p>
+     * The farm ID of the farm in the fleet.
+     * </p>
+     * 
+     * @return The farm ID of the farm in the fleet.
+     */
+
+    public String getFarmId() {
+        return this.farmId;
+    }
+
+    /**
+     * <p>
+     * The farm ID of the farm in the fleet.
+     * </p>
+     * 
+     * @param farmId
+     *        The farm ID of the farm in the fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFleetResult withFarmId(String farmId) {
+        setFarmId(farmId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The fleet ID.
+     * </p>
+     * 
+     * @param fleetId
+     *        The fleet ID.
+     */
+
+    public void setFleetId(String fleetId) {
+        this.fleetId = fleetId;
+    }
+
+    /**
+     * <p>
+     * The fleet ID.
+     * </p>
+     * 
+     * @return The fleet ID.
+     */
+
+    public String getFleetId() {
+        return this.fleetId;
+    }
+
+    /**
+     * <p>
+     * The fleet ID.
+     * </p>
+     * 
+     * @param fleetId
+     *        The fleet ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFleetResult withFleetId(String fleetId) {
+        setFleetId(fleetId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of workers specified in the fleet.
+     * </p>
+     * 
+     * @param maxWorkerCount
+     *        The maximum number of workers specified in the fleet.
+     */
+
+    public void setMaxWorkerCount(Integer maxWorkerCount) {
+        this.maxWorkerCount = maxWorkerCount;
+    }
+
+    /**
+     * <p>
+     * The maximum number of workers specified in the fleet.
+     * </p>
+     * 
+     * @return The maximum number of workers specified in the fleet.
+     */
+
+    public Integer getMaxWorkerCount() {
+        return this.maxWorkerCount;
+    }
+
+    /**
+     * <p>
+     * The maximum number of workers specified in the fleet.
+     * </p>
+     * 
+     * @param maxWorkerCount
+     *        The maximum number of workers specified in the fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFleetResult withMaxWorkerCount(Integer maxWorkerCount) {
+        setMaxWorkerCount(maxWorkerCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The minimum number of workers specified in the fleet.
+     * </p>
+     * 
+     * @param minWorkerCount
+     *        The minimum number of workers specified in the fleet.
+     */
+
+    public void setMinWorkerCount(Integer minWorkerCount) {
+        this.minWorkerCount = minWorkerCount;
+    }
+
+    /**
+     * <p>
+     * The minimum number of workers specified in the fleet.
+     * </p>
+     * 
+     * @return The minimum number of workers specified in the fleet.
+     */
+
+    public Integer getMinWorkerCount() {
+        return this.minWorkerCount;
+    }
+
+    /**
+     * <p>
+     * The minimum number of workers specified in the fleet.
+     * </p>
+     * 
+     * @param minWorkerCount
+     *        The minimum number of workers specified in the fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFleetResult withMinWorkerCount(Integer minWorkerCount) {
+        setMinWorkerCount(minWorkerCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IAM role ARN.
+     * </p>
+     * 
+     * @param roleArn
+     *        The IAM role ARN.
+     */
+
+    public void setRoleArn(String roleArn) {
+        this.roleArn = roleArn;
+    }
+
+    /**
+     * <p>
+     * The IAM role ARN.
+     * </p>
+     * 
+     * @return The IAM role ARN.
+     */
+
+    public String getRoleArn() {
+        return this.roleArn;
+    }
+
+    /**
+     * <p>
+     * The IAM role ARN.
+     * </p>
+     * 
+     * @param roleArn
+     *        The IAM role ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFleetResult withRoleArn(String roleArn) {
+        setRoleArn(roleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Auto Scaling status of the fleet.
+     * </p>
+     * 
+     * @param status
+     *        The Auto Scaling status of the fleet.
+     * @see FleetStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The Auto Scaling status of the fleet.
+     * </p>
+     * 
+     * @return The Auto Scaling status of the fleet.
+     * @see FleetStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The Auto Scaling status of the fleet.
+     * </p>
+     * 
+     * @param status
+     *        The Auto Scaling status of the fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FleetStatus
+     */
+
+    public GetFleetResult withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Auto Scaling status of the fleet.
+     * </p>
+     * 
+     * @param status
+     *        The Auto Scaling status of the fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FleetStatus
+     */
+
+    public GetFleetResult withStatus(FleetStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of target workers in the fleet.
+     * </p>
+     * 
+     * @param targetWorkerCount
+     *        The number of target workers in the fleet.
+     */
+
+    public void setTargetWorkerCount(Integer targetWorkerCount) {
+        this.targetWorkerCount = targetWorkerCount;
+    }
+
+    /**
+     * <p>
+     * The number of target workers in the fleet.
+     * </p>
+     * 
+     * @return The number of target workers in the fleet.
+     */
+
+    public Integer getTargetWorkerCount() {
+        return this.targetWorkerCount;
+    }
+
+    /**
+     * <p>
+     * The number of target workers in the fleet.
+     * </p>
+     * 
+     * @param targetWorkerCount
+     *        The number of target workers in the fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFleetResult withTargetWorkerCount(Integer targetWorkerCount) {
+        setTargetWorkerCount(targetWorkerCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time the resource was updated.
+     * </p>
+     * 
+     * @param updatedAt
+     *        The date and time the resource was updated.
+     */
+
+    public void setUpdatedAt(java.util.Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    /**
+     * <p>
+     * The date and time the resource was updated.
+     * </p>
+     * 
+     * @return The date and time the resource was updated.
+     */
+
+    public java.util.Date getUpdatedAt() {
+        return this.updatedAt;
+    }
+
+    /**
+     * <p>
+     * The date and time the resource was updated.
+     * </p>
+     * 
+     * @param updatedAt
+     *        The date and time the resource was updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFleetResult withUpdatedAt(java.util.Date updatedAt) {
+        setUpdatedAt(updatedAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user or system that updated this resource.
+     * </p>
+     * 
+     * @param updatedBy
+     *        The user or system that updated this resource.
+     */
+
+    public void setUpdatedBy(String updatedBy) {
+        this.updatedBy = updatedBy;
+    }
+
+    /**
+     * <p>
+     * The user or system that updated this resource.
+     * </p>
+     * 
+     * @return The user or system that updated this resource.
+     */
+
+    public String getUpdatedBy() {
+        return this.updatedBy;
+    }
+
+    /**
+     * <p>
+     * The user or system that updated this resource.
+     * </p>
+     * 
+     * @param updatedBy
+     *        The user or system that updated this resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFleetResult withUpdatedBy(String updatedBy) {
+        setUpdatedBy(updatedBy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of workers in the fleet.
+     * </p>
+     * 
+     * @param workerCount
+     *        The number of workers in the fleet.
+     */
+
+    public void setWorkerCount(Integer workerCount) {
+        this.workerCount = workerCount;
+    }
+
+    /**
+     * <p>
+     * The number of workers in the fleet.
+     * </p>
+     * 
+     * @return The number of workers in the fleet.
+     */
+
+    public Integer getWorkerCount() {
+        return this.workerCount;
+    }
+
+    /**
+     * <p>
+     * The number of workers in the fleet.
+     * </p>
+     * 
+     * @param workerCount
+     *        The number of workers in the fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFleetResult withWorkerCount(Integer workerCount) {
+        setWorkerCount(workerCount);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getAutoScalingStatus() != null)
+            sb.append("AutoScalingStatus: ").append(getAutoScalingStatus()).append(",");
+        if (getCapabilities() != null)
+            sb.append("Capabilities: ").append(getCapabilities()).append(",");
+        if (getConfiguration() != null)
+            sb.append("Configuration: ").append(getConfiguration()).append(",");
+        if (getCreatedAt() != null)
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
+        if (getCreatedBy() != null)
+            sb.append("CreatedBy: ").append(getCreatedBy()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append("***Sensitive Data Redacted***").append(",");
+        if (getDisplayName() != null)
+            sb.append("DisplayName: ").append(getDisplayName()).append(",");
+        if (getFarmId() != null)
+            sb.append("FarmId: ").append(getFarmId()).append(",");
+        if (getFleetId() != null)
+            sb.append("FleetId: ").append(getFleetId()).append(",");
+        if (getMaxWorkerCount() != null)
+            sb.append("MaxWorkerCount: ").append(getMaxWorkerCount()).append(",");
+        if (getMinWorkerCount() != null)
+            sb.append("MinWorkerCount: ").append(getMinWorkerCount()).append(",");
+        if (getRoleArn() != null)
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getTargetWorkerCount() != null)
+            sb.append("TargetWorkerCount: ").append(getTargetWorkerCount()).append(",");
+        if (getUpdatedAt() != null)
+            sb.append("UpdatedAt: ").append(getUpdatedAt()).append(",");
+        if (getUpdatedBy() != null)
+            sb.append("UpdatedBy: ").append(getUpdatedBy()).append(",");
+        if (getWorkerCount() != null)
+            sb.append("WorkerCount: ").append(getWorkerCount());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof GetFleetResult == false)
+            return false;
+        GetFleetResult other = (GetFleetResult) obj;
+        if (other.getAutoScalingStatus() == null ^ this.getAutoScalingStatus() == null)
+            return false;
+        if (other.getAutoScalingStatus() != null && other.getAutoScalingStatus().equals(this.getAutoScalingStatus()) == false)
+            return false;
+        if (other.getCapabilities() == null ^ this.getCapabilities() == null)
+            return false;
+        if (other.getCapabilities() != null && other.getCapabilities().equals(this.getCapabilities()) == false)
+            return false;
+        if (other.getConfiguration() == null ^ this.getConfiguration() == null)
+            return false;
+        if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
+            return false;
+        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
+            return false;
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+            return false;
+        if (other.getCreatedBy() == null ^ this.getCreatedBy() == null)
+            return false;
+        if (other.getCreatedBy() != null && other.getCreatedBy().equals(this.getCreatedBy()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getDisplayName() == null ^ this.getDisplayName() == null)
+            return false;
+        if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
+            return false;
+        if (other.getFarmId() == null ^ this.getFarmId() == null)
+            return false;
+        if (other.getFarmId() != null && other.getFarmId().equals(this.getFarmId()) == false)
+            return false;
+        if (other.getFleetId() == null ^ this.getFleetId() == null)
+            return false;
+        if (other.getFleetId() != null && other.getFleetId().equals(this.getFleetId()) == false)
+            return false;
+        if (other.getMaxWorkerCount() == null ^ this.getMaxWorkerCount() == null)
+            return false;
+        if (other.getMaxWorkerCount() != null && other.getMaxWorkerCount().equals(this.getMaxWorkerCount()) == false)
+            return false;
+        if (other.getMinWorkerCount() == null ^ this.getMinWorkerCount() == null)
+            return false;
+        if (other.getMinWorkerCount() != null && other.getMinWorkerCount().equals(this.getMinWorkerCount()) == false)
+            return false;
+        if (other.getRoleArn() == null ^ this.getRoleArn() == null)
+            return false;
+        if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getTargetWorkerCount() == null ^ this.getTargetWorkerCount() == null)
+            return false;
+        if (other.getTargetWorkerCount() != null && other.getTargetWorkerCount().equals(this.getTargetWorkerCount()) == false)
+            return false;
+        if (other.getUpdatedAt() == null ^ this.getUpdatedAt() == null)
+            return false;
+        if (other.getUpdatedAt() != null && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
+            return false;
+        if (other.getUpdatedBy() == null ^ this.getUpdatedBy() == null)
+            return false;
+        if (other.getUpdatedBy() != null && other.getUpdatedBy().equals(this.getUpdatedBy()) == false)
+            return false;
+        if (other.getWorkerCount() == null ^ this.getWorkerCount() == null)
+            return false;
+        if (other.getWorkerCount() != null && other.getWorkerCount().equals(this.getWorkerCount()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getAutoScalingStatus() == null) ? 0 : getAutoScalingStatus().hashCode());
+        hashCode = prime * hashCode + ((getCapabilities() == null) ? 0 : getCapabilities().hashCode());
+        hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getCreatedBy() == null) ? 0 : getCreatedBy().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
+        hashCode = prime * hashCode + ((getFarmId() == null) ? 0 : getFarmId().hashCode());
+        hashCode = prime * hashCode + ((getFleetId() == null) ? 0 : getFleetId().hashCode());
+        hashCode = prime * hashCode + ((getMaxWorkerCount() == null) ? 0 : getMaxWorkerCount().hashCode());
+        hashCode = prime * hashCode + ((getMinWorkerCount() == null) ? 0 : getMinWorkerCount().hashCode());
+        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getTargetWorkerCount() == null) ? 0 : getTargetWorkerCount().hashCode());
+        hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
+        hashCode = prime * hashCode + ((getUpdatedBy() == null) ? 0 : getUpdatedBy().hashCode());
+        hashCode = prime * hashCode + ((getWorkerCount() == null) ? 0 : getWorkerCount().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public GetFleetResult clone() {
+        try {
+            return (GetFleetResult) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+}

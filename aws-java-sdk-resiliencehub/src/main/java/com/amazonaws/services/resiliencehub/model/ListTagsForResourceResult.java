@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag
+     * Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag
      * consists of a key/value pair.
      * </p>
      */
@@ -33,12 +33,12 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag
+     * Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag
      * consists of a key/value pair.
      * </p>
      * 
-     * @return The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-     *         Each tag consists of a key/value pair.
+     * @return Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each
+     *         tag consists of a key/value pair.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -47,13 +47,13 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag
+     * Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag
      * consists of a key/value pair.
      * </p>
      * 
      * @param tags
-     *        The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-     *        Each tag consists of a key/value pair.
+     *        Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each
+     *        tag consists of a key/value pair.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -62,13 +62,13 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag
+     * Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag
      * consists of a key/value pair.
      * </p>
      * 
      * @param tags
-     *        The tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource.
-     *        Each tag consists of a key/value pair.
+     *        Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each
+     *        tag consists of a key/value pair.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

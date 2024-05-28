@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,27 +33,27 @@ public class CreateSavingsPlanRequest extends com.amazonaws.AmazonWebServiceRequ
     private String savingsPlanOfferingId;
     /**
      * <p>
-     * The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than five
-     * digits after the decimal point.
+     * The hourly commitment, in the same currency of the <code>savingsPlanOfferingId</code>. This is a value between
+     * 0.001 and 1 million. You cannot specify more than five digits after the decimal point.
      * </p>
      */
     private String commitment;
     /**
      * <p>
      * The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings
-     * Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.
+     * Plan. This parameter is only supported if the payment option is <code>Partial Upfront</code>.
      * </p>
      */
     private String upfrontPaymentAmount;
     /**
      * <p>
-     * The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).
+     * The purchase time of the Savings Plan in UTC format (YYYY-MM-DDTHH:MM:SSZ).
      * </p>
      */
     private java.util.Date purchaseTime;
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      */
     private String clientToken;
@@ -106,13 +106,13 @@ public class CreateSavingsPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than five
-     * digits after the decimal point.
+     * The hourly commitment, in the same currency of the <code>savingsPlanOfferingId</code>. This is a value between
+     * 0.001 and 1 million. You cannot specify more than five digits after the decimal point.
      * </p>
      * 
      * @param commitment
-     *        The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than
-     *        five digits after the decimal point.
+     *        The hourly commitment, in the same currency of the <code>savingsPlanOfferingId</code>. This is a value
+     *        between 0.001 and 1 million. You cannot specify more than five digits after the decimal point.
      */
 
     public void setCommitment(String commitment) {
@@ -121,12 +121,12 @@ public class CreateSavingsPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than five
-     * digits after the decimal point.
+     * The hourly commitment, in the same currency of the <code>savingsPlanOfferingId</code>. This is a value between
+     * 0.001 and 1 million. You cannot specify more than five digits after the decimal point.
      * </p>
      * 
-     * @return The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than
-     *         five digits after the decimal point.
+     * @return The hourly commitment, in the same currency of the <code>savingsPlanOfferingId</code>. This is a value
+     *         between 0.001 and 1 million. You cannot specify more than five digits after the decimal point.
      */
 
     public String getCommitment() {
@@ -135,13 +135,13 @@ public class CreateSavingsPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than five
-     * digits after the decimal point.
+     * The hourly commitment, in the same currency of the <code>savingsPlanOfferingId</code>. This is a value between
+     * 0.001 and 1 million. You cannot specify more than five digits after the decimal point.
      * </p>
      * 
      * @param commitment
-     *        The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than
-     *        five digits after the decimal point.
+     *        The hourly commitment, in the same currency of the <code>savingsPlanOfferingId</code>. This is a value
+     *        between 0.001 and 1 million. You cannot specify more than five digits after the decimal point.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,12 +153,12 @@ public class CreateSavingsPlanRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings
-     * Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.
+     * Plan. This parameter is only supported if the payment option is <code>Partial Upfront</code>.
      * </p>
      * 
      * @param upfrontPaymentAmount
      *        The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the
-     *        Savings Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.
+     *        Savings Plan. This parameter is only supported if the payment option is <code>Partial Upfront</code>.
      */
 
     public void setUpfrontPaymentAmount(String upfrontPaymentAmount) {
@@ -168,11 +168,11 @@ public class CreateSavingsPlanRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings
-     * Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.
+     * Plan. This parameter is only supported if the payment option is <code>Partial Upfront</code>.
      * </p>
      * 
      * @return The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the
-     *         Savings Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.
+     *         Savings Plan. This parameter is only supported if the payment option is <code>Partial Upfront</code>.
      */
 
     public String getUpfrontPaymentAmount() {
@@ -182,12 +182,12 @@ public class CreateSavingsPlanRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings
-     * Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.
+     * Plan. This parameter is only supported if the payment option is <code>Partial Upfront</code>.
      * </p>
      * 
      * @param upfrontPaymentAmount
      *        The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the
-     *        Savings Plan. This parameter is supported only if the payment option is <code>Partial Upfront</code>.
+     *        Savings Plan. This parameter is only supported if the payment option is <code>Partial Upfront</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -198,11 +198,11 @@ public class CreateSavingsPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).
+     * The purchase time of the Savings Plan in UTC format (YYYY-MM-DDTHH:MM:SSZ).
      * </p>
      * 
      * @param purchaseTime
-     *        The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).
+     *        The purchase time of the Savings Plan in UTC format (YYYY-MM-DDTHH:MM:SSZ).
      */
 
     public void setPurchaseTime(java.util.Date purchaseTime) {
@@ -211,10 +211,10 @@ public class CreateSavingsPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).
+     * The purchase time of the Savings Plan in UTC format (YYYY-MM-DDTHH:MM:SSZ).
      * </p>
      * 
-     * @return The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).
+     * @return The purchase time of the Savings Plan in UTC format (YYYY-MM-DDTHH:MM:SSZ).
      */
 
     public java.util.Date getPurchaseTime() {
@@ -223,11 +223,11 @@ public class CreateSavingsPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).
+     * The purchase time of the Savings Plan in UTC format (YYYY-MM-DDTHH:MM:SSZ).
      * </p>
      * 
      * @param purchaseTime
-     *        The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).
+     *        The purchase time of the Savings Plan in UTC format (YYYY-MM-DDTHH:MM:SSZ).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -238,11 +238,11 @@ public class CreateSavingsPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      */
 
     public void setClientToken(String clientToken) {
@@ -251,10 +251,10 @@ public class CreateSavingsPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
-     * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      */
 
     public String getClientToken() {
@@ -263,11 +263,11 @@ public class CreateSavingsPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
      * @param clientToken
-     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

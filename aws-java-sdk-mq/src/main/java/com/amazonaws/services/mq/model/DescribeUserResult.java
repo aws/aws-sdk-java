@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,12 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      */
     private String username;
+    /**
+     * <p>
+     * Describes whether the user is intended for data replication
+     * </p>
+     */
+    private Boolean replicationUser;
 
     /**
      * <p>
@@ -317,6 +323,58 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * Describes whether the user is intended for data replication
+     * </p>
+     * 
+     * @param replicationUser
+     *        Describes whether the user is intended for data replication
+     */
+
+    public void setReplicationUser(Boolean replicationUser) {
+        this.replicationUser = replicationUser;
+    }
+
+    /**
+     * <p>
+     * Describes whether the user is intended for data replication
+     * </p>
+     * 
+     * @return Describes whether the user is intended for data replication
+     */
+
+    public Boolean getReplicationUser() {
+        return this.replicationUser;
+    }
+
+    /**
+     * <p>
+     * Describes whether the user is intended for data replication
+     * </p>
+     * 
+     * @param replicationUser
+     *        Describes whether the user is intended for data replication
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeUserResult withReplicationUser(Boolean replicationUser) {
+        setReplicationUser(replicationUser);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes whether the user is intended for data replication
+     * </p>
+     * 
+     * @return Describes whether the user is intended for data replication
+     */
+
+    public Boolean isReplicationUser() {
+        return this.replicationUser;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -337,7 +395,9 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
         if (getPending() != null)
             sb.append("Pending: ").append(getPending()).append(",");
         if (getUsername() != null)
-            sb.append("Username: ").append(getUsername());
+            sb.append("Username: ").append(getUsername()).append(",");
+        if (getReplicationUser() != null)
+            sb.append("ReplicationUser: ").append(getReplicationUser());
         sb.append("}");
         return sb.toString();
     }
@@ -372,6 +432,10 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
             return false;
         if (other.getUsername() != null && other.getUsername().equals(this.getUsername()) == false)
             return false;
+        if (other.getReplicationUser() == null ^ this.getReplicationUser() == null)
+            return false;
+        if (other.getReplicationUser() != null && other.getReplicationUser().equals(this.getReplicationUser()) == false)
+            return false;
         return true;
     }
 
@@ -385,6 +449,7 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
         hashCode = prime * hashCode + ((getGroups() == null) ? 0 : getGroups().hashCode());
         hashCode = prime * hashCode + ((getPending() == null) ? 0 : getPending().hashCode());
         hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
+        hashCode = prime * hashCode + ((getReplicationUser() == null) ? 0 : getReplicationUser().hashCode());
         return hashCode;
     }
 

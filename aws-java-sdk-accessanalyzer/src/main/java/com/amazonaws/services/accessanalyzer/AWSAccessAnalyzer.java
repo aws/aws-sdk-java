@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,34 @@ import com.amazonaws.services.accessanalyzer.model.*;
  * </p>
  * <p>
  * <p>
- * Identity and Access Management Access Analyzer helps identify potential resource-access risks by enabling you to
- * identify any policies that grant access to an external principal. It does this by using logic-based reasoning to
- * analyze resource-based policies in your Amazon Web Services environment. An external principal can be another Amazon
- * Web Services account, a root user, an IAM user or role, a federated user, an Amazon Web Services service, or an
- * anonymous user. You can also use IAM Access Analyzer to preview and validate public and cross-account access to your
- * resources before deploying permissions changes. This guide describes the Identity and Access Management Access
- * Analyzer operations that you can call programmatically. For general information about IAM Access Analyzer, see <a
- * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html">Identity and Access Management
- * Access Analyzer</a> in the <b>IAM User Guide</b>.
+ * Identity and Access Management Access Analyzer helps you to set, verify, and refine your IAM policies by providing a
+ * suite of capabilities. Its features include findings for external and unused access, basic and custom policy checks
+ * for validating policies, and policy generation to generate fine-grained policies. To start using IAM Access Analyzer
+ * to identify external or unused access, you first need to create an analyzer.
  * </p>
  * <p>
- * To start using IAM Access Analyzer, you first need to create an analyzer.
+ * <b>External access analyzers</b> help identify potential risks of accessing resources by enabling you to identify any
+ * resource policies that grant access to an external principal. It does this by using logic-based reasoning to analyze
+ * resource-based policies in your Amazon Web Services environment. An external principal can be another Amazon Web
+ * Services account, a root user, an IAM user or role, a federated user, an Amazon Web Services service, or an anonymous
+ * user. You can also use IAM Access Analyzer to preview public and cross-account access to your resources before
+ * deploying permissions changes.
+ * </p>
+ * <p>
+ * <b>Unused access analyzers</b> help identify potential identity access risks by enabling you to identify unused IAM
+ * roles, unused access keys, unused console passwords, and IAM principals with unused service and action-level
+ * permissions.
+ * </p>
+ * <p>
+ * Beyond findings, IAM Access Analyzer provides basic and custom policy checks to validate IAM policies before
+ * deploying permissions changes. You can use policy generation to refine permissions by attaching a policy generated
+ * using access activity logged in CloudTrail logs.
+ * </p>
+ * <p>
+ * This guide describes the IAM Access Analyzer operations that you can call programmatically. For general information
+ * about IAM Access Analyzer, see <a
+ * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html">Identity and Access Management
+ * Access Analyzer</a> in the <b>IAM User Guide</b>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -96,6 +112,62 @@ public interface AWSAccessAnalyzer {
      *      target="_top">AWS API Documentation</a>
      */
     CancelPolicyGenerationResult cancelPolicyGeneration(CancelPolicyGenerationRequest cancelPolicyGenerationRequest);
+
+    /**
+     * <p>
+     * Checks whether the specified access isn't allowed by a policy.
+     * </p>
+     * 
+     * @param checkAccessNotGrantedRequest
+     * @return Result of the CheckAccessNotGranted operation returned by the service.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws InternalServerException
+     *         Internal server error.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid.
+     * @throws UnprocessableEntityException
+     *         The specified entity could not be processed.
+     * @throws ThrottlingException
+     *         Throttling limit exceeded error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSAccessAnalyzer.CheckAccessNotGranted
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CheckAccessNotGranted"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CheckAccessNotGrantedResult checkAccessNotGranted(CheckAccessNotGrantedRequest checkAccessNotGrantedRequest);
+
+    /**
+     * <p>
+     * Checks whether new access is allowed for an updated policy when compared to the existing policy.
+     * </p>
+     * <p>
+     * You can find examples for reference policies and learn how to set up and run a custom policy check for new access
+     * in the <a href="https://github.com/aws-samples/iam-access-analyzer-custom-policy-check-samples">IAM Access
+     * Analyzer custom policy checks samples</a> repository on GitHub. The reference policies in this repository are
+     * meant to be passed to the <code>existingPolicyDocument</code> request parameter.
+     * </p>
+     * 
+     * @param checkNoNewAccessRequest
+     * @return Result of the CheckNoNewAccess operation returned by the service.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws InternalServerException
+     *         Internal server error.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid.
+     * @throws UnprocessableEntityException
+     *         The specified entity could not be processed.
+     * @throws ThrottlingException
+     *         Throttling limit exceeded error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSAccessAnalyzer.CheckNoNewAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CheckNoNewAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CheckNoNewAccessResult checkNoNewAccess(CheckNoNewAccessRequest checkNoNewAccessRequest);
 
     /**
      * <p>
@@ -337,7 +409,9 @@ public interface AWSAccessAnalyzer {
 
     /**
      * <p>
-     * Retrieves information about the specified finding.
+     * Retrieves information about the specified finding. GetFinding and GetFindingV2 both use
+     * <code>access-analyzer:GetFinding</code> in the <code>Action</code> element of an IAM policy statement. You must
+     * have permission to perform the <code>access-analyzer:GetFinding</code> action.
      * </p>
      * 
      * @param getFindingRequest
@@ -358,6 +432,31 @@ public interface AWSAccessAnalyzer {
      *      Documentation</a>
      */
     GetFindingResult getFinding(GetFindingRequest getFindingRequest);
+
+    /**
+     * <p>
+     * Retrieves information about the specified finding. GetFinding and GetFindingV2 both use
+     * <code>access-analyzer:GetFinding</code> in the <code>Action</code> element of an IAM policy statement. You must
+     * have permission to perform the <code>access-analyzer:GetFinding</code> action.
+     * </p>
+     * 
+     * @param getFindingV2Request
+     * @return Result of the GetFindingV2 operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws InternalServerException
+     *         Internal server error.
+     * @throws ThrottlingException
+     *         Throttling limit exceeded error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSAccessAnalyzer.GetFindingV2
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetFindingV2" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetFindingV2Result getFindingV2(GetFindingV2Request getFindingV2Request);
 
     /**
      * <p>
@@ -430,7 +529,8 @@ public interface AWSAccessAnalyzer {
 
     /**
      * <p>
-     * Retrieves a list of resources of the specified type that have been analyzed by the specified analyzer..
+     * Retrieves a list of resources of the specified type that have been analyzed by the specified external access
+     * analyzer. This action is not supported for unused access analyzers.
      * </p>
      * 
      * @param listAnalyzedResourcesRequest
@@ -498,7 +598,9 @@ public interface AWSAccessAnalyzer {
 
     /**
      * <p>
-     * Retrieves a list of findings generated by the specified analyzer.
+     * Retrieves a list of findings generated by the specified analyzer. ListFindings and ListFindingsV2 both use
+     * <code>access-analyzer:ListFindings</code> in the <code>Action</code> element of an IAM policy statement. You must
+     * have permission to perform the <code>access-analyzer:ListFindings</code> action.
      * </p>
      * <p>
      * To learn about filter keys that you can use to retrieve a list of findings, see <a
@@ -524,6 +626,36 @@ public interface AWSAccessAnalyzer {
      *      API Documentation</a>
      */
     ListFindingsResult listFindings(ListFindingsRequest listFindingsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of findings generated by the specified analyzer. ListFindings and ListFindingsV2 both use
+     * <code>access-analyzer:ListFindings</code> in the <code>Action</code> element of an IAM policy statement. You must
+     * have permission to perform the <code>access-analyzer:ListFindings</code> action.
+     * </p>
+     * <p>
+     * To learn about filter keys that you can use to retrieve a list of findings, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">IAM Access
+     * Analyzer filter keys</a> in the <b>IAM User Guide</b>.
+     * </p>
+     * 
+     * @param listFindingsV2Request
+     * @return Result of the ListFindingsV2 operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws InternalServerException
+     *         Internal server error.
+     * @throws ThrottlingException
+     *         Throttling limit exceeded error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSAccessAnalyzer.ListFindingsV2
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListFindingsV2" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListFindingsV2Result listFindingsV2(ListFindingsV2Request listFindingsV2Request);
 
     /**
      * <p>

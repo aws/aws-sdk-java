@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,8 @@ public class CreateFolderRequestMarshaller {
             .marshallLocationName("Permissions").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> SHARINGMODEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SharingModel").build();
 
     private static final CreateFolderRequestMarshaller instance = new CreateFolderRequestMarshaller();
 
@@ -66,6 +68,7 @@ public class CreateFolderRequestMarshaller {
             protocolMarshaller.marshall(createFolderRequest.getParentFolderArn(), PARENTFOLDERARN_BINDING);
             protocolMarshaller.marshall(createFolderRequest.getPermissions(), PERMISSIONS_BINDING);
             protocolMarshaller.marshall(createFolderRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createFolderRequest.getSharingModel(), SHARINGMODEL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

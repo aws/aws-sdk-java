@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,8 @@ public class Integrations implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ResourceGroup resourceGroup;
+
+    private ResourceGroup applicationTagResourceGroup;
 
     /**
      * <p>
@@ -76,6 +78,32 @@ public class Integrations implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param applicationTagResourceGroup
+     */
+
+    public void setApplicationTagResourceGroup(ResourceGroup applicationTagResourceGroup) {
+        this.applicationTagResourceGroup = applicationTagResourceGroup;
+    }
+
+    /**
+     * @return
+     */
+
+    public ResourceGroup getApplicationTagResourceGroup() {
+        return this.applicationTagResourceGroup;
+    }
+
+    /**
+     * @param applicationTagResourceGroup
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Integrations withApplicationTagResourceGroup(ResourceGroup applicationTagResourceGroup) {
+        setApplicationTagResourceGroup(applicationTagResourceGroup);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +116,9 @@ public class Integrations implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceGroup() != null)
-            sb.append("ResourceGroup: ").append(getResourceGroup());
+            sb.append("ResourceGroup: ").append(getResourceGroup()).append(",");
+        if (getApplicationTagResourceGroup() != null)
+            sb.append("ApplicationTagResourceGroup: ").append(getApplicationTagResourceGroup());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +137,10 @@ public class Integrations implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getResourceGroup() != null && other.getResourceGroup().equals(this.getResourceGroup()) == false)
             return false;
+        if (other.getApplicationTagResourceGroup() == null ^ this.getApplicationTagResourceGroup() == null)
+            return false;
+        if (other.getApplicationTagResourceGroup() != null && other.getApplicationTagResourceGroup().equals(this.getApplicationTagResourceGroup()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +150,7 @@ public class Integrations implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getResourceGroup() == null) ? 0 : getResourceGroup().hashCode());
+        hashCode = prime * hashCode + ((getApplicationTagResourceGroup() == null) ? 0 : getApplicationTagResourceGroup().hashCode());
         return hashCode;
     }
 

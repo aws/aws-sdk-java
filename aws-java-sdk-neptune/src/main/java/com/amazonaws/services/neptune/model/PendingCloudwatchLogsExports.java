@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,6 +19,11 @@ import javax.annotation.Generated;
  * <p>
  * A list of the log types whose configuration is still pending. In other words, these log types are in the process of
  * being activated or deactivated.
+ * </p>
+ * <p>
+ * Valid log types are: <code>audit</code> (to publish audit logs) and <code>slowquery</code> (to publish slow-query
+ * logs). See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing Neptune
+ * logs to Amazon CloudWatch logs</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/PendingCloudwatchLogsExports"

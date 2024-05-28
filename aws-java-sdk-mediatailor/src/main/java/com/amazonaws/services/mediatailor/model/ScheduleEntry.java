@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,12 @@ public class ScheduleEntry implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String arn;
+    /**
+     * <p>
+     * The list of audiences defined in ScheduleEntry.
+     * </p>
+     */
+    private java.util.List<String> audiences;
     /**
      * <p>
      * The name of the channel that uses this schedule.
@@ -206,6 +212,76 @@ public class ScheduleEntry implements Serializable, Cloneable, StructuredPojo {
 
     public ScheduleEntry withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of audiences defined in ScheduleEntry.
+     * </p>
+     * 
+     * @return The list of audiences defined in ScheduleEntry.
+     */
+
+    public java.util.List<String> getAudiences() {
+        return audiences;
+    }
+
+    /**
+     * <p>
+     * The list of audiences defined in ScheduleEntry.
+     * </p>
+     * 
+     * @param audiences
+     *        The list of audiences defined in ScheduleEntry.
+     */
+
+    public void setAudiences(java.util.Collection<String> audiences) {
+        if (audiences == null) {
+            this.audiences = null;
+            return;
+        }
+
+        this.audiences = new java.util.ArrayList<String>(audiences);
+    }
+
+    /**
+     * <p>
+     * The list of audiences defined in ScheduleEntry.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAudiences(java.util.Collection)} or {@link #withAudiences(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param audiences
+     *        The list of audiences defined in ScheduleEntry.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduleEntry withAudiences(String... audiences) {
+        if (this.audiences == null) {
+            setAudiences(new java.util.ArrayList<String>(audiences.length));
+        }
+        for (String ele : audiences) {
+            this.audiences.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of audiences defined in ScheduleEntry.
+     * </p>
+     * 
+     * @param audiences
+     *        The list of audiences defined in ScheduleEntry.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduleEntry withAudiences(java.util.Collection<String> audiences) {
+        setAudiences(audiences);
         return this;
     }
 
@@ -556,6 +632,8 @@ public class ScheduleEntry implements Serializable, Cloneable, StructuredPojo {
             sb.append("ApproximateStartTime: ").append(getApproximateStartTime()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getAudiences() != null)
+            sb.append("Audiences: ").append(getAudiences()).append(",");
         if (getChannelName() != null)
             sb.append("ChannelName: ").append(getChannelName()).append(",");
         if (getLiveSourceName() != null)
@@ -596,6 +674,10 @@ public class ScheduleEntry implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
+        if (other.getAudiences() == null ^ this.getAudiences() == null)
+            return false;
+        if (other.getAudiences() != null && other.getAudiences().equals(this.getAudiences()) == false)
+            return false;
         if (other.getChannelName() == null ^ this.getChannelName() == null)
             return false;
         if (other.getChannelName() != null && other.getChannelName().equals(this.getChannelName()) == false)
@@ -635,6 +717,7 @@ public class ScheduleEntry implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getApproximateDurationSeconds() == null) ? 0 : getApproximateDurationSeconds().hashCode());
         hashCode = prime * hashCode + ((getApproximateStartTime() == null) ? 0 : getApproximateStartTime().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getAudiences() == null) ? 0 : getAudiences().hashCode());
         hashCode = prime * hashCode + ((getChannelName() == null) ? 0 : getChannelName().hashCode());
         hashCode = prime * hashCode + ((getLiveSourceName() == null) ? 0 : getLiveSourceName().hashCode());
         hashCode = prime * hashCode + ((getProgramName() == null) ? 0 : getProgramName().hashCode());

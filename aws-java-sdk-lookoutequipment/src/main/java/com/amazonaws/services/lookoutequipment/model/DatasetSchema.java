@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,12 +30,14 @@ public class DatasetSchema implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The data schema used within the given dataset.
      * </p>
      */
     private String inlineDataSchema;
 
     /**
      * <p>
+     * The data schema used within the given dataset.
      * </p>
      * <p>
      * This field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For
@@ -47,6 +49,7 @@ public class DatasetSchema implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param inlineDataSchema
+     *        The data schema used within the given dataset.
      */
 
     public void setInlineDataSchema(String inlineDataSchema) {
@@ -55,13 +58,14 @@ public class DatasetSchema implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The data schema used within the given dataset.
      * </p>
      * <p>
      * This field's value will be valid JSON according to RFC 7159, including the opening and closing braces. For
      * example: '{"key": "value"}'.
      * </p>
      * 
-     * @return
+     * @return The data schema used within the given dataset.
      */
 
     public String getInlineDataSchema() {
@@ -70,6 +74,7 @@ public class DatasetSchema implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The data schema used within the given dataset.
      * </p>
      * <p>
      * This field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For
@@ -81,6 +86,7 @@ public class DatasetSchema implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param inlineDataSchema
+     *        The data schema used within the given dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

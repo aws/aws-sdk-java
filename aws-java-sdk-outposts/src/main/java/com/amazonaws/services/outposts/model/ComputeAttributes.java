@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,6 +59,12 @@ public class ComputeAttributes implements Serializable, Cloneable, StructuredPoj
      * </ul>
      */
     private String state;
+    /**
+     * <p>
+     * A list of the names of instance families that are currently associated with a given asset.
+     * </p>
+     */
+    private java.util.List<String> instanceFamilies;
 
     /**
      * <p>
@@ -312,6 +318,76 @@ public class ComputeAttributes implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * A list of the names of instance families that are currently associated with a given asset.
+     * </p>
+     * 
+     * @return A list of the names of instance families that are currently associated with a given asset.
+     */
+
+    public java.util.List<String> getInstanceFamilies() {
+        return instanceFamilies;
+    }
+
+    /**
+     * <p>
+     * A list of the names of instance families that are currently associated with a given asset.
+     * </p>
+     * 
+     * @param instanceFamilies
+     *        A list of the names of instance families that are currently associated with a given asset.
+     */
+
+    public void setInstanceFamilies(java.util.Collection<String> instanceFamilies) {
+        if (instanceFamilies == null) {
+            this.instanceFamilies = null;
+            return;
+        }
+
+        this.instanceFamilies = new java.util.ArrayList<String>(instanceFamilies);
+    }
+
+    /**
+     * <p>
+     * A list of the names of instance families that are currently associated with a given asset.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInstanceFamilies(java.util.Collection)} or {@link #withInstanceFamilies(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param instanceFamilies
+     *        A list of the names of instance families that are currently associated with a given asset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComputeAttributes withInstanceFamilies(String... instanceFamilies) {
+        if (this.instanceFamilies == null) {
+            setInstanceFamilies(new java.util.ArrayList<String>(instanceFamilies.length));
+        }
+        for (String ele : instanceFamilies) {
+            this.instanceFamilies.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the names of instance families that are currently associated with a given asset.
+     * </p>
+     * 
+     * @param instanceFamilies
+     *        A list of the names of instance families that are currently associated with a given asset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComputeAttributes withInstanceFamilies(java.util.Collection<String> instanceFamilies) {
+        setInstanceFamilies(instanceFamilies);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -326,7 +402,9 @@ public class ComputeAttributes implements Serializable, Cloneable, StructuredPoj
         if (getHostId() != null)
             sb.append("HostId: ").append(getHostId()).append(",");
         if (getState() != null)
-            sb.append("State: ").append(getState());
+            sb.append("State: ").append(getState()).append(",");
+        if (getInstanceFamilies() != null)
+            sb.append("InstanceFamilies: ").append(getInstanceFamilies());
         sb.append("}");
         return sb.toString();
     }
@@ -349,6 +427,10 @@ public class ComputeAttributes implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
+        if (other.getInstanceFamilies() == null ^ this.getInstanceFamilies() == null)
+            return false;
+        if (other.getInstanceFamilies() != null && other.getInstanceFamilies().equals(this.getInstanceFamilies()) == false)
+            return false;
         return true;
     }
 
@@ -359,6 +441,7 @@ public class ComputeAttributes implements Serializable, Cloneable, StructuredPoj
 
         hashCode = prime * hashCode + ((getHostId() == null) ? 0 : getHostId().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getInstanceFamilies() == null) ? 0 : getInstanceFamilies().hashCode());
         return hashCode;
     }
 

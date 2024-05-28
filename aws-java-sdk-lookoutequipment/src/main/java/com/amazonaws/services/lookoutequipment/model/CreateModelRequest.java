@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,25 +27,25 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name for the ML model to be created.
+     * The name for the machine learning model to be created.
      * </p>
      */
     private String modelName;
     /**
      * <p>
-     * The name of the dataset for the ML model being created.
+     * The name of the dataset for the machine learning model being created.
      * </p>
      */
     private String datasetName;
     /**
      * <p>
-     * The data schema for the ML model being created.
+     * The data schema for the machine learning model being created.
      * </p>
      */
     private DatasetSchema datasetSchema;
     /**
      * <p>
-     * The input configuration for the labels being used for the ML model that's being created.
+     * The input configuration for the labels being used for the machine learning model that's being created.
      * </p>
      */
     private LabelsInputConfiguration labelsInputConfiguration;
@@ -58,36 +58,36 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String clientToken;
     /**
      * <p>
-     * Indicates the time reference in the dataset that should be used to begin the subset of training data for the ML
-     * model.
+     * Indicates the time reference in the dataset that should be used to begin the subset of training data for the
+     * machine learning model.
      * </p>
      */
     private java.util.Date trainingDataStartTime;
     /**
      * <p>
-     * Indicates the time reference in the dataset that should be used to end the subset of training data for the ML
-     * model.
+     * Indicates the time reference in the dataset that should be used to end the subset of training data for the
+     * machine learning model.
      * </p>
      */
     private java.util.Date trainingDataEndTime;
     /**
      * <p>
-     * Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the ML
-     * model.
+     * Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the
+     * machine learning model.
      * </p>
      */
     private java.util.Date evaluationDataStartTime;
     /**
      * <p>
-     * Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the ML
-     * model.
+     * Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the
+     * machine learning model.
      * </p>
      */
     private java.util.Date evaluationDataEndTime;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the ML
-     * model.
+     * The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the
+     * machine learning model.
      * </p>
      */
     private String roleArn;
@@ -113,7 +113,7 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String serverSideKmsKeyId;
     /**
      * <p>
-     * Any tags associated with the ML model being created.
+     * Any tags associated with the machine learning model being created.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -124,14 +124,21 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String offCondition;
+    /**
+     * <p>
+     * The Amazon S3 location where you want Amazon Lookout for Equipment to save the pointwise model diagnostics. You
+     * must also specify the <code>RoleArn</code> request parameter.
+     * </p>
+     */
+    private ModelDiagnosticsOutputConfiguration modelDiagnosticsOutputConfiguration;
 
     /**
      * <p>
-     * The name for the ML model to be created.
+     * The name for the machine learning model to be created.
      * </p>
      * 
      * @param modelName
-     *        The name for the ML model to be created.
+     *        The name for the machine learning model to be created.
      */
 
     public void setModelName(String modelName) {
@@ -140,10 +147,10 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name for the ML model to be created.
+     * The name for the machine learning model to be created.
      * </p>
      * 
-     * @return The name for the ML model to be created.
+     * @return The name for the machine learning model to be created.
      */
 
     public String getModelName() {
@@ -152,11 +159,11 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name for the ML model to be created.
+     * The name for the machine learning model to be created.
      * </p>
      * 
      * @param modelName
-     *        The name for the ML model to be created.
+     *        The name for the machine learning model to be created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -167,11 +174,11 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the dataset for the ML model being created.
+     * The name of the dataset for the machine learning model being created.
      * </p>
      * 
      * @param datasetName
-     *        The name of the dataset for the ML model being created.
+     *        The name of the dataset for the machine learning model being created.
      */
 
     public void setDatasetName(String datasetName) {
@@ -180,10 +187,10 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the dataset for the ML model being created.
+     * The name of the dataset for the machine learning model being created.
      * </p>
      * 
-     * @return The name of the dataset for the ML model being created.
+     * @return The name of the dataset for the machine learning model being created.
      */
 
     public String getDatasetName() {
@@ -192,11 +199,11 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the dataset for the ML model being created.
+     * The name of the dataset for the machine learning model being created.
      * </p>
      * 
      * @param datasetName
-     *        The name of the dataset for the ML model being created.
+     *        The name of the dataset for the machine learning model being created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -207,11 +214,11 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The data schema for the ML model being created.
+     * The data schema for the machine learning model being created.
      * </p>
      * 
      * @param datasetSchema
-     *        The data schema for the ML model being created.
+     *        The data schema for the machine learning model being created.
      */
 
     public void setDatasetSchema(DatasetSchema datasetSchema) {
@@ -220,10 +227,10 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The data schema for the ML model being created.
+     * The data schema for the machine learning model being created.
      * </p>
      * 
-     * @return The data schema for the ML model being created.
+     * @return The data schema for the machine learning model being created.
      */
 
     public DatasetSchema getDatasetSchema() {
@@ -232,11 +239,11 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The data schema for the ML model being created.
+     * The data schema for the machine learning model being created.
      * </p>
      * 
      * @param datasetSchema
-     *        The data schema for the ML model being created.
+     *        The data schema for the machine learning model being created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -247,11 +254,11 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The input configuration for the labels being used for the ML model that's being created.
+     * The input configuration for the labels being used for the machine learning model that's being created.
      * </p>
      * 
      * @param labelsInputConfiguration
-     *        The input configuration for the labels being used for the ML model that's being created.
+     *        The input configuration for the labels being used for the machine learning model that's being created.
      */
 
     public void setLabelsInputConfiguration(LabelsInputConfiguration labelsInputConfiguration) {
@@ -260,10 +267,10 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The input configuration for the labels being used for the ML model that's being created.
+     * The input configuration for the labels being used for the machine learning model that's being created.
      * </p>
      * 
-     * @return The input configuration for the labels being used for the ML model that's being created.
+     * @return The input configuration for the labels being used for the machine learning model that's being created.
      */
 
     public LabelsInputConfiguration getLabelsInputConfiguration() {
@@ -272,11 +279,11 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The input configuration for the labels being used for the ML model that's being created.
+     * The input configuration for the labels being used for the machine learning model that's being created.
      * </p>
      * 
      * @param labelsInputConfiguration
-     *        The input configuration for the labels being used for the ML model that's being created.
+     *        The input configuration for the labels being used for the machine learning model that's being created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -333,13 +340,13 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates the time reference in the dataset that should be used to begin the subset of training data for the ML
-     * model.
+     * Indicates the time reference in the dataset that should be used to begin the subset of training data for the
+     * machine learning model.
      * </p>
      * 
      * @param trainingDataStartTime
      *        Indicates the time reference in the dataset that should be used to begin the subset of training data for
-     *        the ML model.
+     *        the machine learning model.
      */
 
     public void setTrainingDataStartTime(java.util.Date trainingDataStartTime) {
@@ -348,12 +355,12 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates the time reference in the dataset that should be used to begin the subset of training data for the ML
-     * model.
+     * Indicates the time reference in the dataset that should be used to begin the subset of training data for the
+     * machine learning model.
      * </p>
      * 
      * @return Indicates the time reference in the dataset that should be used to begin the subset of training data for
-     *         the ML model.
+     *         the machine learning model.
      */
 
     public java.util.Date getTrainingDataStartTime() {
@@ -362,13 +369,13 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates the time reference in the dataset that should be used to begin the subset of training data for the ML
-     * model.
+     * Indicates the time reference in the dataset that should be used to begin the subset of training data for the
+     * machine learning model.
      * </p>
      * 
      * @param trainingDataStartTime
      *        Indicates the time reference in the dataset that should be used to begin the subset of training data for
-     *        the ML model.
+     *        the machine learning model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -379,13 +386,13 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates the time reference in the dataset that should be used to end the subset of training data for the ML
-     * model.
+     * Indicates the time reference in the dataset that should be used to end the subset of training data for the
+     * machine learning model.
      * </p>
      * 
      * @param trainingDataEndTime
      *        Indicates the time reference in the dataset that should be used to end the subset of training data for the
-     *        ML model.
+     *        machine learning model.
      */
 
     public void setTrainingDataEndTime(java.util.Date trainingDataEndTime) {
@@ -394,12 +401,12 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates the time reference in the dataset that should be used to end the subset of training data for the ML
-     * model.
+     * Indicates the time reference in the dataset that should be used to end the subset of training data for the
+     * machine learning model.
      * </p>
      * 
      * @return Indicates the time reference in the dataset that should be used to end the subset of training data for
-     *         the ML model.
+     *         the machine learning model.
      */
 
     public java.util.Date getTrainingDataEndTime() {
@@ -408,13 +415,13 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates the time reference in the dataset that should be used to end the subset of training data for the ML
-     * model.
+     * Indicates the time reference in the dataset that should be used to end the subset of training data for the
+     * machine learning model.
      * </p>
      * 
      * @param trainingDataEndTime
      *        Indicates the time reference in the dataset that should be used to end the subset of training data for the
-     *        ML model.
+     *        machine learning model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -425,13 +432,13 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the ML
-     * model.
+     * Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the
+     * machine learning model.
      * </p>
      * 
      * @param evaluationDataStartTime
      *        Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for
-     *        the ML model.
+     *        the machine learning model.
      */
 
     public void setEvaluationDataStartTime(java.util.Date evaluationDataStartTime) {
@@ -440,12 +447,12 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the ML
-     * model.
+     * Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the
+     * machine learning model.
      * </p>
      * 
      * @return Indicates the time reference in the dataset that should be used to begin the subset of evaluation data
-     *         for the ML model.
+     *         for the machine learning model.
      */
 
     public java.util.Date getEvaluationDataStartTime() {
@@ -454,13 +461,13 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the ML
-     * model.
+     * Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the
+     * machine learning model.
      * </p>
      * 
      * @param evaluationDataStartTime
      *        Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for
-     *        the ML model.
+     *        the machine learning model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -471,13 +478,13 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the ML
-     * model.
+     * Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the
+     * machine learning model.
      * </p>
      * 
      * @param evaluationDataEndTime
      *        Indicates the time reference in the dataset that should be used to end the subset of evaluation data for
-     *        the ML model.
+     *        the machine learning model.
      */
 
     public void setEvaluationDataEndTime(java.util.Date evaluationDataEndTime) {
@@ -486,12 +493,12 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the ML
-     * model.
+     * Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the
+     * machine learning model.
      * </p>
      * 
      * @return Indicates the time reference in the dataset that should be used to end the subset of evaluation data for
-     *         the ML model.
+     *         the machine learning model.
      */
 
     public java.util.Date getEvaluationDataEndTime() {
@@ -500,13 +507,13 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the ML
-     * model.
+     * Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the
+     * machine learning model.
      * </p>
      * 
      * @param evaluationDataEndTime
      *        Indicates the time reference in the dataset that should be used to end the subset of evaluation data for
-     *        the ML model.
+     *        the machine learning model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -517,13 +524,13 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the ML
-     * model.
+     * The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the
+     * machine learning model.
      * </p>
      * 
      * @param roleArn
      *        The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create
-     *        the ML model.
+     *        the machine learning model.
      */
 
     public void setRoleArn(String roleArn) {
@@ -532,12 +539,12 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the ML
-     * model.
+     * The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the
+     * machine learning model.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create
-     *         the ML model.
+     *         the machine learning model.
      */
 
     public String getRoleArn() {
@@ -546,13 +553,13 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the ML
-     * model.
+     * The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create the
+     * machine learning model.
      * </p>
      * 
      * @param roleArn
      *        The Amazon Resource Name (ARN) of a role with permission to access the data source being used to create
-     *        the ML model.
+     *        the machine learning model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -688,10 +695,10 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Any tags associated with the ML model being created.
+     * Any tags associated with the machine learning model being created.
      * </p>
      * 
-     * @return Any tags associated with the ML model being created.
+     * @return Any tags associated with the machine learning model being created.
      */
 
     public java.util.List<Tag> getTags() {
@@ -700,11 +707,11 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Any tags associated with the ML model being created.
+     * Any tags associated with the machine learning model being created.
      * </p>
      * 
      * @param tags
-     *        Any tags associated with the ML model being created.
+     *        Any tags associated with the machine learning model being created.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -718,7 +725,7 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Any tags associated with the ML model being created.
+     * Any tags associated with the machine learning model being created.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -727,7 +734,7 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param tags
-     *        Any tags associated with the ML model being created.
+     *        Any tags associated with the machine learning model being created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -743,11 +750,11 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Any tags associated with the ML model being created.
+     * Any tags associated with the machine learning model being created.
      * </p>
      * 
      * @param tags
-     *        Any tags associated with the ML model being created.
+     *        Any tags associated with the machine learning model being created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -803,6 +810,52 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The Amazon S3 location where you want Amazon Lookout for Equipment to save the pointwise model diagnostics. You
+     * must also specify the <code>RoleArn</code> request parameter.
+     * </p>
+     * 
+     * @param modelDiagnosticsOutputConfiguration
+     *        The Amazon S3 location where you want Amazon Lookout for Equipment to save the pointwise model
+     *        diagnostics. You must also specify the <code>RoleArn</code> request parameter.
+     */
+
+    public void setModelDiagnosticsOutputConfiguration(ModelDiagnosticsOutputConfiguration modelDiagnosticsOutputConfiguration) {
+        this.modelDiagnosticsOutputConfiguration = modelDiagnosticsOutputConfiguration;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 location where you want Amazon Lookout for Equipment to save the pointwise model diagnostics. You
+     * must also specify the <code>RoleArn</code> request parameter.
+     * </p>
+     * 
+     * @return The Amazon S3 location where you want Amazon Lookout for Equipment to save the pointwise model
+     *         diagnostics. You must also specify the <code>RoleArn</code> request parameter.
+     */
+
+    public ModelDiagnosticsOutputConfiguration getModelDiagnosticsOutputConfiguration() {
+        return this.modelDiagnosticsOutputConfiguration;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 location where you want Amazon Lookout for Equipment to save the pointwise model diagnostics. You
+     * must also specify the <code>RoleArn</code> request parameter.
+     * </p>
+     * 
+     * @param modelDiagnosticsOutputConfiguration
+     *        The Amazon S3 location where you want Amazon Lookout for Equipment to save the pointwise model
+     *        diagnostics. You must also specify the <code>RoleArn</code> request parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateModelRequest withModelDiagnosticsOutputConfiguration(ModelDiagnosticsOutputConfiguration modelDiagnosticsOutputConfiguration) {
+        setModelDiagnosticsOutputConfiguration(modelDiagnosticsOutputConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -841,7 +894,9 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getOffCondition() != null)
-            sb.append("OffCondition: ").append(getOffCondition());
+            sb.append("OffCondition: ").append(getOffCondition()).append(",");
+        if (getModelDiagnosticsOutputConfiguration() != null)
+            sb.append("ModelDiagnosticsOutputConfiguration: ").append(getModelDiagnosticsOutputConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -913,6 +968,11 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getOffCondition() != null && other.getOffCondition().equals(this.getOffCondition()) == false)
             return false;
+        if (other.getModelDiagnosticsOutputConfiguration() == null ^ this.getModelDiagnosticsOutputConfiguration() == null)
+            return false;
+        if (other.getModelDiagnosticsOutputConfiguration() != null
+                && other.getModelDiagnosticsOutputConfiguration().equals(this.getModelDiagnosticsOutputConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -935,6 +995,7 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getServerSideKmsKeyId() == null) ? 0 : getServerSideKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getOffCondition() == null) ? 0 : getOffCondition().hashCode());
+        hashCode = prime * hashCode + ((getModelDiagnosticsOutputConfiguration() == null) ? 0 : getModelDiagnosticsOutputConfiguration().hashCode());
         return hashCode;
     }
 

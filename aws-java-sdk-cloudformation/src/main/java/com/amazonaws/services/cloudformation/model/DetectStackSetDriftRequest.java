@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,16 @@ public class DetectStackSetDriftRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String stackSetName;
-
+    /**
+     * <p>
+     * The user-specified preferences for how CloudFormation performs a stack set operation.
+     * </p>
+     * <p>
+     * For more information about maximum concurrent accounts and failure tolerance, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
+     * >Stack set operation options</a>.
+     * </p>
+     */
     private StackSetOperationPreferences operationPreferences;
     /**
      * <p>
@@ -109,7 +118,21 @@ public class DetectStackSetDriftRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The user-specified preferences for how CloudFormation performs a stack set operation.
+     * </p>
+     * <p>
+     * For more information about maximum concurrent accounts and failure tolerance, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
+     * >Stack set operation options</a>.
+     * </p>
+     * 
      * @param operationPreferences
+     *        The user-specified preferences for how CloudFormation performs a stack set operation.</p>
+     *        <p>
+     *        For more information about maximum concurrent accounts and failure tolerance, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
+     *        >Stack set operation options</a>.
      */
 
     public void setOperationPreferences(StackSetOperationPreferences operationPreferences) {
@@ -117,7 +140,20 @@ public class DetectStackSetDriftRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * The user-specified preferences for how CloudFormation performs a stack set operation.
+     * </p>
+     * <p>
+     * For more information about maximum concurrent accounts and failure tolerance, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
+     * >Stack set operation options</a>.
+     * </p>
+     * 
+     * @return The user-specified preferences for how CloudFormation performs a stack set operation.</p>
+     *         <p>
+     *         For more information about maximum concurrent accounts and failure tolerance, see <a href=
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
+     *         >Stack set operation options</a>.
      */
 
     public StackSetOperationPreferences getOperationPreferences() {
@@ -125,7 +161,21 @@ public class DetectStackSetDriftRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The user-specified preferences for how CloudFormation performs a stack set operation.
+     * </p>
+     * <p>
+     * For more information about maximum concurrent accounts and failure tolerance, see <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
+     * >Stack set operation options</a>.
+     * </p>
+     * 
      * @param operationPreferences
+     *        The user-specified preferences for how CloudFormation performs a stack set operation.</p>
+     *        <p>
+     *        For more information about maximum concurrent accounts and failure tolerance, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options"
+     *        >Stack set operation options</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

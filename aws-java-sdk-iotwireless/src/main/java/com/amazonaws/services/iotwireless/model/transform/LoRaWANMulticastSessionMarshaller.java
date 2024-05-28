@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class LoRaWANMulticastSessionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SessionStartTime").timestampFormat("iso8601").build();
     private static final MarshallingInfo<Integer> SESSIONTIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SessionTimeout").build();
+    private static final MarshallingInfo<Integer> PINGSLOTPERIOD_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PingSlotPeriod").build();
 
     private static final LoRaWANMulticastSessionMarshaller instance = new LoRaWANMulticastSessionMarshaller();
 
@@ -56,6 +58,7 @@ public class LoRaWANMulticastSessionMarshaller {
             protocolMarshaller.marshall(loRaWANMulticastSession.getDlFreq(), DLFREQ_BINDING);
             protocolMarshaller.marshall(loRaWANMulticastSession.getSessionStartTime(), SESSIONSTARTTIME_BINDING);
             protocolMarshaller.marshall(loRaWANMulticastSession.getSessionTimeout(), SESSIONTIMEOUT_BINDING);
+            protocolMarshaller.marshall(loRaWANMulticastSession.getPingSlotPeriod(), PINGSLOTPERIOD_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

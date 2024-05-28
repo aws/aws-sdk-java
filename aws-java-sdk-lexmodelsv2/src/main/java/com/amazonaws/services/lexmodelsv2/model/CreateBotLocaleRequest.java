@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -95,6 +95,8 @@ public class CreateBotLocaleRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private VoiceSettings voiceSettings;
+
+    private GenerativeAISettings generativeAISettings;
 
     /**
      * <p>
@@ -538,6 +540,32 @@ public class CreateBotLocaleRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * @param generativeAISettings
+     */
+
+    public void setGenerativeAISettings(GenerativeAISettings generativeAISettings) {
+        this.generativeAISettings = generativeAISettings;
+    }
+
+    /**
+     * @return
+     */
+
+    public GenerativeAISettings getGenerativeAISettings() {
+        return this.generativeAISettings;
+    }
+
+    /**
+     * @param generativeAISettings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateBotLocaleRequest withGenerativeAISettings(GenerativeAISettings generativeAISettings) {
+        setGenerativeAISettings(generativeAISettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -560,7 +588,9 @@ public class CreateBotLocaleRequest extends com.amazonaws.AmazonWebServiceReques
         if (getNluIntentConfidenceThreshold() != null)
             sb.append("NluIntentConfidenceThreshold: ").append(getNluIntentConfidenceThreshold()).append(",");
         if (getVoiceSettings() != null)
-            sb.append("VoiceSettings: ").append(getVoiceSettings());
+            sb.append("VoiceSettings: ").append(getVoiceSettings()).append(",");
+        if (getGenerativeAISettings() != null)
+            sb.append("GenerativeAISettings: ").append(getGenerativeAISettings());
         sb.append("}");
         return sb.toString();
     }
@@ -599,6 +629,10 @@ public class CreateBotLocaleRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getVoiceSettings() != null && other.getVoiceSettings().equals(this.getVoiceSettings()) == false)
             return false;
+        if (other.getGenerativeAISettings() == null ^ this.getGenerativeAISettings() == null)
+            return false;
+        if (other.getGenerativeAISettings() != null && other.getGenerativeAISettings().equals(this.getGenerativeAISettings()) == false)
+            return false;
         return true;
     }
 
@@ -613,6 +647,7 @@ public class CreateBotLocaleRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getNluIntentConfidenceThreshold() == null) ? 0 : getNluIntentConfidenceThreshold().hashCode());
         hashCode = prime * hashCode + ((getVoiceSettings() == null) ? 0 : getVoiceSettings().hashCode());
+        hashCode = prime * hashCode + ((getGenerativeAISettings() == null) ? 0 : getGenerativeAISettings().hashCode());
         return hashCode;
     }
 

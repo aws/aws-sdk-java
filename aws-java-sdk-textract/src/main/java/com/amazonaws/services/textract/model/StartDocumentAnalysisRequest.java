@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -81,6 +81,12 @@ public class StartDocumentAnalysisRequest extends com.amazonaws.AmazonWebService
     private String kMSKeyId;
 
     private QueriesConfig queriesConfig;
+    /**
+     * <p>
+     * Specifies the adapter to be used when analyzing a document.
+     * </p>
+     */
+    private AdaptersConfig adaptersConfig;
 
     /**
      * <p>
@@ -539,6 +545,46 @@ public class StartDocumentAnalysisRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * Specifies the adapter to be used when analyzing a document.
+     * </p>
+     * 
+     * @param adaptersConfig
+     *        Specifies the adapter to be used when analyzing a document.
+     */
+
+    public void setAdaptersConfig(AdaptersConfig adaptersConfig) {
+        this.adaptersConfig = adaptersConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies the adapter to be used when analyzing a document.
+     * </p>
+     * 
+     * @return Specifies the adapter to be used when analyzing a document.
+     */
+
+    public AdaptersConfig getAdaptersConfig() {
+        return this.adaptersConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies the adapter to be used when analyzing a document.
+     * </p>
+     * 
+     * @param adaptersConfig
+     *        Specifies the adapter to be used when analyzing a document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartDocumentAnalysisRequest withAdaptersConfig(AdaptersConfig adaptersConfig) {
+        setAdaptersConfig(adaptersConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -565,7 +611,9 @@ public class StartDocumentAnalysisRequest extends com.amazonaws.AmazonWebService
         if (getKMSKeyId() != null)
             sb.append("KMSKeyId: ").append(getKMSKeyId()).append(",");
         if (getQueriesConfig() != null)
-            sb.append("QueriesConfig: ").append(getQueriesConfig());
+            sb.append("QueriesConfig: ").append(getQueriesConfig()).append(",");
+        if (getAdaptersConfig() != null)
+            sb.append("AdaptersConfig: ").append(getAdaptersConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -612,6 +660,10 @@ public class StartDocumentAnalysisRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getQueriesConfig() != null && other.getQueriesConfig().equals(this.getQueriesConfig()) == false)
             return false;
+        if (other.getAdaptersConfig() == null ^ this.getAdaptersConfig() == null)
+            return false;
+        if (other.getAdaptersConfig() != null && other.getAdaptersConfig().equals(this.getAdaptersConfig()) == false)
+            return false;
         return true;
     }
 
@@ -628,6 +680,7 @@ public class StartDocumentAnalysisRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getOutputConfig() == null) ? 0 : getOutputConfig().hashCode());
         hashCode = prime * hashCode + ((getKMSKeyId() == null) ? 0 : getKMSKeyId().hashCode());
         hashCode = prime * hashCode + ((getQueriesConfig() == null) ? 0 : getQueriesConfig().hashCode());
+        hashCode = prime * hashCode + ((getAdaptersConfig() == null) ? 0 : getAdaptersConfig().hashCode());
         return hashCode;
     }
 

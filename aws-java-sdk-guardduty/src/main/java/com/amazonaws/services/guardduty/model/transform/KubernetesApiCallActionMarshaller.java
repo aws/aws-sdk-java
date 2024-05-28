@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,14 @@ public class KubernetesApiCallActionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusCode").build();
     private static final MarshallingInfo<String> PARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("parameters").build();
+    private static final MarshallingInfo<String> RESOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("resource").build();
+    private static final MarshallingInfo<String> SUBRESOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("subresource").build();
+    private static final MarshallingInfo<String> NAMESPACE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("namespace").build();
+    private static final MarshallingInfo<String> RESOURCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceName").build();
 
     private static final KubernetesApiCallActionMarshaller instance = new KubernetesApiCallActionMarshaller();
 
@@ -66,6 +74,10 @@ public class KubernetesApiCallActionMarshaller {
             protocolMarshaller.marshall(kubernetesApiCallAction.getRemoteIpDetails(), REMOTEIPDETAILS_BINDING);
             protocolMarshaller.marshall(kubernetesApiCallAction.getStatusCode(), STATUSCODE_BINDING);
             protocolMarshaller.marshall(kubernetesApiCallAction.getParameters(), PARAMETERS_BINDING);
+            protocolMarshaller.marshall(kubernetesApiCallAction.getResource(), RESOURCE_BINDING);
+            protocolMarshaller.marshall(kubernetesApiCallAction.getSubresource(), SUBRESOURCE_BINDING);
+            protocolMarshaller.marshall(kubernetesApiCallAction.getNamespace(), NAMESPACE_BINDING);
+            protocolMarshaller.marshall(kubernetesApiCallAction.getResourceName(), RESOURCENAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

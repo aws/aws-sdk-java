@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,7 +71,7 @@ public class AccessDetail implements Serializable, Cloneable {
      * principal last attempted to access the service. Amazon Web Services does not report unauthenticated requests.
      * </p>
      * <p>
-     * This field is null if no principals (IAM users, IAM roles, or root users) in the reported Organizations entity
+     * This field is null if no principals (IAM users, IAM roles, or root user) in the reported Organizations entity
      * attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
      * >tracking period</a>.
@@ -94,7 +94,7 @@ public class AccessDetail implements Serializable, Cloneable {
     private java.util.Date lastAuthenticatedTime;
     /**
      * <p>
-     * The number of accounts with authenticated principals (root users, IAM users, and IAM roles) that attempted to
+     * The number of accounts with authenticated principals (root user, IAM users, and IAM roles) that attempted to
      * access the service in the tracking period.
      * </p>
      */
@@ -316,7 +316,7 @@ public class AccessDetail implements Serializable, Cloneable {
      * principal last attempted to access the service. Amazon Web Services does not report unauthenticated requests.
      * </p>
      * <p>
-     * This field is null if no principals (IAM users, IAM roles, or root users) in the reported Organizations entity
+     * This field is null if no principals (IAM users, IAM roles, or root user) in the reported Organizations entity
      * attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
      * >tracking period</a>.
@@ -327,7 +327,7 @@ public class AccessDetail implements Serializable, Cloneable {
      *        principal last attempted to access the service. Amazon Web Services does not report unauthenticated
      *        requests.</p>
      *        <p>
-     *        This field is null if no principals (IAM users, IAM roles, or root users) in the reported Organizations
+     *        This field is null if no principals (IAM users, IAM roles, or root user) in the reported Organizations
      *        entity attempted to access the service within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
      *        >tracking period</a>.
@@ -343,7 +343,7 @@ public class AccessDetail implements Serializable, Cloneable {
      * principal last attempted to access the service. Amazon Web Services does not report unauthenticated requests.
      * </p>
      * <p>
-     * This field is null if no principals (IAM users, IAM roles, or root users) in the reported Organizations entity
+     * This field is null if no principals (IAM users, IAM roles, or root user) in the reported Organizations entity
      * attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
      * >tracking period</a>.
@@ -353,7 +353,7 @@ public class AccessDetail implements Serializable, Cloneable {
      *         principal last attempted to access the service. Amazon Web Services does not report unauthenticated
      *         requests.</p>
      *         <p>
-     *         This field is null if no principals (IAM users, IAM roles, or root users) in the reported Organizations
+     *         This field is null if no principals (IAM users, IAM roles, or root user) in the reported Organizations
      *         entity attempted to access the service within the <a href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
      *         >tracking period</a>.
@@ -369,7 +369,7 @@ public class AccessDetail implements Serializable, Cloneable {
      * principal last attempted to access the service. Amazon Web Services does not report unauthenticated requests.
      * </p>
      * <p>
-     * This field is null if no principals (IAM users, IAM roles, or root users) in the reported Organizations entity
+     * This field is null if no principals (IAM users, IAM roles, or root user) in the reported Organizations entity
      * attempted to access the service within the <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
      * >tracking period</a>.
@@ -380,7 +380,7 @@ public class AccessDetail implements Serializable, Cloneable {
      *        principal last attempted to access the service. Amazon Web Services does not report unauthenticated
      *        requests.</p>
      *        <p>
-     *        This field is null if no principals (IAM users, IAM roles, or root users) in the reported Organizations
+     *        This field is null if no principals (IAM users, IAM roles, or root user) in the reported Organizations
      *        entity attempted to access the service within the <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period"
      *        >tracking period</a>.
@@ -479,12 +479,12 @@ public class AccessDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of accounts with authenticated principals (root users, IAM users, and IAM roles) that attempted to
+     * The number of accounts with authenticated principals (root user, IAM users, and IAM roles) that attempted to
      * access the service in the tracking period.
      * </p>
      * 
      * @param totalAuthenticatedEntities
-     *        The number of accounts with authenticated principals (root users, IAM users, and IAM roles) that attempted
+     *        The number of accounts with authenticated principals (root user, IAM users, and IAM roles) that attempted
      *        to access the service in the tracking period.
      */
 
@@ -494,12 +494,12 @@ public class AccessDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of accounts with authenticated principals (root users, IAM users, and IAM roles) that attempted to
+     * The number of accounts with authenticated principals (root user, IAM users, and IAM roles) that attempted to
      * access the service in the tracking period.
      * </p>
      * 
-     * @return The number of accounts with authenticated principals (root users, IAM users, and IAM roles) that
-     *         attempted to access the service in the tracking period.
+     * @return The number of accounts with authenticated principals (root user, IAM users, and IAM roles) that attempted
+     *         to access the service in the tracking period.
      */
 
     public Integer getTotalAuthenticatedEntities() {
@@ -508,12 +508,12 @@ public class AccessDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of accounts with authenticated principals (root users, IAM users, and IAM roles) that attempted to
+     * The number of accounts with authenticated principals (root user, IAM users, and IAM roles) that attempted to
      * access the service in the tracking period.
      * </p>
      * 
      * @param totalAuthenticatedEntities
-     *        The number of accounts with authenticated principals (root users, IAM users, and IAM roles) that attempted
+     *        The number of accounts with authenticated principals (root user, IAM users, and IAM roles) that attempted
      *        to access the service in the tracking period.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

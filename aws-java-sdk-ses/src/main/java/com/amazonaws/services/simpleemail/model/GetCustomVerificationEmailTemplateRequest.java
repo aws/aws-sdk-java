@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,18 +30,18 @@ public class GetCustomVerificationEmailTemplateRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the custom verification email template that you want to retrieve.
+     * The name of the custom verification email template to retrieve.
      * </p>
      */
     private String templateName;
 
     /**
      * <p>
-     * The name of the custom verification email template that you want to retrieve.
+     * The name of the custom verification email template to retrieve.
      * </p>
      * 
      * @param templateName
-     *        The name of the custom verification email template that you want to retrieve.
+     *        The name of the custom verification email template to retrieve.
      */
 
     public void setTemplateName(String templateName) {
@@ -50,10 +50,10 @@ public class GetCustomVerificationEmailTemplateRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the custom verification email template that you want to retrieve.
+     * The name of the custom verification email template to retrieve.
      * </p>
      * 
-     * @return The name of the custom verification email template that you want to retrieve.
+     * @return The name of the custom verification email template to retrieve.
      */
 
     public String getTemplateName() {
@@ -62,11 +62,11 @@ public class GetCustomVerificationEmailTemplateRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The name of the custom verification email template that you want to retrieve.
+     * The name of the custom verification email template to retrieve.
      * </p>
      * 
      * @param templateName
-     *        The name of the custom verification email template that you want to retrieve.
+     *        The name of the custom verification email template to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

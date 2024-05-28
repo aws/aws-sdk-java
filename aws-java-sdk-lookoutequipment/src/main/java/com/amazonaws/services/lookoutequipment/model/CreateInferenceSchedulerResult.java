@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,29 @@ public class CreateInferenceSchedulerResult extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private String status;
+    /**
+     * <p>
+     * Provides a quality assessment for a model that uses labels. If Lookout for Equipment determines that the model
+     * quality is poor based on training metrics, the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value
+     * is <code>QUALITY_THRESHOLD_MET</code>.
+     * </p>
+     * <p>
+     * If the model is unlabeled, the model quality can't be assessed and the value of <code>ModelQuality</code> is
+     * <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model quality assessment by adding labels
+     * to the input dataset and retraining the model.
+     * </p>
+     * <p>
+     * For information about using labels with your models, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-labeling.html">Understanding
+     * labeling</a>.
+     * </p>
+     * <p>
+     * For information about improving the quality of a model, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best practices with Amazon
+     * Lookout for Equipment</a>.
+     * </p>
+     */
+    private String modelQuality;
 
     /**
      * <p>
@@ -182,6 +205,197 @@ public class CreateInferenceSchedulerResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * Provides a quality assessment for a model that uses labels. If Lookout for Equipment determines that the model
+     * quality is poor based on training metrics, the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value
+     * is <code>QUALITY_THRESHOLD_MET</code>.
+     * </p>
+     * <p>
+     * If the model is unlabeled, the model quality can't be assessed and the value of <code>ModelQuality</code> is
+     * <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model quality assessment by adding labels
+     * to the input dataset and retraining the model.
+     * </p>
+     * <p>
+     * For information about using labels with your models, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-labeling.html">Understanding
+     * labeling</a>.
+     * </p>
+     * <p>
+     * For information about improving the quality of a model, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best practices with Amazon
+     * Lookout for Equipment</a>.
+     * </p>
+     * 
+     * @param modelQuality
+     *        Provides a quality assessment for a model that uses labels. If Lookout for Equipment determines that the
+     *        model quality is poor based on training metrics, the value is <code>POOR_QUALITY_DETECTED</code>.
+     *        Otherwise, the value is <code>QUALITY_THRESHOLD_MET</code>. </p>
+     *        <p>
+     *        If the model is unlabeled, the model quality can't be assessed and the value of <code>ModelQuality</code>
+     *        is <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model quality assessment by
+     *        adding labels to the input dataset and retraining the model.
+     *        </p>
+     *        <p>
+     *        For information about using labels with your models, see <a
+     *        href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-labeling.html"
+     *        >Understanding labeling</a>.
+     *        </p>
+     *        <p>
+     *        For information about improving the quality of a model, see <a
+     *        href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best practices with
+     *        Amazon Lookout for Equipment</a>.
+     * @see ModelQuality
+     */
+
+    public void setModelQuality(String modelQuality) {
+        this.modelQuality = modelQuality;
+    }
+
+    /**
+     * <p>
+     * Provides a quality assessment for a model that uses labels. If Lookout for Equipment determines that the model
+     * quality is poor based on training metrics, the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value
+     * is <code>QUALITY_THRESHOLD_MET</code>.
+     * </p>
+     * <p>
+     * If the model is unlabeled, the model quality can't be assessed and the value of <code>ModelQuality</code> is
+     * <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model quality assessment by adding labels
+     * to the input dataset and retraining the model.
+     * </p>
+     * <p>
+     * For information about using labels with your models, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-labeling.html">Understanding
+     * labeling</a>.
+     * </p>
+     * <p>
+     * For information about improving the quality of a model, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best practices with Amazon
+     * Lookout for Equipment</a>.
+     * </p>
+     * 
+     * @return Provides a quality assessment for a model that uses labels. If Lookout for Equipment determines that the
+     *         model quality is poor based on training metrics, the value is <code>POOR_QUALITY_DETECTED</code>.
+     *         Otherwise, the value is <code>QUALITY_THRESHOLD_MET</code>. </p>
+     *         <p>
+     *         If the model is unlabeled, the model quality can't be assessed and the value of <code>ModelQuality</code>
+     *         is <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model quality assessment by
+     *         adding labels to the input dataset and retraining the model.
+     *         </p>
+     *         <p>
+     *         For information about using labels with your models, see <a
+     *         href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-labeling.html"
+     *         >Understanding labeling</a>.
+     *         </p>
+     *         <p>
+     *         For information about improving the quality of a model, see <a
+     *         href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best practices
+     *         with Amazon Lookout for Equipment</a>.
+     * @see ModelQuality
+     */
+
+    public String getModelQuality() {
+        return this.modelQuality;
+    }
+
+    /**
+     * <p>
+     * Provides a quality assessment for a model that uses labels. If Lookout for Equipment determines that the model
+     * quality is poor based on training metrics, the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value
+     * is <code>QUALITY_THRESHOLD_MET</code>.
+     * </p>
+     * <p>
+     * If the model is unlabeled, the model quality can't be assessed and the value of <code>ModelQuality</code> is
+     * <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model quality assessment by adding labels
+     * to the input dataset and retraining the model.
+     * </p>
+     * <p>
+     * For information about using labels with your models, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-labeling.html">Understanding
+     * labeling</a>.
+     * </p>
+     * <p>
+     * For information about improving the quality of a model, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best practices with Amazon
+     * Lookout for Equipment</a>.
+     * </p>
+     * 
+     * @param modelQuality
+     *        Provides a quality assessment for a model that uses labels. If Lookout for Equipment determines that the
+     *        model quality is poor based on training metrics, the value is <code>POOR_QUALITY_DETECTED</code>.
+     *        Otherwise, the value is <code>QUALITY_THRESHOLD_MET</code>. </p>
+     *        <p>
+     *        If the model is unlabeled, the model quality can't be assessed and the value of <code>ModelQuality</code>
+     *        is <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model quality assessment by
+     *        adding labels to the input dataset and retraining the model.
+     *        </p>
+     *        <p>
+     *        For information about using labels with your models, see <a
+     *        href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-labeling.html"
+     *        >Understanding labeling</a>.
+     *        </p>
+     *        <p>
+     *        For information about improving the quality of a model, see <a
+     *        href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best practices with
+     *        Amazon Lookout for Equipment</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ModelQuality
+     */
+
+    public CreateInferenceSchedulerResult withModelQuality(String modelQuality) {
+        setModelQuality(modelQuality);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides a quality assessment for a model that uses labels. If Lookout for Equipment determines that the model
+     * quality is poor based on training metrics, the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value
+     * is <code>QUALITY_THRESHOLD_MET</code>.
+     * </p>
+     * <p>
+     * If the model is unlabeled, the model quality can't be assessed and the value of <code>ModelQuality</code> is
+     * <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model quality assessment by adding labels
+     * to the input dataset and retraining the model.
+     * </p>
+     * <p>
+     * For information about using labels with your models, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-labeling.html">Understanding
+     * labeling</a>.
+     * </p>
+     * <p>
+     * For information about improving the quality of a model, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best practices with Amazon
+     * Lookout for Equipment</a>.
+     * </p>
+     * 
+     * @param modelQuality
+     *        Provides a quality assessment for a model that uses labels. If Lookout for Equipment determines that the
+     *        model quality is poor based on training metrics, the value is <code>POOR_QUALITY_DETECTED</code>.
+     *        Otherwise, the value is <code>QUALITY_THRESHOLD_MET</code>. </p>
+     *        <p>
+     *        If the model is unlabeled, the model quality can't be assessed and the value of <code>ModelQuality</code>
+     *        is <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model quality assessment by
+     *        adding labels to the input dataset and retraining the model.
+     *        </p>
+     *        <p>
+     *        For information about using labels with your models, see <a
+     *        href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/understanding-labeling.html"
+     *        >Understanding labeling</a>.
+     *        </p>
+     *        <p>
+     *        For information about improving the quality of a model, see <a
+     *        href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best practices with
+     *        Amazon Lookout for Equipment</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ModelQuality
+     */
+
+    public CreateInferenceSchedulerResult withModelQuality(ModelQuality modelQuality) {
+        this.modelQuality = modelQuality.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -198,7 +412,9 @@ public class CreateInferenceSchedulerResult extends com.amazonaws.AmazonWebServi
         if (getInferenceSchedulerName() != null)
             sb.append("InferenceSchedulerName: ").append(getInferenceSchedulerName()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getModelQuality() != null)
+            sb.append("ModelQuality: ").append(getModelQuality());
         sb.append("}");
         return sb.toString();
     }
@@ -225,6 +441,10 @@ public class CreateInferenceSchedulerResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getModelQuality() == null ^ this.getModelQuality() == null)
+            return false;
+        if (other.getModelQuality() != null && other.getModelQuality().equals(this.getModelQuality()) == false)
+            return false;
         return true;
     }
 
@@ -236,6 +456,7 @@ public class CreateInferenceSchedulerResult extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getInferenceSchedulerArn() == null) ? 0 : getInferenceSchedulerArn().hashCode());
         hashCode = prime * hashCode + ((getInferenceSchedulerName() == null) ? 0 : getInferenceSchedulerName().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getModelQuality() == null) ? 0 : getModelQuality().hashCode());
         return hashCode;
     }
 

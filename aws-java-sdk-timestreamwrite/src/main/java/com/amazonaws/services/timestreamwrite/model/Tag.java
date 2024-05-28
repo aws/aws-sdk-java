@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * A tag is a label that you assign to a Timestream database and/or table. Each tag consists of a key and an optional
- * value, both of which you define. Tags enable you to categorize databases and/or tables, for example, by purpose,
+ * value, both of which you define. With tags, you can categorize databases and/or tables, for example, by purpose,
  * owner, or environment.
  * </p>
  * 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,9 +21,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * High-level information about a managed rule group, returned by <a>ListAvailableManagedRuleGroups</a>. This provides
  * information like the name and vendor name, that you provide when you add a <a>ManagedRuleGroupStatement</a> to a web
- * ACL. Managed rule groups include Amazon Web Services Managed Rules rule groups, which are free of charge to WAF
- * customers, and Amazon Web Services Marketplace managed rule groups, which you can subscribe to through Amazon Web
- * Services Marketplace.
+ * ACL. Managed rule groups include Amazon Web Services Managed Rules rule groups and Amazon Web Services Marketplace
+ * managed rule groups. To use any Amazon Web Services Marketplace managed rule group, first subscribe to the rule group
+ * through Amazon Web Services Marketplace.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ManagedRuleGroupSummary" target="_top">AWS API
@@ -34,7 +34,7 @@ public class ManagedRuleGroupSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule
+     * The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule
      * group.
      * </p>
      */
@@ -62,12 +62,12 @@ public class ManagedRuleGroupSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule
+     * The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule
      * group.
      * </p>
      * 
      * @param vendorName
-     *        The name of the managed rule group vendor. You use this, along with the rule group name, to identify the
+     *        The name of the managed rule group vendor. You use this, along with the rule group name, to identify a
      *        rule group.
      */
 
@@ -77,11 +77,11 @@ public class ManagedRuleGroupSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule
+     * The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule
      * group.
      * </p>
      * 
-     * @return The name of the managed rule group vendor. You use this, along with the rule group name, to identify the
+     * @return The name of the managed rule group vendor. You use this, along with the rule group name, to identify a
      *         rule group.
      */
 
@@ -91,12 +91,12 @@ public class ManagedRuleGroupSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule
+     * The name of the managed rule group vendor. You use this, along with the rule group name, to identify a rule
      * group.
      * </p>
      * 
      * @param vendorName
-     *        The name of the managed rule group vendor. You use this, along with the rule group name, to identify the
+     *        The name of the managed rule group vendor. You use this, along with the rule group name, to identify a
      *        rule group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

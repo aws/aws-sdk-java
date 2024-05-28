@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,18 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name(ARN) of the Data Store for which tags are being added.
+     * The Amazon Resource Name(ARN) of the data store for which tags are being added.
      * </p>
      */
     private String resourceARN;
 
     /**
      * <p>
-     * The Amazon Resource Name(ARN) of the Data Store for which tags are being added.
+     * The Amazon Resource Name(ARN) of the data store for which tags are being added.
      * </p>
      * 
      * @param resourceARN
-     *        The Amazon Resource Name(ARN) of the Data Store for which tags are being added.
+     *        The Amazon Resource Name(ARN) of the data store for which tags are being added.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -47,10 +47,10 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name(ARN) of the Data Store for which tags are being added.
+     * The Amazon Resource Name(ARN) of the data store for which tags are being added.
      * </p>
      * 
-     * @return The Amazon Resource Name(ARN) of the Data Store for which tags are being added.
+     * @return The Amazon Resource Name(ARN) of the data store for which tags are being added.
      */
 
     public String getResourceARN() {
@@ -59,11 +59,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name(ARN) of the Data Store for which tags are being added.
+     * The Amazon Resource Name(ARN) of the data store for which tags are being added.
      * </p>
      * 
      * @param resourceARN
-     *        The Amazon Resource Name(ARN) of the Data Store for which tags are being added.
+     *        The Amazon Resource Name(ARN) of the data store for which tags are being added.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

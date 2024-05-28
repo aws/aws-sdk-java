@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,11 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A collection of attributes that are applied to all active Security Hub-aggregated findings and that result in a
- * subset of findings that are included in this insight.
+ * A collection of filters that are applied to all active findings aggregated by Security Hub.
  * </p>
  * <p>
- * You can filter by up to 10 finding attributes. For each attribute, you can provide up to 20 filter values.
+ * You can filter by up to ten finding attributes. For each attribute, you can provide up to 20 filter values.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsSecurityFindingFilters"
@@ -41,7 +40,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     private java.util.List<StringFilter> productArn;
     /**
      * <p>
-     * The Amazon Web Services account ID that a finding is generated in.
+     * The Amazon Web Services account ID in which a finding is generated.
      * </p>
      */
     private java.util.List<StringFilter> awsAccountId;
@@ -54,7 +53,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
-     * various security-findings providers' solutions, this generator can be called a rule, a check, a detector, a
+     * various security findings providers' solutions, this generator can be called a rule, a check, a detector, a
      * plugin, etc.
      * </p>
      */
@@ -73,35 +72,162 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     private java.util.List<StringFilter> type;
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the potential
-     * security issue that a finding captured.
+     * A timestamp that indicates when the security findings provider first observed the potential security issue that a
+     * finding captured.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.List<DateFilter> firstObservedAt;
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed the
-     * potential security issue that a finding captured.
+     * A timestamp that indicates when the security findings provider most recently observed the potential security
+     * issue that a finding captured.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.List<DateFilter> lastObservedAt;
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider captured the potential security
-     * issue that a finding captured.
+     * A timestamp that indicates when the security findings provider created the potential security issue that a
+     * finding reflects.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.List<DateFilter> createdAt;
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the finding
-     * record.
+     * A timestamp that indicates when the security findings provider last updated the finding record.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.List<DateFilter> updatedAt;
     /**
      * <p>
-     * The native severity as defined by the security-findings provider's solution that generated the finding.
+     * The native severity as defined by the security findings provider's solution that generated the finding.
      * </p>
      */
     @Deprecated
@@ -160,13 +286,13 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     private java.util.List<StringFilter> recommendationText;
     /**
      * <p>
-     * A URL that links to a page about the current finding in the security-findings provider's solution.
+     * A URL that links to a page about the current finding in the security findings provider's solution.
      * </p>
      */
     private java.util.List<StringFilter> sourceUrl;
     /**
      * <p>
-     * A data type where security-findings providers can include additional solution-specific details that aren't part
+     * A data type where security findings providers can include additional solution-specific details that aren't part
      * of the defined <code>AwsSecurityFinding</code> format.
      * </p>
      */
@@ -300,20 +426,84 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     private java.util.List<NumberFilter> processPid;
     /**
      * <p>
-     * The parent process ID.
+     * The parent process ID. This field accepts positive integers between <code>O</code> and <code>2147483647</code>.
      * </p>
      */
     private java.util.List<NumberFilter> processParentPid;
     /**
      * <p>
-     * The date/time that the process was launched.
+     * A timestamp that identifies when the process was launched.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.List<DateFilter> processLaunchedAt;
     /**
      * <p>
-     * The date/time that the process was terminated.
+     * A timestamp that identifies when the process was terminated.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.List<DateFilter> processTerminatedAt;
     /**
@@ -336,7 +526,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     private java.util.List<StringFilter> threatIntelIndicatorCategory;
     /**
      * <p>
-     * The date/time of the last observation of a threat intelligence indicator.
+     * A timestamp that identifies the last observation of a threat intelligence indicator.
      * </p>
      */
     private java.util.List<DateFilter> threatIntelIndicatorLastObservedAt;
@@ -499,8 +689,40 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     private java.util.List<StringFilter> resourceContainerImageName;
     /**
      * <p>
-     * The date/time that the container was started.
+     * A timestamp that identifies when the container was started.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.List<DateFilter> resourceContainerLaunchedAt;
     /**
@@ -727,6 +949,66 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * </p>
      */
     private java.util.List<BooleanFilter> sample;
+    /**
+     * <p>
+     * The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web
+     * Service and a number, such as APIGateway.5.
+     * </p>
+     */
+    private java.util.List<StringFilter> complianceSecurityControlId;
+    /**
+     * <p>
+     * The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of
+     * the Amazon Resource Name (ARN) returned for a standard in the <a
+     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a>
+     * API response.
+     * </p>
+     */
+    private java.util.List<StringFilter> complianceAssociatedStandardsId;
+    /**
+     * <p>
+     * Indicates whether a software vulnerability in your environment has a known exploit. You can filter findings by
+     * this field only if you use Security Hub and Amazon Inspector.
+     * </p>
+     */
+    private java.util.List<StringFilter> vulnerabilitiesExploitAvailable;
+    /**
+     * <p>
+     * Indicates whether a vulnerability is fixed in a newer version of the affected software packages. You can filter
+     * findings by this field only if you use Security Hub and Amazon Inspector.
+     * </p>
+     */
+    private java.util.List<StringFilter> vulnerabilitiesFixAvailable;
+    /**
+     * <p>
+     * The name of a security control parameter.
+     * </p>
+     */
+    private java.util.List<StringFilter> complianceSecurityControlParametersName;
+    /**
+     * <p>
+     * The current value of a security control parameter.
+     * </p>
+     */
+    private java.util.List<StringFilter> complianceSecurityControlParametersValue;
+    /**
+     * <p>
+     * The name of the Amazon Web Services account in which a finding is generated.
+     * </p>
+     */
+    private java.util.List<StringFilter> awsAccountName;
+    /**
+     * <p>
+     * The name of the application that is related to a finding.
+     * </p>
+     */
+    private java.util.List<StringFilter> resourceApplicationName;
+    /**
+     * <p>
+     * The ARN of the application that is related to a finding.
+     * </p>
+     */
+    private java.util.List<StringFilter> resourceApplicationArn;
 
     /**
      * <p>
@@ -812,10 +1094,10 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Web Services account ID that a finding is generated in.
+     * The Amazon Web Services account ID in which a finding is generated.
      * </p>
      * 
-     * @return The Amazon Web Services account ID that a finding is generated in.
+     * @return The Amazon Web Services account ID in which a finding is generated.
      */
 
     public java.util.List<StringFilter> getAwsAccountId() {
@@ -824,11 +1106,11 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Web Services account ID that a finding is generated in.
+     * The Amazon Web Services account ID in which a finding is generated.
      * </p>
      * 
      * @param awsAccountId
-     *        The Amazon Web Services account ID that a finding is generated in.
+     *        The Amazon Web Services account ID in which a finding is generated.
      */
 
     public void setAwsAccountId(java.util.Collection<StringFilter> awsAccountId) {
@@ -842,7 +1124,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Web Services account ID that a finding is generated in.
+     * The Amazon Web Services account ID in which a finding is generated.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -851,7 +1133,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param awsAccountId
-     *        The Amazon Web Services account ID that a finding is generated in.
+     *        The Amazon Web Services account ID in which a finding is generated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -867,11 +1149,11 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Web Services account ID that a finding is generated in.
+     * The Amazon Web Services account ID in which a finding is generated.
      * </p>
      * 
      * @param awsAccountId
-     *        The Amazon Web Services account ID that a finding is generated in.
+     *        The Amazon Web Services account ID in which a finding is generated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -953,12 +1235,12 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
-     * various security-findings providers' solutions, this generator can be called a rule, a check, a detector, a
+     * various security findings providers' solutions, this generator can be called a rule, a check, a detector, a
      * plugin, etc.
      * </p>
      * 
      * @return The identifier for the solution-specific component (a discrete unit of logic) that generated a finding.
-     *         In various security-findings providers' solutions, this generator can be called a rule, a check, a
+     *         In various security findings providers' solutions, this generator can be called a rule, a check, a
      *         detector, a plugin, etc.
      */
 
@@ -969,13 +1251,13 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
-     * various security-findings providers' solutions, this generator can be called a rule, a check, a detector, a
+     * various security findings providers' solutions, this generator can be called a rule, a check, a detector, a
      * plugin, etc.
      * </p>
      * 
      * @param generatorId
      *        The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
-     *        various security-findings providers' solutions, this generator can be called a rule, a check, a detector,
+     *        various security findings providers' solutions, this generator can be called a rule, a check, a detector,
      *        a plugin, etc.
      */
 
@@ -991,7 +1273,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
-     * various security-findings providers' solutions, this generator can be called a rule, a check, a detector, a
+     * various security findings providers' solutions, this generator can be called a rule, a check, a detector, a
      * plugin, etc.
      * </p>
      * <p>
@@ -1002,7 +1284,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * 
      * @param generatorId
      *        The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
-     *        various security-findings providers' solutions, this generator can be called a rule, a check, a detector,
+     *        various security findings providers' solutions, this generator can be called a rule, a check, a detector,
      *        a plugin, etc.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1020,13 +1302,13 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     /**
      * <p>
      * The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
-     * various security-findings providers' solutions, this generator can be called a rule, a check, a detector, a
+     * various security findings providers' solutions, this generator can be called a rule, a check, a detector, a
      * plugin, etc.
      * </p>
      * 
      * @param generatorId
      *        The identifier for the solution-specific component (a discrete unit of logic) that generated a finding. In
-     *        various security-findings providers' solutions, this generator can be called a rule, a check, a detector,
+     *        various security findings providers' solutions, this generator can be called a rule, a check, a detector,
      *        a plugin, etc.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1178,12 +1460,76 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the potential
-     * security issue that a finding captured.
+     * A timestamp that indicates when the security findings provider first observed the potential security issue that a
+     * finding captured.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the
-     *         potential security issue that a finding captured.
+     * @return A timestamp that indicates when the security findings provider first observed the potential security
+     *         issue that a finding captured.</p>
+     *         <p>
+     *         This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *         <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *         maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *         <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<DateFilter> getFirstObservedAt() {
@@ -1192,13 +1538,77 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the potential
-     * security issue that a finding captured.
+     * A timestamp that indicates when the security findings provider first observed the potential security issue that a
+     * finding captured.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param firstObservedAt
-     *        An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the
-     *        potential security issue that a finding captured.
+     *        A timestamp that indicates when the security findings provider first observed the potential security issue
+     *        that a finding captured.</p>
+     *        <p>
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      */
 
     public void setFirstObservedAt(java.util.Collection<DateFilter> firstObservedAt) {
@@ -1212,9 +1622,41 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the potential
-     * security issue that a finding captured.
+     * A timestamp that indicates when the security findings provider first observed the potential security issue that a
+     * finding captured.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFirstObservedAt(java.util.Collection)} or {@link #withFirstObservedAt(java.util.Collection)} if you
@@ -1222,8 +1664,40 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param firstObservedAt
-     *        An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the
-     *        potential security issue that a finding captured.
+     *        A timestamp that indicates when the security findings provider first observed the potential security issue
+     *        that a finding captured.</p>
+     *        <p>
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1239,13 +1713,77 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the potential
-     * security issue that a finding captured.
+     * A timestamp that indicates when the security findings provider first observed the potential security issue that a
+     * finding captured.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param firstObservedAt
-     *        An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the
-     *        potential security issue that a finding captured.
+     *        A timestamp that indicates when the security findings provider first observed the potential security issue
+     *        that a finding captured.</p>
+     *        <p>
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1256,12 +1794,76 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed the
-     * potential security issue that a finding captured.
+     * A timestamp that indicates when the security findings provider most recently observed the potential security
+     * issue that a finding captured.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed
-     *         the potential security issue that a finding captured.
+     * @return A timestamp that indicates when the security findings provider most recently observed the potential
+     *         security issue that a finding captured.</p>
+     *         <p>
+     *         This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *         <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *         maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *         <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<DateFilter> getLastObservedAt() {
@@ -1270,13 +1872,77 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed the
-     * potential security issue that a finding captured.
+     * A timestamp that indicates when the security findings provider most recently observed the potential security
+     * issue that a finding captured.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param lastObservedAt
-     *        An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed
-     *        the potential security issue that a finding captured.
+     *        A timestamp that indicates when the security findings provider most recently observed the potential
+     *        security issue that a finding captured.</p>
+     *        <p>
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      */
 
     public void setLastObservedAt(java.util.Collection<DateFilter> lastObservedAt) {
@@ -1290,9 +1956,41 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed the
-     * potential security issue that a finding captured.
+     * A timestamp that indicates when the security findings provider most recently observed the potential security
+     * issue that a finding captured.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setLastObservedAt(java.util.Collection)} or {@link #withLastObservedAt(java.util.Collection)} if you want
@@ -1300,8 +1998,40 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param lastObservedAt
-     *        An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed
-     *        the potential security issue that a finding captured.
+     *        A timestamp that indicates when the security findings provider most recently observed the potential
+     *        security issue that a finding captured.</p>
+     *        <p>
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1317,13 +2047,77 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed the
-     * potential security issue that a finding captured.
+     * A timestamp that indicates when the security findings provider most recently observed the potential security
+     * issue that a finding captured.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param lastObservedAt
-     *        An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed
-     *        the potential security issue that a finding captured.
+     *        A timestamp that indicates when the security findings provider most recently observed the potential
+     *        security issue that a finding captured.</p>
+     *        <p>
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1334,12 +2128,76 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider captured the potential security
-     * issue that a finding captured.
+     * A timestamp that indicates when the security findings provider created the potential security issue that a
+     * finding reflects.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return An ISO8601-formatted timestamp that indicates when the security-findings provider captured the potential
-     *         security issue that a finding captured.
+     * @return A timestamp that indicates when the security findings provider created the potential security issue that
+     *         a finding reflects.</p>
+     *         <p>
+     *         This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *         <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *         maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *         <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<DateFilter> getCreatedAt() {
@@ -1348,13 +2206,77 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider captured the potential security
-     * issue that a finding captured.
+     * A timestamp that indicates when the security findings provider created the potential security issue that a
+     * finding reflects.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createdAt
-     *        An ISO8601-formatted timestamp that indicates when the security-findings provider captured the potential
-     *        security issue that a finding captured.
+     *        A timestamp that indicates when the security findings provider created the potential security issue that a
+     *        finding reflects.</p>
+     *        <p>
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      */
 
     public void setCreatedAt(java.util.Collection<DateFilter> createdAt) {
@@ -1368,9 +2290,41 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider captured the potential security
-     * issue that a finding captured.
+     * A timestamp that indicates when the security findings provider created the potential security issue that a
+     * finding reflects.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setCreatedAt(java.util.Collection)} or {@link #withCreatedAt(java.util.Collection)} if you want to
@@ -1378,8 +2332,40 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param createdAt
-     *        An ISO8601-formatted timestamp that indicates when the security-findings provider captured the potential
-     *        security issue that a finding captured.
+     *        A timestamp that indicates when the security findings provider created the potential security issue that a
+     *        finding reflects.</p>
+     *        <p>
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1395,13 +2381,77 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider captured the potential security
-     * issue that a finding captured.
+     * A timestamp that indicates when the security findings provider created the potential security issue that a
+     * finding reflects.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createdAt
-     *        An ISO8601-formatted timestamp that indicates when the security-findings provider captured the potential
-     *        security issue that a finding captured.
+     *        A timestamp that indicates when the security findings provider created the potential security issue that a
+     *        finding reflects.</p>
+     *        <p>
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1412,12 +2462,74 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the finding
-     * record.
+     * A timestamp that indicates when the security findings provider last updated the finding record.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the
-     *         finding record.
+     * @return A timestamp that indicates when the security findings provider last updated the finding record.</p>
+     *         <p>
+     *         This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *         <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *         maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *         <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<DateFilter> getUpdatedAt() {
@@ -1426,13 +2538,75 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the finding
-     * record.
+     * A timestamp that indicates when the security findings provider last updated the finding record.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param updatedAt
-     *        An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the finding
-     *        record.
+     *        A timestamp that indicates when the security findings provider last updated the finding record.</p>
+     *        <p>
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      */
 
     public void setUpdatedAt(java.util.Collection<DateFilter> updatedAt) {
@@ -1446,9 +2620,40 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the finding
-     * record.
+     * A timestamp that indicates when the security findings provider last updated the finding record.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setUpdatedAt(java.util.Collection)} or {@link #withUpdatedAt(java.util.Collection)} if you want to
@@ -1456,8 +2661,39 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param updatedAt
-     *        An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the finding
-     *        record.
+     *        A timestamp that indicates when the security findings provider last updated the finding record.</p>
+     *        <p>
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1473,13 +2709,75 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the finding
-     * record.
+     * A timestamp that indicates when the security findings provider last updated the finding record.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param updatedAt
-     *        An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the finding
-     *        record.
+     *        A timestamp that indicates when the security findings provider last updated the finding record.</p>
+     *        <p>
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1490,10 +2788,10 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The native severity as defined by the security-findings provider's solution that generated the finding.
+     * The native severity as defined by the security findings provider's solution that generated the finding.
      * </p>
      * 
-     * @return The native severity as defined by the security-findings provider's solution that generated the finding.
+     * @return The native severity as defined by the security findings provider's solution that generated the finding.
      */
     @Deprecated
     public java.util.List<NumberFilter> getSeverityProduct() {
@@ -1502,11 +2800,11 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The native severity as defined by the security-findings provider's solution that generated the finding.
+     * The native severity as defined by the security findings provider's solution that generated the finding.
      * </p>
      * 
      * @param severityProduct
-     *        The native severity as defined by the security-findings provider's solution that generated the finding.
+     *        The native severity as defined by the security findings provider's solution that generated the finding.
      */
     @Deprecated
     public void setSeverityProduct(java.util.Collection<NumberFilter> severityProduct) {
@@ -1520,7 +2818,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The native severity as defined by the security-findings provider's solution that generated the finding.
+     * The native severity as defined by the security findings provider's solution that generated the finding.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1529,7 +2827,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param severityProduct
-     *        The native severity as defined by the security-findings provider's solution that generated the finding.
+     *        The native severity as defined by the security findings provider's solution that generated the finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -1545,11 +2843,11 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The native severity as defined by the security-findings provider's solution that generated the finding.
+     * The native severity as defined by the security findings provider's solution that generated the finding.
      * </p>
      * 
      * @param severityProduct
-     *        The native severity as defined by the security-findings provider's solution that generated the finding.
+     *        The native severity as defined by the security findings provider's solution that generated the finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -2114,10 +3412,10 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A URL that links to a page about the current finding in the security-findings provider's solution.
+     * A URL that links to a page about the current finding in the security findings provider's solution.
      * </p>
      * 
-     * @return A URL that links to a page about the current finding in the security-findings provider's solution.
+     * @return A URL that links to a page about the current finding in the security findings provider's solution.
      */
 
     public java.util.List<StringFilter> getSourceUrl() {
@@ -2126,11 +3424,11 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A URL that links to a page about the current finding in the security-findings provider's solution.
+     * A URL that links to a page about the current finding in the security findings provider's solution.
      * </p>
      * 
      * @param sourceUrl
-     *        A URL that links to a page about the current finding in the security-findings provider's solution.
+     *        A URL that links to a page about the current finding in the security findings provider's solution.
      */
 
     public void setSourceUrl(java.util.Collection<StringFilter> sourceUrl) {
@@ -2144,7 +3442,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A URL that links to a page about the current finding in the security-findings provider's solution.
+     * A URL that links to a page about the current finding in the security findings provider's solution.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2153,7 +3451,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param sourceUrl
-     *        A URL that links to a page about the current finding in the security-findings provider's solution.
+     *        A URL that links to a page about the current finding in the security findings provider's solution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2169,11 +3467,11 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A URL that links to a page about the current finding in the security-findings provider's solution.
+     * A URL that links to a page about the current finding in the security findings provider's solution.
      * </p>
      * 
      * @param sourceUrl
-     *        A URL that links to a page about the current finding in the security-findings provider's solution.
+     *        A URL that links to a page about the current finding in the security findings provider's solution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2184,11 +3482,11 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A data type where security-findings providers can include additional solution-specific details that aren't part
+     * A data type where security findings providers can include additional solution-specific details that aren't part
      * of the defined <code>AwsSecurityFinding</code> format.
      * </p>
      * 
-     * @return A data type where security-findings providers can include additional solution-specific details that
+     * @return A data type where security findings providers can include additional solution-specific details that
      *         aren't part of the defined <code>AwsSecurityFinding</code> format.
      */
 
@@ -2198,12 +3496,12 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A data type where security-findings providers can include additional solution-specific details that aren't part
+     * A data type where security findings providers can include additional solution-specific details that aren't part
      * of the defined <code>AwsSecurityFinding</code> format.
      * </p>
      * 
      * @param productFields
-     *        A data type where security-findings providers can include additional solution-specific details that aren't
+     *        A data type where security findings providers can include additional solution-specific details that aren't
      *        part of the defined <code>AwsSecurityFinding</code> format.
      */
 
@@ -2218,7 +3516,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A data type where security-findings providers can include additional solution-specific details that aren't part
+     * A data type where security findings providers can include additional solution-specific details that aren't part
      * of the defined <code>AwsSecurityFinding</code> format.
      * </p>
      * <p>
@@ -2228,7 +3526,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param productFields
-     *        A data type where security-findings providers can include additional solution-specific details that aren't
+     *        A data type where security findings providers can include additional solution-specific details that aren't
      *        part of the defined <code>AwsSecurityFinding</code> format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2245,12 +3543,12 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A data type where security-findings providers can include additional solution-specific details that aren't part
+     * A data type where security findings providers can include additional solution-specific details that aren't part
      * of the defined <code>AwsSecurityFinding</code> format.
      * </p>
      * 
      * @param productFields
-     *        A data type where security-findings providers can include additional solution-specific details that aren't
+     *        A data type where security findings providers can include additional solution-specific details that aren't
      *        part of the defined <code>AwsSecurityFinding</code> format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -3740,10 +5038,11 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The parent process ID.
+     * The parent process ID. This field accepts positive integers between <code>O</code> and <code>2147483647</code>.
      * </p>
      * 
-     * @return The parent process ID.
+     * @return The parent process ID. This field accepts positive integers between <code>O</code> and
+     *         <code>2147483647</code>.
      */
 
     public java.util.List<NumberFilter> getProcessParentPid() {
@@ -3752,11 +5051,12 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The parent process ID.
+     * The parent process ID. This field accepts positive integers between <code>O</code> and <code>2147483647</code>.
      * </p>
      * 
      * @param processParentPid
-     *        The parent process ID.
+     *        The parent process ID. This field accepts positive integers between <code>O</code> and
+     *        <code>2147483647</code>.
      */
 
     public void setProcessParentPid(java.util.Collection<NumberFilter> processParentPid) {
@@ -3770,7 +5070,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The parent process ID.
+     * The parent process ID. This field accepts positive integers between <code>O</code> and <code>2147483647</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -3779,7 +5079,8 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param processParentPid
-     *        The parent process ID.
+     *        The parent process ID. This field accepts positive integers between <code>O</code> and
+     *        <code>2147483647</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3795,11 +5096,12 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The parent process ID.
+     * The parent process ID. This field accepts positive integers between <code>O</code> and <code>2147483647</code>.
      * </p>
      * 
      * @param processParentPid
-     *        The parent process ID.
+     *        The parent process ID. This field accepts positive integers between <code>O</code> and
+     *        <code>2147483647</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3810,10 +5112,74 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The date/time that the process was launched.
+     * A timestamp that identifies when the process was launched.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The date/time that the process was launched.
+     * @return A timestamp that identifies when the process was launched.</p>
+     *         <p>
+     *         This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *         <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *         maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *         <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<DateFilter> getProcessLaunchedAt() {
@@ -3822,11 +5188,75 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The date/time that the process was launched.
+     * A timestamp that identifies when the process was launched.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param processLaunchedAt
-     *        The date/time that the process was launched.
+     *        A timestamp that identifies when the process was launched.</p>
+     *        <p>
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      */
 
     public void setProcessLaunchedAt(java.util.Collection<DateFilter> processLaunchedAt) {
@@ -3840,8 +5270,40 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The date/time that the process was launched.
+     * A timestamp that identifies when the process was launched.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setProcessLaunchedAt(java.util.Collection)} or {@link #withProcessLaunchedAt(java.util.Collection)} if
@@ -3849,7 +5311,39 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param processLaunchedAt
-     *        The date/time that the process was launched.
+     *        A timestamp that identifies when the process was launched.</p>
+     *        <p>
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3865,11 +5359,75 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The date/time that the process was launched.
+     * A timestamp that identifies when the process was launched.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param processLaunchedAt
-     *        The date/time that the process was launched.
+     *        A timestamp that identifies when the process was launched.</p>
+     *        <p>
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3880,10 +5438,74 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The date/time that the process was terminated.
+     * A timestamp that identifies when the process was terminated.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The date/time that the process was terminated.
+     * @return A timestamp that identifies when the process was terminated.</p>
+     *         <p>
+     *         This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *         <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *         maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *         <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<DateFilter> getProcessTerminatedAt() {
@@ -3892,11 +5514,75 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The date/time that the process was terminated.
+     * A timestamp that identifies when the process was terminated.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param processTerminatedAt
-     *        The date/time that the process was terminated.
+     *        A timestamp that identifies when the process was terminated.</p>
+     *        <p>
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      */
 
     public void setProcessTerminatedAt(java.util.Collection<DateFilter> processTerminatedAt) {
@@ -3910,8 +5596,40 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The date/time that the process was terminated.
+     * A timestamp that identifies when the process was terminated.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setProcessTerminatedAt(java.util.Collection)} or {@link #withProcessTerminatedAt(java.util.Collection)}
@@ -3919,7 +5637,39 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param processTerminatedAt
-     *        The date/time that the process was terminated.
+     *        A timestamp that identifies when the process was terminated.</p>
+     *        <p>
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3935,11 +5685,75 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The date/time that the process was terminated.
+     * A timestamp that identifies when the process was terminated.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param processTerminatedAt
-     *        The date/time that the process was terminated.
+     *        A timestamp that identifies when the process was terminated.</p>
+     *        <p>
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -4160,10 +5974,10 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The date/time of the last observation of a threat intelligence indicator.
+     * A timestamp that identifies the last observation of a threat intelligence indicator.
      * </p>
      * 
-     * @return The date/time of the last observation of a threat intelligence indicator.
+     * @return A timestamp that identifies the last observation of a threat intelligence indicator.
      */
 
     public java.util.List<DateFilter> getThreatIntelIndicatorLastObservedAt() {
@@ -4172,11 +5986,11 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The date/time of the last observation of a threat intelligence indicator.
+     * A timestamp that identifies the last observation of a threat intelligence indicator.
      * </p>
      * 
      * @param threatIntelIndicatorLastObservedAt
-     *        The date/time of the last observation of a threat intelligence indicator.
+     *        A timestamp that identifies the last observation of a threat intelligence indicator.
      */
 
     public void setThreatIntelIndicatorLastObservedAt(java.util.Collection<DateFilter> threatIntelIndicatorLastObservedAt) {
@@ -4190,7 +6004,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The date/time of the last observation of a threat intelligence indicator.
+     * A timestamp that identifies the last observation of a threat intelligence indicator.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -4200,7 +6014,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param threatIntelIndicatorLastObservedAt
-     *        The date/time of the last observation of a threat intelligence indicator.
+     *        A timestamp that identifies the last observation of a threat intelligence indicator.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -4216,11 +6030,11 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The date/time of the last observation of a threat intelligence indicator.
+     * A timestamp that identifies the last observation of a threat intelligence indicator.
      * </p>
      * 
      * @param threatIntelIndicatorLastObservedAt
-     *        The date/time of the last observation of a threat intelligence indicator.
+     *        A timestamp that identifies the last observation of a threat intelligence indicator.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -6056,10 +7870,74 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The date/time that the container was started.
+     * A timestamp that identifies when the container was started.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The date/time that the container was started.
+     * @return A timestamp that identifies when the container was started.</p>
+     *         <p>
+     *         This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *         <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *         maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *         <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<DateFilter> getResourceContainerLaunchedAt() {
@@ -6068,11 +7946,75 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The date/time that the container was started.
+     * A timestamp that identifies when the container was started.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceContainerLaunchedAt
-     *        The date/time that the container was started.
+     *        A timestamp that identifies when the container was started.</p>
+     *        <p>
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      */
 
     public void setResourceContainerLaunchedAt(java.util.Collection<DateFilter> resourceContainerLaunchedAt) {
@@ -6086,8 +8028,40 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The date/time that the container was started.
+     * A timestamp that identifies when the container was started.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setResourceContainerLaunchedAt(java.util.Collection)} or
@@ -6095,7 +8069,39 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param resourceContainerLaunchedAt
-     *        The date/time that the container was started.
+     *        A timestamp that identifies when the container was started.</p>
+     *        <p>
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -6111,11 +8117,75 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The date/time that the container was started.
+     * A timestamp that identifies when the container was started.
      * </p>
+     * <p>
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceContainerLaunchedAt
-     *        The date/time that the container was started.
+     *        A timestamp that identifies when the container was started.</p>
+     *        <p>
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -8346,6 +10416,686 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web
+     * Service and a number, such as APIGateway.5.
+     * </p>
+     * 
+     * @return The unique identifier of a control across standards. Values for this field typically consist of an Amazon
+     *         Web Service and a number, such as APIGateway.5.
+     */
+
+    public java.util.List<StringFilter> getComplianceSecurityControlId() {
+        return complianceSecurityControlId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web
+     * Service and a number, such as APIGateway.5.
+     * </p>
+     * 
+     * @param complianceSecurityControlId
+     *        The unique identifier of a control across standards. Values for this field typically consist of an Amazon
+     *        Web Service and a number, such as APIGateway.5.
+     */
+
+    public void setComplianceSecurityControlId(java.util.Collection<StringFilter> complianceSecurityControlId) {
+        if (complianceSecurityControlId == null) {
+            this.complianceSecurityControlId = null;
+            return;
+        }
+
+        this.complianceSecurityControlId = new java.util.ArrayList<StringFilter>(complianceSecurityControlId);
+    }
+
+    /**
+     * <p>
+     * The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web
+     * Service and a number, such as APIGateway.5.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setComplianceSecurityControlId(java.util.Collection)} or
+     * {@link #withComplianceSecurityControlId(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param complianceSecurityControlId
+     *        The unique identifier of a control across standards. Values for this field typically consist of an Amazon
+     *        Web Service and a number, such as APIGateway.5.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withComplianceSecurityControlId(StringFilter... complianceSecurityControlId) {
+        if (this.complianceSecurityControlId == null) {
+            setComplianceSecurityControlId(new java.util.ArrayList<StringFilter>(complianceSecurityControlId.length));
+        }
+        for (StringFilter ele : complianceSecurityControlId) {
+            this.complianceSecurityControlId.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of a control across standards. Values for this field typically consist of an Amazon Web
+     * Service and a number, such as APIGateway.5.
+     * </p>
+     * 
+     * @param complianceSecurityControlId
+     *        The unique identifier of a control across standards. Values for this field typically consist of an Amazon
+     *        Web Service and a number, such as APIGateway.5.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withComplianceSecurityControlId(java.util.Collection<StringFilter> complianceSecurityControlId) {
+        setComplianceSecurityControlId(complianceSecurityControlId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of
+     * the Amazon Resource Name (ARN) returned for a standard in the <a
+     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a>
+     * API response.
+     * </p>
+     * 
+     * @return The unique identifier of a standard in which a control is enabled. This field consists of the resource
+     *         portion of the Amazon Resource Name (ARN) returned for a standard in the <a
+     *         href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html"
+     *         >DescribeStandards</a> API response.
+     */
+
+    public java.util.List<StringFilter> getComplianceAssociatedStandardsId() {
+        return complianceAssociatedStandardsId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of
+     * the Amazon Resource Name (ARN) returned for a standard in the <a
+     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a>
+     * API response.
+     * </p>
+     * 
+     * @param complianceAssociatedStandardsId
+     *        The unique identifier of a standard in which a control is enabled. This field consists of the resource
+     *        portion of the Amazon Resource Name (ARN) returned for a standard in the <a
+     *        href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html"
+     *        >DescribeStandards</a> API response.
+     */
+
+    public void setComplianceAssociatedStandardsId(java.util.Collection<StringFilter> complianceAssociatedStandardsId) {
+        if (complianceAssociatedStandardsId == null) {
+            this.complianceAssociatedStandardsId = null;
+            return;
+        }
+
+        this.complianceAssociatedStandardsId = new java.util.ArrayList<StringFilter>(complianceAssociatedStandardsId);
+    }
+
+    /**
+     * <p>
+     * The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of
+     * the Amazon Resource Name (ARN) returned for a standard in the <a
+     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a>
+     * API response.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setComplianceAssociatedStandardsId(java.util.Collection)} or
+     * {@link #withComplianceAssociatedStandardsId(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param complianceAssociatedStandardsId
+     *        The unique identifier of a standard in which a control is enabled. This field consists of the resource
+     *        portion of the Amazon Resource Name (ARN) returned for a standard in the <a
+     *        href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html"
+     *        >DescribeStandards</a> API response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withComplianceAssociatedStandardsId(StringFilter... complianceAssociatedStandardsId) {
+        if (this.complianceAssociatedStandardsId == null) {
+            setComplianceAssociatedStandardsId(new java.util.ArrayList<StringFilter>(complianceAssociatedStandardsId.length));
+        }
+        for (StringFilter ele : complianceAssociatedStandardsId) {
+            this.complianceAssociatedStandardsId.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of
+     * the Amazon Resource Name (ARN) returned for a standard in the <a
+     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a>
+     * API response.
+     * </p>
+     * 
+     * @param complianceAssociatedStandardsId
+     *        The unique identifier of a standard in which a control is enabled. This field consists of the resource
+     *        portion of the Amazon Resource Name (ARN) returned for a standard in the <a
+     *        href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html"
+     *        >DescribeStandards</a> API response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withComplianceAssociatedStandardsId(java.util.Collection<StringFilter> complianceAssociatedStandardsId) {
+        setComplianceAssociatedStandardsId(complianceAssociatedStandardsId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether a software vulnerability in your environment has a known exploit. You can filter findings by
+     * this field only if you use Security Hub and Amazon Inspector.
+     * </p>
+     * 
+     * @return Indicates whether a software vulnerability in your environment has a known exploit. You can filter
+     *         findings by this field only if you use Security Hub and Amazon Inspector.
+     */
+
+    public java.util.List<StringFilter> getVulnerabilitiesExploitAvailable() {
+        return vulnerabilitiesExploitAvailable;
+    }
+
+    /**
+     * <p>
+     * Indicates whether a software vulnerability in your environment has a known exploit. You can filter findings by
+     * this field only if you use Security Hub and Amazon Inspector.
+     * </p>
+     * 
+     * @param vulnerabilitiesExploitAvailable
+     *        Indicates whether a software vulnerability in your environment has a known exploit. You can filter
+     *        findings by this field only if you use Security Hub and Amazon Inspector.
+     */
+
+    public void setVulnerabilitiesExploitAvailable(java.util.Collection<StringFilter> vulnerabilitiesExploitAvailable) {
+        if (vulnerabilitiesExploitAvailable == null) {
+            this.vulnerabilitiesExploitAvailable = null;
+            return;
+        }
+
+        this.vulnerabilitiesExploitAvailable = new java.util.ArrayList<StringFilter>(vulnerabilitiesExploitAvailable);
+    }
+
+    /**
+     * <p>
+     * Indicates whether a software vulnerability in your environment has a known exploit. You can filter findings by
+     * this field only if you use Security Hub and Amazon Inspector.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVulnerabilitiesExploitAvailable(java.util.Collection)} or
+     * {@link #withVulnerabilitiesExploitAvailable(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param vulnerabilitiesExploitAvailable
+     *        Indicates whether a software vulnerability in your environment has a known exploit. You can filter
+     *        findings by this field only if you use Security Hub and Amazon Inspector.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withVulnerabilitiesExploitAvailable(StringFilter... vulnerabilitiesExploitAvailable) {
+        if (this.vulnerabilitiesExploitAvailable == null) {
+            setVulnerabilitiesExploitAvailable(new java.util.ArrayList<StringFilter>(vulnerabilitiesExploitAvailable.length));
+        }
+        for (StringFilter ele : vulnerabilitiesExploitAvailable) {
+            this.vulnerabilitiesExploitAvailable.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether a software vulnerability in your environment has a known exploit. You can filter findings by
+     * this field only if you use Security Hub and Amazon Inspector.
+     * </p>
+     * 
+     * @param vulnerabilitiesExploitAvailable
+     *        Indicates whether a software vulnerability in your environment has a known exploit. You can filter
+     *        findings by this field only if you use Security Hub and Amazon Inspector.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withVulnerabilitiesExploitAvailable(java.util.Collection<StringFilter> vulnerabilitiesExploitAvailable) {
+        setVulnerabilitiesExploitAvailable(vulnerabilitiesExploitAvailable);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether a vulnerability is fixed in a newer version of the affected software packages. You can filter
+     * findings by this field only if you use Security Hub and Amazon Inspector.
+     * </p>
+     * 
+     * @return Indicates whether a vulnerability is fixed in a newer version of the affected software packages. You can
+     *         filter findings by this field only if you use Security Hub and Amazon Inspector.
+     */
+
+    public java.util.List<StringFilter> getVulnerabilitiesFixAvailable() {
+        return vulnerabilitiesFixAvailable;
+    }
+
+    /**
+     * <p>
+     * Indicates whether a vulnerability is fixed in a newer version of the affected software packages. You can filter
+     * findings by this field only if you use Security Hub and Amazon Inspector.
+     * </p>
+     * 
+     * @param vulnerabilitiesFixAvailable
+     *        Indicates whether a vulnerability is fixed in a newer version of the affected software packages. You can
+     *        filter findings by this field only if you use Security Hub and Amazon Inspector.
+     */
+
+    public void setVulnerabilitiesFixAvailable(java.util.Collection<StringFilter> vulnerabilitiesFixAvailable) {
+        if (vulnerabilitiesFixAvailable == null) {
+            this.vulnerabilitiesFixAvailable = null;
+            return;
+        }
+
+        this.vulnerabilitiesFixAvailable = new java.util.ArrayList<StringFilter>(vulnerabilitiesFixAvailable);
+    }
+
+    /**
+     * <p>
+     * Indicates whether a vulnerability is fixed in a newer version of the affected software packages. You can filter
+     * findings by this field only if you use Security Hub and Amazon Inspector.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVulnerabilitiesFixAvailable(java.util.Collection)} or
+     * {@link #withVulnerabilitiesFixAvailable(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param vulnerabilitiesFixAvailable
+     *        Indicates whether a vulnerability is fixed in a newer version of the affected software packages. You can
+     *        filter findings by this field only if you use Security Hub and Amazon Inspector.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withVulnerabilitiesFixAvailable(StringFilter... vulnerabilitiesFixAvailable) {
+        if (this.vulnerabilitiesFixAvailable == null) {
+            setVulnerabilitiesFixAvailable(new java.util.ArrayList<StringFilter>(vulnerabilitiesFixAvailable.length));
+        }
+        for (StringFilter ele : vulnerabilitiesFixAvailable) {
+            this.vulnerabilitiesFixAvailable.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether a vulnerability is fixed in a newer version of the affected software packages. You can filter
+     * findings by this field only if you use Security Hub and Amazon Inspector.
+     * </p>
+     * 
+     * @param vulnerabilitiesFixAvailable
+     *        Indicates whether a vulnerability is fixed in a newer version of the affected software packages. You can
+     *        filter findings by this field only if you use Security Hub and Amazon Inspector.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withVulnerabilitiesFixAvailable(java.util.Collection<StringFilter> vulnerabilitiesFixAvailable) {
+        setVulnerabilitiesFixAvailable(vulnerabilitiesFixAvailable);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of a security control parameter.
+     * </p>
+     * 
+     * @return The name of a security control parameter.
+     */
+
+    public java.util.List<StringFilter> getComplianceSecurityControlParametersName() {
+        return complianceSecurityControlParametersName;
+    }
+
+    /**
+     * <p>
+     * The name of a security control parameter.
+     * </p>
+     * 
+     * @param complianceSecurityControlParametersName
+     *        The name of a security control parameter.
+     */
+
+    public void setComplianceSecurityControlParametersName(java.util.Collection<StringFilter> complianceSecurityControlParametersName) {
+        if (complianceSecurityControlParametersName == null) {
+            this.complianceSecurityControlParametersName = null;
+            return;
+        }
+
+        this.complianceSecurityControlParametersName = new java.util.ArrayList<StringFilter>(complianceSecurityControlParametersName);
+    }
+
+    /**
+     * <p>
+     * The name of a security control parameter.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setComplianceSecurityControlParametersName(java.util.Collection)} or
+     * {@link #withComplianceSecurityControlParametersName(java.util.Collection)} if you want to override the existing
+     * values.
+     * </p>
+     * 
+     * @param complianceSecurityControlParametersName
+     *        The name of a security control parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withComplianceSecurityControlParametersName(StringFilter... complianceSecurityControlParametersName) {
+        if (this.complianceSecurityControlParametersName == null) {
+            setComplianceSecurityControlParametersName(new java.util.ArrayList<StringFilter>(complianceSecurityControlParametersName.length));
+        }
+        for (StringFilter ele : complianceSecurityControlParametersName) {
+            this.complianceSecurityControlParametersName.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of a security control parameter.
+     * </p>
+     * 
+     * @param complianceSecurityControlParametersName
+     *        The name of a security control parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withComplianceSecurityControlParametersName(java.util.Collection<StringFilter> complianceSecurityControlParametersName) {
+        setComplianceSecurityControlParametersName(complianceSecurityControlParametersName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current value of a security control parameter.
+     * </p>
+     * 
+     * @return The current value of a security control parameter.
+     */
+
+    public java.util.List<StringFilter> getComplianceSecurityControlParametersValue() {
+        return complianceSecurityControlParametersValue;
+    }
+
+    /**
+     * <p>
+     * The current value of a security control parameter.
+     * </p>
+     * 
+     * @param complianceSecurityControlParametersValue
+     *        The current value of a security control parameter.
+     */
+
+    public void setComplianceSecurityControlParametersValue(java.util.Collection<StringFilter> complianceSecurityControlParametersValue) {
+        if (complianceSecurityControlParametersValue == null) {
+            this.complianceSecurityControlParametersValue = null;
+            return;
+        }
+
+        this.complianceSecurityControlParametersValue = new java.util.ArrayList<StringFilter>(complianceSecurityControlParametersValue);
+    }
+
+    /**
+     * <p>
+     * The current value of a security control parameter.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setComplianceSecurityControlParametersValue(java.util.Collection)} or
+     * {@link #withComplianceSecurityControlParametersValue(java.util.Collection)} if you want to override the existing
+     * values.
+     * </p>
+     * 
+     * @param complianceSecurityControlParametersValue
+     *        The current value of a security control parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withComplianceSecurityControlParametersValue(StringFilter... complianceSecurityControlParametersValue) {
+        if (this.complianceSecurityControlParametersValue == null) {
+            setComplianceSecurityControlParametersValue(new java.util.ArrayList<StringFilter>(complianceSecurityControlParametersValue.length));
+        }
+        for (StringFilter ele : complianceSecurityControlParametersValue) {
+            this.complianceSecurityControlParametersValue.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current value of a security control parameter.
+     * </p>
+     * 
+     * @param complianceSecurityControlParametersValue
+     *        The current value of a security control parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withComplianceSecurityControlParametersValue(java.util.Collection<StringFilter> complianceSecurityControlParametersValue) {
+        setComplianceSecurityControlParametersValue(complianceSecurityControlParametersValue);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the Amazon Web Services account in which a finding is generated.
+     * </p>
+     * 
+     * @return The name of the Amazon Web Services account in which a finding is generated.
+     */
+
+    public java.util.List<StringFilter> getAwsAccountName() {
+        return awsAccountName;
+    }
+
+    /**
+     * <p>
+     * The name of the Amazon Web Services account in which a finding is generated.
+     * </p>
+     * 
+     * @param awsAccountName
+     *        The name of the Amazon Web Services account in which a finding is generated.
+     */
+
+    public void setAwsAccountName(java.util.Collection<StringFilter> awsAccountName) {
+        if (awsAccountName == null) {
+            this.awsAccountName = null;
+            return;
+        }
+
+        this.awsAccountName = new java.util.ArrayList<StringFilter>(awsAccountName);
+    }
+
+    /**
+     * <p>
+     * The name of the Amazon Web Services account in which a finding is generated.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAwsAccountName(java.util.Collection)} or {@link #withAwsAccountName(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param awsAccountName
+     *        The name of the Amazon Web Services account in which a finding is generated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withAwsAccountName(StringFilter... awsAccountName) {
+        if (this.awsAccountName == null) {
+            setAwsAccountName(new java.util.ArrayList<StringFilter>(awsAccountName.length));
+        }
+        for (StringFilter ele : awsAccountName) {
+            this.awsAccountName.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the Amazon Web Services account in which a finding is generated.
+     * </p>
+     * 
+     * @param awsAccountName
+     *        The name of the Amazon Web Services account in which a finding is generated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withAwsAccountName(java.util.Collection<StringFilter> awsAccountName) {
+        setAwsAccountName(awsAccountName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the application that is related to a finding.
+     * </p>
+     * 
+     * @return The name of the application that is related to a finding.
+     */
+
+    public java.util.List<StringFilter> getResourceApplicationName() {
+        return resourceApplicationName;
+    }
+
+    /**
+     * <p>
+     * The name of the application that is related to a finding.
+     * </p>
+     * 
+     * @param resourceApplicationName
+     *        The name of the application that is related to a finding.
+     */
+
+    public void setResourceApplicationName(java.util.Collection<StringFilter> resourceApplicationName) {
+        if (resourceApplicationName == null) {
+            this.resourceApplicationName = null;
+            return;
+        }
+
+        this.resourceApplicationName = new java.util.ArrayList<StringFilter>(resourceApplicationName);
+    }
+
+    /**
+     * <p>
+     * The name of the application that is related to a finding.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setResourceApplicationName(java.util.Collection)} or
+     * {@link #withResourceApplicationName(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param resourceApplicationName
+     *        The name of the application that is related to a finding.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withResourceApplicationName(StringFilter... resourceApplicationName) {
+        if (this.resourceApplicationName == null) {
+            setResourceApplicationName(new java.util.ArrayList<StringFilter>(resourceApplicationName.length));
+        }
+        for (StringFilter ele : resourceApplicationName) {
+            this.resourceApplicationName.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the application that is related to a finding.
+     * </p>
+     * 
+     * @param resourceApplicationName
+     *        The name of the application that is related to a finding.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withResourceApplicationName(java.util.Collection<StringFilter> resourceApplicationName) {
+        setResourceApplicationName(resourceApplicationName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the application that is related to a finding.
+     * </p>
+     * 
+     * @return The ARN of the application that is related to a finding.
+     */
+
+    public java.util.List<StringFilter> getResourceApplicationArn() {
+        return resourceApplicationArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the application that is related to a finding.
+     * </p>
+     * 
+     * @param resourceApplicationArn
+     *        The ARN of the application that is related to a finding.
+     */
+
+    public void setResourceApplicationArn(java.util.Collection<StringFilter> resourceApplicationArn) {
+        if (resourceApplicationArn == null) {
+            this.resourceApplicationArn = null;
+            return;
+        }
+
+        this.resourceApplicationArn = new java.util.ArrayList<StringFilter>(resourceApplicationArn);
+    }
+
+    /**
+     * <p>
+     * The ARN of the application that is related to a finding.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setResourceApplicationArn(java.util.Collection)} or
+     * {@link #withResourceApplicationArn(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param resourceApplicationArn
+     *        The ARN of the application that is related to a finding.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withResourceApplicationArn(StringFilter... resourceApplicationArn) {
+        if (this.resourceApplicationArn == null) {
+            setResourceApplicationArn(new java.util.ArrayList<StringFilter>(resourceApplicationArn.length));
+        }
+        for (StringFilter ele : resourceApplicationArn) {
+            this.resourceApplicationArn.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the application that is related to a finding.
+     * </p>
+     * 
+     * @param resourceApplicationArn
+     *        The ARN of the application that is related to a finding.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withResourceApplicationArn(java.util.Collection<StringFilter> resourceApplicationArn) {
+        setResourceApplicationArn(resourceApplicationArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -8546,7 +11296,25 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
         if (getFindingProviderFieldsTypes() != null)
             sb.append("FindingProviderFieldsTypes: ").append(getFindingProviderFieldsTypes()).append(",");
         if (getSample() != null)
-            sb.append("Sample: ").append(getSample());
+            sb.append("Sample: ").append(getSample()).append(",");
+        if (getComplianceSecurityControlId() != null)
+            sb.append("ComplianceSecurityControlId: ").append(getComplianceSecurityControlId()).append(",");
+        if (getComplianceAssociatedStandardsId() != null)
+            sb.append("ComplianceAssociatedStandardsId: ").append(getComplianceAssociatedStandardsId()).append(",");
+        if (getVulnerabilitiesExploitAvailable() != null)
+            sb.append("VulnerabilitiesExploitAvailable: ").append(getVulnerabilitiesExploitAvailable()).append(",");
+        if (getVulnerabilitiesFixAvailable() != null)
+            sb.append("VulnerabilitiesFixAvailable: ").append(getVulnerabilitiesFixAvailable()).append(",");
+        if (getComplianceSecurityControlParametersName() != null)
+            sb.append("ComplianceSecurityControlParametersName: ").append(getComplianceSecurityControlParametersName()).append(",");
+        if (getComplianceSecurityControlParametersValue() != null)
+            sb.append("ComplianceSecurityControlParametersValue: ").append(getComplianceSecurityControlParametersValue()).append(",");
+        if (getAwsAccountName() != null)
+            sb.append("AwsAccountName: ").append(getAwsAccountName()).append(",");
+        if (getResourceApplicationName() != null)
+            sb.append("ResourceApplicationName: ").append(getResourceApplicationName()).append(",");
+        if (getResourceApplicationArn() != null)
+            sb.append("ResourceApplicationArn: ").append(getResourceApplicationArn());
         sb.append("}");
         return sb.toString();
     }
@@ -8960,6 +11728,46 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
             return false;
         if (other.getSample() != null && other.getSample().equals(this.getSample()) == false)
             return false;
+        if (other.getComplianceSecurityControlId() == null ^ this.getComplianceSecurityControlId() == null)
+            return false;
+        if (other.getComplianceSecurityControlId() != null && other.getComplianceSecurityControlId().equals(this.getComplianceSecurityControlId()) == false)
+            return false;
+        if (other.getComplianceAssociatedStandardsId() == null ^ this.getComplianceAssociatedStandardsId() == null)
+            return false;
+        if (other.getComplianceAssociatedStandardsId() != null
+                && other.getComplianceAssociatedStandardsId().equals(this.getComplianceAssociatedStandardsId()) == false)
+            return false;
+        if (other.getVulnerabilitiesExploitAvailable() == null ^ this.getVulnerabilitiesExploitAvailable() == null)
+            return false;
+        if (other.getVulnerabilitiesExploitAvailable() != null
+                && other.getVulnerabilitiesExploitAvailable().equals(this.getVulnerabilitiesExploitAvailable()) == false)
+            return false;
+        if (other.getVulnerabilitiesFixAvailable() == null ^ this.getVulnerabilitiesFixAvailable() == null)
+            return false;
+        if (other.getVulnerabilitiesFixAvailable() != null && other.getVulnerabilitiesFixAvailable().equals(this.getVulnerabilitiesFixAvailable()) == false)
+            return false;
+        if (other.getComplianceSecurityControlParametersName() == null ^ this.getComplianceSecurityControlParametersName() == null)
+            return false;
+        if (other.getComplianceSecurityControlParametersName() != null
+                && other.getComplianceSecurityControlParametersName().equals(this.getComplianceSecurityControlParametersName()) == false)
+            return false;
+        if (other.getComplianceSecurityControlParametersValue() == null ^ this.getComplianceSecurityControlParametersValue() == null)
+            return false;
+        if (other.getComplianceSecurityControlParametersValue() != null
+                && other.getComplianceSecurityControlParametersValue().equals(this.getComplianceSecurityControlParametersValue()) == false)
+            return false;
+        if (other.getAwsAccountName() == null ^ this.getAwsAccountName() == null)
+            return false;
+        if (other.getAwsAccountName() != null && other.getAwsAccountName().equals(this.getAwsAccountName()) == false)
+            return false;
+        if (other.getResourceApplicationName() == null ^ this.getResourceApplicationName() == null)
+            return false;
+        if (other.getResourceApplicationName() != null && other.getResourceApplicationName().equals(this.getResourceApplicationName()) == false)
+            return false;
+        if (other.getResourceApplicationArn() == null ^ this.getResourceApplicationArn() == null)
+            return false;
+        if (other.getResourceApplicationArn() != null && other.getResourceApplicationArn().equals(this.getResourceApplicationArn()) == false)
+            return false;
         return true;
     }
 
@@ -9065,6 +11873,15 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getFindingProviderFieldsSeverityOriginal() == null) ? 0 : getFindingProviderFieldsSeverityOriginal().hashCode());
         hashCode = prime * hashCode + ((getFindingProviderFieldsTypes() == null) ? 0 : getFindingProviderFieldsTypes().hashCode());
         hashCode = prime * hashCode + ((getSample() == null) ? 0 : getSample().hashCode());
+        hashCode = prime * hashCode + ((getComplianceSecurityControlId() == null) ? 0 : getComplianceSecurityControlId().hashCode());
+        hashCode = prime * hashCode + ((getComplianceAssociatedStandardsId() == null) ? 0 : getComplianceAssociatedStandardsId().hashCode());
+        hashCode = prime * hashCode + ((getVulnerabilitiesExploitAvailable() == null) ? 0 : getVulnerabilitiesExploitAvailable().hashCode());
+        hashCode = prime * hashCode + ((getVulnerabilitiesFixAvailable() == null) ? 0 : getVulnerabilitiesFixAvailable().hashCode());
+        hashCode = prime * hashCode + ((getComplianceSecurityControlParametersName() == null) ? 0 : getComplianceSecurityControlParametersName().hashCode());
+        hashCode = prime * hashCode + ((getComplianceSecurityControlParametersValue() == null) ? 0 : getComplianceSecurityControlParametersValue().hashCode());
+        hashCode = prime * hashCode + ((getAwsAccountName() == null) ? 0 : getAwsAccountName().hashCode());
+        hashCode = prime * hashCode + ((getResourceApplicationName() == null) ? 0 : getResourceApplicationName().hashCode());
+        hashCode = prime * hashCode + ((getResourceApplicationArn() == null) ? 0 : getResourceApplicationArn().hashCode());
         return hashCode;
     }
 

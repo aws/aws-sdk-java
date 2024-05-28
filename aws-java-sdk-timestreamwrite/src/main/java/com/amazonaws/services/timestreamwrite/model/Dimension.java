@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Dimension represents the meta data attributes of the time series. For example, the name and availability zone of an
- * EC2 instance or the name of the manufacturer of a wind turbine are dimensions.
+ * Represents the metadata attributes of the time series. For example, the name and Availability Zone of an EC2 instance
+ * or the name of the manufacturer of a wind turbine are dimensions.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/Dimension" target="_top">AWS API
@@ -31,11 +31,11 @@ public class Dimension implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Dimension represents the meta data attributes of the time series. For example, the name and availability zone of
+     * Dimension represents the metadata attributes of the time series. For example, the name and Availability Zone of
      * an EC2 instance or the name of the manufacturer of a wind turbine are dimensions.
      * </p>
      * <p>
-     * For constraints on Dimension names, see <a
+     * For constraints on dimension names, see <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming
      * Constraints</a>.
      * </p>
@@ -49,27 +49,27 @@ public class Dimension implements Serializable, Cloneable, StructuredPojo {
     private String value;
     /**
      * <p>
-     * The data type of the dimension for the time series data point.
+     * The data type of the dimension for the time-series data point.
      * </p>
      */
     private String dimensionValueType;
 
     /**
      * <p>
-     * Dimension represents the meta data attributes of the time series. For example, the name and availability zone of
+     * Dimension represents the metadata attributes of the time series. For example, the name and Availability Zone of
      * an EC2 instance or the name of the manufacturer of a wind turbine are dimensions.
      * </p>
      * <p>
-     * For constraints on Dimension names, see <a
+     * For constraints on dimension names, see <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming
      * Constraints</a>.
      * </p>
      * 
      * @param name
-     *        Dimension represents the meta data attributes of the time series. For example, the name and availability
-     *        zone of an EC2 instance or the name of the manufacturer of a wind turbine are dimensions. </p>
+     *        Dimension represents the metadata attributes of the time series. For example, the name and Availability
+     *        Zone of an EC2 instance or the name of the manufacturer of a wind turbine are dimensions. </p>
      *        <p>
-     *        For constraints on Dimension names, see <a
+     *        For constraints on dimension names, see <a
      *        href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming
      *        Constraints</a>.
      */
@@ -80,19 +80,19 @@ public class Dimension implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Dimension represents the meta data attributes of the time series. For example, the name and availability zone of
+     * Dimension represents the metadata attributes of the time series. For example, the name and Availability Zone of
      * an EC2 instance or the name of the manufacturer of a wind turbine are dimensions.
      * </p>
      * <p>
-     * For constraints on Dimension names, see <a
+     * For constraints on dimension names, see <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming
      * Constraints</a>.
      * </p>
      * 
-     * @return Dimension represents the meta data attributes of the time series. For example, the name and availability
-     *         zone of an EC2 instance or the name of the manufacturer of a wind turbine are dimensions. </p>
+     * @return Dimension represents the metadata attributes of the time series. For example, the name and Availability
+     *         Zone of an EC2 instance or the name of the manufacturer of a wind turbine are dimensions. </p>
      *         <p>
-     *         For constraints on Dimension names, see <a
+     *         For constraints on dimension names, see <a
      *         href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming
      *         Constraints</a>.
      */
@@ -103,20 +103,20 @@ public class Dimension implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Dimension represents the meta data attributes of the time series. For example, the name and availability zone of
+     * Dimension represents the metadata attributes of the time series. For example, the name and Availability Zone of
      * an EC2 instance or the name of the manufacturer of a wind turbine are dimensions.
      * </p>
      * <p>
-     * For constraints on Dimension names, see <a
+     * For constraints on dimension names, see <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming
      * Constraints</a>.
      * </p>
      * 
      * @param name
-     *        Dimension represents the meta data attributes of the time series. For example, the name and availability
-     *        zone of an EC2 instance or the name of the manufacturer of a wind turbine are dimensions. </p>
+     *        Dimension represents the metadata attributes of the time series. For example, the name and Availability
+     *        Zone of an EC2 instance or the name of the manufacturer of a wind turbine are dimensions. </p>
      *        <p>
-     *        For constraints on Dimension names, see <a
+     *        For constraints on dimension names, see <a
      *        href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">Naming
      *        Constraints</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -169,11 +169,11 @@ public class Dimension implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data type of the dimension for the time series data point.
+     * The data type of the dimension for the time-series data point.
      * </p>
      * 
      * @param dimensionValueType
-     *        The data type of the dimension for the time series data point.
+     *        The data type of the dimension for the time-series data point.
      * @see DimensionValueType
      */
 
@@ -183,10 +183,10 @@ public class Dimension implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data type of the dimension for the time series data point.
+     * The data type of the dimension for the time-series data point.
      * </p>
      * 
-     * @return The data type of the dimension for the time series data point.
+     * @return The data type of the dimension for the time-series data point.
      * @see DimensionValueType
      */
 
@@ -196,11 +196,11 @@ public class Dimension implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data type of the dimension for the time series data point.
+     * The data type of the dimension for the time-series data point.
      * </p>
      * 
      * @param dimensionValueType
-     *        The data type of the dimension for the time series data point.
+     *        The data type of the dimension for the time-series data point.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DimensionValueType
      */
@@ -212,11 +212,11 @@ public class Dimension implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data type of the dimension for the time series data point.
+     * The data type of the dimension for the time-series data point.
      * </p>
      * 
      * @param dimensionValueType
-     *        The data type of the dimension for the time series data point.
+     *        The data type of the dimension for the time-series data point.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DimensionValueType
      */

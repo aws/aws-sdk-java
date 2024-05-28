@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,12 +32,12 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * <code>PRINCIPAL</code> – list the principals that are associated with the specified resource share.
+     * <code>PRINCIPAL</code> – list the principals whose associations you want to see.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RESOURCE</code> – list the resources that are associated with the specified resource share.
+     * <code>RESOURCE</code> – list the resources whose associations you want to see.
      * </p>
      * </li>
      * </ul>
@@ -52,8 +52,8 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
     private java.util.List<String> resourceShareArns;
     /**
      * <p>
-     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     * Name (ARN)</a> of the resource whose resource shares you want to retrieve.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Name (ARN)</a> of a resource whose resource shares you want to retrieve.
      * </p>
      * <p>
      * You cannot specify this parameter if the association type is <code>PRINCIPAL</code>.
@@ -64,8 +64,8 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
      * <p>
      * Specifies the ID of the principal whose resource shares you want to retrieve. This can be an Amazon Web Services
      * account ID, an organization ID, an organizational unit ID, or the <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>
-     * of an individual IAM user or role.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>
+     * of an individual IAM role or user.
      * </p>
      * <p>
      * You cannot specify this parameter if the association type is <code>RESOURCE</code>.
@@ -74,7 +74,7 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
     private String principal;
     /**
      * <p>
-     * Specifies that you want to retrieve only associations with this status.
+     * Specifies that you want to retrieve only associations that have this status.
      * </p>
      */
     private String associationStatus;
@@ -106,12 +106,12 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * <code>PRINCIPAL</code> – list the principals that are associated with the specified resource share.
+     * <code>PRINCIPAL</code> – list the principals whose associations you want to see.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RESOURCE</code> – list the resources that are associated with the specified resource share.
+     * <code>RESOURCE</code> – list the resources whose associations you want to see.
      * </p>
      * </li>
      * </ul>
@@ -122,12 +122,12 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PRINCIPAL</code> – list the principals that are associated with the specified resource share.
+     *        <code>PRINCIPAL</code> – list the principals whose associations you want to see.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>RESOURCE</code> – list the resources that are associated with the specified resource share.
+     *        <code>RESOURCE</code> – list the resources whose associations you want to see.
      *        </p>
      *        </li>
      * @see ResourceShareAssociationType
@@ -144,12 +144,12 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * <code>PRINCIPAL</code> – list the principals that are associated with the specified resource share.
+     * <code>PRINCIPAL</code> – list the principals whose associations you want to see.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RESOURCE</code> – list the resources that are associated with the specified resource share.
+     * <code>RESOURCE</code> – list the resources whose associations you want to see.
      * </p>
      * </li>
      * </ul>
@@ -159,12 +159,12 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>PRINCIPAL</code> – list the principals that are associated with the specified resource share.
+     *         <code>PRINCIPAL</code> – list the principals whose associations you want to see.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>RESOURCE</code> – list the resources that are associated with the specified resource share.
+     *         <code>RESOURCE</code> – list the resources whose associations you want to see.
      *         </p>
      *         </li>
      * @see ResourceShareAssociationType
@@ -181,12 +181,12 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * <code>PRINCIPAL</code> – list the principals that are associated with the specified resource share.
+     * <code>PRINCIPAL</code> – list the principals whose associations you want to see.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RESOURCE</code> – list the resources that are associated with the specified resource share.
+     * <code>RESOURCE</code> – list the resources whose associations you want to see.
      * </p>
      * </li>
      * </ul>
@@ -197,12 +197,12 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PRINCIPAL</code> – list the principals that are associated with the specified resource share.
+     *        <code>PRINCIPAL</code> – list the principals whose associations you want to see.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>RESOURCE</code> – list the resources that are associated with the specified resource share.
+     *        <code>RESOURCE</code> – list the resources whose associations you want to see.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -221,12 +221,12 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
      * <ul>
      * <li>
      * <p>
-     * <code>PRINCIPAL</code> – list the principals that are associated with the specified resource share.
+     * <code>PRINCIPAL</code> – list the principals whose associations you want to see.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RESOURCE</code> – list the resources that are associated with the specified resource share.
+     * <code>RESOURCE</code> – list the resources whose associations you want to see.
      * </p>
      * </li>
      * </ul>
@@ -237,12 +237,12 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PRINCIPAL</code> – list the principals that are associated with the specified resource share.
+     *        <code>PRINCIPAL</code> – list the principals whose associations you want to see.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>RESOURCE</code> – list the resources that are associated with the specified resource share.
+     *        <code>RESOURCE</code> – list the resources whose associations you want to see.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -338,8 +338,8 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     * Name (ARN)</a> of the resource whose resource shares you want to retrieve.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Name (ARN)</a> of a resource whose resource shares you want to retrieve.
      * </p>
      * <p>
      * You cannot specify this parameter if the association type is <code>PRINCIPAL</code>.
@@ -347,7 +347,7 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
      * 
      * @param resourceArn
      *        Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     *        Resoure Name (ARN)</a> of the resource whose resource shares you want to retrieve.</p>
+     *        Resource Name (ARN)</a> of a resource whose resource shares you want to retrieve.</p>
      *        <p>
      *        You cannot specify this parameter if the association type is <code>PRINCIPAL</code>.
      */
@@ -358,15 +358,15 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     * Name (ARN)</a> of the resource whose resource shares you want to retrieve.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Name (ARN)</a> of a resource whose resource shares you want to retrieve.
      * </p>
      * <p>
      * You cannot specify this parameter if the association type is <code>PRINCIPAL</code>.
      * </p>
      * 
      * @return Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     *         Resoure Name (ARN)</a> of the resource whose resource shares you want to retrieve.</p>
+     *         Resource Name (ARN)</a> of a resource whose resource shares you want to retrieve.</p>
      *         <p>
      *         You cannot specify this parameter if the association type is <code>PRINCIPAL</code>.
      */
@@ -377,8 +377,8 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     * Name (ARN)</a> of the resource whose resource shares you want to retrieve.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Name (ARN)</a> of a resource whose resource shares you want to retrieve.
      * </p>
      * <p>
      * You cannot specify this parameter if the association type is <code>PRINCIPAL</code>.
@@ -386,7 +386,7 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
      * 
      * @param resourceArn
      *        Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     *        Resoure Name (ARN)</a> of the resource whose resource shares you want to retrieve.</p>
+     *        Resource Name (ARN)</a> of a resource whose resource shares you want to retrieve.</p>
      *        <p>
      *        You cannot specify this parameter if the association type is <code>PRINCIPAL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -401,8 +401,8 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
      * <p>
      * Specifies the ID of the principal whose resource shares you want to retrieve. This can be an Amazon Web Services
      * account ID, an organization ID, an organizational unit ID, or the <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>
-     * of an individual IAM user or role.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>
+     * of an individual IAM role or user.
      * </p>
      * <p>
      * You cannot specify this parameter if the association type is <code>RESOURCE</code>.
@@ -411,8 +411,8 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
      * @param principal
      *        Specifies the ID of the principal whose resource shares you want to retrieve. This can be an Amazon Web
      *        Services account ID, an organization ID, an organizational unit ID, or the <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
-     *        (ARN)</a> of an individual IAM user or role.</p>
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
+     *        (ARN)</a> of an individual IAM role or user.</p>
      *        <p>
      *        You cannot specify this parameter if the association type is <code>RESOURCE</code>.
      */
@@ -425,8 +425,8 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
      * <p>
      * Specifies the ID of the principal whose resource shares you want to retrieve. This can be an Amazon Web Services
      * account ID, an organization ID, an organizational unit ID, or the <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>
-     * of an individual IAM user or role.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>
+     * of an individual IAM role or user.
      * </p>
      * <p>
      * You cannot specify this parameter if the association type is <code>RESOURCE</code>.
@@ -434,8 +434,8 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
      * 
      * @return Specifies the ID of the principal whose resource shares you want to retrieve. This can be an Amazon Web
      *         Services account ID, an organization ID, an organizational unit ID, or the <a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
-     *         (ARN)</a> of an individual IAM user or role.</p>
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
+     *         (ARN)</a> of an individual IAM role or user.</p>
      *         <p>
      *         You cannot specify this parameter if the association type is <code>RESOURCE</code>.
      */
@@ -448,8 +448,8 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
      * <p>
      * Specifies the ID of the principal whose resource shares you want to retrieve. This can be an Amazon Web Services
      * account ID, an organization ID, an organizational unit ID, or the <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name (ARN)</a>
-     * of an individual IAM user or role.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>
+     * of an individual IAM role or user.
      * </p>
      * <p>
      * You cannot specify this parameter if the association type is <code>RESOURCE</code>.
@@ -458,8 +458,8 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
      * @param principal
      *        Specifies the ID of the principal whose resource shares you want to retrieve. This can be an Amazon Web
      *        Services account ID, an organization ID, an organizational unit ID, or the <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
-     *        (ARN)</a> of an individual IAM user or role.</p>
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
+     *        (ARN)</a> of an individual IAM role or user.</p>
      *        <p>
      *        You cannot specify this parameter if the association type is <code>RESOURCE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -472,11 +472,11 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Specifies that you want to retrieve only associations with this status.
+     * Specifies that you want to retrieve only associations that have this status.
      * </p>
      * 
      * @param associationStatus
-     *        Specifies that you want to retrieve only associations with this status.
+     *        Specifies that you want to retrieve only associations that have this status.
      * @see ResourceShareAssociationStatus
      */
 
@@ -486,10 +486,10 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Specifies that you want to retrieve only associations with this status.
+     * Specifies that you want to retrieve only associations that have this status.
      * </p>
      * 
-     * @return Specifies that you want to retrieve only associations with this status.
+     * @return Specifies that you want to retrieve only associations that have this status.
      * @see ResourceShareAssociationStatus
      */
 
@@ -499,11 +499,11 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Specifies that you want to retrieve only associations with this status.
+     * Specifies that you want to retrieve only associations that have this status.
      * </p>
      * 
      * @param associationStatus
-     *        Specifies that you want to retrieve only associations with this status.
+     *        Specifies that you want to retrieve only associations that have this status.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceShareAssociationStatus
      */
@@ -515,11 +515,11 @@ public class GetResourceShareAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Specifies that you want to retrieve only associations with this status.
+     * Specifies that you want to retrieve only associations that have this status.
      * </p>
      * 
      * @param associationStatus
-     *        Specifies that you want to retrieve only associations with this status.
+     *        Specifies that you want to retrieve only associations that have this status.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceShareAssociationStatus
      */

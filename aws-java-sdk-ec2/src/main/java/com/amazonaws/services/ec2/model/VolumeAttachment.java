@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,11 +36,17 @@ public class VolumeAttachment implements Serializable, Cloneable {
      * <p>
      * The device name.
      * </p>
+     * <p>
+     * If the volume is attached to a Fargate task, this parameter returns <code>null</code>.
+     * </p>
      */
     private String device;
     /**
      * <p>
      * The ID of the instance.
+     * </p>
+     * <p>
+     * If the volume is attached to a Fargate task, this parameter returns <code>null</code>.
      * </p>
      */
     private String instanceId;
@@ -62,6 +68,22 @@ public class VolumeAttachment implements Serializable, Cloneable {
      * </p>
      */
     private Boolean deleteOnTermination;
+    /**
+     * <p>
+     * The ARN of the Amazon ECS or Fargate task to which the volume is attached.
+     * </p>
+     */
+    private String associatedResource;
+    /**
+     * <p>
+     * The service principal of Amazon Web Services service that owns the underlying instance to which the volume is
+     * attached.
+     * </p>
+     * <p>
+     * This parameter is returned only for volumes that are attached to Fargate tasks.
+     * </p>
+     */
+    private String instanceOwningService;
 
     /**
      * <p>
@@ -107,9 +129,14 @@ public class VolumeAttachment implements Serializable, Cloneable {
      * <p>
      * The device name.
      * </p>
+     * <p>
+     * If the volume is attached to a Fargate task, this parameter returns <code>null</code>.
+     * </p>
      * 
      * @param device
-     *        The device name.
+     *        The device name.</p>
+     *        <p>
+     *        If the volume is attached to a Fargate task, this parameter returns <code>null</code>.
      */
 
     public void setDevice(String device) {
@@ -120,8 +147,13 @@ public class VolumeAttachment implements Serializable, Cloneable {
      * <p>
      * The device name.
      * </p>
+     * <p>
+     * If the volume is attached to a Fargate task, this parameter returns <code>null</code>.
+     * </p>
      * 
-     * @return The device name.
+     * @return The device name.</p>
+     *         <p>
+     *         If the volume is attached to a Fargate task, this parameter returns <code>null</code>.
      */
 
     public String getDevice() {
@@ -132,9 +164,14 @@ public class VolumeAttachment implements Serializable, Cloneable {
      * <p>
      * The device name.
      * </p>
+     * <p>
+     * If the volume is attached to a Fargate task, this parameter returns <code>null</code>.
+     * </p>
      * 
      * @param device
-     *        The device name.
+     *        The device name.</p>
+     *        <p>
+     *        If the volume is attached to a Fargate task, this parameter returns <code>null</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,9 +184,14 @@ public class VolumeAttachment implements Serializable, Cloneable {
      * <p>
      * The ID of the instance.
      * </p>
+     * <p>
+     * If the volume is attached to a Fargate task, this parameter returns <code>null</code>.
+     * </p>
      * 
      * @param instanceId
-     *        The ID of the instance.
+     *        The ID of the instance.</p>
+     *        <p>
+     *        If the volume is attached to a Fargate task, this parameter returns <code>null</code>.
      */
 
     public void setInstanceId(String instanceId) {
@@ -160,8 +202,13 @@ public class VolumeAttachment implements Serializable, Cloneable {
      * <p>
      * The ID of the instance.
      * </p>
+     * <p>
+     * If the volume is attached to a Fargate task, this parameter returns <code>null</code>.
+     * </p>
      * 
-     * @return The ID of the instance.
+     * @return The ID of the instance.</p>
+     *         <p>
+     *         If the volume is attached to a Fargate task, this parameter returns <code>null</code>.
      */
 
     public String getInstanceId() {
@@ -172,9 +219,14 @@ public class VolumeAttachment implements Serializable, Cloneable {
      * <p>
      * The ID of the instance.
      * </p>
+     * <p>
+     * If the volume is attached to a Fargate task, this parameter returns <code>null</code>.
+     * </p>
      * 
      * @param instanceId
-     *        The ID of the instance.
+     *        The ID of the instance.</p>
+     *        <p>
+     *        If the volume is attached to a Fargate task, this parameter returns <code>null</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -349,6 +401,107 @@ public class VolumeAttachment implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ARN of the Amazon ECS or Fargate task to which the volume is attached.
+     * </p>
+     * 
+     * @param associatedResource
+     *        The ARN of the Amazon ECS or Fargate task to which the volume is attached.
+     */
+
+    public void setAssociatedResource(String associatedResource) {
+        this.associatedResource = associatedResource;
+    }
+
+    /**
+     * <p>
+     * The ARN of the Amazon ECS or Fargate task to which the volume is attached.
+     * </p>
+     * 
+     * @return The ARN of the Amazon ECS or Fargate task to which the volume is attached.
+     */
+
+    public String getAssociatedResource() {
+        return this.associatedResource;
+    }
+
+    /**
+     * <p>
+     * The ARN of the Amazon ECS or Fargate task to which the volume is attached.
+     * </p>
+     * 
+     * @param associatedResource
+     *        The ARN of the Amazon ECS or Fargate task to which the volume is attached.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VolumeAttachment withAssociatedResource(String associatedResource) {
+        setAssociatedResource(associatedResource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The service principal of Amazon Web Services service that owns the underlying instance to which the volume is
+     * attached.
+     * </p>
+     * <p>
+     * This parameter is returned only for volumes that are attached to Fargate tasks.
+     * </p>
+     * 
+     * @param instanceOwningService
+     *        The service principal of Amazon Web Services service that owns the underlying instance to which the volume
+     *        is attached.</p>
+     *        <p>
+     *        This parameter is returned only for volumes that are attached to Fargate tasks.
+     */
+
+    public void setInstanceOwningService(String instanceOwningService) {
+        this.instanceOwningService = instanceOwningService;
+    }
+
+    /**
+     * <p>
+     * The service principal of Amazon Web Services service that owns the underlying instance to which the volume is
+     * attached.
+     * </p>
+     * <p>
+     * This parameter is returned only for volumes that are attached to Fargate tasks.
+     * </p>
+     * 
+     * @return The service principal of Amazon Web Services service that owns the underlying instance to which the
+     *         volume is attached.</p>
+     *         <p>
+     *         This parameter is returned only for volumes that are attached to Fargate tasks.
+     */
+
+    public String getInstanceOwningService() {
+        return this.instanceOwningService;
+    }
+
+    /**
+     * <p>
+     * The service principal of Amazon Web Services service that owns the underlying instance to which the volume is
+     * attached.
+     * </p>
+     * <p>
+     * This parameter is returned only for volumes that are attached to Fargate tasks.
+     * </p>
+     * 
+     * @param instanceOwningService
+     *        The service principal of Amazon Web Services service that owns the underlying instance to which the volume
+     *        is attached.</p>
+     *        <p>
+     *        This parameter is returned only for volumes that are attached to Fargate tasks.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VolumeAttachment withInstanceOwningService(String instanceOwningService) {
+        setInstanceOwningService(instanceOwningService);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -371,7 +524,11 @@ public class VolumeAttachment implements Serializable, Cloneable {
         if (getVolumeId() != null)
             sb.append("VolumeId: ").append(getVolumeId()).append(",");
         if (getDeleteOnTermination() != null)
-            sb.append("DeleteOnTermination: ").append(getDeleteOnTermination());
+            sb.append("DeleteOnTermination: ").append(getDeleteOnTermination()).append(",");
+        if (getAssociatedResource() != null)
+            sb.append("AssociatedResource: ").append(getAssociatedResource()).append(",");
+        if (getInstanceOwningService() != null)
+            sb.append("InstanceOwningService: ").append(getInstanceOwningService());
         sb.append("}");
         return sb.toString();
     }
@@ -410,6 +567,14 @@ public class VolumeAttachment implements Serializable, Cloneable {
             return false;
         if (other.getDeleteOnTermination() != null && other.getDeleteOnTermination().equals(this.getDeleteOnTermination()) == false)
             return false;
+        if (other.getAssociatedResource() == null ^ this.getAssociatedResource() == null)
+            return false;
+        if (other.getAssociatedResource() != null && other.getAssociatedResource().equals(this.getAssociatedResource()) == false)
+            return false;
+        if (other.getInstanceOwningService() == null ^ this.getInstanceOwningService() == null)
+            return false;
+        if (other.getInstanceOwningService() != null && other.getInstanceOwningService().equals(this.getInstanceOwningService()) == false)
+            return false;
         return true;
     }
 
@@ -424,6 +589,8 @@ public class VolumeAttachment implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
         hashCode = prime * hashCode + ((getDeleteOnTermination() == null) ? 0 : getDeleteOnTermination().hashCode());
+        hashCode = prime * hashCode + ((getAssociatedResource() == null) ? 0 : getAssociatedResource().hashCode());
+        hashCode = prime * hashCode + ((getInstanceOwningService() == null) ? 0 : getInstanceOwningService().hashCode());
         return hashCode;
     }
 

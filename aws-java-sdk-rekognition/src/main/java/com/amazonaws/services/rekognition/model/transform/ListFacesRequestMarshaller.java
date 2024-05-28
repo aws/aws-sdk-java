@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.rekognition.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,10 @@ public class ListFacesRequestMarshaller {
             .marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<String> USERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("UserId").build();
+    private static final MarshallingInfo<List> FACEIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("FaceIds").build();
 
     private static final ListFacesRequestMarshaller instance = new ListFacesRequestMarshaller();
 
@@ -53,6 +58,8 @@ public class ListFacesRequestMarshaller {
             protocolMarshaller.marshall(listFacesRequest.getCollectionId(), COLLECTIONID_BINDING);
             protocolMarshaller.marshall(listFacesRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listFacesRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listFacesRequest.getUserId(), USERID_BINDING);
+            protocolMarshaller.marshall(listFacesRequest.getFaceIds(), FACEIDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

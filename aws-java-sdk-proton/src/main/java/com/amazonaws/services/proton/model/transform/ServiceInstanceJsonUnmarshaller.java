@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,6 +68,14 @@ public class ServiceInstanceJsonUnmarshaller implements Unmarshaller<ServiceInst
                     context.nextToken();
                     serviceInstance.setEnvironmentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("lastAttemptedDeploymentId", targetDepth)) {
+                    context.nextToken();
+                    serviceInstance.setLastAttemptedDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("lastClientRequestToken", targetDepth)) {
+                    context.nextToken();
+                    serviceInstance.setLastClientRequestToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("lastDeploymentAttemptedAt", targetDepth)) {
                     context.nextToken();
                     serviceInstance.setLastDeploymentAttemptedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
@@ -75,6 +83,10 @@ public class ServiceInstanceJsonUnmarshaller implements Unmarshaller<ServiceInst
                 if (context.testExpression("lastDeploymentSucceededAt", targetDepth)) {
                     context.nextToken();
                     serviceInstance.setLastDeploymentSucceededAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("lastSucceededDeploymentId", targetDepth)) {
+                    context.nextToken();
+                    serviceInstance.setLastSucceededDeploymentId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();

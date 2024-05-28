@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,7 +44,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The event pattern of the rule. For more information, see <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and
-     * Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
+     * Event Patterns</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.
      * </p>
      */
     private String eventPattern;
@@ -52,6 +52,45 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The state of the rule.
      * </p>
+     * <p>
+     * Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DISABLED</code>: The rule is disabled. EventBridge does not match any events against the rule.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENABLED</code>: The rule is enabled. EventBridge matches events against the rule, <i>except</i> for Amazon
+     * Web Services management events delivered through CloudTrail.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS</code>: The rule is enabled for all events, including Amazon
+     * Web Services management events delivered through CloudTrail.
+     * </p>
+     * <p>
+     * Management events provide visibility into management operations that are performed on resources in your Amazon
+     * Web Services account. These are also known as control plane operations. For more information, see <a href=
+     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html#logging-management-events"
+     * >Logging management events</a> in the <i>CloudTrail User Guide</i>, and <a href=
+     * "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-cloudtrail"
+     * >Filtering management events from Amazon Web Services services</a> in the <i> <i>Amazon EventBridge User
+     * Guide</i> </i>.
+     * </p>
+     * <p>
+     * This value is only valid for rules on the <a href=
+     * "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is-how-it-works-concepts.html#eb-bus-concepts-buses"
+     * >default</a> event bus or <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-event-bus.html">custom event buses</a>.
+     * It does not apply to <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-saas.html">partner
+     * event buses</a>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String state;
     /**
@@ -177,13 +216,13 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The event pattern of the rule. For more information, see <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and
-     * Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
+     * Event Patterns</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.
      * </p>
      * 
      * @param eventPattern
      *        The event pattern of the rule. For more information, see <a
      *        href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events
-     *        and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
+     *        and Event Patterns</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.
      */
 
     public void setEventPattern(String eventPattern) {
@@ -194,12 +233,12 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The event pattern of the rule. For more information, see <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and
-     * Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
+     * Event Patterns</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.
      * </p>
      * 
      * @return The event pattern of the rule. For more information, see <a
      *         href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html"
-     *         >Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
+     *         >Events and Event Patterns</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.
      */
 
     public String getEventPattern() {
@@ -210,13 +249,13 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The event pattern of the rule. For more information, see <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and
-     * Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
+     * Event Patterns</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.
      * </p>
      * 
      * @param eventPattern
      *        The event pattern of the rule. For more information, see <a
      *        href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events
-     *        and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.
+     *        and Event Patterns</a> in the <i> <i>Amazon EventBridge User Guide</i> </i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -229,9 +268,87 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The state of the rule.
      * </p>
+     * <p>
+     * Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DISABLED</code>: The rule is disabled. EventBridge does not match any events against the rule.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENABLED</code>: The rule is enabled. EventBridge matches events against the rule, <i>except</i> for Amazon
+     * Web Services management events delivered through CloudTrail.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS</code>: The rule is enabled for all events, including Amazon
+     * Web Services management events delivered through CloudTrail.
+     * </p>
+     * <p>
+     * Management events provide visibility into management operations that are performed on resources in your Amazon
+     * Web Services account. These are also known as control plane operations. For more information, see <a href=
+     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html#logging-management-events"
+     * >Logging management events</a> in the <i>CloudTrail User Guide</i>, and <a href=
+     * "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-cloudtrail"
+     * >Filtering management events from Amazon Web Services services</a> in the <i> <i>Amazon EventBridge User
+     * Guide</i> </i>.
+     * </p>
+     * <p>
+     * This value is only valid for rules on the <a href=
+     * "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is-how-it-works-concepts.html#eb-bus-concepts-buses"
+     * >default</a> event bus or <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-event-bus.html">custom event buses</a>.
+     * It does not apply to <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-saas.html">partner
+     * event buses</a>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param state
-     *        The state of the rule.
+     *        The state of the rule.</p>
+     *        <p>
+     *        Valid values include:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DISABLED</code>: The rule is disabled. EventBridge does not match any events against the rule.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ENABLED</code>: The rule is enabled. EventBridge matches events against the rule, <i>except</i> for
+     *        Amazon Web Services management events delivered through CloudTrail.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS</code>: The rule is enabled for all events, including
+     *        Amazon Web Services management events delivered through CloudTrail.
+     *        </p>
+     *        <p>
+     *        Management events provide visibility into management operations that are performed on resources in your
+     *        Amazon Web Services account. These are also known as control plane operations. For more information, see
+     *        <a href=
+     *        "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html#logging-management-events"
+     *        >Logging management events</a> in the <i>CloudTrail User Guide</i>, and <a href=
+     *        "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-cloudtrail"
+     *        >Filtering management events from Amazon Web Services services</a> in the <i> <i>Amazon EventBridge User
+     *        Guide</i> </i>.
+     *        </p>
+     *        <p>
+     *        This value is only valid for rules on the <a href=
+     *        "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is-how-it-works-concepts.html#eb-bus-concepts-buses"
+     *        >default</a> event bus or <a
+     *        href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-event-bus.html">custom event
+     *        buses</a>. It does not apply to <a
+     *        href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-saas.html">partner event buses</a>.
+     *        </p>
+     *        </li>
      * @see RuleState
      */
 
@@ -243,8 +360,86 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The state of the rule.
      * </p>
+     * <p>
+     * Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DISABLED</code>: The rule is disabled. EventBridge does not match any events against the rule.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENABLED</code>: The rule is enabled. EventBridge matches events against the rule, <i>except</i> for Amazon
+     * Web Services management events delivered through CloudTrail.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS</code>: The rule is enabled for all events, including Amazon
+     * Web Services management events delivered through CloudTrail.
+     * </p>
+     * <p>
+     * Management events provide visibility into management operations that are performed on resources in your Amazon
+     * Web Services account. These are also known as control plane operations. For more information, see <a href=
+     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html#logging-management-events"
+     * >Logging management events</a> in the <i>CloudTrail User Guide</i>, and <a href=
+     * "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-cloudtrail"
+     * >Filtering management events from Amazon Web Services services</a> in the <i> <i>Amazon EventBridge User
+     * Guide</i> </i>.
+     * </p>
+     * <p>
+     * This value is only valid for rules on the <a href=
+     * "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is-how-it-works-concepts.html#eb-bus-concepts-buses"
+     * >default</a> event bus or <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-event-bus.html">custom event buses</a>.
+     * It does not apply to <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-saas.html">partner
+     * event buses</a>.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The state of the rule.
+     * @return The state of the rule.</p>
+     *         <p>
+     *         Valid values include:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>DISABLED</code>: The rule is disabled. EventBridge does not match any events against the rule.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ENABLED</code>: The rule is enabled. EventBridge matches events against the rule, <i>except</i> for
+     *         Amazon Web Services management events delivered through CloudTrail.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS</code>: The rule is enabled for all events, including
+     *         Amazon Web Services management events delivered through CloudTrail.
+     *         </p>
+     *         <p>
+     *         Management events provide visibility into management operations that are performed on resources in your
+     *         Amazon Web Services account. These are also known as control plane operations. For more information, see
+     *         <a href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html#logging-management-events"
+     *         >Logging management events</a> in the <i>CloudTrail User Guide</i>, and <a href=
+     *         "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-cloudtrail"
+     *         >Filtering management events from Amazon Web Services services</a> in the <i> <i>Amazon EventBridge User
+     *         Guide</i> </i>.
+     *         </p>
+     *         <p>
+     *         This value is only valid for rules on the <a href=
+     *         "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is-how-it-works-concepts.html#eb-bus-concepts-buses"
+     *         >default</a> event bus or <a
+     *         href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-event-bus.html">custom event
+     *         buses</a>. It does not apply to <a
+     *         href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-saas.html">partner event buses</a>.
+     *         </p>
+     *         </li>
      * @see RuleState
      */
 
@@ -256,9 +451,87 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The state of the rule.
      * </p>
+     * <p>
+     * Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DISABLED</code>: The rule is disabled. EventBridge does not match any events against the rule.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENABLED</code>: The rule is enabled. EventBridge matches events against the rule, <i>except</i> for Amazon
+     * Web Services management events delivered through CloudTrail.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS</code>: The rule is enabled for all events, including Amazon
+     * Web Services management events delivered through CloudTrail.
+     * </p>
+     * <p>
+     * Management events provide visibility into management operations that are performed on resources in your Amazon
+     * Web Services account. These are also known as control plane operations. For more information, see <a href=
+     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html#logging-management-events"
+     * >Logging management events</a> in the <i>CloudTrail User Guide</i>, and <a href=
+     * "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-cloudtrail"
+     * >Filtering management events from Amazon Web Services services</a> in the <i> <i>Amazon EventBridge User
+     * Guide</i> </i>.
+     * </p>
+     * <p>
+     * This value is only valid for rules on the <a href=
+     * "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is-how-it-works-concepts.html#eb-bus-concepts-buses"
+     * >default</a> event bus or <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-event-bus.html">custom event buses</a>.
+     * It does not apply to <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-saas.html">partner
+     * event buses</a>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param state
-     *        The state of the rule.
+     *        The state of the rule.</p>
+     *        <p>
+     *        Valid values include:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DISABLED</code>: The rule is disabled. EventBridge does not match any events against the rule.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ENABLED</code>: The rule is enabled. EventBridge matches events against the rule, <i>except</i> for
+     *        Amazon Web Services management events delivered through CloudTrail.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS</code>: The rule is enabled for all events, including
+     *        Amazon Web Services management events delivered through CloudTrail.
+     *        </p>
+     *        <p>
+     *        Management events provide visibility into management operations that are performed on resources in your
+     *        Amazon Web Services account. These are also known as control plane operations. For more information, see
+     *        <a href=
+     *        "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html#logging-management-events"
+     *        >Logging management events</a> in the <i>CloudTrail User Guide</i>, and <a href=
+     *        "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-cloudtrail"
+     *        >Filtering management events from Amazon Web Services services</a> in the <i> <i>Amazon EventBridge User
+     *        Guide</i> </i>.
+     *        </p>
+     *        <p>
+     *        This value is only valid for rules on the <a href=
+     *        "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is-how-it-works-concepts.html#eb-bus-concepts-buses"
+     *        >default</a> event bus or <a
+     *        href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-event-bus.html">custom event
+     *        buses</a>. It does not apply to <a
+     *        href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-saas.html">partner event buses</a>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuleState
      */
@@ -272,9 +545,87 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The state of the rule.
      * </p>
+     * <p>
+     * Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DISABLED</code>: The rule is disabled. EventBridge does not match any events against the rule.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENABLED</code>: The rule is enabled. EventBridge matches events against the rule, <i>except</i> for Amazon
+     * Web Services management events delivered through CloudTrail.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS</code>: The rule is enabled for all events, including Amazon
+     * Web Services management events delivered through CloudTrail.
+     * </p>
+     * <p>
+     * Management events provide visibility into management operations that are performed on resources in your Amazon
+     * Web Services account. These are also known as control plane operations. For more information, see <a href=
+     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html#logging-management-events"
+     * >Logging management events</a> in the <i>CloudTrail User Guide</i>, and <a href=
+     * "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-cloudtrail"
+     * >Filtering management events from Amazon Web Services services</a> in the <i> <i>Amazon EventBridge User
+     * Guide</i> </i>.
+     * </p>
+     * <p>
+     * This value is only valid for rules on the <a href=
+     * "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is-how-it-works-concepts.html#eb-bus-concepts-buses"
+     * >default</a> event bus or <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-event-bus.html">custom event buses</a>.
+     * It does not apply to <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-saas.html">partner
+     * event buses</a>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param state
-     *        The state of the rule.
+     *        The state of the rule.</p>
+     *        <p>
+     *        Valid values include:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DISABLED</code>: The rule is disabled. EventBridge does not match any events against the rule.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ENABLED</code>: The rule is enabled. EventBridge matches events against the rule, <i>except</i> for
+     *        Amazon Web Services management events delivered through CloudTrail.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS</code>: The rule is enabled for all events, including
+     *        Amazon Web Services management events delivered through CloudTrail.
+     *        </p>
+     *        <p>
+     *        Management events provide visibility into management operations that are performed on resources in your
+     *        Amazon Web Services account. These are also known as control plane operations. For more information, see
+     *        <a href=
+     *        "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html#logging-management-events"
+     *        >Logging management events</a> in the <i>CloudTrail User Guide</i>, and <a href=
+     *        "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-service-event.html#eb-service-event-cloudtrail"
+     *        >Filtering management events from Amazon Web Services services</a> in the <i> <i>Amazon EventBridge User
+     *        Guide</i> </i>.
+     *        </p>
+     *        <p>
+     *        This value is only valid for rules on the <a href=
+     *        "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is-how-it-works-concepts.html#eb-bus-concepts-buses"
+     *        >default</a> event bus or <a
+     *        href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-event-bus.html">custom event
+     *        buses</a>. It does not apply to <a
+     *        href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-saas.html">partner event buses</a>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuleState
      */

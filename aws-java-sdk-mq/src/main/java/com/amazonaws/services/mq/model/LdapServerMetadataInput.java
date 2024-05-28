@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,7 +35,7 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional
+     * Specifies the location of the LDAP server such as Directory Service for Microsoft Active Directory. Optional
      * failover server.
      * </p>
      */
@@ -117,11 +117,11 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional
+     * Specifies the location of the LDAP server such as Directory Service for Microsoft Active Directory. Optional
      * failover server.
      * </p>
      * 
-     * @return Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory .
+     * @return Specifies the location of the LDAP server such as Directory Service for Microsoft Active Directory.
      *         Optional failover server.
      */
 
@@ -131,12 +131,12 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional
+     * Specifies the location of the LDAP server such as Directory Service for Microsoft Active Directory. Optional
      * failover server.
      * </p>
      * 
      * @param hosts
-     *        Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory .
+     *        Specifies the location of the LDAP server such as Directory Service for Microsoft Active Directory.
      *        Optional failover server.
      */
 
@@ -151,7 +151,7 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional
+     * Specifies the location of the LDAP server such as Directory Service for Microsoft Active Directory. Optional
      * failover server.
      * </p>
      * <p>
@@ -161,7 +161,7 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @param hosts
-     *        Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory .
+     *        Specifies the location of the LDAP server such as Directory Service for Microsoft Active Directory.
      *        Optional failover server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -178,12 +178,12 @@ public class LdapServerMetadataInput implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory . Optional
+     * Specifies the location of the LDAP server such as Directory Service for Microsoft Active Directory. Optional
      * failover server.
      * </p>
      * 
      * @param hosts
-     *        Specifies the location of the LDAP server such as AWS Directory Service for Microsoft Active Directory .
+     *        Specifies the location of the LDAP server such as Directory Service for Microsoft Active Directory.
      *        Optional failover server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

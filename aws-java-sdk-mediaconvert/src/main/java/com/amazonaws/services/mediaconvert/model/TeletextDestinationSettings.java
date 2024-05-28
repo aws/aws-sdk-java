@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * Settings related to teletext captions. Set up teletext captions in the same output as your video. For more
- * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/teletext-output-captions.html. When you work
- * directly in your JSON job specification, include this object and any required children when you set destinationType
- * to TELETEXT.
+ * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/teletext-output-captions.html.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/TeletextDestinationSettings"
  *      target="_top">AWS API Documentation</a>
@@ -37,8 +35,8 @@ public class TeletextDestinationSettings implements Serializable, Cloneable, Str
     private String pageNumber;
     /**
      * Specify the page types for this Teletext page. If you don't specify a value here, the service sets the page type
-     * to the default value Subtitle (PAGE_TYPE_SUBTITLE). If you pass through the entire set of Teletext data, don't
-     * use this field. When you pass through a set of Teletext pages, your output has the same page types as your input.
+     * to the default value Subtitle. If you pass through the entire set of Teletext data, don't use this field. When
+     * you pass through a set of Teletext pages, your output has the same page types as your input.
      */
     private java.util.List<String> pageTypes;
 
@@ -90,13 +88,13 @@ public class TeletextDestinationSettings implements Serializable, Cloneable, Str
 
     /**
      * Specify the page types for this Teletext page. If you don't specify a value here, the service sets the page type
-     * to the default value Subtitle (PAGE_TYPE_SUBTITLE). If you pass through the entire set of Teletext data, don't
-     * use this field. When you pass through a set of Teletext pages, your output has the same page types as your input.
+     * to the default value Subtitle. If you pass through the entire set of Teletext data, don't use this field. When
+     * you pass through a set of Teletext pages, your output has the same page types as your input.
      * 
      * @return Specify the page types for this Teletext page. If you don't specify a value here, the service sets the
-     *         page type to the default value Subtitle (PAGE_TYPE_SUBTITLE). If you pass through the entire set of
-     *         Teletext data, don't use this field. When you pass through a set of Teletext pages, your output has the
-     *         same page types as your input.
+     *         page type to the default value Subtitle. If you pass through the entire set of Teletext data, don't use
+     *         this field. When you pass through a set of Teletext pages, your output has the same page types as your
+     *         input.
      * @see TeletextPageType
      */
 
@@ -106,14 +104,14 @@ public class TeletextDestinationSettings implements Serializable, Cloneable, Str
 
     /**
      * Specify the page types for this Teletext page. If you don't specify a value here, the service sets the page type
-     * to the default value Subtitle (PAGE_TYPE_SUBTITLE). If you pass through the entire set of Teletext data, don't
-     * use this field. When you pass through a set of Teletext pages, your output has the same page types as your input.
+     * to the default value Subtitle. If you pass through the entire set of Teletext data, don't use this field. When
+     * you pass through a set of Teletext pages, your output has the same page types as your input.
      * 
      * @param pageTypes
      *        Specify the page types for this Teletext page. If you don't specify a value here, the service sets the
-     *        page type to the default value Subtitle (PAGE_TYPE_SUBTITLE). If you pass through the entire set of
-     *        Teletext data, don't use this field. When you pass through a set of Teletext pages, your output has the
-     *        same page types as your input.
+     *        page type to the default value Subtitle. If you pass through the entire set of Teletext data, don't use
+     *        this field. When you pass through a set of Teletext pages, your output has the same page types as your
+     *        input.
      * @see TeletextPageType
      */
 
@@ -128,8 +126,8 @@ public class TeletextDestinationSettings implements Serializable, Cloneable, Str
 
     /**
      * Specify the page types for this Teletext page. If you don't specify a value here, the service sets the page type
-     * to the default value Subtitle (PAGE_TYPE_SUBTITLE). If you pass through the entire set of Teletext data, don't
-     * use this field. When you pass through a set of Teletext pages, your output has the same page types as your input.
+     * to the default value Subtitle. If you pass through the entire set of Teletext data, don't use this field. When
+     * you pass through a set of Teletext pages, your output has the same page types as your input.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setPageTypes(java.util.Collection)} or {@link #withPageTypes(java.util.Collection)} if you want to
@@ -138,9 +136,9 @@ public class TeletextDestinationSettings implements Serializable, Cloneable, Str
      * 
      * @param pageTypes
      *        Specify the page types for this Teletext page. If you don't specify a value here, the service sets the
-     *        page type to the default value Subtitle (PAGE_TYPE_SUBTITLE). If you pass through the entire set of
-     *        Teletext data, don't use this field. When you pass through a set of Teletext pages, your output has the
-     *        same page types as your input.
+     *        page type to the default value Subtitle. If you pass through the entire set of Teletext data, don't use
+     *        this field. When you pass through a set of Teletext pages, your output has the same page types as your
+     *        input.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TeletextPageType
      */
@@ -157,14 +155,14 @@ public class TeletextDestinationSettings implements Serializable, Cloneable, Str
 
     /**
      * Specify the page types for this Teletext page. If you don't specify a value here, the service sets the page type
-     * to the default value Subtitle (PAGE_TYPE_SUBTITLE). If you pass through the entire set of Teletext data, don't
-     * use this field. When you pass through a set of Teletext pages, your output has the same page types as your input.
+     * to the default value Subtitle. If you pass through the entire set of Teletext data, don't use this field. When
+     * you pass through a set of Teletext pages, your output has the same page types as your input.
      * 
      * @param pageTypes
      *        Specify the page types for this Teletext page. If you don't specify a value here, the service sets the
-     *        page type to the default value Subtitle (PAGE_TYPE_SUBTITLE). If you pass through the entire set of
-     *        Teletext data, don't use this field. When you pass through a set of Teletext pages, your output has the
-     *        same page types as your input.
+     *        page type to the default value Subtitle. If you pass through the entire set of Teletext data, don't use
+     *        this field. When you pass through a set of Teletext pages, your output has the same page types as your
+     *        input.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TeletextPageType
      */
@@ -176,14 +174,14 @@ public class TeletextDestinationSettings implements Serializable, Cloneable, Str
 
     /**
      * Specify the page types for this Teletext page. If you don't specify a value here, the service sets the page type
-     * to the default value Subtitle (PAGE_TYPE_SUBTITLE). If you pass through the entire set of Teletext data, don't
-     * use this field. When you pass through a set of Teletext pages, your output has the same page types as your input.
+     * to the default value Subtitle. If you pass through the entire set of Teletext data, don't use this field. When
+     * you pass through a set of Teletext pages, your output has the same page types as your input.
      * 
      * @param pageTypes
      *        Specify the page types for this Teletext page. If you don't specify a value here, the service sets the
-     *        page type to the default value Subtitle (PAGE_TYPE_SUBTITLE). If you pass through the entire set of
-     *        Teletext data, don't use this field. When you pass through a set of Teletext pages, your output has the
-     *        same page types as your input.
+     *        page type to the default value Subtitle. If you pass through the entire set of Teletext data, don't use
+     *        this field. When you pass through a set of Teletext pages, your output has the same page types as your
+     *        input.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TeletextPageType
      */

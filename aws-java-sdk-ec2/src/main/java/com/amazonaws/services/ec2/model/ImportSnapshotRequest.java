@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -75,9 +75,7 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
-     * Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the key, the
-     * Amazon Web Services account ID of the key owner, the <code>alias</code> namespace, and then the key alias. For
-     * example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     * Key alias
      * </p>
      * </li>
      * <li>
@@ -373,9 +371,7 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
-     * Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the key, the
-     * Amazon Web Services account ID of the key owner, the <code>alias</code> namespace, and then the key alias. For
-     * example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     * Key alias
      * </p>
      * </li>
      * <li>
@@ -420,9 +416,7 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
      *        </li>
      *        <li>
      *        <p>
-     *        Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
-     *        key, the Amazon Web Services account ID of the key owner, the <code>alias</code> namespace, and then the
-     *        key alias. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     *        Key alias
      *        </p>
      *        </li>
      *        <li>
@@ -475,9 +469,7 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
-     * Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the key, the
-     * Amazon Web Services account ID of the key owner, the <code>alias</code> namespace, and then the key alias. For
-     * example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     * Key alias
      * </p>
      * </li>
      * <li>
@@ -521,9 +513,7 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
      *         </li>
      *         <li>
      *         <p>
-     *         Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
-     *         key, the Amazon Web Services account ID of the key owner, the <code>alias</code> namespace, and then the
-     *         key alias. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     *         Key alias
      *         </p>
      *         </li>
      *         <li>
@@ -576,9 +566,7 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
-     * Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the key, the
-     * Amazon Web Services account ID of the key owner, the <code>alias</code> namespace, and then the key alias. For
-     * example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     * Key alias
      * </p>
      * </li>
      * <li>
@@ -623,9 +611,7 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
      *        </li>
      *        <li>
      *        <p>
-     *        Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
-     *        key, the Amazon Web Services account ID of the key owner, the <code>alias</code> namespace, and then the
-     *        key alias. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     *        Key alias
      *        </p>
      *        </li>
      *        <li>

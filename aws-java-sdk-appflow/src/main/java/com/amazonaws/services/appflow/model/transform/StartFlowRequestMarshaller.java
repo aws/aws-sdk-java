@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,6 +17,8 @@ import javax.annotation.Generated;
 import com.amazonaws.SdkClientException;
 import com.amazonaws.services.appflow.model.*;
 
+import com.amazonaws.util.IdempotentUtils;
+
 import com.amazonaws.protocol.*;
 import com.amazonaws.annotation.SdkInternalApi;
 
@@ -29,6 +31,9 @@ public class StartFlowRequestMarshaller {
 
     private static final MarshallingInfo<String> FLOWNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("flowName").build();
+    private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
+            .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
 
     private static final StartFlowRequestMarshaller instance = new StartFlowRequestMarshaller();
 
@@ -47,6 +52,7 @@ public class StartFlowRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(startFlowRequest.getFlowName(), FLOWNAME_BINDING);
+            protocolMarshaller.marshall(startFlowRequest.getClientToken(), CLIENTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,7 +44,8 @@ public class CreateVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
     private String path;
     /**
      * <p>
-     * The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device.
+     * The name of the virtual MFA device, which must be unique. Use with path to uniquely identify a virtual MFA
+     * device.
      * </p>
      * <p>
      * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
@@ -177,7 +178,8 @@ public class CreateVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device.
+     * The name of the virtual MFA device, which must be unique. Use with path to uniquely identify a virtual MFA
+     * device.
      * </p>
      * <p>
      * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
@@ -186,7 +188,8 @@ public class CreateVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param virtualMFADeviceName
-     *        The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device.</p>
+     *        The name of the virtual MFA device, which must be unique. Use with path to uniquely identify a virtual MFA
+     *        device.</p>
      *        <p>
      *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
      *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
@@ -199,7 +202,8 @@ public class CreateVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device.
+     * The name of the virtual MFA device, which must be unique. Use with path to uniquely identify a virtual MFA
+     * device.
      * </p>
      * <p>
      * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
@@ -207,7 +211,8 @@ public class CreateVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
      * the following characters: _+=,.@-
      * </p>
      * 
-     * @return The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device.</p>
+     * @return The name of the virtual MFA device, which must be unique. Use with path to uniquely identify a virtual
+     *         MFA device.</p>
      *         <p>
      *         This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
      *         of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also
@@ -220,7 +225,8 @@ public class CreateVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device.
+     * The name of the virtual MFA device, which must be unique. Use with path to uniquely identify a virtual MFA
+     * device.
      * </p>
      * <p>
      * This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
@@ -229,7 +235,8 @@ public class CreateVirtualMFADeviceRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param virtualMFADeviceName
-     *        The name of the virtual MFA device. Use with path to uniquely identify a virtual MFA device.</p>
+     *        The name of the virtual MFA device, which must be unique. Use with path to uniquely identify a virtual MFA
+     *        device.</p>
      *        <p>
      *        This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
      *        of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also

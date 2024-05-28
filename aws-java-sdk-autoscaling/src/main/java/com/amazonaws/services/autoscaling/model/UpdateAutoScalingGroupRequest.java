@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,7 +47,7 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     private LaunchTemplateSpecification launchTemplate;
     /**
      * <p>
-     * An embedded object that specifies a mixed instances policy. For more information, see <a
+     * The mixed instances policy. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.
@@ -102,20 +102,27 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     private com.amazonaws.internal.SdkInternalList<String> availabilityZones;
     /**
      * <p>
-     * The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If you
-     * configure an Auto Scaling group to use <code>ELB</code> health checks, it considers the instance unhealthy if it
-     * fails either the EC2 status checks or the load balancer health checks.
+     * A comma-separated value string of one or more health check types.
+     * </p>
+     * <p>
+     * The valid values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>. <code>EC2</code> is the
+     * default health check and cannot be disabled. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling
+     * instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
+     * Only specify <code>EC2</code> if you must clear a value that was previously set.
      * </p>
      */
     private String healthCheckType;
     /**
      * <p>
      * The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2
-     * instance that has come into service and marking it unhealthy due to a failed Elastic Load Balancing or custom
-     * health check. This is useful if your instances do not immediately pass these health checks after they enter the
-     * <code>InService</code> state. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-     * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * instance that has come into service and marking it unhealthy due to a failed health check. This is useful if your
+     * instances do not immediately pass their health checks after they enter the <code>InService</code> state. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set the health check
+     * grace period for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      */
     private Integer healthCheckGracePeriod;
@@ -216,28 +223,35 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     private String desiredCapacityType;
     /**
      * <p>
-     * The amount of time, in seconds, until a newly launched instance can contribute to the Amazon CloudWatch metrics.
-     * This delay lets an instance finish initializing before Amazon EC2 Auto Scaling aggregates instance metrics,
-     * resulting in more reliable usage data. Set this value equal to the amount of time that it takes for resource
-     * consumption to become stable after an instance reaches the <code>InService</code> state. For more information,
-     * see <a
+     * The amount of time, in seconds, until a new instance is considered to have finished initializing and resource
+     * consumption to become stable after it enters the <code>InService</code> state.
+     * </p>
+     * <p>
+     * During an instance refresh, Amazon EC2 Auto Scaling waits for the warm-up period after it replaces an instance
+     * before it moves on to replacing the next instance. Amazon EC2 Auto Scaling also waits for the warm-up period
+     * before aggregating the metrics for new instances with existing instances in the Amazon CloudWatch metrics that
+     * are used for scaling, resulting in more reliable usage data. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set
      * the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <important>
      * <p>
-     * To manage your warm-up settings at the group level, we recommend that you set the default instance warmup,
-     * <i>even if its value is set to 0 seconds</i>. This also optimizes the performance of scaling policies that scale
-     * continuously, such as target tracking and step scaling policies.
-     * </p>
-     * <p>
-     * If you need to remove a value that you previously set, include the property but specify <code>-1</code> for the
-     * value. However, we strongly recommend keeping the default instance warmup enabled by specifying a minimum value
-     * of <code>0</code>.
+     * To manage various warm-up settings at the group level, we recommend that you set the default instance warmup,
+     * <i>even if it is set to 0 seconds</i>. To remove a value that you previously set, include the property but
+     * specify <code>-1</code> for the value. However, we strongly recommend keeping the default instance warmup enabled
+     * by specifying a value of <code>0</code> or other nominal value.
      * </p>
      * </important>
      */
     private Integer defaultInstanceWarmup;
+    /**
+     * <p>
+     * An instance maintenance policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-maintenance-policy.html"
+     * >Set instance maintenance policy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     */
+    private InstanceMaintenancePolicy instanceMaintenancePolicy;
 
     /**
      * <p>
@@ -376,14 +390,14 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An embedded object that specifies a mixed instances policy. For more information, see <a
+     * The mixed instances policy. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.
      * </p>
      * 
      * @param mixedInstancesPolicy
-     *        An embedded object that specifies a mixed instances policy. For more information, see <a href=
+     *        The mixed instances policy. For more information, see <a href=
      *        "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      *        Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling
      *        User Guide</i>.
@@ -395,13 +409,13 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An embedded object that specifies a mixed instances policy. For more information, see <a
+     * The mixed instances policy. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.
      * </p>
      * 
-     * @return An embedded object that specifies a mixed instances policy. For more information, see <a
+     * @return The mixed instances policy. For more information, see <a
      *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html"
      *         >Auto Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto
      *         Scaling User Guide</i>.
@@ -413,14 +427,14 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An embedded object that specifies a mixed instances policy. For more information, see <a
+     * The mixed instances policy. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.
      * </p>
      * 
      * @param mixedInstancesPolicy
-     *        An embedded object that specifies a mixed instances policy. For more information, see <a href=
+     *        The mixed instances policy. For more information, see <a href=
      *        "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      *        Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling
      *        User Guide</i>.
@@ -754,15 +768,28 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If you
-     * configure an Auto Scaling group to use <code>ELB</code> health checks, it considers the instance unhealthy if it
-     * fails either the EC2 status checks or the load balancer health checks.
+     * A comma-separated value string of one or more health check types.
+     * </p>
+     * <p>
+     * The valid values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>. <code>EC2</code> is the
+     * default health check and cannot be disabled. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling
+     * instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
+     * Only specify <code>EC2</code> if you must clear a value that was previously set.
      * </p>
      * 
      * @param healthCheckType
-     *        The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If
-     *        you configure an Auto Scaling group to use <code>ELB</code> health checks, it considers the instance
-     *        unhealthy if it fails either the EC2 status checks or the load balancer health checks.
+     *        A comma-separated value string of one or more health check types.</p>
+     *        <p>
+     *        The valid values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>. <code>EC2</code> is
+     *        the default health check and cannot be disabled. For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto
+     *        Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        </p>
+     *        <p>
+     *        Only specify <code>EC2</code> if you must clear a value that was previously set.
      */
 
     public void setHealthCheckType(String healthCheckType) {
@@ -771,14 +798,27 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If you
-     * configure an Auto Scaling group to use <code>ELB</code> health checks, it considers the instance unhealthy if it
-     * fails either the EC2 status checks or the load balancer health checks.
+     * A comma-separated value string of one or more health check types.
+     * </p>
+     * <p>
+     * The valid values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>. <code>EC2</code> is the
+     * default health check and cannot be disabled. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling
+     * instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
+     * Only specify <code>EC2</code> if you must clear a value that was previously set.
      * </p>
      * 
-     * @return The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If
-     *         you configure an Auto Scaling group to use <code>ELB</code> health checks, it considers the instance
-     *         unhealthy if it fails either the EC2 status checks or the load balancer health checks.
+     * @return A comma-separated value string of one or more health check types.</p>
+     *         <p>
+     *         The valid values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>. <code>EC2</code>
+     *         is the default health check and cannot be disabled. For more information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto
+     *         Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *         </p>
+     *         <p>
+     *         Only specify <code>EC2</code> if you must clear a value that was previously set.
      */
 
     public String getHealthCheckType() {
@@ -787,15 +827,28 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If you
-     * configure an Auto Scaling group to use <code>ELB</code> health checks, it considers the instance unhealthy if it
-     * fails either the EC2 status checks or the load balancer health checks.
+     * A comma-separated value string of one or more health check types.
+     * </p>
+     * <p>
+     * The valid values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>. <code>EC2</code> is the
+     * default health check and cannot be disabled. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling
+     * instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
+     * Only specify <code>EC2</code> if you must clear a value that was previously set.
      * </p>
      * 
      * @param healthCheckType
-     *        The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If
-     *        you configure an Auto Scaling group to use <code>ELB</code> health checks, it considers the instance
-     *        unhealthy if it fails either the EC2 status checks or the load balancer health checks.
+     *        A comma-separated value string of one or more health check types.</p>
+     *        <p>
+     *        The valid values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>. <code>EC2</code> is
+     *        the default health check and cannot be disabled. For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto
+     *        Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        </p>
+     *        <p>
+     *        Only specify <code>EC2</code> if you must clear a value that was previously set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -807,20 +860,20 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2
-     * instance that has come into service and marking it unhealthy due to a failed Elastic Load Balancing or custom
-     * health check. This is useful if your instances do not immediately pass these health checks after they enter the
-     * <code>InService</code> state. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-     * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * instance that has come into service and marking it unhealthy due to a failed health check. This is useful if your
+     * instances do not immediately pass their health checks after they enter the <code>InService</code> state. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set the health check
+     * grace period for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param healthCheckGracePeriod
      *        The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an
-     *        EC2 instance that has come into service and marking it unhealthy due to a failed Elastic Load Balancing or
-     *        custom health check. This is useful if your instances do not immediately pass these health checks after
-     *        they enter the <code>InService</code> state. For more information, see <a
-     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period"
-     *        >Health check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        EC2 instance that has come into service and marking it unhealthy due to a failed health check. This is
+     *        useful if your instances do not immediately pass their health checks after they enter the
+     *        <code>InService</code> state. For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set the health
+     *        check grace period for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public void setHealthCheckGracePeriod(Integer healthCheckGracePeriod) {
@@ -830,19 +883,19 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2
-     * instance that has come into service and marking it unhealthy due to a failed Elastic Load Balancing or custom
-     * health check. This is useful if your instances do not immediately pass these health checks after they enter the
-     * <code>InService</code> state. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-     * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * instance that has come into service and marking it unhealthy due to a failed health check. This is useful if your
+     * instances do not immediately pass their health checks after they enter the <code>InService</code> state. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set the health check
+     * grace period for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of
-     *         an EC2 instance that has come into service and marking it unhealthy due to a failed Elastic Load
-     *         Balancing or custom health check. This is useful if your instances do not immediately pass these health
-     *         checks after they enter the <code>InService</code> state. For more information, see <a
-     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period"
-     *         >Health check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *         an EC2 instance that has come into service and marking it unhealthy due to a failed health check. This is
+     *         useful if your instances do not immediately pass their health checks after they enter the
+     *         <code>InService</code> state. For more information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set the
+     *         health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public Integer getHealthCheckGracePeriod() {
@@ -852,20 +905,20 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2
-     * instance that has come into service and marking it unhealthy due to a failed Elastic Load Balancing or custom
-     * health check. This is useful if your instances do not immediately pass these health checks after they enter the
-     * <code>InService</code> state. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-     * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * instance that has come into service and marking it unhealthy due to a failed health check. This is useful if your
+     * instances do not immediately pass their health checks after they enter the <code>InService</code> state. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set the health check
+     * grace period for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param healthCheckGracePeriod
      *        The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an
-     *        EC2 instance that has come into service and marking it unhealthy due to a failed Elastic Load Balancing or
-     *        custom health check. This is useful if your instances do not immediately pass these health checks after
-     *        they enter the <code>InService</code> state. For more information, see <a
-     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period"
-     *        >Health check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        EC2 instance that has come into service and marking it unhealthy due to a failed health check. This is
+     *        useful if your instances do not immediately pass their health checks after they enter the
+     *        <code>InService</code> state. For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set the health
+     *        check grace period for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1569,45 +1622,45 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The amount of time, in seconds, until a newly launched instance can contribute to the Amazon CloudWatch metrics.
-     * This delay lets an instance finish initializing before Amazon EC2 Auto Scaling aggregates instance metrics,
-     * resulting in more reliable usage data. Set this value equal to the amount of time that it takes for resource
-     * consumption to become stable after an instance reaches the <code>InService</code> state. For more information,
-     * see <a
+     * The amount of time, in seconds, until a new instance is considered to have finished initializing and resource
+     * consumption to become stable after it enters the <code>InService</code> state.
+     * </p>
+     * <p>
+     * During an instance refresh, Amazon EC2 Auto Scaling waits for the warm-up period after it replaces an instance
+     * before it moves on to replacing the next instance. Amazon EC2 Auto Scaling also waits for the warm-up period
+     * before aggregating the metrics for new instances with existing instances in the Amazon CloudWatch metrics that
+     * are used for scaling, resulting in more reliable usage data. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set
      * the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <important>
      * <p>
-     * To manage your warm-up settings at the group level, we recommend that you set the default instance warmup,
-     * <i>even if its value is set to 0 seconds</i>. This also optimizes the performance of scaling policies that scale
-     * continuously, such as target tracking and step scaling policies.
-     * </p>
-     * <p>
-     * If you need to remove a value that you previously set, include the property but specify <code>-1</code> for the
-     * value. However, we strongly recommend keeping the default instance warmup enabled by specifying a minimum value
-     * of <code>0</code>.
+     * To manage various warm-up settings at the group level, we recommend that you set the default instance warmup,
+     * <i>even if it is set to 0 seconds</i>. To remove a value that you previously set, include the property but
+     * specify <code>-1</code> for the value. However, we strongly recommend keeping the default instance warmup enabled
+     * by specifying a value of <code>0</code> or other nominal value.
      * </p>
      * </important>
      * 
      * @param defaultInstanceWarmup
-     *        The amount of time, in seconds, until a newly launched instance can contribute to the Amazon CloudWatch
-     *        metrics. This delay lets an instance finish initializing before Amazon EC2 Auto Scaling aggregates
-     *        instance metrics, resulting in more reliable usage data. Set this value equal to the amount of time that
-     *        it takes for resource consumption to become stable after an instance reaches the <code>InService</code>
-     *        state. For more information, see <a href=
+     *        The amount of time, in seconds, until a new instance is considered to have finished initializing and
+     *        resource consumption to become stable after it enters the <code>InService</code> state. </p>
+     *        <p>
+     *        During an instance refresh, Amazon EC2 Auto Scaling waits for the warm-up period after it replaces an
+     *        instance before it moves on to replacing the next instance. Amazon EC2 Auto Scaling also waits for the
+     *        warm-up period before aggregating the metrics for new instances with existing instances in the Amazon
+     *        CloudWatch metrics that are used for scaling, resulting in more reliable usage data. For more information,
+     *        see <a href=
      *        "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set
      *        the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User
-     *        Guide</i>.</p> <important>
-     *        <p>
-     *        To manage your warm-up settings at the group level, we recommend that you set the default instance warmup,
-     *        <i>even if its value is set to 0 seconds</i>. This also optimizes the performance of scaling policies that
-     *        scale continuously, such as target tracking and step scaling policies.
+     *        Guide</i>.
      *        </p>
+     *        <important>
      *        <p>
-     *        If you need to remove a value that you previously set, include the property but specify <code>-1</code>
-     *        for the value. However, we strongly recommend keeping the default instance warmup enabled by specifying a
-     *        minimum value of <code>0</code>.
+     *        To manage various warm-up settings at the group level, we recommend that you set the default instance
+     *        warmup, <i>even if it is set to 0 seconds</i>. To remove a value that you previously set, include the
+     *        property but specify <code>-1</code> for the value. However, we strongly recommend keeping the default
+     *        instance warmup enabled by specifying a value of <code>0</code> or other nominal value.
      *        </p>
      */
 
@@ -1617,44 +1670,44 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The amount of time, in seconds, until a newly launched instance can contribute to the Amazon CloudWatch metrics.
-     * This delay lets an instance finish initializing before Amazon EC2 Auto Scaling aggregates instance metrics,
-     * resulting in more reliable usage data. Set this value equal to the amount of time that it takes for resource
-     * consumption to become stable after an instance reaches the <code>InService</code> state. For more information,
-     * see <a
+     * The amount of time, in seconds, until a new instance is considered to have finished initializing and resource
+     * consumption to become stable after it enters the <code>InService</code> state.
+     * </p>
+     * <p>
+     * During an instance refresh, Amazon EC2 Auto Scaling waits for the warm-up period after it replaces an instance
+     * before it moves on to replacing the next instance. Amazon EC2 Auto Scaling also waits for the warm-up period
+     * before aggregating the metrics for new instances with existing instances in the Amazon CloudWatch metrics that
+     * are used for scaling, resulting in more reliable usage data. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set
      * the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <important>
      * <p>
-     * To manage your warm-up settings at the group level, we recommend that you set the default instance warmup,
-     * <i>even if its value is set to 0 seconds</i>. This also optimizes the performance of scaling policies that scale
-     * continuously, such as target tracking and step scaling policies.
-     * </p>
-     * <p>
-     * If you need to remove a value that you previously set, include the property but specify <code>-1</code> for the
-     * value. However, we strongly recommend keeping the default instance warmup enabled by specifying a minimum value
-     * of <code>0</code>.
+     * To manage various warm-up settings at the group level, we recommend that you set the default instance warmup,
+     * <i>even if it is set to 0 seconds</i>. To remove a value that you previously set, include the property but
+     * specify <code>-1</code> for the value. However, we strongly recommend keeping the default instance warmup enabled
+     * by specifying a value of <code>0</code> or other nominal value.
      * </p>
      * </important>
      * 
-     * @return The amount of time, in seconds, until a newly launched instance can contribute to the Amazon CloudWatch
-     *         metrics. This delay lets an instance finish initializing before Amazon EC2 Auto Scaling aggregates
-     *         instance metrics, resulting in more reliable usage data. Set this value equal to the amount of time that
-     *         it takes for resource consumption to become stable after an instance reaches the <code>InService</code>
-     *         state. For more information, see <a href=
+     * @return The amount of time, in seconds, until a new instance is considered to have finished initializing and
+     *         resource consumption to become stable after it enters the <code>InService</code> state. </p>
+     *         <p>
+     *         During an instance refresh, Amazon EC2 Auto Scaling waits for the warm-up period after it replaces an
+     *         instance before it moves on to replacing the next instance. Amazon EC2 Auto Scaling also waits for the
+     *         warm-up period before aggregating the metrics for new instances with existing instances in the Amazon
+     *         CloudWatch metrics that are used for scaling, resulting in more reliable usage data. For more
+     *         information, see <a href=
      *         "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set
      *         the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User
-     *         Guide</i>.</p> <important>
-     *         <p>
-     *         To manage your warm-up settings at the group level, we recommend that you set the default instance
-     *         warmup, <i>even if its value is set to 0 seconds</i>. This also optimizes the performance of scaling
-     *         policies that scale continuously, such as target tracking and step scaling policies.
+     *         Guide</i>.
      *         </p>
+     *         <important>
      *         <p>
-     *         If you need to remove a value that you previously set, include the property but specify <code>-1</code>
-     *         for the value. However, we strongly recommend keeping the default instance warmup enabled by specifying a
-     *         minimum value of <code>0</code>.
+     *         To manage various warm-up settings at the group level, we recommend that you set the default instance
+     *         warmup, <i>even if it is set to 0 seconds</i>. To remove a value that you previously set, include the
+     *         property but specify <code>-1</code> for the value. However, we strongly recommend keeping the default
+     *         instance warmup enabled by specifying a value of <code>0</code> or other nominal value.
      *         </p>
      */
 
@@ -1664,51 +1717,103 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The amount of time, in seconds, until a newly launched instance can contribute to the Amazon CloudWatch metrics.
-     * This delay lets an instance finish initializing before Amazon EC2 Auto Scaling aggregates instance metrics,
-     * resulting in more reliable usage data. Set this value equal to the amount of time that it takes for resource
-     * consumption to become stable after an instance reaches the <code>InService</code> state. For more information,
-     * see <a
+     * The amount of time, in seconds, until a new instance is considered to have finished initializing and resource
+     * consumption to become stable after it enters the <code>InService</code> state.
+     * </p>
+     * <p>
+     * During an instance refresh, Amazon EC2 Auto Scaling waits for the warm-up period after it replaces an instance
+     * before it moves on to replacing the next instance. Amazon EC2 Auto Scaling also waits for the warm-up period
+     * before aggregating the metrics for new instances with existing instances in the Amazon CloudWatch metrics that
+     * are used for scaling, resulting in more reliable usage data. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set
      * the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <important>
      * <p>
-     * To manage your warm-up settings at the group level, we recommend that you set the default instance warmup,
-     * <i>even if its value is set to 0 seconds</i>. This also optimizes the performance of scaling policies that scale
-     * continuously, such as target tracking and step scaling policies.
-     * </p>
-     * <p>
-     * If you need to remove a value that you previously set, include the property but specify <code>-1</code> for the
-     * value. However, we strongly recommend keeping the default instance warmup enabled by specifying a minimum value
-     * of <code>0</code>.
+     * To manage various warm-up settings at the group level, we recommend that you set the default instance warmup,
+     * <i>even if it is set to 0 seconds</i>. To remove a value that you previously set, include the property but
+     * specify <code>-1</code> for the value. However, we strongly recommend keeping the default instance warmup enabled
+     * by specifying a value of <code>0</code> or other nominal value.
      * </p>
      * </important>
      * 
      * @param defaultInstanceWarmup
-     *        The amount of time, in seconds, until a newly launched instance can contribute to the Amazon CloudWatch
-     *        metrics. This delay lets an instance finish initializing before Amazon EC2 Auto Scaling aggregates
-     *        instance metrics, resulting in more reliable usage data. Set this value equal to the amount of time that
-     *        it takes for resource consumption to become stable after an instance reaches the <code>InService</code>
-     *        state. For more information, see <a href=
+     *        The amount of time, in seconds, until a new instance is considered to have finished initializing and
+     *        resource consumption to become stable after it enters the <code>InService</code> state. </p>
+     *        <p>
+     *        During an instance refresh, Amazon EC2 Auto Scaling waits for the warm-up period after it replaces an
+     *        instance before it moves on to replacing the next instance. Amazon EC2 Auto Scaling also waits for the
+     *        warm-up period before aggregating the metrics for new instances with existing instances in the Amazon
+     *        CloudWatch metrics that are used for scaling, resulting in more reliable usage data. For more information,
+     *        see <a href=
      *        "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-default-instance-warmup.html">Set
      *        the default instance warmup for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User
-     *        Guide</i>.</p> <important>
-     *        <p>
-     *        To manage your warm-up settings at the group level, we recommend that you set the default instance warmup,
-     *        <i>even if its value is set to 0 seconds</i>. This also optimizes the performance of scaling policies that
-     *        scale continuously, such as target tracking and step scaling policies.
+     *        Guide</i>.
      *        </p>
+     *        <important>
      *        <p>
-     *        If you need to remove a value that you previously set, include the property but specify <code>-1</code>
-     *        for the value. However, we strongly recommend keeping the default instance warmup enabled by specifying a
-     *        minimum value of <code>0</code>.
+     *        To manage various warm-up settings at the group level, we recommend that you set the default instance
+     *        warmup, <i>even if it is set to 0 seconds</i>. To remove a value that you previously set, include the
+     *        property but specify <code>-1</code> for the value. However, we strongly recommend keeping the default
+     *        instance warmup enabled by specifying a value of <code>0</code> or other nominal value.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateAutoScalingGroupRequest withDefaultInstanceWarmup(Integer defaultInstanceWarmup) {
         setDefaultInstanceWarmup(defaultInstanceWarmup);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An instance maintenance policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-maintenance-policy.html"
+     * >Set instance maintenance policy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * 
+     * @param instanceMaintenancePolicy
+     *        An instance maintenance policy. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-maintenance-policy.html"
+     *        >Set instance maintenance policy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     */
+
+    public void setInstanceMaintenancePolicy(InstanceMaintenancePolicy instanceMaintenancePolicy) {
+        this.instanceMaintenancePolicy = instanceMaintenancePolicy;
+    }
+
+    /**
+     * <p>
+     * An instance maintenance policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-maintenance-policy.html"
+     * >Set instance maintenance policy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * 
+     * @return An instance maintenance policy. For more information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-maintenance-policy.html"
+     *         >Set instance maintenance policy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     */
+
+    public InstanceMaintenancePolicy getInstanceMaintenancePolicy() {
+        return this.instanceMaintenancePolicy;
+    }
+
+    /**
+     * <p>
+     * An instance maintenance policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-maintenance-policy.html"
+     * >Set instance maintenance policy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * 
+     * @param instanceMaintenancePolicy
+     *        An instance maintenance policy. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-instance-maintenance-policy.html"
+     *        >Set instance maintenance policy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAutoScalingGroupRequest withInstanceMaintenancePolicy(InstanceMaintenancePolicy instanceMaintenancePolicy) {
+        setInstanceMaintenancePolicy(instanceMaintenancePolicy);
         return this;
     }
 
@@ -1765,7 +1870,9 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
         if (getDesiredCapacityType() != null)
             sb.append("DesiredCapacityType: ").append(getDesiredCapacityType()).append(",");
         if (getDefaultInstanceWarmup() != null)
-            sb.append("DefaultInstanceWarmup: ").append(getDefaultInstanceWarmup());
+            sb.append("DefaultInstanceWarmup: ").append(getDefaultInstanceWarmup()).append(",");
+        if (getInstanceMaintenancePolicy() != null)
+            sb.append("InstanceMaintenancePolicy: ").append(getInstanceMaintenancePolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -1865,6 +1972,10 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getDefaultInstanceWarmup() != null && other.getDefaultInstanceWarmup().equals(this.getDefaultInstanceWarmup()) == false)
             return false;
+        if (other.getInstanceMaintenancePolicy() == null ^ this.getInstanceMaintenancePolicy() == null)
+            return false;
+        if (other.getInstanceMaintenancePolicy() != null && other.getInstanceMaintenancePolicy().equals(this.getInstanceMaintenancePolicy()) == false)
+            return false;
         return true;
     }
 
@@ -1894,6 +2005,7 @@ public class UpdateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getContext() == null) ? 0 : getContext().hashCode());
         hashCode = prime * hashCode + ((getDesiredCapacityType() == null) ? 0 : getDesiredCapacityType().hashCode());
         hashCode = prime * hashCode + ((getDefaultInstanceWarmup() == null) ? 0 : getDefaultInstanceWarmup().hashCode());
+        hashCode = prime * hashCode + ((getInstanceMaintenancePolicy() == null) ? 0 : getInstanceMaintenancePolicy().hashCode());
         return hashCode;
     }
 

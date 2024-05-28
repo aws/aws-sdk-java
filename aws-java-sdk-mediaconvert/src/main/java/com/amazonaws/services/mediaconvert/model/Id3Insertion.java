@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * To insert ID3 tags in your output, specify two values. Use ID3 tag (Id3) to specify the base 64 encoded string and
- * use Timecode (TimeCode) to specify the time when the tag should be inserted. To insert multiple ID3 tags in your
- * output, create multiple instances of ID3 insertion (Id3Insertion).
+ * To insert ID3 tags in your output, specify two values. Use ID3 tag to specify the base 64 encoded string and use
+ * Timecode to specify the time when the tag should be inserted. To insert multiple ID3 tags in your output, create
+ * multiple instances of ID3 insertion.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Id3Insertion" target="_top">AWS API
  *      Documentation</a>
@@ -28,16 +28,16 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Id3Insertion implements Serializable, Cloneable, StructuredPojo {
 
-    /** Use ID3 tag (Id3) to provide a fully formed ID3 tag in base64-encode format. */
+    /** Use ID3 tag to provide a fully formed ID3 tag in base64-encode format. */
     private String id3;
-    /** Provide a Timecode (TimeCode) in HH:MM:SS:FF or HH:MM:SS;FF format. */
+    /** Provide a Timecode in HH:MM:SS:FF or HH:MM:SS;FF format. */
     private String timecode;
 
     /**
-     * Use ID3 tag (Id3) to provide a fully formed ID3 tag in base64-encode format.
+     * Use ID3 tag to provide a fully formed ID3 tag in base64-encode format.
      * 
      * @param id3
-     *        Use ID3 tag (Id3) to provide a fully formed ID3 tag in base64-encode format.
+     *        Use ID3 tag to provide a fully formed ID3 tag in base64-encode format.
      */
 
     public void setId3(String id3) {
@@ -45,9 +45,9 @@ public class Id3Insertion implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use ID3 tag (Id3) to provide a fully formed ID3 tag in base64-encode format.
+     * Use ID3 tag to provide a fully formed ID3 tag in base64-encode format.
      * 
-     * @return Use ID3 tag (Id3) to provide a fully formed ID3 tag in base64-encode format.
+     * @return Use ID3 tag to provide a fully formed ID3 tag in base64-encode format.
      */
 
     public String getId3() {
@@ -55,10 +55,10 @@ public class Id3Insertion implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use ID3 tag (Id3) to provide a fully formed ID3 tag in base64-encode format.
+     * Use ID3 tag to provide a fully formed ID3 tag in base64-encode format.
      * 
      * @param id3
-     *        Use ID3 tag (Id3) to provide a fully formed ID3 tag in base64-encode format.
+     *        Use ID3 tag to provide a fully formed ID3 tag in base64-encode format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -68,10 +68,10 @@ public class Id3Insertion implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Provide a Timecode (TimeCode) in HH:MM:SS:FF or HH:MM:SS;FF format.
+     * Provide a Timecode in HH:MM:SS:FF or HH:MM:SS;FF format.
      * 
      * @param timecode
-     *        Provide a Timecode (TimeCode) in HH:MM:SS:FF or HH:MM:SS;FF format.
+     *        Provide a Timecode in HH:MM:SS:FF or HH:MM:SS;FF format.
      */
 
     public void setTimecode(String timecode) {
@@ -79,9 +79,9 @@ public class Id3Insertion implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Provide a Timecode (TimeCode) in HH:MM:SS:FF or HH:MM:SS;FF format.
+     * Provide a Timecode in HH:MM:SS:FF or HH:MM:SS;FF format.
      * 
-     * @return Provide a Timecode (TimeCode) in HH:MM:SS:FF or HH:MM:SS;FF format.
+     * @return Provide a Timecode in HH:MM:SS:FF or HH:MM:SS;FF format.
      */
 
     public String getTimecode() {
@@ -89,10 +89,10 @@ public class Id3Insertion implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Provide a Timecode (TimeCode) in HH:MM:SS:FF or HH:MM:SS;FF format.
+     * Provide a Timecode in HH:MM:SS:FF or HH:MM:SS;FF format.
      * 
      * @param timecode
-     *        Provide a Timecode (TimeCode) in HH:MM:SS:FF or HH:MM:SS;FF format.
+     *        Provide a Timecode in HH:MM:SS:FF or HH:MM:SS;FF format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

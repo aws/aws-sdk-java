@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,11 +32,11 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
     private java.util.List<Operation> operations;
     /**
      * <p>
-     * (Deprecated) Returns the number of pages of results that remain.
+     * (Discontinued) Returns the number of pages of results that remain.
      * </p>
      * <note>
      * <p>
-     * In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated,
+     * In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now discontinued,
      * and the API returns the <code>next page token</code> parameter instead.
      * </p>
      * </note>
@@ -137,20 +137,20 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * (Deprecated) Returns the number of pages of results that remain.
+     * (Discontinued) Returns the number of pages of results that remain.
      * </p>
      * <note>
      * <p>
-     * In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated,
+     * In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now discontinued,
      * and the API returns the <code>next page token</code> parameter instead.
      * </p>
      * </note>
      * 
      * @param nextPageCount
-     *        (Deprecated) Returns the number of pages of results that remain.</p> <note>
+     *        (Discontinued) Returns the number of pages of results that remain.</p> <note>
      *        <p>
      *        In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now
-     *        deprecated, and the API returns the <code>next page token</code> parameter instead.
+     *        discontinued, and the API returns the <code>next page token</code> parameter instead.
      *        </p>
      */
     @Deprecated
@@ -160,19 +160,19 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * (Deprecated) Returns the number of pages of results that remain.
+     * (Discontinued) Returns the number of pages of results that remain.
      * </p>
      * <note>
      * <p>
-     * In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated,
+     * In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now discontinued,
      * and the API returns the <code>next page token</code> parameter instead.
      * </p>
      * </note>
      * 
-     * @return (Deprecated) Returns the number of pages of results that remain.</p> <note>
+     * @return (Discontinued) Returns the number of pages of results that remain.</p> <note>
      *         <p>
      *         In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now
-     *         deprecated, and the API returns the <code>next page token</code> parameter instead.
+     *         discontinued, and the API returns the <code>next page token</code> parameter instead.
      *         </p>
      */
     @Deprecated
@@ -182,20 +182,20 @@ public class GetOperationsForResourceResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * (Deprecated) Returns the number of pages of results that remain.
+     * (Discontinued) Returns the number of pages of results that remain.
      * </p>
      * <note>
      * <p>
-     * In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now deprecated,
+     * In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now discontinued,
      * and the API returns the <code>next page token</code> parameter instead.
      * </p>
      * </note>
      * 
      * @param nextPageCount
-     *        (Deprecated) Returns the number of pages of results that remain.</p> <note>
+     *        (Discontinued) Returns the number of pages of results that remain.</p> <note>
      *        <p>
      *        In releases prior to June 12, 2017, this parameter returned <code>null</code> by the API. It is now
-     *        deprecated, and the API returns the <code>next page token</code> parameter instead.
+     *        discontinued, and the API returns the <code>next page token</code> parameter instead.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

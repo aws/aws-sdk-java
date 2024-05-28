@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,10 +26,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PackagingGroup implements Serializable, Cloneable, StructuredPojo {
 
+    /** The approximate asset count of the PackagingGroup. */
+    private Integer approximateAssetCount;
     /** The ARN of the PackagingGroup. */
     private String arn;
 
     private Authorization authorization;
+    /** The time the PackagingGroup was created. */
+    private String createdAt;
     /** The fully qualified domain name for Assets in the PackagingGroup. */
     private String domainName;
 
@@ -38,6 +42,40 @@ public class PackagingGroup implements Serializable, Cloneable, StructuredPojo {
     private String id;
 
     private java.util.Map<String, String> tags;
+
+    /**
+     * The approximate asset count of the PackagingGroup.
+     * 
+     * @param approximateAssetCount
+     *        The approximate asset count of the PackagingGroup.
+     */
+
+    public void setApproximateAssetCount(Integer approximateAssetCount) {
+        this.approximateAssetCount = approximateAssetCount;
+    }
+
+    /**
+     * The approximate asset count of the PackagingGroup.
+     * 
+     * @return The approximate asset count of the PackagingGroup.
+     */
+
+    public Integer getApproximateAssetCount() {
+        return this.approximateAssetCount;
+    }
+
+    /**
+     * The approximate asset count of the PackagingGroup.
+     * 
+     * @param approximateAssetCount
+     *        The approximate asset count of the PackagingGroup.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PackagingGroup withApproximateAssetCount(Integer approximateAssetCount) {
+        setApproximateAssetCount(approximateAssetCount);
+        return this;
+    }
 
     /**
      * The ARN of the PackagingGroup.
@@ -96,6 +134,40 @@ public class PackagingGroup implements Serializable, Cloneable, StructuredPojo {
 
     public PackagingGroup withAuthorization(Authorization authorization) {
         setAuthorization(authorization);
+        return this;
+    }
+
+    /**
+     * The time the PackagingGroup was created.
+     * 
+     * @param createdAt
+     *        The time the PackagingGroup was created.
+     */
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    /**
+     * The time the PackagingGroup was created.
+     * 
+     * @return The time the PackagingGroup was created.
+     */
+
+    public String getCreatedAt() {
+        return this.createdAt;
+    }
+
+    /**
+     * The time the PackagingGroup was created.
+     * 
+     * @param createdAt
+     *        The time the PackagingGroup was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PackagingGroup withCreatedAt(String createdAt) {
+        setCreatedAt(createdAt);
         return this;
     }
 
@@ -259,10 +331,14 @@ public class PackagingGroup implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getApproximateAssetCount() != null)
+            sb.append("ApproximateAssetCount: ").append(getApproximateAssetCount()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getAuthorization() != null)
             sb.append("Authorization: ").append(getAuthorization()).append(",");
+        if (getCreatedAt() != null)
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getDomainName() != null)
             sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getEgressAccessLogs() != null)
@@ -285,6 +361,10 @@ public class PackagingGroup implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof PackagingGroup == false)
             return false;
         PackagingGroup other = (PackagingGroup) obj;
+        if (other.getApproximateAssetCount() == null ^ this.getApproximateAssetCount() == null)
+            return false;
+        if (other.getApproximateAssetCount() != null && other.getApproximateAssetCount().equals(this.getApproximateAssetCount()) == false)
+            return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
@@ -292,6 +372,10 @@ public class PackagingGroup implements Serializable, Cloneable, StructuredPojo {
         if (other.getAuthorization() == null ^ this.getAuthorization() == null)
             return false;
         if (other.getAuthorization() != null && other.getAuthorization().equals(this.getAuthorization()) == false)
+            return false;
+        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
+            return false;
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
         if (other.getDomainName() == null ^ this.getDomainName() == null)
             return false;
@@ -317,8 +401,10 @@ public class PackagingGroup implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getApproximateAssetCount() == null) ? 0 : getApproximateAssetCount().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getAuthorization() == null) ? 0 : getAuthorization().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
         hashCode = prime * hashCode + ((getEgressAccessLogs() == null) ? 0 : getEgressAccessLogs().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());

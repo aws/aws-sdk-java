@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,8 +21,7 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * For information about publishing email sending events to Amazon CloudWatch, see the <a
- * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
- * Guide</a>.
+ * href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity.html">Amazon SES Developer Guide</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CloudWatchDimensionConfiguration"
@@ -33,17 +32,18 @@ public class CloudWatchDimensionConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The name of an Amazon CloudWatch dimension associated with an email sending metric. The name must:
+     * The name of an Amazon CloudWatch dimension associated with an email sending metric. The name must meet the
+     * following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or colons (:).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Contain less than 256 characters.
+     * Contain 256 characters or fewer.
      * </p>
      * </li>
      * </ul>
@@ -51,27 +51,28 @@ public class CloudWatchDimensionConfiguration implements Serializable, Cloneable
     private String dimensionName;
     /**
      * <p>
-     * The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. If you want Amazon SES
-     * to use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the
-     * <code>SendEmail</code>/<code>SendRawEmail</code> API, choose <code>messageTag</code>. If you want Amazon SES to
-     * use your own email headers, choose <code>emailHeader</code>.
+     * The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. To use the message
+     * tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the
+     * <code>SendEmail</code>/<code>SendRawEmail</code> API, specify <code>messageTag</code>. To use your own email
+     * headers, specify <code>emailHeader</code>. To put a custom tag on any link included in your email, specify
+     * <code>linkTag</code>.
      * </p>
      */
     private String dimensionValueSource;
     /**
      * <p>
      * The default value of the dimension that is published to Amazon CloudWatch if you do not provide the value of the
-     * dimension when you send an email. The default value must:
+     * dimension when you send an email. The default value must meet the following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), at signs (@), or periods (.).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Contain less than 256 characters.
+     * Contain 256 characters or fewer.
      * </p>
      * </li>
      * </ul>
@@ -80,32 +81,34 @@ public class CloudWatchDimensionConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The name of an Amazon CloudWatch dimension associated with an email sending metric. The name must:
+     * The name of an Amazon CloudWatch dimension associated with an email sending metric. The name must meet the
+     * following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or colons (:).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Contain less than 256 characters.
+     * Contain 256 characters or fewer.
      * </p>
      * </li>
      * </ul>
      * 
      * @param dimensionName
-     *        The name of an Amazon CloudWatch dimension associated with an email sending metric. The name must:</p>
+     *        The name of an Amazon CloudWatch dimension associated with an email sending metric. The name must meet the
+     *        following requirements:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or colons (:).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Contain less than 256 characters.
+     *        Contain 256 characters or fewer.
      *        </p>
      *        </li>
      */
@@ -116,31 +119,33 @@ public class CloudWatchDimensionConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The name of an Amazon CloudWatch dimension associated with an email sending metric. The name must:
+     * The name of an Amazon CloudWatch dimension associated with an email sending metric. The name must meet the
+     * following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or colons (:).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Contain less than 256 characters.
+     * Contain 256 characters or fewer.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The name of an Amazon CloudWatch dimension associated with an email sending metric. The name must:</p>
+     * @return The name of an Amazon CloudWatch dimension associated with an email sending metric. The name must meet
+     *         the following requirements:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or colons (:).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Contain less than 256 characters.
+     *         Contain 256 characters or fewer.
      *         </p>
      *         </li>
      */
@@ -151,32 +156,34 @@ public class CloudWatchDimensionConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The name of an Amazon CloudWatch dimension associated with an email sending metric. The name must:
+     * The name of an Amazon CloudWatch dimension associated with an email sending metric. The name must meet the
+     * following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or colons (:).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Contain less than 256 characters.
+     * Contain 256 characters or fewer.
      * </p>
      * </li>
      * </ul>
      * 
      * @param dimensionName
-     *        The name of an Amazon CloudWatch dimension associated with an email sending metric. The name must:</p>
+     *        The name of an Amazon CloudWatch dimension associated with an email sending metric. The name must meet the
+     *        following requirements:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), or colons (:).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Contain less than 256 characters.
+     *        Contain 256 characters or fewer.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -189,17 +196,19 @@ public class CloudWatchDimensionConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. If you want Amazon SES
-     * to use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the
-     * <code>SendEmail</code>/<code>SendRawEmail</code> API, choose <code>messageTag</code>. If you want Amazon SES to
-     * use your own email headers, choose <code>emailHeader</code>.
+     * The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. To use the message
+     * tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the
+     * <code>SendEmail</code>/<code>SendRawEmail</code> API, specify <code>messageTag</code>. To use your own email
+     * headers, specify <code>emailHeader</code>. To put a custom tag on any link included in your email, specify
+     * <code>linkTag</code>.
      * </p>
      * 
      * @param dimensionValueSource
-     *        The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. If you want
-     *        Amazon SES to use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a
-     *        parameter to the <code>SendEmail</code>/<code>SendRawEmail</code> API, choose <code>messageTag</code>. If
-     *        you want Amazon SES to use your own email headers, choose <code>emailHeader</code>.
+     *        The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. To use the
+     *        message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the
+     *        <code>SendEmail</code>/<code>SendRawEmail</code> API, specify <code>messageTag</code>. To use your own
+     *        email headers, specify <code>emailHeader</code>. To put a custom tag on any link included in your email,
+     *        specify <code>linkTag</code>.
      * @see DimensionValueSource
      */
 
@@ -209,16 +218,18 @@ public class CloudWatchDimensionConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. If you want Amazon SES
-     * to use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the
-     * <code>SendEmail</code>/<code>SendRawEmail</code> API, choose <code>messageTag</code>. If you want Amazon SES to
-     * use your own email headers, choose <code>emailHeader</code>.
+     * The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. To use the message
+     * tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the
+     * <code>SendEmail</code>/<code>SendRawEmail</code> API, specify <code>messageTag</code>. To use your own email
+     * headers, specify <code>emailHeader</code>. To put a custom tag on any link included in your email, specify
+     * <code>linkTag</code>.
      * </p>
      * 
-     * @return The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. If you want
-     *         Amazon SES to use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a
-     *         parameter to the <code>SendEmail</code>/<code>SendRawEmail</code> API, choose <code>messageTag</code>. If
-     *         you want Amazon SES to use your own email headers, choose <code>emailHeader</code>.
+     * @return The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. To use the
+     *         message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the
+     *         <code>SendEmail</code>/<code>SendRawEmail</code> API, specify <code>messageTag</code>. To use your own
+     *         email headers, specify <code>emailHeader</code>. To put a custom tag on any link included in your email,
+     *         specify <code>linkTag</code>.
      * @see DimensionValueSource
      */
 
@@ -228,17 +239,19 @@ public class CloudWatchDimensionConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. If you want Amazon SES
-     * to use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the
-     * <code>SendEmail</code>/<code>SendRawEmail</code> API, choose <code>messageTag</code>. If you want Amazon SES to
-     * use your own email headers, choose <code>emailHeader</code>.
+     * The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. To use the message
+     * tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the
+     * <code>SendEmail</code>/<code>SendRawEmail</code> API, specify <code>messageTag</code>. To use your own email
+     * headers, specify <code>emailHeader</code>. To put a custom tag on any link included in your email, specify
+     * <code>linkTag</code>.
      * </p>
      * 
      * @param dimensionValueSource
-     *        The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. If you want
-     *        Amazon SES to use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a
-     *        parameter to the <code>SendEmail</code>/<code>SendRawEmail</code> API, choose <code>messageTag</code>. If
-     *        you want Amazon SES to use your own email headers, choose <code>emailHeader</code>.
+     *        The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. To use the
+     *        message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the
+     *        <code>SendEmail</code>/<code>SendRawEmail</code> API, specify <code>messageTag</code>. To use your own
+     *        email headers, specify <code>emailHeader</code>. To put a custom tag on any link included in your email,
+     *        specify <code>linkTag</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DimensionValueSource
      */
@@ -250,17 +263,19 @@ public class CloudWatchDimensionConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. If you want Amazon SES
-     * to use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the
-     * <code>SendEmail</code>/<code>SendRawEmail</code> API, choose <code>messageTag</code>. If you want Amazon SES to
-     * use your own email headers, choose <code>emailHeader</code>.
+     * The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. To use the message
+     * tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the
+     * <code>SendEmail</code>/<code>SendRawEmail</code> API, specify <code>messageTag</code>. To use your own email
+     * headers, specify <code>emailHeader</code>. To put a custom tag on any link included in your email, specify
+     * <code>linkTag</code>.
      * </p>
      * 
      * @param dimensionValueSource
-     *        The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. If you want
-     *        Amazon SES to use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a
-     *        parameter to the <code>SendEmail</code>/<code>SendRawEmail</code> API, choose <code>messageTag</code>. If
-     *        you want Amazon SES to use your own email headers, choose <code>emailHeader</code>.
+     *        The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. To use the
+     *        message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the
+     *        <code>SendEmail</code>/<code>SendRawEmail</code> API, specify <code>messageTag</code>. To use your own
+     *        email headers, specify <code>emailHeader</code>. To put a custom tag on any link included in your email,
+     *        specify <code>linkTag</code>.
      * @see DimensionValueSource
      */
 
@@ -270,17 +285,19 @@ public class CloudWatchDimensionConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. If you want Amazon SES
-     * to use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the
-     * <code>SendEmail</code>/<code>SendRawEmail</code> API, choose <code>messageTag</code>. If you want Amazon SES to
-     * use your own email headers, choose <code>emailHeader</code>.
+     * The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. To use the message
+     * tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the
+     * <code>SendEmail</code>/<code>SendRawEmail</code> API, specify <code>messageTag</code>. To use your own email
+     * headers, specify <code>emailHeader</code>. To put a custom tag on any link included in your email, specify
+     * <code>linkTag</code>.
      * </p>
      * 
      * @param dimensionValueSource
-     *        The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. If you want
-     *        Amazon SES to use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a
-     *        parameter to the <code>SendEmail</code>/<code>SendRawEmail</code> API, choose <code>messageTag</code>. If
-     *        you want Amazon SES to use your own email headers, choose <code>emailHeader</code>.
+     *        The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. To use the
+     *        message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the
+     *        <code>SendEmail</code>/<code>SendRawEmail</code> API, specify <code>messageTag</code>. To use your own
+     *        email headers, specify <code>emailHeader</code>. To put a custom tag on any link included in your email,
+     *        specify <code>linkTag</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DimensionValueSource
      */
@@ -293,33 +310,34 @@ public class CloudWatchDimensionConfiguration implements Serializable, Cloneable
     /**
      * <p>
      * The default value of the dimension that is published to Amazon CloudWatch if you do not provide the value of the
-     * dimension when you send an email. The default value must:
+     * dimension when you send an email. The default value must meet the following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), at signs (@), or periods (.).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Contain less than 256 characters.
+     * Contain 256 characters or fewer.
      * </p>
      * </li>
      * </ul>
      * 
      * @param defaultDimensionValue
      *        The default value of the dimension that is published to Amazon CloudWatch if you do not provide the value
-     *        of the dimension when you send an email. The default value must:</p>
+     *        of the dimension when you send an email. The default value must meet the following requirements:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), at signs (@), or
+     *        periods (.).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Contain less than 256 characters.
+     *        Contain 256 characters or fewer.
      *        </p>
      *        </li>
      */
@@ -331,32 +349,33 @@ public class CloudWatchDimensionConfiguration implements Serializable, Cloneable
     /**
      * <p>
      * The default value of the dimension that is published to Amazon CloudWatch if you do not provide the value of the
-     * dimension when you send an email. The default value must:
+     * dimension when you send an email. The default value must meet the following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), at signs (@), or periods (.).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Contain less than 256 characters.
+     * Contain 256 characters or fewer.
      * </p>
      * </li>
      * </ul>
      * 
      * @return The default value of the dimension that is published to Amazon CloudWatch if you do not provide the value
-     *         of the dimension when you send an email. The default value must:</p>
+     *         of the dimension when you send an email. The default value must meet the following requirements:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), at signs (@), or
+     *         periods (.).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Contain less than 256 characters.
+     *         Contain 256 characters or fewer.
      *         </p>
      *         </li>
      */
@@ -368,33 +387,34 @@ public class CloudWatchDimensionConfiguration implements Serializable, Cloneable
     /**
      * <p>
      * The default value of the dimension that is published to Amazon CloudWatch if you do not provide the value of the
-     * dimension when you send an email. The default value must:
+     * dimension when you send an email. The default value must meet the following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), at signs (@), or periods (.).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Contain less than 256 characters.
+     * Contain 256 characters or fewer.
      * </p>
      * </li>
      * </ul>
      * 
      * @param defaultDimensionValue
      *        The default value of the dimension that is published to Amazon CloudWatch if you do not provide the value
-     *        of the dimension when you send an email. The default value must:</p>
+     *        of the dimension when you send an email. The default value must meet the following requirements:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), dashes (-), at signs (@), or
+     *        periods (.).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Contain less than 256 characters.
+     *        Contain 256 characters or fewer.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

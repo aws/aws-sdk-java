@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The type of encryption used on the content ingested from this source. */
+    /** The type of encryption used on the content ingested from this source. Allowable encryption types: static-key. */
     private UpdateEncryption decryption;
     /**
      * A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect
@@ -42,7 +42,7 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
     private String flowArn;
     /** The port that the flow will be listening on for incoming content. */
     private Integer ingestPort;
-    /** The smoothing max bitrate for RIST, RTP, and RTP-FEC streams. */
+    /** The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams. */
     private Integer maxBitrate;
     /**
      * The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based
@@ -72,7 +72,10 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
     private String sourceListenerAddress;
     /** Source port for SRT-caller protocol. */
     private Integer sourceListenerPort;
-    /** The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams. */
+    /**
+     * The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based
+     * streams.
+     */
     private String streamId;
     /** The name of the VPC interface to use for this source. */
     private String vpcInterfaceName;
@@ -81,12 +84,15 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
      */
     private String whitelistCidr;
+    /** The source configuration for cloud flows receiving a stream from a bridge. */
+    private UpdateGatewayBridgeSourceRequest gatewayBridgeSource;
 
     /**
-     * The type of encryption used on the content ingested from this source.
+     * The type of encryption used on the content ingested from this source. Allowable encryption types: static-key.
      * 
      * @param decryption
-     *        The type of encryption used on the content ingested from this source.
+     *        The type of encryption used on the content ingested from this source. Allowable encryption types:
+     *        static-key.
      */
 
     public void setDecryption(UpdateEncryption decryption) {
@@ -94,9 +100,10 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * The type of encryption used on the content ingested from this source.
+     * The type of encryption used on the content ingested from this source. Allowable encryption types: static-key.
      * 
-     * @return The type of encryption used on the content ingested from this source.
+     * @return The type of encryption used on the content ingested from this source. Allowable encryption types:
+     *         static-key.
      */
 
     public UpdateEncryption getDecryption() {
@@ -104,10 +111,11 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * The type of encryption used on the content ingested from this source.
+     * The type of encryption used on the content ingested from this source. Allowable encryption types: static-key.
      * 
      * @param decryption
-     *        The type of encryption used on the content ingested from this source.
+     *        The type of encryption used on the content ingested from this source. Allowable encryption types:
+     *        static-key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -265,10 +273,10 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
+     * The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
      * 
      * @param maxBitrate
-     *        The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
+     *        The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
      */
 
     public void setMaxBitrate(Integer maxBitrate) {
@@ -276,9 +284,9 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
+     * The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
      * 
-     * @return The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
+     * @return The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
      */
 
     public Integer getMaxBitrate() {
@@ -286,10 +294,10 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
+     * The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
      * 
      * @param maxBitrate
-     *        The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
+     *        The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -709,10 +717,12 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+     * The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based
+     * streams.
      * 
      * @param streamId
-     *        The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+     *        The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT
+     *        caller-based streams.
      */
 
     public void setStreamId(String streamId) {
@@ -720,9 +730,11 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+     * The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based
+     * streams.
      * 
-     * @return The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+     * @return The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT
+     *         caller-based streams.
      */
 
     public String getStreamId() {
@@ -730,10 +742,12 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+     * The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based
+     * streams.
      * 
      * @param streamId
-     *        The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+     *        The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT
+     *        caller-based streams.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -817,6 +831,40 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * The source configuration for cloud flows receiving a stream from a bridge.
+     * 
+     * @param gatewayBridgeSource
+     *        The source configuration for cloud flows receiving a stream from a bridge.
+     */
+
+    public void setGatewayBridgeSource(UpdateGatewayBridgeSourceRequest gatewayBridgeSource) {
+        this.gatewayBridgeSource = gatewayBridgeSource;
+    }
+
+    /**
+     * The source configuration for cloud flows receiving a stream from a bridge.
+     * 
+     * @return The source configuration for cloud flows receiving a stream from a bridge.
+     */
+
+    public UpdateGatewayBridgeSourceRequest getGatewayBridgeSource() {
+        return this.gatewayBridgeSource;
+    }
+
+    /**
+     * The source configuration for cloud flows receiving a stream from a bridge.
+     * 
+     * @param gatewayBridgeSource
+     *        The source configuration for cloud flows receiving a stream from a bridge.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFlowSourceRequest withGatewayBridgeSource(UpdateGatewayBridgeSourceRequest gatewayBridgeSource) {
+        setGatewayBridgeSource(gatewayBridgeSource);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -865,7 +913,9 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
         if (getVpcInterfaceName() != null)
             sb.append("VpcInterfaceName: ").append(getVpcInterfaceName()).append(",");
         if (getWhitelistCidr() != null)
-            sb.append("WhitelistCidr: ").append(getWhitelistCidr());
+            sb.append("WhitelistCidr: ").append(getWhitelistCidr()).append(",");
+        if (getGatewayBridgeSource() != null)
+            sb.append("GatewayBridgeSource: ").append(getGatewayBridgeSource());
         sb.append("}");
         return sb.toString();
     }
@@ -957,6 +1007,10 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getWhitelistCidr() != null && other.getWhitelistCidr().equals(this.getWhitelistCidr()) == false)
             return false;
+        if (other.getGatewayBridgeSource() == null ^ this.getGatewayBridgeSource() == null)
+            return false;
+        if (other.getGatewayBridgeSource() != null && other.getGatewayBridgeSource().equals(this.getGatewayBridgeSource()) == false)
+            return false;
         return true;
     }
 
@@ -984,6 +1038,7 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getStreamId() == null) ? 0 : getStreamId().hashCode());
         hashCode = prime * hashCode + ((getVpcInterfaceName() == null) ? 0 : getVpcInterfaceName().hashCode());
         hashCode = prime * hashCode + ((getWhitelistCidr() == null) ? 0 : getWhitelistCidr().hashCode());
+        hashCode = prime * hashCode + ((getGatewayBridgeSource() == null) ? 0 : getGatewayBridgeSource().hashCode());
         return hashCode;
     }
 

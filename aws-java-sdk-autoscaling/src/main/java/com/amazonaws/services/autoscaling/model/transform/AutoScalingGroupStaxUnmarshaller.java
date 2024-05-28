@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -247,6 +247,21 @@ public class AutoScalingGroupStaxUnmarshaller implements Unmarshaller<AutoScalin
 
                 if (context.testExpression("DefaultInstanceWarmup", targetDepth)) {
                     autoScalingGroup.setDefaultInstanceWarmup(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("TrafficSources", targetDepth)) {
+                    autoScalingGroup.withTrafficSources(new ArrayList<TrafficSourceIdentifier>());
+                    continue;
+                }
+
+                if (context.testExpression("TrafficSources/member", targetDepth)) {
+                    autoScalingGroup.withTrafficSources(TrafficSourceIdentifierStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("InstanceMaintenancePolicy", targetDepth)) {
+                    autoScalingGroup.setInstanceMaintenancePolicy(InstanceMaintenancePolicyStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

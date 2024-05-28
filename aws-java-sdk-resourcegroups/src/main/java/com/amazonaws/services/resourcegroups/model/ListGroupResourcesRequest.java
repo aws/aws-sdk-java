@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,7 +55,7 @@ public class ListGroupResourcesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * <p>
-     * When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, AWS Resource Groups
+     * When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, Resource Groups
      * validates your filter resource types against the types that are defined in the query associated with the group.
      * For example, if a group contains only S3 buckets because its query specifies only that resource type, but your
      * <code>resource-type</code> filter includes EC2 instances, AWS Resource Groups does not filter for EC2 instances.
@@ -69,7 +69,7 @@ public class ListGroupResourcesRequest extends com.amazonaws.AmazonWebServiceReq
      * The error includes a list of resource types that failed the validation because they are not part of the query
      * associated with the group. This validation doesn't occur when the group query specifies
      * <code>AWS::AllSupported</code>, because a group based on such a query can contain any of the allowed resource
-     * types for the query type (tag-based or AWS CloudFormation stack-based queries).
+     * types for the query type (tag-based or Amazon CloudFront stack-based queries).
      * </p>
      */
     private java.util.List<ResourceFilter> filters;
@@ -202,7 +202,7 @@ public class ListGroupResourcesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * <p>
-     * When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, AWS Resource Groups
+     * When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, Resource Groups
      * validates your filter resource types against the types that are defined in the query associated with the group.
      * For example, if a group contains only S3 buckets because its query specifies only that resource type, but your
      * <code>resource-type</code> filter includes EC2 instances, AWS Resource Groups does not filter for EC2 instances.
@@ -216,7 +216,7 @@ public class ListGroupResourcesRequest extends com.amazonaws.AmazonWebServiceReq
      * The error includes a list of resource types that failed the validation because they are not part of the query
      * associated with the group. This validation doesn't occur when the group query specifies
      * <code>AWS::AllSupported</code>, because a group based on such a query can contain any of the allowed resource
-     * types for the query type (tag-based or AWS CloudFormation stack-based queries).
+     * types for the query type (tag-based or Amazon CloudFront stack-based queries).
      * </p>
      * 
      * @return Filters, formatted as <a>ResourceFilter</a> objects, that you want to apply to a
@@ -232,11 +232,11 @@ public class ListGroupResourcesRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         </ul>
      *         <p>
-     *         When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, AWS Resource
-     *         Groups validates your filter resource types against the types that are defined in the query associated
-     *         with the group. For example, if a group contains only S3 buckets because its query specifies only that
-     *         resource type, but your <code>resource-type</code> filter includes EC2 instances, AWS Resource Groups
-     *         does not filter for EC2 instances. In this case, a <code>ListGroupResources</code> request returns a
+     *         When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, Resource Groups
+     *         validates your filter resource types against the types that are defined in the query associated with the
+     *         group. For example, if a group contains only S3 buckets because its query specifies only that resource
+     *         type, but your <code>resource-type</code> filter includes EC2 instances, AWS Resource Groups does not
+     *         filter for EC2 instances. In this case, a <code>ListGroupResources</code> request returns a
      *         <code>BadRequestException</code> error with a message similar to the following:
      *         </p>
      *         <p>
@@ -246,7 +246,7 @@ public class ListGroupResourcesRequest extends com.amazonaws.AmazonWebServiceReq
      *         The error includes a list of resource types that failed the validation because they are not part of the
      *         query associated with the group. This validation doesn't occur when the group query specifies
      *         <code>AWS::AllSupported</code>, because a group based on such a query can contain any of the allowed
-     *         resource types for the query type (tag-based or AWS CloudFormation stack-based queries).
+     *         resource types for the query type (tag-based or Amazon CloudFront stack-based queries).
      */
 
     public java.util.List<ResourceFilter> getFilters() {
@@ -268,7 +268,7 @@ public class ListGroupResourcesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * <p>
-     * When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, AWS Resource Groups
+     * When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, Resource Groups
      * validates your filter resource types against the types that are defined in the query associated with the group.
      * For example, if a group contains only S3 buckets because its query specifies only that resource type, but your
      * <code>resource-type</code> filter includes EC2 instances, AWS Resource Groups does not filter for EC2 instances.
@@ -282,7 +282,7 @@ public class ListGroupResourcesRequest extends com.amazonaws.AmazonWebServiceReq
      * The error includes a list of resource types that failed the validation because they are not part of the query
      * associated with the group. This validation doesn't occur when the group query specifies
      * <code>AWS::AllSupported</code>, because a group based on such a query can contain any of the allowed resource
-     * types for the query type (tag-based or AWS CloudFormation stack-based queries).
+     * types for the query type (tag-based or Amazon CloudFront stack-based queries).
      * </p>
      * 
      * @param filters
@@ -299,11 +299,11 @@ public class ListGroupResourcesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        </ul>
      *        <p>
-     *        When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, AWS Resource
-     *        Groups validates your filter resource types against the types that are defined in the query associated
-     *        with the group. For example, if a group contains only S3 buckets because its query specifies only that
-     *        resource type, but your <code>resource-type</code> filter includes EC2 instances, AWS Resource Groups does
-     *        not filter for EC2 instances. In this case, a <code>ListGroupResources</code> request returns a
+     *        When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, Resource Groups
+     *        validates your filter resource types against the types that are defined in the query associated with the
+     *        group. For example, if a group contains only S3 buckets because its query specifies only that resource
+     *        type, but your <code>resource-type</code> filter includes EC2 instances, AWS Resource Groups does not
+     *        filter for EC2 instances. In this case, a <code>ListGroupResources</code> request returns a
      *        <code>BadRequestException</code> error with a message similar to the following:
      *        </p>
      *        <p>
@@ -313,7 +313,7 @@ public class ListGroupResourcesRequest extends com.amazonaws.AmazonWebServiceReq
      *        The error includes a list of resource types that failed the validation because they are not part of the
      *        query associated with the group. This validation doesn't occur when the group query specifies
      *        <code>AWS::AllSupported</code>, because a group based on such a query can contain any of the allowed
-     *        resource types for the query type (tag-based or AWS CloudFormation stack-based queries).
+     *        resource types for the query type (tag-based or Amazon CloudFront stack-based queries).
      */
 
     public void setFilters(java.util.Collection<ResourceFilter> filters) {
@@ -340,7 +340,7 @@ public class ListGroupResourcesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * <p>
-     * When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, AWS Resource Groups
+     * When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, Resource Groups
      * validates your filter resource types against the types that are defined in the query associated with the group.
      * For example, if a group contains only S3 buckets because its query specifies only that resource type, but your
      * <code>resource-type</code> filter includes EC2 instances, AWS Resource Groups does not filter for EC2 instances.
@@ -354,7 +354,7 @@ public class ListGroupResourcesRequest extends com.amazonaws.AmazonWebServiceReq
      * The error includes a list of resource types that failed the validation because they are not part of the query
      * associated with the group. This validation doesn't occur when the group query specifies
      * <code>AWS::AllSupported</code>, because a group based on such a query can contain any of the allowed resource
-     * types for the query type (tag-based or AWS CloudFormation stack-based queries).
+     * types for the query type (tag-based or Amazon CloudFront stack-based queries).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -376,11 +376,11 @@ public class ListGroupResourcesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        </ul>
      *        <p>
-     *        When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, AWS Resource
-     *        Groups validates your filter resource types against the types that are defined in the query associated
-     *        with the group. For example, if a group contains only S3 buckets because its query specifies only that
-     *        resource type, but your <code>resource-type</code> filter includes EC2 instances, AWS Resource Groups does
-     *        not filter for EC2 instances. In this case, a <code>ListGroupResources</code> request returns a
+     *        When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, Resource Groups
+     *        validates your filter resource types against the types that are defined in the query associated with the
+     *        group. For example, if a group contains only S3 buckets because its query specifies only that resource
+     *        type, but your <code>resource-type</code> filter includes EC2 instances, AWS Resource Groups does not
+     *        filter for EC2 instances. In this case, a <code>ListGroupResources</code> request returns a
      *        <code>BadRequestException</code> error with a message similar to the following:
      *        </p>
      *        <p>
@@ -390,7 +390,7 @@ public class ListGroupResourcesRequest extends com.amazonaws.AmazonWebServiceReq
      *        The error includes a list of resource types that failed the validation because they are not part of the
      *        query associated with the group. This validation doesn't occur when the group query specifies
      *        <code>AWS::AllSupported</code>, because a group based on such a query can contain any of the allowed
-     *        resource types for the query type (tag-based or AWS CloudFormation stack-based queries).
+     *        resource types for the query type (tag-based or Amazon CloudFront stack-based queries).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -419,7 +419,7 @@ public class ListGroupResourcesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * <p>
-     * When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, AWS Resource Groups
+     * When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, Resource Groups
      * validates your filter resource types against the types that are defined in the query associated with the group.
      * For example, if a group contains only S3 buckets because its query specifies only that resource type, but your
      * <code>resource-type</code> filter includes EC2 instances, AWS Resource Groups does not filter for EC2 instances.
@@ -433,7 +433,7 @@ public class ListGroupResourcesRequest extends com.amazonaws.AmazonWebServiceReq
      * The error includes a list of resource types that failed the validation because they are not part of the query
      * associated with the group. This validation doesn't occur when the group query specifies
      * <code>AWS::AllSupported</code>, because a group based on such a query can contain any of the allowed resource
-     * types for the query type (tag-based or AWS CloudFormation stack-based queries).
+     * types for the query type (tag-based or Amazon CloudFront stack-based queries).
      * </p>
      * 
      * @param filters
@@ -450,11 +450,11 @@ public class ListGroupResourcesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        </ul>
      *        <p>
-     *        When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, AWS Resource
-     *        Groups validates your filter resource types against the types that are defined in the query associated
-     *        with the group. For example, if a group contains only S3 buckets because its query specifies only that
-     *        resource type, but your <code>resource-type</code> filter includes EC2 instances, AWS Resource Groups does
-     *        not filter for EC2 instances. In this case, a <code>ListGroupResources</code> request returns a
+     *        When you specify a <code>resource-type</code> filter for <code>ListGroupResources</code>, Resource Groups
+     *        validates your filter resource types against the types that are defined in the query associated with the
+     *        group. For example, if a group contains only S3 buckets because its query specifies only that resource
+     *        type, but your <code>resource-type</code> filter includes EC2 instances, AWS Resource Groups does not
+     *        filter for EC2 instances. In this case, a <code>ListGroupResources</code> request returns a
      *        <code>BadRequestException</code> error with a message similar to the following:
      *        </p>
      *        <p>
@@ -464,7 +464,7 @@ public class ListGroupResourcesRequest extends com.amazonaws.AmazonWebServiceReq
      *        The error includes a list of resource types that failed the validation because they are not part of the
      *        query associated with the group. This validation doesn't occur when the group query specifies
      *        <code>AWS::AllSupported</code>, because a group based on such a query can contain any of the allowed
-     *        resource types for the query type (tag-based or AWS CloudFormation stack-based queries).
+     *        resource types for the query type (tag-based or Amazon CloudFront stack-based queries).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

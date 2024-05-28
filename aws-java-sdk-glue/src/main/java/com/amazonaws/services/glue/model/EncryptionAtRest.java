@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,12 @@ public class EncryptionAtRest implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String sseAwsKmsKeyId;
+    /**
+     * <p>
+     * The role that Glue assumes to encrypt and decrypt the Data Catalog objects on the caller's behalf.
+     * </p>
+     */
+    private String catalogEncryptionServiceRole;
 
     /**
      * <p>
@@ -141,6 +147,46 @@ public class EncryptionAtRest implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The role that Glue assumes to encrypt and decrypt the Data Catalog objects on the caller's behalf.
+     * </p>
+     * 
+     * @param catalogEncryptionServiceRole
+     *        The role that Glue assumes to encrypt and decrypt the Data Catalog objects on the caller's behalf.
+     */
+
+    public void setCatalogEncryptionServiceRole(String catalogEncryptionServiceRole) {
+        this.catalogEncryptionServiceRole = catalogEncryptionServiceRole;
+    }
+
+    /**
+     * <p>
+     * The role that Glue assumes to encrypt and decrypt the Data Catalog objects on the caller's behalf.
+     * </p>
+     * 
+     * @return The role that Glue assumes to encrypt and decrypt the Data Catalog objects on the caller's behalf.
+     */
+
+    public String getCatalogEncryptionServiceRole() {
+        return this.catalogEncryptionServiceRole;
+    }
+
+    /**
+     * <p>
+     * The role that Glue assumes to encrypt and decrypt the Data Catalog objects on the caller's behalf.
+     * </p>
+     * 
+     * @param catalogEncryptionServiceRole
+     *        The role that Glue assumes to encrypt and decrypt the Data Catalog objects on the caller's behalf.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EncryptionAtRest withCatalogEncryptionServiceRole(String catalogEncryptionServiceRole) {
+        setCatalogEncryptionServiceRole(catalogEncryptionServiceRole);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -155,7 +201,9 @@ public class EncryptionAtRest implements Serializable, Cloneable, StructuredPojo
         if (getCatalogEncryptionMode() != null)
             sb.append("CatalogEncryptionMode: ").append(getCatalogEncryptionMode()).append(",");
         if (getSseAwsKmsKeyId() != null)
-            sb.append("SseAwsKmsKeyId: ").append(getSseAwsKmsKeyId());
+            sb.append("SseAwsKmsKeyId: ").append(getSseAwsKmsKeyId()).append(",");
+        if (getCatalogEncryptionServiceRole() != null)
+            sb.append("CatalogEncryptionServiceRole: ").append(getCatalogEncryptionServiceRole());
         sb.append("}");
         return sb.toString();
     }
@@ -178,6 +226,10 @@ public class EncryptionAtRest implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getSseAwsKmsKeyId() != null && other.getSseAwsKmsKeyId().equals(this.getSseAwsKmsKeyId()) == false)
             return false;
+        if (other.getCatalogEncryptionServiceRole() == null ^ this.getCatalogEncryptionServiceRole() == null)
+            return false;
+        if (other.getCatalogEncryptionServiceRole() != null && other.getCatalogEncryptionServiceRole().equals(this.getCatalogEncryptionServiceRole()) == false)
+            return false;
         return true;
     }
 
@@ -188,6 +240,7 @@ public class EncryptionAtRest implements Serializable, Cloneable, StructuredPojo
 
         hashCode = prime * hashCode + ((getCatalogEncryptionMode() == null) ? 0 : getCatalogEncryptionMode().hashCode());
         hashCode = prime * hashCode + ((getSseAwsKmsKeyId() == null) ? 0 : getSseAwsKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getCatalogEncryptionServiceRole() == null) ? 0 : getCatalogEncryptionServiceRole().hashCode());
         return hashCode;
     }
 

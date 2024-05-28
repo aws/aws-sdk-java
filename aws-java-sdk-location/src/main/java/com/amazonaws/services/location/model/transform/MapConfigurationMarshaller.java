@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.location.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -27,6 +28,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class MapConfigurationMarshaller {
 
+    private static final MarshallingInfo<List> CUSTOMLAYERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("CustomLayers").build();
+    private static final MarshallingInfo<String> POLITICALVIEW_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PoliticalView").build();
     private static final MarshallingInfo<String> STYLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Style").build();
 
@@ -46,6 +51,8 @@ public class MapConfigurationMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(mapConfiguration.getCustomLayers(), CUSTOMLAYERS_BINDING);
+            protocolMarshaller.marshall(mapConfiguration.getPoliticalView(), POLITICALVIEW_BINDING);
             protocolMarshaller.marshall(mapConfiguration.getStyle(), STYLE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,10 +15,9 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Set Framerate (SccDestinationFramerate) to make sure that the captions and the video are synchronized in the output.
- * Specify a frame rate that matches the frame rate of the associated video. If the video frame rate is 29.97, choose
- * 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has video_insertion=true and drop_frame_timecode=true;
- * otherwise, choose 29.97 non-dropframe (FRAMERATE_29_97_NON_DROPFRAME).
+ * Set Framerate to make sure that the captions and the video are synchronized in the output. Specify a frame rate that
+ * matches the frame rate of the associated video. If the video frame rate is 29.97, choose 29.97 dropframe only if the
+ * video has video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum SccDestinationFramerate {

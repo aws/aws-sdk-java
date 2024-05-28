@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -74,8 +74,8 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
     private RotationRulesType rotationRules;
     /**
      * <p>
-     * The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for rotation,
-     * Secrets Manager returns null.
+     * The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for rotation or
+     * rotation has been disabled, Secrets Manager returns null.
      * </p>
      */
     private java.util.Date lastRotatedDate;
@@ -104,6 +104,19 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private java.util.Date deletedDate;
+    /**
+     * <p>
+     * The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation or
+     * rotation has been disabled, Secrets Manager returns null. If rotation fails, Secrets Manager retries the entire
+     * rotation process multiple times. If rotation is unsuccessful, this date may be in the past.
+     * </p>
+     * <p>
+     * This date represents the latest date that rotation will occur, but it is not an approximate rotation date. In
+     * some cases, for example if you turn off automatic rotation and then turn it back on, the next rotation may occur
+     * much sooner than this date.
+     * </p>
+     */
+    private java.util.Date nextRotationDate;
     /**
      * <p>
      * The list of tags attached to the secret. To add tags to a secret, use <a>TagResource</a>. To remove tags, use
@@ -533,13 +546,13 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for rotation,
-     * Secrets Manager returns null.
+     * The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for rotation or
+     * rotation has been disabled, Secrets Manager returns null.
      * </p>
      * 
      * @param lastRotatedDate
      *        The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for
-     *        rotation, Secrets Manager returns null.
+     *        rotation or rotation has been disabled, Secrets Manager returns null.
      */
 
     public void setLastRotatedDate(java.util.Date lastRotatedDate) {
@@ -548,12 +561,12 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for rotation,
-     * Secrets Manager returns null.
+     * The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for rotation or
+     * rotation has been disabled, Secrets Manager returns null.
      * </p>
      * 
      * @return The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for
-     *         rotation, Secrets Manager returns null.
+     *         rotation or rotation has been disabled, Secrets Manager returns null.
      */
 
     public java.util.Date getLastRotatedDate() {
@@ -562,13 +575,13 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for rotation,
-     * Secrets Manager returns null.
+     * The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for rotation or
+     * rotation has been disabled, Secrets Manager returns null.
      * </p>
      * 
      * @param lastRotatedDate
      *        The last date and time that Secrets Manager rotated the secret. If the secret isn't configured for
-     *        rotation, Secrets Manager returns null.
+     *        rotation or rotation has been disabled, Secrets Manager returns null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -736,6 +749,88 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
 
     public DescribeSecretResult withDeletedDate(java.util.Date deletedDate) {
         setDeletedDate(deletedDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation or
+     * rotation has been disabled, Secrets Manager returns null. If rotation fails, Secrets Manager retries the entire
+     * rotation process multiple times. If rotation is unsuccessful, this date may be in the past.
+     * </p>
+     * <p>
+     * This date represents the latest date that rotation will occur, but it is not an approximate rotation date. In
+     * some cases, for example if you turn off automatic rotation and then turn it back on, the next rotation may occur
+     * much sooner than this date.
+     * </p>
+     * 
+     * @param nextRotationDate
+     *        The next rotation is scheduled to occur on or before this date. If the secret isn't configured for
+     *        rotation or rotation has been disabled, Secrets Manager returns null. If rotation fails, Secrets Manager
+     *        retries the entire rotation process multiple times. If rotation is unsuccessful, this date may be in the
+     *        past.</p>
+     *        <p>
+     *        This date represents the latest date that rotation will occur, but it is not an approximate rotation date.
+     *        In some cases, for example if you turn off automatic rotation and then turn it back on, the next rotation
+     *        may occur much sooner than this date.
+     */
+
+    public void setNextRotationDate(java.util.Date nextRotationDate) {
+        this.nextRotationDate = nextRotationDate;
+    }
+
+    /**
+     * <p>
+     * The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation or
+     * rotation has been disabled, Secrets Manager returns null. If rotation fails, Secrets Manager retries the entire
+     * rotation process multiple times. If rotation is unsuccessful, this date may be in the past.
+     * </p>
+     * <p>
+     * This date represents the latest date that rotation will occur, but it is not an approximate rotation date. In
+     * some cases, for example if you turn off automatic rotation and then turn it back on, the next rotation may occur
+     * much sooner than this date.
+     * </p>
+     * 
+     * @return The next rotation is scheduled to occur on or before this date. If the secret isn't configured for
+     *         rotation or rotation has been disabled, Secrets Manager returns null. If rotation fails, Secrets Manager
+     *         retries the entire rotation process multiple times. If rotation is unsuccessful, this date may be in the
+     *         past.</p>
+     *         <p>
+     *         This date represents the latest date that rotation will occur, but it is not an approximate rotation
+     *         date. In some cases, for example if you turn off automatic rotation and then turn it back on, the next
+     *         rotation may occur much sooner than this date.
+     */
+
+    public java.util.Date getNextRotationDate() {
+        return this.nextRotationDate;
+    }
+
+    /**
+     * <p>
+     * The next rotation is scheduled to occur on or before this date. If the secret isn't configured for rotation or
+     * rotation has been disabled, Secrets Manager returns null. If rotation fails, Secrets Manager retries the entire
+     * rotation process multiple times. If rotation is unsuccessful, this date may be in the past.
+     * </p>
+     * <p>
+     * This date represents the latest date that rotation will occur, but it is not an approximate rotation date. In
+     * some cases, for example if you turn off automatic rotation and then turn it back on, the next rotation may occur
+     * much sooner than this date.
+     * </p>
+     * 
+     * @param nextRotationDate
+     *        The next rotation is scheduled to occur on or before this date. If the secret isn't configured for
+     *        rotation or rotation has been disabled, Secrets Manager returns null. If rotation fails, Secrets Manager
+     *        retries the entire rotation process multiple times. If rotation is unsuccessful, this date may be in the
+     *        past.</p>
+     *        <p>
+     *        This date represents the latest date that rotation will occur, but it is not an approximate rotation date.
+     *        In some cases, for example if you turn off automatic rotation and then turn it back on, the next rotation
+     *        may occur much sooner than this date.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSecretResult withNextRotationDate(java.util.Date nextRotationDate) {
+        setNextRotationDate(nextRotationDate);
         return this;
     }
 
@@ -1454,6 +1549,8 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
             sb.append("LastAccessedDate: ").append(getLastAccessedDate()).append(",");
         if (getDeletedDate() != null)
             sb.append("DeletedDate: ").append(getDeletedDate()).append(",");
+        if (getNextRotationDate() != null)
+            sb.append("NextRotationDate: ").append(getNextRotationDate()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getVersionIdsToStages() != null)
@@ -1524,6 +1621,10 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getDeletedDate() != null && other.getDeletedDate().equals(this.getDeletedDate()) == false)
             return false;
+        if (other.getNextRotationDate() == null ^ this.getNextRotationDate() == null)
+            return false;
+        if (other.getNextRotationDate() != null && other.getNextRotationDate().equals(this.getNextRotationDate()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -1567,6 +1668,7 @@ public class DescribeSecretResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getLastChangedDate() == null) ? 0 : getLastChangedDate().hashCode());
         hashCode = prime * hashCode + ((getLastAccessedDate() == null) ? 0 : getLastAccessedDate().hashCode());
         hashCode = prime * hashCode + ((getDeletedDate() == null) ? 0 : getDeletedDate().hashCode());
+        hashCode = prime * hashCode + ((getNextRotationDate() == null) ? 0 : getNextRotationDate().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getVersionIdsToStages() == null) ? 0 : getVersionIdsToStages().hashCode());
         hashCode = prime * hashCode + ((getOwningService() == null) ? 0 : getOwningService().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,14 +26,12 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Welcome to the Amazon Connect Cases API Reference. This guide provides information about the Amazon Connect Cases
- * API, which you can use to create, update, get, and list Cases domains, fields, field options, layouts, templates,
- * cases, related items, and tags.
+ * With Amazon Connect Cases, your agents can track and manage customer issues that require multiple interactions,
+ * follow-up tasks, and teams in your contact center. A case represents a customer issue. It records the issue, the
+ * steps and interactions taken to resolve the issue, and the outcome. For more information, see <a
+ * href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Amazon Connect Cases</a> in the <i>Amazon
+ * Connect Administrator Guide</i>.
  * </p>
- * 
- * <pre>
- * <code> &lt;p&gt;For more information about Amazon Connect Cases, see &lt;a href=&quot;https://docs.aws.amazon.com/connect/latest/adminguide/cases.html&quot;&gt;Amazon Connect Cases&lt;/a&gt; in the &lt;i&gt;Amazon Connect Administrator Guide&lt;/i&gt;. &lt;/p&gt; </code>
- * </pre>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -344,6 +342,138 @@ public class AmazonConnectCasesAsyncClient extends AmazonConnectCasesClient impl
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteDomainResult> deleteDomainAsync(DeleteDomainRequest request) {
+
+        return deleteDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDomainResult> deleteDomainAsync(final DeleteDomainRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDomainRequest, DeleteDomainResult> asyncHandler) {
+        final DeleteDomainRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDomainResult>() {
+            @Override
+            public DeleteDomainResult call() throws Exception {
+                DeleteDomainResult result = null;
+
+                try {
+                    result = executeDeleteDomain(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFieldResult> deleteFieldAsync(DeleteFieldRequest request) {
+
+        return deleteFieldAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFieldResult> deleteFieldAsync(final DeleteFieldRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteFieldRequest, DeleteFieldResult> asyncHandler) {
+        final DeleteFieldRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteFieldResult>() {
+            @Override
+            public DeleteFieldResult call() throws Exception {
+                DeleteFieldResult result = null;
+
+                try {
+                    result = executeDeleteField(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLayoutResult> deleteLayoutAsync(DeleteLayoutRequest request) {
+
+        return deleteLayoutAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLayoutResult> deleteLayoutAsync(final DeleteLayoutRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteLayoutRequest, DeleteLayoutResult> asyncHandler) {
+        final DeleteLayoutRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteLayoutResult>() {
+            @Override
+            public DeleteLayoutResult call() throws Exception {
+                DeleteLayoutResult result = null;
+
+                try {
+                    result = executeDeleteLayout(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTemplateResult> deleteTemplateAsync(DeleteTemplateRequest request) {
+
+        return deleteTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTemplateResult> deleteTemplateAsync(final DeleteTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteTemplateRequest, DeleteTemplateResult> asyncHandler) {
+        final DeleteTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteTemplateResult>() {
+            @Override
+            public DeleteTemplateResult call() throws Exception {
+                DeleteTemplateResult result = null;
+
+                try {
+                    result = executeDeleteTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCaseResult> getCaseAsync(GetCaseRequest request) {
 
         return getCaseAsync(request, null);
@@ -361,6 +491,39 @@ public class AmazonConnectCasesAsyncClient extends AmazonConnectCasesClient impl
 
                 try {
                     result = executeGetCase(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCaseAuditEventsResult> getCaseAuditEventsAsync(GetCaseAuditEventsRequest request) {
+
+        return getCaseAuditEventsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCaseAuditEventsResult> getCaseAuditEventsAsync(final GetCaseAuditEventsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCaseAuditEventsRequest, GetCaseAuditEventsResult> asyncHandler) {
+        final GetCaseAuditEventsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCaseAuditEventsResult>() {
+            @Override
+            public GetCaseAuditEventsResult call() throws Exception {
+                GetCaseAuditEventsResult result = null;
+
+                try {
+                    result = executeGetCaseAuditEvents(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

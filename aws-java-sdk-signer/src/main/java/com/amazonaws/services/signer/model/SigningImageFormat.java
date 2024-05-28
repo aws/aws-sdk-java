@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The image format of a code signing platform or profile.
+ * The image format of a AWS Signer platform or profile.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/SigningImageFormat" target="_top">AWS API
@@ -30,23 +30,23 @@ public class SigningImageFormat implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The supported formats of a code signing image.
+     * The supported formats of a signing image.
      * </p>
      */
     private java.util.List<String> supportedFormats;
     /**
      * <p>
-     * The default format of a code signing image.
+     * The default format of a signing image.
      * </p>
      */
     private String defaultFormat;
 
     /**
      * <p>
-     * The supported formats of a code signing image.
+     * The supported formats of a signing image.
      * </p>
      * 
-     * @return The supported formats of a code signing image.
+     * @return The supported formats of a signing image.
      * @see ImageFormat
      */
 
@@ -56,11 +56,11 @@ public class SigningImageFormat implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The supported formats of a code signing image.
+     * The supported formats of a signing image.
      * </p>
      * 
      * @param supportedFormats
-     *        The supported formats of a code signing image.
+     *        The supported formats of a signing image.
      * @see ImageFormat
      */
 
@@ -75,7 +75,7 @@ public class SigningImageFormat implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The supported formats of a code signing image.
+     * The supported formats of a signing image.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -84,7 +84,7 @@ public class SigningImageFormat implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param supportedFormats
-     *        The supported formats of a code signing image.
+     *        The supported formats of a signing image.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImageFormat
      */
@@ -101,11 +101,11 @@ public class SigningImageFormat implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The supported formats of a code signing image.
+     * The supported formats of a signing image.
      * </p>
      * 
      * @param supportedFormats
-     *        The supported formats of a code signing image.
+     *        The supported formats of a signing image.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImageFormat
      */
@@ -117,11 +117,11 @@ public class SigningImageFormat implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The supported formats of a code signing image.
+     * The supported formats of a signing image.
      * </p>
      * 
      * @param supportedFormats
-     *        The supported formats of a code signing image.
+     *        The supported formats of a signing image.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImageFormat
      */
@@ -141,11 +141,11 @@ public class SigningImageFormat implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The default format of a code signing image.
+     * The default format of a signing image.
      * </p>
      * 
      * @param defaultFormat
-     *        The default format of a code signing image.
+     *        The default format of a signing image.
      * @see ImageFormat
      */
 
@@ -155,10 +155,10 @@ public class SigningImageFormat implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The default format of a code signing image.
+     * The default format of a signing image.
      * </p>
      * 
-     * @return The default format of a code signing image.
+     * @return The default format of a signing image.
      * @see ImageFormat
      */
 
@@ -168,11 +168,11 @@ public class SigningImageFormat implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The default format of a code signing image.
+     * The default format of a signing image.
      * </p>
      * 
      * @param defaultFormat
-     *        The default format of a code signing image.
+     *        The default format of a signing image.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImageFormat
      */
@@ -184,11 +184,11 @@ public class SigningImageFormat implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The default format of a code signing image.
+     * The default format of a signing image.
      * </p>
      * 
      * @param defaultFormat
-     *        The default format of a code signing image.
+     *        The default format of a signing image.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImageFormat
      */

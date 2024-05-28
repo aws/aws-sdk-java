@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,10 @@ public class RequestedServiceQuotaChangeMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GlobalQuota").build();
     private static final MarshallingInfo<String> UNIT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Unit").build();
+    private static final MarshallingInfo<String> QUOTAREQUESTEDATLEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QuotaRequestedAtLevel").build();
+    private static final MarshallingInfo<StructuredPojo> QUOTACONTEXT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QuotaContext").build();
 
     private static final RequestedServiceQuotaChangeMarshaller instance = new RequestedServiceQuotaChangeMarshaller();
 
@@ -86,6 +90,8 @@ public class RequestedServiceQuotaChangeMarshaller {
             protocolMarshaller.marshall(requestedServiceQuotaChange.getQuotaArn(), QUOTAARN_BINDING);
             protocolMarshaller.marshall(requestedServiceQuotaChange.getGlobalQuota(), GLOBALQUOTA_BINDING);
             protocolMarshaller.marshall(requestedServiceQuotaChange.getUnit(), UNIT_BINDING);
+            protocolMarshaller.marshall(requestedServiceQuotaChange.getQuotaRequestedAtLevel(), QUOTAREQUESTEDATLEVEL_BINDING);
+            protocolMarshaller.marshall(requestedServiceQuotaChange.getQuotaContext(), QUOTACONTEXT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,15 +15,13 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Specify how MediaConvert handles the display definition segment (DDS). Keep the default, None (NONE), to exclude the
- * DDS from this set of captions. Choose No display window (NO_DISPLAY_WINDOW) to have MediaConvert include the DDS but
- * not include display window data. In this case, MediaConvert writes that information to the page composition segment
- * (PCS) instead. Choose Specify (SPECIFIED) to have MediaConvert set up the display window based on the values that you
- * specify in related job settings. For video resolutions that are 576 pixels or smaller in height, MediaConvert doesn't
- * include the DDS, regardless of the value you choose for DDS handling (ddsHandling). In this case, it doesn't write
- * the display window data to the PCS either. Related settings: Use the settings DDS x-coordinate (ddsXCoordinate) and
- * DDS y-coordinate (ddsYCoordinate) to specify the offset between the top left corner of the display window and the top
- * left corner of the video frame. All burn-in and DVB-Sub font settings must match.
+ * Specify how MediaConvert handles the display definition segment (DDS). To exclude the DDS from this set of captions:
+ * Keep the default, None. To include the DDS: Choose Specified. When you do, also specify the offset coordinates of the
+ * display window with DDS x-coordinate and DDS y-coordinate. To include the DDS, but not include display window data:
+ * Choose No display window. When you do, you can write position metadata to the page composition segment (PCS) with DDS
+ * x-coordinate and DDS y-coordinate. For video resolutions with a height of 576 pixels or less, MediaConvert doesn't
+ * include the DDS, regardless of the value you choose for DDS handling. All burn-in and DVB-Sub font settings must
+ * match.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DvbddsHandling {

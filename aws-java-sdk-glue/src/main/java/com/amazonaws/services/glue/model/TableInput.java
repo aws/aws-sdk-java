@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class TableInput implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * The table owner.
+     * The table owner. Included for Apache Hive compatibility. Not used in the normal course of Glue operations.
      * </p>
      */
     private String owner;
@@ -85,20 +85,39 @@ public class TableInput implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<Column> partitionKeys;
     /**
      * <p>
-     * If the table is a view, the original text of the view; otherwise <code>null</code>.
+     * Included for Apache Hive compatibility. Not used in the normal course of Glue operations. If the table is a
+     * <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded in base64.
      * </p>
      */
     private String viewOriginalText;
     /**
      * <p>
-     * If the table is a view, the expanded text of the view; otherwise <code>null</code>.
+     * Included for Apache Hive compatibility. Not used in the normal course of Glue operations.
      * </p>
      */
     private String viewExpandedText;
     /**
      * <p>
-     * The type of this table (<code>EXTERNAL_TABLE</code>, <code>VIRTUAL_VIEW</code>, etc.).
+     * The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services, such
+     * as Athena, may create tables with additional table types.
      * </p>
+     * <p>
+     * Glue related table types:
+     * </p>
+     * <dl>
+     * <dt>EXTERNAL_TABLE</dt>
+     * <dd>
+     * <p>
+     * Hive compatible attribute - indicates a non-Hive managed table.
+     * </p>
+     * </dd>
+     * <dt>GOVERNED</dt>
+     * <dd>
+     * <p>
+     * Used by Lake Formation. The Glue Data Catalog understands <code>GOVERNED</code>.
+     * </p>
+     * </dd>
+     * </dl>
      */
     private String tableType;
     /**
@@ -196,11 +215,11 @@ public class TableInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The table owner.
+     * The table owner. Included for Apache Hive compatibility. Not used in the normal course of Glue operations.
      * </p>
      * 
      * @param owner
-     *        The table owner.
+     *        The table owner. Included for Apache Hive compatibility. Not used in the normal course of Glue operations.
      */
 
     public void setOwner(String owner) {
@@ -209,10 +228,11 @@ public class TableInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The table owner.
+     * The table owner. Included for Apache Hive compatibility. Not used in the normal course of Glue operations.
      * </p>
      * 
-     * @return The table owner.
+     * @return The table owner. Included for Apache Hive compatibility. Not used in the normal course of Glue
+     *         operations.
      */
 
     public String getOwner() {
@@ -221,11 +241,11 @@ public class TableInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The table owner.
+     * The table owner. Included for Apache Hive compatibility. Not used in the normal course of Glue operations.
      * </p>
      * 
      * @param owner
-     *        The table owner.
+     *        The table owner. Included for Apache Hive compatibility. Not used in the normal course of Glue operations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -522,11 +542,13 @@ public class TableInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the table is a view, the original text of the view; otherwise <code>null</code>.
+     * Included for Apache Hive compatibility. Not used in the normal course of Glue operations. If the table is a
+     * <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded in base64.
      * </p>
      * 
      * @param viewOriginalText
-     *        If the table is a view, the original text of the view; otherwise <code>null</code>.
+     *        Included for Apache Hive compatibility. Not used in the normal course of Glue operations. If the table is
+     *        a <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded in base64.
      */
 
     public void setViewOriginalText(String viewOriginalText) {
@@ -535,10 +557,12 @@ public class TableInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the table is a view, the original text of the view; otherwise <code>null</code>.
+     * Included for Apache Hive compatibility. Not used in the normal course of Glue operations. If the table is a
+     * <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded in base64.
      * </p>
      * 
-     * @return If the table is a view, the original text of the view; otherwise <code>null</code>.
+     * @return Included for Apache Hive compatibility. Not used in the normal course of Glue operations. If the table is
+     *         a <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded in base64.
      */
 
     public String getViewOriginalText() {
@@ -547,11 +571,13 @@ public class TableInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the table is a view, the original text of the view; otherwise <code>null</code>.
+     * Included for Apache Hive compatibility. Not used in the normal course of Glue operations. If the table is a
+     * <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded in base64.
      * </p>
      * 
      * @param viewOriginalText
-     *        If the table is a view, the original text of the view; otherwise <code>null</code>.
+     *        Included for Apache Hive compatibility. Not used in the normal course of Glue operations. If the table is
+     *        a <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded in base64.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -562,11 +588,11 @@ public class TableInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the table is a view, the expanded text of the view; otherwise <code>null</code>.
+     * Included for Apache Hive compatibility. Not used in the normal course of Glue operations.
      * </p>
      * 
      * @param viewExpandedText
-     *        If the table is a view, the expanded text of the view; otherwise <code>null</code>.
+     *        Included for Apache Hive compatibility. Not used in the normal course of Glue operations.
      */
 
     public void setViewExpandedText(String viewExpandedText) {
@@ -575,10 +601,10 @@ public class TableInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the table is a view, the expanded text of the view; otherwise <code>null</code>.
+     * Included for Apache Hive compatibility. Not used in the normal course of Glue operations.
      * </p>
      * 
-     * @return If the table is a view, the expanded text of the view; otherwise <code>null</code>.
+     * @return Included for Apache Hive compatibility. Not used in the normal course of Glue operations.
      */
 
     public String getViewExpandedText() {
@@ -587,11 +613,11 @@ public class TableInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the table is a view, the expanded text of the view; otherwise <code>null</code>.
+     * Included for Apache Hive compatibility. Not used in the normal course of Glue operations.
      * </p>
      * 
      * @param viewExpandedText
-     *        If the table is a view, the expanded text of the view; otherwise <code>null</code>.
+     *        Included for Apache Hive compatibility. Not used in the normal course of Glue operations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -602,11 +628,46 @@ public class TableInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of this table (<code>EXTERNAL_TABLE</code>, <code>VIRTUAL_VIEW</code>, etc.).
+     * The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services, such
+     * as Athena, may create tables with additional table types.
      * </p>
+     * <p>
+     * Glue related table types:
+     * </p>
+     * <dl>
+     * <dt>EXTERNAL_TABLE</dt>
+     * <dd>
+     * <p>
+     * Hive compatible attribute - indicates a non-Hive managed table.
+     * </p>
+     * </dd>
+     * <dt>GOVERNED</dt>
+     * <dd>
+     * <p>
+     * Used by Lake Formation. The Glue Data Catalog understands <code>GOVERNED</code>.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @param tableType
-     *        The type of this table (<code>EXTERNAL_TABLE</code>, <code>VIRTUAL_VIEW</code>, etc.).
+     *        The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services,
+     *        such as Athena, may create tables with additional table types. </p>
+     *        <p>
+     *        Glue related table types:
+     *        </p>
+     *        <dl>
+     *        <dt>EXTERNAL_TABLE</dt>
+     *        <dd>
+     *        <p>
+     *        Hive compatible attribute - indicates a non-Hive managed table.
+     *        </p>
+     *        </dd>
+     *        <dt>GOVERNED</dt>
+     *        <dd>
+     *        <p>
+     *        Used by Lake Formation. The Glue Data Catalog understands <code>GOVERNED</code>.
+     *        </p>
+     *        </dd>
      */
 
     public void setTableType(String tableType) {
@@ -615,10 +676,45 @@ public class TableInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of this table (<code>EXTERNAL_TABLE</code>, <code>VIRTUAL_VIEW</code>, etc.).
+     * The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services, such
+     * as Athena, may create tables with additional table types.
      * </p>
+     * <p>
+     * Glue related table types:
+     * </p>
+     * <dl>
+     * <dt>EXTERNAL_TABLE</dt>
+     * <dd>
+     * <p>
+     * Hive compatible attribute - indicates a non-Hive managed table.
+     * </p>
+     * </dd>
+     * <dt>GOVERNED</dt>
+     * <dd>
+     * <p>
+     * Used by Lake Formation. The Glue Data Catalog understands <code>GOVERNED</code>.
+     * </p>
+     * </dd>
+     * </dl>
      * 
-     * @return The type of this table (<code>EXTERNAL_TABLE</code>, <code>VIRTUAL_VIEW</code>, etc.).
+     * @return The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other
+     *         services, such as Athena, may create tables with additional table types. </p>
+     *         <p>
+     *         Glue related table types:
+     *         </p>
+     *         <dl>
+     *         <dt>EXTERNAL_TABLE</dt>
+     *         <dd>
+     *         <p>
+     *         Hive compatible attribute - indicates a non-Hive managed table.
+     *         </p>
+     *         </dd>
+     *         <dt>GOVERNED</dt>
+     *         <dd>
+     *         <p>
+     *         Used by Lake Formation. The Glue Data Catalog understands <code>GOVERNED</code>.
+     *         </p>
+     *         </dd>
      */
 
     public String getTableType() {
@@ -627,11 +723,46 @@ public class TableInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of this table (<code>EXTERNAL_TABLE</code>, <code>VIRTUAL_VIEW</code>, etc.).
+     * The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services, such
+     * as Athena, may create tables with additional table types.
      * </p>
+     * <p>
+     * Glue related table types:
+     * </p>
+     * <dl>
+     * <dt>EXTERNAL_TABLE</dt>
+     * <dd>
+     * <p>
+     * Hive compatible attribute - indicates a non-Hive managed table.
+     * </p>
+     * </dd>
+     * <dt>GOVERNED</dt>
+     * <dd>
+     * <p>
+     * Used by Lake Formation. The Glue Data Catalog understands <code>GOVERNED</code>.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @param tableType
-     *        The type of this table (<code>EXTERNAL_TABLE</code>, <code>VIRTUAL_VIEW</code>, etc.).
+     *        The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services,
+     *        such as Athena, may create tables with additional table types. </p>
+     *        <p>
+     *        Glue related table types:
+     *        </p>
+     *        <dl>
+     *        <dt>EXTERNAL_TABLE</dt>
+     *        <dd>
+     *        <p>
+     *        Hive compatible attribute - indicates a non-Hive managed table.
+     *        </p>
+     *        </dd>
+     *        <dt>GOVERNED</dt>
+     *        <dd>
+     *        <p>
+     *        Used by Lake Formation. The Glue Data Catalog understands <code>GOVERNED</code>.
+     *        </p>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

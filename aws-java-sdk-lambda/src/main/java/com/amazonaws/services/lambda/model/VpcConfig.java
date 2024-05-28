@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * The VPC security groups and subnets that are attached to a Lambda function. For more information, see <a
- * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.
+ * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">Configuring a Lambda function to access
+ * resources in a VPC</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/VpcConfig" target="_top">AWS API
@@ -37,10 +38,16 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<String> subnetIds;
     /**
      * <p>
-     * A list of VPC security groups IDs.
+     * A list of VPC security group IDs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> securityGroupIds;
+    /**
+     * <p>
+     * Allows outbound IPv6 traffic on VPC functions that are connected to dual-stack subnets.
+     * </p>
+     */
+    private Boolean ipv6AllowedForDualStack;
 
     /**
      * <p>
@@ -117,10 +124,10 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of VPC security groups IDs.
+     * A list of VPC security group IDs.
      * </p>
      * 
-     * @return A list of VPC security groups IDs.
+     * @return A list of VPC security group IDs.
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -132,11 +139,11 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of VPC security groups IDs.
+     * A list of VPC security group IDs.
      * </p>
      * 
      * @param securityGroupIds
-     *        A list of VPC security groups IDs.
+     *        A list of VPC security group IDs.
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -150,7 +157,7 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of VPC security groups IDs.
+     * A list of VPC security group IDs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -159,7 +166,7 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param securityGroupIds
-     *        A list of VPC security groups IDs.
+     *        A list of VPC security group IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,17 +182,69 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of VPC security groups IDs.
+     * A list of VPC security group IDs.
      * </p>
      * 
      * @param securityGroupIds
-     *        A list of VPC security groups IDs.
+     *        A list of VPC security group IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public VpcConfig withSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
         setSecurityGroupIds(securityGroupIds);
         return this;
+    }
+
+    /**
+     * <p>
+     * Allows outbound IPv6 traffic on VPC functions that are connected to dual-stack subnets.
+     * </p>
+     * 
+     * @param ipv6AllowedForDualStack
+     *        Allows outbound IPv6 traffic on VPC functions that are connected to dual-stack subnets.
+     */
+
+    public void setIpv6AllowedForDualStack(Boolean ipv6AllowedForDualStack) {
+        this.ipv6AllowedForDualStack = ipv6AllowedForDualStack;
+    }
+
+    /**
+     * <p>
+     * Allows outbound IPv6 traffic on VPC functions that are connected to dual-stack subnets.
+     * </p>
+     * 
+     * @return Allows outbound IPv6 traffic on VPC functions that are connected to dual-stack subnets.
+     */
+
+    public Boolean getIpv6AllowedForDualStack() {
+        return this.ipv6AllowedForDualStack;
+    }
+
+    /**
+     * <p>
+     * Allows outbound IPv6 traffic on VPC functions that are connected to dual-stack subnets.
+     * </p>
+     * 
+     * @param ipv6AllowedForDualStack
+     *        Allows outbound IPv6 traffic on VPC functions that are connected to dual-stack subnets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcConfig withIpv6AllowedForDualStack(Boolean ipv6AllowedForDualStack) {
+        setIpv6AllowedForDualStack(ipv6AllowedForDualStack);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Allows outbound IPv6 traffic on VPC functions that are connected to dual-stack subnets.
+     * </p>
+     * 
+     * @return Allows outbound IPv6 traffic on VPC functions that are connected to dual-stack subnets.
+     */
+
+    public Boolean isIpv6AllowedForDualStack() {
+        return this.ipv6AllowedForDualStack;
     }
 
     /**
@@ -203,7 +262,9 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
         if (getSubnetIds() != null)
             sb.append("SubnetIds: ").append(getSubnetIds()).append(",");
         if (getSecurityGroupIds() != null)
-            sb.append("SecurityGroupIds: ").append(getSecurityGroupIds());
+            sb.append("SecurityGroupIds: ").append(getSecurityGroupIds()).append(",");
+        if (getIpv6AllowedForDualStack() != null)
+            sb.append("Ipv6AllowedForDualStack: ").append(getIpv6AllowedForDualStack());
         sb.append("}");
         return sb.toString();
     }
@@ -226,6 +287,10 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSecurityGroupIds() != null && other.getSecurityGroupIds().equals(this.getSecurityGroupIds()) == false)
             return false;
+        if (other.getIpv6AllowedForDualStack() == null ^ this.getIpv6AllowedForDualStack() == null)
+            return false;
+        if (other.getIpv6AllowedForDualStack() != null && other.getIpv6AllowedForDualStack().equals(this.getIpv6AllowedForDualStack()) == false)
+            return false;
         return true;
     }
 
@@ -236,6 +301,7 @@ public class VpcConfig implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
+        hashCode = prime * hashCode + ((getIpv6AllowedForDualStack() == null) ? 0 : getIpv6AllowedForDualStack().hashCode());
         return hashCode;
     }
 

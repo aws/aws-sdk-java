@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable, StructuredP
     private String name;
     /**
      * <p>
-     * Market type of the EC2 instances used to create a cluster node.
+     * Market type of the Amazon EC2 instances used to create a cluster node.
      * </p>
      */
     private String market;
@@ -62,7 +62,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable, StructuredP
     private String bidPrice;
     /**
      * <p>
-     * EC2 instance type.
+     * Amazon EC2 instance type.
      * </p>
      */
     private String instanceType;
@@ -135,7 +135,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable, StructuredP
      * @param instanceRole
      *        Instance group role in the cluster
      * @param instanceType
-     *        EC2 instance type.
+     *        Amazon EC2 instance type.
      * @param instanceRequestCount
      *        Target number of instances to run in the instance group.
      * @param instanceRunningCount
@@ -162,7 +162,7 @@ public class InstanceGroupDetail implements Serializable, Cloneable, StructuredP
      * @param instanceRole
      *        Instance group role in the cluster
      * @param instanceType
-     *        EC2 instance type.
+     *        Amazon EC2 instance type.
      * @param instanceRequestCount
      *        Target number of instances to run in the instance group.
      * @param instanceRunningCount
@@ -264,11 +264,11 @@ public class InstanceGroupDetail implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Market type of the EC2 instances used to create a cluster node.
+     * Market type of the Amazon EC2 instances used to create a cluster node.
      * </p>
      * 
      * @param market
-     *        Market type of the EC2 instances used to create a cluster node.
+     *        Market type of the Amazon EC2 instances used to create a cluster node.
      * @see MarketType
      */
 
@@ -278,10 +278,10 @@ public class InstanceGroupDetail implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Market type of the EC2 instances used to create a cluster node.
+     * Market type of the Amazon EC2 instances used to create a cluster node.
      * </p>
      * 
-     * @return Market type of the EC2 instances used to create a cluster node.
+     * @return Market type of the Amazon EC2 instances used to create a cluster node.
      * @see MarketType
      */
 
@@ -291,11 +291,11 @@ public class InstanceGroupDetail implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Market type of the EC2 instances used to create a cluster node.
+     * Market type of the Amazon EC2 instances used to create a cluster node.
      * </p>
      * 
      * @param market
-     *        Market type of the EC2 instances used to create a cluster node.
+     *        Market type of the Amazon EC2 instances used to create a cluster node.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MarketType
      */
@@ -307,11 +307,11 @@ public class InstanceGroupDetail implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Market type of the EC2 instances used to create a cluster node.
+     * Market type of the Amazon EC2 instances used to create a cluster node.
      * </p>
      * 
      * @param market
-     *        Market type of the EC2 instances used to create a cluster node.
+     *        Market type of the Amazon EC2 instances used to create a cluster node.
      * @see MarketType
      */
 
@@ -321,11 +321,11 @@ public class InstanceGroupDetail implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Market type of the EC2 instances used to create a cluster node.
+     * Market type of the Amazon EC2 instances used to create a cluster node.
      * </p>
      * 
      * @param market
-     *        Market type of the EC2 instances used to create a cluster node.
+     *        Market type of the Amazon EC2 instances used to create a cluster node.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MarketType
      */
@@ -462,11 +462,11 @@ public class InstanceGroupDetail implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * EC2 instance type.
+     * Amazon EC2 instance type.
      * </p>
      * 
      * @param instanceType
-     *        EC2 instance type.
+     *        Amazon EC2 instance type.
      */
 
     public void setInstanceType(String instanceType) {
@@ -475,10 +475,10 @@ public class InstanceGroupDetail implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * EC2 instance type.
+     * Amazon EC2 instance type.
      * </p>
      * 
-     * @return EC2 instance type.
+     * @return Amazon EC2 instance type.
      */
 
     public String getInstanceType() {
@@ -487,11 +487,11 @@ public class InstanceGroupDetail implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * EC2 instance type.
+     * Amazon EC2 instance type.
      * </p>
      * 
      * @param instanceType
-     *        EC2 instance type.
+     *        Amazon EC2 instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

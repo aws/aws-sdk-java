@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The current status of a domain.
+ * The current status of an OpenSearch Service domain.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,131 +27,163 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the specified domain.
+     * Unique identifier for the domain.
      * </p>
      */
     private String domainId;
     /**
      * <p>
-     * The name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain
-     * names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and -
-     * (hyphen).
+     * Name of the domain. Domain names are unique across all domains owned by the same account within an Amazon Web
+     * Services Region.
      * </p>
      */
     private String domainName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a domain. See <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html" target="_blank">IAM
-     * identifiers </a> in the <i>AWS Identity and Access Management User Guide</i> for more information.
+     * The Amazon Resource Name (ARN) of the domain. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers </a> in the
+     * <i>AWS Identity and Access Management User Guide</i>.
      * </p>
      */
     private String aRN;
     /**
      * <p>
-     * The domain creation status. <code>True</code> if the creation of a domain is complete. <code> False </code> if
-     * domain creation is still in progress.
+     * Creation status of an OpenSearch Service domain. True if domain creation is complete. False if domain creation is
+     * still in progress.
      * </p>
      */
     private Boolean created;
     /**
      * <p>
-     * The domain deletion status. <code>True</code> if a delete request has been received for the domain but resource
-     * cleanup is still in progress. <code>False</code> if the domain has not been deleted. Once domain deletion is
-     * complete, the status of the domain is no longer returned.
+     * Deletion status of an OpenSearch Service domain. True if domain deletion is complete. False if domain deletion is
+     * still in progress. Once deletion is complete, the status of the domain is no longer returned.
      * </p>
      */
     private Boolean deleted;
     /**
      * <p>
-     * The domain endpoint that you use to submit index and search requests.
+     * Domain-specific endpoint used to submit index, search, and data upload requests to the domain.
      * </p>
      */
     private String endpoint;
     /**
      * <p>
-     * Map containing the domain endpoints used to submit index and search requests. Example <code>key, value</code>:
-     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.
+     * If <code>IPAddressType</code> to set to <code>dualstack</code>, a version 2 domain endpoint is provisioned. This
+     * endpoint functions like a normal endpoint, except that it works with both IPv4 and IPv6 IP addresses. Normal
+     * endpoints work only with IPv4 IP addresses.
      * </p>
+     */
+    private String endpointV2;
+    /**
+     * <p>
+     * The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>IPv4 IP addresses</b> -
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Dual stack IP addresses</b> -
+     * <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.Map<String, String> endpoints;
     /**
      * <p>
-     * The status of the domain configuration. <code>True</code> if Amazon OpenSearch Service is processing
-     * configuration changes. <code>False</code> if the configuration is active.
+     * The dual stack hosted zone ID for the domain.
+     * </p>
+     */
+    private String domainEndpointV2HostedZoneId;
+    /**
+     * <p>
+     * The status of the domain configuration. True if OpenSearch Service is processing configuration changes. False if
+     * the configuration is active.
      * </p>
      */
     private Boolean processing;
     /**
      * <p>
-     * The status of a domain version upgrade. <code>True</code> if Amazon OpenSearch Service is undergoing a version
-     * upgrade. <code>False</code> if the configuration is active.
+     * The status of a domain version upgrade to a new version of OpenSearch or Elasticsearch. True if OpenSearch
+     * Service is in the process of a version upgrade. False if the configuration is active.
      * </p>
      */
     private Boolean upgradeProcessing;
-
+    /**
+     * <p>
+     * Version of OpenSearch or Elasticsearch that the domain is running, in the format <code>Elasticsearch_X.Y</code>
+     * or <code>OpenSearch_X.Y</code>.
+     * </p>
+     */
     private String engineVersion;
     /**
      * <p>
-     * The type and number of instances in the domain.
+     * Container for the cluster configuration of the domain.
      * </p>
      */
     private ClusterConfig clusterConfig;
     /**
      * <p>
-     * The <code>EBSOptions</code> for the specified domain.
+     * Container for EBS-based storage settings for the domain.
      * </p>
      */
     private EBSOptions eBSOptions;
     /**
      * <p>
-     * IAM access policy as a JSON-formatted string.
+     * Identity and Access Management (IAM) policy document specifying the access policies for the domain.
      * </p>
      */
     private String accessPolicies;
     /**
      * <p>
-     * The status of the <code>SnapshotOptions</code>.
+     * The type of IP addresses supported by the endpoint for the domain.
+     * </p>
+     */
+    private String iPAddressType;
+    /**
+     * <p>
+     * DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.
      * </p>
      */
     private SnapshotOptions snapshotOptions;
     /**
      * <p>
-     * The <code>VPCOptions</code> for the specified domain. For more information, see <a
-     * href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank"> Launching
-     * your Amazon OpenSearch Service domains using a VPC</a>.
+     * The VPC configuration for the domain.
      * </p>
      */
     private VPCDerivedInfo vPCOptions;
     /**
      * <p>
-     * The <code>CognitoOptions</code> for the specified domain. For more information, see <a
-     * href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-     * target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+     * Key-value pairs to configure Amazon Cognito authentication for OpenSearch Dashboards.
      * </p>
      */
     private CognitoOptions cognitoOptions;
     /**
      * <p>
-     * The status of the <code>EncryptionAtRestOptions</code>.
+     * Encryption at rest settings for the domain.
      * </p>
      */
     private EncryptionAtRestOptions encryptionAtRestOptions;
     /**
      * <p>
-     * The status of the <code>NodeToNodeEncryptionOptions</code>.
+     * Whether node-to-node encryption is enabled or disabled.
      * </p>
      */
     private NodeToNodeEncryptionOptions nodeToNodeEncryptionOptions;
     /**
      * <p>
-     * The status of the <code>AdvancedOptions</code>.
+     * Key-value pairs that specify advanced configuration options.
      * </p>
      */
     private java.util.Map<String, String> advancedOptions;
     /**
      * <p>
-     * Log publishing options for the given domain.
+     * Log publishing options for the domain.
      * </p>
      */
     private java.util.Map<String, LogPublishingOption> logPublishingOptions;
@@ -163,36 +195,61 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
     private ServiceSoftwareOptions serviceSoftwareOptions;
     /**
      * <p>
-     * The current status of the domain's endpoint options.
+     * Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.
      * </p>
      */
     private DomainEndpointOptions domainEndpointOptions;
     /**
      * <p>
-     * The current status of the domain's advanced security options.
+     * Settings for fine-grained access control.
      * </p>
      */
     private AdvancedSecurityOptions advancedSecurityOptions;
     /**
      * <p>
-     * The current status of the domain's Auto-Tune options.
+     * Auto-Tune settings for the domain.
      * </p>
      */
     private AutoTuneOptionsOutput autoTuneOptions;
     /**
      * <p>
-     * Specifies change details of the domain configuration change.
+     * Information about a configuration change happening on the domain.
      * </p>
      */
     private ChangeProgressDetails changeProgressDetails;
+    /**
+     * <p>
+     * Options that specify a custom 10-hour window during which OpenSearch Service can perform configuration changes on
+     * the domain.
+     * </p>
+     */
+    private OffPeakWindowOptions offPeakWindowOptions;
+    /**
+     * <p>
+     * Service software update options for the domain.
+     * </p>
+     */
+    private SoftwareUpdateOptions softwareUpdateOptions;
+    /**
+     * <p>
+     * The status of any changes that are currently in progress for the domain.
+     * </p>
+     */
+    private String domainProcessingStatus;
+    /**
+     * <p>
+     * Information about the domain properties that are currently being modified.
+     * </p>
+     */
+    private java.util.List<ModifyingProperties> modifyingProperties;
 
     /**
      * <p>
-     * The unique identifier for the specified domain.
+     * Unique identifier for the domain.
      * </p>
      * 
      * @param domainId
-     *        The unique identifier for the specified domain.
+     *        Unique identifier for the domain.
      */
 
     public void setDomainId(String domainId) {
@@ -201,10 +258,10 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the specified domain.
+     * Unique identifier for the domain.
      * </p>
      * 
-     * @return The unique identifier for the specified domain.
+     * @return Unique identifier for the domain.
      */
 
     public String getDomainId() {
@@ -213,11 +270,11 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the specified domain.
+     * Unique identifier for the domain.
      * </p>
      * 
      * @param domainId
-     *        The unique identifier for the specified domain.
+     *        Unique identifier for the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -228,15 +285,13 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain
-     * names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and -
-     * (hyphen).
+     * Name of the domain. Domain names are unique across all domains owned by the same account within an Amazon Web
+     * Services Region.
      * </p>
      * 
      * @param domainName
-     *        The name of a domain. Domain names are unique across the domains owned by an account within an AWS region.
-     *        Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
-     *        and - (hyphen).
+     *        Name of the domain. Domain names are unique across all domains owned by the same account within an Amazon
+     *        Web Services Region.
      */
 
     public void setDomainName(String domainName) {
@@ -245,14 +300,12 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain
-     * names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and -
-     * (hyphen).
+     * Name of the domain. Domain names are unique across all domains owned by the same account within an Amazon Web
+     * Services Region.
      * </p>
      * 
-     * @return The name of a domain. Domain names are unique across the domains owned by an account within an AWS
-     *         region. Domain names start with a letter or number and can contain the following characters: a-z
-     *         (lowercase), 0-9, and - (hyphen).
+     * @return Name of the domain. Domain names are unique across all domains owned by the same account within an Amazon
+     *         Web Services Region.
      */
 
     public String getDomainName() {
@@ -261,15 +314,13 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain
-     * names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and -
-     * (hyphen).
+     * Name of the domain. Domain names are unique across all domains owned by the same account within an Amazon Web
+     * Services Region.
      * </p>
      * 
      * @param domainName
-     *        The name of a domain. Domain names are unique across the domains owned by an account within an AWS region.
-     *        Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
-     *        and - (hyphen).
+     *        Name of the domain. Domain names are unique across all domains owned by the same account within an Amazon
+     *        Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -280,15 +331,15 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a domain. See <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html" target="_blank">IAM
-     * identifiers </a> in the <i>AWS Identity and Access Management User Guide</i> for more information.
+     * The Amazon Resource Name (ARN) of the domain. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers </a> in the
+     * <i>AWS Identity and Access Management User Guide</i>.
      * </p>
      * 
      * @param aRN
-     *        The Amazon Resource Name (ARN) of a domain. See <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html" target="_blank">IAM
-     *        identifiers </a> in the <i>AWS Identity and Access Management User Guide</i> for more information.
+     *        The Amazon Resource Name (ARN) of the domain. For more information, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers </a> in
+     *        the <i>AWS Identity and Access Management User Guide</i>.
      */
 
     public void setARN(String aRN) {
@@ -297,14 +348,14 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a domain. See <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html" target="_blank">IAM
-     * identifiers </a> in the <i>AWS Identity and Access Management User Guide</i> for more information.
+     * The Amazon Resource Name (ARN) of the domain. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers </a> in the
+     * <i>AWS Identity and Access Management User Guide</i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of a domain. See <a
-     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html" target="_blank">IAM
-     *         identifiers </a> in the <i>AWS Identity and Access Management User Guide</i> for more information.
+     * @return The Amazon Resource Name (ARN) of the domain. For more information, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers </a>
+     *         in the <i>AWS Identity and Access Management User Guide</i>.
      */
 
     public String getARN() {
@@ -313,15 +364,15 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a domain. See <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html" target="_blank">IAM
-     * identifiers </a> in the <i>AWS Identity and Access Management User Guide</i> for more information.
+     * The Amazon Resource Name (ARN) of the domain. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers </a> in the
+     * <i>AWS Identity and Access Management User Guide</i>.
      * </p>
      * 
      * @param aRN
-     *        The Amazon Resource Name (ARN) of a domain. See <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html" target="_blank">IAM
-     *        identifiers </a> in the <i>AWS Identity and Access Management User Guide</i> for more information.
+     *        The Amazon Resource Name (ARN) of the domain. For more information, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers </a> in
+     *        the <i>AWS Identity and Access Management User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -332,13 +383,13 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The domain creation status. <code>True</code> if the creation of a domain is complete. <code> False </code> if
-     * domain creation is still in progress.
+     * Creation status of an OpenSearch Service domain. True if domain creation is complete. False if domain creation is
+     * still in progress.
      * </p>
      * 
      * @param created
-     *        The domain creation status. <code>True</code> if the creation of a domain is complete.
-     *        <code> False </code> if domain creation is still in progress.
+     *        Creation status of an OpenSearch Service domain. True if domain creation is complete. False if domain
+     *        creation is still in progress.
      */
 
     public void setCreated(Boolean created) {
@@ -347,12 +398,12 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The domain creation status. <code>True</code> if the creation of a domain is complete. <code> False </code> if
-     * domain creation is still in progress.
+     * Creation status of an OpenSearch Service domain. True if domain creation is complete. False if domain creation is
+     * still in progress.
      * </p>
      * 
-     * @return The domain creation status. <code>True</code> if the creation of a domain is complete.
-     *         <code> False </code> if domain creation is still in progress.
+     * @return Creation status of an OpenSearch Service domain. True if domain creation is complete. False if domain
+     *         creation is still in progress.
      */
 
     public Boolean getCreated() {
@@ -361,13 +412,13 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The domain creation status. <code>True</code> if the creation of a domain is complete. <code> False </code> if
-     * domain creation is still in progress.
+     * Creation status of an OpenSearch Service domain. True if domain creation is complete. False if domain creation is
+     * still in progress.
      * </p>
      * 
      * @param created
-     *        The domain creation status. <code>True</code> if the creation of a domain is complete.
-     *        <code> False </code> if domain creation is still in progress.
+     *        Creation status of an OpenSearch Service domain. True if domain creation is complete. False if domain
+     *        creation is still in progress.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -378,12 +429,12 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The domain creation status. <code>True</code> if the creation of a domain is complete. <code> False </code> if
-     * domain creation is still in progress.
+     * Creation status of an OpenSearch Service domain. True if domain creation is complete. False if domain creation is
+     * still in progress.
      * </p>
      * 
-     * @return The domain creation status. <code>True</code> if the creation of a domain is complete.
-     *         <code> False </code> if domain creation is still in progress.
+     * @return Creation status of an OpenSearch Service domain. True if domain creation is complete. False if domain
+     *         creation is still in progress.
      */
 
     public Boolean isCreated() {
@@ -392,15 +443,13 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The domain deletion status. <code>True</code> if a delete request has been received for the domain but resource
-     * cleanup is still in progress. <code>False</code> if the domain has not been deleted. Once domain deletion is
-     * complete, the status of the domain is no longer returned.
+     * Deletion status of an OpenSearch Service domain. True if domain deletion is complete. False if domain deletion is
+     * still in progress. Once deletion is complete, the status of the domain is no longer returned.
      * </p>
      * 
      * @param deleted
-     *        The domain deletion status. <code>True</code> if a delete request has been received for the domain but
-     *        resource cleanup is still in progress. <code>False</code> if the domain has not been deleted. Once domain
-     *        deletion is complete, the status of the domain is no longer returned.
+     *        Deletion status of an OpenSearch Service domain. True if domain deletion is complete. False if domain
+     *        deletion is still in progress. Once deletion is complete, the status of the domain is no longer returned.
      */
 
     public void setDeleted(Boolean deleted) {
@@ -409,14 +458,12 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The domain deletion status. <code>True</code> if a delete request has been received for the domain but resource
-     * cleanup is still in progress. <code>False</code> if the domain has not been deleted. Once domain deletion is
-     * complete, the status of the domain is no longer returned.
+     * Deletion status of an OpenSearch Service domain. True if domain deletion is complete. False if domain deletion is
+     * still in progress. Once deletion is complete, the status of the domain is no longer returned.
      * </p>
      * 
-     * @return The domain deletion status. <code>True</code> if a delete request has been received for the domain but
-     *         resource cleanup is still in progress. <code>False</code> if the domain has not been deleted. Once domain
-     *         deletion is complete, the status of the domain is no longer returned.
+     * @return Deletion status of an OpenSearch Service domain. True if domain deletion is complete. False if domain
+     *         deletion is still in progress. Once deletion is complete, the status of the domain is no longer returned.
      */
 
     public Boolean getDeleted() {
@@ -425,15 +472,13 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The domain deletion status. <code>True</code> if a delete request has been received for the domain but resource
-     * cleanup is still in progress. <code>False</code> if the domain has not been deleted. Once domain deletion is
-     * complete, the status of the domain is no longer returned.
+     * Deletion status of an OpenSearch Service domain. True if domain deletion is complete. False if domain deletion is
+     * still in progress. Once deletion is complete, the status of the domain is no longer returned.
      * </p>
      * 
      * @param deleted
-     *        The domain deletion status. <code>True</code> if a delete request has been received for the domain but
-     *        resource cleanup is still in progress. <code>False</code> if the domain has not been deleted. Once domain
-     *        deletion is complete, the status of the domain is no longer returned.
+     *        Deletion status of an OpenSearch Service domain. True if domain deletion is complete. False if domain
+     *        deletion is still in progress. Once deletion is complete, the status of the domain is no longer returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -444,14 +489,12 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The domain deletion status. <code>True</code> if a delete request has been received for the domain but resource
-     * cleanup is still in progress. <code>False</code> if the domain has not been deleted. Once domain deletion is
-     * complete, the status of the domain is no longer returned.
+     * Deletion status of an OpenSearch Service domain. True if domain deletion is complete. False if domain deletion is
+     * still in progress. Once deletion is complete, the status of the domain is no longer returned.
      * </p>
      * 
-     * @return The domain deletion status. <code>True</code> if a delete request has been received for the domain but
-     *         resource cleanup is still in progress. <code>False</code> if the domain has not been deleted. Once domain
-     *         deletion is complete, the status of the domain is no longer returned.
+     * @return Deletion status of an OpenSearch Service domain. True if domain deletion is complete. False if domain
+     *         deletion is still in progress. Once deletion is complete, the status of the domain is no longer returned.
      */
 
     public Boolean isDeleted() {
@@ -460,11 +503,11 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The domain endpoint that you use to submit index and search requests.
+     * Domain-specific endpoint used to submit index, search, and data upload requests to the domain.
      * </p>
      * 
      * @param endpoint
-     *        The domain endpoint that you use to submit index and search requests.
+     *        Domain-specific endpoint used to submit index, search, and data upload requests to the domain.
      */
 
     public void setEndpoint(String endpoint) {
@@ -473,10 +516,10 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The domain endpoint that you use to submit index and search requests.
+     * Domain-specific endpoint used to submit index, search, and data upload requests to the domain.
      * </p>
      * 
-     * @return The domain endpoint that you use to submit index and search requests.
+     * @return Domain-specific endpoint used to submit index, search, and data upload requests to the domain.
      */
 
     public String getEndpoint() {
@@ -485,11 +528,11 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The domain endpoint that you use to submit index and search requests.
+     * Domain-specific endpoint used to submit index, search, and data upload requests to the domain.
      * </p>
      * 
      * @param endpoint
-     *        The domain endpoint that you use to submit index and search requests.
+     *        Domain-specific endpoint used to submit index, search, and data upload requests to the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -500,13 +543,89 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Map containing the domain endpoints used to submit index and search requests. Example <code>key, value</code>:
-     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.
+     * If <code>IPAddressType</code> to set to <code>dualstack</code>, a version 2 domain endpoint is provisioned. This
+     * endpoint functions like a normal endpoint, except that it works with both IPv4 and IPv6 IP addresses. Normal
+     * endpoints work only with IPv4 IP addresses.
      * </p>
      * 
-     * @return Map containing the domain endpoints used to submit index and search requests. Example
-     *         <code>key, value</code>:
-     *         <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.
+     * @param endpointV2
+     *        If <code>IPAddressType</code> to set to <code>dualstack</code>, a version 2 domain endpoint is
+     *        provisioned. This endpoint functions like a normal endpoint, except that it works with both IPv4 and IPv6
+     *        IP addresses. Normal endpoints work only with IPv4 IP addresses.
+     */
+
+    public void setEndpointV2(String endpointV2) {
+        this.endpointV2 = endpointV2;
+    }
+
+    /**
+     * <p>
+     * If <code>IPAddressType</code> to set to <code>dualstack</code>, a version 2 domain endpoint is provisioned. This
+     * endpoint functions like a normal endpoint, except that it works with both IPv4 and IPv6 IP addresses. Normal
+     * endpoints work only with IPv4 IP addresses.
+     * </p>
+     * 
+     * @return If <code>IPAddressType</code> to set to <code>dualstack</code>, a version 2 domain endpoint is
+     *         provisioned. This endpoint functions like a normal endpoint, except that it works with both IPv4 and IPv6
+     *         IP addresses. Normal endpoints work only with IPv4 IP addresses.
+     */
+
+    public String getEndpointV2() {
+        return this.endpointV2;
+    }
+
+    /**
+     * <p>
+     * If <code>IPAddressType</code> to set to <code>dualstack</code>, a version 2 domain endpoint is provisioned. This
+     * endpoint functions like a normal endpoint, except that it works with both IPv4 and IPv6 IP addresses. Normal
+     * endpoints work only with IPv4 IP addresses.
+     * </p>
+     * 
+     * @param endpointV2
+     *        If <code>IPAddressType</code> to set to <code>dualstack</code>, a version 2 domain endpoint is
+     *        provisioned. This endpoint functions like a normal endpoint, except that it works with both IPv4 and IPv6
+     *        IP addresses. Normal endpoints work only with IPv4 IP addresses.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainStatus withEndpointV2(String endpointV2) {
+        setEndpointV2(endpointV2);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>IPv4 IP addresses</b> -
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Dual stack IP addresses</b> -
+     * <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. For example:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>IPv4 IP addresses</b> -
+     *         <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Dual stack IP addresses</b> -
+     *         <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code>
+     *         </p>
+     *         </li>
      */
 
     public java.util.Map<String, String> getEndpoints() {
@@ -515,14 +634,38 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Map containing the domain endpoints used to submit index and search requests. Example <code>key, value</code>:
-     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.
+     * The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. For example:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>IPv4 IP addresses</b> -
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Dual stack IP addresses</b> -
+     * <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param endpoints
-     *        Map containing the domain endpoints used to submit index and search requests. Example
-     *        <code>key, value</code>:
-     *        <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.
+     *        The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. For example:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>IPv4 IP addresses</b> -
+     *        <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Dual stack IP addresses</b> -
+     *        <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code>
+     *        </p>
+     *        </li>
      */
 
     public void setEndpoints(java.util.Map<String, String> endpoints) {
@@ -531,14 +674,38 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Map containing the domain endpoints used to submit index and search requests. Example <code>key, value</code>:
-     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.
+     * The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. For example:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>IPv4 IP addresses</b> -
+     * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Dual stack IP addresses</b> -
+     * <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param endpoints
-     *        Map containing the domain endpoints used to submit index and search requests. Example
-     *        <code>key, value</code>:
-     *        <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.
+     *        The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints. For example:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>IPv4 IP addresses</b> -
+     *        <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Dual stack IP addresses</b> -
+     *        <code>'vpcv2':'vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.aos.us-east-1.on.aws'</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -577,13 +744,53 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the domain configuration. <code>True</code> if Amazon OpenSearch Service is processing
-     * configuration changes. <code>False</code> if the configuration is active.
+     * The dual stack hosted zone ID for the domain.
+     * </p>
+     * 
+     * @param domainEndpointV2HostedZoneId
+     *        The dual stack hosted zone ID for the domain.
+     */
+
+    public void setDomainEndpointV2HostedZoneId(String domainEndpointV2HostedZoneId) {
+        this.domainEndpointV2HostedZoneId = domainEndpointV2HostedZoneId;
+    }
+
+    /**
+     * <p>
+     * The dual stack hosted zone ID for the domain.
+     * </p>
+     * 
+     * @return The dual stack hosted zone ID for the domain.
+     */
+
+    public String getDomainEndpointV2HostedZoneId() {
+        return this.domainEndpointV2HostedZoneId;
+    }
+
+    /**
+     * <p>
+     * The dual stack hosted zone ID for the domain.
+     * </p>
+     * 
+     * @param domainEndpointV2HostedZoneId
+     *        The dual stack hosted zone ID for the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainStatus withDomainEndpointV2HostedZoneId(String domainEndpointV2HostedZoneId) {
+        setDomainEndpointV2HostedZoneId(domainEndpointV2HostedZoneId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the domain configuration. True if OpenSearch Service is processing configuration changes. False if
+     * the configuration is active.
      * </p>
      * 
      * @param processing
-     *        The status of the domain configuration. <code>True</code> if Amazon OpenSearch Service is processing
-     *        configuration changes. <code>False</code> if the configuration is active.
+     *        The status of the domain configuration. True if OpenSearch Service is processing configuration changes.
+     *        False if the configuration is active.
      */
 
     public void setProcessing(Boolean processing) {
@@ -592,12 +799,12 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the domain configuration. <code>True</code> if Amazon OpenSearch Service is processing
-     * configuration changes. <code>False</code> if the configuration is active.
+     * The status of the domain configuration. True if OpenSearch Service is processing configuration changes. False if
+     * the configuration is active.
      * </p>
      * 
-     * @return The status of the domain configuration. <code>True</code> if Amazon OpenSearch Service is processing
-     *         configuration changes. <code>False</code> if the configuration is active.
+     * @return The status of the domain configuration. True if OpenSearch Service is processing configuration changes.
+     *         False if the configuration is active.
      */
 
     public Boolean getProcessing() {
@@ -606,13 +813,13 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the domain configuration. <code>True</code> if Amazon OpenSearch Service is processing
-     * configuration changes. <code>False</code> if the configuration is active.
+     * The status of the domain configuration. True if OpenSearch Service is processing configuration changes. False if
+     * the configuration is active.
      * </p>
      * 
      * @param processing
-     *        The status of the domain configuration. <code>True</code> if Amazon OpenSearch Service is processing
-     *        configuration changes. <code>False</code> if the configuration is active.
+     *        The status of the domain configuration. True if OpenSearch Service is processing configuration changes.
+     *        False if the configuration is active.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -623,12 +830,12 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the domain configuration. <code>True</code> if Amazon OpenSearch Service is processing
-     * configuration changes. <code>False</code> if the configuration is active.
+     * The status of the domain configuration. True if OpenSearch Service is processing configuration changes. False if
+     * the configuration is active.
      * </p>
      * 
-     * @return The status of the domain configuration. <code>True</code> if Amazon OpenSearch Service is processing
-     *         configuration changes. <code>False</code> if the configuration is active.
+     * @return The status of the domain configuration. True if OpenSearch Service is processing configuration changes.
+     *         False if the configuration is active.
      */
 
     public Boolean isProcessing() {
@@ -637,13 +844,13 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of a domain version upgrade. <code>True</code> if Amazon OpenSearch Service is undergoing a version
-     * upgrade. <code>False</code> if the configuration is active.
+     * The status of a domain version upgrade to a new version of OpenSearch or Elasticsearch. True if OpenSearch
+     * Service is in the process of a version upgrade. False if the configuration is active.
      * </p>
      * 
      * @param upgradeProcessing
-     *        The status of a domain version upgrade. <code>True</code> if Amazon OpenSearch Service is undergoing a
-     *        version upgrade. <code>False</code> if the configuration is active.
+     *        The status of a domain version upgrade to a new version of OpenSearch or Elasticsearch. True if OpenSearch
+     *        Service is in the process of a version upgrade. False if the configuration is active.
      */
 
     public void setUpgradeProcessing(Boolean upgradeProcessing) {
@@ -652,12 +859,12 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of a domain version upgrade. <code>True</code> if Amazon OpenSearch Service is undergoing a version
-     * upgrade. <code>False</code> if the configuration is active.
+     * The status of a domain version upgrade to a new version of OpenSearch or Elasticsearch. True if OpenSearch
+     * Service is in the process of a version upgrade. False if the configuration is active.
      * </p>
      * 
-     * @return The status of a domain version upgrade. <code>True</code> if Amazon OpenSearch Service is undergoing a
-     *         version upgrade. <code>False</code> if the configuration is active.
+     * @return The status of a domain version upgrade to a new version of OpenSearch or Elasticsearch. True if
+     *         OpenSearch Service is in the process of a version upgrade. False if the configuration is active.
      */
 
     public Boolean getUpgradeProcessing() {
@@ -666,13 +873,13 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of a domain version upgrade. <code>True</code> if Amazon OpenSearch Service is undergoing a version
-     * upgrade. <code>False</code> if the configuration is active.
+     * The status of a domain version upgrade to a new version of OpenSearch or Elasticsearch. True if OpenSearch
+     * Service is in the process of a version upgrade. False if the configuration is active.
      * </p>
      * 
      * @param upgradeProcessing
-     *        The status of a domain version upgrade. <code>True</code> if Amazon OpenSearch Service is undergoing a
-     *        version upgrade. <code>False</code> if the configuration is active.
+     *        The status of a domain version upgrade to a new version of OpenSearch or Elasticsearch. True if OpenSearch
+     *        Service is in the process of a version upgrade. False if the configuration is active.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -683,12 +890,12 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of a domain version upgrade. <code>True</code> if Amazon OpenSearch Service is undergoing a version
-     * upgrade. <code>False</code> if the configuration is active.
+     * The status of a domain version upgrade to a new version of OpenSearch or Elasticsearch. True if OpenSearch
+     * Service is in the process of a version upgrade. False if the configuration is active.
      * </p>
      * 
-     * @return The status of a domain version upgrade. <code>True</code> if Amazon OpenSearch Service is undergoing a
-     *         version upgrade. <code>False</code> if the configuration is active.
+     * @return The status of a domain version upgrade to a new version of OpenSearch or Elasticsearch. True if
+     *         OpenSearch Service is in the process of a version upgrade. False if the configuration is active.
      */
 
     public Boolean isUpgradeProcessing() {
@@ -696,7 +903,14 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Version of OpenSearch or Elasticsearch that the domain is running, in the format <code>Elasticsearch_X.Y</code>
+     * or <code>OpenSearch_X.Y</code>.
+     * </p>
+     * 
      * @param engineVersion
+     *        Version of OpenSearch or Elasticsearch that the domain is running, in the format
+     *        <code>Elasticsearch_X.Y</code> or <code>OpenSearch_X.Y</code>.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -704,7 +918,13 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Version of OpenSearch or Elasticsearch that the domain is running, in the format <code>Elasticsearch_X.Y</code>
+     * or <code>OpenSearch_X.Y</code>.
+     * </p>
+     * 
+     * @return Version of OpenSearch or Elasticsearch that the domain is running, in the format
+     *         <code>Elasticsearch_X.Y</code> or <code>OpenSearch_X.Y</code>.
      */
 
     public String getEngineVersion() {
@@ -712,7 +932,14 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Version of OpenSearch or Elasticsearch that the domain is running, in the format <code>Elasticsearch_X.Y</code>
+     * or <code>OpenSearch_X.Y</code>.
+     * </p>
+     * 
      * @param engineVersion
+     *        Version of OpenSearch or Elasticsearch that the domain is running, in the format
+     *        <code>Elasticsearch_X.Y</code> or <code>OpenSearch_X.Y</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -723,11 +950,11 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type and number of instances in the domain.
+     * Container for the cluster configuration of the domain.
      * </p>
      * 
      * @param clusterConfig
-     *        The type and number of instances in the domain.
+     *        Container for the cluster configuration of the domain.
      */
 
     public void setClusterConfig(ClusterConfig clusterConfig) {
@@ -736,10 +963,10 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type and number of instances in the domain.
+     * Container for the cluster configuration of the domain.
      * </p>
      * 
-     * @return The type and number of instances in the domain.
+     * @return Container for the cluster configuration of the domain.
      */
 
     public ClusterConfig getClusterConfig() {
@@ -748,11 +975,11 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type and number of instances in the domain.
+     * Container for the cluster configuration of the domain.
      * </p>
      * 
      * @param clusterConfig
-     *        The type and number of instances in the domain.
+     *        Container for the cluster configuration of the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -763,11 +990,11 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>EBSOptions</code> for the specified domain.
+     * Container for EBS-based storage settings for the domain.
      * </p>
      * 
      * @param eBSOptions
-     *        The <code>EBSOptions</code> for the specified domain.
+     *        Container for EBS-based storage settings for the domain.
      */
 
     public void setEBSOptions(EBSOptions eBSOptions) {
@@ -776,10 +1003,10 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>EBSOptions</code> for the specified domain.
+     * Container for EBS-based storage settings for the domain.
      * </p>
      * 
-     * @return The <code>EBSOptions</code> for the specified domain.
+     * @return Container for EBS-based storage settings for the domain.
      */
 
     public EBSOptions getEBSOptions() {
@@ -788,11 +1015,11 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>EBSOptions</code> for the specified domain.
+     * Container for EBS-based storage settings for the domain.
      * </p>
      * 
      * @param eBSOptions
-     *        The <code>EBSOptions</code> for the specified domain.
+     *        Container for EBS-based storage settings for the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -803,11 +1030,11 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * IAM access policy as a JSON-formatted string.
+     * Identity and Access Management (IAM) policy document specifying the access policies for the domain.
      * </p>
      * 
      * @param accessPolicies
-     *        IAM access policy as a JSON-formatted string.
+     *        Identity and Access Management (IAM) policy document specifying the access policies for the domain.
      */
 
     public void setAccessPolicies(String accessPolicies) {
@@ -816,10 +1043,10 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * IAM access policy as a JSON-formatted string.
+     * Identity and Access Management (IAM) policy document specifying the access policies for the domain.
      * </p>
      * 
-     * @return IAM access policy as a JSON-formatted string.
+     * @return Identity and Access Management (IAM) policy document specifying the access policies for the domain.
      */
 
     public String getAccessPolicies() {
@@ -828,11 +1055,11 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * IAM access policy as a JSON-formatted string.
+     * Identity and Access Management (IAM) policy document specifying the access policies for the domain.
      * </p>
      * 
      * @param accessPolicies
-     *        IAM access policy as a JSON-formatted string.
+     *        Identity and Access Management (IAM) policy document specifying the access policies for the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -843,11 +1070,70 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the <code>SnapshotOptions</code>.
+     * The type of IP addresses supported by the endpoint for the domain.
+     * </p>
+     * 
+     * @param iPAddressType
+     *        The type of IP addresses supported by the endpoint for the domain.
+     * @see IPAddressType
+     */
+
+    public void setIPAddressType(String iPAddressType) {
+        this.iPAddressType = iPAddressType;
+    }
+
+    /**
+     * <p>
+     * The type of IP addresses supported by the endpoint for the domain.
+     * </p>
+     * 
+     * @return The type of IP addresses supported by the endpoint for the domain.
+     * @see IPAddressType
+     */
+
+    public String getIPAddressType() {
+        return this.iPAddressType;
+    }
+
+    /**
+     * <p>
+     * The type of IP addresses supported by the endpoint for the domain.
+     * </p>
+     * 
+     * @param iPAddressType
+     *        The type of IP addresses supported by the endpoint for the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IPAddressType
+     */
+
+    public DomainStatus withIPAddressType(String iPAddressType) {
+        setIPAddressType(iPAddressType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of IP addresses supported by the endpoint for the domain.
+     * </p>
+     * 
+     * @param iPAddressType
+     *        The type of IP addresses supported by the endpoint for the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IPAddressType
+     */
+
+    public DomainStatus withIPAddressType(IPAddressType iPAddressType) {
+        this.iPAddressType = iPAddressType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.
      * </p>
      * 
      * @param snapshotOptions
-     *        The status of the <code>SnapshotOptions</code>.
+     *        DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.
      */
 
     public void setSnapshotOptions(SnapshotOptions snapshotOptions) {
@@ -856,10 +1142,10 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the <code>SnapshotOptions</code>.
+     * DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.
      * </p>
      * 
-     * @return The status of the <code>SnapshotOptions</code>.
+     * @return DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.
      */
 
     public SnapshotOptions getSnapshotOptions() {
@@ -868,11 +1154,11 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the <code>SnapshotOptions</code>.
+     * DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.
      * </p>
      * 
      * @param snapshotOptions
-     *        The status of the <code>SnapshotOptions</code>.
+     *        DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -883,15 +1169,11 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>VPCOptions</code> for the specified domain. For more information, see <a
-     * href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank"> Launching
-     * your Amazon OpenSearch Service domains using a VPC</a>.
+     * The VPC configuration for the domain.
      * </p>
      * 
      * @param vPCOptions
-     *        The <code>VPCOptions</code> for the specified domain. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">
-     *        Launching your Amazon OpenSearch Service domains using a VPC</a>.
+     *        The VPC configuration for the domain.
      */
 
     public void setVPCOptions(VPCDerivedInfo vPCOptions) {
@@ -900,14 +1182,10 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>VPCOptions</code> for the specified domain. For more information, see <a
-     * href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank"> Launching
-     * your Amazon OpenSearch Service domains using a VPC</a>.
+     * The VPC configuration for the domain.
      * </p>
      * 
-     * @return The <code>VPCOptions</code> for the specified domain. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">
-     *         Launching your Amazon OpenSearch Service domains using a VPC</a>.
+     * @return The VPC configuration for the domain.
      */
 
     public VPCDerivedInfo getVPCOptions() {
@@ -916,15 +1194,11 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>VPCOptions</code> for the specified domain. For more information, see <a
-     * href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank"> Launching
-     * your Amazon OpenSearch Service domains using a VPC</a>.
+     * The VPC configuration for the domain.
      * </p>
      * 
      * @param vPCOptions
-     *        The <code>VPCOptions</code> for the specified domain. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">
-     *        Launching your Amazon OpenSearch Service domains using a VPC</a>.
+     *        The VPC configuration for the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -935,15 +1209,11 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>CognitoOptions</code> for the specified domain. For more information, see <a
-     * href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-     * target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+     * Key-value pairs to configure Amazon Cognito authentication for OpenSearch Dashboards.
      * </p>
      * 
      * @param cognitoOptions
-     *        The <code>CognitoOptions</code> for the specified domain. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-     *        target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+     *        Key-value pairs to configure Amazon Cognito authentication for OpenSearch Dashboards.
      */
 
     public void setCognitoOptions(CognitoOptions cognitoOptions) {
@@ -952,14 +1222,10 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>CognitoOptions</code> for the specified domain. For more information, see <a
-     * href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-     * target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+     * Key-value pairs to configure Amazon Cognito authentication for OpenSearch Dashboards.
      * </p>
      * 
-     * @return The <code>CognitoOptions</code> for the specified domain. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-     *         target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+     * @return Key-value pairs to configure Amazon Cognito authentication for OpenSearch Dashboards.
      */
 
     public CognitoOptions getCognitoOptions() {
@@ -968,15 +1234,11 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>CognitoOptions</code> for the specified domain. For more information, see <a
-     * href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-     * target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+     * Key-value pairs to configure Amazon Cognito authentication for OpenSearch Dashboards.
      * </p>
      * 
      * @param cognitoOptions
-     *        The <code>CognitoOptions</code> for the specified domain. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-     *        target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+     *        Key-value pairs to configure Amazon Cognito authentication for OpenSearch Dashboards.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -987,11 +1249,11 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the <code>EncryptionAtRestOptions</code>.
+     * Encryption at rest settings for the domain.
      * </p>
      * 
      * @param encryptionAtRestOptions
-     *        The status of the <code>EncryptionAtRestOptions</code>.
+     *        Encryption at rest settings for the domain.
      */
 
     public void setEncryptionAtRestOptions(EncryptionAtRestOptions encryptionAtRestOptions) {
@@ -1000,10 +1262,10 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the <code>EncryptionAtRestOptions</code>.
+     * Encryption at rest settings for the domain.
      * </p>
      * 
-     * @return The status of the <code>EncryptionAtRestOptions</code>.
+     * @return Encryption at rest settings for the domain.
      */
 
     public EncryptionAtRestOptions getEncryptionAtRestOptions() {
@@ -1012,11 +1274,11 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the <code>EncryptionAtRestOptions</code>.
+     * Encryption at rest settings for the domain.
      * </p>
      * 
      * @param encryptionAtRestOptions
-     *        The status of the <code>EncryptionAtRestOptions</code>.
+     *        Encryption at rest settings for the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1027,11 +1289,11 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the <code>NodeToNodeEncryptionOptions</code>.
+     * Whether node-to-node encryption is enabled or disabled.
      * </p>
      * 
      * @param nodeToNodeEncryptionOptions
-     *        The status of the <code>NodeToNodeEncryptionOptions</code>.
+     *        Whether node-to-node encryption is enabled or disabled.
      */
 
     public void setNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptions nodeToNodeEncryptionOptions) {
@@ -1040,10 +1302,10 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the <code>NodeToNodeEncryptionOptions</code>.
+     * Whether node-to-node encryption is enabled or disabled.
      * </p>
      * 
-     * @return The status of the <code>NodeToNodeEncryptionOptions</code>.
+     * @return Whether node-to-node encryption is enabled or disabled.
      */
 
     public NodeToNodeEncryptionOptions getNodeToNodeEncryptionOptions() {
@@ -1052,11 +1314,11 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the <code>NodeToNodeEncryptionOptions</code>.
+     * Whether node-to-node encryption is enabled or disabled.
      * </p>
      * 
      * @param nodeToNodeEncryptionOptions
-     *        The status of the <code>NodeToNodeEncryptionOptions</code>.
+     *        Whether node-to-node encryption is enabled or disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1067,10 +1329,10 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the <code>AdvancedOptions</code>.
+     * Key-value pairs that specify advanced configuration options.
      * </p>
      * 
-     * @return The status of the <code>AdvancedOptions</code>.
+     * @return Key-value pairs that specify advanced configuration options.
      */
 
     public java.util.Map<String, String> getAdvancedOptions() {
@@ -1079,11 +1341,11 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the <code>AdvancedOptions</code>.
+     * Key-value pairs that specify advanced configuration options.
      * </p>
      * 
      * @param advancedOptions
-     *        The status of the <code>AdvancedOptions</code>.
+     *        Key-value pairs that specify advanced configuration options.
      */
 
     public void setAdvancedOptions(java.util.Map<String, String> advancedOptions) {
@@ -1092,11 +1354,11 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the <code>AdvancedOptions</code>.
+     * Key-value pairs that specify advanced configuration options.
      * </p>
      * 
      * @param advancedOptions
-     *        The status of the <code>AdvancedOptions</code>.
+     *        Key-value pairs that specify advanced configuration options.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1135,10 +1397,10 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Log publishing options for the given domain.
+     * Log publishing options for the domain.
      * </p>
      * 
-     * @return Log publishing options for the given domain.
+     * @return Log publishing options for the domain.
      */
 
     public java.util.Map<String, LogPublishingOption> getLogPublishingOptions() {
@@ -1147,11 +1409,11 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Log publishing options for the given domain.
+     * Log publishing options for the domain.
      * </p>
      * 
      * @param logPublishingOptions
-     *        Log publishing options for the given domain.
+     *        Log publishing options for the domain.
      */
 
     public void setLogPublishingOptions(java.util.Map<String, LogPublishingOption> logPublishingOptions) {
@@ -1160,11 +1422,11 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Log publishing options for the given domain.
+     * Log publishing options for the domain.
      * </p>
      * 
      * @param logPublishingOptions
-     *        Log publishing options for the given domain.
+     *        Log publishing options for the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1243,11 +1505,11 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current status of the domain's endpoint options.
+     * Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.
      * </p>
      * 
      * @param domainEndpointOptions
-     *        The current status of the domain's endpoint options.
+     *        Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.
      */
 
     public void setDomainEndpointOptions(DomainEndpointOptions domainEndpointOptions) {
@@ -1256,10 +1518,10 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current status of the domain's endpoint options.
+     * Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.
      * </p>
      * 
-     * @return The current status of the domain's endpoint options.
+     * @return Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.
      */
 
     public DomainEndpointOptions getDomainEndpointOptions() {
@@ -1268,11 +1530,11 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current status of the domain's endpoint options.
+     * Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.
      * </p>
      * 
      * @param domainEndpointOptions
-     *        The current status of the domain's endpoint options.
+     *        Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1283,11 +1545,11 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current status of the domain's advanced security options.
+     * Settings for fine-grained access control.
      * </p>
      * 
      * @param advancedSecurityOptions
-     *        The current status of the domain's advanced security options.
+     *        Settings for fine-grained access control.
      */
 
     public void setAdvancedSecurityOptions(AdvancedSecurityOptions advancedSecurityOptions) {
@@ -1296,10 +1558,10 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current status of the domain's advanced security options.
+     * Settings for fine-grained access control.
      * </p>
      * 
-     * @return The current status of the domain's advanced security options.
+     * @return Settings for fine-grained access control.
      */
 
     public AdvancedSecurityOptions getAdvancedSecurityOptions() {
@@ -1308,11 +1570,11 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current status of the domain's advanced security options.
+     * Settings for fine-grained access control.
      * </p>
      * 
      * @param advancedSecurityOptions
-     *        The current status of the domain's advanced security options.
+     *        Settings for fine-grained access control.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1323,11 +1585,11 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current status of the domain's Auto-Tune options.
+     * Auto-Tune settings for the domain.
      * </p>
      * 
      * @param autoTuneOptions
-     *        The current status of the domain's Auto-Tune options.
+     *        Auto-Tune settings for the domain.
      */
 
     public void setAutoTuneOptions(AutoTuneOptionsOutput autoTuneOptions) {
@@ -1336,10 +1598,10 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current status of the domain's Auto-Tune options.
+     * Auto-Tune settings for the domain.
      * </p>
      * 
-     * @return The current status of the domain's Auto-Tune options.
+     * @return Auto-Tune settings for the domain.
      */
 
     public AutoTuneOptionsOutput getAutoTuneOptions() {
@@ -1348,11 +1610,11 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current status of the domain's Auto-Tune options.
+     * Auto-Tune settings for the domain.
      * </p>
      * 
      * @param autoTuneOptions
-     *        The current status of the domain's Auto-Tune options.
+     *        Auto-Tune settings for the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1363,11 +1625,11 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies change details of the domain configuration change.
+     * Information about a configuration change happening on the domain.
      * </p>
      * 
      * @param changeProgressDetails
-     *        Specifies change details of the domain configuration change.
+     *        Information about a configuration change happening on the domain.
      */
 
     public void setChangeProgressDetails(ChangeProgressDetails changeProgressDetails) {
@@ -1376,10 +1638,10 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies change details of the domain configuration change.
+     * Information about a configuration change happening on the domain.
      * </p>
      * 
-     * @return Specifies change details of the domain configuration change.
+     * @return Information about a configuration change happening on the domain.
      */
 
     public ChangeProgressDetails getChangeProgressDetails() {
@@ -1388,16 +1650,231 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies change details of the domain configuration change.
+     * Information about a configuration change happening on the domain.
      * </p>
      * 
      * @param changeProgressDetails
-     *        Specifies change details of the domain configuration change.
+     *        Information about a configuration change happening on the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DomainStatus withChangeProgressDetails(ChangeProgressDetails changeProgressDetails) {
         setChangeProgressDetails(changeProgressDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Options that specify a custom 10-hour window during which OpenSearch Service can perform configuration changes on
+     * the domain.
+     * </p>
+     * 
+     * @param offPeakWindowOptions
+     *        Options that specify a custom 10-hour window during which OpenSearch Service can perform configuration
+     *        changes on the domain.
+     */
+
+    public void setOffPeakWindowOptions(OffPeakWindowOptions offPeakWindowOptions) {
+        this.offPeakWindowOptions = offPeakWindowOptions;
+    }
+
+    /**
+     * <p>
+     * Options that specify a custom 10-hour window during which OpenSearch Service can perform configuration changes on
+     * the domain.
+     * </p>
+     * 
+     * @return Options that specify a custom 10-hour window during which OpenSearch Service can perform configuration
+     *         changes on the domain.
+     */
+
+    public OffPeakWindowOptions getOffPeakWindowOptions() {
+        return this.offPeakWindowOptions;
+    }
+
+    /**
+     * <p>
+     * Options that specify a custom 10-hour window during which OpenSearch Service can perform configuration changes on
+     * the domain.
+     * </p>
+     * 
+     * @param offPeakWindowOptions
+     *        Options that specify a custom 10-hour window during which OpenSearch Service can perform configuration
+     *        changes on the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainStatus withOffPeakWindowOptions(OffPeakWindowOptions offPeakWindowOptions) {
+        setOffPeakWindowOptions(offPeakWindowOptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Service software update options for the domain.
+     * </p>
+     * 
+     * @param softwareUpdateOptions
+     *        Service software update options for the domain.
+     */
+
+    public void setSoftwareUpdateOptions(SoftwareUpdateOptions softwareUpdateOptions) {
+        this.softwareUpdateOptions = softwareUpdateOptions;
+    }
+
+    /**
+     * <p>
+     * Service software update options for the domain.
+     * </p>
+     * 
+     * @return Service software update options for the domain.
+     */
+
+    public SoftwareUpdateOptions getSoftwareUpdateOptions() {
+        return this.softwareUpdateOptions;
+    }
+
+    /**
+     * <p>
+     * Service software update options for the domain.
+     * </p>
+     * 
+     * @param softwareUpdateOptions
+     *        Service software update options for the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainStatus withSoftwareUpdateOptions(SoftwareUpdateOptions softwareUpdateOptions) {
+        setSoftwareUpdateOptions(softwareUpdateOptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of any changes that are currently in progress for the domain.
+     * </p>
+     * 
+     * @param domainProcessingStatus
+     *        The status of any changes that are currently in progress for the domain.
+     * @see DomainProcessingStatusType
+     */
+
+    public void setDomainProcessingStatus(String domainProcessingStatus) {
+        this.domainProcessingStatus = domainProcessingStatus;
+    }
+
+    /**
+     * <p>
+     * The status of any changes that are currently in progress for the domain.
+     * </p>
+     * 
+     * @return The status of any changes that are currently in progress for the domain.
+     * @see DomainProcessingStatusType
+     */
+
+    public String getDomainProcessingStatus() {
+        return this.domainProcessingStatus;
+    }
+
+    /**
+     * <p>
+     * The status of any changes that are currently in progress for the domain.
+     * </p>
+     * 
+     * @param domainProcessingStatus
+     *        The status of any changes that are currently in progress for the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DomainProcessingStatusType
+     */
+
+    public DomainStatus withDomainProcessingStatus(String domainProcessingStatus) {
+        setDomainProcessingStatus(domainProcessingStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of any changes that are currently in progress for the domain.
+     * </p>
+     * 
+     * @param domainProcessingStatus
+     *        The status of any changes that are currently in progress for the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DomainProcessingStatusType
+     */
+
+    public DomainStatus withDomainProcessingStatus(DomainProcessingStatusType domainProcessingStatus) {
+        this.domainProcessingStatus = domainProcessingStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the domain properties that are currently being modified.
+     * </p>
+     * 
+     * @return Information about the domain properties that are currently being modified.
+     */
+
+    public java.util.List<ModifyingProperties> getModifyingProperties() {
+        return modifyingProperties;
+    }
+
+    /**
+     * <p>
+     * Information about the domain properties that are currently being modified.
+     * </p>
+     * 
+     * @param modifyingProperties
+     *        Information about the domain properties that are currently being modified.
+     */
+
+    public void setModifyingProperties(java.util.Collection<ModifyingProperties> modifyingProperties) {
+        if (modifyingProperties == null) {
+            this.modifyingProperties = null;
+            return;
+        }
+
+        this.modifyingProperties = new java.util.ArrayList<ModifyingProperties>(modifyingProperties);
+    }
+
+    /**
+     * <p>
+     * Information about the domain properties that are currently being modified.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setModifyingProperties(java.util.Collection)} or {@link #withModifyingProperties(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param modifyingProperties
+     *        Information about the domain properties that are currently being modified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainStatus withModifyingProperties(ModifyingProperties... modifyingProperties) {
+        if (this.modifyingProperties == null) {
+            setModifyingProperties(new java.util.ArrayList<ModifyingProperties>(modifyingProperties.length));
+        }
+        for (ModifyingProperties ele : modifyingProperties) {
+            this.modifyingProperties.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the domain properties that are currently being modified.
+     * </p>
+     * 
+     * @param modifyingProperties
+     *        Information about the domain properties that are currently being modified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainStatus withModifyingProperties(java.util.Collection<ModifyingProperties> modifyingProperties) {
+        setModifyingProperties(modifyingProperties);
         return this;
     }
 
@@ -1425,8 +1902,12 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
             sb.append("Deleted: ").append(getDeleted()).append(",");
         if (getEndpoint() != null)
             sb.append("Endpoint: ").append(getEndpoint()).append(",");
+        if (getEndpointV2() != null)
+            sb.append("EndpointV2: ").append(getEndpointV2()).append(",");
         if (getEndpoints() != null)
             sb.append("Endpoints: ").append(getEndpoints()).append(",");
+        if (getDomainEndpointV2HostedZoneId() != null)
+            sb.append("DomainEndpointV2HostedZoneId: ").append(getDomainEndpointV2HostedZoneId()).append(",");
         if (getProcessing() != null)
             sb.append("Processing: ").append(getProcessing()).append(",");
         if (getUpgradeProcessing() != null)
@@ -1439,6 +1920,8 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
             sb.append("EBSOptions: ").append(getEBSOptions()).append(",");
         if (getAccessPolicies() != null)
             sb.append("AccessPolicies: ").append(getAccessPolicies()).append(",");
+        if (getIPAddressType() != null)
+            sb.append("IPAddressType: ").append(getIPAddressType()).append(",");
         if (getSnapshotOptions() != null)
             sb.append("SnapshotOptions: ").append(getSnapshotOptions()).append(",");
         if (getVPCOptions() != null)
@@ -1462,7 +1945,15 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
         if (getAutoTuneOptions() != null)
             sb.append("AutoTuneOptions: ").append(getAutoTuneOptions()).append(",");
         if (getChangeProgressDetails() != null)
-            sb.append("ChangeProgressDetails: ").append(getChangeProgressDetails());
+            sb.append("ChangeProgressDetails: ").append(getChangeProgressDetails()).append(",");
+        if (getOffPeakWindowOptions() != null)
+            sb.append("OffPeakWindowOptions: ").append(getOffPeakWindowOptions()).append(",");
+        if (getSoftwareUpdateOptions() != null)
+            sb.append("SoftwareUpdateOptions: ").append(getSoftwareUpdateOptions()).append(",");
+        if (getDomainProcessingStatus() != null)
+            sb.append("DomainProcessingStatus: ").append(getDomainProcessingStatus()).append(",");
+        if (getModifyingProperties() != null)
+            sb.append("ModifyingProperties: ").append(getModifyingProperties());
         sb.append("}");
         return sb.toString();
     }
@@ -1501,9 +1992,17 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEndpoint() != null && other.getEndpoint().equals(this.getEndpoint()) == false)
             return false;
+        if (other.getEndpointV2() == null ^ this.getEndpointV2() == null)
+            return false;
+        if (other.getEndpointV2() != null && other.getEndpointV2().equals(this.getEndpointV2()) == false)
+            return false;
         if (other.getEndpoints() == null ^ this.getEndpoints() == null)
             return false;
         if (other.getEndpoints() != null && other.getEndpoints().equals(this.getEndpoints()) == false)
+            return false;
+        if (other.getDomainEndpointV2HostedZoneId() == null ^ this.getDomainEndpointV2HostedZoneId() == null)
+            return false;
+        if (other.getDomainEndpointV2HostedZoneId() != null && other.getDomainEndpointV2HostedZoneId().equals(this.getDomainEndpointV2HostedZoneId()) == false)
             return false;
         if (other.getProcessing() == null ^ this.getProcessing() == null)
             return false;
@@ -1528,6 +2027,10 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
         if (other.getAccessPolicies() == null ^ this.getAccessPolicies() == null)
             return false;
         if (other.getAccessPolicies() != null && other.getAccessPolicies().equals(this.getAccessPolicies()) == false)
+            return false;
+        if (other.getIPAddressType() == null ^ this.getIPAddressType() == null)
+            return false;
+        if (other.getIPAddressType() != null && other.getIPAddressType().equals(this.getIPAddressType()) == false)
             return false;
         if (other.getSnapshotOptions() == null ^ this.getSnapshotOptions() == null)
             return false;
@@ -1577,6 +2080,22 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getChangeProgressDetails() != null && other.getChangeProgressDetails().equals(this.getChangeProgressDetails()) == false)
             return false;
+        if (other.getOffPeakWindowOptions() == null ^ this.getOffPeakWindowOptions() == null)
+            return false;
+        if (other.getOffPeakWindowOptions() != null && other.getOffPeakWindowOptions().equals(this.getOffPeakWindowOptions()) == false)
+            return false;
+        if (other.getSoftwareUpdateOptions() == null ^ this.getSoftwareUpdateOptions() == null)
+            return false;
+        if (other.getSoftwareUpdateOptions() != null && other.getSoftwareUpdateOptions().equals(this.getSoftwareUpdateOptions()) == false)
+            return false;
+        if (other.getDomainProcessingStatus() == null ^ this.getDomainProcessingStatus() == null)
+            return false;
+        if (other.getDomainProcessingStatus() != null && other.getDomainProcessingStatus().equals(this.getDomainProcessingStatus()) == false)
+            return false;
+        if (other.getModifyingProperties() == null ^ this.getModifyingProperties() == null)
+            return false;
+        if (other.getModifyingProperties() != null && other.getModifyingProperties().equals(this.getModifyingProperties()) == false)
+            return false;
         return true;
     }
 
@@ -1591,13 +2110,16 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreated() == null) ? 0 : getCreated().hashCode());
         hashCode = prime * hashCode + ((getDeleted() == null) ? 0 : getDeleted().hashCode());
         hashCode = prime * hashCode + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getEndpointV2() == null) ? 0 : getEndpointV2().hashCode());
         hashCode = prime * hashCode + ((getEndpoints() == null) ? 0 : getEndpoints().hashCode());
+        hashCode = prime * hashCode + ((getDomainEndpointV2HostedZoneId() == null) ? 0 : getDomainEndpointV2HostedZoneId().hashCode());
         hashCode = prime * hashCode + ((getProcessing() == null) ? 0 : getProcessing().hashCode());
         hashCode = prime * hashCode + ((getUpgradeProcessing() == null) ? 0 : getUpgradeProcessing().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
         hashCode = prime * hashCode + ((getClusterConfig() == null) ? 0 : getClusterConfig().hashCode());
         hashCode = prime * hashCode + ((getEBSOptions() == null) ? 0 : getEBSOptions().hashCode());
         hashCode = prime * hashCode + ((getAccessPolicies() == null) ? 0 : getAccessPolicies().hashCode());
+        hashCode = prime * hashCode + ((getIPAddressType() == null) ? 0 : getIPAddressType().hashCode());
         hashCode = prime * hashCode + ((getSnapshotOptions() == null) ? 0 : getSnapshotOptions().hashCode());
         hashCode = prime * hashCode + ((getVPCOptions() == null) ? 0 : getVPCOptions().hashCode());
         hashCode = prime * hashCode + ((getCognitoOptions() == null) ? 0 : getCognitoOptions().hashCode());
@@ -1610,6 +2132,10 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAdvancedSecurityOptions() == null) ? 0 : getAdvancedSecurityOptions().hashCode());
         hashCode = prime * hashCode + ((getAutoTuneOptions() == null) ? 0 : getAutoTuneOptions().hashCode());
         hashCode = prime * hashCode + ((getChangeProgressDetails() == null) ? 0 : getChangeProgressDetails().hashCode());
+        hashCode = prime * hashCode + ((getOffPeakWindowOptions() == null) ? 0 : getOffPeakWindowOptions().hashCode());
+        hashCode = prime * hashCode + ((getSoftwareUpdateOptions() == null) ? 0 : getSoftwareUpdateOptions().hashCode());
+        hashCode = prime * hashCode + ((getDomainProcessingStatus() == null) ? 0 : getDomainProcessingStatus().hashCode());
+        hashCode = prime * hashCode + ((getModifyingProperties() == null) ? 0 : getModifyingProperties().hashCode());
         return hashCode;
     }
 

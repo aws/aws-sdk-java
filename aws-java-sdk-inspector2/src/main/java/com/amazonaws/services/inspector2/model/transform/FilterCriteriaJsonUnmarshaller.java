@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,24 @@ public class FilterCriteriaJsonUnmarshaller implements Unmarshaller<FilterCriter
                 if (context.testExpression("awsAccountId", targetDepth)) {
                     context.nextToken();
                     filterCriteria.setAwsAccountId(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("codeVulnerabilityDetectorName", targetDepth)) {
+                    context.nextToken();
+                    filterCriteria.setCodeVulnerabilityDetectorName(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("codeVulnerabilityDetectorTags", targetDepth)) {
+                    context.nextToken();
+                    filterCriteria.setCodeVulnerabilityDetectorTags(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("codeVulnerabilityFilePath", targetDepth)) {
+                    context.nextToken();
+                    filterCriteria.setCodeVulnerabilityFilePath(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
@@ -120,6 +138,18 @@ public class FilterCriteriaJsonUnmarshaller implements Unmarshaller<FilterCriter
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("epssScore", targetDepth)) {
+                    context.nextToken();
+                    filterCriteria.setEpssScore(new ListUnmarshaller<NumberFilter>(NumberFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("exploitAvailable", targetDepth)) {
+                    context.nextToken();
+                    filterCriteria.setExploitAvailable(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("findingArn", targetDepth)) {
                     context.nextToken();
                     filterCriteria.setFindingArn(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
@@ -153,6 +183,36 @@ public class FilterCriteriaJsonUnmarshaller implements Unmarshaller<FilterCriter
                 if (context.testExpression("inspectorScore", targetDepth)) {
                     context.nextToken();
                     filterCriteria.setInspectorScore(new ListUnmarshaller<NumberFilter>(NumberFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("lambdaFunctionExecutionRoleArn", targetDepth)) {
+                    context.nextToken();
+                    filterCriteria.setLambdaFunctionExecutionRoleArn(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("lambdaFunctionLastModifiedAt", targetDepth)) {
+                    context.nextToken();
+                    filterCriteria.setLambdaFunctionLastModifiedAt(new ListUnmarshaller<DateFilter>(DateFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("lambdaFunctionLayers", targetDepth)) {
+                    context.nextToken();
+                    filterCriteria.setLambdaFunctionLayers(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("lambdaFunctionName", targetDepth)) {
+                    context.nextToken();
+                    filterCriteria.setLambdaFunctionName(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("lambdaFunctionRuntime", targetDepth)) {
+                    context.nextToken();
+                    filterCriteria.setLambdaFunctionRuntime(new ListUnmarshaller<StringFilter>(StringFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }

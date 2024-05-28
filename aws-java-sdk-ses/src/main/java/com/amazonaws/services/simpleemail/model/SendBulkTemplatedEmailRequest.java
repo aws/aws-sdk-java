@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * <p>
  * Represents a request to send a templated email to multiple destinations using Amazon SES. For more information, see
- * the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
- * Developer Guide</a>.
+ * the <a href="https://docs.aws.amazon.com/ses/latest/dg/send-personalized-email-api.html">Amazon SES Developer
+ * Guide</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendBulkTemplatedEmail" target="_top">AWS API
@@ -34,27 +34,24 @@ public class SendBulkTemplatedEmailRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The email address that is sending the email. This email address must be either individually verified with Amazon
      * SES, or from a domain that has been verified with Amazon SES. For information about verifying identities, see the
-     * <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES
-     * Developer Guide</a>.
+     * <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html">Amazon SES Developer Guide</a>.
      * </p>
      * <p>
      * If you are sending on behalf of another user and have been permitted to do so by a sending authorization policy,
      * then you must also specify the <code>SourceArn</code> parameter. For more information about sending
-     * authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-     * Guide</a>.
+     * authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES
+     * Developer Guide</a>.
      * </p>
      * <note>
      * <p>
      * Amazon SES does not support the SMTPUTF8 extension, as described in <a
-     * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a source email
-     * address (the part of the email address that precedes the @ sign) may only contain <a
-     * href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain
-     * part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using
-     * Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also
-     * known as the <i>friendly name</i>) may contain non-ASCII characters. These characters must be encoded using MIME
-     * encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME
-     * encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.
+     * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the email address string must be 7-bit
+     * ASCII. If you want to send to or from email addresses that contain Unicode characters in the domain part of an
+     * address, you must encode the domain using Punycode. Punycode is not permitted in the local part of the email
+     * address (the part before the @ sign) nor in the "friendly from" name. If you want to use Unicode characters in
+     * the "friendly from" name, you must encode the "friendly from" name using MIME encoded-word syntax, as described
+     * in <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending raw email using the Amazon SES
+     * API</a>. For more information about Punycode, see <a href="http://tools.ietf.org/html/rfc3492">RFC 3492</a>.
      * </p>
      * </note>
      */
@@ -74,23 +71,22 @@ public class SendBulkTemplatedEmailRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-     * Guide</a>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer Guide</a>.
      * </p>
      */
     private String sourceArn;
     /**
      * <p>
      * The reply-to email address(es) for the message. If the recipient replies to the message, each reply-to address
-     * will receive the reply.
+     * receives the reply.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> replyToAddresses;
     /**
      * <p>
-     * The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled. If the
-     * message cannot be delivered to the recipient, then an error message will be returned from the recipient's ISP;
-     * this message will then be forwarded to the email address specified by the <code>ReturnPath</code> parameter. The
+     * The email address that bounces and complaints are forwarded to when feedback forwarding is enabled. If the
+     * message cannot be delivered to the recipient, then an error message is returned from the recipient's ISP; this
+     * message is forwarded to the email address specified by the <code>ReturnPath</code> parameter. The
      * <code>ReturnPath</code> parameter is never overwritten. This email address must be either individually verified
      * with Amazon SES, or from a domain that has been verified with Amazon SES.
      * </p>
@@ -111,8 +107,7 @@ public class SendBulkTemplatedEmailRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-     * Guide</a>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer Guide</a>.
      * </p>
      */
     private String returnPathArn;
@@ -154,8 +149,8 @@ public class SendBulkTemplatedEmailRequest extends com.amazonaws.AmazonWebServic
     private String defaultTemplateData;
     /**
      * <p>
-     * One or more <code>Destination</code> objects. All of the recipients in a <code>Destination</code> will receive
-     * the same version of the email. You can specify up to 50 <code>Destination</code> objects within a
+     * One or more <code>Destination</code> objects. All of the recipients in a <code>Destination</code> receive the
+     * same version of the email. You can specify up to 50 <code>Destination</code> objects within a
      * <code>Destinations</code> array.
      * </p>
      */
@@ -165,55 +160,51 @@ public class SendBulkTemplatedEmailRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The email address that is sending the email. This email address must be either individually verified with Amazon
      * SES, or from a domain that has been verified with Amazon SES. For information about verifying identities, see the
-     * <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES
-     * Developer Guide</a>.
+     * <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html">Amazon SES Developer Guide</a>.
      * </p>
      * <p>
      * If you are sending on behalf of another user and have been permitted to do so by a sending authorization policy,
      * then you must also specify the <code>SourceArn</code> parameter. For more information about sending
-     * authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-     * Guide</a>.
+     * authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES
+     * Developer Guide</a>.
      * </p>
      * <note>
      * <p>
      * Amazon SES does not support the SMTPUTF8 extension, as described in <a
-     * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a source email
-     * address (the part of the email address that precedes the @ sign) may only contain <a
-     * href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain
-     * part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using
-     * Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also
-     * known as the <i>friendly name</i>) may contain non-ASCII characters. These characters must be encoded using MIME
-     * encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME
-     * encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.
+     * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the email address string must be 7-bit
+     * ASCII. If you want to send to or from email addresses that contain Unicode characters in the domain part of an
+     * address, you must encode the domain using Punycode. Punycode is not permitted in the local part of the email
+     * address (the part before the @ sign) nor in the "friendly from" name. If you want to use Unicode characters in
+     * the "friendly from" name, you must encode the "friendly from" name using MIME encoded-word syntax, as described
+     * in <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending raw email using the Amazon SES
+     * API</a>. For more information about Punycode, see <a href="http://tools.ietf.org/html/rfc3492">RFC 3492</a>.
      * </p>
      * </note>
      * 
      * @param source
      *        The email address that is sending the email. This email address must be either individually verified with
      *        Amazon SES, or from a domain that has been verified with Amazon SES. For information about verifying
-     *        identities, see the <a
-     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES
-     *        Developer Guide</a>.</p>
+     *        identities, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html">Amazon
+     *        SES Developer Guide</a>.</p>
      *        <p>
      *        If you are sending on behalf of another user and have been permitted to do so by a sending authorization
      *        policy, then you must also specify the <code>SourceArn</code> parameter. For more information about
      *        sending authorization, see the <a
-     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
-     *        Developer Guide</a>.
+     *        href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer
+     *        Guide</a>.
      *        </p>
      *        <note>
      *        <p>
      *        Amazon SES does not support the SMTPUTF8 extension, as described in <a
-     *        href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a source
-     *        email address (the part of the email address that precedes the @ sign) may only contain <a
-     *        href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain
-     *        part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded
-     *        using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender
-     *        name (also known as the <i>friendly name</i>) may contain non-ASCII characters. These characters must be
-     *        encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC
-     *        2047</a>. MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>
-     *        .
+     *        href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the email address string must be
+     *        7-bit ASCII. If you want to send to or from email addresses that contain Unicode characters in the domain
+     *        part of an address, you must encode the domain using Punycode. Punycode is not permitted in the local part
+     *        of the email address (the part before the @ sign) nor in the "friendly from" name. If you want to use
+     *        Unicode characters in the "friendly from" name, you must encode the "friendly from" name using MIME
+     *        encoded-word syntax, as described in <a
+     *        href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending raw email using the Amazon
+     *        SES API</a>. For more information about Punycode, see <a href="http://tools.ietf.org/html/rfc3492">RFC
+     *        3492</a>.
      *        </p>
      */
 
@@ -225,54 +216,50 @@ public class SendBulkTemplatedEmailRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The email address that is sending the email. This email address must be either individually verified with Amazon
      * SES, or from a domain that has been verified with Amazon SES. For information about verifying identities, see the
-     * <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES
-     * Developer Guide</a>.
+     * <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html">Amazon SES Developer Guide</a>.
      * </p>
      * <p>
      * If you are sending on behalf of another user and have been permitted to do so by a sending authorization policy,
      * then you must also specify the <code>SourceArn</code> parameter. For more information about sending
-     * authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-     * Guide</a>.
+     * authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES
+     * Developer Guide</a>.
      * </p>
      * <note>
      * <p>
      * Amazon SES does not support the SMTPUTF8 extension, as described in <a
-     * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a source email
-     * address (the part of the email address that precedes the @ sign) may only contain <a
-     * href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain
-     * part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using
-     * Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also
-     * known as the <i>friendly name</i>) may contain non-ASCII characters. These characters must be encoded using MIME
-     * encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME
-     * encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.
+     * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the email address string must be 7-bit
+     * ASCII. If you want to send to or from email addresses that contain Unicode characters in the domain part of an
+     * address, you must encode the domain using Punycode. Punycode is not permitted in the local part of the email
+     * address (the part before the @ sign) nor in the "friendly from" name. If you want to use Unicode characters in
+     * the "friendly from" name, you must encode the "friendly from" name using MIME encoded-word syntax, as described
+     * in <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending raw email using the Amazon SES
+     * API</a>. For more information about Punycode, see <a href="http://tools.ietf.org/html/rfc3492">RFC 3492</a>.
      * </p>
      * </note>
      * 
      * @return The email address that is sending the email. This email address must be either individually verified with
      *         Amazon SES, or from a domain that has been verified with Amazon SES. For information about verifying
-     *         identities, see the <a
-     *         href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES
-     *         Developer Guide</a>.</p>
+     *         identities, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html">Amazon
+     *         SES Developer Guide</a>.</p>
      *         <p>
      *         If you are sending on behalf of another user and have been permitted to do so by a sending authorization
      *         policy, then you must also specify the <code>SourceArn</code> parameter. For more information about
      *         sending authorization, see the <a
-     *         href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
-     *         Developer Guide</a>.
+     *         href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer
+     *         Guide</a>.
      *         </p>
      *         <note>
      *         <p>
      *         Amazon SES does not support the SMTPUTF8 extension, as described in <a
-     *         href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a
-     *         source email address (the part of the email address that precedes the @ sign) may only contain <a
-     *         href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the
-     *         <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be
-     *         encoded using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>.
-     *         The sender name (also known as the <i>friendly name</i>) may contain non-ASCII characters. These
-     *         characters must be encoded using MIME encoded-word syntax, as described in <a
-     *         href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME encoded-word syntax uses the following
-     *         form: <code>=?charset?encoding?encoded-text?=</code>.
+     *         href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the email address string must be
+     *         7-bit ASCII. If you want to send to or from email addresses that contain Unicode characters in the domain
+     *         part of an address, you must encode the domain using Punycode. Punycode is not permitted in the local
+     *         part of the email address (the part before the @ sign) nor in the "friendly from" name. If you want to
+     *         use Unicode characters in the "friendly from" name, you must encode the "friendly from" name using MIME
+     *         encoded-word syntax, as described in <a
+     *         href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending raw email using the Amazon
+     *         SES API</a>. For more information about Punycode, see <a href="http://tools.ietf.org/html/rfc3492">RFC
+     *         3492</a>.
      *         </p>
      */
 
@@ -284,55 +271,51 @@ public class SendBulkTemplatedEmailRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The email address that is sending the email. This email address must be either individually verified with Amazon
      * SES, or from a domain that has been verified with Amazon SES. For information about verifying identities, see the
-     * <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES
-     * Developer Guide</a>.
+     * <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html">Amazon SES Developer Guide</a>.
      * </p>
      * <p>
      * If you are sending on behalf of another user and have been permitted to do so by a sending authorization policy,
      * then you must also specify the <code>SourceArn</code> parameter. For more information about sending
-     * authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-     * Guide</a>.
+     * authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES
+     * Developer Guide</a>.
      * </p>
      * <note>
      * <p>
      * Amazon SES does not support the SMTPUTF8 extension, as described in <a
-     * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a source email
-     * address (the part of the email address that precedes the @ sign) may only contain <a
-     * href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain
-     * part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using
-     * Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender name (also
-     * known as the <i>friendly name</i>) may contain non-ASCII characters. These characters must be encoded using MIME
-     * encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC 2047</a>. MIME
-     * encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>.
+     * href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the email address string must be 7-bit
+     * ASCII. If you want to send to or from email addresses that contain Unicode characters in the domain part of an
+     * address, you must encode the domain using Punycode. Punycode is not permitted in the local part of the email
+     * address (the part before the @ sign) nor in the "friendly from" name. If you want to use Unicode characters in
+     * the "friendly from" name, you must encode the "friendly from" name using MIME encoded-word syntax, as described
+     * in <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending raw email using the Amazon SES
+     * API</a>. For more information about Punycode, see <a href="http://tools.ietf.org/html/rfc3492">RFC 3492</a>.
      * </p>
      * </note>
      * 
      * @param source
      *        The email address that is sending the email. This email address must be either individually verified with
      *        Amazon SES, or from a domain that has been verified with Amazon SES. For information about verifying
-     *        identities, see the <a
-     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Amazon SES
-     *        Developer Guide</a>.</p>
+     *        identities, see the <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html">Amazon
+     *        SES Developer Guide</a>.</p>
      *        <p>
      *        If you are sending on behalf of another user and have been permitted to do so by a sending authorization
      *        policy, then you must also specify the <code>SourceArn</code> parameter. For more information about
      *        sending authorization, see the <a
-     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
-     *        Developer Guide</a>.
+     *        href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer
+     *        Guide</a>.
      *        </p>
      *        <note>
      *        <p>
      *        Amazon SES does not support the SMTPUTF8 extension, as described in <a
-     *        href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the <i>local part</i> of a source
-     *        email address (the part of the email address that precedes the @ sign) may only contain <a
-     *        href="https://en.wikipedia.org/wiki/Email_address#Local-part">7-bit ASCII characters</a>. If the <i>domain
-     *        part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded
-     *        using Punycode, as described in <a href="https://tools.ietf.org/html/rfc3492.html">RFC3492</a>. The sender
-     *        name (also known as the <i>friendly name</i>) may contain non-ASCII characters. These characters must be
-     *        encoded using MIME encoded-word syntax, as described in <a href="https://tools.ietf.org/html/rfc2047">RFC
-     *        2047</a>. MIME encoded-word syntax uses the following form: <code>=?charset?encoding?encoded-text?=</code>
-     *        .
+     *        href="https://tools.ietf.org/html/rfc6531">RFC6531</a>. For this reason, the email address string must be
+     *        7-bit ASCII. If you want to send to or from email addresses that contain Unicode characters in the domain
+     *        part of an address, you must encode the domain using Punycode. Punycode is not permitted in the local part
+     *        of the email address (the part before the @ sign) nor in the "friendly from" name. If you want to use
+     *        Unicode characters in the "friendly from" name, you must encode the "friendly from" name using MIME
+     *        encoded-word syntax, as described in <a
+     *        href="https://docs.aws.amazon.com/ses/latest/dg/send-email-raw.html">Sending raw email using the Amazon
+     *        SES API</a>. For more information about Punycode, see <a href="http://tools.ietf.org/html/rfc3492">RFC
+     *        3492</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -357,8 +340,7 @@ public class SendBulkTemplatedEmailRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-     * Guide</a>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer Guide</a>.
      * </p>
      * 
      * @param sourceArn
@@ -374,8 +356,8 @@ public class SendBulkTemplatedEmailRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <p>
      *        For more information about sending authorization, see the <a
-     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
-     *        Developer Guide</a>.
+     *        href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer
+     *        Guide</a>.
      */
 
     public void setSourceArn(String sourceArn) {
@@ -397,8 +379,7 @@ public class SendBulkTemplatedEmailRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-     * Guide</a>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer Guide</a>.
      * </p>
      * 
      * @return This parameter is used only for sending authorization. It is the ARN of the identity that is associated
@@ -413,8 +394,8 @@ public class SendBulkTemplatedEmailRequest extends com.amazonaws.AmazonWebServic
      *         </p>
      *         <p>
      *         For more information about sending authorization, see the <a
-     *         href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
-     *         Developer Guide</a>.
+     *         href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer
+     *         Guide</a>.
      */
 
     public String getSourceArn() {
@@ -436,8 +417,7 @@ public class SendBulkTemplatedEmailRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-     * Guide</a>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer Guide</a>.
      * </p>
      * 
      * @param sourceArn
@@ -453,8 +433,8 @@ public class SendBulkTemplatedEmailRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <p>
      *        For more information about sending authorization, see the <a
-     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
-     *        Developer Guide</a>.
+     *        href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer
+     *        Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -466,11 +446,11 @@ public class SendBulkTemplatedEmailRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The reply-to email address(es) for the message. If the recipient replies to the message, each reply-to address
-     * will receive the reply.
+     * receives the reply.
      * </p>
      * 
      * @return The reply-to email address(es) for the message. If the recipient replies to the message, each reply-to
-     *         address will receive the reply.
+     *         address receives the reply.
      */
 
     public java.util.List<String> getReplyToAddresses() {
@@ -483,12 +463,12 @@ public class SendBulkTemplatedEmailRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The reply-to email address(es) for the message. If the recipient replies to the message, each reply-to address
-     * will receive the reply.
+     * receives the reply.
      * </p>
      * 
      * @param replyToAddresses
      *        The reply-to email address(es) for the message. If the recipient replies to the message, each reply-to
-     *        address will receive the reply.
+     *        address receives the reply.
      */
 
     public void setReplyToAddresses(java.util.Collection<String> replyToAddresses) {
@@ -503,7 +483,7 @@ public class SendBulkTemplatedEmailRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The reply-to email address(es) for the message. If the recipient replies to the message, each reply-to address
-     * will receive the reply.
+     * receives the reply.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -513,7 +493,7 @@ public class SendBulkTemplatedEmailRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param replyToAddresses
      *        The reply-to email address(es) for the message. If the recipient replies to the message, each reply-to
-     *        address will receive the reply.
+     *        address receives the reply.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -530,12 +510,12 @@ public class SendBulkTemplatedEmailRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The reply-to email address(es) for the message. If the recipient replies to the message, each reply-to address
-     * will receive the reply.
+     * receives the reply.
      * </p>
      * 
      * @param replyToAddresses
      *        The reply-to email address(es) for the message. If the recipient replies to the message, each reply-to
-     *        address will receive the reply.
+     *        address receives the reply.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -546,20 +526,19 @@ public class SendBulkTemplatedEmailRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled. If the
-     * message cannot be delivered to the recipient, then an error message will be returned from the recipient's ISP;
-     * this message will then be forwarded to the email address specified by the <code>ReturnPath</code> parameter. The
+     * The email address that bounces and complaints are forwarded to when feedback forwarding is enabled. If the
+     * message cannot be delivered to the recipient, then an error message is returned from the recipient's ISP; this
+     * message is forwarded to the email address specified by the <code>ReturnPath</code> parameter. The
      * <code>ReturnPath</code> parameter is never overwritten. This email address must be either individually verified
      * with Amazon SES, or from a domain that has been verified with Amazon SES.
      * </p>
      * 
      * @param returnPath
-     *        The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled. If
-     *        the message cannot be delivered to the recipient, then an error message will be returned from the
-     *        recipient's ISP; this message will then be forwarded to the email address specified by the
-     *        <code>ReturnPath</code> parameter. The <code>ReturnPath</code> parameter is never overwritten. This email
-     *        address must be either individually verified with Amazon SES, or from a domain that has been verified with
-     *        Amazon SES.
+     *        The email address that bounces and complaints are forwarded to when feedback forwarding is enabled. If the
+     *        message cannot be delivered to the recipient, then an error message is returned from the recipient's ISP;
+     *        this message is forwarded to the email address specified by the <code>ReturnPath</code> parameter. The
+     *        <code>ReturnPath</code> parameter is never overwritten. This email address must be either individually
+     *        verified with Amazon SES, or from a domain that has been verified with Amazon SES.
      */
 
     public void setReturnPath(String returnPath) {
@@ -568,19 +547,18 @@ public class SendBulkTemplatedEmailRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled. If the
-     * message cannot be delivered to the recipient, then an error message will be returned from the recipient's ISP;
-     * this message will then be forwarded to the email address specified by the <code>ReturnPath</code> parameter. The
+     * The email address that bounces and complaints are forwarded to when feedback forwarding is enabled. If the
+     * message cannot be delivered to the recipient, then an error message is returned from the recipient's ISP; this
+     * message is forwarded to the email address specified by the <code>ReturnPath</code> parameter. The
      * <code>ReturnPath</code> parameter is never overwritten. This email address must be either individually verified
      * with Amazon SES, or from a domain that has been verified with Amazon SES.
      * </p>
      * 
-     * @return The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled.
-     *         If the message cannot be delivered to the recipient, then an error message will be returned from the
-     *         recipient's ISP; this message will then be forwarded to the email address specified by the
-     *         <code>ReturnPath</code> parameter. The <code>ReturnPath</code> parameter is never overwritten. This email
-     *         address must be either individually verified with Amazon SES, or from a domain that has been verified
-     *         with Amazon SES.
+     * @return The email address that bounces and complaints are forwarded to when feedback forwarding is enabled. If
+     *         the message cannot be delivered to the recipient, then an error message is returned from the recipient's
+     *         ISP; this message is forwarded to the email address specified by the <code>ReturnPath</code> parameter.
+     *         The <code>ReturnPath</code> parameter is never overwritten. This email address must be either
+     *         individually verified with Amazon SES, or from a domain that has been verified with Amazon SES.
      */
 
     public String getReturnPath() {
@@ -589,20 +567,19 @@ public class SendBulkTemplatedEmailRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled. If the
-     * message cannot be delivered to the recipient, then an error message will be returned from the recipient's ISP;
-     * this message will then be forwarded to the email address specified by the <code>ReturnPath</code> parameter. The
+     * The email address that bounces and complaints are forwarded to when feedback forwarding is enabled. If the
+     * message cannot be delivered to the recipient, then an error message is returned from the recipient's ISP; this
+     * message is forwarded to the email address specified by the <code>ReturnPath</code> parameter. The
      * <code>ReturnPath</code> parameter is never overwritten. This email address must be either individually verified
      * with Amazon SES, or from a domain that has been verified with Amazon SES.
      * </p>
      * 
      * @param returnPath
-     *        The email address that bounces and complaints will be forwarded to when feedback forwarding is enabled. If
-     *        the message cannot be delivered to the recipient, then an error message will be returned from the
-     *        recipient's ISP; this message will then be forwarded to the email address specified by the
-     *        <code>ReturnPath</code> parameter. The <code>ReturnPath</code> parameter is never overwritten. This email
-     *        address must be either individually verified with Amazon SES, or from a domain that has been verified with
-     *        Amazon SES.
+     *        The email address that bounces and complaints are forwarded to when feedback forwarding is enabled. If the
+     *        message cannot be delivered to the recipient, then an error message is returned from the recipient's ISP;
+     *        this message is forwarded to the email address specified by the <code>ReturnPath</code> parameter. The
+     *        <code>ReturnPath</code> parameter is never overwritten. This email address must be either individually
+     *        verified with Amazon SES, or from a domain that has been verified with Amazon SES.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -626,8 +603,7 @@ public class SendBulkTemplatedEmailRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-     * Guide</a>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer Guide</a>.
      * </p>
      * 
      * @param returnPathArn
@@ -643,8 +619,8 @@ public class SendBulkTemplatedEmailRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <p>
      *        For more information about sending authorization, see the <a
-     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
-     *        Developer Guide</a>.
+     *        href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer
+     *        Guide</a>.
      */
 
     public void setReturnPathArn(String returnPathArn) {
@@ -666,8 +642,7 @@ public class SendBulkTemplatedEmailRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-     * Guide</a>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer Guide</a>.
      * </p>
      * 
      * @return This parameter is used only for sending authorization. It is the ARN of the identity that is associated
@@ -682,8 +657,8 @@ public class SendBulkTemplatedEmailRequest extends com.amazonaws.AmazonWebServic
      *         </p>
      *         <p>
      *         For more information about sending authorization, see the <a
-     *         href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
-     *         Developer Guide</a>.
+     *         href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer
+     *         Guide</a>.
      */
 
     public String getReturnPathArn() {
@@ -705,8 +680,7 @@ public class SendBulkTemplatedEmailRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * For more information about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-     * Guide</a>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer Guide</a>.
      * </p>
      * 
      * @param returnPathArn
@@ -722,8 +696,8 @@ public class SendBulkTemplatedEmailRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <p>
      *        For more information about sending authorization, see the <a
-     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
-     *        Developer Guide</a>.
+     *        href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer
+     *        Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1003,13 +977,13 @@ public class SendBulkTemplatedEmailRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * One or more <code>Destination</code> objects. All of the recipients in a <code>Destination</code> will receive
-     * the same version of the email. You can specify up to 50 <code>Destination</code> objects within a
+     * One or more <code>Destination</code> objects. All of the recipients in a <code>Destination</code> receive the
+     * same version of the email. You can specify up to 50 <code>Destination</code> objects within a
      * <code>Destinations</code> array.
      * </p>
      * 
-     * @return One or more <code>Destination</code> objects. All of the recipients in a <code>Destination</code> will
-     *         receive the same version of the email. You can specify up to 50 <code>Destination</code> objects within a
+     * @return One or more <code>Destination</code> objects. All of the recipients in a <code>Destination</code> receive
+     *         the same version of the email. You can specify up to 50 <code>Destination</code> objects within a
      *         <code>Destinations</code> array.
      */
 
@@ -1022,14 +996,14 @@ public class SendBulkTemplatedEmailRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * One or more <code>Destination</code> objects. All of the recipients in a <code>Destination</code> will receive
-     * the same version of the email. You can specify up to 50 <code>Destination</code> objects within a
+     * One or more <code>Destination</code> objects. All of the recipients in a <code>Destination</code> receive the
+     * same version of the email. You can specify up to 50 <code>Destination</code> objects within a
      * <code>Destinations</code> array.
      * </p>
      * 
      * @param destinations
-     *        One or more <code>Destination</code> objects. All of the recipients in a <code>Destination</code> will
-     *        receive the same version of the email. You can specify up to 50 <code>Destination</code> objects within a
+     *        One or more <code>Destination</code> objects. All of the recipients in a <code>Destination</code> receive
+     *        the same version of the email. You can specify up to 50 <code>Destination</code> objects within a
      *        <code>Destinations</code> array.
      */
 
@@ -1044,8 +1018,8 @@ public class SendBulkTemplatedEmailRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * One or more <code>Destination</code> objects. All of the recipients in a <code>Destination</code> will receive
-     * the same version of the email. You can specify up to 50 <code>Destination</code> objects within a
+     * One or more <code>Destination</code> objects. All of the recipients in a <code>Destination</code> receive the
+     * same version of the email. You can specify up to 50 <code>Destination</code> objects within a
      * <code>Destinations</code> array.
      * </p>
      * <p>
@@ -1055,8 +1029,8 @@ public class SendBulkTemplatedEmailRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param destinations
-     *        One or more <code>Destination</code> objects. All of the recipients in a <code>Destination</code> will
-     *        receive the same version of the email. You can specify up to 50 <code>Destination</code> objects within a
+     *        One or more <code>Destination</code> objects. All of the recipients in a <code>Destination</code> receive
+     *        the same version of the email. You can specify up to 50 <code>Destination</code> objects within a
      *        <code>Destinations</code> array.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1073,14 +1047,14 @@ public class SendBulkTemplatedEmailRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * One or more <code>Destination</code> objects. All of the recipients in a <code>Destination</code> will receive
-     * the same version of the email. You can specify up to 50 <code>Destination</code> objects within a
+     * One or more <code>Destination</code> objects. All of the recipients in a <code>Destination</code> receive the
+     * same version of the email. You can specify up to 50 <code>Destination</code> objects within a
      * <code>Destinations</code> array.
      * </p>
      * 
      * @param destinations
-     *        One or more <code>Destination</code> objects. All of the recipients in a <code>Destination</code> will
-     *        receive the same version of the email. You can specify up to 50 <code>Destination</code> objects within a
+     *        One or more <code>Destination</code> objects. All of the recipients in a <code>Destination</code> receive
+     *        the same version of the email. You can specify up to 50 <code>Destination</code> objects within a
      *        <code>Destinations</code> array.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

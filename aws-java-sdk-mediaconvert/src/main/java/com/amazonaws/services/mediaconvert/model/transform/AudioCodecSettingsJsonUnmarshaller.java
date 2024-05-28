@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,6 +71,10 @@ public class AudioCodecSettingsJsonUnmarshaller implements Unmarshaller<AudioCod
                 if (context.testExpression("eac3Settings", targetDepth)) {
                     context.nextToken();
                     audioCodecSettings.setEac3Settings(Eac3SettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("flacSettings", targetDepth)) {
+                    context.nextToken();
+                    audioCodecSettings.setFlacSettings(FlacSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("mp2Settings", targetDepth)) {
                     context.nextToken();

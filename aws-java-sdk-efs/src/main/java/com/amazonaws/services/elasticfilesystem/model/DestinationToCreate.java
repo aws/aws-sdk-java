@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the destination file system to create in the replication configuration.
+ * Describes the new or existing destination file system for the replication configuration.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DestinationToCreate"
@@ -37,15 +37,15 @@ public class DestinationToCreate implements Serializable, Cloneable, StructuredP
     private String region;
     /**
      * <p>
-     * To create a file system that uses EFS One Zone storage, specify the name of the Availability Zone in which to
-     * create the destination file system.
+     * To create a file system that uses One Zone storage, specify the name of the Availability Zone in which to create
+     * the destination file system.
      * </p>
      */
     private String availabilityZoneName;
     /**
      * <p>
-     * Specifies the Key Management Service (KMS) key that you want to use to encrypt the destination file system. If
-     * you do not specify a KMS key, Amazon EFS uses your default KMS key for Amazon EFS,
+     * Specify the Key Management Service (KMS) key that you want to use to encrypt the destination file system. If you
+     * do not specify a KMS key, Amazon EFS uses your default KMS key for Amazon EFS,
      * <code>/aws/elasticfilesystem</code>. This ID can be in one of the following formats:
      * </p>
      * <ul>
@@ -74,6 +74,13 @@ public class DestinationToCreate implements Serializable, Cloneable, StructuredP
      * </ul>
      */
     private String kmsKeyId;
+    /**
+     * <p>
+     * The ID of the file system to use for the destination. The file system's replication overwrite replication must be
+     * disabled. If you do not provide an ID, then EFS creates a new file system for the replication destination.
+     * </p>
+     */
+    private String fileSystemId;
 
     /**
      * <p>
@@ -123,13 +130,13 @@ public class DestinationToCreate implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * To create a file system that uses EFS One Zone storage, specify the name of the Availability Zone in which to
-     * create the destination file system.
+     * To create a file system that uses One Zone storage, specify the name of the Availability Zone in which to create
+     * the destination file system.
      * </p>
      * 
      * @param availabilityZoneName
-     *        To create a file system that uses EFS One Zone storage, specify the name of the Availability Zone in which
-     *        to create the destination file system.
+     *        To create a file system that uses One Zone storage, specify the name of the Availability Zone in which to
+     *        create the destination file system.
      */
 
     public void setAvailabilityZoneName(String availabilityZoneName) {
@@ -138,12 +145,12 @@ public class DestinationToCreate implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * To create a file system that uses EFS One Zone storage, specify the name of the Availability Zone in which to
-     * create the destination file system.
+     * To create a file system that uses One Zone storage, specify the name of the Availability Zone in which to create
+     * the destination file system.
      * </p>
      * 
-     * @return To create a file system that uses EFS One Zone storage, specify the name of the Availability Zone in
-     *         which to create the destination file system.
+     * @return To create a file system that uses One Zone storage, specify the name of the Availability Zone in which to
+     *         create the destination file system.
      */
 
     public String getAvailabilityZoneName() {
@@ -152,13 +159,13 @@ public class DestinationToCreate implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * To create a file system that uses EFS One Zone storage, specify the name of the Availability Zone in which to
-     * create the destination file system.
+     * To create a file system that uses One Zone storage, specify the name of the Availability Zone in which to create
+     * the destination file system.
      * </p>
      * 
      * @param availabilityZoneName
-     *        To create a file system that uses EFS One Zone storage, specify the name of the Availability Zone in which
-     *        to create the destination file system.
+     *        To create a file system that uses One Zone storage, specify the name of the Availability Zone in which to
+     *        create the destination file system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,8 +176,8 @@ public class DestinationToCreate implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies the Key Management Service (KMS) key that you want to use to encrypt the destination file system. If
-     * you do not specify a KMS key, Amazon EFS uses your default KMS key for Amazon EFS,
+     * Specify the Key Management Service (KMS) key that you want to use to encrypt the destination file system. If you
+     * do not specify a KMS key, Amazon EFS uses your default KMS key for Amazon EFS,
      * <code>/aws/elasticfilesystem</code>. This ID can be in one of the following formats:
      * </p>
      * <ul>
@@ -199,8 +206,8 @@ public class DestinationToCreate implements Serializable, Cloneable, StructuredP
      * </ul>
      * 
      * @param kmsKeyId
-     *        Specifies the Key Management Service (KMS) key that you want to use to encrypt the destination file
-     *        system. If you do not specify a KMS key, Amazon EFS uses your default KMS key for Amazon EFS,
+     *        Specify the Key Management Service (KMS) key that you want to use to encrypt the destination file system.
+     *        If you do not specify a KMS key, Amazon EFS uses your default KMS key for Amazon EFS,
      *        <code>/aws/elasticfilesystem</code>. This ID can be in one of the following formats:</p>
      *        <ul>
      *        <li>
@@ -233,8 +240,8 @@ public class DestinationToCreate implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies the Key Management Service (KMS) key that you want to use to encrypt the destination file system. If
-     * you do not specify a KMS key, Amazon EFS uses your default KMS key for Amazon EFS,
+     * Specify the Key Management Service (KMS) key that you want to use to encrypt the destination file system. If you
+     * do not specify a KMS key, Amazon EFS uses your default KMS key for Amazon EFS,
      * <code>/aws/elasticfilesystem</code>. This ID can be in one of the following formats:
      * </p>
      * <ul>
@@ -262,8 +269,8 @@ public class DestinationToCreate implements Serializable, Cloneable, StructuredP
      * </li>
      * </ul>
      * 
-     * @return Specifies the Key Management Service (KMS) key that you want to use to encrypt the destination file
-     *         system. If you do not specify a KMS key, Amazon EFS uses your default KMS key for Amazon EFS,
+     * @return Specify the Key Management Service (KMS) key that you want to use to encrypt the destination file system.
+     *         If you do not specify a KMS key, Amazon EFS uses your default KMS key for Amazon EFS,
      *         <code>/aws/elasticfilesystem</code>. This ID can be in one of the following formats:</p>
      *         <ul>
      *         <li>
@@ -296,8 +303,8 @@ public class DestinationToCreate implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies the Key Management Service (KMS) key that you want to use to encrypt the destination file system. If
-     * you do not specify a KMS key, Amazon EFS uses your default KMS key for Amazon EFS,
+     * Specify the Key Management Service (KMS) key that you want to use to encrypt the destination file system. If you
+     * do not specify a KMS key, Amazon EFS uses your default KMS key for Amazon EFS,
      * <code>/aws/elasticfilesystem</code>. This ID can be in one of the following formats:
      * </p>
      * <ul>
@@ -326,8 +333,8 @@ public class DestinationToCreate implements Serializable, Cloneable, StructuredP
      * </ul>
      * 
      * @param kmsKeyId
-     *        Specifies the Key Management Service (KMS) key that you want to use to encrypt the destination file
-     *        system. If you do not specify a KMS key, Amazon EFS uses your default KMS key for Amazon EFS,
+     *        Specify the Key Management Service (KMS) key that you want to use to encrypt the destination file system.
+     *        If you do not specify a KMS key, Amazon EFS uses your default KMS key for Amazon EFS,
      *        <code>/aws/elasticfilesystem</code>. This ID can be in one of the following formats:</p>
      *        <ul>
      *        <li>
@@ -361,6 +368,55 @@ public class DestinationToCreate implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The ID of the file system to use for the destination. The file system's replication overwrite replication must be
+     * disabled. If you do not provide an ID, then EFS creates a new file system for the replication destination.
+     * </p>
+     * 
+     * @param fileSystemId
+     *        The ID of the file system to use for the destination. The file system's replication overwrite replication
+     *        must be disabled. If you do not provide an ID, then EFS creates a new file system for the replication
+     *        destination.
+     */
+
+    public void setFileSystemId(String fileSystemId) {
+        this.fileSystemId = fileSystemId;
+    }
+
+    /**
+     * <p>
+     * The ID of the file system to use for the destination. The file system's replication overwrite replication must be
+     * disabled. If you do not provide an ID, then EFS creates a new file system for the replication destination.
+     * </p>
+     * 
+     * @return The ID of the file system to use for the destination. The file system's replication overwrite replication
+     *         must be disabled. If you do not provide an ID, then EFS creates a new file system for the replication
+     *         destination.
+     */
+
+    public String getFileSystemId() {
+        return this.fileSystemId;
+    }
+
+    /**
+     * <p>
+     * The ID of the file system to use for the destination. The file system's replication overwrite replication must be
+     * disabled. If you do not provide an ID, then EFS creates a new file system for the replication destination.
+     * </p>
+     * 
+     * @param fileSystemId
+     *        The ID of the file system to use for the destination. The file system's replication overwrite replication
+     *        must be disabled. If you do not provide an ID, then EFS creates a new file system for the replication
+     *        destination.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DestinationToCreate withFileSystemId(String fileSystemId) {
+        setFileSystemId(fileSystemId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -377,7 +433,9 @@ public class DestinationToCreate implements Serializable, Cloneable, StructuredP
         if (getAvailabilityZoneName() != null)
             sb.append("AvailabilityZoneName: ").append(getAvailabilityZoneName()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: ").append(getKmsKeyId());
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
+        if (getFileSystemId() != null)
+            sb.append("FileSystemId: ").append(getFileSystemId());
         sb.append("}");
         return sb.toString();
     }
@@ -404,6 +462,10 @@ public class DestinationToCreate implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
+        if (other.getFileSystemId() == null ^ this.getFileSystemId() == null)
+            return false;
+        if (other.getFileSystemId() != null && other.getFileSystemId().equals(this.getFileSystemId()) == false)
+            return false;
         return true;
     }
 
@@ -415,6 +477,7 @@ public class DestinationToCreate implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZoneName() == null) ? 0 : getAvailabilityZoneName().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getFileSystemId() == null) ? 0 : getFileSystemId().hashCode());
         return hashCode;
     }
 

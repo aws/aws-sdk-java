@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,39 @@ public interface AWSMarketplaceCatalogAsync extends AWSMarketplaceCatalog {
 
     /**
      * <p>
+     * Returns metadata and content for multiple entities. This is the Batch version of the <code>DescribeEntity</code>
+     * API and uses the same IAM permission action as <code>DescribeEntity</code> API.
+     * </p>
+     * 
+     * @param batchDescribeEntitiesRequest
+     * @return A Java Future containing the result of the BatchDescribeEntities operation returned by the service.
+     * @sample AWSMarketplaceCatalogAsync.BatchDescribeEntities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/BatchDescribeEntities"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDescribeEntitiesResult> batchDescribeEntitiesAsync(BatchDescribeEntitiesRequest batchDescribeEntitiesRequest);
+
+    /**
+     * <p>
+     * Returns metadata and content for multiple entities. This is the Batch version of the <code>DescribeEntity</code>
+     * API and uses the same IAM permission action as <code>DescribeEntity</code> API.
+     * </p>
+     * 
+     * @param batchDescribeEntitiesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchDescribeEntities operation returned by the service.
+     * @sample AWSMarketplaceCatalogAsyncHandler.BatchDescribeEntities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/BatchDescribeEntities"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDescribeEntitiesResult> batchDescribeEntitiesAsync(BatchDescribeEntitiesRequest batchDescribeEntitiesRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchDescribeEntitiesRequest, BatchDescribeEntitiesResult> asyncHandler);
+
+    /**
+     * <p>
      * Used to cancel an open change request. Must be sent before the status of the request changes to
      * <code>APPLYING</code>, the final stage of completing your change request. You can describe a change during the
      * 60-day request history retention period for API calls.
@@ -72,6 +105,37 @@ public interface AWSMarketplaceCatalogAsync extends AWSMarketplaceCatalog {
      */
     java.util.concurrent.Future<CancelChangeSetResult> cancelChangeSetAsync(CancelChangeSetRequest cancelChangeSetRequest,
             com.amazonaws.handlers.AsyncHandler<CancelChangeSetRequest, CancelChangeSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a resource-based policy on an entity that is identified by its resource ARN.
+     * </p>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @return A Java Future containing the result of the DeleteResourcePolicy operation returned by the service.
+     * @sample AWSMarketplaceCatalogAsync.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/DeleteResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest deleteResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Deletes a resource-based policy on an entity that is identified by its resource ARN.
+     * </p>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteResourcePolicy operation returned by the service.
+     * @sample AWSMarketplaceCatalogAsyncHandler.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/DeleteResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest deleteResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteResourcePolicyRequest, DeleteResourcePolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -134,6 +198,37 @@ public interface AWSMarketplaceCatalogAsync extends AWSMarketplaceCatalog {
      */
     java.util.concurrent.Future<DescribeEntityResult> describeEntityAsync(DescribeEntityRequest describeEntityRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeEntityRequest, DescribeEntityResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a resource-based policy of an entity that is identified by its resource ARN.
+     * </p>
+     * 
+     * @param getResourcePolicyRequest
+     * @return A Java Future containing the result of the GetResourcePolicy operation returned by the service.
+     * @sample AWSMarketplaceCatalogAsync.GetResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/GetResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest getResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Gets a resource-based policy of an entity that is identified by its resource ARN.
+     * </p>
+     * 
+     * @param getResourcePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetResourcePolicy operation returned by the service.
+     * @sample AWSMarketplaceCatalogAsyncHandler.GetResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/GetResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest getResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetResourcePolicyRequest, GetResourcePolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -209,22 +304,99 @@ public interface AWSMarketplaceCatalogAsync extends AWSMarketplaceCatalog {
 
     /**
      * <p>
-     * This operation allows you to request changes for your entities. Within a single ChangeSet, you cannot start the
-     * same change type against the same entity multiple times. Additionally, when a ChangeSet is running, all the
-     * entities targeted by the different changes are locked until the ChangeSet has completed (either succeeded,
-     * cancelled, or failed). If you try to start a ChangeSet containing a change against an entity that is already
-     * locked, you will receive a <code>ResourceInUseException</code>.
+     * Lists all tags that have been added to a resource (either an <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#catalog-api-entities"
+     * >entity</a> or <a href=
+     * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets"
+     * >change set</a>).
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSMarketplaceCatalogAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Lists all tags that have been added to a resource (either an <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#catalog-api-entities"
+     * >entity</a> or <a href=
+     * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets"
+     * >change set</a>).
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSMarketplaceCatalogAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Attaches a resource-based policy to an entity. Examples of an entity include: <code>AmiProduct</code> and
+     * <code>ContainerProduct</code>.
+     * </p>
+     * 
+     * @param putResourcePolicyRequest
+     * @return A Java Future containing the result of the PutResourcePolicy operation returned by the service.
+     * @sample AWSMarketplaceCatalogAsync.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/PutResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest putResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Attaches a resource-based policy to an entity. Examples of an entity include: <code>AmiProduct</code> and
+     * <code>ContainerProduct</code>.
+     * </p>
+     * 
+     * @param putResourcePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutResourcePolicy operation returned by the service.
+     * @sample AWSMarketplaceCatalogAsyncHandler.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/PutResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest putResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<PutResourcePolicyRequest, PutResourcePolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Allows you to request changes for your entities. Within a single <code>ChangeSet</code>, you can't start the same
+     * change type against the same entity multiple times. Additionally, when a <code>ChangeSet</code> is running, all
+     * the entities targeted by the different changes are locked until the change set has completed (either succeeded,
+     * cancelled, or failed). If you try to start a change set containing a change against an entity that is already
+     * locked, you will receive a <code>ResourceInUseException</code> error.
      * </p>
      * <p>
-     * For example, you cannot start the ChangeSet described in the <a href=
+     * For example, you can't start the <code>ChangeSet</code> described in the <a href=
      * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_Examples"
-     * >example</a> later in this topic, because it contains two changes to execute the same change type (
-     * <code>AddRevisions</code>) against the same entity (<code>entity-id@1)</code>.
+     * >example</a> later in this topic because it contains two changes to run the same change type (
+     * <code>AddRevisions</code>) against the same entity (<code>entity-id@1</code>).
      * </p>
      * <p>
      * For more information about working with change sets, see <a href=
      * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets">
-     * Working with change sets</a>.
+     * Working with change sets</a>. For information about change types for single-AMI products, see <a href=
+     * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products"
+     * >Working with single-AMI products</a>. Also, for more information about change types available for
+     * container-based products, see <a href=
+     * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products"
+     * >Working with container products</a>.
      * </p>
      * 
      * @param startChangeSetRequest
@@ -237,22 +409,27 @@ public interface AWSMarketplaceCatalogAsync extends AWSMarketplaceCatalog {
 
     /**
      * <p>
-     * This operation allows you to request changes for your entities. Within a single ChangeSet, you cannot start the
-     * same change type against the same entity multiple times. Additionally, when a ChangeSet is running, all the
-     * entities targeted by the different changes are locked until the ChangeSet has completed (either succeeded,
-     * cancelled, or failed). If you try to start a ChangeSet containing a change against an entity that is already
-     * locked, you will receive a <code>ResourceInUseException</code>.
+     * Allows you to request changes for your entities. Within a single <code>ChangeSet</code>, you can't start the same
+     * change type against the same entity multiple times. Additionally, when a <code>ChangeSet</code> is running, all
+     * the entities targeted by the different changes are locked until the change set has completed (either succeeded,
+     * cancelled, or failed). If you try to start a change set containing a change against an entity that is already
+     * locked, you will receive a <code>ResourceInUseException</code> error.
      * </p>
      * <p>
-     * For example, you cannot start the ChangeSet described in the <a href=
+     * For example, you can't start the <code>ChangeSet</code> described in the <a href=
      * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_Examples"
-     * >example</a> later in this topic, because it contains two changes to execute the same change type (
-     * <code>AddRevisions</code>) against the same entity (<code>entity-id@1)</code>.
+     * >example</a> later in this topic because it contains two changes to run the same change type (
+     * <code>AddRevisions</code>) against the same entity (<code>entity-id@1</code>).
      * </p>
      * <p>
      * For more information about working with change sets, see <a href=
      * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets">
-     * Working with change sets</a>.
+     * Working with change sets</a>. For information about change types for single-AMI products, see <a href=
+     * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products"
+     * >Working with single-AMI products</a>. Also, for more information about change types available for
+     * container-based products, see <a href=
+     * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products"
+     * >Working with container products</a>.
      * </p>
      * 
      * @param startChangeSetRequest
@@ -267,5 +444,83 @@ public interface AWSMarketplaceCatalogAsync extends AWSMarketplaceCatalog {
      */
     java.util.concurrent.Future<StartChangeSetResult> startChangeSetAsync(StartChangeSetRequest startChangeSetRequest,
             com.amazonaws.handlers.AsyncHandler<StartChangeSetRequest, StartChangeSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Tags a resource (either an <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#catalog-api-entities"
+     * >entity</a> or <a href=
+     * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets"
+     * >change set</a>).
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSMarketplaceCatalogAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/TagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Tags a resource (either an <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#catalog-api-entities"
+     * >entity</a> or <a href=
+     * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets"
+     * >change set</a>).
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSMarketplaceCatalogAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/TagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes a tag or list of tags from a resource (either an <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#catalog-api-entities"
+     * >entity</a> or <a href=
+     * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets"
+     * >change set</a>).
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSMarketplaceCatalogAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/UntagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes a tag or list of tags from a resource (either an <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#catalog-api-entities"
+     * >entity</a> or <a href=
+     * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets"
+     * >change set</a>).
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSMarketplaceCatalogAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/UntagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
 }

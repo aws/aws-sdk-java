@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,8 @@ public class ConfigurationSetInformationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultSenderId").build();
     private static final MarshallingInfo<java.util.Date> CREATEDTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedTimestamp").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> PROTECTCONFIGURATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProtectConfigurationId").build();
 
     private static final ConfigurationSetInformationMarshaller instance = new ConfigurationSetInformationMarshaller();
 
@@ -63,6 +65,7 @@ public class ConfigurationSetInformationMarshaller {
             protocolMarshaller.marshall(configurationSetInformation.getDefaultMessageType(), DEFAULTMESSAGETYPE_BINDING);
             protocolMarshaller.marshall(configurationSetInformation.getDefaultSenderId(), DEFAULTSENDERID_BINDING);
             protocolMarshaller.marshall(configurationSetInformation.getCreatedTimestamp(), CREATEDTIMESTAMP_BINDING);
+            protocolMarshaller.marshall(configurationSetInformation.getProtectConfigurationId(), PROTECTCONFIGURATIONID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

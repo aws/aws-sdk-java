@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the Amazon EKS cluster that is associated with the managed node group to update.
+     * The name of your cluster.
      * </p>
      */
     private String clusterName;
@@ -52,11 +52,17 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI
-     * version for the node group's Kubernetes version is used. For more information, see <a
+     * version for the node group's Kubernetes version is used. For information about Linux versions, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon
-     * Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and
-     * your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update
-     * will fail. For more information about using launch templates with Amazon EKS, see <a
+     * Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support the November
+     * 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized
+     * Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.
+     * </p>
+     * <p>
+     * If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
+     * <code>releaseVersion</code>, or the node group update will fail. For more information about using launch
+     * templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the
      * <i>Amazon EKS User Guide</i>.
      * </p>
@@ -71,26 +77,26 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
     private LaunchTemplateSpecification launchTemplate;
     /**
      * <p>
-     * Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget issue.
-     * If an update fails because pods could not be drained, you can force the update after it fails to terminate the
-     * old node whether or not any pods are running on the node.
+     * Force the update if any <code>Pod</code> on the existing node group can't be drained due to a <code>Pod</code>
+     * disruption budget issue. If an update fails because all Pods can't be drained, you can force the update after it
+     * fails to terminate the old node whether or not any <code>Pod</code> is running on the node.
      * </p>
      */
     private Boolean force;
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      */
     private String clientRequestToken;
 
     /**
      * <p>
-     * The name of the Amazon EKS cluster that is associated with the managed node group to update.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The name of the Amazon EKS cluster that is associated with the managed node group to update.
+     *        The name of your cluster.
      */
 
     public void setClusterName(String clusterName) {
@@ -99,10 +105,10 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the Amazon EKS cluster that is associated with the managed node group to update.
+     * The name of your cluster.
      * </p>
      * 
-     * @return The name of the Amazon EKS cluster that is associated with the managed node group to update.
+     * @return The name of your cluster.
      */
 
     public String getClusterName() {
@@ -111,11 +117,11 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the Amazon EKS cluster that is associated with the managed node group to update.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The name of the Amazon EKS cluster that is associated with the managed node group to update.
+     *        The name of your cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -243,21 +249,31 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI
-     * version for the node group's Kubernetes version is used. For more information, see <a
+     * version for the node group's Kubernetes version is used. For information about Linux versions, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon
-     * Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and
-     * your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update
-     * will fail. For more information about using launch templates with Amazon EKS, see <a
+     * Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support the November
+     * 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized
+     * Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.
+     * </p>
+     * <p>
+     * If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
+     * <code>releaseVersion</code>, or the node group update will fail. For more information about using launch
+     * templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the
      * <i>Amazon EKS User Guide</i>.
      * </p>
      * 
      * @param releaseVersion
      *        The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available
-     *        AMI version for the node group's Kubernetes version is used. For more information, see <a
+     *        AMI version for the node group's Kubernetes version is used. For information about Linux versions, see <a
      *        href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized
-     *        Amazon Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify
-     *        <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
+     *        Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support
+     *        the November 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized
+     *        Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
+     *        <p>
+     *        If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
      *        <code>releaseVersion</code>, or the node group update will fail. For more information about using launch
      *        templates with Amazon EKS, see <a
      *        href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a>
@@ -271,22 +287,32 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI
-     * version for the node group's Kubernetes version is used. For more information, see <a
+     * version for the node group's Kubernetes version is used. For information about Linux versions, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon
-     * Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and
-     * your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update
-     * will fail. For more information about using launch templates with Amazon EKS, see <a
+     * Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support the November
+     * 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized
+     * Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.
+     * </p>
+     * <p>
+     * If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
+     * <code>releaseVersion</code>, or the node group update will fail. For more information about using launch
+     * templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the
      * <i>Amazon EKS User Guide</i>.
      * </p>
      * 
      * @return The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available
-     *         AMI version for the node group's Kubernetes version is used. For more information, see <a
+     *         AMI version for the node group's Kubernetes version is used. For information about Linux versions, see <a
      *         href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized
-     *         Amazon Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify
-     *         <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
-     *         <code>releaseVersion</code>, or the node group update will fail. For more information about using launch
-     *         templates with Amazon EKS, see <a
+     *         Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support
+     *         the November 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS
+     *         optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
+     *         <p>
+     *         If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't
+     *         specify <code>releaseVersion</code>, or the node group update will fail. For more information about using
+     *         launch templates with Amazon EKS, see <a
      *         href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a>
      *         in the <i>Amazon EKS User Guide</i>.
      */
@@ -298,21 +324,31 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI
-     * version for the node group's Kubernetes version is used. For more information, see <a
+     * version for the node group's Kubernetes version is used. For information about Linux versions, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon
-     * Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and
-     * your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update
-     * will fail. For more information about using launch templates with Amazon EKS, see <a
+     * Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support the November
+     * 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized
+     * Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.
+     * </p>
+     * <p>
+     * If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
+     * <code>releaseVersion</code>, or the node group update will fail. For more information about using launch
+     * templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the
      * <i>Amazon EKS User Guide</i>.
      * </p>
      * 
      * @param releaseVersion
      *        The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available
-     *        AMI version for the node group's Kubernetes version is used. For more information, see <a
+     *        AMI version for the node group's Kubernetes version is used. For information about Linux versions, see <a
      *        href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized
-     *        Amazon Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify
-     *        <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
+     *        Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support
+     *        the November 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized
+     *        Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
+     *        <p>
+     *        If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
      *        <code>releaseVersion</code>, or the node group update will fail. For more information about using launch
      *        templates with Amazon EKS, see <a
      *        href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a>
@@ -373,15 +409,16 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget issue.
-     * If an update fails because pods could not be drained, you can force the update after it fails to terminate the
-     * old node whether or not any pods are running on the node.
+     * Force the update if any <code>Pod</code> on the existing node group can't be drained due to a <code>Pod</code>
+     * disruption budget issue. If an update fails because all Pods can't be drained, you can force the update after it
+     * fails to terminate the old node whether or not any <code>Pod</code> is running on the node.
      * </p>
      * 
      * @param force
-     *        Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget
-     *        issue. If an update fails because pods could not be drained, you can force the update after it fails to
-     *        terminate the old node whether or not any pods are running on the node.
+     *        Force the update if any <code>Pod</code> on the existing node group can't be drained due to a
+     *        <code>Pod</code> disruption budget issue. If an update fails because all Pods can't be drained, you can
+     *        force the update after it fails to terminate the old node whether or not any <code>Pod</code> is running
+     *        on the node.
      */
 
     public void setForce(Boolean force) {
@@ -390,14 +427,15 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget issue.
-     * If an update fails because pods could not be drained, you can force the update after it fails to terminate the
-     * old node whether or not any pods are running on the node.
+     * Force the update if any <code>Pod</code> on the existing node group can't be drained due to a <code>Pod</code>
+     * disruption budget issue. If an update fails because all Pods can't be drained, you can force the update after it
+     * fails to terminate the old node whether or not any <code>Pod</code> is running on the node.
      * </p>
      * 
-     * @return Force the update if the existing node group's pods are unable to be drained due to a pod disruption
-     *         budget issue. If an update fails because pods could not be drained, you can force the update after it
-     *         fails to terminate the old node whether or not any pods are running on the node.
+     * @return Force the update if any <code>Pod</code> on the existing node group can't be drained due to a
+     *         <code>Pod</code> disruption budget issue. If an update fails because all Pods can't be drained, you can
+     *         force the update after it fails to terminate the old node whether or not any <code>Pod</code> is running
+     *         on the node.
      */
 
     public Boolean getForce() {
@@ -406,15 +444,16 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget issue.
-     * If an update fails because pods could not be drained, you can force the update after it fails to terminate the
-     * old node whether or not any pods are running on the node.
+     * Force the update if any <code>Pod</code> on the existing node group can't be drained due to a <code>Pod</code>
+     * disruption budget issue. If an update fails because all Pods can't be drained, you can force the update after it
+     * fails to terminate the old node whether or not any <code>Pod</code> is running on the node.
      * </p>
      * 
      * @param force
-     *        Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget
-     *        issue. If an update fails because pods could not be drained, you can force the update after it fails to
-     *        terminate the old node whether or not any pods are running on the node.
+     *        Force the update if any <code>Pod</code> on the existing node group can't be drained due to a
+     *        <code>Pod</code> disruption budget issue. If an update fails because all Pods can't be drained, you can
+     *        force the update after it fails to terminate the old node whether or not any <code>Pod</code> is running
+     *        on the node.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -425,14 +464,15 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget issue.
-     * If an update fails because pods could not be drained, you can force the update after it fails to terminate the
-     * old node whether or not any pods are running on the node.
+     * Force the update if any <code>Pod</code> on the existing node group can't be drained due to a <code>Pod</code>
+     * disruption budget issue. If an update fails because all Pods can't be drained, you can force the update after it
+     * fails to terminate the old node whether or not any <code>Pod</code> is running on the node.
      * </p>
      * 
-     * @return Force the update if the existing node group's pods are unable to be drained due to a pod disruption
-     *         budget issue. If an update fails because pods could not be drained, you can force the update after it
-     *         fails to terminate the old node whether or not any pods are running on the node.
+     * @return Force the update if any <code>Pod</code> on the existing node group can't be drained due to a
+     *         <code>Pod</code> disruption budget issue. If an update fails because all Pods can't be drained, you can
+     *         force the update after it fails to terminate the old node whether or not any <code>Pod</code> is running
+     *         on the node.
      */
 
     public Boolean isForce() {
@@ -441,11 +481,11 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
      * @param clientRequestToken
-     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -454,10 +494,10 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
-     * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      */
 
     public String getClientRequestToken() {
@@ -466,11 +506,11 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
      * @param clientRequestToken
-     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

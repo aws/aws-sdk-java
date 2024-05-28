@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -89,6 +89,12 @@ public class AnalyzerSummary implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private StatusReason statusReason;
+    /**
+     * <p>
+     * Specifies whether the analyzer is an external access or unused access analyzer.
+     * </p>
+     */
+    private AnalyzerConfiguration configuration;
 
     /**
      * <p>
@@ -567,6 +573,46 @@ public class AnalyzerSummary implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Specifies whether the analyzer is an external access or unused access analyzer.
+     * </p>
+     * 
+     * @param configuration
+     *        Specifies whether the analyzer is an external access or unused access analyzer.
+     */
+
+    public void setConfiguration(AnalyzerConfiguration configuration) {
+        this.configuration = configuration;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the analyzer is an external access or unused access analyzer.
+     * </p>
+     * 
+     * @return Specifies whether the analyzer is an external access or unused access analyzer.
+     */
+
+    public AnalyzerConfiguration getConfiguration() {
+        return this.configuration;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the analyzer is an external access or unused access analyzer.
+     * </p>
+     * 
+     * @param configuration
+     *        Specifies whether the analyzer is an external access or unused access analyzer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnalyzerSummary withConfiguration(AnalyzerConfiguration configuration) {
+        setConfiguration(configuration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -595,7 +641,9 @@ public class AnalyzerSummary implements Serializable, Cloneable, StructuredPojo 
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusReason() != null)
-            sb.append("StatusReason: ").append(getStatusReason());
+            sb.append("StatusReason: ").append(getStatusReason()).append(",");
+        if (getConfiguration() != null)
+            sb.append("Configuration: ").append(getConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -646,6 +694,10 @@ public class AnalyzerSummary implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getStatusReason() != null && other.getStatusReason().equals(this.getStatusReason()) == false)
             return false;
+        if (other.getConfiguration() == null ^ this.getConfiguration() == null)
+            return false;
+        if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -663,6 +715,7 @@ public class AnalyzerSummary implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
+        hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
         return hashCode;
     }
 

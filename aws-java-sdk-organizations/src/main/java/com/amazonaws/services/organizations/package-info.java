@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -96,7 +96,7 @@
  * determine which requests the Organizations service received, who made the request and when, and so on. For more about
  * Organizations and its support for CloudTrail, see <a href=
  * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_incident-response.html#orgs_cloudtrail-integration"
- * >Logging Organizations Events with CloudTrail</a> in the <i>Organizations User Guide</i>. To learn more about
+ * >Logging Organizations API calls with CloudTrail</a> in the <i>Organizations User Guide</i>. To learn more about
  * CloudTrail, including how to turn it on and find your log files, see the <a
  * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">CloudTrail User
  * Guide</a>.

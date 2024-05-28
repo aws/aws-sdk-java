@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,18 @@ public class CostAllocationTag implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String status;
+    /**
+     * <p>
+     * The last date that the tag was either activated or deactivated.
+     * </p>
+     */
+    private String lastUpdatedDate;
+    /**
+     * <p>
+     * The last month that the tag was used on an Amazon Web Services resource.
+     * </p>
+     */
+    private String lastUsedDate;
 
     /**
      * <p>
@@ -233,6 +245,86 @@ public class CostAllocationTag implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The last date that the tag was either activated or deactivated.
+     * </p>
+     * 
+     * @param lastUpdatedDate
+     *        The last date that the tag was either activated or deactivated.
+     */
+
+    public void setLastUpdatedDate(String lastUpdatedDate) {
+        this.lastUpdatedDate = lastUpdatedDate;
+    }
+
+    /**
+     * <p>
+     * The last date that the tag was either activated or deactivated.
+     * </p>
+     * 
+     * @return The last date that the tag was either activated or deactivated.
+     */
+
+    public String getLastUpdatedDate() {
+        return this.lastUpdatedDate;
+    }
+
+    /**
+     * <p>
+     * The last date that the tag was either activated or deactivated.
+     * </p>
+     * 
+     * @param lastUpdatedDate
+     *        The last date that the tag was either activated or deactivated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CostAllocationTag withLastUpdatedDate(String lastUpdatedDate) {
+        setLastUpdatedDate(lastUpdatedDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The last month that the tag was used on an Amazon Web Services resource.
+     * </p>
+     * 
+     * @param lastUsedDate
+     *        The last month that the tag was used on an Amazon Web Services resource.
+     */
+
+    public void setLastUsedDate(String lastUsedDate) {
+        this.lastUsedDate = lastUsedDate;
+    }
+
+    /**
+     * <p>
+     * The last month that the tag was used on an Amazon Web Services resource.
+     * </p>
+     * 
+     * @return The last month that the tag was used on an Amazon Web Services resource.
+     */
+
+    public String getLastUsedDate() {
+        return this.lastUsedDate;
+    }
+
+    /**
+     * <p>
+     * The last month that the tag was used on an Amazon Web Services resource.
+     * </p>
+     * 
+     * @param lastUsedDate
+     *        The last month that the tag was used on an Amazon Web Services resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CostAllocationTag withLastUsedDate(String lastUsedDate) {
+        setLastUsedDate(lastUsedDate);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -249,7 +341,11 @@ public class CostAllocationTag implements Serializable, Cloneable, StructuredPoj
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getLastUpdatedDate() != null)
+            sb.append("LastUpdatedDate: ").append(getLastUpdatedDate()).append(",");
+        if (getLastUsedDate() != null)
+            sb.append("LastUsedDate: ").append(getLastUsedDate());
         sb.append("}");
         return sb.toString();
     }
@@ -276,6 +372,14 @@ public class CostAllocationTag implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getLastUpdatedDate() == null ^ this.getLastUpdatedDate() == null)
+            return false;
+        if (other.getLastUpdatedDate() != null && other.getLastUpdatedDate().equals(this.getLastUpdatedDate()) == false)
+            return false;
+        if (other.getLastUsedDate() == null ^ this.getLastUsedDate() == null)
+            return false;
+        if (other.getLastUsedDate() != null && other.getLastUsedDate().equals(this.getLastUsedDate()) == false)
+            return false;
         return true;
     }
 
@@ -287,6 +391,8 @@ public class CostAllocationTag implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getTagKey() == null) ? 0 : getTagKey().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getLastUpdatedDate() == null) ? 0 : getLastUpdatedDate().hashCode());
+        hashCode = prime * hashCode + ((getLastUsedDate() == null) ? 0 : getLastUsedDate().hashCode());
         return hashCode;
     }
 

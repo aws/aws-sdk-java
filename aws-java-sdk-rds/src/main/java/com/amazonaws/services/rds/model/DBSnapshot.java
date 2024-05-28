@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -160,7 +160,7 @@ public class DBSnapshot implements Serializable, Cloneable {
     private String tdeCredentialArn;
     /**
      * <p>
-     * Specifies whether the DB snapshot is encrypted.
+     * Indicates whether the DB snapshot is encrypted.
      * </p>
      */
     private Boolean encrypted;
@@ -189,8 +189,8 @@ public class DBSnapshot implements Serializable, Cloneable {
     private String timezone;
     /**
      * <p>
-     * True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
-     * enabled, and otherwise false.
+     * Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database
+     * accounts is enabled.
      * </p>
      */
     private Boolean iAMDatabaseAuthenticationEnabled;
@@ -242,6 +242,26 @@ public class DBSnapshot implements Serializable, Cloneable {
      * </p>
      */
     private Integer storageThroughput;
+    /**
+     * <p>
+     * The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database
+     * files. The Oracle SID is also the name of your CDB.
+     * </p>
+     */
+    private String dBSystemId;
+    /**
+     * <p>
+     * Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
+     * </p>
+     */
+    private Boolean dedicatedLogVolume;
+    /**
+     * <p>
+     * Indicates whether the snapshot is of a DB instance using the multi-tenant configuration (TRUE) or the
+     * single-tenant configuration (FALSE).
+     * </p>
+     */
+    private Boolean multiTenant;
 
     /**
      * <p>
@@ -1107,11 +1127,11 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the DB snapshot is encrypted.
+     * Indicates whether the DB snapshot is encrypted.
      * </p>
      * 
      * @param encrypted
-     *        Specifies whether the DB snapshot is encrypted.
+     *        Indicates whether the DB snapshot is encrypted.
      */
 
     public void setEncrypted(Boolean encrypted) {
@@ -1120,10 +1140,10 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the DB snapshot is encrypted.
+     * Indicates whether the DB snapshot is encrypted.
      * </p>
      * 
-     * @return Specifies whether the DB snapshot is encrypted.
+     * @return Indicates whether the DB snapshot is encrypted.
      */
 
     public Boolean getEncrypted() {
@@ -1132,11 +1152,11 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the DB snapshot is encrypted.
+     * Indicates whether the DB snapshot is encrypted.
      * </p>
      * 
      * @param encrypted
-     *        Specifies whether the DB snapshot is encrypted.
+     *        Indicates whether the DB snapshot is encrypted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1147,10 +1167,10 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the DB snapshot is encrypted.
+     * Indicates whether the DB snapshot is encrypted.
      * </p>
      * 
-     * @return Specifies whether the DB snapshot is encrypted.
+     * @return Indicates whether the DB snapshot is encrypted.
      */
 
     public Boolean isEncrypted() {
@@ -1312,13 +1332,13 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
-     * enabled, and otherwise false.
+     * Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database
+     * accounts is enabled.
      * </p>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts
-     *        is enabled, and otherwise false.
+     *        Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database
+     *        accounts is enabled.
      */
 
     public void setIAMDatabaseAuthenticationEnabled(Boolean iAMDatabaseAuthenticationEnabled) {
@@ -1327,12 +1347,12 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
-     * enabled, and otherwise false.
+     * Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database
+     * accounts is enabled.
      * </p>
      * 
-     * @return True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts
-     *         is enabled, and otherwise false.
+     * @return Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     *         database accounts is enabled.
      */
 
     public Boolean getIAMDatabaseAuthenticationEnabled() {
@@ -1341,13 +1361,13 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
-     * enabled, and otherwise false.
+     * Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database
+     * accounts is enabled.
      * </p>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts
-     *        is enabled, and otherwise false.
+     *        Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database
+     *        accounts is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1358,12 +1378,12 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is
-     * enabled, and otherwise false.
+     * Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database
+     * accounts is enabled.
      * </p>
      * 
-     * @return True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts
-     *         is enabled, and otherwise false.
+     * @return Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     *         database accounts is enabled.
      */
 
     public Boolean isIAMDatabaseAuthenticationEnabled() {
@@ -1761,6 +1781,164 @@ public class DBSnapshot implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database
+     * files. The Oracle SID is also the name of your CDB.
+     * </p>
+     * 
+     * @param dBSystemId
+     *        The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your
+     *        database files. The Oracle SID is also the name of your CDB.
+     */
+
+    public void setDBSystemId(String dBSystemId) {
+        this.dBSystemId = dBSystemId;
+    }
+
+    /**
+     * <p>
+     * The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database
+     * files. The Oracle SID is also the name of your CDB.
+     * </p>
+     * 
+     * @return The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your
+     *         database files. The Oracle SID is also the name of your CDB.
+     */
+
+    public String getDBSystemId() {
+        return this.dBSystemId;
+    }
+
+    /**
+     * <p>
+     * The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your database
+     * files. The Oracle SID is also the name of your CDB.
+     * </p>
+     * 
+     * @param dBSystemId
+     *        The Oracle system identifier (SID), which is the name of the Oracle database instance that manages your
+     *        database files. The Oracle SID is also the name of your CDB.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBSnapshot withDBSystemId(String dBSystemId) {
+        setDBSystemId(dBSystemId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
+     * </p>
+     * 
+     * @param dedicatedLogVolume
+     *        Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
+     */
+
+    public void setDedicatedLogVolume(Boolean dedicatedLogVolume) {
+        this.dedicatedLogVolume = dedicatedLogVolume;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
+     * </p>
+     * 
+     * @return Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
+     */
+
+    public Boolean getDedicatedLogVolume() {
+        return this.dedicatedLogVolume;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
+     * </p>
+     * 
+     * @param dedicatedLogVolume
+     *        Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBSnapshot withDedicatedLogVolume(Boolean dedicatedLogVolume) {
+        setDedicatedLogVolume(dedicatedLogVolume);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
+     * </p>
+     * 
+     * @return Indicates whether the DB instance has a dedicated log volume (DLV) enabled.
+     */
+
+    public Boolean isDedicatedLogVolume() {
+        return this.dedicatedLogVolume;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the snapshot is of a DB instance using the multi-tenant configuration (TRUE) or the
+     * single-tenant configuration (FALSE).
+     * </p>
+     * 
+     * @param multiTenant
+     *        Indicates whether the snapshot is of a DB instance using the multi-tenant configuration (TRUE) or the
+     *        single-tenant configuration (FALSE).
+     */
+
+    public void setMultiTenant(Boolean multiTenant) {
+        this.multiTenant = multiTenant;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the snapshot is of a DB instance using the multi-tenant configuration (TRUE) or the
+     * single-tenant configuration (FALSE).
+     * </p>
+     * 
+     * @return Indicates whether the snapshot is of a DB instance using the multi-tenant configuration (TRUE) or the
+     *         single-tenant configuration (FALSE).
+     */
+
+    public Boolean getMultiTenant() {
+        return this.multiTenant;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the snapshot is of a DB instance using the multi-tenant configuration (TRUE) or the
+     * single-tenant configuration (FALSE).
+     * </p>
+     * 
+     * @param multiTenant
+     *        Indicates whether the snapshot is of a DB instance using the multi-tenant configuration (TRUE) or the
+     *        single-tenant configuration (FALSE).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBSnapshot withMultiTenant(Boolean multiTenant) {
+        setMultiTenant(multiTenant);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the snapshot is of a DB instance using the multi-tenant configuration (TRUE) or the
+     * single-tenant configuration (FALSE).
+     * </p>
+     * 
+     * @return Indicates whether the snapshot is of a DB instance using the multi-tenant configuration (TRUE) or the
+     *         single-tenant configuration (FALSE).
+     */
+
+    public Boolean isMultiTenant() {
+        return this.multiTenant;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1837,7 +2015,13 @@ public class DBSnapshot implements Serializable, Cloneable {
         if (getSnapshotTarget() != null)
             sb.append("SnapshotTarget: ").append(getSnapshotTarget()).append(",");
         if (getStorageThroughput() != null)
-            sb.append("StorageThroughput: ").append(getStorageThroughput());
+            sb.append("StorageThroughput: ").append(getStorageThroughput()).append(",");
+        if (getDBSystemId() != null)
+            sb.append("DBSystemId: ").append(getDBSystemId()).append(",");
+        if (getDedicatedLogVolume() != null)
+            sb.append("DedicatedLogVolume: ").append(getDedicatedLogVolume()).append(",");
+        if (getMultiTenant() != null)
+            sb.append("MultiTenant: ").append(getMultiTenant());
         sb.append("}");
         return sb.toString();
     }
@@ -1985,6 +2169,18 @@ public class DBSnapshot implements Serializable, Cloneable {
             return false;
         if (other.getStorageThroughput() != null && other.getStorageThroughput().equals(this.getStorageThroughput()) == false)
             return false;
+        if (other.getDBSystemId() == null ^ this.getDBSystemId() == null)
+            return false;
+        if (other.getDBSystemId() != null && other.getDBSystemId().equals(this.getDBSystemId()) == false)
+            return false;
+        if (other.getDedicatedLogVolume() == null ^ this.getDedicatedLogVolume() == null)
+            return false;
+        if (other.getDedicatedLogVolume() != null && other.getDedicatedLogVolume().equals(this.getDedicatedLogVolume()) == false)
+            return false;
+        if (other.getMultiTenant() == null ^ this.getMultiTenant() == null)
+            return false;
+        if (other.getMultiTenant() != null && other.getMultiTenant().equals(this.getMultiTenant()) == false)
+            return false;
         return true;
     }
 
@@ -2026,6 +2222,9 @@ public class DBSnapshot implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSnapshotDatabaseTime() == null) ? 0 : getSnapshotDatabaseTime().hashCode());
         hashCode = prime * hashCode + ((getSnapshotTarget() == null) ? 0 : getSnapshotTarget().hashCode());
         hashCode = prime * hashCode + ((getStorageThroughput() == null) ? 0 : getStorageThroughput().hashCode());
+        hashCode = prime * hashCode + ((getDBSystemId() == null) ? 0 : getDBSystemId().hashCode());
+        hashCode = prime * hashCode + ((getDedicatedLogVolume() == null) ? 0 : getDedicatedLogVolume().hashCode());
+        hashCode = prime * hashCode + ((getMultiTenant() == null) ? 0 : getMultiTenant().hashCode());
         return hashCode;
     }
 

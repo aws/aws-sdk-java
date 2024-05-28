@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class RegisteredUserDashboardEmbeddingConfigurationMarshaller {
 
     private static final MarshallingInfo<String> INITIALDASHBOARDID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InitialDashboardId").build();
+    private static final MarshallingInfo<StructuredPojo> FEATURECONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FeatureConfigurations").build();
 
     private static final RegisteredUserDashboardEmbeddingConfigurationMarshaller instance = new RegisteredUserDashboardEmbeddingConfigurationMarshaller();
 
@@ -47,6 +49,7 @@ public class RegisteredUserDashboardEmbeddingConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(registeredUserDashboardEmbeddingConfiguration.getInitialDashboardId(), INITIALDASHBOARDID_BINDING);
+            protocolMarshaller.marshall(registeredUserDashboardEmbeddingConfiguration.getFeatureConfigurations(), FEATURECONFIGURATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

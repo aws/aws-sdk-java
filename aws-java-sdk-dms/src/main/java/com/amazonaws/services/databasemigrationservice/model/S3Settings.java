@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -255,12 +255,16 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     private Boolean enableStatistics;
     /**
      * <p>
-     * A value that enables a full load to write INSERT operations to the comma-separated value (.csv) output files only
-     * to indicate how the rows were added to the source database.
+     * A value that enables a full load to write INSERT operations to the comma-separated value (.csv) or .parquet
+     * output files only to indicate how the rows were added to the source database.
      * </p>
      * <note>
      * <p>
      * DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
+     * </p>
+     * <p>
+     * DMS supports the use of the .parquet files with the <code>IncludeOpForFullLoad</code> parameter in versions 3.4.7
+     * and later.
      * </p>
      * </note>
      * <p>
@@ -383,15 +387,19 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>, only INSERTs and UPDATEs from
      * the source database are migrated to the .csv or .parquet file.
      * </p>
+     * <important>
      * <p>
-     * For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
-     * <code>IncludeOpForFullLoad</code> parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>,
-     * the first field of every CDC record is set to either <code>I</code> or <code>U</code> to indicate INSERT and
-     * UPDATE operations at the source. But if <code>IncludeOpForFullLoad</code> is set to <code>false</code>, CDC
-     * records are written without an indication of INSERT or UPDATE operations at the source. For more information
-     * about how these settings work together, see <a href=
-     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
-     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.
+     * DMS supports the use of the .parquet files in versions 3.4.7 and later.
+     * </p>
+     * </important>
+     * <p>
+     * How these INSERTs and UPDATEs are recorded depends on the value of the <code>IncludeOpForFullLoad</code>
+     * parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>, the first field of every CDC record
+     * is set to either <code>I</code> or <code>U</code> to indicate INSERT and UPDATE operations at the source. But if
+     * <code>IncludeOpForFullLoad</code> is set to <code>false</code>, CDC records are written without an indication of
+     * INSERT or UPDATE operations at the source. For more information about how these settings work together, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">
+     * Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.
      * </p>
      * <note>
      * <p>
@@ -563,7 +571,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     private Integer cdcMaxBatchInterval;
     /**
      * <p>
-     * Minimum file size, defined in megabytes, to reach for a file output to Amazon S3.
+     * Minimum file size, defined in kilobytes, to reach for a file output to Amazon S3.
      * </p>
      * <p>
      * When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code> are both specified, the file write is
@@ -578,9 +586,9 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * An optional parameter that specifies how DMS treats null values. While handling the null value, you can use this
      * parameter to pass a user-defined string as null when writing to the target. For example, when target columns are
-     * not nullable, you can use this option to differentiate between the empty string value and the null value. So, if
-     * you set this parameter value to the empty string ("" or ''), DMS treats the empty string as the null value
-     * instead of <code>NULL</code>.
+     * nullable, you can use this option to differentiate between the empty string value and the null value. So, if you
+     * set this parameter value to the empty string ("" or ''), DMS treats the empty string as the null value instead of
+     * <code>NULL</code>.
      * </p>
      * <p>
      * The default value is <code>NULL</code>. Valid values include any valid string.
@@ -659,6 +667,13 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String expectedBucketOwner;
+    /**
+     * <p>
+     * When true, allows Glue to catalog your S3 bucket. Creating an Glue catalog lets you use Athena to query your
+     * data.
+     * </p>
+     */
+    private Boolean glueCatalogGeneration;
 
     /**
      * <p>
@@ -2656,12 +2671,16 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value that enables a full load to write INSERT operations to the comma-separated value (.csv) output files only
-     * to indicate how the rows were added to the source database.
+     * A value that enables a full load to write INSERT operations to the comma-separated value (.csv) or .parquet
+     * output files only to indicate how the rows were added to the source database.
      * </p>
      * <note>
      * <p>
      * DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
+     * </p>
+     * <p>
+     * DMS supports the use of the .parquet files with the <code>IncludeOpForFullLoad</code> parameter in versions 3.4.7
+     * and later.
      * </p>
      * </note>
      * <p>
@@ -2681,10 +2700,14 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * 
      * @param includeOpForFullLoad
-     *        A value that enables a full load to write INSERT operations to the comma-separated value (.csv) output
-     *        files only to indicate how the rows were added to the source database.</p> <note>
+     *        A value that enables a full load to write INSERT operations to the comma-separated value (.csv) or
+     *        .parquet output files only to indicate how the rows were added to the source database.</p> <note>
      *        <p>
      *        DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
+     *        </p>
+     *        <p>
+     *        DMS supports the use of the .parquet files with the <code>IncludeOpForFullLoad</code> parameter in
+     *        versions 3.4.7 and later.
      *        </p>
      *        </note>
      *        <p>
@@ -2711,12 +2734,16 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value that enables a full load to write INSERT operations to the comma-separated value (.csv) output files only
-     * to indicate how the rows were added to the source database.
+     * A value that enables a full load to write INSERT operations to the comma-separated value (.csv) or .parquet
+     * output files only to indicate how the rows were added to the source database.
      * </p>
      * <note>
      * <p>
      * DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
+     * </p>
+     * <p>
+     * DMS supports the use of the .parquet files with the <code>IncludeOpForFullLoad</code> parameter in versions 3.4.7
+     * and later.
      * </p>
      * </note>
      * <p>
@@ -2735,10 +2762,14 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </note>
      * 
-     * @return A value that enables a full load to write INSERT operations to the comma-separated value (.csv) output
-     *         files only to indicate how the rows were added to the source database.</p> <note>
+     * @return A value that enables a full load to write INSERT operations to the comma-separated value (.csv) or
+     *         .parquet output files only to indicate how the rows were added to the source database.</p> <note>
      *         <p>
      *         DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
+     *         </p>
+     *         <p>
+     *         DMS supports the use of the .parquet files with the <code>IncludeOpForFullLoad</code> parameter in
+     *         versions 3.4.7 and later.
      *         </p>
      *         </note>
      *         <p>
@@ -2765,12 +2796,16 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value that enables a full load to write INSERT operations to the comma-separated value (.csv) output files only
-     * to indicate how the rows were added to the source database.
+     * A value that enables a full load to write INSERT operations to the comma-separated value (.csv) or .parquet
+     * output files only to indicate how the rows were added to the source database.
      * </p>
      * <note>
      * <p>
      * DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
+     * </p>
+     * <p>
+     * DMS supports the use of the .parquet files with the <code>IncludeOpForFullLoad</code> parameter in versions 3.4.7
+     * and later.
      * </p>
      * </note>
      * <p>
@@ -2790,10 +2825,14 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * 
      * @param includeOpForFullLoad
-     *        A value that enables a full load to write INSERT operations to the comma-separated value (.csv) output
-     *        files only to indicate how the rows were added to the source database.</p> <note>
+     *        A value that enables a full load to write INSERT operations to the comma-separated value (.csv) or
+     *        .parquet output files only to indicate how the rows were added to the source database.</p> <note>
      *        <p>
      *        DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
+     *        </p>
+     *        <p>
+     *        DMS supports the use of the .parquet files with the <code>IncludeOpForFullLoad</code> parameter in
+     *        versions 3.4.7 and later.
      *        </p>
      *        </note>
      *        <p>
@@ -2822,12 +2861,16 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value that enables a full load to write INSERT operations to the comma-separated value (.csv) output files only
-     * to indicate how the rows were added to the source database.
+     * A value that enables a full load to write INSERT operations to the comma-separated value (.csv) or .parquet
+     * output files only to indicate how the rows were added to the source database.
      * </p>
      * <note>
      * <p>
      * DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
+     * </p>
+     * <p>
+     * DMS supports the use of the .parquet files with the <code>IncludeOpForFullLoad</code> parameter in versions 3.4.7
+     * and later.
      * </p>
      * </note>
      * <p>
@@ -2846,10 +2889,14 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </note>
      * 
-     * @return A value that enables a full load to write INSERT operations to the comma-separated value (.csv) output
-     *         files only to indicate how the rows were added to the source database.</p> <note>
+     * @return A value that enables a full load to write INSERT operations to the comma-separated value (.csv) or
+     *         .parquet output files only to indicate how the rows were added to the source database.</p> <note>
      *         <p>
      *         DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and later.
+     *         </p>
+     *         <p>
+     *         DMS supports the use of the .parquet files with the <code>IncludeOpForFullLoad</code> parameter in
+     *         versions 3.4.7 and later.
      *         </p>
      *         </note>
      *         <p>
@@ -3583,15 +3630,19 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>, only INSERTs and UPDATEs from
      * the source database are migrated to the .csv or .parquet file.
      * </p>
+     * <important>
      * <p>
-     * For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
-     * <code>IncludeOpForFullLoad</code> parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>,
-     * the first field of every CDC record is set to either <code>I</code> or <code>U</code> to indicate INSERT and
-     * UPDATE operations at the source. But if <code>IncludeOpForFullLoad</code> is set to <code>false</code>, CDC
-     * records are written without an indication of INSERT or UPDATE operations at the source. For more information
-     * about how these settings work together, see <a href=
-     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
-     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.
+     * DMS supports the use of the .parquet files in versions 3.4.7 and later.
+     * </p>
+     * </important>
+     * <p>
+     * How these INSERTs and UPDATEs are recorded depends on the value of the <code>IncludeOpForFullLoad</code>
+     * parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>, the first field of every CDC record
+     * is set to either <code>I</code> or <code>U</code> to indicate INSERT and UPDATE operations at the source. But if
+     * <code>IncludeOpForFullLoad</code> is set to <code>false</code>, CDC records are written without an indication of
+     * INSERT or UPDATE operations at the source. For more information about how these settings work together, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">
+     * Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.
      * </p>
      * <note>
      * <p>
@@ -3608,14 +3659,18 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *        A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or
      *        .parquet (columnar storage) output files. The default setting is <code>false</code>, but when
      *        <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>, only INSERTs and UPDATEs
-     *        from the source database are migrated to the .csv or .parquet file. </p>
+     *        from the source database are migrated to the .csv or .parquet file.</p> <important>
      *        <p>
-     *        For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
-     *        <code>IncludeOpForFullLoad</code> parameter. If <code>IncludeOpForFullLoad</code> is set to
-     *        <code>true</code>, the first field of every CDC record is set to either <code>I</code> or <code>U</code>
-     *        to indicate INSERT and UPDATE operations at the source. But if <code>IncludeOpForFullLoad</code> is set to
-     *        <code>false</code>, CDC records are written without an indication of INSERT or UPDATE operations at the
-     *        source. For more information about how these settings work together, see <a href=
+     *        DMS supports the use of the .parquet files in versions 3.4.7 and later.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        How these INSERTs and UPDATEs are recorded depends on the value of the <code>IncludeOpForFullLoad</code>
+     *        parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>, the first field of every CDC
+     *        record is set to either <code>I</code> or <code>U</code> to indicate INSERT and UPDATE operations at the
+     *        source. But if <code>IncludeOpForFullLoad</code> is set to <code>false</code>, CDC records are written
+     *        without an indication of INSERT or UPDATE operations at the source. For more information about how these
+     *        settings work together, see <a href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
      *        >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User
      *        Guide.</i>.
@@ -3642,15 +3697,19 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>, only INSERTs and UPDATEs from
      * the source database are migrated to the .csv or .parquet file.
      * </p>
+     * <important>
      * <p>
-     * For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
-     * <code>IncludeOpForFullLoad</code> parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>,
-     * the first field of every CDC record is set to either <code>I</code> or <code>U</code> to indicate INSERT and
-     * UPDATE operations at the source. But if <code>IncludeOpForFullLoad</code> is set to <code>false</code>, CDC
-     * records are written without an indication of INSERT or UPDATE operations at the source. For more information
-     * about how these settings work together, see <a href=
-     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
-     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.
+     * DMS supports the use of the .parquet files in versions 3.4.7 and later.
+     * </p>
+     * </important>
+     * <p>
+     * How these INSERTs and UPDATEs are recorded depends on the value of the <code>IncludeOpForFullLoad</code>
+     * parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>, the first field of every CDC record
+     * is set to either <code>I</code> or <code>U</code> to indicate INSERT and UPDATE operations at the source. But if
+     * <code>IncludeOpForFullLoad</code> is set to <code>false</code>, CDC records are written without an indication of
+     * INSERT or UPDATE operations at the source. For more information about how these settings work together, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">
+     * Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.
      * </p>
      * <note>
      * <p>
@@ -3666,14 +3725,18 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * @return A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or
      *         .parquet (columnar storage) output files. The default setting is <code>false</code>, but when
      *         <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>, only INSERTs and UPDATEs
-     *         from the source database are migrated to the .csv or .parquet file. </p>
+     *         from the source database are migrated to the .csv or .parquet file.</p> <important>
      *         <p>
-     *         For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
-     *         <code>IncludeOpForFullLoad</code> parameter. If <code>IncludeOpForFullLoad</code> is set to
-     *         <code>true</code>, the first field of every CDC record is set to either <code>I</code> or <code>U</code>
-     *         to indicate INSERT and UPDATE operations at the source. But if <code>IncludeOpForFullLoad</code> is set
-     *         to <code>false</code>, CDC records are written without an indication of INSERT or UPDATE operations at
-     *         the source. For more information about how these settings work together, see <a href=
+     *         DMS supports the use of the .parquet files in versions 3.4.7 and later.
+     *         </p>
+     *         </important>
+     *         <p>
+     *         How these INSERTs and UPDATEs are recorded depends on the value of the <code>IncludeOpForFullLoad</code>
+     *         parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>, the first field of every CDC
+     *         record is set to either <code>I</code> or <code>U</code> to indicate INSERT and UPDATE operations at the
+     *         source. But if <code>IncludeOpForFullLoad</code> is set to <code>false</code>, CDC records are written
+     *         without an indication of INSERT or UPDATE operations at the source. For more information about how these
+     *         settings work together, see <a href=
      *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
      *         >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User
      *         Guide.</i>.
@@ -3700,15 +3763,19 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>, only INSERTs and UPDATEs from
      * the source database are migrated to the .csv or .parquet file.
      * </p>
+     * <important>
      * <p>
-     * For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
-     * <code>IncludeOpForFullLoad</code> parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>,
-     * the first field of every CDC record is set to either <code>I</code> or <code>U</code> to indicate INSERT and
-     * UPDATE operations at the source. But if <code>IncludeOpForFullLoad</code> is set to <code>false</code>, CDC
-     * records are written without an indication of INSERT or UPDATE operations at the source. For more information
-     * about how these settings work together, see <a href=
-     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
-     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.
+     * DMS supports the use of the .parquet files in versions 3.4.7 and later.
+     * </p>
+     * </important>
+     * <p>
+     * How these INSERTs and UPDATEs are recorded depends on the value of the <code>IncludeOpForFullLoad</code>
+     * parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>, the first field of every CDC record
+     * is set to either <code>I</code> or <code>U</code> to indicate INSERT and UPDATE operations at the source. But if
+     * <code>IncludeOpForFullLoad</code> is set to <code>false</code>, CDC records are written without an indication of
+     * INSERT or UPDATE operations at the source. For more information about how these settings work together, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">
+     * Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.
      * </p>
      * <note>
      * <p>
@@ -3725,14 +3792,18 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      *        A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or
      *        .parquet (columnar storage) output files. The default setting is <code>false</code>, but when
      *        <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>, only INSERTs and UPDATEs
-     *        from the source database are migrated to the .csv or .parquet file. </p>
+     *        from the source database are migrated to the .csv or .parquet file.</p> <important>
      *        <p>
-     *        For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
-     *        <code>IncludeOpForFullLoad</code> parameter. If <code>IncludeOpForFullLoad</code> is set to
-     *        <code>true</code>, the first field of every CDC record is set to either <code>I</code> or <code>U</code>
-     *        to indicate INSERT and UPDATE operations at the source. But if <code>IncludeOpForFullLoad</code> is set to
-     *        <code>false</code>, CDC records are written without an indication of INSERT or UPDATE operations at the
-     *        source. For more information about how these settings work together, see <a href=
+     *        DMS supports the use of the .parquet files in versions 3.4.7 and later.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        How these INSERTs and UPDATEs are recorded depends on the value of the <code>IncludeOpForFullLoad</code>
+     *        parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>, the first field of every CDC
+     *        record is set to either <code>I</code> or <code>U</code> to indicate INSERT and UPDATE operations at the
+     *        source. But if <code>IncludeOpForFullLoad</code> is set to <code>false</code>, CDC records are written
+     *        without an indication of INSERT or UPDATE operations at the source. For more information about how these
+     *        settings work together, see <a href=
      *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
      *        >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User
      *        Guide.</i>.
@@ -3761,15 +3832,19 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>, only INSERTs and UPDATEs from
      * the source database are migrated to the .csv or .parquet file.
      * </p>
+     * <important>
      * <p>
-     * For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
-     * <code>IncludeOpForFullLoad</code> parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>,
-     * the first field of every CDC record is set to either <code>I</code> or <code>U</code> to indicate INSERT and
-     * UPDATE operations at the source. But if <code>IncludeOpForFullLoad</code> is set to <code>false</code>, CDC
-     * records are written without an indication of INSERT or UPDATE operations at the source. For more information
-     * about how these settings work together, see <a href=
-     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
-     * >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.
+     * DMS supports the use of the .parquet files in versions 3.4.7 and later.
+     * </p>
+     * </important>
+     * <p>
+     * How these INSERTs and UPDATEs are recorded depends on the value of the <code>IncludeOpForFullLoad</code>
+     * parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>, the first field of every CDC record
+     * is set to either <code>I</code> or <code>U</code> to indicate INSERT and UPDATE operations at the source. But if
+     * <code>IncludeOpForFullLoad</code> is set to <code>false</code>, CDC records are written without an indication of
+     * INSERT or UPDATE operations at the source. For more information about how these settings work together, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">
+     * Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.
      * </p>
      * <note>
      * <p>
@@ -3785,14 +3860,18 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * @return A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or
      *         .parquet (columnar storage) output files. The default setting is <code>false</code>, but when
      *         <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>, only INSERTs and UPDATEs
-     *         from the source database are migrated to the .csv or .parquet file. </p>
+     *         from the source database are migrated to the .csv or .parquet file.</p> <important>
      *         <p>
-     *         For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
-     *         <code>IncludeOpForFullLoad</code> parameter. If <code>IncludeOpForFullLoad</code> is set to
-     *         <code>true</code>, the first field of every CDC record is set to either <code>I</code> or <code>U</code>
-     *         to indicate INSERT and UPDATE operations at the source. But if <code>IncludeOpForFullLoad</code> is set
-     *         to <code>false</code>, CDC records are written without an indication of INSERT or UPDATE operations at
-     *         the source. For more information about how these settings work together, see <a href=
+     *         DMS supports the use of the .parquet files in versions 3.4.7 and later.
+     *         </p>
+     *         </important>
+     *         <p>
+     *         How these INSERTs and UPDATEs are recorded depends on the value of the <code>IncludeOpForFullLoad</code>
+     *         parameter. If <code>IncludeOpForFullLoad</code> is set to <code>true</code>, the first field of every CDC
+     *         record is set to either <code>I</code> or <code>U</code> to indicate INSERT and UPDATE operations at the
+     *         source. But if <code>IncludeOpForFullLoad</code> is set to <code>false</code>, CDC records are written
+     *         without an indication of INSERT or UPDATE operations at the source. For more information about how these
+     *         settings work together, see <a href=
      *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps"
      *         >Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User
      *         Guide.</i>.
@@ -5037,7 +5116,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Minimum file size, defined in megabytes, to reach for a file output to Amazon S3.
+     * Minimum file size, defined in kilobytes, to reach for a file output to Amazon S3.
      * </p>
      * <p>
      * When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code> are both specified, the file write is
@@ -5048,7 +5127,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param cdcMinFileSize
-     *        Minimum file size, defined in megabytes, to reach for a file output to Amazon S3.</p>
+     *        Minimum file size, defined in kilobytes, to reach for a file output to Amazon S3.</p>
      *        <p>
      *        When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code> are both specified, the file write
      *        is triggered by whichever parameter condition is met first within an DMS CloudFormation template.
@@ -5063,7 +5142,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Minimum file size, defined in megabytes, to reach for a file output to Amazon S3.
+     * Minimum file size, defined in kilobytes, to reach for a file output to Amazon S3.
      * </p>
      * <p>
      * When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code> are both specified, the file write is
@@ -5073,7 +5152,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * The default value is 32 MB.
      * </p>
      * 
-     * @return Minimum file size, defined in megabytes, to reach for a file output to Amazon S3.</p>
+     * @return Minimum file size, defined in kilobytes, to reach for a file output to Amazon S3.</p>
      *         <p>
      *         When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code> are both specified, the file write
      *         is triggered by whichever parameter condition is met first within an DMS CloudFormation template.
@@ -5088,7 +5167,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Minimum file size, defined in megabytes, to reach for a file output to Amazon S3.
+     * Minimum file size, defined in kilobytes, to reach for a file output to Amazon S3.
      * </p>
      * <p>
      * When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code> are both specified, the file write is
@@ -5099,7 +5178,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param cdcMinFileSize
-     *        Minimum file size, defined in megabytes, to reach for a file output to Amazon S3.</p>
+     *        Minimum file size, defined in kilobytes, to reach for a file output to Amazon S3.</p>
      *        <p>
      *        When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code> are both specified, the file write
      *        is triggered by whichever parameter condition is met first within an DMS CloudFormation template.
@@ -5118,9 +5197,9 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * An optional parameter that specifies how DMS treats null values. While handling the null value, you can use this
      * parameter to pass a user-defined string as null when writing to the target. For example, when target columns are
-     * not nullable, you can use this option to differentiate between the empty string value and the null value. So, if
-     * you set this parameter value to the empty string ("" or ''), DMS treats the empty string as the null value
-     * instead of <code>NULL</code>.
+     * nullable, you can use this option to differentiate between the empty string value and the null value. So, if you
+     * set this parameter value to the empty string ("" or ''), DMS treats the empty string as the null value instead of
+     * <code>NULL</code>.
      * </p>
      * <p>
      * The default value is <code>NULL</code>. Valid values include any valid string.
@@ -5129,9 +5208,9 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * @param csvNullValue
      *        An optional parameter that specifies how DMS treats null values. While handling the null value, you can
      *        use this parameter to pass a user-defined string as null when writing to the target. For example, when
-     *        target columns are not nullable, you can use this option to differentiate between the empty string value
-     *        and the null value. So, if you set this parameter value to the empty string ("" or ''), DMS treats the
-     *        empty string as the null value instead of <code>NULL</code>.</p>
+     *        target columns are nullable, you can use this option to differentiate between the empty string value and
+     *        the null value. So, if you set this parameter value to the empty string ("" or ''), DMS treats the empty
+     *        string as the null value instead of <code>NULL</code>.</p>
      *        <p>
      *        The default value is <code>NULL</code>. Valid values include any valid string.
      */
@@ -5144,9 +5223,9 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * An optional parameter that specifies how DMS treats null values. While handling the null value, you can use this
      * parameter to pass a user-defined string as null when writing to the target. For example, when target columns are
-     * not nullable, you can use this option to differentiate between the empty string value and the null value. So, if
-     * you set this parameter value to the empty string ("" or ''), DMS treats the empty string as the null value
-     * instead of <code>NULL</code>.
+     * nullable, you can use this option to differentiate between the empty string value and the null value. So, if you
+     * set this parameter value to the empty string ("" or ''), DMS treats the empty string as the null value instead of
+     * <code>NULL</code>.
      * </p>
      * <p>
      * The default value is <code>NULL</code>. Valid values include any valid string.
@@ -5154,9 +5233,9 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return An optional parameter that specifies how DMS treats null values. While handling the null value, you can
      *         use this parameter to pass a user-defined string as null when writing to the target. For example, when
-     *         target columns are not nullable, you can use this option to differentiate between the empty string value
-     *         and the null value. So, if you set this parameter value to the empty string ("" or ''), DMS treats the
-     *         empty string as the null value instead of <code>NULL</code>.</p>
+     *         target columns are nullable, you can use this option to differentiate between the empty string value and
+     *         the null value. So, if you set this parameter value to the empty string ("" or ''), DMS treats the empty
+     *         string as the null value instead of <code>NULL</code>.</p>
      *         <p>
      *         The default value is <code>NULL</code>. Valid values include any valid string.
      */
@@ -5169,9 +5248,9 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * An optional parameter that specifies how DMS treats null values. While handling the null value, you can use this
      * parameter to pass a user-defined string as null when writing to the target. For example, when target columns are
-     * not nullable, you can use this option to differentiate between the empty string value and the null value. So, if
-     * you set this parameter value to the empty string ("" or ''), DMS treats the empty string as the null value
-     * instead of <code>NULL</code>.
+     * nullable, you can use this option to differentiate between the empty string value and the null value. So, if you
+     * set this parameter value to the empty string ("" or ''), DMS treats the empty string as the null value instead of
+     * <code>NULL</code>.
      * </p>
      * <p>
      * The default value is <code>NULL</code>. Valid values include any valid string.
@@ -5180,9 +5259,9 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * @param csvNullValue
      *        An optional parameter that specifies how DMS treats null values. While handling the null value, you can
      *        use this parameter to pass a user-defined string as null when writing to the target. For example, when
-     *        target columns are not nullable, you can use this option to differentiate between the empty string value
-     *        and the null value. So, if you set this parameter value to the empty string ("" or ''), DMS treats the
-     *        empty string as the null value instead of <code>NULL</code>.</p>
+     *        target columns are nullable, you can use this option to differentiate between the empty string value and
+     *        the null value. So, if you set this parameter value to the empty string ("" or ''), DMS treats the empty
+     *        string as the null value instead of <code>NULL</code>.</p>
      *        <p>
      *        The default value is <code>NULL</code>. Valid values include any valid string.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -5695,6 +5774,66 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * When true, allows Glue to catalog your S3 bucket. Creating an Glue catalog lets you use Athena to query your
+     * data.
+     * </p>
+     * 
+     * @param glueCatalogGeneration
+     *        When true, allows Glue to catalog your S3 bucket. Creating an Glue catalog lets you use Athena to query
+     *        your data.
+     */
+
+    public void setGlueCatalogGeneration(Boolean glueCatalogGeneration) {
+        this.glueCatalogGeneration = glueCatalogGeneration;
+    }
+
+    /**
+     * <p>
+     * When true, allows Glue to catalog your S3 bucket. Creating an Glue catalog lets you use Athena to query your
+     * data.
+     * </p>
+     * 
+     * @return When true, allows Glue to catalog your S3 bucket. Creating an Glue catalog lets you use Athena to query
+     *         your data.
+     */
+
+    public Boolean getGlueCatalogGeneration() {
+        return this.glueCatalogGeneration;
+    }
+
+    /**
+     * <p>
+     * When true, allows Glue to catalog your S3 bucket. Creating an Glue catalog lets you use Athena to query your
+     * data.
+     * </p>
+     * 
+     * @param glueCatalogGeneration
+     *        When true, allows Glue to catalog your S3 bucket. Creating an Glue catalog lets you use Athena to query
+     *        your data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3Settings withGlueCatalogGeneration(Boolean glueCatalogGeneration) {
+        setGlueCatalogGeneration(glueCatalogGeneration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When true, allows Glue to catalog your S3 bucket. Creating an Glue catalog lets you use Athena to query your
+     * data.
+     * </p>
+     * 
+     * @return When true, allows Glue to catalog your S3 bucket. Creating an Glue catalog lets you use Athena to query
+     *         your data.
+     */
+
+    public Boolean isGlueCatalogGeneration() {
+        return this.glueCatalogGeneration;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -5785,7 +5924,9 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
         if (getAddTrailingPaddingCharacter() != null)
             sb.append("AddTrailingPaddingCharacter: ").append(getAddTrailingPaddingCharacter()).append(",");
         if (getExpectedBucketOwner() != null)
-            sb.append("ExpectedBucketOwner: ").append(getExpectedBucketOwner());
+            sb.append("ExpectedBucketOwner: ").append(getExpectedBucketOwner()).append(",");
+        if (getGlueCatalogGeneration() != null)
+            sb.append("GlueCatalogGeneration: ").append(getGlueCatalogGeneration());
         sb.append("}");
         return sb.toString();
     }
@@ -5962,6 +6103,10 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getExpectedBucketOwner() != null && other.getExpectedBucketOwner().equals(this.getExpectedBucketOwner()) == false)
             return false;
+        if (other.getGlueCatalogGeneration() == null ^ this.getGlueCatalogGeneration() == null)
+            return false;
+        if (other.getGlueCatalogGeneration() != null && other.getGlueCatalogGeneration().equals(this.getGlueCatalogGeneration()) == false)
+            return false;
         return true;
     }
 
@@ -6010,6 +6155,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDatePartitionTimezone() == null) ? 0 : getDatePartitionTimezone().hashCode());
         hashCode = prime * hashCode + ((getAddTrailingPaddingCharacter() == null) ? 0 : getAddTrailingPaddingCharacter().hashCode());
         hashCode = prime * hashCode + ((getExpectedBucketOwner() == null) ? 0 : getExpectedBucketOwner().hashCode());
+        hashCode = prime * hashCode + ((getGlueCatalogGeneration() == null) ? 0 : getGlueCatalogGeneration().hashCode());
         return hashCode;
     }
 

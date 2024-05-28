@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,14 @@ public class BurninDestinationSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fallbackFont").build();
     private static final MarshallingInfo<String> FONTCOLOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("fontColor").build();
+    private static final MarshallingInfo<String> FONTFILEBOLD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fontFileBold").build();
+    private static final MarshallingInfo<String> FONTFILEBOLDITALIC_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fontFileBoldItalic").build();
+    private static final MarshallingInfo<String> FONTFILEITALIC_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fontFileItalic").build();
+    private static final MarshallingInfo<String> FONTFILEREGULAR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fontFileRegular").build();
     private static final MarshallingInfo<Integer> FONTOPACITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fontOpacity").build();
     private static final MarshallingInfo<Integer> FONTRESOLUTION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -92,6 +100,10 @@ public class BurninDestinationSettingsMarshaller {
             protocolMarshaller.marshall(burninDestinationSettings.getBackgroundOpacity(), BACKGROUNDOPACITY_BINDING);
             protocolMarshaller.marshall(burninDestinationSettings.getFallbackFont(), FALLBACKFONT_BINDING);
             protocolMarshaller.marshall(burninDestinationSettings.getFontColor(), FONTCOLOR_BINDING);
+            protocolMarshaller.marshall(burninDestinationSettings.getFontFileBold(), FONTFILEBOLD_BINDING);
+            protocolMarshaller.marshall(burninDestinationSettings.getFontFileBoldItalic(), FONTFILEBOLDITALIC_BINDING);
+            protocolMarshaller.marshall(burninDestinationSettings.getFontFileItalic(), FONTFILEITALIC_BINDING);
+            protocolMarshaller.marshall(burninDestinationSettings.getFontFileRegular(), FONTFILEREGULAR_BINDING);
             protocolMarshaller.marshall(burninDestinationSettings.getFontOpacity(), FONTOPACITY_BINDING);
             protocolMarshaller.marshall(burninDestinationSettings.getFontResolution(), FONTRESOLUTION_BINDING);
             protocolMarshaller.marshall(burninDestinationSettings.getFontScript(), FONTSCRIPT_BINDING);

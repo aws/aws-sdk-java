@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,8 @@ public enum FleetAttribute {
     DOMAIN_JOIN_INFO("DOMAIN_JOIN_INFO"),
     IAM_ROLE_ARN("IAM_ROLE_ARN"),
     USB_DEVICE_FILTER_STRINGS("USB_DEVICE_FILTER_STRINGS"),
-    SESSION_SCRIPT_S3_LOCATION("SESSION_SCRIPT_S3_LOCATION");
+    SESSION_SCRIPT_S3_LOCATION("SESSION_SCRIPT_S3_LOCATION"),
+    MAX_SESSIONS_PER_INSTANCE("MAX_SESSIONS_PER_INSTANCE");
 
     private String value;
 

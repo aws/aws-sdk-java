@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,9 +30,9 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive notification when
  * an asynchronous operation completes.
  * <p>
- * <fullname>AWS Step Functions</fullname>
+ * <fullname>Step Functions</fullname>
  * <p>
- * AWS Step Functions is a service that lets you coordinate the components of distributed applications and microservices
+ * Step Functions is a service that lets you coordinate the components of distributed applications and microservices
  * using visual workflows.
  * </p>
  * <p>
@@ -44,10 +44,18 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </p>
  * <p>
  * Step Functions manages operations and underlying infrastructure to ensure your application is available at any scale.
- * You can run tasks on AWS, your own servers, or any system that has access to AWS. You can access and use Step
- * Functions using the console, the AWS SDKs, or an HTTP API. For more information about Step Functions, see the <i> <a
- * href="https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html">AWS Step Functions Developer Guide</a> </i>.
+ * You can run tasks on Amazon Web Services, your own servers, or any system that has access to Amazon Web Services. You
+ * can access and use Step Functions using the console, the Amazon Web Services SDKs, or an HTTP API. For more
+ * information about Step Functions, see the <i> <a
+ * href="https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html">Step Functions Developer Guide</a> </i>.
  * </p>
+ * <important>
+ * <p>
+ * If you use the Step Functions API actions using Amazon Web Services SDK integrations, make sure the API actions are
+ * in camel case and parameter names are in Pascal case. For example, you could use Step Functions API action
+ * <code>startSyncExecution</code> and specify its parameter as <code>StateMachineArn</code>.
+ * </p>
+ * </important>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -337,6 +345,39 @@ public class AWSStepFunctionsAsyncClient extends AWSStepFunctionsClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateStateMachineAliasResult> createStateMachineAliasAsync(CreateStateMachineAliasRequest request) {
+
+        return createStateMachineAliasAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateStateMachineAliasResult> createStateMachineAliasAsync(final CreateStateMachineAliasRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateStateMachineAliasRequest, CreateStateMachineAliasResult> asyncHandler) {
+        final CreateStateMachineAliasRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateStateMachineAliasResult>() {
+            @Override
+            public CreateStateMachineAliasResult call() throws Exception {
+                CreateStateMachineAliasResult result = null;
+
+                try {
+                    result = executeCreateStateMachineAlias(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteActivityResult> deleteActivityAsync(DeleteActivityRequest request) {
 
         return deleteActivityAsync(request, null);
@@ -387,6 +428,72 @@ public class AWSStepFunctionsAsyncClient extends AWSStepFunctionsClient implemen
 
                 try {
                     result = executeDeleteStateMachine(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStateMachineAliasResult> deleteStateMachineAliasAsync(DeleteStateMachineAliasRequest request) {
+
+        return deleteStateMachineAliasAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStateMachineAliasResult> deleteStateMachineAliasAsync(final DeleteStateMachineAliasRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteStateMachineAliasRequest, DeleteStateMachineAliasResult> asyncHandler) {
+        final DeleteStateMachineAliasRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteStateMachineAliasResult>() {
+            @Override
+            public DeleteStateMachineAliasResult call() throws Exception {
+                DeleteStateMachineAliasResult result = null;
+
+                try {
+                    result = executeDeleteStateMachineAlias(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStateMachineVersionResult> deleteStateMachineVersionAsync(DeleteStateMachineVersionRequest request) {
+
+        return deleteStateMachineVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStateMachineVersionResult> deleteStateMachineVersionAsync(final DeleteStateMachineVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteStateMachineVersionRequest, DeleteStateMachineVersionResult> asyncHandler) {
+        final DeleteStateMachineVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteStateMachineVersionResult>() {
+            @Override
+            public DeleteStateMachineVersionResult call() throws Exception {
+                DeleteStateMachineVersionResult result = null;
+
+                try {
+                    result = executeDeleteStateMachineVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -469,6 +576,39 @@ public class AWSStepFunctionsAsyncClient extends AWSStepFunctionsClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeMapRunResult> describeMapRunAsync(DescribeMapRunRequest request) {
+
+        return describeMapRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeMapRunResult> describeMapRunAsync(final DescribeMapRunRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeMapRunRequest, DescribeMapRunResult> asyncHandler) {
+        final DescribeMapRunRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeMapRunResult>() {
+            @Override
+            public DescribeMapRunResult call() throws Exception {
+                DescribeMapRunResult result = null;
+
+                try {
+                    result = executeDescribeMapRun(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeStateMachineResult> describeStateMachineAsync(DescribeStateMachineRequest request) {
 
         return describeStateMachineAsync(request, null);
@@ -486,6 +626,39 @@ public class AWSStepFunctionsAsyncClient extends AWSStepFunctionsClient implemen
 
                 try {
                     result = executeDescribeStateMachine(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStateMachineAliasResult> describeStateMachineAliasAsync(DescribeStateMachineAliasRequest request) {
+
+        return describeStateMachineAliasAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeStateMachineAliasResult> describeStateMachineAliasAsync(final DescribeStateMachineAliasRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeStateMachineAliasRequest, DescribeStateMachineAliasResult> asyncHandler) {
+        final DescribeStateMachineAliasRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeStateMachineAliasResult>() {
+            @Override
+            public DescribeStateMachineAliasResult call() throws Exception {
+                DescribeStateMachineAliasResult result = null;
+
+                try {
+                    result = executeDescribeStateMachineAlias(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -669,6 +842,105 @@ public class AWSStepFunctionsAsyncClient extends AWSStepFunctionsClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListMapRunsResult> listMapRunsAsync(ListMapRunsRequest request) {
+
+        return listMapRunsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMapRunsResult> listMapRunsAsync(final ListMapRunsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListMapRunsRequest, ListMapRunsResult> asyncHandler) {
+        final ListMapRunsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListMapRunsResult>() {
+            @Override
+            public ListMapRunsResult call() throws Exception {
+                ListMapRunsResult result = null;
+
+                try {
+                    result = executeListMapRuns(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStateMachineAliasesResult> listStateMachineAliasesAsync(ListStateMachineAliasesRequest request) {
+
+        return listStateMachineAliasesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStateMachineAliasesResult> listStateMachineAliasesAsync(final ListStateMachineAliasesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListStateMachineAliasesRequest, ListStateMachineAliasesResult> asyncHandler) {
+        final ListStateMachineAliasesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListStateMachineAliasesResult>() {
+            @Override
+            public ListStateMachineAliasesResult call() throws Exception {
+                ListStateMachineAliasesResult result = null;
+
+                try {
+                    result = executeListStateMachineAliases(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStateMachineVersionsResult> listStateMachineVersionsAsync(ListStateMachineVersionsRequest request) {
+
+        return listStateMachineVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStateMachineVersionsResult> listStateMachineVersionsAsync(final ListStateMachineVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListStateMachineVersionsRequest, ListStateMachineVersionsResult> asyncHandler) {
+        final ListStateMachineVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListStateMachineVersionsResult>() {
+            @Override
+            public ListStateMachineVersionsResult call() throws Exception {
+                ListStateMachineVersionsResult result = null;
+
+                try {
+                    result = executeListStateMachineVersions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListStateMachinesResult> listStateMachinesAsync(ListStateMachinesRequest request) {
 
         return listStateMachinesAsync(request, null);
@@ -719,6 +991,72 @@ public class AWSStepFunctionsAsyncClient extends AWSStepFunctionsClient implemen
 
                 try {
                     result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PublishStateMachineVersionResult> publishStateMachineVersionAsync(PublishStateMachineVersionRequest request) {
+
+        return publishStateMachineVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PublishStateMachineVersionResult> publishStateMachineVersionAsync(final PublishStateMachineVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PublishStateMachineVersionRequest, PublishStateMachineVersionResult> asyncHandler) {
+        final PublishStateMachineVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PublishStateMachineVersionResult>() {
+            @Override
+            public PublishStateMachineVersionResult call() throws Exception {
+                PublishStateMachineVersionResult result = null;
+
+                try {
+                    result = executePublishStateMachineVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RedriveExecutionResult> redriveExecutionAsync(RedriveExecutionRequest request) {
+
+        return redriveExecutionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RedriveExecutionResult> redriveExecutionAsync(final RedriveExecutionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RedriveExecutionRequest, RedriveExecutionResult> asyncHandler) {
+        final RedriveExecutionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RedriveExecutionResult>() {
+            @Override
+            public RedriveExecutionResult call() throws Exception {
+                RedriveExecutionResult result = null;
+
+                try {
+                    result = executeRedriveExecution(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -966,6 +1304,39 @@ public class AWSStepFunctionsAsyncClient extends AWSStepFunctionsClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<TestStateResult> testStateAsync(TestStateRequest request) {
+
+        return testStateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TestStateResult> testStateAsync(final TestStateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TestStateRequest, TestStateResult> asyncHandler) {
+        final TestStateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TestStateResult>() {
+            @Override
+            public TestStateResult call() throws Exception {
+                TestStateResult result = null;
+
+                try {
+                    result = executeTestState(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
 
         return untagResourceAsync(request, null);
@@ -999,6 +1370,39 @@ public class AWSStepFunctionsAsyncClient extends AWSStepFunctionsClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateMapRunResult> updateMapRunAsync(UpdateMapRunRequest request) {
+
+        return updateMapRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMapRunResult> updateMapRunAsync(final UpdateMapRunRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateMapRunRequest, UpdateMapRunResult> asyncHandler) {
+        final UpdateMapRunRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateMapRunResult>() {
+            @Override
+            public UpdateMapRunResult call() throws Exception {
+                UpdateMapRunResult result = null;
+
+                try {
+                    result = executeUpdateMapRun(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateStateMachineResult> updateStateMachineAsync(UpdateStateMachineRequest request) {
 
         return updateStateMachineAsync(request, null);
@@ -1016,6 +1420,73 @@ public class AWSStepFunctionsAsyncClient extends AWSStepFunctionsClient implemen
 
                 try {
                     result = executeUpdateStateMachine(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStateMachineAliasResult> updateStateMachineAliasAsync(UpdateStateMachineAliasRequest request) {
+
+        return updateStateMachineAliasAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStateMachineAliasResult> updateStateMachineAliasAsync(final UpdateStateMachineAliasRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateStateMachineAliasRequest, UpdateStateMachineAliasResult> asyncHandler) {
+        final UpdateStateMachineAliasRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateStateMachineAliasResult>() {
+            @Override
+            public UpdateStateMachineAliasResult call() throws Exception {
+                UpdateStateMachineAliasResult result = null;
+
+                try {
+                    result = executeUpdateStateMachineAlias(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidateStateMachineDefinitionResult> validateStateMachineDefinitionAsync(ValidateStateMachineDefinitionRequest request) {
+
+        return validateStateMachineDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidateStateMachineDefinitionResult> validateStateMachineDefinitionAsync(
+            final ValidateStateMachineDefinitionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ValidateStateMachineDefinitionRequest, ValidateStateMachineDefinitionResult> asyncHandler) {
+        final ValidateStateMachineDefinitionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ValidateStateMachineDefinitionResult>() {
+            @Override
+            public ValidateStateMachineDefinitionResult call() throws Exception {
+                ValidateStateMachineDefinitionResult result = null;
+
+                try {
+                    result = executeValidateStateMachineDefinition(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

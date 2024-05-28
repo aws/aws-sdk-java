@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,7 +29,9 @@ public enum Runtime {
     GO_1("GO_1"),
     DOTNET_6("DOTNET_6"),
     PHP_81("PHP_81"),
-    RUBY_31("RUBY_31");
+    RUBY_31("RUBY_31"),
+    PYTHON_311("PYTHON_311"),
+    NODEJS_18("NODEJS_18");
 
     private String value;
 

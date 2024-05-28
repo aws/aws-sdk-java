@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,8 +33,30 @@ public class DeregisterFromWorkMailRequest extends com.amazonaws.AmazonWebServic
     private String organizationId;
     /**
      * <p>
-     * The identifier for the member (user or group) to be updated.
+     * The identifier for the member to be updated.
      * </p>
+     * <p>
+     * The identifier can be <i>UserId, ResourceId, or Group Id</i>, <i>Username, Resourcename, or Groupname</i>, or
+     * <i>email</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Entity ID: 12345678-1234-1234-1234-123456789012, r-0123456789a0123456789b0123456789, or
+     * S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: entity@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Entity name: entity
+     * </p>
+     * </li>
+     * </ul>
      */
     private String entityId;
 
@@ -80,11 +102,54 @@ public class DeregisterFromWorkMailRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier for the member (user or group) to be updated.
+     * The identifier for the member to be updated.
      * </p>
+     * <p>
+     * The identifier can be <i>UserId, ResourceId, or Group Id</i>, <i>Username, Resourcename, or Groupname</i>, or
+     * <i>email</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Entity ID: 12345678-1234-1234-1234-123456789012, r-0123456789a0123456789b0123456789, or
+     * S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: entity@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Entity name: entity
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param entityId
-     *        The identifier for the member (user or group) to be updated.
+     *        The identifier for the member to be updated.</p>
+     *        <p>
+     *        The identifier can be <i>UserId, ResourceId, or Group Id</i>, <i>Username, Resourcename, or Groupname</i>,
+     *        or <i>email</i>.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Entity ID: 12345678-1234-1234-1234-123456789012, r-0123456789a0123456789b0123456789, or
+     *        S-1-1-12-1234567890-123456789-123456789-1234
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Email address: entity@domain.tld
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Entity name: entity
+     *        </p>
+     *        </li>
      */
 
     public void setEntityId(String entityId) {
@@ -93,10 +158,53 @@ public class DeregisterFromWorkMailRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier for the member (user or group) to be updated.
+     * The identifier for the member to be updated.
      * </p>
+     * <p>
+     * The identifier can be <i>UserId, ResourceId, or Group Id</i>, <i>Username, Resourcename, or Groupname</i>, or
+     * <i>email</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Entity ID: 12345678-1234-1234-1234-123456789012, r-0123456789a0123456789b0123456789, or
+     * S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: entity@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Entity name: entity
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The identifier for the member (user or group) to be updated.
+     * @return The identifier for the member to be updated.</p>
+     *         <p>
+     *         The identifier can be <i>UserId, ResourceId, or Group Id</i>, <i>Username, Resourcename, or
+     *         Groupname</i>, or <i>email</i>.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Entity ID: 12345678-1234-1234-1234-123456789012, r-0123456789a0123456789b0123456789, or
+     *         S-1-1-12-1234567890-123456789-123456789-1234
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Email address: entity@domain.tld
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Entity name: entity
+     *         </p>
+     *         </li>
      */
 
     public String getEntityId() {
@@ -105,11 +213,54 @@ public class DeregisterFromWorkMailRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier for the member (user or group) to be updated.
+     * The identifier for the member to be updated.
      * </p>
+     * <p>
+     * The identifier can be <i>UserId, ResourceId, or Group Id</i>, <i>Username, Resourcename, or Groupname</i>, or
+     * <i>email</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Entity ID: 12345678-1234-1234-1234-123456789012, r-0123456789a0123456789b0123456789, or
+     * S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: entity@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Entity name: entity
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param entityId
-     *        The identifier for the member (user or group) to be updated.
+     *        The identifier for the member to be updated.</p>
+     *        <p>
+     *        The identifier can be <i>UserId, ResourceId, or Group Id</i>, <i>Username, Resourcename, or Groupname</i>,
+     *        or <i>email</i>.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Entity ID: 12345678-1234-1234-1234-123456789012, r-0123456789a0123456789b0123456789, or
+     *        S-1-1-12-1234567890-123456789-123456789-1234
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Email address: entity@domain.tld
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Entity name: entity
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

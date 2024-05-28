@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,8 @@ public class DescribeApplicationRequest extends com.amazonaws.AmazonWebServiceRe
     private String applicationName;
     /**
      * <p>
-     * Displays verbose information about a Kinesis Data Analytics application, including the application's job plan.
+     * Displays verbose information about a Managed Service for Apache Flink application, including the application's
+     * job plan.
      * </p>
      */
     private Boolean includeAdditionalDetails;
@@ -80,12 +81,13 @@ public class DescribeApplicationRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Displays verbose information about a Kinesis Data Analytics application, including the application's job plan.
+     * Displays verbose information about a Managed Service for Apache Flink application, including the application's
+     * job plan.
      * </p>
      * 
      * @param includeAdditionalDetails
-     *        Displays verbose information about a Kinesis Data Analytics application, including the application's job
-     *        plan.
+     *        Displays verbose information about a Managed Service for Apache Flink application, including the
+     *        application's job plan.
      */
 
     public void setIncludeAdditionalDetails(Boolean includeAdditionalDetails) {
@@ -94,11 +96,12 @@ public class DescribeApplicationRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Displays verbose information about a Kinesis Data Analytics application, including the application's job plan.
+     * Displays verbose information about a Managed Service for Apache Flink application, including the application's
+     * job plan.
      * </p>
      * 
-     * @return Displays verbose information about a Kinesis Data Analytics application, including the application's job
-     *         plan.
+     * @return Displays verbose information about a Managed Service for Apache Flink application, including the
+     *         application's job plan.
      */
 
     public Boolean getIncludeAdditionalDetails() {
@@ -107,12 +110,13 @@ public class DescribeApplicationRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Displays verbose information about a Kinesis Data Analytics application, including the application's job plan.
+     * Displays verbose information about a Managed Service for Apache Flink application, including the application's
+     * job plan.
      * </p>
      * 
      * @param includeAdditionalDetails
-     *        Displays verbose information about a Kinesis Data Analytics application, including the application's job
-     *        plan.
+     *        Displays verbose information about a Managed Service for Apache Flink application, including the
+     *        application's job plan.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,11 +127,12 @@ public class DescribeApplicationRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Displays verbose information about a Kinesis Data Analytics application, including the application's job plan.
+     * Displays verbose information about a Managed Service for Apache Flink application, including the application's
+     * job plan.
      * </p>
      * 
-     * @return Displays verbose information about a Kinesis Data Analytics application, including the application's job
-     *         plan.
+     * @return Displays verbose information about a Managed Service for Apache Flink application, including the
+     *         application's job plan.
      */
 
     public Boolean isIncludeAdditionalDetails() {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A collection of settings that apply to users of Amazon SageMaker Studio. These settings are specified when the
+ * A collection of settings that apply to users in a domain. These settings are specified when the
  * <code>CreateUserProfile</code> API is called, and as <code>DefaultUserSettings</code> when the
  * <code>CreateDomain</code> API is called.
  * </p>
@@ -43,24 +43,25 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
     private String executionRole;
     /**
      * <p>
-     * The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
+     * The security groups for the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.
      * </p>
      * <p>
      * Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>PublicInternetOnly</code>.
      * </p>
      * <p>
-     * Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>.
+     * Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>, unless
+     * specified as part of the <code>DefaultUserSettings</code> for the domain.
      * </p>
      * <p>
-     * Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio. Therefore, the number of
-     * security groups that you can specify is one less than the maximum number shown.
+     * Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the number
+     * of security groups that you can specify is one less than the maximum number shown.
      * </p>
      */
     private java.util.List<String> securityGroups;
     /**
      * <p>
-     * Specifies options for sharing SageMaker Studio notebooks.
+     * Specifies options for sharing Amazon SageMaker Studio notebooks.
      * </p>
      */
     private SharingSettings sharingSettings;
@@ -100,6 +101,63 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private CanvasAppSettings canvasAppSettings;
+    /**
+     * <p>
+     * The Code Editor application settings.
+     * </p>
+     */
+    private CodeEditorAppSettings codeEditorAppSettings;
+    /**
+     * <p>
+     * The settings for the JupyterLab application.
+     * </p>
+     */
+    private JupyterLabAppSettings jupyterLabAppSettings;
+    /**
+     * <p>
+     * The storage settings for a space.
+     * </p>
+     */
+    private DefaultSpaceStorageSettings spaceStorageSettings;
+    /**
+     * <p>
+     * The default experience that the user is directed to when accessing the domain. The supported values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>studio::</code>: Indicates that Studio is the default experience. This value can only be passed if
+     * <code>StudioWebPortal</code> is set to <code>ENABLED</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>app:JupyterServer:</code>: Indicates that Studio Classic is the default experience.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String defaultLandingUri;
+    /**
+     * <p>
+     * Whether the user can access Studio. If this value is set to <code>DISABLED</code>, the user cannot access Studio,
+     * even if that is the default experience for the domain.
+     * </p>
+     */
+    private String studioWebPortal;
+    /**
+     * <p>
+     * Details about the POSIX identity that is used for file system operations.
+     * </p>
+     */
+    private CustomPosixUserConfig customPosixUserConfig;
+    /**
+     * <p>
+     * The settings for assigning a custom file system to a user profile. Permitted users can access this file system in
+     * Amazon SageMaker Studio.
+     * </p>
+     */
+    private java.util.List<CustomFileSystemConfig> customFileSystemConfigs;
 
     /**
      * <p>
@@ -143,32 +201,34 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
+     * The security groups for the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.
      * </p>
      * <p>
      * Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>PublicInternetOnly</code>.
      * </p>
      * <p>
-     * Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>.
+     * Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>, unless
+     * specified as part of the <code>DefaultUserSettings</code> for the domain.
      * </p>
      * <p>
-     * Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio. Therefore, the number of
-     * security groups that you can specify is one less than the maximum number shown.
+     * Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the number
+     * of security groups that you can specify is one less than the maximum number shown.
      * </p>
      * 
-     * @return The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
+     * @return The security groups for the Amazon Virtual Private Cloud (VPC) that the domain uses for
+     *         communication.</p>
      *         <p>
      *         Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      *         <code>PublicInternetOnly</code>.
      *         </p>
      *         <p>
      *         Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>
-     *         .
+     *         , unless specified as part of the <code>DefaultUserSettings</code> for the domain.
      *         </p>
      *         <p>
-     *         Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio. Therefore, the number
-     *         of security groups that you can specify is one less than the maximum number shown.
+     *         Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the
+     *         number of security groups that you can specify is one less than the maximum number shown.
      */
 
     public java.util.List<String> getSecurityGroups() {
@@ -177,32 +237,34 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
+     * The security groups for the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.
      * </p>
      * <p>
      * Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>PublicInternetOnly</code>.
      * </p>
      * <p>
-     * Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>.
+     * Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>, unless
+     * specified as part of the <code>DefaultUserSettings</code> for the domain.
      * </p>
      * <p>
-     * Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio. Therefore, the number of
-     * security groups that you can specify is one less than the maximum number shown.
+     * Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the number
+     * of security groups that you can specify is one less than the maximum number shown.
      * </p>
      * 
      * @param securityGroups
-     *        The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
+     *        The security groups for the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.</p>
      *        <p>
      *        Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      *        <code>PublicInternetOnly</code>.
      *        </p>
      *        <p>
-     *        Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>.
+     *        Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>,
+     *        unless specified as part of the <code>DefaultUserSettings</code> for the domain.
      *        </p>
      *        <p>
-     *        Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio. Therefore, the number
-     *        of security groups that you can specify is one less than the maximum number shown.
+     *        Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the
+     *        number of security groups that you can specify is one less than the maximum number shown.
      */
 
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
@@ -216,18 +278,19 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
+     * The security groups for the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.
      * </p>
      * <p>
      * Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>PublicInternetOnly</code>.
      * </p>
      * <p>
-     * Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>.
+     * Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>, unless
+     * specified as part of the <code>DefaultUserSettings</code> for the domain.
      * </p>
      * <p>
-     * Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio. Therefore, the number of
-     * security groups that you can specify is one less than the maximum number shown.
+     * Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the number
+     * of security groups that you can specify is one less than the maximum number shown.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -236,17 +299,18 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param securityGroups
-     *        The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
+     *        The security groups for the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.</p>
      *        <p>
      *        Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      *        <code>PublicInternetOnly</code>.
      *        </p>
      *        <p>
-     *        Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>.
+     *        Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>,
+     *        unless specified as part of the <code>DefaultUserSettings</code> for the domain.
      *        </p>
      *        <p>
-     *        Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio. Therefore, the number
-     *        of security groups that you can specify is one less than the maximum number shown.
+     *        Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the
+     *        number of security groups that you can specify is one less than the maximum number shown.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -262,32 +326,34 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
+     * The security groups for the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.
      * </p>
      * <p>
      * Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>PublicInternetOnly</code>.
      * </p>
      * <p>
-     * Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>.
+     * Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>, unless
+     * specified as part of the <code>DefaultUserSettings</code> for the domain.
      * </p>
      * <p>
-     * Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio. Therefore, the number of
-     * security groups that you can specify is one less than the maximum number shown.
+     * Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the number
+     * of security groups that you can specify is one less than the maximum number shown.
      * </p>
      * 
      * @param securityGroups
-     *        The security groups for the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.</p>
+     *        The security groups for the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.</p>
      *        <p>
      *        Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      *        <code>PublicInternetOnly</code>.
      *        </p>
      *        <p>
-     *        Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>.
+     *        Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set to <code>VpcOnly</code>,
+     *        unless specified as part of the <code>DefaultUserSettings</code> for the domain.
      *        </p>
      *        <p>
-     *        Amazon SageMaker adds a security group to allow NFS traffic from SageMaker Studio. Therefore, the number
-     *        of security groups that you can specify is one less than the maximum number shown.
+     *        Amazon SageMaker adds a security group to allow NFS traffic from Amazon SageMaker Studio. Therefore, the
+     *        number of security groups that you can specify is one less than the maximum number shown.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -298,11 +364,11 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies options for sharing SageMaker Studio notebooks.
+     * Specifies options for sharing Amazon SageMaker Studio notebooks.
      * </p>
      * 
      * @param sharingSettings
-     *        Specifies options for sharing SageMaker Studio notebooks.
+     *        Specifies options for sharing Amazon SageMaker Studio notebooks.
      */
 
     public void setSharingSettings(SharingSettings sharingSettings) {
@@ -311,10 +377,10 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies options for sharing SageMaker Studio notebooks.
+     * Specifies options for sharing Amazon SageMaker Studio notebooks.
      * </p>
      * 
-     * @return Specifies options for sharing SageMaker Studio notebooks.
+     * @return Specifies options for sharing Amazon SageMaker Studio notebooks.
      */
 
     public SharingSettings getSharingSettings() {
@@ -323,11 +389,11 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies options for sharing SageMaker Studio notebooks.
+     * Specifies options for sharing Amazon SageMaker Studio notebooks.
      * </p>
      * 
      * @param sharingSettings
-     *        Specifies options for sharing SageMaker Studio notebooks.
+     *        Specifies options for sharing Amazon SageMaker Studio notebooks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -577,6 +643,429 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Code Editor application settings.
+     * </p>
+     * 
+     * @param codeEditorAppSettings
+     *        The Code Editor application settings.
+     */
+
+    public void setCodeEditorAppSettings(CodeEditorAppSettings codeEditorAppSettings) {
+        this.codeEditorAppSettings = codeEditorAppSettings;
+    }
+
+    /**
+     * <p>
+     * The Code Editor application settings.
+     * </p>
+     * 
+     * @return The Code Editor application settings.
+     */
+
+    public CodeEditorAppSettings getCodeEditorAppSettings() {
+        return this.codeEditorAppSettings;
+    }
+
+    /**
+     * <p>
+     * The Code Editor application settings.
+     * </p>
+     * 
+     * @param codeEditorAppSettings
+     *        The Code Editor application settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserSettings withCodeEditorAppSettings(CodeEditorAppSettings codeEditorAppSettings) {
+        setCodeEditorAppSettings(codeEditorAppSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The settings for the JupyterLab application.
+     * </p>
+     * 
+     * @param jupyterLabAppSettings
+     *        The settings for the JupyterLab application.
+     */
+
+    public void setJupyterLabAppSettings(JupyterLabAppSettings jupyterLabAppSettings) {
+        this.jupyterLabAppSettings = jupyterLabAppSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the JupyterLab application.
+     * </p>
+     * 
+     * @return The settings for the JupyterLab application.
+     */
+
+    public JupyterLabAppSettings getJupyterLabAppSettings() {
+        return this.jupyterLabAppSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the JupyterLab application.
+     * </p>
+     * 
+     * @param jupyterLabAppSettings
+     *        The settings for the JupyterLab application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserSettings withJupyterLabAppSettings(JupyterLabAppSettings jupyterLabAppSettings) {
+        setJupyterLabAppSettings(jupyterLabAppSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The storage settings for a space.
+     * </p>
+     * 
+     * @param spaceStorageSettings
+     *        The storage settings for a space.
+     */
+
+    public void setSpaceStorageSettings(DefaultSpaceStorageSettings spaceStorageSettings) {
+        this.spaceStorageSettings = spaceStorageSettings;
+    }
+
+    /**
+     * <p>
+     * The storage settings for a space.
+     * </p>
+     * 
+     * @return The storage settings for a space.
+     */
+
+    public DefaultSpaceStorageSettings getSpaceStorageSettings() {
+        return this.spaceStorageSettings;
+    }
+
+    /**
+     * <p>
+     * The storage settings for a space.
+     * </p>
+     * 
+     * @param spaceStorageSettings
+     *        The storage settings for a space.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserSettings withSpaceStorageSettings(DefaultSpaceStorageSettings spaceStorageSettings) {
+        setSpaceStorageSettings(spaceStorageSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The default experience that the user is directed to when accessing the domain. The supported values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>studio::</code>: Indicates that Studio is the default experience. This value can only be passed if
+     * <code>StudioWebPortal</code> is set to <code>ENABLED</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>app:JupyterServer:</code>: Indicates that Studio Classic is the default experience.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param defaultLandingUri
+     *        The default experience that the user is directed to when accessing the domain. The supported values
+     *        are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>studio::</code>: Indicates that Studio is the default experience. This value can only be passed if
+     *        <code>StudioWebPortal</code> is set to <code>ENABLED</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>app:JupyterServer:</code>: Indicates that Studio Classic is the default experience.
+     *        </p>
+     *        </li>
+     */
+
+    public void setDefaultLandingUri(String defaultLandingUri) {
+        this.defaultLandingUri = defaultLandingUri;
+    }
+
+    /**
+     * <p>
+     * The default experience that the user is directed to when accessing the domain. The supported values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>studio::</code>: Indicates that Studio is the default experience. This value can only be passed if
+     * <code>StudioWebPortal</code> is set to <code>ENABLED</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>app:JupyterServer:</code>: Indicates that Studio Classic is the default experience.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The default experience that the user is directed to when accessing the domain. The supported values
+     *         are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>studio::</code>: Indicates that Studio is the default experience. This value can only be passed if
+     *         <code>StudioWebPortal</code> is set to <code>ENABLED</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>app:JupyterServer:</code>: Indicates that Studio Classic is the default experience.
+     *         </p>
+     *         </li>
+     */
+
+    public String getDefaultLandingUri() {
+        return this.defaultLandingUri;
+    }
+
+    /**
+     * <p>
+     * The default experience that the user is directed to when accessing the domain. The supported values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>studio::</code>: Indicates that Studio is the default experience. This value can only be passed if
+     * <code>StudioWebPortal</code> is set to <code>ENABLED</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>app:JupyterServer:</code>: Indicates that Studio Classic is the default experience.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param defaultLandingUri
+     *        The default experience that the user is directed to when accessing the domain. The supported values
+     *        are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>studio::</code>: Indicates that Studio is the default experience. This value can only be passed if
+     *        <code>StudioWebPortal</code> is set to <code>ENABLED</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>app:JupyterServer:</code>: Indicates that Studio Classic is the default experience.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserSettings withDefaultLandingUri(String defaultLandingUri) {
+        setDefaultLandingUri(defaultLandingUri);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the user can access Studio. If this value is set to <code>DISABLED</code>, the user cannot access Studio,
+     * even if that is the default experience for the domain.
+     * </p>
+     * 
+     * @param studioWebPortal
+     *        Whether the user can access Studio. If this value is set to <code>DISABLED</code>, the user cannot access
+     *        Studio, even if that is the default experience for the domain.
+     * @see StudioWebPortal
+     */
+
+    public void setStudioWebPortal(String studioWebPortal) {
+        this.studioWebPortal = studioWebPortal;
+    }
+
+    /**
+     * <p>
+     * Whether the user can access Studio. If this value is set to <code>DISABLED</code>, the user cannot access Studio,
+     * even if that is the default experience for the domain.
+     * </p>
+     * 
+     * @return Whether the user can access Studio. If this value is set to <code>DISABLED</code>, the user cannot access
+     *         Studio, even if that is the default experience for the domain.
+     * @see StudioWebPortal
+     */
+
+    public String getStudioWebPortal() {
+        return this.studioWebPortal;
+    }
+
+    /**
+     * <p>
+     * Whether the user can access Studio. If this value is set to <code>DISABLED</code>, the user cannot access Studio,
+     * even if that is the default experience for the domain.
+     * </p>
+     * 
+     * @param studioWebPortal
+     *        Whether the user can access Studio. If this value is set to <code>DISABLED</code>, the user cannot access
+     *        Studio, even if that is the default experience for the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StudioWebPortal
+     */
+
+    public UserSettings withStudioWebPortal(String studioWebPortal) {
+        setStudioWebPortal(studioWebPortal);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the user can access Studio. If this value is set to <code>DISABLED</code>, the user cannot access Studio,
+     * even if that is the default experience for the domain.
+     * </p>
+     * 
+     * @param studioWebPortal
+     *        Whether the user can access Studio. If this value is set to <code>DISABLED</code>, the user cannot access
+     *        Studio, even if that is the default experience for the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StudioWebPortal
+     */
+
+    public UserSettings withStudioWebPortal(StudioWebPortal studioWebPortal) {
+        this.studioWebPortal = studioWebPortal.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about the POSIX identity that is used for file system operations.
+     * </p>
+     * 
+     * @param customPosixUserConfig
+     *        Details about the POSIX identity that is used for file system operations.
+     */
+
+    public void setCustomPosixUserConfig(CustomPosixUserConfig customPosixUserConfig) {
+        this.customPosixUserConfig = customPosixUserConfig;
+    }
+
+    /**
+     * <p>
+     * Details about the POSIX identity that is used for file system operations.
+     * </p>
+     * 
+     * @return Details about the POSIX identity that is used for file system operations.
+     */
+
+    public CustomPosixUserConfig getCustomPosixUserConfig() {
+        return this.customPosixUserConfig;
+    }
+
+    /**
+     * <p>
+     * Details about the POSIX identity that is used for file system operations.
+     * </p>
+     * 
+     * @param customPosixUserConfig
+     *        Details about the POSIX identity that is used for file system operations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserSettings withCustomPosixUserConfig(CustomPosixUserConfig customPosixUserConfig) {
+        setCustomPosixUserConfig(customPosixUserConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The settings for assigning a custom file system to a user profile. Permitted users can access this file system in
+     * Amazon SageMaker Studio.
+     * </p>
+     * 
+     * @return The settings for assigning a custom file system to a user profile. Permitted users can access this file
+     *         system in Amazon SageMaker Studio.
+     */
+
+    public java.util.List<CustomFileSystemConfig> getCustomFileSystemConfigs() {
+        return customFileSystemConfigs;
+    }
+
+    /**
+     * <p>
+     * The settings for assigning a custom file system to a user profile. Permitted users can access this file system in
+     * Amazon SageMaker Studio.
+     * </p>
+     * 
+     * @param customFileSystemConfigs
+     *        The settings for assigning a custom file system to a user profile. Permitted users can access this file
+     *        system in Amazon SageMaker Studio.
+     */
+
+    public void setCustomFileSystemConfigs(java.util.Collection<CustomFileSystemConfig> customFileSystemConfigs) {
+        if (customFileSystemConfigs == null) {
+            this.customFileSystemConfigs = null;
+            return;
+        }
+
+        this.customFileSystemConfigs = new java.util.ArrayList<CustomFileSystemConfig>(customFileSystemConfigs);
+    }
+
+    /**
+     * <p>
+     * The settings for assigning a custom file system to a user profile. Permitted users can access this file system in
+     * Amazon SageMaker Studio.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCustomFileSystemConfigs(java.util.Collection)} or
+     * {@link #withCustomFileSystemConfigs(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param customFileSystemConfigs
+     *        The settings for assigning a custom file system to a user profile. Permitted users can access this file
+     *        system in Amazon SageMaker Studio.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserSettings withCustomFileSystemConfigs(CustomFileSystemConfig... customFileSystemConfigs) {
+        if (this.customFileSystemConfigs == null) {
+            setCustomFileSystemConfigs(new java.util.ArrayList<CustomFileSystemConfig>(customFileSystemConfigs.length));
+        }
+        for (CustomFileSystemConfig ele : customFileSystemConfigs) {
+            this.customFileSystemConfigs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The settings for assigning a custom file system to a user profile. Permitted users can access this file system in
+     * Amazon SageMaker Studio.
+     * </p>
+     * 
+     * @param customFileSystemConfigs
+     *        The settings for assigning a custom file system to a user profile. Permitted users can access this file
+     *        system in Amazon SageMaker Studio.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserSettings withCustomFileSystemConfigs(java.util.Collection<CustomFileSystemConfig> customFileSystemConfigs) {
+        setCustomFileSystemConfigs(customFileSystemConfigs);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -605,7 +1094,21 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
         if (getRSessionAppSettings() != null)
             sb.append("RSessionAppSettings: ").append(getRSessionAppSettings()).append(",");
         if (getCanvasAppSettings() != null)
-            sb.append("CanvasAppSettings: ").append(getCanvasAppSettings());
+            sb.append("CanvasAppSettings: ").append(getCanvasAppSettings()).append(",");
+        if (getCodeEditorAppSettings() != null)
+            sb.append("CodeEditorAppSettings: ").append(getCodeEditorAppSettings()).append(",");
+        if (getJupyterLabAppSettings() != null)
+            sb.append("JupyterLabAppSettings: ").append(getJupyterLabAppSettings()).append(",");
+        if (getSpaceStorageSettings() != null)
+            sb.append("SpaceStorageSettings: ").append(getSpaceStorageSettings()).append(",");
+        if (getDefaultLandingUri() != null)
+            sb.append("DefaultLandingUri: ").append(getDefaultLandingUri()).append(",");
+        if (getStudioWebPortal() != null)
+            sb.append("StudioWebPortal: ").append(getStudioWebPortal()).append(",");
+        if (getCustomPosixUserConfig() != null)
+            sb.append("CustomPosixUserConfig: ").append(getCustomPosixUserConfig()).append(",");
+        if (getCustomFileSystemConfigs() != null)
+            sb.append("CustomFileSystemConfigs: ").append(getCustomFileSystemConfigs());
         sb.append("}");
         return sb.toString();
     }
@@ -656,6 +1159,34 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCanvasAppSettings() != null && other.getCanvasAppSettings().equals(this.getCanvasAppSettings()) == false)
             return false;
+        if (other.getCodeEditorAppSettings() == null ^ this.getCodeEditorAppSettings() == null)
+            return false;
+        if (other.getCodeEditorAppSettings() != null && other.getCodeEditorAppSettings().equals(this.getCodeEditorAppSettings()) == false)
+            return false;
+        if (other.getJupyterLabAppSettings() == null ^ this.getJupyterLabAppSettings() == null)
+            return false;
+        if (other.getJupyterLabAppSettings() != null && other.getJupyterLabAppSettings().equals(this.getJupyterLabAppSettings()) == false)
+            return false;
+        if (other.getSpaceStorageSettings() == null ^ this.getSpaceStorageSettings() == null)
+            return false;
+        if (other.getSpaceStorageSettings() != null && other.getSpaceStorageSettings().equals(this.getSpaceStorageSettings()) == false)
+            return false;
+        if (other.getDefaultLandingUri() == null ^ this.getDefaultLandingUri() == null)
+            return false;
+        if (other.getDefaultLandingUri() != null && other.getDefaultLandingUri().equals(this.getDefaultLandingUri()) == false)
+            return false;
+        if (other.getStudioWebPortal() == null ^ this.getStudioWebPortal() == null)
+            return false;
+        if (other.getStudioWebPortal() != null && other.getStudioWebPortal().equals(this.getStudioWebPortal()) == false)
+            return false;
+        if (other.getCustomPosixUserConfig() == null ^ this.getCustomPosixUserConfig() == null)
+            return false;
+        if (other.getCustomPosixUserConfig() != null && other.getCustomPosixUserConfig().equals(this.getCustomPosixUserConfig()) == false)
+            return false;
+        if (other.getCustomFileSystemConfigs() == null ^ this.getCustomFileSystemConfigs() == null)
+            return false;
+        if (other.getCustomFileSystemConfigs() != null && other.getCustomFileSystemConfigs().equals(this.getCustomFileSystemConfigs()) == false)
+            return false;
         return true;
     }
 
@@ -673,6 +1204,13 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRStudioServerProAppSettings() == null) ? 0 : getRStudioServerProAppSettings().hashCode());
         hashCode = prime * hashCode + ((getRSessionAppSettings() == null) ? 0 : getRSessionAppSettings().hashCode());
         hashCode = prime * hashCode + ((getCanvasAppSettings() == null) ? 0 : getCanvasAppSettings().hashCode());
+        hashCode = prime * hashCode + ((getCodeEditorAppSettings() == null) ? 0 : getCodeEditorAppSettings().hashCode());
+        hashCode = prime * hashCode + ((getJupyterLabAppSettings() == null) ? 0 : getJupyterLabAppSettings().hashCode());
+        hashCode = prime * hashCode + ((getSpaceStorageSettings() == null) ? 0 : getSpaceStorageSettings().hashCode());
+        hashCode = prime * hashCode + ((getDefaultLandingUri() == null) ? 0 : getDefaultLandingUri().hashCode());
+        hashCode = prime * hashCode + ((getStudioWebPortal() == null) ? 0 : getStudioWebPortal().hashCode());
+        hashCode = prime * hashCode + ((getCustomPosixUserConfig() == null) ? 0 : getCustomPosixUserConfig().hashCode());
+        hashCode = prime * hashCode + ((getCustomFileSystemConfigs() == null) ? 0 : getCustomFileSystemConfigs().hashCode());
         return hashCode;
     }
 

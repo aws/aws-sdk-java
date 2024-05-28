@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,10 @@ public class AutoEnableMarshaller {
             .marshallLocationName("ec2").build();
     private static final MarshallingInfo<Boolean> ECR_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ecr").build();
+    private static final MarshallingInfo<Boolean> LAMBDA_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("lambda").build();
+    private static final MarshallingInfo<Boolean> LAMBDACODE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lambdaCode").build();
 
     private static final AutoEnableMarshaller instance = new AutoEnableMarshaller();
 
@@ -50,6 +54,8 @@ public class AutoEnableMarshaller {
         try {
             protocolMarshaller.marshall(autoEnable.getEc2(), EC2_BINDING);
             protocolMarshaller.marshall(autoEnable.getEcr(), ECR_BINDING);
+            protocolMarshaller.marshall(autoEnable.getLambda(), LAMBDA_BINDING);
+            protocolMarshaller.marshall(autoEnable.getLambdaCode(), LAMBDACODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

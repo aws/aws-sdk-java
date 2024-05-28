@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,18 +26,14 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
  * </p>
  * <p>
  * <p>
- * Amazon Web Services Systems Manager is a collection of capabilities to help you manage your applications and
- * infrastructure running in the Amazon Web Services Cloud;. Systems Manager simplifies application and resource
- * management, shortens the time to detect and resolve operational problems, and helps you manage your Amazon Web
- * Services resources securely at scale.
+ * Amazon Web Services Systems Manager is the operations hub for your Amazon Web Services applications and resources and
+ * a secure end-to-end management solution for hybrid cloud environments that enables safe and secure operations at
+ * scale.
  * </p>
  * <p>
  * This reference is intended to be used with the <a
  * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/">Amazon Web Services Systems Manager User
- * Guide</a>.
- * </p>
- * <p>
- * To get started, verify prerequisites. For more information, see <a
+ * Guide</a>. To get started, see <a
  * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting up Amazon
  * Web Services Systems Manager</a>.
  * </p>
@@ -47,28 +43,32 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
  * <ul>
  * <li>
  * <p>
- * For information about how to use a Query API, see <a
- * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/making-api-requests.html">Making API requests</a>.
+ * For information about each of the capabilities that comprise Systems Manager, see <a href=
+ * "https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html#systems-manager-capabilities"
+ * >Systems Manager capabilities</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
  * </p>
  * </li>
  * <li>
  * <p>
- * For information about other API operations you can perform on EC2 instances, see the <a
- * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API Reference</a>.
+ * For details about predefined runbooks for Automation, a capability of Amazon Web Services Systems Manager, see the
+ * <i> <a href=
+ * "https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-runbook-reference.html"
+ * >Systems Manager Automation runbook reference</a> </i>.
  * </p>
  * </li>
  * <li>
  * <p>
- * For information about AppConfig, a capability of Systems Manager, see the <a
- * href="https://docs.aws.amazon.com/appconfig/latest/userguide/">AppConfig User Guide</a> and the <a
- * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/">AppConfig API Reference</a>.
+ * For information about AppConfig, a capability of Systems Manager, see the <i> <a
+ * href="https://docs.aws.amazon.com/appconfig/latest/userguide/">AppConfig User Guide</a> </i> and the <i> <a
+ * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/">AppConfig API Reference</a> </i>.
  * </p>
  * </li>
  * <li>
  * <p>
- * For information about Incident Manager, a capability of Systems Manager, see the <a
- * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/">Incident Manager User Guide</a> and the <a
- * href="https://docs.aws.amazon.com/incident-manager/latest/APIReference/">Incident Manager API Reference</a>.
+ * For information about Incident Manager, a capability of Systems Manager, see the <i> <a
+ * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/">Systems Manager Incident Manager User Guide</a>
+ * </i> and the <i> <a href="https://docs.aws.amazon.com/incident-manager/latest/APIReference/">Systems Manager Incident
+ * Manager API Reference</a> </i>.
  * </p>
  * </li>
  * </ul>
@@ -127,8 +127,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * </p>
      * <p>
      * For more information about using tags with Amazon Elastic Compute Cloud (Amazon EC2) instances, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2 resources</a>
-     * in the <i>Amazon EC2 User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag your Amazon EC2 resources</a> in
+     * the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param addTagsToResourceRequest
@@ -190,8 +190,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * </p>
      * <p>
      * For more information about using tags with Amazon Elastic Compute Cloud (Amazon EC2) instances, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2 resources</a>
-     * in the <i>Amazon EC2 User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag your Amazon EC2 resources</a> in
+     * the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param addTagsToResourceRequest
@@ -322,8 +322,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * installing SSM Agent on machines in your hybrid environment. For more information about requirements for managing
      * on-premises machines using Systems Manager, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
-     * up Amazon Web Services Systems Manager for hybrid environments</a> in the <i>Amazon Web Services Systems Manager
-     * User Guide</i>.
+     * up Amazon Web Services Systems Manager for hybrid and multicloud environments</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -348,8 +348,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * installing SSM Agent on machines in your hybrid environment. For more information about requirements for managing
      * on-premises machines using Systems Manager, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
-     * up Amazon Web Services Systems Manager for hybrid environments</a> in the <i>Amazon Web Services Systems Manager
-     * User Guide</i>.
+     * up Amazon Web Services Systems Manager for hybrid and multicloud environments</a> in the <i>Amazon Web Services
+     * Systems Manager User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -561,8 +561,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Creates a new OpsItem. You must have permission in Identity and Access Management (IAM) to create a new OpsItem.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-     * started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set up OpsCenter</a> in
+     * the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <p>
      * Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate,
@@ -584,8 +584,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Creates a new OpsItem. You must have permission in Identity and Access Management (IAM) to create a new OpsItem.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-     * started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set up OpsCenter</a> in
+     * the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <p>
      * Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate,
@@ -960,6 +960,107 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * Delete an OpsItem. You must have permission in Identity and Access Management (IAM) to delete an OpsItem.
+     * </p>
+     * <important>
+     * <p>
+     * Note the following important information about this operation.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Deleting an OpsItem is irreversible. You can't restore a deleted OpsItem.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This operation uses an <i>eventual consistency model</i>, which means the system can take a few minutes to
+     * complete this operation. If you delete an OpsItem and immediately call, for example, <a>GetOpsItem</a>, the
+     * deleted OpsItem might still appear in the response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This operation is idempotent. The system doesn't throw an exception if you repeatedly call this operation for the
+     * same OpsItem. If the first call is successful, all additional calls return the same successful response as the
+     * first call.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This operation doesn't support cross-account calls. A delegated administrator or management account can't delete
+     * OpsItems in other accounts, even if OpsCenter has been set up for cross-account administration. For more
+     * information about cross-account administration, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setting-up-cross-account.html"
+     * >Setting up OpsCenter to centrally manage OpsItems across accounts</a> in the <i>Systems Manager User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * </important>
+     * 
+     * @param deleteOpsItemRequest
+     * @return A Java Future containing the result of the DeleteOpsItem operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.DeleteOpsItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteOpsItem" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteOpsItemResult> deleteOpsItemAsync(DeleteOpsItemRequest deleteOpsItemRequest);
+
+    /**
+     * <p>
+     * Delete an OpsItem. You must have permission in Identity and Access Management (IAM) to delete an OpsItem.
+     * </p>
+     * <important>
+     * <p>
+     * Note the following important information about this operation.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Deleting an OpsItem is irreversible. You can't restore a deleted OpsItem.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This operation uses an <i>eventual consistency model</i>, which means the system can take a few minutes to
+     * complete this operation. If you delete an OpsItem and immediately call, for example, <a>GetOpsItem</a>, the
+     * deleted OpsItem might still appear in the response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This operation is idempotent. The system doesn't throw an exception if you repeatedly call this operation for the
+     * same OpsItem. If the first call is successful, all additional calls return the same successful response as the
+     * first call.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This operation doesn't support cross-account calls. A delegated administrator or management account can't delete
+     * OpsItems in other accounts, even if OpsCenter has been set up for cross-account administration. For more
+     * information about cross-account administration, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setting-up-cross-account.html"
+     * >Setting up OpsCenter to centrally manage OpsItems across accounts</a> in the <i>Systems Manager User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * </important>
+     * 
+     * @param deleteOpsItemRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteOpsItem operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DeleteOpsItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteOpsItem" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteOpsItemResult> deleteOpsItemAsync(DeleteOpsItemRequest deleteOpsItemRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteOpsItemRequest, DeleteOpsItemResult> asyncHandler);
+
+    /**
+     * <p>
      * Delete OpsMetadata related to an application.
      * </p>
      * 
@@ -1118,6 +1219,73 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<DeleteResourceDataSyncResult> deleteResourceDataSyncAsync(DeleteResourceDataSyncRequest deleteResourceDataSyncRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteResourceDataSyncRequest, DeleteResourceDataSyncResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a Systems Manager resource policy. A resource policy helps you to define the IAM entity (for example, an
+     * Amazon Web Services account) that can manage your Systems Manager resources. The following resources support
+     * Systems Manager resource policies.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>OpsItemGroup</code> - The resource policy for <code>OpsItemGroup</code> enables Amazon Web Services
+     * accounts to view and interact with OpsCenter operational work items (OpsItems).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Parameter</code> - The resource policy is used to share a parameter with other accounts using Resource
+     * Access Manager (RAM). For more information about cross-account sharing of parameters, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html"
+     * >Working with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @return A Java Future containing the result of the DeleteResourcePolicy operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourcePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest deleteResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Deletes a Systems Manager resource policy. A resource policy helps you to define the IAM entity (for example, an
+     * Amazon Web Services account) that can manage your Systems Manager resources. The following resources support
+     * Systems Manager resource policies.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>OpsItemGroup</code> - The resource policy for <code>OpsItemGroup</code> enables Amazon Web Services
+     * accounts to view and interact with OpsCenter operational work items (OpsItems).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Parameter</code> - The resource policy is used to share a parameter with other accounts using Resource
+     * Access Manager (RAM). For more information about cross-account sharing of parameters, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html"
+     * >Working with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteResourcePolicy operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourcePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest deleteResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteResourcePolicyRequest, DeleteResourcePolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -1471,6 +1639,12 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Lists all patches eligible to be included in a patch baseline.
      * </p>
+     * <note>
+     * <p>
+     * Currently, <code>DescribeAvailablePatches</code> supports only the Amazon Linux 1, Amazon Linux 2, and Windows
+     * Server operating systems.
+     * </p>
+     * </note>
      * 
      * @param describeAvailablePatchesRequest
      * @return A Java Future containing the result of the DescribeAvailablePatches operation returned by the service.
@@ -1484,6 +1658,12 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Lists all patches eligible to be included in a patch baseline.
      * </p>
+     * <note>
+     * <p>
+     * Currently, <code>DescribeAvailablePatches</code> supports only the Amazon Linux 1, Amazon Linux 2, and Windows
+     * Server operating systems.
+     * </p>
+     * </note>
      * 
      * @param describeAvailablePatchesRequest
      * @param asyncHandler
@@ -1568,7 +1748,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * All associations for the managed node(s).
+     * All associations for the managed nodes.
      * </p>
      * 
      * @param describeEffectiveInstanceAssociationsRequest
@@ -1583,7 +1763,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * All associations for the managed node(s).
+     * All associations for the managed nodes.
      * </p>
      * 
      * @param describeEffectiveInstanceAssociationsRequest
@@ -1640,7 +1820,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * The status of the associations for the managed node(s).
+     * The status of the associations for the managed nodes.
      * </p>
      * 
      * @param describeInstanceAssociationsStatusRequest
@@ -1655,7 +1835,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * The status of the associations for the managed node(s).
+     * The status of the associations for the managed nodes.
      * </p>
      * 
      * @param describeInstanceAssociationsStatusRequest
@@ -1675,18 +1855,19 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Describes one or more of your managed nodes, including information about the operating system platform, the
-     * version of SSM Agent installed on the managed node, node status, and so on.
+     * Provides information about one or more of your managed nodes, including the operating system platform, SSM Agent
+     * version, association status, and IP address. This operation does not return information for nodes that are either
+     * Stopped or Terminated.
      * </p>
      * <p>
-     * If you specify one or more managed node IDs, it returns information for those managed nodes. If you don't specify
-     * node IDs, it returns information for all your managed nodes. If you specify a node ID that isn't valid or a node
-     * that you don't own, you receive an error.
+     * If you specify one or more node IDs, the operation returns information for those managed nodes. If you don't
+     * specify node IDs, it returns information for all your managed nodes. If you specify a node ID that isn't valid or
+     * a node that you don't own, you receive an error.
      * </p>
      * <note>
      * <p>
-     * The <code>IamRole</code> field for this API operation is the Identity and Access Management (IAM) role assigned
-     * to on-premises managed nodes. This call doesn't return the IAM role for EC2 instances.
+     * The <code>IamRole</code> field returned for this API operation is the Identity and Access Management (IAM) role
+     * assigned to on-premises managed nodes. This operation does not return the IAM role for EC2 instances.
      * </p>
      * </note>
      * 
@@ -1701,18 +1882,19 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Describes one or more of your managed nodes, including information about the operating system platform, the
-     * version of SSM Agent installed on the managed node, node status, and so on.
+     * Provides information about one or more of your managed nodes, including the operating system platform, SSM Agent
+     * version, association status, and IP address. This operation does not return information for nodes that are either
+     * Stopped or Terminated.
      * </p>
      * <p>
-     * If you specify one or more managed node IDs, it returns information for those managed nodes. If you don't specify
-     * node IDs, it returns information for all your managed nodes. If you specify a node ID that isn't valid or a node
-     * that you don't own, you receive an error.
+     * If you specify one or more node IDs, the operation returns information for those managed nodes. If you don't
+     * specify node IDs, it returns information for all your managed nodes. If you specify a node ID that isn't valid or
+     * a node that you don't own, you receive an error.
      * </p>
      * <note>
      * <p>
-     * The <code>IamRole</code> field for this API operation is the Identity and Access Management (IAM) role assigned
-     * to on-premises managed nodes. This call doesn't return the IAM role for EC2 instances.
+     * The <code>IamRole</code> field returned for this API operation is the Identity and Access Management (IAM) role
+     * assigned to on-premises managed nodes. This operation does not return the IAM role for EC2 instances.
      * </p>
      * </note>
      * 
@@ -1830,6 +2012,39 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<DescribeInstancePatchesResult> describeInstancePatchesAsync(DescribeInstancePatchesRequest describeInstancePatchesRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeInstancePatchesRequest, DescribeInstancePatchesResult> asyncHandler);
+
+    /**
+     * <p>
+     * An API operation used by the Systems Manager console to display information about Systems Manager managed nodes.
+     * </p>
+     * 
+     * @param describeInstancePropertiesRequest
+     * @return A Java Future containing the result of the DescribeInstanceProperties operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.DescribeInstanceProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceProperties" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInstancePropertiesResult> describeInstancePropertiesAsync(
+            DescribeInstancePropertiesRequest describeInstancePropertiesRequest);
+
+    /**
+     * <p>
+     * An API operation used by the Systems Manager console to display information about Systems Manager managed nodes.
+     * </p>
+     * 
+     * @param describeInstancePropertiesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeInstanceProperties operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DescribeInstanceProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceProperties" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInstancePropertiesResult> describeInstancePropertiesAsync(
+            DescribeInstancePropertiesRequest describeInstancePropertiesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeInstancePropertiesRequest, DescribeInstancePropertiesResult> asyncHandler);
 
     /**
      * <p>
@@ -2168,15 +2383,15 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Query a set of OpsItems. You must have permission in Identity and Access Management (IAM) to query a list of
      * OpsItems. For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-     * started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set up OpsCenter</a> in
+     * the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <p>
      * Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate,
      * and remediate operational issues impacting the performance and health of their Amazon Web Services resources. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a> in the <i>Amazon
-     * Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">Amazon Web Services Systems
+     * Manager OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param describeOpsItemsRequest
@@ -2191,15 +2406,15 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Query a set of OpsItems. You must have permission in Identity and Access Management (IAM) to query a list of
      * OpsItems. For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-     * started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set up OpsCenter</a> in
+     * the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <p>
      * Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate,
      * and remediate operational issues impacting the performance and health of their Amazon Web Services resources. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a> in the <i>Amazon
-     * Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">Amazon Web Services Systems
+     * Manager OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param describeOpsItemsRequest
@@ -2217,7 +2432,10 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Get information about a parameter.
+     * Lists the parameters in your Amazon Web Services account or the parameters shared with you when you enable the <a
+     * href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeParameters.html#systemsmanager-DescribeParameters-request-Shared"
+     * >Shared</a> option.
      * </p>
      * <p>
      * Request results are returned on a best-effort basis. If you specify <code>MaxResults</code> in the request, the
@@ -2244,7 +2462,10 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Get information about a parameter.
+     * Lists the parameters in your Amazon Web Services account or the parameters shared with you when you enable the <a
+     * href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeParameters.html#systemsmanager-DescribeParameters-request-Shared"
+     * >Shared</a> option.
      * </p>
      * <p>
      * Request results are returned on a best-effort basis. If you specify <code>MaxResults</code> in the request, the
@@ -3160,15 +3381,15 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Get information about an OpsItem by using the ID. You must have permission in Identity and Access Management
      * (IAM) to view information about an OpsItem. For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-     * started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set up OpsCenter</a> in
+     * the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <p>
      * Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate,
      * and remediate operational issues impacting the performance and health of their Amazon Web Services resources. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a> in the <i>Amazon
-     * Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">Amazon Web Services Systems
+     * Manager OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param getOpsItemRequest
@@ -3183,15 +3404,15 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Get information about an OpsItem by using the ID. You must have permission in Identity and Access Management
      * (IAM) to view information about an OpsItem. For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-     * started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set up OpsCenter</a> in
+     * the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <p>
      * Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate,
      * and remediate operational issues impacting the performance and health of their Amazon Web Services resources. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a> in the <i>Amazon
-     * Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">Amazon Web Services Systems
+     * Manager OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param getOpsItemRequest
@@ -3512,6 +3733,37 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
     java.util.concurrent.Future<GetPatchBaselineForPatchGroupResult> getPatchBaselineForPatchGroupAsync(
             GetPatchBaselineForPatchGroupRequest getPatchBaselineForPatchGroupRequest,
             com.amazonaws.handlers.AsyncHandler<GetPatchBaselineForPatchGroupRequest, GetPatchBaselineForPatchGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns an array of the <code>Policy</code> object.
+     * </p>
+     * 
+     * @param getResourcePoliciesRequest
+     * @return A Java Future containing the result of the GetResourcePolicies operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.GetResourcePolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetResourcePolicies" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourcePoliciesResult> getResourcePoliciesAsync(GetResourcePoliciesRequest getResourcePoliciesRequest);
+
+    /**
+     * <p>
+     * Returns an array of the <code>Policy</code> object.
+     * </p>
+     * 
+     * @param getResourcePoliciesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetResourcePolicies operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.GetResourcePolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetResourcePolicies" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourcePoliciesResult> getResourcePoliciesAsync(GetResourcePoliciesRequest getResourcePoliciesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetResourcePoliciesRequest, GetResourcePoliciesResult> asyncHandler);
 
     /**
      * <p>
@@ -4279,8 +4531,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
     /**
      * <p>
      * Shares a Amazon Web Services Systems Manager document (SSM document)publicly or privately. If you share a
-     * document privately, you must specify the Amazon Web Services user account IDs for those people who can use the
-     * document. If you share a document publicly, you must specify <i>All</i> as the account ID.
+     * document privately, you must specify the Amazon Web Services user IDs for those people who can use the document.
+     * If you share a document publicly, you must specify <i>All</i> as the account ID.
      * </p>
      * 
      * @param modifyDocumentPermissionRequest
@@ -4294,8 +4546,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
     /**
      * <p>
      * Shares a Amazon Web Services Systems Manager document (SSM document)publicly or privately. If you share a
-     * document privately, you must specify the Amazon Web Services user account IDs for those people who can use the
-     * document. If you share a document publicly, you must specify <i>All</i> as the account ID.
+     * document privately, you must specify the Amazon Web Services user IDs for those people who can use the document.
+     * If you share a document publicly, you must specify <i>All</i> as the account ID.
      * </p>
      * 
      * @param modifyDocumentPermissionRequest
@@ -4395,7 +4647,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <li>
      * <p>
      * InstalledTime: The time the association, patch, or custom compliance item was applied to the resource. Specify
-     * the time by using the following format: yyyy-MM-dd'T'HH:mm:ss'Z'
+     * the time by using the following format: <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code>
      * </p>
      * </li>
      * </ul>
@@ -4492,7 +4744,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <li>
      * <p>
      * InstalledTime: The time the association, patch, or custom compliance item was applied to the resource. Specify
-     * the time by using the following format: yyyy-MM-dd'T'HH:mm:ss'Z'
+     * the time by using the following format: <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code>
      * </p>
      * </li>
      * </ul>
@@ -4573,6 +4825,133 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<PutParameterResult> putParameterAsync(PutParameterRequest putParameterRequest,
             com.amazonaws.handlers.AsyncHandler<PutParameterRequest, PutParameterResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates or updates a Systems Manager resource policy. A resource policy helps you to define the IAM entity (for
+     * example, an Amazon Web Services account) that can manage your Systems Manager resources. The following resources
+     * support Systems Manager resource policies.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>OpsItemGroup</code> - The resource policy for <code>OpsItemGroup</code> enables Amazon Web Services
+     * accounts to view and interact with OpsCenter operational work items (OpsItems).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Parameter</code> - The resource policy is used to share a parameter with other accounts using Resource
+     * Access Manager (RAM).
+     * </p>
+     * <p>
+     * To share a parameter, it must be in the advanced parameter tier. For information about parameter tiers, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">
+     * Managing parameter tiers</a>. For information about changing an existing standard parameter to an advanced
+     * parameter, see <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html#parameter-store-advanced-parameters-enabling"
+     * >Changing a standard parameter to an advanced parameter</a>.
+     * </p>
+     * <p>
+     * To share a <code>SecureString</code> parameter, it must be encrypted with a customer managed key, and you must
+     * share the key separately through Key Management Service. Amazon Web Services managed keys cannot be shared.
+     * Parameters encrypted with the default Amazon Web Services managed key can be updated to use a customer managed
+     * key instead. For KMS key definitions, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">KMS concepts</a> in the <i>Key
+     * Management Service Developer Guide</i>.
+     * </p>
+     * <important>
+     * <p>
+     * While you can share a parameter using the Systems Manager <code>PutResourcePolicy</code> operation, we recommend
+     * using Resource Access Manager (RAM) instead. This is because using <code>PutResourcePolicy</code> requires the
+     * extra step of promoting the parameter to a standard RAM Resource Share using the RAM <a
+     * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html"
+     * >PromoteResourceShareCreatedFromPolicy</a> API operation. Otherwise, the parameter won't be returned by the
+     * Systems Manager <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeParameters.html"
+     * >DescribeParameters</a> API operation using the <code>--shared</code> option.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html#share"
+     * >Sharing a parameter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>
+     * </p>
+     * </important></li>
+     * </ul>
+     * 
+     * @param putResourcePolicyRequest
+     * @return A Java Future containing the result of the PutResourcePolicy operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutResourcePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest putResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Creates or updates a Systems Manager resource policy. A resource policy helps you to define the IAM entity (for
+     * example, an Amazon Web Services account) that can manage your Systems Manager resources. The following resources
+     * support Systems Manager resource policies.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>OpsItemGroup</code> - The resource policy for <code>OpsItemGroup</code> enables Amazon Web Services
+     * accounts to view and interact with OpsCenter operational work items (OpsItems).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Parameter</code> - The resource policy is used to share a parameter with other accounts using Resource
+     * Access Manager (RAM).
+     * </p>
+     * <p>
+     * To share a parameter, it must be in the advanced parameter tier. For information about parameter tiers, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">
+     * Managing parameter tiers</a>. For information about changing an existing standard parameter to an advanced
+     * parameter, see <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html#parameter-store-advanced-parameters-enabling"
+     * >Changing a standard parameter to an advanced parameter</a>.
+     * </p>
+     * <p>
+     * To share a <code>SecureString</code> parameter, it must be encrypted with a customer managed key, and you must
+     * share the key separately through Key Management Service. Amazon Web Services managed keys cannot be shared.
+     * Parameters encrypted with the default Amazon Web Services managed key can be updated to use a customer managed
+     * key instead. For KMS key definitions, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">KMS concepts</a> in the <i>Key
+     * Management Service Developer Guide</i>.
+     * </p>
+     * <important>
+     * <p>
+     * While you can share a parameter using the Systems Manager <code>PutResourcePolicy</code> operation, we recommend
+     * using Resource Access Manager (RAM) instead. This is because using <code>PutResourcePolicy</code> requires the
+     * extra step of promoting the parameter to a standard RAM Resource Share using the RAM <a
+     * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html"
+     * >PromoteResourceShareCreatedFromPolicy</a> API operation. Otherwise, the parameter won't be returned by the
+     * Systems Manager <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeParameters.html"
+     * >DescribeParameters</a> API operation using the <code>--shared</code> option.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html#share"
+     * >Sharing a parameter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>
+     * </p>
+     * </important></li>
+     * </ul>
+     * 
+     * @param putResourcePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutResourcePolicy operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutResourcePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest putResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<PutResourcePolicyRequest, PutResourcePolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -5191,9 +5570,9 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * required for your <code>UpdateAssociation</code> call.
      * </p>
      * <p>
-     * In order to call this API operation, your Identity and Access Management (IAM) user account, group, or role must
-     * be configured with permission to call the <a>DescribeAssociation</a> API operation. If you don't have permission
-     * to call <code>DescribeAssociation</code>, then you receive the following error:
+     * In order to call this API operation, a user, group, or role must be granted permission to call the
+     * <a>DescribeAssociation</a> API operation. If you don't have permission to call <code>DescribeAssociation</code>,
+     * then you receive the following error:
      * <code>An error occurred (AccessDeniedException) when calling the UpdateAssociation operation: User: &lt;user_arn&gt; isn't authorized to perform: ssm:DescribeAssociation on resource: &lt;resource_arn&gt;</code>
      * </p>
      * <important>
@@ -5222,9 +5601,9 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * required for your <code>UpdateAssociation</code> call.
      * </p>
      * <p>
-     * In order to call this API operation, your Identity and Access Management (IAM) user account, group, or role must
-     * be configured with permission to call the <a>DescribeAssociation</a> API operation. If you don't have permission
-     * to call <code>DescribeAssociation</code>, then you receive the following error:
+     * In order to call this API operation, a user, group, or role must be granted permission to call the
+     * <a>DescribeAssociation</a> API operation. If you don't have permission to call <code>DescribeAssociation</code>,
+     * then you receive the following error:
      * <code>An error occurred (AccessDeniedException) when calling the UpdateAssociation operation: User: &lt;user_arn&gt; isn't authorized to perform: ssm:DescribeAssociation on resource: &lt;resource_arn&gt;</code>
      * </p>
      * <important>
@@ -5755,15 +6134,15 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Edit or change an OpsItem. You must have permission in Identity and Access Management (IAM) to update an OpsItem.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-     * started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set up OpsCenter</a> in
+     * the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <p>
      * Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate,
      * and remediate operational issues impacting the performance and health of their Amazon Web Services resources. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a> in the <i>Amazon
-     * Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">Amazon Web Services Systems
+     * Manager OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param updateOpsItemRequest
@@ -5778,15 +6157,15 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Edit or change an OpsItem. You must have permission in Identity and Access Management (IAM) to update an OpsItem.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting
-     * started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set up OpsCenter</a> in
+     * the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <p>
      * Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate,
      * and remediate operational issues impacting the performance and health of their Amazon Web Services resources. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a> in the <i>Amazon
-     * Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">Amazon Web Services Systems
+     * Manager OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param updateOpsItemRequest

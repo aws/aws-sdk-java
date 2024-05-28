@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -88,6 +88,42 @@ public class CreateNatGatewayRequestMarshaller implements Marshaller<Request<Cre
 
         if (createNatGatewayRequest.getConnectivityType() != null) {
             request.addParameter("ConnectivityType", StringUtils.fromString(createNatGatewayRequest.getConnectivityType()));
+        }
+
+        if (createNatGatewayRequest.getPrivateIpAddress() != null) {
+            request.addParameter("PrivateIpAddress", StringUtils.fromString(createNatGatewayRequest.getPrivateIpAddress()));
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> createNatGatewayRequestSecondaryAllocationIdsList = (com.amazonaws.internal.SdkInternalList<String>) createNatGatewayRequest
+                .getSecondaryAllocationIds();
+        if (!createNatGatewayRequestSecondaryAllocationIdsList.isEmpty() || !createNatGatewayRequestSecondaryAllocationIdsList.isAutoConstruct()) {
+            int secondaryAllocationIdsListIndex = 1;
+
+            for (String createNatGatewayRequestSecondaryAllocationIdsListValue : createNatGatewayRequestSecondaryAllocationIdsList) {
+                if (createNatGatewayRequestSecondaryAllocationIdsListValue != null) {
+                    request.addParameter("SecondaryAllocationId." + secondaryAllocationIdsListIndex,
+                            StringUtils.fromString(createNatGatewayRequestSecondaryAllocationIdsListValue));
+                }
+                secondaryAllocationIdsListIndex++;
+            }
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> createNatGatewayRequestSecondaryPrivateIpAddressesList = (com.amazonaws.internal.SdkInternalList<String>) createNatGatewayRequest
+                .getSecondaryPrivateIpAddresses();
+        if (!createNatGatewayRequestSecondaryPrivateIpAddressesList.isEmpty() || !createNatGatewayRequestSecondaryPrivateIpAddressesList.isAutoConstruct()) {
+            int secondaryPrivateIpAddressesListIndex = 1;
+
+            for (String createNatGatewayRequestSecondaryPrivateIpAddressesListValue : createNatGatewayRequestSecondaryPrivateIpAddressesList) {
+                if (createNatGatewayRequestSecondaryPrivateIpAddressesListValue != null) {
+                    request.addParameter("SecondaryPrivateIpAddress." + secondaryPrivateIpAddressesListIndex,
+                            StringUtils.fromString(createNatGatewayRequestSecondaryPrivateIpAddressesListValue));
+                }
+                secondaryPrivateIpAddressesListIndex++;
+            }
+        }
+
+        if (createNatGatewayRequest.getSecondaryPrivateIpAddressCount() != null) {
+            request.addParameter("SecondaryPrivateIpAddressCount", StringUtils.fromInteger(createNatGatewayRequest.getSecondaryPrivateIpAddressCount()));
         }
 
         return request;

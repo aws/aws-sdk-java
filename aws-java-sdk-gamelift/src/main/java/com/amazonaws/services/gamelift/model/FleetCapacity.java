@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,17 +19,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Current resource capacity settings in a specified fleet or location. The location value might refer to a fleet's
- * remote location or its home Region.
+ * Current resource capacity settings for managed EC2 fleets and container fleets. For multi-location fleets, location
+ * values might refer to a fleet's remote location or its home Region.
  * </p>
  * <p>
- * <b>Related actions</b>
- * </p>
- * <p>
- * <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html">
- * DescribeFleetCapacity</a> | <a
+ * <b>Returned by:</b> <a
+ * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html">
+ * DescribeFleetCapacity</a>, <a
  * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html"
- * >DescribeFleetLocationCapacity</a> | <a
+ * >DescribeFleetLocationCapacity</a>, <a
  * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetCapacity.html">UpdateFleetCapacity</a>
  * </p>
  * 
@@ -48,15 +46,16 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
-     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
+     * .
      * </p>
      */
     private String fleetArn;
     /**
      * <p>
-     * The Amazon EC2 instance type that is used for all instances in a fleet. The instance type determines the
-     * computing resources in use, including CPU, memory, storage, and networking capacity. See <a
+     * The Amazon EC2 instance type that is used for instances in a fleet. Instance type determines the computing
+     * resources in use, including CPU, memory, storage, and networking capacity. See <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed
      * descriptions.
      * </p>
@@ -64,7 +63,9 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
     private String instanceType;
     /**
      * <p>
-     * The current instance count and capacity settings for the fleet location.
+     * The current number of instances in the fleet, listed by instance status. Counts for pending and terminating
+     * instances might be non-zero if the fleet is adjusting to a scaling event or if access to resources is temporarily
+     * affected.
      * </p>
      */
     private EC2InstanceCounts instanceCounts;
@@ -75,6 +76,13 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String location;
+    /**
+     * <p>
+     * <b>This property is used with the Amazon GameLift containers feature, which is currently in public preview.</b>
+     * The number and status of replica container groups in a container fleet.
+     * </p>
+     */
+    private ReplicaContainerGroupCounts replicaContainerGroupCounts;
 
     /**
      * <p>
@@ -119,14 +127,15 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
-     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
+     * .
      * </p>
      * 
      * @param fleetArn
      *        The Amazon Resource Name (<a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
-     *        GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *        Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
      *        <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      */
 
@@ -137,13 +146,14 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
-     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
+     * .
      * </p>
      * 
      * @return The Amazon Resource Name (<a
      *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
-     *         GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *         Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
      *         <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      */
 
@@ -154,14 +164,15 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
-     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all
+     * Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
+     * .
      * </p>
      * 
      * @param fleetArn
      *        The Amazon Resource Name (<a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
-     *        GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *        Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
      *        <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -173,15 +184,15 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon EC2 instance type that is used for all instances in a fleet. The instance type determines the
-     * computing resources in use, including CPU, memory, storage, and networking capacity. See <a
+     * The Amazon EC2 instance type that is used for instances in a fleet. Instance type determines the computing
+     * resources in use, including CPU, memory, storage, and networking capacity. See <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed
      * descriptions.
      * </p>
      * 
      * @param instanceType
-     *        The Amazon EC2 instance type that is used for all instances in a fleet. The instance type determines the
-     *        computing resources in use, including CPU, memory, storage, and networking capacity. See <a
+     *        The Amazon EC2 instance type that is used for instances in a fleet. Instance type determines the computing
+     *        resources in use, including CPU, memory, storage, and networking capacity. See <a
      *        href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for
      *        detailed descriptions.
      * @see EC2InstanceType
@@ -193,13 +204,13 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon EC2 instance type that is used for all instances in a fleet. The instance type determines the
-     * computing resources in use, including CPU, memory, storage, and networking capacity. See <a
+     * The Amazon EC2 instance type that is used for instances in a fleet. Instance type determines the computing
+     * resources in use, including CPU, memory, storage, and networking capacity. See <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed
      * descriptions.
      * </p>
      * 
-     * @return The Amazon EC2 instance type that is used for all instances in a fleet. The instance type determines the
+     * @return The Amazon EC2 instance type that is used for instances in a fleet. Instance type determines the
      *         computing resources in use, including CPU, memory, storage, and networking capacity. See <a
      *         href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for
      *         detailed descriptions.
@@ -212,15 +223,15 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon EC2 instance type that is used for all instances in a fleet. The instance type determines the
-     * computing resources in use, including CPU, memory, storage, and networking capacity. See <a
+     * The Amazon EC2 instance type that is used for instances in a fleet. Instance type determines the computing
+     * resources in use, including CPU, memory, storage, and networking capacity. See <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed
      * descriptions.
      * </p>
      * 
      * @param instanceType
-     *        The Amazon EC2 instance type that is used for all instances in a fleet. The instance type determines the
-     *        computing resources in use, including CPU, memory, storage, and networking capacity. See <a
+     *        The Amazon EC2 instance type that is used for instances in a fleet. Instance type determines the computing
+     *        resources in use, including CPU, memory, storage, and networking capacity. See <a
      *        href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for
      *        detailed descriptions.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -234,15 +245,15 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon EC2 instance type that is used for all instances in a fleet. The instance type determines the
-     * computing resources in use, including CPU, memory, storage, and networking capacity. See <a
+     * The Amazon EC2 instance type that is used for instances in a fleet. Instance type determines the computing
+     * resources in use, including CPU, memory, storage, and networking capacity. See <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed
      * descriptions.
      * </p>
      * 
      * @param instanceType
-     *        The Amazon EC2 instance type that is used for all instances in a fleet. The instance type determines the
-     *        computing resources in use, including CPU, memory, storage, and networking capacity. See <a
+     *        The Amazon EC2 instance type that is used for instances in a fleet. Instance type determines the computing
+     *        resources in use, including CPU, memory, storage, and networking capacity. See <a
      *        href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for
      *        detailed descriptions.
      * @see EC2InstanceType
@@ -254,15 +265,15 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon EC2 instance type that is used for all instances in a fleet. The instance type determines the
-     * computing resources in use, including CPU, memory, storage, and networking capacity. See <a
+     * The Amazon EC2 instance type that is used for instances in a fleet. Instance type determines the computing
+     * resources in use, including CPU, memory, storage, and networking capacity. See <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for detailed
      * descriptions.
      * </p>
      * 
      * @param instanceType
-     *        The Amazon EC2 instance type that is used for all instances in a fleet. The instance type determines the
-     *        computing resources in use, including CPU, memory, storage, and networking capacity. See <a
+     *        The Amazon EC2 instance type that is used for instances in a fleet. Instance type determines the computing
+     *        resources in use, including CPU, memory, storage, and networking capacity. See <a
      *        href="http://aws.amazon.com/ec2/instance-types/">Amazon Elastic Compute Cloud Instance Types</a> for
      *        detailed descriptions.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -276,11 +287,15 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current instance count and capacity settings for the fleet location.
+     * The current number of instances in the fleet, listed by instance status. Counts for pending and terminating
+     * instances might be non-zero if the fleet is adjusting to a scaling event or if access to resources is temporarily
+     * affected.
      * </p>
      * 
      * @param instanceCounts
-     *        The current instance count and capacity settings for the fleet location.
+     *        The current number of instances in the fleet, listed by instance status. Counts for pending and
+     *        terminating instances might be non-zero if the fleet is adjusting to a scaling event or if access to
+     *        resources is temporarily affected.
      */
 
     public void setInstanceCounts(EC2InstanceCounts instanceCounts) {
@@ -289,10 +304,14 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current instance count and capacity settings for the fleet location.
+     * The current number of instances in the fleet, listed by instance status. Counts for pending and terminating
+     * instances might be non-zero if the fleet is adjusting to a scaling event or if access to resources is temporarily
+     * affected.
      * </p>
      * 
-     * @return The current instance count and capacity settings for the fleet location.
+     * @return The current number of instances in the fleet, listed by instance status. Counts for pending and
+     *         terminating instances might be non-zero if the fleet is adjusting to a scaling event or if access to
+     *         resources is temporarily affected.
      */
 
     public EC2InstanceCounts getInstanceCounts() {
@@ -301,11 +320,15 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current instance count and capacity settings for the fleet location.
+     * The current number of instances in the fleet, listed by instance status. Counts for pending and terminating
+     * instances might be non-zero if the fleet is adjusting to a scaling event or if access to resources is temporarily
+     * affected.
      * </p>
      * 
      * @param instanceCounts
-     *        The current instance count and capacity settings for the fleet location.
+     *        The current number of instances in the fleet, listed by instance status. Counts for pending and
+     *        terminating instances might be non-zero if the fleet is adjusting to a scaling event or if access to
+     *        resources is temporarily affected.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -361,6 +384,52 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * <b>This property is used with the Amazon GameLift containers feature, which is currently in public preview.</b>
+     * The number and status of replica container groups in a container fleet.
+     * </p>
+     * 
+     * @param replicaContainerGroupCounts
+     *        <b>This property is used with the Amazon GameLift containers feature, which is currently in public
+     *        preview.</b> The number and status of replica container groups in a container fleet.
+     */
+
+    public void setReplicaContainerGroupCounts(ReplicaContainerGroupCounts replicaContainerGroupCounts) {
+        this.replicaContainerGroupCounts = replicaContainerGroupCounts;
+    }
+
+    /**
+     * <p>
+     * <b>This property is used with the Amazon GameLift containers feature, which is currently in public preview.</b>
+     * The number and status of replica container groups in a container fleet.
+     * </p>
+     * 
+     * @return <b>This property is used with the Amazon GameLift containers feature, which is currently in public
+     *         preview.</b> The number and status of replica container groups in a container fleet.
+     */
+
+    public ReplicaContainerGroupCounts getReplicaContainerGroupCounts() {
+        return this.replicaContainerGroupCounts;
+    }
+
+    /**
+     * <p>
+     * <b>This property is used with the Amazon GameLift containers feature, which is currently in public preview.</b>
+     * The number and status of replica container groups in a container fleet.
+     * </p>
+     * 
+     * @param replicaContainerGroupCounts
+     *        <b>This property is used with the Amazon GameLift containers feature, which is currently in public
+     *        preview.</b> The number and status of replica container groups in a container fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FleetCapacity withReplicaContainerGroupCounts(ReplicaContainerGroupCounts replicaContainerGroupCounts) {
+        setReplicaContainerGroupCounts(replicaContainerGroupCounts);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -381,7 +450,9 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
         if (getInstanceCounts() != null)
             sb.append("InstanceCounts: ").append(getInstanceCounts()).append(",");
         if (getLocation() != null)
-            sb.append("Location: ").append(getLocation());
+            sb.append("Location: ").append(getLocation()).append(",");
+        if (getReplicaContainerGroupCounts() != null)
+            sb.append("ReplicaContainerGroupCounts: ").append(getReplicaContainerGroupCounts());
         sb.append("}");
         return sb.toString();
     }
@@ -416,6 +487,10 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
             return false;
+        if (other.getReplicaContainerGroupCounts() == null ^ this.getReplicaContainerGroupCounts() == null)
+            return false;
+        if (other.getReplicaContainerGroupCounts() != null && other.getReplicaContainerGroupCounts().equals(this.getReplicaContainerGroupCounts()) == false)
+            return false;
         return true;
     }
 
@@ -429,6 +504,7 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getInstanceCounts() == null) ? 0 : getInstanceCounts().hashCode());
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
+        hashCode = prime * hashCode + ((getReplicaContainerGroupCounts() == null) ? 0 : getReplicaContainerGroupCounts().hashCode());
         return hashCode;
     }
 

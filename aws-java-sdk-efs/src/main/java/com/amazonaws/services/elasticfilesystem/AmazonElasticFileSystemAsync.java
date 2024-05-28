@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,8 +48,23 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting a file system using EFS access
      * points</a>.
      * </p>
+     * <note>
+     * <p>
+     * If multiple requests to create access points on the same file system are sent in quick succession, and the file
+     * system is near the limit of 1,000 access points, you may experience a throttling response for these requests.
+     * This is to ensure that the file system does not exceed the stated access point limit.
+     * </p>
+     * </note>
      * <p>
      * This operation requires permissions for the <code>elasticfilesystem:CreateAccessPoint</code> action.
+     * </p>
+     * <p>
+     * Access points can be tagged on creation. If tags are specified in the creation action, IAM performs additional
+     * authorization on the <code>elasticfilesystem:TagResource</code> action to verify if users have permissions to
+     * create tags. Therefore, you must grant explicit permissions to use the <code>elasticfilesystem:TagResource</code>
+     * action. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/using-tags-efs.html#supported-iam-actions-tagging.html">Granting
+     * permissions to tag resources during creation</a>.
      * </p>
      * 
      * @param createAccessPointRequest
@@ -70,8 +85,23 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting a file system using EFS access
      * points</a>.
      * </p>
+     * <note>
+     * <p>
+     * If multiple requests to create access points on the same file system are sent in quick succession, and the file
+     * system is near the limit of 1,000 access points, you may experience a throttling response for these requests.
+     * This is to ensure that the file system does not exceed the stated access point limit.
+     * </p>
+     * </note>
      * <p>
      * This operation requires permissions for the <code>elasticfilesystem:CreateAccessPoint</code> action.
+     * </p>
+     * <p>
+     * Access points can be tagged on creation. If tags are specified in the creation action, IAM performs additional
+     * authorization on the <code>elasticfilesystem:TagResource</code> action to verify if users have permissions to
+     * create tags. Therefore, you must grant explicit permissions to use the <code>elasticfilesystem:TagResource</code>
+     * action. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/using-tags-efs.html#supported-iam-actions-tagging.html">Granting
+     * permissions to tag resources during creation</a>.
      * </p>
      * 
      * @param createAccessPointRequest
@@ -137,10 +167,19 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * </note>
      * <p>
      * This operation accepts an optional <code>PerformanceMode</code> parameter that you choose for your file system.
-     * We recommend <code>generalPurpose</code> performance mode for most file systems. File systems using the
-     * <code>maxIO</code> performance mode can scale to higher levels of aggregate throughput and operations per second
-     * with a tradeoff of slightly higher latencies for most file operations. The performance mode can't be changed
-     * after the file system has been created. For more information, see <a
+     * We recommend <code>generalPurpose</code> performance mode for all file systems. File systems using the
+     * <code>maxIO</code> mode is a previous generation performance type that is designed for highly parallelized
+     * workloads that can tolerate higher latencies than the General Purpose mode. Max I/O mode is not supported for One
+     * Zone file systems or file systems that use Elastic throughput.
+     * </p>
+     * <important>
+     * <p>
+     * Due to the higher per-operation latencies with Max I/O, we recommend using General Purpose performance mode for
+     * all file systems.
+     * </p>
+     * </important>
+     * <p>
+     * The performance mode can't be changed after the file system has been created. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#performancemodes.html">Amazon EFS performance
      * modes</a>.
      * </p>
@@ -156,6 +195,14 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * </p>
      * <p>
      * This operation requires permissions for the <code>elasticfilesystem:CreateFileSystem</code> action.
+     * </p>
+     * <p>
+     * File systems can be tagged on creation. If tags are specified in the creation action, IAM performs additional
+     * authorization on the <code>elasticfilesystem:TagResource</code> action to verify if users have permissions to
+     * create tags. Therefore, you must grant explicit permissions to use the <code>elasticfilesystem:TagResource</code>
+     * action. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/using-tags-efs.html#supported-iam-actions-tagging.html">Granting
+     * permissions to tag resources during creation</a>.
      * </p>
      * 
      * @param createFileSystemRequest
@@ -216,10 +263,19 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * </note>
      * <p>
      * This operation accepts an optional <code>PerformanceMode</code> parameter that you choose for your file system.
-     * We recommend <code>generalPurpose</code> performance mode for most file systems. File systems using the
-     * <code>maxIO</code> performance mode can scale to higher levels of aggregate throughput and operations per second
-     * with a tradeoff of slightly higher latencies for most file operations. The performance mode can't be changed
-     * after the file system has been created. For more information, see <a
+     * We recommend <code>generalPurpose</code> performance mode for all file systems. File systems using the
+     * <code>maxIO</code> mode is a previous generation performance type that is designed for highly parallelized
+     * workloads that can tolerate higher latencies than the General Purpose mode. Max I/O mode is not supported for One
+     * Zone file systems or file systems that use Elastic throughput.
+     * </p>
+     * <important>
+     * <p>
+     * Due to the higher per-operation latencies with Max I/O, we recommend using General Purpose performance mode for
+     * all file systems.
+     * </p>
+     * </important>
+     * <p>
+     * The performance mode can't be changed after the file system has been created. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#performancemodes.html">Amazon EFS performance
      * modes</a>.
      * </p>
@@ -235,6 +291,14 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * </p>
      * <p>
      * This operation requires permissions for the <code>elasticfilesystem:CreateFileSystem</code> action.
+     * </p>
+     * <p>
+     * File systems can be tagged on creation. If tags are specified in the creation action, IAM performs additional
+     * authorization on the <code>elasticfilesystem:TagResource</code> action to verify if users have permissions to
+     * create tags. Therefore, you must grant explicit permissions to use the <code>elasticfilesystem:TagResource</code>
+     * action. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/using-tags-efs.html#supported-iam-actions-tagging.html">Granting
+     * permissions to tag resources during creation</a>.
      * </p>
      * 
      * @param createFileSystemRequest
@@ -262,11 +326,11 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * subnet as the mount target in order to access their file system.
      * </p>
      * <p>
-     * You can create only one mount target for an EFS file system using One Zone storage classes. You must create that
-     * mount target in the same Availability Zone in which the file system is located. Use the
-     * <code>AvailabilityZoneName</code> and <code>AvailabiltyZoneId</code> properties in the <a>DescribeFileSystems</a>
-     * response object to get this information. Use the <code>subnetId</code> associated with the file system's
-     * Availability Zone when creating the mount target.
+     * You can create only one mount target for a One Zone file system. You must create that mount target in the same
+     * Availability Zone in which the file system is located. Use the <code>AvailabilityZoneName</code> and
+     * <code>AvailabiltyZoneId</code> properties in the <a>DescribeFileSystems</a> response object to get this
+     * information. Use the <code>subnetId</code> associated with the file system's Availability Zone when creating the
+     * mount target.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon EFS: How
@@ -448,11 +512,11 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * subnet as the mount target in order to access their file system.
      * </p>
      * <p>
-     * You can create only one mount target for an EFS file system using One Zone storage classes. You must create that
-     * mount target in the same Availability Zone in which the file system is located. Use the
-     * <code>AvailabilityZoneName</code> and <code>AvailabiltyZoneId</code> properties in the <a>DescribeFileSystems</a>
-     * response object to get this information. Use the <code>subnetId</code> associated with the file system's
-     * Availability Zone when creating the mount target.
+     * You can create only one mount target for a One Zone file system. You must create that mount target in the same
+     * Availability Zone in which the file system is located. Use the <code>AvailabilityZoneName</code> and
+     * <code>AvailabiltyZoneId</code> properties in the <a>DescribeFileSystems</a> response object to get this
+     * information. Use the <code>subnetId</code> associated with the file system's Availability Zone when creating the
+     * mount target.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon EFS: How
@@ -636,36 +700,49 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * <ul>
      * <li>
      * <p>
-     * <b>Source file system</b> - An existing EFS file system that you want replicated. The source file system cannot
-     * be a destination file system in an existing replication configuration.
+     * <b>Source file system</b> – The EFS file system that you want replicated. The source file system cannot be a
+     * destination file system in an existing replication configuration.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Destination file system configuration</b> - The configuration of the destination file system to which the
+     * <b>Amazon Web Services Region</b> – The Amazon Web Services Region in which the destination file system is
+     * created. Amazon EFS replication is available in all Amazon Web Services Regions in which EFS is available. The
+     * Region must be enabled. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing Amazon Web
+     * Services Regions</a> in the <i>Amazon Web Services General Reference Reference Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Destination file system configuration</b> – The configuration of the destination file system to which the
      * source file system will be replicated. There can only be one destination file system in a replication
-     * configuration. The destination file system configuration consists of the following properties:
+     * configuration.
+     * </p>
+     * <p>
+     * Parameters for the replication configuration include:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>Amazon Web Services Region</b> - The Amazon Web Services Region in which the destination file system is
-     * created. Amazon EFS replication is available in all Amazon Web Services Regions that Amazon EFS is available in,
-     * except Africa (Cape Town), Asia Pacific (Hong Kong), Asia Pacific (Jakarta), Europe (Milan), and Middle East
-     * (Bahrain).
+     * <b>File system ID</b> – The ID of the destination file system for the replication. If no ID is provided, then EFS
+     * creates a new file system with the default settings. For existing file systems, the file system's replication
+     * overwrite protection must be disabled. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication#replicate-existing-destination"> Replicating to
+     * an existing file system</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Availability Zone</b> - If you want the destination file system to use EFS One Zone availability and
-     * durability, you must specify the Availability Zone to create the file system in. For more information about EFS
-     * storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html"> Amazon EFS storage
-     * classes</a> in the <i>Amazon EFS User Guide</i>.
+     * <b>Availability Zone</b> – If you want the destination file system to use One Zone storage, you must specify the
+     * Availability Zone to create the file system in. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html"> EFS file system types</a> in the <i>Amazon
+     * EFS User Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Encryption</b> - All destination file systems are created with encryption at rest enabled. You can specify the
+     * <b>Encryption</b> – All destination file systems are created with encryption at rest enabled. You can specify the
      * Key Management Service (KMS) key that is used to encrypt the destination file system. If you don't specify a KMS
      * key, your service-managed KMS key for Amazon EFS is used.
      * </p>
@@ -677,8 +754,13 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * </ul>
      * </li>
      * </ul>
+     * <note>
      * <p>
-     * The following properties are set by default:
+     * After the file system is created, you cannot change the KMS key.
+     * </p>
+     * </note>
+     * <p>
+     * For new destination file systems, the following properties are set by default:
      * </p>
      * <ul>
      * <li>
@@ -690,25 +772,21 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * </li>
      * <li>
      * <p>
-     * <b>Throughput mode</b> - The destination file system uses the Bursting Throughput mode by default. After the file
-     * system is created, you can modify the throughput mode.
+     * <b>Throughput mode</b> - The destination file system's throughput mode matches that of the source file system.
+     * After the file system is created, you can modify the throughput mode.
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * The following properties are turned off by default:
-     * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>Lifecycle management</b> - EFS lifecycle management and EFS Intelligent-Tiering are not enabled on the
-     * destination file system. After the destination file system is created, you can enable EFS lifecycle management
-     * and EFS Intelligent-Tiering.
+     * <b>Lifecycle management</b> – Lifecycle management is not enabled on the destination file system. After the
+     * destination file system is created, you can enable lifecycle management.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Automatic backups</b> - Automatic daily backups not enabled on the destination file system. After the file
+     * <b>Automatic backups</b> – Automatic daily backups are enabled on the destination file system. After the file
      * system is created, you can change this setting.
      * </p>
      * </li>
@@ -737,36 +815,49 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * <ul>
      * <li>
      * <p>
-     * <b>Source file system</b> - An existing EFS file system that you want replicated. The source file system cannot
-     * be a destination file system in an existing replication configuration.
+     * <b>Source file system</b> – The EFS file system that you want replicated. The source file system cannot be a
+     * destination file system in an existing replication configuration.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Destination file system configuration</b> - The configuration of the destination file system to which the
+     * <b>Amazon Web Services Region</b> – The Amazon Web Services Region in which the destination file system is
+     * created. Amazon EFS replication is available in all Amazon Web Services Regions in which EFS is available. The
+     * Region must be enabled. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing Amazon Web
+     * Services Regions</a> in the <i>Amazon Web Services General Reference Reference Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Destination file system configuration</b> – The configuration of the destination file system to which the
      * source file system will be replicated. There can only be one destination file system in a replication
-     * configuration. The destination file system configuration consists of the following properties:
+     * configuration.
+     * </p>
+     * <p>
+     * Parameters for the replication configuration include:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>Amazon Web Services Region</b> - The Amazon Web Services Region in which the destination file system is
-     * created. Amazon EFS replication is available in all Amazon Web Services Regions that Amazon EFS is available in,
-     * except Africa (Cape Town), Asia Pacific (Hong Kong), Asia Pacific (Jakarta), Europe (Milan), and Middle East
-     * (Bahrain).
+     * <b>File system ID</b> – The ID of the destination file system for the replication. If no ID is provided, then EFS
+     * creates a new file system with the default settings. For existing file systems, the file system's replication
+     * overwrite protection must be disabled. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication#replicate-existing-destination"> Replicating to
+     * an existing file system</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Availability Zone</b> - If you want the destination file system to use EFS One Zone availability and
-     * durability, you must specify the Availability Zone to create the file system in. For more information about EFS
-     * storage classes, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html"> Amazon EFS storage
-     * classes</a> in the <i>Amazon EFS User Guide</i>.
+     * <b>Availability Zone</b> – If you want the destination file system to use One Zone storage, you must specify the
+     * Availability Zone to create the file system in. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html"> EFS file system types</a> in the <i>Amazon
+     * EFS User Guide</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Encryption</b> - All destination file systems are created with encryption at rest enabled. You can specify the
+     * <b>Encryption</b> – All destination file systems are created with encryption at rest enabled. You can specify the
      * Key Management Service (KMS) key that is used to encrypt the destination file system. If you don't specify a KMS
      * key, your service-managed KMS key for Amazon EFS is used.
      * </p>
@@ -778,8 +869,13 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * </ul>
      * </li>
      * </ul>
+     * <note>
      * <p>
-     * The following properties are set by default:
+     * After the file system is created, you cannot change the KMS key.
+     * </p>
+     * </note>
+     * <p>
+     * For new destination file systems, the following properties are set by default:
      * </p>
      * <ul>
      * <li>
@@ -791,25 +887,21 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * </li>
      * <li>
      * <p>
-     * <b>Throughput mode</b> - The destination file system uses the Bursting Throughput mode by default. After the file
-     * system is created, you can modify the throughput mode.
+     * <b>Throughput mode</b> - The destination file system's throughput mode matches that of the source file system.
+     * After the file system is created, you can modify the throughput mode.
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * The following properties are turned off by default:
-     * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>Lifecycle management</b> - EFS lifecycle management and EFS Intelligent-Tiering are not enabled on the
-     * destination file system. After the destination file system is created, you can enable EFS lifecycle management
-     * and EFS Intelligent-Tiering.
+     * <b>Lifecycle management</b> – Lifecycle management is not enabled on the destination file system. After the
+     * destination file system is created, you can enable lifecycle management.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Automatic backups</b> - Automatic daily backups not enabled on the destination file system. After the file
+     * <b>Automatic backups</b> – Automatic daily backups are enabled on the destination file system. After the file
      * system is created, you can change this setting.
      * </p>
      * </li>
@@ -1165,11 +1257,13 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
 
     /**
      * <p>
-     * Deletes an existing replication configuration. To delete a replication configuration, you must make the request
-     * from the Amazon Web Services Region in which the destination file system is located. Deleting a replication
-     * configuration ends the replication process. After a replication configuration is deleted, the destination file
-     * system is no longer read-only. You can write to the destination file system after its status becomes
-     * <code>Writeable</code>.
+     * Deletes a replication configuration. Deleting a replication configuration ends the replication process. After a
+     * replication configuration is deleted, the destination file system becomes <code>Writeable</code> and its
+     * replication overwrite protection is re-enabled. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/delete-replications.html">Delete a replication configuration</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>elasticfilesystem:DeleteReplicationConfiguration</code> action.
      * </p>
      * 
      * @param deleteReplicationConfigurationRequest
@@ -1184,11 +1278,13 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
 
     /**
      * <p>
-     * Deletes an existing replication configuration. To delete a replication configuration, you must make the request
-     * from the Amazon Web Services Region in which the destination file system is located. Deleting a replication
-     * configuration ends the replication process. After a replication configuration is deleted, the destination file
-     * system is no longer read-only. You can write to the destination file system after its status becomes
-     * <code>Writeable</code>.
+     * Deletes a replication configuration. Deleting a replication configuration ends the replication process. After a
+     * replication configuration is deleted, the destination file system becomes <code>Writeable</code> and its
+     * replication overwrite protection is re-enabled. For more information, see <a
+     * href="https://docs.aws.amazon.com/efs/latest/ug/delete-replications.html">Delete a replication configuration</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>elasticfilesystem:DeleteReplicationConfiguration</code> action.
      * </p>
      * 
      * @param deleteReplicationConfigurationRequest
@@ -1307,8 +1403,7 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
     /**
      * <p>
      * Returns the account preferences settings for the Amazon Web Services account associated with the user making the
-     * request, in the current Amazon Web Services Region. For more information, see <a
-     * href="efs/latest/ug/manage-efs-resource-ids.html">Managing Amazon EFS resource IDs</a>.
+     * request, in the current Amazon Web Services Region.
      * </p>
      * 
      * @param describeAccountPreferencesRequest
@@ -1323,8 +1418,7 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
     /**
      * <p>
      * Returns the account preferences settings for the Amazon Web Services account associated with the user making the
-     * request, in the current Amazon Web Services Region. For more information, see <a
-     * href="efs/latest/ug/manage-efs-resource-ids.html">Managing Amazon EFS resource IDs</a>.
+     * request, in the current Amazon Web Services Region.
      * </p>
      * 
      * @param describeAccountPreferencesRequest
@@ -1417,10 +1511,10 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * </p>
      * <p>
      * When retrieving all file system descriptions, you can optionally specify the <code>MaxItems</code> parameter to
-     * limit the number of descriptions in a response. Currently, this number is automatically set to 10. If more file
-     * system descriptions remain, Amazon EFS returns a <code>NextMarker</code>, an opaque token, in the response. In
-     * this case, you should send a subsequent request with the <code>Marker</code> request parameter set to the value
-     * of <code>NextMarker</code>.
+     * limit the number of descriptions in a response. This number is automatically set to 100. If more file system
+     * descriptions remain, Amazon EFS returns a <code>NextMarker</code>, an opaque token, in the response. In this
+     * case, you should send a subsequent request with the <code>Marker</code> request parameter set to the value of
+     * <code>NextMarker</code>.
      * </p>
      * <p>
      * To retrieve a list of your file system descriptions, this operation is used in an iterative process, where
@@ -1452,10 +1546,10 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * </p>
      * <p>
      * When retrieving all file system descriptions, you can optionally specify the <code>MaxItems</code> parameter to
-     * limit the number of descriptions in a response. Currently, this number is automatically set to 10. If more file
-     * system descriptions remain, Amazon EFS returns a <code>NextMarker</code>, an opaque token, in the response. In
-     * this case, you should send a subsequent request with the <code>Marker</code> request parameter set to the value
-     * of <code>NextMarker</code>.
+     * limit the number of descriptions in a response. This number is automatically set to 100. If more file system
+     * descriptions remain, Amazon EFS returns a <code>NextMarker</code>, an opaque token, in the response. In this
+     * case, you should send a subsequent request with the <code>Marker</code> request parameter set to the value of
+     * <code>NextMarker</code>.
      * </p>
      * <p>
      * To retrieve a list of your file system descriptions, this operation is used in an iterative process, where
@@ -1501,14 +1595,10 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
 
     /**
      * <p>
-     * Returns the current <code>LifecycleConfiguration</code> object for the specified Amazon EFS file system. EFS
-     * lifecycle management uses the <code>LifecycleConfiguration</code> object to identify which files to move to the
-     * EFS Infrequent Access (IA) storage class. For a file system without a <code>LifecycleConfiguration</code> object,
-     * the call returns an empty array in the response.
-     * </p>
-     * <p>
-     * When EFS Intelligent-Tiering is enabled, <code>TransitionToPrimaryStorageClass</code> has a value of
-     * <code>AFTER_1_ACCESS</code>.
+     * Returns the current <code>LifecycleConfiguration</code> object for the specified Amazon EFS file system.
+     * Lifecycle management uses the <code>LifecycleConfiguration</code> object to identify when to move files between
+     * storage classes. For a file system without a <code>LifecycleConfiguration</code> object, the call returns an
+     * empty array in the response.
      * </p>
      * <p>
      * This operation requires permissions for the <code>elasticfilesystem:DescribeLifecycleConfiguration</code>
@@ -1527,14 +1617,10 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
 
     /**
      * <p>
-     * Returns the current <code>LifecycleConfiguration</code> object for the specified Amazon EFS file system. EFS
-     * lifecycle management uses the <code>LifecycleConfiguration</code> object to identify which files to move to the
-     * EFS Infrequent Access (IA) storage class. For a file system without a <code>LifecycleConfiguration</code> object,
-     * the call returns an empty array in the response.
-     * </p>
-     * <p>
-     * When EFS Intelligent-Tiering is enabled, <code>TransitionToPrimaryStorageClass</code> has a value of
-     * <code>AFTER_1_ACCESS</code>.
+     * Returns the current <code>LifecycleConfiguration</code> object for the specified Amazon EFS file system.
+     * Lifecycle management uses the <code>LifecycleConfiguration</code> object to identify when to move files between
+     * storage classes. For a file system without a <code>LifecycleConfiguration</code> object, the call returns an
+     * empty array in the response.
      * </p>
      * <p>
      * This operation requires permissions for the <code>elasticfilesystem:DescribeLifecycleConfiguration</code>
@@ -2031,56 +2117,61 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
 
     /**
      * <p>
-     * Use this action to manage EFS lifecycle management and intelligent tiering. A <code>LifecycleConfiguration</code>
-     * consists of one or more <code>LifecyclePolicy</code> objects that define the following:
+     * Use this action to manage storage for your file system. A <code>LifecycleConfiguration</code> consists of one or
+     * more <code>LifecyclePolicy</code> objects that define the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>EFS Lifecycle management</b> - When Amazon EFS automatically transitions files in a file system into the
-     * lower-cost Infrequent Access (IA) storage class.
-     * </p>
-     * <p>
-     * To enable EFS Lifecycle management, set the value of <code>TransitionToIA</code> to one of the available options.
+     * <b> <code>TransitionToIA</code> </b> – When to move files in the file system from primary storage (Standard
+     * storage class) into the Infrequent Access (IA) storage.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>EFS Intelligent tiering</b> - When Amazon EFS automatically transitions files from IA back into the file
-     * system's primary storage class (Standard or One Zone Standard.
+     * <b> <code>TransitionToArchive</code> </b> – When to move files in the file system from their current storage
+     * class (either IA or Standard storage) into the Archive storage.
      * </p>
      * <p>
-     * To enable EFS Intelligent Tiering, set the value of <code>TransitionToPrimaryStorageClass</code> to
-     * <code>AFTER_1_ACCESS</code>.
+     * File systems cannot transition into Archive storage before transitioning into IA storage. Therefore,
+     * TransitionToArchive must either not be set or must be later than TransitionToIA.
+     * </p>
+     * <note>
+     * <p>
+     * The Archive storage class is available only for file systems that use the Elastic Throughput mode and the General
+     * Purpose Performance mode.
+     * </p>
+     * </note></li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>TransitionToPrimaryStorageClass</code> </b> – Whether to move files in the file system back to primary
+     * storage (Standard storage class) after they are accessed in IA or Archive storage.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html">EFS
-     * Lifecycle Management</a>.
+     * For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html">
+     * Managing file system storage</a>.
      * </p>
      * <p>
      * Each Amazon EFS file system supports one lifecycle configuration, which applies to all files in the file system.
      * If a <code>LifecycleConfiguration</code> object already exists for the specified file system, a
      * <code>PutLifecycleConfiguration</code> call modifies the existing configuration. A
      * <code>PutLifecycleConfiguration</code> call with an empty <code>LifecyclePolicies</code> array in the request
-     * body deletes any existing <code>LifecycleConfiguration</code> and turns off lifecycle management and intelligent
-     * tiering for the file system.
-     * </p>
-     * <p>
-     * In the request, specify the following:
+     * body deletes any existing <code>LifecycleConfiguration</code>. In the request, specify the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The ID for the file system for which you are enabling, disabling, or modifying lifecycle management and
-     * intelligent tiering.
+     * The ID for the file system for which you are enabling, disabling, or modifying Lifecycle management.
      * </p>
      * </li>
      * <li>
      * <p>
-     * A <code>LifecyclePolicies</code> array of <code>LifecyclePolicy</code> objects that define when files are moved
-     * into IA storage, and when they are moved back to Standard storage.
+     * A <code>LifecyclePolicies</code> array of <code>LifecyclePolicy</code> objects that define when to move files to
+     * IA storage, to Archive storage, and back to primary storage.
      * </p>
      * <note>
      * <p>
@@ -2109,56 +2200,61 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
 
     /**
      * <p>
-     * Use this action to manage EFS lifecycle management and intelligent tiering. A <code>LifecycleConfiguration</code>
-     * consists of one or more <code>LifecyclePolicy</code> objects that define the following:
+     * Use this action to manage storage for your file system. A <code>LifecycleConfiguration</code> consists of one or
+     * more <code>LifecyclePolicy</code> objects that define the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>EFS Lifecycle management</b> - When Amazon EFS automatically transitions files in a file system into the
-     * lower-cost Infrequent Access (IA) storage class.
-     * </p>
-     * <p>
-     * To enable EFS Lifecycle management, set the value of <code>TransitionToIA</code> to one of the available options.
+     * <b> <code>TransitionToIA</code> </b> – When to move files in the file system from primary storage (Standard
+     * storage class) into the Infrequent Access (IA) storage.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>EFS Intelligent tiering</b> - When Amazon EFS automatically transitions files from IA back into the file
-     * system's primary storage class (Standard or One Zone Standard.
+     * <b> <code>TransitionToArchive</code> </b> – When to move files in the file system from their current storage
+     * class (either IA or Standard storage) into the Archive storage.
      * </p>
      * <p>
-     * To enable EFS Intelligent Tiering, set the value of <code>TransitionToPrimaryStorageClass</code> to
-     * <code>AFTER_1_ACCESS</code>.
+     * File systems cannot transition into Archive storage before transitioning into IA storage. Therefore,
+     * TransitionToArchive must either not be set or must be later than TransitionToIA.
+     * </p>
+     * <note>
+     * <p>
+     * The Archive storage class is available only for file systems that use the Elastic Throughput mode and the General
+     * Purpose Performance mode.
+     * </p>
+     * </note></li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>TransitionToPrimaryStorageClass</code> </b> – Whether to move files in the file system back to primary
+     * storage (Standard storage class) after they are accessed in IA or Archive storage.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html">EFS
-     * Lifecycle Management</a>.
+     * For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html">
+     * Managing file system storage</a>.
      * </p>
      * <p>
      * Each Amazon EFS file system supports one lifecycle configuration, which applies to all files in the file system.
      * If a <code>LifecycleConfiguration</code> object already exists for the specified file system, a
      * <code>PutLifecycleConfiguration</code> call modifies the existing configuration. A
      * <code>PutLifecycleConfiguration</code> call with an empty <code>LifecyclePolicies</code> array in the request
-     * body deletes any existing <code>LifecycleConfiguration</code> and turns off lifecycle management and intelligent
-     * tiering for the file system.
-     * </p>
-     * <p>
-     * In the request, specify the following:
+     * body deletes any existing <code>LifecycleConfiguration</code>. In the request, specify the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The ID for the file system for which you are enabling, disabling, or modifying lifecycle management and
-     * intelligent tiering.
+     * The ID for the file system for which you are enabling, disabling, or modifying Lifecycle management.
      * </p>
      * </li>
      * <li>
      * <p>
-     * A <code>LifecyclePolicies</code> array of <code>LifecyclePolicy</code> objects that define when files are moved
-     * into IA storage, and when they are moved back to Standard storage.
+     * A <code>LifecyclePolicies</code> array of <code>LifecyclePolicy</code> objects that define when to move files to
+     * IA storage, to Archive storage, and back to primary storage.
      * </p>
      * <note>
      * <p>
@@ -2298,5 +2394,44 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      */
     java.util.concurrent.Future<UpdateFileSystemResult> updateFileSystemAsync(UpdateFileSystemRequest updateFileSystemRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateFileSystemRequest, UpdateFileSystemResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates protection on the file system.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>elasticfilesystem:UpdateFileSystemProtection</code> action.
+     * </p>
+     * 
+     * @param updateFileSystemProtectionRequest
+     * @return A Java Future containing the result of the UpdateFileSystemProtection operation returned by the service.
+     * @sample AmazonElasticFileSystemAsync.UpdateFileSystemProtection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/UpdateFileSystemProtection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFileSystemProtectionResult> updateFileSystemProtectionAsync(
+            UpdateFileSystemProtectionRequest updateFileSystemProtectionRequest);
+
+    /**
+     * <p>
+     * Updates protection on the file system.
+     * </p>
+     * <p>
+     * This operation requires permissions for the <code>elasticfilesystem:UpdateFileSystemProtection</code> action.
+     * </p>
+     * 
+     * @param updateFileSystemProtectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateFileSystemProtection operation returned by the service.
+     * @sample AmazonElasticFileSystemAsyncHandler.UpdateFileSystemProtection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/UpdateFileSystemProtection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateFileSystemProtectionResult> updateFileSystemProtectionAsync(
+            UpdateFileSystemProtectionRequest updateFileSystemProtectionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateFileSystemProtectionRequest, UpdateFileSystemProtectionResult> asyncHandler);
 
 }

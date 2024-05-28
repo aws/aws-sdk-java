@@ -1,0 +1,139 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.datasync.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * Specifies the manifest that you want DataSync to use and where it's hosted. For more information and configuration
+ * examples, see <a
+ * href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what DataSync
+ * transfers by using a manifest</a>.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/SourceManifestConfig" target="_top">AWS API
+ *      Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class SourceManifestConfig implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * Specifies the S3 bucket where you're hosting your manifest.
+     * </p>
+     */
+    private S3ManifestConfig s3;
+
+    /**
+     * <p>
+     * Specifies the S3 bucket where you're hosting your manifest.
+     * </p>
+     * 
+     * @param s3
+     *        Specifies the S3 bucket where you're hosting your manifest.
+     */
+
+    public void setS3(S3ManifestConfig s3) {
+        this.s3 = s3;
+    }
+
+    /**
+     * <p>
+     * Specifies the S3 bucket where you're hosting your manifest.
+     * </p>
+     * 
+     * @return Specifies the S3 bucket where you're hosting your manifest.
+     */
+
+    public S3ManifestConfig getS3() {
+        return this.s3;
+    }
+
+    /**
+     * <p>
+     * Specifies the S3 bucket where you're hosting your manifest.
+     * </p>
+     * 
+     * @param s3
+     *        Specifies the S3 bucket where you're hosting your manifest.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SourceManifestConfig withS3(S3ManifestConfig s3) {
+        setS3(s3);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getS3() != null)
+            sb.append("S3: ").append(getS3());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof SourceManifestConfig == false)
+            return false;
+        SourceManifestConfig other = (SourceManifestConfig) obj;
+        if (other.getS3() == null ^ this.getS3() == null)
+            return false;
+        if (other.getS3() != null && other.getS3().equals(this.getS3()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getS3() == null) ? 0 : getS3().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public SourceManifestConfig clone() {
+        try {
+            return (SourceManifestConfig) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.datasync.model.transform.SourceManifestConfigMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

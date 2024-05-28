@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,17 +43,17 @@ import java.util.concurrent.ExecutorService;
  * </p>
  * </note>
  * <p>
- * WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to Amazon
- * CloudFront, an Amazon API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, or an Amazon
- * Cognito user pool. WAF also lets you control access to your content. Based on conditions that you specify, such as
- * the IP addresses that requests originate from or the values of query strings, the Amazon API Gateway REST API,
- * CloudFront distribution, the Application Load Balancer, the AppSync GraphQL API, or the Amazon Cognito user pool
- * responds to requests either with the requested content or with an HTTP 403 status code (Forbidden). You also can
- * configure CloudFront to return a custom error page when a request is blocked.
+ * WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to an Amazon
+ * CloudFront distribution, Amazon API Gateway REST API, Application Load Balancer, AppSync GraphQL API, Amazon Cognito
+ * user pool, App Runner service, or Amazon Web Services Verified Access instance. WAF also lets you control access to
+ * your content, to protect the Amazon Web Services resource that WAF is monitoring. Based on conditions that you
+ * specify, such as the IP addresses that requests originate from or the values of query strings, the protected resource
+ * responds to requests with either the requested content, an HTTP 403 status code (Forbidden), or with a custom
+ * response.
  * </p>
  * <p>
  * This API guide is for developers who need detailed information about WAF API actions, data types, and errors. For
- * detailed information about WAF features and an overview of how to use WAF, see the <a
+ * detailed information about WAF features and guidance for configuring and using WAF, see the <a
  * href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF Developer Guide</a>.
  * </p>
  * <p>
@@ -64,7 +64,8 @@ import java.util.concurrent.ExecutorService;
  * <li>
  * <p>
  * For regional applications, you can use any of the endpoints in the list. A regional application can be an Application
- * Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool.
+ * Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App
+ * Runner service, or an Amazon Web Services Verified Access instance.
  * </p>
  * </li>
  * <li>
@@ -214,6 +215,39 @@ public class AWSWAFV2AsyncClient extends AWSWAFV2Client implements AWSWAFV2Async
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAPIKeyResult> createAPIKeyAsync(CreateAPIKeyRequest request) {
+
+        return createAPIKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAPIKeyResult> createAPIKeyAsync(final CreateAPIKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAPIKeyRequest, CreateAPIKeyResult> asyncHandler) {
+        final CreateAPIKeyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateAPIKeyResult>() {
+            @Override
+            public CreateAPIKeyResult call() throws Exception {
+                CreateAPIKeyResult result = null;
+
+                try {
+                    result = executeCreateAPIKey(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateIPSetResult> createIPSetAsync(CreateIPSetRequest request) {
 
         return createIPSetAsync(request, null);
@@ -330,6 +364,39 @@ public class AWSWAFV2AsyncClient extends AWSWAFV2Client implements AWSWAFV2Async
 
                 try {
                     result = executeCreateWebACL(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAPIKeyResult> deleteAPIKeyAsync(DeleteAPIKeyRequest request) {
+
+        return deleteAPIKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAPIKeyResult> deleteAPIKeyAsync(final DeleteAPIKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAPIKeyRequest, DeleteAPIKeyResult> asyncHandler) {
+        final DeleteAPIKeyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAPIKeyResult>() {
+            @Override
+            public DeleteAPIKeyResult call() throws Exception {
+                DeleteAPIKeyResult result = null;
+
+                try {
+                    result = executeDeleteAPIKey(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -579,6 +646,74 @@ public class AWSWAFV2AsyncClient extends AWSWAFV2Client implements AWSWAFV2Async
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAllManagedProductsResult> describeAllManagedProductsAsync(DescribeAllManagedProductsRequest request) {
+
+        return describeAllManagedProductsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAllManagedProductsResult> describeAllManagedProductsAsync(final DescribeAllManagedProductsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAllManagedProductsRequest, DescribeAllManagedProductsResult> asyncHandler) {
+        final DescribeAllManagedProductsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAllManagedProductsResult>() {
+            @Override
+            public DescribeAllManagedProductsResult call() throws Exception {
+                DescribeAllManagedProductsResult result = null;
+
+                try {
+                    result = executeDescribeAllManagedProducts(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeManagedProductsByVendorResult> describeManagedProductsByVendorAsync(
+            DescribeManagedProductsByVendorRequest request) {
+
+        return describeManagedProductsByVendorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeManagedProductsByVendorResult> describeManagedProductsByVendorAsync(
+            final DescribeManagedProductsByVendorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeManagedProductsByVendorRequest, DescribeManagedProductsByVendorResult> asyncHandler) {
+        final DescribeManagedProductsByVendorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeManagedProductsByVendorResult>() {
+            @Override
+            public DescribeManagedProductsByVendorResult call() throws Exception {
+                DescribeManagedProductsByVendorResult result = null;
+
+                try {
+                    result = executeDescribeManagedProductsByVendor(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeManagedRuleGroupResult> describeManagedRuleGroupAsync(DescribeManagedRuleGroupRequest request) {
 
         return describeManagedRuleGroupAsync(request, null);
@@ -662,6 +797,39 @@ public class AWSWAFV2AsyncClient extends AWSWAFV2Client implements AWSWAFV2Async
 
                 try {
                     result = executeGenerateMobileSdkReleaseUrl(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDecryptedAPIKeyResult> getDecryptedAPIKeyAsync(GetDecryptedAPIKeyRequest request) {
+
+        return getDecryptedAPIKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDecryptedAPIKeyResult> getDecryptedAPIKeyAsync(final GetDecryptedAPIKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDecryptedAPIKeyRequest, GetDecryptedAPIKeyResult> asyncHandler) {
+        final GetDecryptedAPIKeyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDecryptedAPIKeyResult>() {
+            @Override
+            public GetDecryptedAPIKeyResult call() throws Exception {
+                GetDecryptedAPIKeyResult result = null;
+
+                try {
+                    result = executeGetDecryptedAPIKey(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1027,6 +1195,39 @@ public class AWSWAFV2AsyncClient extends AWSWAFV2Client implements AWSWAFV2Async
 
                 try {
                     result = executeGetWebACLForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAPIKeysResult> listAPIKeysAsync(ListAPIKeysRequest request) {
+
+        return listAPIKeysAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAPIKeysResult> listAPIKeysAsync(final ListAPIKeysRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAPIKeysRequest, ListAPIKeysResult> asyncHandler) {
+        final ListAPIKeysRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAPIKeysResult>() {
+            @Override
+            public ListAPIKeysResult call() throws Exception {
+                ListAPIKeysResult result = null;
+
+                try {
+                    result = executeListAPIKeys(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

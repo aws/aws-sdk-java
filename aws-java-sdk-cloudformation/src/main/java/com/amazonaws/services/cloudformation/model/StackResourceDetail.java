@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,7 +55,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * <p>
      * Type of resource. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
-     * Web Services Resource Types Reference</a> in the CloudFormation User Guide.
+     * Web Services Resource Types Reference</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      */
     private String resourceType;
@@ -87,7 +87,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * <p>
      * The content of the <code>Metadata</code> attribute declared for the resource. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
-     * Attribute</a> in the CloudFormation User Guide.
+     * Attribute</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      */
     private String metadata;
@@ -96,7 +96,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected
      * configuration, as defined in the stack template and any values specified as template parameters. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
      * Unregulated Configuration Changes to Stacks and Resources</a>.
      * </p>
      */
@@ -279,13 +279,13 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * <p>
      * Type of resource. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
-     * Web Services Resource Types Reference</a> in the CloudFormation User Guide.
+     * Web Services Resource Types Reference</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param resourceType
      *        Type of resource. For more information, go to <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     *        >Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.
+     *        >Amazon Web Services Resource Types Reference</a> in the <i>CloudFormation User Guide</i>.
      */
 
     public void setResourceType(String resourceType) {
@@ -296,12 +296,12 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * <p>
      * Type of resource. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
-     * Web Services Resource Types Reference</a> in the CloudFormation User Guide.
+     * Web Services Resource Types Reference</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @return Type of resource. For more information, go to <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     *         >Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.
+     *         >Amazon Web Services Resource Types Reference</a> in the <i>CloudFormation User Guide</i>.
      */
 
     public String getResourceType() {
@@ -312,13 +312,13 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * <p>
      * Type of resource. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
-     * Web Services Resource Types Reference</a> in the CloudFormation User Guide.
+     * Web Services Resource Types Reference</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param resourceType
      *        Type of resource. For more information, go to <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     *        >Amazon Web Services Resource Types Reference</a> in the CloudFormation User Guide.
+     *        >Amazon Web Services Resource Types Reference</a> in the <i>CloudFormation User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -524,13 +524,13 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * <p>
      * The content of the <code>Metadata</code> attribute declared for the resource. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
-     * Attribute</a> in the CloudFormation User Guide.
+     * Attribute</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param metadata
      *        The content of the <code>Metadata</code> attribute declared for the resource. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
-     *        Attribute</a> in the CloudFormation User Guide.
+     *        Attribute</a> in the <i>CloudFormation User Guide</i>.
      */
 
     public void setMetadata(String metadata) {
@@ -541,12 +541,12 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * <p>
      * The content of the <code>Metadata</code> attribute declared for the resource. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
-     * Attribute</a> in the CloudFormation User Guide.
+     * Attribute</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @return The content of the <code>Metadata</code> attribute declared for the resource. For more information, see
      *         <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">
-     *         Metadata Attribute</a> in the CloudFormation User Guide.
+     *         Metadata Attribute</a> in the <i>CloudFormation User Guide</i>.
      */
 
     public String getMetadata() {
@@ -557,13 +557,13 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * <p>
      * The content of the <code>Metadata</code> attribute declared for the resource. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
-     * Attribute</a> in the CloudFormation User Guide.
+     * Attribute</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param metadata
      *        The content of the <code>Metadata</code> attribute declared for the resource. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
-     *        Attribute</a> in the CloudFormation User Guide.
+     *        Attribute</a> in the <i>CloudFormation User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -577,7 +577,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected
      * configuration, as defined in the stack template and any values specified as template parameters. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
      * Unregulated Configuration Changes to Stacks and Resources</a>.
      * </p>
      * 
@@ -585,7 +585,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      *        Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its
      *        expected configuration, as defined in the stack template and any values specified as template parameters.
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
      *        Unregulated Configuration Changes to Stacks and Resources</a>.
      */
 
@@ -598,15 +598,15 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected
      * configuration, as defined in the stack template and any values specified as template parameters. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
      * Unregulated Configuration Changes to Stacks and Resources</a>.
      * </p>
      * 
      * @return Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its
      *         expected configuration, as defined in the stack template and any values specified as template parameters.
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
-     *         Unregulated Configuration Changes to Stacks and Resources</a>.
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html"
+     *         >Detecting Unregulated Configuration Changes to Stacks and Resources</a>.
      */
 
     public StackResourceDriftInformation getDriftInformation() {
@@ -618,7 +618,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected
      * configuration, as defined in the stack template and any values specified as template parameters. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
      * Unregulated Configuration Changes to Stacks and Resources</a>.
      * </p>
      * 
@@ -626,7 +626,7 @@ public class StackResourceDetail implements Serializable, Cloneable {
      *        Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its
      *        expected configuration, as defined in the stack template and any values specified as template parameters.
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
      *        Unregulated Configuration Changes to Stacks and Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

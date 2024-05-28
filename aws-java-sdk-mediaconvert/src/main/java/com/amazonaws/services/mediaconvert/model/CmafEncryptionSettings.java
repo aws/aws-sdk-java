@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     private String constantInitializationVector;
     /**
      * Specify the encryption scheme that you want the service to use when encrypting your CMAF segments. Choose AES-CBC
-     * subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
+     * subsample or AES_CTR.
      */
     private String encryptionMethod;
     /**
@@ -96,11 +96,11 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
 
     /**
      * Specify the encryption scheme that you want the service to use when encrypting your CMAF segments. Choose AES-CBC
-     * subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
+     * subsample or AES_CTR.
      * 
      * @param encryptionMethod
      *        Specify the encryption scheme that you want the service to use when encrypting your CMAF segments. Choose
-     *        AES-CBC subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
+     *        AES-CBC subsample or AES_CTR.
      * @see CmafEncryptionType
      */
 
@@ -110,10 +110,10 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
 
     /**
      * Specify the encryption scheme that you want the service to use when encrypting your CMAF segments. Choose AES-CBC
-     * subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
+     * subsample or AES_CTR.
      * 
      * @return Specify the encryption scheme that you want the service to use when encrypting your CMAF segments. Choose
-     *         AES-CBC subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
+     *         AES-CBC subsample or AES_CTR.
      * @see CmafEncryptionType
      */
 
@@ -123,11 +123,11 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
 
     /**
      * Specify the encryption scheme that you want the service to use when encrypting your CMAF segments. Choose AES-CBC
-     * subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
+     * subsample or AES_CTR.
      * 
      * @param encryptionMethod
      *        Specify the encryption scheme that you want the service to use when encrypting your CMAF segments. Choose
-     *        AES-CBC subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
+     *        AES-CBC subsample or AES_CTR.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafEncryptionType
      */
@@ -139,11 +139,11 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
 
     /**
      * Specify the encryption scheme that you want the service to use when encrypting your CMAF segments. Choose AES-CBC
-     * subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
+     * subsample or AES_CTR.
      * 
      * @param encryptionMethod
      *        Specify the encryption scheme that you want the service to use when encrypting your CMAF segments. Choose
-     *        AES-CBC subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
+     *        AES-CBC subsample or AES_CTR.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafEncryptionType
      */

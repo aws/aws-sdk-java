@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,7 +60,7 @@ public class MetricDatapoint implements Serializable, Cloneable, StructuredPojo 
     private Double sum;
     /**
      * <p>
-     * The timestamp (e.g., <code>1479816991.349</code>).
+     * The timestamp (<code>1479816991.349</code>).
      * </p>
      */
     private java.util.Date timestamp;
@@ -273,11 +273,11 @@ public class MetricDatapoint implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The timestamp (e.g., <code>1479816991.349</code>).
+     * The timestamp (<code>1479816991.349</code>).
      * </p>
      * 
      * @param timestamp
-     *        The timestamp (e.g., <code>1479816991.349</code>).
+     *        The timestamp (<code>1479816991.349</code>).
      */
 
     public void setTimestamp(java.util.Date timestamp) {
@@ -286,10 +286,10 @@ public class MetricDatapoint implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The timestamp (e.g., <code>1479816991.349</code>).
+     * The timestamp (<code>1479816991.349</code>).
      * </p>
      * 
-     * @return The timestamp (e.g., <code>1479816991.349</code>).
+     * @return The timestamp (<code>1479816991.349</code>).
      */
 
     public java.util.Date getTimestamp() {
@@ -298,11 +298,11 @@ public class MetricDatapoint implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The timestamp (e.g., <code>1479816991.349</code>).
+     * The timestamp (<code>1479816991.349</code>).
      * </p>
      * 
      * @param timestamp
-     *        The timestamp (e.g., <code>1479816991.349</code>).
+     *        The timestamp (<code>1479816991.349</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

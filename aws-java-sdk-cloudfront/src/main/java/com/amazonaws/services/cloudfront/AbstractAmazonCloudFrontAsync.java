@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     }
 
     @Override
+    public java.util.concurrent.Future<CopyDistributionResult> copyDistributionAsync(CopyDistributionRequest request) {
+
+        return copyDistributionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CopyDistributionResult> copyDistributionAsync(CopyDistributionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CopyDistributionRequest, CopyDistributionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateCachePolicyResult> createCachePolicyAsync(CreateCachePolicyRequest request) {
 
         return createCachePolicyAsync(request, null);
@@ -64,6 +77,21 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     public java.util.concurrent.Future<CreateCloudFrontOriginAccessIdentityResult> createCloudFrontOriginAccessIdentityAsync(
             CreateCloudFrontOriginAccessIdentityRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateCloudFrontOriginAccessIdentityRequest, CreateCloudFrontOriginAccessIdentityResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateContinuousDeploymentPolicyResult> createContinuousDeploymentPolicyAsync(
+            CreateContinuousDeploymentPolicyRequest request) {
+
+        return createContinuousDeploymentPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateContinuousDeploymentPolicyResult> createContinuousDeploymentPolicyAsync(
+            CreateContinuousDeploymentPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateContinuousDeploymentPolicyRequest, CreateContinuousDeploymentPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -159,6 +187,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     @Override
     public java.util.concurrent.Future<CreateKeyGroupResult> createKeyGroupAsync(CreateKeyGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateKeyGroupRequest, CreateKeyGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateKeyValueStoreResult> createKeyValueStoreAsync(CreateKeyValueStoreRequest request) {
+
+        return createKeyValueStoreAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateKeyValueStoreResult> createKeyValueStoreAsync(CreateKeyValueStoreRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateKeyValueStoreRequest, CreateKeyValueStoreResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -298,6 +339,21 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteContinuousDeploymentPolicyResult> deleteContinuousDeploymentPolicyAsync(
+            DeleteContinuousDeploymentPolicyRequest request) {
+
+        return deleteContinuousDeploymentPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteContinuousDeploymentPolicyResult> deleteContinuousDeploymentPolicyAsync(
+            DeleteContinuousDeploymentPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteContinuousDeploymentPolicyRequest, DeleteContinuousDeploymentPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDistributionResult> deleteDistributionAsync(DeleteDistributionRequest request) {
 
         return deleteDistributionAsync(request, null);
@@ -362,6 +418,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     @Override
     public java.util.concurrent.Future<DeleteKeyGroupResult> deleteKeyGroupAsync(DeleteKeyGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteKeyGroupRequest, DeleteKeyGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteKeyValueStoreResult> deleteKeyValueStoreAsync(DeleteKeyValueStoreRequest request) {
+
+        return deleteKeyValueStoreAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteKeyValueStoreResult> deleteKeyValueStoreAsync(DeleteKeyValueStoreRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteKeyValueStoreRequest, DeleteKeyValueStoreResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -471,6 +540,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeKeyValueStoreResult> describeKeyValueStoreAsync(DescribeKeyValueStoreRequest request) {
+
+        return describeKeyValueStoreAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeKeyValueStoreResult> describeKeyValueStoreAsync(DescribeKeyValueStoreRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeKeyValueStoreRequest, DescribeKeyValueStoreResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCachePolicyResult> getCachePolicyAsync(GetCachePolicyRequest request) {
 
         return getCachePolicyAsync(request, null);
@@ -522,6 +604,34 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     public java.util.concurrent.Future<GetCloudFrontOriginAccessIdentityConfigResult> getCloudFrontOriginAccessIdentityConfigAsync(
             GetCloudFrontOriginAccessIdentityConfigRequest request,
             com.amazonaws.handlers.AsyncHandler<GetCloudFrontOriginAccessIdentityConfigRequest, GetCloudFrontOriginAccessIdentityConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContinuousDeploymentPolicyResult> getContinuousDeploymentPolicyAsync(GetContinuousDeploymentPolicyRequest request) {
+
+        return getContinuousDeploymentPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContinuousDeploymentPolicyResult> getContinuousDeploymentPolicyAsync(GetContinuousDeploymentPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetContinuousDeploymentPolicyRequest, GetContinuousDeploymentPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContinuousDeploymentPolicyConfigResult> getContinuousDeploymentPolicyConfigAsync(
+            GetContinuousDeploymentPolicyConfigRequest request) {
+
+        return getContinuousDeploymentPolicyConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContinuousDeploymentPolicyConfigResult> getContinuousDeploymentPolicyConfigAsync(
+            GetContinuousDeploymentPolicyConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetContinuousDeploymentPolicyConfigRequest, GetContinuousDeploymentPolicyConfigResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -856,6 +966,21 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     }
 
     @Override
+    public java.util.concurrent.Future<ListContinuousDeploymentPoliciesResult> listContinuousDeploymentPoliciesAsync(
+            ListContinuousDeploymentPoliciesRequest request) {
+
+        return listContinuousDeploymentPoliciesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListContinuousDeploymentPoliciesResult> listContinuousDeploymentPoliciesAsync(
+            ListContinuousDeploymentPoliciesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListContinuousDeploymentPoliciesRequest, ListContinuousDeploymentPoliciesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDistributionsResult> listDistributionsAsync(ListDistributionsRequest request) {
 
         return listDistributionsAsync(request, null);
@@ -1019,6 +1144,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     @Override
     public java.util.concurrent.Future<ListKeyGroupsResult> listKeyGroupsAsync(ListKeyGroupsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListKeyGroupsRequest, ListKeyGroupsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListKeyValueStoresResult> listKeyValueStoresAsync(ListKeyValueStoresRequest request) {
+
+        return listKeyValueStoresAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListKeyValueStoresResult> listKeyValueStoresAsync(ListKeyValueStoresRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListKeyValueStoresRequest, ListKeyValueStoresResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1195,6 +1333,21 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateContinuousDeploymentPolicyResult> updateContinuousDeploymentPolicyAsync(
+            UpdateContinuousDeploymentPolicyRequest request) {
+
+        return updateContinuousDeploymentPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContinuousDeploymentPolicyResult> updateContinuousDeploymentPolicyAsync(
+            UpdateContinuousDeploymentPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateContinuousDeploymentPolicyRequest, UpdateContinuousDeploymentPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateDistributionResult> updateDistributionAsync(UpdateDistributionRequest request) {
 
         return updateDistributionAsync(request, null);
@@ -1203,6 +1356,21 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     @Override
     public java.util.concurrent.Future<UpdateDistributionResult> updateDistributionAsync(UpdateDistributionRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDistributionRequest, UpdateDistributionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDistributionWithStagingConfigResult> updateDistributionWithStagingConfigAsync(
+            UpdateDistributionWithStagingConfigRequest request) {
+
+        return updateDistributionWithStagingConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDistributionWithStagingConfigResult> updateDistributionWithStagingConfigAsync(
+            UpdateDistributionWithStagingConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateDistributionWithStagingConfigRequest, UpdateDistributionWithStagingConfigResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1259,6 +1427,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     @Override
     public java.util.concurrent.Future<UpdateKeyGroupResult> updateKeyGroupAsync(UpdateKeyGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateKeyGroupRequest, UpdateKeyGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateKeyValueStoreResult> updateKeyValueStoreAsync(UpdateKeyValueStoreRequest request) {
+
+        return updateKeyValueStoreAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateKeyValueStoreResult> updateKeyValueStoreAsync(UpdateKeyValueStoreRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateKeyValueStoreRequest, UpdateKeyValueStoreResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

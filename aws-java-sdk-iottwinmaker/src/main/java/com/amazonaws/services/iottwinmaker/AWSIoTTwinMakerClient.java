@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.iottwinmaker.AWSIoTTwinMakerClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.iottwinmaker.model.*;
+
 import com.amazonaws.services.iottwinmaker.model.transform.*;
 
 /**
@@ -51,7 +52,7 @@ import com.amazonaws.services.iottwinmaker.model.transform.*;
  * until the service call completes.
  * <p>
  * <p>
- * IoT TwinMaker is a service that enables you to build operational digital twins of physical systems. IoT TwinMaker
+ * IoT TwinMaker is a service with which you can build operational digital twins of physical systems. IoT TwinMaker
  * overlays measurements and analysis from real-world sensors, cameras, and enterprise applications so you can create
  * data visualizations to monitor your physical factory, building, or industrial plant. You can use this real-world data
  * to monitor operations and diagnose and repair errors.
@@ -110,6 +111,9 @@ public class AWSIoTTwinMakerClient extends AmazonWebServiceClient implements AWS
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iottwinmaker.model.transform.ValidationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("QueryTimeoutException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iottwinmaker.model.transform.QueryTimeoutExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.iottwinmaker.model.AWSIoTTwinMakerException.class));
 
     public static AWSIoTTwinMakerClientBuilder builder() {
@@ -221,6 +225,84 @@ public class AWSIoTTwinMakerClient extends AmazonWebServiceClient implements AWS
             HttpResponseHandler<AmazonWebServiceResponse<BatchPutPropertyValuesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new BatchPutPropertyValuesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Cancels the metadata transfer job.
+     * </p>
+     * 
+     * @param cancelMetadataTransferJobRequest
+     * @return Result of the CancelMetadataTransferJob operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error has occurred.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ResourceNotFoundException
+     *         The resource wasn't found.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ValidationException
+     *         Failed
+     * @throws ConflictException
+     *         A conflict occurred.
+     * @sample AWSIoTTwinMaker.CancelMetadataTransferJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CancelMetadataTransferJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CancelMetadataTransferJobResult cancelMetadataTransferJob(CancelMetadataTransferJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelMetadataTransferJob(request);
+    }
+
+    @SdkInternalApi
+    final CancelMetadataTransferJobResult executeCancelMetadataTransferJob(CancelMetadataTransferJobRequest cancelMetadataTransferJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelMetadataTransferJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelMetadataTransferJobRequest> request = null;
+        Response<CancelMetadataTransferJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelMetadataTransferJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(cancelMetadataTransferJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTTwinMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelMetadataTransferJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "api.";
+                String resolvedHostPrefix = String.format("api.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelMetadataTransferJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CancelMetadataTransferJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
@@ -385,6 +467,86 @@ public class AWSIoTTwinMakerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Creates a new metadata transfer job.
+     * </p>
+     * 
+     * @param createMetadataTransferJobRequest
+     * @return Result of the CreateMetadataTransferJob operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error has occurred.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ResourceNotFoundException
+     *         The resource wasn't found.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ValidationException
+     *         Failed
+     * @throws ConflictException
+     *         A conflict occurred.
+     * @throws ServiceQuotaExceededException
+     *         The service quota was exceeded.
+     * @sample AWSIoTTwinMaker.CreateMetadataTransferJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateMetadataTransferJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateMetadataTransferJobResult createMetadataTransferJob(CreateMetadataTransferJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateMetadataTransferJob(request);
+    }
+
+    @SdkInternalApi
+    final CreateMetadataTransferJobResult executeCreateMetadataTransferJob(CreateMetadataTransferJobRequest createMetadataTransferJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createMetadataTransferJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateMetadataTransferJobRequest> request = null;
+        Response<CreateMetadataTransferJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateMetadataTransferJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createMetadataTransferJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTTwinMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMetadataTransferJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "api.";
+                String resolvedHostPrefix = String.format("api.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateMetadataTransferJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateMetadataTransferJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a scene.
      * </p>
      * 
@@ -449,6 +611,82 @@ public class AWSIoTTwinMakerClient extends AmazonWebServiceClient implements AWS
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateSceneResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateSceneResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This action creates a SyncJob.
+     * </p>
+     * 
+     * @param createSyncJobRequest
+     * @return Result of the CreateSyncJob operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error has occurred.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ValidationException
+     *         Failed
+     * @throws ConflictException
+     *         A conflict occurred.
+     * @throws ServiceQuotaExceededException
+     *         The service quota was exceeded.
+     * @sample AWSIoTTwinMaker.CreateSyncJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/CreateSyncJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateSyncJobResult createSyncJob(CreateSyncJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSyncJob(request);
+    }
+
+    @SdkInternalApi
+    final CreateSyncJobResult executeCreateSyncJob(CreateSyncJobRequest createSyncJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createSyncJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateSyncJobRequest> request = null;
+        Response<CreateSyncJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateSyncJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSyncJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTTwinMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSyncJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "api.";
+                String resolvedHostPrefix = String.format("api.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateSyncJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateSyncJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
@@ -759,6 +997,82 @@ public class AWSIoTTwinMakerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Delete the SyncJob.
+     * </p>
+     * 
+     * @param deleteSyncJobRequest
+     * @return Result of the DeleteSyncJob operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error has occurred.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ResourceNotFoundException
+     *         The resource wasn't found.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ValidationException
+     *         Failed
+     * @throws ServiceQuotaExceededException
+     *         The service quota was exceeded.
+     * @sample AWSIoTTwinMaker.DeleteSyncJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/DeleteSyncJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteSyncJobResult deleteSyncJob(DeleteSyncJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSyncJob(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSyncJobResult executeDeleteSyncJob(DeleteSyncJobRequest deleteSyncJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteSyncJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteSyncJobRequest> request = null;
+        Response<DeleteSyncJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteSyncJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSyncJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTTwinMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSyncJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "api.";
+                String resolvedHostPrefix = String.format("api.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteSyncJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteSyncJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a workspace.
      * </p>
      * 
@@ -833,6 +1147,89 @@ public class AWSIoTTwinMakerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Run queries to access information from your knowledge graph of entities within individual workspaces.
+     * </p>
+     * <note>
+     * <p>
+     * The ExecuteQuery action only works with <a
+     * href="https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/home.html">Amazon Web Services Java
+     * SDK2</a>. ExecuteQuery will not work with any Amazon Web Services Java SDK version &lt; 2.x.
+     * </p>
+     * </note>
+     * 
+     * @param executeQueryRequest
+     * @return Result of the ExecuteQuery operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error has occurred.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws QueryTimeoutException
+     *         The query timeout exception.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ValidationException
+     *         Failed
+     * @throws ServiceQuotaExceededException
+     *         The service quota was exceeded.
+     * @sample AWSIoTTwinMaker.ExecuteQuery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ExecuteQuery" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ExecuteQueryResult executeQuery(ExecuteQueryRequest request) {
+        request = beforeClientExecution(request);
+        return executeExecuteQuery(request);
+    }
+
+    @SdkInternalApi
+    final ExecuteQueryResult executeExecuteQuery(ExecuteQueryRequest executeQueryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(executeQueryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ExecuteQueryRequest> request = null;
+        Response<ExecuteQueryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ExecuteQueryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(executeQueryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTTwinMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExecuteQuery");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "api.";
+                String resolvedHostPrefix = String.format("api.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ExecuteQueryResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ExecuteQueryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves information about a component type.
      * </p>
      * 
@@ -846,6 +1243,8 @@ public class AWSIoTTwinMakerClient extends AmazonWebServiceClient implements AWS
      *         The resource wasn't found.
      * @throws ThrottlingException
      *         The rate exceeds the limit.
+     * @throws ValidationException
+     *         Failed
      * @sample AWSIoTTwinMaker.GetComponentType
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetComponentType" target="_top">AWS
      *      API Documentation</a>
@@ -967,6 +1366,153 @@ public class AWSIoTTwinMakerClient extends AmazonWebServiceClient implements AWS
 
             HttpResponseHandler<AmazonWebServiceResponse<GetEntityResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetEntityResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a nmetadata transfer job.
+     * </p>
+     * 
+     * @param getMetadataTransferJobRequest
+     * @return Result of the GetMetadataTransferJob operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error has occurred.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ResourceNotFoundException
+     *         The resource wasn't found.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ValidationException
+     *         Failed
+     * @sample AWSIoTTwinMaker.GetMetadataTransferJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetMetadataTransferJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetMetadataTransferJobResult getMetadataTransferJob(GetMetadataTransferJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetMetadataTransferJob(request);
+    }
+
+    @SdkInternalApi
+    final GetMetadataTransferJobResult executeGetMetadataTransferJob(GetMetadataTransferJobRequest getMetadataTransferJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getMetadataTransferJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetMetadataTransferJobRequest> request = null;
+        Response<GetMetadataTransferJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetMetadataTransferJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMetadataTransferJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTTwinMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMetadataTransferJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "api.";
+                String resolvedHostPrefix = String.format("api.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetMetadataTransferJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetMetadataTransferJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the pricing plan.
+     * </p>
+     * 
+     * @param getPricingPlanRequest
+     * @return Result of the GetPricingPlan operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error has occurred.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ValidationException
+     *         Failed
+     * @sample AWSIoTTwinMaker.GetPricingPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetPricingPlan" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetPricingPlanResult getPricingPlan(GetPricingPlanRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetPricingPlan(request);
+    }
+
+    @SdkInternalApi
+    final GetPricingPlanResult executeGetPricingPlan(GetPricingPlanRequest getPricingPlanRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getPricingPlanRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetPricingPlanRequest> request = null;
+        Response<GetPricingPlanResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetPricingPlanRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPricingPlanRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTTwinMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPricingPlan");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "api.";
+                String resolvedHostPrefix = String.format("api.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetPricingPlanResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetPricingPlanResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
@@ -1221,6 +1767,82 @@ public class AWSIoTTwinMakerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Gets the SyncJob.
+     * </p>
+     * 
+     * @param getSyncJobRequest
+     * @return Result of the GetSyncJob operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error has occurred.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ResourceNotFoundException
+     *         The resource wasn't found.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ValidationException
+     *         Failed
+     * @throws ServiceQuotaExceededException
+     *         The service quota was exceeded.
+     * @sample AWSIoTTwinMaker.GetSyncJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/GetSyncJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetSyncJobResult getSyncJob(GetSyncJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSyncJob(request);
+    }
+
+    @SdkInternalApi
+    final GetSyncJobResult executeGetSyncJob(GetSyncJobRequest getSyncJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSyncJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSyncJobRequest> request = null;
+        Response<GetSyncJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSyncJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSyncJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTTwinMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSyncJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "api.";
+                String resolvedHostPrefix = String.format("api.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSyncJobResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSyncJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves information about a workspace.
      * </p>
      * 
@@ -1367,6 +1989,80 @@ public class AWSIoTTwinMakerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * This API lists the components of an entity.
+     * </p>
+     * 
+     * @param listComponentsRequest
+     * @return Result of the ListComponents operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error has occurred.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ResourceNotFoundException
+     *         The resource wasn't found.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ValidationException
+     *         Failed
+     * @sample AWSIoTTwinMaker.ListComponents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListComponents" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListComponentsResult listComponents(ListComponentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListComponents(request);
+    }
+
+    @SdkInternalApi
+    final ListComponentsResult executeListComponents(ListComponentsRequest listComponentsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listComponentsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListComponentsRequest> request = null;
+        Response<ListComponentsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListComponentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listComponentsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTTwinMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListComponents");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "api.";
+                String resolvedHostPrefix = String.format("api.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListComponentsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListComponentsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists all entities in a workspace.
      * </p>
      * 
@@ -1439,6 +2135,154 @@ public class AWSIoTTwinMakerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Lists the metadata transfer jobs.
+     * </p>
+     * 
+     * @param listMetadataTransferJobsRequest
+     * @return Result of the ListMetadataTransferJobs operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error has occurred.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ValidationException
+     *         Failed
+     * @sample AWSIoTTwinMaker.ListMetadataTransferJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListMetadataTransferJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListMetadataTransferJobsResult listMetadataTransferJobs(ListMetadataTransferJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListMetadataTransferJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListMetadataTransferJobsResult executeListMetadataTransferJobs(ListMetadataTransferJobsRequest listMetadataTransferJobsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listMetadataTransferJobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListMetadataTransferJobsRequest> request = null;
+        Response<ListMetadataTransferJobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListMetadataTransferJobsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listMetadataTransferJobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTTwinMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMetadataTransferJobs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "api.";
+                String resolvedHostPrefix = String.format("api.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListMetadataTransferJobsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListMetadataTransferJobsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This API lists the properties of a component.
+     * </p>
+     * 
+     * @param listPropertiesRequest
+     * @return Result of the ListProperties operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error has occurred.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ResourceNotFoundException
+     *         The resource wasn't found.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ValidationException
+     *         Failed
+     * @sample AWSIoTTwinMaker.ListProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListProperties" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListPropertiesResult listProperties(ListPropertiesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListProperties(request);
+    }
+
+    @SdkInternalApi
+    final ListPropertiesResult executeListProperties(ListPropertiesRequest listPropertiesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listPropertiesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPropertiesRequest> request = null;
+        Response<ListPropertiesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPropertiesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPropertiesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTTwinMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProperties");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "api.";
+                String resolvedHostPrefix = String.format("api.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListPropertiesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListPropertiesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists all scenes in a workspace.
      * </p>
      * 
@@ -1499,6 +2343,154 @@ public class AWSIoTTwinMakerClient extends AmazonWebServiceClient implements AWS
 
             HttpResponseHandler<AmazonWebServiceResponse<ListScenesResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListScenesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List all SyncJobs.
+     * </p>
+     * 
+     * @param listSyncJobsRequest
+     * @return Result of the ListSyncJobs operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error has occurred.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ValidationException
+     *         Failed
+     * @throws ServiceQuotaExceededException
+     *         The service quota was exceeded.
+     * @sample AWSIoTTwinMaker.ListSyncJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListSyncJobs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListSyncJobsResult listSyncJobs(ListSyncJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSyncJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListSyncJobsResult executeListSyncJobs(ListSyncJobsRequest listSyncJobsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSyncJobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSyncJobsRequest> request = null;
+        Response<ListSyncJobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSyncJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSyncJobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTTwinMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSyncJobs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "api.";
+                String resolvedHostPrefix = String.format("api.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSyncJobsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListSyncJobsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the sync resources.
+     * </p>
+     * 
+     * @param listSyncResourcesRequest
+     * @return Result of the ListSyncResources operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error has occurred.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ValidationException
+     *         Failed
+     * @throws ServiceQuotaExceededException
+     *         The service quota was exceeded.
+     * @sample AWSIoTTwinMaker.ListSyncResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/ListSyncResources" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListSyncResourcesResult listSyncResources(ListSyncResourcesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSyncResources(request);
+    }
+
+    @SdkInternalApi
+    final ListSyncResourcesResult executeListSyncResources(ListSyncResourcesRequest listSyncResourcesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSyncResourcesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSyncResourcesRequest> request = null;
+        Response<ListSyncResourcesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSyncResourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSyncResourcesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTTwinMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSyncResources");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "api.";
+                String resolvedHostPrefix = String.format("api.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSyncResourcesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListSyncResourcesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
@@ -1931,6 +2923,78 @@ public class AWSIoTTwinMakerClient extends AmazonWebServiceClient implements AWS
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateEntityResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateEntityResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Update the pricing plan.
+     * </p>
+     * 
+     * @param updatePricingPlanRequest
+     * @return Result of the UpdatePricingPlan operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error has occurred.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws ValidationException
+     *         Failed
+     * @sample AWSIoTTwinMaker.UpdatePricingPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iottwinmaker-2021-11-29/UpdatePricingPlan" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdatePricingPlanResult updatePricingPlan(UpdatePricingPlanRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdatePricingPlan(request);
+    }
+
+    @SdkInternalApi
+    final UpdatePricingPlanResult executeUpdatePricingPlan(UpdatePricingPlanRequest updatePricingPlanRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updatePricingPlanRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdatePricingPlanRequest> request = null;
+        Response<UpdatePricingPlanResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdatePricingPlanRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updatePricingPlanRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTTwinMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePricingPlan");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "api.";
+                String resolvedHostPrefix = String.format("api.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdatePricingPlanResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdatePricingPlanResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();

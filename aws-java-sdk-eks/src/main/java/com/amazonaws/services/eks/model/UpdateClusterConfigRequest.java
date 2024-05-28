@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,10 +50,16 @@ public class UpdateClusterConfigRequest extends com.amazonaws.AmazonWebServiceRe
     private Logging logging;
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      */
     private String clientRequestToken;
+    /**
+     * <p>
+     * The access configuration for the cluster.
+     * </p>
+     */
+    private UpdateAccessConfigRequest accessConfig;
 
     /**
      * <p>
@@ -211,11 +217,11 @@ public class UpdateClusterConfigRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
      * @param clientRequestToken
-     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -224,10 +230,10 @@ public class UpdateClusterConfigRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
-     * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      */
 
     public String getClientRequestToken() {
@@ -236,16 +242,56 @@ public class UpdateClusterConfigRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
      * @param clientRequestToken
-     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateClusterConfigRequest withClientRequestToken(String clientRequestToken) {
         setClientRequestToken(clientRequestToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The access configuration for the cluster.
+     * </p>
+     * 
+     * @param accessConfig
+     *        The access configuration for the cluster.
+     */
+
+    public void setAccessConfig(UpdateAccessConfigRequest accessConfig) {
+        this.accessConfig = accessConfig;
+    }
+
+    /**
+     * <p>
+     * The access configuration for the cluster.
+     * </p>
+     * 
+     * @return The access configuration for the cluster.
+     */
+
+    public UpdateAccessConfigRequest getAccessConfig() {
+        return this.accessConfig;
+    }
+
+    /**
+     * <p>
+     * The access configuration for the cluster.
+     * </p>
+     * 
+     * @param accessConfig
+     *        The access configuration for the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateClusterConfigRequest withAccessConfig(UpdateAccessConfigRequest accessConfig) {
+        setAccessConfig(accessConfig);
         return this;
     }
 
@@ -268,7 +314,9 @@ public class UpdateClusterConfigRequest extends com.amazonaws.AmazonWebServiceRe
         if (getLogging() != null)
             sb.append("Logging: ").append(getLogging()).append(",");
         if (getClientRequestToken() != null)
-            sb.append("ClientRequestToken: ").append(getClientRequestToken());
+            sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
+        if (getAccessConfig() != null)
+            sb.append("AccessConfig: ").append(getAccessConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -299,6 +347,10 @@ public class UpdateClusterConfigRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
             return false;
+        if (other.getAccessConfig() == null ^ this.getAccessConfig() == null)
+            return false;
+        if (other.getAccessConfig() != null && other.getAccessConfig().equals(this.getAccessConfig()) == false)
+            return false;
         return true;
     }
 
@@ -311,6 +363,7 @@ public class UpdateClusterConfigRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getResourcesVpcConfig() == null) ? 0 : getResourcesVpcConfig().hashCode());
         hashCode = prime * hashCode + ((getLogging() == null) ? 0 : getLogging().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
+        hashCode = prime * hashCode + ((getAccessConfig() == null) ? 0 : getAccessConfig().hashCode());
         return hashCode;
     }
 

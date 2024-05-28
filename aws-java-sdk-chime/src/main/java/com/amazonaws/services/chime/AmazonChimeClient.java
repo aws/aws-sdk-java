@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,25 +44,34 @@ import com.amazonaws.services.chime.AmazonChimeClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.chime.model.*;
+
 import com.amazonaws.services.chime.model.transform.*;
 
 /**
  * Client for accessing Amazon Chime. All service calls made using this client are blocking, and will not return until
  * the service call completes.
  * <p>
+ * <important>
  * <p>
- * The Amazon Chime API (application programming interface) is designed for developers to perform key tasks, such as
- * creating and managing Amazon Chime accounts, users, and Voice Connectors. This guide provides detailed information
- * about the Amazon Chime API, including operations, types, inputs and outputs, and error codes. It also includes API
- * actions for use with the Amazon Chime SDK, which developers use to build their own communication applications. For
- * more information about the Amazon Chime SDK, see <a
- * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html"> Using the Amazon Chime SDK </a> in the
- * <i>Amazon Chime Developer Guide</i>.
+ * <b>Most of these APIs are no longer supported and will not be updated.</b> We recommend using the latest versions in
+ * the <a href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/welcome.html">Amazon Chime SDK API
+ * reference</a>, in the Amazon Chime SDK.
  * </p>
  * <p>
- * You can use an AWS SDK, the AWS Command Line Interface (AWS CLI), or the REST API to make API calls. We recommend
- * using an AWS SDK or the AWS CLI. Each API operation includes links to information about using it with a
- * language-specific AWS SDK or the AWS CLI.
+ * Using the latest versions requires migrating to dedicated namespaces. For more information, refer to <a
+ * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+ * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+ * </p>
+ * </important>
+ * <p>
+ * The Amazon Chime application programming interface (API) is designed so administrators can perform key tasks, such as
+ * creating and managing Amazon Chime accounts, users, and Voice Connectors. This guide provides detailed information
+ * about the Amazon Chime API, including operations, types, inputs and outputs, and error codes.
+ * </p>
+ * <p>
+ * You can use an AWS SDK, the AWS Command Line Interface (AWS CLI), or the REST API to make API calls for Amazon Chime.
+ * We recommend using an AWS SDK or the AWS CLI. The page for each API action contains a <i>See Also</i> section that
+ * includes links to information about using the action with a language-specific AWS SDK or the AWS CLI.
  * </p>
  * <dl>
  * <dt>Using an AWS SDK</dt>
@@ -87,7 +96,7 @@ import com.amazonaws.services.chime.model.transform.*;
  * <dd>
  * <p>
  * If you use REST to make API calls, you must authenticate your request by providing a signature. Amazon Chime supports
- * signature version 4. For more information, see <a
+ * Signature Version 4. For more information, see <a
  * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>
  * in the <i>Amazon Web Services General Reference</i>.
  * </p>
@@ -284,6 +293,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Associates phone numbers with the specified Amazon Chime Voice Connector.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_AssociatePhoneNumbersWithVoiceConnector.html"
+     * >AssociatePhoneNumbersWithVoiceConnector</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param associatePhoneNumbersWithVoiceConnectorRequest
      * @return Result of the AssociatePhoneNumbersWithVoiceConnector operation returned by the service.
@@ -308,6 +330,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public AssociatePhoneNumbersWithVoiceConnectorResult associatePhoneNumbersWithVoiceConnector(AssociatePhoneNumbersWithVoiceConnectorRequest request) {
         request = beforeClientExecution(request);
         return executeAssociatePhoneNumbersWithVoiceConnector(request);
@@ -358,6 +381,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Associates phone numbers with the specified Amazon Chime Voice Connector group.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_AssociatePhoneNumbersWithVoiceConnectorGroup.html"
+     * >AssociatePhoneNumbersWithVoiceConnectorGroup</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param associatePhoneNumbersWithVoiceConnectorGroupRequest
      * @return Result of the AssociatePhoneNumbersWithVoiceConnectorGroup operation returned by the service.
@@ -383,6 +419,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public AssociatePhoneNumbersWithVoiceConnectorGroupResult associatePhoneNumbersWithVoiceConnectorGroup(
             AssociatePhoneNumbersWithVoiceConnectorGroupRequest request) {
         request = beforeClientExecution(request);
@@ -504,9 +541,24 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
-     * Creates up to 100 new attendees for an active Amazon Chime SDK meeting. For more information about the Amazon
-     * Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime
-     * SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+     * Creates up to 100 new attendees for an active Amazon Chime SDK meeting.
+     * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_BatchCreateAttendee.html">
+     * BatchCreateAttendee</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
+     * <p>
+     * For more information about the Amazon Chime SDK, see <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
+     * <i>Amazon Chime SDK Developer Guide</i>.
      * </p>
      * 
      * @param batchCreateAttendeeRequest
@@ -532,6 +584,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public BatchCreateAttendeeResult batchCreateAttendee(BatchCreateAttendeeRequest request) {
         request = beforeClientExecution(request);
         return executeBatchCreateAttendee(request);
@@ -579,6 +632,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Adds a specified number of users to a channel.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_BatchCreateChannelMembership.html"
+     * >BatchCreateChannelMembership</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param batchCreateChannelMembershipRequest
      * @return Result of the BatchCreateChannelMembership operation returned by the service.
@@ -599,6 +665,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public BatchCreateChannelMembershipResult batchCreateChannelMembership(BatchCreateChannelMembershipRequest request) {
         request = beforeClientExecution(request);
         return executeBatchCreateChannelMembership(request);
@@ -1187,6 +1254,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * Creates an Amazon Chime SDK messaging <code>AppInstance</code> under an AWS account. Only SDK messaging customers
      * use this API. <code>CreateAppInstance</code> supports idempotency behavior as described in the AWS API Standard.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_CreateAppInstance.html">
+     * CreateAppInstance</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param createAppInstanceRequest
      * @return Result of the CreateAppInstance operation returned by the service.
@@ -1211,6 +1290,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public CreateAppInstanceResult createAppInstance(CreateAppInstanceRequest request) {
         request = beforeClientExecution(request);
         return executeCreateAppInstance(request);
@@ -1268,6 +1348,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>. The promoted user can perform the
      * following actions.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_CreateAppInstanceAdmin.html">
+     * CreateAppInstanceAdmin</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * <ul>
      * <li>
      * <p>
@@ -1307,6 +1399,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public CreateAppInstanceAdminResult createAppInstanceAdmin(CreateAppInstanceAdminRequest request) {
         request = beforeClientExecution(request);
         return executeCreateAppInstanceAdmin(request);
@@ -1365,6 +1458,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * Creates a user under an Amazon Chime <code>AppInstance</code>. The request consists of a unique
      * <code>appInstanceUserId</code> and <code>Name</code> for that user.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_CreateAppInstanceUser.html">
+     * CreateAppInstanceUser</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param createAppInstanceUserRequest
      * @return Result of the CreateAppInstanceUser operation returned by the service.
@@ -1389,6 +1494,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public CreateAppInstanceUserResult createAppInstanceUser(CreateAppInstanceUserRequest request) {
         request = beforeClientExecution(request);
         return executeCreateAppInstanceUser(request);
@@ -1445,9 +1551,22 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
     /**
      * <p>
      * Creates a new attendee for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK,
-     * see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
-     * <i>Amazon Chime Developer Guide</i>.
+     * see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in
+     * the <i>Amazon Chime SDK Developer Guide</i>.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_CreateAttendee.html">CreateAttendee
+     * </a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param createAttendeeRequest
      * @return Result of the CreateAttendee operation returned by the service.
@@ -1472,6 +1591,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public CreateAttendeeResult createAttendee(CreateAttendeeRequest request) {
         request = beforeClientExecution(request);
         return executeCreateAttendee(request);
@@ -1598,7 +1718,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
      * user that makes the API call as the value in the header.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_CreateChannel.html">CreateChannel
+     * </a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param createChannelRequest
      * @return Result of the CreateChannel operation returned by the service.
@@ -1623,6 +1755,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public CreateChannelResult createChannel(CreateChannelRequest request) {
         request = beforeClientExecution(request);
         return executeCreateChannel(request);
@@ -1689,7 +1822,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
      * user that makes the API call as the value in the header.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_CreateChannelBan.html">
+     * CreateChannelBan</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param createChannelBanRequest
      * @return Result of the CreateChannelBan operation returned by the service.
@@ -1714,6 +1858,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public CreateChannelBanResult createChannelBan(CreateChannelBanRequest request) {
         request = beforeClientExecution(request);
         return executeCreateChannelBan(request);
@@ -1818,7 +1963,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
      * user that makes the API call as the value in the header.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_CreateChannelMembership.html">
+     * CreateChannelMembership</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param createChannelMembershipRequest
      * @return Result of the CreateChannelMembership operation returned by the service.
@@ -1843,6 +2000,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public CreateChannelMembershipResult createChannelMembership(CreateChannelMembershipRequest request) {
         request = beforeClientExecution(request);
         return executeCreateChannelMembership(request);
@@ -1933,7 +2091,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
      * user that makes the API call as the value in the header.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_CreateChannelModerator.html">
+     * CreateChannelModerator</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param createChannelModeratorRequest
      * @return Result of the CreateChannelModerator operation returned by the service.
@@ -1958,6 +2127,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public CreateChannelModeratorResult createChannelModerator(CreateChannelModeratorRequest request) {
         request = beforeClientExecution(request);
         return executeCreateChannelModerator(request);
@@ -2015,6 +2185,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Creates a media capture pipeline.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_CreateMediaCapturePipeline"
+     * >CreateMediaCapturePipeline</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param createMediaCapturePipelineRequest
      * @return Result of the CreateMediaCapturePipeline operation returned by the service.
@@ -2037,6 +2220,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public CreateMediaCapturePipelineResult createMediaCapturePipeline(CreateMediaCapturePipelineRequest request) {
         request = beforeClientExecution(request);
         return executeCreateMediaCapturePipeline(request);
@@ -2086,11 +2270,24 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Creates a new Amazon Chime SDK meeting in the specified media Region with no initial attendees. For more
      * information about specifying media Regions, see <a
-     * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media
-     * Regions</a> in the <i>Amazon Chime Developer Guide</i> . For more information about the Amazon Chime SDK, see <a
-     * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
-     * <i>Amazon Chime Developer Guide</i> .
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media
+     * Regions</a> in the <i>Amazon Chime SDK Developer Guide</i> . For more information about the Amazon Chime SDK, see
+     * <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
+     * <i>Amazon Chime SDK Developer Guide</i>.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_CreateMeeting.html">CreateMeeting
+     * </a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param createMeetingRequest
      * @return Result of the CreateMeeting operation returned by the service.
@@ -2113,6 +2310,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public CreateMeetingResult createMeeting(CreateMeetingRequest request) {
         request = beforeClientExecution(request);
         return executeCreateMeeting(request);
@@ -2166,6 +2364,11 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * To play welcome audio or implement an interactive voice response (IVR), use the
      * <code>CreateSipMediaApplicationCall</code> action with the corresponding SIP media application ID.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is not available in a dedicated namespace.</b>
+     * </p>
+     * </important>
      * 
      * @param createMeetingDialOutRequest
      * @return Result of the CreateMeetingDialOut operation returned by the service.
@@ -2237,11 +2440,24 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Creates a new Amazon Chime SDK meeting in the specified media Region, with attendees. For more information about
      * specifying media Regions, see <a
-     * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media
-     * Regions</a> in the <i>Amazon Chime Developer Guide</i> . For more information about the Amazon Chime SDK, see <a
-     * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
-     * <i>Amazon Chime Developer Guide</i> .
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media
+     * Regions</a> in the <i>Amazon Chime SDK Developer Guide</i> . For more information about the Amazon Chime SDK, see
+     * <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
+     * <i>Amazon Chime SDK Developer Guide</i> .
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_CreateMeetingWithAttendees.html"
+     * >CreateMeetingWithAttendees</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param createMeetingWithAttendeesRequest
      * @return Result of the CreateMeetingWithAttendees operation returned by the service.
@@ -2264,6 +2480,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public CreateMeetingWithAttendeesResult createMeetingWithAttendees(CreateMeetingWithAttendeesRequest request) {
         request = beforeClientExecution(request);
         return executeCreateMeetingWithAttendees(request);
@@ -2388,6 +2605,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * Creates a proxy session on the specified Amazon Chime Voice Connector for the specified participant phone
      * numbers.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateProxySession.html">
+     * CreateProxySession</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param createProxySessionRequest
      * @return Result of the CreateProxySession operation returned by the service.
@@ -2410,6 +2639,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public CreateProxySessionResult createProxySession(CreateProxySessionRequest request) {
         request = beforeClientExecution(request);
         return executeCreateProxySession(request);
@@ -2602,6 +2832,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Creates a SIP media application.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateSipMediaApplication.html">
+     * CreateSipMediaApplication</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param createSipMediaApplicationRequest
      * @return Result of the CreateSipMediaApplication operation returned by the service.
@@ -2628,6 +2870,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public CreateSipMediaApplicationResult createSipMediaApplication(CreateSipMediaApplicationRequest request) {
         request = beforeClientExecution(request);
         return executeCreateSipMediaApplication(request);
@@ -2678,6 +2921,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * Creates an outbound call to a phone number from the phone number specified in the request, and it invokes the
      * endpoint of the specified <code>sipMediaApplicationId</code>.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateSipMediaApplicationCall.html"
+     * >CreateSipMediaApplicationCall</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param createSipMediaApplicationCallRequest
      * @return Result of the CreateSipMediaApplicationCall operation returned by the service.
@@ -2702,6 +2958,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public CreateSipMediaApplicationCallResult createSipMediaApplicationCall(CreateSipMediaApplicationCallRequest request) {
         request = beforeClientExecution(request);
         return executeCreateSipMediaApplicationCall(request);
@@ -2751,6 +3008,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Creates a SIP rule which can be used to run a SIP media application as a target for a specific trigger type.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateSipRule.html">CreateSipRule</a>,
+     * in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param createSipRuleRequest
      * @return Result of the CreateSipRule operation returned by the service.
@@ -2777,6 +3047,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public CreateSipRuleResult createSipRule(CreateSipRuleRequest request) {
         request = beforeClientExecution(request);
         return executeCreateSipRule(request);
@@ -2901,6 +3172,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * TLS transport for SIP signaling and Secure RTP (SRTP) for media. Inbound calls use TLS transport, and unencrypted
      * outbound calls are blocked.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateVoiceConnector.html">
+     * CreateVoiceConnector</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param createVoiceConnectorRequest
      * @return Result of the CreateVoiceConnector operation returned by the service.
@@ -2925,6 +3208,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public CreateVoiceConnectorResult createVoiceConnector(CreateVoiceConnectorRequest request) {
         request = beforeClientExecution(request);
         return executeCreateVoiceConnector(request);
@@ -2978,6 +3262,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * You can include Amazon Chime Voice Connectors from different AWS Regions in your group. This creates a fault
      * tolerant mechanism for fallback in case of availability events.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateVoiceConnectorGroup.html">
+     * CreateVoiceConnectorGroup</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param createVoiceConnectorGroupRequest
      * @return Result of the CreateVoiceConnectorGroup operation returned by the service.
@@ -3002,6 +3298,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public CreateVoiceConnectorGroupResult createVoiceConnectorGroup(CreateVoiceConnectorGroupRequest request) {
         request = beforeClientExecution(request);
         return executeCreateVoiceConnectorGroup(request);
@@ -3135,6 +3432,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Deletes an <code>AppInstance</code> and all associated data asynchronously.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DeleteAppInstance.html">
+     * DeleteAppInstance</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param deleteAppInstanceRequest
      * @return Result of the DeleteAppInstance operation returned by the service.
@@ -3155,6 +3464,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteAppInstanceResult deleteAppInstance(DeleteAppInstanceRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteAppInstance(request);
@@ -3212,6 +3522,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code>. This action does not delete the
      * user.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DeleteAppInstanceAdmin.html">
+     * DeleteAppInstanceAdmin</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param deleteAppInstanceAdminRequest
      * @return Result of the DeleteAppInstanceAdmin operation returned by the service.
@@ -3234,6 +3556,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteAppInstanceAdminResult deleteAppInstanceAdmin(DeleteAppInstanceAdminRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteAppInstanceAdmin(request);
@@ -3291,6 +3614,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Deletes the streaming configurations of an <code>AppInstance</code>.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DeleteAppInstanceStreamingConfigurations.html"
+     * >DeleteAppInstanceStreamingConfigurations</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param deleteAppInstanceStreamingConfigurationsRequest
      * @return Result of the DeleteAppInstanceStreamingConfigurations operation returned by the service.
@@ -3313,6 +3649,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteAppInstanceStreamingConfigurationsResult deleteAppInstanceStreamingConfigurations(DeleteAppInstanceStreamingConfigurationsRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteAppInstanceStreamingConfigurations(request);
@@ -3363,6 +3700,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Deletes an <code>AppInstanceUser</code>.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DeleteAppInstanceUser.html">
+     * DeleteAppInstanceUser</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param deleteAppInstanceUserRequest
      * @return Result of the DeleteAppInstanceUser operation returned by the service.
@@ -3383,6 +3732,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteAppInstanceUserResult deleteAppInstanceUser(DeleteAppInstanceUserRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteAppInstanceUser(request);
@@ -3440,9 +3790,22 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Deletes an attendee from the specified Amazon Chime SDK meeting and deletes their <code>JoinToken</code>.
      * Attendees are automatically deleted when a Amazon Chime SDK meeting is deleted. For more information about the
-     * Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon
-     * Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+     * Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using the
+     * Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i>.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_DeleteAttendee.html">DeleteAttendee
+     * </a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param deleteAttendeeRequest
      * @return Result of the DeleteAttendee operation returned by the service.
@@ -3465,6 +3828,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteAttendeeResult deleteAttendee(DeleteAttendeeRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteAttendee(request);
@@ -3518,7 +3882,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
      * user that makes the API call as the value in the header.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DeleteChannel.html">DeleteChannel
+     * </a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param deleteChannelRequest
      * @return Result of the DeleteChannel operation returned by the service.
@@ -3539,6 +3915,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteChannelResult deleteChannel(DeleteChannelRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteChannel(request);
@@ -3600,7 +3977,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
      * user that makes the API call as the value in the header.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DeleteChannelBan.html">
+     * DeleteChannelBan</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param deleteChannelBanRequest
      * @return Result of the DeleteChannelBan operation returned by the service.
@@ -3621,6 +4009,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteChannelBanResult deleteChannelBan(DeleteChannelBanRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteChannelBan(request);
@@ -3682,7 +4071,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
      * user that makes the API call as the value in the header.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DeleteChannelMembership.html">
+     * DeleteChannelMembership</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param deleteChannelMembershipRequest
      * @return Result of the DeleteChannelMembership operation returned by the service.
@@ -3705,6 +4106,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteChannelMembershipResult deleteChannelMembership(DeleteChannelMembershipRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteChannelMembership(request);
@@ -3769,7 +4171,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
      * user that makes the API call as the value in the header.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DeleteChannelMessage.html">
+     * DeleteChannelMessage</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param deleteChannelMessageRequest
      * @return Result of the DeleteChannelMessage operation returned by the service.
@@ -3790,6 +4203,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteChannelMessageResult deleteChannelMessage(DeleteChannelMessageRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteChannelMessage(request);
@@ -3851,7 +4265,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
      * user that makes the API call as the value in the header.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DeleteChannelModerator.html">
+     * DeleteChannelModerator</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param deleteChannelModeratorRequest
      * @return Result of the DeleteChannelModerator operation returned by the service.
@@ -3872,6 +4297,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteChannelModeratorResult deleteChannelModerator(DeleteChannelModeratorRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteChannelModerator(request);
@@ -3998,6 +4424,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Deletes the media capture pipeline.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_DeleteMediaCapturePipeline.html"
+     * >DeleteMediaCapturePipeline</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param deleteMediaCapturePipelineRequest
      * @return Result of the DeleteMediaCapturePipeline operation returned by the service.
@@ -4020,6 +4459,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteMediaCapturePipelineResult deleteMediaCapturePipeline(DeleteMediaCapturePipelineRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteMediaCapturePipeline(request);
@@ -4069,9 +4509,22 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Deletes the specified Amazon Chime SDK meeting. The operation deletes all attendees, disconnects all clients, and
      * prevents new clients from joining the meeting. For more information about the Amazon Chime SDK, see <a
-     * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
-     * <i>Amazon Chime Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
+     * <i>Amazon Chime SDK Developer Guide</i>.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_DeleteMeeting.html">DeleteMeeting
+     * </a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param deleteMeetingRequest
      * @return Result of the DeleteMeeting operation returned by the service.
@@ -4094,6 +4547,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteMeetingResult deleteMeeting(DeleteMeetingRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteMeeting(request);
@@ -4214,6 +4668,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Deletes the specified proxy session from the specified Amazon Chime Voice Connector.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_DeleteProxySession.html">
+     * DeleteProxySession</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param deleteProxySessionRequest
      * @return Result of the DeleteProxySession operation returned by the service.
@@ -4236,6 +4702,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteProxySessionResult deleteProxySession(DeleteProxySessionRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteProxySession(request);
@@ -4421,6 +4888,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Deletes a SIP media application.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_DeleteSipMediaApplication.html">
+     * DeleteSipMediaApplication</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param deleteSipMediaApplicationRequest
      * @return Result of the DeleteSipMediaApplication operation returned by the service.
@@ -4445,6 +4924,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteSipMediaApplicationResult deleteSipMediaApplication(DeleteSipMediaApplicationRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteSipMediaApplication(request);
@@ -4494,6 +4974,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Deletes a SIP rule. You must disable a SIP rule before you can delete it.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_DeleteSipRule.html">DeleteSipRule</a>,
+     * in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param deleteSipRuleRequest
      * @return Result of the DeleteSipRule operation returned by the service.
@@ -4518,6 +5011,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteSipRuleResult deleteSipRule(DeleteSipRuleRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteSipRule(request);
@@ -4566,6 +5060,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * Deletes the specified Amazon Chime Voice Connector. Any phone numbers associated with the Amazon Chime Voice
      * Connector must be disassociated from it before it can be deleted.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_DeleteVoiceConnector.html">
+     * DeleteVoiceConnector</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param deleteVoiceConnectorRequest
      * @return Result of the DeleteVoiceConnector operation returned by the service.
@@ -4590,6 +5096,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteVoiceConnectorResult deleteVoiceConnector(DeleteVoiceConnectorRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteVoiceConnector(request);
@@ -4637,6 +5144,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Deletes the emergency calling configuration details from the specified Amazon Chime Voice Connector.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_DeleteVoiceConnectorEmergencyCallingConfiguration.html"
+     * >DeleteVoiceConnectorEmergencyCallingConfiguration</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param deleteVoiceConnectorEmergencyCallingConfigurationRequest
      * @return Result of the DeleteVoiceConnectorEmergencyCallingConfiguration operation returned by the service.
@@ -4660,6 +5180,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteVoiceConnectorEmergencyCallingConfigurationResult deleteVoiceConnectorEmergencyCallingConfiguration(
             DeleteVoiceConnectorEmergencyCallingConfigurationRequest request) {
         request = beforeClientExecution(request);
@@ -4712,6 +5233,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * Deletes the specified Amazon Chime Voice Connector group. Any <code>VoiceConnectorItems</code> and phone numbers
      * associated with the group must be removed before it can be deleted.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_DeleteVoiceConnectorGroup.html">
+     * DeleteVoiceConnectorGroup</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param deleteVoiceConnectorGroupRequest
      * @return Result of the DeleteVoiceConnectorGroup operation returned by the service.
@@ -4736,6 +5269,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteVoiceConnectorGroupResult deleteVoiceConnectorGroup(DeleteVoiceConnectorGroupRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteVoiceConnectorGroup(request);
@@ -4790,7 +5324,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to deleting the
      * origination settings.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_DeleteVoiceConnectorOrigination.html"
+     * >DeleteVoiceConnectorOrigination</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param deleteVoiceConnectorOriginationRequest
      * @return Result of the DeleteVoiceConnectorOrigination operation returned by the service.
@@ -4813,6 +5359,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteVoiceConnectorOriginationResult deleteVoiceConnectorOrigination(DeleteVoiceConnectorOriginationRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteVoiceConnectorOrigination(request);
@@ -4863,6 +5410,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Deletes the proxy configuration from the specified Amazon Chime Voice Connector.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_DeleteVoiceConnectorProxy.html">
+     * DeleteVoiceProxy</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param deleteVoiceConnectorProxyRequest
      * @return Result of the DeleteVoiceConnectorProxy operation returned by the service.
@@ -4885,6 +5444,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteVoiceConnectorProxyResult deleteVoiceConnectorProxy(DeleteVoiceConnectorProxyRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteVoiceConnectorProxy(request);
@@ -4934,6 +5494,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Deletes the streaming configuration for the specified Amazon Chime Voice Connector.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_DeleteVoiceConnectorStreamingConfiguration.html"
+     * >DeleteVoiceConnectorStreamingConfiguration</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param deleteVoiceConnectorStreamingConfigurationRequest
      * @return Result of the DeleteVoiceConnectorStreamingConfiguration operation returned by the service.
@@ -4956,6 +5529,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteVoiceConnectorStreamingConfigurationResult deleteVoiceConnectorStreamingConfiguration(DeleteVoiceConnectorStreamingConfigurationRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteVoiceConnectorStreamingConfiguration(request);
@@ -5011,7 +5585,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to deleting the
      * termination settings.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_DeleteVoiceConnectorTermination.html"
+     * >DeleteVoiceConnectorTermination</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param deleteVoiceConnectorTerminationRequest
      * @return Result of the DeleteVoiceConnectorTermination operation returned by the service.
@@ -5034,6 +5620,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteVoiceConnectorTerminationResult deleteVoiceConnectorTermination(DeleteVoiceConnectorTerminationRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteVoiceConnectorTermination(request);
@@ -5084,6 +5671,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Deletes the specified SIP credentials used by your equipment to authenticate during call termination.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_DeleteVoiceConnectorTerminationCredentials.html"
+     * >DeleteVoiceConnectorTerminationCredentials</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param deleteVoiceConnectorTerminationCredentialsRequest
      * @return Result of the DeleteVoiceConnectorTerminationCredentials operation returned by the service.
@@ -5106,6 +5706,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteVoiceConnectorTerminationCredentialsResult deleteVoiceConnectorTerminationCredentials(DeleteVoiceConnectorTerminationCredentialsRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteVoiceConnectorTerminationCredentials(request);
@@ -5156,6 +5757,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Returns the full details of an <code>AppInstance</code>.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DescribeAppInstance.html">
+     * DescribeAppInstance</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param describeAppInstanceRequest
      * @return Result of the DescribeAppInstance operation returned by the service.
@@ -5176,6 +5789,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public DescribeAppInstanceResult describeAppInstance(DescribeAppInstanceRequest request) {
         request = beforeClientExecution(request);
         return executeDescribeAppInstance(request);
@@ -5232,6 +5846,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Returns the full details of an <code>AppInstanceAdmin</code>.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DescribeAppInstanceAdmin.html">
+     * DescribeAppInstanceAdmin</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param describeAppInstanceAdminRequest
      * @return Result of the DescribeAppInstanceAdmin operation returned by the service.
@@ -5252,6 +5879,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public DescribeAppInstanceAdminResult describeAppInstanceAdmin(DescribeAppInstanceAdminRequest request) {
         request = beforeClientExecution(request);
         return executeDescribeAppInstanceAdmin(request);
@@ -5310,6 +5938,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Returns the full details of an <code>AppInstanceUser</code>.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_DescribeAppInstanceUser.html">
+     * DescribeAppInstanceUser</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param describeAppInstanceUserRequest
      * @return Result of the DescribeAppInstanceUser operation returned by the service.
@@ -5330,6 +5970,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public DescribeAppInstanceUserResult describeAppInstanceUser(DescribeAppInstanceUserRequest request) {
         request = beforeClientExecution(request);
         return executeDescribeAppInstanceUser(request);
@@ -5393,7 +6034,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
      * user that makes the API call as the value in the header.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannel.html">
+     * DescribeChannel</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param describeChannelRequest
      * @return Result of the DescribeChannel operation returned by the service.
@@ -5414,6 +6066,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public DescribeChannelResult describeChannel(DescribeChannelRequest request) {
         request = beforeClientExecution(request);
         return executeDescribeChannel(request);
@@ -5475,7 +6128,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
      * user that makes the API call as the value in the header.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannelBan.html">
+     * DescribeChannelBan</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param describeChannelBanRequest
      * @return Result of the DescribeChannelBan operation returned by the service.
@@ -5498,6 +6162,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public DescribeChannelBanResult describeChannelBan(DescribeChannelBanRequest request) {
         request = beforeClientExecution(request);
         return executeDescribeChannelBan(request);
@@ -5559,7 +6224,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
      * user that makes the API call as the value in the header.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannelMembership.html"
+     * >DescribeChannelMembership</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param describeChannelMembershipRequest
      * @return Result of the DescribeChannelMembership operation returned by the service.
@@ -5582,6 +6259,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DescribeChannelMembershipResult describeChannelMembership(DescribeChannelMembershipRequest request) {
         request = beforeClientExecution(request);
         return executeDescribeChannelMembership(request);
@@ -5645,7 +6323,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
      * user that makes the API call as the value in the header.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannelMembershipForAppInstanceUser.html"
+     * >DescribeChannelMembershipForAppInstanceUser</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param describeChannelMembershipForAppInstanceUserRequest
      * @return Result of the DescribeChannelMembershipForAppInstanceUser operation returned by the service.
@@ -5667,6 +6357,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DescribeChannelMembershipForAppInstanceUserResult describeChannelMembershipForAppInstanceUser(
             DescribeChannelMembershipForAppInstanceUserRequest request) {
         request = beforeClientExecution(request);
@@ -5732,7 +6423,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
      * user that makes the API call as the value in the header.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannelModeratedByAppInstanceUser.html"
+     * >DescribeChannelModeratedByAppInstanceUser</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param describeChannelModeratedByAppInstanceUserRequest
      * @return Result of the DescribeChannelModeratedByAppInstanceUser operation returned by the service.
@@ -5753,6 +6456,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DescribeChannelModeratedByAppInstanceUserResult describeChannelModeratedByAppInstanceUser(DescribeChannelModeratedByAppInstanceUserRequest request) {
         request = beforeClientExecution(request);
         return executeDescribeChannelModeratedByAppInstanceUser(request);
@@ -5817,7 +6521,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
      * user that makes the API call as the value in the header.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_DescribeChannelModerator.html"
+     * >DescribeChannelModerator</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param describeChannelModeratorRequest
      * @return Result of the DescribeChannelModerator operation returned by the service.
@@ -5840,6 +6556,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public DescribeChannelModeratorResult describeChannelModerator(DescribeChannelModeratorRequest request) {
         request = beforeClientExecution(request);
         return executeDescribeChannelModerator(request);
@@ -5970,6 +6687,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Disassociates the specified phone numbers from the specified Amazon Chime Voice Connector.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_DisassociatePhoneNumbersFromVoiceConnector.html"
+     * >DisassociatePhoneNumbersFromVoiceConnector</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param disassociatePhoneNumbersFromVoiceConnectorRequest
      * @return Result of the DisassociatePhoneNumbersFromVoiceConnector operation returned by the service.
@@ -5992,6 +6722,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DisassociatePhoneNumbersFromVoiceConnectorResult disassociatePhoneNumbersFromVoiceConnector(DisassociatePhoneNumbersFromVoiceConnectorRequest request) {
         request = beforeClientExecution(request);
         return executeDisassociatePhoneNumbersFromVoiceConnector(request);
@@ -6042,6 +6773,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Disassociates the specified phone numbers from the specified Amazon Chime Voice Connector group.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_DisassociatePhoneNumbersFromVoiceConnectorGroup.html"
+     * >DisassociatePhoneNumbersFromVoiceConnectorGroup</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param disassociatePhoneNumbersFromVoiceConnectorGroupRequest
      * @return Result of the DisassociatePhoneNumbersFromVoiceConnectorGroup operation returned by the service.
@@ -6065,6 +6809,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DisassociatePhoneNumbersFromVoiceConnectorGroupResult disassociatePhoneNumbersFromVoiceConnectorGroup(
             DisassociatePhoneNumbersFromVoiceConnectorGroupRequest request) {
         request = beforeClientExecution(request);
@@ -6331,6 +7076,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Gets the retention settings for an <code>AppInstance</code>.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_GetAppInstanceRetentionSettings.html"
+     * >GetMessagingRetentionSettings</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param getAppInstanceRetentionSettingsRequest
      * @return Result of the GetAppInstanceRetentionSettings operation returned by the service.
@@ -6353,6 +7111,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetAppInstanceRetentionSettingsResult getAppInstanceRetentionSettings(GetAppInstanceRetentionSettingsRequest request) {
         request = beforeClientExecution(request);
         return executeGetAppInstanceRetentionSettings(request);
@@ -6412,6 +7171,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Gets the streaming settings for an <code>AppInstance</code>.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_GetMessagingStreamingConfigurations.html"
+     * >GetMessagingStreamingConfigurations</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param getAppInstanceStreamingConfigurationsRequest
      * @return Result of the GetAppInstanceStreamingConfigurations operation returned by the service.
@@ -6434,6 +7206,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetAppInstanceStreamingConfigurationsResult getAppInstanceStreamingConfigurations(GetAppInstanceStreamingConfigurationsRequest request) {
         request = beforeClientExecution(request);
         return executeGetAppInstanceStreamingConfigurations(request);
@@ -6483,9 +7256,22 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
     /**
      * <p>
      * Gets the Amazon Chime SDK attendee details for a specified meeting ID and attendee ID. For more information about
-     * the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-     * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> .
+     * the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using the
+     * Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i>.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_GetAttendee.html">GetAttendee</a>,
+     * in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param getAttendeeRequest
      * @return Result of the GetAttendee operation returned by the service.
@@ -6508,6 +7294,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public GetAttendeeResult getAttendee(GetAttendeeRequest request) {
         request = beforeClientExecution(request);
         return executeGetAttendee(request);
@@ -6629,7 +7416,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * The x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that
      * makes the API call as the value in the header.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_GetChannelMessage.html">
+     * GetChannelMessage</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param getChannelMessageRequest
      * @return Result of the GetChannelMessage operation returned by the service.
@@ -6652,6 +7450,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public GetChannelMessageResult getChannelMessage(GetChannelMessageRequest request) {
         request = beforeClientExecution(request);
         return executeGetChannelMessage(request);
@@ -6847,6 +7646,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Gets an existing media capture pipeline.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_GetMediaCapturePipeline.html"
+     * >GetMediaCapturePipeline</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param getMediaCapturePipelineRequest
      * @return Result of the GetMediaCapturePipeline operation returned by the service.
@@ -6869,6 +7681,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetMediaCapturePipelineResult getMediaCapturePipeline(GetMediaCapturePipelineRequest request) {
         request = beforeClientExecution(request);
         return executeGetMediaCapturePipeline(request);
@@ -6915,10 +7728,23 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
     }
 
     /**
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_GetMeeting.html">GetMeeting</a>, in
+     * the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * <p>
      * Gets the Amazon Chime SDK meeting details for the specified meeting ID. For more information about the Amazon
-     * Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime
-     * SDK</a> in the <i>Amazon Chime Developer Guide</i> .
+     * Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using the Amazon Chime
+     * SDK</a> in the <i>Amazon Chime SDK Developer Guide</i> .
      * </p>
      * 
      * @param getMeetingRequest
@@ -6942,6 +7768,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public GetMeetingResult getMeeting(GetMeetingRequest request) {
         request = beforeClientExecution(request);
         return executeGetMeeting(request);
@@ -6989,6 +7816,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * The details of the endpoint for the messaging session.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_GetMessagingSessionEndpoint.html"
+     * >GetMessagingSessionEndpoint</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param getMessagingSessionEndpointRequest
      * @return Result of the GetMessagingSessionEndpoint operation returned by the service.
@@ -7007,6 +7847,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetMessagingSessionEndpointResult getMessagingSessionEndpoint(GetMessagingSessionEndpointRequest request) {
         request = beforeClientExecution(request);
         return executeGetMessagingSessionEndpoint(request);
@@ -7273,6 +8114,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Gets the specified proxy session details for the specified Amazon Chime Voice Connector.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetProxySession.html">GetProxySession
+     * </a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param getProxySessionRequest
      * @return Result of the GetProxySession operation returned by the service.
@@ -7295,6 +8149,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public GetProxySessionResult getProxySession(GetProxySessionRequest request) {
         request = beforeClientExecution(request);
         return executeGetProxySession(request);
@@ -7482,6 +8337,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Retrieves the information for a SIP media application, including name, AWS Region, and endpoints.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetSipMediaApplication.html">
+     * GetSipMediaApplication</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param getSipMediaApplicationRequest
      * @return Result of the GetSipMediaApplication operation returned by the service.
@@ -7504,6 +8371,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetSipMediaApplicationResult getSipMediaApplication(GetSipMediaApplicationRequest request) {
         request = beforeClientExecution(request);
         return executeGetSipMediaApplication(request);
@@ -7552,6 +8420,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Returns the logging configuration for the specified SIP media application.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetSipMediaApplicationLoggingConfiguration.html"
+     * >GetSipMediaApplicationLoggingConfiguration</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param getSipMediaApplicationLoggingConfigurationRequest
      * @return Result of the GetSipMediaApplicationLoggingConfiguration operation returned by the service.
@@ -7574,6 +8455,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetSipMediaApplicationLoggingConfigurationResult getSipMediaApplicationLoggingConfiguration(GetSipMediaApplicationLoggingConfigurationRequest request) {
         request = beforeClientExecution(request);
         return executeGetSipMediaApplicationLoggingConfiguration(request);
@@ -7624,6 +8506,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Retrieves the details of a SIP rule, such as the rule ID, name, triggers, and target endpoints.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetSipRule.html">GetSipRule</a>,
+     * in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param getSipRuleRequest
      * @return Result of the GetSipRule operation returned by the service.
@@ -7646,6 +8540,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public GetSipRuleResult getSipRule(GetSipRuleRequest request) {
         request = beforeClientExecution(request);
         return executeGetSipRule(request);
@@ -7837,6 +8732,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * Retrieves details for the specified Amazon Chime Voice Connector, such as timestamps,name, outbound host, and
      * encryption requirements.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetVoiceConnector.html">
+     * GetVoiceConnector</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param getVoiceConnectorRequest
      * @return Result of the GetVoiceConnector operation returned by the service.
@@ -7859,6 +8766,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public GetVoiceConnectorResult getVoiceConnector(GetVoiceConnectorRequest request) {
         request = beforeClientExecution(request);
         return executeGetVoiceConnector(request);
@@ -7906,6 +8814,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Gets the emergency calling configuration details for the specified Amazon Chime Voice Connector.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetVoiceConnectorEmergencyCallingConfiguration.html"
+     * >GetVoiceConnectorEmergencyCallingConfiguration</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param getVoiceConnectorEmergencyCallingConfigurationRequest
      * @return Result of the GetVoiceConnectorEmergencyCallingConfiguration operation returned by the service.
@@ -7929,6 +8850,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetVoiceConnectorEmergencyCallingConfigurationResult getVoiceConnectorEmergencyCallingConfiguration(
             GetVoiceConnectorEmergencyCallingConfigurationRequest request) {
         request = beforeClientExecution(request);
@@ -7981,6 +8903,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * Retrieves details for the specified Amazon Chime Voice Connector group, such as timestamps,name, and associated
      * <code>VoiceConnectorItems</code>.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetVoiceConnectorGroup.html">
+     * GetVoiceConnectorGroup</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param getVoiceConnectorGroupRequest
      * @return Result of the GetVoiceConnectorGroup operation returned by the service.
@@ -8003,6 +8937,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetVoiceConnectorGroupResult getVoiceConnectorGroup(GetVoiceConnectorGroupRequest request) {
         request = beforeClientExecution(request);
         return executeGetVoiceConnectorGroup(request);
@@ -8052,6 +8987,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * Retrieves the logging configuration details for the specified Amazon Chime Voice Connector. Shows whether SIP
      * message logs are enabled for sending to Amazon CloudWatch Logs.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetVoiceConnectorLoggingConfiguration.html"
+     * >GetVoiceConnectorLoggingConfiguration</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param getVoiceConnectorLoggingConfigurationRequest
      * @return Result of the GetVoiceConnectorLoggingConfiguration operation returned by the service.
@@ -8074,6 +9022,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetVoiceConnectorLoggingConfigurationResult getVoiceConnectorLoggingConfiguration(GetVoiceConnectorLoggingConfigurationRequest request) {
         request = beforeClientExecution(request);
         return executeGetVoiceConnectorLoggingConfiguration(request);
@@ -8124,6 +9073,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Retrieves origination setting details for the specified Amazon Chime Voice Connector.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetVoiceConnectorOrigination.html"
+     * >GetVoiceConnectorOrigination</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param getVoiceConnectorOriginationRequest
      * @return Result of the GetVoiceConnectorOrigination operation returned by the service.
@@ -8146,6 +9108,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetVoiceConnectorOriginationResult getVoiceConnectorOrigination(GetVoiceConnectorOriginationRequest request) {
         request = beforeClientExecution(request);
         return executeGetVoiceConnectorOrigination(request);
@@ -8195,6 +9158,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Gets the proxy configuration details for the specified Amazon Chime Voice Connector.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetVoiceConnectorProxy.html">
+     * GetVoiceConnectorProxy</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param getVoiceConnectorProxyRequest
      * @return Result of the GetVoiceConnectorProxy operation returned by the service.
@@ -8217,6 +9192,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetVoiceConnectorProxyResult getVoiceConnectorProxy(GetVoiceConnectorProxyRequest request) {
         request = beforeClientExecution(request);
         return executeGetVoiceConnectorProxy(request);
@@ -8267,6 +9243,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * streaming is enabled for sending to Amazon Kinesis. It also shows the retention period, in hours, for the Amazon
      * Kinesis data.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetVoiceConnectorStreamingConfiguration.html"
+     * >GetVoiceConnectorStreamingConfiguration</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param getVoiceConnectorStreamingConfigurationRequest
      * @return Result of the GetVoiceConnectorStreamingConfiguration operation returned by the service.
@@ -8289,6 +9278,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetVoiceConnectorStreamingConfigurationResult getVoiceConnectorStreamingConfiguration(GetVoiceConnectorStreamingConfigurationRequest request) {
         request = beforeClientExecution(request);
         return executeGetVoiceConnectorStreamingConfiguration(request);
@@ -8339,6 +9329,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Retrieves termination setting details for the specified Amazon Chime Voice Connector.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetVoiceConnectorTermination.html"
+     * >GetVoiceConnectorTermination</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param getVoiceConnectorTerminationRequest
      * @return Result of the GetVoiceConnectorTermination operation returned by the service.
@@ -8361,6 +9364,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetVoiceConnectorTerminationResult getVoiceConnectorTermination(GetVoiceConnectorTerminationRequest request) {
         request = beforeClientExecution(request);
         return executeGetVoiceConnectorTermination(request);
@@ -8407,6 +9411,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
     }
 
     /**
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetVoiceConnectorTerminationHealth.html"
+     * >GetVoiceConnectorTerminationHealth</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * <p>
      * Retrieves information about the last time a SIP <code>OPTIONS</code> ping was received from your SIP
      * infrastructure for the specified Amazon Chime Voice Connector.
@@ -8433,6 +9450,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetVoiceConnectorTerminationHealthResult getVoiceConnectorTerminationHealth(GetVoiceConnectorTerminationHealthRequest request) {
         request = beforeClientExecution(request);
         return executeGetVoiceConnectorTerminationHealth(request);
@@ -8624,6 +9642,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Returns a list of the administrators in the <code>AppInstance</code>.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_ListAppInstanceAdmins.html">
+     * ListAppInstanceAdmins</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param listAppInstanceAdminsRequest
      * @return Result of the ListAppInstanceAdmins operation returned by the service.
@@ -8644,6 +9674,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public ListAppInstanceAdminsResult listAppInstanceAdmins(ListAppInstanceAdminsRequest request) {
         request = beforeClientExecution(request);
         return executeListAppInstanceAdmins(request);
@@ -8701,6 +9732,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * List all <code>AppInstanceUsers</code> created under a single <code>AppInstance</code>.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_ListAppInstanceUsers.html">
+     * ListAppInstanceUsers</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param listAppInstanceUsersRequest
      * @return Result of the ListAppInstanceUsers operation returned by the service.
@@ -8721,6 +9764,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public ListAppInstanceUsersResult listAppInstanceUsers(ListAppInstanceUsersRequest request) {
         request = beforeClientExecution(request);
         return executeListAppInstanceUsers(request);
@@ -8777,6 +9821,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Lists all Amazon Chime <code>AppInstance</code>s created under a single AWS account.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_ListAppInstances.html">
+     * ListAppInstances</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param listAppInstancesRequest
      * @return Result of the ListAppInstances operation returned by the service.
@@ -8797,6 +9853,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public ListAppInstancesResult listAppInstances(ListAppInstancesRequest request) {
         request = beforeClientExecution(request);
         return executeListAppInstances(request);
@@ -8853,6 +9910,12 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Lists the tags applied to an Amazon Chime SDK attendee resource.
      * </p>
+     * <important>
+     * <p>
+     * ListAttendeeTags is not supported in the Amazon Chime SDK Meetings Namespace. Update your application to remove
+     * calls to this API.
+     * </p>
+     * </important>
      * 
      * @param listAttendeeTagsRequest
      * @return Result of the ListAttendeeTags operation returned by the service.
@@ -8875,6 +9938,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public ListAttendeeTagsResult listAttendeeTags(ListAttendeeTagsRequest request) {
         request = beforeClientExecution(request);
         return executeListAttendeeTags(request);
@@ -8921,9 +9985,22 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
     /**
      * <p>
      * Lists the attendees for the specified Amazon Chime SDK meeting. For more information about the Amazon Chime SDK,
-     * see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
-     * <i>Amazon Chime Developer Guide</i>.
+     * see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in
+     * the <i>Amazon Chime SDK Developer Guide</i>.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_ListAttendees.html">ListAttendees
+     * </a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param listAttendeesRequest
      * @return Result of the ListAttendees operation returned by the service.
@@ -8946,6 +10023,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public ListAttendeesResult listAttendees(ListAttendeesRequest request) {
         request = beforeClientExecution(request);
         return executeListAttendees(request);
@@ -9067,7 +10145,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
      * user that makes the API call as the value in the header.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelBans.html">
+     * ListChannelBans</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param listChannelBansRequest
      * @return Result of the ListChannelBans operation returned by the service.
@@ -9088,6 +10177,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public ListChannelBansResult listChannelBans(ListChannelBansRequest request) {
         request = beforeClientExecution(request);
         return executeListChannelBans(request);
@@ -9149,7 +10239,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
      * user that makes the API call as the value in the header.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelMemberships.html">
+     * ListChannelMemberships</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param listChannelMembershipsRequest
      * @return Result of the ListChannelMemberships operation returned by the service.
@@ -9170,6 +10271,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public ListChannelMembershipsResult listChannelMemberships(ListChannelMembershipsRequest request) {
         request = beforeClientExecution(request);
         return executeListChannelMemberships(request);
@@ -9233,7 +10335,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
      * user that makes the API call as the value in the header.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelMembershipsForAppInstanceUser.html"
+     * >ListChannelMembershipsForAppInstanceUser</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param listChannelMembershipsForAppInstanceUserRequest
      * @return Result of the ListChannelMembershipsForAppInstanceUser operation returned by the service.
@@ -9254,6 +10368,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public ListChannelMembershipsForAppInstanceUserResult listChannelMembershipsForAppInstanceUser(ListChannelMembershipsForAppInstanceUserRequest request) {
         request = beforeClientExecution(request);
         return executeListChannelMembershipsForAppInstanceUser(request);
@@ -9323,7 +10438,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * Also, the x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user
      * that makes the API call as the value in the header.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelMessages.html">
+     * ListChannelMessages</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param listChannelMessagesRequest
      * @return Result of the ListChannelMessages operation returned by the service.
@@ -9344,6 +10470,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public ListChannelMessagesResult listChannelMessages(ListChannelMessagesRequest request) {
         request = beforeClientExecution(request);
         return executeListChannelMessages(request);
@@ -9405,7 +10532,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
      * user that makes the API call as the value in the header.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelModerators.html">
+     * ListChannelModerators</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param listChannelModeratorsRequest
      * @return Result of the ListChannelModerators operation returned by the service.
@@ -9426,6 +10564,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public ListChannelModeratorsResult listChannelModerators(ListChannelModeratorsRequest request) {
         request = beforeClientExecution(request);
         return executeListChannelModerators(request);
@@ -9505,7 +10644,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
      * user that makes the API call as the value in the header.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannels.html">ListChannels
+     * </a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param listChannelsRequest
      * @return Result of the ListChannels operation returned by the service.
@@ -9526,6 +10677,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public ListChannelsResult listChannels(ListChannelsRequest request) {
         request = beforeClientExecution(request);
         return executeListChannels(request);
@@ -9587,7 +10739,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
      * user that makes the API call as the value in the header.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListChannelsModeratedByAppInstanceUser.html"
+     * >ListChannelsModeratedByAppInstanceUser</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param listChannelsModeratedByAppInstanceUserRequest
      * @return Result of the ListChannelsModeratedByAppInstanceUser operation returned by the service.
@@ -9608,6 +10772,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public ListChannelsModeratedByAppInstanceUserResult listChannelsModeratedByAppInstanceUser(ListChannelsModeratedByAppInstanceUserRequest request) {
         request = beforeClientExecution(request);
         return executeListChannelsModeratedByAppInstanceUser(request);
@@ -9667,6 +10832,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Returns a list of media capture pipelines.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_media-pipelines-chime_ListMediaCapturePipelines.html"
+     * >ListMediaCapturePipelines</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param listMediaCapturePipelinesRequest
      * @return Result of the ListMediaCapturePipelines operation returned by the service.
@@ -9687,6 +10865,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public ListMediaCapturePipelinesResult listMediaCapturePipelines(ListMediaCapturePipelinesRequest request) {
         request = beforeClientExecution(request);
         return executeListMediaCapturePipelines(request);
@@ -9736,6 +10915,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Lists the tags applied to an Amazon Chime SDK meeting resource.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_ListTagsForResource.html">
+     * ListTagsForResource</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param listMeetingTagsRequest
      * @return Result of the ListMeetingTags operation returned by the service.
@@ -9758,6 +10949,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public ListMeetingTagsResult listMeetingTags(ListMeetingTagsRequest request) {
         request = beforeClientExecution(request);
         return executeListMeetingTags(request);
@@ -9803,9 +10995,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
-     * Lists up to 100 active Amazon Chime SDK meetings. For more information about the Amazon Chime SDK, see <a
-     * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
-     * <i>Amazon Chime Developer Guide</i>.
+     * Lists up to 100 active Amazon Chime SDK meetings.
+     * </p>
+     * <important>
+     * <p>
+     * ListMeetings is not supported in the Amazon Chime SDK Meetings Namespace. Update your application to remove calls
+     * to this API.
+     * </p>
+     * </important>
+     * <p>
+     * For more information about the Amazon Chime SDK, see <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
+     * <i>Amazon Chime SDK Developer Guide</i>.
      * </p>
      * 
      * @param listMeetingsRequest
@@ -9827,6 +11028,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public ListMeetingsResult listMeetings(ListMeetingsRequest request) {
         request = beforeClientExecution(request);
         return executeListMeetings(request);
@@ -10012,6 +11214,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Lists the proxy sessions for the specified Amazon Chime Voice Connector.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_ListProxySessions.html">
+     * ListProxySessions</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param listProxySessionsRequest
      * @return Result of the ListProxySessions operation returned by the service.
@@ -10034,6 +11248,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public ListProxySessionsResult listProxySessions(ListProxySessionsRequest request) {
         request = beforeClientExecution(request);
         return executeListProxySessions(request);
@@ -10221,6 +11436,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Lists the SIP media applications under the administrator's AWS account.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_ListSipMediaApplications.html">
+     * ListSipMediaApplications</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param listSipMediaApplicationsRequest
      * @return Result of the ListSipMediaApplications operation returned by the service.
@@ -10241,6 +11468,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public ListSipMediaApplicationsResult listSipMediaApplications(ListSipMediaApplicationsRequest request) {
         request = beforeClientExecution(request);
         return executeListSipMediaApplications(request);
@@ -10290,6 +11518,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Lists the SIP rules under the administrator's AWS account.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_ListSipRules.html">ListSipRules</a>,
+     * in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param listSipRulesRequest
      * @return Result of the ListSipRules operation returned by the service.
@@ -10310,6 +11551,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public ListSipRulesResult listSipRules(ListSipRulesRequest request) {
         request = beforeClientExecution(request);
         return executeListSipRules(request);
@@ -10427,8 +11669,35 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
-     * Lists the tags applied to an Amazon Chime SDK meeting resource.
+     * Lists the tags applied to an Amazon Chime SDK meeting and messaging resources.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the applicable latest
+     * version in the Amazon Chime SDK.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For meetings: <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_ListTagsForResource.html"
+     * >ListTagsForResource</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For messaging: <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_ListTagsForResource.html"
+     * >ListTagsForResource</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
@@ -10449,6 +11718,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         request = beforeClientExecution(request);
         return executeListTagsForResource(request);
@@ -10566,6 +11836,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Lists the Amazon Chime Voice Connector groups for the administrator's AWS account.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_ListVoiceConnectorGroups.html">
+     * ListVoiceConnectorGroups</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param listVoiceConnectorGroupsRequest
      * @return Result of the ListVoiceConnectorGroups operation returned by the service.
@@ -10586,6 +11868,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public ListVoiceConnectorGroupsResult listVoiceConnectorGroups(ListVoiceConnectorGroupsRequest request) {
         request = beforeClientExecution(request);
         return executeListVoiceConnectorGroups(request);
@@ -10635,6 +11918,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Lists the SIP credentials for the specified Amazon Chime Voice Connector.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_ListVoiceConnectorTerminationCredentials.html"
+     * >ListVoiceConnectorTerminationCredentials</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param listVoiceConnectorTerminationCredentialsRequest
      * @return Result of the ListVoiceConnectorTerminationCredentials operation returned by the service.
@@ -10657,6 +11953,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public ListVoiceConnectorTerminationCredentialsResult listVoiceConnectorTerminationCredentials(ListVoiceConnectorTerminationCredentialsRequest request) {
         request = beforeClientExecution(request);
         return executeListVoiceConnectorTerminationCredentials(request);
@@ -10707,6 +12004,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Lists the Amazon Chime Voice Connectors for the administrator's AWS account.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_ListVoiceConnectors.html">
+     * ListVoiceConnectors</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param listVoiceConnectorsRequest
      * @return Result of the ListVoiceConnectors operation returned by the service.
@@ -10727,6 +12036,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public ListVoiceConnectorsResult listVoiceConnectors(ListVoiceConnectorsRequest request) {
         request = beforeClientExecution(request);
         return executeListVoiceConnectors(request);
@@ -10843,6 +12153,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Sets the amount of time in days that a given <code>AppInstance</code> retains data.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_PutAppInstanceRetentionSettings.html"
+     * >PutAppInstanceRetentionSettings</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param putAppInstanceRetentionSettingsRequest
      * @return Result of the PutAppInstanceRetentionSettings operation returned by the service.
@@ -10867,6 +12190,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public PutAppInstanceRetentionSettingsResult putAppInstanceRetentionSettings(PutAppInstanceRetentionSettingsRequest request) {
         request = beforeClientExecution(request);
         return executePutAppInstanceRetentionSettings(request);
@@ -10926,6 +12250,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * The data streaming configurations of an <code>AppInstance</code>.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_PutMessagingStreamingConfigurations.html"
+     * >PutMessagingStreamingConfigurations</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param putAppInstanceStreamingConfigurationsRequest
      * @return Result of the PutAppInstanceStreamingConfigurations operation returned by the service.
@@ -10948,6 +12285,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public PutAppInstanceStreamingConfigurationsResult putAppInstanceStreamingConfigurations(PutAppInstanceStreamingConfigurationsRequest request) {
         request = beforeClientExecution(request);
         return executePutAppInstanceStreamingConfigurations(request);
@@ -11149,6 +12487,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Updates the logging configuration for the specified SIP media application.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_PutSipMediaApplicationLoggingConfiguration.html"
+     * >PutSipMediaApplicationLoggingConfiguration</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param putSipMediaApplicationLoggingConfigurationRequest
      * @return Result of the PutSipMediaApplicationLoggingConfiguration operation returned by the service.
@@ -11171,6 +12522,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public PutSipMediaApplicationLoggingConfigurationResult putSipMediaApplicationLoggingConfiguration(PutSipMediaApplicationLoggingConfigurationRequest request) {
         request = beforeClientExecution(request);
         return executePutSipMediaApplicationLoggingConfiguration(request);
@@ -11223,6 +12575,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * phone numbers and calling countries. Origination and termination settings must be enabled for the Amazon Chime
      * Voice Connector before emergency calling can be configured.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_PutVoiceConnectorEmergencyCallingConfiguration.html"
+     * >PutVoiceConnectorEmergencyCallingConfiguration</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param putVoiceConnectorEmergencyCallingConfigurationRequest
      * @return Result of the PutVoiceConnectorEmergencyCallingConfiguration operation returned by the service.
@@ -11246,6 +12611,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public PutVoiceConnectorEmergencyCallingConfigurationResult putVoiceConnectorEmergencyCallingConfiguration(
             PutVoiceConnectorEmergencyCallingConfigurationRequest request) {
         request = beforeClientExecution(request);
@@ -11298,6 +12664,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * Adds a logging configuration for the specified Amazon Chime Voice Connector. The logging configuration specifies
      * whether SIP message logs are enabled for sending to Amazon CloudWatch Logs.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_PutVoiceConnectorLoggingConfiguration.html"
+     * >PutVoiceConnectorLoggingConfiguration</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param putVoiceConnectorLoggingConfigurationRequest
      * @return Result of the PutVoiceConnectorLoggingConfiguration operation returned by the service.
@@ -11320,6 +12699,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public PutVoiceConnectorLoggingConfigurationResult putVoiceConnectorLoggingConfiguration(PutVoiceConnectorLoggingConfigurationRequest request) {
         request = beforeClientExecution(request);
         return executePutVoiceConnectorLoggingConfiguration(request);
@@ -11375,7 +12755,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to turning off
      * origination settings.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_PutVoiceConnectorOrigination.html"
+     * >PutVoiceConnectorOrigination</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param putVoiceConnectorOriginationRequest
      * @return Result of the PutVoiceConnectorOrigination operation returned by the service.
@@ -11398,6 +12790,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public PutVoiceConnectorOriginationResult putVoiceConnectorOrigination(PutVoiceConnectorOriginationRequest request) {
         request = beforeClientExecution(request);
         return executePutVoiceConnectorOrigination(request);
@@ -11447,6 +12840,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Puts the specified proxy configuration to the specified Amazon Chime Voice Connector.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_PutVoiceConnectorProxy.html">
+     * PutVoiceConnectorProxy</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param putVoiceConnectorProxyRequest
      * @return Result of the PutVoiceConnectorProxy operation returned by the service.
@@ -11471,6 +12876,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public PutVoiceConnectorProxyResult putVoiceConnectorProxy(PutVoiceConnectorProxyRequest request) {
         request = beforeClientExecution(request);
         return executePutVoiceConnectorProxy(request);
@@ -11521,6 +12927,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * specifies whether media streaming is enabled for sending to Kinesis. It also sets the retention period, in hours,
      * for the Amazon Kinesis data.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_PutVoiceConnectorStreamingConfiguration.html"
+     * >PutVoiceConnectorStreamingConfiguration</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param putVoiceConnectorStreamingConfigurationRequest
      * @return Result of the PutVoiceConnectorStreamingConfiguration operation returned by the service.
@@ -11543,6 +12962,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public PutVoiceConnectorStreamingConfigurationResult putVoiceConnectorStreamingConfiguration(PutVoiceConnectorStreamingConfigurationRequest request) {
         request = beforeClientExecution(request);
         return executePutVoiceConnectorStreamingConfiguration(request);
@@ -11598,7 +13018,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to turning off
      * termination settings.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_PutVoiceConnectorTermination.html"
+     * >PutVoiceConnectorTermination</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param putVoiceConnectorTerminationRequest
      * @return Result of the PutVoiceConnectorTermination operation returned by the service.
@@ -11623,6 +13055,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public PutVoiceConnectorTerminationResult putVoiceConnectorTermination(PutVoiceConnectorTerminationRequest request) {
         request = beforeClientExecution(request);
         return executePutVoiceConnectorTermination(request);
@@ -11672,6 +13105,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Adds termination SIP credentials for the specified Amazon Chime Voice Connector.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_PutVoiceConnectorTerminationCredentials.html"
+     * >PutVoiceConnectorTerminationCredentials</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param putVoiceConnectorTerminationCredentialsRequest
      * @return Result of the PutVoiceConnectorTerminationCredentials operation returned by the service.
@@ -11694,6 +13140,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public PutVoiceConnectorTerminationCredentialsResult putVoiceConnectorTerminationCredentials(PutVoiceConnectorTerminationCredentialsRequest request) {
         request = beforeClientExecution(request);
         return executePutVoiceConnectorTerminationCredentials(request);
@@ -11750,7 +13197,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
      * user that makes the API call as the value in the header.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_RedactChannelMessage.html">
+     * RedactChannelMessage</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param redactChannelMessageRequest
      * @return Result of the RedactChannelMessage operation returned by the service.
@@ -11771,6 +13229,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public RedactChannelMessageResult redactChannelMessage(RedactChannelMessageRequest request) {
         request = beforeClientExecution(request);
         return executeRedactChannelMessage(request);
@@ -12262,7 +13721,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * Also, <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata. <code>CONTROL</code>
      * messages can contain 30 bytes of data and no metadata.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_SendChannelMessage.html">
+     * SendChannelMessage</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param sendChannelMessageRequest
      * @return Result of the SendChannelMessage operation returned by the service.
@@ -12285,6 +13755,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public SendChannelMessageResult sendChannelMessage(SendChannelMessageRequest request) {
         request = beforeClientExecution(request);
         return executeSendChannelMessage(request);
@@ -12339,8 +13810,36 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
-     * Starts transcription for the specified <code>meetingId</code>.
+     * Starts transcription for the specified <code>meetingId</code>. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meeting-transcription.html"> Using Amazon Chime SDK live
+     * transcription </a> in the <i>Amazon Chime SDK Developer Guide</i>.
      * </p>
+     * <p>
+     * If you specify an invalid configuration, a <code>TranscriptFailed</code> event will be sent with the contents of
+     * the <code>BadRequestException</code> generated by Amazon Transcribe. For more information on each parameter and
+     * which combinations are valid, refer to the <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/API_streaming_StartStreamTranscription.html"
+     * >StartStreamTranscription</a> API in the <i>Amazon Transcribe Developer Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * Amazon Chime SDK live transcription is powered by Amazon Transcribe. Use of Amazon Transcribe is subject to the
+     * <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>, including the terms specific to the AWS
+     * Machine Learning and Artificial Intelligence Services.
+     * </p>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_StartMeetingTranscription.html">
+     * StartMeetingTranscription</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param startMeetingTranscriptionRequest
      * @return Result of the StartMeetingTranscription operation returned by the service.
@@ -12367,6 +13866,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public StartMeetingTranscriptionResult startMeetingTranscription(StartMeetingTranscriptionRequest request) {
         request = beforeClientExecution(request);
         return executeStartMeetingTranscription(request);
@@ -12416,6 +13916,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Stops transcription for the specified <code>meetingId</code>.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_StopMeetingTranscription.html">
+     * StopMeetingTranscription</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param stopMeetingTranscriptionRequest
      * @return Result of the StopMeetingTranscription operation returned by the service.
@@ -12440,6 +13952,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public StopMeetingTranscriptionResult stopMeetingTranscription(StopMeetingTranscriptionRequest request) {
         request = beforeClientExecution(request);
         return executeStopMeetingTranscription(request);
@@ -12487,8 +14000,14 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
-     * Applies the specified tags to the specified Amazon Chime SDK attendee.
+     * Applies the specified tags to the specified Amazon Chime attendee.
      * </p>
+     * <important>
+     * <p>
+     * TagAttendee is not supported in the Amazon Chime SDK Meetings Namespace. Update your application to remove calls
+     * to this API.
+     * </p>
+     * </important>
      * 
      * @param tagAttendeeRequest
      * @return Result of the TagAttendee operation returned by the service.
@@ -12513,6 +14032,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public TagAttendeeResult tagAttendee(TagAttendeeRequest request) {
         request = beforeClientExecution(request);
         return executeTagAttendee(request);
@@ -12560,6 +14080,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Applies the specified tags to the specified Amazon Chime SDK meeting.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_TagResource.html">TagResource</a>,
+     * in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param tagMeetingRequest
      * @return Result of the TagMeeting operation returned by the service.
@@ -12584,6 +14117,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public TagMeetingResult tagMeeting(TagMeetingRequest request) {
         request = beforeClientExecution(request);
         return executeTagMeeting(request);
@@ -12631,6 +14165,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Applies the specified tags to the specified Amazon Chime SDK meeting resource.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_TagResource.html">TagResource</a>,
+     * in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
@@ -12651,6 +14198,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public TagResourceResult tagResource(TagResourceRequest request) {
         request = beforeClientExecution(request);
         return executeTagResource(request);
@@ -12698,6 +14246,12 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Untags the specified tags from the specified Amazon Chime SDK attendee.
      * </p>
+     * <important>
+     * <p>
+     * UntagAttendee is not supported in the Amazon Chime SDK Meetings Namespace. Update your application to remove
+     * calls to this API.
+     * </p>
+     * </important>
      * 
      * @param untagAttendeeRequest
      * @return Result of the UntagAttendee operation returned by the service.
@@ -12720,6 +14274,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public UntagAttendeeResult untagAttendee(UntagAttendeeRequest request) {
         request = beforeClientExecution(request);
         return executeUntagAttendee(request);
@@ -12767,6 +14322,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Untags the specified tags from the specified Amazon Chime SDK meeting.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_UntagResource.html">UntagResource
+     * </a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param untagMeetingRequest
      * @return Result of the UntagMeeting operation returned by the service.
@@ -12789,6 +14357,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public UntagMeetingResult untagMeeting(UntagMeetingRequest request) {
         request = beforeClientExecution(request);
         return executeUntagMeeting(request);
@@ -12836,6 +14405,22 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Untags the specified tags from the specified Amazon Chime SDK meeting resource.
      * </p>
+     * <p>
+     * Applies the specified tags to the specified Amazon Chime SDK meeting resource.
+     * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_meeting-chime_UntagResource.html">UntagResource
+     * </a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
@@ -12856,6 +14441,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public UntagResourceResult untagResource(UntagResourceRequest request) {
         request = beforeClientExecution(request);
         return executeUntagResource(request);
@@ -13048,6 +14634,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Updates <code>AppInstance</code> metadata.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_UpdateAppInstance.html">
+     * UpdateAppInstance</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param updateAppInstanceRequest
      * @return Result of the UpdateAppInstance operation returned by the service.
@@ -13070,6 +14668,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public UpdateAppInstanceResult updateAppInstance(UpdateAppInstanceRequest request) {
         request = beforeClientExecution(request);
         return executeUpdateAppInstance(request);
@@ -13126,6 +14725,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Updates the details of an <code>AppInstanceUser</code>. You can update names and metadata.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_identity-chime_UpdateAppInstanceUser.html">
+     * UpdateAppInstanceUser</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param updateAppInstanceUserRequest
      * @return Result of the UpdateAppInstanceUser operation returned by the service.
@@ -13148,6 +14759,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public UpdateAppInstanceUserResult updateAppInstanceUser(UpdateAppInstanceUserRequest request) {
         request = beforeClientExecution(request);
         return executeUpdateAppInstanceUser(request);
@@ -13283,7 +14895,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
      * user that makes the API call as the value in the header.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_UpdateChannel.html">UpdateChannel
+     * </a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param updateChannelRequest
      * @return Result of the UpdateChannel operation returned by the service.
@@ -13306,6 +14930,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public UpdateChannelResult updateChannel(UpdateChannelRequest request) {
         request = beforeClientExecution(request);
         return executeUpdateChannel(request);
@@ -13367,7 +14992,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
      * user that makes the API call as the value in the header.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_UpdateChannelMessage.html">
+     * UpdateChannelMessage</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param updateChannelMessageRequest
      * @return Result of the UpdateChannelMessage operation returned by the service.
@@ -13390,6 +15026,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public UpdateChannelMessageResult updateChannelMessage(UpdateChannelMessageRequest request) {
         request = beforeClientExecution(request);
         return executeUpdateChannelMessage(request);
@@ -13451,7 +15088,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
      * user that makes the API call as the value in the header.
      * </p>
-     * </note>
+     * </note> <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_messaging-chime_UpdateChannelReadMarker.html">
+     * UpdateChannelReadMarker</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param updateChannelReadMarkerRequest
      * @return Result of the UpdateChannelReadMarker operation returned by the service.
@@ -13474,6 +15123,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public UpdateChannelReadMarkerResult updateChannelReadMarker(UpdateChannelReadMarkerRequest request) {
         request = beforeClientExecution(request);
         return executeUpdateChannelReadMarker(request);
@@ -13752,6 +15402,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Updates the specified proxy session details, such as voice or SMS capabilities.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_UpdateProxySession.html">
+     * UpdateProxySession</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param updateProxySessionRequest
      * @return Result of the UpdateProxySession operation returned by the service.
@@ -13774,6 +15436,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public UpdateProxySessionResult updateProxySession(UpdateProxySessionRequest request) {
         request = beforeClientExecution(request);
         return executeUpdateProxySession(request);
@@ -13961,6 +15624,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Updates the details of the specified SIP media application.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_UpdateSipMediaApplication.html">
+     * UpdateSipMediaApplication</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param updateSipMediaApplicationRequest
      * @return Result of the UpdateSipMediaApplication operation returned by the service.
@@ -13985,6 +15660,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public UpdateSipMediaApplicationResult updateSipMediaApplication(UpdateSipMediaApplicationRequest request) {
         request = beforeClientExecution(request);
         return executeUpdateSipMediaApplication(request);
@@ -14035,6 +15711,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * Invokes the AWS Lambda function associated with the SIP media application and transaction ID in an update
      * request. The Lambda function can then return a new set of actions.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_UpdateSipMediaApplicationCall.html"
+     * >UpdateSipMediaApplicationCall</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param updateSipMediaApplicationCallRequest
      * @return Result of the UpdateSipMediaApplicationCall operation returned by the service.
@@ -14059,6 +15748,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public UpdateSipMediaApplicationCallResult updateSipMediaApplicationCall(UpdateSipMediaApplicationCallRequest request) {
         request = beforeClientExecution(request);
         return executeUpdateSipMediaApplicationCall(request);
@@ -14108,6 +15798,19 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Updates the details of the specified SIP rule.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href=
+     * "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_UpdateSipRule.html">UpdateSipRule</a>,
+     * in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param updateSipRuleRequest
      * @return Result of the UpdateSipRule operation returned by the service.
@@ -14134,6 +15837,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public UpdateSipRuleResult updateSipRule(UpdateSipRuleRequest request) {
         request = beforeClientExecution(request);
         return executeUpdateSipRule(request);
@@ -14320,6 +16024,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Updates details for the specified Amazon Chime Voice Connector.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_UpdateVoiceConnector.html">
+     * UpdateVoiceConnector</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param updateVoiceConnectorRequest
      * @return Result of the UpdateVoiceConnector operation returned by the service.
@@ -14342,6 +16058,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public UpdateVoiceConnectorResult updateVoiceConnector(UpdateVoiceConnectorRequest request) {
         request = beforeClientExecution(request);
         return executeUpdateVoiceConnector(request);
@@ -14390,6 +16107,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * Updates details of the specified Amazon Chime Voice Connector group, such as the name and Amazon Chime Voice
      * Connector priority ranking.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_UpdateVoiceConnectorGroup.html">
+     * UpdateVoiceConnectorGroup</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param updateVoiceConnectorGroupRequest
      * @return Result of the UpdateVoiceConnectorGroup operation returned by the service.
@@ -14414,6 +16143,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public UpdateVoiceConnectorGroupResult updateVoiceConnectorGroup(UpdateVoiceConnectorGroupRequest request) {
         request = beforeClientExecution(request);
         return executeUpdateVoiceConnectorGroup(request);
@@ -14465,6 +16195,18 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * addresses in a Presence Information Data Format Location Object file that you include in SIP requests. That helps
      * ensure that addresses are routed to the appropriate Public Safety Answering Point.
      * </p>
+     * <important>
+     * <p>
+     * <b>This API is is no longer supported and will not be updated.</b> We recommend using the latest version, <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_ValidateE911Address.html">
+     * ValidateE911Address</a>, in the Amazon Chime SDK.
+     * </p>
+     * <p>
+     * Using the latest version requires migrating to a dedicated namespace. For more information, refer to <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/migrate-from-chm-namespace.html">Migrating from the Amazon
+     * Chime namespace</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param validateE911AddressRequest
      * @return Result of the ValidateE911Address operation returned by the service.
@@ -14487,6 +16229,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public ValidateE911AddressResult validateE911Address(ValidateE911AddressRequest request) {
         request = beforeClientExecution(request);
         return executeValidateE911Address(request);

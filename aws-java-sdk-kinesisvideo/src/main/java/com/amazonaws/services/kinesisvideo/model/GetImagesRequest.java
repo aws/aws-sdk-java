@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,21 +54,18 @@ public class GetImagesRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private java.util.Date startTimestamp;
     /**
      * <p>
-     * The end timestamp for the range of images to be generated.
+     * The end timestamp for the range of images to be generated. If the time range between <code>StartTimestamp</code>
+     * and <code>EndTimestamp</code> is more than 300 seconds above <code>StartTimestamp</code>, you will receive an
+     * <code>IllegalArgumentException</code>.
      * </p>
      */
     private java.util.Date endTimestamp;
     /**
      * <p>
      * The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum
-     * value that can be provided is 3000 ms. If the timestamp range is less than the sampling interval, the Image from
-     * the <code>startTimestamp</code> will be returned if available.
+     * value that can be provided is 200 ms (5 images per second). If the timestamp range is less than the sampling
+     * interval, the image from the <code>startTimestamp</code> will be returned if available.
      * </p>
-     * <note>
-     * <p>
-     * The minimum value of 3000 ms is a soft limit. If needed, a lower sampling frequency can be requested.
-     * </p>
-     * </note>
      */
     private Integer samplingInterval;
     /**
@@ -114,7 +111,8 @@ public class GetImagesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * <note>
      * <p>
-     * The default limit is 100 images per API response. The additional results will be paginated.
+     * The default limit is 25 images per API response. Providing a <code>MaxResults</code> greater than this value will
+     * result in a page size of 25. Any additional results will be paginated.
      * </p>
      * </note>
      */
@@ -326,11 +324,15 @@ public class GetImagesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The end timestamp for the range of images to be generated.
+     * The end timestamp for the range of images to be generated. If the time range between <code>StartTimestamp</code>
+     * and <code>EndTimestamp</code> is more than 300 seconds above <code>StartTimestamp</code>, you will receive an
+     * <code>IllegalArgumentException</code>.
      * </p>
      * 
      * @param endTimestamp
-     *        The end timestamp for the range of images to be generated.
+     *        The end timestamp for the range of images to be generated. If the time range between
+     *        <code>StartTimestamp</code> and <code>EndTimestamp</code> is more than 300 seconds above
+     *        <code>StartTimestamp</code>, you will receive an <code>IllegalArgumentException</code>.
      */
 
     public void setEndTimestamp(java.util.Date endTimestamp) {
@@ -339,10 +341,14 @@ public class GetImagesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The end timestamp for the range of images to be generated.
+     * The end timestamp for the range of images to be generated. If the time range between <code>StartTimestamp</code>
+     * and <code>EndTimestamp</code> is more than 300 seconds above <code>StartTimestamp</code>, you will receive an
+     * <code>IllegalArgumentException</code>.
      * </p>
      * 
-     * @return The end timestamp for the range of images to be generated.
+     * @return The end timestamp for the range of images to be generated. If the time range between
+     *         <code>StartTimestamp</code> and <code>EndTimestamp</code> is more than 300 seconds above
+     *         <code>StartTimestamp</code>, you will receive an <code>IllegalArgumentException</code>.
      */
 
     public java.util.Date getEndTimestamp() {
@@ -351,11 +357,15 @@ public class GetImagesRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The end timestamp for the range of images to be generated.
+     * The end timestamp for the range of images to be generated. If the time range between <code>StartTimestamp</code>
+     * and <code>EndTimestamp</code> is more than 300 seconds above <code>StartTimestamp</code>, you will receive an
+     * <code>IllegalArgumentException</code>.
      * </p>
      * 
      * @param endTimestamp
-     *        The end timestamp for the range of images to be generated.
+     *        The end timestamp for the range of images to be generated. If the time range between
+     *        <code>StartTimestamp</code> and <code>EndTimestamp</code> is more than 300 seconds above
+     *        <code>StartTimestamp</code>, you will receive an <code>IllegalArgumentException</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -367,22 +377,14 @@ public class GetImagesRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum
-     * value that can be provided is 3000 ms. If the timestamp range is less than the sampling interval, the Image from
-     * the <code>startTimestamp</code> will be returned if available.
+     * value that can be provided is 200 ms (5 images per second). If the timestamp range is less than the sampling
+     * interval, the image from the <code>startTimestamp</code> will be returned if available.
      * </p>
-     * <note>
-     * <p>
-     * The minimum value of 3000 ms is a soft limit. If needed, a lower sampling frequency can be requested.
-     * </p>
-     * </note>
      * 
      * @param samplingInterval
      *        The time interval in milliseconds (ms) at which the images need to be generated from the stream. The
-     *        minimum value that can be provided is 3000 ms. If the timestamp range is less than the sampling interval,
-     *        the Image from the <code>startTimestamp</code> will be returned if available. </p> <note>
-     *        <p>
-     *        The minimum value of 3000 ms is a soft limit. If needed, a lower sampling frequency can be requested.
-     *        </p>
+     *        minimum value that can be provided is 200 ms (5 images per second). If the timestamp range is less than
+     *        the sampling interval, the image from the <code>startTimestamp</code> will be returned if available.
      */
 
     public void setSamplingInterval(Integer samplingInterval) {
@@ -392,21 +394,13 @@ public class GetImagesRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum
-     * value that can be provided is 3000 ms. If the timestamp range is less than the sampling interval, the Image from
-     * the <code>startTimestamp</code> will be returned if available.
+     * value that can be provided is 200 ms (5 images per second). If the timestamp range is less than the sampling
+     * interval, the image from the <code>startTimestamp</code> will be returned if available.
      * </p>
-     * <note>
-     * <p>
-     * The minimum value of 3000 ms is a soft limit. If needed, a lower sampling frequency can be requested.
-     * </p>
-     * </note>
      * 
      * @return The time interval in milliseconds (ms) at which the images need to be generated from the stream. The
-     *         minimum value that can be provided is 3000 ms. If the timestamp range is less than the sampling interval,
-     *         the Image from the <code>startTimestamp</code> will be returned if available. </p> <note>
-     *         <p>
-     *         The minimum value of 3000 ms is a soft limit. If needed, a lower sampling frequency can be requested.
-     *         </p>
+     *         minimum value that can be provided is 200 ms (5 images per second). If the timestamp range is less than
+     *         the sampling interval, the image from the <code>startTimestamp</code> will be returned if available.
      */
 
     public Integer getSamplingInterval() {
@@ -416,22 +410,14 @@ public class GetImagesRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The time interval in milliseconds (ms) at which the images need to be generated from the stream. The minimum
-     * value that can be provided is 3000 ms. If the timestamp range is less than the sampling interval, the Image from
-     * the <code>startTimestamp</code> will be returned if available.
+     * value that can be provided is 200 ms (5 images per second). If the timestamp range is less than the sampling
+     * interval, the image from the <code>startTimestamp</code> will be returned if available.
      * </p>
-     * <note>
-     * <p>
-     * The minimum value of 3000 ms is a soft limit. If needed, a lower sampling frequency can be requested.
-     * </p>
-     * </note>
      * 
      * @param samplingInterval
      *        The time interval in milliseconds (ms) at which the images need to be generated from the stream. The
-     *        minimum value that can be provided is 3000 ms. If the timestamp range is less than the sampling interval,
-     *        the Image from the <code>startTimestamp</code> will be returned if available. </p> <note>
-     *        <p>
-     *        The minimum value of 3000 ms is a soft limit. If needed, a lower sampling frequency can be requested.
-     *        </p>
+     *        minimum value that can be provided is 200 ms (5 images per second). If the timestamp range is less than
+     *        the sampling interval, the image from the <code>startTimestamp</code> will be returned if available.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -731,14 +717,16 @@ public class GetImagesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * <note>
      * <p>
-     * The default limit is 100 images per API response. The additional results will be paginated.
+     * The default limit is 25 images per API response. Providing a <code>MaxResults</code> greater than this value will
+     * result in a page size of 25. Any additional results will be paginated.
      * </p>
      * </note>
      * 
      * @param maxResults
      *        The maximum number of images to be returned by the API. </p> <note>
      *        <p>
-     *        The default limit is 100 images per API response. The additional results will be paginated.
+     *        The default limit is 25 images per API response. Providing a <code>MaxResults</code> greater than this
+     *        value will result in a page size of 25. Any additional results will be paginated.
      *        </p>
      */
 
@@ -752,13 +740,15 @@ public class GetImagesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * <note>
      * <p>
-     * The default limit is 100 images per API response. The additional results will be paginated.
+     * The default limit is 25 images per API response. Providing a <code>MaxResults</code> greater than this value will
+     * result in a page size of 25. Any additional results will be paginated.
      * </p>
      * </note>
      * 
      * @return The maximum number of images to be returned by the API. </p> <note>
      *         <p>
-     *         The default limit is 100 images per API response. The additional results will be paginated.
+     *         The default limit is 25 images per API response. Providing a <code>MaxResults</code> greater than this
+     *         value will result in a page size of 25. Any additional results will be paginated.
      *         </p>
      */
 
@@ -772,14 +762,16 @@ public class GetImagesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * <note>
      * <p>
-     * The default limit is 100 images per API response. The additional results will be paginated.
+     * The default limit is 25 images per API response. Providing a <code>MaxResults</code> greater than this value will
+     * result in a page size of 25. Any additional results will be paginated.
      * </p>
      * </note>
      * 
      * @param maxResults
      *        The maximum number of images to be returned by the API. </p> <note>
      *        <p>
-     *        The default limit is 100 images per API response. The additional results will be paginated.
+     *        The default limit is 25 images per API response. Providing a <code>MaxResults</code> greater than this
+     *        value will result in a page size of 25. Any additional results will be paginated.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

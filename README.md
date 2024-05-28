@@ -1,17 +1,15 @@
-# AWS SDK for Java [![Build Status](https://travis-ci.org/aws/aws-sdk-java.png?branch=master)](https://travis-ci.org/aws/aws-sdk-java)
+# AWS SDK for Java
 
 The **AWS SDK for Java** enables Java developers to easily work with [Amazon Web Services][aws] and
 build scalable solutions with Amazon S3, Amazon DynamoDB, Amazon Glacier, and more. You can get
 started in minutes using ***Maven*** or by downloading a [single zip file][install-jar].
 
-### :mega: Note: A version 2.x of the SDK is available, see the [AWS SDK for Java 2.x](#aws-sdk-for-java-2x) section for more information
+## End-of-Support Announcement ##
 
-* [SDK Homepage][sdk-website]
-* [API Docs][docs-api]
-* [Developer Guide][docs-guide] ([source][docs-guide-source])
-* [Issues][sdk-issues]
-* [SDK Blog][blog]
-* [Getting Help](#getting-help)
+We [announced][deprecation-announcement-post] the upcoming end-of-support for AWS SDK for Java (v1). We recommend that you migrate to 
+[AWS SDK for Java v2][sdk-v2-dev-guide]. For dates, additional details, and information on how to migrate, please refer 
+to the linked announcement. 
+
 
 ## Release Notes ##
 Changes to the SDK beginning with version 1.12.1 (June 2021) are tracked in [CHANGELOG.md][changes-file].
@@ -19,10 +17,14 @@ Changes to the SDK beginning with version 1.12.1 (June 2021) are tracked in [CHA
 Changes in the _retired_ 1.11.x series of the SDK, beginning with version 1.11.82, 
 are listed in the [CHANGELOG-1.11.x.md](./changelogs/CHANGELOG-1.11.x.md) file.
 
-Release notes for versions prior to 1.11.82 can still be found on the [AWS Release Notes
-Website][release-notes-catalog].
-
 ## Getting Started
+
+* [SDK Homepage][sdk-website]
+* [API Docs][docs-api]
+* [Developer Guide][docs-guide]
+* [Issues][sdk-issues]
+* [SDK Blog][blog]
+* [Getting Help](#getting-help)
 
 #### Sign up for AWS ####
 
@@ -50,7 +52,7 @@ dependencies.
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-bom</artifactId>
-      <version>1.12.334</version>
+      <version>1.12.730</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -115,7 +117,6 @@ mvn clean install -Dgpg.skip=true
 GitHub [issues][sdk-issues] is the preferred channel to interact with our team. Also check these community resources for getting help:
 
 * Ask a question on [StackOverflow][stack-overflow] and tag it with `aws-java-sdk`
-* Come join the AWS Java community chat on [Gitter][gitter]
 * Articulate your feature request or upvote existing ones on our [Issues][features] page
 * Take a look at the [blog] for plenty of helpful walkthroughs and tips
 * Open a case via the [AWS Support Center][support-center] in the [AWS console][console]
@@ -140,25 +141,8 @@ For more information see the [AWS SDK for Java 2.x Developer Guide][sdk-v2-dev-g
 
 ## Maintenance and Support for Java Versions
 
-The AWS Java SDK version 1 (v1) supports Java versions from 7 to 16. The Java 17 version introduces strong encapsulation of internal Java elements, which is not backwards-compatible with the Java SDK v1. 
-This may cause issues for certain use-cases of the SDK. If you plan to use Java 17+, we recommend that you migrate to
-[AWS SDK for Java 2.x][aws-sdk-for-java-2x] that fully supports Java 8, Java 11, and Java 17 Long-Term Support(LTS) releases.
-
-If you are experiencing issues with Java 17+ and unable to migrate to AWS SDK for Java v2 at this time, below are the workarounds that you might find helpful.
-Please keep in mind that these workarounds may not work in the future 
-versions of Java. See [JEP 403: Strongly Encapsulate JDK Internals][jep-403]
-and [Breaking Encapsulation][jep-break-encapsulation]
-for more details.
-
-**Error: com.amazonaws.AmazonServiceException: Unable to unmarshall
-exception response with the unmarshallers provided caused by java.lang.
-reflect.InaccessibleObjectException**
-
-- use JVM option `--add-opens java.base/java.lang=ALL-UNNAMED` at JVM startup
-
-**WARNING: Illegal reflective access by com.amazonaws.util.XpathUtils**
-
-- use JVM option `--add-opens=java.xml/com.sun.org.apache.xpath.internal=ALL-UNNAMED` at JVM startup
+The AWS Java SDK version 1 (v1) supports Java versions from 7 to 17, but may not be updated to support future Java versions. To ensure long-term compatibility with the latest JDK versions, we recommend that you migrate to
+[AWS SDK for Java 2.x][aws-sdk-for-java-2x]. 
 
 [aws-iam-credentials]: https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-roles.html
 [aws]: https://aws.amazon.com/
@@ -177,7 +161,6 @@ reflect.InaccessibleObjectException**
 [release-notes-catalog]: https://aws.amazon.com/releasenotes/Java?browse=1
 [changes-file]: ./CHANGELOG.md
 [stack-overflow]: https://stackoverflow.com/questions/tagged/aws-java-sdk
-[gitter]: https://gitter.im/aws/aws-sdk-java
 [features]: https://github.com/aws/aws-sdk-java/issues?q=is%3Aopen+is%3Aissue+label%3A%22feature-request%22
 [support-center]: https://console.aws.amazon.com/support/
 [console]: https://console.aws.amazon.com
@@ -185,6 +168,5 @@ reflect.InaccessibleObjectException**
 [sdk-v2-dev-guide]: https://docs.aws.amazon.com/sdk-for-java/v2/developer-guide/welcome.html
 [maintenance-policy]: https://docs.aws.amazon.com/credref/latest/refdocs/maint-policy.html
 [version-matrix]: https://docs.aws.amazon.com/credref/latest/refdocs/version-support-matrix.html
-[jep-break-encapsulation]: https://openjdk.org/jeps/261#Breaking-encapsulation
-[jep-403]: https://openjdk.org/jeps/403
 [aws-sdk-for-java-2x]: https://github.com/aws/aws-sdk-java-v2
+[deprecation-announcement-post]: https://aws.amazon.com/blogs/developer/announcing-end-of-support-for-aws-sdk-for-java-v1-x-on-december-31-2025

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,11 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private String callAnalyticsJobName;
-
+    /**
+     * <p>
+     * Describes the Amazon S3 location of the media file you want to use in your Call Analytics request.
+     * </p>
+     */
     private Media media;
     /**
      * <p>
@@ -66,11 +70,11 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <p>
      * You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code> parameter. If
-     * you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption.
+     * you do not specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption.
      * </p>
      * <p>
-     * If you don't specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3 bucket
-     * and you are provided with a URI to access your transcript.
+     * If you do not specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3
+     * bucket and you are provided with a URI to access your transcript.
      * </p>
      */
     private String outputLocation;
@@ -123,22 +127,22 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
      * </li>
      * </ol>
      * <p>
-     * If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).
+     * If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).
      * </p>
      * <p>
      * If you specify a KMS key to encrypt your output, you must also specify an output location using the
      * <code>OutputLocation</code> parameter.
      * </p>
      * <p>
-     * Note that the user making the request must have permission to use the specified KMS key.
+     * Note that the role making the request must have permission to use the specified KMS key.
      * </p>
      */
     private String outputEncryptionKMSKeyId;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains
-     * your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon
-     * S3 location, your request fails.
+     * your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified
+     * Amazon S3 location, your request fails.
      * </p>
      * <p>
      * IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
@@ -159,8 +163,8 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
     private CallAnalyticsJobSettings settings;
     /**
      * <p>
-     * Allows you to specify which speaker is on which channel. For example, if your agent is the first participant to
-     * speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
+     * Makes it possible to specify which speaker is on which channel. For example, if your agent is the first
+     * participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
      * <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).
      * </p>
      */
@@ -234,7 +238,12 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * Describes the Amazon S3 location of the media file you want to use in your Call Analytics request.
+     * </p>
+     * 
      * @param media
+     *        Describes the Amazon S3 location of the media file you want to use in your Call Analytics request.
      */
 
     public void setMedia(Media media) {
@@ -242,7 +251,11 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * @return
+     * <p>
+     * Describes the Amazon S3 location of the media file you want to use in your Call Analytics request.
+     * </p>
+     * 
+     * @return Describes the Amazon S3 location of the media file you want to use in your Call Analytics request.
      */
 
     public Media getMedia() {
@@ -250,7 +263,12 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * Describes the Amazon S3 location of the media file you want to use in your Call Analytics request.
+     * </p>
+     * 
      * @param media
+     *        Describes the Amazon S3 location of the media file you want to use in your Call Analytics request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -287,11 +305,11 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <p>
      * You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code> parameter. If
-     * you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption.
+     * you do not specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption.
      * </p>
      * <p>
-     * If you don't specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3 bucket
-     * and you are provided with a URI to access your transcript.
+     * If you do not specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3
+     * bucket and you are provided with a URI to access your transcript.
      * </p>
      * 
      * @param outputLocation
@@ -320,12 +338,12 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
      *        </p>
      *        <p>
      *        You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code>
-     *        parameter. If you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for
+     *        parameter. If you do not specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for
      *        server-side encryption.
      *        </p>
      *        <p>
-     *        If you don't specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3
-     *        bucket and you are provided with a URI to access your transcript.
+     *        If you do not specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon
+     *        S3 bucket and you are provided with a URI to access your transcript.
      */
 
     public void setOutputLocation(String outputLocation) {
@@ -360,11 +378,11 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <p>
      * You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code> parameter. If
-     * you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption.
+     * you do not specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption.
      * </p>
      * <p>
-     * If you don't specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3 bucket
-     * and you are provided with a URI to access your transcript.
+     * If you do not specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3
+     * bucket and you are provided with a URI to access your transcript.
      * </p>
      * 
      * @return The Amazon S3 location where you want your Call Analytics transcription output stored. You can use any of
@@ -392,11 +410,11 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
      *         </p>
      *         <p>
      *         You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code>
-     *         parameter. If you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for
+     *         parameter. If you do not specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for
      *         server-side encryption.
      *         </p>
      *         <p>
-     *         If you don't specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon
+     *         If you do not specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon
      *         S3 bucket and you are provided with a URI to access your transcript.
      */
 
@@ -432,11 +450,11 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <p>
      * You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code> parameter. If
-     * you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption.
+     * you do not specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption.
      * </p>
      * <p>
-     * If you don't specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3 bucket
-     * and you are provided with a URI to access your transcript.
+     * If you do not specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3
+     * bucket and you are provided with a URI to access your transcript.
      * </p>
      * 
      * @param outputLocation
@@ -465,12 +483,12 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
      *        </p>
      *        <p>
      *        You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code>
-     *        parameter. If you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for
+     *        parameter. If you do not specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for
      *        server-side encryption.
      *        </p>
      *        <p>
-     *        If you don't specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon S3
-     *        bucket and you are provided with a URI to access your transcript.
+     *        If you do not specify <code>OutputLocation</code>, your transcript is placed in a service-managed Amazon
+     *        S3 bucket and you are provided with a URI to access your transcript.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -528,14 +546,14 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
      * </li>
      * </ol>
      * <p>
-     * If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).
+     * If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).
      * </p>
      * <p>
      * If you specify a KMS key to encrypt your output, you must also specify an output location using the
      * <code>OutputLocation</code> parameter.
      * </p>
      * <p>
-     * Note that the user making the request must have permission to use the specified KMS key.
+     * Note that the role making the request must have permission to use the specified KMS key.
      * </p>
      * 
      * @param outputEncryptionKMSKeyId
@@ -587,14 +605,14 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        </ol>
      *        <p>
-     *        If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).
+     *        If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).
      *        </p>
      *        <p>
      *        If you specify a KMS key to encrypt your output, you must also specify an output location using the
      *        <code>OutputLocation</code> parameter.
      *        </p>
      *        <p>
-     *        Note that the user making the request must have permission to use the specified KMS key.
+     *        Note that the role making the request must have permission to use the specified KMS key.
      */
 
     public void setOutputEncryptionKMSKeyId(String outputEncryptionKMSKeyId) {
@@ -650,14 +668,14 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
      * </li>
      * </ol>
      * <p>
-     * If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).
+     * If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).
      * </p>
      * <p>
      * If you specify a KMS key to encrypt your output, you must also specify an output location using the
      * <code>OutputLocation</code> parameter.
      * </p>
      * <p>
-     * Note that the user making the request must have permission to use the specified KMS key.
+     * Note that the role making the request must have permission to use the specified KMS key.
      * </p>
      * 
      * @return The KMS key you want to use to encrypt your Call Analytics output.</p>
@@ -708,14 +726,15 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
      *         </li>
      *         </ol>
      *         <p>
-     *         If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).
+     *         If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key
+     *         (SSE-S3).
      *         </p>
      *         <p>
      *         If you specify a KMS key to encrypt your output, you must also specify an output location using the
      *         <code>OutputLocation</code> parameter.
      *         </p>
      *         <p>
-     *         Note that the user making the request must have permission to use the specified KMS key.
+     *         Note that the role making the request must have permission to use the specified KMS key.
      */
 
     public String getOutputEncryptionKMSKeyId() {
@@ -771,14 +790,14 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
      * </li>
      * </ol>
      * <p>
-     * If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).
+     * If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).
      * </p>
      * <p>
      * If you specify a KMS key to encrypt your output, you must also specify an output location using the
      * <code>OutputLocation</code> parameter.
      * </p>
      * <p>
-     * Note that the user making the request must have permission to use the specified KMS key.
+     * Note that the role making the request must have permission to use the specified KMS key.
      * </p>
      * 
      * @param outputEncryptionKMSKeyId
@@ -830,14 +849,14 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        </ol>
      *        <p>
-     *        If you don't specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).
+     *        If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).
      *        </p>
      *        <p>
      *        If you specify a KMS key to encrypt your output, you must also specify an output location using the
      *        <code>OutputLocation</code> parameter.
      *        </p>
      *        <p>
-     *        Note that the user making the request must have permission to use the specified KMS key.
+     *        Note that the role making the request must have permission to use the specified KMS key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -849,8 +868,8 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains
-     * your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon
-     * S3 location, your request fails.
+     * your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified
+     * Amazon S3 location, your request fails.
      * </p>
      * <p>
      * IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
@@ -863,8 +882,8 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
      * 
      * @param dataAccessRoleArn
      *        The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that
-     *        contains your input files. If the role you specify doesn’t have the appropriate permissions to access the
-     *        specified Amazon S3 location, your request fails.</p>
+     *        contains your input files. If the role that you specify doesn’t have the appropriate permissions to access
+     *        the specified Amazon S3 location, your request fails.</p>
      *        <p>
      *        IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For
      *        example: <code>arn:aws:iam::111122223333:role/Admin</code>.
@@ -882,8 +901,8 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains
-     * your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon
-     * S3 location, your request fails.
+     * your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified
+     * Amazon S3 location, your request fails.
      * </p>
      * <p>
      * IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
@@ -895,8 +914,8 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that
-     *         contains your input files. If the role you specify doesn’t have the appropriate permissions to access the
-     *         specified Amazon S3 location, your request fails.</p>
+     *         contains your input files. If the role that you specify doesn’t have the appropriate permissions to
+     *         access the specified Amazon S3 location, your request fails.</p>
      *         <p>
      *         IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For
      *         example: <code>arn:aws:iam::111122223333:role/Admin</code>.
@@ -914,8 +933,8 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains
-     * your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon
-     * S3 location, your request fails.
+     * your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified
+     * Amazon S3 location, your request fails.
      * </p>
      * <p>
      * IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
@@ -928,8 +947,8 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
      * 
      * @param dataAccessRoleArn
      *        The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that
-     *        contains your input files. If the role you specify doesn’t have the appropriate permissions to access the
-     *        specified Amazon S3 location, your request fails.</p>
+     *        contains your input files. If the role that you specify doesn’t have the appropriate permissions to access
+     *        the specified Amazon S3 location, your request fails.</p>
      *        <p>
      *        IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For
      *        example: <code>arn:aws:iam::111122223333:role/Admin</code>.
@@ -994,12 +1013,12 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Allows you to specify which speaker is on which channel. For example, if your agent is the first participant to
-     * speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
+     * Makes it possible to specify which speaker is on which channel. For example, if your agent is the first
+     * participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
      * <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).
      * </p>
      * 
-     * @return Allows you to specify which speaker is on which channel. For example, if your agent is the first
+     * @return Makes it possible to specify which speaker is on which channel. For example, if your agent is the first
      *         participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first
      *         channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent
      *         speaking).
@@ -1011,13 +1030,13 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Allows you to specify which speaker is on which channel. For example, if your agent is the first participant to
-     * speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
+     * Makes it possible to specify which speaker is on which channel. For example, if your agent is the first
+     * participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
      * <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).
      * </p>
      * 
      * @param channelDefinitions
-     *        Allows you to specify which speaker is on which channel. For example, if your agent is the first
+     *        Makes it possible to specify which speaker is on which channel. For example, if your agent is the first
      *        participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first
      *        channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent
      *        speaking).
@@ -1034,8 +1053,8 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Allows you to specify which speaker is on which channel. For example, if your agent is the first participant to
-     * speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
+     * Makes it possible to specify which speaker is on which channel. For example, if your agent is the first
+     * participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
      * <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).
      * </p>
      * <p>
@@ -1045,7 +1064,7 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param channelDefinitions
-     *        Allows you to specify which speaker is on which channel. For example, if your agent is the first
+     *        Makes it possible to specify which speaker is on which channel. For example, if your agent is the first
      *        participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first
      *        channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent
      *        speaking).
@@ -1064,13 +1083,13 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Allows you to specify which speaker is on which channel. For example, if your agent is the first participant to
-     * speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
+     * Makes it possible to specify which speaker is on which channel. For example, if your agent is the first
+     * participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
      * <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).
      * </p>
      * 
      * @param channelDefinitions
-     *        Allows you to specify which speaker is on which channel. For example, if your agent is the first
+     *        Makes it possible to specify which speaker is on which channel. For example, if your agent is the first
      *        participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first
      *        channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent
      *        speaking).

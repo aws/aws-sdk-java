@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,14 +30,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <ul>
  * <li>
  * <p>
- * To trigger the adjustment when the metric is greater than or equal to 50 and less than 60, specify a lower bound of 0
- * and an upper bound of 10.
+ * To initiate the adjustment when the metric is greater than or equal to 50 and less than 60, specify a lower bound of
+ * <code>0</code> and an upper bound of <code>10</code>.
  * </p>
  * </li>
  * <li>
  * <p>
- * To trigger the adjustment when the metric is greater than 40 and less than or equal to 50, specify a lower bound of
- * -10 and an upper bound of 0.
+ * To initiate the adjustment when the metric is greater than 40 and less than or equal to 50, specify a lower bound of
+ * <code>-10</code> and an upper bound of <code>0</code>.
  * </p>
  * </li>
  * </ul>
@@ -79,7 +79,7 @@ public class StepAdjustment implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The lower bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is
      * above the breach threshold, the lower bound is inclusive (the metric must be greater than or equal to the
-     * threshold plus the lower bound). Otherwise, it is exclusive (the metric must be greater than the threshold plus
+     * threshold plus the lower bound). Otherwise, it's exclusive (the metric must be greater than the threshold plus
      * the lower bound). A null value indicates negative infinity.
      * </p>
      */
@@ -88,7 +88,7 @@ public class StepAdjustment implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The upper bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is
      * above the breach threshold, the upper bound is exclusive (the metric must be less than the threshold plus the
-     * upper bound). Otherwise, it is inclusive (the metric must be less than or equal to the threshold plus the upper
+     * upper bound). Otherwise, it's inclusive (the metric must be less than or equal to the threshold plus the upper
      * bound). A null value indicates positive infinity.
      * </p>
      * <p>
@@ -100,7 +100,7 @@ public class StepAdjustment implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
      * capacity while a negative number removes from the current capacity. For exact capacity, you must specify a
-     * positive value.
+     * non-negative value.
      * </p>
      */
     private Integer scalingAdjustment;
@@ -109,14 +109,14 @@ public class StepAdjustment implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The lower bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is
      * above the breach threshold, the lower bound is inclusive (the metric must be greater than or equal to the
-     * threshold plus the lower bound). Otherwise, it is exclusive (the metric must be greater than the threshold plus
+     * threshold plus the lower bound). Otherwise, it's exclusive (the metric must be greater than the threshold plus
      * the lower bound). A null value indicates negative infinity.
      * </p>
      * 
      * @param metricIntervalLowerBound
      *        The lower bound for the difference between the alarm threshold and the CloudWatch metric. If the metric
      *        value is above the breach threshold, the lower bound is inclusive (the metric must be greater than or
-     *        equal to the threshold plus the lower bound). Otherwise, it is exclusive (the metric must be greater than
+     *        equal to the threshold plus the lower bound). Otherwise, it's exclusive (the metric must be greater than
      *        the threshold plus the lower bound). A null value indicates negative infinity.
      */
 
@@ -128,13 +128,13 @@ public class StepAdjustment implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The lower bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is
      * above the breach threshold, the lower bound is inclusive (the metric must be greater than or equal to the
-     * threshold plus the lower bound). Otherwise, it is exclusive (the metric must be greater than the threshold plus
+     * threshold plus the lower bound). Otherwise, it's exclusive (the metric must be greater than the threshold plus
      * the lower bound). A null value indicates negative infinity.
      * </p>
      * 
      * @return The lower bound for the difference between the alarm threshold and the CloudWatch metric. If the metric
      *         value is above the breach threshold, the lower bound is inclusive (the metric must be greater than or
-     *         equal to the threshold plus the lower bound). Otherwise, it is exclusive (the metric must be greater than
+     *         equal to the threshold plus the lower bound). Otherwise, it's exclusive (the metric must be greater than
      *         the threshold plus the lower bound). A null value indicates negative infinity.
      */
 
@@ -146,14 +146,14 @@ public class StepAdjustment implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The lower bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is
      * above the breach threshold, the lower bound is inclusive (the metric must be greater than or equal to the
-     * threshold plus the lower bound). Otherwise, it is exclusive (the metric must be greater than the threshold plus
+     * threshold plus the lower bound). Otherwise, it's exclusive (the metric must be greater than the threshold plus
      * the lower bound). A null value indicates negative infinity.
      * </p>
      * 
      * @param metricIntervalLowerBound
      *        The lower bound for the difference between the alarm threshold and the CloudWatch metric. If the metric
      *        value is above the breach threshold, the lower bound is inclusive (the metric must be greater than or
-     *        equal to the threshold plus the lower bound). Otherwise, it is exclusive (the metric must be greater than
+     *        equal to the threshold plus the lower bound). Otherwise, it's exclusive (the metric must be greater than
      *        the threshold plus the lower bound). A null value indicates negative infinity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -167,7 +167,7 @@ public class StepAdjustment implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The upper bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is
      * above the breach threshold, the upper bound is exclusive (the metric must be less than the threshold plus the
-     * upper bound). Otherwise, it is inclusive (the metric must be less than or equal to the threshold plus the upper
+     * upper bound). Otherwise, it's inclusive (the metric must be less than or equal to the threshold plus the upper
      * bound). A null value indicates positive infinity.
      * </p>
      * <p>
@@ -177,7 +177,7 @@ public class StepAdjustment implements Serializable, Cloneable, StructuredPojo {
      * @param metricIntervalUpperBound
      *        The upper bound for the difference between the alarm threshold and the CloudWatch metric. If the metric
      *        value is above the breach threshold, the upper bound is exclusive (the metric must be less than the
-     *        threshold plus the upper bound). Otherwise, it is inclusive (the metric must be less than or equal to the
+     *        threshold plus the upper bound). Otherwise, it's inclusive (the metric must be less than or equal to the
      *        threshold plus the upper bound). A null value indicates positive infinity.</p>
      *        <p>
      *        The upper bound must be greater than the lower bound.
@@ -191,7 +191,7 @@ public class StepAdjustment implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The upper bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is
      * above the breach threshold, the upper bound is exclusive (the metric must be less than the threshold plus the
-     * upper bound). Otherwise, it is inclusive (the metric must be less than or equal to the threshold plus the upper
+     * upper bound). Otherwise, it's inclusive (the metric must be less than or equal to the threshold plus the upper
      * bound). A null value indicates positive infinity.
      * </p>
      * <p>
@@ -200,7 +200,7 @@ public class StepAdjustment implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return The upper bound for the difference between the alarm threshold and the CloudWatch metric. If the metric
      *         value is above the breach threshold, the upper bound is exclusive (the metric must be less than the
-     *         threshold plus the upper bound). Otherwise, it is inclusive (the metric must be less than or equal to the
+     *         threshold plus the upper bound). Otherwise, it's inclusive (the metric must be less than or equal to the
      *         threshold plus the upper bound). A null value indicates positive infinity.</p>
      *         <p>
      *         The upper bound must be greater than the lower bound.
@@ -214,7 +214,7 @@ public class StepAdjustment implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The upper bound for the difference between the alarm threshold and the CloudWatch metric. If the metric value is
      * above the breach threshold, the upper bound is exclusive (the metric must be less than the threshold plus the
-     * upper bound). Otherwise, it is inclusive (the metric must be less than or equal to the threshold plus the upper
+     * upper bound). Otherwise, it's inclusive (the metric must be less than or equal to the threshold plus the upper
      * bound). A null value indicates positive infinity.
      * </p>
      * <p>
@@ -224,7 +224,7 @@ public class StepAdjustment implements Serializable, Cloneable, StructuredPojo {
      * @param metricIntervalUpperBound
      *        The upper bound for the difference between the alarm threshold and the CloudWatch metric. If the metric
      *        value is above the breach threshold, the upper bound is exclusive (the metric must be less than the
-     *        threshold plus the upper bound). Otherwise, it is inclusive (the metric must be less than or equal to the
+     *        threshold plus the upper bound). Otherwise, it's inclusive (the metric must be less than or equal to the
      *        threshold plus the upper bound). A null value indicates positive infinity.</p>
      *        <p>
      *        The upper bound must be greater than the lower bound.
@@ -240,13 +240,13 @@ public class StepAdjustment implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
      * capacity while a negative number removes from the current capacity. For exact capacity, you must specify a
-     * positive value.
+     * non-negative value.
      * </p>
      * 
      * @param scalingAdjustment
      *        The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
      *        capacity while a negative number removes from the current capacity. For exact capacity, you must specify a
-     *        positive value.
+     *        non-negative value.
      */
 
     public void setScalingAdjustment(Integer scalingAdjustment) {
@@ -257,12 +257,12 @@ public class StepAdjustment implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
      * capacity while a negative number removes from the current capacity. For exact capacity, you must specify a
-     * positive value.
+     * non-negative value.
      * </p>
      * 
      * @return The amount by which to scale, based on the specified adjustment type. A positive value adds to the
      *         current capacity while a negative number removes from the current capacity. For exact capacity, you must
-     *         specify a positive value.
+     *         specify a non-negative value.
      */
 
     public Integer getScalingAdjustment() {
@@ -273,13 +273,13 @@ public class StepAdjustment implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
      * capacity while a negative number removes from the current capacity. For exact capacity, you must specify a
-     * positive value.
+     * non-negative value.
      * </p>
      * 
      * @param scalingAdjustment
      *        The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
      *        capacity while a negative number removes from the current capacity. For exact capacity, you must specify a
-     *        positive value.
+     *        non-negative value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

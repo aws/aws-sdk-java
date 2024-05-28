@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,6 +76,7 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
      * A specified value for the attribute.
      * </p>
      */
+    @Deprecated
     private String assignedValue;
     /**
      * <p>
@@ -83,6 +84,18 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String defaultValue;
+    /**
+     * <p>
+     * The deprecation message for the node or the branch that was moved or deleted.
+     * </p>
+     */
+    private String deprecationMessage;
+    /**
+     * <p>
+     * A comment in addition to the description.
+     * </p>
+     */
+    private String comment;
 
     /**
      * <p>
@@ -427,7 +440,7 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
      * @param assignedValue
      *        A specified value for the attribute.
      */
-
+    @Deprecated
     public void setAssignedValue(String assignedValue) {
         this.assignedValue = assignedValue;
     }
@@ -439,7 +452,7 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return A specified value for the attribute.
      */
-
+    @Deprecated
     public String getAssignedValue() {
         return this.assignedValue;
     }
@@ -453,7 +466,7 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
      *        A specified value for the attribute.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public Attribute withAssignedValue(String assignedValue) {
         setAssignedValue(assignedValue);
         return this;
@@ -500,6 +513,86 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The deprecation message for the node or the branch that was moved or deleted.
+     * </p>
+     * 
+     * @param deprecationMessage
+     *        The deprecation message for the node or the branch that was moved or deleted.
+     */
+
+    public void setDeprecationMessage(String deprecationMessage) {
+        this.deprecationMessage = deprecationMessage;
+    }
+
+    /**
+     * <p>
+     * The deprecation message for the node or the branch that was moved or deleted.
+     * </p>
+     * 
+     * @return The deprecation message for the node or the branch that was moved or deleted.
+     */
+
+    public String getDeprecationMessage() {
+        return this.deprecationMessage;
+    }
+
+    /**
+     * <p>
+     * The deprecation message for the node or the branch that was moved or deleted.
+     * </p>
+     * 
+     * @param deprecationMessage
+     *        The deprecation message for the node or the branch that was moved or deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Attribute withDeprecationMessage(String deprecationMessage) {
+        setDeprecationMessage(deprecationMessage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A comment in addition to the description.
+     * </p>
+     * 
+     * @param comment
+     *        A comment in addition to the description.
+     */
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    /**
+     * <p>
+     * A comment in addition to the description.
+     * </p>
+     * 
+     * @return A comment in addition to the description.
+     */
+
+    public String getComment() {
+        return this.comment;
+    }
+
+    /**
+     * <p>
+     * A comment in addition to the description.
+     * </p>
+     * 
+     * @param comment
+     *        A comment in addition to the description.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Attribute withComment(String comment) {
+        setComment(comment);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -528,7 +621,11 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
         if (getAssignedValue() != null)
             sb.append("AssignedValue: ").append(getAssignedValue()).append(",");
         if (getDefaultValue() != null)
-            sb.append("DefaultValue: ").append(getDefaultValue());
+            sb.append("DefaultValue: ").append(getDefaultValue()).append(",");
+        if (getDeprecationMessage() != null)
+            sb.append("DeprecationMessage: ").append(getDeprecationMessage()).append(",");
+        if (getComment() != null)
+            sb.append("Comment: ").append(getComment());
         sb.append("}");
         return sb.toString();
     }
@@ -579,6 +676,14 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDefaultValue() != null && other.getDefaultValue().equals(this.getDefaultValue()) == false)
             return false;
+        if (other.getDeprecationMessage() == null ^ this.getDeprecationMessage() == null)
+            return false;
+        if (other.getDeprecationMessage() != null && other.getDeprecationMessage().equals(this.getDeprecationMessage()) == false)
+            return false;
+        if (other.getComment() == null ^ this.getComment() == null)
+            return false;
+        if (other.getComment() != null && other.getComment().equals(this.getComment()) == false)
+            return false;
         return true;
     }
 
@@ -596,6 +701,8 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getMax() == null) ? 0 : getMax().hashCode());
         hashCode = prime * hashCode + ((getAssignedValue() == null) ? 0 : getAssignedValue().hashCode());
         hashCode = prime * hashCode + ((getDefaultValue() == null) ? 0 : getDefaultValue().hashCode());
+        hashCode = prime * hashCode + ((getDeprecationMessage() == null) ? 0 : getDeprecationMessage().hashCode());
+        hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode());
         return hashCode;
     }
 

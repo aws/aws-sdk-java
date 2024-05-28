@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class FeatureActivationsMarshaller {
 
     private static final MarshallingInfo<String> INPUTPREPARESCHEDULEACTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputPrepareScheduleActions").build();
+    private static final MarshallingInfo<String> OUTPUTSTATICIMAGEOVERLAYSCHEDULEACTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("outputStaticImageOverlayScheduleActions").build();
 
     private static final FeatureActivationsMarshaller instance = new FeatureActivationsMarshaller();
 
@@ -47,6 +49,7 @@ public class FeatureActivationsMarshaller {
 
         try {
             protocolMarshaller.marshall(featureActivations.getInputPrepareScheduleActions(), INPUTPREPARESCHEDULEACTIONS_BINDING);
+            protocolMarshaller.marshall(featureActivations.getOutputStaticImageOverlayScheduleActions(), OUTPUTSTATICIMAGEOVERLAYSCHEDULEACTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

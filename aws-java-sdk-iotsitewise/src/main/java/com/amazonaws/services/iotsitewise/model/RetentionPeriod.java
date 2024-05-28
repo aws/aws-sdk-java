@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.
+ * The number of days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/RetentionPeriod" target="_top">AWS API

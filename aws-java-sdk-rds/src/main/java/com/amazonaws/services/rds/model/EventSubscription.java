@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -86,7 +86,7 @@ public class EventSubscription implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> eventCategoriesList;
     /**
      * <p>
-     * A Boolean value indicating if the subscription is enabled. True indicates the subscription is enabled.
+     * Specifies whether the subscription is enabled. True indicates the subscription is enabled.
      * </p>
      */
     private Boolean enabled;
@@ -542,11 +542,11 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value indicating if the subscription is enabled. True indicates the subscription is enabled.
+     * Specifies whether the subscription is enabled. True indicates the subscription is enabled.
      * </p>
      * 
      * @param enabled
-     *        A Boolean value indicating if the subscription is enabled. True indicates the subscription is enabled.
+     *        Specifies whether the subscription is enabled. True indicates the subscription is enabled.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -555,10 +555,10 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value indicating if the subscription is enabled. True indicates the subscription is enabled.
+     * Specifies whether the subscription is enabled. True indicates the subscription is enabled.
      * </p>
      * 
-     * @return A Boolean value indicating if the subscription is enabled. True indicates the subscription is enabled.
+     * @return Specifies whether the subscription is enabled. True indicates the subscription is enabled.
      */
 
     public Boolean getEnabled() {
@@ -567,11 +567,11 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value indicating if the subscription is enabled. True indicates the subscription is enabled.
+     * Specifies whether the subscription is enabled. True indicates the subscription is enabled.
      * </p>
      * 
      * @param enabled
-     *        A Boolean value indicating if the subscription is enabled. True indicates the subscription is enabled.
+     *        Specifies whether the subscription is enabled. True indicates the subscription is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -582,10 +582,10 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value indicating if the subscription is enabled. True indicates the subscription is enabled.
+     * Specifies whether the subscription is enabled. True indicates the subscription is enabled.
      * </p>
      * 
-     * @return A Boolean value indicating if the subscription is enabled. True indicates the subscription is enabled.
+     * @return Specifies whether the subscription is enabled. True indicates the subscription is enabled.
      */
 
     public Boolean isEnabled() {

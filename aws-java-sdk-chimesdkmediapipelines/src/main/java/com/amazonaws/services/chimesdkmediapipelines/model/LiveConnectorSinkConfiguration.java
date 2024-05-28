@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class LiveConnectorSinkConfiguration implements Serializable, Cloneable, 
     private String sinkType;
     /**
      * <p>
-     * The sink configuration's RTMP configuration setttings.
+     * The sink configuration's RTMP configuration settings.
      * </p>
      */
     private LiveConnectorRTMPConfiguration rTMPConfiguration;
@@ -103,11 +103,11 @@ public class LiveConnectorSinkConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The sink configuration's RTMP configuration setttings.
+     * The sink configuration's RTMP configuration settings.
      * </p>
      * 
      * @param rTMPConfiguration
-     *        The sink configuration's RTMP configuration setttings.
+     *        The sink configuration's RTMP configuration settings.
      */
 
     public void setRTMPConfiguration(LiveConnectorRTMPConfiguration rTMPConfiguration) {
@@ -116,10 +116,10 @@ public class LiveConnectorSinkConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The sink configuration's RTMP configuration setttings.
+     * The sink configuration's RTMP configuration settings.
      * </p>
      * 
-     * @return The sink configuration's RTMP configuration setttings.
+     * @return The sink configuration's RTMP configuration settings.
      */
 
     public LiveConnectorRTMPConfiguration getRTMPConfiguration() {
@@ -128,11 +128,11 @@ public class LiveConnectorSinkConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The sink configuration's RTMP configuration setttings.
+     * The sink configuration's RTMP configuration settings.
      * </p>
      * 
      * @param rTMPConfiguration
-     *        The sink configuration's RTMP configuration setttings.
+     *        The sink configuration's RTMP configuration settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

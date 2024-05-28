@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -83,7 +83,28 @@ public class Actuator implements Serializable, Cloneable, StructuredPojo {
      * A specified value for the actuator.
      * </p>
      */
+    @Deprecated
     private String assignedValue;
+    /**
+     * <p>
+     * The deprecation message for the node or the branch that was moved or deleted.
+     * </p>
+     */
+    private String deprecationMessage;
+    /**
+     * <p>
+     * A comment in addition to the description.
+     * </p>
+     */
+    private String comment;
+    /**
+     * <p>
+     * The fully qualified name of the struct node for the actuator if the data type of the actuator is
+     * <code>Struct</code> or <code>StructArray</code>. For example, the struct fully qualified name of an actuator
+     * might be <code>Vehicle.Door.LockStruct</code>.
+     * </p>
+     */
+    private String structFullyQualifiedName;
 
     /**
      * <p>
@@ -428,7 +449,7 @@ public class Actuator implements Serializable, Cloneable, StructuredPojo {
      * @param assignedValue
      *        A specified value for the actuator.
      */
-
+    @Deprecated
     public void setAssignedValue(String assignedValue) {
         this.assignedValue = assignedValue;
     }
@@ -440,7 +461,7 @@ public class Actuator implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return A specified value for the actuator.
      */
-
+    @Deprecated
     public String getAssignedValue() {
         return this.assignedValue;
     }
@@ -454,9 +475,141 @@ public class Actuator implements Serializable, Cloneable, StructuredPojo {
      *        A specified value for the actuator.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public Actuator withAssignedValue(String assignedValue) {
         setAssignedValue(assignedValue);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The deprecation message for the node or the branch that was moved or deleted.
+     * </p>
+     * 
+     * @param deprecationMessage
+     *        The deprecation message for the node or the branch that was moved or deleted.
+     */
+
+    public void setDeprecationMessage(String deprecationMessage) {
+        this.deprecationMessage = deprecationMessage;
+    }
+
+    /**
+     * <p>
+     * The deprecation message for the node or the branch that was moved or deleted.
+     * </p>
+     * 
+     * @return The deprecation message for the node or the branch that was moved or deleted.
+     */
+
+    public String getDeprecationMessage() {
+        return this.deprecationMessage;
+    }
+
+    /**
+     * <p>
+     * The deprecation message for the node or the branch that was moved or deleted.
+     * </p>
+     * 
+     * @param deprecationMessage
+     *        The deprecation message for the node or the branch that was moved or deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Actuator withDeprecationMessage(String deprecationMessage) {
+        setDeprecationMessage(deprecationMessage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A comment in addition to the description.
+     * </p>
+     * 
+     * @param comment
+     *        A comment in addition to the description.
+     */
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    /**
+     * <p>
+     * A comment in addition to the description.
+     * </p>
+     * 
+     * @return A comment in addition to the description.
+     */
+
+    public String getComment() {
+        return this.comment;
+    }
+
+    /**
+     * <p>
+     * A comment in addition to the description.
+     * </p>
+     * 
+     * @param comment
+     *        A comment in addition to the description.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Actuator withComment(String comment) {
+        setComment(comment);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The fully qualified name of the struct node for the actuator if the data type of the actuator is
+     * <code>Struct</code> or <code>StructArray</code>. For example, the struct fully qualified name of an actuator
+     * might be <code>Vehicle.Door.LockStruct</code>.
+     * </p>
+     * 
+     * @param structFullyQualifiedName
+     *        The fully qualified name of the struct node for the actuator if the data type of the actuator is
+     *        <code>Struct</code> or <code>StructArray</code>. For example, the struct fully qualified name of an
+     *        actuator might be <code>Vehicle.Door.LockStruct</code>.
+     */
+
+    public void setStructFullyQualifiedName(String structFullyQualifiedName) {
+        this.structFullyQualifiedName = structFullyQualifiedName;
+    }
+
+    /**
+     * <p>
+     * The fully qualified name of the struct node for the actuator if the data type of the actuator is
+     * <code>Struct</code> or <code>StructArray</code>. For example, the struct fully qualified name of an actuator
+     * might be <code>Vehicle.Door.LockStruct</code>.
+     * </p>
+     * 
+     * @return The fully qualified name of the struct node for the actuator if the data type of the actuator is
+     *         <code>Struct</code> or <code>StructArray</code>. For example, the struct fully qualified name of an
+     *         actuator might be <code>Vehicle.Door.LockStruct</code>.
+     */
+
+    public String getStructFullyQualifiedName() {
+        return this.structFullyQualifiedName;
+    }
+
+    /**
+     * <p>
+     * The fully qualified name of the struct node for the actuator if the data type of the actuator is
+     * <code>Struct</code> or <code>StructArray</code>. For example, the struct fully qualified name of an actuator
+     * might be <code>Vehicle.Door.LockStruct</code>.
+     * </p>
+     * 
+     * @param structFullyQualifiedName
+     *        The fully qualified name of the struct node for the actuator if the data type of the actuator is
+     *        <code>Struct</code> or <code>StructArray</code>. For example, the struct fully qualified name of an
+     *        actuator might be <code>Vehicle.Door.LockStruct</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Actuator withStructFullyQualifiedName(String structFullyQualifiedName) {
+        setStructFullyQualifiedName(structFullyQualifiedName);
         return this;
     }
 
@@ -487,7 +640,13 @@ public class Actuator implements Serializable, Cloneable, StructuredPojo {
         if (getMax() != null)
             sb.append("Max: ").append(getMax()).append(",");
         if (getAssignedValue() != null)
-            sb.append("AssignedValue: ").append(getAssignedValue());
+            sb.append("AssignedValue: ").append(getAssignedValue()).append(",");
+        if (getDeprecationMessage() != null)
+            sb.append("DeprecationMessage: ").append(getDeprecationMessage()).append(",");
+        if (getComment() != null)
+            sb.append("Comment: ").append(getComment()).append(",");
+        if (getStructFullyQualifiedName() != null)
+            sb.append("StructFullyQualifiedName: ").append(getStructFullyQualifiedName());
         sb.append("}");
         return sb.toString();
     }
@@ -534,6 +693,18 @@ public class Actuator implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAssignedValue() != null && other.getAssignedValue().equals(this.getAssignedValue()) == false)
             return false;
+        if (other.getDeprecationMessage() == null ^ this.getDeprecationMessage() == null)
+            return false;
+        if (other.getDeprecationMessage() != null && other.getDeprecationMessage().equals(this.getDeprecationMessage()) == false)
+            return false;
+        if (other.getComment() == null ^ this.getComment() == null)
+            return false;
+        if (other.getComment() != null && other.getComment().equals(this.getComment()) == false)
+            return false;
+        if (other.getStructFullyQualifiedName() == null ^ this.getStructFullyQualifiedName() == null)
+            return false;
+        if (other.getStructFullyQualifiedName() != null && other.getStructFullyQualifiedName().equals(this.getStructFullyQualifiedName()) == false)
+            return false;
         return true;
     }
 
@@ -550,6 +721,9 @@ public class Actuator implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getMin() == null) ? 0 : getMin().hashCode());
         hashCode = prime * hashCode + ((getMax() == null) ? 0 : getMax().hashCode());
         hashCode = prime * hashCode + ((getAssignedValue() == null) ? 0 : getAssignedValue().hashCode());
+        hashCode = prime * hashCode + ((getDeprecationMessage() == null) ? 0 : getDeprecationMessage().hashCode());
+        hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode());
+        hashCode = prime * hashCode + ((getStructFullyQualifiedName() == null) ? 0 : getStructFullyQualifiedName().hashCode());
         return hashCode;
     }
 

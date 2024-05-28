@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,7 @@ public class CreateConnectionResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when
-     * the connection is shared between AWS services.
+     * the connection is shared between Amazon Web Services services.
      * </p>
      * <note>
      * <p>
@@ -45,7 +45,7 @@ public class CreateConnectionResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when
-     * the connection is shared between AWS services.
+     * the connection is shared between Amazon Web Services services.
      * </p>
      * <note>
      * <p>
@@ -55,7 +55,7 @@ public class CreateConnectionResult extends com.amazonaws.AmazonWebServiceResult
      * 
      * @param connectionArn
      *        The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection
-     *        reference when the connection is shared between AWS services.</p> <note>
+     *        reference when the connection is shared between Amazon Web Services services.</p> <note>
      *        <p>
      *        The ARN is never reused if the connection is deleted.
      *        </p>
@@ -68,7 +68,7 @@ public class CreateConnectionResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when
-     * the connection is shared between AWS services.
+     * the connection is shared between Amazon Web Services services.
      * </p>
      * <note>
      * <p>
@@ -77,7 +77,7 @@ public class CreateConnectionResult extends com.amazonaws.AmazonWebServiceResult
      * </note>
      * 
      * @return The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection
-     *         reference when the connection is shared between AWS services.</p> <note>
+     *         reference when the connection is shared between Amazon Web Services services.</p> <note>
      *         <p>
      *         The ARN is never reused if the connection is deleted.
      *         </p>
@@ -90,7 +90,7 @@ public class CreateConnectionResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection reference when
-     * the connection is shared between AWS services.
+     * the connection is shared between Amazon Web Services services.
      * </p>
      * <note>
      * <p>
@@ -100,7 +100,7 @@ public class CreateConnectionResult extends com.amazonaws.AmazonWebServiceResult
      * 
      * @param connectionArn
      *        The Amazon Resource Name (ARN) of the connection to be created. The ARN is used as the connection
-     *        reference when the connection is shared between AWS services.</p> <note>
+     *        reference when the connection is shared between Amazon Web Services services.</p> <note>
      *        <p>
      *        The ARN is never reused if the connection is deleted.
      *        </p>

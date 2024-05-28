@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class LogicalResourceIdMarshaller {
 
+    private static final MarshallingInfo<String> EKSSOURCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("eksSourceName").build();
     private static final MarshallingInfo<String> IDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("identifier").build();
     private static final MarshallingInfo<String> LOGICALSTACKNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -52,6 +54,7 @@ public class LogicalResourceIdMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(logicalResourceId.getEksSourceName(), EKSSOURCENAME_BINDING);
             protocolMarshaller.marshall(logicalResourceId.getIdentifier(), IDENTIFIER_BINDING);
             protocolMarshaller.marshall(logicalResourceId.getLogicalStackName(), LOGICALSTACKNAME_BINDING);
             protocolMarshaller.marshall(logicalResourceId.getResourceGroupName(), RESOURCEGROUPNAME_BINDING);

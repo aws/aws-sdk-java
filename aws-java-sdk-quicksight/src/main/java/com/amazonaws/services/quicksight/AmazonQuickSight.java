@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,7 +55,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -104,7 +104,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws ConflictException
      *         Updating or deleting a resource can cause an inconsistent state.
      * @throws InvalidParameterValueException
@@ -130,9 +130,7 @@ public interface AmazonQuickSight {
      * Creates an Amazon QuickSight account, or subscribes to Amazon QuickSight Q.
      * </p>
      * <p>
-     * The Amazon Web Services Region for the account is derived from what is configured in the CLI or SDK. This
-     * operation isn't supported in the US East (Ohio) Region, South America (Sao Paulo) Region, or Asia Pacific
-     * (Singapore) Region.
+     * The Amazon Web Services Region for the account is derived from what is configured in the CLI or SDK.
      * </p>
      * <p>
      * Before you use this operation, make sure that you can connect to an existing Amazon Web Services account. If you
@@ -168,7 +166,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -193,7 +191,8 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
-     * Creates an analysis in Amazon QuickSight.
+     * Creates an analysis in Amazon QuickSight. Analyses can be created either from a template or from an
+     * <code>AnalysisDefinition</code>.
      * </p>
      * 
      * @param createAnalysisRequest
@@ -212,6 +211,8 @@ public interface AmazonQuickSight {
      *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
      *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
      *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @sample AmazonQuickSight.CreateAnalysis
@@ -222,7 +223,8 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
-     * Creates a dashboard from a template. To first create a template, see the
+     * Creates a dashboard from either a template or directly with a <code>DashboardDefinition</code>. To first create a
+     * template, see the
      * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code>
      * API operation.
      * </p>
@@ -249,6 +251,8 @@ public interface AmazonQuickSight {
      *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
      *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
      *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @sample AmazonQuickSight.CreateDashboard
@@ -268,7 +272,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws ConflictException
      *         Updating or deleting a resource can cause an inconsistent state.
      * @throws InvalidParameterValueException
@@ -304,7 +308,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws ConflictException
      *         Updating or deleting a resource can cause an inconsistent state.
      * @throws InvalidParameterValueException
@@ -350,7 +354,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws LimitExceededException
      *         A limit is exceeded.
      * @throws InternalFailureException
@@ -372,7 +376,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -398,7 +402,8 @@ public interface AmazonQuickSight {
     /**
      * <p>
      * Use the <code>CreateGroup</code> operation to create a group in Amazon QuickSight. You can create up to 10,000
-     * groups in a namespace. If you want to create more than 10,000 groups in a namespace, contact AWS Support.
+     * groups in a namespace. If you want to create more than 10,000 groups in a namespace, contact Amazon Web Services
+     * Support.
      * </p>
      * <p>
      * The permissions resource is
@@ -416,7 +421,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceExistsException
@@ -450,7 +455,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -483,7 +488,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceExistsException
@@ -522,7 +527,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -560,7 +565,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -587,8 +592,70 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
-     * Creates a template from an existing Amazon QuickSight analysis or template. You can use the resulting template to
-     * create a dashboard.
+     * Creates a refresh schedule for a dataset. You can create up to 5 different schedules for a single dataset.
+     * </p>
+     * 
+     * @param createRefreshScheduleRequest
+     * @return Result of the CreateRefreshSchedule operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.CreateRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateRefreshScheduleResult createRefreshSchedule(CreateRefreshScheduleRequest createRefreshScheduleRequest);
+
+    /**
+     * <p>
+     * Use <code>CreateRoleMembership</code> to add an existing Amazon QuickSight group to an existing role.
+     * </p>
+     * 
+     * @param createRoleMembershipRequest
+     * @return Result of the CreateRoleMembership operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.CreateRoleMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateRoleMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateRoleMembershipResult createRoleMembership(CreateRoleMembershipRequest createRoleMembershipRequest);
+
+    /**
+     * <p>
+     * Creates a template either from a <code>TemplateDefinition</code> or from an existing Amazon QuickSight analysis
+     * or template. You can use the resulting template to create additional dashboards, templates, or analyses.
      * </p>
      * <p>
      * A <i>template</i> is an entity in Amazon QuickSight that encapsulates the metadata required to create an analysis
@@ -605,7 +672,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws ResourceExistsException
      *         The resource specified already exists.
      * @throws ResourceNotFoundException
@@ -676,7 +743,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceExistsException
@@ -732,6 +799,104 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Creates a new Q topic.
+     * </p>
+     * 
+     * @param createTopicRequest
+     * @return Result of the CreateTopic operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.CreateTopic
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTopic" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateTopicResult createTopic(CreateTopicRequest createTopicRequest);
+
+    /**
+     * <p>
+     * Creates a topic refresh schedule.
+     * </p>
+     * 
+     * @param createTopicRefreshScheduleRequest
+     * @return Result of the CreateTopicRefreshSchedule operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.CreateTopicRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTopicRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateTopicRefreshScheduleResult createTopicRefreshSchedule(CreateTopicRefreshScheduleRequest createTopicRefreshScheduleRequest);
+
+    /**
+     * <p>
+     * Creates a new VPC connection.
+     * </p>
+     * 
+     * @param createVPCConnectionRequest
+     * @return Result of the CreateVPCConnection operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
+     *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.CreateVPCConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateVPCConnection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateVPCConnectionResult createVPCConnection(CreateVPCConnectionRequest createVPCConnectionRequest);
+
+    /**
+     * <p>
      * Deletes all Amazon QuickSight customizations in this Amazon Web Services Region for the specified Amazon Web
      * Services account and Amazon QuickSight namespace.
      * </p>
@@ -742,7 +907,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws ConflictException
      *         Updating or deleting a resource can cause an inconsistent state.
      * @throws InvalidParameterValueException
@@ -751,6 +916,10 @@ public interface AmazonQuickSight {
      *         One or more resources can't be found.
      * @throws ThrottlingException
      *         Access is throttled.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @throws ResourceUnavailableException
@@ -760,6 +929,40 @@ public interface AmazonQuickSight {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteAccountCustomizationResult deleteAccountCustomization(DeleteAccountCustomizationRequest deleteAccountCustomizationRequest);
+
+    /**
+     * <p>
+     * Use the <code>DeleteAccountSubscription</code> operation to delete an Amazon QuickSight account. This operation
+     * will result in an error message if you have configured your account termination protection settings to
+     * <code>True</code>. To change this setting and delete your account, call the <code>UpdateAccountSettings</code>
+     * API and set the value of the <code>TerminationProtectionEnabled</code> parameter to <code>False</code>, then make
+     * another call to the <code>DeleteAccountSubscription</code> API.
+     * </p>
+     * 
+     * @param deleteAccountSubscriptionRequest
+     * @return Result of the DeleteAccountSubscription operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.DeleteAccountSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccountSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteAccountSubscriptionResult deleteAccountSubscription(DeleteAccountSubscriptionRequest deleteAccountSubscriptionRequest);
 
     /**
      * <p>
@@ -838,7 +1041,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ThrottlingException
@@ -855,6 +1058,36 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Deletes the dataset refresh properties of the dataset.
+     * </p>
+     * 
+     * @param deleteDataSetRefreshPropertiesRequest
+     * @return Result of the DeleteDataSetRefreshProperties operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DeleteDataSetRefreshProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteDataSetRefreshProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteDataSetRefreshPropertiesResult deleteDataSetRefreshProperties(DeleteDataSetRefreshPropertiesRequest deleteDataSetRefreshPropertiesRequest);
+
+    /**
+     * <p>
      * Deletes the data source permanently. This operation breaks all the datasets that reference the deleted data
      * source.
      * </p>
@@ -865,7 +1098,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ThrottlingException
@@ -895,7 +1128,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws ResourceNotFoundException
      *         One or more resources can't be found.
      * @throws ConflictException
@@ -925,7 +1158,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -955,7 +1188,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -985,7 +1218,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -1015,7 +1248,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceExistsException
@@ -1037,6 +1270,36 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Deletes all access scopes and authorized targets that are associated with a service from the Amazon QuickSight
+     * IAM Identity Center application.
+     * </p>
+     * <p>
+     * This operation is only supported for Amazon QuickSight accounts that use IAM Identity Center.
+     * </p>
+     * 
+     * @param deleteIdentityPropagationConfigRequest
+     * @return Result of the DeleteIdentityPropagationConfig operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DeleteIdentityPropagationConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteIdentityPropagationConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteIdentityPropagationConfigResult deleteIdentityPropagationConfig(DeleteIdentityPropagationConfigRequest deleteIdentityPropagationConfigRequest);
+
+    /**
+     * <p>
      * Deletes a namespace and the users and groups that are associated with the namespace. This is an asynchronous
      * process. Assets including dashboards, analyses, datasets and data sources are not deleted. To delete these
      * assets, you use the API operations for the relevant asset.
@@ -1048,7 +1311,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -1066,6 +1329,94 @@ public interface AmazonQuickSight {
      *      Documentation</a>
      */
     DeleteNamespaceResult deleteNamespace(DeleteNamespaceRequest deleteNamespaceRequest);
+
+    /**
+     * <p>
+     * Deletes a refresh schedule from a dataset.
+     * </p>
+     * 
+     * @param deleteRefreshScheduleRequest
+     * @return Result of the DeleteRefreshSchedule operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DeleteRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteRefreshScheduleResult deleteRefreshSchedule(DeleteRefreshScheduleRequest deleteRefreshScheduleRequest);
+
+    /**
+     * <p>
+     * Removes custom permissions from the role.
+     * </p>
+     * 
+     * @param deleteRoleCustomPermissionRequest
+     * @return Result of the DeleteRoleCustomPermission operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.DeleteRoleCustomPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteRoleCustomPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteRoleCustomPermissionResult deleteRoleCustomPermission(DeleteRoleCustomPermissionRequest deleteRoleCustomPermissionRequest);
+
+    /**
+     * <p>
+     * Removes a group from a role.
+     * </p>
+     * 
+     * @param deleteRoleMembershipRequest
+     * @return Result of the DeleteRoleMembership operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.DeleteRoleMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteRoleMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteRoleMembershipResult deleteRoleMembership(DeleteRoleMembershipRequest deleteRoleMembershipRequest);
 
     /**
      * <p>
@@ -1133,7 +1484,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws ConflictException
      *         Updating or deleting a resource can cause an inconsistent state.
      * @throws InvalidParameterValueException
@@ -1184,8 +1535,68 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
-     * Deletes the Amazon QuickSight user that is associated with the identity of the Identity and Access Management
-     * (IAM) user or role that's making the call. The IAM user isn't deleted as a result of this call.
+     * Deletes a topic.
+     * </p>
+     * 
+     * @param deleteTopicRequest
+     * @return Result of the DeleteTopic operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DeleteTopic
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTopic" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteTopicResult deleteTopic(DeleteTopicRequest deleteTopicRequest);
+
+    /**
+     * <p>
+     * Deletes a topic refresh schedule.
+     * </p>
+     * 
+     * @param deleteTopicRefreshScheduleRequest
+     * @return Result of the DeleteTopicRefreshSchedule operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DeleteTopicRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTopicRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteTopicRefreshScheduleResult deleteTopicRefreshSchedule(DeleteTopicRefreshScheduleRequest deleteTopicRefreshScheduleRequest);
+
+    /**
+     * <p>
+     * Deletes the Amazon QuickSight user that is associated with the identity of the IAM user or role that's making the
+     * call. The IAM user isn't deleted as a result of this call.
      * </p>
      * 
      * @param deleteUserRequest
@@ -1194,7 +1605,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -1224,7 +1635,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -1242,6 +1653,38 @@ public interface AmazonQuickSight {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteUserByPrincipalIdResult deleteUserByPrincipalId(DeleteUserByPrincipalIdRequest deleteUserByPrincipalIdRequest);
+
+    /**
+     * <p>
+     * Deletes a VPC connection.
+     * </p>
+     * 
+     * @param deleteVPCConnectionRequest
+     * @return Result of the DeleteVPCConnection operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
+     *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DeleteVPCConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteVPCConnection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteVPCConnectionResult deleteVPCConnection(DeleteVPCConnectionRequest deleteVPCConnectionRequest);
 
     /**
      * <p>
@@ -1321,7 +1764,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -1350,7 +1793,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -1369,7 +1812,7 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
-     * Use the DescribeAccountSubscription operation to receive a description of a Amazon QuickSight account's
+     * Use the DescribeAccountSubscription operation to receive a description of an Amazon QuickSight account's
      * subscription. A successful API call returns an <code>AccountInfo</code> object that includes an account's name,
      * subscription status, authentication type, edition, and notification email address.
      * </p>
@@ -1380,7 +1823,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -1412,7 +1855,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws ThrottlingException
      *         Access is throttled.
      * @throws UnsupportedUserEditionException
@@ -1426,6 +1869,48 @@ public interface AmazonQuickSight {
      *      API Documentation</a>
      */
     DescribeAnalysisResult describeAnalysis(DescribeAnalysisRequest describeAnalysisRequest);
+
+    /**
+     * <p>
+     * Provides a detailed description of the definition of an analysis.
+     * </p>
+     * <note>
+     * <p>
+     * If you do not need to know details about the content of an Analysis, for instance if you are trying to check the
+     * status of a recently created or updated Analysis, use the <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAnalysis.html">
+     * <code>DescribeAnalysis</code> </a> instead.
+     * </p>
+     * </note>
+     * 
+     * @param describeAnalysisDefinitionRequest
+     * @return Result of the DescribeAnalysisDefinition operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
+     *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeAnalysisDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAnalysisDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeAnalysisDefinitionResult describeAnalysisDefinition(DescribeAnalysisDefinitionRequest describeAnalysisDefinitionRequest);
 
     /**
      * <p>
@@ -1454,6 +1939,60 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Describes an existing export job.
+     * </p>
+     * <p>
+     * Poll job descriptions after a job starts to know the status of the job. When a job succeeds, a URL is provided to
+     * download the exported assets' data from. Download URLs are valid for five minutes after they are generated. You
+     * can call the <code>DescribeAssetBundleExportJob</code> API for a new download URL as needed.
+     * </p>
+     * <p>
+     * Job descriptions are available for 14 days after the job starts.
+     * </p>
+     * 
+     * @param describeAssetBundleExportJobRequest
+     * @return Result of the DescribeAssetBundleExportJob operation returned by the service.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
+     *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @sample AmazonQuickSight.DescribeAssetBundleExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAssetBundleExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeAssetBundleExportJobResult describeAssetBundleExportJob(DescribeAssetBundleExportJobRequest describeAssetBundleExportJobRequest);
+
+    /**
+     * <p>
+     * Describes an existing import job.
+     * </p>
+     * <p>
+     * Poll job descriptions after starting a job to know when it has succeeded or failed. Job descriptions are
+     * available for 14 days after job starts.
+     * </p>
+     * 
+     * @param describeAssetBundleImportJobRequest
+     * @return Result of the DescribeAssetBundleImportJob operation returned by the service.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
+     *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @sample AmazonQuickSight.DescribeAssetBundleImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAssetBundleImportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeAssetBundleImportJobResult describeAssetBundleImportJob(DescribeAssetBundleImportJobRequest describeAssetBundleImportJobRequest);
+
+    /**
+     * <p>
      * Provides a summary for a dashboard.
      * </p>
      * 
@@ -1467,7 +2006,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws ThrottlingException
      *         Access is throttled.
      * @throws UnsupportedUserEditionException
@@ -1481,6 +2020,48 @@ public interface AmazonQuickSight {
      *      API Documentation</a>
      */
     DescribeDashboardResult describeDashboard(DescribeDashboardRequest describeDashboardRequest);
+
+    /**
+     * <p>
+     * Provides a detailed description of the definition of a dashboard.
+     * </p>
+     * <note>
+     * <p>
+     * If you do not need to know details about the content of a dashboard, for instance if you are trying to check the
+     * status of a recently created or updated dashboard, use the <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDashboard.html">
+     * <code>DescribeDashboard</code> </a> instead.
+     * </p>
+     * </note>
+     * 
+     * @param describeDashboardDefinitionRequest
+     * @return Result of the DescribeDashboardDefinition operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
+     *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeDashboardDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboardDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeDashboardDefinitionResult describeDashboardDefinition(DescribeDashboardDefinitionRequest describeDashboardDefinitionRequest);
 
     /**
      * <p>
@@ -1509,6 +2090,79 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Describes an existing snapshot job.
+     * </p>
+     * <p>
+     * Poll job descriptions after a job starts to know the status of the job. For information on available status
+     * codes, see <code>JobStatus</code>.
+     * </p>
+     * 
+     * @param describeDashboardSnapshotJobRequest
+     * @return Result of the DescribeDashboardSnapshotJob operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
+     *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeDashboardSnapshotJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboardSnapshotJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeDashboardSnapshotJobResult describeDashboardSnapshotJob(DescribeDashboardSnapshotJobRequest describeDashboardSnapshotJobRequest);
+
+    /**
+     * <p>
+     * Describes the result of an existing snapshot job that has finished running.
+     * </p>
+     * <p>
+     * A finished snapshot job will return a <code>COMPLETED</code> or <code>FAILED</code> status when you poll the job
+     * with a <code>DescribeDashboardSnapshotJob</code> API call.
+     * </p>
+     * <p>
+     * If the job has not finished running, this operation returns a message that says
+     * <code>Dashboard Snapshot Job with id &lt;SnapshotjobId&gt; has not reached a terminal state.</code>.
+     * </p>
+     * 
+     * @param describeDashboardSnapshotJobResultRequest
+     * @return Result of the DescribeDashboardSnapshotJobResult operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
+     *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeDashboardSnapshotJobResult
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboardSnapshotJobResult"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeDashboardSnapshotJobResultResult describeDashboardSnapshotJobResult(
+            DescribeDashboardSnapshotJobResultRequest describeDashboardSnapshotJobResultRequest);
+
+    /**
+     * <p>
      * Describes a dataset. This operation doesn't support datasets that include uploaded files as a source.
      * </p>
      * 
@@ -1518,7 +2172,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ThrottlingException
@@ -1547,7 +2201,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ThrottlingException
@@ -1564,6 +2218,36 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Describes the refresh properties of a dataset.
+     * </p>
+     * 
+     * @param describeDataSetRefreshPropertiesRequest
+     * @return Result of the DescribeDataSetRefreshProperties operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeDataSetRefreshProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDataSetRefreshProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeDataSetRefreshPropertiesResult describeDataSetRefreshProperties(DescribeDataSetRefreshPropertiesRequest describeDataSetRefreshPropertiesRequest);
+
+    /**
+     * <p>
      * Describes a data source.
      * </p>
      * 
@@ -1573,7 +2257,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ThrottlingException
@@ -1599,7 +2283,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ThrottlingException
@@ -1627,7 +2311,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws ResourceNotFoundException
      *         One or more resources can't be found.
      * @throws ThrottlingException
@@ -1657,11 +2341,13 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws ResourceNotFoundException
      *         One or more resources can't be found.
      * @throws ThrottlingException
      *         Access is throttled.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
      * @throws UnsupportedUserEditionException
      *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
      *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
@@ -1688,11 +2374,13 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws ResourceNotFoundException
      *         One or more resources can't be found.
      * @throws ThrottlingException
      *         Access is throttled.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
      * @throws UnsupportedUserEditionException
      *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
      *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
@@ -1716,7 +2404,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -1748,7 +2436,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -1778,7 +2466,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -1806,7 +2494,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -1834,7 +2522,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ThrottlingException
@@ -1851,6 +2539,30 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Describes all customer managed key registrations in a Amazon QuickSight account.
+     * </p>
+     * 
+     * @param describeKeyRegistrationRequest
+     * @return Result of the DescribeKeyRegistration operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeKeyRegistration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeKeyRegistration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeKeyRegistrationResult describeKeyRegistration(DescribeKeyRegistrationRequest describeKeyRegistrationRequest);
+
+    /**
+     * <p>
      * Describes the current namespace.
      * </p>
      * 
@@ -1860,7 +2572,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -1879,6 +2591,64 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Provides a summary of a refresh schedule.
+     * </p>
+     * 
+     * @param describeRefreshScheduleRequest
+     * @return Result of the DescribeRefreshSchedule operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeRefreshScheduleResult describeRefreshSchedule(DescribeRefreshScheduleRequest describeRefreshScheduleRequest);
+
+    /**
+     * <p>
+     * Describes all custom permissions that are mapped to a role.
+     * </p>
+     * 
+     * @param describeRoleCustomPermissionRequest
+     * @return Result of the DescribeRoleCustomPermission operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.DescribeRoleCustomPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeRoleCustomPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeRoleCustomPermissionResult describeRoleCustomPermission(DescribeRoleCustomPermissionRequest describeRoleCustomPermissionRequest);
+
+    /**
+     * <p>
      * Describes a template's metadata.
      * </p>
      * 
@@ -1890,7 +2660,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws ResourceExistsException
      *         The resource specified already exists.
      * @throws ResourceNotFoundException
@@ -1936,6 +2706,48 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Provides a detailed description of the definition of a template.
+     * </p>
+     * <note>
+     * <p>
+     * If you do not need to know details about the content of a template, for instance if you are trying to check the
+     * status of a recently created or updated template, use the <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeTemplate.html">
+     * <code>DescribeTemplate</code> </a> instead.
+     * </p>
+     * </note>
+     * 
+     * @param describeTemplateDefinitionRequest
+     * @return Result of the DescribeTemplateDefinition operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
+     *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeTemplateDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTemplateDefinition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeTemplateDefinitionResult describeTemplateDefinition(DescribeTemplateDefinitionRequest describeTemplateDefinitionRequest);
+
+    /**
+     * <p>
      * Describes read and write permissions on a template.
      * </p>
      * 
@@ -1972,7 +2784,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceExistsException
@@ -2031,7 +2843,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -2052,6 +2864,116 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Describes a topic.
+     * </p>
+     * 
+     * @param describeTopicRequest
+     * @return Result of the DescribeTopic operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeTopic
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTopic" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeTopicResult describeTopic(DescribeTopicRequest describeTopicRequest);
+
+    /**
+     * <p>
+     * Describes the permissions of a topic.
+     * </p>
+     * 
+     * @param describeTopicPermissionsRequest
+     * @return Result of the DescribeTopicPermissions operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeTopicPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTopicPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeTopicPermissionsResult describeTopicPermissions(DescribeTopicPermissionsRequest describeTopicPermissionsRequest);
+
+    /**
+     * <p>
+     * Describes the status of a topic refresh.
+     * </p>
+     * 
+     * @param describeTopicRefreshRequest
+     * @return Result of the DescribeTopicRefresh operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeTopicRefresh
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTopicRefresh"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeTopicRefreshResult describeTopicRefresh(DescribeTopicRefreshRequest describeTopicRefreshRequest);
+
+    /**
+     * <p>
+     * Deletes a topic refresh schedule.
+     * </p>
+     * 
+     * @param describeTopicRefreshScheduleRequest
+     * @return Result of the DescribeTopicRefreshSchedule operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeTopicRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTopicRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeTopicRefreshScheduleResult describeTopicRefreshSchedule(DescribeTopicRefreshScheduleRequest describeTopicRefreshScheduleRequest);
+
+    /**
+     * <p>
      * Returns information about a user, given the user name.
      * </p>
      * 
@@ -2061,7 +2983,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -2079,6 +3001,36 @@ public interface AmazonQuickSight {
      *      Documentation</a>
      */
     DescribeUserResult describeUser(DescribeUserRequest describeUserRequest);
+
+    /**
+     * <p>
+     * Describes a VPC connection.
+     * </p>
+     * 
+     * @param describeVPCConnectionRequest
+     * @return Result of the DescribeVPCConnection operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
+     *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeVPCConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeVPCConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeVPCConnectionResult describeVPCConnection(DescribeVPCConnectionRequest describeVPCConnectionRequest);
 
     /**
      * <p>
@@ -2128,7 +3080,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -2210,7 +3162,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws QuickSightUserNotFoundException
@@ -2301,7 +3253,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceExistsException
@@ -2378,7 +3330,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceExistsException
@@ -2428,6 +3380,66 @@ public interface AmazonQuickSight {
      *      Documentation</a>
      */
     ListAnalysesResult listAnalyses(ListAnalysesRequest listAnalysesRequest);
+
+    /**
+     * <p>
+     * Lists all asset bundle export jobs that have been taken place in the last 14 days. Jobs created more than 14 days
+     * ago are deleted forever and are not returned. If you are using the same job ID for multiple jobs,
+     * <code>ListAssetBundleExportJobs</code> only returns the most recent job that uses the repeated job ID.
+     * </p>
+     * 
+     * @param listAssetBundleExportJobsRequest
+     * @return Result of the ListAssetBundleExportJobs operation returned by the service.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
+     *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @sample AmazonQuickSight.ListAssetBundleExportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListAssetBundleExportJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListAssetBundleExportJobsResult listAssetBundleExportJobs(ListAssetBundleExportJobsRequest listAssetBundleExportJobsRequest);
+
+    /**
+     * <p>
+     * Lists all asset bundle import jobs that have taken place in the last 14 days. Jobs created more than 14 days ago
+     * are deleted forever and are not returned. If you are using the same job ID for multiple jobs,
+     * <code>ListAssetBundleImportJobs</code> only returns the most recent job that uses the repeated job ID.
+     * </p>
+     * 
+     * @param listAssetBundleImportJobsRequest
+     * @return Result of the ListAssetBundleImportJobs operation returned by the service.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
+     *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @sample AmazonQuickSight.ListAssetBundleImportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListAssetBundleImportJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListAssetBundleImportJobsResult listAssetBundleImportJobs(ListAssetBundleImportJobsRequest listAssetBundleImportJobsRequest);
 
     /**
      * <p>
@@ -2493,7 +3505,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ThrottlingException
@@ -2519,7 +3531,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ThrottlingException
@@ -2547,7 +3559,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws ResourceNotFoundException
      *         One or more resources can't be found.
      * @throws ThrottlingException
@@ -2579,7 +3591,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws ResourceNotFoundException
      *         One or more resources can't be found.
      * @throws ThrottlingException
@@ -2609,7 +3621,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -2641,7 +3653,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -2664,7 +3676,7 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
-     * Lists IAM policy assignments in the current Amazon QuickSight account.
+     * Lists the IAM policy assignments in the current Amazon QuickSight account.
      * </p>
      * 
      * @param listIAMPolicyAssignmentsRequest
@@ -2673,7 +3685,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -2692,8 +3704,8 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
-     * Lists all the IAM policy assignments, including the Amazon Resource Names (ARNs) for the IAM policies assigned to
-     * the specified user and group or groups that the user belongs to.
+     * Lists all of the IAM policy assignments, including the Amazon Resource Names (ARNs), for the IAM policies
+     * assigned to the specified user and group, or groups that the user belongs to.
      * </p>
      * 
      * @param listIAMPolicyAssignmentsForUserRequest
@@ -2702,7 +3714,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceExistsException
@@ -2724,6 +3736,35 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Lists all services and authorized targets that the Amazon QuickSight IAM Identity Center application can access.
+     * </p>
+     * <p>
+     * This operation is only supported for Amazon QuickSight accounts that use IAM Identity Center.
+     * </p>
+     * 
+     * @param listIdentityPropagationConfigsRequest
+     * @return Result of the ListIdentityPropagationConfigs operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.ListIdentityPropagationConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListIdentityPropagationConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListIdentityPropagationConfigsResult listIdentityPropagationConfigs(ListIdentityPropagationConfigsRequest listIdentityPropagationConfigsRequest);
+
+    /**
+     * <p>
      * Lists the history of SPICE ingestions for a dataset.
      * </p>
      * 
@@ -2733,7 +3774,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -2764,7 +3805,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -2787,6 +3828,68 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Lists the refresh schedules of a dataset. Each dataset can have up to 5 schedules.
+     * </p>
+     * 
+     * @param listRefreshSchedulesRequest
+     * @return Result of the ListRefreshSchedules operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.ListRefreshSchedules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListRefreshSchedules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListRefreshSchedulesResult listRefreshSchedules(ListRefreshSchedulesRequest listRefreshSchedulesRequest);
+
+    /**
+     * <p>
+     * Lists all groups that are associated with a role.
+     * </p>
+     * 
+     * @param listRoleMembershipsRequest
+     * @return Result of the ListRoleMemberships operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.ListRoleMemberships
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListRoleMemberships" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListRoleMembershipsResult listRoleMemberships(ListRoleMembershipsRequest listRoleMembershipsRequest);
+
+    /**
+     * <p>
      * Lists the tags assigned to a resource.
      * </p>
      * 
@@ -2796,7 +3899,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -2930,7 +4033,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidNextTokenException
      *         The <code>NextToken</code> value isn't valid.
      * @throws InvalidParameterValueException
@@ -2962,7 +4065,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws InvalidNextTokenException
@@ -2985,6 +4088,64 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Lists all of the refresh schedules for a topic.
+     * </p>
+     * 
+     * @param listTopicRefreshSchedulesRequest
+     * @return Result of the ListTopicRefreshSchedules operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.ListTopicRefreshSchedules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTopicRefreshSchedules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTopicRefreshSchedulesResult listTopicRefreshSchedules(ListTopicRefreshSchedulesRequest listTopicRefreshSchedulesRequest);
+
+    /**
+     * <p>
+     * Lists all of the topics within an account.
+     * </p>
+     * 
+     * @param listTopicsRequest
+     * @return Result of the ListTopics operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.ListTopics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTopics" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTopicsResult listTopics(ListTopicsRequest listTopicsRequest);
+
+    /**
+     * <p>
      * Lists the Amazon QuickSight groups that an Amazon QuickSight user is a member of.
      * </p>
      * 
@@ -2994,7 +4155,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -3024,7 +4185,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -3047,8 +4208,76 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
-     * Creates an Amazon QuickSight user, whose identity is associated with the Identity and Access Management (IAM)
-     * identity or role specified in the request.
+     * Lists all of the VPC connections in the current set Amazon Web Services Region of an Amazon Web Services account.
+     * </p>
+     * 
+     * @param listVPCConnectionsRequest
+     * @return Result of the ListVPCConnections operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
+     *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.ListVPCConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListVPCConnections" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListVPCConnectionsResult listVPCConnections(ListVPCConnectionsRequest listVPCConnectionsRequest);
+
+    /**
+     * <p>
+     * Creates or updates the dataset refresh properties for the dataset.
+     * </p>
+     * 
+     * @param putDataSetRefreshPropertiesRequest
+     * @return Result of the PutDataSetRefreshProperties operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.PutDataSetRefreshProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PutDataSetRefreshProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutDataSetRefreshPropertiesResult putDataSetRefreshProperties(PutDataSetRefreshPropertiesRequest putDataSetRefreshPropertiesRequest);
+
+    /**
+     * <p>
+     * Creates an Amazon QuickSight user whose identity is associated with the Identity and Access Management (IAM)
+     * identity or role specified in the request. When you register a new user from the Amazon QuickSight API, Amazon
+     * QuickSight generates a registration URL. The user accesses this registration URL to create their account. Amazon
+     * QuickSight doesn't send a registration email to users who are registered from the Amazon QuickSight API. If you
+     * want new users to receive a registration email, then add those users in the Amazon QuickSight console. For more
+     * information on registering a new user in the Amazon QuickSight console, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/managing-users.html#inviting-users"> Inviting users to
+     * access Amazon QuickSight</a>.
      * </p>
      * 
      * @param registerUserRequest
@@ -3057,7 +4286,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -3175,6 +4404,62 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Use the <code>SearchDataSets</code> operation to search for datasets that belong to an account.
+     * </p>
+     * 
+     * @param searchDataSetsRequest
+     * @return Result of the SearchDataSets operation returned by the service.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.SearchDataSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchDataSets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    SearchDataSetsResult searchDataSets(SearchDataSetsRequest searchDataSetsRequest);
+
+    /**
+     * <p>
+     * Use the <code>SearchDataSources</code> operation to search for data sources that belong to an account.
+     * </p>
+     * 
+     * @param searchDataSourcesRequest
+     * @return Result of the SearchDataSources operation returned by the service.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.SearchDataSources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchDataSources" target="_top">AWS
+     *      API Documentation</a>
+     */
+    SearchDataSourcesResult searchDataSources(SearchDataSourcesRequest searchDataSourcesRequest);
+
+    /**
+     * <p>
      * Searches the subfolders in a folder.
      * </p>
      * 
@@ -3186,7 +4471,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws ResourceNotFoundException
      *         One or more resources can't be found.
      * @throws ThrottlingException
@@ -3197,6 +4482,9 @@ public interface AmazonQuickSight {
      *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
      *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
      *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InvalidRequestException
+     *         You don't have this feature activated for your account. To fix this issue, contact Amazon Web Services
+     *         support.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @sample AmazonQuickSight.SearchFolders
@@ -3217,7 +4505,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -3240,6 +4528,252 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Starts an Asset Bundle export job.
+     * </p>
+     * <p>
+     * An Asset Bundle export job exports specified Amazon QuickSight assets. You can also choose to export any asset
+     * dependencies in the same job. Export jobs run asynchronously and can be polled with a
+     * <code>DescribeAssetBundleExportJob</code> API call. When a job is successfully completed, a download URL that
+     * contains the exported assets is returned. The URL is valid for 5 minutes and can be refreshed with a
+     * <code>DescribeAssetBundleExportJob</code> API call. Each Amazon QuickSight account can run up to 5 export jobs
+     * concurrently.
+     * </p>
+     * <p>
+     * The API caller must have the necessary permissions in their IAM role to access each resource before the resources
+     * can be exported.
+     * </p>
+     * 
+     * @param startAssetBundleExportJobRequest
+     * @return Result of the StartAssetBundleExportJob operation returned by the service.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
+     *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @sample AmazonQuickSight.StartAssetBundleExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartAssetBundleExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartAssetBundleExportJobResult startAssetBundleExportJob(StartAssetBundleExportJobRequest startAssetBundleExportJobRequest);
+
+    /**
+     * <p>
+     * Starts an Asset Bundle import job.
+     * </p>
+     * <p>
+     * An Asset Bundle import job imports specified Amazon QuickSight assets into an Amazon QuickSight account. You can
+     * also choose to import a naming prefix and specified configuration overrides. The assets that are contained in the
+     * bundle file that you provide are used to create or update a new or existing asset in your Amazon QuickSight
+     * account. Each Amazon QuickSight account can run up to 5 import jobs concurrently.
+     * </p>
+     * <p>
+     * The API caller must have the necessary <code>"create"</code>, <code>"describe"</code>, and <code>"update"</code>
+     * permissions in their IAM role to access each resource type that is contained in the bundle file before the
+     * resources can be imported.
+     * </p>
+     * 
+     * @param startAssetBundleImportJobRequest
+     * @return Result of the StartAssetBundleImportJob operation returned by the service.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
+     *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @sample AmazonQuickSight.StartAssetBundleImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartAssetBundleImportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartAssetBundleImportJobResult startAssetBundleImportJob(StartAssetBundleImportJobRequest startAssetBundleImportJobRequest);
+
+    /**
+     * <p>
+     * Starts an asynchronous job that generates a snapshot of a dashboard's output. You can request one or several of
+     * the following format configurations in each API call.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 1 Paginated PDF
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 1 Excel workbook that includes up to 5 table or pivot table visuals
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 5 CSVs from table or pivot table visuals
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The status of a submitted job can be polled with the <code>DescribeDashboardSnapshotJob</code> API. When you call
+     * the <code>DescribeDashboardSnapshotJob</code> API, check the <code>JobStatus</code> field in the response. Once
+     * the job reaches a <code>COMPLETED</code> or <code>FAILED</code> status, use the
+     * <code>DescribeDashboardSnapshotJobResult</code> API to obtain the URLs for the generated files. If the job fails,
+     * the <code>DescribeDashboardSnapshotJobResult</code> API returns detailed information about the error that
+     * occurred.
+     * </p>
+     * <p>
+     * <b>StartDashboardSnapshotJob API throttling</b>
+     * </p>
+     * <p>
+     * Amazon QuickSight utilizes API throttling to create a more consistent user experience within a time span for
+     * customers when they call the <code>StartDashboardSnapshotJob</code>. By default, 12 jobs can run simlutaneously
+     * in one Amazon Web Services account and users can submit up 10 API requests per second before an account is
+     * throttled. If an overwhelming number of API requests are made by the same user in a short period of time, Amazon
+     * QuickSight throttles the API calls to maintin an optimal experience and reliability for all Amazon QuickSight
+     * users.
+     * </p>
+     * <p>
+     * <b>Common throttling scenarios</b>
+     * </p>
+     * <p>
+     * The following list provides information about the most commin throttling scenarios that can occur.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>A large number of <code>SnapshotExport</code> API jobs are running simultaneously on an Amazon Web Services
+     * account.</b> When a new <code>StartDashboardSnapshotJob</code> is created and there are already 12 jobs with the
+     * <code>RUNNING</code> status, the new job request fails and returns a <code>LimitExceededException</code> error.
+     * Wait for a current job to comlpete before you resubmit the new job.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>A large number of API requests are submitted on an Amazon Web Services account.</b> When a user makes more
+     * than 10 API calls to the Amazon QuickSight API in one second, a <code>ThrottlingException</code> is returned.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If your use case requires a higher throttling limit, contact your account admin or <a
+     * href="http://aws.amazon.com/contact-us/">Amazon Web ServicesSupport</a> to explore options to tailor a more
+     * optimal expereince for your account.
+     * </p>
+     * <p>
+     * <b>Best practices to handle throttling</b>
+     * </p>
+     * <p>
+     * If your use case projects high levels of API traffic, try to reduce the degree of frequency and parallelism of
+     * API calls as much as you can to avoid throttling. You can also perform a timing test to calculate an estimate for
+     * the total processing time of your projected load that stays within the throttling limits of the Amazon QuickSight
+     * APIs. For example, if your projected traffic is 100 snapshot jobs before 12:00 PM per day, start 12 jobs in
+     * parallel and measure the amount of time it takes to proccess all 12 jobs. Once you obtain the result, multiply
+     * the duration by 9, for example <code>(12 minutes * 9 = 108 minutes)</code>. Use the new result to determine the
+     * latest time at which the jobs need to be started to meet your target deadline.
+     * </p>
+     * <p>
+     * The time that it takes to process a job can be impacted by the following factors:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The dataset type (Direct Query or SPICE).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The size of the dataset.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The complexity of the calculated fields that are used in the dashboard.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The number of visuals that are on a sheet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The types of visuals that are on the sheet.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The number of formats and snapshots that are requested in the job configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The size of the generated snapshots.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param startDashboardSnapshotJobRequest
+     * @return Result of the StartDashboardSnapshotJob operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
+     *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws UnsupportedPricingPlanException
+     *         This error indicates that you are calling an embedding operation in Amazon QuickSight without the
+     *         required pricing plan on your Amazon Web Services account. Before you can use embedding for anonymous
+     *         users, a QuickSight administrator needs to add capacity pricing to Amazon QuickSight. You can do this on
+     *         the <b>Manage Amazon QuickSight</b> page. </p>
+     *         <p>
+     *         After capacity pricing is added, you can use the
+     *         <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a> </code>
+     *         API operation with the <code>--identity-type ANONYMOUS</code> option.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.StartDashboardSnapshotJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartDashboardSnapshotJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartDashboardSnapshotJobResult startDashboardSnapshotJob(StartDashboardSnapshotJobRequest startDashboardSnapshotJobRequest);
+
+    /**
+     * <p>
      * Assigns one or more tags (key-value pairs) to the specified Amazon QuickSight resource.
      * </p>
      * <p>
@@ -3252,7 +4786,7 @@ public interface AmazonQuickSight {
      * </p>
      * <p>
      * You can associate as many as 50 tags with a resource. Amazon QuickSight supports tagging on data set, data
-     * source, dashboard, and template.
+     * source, dashboard, template, topic, and user.
      * </p>
      * <p>
      * Tagging for Amazon QuickSight works in a similar way to tagging for other Amazon Web Services services, except
@@ -3261,9 +4795,8 @@ public interface AmazonQuickSight {
      * <ul>
      * <li>
      * <p>
-     * You can't use tags to track costs for Amazon QuickSight. This isn't possible because you can't tag the resources
-     * that Amazon QuickSight costs are based on, for example Amazon QuickSight storage capacity (SPICE), number of
-     * users, type of users, and usage metrics.
+     * Tags are used to track costs for users in Amazon QuickSight. You can't tag other resources that Amazon QuickSight
+     * costs are based on, such as storage capacoty (SPICE), session usage, alert consumption, or reporting units.
      * </p>
      * </li>
      * <li>
@@ -3281,7 +4814,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -3307,7 +4840,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -3340,7 +4873,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws ConflictException
      *         Updating or deleting a resource can cause an inconsistent state.
      * @throws InvalidParameterValueException
@@ -3370,7 +4903,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -3435,6 +4968,8 @@ public interface AmazonQuickSight {
      *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
      * @throws ConflictException
      *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @sample AmazonQuickSight.UpdateAnalysisPermissions
@@ -3482,6 +5017,38 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Updates the linked analyses on a dashboard.
+     * </p>
+     * 
+     * @param updateDashboardLinksRequest
+     * @return Result of the UpdateDashboardLinks operation returned by the service.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
+     *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdateDashboardLinks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDashboardLinks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateDashboardLinksResult updateDashboardLinks(UpdateDashboardLinksRequest updateDashboardLinksRequest);
+
+    /**
+     * <p>
      * Updates read and write permissions on a dashboard.
      * </p>
      * 
@@ -3499,6 +5066,8 @@ public interface AmazonQuickSight {
      *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
      * @throws ConflictException
      *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @sample AmazonQuickSight.UpdateDashboardPermissions
@@ -3546,7 +5115,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws ConflictException
      *         Updating or deleting a resource can cause an inconsistent state.
      * @throws InvalidParameterValueException
@@ -3583,7 +5152,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws ConflictException
      *         Updating or deleting a resource can cause an inconsistent state.
      * @throws InvalidParameterValueException
@@ -3611,7 +5180,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws ConflictException
      *         Updating or deleting a resource can cause an inconsistent state.
      * @throws InvalidParameterValueException
@@ -3639,7 +5208,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws ConflictException
      *         Updating or deleting a resource can cause an inconsistent state.
      * @throws InvalidParameterValueException
@@ -3669,7 +5238,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws ResourceExistsException
      *         The resource specified already exists.
      * @throws ResourceNotFoundException
@@ -3703,7 +5272,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws LimitExceededException
      *         A limit is exceeded.
      * @throws ResourceNotFoundException
@@ -3733,7 +5302,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -3764,7 +5333,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceExistsException
@@ -3786,8 +5355,40 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
-     * Updates the content and status of IP rules. To use this operation, you need to provide the entire map of rules.
-     * You can use the <code>DescribeIpRestriction</code> operation to get the current rule map.
+     * Adds or updates services and authorized targets to configure what the Amazon QuickSight IAM Identity Center
+     * application can access.
+     * </p>
+     * <p>
+     * This operation is only supported for Amazon QuickSight accounts using IAM Identity Center
+     * </p>
+     * 
+     * @param updateIdentityPropagationConfigRequest
+     * @return Result of the UpdateIdentityPropagationConfig operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdateIdentityPropagationConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateIdentityPropagationConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateIdentityPropagationConfigResult updateIdentityPropagationConfig(UpdateIdentityPropagationConfigRequest updateIdentityPropagationConfigRequest);
+
+    /**
+     * <p>
+     * Updates the content and status of IP rules. Traffic from a source is allowed when the source satisfies either the
+     * <code>IpRestrictionRule</code>, <code>VpcIdRestrictionRule</code>, or <code>VpcEndpointIdRestrictionRule</code>.
+     * To use this operation, you must provide the entire map of rules. You can use the
+     * <code>DescribeIpRestriction</code> operation to get the current rule map.
      * </p>
      * 
      * @param updateIpRestrictionRequest
@@ -3798,7 +5399,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ThrottlingException
@@ -3812,6 +5413,30 @@ public interface AmazonQuickSight {
      *      API Documentation</a>
      */
     UpdateIpRestrictionResult updateIpRestriction(UpdateIpRestrictionRequest updateIpRestrictionRequest);
+
+    /**
+     * <p>
+     * Updates a customer managed key in a Amazon QuickSight account.
+     * </p>
+     * 
+     * @param updateKeyRegistrationRequest
+     * @return Result of the UpdateKeyRegistration operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdateKeyRegistration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateKeyRegistration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateKeyRegistrationResult updateKeyRegistration(UpdateKeyRegistrationRequest updateKeyRegistrationRequest);
 
     /**
      * <p>
@@ -3835,7 +5460,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -3858,6 +5483,92 @@ public interface AmazonQuickSight {
      *      target="_top">AWS API Documentation</a>
      */
     UpdatePublicSharingSettingsResult updatePublicSharingSettings(UpdatePublicSharingSettingsRequest updatePublicSharingSettingsRequest);
+
+    /**
+     * <p>
+     * Updates a refresh schedule for a dataset.
+     * </p>
+     * 
+     * @param updateRefreshScheduleRequest
+     * @return Result of the UpdateRefreshSchedule operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdateRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateRefreshScheduleResult updateRefreshSchedule(UpdateRefreshScheduleRequest updateRefreshScheduleRequest);
+
+    /**
+     * <p>
+     * Updates the custom permissions that are associated with a role.
+     * </p>
+     * 
+     * @param updateRoleCustomPermissionRequest
+     * @return Result of the UpdateRoleCustomPermission operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.UpdateRoleCustomPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateRoleCustomPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateRoleCustomPermissionResult updateRoleCustomPermission(UpdateRoleCustomPermissionRequest updateRoleCustomPermissionRequest);
+
+    /**
+     * <p>
+     * Updates the SPICE capacity configuration for a Amazon QuickSight account.
+     * </p>
+     * 
+     * @param updateSPICECapacityConfigurationRequest
+     * @return Result of the UpdateSPICECapacityConfiguration operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdateSPICECapacityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateSPICECapacityConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateSPICECapacityConfigurationResult updateSPICECapacityConfiguration(UpdateSPICECapacityConfigurationRequest updateSPICECapacityConfigurationRequest);
 
     /**
      * <p>
@@ -3936,6 +5647,8 @@ public interface AmazonQuickSight {
      *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
      *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
      *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @sample AmazonQuickSight.UpdateTemplatePermissions
@@ -3955,7 +5668,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws LimitExceededException
@@ -4119,7 +5832,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -4130,6 +5843,8 @@ public interface AmazonQuickSight {
      *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
      *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
      *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @sample AmazonQuickSight.UpdateThemePermissions
@@ -4137,6 +5852,104 @@ public interface AmazonQuickSight {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateThemePermissionsResult updateThemePermissions(UpdateThemePermissionsRequest updateThemePermissionsRequest);
+
+    /**
+     * <p>
+     * Updates a topic.
+     * </p>
+     * 
+     * @param updateTopicRequest
+     * @return Result of the UpdateTopic operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdateTopic
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTopic" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateTopicResult updateTopic(UpdateTopicRequest updateTopicRequest);
+
+    /**
+     * <p>
+     * Updates the permissions of a topic.
+     * </p>
+     * 
+     * @param updateTopicPermissionsRequest
+     * @return Result of the UpdateTopicPermissions operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
+     *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdateTopicPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTopicPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateTopicPermissionsResult updateTopicPermissions(UpdateTopicPermissionsRequest updateTopicPermissionsRequest);
+
+    /**
+     * <p>
+     * Updates a topic refresh schedule.
+     * </p>
+     * 
+     * @param updateTopicRefreshScheduleRequest
+     * @return Result of the UpdateTopicRefreshSchedule operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdateTopicRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTopicRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateTopicRefreshScheduleResult updateTopicRefreshSchedule(UpdateTopicRefreshScheduleRequest updateTopicRefreshScheduleRequest);
 
     /**
      * <p>
@@ -4149,7 +5962,7 @@ public interface AmazonQuickSight {
      *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
      *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
      *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
-     *         access keys.
+     *         credentials.
      * @throws InvalidParameterValueException
      *         One or more parameters has a value that isn't valid.
      * @throws ResourceNotFoundException
@@ -4167,6 +5980,40 @@ public interface AmazonQuickSight {
      *      Documentation</a>
      */
     UpdateUserResult updateUser(UpdateUserRequest updateUserRequest);
+
+    /**
+     * <p>
+     * Updates a VPC connection.
+     * </p>
+     * 
+     * @param updateVPCConnectionRequest
+     * @return Result of the UpdateVPCConnection operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
+     *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdateVPCConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateVPCConnection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateVPCConnectionResult updateVPCConnection(UpdateVPCConnectionRequest updateVPCConnectionRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

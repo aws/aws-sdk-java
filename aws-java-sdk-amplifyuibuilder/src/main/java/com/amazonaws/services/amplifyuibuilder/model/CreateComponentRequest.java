@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,12 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
     private String appId;
     /**
      * <p>
+     * The name of the backend environment that is a part of the Amplify app.
+     * </p>
+     */
+    private String environmentName;
+    /**
+     * <p>
      * The unique client token.
      * </p>
      */
@@ -43,12 +49,6 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private CreateComponentData componentToCreate;
-    /**
-     * <p>
-     * The name of the backend environment that is a part of the Amplify app.
-     * </p>
-     */
-    private String environmentName;
 
     /**
      * <p>
@@ -87,6 +87,46 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     public CreateComponentRequest withAppId(String appId) {
         setAppId(appId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the backend environment that is a part of the Amplify app.
+     * </p>
+     * 
+     * @param environmentName
+     *        The name of the backend environment that is a part of the Amplify app.
+     */
+
+    public void setEnvironmentName(String environmentName) {
+        this.environmentName = environmentName;
+    }
+
+    /**
+     * <p>
+     * The name of the backend environment that is a part of the Amplify app.
+     * </p>
+     * 
+     * @return The name of the backend environment that is a part of the Amplify app.
+     */
+
+    public String getEnvironmentName() {
+        return this.environmentName;
+    }
+
+    /**
+     * <p>
+     * The name of the backend environment that is a part of the Amplify app.
+     * </p>
+     * 
+     * @param environmentName
+     *        The name of the backend environment that is a part of the Amplify app.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateComponentRequest withEnvironmentName(String environmentName) {
+        setEnvironmentName(environmentName);
         return this;
     }
 
@@ -171,46 +211,6 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * <p>
-     * The name of the backend environment that is a part of the Amplify app.
-     * </p>
-     * 
-     * @param environmentName
-     *        The name of the backend environment that is a part of the Amplify app.
-     */
-
-    public void setEnvironmentName(String environmentName) {
-        this.environmentName = environmentName;
-    }
-
-    /**
-     * <p>
-     * The name of the backend environment that is a part of the Amplify app.
-     * </p>
-     * 
-     * @return The name of the backend environment that is a part of the Amplify app.
-     */
-
-    public String getEnvironmentName() {
-        return this.environmentName;
-    }
-
-    /**
-     * <p>
-     * The name of the backend environment that is a part of the Amplify app.
-     * </p>
-     * 
-     * @param environmentName
-     *        The name of the backend environment that is a part of the Amplify app.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateComponentRequest withEnvironmentName(String environmentName) {
-        setEnvironmentName(environmentName);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -224,12 +224,12 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
         sb.append("{");
         if (getAppId() != null)
             sb.append("AppId: ").append(getAppId()).append(",");
+        if (getEnvironmentName() != null)
+            sb.append("EnvironmentName: ").append(getEnvironmentName()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getComponentToCreate() != null)
-            sb.append("ComponentToCreate: ").append(getComponentToCreate()).append(",");
-        if (getEnvironmentName() != null)
-            sb.append("EnvironmentName: ").append(getEnvironmentName());
+            sb.append("ComponentToCreate: ").append(getComponentToCreate());
         sb.append("}");
         return sb.toString();
     }
@@ -248,6 +248,10 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getAppId() != null && other.getAppId().equals(this.getAppId()) == false)
             return false;
+        if (other.getEnvironmentName() == null ^ this.getEnvironmentName() == null)
+            return false;
+        if (other.getEnvironmentName() != null && other.getEnvironmentName().equals(this.getEnvironmentName()) == false)
+            return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
@@ -255,10 +259,6 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
         if (other.getComponentToCreate() == null ^ this.getComponentToCreate() == null)
             return false;
         if (other.getComponentToCreate() != null && other.getComponentToCreate().equals(this.getComponentToCreate()) == false)
-            return false;
-        if (other.getEnvironmentName() == null ^ this.getEnvironmentName() == null)
-            return false;
-        if (other.getEnvironmentName() != null && other.getEnvironmentName().equals(this.getEnvironmentName()) == false)
             return false;
         return true;
     }
@@ -269,9 +269,9 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAppId() == null) ? 0 : getAppId().hashCode());
+        hashCode = prime * hashCode + ((getEnvironmentName() == null) ? 0 : getEnvironmentName().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getComponentToCreate() == null) ? 0 : getComponentToCreate().hashCode());
-        hashCode = prime * hashCode + ((getEnvironmentName() == null) ? 0 : getEnvironmentName().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,7 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * The WorkDocs API is designed for the following use cases:
+ * The Amazon WorkDocs API is designed for the following use cases:
  * </p>
  * <ul>
  * <li>
@@ -39,7 +39,7 @@ import java.util.concurrent.ExecutorService;
  * <li>
  * <p>
  * Security: Support security applications are supported for users who have additional security needs, such as antivirus
- * or data loss prevention. The API actions, along with AWS CloudTrail, allow these applications to detect when changes
+ * or data loss prevention. The API actions, along with CloudTrail, allow these applications to detect when changes
  * occur in Amazon WorkDocs. Then, the application can take the necessary actions and replace the target file. If the
  * target file violates the policy, the application can also choose to email the user.
  * </p>
@@ -47,20 +47,51 @@ import java.util.concurrent.ExecutorService;
  * <li>
  * <p>
  * eDiscovery/Analytics: General administrative applications are supported, such as eDiscovery and analytics. These
- * applications can choose to mimic or record the actions in an Amazon WorkDocs site, along with AWS CloudTrail, to
+ * applications can choose to mimic or record the actions in an Amazon WorkDocs site, along with CloudTrail, to
  * replicate data for eDiscovery, backup, or analytical applications.
  * </p>
  * </li>
  * </ul>
  * <p>
  * All Amazon WorkDocs API actions are Amazon authenticated and certificate-signed. They not only require the use of the
- * AWS SDK, but also allow for the exclusive use of IAM users and roles to help facilitate access, trust, and permission
- * policies. By creating a role and allowing an IAM user to access the Amazon WorkDocs site, the IAM user gains full
- * administrative visibility into the entire Amazon WorkDocs site (or as set in the IAM policy). This includes, but is
- * not limited to, the ability to modify file permissions and upload any file to any user. This allows developers to
- * perform the three use cases above, as well as give users the ability to grant access on a selective basis using the
- * IAM model.
+ * Amazon Web Services SDK, but also allow for the exclusive use of IAM users and roles to help facilitate access,
+ * trust, and permission policies. By creating a role and allowing an IAM user to access the Amazon WorkDocs site, the
+ * IAM user gains full administrative visibility into the entire Amazon WorkDocs site (or as set in the IAM policy).
+ * This includes, but is not limited to, the ability to modify file permissions and upload any file to any user. This
+ * allows developers to perform the three use cases above, as well as give users the ability to grant access on a
+ * selective basis using the IAM model.
  * </p>
+ * <note>
+ * <p>
+ * The pricing for Amazon WorkDocs APIs varies depending on the API call type for these actions:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>READ (Get*)</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>WRITE (Activate*, Add*, Create*, Deactivate*, Initiate*, Update*)</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>LIST (Describe*)</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>DELETE*, CANCEL</code>
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * For information about Amazon WorkDocs API pricing, see <a href="https://aws.amazon.com/workdocs/pricing/">Amazon
+ * WorkDocs Pricing</a>.
+ * </p>
+ * </note>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -521,6 +552,39 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
 
                 try {
                     result = executeDeleteDocument(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDocumentVersionResult> deleteDocumentVersionAsync(DeleteDocumentVersionRequest request) {
+
+        return deleteDocumentVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDocumentVersionResult> deleteDocumentVersionAsync(final DeleteDocumentVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDocumentVersionRequest, DeleteDocumentVersionResult> asyncHandler) {
+        final DeleteDocumentVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDocumentVersionResult>() {
+            @Override
+            public DeleteDocumentVersionResult call() throws Exception {
+                DeleteDocumentVersionResult result = null;
+
+                try {
+                    result = executeDeleteDocumentVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1317,6 +1381,72 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
 
                 try {
                     result = executeRemoveResourcePermission(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreDocumentVersionsResult> restoreDocumentVersionsAsync(RestoreDocumentVersionsRequest request) {
+
+        return restoreDocumentVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreDocumentVersionsResult> restoreDocumentVersionsAsync(final RestoreDocumentVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RestoreDocumentVersionsRequest, RestoreDocumentVersionsResult> asyncHandler) {
+        final RestoreDocumentVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RestoreDocumentVersionsResult>() {
+            @Override
+            public RestoreDocumentVersionsResult call() throws Exception {
+                RestoreDocumentVersionsResult result = null;
+
+                try {
+                    result = executeRestoreDocumentVersions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchResourcesResult> searchResourcesAsync(SearchResourcesRequest request) {
+
+        return searchResourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchResourcesResult> searchResourcesAsync(final SearchResourcesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SearchResourcesRequest, SearchResourcesResult> asyncHandler) {
+        final SearchResourcesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SearchResourcesResult>() {
+            @Override
+            public SearchResourcesResult call() throws Exception {
+                SearchResourcesResult result = null;
+
+                try {
+                    result = executeSearchResources(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

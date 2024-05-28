@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,7 +51,7 @@ public class CreateAppBlockRequest extends com.amazonaws.AmazonWebServiceRequest
     private S3Location sourceS3Location;
     /**
      * <p>
-     * The setup script details of the app block.
+     * The setup script details of the app block. This must be provided for the <code>CUSTOM</code> PackagingType.
      * </p>
      */
     private ScriptDetails setupScriptDetails;
@@ -61,6 +61,19 @@ public class CreateAppBlockRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The post setup script details of the app block. This can only be provided for the <code>APPSTREAM2</code>
+     * PackagingType.
+     * </p>
+     */
+    private ScriptDetails postSetupScriptDetails;
+    /**
+     * <p>
+     * The packaging type of the app block.
+     * </p>
+     */
+    private String packagingType;
 
     /**
      * <p>
@@ -224,11 +237,12 @@ public class CreateAppBlockRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The setup script details of the app block.
+     * The setup script details of the app block. This must be provided for the <code>CUSTOM</code> PackagingType.
      * </p>
      * 
      * @param setupScriptDetails
-     *        The setup script details of the app block.
+     *        The setup script details of the app block. This must be provided for the <code>CUSTOM</code>
+     *        PackagingType.
      */
 
     public void setSetupScriptDetails(ScriptDetails setupScriptDetails) {
@@ -237,10 +251,11 @@ public class CreateAppBlockRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The setup script details of the app block.
+     * The setup script details of the app block. This must be provided for the <code>CUSTOM</code> PackagingType.
      * </p>
      * 
-     * @return The setup script details of the app block.
+     * @return The setup script details of the app block. This must be provided for the <code>CUSTOM</code>
+     *         PackagingType.
      */
 
     public ScriptDetails getSetupScriptDetails() {
@@ -249,11 +264,12 @@ public class CreateAppBlockRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The setup script details of the app block.
+     * The setup script details of the app block. This must be provided for the <code>CUSTOM</code> PackagingType.
      * </p>
      * 
      * @param setupScriptDetails
-     *        The setup script details of the app block.
+     *        The setup script details of the app block. This must be provided for the <code>CUSTOM</code>
+     *        PackagingType.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -331,6 +347,111 @@ public class CreateAppBlockRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The post setup script details of the app block. This can only be provided for the <code>APPSTREAM2</code>
+     * PackagingType.
+     * </p>
+     * 
+     * @param postSetupScriptDetails
+     *        The post setup script details of the app block. This can only be provided for the <code>APPSTREAM2</code>
+     *        PackagingType.
+     */
+
+    public void setPostSetupScriptDetails(ScriptDetails postSetupScriptDetails) {
+        this.postSetupScriptDetails = postSetupScriptDetails;
+    }
+
+    /**
+     * <p>
+     * The post setup script details of the app block. This can only be provided for the <code>APPSTREAM2</code>
+     * PackagingType.
+     * </p>
+     * 
+     * @return The post setup script details of the app block. This can only be provided for the <code>APPSTREAM2</code>
+     *         PackagingType.
+     */
+
+    public ScriptDetails getPostSetupScriptDetails() {
+        return this.postSetupScriptDetails;
+    }
+
+    /**
+     * <p>
+     * The post setup script details of the app block. This can only be provided for the <code>APPSTREAM2</code>
+     * PackagingType.
+     * </p>
+     * 
+     * @param postSetupScriptDetails
+     *        The post setup script details of the app block. This can only be provided for the <code>APPSTREAM2</code>
+     *        PackagingType.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAppBlockRequest withPostSetupScriptDetails(ScriptDetails postSetupScriptDetails) {
+        setPostSetupScriptDetails(postSetupScriptDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The packaging type of the app block.
+     * </p>
+     * 
+     * @param packagingType
+     *        The packaging type of the app block.
+     * @see PackagingType
+     */
+
+    public void setPackagingType(String packagingType) {
+        this.packagingType = packagingType;
+    }
+
+    /**
+     * <p>
+     * The packaging type of the app block.
+     * </p>
+     * 
+     * @return The packaging type of the app block.
+     * @see PackagingType
+     */
+
+    public String getPackagingType() {
+        return this.packagingType;
+    }
+
+    /**
+     * <p>
+     * The packaging type of the app block.
+     * </p>
+     * 
+     * @param packagingType
+     *        The packaging type of the app block.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PackagingType
+     */
+
+    public CreateAppBlockRequest withPackagingType(String packagingType) {
+        setPackagingType(packagingType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The packaging type of the app block.
+     * </p>
+     * 
+     * @param packagingType
+     *        The packaging type of the app block.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PackagingType
+     */
+
+    public CreateAppBlockRequest withPackagingType(PackagingType packagingType) {
+        this.packagingType = packagingType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -353,7 +474,11 @@ public class CreateAppBlockRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getSetupScriptDetails() != null)
             sb.append("SetupScriptDetails: ").append(getSetupScriptDetails()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getPostSetupScriptDetails() != null)
+            sb.append("PostSetupScriptDetails: ").append(getPostSetupScriptDetails()).append(",");
+        if (getPackagingType() != null)
+            sb.append("PackagingType: ").append(getPackagingType());
         sb.append("}");
         return sb.toString();
     }
@@ -392,6 +517,14 @@ public class CreateAppBlockRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getPostSetupScriptDetails() == null ^ this.getPostSetupScriptDetails() == null)
+            return false;
+        if (other.getPostSetupScriptDetails() != null && other.getPostSetupScriptDetails().equals(this.getPostSetupScriptDetails()) == false)
+            return false;
+        if (other.getPackagingType() == null ^ this.getPackagingType() == null)
+            return false;
+        if (other.getPackagingType() != null && other.getPackagingType().equals(this.getPackagingType()) == false)
+            return false;
         return true;
     }
 
@@ -406,6 +539,8 @@ public class CreateAppBlockRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getSourceS3Location() == null) ? 0 : getSourceS3Location().hashCode());
         hashCode = prime * hashCode + ((getSetupScriptDetails() == null) ? 0 : getSetupScriptDetails().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getPostSetupScriptDetails() == null) ? 0 : getPostSetupScriptDetails().hashCode());
+        hashCode = prime * hashCode + ((getPackagingType() == null) ? 0 : getPackagingType().hashCode());
         return hashCode;
     }
 

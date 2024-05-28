@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,9 +53,9 @@ public class CreateDBProxyEndpointRequest extends com.amazonaws.AmazonWebService
     private com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIds;
     /**
      * <p>
-     * A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The
-     * default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is
-     * <code>READ_WRITE</code>.
+     * The role of the DB proxy endpoint. The role determines whether the endpoint can be used for read/write or only
+     * read operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL
+     * Server support is <code>READ_WRITE</code>.
      * </p>
      */
     private String targetRole;
@@ -306,15 +306,15 @@ public class CreateDBProxyEndpointRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The
-     * default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is
-     * <code>READ_WRITE</code>.
+     * The role of the DB proxy endpoint. The role determines whether the endpoint can be used for read/write or only
+     * read operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL
+     * Server support is <code>READ_WRITE</code>.
      * </p>
      * 
      * @param targetRole
-     *        A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations.
-     *        The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server
-     *        support is <code>READ_WRITE</code>.
+     *        The role of the DB proxy endpoint. The role determines whether the endpoint can be used for read/write or
+     *        only read operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for
+     *        Microsoft SQL Server support is <code>READ_WRITE</code>.
      * @see DBProxyEndpointTargetRole
      */
 
@@ -324,14 +324,14 @@ public class CreateDBProxyEndpointRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The
-     * default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is
-     * <code>READ_WRITE</code>.
+     * The role of the DB proxy endpoint. The role determines whether the endpoint can be used for read/write or only
+     * read operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL
+     * Server support is <code>READ_WRITE</code>.
      * </p>
      * 
-     * @return A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations.
-     *         The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server
-     *         support is <code>READ_WRITE</code>.
+     * @return The role of the DB proxy endpoint. The role determines whether the endpoint can be used for read/write or
+     *         only read operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for
+     *         Microsoft SQL Server support is <code>READ_WRITE</code>.
      * @see DBProxyEndpointTargetRole
      */
 
@@ -341,15 +341,15 @@ public class CreateDBProxyEndpointRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The
-     * default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is
-     * <code>READ_WRITE</code>.
+     * The role of the DB proxy endpoint. The role determines whether the endpoint can be used for read/write or only
+     * read operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL
+     * Server support is <code>READ_WRITE</code>.
      * </p>
      * 
      * @param targetRole
-     *        A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations.
-     *        The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server
-     *        support is <code>READ_WRITE</code>.
+     *        The role of the DB proxy endpoint. The role determines whether the endpoint can be used for read/write or
+     *        only read operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for
+     *        Microsoft SQL Server support is <code>READ_WRITE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DBProxyEndpointTargetRole
      */
@@ -361,15 +361,15 @@ public class CreateDBProxyEndpointRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations. The
-     * default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server support is
-     * <code>READ_WRITE</code>.
+     * The role of the DB proxy endpoint. The role determines whether the endpoint can be used for read/write or only
+     * read operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL
+     * Server support is <code>READ_WRITE</code>.
      * </p>
      * 
      * @param targetRole
-     *        A value that indicates whether the DB proxy endpoint can be used for read/write or read-only operations.
-     *        The default is <code>READ_WRITE</code>. The only role that proxies for RDS for Microsoft SQL Server
-     *        support is <code>READ_WRITE</code>.
+     *        The role of the DB proxy endpoint. The role determines whether the endpoint can be used for read/write or
+     *        only read operations. The default is <code>READ_WRITE</code>. The only role that proxies for RDS for
+     *        Microsoft SQL Server support is <code>READ_WRITE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DBProxyEndpointTargetRole
      */

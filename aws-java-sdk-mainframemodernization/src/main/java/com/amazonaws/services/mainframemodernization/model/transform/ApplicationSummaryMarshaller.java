@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,8 @@ public class ApplicationSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastStartTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("roleArn").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
     private static final MarshallingInfo<String> VERSIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -78,6 +80,7 @@ public class ApplicationSummaryMarshaller {
             protocolMarshaller.marshall(applicationSummary.getEnvironmentId(), ENVIRONMENTID_BINDING);
             protocolMarshaller.marshall(applicationSummary.getLastStartTime(), LASTSTARTTIME_BINDING);
             protocolMarshaller.marshall(applicationSummary.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(applicationSummary.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(applicationSummary.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(applicationSummary.getVersionStatus(), VERSIONSTATUS_BINDING);
         } catch (Exception e) {

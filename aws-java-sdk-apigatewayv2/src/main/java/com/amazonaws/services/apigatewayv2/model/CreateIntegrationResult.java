@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -190,7 +190,7 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      * >Working with AWS service integrations for HTTP APIs</a>.
      * </p>
      * <p>
-     * For HTTP API itegrations, without a specified integrationSubtype request parameters are a key-value map
+     * For HTTP API integrations, without a specified integrationSubtype request parameters are a key-value map
      * specifying how to transform HTTP requests before sending them to backend integrations. The key should follow the
      * pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can be append, overwrite or
      * remove. For values, you can provide static values, or map request data, stage variables, or context variables
@@ -1425,7 +1425,7 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      * >Working with AWS service integrations for HTTP APIs</a>.
      * </p>
      * <p>
-     * For HTTP API itegrations, without a specified integrationSubtype request parameters are a key-value map
+     * For HTTP API integrations, without a specified integrationSubtype request parameters are a key-value map
      * specifying how to transform HTTP requests before sending them to backend integrations. The key should follow the
      * pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can be append, overwrite or
      * remove. For values, you can provide static values, or map request data, stage variables, or context variables
@@ -1450,7 +1450,7 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      *         >Working with AWS service integrations for HTTP APIs</a>.
      *         </p>
      *         <p>
-     *         For HTTP API itegrations, without a specified integrationSubtype request parameters are a key-value map
+     *         For HTTP API integrations, without a specified integrationSubtype request parameters are a key-value map
      *         specifying how to transform HTTP requests before sending them to backend integrations. The key should
      *         follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can be
      *         append, overwrite or remove. For values, you can provide static values, or map request data, stage
@@ -1481,7 +1481,7 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      * >Working with AWS service integrations for HTTP APIs</a>.
      * </p>
      * <p>
-     * For HTTP API itegrations, without a specified integrationSubtype request parameters are a key-value map
+     * For HTTP API integrations, without a specified integrationSubtype request parameters are a key-value map
      * specifying how to transform HTTP requests before sending them to backend integrations. The key should follow the
      * pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can be append, overwrite or
      * remove. For values, you can provide static values, or map request data, stage variables, or context variables
@@ -1507,7 +1507,7 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      *        >Working with AWS service integrations for HTTP APIs</a>.
      *        </p>
      *        <p>
-     *        For HTTP API itegrations, without a specified integrationSubtype request parameters are a key-value map
+     *        For HTTP API integrations, without a specified integrationSubtype request parameters are a key-value map
      *        specifying how to transform HTTP requests before sending them to backend integrations. The key should
      *        follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can be
      *        append, overwrite or remove. For values, you can provide static values, or map request data, stage
@@ -1538,7 +1538,7 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      * >Working with AWS service integrations for HTTP APIs</a>.
      * </p>
      * <p>
-     * For HTTP API itegrations, without a specified integrationSubtype request parameters are a key-value map
+     * For HTTP API integrations, without a specified integrationSubtype request parameters are a key-value map
      * specifying how to transform HTTP requests before sending them to backend integrations. The key should follow the
      * pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can be append, overwrite or
      * remove. For values, you can provide static values, or map request data, stage variables, or context variables
@@ -1564,7 +1564,7 @@ public class CreateIntegrationResult extends com.amazonaws.AmazonWebServiceResul
      *        >Working with AWS service integrations for HTTP APIs</a>.
      *        </p>
      *        <p>
-     *        For HTTP API itegrations, without a specified integrationSubtype request parameters are a key-value map
+     *        For HTTP API integrations, without a specified integrationSubtype request parameters are a key-value map
      *        specifying how to transform HTTP requests before sending them to backend integrations. The key should
      *        follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can be
      *        append, overwrite or remove. For values, you can provide static values, or map request data, stage

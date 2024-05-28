@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,19 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CancelUpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
+     * <note>
+     * <p>
+     * If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all resources
+     * in the account.
+     * </p>
+     * <p>
+     * The IAM policy below can be added to IAM policies when you want to limit resource-level permissions and avoid
+     * returning a response when no parameter is sent in the request:
+     * </p>
+     * <p>
+     * <code>{ "Version": "2012-10-17", "Statement": [{ "Effect": "Deny", "Action": "cloudformation:DescribeStacks", "NotResource": "arn:aws:cloudformation:*:*:stack/*&#47;*" }] }</code>
+     * </p>
+     * </note>
      * <p>
      * The name or the unique stack ID that's associated with the stack.
      * </p>
@@ -45,11 +58,37 @@ public class CancelUpdateStackRequest extends com.amazonaws.AmazonWebServiceRequ
     private String clientRequestToken;
 
     /**
+     * <note>
+     * <p>
+     * If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all resources
+     * in the account.
+     * </p>
+     * <p>
+     * The IAM policy below can be added to IAM policies when you want to limit resource-level permissions and avoid
+     * returning a response when no parameter is sent in the request:
+     * </p>
+     * <p>
+     * <code>{ "Version": "2012-10-17", "Statement": [{ "Effect": "Deny", "Action": "cloudformation:DescribeStacks", "NotResource": "arn:aws:cloudformation:*:*:stack/*&#47;*" }] }</code>
+     * </p>
+     * </note>
      * <p>
      * The name or the unique stack ID that's associated with the stack.
      * </p>
      * 
      * @param stackName
+     *        <p>
+     *        If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all
+     *        resources in the account.
+     *        </p>
+     *        <p>
+     *        The IAM policy below can be added to IAM policies when you want to limit resource-level permissions and
+     *        avoid returning a response when no parameter is sent in the request:
+     *        </p>
+     *        <p>
+     *        <code>{ "Version": "2012-10-17", "Statement": [{ "Effect": "Deny", "Action": "cloudformation:DescribeStacks", "NotResource": "arn:aws:cloudformation:*:*:stack/*&#47;*" }] }</code>
+     *        </p>
+     *        </note>
+     *        <p>
      *        The name or the unique stack ID that's associated with the stack.
      */
 
@@ -58,11 +97,37 @@ public class CancelUpdateStackRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <note>
+     * <p>
+     * If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all resources
+     * in the account.
+     * </p>
+     * <p>
+     * The IAM policy below can be added to IAM policies when you want to limit resource-level permissions and avoid
+     * returning a response when no parameter is sent in the request:
+     * </p>
+     * <p>
+     * <code>{ "Version": "2012-10-17", "Statement": [{ "Effect": "Deny", "Action": "cloudformation:DescribeStacks", "NotResource": "arn:aws:cloudformation:*:*:stack/*&#47;*" }] }</code>
+     * </p>
+     * </note>
      * <p>
      * The name or the unique stack ID that's associated with the stack.
      * </p>
      * 
-     * @return The name or the unique stack ID that's associated with the stack.
+     * @return <p>
+     *         If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all
+     *         resources in the account.
+     *         </p>
+     *         <p>
+     *         The IAM policy below can be added to IAM policies when you want to limit resource-level permissions and
+     *         avoid returning a response when no parameter is sent in the request:
+     *         </p>
+     *         <p>
+     *         <code>{ "Version": "2012-10-17", "Statement": [{ "Effect": "Deny", "Action": "cloudformation:DescribeStacks", "NotResource": "arn:aws:cloudformation:*:*:stack/*&#47;*" }] }</code>
+     *         </p>
+     *         </note>
+     *         <p>
+     *         The name or the unique stack ID that's associated with the stack.
      */
 
     public String getStackName() {
@@ -70,11 +135,37 @@ public class CancelUpdateStackRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <note>
+     * <p>
+     * If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all resources
+     * in the account.
+     * </p>
+     * <p>
+     * The IAM policy below can be added to IAM policies when you want to limit resource-level permissions and avoid
+     * returning a response when no parameter is sent in the request:
+     * </p>
+     * <p>
+     * <code>{ "Version": "2012-10-17", "Statement": [{ "Effect": "Deny", "Action": "cloudformation:DescribeStacks", "NotResource": "arn:aws:cloudformation:*:*:stack/*&#47;*" }] }</code>
+     * </p>
+     * </note>
      * <p>
      * The name or the unique stack ID that's associated with the stack.
      * </p>
      * 
      * @param stackName
+     *        <p>
+     *        If you don't pass a parameter to <code>StackName</code>, the API returns a response that describes all
+     *        resources in the account.
+     *        </p>
+     *        <p>
+     *        The IAM policy below can be added to IAM policies when you want to limit resource-level permissions and
+     *        avoid returning a response when no parameter is sent in the request:
+     *        </p>
+     *        <p>
+     *        <code>{ "Version": "2012-10-17", "Statement": [{ "Effect": "Deny", "Action": "cloudformation:DescribeStacks", "NotResource": "arn:aws:cloudformation:*:*:stack/*&#47;*" }] }</code>
+     *        </p>
+     *        </note>
+     *        <p>
      *        The name or the unique stack ID that's associated with the stack.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

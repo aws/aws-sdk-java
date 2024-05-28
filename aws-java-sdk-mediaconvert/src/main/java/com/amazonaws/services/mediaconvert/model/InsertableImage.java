@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,8 +70,8 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
      */
     private Integer layer;
     /**
-     * Use Opacity (Opacity) to specify how much of the underlying video shows through the inserted image. 0 is
-     * transparent and 100 is fully opaque. Default is 50.
+     * Use Opacity to specify how much of the underlying video shows through the inserted image. 0 is transparent and
+     * 100 is fully opaque. Default is 50.
      */
     private Integer opacity;
     /**
@@ -428,12 +428,12 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Use Opacity (Opacity) to specify how much of the underlying video shows through the inserted image. 0 is
-     * transparent and 100 is fully opaque. Default is 50.
+     * Use Opacity to specify how much of the underlying video shows through the inserted image. 0 is transparent and
+     * 100 is fully opaque. Default is 50.
      * 
      * @param opacity
-     *        Use Opacity (Opacity) to specify how much of the underlying video shows through the inserted image. 0 is
-     *        transparent and 100 is fully opaque. Default is 50.
+     *        Use Opacity to specify how much of the underlying video shows through the inserted image. 0 is transparent
+     *        and 100 is fully opaque. Default is 50.
      */
 
     public void setOpacity(Integer opacity) {
@@ -441,10 +441,10 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Use Opacity (Opacity) to specify how much of the underlying video shows through the inserted image. 0 is
-     * transparent and 100 is fully opaque. Default is 50.
+     * Use Opacity to specify how much of the underlying video shows through the inserted image. 0 is transparent and
+     * 100 is fully opaque. Default is 50.
      * 
-     * @return Use Opacity (Opacity) to specify how much of the underlying video shows through the inserted image. 0 is
+     * @return Use Opacity to specify how much of the underlying video shows through the inserted image. 0 is
      *         transparent and 100 is fully opaque. Default is 50.
      */
 
@@ -453,12 +453,12 @@ public class InsertableImage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * Use Opacity (Opacity) to specify how much of the underlying video shows through the inserted image. 0 is
-     * transparent and 100 is fully opaque. Default is 50.
+     * Use Opacity to specify how much of the underlying video shows through the inserted image. 0 is transparent and
+     * 100 is fully opaque. Default is 50.
      * 
      * @param opacity
-     *        Use Opacity (Opacity) to specify how much of the underlying video shows through the inserted image. 0 is
-     *        transparent and 100 is fully opaque. Default is 50.
+     *        Use Opacity to specify how much of the underlying video shows through the inserted image. 0 is transparent
+     *        and 100 is fully opaque. Default is 50.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

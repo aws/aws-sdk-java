@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import javax.annotation.Generated;
  * when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at
  * the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out
  * the flicker. This setting is disabled by default. Related setting: In addition to enabling this setting, you must
- * also set adaptiveQuantization to a value other than Off (OFF).
+ * also set adaptiveQuantization to a value other than Off.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum H265FlickerAdaptiveQuantization {

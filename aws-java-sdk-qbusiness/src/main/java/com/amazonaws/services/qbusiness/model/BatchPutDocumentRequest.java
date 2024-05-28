@@ -1,0 +1,366 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.qbusiness.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+import com.amazonaws.AmazonWebServiceRequest;
+
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/BatchPutDocument" target="_top">AWS API
+ *      Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class BatchPutDocumentRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * The identifier of the Amazon Q Business application.
+     * </p>
+     */
+    private String applicationId;
+    /**
+     * <p>
+     * The identifier of the Amazon Q Business index to add the documents to.
+     * </p>
+     */
+    private String indexId;
+    /**
+     * <p>
+     * One or more documents to add to the index.
+     * </p>
+     */
+    private java.util.List<Document> documents;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket.
+     * </p>
+     */
+    private String roleArn;
+    /**
+     * <p>
+     * The identifier of the data source sync during which the documents were added.
+     * </p>
+     */
+    private String dataSourceSyncId;
+
+    /**
+     * <p>
+     * The identifier of the Amazon Q Business application.
+     * </p>
+     * 
+     * @param applicationId
+     *        The identifier of the Amazon Q Business application.
+     */
+
+    public void setApplicationId(String applicationId) {
+        this.applicationId = applicationId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the Amazon Q Business application.
+     * </p>
+     * 
+     * @return The identifier of the Amazon Q Business application.
+     */
+
+    public String getApplicationId() {
+        return this.applicationId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the Amazon Q Business application.
+     * </p>
+     * 
+     * @param applicationId
+     *        The identifier of the Amazon Q Business application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchPutDocumentRequest withApplicationId(String applicationId) {
+        setApplicationId(applicationId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier of the Amazon Q Business index to add the documents to.
+     * </p>
+     * 
+     * @param indexId
+     *        The identifier of the Amazon Q Business index to add the documents to.
+     */
+
+    public void setIndexId(String indexId) {
+        this.indexId = indexId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the Amazon Q Business index to add the documents to.
+     * </p>
+     * 
+     * @return The identifier of the Amazon Q Business index to add the documents to.
+     */
+
+    public String getIndexId() {
+        return this.indexId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the Amazon Q Business index to add the documents to.
+     * </p>
+     * 
+     * @param indexId
+     *        The identifier of the Amazon Q Business index to add the documents to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchPutDocumentRequest withIndexId(String indexId) {
+        setIndexId(indexId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more documents to add to the index.
+     * </p>
+     * 
+     * @return One or more documents to add to the index.
+     */
+
+    public java.util.List<Document> getDocuments() {
+        return documents;
+    }
+
+    /**
+     * <p>
+     * One or more documents to add to the index.
+     * </p>
+     * 
+     * @param documents
+     *        One or more documents to add to the index.
+     */
+
+    public void setDocuments(java.util.Collection<Document> documents) {
+        if (documents == null) {
+            this.documents = null;
+            return;
+        }
+
+        this.documents = new java.util.ArrayList<Document>(documents);
+    }
+
+    /**
+     * <p>
+     * One or more documents to add to the index.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDocuments(java.util.Collection)} or {@link #withDocuments(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param documents
+     *        One or more documents to add to the index.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchPutDocumentRequest withDocuments(Document... documents) {
+        if (this.documents == null) {
+            setDocuments(new java.util.ArrayList<Document>(documents.length));
+        }
+        for (Document ele : documents) {
+            this.documents.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more documents to add to the index.
+     * </p>
+     * 
+     * @param documents
+     *        One or more documents to add to the index.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchPutDocumentRequest withDocuments(java.util.Collection<Document> documents) {
+        setDocuments(documents);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket.
+     * </p>
+     * 
+     * @param roleArn
+     *        The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket.
+     */
+
+    public void setRoleArn(String roleArn) {
+        this.roleArn = roleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket.
+     */
+
+    public String getRoleArn() {
+        return this.roleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket.
+     * </p>
+     * 
+     * @param roleArn
+     *        The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchPutDocumentRequest withRoleArn(String roleArn) {
+        setRoleArn(roleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier of the data source sync during which the documents were added.
+     * </p>
+     * 
+     * @param dataSourceSyncId
+     *        The identifier of the data source sync during which the documents were added.
+     */
+
+    public void setDataSourceSyncId(String dataSourceSyncId) {
+        this.dataSourceSyncId = dataSourceSyncId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the data source sync during which the documents were added.
+     * </p>
+     * 
+     * @return The identifier of the data source sync during which the documents were added.
+     */
+
+    public String getDataSourceSyncId() {
+        return this.dataSourceSyncId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the data source sync during which the documents were added.
+     * </p>
+     * 
+     * @param dataSourceSyncId
+     *        The identifier of the data source sync during which the documents were added.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchPutDocumentRequest withDataSourceSyncId(String dataSourceSyncId) {
+        setDataSourceSyncId(dataSourceSyncId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getApplicationId() != null)
+            sb.append("ApplicationId: ").append(getApplicationId()).append(",");
+        if (getIndexId() != null)
+            sb.append("IndexId: ").append(getIndexId()).append(",");
+        if (getDocuments() != null)
+            sb.append("Documents: ").append(getDocuments()).append(",");
+        if (getRoleArn() != null)
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getDataSourceSyncId() != null)
+            sb.append("DataSourceSyncId: ").append(getDataSourceSyncId());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof BatchPutDocumentRequest == false)
+            return false;
+        BatchPutDocumentRequest other = (BatchPutDocumentRequest) obj;
+        if (other.getApplicationId() == null ^ this.getApplicationId() == null)
+            return false;
+        if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
+            return false;
+        if (other.getIndexId() == null ^ this.getIndexId() == null)
+            return false;
+        if (other.getIndexId() != null && other.getIndexId().equals(this.getIndexId()) == false)
+            return false;
+        if (other.getDocuments() == null ^ this.getDocuments() == null)
+            return false;
+        if (other.getDocuments() != null && other.getDocuments().equals(this.getDocuments()) == false)
+            return false;
+        if (other.getRoleArn() == null ^ this.getRoleArn() == null)
+            return false;
+        if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
+            return false;
+        if (other.getDataSourceSyncId() == null ^ this.getDataSourceSyncId() == null)
+            return false;
+        if (other.getDataSourceSyncId() != null && other.getDataSourceSyncId().equals(this.getDataSourceSyncId()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
+        hashCode = prime * hashCode + ((getIndexId() == null) ? 0 : getIndexId().hashCode());
+        hashCode = prime * hashCode + ((getDocuments() == null) ? 0 : getDocuments().hashCode());
+        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getDataSourceSyncId() == null) ? 0 : getDataSourceSyncId().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public BatchPutDocumentRequest clone() {
+        return (BatchPutDocumentRequest) super.clone();
+    }
+
+}

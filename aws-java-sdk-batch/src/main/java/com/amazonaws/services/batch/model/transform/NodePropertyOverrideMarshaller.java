@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.batch.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,10 @@ public class NodePropertyOverrideMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("targetNodes").build();
     private static final MarshallingInfo<StructuredPojo> CONTAINEROVERRIDES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containerOverrides").build();
+    private static final MarshallingInfo<StructuredPojo> ECSPROPERTIESOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ecsPropertiesOverride").build();
+    private static final MarshallingInfo<List> INSTANCETYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("instanceTypes").build();
 
     private static final NodePropertyOverrideMarshaller instance = new NodePropertyOverrideMarshaller();
 
@@ -50,6 +55,8 @@ public class NodePropertyOverrideMarshaller {
         try {
             protocolMarshaller.marshall(nodePropertyOverride.getTargetNodes(), TARGETNODES_BINDING);
             protocolMarshaller.marshall(nodePropertyOverride.getContainerOverrides(), CONTAINEROVERRIDES_BINDING);
+            protocolMarshaller.marshall(nodePropertyOverride.getEcsPropertiesOverride(), ECSPROPERTIESOVERRIDE_BINDING);
+            protocolMarshaller.marshall(nodePropertyOverride.getInstanceTypes(), INSTANCETYPES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

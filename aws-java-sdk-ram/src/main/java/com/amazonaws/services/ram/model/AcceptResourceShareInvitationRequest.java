@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class AcceptResourceShareInvitationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of the invitation that you want to accept.
      * </p>
      */
@@ -43,17 +43,21 @@ public class AcceptResourceShareInvitationRequest extends com.amazonaws.AmazonWe
      * <p>
      * If you don't provide this value, then Amazon Web Services generates a random one for you.
      * </p>
+     * <p>
+     * If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails
+     * with an <code>IdempotentParameterMismatch</code> error.
+     * </p>
      */
     private String clientToken;
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of the invitation that you want to accept.
      * </p>
      * 
      * @param resourceShareInvitationArn
-     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *        Name (ARN)</a> of the invitation that you want to accept.
      */
 
@@ -63,11 +67,11 @@ public class AcceptResourceShareInvitationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of the invitation that you want to accept.
      * </p>
      * 
-     * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *         Name (ARN)</a> of the invitation that you want to accept.
      */
 
@@ -77,12 +81,12 @@ public class AcceptResourceShareInvitationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of the invitation that you want to accept.
      * </p>
      * 
      * @param resourceShareInvitationArn
-     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *        Name (ARN)</a> of the invitation that you want to accept.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -103,6 +107,10 @@ public class AcceptResourceShareInvitationRequest extends com.amazonaws.AmazonWe
      * <p>
      * If you don't provide this value, then Amazon Web Services generates a random one for you.
      * </p>
+     * <p>
+     * If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails
+     * with an <code>IdempotentParameterMismatch</code> error.
+     * </p>
      * 
      * @param clientToken
      *        Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
@@ -112,6 +120,10 @@ public class AcceptResourceShareInvitationRequest extends com.amazonaws.AmazonWe
      *        href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
      *        <p>
      *        If you don't provide this value, then Amazon Web Services generates a random one for you.
+     *        </p>
+     *        <p>
+     *        If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the
+     *        retry fails with an <code>IdempotentParameterMismatch</code> error.
      */
 
     public void setClientToken(String clientToken) {
@@ -129,6 +141,10 @@ public class AcceptResourceShareInvitationRequest extends com.amazonaws.AmazonWe
      * <p>
      * If you don't provide this value, then Amazon Web Services generates a random one for you.
      * </p>
+     * <p>
+     * If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails
+     * with an <code>IdempotentParameterMismatch</code> error.
+     * </p>
      * 
      * @return Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      *         This lets you safely retry the request without accidentally performing the same operation a second time.
@@ -137,6 +153,10 @@ public class AcceptResourceShareInvitationRequest extends com.amazonaws.AmazonWe
      *         href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
      *         <p>
      *         If you don't provide this value, then Amazon Web Services generates a random one for you.
+     *         </p>
+     *         <p>
+     *         If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the
+     *         retry fails with an <code>IdempotentParameterMismatch</code> error.
      */
 
     public String getClientToken() {
@@ -154,6 +174,10 @@ public class AcceptResourceShareInvitationRequest extends com.amazonaws.AmazonWe
      * <p>
      * If you don't provide this value, then Amazon Web Services generates a random one for you.
      * </p>
+     * <p>
+     * If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails
+     * with an <code>IdempotentParameterMismatch</code> error.
+     * </p>
      * 
      * @param clientToken
      *        Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
@@ -163,6 +187,10 @@ public class AcceptResourceShareInvitationRequest extends com.amazonaws.AmazonWe
      *        href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
      *        <p>
      *        If you don't provide this value, then Amazon Web Services generates a random one for you.
+     *        </p>
+     *        <p>
+     *        If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the
+     *        retry fails with an <code>IdempotentParameterMismatch</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

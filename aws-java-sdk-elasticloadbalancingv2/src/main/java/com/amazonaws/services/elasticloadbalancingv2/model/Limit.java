@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,6 +19,29 @@ import javax.annotation.Generated;
  * <p>
  * Information about an Elastic Load Balancing resource limit for your Amazon Web Services account.
  * </p>
+ * <p>
+ * For more information, see the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Quotas for
+ * your Application Load Balancers</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Quotas for your
+ * Network Load Balancers</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/quotas-limits.html">Quotas for your Gateway
+ * Load Balancers</a>
+ * </p>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/Limit" target="_top">AWS API
  *      Documentation</a>

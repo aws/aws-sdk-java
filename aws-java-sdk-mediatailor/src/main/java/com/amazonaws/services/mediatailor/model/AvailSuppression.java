@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,9 +31,19 @@ public class AvailSuppression implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * Defines the policy to apply to the avail suppression mode. <code>BEHIND_LIVE_EDGE</code> will always use the full
+     * avail suppression policy. <code>AFTER_LIVE_EDGE</code> mode can be used to invoke partial ad break fills when a
+     * session starts mid-break.
+     * </p>
+     */
+    private String fillPolicy;
+    /**
+     * <p>
      * Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or slate.
      * When Mode is set to <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't fill ad breaks
-     * on or behind the ad suppression Value time in the manifest lookback window.
+     * on or behind the ad suppression Value time in the manifest lookback window. When Mode is set to
+     * <code>AFTER_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't fill ad breaks that are within the
+     * live edge plus the avail suppression value.
      * </p>
      */
     private String mode;
@@ -51,15 +61,94 @@ public class AvailSuppression implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * Defines the policy to apply to the avail suppression mode. <code>BEHIND_LIVE_EDGE</code> will always use the full
+     * avail suppression policy. <code>AFTER_LIVE_EDGE</code> mode can be used to invoke partial ad break fills when a
+     * session starts mid-break.
+     * </p>
+     * 
+     * @param fillPolicy
+     *        Defines the policy to apply to the avail suppression mode. <code>BEHIND_LIVE_EDGE</code> will always use
+     *        the full avail suppression policy. <code>AFTER_LIVE_EDGE</code> mode can be used to invoke partial ad
+     *        break fills when a session starts mid-break.
+     * @see FillPolicy
+     */
+
+    public void setFillPolicy(String fillPolicy) {
+        this.fillPolicy = fillPolicy;
+    }
+
+    /**
+     * <p>
+     * Defines the policy to apply to the avail suppression mode. <code>BEHIND_LIVE_EDGE</code> will always use the full
+     * avail suppression policy. <code>AFTER_LIVE_EDGE</code> mode can be used to invoke partial ad break fills when a
+     * session starts mid-break.
+     * </p>
+     * 
+     * @return Defines the policy to apply to the avail suppression mode. <code>BEHIND_LIVE_EDGE</code> will always use
+     *         the full avail suppression policy. <code>AFTER_LIVE_EDGE</code> mode can be used to invoke partial ad
+     *         break fills when a session starts mid-break.
+     * @see FillPolicy
+     */
+
+    public String getFillPolicy() {
+        return this.fillPolicy;
+    }
+
+    /**
+     * <p>
+     * Defines the policy to apply to the avail suppression mode. <code>BEHIND_LIVE_EDGE</code> will always use the full
+     * avail suppression policy. <code>AFTER_LIVE_EDGE</code> mode can be used to invoke partial ad break fills when a
+     * session starts mid-break.
+     * </p>
+     * 
+     * @param fillPolicy
+     *        Defines the policy to apply to the avail suppression mode. <code>BEHIND_LIVE_EDGE</code> will always use
+     *        the full avail suppression policy. <code>AFTER_LIVE_EDGE</code> mode can be used to invoke partial ad
+     *        break fills when a session starts mid-break.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FillPolicy
+     */
+
+    public AvailSuppression withFillPolicy(String fillPolicy) {
+        setFillPolicy(fillPolicy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Defines the policy to apply to the avail suppression mode. <code>BEHIND_LIVE_EDGE</code> will always use the full
+     * avail suppression policy. <code>AFTER_LIVE_EDGE</code> mode can be used to invoke partial ad break fills when a
+     * session starts mid-break.
+     * </p>
+     * 
+     * @param fillPolicy
+     *        Defines the policy to apply to the avail suppression mode. <code>BEHIND_LIVE_EDGE</code> will always use
+     *        the full avail suppression policy. <code>AFTER_LIVE_EDGE</code> mode can be used to invoke partial ad
+     *        break fills when a session starts mid-break.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FillPolicy
+     */
+
+    public AvailSuppression withFillPolicy(FillPolicy fillPolicy) {
+        this.fillPolicy = fillPolicy.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or slate.
      * When Mode is set to <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't fill ad breaks
-     * on or behind the ad suppression Value time in the manifest lookback window.
+     * on or behind the ad suppression Value time in the manifest lookback window. When Mode is set to
+     * <code>AFTER_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't fill ad breaks that are within the
+     * live edge plus the avail suppression value.
      * </p>
      * 
      * @param mode
      *        Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or
      *        slate. When Mode is set to <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't
-     *        fill ad breaks on or behind the ad suppression Value time in the manifest lookback window.
+     *        fill ad breaks on or behind the ad suppression Value time in the manifest lookback window. When Mode is
+     *        set to <code>AFTER_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't fill ad breaks that
+     *        are within the live edge plus the avail suppression value.
      * @see Mode
      */
 
@@ -71,12 +160,16 @@ public class AvailSuppression implements Serializable, Cloneable, StructuredPojo
      * <p>
      * Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or slate.
      * When Mode is set to <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't fill ad breaks
-     * on or behind the ad suppression Value time in the manifest lookback window.
+     * on or behind the ad suppression Value time in the manifest lookback window. When Mode is set to
+     * <code>AFTER_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't fill ad breaks that are within the
+     * live edge plus the avail suppression value.
      * </p>
      * 
      * @return Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or
      *         slate. When Mode is set to <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't
-     *         fill ad breaks on or behind the ad suppression Value time in the manifest lookback window.
+     *         fill ad breaks on or behind the ad suppression Value time in the manifest lookback window. When Mode is
+     *         set to <code>AFTER_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't fill ad breaks that
+     *         are within the live edge plus the avail suppression value.
      * @see Mode
      */
 
@@ -88,13 +181,17 @@ public class AvailSuppression implements Serializable, Cloneable, StructuredPojo
      * <p>
      * Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or slate.
      * When Mode is set to <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't fill ad breaks
-     * on or behind the ad suppression Value time in the manifest lookback window.
+     * on or behind the ad suppression Value time in the manifest lookback window. When Mode is set to
+     * <code>AFTER_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't fill ad breaks that are within the
+     * live edge plus the avail suppression value.
      * </p>
      * 
      * @param mode
      *        Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or
      *        slate. When Mode is set to <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't
-     *        fill ad breaks on or behind the ad suppression Value time in the manifest lookback window.
+     *        fill ad breaks on or behind the ad suppression Value time in the manifest lookback window. When Mode is
+     *        set to <code>AFTER_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't fill ad breaks that
+     *        are within the live edge plus the avail suppression value.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Mode
      */
@@ -108,13 +205,17 @@ public class AvailSuppression implements Serializable, Cloneable, StructuredPojo
      * <p>
      * Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or slate.
      * When Mode is set to <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't fill ad breaks
-     * on or behind the ad suppression Value time in the manifest lookback window.
+     * on or behind the ad suppression Value time in the manifest lookback window. When Mode is set to
+     * <code>AFTER_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't fill ad breaks that are within the
+     * live edge plus the avail suppression value.
      * </p>
      * 
      * @param mode
      *        Sets the ad suppression mode. By default, ad suppression is off and all ad breaks are filled with ads or
      *        slate. When Mode is set to <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't
-     *        fill ad breaks on or behind the ad suppression Value time in the manifest lookback window.
+     *        fill ad breaks on or behind the ad suppression Value time in the manifest lookback window. When Mode is
+     *        set to <code>AFTER_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't fill ad breaks that
+     *        are within the live edge plus the avail suppression value.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Mode
      */
@@ -206,6 +307,8 @@ public class AvailSuppression implements Serializable, Cloneable, StructuredPojo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getFillPolicy() != null)
+            sb.append("FillPolicy: ").append(getFillPolicy()).append(",");
         if (getMode() != null)
             sb.append("Mode: ").append(getMode()).append(",");
         if (getValue() != null)
@@ -224,6 +327,10 @@ public class AvailSuppression implements Serializable, Cloneable, StructuredPojo
         if (obj instanceof AvailSuppression == false)
             return false;
         AvailSuppression other = (AvailSuppression) obj;
+        if (other.getFillPolicy() == null ^ this.getFillPolicy() == null)
+            return false;
+        if (other.getFillPolicy() != null && other.getFillPolicy().equals(this.getFillPolicy()) == false)
+            return false;
         if (other.getMode() == null ^ this.getMode() == null)
             return false;
         if (other.getMode() != null && other.getMode().equals(this.getMode()) == false)
@@ -240,6 +347,7 @@ public class AvailSuppression implements Serializable, Cloneable, StructuredPojo
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getFillPolicy() == null) ? 0 : getFillPolicy().hashCode());
         hashCode = prime * hashCode + ((getMode() == null) ? 0 : getMode().hashCode());
         hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
         return hashCode;

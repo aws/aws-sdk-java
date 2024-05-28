@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -87,6 +87,22 @@ public class IBMDb2SettingsJsonUnmarshaller implements Unmarshaller<IBMDb2Settin
                 if (context.testExpression("SecretsManagerSecretId", targetDepth)) {
                     context.nextToken();
                     iBMDb2Settings.setSecretsManagerSecretId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LoadTimeout", targetDepth)) {
+                    context.nextToken();
+                    iBMDb2Settings.setLoadTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("WriteBufferSize", targetDepth)) {
+                    context.nextToken();
+                    iBMDb2Settings.setWriteBufferSize(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("MaxFileSize", targetDepth)) {
+                    context.nextToken();
+                    iBMDb2Settings.setMaxFileSize(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("KeepCsvFiles", targetDepth)) {
+                    context.nextToken();
+                    iBMDb2Settings.setKeepCsvFiles(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -93,6 +93,12 @@ public class RequestPhoneNumberResult extends com.amazonaws.AmazonWebServiceResu
     private String twoWayChannelArn;
     /**
      * <p>
+     * An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.
+     * </p>
+     */
+    private String twoWayChannelRole;
+    /**
+     * <p>
      * By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of
      * your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end
      * recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're
@@ -118,6 +124,12 @@ public class RequestPhoneNumberResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private String poolId;
+    /**
+     * <p>
+     * The unique identifier for the registration.
+     * </p>
+     */
+    private String registrationId;
     /**
      * <p>
      * An array of key and value pair tags that are associated with the phone number.
@@ -717,6 +729,46 @@ public class RequestPhoneNumberResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
+     * An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.
+     * </p>
+     * 
+     * @param twoWayChannelRole
+     *        An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.
+     */
+
+    public void setTwoWayChannelRole(String twoWayChannelRole) {
+        this.twoWayChannelRole = twoWayChannelRole;
+    }
+
+    /**
+     * <p>
+     * An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.
+     * </p>
+     * 
+     * @return An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.
+     */
+
+    public String getTwoWayChannelRole() {
+        return this.twoWayChannelRole;
+    }
+
+    /**
+     * <p>
+     * An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.
+     * </p>
+     * 
+     * @param twoWayChannelRole
+     *        An optional IAM Role Arn for a service to assume, to be able to post inbound SMS messages.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RequestPhoneNumberResult withTwoWayChannelRole(String twoWayChannelRole) {
+        setTwoWayChannelRole(twoWayChannelRole);
+        return this;
+    }
+
+    /**
+     * <p>
      * By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of
      * your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end
      * recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're
@@ -925,6 +977,46 @@ public class RequestPhoneNumberResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
+     * The unique identifier for the registration.
+     * </p>
+     * 
+     * @param registrationId
+     *        The unique identifier for the registration.
+     */
+
+    public void setRegistrationId(String registrationId) {
+        this.registrationId = registrationId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for the registration.
+     * </p>
+     * 
+     * @return The unique identifier for the registration.
+     */
+
+    public String getRegistrationId() {
+        return this.registrationId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for the registration.
+     * </p>
+     * 
+     * @param registrationId
+     *        The unique identifier for the registration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RequestPhoneNumberResult withRegistrationId(String registrationId) {
+        setRegistrationId(registrationId);
+        return this;
+    }
+
+    /**
+     * <p>
      * An array of key and value pair tags that are associated with the phone number.
      * </p>
      * 
@@ -1073,6 +1165,8 @@ public class RequestPhoneNumberResult extends com.amazonaws.AmazonWebServiceResu
             sb.append("TwoWayEnabled: ").append(getTwoWayEnabled()).append(",");
         if (getTwoWayChannelArn() != null)
             sb.append("TwoWayChannelArn: ").append(getTwoWayChannelArn()).append(",");
+        if (getTwoWayChannelRole() != null)
+            sb.append("TwoWayChannelRole: ").append(getTwoWayChannelRole()).append(",");
         if (getSelfManagedOptOutsEnabled() != null)
             sb.append("SelfManagedOptOutsEnabled: ").append(getSelfManagedOptOutsEnabled()).append(",");
         if (getOptOutListName() != null)
@@ -1081,6 +1175,8 @@ public class RequestPhoneNumberResult extends com.amazonaws.AmazonWebServiceResu
             sb.append("DeletionProtectionEnabled: ").append(getDeletionProtectionEnabled()).append(",");
         if (getPoolId() != null)
             sb.append("PoolId: ").append(getPoolId()).append(",");
+        if (getRegistrationId() != null)
+            sb.append("RegistrationId: ").append(getRegistrationId()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getCreatedTimestamp() != null)
@@ -1143,6 +1239,10 @@ public class RequestPhoneNumberResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getTwoWayChannelArn() != null && other.getTwoWayChannelArn().equals(this.getTwoWayChannelArn()) == false)
             return false;
+        if (other.getTwoWayChannelRole() == null ^ this.getTwoWayChannelRole() == null)
+            return false;
+        if (other.getTwoWayChannelRole() != null && other.getTwoWayChannelRole().equals(this.getTwoWayChannelRole()) == false)
+            return false;
         if (other.getSelfManagedOptOutsEnabled() == null ^ this.getSelfManagedOptOutsEnabled() == null)
             return false;
         if (other.getSelfManagedOptOutsEnabled() != null && other.getSelfManagedOptOutsEnabled().equals(this.getSelfManagedOptOutsEnabled()) == false)
@@ -1158,6 +1258,10 @@ public class RequestPhoneNumberResult extends com.amazonaws.AmazonWebServiceResu
         if (other.getPoolId() == null ^ this.getPoolId() == null)
             return false;
         if (other.getPoolId() != null && other.getPoolId().equals(this.getPoolId()) == false)
+            return false;
+        if (other.getRegistrationId() == null ^ this.getRegistrationId() == null)
+            return false;
+        if (other.getRegistrationId() != null && other.getRegistrationId().equals(this.getRegistrationId()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
@@ -1186,10 +1290,12 @@ public class RequestPhoneNumberResult extends com.amazonaws.AmazonWebServiceResu
         hashCode = prime * hashCode + ((getMonthlyLeasingPrice() == null) ? 0 : getMonthlyLeasingPrice().hashCode());
         hashCode = prime * hashCode + ((getTwoWayEnabled() == null) ? 0 : getTwoWayEnabled().hashCode());
         hashCode = prime * hashCode + ((getTwoWayChannelArn() == null) ? 0 : getTwoWayChannelArn().hashCode());
+        hashCode = prime * hashCode + ((getTwoWayChannelRole() == null) ? 0 : getTwoWayChannelRole().hashCode());
         hashCode = prime * hashCode + ((getSelfManagedOptOutsEnabled() == null) ? 0 : getSelfManagedOptOutsEnabled().hashCode());
         hashCode = prime * hashCode + ((getOptOutListName() == null) ? 0 : getOptOutListName().hashCode());
         hashCode = prime * hashCode + ((getDeletionProtectionEnabled() == null) ? 0 : getDeletionProtectionEnabled().hashCode());
         hashCode = prime * hashCode + ((getPoolId() == null) ? 0 : getPoolId().hashCode());
+        hashCode = prime * hashCode + ((getRegistrationId() == null) ? 0 : getRegistrationId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getCreatedTimestamp() == null) ? 0 : getCreatedTimestamp().hashCode());
         return hashCode;

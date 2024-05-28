@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class ClaimGameServerRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GameServerId").build();
     private static final MarshallingInfo<String> GAMESERVERDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GameServerData").build();
+    private static final MarshallingInfo<StructuredPojo> FILTEROPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FilterOption").build();
 
     private static final ClaimGameServerRequestMarshaller instance = new ClaimGameServerRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class ClaimGameServerRequestMarshaller {
             protocolMarshaller.marshall(claimGameServerRequest.getGameServerGroupName(), GAMESERVERGROUPNAME_BINDING);
             protocolMarshaller.marshall(claimGameServerRequest.getGameServerId(), GAMESERVERID_BINDING);
             protocolMarshaller.marshall(claimGameServerRequest.getGameServerData(), GAMESERVERDATA_BINDING);
+            protocolMarshaller.marshall(claimGameServerRequest.getFilterOption(), FILTEROPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

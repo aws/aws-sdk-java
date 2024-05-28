@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -96,6 +96,34 @@ public class OpenZFSVolumeConfigurationJsonUnmarshaller implements Unmarshaller<
                             .getInstance())
 
                     .unmarshall(context));
+                }
+                if (context.testExpression("RestoreToSnapshot", targetDepth)) {
+                    context.nextToken();
+                    openZFSVolumeConfiguration.setRestoreToSnapshot(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DeleteIntermediateSnaphots", targetDepth)) {
+                    context.nextToken();
+                    openZFSVolumeConfiguration.setDeleteIntermediateSnaphots(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("DeleteClonedVolumes", targetDepth)) {
+                    context.nextToken();
+                    openZFSVolumeConfiguration.setDeleteClonedVolumes(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("DeleteIntermediateData", targetDepth)) {
+                    context.nextToken();
+                    openZFSVolumeConfiguration.setDeleteIntermediateData(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("SourceSnapshotARN", targetDepth)) {
+                    context.nextToken();
+                    openZFSVolumeConfiguration.setSourceSnapshotARN(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DestinationSnapshot", targetDepth)) {
+                    context.nextToken();
+                    openZFSVolumeConfiguration.setDestinationSnapshot(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CopyStrategy", targetDepth)) {
+                    context.nextToken();
+                    openZFSVolumeConfiguration.setCopyStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

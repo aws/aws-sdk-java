@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class EksContainerOverrideMarshaller {
 
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("name").build();
     private static final MarshallingInfo<String> IMAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("image").build();
     private static final MarshallingInfo<List> COMMAND_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -55,6 +57,7 @@ public class EksContainerOverrideMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(eksContainerOverride.getName(), NAME_BINDING);
             protocolMarshaller.marshall(eksContainerOverride.getImage(), IMAGE_BINDING);
             protocolMarshaller.marshall(eksContainerOverride.getCommand(), COMMAND_BINDING);
             protocolMarshaller.marshall(eksContainerOverride.getArgs(), ARGS_BINDING);

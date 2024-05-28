@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains a job summary information.
+ * Contains the job summary information.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/JobSummary" target="_top">AWS API
@@ -42,7 +42,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The status of the bulk import job can be one of following values.
+     * The status of the bulk import job can be one of following values:
      * </p>
      * <ul>
      * <li>
@@ -163,7 +163,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the bulk import job can be one of following values.
+     * The status of the bulk import job can be one of following values:
      * </p>
      * <ul>
      * <li>
@@ -201,7 +201,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param status
-     *        The status of the bulk import job can be one of following values.</p>
+     *        The status of the bulk import job can be one of following values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -245,7 +245,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the bulk import job can be one of following values.
+     * The status of the bulk import job can be one of following values:
      * </p>
      * <ul>
      * <li>
@@ -282,7 +282,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return The status of the bulk import job can be one of following values.</p>
+     * @return The status of the bulk import job can be one of following values:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -326,7 +326,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the bulk import job can be one of following values.
+     * The status of the bulk import job can be one of following values:
      * </p>
      * <ul>
      * <li>
@@ -364,7 +364,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param status
-     *        The status of the bulk import job can be one of following values.</p>
+     *        The status of the bulk import job can be one of following values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -410,7 +410,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the bulk import job can be one of following values.
+     * The status of the bulk import job can be one of following values:
      * </p>
      * <ul>
      * <li>
@@ -448,7 +448,7 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param status
-     *        The status of the bulk import job can be one of following values.</p>
+     *        The status of the bulk import job can be one of following values:</p>
      *        <ul>
      *        <li>
      *        <p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the output of a DescribeWorkspace operation.
+ * Represents the output of a <code>DescribeWorkspace</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeWorkspace" target="_top">AWS API
@@ -28,18 +28,18 @@ public class DescribeWorkspaceResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The properties of the selected workspace.
+     * A structure that contains details about the workspace.
      * </p>
      */
     private WorkspaceDescription workspace;
 
     /**
      * <p>
-     * The properties of the selected workspace.
+     * A structure that contains details about the workspace.
      * </p>
      * 
      * @param workspace
-     *        The properties of the selected workspace.
+     *        A structure that contains details about the workspace.
      */
 
     public void setWorkspace(WorkspaceDescription workspace) {
@@ -48,10 +48,10 @@ public class DescribeWorkspaceResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The properties of the selected workspace.
+     * A structure that contains details about the workspace.
      * </p>
      * 
-     * @return The properties of the selected workspace.
+     * @return A structure that contains details about the workspace.
      */
 
     public WorkspaceDescription getWorkspace() {
@@ -60,11 +60,11 @@ public class DescribeWorkspaceResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The properties of the selected workspace.
+     * A structure that contains details about the workspace.
      * </p>
      * 
      * @param workspace
-     *        The properties of the selected workspace.
+     *        A structure that contains details about the workspace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

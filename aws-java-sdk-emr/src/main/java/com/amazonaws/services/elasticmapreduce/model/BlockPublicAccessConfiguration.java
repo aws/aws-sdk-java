@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,8 +34,8 @@ public class BlockPublicAccessConfiguration implements Serializable, Cloneable, 
     /**
      * <p>
      * Indicates whether Amazon EMR block public access is enabled (<code>true</code>) or disabled (<code>false</code>).
-     * By default, the value is <code>false</code> for accounts that have created EMR clusters before July 2019. For
-     * accounts created after this, the default is <code>true</code>.
+     * By default, the value is <code>false</code> for accounts that have created Amazon EMR clusters before July 2019.
+     * For accounts created after this, the default is <code>true</code>.
      * </p>
      */
     private Boolean blockPublicSecurityGroupRules;
@@ -48,7 +48,7 @@ public class BlockPublicAccessConfiguration implements Serializable, Cloneable, 
      * ::/0 as the source.
      * </p>
      * <p>
-     * By default, Port 22, which is used for SSH access to the cluster EC2 instances, is in the list of
+     * By default, Port 22, which is used for SSH access to the cluster Amazon EC2 instances, is in the list of
      * <code>PermittedPublicSecurityGroupRuleRanges</code>.
      * </p>
      */
@@ -57,13 +57,13 @@ public class BlockPublicAccessConfiguration implements Serializable, Cloneable, 
     /**
      * <p>
      * Indicates whether Amazon EMR block public access is enabled (<code>true</code>) or disabled (<code>false</code>).
-     * By default, the value is <code>false</code> for accounts that have created EMR clusters before July 2019. For
-     * accounts created after this, the default is <code>true</code>.
+     * By default, the value is <code>false</code> for accounts that have created Amazon EMR clusters before July 2019.
+     * For accounts created after this, the default is <code>true</code>.
      * </p>
      * 
      * @param blockPublicSecurityGroupRules
      *        Indicates whether Amazon EMR block public access is enabled (<code>true</code>) or disabled (
-     *        <code>false</code>). By default, the value is <code>false</code> for accounts that have created EMR
+     *        <code>false</code>). By default, the value is <code>false</code> for accounts that have created Amazon EMR
      *        clusters before July 2019. For accounts created after this, the default is <code>true</code>.
      */
 
@@ -74,13 +74,13 @@ public class BlockPublicAccessConfiguration implements Serializable, Cloneable, 
     /**
      * <p>
      * Indicates whether Amazon EMR block public access is enabled (<code>true</code>) or disabled (<code>false</code>).
-     * By default, the value is <code>false</code> for accounts that have created EMR clusters before July 2019. For
-     * accounts created after this, the default is <code>true</code>.
+     * By default, the value is <code>false</code> for accounts that have created Amazon EMR clusters before July 2019.
+     * For accounts created after this, the default is <code>true</code>.
      * </p>
      * 
      * @return Indicates whether Amazon EMR block public access is enabled (<code>true</code>) or disabled (
-     *         <code>false</code>). By default, the value is <code>false</code> for accounts that have created EMR
-     *         clusters before July 2019. For accounts created after this, the default is <code>true</code>.
+     *         <code>false</code>). By default, the value is <code>false</code> for accounts that have created Amazon
+     *         EMR clusters before July 2019. For accounts created after this, the default is <code>true</code>.
      */
 
     public Boolean getBlockPublicSecurityGroupRules() {
@@ -90,13 +90,13 @@ public class BlockPublicAccessConfiguration implements Serializable, Cloneable, 
     /**
      * <p>
      * Indicates whether Amazon EMR block public access is enabled (<code>true</code>) or disabled (<code>false</code>).
-     * By default, the value is <code>false</code> for accounts that have created EMR clusters before July 2019. For
-     * accounts created after this, the default is <code>true</code>.
+     * By default, the value is <code>false</code> for accounts that have created Amazon EMR clusters before July 2019.
+     * For accounts created after this, the default is <code>true</code>.
      * </p>
      * 
      * @param blockPublicSecurityGroupRules
      *        Indicates whether Amazon EMR block public access is enabled (<code>true</code>) or disabled (
-     *        <code>false</code>). By default, the value is <code>false</code> for accounts that have created EMR
+     *        <code>false</code>). By default, the value is <code>false</code> for accounts that have created Amazon EMR
      *        clusters before July 2019. For accounts created after this, the default is <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -109,13 +109,13 @@ public class BlockPublicAccessConfiguration implements Serializable, Cloneable, 
     /**
      * <p>
      * Indicates whether Amazon EMR block public access is enabled (<code>true</code>) or disabled (<code>false</code>).
-     * By default, the value is <code>false</code> for accounts that have created EMR clusters before July 2019. For
-     * accounts created after this, the default is <code>true</code>.
+     * By default, the value is <code>false</code> for accounts that have created Amazon EMR clusters before July 2019.
+     * For accounts created after this, the default is <code>true</code>.
      * </p>
      * 
      * @return Indicates whether Amazon EMR block public access is enabled (<code>true</code>) or disabled (
-     *         <code>false</code>). By default, the value is <code>false</code> for accounts that have created EMR
-     *         clusters before July 2019. For accounts created after this, the default is <code>true</code>.
+     *         <code>false</code>). By default, the value is <code>false</code> for accounts that have created Amazon
+     *         EMR clusters before July 2019. For accounts created after this, the default is <code>true</code>.
      */
 
     public Boolean isBlockPublicSecurityGroupRules() {
@@ -131,7 +131,7 @@ public class BlockPublicAccessConfiguration implements Serializable, Cloneable, 
      * ::/0 as the source.
      * </p>
      * <p>
-     * By default, Port 22, which is used for SSH access to the cluster EC2 instances, is in the list of
+     * By default, Port 22, which is used for SSH access to the cluster Amazon EC2 instances, is in the list of
      * <code>PermittedPublicSecurityGroupRuleRanges</code>.
      * </p>
      * 
@@ -141,7 +141,7 @@ public class BlockPublicAccessConfiguration implements Serializable, Cloneable, 
      *         group associated with the cluster has a rule that allows inbound traffic on Port 23 from IPv4 0.0.0.0/0
      *         or IPv6 port ::/0 as the source.</p>
      *         <p>
-     *         By default, Port 22, which is used for SSH access to the cluster EC2 instances, is in the list of
+     *         By default, Port 22, which is used for SSH access to the cluster Amazon EC2 instances, is in the list of
      *         <code>PermittedPublicSecurityGroupRuleRanges</code>.
      */
 
@@ -161,7 +161,7 @@ public class BlockPublicAccessConfiguration implements Serializable, Cloneable, 
      * ::/0 as the source.
      * </p>
      * <p>
-     * By default, Port 22, which is used for SSH access to the cluster EC2 instances, is in the list of
+     * By default, Port 22, which is used for SSH access to the cluster Amazon EC2 instances, is in the list of
      * <code>PermittedPublicSecurityGroupRuleRanges</code>.
      * </p>
      * 
@@ -172,7 +172,7 @@ public class BlockPublicAccessConfiguration implements Serializable, Cloneable, 
      *        group associated with the cluster has a rule that allows inbound traffic on Port 23 from IPv4 0.0.0.0/0 or
      *        IPv6 port ::/0 as the source.</p>
      *        <p>
-     *        By default, Port 22, which is used for SSH access to the cluster EC2 instances, is in the list of
+     *        By default, Port 22, which is used for SSH access to the cluster Amazon EC2 instances, is in the list of
      *        <code>PermittedPublicSecurityGroupRuleRanges</code>.
      */
 
@@ -194,7 +194,7 @@ public class BlockPublicAccessConfiguration implements Serializable, Cloneable, 
      * ::/0 as the source.
      * </p>
      * <p>
-     * By default, Port 22, which is used for SSH access to the cluster EC2 instances, is in the list of
+     * By default, Port 22, which is used for SSH access to the cluster Amazon EC2 instances, is in the list of
      * <code>PermittedPublicSecurityGroupRuleRanges</code>.
      * </p>
      * <p>
@@ -211,7 +211,7 @@ public class BlockPublicAccessConfiguration implements Serializable, Cloneable, 
      *        group associated with the cluster has a rule that allows inbound traffic on Port 23 from IPv4 0.0.0.0/0 or
      *        IPv6 port ::/0 as the source.</p>
      *        <p>
-     *        By default, Port 22, which is used for SSH access to the cluster EC2 instances, is in the list of
+     *        By default, Port 22, which is used for SSH access to the cluster Amazon EC2 instances, is in the list of
      *        <code>PermittedPublicSecurityGroupRuleRanges</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -235,7 +235,7 @@ public class BlockPublicAccessConfiguration implements Serializable, Cloneable, 
      * ::/0 as the source.
      * </p>
      * <p>
-     * By default, Port 22, which is used for SSH access to the cluster EC2 instances, is in the list of
+     * By default, Port 22, which is used for SSH access to the cluster Amazon EC2 instances, is in the list of
      * <code>PermittedPublicSecurityGroupRuleRanges</code>.
      * </p>
      * 
@@ -246,7 +246,7 @@ public class BlockPublicAccessConfiguration implements Serializable, Cloneable, 
      *        group associated with the cluster has a rule that allows inbound traffic on Port 23 from IPv4 0.0.0.0/0 or
      *        IPv6 port ::/0 as the source.</p>
      *        <p>
-     *        By default, Port 22, which is used for SSH access to the cluster EC2 instances, is in the list of
+     *        By default, Port 22, which is used for SSH access to the cluster Amazon EC2 instances, is in the list of
      *        <code>PermittedPublicSecurityGroupRuleRanges</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

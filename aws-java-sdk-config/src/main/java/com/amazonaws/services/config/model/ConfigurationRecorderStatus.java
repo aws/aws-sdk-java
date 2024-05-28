@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,6 +21,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * The current status of the configuration recorder.
  * </p>
+ * <note>
+ * <p>
+ * For a detailed status of recording events over time, add your Config events to CloudWatch metrics and use CloudWatch
+ * metrics.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConfigurationRecorderStatus" target="_top">AWS
  *      API Documentation</a>
@@ -54,25 +60,25 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable, Str
     private Boolean recording;
     /**
      * <p>
-     * The last (previous) status of the recorder.
+     * The status of the latest recording event processed by the recorder.
      * </p>
      */
     private String lastStatus;
     /**
      * <p>
-     * The error code indicating that the recording failed.
+     * The latest error code from when the recorder last failed.
      * </p>
      */
     private String lastErrorCode;
     /**
      * <p>
-     * The message indicating that the recording failed due to an error.
+     * The latest error message from when the recorder last failed.
      * </p>
      */
     private String lastErrorMessage;
     /**
      * <p>
-     * The time when the status was last changed.
+     * The time of the latest change in status of an recording event processed by the recorder.
      * </p>
      */
     private java.util.Date lastStatusChangeTime;
@@ -251,11 +257,11 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The last (previous) status of the recorder.
+     * The status of the latest recording event processed by the recorder.
      * </p>
      * 
      * @param lastStatus
-     *        The last (previous) status of the recorder.
+     *        The status of the latest recording event processed by the recorder.
      * @see RecorderStatus
      */
 
@@ -265,10 +271,10 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The last (previous) status of the recorder.
+     * The status of the latest recording event processed by the recorder.
      * </p>
      * 
-     * @return The last (previous) status of the recorder.
+     * @return The status of the latest recording event processed by the recorder.
      * @see RecorderStatus
      */
 
@@ -278,11 +284,11 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The last (previous) status of the recorder.
+     * The status of the latest recording event processed by the recorder.
      * </p>
      * 
      * @param lastStatus
-     *        The last (previous) status of the recorder.
+     *        The status of the latest recording event processed by the recorder.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecorderStatus
      */
@@ -294,11 +300,11 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The last (previous) status of the recorder.
+     * The status of the latest recording event processed by the recorder.
      * </p>
      * 
      * @param lastStatus
-     *        The last (previous) status of the recorder.
+     *        The status of the latest recording event processed by the recorder.
      * @see RecorderStatus
      */
 
@@ -308,11 +314,11 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The last (previous) status of the recorder.
+     * The status of the latest recording event processed by the recorder.
      * </p>
      * 
      * @param lastStatus
-     *        The last (previous) status of the recorder.
+     *        The status of the latest recording event processed by the recorder.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecorderStatus
      */
@@ -324,11 +330,11 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The error code indicating that the recording failed.
+     * The latest error code from when the recorder last failed.
      * </p>
      * 
      * @param lastErrorCode
-     *        The error code indicating that the recording failed.
+     *        The latest error code from when the recorder last failed.
      */
 
     public void setLastErrorCode(String lastErrorCode) {
@@ -337,10 +343,10 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The error code indicating that the recording failed.
+     * The latest error code from when the recorder last failed.
      * </p>
      * 
-     * @return The error code indicating that the recording failed.
+     * @return The latest error code from when the recorder last failed.
      */
 
     public String getLastErrorCode() {
@@ -349,11 +355,11 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The error code indicating that the recording failed.
+     * The latest error code from when the recorder last failed.
      * </p>
      * 
      * @param lastErrorCode
-     *        The error code indicating that the recording failed.
+     *        The latest error code from when the recorder last failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -364,11 +370,11 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The message indicating that the recording failed due to an error.
+     * The latest error message from when the recorder last failed.
      * </p>
      * 
      * @param lastErrorMessage
-     *        The message indicating that the recording failed due to an error.
+     *        The latest error message from when the recorder last failed.
      */
 
     public void setLastErrorMessage(String lastErrorMessage) {
@@ -377,10 +383,10 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The message indicating that the recording failed due to an error.
+     * The latest error message from when the recorder last failed.
      * </p>
      * 
-     * @return The message indicating that the recording failed due to an error.
+     * @return The latest error message from when the recorder last failed.
      */
 
     public String getLastErrorMessage() {
@@ -389,11 +395,11 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The message indicating that the recording failed due to an error.
+     * The latest error message from when the recorder last failed.
      * </p>
      * 
      * @param lastErrorMessage
-     *        The message indicating that the recording failed due to an error.
+     *        The latest error message from when the recorder last failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -404,11 +410,11 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The time when the status was last changed.
+     * The time of the latest change in status of an recording event processed by the recorder.
      * </p>
      * 
      * @param lastStatusChangeTime
-     *        The time when the status was last changed.
+     *        The time of the latest change in status of an recording event processed by the recorder.
      */
 
     public void setLastStatusChangeTime(java.util.Date lastStatusChangeTime) {
@@ -417,10 +423,10 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The time when the status was last changed.
+     * The time of the latest change in status of an recording event processed by the recorder.
      * </p>
      * 
-     * @return The time when the status was last changed.
+     * @return The time of the latest change in status of an recording event processed by the recorder.
      */
 
     public java.util.Date getLastStatusChangeTime() {
@@ -429,11 +435,11 @@ public class ConfigurationRecorderStatus implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The time when the status was last changed.
+     * The time of the latest change in status of an recording event processed by the recorder.
      * </p>
      * 
      * @param lastStatusChangeTime
-     *        The time when the status was last changed.
+     *        The time of the latest change in status of an recording event processed by the recorder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

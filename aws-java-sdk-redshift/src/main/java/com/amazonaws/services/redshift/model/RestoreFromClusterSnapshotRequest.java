@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,7 +64,7 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
     private String clusterIdentifier;
     /**
      * <p>
-     * The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You can
+     * The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You must
      * specify this parameter or <code>snapshotArn</code>, but not both.
      * </p>
      * <p>
@@ -74,7 +74,7 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
     private String snapshotIdentifier;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster. You can
+     * The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster. You must
      * specify this parameter or <code>snapshotIdentifier</code>, but not both.
      * </p>
      */
@@ -94,7 +94,9 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      * Default: The same port as the original cluster.
      * </p>
      * <p>
-     * Constraints: Must be between <code>1115</code> and <code>65535</code>.
+     * Valid values: For clusters with ds2 or dc2 nodes, must be within the range <code>1150</code>-<code>65535</code>.
+     * For clusters with ra3 nodes, must be within the ranges <code>5431</code>-<code>5455</code> or <code>8191</code>-
+     * <code>8215</code>.
      * </p>
      */
     private Integer port;
@@ -389,6 +391,33 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private Boolean encrypted;
+    /**
+     * <p>
+     * If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored cluster's admin credentials. If
+     * <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses the admin credentials the cluster had
+     * at the time the snapshot was taken.
+     * </p>
+     */
+    private Boolean manageMasterPassword;
+    /**
+     * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret.
+     * You can only use this parameter if <code>ManageMasterPassword</code> is true.
+     * </p>
+     */
+    private String masterPasswordSecretKmsKeyId;
+    /**
+     * <p>
+     * The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.
+     * </p>
+     */
+    private String ipAddressType;
+    /**
+     * <p>
+     * If true, the snapshot will be restored to a cluster deployed in two Availability Zones.
+     * </p>
+     */
+    private Boolean multiAZ;
 
     /**
      * <p>
@@ -609,7 +638,7 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You can
+     * The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You must
      * specify this parameter or <code>snapshotArn</code>, but not both.
      * </p>
      * <p>
@@ -618,7 +647,7 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      * 
      * @param snapshotIdentifier
      *        The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You
-     *        can specify this parameter or <code>snapshotArn</code>, but not both.</p>
+     *        must specify this parameter or <code>snapshotArn</code>, but not both.</p>
      *        <p>
      *        Example: <code>my-snapshot-id</code>
      */
@@ -629,7 +658,7 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You can
+     * The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You must
      * specify this parameter or <code>snapshotArn</code>, but not both.
      * </p>
      * <p>
@@ -637,7 +666,7 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @return The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You
-     *         can specify this parameter or <code>snapshotArn</code>, but not both.</p>
+     *         must specify this parameter or <code>snapshotArn</code>, but not both.</p>
      *         <p>
      *         Example: <code>my-snapshot-id</code>
      */
@@ -648,7 +677,7 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You can
+     * The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You must
      * specify this parameter or <code>snapshotArn</code>, but not both.
      * </p>
      * <p>
@@ -657,7 +686,7 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      * 
      * @param snapshotIdentifier
      *        The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You
-     *        can specify this parameter or <code>snapshotArn</code>, but not both.</p>
+     *        must specify this parameter or <code>snapshotArn</code>, but not both.</p>
      *        <p>
      *        Example: <code>my-snapshot-id</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -670,13 +699,13 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster. You can
+     * The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster. You must
      * specify this parameter or <code>snapshotIdentifier</code>, but not both.
      * </p>
      * 
      * @param snapshotArn
      *        The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster. You
-     *        can specify this parameter or <code>snapshotIdentifier</code>, but not both.
+     *        must specify this parameter or <code>snapshotIdentifier</code>, but not both.
      */
 
     public void setSnapshotArn(String snapshotArn) {
@@ -685,12 +714,12 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster. You can
+     * The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster. You must
      * specify this parameter or <code>snapshotIdentifier</code>, but not both.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster. You
-     *         can specify this parameter or <code>snapshotIdentifier</code>, but not both.
+     *         must specify this parameter or <code>snapshotIdentifier</code>, but not both.
      */
 
     public String getSnapshotArn() {
@@ -699,13 +728,13 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster. You can
+     * The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster. You must
      * specify this parameter or <code>snapshotIdentifier</code>, but not both.
      * </p>
      * 
      * @param snapshotArn
      *        The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster. You
-     *        can specify this parameter or <code>snapshotIdentifier</code>, but not both.
+     *        must specify this parameter or <code>snapshotIdentifier</code>, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -771,7 +800,9 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      * Default: The same port as the original cluster.
      * </p>
      * <p>
-     * Constraints: Must be between <code>1115</code> and <code>65535</code>.
+     * Valid values: For clusters with ds2 or dc2 nodes, must be within the range <code>1150</code>-<code>65535</code>.
+     * For clusters with ra3 nodes, must be within the ranges <code>5431</code>-<code>5455</code> or <code>8191</code>-
+     * <code>8215</code>.
      * </p>
      * 
      * @param port
@@ -780,7 +811,9 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      *        Default: The same port as the original cluster.
      *        </p>
      *        <p>
-     *        Constraints: Must be between <code>1115</code> and <code>65535</code>.
+     *        Valid values: For clusters with ds2 or dc2 nodes, must be within the range <code>1150</code>-
+     *        <code>65535</code>. For clusters with ra3 nodes, must be within the ranges <code>5431</code>-
+     *        <code>5455</code> or <code>8191</code>-<code>8215</code>.
      */
 
     public void setPort(Integer port) {
@@ -795,7 +828,9 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      * Default: The same port as the original cluster.
      * </p>
      * <p>
-     * Constraints: Must be between <code>1115</code> and <code>65535</code>.
+     * Valid values: For clusters with ds2 or dc2 nodes, must be within the range <code>1150</code>-<code>65535</code>.
+     * For clusters with ra3 nodes, must be within the ranges <code>5431</code>-<code>5455</code> or <code>8191</code>-
+     * <code>8215</code>.
      * </p>
      * 
      * @return The port number on which the cluster accepts connections.</p>
@@ -803,7 +838,9 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      *         Default: The same port as the original cluster.
      *         </p>
      *         <p>
-     *         Constraints: Must be between <code>1115</code> and <code>65535</code>.
+     *         Valid values: For clusters with ds2 or dc2 nodes, must be within the range <code>1150</code>-
+     *         <code>65535</code>. For clusters with ra3 nodes, must be within the ranges <code>5431</code>-
+     *         <code>5455</code> or <code>8191</code>-<code>8215</code>.
      */
 
     public Integer getPort() {
@@ -818,7 +855,9 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      * Default: The same port as the original cluster.
      * </p>
      * <p>
-     * Constraints: Must be between <code>1115</code> and <code>65535</code>.
+     * Valid values: For clusters with ds2 or dc2 nodes, must be within the range <code>1150</code>-<code>65535</code>.
+     * For clusters with ra3 nodes, must be within the ranges <code>5431</code>-<code>5455</code> or <code>8191</code>-
+     * <code>8215</code>.
      * </p>
      * 
      * @param port
@@ -827,7 +866,9 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      *        Default: The same port as the original cluster.
      *        </p>
      *        <p>
-     *        Constraints: Must be between <code>1115</code> and <code>65535</code>.
+     *        Valid values: For clusters with ds2 or dc2 nodes, must be within the range <code>1150</code>-
+     *        <code>65535</code>. For clusters with ra3 nodes, must be within the ranges <code>5431</code>-
+     *        <code>5455</code> or <code>8191</code>-<code>8215</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2910,6 +2951,212 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored cluster's admin credentials. If
+     * <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses the admin credentials the cluster had
+     * at the time the snapshot was taken.
+     * </p>
+     * 
+     * @param manageMasterPassword
+     *        If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored cluster's admin
+     *        credentials. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses the admin
+     *        credentials the cluster had at the time the snapshot was taken.
+     */
+
+    public void setManageMasterPassword(Boolean manageMasterPassword) {
+        this.manageMasterPassword = manageMasterPassword;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored cluster's admin credentials. If
+     * <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses the admin credentials the cluster had
+     * at the time the snapshot was taken.
+     * </p>
+     * 
+     * @return If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored cluster's admin
+     *         credentials. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses the admin
+     *         credentials the cluster had at the time the snapshot was taken.
+     */
+
+    public Boolean getManageMasterPassword() {
+        return this.manageMasterPassword;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored cluster's admin credentials. If
+     * <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses the admin credentials the cluster had
+     * at the time the snapshot was taken.
+     * </p>
+     * 
+     * @param manageMasterPassword
+     *        If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored cluster's admin
+     *        credentials. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses the admin
+     *        credentials the cluster had at the time the snapshot was taken.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreFromClusterSnapshotRequest withManageMasterPassword(Boolean manageMasterPassword) {
+        setManageMasterPassword(manageMasterPassword);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored cluster's admin credentials. If
+     * <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses the admin credentials the cluster had
+     * at the time the snapshot was taken.
+     * </p>
+     * 
+     * @return If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored cluster's admin
+     *         credentials. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses the admin
+     *         credentials the cluster had at the time the snapshot was taken.
+     */
+
+    public Boolean isManageMasterPassword() {
+        return this.manageMasterPassword;
+    }
+
+    /**
+     * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret.
+     * You can only use this parameter if <code>ManageMasterPassword</code> is true.
+     * </p>
+     * 
+     * @param masterPasswordSecretKmsKeyId
+     *        The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials
+     *        secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.
+     */
+
+    public void setMasterPasswordSecretKmsKeyId(String masterPasswordSecretKmsKeyId) {
+        this.masterPasswordSecretKmsKeyId = masterPasswordSecretKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret.
+     * You can only use this parameter if <code>ManageMasterPassword</code> is true.
+     * </p>
+     * 
+     * @return The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials
+     *         secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.
+     */
+
+    public String getMasterPasswordSecretKmsKeyId() {
+        return this.masterPasswordSecretKmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret.
+     * You can only use this parameter if <code>ManageMasterPassword</code> is true.
+     * </p>
+     * 
+     * @param masterPasswordSecretKmsKeyId
+     *        The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials
+     *        secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreFromClusterSnapshotRequest withMasterPasswordSecretKmsKeyId(String masterPasswordSecretKmsKeyId) {
+        setMasterPasswordSecretKmsKeyId(masterPasswordSecretKmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.
+     */
+
+    public void setIpAddressType(String ipAddressType) {
+        this.ipAddressType = ipAddressType;
+    }
+
+    /**
+     * <p>
+     * The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.
+     * </p>
+     * 
+     * @return The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.
+     */
+
+    public String getIpAddressType() {
+        return this.ipAddressType;
+    }
+
+    /**
+     * <p>
+     * The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreFromClusterSnapshotRequest withIpAddressType(String ipAddressType) {
+        setIpAddressType(ipAddressType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If true, the snapshot will be restored to a cluster deployed in two Availability Zones.
+     * </p>
+     * 
+     * @param multiAZ
+     *        If true, the snapshot will be restored to a cluster deployed in two Availability Zones.
+     */
+
+    public void setMultiAZ(Boolean multiAZ) {
+        this.multiAZ = multiAZ;
+    }
+
+    /**
+     * <p>
+     * If true, the snapshot will be restored to a cluster deployed in two Availability Zones.
+     * </p>
+     * 
+     * @return If true, the snapshot will be restored to a cluster deployed in two Availability Zones.
+     */
+
+    public Boolean getMultiAZ() {
+        return this.multiAZ;
+    }
+
+    /**
+     * <p>
+     * If true, the snapshot will be restored to a cluster deployed in two Availability Zones.
+     * </p>
+     * 
+     * @param multiAZ
+     *        If true, the snapshot will be restored to a cluster deployed in two Availability Zones.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreFromClusterSnapshotRequest withMultiAZ(Boolean multiAZ) {
+        setMultiAZ(multiAZ);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If true, the snapshot will be restored to a cluster deployed in two Availability Zones.
+     * </p>
+     * 
+     * @return If true, the snapshot will be restored to a cluster deployed in two Availability Zones.
+     */
+
+    public Boolean isMultiAZ() {
+        return this.multiAZ;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2986,7 +3233,15 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
         if (getTargetReservedNodeOfferingId() != null)
             sb.append("TargetReservedNodeOfferingId: ").append(getTargetReservedNodeOfferingId()).append(",");
         if (getEncrypted() != null)
-            sb.append("Encrypted: ").append(getEncrypted());
+            sb.append("Encrypted: ").append(getEncrypted()).append(",");
+        if (getManageMasterPassword() != null)
+            sb.append("ManageMasterPassword: ").append(getManageMasterPassword()).append(",");
+        if (getMasterPasswordSecretKmsKeyId() != null)
+            sb.append("MasterPasswordSecretKmsKeyId: ").append(getMasterPasswordSecretKmsKeyId()).append(",");
+        if (getIpAddressType() != null)
+            sb.append("IpAddressType: ").append(getIpAddressType()).append(",");
+        if (getMultiAZ() != null)
+            sb.append("MultiAZ: ").append(getMultiAZ());
         sb.append("}");
         return sb.toString();
     }
@@ -3136,6 +3391,22 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getEncrypted() != null && other.getEncrypted().equals(this.getEncrypted()) == false)
             return false;
+        if (other.getManageMasterPassword() == null ^ this.getManageMasterPassword() == null)
+            return false;
+        if (other.getManageMasterPassword() != null && other.getManageMasterPassword().equals(this.getManageMasterPassword()) == false)
+            return false;
+        if (other.getMasterPasswordSecretKmsKeyId() == null ^ this.getMasterPasswordSecretKmsKeyId() == null)
+            return false;
+        if (other.getMasterPasswordSecretKmsKeyId() != null && other.getMasterPasswordSecretKmsKeyId().equals(this.getMasterPasswordSecretKmsKeyId()) == false)
+            return false;
+        if (other.getIpAddressType() == null ^ this.getIpAddressType() == null)
+            return false;
+        if (other.getIpAddressType() != null && other.getIpAddressType().equals(this.getIpAddressType()) == false)
+            return false;
+        if (other.getMultiAZ() == null ^ this.getMultiAZ() == null)
+            return false;
+        if (other.getMultiAZ() != null && other.getMultiAZ().equals(this.getMultiAZ()) == false)
+            return false;
         return true;
     }
 
@@ -3177,6 +3448,10 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getReservedNodeId() == null) ? 0 : getReservedNodeId().hashCode());
         hashCode = prime * hashCode + ((getTargetReservedNodeOfferingId() == null) ? 0 : getTargetReservedNodeOfferingId().hashCode());
         hashCode = prime * hashCode + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
+        hashCode = prime * hashCode + ((getManageMasterPassword() == null) ? 0 : getManageMasterPassword().hashCode());
+        hashCode = prime * hashCode + ((getMasterPasswordSecretKmsKeyId() == null) ? 0 : getMasterPasswordSecretKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getIpAddressType() == null) ? 0 : getIpAddressType().hashCode());
+        hashCode = prime * hashCode + ((getMultiAZ() == null) ? 0 : getMultiAZ().hashCode());
         return hashCode;
     }
 

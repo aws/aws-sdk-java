@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,12 +36,6 @@ public class ComponentSummary implements Serializable, Cloneable, StructuredPojo
     private String appId;
     /**
      * <p>
-     * The component type.
-     * </p>
-     */
-    private String componentType;
-    /**
-     * <p>
      * The name of the backend environment that is a part of the Amplify app.
      * </p>
      */
@@ -58,6 +52,12 @@ public class ComponentSummary implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * The component type.
+     * </p>
+     */
+    private String componentType;
 
     /**
      * <p>
@@ -96,46 +96,6 @@ public class ComponentSummary implements Serializable, Cloneable, StructuredPojo
 
     public ComponentSummary withAppId(String appId) {
         setAppId(appId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The component type.
-     * </p>
-     * 
-     * @param componentType
-     *        The component type.
-     */
-
-    public void setComponentType(String componentType) {
-        this.componentType = componentType;
-    }
-
-    /**
-     * <p>
-     * The component type.
-     * </p>
-     * 
-     * @return The component type.
-     */
-
-    public String getComponentType() {
-        return this.componentType;
-    }
-
-    /**
-     * <p>
-     * The component type.
-     * </p>
-     * 
-     * @param componentType
-     *        The component type.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ComponentSummary withComponentType(String componentType) {
-        setComponentType(componentType);
         return this;
     }
 
@@ -260,6 +220,46 @@ public class ComponentSummary implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The component type.
+     * </p>
+     * 
+     * @param componentType
+     *        The component type.
+     */
+
+    public void setComponentType(String componentType) {
+        this.componentType = componentType;
+    }
+
+    /**
+     * <p>
+     * The component type.
+     * </p>
+     * 
+     * @return The component type.
+     */
+
+    public String getComponentType() {
+        return this.componentType;
+    }
+
+    /**
+     * <p>
+     * The component type.
+     * </p>
+     * 
+     * @param componentType
+     *        The component type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentSummary withComponentType(String componentType) {
+        setComponentType(componentType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -273,14 +273,14 @@ public class ComponentSummary implements Serializable, Cloneable, StructuredPojo
         sb.append("{");
         if (getAppId() != null)
             sb.append("AppId: ").append(getAppId()).append(",");
-        if (getComponentType() != null)
-            sb.append("ComponentType: ").append(getComponentType()).append(",");
         if (getEnvironmentName() != null)
             sb.append("EnvironmentName: ").append(getEnvironmentName()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getComponentType() != null)
+            sb.append("ComponentType: ").append(getComponentType());
         sb.append("}");
         return sb.toString();
     }
@@ -299,10 +299,6 @@ public class ComponentSummary implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getAppId() != null && other.getAppId().equals(this.getAppId()) == false)
             return false;
-        if (other.getComponentType() == null ^ this.getComponentType() == null)
-            return false;
-        if (other.getComponentType() != null && other.getComponentType().equals(this.getComponentType()) == false)
-            return false;
         if (other.getEnvironmentName() == null ^ this.getEnvironmentName() == null)
             return false;
         if (other.getEnvironmentName() != null && other.getEnvironmentName().equals(this.getEnvironmentName()) == false)
@@ -315,6 +311,10 @@ public class ComponentSummary implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getComponentType() == null ^ this.getComponentType() == null)
+            return false;
+        if (other.getComponentType() != null && other.getComponentType().equals(this.getComponentType()) == false)
+            return false;
         return true;
     }
 
@@ -324,10 +324,10 @@ public class ComponentSummary implements Serializable, Cloneable, StructuredPojo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAppId() == null) ? 0 : getAppId().hashCode());
-        hashCode = prime * hashCode + ((getComponentType() == null) ? 0 : getComponentType().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentName() == null) ? 0 : getEnvironmentName().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getComponentType() == null) ? 0 : getComponentType().hashCode());
         return hashCode;
     }
 

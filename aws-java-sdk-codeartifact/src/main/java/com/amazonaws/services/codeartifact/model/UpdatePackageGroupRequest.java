@@ -1,0 +1,343 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.codeartifact.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+import com.amazonaws.AmazonWebServiceRequest;
+
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UpdatePackageGroup" target="_top">AWS
+ *      API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class UpdatePackageGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * The name of the domain which contains the package group to be updated.
+     * </p>
+     */
+    private String domain;
+    /**
+     * <p>
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
+     * </p>
+     */
+    private String domainOwner;
+    /**
+     * <p>
+     * The pattern of the package group to be updated.
+     * </p>
+     */
+    private String packageGroup;
+    /**
+     * <p>
+     * Contact information which you want to update the requested package group with.
+     * </p>
+     */
+    private String contactInfo;
+    /**
+     * <p>
+     * The description you want to update the requested package group with.
+     * </p>
+     */
+    private String description;
+
+    /**
+     * <p>
+     * The name of the domain which contains the package group to be updated.
+     * </p>
+     * 
+     * @param domain
+     *        The name of the domain which contains the package group to be updated.
+     */
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
+    /**
+     * <p>
+     * The name of the domain which contains the package group to be updated.
+     * </p>
+     * 
+     * @return The name of the domain which contains the package group to be updated.
+     */
+
+    public String getDomain() {
+        return this.domain;
+    }
+
+    /**
+     * <p>
+     * The name of the domain which contains the package group to be updated.
+     * </p>
+     * 
+     * @param domain
+     *        The name of the domain which contains the package group to be updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdatePackageGroupRequest withDomain(String domain) {
+        setDomain(domain);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
+     * </p>
+     * 
+     * @param domainOwner
+     *        The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *        dashes or spaces.
+     */
+
+    public void setDomainOwner(String domainOwner) {
+        this.domainOwner = domainOwner;
+    }
+
+    /**
+     * <p>
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
+     * </p>
+     * 
+     * @return The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *         dashes or spaces.
+     */
+
+    public String getDomainOwner() {
+        return this.domainOwner;
+    }
+
+    /**
+     * <p>
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
+     * </p>
+     * 
+     * @param domainOwner
+     *        The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *        dashes or spaces.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdatePackageGroupRequest withDomainOwner(String domainOwner) {
+        setDomainOwner(domainOwner);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The pattern of the package group to be updated.
+     * </p>
+     * 
+     * @param packageGroup
+     *        The pattern of the package group to be updated.
+     */
+
+    public void setPackageGroup(String packageGroup) {
+        this.packageGroup = packageGroup;
+    }
+
+    /**
+     * <p>
+     * The pattern of the package group to be updated.
+     * </p>
+     * 
+     * @return The pattern of the package group to be updated.
+     */
+
+    public String getPackageGroup() {
+        return this.packageGroup;
+    }
+
+    /**
+     * <p>
+     * The pattern of the package group to be updated.
+     * </p>
+     * 
+     * @param packageGroup
+     *        The pattern of the package group to be updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdatePackageGroupRequest withPackageGroup(String packageGroup) {
+        setPackageGroup(packageGroup);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contact information which you want to update the requested package group with.
+     * </p>
+     * 
+     * @param contactInfo
+     *        Contact information which you want to update the requested package group with.
+     */
+
+    public void setContactInfo(String contactInfo) {
+        this.contactInfo = contactInfo;
+    }
+
+    /**
+     * <p>
+     * Contact information which you want to update the requested package group with.
+     * </p>
+     * 
+     * @return Contact information which you want to update the requested package group with.
+     */
+
+    public String getContactInfo() {
+        return this.contactInfo;
+    }
+
+    /**
+     * <p>
+     * Contact information which you want to update the requested package group with.
+     * </p>
+     * 
+     * @param contactInfo
+     *        Contact information which you want to update the requested package group with.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdatePackageGroupRequest withContactInfo(String contactInfo) {
+        setContactInfo(contactInfo);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The description you want to update the requested package group with.
+     * </p>
+     * 
+     * @param description
+     *        The description you want to update the requested package group with.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * The description you want to update the requested package group with.
+     * </p>
+     * 
+     * @return The description you want to update the requested package group with.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * The description you want to update the requested package group with.
+     * </p>
+     * 
+     * @param description
+     *        The description you want to update the requested package group with.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdatePackageGroupRequest withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getDomain() != null)
+            sb.append("Domain: ").append(getDomain()).append(",");
+        if (getDomainOwner() != null)
+            sb.append("DomainOwner: ").append(getDomainOwner()).append(",");
+        if (getPackageGroup() != null)
+            sb.append("PackageGroup: ").append(getPackageGroup()).append(",");
+        if (getContactInfo() != null)
+            sb.append("ContactInfo: ").append(getContactInfo()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof UpdatePackageGroupRequest == false)
+            return false;
+        UpdatePackageGroupRequest other = (UpdatePackageGroupRequest) obj;
+        if (other.getDomain() == null ^ this.getDomain() == null)
+            return false;
+        if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false)
+            return false;
+        if (other.getDomainOwner() == null ^ this.getDomainOwner() == null)
+            return false;
+        if (other.getDomainOwner() != null && other.getDomainOwner().equals(this.getDomainOwner()) == false)
+            return false;
+        if (other.getPackageGroup() == null ^ this.getPackageGroup() == null)
+            return false;
+        if (other.getPackageGroup() != null && other.getPackageGroup().equals(this.getPackageGroup()) == false)
+            return false;
+        if (other.getContactInfo() == null ^ this.getContactInfo() == null)
+            return false;
+        if (other.getContactInfo() != null && other.getContactInfo().equals(this.getContactInfo()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
+        hashCode = prime * hashCode + ((getDomainOwner() == null) ? 0 : getDomainOwner().hashCode());
+        hashCode = prime * hashCode + ((getPackageGroup() == null) ? 0 : getPackageGroup().hashCode());
+        hashCode = prime * hashCode + ((getContactInfo() == null) ? 0 : getContactInfo().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public UpdatePackageGroupRequest clone() {
+        return (UpdatePackageGroupRequest) super.clone();
+    }
+
+}

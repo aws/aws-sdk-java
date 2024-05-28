@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,14 @@ public class DecisionTaskCompletedEventAttributes implements Serializable, Clone
      * </p>
      */
     private Long startedEventId;
+
+    private TaskList taskList;
+    /**
+     * <p>
+     * The maximum amount of time the decision task can wait to be assigned to a worker.
+     * </p>
+     */
+    private String taskListScheduleToStartTimeout;
 
     /**
      * <p>
@@ -192,6 +200,72 @@ public class DecisionTaskCompletedEventAttributes implements Serializable, Clone
     }
 
     /**
+     * @param taskList
+     */
+
+    public void setTaskList(TaskList taskList) {
+        this.taskList = taskList;
+    }
+
+    /**
+     * @return
+     */
+
+    public TaskList getTaskList() {
+        return this.taskList;
+    }
+
+    /**
+     * @param taskList
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DecisionTaskCompletedEventAttributes withTaskList(TaskList taskList) {
+        setTaskList(taskList);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum amount of time the decision task can wait to be assigned to a worker.
+     * </p>
+     * 
+     * @param taskListScheduleToStartTimeout
+     *        The maximum amount of time the decision task can wait to be assigned to a worker.
+     */
+
+    public void setTaskListScheduleToStartTimeout(String taskListScheduleToStartTimeout) {
+        this.taskListScheduleToStartTimeout = taskListScheduleToStartTimeout;
+    }
+
+    /**
+     * <p>
+     * The maximum amount of time the decision task can wait to be assigned to a worker.
+     * </p>
+     * 
+     * @return The maximum amount of time the decision task can wait to be assigned to a worker.
+     */
+
+    public String getTaskListScheduleToStartTimeout() {
+        return this.taskListScheduleToStartTimeout;
+    }
+
+    /**
+     * <p>
+     * The maximum amount of time the decision task can wait to be assigned to a worker.
+     * </p>
+     * 
+     * @param taskListScheduleToStartTimeout
+     *        The maximum amount of time the decision task can wait to be assigned to a worker.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DecisionTaskCompletedEventAttributes withTaskListScheduleToStartTimeout(String taskListScheduleToStartTimeout) {
+        setTaskListScheduleToStartTimeout(taskListScheduleToStartTimeout);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -208,7 +282,11 @@ public class DecisionTaskCompletedEventAttributes implements Serializable, Clone
         if (getScheduledEventId() != null)
             sb.append("ScheduledEventId: ").append(getScheduledEventId()).append(",");
         if (getStartedEventId() != null)
-            sb.append("StartedEventId: ").append(getStartedEventId());
+            sb.append("StartedEventId: ").append(getStartedEventId()).append(",");
+        if (getTaskList() != null)
+            sb.append("TaskList: ").append(getTaskList()).append(",");
+        if (getTaskListScheduleToStartTimeout() != null)
+            sb.append("TaskListScheduleToStartTimeout: ").append(getTaskListScheduleToStartTimeout());
         sb.append("}");
         return sb.toString();
     }
@@ -235,6 +313,15 @@ public class DecisionTaskCompletedEventAttributes implements Serializable, Clone
             return false;
         if (other.getStartedEventId() != null && other.getStartedEventId().equals(this.getStartedEventId()) == false)
             return false;
+        if (other.getTaskList() == null ^ this.getTaskList() == null)
+            return false;
+        if (other.getTaskList() != null && other.getTaskList().equals(this.getTaskList()) == false)
+            return false;
+        if (other.getTaskListScheduleToStartTimeout() == null ^ this.getTaskListScheduleToStartTimeout() == null)
+            return false;
+        if (other.getTaskListScheduleToStartTimeout() != null
+                && other.getTaskListScheduleToStartTimeout().equals(this.getTaskListScheduleToStartTimeout()) == false)
+            return false;
         return true;
     }
 
@@ -246,6 +333,8 @@ public class DecisionTaskCompletedEventAttributes implements Serializable, Clone
         hashCode = prime * hashCode + ((getExecutionContext() == null) ? 0 : getExecutionContext().hashCode());
         hashCode = prime * hashCode + ((getScheduledEventId() == null) ? 0 : getScheduledEventId().hashCode());
         hashCode = prime * hashCode + ((getStartedEventId() == null) ? 0 : getStartedEventId().hashCode());
+        hashCode = prime * hashCode + ((getTaskList() == null) ? 0 : getTaskList().hashCode());
+        hashCode = prime * hashCode + ((getTaskListScheduleToStartTimeout() == null) ? 0 : getTaskListScheduleToStartTimeout().hashCode());
         return hashCode;
     }
 

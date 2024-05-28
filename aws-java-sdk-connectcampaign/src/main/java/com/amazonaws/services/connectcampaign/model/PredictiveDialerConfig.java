@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,8 @@ public class PredictiveDialerConfig implements Serializable, Cloneable, Structur
 
     private Double bandwidthAllocation;
 
+    private Double dialingCapacity;
+
     /**
      * @param bandwidthAllocation
      */
@@ -57,6 +59,32 @@ public class PredictiveDialerConfig implements Serializable, Cloneable, Structur
     }
 
     /**
+     * @param dialingCapacity
+     */
+
+    public void setDialingCapacity(Double dialingCapacity) {
+        this.dialingCapacity = dialingCapacity;
+    }
+
+    /**
+     * @return
+     */
+
+    public Double getDialingCapacity() {
+        return this.dialingCapacity;
+    }
+
+    /**
+     * @param dialingCapacity
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PredictiveDialerConfig withDialingCapacity(Double dialingCapacity) {
+        setDialingCapacity(dialingCapacity);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -69,7 +97,9 @@ public class PredictiveDialerConfig implements Serializable, Cloneable, Structur
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getBandwidthAllocation() != null)
-            sb.append("BandwidthAllocation: ").append(getBandwidthAllocation());
+            sb.append("BandwidthAllocation: ").append(getBandwidthAllocation()).append(",");
+        if (getDialingCapacity() != null)
+            sb.append("DialingCapacity: ").append(getDialingCapacity());
         sb.append("}");
         return sb.toString();
     }
@@ -88,6 +118,10 @@ public class PredictiveDialerConfig implements Serializable, Cloneable, Structur
             return false;
         if (other.getBandwidthAllocation() != null && other.getBandwidthAllocation().equals(this.getBandwidthAllocation()) == false)
             return false;
+        if (other.getDialingCapacity() == null ^ this.getDialingCapacity() == null)
+            return false;
+        if (other.getDialingCapacity() != null && other.getDialingCapacity().equals(this.getDialingCapacity()) == false)
+            return false;
         return true;
     }
 
@@ -97,6 +131,7 @@ public class PredictiveDialerConfig implements Serializable, Cloneable, Structur
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getBandwidthAllocation() == null) ? 0 : getBandwidthAllocation().hashCode());
+        hashCode = prime * hashCode + ((getDialingCapacity() == null) ? 0 : getDialingCapacity().hashCode());
         return hashCode;
     }
 

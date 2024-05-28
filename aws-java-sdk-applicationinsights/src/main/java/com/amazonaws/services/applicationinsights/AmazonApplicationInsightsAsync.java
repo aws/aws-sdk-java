@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,37 @@ import com.amazonaws.services.applicationinsights.model.*;
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonApplicationInsightsAsync extends AmazonApplicationInsights {
+
+    /**
+     * <p>
+     * Adds a workload to a component. Each component can have at most five workloads.
+     * </p>
+     * 
+     * @param addWorkloadRequest
+     * @return A Java Future containing the result of the AddWorkload operation returned by the service.
+     * @sample AmazonApplicationInsightsAsync.AddWorkload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/AddWorkload"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AddWorkloadResult> addWorkloadAsync(AddWorkloadRequest addWorkloadRequest);
+
+    /**
+     * <p>
+     * Adds a workload to a component. Each component can have at most five workloads.
+     * </p>
+     * 
+     * @param addWorkloadRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AddWorkload operation returned by the service.
+     * @sample AmazonApplicationInsightsAsyncHandler.AddWorkload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/AddWorkload"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AddWorkloadResult> addWorkloadAsync(AddWorkloadRequest addWorkloadRequest,
+            com.amazonaws.handlers.AsyncHandler<AddWorkloadRequest, AddWorkloadResult> asyncHandler);
 
     /**
      * <p>
@@ -494,6 +525,37 @@ public interface AmazonApplicationInsightsAsync extends AmazonApplicationInsight
 
     /**
      * <p>
+     * Describes a workload and its configuration.
+     * </p>
+     * 
+     * @param describeWorkloadRequest
+     * @return A Java Future containing the result of the DescribeWorkload operation returned by the service.
+     * @sample AmazonApplicationInsightsAsync.DescribeWorkload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeWorkload"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeWorkloadResult> describeWorkloadAsync(DescribeWorkloadRequest describeWorkloadRequest);
+
+    /**
+     * <p>
+     * Describes a workload and its configuration.
+     * </p>
+     * 
+     * @param describeWorkloadRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeWorkload operation returned by the service.
+     * @sample AmazonApplicationInsightsAsyncHandler.DescribeWorkload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeWorkload"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeWorkloadResult> describeWorkloadAsync(DescribeWorkloadRequest describeWorkloadRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeWorkloadRequest, DescribeWorkloadResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the IDs of the applications that you are monitoring.
      * </p>
      * 
@@ -753,6 +815,68 @@ public interface AmazonApplicationInsightsAsync extends AmazonApplicationInsight
 
     /**
      * <p>
+     * Lists the workloads that are configured on a given component.
+     * </p>
+     * 
+     * @param listWorkloadsRequest
+     * @return A Java Future containing the result of the ListWorkloads operation returned by the service.
+     * @sample AmazonApplicationInsightsAsync.ListWorkloads
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListWorkloads"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListWorkloadsResult> listWorkloadsAsync(ListWorkloadsRequest listWorkloadsRequest);
+
+    /**
+     * <p>
+     * Lists the workloads that are configured on a given component.
+     * </p>
+     * 
+     * @param listWorkloadsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListWorkloads operation returned by the service.
+     * @sample AmazonApplicationInsightsAsyncHandler.ListWorkloads
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListWorkloads"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListWorkloadsResult> listWorkloadsAsync(ListWorkloadsRequest listWorkloadsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListWorkloadsRequest, ListWorkloadsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Remove workload from a component.
+     * </p>
+     * 
+     * @param removeWorkloadRequest
+     * @return A Java Future containing the result of the RemoveWorkload operation returned by the service.
+     * @sample AmazonApplicationInsightsAsync.RemoveWorkload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/RemoveWorkload"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveWorkloadResult> removeWorkloadAsync(RemoveWorkloadRequest removeWorkloadRequest);
+
+    /**
+     * <p>
+     * Remove workload from a component.
+     * </p>
+     * 
+     * @param removeWorkloadRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemoveWorkload operation returned by the service.
+     * @sample AmazonApplicationInsightsAsyncHandler.RemoveWorkload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/RemoveWorkload"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveWorkloadResult> removeWorkloadAsync(RemoveWorkloadRequest removeWorkloadRequest,
+            com.amazonaws.handlers.AsyncHandler<RemoveWorkloadRequest, RemoveWorkloadResult> asyncHandler);
+
+    /**
+     * <p>
      * Add one or more tags (keys and values) to a specified application. A <i>tag</i> is a label that you optionally
      * define and associate with an application. Tags can help you categorize and manage application in different ways,
      * such as by purpose, owner, environment, or other criteria.
@@ -960,5 +1084,67 @@ public interface AmazonApplicationInsightsAsync extends AmazonApplicationInsight
      */
     java.util.concurrent.Future<UpdateLogPatternResult> updateLogPatternAsync(UpdateLogPatternRequest updateLogPatternRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateLogPatternRequest, UpdateLogPatternResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the visibility of the problem or specifies the problem as <code>RESOLVED</code>.
+     * </p>
+     * 
+     * @param updateProblemRequest
+     * @return A Java Future containing the result of the UpdateProblem operation returned by the service.
+     * @sample AmazonApplicationInsightsAsync.UpdateProblem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateProblem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateProblemResult> updateProblemAsync(UpdateProblemRequest updateProblemRequest);
+
+    /**
+     * <p>
+     * Updates the visibility of the problem or specifies the problem as <code>RESOLVED</code>.
+     * </p>
+     * 
+     * @param updateProblemRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateProblem operation returned by the service.
+     * @sample AmazonApplicationInsightsAsyncHandler.UpdateProblem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateProblem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateProblemResult> updateProblemAsync(UpdateProblemRequest updateProblemRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateProblemRequest, UpdateProblemResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds a workload to a component. Each component can have at most five workloads.
+     * </p>
+     * 
+     * @param updateWorkloadRequest
+     * @return A Java Future containing the result of the UpdateWorkload operation returned by the service.
+     * @sample AmazonApplicationInsightsAsync.UpdateWorkload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateWorkload"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateWorkloadResult> updateWorkloadAsync(UpdateWorkloadRequest updateWorkloadRequest);
+
+    /**
+     * <p>
+     * Adds a workload to a component. Each component can have at most five workloads.
+     * </p>
+     * 
+     * @param updateWorkloadRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateWorkload operation returned by the service.
+     * @sample AmazonApplicationInsightsAsyncHandler.UpdateWorkload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateWorkload"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateWorkloadResult> updateWorkloadAsync(UpdateWorkloadRequest updateWorkloadRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateWorkloadRequest, UpdateWorkloadResult> asyncHandler);
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class UpdateChannelMessageRequest extends com.amazonaws.AmazonWebServiceR
     private String messageId;
     /**
      * <p>
-     * The content of the message being updated.
+     * The content of the channel message.
      * </p>
      */
     private String content;
@@ -51,7 +51,7 @@ public class UpdateChannelMessageRequest extends com.amazonaws.AmazonWebServiceR
     private String metadata;
     /**
      * <p>
-     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      * </p>
      */
     private String chimeBearer;
@@ -66,6 +66,12 @@ public class UpdateChannelMessageRequest extends com.amazonaws.AmazonWebServiceR
      * </note>
      */
     private String subChannelId;
+    /**
+     * <p>
+     * The content type of the channel message.
+     * </p>
+     */
+    private String contentType;
 
     /**
      * <p>
@@ -149,11 +155,11 @@ public class UpdateChannelMessageRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The content of the message being updated.
+     * The content of the channel message.
      * </p>
      * 
      * @param content
-     *        The content of the message being updated.
+     *        The content of the channel message.
      */
 
     public void setContent(String content) {
@@ -162,10 +168,10 @@ public class UpdateChannelMessageRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The content of the message being updated.
+     * The content of the channel message.
      * </p>
      * 
-     * @return The content of the message being updated.
+     * @return The content of the channel message.
      */
 
     public String getContent() {
@@ -174,11 +180,11 @@ public class UpdateChannelMessageRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The content of the message being updated.
+     * The content of the channel message.
      * </p>
      * 
      * @param content
-     *        The content of the message being updated.
+     *        The content of the channel message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -229,11 +235,11 @@ public class UpdateChannelMessageRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      * </p>
      * 
      * @param chimeBearer
-     *        The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     *        The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      */
 
     public void setChimeBearer(String chimeBearer) {
@@ -242,10 +248,10 @@ public class UpdateChannelMessageRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      * </p>
      * 
-     * @return The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * @return The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      */
 
     public String getChimeBearer() {
@@ -254,11 +260,11 @@ public class UpdateChannelMessageRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      * </p>
      * 
      * @param chimeBearer
-     *        The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     *        The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -332,6 +338,46 @@ public class UpdateChannelMessageRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The content type of the channel message.
+     * </p>
+     * 
+     * @param contentType
+     *        The content type of the channel message.
+     */
+
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
+    }
+
+    /**
+     * <p>
+     * The content type of the channel message.
+     * </p>
+     * 
+     * @return The content type of the channel message.
+     */
+
+    public String getContentType() {
+        return this.contentType;
+    }
+
+    /**
+     * <p>
+     * The content type of the channel message.
+     * </p>
+     * 
+     * @param contentType
+     *        The content type of the channel message.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateChannelMessageRequest withContentType(String contentType) {
+        setContentType(contentType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -354,7 +400,9 @@ public class UpdateChannelMessageRequest extends com.amazonaws.AmazonWebServiceR
         if (getChimeBearer() != null)
             sb.append("ChimeBearer: ").append(getChimeBearer()).append(",");
         if (getSubChannelId() != null)
-            sb.append("SubChannelId: ").append(getSubChannelId());
+            sb.append("SubChannelId: ").append(getSubChannelId()).append(",");
+        if (getContentType() != null)
+            sb.append("ContentType: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -393,6 +441,10 @@ public class UpdateChannelMessageRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getSubChannelId() != null && other.getSubChannelId().equals(this.getSubChannelId()) == false)
             return false;
+        if (other.getContentType() == null ^ this.getContentType() == null)
+            return false;
+        if (other.getContentType() != null && other.getContentType().equals(this.getContentType()) == false)
+            return false;
         return true;
     }
 
@@ -407,6 +459,7 @@ public class UpdateChannelMessageRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getMetadata() == null) ? 0 : getMetadata().hashCode());
         hashCode = prime * hashCode + ((getChimeBearer() == null) ? 0 : getChimeBearer().hashCode());
         hashCode = prime * hashCode + ((getSubChannelId() == null) ? 0 : getSubChannelId().hashCode());
+        hashCode = prime * hashCode + ((getContentType() == null) ? 0 : getContentType().hashCode());
         return hashCode;
     }
 

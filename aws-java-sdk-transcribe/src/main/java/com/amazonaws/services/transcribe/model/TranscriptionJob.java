@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,20 +59,15 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
     private String transcriptionJobStatus;
     /**
      * <p>
-     * The language code used to create your transcription job. For a list of supported languages and their associated
-     * language codes, refer to the <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
-     * </p>
-     * <p>
-     * Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
-     * <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your
-     * transcription job fails.
+     * The language code used to create your transcription job. This parameter is used with single-language
+     * identification. For multi-language identification requests, refer to the plural version of this parameter,
+     * <code>LanguageCodes</code>.
      * </p>
      */
     private String languageCode;
     /**
      * <p>
-     * The sample rate, in Hertz, of the audio track in your input media file.
+     * The sample rate, in hertz, of the audio track in your input media file.
      * </p>
      */
     private Integer mediaSampleRateHertz;
@@ -84,7 +79,7 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
     private String mediaFormat;
     /**
      * <p>
-     * Describes the Amazon S3 location of the media file you want to use in your request.
+     * Provides the Amazon S3 location of the media file you used in your request.
      * </p>
      */
     private Media media;
@@ -141,8 +136,8 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * <code>Unsupported media format</code>.
      * </p>
      * <p>
-     * The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b> for a list of
-     * supported formats.
+     * The media format specified in <code>MediaFormat</code> isn't valid. Refer to refer to the
+     * <code>MediaFormat</code> parameter for a list of supported formats.
      * </p>
      * </li>
      * <li>
@@ -160,7 +155,7 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 8,000
-     * and 48,000 Hertz.
+     * and 48,000 hertz.
      * </p>
      * </li>
      * <li>
@@ -178,7 +173,7 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * The size of your media file is larger than what Amazon Transcribe can process. For more information, refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service quotas</a>.
      * </p>
      * </li>
      * <li>
@@ -187,7 +182,7 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service quotas</a>.
      * </p>
      * </li>
      * </ul>
@@ -195,39 +190,28 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
     private String failureReason;
     /**
      * <p>
-     * Specify additional optional settings in your request, including channel identification, alternative
-     * transcriptions, speaker labeling; allows you to apply custom vocabularies and vocabulary filters.
-     * </p>
-     * <p>
-     * If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do
-     * not</b> want to use automatic language identification, use <code>Settings</code> with the
-     * <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both) sub-parameter.
-     * </p>
-     * <p>
-     * If you're using automatic language identification with your request and want to include a custom language model,
-     * a custom vocabulary, or a custom vocabulary filter, do not use the <code>Settings</code> parameter; use instead
-     * the <code/> parameter with the <code>LanguageModelName</code>, <code>VocabularyName</code> or
-     * <code>VocabularyFilterName</code> sub-parameters.
+     * Provides information on any additional settings that were included in your request. Additional settings include
+     * channel identification, alternative transcriptions, speaker partitioning, custom vocabularies, and custom
+     * vocabulary filters.
      * </p>
      */
     private Settings settings;
     /**
      * <p>
-     * The custom language model you want to include with your transcription job. If you include
-     * <code>ModelSettings</code> in your request, you must include the <code>LanguageModelName</code> sub-parameter.
+     * Provides information on the custom language model you included in your request.
      * </p>
      */
     private ModelSettings modelSettings;
     /**
      * <p>
-     * Provides information about how your transcription job is being processed. This parameter shows if your request is
-     * queued and what data access role is being used.
+     * Provides information about how your transcription job was processed. This parameter shows if your request was
+     * queued and what data access role was used.
      * </p>
      */
     private JobExecutionSettings jobExecutionSettings;
     /**
      * <p>
-     * Redacts or flags specified personally identifiable information (PII) in your transcript.
+     * Indicates whether redaction was enabled in your transcript.
      * </p>
      */
     private ContentRedaction contentRedaction;
@@ -247,20 +231,7 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
     private Boolean identifyMultipleLanguages;
     /**
      * <p>
-     * You can specify two or more language codes that represent the languages you think may be present in your media;
-     * including more than five is not recommended. If you're unsure what languages are present, do not include this
-     * parameter.
-     * </p>
-     * <p>
-     * If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code>.
-     * </p>
-     * <p>
-     * For more information, refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.
-     * </p>
-     * <p>
-     * To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample
-     * rate of 16,000 Hz or higher.
+     * Provides the language codes you specified in your request.
      * </p>
      */
     private java.util.List<String> languageOptions;
@@ -280,60 +251,33 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * identification. For single-language identification requests, refer to the singular version of this parameter,
      * <code>LanguageCode</code>.
      * </p>
-     * <p>
-     * For a list of supported languages and their associated language codes, refer to the <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
-     * </p>
      */
     private java.util.List<LanguageCodeItem> languageCodes;
     /**
      * <p>
-     * Adds one or more custom tags, each in the form of a key:value pair, to a new transcription job at the time you
-     * start this new job.
-     * </p>
-     * <p>
-     * To learn more about using tags with Amazon Transcribe, refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
+     * The tags, each in the form of a key:value pair, assigned to the specified transcription job.
      * </p>
      */
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * Generate subtitles for your media file with your transcription request.
+     * Indicates whether subtitles were generated with your transcription.
      * </p>
      */
     private SubtitlesOutput subtitles;
     /**
      * <p>
-     * If using automatic language identification (<code>IdentifyLanguage</code>) in your request and you want to apply
-     * a custom language model, a custom vocabulary, or a custom vocabulary filter, include
-     * <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>,
-     * <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).
-     * </p>
-     * <p>
-     * You can specify two or more language codes that represent the languages you think may be present in your media;
-     * including more than five is not recommended. Each language code you include can have an associated custom
-     * language model, custom vocabulary, and custom vocabulary filter. The languages you specify must match the
-     * languages of the specified custom language models, custom vocabularies, and custom vocabulary filters.
-     * </p>
-     * <p>
-     * To include language options using <code>IdentifyLanguage</code> <b>without</b> including a custom language model,
-     * a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code> instead of
-     * <code>LanguageIdSettings</code>. Including language options can improve the accuracy of automatic language
-     * identification.
-     * </p>
-     * <p>
-     * If you want to include a custom language model with your request but <b>do not</b> want to use automatic language
-     * identification, use instead the <code/> parameter with the <code>LanguageModelName</code> sub-parameter.
-     * </p>
-     * <p>
-     * If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do
-     * not</b> want to use automatic language identification, use instead the
-     * <code/> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both)
-     * sub-parameter.
+     * Provides the name and language of all custom language models, custom vocabularies, and custom vocabulary filters
+     * that you included in your request.
      * </p>
      */
     private java.util.Map<String, LanguageIdSettings> languageIdSettings;
+    /**
+     * <p>
+     * Provides information about the toxicity detection settings applied to your transcription.
+     * </p>
+     */
+    private java.util.List<ToxicityDetectionSettings> toxicityDetection;
 
     /**
      * <p>
@@ -486,25 +430,15 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The language code used to create your transcription job. For a list of supported languages and their associated
-     * language codes, refer to the <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
-     * </p>
-     * <p>
-     * Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
-     * <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your
-     * transcription job fails.
+     * The language code used to create your transcription job. This parameter is used with single-language
+     * identification. For multi-language identification requests, refer to the plural version of this parameter,
+     * <code>LanguageCodes</code>.
      * </p>
      * 
      * @param languageCode
-     *        The language code used to create your transcription job. For a list of supported languages and their
-     *        associated language codes, refer to the <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>
-     *        table.</p>
-     *        <p>
-     *        Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
-     *        <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters,
-     *        your transcription job fails.
+     *        The language code used to create your transcription job. This parameter is used with single-language
+     *        identification. For multi-language identification requests, refer to the plural version of this parameter,
+     *        <code>LanguageCodes</code>.
      * @see LanguageCode
      */
 
@@ -514,24 +448,14 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The language code used to create your transcription job. For a list of supported languages and their associated
-     * language codes, refer to the <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
-     * </p>
-     * <p>
-     * Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
-     * <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your
-     * transcription job fails.
+     * The language code used to create your transcription job. This parameter is used with single-language
+     * identification. For multi-language identification requests, refer to the plural version of this parameter,
+     * <code>LanguageCodes</code>.
      * </p>
      * 
-     * @return The language code used to create your transcription job. For a list of supported languages and their
-     *         associated language codes, refer to the <a
-     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>
-     *         table.</p>
-     *         <p>
-     *         Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
-     *         <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters,
-     *         your transcription job fails.
+     * @return The language code used to create your transcription job. This parameter is used with single-language
+     *         identification. For multi-language identification requests, refer to the plural version of this
+     *         parameter, <code>LanguageCodes</code>.
      * @see LanguageCode
      */
 
@@ -541,25 +465,15 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The language code used to create your transcription job. For a list of supported languages and their associated
-     * language codes, refer to the <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
-     * </p>
-     * <p>
-     * Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
-     * <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your
-     * transcription job fails.
+     * The language code used to create your transcription job. This parameter is used with single-language
+     * identification. For multi-language identification requests, refer to the plural version of this parameter,
+     * <code>LanguageCodes</code>.
      * </p>
      * 
      * @param languageCode
-     *        The language code used to create your transcription job. For a list of supported languages and their
-     *        associated language codes, refer to the <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>
-     *        table.</p>
-     *        <p>
-     *        Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
-     *        <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters,
-     *        your transcription job fails.
+     *        The language code used to create your transcription job. This parameter is used with single-language
+     *        identification. For multi-language identification requests, refer to the plural version of this parameter,
+     *        <code>LanguageCodes</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -571,25 +485,15 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The language code used to create your transcription job. For a list of supported languages and their associated
-     * language codes, refer to the <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
-     * </p>
-     * <p>
-     * Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
-     * <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters, your
-     * transcription job fails.
+     * The language code used to create your transcription job. This parameter is used with single-language
+     * identification. For multi-language identification requests, refer to the plural version of this parameter,
+     * <code>LanguageCodes</code>.
      * </p>
      * 
      * @param languageCode
-     *        The language code used to create your transcription job. For a list of supported languages and their
-     *        associated language codes, refer to the <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>
-     *        table.</p>
-     *        <p>
-     *        Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
-     *        <code>IdentifyMultipleLanguages</code> in your request. If you include more than one of these parameters,
-     *        your transcription job fails.
+     *        The language code used to create your transcription job. This parameter is used with single-language
+     *        identification. For multi-language identification requests, refer to the plural version of this parameter,
+     *        <code>LanguageCodes</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -601,11 +505,11 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The sample rate, in Hertz, of the audio track in your input media file.
+     * The sample rate, in hertz, of the audio track in your input media file.
      * </p>
      * 
      * @param mediaSampleRateHertz
-     *        The sample rate, in Hertz, of the audio track in your input media file.
+     *        The sample rate, in hertz, of the audio track in your input media file.
      */
 
     public void setMediaSampleRateHertz(Integer mediaSampleRateHertz) {
@@ -614,10 +518,10 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The sample rate, in Hertz, of the audio track in your input media file.
+     * The sample rate, in hertz, of the audio track in your input media file.
      * </p>
      * 
-     * @return The sample rate, in Hertz, of the audio track in your input media file.
+     * @return The sample rate, in hertz, of the audio track in your input media file.
      */
 
     public Integer getMediaSampleRateHertz() {
@@ -626,11 +530,11 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The sample rate, in Hertz, of the audio track in your input media file.
+     * The sample rate, in hertz, of the audio track in your input media file.
      * </p>
      * 
      * @param mediaSampleRateHertz
-     *        The sample rate, in Hertz, of the audio track in your input media file.
+     *        The sample rate, in hertz, of the audio track in your input media file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -700,11 +604,11 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Describes the Amazon S3 location of the media file you want to use in your request.
+     * Provides the Amazon S3 location of the media file you used in your request.
      * </p>
      * 
      * @param media
-     *        Describes the Amazon S3 location of the media file you want to use in your request.
+     *        Provides the Amazon S3 location of the media file you used in your request.
      */
 
     public void setMedia(Media media) {
@@ -713,10 +617,10 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Describes the Amazon S3 location of the media file you want to use in your request.
+     * Provides the Amazon S3 location of the media file you used in your request.
      * </p>
      * 
-     * @return Describes the Amazon S3 location of the media file you want to use in your request.
+     * @return Provides the Amazon S3 location of the media file you used in your request.
      */
 
     public Media getMedia() {
@@ -725,11 +629,11 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Describes the Amazon S3 location of the media file you want to use in your request.
+     * Provides the Amazon S3 location of the media file you used in your request.
      * </p>
      * 
      * @param media
-     *        Describes the Amazon S3 location of the media file you want to use in your request.
+     *        Provides the Amazon S3 location of the media file you used in your request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -993,8 +897,8 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * <code>Unsupported media format</code>.
      * </p>
      * <p>
-     * The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b> for a list of
-     * supported formats.
+     * The media format specified in <code>MediaFormat</code> isn't valid. Refer to refer to the
+     * <code>MediaFormat</code> parameter for a list of supported formats.
      * </p>
      * </li>
      * <li>
@@ -1012,7 +916,7 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 8,000
-     * and 48,000 Hertz.
+     * and 48,000 hertz.
      * </p>
      * </li>
      * <li>
@@ -1030,7 +934,7 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * The size of your media file is larger than what Amazon Transcribe can process. For more information, refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service quotas</a>.
      * </p>
      * </li>
      * <li>
@@ -1039,7 +943,7 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service quotas</a>.
      * </p>
      * </li>
      * </ul>
@@ -1056,8 +960,8 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      *        <code>Unsupported media format</code>.
      *        </p>
      *        <p>
-     *        The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b> for a list
-     *        of supported formats.
+     *        The media format specified in <code>MediaFormat</code> isn't valid. Refer to refer to the
+     *        <code>MediaFormat</code> parameter for a list of supported formats.
      *        </p>
      *        </li>
      *        <li>
@@ -1075,7 +979,7 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      *        </p>
      *        <p>
      *        The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be
-     *        between 8,000 and 48,000 Hertz.
+     *        between 8,000 and 48,000 hertz.
      *        </p>
      *        </li>
      *        <li>
@@ -1093,7 +997,8 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      *        </p>
      *        <p>
      *        The size of your media file is larger than what Amazon Transcribe can process. For more information, refer
-     *        to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and
+     *        to <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service
      *        quotas</a>.
      *        </p>
      *        </li>
@@ -1103,7 +1008,8 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      *        </p>
      *        <p>
      *        Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer
-     *        to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and
+     *        to <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service
      *        quotas</a>.
      *        </p>
      *        </li>
@@ -1127,8 +1033,8 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * <code>Unsupported media format</code>.
      * </p>
      * <p>
-     * The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b> for a list of
-     * supported formats.
+     * The media format specified in <code>MediaFormat</code> isn't valid. Refer to refer to the
+     * <code>MediaFormat</code> parameter for a list of supported formats.
      * </p>
      * </li>
      * <li>
@@ -1146,7 +1052,7 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 8,000
-     * and 48,000 Hertz.
+     * and 48,000 hertz.
      * </p>
      * </li>
      * <li>
@@ -1164,7 +1070,7 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * The size of your media file is larger than what Amazon Transcribe can process. For more information, refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service quotas</a>.
      * </p>
      * </li>
      * <li>
@@ -1173,7 +1079,7 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service quotas</a>.
      * </p>
      * </li>
      * </ul>
@@ -1189,8 +1095,8 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      *         <code>Unsupported media format</code>.
      *         </p>
      *         <p>
-     *         The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b> for a
-     *         list of supported formats.
+     *         The media format specified in <code>MediaFormat</code> isn't valid. Refer to refer to the
+     *         <code>MediaFormat</code> parameter for a list of supported formats.
      *         </p>
      *         </li>
      *         <li>
@@ -1208,7 +1114,7 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      *         </p>
      *         <p>
      *         The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be
-     *         between 8,000 and 48,000 Hertz.
+     *         between 8,000 and 48,000 hertz.
      *         </p>
      *         </li>
      *         <li>
@@ -1227,7 +1133,7 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      *         <p>
      *         The size of your media file is larger than what Amazon Transcribe can process. For more information,
      *         refer to <a
-     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and
+     *         href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service
      *         quotas</a>.
      *         </p>
      *         </li>
@@ -1237,8 +1143,9 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      *         </p>
      *         <p>
      *         Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer
-     *         to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines
-     *         and quotas</a>.
+     *         to <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service
+     *         quotas</a>.
      *         </p>
      *         </li>
      */
@@ -1261,8 +1168,8 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * <code>Unsupported media format</code>.
      * </p>
      * <p>
-     * The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b> for a list of
-     * supported formats.
+     * The media format specified in <code>MediaFormat</code> isn't valid. Refer to refer to the
+     * <code>MediaFormat</code> parameter for a list of supported formats.
      * </p>
      * </li>
      * <li>
@@ -1280,7 +1187,7 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between 8,000
-     * and 48,000 Hertz.
+     * and 48,000 hertz.
      * </p>
      * </li>
      * <li>
@@ -1298,7 +1205,7 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * The size of your media file is larger than what Amazon Transcribe can process. For more information, refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service quotas</a>.
      * </p>
      * </li>
      * <li>
@@ -1307,7 +1214,7 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      * <p>
      * Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and quotas</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service quotas</a>.
      * </p>
      * </li>
      * </ul>
@@ -1324,8 +1231,8 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      *        <code>Unsupported media format</code>.
      *        </p>
      *        <p>
-     *        The media format specified in <code>MediaFormat</code> isn't valid. Refer to <b>MediaFormat</b> for a list
-     *        of supported formats.
+     *        The media format specified in <code>MediaFormat</code> isn't valid. Refer to refer to the
+     *        <code>MediaFormat</code> parameter for a list of supported formats.
      *        </p>
      *        </li>
      *        <li>
@@ -1343,7 +1250,7 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      *        </p>
      *        <p>
      *        The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be
-     *        between 8,000 and 48,000 Hertz.
+     *        between 8,000 and 48,000 hertz.
      *        </p>
      *        </li>
      *        <li>
@@ -1361,7 +1268,8 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      *        </p>
      *        <p>
      *        The size of your media file is larger than what Amazon Transcribe can process. For more information, refer
-     *        to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and
+     *        to <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service
      *        quotas</a>.
      *        </p>
      *        </li>
@@ -1371,7 +1279,8 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      *        </p>
      *        <p>
      *        Your audio contains more channels than Amazon Transcribe is able to process. For more information, refer
-     *        to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and
+     *        to <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service
      *        quotas</a>.
      *        </p>
      *        </li>
@@ -1385,34 +1294,15 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specify additional optional settings in your request, including channel identification, alternative
-     * transcriptions, speaker labeling; allows you to apply custom vocabularies and vocabulary filters.
-     * </p>
-     * <p>
-     * If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do
-     * not</b> want to use automatic language identification, use <code>Settings</code> with the
-     * <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both) sub-parameter.
-     * </p>
-     * <p>
-     * If you're using automatic language identification with your request and want to include a custom language model,
-     * a custom vocabulary, or a custom vocabulary filter, do not use the <code>Settings</code> parameter; use instead
-     * the <code/> parameter with the <code>LanguageModelName</code>, <code>VocabularyName</code> or
-     * <code>VocabularyFilterName</code> sub-parameters.
+     * Provides information on any additional settings that were included in your request. Additional settings include
+     * channel identification, alternative transcriptions, speaker partitioning, custom vocabularies, and custom
+     * vocabulary filters.
      * </p>
      * 
      * @param settings
-     *        Specify additional optional settings in your request, including channel identification, alternative
-     *        transcriptions, speaker labeling; allows you to apply custom vocabularies and vocabulary filters.</p>
-     *        <p>
-     *        If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but
-     *        <b>do not</b> want to use automatic language identification, use <code>Settings</code> with the
-     *        <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both) sub-parameter.
-     *        </p>
-     *        <p>
-     *        If you're using automatic language identification with your request and want to include a custom language
-     *        model, a custom vocabulary, or a custom vocabulary filter, do not use the <code>Settings</code> parameter;
-     *        use instead the <code/> parameter with the <code>LanguageModelName</code>, <code>VocabularyName</code> or
-     *        <code>VocabularyFilterName</code> sub-parameters.
+     *        Provides information on any additional settings that were included in your request. Additional settings
+     *        include channel identification, alternative transcriptions, speaker partitioning, custom vocabularies, and
+     *        custom vocabulary filters.
      */
 
     public void setSettings(Settings settings) {
@@ -1421,33 +1311,14 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specify additional optional settings in your request, including channel identification, alternative
-     * transcriptions, speaker labeling; allows you to apply custom vocabularies and vocabulary filters.
-     * </p>
-     * <p>
-     * If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do
-     * not</b> want to use automatic language identification, use <code>Settings</code> with the
-     * <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both) sub-parameter.
-     * </p>
-     * <p>
-     * If you're using automatic language identification with your request and want to include a custom language model,
-     * a custom vocabulary, or a custom vocabulary filter, do not use the <code>Settings</code> parameter; use instead
-     * the <code/> parameter with the <code>LanguageModelName</code>, <code>VocabularyName</code> or
-     * <code>VocabularyFilterName</code> sub-parameters.
+     * Provides information on any additional settings that were included in your request. Additional settings include
+     * channel identification, alternative transcriptions, speaker partitioning, custom vocabularies, and custom
+     * vocabulary filters.
      * </p>
      * 
-     * @return Specify additional optional settings in your request, including channel identification, alternative
-     *         transcriptions, speaker labeling; allows you to apply custom vocabularies and vocabulary filters.</p>
-     *         <p>
-     *         If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but
-     *         <b>do not</b> want to use automatic language identification, use <code>Settings</code> with the
-     *         <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both) sub-parameter.
-     *         </p>
-     *         <p>
-     *         If you're using automatic language identification with your request and want to include a custom language
-     *         model, a custom vocabulary, or a custom vocabulary filter, do not use the <code>Settings</code>
-     *         parameter; use instead the <code/> parameter with the <code>LanguageModelName</code>,
-     *         <code>VocabularyName</code> or <code>VocabularyFilterName</code> sub-parameters.
+     * @return Provides information on any additional settings that were included in your request. Additional settings
+     *         include channel identification, alternative transcriptions, speaker partitioning, custom vocabularies,
+     *         and custom vocabulary filters.
      */
 
     public Settings getSettings() {
@@ -1456,34 +1327,15 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specify additional optional settings in your request, including channel identification, alternative
-     * transcriptions, speaker labeling; allows you to apply custom vocabularies and vocabulary filters.
-     * </p>
-     * <p>
-     * If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do
-     * not</b> want to use automatic language identification, use <code>Settings</code> with the
-     * <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both) sub-parameter.
-     * </p>
-     * <p>
-     * If you're using automatic language identification with your request and want to include a custom language model,
-     * a custom vocabulary, or a custom vocabulary filter, do not use the <code>Settings</code> parameter; use instead
-     * the <code/> parameter with the <code>LanguageModelName</code>, <code>VocabularyName</code> or
-     * <code>VocabularyFilterName</code> sub-parameters.
+     * Provides information on any additional settings that were included in your request. Additional settings include
+     * channel identification, alternative transcriptions, speaker partitioning, custom vocabularies, and custom
+     * vocabulary filters.
      * </p>
      * 
      * @param settings
-     *        Specify additional optional settings in your request, including channel identification, alternative
-     *        transcriptions, speaker labeling; allows you to apply custom vocabularies and vocabulary filters.</p>
-     *        <p>
-     *        If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but
-     *        <b>do not</b> want to use automatic language identification, use <code>Settings</code> with the
-     *        <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both) sub-parameter.
-     *        </p>
-     *        <p>
-     *        If you're using automatic language identification with your request and want to include a custom language
-     *        model, a custom vocabulary, or a custom vocabulary filter, do not use the <code>Settings</code> parameter;
-     *        use instead the <code/> parameter with the <code>LanguageModelName</code>, <code>VocabularyName</code> or
-     *        <code>VocabularyFilterName</code> sub-parameters.
+     *        Provides information on any additional settings that were included in your request. Additional settings
+     *        include channel identification, alternative transcriptions, speaker partitioning, custom vocabularies, and
+     *        custom vocabulary filters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1494,14 +1346,11 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The custom language model you want to include with your transcription job. If you include
-     * <code>ModelSettings</code> in your request, you must include the <code>LanguageModelName</code> sub-parameter.
+     * Provides information on the custom language model you included in your request.
      * </p>
      * 
      * @param modelSettings
-     *        The custom language model you want to include with your transcription job. If you include
-     *        <code>ModelSettings</code> in your request, you must include the <code>LanguageModelName</code>
-     *        sub-parameter.
+     *        Provides information on the custom language model you included in your request.
      */
 
     public void setModelSettings(ModelSettings modelSettings) {
@@ -1510,13 +1359,10 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The custom language model you want to include with your transcription job. If you include
-     * <code>ModelSettings</code> in your request, you must include the <code>LanguageModelName</code> sub-parameter.
+     * Provides information on the custom language model you included in your request.
      * </p>
      * 
-     * @return The custom language model you want to include with your transcription job. If you include
-     *         <code>ModelSettings</code> in your request, you must include the <code>LanguageModelName</code>
-     *         sub-parameter.
+     * @return Provides information on the custom language model you included in your request.
      */
 
     public ModelSettings getModelSettings() {
@@ -1525,14 +1371,11 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The custom language model you want to include with your transcription job. If you include
-     * <code>ModelSettings</code> in your request, you must include the <code>LanguageModelName</code> sub-parameter.
+     * Provides information on the custom language model you included in your request.
      * </p>
      * 
      * @param modelSettings
-     *        The custom language model you want to include with your transcription job. If you include
-     *        <code>ModelSettings</code> in your request, you must include the <code>LanguageModelName</code>
-     *        sub-parameter.
+     *        Provides information on the custom language model you included in your request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1543,13 +1386,13 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Provides information about how your transcription job is being processed. This parameter shows if your request is
-     * queued and what data access role is being used.
+     * Provides information about how your transcription job was processed. This parameter shows if your request was
+     * queued and what data access role was used.
      * </p>
      * 
      * @param jobExecutionSettings
-     *        Provides information about how your transcription job is being processed. This parameter shows if your
-     *        request is queued and what data access role is being used.
+     *        Provides information about how your transcription job was processed. This parameter shows if your request
+     *        was queued and what data access role was used.
      */
 
     public void setJobExecutionSettings(JobExecutionSettings jobExecutionSettings) {
@@ -1558,12 +1401,12 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Provides information about how your transcription job is being processed. This parameter shows if your request is
-     * queued and what data access role is being used.
+     * Provides information about how your transcription job was processed. This parameter shows if your request was
+     * queued and what data access role was used.
      * </p>
      * 
-     * @return Provides information about how your transcription job is being processed. This parameter shows if your
-     *         request is queued and what data access role is being used.
+     * @return Provides information about how your transcription job was processed. This parameter shows if your request
+     *         was queued and what data access role was used.
      */
 
     public JobExecutionSettings getJobExecutionSettings() {
@@ -1572,13 +1415,13 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Provides information about how your transcription job is being processed. This parameter shows if your request is
-     * queued and what data access role is being used.
+     * Provides information about how your transcription job was processed. This parameter shows if your request was
+     * queued and what data access role was used.
      * </p>
      * 
      * @param jobExecutionSettings
-     *        Provides information about how your transcription job is being processed. This parameter shows if your
-     *        request is queued and what data access role is being used.
+     *        Provides information about how your transcription job was processed. This parameter shows if your request
+     *        was queued and what data access role was used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1589,11 +1432,11 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Redacts or flags specified personally identifiable information (PII) in your transcript.
+     * Indicates whether redaction was enabled in your transcript.
      * </p>
      * 
      * @param contentRedaction
-     *        Redacts or flags specified personally identifiable information (PII) in your transcript.
+     *        Indicates whether redaction was enabled in your transcript.
      */
 
     public void setContentRedaction(ContentRedaction contentRedaction) {
@@ -1602,10 +1445,10 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Redacts or flags specified personally identifiable information (PII) in your transcript.
+     * Indicates whether redaction was enabled in your transcript.
      * </p>
      * 
-     * @return Redacts or flags specified personally identifiable information (PII) in your transcript.
+     * @return Indicates whether redaction was enabled in your transcript.
      */
 
     public ContentRedaction getContentRedaction() {
@@ -1614,11 +1457,11 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Redacts or flags specified personally identifiable information (PII) in your transcript.
+     * Indicates whether redaction was enabled in your transcript.
      * </p>
      * 
      * @param contentRedaction
-     *        Redacts or flags specified personally identifiable information (PII) in your transcript.
+     *        Indicates whether redaction was enabled in your transcript.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1749,36 +1592,10 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * You can specify two or more language codes that represent the languages you think may be present in your media;
-     * including more than five is not recommended. If you're unsure what languages are present, do not include this
-     * parameter.
-     * </p>
-     * <p>
-     * If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code>.
-     * </p>
-     * <p>
-     * For more information, refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.
-     * </p>
-     * <p>
-     * To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample
-     * rate of 16,000 Hz or higher.
+     * Provides the language codes you specified in your request.
      * </p>
      * 
-     * @return You can specify two or more language codes that represent the languages you think may be present in your
-     *         media; including more than five is not recommended. If you're unsure what languages are present, do not
-     *         include this parameter.</p>
-     *         <p>
-     *         If you include <code>LanguageOptions</code> in your request, you must also include
-     *         <code>IdentifyLanguage</code>.
-     *         </p>
-     *         <p>
-     *         For more information, refer to <a
-     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.
-     *         </p>
-     *         <p>
-     *         To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a
-     *         sample rate of 16,000 Hz or higher.
+     * @return Provides the language codes you specified in your request.
      * @see LanguageCode
      */
 
@@ -1788,37 +1605,11 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * You can specify two or more language codes that represent the languages you think may be present in your media;
-     * including more than five is not recommended. If you're unsure what languages are present, do not include this
-     * parameter.
-     * </p>
-     * <p>
-     * If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code>.
-     * </p>
-     * <p>
-     * For more information, refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.
-     * </p>
-     * <p>
-     * To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample
-     * rate of 16,000 Hz or higher.
+     * Provides the language codes you specified in your request.
      * </p>
      * 
      * @param languageOptions
-     *        You can specify two or more language codes that represent the languages you think may be present in your
-     *        media; including more than five is not recommended. If you're unsure what languages are present, do not
-     *        include this parameter.</p>
-     *        <p>
-     *        If you include <code>LanguageOptions</code> in your request, you must also include
-     *        <code>IdentifyLanguage</code>.
-     *        </p>
-     *        <p>
-     *        For more information, refer to <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.
-     *        </p>
-     *        <p>
-     *        To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a
-     *        sample rate of 16,000 Hz or higher.
+     *        Provides the language codes you specified in your request.
      * @see LanguageCode
      */
 
@@ -1833,20 +1624,7 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * You can specify two or more language codes that represent the languages you think may be present in your media;
-     * including more than five is not recommended. If you're unsure what languages are present, do not include this
-     * parameter.
-     * </p>
-     * <p>
-     * If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code>.
-     * </p>
-     * <p>
-     * For more information, refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.
-     * </p>
-     * <p>
-     * To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample
-     * rate of 16,000 Hz or higher.
+     * Provides the language codes you specified in your request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1855,20 +1633,7 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param languageOptions
-     *        You can specify two or more language codes that represent the languages you think may be present in your
-     *        media; including more than five is not recommended. If you're unsure what languages are present, do not
-     *        include this parameter.</p>
-     *        <p>
-     *        If you include <code>LanguageOptions</code> in your request, you must also include
-     *        <code>IdentifyLanguage</code>.
-     *        </p>
-     *        <p>
-     *        For more information, refer to <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.
-     *        </p>
-     *        <p>
-     *        To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a
-     *        sample rate of 16,000 Hz or higher.
+     *        Provides the language codes you specified in your request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -1885,37 +1650,11 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * You can specify two or more language codes that represent the languages you think may be present in your media;
-     * including more than five is not recommended. If you're unsure what languages are present, do not include this
-     * parameter.
-     * </p>
-     * <p>
-     * If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code>.
-     * </p>
-     * <p>
-     * For more information, refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.
-     * </p>
-     * <p>
-     * To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample
-     * rate of 16,000 Hz or higher.
+     * Provides the language codes you specified in your request.
      * </p>
      * 
      * @param languageOptions
-     *        You can specify two or more language codes that represent the languages you think may be present in your
-     *        media; including more than five is not recommended. If you're unsure what languages are present, do not
-     *        include this parameter.</p>
-     *        <p>
-     *        If you include <code>LanguageOptions</code> in your request, you must also include
-     *        <code>IdentifyLanguage</code>.
-     *        </p>
-     *        <p>
-     *        For more information, refer to <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.
-     *        </p>
-     *        <p>
-     *        To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a
-     *        sample rate of 16,000 Hz or higher.
+     *        Provides the language codes you specified in your request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -1927,37 +1666,11 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * You can specify two or more language codes that represent the languages you think may be present in your media;
-     * including more than five is not recommended. If you're unsure what languages are present, do not include this
-     * parameter.
-     * </p>
-     * <p>
-     * If you include <code>LanguageOptions</code> in your request, you must also include <code>IdentifyLanguage</code>.
-     * </p>
-     * <p>
-     * For more information, refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.
-     * </p>
-     * <p>
-     * To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a sample
-     * rate of 16,000 Hz or higher.
+     * Provides the language codes you specified in your request.
      * </p>
      * 
      * @param languageOptions
-     *        You can specify two or more language codes that represent the languages you think may be present in your
-     *        media; including more than five is not recommended. If you're unsure what languages are present, do not
-     *        include this parameter.</p>
-     *        <p>
-     *        If you include <code>LanguageOptions</code> in your request, you must also include
-     *        <code>IdentifyLanguage</code>.
-     *        </p>
-     *        <p>
-     *        For more information, refer to <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>.
-     *        </p>
-     *        <p>
-     *        To transcribe speech in Modern Standard Arabic (<code>ar-SA</code>), your media file must be encoded at a
-     *        sample rate of 16,000 Hz or higher.
+     *        Provides the language codes you specified in your request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -2042,18 +1755,10 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * identification. For single-language identification requests, refer to the singular version of this parameter,
      * <code>LanguageCode</code>.
      * </p>
-     * <p>
-     * For a list of supported languages and their associated language codes, refer to the <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
-     * </p>
      * 
      * @return The language codes used to create your transcription job. This parameter is used with multi-language
      *         identification. For single-language identification requests, refer to the singular version of this
-     *         parameter, <code>LanguageCode</code>.</p>
-     *         <p>
-     *         For a list of supported languages and their associated language codes, refer to the <a
-     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>
-     *         table.
+     *         parameter, <code>LanguageCode</code>.
      */
 
     public java.util.List<LanguageCodeItem> getLanguageCodes() {
@@ -2066,19 +1771,11 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * identification. For single-language identification requests, refer to the singular version of this parameter,
      * <code>LanguageCode</code>.
      * </p>
-     * <p>
-     * For a list of supported languages and their associated language codes, refer to the <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
-     * </p>
      * 
      * @param languageCodes
      *        The language codes used to create your transcription job. This parameter is used with multi-language
      *        identification. For single-language identification requests, refer to the singular version of this
-     *        parameter, <code>LanguageCode</code>.</p>
-     *        <p>
-     *        For a list of supported languages and their associated language codes, refer to the <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>
-     *        table.
+     *        parameter, <code>LanguageCode</code>.
      */
 
     public void setLanguageCodes(java.util.Collection<LanguageCodeItem> languageCodes) {
@@ -2097,10 +1794,6 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * <code>LanguageCode</code>.
      * </p>
      * <p>
-     * For a list of supported languages and their associated language codes, refer to the <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
-     * </p>
-     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setLanguageCodes(java.util.Collection)} or {@link #withLanguageCodes(java.util.Collection)} if you want
      * to override the existing values.
@@ -2109,11 +1802,7 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * @param languageCodes
      *        The language codes used to create your transcription job. This parameter is used with multi-language
      *        identification. For single-language identification requests, refer to the singular version of this
-     *        parameter, <code>LanguageCode</code>.</p>
-     *        <p>
-     *        For a list of supported languages and their associated language codes, refer to the <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>
-     *        table.
+     *        parameter, <code>LanguageCode</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2133,19 +1822,11 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * identification. For single-language identification requests, refer to the singular version of this parameter,
      * <code>LanguageCode</code>.
      * </p>
-     * <p>
-     * For a list of supported languages and their associated language codes, refer to the <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
-     * </p>
      * 
      * @param languageCodes
      *        The language codes used to create your transcription job. This parameter is used with multi-language
      *        identification. For single-language identification requests, refer to the singular version of this
-     *        parameter, <code>LanguageCode</code>.</p>
-     *        <p>
-     *        For a list of supported languages and their associated language codes, refer to the <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>
-     *        table.
+     *        parameter, <code>LanguageCode</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2156,19 +1837,10 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Adds one or more custom tags, each in the form of a key:value pair, to a new transcription job at the time you
-     * start this new job.
-     * </p>
-     * <p>
-     * To learn more about using tags with Amazon Transcribe, refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
+     * The tags, each in the form of a key:value pair, assigned to the specified transcription job.
      * </p>
      * 
-     * @return Adds one or more custom tags, each in the form of a key:value pair, to a new transcription job at the
-     *         time you start this new job.</p>
-     *         <p>
-     *         To learn more about using tags with Amazon Transcribe, refer to <a
-     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
+     * @return The tags, each in the form of a key:value pair, assigned to the specified transcription job.
      */
 
     public java.util.List<Tag> getTags() {
@@ -2177,20 +1849,11 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Adds one or more custom tags, each in the form of a key:value pair, to a new transcription job at the time you
-     * start this new job.
-     * </p>
-     * <p>
-     * To learn more about using tags with Amazon Transcribe, refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
+     * The tags, each in the form of a key:value pair, assigned to the specified transcription job.
      * </p>
      * 
      * @param tags
-     *        Adds one or more custom tags, each in the form of a key:value pair, to a new transcription job at the time
-     *        you start this new job.</p>
-     *        <p>
-     *        To learn more about using tags with Amazon Transcribe, refer to <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
+     *        The tags, each in the form of a key:value pair, assigned to the specified transcription job.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -2204,12 +1867,7 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Adds one or more custom tags, each in the form of a key:value pair, to a new transcription job at the time you
-     * start this new job.
-     * </p>
-     * <p>
-     * To learn more about using tags with Amazon Transcribe, refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
+     * The tags, each in the form of a key:value pair, assigned to the specified transcription job.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2218,11 +1876,7 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param tags
-     *        Adds one or more custom tags, each in the form of a key:value pair, to a new transcription job at the time
-     *        you start this new job.</p>
-     *        <p>
-     *        To learn more about using tags with Amazon Transcribe, refer to <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
+     *        The tags, each in the form of a key:value pair, assigned to the specified transcription job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2238,20 +1892,11 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Adds one or more custom tags, each in the form of a key:value pair, to a new transcription job at the time you
-     * start this new job.
-     * </p>
-     * <p>
-     * To learn more about using tags with Amazon Transcribe, refer to <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
+     * The tags, each in the form of a key:value pair, assigned to the specified transcription job.
      * </p>
      * 
      * @param tags
-     *        Adds one or more custom tags, each in the form of a key:value pair, to a new transcription job at the time
-     *        you start this new job.</p>
-     *        <p>
-     *        To learn more about using tags with Amazon Transcribe, refer to <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging resources</a>.
+     *        The tags, each in the form of a key:value pair, assigned to the specified transcription job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2262,11 +1907,11 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Generate subtitles for your media file with your transcription request.
+     * Indicates whether subtitles were generated with your transcription.
      * </p>
      * 
      * @param subtitles
-     *        Generate subtitles for your media file with your transcription request.
+     *        Indicates whether subtitles were generated with your transcription.
      */
 
     public void setSubtitles(SubtitlesOutput subtitles) {
@@ -2275,10 +1920,10 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Generate subtitles for your media file with your transcription request.
+     * Indicates whether subtitles were generated with your transcription.
      * </p>
      * 
-     * @return Generate subtitles for your media file with your transcription request.
+     * @return Indicates whether subtitles were generated with your transcription.
      */
 
     public SubtitlesOutput getSubtitles() {
@@ -2287,11 +1932,11 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Generate subtitles for your media file with your transcription request.
+     * Indicates whether subtitles were generated with your transcription.
      * </p>
      * 
      * @param subtitles
-     *        Generate subtitles for your media file with your transcription request.
+     *        Indicates whether subtitles were generated with your transcription.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2302,61 +1947,12 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * If using automatic language identification (<code>IdentifyLanguage</code>) in your request and you want to apply
-     * a custom language model, a custom vocabulary, or a custom vocabulary filter, include
-     * <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>,
-     * <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).
-     * </p>
-     * <p>
-     * You can specify two or more language codes that represent the languages you think may be present in your media;
-     * including more than five is not recommended. Each language code you include can have an associated custom
-     * language model, custom vocabulary, and custom vocabulary filter. The languages you specify must match the
-     * languages of the specified custom language models, custom vocabularies, and custom vocabulary filters.
-     * </p>
-     * <p>
-     * To include language options using <code>IdentifyLanguage</code> <b>without</b> including a custom language model,
-     * a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code> instead of
-     * <code>LanguageIdSettings</code>. Including language options can improve the accuracy of automatic language
-     * identification.
-     * </p>
-     * <p>
-     * If you want to include a custom language model with your request but <b>do not</b> want to use automatic language
-     * identification, use instead the <code/> parameter with the <code>LanguageModelName</code> sub-parameter.
-     * </p>
-     * <p>
-     * If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do
-     * not</b> want to use automatic language identification, use instead the
-     * <code/> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both)
-     * sub-parameter.
+     * Provides the name and language of all custom language models, custom vocabularies, and custom vocabulary filters
+     * that you included in your request.
      * </p>
      * 
-     * @return If using automatic language identification (<code>IdentifyLanguage</code>) in your request and you want
-     *         to apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include
-     *         <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>,
-     *         <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
-     *         <p>
-     *         You can specify two or more language codes that represent the languages you think may be present in your
-     *         media; including more than five is not recommended. Each language code you include can have an associated
-     *         custom language model, custom vocabulary, and custom vocabulary filter. The languages you specify must
-     *         match the languages of the specified custom language models, custom vocabularies, and custom vocabulary
-     *         filters.
-     *         </p>
-     *         <p>
-     *         To include language options using <code>IdentifyLanguage</code> <b>without</b> including a custom
-     *         language model, a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code>
-     *         instead of <code>LanguageIdSettings</code>. Including language options can improve the accuracy of
-     *         automatic language identification.
-     *         </p>
-     *         <p>
-     *         If you want to include a custom language model with your request but <b>do not</b> want to use automatic
-     *         language identification, use instead the <code/> parameter with the <code>LanguageModelName</code>
-     *         sub-parameter.
-     *         </p>
-     *         <p>
-     *         If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but
-     *         <b>do not</b> want to use automatic language identification, use instead the
-     *         <code/> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both)
-     *         sub-parameter.
+     * @return Provides the name and language of all custom language models, custom vocabularies, and custom vocabulary
+     *         filters that you included in your request.
      */
 
     public java.util.Map<String, LanguageIdSettings> getLanguageIdSettings() {
@@ -2365,62 +1961,13 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * If using automatic language identification (<code>IdentifyLanguage</code>) in your request and you want to apply
-     * a custom language model, a custom vocabulary, or a custom vocabulary filter, include
-     * <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>,
-     * <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).
-     * </p>
-     * <p>
-     * You can specify two or more language codes that represent the languages you think may be present in your media;
-     * including more than five is not recommended. Each language code you include can have an associated custom
-     * language model, custom vocabulary, and custom vocabulary filter. The languages you specify must match the
-     * languages of the specified custom language models, custom vocabularies, and custom vocabulary filters.
-     * </p>
-     * <p>
-     * To include language options using <code>IdentifyLanguage</code> <b>without</b> including a custom language model,
-     * a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code> instead of
-     * <code>LanguageIdSettings</code>. Including language options can improve the accuracy of automatic language
-     * identification.
-     * </p>
-     * <p>
-     * If you want to include a custom language model with your request but <b>do not</b> want to use automatic language
-     * identification, use instead the <code/> parameter with the <code>LanguageModelName</code> sub-parameter.
-     * </p>
-     * <p>
-     * If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do
-     * not</b> want to use automatic language identification, use instead the
-     * <code/> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both)
-     * sub-parameter.
+     * Provides the name and language of all custom language models, custom vocabularies, and custom vocabulary filters
+     * that you included in your request.
      * </p>
      * 
      * @param languageIdSettings
-     *        If using automatic language identification (<code>IdentifyLanguage</code>) in your request and you want to
-     *        apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include
-     *        <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>,
-     *        <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
-     *        <p>
-     *        You can specify two or more language codes that represent the languages you think may be present in your
-     *        media; including more than five is not recommended. Each language code you include can have an associated
-     *        custom language model, custom vocabulary, and custom vocabulary filter. The languages you specify must
-     *        match the languages of the specified custom language models, custom vocabularies, and custom vocabulary
-     *        filters.
-     *        </p>
-     *        <p>
-     *        To include language options using <code>IdentifyLanguage</code> <b>without</b> including a custom language
-     *        model, a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code> instead of
-     *        <code>LanguageIdSettings</code>. Including language options can improve the accuracy of automatic language
-     *        identification.
-     *        </p>
-     *        <p>
-     *        If you want to include a custom language model with your request but <b>do not</b> want to use automatic
-     *        language identification, use instead the <code/> parameter with the <code>LanguageModelName</code>
-     *        sub-parameter.
-     *        </p>
-     *        <p>
-     *        If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but
-     *        <b>do not</b> want to use automatic language identification, use instead the
-     *        <code/> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both)
-     *        sub-parameter.
+     *        Provides the name and language of all custom language models, custom vocabularies, and custom vocabulary
+     *        filters that you included in your request.
      */
 
     public void setLanguageIdSettings(java.util.Map<String, LanguageIdSettings> languageIdSettings) {
@@ -2429,62 +1976,13 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * If using automatic language identification (<code>IdentifyLanguage</code>) in your request and you want to apply
-     * a custom language model, a custom vocabulary, or a custom vocabulary filter, include
-     * <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>,
-     * <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).
-     * </p>
-     * <p>
-     * You can specify two or more language codes that represent the languages you think may be present in your media;
-     * including more than five is not recommended. Each language code you include can have an associated custom
-     * language model, custom vocabulary, and custom vocabulary filter. The languages you specify must match the
-     * languages of the specified custom language models, custom vocabularies, and custom vocabulary filters.
-     * </p>
-     * <p>
-     * To include language options using <code>IdentifyLanguage</code> <b>without</b> including a custom language model,
-     * a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code> instead of
-     * <code>LanguageIdSettings</code>. Including language options can improve the accuracy of automatic language
-     * identification.
-     * </p>
-     * <p>
-     * If you want to include a custom language model with your request but <b>do not</b> want to use automatic language
-     * identification, use instead the <code/> parameter with the <code>LanguageModelName</code> sub-parameter.
-     * </p>
-     * <p>
-     * If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do
-     * not</b> want to use automatic language identification, use instead the
-     * <code/> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both)
-     * sub-parameter.
+     * Provides the name and language of all custom language models, custom vocabularies, and custom vocabulary filters
+     * that you included in your request.
      * </p>
      * 
      * @param languageIdSettings
-     *        If using automatic language identification (<code>IdentifyLanguage</code>) in your request and you want to
-     *        apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include
-     *        <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>,
-     *        <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
-     *        <p>
-     *        You can specify two or more language codes that represent the languages you think may be present in your
-     *        media; including more than five is not recommended. Each language code you include can have an associated
-     *        custom language model, custom vocabulary, and custom vocabulary filter. The languages you specify must
-     *        match the languages of the specified custom language models, custom vocabularies, and custom vocabulary
-     *        filters.
-     *        </p>
-     *        <p>
-     *        To include language options using <code>IdentifyLanguage</code> <b>without</b> including a custom language
-     *        model, a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code> instead of
-     *        <code>LanguageIdSettings</code>. Including language options can improve the accuracy of automatic language
-     *        identification.
-     *        </p>
-     *        <p>
-     *        If you want to include a custom language model with your request but <b>do not</b> want to use automatic
-     *        language identification, use instead the <code/> parameter with the <code>LanguageModelName</code>
-     *        sub-parameter.
-     *        </p>
-     *        <p>
-     *        If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but
-     *        <b>do not</b> want to use automatic language identification, use instead the
-     *        <code/> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both)
-     *        sub-parameter.
+     *        Provides the name and language of all custom language models, custom vocabularies, and custom vocabulary
+     *        filters that you included in your request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2518,6 +2016,76 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     public TranscriptionJob clearLanguageIdSettingsEntries() {
         this.languageIdSettings = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides information about the toxicity detection settings applied to your transcription.
+     * </p>
+     * 
+     * @return Provides information about the toxicity detection settings applied to your transcription.
+     */
+
+    public java.util.List<ToxicityDetectionSettings> getToxicityDetection() {
+        return toxicityDetection;
+    }
+
+    /**
+     * <p>
+     * Provides information about the toxicity detection settings applied to your transcription.
+     * </p>
+     * 
+     * @param toxicityDetection
+     *        Provides information about the toxicity detection settings applied to your transcription.
+     */
+
+    public void setToxicityDetection(java.util.Collection<ToxicityDetectionSettings> toxicityDetection) {
+        if (toxicityDetection == null) {
+            this.toxicityDetection = null;
+            return;
+        }
+
+        this.toxicityDetection = new java.util.ArrayList<ToxicityDetectionSettings>(toxicityDetection);
+    }
+
+    /**
+     * <p>
+     * Provides information about the toxicity detection settings applied to your transcription.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setToxicityDetection(java.util.Collection)} or {@link #withToxicityDetection(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param toxicityDetection
+     *        Provides information about the toxicity detection settings applied to your transcription.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TranscriptionJob withToxicityDetection(ToxicityDetectionSettings... toxicityDetection) {
+        if (this.toxicityDetection == null) {
+            setToxicityDetection(new java.util.ArrayList<ToxicityDetectionSettings>(toxicityDetection.length));
+        }
+        for (ToxicityDetectionSettings ele : toxicityDetection) {
+            this.toxicityDetection.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides information about the toxicity detection settings applied to your transcription.
+     * </p>
+     * 
+     * @param toxicityDetection
+     *        Provides information about the toxicity detection settings applied to your transcription.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TranscriptionJob withToxicityDetection(java.util.Collection<ToxicityDetectionSettings> toxicityDetection) {
+        setToxicityDetection(toxicityDetection);
         return this;
     }
 
@@ -2578,7 +2146,9 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
         if (getSubtitles() != null)
             sb.append("Subtitles: ").append(getSubtitles()).append(",");
         if (getLanguageIdSettings() != null)
-            sb.append("LanguageIdSettings: ").append(getLanguageIdSettings());
+            sb.append("LanguageIdSettings: ").append(getLanguageIdSettings()).append(",");
+        if (getToxicityDetection() != null)
+            sb.append("ToxicityDetection: ").append(getToxicityDetection());
         sb.append("}");
         return sb.toString();
     }
@@ -2685,6 +2255,10 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getLanguageIdSettings() != null && other.getLanguageIdSettings().equals(this.getLanguageIdSettings()) == false)
             return false;
+        if (other.getToxicityDetection() == null ^ this.getToxicityDetection() == null)
+            return false;
+        if (other.getToxicityDetection() != null && other.getToxicityDetection().equals(this.getToxicityDetection()) == false)
+            return false;
         return true;
     }
 
@@ -2716,6 +2290,7 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getSubtitles() == null) ? 0 : getSubtitles().hashCode());
         hashCode = prime * hashCode + ((getLanguageIdSettings() == null) ? 0 : getLanguageIdSettings().hashCode());
+        hashCode = prime * hashCode + ((getToxicityDetection() == null) ? 0 : getToxicityDetection().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,23 +45,29 @@ public class Cookies implements Serializable, Cloneable, StructuredPojo {
      * <code>ExcludedCookies</code>.
      * </p>
      * <p>
-     * Example JSON:
-     * <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code>
+     * Example JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time", "session-id" ] }</code>
      * </p>
      */
     private CookieMatchPattern matchPattern;
     /**
      * <p>
-     * The parts of the cookies to inspect with the rule inspection criteria. If you specify <code>All</code>, WAF
+     * The parts of the cookies to inspect with the rule inspection criteria. If you specify <code>ALL</code>, WAF
      * inspects both keys and values.
+     * </p>
+     * <p>
+     * <code>All</code> does not require a match to be found in the keys and a match to be found in the values. It
+     * requires a match to be found in the keys or the values or both. To require a match in the keys and in the values,
+     * use a logical <code>AND</code> statement to combine two match rules, one that inspects the keys and another that
+     * inspects the values.
      * </p>
      */
     private String matchScope;
     /**
      * <p>
-     * What WAF should do if the cookies of the request are larger than WAF can inspect. WAF does not support inspecting
-     * the entire contents of request cookies when they exceed 8 KB (8192 bytes) or 200 total cookies. The underlying
-     * host service forwards a maximum of 200 cookies and at most 8 KB of cookie contents to WAF.
+     * What WAF should do if the cookies of the request are more numerous or larger than WAF can inspect. WAF does not
+     * support inspecting the entire contents of request cookies when they exceed 8 KB (8192 bytes) or 200 total
+     * cookies. The underlying host service forwards a maximum of 200 cookies and at most 8 KB of cookie contents to
+     * WAF.
      * </p>
      * <p>
      * The options for oversize handling are the following:
@@ -69,7 +75,7 @@ public class Cookies implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CONTINUE</code> - Inspect the cookies normally, according to the rule inspection criteria.
+     * <code>CONTINUE</code> - Inspect the available cookies normally, according to the rule inspection criteria.
      * </p>
      * </li>
      * <li>
@@ -96,8 +102,7 @@ public class Cookies implements Serializable, Cloneable, StructuredPojo {
      * <code>ExcludedCookies</code>.
      * </p>
      * <p>
-     * Example JSON:
-     * <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code>
+     * Example JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time", "session-id" ] }</code>
      * </p>
      * 
      * @param matchPattern
@@ -107,8 +112,7 @@ public class Cookies implements Serializable, Cloneable, StructuredPojo {
      *        <code>ExcludedCookies</code>.
      *        </p>
      *        <p>
-     *        Example JSON:
-     *        <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code>
+     *        Example JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time", "session-id" ] }</code>
      */
 
     public void setMatchPattern(CookieMatchPattern matchPattern) {
@@ -124,8 +128,7 @@ public class Cookies implements Serializable, Cloneable, StructuredPojo {
      * <code>ExcludedCookies</code>.
      * </p>
      * <p>
-     * Example JSON:
-     * <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code>
+     * Example JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time", "session-id" ] }</code>
      * </p>
      * 
      * @return The filter to use to identify the subset of cookies to inspect in a web request. </p>
@@ -134,8 +137,7 @@ public class Cookies implements Serializable, Cloneable, StructuredPojo {
      *         <code>ExcludedCookies</code>.
      *         </p>
      *         <p>
-     *         Example JSON:
-     *         <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code>
+     *         Example JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time", "session-id" ] }</code>
      */
 
     public CookieMatchPattern getMatchPattern() {
@@ -151,8 +153,7 @@ public class Cookies implements Serializable, Cloneable, StructuredPojo {
      * <code>ExcludedCookies</code>.
      * </p>
      * <p>
-     * Example JSON:
-     * <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code>
+     * Example JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time", "session-id" ] }</code>
      * </p>
      * 
      * @param matchPattern
@@ -162,8 +163,7 @@ public class Cookies implements Serializable, Cloneable, StructuredPojo {
      *        <code>ExcludedCookies</code>.
      *        </p>
      *        <p>
-     *        Example JSON:
-     *        <code>"MatchPattern": { "IncludedCookies": {"KeyToInclude1", "KeyToInclude2", "KeyToInclude3"} }</code>
+     *        Example JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time", "session-id" ] }</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -174,13 +174,24 @@ public class Cookies implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parts of the cookies to inspect with the rule inspection criteria. If you specify <code>All</code>, WAF
+     * The parts of the cookies to inspect with the rule inspection criteria. If you specify <code>ALL</code>, WAF
      * inspects both keys and values.
+     * </p>
+     * <p>
+     * <code>All</code> does not require a match to be found in the keys and a match to be found in the values. It
+     * requires a match to be found in the keys or the values or both. To require a match in the keys and in the values,
+     * use a logical <code>AND</code> statement to combine two match rules, one that inspects the keys and another that
+     * inspects the values.
      * </p>
      * 
      * @param matchScope
-     *        The parts of the cookies to inspect with the rule inspection criteria. If you specify <code>All</code>,
-     *        WAF inspects both keys and values.
+     *        The parts of the cookies to inspect with the rule inspection criteria. If you specify <code>ALL</code>,
+     *        WAF inspects both keys and values. </p>
+     *        <p>
+     *        <code>All</code> does not require a match to be found in the keys and a match to be found in the values.
+     *        It requires a match to be found in the keys or the values or both. To require a match in the keys and in
+     *        the values, use a logical <code>AND</code> statement to combine two match rules, one that inspects the
+     *        keys and another that inspects the values.
      * @see MapMatchScope
      */
 
@@ -190,12 +201,23 @@ public class Cookies implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parts of the cookies to inspect with the rule inspection criteria. If you specify <code>All</code>, WAF
+     * The parts of the cookies to inspect with the rule inspection criteria. If you specify <code>ALL</code>, WAF
      * inspects both keys and values.
      * </p>
+     * <p>
+     * <code>All</code> does not require a match to be found in the keys and a match to be found in the values. It
+     * requires a match to be found in the keys or the values or both. To require a match in the keys and in the values,
+     * use a logical <code>AND</code> statement to combine two match rules, one that inspects the keys and another that
+     * inspects the values.
+     * </p>
      * 
-     * @return The parts of the cookies to inspect with the rule inspection criteria. If you specify <code>All</code>,
-     *         WAF inspects both keys and values.
+     * @return The parts of the cookies to inspect with the rule inspection criteria. If you specify <code>ALL</code>,
+     *         WAF inspects both keys and values. </p>
+     *         <p>
+     *         <code>All</code> does not require a match to be found in the keys and a match to be found in the values.
+     *         It requires a match to be found in the keys or the values or both. To require a match in the keys and in
+     *         the values, use a logical <code>AND</code> statement to combine two match rules, one that inspects the
+     *         keys and another that inspects the values.
      * @see MapMatchScope
      */
 
@@ -205,13 +227,24 @@ public class Cookies implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parts of the cookies to inspect with the rule inspection criteria. If you specify <code>All</code>, WAF
+     * The parts of the cookies to inspect with the rule inspection criteria. If you specify <code>ALL</code>, WAF
      * inspects both keys and values.
+     * </p>
+     * <p>
+     * <code>All</code> does not require a match to be found in the keys and a match to be found in the values. It
+     * requires a match to be found in the keys or the values or both. To require a match in the keys and in the values,
+     * use a logical <code>AND</code> statement to combine two match rules, one that inspects the keys and another that
+     * inspects the values.
      * </p>
      * 
      * @param matchScope
-     *        The parts of the cookies to inspect with the rule inspection criteria. If you specify <code>All</code>,
-     *        WAF inspects both keys and values.
+     *        The parts of the cookies to inspect with the rule inspection criteria. If you specify <code>ALL</code>,
+     *        WAF inspects both keys and values. </p>
+     *        <p>
+     *        <code>All</code> does not require a match to be found in the keys and a match to be found in the values.
+     *        It requires a match to be found in the keys or the values or both. To require a match in the keys and in
+     *        the values, use a logical <code>AND</code> statement to combine two match rules, one that inspects the
+     *        keys and another that inspects the values.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MapMatchScope
      */
@@ -223,13 +256,24 @@ public class Cookies implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parts of the cookies to inspect with the rule inspection criteria. If you specify <code>All</code>, WAF
+     * The parts of the cookies to inspect with the rule inspection criteria. If you specify <code>ALL</code>, WAF
      * inspects both keys and values.
+     * </p>
+     * <p>
+     * <code>All</code> does not require a match to be found in the keys and a match to be found in the values. It
+     * requires a match to be found in the keys or the values or both. To require a match in the keys and in the values,
+     * use a logical <code>AND</code> statement to combine two match rules, one that inspects the keys and another that
+     * inspects the values.
      * </p>
      * 
      * @param matchScope
-     *        The parts of the cookies to inspect with the rule inspection criteria. If you specify <code>All</code>,
-     *        WAF inspects both keys and values.
+     *        The parts of the cookies to inspect with the rule inspection criteria. If you specify <code>ALL</code>,
+     *        WAF inspects both keys and values. </p>
+     *        <p>
+     *        <code>All</code> does not require a match to be found in the keys and a match to be found in the values.
+     *        It requires a match to be found in the keys or the values or both. To require a match in the keys and in
+     *        the values, use a logical <code>AND</code> statement to combine two match rules, one that inspects the
+     *        keys and another that inspects the values.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MapMatchScope
      */
@@ -241,9 +285,10 @@ public class Cookies implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * What WAF should do if the cookies of the request are larger than WAF can inspect. WAF does not support inspecting
-     * the entire contents of request cookies when they exceed 8 KB (8192 bytes) or 200 total cookies. The underlying
-     * host service forwards a maximum of 200 cookies and at most 8 KB of cookie contents to WAF.
+     * What WAF should do if the cookies of the request are more numerous or larger than WAF can inspect. WAF does not
+     * support inspecting the entire contents of request cookies when they exceed 8 KB (8192 bytes) or 200 total
+     * cookies. The underlying host service forwards a maximum of 200 cookies and at most 8 KB of cookie contents to
+     * WAF.
      * </p>
      * <p>
      * The options for oversize handling are the following:
@@ -251,7 +296,7 @@ public class Cookies implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CONTINUE</code> - Inspect the cookies normally, according to the rule inspection criteria.
+     * <code>CONTINUE</code> - Inspect the available cookies normally, according to the rule inspection criteria.
      * </p>
      * </li>
      * <li>
@@ -268,17 +313,17 @@ public class Cookies implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param oversizeHandling
-     *        What WAF should do if the cookies of the request are larger than WAF can inspect. WAF does not support
-     *        inspecting the entire contents of request cookies when they exceed 8 KB (8192 bytes) or 200 total cookies.
-     *        The underlying host service forwards a maximum of 200 cookies and at most 8 KB of cookie contents to WAF.
-     *        </p>
+     *        What WAF should do if the cookies of the request are more numerous or larger than WAF can inspect. WAF
+     *        does not support inspecting the entire contents of request cookies when they exceed 8 KB (8192 bytes) or
+     *        200 total cookies. The underlying host service forwards a maximum of 200 cookies and at most 8 KB of
+     *        cookie contents to WAF. </p>
      *        <p>
      *        The options for oversize handling are the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CONTINUE</code> - Inspect the cookies normally, according to the rule inspection criteria.
+     *        <code>CONTINUE</code> - Inspect the available cookies normally, according to the rule inspection criteria.
      *        </p>
      *        </li>
      *        <li>
@@ -301,9 +346,10 @@ public class Cookies implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * What WAF should do if the cookies of the request are larger than WAF can inspect. WAF does not support inspecting
-     * the entire contents of request cookies when they exceed 8 KB (8192 bytes) or 200 total cookies. The underlying
-     * host service forwards a maximum of 200 cookies and at most 8 KB of cookie contents to WAF.
+     * What WAF should do if the cookies of the request are more numerous or larger than WAF can inspect. WAF does not
+     * support inspecting the entire contents of request cookies when they exceed 8 KB (8192 bytes) or 200 total
+     * cookies. The underlying host service forwards a maximum of 200 cookies and at most 8 KB of cookie contents to
+     * WAF.
      * </p>
      * <p>
      * The options for oversize handling are the following:
@@ -311,7 +357,7 @@ public class Cookies implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CONTINUE</code> - Inspect the cookies normally, according to the rule inspection criteria.
+     * <code>CONTINUE</code> - Inspect the available cookies normally, according to the rule inspection criteria.
      * </p>
      * </li>
      * <li>
@@ -327,17 +373,18 @@ public class Cookies implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return What WAF should do if the cookies of the request are larger than WAF can inspect. WAF does not support
-     *         inspecting the entire contents of request cookies when they exceed 8 KB (8192 bytes) or 200 total
-     *         cookies. The underlying host service forwards a maximum of 200 cookies and at most 8 KB of cookie
-     *         contents to WAF. </p>
+     * @return What WAF should do if the cookies of the request are more numerous or larger than WAF can inspect. WAF
+     *         does not support inspecting the entire contents of request cookies when they exceed 8 KB (8192 bytes) or
+     *         200 total cookies. The underlying host service forwards a maximum of 200 cookies and at most 8 KB of
+     *         cookie contents to WAF. </p>
      *         <p>
      *         The options for oversize handling are the following:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>CONTINUE</code> - Inspect the cookies normally, according to the rule inspection criteria.
+     *         <code>CONTINUE</code> - Inspect the available cookies normally, according to the rule inspection
+     *         criteria.
      *         </p>
      *         </li>
      *         <li>
@@ -360,9 +407,10 @@ public class Cookies implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * What WAF should do if the cookies of the request are larger than WAF can inspect. WAF does not support inspecting
-     * the entire contents of request cookies when they exceed 8 KB (8192 bytes) or 200 total cookies. The underlying
-     * host service forwards a maximum of 200 cookies and at most 8 KB of cookie contents to WAF.
+     * What WAF should do if the cookies of the request are more numerous or larger than WAF can inspect. WAF does not
+     * support inspecting the entire contents of request cookies when they exceed 8 KB (8192 bytes) or 200 total
+     * cookies. The underlying host service forwards a maximum of 200 cookies and at most 8 KB of cookie contents to
+     * WAF.
      * </p>
      * <p>
      * The options for oversize handling are the following:
@@ -370,7 +418,7 @@ public class Cookies implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CONTINUE</code> - Inspect the cookies normally, according to the rule inspection criteria.
+     * <code>CONTINUE</code> - Inspect the available cookies normally, according to the rule inspection criteria.
      * </p>
      * </li>
      * <li>
@@ -387,17 +435,17 @@ public class Cookies implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param oversizeHandling
-     *        What WAF should do if the cookies of the request are larger than WAF can inspect. WAF does not support
-     *        inspecting the entire contents of request cookies when they exceed 8 KB (8192 bytes) or 200 total cookies.
-     *        The underlying host service forwards a maximum of 200 cookies and at most 8 KB of cookie contents to WAF.
-     *        </p>
+     *        What WAF should do if the cookies of the request are more numerous or larger than WAF can inspect. WAF
+     *        does not support inspecting the entire contents of request cookies when they exceed 8 KB (8192 bytes) or
+     *        200 total cookies. The underlying host service forwards a maximum of 200 cookies and at most 8 KB of
+     *        cookie contents to WAF. </p>
      *        <p>
      *        The options for oversize handling are the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CONTINUE</code> - Inspect the cookies normally, according to the rule inspection criteria.
+     *        <code>CONTINUE</code> - Inspect the available cookies normally, according to the rule inspection criteria.
      *        </p>
      *        </li>
      *        <li>
@@ -422,9 +470,10 @@ public class Cookies implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * What WAF should do if the cookies of the request are larger than WAF can inspect. WAF does not support inspecting
-     * the entire contents of request cookies when they exceed 8 KB (8192 bytes) or 200 total cookies. The underlying
-     * host service forwards a maximum of 200 cookies and at most 8 KB of cookie contents to WAF.
+     * What WAF should do if the cookies of the request are more numerous or larger than WAF can inspect. WAF does not
+     * support inspecting the entire contents of request cookies when they exceed 8 KB (8192 bytes) or 200 total
+     * cookies. The underlying host service forwards a maximum of 200 cookies and at most 8 KB of cookie contents to
+     * WAF.
      * </p>
      * <p>
      * The options for oversize handling are the following:
@@ -432,7 +481,7 @@ public class Cookies implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>CONTINUE</code> - Inspect the cookies normally, according to the rule inspection criteria.
+     * <code>CONTINUE</code> - Inspect the available cookies normally, according to the rule inspection criteria.
      * </p>
      * </li>
      * <li>
@@ -449,17 +498,17 @@ public class Cookies implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param oversizeHandling
-     *        What WAF should do if the cookies of the request are larger than WAF can inspect. WAF does not support
-     *        inspecting the entire contents of request cookies when they exceed 8 KB (8192 bytes) or 200 total cookies.
-     *        The underlying host service forwards a maximum of 200 cookies and at most 8 KB of cookie contents to WAF.
-     *        </p>
+     *        What WAF should do if the cookies of the request are more numerous or larger than WAF can inspect. WAF
+     *        does not support inspecting the entire contents of request cookies when they exceed 8 KB (8192 bytes) or
+     *        200 total cookies. The underlying host service forwards a maximum of 200 cookies and at most 8 KB of
+     *        cookie contents to WAF. </p>
      *        <p>
      *        The options for oversize handling are the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CONTINUE</code> - Inspect the cookies normally, according to the rule inspection criteria.
+     *        <code>CONTINUE</code> - Inspect the available cookies normally, according to the rule inspection criteria.
      *        </p>
      *        </li>
      *        <li>

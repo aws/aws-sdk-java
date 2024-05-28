@@ -1,0 +1,368 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.quicksight.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * The options that determine the presentation of the <code>GaugeChartVisual</code>.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GaugeChartOptions" target="_top">AWS API
+ *      Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GaugeChartOptions implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * The options that determine the primary value display type.
+     * </p>
+     */
+    private String primaryValueDisplayType;
+    /**
+     * <p>
+     * The comparison configuration of a <code>GaugeChartVisual</code>.
+     * </p>
+     */
+    private ComparisonConfiguration comparison;
+    /**
+     * <p>
+     * The arc axis configuration of a <code>GaugeChartVisual</code>.
+     * </p>
+     */
+    private ArcAxisConfiguration arcAxis;
+    /**
+     * <p>
+     * The arc configuration of a <code>GaugeChartVisual</code>.
+     * </p>
+     */
+    private ArcConfiguration arc;
+    /**
+     * <p>
+     * The options that determine the primary value font configuration.
+     * </p>
+     */
+    private FontConfiguration primaryValueFontConfiguration;
+
+    /**
+     * <p>
+     * The options that determine the primary value display type.
+     * </p>
+     * 
+     * @param primaryValueDisplayType
+     *        The options that determine the primary value display type.
+     * @see PrimaryValueDisplayType
+     */
+
+    public void setPrimaryValueDisplayType(String primaryValueDisplayType) {
+        this.primaryValueDisplayType = primaryValueDisplayType;
+    }
+
+    /**
+     * <p>
+     * The options that determine the primary value display type.
+     * </p>
+     * 
+     * @return The options that determine the primary value display type.
+     * @see PrimaryValueDisplayType
+     */
+
+    public String getPrimaryValueDisplayType() {
+        return this.primaryValueDisplayType;
+    }
+
+    /**
+     * <p>
+     * The options that determine the primary value display type.
+     * </p>
+     * 
+     * @param primaryValueDisplayType
+     *        The options that determine the primary value display type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PrimaryValueDisplayType
+     */
+
+    public GaugeChartOptions withPrimaryValueDisplayType(String primaryValueDisplayType) {
+        setPrimaryValueDisplayType(primaryValueDisplayType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The options that determine the primary value display type.
+     * </p>
+     * 
+     * @param primaryValueDisplayType
+     *        The options that determine the primary value display type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PrimaryValueDisplayType
+     */
+
+    public GaugeChartOptions withPrimaryValueDisplayType(PrimaryValueDisplayType primaryValueDisplayType) {
+        this.primaryValueDisplayType = primaryValueDisplayType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The comparison configuration of a <code>GaugeChartVisual</code>.
+     * </p>
+     * 
+     * @param comparison
+     *        The comparison configuration of a <code>GaugeChartVisual</code>.
+     */
+
+    public void setComparison(ComparisonConfiguration comparison) {
+        this.comparison = comparison;
+    }
+
+    /**
+     * <p>
+     * The comparison configuration of a <code>GaugeChartVisual</code>.
+     * </p>
+     * 
+     * @return The comparison configuration of a <code>GaugeChartVisual</code>.
+     */
+
+    public ComparisonConfiguration getComparison() {
+        return this.comparison;
+    }
+
+    /**
+     * <p>
+     * The comparison configuration of a <code>GaugeChartVisual</code>.
+     * </p>
+     * 
+     * @param comparison
+     *        The comparison configuration of a <code>GaugeChartVisual</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GaugeChartOptions withComparison(ComparisonConfiguration comparison) {
+        setComparison(comparison);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The arc axis configuration of a <code>GaugeChartVisual</code>.
+     * </p>
+     * 
+     * @param arcAxis
+     *        The arc axis configuration of a <code>GaugeChartVisual</code>.
+     */
+
+    public void setArcAxis(ArcAxisConfiguration arcAxis) {
+        this.arcAxis = arcAxis;
+    }
+
+    /**
+     * <p>
+     * The arc axis configuration of a <code>GaugeChartVisual</code>.
+     * </p>
+     * 
+     * @return The arc axis configuration of a <code>GaugeChartVisual</code>.
+     */
+
+    public ArcAxisConfiguration getArcAxis() {
+        return this.arcAxis;
+    }
+
+    /**
+     * <p>
+     * The arc axis configuration of a <code>GaugeChartVisual</code>.
+     * </p>
+     * 
+     * @param arcAxis
+     *        The arc axis configuration of a <code>GaugeChartVisual</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GaugeChartOptions withArcAxis(ArcAxisConfiguration arcAxis) {
+        setArcAxis(arcAxis);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The arc configuration of a <code>GaugeChartVisual</code>.
+     * </p>
+     * 
+     * @param arc
+     *        The arc configuration of a <code>GaugeChartVisual</code>.
+     */
+
+    public void setArc(ArcConfiguration arc) {
+        this.arc = arc;
+    }
+
+    /**
+     * <p>
+     * The arc configuration of a <code>GaugeChartVisual</code>.
+     * </p>
+     * 
+     * @return The arc configuration of a <code>GaugeChartVisual</code>.
+     */
+
+    public ArcConfiguration getArc() {
+        return this.arc;
+    }
+
+    /**
+     * <p>
+     * The arc configuration of a <code>GaugeChartVisual</code>.
+     * </p>
+     * 
+     * @param arc
+     *        The arc configuration of a <code>GaugeChartVisual</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GaugeChartOptions withArc(ArcConfiguration arc) {
+        setArc(arc);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The options that determine the primary value font configuration.
+     * </p>
+     * 
+     * @param primaryValueFontConfiguration
+     *        The options that determine the primary value font configuration.
+     */
+
+    public void setPrimaryValueFontConfiguration(FontConfiguration primaryValueFontConfiguration) {
+        this.primaryValueFontConfiguration = primaryValueFontConfiguration;
+    }
+
+    /**
+     * <p>
+     * The options that determine the primary value font configuration.
+     * </p>
+     * 
+     * @return The options that determine the primary value font configuration.
+     */
+
+    public FontConfiguration getPrimaryValueFontConfiguration() {
+        return this.primaryValueFontConfiguration;
+    }
+
+    /**
+     * <p>
+     * The options that determine the primary value font configuration.
+     * </p>
+     * 
+     * @param primaryValueFontConfiguration
+     *        The options that determine the primary value font configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GaugeChartOptions withPrimaryValueFontConfiguration(FontConfiguration primaryValueFontConfiguration) {
+        setPrimaryValueFontConfiguration(primaryValueFontConfiguration);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getPrimaryValueDisplayType() != null)
+            sb.append("PrimaryValueDisplayType: ").append(getPrimaryValueDisplayType()).append(",");
+        if (getComparison() != null)
+            sb.append("Comparison: ").append(getComparison()).append(",");
+        if (getArcAxis() != null)
+            sb.append("ArcAxis: ").append(getArcAxis()).append(",");
+        if (getArc() != null)
+            sb.append("Arc: ").append(getArc()).append(",");
+        if (getPrimaryValueFontConfiguration() != null)
+            sb.append("PrimaryValueFontConfiguration: ").append(getPrimaryValueFontConfiguration());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof GaugeChartOptions == false)
+            return false;
+        GaugeChartOptions other = (GaugeChartOptions) obj;
+        if (other.getPrimaryValueDisplayType() == null ^ this.getPrimaryValueDisplayType() == null)
+            return false;
+        if (other.getPrimaryValueDisplayType() != null && other.getPrimaryValueDisplayType().equals(this.getPrimaryValueDisplayType()) == false)
+            return false;
+        if (other.getComparison() == null ^ this.getComparison() == null)
+            return false;
+        if (other.getComparison() != null && other.getComparison().equals(this.getComparison()) == false)
+            return false;
+        if (other.getArcAxis() == null ^ this.getArcAxis() == null)
+            return false;
+        if (other.getArcAxis() != null && other.getArcAxis().equals(this.getArcAxis()) == false)
+            return false;
+        if (other.getArc() == null ^ this.getArc() == null)
+            return false;
+        if (other.getArc() != null && other.getArc().equals(this.getArc()) == false)
+            return false;
+        if (other.getPrimaryValueFontConfiguration() == null ^ this.getPrimaryValueFontConfiguration() == null)
+            return false;
+        if (other.getPrimaryValueFontConfiguration() != null
+                && other.getPrimaryValueFontConfiguration().equals(this.getPrimaryValueFontConfiguration()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getPrimaryValueDisplayType() == null) ? 0 : getPrimaryValueDisplayType().hashCode());
+        hashCode = prime * hashCode + ((getComparison() == null) ? 0 : getComparison().hashCode());
+        hashCode = prime * hashCode + ((getArcAxis() == null) ? 0 : getArcAxis().hashCode());
+        hashCode = prime * hashCode + ((getArc() == null) ? 0 : getArc().hashCode());
+        hashCode = prime * hashCode + ((getPrimaryValueFontConfiguration() == null) ? 0 : getPrimaryValueFontConfiguration().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public GaugeChartOptions clone() {
+        try {
+            return (GaugeChartOptions) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.quicksight.model.transform.GaugeChartOptionsMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

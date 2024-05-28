@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,18 +28,18 @@ public class RegisterInstanceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The registered instance's AWS OpsWorks Stacks ID.
+     * The registered instance's OpsWorks Stacks ID.
      * </p>
      */
     private String instanceId;
 
     /**
      * <p>
-     * The registered instance's AWS OpsWorks Stacks ID.
+     * The registered instance's OpsWorks Stacks ID.
      * </p>
      * 
      * @param instanceId
-     *        The registered instance's AWS OpsWorks Stacks ID.
+     *        The registered instance's OpsWorks Stacks ID.
      */
 
     public void setInstanceId(String instanceId) {
@@ -48,10 +48,10 @@ public class RegisterInstanceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The registered instance's AWS OpsWorks Stacks ID.
+     * The registered instance's OpsWorks Stacks ID.
      * </p>
      * 
-     * @return The registered instance's AWS OpsWorks Stacks ID.
+     * @return The registered instance's OpsWorks Stacks ID.
      */
 
     public String getInstanceId() {
@@ -60,11 +60,11 @@ public class RegisterInstanceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The registered instance's AWS OpsWorks Stacks ID.
+     * The registered instance's OpsWorks Stacks ID.
      * </p>
      * 
      * @param instanceId
-     *        The registered instance's AWS OpsWorks Stacks ID.
+     *        The registered instance's OpsWorks Stacks ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

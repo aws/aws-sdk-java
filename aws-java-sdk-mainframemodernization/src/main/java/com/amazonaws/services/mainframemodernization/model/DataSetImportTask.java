@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,12 @@ public class DataSetImportTask implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String status;
+    /**
+     * <p>
+     * If dataset import failed, the failure reason will show here.
+     * </p>
+     */
+    private String statusReason;
     /**
      * <p>
      * A summary of the data set import task.
@@ -103,6 +109,46 @@ public class DataSetImportTask implements Serializable, Cloneable, StructuredPoj
 
     public DataSetImportTask withStatus(DataSetTaskLifecycle status) {
         this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * If dataset import failed, the failure reason will show here.
+     * </p>
+     * 
+     * @param statusReason
+     *        If dataset import failed, the failure reason will show here.
+     */
+
+    public void setStatusReason(String statusReason) {
+        this.statusReason = statusReason;
+    }
+
+    /**
+     * <p>
+     * If dataset import failed, the failure reason will show here.
+     * </p>
+     * 
+     * @return If dataset import failed, the failure reason will show here.
+     */
+
+    public String getStatusReason() {
+        return this.statusReason;
+    }
+
+    /**
+     * <p>
+     * If dataset import failed, the failure reason will show here.
+     * </p>
+     * 
+     * @param statusReason
+     *        If dataset import failed, the failure reason will show here.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSetImportTask withStatusReason(String statusReason) {
+        setStatusReason(statusReason);
         return this;
     }
 
@@ -200,6 +246,8 @@ public class DataSetImportTask implements Serializable, Cloneable, StructuredPoj
         sb.append("{");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getStatusReason() != null)
+            sb.append("StatusReason: ").append(getStatusReason()).append(",");
         if (getSummary() != null)
             sb.append("Summary: ").append(getSummary()).append(",");
         if (getTaskId() != null)
@@ -222,6 +270,10 @@ public class DataSetImportTask implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getStatusReason() == null ^ this.getStatusReason() == null)
+            return false;
+        if (other.getStatusReason() != null && other.getStatusReason().equals(this.getStatusReason()) == false)
+            return false;
         if (other.getSummary() == null ^ this.getSummary() == null)
             return false;
         if (other.getSummary() != null && other.getSummary().equals(this.getSummary()) == false)
@@ -239,6 +291,7 @@ public class DataSetImportTask implements Serializable, Cloneable, StructuredPoj
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
         hashCode = prime * hashCode + ((getSummary() == null) ? 0 : getSummary().hashCode());
         hashCode = prime * hashCode + ((getTaskId() == null) ? 0 : getTaskId().hashCode());
         return hashCode;

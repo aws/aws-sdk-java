@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class EndpointOutputConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceType").build();
     private static final MarshallingInfo<Integer> INITIALINSTANCECOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InitialInstanceCount").build();
+    private static final MarshallingInfo<StructuredPojo> SERVERLESSCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerlessConfig").build();
 
     private static final EndpointOutputConfigurationMarshaller instance = new EndpointOutputConfigurationMarshaller();
 
@@ -56,6 +58,7 @@ public class EndpointOutputConfigurationMarshaller {
             protocolMarshaller.marshall(endpointOutputConfiguration.getVariantName(), VARIANTNAME_BINDING);
             protocolMarshaller.marshall(endpointOutputConfiguration.getInstanceType(), INSTANCETYPE_BINDING);
             protocolMarshaller.marshall(endpointOutputConfiguration.getInitialInstanceCount(), INITIALINSTANCECOUNT_BINDING);
+            protocolMarshaller.marshall(endpointOutputConfiguration.getServerlessConfig(), SERVERLESSCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

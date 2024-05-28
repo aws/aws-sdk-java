@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,7 +24,8 @@ public enum ServiceActionAssociationErrorCode {
     INTERNAL_FAILURE("INTERNAL_FAILURE"),
     LIMIT_EXCEEDED("LIMIT_EXCEEDED"),
     RESOURCE_NOT_FOUND("RESOURCE_NOT_FOUND"),
-    THROTTLING("THROTTLING");
+    THROTTLING("THROTTLING"),
+    INVALID_PARAMETER("INVALID_PARAMETER");
 
     private String value;
 

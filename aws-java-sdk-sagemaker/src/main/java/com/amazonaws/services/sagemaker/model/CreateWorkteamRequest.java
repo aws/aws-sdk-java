@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -75,6 +75,14 @@ public class CreateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private NotificationConfiguration notificationConfiguration;
+    /**
+     * <p>
+     * Use this optional parameter to constrain access to an Amazon S3 resource based on the IP address using supported
+     * IAM global condition keys. The Amazon S3 resource is accessed in the worker portal using a Amazon S3 presigned
+     * URL.
+     * </p>
+     */
+    private WorkerAccessConfiguration workerAccessConfiguration;
     /**
      * <p>
      * An array of key-value pairs.
@@ -480,6 +488,58 @@ public class CreateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * Use this optional parameter to constrain access to an Amazon S3 resource based on the IP address using supported
+     * IAM global condition keys. The Amazon S3 resource is accessed in the worker portal using a Amazon S3 presigned
+     * URL.
+     * </p>
+     * 
+     * @param workerAccessConfiguration
+     *        Use this optional parameter to constrain access to an Amazon S3 resource based on the IP address using
+     *        supported IAM global condition keys. The Amazon S3 resource is accessed in the worker portal using a
+     *        Amazon S3 presigned URL.
+     */
+
+    public void setWorkerAccessConfiguration(WorkerAccessConfiguration workerAccessConfiguration) {
+        this.workerAccessConfiguration = workerAccessConfiguration;
+    }
+
+    /**
+     * <p>
+     * Use this optional parameter to constrain access to an Amazon S3 resource based on the IP address using supported
+     * IAM global condition keys. The Amazon S3 resource is accessed in the worker portal using a Amazon S3 presigned
+     * URL.
+     * </p>
+     * 
+     * @return Use this optional parameter to constrain access to an Amazon S3 resource based on the IP address using
+     *         supported IAM global condition keys. The Amazon S3 resource is accessed in the worker portal using a
+     *         Amazon S3 presigned URL.
+     */
+
+    public WorkerAccessConfiguration getWorkerAccessConfiguration() {
+        return this.workerAccessConfiguration;
+    }
+
+    /**
+     * <p>
+     * Use this optional parameter to constrain access to an Amazon S3 resource based on the IP address using supported
+     * IAM global condition keys. The Amazon S3 resource is accessed in the worker portal using a Amazon S3 presigned
+     * URL.
+     * </p>
+     * 
+     * @param workerAccessConfiguration
+     *        Use this optional parameter to constrain access to an Amazon S3 resource based on the IP address using
+     *        supported IAM global condition keys. The Amazon S3 resource is accessed in the worker portal using a
+     *        Amazon S3 presigned URL.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorkteamRequest withWorkerAccessConfiguration(WorkerAccessConfiguration workerAccessConfiguration) {
+        setWorkerAccessConfiguration(workerAccessConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
      * An array of key-value pairs.
      * </p>
      * <p>
@@ -622,6 +682,8 @@ public class CreateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("Description: ").append(getDescription()).append(",");
         if (getNotificationConfiguration() != null)
             sb.append("NotificationConfiguration: ").append(getNotificationConfiguration()).append(",");
+        if (getWorkerAccessConfiguration() != null)
+            sb.append("WorkerAccessConfiguration: ").append(getWorkerAccessConfiguration()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -658,6 +720,10 @@ public class CreateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getNotificationConfiguration() != null && other.getNotificationConfiguration().equals(this.getNotificationConfiguration()) == false)
             return false;
+        if (other.getWorkerAccessConfiguration() == null ^ this.getWorkerAccessConfiguration() == null)
+            return false;
+        if (other.getWorkerAccessConfiguration() != null && other.getWorkerAccessConfiguration().equals(this.getWorkerAccessConfiguration()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -675,6 +741,7 @@ public class CreateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getMemberDefinitions() == null) ? 0 : getMemberDefinitions().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getNotificationConfiguration() == null) ? 0 : getNotificationConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getWorkerAccessConfiguration() == null) ? 0 : getWorkerAccessConfiguration().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

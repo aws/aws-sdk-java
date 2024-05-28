@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class PresetSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * (AudioDescriptions) contains groups of audio encoding settings organized by audio codec. Include one instance of
-     * (AudioDescriptions) per output. (AudioDescriptions) can contain multiple groups of encoding settings.
+     * Contains groups of audio encoding settings organized by audio codec. Include one instance of per output. Can
+     * contain multiple groups of encoding settings.
      */
     private java.util.List<AudioDescription> audioDescriptions;
     /**
@@ -45,12 +45,11 @@ public class PresetSettings implements Serializable, Cloneable, StructuredPojo {
     private VideoDescription videoDescription;
 
     /**
-     * (AudioDescriptions) contains groups of audio encoding settings organized by audio codec. Include one instance of
-     * (AudioDescriptions) per output. (AudioDescriptions) can contain multiple groups of encoding settings.
+     * Contains groups of audio encoding settings organized by audio codec. Include one instance of per output. Can
+     * contain multiple groups of encoding settings.
      * 
-     * @return (AudioDescriptions) contains groups of audio encoding settings organized by audio codec. Include one
-     *         instance of (AudioDescriptions) per output. (AudioDescriptions) can contain multiple groups of encoding
-     *         settings.
+     * @return Contains groups of audio encoding settings organized by audio codec. Include one instance of per output.
+     *         Can contain multiple groups of encoding settings.
      */
 
     public java.util.List<AudioDescription> getAudioDescriptions() {
@@ -58,13 +57,12 @@ public class PresetSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * (AudioDescriptions) contains groups of audio encoding settings organized by audio codec. Include one instance of
-     * (AudioDescriptions) per output. (AudioDescriptions) can contain multiple groups of encoding settings.
+     * Contains groups of audio encoding settings organized by audio codec. Include one instance of per output. Can
+     * contain multiple groups of encoding settings.
      * 
      * @param audioDescriptions
-     *        (AudioDescriptions) contains groups of audio encoding settings organized by audio codec. Include one
-     *        instance of (AudioDescriptions) per output. (AudioDescriptions) can contain multiple groups of encoding
-     *        settings.
+     *        Contains groups of audio encoding settings organized by audio codec. Include one instance of per output.
+     *        Can contain multiple groups of encoding settings.
      */
 
     public void setAudioDescriptions(java.util.Collection<AudioDescription> audioDescriptions) {
@@ -77,8 +75,8 @@ public class PresetSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * (AudioDescriptions) contains groups of audio encoding settings organized by audio codec. Include one instance of
-     * (AudioDescriptions) per output. (AudioDescriptions) can contain multiple groups of encoding settings.
+     * Contains groups of audio encoding settings organized by audio codec. Include one instance of per output. Can
+     * contain multiple groups of encoding settings.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAudioDescriptions(java.util.Collection)} or {@link #withAudioDescriptions(java.util.Collection)} if
@@ -86,9 +84,8 @@ public class PresetSettings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param audioDescriptions
-     *        (AudioDescriptions) contains groups of audio encoding settings organized by audio codec. Include one
-     *        instance of (AudioDescriptions) per output. (AudioDescriptions) can contain multiple groups of encoding
-     *        settings.
+     *        Contains groups of audio encoding settings organized by audio codec. Include one instance of per output.
+     *        Can contain multiple groups of encoding settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,13 +100,12 @@ public class PresetSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * (AudioDescriptions) contains groups of audio encoding settings organized by audio codec. Include one instance of
-     * (AudioDescriptions) per output. (AudioDescriptions) can contain multiple groups of encoding settings.
+     * Contains groups of audio encoding settings organized by audio codec. Include one instance of per output. Can
+     * contain multiple groups of encoding settings.
      * 
      * @param audioDescriptions
-     *        (AudioDescriptions) contains groups of audio encoding settings organized by audio codec. Include one
-     *        instance of (AudioDescriptions) per output. (AudioDescriptions) can contain multiple groups of encoding
-     *        settings.
+     *        Contains groups of audio encoding settings organized by audio codec. Include one instance of per output.
+     *        Can contain multiple groups of encoding settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

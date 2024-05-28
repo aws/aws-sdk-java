@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,12 @@ public class Predicate implements Serializable, Cloneable, StructuredPojo {
      * A list of predicates to combine logically.
      * </p>
      */
+    private java.util.List<Predicate> or;
+    /**
+     * <p>
+     * A list of predicates to combine logically.
+     * </p>
+     */
     private java.util.List<Predicate> and;
     /**
      * <p>
@@ -43,22 +49,92 @@ public class Predicate implements Serializable, Cloneable, StructuredPojo {
     private String field;
     /**
      * <p>
-     * The value to use when performing the evaluation.
-     * </p>
-     */
-    private String operand;
-    /**
-     * <p>
      * The operator to use to perform the evaluation.
      * </p>
      */
     private String operator;
     /**
      * <p>
-     * A list of predicates to combine logically.
+     * The value to use when performing the evaluation.
      * </p>
      */
-    private java.util.List<Predicate> or;
+    private String operand;
+    /**
+     * <p>
+     * The type of value to use when performing the evaluation.
+     * </p>
+     */
+    private String operandType;
+
+    /**
+     * <p>
+     * A list of predicates to combine logically.
+     * </p>
+     * 
+     * @return A list of predicates to combine logically.
+     */
+
+    public java.util.List<Predicate> getOr() {
+        return or;
+    }
+
+    /**
+     * <p>
+     * A list of predicates to combine logically.
+     * </p>
+     * 
+     * @param or
+     *        A list of predicates to combine logically.
+     */
+
+    public void setOr(java.util.Collection<Predicate> or) {
+        if (or == null) {
+            this.or = null;
+            return;
+        }
+
+        this.or = new java.util.ArrayList<Predicate>(or);
+    }
+
+    /**
+     * <p>
+     * A list of predicates to combine logically.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setOr(java.util.Collection)} or {@link #withOr(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param or
+     *        A list of predicates to combine logically.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Predicate withOr(Predicate... or) {
+        if (this.or == null) {
+            setOr(new java.util.ArrayList<Predicate>(or.length));
+        }
+        for (Predicate ele : or) {
+            this.or.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of predicates to combine logically.
+     * </p>
+     * 
+     * @param or
+     *        A list of predicates to combine logically.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Predicate withOr(java.util.Collection<Predicate> or) {
+        setOr(or);
+        return this;
+    }
 
     /**
      * <p>
@@ -172,46 +248,6 @@ public class Predicate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value to use when performing the evaluation.
-     * </p>
-     * 
-     * @param operand
-     *        The value to use when performing the evaluation.
-     */
-
-    public void setOperand(String operand) {
-        this.operand = operand;
-    }
-
-    /**
-     * <p>
-     * The value to use when performing the evaluation.
-     * </p>
-     * 
-     * @return The value to use when performing the evaluation.
-     */
-
-    public String getOperand() {
-        return this.operand;
-    }
-
-    /**
-     * <p>
-     * The value to use when performing the evaluation.
-     * </p>
-     * 
-     * @param operand
-     *        The value to use when performing the evaluation.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Predicate withOperand(String operand) {
-        setOperand(operand);
-        return this;
-    }
-
-    /**
-     * <p>
      * The operator to use to perform the evaluation.
      * </p>
      * 
@@ -252,71 +288,81 @@ public class Predicate implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of predicates to combine logically.
+     * The value to use when performing the evaluation.
      * </p>
      * 
-     * @return A list of predicates to combine logically.
+     * @param operand
+     *        The value to use when performing the evaluation.
      */
 
-    public java.util.List<Predicate> getOr() {
-        return or;
+    public void setOperand(String operand) {
+        this.operand = operand;
     }
 
     /**
      * <p>
-     * A list of predicates to combine logically.
+     * The value to use when performing the evaluation.
      * </p>
      * 
-     * @param or
-     *        A list of predicates to combine logically.
+     * @return The value to use when performing the evaluation.
      */
 
-    public void setOr(java.util.Collection<Predicate> or) {
-        if (or == null) {
-            this.or = null;
-            return;
-        }
-
-        this.or = new java.util.ArrayList<Predicate>(or);
+    public String getOperand() {
+        return this.operand;
     }
 
     /**
      * <p>
-     * A list of predicates to combine logically.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setOr(java.util.Collection)} or {@link #withOr(java.util.Collection)} if you want to override the
-     * existing values.
+     * The value to use when performing the evaluation.
      * </p>
      * 
-     * @param or
-     *        A list of predicates to combine logically.
+     * @param operand
+     *        The value to use when performing the evaluation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Predicate withOr(Predicate... or) {
-        if (this.or == null) {
-            setOr(new java.util.ArrayList<Predicate>(or.length));
-        }
-        for (Predicate ele : or) {
-            this.or.add(ele);
-        }
+    public Predicate withOperand(String operand) {
+        setOperand(operand);
         return this;
     }
 
     /**
      * <p>
-     * A list of predicates to combine logically.
+     * The type of value to use when performing the evaluation.
      * </p>
      * 
-     * @param or
-     *        A list of predicates to combine logically.
+     * @param operandType
+     *        The type of value to use when performing the evaluation.
+     */
+
+    public void setOperandType(String operandType) {
+        this.operandType = operandType;
+    }
+
+    /**
+     * <p>
+     * The type of value to use when performing the evaluation.
+     * </p>
+     * 
+     * @return The type of value to use when performing the evaluation.
+     */
+
+    public String getOperandType() {
+        return this.operandType;
+    }
+
+    /**
+     * <p>
+     * The type of value to use when performing the evaluation.
+     * </p>
+     * 
+     * @param operandType
+     *        The type of value to use when performing the evaluation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Predicate withOr(java.util.Collection<Predicate> or) {
-        setOr(or);
+    public Predicate withOperandType(String operandType) {
+        setOperandType(operandType);
         return this;
     }
 
@@ -332,16 +378,18 @@ public class Predicate implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getOr() != null)
+            sb.append("Or: ").append(getOr()).append(",");
         if (getAnd() != null)
             sb.append("And: ").append(getAnd()).append(",");
         if (getField() != null)
             sb.append("Field: ").append(getField()).append(",");
-        if (getOperand() != null)
-            sb.append("Operand: ").append(getOperand()).append(",");
         if (getOperator() != null)
             sb.append("Operator: ").append(getOperator()).append(",");
-        if (getOr() != null)
-            sb.append("Or: ").append(getOr());
+        if (getOperand() != null)
+            sb.append("Operand: ").append(getOperand()).append(",");
+        if (getOperandType() != null)
+            sb.append("OperandType: ").append(getOperandType());
         sb.append("}");
         return sb.toString();
     }
@@ -356,6 +404,10 @@ public class Predicate implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Predicate == false)
             return false;
         Predicate other = (Predicate) obj;
+        if (other.getOr() == null ^ this.getOr() == null)
+            return false;
+        if (other.getOr() != null && other.getOr().equals(this.getOr()) == false)
+            return false;
         if (other.getAnd() == null ^ this.getAnd() == null)
             return false;
         if (other.getAnd() != null && other.getAnd().equals(this.getAnd()) == false)
@@ -364,17 +416,17 @@ public class Predicate implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getField() != null && other.getField().equals(this.getField()) == false)
             return false;
-        if (other.getOperand() == null ^ this.getOperand() == null)
-            return false;
-        if (other.getOperand() != null && other.getOperand().equals(this.getOperand()) == false)
-            return false;
         if (other.getOperator() == null ^ this.getOperator() == null)
             return false;
         if (other.getOperator() != null && other.getOperator().equals(this.getOperator()) == false)
             return false;
-        if (other.getOr() == null ^ this.getOr() == null)
+        if (other.getOperand() == null ^ this.getOperand() == null)
             return false;
-        if (other.getOr() != null && other.getOr().equals(this.getOr()) == false)
+        if (other.getOperand() != null && other.getOperand().equals(this.getOperand()) == false)
+            return false;
+        if (other.getOperandType() == null ^ this.getOperandType() == null)
+            return false;
+        if (other.getOperandType() != null && other.getOperandType().equals(this.getOperandType()) == false)
             return false;
         return true;
     }
@@ -384,11 +436,12 @@ public class Predicate implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getOr() == null) ? 0 : getOr().hashCode());
         hashCode = prime * hashCode + ((getAnd() == null) ? 0 : getAnd().hashCode());
         hashCode = prime * hashCode + ((getField() == null) ? 0 : getField().hashCode());
-        hashCode = prime * hashCode + ((getOperand() == null) ? 0 : getOperand().hashCode());
         hashCode = prime * hashCode + ((getOperator() == null) ? 0 : getOperator().hashCode());
-        hashCode = prime * hashCode + ((getOr() == null) ? 0 : getOr().hashCode());
+        hashCode = prime * hashCode + ((getOperand() == null) ? 0 : getOperand().hashCode());
+        hashCode = prime * hashCode + ((getOperandType() == null) ? 0 : getOperandType().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -181,8 +181,8 @@ public interface AWSAppRunnerAsync extends AWSAppRunner {
      * multiple services.
      * </p>
      * <p>
-     * A connection resource is needed to access GitHub repositories. GitHub requires a user interface approval process
-     * through the App Runner console before you can use the connection.
+     * A connection resource is needed to access GitHub and Bitbucket repositories. Both require a user interface
+     * approval process through the App Runner console before you can use the connection.
      * </p>
      * 
      * @param createConnectionRequest
@@ -200,8 +200,8 @@ public interface AWSAppRunnerAsync extends AWSAppRunner {
      * multiple services.
      * </p>
      * <p>
-     * A connection resource is needed to access GitHub repositories. GitHub requires a user interface approval process
-     * through the App Runner console before you can use the connection.
+     * A connection resource is needed to access GitHub and Bitbucket repositories. Both require a user interface
+     * approval process through the App Runner console before you can use the connection.
      * </p>
      * 
      * @param createConnectionRequest
@@ -393,8 +393,10 @@ public interface AWSAppRunnerAsync extends AWSAppRunner {
 
     /**
      * <p>
-     * Delete an App Runner automatic scaling configuration resource. You can delete a specific revision or the latest
-     * active revision. You can't delete a configuration that's used by one or more App Runner services.
+     * Delete an App Runner automatic scaling configuration resource. You can delete a top level auto scaling
+     * configuration, a specific revision of one, or all revisions associated with the top level configuration. You
+     * can't delete the default auto scaling configuration or a configuration that's used by one or more App Runner
+     * services.
      * </p>
      * 
      * @param deleteAutoScalingConfigurationRequest
@@ -409,8 +411,10 @@ public interface AWSAppRunnerAsync extends AWSAppRunner {
 
     /**
      * <p>
-     * Delete an App Runner automatic scaling configuration resource. You can delete a specific revision or the latest
-     * active revision. You can't delete a configuration that's used by one or more App Runner services.
+     * Delete an App Runner automatic scaling configuration resource. You can delete a top level auto scaling
+     * configuration, a specific revision of one, or all revisions associated with the top level configuration. You
+     * can't delete the default auto scaling configuration or a configuration that's used by one or more App Runner
+     * services.
      * </p>
      * 
      * @param deleteAutoScalingConfigurationRequest
@@ -1097,6 +1101,43 @@ public interface AWSAppRunnerAsync extends AWSAppRunner {
 
     /**
      * <p>
+     * Returns a list of the associated App Runner services using an auto scaling configuration.
+     * </p>
+     * 
+     * @param listServicesForAutoScalingConfigurationRequest
+     * @return A Java Future containing the result of the ListServicesForAutoScalingConfiguration operation returned by
+     *         the service.
+     * @sample AWSAppRunnerAsync.ListServicesForAutoScalingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListServicesForAutoScalingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListServicesForAutoScalingConfigurationResult> listServicesForAutoScalingConfigurationAsync(
+            ListServicesForAutoScalingConfigurationRequest listServicesForAutoScalingConfigurationRequest);
+
+    /**
+     * <p>
+     * Returns a list of the associated App Runner services using an auto scaling configuration.
+     * </p>
+     * 
+     * @param listServicesForAutoScalingConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListServicesForAutoScalingConfiguration operation returned by
+     *         the service.
+     * @sample AWSAppRunnerAsyncHandler.ListServicesForAutoScalingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListServicesForAutoScalingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListServicesForAutoScalingConfigurationResult> listServicesForAutoScalingConfigurationAsync(
+            ListServicesForAutoScalingConfigurationRequest listServicesForAutoScalingConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<ListServicesForAutoScalingConfigurationRequest, ListServicesForAutoScalingConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * List tags that are associated with for an App Runner resource. The response contains a list of tag key-value
      * pairs.
      * </p>
@@ -1384,6 +1425,43 @@ public interface AWSAppRunnerAsync extends AWSAppRunner {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update an auto scaling configuration to be the default. The existing default auto scaling configuration will be
+     * set to non-default automatically.
+     * </p>
+     * 
+     * @param updateDefaultAutoScalingConfigurationRequest
+     * @return A Java Future containing the result of the UpdateDefaultAutoScalingConfiguration operation returned by
+     *         the service.
+     * @sample AWSAppRunnerAsync.UpdateDefaultAutoScalingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UpdateDefaultAutoScalingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDefaultAutoScalingConfigurationResult> updateDefaultAutoScalingConfigurationAsync(
+            UpdateDefaultAutoScalingConfigurationRequest updateDefaultAutoScalingConfigurationRequest);
+
+    /**
+     * <p>
+     * Update an auto scaling configuration to be the default. The existing default auto scaling configuration will be
+     * set to non-default automatically.
+     * </p>
+     * 
+     * @param updateDefaultAutoScalingConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateDefaultAutoScalingConfiguration operation returned by
+     *         the service.
+     * @sample AWSAppRunnerAsyncHandler.UpdateDefaultAutoScalingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UpdateDefaultAutoScalingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDefaultAutoScalingConfigurationResult> updateDefaultAutoScalingConfigurationAsync(
+            UpdateDefaultAutoScalingConfigurationRequest updateDefaultAutoScalingConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateDefaultAutoScalingConfigurationRequest, UpdateDefaultAutoScalingConfigurationResult> asyncHandler);
 
     /**
      * <p>

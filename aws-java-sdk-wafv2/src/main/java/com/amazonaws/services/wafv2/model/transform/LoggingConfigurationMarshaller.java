@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,10 @@ public class LoggingConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ManagedByFirewallManager").build();
     private static final MarshallingInfo<StructuredPojo> LOGGINGFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LoggingFilter").build();
+    private static final MarshallingInfo<String> LOGTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("LogType").build();
+    private static final MarshallingInfo<String> LOGSCOPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("LogScope").build();
 
     private static final LoggingConfigurationMarshaller instance = new LoggingConfigurationMarshaller();
 
@@ -60,6 +64,8 @@ public class LoggingConfigurationMarshaller {
             protocolMarshaller.marshall(loggingConfiguration.getRedactedFields(), REDACTEDFIELDS_BINDING);
             protocolMarshaller.marshall(loggingConfiguration.getManagedByFirewallManager(), MANAGEDBYFIREWALLMANAGER_BINDING);
             protocolMarshaller.marshall(loggingConfiguration.getLoggingFilter(), LOGGINGFILTER_BINDING);
+            protocolMarshaller.marshall(loggingConfiguration.getLogType(), LOGTYPE_BINDING);
+            protocolMarshaller.marshall(loggingConfiguration.getLogScope(), LOGSCOPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

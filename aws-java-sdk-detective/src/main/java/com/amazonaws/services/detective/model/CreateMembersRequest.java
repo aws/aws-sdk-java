@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -326,7 +326,7 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getGraphArn() != null)
             sb.append("GraphArn: ").append(getGraphArn()).append(",");
         if (getMessage() != null)
-            sb.append("Message: ").append(getMessage()).append(",");
+            sb.append("Message: ").append("***Sensitive Data Redacted***").append(",");
         if (getDisableEmailNotification() != null)
             sb.append("DisableEmailNotification: ").append(getDisableEmailNotification()).append(",");
         if (getAccounts() != null)

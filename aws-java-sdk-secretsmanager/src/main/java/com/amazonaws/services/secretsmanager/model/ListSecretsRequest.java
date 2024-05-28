@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,13 @@ public class ListSecretsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
+     * Specifies whether to include secrets scheduled for deletion. By default, secrets scheduled for deletion aren't
+     * included.
+     * </p>
+     */
+    private Boolean includePlannedDeletion;
+    /**
+     * <p>
      * The number of results to include in the response.
      * </p>
      * <p>
@@ -50,10 +57,70 @@ public class ListSecretsRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.List<Filter> filters;
     /**
      * <p>
-     * Lists secrets in the requested order.
+     * Secrets are listed by <code>CreatedDate</code>.
      * </p>
      */
     private String sortOrder;
+
+    /**
+     * <p>
+     * Specifies whether to include secrets scheduled for deletion. By default, secrets scheduled for deletion aren't
+     * included.
+     * </p>
+     * 
+     * @param includePlannedDeletion
+     *        Specifies whether to include secrets scheduled for deletion. By default, secrets scheduled for deletion
+     *        aren't included.
+     */
+
+    public void setIncludePlannedDeletion(Boolean includePlannedDeletion) {
+        this.includePlannedDeletion = includePlannedDeletion;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to include secrets scheduled for deletion. By default, secrets scheduled for deletion aren't
+     * included.
+     * </p>
+     * 
+     * @return Specifies whether to include secrets scheduled for deletion. By default, secrets scheduled for deletion
+     *         aren't included.
+     */
+
+    public Boolean getIncludePlannedDeletion() {
+        return this.includePlannedDeletion;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to include secrets scheduled for deletion. By default, secrets scheduled for deletion aren't
+     * included.
+     * </p>
+     * 
+     * @param includePlannedDeletion
+     *        Specifies whether to include secrets scheduled for deletion. By default, secrets scheduled for deletion
+     *        aren't included.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListSecretsRequest withIncludePlannedDeletion(Boolean includePlannedDeletion) {
+        setIncludePlannedDeletion(includePlannedDeletion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to include secrets scheduled for deletion. By default, secrets scheduled for deletion aren't
+     * included.
+     * </p>
+     * 
+     * @return Specifies whether to include secrets scheduled for deletion. By default, secrets scheduled for deletion
+     *         aren't included.
+     */
+
+    public Boolean isIncludePlannedDeletion() {
+        return this.includePlannedDeletion;
+    }
 
     /**
      * <p>
@@ -234,11 +301,11 @@ public class ListSecretsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Lists secrets in the requested order.
+     * Secrets are listed by <code>CreatedDate</code>.
      * </p>
      * 
      * @param sortOrder
-     *        Lists secrets in the requested order.
+     *        Secrets are listed by <code>CreatedDate</code>.
      * @see SortOrderType
      */
 
@@ -248,10 +315,10 @@ public class ListSecretsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Lists secrets in the requested order.
+     * Secrets are listed by <code>CreatedDate</code>.
      * </p>
      * 
-     * @return Lists secrets in the requested order.
+     * @return Secrets are listed by <code>CreatedDate</code>.
      * @see SortOrderType
      */
 
@@ -261,11 +328,11 @@ public class ListSecretsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Lists secrets in the requested order.
+     * Secrets are listed by <code>CreatedDate</code>.
      * </p>
      * 
      * @param sortOrder
-     *        Lists secrets in the requested order.
+     *        Secrets are listed by <code>CreatedDate</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SortOrderType
      */
@@ -277,11 +344,11 @@ public class ListSecretsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Lists secrets in the requested order.
+     * Secrets are listed by <code>CreatedDate</code>.
      * </p>
      * 
      * @param sortOrder
-     *        Lists secrets in the requested order.
+     *        Secrets are listed by <code>CreatedDate</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SortOrderType
      */
@@ -303,6 +370,8 @@ public class ListSecretsRequest extends com.amazonaws.AmazonWebServiceRequest im
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getIncludePlannedDeletion() != null)
+            sb.append("IncludePlannedDeletion: ").append(getIncludePlannedDeletion()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
@@ -325,6 +394,10 @@ public class ListSecretsRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (obj instanceof ListSecretsRequest == false)
             return false;
         ListSecretsRequest other = (ListSecretsRequest) obj;
+        if (other.getIncludePlannedDeletion() == null ^ this.getIncludePlannedDeletion() == null)
+            return false;
+        if (other.getIncludePlannedDeletion() != null && other.getIncludePlannedDeletion().equals(this.getIncludePlannedDeletion()) == false)
+            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -349,6 +422,7 @@ public class ListSecretsRequest extends com.amazonaws.AmazonWebServiceRequest im
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getIncludePlannedDeletion() == null) ? 0 : getIncludePlannedDeletion().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());

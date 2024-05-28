@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,8 +54,8 @@ public class GetKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String keyId;
     /**
      * <p>
-     * Specifies the name of the key policy. The only valid name is <code>default</code>. To get the names of key
-     * policies, use <a>ListKeyPolicies</a>.
+     * Specifies the name of the key policy. If no policy name is specified, the default value is <code>default</code>.
+     * The only valid name is <code>default</code>. To get the names of key policies, use <a>ListKeyPolicies</a>.
      * </p>
      */
     private String policyName;
@@ -225,13 +225,14 @@ public class GetKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies the name of the key policy. The only valid name is <code>default</code>. To get the names of key
-     * policies, use <a>ListKeyPolicies</a>.
+     * Specifies the name of the key policy. If no policy name is specified, the default value is <code>default</code>.
+     * The only valid name is <code>default</code>. To get the names of key policies, use <a>ListKeyPolicies</a>.
      * </p>
      * 
      * @param policyName
-     *        Specifies the name of the key policy. The only valid name is <code>default</code>. To get the names of key
-     *        policies, use <a>ListKeyPolicies</a>.
+     *        Specifies the name of the key policy. If no policy name is specified, the default value is
+     *        <code>default</code>. The only valid name is <code>default</code>. To get the names of key policies, use
+     *        <a>ListKeyPolicies</a>.
      */
 
     public void setPolicyName(String policyName) {
@@ -240,12 +241,13 @@ public class GetKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies the name of the key policy. The only valid name is <code>default</code>. To get the names of key
-     * policies, use <a>ListKeyPolicies</a>.
+     * Specifies the name of the key policy. If no policy name is specified, the default value is <code>default</code>.
+     * The only valid name is <code>default</code>. To get the names of key policies, use <a>ListKeyPolicies</a>.
      * </p>
      * 
-     * @return Specifies the name of the key policy. The only valid name is <code>default</code>. To get the names of
-     *         key policies, use <a>ListKeyPolicies</a>.
+     * @return Specifies the name of the key policy. If no policy name is specified, the default value is
+     *         <code>default</code>. The only valid name is <code>default</code>. To get the names of key policies, use
+     *         <a>ListKeyPolicies</a>.
      */
 
     public String getPolicyName() {
@@ -254,13 +256,14 @@ public class GetKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies the name of the key policy. The only valid name is <code>default</code>. To get the names of key
-     * policies, use <a>ListKeyPolicies</a>.
+     * Specifies the name of the key policy. If no policy name is specified, the default value is <code>default</code>.
+     * The only valid name is <code>default</code>. To get the names of key policies, use <a>ListKeyPolicies</a>.
      * </p>
      * 
      * @param policyName
-     *        Specifies the name of the key policy. The only valid name is <code>default</code>. To get the names of key
-     *        policies, use <a>ListKeyPolicies</a>.
+     *        Specifies the name of the key policy. If no policy name is specified, the default value is
+     *        <code>default</code>. The only valid name is <code>default</code>. To get the names of key policies, use
+     *        <a>ListKeyPolicies</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,12 @@ public class TemplateConfiguration implements Serializable, Cloneable, Structure
      * </p>
      */
     private Template voiceTemplate;
+    /**
+     * <p>
+     * The InApp template to use for the message. The InApp template object is not supported for SendMessages.
+     * </p>
+     */
+    private Template inAppTemplate;
 
     /**
      * <p>
@@ -214,6 +220,46 @@ public class TemplateConfiguration implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The InApp template to use for the message. The InApp template object is not supported for SendMessages.
+     * </p>
+     * 
+     * @param inAppTemplate
+     *        The InApp template to use for the message. The InApp template object is not supported for SendMessages.
+     */
+
+    public void setInAppTemplate(Template inAppTemplate) {
+        this.inAppTemplate = inAppTemplate;
+    }
+
+    /**
+     * <p>
+     * The InApp template to use for the message. The InApp template object is not supported for SendMessages.
+     * </p>
+     * 
+     * @return The InApp template to use for the message. The InApp template object is not supported for SendMessages.
+     */
+
+    public Template getInAppTemplate() {
+        return this.inAppTemplate;
+    }
+
+    /**
+     * <p>
+     * The InApp template to use for the message. The InApp template object is not supported for SendMessages.
+     * </p>
+     * 
+     * @param inAppTemplate
+     *        The InApp template to use for the message. The InApp template object is not supported for SendMessages.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TemplateConfiguration withInAppTemplate(Template inAppTemplate) {
+        setInAppTemplate(inAppTemplate);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -232,7 +278,9 @@ public class TemplateConfiguration implements Serializable, Cloneable, Structure
         if (getSMSTemplate() != null)
             sb.append("SMSTemplate: ").append(getSMSTemplate()).append(",");
         if (getVoiceTemplate() != null)
-            sb.append("VoiceTemplate: ").append(getVoiceTemplate());
+            sb.append("VoiceTemplate: ").append(getVoiceTemplate()).append(",");
+        if (getInAppTemplate() != null)
+            sb.append("InAppTemplate: ").append(getInAppTemplate());
         sb.append("}");
         return sb.toString();
     }
@@ -263,6 +311,10 @@ public class TemplateConfiguration implements Serializable, Cloneable, Structure
             return false;
         if (other.getVoiceTemplate() != null && other.getVoiceTemplate().equals(this.getVoiceTemplate()) == false)
             return false;
+        if (other.getInAppTemplate() == null ^ this.getInAppTemplate() == null)
+            return false;
+        if (other.getInAppTemplate() != null && other.getInAppTemplate().equals(this.getInAppTemplate()) == false)
+            return false;
         return true;
     }
 
@@ -275,6 +327,7 @@ public class TemplateConfiguration implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getPushTemplate() == null) ? 0 : getPushTemplate().hashCode());
         hashCode = prime * hashCode + ((getSMSTemplate() == null) ? 0 : getSMSTemplate().hashCode());
         hashCode = prime * hashCode + ((getVoiceTemplate() == null) ? 0 : getVoiceTemplate().hashCode());
+        hashCode = prime * hashCode + ((getInAppTemplate() == null) ? 0 : getInAppTemplate().hashCode());
         return hashCode;
     }
 

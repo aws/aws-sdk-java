@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.kms.AWSKMSClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.kms.model.*;
+
 import com.amazonaws.services.kms.model.transform.*;
 
 /**
@@ -58,7 +59,7 @@ import com.amazonaws.services.kms.model.transform.*;
  * </p>
  * <note>
  * <p>
- * KMS is replacing the term <i>customer master key (CMK)</i> with <i>KMS key</i> and <i>KMS key</i>. The concept has
+ * KMS has replaced the term <i>customer master key (CMK)</i> with <i>KMS key</i> and <i>KMS key</i>. The concept has
  * not changed. To prevent breaking changes, KMS is keeping some variations of this term.
  * </p>
  * <p>
@@ -89,14 +90,14 @@ import com.amazonaws.services.kms.model.transform.*;
  * <b>Signing Requests</b>
  * </p>
  * <p>
- * Requests must be signed by using an access key ID and a secret access key. We strongly recommend that you <i>do
- * not</i> use your Amazon Web Services account (root) access key ID and secret key for everyday work with KMS. Instead,
- * use the access key ID and secret access key for an IAM user. You can also use the Amazon Web Services Security Token
- * Service to generate temporary security credentials that you can use to sign requests.
+ * Requests must be signed using an access key ID and a secret access key. We strongly recommend that you do not use
+ * your Amazon Web Services account root access key ID and secret access key for everyday work. You can use the access
+ * key ID and secret access key for an IAM user or you can use the Security Token Service (STS) to generate temporary
+ * security credentials and use those to sign requests.
  * </p>
  * <p>
- * All KMS operations require <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
- * Version 4</a>.
+ * All KMS requests must be signed with <a
+ * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.
  * </p>
  * <p>
  * <b>Logging API Requests</b>
@@ -193,23 +194,39 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                             new JsonErrorShapeMetadata().withErrorCode("CloudHsmClusterNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kms.model.transform.CloudHsmClusterNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("XksProxyInvalidConfigurationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.XksProxyInvalidConfigurationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ExpiredImportTokenException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kms.model.transform.ExpiredImportTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("CustomKeyStoreNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kms.model.transform.CustomKeyStoreNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("XksProxyVpcEndpointServiceInvalidConfigurationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.XksProxyVpcEndpointServiceInvalidConfigurationExceptionUnmarshaller
+                                            .getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("KMSInvalidMacException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kms.model.transform.KMSInvalidMacExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("XksProxyIncorrectAuthenticationCredentialException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.XksProxyIncorrectAuthenticationCredentialExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("MalformedPolicyDocumentException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kms.model.transform.MalformedPolicyDocumentExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("XksProxyUriUnreachableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.XksProxyUriUnreachableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("IncorrectKeyMaterialException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kms.model.transform.IncorrectKeyMaterialExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidImportTokenException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kms.model.transform.InvalidImportTokenExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("XksProxyUriInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.XksProxyUriInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidArnException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kms.model.transform.InvalidArnExceptionUnmarshaller.getInstance()))
@@ -250,14 +267,26 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                             new JsonErrorShapeMetadata().withErrorCode("InvalidCiphertextException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kms.model.transform.InvalidCiphertextExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.ConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("XksProxyInvalidResponseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.XksProxyInvalidResponseExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidGrantIdException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kms.model.transform.InvalidGrantIdExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("XksProxyUriEndpointInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.XksProxyUriEndpointInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("IncorrectKeyException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kms.model.transform.IncorrectKeyExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidGrantTokenException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kms.model.transform.InvalidGrantTokenExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("XksKeyInvalidConfigurationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.XksKeyInvalidConfigurationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("UnsupportedOperationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kms.model.transform.UnsupportedOperationExceptionUnmarshaller.getInstance()))
@@ -271,8 +300,14 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                             new JsonErrorShapeMetadata().withErrorCode("TagException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kms.model.transform.TagExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("XksKeyAlreadyInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.XksKeyAlreadyInUseExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidKeyUsageException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kms.model.transform.InvalidKeyUsageExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("XksProxyVpcEndpointServiceInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.XksProxyVpcEndpointServiceInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("CloudHsmClusterInvalidConfigurationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kms.model.transform.CloudHsmClusterInvalidConfigurationExceptionUnmarshaller.getInstance()))
@@ -283,6 +318,12 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                             new JsonErrorShapeMetadata().withErrorCode("InvalidAliasNameException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kms.model.transform.InvalidAliasNameExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("XksKeyNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.XksKeyNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("XksProxyVpcEndpointServiceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.XksProxyVpcEndpointServiceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DependencyTimeoutException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kms.model.transform.DependencyTimeoutExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -291,6 +332,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("CloudHsmClusterNotActiveException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kms.model.transform.CloudHsmClusterNotActiveExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DryRunOperationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.DryRunOperationExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.kms.model.AWSKMSException.class));
 
     /**
@@ -517,6 +561,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <p>
      * <b>Related operations</b>: <a>ScheduleKeyDeletion</a>
      * </p>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param cancelKeyDeletionRequest
      * @return Result of the CancelKeyDeletion operation returned by the service.
@@ -525,15 +574,33 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws InvalidArnException
      *         The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred. The request can be retried.
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource is not valid for this request.</p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
      * @sample AWSKMS.CancelKeyDeletion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CancelKeyDeletion" target="_top">AWS API
      *      Documentation</a>
@@ -586,33 +653,26 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <p>
      * Connects or reconnects a <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>
-     * to its associated CloudHSM cluster.
+     * to its backing key store. For an CloudHSM key store, <code>ConnectCustomKeyStore</code> connects the key store to
+     * its associated CloudHSM cluster. For an external key store, <code>ConnectCustomKeyStore</code> connects the key
+     * store to the external key store proxy that communicates with your external key manager.
      * </p>
      * <p>
      * The custom key store must be connected before you can create KMS keys in the key store or use the KMS keys it
      * contains. You can disconnect and reconnect a custom key store at any time.
      * </p>
      * <p>
-     * To connect a custom key store, its associated CloudHSM cluster must have at least one active HSM. To get the
-     * number of active HSMs in a cluster, use the <a
-     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
-     * operation. To add HSMs to the cluster, use the <a
-     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation. Also,
-     * the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
-     * <code>kmsuser</code> crypto user</a> (CU) must not be logged into the cluster. This prevents KMS from using this
-     * account to log in.
-     * </p>
-     * <p>
-     * The connection process can take an extended amount of time to complete; up to 20 minutes. This operation starts
-     * the connection process, but it does not wait for it to complete. When it succeeds, this operation quickly returns
-     * an HTTP 200 response and a JSON object with no properties. However, this response does not indicate that the
-     * custom key store is connected. To get the connection state of the custom key store, use the
+     * The connection process for a custom key store can take an extended amount of time to complete. This operation
+     * starts the connection process, but it does not wait for it to complete. When it succeeds, this operation quickly
+     * returns an HTTP 200 response and a JSON object with no properties. However, this response does not indicate that
+     * the custom key store is connected. To get the connection state of the custom key store, use the
      * <a>DescribeCustomKeyStores</a> operation.
      * </p>
      * <p>
-     * During the connection process, KMS finds the CloudHSM cluster that is associated with the custom key store,
-     * creates the connection infrastructure, connects to the cluster, logs into the CloudHSM client as the
-     * <code>kmsuser</code> CU, and rotates its password.
+     * This operation is part of the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key stores</a>
+     * feature in KMS, which combines the convenience and extensive integration of KMS with the isolation and control of
+     * a key store that you own and manage.
      * </p>
      * <p>
      * The <code>ConnectCustomKeyStore</code> operation might fail for various reasons. To find the reason, use the
@@ -625,9 +685,50 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <code>ConnectCustomKeyStore</code> again.
      * </p>
      * <p>
-     * If you are having trouble connecting or disconnecting a custom key store, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a Custom Key
-     * Store</a> in the <i>Key Management Service Developer Guide</i>.
+     * <b>CloudHSM key store</b>
+     * </p>
+     * <p>
+     * During the connection process for an CloudHSM key store, KMS finds the CloudHSM cluster that is associated with
+     * the custom key store, creates the connection infrastructure, connects to the cluster, logs into the CloudHSM
+     * client as the <code>kmsuser</code> CU, and rotates its password.
+     * </p>
+     * <p>
+     * To connect an CloudHSM key store, its associated CloudHSM cluster must have at least one active HSM. To get the
+     * number of active HSMs in a cluster, use the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
+     * operation. To add HSMs to the cluster, use the <a
+     * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation. Also,
+     * the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
+     * <code>kmsuser</code> crypto user</a> (CU) must not be logged into the cluster. This prevents KMS from using this
+     * account to log in.
+     * </p>
+     * <p>
+     * If you are having trouble connecting or disconnecting a CloudHSM key store, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting an CloudHSM key
+     * store</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * <b>External key store</b>
+     * </p>
+     * <p>
+     * When you connect an external key store that uses public endpoint connectivity, KMS tests its ability to
+     * communicate with your external key manager by sending a request via the external key store proxy.
+     * </p>
+     * <p>
+     * When you connect to an external key store that uses VPC endpoint service connectivity, KMS establishes the
+     * networking elements that it needs to communicate with your external key manager via the external key store proxy.
+     * This includes creating an interface endpoint to the VPC endpoint service and a private hosted zone for traffic
+     * between KMS and the VPC endpoint service.
+     * </p>
+     * <p>
+     * To connect an external key store, KMS must be able to connect to the external key store proxy, the external key
+     * store proxy must be able to communicate with your external key manager, and the external key manager must be
+     * available for cryptographic operations.
+     * </p>
+     * <p>
+     * If you are having trouble connecting or disconnecting an external key store, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/xks-troubleshooting.html">Troubleshooting an external
+     * key store</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
      * <p>
      * <b>Cross-account use</b>: No. You cannot perform this operation on a custom key store in a different Amazon Web
@@ -668,11 +769,16 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param connectCustomKeyStoreRequest
      * @return Result of the ConnectCustomKeyStore operation returned by the service.
      * @throws CloudHsmClusterNotActiveException
-     *         The request was rejected because the CloudHSM cluster that is associated with the custom key store is not
+     *         The request was rejected because the CloudHSM cluster associated with the CloudHSM key store is not
      *         active. Initialize and activate the cluster and try the command again. For detailed instructions, see <a
      *         href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting Started</a> in
      *         the <i>CloudHSM User Guide</i>.
@@ -685,9 +791,24 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         <ul>
      *         <li>
      *         <p>
-     *         You requested the <a>CreateKey</a> or <a>GenerateRandom</a> operation in a custom key store that is not
-     *         connected. These operations are valid only when the custom key store <code>ConnectionState</code> is
-     *         <code>CONNECTED</code>.
+     *         You requested the <a>ConnectCustomKeyStore</a> operation on a custom key store with a
+     *         <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is
+     *         valid for all other <code>ConnectionState</code> values. To reconnect a custom key store in a
+     *         <code>FAILED</code> state, disconnect it (<a>DisconnectCustomKeyStore</a>), then connect it (
+     *         <code>ConnectCustomKeyStore</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You requested the <a>CreateKey</a> operation in a custom key store that is not connected. This operations
+     *         is valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You requested the <a>DisconnectCustomKeyStore</a> operation on a custom key store with a
+     *         <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>. This operation
+     *         is valid for all other <code>ConnectionState</code> values.
      *         </p>
      *         </li>
      *         <li>
@@ -699,9 +820,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         </li>
      *         <li>
      *         <p>
-     *         You requested the <a>ConnectCustomKeyStore</a> operation on a custom key store with a
-     *         <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is
-     *         valid for all other <code>ConnectionState</code> values.
+     *         You requested the <a>GenerateRandom</a> operation in an CloudHSM key store that is not connected. This
+     *         operation is valid only when the CloudHSM key store <code>ConnectionState</code> is
+     *         <code>CONNECTED</code>.
      *         </p>
      *         </li>
      * @throws CustomKeyStoreNotFoundException
@@ -711,12 +832,12 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         The request was rejected because an internal exception occurred. The request can be retried.
      * @throws CloudHsmClusterInvalidConfigurationException
      *         The request was rejected because the associated CloudHSM cluster did not meet the configuration
-     *         requirements for a custom key store.</p>
+     *         requirements for an CloudHSM key store.</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         The cluster must be configured with private subnets in at least two different Availability Zones in the
-     *         Region.
+     *         The CloudHSM cluster must be configured with private subnets in at least two different Availability Zones
+     *         in the Region.
      *         </p>
      *         </li>
      *         <li>
@@ -725,16 +846,17 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         the cluster</a> (cloudhsm-cluster-<i>&lt;cluster-id&gt;</i>-sg) must include inbound rules and outbound
      *         rules that allow TCP traffic on ports 2223-2225. The <b>Source</b> in the inbound rules and the
      *         <b>Destination</b> in the outbound rules must match the security group ID. These rules are set by default
-     *         when you create the cluster. Do not delete or change them. To get information about a particular security
-     *         group, use the <a
+     *         when you create the CloudHSM cluster. Do not delete or change them. To get information about a particular
+     *         security group, use the <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html"
      *         >DescribeSecurityGroups</a> operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         The cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the CloudHSM
-     *         <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
+     *         The CloudHSM cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the
+     *         CloudHSM <a
+     *         href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
      *         operation.
      *         </p>
      *         <p>
@@ -745,7 +867,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         </li>
      *         </ul>
      *         <p>
-     *         For information about the requirements for an CloudHSM cluster that is associated with a custom key
+     *         For information about the requirements for an CloudHSM cluster that is associated with an CloudHSM key
      *         store, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore"
      *         >Assemble the Prerequisites</a> in the <i>Key Management Service Developer Guide</i>. For information
@@ -810,7 +932,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <note>
      * <p>
      * Adding, deleting, or updating an alias can allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in KMS</a> in the <i>Key Management
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management
      * Service Developer Guide</i>.
      * </p>
      * </note>
@@ -889,11 +1011,16 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param createAliasRequest
      * @return Result of the CreateAlias operation returned by the service.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws AlreadyExistsException
      *         The request was rejected because it attempted to create a resource that already exists.
      * @throws NotFoundException
@@ -909,9 +1036,27 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource is not valid for this request.</p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
      * @sample AWSKMS.CreateAlias
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateAlias" target="_top">AWS API
      *      Documentation</a>
@@ -963,32 +1108,81 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
     /**
      * <p>
      * Creates a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-     * key store</a> that is associated with an <a
-     * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/clusters.html">CloudHSM cluster</a> that you own and
-     * manage.
+     * key store</a> backed by a key store that you own and manage. When you use a KMS key in a custom key store for a
+     * cryptographic operation, the cryptographic operation is actually performed in your key store using your keys. KMS
+     * supports <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-cloudhsm.html">CloudHSM key
+     * stores</a> backed by an <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/clusters.html">CloudHSM
+     * cluster</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html">external
+     * key stores</a> backed by an external key store proxy and external key manager outside of Amazon Web Services.
      * </p>
      * <p>
      * This operation is part of the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store
-     * feature</a> feature in KMS, which combines the convenience and extensive integration of KMS with the isolation
-     * and control of a single-tenant key store.
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key stores</a>
+     * feature in KMS, which combines the convenience and extensive integration of KMS with the isolation and control of
+     * a key store that you own and manage.
      * </p>
      * <p>
-     * Before you create the custom key store, you must assemble the required elements, including an CloudHSM cluster
-     * that fulfills the requirements for a custom key store. For details about the required elements, see <a
+     * Before you create the custom key store, the required elements must be in place and operational. We recommend that
+     * you use the test tools that KMS provides to verify the configuration your external key store proxy. For details
+     * about the required elements and verification tests, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble the
-     * Prerequisites</a> in the <i>Key Management Service Developer Guide</i>.
+     * prerequisites (for CloudHSM key stores)</a> or <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-xks-keystore.html#xks-requirements">Assemble
+     * the prerequisites (for external key stores)</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
+     * <p>
+     * To create a custom key store, use the following parameters.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To create an CloudHSM key store, specify the <code>CustomKeyStoreName</code>, <code>CloudHsmClusterId</code>,
+     * <code>KeyStorePassword</code>, and <code>TrustAnchorCertificate</code>. The <code>CustomKeyStoreType</code>
+     * parameter is optional for CloudHSM key stores. If you include it, set it to the default value,
+     * <code>AWS_CLOUDHSM</code>. For help with failures, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting an CloudHSM key
+     * store</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create an external key store, specify the <code>CustomKeyStoreName</code> and a
+     * <code>CustomKeyStoreType</code> of <code>EXTERNAL_KEY_STORE</code>. Also, specify values for
+     * <code>XksProxyConnectivity</code>, <code>XksProxyAuthenticationCredential</code>,
+     * <code>XksProxyUriEndpoint</code>, and <code>XksProxyUriPath</code>. If your <code>XksProxyConnectivity</code>
+     * value is <code>VPC_ENDPOINT_SERVICE</code>, specify the <code>XksProxyVpcEndpointServiceName</code> parameter.
+     * For help with failures, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/xks-troubleshooting.html">Troubleshooting an external
+     * key store</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * For external key stores:
+     * </p>
+     * <p>
+     * Some external key managers provide a simpler method for creating an external key store. For details, see your
+     * external key manager documentation.
+     * </p>
+     * <p>
+     * When creating an external key store in the KMS console, you can upload a JSON-based proxy configuration file with
+     * the desired values. You cannot use a proxy configuration with the <code>CreateCustomKeyStore</code> operation.
+     * However, you can use the values in the file to help you determine the correct values for the
+     * <code>CreateCustomKeyStore</code> parameters.
+     * </p>
+     * </note>
      * <p>
      * When the operation completes successfully, it returns the ID of the new custom key store. Before you can use your
-     * new custom key store, you need to use the <a>ConnectCustomKeyStore</a> operation to connect the new key store to
-     * its CloudHSM cluster. Even if you are not going to use your custom key store immediately, you might want to
+     * new custom key store, you need to use the <a>ConnectCustomKeyStore</a> operation to connect a new CloudHSM key
+     * store to its CloudHSM cluster, or to connect a new external key store to the external key store proxy for your
+     * external key manager. Even if you are not going to use your custom key store immediately, you might want to
      * connect it to verify that all settings are correct and then disconnect it until you are ready to use it.
      * </p>
      * <p>
      * For help with failures, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a Custom Key
-     * Store</a> in the <i>Key Management Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting a custom key
+     * store</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
      * <p>
      * <b>Cross-account use</b>: No. You cannot perform this operation on a custom key store in a different Amazon Web
@@ -1029,16 +1223,21 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param createCustomKeyStoreRequest
      * @return Result of the CreateCustomKeyStore operation returned by the service.
      * @throws CloudHsmClusterInUseException
-     *         The request was rejected because the specified CloudHSM cluster is already associated with a custom key
-     *         store or it shares a backup history with a cluster that is associated with a custom key store. Each
-     *         custom key store must be associated with a different CloudHSM cluster.</p>
+     *         The request was rejected because the specified CloudHSM cluster is already associated with an CloudHSM
+     *         key store in the account, or it shares a backup history with an CloudHSM key store in the account. Each
+     *         CloudHSM key store in the account must be associated with a different CloudHSM cluster.</p>
      *         <p>
-     *         Clusters that share a backup history have the same cluster certificate. To view the cluster certificate
-     *         of a cluster, use the <a
+     *         CloudHSM clusters that share a backup history have the same cluster certificate. To view the cluster
+     *         certificate of an CloudHSM cluster, use the <a
      *         href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html"
      *         >DescribeClusters</a> operation.
      * @throws CustomKeyStoreNameInUseException
@@ -1050,28 +1249,28 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred. The request can be retried.
      * @throws CloudHsmClusterNotActiveException
-     *         The request was rejected because the CloudHSM cluster that is associated with the custom key store is not
+     *         The request was rejected because the CloudHSM cluster associated with the CloudHSM key store is not
      *         active. Initialize and activate the cluster and try the command again. For detailed instructions, see <a
      *         href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting Started</a> in
      *         the <i>CloudHSM User Guide</i>.
      * @throws IncorrectTrustAnchorException
-     *         The request was rejected because the trust anchor certificate in the request is not the trust anchor
-     *         certificate for the specified CloudHSM cluster.
+     *         The request was rejected because the trust anchor certificate in the request to create an CloudHSM key
+     *         store is not the trust anchor certificate for the specified CloudHSM cluster.
      *         </p>
      *         <p>
      *         When you <a
      *         href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize
-     *         the cluster</a>, you create the trust anchor certificate and save it in the <code>customerCA.crt</code>
-     *         file.
+     *         the CloudHSM cluster</a>, you create the trust anchor certificate and save it in the
+     *         <code>customerCA.crt</code> file.
      * @throws CloudHsmClusterInvalidConfigurationException
      *         The request was rejected because the associated CloudHSM cluster did not meet the configuration
-     *         requirements for a custom key store.
+     *         requirements for an CloudHSM key store.
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         The cluster must be configured with private subnets in at least two different Availability Zones in the
-     *         Region.
+     *         The CloudHSM cluster must be configured with private subnets in at least two different Availability Zones
+     *         in the Region.
      *         </p>
      *         </li>
      *         <li>
@@ -1080,16 +1279,17 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         the cluster</a> (cloudhsm-cluster-<i>&lt;cluster-id&gt;</i>-sg) must include inbound rules and outbound
      *         rules that allow TCP traffic on ports 2223-2225. The <b>Source</b> in the inbound rules and the
      *         <b>Destination</b> in the outbound rules must match the security group ID. These rules are set by default
-     *         when you create the cluster. Do not delete or change them. To get information about a particular security
-     *         group, use the <a
+     *         when you create the CloudHSM cluster. Do not delete or change them. To get information about a particular
+     *         security group, use the <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html"
      *         >DescribeSecurityGroups</a> operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         The cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the CloudHSM
-     *         <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
+     *         The CloudHSM cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the
+     *         CloudHSM <a
+     *         href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
      *         operation.
      *         </p>
      *         <p>
@@ -1100,7 +1300,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         </li>
      *         </ul>
      *         <p>
-     *         For information about the requirements for an CloudHSM cluster that is associated with a custom key
+     *         For information about the requirements for an CloudHSM cluster that is associated with an CloudHSM key
      *         store, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore"
      *         >Assemble the Prerequisites</a> in the <i>Key Management Service Developer Guide</i>. For information
@@ -1109,6 +1309,54 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster security groups, see <a
      *         href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure a Default
      *         Security Group</a> in the <i> <i>CloudHSM User Guide</i> </i>.
+     * @throws LimitExceededException
+     *         The request was rejected because a quota was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key
+     *         Management Service Developer Guide</i>.
+     * @throws XksProxyUriInUseException
+     *         The request was rejected because the concatenation of the <code>XksProxyUriEndpoint</code> and
+     *         <code>XksProxyUriPath</code> is already associated with another external key store in this Amazon Web
+     *         Services Region. Each external key store in a Region must use a unique external key store proxy API
+     *         address.
+     * @throws XksProxyUriEndpointInUseException
+     *         The request was rejected because the <code>XksProxyUriEndpoint</code> is already associated with another
+     *         external key store in this Amazon Web Services Region. To identify the cause, see the error message that
+     *         accompanies the exception.
+     * @throws XksProxyUriUnreachableException
+     *         KMS was unable to reach the specified <code>XksProxyUriPath</code>. The path must be reachable before you
+     *         create the external key store or update its settings.
+     *         </p>
+     *         <p>
+     *         This exception is also thrown when the external key store proxy response to a
+     *         <code>GetHealthStatus</code> request indicates that all external key manager instances are unavailable.
+     * @throws XksProxyIncorrectAuthenticationCredentialException
+     *         The request was rejected because the proxy credentials failed to authenticate to the specified external
+     *         key store proxy. The specified external key store proxy rejected a status request from KMS due to invalid
+     *         credentials. This can indicate an error in the credentials or in the identification of the external key
+     *         store proxy.
+     * @throws XksProxyVpcEndpointServiceInUseException
+     *         The request was rejected because the specified Amazon VPC endpoint service is already associated with
+     *         another external key store in this Amazon Web Services Region. Each external key store in a Region must
+     *         use a different Amazon VPC endpoint service.
+     * @throws XksProxyVpcEndpointServiceNotFoundException
+     *         The request was rejected because KMS could not find the specified VPC endpoint service. Use
+     *         <a>DescribeCustomKeyStores</a> to verify the VPC endpoint service name for the external key store. Also,
+     *         confirm that the <code>Allow principals</code> list for the VPC endpoint service includes the KMS service
+     *         principal for the Region, such as <code>cks.kms.us-east-1.amazonaws.com</code>.
+     * @throws XksProxyVpcEndpointServiceInvalidConfigurationException
+     *         The request was rejected because the Amazon VPC endpoint service configuration does not fulfill the
+     *         requirements for an external key store. To identify the cause, see the error message that accompanies the
+     *         exception and <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/vpc-connectivity.html#xks-vpc-requirements"
+     *         >review the requirements</a> for Amazon VPC endpoint service connectivity for an external key store.
+     * @throws XksProxyInvalidResponseException
+     *         <p>
+     *         KMS cannot interpret the response it received from the external key store proxy. The problem might be a
+     *         poorly constructed response, but it could also be a transient network issue. If you see this error
+     *         repeatedly, report it to the proxy vendor.
+     * @throws XksProxyInvalidConfigurationException
+     *         The request was rejected because the external key store proxy is not configured correctly. To identify
+     *         the cause, see the error message that accompanies the exception.
      * @sample AWSKMS.CreateCustomKeyStore
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateCustomKeyStore" target="_top">AWS API
      *      Documentation</a>
@@ -1240,6 +1488,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param createGrantRequest
      * @return Result of the CreateGrant operation returned by the service.
@@ -1248,7 +1501,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws DisabledException
      *         The request was rejected because the specified KMS key is not enabled.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws InvalidArnException
      *         The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.
      * @throws KMSInternalException
@@ -1262,9 +1515,29 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource is not valid for this request.</p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
+     * @throws DryRunOperationException
+     *         The request was rejected because the DryRun parameter was specified.
      * @sample AWSKMS.CreateGrant
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateGrant" target="_top">AWS API
      *      Documentation</a>
@@ -1317,15 +1590,24 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <p>
      * Creates a unique customer managed <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms-keys">KMS key</a> in your Amazon
-     * Web Services account and Region.
+     * Web Services account and Region. You can use a KMS key in cryptographic operations, such as encryption and
+     * signing. Some Amazon Web Services services let you use KMS keys that you create and manage to protect your
+     * service resources.
      * </p>
      * <p>
-     * In addition to the required parameters, you can use the optional parameters to specify a key policy, description,
-     * tags, and other useful elements for any key type.
+     * A KMS key is a logical representation of a cryptographic key. In addition to the key material used in
+     * cryptographic operations, a KMS key includes metadata, such as the key ID, key policy, creation date,
+     * description, and key state. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/getting-started.html">Managing keys</a> in the <i>Key
+     * Management Service Developer Guide</i>
+     * </p>
+     * <p>
+     * Use the parameters of <code>CreateKey</code> to specify the type of KMS key, the source of its key material, its
+     * key policy, description, tags, and other properties.
      * </p>
      * <note>
      * <p>
-     * KMS is replacing the term <i>customer master key (CMK)</i> with <i>KMS key</i> and <i>KMS key</i>. The concept
+     * KMS has replaced the term <i>customer master key (CMK)</i> with <i>KMS key</i> and <i>KMS key</i>. The concept
      * has not changed. To prevent breaking changes, KMS is keeping some variations of this term.
      * </p>
      * </note>
@@ -1336,11 +1618,14 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <dt>Symmetric encryption KMS key</dt>
      * <dd>
      * <p>
-     * To create a symmetric encryption KMS key, you aren't required to specify any parameters. The default value for
-     * <code>KeySpec</code>, <code>SYMMETRIC_DEFAULT</code>, and the default value for <code>KeyUsage</code>,
-     * <code>ENCRYPT_DECRYPT</code>, create a symmetric encryption KMS key. For technical details, see <a href=
-     * "https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default">
-     * SYMMETRIC_DEFAULT key spec</a> in the <i>Key Management Service Developer Guide</i>.
+     * By default, <code>CreateKey</code> creates a symmetric encryption KMS key with key material that KMS generates.
+     * This is the basic and most widely used type of KMS key, and provides the best performance.
+     * </p>
+     * <p>
+     * To create a symmetric encryption KMS key, you don't need to specify any parameters. The default value for
+     * <code>KeySpec</code>, <code>SYMMETRIC_DEFAULT</code>, the default value for <code>KeyUsage</code>,
+     * <code>ENCRYPT_DECRYPT</code>, and the default value for <code>Origin</code>, <code>AWS_KMS</code>, create a
+     * symmetric encryption KMS key with KMS key material.
      * </p>
      * <p>
      * If you need a key for basic encryption and decryption or you are creating a KMS key to protect your resources in
@@ -1382,13 +1667,6 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * (<a>GenerateMac</a>) and verify (<a>VerifyMac</a>) HMAC codes for messages up to 4096 bytes.
      * </p>
      * <p>
-     * HMAC KMS keys are not supported in all Amazon Web Services Regions. If you try to create an HMAC KMS key in an
-     * Amazon Web Services Region in which HMAC keys are not supported, the <code>CreateKey</code> operation returns an
-     * <code>UnsupportedOperationException</code>. For a list of Regions in which HMAC KMS keys are supported, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC keys in KMS</a> in the <i>Key
-     * Management Service Developer Guide</i>.
-     * </p>
-     * <p>
      * </p></dd>
      * <dt>Multi-Region primary keys</dt>
      * <dt>Imported key material</dt>
@@ -1418,23 +1696,26 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p></dd>
      * <dd>
      * <p>
-     * To import your own key material, begin by creating a symmetric encryption KMS key with no key material. To do
-     * this, use the <code>Origin</code> parameter of <code>CreateKey</code> with a value of <code>EXTERNAL</code>.
-     * Next, use <a>GetParametersForImport</a> operation to get a public key and import token, and use the public key to
+     * To import your own key material into a KMS key, begin by creating a KMS key with no key material. To do this, use
+     * the <code>Origin</code> parameter of <code>CreateKey</code> with a value of <code>EXTERNAL</code>. Next, use
+     * <a>GetParametersForImport</a> operation to get a public key and import token. Use the wrapping public key to
      * encrypt your key material. Then, use <a>ImportKeyMaterial</a> with your import token to import the key material.
      * For step-by-step instructions, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a> in
      * the <i> <i>Key Management Service Developer Guide</i> </i>.
      * </p>
      * <p>
-     * This feature supports only symmetric encryption KMS keys, including multi-Region symmetric encryption KMS keys.
-     * You cannot import key material into any other type of KMS key.
+     * You can import key material into KMS keys of all supported KMS key types: symmetric encryption KMS keys, HMAC KMS
+     * keys, asymmetric encryption KMS keys, and asymmetric signing KMS keys. You can also create multi-Region keys with
+     * imported key material. However, you can't import key material into a KMS key in a custom key store.
      * </p>
      * <p>
      * To create a multi-Region primary key with imported key material, use the <code>Origin</code> parameter of
      * <code>CreateKey</code> with a value of <code>EXTERNAL</code> and the <code>MultiRegion</code> parameter with a
      * value of <code>True</code>. To create replicas of the multi-Region primary key, use the <a>ReplicateKey</a>
-     * operation. For more information about multi-Region keys, see <a
+     * operation. For instructions, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-import.html ">Importing key
+     * material into multi-Region keys</a>. For more information about multi-Region keys, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Multi-Region keys in
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
@@ -1443,20 +1724,55 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <dt>Custom key store</dt>
      * <dd>
      * <p>
-     * To create a symmetric encryption KMS key in a <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>,
-     * use the <code>CustomKeyStoreId</code> parameter to specify the custom key store. You must also use the
-     * <code>Origin</code> parameter with a value of <code>AWS_CLOUDHSM</code>. The CloudHSM cluster that is associated
-     * with the custom key store must have at least two active HSMs in different Availability Zones in the Amazon Web
-     * Services Region.
+     * A <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key
+     * store</a> lets you protect your Amazon Web Services resources using keys in a backing key store that you own and
+     * manage. When you request a cryptographic operation with a KMS key in a custom key store, the operation is
+     * performed in the backing key store using its cryptographic keys.
      * </p>
      * <p>
-     * Custom key stores support only symmetric encryption KMS keys. You cannot create an HMAC KMS key or an asymmetric
-     * KMS key in a custom key store. For information about custom key stores in KMS see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom key stores in
-     * KMS</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+     * KMS supports <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-cloudhsm.html">CloudHSM key
+     * stores</a> backed by an CloudHSM cluster and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html">external key stores</a>
+     * backed by an external key manager outside of Amazon Web Services. When you create a KMS key in an CloudHSM key
+     * store, KMS generates an encryption key in the CloudHSM cluster and associates it with the KMS key. When you
+     * create a KMS key in an external key store, you specify an existing encryption key in the external key manager.
      * </p>
-     * </dd>
+     * <note>
+     * <p>
+     * Some external key managers provide a simpler method for creating a KMS key in an external key store. For details,
+     * see your external key manager documentation.
+     * </p>
+     * </note>
+     * <p>
+     * Before you create a KMS key in a custom key store, the <code>ConnectionState</code> of the key store must be
+     * <code>CONNECTED</code>. To connect the custom key store, use the <a>ConnectCustomKeyStore</a> operation. To find
+     * the <code>ConnectionState</code>, use the <a>DescribeCustomKeyStores</a> operation.
+     * </p>
+     * <p>
+     * To create a KMS key in a custom key store, use the <code>CustomKeyStoreId</code>. Use the default
+     * <code>KeySpec</code> value, <code>SYMMETRIC_DEFAULT</code>, and the default <code>KeyUsage</code> value,
+     * <code>ENCRYPT_DECRYPT</code> to create a symmetric encryption key. No other key type is supported in a custom key
+     * store.
+     * </p>
+     * <p>
+     * To create a KMS key in an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-cloudhsm.html">CloudHSM key store</a>, use
+     * the <code>Origin</code> parameter with a value of <code>AWS_CLOUDHSM</code>. The CloudHSM cluster that is
+     * associated with the custom key store must have at least two active HSMs in different Availability Zones in the
+     * Amazon Web Services Region.
+     * </p>
+     * <p>
+     * To create a KMS key in an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html">external key store</a>, use
+     * the <code>Origin</code> parameter with a value of <code>EXTERNAL_KEY_STORE</code> and an <code>XksKeyId</code>
+     * parameter that identifies an existing external key.
+     * </p>
+     * <note>
+     * <p>
+     * Some external key managers provide a simpler method for creating a KMS key in an external key store. For details,
+     * see your external key manager documentation.
+     * </p>
+     * </note></dd>
      * </dl>
      * <p>
      * <b>Cross-account use</b>: No. You cannot use this operation to create a KMS key in a different Amazon Web
@@ -1491,13 +1807,18 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param createKeyRequest
      * @return Result of the CreateKey operation returned by the service.
      * @throws MalformedPolicyDocumentException
      *         The request was rejected because the specified policy is not syntactically or semantically correct.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws InvalidArnException
      *         The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.
      * @throws UnsupportedOperationException
@@ -1523,9 +1844,24 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         <ul>
      *         <li>
      *         <p>
-     *         You requested the <a>CreateKey</a> or <a>GenerateRandom</a> operation in a custom key store that is not
-     *         connected. These operations are valid only when the custom key store <code>ConnectionState</code> is
-     *         <code>CONNECTED</code>.
+     *         You requested the <a>ConnectCustomKeyStore</a> operation on a custom key store with a
+     *         <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is
+     *         valid for all other <code>ConnectionState</code> values. To reconnect a custom key store in a
+     *         <code>FAILED</code> state, disconnect it (<a>DisconnectCustomKeyStore</a>), then connect it (
+     *         <code>ConnectCustomKeyStore</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You requested the <a>CreateKey</a> operation in a custom key store that is not connected. This operations
+     *         is valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You requested the <a>DisconnectCustomKeyStore</a> operation on a custom key store with a
+     *         <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>. This operation
+     *         is valid for all other <code>ConnectionState</code> values.
      *         </p>
      *         </li>
      *         <li>
@@ -1537,19 +1873,19 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         </li>
      *         <li>
      *         <p>
-     *         You requested the <a>ConnectCustomKeyStore</a> operation on a custom key store with a
-     *         <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is
-     *         valid for all other <code>ConnectionState</code> values.
+     *         You requested the <a>GenerateRandom</a> operation in an CloudHSM key store that is not connected. This
+     *         operation is valid only when the CloudHSM key store <code>ConnectionState</code> is
+     *         <code>CONNECTED</code>.
      *         </p>
      *         </li>
      * @throws CloudHsmClusterInvalidConfigurationException
      *         The request was rejected because the associated CloudHSM cluster did not meet the configuration
-     *         requirements for a custom key store.</p>
+     *         requirements for an CloudHSM key store.</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         The cluster must be configured with private subnets in at least two different Availability Zones in the
-     *         Region.
+     *         The CloudHSM cluster must be configured with private subnets in at least two different Availability Zones
+     *         in the Region.
      *         </p>
      *         </li>
      *         <li>
@@ -1558,16 +1894,17 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         the cluster</a> (cloudhsm-cluster-<i>&lt;cluster-id&gt;</i>-sg) must include inbound rules and outbound
      *         rules that allow TCP traffic on ports 2223-2225. The <b>Source</b> in the inbound rules and the
      *         <b>Destination</b> in the outbound rules must match the security group ID. These rules are set by default
-     *         when you create the cluster. Do not delete or change them. To get information about a particular security
-     *         group, use the <a
+     *         when you create the CloudHSM cluster. Do not delete or change them. To get information about a particular
+     *         security group, use the <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html"
      *         >DescribeSecurityGroups</a> operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         The cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the CloudHSM
-     *         <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
+     *         The CloudHSM cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the
+     *         CloudHSM <a
+     *         href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
      *         operation.
      *         </p>
      *         <p>
@@ -1578,7 +1915,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         </li>
      *         </ul>
      *         <p>
-     *         For information about the requirements for an CloudHSM cluster that is associated with a custom key
+     *         For information about the requirements for an CloudHSM cluster that is associated with an CloudHSM key
      *         store, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore"
      *         >Assemble the Prerequisites</a> in the <i>Key Management Service Developer Guide</i>. For information
@@ -1587,6 +1924,25 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster security groups, see <a
      *         href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure a Default
      *         Security Group</a> in the <i> <i>CloudHSM User Guide</i> </i>.
+     * @throws XksKeyInvalidConfigurationException
+     *         The request was rejected because the external key specified by the <code>XksKeyId</code> parameter did
+     *         not meet the configuration requirements for an external key store.
+     *         </p>
+     *         <p>
+     *         The external key must be an AES-256 symmetric key that is enabled and performs encryption and decryption.
+     * @throws XksKeyAlreadyInUseException
+     *         The request was rejected because the (<code>XksKeyId</code>) is already associated with another KMS key
+     *         in this external key store. Each KMS key in an external key store must be associated with a different
+     *         external key.
+     * @throws XksKeyNotFoundException
+     *         The request was rejected because the external key store proxy could not find the external key. This
+     *         exception is thrown when the value of the <code>XksKeyId</code> parameter doesn't identify a key in the
+     *         external key manager associated with the external key proxy.
+     *         </p>
+     *         <p>
+     *         Verify that the <code>XksKeyId</code> represents an existing key in the external key manager. Use the key
+     *         identifier that the external key store proxy uses to identify the key. For details, see the documentation
+     *         provided with your external key store proxy or key manager.
      * @sample AWSKMS.CreateKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateKey" target="_top">AWS API
      *      Documentation</a>
@@ -1680,9 +2036,10 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * <p>
      * The <code>Decrypt</code> operation also decrypts ciphertext that was encrypted outside of KMS by the public key
-     * in an KMS asymmetric KMS key. However, it cannot decrypt ciphertext produced by other libraries, such as the <a
-     * href="https://docs.aws.amazon.com/encryption-sdk/latest/developer-guide/">Amazon Web Services Encryption SDK</a>
-     * or <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 client-side
+     * in an KMS asymmetric KMS key. However, it cannot decrypt symmetric ciphertext produced by other libraries, such
+     * as the <a href="https://docs.aws.amazon.com/encryption-sdk/latest/developer-guide/">Amazon Web Services
+     * Encryption SDK</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html">Amazon S3 client-side
      * encryption</a>. These libraries return a ciphertext format that is incompatible with KMS.
      * </p>
      * <p>
@@ -1696,20 +2053,26 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * <p>
      * Whenever possible, use key policies to give users permission to call the <code>Decrypt</code> operation on a
-     * particular KMS key, instead of using IAM policies. Otherwise, you might create an IAM user policy that gives the
-     * user <code>Decrypt</code> permission on all KMS keys. This user could decrypt ciphertext that was encrypted by
-     * KMS keys in other accounts if the key policy for the cross-account KMS key permits it. If you must use an IAM
-     * policy for <code>Decrypt</code> permissions, limit the user to particular KMS keys or particular trusted
-     * accounts. For details, see <a
+     * particular KMS key, instead of using &amp;IAM; policies. Otherwise, you might create an &amp;IAM; policy that
+     * gives the user <code>Decrypt</code> permission on all KMS keys. This user could decrypt ciphertext that was
+     * encrypted by KMS keys in other accounts if the key policy for the cross-account KMS key permits it. If you must
+     * use an IAM policy for <code>Decrypt</code> permissions, limit the user to particular KMS keys or particular
+     * trusted accounts. For details, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/iam-policies.html#iam-policies-best-practices">Best
      * practices for IAM policies</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
      * <p>
-     * Applications in Amazon Web Services Nitro Enclaves can call this operation by using the <a
-     * href="https://github.com/aws/aws-nitro-enclaves-sdk-c">Amazon Web Services Nitro Enclaves Development Kit</a>.
-     * For information about the supporting parameters, see <a
+     * <code>Decrypt</code> also supports <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon Web Services Nitro
+     * Enclaves</a>, which provide an isolated compute environment in Amazon EC2. To call <code>Decrypt</code> for a
+     * Nitro enclave, use the <a
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon Web Services
+     * Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <code>Recipient</code> parameter to provide the
+     * attestation document for the enclave. Instead of the plaintext data, the response includes the plaintext data
+     * encrypted with the public key from the attestation document (<code>CiphertextForRecipient</code>). For
+     * information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services
-     * Nitro Enclaves use KMS</a> in the <i>Key Management Service Developer Guide</i>.
+     * Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
      * <p>
      * The KMS key that you use for this operation must be in a compatible key state. For details, see <a
@@ -1717,8 +2080,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <i>Key Management Service Developer Guide</i>.
      * </p>
      * <p>
-     * <b>Cross-account use</b>: Yes. To perform this operation with a KMS key in a different Amazon Web Services
-     * account, specify the key ARN or alias ARN in the value of the <code>KeyId</code> parameter.
+     * <b>Cross-account use</b>: Yes. If you use the <code>KeyId</code> parameter to identify a KMS key in a different
+     * Amazon Web Services account, specify the key ARN or the alias ARN of the KMS key.
      * </p>
      * <p>
      * <b>Required permissions</b>: <a
@@ -1750,6 +2113,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param decryptRequest
      * @return Result of the Decrypt operation returned by the service.
@@ -1797,7 +2165,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         To find the encryption or signing algorithms supported for a particular KMS key, use the
      *         <a>DescribeKey</a> operation.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws InvalidGrantTokenException
      *         The request was rejected because the specified grant token is not valid.
      * @throws KMSInternalException
@@ -1806,9 +2174,29 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         The request was rejected because the state of the specified resource is not valid for this request.
      *         </p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
+     * @throws DryRunOperationException
+     *         The request was rejected because the DryRun parameter was specified.
      * @sample AWSKMS.Decrypt
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Decrypt" target="_top">AWS API
      *      Documentation</a>
@@ -1864,7 +2252,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <note>
      * <p>
      * Adding, deleting, or updating an alias can allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in KMS</a> in the <i>Key Management
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management
      * Service Developer Guide</i>.
      * </p>
      * </note>
@@ -1926,11 +2314,16 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param deleteAliasRequest
      * @return Result of the DeleteAlias operation returned by the service.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource could not be found.
      * @throws KMSInternalException
@@ -1938,9 +2331,27 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource is not valid for this request.</p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
      * @sample AWSKMS.DeleteAlias
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteAlias" target="_top">AWS API
      *      Documentation</a>
@@ -1992,38 +2403,42 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
     /**
      * <p>
      * Deletes a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
-     * key store</a>. This operation does not delete the CloudHSM cluster that is associated with the custom key store,
-     * or affect any users or keys in the cluster.
+     * key store</a>. This operation does not affect any backing elements of the custom key store. It does not delete
+     * the CloudHSM cluster that is associated with an CloudHSM key store, or affect any users or keys in the cluster.
+     * For an external key store, it does not affect the external key store proxy, external key manager, or any external
+     * keys.
+     * </p>
+     * <p>
+     * This operation is part of the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key stores</a>
+     * feature in KMS, which combines the convenience and extensive integration of KMS with the isolation and control of
+     * a key store that you own and manage.
      * </p>
      * <p>
      * The custom key store that you delete cannot contain any <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms_keys">KMS keys</a>. Before deleting
      * the key store, verify that you will never need to use any of the KMS keys in the key store for any <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
-     * operations</a>. Then, use <a>ScheduleKeyDeletion</a> to delete the KMS keys from the key store. When the
-     * scheduled waiting period expires, the <code>ScheduleKeyDeletion</code> operation deletes the KMS keys. Then it
-     * makes a best effort to delete the key material from the associated cluster. However, you might need to manually
-     * <a
+     * operations</a>. Then, use <a>ScheduleKeyDeletion</a> to delete the KMS keys from the key store. After the
+     * required waiting period expires and all KMS keys are deleted from the custom key store, use
+     * <a>DisconnectCustomKeyStore</a> to disconnect the key store from KMS. Then, you can delete the custom key store.
+     * </p>
+     * <p>
+     * For keys in an CloudHSM key store, the <code>ScheduleKeyDeletion</code> operation makes a best effort to delete
+     * the key material from the associated cluster. However, you might need to manually <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
-     * the orphaned key material</a> from the cluster and its backups.
+     * the orphaned key material</a> from the cluster and its backups. KMS never creates, manages, or deletes
+     * cryptographic keys in the external key manager associated with an external key store. You must manage them using
+     * your external key manager tools.
      * </p>
      * <p>
-     * After all KMS keys are deleted from KMS, use <a>DisconnectCustomKeyStore</a> to disconnect the key store from
-     * KMS. Then, you can delete the custom key store.
-     * </p>
-     * <p>
-     * Instead of deleting the custom key store, consider using <a>DisconnectCustomKeyStore</a> to disconnect it from
-     * KMS. While the key store is disconnected, you cannot create or use the KMS keys in the key store. But, you do not
-     * need to delete KMS keys and you can reconnect a disconnected custom key store at any time.
+     * Instead of deleting the custom key store, consider using the <a>DisconnectCustomKeyStore</a> operation to
+     * disconnect the custom key store from its backing key store. While the key store is disconnected, you cannot
+     * create or use the KMS keys in the key store. But, you do not need to delete KMS keys and you can reconnect a
+     * disconnected custom key store at any time.
      * </p>
      * <p>
      * If the operation succeeds, it returns a JSON object with no properties.
-     * </p>
-     * <p>
-     * This operation is part of the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store
-     * feature</a> feature in KMS, which combines the convenience and extensive integration of KMS with the isolation
-     * and control of a single-tenant key store.
      * </p>
      * <p>
      * <b>Cross-account use</b>: No. You cannot perform this operation on a custom key store in a different Amazon Web
@@ -2064,6 +2479,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param deleteCustomKeyStoreRequest
      * @return Result of the DeleteCustomKeyStore operation returned by the service.
@@ -2080,9 +2500,24 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         <ul>
      *         <li>
      *         <p>
-     *         You requested the <a>CreateKey</a> or <a>GenerateRandom</a> operation in a custom key store that is not
-     *         connected. These operations are valid only when the custom key store <code>ConnectionState</code> is
-     *         <code>CONNECTED</code>.
+     *         You requested the <a>ConnectCustomKeyStore</a> operation on a custom key store with a
+     *         <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is
+     *         valid for all other <code>ConnectionState</code> values. To reconnect a custom key store in a
+     *         <code>FAILED</code> state, disconnect it (<a>DisconnectCustomKeyStore</a>), then connect it (
+     *         <code>ConnectCustomKeyStore</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You requested the <a>CreateKey</a> operation in a custom key store that is not connected. This operations
+     *         is valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You requested the <a>DisconnectCustomKeyStore</a> operation on a custom key store with a
+     *         <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>. This operation
+     *         is valid for all other <code>ConnectionState</code> values.
      *         </p>
      *         </li>
      *         <li>
@@ -2094,9 +2529,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         </li>
      *         <li>
      *         <p>
-     *         You requested the <a>ConnectCustomKeyStore</a> operation on a custom key store with a
-     *         <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is
-     *         valid for all other <code>ConnectionState</code> values.
+     *         You requested the <a>GenerateRandom</a> operation in an CloudHSM key store that is not connected. This
+     *         operation is valid only when the CloudHSM key store <code>ConnectionState</code> is
+     *         <code>CONNECTED</code>.
      *         </p>
      *         </li>
      * @throws CustomKeyStoreNotFoundException
@@ -2154,18 +2589,15 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Deletes key material that you previously imported. This operation makes the specified KMS key unusable. For more
-     * information about importing key material into KMS, see <a
+     * Deletes key material that was previously imported. This operation makes the specified KMS key temporarily
+     * unusable. To restore the usability of the KMS key, reimport the same key material. For more information about
+     * importing key material into KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a> in
      * the <i>Key Management Service Developer Guide</i>.
      * </p>
      * <p>
      * When the specified KMS key is in the <code>PendingDeletion</code> state, this operation does not change the KMS
      * key's state. Otherwise, it changes the KMS key's state to <code>PendingImport</code>.
-     * </p>
-     * <p>
-     * After you delete key material, you can use <a>ImportKeyMaterial</a> to reimport the same key material into the
-     * KMS key.
      * </p>
      * <p>
      * The KMS key that you use for this operation must be in a compatible key state. For details, see <a
@@ -2196,6 +2628,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param deleteImportedKeyMaterialRequest
      * @return Result of the DeleteImportedKeyMaterial operation returned by the service.
@@ -2205,7 +2642,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         The request was rejected because a specified parameter is not supported or a specified resource is not
      *         valid for this operation.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource could not be found.
      * @throws KMSInternalException
@@ -2213,9 +2650,27 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource is not valid for this request.</p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
      * @sample AWSKMS.DeleteImportedKeyMaterial
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteImportedKeyMaterial" target="_top">AWS
      *      API Documentation</a>
@@ -2274,9 +2729,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * <p>
      * This operation is part of the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store
-     * feature</a> feature in KMS, which combines the convenience and extensive integration of KMS with the isolation
-     * and control of a single-tenant key store.
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key stores</a>
+     * feature in KMS, which combines the convenience and extensive integration of KMS with the isolation and control of
+     * a key store that you own and manage.
      * </p>
      * <p>
      * By default, this operation returns information about all custom key stores in the account and Region. To get only
@@ -2284,22 +2739,27 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <code>CustomKeyStoreId</code> parameter (but not both).
      * </p>
      * <p>
-     * To determine whether the custom key store is connected to its CloudHSM cluster, use the
-     * <code>ConnectionState</code> element in the response. If an attempt to connect the custom key store failed, the
-     * <code>ConnectionState</code> value is <code>FAILED</code> and the <code>ConnectionErrorCode</code> element in the
-     * response indicates the cause of the failure. For help interpreting the <code>ConnectionErrorCode</code>, see
+     * To determine whether the custom key store is connected to its CloudHSM cluster or external key store proxy, use
+     * the <code>ConnectionState</code> element in the response. If an attempt to connect the custom key store failed,
+     * the <code>ConnectionState</code> value is <code>FAILED</code> and the <code>ConnectionErrorCode</code> element in
+     * the response indicates the cause of the failure. For help interpreting the <code>ConnectionErrorCode</code>, see
      * <a>CustomKeyStoresListEntry</a>.
      * </p>
      * <p>
      * Custom key stores have a <code>DISCONNECTED</code> connection state if the key store has never been connected or
-     * you use the <a>DisconnectCustomKeyStore</a> operation to disconnect it. If your custom key store state is
-     * <code>CONNECTED</code> but you are having trouble using it, make sure that its associated CloudHSM cluster is
-     * active and contains the minimum number of HSMs required for the operation, if any.
+     * you used the <a>DisconnectCustomKeyStore</a> operation to disconnect it. Otherwise, the connection state is
+     * CONNECTED. If your custom key store connection state is <code>CONNECTED</code> but you are having trouble using
+     * it, verify that the backing store is active and available. For an CloudHSM key store, verify that the associated
+     * CloudHSM cluster is active and contains the minimum number of HSMs required for the operation, if any. For an
+     * external key store, verify that the external key store proxy and its associated external key manager are
+     * reachable and enabled.
      * </p>
      * <p>
-     * For help repairing your custom key store, see the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting Custom Key
-     * Stores</a> topic in the <i>Key Management Service Developer Guide</i>.
+     * For help repairing your CloudHSM key store, see the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting CloudHSM key
+     * stores</a>. For help repairing your external key store, see the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/xks-troubleshooting.html">Troubleshooting external
+     * key stores</a>. Both topics are in the <i>Key Management Service Developer Guide</i>.
      * </p>
      * <p>
      * <b>Cross-account use</b>: No. You cannot perform this operation on a custom key store in a different Amazon Web
@@ -2340,6 +2800,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param describeCustomKeyStoresRequest
      * @return Result of the DescribeCustomKeyStores operation returned by the service.
@@ -2412,9 +2877,15 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * This detailed information includes the key ARN, creation date (and deletion date, if applicable), the key state,
      * and the origin and expiration date (if any) of the key material. It includes fields, like <code>KeySpec</code>,
      * that help you distinguish different types of KMS keys. It also displays the key usage (encryption, signing, or
-     * generating and verifying MACs) and the algorithms that the KMS key supports. For KMS keys in custom key stores,
-     * it includes information about the custom key store, such as the key store ID and the CloudHSM cluster ID. For
-     * multi-Region keys, it displays the primary key and all related replica keys.
+     * generating and verifying MACs) and the algorithms that the KMS key supports.
+     * </p>
+     * <p>
+     * For <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
+     * keys</a>, <code>DescribeKey</code> displays the primary key and all related replica keys. For KMS keys in <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-cloudhsm.html">CloudHSM key stores</a>, it
+     * includes information about the key store, such as the key store ID and the CloudHSM cluster ID. For KMS keys in
+     * <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html">external key stores</a>,
+     * it includes the custom key store ID and the ID of the external key.
      * </p>
      * <p>
      * <code>DescribeKey</code> does not return the following information:
@@ -2500,6 +2971,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param describeKeyRequest
      * @return Result of the DescribeKey operation returned by the service.
@@ -2508,7 +2984,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws InvalidArnException
      *         The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred. The request can be retried.
      * @sample AWSKMS.DescribeKey
@@ -2587,6 +3063,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <p>
      * <b>Related operations</b>: <a>EnableKey</a>
      * </p>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param disableKeyRequest
      * @return Result of the DisableKey operation returned by the service.
@@ -2595,15 +3076,33 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws InvalidArnException
      *         The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred. The request can be retried.
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource is not valid for this request.</p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
      * @sample AWSKMS.DisableKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisableKey" target="_top">AWS API
      *      Documentation</a>
@@ -2658,14 +3157,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * the key material</a> of the specified symmetric encryption KMS key.
      * </p>
      * <p>
-     * Automatic key rotation is supported only on symmetric encryption KMS keys. You cannot enable or disable automatic
-     * rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric
-     * KMS keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC KMS keys</a>, KMS
-     * keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key
+     * Automatic key rotation is supported only on symmetric encryption KMS keys. You cannot enable automatic rotation
+     * of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric KMS
+     * keys</a>, <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC KMS keys</a>, KMS keys
+     * with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key
      * material</a>, or KMS keys in a <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>.
-     * The key rotation status of these KMS keys is always <code>false</code>. To enable or disable automatic rotation
-     * of a set of related <a
+     * To enable or disable automatic rotation of a set of related <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate"
      * >multi-Region keys</a>, set the property on the primary key.
      * </p>
@@ -2712,7 +3210,22 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <a>GetKeyRotationStatus</a>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <a>ListKeyRotations</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>RotateKeyOnDemand</a>
+     * </p>
+     * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param disableKeyRotationRequest
      * @return Result of the DisableKeyRotation operation returned by the service.
@@ -2723,15 +3236,33 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws InvalidArnException
      *         The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred. The request can be retried.
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource is not valid for this request.</p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
      * @throws UnsupportedOperationException
      *         The request was rejected because a specified parameter is not supported or a specified resource is not
      *         valid for this operation.
@@ -2787,9 +3318,19 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <p>
      * Disconnects the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>
-     * from its associated CloudHSM cluster. While a custom key store is disconnected, you can manage the custom key
-     * store and its KMS keys, but you cannot create or use KMS keys in the custom key store. You can reconnect the
-     * custom key store at any time.
+     * from its backing key store. This operation disconnects an CloudHSM key store from its associated CloudHSM cluster
+     * or disconnects an external key store from the external key store proxy that communicates with your external key
+     * manager.
+     * </p>
+     * <p>
+     * This operation is part of the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key stores</a>
+     * feature in KMS, which combines the convenience and extensive integration of KMS with the isolation and control of
+     * a key store that you own and manage.
+     * </p>
+     * <p>
+     * While a custom key store is disconnected, you can manage the custom key store and its KMS keys, but you cannot
+     * create or use its KMS keys. You can reconnect the custom key store at any time.
      * </p>
      * <note>
      * <p>
@@ -2799,19 +3340,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * operations</a> will fail. This action can prevent users from storing and accessing sensitive data.
      * </p>
      * </note>
-     * <p/>
      * <p>
-     * To find the connection state of a custom key store, use the <a>DescribeCustomKeyStores</a> operation. To
-     * reconnect a custom key store, use the <a>ConnectCustomKeyStore</a> operation.
+     * When you disconnect a custom key store, its <code>ConnectionState</code> changes to <code>Disconnected</code>. To
+     * find the connection state of a custom key store, use the <a>DescribeCustomKeyStores</a> operation. To reconnect a
+     * custom key store, use the <a>ConnectCustomKeyStore</a> operation.
      * </p>
      * <p>
      * If the operation succeeds, it returns a JSON object with no properties.
-     * </p>
-     * <p>
-     * This operation is part of the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store
-     * feature</a> feature in KMS, which combines the convenience and extensive integration of KMS with the isolation
-     * and control of a single-tenant key store.
      * </p>
      * <p>
      * <b>Cross-account use</b>: No. You cannot perform this operation on a custom key store in a different Amazon Web
@@ -2852,6 +3387,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param disconnectCustomKeyStoreRequest
      * @return Result of the DisconnectCustomKeyStore operation returned by the service.
@@ -2864,9 +3404,24 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         <ul>
      *         <li>
      *         <p>
-     *         You requested the <a>CreateKey</a> or <a>GenerateRandom</a> operation in a custom key store that is not
-     *         connected. These operations are valid only when the custom key store <code>ConnectionState</code> is
-     *         <code>CONNECTED</code>.
+     *         You requested the <a>ConnectCustomKeyStore</a> operation on a custom key store with a
+     *         <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is
+     *         valid for all other <code>ConnectionState</code> values. To reconnect a custom key store in a
+     *         <code>FAILED</code> state, disconnect it (<a>DisconnectCustomKeyStore</a>), then connect it (
+     *         <code>ConnectCustomKeyStore</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You requested the <a>CreateKey</a> operation in a custom key store that is not connected. This operations
+     *         is valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You requested the <a>DisconnectCustomKeyStore</a> operation on a custom key store with a
+     *         <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>. This operation
+     *         is valid for all other <code>ConnectionState</code> values.
      *         </p>
      *         </li>
      *         <li>
@@ -2878,9 +3433,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         </li>
      *         <li>
      *         <p>
-     *         You requested the <a>ConnectCustomKeyStore</a> operation on a custom key store with a
-     *         <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is
-     *         valid for all other <code>ConnectionState</code> values.
+     *         You requested the <a>GenerateRandom</a> operation in an CloudHSM key store that is not connected. This
+     *         operation is valid only when the CloudHSM key store <code>ConnectionState</code> is
+     *         <code>CONNECTED</code>.
      *         </p>
      *         </li>
      * @throws CustomKeyStoreNotFoundException
@@ -2961,6 +3516,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <p>
      * <b>Related operations</b>: <a>DisableKey</a>
      * </p>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param enableKeyRequest
      * @return Result of the EnableKey operation returned by the service.
@@ -2969,7 +3529,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws InvalidArnException
      *         The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred. The request can be retried.
      * @throws LimitExceededException
@@ -2979,9 +3539,27 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource is not valid for this request.</p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
      * @sample AWSKMS.EnableKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/EnableKey" target="_top">AWS API
      *      Documentation</a>
@@ -3032,37 +3610,43 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Enables <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic rotation of
-     * the key material</a> of the specified symmetric encryption KMS key.
+     * Enables <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotating-keys-enable-disable"
+     * >automatic rotation of the key material</a> of the specified symmetric encryption KMS key.
      * </p>
      * <p>
-     * When you enable automatic rotation of a<a
+     * By default, when you enable automatic rotation of a <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed KMS
      * key</a>, KMS rotates the key material of the KMS key one year (approximately 365 days) from the enable date and
-     * every year thereafter. You can monitor rotation of the key material for your KMS keys in CloudTrail and Amazon
-     * CloudWatch. To disable rotation of the key material in a customer managed KMS key, use the
-     * <a>DisableKeyRotation</a> operation.
+     * every year thereafter. You can use the optional <code>RotationPeriodInDays</code> parameter to specify a custom
+     * rotation period when you enable key rotation, or you can use <code>RotationPeriodInDays</code> to modify the
+     * rotation period of a key that you previously enabled automatic key rotation on.
+     * </p>
+     * <p>
+     * You can monitor rotation of the key material for your KMS keys in CloudTrail and Amazon CloudWatch. To disable
+     * rotation of the key material in a customer managed KMS key, use the <a>DisableKeyRotation</a> operation. You can
+     * use the <a>GetKeyRotationStatus</a> operation to identify any in progress rotations. You can use the
+     * <a>ListKeyRotations</a> operation to view the details of completed rotations.
      * </p>
      * <p>
      * Automatic key rotation is supported only on <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#symmetric-cmks">symmetric encryption
-     * KMS keys</a>. You cannot enable or disable automatic rotation of <a
+     * KMS keys</a>. You cannot enable automatic rotation of <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric KMS keys</a>,
      * <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC KMS keys</a>, KMS keys with <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key material</a>, or
      * KMS keys in a <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>.
-     * The key rotation status of these KMS keys is always <code>false</code>. To enable or disable automatic rotation
-     * of a set of related <a
+     * To enable or disable automatic rotation of a set of related <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate"
      * >multi-Region keys</a>, set the property on the primary key.
      * </p>
      * <p>
-     * You cannot enable or disable automatic rotation <a
+     * You cannot enable or disable automatic rotation of <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services
      * managed KMS keys</a>. KMS always rotates the key material of Amazon Web Services managed keys every year.
      * Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
-     * Web Services owned KMS keys</a> varies.
+     * Web Services owned KMS keys</a> is managed by the Amazon Web Services service that owns the key.
      * </p>
      * <note>
      * <p>
@@ -3106,7 +3690,27 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <a>GetKeyRotationStatus</a>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <a>ListKeyRotations</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>RotateKeyOnDemand</a>
+     * </p>
+     * <note>
+     * <p>
+     * You can perform on-demand (<a>RotateKeyOnDemand</a>) rotation of the key material in customer managed KMS keys,
+     * regardless of whether or not automatic key rotation is enabled.
+     * </p>
+     * </note></li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param enableKeyRotationRequest
      * @return Result of the EnableKeyRotation operation returned by the service.
@@ -3117,15 +3721,33 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws InvalidArnException
      *         The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred. The request can be retried.
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource is not valid for this request.</p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
      * @throws UnsupportedOperationException
      *         The request was rejected because a specified parameter is not supported or a specified resource is not
      *         valid for this operation.
@@ -3322,6 +3944,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param encryptRequest
      * @return Result of the Encrypt operation returned by the service.
@@ -3332,7 +3959,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws KeyUnavailableException
      *         The request was rejected because the specified KMS key was not available. You can retry the request.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws InvalidKeyUsageException
      *         The request was rejected for one of the following reasons: </p>
      *         <ul>
@@ -3366,9 +3993,29 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         The request was rejected because the state of the specified resource is not valid for this request.
      *         </p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
+     * @throws DryRunOperationException
+     *         The request was rejected because the DryRun parameter was specified.
      * @sample AWSKMS.Encrypt
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Encrypt" target="_top">AWS API
      *      Documentation</a>
@@ -3435,9 +4082,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <code>KeySpec</code> parameter.
      * </p>
      * <p>
-     * To generate an SM4 data key (China Regions only), specify a <code>KeySpec</code> value of <code>AES_128</code> or
-     * <code>NumberOfBytes</code> value of <code>128</code>. The symmetric encryption key used in China Regions to
-     * encrypt your data key is an SM4 encryption key.
+     * To generate a 128-bit SM4 data key (China Regions only), specify a <code>KeySpec</code> value of
+     * <code>AES_128</code> or a <code>NumberOfBytes</code> value of <code>16</code>. The symmetric encryption key used
+     * in China Regions to encrypt your data key is an SM4 encryption key.
      * </p>
      * <p>
      * To get only an encrypted copy of the data key, use <a>GenerateDataKeyWithoutPlaintext</a>. To generate an
@@ -3453,11 +4100,18 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * in the <i>Key Management Service Developer Guide</i>.
      * </p>
      * <p>
-     * Applications in Amazon Web Services Nitro Enclaves can call this operation by using the <a
-     * href="https://github.com/aws/aws-nitro-enclaves-sdk-c">Amazon Web Services Nitro Enclaves Development Kit</a>.
-     * For information about the supporting parameters, see <a
+     * <code>GenerateDataKey</code> also supports <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon Web Services Nitro
+     * Enclaves</a>, which provide an isolated compute environment in Amazon EC2. To call <code>GenerateDataKey</code>
+     * for an Amazon Web Services Nitro enclave, use the <a
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon Web Services
+     * Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <code>Recipient</code> parameter to provide the
+     * attestation document for the enclave. <code>GenerateDataKey</code> returns a copy of the data key encrypted under
+     * the specified KMS key, as usual. But instead of a plaintext copy of the data key, the response includes a copy of
+     * the data key encrypted under the public key from the attestation document (<code>CiphertextForRecipient</code>).
+     * For information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services
-     * Nitro Enclaves use KMS</a> in the <i>Key Management Service Developer Guide</i>.
+     * Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>..
      * </p>
      * <p>
      * The KMS key that you use for this operation must be in a compatible key state. For details, see <a
@@ -3551,6 +4205,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param generateDataKeyRequest
      * @return Result of the GenerateDataKey operation returned by the service.
@@ -3561,7 +4220,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws KeyUnavailableException
      *         The request was rejected because the specified KMS key was not available. You can retry the request.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws InvalidKeyUsageException
      *         The request was rejected for one of the following reasons: </p>
      *         <ul>
@@ -3595,9 +4254,29 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         The request was rejected because the state of the specified resource is not valid for this request.
      *         </p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
+     * @throws DryRunOperationException
+     *         The request was rejected because the DryRun parameter was specified.
      * @sample AWSKMS.GenerateDataKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKey" target="_top">AWS API
      *      Documentation</a>
@@ -3651,8 +4330,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * Returns a unique asymmetric data key pair for use outside of KMS. This operation returns a plaintext public key,
      * a plaintext private key, and a copy of the private key that is encrypted under the symmetric encryption KMS key
      * you specify. You can use the data key pair to perform asymmetric cryptography and implement digital signatures
-     * outside of KMS. The bytes in the keys are random; they not related to the caller or to the KMS key that is used
-     * to encrypt the private key.
+     * outside of KMS. The bytes in the keys are random; they are not related to the caller or to the KMS key that is
+     * used to encrypt the private key.
      * </p>
      * <p>
      * You can use the public key that <code>GenerateDataKeyPair</code> returns to encrypt data or verify a signature
@@ -3684,6 +4363,21 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * is a DER-encoded X.509 SubjectPublicKeyInfo, as specified in <a href="https://tools.ietf.org/html/rfc5280">RFC
      * 5280</a>. The private key is a DER-encoded PKCS8 PrivateKeyInfo, as specified in <a
      * href="https://tools.ietf.org/html/rfc5958">RFC 5958</a>.
+     * </p>
+     * <p>
+     * <code>GenerateDataKeyPair</code> also supports <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon Web Services Nitro
+     * Enclaves</a>, which provide an isolated compute environment in Amazon EC2. To call
+     * <code>GenerateDataKeyPair</code> for an Amazon Web Services Nitro enclave, use the <a
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon Web Services
+     * Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <code>Recipient</code> parameter to provide the
+     * attestation document for the enclave. <code>GenerateDataKeyPair</code> returns the public data key and a copy of
+     * the private data key encrypted under the specified KMS key, as usual. But instead of a plaintext copy of the
+     * private data key (<code>PrivateKeyPlaintext</code>), the response includes a copy of the private data key
+     * encrypted under the public key from the attestation document (<code>CiphertextForRecipient</code>). For
+     * information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services
+     * Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>..
      * </p>
      * <p>
      * You can use an optional encryption context to add additional security to the encryption operation. If you specify
@@ -3737,6 +4431,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param generateDataKeyPairRequest
      * @return Result of the GenerateDataKeyPair operation returned by the service.
@@ -3747,7 +4446,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws KeyUnavailableException
      *         The request was rejected because the specified KMS key was not available. You can retry the request.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws InvalidKeyUsageException
      *         The request was rejected for one of the following reasons: </p>
      *         <ul>
@@ -3781,12 +4480,32 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         The request was rejected because the state of the specified resource is not valid for this request.
      *         </p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
      * @throws UnsupportedOperationException
      *         The request was rejected because a specified parameter is not supported or a specified resource is not
      *         valid for this operation.
+     * @throws DryRunOperationException
+     *         The request was rejected because the DryRun parameter was specified.
      * @sample AWSKMS.GenerateDataKeyPair
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKeyPair" target="_top">AWS API
      *      Documentation</a>
@@ -3916,6 +4635,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param generateDataKeyPairWithoutPlaintextRequest
      * @return Result of the GenerateDataKeyPairWithoutPlaintext operation returned by the service.
@@ -3926,7 +4650,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws KeyUnavailableException
      *         The request was rejected because the specified KMS key was not available. You can retry the request.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws InvalidKeyUsageException
      *         The request was rejected for one of the following reasons: </p>
      *         <ul>
@@ -3960,12 +4684,32 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         The request was rejected because the state of the specified resource is not valid for this request.
      *         </p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
      * @throws UnsupportedOperationException
      *         The request was rejected because a specified parameter is not supported or a specified resource is not
      *         valid for this operation.
+     * @throws DryRunOperationException
+     *         The request was rejected because the DryRun parameter was specified.
      * @sample AWSKMS.GenerateDataKeyPairWithoutPlaintext
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKeyPairWithoutPlaintext"
      *      target="_top">AWS API Documentation</a>
@@ -4049,6 +4793,16 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * your KMS key, use the <a>DescribeKey</a> operation.
      * </p>
      * <p>
+     * You must also specify the length of the data key. Use either the <code>KeySpec</code> or
+     * <code>NumberOfBytes</code> parameters (but not both). For 128-bit and 256-bit data keys, use the
+     * <code>KeySpec</code> parameter.
+     * </p>
+     * <p>
+     * To generate an SM4 data key (China Regions only), specify a <code>KeySpec</code> value of <code>AES_128</code> or
+     * <code>NumberOfBytes</code> value of <code>16</code>. The symmetric encryption key used in China Regions to
+     * encrypt your data key is an SM4 encryption key.
+     * </p>
+     * <p>
      * If the operation succeeds, you will find the encrypted copy of the data key in the <code>CiphertextBlob</code>
      * field.
      * </p>
@@ -4104,6 +4858,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param generateDataKeyWithoutPlaintextRequest
      * @return Result of the GenerateDataKeyWithoutPlaintext operation returned by the service.
@@ -4114,7 +4873,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws KeyUnavailableException
      *         The request was rejected because the specified KMS key was not available. You can retry the request.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws InvalidKeyUsageException
      *         The request was rejected for one of the following reasons: </p>
      *         <ul>
@@ -4148,9 +4907,29 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         The request was rejected because the state of the specified resource is not valid for this request.
      *         </p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
+     * @throws DryRunOperationException
+     *         The request was rejected because the DryRun parameter was specified.
      * @sample AWSKMS.GenerateDataKeyWithoutPlaintext
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateDataKeyWithoutPlaintext"
      *      target="_top">AWS API Documentation</a>
@@ -4205,15 +4984,16 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
     /**
      * <p>
      * Generates a hash-based message authentication code (HMAC) for a message using an HMAC KMS key and a MAC algorithm
-     * that the key supports. The MAC algorithm computes the HMAC for the message and the key as described in <a
-     * href="https://datatracker.ietf.org/doc/html/rfc2104">RFC 2104</a>.
+     * that the key supports. HMAC KMS keys and the HMAC algorithms that KMS uses conform to industry standards defined
+     * in <a href="https://datatracker.ietf.org/doc/html/rfc2104">RFC 2104</a>.
      * </p>
      * <p>
-     * You can use the HMAC that this operation generates with the <a>VerifyMac</a> operation to demonstrate that the
-     * original message has not changed. Also, because a secret key is used to create the hash, you can verify that the
-     * party that generated the hash has the required secret key. This operation is part of KMS support for HMAC KMS
-     * keys. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC keys in
-     * KMS</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+     * You can use value that GenerateMac returns in the <a>VerifyMac</a> operation to demonstrate that the original
+     * message has not changed. Also, because a secret key is used to create the hash, you can verify that the party
+     * that generated the hash has the required secret key. You can also use the raw result to implement HMAC-based
+     * algorithms such as key derivation functions. This operation is part of KMS support for HMAC KMS keys. For
+     * details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC keys in KMS</a> in
+     * the <i> <i>Key Management Service Developer Guide</i> </i>.
      * </p>
      * <note>
      * <p>
@@ -4239,6 +5019,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * <p>
      * <b>Related operations</b>: <a>VerifyMac</a>
+     * </p>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
      * </p>
      * 
      * @param generateMacRequest
@@ -4282,9 +5067,29 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         The request was rejected because the state of the specified resource is not valid for this request.
      *         </p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
+     * @throws DryRunOperationException
+     *         The request was rejected because the DryRun parameter was specified.
      * @sample AWSKMS.GenerateMac
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GenerateMac" target="_top">AWS API
      *      Documentation</a>
@@ -4342,17 +5147,21 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * no default value for string length.
      * </p>
      * <p>
-     * By default, the random byte string is generated in KMS. To generate the byte string in the CloudHSM cluster that
-     * is associated with a <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>,
-     * specify the custom key store ID.
+     * By default, the random byte string is generated in KMS. To generate the byte string in the CloudHSM cluster
+     * associated with an CloudHSM key store, use the <code>CustomKeyStoreId</code> parameter.
      * </p>
      * <p>
-     * Applications in Amazon Web Services Nitro Enclaves can call this operation by using the <a
-     * href="https://github.com/aws/aws-nitro-enclaves-sdk-c">Amazon Web Services Nitro Enclaves Development Kit</a>.
-     * For information about the supporting parameters, see <a
+     * <code>GenerateRandom</code> also supports <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon Web Services Nitro
+     * Enclaves</a>, which provide an isolated compute environment in Amazon EC2. To call <code>GenerateRandom</code>
+     * for a Nitro enclave, use the <a
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon Web Services
+     * Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <code>Recipient</code> parameter to provide the
+     * attestation document for the enclave. Instead of plaintext bytes, the response includes the plaintext bytes
+     * encrypted under the public key from the attestation document (<code>CiphertextForRecipient</code>).For
+     * information about the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How Amazon Web Services
-     * Nitro Enclaves use KMS</a> in the <i>Key Management Service Developer Guide</i>.
+     * Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
      * <p>
      * For more information about entropy and random number generation, see <a
@@ -4368,13 +5177,21 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html"
      * >kms:GenerateRandom</a> (IAM policy)
      * </p>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param generateRandomRequest
      * @return Result of the GenerateRandom operation returned by the service.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred. The request can be retried.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not supported or a specified resource is not
+     *         valid for this operation.
      * @throws CustomKeyStoreNotFoundException
      *         The request was rejected because KMS cannot find a custom key store with the specified key store name or
      *         ID.
@@ -4387,9 +5204,24 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         <ul>
      *         <li>
      *         <p>
-     *         You requested the <a>CreateKey</a> or <a>GenerateRandom</a> operation in a custom key store that is not
-     *         connected. These operations are valid only when the custom key store <code>ConnectionState</code> is
-     *         <code>CONNECTED</code>.
+     *         You requested the <a>ConnectCustomKeyStore</a> operation on a custom key store with a
+     *         <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is
+     *         valid for all other <code>ConnectionState</code> values. To reconnect a custom key store in a
+     *         <code>FAILED</code> state, disconnect it (<a>DisconnectCustomKeyStore</a>), then connect it (
+     *         <code>ConnectCustomKeyStore</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You requested the <a>CreateKey</a> operation in a custom key store that is not connected. This operations
+     *         is valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You requested the <a>DisconnectCustomKeyStore</a> operation on a custom key store with a
+     *         <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>. This operation
+     *         is valid for all other <code>ConnectionState</code> values.
      *         </p>
      *         </li>
      *         <li>
@@ -4401,9 +5233,9 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         </li>
      *         <li>
      *         <p>
-     *         You requested the <a>ConnectCustomKeyStore</a> operation on a custom key store with a
-     *         <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is
-     *         valid for all other <code>ConnectionState</code> values.
+     *         You requested the <a>GenerateRandom</a> operation in an CloudHSM key store that is not connected. This
+     *         operation is valid only when the CloudHSM key store <code>ConnectionState</code> is
+     *         <code>CONNECTED</code>.
      *         </p>
      *         </li>
      * @sample AWSKMS.GenerateRandom
@@ -4473,7 +5305,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * >kms:GetKeyPolicy</a> (key policy)
      * </p>
      * <p>
-     * <b>Related operations</b>: <a>PutKeyPolicy</a>
+     * <b>Related operations</b>: <a
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a>
+     * </p>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
      * </p>
      * 
      * @param getKeyPolicyRequest
@@ -4483,15 +5321,33 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws InvalidArnException
      *         The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred. The request can be retried.
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource is not valid for this request.</p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
      * @sample AWSKMS.GetKeyPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyPolicy" target="_top">AWS API
      *      Documentation</a>
@@ -4542,28 +5398,22 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Gets a Boolean value that indicates whether <a
+     * Provides detailed information about the rotation status for a KMS key, including whether <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic rotation of the key
-     * material</a> is enabled for the specified KMS key.
-     * </p>
-     * <p>
-     * When you enable automatic rotation for <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed KMS
-     * keys</a>, KMS rotates the key material of the KMS key one year (approximately 365 days) from the enable date and
-     * every year thereafter. You can monitor rotation of the key material for your KMS keys in CloudTrail and Amazon
-     * CloudWatch.
+     * material</a> is enabled for the specified KMS key, the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotation-period">rotation
+     * period</a>, and the next scheduled rotation date.
      * </p>
      * <p>
      * Automatic key rotation is supported only on <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#symmetric-cmks">symmetric encryption
-     * KMS keys</a>. You cannot enable or disable automatic rotation of <a
+     * KMS keys</a>. You cannot enable automatic rotation of <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric KMS keys</a>,
      * <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC KMS keys</a>, KMS keys with <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key material</a>, or
      * KMS keys in a <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>.
-     * The key rotation status of these KMS keys is always <code>false</code>. To enable or disable automatic rotation
-     * of a set of related <a
+     * To enable or disable automatic rotation of a set of related <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate"
      * >multi-Region keys</a>, set the property on the primary key..
      * </p>
@@ -4573,6 +5423,12 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services
      * managed KMS keys</a> is not configurable. KMS always rotates the key material in Amazon Web Services managed KMS
      * keys every year. The key rotation status for Amazon Web Services managed KMS keys is always <code>true</code>.
+     * </p>
+     * <p>
+     * You can perform on-demand (<a>RotateKeyOnDemand</a>) rotation of the key material in customer managed KMS keys,
+     * regardless of whether or not automatic key rotation is enabled. You can use GetKeyRotationStatus to identify the
+     * date and time that an in progress on-demand rotation was initiated. You can use <a>ListKeyRotations</a> to view
+     * the details of completed rotations.
      * </p>
      * <note>
      * <p>
@@ -4626,7 +5482,22 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <a>EnableKeyRotation</a>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <a>ListKeyRotations</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>RotateKeyOnDemand</a>
+     * </p>
+     * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param getKeyRotationStatusRequest
      * @return Result of the GetKeyRotationStatus operation returned by the service.
@@ -4635,15 +5506,33 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws InvalidArnException
      *         The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred. The request can be retried.
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource is not valid for this request.</p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
      * @throws UnsupportedOperationException
      *         The request was rejected because a specified parameter is not supported or a specified resource is not
      *         valid for this operation.
@@ -4697,26 +5586,76 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Returns the items you need to import key material into a symmetric encryption KMS key. For more information about
-     * importing key material into KMS, see <a
+     * Returns the public key and an import token you need to import or reimport key material for a KMS key.
+     * </p>
+     * <p>
+     * By default, KMS keys are created with key material that KMS generates. This operation supports <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing key material</a>, an
+     * advanced feature that lets you generate and import the cryptographic key material for a KMS key. For more
+     * information about importing key material into KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing key material</a> in
      * the <i>Key Management Service Developer Guide</i>.
      * </p>
      * <p>
-     * This operation returns a public key and an import token. Use the public key to encrypt the symmetric key
-     * material. Store the import token to send with a subsequent <a>ImportKeyMaterial</a> request.
+     * Before calling <code>GetParametersForImport</code>, use the <a>CreateKey</a> operation with an
+     * <code>Origin</code> value of <code>EXTERNAL</code> to create a KMS key with no key material. You can import key
+     * material for a symmetric encryption KMS key, HMAC KMS key, asymmetric encryption KMS key, or asymmetric signing
+     * KMS key. You can also import key material into a <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">multi-Region key</a>
+     * of any supported type. However, you can't import key material into a KMS key in a <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>.
+     * You can also use <code>GetParametersForImport</code> to get a public key and import token to <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html#reimport-key-material">reimport
+     * the original key material</a> into a KMS key whose key material expired or was deleted.
      * </p>
      * <p>
-     * You must specify the key ID of the symmetric encryption KMS key into which you will import key material. This KMS
-     * key's <code>Origin</code> must be <code>EXTERNAL</code>. You must also specify the wrapping algorithm and type of
-     * wrapping key (public key) that you will use to encrypt the key material. You cannot perform this operation on an
-     * asymmetric KMS key, an HMAC KMS key, or on any KMS key in a different Amazon Web Services account.
+     * <code>GetParametersForImport</code> returns the items that you need to import your key material.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The public key (or "wrapping key") of an asymmetric key pair that KMS generates.
      * </p>
      * <p>
-     * To import key material, you must use the public key and import token from the same response. These items are
-     * valid for 24 hours. The expiration date and time appear in the <code>GetParametersForImport</code> response. You
-     * cannot use an expired token in an <a>ImportKeyMaterial</a> request. If your key and token expire, send another
-     * <code>GetParametersForImport</code> request.
+     * You will use this public key to encrypt ("wrap") your key material while it's in transit to KMS.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A import token that ensures that KMS can decrypt your key material and associate it with the correct KMS key.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The public key and its import token are permanently linked and must be used together. Each public key and import
+     * token set is valid for 24 hours. The expiration date and time appear in the <code>ParametersValidTo</code> field
+     * in the <code>GetParametersForImport</code> response. You cannot use an expired public key or import token in an
+     * <a>ImportKeyMaterial</a> request. If your key and token expire, send another <code>GetParametersForImport</code>
+     * request.
+     * </p>
+     * <p>
+     * <code>GetParametersForImport</code> requires the following information:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The key ID of the KMS key for which you are importing the key material.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The key spec of the public key ("wrapping key") that you will use to encrypt your key material during import.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The wrapping algorithm that you will use with the public key to encrypt your key material.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can use the same or a different public key spec and wrapping algorithm each time you import or reimport the
+     * same key material.
      * </p>
      * <p>
      * The KMS key that you use for this operation must be in a compatible key state. For details, see <a
@@ -4747,6 +5686,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param getParametersForImportRequest
      * @return Result of the GetParametersForImport operation returned by the service.
@@ -4756,7 +5700,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         The request was rejected because a specified parameter is not supported or a specified resource is not
      *         valid for this operation.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource could not be found.
      * @throws KMSInternalException
@@ -4764,9 +5708,27 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource is not valid for this request.</p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
      * @sample AWSKMS.GetParametersForImport
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetParametersForImport" target="_top">AWS API
      *      Documentation</a>
@@ -4833,13 +5795,6 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * not effective outside of KMS.
      * </p>
      * <p>
-     * To verify a signature outside of KMS with an SM2 public key (China Regions only), you must specify the
-     * distinguishing ID. By default, KMS uses <code>1234567812345678</code> as the distinguishing ID. For more
-     * information, see <a href=
-     * "https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification"
-     * >Offline verification with SM2 key pairs</a>.
-     * </p>
-     * <p>
      * To help you use the public key safely outside of KMS, <code>GetPublicKey</code> returns important information
      * about the public key in the response, including:
      * </p>
@@ -4877,6 +5832,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * operation.
      * </p>
      * <p>
+     * To verify a signature outside of KMS with an SM2 public key (China Regions only), you must specify the
+     * distinguishing ID. By default, KMS uses <code>1234567812345678</code> as the distinguishing ID. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification"
+     * >Offline verification with SM2 key pairs</a>.
+     * </p>
+     * <p>
      * The KMS key that you use for this operation must be in a compatible key state. For details, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the
      * <i>Key Management Service Developer Guide</i>.
@@ -4893,6 +5855,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <p>
      * <b>Related operations</b>: <a>CreateKey</a>
      * </p>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param getPublicKeyRequest
      * @return Result of the GetPublicKey operation returned by the service.
@@ -4903,7 +5870,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws KeyUnavailableException
      *         The request was rejected because the specified KMS key was not available. You can retry the request.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws UnsupportedOperationException
      *         The request was rejected because a specified parameter is not supported or a specified resource is not
      *         valid for this operation.
@@ -4942,9 +5909,27 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         The request was rejected because the state of the specified resource is not valid for this request.
      *         </p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
      * @sample AWSKMS.GetPublicKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetPublicKey" target="_top">AWS API
      *      Documentation</a>
@@ -4995,39 +5980,88 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Imports key material into an existing symmetric encryption KMS key that was created without key material. After
-     * you successfully import key material into a KMS key, you can <a
+     * Imports or reimports key material into an existing KMS key that was created without key material.
+     * <code>ImportKeyMaterial</code> also sets the expiration model and expiration date of the imported key material.
+     * </p>
+     * <p>
+     * By default, KMS keys are created with key material that KMS generates. This operation supports <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing key material</a>, an
+     * advanced feature that lets you generate and import the cryptographic key material for a KMS key. For more
+     * information about importing key material into KMS, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing key material</a> in
+     * the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * After you successfully import key material into a KMS key, you can <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html#reimport-key-material">reimport
-     * the same key material</a> into that KMS key, but you cannot import different key material.
+     * the same key material</a> into that KMS key, but you cannot import different key material. You might reimport key
+     * material to replace key material that expired or key material that you deleted. You might also reimport key
+     * material to change the expiration model or expiration date of the key material.
      * </p>
      * <p>
-     * You cannot perform this operation on an asymmetric KMS key, an HMAC KMS key, or on any KMS key in a different
-     * Amazon Web Services account. For more information about creating KMS keys with no key material and then importing
-     * key material, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
-     * Key Material</a> in the <i>Key Management Service Developer Guide</i>.
+     * Each time you import key material into KMS, you can determine whether (<code>ExpirationModel</code>) and when (
+     * <code>ValidTo</code>) the key material expires. To change the expiration of your key material, you must import it
+     * again, either by calling <code>ImportKeyMaterial</code> or using the <a href=
+     * "kms/latest/developerguide/importing-keys-import-key-material.html#importing-keys-import-key-material-console"
+     * >import features</a> of the KMS console.
      * </p>
      * <p>
-     * Before using this operation, call <a>GetParametersForImport</a>. Its response includes a public key and an import
-     * token. Use the public key to encrypt the key material. Then, submit the import token from the same
-     * <code>GetParametersForImport</code> response.
-     * </p>
-     * <p>
-     * When calling this operation, you must specify the following values:
+     * Before calling <code>ImportKeyMaterial</code>:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The key ID or key ARN of a KMS key with no key material. Its <code>Origin</code> must be <code>EXTERNAL</code>.
+     * Create or identify a KMS key with no key material. The KMS key must have an <code>Origin</code> value of
+     * <code>EXTERNAL</code>, which indicates that the KMS key is designed for imported key material.
      * </p>
      * <p>
-     * To create a KMS key with no key material, call <a>CreateKey</a> and set the value of its <code>Origin</code>
-     * parameter to <code>EXTERNAL</code>. To get the <code>Origin</code> of a KMS key, call <a>DescribeKey</a>.)
+     * To create an new KMS key for imported key material, call the <a>CreateKey</a> operation with an
+     * <code>Origin</code> value of <code>EXTERNAL</code>. You can create a symmetric encryption KMS key, HMAC KMS key,
+     * asymmetric encryption KMS key, or asymmetric signing KMS key. You can also import key material into a <a
+     * href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region key</a> of any supported type.
+     * However, you can't import key material into a KMS key in a <a
+     * href="kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The encrypted key material. To get the public key to encrypt the key material, call
-     * <a>GetParametersForImport</a>.
+     * Use the <a>DescribeKey</a> operation to verify that the <code>KeyState</code> of the KMS key is
+     * <code>PendingImport</code>, which indicates that the KMS key has no key material.
+     * </p>
+     * <p>
+     * If you are reimporting the same key material into an existing KMS key, you might need to call the
+     * <a>DeleteImportedKeyMaterial</a> to delete its existing key material.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Call the <a>GetParametersForImport</a> operation to get a public key and import token set for importing key
+     * material.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the public key in the <a>GetParametersForImport</a> response to encrypt your key material.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Then, in an <code>ImportKeyMaterial</code> request, you submit your encrypted key material and import token. When
+     * calling this operation, you must specify the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The key ID or key ARN of the KMS key to associate with the imported key material. Its <code>Origin</code> must be
+     * <code>EXTERNAL</code> and its <code>KeyState</code> must be <code>PendingImport</code>. You cannot perform this
+     * operation on a KMS key in a <a href="kms/latest/developerguide/custom-key-store-overview.html">custom key
+     * store</a>, or on a KMS key in a different Amazon Web Services account. To get the <code>Origin</code> and
+     * <code>KeyState</code> of a KMS key, call <a>DescribeKey</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The encrypted key material.
      * </p>
      * </li>
      * <li>
@@ -5038,16 +6072,22 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </li>
      * <li>
      * <p>
-     * Whether the key material expires and if so, when. If you set an expiration date, KMS deletes the key material
-     * from the KMS key on the specified date, and the KMS key becomes unusable. To use the KMS key again, you must
-     * reimport the same key material. The only way to change an expiration date is by reimporting the same key material
-     * and specifying a new expiration date.
+     * Whether the key material expires (<code>ExpirationModel</code>) and, if so, when (<code>ValidTo</code>). For help
+     * with this choice, see <a href=
+     * "https://docs.aws.amazon.com/en_us/kms/latest/developerguide/importing-keys.html#importing-keys-expiration"
+     * >Setting an expiration time</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * If you set an expiration date, KMS deletes the key material from the KMS key on the specified date, making the
+     * KMS key unusable. To use the KMS key in cryptographic operations again, you must reimport the same key material.
+     * However, you can delete and reimport the key material at any time, including before the key material expires.
+     * Each time you reimport, you can eliminate or reset the expiration time.
      * </p>
      * </li>
      * </ul>
      * <p>
      * When this operation is successful, the key state of the KMS key changes from <code>PendingImport</code> to
-     * <code>Enabled</code>, and you can use the KMS key.
+     * <code>Enabled</code>, and you can use the KMS key in cryptographic operations.
      * </p>
      * <p>
      * If this operation fails, use the exception to help determine the problem. If the error is related to the key
@@ -5085,6 +6125,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param importKeyMaterialRequest
      * @return Result of the ImportKeyMaterial operation returned by the service.
@@ -5094,7 +6139,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         The request was rejected because a specified parameter is not supported or a specified resource is not
      *         valid for this operation.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource could not be found.
      * @throws KMSInternalException
@@ -5102,14 +6147,31 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource is not valid for this request.</p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
      * @throws InvalidCiphertextException
      *         From the <a>Decrypt</a> or <a>ReEncrypt</a> operation, the request was rejected because the specified
      *         ciphertext, or additional authenticated data incorporated into the ciphertext, such as the encryption
-     *         context, is corrupted, missing, or otherwise invalid.
-     *         </p>
+     *         context, is corrupted, missing, or otherwise invalid.</p>
      *         <p>
      *         From the <a>ImportKeyMaterial</a> operation, the request was rejected because KMS could not decrypt the
      *         encrypted (wrapped) key material.
@@ -5226,11 +6288,16 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param listAliasesRequest
      * @return Result of the ListAliases operation returned by the service.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws InvalidMarkerException
      *         The request was rejected because the marker that specifies where pagination should next begin is not
      *         valid.
@@ -5350,13 +6417,18 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param listGrantsRequest
      * @return Result of the ListGrants operation returned by the service.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource could not be found.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws InvalidMarkerException
      *         The request was rejected because the marker that specifies where pagination should next begin is not
      *         valid.
@@ -5369,9 +6441,27 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource is not valid for this request.</p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
      * @sample AWSKMS.ListGrants
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListGrants" target="_top">AWS API
      *      Documentation</a>
@@ -5445,10 +6535,15 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </li>
      * <li>
      * <p>
-     * <a>PutKeyPolicy</a>
+     * <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a>
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param listKeyPoliciesRequest
      * @return Result of the ListKeyPolicies operation returned by the service.
@@ -5457,15 +6552,33 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws InvalidArnException
      *         The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred. The request can be retried.
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource is not valid for this request.</p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
      * @sample AWSKMS.ListKeyPolicies
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListKeyPolicies" target="_top">AWS API
      *      Documentation</a>
@@ -5516,6 +6629,145 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
+     * Returns information about all completed key material rotations for the specified KMS key.
+     * </p>
+     * <p>
+     * You must specify the KMS key in all requests. You can refine the key rotations list by limiting the number of
+     * rotations returned.
+     * </p>
+     * <p>
+     * For detailed information about automatic and on-demand key rotations, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">Rotating KMS keys</a> in the <i>Key
+     * Management Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a different Amazon Web Services
+     * account.
+     * </p>
+     * <p>
+     * <b>Required permissions</b>: <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html"
+     * >kms:ListKeyRotations</a> (key policy)
+     * </p>
+     * <p>
+     * <b>Related operations:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>EnableKeyRotation</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DisableKeyRotation</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>GetKeyRotationStatus</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>RotateKeyOnDemand</a>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
+     * 
+     * @param listKeyRotationsRequest
+     * @return Result of the ListKeyRotations operation returned by the service.
+     * @throws NotFoundException
+     *         The request was rejected because the specified entity or resource could not be found.
+     * @throws InvalidArnException
+     *         The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.
+     * @throws InvalidMarkerException
+     *         The request was rejected because the marker that specifies where pagination should next begin is not
+     *         valid.
+     * @throws KMSInternalException
+     *         The request was rejected because an internal exception occurred. The request can be retried.
+     * @throws KMSInvalidStateException
+     *         The request was rejected because the state of the specified resource is not valid for this request.</p>
+     *         <p>
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
+     *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not supported or a specified resource is not
+     *         valid for this operation.
+     * @sample AWSKMS.ListKeyRotations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListKeyRotations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListKeyRotationsResult listKeyRotations(ListKeyRotationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListKeyRotations(request);
+    }
+
+    @SdkInternalApi
+    final ListKeyRotationsResult executeListKeyRotations(ListKeyRotationsRequest listKeyRotationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listKeyRotationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListKeyRotationsRequest> request = null;
+        Response<ListKeyRotationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListKeyRotationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listKeyRotationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListKeyRotations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListKeyRotationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListKeyRotationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets a list of all KMS keys in the caller's Amazon Web Services account and Region.
      * </p>
      * <p>
@@ -5552,11 +6804,16 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param listKeysRequest
      * @return Result of the ListKeys operation returned by the service.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred. The request can be retried.
      * @throws InvalidMarkerException
@@ -5659,6 +6916,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param listResourceTagsRequest
      * @return Result of the ListResourceTags operation returned by the service.
@@ -5737,16 +6999,25 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-grants.html">Programming grants</a>.
      * </p>
      * <p>
-     * <b>Cross-account use</b>: You must specify a principal in your Amazon Web Services account. However, this
-     * operation can return grants in any Amazon Web Services account. You do not need
-     * <code>kms:ListRetirableGrants</code> permission (or any other additional permission) in any Amazon Web Services
-     * account other than your own.
+     * <b>Cross-account use</b>: You must specify a principal in your Amazon Web Services account. This operation
+     * returns a list of grants where the retiring principal specified in the <code>ListRetirableGrants</code> request
+     * is the same retiring principal on the grant. This can include grants on KMS keys owned by other Amazon Web
+     * Services accounts, but you do not need <code>kms:ListRetirableGrants</code> permission (or any other additional
+     * permission) in any Amazon Web Services account other than your own.
      * </p>
      * <p>
      * <b>Required permissions</b>: <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html"
      * >kms:ListRetirableGrants</a> (IAM policy) in your Amazon Web Services account.
      * </p>
+     * <note>
+     * <p>
+     * KMS authorizes <code>ListRetirableGrants</code> requests by evaluating the caller account's
+     * kms:ListRetirableGrants permissions. The authorized resource in <code>ListRetirableGrants</code> calls is the
+     * retiring principal specified in the request. KMS does not evaluate the caller's permissions to verify their
+     * access to any KMS keys or grants that might be returned by the <code>ListRetirableGrants</code> call.
+     * </p>
+     * </note>
      * <p>
      * <b>Related operations:</b>
      * </p>
@@ -5772,11 +7043,16 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param listRetirableGrantsRequest
      * @return Result of the ListRetirableGrants operation returned by the service.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws InvalidMarkerException
      *         The request was rejected because the marker that specifies where pagination should next begin is not
      *         valid.
@@ -5860,6 +7136,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <p>
      * <b>Related operations</b>: <a>GetKeyPolicy</a>
      * </p>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param putKeyPolicyRequest
      * @return Result of the PutKeyPolicy operation returned by the service.
@@ -5870,7 +7151,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws MalformedPolicyDocumentException
      *         The request was rejected because the specified policy is not syntactically or semantically correct.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws UnsupportedOperationException
      *         The request was rejected because a specified parameter is not supported or a specified resource is not
      *         valid for this operation.
@@ -5883,9 +7164,27 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource is not valid for this request.</p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
      * @sample AWSKMS.PutKeyPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/PutKeyPolicy" target="_top">AWS API
      *      Documentation</a>
@@ -5979,7 +7278,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </li>
      * <li>
      * <p>
-     * To reencrypt the data, you must use the <code>DestinationKeyId</code> parameter specify the KMS key that
+     * To reencrypt the data, you must use the <code>DestinationKeyId</code> parameter to specify the KMS key that
      * re-encrypts the data after it is decrypted. If the destination KMS key is an asymmetric KMS key, you must also
      * provide the encryption algorithm. The algorithm that you choose must be compatible with the KMS key.
      * </p>
@@ -6058,6 +7357,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param reEncryptRequest
      * @return Result of the ReEncrypt operation returned by the service.
@@ -6079,7 +7383,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         a <a>Decrypt</a> request and the <code>SourceKeyId</code> in a <a>ReEncrypt</a> request must identify the
      *         same KMS key that was used to encrypt the ciphertext.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws InvalidKeyUsageException
      *         The request was rejected for one of the following reasons:
      *         </p>
@@ -6114,9 +7418,29 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         The request was rejected because the state of the specified resource is not valid for this request.
      *         </p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
+     * @throws DryRunOperationException
+     *         The request was rejected because the DryRun parameter was specified.
      * @sample AWSKMS.ReEncrypt
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ReEncrypt" target="_top">AWS API
      *      Documentation</a>
@@ -6224,8 +7548,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <p>
      * If you replicate a multi-Region primary key with imported key material, the replica key is created with no key
      * material. You must import the same key material that you imported into the primary key. For details, see <a
-     * href="kms/latest/developerguide/multi-region-keys-import.html">Importing key material into multi-Region keys</a>
-     * in the <i>Key Management Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-import.html">Importing key material
+     * into multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
      * <p>
      * To convert a replica key to a primary key, use the <a>UpdatePrimaryRegion</a> operation.
@@ -6276,6 +7600,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param replicateKeyRequest
      * @return Result of the ReplicateKey operation returned by the service.
@@ -6288,9 +7617,27 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource is not valid for this request.</p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred. The request can be retried.
      * @throws LimitExceededException
@@ -6379,7 +7726,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <b>Cross-account use</b>: Yes. You can retire a grant on a KMS key in a different Amazon Web Services account.
      * </p>
      * <p>
-     * <b>Required permissions:</b>:Permission to retire a grant is determined primarily by the grant. For details, see
+     * <b>Required permissions</b>: Permission to retire a grant is determined primarily by the grant. For details, see
      * <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring and
      * revoking grants</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
@@ -6408,6 +7755,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param retireGrantRequest
      * @return Result of the RetireGrant operation returned by the service.
@@ -6420,15 +7772,35 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource could not be found.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred. The request can be retried.
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource is not valid for this request.</p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
+     * @throws DryRunOperationException
+     *         The request was rejected because the DryRun parameter was specified.
      * @sample AWSKMS.RetireGrant
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RetireGrant" target="_top">AWS API
      *      Documentation</a>
@@ -6486,8 +7858,8 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <p>
      * Deletes the specified grant. You revoke a grant to terminate the permissions that the grant allows. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/managing-grants.html#grant-delete">Retiring and
-     * revoking grants</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring and revoking
+     * grants</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
      * </p>
      * <p>
      * When you create, retire, or revoke a grant, there might be a brief delay, usually less than five minutes, until
@@ -6536,13 +7908,18 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param revokeGrantRequest
      * @return Result of the RevokeGrant operation returned by the service.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource could not be found.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws InvalidArnException
      *         The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.
      * @throws InvalidGrantIdException
@@ -6552,9 +7929,29 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource is not valid for this request.</p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
+     * @throws DryRunOperationException
+     *         The request was rejected because the DryRun parameter was specified.
      * @sample AWSKMS.RevokeGrant
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RevokeGrant" target="_top">AWS API
      *      Documentation</a>
@@ -6605,6 +8002,190 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
+     * Immediately initiates rotation of the key material of the specified symmetric encryption KMS key.
+     * </p>
+     * <p>
+     * You can perform <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotating-keys-on-demand">on-demand
+     * rotation</a> of the key material in customer managed KMS keys, regardless of whether or not <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotating-keys-enable-disable"
+     * >automatic key rotation</a> is enabled. On-demand rotations do not change existing automatic rotation schedules.
+     * For example, consider a KMS key that has automatic key rotation enabled with a rotation period of 730 days. If
+     * the key is scheduled to automatically rotate on April 14, 2024, and you perform an on-demand rotation on April
+     * 10, 2024, the key will automatically rotate, as scheduled, on April 14, 2024 and every 730 days thereafter.
+     * </p>
+     * <note>
+     * <p>
+     * You can perform on-demand key rotation a <b>maximum of 10 times</b> per KMS key. You can use the KMS console to
+     * view the number of remaining on-demand rotations available for a KMS key.
+     * </p>
+     * </note>
+     * <p>
+     * You can use <a>GetKeyRotationStatus</a> to identify any in progress on-demand rotations. You can use
+     * <a>ListKeyRotations</a> to identify the date that completed on-demand rotations were performed. You can monitor
+     * rotation of the key material for your KMS keys in CloudTrail and Amazon CloudWatch.
+     * </p>
+     * <p>
+     * On-demand key rotation is supported only on <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#symmetric-cmks">symmetric encryption
+     * KMS keys</a>. You cannot perform on-demand rotation of <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">asymmetric KMS keys</a>,
+     * <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC KMS keys</a>, KMS keys with <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key material</a>, or
+     * KMS keys in a <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>.
+     * To perform on-demand rotation of a set of related <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-manage.html#multi-region-rotate"
+     * >multi-Region keys</a>, invoke the on-demand rotation on the primary key.
+     * </p>
+     * <p>
+     * You cannot initiate on-demand rotation of <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services
+     * managed KMS keys</a>. KMS always rotates the key material of Amazon Web Services managed keys every year.
+     * Rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-owned-cmk">Amazon
+     * Web Services owned KMS keys</a> is managed by the Amazon Web Services service that owns the key.
+     * </p>
+     * <p>
+     * The KMS key that you use for this operation must be in a compatible key state. For details, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in the
+     * <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * <b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a different Amazon Web Services
+     * account.
+     * </p>
+     * <p>
+     * <b>Required permissions</b>: <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html"
+     * >kms:RotateKeyOnDemand</a> (key policy)
+     * </p>
+     * <p>
+     * <b>Related operations:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a>EnableKeyRotation</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DisableKeyRotation</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>GetKeyRotationStatus</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ListKeyRotations</a>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
+     * 
+     * @param rotateKeyOnDemandRequest
+     * @return Result of the RotateKeyOnDemand operation returned by the service.
+     * @throws NotFoundException
+     *         The request was rejected because the specified entity or resource could not be found.
+     * @throws DisabledException
+     *         The request was rejected because the specified KMS key is not enabled.
+     * @throws InvalidArnException
+     *         The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.
+     * @throws DependencyTimeoutException
+     *         The system timed out while trying to fulfill the request. You can retry the request.
+     * @throws KMSInternalException
+     *         The request was rejected because an internal exception occurred. The request can be retried.
+     * @throws KMSInvalidStateException
+     *         The request was rejected because the state of the specified resource is not valid for this request.</p>
+     *         <p>
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
+     *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not supported or a specified resource is not
+     *         valid for this operation.
+     * @throws LimitExceededException
+     *         The request was rejected because a quota was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key
+     *         Management Service Developer Guide</i>.
+     * @throws ConflictException
+     *         The request was rejected because an automatic rotation of this key is currently in progress or scheduled
+     *         to begin within the next 20 minutes.
+     * @sample AWSKMS.RotateKeyOnDemand
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/RotateKeyOnDemand" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public RotateKeyOnDemandResult rotateKeyOnDemand(RotateKeyOnDemandRequest request) {
+        request = beforeClientExecution(request);
+        return executeRotateKeyOnDemand(request);
+    }
+
+    @SdkInternalApi
+    final RotateKeyOnDemandResult executeRotateKeyOnDemand(RotateKeyOnDemandRequest rotateKeyOnDemandRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(rotateKeyOnDemandRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RotateKeyOnDemandRequest> request = null;
+        Response<RotateKeyOnDemandResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RotateKeyOnDemandRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(rotateKeyOnDemandRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RotateKeyOnDemand");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RotateKeyOnDemandResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RotateKeyOnDemandResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Schedules the deletion of a KMS key. By default, KMS applies a waiting period of 30 days, but you can specify a
      * waiting period of 7-30 days. When this operation is successful, the key state of the KMS key changes to
      * <code>PendingDeletion</code> and the key can't be used in any cryptographic operations. It remains in this state
@@ -6615,19 +8196,13 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <important>
      * <p>
      * Deleting a KMS key is a destructive and potentially dangerous operation. When a KMS key is deleted, all data that
-     * was encrypted under the KMS key is unrecoverable. (The only exception is a multi-Region replica key.) To prevent
-     * the use of a KMS key without deleting it, use <a>DisableKey</a>.
+     * was encrypted under the KMS key is unrecoverable. (The only exception is a <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-delete.html">multi-Region replica
+     * key</a>, or an <a href="kms/latest/developerguide/importing-keys-managing.html#import-delete-key">asymmetric or
+     * HMAC KMS key with imported key material</a>.) To prevent the use of a KMS key without deleting it, use
+     * <a>DisableKey</a>.
      * </p>
      * </important>
-     * <p>
-     * If you schedule deletion of a KMS key from a <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>,
-     * when the waiting period expires, <code>ScheduleKeyDeletion</code> deletes the KMS key from KMS. Then KMS makes a
-     * best effort to delete the key material from the associated CloudHSM cluster. However, you might need to manually
-     * <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
-     * the orphaned key material</a> from the cluster and its backups.
-     * </p>
      * <p>
      * You can schedule the deletion of a multi-Region primary key and its replica keys at any time. However, KMS will
      * not delete a multi-Region primary key with existing replica keys. If you schedule the deletion of a primary key
@@ -6637,6 +8212,18 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * period (<code>PendingWindowInDays</code>) begins. For details, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-delete.html">Deleting multi-Region
      * keys</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * When KMS <a href="https://docs.aws.amazon.com/kms/latest/developerguide/delete-cmk-keystore.html">deletes a KMS
+     * key from an CloudHSM key store</a>, it makes a best effort to delete the associated key material from the
+     * associated CloudHSM cluster. However, you might need to manually <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
+     * the orphaned key material</a> from the cluster and its backups. <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/delete-xks-key.html">Deleting a KMS key from an
+     * external key store</a> has no effect on the associated external key. However, for both types of custom key
+     * stores, deleting a KMS key is destructive and irreversible. You cannot decrypt ciphertext encrypted under the KMS
+     * key by using only its associated external key or CloudHSM key. Also, you cannot recreate a KMS key in an external
+     * key store by creating a new KMS key with the same key material.
      * </p>
      * <p>
      * For more information about scheduling a KMS key for deletion, see <a
@@ -6670,6 +8257,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param scheduleKeyDeletionRequest
      * @return Result of the ScheduleKeyDeletion operation returned by the service.
@@ -6678,15 +8270,33 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws InvalidArnException
      *         The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred. The request can be retried.
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource is not valid for this request.</p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
      * @sample AWSKMS.ScheduleKeyDeletion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ScheduleKeyDeletion" target="_top">AWS API
      *      Documentation</a>
@@ -6810,6 +8420,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <p>
      * <b>Related operations</b>: <a>Verify</a>
      * </p>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param signRequest
      * @return Result of the Sign operation returned by the service.
@@ -6820,7 +8435,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws KeyUnavailableException
      *         The request was rejected because the specified KMS key was not available. You can retry the request.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws InvalidKeyUsageException
      *         The request was rejected for one of the following reasons: </p>
      *         <ul>
@@ -6854,9 +8469,29 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         The request was rejected because the state of the specified resource is not valid for this request.
      *         </p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
+     * @throws DryRunOperationException
+     *         The request was rejected because the DryRun parameter was specified.
      * @sample AWSKMS.Sign
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Sign" target="_top">AWS API Documentation</a>
      */
@@ -6912,7 +8547,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <note>
      * <p>
      * Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in KMS</a> in the <i>Key Management
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management
      * Service Developer Guide</i>.
      * </p>
      * </note>
@@ -6981,6 +8616,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
@@ -6993,9 +8633,27 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource is not valid for this request.</p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
      * @throws LimitExceededException
      *         The request was rejected because a quota was exceeded. For more information, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html">Quotas</a> in the <i>Key
@@ -7059,7 +8717,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <note>
      * <p>
      * Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in KMS</a> in the <i>Key Management
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management
      * Service Developer Guide</i>.
      * </p>
      * </note>
@@ -7114,6 +8772,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
@@ -7126,9 +8789,27 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource is not valid for this request.</p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
      * @throws TagException
      *         The request was rejected because one or more tags are not valid.
      * @sample AWSKMS.UntagResource
@@ -7188,15 +8869,15 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <note>
      * <p>
      * Adding, deleting, or updating an alias can allow or deny permission to the KMS key. For details, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC in KMS</a> in the <i>Key Management
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for KMS</a> in the <i>Key Management
      * Service Developer Guide</i>.
      * </p>
      * </note>
      * <p>
-     * The current and new KMS key must be the same type (both symmetric or both asymmetric), and they must have the
-     * same key usage (<code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>). This restriction prevents errors in
-     * code that uses aliases. If you must assign an alias to a different type of KMS key, use <a>DeleteAlias</a> to
-     * delete the old alias and <a>CreateAlias</a> to create a new alias.
+     * The current and new KMS key must be the same type (both symmetric or both asymmetric or both HMAC), and they must
+     * have the same key usage. This restriction prevents errors in code that uses aliases. If you must assign an alias
+     * to a different type of KMS key, use <a>DeleteAlias</a> to delete the old alias and <a>CreateAlias</a> to create a
+     * new alias.
      * </p>
      * <p>
      * You cannot use <code>UpdateAlias</code> to change an alias name. To change an alias name, use <a>DeleteAlias</a>
@@ -7267,11 +8948,16 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param updateAliasRequest
      * @return Result of the UpdateAlias operation returned by the service.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws NotFoundException
      *         The request was rejected because the specified entity or resource could not be found.
      * @throws KMSInternalException
@@ -7283,9 +8969,27 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource is not valid for this request.</p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
      * @sample AWSKMS.UpdateAlias
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateAlias" target="_top">AWS API
      *      Documentation</a>
@@ -7336,54 +9040,78 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
 
     /**
      * <p>
-     * Changes the properties of a custom key store. Use the <code>CustomKeyStoreId</code> parameter to identify the
-     * custom key store you want to edit. Use the remaining parameters to change the properties of the custom key store.
+     * Changes the properties of a custom key store. You can use this operation to change the properties of an CloudHSM
+     * key store or an external key store.
      * </p>
      * <p>
-     * You can only update a custom key store that is disconnected. To disconnect the custom key store, use
-     * <a>DisconnectCustomKeyStore</a>. To reconnect the custom key store after the update completes, use
-     * <a>ConnectCustomKeyStore</a>. To find the connection state of a custom key store, use the
-     * <a>DescribeCustomKeyStores</a> operation.
-     * </p>
-     * <p>
-     * The <code>CustomKeyStoreId</code> parameter is required in all commands. Use the other parameters of
-     * <code>UpdateCustomKeyStore</code> to edit your key store settings.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Use the <code>NewCustomKeyStoreName</code> parameter to change the friendly name of the custom key store to the
-     * value that you specify.
-     * </p>
-     * <p>
-     * </p></li>
-     * <li>
-     * <p>
-     * Use the <code>KeyStorePassword</code> parameter tell KMS the current password of the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
-     * <code>kmsuser</code> crypto user (CU)</a> in the associated CloudHSM cluster. You can use this parameter to <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-password">fix
-     * connection failures</a> that occur when KMS cannot log into the associated cluster because the
-     * <code>kmsuser</code> password has changed. This value does not change the password in the CloudHSM cluster.
-     * </p>
-     * <p>
-     * </p></li>
-     * <li>
-     * <p>
-     * Use the <code>CloudHsmClusterId</code> parameter to associate the custom key store with a different, but related,
-     * CloudHSM cluster. You can use this parameter to repair a custom key store if its CloudHSM cluster becomes
-     * corrupted or is deleted, or when you need to create or restore a cluster from a backup.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If the operation succeeds, it returns a JSON object with no properties.
+     * Use the required <code>CustomKeyStoreId</code> parameter to identify the custom key store. Use the remaining
+     * optional parameters to change its properties. This operation does not return any property values. To verify the
+     * updated property values, use the <a>DescribeCustomKeyStores</a> operation.
      * </p>
      * <p>
      * This operation is part of the <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store
-     * feature</a> feature in KMS, which combines the convenience and extensive integration of KMS with the isolation
-     * and control of a single-tenant key store.
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key stores</a>
+     * feature in KMS, which combines the convenience and extensive integration of KMS with the isolation and control of
+     * a key store that you own and manage.
+     * </p>
+     * <important>
+     * <p>
+     * When updating the properties of an external key store, verify that the updated settings connect your key store,
+     * via the external key store proxy, to the same external key manager as the previous settings, or to a backup or
+     * snapshot of the external key manager with the same cryptographic keys. If the updated connection settings fail,
+     * you can fix them and retry, although an extended delay might disrupt Amazon Web Services services. However, if
+     * KMS permanently loses its access to cryptographic keys, ciphertext encrypted under those keys is unrecoverable.
+     * </p>
+     * </important> <note>
+     * <p>
+     * For external key stores:
+     * </p>
+     * <p>
+     * Some external key managers provide a simpler method for updating an external key store. For details, see your
+     * external key manager documentation.
+     * </p>
+     * <p>
+     * When updating an external key store in the KMS console, you can upload a JSON-based proxy configuration file with
+     * the desired values. You cannot upload the proxy configuration file to the <code>UpdateCustomKeyStore</code>
+     * operation. However, you can use the file to help you determine the correct values for the
+     * <code>UpdateCustomKeyStore</code> parameters.
+     * </p>
+     * </note>
+     * <p>
+     * For an CloudHSM key store, you can use this operation to change the custom key store friendly name (
+     * <code>NewCustomKeyStoreName</code>), to tell KMS about a change to the <code>kmsuser</code> crypto user password
+     * (<code>KeyStorePassword</code>), or to associate the custom key store with a different, but related, CloudHSM
+     * cluster (<code>CloudHsmClusterId</code>). To update any property of an CloudHSM key store, the
+     * <code>ConnectionState</code> of the CloudHSM key store must be <code>DISCONNECTED</code>.
+     * </p>
+     * <p>
+     * For an external key store, you can use this operation to change the custom key store friendly name (
+     * <code>NewCustomKeyStoreName</code>), or to tell KMS about a change to the external key store proxy authentication
+     * credentials (<code>XksProxyAuthenticationCredential</code>), connection method (<code>XksProxyConnectivity</code>
+     * ), external proxy endpoint (<code>XksProxyUriEndpoint</code>) and path (<code>XksProxyUriPath</code>). For
+     * external key stores with an <code>XksProxyConnectivity</code> of <code>VPC_ENDPOINT_SERVICE</code>, you can also
+     * update the Amazon VPC endpoint service name (<code>XksProxyVpcEndpointServiceName</code>). To update most
+     * properties of an external key store, the <code>ConnectionState</code> of the external key store must be
+     * <code>DISCONNECTED</code>. However, you can update the <code>CustomKeyStoreName</code>,
+     * <code>XksProxyAuthenticationCredential</code>, and <code>XksProxyUriPath</code> of an external key store when it
+     * is in the CONNECTED or DISCONNECTED state.
+     * </p>
+     * <p>
+     * If your update requires a <code>DISCONNECTED</code> state, before using <code>UpdateCustomKeyStore</code>, use
+     * the <a>DisconnectCustomKeyStore</a> operation to disconnect the custom key store. After the
+     * <code>UpdateCustomKeyStore</code> operation completes, use the <a>ConnectCustomKeyStore</a> to reconnect the
+     * custom key store. To find the <code>ConnectionState</code> of the custom key store, use the
+     * <a>DescribeCustomKeyStores</a> operation.
+     * </p>
+     * <p>
+     * </p>
+     * <p>
+     * Before updating the custom key store, verify that the new values allow KMS to connect the custom key store to its
+     * backing key store. For example, before you change the <code>XksProxyUriPath</code> value, verify that the
+     * external key store proxy is reachable at the new path.
+     * </p>
+     * <p>
+     * If the operation succeeds, it returns a JSON object with no properties.
      * </p>
      * <p>
      * <b>Cross-account use</b>: No. You cannot perform this operation on a custom key store in a different Amazon Web
@@ -7424,6 +9152,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param updateCustomKeyStoreRequest
      * @return Result of the UpdateCustomKeyStore operation returned by the service.
@@ -7438,15 +9171,16 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         Retry the request with a different cluster ID.
      * @throws CloudHsmClusterNotRelatedException
      *         The request was rejected because the specified CloudHSM cluster has a different cluster certificate than
-     *         the original cluster. You cannot use the operation to specify an unrelated cluster.</p>
+     *         the original cluster. You cannot use the operation to specify an unrelated cluster for an CloudHSM key
+     *         store.</p>
      *         <p>
-     *         Specify a cluster that shares a backup history with the original cluster. This includes clusters that
-     *         were created from a backup of the current cluster, and clusters that were created from the same backup
-     *         that produced the current cluster.
+     *         Specify an CloudHSM cluster that shares a backup history with the original cluster. This includes
+     *         clusters that were created from a backup of the current cluster, and clusters that were created from the
+     *         same backup that produced the current cluster.
      *         </p>
      *         <p>
-     *         Clusters that share a backup history have the same cluster certificate. To view the cluster certificate
-     *         of a cluster, use the <a
+     *         CloudHSM clusters that share a backup history have the same cluster certificate. To view the cluster
+     *         certificate of an CloudHSM cluster, use the <a
      *         href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html"
      *         >DescribeClusters</a> operation.
      * @throws CustomKeyStoreInvalidStateException
@@ -7459,9 +9193,24 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         <ul>
      *         <li>
      *         <p>
-     *         You requested the <a>CreateKey</a> or <a>GenerateRandom</a> operation in a custom key store that is not
-     *         connected. These operations are valid only when the custom key store <code>ConnectionState</code> is
-     *         <code>CONNECTED</code>.
+     *         You requested the <a>ConnectCustomKeyStore</a> operation on a custom key store with a
+     *         <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is
+     *         valid for all other <code>ConnectionState</code> values. To reconnect a custom key store in a
+     *         <code>FAILED</code> state, disconnect it (<a>DisconnectCustomKeyStore</a>), then connect it (
+     *         <code>ConnectCustomKeyStore</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You requested the <a>CreateKey</a> operation in a custom key store that is not connected. This operations
+     *         is valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You requested the <a>DisconnectCustomKeyStore</a> operation on a custom key store with a
+     *         <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>. This operation
+     *         is valid for all other <code>ConnectionState</code> values.
      *         </p>
      *         </li>
      *         <li>
@@ -7473,26 +9222,26 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         </li>
      *         <li>
      *         <p>
-     *         You requested the <a>ConnectCustomKeyStore</a> operation on a custom key store with a
-     *         <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is
-     *         valid for all other <code>ConnectionState</code> values.
+     *         You requested the <a>GenerateRandom</a> operation in an CloudHSM key store that is not connected. This
+     *         operation is valid only when the CloudHSM key store <code>ConnectionState</code> is
+     *         <code>CONNECTED</code>.
      *         </p>
      *         </li>
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred. The request can be retried.
      * @throws CloudHsmClusterNotActiveException
-     *         The request was rejected because the CloudHSM cluster that is associated with the custom key store is not
+     *         The request was rejected because the CloudHSM cluster associated with the CloudHSM key store is not
      *         active. Initialize and activate the cluster and try the command again. For detailed instructions, see <a
      *         href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/getting-started.html">Getting Started</a> in
      *         the <i>CloudHSM User Guide</i>.
      * @throws CloudHsmClusterInvalidConfigurationException
      *         The request was rejected because the associated CloudHSM cluster did not meet the configuration
-     *         requirements for a custom key store.</p>
+     *         requirements for an CloudHSM key store.</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         The cluster must be configured with private subnets in at least two different Availability Zones in the
-     *         Region.
+     *         The CloudHSM cluster must be configured with private subnets in at least two different Availability Zones
+     *         in the Region.
      *         </p>
      *         </li>
      *         <li>
@@ -7501,16 +9250,17 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         the cluster</a> (cloudhsm-cluster-<i>&lt;cluster-id&gt;</i>-sg) must include inbound rules and outbound
      *         rules that allow TCP traffic on ports 2223-2225. The <b>Source</b> in the inbound rules and the
      *         <b>Destination</b> in the outbound rules must match the security group ID. These rules are set by default
-     *         when you create the cluster. Do not delete or change them. To get information about a particular security
-     *         group, use the <a
+     *         when you create the CloudHSM cluster. Do not delete or change them. To get information about a particular
+     *         security group, use the <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html"
      *         >DescribeSecurityGroups</a> operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         The cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the CloudHSM
-     *         <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
+     *         The CloudHSM cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the
+     *         CloudHSM <a
+     *         href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
      *         operation.
      *         </p>
      *         <p>
@@ -7521,7 +9271,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         </li>
      *         </ul>
      *         <p>
-     *         For information about the requirements for an CloudHSM cluster that is associated with a custom key
+     *         For information about the requirements for an CloudHSM cluster that is associated with an CloudHSM key
      *         store, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore"
      *         >Assemble the Prerequisites</a> in the <i>Key Management Service Developer Guide</i>. For information
@@ -7530,6 +9280,50 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         Subnet</a> in the <i>CloudHSM User Guide</i>. For information about cluster security groups, see <a
      *         href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">Configure a Default
      *         Security Group</a> in the <i> <i>CloudHSM User Guide</i> </i>.
+     * @throws XksProxyUriInUseException
+     *         The request was rejected because the concatenation of the <code>XksProxyUriEndpoint</code> and
+     *         <code>XksProxyUriPath</code> is already associated with another external key store in this Amazon Web
+     *         Services Region. Each external key store in a Region must use a unique external key store proxy API
+     *         address.
+     * @throws XksProxyUriEndpointInUseException
+     *         The request was rejected because the <code>XksProxyUriEndpoint</code> is already associated with another
+     *         external key store in this Amazon Web Services Region. To identify the cause, see the error message that
+     *         accompanies the exception.
+     * @throws XksProxyUriUnreachableException
+     *         KMS was unable to reach the specified <code>XksProxyUriPath</code>. The path must be reachable before you
+     *         create the external key store or update its settings.
+     *         </p>
+     *         <p>
+     *         This exception is also thrown when the external key store proxy response to a
+     *         <code>GetHealthStatus</code> request indicates that all external key manager instances are unavailable.
+     * @throws XksProxyIncorrectAuthenticationCredentialException
+     *         The request was rejected because the proxy credentials failed to authenticate to the specified external
+     *         key store proxy. The specified external key store proxy rejected a status request from KMS due to invalid
+     *         credentials. This can indicate an error in the credentials or in the identification of the external key
+     *         store proxy.
+     * @throws XksProxyVpcEndpointServiceInUseException
+     *         The request was rejected because the specified Amazon VPC endpoint service is already associated with
+     *         another external key store in this Amazon Web Services Region. Each external key store in a Region must
+     *         use a different Amazon VPC endpoint service.
+     * @throws XksProxyVpcEndpointServiceNotFoundException
+     *         The request was rejected because KMS could not find the specified VPC endpoint service. Use
+     *         <a>DescribeCustomKeyStores</a> to verify the VPC endpoint service name for the external key store. Also,
+     *         confirm that the <code>Allow principals</code> list for the VPC endpoint service includes the KMS service
+     *         principal for the Region, such as <code>cks.kms.us-east-1.amazonaws.com</code>.
+     * @throws XksProxyVpcEndpointServiceInvalidConfigurationException
+     *         The request was rejected because the Amazon VPC endpoint service configuration does not fulfill the
+     *         requirements for an external key store. To identify the cause, see the error message that accompanies the
+     *         exception and <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/vpc-connectivity.html#xks-vpc-requirements"
+     *         >review the requirements</a> for Amazon VPC endpoint service connectivity for an external key store.
+     * @throws XksProxyInvalidResponseException
+     *         <p>
+     *         KMS cannot interpret the response it received from the external key store proxy. The problem might be a
+     *         poorly constructed response, but it could also be a transient network issue. If you see this error
+     *         repeatedly, report it to the proxy vendor.
+     * @throws XksProxyInvalidConfigurationException
+     *         The request was rejected because the external key store proxy is not configured correctly. To identify
+     *         the cause, see the error message that accompanies the exception.
      * @sample AWSKMS.UpdateCustomKeyStore
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateCustomKeyStore" target="_top">AWS API
      *      Documentation</a>
@@ -7611,6 +9405,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param updateKeyDescriptionRequest
      * @return Result of the UpdateKeyDescription operation returned by the service.
@@ -7619,15 +9418,33 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws InvalidArnException
      *         The request was rejected because a specified ARN, or an ARN in a key policy, is not valid.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred. The request can be retried.
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource is not valid for this request.</p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
      * @sample AWSKMS.UpdateKeyDescription
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateKeyDescription" target="_top">AWS API
      *      Documentation</a>
@@ -7769,6 +9586,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param updatePrimaryRegionRequest
      * @return Result of the UpdatePrimaryRegion operation returned by the service.
@@ -7779,9 +9601,27 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws KMSInvalidStateException
      *         The request was rejected because the state of the specified resource is not valid for this request.</p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
      * @throws KMSInternalException
      *         The request was rejected because an internal exception occurred. The request can be retried.
      * @throws NotFoundException
@@ -7855,20 +9695,25 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * the <i>Key Management Service Developer Guide</i>.
      * </p>
      * <p>
-     * To verify a digital signature, you can use the <code>Verify</code> operation. Specify the same asymmetric KMS
-     * key, message, and signing algorithm that were used to produce the signature.
+     * To use the <code>Verify</code> operation, specify the same asymmetric KMS key, message, and signing algorithm
+     * that were used to produce the signature. The message type does not need to be the same as the one used for
+     * signing, but it must indicate whether the value of the <code>Message</code> parameter should be hashed as part of
+     * the verification process.
      * </p>
      * <p>
      * You can also verify the digital signature by using the public key of the KMS key outside of KMS. Use the
      * <a>GetPublicKey</a> operation to download the public key in the asymmetric KMS key and then use the public key to
-     * verify the signature outside of KMS. To verify a signature outside of KMS with an SM2 public key, you must
-     * specify the distinguishing ID. By default, KMS uses <code>1234567812345678</code> as the distinguishing ID. For
-     * more information, see <a href=
+     * verify the signature outside of KMS. The advantage of using the <code>Verify</code> operation is that it is
+     * performed within KMS. As a result, it's easy to call, the operation is performed within the FIPS boundary, it is
+     * logged in CloudTrail, and you can use key policy and IAM policy to determine who is authorized to use the KMS key
+     * to verify signatures.
+     * </p>
+     * <p>
+     * To verify a signature outside of KMS with an SM2 public key (China Regions only), you must specify the
+     * distinguishing ID. By default, KMS uses <code>1234567812345678</code> as the distinguishing ID. For more
+     * information, see <a href=
      * "https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification"
-     * >Offline verification with SM2 key pairs</a> in <i>Key Management Service Developer Guide</i>. The advantage of
-     * using the <code>Verify</code> operation is that it is performed within KMS. As a result, it's easy to call, the
-     * operation is performed within the FIPS boundary, it is logged in CloudTrail, and you can use key policy and IAM
-     * policy to determine who is authorized to use the KMS key to verify signatures.
+     * >Offline verification with SM2 key pairs</a>.
      * </p>
      * <p>
      * The KMS key that you use for this operation must be in a compatible key state. For details, see <a
@@ -7887,6 +9732,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * <p>
      * <b>Related operations</b>: <a>Sign</a>
      * </p>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
+     * </p>
      * 
      * @param verifyRequest
      * @return Result of the Verify operation returned by the service.
@@ -7897,7 +9747,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * @throws KeyUnavailableException
      *         The request was rejected because the specified KMS key was not available. You can retry the request.
      * @throws DependencyTimeoutException
-     *         The system timed out while trying to fulfill the request. The request can be retried.
+     *         The system timed out while trying to fulfill the request. You can retry the request.
      * @throws InvalidKeyUsageException
      *         The request was rejected for one of the following reasons: </p>
      *         <ul>
@@ -7931,13 +9781,33 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         The request was rejected because the state of the specified resource is not valid for this request.
      *         </p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
      * @throws KMSInvalidSignatureException
      *         The request was rejected because the signature verification failed. Signature verification fails when it
      *         cannot confirm that signature was produced by signing the specified message with the specified KMS key
      *         and signing algorithm.
+     * @throws DryRunOperationException
+     *         The request was rejected because the DryRun parameter was specified.
      * @sample AWSKMS.Verify
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/Verify" target="_top">AWS API
      *      Documentation</a>
@@ -7991,11 +9861,12 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * Verifies the hash-based message authentication code (HMAC) for a specified message, HMAC KMS key, and MAC
      * algorithm. To verify the HMAC, <code>VerifyMac</code> computes an HMAC using the message, HMAC KMS key, and MAC
      * algorithm that you specify, and compares the computed HMAC to the HMAC that you specify. If the HMACs are
-     * identical, the verification succeeds; otherwise, it fails.
+     * identical, the verification succeeds; otherwise, it fails. Verification indicates that the message hasn't changed
+     * since the HMAC was calculated, and the specified key was used to generate and verify the HMAC.
      * </p>
      * <p>
-     * Verification indicates that the message hasn't changed since the HMAC was calculated, and the specified key was
-     * used to generate and verify the HMAC.
+     * HMAC KMS keys and the HMAC algorithms that KMS uses conform to industry standards defined in <a
+     * href="https://datatracker.ietf.org/doc/html/rfc2104">RFC 2104</a>.
      * </p>
      * <p>
      * This operation is part of KMS support for HMAC KMS keys. For details, see <a
@@ -8018,6 +9889,11 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      * </p>
      * <p>
      * <b>Related operations</b>: <a>GenerateMac</a>
+     * </p>
+     * <p>
+     * <b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">KMS eventual
+     * consistency</a>.
      * </p>
      * 
      * @param verifyMacRequest
@@ -8065,9 +9941,29 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
      *         The request was rejected because the state of the specified resource is not valid for this request.
      *         </p>
      *         <p>
-     *         For more information about how key state affects the use of a KMS key, see <a
+     *         This exceptions means one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The key state of the KMS key is not compatible with the operation.
+     *         </p>
+     *         <p>
+     *         To find the key state, use the <a>DescribeKey</a> operation. For more information about which key states
+     *         are compatible with each KMS operation, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key states of KMS keys</a> in
      *         the <i> <i>Key Management Service Developer Guide</i> </i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For cryptographic operations on KMS keys in custom key stores, this exception represents a general
+     *         failure with many possible causes. To identify the cause, see the error message that accompanies the
+     *         exception.
+     *         </p>
+     *         </li>
+     * @throws DryRunOperationException
+     *         The request was rejected because the DryRun parameter was specified.
      * @sample AWSKMS.VerifyMac
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/VerifyMac" target="_top">AWS API
      *      Documentation</a>

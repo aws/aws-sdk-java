@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -116,6 +116,28 @@ public class InstanceRecommendationJsonUnmarshaller implements Unmarshaller<Inst
                     instanceRecommendation.setInferredWorkloadTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
+                }
+                if (context.testExpression("instanceState", targetDepth)) {
+                    context.nextToken();
+                    instanceRecommendation.setInstanceState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    instanceRecommendation.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("externalMetricStatus", targetDepth)) {
+                    context.nextToken();
+                    instanceRecommendation.setExternalMetricStatus(ExternalMetricStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("currentInstanceGpuInfo", targetDepth)) {
+                    context.nextToken();
+                    instanceRecommendation.setCurrentInstanceGpuInfo(GpuInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("idle", targetDepth)) {
+                    context.nextToken();
+                    instanceRecommendation.setIdle(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

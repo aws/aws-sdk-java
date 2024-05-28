@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,12 +15,15 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Set Accessibility subtitles to Enabled if the ISMC or WebVTT captions track is intended to provide accessibility for
- * people who are deaf or hard of hearing. When you enable this feature, MediaConvert adds the following attributes
- * under EXT-X-MEDIA in the HLS or CMAF manifest for this track:
- * CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound" and
- * AUTOSELECT="YES". Keep the default value, Disabled, if the captions track is not intended to provide such
- * accessibility. MediaConvert will not add the above attributes.
+ * If the WebVTT captions track is intended to provide accessibility for people who are deaf or hard of hearing: Set
+ * Accessibility subtitles to Enabled. When you do, MediaConvert adds accessibility attributes to your output HLS or
+ * DASH manifest. For HLS manifests, MediaConvert adds the following accessibility attributes under EXT-X-MEDIA for this
+ * track: CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound"
+ * and AUTOSELECT="YES". For DASH manifests, MediaConvert adds the following in the adaptation set for this track:
+ * <Accessibility schemeIdUri="urn:mpeg:dash:role:2011" value="caption"/>. If the captions track is not intended to
+ * provide such accessibility: Keep the default value, Disabled. When you do, for DASH manifests, MediaConvert instead
+ * adds the following in the adaptation set for this track: <Role schemeIDUri="urn:mpeg:dash:role:2011"
+ * value="subtitle"/>.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum WebvttAccessibilitySubs {

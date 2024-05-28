@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,9 +30,14 @@ public class StartConfigurationSessionResult extends com.amazonaws.AmazonWebServ
      * </p>
      * <important>
      * <p>
-     * This token should only be used once in your first call to <code>GetLatestConfiguration</code>. You MUST use the
-     * new token in the <code>GetLatestConfiguration</code> response (<code>NextPollConfigurationToken</code>) in each
-     * subsequent call to <code>GetLatestConfiguration</code>.
+     * This token should only be used once in your first call to <code>GetLatestConfiguration</code>. You <i>must</i>
+     * use the new token in the <code>GetLatestConfiguration</code> response (<code>NextPollConfigurationToken</code>)
+     * in each subsequent call to <code>GetLatestConfiguration</code>.
+     * </p>
+     * <p>
+     * The <code>InitialConfigurationToken</code> and <code>NextPollConfigurationToken</code> should only be used once.
+     * To support long poll use cases, the tokens are valid for up to 24 hours. If a <code>GetLatestConfiguration</code>
+     * call uses an expired token, the system returns <code>BadRequestException</code>.
      * </p>
      * </important>
      */
@@ -45,9 +50,14 @@ public class StartConfigurationSessionResult extends com.amazonaws.AmazonWebServ
      * </p>
      * <important>
      * <p>
-     * This token should only be used once in your first call to <code>GetLatestConfiguration</code>. You MUST use the
-     * new token in the <code>GetLatestConfiguration</code> response (<code>NextPollConfigurationToken</code>) in each
-     * subsequent call to <code>GetLatestConfiguration</code>.
+     * This token should only be used once in your first call to <code>GetLatestConfiguration</code>. You <i>must</i>
+     * use the new token in the <code>GetLatestConfiguration</code> response (<code>NextPollConfigurationToken</code>)
+     * in each subsequent call to <code>GetLatestConfiguration</code>.
+     * </p>
+     * <p>
+     * The <code>InitialConfigurationToken</code> and <code>NextPollConfigurationToken</code> should only be used once.
+     * To support long poll use cases, the tokens are valid for up to 24 hours. If a <code>GetLatestConfiguration</code>
+     * call uses an expired token, the system returns <code>BadRequestException</code>.
      * </p>
      * </important>
      * 
@@ -55,9 +65,15 @@ public class StartConfigurationSessionResult extends com.amazonaws.AmazonWebServ
      *        Token encapsulating state about the configuration session. Provide this token to the
      *        <code>GetLatestConfiguration</code> API to retrieve configuration data.</p> <important>
      *        <p>
-     *        This token should only be used once in your first call to <code>GetLatestConfiguration</code>. You MUST
-     *        use the new token in the <code>GetLatestConfiguration</code> response (
+     *        This token should only be used once in your first call to <code>GetLatestConfiguration</code>. You
+     *        <i>must</i> use the new token in the <code>GetLatestConfiguration</code> response (
      *        <code>NextPollConfigurationToken</code>) in each subsequent call to <code>GetLatestConfiguration</code>.
+     *        </p>
+     *        <p>
+     *        The <code>InitialConfigurationToken</code> and <code>NextPollConfigurationToken</code> should only be used
+     *        once. To support long poll use cases, the tokens are valid for up to 24 hours. If a
+     *        <code>GetLatestConfiguration</code> call uses an expired token, the system returns
+     *        <code>BadRequestException</code>.
      *        </p>
      */
 
@@ -72,18 +88,29 @@ public class StartConfigurationSessionResult extends com.amazonaws.AmazonWebServ
      * </p>
      * <important>
      * <p>
-     * This token should only be used once in your first call to <code>GetLatestConfiguration</code>. You MUST use the
-     * new token in the <code>GetLatestConfiguration</code> response (<code>NextPollConfigurationToken</code>) in each
-     * subsequent call to <code>GetLatestConfiguration</code>.
+     * This token should only be used once in your first call to <code>GetLatestConfiguration</code>. You <i>must</i>
+     * use the new token in the <code>GetLatestConfiguration</code> response (<code>NextPollConfigurationToken</code>)
+     * in each subsequent call to <code>GetLatestConfiguration</code>.
+     * </p>
+     * <p>
+     * The <code>InitialConfigurationToken</code> and <code>NextPollConfigurationToken</code> should only be used once.
+     * To support long poll use cases, the tokens are valid for up to 24 hours. If a <code>GetLatestConfiguration</code>
+     * call uses an expired token, the system returns <code>BadRequestException</code>.
      * </p>
      * </important>
      * 
      * @return Token encapsulating state about the configuration session. Provide this token to the
      *         <code>GetLatestConfiguration</code> API to retrieve configuration data.</p> <important>
      *         <p>
-     *         This token should only be used once in your first call to <code>GetLatestConfiguration</code>. You MUST
-     *         use the new token in the <code>GetLatestConfiguration</code> response (
+     *         This token should only be used once in your first call to <code>GetLatestConfiguration</code>. You
+     *         <i>must</i> use the new token in the <code>GetLatestConfiguration</code> response (
      *         <code>NextPollConfigurationToken</code>) in each subsequent call to <code>GetLatestConfiguration</code>.
+     *         </p>
+     *         <p>
+     *         The <code>InitialConfigurationToken</code> and <code>NextPollConfigurationToken</code> should only be
+     *         used once. To support long poll use cases, the tokens are valid for up to 24 hours. If a
+     *         <code>GetLatestConfiguration</code> call uses an expired token, the system returns
+     *         <code>BadRequestException</code>.
      *         </p>
      */
 
@@ -98,9 +125,14 @@ public class StartConfigurationSessionResult extends com.amazonaws.AmazonWebServ
      * </p>
      * <important>
      * <p>
-     * This token should only be used once in your first call to <code>GetLatestConfiguration</code>. You MUST use the
-     * new token in the <code>GetLatestConfiguration</code> response (<code>NextPollConfigurationToken</code>) in each
-     * subsequent call to <code>GetLatestConfiguration</code>.
+     * This token should only be used once in your first call to <code>GetLatestConfiguration</code>. You <i>must</i>
+     * use the new token in the <code>GetLatestConfiguration</code> response (<code>NextPollConfigurationToken</code>)
+     * in each subsequent call to <code>GetLatestConfiguration</code>.
+     * </p>
+     * <p>
+     * The <code>InitialConfigurationToken</code> and <code>NextPollConfigurationToken</code> should only be used once.
+     * To support long poll use cases, the tokens are valid for up to 24 hours. If a <code>GetLatestConfiguration</code>
+     * call uses an expired token, the system returns <code>BadRequestException</code>.
      * </p>
      * </important>
      * 
@@ -108,9 +140,15 @@ public class StartConfigurationSessionResult extends com.amazonaws.AmazonWebServ
      *        Token encapsulating state about the configuration session. Provide this token to the
      *        <code>GetLatestConfiguration</code> API to retrieve configuration data.</p> <important>
      *        <p>
-     *        This token should only be used once in your first call to <code>GetLatestConfiguration</code>. You MUST
-     *        use the new token in the <code>GetLatestConfiguration</code> response (
+     *        This token should only be used once in your first call to <code>GetLatestConfiguration</code>. You
+     *        <i>must</i> use the new token in the <code>GetLatestConfiguration</code> response (
      *        <code>NextPollConfigurationToken</code>) in each subsequent call to <code>GetLatestConfiguration</code>.
+     *        </p>
+     *        <p>
+     *        The <code>InitialConfigurationToken</code> and <code>NextPollConfigurationToken</code> should only be used
+     *        once. To support long poll use cases, the tokens are valid for up to 24 hours. If a
+     *        <code>GetLatestConfiguration</code> call uses an expired token, the system returns
+     *        <code>BadRequestException</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

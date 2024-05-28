@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -91,6 +91,12 @@ public class GetTemplateSummaryResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ResourceIdentifierSummary> resourceIdentifierSummaries;
+    /**
+     * <p>
+     * An object containing any warnings returned.
+     * </p>
+     */
+    private Warnings warnings;
 
     /**
      * <p>
@@ -749,6 +755,46 @@ public class GetTemplateSummaryResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * An object containing any warnings returned.
+     * </p>
+     * 
+     * @param warnings
+     *        An object containing any warnings returned.
+     */
+
+    public void setWarnings(Warnings warnings) {
+        this.warnings = warnings;
+    }
+
+    /**
+     * <p>
+     * An object containing any warnings returned.
+     * </p>
+     * 
+     * @return An object containing any warnings returned.
+     */
+
+    public Warnings getWarnings() {
+        return this.warnings;
+    }
+
+    /**
+     * <p>
+     * An object containing any warnings returned.
+     * </p>
+     * 
+     * @param warnings
+     *        An object containing any warnings returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTemplateSummaryResult withWarnings(Warnings warnings) {
+        setWarnings(warnings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -777,7 +823,9 @@ public class GetTemplateSummaryResult extends com.amazonaws.AmazonWebServiceResu
         if (getDeclaredTransforms() != null)
             sb.append("DeclaredTransforms: ").append(getDeclaredTransforms()).append(",");
         if (getResourceIdentifierSummaries() != null)
-            sb.append("ResourceIdentifierSummaries: ").append(getResourceIdentifierSummaries());
+            sb.append("ResourceIdentifierSummaries: ").append(getResourceIdentifierSummaries()).append(",");
+        if (getWarnings() != null)
+            sb.append("Warnings: ").append(getWarnings());
         sb.append("}");
         return sb.toString();
     }
@@ -828,6 +876,10 @@ public class GetTemplateSummaryResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getResourceIdentifierSummaries() != null && other.getResourceIdentifierSummaries().equals(this.getResourceIdentifierSummaries()) == false)
             return false;
+        if (other.getWarnings() == null ^ this.getWarnings() == null)
+            return false;
+        if (other.getWarnings() != null && other.getWarnings().equals(this.getWarnings()) == false)
+            return false;
         return true;
     }
 
@@ -845,6 +897,7 @@ public class GetTemplateSummaryResult extends com.amazonaws.AmazonWebServiceResu
         hashCode = prime * hashCode + ((getMetadata() == null) ? 0 : getMetadata().hashCode());
         hashCode = prime * hashCode + ((getDeclaredTransforms() == null) ? 0 : getDeclaredTransforms().hashCode());
         hashCode = prime * hashCode + ((getResourceIdentifierSummaries() == null) ? 0 : getResourceIdentifierSummaries().hashCode());
+        hashCode = prime * hashCode + ((getWarnings() == null) ? 0 : getWarnings().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,13 @@ public class KinesisDataStreamDestination implements Serializable, Cloneable, St
      * </p>
      */
     private String destinationStatusDescription;
+    /**
+     * <p>
+     * The precision of the Kinesis data stream timestamp. The values are either <code>MILLISECOND</code> or
+     * <code>MICROSECOND</code>.
+     * </p>
+     */
+    private String approximateCreationDateTimePrecision;
 
     /**
      * <p>
@@ -187,6 +194,73 @@ public class KinesisDataStreamDestination implements Serializable, Cloneable, St
     }
 
     /**
+     * <p>
+     * The precision of the Kinesis data stream timestamp. The values are either <code>MILLISECOND</code> or
+     * <code>MICROSECOND</code>.
+     * </p>
+     * 
+     * @param approximateCreationDateTimePrecision
+     *        The precision of the Kinesis data stream timestamp. The values are either <code>MILLISECOND</code> or
+     *        <code>MICROSECOND</code>.
+     * @see ApproximateCreationDateTimePrecision
+     */
+
+    public void setApproximateCreationDateTimePrecision(String approximateCreationDateTimePrecision) {
+        this.approximateCreationDateTimePrecision = approximateCreationDateTimePrecision;
+    }
+
+    /**
+     * <p>
+     * The precision of the Kinesis data stream timestamp. The values are either <code>MILLISECOND</code> or
+     * <code>MICROSECOND</code>.
+     * </p>
+     * 
+     * @return The precision of the Kinesis data stream timestamp. The values are either <code>MILLISECOND</code> or
+     *         <code>MICROSECOND</code>.
+     * @see ApproximateCreationDateTimePrecision
+     */
+
+    public String getApproximateCreationDateTimePrecision() {
+        return this.approximateCreationDateTimePrecision;
+    }
+
+    /**
+     * <p>
+     * The precision of the Kinesis data stream timestamp. The values are either <code>MILLISECOND</code> or
+     * <code>MICROSECOND</code>.
+     * </p>
+     * 
+     * @param approximateCreationDateTimePrecision
+     *        The precision of the Kinesis data stream timestamp. The values are either <code>MILLISECOND</code> or
+     *        <code>MICROSECOND</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ApproximateCreationDateTimePrecision
+     */
+
+    public KinesisDataStreamDestination withApproximateCreationDateTimePrecision(String approximateCreationDateTimePrecision) {
+        setApproximateCreationDateTimePrecision(approximateCreationDateTimePrecision);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The precision of the Kinesis data stream timestamp. The values are either <code>MILLISECOND</code> or
+     * <code>MICROSECOND</code>.
+     * </p>
+     * 
+     * @param approximateCreationDateTimePrecision
+     *        The precision of the Kinesis data stream timestamp. The values are either <code>MILLISECOND</code> or
+     *        <code>MICROSECOND</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ApproximateCreationDateTimePrecision
+     */
+
+    public KinesisDataStreamDestination withApproximateCreationDateTimePrecision(ApproximateCreationDateTimePrecision approximateCreationDateTimePrecision) {
+        this.approximateCreationDateTimePrecision = approximateCreationDateTimePrecision.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -203,7 +277,9 @@ public class KinesisDataStreamDestination implements Serializable, Cloneable, St
         if (getDestinationStatus() != null)
             sb.append("DestinationStatus: ").append(getDestinationStatus()).append(",");
         if (getDestinationStatusDescription() != null)
-            sb.append("DestinationStatusDescription: ").append(getDestinationStatusDescription());
+            sb.append("DestinationStatusDescription: ").append(getDestinationStatusDescription()).append(",");
+        if (getApproximateCreationDateTimePrecision() != null)
+            sb.append("ApproximateCreationDateTimePrecision: ").append(getApproximateCreationDateTimePrecision());
         sb.append("}");
         return sb.toString();
     }
@@ -230,6 +306,11 @@ public class KinesisDataStreamDestination implements Serializable, Cloneable, St
             return false;
         if (other.getDestinationStatusDescription() != null && other.getDestinationStatusDescription().equals(this.getDestinationStatusDescription()) == false)
             return false;
+        if (other.getApproximateCreationDateTimePrecision() == null ^ this.getApproximateCreationDateTimePrecision() == null)
+            return false;
+        if (other.getApproximateCreationDateTimePrecision() != null
+                && other.getApproximateCreationDateTimePrecision().equals(this.getApproximateCreationDateTimePrecision()) == false)
+            return false;
         return true;
     }
 
@@ -241,6 +322,7 @@ public class KinesisDataStreamDestination implements Serializable, Cloneable, St
         hashCode = prime * hashCode + ((getStreamArn() == null) ? 0 : getStreamArn().hashCode());
         hashCode = prime * hashCode + ((getDestinationStatus() == null) ? 0 : getDestinationStatus().hashCode());
         hashCode = prime * hashCode + ((getDestinationStatusDescription() == null) ? 0 : getDestinationStatusDescription().hashCode());
+        hashCode = prime * hashCode + ((getApproximateCreationDateTimePrecision() == null) ? 0 : getApproximateCreationDateTimePrecision().hashCode());
         return hashCode;
     }
 

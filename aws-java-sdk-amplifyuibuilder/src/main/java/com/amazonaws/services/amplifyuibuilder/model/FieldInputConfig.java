@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,16 +30,28 @@ public class FieldInputConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specifies whether a field has a default value.
+     * The input type for the field.
      * </p>
      */
-    private Boolean defaultChecked;
+    private String type;
     /**
      * <p>
-     * The default country code for a phone number.
+     * Specifies a field that requires input.
      * </p>
      */
-    private String defaultCountryCode;
+    private Boolean required;
+    /**
+     * <p>
+     * Specifies a read only field.
+     * </p>
+     */
+    private Boolean readOnly;
+    /**
+     * <p>
+     * The text to display as a placeholder for the field.
+     * </p>
+     */
+    private String placeholder;
     /**
      * <p>
      * The default value for the field.
@@ -54,23 +66,22 @@ public class FieldInputConfig implements Serializable, Cloneable, StructuredPojo
     private String descriptiveText;
     /**
      * <p>
-     * Specifies whether to render the field as an array. This property is ignored if the <code>dataSourceType</code>
-     * for the form is a Data Store.
+     * Specifies whether a field has a default value.
      * </p>
      */
-    private Boolean isArray;
+    private Boolean defaultChecked;
     /**
      * <p>
-     * The maximum value to display for the field.
+     * The default country code for a phone number.
      * </p>
      */
-    private Float maxValue;
+    private String defaultCountryCode;
     /**
      * <p>
-     * The minimum value to display for the field.
+     * The information to use to customize the input fields with data at runtime.
      * </p>
      */
-    private Float minValue;
+    private ValueMappings valueMappings;
     /**
      * <p>
      * The name of the field.
@@ -79,22 +90,16 @@ public class FieldInputConfig implements Serializable, Cloneable, StructuredPojo
     private String name;
     /**
      * <p>
-     * The text to display as a placeholder for the field.
+     * The minimum value to display for the field.
      * </p>
      */
-    private String placeholder;
+    private Float minValue;
     /**
      * <p>
-     * Specifies a read only field.
+     * The maximum value to display for the field.
      * </p>
      */
-    private Boolean readOnly;
-    /**
-     * <p>
-     * Specifies a field that requires input.
-     * </p>
-     */
-    private Boolean required;
+    private Float maxValue;
     /**
      * <p>
      * The stepping increment for a numeric value in a field.
@@ -103,22 +108,287 @@ public class FieldInputConfig implements Serializable, Cloneable, StructuredPojo
     private Float step;
     /**
      * <p>
-     * The input type for the field.
-     * </p>
-     */
-    private String type;
-    /**
-     * <p>
      * The value for the field.
      * </p>
      */
     private String value;
     /**
      * <p>
-     * The information to use to customize the input fields with data at runtime.
+     * Specifies whether to render the field as an array. This property is ignored if the <code>dataSourceType</code>
+     * for the form is a Data Store.
      * </p>
      */
-    private ValueMappings valueMappings;
+    private Boolean isArray;
+    /**
+     * <p>
+     * The configuration for the file uploader field.
+     * </p>
+     */
+    private FileUploaderFieldConfig fileUploaderConfig;
+
+    /**
+     * <p>
+     * The input type for the field.
+     * </p>
+     * 
+     * @param type
+     *        The input type for the field.
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The input type for the field.
+     * </p>
+     * 
+     * @return The input type for the field.
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The input type for the field.
+     * </p>
+     * 
+     * @param type
+     *        The input type for the field.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FieldInputConfig withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a field that requires input.
+     * </p>
+     * 
+     * @param required
+     *        Specifies a field that requires input.
+     */
+
+    public void setRequired(Boolean required) {
+        this.required = required;
+    }
+
+    /**
+     * <p>
+     * Specifies a field that requires input.
+     * </p>
+     * 
+     * @return Specifies a field that requires input.
+     */
+
+    public Boolean getRequired() {
+        return this.required;
+    }
+
+    /**
+     * <p>
+     * Specifies a field that requires input.
+     * </p>
+     * 
+     * @param required
+     *        Specifies a field that requires input.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FieldInputConfig withRequired(Boolean required) {
+        setRequired(required);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a field that requires input.
+     * </p>
+     * 
+     * @return Specifies a field that requires input.
+     */
+
+    public Boolean isRequired() {
+        return this.required;
+    }
+
+    /**
+     * <p>
+     * Specifies a read only field.
+     * </p>
+     * 
+     * @param readOnly
+     *        Specifies a read only field.
+     */
+
+    public void setReadOnly(Boolean readOnly) {
+        this.readOnly = readOnly;
+    }
+
+    /**
+     * <p>
+     * Specifies a read only field.
+     * </p>
+     * 
+     * @return Specifies a read only field.
+     */
+
+    public Boolean getReadOnly() {
+        return this.readOnly;
+    }
+
+    /**
+     * <p>
+     * Specifies a read only field.
+     * </p>
+     * 
+     * @param readOnly
+     *        Specifies a read only field.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FieldInputConfig withReadOnly(Boolean readOnly) {
+        setReadOnly(readOnly);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a read only field.
+     * </p>
+     * 
+     * @return Specifies a read only field.
+     */
+
+    public Boolean isReadOnly() {
+        return this.readOnly;
+    }
+
+    /**
+     * <p>
+     * The text to display as a placeholder for the field.
+     * </p>
+     * 
+     * @param placeholder
+     *        The text to display as a placeholder for the field.
+     */
+
+    public void setPlaceholder(String placeholder) {
+        this.placeholder = placeholder;
+    }
+
+    /**
+     * <p>
+     * The text to display as a placeholder for the field.
+     * </p>
+     * 
+     * @return The text to display as a placeholder for the field.
+     */
+
+    public String getPlaceholder() {
+        return this.placeholder;
+    }
+
+    /**
+     * <p>
+     * The text to display as a placeholder for the field.
+     * </p>
+     * 
+     * @param placeholder
+     *        The text to display as a placeholder for the field.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FieldInputConfig withPlaceholder(String placeholder) {
+        setPlaceholder(placeholder);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The default value for the field.
+     * </p>
+     * 
+     * @param defaultValue
+     *        The default value for the field.
+     */
+
+    public void setDefaultValue(String defaultValue) {
+        this.defaultValue = defaultValue;
+    }
+
+    /**
+     * <p>
+     * The default value for the field.
+     * </p>
+     * 
+     * @return The default value for the field.
+     */
+
+    public String getDefaultValue() {
+        return this.defaultValue;
+    }
+
+    /**
+     * <p>
+     * The default value for the field.
+     * </p>
+     * 
+     * @param defaultValue
+     *        The default value for the field.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FieldInputConfig withDefaultValue(String defaultValue) {
+        setDefaultValue(defaultValue);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The text to display to describe the field.
+     * </p>
+     * 
+     * @param descriptiveText
+     *        The text to display to describe the field.
+     */
+
+    public void setDescriptiveText(String descriptiveText) {
+        this.descriptiveText = descriptiveText;
+    }
+
+    /**
+     * <p>
+     * The text to display to describe the field.
+     * </p>
+     * 
+     * @return The text to display to describe the field.
+     */
+
+    public String getDescriptiveText() {
+        return this.descriptiveText;
+    }
+
+    /**
+     * <p>
+     * The text to display to describe the field.
+     * </p>
+     * 
+     * @param descriptiveText
+     *        The text to display to describe the field.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FieldInputConfig withDescriptiveText(String descriptiveText) {
+        setDescriptiveText(descriptiveText);
+        return this;
+    }
 
     /**
      * <p>
@@ -214,81 +484,241 @@ public class FieldInputConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The default value for the field.
+     * The information to use to customize the input fields with data at runtime.
      * </p>
      * 
-     * @param defaultValue
-     *        The default value for the field.
+     * @param valueMappings
+     *        The information to use to customize the input fields with data at runtime.
      */
 
-    public void setDefaultValue(String defaultValue) {
-        this.defaultValue = defaultValue;
+    public void setValueMappings(ValueMappings valueMappings) {
+        this.valueMappings = valueMappings;
     }
 
     /**
      * <p>
-     * The default value for the field.
+     * The information to use to customize the input fields with data at runtime.
      * </p>
      * 
-     * @return The default value for the field.
+     * @return The information to use to customize the input fields with data at runtime.
      */
 
-    public String getDefaultValue() {
-        return this.defaultValue;
+    public ValueMappings getValueMappings() {
+        return this.valueMappings;
     }
 
     /**
      * <p>
-     * The default value for the field.
+     * The information to use to customize the input fields with data at runtime.
      * </p>
      * 
-     * @param defaultValue
-     *        The default value for the field.
+     * @param valueMappings
+     *        The information to use to customize the input fields with data at runtime.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public FieldInputConfig withDefaultValue(String defaultValue) {
-        setDefaultValue(defaultValue);
+    public FieldInputConfig withValueMappings(ValueMappings valueMappings) {
+        setValueMappings(valueMappings);
         return this;
     }
 
     /**
      * <p>
-     * The text to display to describe the field.
+     * The name of the field.
      * </p>
      * 
-     * @param descriptiveText
-     *        The text to display to describe the field.
+     * @param name
+     *        The name of the field.
      */
 
-    public void setDescriptiveText(String descriptiveText) {
-        this.descriptiveText = descriptiveText;
+    public void setName(String name) {
+        this.name = name;
     }
 
     /**
      * <p>
-     * The text to display to describe the field.
+     * The name of the field.
      * </p>
      * 
-     * @return The text to display to describe the field.
+     * @return The name of the field.
      */
 
-    public String getDescriptiveText() {
-        return this.descriptiveText;
+    public String getName() {
+        return this.name;
     }
 
     /**
      * <p>
-     * The text to display to describe the field.
+     * The name of the field.
      * </p>
      * 
-     * @param descriptiveText
-     *        The text to display to describe the field.
+     * @param name
+     *        The name of the field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public FieldInputConfig withDescriptiveText(String descriptiveText) {
-        setDescriptiveText(descriptiveText);
+    public FieldInputConfig withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The minimum value to display for the field.
+     * </p>
+     * 
+     * @param minValue
+     *        The minimum value to display for the field.
+     */
+
+    public void setMinValue(Float minValue) {
+        this.minValue = minValue;
+    }
+
+    /**
+     * <p>
+     * The minimum value to display for the field.
+     * </p>
+     * 
+     * @return The minimum value to display for the field.
+     */
+
+    public Float getMinValue() {
+        return this.minValue;
+    }
+
+    /**
+     * <p>
+     * The minimum value to display for the field.
+     * </p>
+     * 
+     * @param minValue
+     *        The minimum value to display for the field.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FieldInputConfig withMinValue(Float minValue) {
+        setMinValue(minValue);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum value to display for the field.
+     * </p>
+     * 
+     * @param maxValue
+     *        The maximum value to display for the field.
+     */
+
+    public void setMaxValue(Float maxValue) {
+        this.maxValue = maxValue;
+    }
+
+    /**
+     * <p>
+     * The maximum value to display for the field.
+     * </p>
+     * 
+     * @return The maximum value to display for the field.
+     */
+
+    public Float getMaxValue() {
+        return this.maxValue;
+    }
+
+    /**
+     * <p>
+     * The maximum value to display for the field.
+     * </p>
+     * 
+     * @param maxValue
+     *        The maximum value to display for the field.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FieldInputConfig withMaxValue(Float maxValue) {
+        setMaxValue(maxValue);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The stepping increment for a numeric value in a field.
+     * </p>
+     * 
+     * @param step
+     *        The stepping increment for a numeric value in a field.
+     */
+
+    public void setStep(Float step) {
+        this.step = step;
+    }
+
+    /**
+     * <p>
+     * The stepping increment for a numeric value in a field.
+     * </p>
+     * 
+     * @return The stepping increment for a numeric value in a field.
+     */
+
+    public Float getStep() {
+        return this.step;
+    }
+
+    /**
+     * <p>
+     * The stepping increment for a numeric value in a field.
+     * </p>
+     * 
+     * @param step
+     *        The stepping increment for a numeric value in a field.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FieldInputConfig withStep(Float step) {
+        setStep(step);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The value for the field.
+     * </p>
+     * 
+     * @param value
+     *        The value for the field.
+     */
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    /**
+     * <p>
+     * The value for the field.
+     * </p>
+     * 
+     * @return The value for the field.
+     */
+
+    public String getValue() {
+        return this.value;
+    }
+
+    /**
+     * <p>
+     * The value for the field.
+     * </p>
+     * 
+     * @param value
+     *        The value for the field.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FieldInputConfig withValue(String value) {
+        setValue(value);
         return this;
     }
 
@@ -354,425 +784,41 @@ public class FieldInputConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The maximum value to display for the field.
+     * The configuration for the file uploader field.
      * </p>
      * 
-     * @param maxValue
-     *        The maximum value to display for the field.
+     * @param fileUploaderConfig
+     *        The configuration for the file uploader field.
      */
 
-    public void setMaxValue(Float maxValue) {
-        this.maxValue = maxValue;
+    public void setFileUploaderConfig(FileUploaderFieldConfig fileUploaderConfig) {
+        this.fileUploaderConfig = fileUploaderConfig;
     }
 
     /**
      * <p>
-     * The maximum value to display for the field.
+     * The configuration for the file uploader field.
      * </p>
      * 
-     * @return The maximum value to display for the field.
+     * @return The configuration for the file uploader field.
      */
 
-    public Float getMaxValue() {
-        return this.maxValue;
+    public FileUploaderFieldConfig getFileUploaderConfig() {
+        return this.fileUploaderConfig;
     }
 
     /**
      * <p>
-     * The maximum value to display for the field.
+     * The configuration for the file uploader field.
      * </p>
      * 
-     * @param maxValue
-     *        The maximum value to display for the field.
+     * @param fileUploaderConfig
+     *        The configuration for the file uploader field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public FieldInputConfig withMaxValue(Float maxValue) {
-        setMaxValue(maxValue);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The minimum value to display for the field.
-     * </p>
-     * 
-     * @param minValue
-     *        The minimum value to display for the field.
-     */
-
-    public void setMinValue(Float minValue) {
-        this.minValue = minValue;
-    }
-
-    /**
-     * <p>
-     * The minimum value to display for the field.
-     * </p>
-     * 
-     * @return The minimum value to display for the field.
-     */
-
-    public Float getMinValue() {
-        return this.minValue;
-    }
-
-    /**
-     * <p>
-     * The minimum value to display for the field.
-     * </p>
-     * 
-     * @param minValue
-     *        The minimum value to display for the field.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public FieldInputConfig withMinValue(Float minValue) {
-        setMinValue(minValue);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The name of the field.
-     * </p>
-     * 
-     * @param name
-     *        The name of the field.
-     */
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * <p>
-     * The name of the field.
-     * </p>
-     * 
-     * @return The name of the field.
-     */
-
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * <p>
-     * The name of the field.
-     * </p>
-     * 
-     * @param name
-     *        The name of the field.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public FieldInputConfig withName(String name) {
-        setName(name);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The text to display as a placeholder for the field.
-     * </p>
-     * 
-     * @param placeholder
-     *        The text to display as a placeholder for the field.
-     */
-
-    public void setPlaceholder(String placeholder) {
-        this.placeholder = placeholder;
-    }
-
-    /**
-     * <p>
-     * The text to display as a placeholder for the field.
-     * </p>
-     * 
-     * @return The text to display as a placeholder for the field.
-     */
-
-    public String getPlaceholder() {
-        return this.placeholder;
-    }
-
-    /**
-     * <p>
-     * The text to display as a placeholder for the field.
-     * </p>
-     * 
-     * @param placeholder
-     *        The text to display as a placeholder for the field.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public FieldInputConfig withPlaceholder(String placeholder) {
-        setPlaceholder(placeholder);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Specifies a read only field.
-     * </p>
-     * 
-     * @param readOnly
-     *        Specifies a read only field.
-     */
-
-    public void setReadOnly(Boolean readOnly) {
-        this.readOnly = readOnly;
-    }
-
-    /**
-     * <p>
-     * Specifies a read only field.
-     * </p>
-     * 
-     * @return Specifies a read only field.
-     */
-
-    public Boolean getReadOnly() {
-        return this.readOnly;
-    }
-
-    /**
-     * <p>
-     * Specifies a read only field.
-     * </p>
-     * 
-     * @param readOnly
-     *        Specifies a read only field.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public FieldInputConfig withReadOnly(Boolean readOnly) {
-        setReadOnly(readOnly);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Specifies a read only field.
-     * </p>
-     * 
-     * @return Specifies a read only field.
-     */
-
-    public Boolean isReadOnly() {
-        return this.readOnly;
-    }
-
-    /**
-     * <p>
-     * Specifies a field that requires input.
-     * </p>
-     * 
-     * @param required
-     *        Specifies a field that requires input.
-     */
-
-    public void setRequired(Boolean required) {
-        this.required = required;
-    }
-
-    /**
-     * <p>
-     * Specifies a field that requires input.
-     * </p>
-     * 
-     * @return Specifies a field that requires input.
-     */
-
-    public Boolean getRequired() {
-        return this.required;
-    }
-
-    /**
-     * <p>
-     * Specifies a field that requires input.
-     * </p>
-     * 
-     * @param required
-     *        Specifies a field that requires input.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public FieldInputConfig withRequired(Boolean required) {
-        setRequired(required);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Specifies a field that requires input.
-     * </p>
-     * 
-     * @return Specifies a field that requires input.
-     */
-
-    public Boolean isRequired() {
-        return this.required;
-    }
-
-    /**
-     * <p>
-     * The stepping increment for a numeric value in a field.
-     * </p>
-     * 
-     * @param step
-     *        The stepping increment for a numeric value in a field.
-     */
-
-    public void setStep(Float step) {
-        this.step = step;
-    }
-
-    /**
-     * <p>
-     * The stepping increment for a numeric value in a field.
-     * </p>
-     * 
-     * @return The stepping increment for a numeric value in a field.
-     */
-
-    public Float getStep() {
-        return this.step;
-    }
-
-    /**
-     * <p>
-     * The stepping increment for a numeric value in a field.
-     * </p>
-     * 
-     * @param step
-     *        The stepping increment for a numeric value in a field.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public FieldInputConfig withStep(Float step) {
-        setStep(step);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The input type for the field.
-     * </p>
-     * 
-     * @param type
-     *        The input type for the field.
-     */
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    /**
-     * <p>
-     * The input type for the field.
-     * </p>
-     * 
-     * @return The input type for the field.
-     */
-
-    public String getType() {
-        return this.type;
-    }
-
-    /**
-     * <p>
-     * The input type for the field.
-     * </p>
-     * 
-     * @param type
-     *        The input type for the field.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public FieldInputConfig withType(String type) {
-        setType(type);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The value for the field.
-     * </p>
-     * 
-     * @param value
-     *        The value for the field.
-     */
-
-    public void setValue(String value) {
-        this.value = value;
-    }
-
-    /**
-     * <p>
-     * The value for the field.
-     * </p>
-     * 
-     * @return The value for the field.
-     */
-
-    public String getValue() {
-        return this.value;
-    }
-
-    /**
-     * <p>
-     * The value for the field.
-     * </p>
-     * 
-     * @param value
-     *        The value for the field.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public FieldInputConfig withValue(String value) {
-        setValue(value);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The information to use to customize the input fields with data at runtime.
-     * </p>
-     * 
-     * @param valueMappings
-     *        The information to use to customize the input fields with data at runtime.
-     */
-
-    public void setValueMappings(ValueMappings valueMappings) {
-        this.valueMappings = valueMappings;
-    }
-
-    /**
-     * <p>
-     * The information to use to customize the input fields with data at runtime.
-     * </p>
-     * 
-     * @return The information to use to customize the input fields with data at runtime.
-     */
-
-    public ValueMappings getValueMappings() {
-        return this.valueMappings;
-    }
-
-    /**
-     * <p>
-     * The information to use to customize the input fields with data at runtime.
-     * </p>
-     * 
-     * @param valueMappings
-     *        The information to use to customize the input fields with data at runtime.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public FieldInputConfig withValueMappings(ValueMappings valueMappings) {
-        setValueMappings(valueMappings);
+    public FieldInputConfig withFileUploaderConfig(FileUploaderFieldConfig fileUploaderConfig) {
+        setFileUploaderConfig(fileUploaderConfig);
         return this;
     }
 
@@ -788,36 +834,38 @@ public class FieldInputConfig implements Serializable, Cloneable, StructuredPojo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getDefaultChecked() != null)
-            sb.append("DefaultChecked: ").append(getDefaultChecked()).append(",");
-        if (getDefaultCountryCode() != null)
-            sb.append("DefaultCountryCode: ").append(getDefaultCountryCode()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
+        if (getRequired() != null)
+            sb.append("Required: ").append(getRequired()).append(",");
+        if (getReadOnly() != null)
+            sb.append("ReadOnly: ").append(getReadOnly()).append(",");
+        if (getPlaceholder() != null)
+            sb.append("Placeholder: ").append(getPlaceholder()).append(",");
         if (getDefaultValue() != null)
             sb.append("DefaultValue: ").append(getDefaultValue()).append(",");
         if (getDescriptiveText() != null)
             sb.append("DescriptiveText: ").append(getDescriptiveText()).append(",");
-        if (getIsArray() != null)
-            sb.append("IsArray: ").append(getIsArray()).append(",");
-        if (getMaxValue() != null)
-            sb.append("MaxValue: ").append(getMaxValue()).append(",");
-        if (getMinValue() != null)
-            sb.append("MinValue: ").append(getMinValue()).append(",");
+        if (getDefaultChecked() != null)
+            sb.append("DefaultChecked: ").append(getDefaultChecked()).append(",");
+        if (getDefaultCountryCode() != null)
+            sb.append("DefaultCountryCode: ").append(getDefaultCountryCode()).append(",");
+        if (getValueMappings() != null)
+            sb.append("ValueMappings: ").append(getValueMappings()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
-        if (getPlaceholder() != null)
-            sb.append("Placeholder: ").append(getPlaceholder()).append(",");
-        if (getReadOnly() != null)
-            sb.append("ReadOnly: ").append(getReadOnly()).append(",");
-        if (getRequired() != null)
-            sb.append("Required: ").append(getRequired()).append(",");
+        if (getMinValue() != null)
+            sb.append("MinValue: ").append(getMinValue()).append(",");
+        if (getMaxValue() != null)
+            sb.append("MaxValue: ").append(getMaxValue()).append(",");
         if (getStep() != null)
             sb.append("Step: ").append(getStep()).append(",");
-        if (getType() != null)
-            sb.append("Type: ").append(getType()).append(",");
         if (getValue() != null)
             sb.append("Value: ").append(getValue()).append(",");
-        if (getValueMappings() != null)
-            sb.append("ValueMappings: ").append(getValueMappings());
+        if (getIsArray() != null)
+            sb.append("IsArray: ").append(getIsArray()).append(",");
+        if (getFileUploaderConfig() != null)
+            sb.append("FileUploaderConfig: ").append(getFileUploaderConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -832,13 +880,21 @@ public class FieldInputConfig implements Serializable, Cloneable, StructuredPojo
         if (obj instanceof FieldInputConfig == false)
             return false;
         FieldInputConfig other = (FieldInputConfig) obj;
-        if (other.getDefaultChecked() == null ^ this.getDefaultChecked() == null)
+        if (other.getType() == null ^ this.getType() == null)
             return false;
-        if (other.getDefaultChecked() != null && other.getDefaultChecked().equals(this.getDefaultChecked()) == false)
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
-        if (other.getDefaultCountryCode() == null ^ this.getDefaultCountryCode() == null)
+        if (other.getRequired() == null ^ this.getRequired() == null)
             return false;
-        if (other.getDefaultCountryCode() != null && other.getDefaultCountryCode().equals(this.getDefaultCountryCode()) == false)
+        if (other.getRequired() != null && other.getRequired().equals(this.getRequired()) == false)
+            return false;
+        if (other.getReadOnly() == null ^ this.getReadOnly() == null)
+            return false;
+        if (other.getReadOnly() != null && other.getReadOnly().equals(this.getReadOnly()) == false)
+            return false;
+        if (other.getPlaceholder() == null ^ this.getPlaceholder() == null)
+            return false;
+        if (other.getPlaceholder() != null && other.getPlaceholder().equals(this.getPlaceholder()) == false)
             return false;
         if (other.getDefaultValue() == null ^ this.getDefaultValue() == null)
             return false;
@@ -848,49 +904,45 @@ public class FieldInputConfig implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getDescriptiveText() != null && other.getDescriptiveText().equals(this.getDescriptiveText()) == false)
             return false;
-        if (other.getIsArray() == null ^ this.getIsArray() == null)
+        if (other.getDefaultChecked() == null ^ this.getDefaultChecked() == null)
             return false;
-        if (other.getIsArray() != null && other.getIsArray().equals(this.getIsArray()) == false)
+        if (other.getDefaultChecked() != null && other.getDefaultChecked().equals(this.getDefaultChecked()) == false)
             return false;
-        if (other.getMaxValue() == null ^ this.getMaxValue() == null)
+        if (other.getDefaultCountryCode() == null ^ this.getDefaultCountryCode() == null)
             return false;
-        if (other.getMaxValue() != null && other.getMaxValue().equals(this.getMaxValue()) == false)
+        if (other.getDefaultCountryCode() != null && other.getDefaultCountryCode().equals(this.getDefaultCountryCode()) == false)
             return false;
-        if (other.getMinValue() == null ^ this.getMinValue() == null)
+        if (other.getValueMappings() == null ^ this.getValueMappings() == null)
             return false;
-        if (other.getMinValue() != null && other.getMinValue().equals(this.getMinValue()) == false)
+        if (other.getValueMappings() != null && other.getValueMappings().equals(this.getValueMappings()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
-        if (other.getPlaceholder() == null ^ this.getPlaceholder() == null)
+        if (other.getMinValue() == null ^ this.getMinValue() == null)
             return false;
-        if (other.getPlaceholder() != null && other.getPlaceholder().equals(this.getPlaceholder()) == false)
+        if (other.getMinValue() != null && other.getMinValue().equals(this.getMinValue()) == false)
             return false;
-        if (other.getReadOnly() == null ^ this.getReadOnly() == null)
+        if (other.getMaxValue() == null ^ this.getMaxValue() == null)
             return false;
-        if (other.getReadOnly() != null && other.getReadOnly().equals(this.getReadOnly()) == false)
-            return false;
-        if (other.getRequired() == null ^ this.getRequired() == null)
-            return false;
-        if (other.getRequired() != null && other.getRequired().equals(this.getRequired()) == false)
+        if (other.getMaxValue() != null && other.getMaxValue().equals(this.getMaxValue()) == false)
             return false;
         if (other.getStep() == null ^ this.getStep() == null)
             return false;
         if (other.getStep() != null && other.getStep().equals(this.getStep()) == false)
             return false;
-        if (other.getType() == null ^ this.getType() == null)
-            return false;
-        if (other.getType() != null && other.getType().equals(this.getType()) == false)
-            return false;
         if (other.getValue() == null ^ this.getValue() == null)
             return false;
         if (other.getValue() != null && other.getValue().equals(this.getValue()) == false)
             return false;
-        if (other.getValueMappings() == null ^ this.getValueMappings() == null)
+        if (other.getIsArray() == null ^ this.getIsArray() == null)
             return false;
-        if (other.getValueMappings() != null && other.getValueMappings().equals(this.getValueMappings()) == false)
+        if (other.getIsArray() != null && other.getIsArray().equals(this.getIsArray()) == false)
+            return false;
+        if (other.getFileUploaderConfig() == null ^ this.getFileUploaderConfig() == null)
+            return false;
+        if (other.getFileUploaderConfig() != null && other.getFileUploaderConfig().equals(this.getFileUploaderConfig()) == false)
             return false;
         return true;
     }
@@ -900,21 +952,22 @@ public class FieldInputConfig implements Serializable, Cloneable, StructuredPojo
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getDefaultChecked() == null) ? 0 : getDefaultChecked().hashCode());
-        hashCode = prime * hashCode + ((getDefaultCountryCode() == null) ? 0 : getDefaultCountryCode().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getRequired() == null) ? 0 : getRequired().hashCode());
+        hashCode = prime * hashCode + ((getReadOnly() == null) ? 0 : getReadOnly().hashCode());
+        hashCode = prime * hashCode + ((getPlaceholder() == null) ? 0 : getPlaceholder().hashCode());
         hashCode = prime * hashCode + ((getDefaultValue() == null) ? 0 : getDefaultValue().hashCode());
         hashCode = prime * hashCode + ((getDescriptiveText() == null) ? 0 : getDescriptiveText().hashCode());
-        hashCode = prime * hashCode + ((getIsArray() == null) ? 0 : getIsArray().hashCode());
-        hashCode = prime * hashCode + ((getMaxValue() == null) ? 0 : getMaxValue().hashCode());
-        hashCode = prime * hashCode + ((getMinValue() == null) ? 0 : getMinValue().hashCode());
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
-        hashCode = prime * hashCode + ((getPlaceholder() == null) ? 0 : getPlaceholder().hashCode());
-        hashCode = prime * hashCode + ((getReadOnly() == null) ? 0 : getReadOnly().hashCode());
-        hashCode = prime * hashCode + ((getRequired() == null) ? 0 : getRequired().hashCode());
-        hashCode = prime * hashCode + ((getStep() == null) ? 0 : getStep().hashCode());
-        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
-        hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
+        hashCode = prime * hashCode + ((getDefaultChecked() == null) ? 0 : getDefaultChecked().hashCode());
+        hashCode = prime * hashCode + ((getDefaultCountryCode() == null) ? 0 : getDefaultCountryCode().hashCode());
         hashCode = prime * hashCode + ((getValueMappings() == null) ? 0 : getValueMappings().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getMinValue() == null) ? 0 : getMinValue().hashCode());
+        hashCode = prime * hashCode + ((getMaxValue() == null) ? 0 : getMaxValue().hashCode());
+        hashCode = prime * hashCode + ((getStep() == null) ? 0 : getStep().hashCode());
+        hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
+        hashCode = prime * hashCode + ((getIsArray() == null) ? 0 : getIsArray().hashCode());
+        hashCode = prime * hashCode + ((getFileUploaderConfig() == null) ? 0 : getFileUploaderConfig().hashCode());
         return hashCode;
     }
 

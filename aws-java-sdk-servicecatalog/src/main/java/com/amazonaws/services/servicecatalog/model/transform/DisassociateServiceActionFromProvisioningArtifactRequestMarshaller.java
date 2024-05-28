@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,6 +16,8 @@ import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
 import com.amazonaws.services.servicecatalog.model.*;
+
+import com.amazonaws.util.IdempotentUtils;
 
 import com.amazonaws.protocol.*;
 import com.amazonaws.annotation.SdkInternalApi;
@@ -35,6 +37,9 @@ public class DisassociateServiceActionFromProvisioningArtifactRequestMarshaller 
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceActionId").build();
     private static final MarshallingInfo<String> ACCEPTLANGUAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AcceptLanguage").build();
+    private static final MarshallingInfo<String> IDEMPOTENCYTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdempotencyToken")
+            .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
 
     private static final DisassociateServiceActionFromProvisioningArtifactRequestMarshaller instance = new DisassociateServiceActionFromProvisioningArtifactRequestMarshaller();
 
@@ -57,6 +62,7 @@ public class DisassociateServiceActionFromProvisioningArtifactRequestMarshaller 
             protocolMarshaller.marshall(disassociateServiceActionFromProvisioningArtifactRequest.getProvisioningArtifactId(), PROVISIONINGARTIFACTID_BINDING);
             protocolMarshaller.marshall(disassociateServiceActionFromProvisioningArtifactRequest.getServiceActionId(), SERVICEACTIONID_BINDING);
             protocolMarshaller.marshall(disassociateServiceActionFromProvisioningArtifactRequest.getAcceptLanguage(), ACCEPTLANGUAGE_BINDING);
+            protocolMarshaller.marshall(disassociateServiceActionFromProvisioningArtifactRequest.getIdempotencyToken(), IDEMPOTENCYTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

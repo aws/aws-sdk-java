@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class CloudwatchLogsActionMarshaller {
             .marshallLocationName("roleArn").build();
     private static final MarshallingInfo<String> LOGGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logGroupName").build();
+    private static final MarshallingInfo<Boolean> BATCHMODE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("batchMode").build();
 
     private static final CloudwatchLogsActionMarshaller instance = new CloudwatchLogsActionMarshaller();
 
@@ -50,6 +52,7 @@ public class CloudwatchLogsActionMarshaller {
         try {
             protocolMarshaller.marshall(cloudwatchLogsAction.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(cloudwatchLogsAction.getLogGroupName(), LOGGROUPNAME_BINDING);
+            protocolMarshaller.marshall(cloudwatchLogsAction.getBatchMode(), BATCHMODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

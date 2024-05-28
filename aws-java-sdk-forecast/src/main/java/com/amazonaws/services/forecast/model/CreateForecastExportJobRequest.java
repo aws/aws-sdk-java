@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,12 +39,12 @@ public class CreateForecastExportJobRequest extends com.amazonaws.AmazonWebServi
     private String forecastArn;
     /**
      * <p>
-     * The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that Amazon
+     * The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon
      * Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.
      * </p>
      * <p>
-     * If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The IAM
-     * role must allow Amazon Forecast permission to access the key.
+     * If encryption is used, <code>Destination</code> must include an Key Management Service (KMS) key. The IAM role
+     * must allow Amazon Forecast permission to access the key.
      * </p>
      */
     private DataDestination destination;
@@ -92,10 +92,10 @@ public class CreateForecastExportJobRequest extends com.amazonaws.AmazonWebServi
      * <li>
      * <p>
      * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this
-     * prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be
-     * a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not
-     * count against your tags per resource limit.
+     * keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values
+     * can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
+     * considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of
+     * <code>aws</code> do not count against your tags per resource limit.
      * </p>
      * </li>
      * </ul>
@@ -190,21 +190,21 @@ public class CreateForecastExportJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that Amazon
+     * The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon
      * Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.
      * </p>
      * <p>
-     * If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The IAM
-     * role must allow Amazon Forecast permission to access the key.
+     * If encryption is used, <code>Destination</code> must include an Key Management Service (KMS) key. The IAM role
+     * must allow Amazon Forecast permission to access the key.
      * </p>
      * 
      * @param destination
-     *        The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that
+     *        The location where you want to save the forecast and an Identity and Access Management (IAM) role that
      *        Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3
      *        bucket.</p>
      *        <p>
-     *        If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The
-     *        IAM role must allow Amazon Forecast permission to access the key.
+     *        If encryption is used, <code>Destination</code> must include an Key Management Service (KMS) key. The IAM
+     *        role must allow Amazon Forecast permission to access the key.
      */
 
     public void setDestination(DataDestination destination) {
@@ -213,20 +213,20 @@ public class CreateForecastExportJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that Amazon
+     * The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon
      * Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.
      * </p>
      * <p>
-     * If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The IAM
-     * role must allow Amazon Forecast permission to access the key.
+     * If encryption is used, <code>Destination</code> must include an Key Management Service (KMS) key. The IAM role
+     * must allow Amazon Forecast permission to access the key.
      * </p>
      * 
-     * @return The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role
-     *         that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3
+     * @return The location where you want to save the forecast and an Identity and Access Management (IAM) role that
+     *         Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3
      *         bucket.</p>
      *         <p>
-     *         If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The
-     *         IAM role must allow Amazon Forecast permission to access the key.
+     *         If encryption is used, <code>Destination</code> must include an Key Management Service (KMS) key. The IAM
+     *         role must allow Amazon Forecast permission to access the key.
      */
 
     public DataDestination getDestination() {
@@ -235,21 +235,21 @@ public class CreateForecastExportJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that Amazon
+     * The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon
      * Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.
      * </p>
      * <p>
-     * If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The IAM
-     * role must allow Amazon Forecast permission to access the key.
+     * If encryption is used, <code>Destination</code> must include an Key Management Service (KMS) key. The IAM role
+     * must allow Amazon Forecast permission to access the key.
      * </p>
      * 
      * @param destination
-     *        The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that
+     *        The location where you want to save the forecast and an Identity and Access Management (IAM) role that
      *        Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3
      *        bucket.</p>
      *        <p>
-     *        If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The
-     *        IAM role must allow Amazon Forecast permission to access the key.
+     *        If encryption is used, <code>Destination</code> must include an Key Management Service (KMS) key. The IAM
+     *        role must allow Amazon Forecast permission to access the key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -302,10 +302,10 @@ public class CreateForecastExportJobRequest extends com.amazonaws.AmazonWebServi
      * <li>
      * <p>
      * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this
-     * prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be
-     * a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not
-     * count against your tags per resource limit.
+     * keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values
+     * can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
+     * considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of
+     * <code>aws</code> do not count against your tags per resource limit.
      * </p>
      * </li>
      * </ul>
@@ -351,10 +351,10 @@ public class CreateForecastExportJobRequest extends com.amazonaws.AmazonWebServi
      *         <li>
      *         <p>
      *         Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a
-     *         prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix.
-     *         Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then
-     *         Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the
-     *         key prefix of <code>aws</code> do not count against your tags per resource limit.
+     *         prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with
+     *         this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key
+     *         does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags
+     *         with only the key prefix of <code>aws</code> do not count against your tags per resource limit.
      *         </p>
      *         </li>
      */
@@ -407,10 +407,10 @@ public class CreateForecastExportJobRequest extends com.amazonaws.AmazonWebServi
      * <li>
      * <p>
      * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this
-     * prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be
-     * a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not
-     * count against your tags per resource limit.
+     * keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values
+     * can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
+     * considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of
+     * <code>aws</code> do not count against your tags per resource limit.
      * </p>
      * </li>
      * </ul>
@@ -457,10 +457,10 @@ public class CreateForecastExportJobRequest extends com.amazonaws.AmazonWebServi
      *        <li>
      *        <p>
      *        Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix
-     *        for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can
-     *        have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
-     *        considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix
-     *        of <code>aws</code> do not count against your tags per resource limit.
+     *        for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this
+     *        prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does
+     *        not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with
+     *        only the key prefix of <code>aws</code> do not count against your tags per resource limit.
      *        </p>
      *        </li>
      */
@@ -518,10 +518,10 @@ public class CreateForecastExportJobRequest extends com.amazonaws.AmazonWebServi
      * <li>
      * <p>
      * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this
-     * prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be
-     * a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not
-     * count against your tags per resource limit.
+     * keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values
+     * can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
+     * considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of
+     * <code>aws</code> do not count against your tags per resource limit.
      * </p>
      * </li>
      * </ul>
@@ -573,10 +573,10 @@ public class CreateForecastExportJobRequest extends com.amazonaws.AmazonWebServi
      *        <li>
      *        <p>
      *        Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix
-     *        for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can
-     *        have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
-     *        considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix
-     *        of <code>aws</code> do not count against your tags per resource limit.
+     *        for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this
+     *        prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does
+     *        not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with
+     *        only the key prefix of <code>aws</code> do not count against your tags per resource limit.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -636,10 +636,10 @@ public class CreateForecastExportJobRequest extends com.amazonaws.AmazonWebServi
      * <li>
      * <p>
      * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this
-     * prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be
-     * a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not
-     * count against your tags per resource limit.
+     * keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values
+     * can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
+     * considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of
+     * <code>aws</code> do not count against your tags per resource limit.
      * </p>
      * </li>
      * </ul>
@@ -686,10 +686,10 @@ public class CreateForecastExportJobRequest extends com.amazonaws.AmazonWebServi
      *        <li>
      *        <p>
      *        Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix
-     *        for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can
-     *        have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
-     *        considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix
-     *        of <code>aws</code> do not count against your tags per resource limit.
+     *        for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this
+     *        prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does
+     *        not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with
+     *        only the key prefix of <code>aws</code> do not count against your tags per resource limit.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

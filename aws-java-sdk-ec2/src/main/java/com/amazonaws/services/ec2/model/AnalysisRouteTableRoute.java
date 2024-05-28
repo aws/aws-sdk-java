@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -121,6 +121,24 @@ public class AnalysisRouteTableRoute implements Serializable, Cloneable {
      * </ul>
      */
     private String state;
+    /**
+     * <p>
+     * The ID of a carrier gateway.
+     * </p>
+     */
+    private String carrierGatewayId;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a core network.
+     * </p>
+     */
+    private String coreNetworkArn;
+    /**
+     * <p>
+     * The ID of a local gateway.
+     * </p>
+     */
+    private String localGatewayId;
 
     /**
      * <p>
@@ -731,6 +749,126 @@ public class AnalysisRouteTableRoute implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of a carrier gateway.
+     * </p>
+     * 
+     * @param carrierGatewayId
+     *        The ID of a carrier gateway.
+     */
+
+    public void setCarrierGatewayId(String carrierGatewayId) {
+        this.carrierGatewayId = carrierGatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of a carrier gateway.
+     * </p>
+     * 
+     * @return The ID of a carrier gateway.
+     */
+
+    public String getCarrierGatewayId() {
+        return this.carrierGatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of a carrier gateway.
+     * </p>
+     * 
+     * @param carrierGatewayId
+     *        The ID of a carrier gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnalysisRouteTableRoute withCarrierGatewayId(String carrierGatewayId) {
+        setCarrierGatewayId(carrierGatewayId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a core network.
+     * </p>
+     * 
+     * @param coreNetworkArn
+     *        The Amazon Resource Name (ARN) of a core network.
+     */
+
+    public void setCoreNetworkArn(String coreNetworkArn) {
+        this.coreNetworkArn = coreNetworkArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a core network.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of a core network.
+     */
+
+    public String getCoreNetworkArn() {
+        return this.coreNetworkArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a core network.
+     * </p>
+     * 
+     * @param coreNetworkArn
+     *        The Amazon Resource Name (ARN) of a core network.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnalysisRouteTableRoute withCoreNetworkArn(String coreNetworkArn) {
+        setCoreNetworkArn(coreNetworkArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of a local gateway.
+     * </p>
+     * 
+     * @param localGatewayId
+     *        The ID of a local gateway.
+     */
+
+    public void setLocalGatewayId(String localGatewayId) {
+        this.localGatewayId = localGatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of a local gateway.
+     * </p>
+     * 
+     * @return The ID of a local gateway.
+     */
+
+    public String getLocalGatewayId() {
+        return this.localGatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of a local gateway.
+     * </p>
+     * 
+     * @param localGatewayId
+     *        The ID of a local gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnalysisRouteTableRoute withLocalGatewayId(String localGatewayId) {
+        setLocalGatewayId(localGatewayId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -763,7 +901,13 @@ public class AnalysisRouteTableRoute implements Serializable, Cloneable {
         if (getVpcPeeringConnectionId() != null)
             sb.append("VpcPeeringConnectionId: ").append(getVpcPeeringConnectionId()).append(",");
         if (getState() != null)
-            sb.append("State: ").append(getState());
+            sb.append("State: ").append(getState()).append(",");
+        if (getCarrierGatewayId() != null)
+            sb.append("CarrierGatewayId: ").append(getCarrierGatewayId()).append(",");
+        if (getCoreNetworkArn() != null)
+            sb.append("CoreNetworkArn: ").append(getCoreNetworkArn()).append(",");
+        if (getLocalGatewayId() != null)
+            sb.append("LocalGatewayId: ").append(getLocalGatewayId());
         sb.append("}");
         return sb.toString();
     }
@@ -822,6 +966,18 @@ public class AnalysisRouteTableRoute implements Serializable, Cloneable {
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
+        if (other.getCarrierGatewayId() == null ^ this.getCarrierGatewayId() == null)
+            return false;
+        if (other.getCarrierGatewayId() != null && other.getCarrierGatewayId().equals(this.getCarrierGatewayId()) == false)
+            return false;
+        if (other.getCoreNetworkArn() == null ^ this.getCoreNetworkArn() == null)
+            return false;
+        if (other.getCoreNetworkArn() != null && other.getCoreNetworkArn().equals(this.getCoreNetworkArn()) == false)
+            return false;
+        if (other.getLocalGatewayId() == null ^ this.getLocalGatewayId() == null)
+            return false;
+        if (other.getLocalGatewayId() != null && other.getLocalGatewayId().equals(this.getLocalGatewayId()) == false)
+            return false;
         return true;
     }
 
@@ -841,6 +997,9 @@ public class AnalysisRouteTableRoute implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTransitGatewayId() == null) ? 0 : getTransitGatewayId().hashCode());
         hashCode = prime * hashCode + ((getVpcPeeringConnectionId() == null) ? 0 : getVpcPeeringConnectionId().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getCarrierGatewayId() == null) ? 0 : getCarrierGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getCoreNetworkArn() == null) ? 0 : getCoreNetworkArn().hashCode());
+        hashCode = prime * hashCode + ((getLocalGatewayId() == null) ? 0 : getLocalGatewayId().hashCode());
         return hashCode;
     }
 

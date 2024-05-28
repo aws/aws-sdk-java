@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,10 +32,14 @@ public class JobSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("adAvailOffset").build();
     private static final MarshallingInfo<StructuredPojo> AVAILBLANKING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("availBlanking").build();
+    private static final MarshallingInfo<List> COLORCONVERSION3DLUTSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("colorConversion3DLUTSettings").build();
     private static final MarshallingInfo<StructuredPojo> ESAM_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("esam").build();
     private static final MarshallingInfo<StructuredPojo> EXTENDEDDATASERVICES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("extendedDataServices").build();
+    private static final MarshallingInfo<Integer> FOLLOWSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("followSource").build();
     private static final MarshallingInfo<List> INPUTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("inputs").build();
     private static final MarshallingInfo<StructuredPojo> KANTARWATERMARK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -71,8 +75,10 @@ public class JobSettingsMarshaller {
         try {
             protocolMarshaller.marshall(jobSettings.getAdAvailOffset(), ADAVAILOFFSET_BINDING);
             protocolMarshaller.marshall(jobSettings.getAvailBlanking(), AVAILBLANKING_BINDING);
+            protocolMarshaller.marshall(jobSettings.getColorConversion3DLUTSettings(), COLORCONVERSION3DLUTSETTINGS_BINDING);
             protocolMarshaller.marshall(jobSettings.getEsam(), ESAM_BINDING);
             protocolMarshaller.marshall(jobSettings.getExtendedDataServices(), EXTENDEDDATASERVICES_BINDING);
+            protocolMarshaller.marshall(jobSettings.getFollowSource(), FOLLOWSOURCE_BINDING);
             protocolMarshaller.marshall(jobSettings.getInputs(), INPUTS_BINDING);
             protocolMarshaller.marshall(jobSettings.getKantarWatermark(), KANTARWATERMARK_BINDING);
             protocolMarshaller.marshall(jobSettings.getMotionImageInserter(), MOTIONIMAGEINSERTER_BINDING);

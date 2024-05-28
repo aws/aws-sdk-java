@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,8 @@
  * who prefer to build applications using language-specific APIs instead of submitting a request over HTTP or HTTPS.
  * These libraries provide basic functions that automatically take care of tasks such as cryptographically signing your
  * requests, retrying requests, and handling error responses, so that it is easier for you to get started. For more
- * information about the AWS SDKs, see <a href="https://docs.aws.amazon.com/https:/aws.amazon.com/tools/">Tools to build
- * on AWS</a>.
+ * information about the AWS SDKs, go to <a href="https://aws.amazon.com/developer/tools/">Tools to build on AWS</a>
+ * page, scroll down to the <b>SDK</b> section, and choose plus (+) sign to expand the section.
  * </p>
  */
 package com.amazonaws.services.frauddetector;

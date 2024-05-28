@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,10 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object that specifies metadata for your organization Config Custom Policy rule including the runtime system in
- * use, which accounts have debug logging enabled, and other custom rule metadata such as resource type, resource ID of
- * Amazon Web Services resource, and organization trigger types that trigger Config to evaluate Amazon Web Services
- * resources against a rule.
+ * metadata for your organization Config Custom Policy rule including the runtime system in use, which accounts have
+ * debug logging enabled, and other custom rule metadata such as resource type, resource ID of Amazon Web Services
+ * resource, and organization trigger types that trigger Config to evaluate Amazon Web Services resources against a
+ * rule.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/OrganizationCustomPolicyRuleMetadataNoPolicy"

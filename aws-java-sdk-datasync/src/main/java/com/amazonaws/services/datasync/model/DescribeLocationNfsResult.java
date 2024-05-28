@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,13 +28,13 @@ public class DescribeLocationNfsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the NFS location that was described.
+     * The ARN of the NFS location.
      * </p>
      */
     private String locationArn;
     /**
      * <p>
-     * The URL of the source NFS location that was described.
+     * The URI of the NFS location.
      * </p>
      */
     private String locationUri;
@@ -42,24 +42,24 @@ public class DescribeLocationNfsResult extends com.amazonaws.AmazonWebServiceRes
     private OnPremConfig onPremConfig;
     /**
      * <p>
-     * The NFS mount options that DataSync used to mount your NFS share.
+     * The mount options that DataSync uses to mount your NFS file server.
      * </p>
      */
     private NfsMountOptions mountOptions;
     /**
      * <p>
-     * The time that the NFS location was created.
+     * The time when the NFS location was created.
      * </p>
      */
     private java.util.Date creationTime;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the NFS location that was described.
+     * The ARN of the NFS location.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the NFS location that was described.
+     *        The ARN of the NFS location.
      */
 
     public void setLocationArn(String locationArn) {
@@ -68,10 +68,10 @@ public class DescribeLocationNfsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the NFS location that was described.
+     * The ARN of the NFS location.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the NFS location that was described.
+     * @return The ARN of the NFS location.
      */
 
     public String getLocationArn() {
@@ -80,11 +80,11 @@ public class DescribeLocationNfsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the NFS location that was described.
+     * The ARN of the NFS location.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the NFS location that was described.
+     *        The ARN of the NFS location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class DescribeLocationNfsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The URL of the source NFS location that was described.
+     * The URI of the NFS location.
      * </p>
      * 
      * @param locationUri
-     *        The URL of the source NFS location that was described.
+     *        The URI of the NFS location.
      */
 
     public void setLocationUri(String locationUri) {
@@ -108,10 +108,10 @@ public class DescribeLocationNfsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The URL of the source NFS location that was described.
+     * The URI of the NFS location.
      * </p>
      * 
-     * @return The URL of the source NFS location that was described.
+     * @return The URI of the NFS location.
      */
 
     public String getLocationUri() {
@@ -120,11 +120,11 @@ public class DescribeLocationNfsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The URL of the source NFS location that was described.
+     * The URI of the NFS location.
      * </p>
      * 
      * @param locationUri
-     *        The URL of the source NFS location that was described.
+     *        The URI of the NFS location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,11 +161,11 @@ public class DescribeLocationNfsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The NFS mount options that DataSync used to mount your NFS share.
+     * The mount options that DataSync uses to mount your NFS file server.
      * </p>
      * 
      * @param mountOptions
-     *        The NFS mount options that DataSync used to mount your NFS share.
+     *        The mount options that DataSync uses to mount your NFS file server.
      */
 
     public void setMountOptions(NfsMountOptions mountOptions) {
@@ -174,10 +174,10 @@ public class DescribeLocationNfsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The NFS mount options that DataSync used to mount your NFS share.
+     * The mount options that DataSync uses to mount your NFS file server.
      * </p>
      * 
-     * @return The NFS mount options that DataSync used to mount your NFS share.
+     * @return The mount options that DataSync uses to mount your NFS file server.
      */
 
     public NfsMountOptions getMountOptions() {
@@ -186,11 +186,11 @@ public class DescribeLocationNfsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The NFS mount options that DataSync used to mount your NFS share.
+     * The mount options that DataSync uses to mount your NFS file server.
      * </p>
      * 
      * @param mountOptions
-     *        The NFS mount options that DataSync used to mount your NFS share.
+     *        The mount options that DataSync uses to mount your NFS file server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -201,11 +201,11 @@ public class DescribeLocationNfsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The time that the NFS location was created.
+     * The time when the NFS location was created.
      * </p>
      * 
      * @param creationTime
-     *        The time that the NFS location was created.
+     *        The time when the NFS location was created.
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -214,10 +214,10 @@ public class DescribeLocationNfsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The time that the NFS location was created.
+     * The time when the NFS location was created.
      * </p>
      * 
-     * @return The time that the NFS location was created.
+     * @return The time when the NFS location was created.
      */
 
     public java.util.Date getCreationTime() {
@@ -226,11 +226,11 @@ public class DescribeLocationNfsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The time that the NFS location was created.
+     * The time when the NFS location was created.
      * </p>
      * 
      * @param creationTime
-     *        The time that the NFS location was created.
+     *        The time when the NFS location was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

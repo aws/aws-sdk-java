@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,13 +33,15 @@ public class UpdateJobFromSourceControlRequest extends com.amazonaws.AmazonWebSe
     private String jobName;
     /**
      * <p>
-     * The provider for the remote repository.
+     * The provider for the remote repository. Possible values: GITHUB, AWS_CODE_COMMIT, GITLAB, BITBUCKET.
      * </p>
      */
     private String provider;
     /**
      * <p>
-     * The name of the remote repository that contains the job artifacts.
+     * The name of the remote repository that contains the job artifacts. For BitBucket providers,
+     * <code>RepositoryName</code> should include <code>WorkspaceName</code>. Use the format
+     * <code>&lt;WorkspaceName&gt;/&lt;RepositoryName&gt;</code>.
      * </p>
      */
     private String repositoryName;
@@ -123,11 +125,11 @@ public class UpdateJobFromSourceControlRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The provider for the remote repository.
+     * The provider for the remote repository. Possible values: GITHUB, AWS_CODE_COMMIT, GITLAB, BITBUCKET.
      * </p>
      * 
      * @param provider
-     *        The provider for the remote repository.
+     *        The provider for the remote repository. Possible values: GITHUB, AWS_CODE_COMMIT, GITLAB, BITBUCKET.
      * @see SourceControlProvider
      */
 
@@ -137,10 +139,10 @@ public class UpdateJobFromSourceControlRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The provider for the remote repository.
+     * The provider for the remote repository. Possible values: GITHUB, AWS_CODE_COMMIT, GITLAB, BITBUCKET.
      * </p>
      * 
-     * @return The provider for the remote repository.
+     * @return The provider for the remote repository. Possible values: GITHUB, AWS_CODE_COMMIT, GITLAB, BITBUCKET.
      * @see SourceControlProvider
      */
 
@@ -150,11 +152,11 @@ public class UpdateJobFromSourceControlRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The provider for the remote repository.
+     * The provider for the remote repository. Possible values: GITHUB, AWS_CODE_COMMIT, GITLAB, BITBUCKET.
      * </p>
      * 
      * @param provider
-     *        The provider for the remote repository.
+     *        The provider for the remote repository. Possible values: GITHUB, AWS_CODE_COMMIT, GITLAB, BITBUCKET.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SourceControlProvider
      */
@@ -166,11 +168,11 @@ public class UpdateJobFromSourceControlRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The provider for the remote repository.
+     * The provider for the remote repository. Possible values: GITHUB, AWS_CODE_COMMIT, GITLAB, BITBUCKET.
      * </p>
      * 
      * @param provider
-     *        The provider for the remote repository.
+     *        The provider for the remote repository. Possible values: GITHUB, AWS_CODE_COMMIT, GITLAB, BITBUCKET.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SourceControlProvider
      */
@@ -182,11 +184,15 @@ public class UpdateJobFromSourceControlRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of the remote repository that contains the job artifacts.
+     * The name of the remote repository that contains the job artifacts. For BitBucket providers,
+     * <code>RepositoryName</code> should include <code>WorkspaceName</code>. Use the format
+     * <code>&lt;WorkspaceName&gt;/&lt;RepositoryName&gt;</code>.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the remote repository that contains the job artifacts.
+     *        The name of the remote repository that contains the job artifacts. For BitBucket providers,
+     *        <code>RepositoryName</code> should include <code>WorkspaceName</code>. Use the format
+     *        <code>&lt;WorkspaceName&gt;/&lt;RepositoryName&gt;</code>.
      */
 
     public void setRepositoryName(String repositoryName) {
@@ -195,10 +201,14 @@ public class UpdateJobFromSourceControlRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of the remote repository that contains the job artifacts.
+     * The name of the remote repository that contains the job artifacts. For BitBucket providers,
+     * <code>RepositoryName</code> should include <code>WorkspaceName</code>. Use the format
+     * <code>&lt;WorkspaceName&gt;/&lt;RepositoryName&gt;</code>.
      * </p>
      * 
-     * @return The name of the remote repository that contains the job artifacts.
+     * @return The name of the remote repository that contains the job artifacts. For BitBucket providers,
+     *         <code>RepositoryName</code> should include <code>WorkspaceName</code>. Use the format
+     *         <code>&lt;WorkspaceName&gt;/&lt;RepositoryName&gt;</code>.
      */
 
     public String getRepositoryName() {
@@ -207,11 +217,15 @@ public class UpdateJobFromSourceControlRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of the remote repository that contains the job artifacts.
+     * The name of the remote repository that contains the job artifacts. For BitBucket providers,
+     * <code>RepositoryName</code> should include <code>WorkspaceName</code>. Use the format
+     * <code>&lt;WorkspaceName&gt;/&lt;RepositoryName&gt;</code>.
      * </p>
      * 
      * @param repositoryName
-     *        The name of the remote repository that contains the job artifacts.
+     *        The name of the remote repository that contains the job artifacts. For BitBucket providers,
+     *        <code>RepositoryName</code> should include <code>WorkspaceName</code>. Use the format
+     *        <code>&lt;WorkspaceName&gt;/&lt;RepositoryName&gt;</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

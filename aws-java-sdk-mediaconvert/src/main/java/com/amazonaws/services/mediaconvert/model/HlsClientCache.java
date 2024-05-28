@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default
- * value Enabled (ENABLED) and control caching in your video distribution set up. For example, use the Cache-Control
- * http header.
+ * value Enabled and control caching in your video distribution set up. For example, use the Cache-Control http header.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum HlsClientCache {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,9 +30,7 @@ public class InstanceProperty implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Indicates whether the <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation was successful.
+     * Indicates whether the temporary credential request was successful.
      * </p>
      */
     private Boolean failed;
@@ -44,24 +42,18 @@ public class InstanceProperty implements Serializable, Cloneable, StructuredPojo
     private java.util.Map<String, String> properties;
     /**
      * <p>
-     * The ISO-8601 time stamp of when the certificate was last used in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.
+     * The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.
      * </p>
      */
     private java.util.Date seenAt;
 
     /**
      * <p>
-     * Indicates whether the <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation was successful.
+     * Indicates whether the temporary credential request was successful.
      * </p>
      * 
      * @param failed
-     *        Indicates whether the <a
-     *        href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html"
-     *        >CreateSession</a> operation was successful.
+     *        Indicates whether the temporary credential request was successful.
      */
 
     public void setFailed(Boolean failed) {
@@ -70,14 +62,10 @@ public class InstanceProperty implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Indicates whether the <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation was successful.
+     * Indicates whether the temporary credential request was successful.
      * </p>
      * 
-     * @return Indicates whether the <a
-     *         href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html"
-     *         >CreateSession</a> operation was successful.
+     * @return Indicates whether the temporary credential request was successful.
      */
 
     public Boolean getFailed() {
@@ -86,15 +74,11 @@ public class InstanceProperty implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Indicates whether the <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation was successful.
+     * Indicates whether the temporary credential request was successful.
      * </p>
      * 
      * @param failed
-     *        Indicates whether the <a
-     *        href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html"
-     *        >CreateSession</a> operation was successful.
+     *        Indicates whether the temporary credential request was successful.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,14 +89,10 @@ public class InstanceProperty implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Indicates whether the <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation was successful.
+     * Indicates whether the temporary credential request was successful.
      * </p>
      * 
-     * @return Indicates whether the <a
-     *         href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html"
-     *         >CreateSession</a> operation was successful.
+     * @return Indicates whether the temporary credential request was successful.
      */
 
     public Boolean isFailed() {
@@ -189,15 +169,11 @@ public class InstanceProperty implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ISO-8601 time stamp of when the certificate was last used in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.
+     * The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.
      * </p>
      * 
      * @param seenAt
-     *        The ISO-8601 time stamp of when the certificate was last used in a <a
-     *        href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html"
-     *        >CreateSession</a> operation.
+     *        The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.
      */
 
     public void setSeenAt(java.util.Date seenAt) {
@@ -206,14 +182,10 @@ public class InstanceProperty implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ISO-8601 time stamp of when the certificate was last used in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.
+     * The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.
      * </p>
      * 
-     * @return The ISO-8601 time stamp of when the certificate was last used in a <a
-     *         href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html"
-     *         >CreateSession</a> operation.
+     * @return The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.
      */
 
     public java.util.Date getSeenAt() {
@@ -222,15 +194,11 @@ public class InstanceProperty implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ISO-8601 time stamp of when the certificate was last used in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.
+     * The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.
      * </p>
      * 
      * @param seenAt
-     *        The ISO-8601 time stamp of when the certificate was last used in a <a
-     *        href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html"
-     *        >CreateSession</a> operation.
+     *        The ISO-8601 time stamp of when the certificate was last used in a temporary credential request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

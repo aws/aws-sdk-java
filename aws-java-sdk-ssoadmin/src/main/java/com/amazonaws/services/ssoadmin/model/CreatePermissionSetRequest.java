@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,12 +27,6 @@ public class CreatePermissionSetRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the <a>PermissionSet</a>.
-     * </p>
-     */
-    private String name;
-    /**
-     * <p>
      * The description of the <a>PermissionSet</a>.
      * </p>
      */
@@ -40,17 +34,17 @@ public class CreatePermissionSetRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     private String instanceArn;
     /**
      * <p>
-     * The length of time that the application user sessions are valid in the ISO-8601 standard.
+     * The name of the <a>PermissionSet</a>.
      * </p>
      */
-    private String sessionDuration;
+    private String name;
     /**
      * <p>
      * Used to redirect users within the application during the federation authentication process.
@@ -59,50 +53,16 @@ public class CreatePermissionSetRequest extends com.amazonaws.AmazonWebServiceRe
     private String relayState;
     /**
      * <p>
+     * The length of time that the application user sessions are valid in the ISO-8601 standard.
+     * </p>
+     */
+    private String sessionDuration;
+    /**
+     * <p>
      * The tags to attach to the new <a>PermissionSet</a>.
      * </p>
      */
     private java.util.List<Tag> tags;
-
-    /**
-     * <p>
-     * The name of the <a>PermissionSet</a>.
-     * </p>
-     * 
-     * @param name
-     *        The name of the <a>PermissionSet</a>.
-     */
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * <p>
-     * The name of the <a>PermissionSet</a>.
-     * </p>
-     * 
-     * @return The name of the <a>PermissionSet</a>.
-     */
-
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * <p>
-     * The name of the <a>PermissionSet</a>.
-     * </p>
-     * 
-     * @param name
-     *        The name of the <a>PermissionSet</a>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreatePermissionSetRequest withName(String name) {
-        setName(name);
-        return this;
-    }
 
     /**
      * <p>
@@ -147,14 +107,15 @@ public class CreatePermissionSetRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param instanceArn
      *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
      *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *        Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *        Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     *        Reference</i>.
      */
 
     public void setInstanceArn(String instanceArn) {
@@ -164,13 +125,14 @@ public class CreatePermissionSetRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @return The ARN of the IAM Identity Center instance under which the operation will be executed. For more
      *         information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *         Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *         Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     *         Reference</i>.
      */
 
     public String getInstanceArn() {
@@ -180,14 +142,15 @@ public class CreatePermissionSetRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param instanceArn
      *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
      *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *        Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *        Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     *        Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -198,41 +161,41 @@ public class CreatePermissionSetRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The length of time that the application user sessions are valid in the ISO-8601 standard.
+     * The name of the <a>PermissionSet</a>.
      * </p>
      * 
-     * @param sessionDuration
-     *        The length of time that the application user sessions are valid in the ISO-8601 standard.
+     * @param name
+     *        The name of the <a>PermissionSet</a>.
      */
 
-    public void setSessionDuration(String sessionDuration) {
-        this.sessionDuration = sessionDuration;
+    public void setName(String name) {
+        this.name = name;
     }
 
     /**
      * <p>
-     * The length of time that the application user sessions are valid in the ISO-8601 standard.
+     * The name of the <a>PermissionSet</a>.
      * </p>
      * 
-     * @return The length of time that the application user sessions are valid in the ISO-8601 standard.
+     * @return The name of the <a>PermissionSet</a>.
      */
 
-    public String getSessionDuration() {
-        return this.sessionDuration;
+    public String getName() {
+        return this.name;
     }
 
     /**
      * <p>
-     * The length of time that the application user sessions are valid in the ISO-8601 standard.
+     * The name of the <a>PermissionSet</a>.
      * </p>
      * 
-     * @param sessionDuration
-     *        The length of time that the application user sessions are valid in the ISO-8601 standard.
+     * @param name
+     *        The name of the <a>PermissionSet</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreatePermissionSetRequest withSessionDuration(String sessionDuration) {
-        setSessionDuration(sessionDuration);
+    public CreatePermissionSetRequest withName(String name) {
+        setName(name);
         return this;
     }
 
@@ -273,6 +236,46 @@ public class CreatePermissionSetRequest extends com.amazonaws.AmazonWebServiceRe
 
     public CreatePermissionSetRequest withRelayState(String relayState) {
         setRelayState(relayState);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The length of time that the application user sessions are valid in the ISO-8601 standard.
+     * </p>
+     * 
+     * @param sessionDuration
+     *        The length of time that the application user sessions are valid in the ISO-8601 standard.
+     */
+
+    public void setSessionDuration(String sessionDuration) {
+        this.sessionDuration = sessionDuration;
+    }
+
+    /**
+     * <p>
+     * The length of time that the application user sessions are valid in the ISO-8601 standard.
+     * </p>
+     * 
+     * @return The length of time that the application user sessions are valid in the ISO-8601 standard.
+     */
+
+    public String getSessionDuration() {
+        return this.sessionDuration;
+    }
+
+    /**
+     * <p>
+     * The length of time that the application user sessions are valid in the ISO-8601 standard.
+     * </p>
+     * 
+     * @param sessionDuration
+     *        The length of time that the application user sessions are valid in the ISO-8601 standard.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePermissionSetRequest withSessionDuration(String sessionDuration) {
+        setSessionDuration(sessionDuration);
         return this;
     }
 
@@ -358,16 +361,16 @@ public class CreatePermissionSetRequest extends com.amazonaws.AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getName() != null)
-            sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getInstanceArn() != null)
             sb.append("InstanceArn: ").append(getInstanceArn()).append(",");
-        if (getSessionDuration() != null)
-            sb.append("SessionDuration: ").append(getSessionDuration()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
         if (getRelayState() != null)
             sb.append("RelayState: ").append(getRelayState()).append(",");
+        if (getSessionDuration() != null)
+            sb.append("SessionDuration: ").append(getSessionDuration()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -384,10 +387,6 @@ public class CreatePermissionSetRequest extends com.amazonaws.AmazonWebServiceRe
         if (obj instanceof CreatePermissionSetRequest == false)
             return false;
         CreatePermissionSetRequest other = (CreatePermissionSetRequest) obj;
-        if (other.getName() == null ^ this.getName() == null)
-            return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
-            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
@@ -396,13 +395,17 @@ public class CreatePermissionSetRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getInstanceArn() != null && other.getInstanceArn().equals(this.getInstanceArn()) == false)
             return false;
-        if (other.getSessionDuration() == null ^ this.getSessionDuration() == null)
+        if (other.getName() == null ^ this.getName() == null)
             return false;
-        if (other.getSessionDuration() != null && other.getSessionDuration().equals(this.getSessionDuration()) == false)
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
         if (other.getRelayState() == null ^ this.getRelayState() == null)
             return false;
         if (other.getRelayState() != null && other.getRelayState().equals(this.getRelayState()) == false)
+            return false;
+        if (other.getSessionDuration() == null ^ this.getSessionDuration() == null)
+            return false;
+        if (other.getSessionDuration() != null && other.getSessionDuration().equals(this.getSessionDuration()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
@@ -416,11 +419,11 @@ public class CreatePermissionSetRequest extends com.amazonaws.AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getInstanceArn() == null) ? 0 : getInstanceArn().hashCode());
-        hashCode = prime * hashCode + ((getSessionDuration() == null) ? 0 : getSessionDuration().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getRelayState() == null) ? 0 : getRelayState().hashCode());
+        hashCode = prime * hashCode + ((getSessionDuration() == null) ? 0 : getSessionDuration().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

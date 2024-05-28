@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,10 @@ public class AttributeMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assignedValue").build();
     private static final MarshallingInfo<String> DEFAULTVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultValue").build();
+    private static final MarshallingInfo<String> DEPRECATIONMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deprecationMessage").build();
+    private static final MarshallingInfo<String> COMMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("comment").build();
 
     private static final AttributeMarshaller instance = new AttributeMarshaller();
 
@@ -72,6 +76,8 @@ public class AttributeMarshaller {
             protocolMarshaller.marshall(attribute.getMax(), MAX_BINDING);
             protocolMarshaller.marshall(attribute.getAssignedValue(), ASSIGNEDVALUE_BINDING);
             protocolMarshaller.marshall(attribute.getDefaultValue(), DEFAULTVALUE_BINDING);
+            protocolMarshaller.marshall(attribute.getDeprecationMessage(), DEPRECATIONMESSAGE_BINDING);
+            protocolMarshaller.marshall(attribute.getComment(), COMMENT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

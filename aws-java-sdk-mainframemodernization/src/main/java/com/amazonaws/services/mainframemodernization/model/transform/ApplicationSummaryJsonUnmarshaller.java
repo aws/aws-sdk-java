@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -87,6 +87,10 @@ public class ApplicationSummaryJsonUnmarshaller implements Unmarshaller<Applicat
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     applicationSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("roleArn", targetDepth)) {
+                    context.nextToken();
+                    applicationSummary.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();

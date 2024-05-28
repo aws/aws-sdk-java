@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,11 @@ public class AbstractAWSResourceGroups implements AWSResourceGroups {
 
     @Override
     public DeleteGroupResult deleteGroup(DeleteGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAccountSettingsResult getAccountSettings(GetAccountSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -94,6 +99,11 @@ public class AbstractAWSResourceGroups implements AWSResourceGroups {
 
     @Override
     public UntagResult untag(UntagRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAccountSettingsResult updateAccountSettings(UpdateAccountSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

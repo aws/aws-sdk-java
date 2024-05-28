@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,14 +33,14 @@ public class AddApplicationCloudWatchLoggingOptionResult extends com.amazonaws.A
     private String applicationARN;
     /**
      * <p>
-     * The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the
+     * The new version ID of the SQL-based Kinesis Data Analytics application. Kinesis Data Analytics updates the
      * <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.
      * </p>
      */
     private Long applicationVersionId;
     /**
      * <p>
-     * The descriptions of the current CloudWatch logging options for the Kinesis Data Analytics application.
+     * The descriptions of the current CloudWatch logging options for the SQL-based Kinesis Data Analytics application.
      * </p>
      */
     private java.util.List<CloudWatchLoggingOptionDescription> cloudWatchLoggingOptionDescriptions;
@@ -87,12 +87,12 @@ public class AddApplicationCloudWatchLoggingOptionResult extends com.amazonaws.A
 
     /**
      * <p>
-     * The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the
+     * The new version ID of the SQL-based Kinesis Data Analytics application. Kinesis Data Analytics updates the
      * <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.
      * </p>
      * 
      * @param applicationVersionId
-     *        The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the
+     *        The new version ID of the SQL-based Kinesis Data Analytics application. Kinesis Data Analytics updates the
      *        <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.
      */
 
@@ -102,12 +102,12 @@ public class AddApplicationCloudWatchLoggingOptionResult extends com.amazonaws.A
 
     /**
      * <p>
-     * The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the
+     * The new version ID of the SQL-based Kinesis Data Analytics application. Kinesis Data Analytics updates the
      * <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.
      * </p>
      * 
-     * @return The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the
-     *         <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.
+     * @return The new version ID of the SQL-based Kinesis Data Analytics application. Kinesis Data Analytics updates
+     *         the <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.
      */
 
     public Long getApplicationVersionId() {
@@ -116,12 +116,12 @@ public class AddApplicationCloudWatchLoggingOptionResult extends com.amazonaws.A
 
     /**
      * <p>
-     * The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the
+     * The new version ID of the SQL-based Kinesis Data Analytics application. Kinesis Data Analytics updates the
      * <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.
      * </p>
      * 
      * @param applicationVersionId
-     *        The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics updates the
+     *        The new version ID of the SQL-based Kinesis Data Analytics application. Kinesis Data Analytics updates the
      *        <code>ApplicationVersionId</code> each time you change the CloudWatch logging options.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -133,10 +133,11 @@ public class AddApplicationCloudWatchLoggingOptionResult extends com.amazonaws.A
 
     /**
      * <p>
-     * The descriptions of the current CloudWatch logging options for the Kinesis Data Analytics application.
+     * The descriptions of the current CloudWatch logging options for the SQL-based Kinesis Data Analytics application.
      * </p>
      * 
-     * @return The descriptions of the current CloudWatch logging options for the Kinesis Data Analytics application.
+     * @return The descriptions of the current CloudWatch logging options for the SQL-based Kinesis Data Analytics
+     *         application.
      */
 
     public java.util.List<CloudWatchLoggingOptionDescription> getCloudWatchLoggingOptionDescriptions() {
@@ -145,11 +146,12 @@ public class AddApplicationCloudWatchLoggingOptionResult extends com.amazonaws.A
 
     /**
      * <p>
-     * The descriptions of the current CloudWatch logging options for the Kinesis Data Analytics application.
+     * The descriptions of the current CloudWatch logging options for the SQL-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param cloudWatchLoggingOptionDescriptions
-     *        The descriptions of the current CloudWatch logging options for the Kinesis Data Analytics application.
+     *        The descriptions of the current CloudWatch logging options for the SQL-based Kinesis Data Analytics
+     *        application.
      */
 
     public void setCloudWatchLoggingOptionDescriptions(java.util.Collection<CloudWatchLoggingOptionDescription> cloudWatchLoggingOptionDescriptions) {
@@ -163,7 +165,7 @@ public class AddApplicationCloudWatchLoggingOptionResult extends com.amazonaws.A
 
     /**
      * <p>
-     * The descriptions of the current CloudWatch logging options for the Kinesis Data Analytics application.
+     * The descriptions of the current CloudWatch logging options for the SQL-based Kinesis Data Analytics application.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -173,7 +175,8 @@ public class AddApplicationCloudWatchLoggingOptionResult extends com.amazonaws.A
      * </p>
      * 
      * @param cloudWatchLoggingOptionDescriptions
-     *        The descriptions of the current CloudWatch logging options for the Kinesis Data Analytics application.
+     *        The descriptions of the current CloudWatch logging options for the SQL-based Kinesis Data Analytics
+     *        application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -190,11 +193,12 @@ public class AddApplicationCloudWatchLoggingOptionResult extends com.amazonaws.A
 
     /**
      * <p>
-     * The descriptions of the current CloudWatch logging options for the Kinesis Data Analytics application.
+     * The descriptions of the current CloudWatch logging options for the SQL-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param cloudWatchLoggingOptionDescriptions
-     *        The descriptions of the current CloudWatch logging options for the Kinesis Data Analytics application.
+     *        The descriptions of the current CloudWatch logging options for the SQL-based Kinesis Data Analytics
+     *        application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

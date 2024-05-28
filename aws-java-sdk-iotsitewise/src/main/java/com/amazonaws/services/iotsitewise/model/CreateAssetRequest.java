@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,10 @@ public class CreateAssetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String assetName;
     /**
      * <p>
-     * The ID of the asset model from which to create the asset.
+     * The ID of the asset model from which to create the asset. This can be either the actual ID in UUID format, or
+     * else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     * >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      */
     private String assetModelId;
@@ -58,6 +61,23 @@ public class CreateAssetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String assetDescription;
+    /**
+     * <p>
+     * The ID to assign to the asset, if desired. IoT SiteWise automatically generates a unique ID for you, so this
+     * parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here in
+     * UUID format. If you specify your own ID, it must be globally unique.
+     * </p>
+     */
+    private String assetId;
+    /**
+     * <p>
+     * An external ID to assign to the asset. The external ID must be unique within your Amazon Web Services account.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     */
+    private String assetExternalId;
 
     /**
      * <p>
@@ -101,11 +121,17 @@ public class CreateAssetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the asset model from which to create the asset.
+     * The ID of the asset model from which to create the asset. This can be either the actual ID in UUID format, or
+     * else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     * >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param assetModelId
-     *        The ID of the asset model from which to create the asset.
+     *        The ID of the asset model from which to create the asset. This can be either the actual ID in UUID format,
+     *        or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">
+     *        Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public void setAssetModelId(String assetModelId) {
@@ -114,10 +140,17 @@ public class CreateAssetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the asset model from which to create the asset.
+     * The ID of the asset model from which to create the asset. This can be either the actual ID in UUID format, or
+     * else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     * >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
-     * @return The ID of the asset model from which to create the asset.
+     * @return The ID of the asset model from which to create the asset. This can be either the actual ID in UUID
+     *         format, or else <code>externalId:</code> followed by the external ID, if it has one. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     *         >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public String getAssetModelId() {
@@ -126,11 +159,17 @@ public class CreateAssetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the asset model from which to create the asset.
+     * The ID of the asset model from which to create the asset. This can be either the actual ID in UUID format, or
+     * else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     * >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param assetModelId
-     *        The ID of the asset model from which to create the asset.
+     *        The ID of the asset model from which to create the asset. This can be either the actual ID in UUID format,
+     *        or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">
+     *        Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -306,6 +345,116 @@ public class CreateAssetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The ID to assign to the asset, if desired. IoT SiteWise automatically generates a unique ID for you, so this
+     * parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here in
+     * UUID format. If you specify your own ID, it must be globally unique.
+     * </p>
+     * 
+     * @param assetId
+     *        The ID to assign to the asset, if desired. IoT SiteWise automatically generates a unique ID for you, so
+     *        this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it
+     *        here in UUID format. If you specify your own ID, it must be globally unique.
+     */
+
+    public void setAssetId(String assetId) {
+        this.assetId = assetId;
+    }
+
+    /**
+     * <p>
+     * The ID to assign to the asset, if desired. IoT SiteWise automatically generates a unique ID for you, so this
+     * parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here in
+     * UUID format. If you specify your own ID, it must be globally unique.
+     * </p>
+     * 
+     * @return The ID to assign to the asset, if desired. IoT SiteWise automatically generates a unique ID for you, so
+     *         this parameter is never required. However, if you prefer to supply your own ID instead, you can specify
+     *         it here in UUID format. If you specify your own ID, it must be globally unique.
+     */
+
+    public String getAssetId() {
+        return this.assetId;
+    }
+
+    /**
+     * <p>
+     * The ID to assign to the asset, if desired. IoT SiteWise automatically generates a unique ID for you, so this
+     * parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here in
+     * UUID format. If you specify your own ID, it must be globally unique.
+     * </p>
+     * 
+     * @param assetId
+     *        The ID to assign to the asset, if desired. IoT SiteWise automatically generates a unique ID for you, so
+     *        this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it
+     *        here in UUID format. If you specify your own ID, it must be globally unique.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAssetRequest withAssetId(String assetId) {
+        setAssetId(assetId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An external ID to assign to the asset. The external ID must be unique within your Amazon Web Services account.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param assetExternalId
+     *        An external ID to assign to the asset. The external ID must be unique within your Amazon Web Services
+     *        account. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *        external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     */
+
+    public void setAssetExternalId(String assetExternalId) {
+        this.assetExternalId = assetExternalId;
+    }
+
+    /**
+     * <p>
+     * An external ID to assign to the asset. The external ID must be unique within your Amazon Web Services account.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @return An external ID to assign to the asset. The external ID must be unique within your Amazon Web Services
+     *         account. For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *         external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     */
+
+    public String getAssetExternalId() {
+        return this.assetExternalId;
+    }
+
+    /**
+     * <p>
+     * An external ID to assign to the asset. The external ID must be unique within your Amazon Web Services account.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param assetExternalId
+     *        An external ID to assign to the asset. The external ID must be unique within your Amazon Web Services
+     *        account. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *        external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAssetRequest withAssetExternalId(String assetExternalId) {
+        setAssetExternalId(assetExternalId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -326,7 +475,11 @@ public class CreateAssetRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getAssetDescription() != null)
-            sb.append("AssetDescription: ").append(getAssetDescription());
+            sb.append("AssetDescription: ").append(getAssetDescription()).append(",");
+        if (getAssetId() != null)
+            sb.append("AssetId: ").append(getAssetId()).append(",");
+        if (getAssetExternalId() != null)
+            sb.append("AssetExternalId: ").append(getAssetExternalId());
         sb.append("}");
         return sb.toString();
     }
@@ -361,6 +514,14 @@ public class CreateAssetRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getAssetDescription() != null && other.getAssetDescription().equals(this.getAssetDescription()) == false)
             return false;
+        if (other.getAssetId() == null ^ this.getAssetId() == null)
+            return false;
+        if (other.getAssetId() != null && other.getAssetId().equals(this.getAssetId()) == false)
+            return false;
+        if (other.getAssetExternalId() == null ^ this.getAssetExternalId() == null)
+            return false;
+        if (other.getAssetExternalId() != null && other.getAssetExternalId().equals(this.getAssetExternalId()) == false)
+            return false;
         return true;
     }
 
@@ -374,6 +535,8 @@ public class CreateAssetRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getAssetDescription() == null) ? 0 : getAssetDescription().hashCode());
+        hashCode = prime * hashCode + ((getAssetId() == null) ? 0 : getAssetId().hashCode());
+        hashCode = prime * hashCode + ((getAssetExternalId() == null) ? 0 : getAssetExternalId().hashCode());
         return hashCode;
     }
 

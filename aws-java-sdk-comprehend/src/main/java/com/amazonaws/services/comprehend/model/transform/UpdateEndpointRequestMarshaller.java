@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class UpdateEndpointRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DesiredInferenceUnits").build();
     private static final MarshallingInfo<String> DESIREDDATAACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DesiredDataAccessRoleArn").build();
+    private static final MarshallingInfo<String> FLYWHEELARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FlywheelArn").build();
 
     private static final UpdateEndpointRequestMarshaller instance = new UpdateEndpointRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class UpdateEndpointRequestMarshaller {
             protocolMarshaller.marshall(updateEndpointRequest.getDesiredModelArn(), DESIREDMODELARN_BINDING);
             protocolMarshaller.marshall(updateEndpointRequest.getDesiredInferenceUnits(), DESIREDINFERENCEUNITS_BINDING);
             protocolMarshaller.marshall(updateEndpointRequest.getDesiredDataAccessRoleArn(), DESIREDDATAACCESSROLEARN_BINDING);
+            protocolMarshaller.marshall(updateEndpointRequest.getFlywheelArn(), FLYWHEELARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

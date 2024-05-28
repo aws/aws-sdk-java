@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class GetNetworkAnalyzerConfigurationResult extends com.amazonaws.AmazonW
     private TraceContent traceContent;
     /**
      * <p>
-     * List of wireless gateway resources that have been added to the network analyzer configuration.
+     * List of wireless device resources that have been added to the network analyzer configuration.
      * </p>
      */
     private java.util.List<String> wirelessDevices;
@@ -47,6 +47,12 @@ public class GetNetworkAnalyzerConfigurationResult extends com.amazonaws.AmazonW
     private String arn;
 
     private String name;
+    /**
+     * <p>
+     * List of multicast group resources that have been added to the network analyzer configuration.
+     * </p>
+     */
+    private java.util.List<String> multicastGroups;
 
     /**
      * @param traceContent
@@ -76,10 +82,10 @@ public class GetNetworkAnalyzerConfigurationResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * List of wireless gateway resources that have been added to the network analyzer configuration.
+     * List of wireless device resources that have been added to the network analyzer configuration.
      * </p>
      * 
-     * @return List of wireless gateway resources that have been added to the network analyzer configuration.
+     * @return List of wireless device resources that have been added to the network analyzer configuration.
      */
 
     public java.util.List<String> getWirelessDevices() {
@@ -88,11 +94,11 @@ public class GetNetworkAnalyzerConfigurationResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * List of wireless gateway resources that have been added to the network analyzer configuration.
+     * List of wireless device resources that have been added to the network analyzer configuration.
      * </p>
      * 
      * @param wirelessDevices
-     *        List of wireless gateway resources that have been added to the network analyzer configuration.
+     *        List of wireless device resources that have been added to the network analyzer configuration.
      */
 
     public void setWirelessDevices(java.util.Collection<String> wirelessDevices) {
@@ -106,7 +112,7 @@ public class GetNetworkAnalyzerConfigurationResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * List of wireless gateway resources that have been added to the network analyzer configuration.
+     * List of wireless device resources that have been added to the network analyzer configuration.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -115,7 +121,7 @@ public class GetNetworkAnalyzerConfigurationResult extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param wirelessDevices
-     *        List of wireless gateway resources that have been added to the network analyzer configuration.
+     *        List of wireless device resources that have been added to the network analyzer configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,11 +137,11 @@ public class GetNetworkAnalyzerConfigurationResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * List of wireless gateway resources that have been added to the network analyzer configuration.
+     * List of wireless device resources that have been added to the network analyzer configuration.
      * </p>
      * 
      * @param wirelessDevices
-     *        List of wireless gateway resources that have been added to the network analyzer configuration.
+     *        List of wireless device resources that have been added to the network analyzer configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -307,6 +313,76 @@ public class GetNetworkAnalyzerConfigurationResult extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * List of multicast group resources that have been added to the network analyzer configuration.
+     * </p>
+     * 
+     * @return List of multicast group resources that have been added to the network analyzer configuration.
+     */
+
+    public java.util.List<String> getMulticastGroups() {
+        return multicastGroups;
+    }
+
+    /**
+     * <p>
+     * List of multicast group resources that have been added to the network analyzer configuration.
+     * </p>
+     * 
+     * @param multicastGroups
+     *        List of multicast group resources that have been added to the network analyzer configuration.
+     */
+
+    public void setMulticastGroups(java.util.Collection<String> multicastGroups) {
+        if (multicastGroups == null) {
+            this.multicastGroups = null;
+            return;
+        }
+
+        this.multicastGroups = new java.util.ArrayList<String>(multicastGroups);
+    }
+
+    /**
+     * <p>
+     * List of multicast group resources that have been added to the network analyzer configuration.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMulticastGroups(java.util.Collection)} or {@link #withMulticastGroups(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param multicastGroups
+     *        List of multicast group resources that have been added to the network analyzer configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetNetworkAnalyzerConfigurationResult withMulticastGroups(String... multicastGroups) {
+        if (this.multicastGroups == null) {
+            setMulticastGroups(new java.util.ArrayList<String>(multicastGroups.length));
+        }
+        for (String ele : multicastGroups) {
+            this.multicastGroups.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * List of multicast group resources that have been added to the network analyzer configuration.
+     * </p>
+     * 
+     * @param multicastGroups
+     *        List of multicast group resources that have been added to the network analyzer configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetNetworkAnalyzerConfigurationResult withMulticastGroups(java.util.Collection<String> multicastGroups) {
+        setMulticastGroups(multicastGroups);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -329,7 +405,9 @@ public class GetNetworkAnalyzerConfigurationResult extends com.amazonaws.AmazonW
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getMulticastGroups() != null)
+            sb.append("MulticastGroups: ").append(getMulticastGroups());
         sb.append("}");
         return sb.toString();
     }
@@ -368,6 +446,10 @@ public class GetNetworkAnalyzerConfigurationResult extends com.amazonaws.AmazonW
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getMulticastGroups() == null ^ this.getMulticastGroups() == null)
+            return false;
+        if (other.getMulticastGroups() != null && other.getMulticastGroups().equals(this.getMulticastGroups()) == false)
+            return false;
         return true;
     }
 
@@ -382,6 +464,7 @@ public class GetNetworkAnalyzerConfigurationResult extends com.amazonaws.AmazonW
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getMulticastGroups() == null) ? 0 : getMulticastGroups().hashCode());
         return hashCode;
     }
 

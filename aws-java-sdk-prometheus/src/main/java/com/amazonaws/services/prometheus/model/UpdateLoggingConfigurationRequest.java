@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of an UpdateLoggingConfiguration operation.
+ * Represents the input of an <code>UpdateLoggingConfiguration</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateLoggingConfiguration" target="_top">AWS API
@@ -30,30 +30,30 @@ public class UpdateLoggingConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      * </p>
      */
     private String clientToken;
     /**
      * <p>
-     * The ARN of the CW log group to which the vended log data will be published.
+     * The ARN of the CloudWatch log group to which the vended log data will be published.
      * </p>
      */
     private String logGroupArn;
     /**
      * <p>
-     * The ID of the workspace to vend logs to.
+     * The ID of the workspace to update the logging configuration for.
      * </p>
      */
     private String workspaceId;
 
     /**
      * <p>
-     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      * </p>
      * 
      * @param clientToken
-     *        Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     *        A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      */
 
     public void setClientToken(String clientToken) {
@@ -62,10 +62,10 @@ public class UpdateLoggingConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      * </p>
      * 
-     * @return Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * @return A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      */
 
     public String getClientToken() {
@@ -74,11 +74,11 @@ public class UpdateLoggingConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      * </p>
      * 
      * @param clientToken
-     *        Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     *        A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class UpdateLoggingConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ARN of the CW log group to which the vended log data will be published.
+     * The ARN of the CloudWatch log group to which the vended log data will be published.
      * </p>
      * 
      * @param logGroupArn
-     *        The ARN of the CW log group to which the vended log data will be published.
+     *        The ARN of the CloudWatch log group to which the vended log data will be published.
      */
 
     public void setLogGroupArn(String logGroupArn) {
@@ -102,10 +102,10 @@ public class UpdateLoggingConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ARN of the CW log group to which the vended log data will be published.
+     * The ARN of the CloudWatch log group to which the vended log data will be published.
      * </p>
      * 
-     * @return The ARN of the CW log group to which the vended log data will be published.
+     * @return The ARN of the CloudWatch log group to which the vended log data will be published.
      */
 
     public String getLogGroupArn() {
@@ -114,11 +114,11 @@ public class UpdateLoggingConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ARN of the CW log group to which the vended log data will be published.
+     * The ARN of the CloudWatch log group to which the vended log data will be published.
      * </p>
      * 
      * @param logGroupArn
-     *        The ARN of the CW log group to which the vended log data will be published.
+     *        The ARN of the CloudWatch log group to which the vended log data will be published.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class UpdateLoggingConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ID of the workspace to vend logs to.
+     * The ID of the workspace to update the logging configuration for.
      * </p>
      * 
      * @param workspaceId
-     *        The ID of the workspace to vend logs to.
+     *        The ID of the workspace to update the logging configuration for.
      */
 
     public void setWorkspaceId(String workspaceId) {
@@ -142,10 +142,10 @@ public class UpdateLoggingConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ID of the workspace to vend logs to.
+     * The ID of the workspace to update the logging configuration for.
      * </p>
      * 
-     * @return The ID of the workspace to vend logs to.
+     * @return The ID of the workspace to update the logging configuration for.
      */
 
     public String getWorkspaceId() {
@@ -154,11 +154,11 @@ public class UpdateLoggingConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ID of the workspace to vend logs to.
+     * The ID of the workspace to update the logging configuration for.
      * </p>
      * 
      * @param workspaceId
-     *        The ID of the workspace to vend logs to.
+     *        The ID of the workspace to update the logging configuration for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

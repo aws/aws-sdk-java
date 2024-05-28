@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -84,9 +84,9 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
-     * Adds a subscription to a cost anomaly detection monitor. You can use each subscription to define subscribers with
-     * email or SNS notifications. Email subscribers can set a dollar threshold and a time frequency for receiving
-     * notifications.
+     * Adds an alert subscription to a cost anomaly detection monitor. You can use each subscription to define
+     * subscribers with email or SNS notifications. Email subscribers can set an absolute or percentage threshold and a
+     * time frequency for receiving notifications.
      * </p>
      * 
      * @param createAnomalySubscriptionRequest
@@ -100,9 +100,9 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
-     * Adds a subscription to a cost anomaly detection monitor. You can use each subscription to define subscribers with
-     * email or SNS notifications. Email subscribers can set a dollar threshold and a time frequency for receiving
-     * notifications.
+     * Adds an alert subscription to a cost anomaly detection monitor. You can use each subscription to define
+     * subscribers with email or SNS notifications. Email subscribers can set an absolute or percentage threshold and a
+     * time frequency for receiving notifications.
      * </p>
      * 
      * @param createAnomalySubscriptionRequest
@@ -305,7 +305,7 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
     /**
      * <p>
      * Retrieves all of the cost anomalies detected on your account during the time period that's specified by the
-     * <code>DateInterval</code> object.
+     * <code>DateInterval</code> object. Anomalies are available for up to 90 days.
      * </p>
      * 
      * @param getAnomaliesRequest
@@ -319,7 +319,7 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
     /**
      * <p>
      * Retrieves all of the cost anomalies detected on your account during the time period that's specified by the
-     * <code>DateInterval</code> object.
+     * <code>DateInterval</code> object. Anomalies are available for up to 90 days.
      * </p>
      * 
      * @param getAnomaliesRequest
@@ -403,6 +403,39 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
+     * Retrieves estimated usage records for hourly granularity or resource-level data at daily granularity.
+     * </p>
+     * 
+     * @param getApproximateUsageRecordsRequest
+     * @return A Java Future containing the result of the GetApproximateUsageRecords operation returned by the service.
+     * @sample AWSCostExplorerAsync.GetApproximateUsageRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetApproximateUsageRecords" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetApproximateUsageRecordsResult> getApproximateUsageRecordsAsync(
+            GetApproximateUsageRecordsRequest getApproximateUsageRecordsRequest);
+
+    /**
+     * <p>
+     * Retrieves estimated usage records for hourly granularity or resource-level data at daily granularity.
+     * </p>
+     * 
+     * @param getApproximateUsageRecordsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetApproximateUsageRecords operation returned by the service.
+     * @sample AWSCostExplorerAsyncHandler.GetApproximateUsageRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetApproximateUsageRecords" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetApproximateUsageRecordsResult> getApproximateUsageRecordsAsync(
+            GetApproximateUsageRecordsRequest getApproximateUsageRecordsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetApproximateUsageRecordsRequest, GetApproximateUsageRecordsResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves cost and usage metrics for your account. You can specify which cost and usage-related metric that you
      * want the request to return. For example, you can specify <code>BlendedCosts</code> or <code>UsageQuantity</code>.
      * You can also filter and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>,
@@ -462,7 +495,11 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
      * specific time range. For a complete list of valid dimensions, see the <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html"
      * >GetDimensionValues</a> operation. Management account in an organization in Organizations have access to all
-     * member accounts. This API is currently available for the Amazon Elastic Compute Cloud – Compute service only.
+     * member accounts.
+     * </p>
+     * <p>
+     * Hourly granularity is only available for EC2-Instances (Elastic Compute Cloud) resource-level data. All other
+     * resource-level data is available at daily granularity.
      * </p>
      * <note>
      * <p>
@@ -491,7 +528,11 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
      * specific time range. For a complete list of valid dimensions, see the <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html"
      * >GetDimensionValues</a> operation. Management account in an organization in Organizations have access to all
-     * member accounts. This API is currently available for the Amazon Elastic Compute Cloud – Compute service only.
+     * member accounts.
+     * </p>
+     * <p>
+     * Hourly granularity is only available for EC2-Instances (Elastic Compute Cloud) resource-level data. All other
+     * resource-level data is available at daily granularity.
      * </p>
      * <note>
      * <p>
@@ -948,6 +989,43 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
+     * Retrieves the details for a Savings Plan recommendation. These details include the hourly data-points that
+     * construct the cost, coverage, and utilization charts.
+     * </p>
+     * 
+     * @param getSavingsPlanPurchaseRecommendationDetailsRequest
+     * @return A Java Future containing the result of the GetSavingsPlanPurchaseRecommendationDetails operation returned
+     *         by the service.
+     * @sample AWSCostExplorerAsync.GetSavingsPlanPurchaseRecommendationDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlanPurchaseRecommendationDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSavingsPlanPurchaseRecommendationDetailsResult> getSavingsPlanPurchaseRecommendationDetailsAsync(
+            GetSavingsPlanPurchaseRecommendationDetailsRequest getSavingsPlanPurchaseRecommendationDetailsRequest);
+
+    /**
+     * <p>
+     * Retrieves the details for a Savings Plan recommendation. These details include the hourly data-points that
+     * construct the cost, coverage, and utilization charts.
+     * </p>
+     * 
+     * @param getSavingsPlanPurchaseRecommendationDetailsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSavingsPlanPurchaseRecommendationDetails operation returned
+     *         by the service.
+     * @sample AWSCostExplorerAsyncHandler.GetSavingsPlanPurchaseRecommendationDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetSavingsPlanPurchaseRecommendationDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSavingsPlanPurchaseRecommendationDetailsResult> getSavingsPlanPurchaseRecommendationDetailsAsync(
+            GetSavingsPlanPurchaseRecommendationDetailsRequest getSavingsPlanPurchaseRecommendationDetailsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSavingsPlanPurchaseRecommendationDetailsRequest, GetSavingsPlanPurchaseRecommendationDetailsResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves the Savings Plans covered for your account. This enables you to see how much of your cost is covered by
      * a Savings Plan. An organization’s management account can see the coverage of the associated member accounts. This
      * supports dimensions, Cost Categories, and nested expressions. For any time period, you can filter data for
@@ -1035,7 +1113,9 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
-     * Retrieves your request parameters, Savings Plan Recommendations Summary and Details.
+     * Retrieves the Savings Plans recommendations for your account. First use
+     * <code>StartSavingsPlansPurchaseRecommendationGeneration</code> to generate a new set of recommendations, and then
+     * use <code>GetSavingsPlansPurchaseRecommendation</code> to retrieve them.
      * </p>
      * 
      * @param getSavingsPlansPurchaseRecommendationRequest
@@ -1050,7 +1130,9 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
-     * Retrieves your request parameters, Savings Plan Recommendations Summary and Details.
+     * Retrieves the Savings Plans recommendations for your account. First use
+     * <code>StartSavingsPlansPurchaseRecommendationGeneration</code> to generate a new set of recommendations, and then
+     * use <code>GetSavingsPlansPurchaseRecommendation</code> to retrieve them.
      * </p>
      * 
      * @param getSavingsPlansPurchaseRecommendationRequest
@@ -1236,6 +1318,41 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
+     * Retrieves a list of your historical cost allocation tag backfill requests.
+     * </p>
+     * 
+     * @param listCostAllocationTagBackfillHistoryRequest
+     * @return A Java Future containing the result of the ListCostAllocationTagBackfillHistory operation returned by the
+     *         service.
+     * @sample AWSCostExplorerAsync.ListCostAllocationTagBackfillHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostAllocationTagBackfillHistory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCostAllocationTagBackfillHistoryResult> listCostAllocationTagBackfillHistoryAsync(
+            ListCostAllocationTagBackfillHistoryRequest listCostAllocationTagBackfillHistoryRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of your historical cost allocation tag backfill requests.
+     * </p>
+     * 
+     * @param listCostAllocationTagBackfillHistoryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCostAllocationTagBackfillHistory operation returned by the
+     *         service.
+     * @sample AWSCostExplorerAsyncHandler.ListCostAllocationTagBackfillHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostAllocationTagBackfillHistory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCostAllocationTagBackfillHistoryResult> listCostAllocationTagBackfillHistoryAsync(
+            ListCostAllocationTagBackfillHistoryRequest listCostAllocationTagBackfillHistoryRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCostAllocationTagBackfillHistoryRequest, ListCostAllocationTagBackfillHistoryResult> asyncHandler);
+
+    /**
+     * <p>
      * Get a list of cost allocation tags. All inputs in the API are optional and serve as filters. By default, all cost
      * allocation tags are returned.
      * </p>
@@ -1312,6 +1429,43 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
+     * Retrieves a list of your historical recommendation generations within the past 30 days.
+     * </p>
+     * 
+     * @param listSavingsPlansPurchaseRecommendationGenerationRequest
+     * @return A Java Future containing the result of the ListSavingsPlansPurchaseRecommendationGeneration operation
+     *         returned by the service.
+     * @sample AWSCostExplorerAsync.ListSavingsPlansPurchaseRecommendationGeneration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListSavingsPlansPurchaseRecommendationGeneration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSavingsPlansPurchaseRecommendationGenerationResult> listSavingsPlansPurchaseRecommendationGenerationAsync(
+            ListSavingsPlansPurchaseRecommendationGenerationRequest listSavingsPlansPurchaseRecommendationGenerationRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of your historical recommendation generations within the past 30 days.
+     * </p>
+     * 
+     * @param listSavingsPlansPurchaseRecommendationGenerationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSavingsPlansPurchaseRecommendationGeneration operation
+     *         returned by the service.
+     * @sample AWSCostExplorerAsyncHandler.ListSavingsPlansPurchaseRecommendationGeneration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListSavingsPlansPurchaseRecommendationGeneration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSavingsPlansPurchaseRecommendationGenerationResult> listSavingsPlansPurchaseRecommendationGenerationAsync(
+            ListSavingsPlansPurchaseRecommendationGenerationRequest listSavingsPlansPurchaseRecommendationGenerationRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSavingsPlansPurchaseRecommendationGenerationRequest, ListSavingsPlansPurchaseRecommendationGenerationResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of resource tags associated with the resource specified by the Amazon Resource Name (ARN).
      * </p>
      * 
@@ -1371,6 +1525,102 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
      */
     java.util.concurrent.Future<ProvideAnomalyFeedbackResult> provideAnomalyFeedbackAsync(ProvideAnomalyFeedbackRequest provideAnomalyFeedbackRequest,
             com.amazonaws.handlers.AsyncHandler<ProvideAnomalyFeedbackRequest, ProvideAnomalyFeedbackResult> asyncHandler);
+
+    /**
+     * <p>
+     * Request a cost allocation tag backfill. This will backfill the activation status (either <code>active</code> or
+     * <code>inactive</code>) for all tag keys from <code>para:BackfillFrom</code> up to the when this request is made.
+     * </p>
+     * <p>
+     * You can request a backfill once every 24 hours.
+     * </p>
+     * 
+     * @param startCostAllocationTagBackfillRequest
+     * @return A Java Future containing the result of the StartCostAllocationTagBackfill operation returned by the
+     *         service.
+     * @sample AWSCostExplorerAsync.StartCostAllocationTagBackfill
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/StartCostAllocationTagBackfill"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartCostAllocationTagBackfillResult> startCostAllocationTagBackfillAsync(
+            StartCostAllocationTagBackfillRequest startCostAllocationTagBackfillRequest);
+
+    /**
+     * <p>
+     * Request a cost allocation tag backfill. This will backfill the activation status (either <code>active</code> or
+     * <code>inactive</code>) for all tag keys from <code>para:BackfillFrom</code> up to the when this request is made.
+     * </p>
+     * <p>
+     * You can request a backfill once every 24 hours.
+     * </p>
+     * 
+     * @param startCostAllocationTagBackfillRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartCostAllocationTagBackfill operation returned by the
+     *         service.
+     * @sample AWSCostExplorerAsyncHandler.StartCostAllocationTagBackfill
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/StartCostAllocationTagBackfill"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartCostAllocationTagBackfillResult> startCostAllocationTagBackfillAsync(
+            StartCostAllocationTagBackfillRequest startCostAllocationTagBackfillRequest,
+            com.amazonaws.handlers.AsyncHandler<StartCostAllocationTagBackfillRequest, StartCostAllocationTagBackfillResult> asyncHandler);
+
+    /**
+     * <p>
+     * Requests a Savings Plans recommendation generation. This enables you to calculate a fresh set of Savings Plans
+     * recommendations that takes your latest usage data and current Savings Plans inventory into account. You can
+     * refresh Savings Plans recommendations up to three times daily for a consolidated billing family.
+     * </p>
+     * <note>
+     * <p>
+     * <code>StartSavingsPlansPurchaseRecommendationGeneration</code> has no request syntax because no input parameters
+     * are needed to support this operation.
+     * </p>
+     * </note>
+     * 
+     * @param startSavingsPlansPurchaseRecommendationGenerationRequest
+     * @return A Java Future containing the result of the StartSavingsPlansPurchaseRecommendationGeneration operation
+     *         returned by the service.
+     * @sample AWSCostExplorerAsync.StartSavingsPlansPurchaseRecommendationGeneration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/StartSavingsPlansPurchaseRecommendationGeneration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartSavingsPlansPurchaseRecommendationGenerationResult> startSavingsPlansPurchaseRecommendationGenerationAsync(
+            StartSavingsPlansPurchaseRecommendationGenerationRequest startSavingsPlansPurchaseRecommendationGenerationRequest);
+
+    /**
+     * <p>
+     * Requests a Savings Plans recommendation generation. This enables you to calculate a fresh set of Savings Plans
+     * recommendations that takes your latest usage data and current Savings Plans inventory into account. You can
+     * refresh Savings Plans recommendations up to three times daily for a consolidated billing family.
+     * </p>
+     * <note>
+     * <p>
+     * <code>StartSavingsPlansPurchaseRecommendationGeneration</code> has no request syntax because no input parameters
+     * are needed to support this operation.
+     * </p>
+     * </note>
+     * 
+     * @param startSavingsPlansPurchaseRecommendationGenerationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartSavingsPlansPurchaseRecommendationGeneration operation
+     *         returned by the service.
+     * @sample AWSCostExplorerAsyncHandler.StartSavingsPlansPurchaseRecommendationGeneration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/StartSavingsPlansPurchaseRecommendationGeneration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartSavingsPlansPurchaseRecommendationGenerationResult> startSavingsPlansPurchaseRecommendationGenerationAsync(
+            StartSavingsPlansPurchaseRecommendationGenerationRequest startSavingsPlansPurchaseRecommendationGenerationRequest,
+            com.amazonaws.handlers.AsyncHandler<StartSavingsPlansPurchaseRecommendationGenerationRequest, StartSavingsPlansPurchaseRecommendationGenerationResult> asyncHandler);
 
     /**
      * <p>
@@ -1489,8 +1739,16 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
-     * Updates an existing cost anomaly monitor subscription.
+     * Updates an existing cost anomaly subscription. Specify the fields that you want to update. Omitted fields are
+     * unchanged.
      * </p>
+     * <note>
+     * <p>
+     * The JSON below describes the generic construct for each type. See <a href=
+     * "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UpdateAnomalySubscription.html#API_UpdateAnomalySubscription_RequestParameters"
+     * >Request Parameters</a> for possible values as they apply to <code>AnomalySubscription</code>.
+     * </p>
+     * </note>
      * 
      * @param updateAnomalySubscriptionRequest
      * @return A Java Future containing the result of the UpdateAnomalySubscription operation returned by the service.
@@ -1503,8 +1761,16 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
-     * Updates an existing cost anomaly monitor subscription.
+     * Updates an existing cost anomaly subscription. Specify the fields that you want to update. Omitted fields are
+     * unchanged.
      * </p>
+     * <note>
+     * <p>
+     * The JSON below describes the generic construct for each type. See <a href=
+     * "https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UpdateAnomalySubscription.html#API_UpdateAnomalySubscription_RequestParameters"
+     * >Request Parameters</a> for possible values as they apply to <code>AnomalySubscription</code>.
+     * </p>
+     * </note>
      * 
      * @param updateAnomalySubscriptionRequest
      * @param asyncHandler

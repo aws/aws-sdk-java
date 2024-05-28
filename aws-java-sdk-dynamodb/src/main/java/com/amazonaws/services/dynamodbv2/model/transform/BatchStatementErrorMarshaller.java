@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -11,6 +11,8 @@
  * and limitations under the License.
  */
 package com.amazonaws.services.dynamodbv2.model.transform;
+
+import java.util.Map;
 
 import javax.annotation.Generated;
 
@@ -31,6 +33,8 @@ public class BatchStatementErrorMarshaller {
             .marshallLocationName("Code").build();
     private static final MarshallingInfo<String> MESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Message").build();
+    private static final MarshallingInfo<Map> ITEM_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Item").build();
 
     private static final BatchStatementErrorMarshaller instance = new BatchStatementErrorMarshaller();
 
@@ -50,6 +54,7 @@ public class BatchStatementErrorMarshaller {
         try {
             protocolMarshaller.marshall(batchStatementError.getCode(), CODE_BINDING);
             protocolMarshaller.marshall(batchStatementError.getMessage(), MESSAGE_BINDING);
+            protocolMarshaller.marshall(batchStatementError.getItem(), ITEM_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

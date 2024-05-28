@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class ImageIdentifier implements Serializable, Cloneable, StructuredPojo 
     private String imageDigest;
     /**
      * <p>
-     * The tag used for the image.
+     * The tag that's used for the image.
      * </p>
      */
     private String imageTag;
@@ -83,11 +83,11 @@ public class ImageIdentifier implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The tag used for the image.
+     * The tag that's used for the image.
      * </p>
      * 
      * @param imageTag
-     *        The tag used for the image.
+     *        The tag that's used for the image.
      */
 
     public void setImageTag(String imageTag) {
@@ -96,10 +96,10 @@ public class ImageIdentifier implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The tag used for the image.
+     * The tag that's used for the image.
      * </p>
      * 
-     * @return The tag used for the image.
+     * @return The tag that's used for the image.
      */
 
     public String getImageTag() {
@@ -108,11 +108,11 @@ public class ImageIdentifier implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The tag used for the image.
+     * The tag that's used for the image.
      * </p>
      * 
      * @param imageTag
-     *        The tag used for the image.
+     *        The tag that's used for the image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

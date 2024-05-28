@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,10 +39,37 @@ public class AwsCertificateManagerCertificateDetails implements Serializable, Cl
      * Indicates when the certificate was requested.
      * </p>
      * <p>
-     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      */
     private String createdAt;
     /**
@@ -87,10 +114,37 @@ public class AwsCertificateManagerCertificateDetails implements Serializable, Cl
      * Indicates when the certificate was imported. Provided if the certificate type is <code>IMPORTED</code>.
      * </p>
      * <p>
-     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      */
     private String importedAt;
     /**
@@ -104,10 +158,37 @@ public class AwsCertificateManagerCertificateDetails implements Serializable, Cl
      * Indicates when the certificate was issued. Provided if the certificate type is <code>AMAZON_ISSUED</code>.
      * </p>
      * <p>
-     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      */
     private String issuedAt;
     /**
@@ -137,10 +218,37 @@ public class AwsCertificateManagerCertificateDetails implements Serializable, Cl
      * The time after which the certificate becomes invalid.
      * </p>
      * <p>
-     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      */
     private String notAfter;
     /**
@@ -148,10 +256,37 @@ public class AwsCertificateManagerCertificateDetails implements Serializable, Cl
      * The time before which the certificate is not valid.
      * </p>
      * <p>
-     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      */
     private String notBefore;
     /**
@@ -272,17 +407,72 @@ public class AwsCertificateManagerCertificateDetails implements Serializable, Cl
      * Indicates when the certificate was requested.
      * </p>
      * <p>
-     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createdAt
      *        Indicates when the certificate was requested.</p>
      *        <p>
-     *        Uses the <code>date-time</code> format specified in <a
-     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
-     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      */
 
     public void setCreatedAt(String createdAt) {
@@ -294,16 +484,71 @@ public class AwsCertificateManagerCertificateDetails implements Serializable, Cl
      * Indicates when the certificate was requested.
      * </p>
      * <p>
-     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return Indicates when the certificate was requested.</p>
      *         <p>
-     *         Uses the <code>date-time</code> format specified in <a
-     *         href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
-     *         Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
+     *         This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *         <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *         maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *         <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *         </p>
+     *         </li>
      */
 
     public String getCreatedAt() {
@@ -315,17 +560,72 @@ public class AwsCertificateManagerCertificateDetails implements Serializable, Cl
      * Indicates when the certificate was requested.
      * </p>
      * <p>
-     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createdAt
      *        Indicates when the certificate was requested.</p>
      *        <p>
-     *        Uses the <code>date-time</code> format specified in <a
-     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
-     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -646,18 +946,73 @@ public class AwsCertificateManagerCertificateDetails implements Serializable, Cl
      * Indicates when the certificate was imported. Provided if the certificate type is <code>IMPORTED</code>.
      * </p>
      * <p>
-     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param importedAt
      *        Indicates when the certificate was imported. Provided if the certificate type is <code>IMPORTED</code>
      *        .</p>
      *        <p>
-     *        Uses the <code>date-time</code> format specified in <a
-     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
-     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      */
 
     public void setImportedAt(String importedAt) {
@@ -669,17 +1024,72 @@ public class AwsCertificateManagerCertificateDetails implements Serializable, Cl
      * Indicates when the certificate was imported. Provided if the certificate type is <code>IMPORTED</code>.
      * </p>
      * <p>
-     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return Indicates when the certificate was imported. Provided if the certificate type is <code>IMPORTED</code>
      *         .</p>
      *         <p>
-     *         Uses the <code>date-time</code> format specified in <a
-     *         href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
-     *         Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
+     *         This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *         <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *         maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *         <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *         </p>
+     *         </li>
      */
 
     public String getImportedAt() {
@@ -691,18 +1101,73 @@ public class AwsCertificateManagerCertificateDetails implements Serializable, Cl
      * Indicates when the certificate was imported. Provided if the certificate type is <code>IMPORTED</code>.
      * </p>
      * <p>
-     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param importedAt
      *        Indicates when the certificate was imported. Provided if the certificate type is <code>IMPORTED</code>
      *        .</p>
      *        <p>
-     *        Uses the <code>date-time</code> format specified in <a
-     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
-     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -786,18 +1251,73 @@ public class AwsCertificateManagerCertificateDetails implements Serializable, Cl
      * Indicates when the certificate was issued. Provided if the certificate type is <code>AMAZON_ISSUED</code>.
      * </p>
      * <p>
-     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param issuedAt
      *        Indicates when the certificate was issued. Provided if the certificate type is <code>AMAZON_ISSUED</code>
      *        .</p>
      *        <p>
-     *        Uses the <code>date-time</code> format specified in <a
-     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
-     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      */
 
     public void setIssuedAt(String issuedAt) {
@@ -809,17 +1329,72 @@ public class AwsCertificateManagerCertificateDetails implements Serializable, Cl
      * Indicates when the certificate was issued. Provided if the certificate type is <code>AMAZON_ISSUED</code>.
      * </p>
      * <p>
-     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return Indicates when the certificate was issued. Provided if the certificate type is <code>AMAZON_ISSUED</code>
      *         .</p>
      *         <p>
-     *         Uses the <code>date-time</code> format specified in <a
-     *         href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
-     *         Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
+     *         This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *         <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *         maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *         <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *         </p>
+     *         </li>
      */
 
     public String getIssuedAt() {
@@ -831,18 +1406,73 @@ public class AwsCertificateManagerCertificateDetails implements Serializable, Cl
      * Indicates when the certificate was issued. Provided if the certificate type is <code>AMAZON_ISSUED</code>.
      * </p>
      * <p>
-     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param issuedAt
      *        Indicates when the certificate was issued. Provided if the certificate type is <code>AMAZON_ISSUED</code>
      *        .</p>
      *        <p>
-     *        Uses the <code>date-time</code> format specified in <a
-     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
-     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1027,17 +1657,72 @@ public class AwsCertificateManagerCertificateDetails implements Serializable, Cl
      * The time after which the certificate becomes invalid.
      * </p>
      * <p>
-     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param notAfter
      *        The time after which the certificate becomes invalid.</p>
      *        <p>
-     *        Uses the <code>date-time</code> format specified in <a
-     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
-     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      */
 
     public void setNotAfter(String notAfter) {
@@ -1049,16 +1734,71 @@ public class AwsCertificateManagerCertificateDetails implements Serializable, Cl
      * The time after which the certificate becomes invalid.
      * </p>
      * <p>
-     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The time after which the certificate becomes invalid.</p>
      *         <p>
-     *         Uses the <code>date-time</code> format specified in <a
-     *         href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
-     *         Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
+     *         This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *         <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *         maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *         <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *         </p>
+     *         </li>
      */
 
     public String getNotAfter() {
@@ -1070,17 +1810,72 @@ public class AwsCertificateManagerCertificateDetails implements Serializable, Cl
      * The time after which the certificate becomes invalid.
      * </p>
      * <p>
-     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param notAfter
      *        The time after which the certificate becomes invalid.</p>
      *        <p>
-     *        Uses the <code>date-time</code> format specified in <a
-     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
-     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1094,17 +1889,72 @@ public class AwsCertificateManagerCertificateDetails implements Serializable, Cl
      * The time before which the certificate is not valid.
      * </p>
      * <p>
-     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param notBefore
      *        The time before which the certificate is not valid.</p>
      *        <p>
-     *        Uses the <code>date-time</code> format specified in <a
-     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
-     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      */
 
     public void setNotBefore(String notBefore) {
@@ -1116,16 +1966,71 @@ public class AwsCertificateManagerCertificateDetails implements Serializable, Cl
      * The time before which the certificate is not valid.
      * </p>
      * <p>
-     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The time before which the certificate is not valid.</p>
      *         <p>
-     *         Uses the <code>date-time</code> format specified in <a
-     *         href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
-     *         Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
+     *         This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *         <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *         maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *         <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *         </p>
+     *         </li>
      */
 
     public String getNotBefore() {
@@ -1137,17 +2042,72 @@ public class AwsCertificateManagerCertificateDetails implements Serializable, Cl
      * The time before which the certificate is not valid.
      * </p>
      * <p>
-     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.
+     * This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example, <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param notBefore
      *        The time before which the certificate is not valid.</p>
      *        <p>
-     *        Uses the <code>date-time</code> format specified in <a
-     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
-     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
+     *        This field accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     *        <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to a
+     *        maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example, <code>2019-01-31T23:00:00Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example, <code>2019-01-31T23:00:00.123456789Z</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example, <code>2024-01-04T15:25:10+17:59</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example, <code>2024-01-04T15:25:10-1759</code>)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     *        <code>2024-01-04T15:25:10.123456789+17:59</code>)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

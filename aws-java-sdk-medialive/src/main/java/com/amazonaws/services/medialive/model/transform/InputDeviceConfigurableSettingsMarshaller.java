@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.medialive.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,14 @@ public class InputDeviceConfigurableSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configuredInput").build();
     private static final MarshallingInfo<Integer> MAXBITRATE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxBitrate").build();
+    private static final MarshallingInfo<Integer> LATENCYMS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("latencyMs").build();
+    private static final MarshallingInfo<String> CODEC_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("codec").build();
+    private static final MarshallingInfo<StructuredPojo> MEDIACONNECTSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mediaconnectSettings").build();
+    private static final MarshallingInfo<List> AUDIOCHANNELPAIRS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioChannelPairs").build();
 
     private static final InputDeviceConfigurableSettingsMarshaller instance = new InputDeviceConfigurableSettingsMarshaller();
 
@@ -50,6 +59,10 @@ public class InputDeviceConfigurableSettingsMarshaller {
         try {
             protocolMarshaller.marshall(inputDeviceConfigurableSettings.getConfiguredInput(), CONFIGUREDINPUT_BINDING);
             protocolMarshaller.marshall(inputDeviceConfigurableSettings.getMaxBitrate(), MAXBITRATE_BINDING);
+            protocolMarshaller.marshall(inputDeviceConfigurableSettings.getLatencyMs(), LATENCYMS_BINDING);
+            protocolMarshaller.marshall(inputDeviceConfigurableSettings.getCodec(), CODEC_BINDING);
+            protocolMarshaller.marshall(inputDeviceConfigurableSettings.getMediaconnectSettings(), MEDIACONNECTSETTINGS_BINDING);
+            protocolMarshaller.marshall(inputDeviceConfigurableSettings.getAudioChannelPairs(), AUDIOCHANNELPAIRS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,27 @@ public class GetMailboxDetailsRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The identifier for the user whose mailbox details are being requested.
      * </p>
+     * <p>
+     * The identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats are
+     * available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: user@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * User name: user
+     * </p>
+     * </li>
+     * </ul>
      */
     private String userId;
 
@@ -82,9 +103,50 @@ public class GetMailboxDetailsRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The identifier for the user whose mailbox details are being requested.
      * </p>
+     * <p>
+     * The identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats are
+     * available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: user@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * User name: user
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param userId
-     *        The identifier for the user whose mailbox details are being requested.
+     *        The identifier for the user whose mailbox details are being requested.</p>
+     *        <p>
+     *        The identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats
+     *        are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Email address: user@domain.tld
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        User name: user
+     *        </p>
+     *        </li>
      */
 
     public void setUserId(String userId) {
@@ -95,8 +157,49 @@ public class GetMailboxDetailsRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The identifier for the user whose mailbox details are being requested.
      * </p>
+     * <p>
+     * The identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats are
+     * available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: user@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * User name: user
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The identifier for the user whose mailbox details are being requested.
+     * @return The identifier for the user whose mailbox details are being requested.</p>
+     *         <p>
+     *         The identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats
+     *         are available:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Email address: user@domain.tld
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         User name: user
+     *         </p>
+     *         </li>
      */
 
     public String getUserId() {
@@ -107,9 +210,50 @@ public class GetMailboxDetailsRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The identifier for the user whose mailbox details are being requested.
      * </p>
+     * <p>
+     * The identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats are
+     * available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: user@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * User name: user
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param userId
-     *        The identifier for the user whose mailbox details are being requested.
+     *        The identifier for the user whose mailbox details are being requested.</p>
+     *        <p>
+     *        The identifier can be the <i>UserId</i>, <i>Username</i>, or <i>email</i>. The following identity formats
+     *        are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Email address: user@domain.tld
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        User name: user
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

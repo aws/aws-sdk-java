@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -128,6 +128,24 @@ public class PathComponent implements Serializable, Cloneable {
      * </p>
      */
     private AnalysisComponent elasticLoadBalancerListener;
+    /**
+     * <p>
+     * The Network Firewall stateless rule.
+     * </p>
+     */
+    private FirewallStatelessRule firewallStatelessRule;
+    /**
+     * <p>
+     * The Network Firewall stateful rule.
+     * </p>
+     */
+    private FirewallStatefulRule firewallStatefulRule;
+    /**
+     * <p>
+     * The name of the VPC endpoint service.
+     * </p>
+     */
+    private String serviceName;
 
     /**
      * <p>
@@ -876,6 +894,126 @@ public class PathComponent implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Network Firewall stateless rule.
+     * </p>
+     * 
+     * @param firewallStatelessRule
+     *        The Network Firewall stateless rule.
+     */
+
+    public void setFirewallStatelessRule(FirewallStatelessRule firewallStatelessRule) {
+        this.firewallStatelessRule = firewallStatelessRule;
+    }
+
+    /**
+     * <p>
+     * The Network Firewall stateless rule.
+     * </p>
+     * 
+     * @return The Network Firewall stateless rule.
+     */
+
+    public FirewallStatelessRule getFirewallStatelessRule() {
+        return this.firewallStatelessRule;
+    }
+
+    /**
+     * <p>
+     * The Network Firewall stateless rule.
+     * </p>
+     * 
+     * @param firewallStatelessRule
+     *        The Network Firewall stateless rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PathComponent withFirewallStatelessRule(FirewallStatelessRule firewallStatelessRule) {
+        setFirewallStatelessRule(firewallStatelessRule);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Network Firewall stateful rule.
+     * </p>
+     * 
+     * @param firewallStatefulRule
+     *        The Network Firewall stateful rule.
+     */
+
+    public void setFirewallStatefulRule(FirewallStatefulRule firewallStatefulRule) {
+        this.firewallStatefulRule = firewallStatefulRule;
+    }
+
+    /**
+     * <p>
+     * The Network Firewall stateful rule.
+     * </p>
+     * 
+     * @return The Network Firewall stateful rule.
+     */
+
+    public FirewallStatefulRule getFirewallStatefulRule() {
+        return this.firewallStatefulRule;
+    }
+
+    /**
+     * <p>
+     * The Network Firewall stateful rule.
+     * </p>
+     * 
+     * @param firewallStatefulRule
+     *        The Network Firewall stateful rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PathComponent withFirewallStatefulRule(FirewallStatefulRule firewallStatefulRule) {
+        setFirewallStatefulRule(firewallStatefulRule);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the VPC endpoint service.
+     * </p>
+     * 
+     * @param serviceName
+     *        The name of the VPC endpoint service.
+     */
+
+    public void setServiceName(String serviceName) {
+        this.serviceName = serviceName;
+    }
+
+    /**
+     * <p>
+     * The name of the VPC endpoint service.
+     * </p>
+     * 
+     * @return The name of the VPC endpoint service.
+     */
+
+    public String getServiceName() {
+        return this.serviceName;
+    }
+
+    /**
+     * <p>
+     * The name of the VPC endpoint service.
+     * </p>
+     * 
+     * @param serviceName
+     *        The name of the VPC endpoint service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PathComponent withServiceName(String serviceName) {
+        setServiceName(serviceName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -920,7 +1058,13 @@ public class PathComponent implements Serializable, Cloneable {
         if (getExplanations() != null)
             sb.append("Explanations: ").append(getExplanations()).append(",");
         if (getElasticLoadBalancerListener() != null)
-            sb.append("ElasticLoadBalancerListener: ").append(getElasticLoadBalancerListener());
+            sb.append("ElasticLoadBalancerListener: ").append(getElasticLoadBalancerListener()).append(",");
+        if (getFirewallStatelessRule() != null)
+            sb.append("FirewallStatelessRule: ").append(getFirewallStatelessRule()).append(",");
+        if (getFirewallStatefulRule() != null)
+            sb.append("FirewallStatefulRule: ").append(getFirewallStatefulRule()).append(",");
+        if (getServiceName() != null)
+            sb.append("ServiceName: ").append(getServiceName());
         sb.append("}");
         return sb.toString();
     }
@@ -1004,6 +1148,18 @@ public class PathComponent implements Serializable, Cloneable {
             return false;
         if (other.getElasticLoadBalancerListener() != null && other.getElasticLoadBalancerListener().equals(this.getElasticLoadBalancerListener()) == false)
             return false;
+        if (other.getFirewallStatelessRule() == null ^ this.getFirewallStatelessRule() == null)
+            return false;
+        if (other.getFirewallStatelessRule() != null && other.getFirewallStatelessRule().equals(this.getFirewallStatelessRule()) == false)
+            return false;
+        if (other.getFirewallStatefulRule() == null ^ this.getFirewallStatefulRule() == null)
+            return false;
+        if (other.getFirewallStatefulRule() != null && other.getFirewallStatefulRule().equals(this.getFirewallStatefulRule()) == false)
+            return false;
+        if (other.getServiceName() == null ^ this.getServiceName() == null)
+            return false;
+        if (other.getServiceName() != null && other.getServiceName().equals(this.getServiceName()) == false)
+            return false;
         return true;
     }
 
@@ -1029,6 +1185,9 @@ public class PathComponent implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTransitGatewayRouteTableRoute() == null) ? 0 : getTransitGatewayRouteTableRoute().hashCode());
         hashCode = prime * hashCode + ((getExplanations() == null) ? 0 : getExplanations().hashCode());
         hashCode = prime * hashCode + ((getElasticLoadBalancerListener() == null) ? 0 : getElasticLoadBalancerListener().hashCode());
+        hashCode = prime * hashCode + ((getFirewallStatelessRule() == null) ? 0 : getFirewallStatelessRule().hashCode());
+        hashCode = prime * hashCode + ((getFirewallStatefulRule() == null) ? 0 : getFirewallStatefulRule().hashCode());
+        hashCode = prime * hashCode + ((getServiceName() == null) ? 0 : getServiceName().hashCode());
         return hashCode;
     }
 

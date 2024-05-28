@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,12 @@ public class AnswerMachineDetectionConfig implements Serializable, Cloneable, St
      * </p>
      */
     private Boolean enableAnswerMachineDetection;
+    /**
+     * <p>
+     * Enable or disable await answer machine prompt
+     * </p>
+     */
+    private Boolean awaitAnswerMachinePrompt;
 
     /**
      * <p>
@@ -88,6 +94,58 @@ public class AnswerMachineDetectionConfig implements Serializable, Cloneable, St
     }
 
     /**
+     * <p>
+     * Enable or disable await answer machine prompt
+     * </p>
+     * 
+     * @param awaitAnswerMachinePrompt
+     *        Enable or disable await answer machine prompt
+     */
+
+    public void setAwaitAnswerMachinePrompt(Boolean awaitAnswerMachinePrompt) {
+        this.awaitAnswerMachinePrompt = awaitAnswerMachinePrompt;
+    }
+
+    /**
+     * <p>
+     * Enable or disable await answer machine prompt
+     * </p>
+     * 
+     * @return Enable or disable await answer machine prompt
+     */
+
+    public Boolean getAwaitAnswerMachinePrompt() {
+        return this.awaitAnswerMachinePrompt;
+    }
+
+    /**
+     * <p>
+     * Enable or disable await answer machine prompt
+     * </p>
+     * 
+     * @param awaitAnswerMachinePrompt
+     *        Enable or disable await answer machine prompt
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnswerMachineDetectionConfig withAwaitAnswerMachinePrompt(Boolean awaitAnswerMachinePrompt) {
+        setAwaitAnswerMachinePrompt(awaitAnswerMachinePrompt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enable or disable await answer machine prompt
+     * </p>
+     * 
+     * @return Enable or disable await answer machine prompt
+     */
+
+    public Boolean isAwaitAnswerMachinePrompt() {
+        return this.awaitAnswerMachinePrompt;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -100,7 +158,9 @@ public class AnswerMachineDetectionConfig implements Serializable, Cloneable, St
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEnableAnswerMachineDetection() != null)
-            sb.append("EnableAnswerMachineDetection: ").append(getEnableAnswerMachineDetection());
+            sb.append("EnableAnswerMachineDetection: ").append(getEnableAnswerMachineDetection()).append(",");
+        if (getAwaitAnswerMachinePrompt() != null)
+            sb.append("AwaitAnswerMachinePrompt: ").append(getAwaitAnswerMachinePrompt());
         sb.append("}");
         return sb.toString();
     }
@@ -119,6 +179,10 @@ public class AnswerMachineDetectionConfig implements Serializable, Cloneable, St
             return false;
         if (other.getEnableAnswerMachineDetection() != null && other.getEnableAnswerMachineDetection().equals(this.getEnableAnswerMachineDetection()) == false)
             return false;
+        if (other.getAwaitAnswerMachinePrompt() == null ^ this.getAwaitAnswerMachinePrompt() == null)
+            return false;
+        if (other.getAwaitAnswerMachinePrompt() != null && other.getAwaitAnswerMachinePrompt().equals(this.getAwaitAnswerMachinePrompt()) == false)
+            return false;
         return true;
     }
 
@@ -128,6 +192,7 @@ public class AnswerMachineDetectionConfig implements Serializable, Cloneable, St
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getEnableAnswerMachineDetection() == null) ? 0 : getEnableAnswerMachineDetection().hashCode());
+        hashCode = prime * hashCode + ((getAwaitAnswerMachinePrompt() == null) ? 0 : getAwaitAnswerMachinePrompt().hashCode());
         return hashCode;
     }
 

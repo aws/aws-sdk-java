@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,8 @@ public class ListResourcesForWebACLRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load
-     * Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool.
+     * Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App
+     * Runner service, or an Amazon Web Services Verified Access instance.
      * </p>
      * <note>
      * <p>
@@ -90,7 +91,8 @@ public class ListResourcesForWebACLRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load
-     * Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool.
+     * Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App
+     * Runner service, or an Amazon Web Services Verified Access instance.
      * </p>
      * <note>
      * <p>
@@ -103,8 +105,8 @@ public class ListResourcesForWebACLRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param resourceType
      *        Used for web ACLs that are scoped for regional applications. A regional application can be an Application
-     *        Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user
-     *        pool. </p> <note>
+     *        Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool,
+     *        an App Runner service, or an Amazon Web Services Verified Access instance. </p> <note>
      *        <p>
      *        If you don't provide a resource type, the call uses the resource type
      *        <code>APPLICATION_LOAD_BALANCER</code>.
@@ -122,7 +124,8 @@ public class ListResourcesForWebACLRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load
-     * Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool.
+     * Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App
+     * Runner service, or an Amazon Web Services Verified Access instance.
      * </p>
      * <note>
      * <p>
@@ -134,8 +137,8 @@ public class ListResourcesForWebACLRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @return Used for web ACLs that are scoped for regional applications. A regional application can be an Application
-     *         Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user
-     *         pool. </p> <note>
+     *         Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool,
+     *         an App Runner service, or an Amazon Web Services Verified Access instance. </p> <note>
      *         <p>
      *         If you don't provide a resource type, the call uses the resource type
      *         <code>APPLICATION_LOAD_BALANCER</code>.
@@ -153,7 +156,8 @@ public class ListResourcesForWebACLRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load
-     * Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool.
+     * Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App
+     * Runner service, or an Amazon Web Services Verified Access instance.
      * </p>
      * <note>
      * <p>
@@ -166,8 +170,8 @@ public class ListResourcesForWebACLRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param resourceType
      *        Used for web ACLs that are scoped for regional applications. A regional application can be an Application
-     *        Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user
-     *        pool. </p> <note>
+     *        Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool,
+     *        an App Runner service, or an Amazon Web Services Verified Access instance. </p> <note>
      *        <p>
      *        If you don't provide a resource type, the call uses the resource type
      *        <code>APPLICATION_LOAD_BALANCER</code>.
@@ -187,7 +191,8 @@ public class ListResourcesForWebACLRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load
-     * Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool.
+     * Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App
+     * Runner service, or an Amazon Web Services Verified Access instance.
      * </p>
      * <note>
      * <p>
@@ -200,8 +205,8 @@ public class ListResourcesForWebACLRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param resourceType
      *        Used for web ACLs that are scoped for regional applications. A regional application can be an Application
-     *        Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user
-     *        pool. </p> <note>
+     *        Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool,
+     *        an App Runner service, or an Amazon Web Services Verified Access instance. </p> <note>
      *        <p>
      *        If you don't provide a resource type, the call uses the resource type
      *        <code>APPLICATION_LOAD_BALANCER</code>.

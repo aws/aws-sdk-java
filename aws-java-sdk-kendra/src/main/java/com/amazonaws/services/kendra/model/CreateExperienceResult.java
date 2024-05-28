@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,18 @@ public class CreateExperienceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The identifier for your created Amazon Kendra experience.
+     * The identifier of your Amazon Kendra experience.
      * </p>
      */
     private String id;
 
     /**
      * <p>
-     * The identifier for your created Amazon Kendra experience.
+     * The identifier of your Amazon Kendra experience.
      * </p>
      * 
      * @param id
-     *        The identifier for your created Amazon Kendra experience.
+     *        The identifier of your Amazon Kendra experience.
      */
 
     public void setId(String id) {
@@ -45,10 +45,10 @@ public class CreateExperienceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The identifier for your created Amazon Kendra experience.
+     * The identifier of your Amazon Kendra experience.
      * </p>
      * 
-     * @return The identifier for your created Amazon Kendra experience.
+     * @return The identifier of your Amazon Kendra experience.
      */
 
     public String getId() {
@@ -57,11 +57,11 @@ public class CreateExperienceResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The identifier for your created Amazon Kendra experience.
+     * The identifier of your Amazon Kendra experience.
      * </p>
      * 
      * @param id
-     *        The identifier for your created Amazon Kendra experience.
+     *        The identifier of your Amazon Kendra experience.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

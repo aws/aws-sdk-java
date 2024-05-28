@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,6 +65,12 @@ public class UpdateDomainAssociationRequest extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private String autoSubDomainIAMRole;
+    /**
+     * <p>
+     * The type of SSL/TLS certificate to use for your custom domain.
+     * </p>
+     */
+    private CertificateSettings certificateSettings;
 
     /**
      * <p>
@@ -385,6 +391,46 @@ public class UpdateDomainAssociationRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The type of SSL/TLS certificate to use for your custom domain.
+     * </p>
+     * 
+     * @param certificateSettings
+     *        The type of SSL/TLS certificate to use for your custom domain.
+     */
+
+    public void setCertificateSettings(CertificateSettings certificateSettings) {
+        this.certificateSettings = certificateSettings;
+    }
+
+    /**
+     * <p>
+     * The type of SSL/TLS certificate to use for your custom domain.
+     * </p>
+     * 
+     * @return The type of SSL/TLS certificate to use for your custom domain.
+     */
+
+    public CertificateSettings getCertificateSettings() {
+        return this.certificateSettings;
+    }
+
+    /**
+     * <p>
+     * The type of SSL/TLS certificate to use for your custom domain.
+     * </p>
+     * 
+     * @param certificateSettings
+     *        The type of SSL/TLS certificate to use for your custom domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDomainAssociationRequest withCertificateSettings(CertificateSettings certificateSettings) {
+        setCertificateSettings(certificateSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -407,7 +453,9 @@ public class UpdateDomainAssociationRequest extends com.amazonaws.AmazonWebServi
         if (getAutoSubDomainCreationPatterns() != null)
             sb.append("AutoSubDomainCreationPatterns: ").append(getAutoSubDomainCreationPatterns()).append(",");
         if (getAutoSubDomainIAMRole() != null)
-            sb.append("AutoSubDomainIAMRole: ").append(getAutoSubDomainIAMRole());
+            sb.append("AutoSubDomainIAMRole: ").append(getAutoSubDomainIAMRole()).append(",");
+        if (getCertificateSettings() != null)
+            sb.append("CertificateSettings: ").append(getCertificateSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -447,6 +495,10 @@ public class UpdateDomainAssociationRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getAutoSubDomainIAMRole() != null && other.getAutoSubDomainIAMRole().equals(this.getAutoSubDomainIAMRole()) == false)
             return false;
+        if (other.getCertificateSettings() == null ^ this.getCertificateSettings() == null)
+            return false;
+        if (other.getCertificateSettings() != null && other.getCertificateSettings().equals(this.getCertificateSettings()) == false)
+            return false;
         return true;
     }
 
@@ -461,6 +513,7 @@ public class UpdateDomainAssociationRequest extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getSubDomainSettings() == null) ? 0 : getSubDomainSettings().hashCode());
         hashCode = prime * hashCode + ((getAutoSubDomainCreationPatterns() == null) ? 0 : getAutoSubDomainCreationPatterns().hashCode());
         hashCode = prime * hashCode + ((getAutoSubDomainIAMRole() == null) ? 0 : getAutoSubDomainIAMRole().hashCode());
+        hashCode = prime * hashCode + ((getCertificateSettings() == null) ? 0 : getCertificateSettings().hashCode());
         return hashCode;
     }
 

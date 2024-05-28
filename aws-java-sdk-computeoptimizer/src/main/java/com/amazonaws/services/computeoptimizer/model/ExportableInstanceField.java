@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,7 +71,26 @@ public enum ExportableInstanceField {
     EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics("EffectiveRecommendationPreferencesEnhancedInfrastructureMetrics"),
     EffectiveRecommendationPreferencesInferredWorkloadTypes("EffectiveRecommendationPreferencesInferredWorkloadTypes"),
     InferredWorkloadTypes("InferredWorkloadTypes"),
-    RecommendationOptionsMigrationEffort("RecommendationOptionsMigrationEffort");
+    RecommendationOptionsMigrationEffort("RecommendationOptionsMigrationEffort"),
+    EffectiveRecommendationPreferencesExternalMetricsSource("EffectiveRecommendationPreferencesExternalMetricsSource"),
+    InstanceState("InstanceState"),
+    Tags("Tags"),
+    ExternalMetricStatusCode("ExternalMetricStatusCode"),
+    ExternalMetricStatusReason("ExternalMetricStatusReason"),
+    CurrentInstanceGpuInfo("CurrentInstanceGpuInfo"),
+    RecommendationOptionsInstanceGpuInfo("RecommendationOptionsInstanceGpuInfo"),
+    UtilizationMetricsGpuPercentageMaximum("UtilizationMetricsGpuPercentageMaximum"),
+    UtilizationMetricsGpuMemoryPercentageMaximum("UtilizationMetricsGpuMemoryPercentageMaximum"),
+    RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum("RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum"),
+    RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum("RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum"),
+    Idle("Idle"),
+    EffectiveRecommendationPreferencesPreferredResources("EffectiveRecommendationPreferencesPreferredResources"),
+    EffectiveRecommendationPreferencesLookBackPeriod("EffectiveRecommendationPreferencesLookBackPeriod"),
+    EffectiveRecommendationPreferencesUtilizationPreferences("EffectiveRecommendationPreferencesUtilizationPreferences"),
+    EffectiveRecommendationPreferencesSavingsEstimationMode("EffectiveRecommendationPreferencesSavingsEstimationMode"),
+    RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage("RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage"),
+    RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts("RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts"),
+    RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts("RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts");
 
     private String value;
 

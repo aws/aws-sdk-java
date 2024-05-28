@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,11 +26,18 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Whether to automatically enable Security Hub for new accounts in the organization.
+     * Whether to automatically enable Security Hub in new member accounts when they join the organization.
      * </p>
      * <p>
-     * If set to <code>true</code>, then Security Hub is enabled for new accounts. If set to false, then new accounts
-     * are not added automatically.
+     * If set to <code>true</code>, then Security Hub is automatically enabled in new accounts. If set to
+     * <code>false</code>, then Security Hub isn't enabled in new accounts automatically. The default value is
+     * <code>false</code>.
+     * </p>
+     * <p>
+     * If the <code>ConfigurationType</code> of your organization is set to <code>CENTRAL</code>, then this field is set
+     * to <code>false</code> and can't be changed in the home Region and linked Regions. However, in that case, the
+     * delegated administrator can create a configuration policy in which Security Hub is enabled and associate the
+     * policy with new organization accounts.
      * </p>
      */
     private Boolean autoEnable;
@@ -45,33 +52,52 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
      * <p>
      * Whether to automatically enable Security Hub <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default
-     * standards</a> for new member accounts in the organization.
-     * </p>
-     * <p>
-     * The default value of this parameter is equal to <code>DEFAULT</code>.
+     * standards</a> in new member accounts when they join the organization.
      * </p>
      * <p>
      * If equal to <code>DEFAULT</code>, then Security Hub default standards are automatically enabled for new member
      * accounts. If equal to <code>NONE</code>, then default standards are not automatically enabled for new member
-     * accounts.
+     * accounts. The default value of this parameter is equal to <code>DEFAULT</code>.
+     * </p>
+     * <p>
+     * If the <code>ConfigurationType</code> of your organization is set to <code>CENTRAL</code>, then this field is set
+     * to <code>NONE</code> and can't be changed in the home Region and linked Regions. However, in that case, the
+     * delegated administrator can create a configuration policy in which specific security standards are enabled and
+     * associate the policy with new organization accounts.
      * </p>
      */
     private String autoEnableStandards;
 
+    private OrganizationConfiguration organizationConfiguration;
+
     /**
      * <p>
-     * Whether to automatically enable Security Hub for new accounts in the organization.
+     * Whether to automatically enable Security Hub in new member accounts when they join the organization.
      * </p>
      * <p>
-     * If set to <code>true</code>, then Security Hub is enabled for new accounts. If set to false, then new accounts
-     * are not added automatically.
+     * If set to <code>true</code>, then Security Hub is automatically enabled in new accounts. If set to
+     * <code>false</code>, then Security Hub isn't enabled in new accounts automatically. The default value is
+     * <code>false</code>.
+     * </p>
+     * <p>
+     * If the <code>ConfigurationType</code> of your organization is set to <code>CENTRAL</code>, then this field is set
+     * to <code>false</code> and can't be changed in the home Region and linked Regions. However, in that case, the
+     * delegated administrator can create a configuration policy in which Security Hub is enabled and associate the
+     * policy with new organization accounts.
      * </p>
      * 
      * @param autoEnable
-     *        Whether to automatically enable Security Hub for new accounts in the organization.</p>
+     *        Whether to automatically enable Security Hub in new member accounts when they join the organization.</p>
      *        <p>
-     *        If set to <code>true</code>, then Security Hub is enabled for new accounts. If set to false, then new
-     *        accounts are not added automatically.
+     *        If set to <code>true</code>, then Security Hub is automatically enabled in new accounts. If set to
+     *        <code>false</code>, then Security Hub isn't enabled in new accounts automatically. The default value is
+     *        <code>false</code>.
+     *        </p>
+     *        <p>
+     *        If the <code>ConfigurationType</code> of your organization is set to <code>CENTRAL</code>, then this field
+     *        is set to <code>false</code> and can't be changed in the home Region and linked Regions. However, in that
+     *        case, the delegated administrator can create a configuration policy in which Security Hub is enabled and
+     *        associate the policy with new organization accounts.
      */
 
     public void setAutoEnable(Boolean autoEnable) {
@@ -80,17 +106,31 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Whether to automatically enable Security Hub for new accounts in the organization.
+     * Whether to automatically enable Security Hub in new member accounts when they join the organization.
      * </p>
      * <p>
-     * If set to <code>true</code>, then Security Hub is enabled for new accounts. If set to false, then new accounts
-     * are not added automatically.
+     * If set to <code>true</code>, then Security Hub is automatically enabled in new accounts. If set to
+     * <code>false</code>, then Security Hub isn't enabled in new accounts automatically. The default value is
+     * <code>false</code>.
+     * </p>
+     * <p>
+     * If the <code>ConfigurationType</code> of your organization is set to <code>CENTRAL</code>, then this field is set
+     * to <code>false</code> and can't be changed in the home Region and linked Regions. However, in that case, the
+     * delegated administrator can create a configuration policy in which Security Hub is enabled and associate the
+     * policy with new organization accounts.
      * </p>
      * 
-     * @return Whether to automatically enable Security Hub for new accounts in the organization.</p>
+     * @return Whether to automatically enable Security Hub in new member accounts when they join the organization.</p>
      *         <p>
-     *         If set to <code>true</code>, then Security Hub is enabled for new accounts. If set to false, then new
-     *         accounts are not added automatically.
+     *         If set to <code>true</code>, then Security Hub is automatically enabled in new accounts. If set to
+     *         <code>false</code>, then Security Hub isn't enabled in new accounts automatically. The default value is
+     *         <code>false</code>.
+     *         </p>
+     *         <p>
+     *         If the <code>ConfigurationType</code> of your organization is set to <code>CENTRAL</code>, then this
+     *         field is set to <code>false</code> and can't be changed in the home Region and linked Regions. However,
+     *         in that case, the delegated administrator can create a configuration policy in which Security Hub is
+     *         enabled and associate the policy with new organization accounts.
      */
 
     public Boolean getAutoEnable() {
@@ -99,18 +139,32 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Whether to automatically enable Security Hub for new accounts in the organization.
+     * Whether to automatically enable Security Hub in new member accounts when they join the organization.
      * </p>
      * <p>
-     * If set to <code>true</code>, then Security Hub is enabled for new accounts. If set to false, then new accounts
-     * are not added automatically.
+     * If set to <code>true</code>, then Security Hub is automatically enabled in new accounts. If set to
+     * <code>false</code>, then Security Hub isn't enabled in new accounts automatically. The default value is
+     * <code>false</code>.
+     * </p>
+     * <p>
+     * If the <code>ConfigurationType</code> of your organization is set to <code>CENTRAL</code>, then this field is set
+     * to <code>false</code> and can't be changed in the home Region and linked Regions. However, in that case, the
+     * delegated administrator can create a configuration policy in which Security Hub is enabled and associate the
+     * policy with new organization accounts.
      * </p>
      * 
      * @param autoEnable
-     *        Whether to automatically enable Security Hub for new accounts in the organization.</p>
+     *        Whether to automatically enable Security Hub in new member accounts when they join the organization.</p>
      *        <p>
-     *        If set to <code>true</code>, then Security Hub is enabled for new accounts. If set to false, then new
-     *        accounts are not added automatically.
+     *        If set to <code>true</code>, then Security Hub is automatically enabled in new accounts. If set to
+     *        <code>false</code>, then Security Hub isn't enabled in new accounts automatically. The default value is
+     *        <code>false</code>.
+     *        </p>
+     *        <p>
+     *        If the <code>ConfigurationType</code> of your organization is set to <code>CENTRAL</code>, then this field
+     *        is set to <code>false</code> and can't be changed in the home Region and linked Regions. However, in that
+     *        case, the delegated administrator can create a configuration policy in which Security Hub is enabled and
+     *        associate the policy with new organization accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,17 +175,31 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Whether to automatically enable Security Hub for new accounts in the organization.
+     * Whether to automatically enable Security Hub in new member accounts when they join the organization.
      * </p>
      * <p>
-     * If set to <code>true</code>, then Security Hub is enabled for new accounts. If set to false, then new accounts
-     * are not added automatically.
+     * If set to <code>true</code>, then Security Hub is automatically enabled in new accounts. If set to
+     * <code>false</code>, then Security Hub isn't enabled in new accounts automatically. The default value is
+     * <code>false</code>.
+     * </p>
+     * <p>
+     * If the <code>ConfigurationType</code> of your organization is set to <code>CENTRAL</code>, then this field is set
+     * to <code>false</code> and can't be changed in the home Region and linked Regions. However, in that case, the
+     * delegated administrator can create a configuration policy in which Security Hub is enabled and associate the
+     * policy with new organization accounts.
      * </p>
      * 
-     * @return Whether to automatically enable Security Hub for new accounts in the organization.</p>
+     * @return Whether to automatically enable Security Hub in new member accounts when they join the organization.</p>
      *         <p>
-     *         If set to <code>true</code>, then Security Hub is enabled for new accounts. If set to false, then new
-     *         accounts are not added automatically.
+     *         If set to <code>true</code>, then Security Hub is automatically enabled in new accounts. If set to
+     *         <code>false</code>, then Security Hub isn't enabled in new accounts automatically. The default value is
+     *         <code>false</code>.
+     *         </p>
+     *         <p>
+     *         If the <code>ConfigurationType</code> of your organization is set to <code>CENTRAL</code>, then this
+     *         field is set to <code>false</code> and can't be changed in the home Region and linked Regions. However,
+     *         in that case, the delegated administrator can create a configuration policy in which Security Hub is
+     *         enabled and associate the policy with new organization accounts.
      */
 
     public Boolean isAutoEnable() {
@@ -202,28 +270,34 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
      * <p>
      * Whether to automatically enable Security Hub <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default
-     * standards</a> for new member accounts in the organization.
-     * </p>
-     * <p>
-     * The default value of this parameter is equal to <code>DEFAULT</code>.
+     * standards</a> in new member accounts when they join the organization.
      * </p>
      * <p>
      * If equal to <code>DEFAULT</code>, then Security Hub default standards are automatically enabled for new member
      * accounts. If equal to <code>NONE</code>, then default standards are not automatically enabled for new member
-     * accounts.
+     * accounts. The default value of this parameter is equal to <code>DEFAULT</code>.
+     * </p>
+     * <p>
+     * If the <code>ConfigurationType</code> of your organization is set to <code>CENTRAL</code>, then this field is set
+     * to <code>NONE</code> and can't be changed in the home Region and linked Regions. However, in that case, the
+     * delegated administrator can create a configuration policy in which specific security standards are enabled and
+     * associate the policy with new organization accounts.
      * </p>
      * 
      * @param autoEnableStandards
      *        Whether to automatically enable Security Hub <a href=
      *        "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html"
-     *        >default standards</a> for new member accounts in the organization.</p>
-     *        <p>
-     *        The default value of this parameter is equal to <code>DEFAULT</code>.
-     *        </p>
+     *        >default standards</a> in new member accounts when they join the organization.</p>
      *        <p>
      *        If equal to <code>DEFAULT</code>, then Security Hub default standards are automatically enabled for new
      *        member accounts. If equal to <code>NONE</code>, then default standards are not automatically enabled for
-     *        new member accounts.
+     *        new member accounts. The default value of this parameter is equal to <code>DEFAULT</code>.
+     *        </p>
+     *        <p>
+     *        If the <code>ConfigurationType</code> of your organization is set to <code>CENTRAL</code>, then this field
+     *        is set to <code>NONE</code> and can't be changed in the home Region and linked Regions. However, in that
+     *        case, the delegated administrator can create a configuration policy in which specific security standards
+     *        are enabled and associate the policy with new organization accounts.
      * @see AutoEnableStandards
      */
 
@@ -235,27 +309,33 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
      * <p>
      * Whether to automatically enable Security Hub <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default
-     * standards</a> for new member accounts in the organization.
-     * </p>
-     * <p>
-     * The default value of this parameter is equal to <code>DEFAULT</code>.
+     * standards</a> in new member accounts when they join the organization.
      * </p>
      * <p>
      * If equal to <code>DEFAULT</code>, then Security Hub default standards are automatically enabled for new member
      * accounts. If equal to <code>NONE</code>, then default standards are not automatically enabled for new member
-     * accounts.
+     * accounts. The default value of this parameter is equal to <code>DEFAULT</code>.
+     * </p>
+     * <p>
+     * If the <code>ConfigurationType</code> of your organization is set to <code>CENTRAL</code>, then this field is set
+     * to <code>NONE</code> and can't be changed in the home Region and linked Regions. However, in that case, the
+     * delegated administrator can create a configuration policy in which specific security standards are enabled and
+     * associate the policy with new organization accounts.
      * </p>
      * 
      * @return Whether to automatically enable Security Hub <a
      *         href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html"
-     *         >default standards</a> for new member accounts in the organization.</p>
-     *         <p>
-     *         The default value of this parameter is equal to <code>DEFAULT</code>.
-     *         </p>
+     *         >default standards</a> in new member accounts when they join the organization.</p>
      *         <p>
      *         If equal to <code>DEFAULT</code>, then Security Hub default standards are automatically enabled for new
      *         member accounts. If equal to <code>NONE</code>, then default standards are not automatically enabled for
-     *         new member accounts.
+     *         new member accounts. The default value of this parameter is equal to <code>DEFAULT</code>.
+     *         </p>
+     *         <p>
+     *         If the <code>ConfigurationType</code> of your organization is set to <code>CENTRAL</code>, then this
+     *         field is set to <code>NONE</code> and can't be changed in the home Region and linked Regions. However, in
+     *         that case, the delegated administrator can create a configuration policy in which specific security
+     *         standards are enabled and associate the policy with new organization accounts.
      * @see AutoEnableStandards
      */
 
@@ -267,28 +347,34 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
      * <p>
      * Whether to automatically enable Security Hub <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default
-     * standards</a> for new member accounts in the organization.
-     * </p>
-     * <p>
-     * The default value of this parameter is equal to <code>DEFAULT</code>.
+     * standards</a> in new member accounts when they join the organization.
      * </p>
      * <p>
      * If equal to <code>DEFAULT</code>, then Security Hub default standards are automatically enabled for new member
      * accounts. If equal to <code>NONE</code>, then default standards are not automatically enabled for new member
-     * accounts.
+     * accounts. The default value of this parameter is equal to <code>DEFAULT</code>.
+     * </p>
+     * <p>
+     * If the <code>ConfigurationType</code> of your organization is set to <code>CENTRAL</code>, then this field is set
+     * to <code>NONE</code> and can't be changed in the home Region and linked Regions. However, in that case, the
+     * delegated administrator can create a configuration policy in which specific security standards are enabled and
+     * associate the policy with new organization accounts.
      * </p>
      * 
      * @param autoEnableStandards
      *        Whether to automatically enable Security Hub <a href=
      *        "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html"
-     *        >default standards</a> for new member accounts in the organization.</p>
-     *        <p>
-     *        The default value of this parameter is equal to <code>DEFAULT</code>.
-     *        </p>
+     *        >default standards</a> in new member accounts when they join the organization.</p>
      *        <p>
      *        If equal to <code>DEFAULT</code>, then Security Hub default standards are automatically enabled for new
      *        member accounts. If equal to <code>NONE</code>, then default standards are not automatically enabled for
-     *        new member accounts.
+     *        new member accounts. The default value of this parameter is equal to <code>DEFAULT</code>.
+     *        </p>
+     *        <p>
+     *        If the <code>ConfigurationType</code> of your organization is set to <code>CENTRAL</code>, then this field
+     *        is set to <code>NONE</code> and can't be changed in the home Region and linked Regions. However, in that
+     *        case, the delegated administrator can create a configuration policy in which specific security standards
+     *        are enabled and associate the policy with new organization accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoEnableStandards
      */
@@ -302,34 +388,66 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
      * <p>
      * Whether to automatically enable Security Hub <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html">default
-     * standards</a> for new member accounts in the organization.
-     * </p>
-     * <p>
-     * The default value of this parameter is equal to <code>DEFAULT</code>.
+     * standards</a> in new member accounts when they join the organization.
      * </p>
      * <p>
      * If equal to <code>DEFAULT</code>, then Security Hub default standards are automatically enabled for new member
      * accounts. If equal to <code>NONE</code>, then default standards are not automatically enabled for new member
-     * accounts.
+     * accounts. The default value of this parameter is equal to <code>DEFAULT</code>.
+     * </p>
+     * <p>
+     * If the <code>ConfigurationType</code> of your organization is set to <code>CENTRAL</code>, then this field is set
+     * to <code>NONE</code> and can't be changed in the home Region and linked Regions. However, in that case, the
+     * delegated administrator can create a configuration policy in which specific security standards are enabled and
+     * associate the policy with new organization accounts.
      * </p>
      * 
      * @param autoEnableStandards
      *        Whether to automatically enable Security Hub <a href=
      *        "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-enable-disable.html"
-     *        >default standards</a> for new member accounts in the organization.</p>
-     *        <p>
-     *        The default value of this parameter is equal to <code>DEFAULT</code>.
-     *        </p>
+     *        >default standards</a> in new member accounts when they join the organization.</p>
      *        <p>
      *        If equal to <code>DEFAULT</code>, then Security Hub default standards are automatically enabled for new
      *        member accounts. If equal to <code>NONE</code>, then default standards are not automatically enabled for
-     *        new member accounts.
+     *        new member accounts. The default value of this parameter is equal to <code>DEFAULT</code>.
+     *        </p>
+     *        <p>
+     *        If the <code>ConfigurationType</code> of your organization is set to <code>CENTRAL</code>, then this field
+     *        is set to <code>NONE</code> and can't be changed in the home Region and linked Regions. However, in that
+     *        case, the delegated administrator can create a configuration policy in which specific security standards
+     *        are enabled and associate the policy with new organization accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoEnableStandards
      */
 
     public DescribeOrganizationConfigurationResult withAutoEnableStandards(AutoEnableStandards autoEnableStandards) {
         this.autoEnableStandards = autoEnableStandards.toString();
+        return this;
+    }
+
+    /**
+     * @param organizationConfiguration
+     */
+
+    public void setOrganizationConfiguration(OrganizationConfiguration organizationConfiguration) {
+        this.organizationConfiguration = organizationConfiguration;
+    }
+
+    /**
+     * @return
+     */
+
+    public OrganizationConfiguration getOrganizationConfiguration() {
+        return this.organizationConfiguration;
+    }
+
+    /**
+     * @param organizationConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeOrganizationConfigurationResult withOrganizationConfiguration(OrganizationConfiguration organizationConfiguration) {
+        setOrganizationConfiguration(organizationConfiguration);
         return this;
     }
 
@@ -350,7 +468,9 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
         if (getMemberAccountLimitReached() != null)
             sb.append("MemberAccountLimitReached: ").append(getMemberAccountLimitReached()).append(",");
         if (getAutoEnableStandards() != null)
-            sb.append("AutoEnableStandards: ").append(getAutoEnableStandards());
+            sb.append("AutoEnableStandards: ").append(getAutoEnableStandards()).append(",");
+        if (getOrganizationConfiguration() != null)
+            sb.append("OrganizationConfiguration: ").append(getOrganizationConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -377,6 +497,10 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
             return false;
         if (other.getAutoEnableStandards() != null && other.getAutoEnableStandards().equals(this.getAutoEnableStandards()) == false)
             return false;
+        if (other.getOrganizationConfiguration() == null ^ this.getOrganizationConfiguration() == null)
+            return false;
+        if (other.getOrganizationConfiguration() != null && other.getOrganizationConfiguration().equals(this.getOrganizationConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -388,6 +512,7 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
         hashCode = prime * hashCode + ((getAutoEnable() == null) ? 0 : getAutoEnable().hashCode());
         hashCode = prime * hashCode + ((getMemberAccountLimitReached() == null) ? 0 : getMemberAccountLimitReached().hashCode());
         hashCode = prime * hashCode + ((getAutoEnableStandards() == null) ? 0 : getAutoEnableStandards().hashCode());
+        hashCode = prime * hashCode + ((getOrganizationConfiguration() == null) ? 0 : getOrganizationConfiguration().hashCode());
         return hashCode;
     }
 

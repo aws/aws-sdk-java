@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
      * The type of source that is generating the events. For RDS Proxy events, specify <code>db-proxy</code>.
      * </p>
      * <p>
-     * Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> |
+     * Valid Values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> |
      * <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code> |
      * <code>db-proxy</code>
      * </p>
@@ -49,7 +49,7 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
      * The type of source that is generating the events. For RDS Proxy events, specify <code>db-proxy</code>.
      * </p>
      * <p>
-     * Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> |
+     * Valid Values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> |
      * <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code> |
      * <code>db-proxy</code>
      * </p>
@@ -57,7 +57,7 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
      * @param sourceType
      *        The type of source that is generating the events. For RDS Proxy events, specify <code>db-proxy</code>.</p>
      *        <p>
-     *        Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> |
+     *        Valid Values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> |
      *        <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code> |
      *        <code>db-proxy</code>
      */
@@ -71,7 +71,7 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
      * The type of source that is generating the events. For RDS Proxy events, specify <code>db-proxy</code>.
      * </p>
      * <p>
-     * Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> |
+     * Valid Values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> |
      * <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code> |
      * <code>db-proxy</code>
      * </p>
@@ -79,7 +79,7 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
      * @return The type of source that is generating the events. For RDS Proxy events, specify <code>db-proxy</code>
      *         .</p>
      *         <p>
-     *         Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> |
+     *         Valid Values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> |
      *         <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code> |
      *         <code>db-proxy</code>
      */
@@ -93,7 +93,7 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
      * The type of source that is generating the events. For RDS Proxy events, specify <code>db-proxy</code>.
      * </p>
      * <p>
-     * Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> |
+     * Valid Values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> |
      * <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code> |
      * <code>db-proxy</code>
      * </p>
@@ -101,7 +101,7 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
      * @param sourceType
      *        The type of source that is generating the events. For RDS Proxy events, specify <code>db-proxy</code>.</p>
      *        <p>
-     *        Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> |
+     *        Valid Values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code> |
      *        <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code> |
      *        <code>db-proxy</code>
      * @return Returns a reference to this object so that method calls can be chained together.

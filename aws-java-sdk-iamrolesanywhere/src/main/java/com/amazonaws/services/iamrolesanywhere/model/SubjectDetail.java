@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class SubjectDetail implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date createdAt;
     /**
      * <p>
-     * The temporary session credentials vended at the last authenticating call with this Subject.
+     * The temporary session credentials vended at the last authenticating call with this subject.
      * </p>
      */
     private java.util.List<CredentialSummary> credentials;
@@ -54,7 +54,7 @@ public class SubjectDetail implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<InstanceProperty> instanceProperties;
     /**
      * <p>
-     * The ISO-8601 timestamp of the last time this Subject requested temporary session credentials.
+     * The ISO-8601 timestamp of the last time this subject requested temporary session credentials.
      * </p>
      */
     private java.util.Date lastSeenAt;
@@ -125,10 +125,10 @@ public class SubjectDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The temporary session credentials vended at the last authenticating call with this Subject.
+     * The temporary session credentials vended at the last authenticating call with this subject.
      * </p>
      * 
-     * @return The temporary session credentials vended at the last authenticating call with this Subject.
+     * @return The temporary session credentials vended at the last authenticating call with this subject.
      */
 
     public java.util.List<CredentialSummary> getCredentials() {
@@ -137,11 +137,11 @@ public class SubjectDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The temporary session credentials vended at the last authenticating call with this Subject.
+     * The temporary session credentials vended at the last authenticating call with this subject.
      * </p>
      * 
      * @param credentials
-     *        The temporary session credentials vended at the last authenticating call with this Subject.
+     *        The temporary session credentials vended at the last authenticating call with this subject.
      */
 
     public void setCredentials(java.util.Collection<CredentialSummary> credentials) {
@@ -155,7 +155,7 @@ public class SubjectDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The temporary session credentials vended at the last authenticating call with this Subject.
+     * The temporary session credentials vended at the last authenticating call with this subject.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -164,7 +164,7 @@ public class SubjectDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param credentials
-     *        The temporary session credentials vended at the last authenticating call with this Subject.
+     *        The temporary session credentials vended at the last authenticating call with this subject.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,11 +180,11 @@ public class SubjectDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The temporary session credentials vended at the last authenticating call with this Subject.
+     * The temporary session credentials vended at the last authenticating call with this subject.
      * </p>
      * 
      * @param credentials
-     *        The temporary session credentials vended at the last authenticating call with this Subject.
+     *        The temporary session credentials vended at the last authenticating call with this subject.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -317,11 +317,11 @@ public class SubjectDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ISO-8601 timestamp of the last time this Subject requested temporary session credentials.
+     * The ISO-8601 timestamp of the last time this subject requested temporary session credentials.
      * </p>
      * 
      * @param lastSeenAt
-     *        The ISO-8601 timestamp of the last time this Subject requested temporary session credentials.
+     *        The ISO-8601 timestamp of the last time this subject requested temporary session credentials.
      */
 
     public void setLastSeenAt(java.util.Date lastSeenAt) {
@@ -330,10 +330,10 @@ public class SubjectDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ISO-8601 timestamp of the last time this Subject requested temporary session credentials.
+     * The ISO-8601 timestamp of the last time this subject requested temporary session credentials.
      * </p>
      * 
-     * @return The ISO-8601 timestamp of the last time this Subject requested temporary session credentials.
+     * @return The ISO-8601 timestamp of the last time this subject requested temporary session credentials.
      */
 
     public java.util.Date getLastSeenAt() {
@@ -342,11 +342,11 @@ public class SubjectDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ISO-8601 timestamp of the last time this Subject requested temporary session credentials.
+     * The ISO-8601 timestamp of the last time this subject requested temporary session credentials.
      * </p>
      * 
      * @param lastSeenAt
-     *        The ISO-8601 timestamp of the last time this Subject requested temporary session credentials.
+     *        The ISO-8601 timestamp of the last time this subject requested temporary session credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

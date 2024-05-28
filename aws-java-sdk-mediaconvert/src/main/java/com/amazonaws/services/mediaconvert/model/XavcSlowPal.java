@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,8 +17,7 @@ import javax.annotation.Generated;
 /**
  * Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a
  * 25 fps output by relabeling the video frames and resampling your audio. Note that enabling this setting will slightly
- * reduce the duration of your video. Related settings: You must also set Frame rate to 25. In your JSON job
- * specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
+ * reduce the duration of your video. Related settings: You must also set Frame rate to 25.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum XavcSlowPal {

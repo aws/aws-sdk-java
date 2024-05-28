@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,13 +25,13 @@ public class StartInferenceSchedulerResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the ML model being used by the inference scheduler.
+     * The Amazon Resource Name (ARN) of the machine learning model being used by the inference scheduler.
      * </p>
      */
     private String modelArn;
     /**
      * <p>
-     * The name of the ML model being used by the inference scheduler.
+     * The name of the machine learning model being used by the inference scheduler.
      * </p>
      */
     private String modelName;
@@ -56,11 +56,11 @@ public class StartInferenceSchedulerResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the ML model being used by the inference scheduler.
+     * The Amazon Resource Name (ARN) of the machine learning model being used by the inference scheduler.
      * </p>
      * 
      * @param modelArn
-     *        The Amazon Resource Name (ARN) of the ML model being used by the inference scheduler.
+     *        The Amazon Resource Name (ARN) of the machine learning model being used by the inference scheduler.
      */
 
     public void setModelArn(String modelArn) {
@@ -69,10 +69,10 @@ public class StartInferenceSchedulerResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the ML model being used by the inference scheduler.
+     * The Amazon Resource Name (ARN) of the machine learning model being used by the inference scheduler.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the ML model being used by the inference scheduler.
+     * @return The Amazon Resource Name (ARN) of the machine learning model being used by the inference scheduler.
      */
 
     public String getModelArn() {
@@ -81,11 +81,11 @@ public class StartInferenceSchedulerResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the ML model being used by the inference scheduler.
+     * The Amazon Resource Name (ARN) of the machine learning model being used by the inference scheduler.
      * </p>
      * 
      * @param modelArn
-     *        The Amazon Resource Name (ARN) of the ML model being used by the inference scheduler.
+     *        The Amazon Resource Name (ARN) of the machine learning model being used by the inference scheduler.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +96,11 @@ public class StartInferenceSchedulerResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the ML model being used by the inference scheduler.
+     * The name of the machine learning model being used by the inference scheduler.
      * </p>
      * 
      * @param modelName
-     *        The name of the ML model being used by the inference scheduler.
+     *        The name of the machine learning model being used by the inference scheduler.
      */
 
     public void setModelName(String modelName) {
@@ -109,10 +109,10 @@ public class StartInferenceSchedulerResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the ML model being used by the inference scheduler.
+     * The name of the machine learning model being used by the inference scheduler.
      * </p>
      * 
-     * @return The name of the ML model being used by the inference scheduler.
+     * @return The name of the machine learning model being used by the inference scheduler.
      */
 
     public String getModelName() {
@@ -121,11 +121,11 @@ public class StartInferenceSchedulerResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the ML model being used by the inference scheduler.
+     * The name of the machine learning model being used by the inference scheduler.
      * </p>
      * 
      * @param modelName
-     *        The name of the ML model being used by the inference scheduler.
+     *        The name of the machine learning model being used by the inference scheduler.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

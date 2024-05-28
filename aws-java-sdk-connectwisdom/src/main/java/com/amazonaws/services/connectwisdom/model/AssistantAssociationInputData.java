@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,18 +30,21 @@ public class AssistantAssociationInputData implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The identifier of the knowledge base.
+     * The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing
+     * Wisdom Content resource to it.
      * </p>
      */
     private String knowledgeBaseId;
 
     /**
      * <p>
-     * The identifier of the knowledge base.
+     * The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing
+     * Wisdom Content resource to it.
      * </p>
      * 
      * @param knowledgeBaseId
-     *        The identifier of the knowledge base.
+     *        The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're
+     *        storing Wisdom Content resource to it.
      */
 
     public void setKnowledgeBaseId(String knowledgeBaseId) {
@@ -50,10 +53,12 @@ public class AssistantAssociationInputData implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The identifier of the knowledge base.
+     * The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing
+     * Wisdom Content resource to it.
      * </p>
      * 
-     * @return The identifier of the knowledge base.
+     * @return The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're
+     *         storing Wisdom Content resource to it.
      */
 
     public String getKnowledgeBaseId() {
@@ -62,11 +67,13 @@ public class AssistantAssociationInputData implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The identifier of the knowledge base.
+     * The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're storing
+     * Wisdom Content resource to it.
      * </p>
      * 
      * @param knowledgeBaseId
-     *        The identifier of the knowledge base.
+     *        The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge base if you're
+     *        storing Wisdom Content resource to it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

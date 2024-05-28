@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,10 +14,13 @@
  */
 package com.amazonaws.util;
 
+import com.amazonaws.ClientConfiguration;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.Request;
 import com.amazonaws.SdkClientException;
 
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.BasicAWSCredentials;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
@@ -27,12 +30,57 @@ import java.net.URL;
 import java.util.Arrays;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Unit tests for utility methods in {@link RuntimeHttpUtils}.
  */
 @RunWith(Enclosed.class)
 public class RuntimeHttpUtilsTest {
+
+    /**
+     * Unit tests for {@link RuntimeHttpUtils#getUserAgent(ClientConfiguration, String, AWSCredentials)} .
+     */
+    public static class GetUserAgentTest {
+
+        private static final String PROVIDER = "ProfileCredentialsProvider";
+
+        @Test
+        public void when_credentialsContainsProvider_authSourceIsPresent() {
+            BasicAWSCredentials credentials = new BasicAWSCredentials("akid", "skid", null, PROVIDER);
+            String userAgent = RuntimeHttpUtils.getUserAgent(null, null, credentials);
+            assertTrue(userAgent.contains("cfg/auth-source#prof"));
+        }
+
+        @Test
+        public void when_credentialsDoesNotContainProvider_authSourceIsNotPresent() {
+            BasicAWSCredentials credentials = new BasicAWSCredentials("akid", "skid", null);
+            String userAgent = RuntimeHttpUtils.getUserAgent(null, null, credentials);
+            assertFalse(userAgent.contains("cfg/auth-source#prof"));
+        }
+
+        @Test
+        public void when_credentialsContainsProvider_andProviderIsEmpty_unknownValueIsReturned() {
+            BasicAWSCredentials credentials = new BasicAWSCredentials("akid", "skid", null, "");
+            String userAgent = RuntimeHttpUtils.getUserAgent(null, null, credentials);
+            assertTrue(userAgent.contains("cfg/auth-source#unknown"));
+        }
+
+        @Test
+        public void when_credentialsContainsProvider_andProviderIsUnknown_stringValueIsReturned() {
+            BasicAWSCredentials credentials = new BasicAWSCredentials("akid", "skid", null, "MyHomebrewedCredentialsProvider");
+            String userAgent = RuntimeHttpUtils.getUserAgent(null, null, credentials);
+            assertTrue(userAgent.contains("cfg/auth-source#MyHomebrewedCredentialsProvider"));
+        }
+
+        @Test
+        public void when_credentialsContainsIllegalProviderName_authSourceIsNotPresent() {
+            BasicAWSCredentials credentials = new BasicAWSCredentials("akid", "skid", "My@#$%$CredentialsProvider");
+            String userAgent = RuntimeHttpUtils.getUserAgent(null, null, credentials);
+            assertFalse(userAgent.contains("cfg/auth-source#prof"));
+        }
+    }
 
     /**
      * Unit tests for {@link RuntimeHttpUtils#convertRequestToUrl(Request, boolean, boolean)}.

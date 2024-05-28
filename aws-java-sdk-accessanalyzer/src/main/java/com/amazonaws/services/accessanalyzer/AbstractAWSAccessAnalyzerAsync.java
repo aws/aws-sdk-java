@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,32 @@ public class AbstractAWSAccessAnalyzerAsync extends AbstractAWSAccessAnalyzer im
     @Override
     public java.util.concurrent.Future<CancelPolicyGenerationResult> cancelPolicyGenerationAsync(CancelPolicyGenerationRequest request,
             com.amazonaws.handlers.AsyncHandler<CancelPolicyGenerationRequest, CancelPolicyGenerationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CheckAccessNotGrantedResult> checkAccessNotGrantedAsync(CheckAccessNotGrantedRequest request) {
+
+        return checkAccessNotGrantedAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CheckAccessNotGrantedResult> checkAccessNotGrantedAsync(CheckAccessNotGrantedRequest request,
+            com.amazonaws.handlers.AsyncHandler<CheckAccessNotGrantedRequest, CheckAccessNotGrantedResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CheckNoNewAccessResult> checkNoNewAccessAsync(CheckNoNewAccessRequest request) {
+
+        return checkNoNewAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CheckNoNewAccessResult> checkNoNewAccessAsync(CheckNoNewAccessRequest request,
+            com.amazonaws.handlers.AsyncHandler<CheckNoNewAccessRequest, CheckNoNewAccessResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -184,6 +210,19 @@ public class AbstractAWSAccessAnalyzerAsync extends AbstractAWSAccessAnalyzer im
     }
 
     @Override
+    public java.util.concurrent.Future<GetFindingV2Result> getFindingV2Async(GetFindingV2Request request) {
+
+        return getFindingV2Async(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFindingV2Result> getFindingV2Async(GetFindingV2Request request,
+            com.amazonaws.handlers.AsyncHandler<GetFindingV2Request, GetFindingV2Result> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetGeneratedPolicyResult> getGeneratedPolicyAsync(GetGeneratedPolicyRequest request) {
 
         return getGeneratedPolicyAsync(request, null);
@@ -270,6 +309,19 @@ public class AbstractAWSAccessAnalyzerAsync extends AbstractAWSAccessAnalyzer im
     @Override
     public java.util.concurrent.Future<ListFindingsResult> listFindingsAsync(ListFindingsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListFindingsRequest, ListFindingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFindingsV2Result> listFindingsV2Async(ListFindingsV2Request request) {
+
+        return listFindingsV2Async(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFindingsV2Result> listFindingsV2Async(ListFindingsV2Request request,
+            com.amazonaws.handlers.AsyncHandler<ListFindingsV2Request, ListFindingsV2Result> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AssociateLicenseRequestMarshaller {
 
+    private static final MarshallingInfo<String> GRAFANATOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("Grafana-Token").build();
     private static final MarshallingInfo<String> LICENSETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("licenseType").build();
     private static final MarshallingInfo<String> WORKSPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
@@ -48,6 +50,7 @@ public class AssociateLicenseRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(associateLicenseRequest.getGrafanaToken(), GRAFANATOKEN_BINDING);
             protocolMarshaller.marshall(associateLicenseRequest.getLicenseType(), LICENSETYPE_BINDING);
             protocolMarshaller.marshall(associateLicenseRequest.getWorkspaceId(), WORKSPACEID_BINDING);
         } catch (Exception e) {

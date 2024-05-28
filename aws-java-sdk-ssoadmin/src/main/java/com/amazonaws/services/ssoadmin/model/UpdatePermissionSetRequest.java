@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,9 +27,15 @@ public class UpdatePermissionSetRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * The description of the <a>PermissionSet</a>.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
      * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     private String instanceArn;
@@ -41,34 +47,69 @@ public class UpdatePermissionSetRequest extends com.amazonaws.AmazonWebServiceRe
     private String permissionSetArn;
     /**
      * <p>
-     * The description of the <a>PermissionSet</a>.
+     * Used to redirect users within the application during the federation authentication process.
      * </p>
      */
-    private String description;
+    private String relayState;
     /**
      * <p>
      * The length of time that the application user sessions are valid for in the ISO-8601 standard.
      * </p>
      */
     private String sessionDuration;
+
     /**
      * <p>
-     * Used to redirect users within the application during the federation authentication process.
+     * The description of the <a>PermissionSet</a>.
      * </p>
+     * 
+     * @param description
+     *        The description of the <a>PermissionSet</a>.
      */
-    private String relayState;
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * The description of the <a>PermissionSet</a>.
+     * </p>
+     * 
+     * @return The description of the <a>PermissionSet</a>.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * The description of the <a>PermissionSet</a>.
+     * </p>
+     * 
+     * @param description
+     *        The description of the <a>PermissionSet</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdatePermissionSetRequest withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
 
     /**
      * <p>
      * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param instanceArn
      *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
      *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *        Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *        Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     *        Reference</i>.
      */
 
     public void setInstanceArn(String instanceArn) {
@@ -78,13 +119,14 @@ public class UpdatePermissionSetRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @return The ARN of the IAM Identity Center instance under which the operation will be executed. For more
      *         information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *         Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *         Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     *         Reference</i>.
      */
 
     public String getInstanceArn() {
@@ -94,14 +136,15 @@ public class UpdatePermissionSetRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param instanceArn
      *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
      *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *        Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *        Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     *        Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,41 +195,41 @@ public class UpdatePermissionSetRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The description of the <a>PermissionSet</a>.
+     * Used to redirect users within the application during the federation authentication process.
      * </p>
      * 
-     * @param description
-     *        The description of the <a>PermissionSet</a>.
+     * @param relayState
+     *        Used to redirect users within the application during the federation authentication process.
      */
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setRelayState(String relayState) {
+        this.relayState = relayState;
     }
 
     /**
      * <p>
-     * The description of the <a>PermissionSet</a>.
+     * Used to redirect users within the application during the federation authentication process.
      * </p>
      * 
-     * @return The description of the <a>PermissionSet</a>.
+     * @return Used to redirect users within the application during the federation authentication process.
      */
 
-    public String getDescription() {
-        return this.description;
+    public String getRelayState() {
+        return this.relayState;
     }
 
     /**
      * <p>
-     * The description of the <a>PermissionSet</a>.
+     * Used to redirect users within the application during the federation authentication process.
      * </p>
      * 
-     * @param description
-     *        The description of the <a>PermissionSet</a>.
+     * @param relayState
+     *        Used to redirect users within the application during the federation authentication process.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdatePermissionSetRequest withDescription(String description) {
-        setDescription(description);
+    public UpdatePermissionSetRequest withRelayState(String relayState) {
+        setRelayState(relayState);
         return this;
     }
 
@@ -231,46 +274,6 @@ public class UpdatePermissionSetRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p>
-     * Used to redirect users within the application during the federation authentication process.
-     * </p>
-     * 
-     * @param relayState
-     *        Used to redirect users within the application during the federation authentication process.
-     */
-
-    public void setRelayState(String relayState) {
-        this.relayState = relayState;
-    }
-
-    /**
-     * <p>
-     * Used to redirect users within the application during the federation authentication process.
-     * </p>
-     * 
-     * @return Used to redirect users within the application during the federation authentication process.
-     */
-
-    public String getRelayState() {
-        return this.relayState;
-    }
-
-    /**
-     * <p>
-     * Used to redirect users within the application during the federation authentication process.
-     * </p>
-     * 
-     * @param relayState
-     *        Used to redirect users within the application during the federation authentication process.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdatePermissionSetRequest withRelayState(String relayState) {
-        setRelayState(relayState);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -282,16 +285,16 @@ public class UpdatePermissionSetRequest extends com.amazonaws.AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getInstanceArn() != null)
             sb.append("InstanceArn: ").append(getInstanceArn()).append(",");
         if (getPermissionSetArn() != null)
             sb.append("PermissionSetArn: ").append(getPermissionSetArn()).append(",");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
-        if (getSessionDuration() != null)
-            sb.append("SessionDuration: ").append(getSessionDuration()).append(",");
         if (getRelayState() != null)
-            sb.append("RelayState: ").append(getRelayState());
+            sb.append("RelayState: ").append(getRelayState()).append(",");
+        if (getSessionDuration() != null)
+            sb.append("SessionDuration: ").append(getSessionDuration());
         sb.append("}");
         return sb.toString();
     }
@@ -306,6 +309,10 @@ public class UpdatePermissionSetRequest extends com.amazonaws.AmazonWebServiceRe
         if (obj instanceof UpdatePermissionSetRequest == false)
             return false;
         UpdatePermissionSetRequest other = (UpdatePermissionSetRequest) obj;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
         if (other.getInstanceArn() == null ^ this.getInstanceArn() == null)
             return false;
         if (other.getInstanceArn() != null && other.getInstanceArn().equals(this.getInstanceArn()) == false)
@@ -314,17 +321,13 @@ public class UpdatePermissionSetRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getPermissionSetArn() != null && other.getPermissionSetArn().equals(this.getPermissionSetArn()) == false)
             return false;
-        if (other.getDescription() == null ^ this.getDescription() == null)
+        if (other.getRelayState() == null ^ this.getRelayState() == null)
             return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getRelayState() != null && other.getRelayState().equals(this.getRelayState()) == false)
             return false;
         if (other.getSessionDuration() == null ^ this.getSessionDuration() == null)
             return false;
         if (other.getSessionDuration() != null && other.getSessionDuration().equals(this.getSessionDuration()) == false)
-            return false;
-        if (other.getRelayState() == null ^ this.getRelayState() == null)
-            return false;
-        if (other.getRelayState() != null && other.getRelayState().equals(this.getRelayState()) == false)
             return false;
         return true;
     }
@@ -334,11 +337,11 @@ public class UpdatePermissionSetRequest extends com.amazonaws.AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getInstanceArn() == null) ? 0 : getInstanceArn().hashCode());
         hashCode = prime * hashCode + ((getPermissionSetArn() == null) ? 0 : getPermissionSetArn().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode + ((getSessionDuration() == null) ? 0 : getSessionDuration().hashCode());
         hashCode = prime * hashCode + ((getRelayState() == null) ? 0 : getRelayState().hashCode());
+        hashCode = prime * hashCode + ((getSessionDuration() == null) ? 0 : getSessionDuration().hashCode());
         return hashCode;
     }
 

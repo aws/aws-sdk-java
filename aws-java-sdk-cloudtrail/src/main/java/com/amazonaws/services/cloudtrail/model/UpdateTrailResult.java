@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,7 +49,7 @@ public class UpdateTrailResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String s3KeyPrefix;
     /**
      * <p>
-     * This field is no longer in use. Use <a>UpdateTrailResponse$SnsTopicARN</a>.
+     * This field is no longer in use. Use <code>SnsTopicARN</code>.
      * </p>
      */
     @Deprecated
@@ -72,7 +72,7 @@ public class UpdateTrailResult extends com.amazonaws.AmazonWebServiceResult<com.
     private Boolean includeGlobalServiceEvents;
     /**
      * <p>
-     * Specifies whether the trail exists in one region or in all regions.
+     * Specifies whether the trail exists in one Region or in all Regions.
      * </p>
      */
     private Boolean isMultiRegionTrail;
@@ -260,11 +260,11 @@ public class UpdateTrailResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * This field is no longer in use. Use <a>UpdateTrailResponse$SnsTopicARN</a>.
+     * This field is no longer in use. Use <code>SnsTopicARN</code>.
      * </p>
      * 
      * @param snsTopicName
-     *        This field is no longer in use. Use <a>UpdateTrailResponse$SnsTopicARN</a>.
+     *        This field is no longer in use. Use <code>SnsTopicARN</code>.
      */
     @Deprecated
     public void setSnsTopicName(String snsTopicName) {
@@ -273,10 +273,10 @@ public class UpdateTrailResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * This field is no longer in use. Use <a>UpdateTrailResponse$SnsTopicARN</a>.
+     * This field is no longer in use. Use <code>SnsTopicARN</code>.
      * </p>
      * 
-     * @return This field is no longer in use. Use <a>UpdateTrailResponse$SnsTopicARN</a>.
+     * @return This field is no longer in use. Use <code>SnsTopicARN</code>.
      */
     @Deprecated
     public String getSnsTopicName() {
@@ -285,11 +285,11 @@ public class UpdateTrailResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * This field is no longer in use. Use <a>UpdateTrailResponse$SnsTopicARN</a>.
+     * This field is no longer in use. Use <code>SnsTopicARN</code>.
      * </p>
      * 
      * @param snsTopicName
-     *        This field is no longer in use. Use <a>UpdateTrailResponse$SnsTopicARN</a>.
+     *        This field is no longer in use. Use <code>SnsTopicARN</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -413,11 +413,11 @@ public class UpdateTrailResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Specifies whether the trail exists in one region or in all regions.
+     * Specifies whether the trail exists in one Region or in all Regions.
      * </p>
      * 
      * @param isMultiRegionTrail
-     *        Specifies whether the trail exists in one region or in all regions.
+     *        Specifies whether the trail exists in one Region or in all Regions.
      */
 
     public void setIsMultiRegionTrail(Boolean isMultiRegionTrail) {
@@ -426,10 +426,10 @@ public class UpdateTrailResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Specifies whether the trail exists in one region or in all regions.
+     * Specifies whether the trail exists in one Region or in all Regions.
      * </p>
      * 
-     * @return Specifies whether the trail exists in one region or in all regions.
+     * @return Specifies whether the trail exists in one Region or in all Regions.
      */
 
     public Boolean getIsMultiRegionTrail() {
@@ -438,11 +438,11 @@ public class UpdateTrailResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Specifies whether the trail exists in one region or in all regions.
+     * Specifies whether the trail exists in one Region or in all Regions.
      * </p>
      * 
      * @param isMultiRegionTrail
-     *        Specifies whether the trail exists in one region or in all regions.
+     *        Specifies whether the trail exists in one Region or in all Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -453,10 +453,10 @@ public class UpdateTrailResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Specifies whether the trail exists in one region or in all regions.
+     * Specifies whether the trail exists in one Region or in all Regions.
      * </p>
      * 
-     * @return Specifies whether the trail exists in one region or in all regions.
+     * @return Specifies whether the trail exists in one Region or in all Regions.
      */
 
     public Boolean isMultiRegionTrail() {

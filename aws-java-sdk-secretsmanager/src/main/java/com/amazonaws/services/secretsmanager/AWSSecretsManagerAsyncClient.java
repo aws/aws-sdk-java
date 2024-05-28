@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,11 @@ import java.util.concurrent.ExecutorService;
  * </p>
  * <p>
  * This version of the Secrets Manager API Reference documents the Secrets Manager API version 2017-10-17.
+ * </p>
+ * <p>
+ * For a list of endpoints, see <a
+ * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/asm_access.html#endpoints">Amazon Web Services
+ * Secrets Manager endpoints</a>.
  * </p>
  * <p>
  * <b>Support and Feedback for Amazon Web Services Secrets Manager</b>
@@ -110,6 +115,39 @@ public class AWSSecretsManagerAsyncClient extends AWSSecretsManagerClient implem
      */
     public ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetSecretValueResult> batchGetSecretValueAsync(BatchGetSecretValueRequest request) {
+
+        return batchGetSecretValueAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetSecretValueResult> batchGetSecretValueAsync(final BatchGetSecretValueRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchGetSecretValueRequest, BatchGetSecretValueResult> asyncHandler) {
+        final BatchGetSecretValueRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchGetSecretValueResult>() {
+            @Override
+            public BatchGetSecretValueResult call() throws Exception {
+                BatchGetSecretValueResult result = null;
+
+                try {
+                    result = executeBatchGetSecretValue(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override

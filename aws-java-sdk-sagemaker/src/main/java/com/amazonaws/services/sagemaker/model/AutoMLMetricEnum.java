@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,7 +24,19 @@ public enum AutoMLMetricEnum {
     MSE("MSE"),
     F1("F1"),
     F1macro("F1macro"),
-    AUC("AUC");
+    AUC("AUC"),
+    RMSE("RMSE"),
+    BalancedAccuracy("BalancedAccuracy"),
+    R2("R2"),
+    Recall("Recall"),
+    RecallMacro("RecallMacro"),
+    Precision("Precision"),
+    PrecisionMacro("PrecisionMacro"),
+    MAE("MAE"),
+    MAPE("MAPE"),
+    MASE("MASE"),
+    WAPE("WAPE"),
+    AverageWeightedQuantileLoss("AverageWeightedQuantileLoss");
 
     private String value;
 

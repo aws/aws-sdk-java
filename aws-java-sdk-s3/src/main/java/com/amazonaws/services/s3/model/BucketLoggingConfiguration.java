@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Portions copyright 2006-2009 James Murty. Please see LICENSE.txt
  * for applicable license terms and NOTICE.txt for applicable notices.
@@ -20,6 +20,7 @@ import java.io.Serializable;
 
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.TargetObjectKeyFormat;
 
 /**
  * <p>
@@ -47,6 +48,7 @@ import com.amazonaws.services.s3.AmazonS3Client;
 public class BucketLoggingConfiguration implements Serializable {
     private String destinationBucketName = null;
     private String logFilePrefix = null;
+    private TargetObjectKeyFormat targetObjectKeyFormat = null;
 
     /**
      * Creates a new bucket logging configuration, which by default is
@@ -127,11 +129,42 @@ public class BucketLoggingConfiguration implements Serializable {
         this.destinationBucketName = destinationBucketName;
     }
 
+    /**
+     * Returns the {@link TargetObjectKeyFormat} for this logging configuration.
+     *
+     * @return The {@link TargetObjectKeyFormat} for this logging configuration.
+     */
+    public TargetObjectKeyFormat getTargetObjectKeyFormat() {
+        return targetObjectKeyFormat;
+    }
+
+    /**
+     * Sets the {@link TargetObjectKeyFormat} for this logging configuration.
+     *
+     * @param targetObjectKeyFormat The {@link TargetObjectKeyFormat} for this logging configuration.
+     */
+    public void setTargetObjectKeyFormat(TargetObjectKeyFormat targetObjectKeyFormat) {
+        this.targetObjectKeyFormat = targetObjectKeyFormat;
+    }
+
+    /**
+     * Sets the {@link TargetObjectKeyFormat} for this logging configuration and returns this object for method chaining.
+     *
+     * @param targetObjectKeyFormat The {@link TargetObjectKeyFormat} for this logging configuration.
+     */
+    public BucketLoggingConfiguration withTargetObjectKeyFormat(TargetObjectKeyFormat targetObjectKeyFormat) {
+        setTargetObjectKeyFormat(targetObjectKeyFormat);
+        return this;
+    }
+
     public String toString() {
         String result = "LoggingConfiguration enabled=" + isLoggingEnabled();
         if (isLoggingEnabled()) {
             result += ", destinationBucketName=" + getDestinationBucketName()
                 + ", logFilePrefix=" + getLogFilePrefix();
+        }
+        if (targetObjectKeyFormat != null) {
+            result += ", targetObjectKeyFormat=" + getTargetObjectKeyFormat();
         }
         return result;
     }

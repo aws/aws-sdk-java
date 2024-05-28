@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,14 @@ public class InputJsonUnmarshaller implements Unmarshaller<Input, JsonUnmarshall
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("advancedInputFilter", targetDepth)) {
+                    context.nextToken();
+                    input.setAdvancedInputFilter(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("advancedInputFilterSettings", targetDepth)) {
+                    context.nextToken();
+                    input.setAdvancedInputFilterSettings(AdvancedInputFilterSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("audioSelectorGroups", targetDepth)) {
                     context.nextToken();
                     input.setAudioSelectorGroups(new MapUnmarshaller<String, AudioSelectorGroup>(context.getUnmarshaller(String.class),
@@ -138,6 +146,12 @@ public class InputJsonUnmarshaller implements Unmarshaller<Input, JsonUnmarshall
                 if (context.testExpression("videoGenerator", targetDepth)) {
                     context.nextToken();
                     input.setVideoGenerator(InputVideoGeneratorJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("videoOverlays", targetDepth)) {
+                    context.nextToken();
+                    input.setVideoOverlays(new ListUnmarshaller<VideoOverlay>(VideoOverlayJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("videoSelector", targetDepth)) {
                     context.nextToken();

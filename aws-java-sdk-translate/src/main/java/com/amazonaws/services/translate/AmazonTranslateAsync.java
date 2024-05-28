@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,7 @@ import com.amazonaws.services.translate.model.*;
  * </p>
  * <p>
  * <p>
- * Provides language translation for input text in the source language to the specified target language.
+ * Provides translation of the input content from the source language to the target language.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -431,20 +431,15 @@ public interface AmazonTranslateAsync extends AmazonTranslate {
     /**
      * <p>
      * Starts an asynchronous batch translation job. Use batch translation jobs to translate large volumes of text
-     * across multiple documents at once. For batch translation, the input documents must share the same source
-     * language. You can specify one or more target languages. Batch translation translates each input document into
-     * each of the target languages. For more information, see <a
-     * href="https://docs.aws.amazon.com/translate/latest/dg/async.html">Asynchronous batch processing</a>
+     * across multiple documents at once. For batch translation, you can input documents with different source languages
+     * (specify <code>auto</code> as the source language). You can specify one or more target languages. Batch
+     * translation translates each input document into each of the target languages. For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/async.html">Asynchronous batch processing</a>.
      * </p>
      * <p>
      * Batch translation jobs can be described with the <a>DescribeTextTranslationJob</a> operation, listed with the
      * <a>ListTextTranslationJobs</a> operation, and stopped with the <a>StopTextTranslationJob</a> operation.
      * </p>
-     * <note>
-     * <p>
-     * Amazon Translate does not support batch translation of multiple source languages at once.
-     * </p>
-     * </note>
      * 
      * @param startTextTranslationJobRequest
      * @return A Java Future containing the result of the StartTextTranslationJob operation returned by the service.
@@ -457,20 +452,15 @@ public interface AmazonTranslateAsync extends AmazonTranslate {
     /**
      * <p>
      * Starts an asynchronous batch translation job. Use batch translation jobs to translate large volumes of text
-     * across multiple documents at once. For batch translation, the input documents must share the same source
-     * language. You can specify one or more target languages. Batch translation translates each input document into
-     * each of the target languages. For more information, see <a
-     * href="https://docs.aws.amazon.com/translate/latest/dg/async.html">Asynchronous batch processing</a>
+     * across multiple documents at once. For batch translation, you can input documents with different source languages
+     * (specify <code>auto</code> as the source language). You can specify one or more target languages. Batch
+     * translation translates each input document into each of the target languages. For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/async.html">Asynchronous batch processing</a>.
      * </p>
      * <p>
      * Batch translation jobs can be described with the <a>DescribeTextTranslationJob</a> operation, listed with the
      * <a>ListTextTranslationJobs</a> operation, and stopped with the <a>StopTextTranslationJob</a> operation.
      * </p>
-     * <note>
-     * <p>
-     * Amazon Translate does not support batch translation of multiple source languages at once.
-     * </p>
-     * </note>
      * 
      * @param startTextTranslationJobRequest
      * @param asyncHandler
@@ -570,6 +560,55 @@ public interface AmazonTranslateAsync extends AmazonTranslate {
      */
     java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Translates the input document from the source language to the target language. This synchronous operation
+     * supports text, HTML, or Word documents as the input document. <code>TranslateDocument</code> supports
+     * translations from English to any supported language, and from any supported language to English. Therefore,
+     * specify either the source language code or the target language code as “en” (English).
+     * </p>
+     * <p>
+     * If you set the <code>Formality</code> parameter, the request will fail if the target language does not support
+     * formality. For a list of target languages that support formality, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-formality.html">Setting
+     * formality</a>.
+     * </p>
+     * 
+     * @param translateDocumentRequest
+     * @return A Java Future containing the result of the TranslateDocument operation returned by the service.
+     * @sample AmazonTranslateAsync.TranslateDocument
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TranslateDocument" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<TranslateDocumentResult> translateDocumentAsync(TranslateDocumentRequest translateDocumentRequest);
+
+    /**
+     * <p>
+     * Translates the input document from the source language to the target language. This synchronous operation
+     * supports text, HTML, or Word documents as the input document. <code>TranslateDocument</code> supports
+     * translations from English to any supported language, and from any supported language to English. Therefore,
+     * specify either the source language code or the target language code as “en” (English).
+     * </p>
+     * <p>
+     * If you set the <code>Formality</code> parameter, the request will fail if the target language does not support
+     * formality. For a list of target languages that support formality, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-formality.html">Setting
+     * formality</a>.
+     * </p>
+     * 
+     * @param translateDocumentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TranslateDocument operation returned by the service.
+     * @sample AmazonTranslateAsyncHandler.TranslateDocument
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TranslateDocument" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<TranslateDocumentResult> translateDocumentAsync(TranslateDocumentRequest translateDocumentRequest,
+            com.amazonaws.handlers.AsyncHandler<TranslateDocumentRequest, TranslateDocumentResult> asyncHandler);
 
     /**
      * <p>

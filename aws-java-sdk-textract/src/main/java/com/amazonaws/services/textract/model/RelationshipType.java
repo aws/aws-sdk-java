@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,10 @@ public enum RelationshipType {
     COMPLEX_FEATURES("COMPLEX_FEATURES"),
     MERGED_CELL("MERGED_CELL"),
     TITLE("TITLE"),
-    ANSWER("ANSWER");
+    ANSWER("ANSWER"),
+    TABLE("TABLE"),
+    TABLE_TITLE("TABLE_TITLE"),
+    TABLE_FOOTER("TABLE_FOOTER");
 
     private String value;
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,13 +48,30 @@ public class AssistantSummary implements Serializable, Cloneable, StructuredPojo
     private String description;
     /**
      * <p>
+     * The configuration information for the Wisdom assistant integration.
+     * </p>
+     */
+    private AssistantIntegrationConfiguration integrationConfiguration;
+    /**
+     * <p>
      * The name of the assistant.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The KMS key used for encryption.
+     * The configuration information for the customer managed key used for encryption.
+     * </p>
+     * <p>
+     * This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, and
+     * <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity using the key to invoke Wisdom. To
+     * use Wisdom with chat, the key policy must also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>,
+     * and <code>kms:DescribeKey</code> permissions to the <code>connect.amazonaws.com</code> service principal.
+     * </p>
+     * <p>
+     * For more information about setting up a customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect Wisdom for
+     * your instance</a>.
      * </p>
      */
     private ServerSideEncryptionConfiguration serverSideEncryptionConfiguration;
@@ -199,6 +216,46 @@ public class AssistantSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * The configuration information for the Wisdom assistant integration.
+     * </p>
+     * 
+     * @param integrationConfiguration
+     *        The configuration information for the Wisdom assistant integration.
+     */
+
+    public void setIntegrationConfiguration(AssistantIntegrationConfiguration integrationConfiguration) {
+        this.integrationConfiguration = integrationConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration information for the Wisdom assistant integration.
+     * </p>
+     * 
+     * @return The configuration information for the Wisdom assistant integration.
+     */
+
+    public AssistantIntegrationConfiguration getIntegrationConfiguration() {
+        return this.integrationConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration information for the Wisdom assistant integration.
+     * </p>
+     * 
+     * @param integrationConfiguration
+     *        The configuration information for the Wisdom assistant integration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssistantSummary withIntegrationConfiguration(AssistantIntegrationConfiguration integrationConfiguration) {
+        setIntegrationConfiguration(integrationConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
      * The name of the assistant.
      * </p>
      * 
@@ -239,11 +296,33 @@ public class AssistantSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The KMS key used for encryption.
+     * The configuration information for the customer managed key used for encryption.
+     * </p>
+     * <p>
+     * This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, and
+     * <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity using the key to invoke Wisdom. To
+     * use Wisdom with chat, the key policy must also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>,
+     * and <code>kms:DescribeKey</code> permissions to the <code>connect.amazonaws.com</code> service principal.
+     * </p>
+     * <p>
+     * For more information about setting up a customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect Wisdom for
+     * your instance</a>.
      * </p>
      * 
      * @param serverSideEncryptionConfiguration
-     *        The KMS key used for encryption.
+     *        The configuration information for the customer managed key used for encryption. </p>
+     *        <p>
+     *        This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
+     *        and <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity using the key to invoke
+     *        Wisdom. To use Wisdom with chat, the key policy must also allow <code>kms:Decrypt</code>,
+     *        <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the
+     *        <code>connect.amazonaws.com</code> service principal.
+     *        </p>
+     *        <p>
+     *        For more information about setting up a customer managed key for Wisdom, see <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect
+     *        Wisdom for your instance</a>.
      */
 
     public void setServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration serverSideEncryptionConfiguration) {
@@ -252,10 +331,32 @@ public class AssistantSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The KMS key used for encryption.
+     * The configuration information for the customer managed key used for encryption.
+     * </p>
+     * <p>
+     * This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, and
+     * <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity using the key to invoke Wisdom. To
+     * use Wisdom with chat, the key policy must also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>,
+     * and <code>kms:DescribeKey</code> permissions to the <code>connect.amazonaws.com</code> service principal.
+     * </p>
+     * <p>
+     * For more information about setting up a customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect Wisdom for
+     * your instance</a>.
      * </p>
      * 
-     * @return The KMS key used for encryption.
+     * @return The configuration information for the customer managed key used for encryption. </p>
+     *         <p>
+     *         This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
+     *         and <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity using the key to invoke
+     *         Wisdom. To use Wisdom with chat, the key policy must also allow <code>kms:Decrypt</code>,
+     *         <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the
+     *         <code>connect.amazonaws.com</code> service principal.
+     *         </p>
+     *         <p>
+     *         For more information about setting up a customer managed key for Wisdom, see <a
+     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect
+     *         Wisdom for your instance</a>.
      */
 
     public ServerSideEncryptionConfiguration getServerSideEncryptionConfiguration() {
@@ -264,11 +365,33 @@ public class AssistantSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The KMS key used for encryption.
+     * The configuration information for the customer managed key used for encryption.
+     * </p>
+     * <p>
+     * This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>, and
+     * <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity using the key to invoke Wisdom. To
+     * use Wisdom with chat, the key policy must also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>,
+     * and <code>kms:DescribeKey</code> permissions to the <code>connect.amazonaws.com</code> service principal.
+     * </p>
+     * <p>
+     * For more information about setting up a customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect Wisdom for
+     * your instance</a>.
      * </p>
      * 
      * @param serverSideEncryptionConfiguration
-     *        The KMS key used for encryption.
+     *        The configuration information for the customer managed key used for encryption. </p>
+     *        <p>
+     *        This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
+     *        and <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity using the key to invoke
+     *        Wisdom. To use Wisdom with chat, the key policy must also allow <code>kms:Decrypt</code>,
+     *        <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the
+     *        <code>connect.amazonaws.com</code> service principal.
+     *        </p>
+     *        <p>
+     *        For more information about setting up a customer managed key for Wisdom, see <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect
+     *        Wisdom for your instance</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -481,6 +604,8 @@ public class AssistantSummary implements Serializable, Cloneable, StructuredPojo
             sb.append("AssistantId: ").append(getAssistantId()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getIntegrationConfiguration() != null)
+            sb.append("IntegrationConfiguration: ").append(getIntegrationConfiguration()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getServerSideEncryptionConfiguration() != null)
@@ -517,6 +642,10 @@ public class AssistantSummary implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getIntegrationConfiguration() == null ^ this.getIntegrationConfiguration() == null)
+            return false;
+        if (other.getIntegrationConfiguration() != null && other.getIntegrationConfiguration().equals(this.getIntegrationConfiguration()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -549,6 +678,7 @@ public class AssistantSummary implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getAssistantArn() == null) ? 0 : getAssistantArn().hashCode());
         hashCode = prime * hashCode + ((getAssistantId() == null) ? 0 : getAssistantId().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getIntegrationConfiguration() == null) ? 0 : getIntegrationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getServerSideEncryptionConfiguration() == null) ? 0 : getServerSideEncryptionConfiguration().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());

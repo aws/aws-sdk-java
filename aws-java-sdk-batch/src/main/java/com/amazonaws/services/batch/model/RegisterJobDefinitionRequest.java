@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,19 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel
      * job definition</a> in the <i>Batch User Guide</i>.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the value is <code>container</code>, then one of the following is required: <code>containerProperties</code>,
+     * <code>ecsProperties</code>, or <code>eksProperties</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the value is <code>multinode</code>, then <code>nodeProperties</code> is required.
+     * </p>
+     * </li>
+     * </ul>
      * <note>
      * <p>
      * If the job is run on Fargate resources, then <code>multinode</code> isn't supported.
@@ -69,9 +82,9 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
     private Integer schedulingPriority;
     /**
      * <p>
-     * An object with various properties specific to Amazon ECS based single-node container-based jobs. If the job
-     * definition's <code>type</code> parameter is <code>container</code>, then you must specify either
-     * <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS based
+     * An object with properties specific to Amazon ECS-based single-node container-based jobs. If the job definition's
+     * <code>type</code> parameter is <code>container</code>, then you must specify either
+     * <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS-based
      * job definitions.
      * </p>
      * <note>
@@ -84,12 +97,10 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
     private ContainerProperties containerProperties;
     /**
      * <p>
-     * An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job,
-     * it becomes a multi-node parallel job. For more information, see <a
+     * An object with properties specific to multi-node parallel jobs. If you specify node properties for a job, it
+     * becomes a multi-node parallel job. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
-     * Jobs</a> in the <i>Batch User Guide</i>. If the job definition's <code>type</code> parameter is
-     * <code>container</code>, then you must specify either <code>containerProperties</code> or
-     * <code>nodeProperties</code>.
+     * Jobs</a> in the <i>Batch User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -159,11 +170,18 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
     private java.util.List<String> platformCapabilities;
     /**
      * <p>
-     * An object with various properties that are specific to Amazon EKS based jobs. This must not be specified for
-     * Amazon ECS based job definitions.
+     * An object with properties that are specific to Amazon EKS-based jobs. This must not be specified for Amazon ECS
+     * based job definitions.
      * </p>
      */
     private EksProperties eksProperties;
+    /**
+     * <p>
+     * An object with properties that are specific to Amazon ECS-based jobs. This must not be specified for Amazon
+     * EKS-based job definitions.
+     * </p>
+     */
+    private EcsProperties ecsProperties;
 
     /**
      * <p>
@@ -217,6 +235,19 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel
      * job definition</a> in the <i>Batch User Guide</i>.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the value is <code>container</code>, then one of the following is required: <code>containerProperties</code>,
+     * <code>ecsProperties</code>, or <code>eksProperties</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the value is <code>multinode</code>, then <code>nodeProperties</code> is required.
+     * </p>
+     * </li>
+     * </ul>
      * <note>
      * <p>
      * If the job is run on Fargate resources, then <code>multinode</code> isn't supported.
@@ -226,7 +257,21 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * @param type
      *        The type of job definition. For more information about multi-node parallel jobs, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node
-     *        parallel job definition</a> in the <i>Batch User Guide</i>.</p> <note>
+     *        parallel job definition</a> in the <i>Batch User Guide</i>.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the value is <code>container</code>, then one of the following is required:
+     *        <code>containerProperties</code>, <code>ecsProperties</code>, or <code>eksProperties</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the value is <code>multinode</code>, then <code>nodeProperties</code> is required.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
      *        <p>
      *        If the job is run on Fargate resources, then <code>multinode</code> isn't supported.
      *        </p>
@@ -243,6 +288,19 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel
      * job definition</a> in the <i>Batch User Guide</i>.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the value is <code>container</code>, then one of the following is required: <code>containerProperties</code>,
+     * <code>ecsProperties</code>, or <code>eksProperties</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the value is <code>multinode</code>, then <code>nodeProperties</code> is required.
+     * </p>
+     * </li>
+     * </ul>
      * <note>
      * <p>
      * If the job is run on Fargate resources, then <code>multinode</code> isn't supported.
@@ -251,7 +309,21 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * 
      * @return The type of job definition. For more information about multi-node parallel jobs, see <a
      *         href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node
-     *         parallel job definition</a> in the <i>Batch User Guide</i>.</p> <note>
+     *         parallel job definition</a> in the <i>Batch User Guide</i>.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If the value is <code>container</code>, then one of the following is required:
+     *         <code>containerProperties</code>, <code>ecsProperties</code>, or <code>eksProperties</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the value is <code>multinode</code>, then <code>nodeProperties</code> is required.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <note>
      *         <p>
      *         If the job is run on Fargate resources, then <code>multinode</code> isn't supported.
      *         </p>
@@ -268,6 +340,19 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel
      * job definition</a> in the <i>Batch User Guide</i>.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the value is <code>container</code>, then one of the following is required: <code>containerProperties</code>,
+     * <code>ecsProperties</code>, or <code>eksProperties</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the value is <code>multinode</code>, then <code>nodeProperties</code> is required.
+     * </p>
+     * </li>
+     * </ul>
      * <note>
      * <p>
      * If the job is run on Fargate resources, then <code>multinode</code> isn't supported.
@@ -277,7 +362,21 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * @param type
      *        The type of job definition. For more information about multi-node parallel jobs, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node
-     *        parallel job definition</a> in the <i>Batch User Guide</i>.</p> <note>
+     *        parallel job definition</a> in the <i>Batch User Guide</i>.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the value is <code>container</code>, then one of the following is required:
+     *        <code>containerProperties</code>, <code>ecsProperties</code>, or <code>eksProperties</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the value is <code>multinode</code>, then <code>nodeProperties</code> is required.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
      *        <p>
      *        If the job is run on Fargate resources, then <code>multinode</code> isn't supported.
      *        </p>
@@ -296,6 +395,19 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel
      * job definition</a> in the <i>Batch User Guide</i>.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the value is <code>container</code>, then one of the following is required: <code>containerProperties</code>,
+     * <code>ecsProperties</code>, or <code>eksProperties</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the value is <code>multinode</code>, then <code>nodeProperties</code> is required.
+     * </p>
+     * </li>
+     * </ul>
      * <note>
      * <p>
      * If the job is run on Fargate resources, then <code>multinode</code> isn't supported.
@@ -305,7 +417,21 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * @param type
      *        The type of job definition. For more information about multi-node parallel jobs, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node
-     *        parallel job definition</a> in the <i>Batch User Guide</i>.</p> <note>
+     *        parallel job definition</a> in the <i>Batch User Guide</i>.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the value is <code>container</code>, then one of the following is required:
+     *        <code>containerProperties</code>, <code>ecsProperties</code>, or <code>eksProperties</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the value is <code>multinode</code>, then <code>nodeProperties</code> is required.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
      *        <p>
      *        If the job is run on Fargate resources, then <code>multinode</code> isn't supported.
      *        </p>
@@ -322,6 +448,19 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node parallel
      * job definition</a> in the <i>Batch User Guide</i>.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the value is <code>container</code>, then one of the following is required: <code>containerProperties</code>,
+     * <code>ecsProperties</code>, or <code>eksProperties</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the value is <code>multinode</code>, then <code>nodeProperties</code> is required.
+     * </p>
+     * </li>
+     * </ul>
      * <note>
      * <p>
      * If the job is run on Fargate resources, then <code>multinode</code> isn't supported.
@@ -331,7 +470,21 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * @param type
      *        The type of job definition. For more information about multi-node parallel jobs, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating a multi-node
-     *        parallel job definition</a> in the <i>Batch User Guide</i>.</p> <note>
+     *        parallel job definition</a> in the <i>Batch User Guide</i>.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the value is <code>container</code>, then one of the following is required:
+     *        <code>containerProperties</code>, <code>ecsProperties</code>, or <code>eksProperties</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the value is <code>multinode</code>, then <code>nodeProperties</code> is required.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
      *        <p>
      *        If the job is run on Fargate resources, then <code>multinode</code> isn't supported.
      *        </p>
@@ -493,9 +646,9 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An object with various properties specific to Amazon ECS based single-node container-based jobs. If the job
-     * definition's <code>type</code> parameter is <code>container</code>, then you must specify either
-     * <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS based
+     * An object with properties specific to Amazon ECS-based single-node container-based jobs. If the job definition's
+     * <code>type</code> parameter is <code>container</code>, then you must specify either
+     * <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS-based
      * job definitions.
      * </p>
      * <note>
@@ -506,10 +659,10 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * </note>
      * 
      * @param containerProperties
-     *        An object with various properties specific to Amazon ECS based single-node container-based jobs. If the
-     *        job definition's <code>type</code> parameter is <code>container</code>, then you must specify either
-     *        <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS
-     *        based job definitions.</p> <note>
+     *        An object with properties specific to Amazon ECS-based single-node container-based jobs. If the job
+     *        definition's <code>type</code> parameter is <code>container</code>, then you must specify either
+     *        <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon
+     *        EKS-based job definitions.</p> <note>
      *        <p>
      *        If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use only
      *        <code>containerProperties</code>.
@@ -522,9 +675,9 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An object with various properties specific to Amazon ECS based single-node container-based jobs. If the job
-     * definition's <code>type</code> parameter is <code>container</code>, then you must specify either
-     * <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS based
+     * An object with properties specific to Amazon ECS-based single-node container-based jobs. If the job definition's
+     * <code>type</code> parameter is <code>container</code>, then you must specify either
+     * <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS-based
      * job definitions.
      * </p>
      * <note>
@@ -534,10 +687,10 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * </p>
      * </note>
      * 
-     * @return An object with various properties specific to Amazon ECS based single-node container-based jobs. If the
-     *         job definition's <code>type</code> parameter is <code>container</code>, then you must specify either
+     * @return An object with properties specific to Amazon ECS-based single-node container-based jobs. If the job
+     *         definition's <code>type</code> parameter is <code>container</code>, then you must specify either
      *         <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon
-     *         EKS based job definitions.</p> <note>
+     *         EKS-based job definitions.</p> <note>
      *         <p>
      *         If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use only
      *         <code>containerProperties</code>.
@@ -550,9 +703,9 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An object with various properties specific to Amazon ECS based single-node container-based jobs. If the job
-     * definition's <code>type</code> parameter is <code>container</code>, then you must specify either
-     * <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS based
+     * An object with properties specific to Amazon ECS-based single-node container-based jobs. If the job definition's
+     * <code>type</code> parameter is <code>container</code>, then you must specify either
+     * <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS-based
      * job definitions.
      * </p>
      * <note>
@@ -563,10 +716,10 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * </note>
      * 
      * @param containerProperties
-     *        An object with various properties specific to Amazon ECS based single-node container-based jobs. If the
-     *        job definition's <code>type</code> parameter is <code>container</code>, then you must specify either
-     *        <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon EKS
-     *        based job definitions.</p> <note>
+     *        An object with properties specific to Amazon ECS-based single-node container-based jobs. If the job
+     *        definition's <code>type</code> parameter is <code>container</code>, then you must specify either
+     *        <code>containerProperties</code> or <code>nodeProperties</code>. This must not be specified for Amazon
+     *        EKS-based job definitions.</p> <note>
      *        <p>
      *        If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use only
      *        <code>containerProperties</code>.
@@ -581,12 +734,10 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job,
-     * it becomes a multi-node parallel job. For more information, see <a
+     * An object with properties specific to multi-node parallel jobs. If you specify node properties for a job, it
+     * becomes a multi-node parallel job. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
-     * Jobs</a> in the <i>Batch User Guide</i>. If the job definition's <code>type</code> parameter is
-     * <code>container</code>, then you must specify either <code>containerProperties</code> or
-     * <code>nodeProperties</code>.
+     * Jobs</a> in the <i>Batch User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -600,12 +751,10 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * </note>
      * 
      * @param nodeProperties
-     *        An object with various properties specific to multi-node parallel jobs. If you specify node properties for
-     *        a job, it becomes a multi-node parallel job. For more information, see <a
+     *        An object with properties specific to multi-node parallel jobs. If you specify node properties for a job,
+     *        it becomes a multi-node parallel job. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
-     *        Parallel Jobs</a> in the <i>Batch User Guide</i>. If the job definition's <code>type</code> parameter is
-     *        <code>container</code>, then you must specify either <code>containerProperties</code> or
-     *        <code>nodeProperties</code>.</p> <note>
+     *        Parallel Jobs</a> in the <i>Batch User Guide</i>.</p> <note>
      *        <p>
      *        If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
      *        <code>containerProperties</code> instead.
@@ -622,12 +771,10 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job,
-     * it becomes a multi-node parallel job. For more information, see <a
+     * An object with properties specific to multi-node parallel jobs. If you specify node properties for a job, it
+     * becomes a multi-node parallel job. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
-     * Jobs</a> in the <i>Batch User Guide</i>. If the job definition's <code>type</code> parameter is
-     * <code>container</code>, then you must specify either <code>containerProperties</code> or
-     * <code>nodeProperties</code>.
+     * Jobs</a> in the <i>Batch User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -640,12 +787,10 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * </p>
      * </note>
      * 
-     * @return An object with various properties specific to multi-node parallel jobs. If you specify node properties
-     *         for a job, it becomes a multi-node parallel job. For more information, see <a
+     * @return An object with properties specific to multi-node parallel jobs. If you specify node properties for a job,
+     *         it becomes a multi-node parallel job. For more information, see <a
      *         href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
-     *         Parallel Jobs</a> in the <i>Batch User Guide</i>. If the job definition's <code>type</code> parameter is
-     *         <code>container</code>, then you must specify either <code>containerProperties</code> or
-     *         <code>nodeProperties</code>.</p> <note>
+     *         Parallel Jobs</a> in the <i>Batch User Guide</i>.</p> <note>
      *         <p>
      *         If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
      *         <code>containerProperties</code> instead.
@@ -662,12 +807,10 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An object with various properties specific to multi-node parallel jobs. If you specify node properties for a job,
-     * it becomes a multi-node parallel job. For more information, see <a
+     * An object with properties specific to multi-node parallel jobs. If you specify node properties for a job, it
+     * becomes a multi-node parallel job. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node Parallel
-     * Jobs</a> in the <i>Batch User Guide</i>. If the job definition's <code>type</code> parameter is
-     * <code>container</code>, then you must specify either <code>containerProperties</code> or
-     * <code>nodeProperties</code>.
+     * Jobs</a> in the <i>Batch User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -681,12 +824,10 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
      * </note>
      * 
      * @param nodeProperties
-     *        An object with various properties specific to multi-node parallel jobs. If you specify node properties for
-     *        a job, it becomes a multi-node parallel job. For more information, see <a
+     *        An object with properties specific to multi-node parallel jobs. If you specify node properties for a job,
+     *        it becomes a multi-node parallel job. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
-     *        Parallel Jobs</a> in the <i>Batch User Guide</i>. If the job definition's <code>type</code> parameter is
-     *        <code>container</code>, then you must specify either <code>containerProperties</code> or
-     *        <code>nodeProperties</code>.</p> <note>
+     *        Parallel Jobs</a> in the <i>Batch User Guide</i>.</p> <note>
      *        <p>
      *        If the job runs on Fargate resources, then you must not specify <code>nodeProperties</code>; use
      *        <code>containerProperties</code> instead.
@@ -1173,13 +1314,13 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An object with various properties that are specific to Amazon EKS based jobs. This must not be specified for
-     * Amazon ECS based job definitions.
+     * An object with properties that are specific to Amazon EKS-based jobs. This must not be specified for Amazon ECS
+     * based job definitions.
      * </p>
      * 
      * @param eksProperties
-     *        An object with various properties that are specific to Amazon EKS based jobs. This must not be specified
-     *        for Amazon ECS based job definitions.
+     *        An object with properties that are specific to Amazon EKS-based jobs. This must not be specified for
+     *        Amazon ECS based job definitions.
      */
 
     public void setEksProperties(EksProperties eksProperties) {
@@ -1188,12 +1329,12 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An object with various properties that are specific to Amazon EKS based jobs. This must not be specified for
-     * Amazon ECS based job definitions.
+     * An object with properties that are specific to Amazon EKS-based jobs. This must not be specified for Amazon ECS
+     * based job definitions.
      * </p>
      * 
-     * @return An object with various properties that are specific to Amazon EKS based jobs. This must not be specified
-     *         for Amazon ECS based job definitions.
+     * @return An object with properties that are specific to Amazon EKS-based jobs. This must not be specified for
+     *         Amazon ECS based job definitions.
      */
 
     public EksProperties getEksProperties() {
@@ -1202,18 +1343,64 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An object with various properties that are specific to Amazon EKS based jobs. This must not be specified for
-     * Amazon ECS based job definitions.
+     * An object with properties that are specific to Amazon EKS-based jobs. This must not be specified for Amazon ECS
+     * based job definitions.
      * </p>
      * 
      * @param eksProperties
-     *        An object with various properties that are specific to Amazon EKS based jobs. This must not be specified
-     *        for Amazon ECS based job definitions.
+     *        An object with properties that are specific to Amazon EKS-based jobs. This must not be specified for
+     *        Amazon ECS based job definitions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RegisterJobDefinitionRequest withEksProperties(EksProperties eksProperties) {
         setEksProperties(eksProperties);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object with properties that are specific to Amazon ECS-based jobs. This must not be specified for Amazon
+     * EKS-based job definitions.
+     * </p>
+     * 
+     * @param ecsProperties
+     *        An object with properties that are specific to Amazon ECS-based jobs. This must not be specified for
+     *        Amazon EKS-based job definitions.
+     */
+
+    public void setEcsProperties(EcsProperties ecsProperties) {
+        this.ecsProperties = ecsProperties;
+    }
+
+    /**
+     * <p>
+     * An object with properties that are specific to Amazon ECS-based jobs. This must not be specified for Amazon
+     * EKS-based job definitions.
+     * </p>
+     * 
+     * @return An object with properties that are specific to Amazon ECS-based jobs. This must not be specified for
+     *         Amazon EKS-based job definitions.
+     */
+
+    public EcsProperties getEcsProperties() {
+        return this.ecsProperties;
+    }
+
+    /**
+     * <p>
+     * An object with properties that are specific to Amazon ECS-based jobs. This must not be specified for Amazon
+     * EKS-based job definitions.
+     * </p>
+     * 
+     * @param ecsProperties
+     *        An object with properties that are specific to Amazon ECS-based jobs. This must not be specified for
+     *        Amazon EKS-based job definitions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterJobDefinitionRequest withEcsProperties(EcsProperties ecsProperties) {
+        setEcsProperties(ecsProperties);
         return this;
     }
 
@@ -1252,7 +1439,9 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
         if (getPlatformCapabilities() != null)
             sb.append("PlatformCapabilities: ").append(getPlatformCapabilities()).append(",");
         if (getEksProperties() != null)
-            sb.append("EksProperties: ").append(getEksProperties());
+            sb.append("EksProperties: ").append(getEksProperties()).append(",");
+        if (getEcsProperties() != null)
+            sb.append("EcsProperties: ").append(getEcsProperties());
         sb.append("}");
         return sb.toString();
     }
@@ -1315,6 +1504,10 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getEksProperties() != null && other.getEksProperties().equals(this.getEksProperties()) == false)
             return false;
+        if (other.getEcsProperties() == null ^ this.getEcsProperties() == null)
+            return false;
+        if (other.getEcsProperties() != null && other.getEcsProperties().equals(this.getEcsProperties()) == false)
+            return false;
         return true;
     }
 
@@ -1335,6 +1528,7 @@ public class RegisterJobDefinitionRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getPlatformCapabilities() == null) ? 0 : getPlatformCapabilities().hashCode());
         hashCode = prime * hashCode + ((getEksProperties() == null) ? 0 : getEksProperties().hashCode());
+        hashCode = prime * hashCode + ((getEcsProperties() == null) ? 0 : getEcsProperties().hashCode());
         return hashCode;
     }
 

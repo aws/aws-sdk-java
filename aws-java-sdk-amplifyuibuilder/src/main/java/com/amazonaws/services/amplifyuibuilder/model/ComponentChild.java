@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,23 +30,10 @@ public class ComponentChild implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of <code>ComponentChild</code> instances for this component.
-     * </p>
-     */
-    private java.util.List<ComponentChild> children;
-    /**
-     * <p>
      * The type of the child component.
      * </p>
      */
     private String componentType;
-    /**
-     * <p>
-     * Describes the events that can be raised on the child component. Use for the workflow feature in Amplify Studio
-     * that allows you to bind events and actions to components.
-     * </p>
-     */
-    private java.util.Map<String, ComponentEvent> events;
     /**
      * <p>
      * The name of the child component.
@@ -62,80 +49,23 @@ public class ComponentChild implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, ComponentProperty> properties;
     /**
      * <p>
+     * The list of <code>ComponentChild</code> instances for this component.
+     * </p>
+     */
+    private java.util.List<ComponentChild> children;
+    /**
+     * <p>
+     * Describes the events that can be raised on the child component. Use for the workflow feature in Amplify Studio
+     * that allows you to bind events and actions to components.
+     * </p>
+     */
+    private java.util.Map<String, ComponentEvent> events;
+    /**
+     * <p>
      * The unique ID of the child component in its original source system, such as Figma.
      * </p>
      */
     private String sourceId;
-
-    /**
-     * <p>
-     * The list of <code>ComponentChild</code> instances for this component.
-     * </p>
-     * 
-     * @return The list of <code>ComponentChild</code> instances for this component.
-     */
-
-    public java.util.List<ComponentChild> getChildren() {
-        return children;
-    }
-
-    /**
-     * <p>
-     * The list of <code>ComponentChild</code> instances for this component.
-     * </p>
-     * 
-     * @param children
-     *        The list of <code>ComponentChild</code> instances for this component.
-     */
-
-    public void setChildren(java.util.Collection<ComponentChild> children) {
-        if (children == null) {
-            this.children = null;
-            return;
-        }
-
-        this.children = new java.util.ArrayList<ComponentChild>(children);
-    }
-
-    /**
-     * <p>
-     * The list of <code>ComponentChild</code> instances for this component.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setChildren(java.util.Collection)} or {@link #withChildren(java.util.Collection)} if you want to override
-     * the existing values.
-     * </p>
-     * 
-     * @param children
-     *        The list of <code>ComponentChild</code> instances for this component.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ComponentChild withChildren(ComponentChild... children) {
-        if (this.children == null) {
-            setChildren(new java.util.ArrayList<ComponentChild>(children.length));
-        }
-        for (ComponentChild ele : children) {
-            this.children.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * The list of <code>ComponentChild</code> instances for this component.
-     * </p>
-     * 
-     * @param children
-     *        The list of <code>ComponentChild</code> instances for this component.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ComponentChild withChildren(java.util.Collection<ComponentChild> children) {
-        setChildren(children);
-        return this;
-    }
 
     /**
      * <p>
@@ -174,80 +104,6 @@ public class ComponentChild implements Serializable, Cloneable, StructuredPojo {
 
     public ComponentChild withComponentType(String componentType) {
         setComponentType(componentType);
-        return this;
-    }
-
-    /**
-     * <p>
-     * Describes the events that can be raised on the child component. Use for the workflow feature in Amplify Studio
-     * that allows you to bind events and actions to components.
-     * </p>
-     * 
-     * @return Describes the events that can be raised on the child component. Use for the workflow feature in Amplify
-     *         Studio that allows you to bind events and actions to components.
-     */
-
-    public java.util.Map<String, ComponentEvent> getEvents() {
-        return events;
-    }
-
-    /**
-     * <p>
-     * Describes the events that can be raised on the child component. Use for the workflow feature in Amplify Studio
-     * that allows you to bind events and actions to components.
-     * </p>
-     * 
-     * @param events
-     *        Describes the events that can be raised on the child component. Use for the workflow feature in Amplify
-     *        Studio that allows you to bind events and actions to components.
-     */
-
-    public void setEvents(java.util.Map<String, ComponentEvent> events) {
-        this.events = events;
-    }
-
-    /**
-     * <p>
-     * Describes the events that can be raised on the child component. Use for the workflow feature in Amplify Studio
-     * that allows you to bind events and actions to components.
-     * </p>
-     * 
-     * @param events
-     *        Describes the events that can be raised on the child component. Use for the workflow feature in Amplify
-     *        Studio that allows you to bind events and actions to components.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ComponentChild withEvents(java.util.Map<String, ComponentEvent> events) {
-        setEvents(events);
-        return this;
-    }
-
-    /**
-     * Add a single Events entry
-     *
-     * @see ComponentChild#withEvents
-     * @returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ComponentChild addEventsEntry(String key, ComponentEvent value) {
-        if (null == this.events) {
-            this.events = new java.util.HashMap<String, ComponentEvent>();
-        }
-        if (this.events.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.events.put(key, value);
-        return this;
-    }
-
-    /**
-     * Removes all the entries added into Events.
-     *
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ComponentChild clearEventsEntries() {
-        this.events = null;
         return this;
     }
 
@@ -367,6 +223,150 @@ public class ComponentChild implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The list of <code>ComponentChild</code> instances for this component.
+     * </p>
+     * 
+     * @return The list of <code>ComponentChild</code> instances for this component.
+     */
+
+    public java.util.List<ComponentChild> getChildren() {
+        return children;
+    }
+
+    /**
+     * <p>
+     * The list of <code>ComponentChild</code> instances for this component.
+     * </p>
+     * 
+     * @param children
+     *        The list of <code>ComponentChild</code> instances for this component.
+     */
+
+    public void setChildren(java.util.Collection<ComponentChild> children) {
+        if (children == null) {
+            this.children = null;
+            return;
+        }
+
+        this.children = new java.util.ArrayList<ComponentChild>(children);
+    }
+
+    /**
+     * <p>
+     * The list of <code>ComponentChild</code> instances for this component.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setChildren(java.util.Collection)} or {@link #withChildren(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param children
+     *        The list of <code>ComponentChild</code> instances for this component.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentChild withChildren(ComponentChild... children) {
+        if (this.children == null) {
+            setChildren(new java.util.ArrayList<ComponentChild>(children.length));
+        }
+        for (ComponentChild ele : children) {
+            this.children.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of <code>ComponentChild</code> instances for this component.
+     * </p>
+     * 
+     * @param children
+     *        The list of <code>ComponentChild</code> instances for this component.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentChild withChildren(java.util.Collection<ComponentChild> children) {
+        setChildren(children);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the events that can be raised on the child component. Use for the workflow feature in Amplify Studio
+     * that allows you to bind events and actions to components.
+     * </p>
+     * 
+     * @return Describes the events that can be raised on the child component. Use for the workflow feature in Amplify
+     *         Studio that allows you to bind events and actions to components.
+     */
+
+    public java.util.Map<String, ComponentEvent> getEvents() {
+        return events;
+    }
+
+    /**
+     * <p>
+     * Describes the events that can be raised on the child component. Use for the workflow feature in Amplify Studio
+     * that allows you to bind events and actions to components.
+     * </p>
+     * 
+     * @param events
+     *        Describes the events that can be raised on the child component. Use for the workflow feature in Amplify
+     *        Studio that allows you to bind events and actions to components.
+     */
+
+    public void setEvents(java.util.Map<String, ComponentEvent> events) {
+        this.events = events;
+    }
+
+    /**
+     * <p>
+     * Describes the events that can be raised on the child component. Use for the workflow feature in Amplify Studio
+     * that allows you to bind events and actions to components.
+     * </p>
+     * 
+     * @param events
+     *        Describes the events that can be raised on the child component. Use for the workflow feature in Amplify
+     *        Studio that allows you to bind events and actions to components.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentChild withEvents(java.util.Map<String, ComponentEvent> events) {
+        setEvents(events);
+        return this;
+    }
+
+    /**
+     * Add a single Events entry
+     *
+     * @see ComponentChild#withEvents
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentChild addEventsEntry(String key, ComponentEvent value) {
+        if (null == this.events) {
+            this.events = new java.util.HashMap<String, ComponentEvent>();
+        }
+        if (this.events.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.events.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Events.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentChild clearEventsEntries() {
+        this.events = null;
+        return this;
+    }
+
+    /**
+     * <p>
      * The unique ID of the child component in its original source system, such as Figma.
      * </p>
      * 
@@ -417,16 +417,16 @@ public class ComponentChild implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getChildren() != null)
-            sb.append("Children: ").append(getChildren()).append(",");
         if (getComponentType() != null)
             sb.append("ComponentType: ").append(getComponentType()).append(",");
-        if (getEvents() != null)
-            sb.append("Events: ").append(getEvents()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getProperties() != null)
             sb.append("Properties: ").append(getProperties()).append(",");
+        if (getChildren() != null)
+            sb.append("Children: ").append(getChildren()).append(",");
+        if (getEvents() != null)
+            sb.append("Events: ").append(getEvents()).append(",");
         if (getSourceId() != null)
             sb.append("SourceId: ").append(getSourceId());
         sb.append("}");
@@ -443,17 +443,9 @@ public class ComponentChild implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof ComponentChild == false)
             return false;
         ComponentChild other = (ComponentChild) obj;
-        if (other.getChildren() == null ^ this.getChildren() == null)
-            return false;
-        if (other.getChildren() != null && other.getChildren().equals(this.getChildren()) == false)
-            return false;
         if (other.getComponentType() == null ^ this.getComponentType() == null)
             return false;
         if (other.getComponentType() != null && other.getComponentType().equals(this.getComponentType()) == false)
-            return false;
-        if (other.getEvents() == null ^ this.getEvents() == null)
-            return false;
-        if (other.getEvents() != null && other.getEvents().equals(this.getEvents()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
@@ -462,6 +454,14 @@ public class ComponentChild implements Serializable, Cloneable, StructuredPojo {
         if (other.getProperties() == null ^ this.getProperties() == null)
             return false;
         if (other.getProperties() != null && other.getProperties().equals(this.getProperties()) == false)
+            return false;
+        if (other.getChildren() == null ^ this.getChildren() == null)
+            return false;
+        if (other.getChildren() != null && other.getChildren().equals(this.getChildren()) == false)
+            return false;
+        if (other.getEvents() == null ^ this.getEvents() == null)
+            return false;
+        if (other.getEvents() != null && other.getEvents().equals(this.getEvents()) == false)
             return false;
         if (other.getSourceId() == null ^ this.getSourceId() == null)
             return false;
@@ -475,11 +475,11 @@ public class ComponentChild implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getChildren() == null) ? 0 : getChildren().hashCode());
         hashCode = prime * hashCode + ((getComponentType() == null) ? 0 : getComponentType().hashCode());
-        hashCode = prime * hashCode + ((getEvents() == null) ? 0 : getEvents().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getProperties() == null) ? 0 : getProperties().hashCode());
+        hashCode = prime * hashCode + ((getChildren() == null) ? 0 : getChildren().hashCode());
+        hashCode = prime * hashCode + ((getEvents() == null) ? 0 : getEvents().hashCode());
         hashCode = prime * hashCode + ((getSourceId() == null) ? 0 : getSourceId().hashCode());
         return hashCode;
     }

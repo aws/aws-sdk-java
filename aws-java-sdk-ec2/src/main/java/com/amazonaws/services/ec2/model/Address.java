@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,20 +39,19 @@ public class Address implements Serializable, Cloneable {
     private String publicIp;
     /**
      * <p>
-     * The ID representing the allocation of the address for use with EC2-VPC.
+     * The ID representing the allocation of the address.
      * </p>
      */
     private String allocationId;
     /**
      * <p>
-     * The ID representing the association of the address with an instance in a VPC.
+     * The ID representing the association of the address with an instance.
      * </p>
      */
     private String associationId;
     /**
      * <p>
-     * Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>) or
-     * instances in a VPC (<code>vpc</code>).
+     * The network (<code>vpc</code>).
      * </p>
      */
     private String domain;
@@ -195,11 +194,11 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID representing the allocation of the address for use with EC2-VPC.
+     * The ID representing the allocation of the address.
      * </p>
      * 
      * @param allocationId
-     *        The ID representing the allocation of the address for use with EC2-VPC.
+     *        The ID representing the allocation of the address.
      */
 
     public void setAllocationId(String allocationId) {
@@ -208,10 +207,10 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID representing the allocation of the address for use with EC2-VPC.
+     * The ID representing the allocation of the address.
      * </p>
      * 
-     * @return The ID representing the allocation of the address for use with EC2-VPC.
+     * @return The ID representing the allocation of the address.
      */
 
     public String getAllocationId() {
@@ -220,11 +219,11 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID representing the allocation of the address for use with EC2-VPC.
+     * The ID representing the allocation of the address.
      * </p>
      * 
      * @param allocationId
-     *        The ID representing the allocation of the address for use with EC2-VPC.
+     *        The ID representing the allocation of the address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -235,11 +234,11 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID representing the association of the address with an instance in a VPC.
+     * The ID representing the association of the address with an instance.
      * </p>
      * 
      * @param associationId
-     *        The ID representing the association of the address with an instance in a VPC.
+     *        The ID representing the association of the address with an instance.
      */
 
     public void setAssociationId(String associationId) {
@@ -248,10 +247,10 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID representing the association of the address with an instance in a VPC.
+     * The ID representing the association of the address with an instance.
      * </p>
      * 
-     * @return The ID representing the association of the address with an instance in a VPC.
+     * @return The ID representing the association of the address with an instance.
      */
 
     public String getAssociationId() {
@@ -260,11 +259,11 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID representing the association of the address with an instance in a VPC.
+     * The ID representing the association of the address with an instance.
      * </p>
      * 
      * @param associationId
-     *        The ID representing the association of the address with an instance in a VPC.
+     *        The ID representing the association of the address with an instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -275,13 +274,11 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>) or
-     * instances in a VPC (<code>vpc</code>).
+     * The network (<code>vpc</code>).
      * </p>
      * 
      * @param domain
-     *        Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>)
-     *        or instances in a VPC (<code>vpc</code>).
+     *        The network (<code>vpc</code>).
      * @see DomainType
      */
 
@@ -291,12 +288,10 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>) or
-     * instances in a VPC (<code>vpc</code>).
+     * The network (<code>vpc</code>).
      * </p>
      * 
-     * @return Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>
-     *         ) or instances in a VPC (<code>vpc</code>).
+     * @return The network (<code>vpc</code>).
      * @see DomainType
      */
 
@@ -306,13 +301,11 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>) or
-     * instances in a VPC (<code>vpc</code>).
+     * The network (<code>vpc</code>).
      * </p>
      * 
      * @param domain
-     *        Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>)
-     *        or instances in a VPC (<code>vpc</code>).
+     *        The network (<code>vpc</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DomainType
      */
@@ -324,13 +317,11 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>) or
-     * instances in a VPC (<code>vpc</code>).
+     * The network (<code>vpc</code>).
      * </p>
      * 
      * @param domain
-     *        Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>)
-     *        or instances in a VPC (<code>vpc</code>).
+     *        The network (<code>vpc</code>).
      * @see DomainType
      */
 
@@ -340,13 +331,11 @@ public class Address implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>) or
-     * instances in a VPC (<code>vpc</code>).
+     * The network (<code>vpc</code>).
      * </p>
      * 
      * @param domain
-     *        Indicates whether this Elastic IP address is for use with instances in EC2-Classic (<code>standard</code>)
-     *        or instances in a VPC (<code>vpc</code>).
+     *        The network (<code>vpc</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DomainType
      */

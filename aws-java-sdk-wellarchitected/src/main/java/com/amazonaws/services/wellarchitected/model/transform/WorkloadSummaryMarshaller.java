@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,10 @@ public class WorkloadSummaryMarshaller {
             .marshallLocationName("RiskCounts").build();
     private static final MarshallingInfo<String> IMPROVEMENTSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImprovementStatus").build();
+    private static final MarshallingInfo<List> PROFILES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Profiles").build();
+    private static final MarshallingInfo<Map> PRIORITIZEDRISKCOUNTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrioritizedRiskCounts").build();
 
     private static final WorkloadSummaryMarshaller instance = new WorkloadSummaryMarshaller();
 
@@ -70,6 +74,8 @@ public class WorkloadSummaryMarshaller {
             protocolMarshaller.marshall(workloadSummary.getLenses(), LENSES_BINDING);
             protocolMarshaller.marshall(workloadSummary.getRiskCounts(), RISKCOUNTS_BINDING);
             protocolMarshaller.marshall(workloadSummary.getImprovementStatus(), IMPROVEMENTSTATUS_BINDING);
+            protocolMarshaller.marshall(workloadSummary.getProfiles(), PROFILES_BINDING);
+            protocolMarshaller.marshall(workloadSummary.getPrioritizedRiskCounts(), PRIORITIZEDRISKCOUNTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

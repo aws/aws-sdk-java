@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,10 +27,10 @@ import com.amazonaws.services.emrserverless.model.*;
  * </p>
  * <p>
  * <p>
- * Amazon EMR Serverless is a new deployment option for Amazon EMR. EMR Serverless provides a serverless runtime
+ * Amazon EMR Serverless is a new deployment option for Amazon EMR. Amazon EMR Serverless provides a serverless runtime
  * environment that simplifies running analytics applications using the latest open source frameworks such as Apache
- * Spark and Apache Hive. With EMR Serverless, you don’t have to configure, optimize, secure, or operate clusters to run
- * applications with these frameworks.
+ * Spark and Apache Hive. With Amazon EMR Serverless, you don’t have to configure, optimize, secure, or operate clusters
+ * to run applications with these frameworks.
  * </p>
  * <p>
  * The API reference to Amazon EMR Serverless is <code>emr-serverless</code>. The <code>emr-serverless</code> prefix is
@@ -78,7 +78,7 @@ public interface AWSEMRServerless {
      * @param cancelJobRunRequest
      * @return Result of the CancelJobRun operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServerException
@@ -97,7 +97,9 @@ public interface AWSEMRServerless {
      * @param createApplicationRequest
      * @return Result of the CreateApplication operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
      * @throws InternalServerException
      *         Request processing failed because of an error or failure with the service.
      * @throws ConflictException
@@ -116,7 +118,7 @@ public interface AWSEMRServerless {
      * @param deleteApplicationRequest
      * @return Result of the DeleteApplication operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServerException
@@ -135,7 +137,7 @@ public interface AWSEMRServerless {
      * @param getApplicationRequest
      * @return Result of the GetApplication operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServerException
@@ -148,13 +150,24 @@ public interface AWSEMRServerless {
 
     /**
      * <p>
-     * Returns a URL to access the job run dashboard.
+     * Creates and returns a URL that you can use to access the application UIs for a job run.
      * </p>
+     * <p>
+     * For jobs in a running state, the application UI is a live user interface such as the Spark or Tez web UI. For
+     * completed jobs, the application UI is a persistent application user interface such as the Spark History Server or
+     * persistent Tez UI.
+     * </p>
+     * <note>
+     * <p>
+     * The URL is valid for one hour after you generate it. To access the application UI after that hour elapses, you
+     * must invoke the API again to generate a new URL.
+     * </p>
+     * </note>
      * 
      * @param getDashboardForJobRunRequest
      * @return Result of the GetDashboardForJobRun operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServerException
@@ -173,7 +186,7 @@ public interface AWSEMRServerless {
      * @param getJobRunRequest
      * @return Result of the GetJobRun operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServerException
@@ -192,7 +205,7 @@ public interface AWSEMRServerless {
      * @param listApplicationsRequest
      * @return Result of the ListApplications operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @throws InternalServerException
      *         Request processing failed because of an error or failure with the service.
      * @sample AWSEMRServerless.ListApplications
@@ -209,7 +222,7 @@ public interface AWSEMRServerless {
      * @param listJobRunsRequest
      * @return Result of the ListJobRuns operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @throws InternalServerException
      *         Request processing failed because of an error or failure with the service.
      * @sample AWSEMRServerless.ListJobRuns
@@ -226,7 +239,7 @@ public interface AWSEMRServerless {
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServerException
@@ -245,7 +258,7 @@ public interface AWSEMRServerless {
      * @param startApplicationRequest
      * @return Result of the StartApplication operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServerException
@@ -266,7 +279,7 @@ public interface AWSEMRServerless {
      * @param startJobRunRequest
      * @return Result of the StartJobRun operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServerException
@@ -288,7 +301,7 @@ public interface AWSEMRServerless {
      * @param stopApplicationRequest
      * @return Result of the StopApplication operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServerException
@@ -301,16 +314,16 @@ public interface AWSEMRServerless {
 
     /**
      * <p>
-     * Assigns tags to resources. A tag is a label that you assign to an AWS resource. Each tag consists of a key and an
-     * optional value, both of which you define. Tags enable you to categorize your AWS resources by attributes such as
-     * purpose, owner, or environment. When you have many resources of the same type, you can quickly identify a
-     * specific resource based on the tags you've assigned to it.
+     * Assigns tags to resources. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists
+     * of a key and an optional value, both of which you define. Tags enable you to categorize your Amazon Web Services
+     * resources by attributes such as purpose, owner, or environment. When you have many resources of the same type,
+     * you can quickly identify a specific resource based on the tags you've assigned to it.
      * </p>
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServerException
@@ -329,7 +342,7 @@ public interface AWSEMRServerless {
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServerException
@@ -348,7 +361,7 @@ public interface AWSEMRServerless {
      * @param updateApplicationRequest
      * @return Result of the UpdateApplication operation returned by the service.
      * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by an AWS service.
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalServerException

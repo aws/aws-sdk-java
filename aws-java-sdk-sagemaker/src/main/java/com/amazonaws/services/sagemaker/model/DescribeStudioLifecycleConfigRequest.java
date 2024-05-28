@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,18 @@ public class DescribeStudioLifecycleConfigRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The name of the Studio Lifecycle Configuration to describe.
+     * The name of the Amazon SageMaker Studio Lifecycle Configuration to describe.
      * </p>
      */
     private String studioLifecycleConfigName;
 
     /**
      * <p>
-     * The name of the Studio Lifecycle Configuration to describe.
+     * The name of the Amazon SageMaker Studio Lifecycle Configuration to describe.
      * </p>
      * 
      * @param studioLifecycleConfigName
-     *        The name of the Studio Lifecycle Configuration to describe.
+     *        The name of the Amazon SageMaker Studio Lifecycle Configuration to describe.
      */
 
     public void setStudioLifecycleConfigName(String studioLifecycleConfigName) {
@@ -47,10 +47,10 @@ public class DescribeStudioLifecycleConfigRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The name of the Studio Lifecycle Configuration to describe.
+     * The name of the Amazon SageMaker Studio Lifecycle Configuration to describe.
      * </p>
      * 
-     * @return The name of the Studio Lifecycle Configuration to describe.
+     * @return The name of the Amazon SageMaker Studio Lifecycle Configuration to describe.
      */
 
     public String getStudioLifecycleConfigName() {
@@ -59,11 +59,11 @@ public class DescribeStudioLifecycleConfigRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The name of the Studio Lifecycle Configuration to describe.
+     * The name of the Amazon SageMaker Studio Lifecycle Configuration to describe.
      * </p>
      * 
      * @param studioLifecycleConfigName
-     *        The name of the Studio Lifecycle Configuration to describe.
+     *        The name of the Amazon SageMaker Studio Lifecycle Configuration to describe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,9 +27,12 @@ public class ListPermissionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies that you want to list permissions for only the specified resource type. For example, to list only
-     * permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>. You can use the <a>ListResourceTypes</a>
-     * operation to get the specific string required.
+     * Specifies that you want to list only those permissions that apply to the specified resource type. This parameter
+     * is not case sensitive.
+     * </p>
+     * <p>
+     * For example, to list only permissions that apply to Amazon EC2 subnets, specify <code>ec2:subnet</code>. You can
+     * use the <a>ListResourceTypes</a> operation to get the specific string required.
      * </p>
      */
     private String resourceType;
@@ -53,18 +56,49 @@ public class ListPermissionsRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * Specifies that you want to list only permissions of this type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS</code> – returns only Amazon Web Services managed permissions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LOCAL</code> – returns only customer managed permissions
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALL</code> – returns both Amazon Web Services managed permissions and customer managed permissions.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't specify this parameter, the default is <code>All</code>.
+     * </p>
+     */
+    private String permissionType;
 
     /**
      * <p>
-     * Specifies that you want to list permissions for only the specified resource type. For example, to list only
-     * permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>. You can use the <a>ListResourceTypes</a>
-     * operation to get the specific string required.
+     * Specifies that you want to list only those permissions that apply to the specified resource type. This parameter
+     * is not case sensitive.
+     * </p>
+     * <p>
+     * For example, to list only permissions that apply to Amazon EC2 subnets, specify <code>ec2:subnet</code>. You can
+     * use the <a>ListResourceTypes</a> operation to get the specific string required.
      * </p>
      * 
      * @param resourceType
-     *        Specifies that you want to list permissions for only the specified resource type. For example, to list
-     *        only permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>. You can use the
-     *        <a>ListResourceTypes</a> operation to get the specific string required.
+     *        Specifies that you want to list only those permissions that apply to the specified resource type. This
+     *        parameter is not case sensitive.</p>
+     *        <p>
+     *        For example, to list only permissions that apply to Amazon EC2 subnets, specify <code>ec2:subnet</code>.
+     *        You can use the <a>ListResourceTypes</a> operation to get the specific string required.
      */
 
     public void setResourceType(String resourceType) {
@@ -73,14 +107,19 @@ public class ListPermissionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies that you want to list permissions for only the specified resource type. For example, to list only
-     * permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>. You can use the <a>ListResourceTypes</a>
-     * operation to get the specific string required.
+     * Specifies that you want to list only those permissions that apply to the specified resource type. This parameter
+     * is not case sensitive.
+     * </p>
+     * <p>
+     * For example, to list only permissions that apply to Amazon EC2 subnets, specify <code>ec2:subnet</code>. You can
+     * use the <a>ListResourceTypes</a> operation to get the specific string required.
      * </p>
      * 
-     * @return Specifies that you want to list permissions for only the specified resource type. For example, to list
-     *         only permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>. You can use the
-     *         <a>ListResourceTypes</a> operation to get the specific string required.
+     * @return Specifies that you want to list only those permissions that apply to the specified resource type. This
+     *         parameter is not case sensitive.</p>
+     *         <p>
+     *         For example, to list only permissions that apply to Amazon EC2 subnets, specify <code>ec2:subnet</code>.
+     *         You can use the <a>ListResourceTypes</a> operation to get the specific string required.
      */
 
     public String getResourceType() {
@@ -89,15 +128,20 @@ public class ListPermissionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies that you want to list permissions for only the specified resource type. For example, to list only
-     * permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>. You can use the <a>ListResourceTypes</a>
-     * operation to get the specific string required.
+     * Specifies that you want to list only those permissions that apply to the specified resource type. This parameter
+     * is not case sensitive.
+     * </p>
+     * <p>
+     * For example, to list only permissions that apply to Amazon EC2 subnets, specify <code>ec2:subnet</code>. You can
+     * use the <a>ListResourceTypes</a> operation to get the specific string required.
      * </p>
      * 
      * @param resourceType
-     *        Specifies that you want to list permissions for only the specified resource type. For example, to list
-     *        only permissions that apply to EC2 subnets, specify <code>ec2:Subnet</code>. You can use the
-     *        <a>ListResourceTypes</a> operation to get the specific string required.
+     *        Specifies that you want to list only those permissions that apply to the specified resource type. This
+     *        parameter is not case sensitive.</p>
+     *        <p>
+     *        For example, to list only permissions that apply to Amazon EC2 subnets, specify <code>ec2:subnet</code>.
+     *        You can use the <a>ListResourceTypes</a> operation to get the specific string required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -238,6 +282,221 @@ public class ListPermissionsRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Specifies that you want to list only permissions of this type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS</code> – returns only Amazon Web Services managed permissions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LOCAL</code> – returns only customer managed permissions
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALL</code> – returns both Amazon Web Services managed permissions and customer managed permissions.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't specify this parameter, the default is <code>All</code>.
+     * </p>
+     * 
+     * @param permissionType
+     *        Specifies that you want to list only permissions of this type:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AWS</code> – returns only Amazon Web Services managed permissions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LOCAL</code> – returns only customer managed permissions
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALL</code> – returns both Amazon Web Services managed permissions and customer managed permissions.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you don't specify this parameter, the default is <code>All</code>.
+     * @see PermissionTypeFilter
+     */
+
+    public void setPermissionType(String permissionType) {
+        this.permissionType = permissionType;
+    }
+
+    /**
+     * <p>
+     * Specifies that you want to list only permissions of this type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS</code> – returns only Amazon Web Services managed permissions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LOCAL</code> – returns only customer managed permissions
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALL</code> – returns both Amazon Web Services managed permissions and customer managed permissions.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't specify this parameter, the default is <code>All</code>.
+     * </p>
+     * 
+     * @return Specifies that you want to list only permissions of this type:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>AWS</code> – returns only Amazon Web Services managed permissions.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>LOCAL</code> – returns only customer managed permissions
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ALL</code> – returns both Amazon Web Services managed permissions and customer managed permissions.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If you don't specify this parameter, the default is <code>All</code>.
+     * @see PermissionTypeFilter
+     */
+
+    public String getPermissionType() {
+        return this.permissionType;
+    }
+
+    /**
+     * <p>
+     * Specifies that you want to list only permissions of this type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS</code> – returns only Amazon Web Services managed permissions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LOCAL</code> – returns only customer managed permissions
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALL</code> – returns both Amazon Web Services managed permissions and customer managed permissions.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't specify this parameter, the default is <code>All</code>.
+     * </p>
+     * 
+     * @param permissionType
+     *        Specifies that you want to list only permissions of this type:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AWS</code> – returns only Amazon Web Services managed permissions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LOCAL</code> – returns only customer managed permissions
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALL</code> – returns both Amazon Web Services managed permissions and customer managed permissions.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you don't specify this parameter, the default is <code>All</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PermissionTypeFilter
+     */
+
+    public ListPermissionsRequest withPermissionType(String permissionType) {
+        setPermissionType(permissionType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies that you want to list only permissions of this type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS</code> – returns only Amazon Web Services managed permissions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LOCAL</code> – returns only customer managed permissions
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALL</code> – returns both Amazon Web Services managed permissions and customer managed permissions.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't specify this parameter, the default is <code>All</code>.
+     * </p>
+     * 
+     * @param permissionType
+     *        Specifies that you want to list only permissions of this type:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AWS</code> – returns only Amazon Web Services managed permissions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LOCAL</code> – returns only customer managed permissions
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALL</code> – returns both Amazon Web Services managed permissions and customer managed permissions.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you don't specify this parameter, the default is <code>All</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PermissionTypeFilter
+     */
+
+    public ListPermissionsRequest withPermissionType(PermissionTypeFilter permissionType) {
+        this.permissionType = permissionType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -254,7 +513,9 @@ public class ListPermissionsRequest extends com.amazonaws.AmazonWebServiceReques
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getPermissionType() != null)
+            sb.append("PermissionType: ").append(getPermissionType());
         sb.append("}");
         return sb.toString();
     }
@@ -281,6 +542,10 @@ public class ListPermissionsRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getPermissionType() == null ^ this.getPermissionType() == null)
+            return false;
+        if (other.getPermissionType() != null && other.getPermissionType().equals(this.getPermissionType()) == false)
+            return false;
         return true;
     }
 
@@ -292,6 +557,7 @@ public class ListPermissionsRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getPermissionType() == null) ? 0 : getPermissionType().hashCode());
         return hashCode;
     }
 

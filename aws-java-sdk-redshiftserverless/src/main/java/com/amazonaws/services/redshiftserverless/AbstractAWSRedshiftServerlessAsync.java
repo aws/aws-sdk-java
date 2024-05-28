@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,19 @@ public class AbstractAWSRedshiftServerlessAsync extends AbstractAWSRedshiftServe
     }
 
     @Override
+    public java.util.concurrent.Future<CreateCustomDomainAssociationResult> createCustomDomainAssociationAsync(CreateCustomDomainAssociationRequest request) {
+
+        return createCustomDomainAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCustomDomainAssociationResult> createCustomDomainAssociationAsync(CreateCustomDomainAssociationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateCustomDomainAssociationRequest, CreateCustomDomainAssociationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateEndpointAccessResult> createEndpointAccessAsync(CreateEndpointAccessRequest request) {
 
         return createEndpointAccessAsync(request, null);
@@ -67,6 +80,19 @@ public class AbstractAWSRedshiftServerlessAsync extends AbstractAWSRedshiftServe
     }
 
     @Override
+    public java.util.concurrent.Future<CreateScheduledActionResult> createScheduledActionAsync(CreateScheduledActionRequest request) {
+
+        return createScheduledActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateScheduledActionResult> createScheduledActionAsync(CreateScheduledActionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateScheduledActionRequest, CreateScheduledActionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateSnapshotResult> createSnapshotAsync(CreateSnapshotRequest request) {
 
         return createSnapshotAsync(request, null);
@@ -75,6 +101,21 @@ public class AbstractAWSRedshiftServerlessAsync extends AbstractAWSRedshiftServe
     @Override
     public java.util.concurrent.Future<CreateSnapshotResult> createSnapshotAsync(CreateSnapshotRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateSnapshotRequest, CreateSnapshotResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSnapshotCopyConfigurationResult> createSnapshotCopyConfigurationAsync(
+            CreateSnapshotCopyConfigurationRequest request) {
+
+        return createSnapshotCopyConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSnapshotCopyConfigurationResult> createSnapshotCopyConfigurationAsync(
+            CreateSnapshotCopyConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateSnapshotCopyConfigurationRequest, CreateSnapshotCopyConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -101,6 +142,19 @@ public class AbstractAWSRedshiftServerlessAsync extends AbstractAWSRedshiftServe
     @Override
     public java.util.concurrent.Future<CreateWorkgroupResult> createWorkgroupAsync(CreateWorkgroupRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateWorkgroupRequest, CreateWorkgroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCustomDomainAssociationResult> deleteCustomDomainAssociationAsync(DeleteCustomDomainAssociationRequest request) {
+
+        return deleteCustomDomainAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCustomDomainAssociationResult> deleteCustomDomainAssociationAsync(DeleteCustomDomainAssociationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteCustomDomainAssociationRequest, DeleteCustomDomainAssociationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -145,6 +199,19 @@ public class AbstractAWSRedshiftServerlessAsync extends AbstractAWSRedshiftServe
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteScheduledActionResult> deleteScheduledActionAsync(DeleteScheduledActionRequest request) {
+
+        return deleteScheduledActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteScheduledActionResult> deleteScheduledActionAsync(DeleteScheduledActionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteScheduledActionRequest, DeleteScheduledActionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteSnapshotResult> deleteSnapshotAsync(DeleteSnapshotRequest request) {
 
         return deleteSnapshotAsync(request, null);
@@ -153,6 +220,21 @@ public class AbstractAWSRedshiftServerlessAsync extends AbstractAWSRedshiftServe
     @Override
     public java.util.concurrent.Future<DeleteSnapshotResult> deleteSnapshotAsync(DeleteSnapshotRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteSnapshotRequest, DeleteSnapshotResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSnapshotCopyConfigurationResult> deleteSnapshotCopyConfigurationAsync(
+            DeleteSnapshotCopyConfigurationRequest request) {
+
+        return deleteSnapshotCopyConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSnapshotCopyConfigurationResult> deleteSnapshotCopyConfigurationAsync(
+            DeleteSnapshotCopyConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteSnapshotCopyConfigurationRequest, DeleteSnapshotCopyConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -192,6 +274,19 @@ public class AbstractAWSRedshiftServerlessAsync extends AbstractAWSRedshiftServe
     @Override
     public java.util.concurrent.Future<GetCredentialsResult> getCredentialsAsync(GetCredentialsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetCredentialsRequest, GetCredentialsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCustomDomainAssociationResult> getCustomDomainAssociationAsync(GetCustomDomainAssociationRequest request) {
+
+        return getCustomDomainAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCustomDomainAssociationResult> getCustomDomainAssociationAsync(GetCustomDomainAssociationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCustomDomainAssociationRequest, GetCustomDomainAssociationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -249,6 +344,19 @@ public class AbstractAWSRedshiftServerlessAsync extends AbstractAWSRedshiftServe
     }
 
     @Override
+    public java.util.concurrent.Future<GetScheduledActionResult> getScheduledActionAsync(GetScheduledActionRequest request) {
+
+        return getScheduledActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetScheduledActionResult> getScheduledActionAsync(GetScheduledActionRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetScheduledActionRequest, GetScheduledActionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSnapshotResult> getSnapshotAsync(GetSnapshotRequest request) {
 
         return getSnapshotAsync(request, null);
@@ -257,6 +365,19 @@ public class AbstractAWSRedshiftServerlessAsync extends AbstractAWSRedshiftServe
     @Override
     public java.util.concurrent.Future<GetSnapshotResult> getSnapshotAsync(GetSnapshotRequest request,
             com.amazonaws.handlers.AsyncHandler<GetSnapshotRequest, GetSnapshotResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTableRestoreStatusResult> getTableRestoreStatusAsync(GetTableRestoreStatusRequest request) {
+
+        return getTableRestoreStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTableRestoreStatusResult> getTableRestoreStatusAsync(GetTableRestoreStatusRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetTableRestoreStatusRequest, GetTableRestoreStatusResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -283,6 +404,19 @@ public class AbstractAWSRedshiftServerlessAsync extends AbstractAWSRedshiftServe
     @Override
     public java.util.concurrent.Future<GetWorkgroupResult> getWorkgroupAsync(GetWorkgroupRequest request,
             com.amazonaws.handlers.AsyncHandler<GetWorkgroupRequest, GetWorkgroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCustomDomainAssociationsResult> listCustomDomainAssociationsAsync(ListCustomDomainAssociationsRequest request) {
+
+        return listCustomDomainAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCustomDomainAssociationsResult> listCustomDomainAssociationsAsync(ListCustomDomainAssociationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCustomDomainAssociationsRequest, ListCustomDomainAssociationsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -327,6 +461,32 @@ public class AbstractAWSRedshiftServerlessAsync extends AbstractAWSRedshiftServe
     }
 
     @Override
+    public java.util.concurrent.Future<ListScheduledActionsResult> listScheduledActionsAsync(ListScheduledActionsRequest request) {
+
+        return listScheduledActionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListScheduledActionsResult> listScheduledActionsAsync(ListScheduledActionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListScheduledActionsRequest, ListScheduledActionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSnapshotCopyConfigurationsResult> listSnapshotCopyConfigurationsAsync(ListSnapshotCopyConfigurationsRequest request) {
+
+        return listSnapshotCopyConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSnapshotCopyConfigurationsResult> listSnapshotCopyConfigurationsAsync(ListSnapshotCopyConfigurationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListSnapshotCopyConfigurationsRequest, ListSnapshotCopyConfigurationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSnapshotsResult> listSnapshotsAsync(ListSnapshotsRequest request) {
 
         return listSnapshotsAsync(request, null);
@@ -335,6 +495,19 @@ public class AbstractAWSRedshiftServerlessAsync extends AbstractAWSRedshiftServe
     @Override
     public java.util.concurrent.Future<ListSnapshotsResult> listSnapshotsAsync(ListSnapshotsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListSnapshotsRequest, ListSnapshotsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTableRestoreStatusResult> listTableRestoreStatusAsync(ListTableRestoreStatusRequest request) {
+
+        return listTableRestoreStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTableRestoreStatusResult> listTableRestoreStatusAsync(ListTableRestoreStatusRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTableRestoreStatusRequest, ListTableRestoreStatusResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -418,6 +591,32 @@ public class AbstractAWSRedshiftServerlessAsync extends AbstractAWSRedshiftServe
     }
 
     @Override
+    public java.util.concurrent.Future<RestoreTableFromRecoveryPointResult> restoreTableFromRecoveryPointAsync(RestoreTableFromRecoveryPointRequest request) {
+
+        return restoreTableFromRecoveryPointAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreTableFromRecoveryPointResult> restoreTableFromRecoveryPointAsync(RestoreTableFromRecoveryPointRequest request,
+            com.amazonaws.handlers.AsyncHandler<RestoreTableFromRecoveryPointRequest, RestoreTableFromRecoveryPointResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreTableFromSnapshotResult> restoreTableFromSnapshotAsync(RestoreTableFromSnapshotRequest request) {
+
+        return restoreTableFromSnapshotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreTableFromSnapshotResult> restoreTableFromSnapshotAsync(RestoreTableFromSnapshotRequest request,
+            com.amazonaws.handlers.AsyncHandler<RestoreTableFromSnapshotRequest, RestoreTableFromSnapshotResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);
@@ -439,6 +638,19 @@ public class AbstractAWSRedshiftServerlessAsync extends AbstractAWSRedshiftServe
     @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCustomDomainAssociationResult> updateCustomDomainAssociationAsync(UpdateCustomDomainAssociationRequest request) {
+
+        return updateCustomDomainAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCustomDomainAssociationResult> updateCustomDomainAssociationAsync(UpdateCustomDomainAssociationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateCustomDomainAssociationRequest, UpdateCustomDomainAssociationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -470,6 +682,19 @@ public class AbstractAWSRedshiftServerlessAsync extends AbstractAWSRedshiftServe
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateScheduledActionResult> updateScheduledActionAsync(UpdateScheduledActionRequest request) {
+
+        return updateScheduledActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateScheduledActionResult> updateScheduledActionAsync(UpdateScheduledActionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateScheduledActionRequest, UpdateScheduledActionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateSnapshotResult> updateSnapshotAsync(UpdateSnapshotRequest request) {
 
         return updateSnapshotAsync(request, null);
@@ -478,6 +703,21 @@ public class AbstractAWSRedshiftServerlessAsync extends AbstractAWSRedshiftServe
     @Override
     public java.util.concurrent.Future<UpdateSnapshotResult> updateSnapshotAsync(UpdateSnapshotRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateSnapshotRequest, UpdateSnapshotResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSnapshotCopyConfigurationResult> updateSnapshotCopyConfigurationAsync(
+            UpdateSnapshotCopyConfigurationRequest request) {
+
+        return updateSnapshotCopyConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSnapshotCopyConfigurationResult> updateSnapshotCopyConfigurationAsync(
+            UpdateSnapshotCopyConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateSnapshotCopyConfigurationRequest, UpdateSnapshotCopyConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

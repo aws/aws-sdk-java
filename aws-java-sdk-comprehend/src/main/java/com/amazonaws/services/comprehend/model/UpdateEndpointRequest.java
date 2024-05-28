@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,12 @@ public class UpdateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String desiredDataAccessRoleArn;
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the flywheel
+     * </p>
+     */
+    private String flywheelArn;
 
     /**
      * <p>
@@ -218,6 +224,46 @@ public class UpdateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the flywheel
+     * </p>
+     * 
+     * @param flywheelArn
+     *        The Amazon Resource Number (ARN) of the flywheel
+     */
+
+    public void setFlywheelArn(String flywheelArn) {
+        this.flywheelArn = flywheelArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the flywheel
+     * </p>
+     * 
+     * @return The Amazon Resource Number (ARN) of the flywheel
+     */
+
+    public String getFlywheelArn() {
+        return this.flywheelArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the flywheel
+     * </p>
+     * 
+     * @param flywheelArn
+     *        The Amazon Resource Number (ARN) of the flywheel
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateEndpointRequest withFlywheelArn(String flywheelArn) {
+        setFlywheelArn(flywheelArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -236,7 +282,9 @@ public class UpdateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getDesiredInferenceUnits() != null)
             sb.append("DesiredInferenceUnits: ").append(getDesiredInferenceUnits()).append(",");
         if (getDesiredDataAccessRoleArn() != null)
-            sb.append("DesiredDataAccessRoleArn: ").append(getDesiredDataAccessRoleArn());
+            sb.append("DesiredDataAccessRoleArn: ").append(getDesiredDataAccessRoleArn()).append(",");
+        if (getFlywheelArn() != null)
+            sb.append("FlywheelArn: ").append(getFlywheelArn());
         sb.append("}");
         return sb.toString();
     }
@@ -267,6 +315,10 @@ public class UpdateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getDesiredDataAccessRoleArn() != null && other.getDesiredDataAccessRoleArn().equals(this.getDesiredDataAccessRoleArn()) == false)
             return false;
+        if (other.getFlywheelArn() == null ^ this.getFlywheelArn() == null)
+            return false;
+        if (other.getFlywheelArn() != null && other.getFlywheelArn().equals(this.getFlywheelArn()) == false)
+            return false;
         return true;
     }
 
@@ -279,6 +331,7 @@ public class UpdateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getDesiredModelArn() == null) ? 0 : getDesiredModelArn().hashCode());
         hashCode = prime * hashCode + ((getDesiredInferenceUnits() == null) ? 0 : getDesiredInferenceUnits().hashCode());
         hashCode = prime * hashCode + ((getDesiredDataAccessRoleArn() == null) ? 0 : getDesiredDataAccessRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getFlywheelArn() == null) ? 0 : getFlywheelArn().hashCode());
         return hashCode;
     }
 

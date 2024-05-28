@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,6 +21,25 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Provides the configuration information to connect to Slack as your data source.
  * </p>
+ * <note>
+ * <p>
+ * Amazon Kendra now supports an upgraded Slack connector.
+ * </p>
+ * <p>
+ * You must now use the <a
+ * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration
+ * </a> object instead of the <code>SlackConfiguration</code> object to configure your connector.
+ * </p>
+ * <p>
+ * Connectors configured using the older console and API architecture will continue to function as configured. However,
+ * you won’t be able to edit or update them. If you want to edit or update your connector configuration, you must create
+ * a new connector.
+ * </p>
+ * <p>
+ * We recommended migrating your connector workflow to the upgraded version. Support for connectors configured using the
+ * older architecture is scheduled to end by June 2024.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SlackConfiguration" target="_top">AWS API
  *      Documentation</a>

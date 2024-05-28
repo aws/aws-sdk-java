@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -13,63 +13,51 @@
 package com.amazonaws.services.sqs.model.transform;
 
 import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.sqs.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.StringUtils;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * CreateQueueRequest Marshaller
+ * CreateQueueRequestMarshaller
  */
-
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateQueueRequestMarshaller implements Marshaller<Request<CreateQueueRequest>, CreateQueueRequest> {
+@SdkInternalApi
+public class CreateQueueRequestMarshaller {
 
-    public Request<CreateQueueRequest> marshall(CreateQueueRequest createQueueRequest) {
+    private static final MarshallingInfo<String> QUEUENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("QueueName").build();
+    private static final MarshallingInfo<Map> ATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Attributes").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
+
+    private static final CreateQueueRequestMarshaller instance = new CreateQueueRequestMarshaller();
+
+    public static CreateQueueRequestMarshaller getInstance() {
+        return instance;
+    }
+
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateQueueRequest createQueueRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (createQueueRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<CreateQueueRequest> request = new DefaultRequest<CreateQueueRequest>(createQueueRequest, "AmazonSQS");
-        request.addParameter("Action", "CreateQueue");
-        request.addParameter("Version", "2012-11-05");
-        request.setHttpMethod(HttpMethodName.POST);
-
-        if (createQueueRequest.getQueueName() != null) {
-            request.addParameter("QueueName", StringUtils.fromString(createQueueRequest.getQueueName()));
+        try {
+            protocolMarshaller.marshall(createQueueRequest.getQueueName(), QUEUENAME_BINDING);
+            protocolMarshaller.marshall(createQueueRequest.getAttributes(), ATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(createQueueRequest.getTags(), TAGS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        java.util.Map<String, String> attributes = createQueueRequest.getAttributes();
-        int attributesListIndex = 1;
-        for (Map.Entry<String, String> entry : attributes.entrySet()) {
-            if (entry != null && entry.getKey() != null) {
-                request.addParameter("Attribute." + attributesListIndex + ".Name", StringUtils.fromString(entry.getKey()));
-            }
-            if (entry != null && entry.getValue() != null) {
-                request.addParameter("Attribute." + attributesListIndex + ".Value", StringUtils.fromString(entry.getValue()));
-            }
-            attributesListIndex++;
-        }
-
-        java.util.Map<String, String> tags = createQueueRequest.getTags();
-        int tagsListIndex = 1;
-        for (Map.Entry<String, String> entry : tags.entrySet()) {
-            if (entry != null && entry.getKey() != null) {
-                request.addParameter("Tag." + tagsListIndex + ".Key", StringUtils.fromString(entry.getKey()));
-            }
-            if (entry != null && entry.getValue() != null) {
-                request.addParameter("Tag." + tagsListIndex + ".Value", StringUtils.fromString(entry.getValue()));
-            }
-            tagsListIndex++;
-        }
-
-        return request;
     }
 
 }

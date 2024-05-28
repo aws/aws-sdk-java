@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,15 +32,35 @@ import com.amazonaws.services.pinpointsmsvoicev2.model.*;
  * <p>
  * Amazon Pinpoint is an Amazon Web Services service that you can use to engage with your recipients across multiple
  * messaging channels. The Amazon Pinpoint SMS and Voice, version 2 API provides programmatic access to options that are
- * unique to the SMS and voice channels and supplements the resources provided by the Amazon Pinpoint API.
+ * unique to the SMS and voice channels. Amazon Pinpoint SMS and Voice, version 2 resources such as phone numbers,
+ * sender IDs, and opt-out lists can be used by the Amazon Pinpoint API.
  * </p>
  * <p>
- * If you're new to Amazon Pinpoint, it's also helpful to review the <a
- * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html"> Amazon Pinpoint Developer Guide</a>.
- * The <i>Amazon Pinpoint Developer Guide</i> provides tutorials, code samples, and procedures that demonstrate how to
- * use Amazon Pinpoint features programmatically and how to integrate Amazon Pinpoint functionality into mobile apps and
- * other types of applications. The guide also provides key information, such as Amazon Pinpoint integration with other
- * Amazon Web Services services, and the quotas that apply to use of the service.
+ * If you're new to Amazon Pinpoint SMS, it's also helpful to review the <a
+ * href="https://docs.aws.amazon.com/sms-voice/latest/userguide/what-is-service.html"> Amazon Pinpoint SMS User
+ * Guide</a>. The <i>Amazon Pinpoint Developer Guide</i> provides tutorials, code samples, and procedures that
+ * demonstrate how to use Amazon Pinpoint SMS features programmatically and how to integrate Amazon Pinpoint
+ * functionality into mobile apps and other types of applications. The guide also provides key information, such as
+ * Amazon Pinpoint integration with other Amazon Web Services services, and the quotas that apply to use of the service.
+ * </p>
+ * <p>
+ * <b>Regional availability</b>
+ * </p>
+ * <p>
+ * The <i>Amazon Pinpoint SMS and Voice, version 2 API Reference</i> is available in several Amazon Web Services Regions
+ * and it provides an endpoint for each of these Regions. For a list of all the Regions and endpoints where the API is
+ * currently available, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#pinpoint_region">Amazon
+ * Web Services Service Endpoints</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/pinpoint.html">Amazon
+ * Pinpoint endpoints and quotas</a> in the Amazon Web Services General Reference. To learn more about Amazon Web
+ * Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html">Managing Amazon Web
+ * Services Regions</a> in the Amazon Web Services General Reference.
+ * </p>
+ * <p>
+ * In each Region, Amazon Web Services maintains multiple Availability Zones. These Availability Zones are physically
+ * isolated from each other, but are united by private, low-latency, high-throughput, and highly redundant network
+ * connections. These Availability Zones enable us to provide very high levels of availability and redundancy, while
+ * also minimizing latency. To learn more about the number of Availability Zones that are available in each Region, see
+ * <a href="https://aws.amazon.com/about-aws/global-infrastructure/">Amazon Web Services Global Infrastructure.</a>
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -51,11 +71,11 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      * Associates the specified origination identity with a pool.
      * </p>
      * <p>
-     * If the origination identity is a phone number and is already associated with another pool, an Error is returned.
+     * If the origination identity is a phone number and is already associated with another pool, an error is returned.
      * A sender ID can be associated with multiple pools.
      * </p>
      * <p>
-     * If the origination identity configuration doesn't match the pool's configuration, an Error is returned.
+     * If the origination identity configuration doesn't match the pool's configuration, an error is returned.
      * </p>
      * 
      * @param associateOriginationIdentityRequest
@@ -74,11 +94,11 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      * Associates the specified origination identity with a pool.
      * </p>
      * <p>
-     * If the origination identity is a phone number and is already associated with another pool, an Error is returned.
+     * If the origination identity is a phone number and is already associated with another pool, an error is returned.
      * A sender ID can be associated with multiple pools.
      * </p>
      * <p>
-     * If the origination identity configuration doesn't match the pool's configuration, an Error is returned.
+     * If the origination identity configuration doesn't match the pool's configuration, an error is returned.
      * </p>
      * 
      * @param associateOriginationIdentityRequest
@@ -96,6 +116,47 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
     java.util.concurrent.Future<AssociateOriginationIdentityResult> associateOriginationIdentityAsync(
             AssociateOriginationIdentityRequest associateOriginationIdentityRequest,
             com.amazonaws.handlers.AsyncHandler<AssociateOriginationIdentityRequest, AssociateOriginationIdentityResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associate a protect configuration with a configuration set. This replaces the configuration sets current protect
+     * configuration. A configuration set can only be associated with one protect configuration at a time. A protect
+     * configuration can be associated with multiple configuration sets.
+     * </p>
+     * 
+     * @param associateProtectConfigurationRequest
+     * @return A Java Future containing the result of the AssociateProtectConfiguration operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2Async.AssociateProtectConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/AssociateProtectConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateProtectConfigurationResult> associateProtectConfigurationAsync(
+            AssociateProtectConfigurationRequest associateProtectConfigurationRequest);
+
+    /**
+     * <p>
+     * Associate a protect configuration with a configuration set. This replaces the configuration sets current protect
+     * configuration. A configuration set can only be associated with one protect configuration at a time. A protect
+     * configuration can be associated with multiple configuration sets.
+     * </p>
+     * 
+     * @param associateProtectConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateProtectConfiguration operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.AssociateProtectConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/AssociateProtectConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateProtectConfigurationResult> associateProtectConfigurationAsync(
+            AssociateProtectConfigurationRequest associateProtectConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateProtectConfigurationRequest, AssociateProtectConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -198,7 +259,7 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      * Creates a new opt-out list.
      * </p>
      * <p>
-     * If the opt-out list name already exists, an Error is returned.
+     * If the opt-out list name already exists, an error is returned.
      * </p>
      * <p>
      * An opt-out list is a list of phone numbers that are opted out, meaning you can't send SMS or voice messages to
@@ -222,7 +283,7 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      * Creates a new opt-out list.
      * </p>
      * <p>
-     * If the opt-out list name already exists, an Error is returned.
+     * If the opt-out list name already exists, an error is returned.
      * </p>
      * <p>
      * An opt-out list is a list of phone numbers that are opted out, meaning you can't send SMS or voice messages to
@@ -257,7 +318,7 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      * inherited from the origination identity and defaults to false.
      * </p>
      * <p>
-     * If the origination identity is a phone number and is already associated with another pool, an Error is returned.
+     * If the origination identity is a phone number and is already associated with another pool, an error is returned.
      * A sender ID can be associated with multiple pools.
      * </p>
      * 
@@ -280,7 +341,7 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      * inherited from the origination identity and defaults to false.
      * </p>
      * <p>
-     * If the origination identity is a phone number and is already associated with another pool, an Error is returned.
+     * If the origination identity is a phone number and is already associated with another pool, an error is returned.
      * A sender ID can be associated with multiple pools.
      * </p>
      * 
@@ -296,6 +357,265 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      */
     java.util.concurrent.Future<CreatePoolResult> createPoolAsync(CreatePoolRequest createPoolRequest,
             com.amazonaws.handlers.AsyncHandler<CreatePoolRequest, CreatePoolResult> asyncHandler);
+
+    /**
+     * <p>
+     * Create a new protect configuration. By default all country rule sets for each capability are set to
+     * <code>ALLOW</code>. Update the country rule sets using <code>UpdateProtectConfigurationCountryRuleSet</code>. A
+     * protect configurations name is stored as a Tag with the key set to <code>Name</code> and value as the name of the
+     * protect configuration.
+     * </p>
+     * 
+     * @param createProtectConfigurationRequest
+     * @return A Java Future containing the result of the CreateProtectConfiguration operation returned by the service.
+     * @sample AmazonPinpointSMSVoiceV2Async.CreateProtectConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateProtectConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateProtectConfigurationResult> createProtectConfigurationAsync(
+            CreateProtectConfigurationRequest createProtectConfigurationRequest);
+
+    /**
+     * <p>
+     * Create a new protect configuration. By default all country rule sets for each capability are set to
+     * <code>ALLOW</code>. Update the country rule sets using <code>UpdateProtectConfigurationCountryRuleSet</code>. A
+     * protect configurations name is stored as a Tag with the key set to <code>Name</code> and value as the name of the
+     * protect configuration.
+     * </p>
+     * 
+     * @param createProtectConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateProtectConfiguration operation returned by the service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.CreateProtectConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateProtectConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateProtectConfigurationResult> createProtectConfigurationAsync(
+            CreateProtectConfigurationRequest createProtectConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateProtectConfigurationRequest, CreateProtectConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new registration based on the <b>RegistrationType</b> field.
+     * </p>
+     * 
+     * @param createRegistrationRequest
+     * @return A Java Future containing the result of the CreateRegistration operation returned by the service.
+     * @sample AmazonPinpointSMSVoiceV2Async.CreateRegistration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateRegistration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRegistrationResult> createRegistrationAsync(CreateRegistrationRequest createRegistrationRequest);
+
+    /**
+     * <p>
+     * Creates a new registration based on the <b>RegistrationType</b> field.
+     * </p>
+     * 
+     * @param createRegistrationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateRegistration operation returned by the service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.CreateRegistration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateRegistration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRegistrationResult> createRegistrationAsync(CreateRegistrationRequest createRegistrationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateRegistrationRequest, CreateRegistrationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associate the registration with an origination identity such as a phone number or sender ID.
+     * </p>
+     * 
+     * @param createRegistrationAssociationRequest
+     * @return A Java Future containing the result of the CreateRegistrationAssociation operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2Async.CreateRegistrationAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateRegistrationAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRegistrationAssociationResult> createRegistrationAssociationAsync(
+            CreateRegistrationAssociationRequest createRegistrationAssociationRequest);
+
+    /**
+     * <p>
+     * Associate the registration with an origination identity such as a phone number or sender ID.
+     * </p>
+     * 
+     * @param createRegistrationAssociationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateRegistrationAssociation operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.CreateRegistrationAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateRegistrationAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRegistrationAssociationResult> createRegistrationAssociationAsync(
+            CreateRegistrationAssociationRequest createRegistrationAssociationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateRegistrationAssociationRequest, CreateRegistrationAssociationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Create a new registration attachment to use for uploading a file or a URL to a file. The maximum file size is
+     * 1MiB and valid file extensions are PDF, JPEG and PNG. For example, many sender ID registrations require a signed
+     * “letter of authorization” (LOA) to be submitted.
+     * </p>
+     * 
+     * @param createRegistrationAttachmentRequest
+     * @return A Java Future containing the result of the CreateRegistrationAttachment operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2Async.CreateRegistrationAttachment
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateRegistrationAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRegistrationAttachmentResult> createRegistrationAttachmentAsync(
+            CreateRegistrationAttachmentRequest createRegistrationAttachmentRequest);
+
+    /**
+     * <p>
+     * Create a new registration attachment to use for uploading a file or a URL to a file. The maximum file size is
+     * 1MiB and valid file extensions are PDF, JPEG and PNG. For example, many sender ID registrations require a signed
+     * “letter of authorization” (LOA) to be submitted.
+     * </p>
+     * 
+     * @param createRegistrationAttachmentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateRegistrationAttachment operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.CreateRegistrationAttachment
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateRegistrationAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRegistrationAttachmentResult> createRegistrationAttachmentAsync(
+            CreateRegistrationAttachmentRequest createRegistrationAttachmentRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateRegistrationAttachmentRequest, CreateRegistrationAttachmentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Create a new version of the registration and increase the <b>VersionNumber</b>. The previous version of the
+     * registration becomes read-only.
+     * </p>
+     * 
+     * @param createRegistrationVersionRequest
+     * @return A Java Future containing the result of the CreateRegistrationVersion operation returned by the service.
+     * @sample AmazonPinpointSMSVoiceV2Async.CreateRegistrationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateRegistrationVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRegistrationVersionResult> createRegistrationVersionAsync(
+            CreateRegistrationVersionRequest createRegistrationVersionRequest);
+
+    /**
+     * <p>
+     * Create a new version of the registration and increase the <b>VersionNumber</b>. The previous version of the
+     * registration becomes read-only.
+     * </p>
+     * 
+     * @param createRegistrationVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateRegistrationVersion operation returned by the service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.CreateRegistrationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateRegistrationVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRegistrationVersionResult> createRegistrationVersionAsync(
+            CreateRegistrationVersionRequest createRegistrationVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateRegistrationVersionRequest, CreateRegistrationVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * You can only send messages to verified destination numbers when your account is in the sandbox. You can add up to
+     * 10 verified destination numbers.
+     * </p>
+     * 
+     * @param createVerifiedDestinationNumberRequest
+     * @return A Java Future containing the result of the CreateVerifiedDestinationNumber operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2Async.CreateVerifiedDestinationNumber
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateVerifiedDestinationNumber"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVerifiedDestinationNumberResult> createVerifiedDestinationNumberAsync(
+            CreateVerifiedDestinationNumberRequest createVerifiedDestinationNumberRequest);
+
+    /**
+     * <p>
+     * You can only send messages to verified destination numbers when your account is in the sandbox. You can add up to
+     * 10 verified destination numbers.
+     * </p>
+     * 
+     * @param createVerifiedDestinationNumberRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateVerifiedDestinationNumber operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.CreateVerifiedDestinationNumber
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateVerifiedDestinationNumber"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVerifiedDestinationNumberResult> createVerifiedDestinationNumberAsync(
+            CreateVerifiedDestinationNumberRequest createVerifiedDestinationNumberRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateVerifiedDestinationNumberRequest, CreateVerifiedDestinationNumberResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes the current account default protect configuration.
+     * </p>
+     * 
+     * @param deleteAccountDefaultProtectConfigurationRequest
+     * @return A Java Future containing the result of the DeleteAccountDefaultProtectConfiguration operation returned by
+     *         the service.
+     * @sample AmazonPinpointSMSVoiceV2Async.DeleteAccountDefaultProtectConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteAccountDefaultProtectConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccountDefaultProtectConfigurationResult> deleteAccountDefaultProtectConfigurationAsync(
+            DeleteAccountDefaultProtectConfigurationRequest deleteAccountDefaultProtectConfigurationRequest);
+
+    /**
+     * <p>
+     * Removes the current account default protect configuration.
+     * </p>
+     * 
+     * @param deleteAccountDefaultProtectConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAccountDefaultProtectConfiguration operation returned by
+     *         the service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.DeleteAccountDefaultProtectConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteAccountDefaultProtectConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccountDefaultProtectConfigurationResult> deleteAccountDefaultProtectConfigurationAsync(
+            DeleteAccountDefaultProtectConfigurationRequest deleteAccountDefaultProtectConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAccountDefaultProtectConfigurationRequest, DeleteAccountDefaultProtectConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -510,10 +830,55 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
 
     /**
      * <p>
+     * Deletes an account-level monthly spending limit override for sending multimedia messages (MMS). Deleting a spend
+     * limit override will set the <code>EnforcedLimit</code> to equal the <code>MaxLimit</code>, which is controlled by
+     * Amazon Web Services. For more information on spend limits (quotas) see <a
+     * href="https://docs.aws.amazon.com/sms-voice/latest/userguide/quotas.html">Quotas for Server Migration Service</a>
+     * in the <i>Server Migration Service User Guide</i>.
+     * </p>
+     * 
+     * @param deleteMediaMessageSpendLimitOverrideRequest
+     * @return A Java Future containing the result of the DeleteMediaMessageSpendLimitOverride operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2Async.DeleteMediaMessageSpendLimitOverride
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteMediaMessageSpendLimitOverride"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteMediaMessageSpendLimitOverrideResult> deleteMediaMessageSpendLimitOverrideAsync(
+            DeleteMediaMessageSpendLimitOverrideRequest deleteMediaMessageSpendLimitOverrideRequest);
+
+    /**
+     * <p>
+     * Deletes an account-level monthly spending limit override for sending multimedia messages (MMS). Deleting a spend
+     * limit override will set the <code>EnforcedLimit</code> to equal the <code>MaxLimit</code>, which is controlled by
+     * Amazon Web Services. For more information on spend limits (quotas) see <a
+     * href="https://docs.aws.amazon.com/sms-voice/latest/userguide/quotas.html">Quotas for Server Migration Service</a>
+     * in the <i>Server Migration Service User Guide</i>.
+     * </p>
+     * 
+     * @param deleteMediaMessageSpendLimitOverrideRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteMediaMessageSpendLimitOverride operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.DeleteMediaMessageSpendLimitOverride
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteMediaMessageSpendLimitOverride"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteMediaMessageSpendLimitOverrideResult> deleteMediaMessageSpendLimitOverrideAsync(
+            DeleteMediaMessageSpendLimitOverrideRequest deleteMediaMessageSpendLimitOverrideRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteMediaMessageSpendLimitOverrideRequest, DeleteMediaMessageSpendLimitOverrideResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes an existing opt-out list. All opted out phone numbers in the opt-out list are deleted.
      * </p>
      * <p>
-     * If the specified opt-out list name doesn't exist or is in-use by an origination phone number or pool, an Error is
+     * If the specified opt-out list name doesn't exist or is in-use by an origination phone number or pool, an error is
      * returned.
      * </p>
      * 
@@ -530,7 +895,7 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      * Deletes an existing opt-out list. All opted out phone numbers in the opt-out list are deleted.
      * </p>
      * <p>
-     * If the specified opt-out list name doesn't exist or is in-use by an origination phone number or pool, an Error is
+     * If the specified opt-out list name doesn't exist or is in-use by an origination phone number or pool, an error is
      * returned.
      * </p>
      * 
@@ -555,7 +920,7 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      * Each destination phone number can only be deleted once every 30 days.
      * </p>
      * <p>
-     * If the specified destination phone number doesn't exist or if the opt-out list doesn't exist, an Error is
+     * If the specified destination phone number doesn't exist or if the opt-out list doesn't exist, an error is
      * returned.
      * </p>
      * 
@@ -575,7 +940,7 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      * Each destination phone number can only be deleted once every 30 days.
      * </p>
      * <p>
-     * If the specified destination phone number doesn't exist or if the opt-out list doesn't exist, an Error is
+     * If the specified destination phone number doesn't exist or if the opt-out list doesn't exist, an error is
      * returned.
      * </p>
      * 
@@ -597,7 +962,7 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      * Deletes an existing pool. Deleting a pool disassociates all origination identities from that pool.
      * </p>
      * <p>
-     * If the pool status isn't active or if deletion protection is enabled, an Error is returned.
+     * If the pool status isn't active or if deletion protection is enabled, an error is returned.
      * </p>
      * <p>
      * A pool is a collection of phone numbers and SenderIds. A pool can include one or more phone numbers and SenderIds
@@ -617,7 +982,7 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      * Deletes an existing pool. Deleting a pool disassociates all origination identities from that pool.
      * </p>
      * <p>
-     * If the pool status isn't active or if deletion protection is enabled, an Error is returned.
+     * If the pool status isn't active or if deletion protection is enabled, an error is returned.
      * </p>
      * <p>
      * A pool is a collection of phone numbers and SenderIds. A pool can include one or more phone numbers and SenderIds
@@ -636,6 +1001,146 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      */
     java.util.concurrent.Future<DeletePoolResult> deletePoolAsync(DeletePoolRequest deletePoolRequest,
             com.amazonaws.handlers.AsyncHandler<DeletePoolRequest, DeletePoolResult> asyncHandler);
+
+    /**
+     * <p>
+     * Permanently delete the protect configuration. The protect configuration must have deletion protection disabled
+     * and must not be associated as the account default protect configuration or associated with a configuration set.
+     * </p>
+     * 
+     * @param deleteProtectConfigurationRequest
+     * @return A Java Future containing the result of the DeleteProtectConfiguration operation returned by the service.
+     * @sample AmazonPinpointSMSVoiceV2Async.DeleteProtectConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteProtectConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteProtectConfigurationResult> deleteProtectConfigurationAsync(
+            DeleteProtectConfigurationRequest deleteProtectConfigurationRequest);
+
+    /**
+     * <p>
+     * Permanently delete the protect configuration. The protect configuration must have deletion protection disabled
+     * and must not be associated as the account default protect configuration or associated with a configuration set.
+     * </p>
+     * 
+     * @param deleteProtectConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteProtectConfiguration operation returned by the service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.DeleteProtectConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteProtectConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteProtectConfigurationResult> deleteProtectConfigurationAsync(
+            DeleteProtectConfigurationRequest deleteProtectConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteProtectConfigurationRequest, DeleteProtectConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Permanently delete an existing registration from your account.
+     * </p>
+     * 
+     * @param deleteRegistrationRequest
+     * @return A Java Future containing the result of the DeleteRegistration operation returned by the service.
+     * @sample AmazonPinpointSMSVoiceV2Async.DeleteRegistration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteRegistration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRegistrationResult> deleteRegistrationAsync(DeleteRegistrationRequest deleteRegistrationRequest);
+
+    /**
+     * <p>
+     * Permanently delete an existing registration from your account.
+     * </p>
+     * 
+     * @param deleteRegistrationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRegistration operation returned by the service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.DeleteRegistration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteRegistration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRegistrationResult> deleteRegistrationAsync(DeleteRegistrationRequest deleteRegistrationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRegistrationRequest, DeleteRegistrationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Permanently delete the specified registration attachment.
+     * </p>
+     * 
+     * @param deleteRegistrationAttachmentRequest
+     * @return A Java Future containing the result of the DeleteRegistrationAttachment operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2Async.DeleteRegistrationAttachment
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteRegistrationAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRegistrationAttachmentResult> deleteRegistrationAttachmentAsync(
+            DeleteRegistrationAttachmentRequest deleteRegistrationAttachmentRequest);
+
+    /**
+     * <p>
+     * Permanently delete the specified registration attachment.
+     * </p>
+     * 
+     * @param deleteRegistrationAttachmentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRegistrationAttachment operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.DeleteRegistrationAttachment
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteRegistrationAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRegistrationAttachmentResult> deleteRegistrationAttachmentAsync(
+            DeleteRegistrationAttachmentRequest deleteRegistrationAttachmentRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRegistrationAttachmentRequest, DeleteRegistrationAttachmentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete the value in a registration form field.
+     * </p>
+     * 
+     * @param deleteRegistrationFieldValueRequest
+     * @return A Java Future containing the result of the DeleteRegistrationFieldValue operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2Async.DeleteRegistrationFieldValue
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteRegistrationFieldValue"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRegistrationFieldValueResult> deleteRegistrationFieldValueAsync(
+            DeleteRegistrationFieldValueRequest deleteRegistrationFieldValueRequest);
+
+    /**
+     * <p>
+     * Delete the value in a registration form field.
+     * </p>
+     * 
+     * @param deleteRegistrationFieldValueRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRegistrationFieldValue operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.DeleteRegistrationFieldValue
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteRegistrationFieldValue"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRegistrationFieldValueResult> deleteRegistrationFieldValueAsync(
+            DeleteRegistrationFieldValueRequest deleteRegistrationFieldValueRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRegistrationFieldValueRequest, DeleteRegistrationFieldValueResult> asyncHandler);
 
     /**
      * <p>
@@ -681,6 +1186,43 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
     java.util.concurrent.Future<DeleteTextMessageSpendLimitOverrideResult> deleteTextMessageSpendLimitOverrideAsync(
             DeleteTextMessageSpendLimitOverrideRequest deleteTextMessageSpendLimitOverrideRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteTextMessageSpendLimitOverrideRequest, DeleteTextMessageSpendLimitOverrideResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete a verified destination phone number.
+     * </p>
+     * 
+     * @param deleteVerifiedDestinationNumberRequest
+     * @return A Java Future containing the result of the DeleteVerifiedDestinationNumber operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2Async.DeleteVerifiedDestinationNumber
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteVerifiedDestinationNumber"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVerifiedDestinationNumberResult> deleteVerifiedDestinationNumberAsync(
+            DeleteVerifiedDestinationNumberRequest deleteVerifiedDestinationNumberRequest);
+
+    /**
+     * <p>
+     * Delete a verified destination phone number.
+     * </p>
+     * 
+     * @param deleteVerifiedDestinationNumberRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteVerifiedDestinationNumber operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.DeleteVerifiedDestinationNumber
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteVerifiedDestinationNumber"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVerifiedDestinationNumberResult> deleteVerifiedDestinationNumberAsync(
+            DeleteVerifiedDestinationNumberRequest deleteVerifiedDestinationNumberRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteVerifiedDestinationNumberRequest, DeleteVerifiedDestinationNumberResult> asyncHandler);
 
     /**
      * <p>
@@ -879,7 +1421,7 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      * customizable message.
      * </p>
      * <p>
-     * If you specify a keyword that isn't valid, an Error is returned.
+     * If you specify a keyword that isn't valid, an error is returned.
      * </p>
      * 
      * @param describeKeywordsRequest
@@ -901,7 +1443,7 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      * customizable message.
      * </p>
      * <p>
-     * If you specify a keyword that isn't valid, an Error is returned.
+     * If you specify a keyword that isn't valid, an error is returned.
      * </p>
      * 
      * @param describeKeywordsRequest
@@ -927,7 +1469,7 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      * output includes information for all opt-out lists.
      * </p>
      * <p>
-     * If you specify an opt-out list name that isn't valid, an Error is returned.
+     * If you specify an opt-out list name that isn't valid, an error is returned.
      * </p>
      * 
      * @param describeOptOutListsRequest
@@ -948,7 +1490,7 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      * output includes information for all opt-out lists.
      * </p>
      * <p>
-     * If you specify an opt-out list name that isn't valid, an Error is returned.
+     * If you specify an opt-out list name that isn't valid, an error is returned.
      * </p>
      * 
      * @param describeOptOutListsRequest
@@ -975,7 +1517,7 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      * destination numbers in your opt-out list.
      * </p>
      * <p>
-     * If you specify an opted out number that isn't valid, an Error is returned.
+     * If you specify an opted out number that isn't valid, an error is returned.
      * </p>
      * 
      * @param describeOptedOutNumbersRequest
@@ -997,7 +1539,7 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      * destination numbers in your opt-out list.
      * </p>
      * <p>
-     * If you specify an opted out number that isn't valid, an Error is returned.
+     * If you specify an opted out number that isn't valid, an error is returned.
      * </p>
      * 
      * @param describeOptedOutNumbersRequest
@@ -1023,7 +1565,7 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      * you don't specify phone number IDs or filters, the output includes information for all phone numbers.
      * </p>
      * <p>
-     * If you specify a phone number ID that isn't valid, an Error is returned.
+     * If you specify a phone number ID that isn't valid, an error is returned.
      * </p>
      * 
      * @param describePhoneNumbersRequest
@@ -1044,7 +1586,7 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      * you don't specify phone number IDs or filters, the output includes information for all phone numbers.
      * </p>
      * <p>
-     * If you specify a phone number ID that isn't valid, an Error is returned.
+     * If you specify a phone number ID that isn't valid, an error is returned.
      * </p>
      * 
      * @param describePhoneNumbersRequest
@@ -1070,7 +1612,7 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      * or filters, the output includes information for all pools.
      * </p>
      * <p>
-     * If you specify a pool ID that isn't valid, an Error is returned.
+     * If you specify a pool ID that isn't valid, an error is returned.
      * </p>
      * <p>
      * A pool is a collection of phone numbers and SenderIds. A pool can include one or more phone numbers and SenderIds
@@ -1095,7 +1637,7 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      * or filters, the output includes information for all pools.
      * </p>
      * <p>
-     * If you specify a pool ID that isn't valid, an Error is returned.
+     * If you specify a pool ID that isn't valid, an error is returned.
      * </p>
      * <p>
      * A pool is a collection of phone numbers and SenderIds. A pool can include one or more phone numbers and SenderIds
@@ -1117,6 +1659,306 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
 
     /**
      * <p>
+     * Retrieves the protect configurations that match any of filters. If a filter isn’t provided then all protect
+     * configurations are returned.
+     * </p>
+     * 
+     * @param describeProtectConfigurationsRequest
+     * @return A Java Future containing the result of the DescribeProtectConfigurations operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2Async.DescribeProtectConfigurations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeProtectConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeProtectConfigurationsResult> describeProtectConfigurationsAsync(
+            DescribeProtectConfigurationsRequest describeProtectConfigurationsRequest);
+
+    /**
+     * <p>
+     * Retrieves the protect configurations that match any of filters. If a filter isn’t provided then all protect
+     * configurations are returned.
+     * </p>
+     * 
+     * @param describeProtectConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeProtectConfigurations operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.DescribeProtectConfigurations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeProtectConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeProtectConfigurationsResult> describeProtectConfigurationsAsync(
+            DescribeProtectConfigurationsRequest describeProtectConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeProtectConfigurationsRequest, DescribeProtectConfigurationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the specified registration attachments or all registration attachments associated with your Amazon Web
+     * Services account.
+     * </p>
+     * 
+     * @param describeRegistrationAttachmentsRequest
+     * @return A Java Future containing the result of the DescribeRegistrationAttachments operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2Async.DescribeRegistrationAttachments
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationAttachments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRegistrationAttachmentsResult> describeRegistrationAttachmentsAsync(
+            DescribeRegistrationAttachmentsRequest describeRegistrationAttachmentsRequest);
+
+    /**
+     * <p>
+     * Retrieves the specified registration attachments or all registration attachments associated with your Amazon Web
+     * Services account.
+     * </p>
+     * 
+     * @param describeRegistrationAttachmentsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeRegistrationAttachments operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.DescribeRegistrationAttachments
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationAttachments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRegistrationAttachmentsResult> describeRegistrationAttachmentsAsync(
+            DescribeRegistrationAttachmentsRequest describeRegistrationAttachmentsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeRegistrationAttachmentsRequest, DescribeRegistrationAttachmentsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the specified registration type field definitions. You can use DescribeRegistrationFieldDefinitions to
+     * view the requirements for creating, filling out, and submitting each registration type.
+     * </p>
+     * 
+     * @param describeRegistrationFieldDefinitionsRequest
+     * @return A Java Future containing the result of the DescribeRegistrationFieldDefinitions operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2Async.DescribeRegistrationFieldDefinitions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationFieldDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRegistrationFieldDefinitionsResult> describeRegistrationFieldDefinitionsAsync(
+            DescribeRegistrationFieldDefinitionsRequest describeRegistrationFieldDefinitionsRequest);
+
+    /**
+     * <p>
+     * Retrieves the specified registration type field definitions. You can use DescribeRegistrationFieldDefinitions to
+     * view the requirements for creating, filling out, and submitting each registration type.
+     * </p>
+     * 
+     * @param describeRegistrationFieldDefinitionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeRegistrationFieldDefinitions operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.DescribeRegistrationFieldDefinitions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationFieldDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRegistrationFieldDefinitionsResult> describeRegistrationFieldDefinitionsAsync(
+            DescribeRegistrationFieldDefinitionsRequest describeRegistrationFieldDefinitionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeRegistrationFieldDefinitionsRequest, DescribeRegistrationFieldDefinitionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the specified registration field values.
+     * </p>
+     * 
+     * @param describeRegistrationFieldValuesRequest
+     * @return A Java Future containing the result of the DescribeRegistrationFieldValues operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2Async.DescribeRegistrationFieldValues
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationFieldValues"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRegistrationFieldValuesResult> describeRegistrationFieldValuesAsync(
+            DescribeRegistrationFieldValuesRequest describeRegistrationFieldValuesRequest);
+
+    /**
+     * <p>
+     * Retrieves the specified registration field values.
+     * </p>
+     * 
+     * @param describeRegistrationFieldValuesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeRegistrationFieldValues operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.DescribeRegistrationFieldValues
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationFieldValues"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRegistrationFieldValuesResult> describeRegistrationFieldValuesAsync(
+            DescribeRegistrationFieldValuesRequest describeRegistrationFieldValuesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeRegistrationFieldValuesRequest, DescribeRegistrationFieldValuesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the specified registration section definitions. You can use DescribeRegistrationSectionDefinitions to
+     * view the requirements for creating, filling out, and submitting each registration type.
+     * </p>
+     * 
+     * @param describeRegistrationSectionDefinitionsRequest
+     * @return A Java Future containing the result of the DescribeRegistrationSectionDefinitions operation returned by
+     *         the service.
+     * @sample AmazonPinpointSMSVoiceV2Async.DescribeRegistrationSectionDefinitions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationSectionDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRegistrationSectionDefinitionsResult> describeRegistrationSectionDefinitionsAsync(
+            DescribeRegistrationSectionDefinitionsRequest describeRegistrationSectionDefinitionsRequest);
+
+    /**
+     * <p>
+     * Retrieves the specified registration section definitions. You can use DescribeRegistrationSectionDefinitions to
+     * view the requirements for creating, filling out, and submitting each registration type.
+     * </p>
+     * 
+     * @param describeRegistrationSectionDefinitionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeRegistrationSectionDefinitions operation returned by
+     *         the service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.DescribeRegistrationSectionDefinitions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationSectionDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRegistrationSectionDefinitionsResult> describeRegistrationSectionDefinitionsAsync(
+            DescribeRegistrationSectionDefinitionsRequest describeRegistrationSectionDefinitionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeRegistrationSectionDefinitionsRequest, DescribeRegistrationSectionDefinitionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the specified registration type definitions. You can use DescribeRegistrationTypeDefinitions to view
+     * the requirements for creating, filling out, and submitting each registration type.
+     * </p>
+     * 
+     * @param describeRegistrationTypeDefinitionsRequest
+     * @return A Java Future containing the result of the DescribeRegistrationTypeDefinitions operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2Async.DescribeRegistrationTypeDefinitions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationTypeDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRegistrationTypeDefinitionsResult> describeRegistrationTypeDefinitionsAsync(
+            DescribeRegistrationTypeDefinitionsRequest describeRegistrationTypeDefinitionsRequest);
+
+    /**
+     * <p>
+     * Retrieves the specified registration type definitions. You can use DescribeRegistrationTypeDefinitions to view
+     * the requirements for creating, filling out, and submitting each registration type.
+     * </p>
+     * 
+     * @param describeRegistrationTypeDefinitionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeRegistrationTypeDefinitions operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.DescribeRegistrationTypeDefinitions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationTypeDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRegistrationTypeDefinitionsResult> describeRegistrationTypeDefinitionsAsync(
+            DescribeRegistrationTypeDefinitionsRequest describeRegistrationTypeDefinitionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeRegistrationTypeDefinitionsRequest, DescribeRegistrationTypeDefinitionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the specified registration version.
+     * </p>
+     * 
+     * @param describeRegistrationVersionsRequest
+     * @return A Java Future containing the result of the DescribeRegistrationVersions operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2Async.DescribeRegistrationVersions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRegistrationVersionsResult> describeRegistrationVersionsAsync(
+            DescribeRegistrationVersionsRequest describeRegistrationVersionsRequest);
+
+    /**
+     * <p>
+     * Retrieves the specified registration version.
+     * </p>
+     * 
+     * @param describeRegistrationVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeRegistrationVersions operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.DescribeRegistrationVersions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRegistrationVersionsResult> describeRegistrationVersionsAsync(
+            DescribeRegistrationVersionsRequest describeRegistrationVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeRegistrationVersionsRequest, DescribeRegistrationVersionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the specified registrations.
+     * </p>
+     * 
+     * @param describeRegistrationsRequest
+     * @return A Java Future containing the result of the DescribeRegistrations operation returned by the service.
+     * @sample AmazonPinpointSMSVoiceV2Async.DescribeRegistrations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRegistrationsResult> describeRegistrationsAsync(DescribeRegistrationsRequest describeRegistrationsRequest);
+
+    /**
+     * <p>
+     * Retrieves the specified registrations.
+     * </p>
+     * 
+     * @param describeRegistrationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeRegistrations operation returned by the service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.DescribeRegistrations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRegistrationsResult> describeRegistrationsAsync(DescribeRegistrationsRequest describeRegistrationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeRegistrationsRequest, DescribeRegistrationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes the specified SenderIds or all SenderIds associated with your Amazon Web Services account.
      * </p>
      * <p>
@@ -1125,7 +1967,7 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      * specify SenderIds or filters, the output includes information for all SenderIds.
      * </p>
      * <p>
-     * f you specify a sender ID that isn't valid, an Error is returned.
+     * f you specify a sender ID that isn't valid, an error is returned.
      * </p>
      * 
      * @param describeSenderIdsRequest
@@ -1146,7 +1988,7 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      * specify SenderIds or filters, the output includes information for all SenderIds.
      * </p>
      * <p>
-     * f you specify a sender ID that isn't valid, an Error is returned.
+     * f you specify a sender ID that isn't valid, an error is returned.
      * </p>
      * 
      * @param describeSenderIdsRequest
@@ -1209,10 +2051,47 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
 
     /**
      * <p>
+     * Retrieves the specified verified destiona numbers.
+     * </p>
+     * 
+     * @param describeVerifiedDestinationNumbersRequest
+     * @return A Java Future containing the result of the DescribeVerifiedDestinationNumbers operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2Async.DescribeVerifiedDestinationNumbers
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeVerifiedDestinationNumbers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVerifiedDestinationNumbersResult> describeVerifiedDestinationNumbersAsync(
+            DescribeVerifiedDestinationNumbersRequest describeVerifiedDestinationNumbersRequest);
+
+    /**
+     * <p>
+     * Retrieves the specified verified destiona numbers.
+     * </p>
+     * 
+     * @param describeVerifiedDestinationNumbersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeVerifiedDestinationNumbers operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.DescribeVerifiedDestinationNumbers
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeVerifiedDestinationNumbers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVerifiedDestinationNumbersResult> describeVerifiedDestinationNumbersAsync(
+            DescribeVerifiedDestinationNumbersRequest describeVerifiedDestinationNumbersRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeVerifiedDestinationNumbersRequest, DescribeVerifiedDestinationNumbersResult> asyncHandler);
+
+    /**
+     * <p>
      * Removes the specified origination identity from an existing pool.
      * </p>
      * <p>
-     * If the origination identity isn't associated with the specified pool, an Error is returned.
+     * If the origination identity isn't associated with the specified pool, an error is returned.
      * </p>
      * 
      * @param disassociateOriginationIdentityRequest
@@ -1231,7 +2110,7 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      * Removes the specified origination identity from an existing pool.
      * </p>
      * <p>
-     * If the origination identity isn't associated with the specified pool, an Error is returned.
+     * If the origination identity isn't associated with the specified pool, an error is returned.
      * </p>
      * 
      * @param disassociateOriginationIdentityRequest
@@ -1249,6 +2128,113 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
     java.util.concurrent.Future<DisassociateOriginationIdentityResult> disassociateOriginationIdentityAsync(
             DisassociateOriginationIdentityRequest disassociateOriginationIdentityRequest,
             com.amazonaws.handlers.AsyncHandler<DisassociateOriginationIdentityRequest, DisassociateOriginationIdentityResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociate a protect configuration from a configuration set.
+     * </p>
+     * 
+     * @param disassociateProtectConfigurationRequest
+     * @return A Java Future containing the result of the DisassociateProtectConfiguration operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2Async.DisassociateProtectConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DisassociateProtectConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateProtectConfigurationResult> disassociateProtectConfigurationAsync(
+            DisassociateProtectConfigurationRequest disassociateProtectConfigurationRequest);
+
+    /**
+     * <p>
+     * Disassociate a protect configuration from a configuration set.
+     * </p>
+     * 
+     * @param disassociateProtectConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateProtectConfiguration operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.DisassociateProtectConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DisassociateProtectConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateProtectConfigurationResult> disassociateProtectConfigurationAsync(
+            DisassociateProtectConfigurationRequest disassociateProtectConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateProtectConfigurationRequest, DisassociateProtectConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Discard the current version of the registration.
+     * </p>
+     * 
+     * @param discardRegistrationVersionRequest
+     * @return A Java Future containing the result of the DiscardRegistrationVersion operation returned by the service.
+     * @sample AmazonPinpointSMSVoiceV2Async.DiscardRegistrationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DiscardRegistrationVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DiscardRegistrationVersionResult> discardRegistrationVersionAsync(
+            DiscardRegistrationVersionRequest discardRegistrationVersionRequest);
+
+    /**
+     * <p>
+     * Discard the current version of the registration.
+     * </p>
+     * 
+     * @param discardRegistrationVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DiscardRegistrationVersion operation returned by the service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.DiscardRegistrationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DiscardRegistrationVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DiscardRegistrationVersionResult> discardRegistrationVersionAsync(
+            DiscardRegistrationVersionRequest discardRegistrationVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<DiscardRegistrationVersionRequest, DiscardRegistrationVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieve the CountryRuleSet for the specified NumberCapability from a protect configuration.
+     * </p>
+     * 
+     * @param getProtectConfigurationCountryRuleSetRequest
+     * @return A Java Future containing the result of the GetProtectConfigurationCountryRuleSet operation returned by
+     *         the service.
+     * @sample AmazonPinpointSMSVoiceV2Async.GetProtectConfigurationCountryRuleSet
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/GetProtectConfigurationCountryRuleSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetProtectConfigurationCountryRuleSetResult> getProtectConfigurationCountryRuleSetAsync(
+            GetProtectConfigurationCountryRuleSetRequest getProtectConfigurationCountryRuleSetRequest);
+
+    /**
+     * <p>
+     * Retrieve the CountryRuleSet for the specified NumberCapability from a protect configuration.
+     * </p>
+     * 
+     * @param getProtectConfigurationCountryRuleSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetProtectConfigurationCountryRuleSet operation returned by
+     *         the service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.GetProtectConfigurationCountryRuleSet
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/GetProtectConfigurationCountryRuleSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetProtectConfigurationCountryRuleSetResult> getProtectConfigurationCountryRuleSetAsync(
+            GetProtectConfigurationCountryRuleSetRequest getProtectConfigurationCountryRuleSetRequest,
+            com.amazonaws.handlers.AsyncHandler<GetProtectConfigurationCountryRuleSetRequest, GetProtectConfigurationCountryRuleSetResult> asyncHandler);
 
     /**
      * <p>
@@ -1297,6 +2283,43 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
 
     /**
      * <p>
+     * Retreive all of the origination identies that are associated with a registration.
+     * </p>
+     * 
+     * @param listRegistrationAssociationsRequest
+     * @return A Java Future containing the result of the ListRegistrationAssociations operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2Async.ListRegistrationAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/ListRegistrationAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRegistrationAssociationsResult> listRegistrationAssociationsAsync(
+            ListRegistrationAssociationsRequest listRegistrationAssociationsRequest);
+
+    /**
+     * <p>
+     * Retreive all of the origination identies that are associated with a registration.
+     * </p>
+     * 
+     * @param listRegistrationAssociationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListRegistrationAssociations operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.ListRegistrationAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/ListRegistrationAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRegistrationAssociationsResult> listRegistrationAssociationsAsync(
+            ListRegistrationAssociationsRequest listRegistrationAssociationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListRegistrationAssociationsRequest, ListRegistrationAssociationsResult> asyncHandler);
+
+    /**
+     * <p>
      * List all tags associated with a resource.
      * </p>
      * 
@@ -1337,7 +2360,7 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      * customizable message.
      * </p>
      * <p>
-     * If you specify a keyword that isn't valid, an Error is returned.
+     * If you specify a keyword that isn't valid, an error is returned.
      * </p>
      * 
      * @param putKeywordRequest
@@ -1359,7 +2382,7 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      * customizable message.
      * </p>
      * <p>
-     * If you specify a keyword that isn't valid, an Error is returned.
+     * If you specify a keyword that isn't valid, an error is returned.
      * </p>
      * 
      * @param putKeywordRequest
@@ -1380,7 +2403,7 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      * Creates an opted out destination phone number in the opt-out list.
      * </p>
      * <p>
-     * If the destination phone number isn't valid or if the specified opt-out list doesn't exist, an Error is returned.
+     * If the destination phone number isn't valid or if the specified opt-out list doesn't exist, an error is returned.
      * </p>
      * 
      * @param putOptedOutNumberRequest
@@ -1396,7 +2419,7 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      * Creates an opted out destination phone number in the opt-out list.
      * </p>
      * <p>
-     * If the destination phone number isn't valid or if the specified opt-out list doesn't exist, an Error is returned.
+     * If the destination phone number isn't valid or if the specified opt-out list doesn't exist, an error is returned.
      * </p>
      * 
      * @param putOptedOutNumberRequest
@@ -1414,11 +2437,44 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
 
     /**
      * <p>
+     * Creates or updates a field value for a registration.
+     * </p>
+     * 
+     * @param putRegistrationFieldValueRequest
+     * @return A Java Future containing the result of the PutRegistrationFieldValue operation returned by the service.
+     * @sample AmazonPinpointSMSVoiceV2Async.PutRegistrationFieldValue
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/PutRegistrationFieldValue"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutRegistrationFieldValueResult> putRegistrationFieldValueAsync(
+            PutRegistrationFieldValueRequest putRegistrationFieldValueRequest);
+
+    /**
+     * <p>
+     * Creates or updates a field value for a registration.
+     * </p>
+     * 
+     * @param putRegistrationFieldValueRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutRegistrationFieldValue operation returned by the service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.PutRegistrationFieldValue
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/PutRegistrationFieldValue"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutRegistrationFieldValueResult> putRegistrationFieldValueAsync(
+            PutRegistrationFieldValueRequest putRegistrationFieldValueRequest,
+            com.amazonaws.handlers.AsyncHandler<PutRegistrationFieldValueRequest, PutRegistrationFieldValueResult> asyncHandler);
+
+    /**
+     * <p>
      * Releases an existing origination phone number in your account. Once released, a phone number is no longer
      * available for sending messages.
      * </p>
      * <p>
-     * If the origination phone number has deletion protection enabled or is associated with a pool, an Error is
+     * If the origination phone number has deletion protection enabled or is associated with a pool, an error is
      * returned.
      * </p>
      * 
@@ -1436,7 +2492,7 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      * available for sending messages.
      * </p>
      * <p>
-     * If the origination phone number has deletion protection enabled or is associated with a pool, an Error is
+     * If the origination phone number has deletion protection enabled or is associated with a pool, an error is
      * returned.
      * </p>
      * 
@@ -1452,6 +2508,37 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      */
     java.util.concurrent.Future<ReleasePhoneNumberResult> releasePhoneNumberAsync(ReleasePhoneNumberRequest releasePhoneNumberRequest,
             com.amazonaws.handlers.AsyncHandler<ReleasePhoneNumberRequest, ReleasePhoneNumberResult> asyncHandler);
+
+    /**
+     * <p>
+     * Releases an existing sender ID in your account.
+     * </p>
+     * 
+     * @param releaseSenderIdRequest
+     * @return A Java Future containing the result of the ReleaseSenderId operation returned by the service.
+     * @sample AmazonPinpointSMSVoiceV2Async.ReleaseSenderId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/ReleaseSenderId"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ReleaseSenderIdResult> releaseSenderIdAsync(ReleaseSenderIdRequest releaseSenderIdRequest);
+
+    /**
+     * <p>
+     * Releases an existing sender ID in your account.
+     * </p>
+     * 
+     * @param releaseSenderIdRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ReleaseSenderId operation returned by the service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.ReleaseSenderId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/ReleaseSenderId"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ReleaseSenderIdResult> releaseSenderIdAsync(ReleaseSenderIdRequest releaseSenderIdRequest,
+            com.amazonaws.handlers.AsyncHandler<ReleaseSenderIdRequest, ReleaseSenderIdResult> asyncHandler);
 
     /**
      * <p>
@@ -1487,6 +2574,111 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      */
     java.util.concurrent.Future<RequestPhoneNumberResult> requestPhoneNumberAsync(RequestPhoneNumberRequest requestPhoneNumberRequest,
             com.amazonaws.handlers.AsyncHandler<RequestPhoneNumberRequest, RequestPhoneNumberResult> asyncHandler);
+
+    /**
+     * <p>
+     * Request a new sender ID that doesn't require registration.
+     * </p>
+     * 
+     * @param requestSenderIdRequest
+     * @return A Java Future containing the result of the RequestSenderId operation returned by the service.
+     * @sample AmazonPinpointSMSVoiceV2Async.RequestSenderId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/RequestSenderId"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RequestSenderIdResult> requestSenderIdAsync(RequestSenderIdRequest requestSenderIdRequest);
+
+    /**
+     * <p>
+     * Request a new sender ID that doesn't require registration.
+     * </p>
+     * 
+     * @param requestSenderIdRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RequestSenderId operation returned by the service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.RequestSenderId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/RequestSenderId"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RequestSenderIdResult> requestSenderIdAsync(RequestSenderIdRequest requestSenderIdRequest,
+            com.amazonaws.handlers.AsyncHandler<RequestSenderIdRequest, RequestSenderIdResult> asyncHandler);
+
+    /**
+     * <p>
+     * Before you can send test messages to a verified destination phone number you need to opt-in the verified
+     * destination phone number. Creates a new text message with a verification code and send it to a verified
+     * destination phone number. Once you have the verification code use <a>VerifyDestinationNumber</a> to opt-in the
+     * verified destination phone number to receive messages.
+     * </p>
+     * 
+     * @param sendDestinationNumberVerificationCodeRequest
+     * @return A Java Future containing the result of the SendDestinationNumberVerificationCode operation returned by
+     *         the service.
+     * @sample AmazonPinpointSMSVoiceV2Async.SendDestinationNumberVerificationCode
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SendDestinationNumberVerificationCode"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SendDestinationNumberVerificationCodeResult> sendDestinationNumberVerificationCodeAsync(
+            SendDestinationNumberVerificationCodeRequest sendDestinationNumberVerificationCodeRequest);
+
+    /**
+     * <p>
+     * Before you can send test messages to a verified destination phone number you need to opt-in the verified
+     * destination phone number. Creates a new text message with a verification code and send it to a verified
+     * destination phone number. Once you have the verification code use <a>VerifyDestinationNumber</a> to opt-in the
+     * verified destination phone number to receive messages.
+     * </p>
+     * 
+     * @param sendDestinationNumberVerificationCodeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SendDestinationNumberVerificationCode operation returned by
+     *         the service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.SendDestinationNumberVerificationCode
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SendDestinationNumberVerificationCode"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SendDestinationNumberVerificationCodeResult> sendDestinationNumberVerificationCodeAsync(
+            SendDestinationNumberVerificationCodeRequest sendDestinationNumberVerificationCodeRequest,
+            com.amazonaws.handlers.AsyncHandler<SendDestinationNumberVerificationCodeRequest, SendDestinationNumberVerificationCodeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new multimedia message (MMS) and sends it to a recipient's phone number.
+     * </p>
+     * 
+     * @param sendMediaMessageRequest
+     * @return A Java Future containing the result of the SendMediaMessage operation returned by the service.
+     * @sample AmazonPinpointSMSVoiceV2Async.SendMediaMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SendMediaMessage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SendMediaMessageResult> sendMediaMessageAsync(SendMediaMessageRequest sendMediaMessageRequest);
+
+    /**
+     * <p>
+     * Creates a new multimedia message (MMS) and sends it to a recipient's phone number.
+     * </p>
+     * 
+     * @param sendMediaMessageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SendMediaMessage operation returned by the service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.SendMediaMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SendMediaMessage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SendMediaMessageResult> sendMediaMessageAsync(SendMediaMessageRequest sendMediaMessageRequest,
+            com.amazonaws.handlers.AsyncHandler<SendMediaMessageRequest, SendMediaMessageResult> asyncHandler);
 
     /**
      * <p>
@@ -1535,7 +2727,7 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
 
     /**
      * <p>
-     * Allows you to send a request that sends a text message through Amazon Pinpoint. This operation uses <a
+     * Allows you to send a request that sends a voice message through Amazon Pinpoint. This operation uses <a
      * href="http://aws.amazon.com/polly/">Amazon Polly</a> to convert a text script into a voice message.
      * </p>
      * 
@@ -1549,7 +2741,7 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
 
     /**
      * <p>
-     * Allows you to send a request that sends a text message through Amazon Pinpoint. This operation uses <a
+     * Allows you to send a request that sends a voice message through Amazon Pinpoint. This operation uses <a
      * href="http://aws.amazon.com/polly/">Amazon Polly</a> to convert a text script into a voice message.
      * </p>
      * 
@@ -1565,6 +2757,45 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      */
     java.util.concurrent.Future<SendVoiceMessageResult> sendVoiceMessageAsync(SendVoiceMessageRequest sendVoiceMessageRequest,
             com.amazonaws.handlers.AsyncHandler<SendVoiceMessageRequest, SendVoiceMessageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Set a protect configuration as your account default. You can only have one account default protect configuration
+     * at a time. The current account default protect configuration is replaced with the provided protect configuration.
+     * </p>
+     * 
+     * @param setAccountDefaultProtectConfigurationRequest
+     * @return A Java Future containing the result of the SetAccountDefaultProtectConfiguration operation returned by
+     *         the service.
+     * @sample AmazonPinpointSMSVoiceV2Async.SetAccountDefaultProtectConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SetAccountDefaultProtectConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SetAccountDefaultProtectConfigurationResult> setAccountDefaultProtectConfigurationAsync(
+            SetAccountDefaultProtectConfigurationRequest setAccountDefaultProtectConfigurationRequest);
+
+    /**
+     * <p>
+     * Set a protect configuration as your account default. You can only have one account default protect configuration
+     * at a time. The current account default protect configuration is replaced with the provided protect configuration.
+     * </p>
+     * 
+     * @param setAccountDefaultProtectConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SetAccountDefaultProtectConfiguration operation returned by
+     *         the service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.SetAccountDefaultProtectConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SetAccountDefaultProtectConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SetAccountDefaultProtectConfigurationResult> setAccountDefaultProtectConfigurationAsync(
+            SetAccountDefaultProtectConfigurationRequest setAccountDefaultProtectConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<SetAccountDefaultProtectConfigurationRequest, SetAccountDefaultProtectConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -1652,6 +2883,45 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
 
     /**
      * <p>
+     * Sets an account level monthly spend limit override for sending MMS messages. The requested spend limit must be
+     * less than or equal to the <code>MaxLimit</code>, which is set by Amazon Web Services.
+     * </p>
+     * 
+     * @param setMediaMessageSpendLimitOverrideRequest
+     * @return A Java Future containing the result of the SetMediaMessageSpendLimitOverride operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2Async.SetMediaMessageSpendLimitOverride
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SetMediaMessageSpendLimitOverride"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SetMediaMessageSpendLimitOverrideResult> setMediaMessageSpendLimitOverrideAsync(
+            SetMediaMessageSpendLimitOverrideRequest setMediaMessageSpendLimitOverrideRequest);
+
+    /**
+     * <p>
+     * Sets an account level monthly spend limit override for sending MMS messages. The requested spend limit must be
+     * less than or equal to the <code>MaxLimit</code>, which is set by Amazon Web Services.
+     * </p>
+     * 
+     * @param setMediaMessageSpendLimitOverrideRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SetMediaMessageSpendLimitOverride operation returned by the
+     *         service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.SetMediaMessageSpendLimitOverride
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SetMediaMessageSpendLimitOverride"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SetMediaMessageSpendLimitOverrideResult> setMediaMessageSpendLimitOverrideAsync(
+            SetMediaMessageSpendLimitOverrideRequest setMediaMessageSpendLimitOverrideRequest,
+            com.amazonaws.handlers.AsyncHandler<SetMediaMessageSpendLimitOverrideRequest, SetMediaMessageSpendLimitOverrideResult> asyncHandler);
+
+    /**
+     * <p>
      * Sets an account level monthly spend limit override for sending text messages. The requested spend limit must be
      * less than or equal to the <code>MaxLimit</code>, which is set by Amazon Web Services.
      * </p>
@@ -1727,6 +2997,39 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
     java.util.concurrent.Future<SetVoiceMessageSpendLimitOverrideResult> setVoiceMessageSpendLimitOverrideAsync(
             SetVoiceMessageSpendLimitOverrideRequest setVoiceMessageSpendLimitOverrideRequest,
             com.amazonaws.handlers.AsyncHandler<SetVoiceMessageSpendLimitOverrideRequest, SetVoiceMessageSpendLimitOverrideResult> asyncHandler);
+
+    /**
+     * <p>
+     * Submit the specified registration for review and approval.
+     * </p>
+     * 
+     * @param submitRegistrationVersionRequest
+     * @return A Java Future containing the result of the SubmitRegistrationVersion operation returned by the service.
+     * @sample AmazonPinpointSMSVoiceV2Async.SubmitRegistrationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SubmitRegistrationVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SubmitRegistrationVersionResult> submitRegistrationVersionAsync(
+            SubmitRegistrationVersionRequest submitRegistrationVersionRequest);
+
+    /**
+     * <p>
+     * Submit the specified registration for review and approval.
+     * </p>
+     * 
+     * @param submitRegistrationVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SubmitRegistrationVersion operation returned by the service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.SubmitRegistrationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SubmitRegistrationVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SubmitRegistrationVersionResult> submitRegistrationVersionAsync(
+            SubmitRegistrationVersionRequest submitRegistrationVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<SubmitRegistrationVersionRequest, SubmitRegistrationVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -1854,7 +3157,7 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      * disable deletion protection.
      * </p>
      * <p>
-     * If the origination phone number is associated with a pool, an Error is returned.
+     * If the origination phone number is associated with a pool, an error is returned.
      * </p>
      * 
      * @param updatePhoneNumberRequest
@@ -1872,7 +3175,7 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      * disable deletion protection.
      * </p>
      * <p>
-     * If the origination phone number is associated with a pool, an Error is returned.
+     * If the origination phone number is associated with a pool, an error is returned.
      * </p>
      * 
      * @param updatePhoneNumberRequest
@@ -1922,5 +3225,143 @@ public interface AmazonPinpointSMSVoiceV2Async extends AmazonPinpointSMSVoiceV2 
      */
     java.util.concurrent.Future<UpdatePoolResult> updatePoolAsync(UpdatePoolRequest updatePoolRequest,
             com.amazonaws.handlers.AsyncHandler<UpdatePoolRequest, UpdatePoolResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update the setting for an existing protect configuration.
+     * </p>
+     * 
+     * @param updateProtectConfigurationRequest
+     * @return A Java Future containing the result of the UpdateProtectConfiguration operation returned by the service.
+     * @sample AmazonPinpointSMSVoiceV2Async.UpdateProtectConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/UpdateProtectConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateProtectConfigurationResult> updateProtectConfigurationAsync(
+            UpdateProtectConfigurationRequest updateProtectConfigurationRequest);
+
+    /**
+     * <p>
+     * Update the setting for an existing protect configuration.
+     * </p>
+     * 
+     * @param updateProtectConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateProtectConfiguration operation returned by the service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.UpdateProtectConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/UpdateProtectConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateProtectConfigurationResult> updateProtectConfigurationAsync(
+            UpdateProtectConfigurationRequest updateProtectConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateProtectConfigurationRequest, UpdateProtectConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update a country rule set to <code>ALLOW</code> or <code>BLOCK</code> messages to be sent to the specified
+     * destination counties. You can update one or multiple countries at a time. The updates are only applied to the
+     * specified NumberCapability type.
+     * </p>
+     * 
+     * @param updateProtectConfigurationCountryRuleSetRequest
+     * @return A Java Future containing the result of the UpdateProtectConfigurationCountryRuleSet operation returned by
+     *         the service.
+     * @sample AmazonPinpointSMSVoiceV2Async.UpdateProtectConfigurationCountryRuleSet
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/UpdateProtectConfigurationCountryRuleSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateProtectConfigurationCountryRuleSetResult> updateProtectConfigurationCountryRuleSetAsync(
+            UpdateProtectConfigurationCountryRuleSetRequest updateProtectConfigurationCountryRuleSetRequest);
+
+    /**
+     * <p>
+     * Update a country rule set to <code>ALLOW</code> or <code>BLOCK</code> messages to be sent to the specified
+     * destination counties. You can update one or multiple countries at a time. The updates are only applied to the
+     * specified NumberCapability type.
+     * </p>
+     * 
+     * @param updateProtectConfigurationCountryRuleSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateProtectConfigurationCountryRuleSet operation returned by
+     *         the service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.UpdateProtectConfigurationCountryRuleSet
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/UpdateProtectConfigurationCountryRuleSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateProtectConfigurationCountryRuleSetResult> updateProtectConfigurationCountryRuleSetAsync(
+            UpdateProtectConfigurationCountryRuleSetRequest updateProtectConfigurationCountryRuleSetRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateProtectConfigurationCountryRuleSetRequest, UpdateProtectConfigurationCountryRuleSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the configuration of an existing sender ID.
+     * </p>
+     * 
+     * @param updateSenderIdRequest
+     * @return A Java Future containing the result of the UpdateSenderId operation returned by the service.
+     * @sample AmazonPinpointSMSVoiceV2Async.UpdateSenderId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/UpdateSenderId"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSenderIdResult> updateSenderIdAsync(UpdateSenderIdRequest updateSenderIdRequest);
+
+    /**
+     * <p>
+     * Updates the configuration of an existing sender ID.
+     * </p>
+     * 
+     * @param updateSenderIdRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateSenderId operation returned by the service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.UpdateSenderId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/UpdateSenderId"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSenderIdResult> updateSenderIdAsync(UpdateSenderIdRequest updateSenderIdRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateSenderIdRequest, UpdateSenderIdResult> asyncHandler);
+
+    /**
+     * <p>
+     * Use the verification code that was received by the verified destination phone number to opt-in the verified
+     * destination phone number to receive more messages.
+     * </p>
+     * 
+     * @param verifyDestinationNumberRequest
+     * @return A Java Future containing the result of the VerifyDestinationNumber operation returned by the service.
+     * @sample AmazonPinpointSMSVoiceV2Async.VerifyDestinationNumber
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/VerifyDestinationNumber"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<VerifyDestinationNumberResult> verifyDestinationNumberAsync(VerifyDestinationNumberRequest verifyDestinationNumberRequest);
+
+    /**
+     * <p>
+     * Use the verification code that was received by the verified destination phone number to opt-in the verified
+     * destination phone number to receive more messages.
+     * </p>
+     * 
+     * @param verifyDestinationNumberRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the VerifyDestinationNumber operation returned by the service.
+     * @sample AmazonPinpointSMSVoiceV2AsyncHandler.VerifyDestinationNumber
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/VerifyDestinationNumber"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<VerifyDestinationNumberResult> verifyDestinationNumberAsync(VerifyDestinationNumberRequest verifyDestinationNumberRequest,
+            com.amazonaws.handlers.AsyncHandler<VerifyDestinationNumberRequest, VerifyDestinationNumberResult> asyncHandler);
 
 }

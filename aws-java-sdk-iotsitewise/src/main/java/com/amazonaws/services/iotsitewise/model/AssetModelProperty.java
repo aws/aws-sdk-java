@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,26 @@ public class AssetModelProperty implements Serializable, Cloneable, StructuredPo
      * <p>
      * The ID of the asset model property.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you are callling <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     * >UpdateAssetModel</a> to create a <i>new</i> property: You can specify its ID here, if desired. IoT SiteWise
+     * automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to
+     * supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be
+     * globally unique.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you are calling UpdateAssetModel to modify an <i>existing</i> property: This can be either the actual ID in
+     * UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information,
+     * see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">
+     * Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String id;
     /**
@@ -65,14 +85,75 @@ public class AssetModelProperty implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private PropertyType type;
+    /**
+     * <p>
+     * The structured path to the property from the root of the asset model.
+     * </p>
+     */
+    private java.util.List<AssetModelPropertyPathSegment> path;
+    /**
+     * <p>
+     * The external ID (if any) provided in the <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html"
+     * >CreateAssetModel</a> or <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     * >UpdateAssetModel</a> operation. You can assign an external ID by specifying this value as part of a call to <a
+     * href
+     * ="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>.
+     * However, you can't change the external ID if one is already assigned. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     */
+    private String externalId;
 
     /**
      * <p>
      * The ID of the asset model property.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you are callling <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     * >UpdateAssetModel</a> to create a <i>new</i> property: You can specify its ID here, if desired. IoT SiteWise
+     * automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to
+     * supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be
+     * globally unique.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you are calling UpdateAssetModel to modify an <i>existing</i> property: This can be either the actual ID in
+     * UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information,
+     * see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">
+     * Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param id
-     *        The ID of the asset model property.
+     *        The ID of the asset model property.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you are callling <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     *        >UpdateAssetModel</a> to create a <i>new</i> property: You can specify its ID here, if desired. IoT
+     *        SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if you
+     *        prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own ID,
+     *        it must be globally unique.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you are calling UpdateAssetModel to modify an <i>existing</i> property: This can be either the actual
+     *        ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     *        >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     *        </p>
+     *        </li>
      */
 
     public void setId(String id) {
@@ -83,8 +164,48 @@ public class AssetModelProperty implements Serializable, Cloneable, StructuredPo
      * <p>
      * The ID of the asset model property.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you are callling <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     * >UpdateAssetModel</a> to create a <i>new</i> property: You can specify its ID here, if desired. IoT SiteWise
+     * automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to
+     * supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be
+     * globally unique.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you are calling UpdateAssetModel to modify an <i>existing</i> property: This can be either the actual ID in
+     * UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information,
+     * see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">
+     * Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The ID of the asset model property.
+     * @return The ID of the asset model property.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If you are callling <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     *         >UpdateAssetModel</a> to create a <i>new</i> property: You can specify its ID here, if desired. IoT
+     *         SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if
+     *         you prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own
+     *         ID, it must be globally unique.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you are calling UpdateAssetModel to modify an <i>existing</i> property: This can be either the actual
+     *         ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     *         >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     *         </p>
+     *         </li>
      */
 
     public String getId() {
@@ -95,9 +216,49 @@ public class AssetModelProperty implements Serializable, Cloneable, StructuredPo
      * <p>
      * The ID of the asset model property.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you are callling <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     * >UpdateAssetModel</a> to create a <i>new</i> property: You can specify its ID here, if desired. IoT SiteWise
+     * automatically generates a unique ID for you, so this parameter is never required. However, if you prefer to
+     * supply your own ID instead, you can specify it here in UUID format. If you specify your own ID, it must be
+     * globally unique.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you are calling UpdateAssetModel to modify an <i>existing</i> property: This can be either the actual ID in
+     * UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information,
+     * see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">
+     * Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param id
-     *        The ID of the asset model property.
+     *        The ID of the asset model property.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If you are callling <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     *        >UpdateAssetModel</a> to create a <i>new</i> property: You can specify its ID here, if desired. IoT
+     *        SiteWise automatically generates a unique ID for you, so this parameter is never required. However, if you
+     *        prefer to supply your own ID instead, you can specify it here in UUID format. If you specify your own ID,
+     *        it must be globally unique.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you are calling UpdateAssetModel to modify an <i>existing</i> property: This can be either the actual
+     *        ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     *        >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -332,6 +493,170 @@ public class AssetModelProperty implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The structured path to the property from the root of the asset model.
+     * </p>
+     * 
+     * @return The structured path to the property from the root of the asset model.
+     */
+
+    public java.util.List<AssetModelPropertyPathSegment> getPath() {
+        return path;
+    }
+
+    /**
+     * <p>
+     * The structured path to the property from the root of the asset model.
+     * </p>
+     * 
+     * @param path
+     *        The structured path to the property from the root of the asset model.
+     */
+
+    public void setPath(java.util.Collection<AssetModelPropertyPathSegment> path) {
+        if (path == null) {
+            this.path = null;
+            return;
+        }
+
+        this.path = new java.util.ArrayList<AssetModelPropertyPathSegment>(path);
+    }
+
+    /**
+     * <p>
+     * The structured path to the property from the root of the asset model.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPath(java.util.Collection)} or {@link #withPath(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param path
+     *        The structured path to the property from the root of the asset model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetModelProperty withPath(AssetModelPropertyPathSegment... path) {
+        if (this.path == null) {
+            setPath(new java.util.ArrayList<AssetModelPropertyPathSegment>(path.length));
+        }
+        for (AssetModelPropertyPathSegment ele : path) {
+            this.path.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The structured path to the property from the root of the asset model.
+     * </p>
+     * 
+     * @param path
+     *        The structured path to the property from the root of the asset model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetModelProperty withPath(java.util.Collection<AssetModelPropertyPathSegment> path) {
+        setPath(path);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The external ID (if any) provided in the <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html"
+     * >CreateAssetModel</a> or <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     * >UpdateAssetModel</a> operation. You can assign an external ID by specifying this value as part of a call to <a
+     * href
+     * ="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>.
+     * However, you can't change the external ID if one is already assigned. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param externalId
+     *        The external ID (if any) provided in the <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html"
+     *        >CreateAssetModel</a> or <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     *        >UpdateAssetModel</a> operation. You can assign an external ID by specifying this value as part of a call
+     *        to <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">
+     *        UpdateAssetModel</a>. However, you can't change the external ID if one is already assigned. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *        external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     */
+
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
+    }
+
+    /**
+     * <p>
+     * The external ID (if any) provided in the <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html"
+     * >CreateAssetModel</a> or <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     * >UpdateAssetModel</a> operation. You can assign an external ID by specifying this value as part of a call to <a
+     * href
+     * ="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>.
+     * However, you can't change the external ID if one is already assigned. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @return The external ID (if any) provided in the <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html"
+     *         >CreateAssetModel</a> or <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     *         >UpdateAssetModel</a> operation. You can assign an external ID by specifying this value as part of a call
+     *         to <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">
+     *         UpdateAssetModel</a>. However, you can't change the external ID if one is already assigned. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *         external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     */
+
+    public String getExternalId() {
+        return this.externalId;
+    }
+
+    /**
+     * <p>
+     * The external ID (if any) provided in the <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html"
+     * >CreateAssetModel</a> or <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     * >UpdateAssetModel</a> operation. You can assign an external ID by specifying this value as part of a call to <a
+     * href
+     * ="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>.
+     * However, you can't change the external ID if one is already assigned. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param externalId
+     *        The external ID (if any) provided in the <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html"
+     *        >CreateAssetModel</a> or <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
+     *        >UpdateAssetModel</a> operation. You can assign an external ID by specifying this value as part of a call
+     *        to <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">
+     *        UpdateAssetModel</a>. However, you can't change the external ID if one is already assigned. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *        external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetModelProperty withExternalId(String externalId) {
+        setExternalId(externalId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -354,7 +679,11 @@ public class AssetModelProperty implements Serializable, Cloneable, StructuredPo
         if (getUnit() != null)
             sb.append("Unit: ").append(getUnit()).append(",");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getPath() != null)
+            sb.append("Path: ").append(getPath()).append(",");
+        if (getExternalId() != null)
+            sb.append("ExternalId: ").append(getExternalId());
         sb.append("}");
         return sb.toString();
     }
@@ -393,6 +722,14 @@ public class AssetModelProperty implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getPath() == null ^ this.getPath() == null)
+            return false;
+        if (other.getPath() != null && other.getPath().equals(this.getPath()) == false)
+            return false;
+        if (other.getExternalId() == null ^ this.getExternalId() == null)
+            return false;
+        if (other.getExternalId() != null && other.getExternalId().equals(this.getExternalId()) == false)
+            return false;
         return true;
     }
 
@@ -407,6 +744,8 @@ public class AssetModelProperty implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getDataTypeSpec() == null) ? 0 : getDataTypeSpec().hashCode());
         hashCode = prime * hashCode + ((getUnit() == null) ? 0 : getUnit().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getPath() == null) ? 0 : getPath().hashCode());
+        hashCode = prime * hashCode + ((getExternalId() == null) ? 0 : getExternalId().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,14 @@ public class GetDataflowEndpointGroupResultJsonUnmarshaller implements Unmarshal
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("contactPostPassDurationSeconds", targetDepth)) {
+                    context.nextToken();
+                    getDataflowEndpointGroupResult.setContactPostPassDurationSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("contactPrePassDurationSeconds", targetDepth)) {
+                    context.nextToken();
+                    getDataflowEndpointGroupResult.setContactPrePassDurationSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("dataflowEndpointGroupArn", targetDepth)) {
                     context.nextToken();
                     getDataflowEndpointGroupResult.setDataflowEndpointGroupArn(context.getUnmarshaller(String.class).unmarshall(context));

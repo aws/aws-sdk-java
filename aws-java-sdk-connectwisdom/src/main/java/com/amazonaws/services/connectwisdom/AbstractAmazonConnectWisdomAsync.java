@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -80,6 +80,19 @@ public class AbstractAmazonConnectWisdomAsync extends AbstractAmazonConnectWisdo
     }
 
     @Override
+    public java.util.concurrent.Future<CreateQuickResponseResult> createQuickResponseAsync(CreateQuickResponseRequest request) {
+
+        return createQuickResponseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateQuickResponseResult> createQuickResponseAsync(CreateQuickResponseRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateQuickResponseRequest, CreateQuickResponseResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateSessionResult> createSessionAsync(CreateSessionRequest request) {
 
         return createSessionAsync(request, null);
@@ -132,6 +145,19 @@ public class AbstractAmazonConnectWisdomAsync extends AbstractAmazonConnectWisdo
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteImportJobResult> deleteImportJobAsync(DeleteImportJobRequest request) {
+
+        return deleteImportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteImportJobResult> deleteImportJobAsync(DeleteImportJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteImportJobRequest, DeleteImportJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteKnowledgeBaseResult> deleteKnowledgeBaseAsync(DeleteKnowledgeBaseRequest request) {
 
         return deleteKnowledgeBaseAsync(request, null);
@@ -140,6 +166,19 @@ public class AbstractAmazonConnectWisdomAsync extends AbstractAmazonConnectWisdo
     @Override
     public java.util.concurrent.Future<DeleteKnowledgeBaseResult> deleteKnowledgeBaseAsync(DeleteKnowledgeBaseRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteKnowledgeBaseRequest, DeleteKnowledgeBaseResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteQuickResponseResult> deleteQuickResponseAsync(DeleteQuickResponseRequest request) {
+
+        return deleteQuickResponseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteQuickResponseResult> deleteQuickResponseAsync(DeleteQuickResponseRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteQuickResponseRequest, DeleteQuickResponseResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -197,6 +236,19 @@ public class AbstractAmazonConnectWisdomAsync extends AbstractAmazonConnectWisdo
     }
 
     @Override
+    public java.util.concurrent.Future<GetImportJobResult> getImportJobAsync(GetImportJobRequest request) {
+
+        return getImportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetImportJobResult> getImportJobAsync(GetImportJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetImportJobRequest, GetImportJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetKnowledgeBaseResult> getKnowledgeBaseAsync(GetKnowledgeBaseRequest request) {
 
         return getKnowledgeBaseAsync(request, null);
@@ -210,12 +262,27 @@ public class AbstractAmazonConnectWisdomAsync extends AbstractAmazonConnectWisdo
     }
 
     @Override
+    public java.util.concurrent.Future<GetQuickResponseResult> getQuickResponseAsync(GetQuickResponseRequest request) {
+
+        return getQuickResponseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetQuickResponseResult> getQuickResponseAsync(GetQuickResponseRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetQuickResponseRequest, GetQuickResponseResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    @Deprecated
     public java.util.concurrent.Future<GetRecommendationsResult> getRecommendationsAsync(GetRecommendationsRequest request) {
 
         return getRecommendationsAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetRecommendationsResult> getRecommendationsAsync(GetRecommendationsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetRecommendationsRequest, GetRecommendationsResult> asyncHandler) {
 
@@ -275,6 +342,19 @@ public class AbstractAmazonConnectWisdomAsync extends AbstractAmazonConnectWisdo
     }
 
     @Override
+    public java.util.concurrent.Future<ListImportJobsResult> listImportJobsAsync(ListImportJobsRequest request) {
+
+        return listImportJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImportJobsResult> listImportJobsAsync(ListImportJobsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListImportJobsRequest, ListImportJobsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListKnowledgeBasesResult> listKnowledgeBasesAsync(ListKnowledgeBasesRequest request) {
 
         return listKnowledgeBasesAsync(request, null);
@@ -283,6 +363,19 @@ public class AbstractAmazonConnectWisdomAsync extends AbstractAmazonConnectWisdo
     @Override
     public java.util.concurrent.Future<ListKnowledgeBasesResult> listKnowledgeBasesAsync(ListKnowledgeBasesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListKnowledgeBasesRequest, ListKnowledgeBasesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListQuickResponsesResult> listQuickResponsesAsync(ListQuickResponsesRequest request) {
+
+        return listQuickResponsesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListQuickResponsesResult> listQuickResponsesAsync(ListQuickResponsesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListQuickResponsesRequest, ListQuickResponsesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -314,12 +407,14 @@ public class AbstractAmazonConnectWisdomAsync extends AbstractAmazonConnectWisdo
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<QueryAssistantResult> queryAssistantAsync(QueryAssistantRequest request) {
 
         return queryAssistantAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<QueryAssistantResult> queryAssistantAsync(QueryAssistantRequest request,
             com.amazonaws.handlers.AsyncHandler<QueryAssistantRequest, QueryAssistantResult> asyncHandler) {
 
@@ -353,6 +448,19 @@ public class AbstractAmazonConnectWisdomAsync extends AbstractAmazonConnectWisdo
     }
 
     @Override
+    public java.util.concurrent.Future<SearchQuickResponsesResult> searchQuickResponsesAsync(SearchQuickResponsesRequest request) {
+
+        return searchQuickResponsesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchQuickResponsesResult> searchQuickResponsesAsync(SearchQuickResponsesRequest request,
+            com.amazonaws.handlers.AsyncHandler<SearchQuickResponsesRequest, SearchQuickResponsesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<SearchSessionsResult> searchSessionsAsync(SearchSessionsRequest request) {
 
         return searchSessionsAsync(request, null);
@@ -374,6 +482,19 @@ public class AbstractAmazonConnectWisdomAsync extends AbstractAmazonConnectWisdo
     @Override
     public java.util.concurrent.Future<StartContentUploadResult> startContentUploadAsync(StartContentUploadRequest request,
             com.amazonaws.handlers.AsyncHandler<StartContentUploadRequest, StartContentUploadResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartImportJobResult> startImportJobAsync(StartImportJobRequest request) {
+
+        return startImportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartImportJobResult> startImportJobAsync(StartImportJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartImportJobRequest, StartImportJobResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -426,6 +547,19 @@ public class AbstractAmazonConnectWisdomAsync extends AbstractAmazonConnectWisdo
     @Override
     public java.util.concurrent.Future<UpdateKnowledgeBaseTemplateUriResult> updateKnowledgeBaseTemplateUriAsync(UpdateKnowledgeBaseTemplateUriRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateKnowledgeBaseTemplateUriRequest, UpdateKnowledgeBaseTemplateUriResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateQuickResponseResult> updateQuickResponseAsync(UpdateQuickResponseRequest request) {
+
+        return updateQuickResponseAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateQuickResponseResult> updateQuickResponseAsync(UpdateQuickResponseRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateQuickResponseRequest, UpdateQuickResponseResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,7 +45,7 @@ public class CreateLoadBalancerTlsCertificateRequest extends com.amazonaws.Amazo
     private String certificateName;
     /**
      * <p>
-     * The domain name (e.g., <code>example.com</code>) for your SSL/TLS certificate.
+     * The domain name (<code>example.com</code>) for your SSL/TLS certificate.
      * </p>
      */
     private String certificateDomainName;
@@ -53,7 +53,7 @@ public class CreateLoadBalancerTlsCertificateRequest extends com.amazonaws.Amazo
      * <p>
      * An array of strings listing alternative domains and subdomains for your SSL/TLS certificate. Lightsail will
      * de-dupe the names for you. You can have a maximum of 9 alternative names (in addition to the 1 primary domain).
-     * We do not support wildcards (e.g., <code>*.example.com</code>).
+     * We do not support wildcards (<code>*.example.com</code>).
      * </p>
      */
     private java.util.List<String> certificateAlternativeNames;
@@ -182,11 +182,11 @@ public class CreateLoadBalancerTlsCertificateRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The domain name (e.g., <code>example.com</code>) for your SSL/TLS certificate.
+     * The domain name (<code>example.com</code>) for your SSL/TLS certificate.
      * </p>
      * 
      * @param certificateDomainName
-     *        The domain name (e.g., <code>example.com</code>) for your SSL/TLS certificate.
+     *        The domain name (<code>example.com</code>) for your SSL/TLS certificate.
      */
 
     public void setCertificateDomainName(String certificateDomainName) {
@@ -195,10 +195,10 @@ public class CreateLoadBalancerTlsCertificateRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The domain name (e.g., <code>example.com</code>) for your SSL/TLS certificate.
+     * The domain name (<code>example.com</code>) for your SSL/TLS certificate.
      * </p>
      * 
-     * @return The domain name (e.g., <code>example.com</code>) for your SSL/TLS certificate.
+     * @return The domain name (<code>example.com</code>) for your SSL/TLS certificate.
      */
 
     public String getCertificateDomainName() {
@@ -207,11 +207,11 @@ public class CreateLoadBalancerTlsCertificateRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The domain name (e.g., <code>example.com</code>) for your SSL/TLS certificate.
+     * The domain name (<code>example.com</code>) for your SSL/TLS certificate.
      * </p>
      * 
      * @param certificateDomainName
-     *        The domain name (e.g., <code>example.com</code>) for your SSL/TLS certificate.
+     *        The domain name (<code>example.com</code>) for your SSL/TLS certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -224,12 +224,12 @@ public class CreateLoadBalancerTlsCertificateRequest extends com.amazonaws.Amazo
      * <p>
      * An array of strings listing alternative domains and subdomains for your SSL/TLS certificate. Lightsail will
      * de-dupe the names for you. You can have a maximum of 9 alternative names (in addition to the 1 primary domain).
-     * We do not support wildcards (e.g., <code>*.example.com</code>).
+     * We do not support wildcards (<code>*.example.com</code>).
      * </p>
      * 
      * @return An array of strings listing alternative domains and subdomains for your SSL/TLS certificate. Lightsail
      *         will de-dupe the names for you. You can have a maximum of 9 alternative names (in addition to the 1
-     *         primary domain). We do not support wildcards (e.g., <code>*.example.com</code>).
+     *         primary domain). We do not support wildcards (<code>*.example.com</code>).
      */
 
     public java.util.List<String> getCertificateAlternativeNames() {
@@ -240,13 +240,13 @@ public class CreateLoadBalancerTlsCertificateRequest extends com.amazonaws.Amazo
      * <p>
      * An array of strings listing alternative domains and subdomains for your SSL/TLS certificate. Lightsail will
      * de-dupe the names for you. You can have a maximum of 9 alternative names (in addition to the 1 primary domain).
-     * We do not support wildcards (e.g., <code>*.example.com</code>).
+     * We do not support wildcards (<code>*.example.com</code>).
      * </p>
      * 
      * @param certificateAlternativeNames
      *        An array of strings listing alternative domains and subdomains for your SSL/TLS certificate. Lightsail
      *        will de-dupe the names for you. You can have a maximum of 9 alternative names (in addition to the 1
-     *        primary domain). We do not support wildcards (e.g., <code>*.example.com</code>).
+     *        primary domain). We do not support wildcards (<code>*.example.com</code>).
      */
 
     public void setCertificateAlternativeNames(java.util.Collection<String> certificateAlternativeNames) {
@@ -262,7 +262,7 @@ public class CreateLoadBalancerTlsCertificateRequest extends com.amazonaws.Amazo
      * <p>
      * An array of strings listing alternative domains and subdomains for your SSL/TLS certificate. Lightsail will
      * de-dupe the names for you. You can have a maximum of 9 alternative names (in addition to the 1 primary domain).
-     * We do not support wildcards (e.g., <code>*.example.com</code>).
+     * We do not support wildcards (<code>*.example.com</code>).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -273,7 +273,7 @@ public class CreateLoadBalancerTlsCertificateRequest extends com.amazonaws.Amazo
      * @param certificateAlternativeNames
      *        An array of strings listing alternative domains and subdomains for your SSL/TLS certificate. Lightsail
      *        will de-dupe the names for you. You can have a maximum of 9 alternative names (in addition to the 1
-     *        primary domain). We do not support wildcards (e.g., <code>*.example.com</code>).
+     *        primary domain). We do not support wildcards (<code>*.example.com</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -291,13 +291,13 @@ public class CreateLoadBalancerTlsCertificateRequest extends com.amazonaws.Amazo
      * <p>
      * An array of strings listing alternative domains and subdomains for your SSL/TLS certificate. Lightsail will
      * de-dupe the names for you. You can have a maximum of 9 alternative names (in addition to the 1 primary domain).
-     * We do not support wildcards (e.g., <code>*.example.com</code>).
+     * We do not support wildcards (<code>*.example.com</code>).
      * </p>
      * 
      * @param certificateAlternativeNames
      *        An array of strings listing alternative domains and subdomains for your SSL/TLS certificate. Lightsail
      *        will de-dupe the names for you. You can have a maximum of 9 alternative names (in addition to the 1
-     *        primary domain). We do not support wildcards (e.g., <code>*.example.com</code>).
+     *        primary domain). We do not support wildcards (<code>*.example.com</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

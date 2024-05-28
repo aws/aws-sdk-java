@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class AWSManagedRulesBotControlRuleSetMarshaller {
 
     private static final MarshallingInfo<String> INSPECTIONLEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InspectionLevel").build();
+    private static final MarshallingInfo<Boolean> ENABLEMACHINELEARNING_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableMachineLearning").build();
 
     private static final AWSManagedRulesBotControlRuleSetMarshaller instance = new AWSManagedRulesBotControlRuleSetMarshaller();
 
@@ -47,6 +49,7 @@ public class AWSManagedRulesBotControlRuleSetMarshaller {
 
         try {
             protocolMarshaller.marshall(aWSManagedRulesBotControlRuleSet.getInspectionLevel(), INSPECTIONLEVEL_BINDING);
+            protocolMarshaller.marshall(aWSManagedRulesBotControlRuleSet.getEnableMachineLearning(), ENABLEMACHINELEARNING_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

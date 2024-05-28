@@ -1,0 +1,183 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.securityhub.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+import com.amazonaws.AmazonWebServiceRequest;
+
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchGetStandardsControlAssociations"
+ *      target="_top">AWS API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class BatchGetStandardsControlAssociationsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * An array with one or more objects that includes a security control (identified with
+     * <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon
+     * Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified
+     * standard. The security control ID or ARN is the same across standards.
+     * </p>
+     */
+    private java.util.List<StandardsControlAssociationId> standardsControlAssociationIds;
+
+    /**
+     * <p>
+     * An array with one or more objects that includes a security control (identified with
+     * <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon
+     * Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified
+     * standard. The security control ID or ARN is the same across standards.
+     * </p>
+     * 
+     * @return An array with one or more objects that includes a security control (identified with
+     *         <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the
+     *         Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control
+     *         in a specified standard. The security control ID or ARN is the same across standards.
+     */
+
+    public java.util.List<StandardsControlAssociationId> getStandardsControlAssociationIds() {
+        return standardsControlAssociationIds;
+    }
+
+    /**
+     * <p>
+     * An array with one or more objects that includes a security control (identified with
+     * <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon
+     * Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified
+     * standard. The security control ID or ARN is the same across standards.
+     * </p>
+     * 
+     * @param standardsControlAssociationIds
+     *        An array with one or more objects that includes a security control (identified with
+     *        <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the
+     *        Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control
+     *        in a specified standard. The security control ID or ARN is the same across standards.
+     */
+
+    public void setStandardsControlAssociationIds(java.util.Collection<StandardsControlAssociationId> standardsControlAssociationIds) {
+        if (standardsControlAssociationIds == null) {
+            this.standardsControlAssociationIds = null;
+            return;
+        }
+
+        this.standardsControlAssociationIds = new java.util.ArrayList<StandardsControlAssociationId>(standardsControlAssociationIds);
+    }
+
+    /**
+     * <p>
+     * An array with one or more objects that includes a security control (identified with
+     * <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon
+     * Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified
+     * standard. The security control ID or ARN is the same across standards.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setStandardsControlAssociationIds(java.util.Collection)} or
+     * {@link #withStandardsControlAssociationIds(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param standardsControlAssociationIds
+     *        An array with one or more objects that includes a security control (identified with
+     *        <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the
+     *        Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control
+     *        in a specified standard. The security control ID or ARN is the same across standards.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchGetStandardsControlAssociationsRequest withStandardsControlAssociationIds(StandardsControlAssociationId... standardsControlAssociationIds) {
+        if (this.standardsControlAssociationIds == null) {
+            setStandardsControlAssociationIds(new java.util.ArrayList<StandardsControlAssociationId>(standardsControlAssociationIds.length));
+        }
+        for (StandardsControlAssociationId ele : standardsControlAssociationIds) {
+            this.standardsControlAssociationIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array with one or more objects that includes a security control (identified with
+     * <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon
+     * Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified
+     * standard. The security control ID or ARN is the same across standards.
+     * </p>
+     * 
+     * @param standardsControlAssociationIds
+     *        An array with one or more objects that includes a security control (identified with
+     *        <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the
+     *        Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control
+     *        in a specified standard. The security control ID or ARN is the same across standards.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchGetStandardsControlAssociationsRequest withStandardsControlAssociationIds(
+            java.util.Collection<StandardsControlAssociationId> standardsControlAssociationIds) {
+        setStandardsControlAssociationIds(standardsControlAssociationIds);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getStandardsControlAssociationIds() != null)
+            sb.append("StandardsControlAssociationIds: ").append(getStandardsControlAssociationIds());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof BatchGetStandardsControlAssociationsRequest == false)
+            return false;
+        BatchGetStandardsControlAssociationsRequest other = (BatchGetStandardsControlAssociationsRequest) obj;
+        if (other.getStandardsControlAssociationIds() == null ^ this.getStandardsControlAssociationIds() == null)
+            return false;
+        if (other.getStandardsControlAssociationIds() != null
+                && other.getStandardsControlAssociationIds().equals(this.getStandardsControlAssociationIds()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getStandardsControlAssociationIds() == null) ? 0 : getStandardsControlAssociationIds().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public BatchGetStandardsControlAssociationsRequest clone() {
+        return (BatchGetStandardsControlAssociationsRequest) super.clone();
+    }
+
+}

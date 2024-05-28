@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class CreateMeetingRoomConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstantBooking").build();
     private static final MarshallingInfo<StructuredPojo> REQUIRECHECKIN_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequireCheckIn").build();
+    private static final MarshallingInfo<StructuredPojo> PROACTIVEJOIN_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProactiveJoin").build();
 
     private static final CreateMeetingRoomConfigurationMarshaller instance = new CreateMeetingRoomConfigurationMarshaller();
 
@@ -56,6 +58,7 @@ public class CreateMeetingRoomConfigurationMarshaller {
             protocolMarshaller.marshall(createMeetingRoomConfiguration.getEndOfMeetingReminder(), ENDOFMEETINGREMINDER_BINDING);
             protocolMarshaller.marshall(createMeetingRoomConfiguration.getInstantBooking(), INSTANTBOOKING_BINDING);
             protocolMarshaller.marshall(createMeetingRoomConfiguration.getRequireCheckIn(), REQUIRECHECKIN_BINDING);
+            protocolMarshaller.marshall(createMeetingRoomConfiguration.getProactiveJoin(), PROACTIVEJOIN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

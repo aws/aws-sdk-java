@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -165,11 +165,6 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * A flag that enables in-transit encryption when set to <code>true</code>.
      * </p>
      * <p>
-     * You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To enable
-     * in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to <code>true</code> when
-     * you create a cluster.
-     * </p>
-     * <p>
      * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
      * <code>3.2.6</code>, <code>4.x</code> or later.
      * </p>
@@ -242,11 +237,42 @@ public class ReplicationGroup implements Serializable, Cloneable {
     private String dataTiering;
     /**
      * <p>
-     *  If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the
-     * next auto minor version upgrade campaign. This parameter is disabled for previous versions. 
+     * If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next
+     * auto minor version upgrade campaign. This parameter is disabled for previous versions.
      * </p>
      */
     private Boolean autoMinorVersionUpgrade;
+    /**
+     * <p>
+     * Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads
+     * using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
+     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     */
+    private String networkType;
+    /**
+     * <p>
+     * The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is
+     * supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances
+     * built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     */
+    private String ipDiscovery;
+    /**
+     * <p>
+     * A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.
+     * </p>
+     */
+    private String transitEncryptionMode;
+    /**
+     * <p>
+     * Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to
+     * Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode
+     * disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode
+     * configuration and set the cluster mode to Enabled.
+     * </p>
+     */
+    private String clusterMode;
 
     /**
      * <p>
@@ -1293,11 +1319,6 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * A flag that enables in-transit encryption when set to <code>true</code>.
      * </p>
      * <p>
-     * You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To enable
-     * in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to <code>true</code> when
-     * you create a cluster.
-     * </p>
-     * <p>
      * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
      * <code>3.2.6</code>, <code>4.x</code> or later.
      * </p>
@@ -1307,11 +1328,6 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * 
      * @param transitEncryptionEnabled
      *        A flag that enables in-transit encryption when set to <code>true</code>.</p>
-     *        <p>
-     *        You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To
-     *        enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to
-     *        <code>true</code> when you create a cluster.
-     *        </p>
      *        <p>
      *        <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
      *        <code>3.2.6</code>, <code>4.x</code> or later.
@@ -1329,11 +1345,6 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * A flag that enables in-transit encryption when set to <code>true</code>.
      * </p>
      * <p>
-     * You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To enable
-     * in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to <code>true</code> when
-     * you create a cluster.
-     * </p>
-     * <p>
      * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
      * <code>3.2.6</code>, <code>4.x</code> or later.
      * </p>
@@ -1342,11 +1353,6 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </p>
      * 
      * @return A flag that enables in-transit encryption when set to <code>true</code>.</p>
-     *         <p>
-     *         You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To
-     *         enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to
-     *         <code>true</code> when you create a cluster.
-     *         </p>
      *         <p>
      *         <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
      *         <code>3.2.6</code>, <code>4.x</code> or later.
@@ -1364,11 +1370,6 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * A flag that enables in-transit encryption when set to <code>true</code>.
      * </p>
      * <p>
-     * You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To enable
-     * in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to <code>true</code> when
-     * you create a cluster.
-     * </p>
-     * <p>
      * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
      * <code>3.2.6</code>, <code>4.x</code> or later.
      * </p>
@@ -1378,11 +1379,6 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * 
      * @param transitEncryptionEnabled
      *        A flag that enables in-transit encryption when set to <code>true</code>.</p>
-     *        <p>
-     *        You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To
-     *        enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to
-     *        <code>true</code> when you create a cluster.
-     *        </p>
      *        <p>
      *        <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
      *        <code>3.2.6</code>, <code>4.x</code> or later.
@@ -1402,11 +1398,6 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * A flag that enables in-transit encryption when set to <code>true</code>.
      * </p>
      * <p>
-     * You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To enable
-     * in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to <code>true</code> when
-     * you create a cluster.
-     * </p>
-     * <p>
      * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
      * <code>3.2.6</code>, <code>4.x</code> or later.
      * </p>
@@ -1415,11 +1406,6 @@ public class ReplicationGroup implements Serializable, Cloneable {
      * </p>
      * 
      * @return A flag that enables in-transit encryption when set to <code>true</code>.</p>
-     *         <p>
-     *         You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To
-     *         enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to
-     *         <code>true</code> when you create a cluster.
-     *         </p>
      *         <p>
      *         <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
      *         <code>3.2.6</code>, <code>4.x</code> or later.
@@ -2010,13 +1996,13 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     *  If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the
-     * next auto minor version upgrade campaign. This parameter is disabled for previous versions. 
+     * If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next
+     * auto minor version upgrade campaign. This parameter is disabled for previous versions.
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *         If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to
-     *        the next auto minor version upgrade campaign. This parameter is disabled for previous versions. 
+     *        If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to
+     *        the next auto minor version upgrade campaign. This parameter is disabled for previous versions.
      */
 
     public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
@@ -2025,12 +2011,12 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     *  If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the
-     * next auto minor version upgrade campaign. This parameter is disabled for previous versions. 
+     * If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next
+     * auto minor version upgrade campaign. This parameter is disabled for previous versions.
      * </p>
      * 
-     * @return  If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to
-     *         the next auto minor version upgrade campaign. This parameter is disabled for previous versions. 
+     * @return If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to
+     *         the next auto minor version upgrade campaign. This parameter is disabled for previous versions.
      */
 
     public Boolean getAutoMinorVersionUpgrade() {
@@ -2039,13 +2025,13 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     *  If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the
-     * next auto minor version upgrade campaign. This parameter is disabled for previous versions. 
+     * If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next
+     * auto minor version upgrade campaign. This parameter is disabled for previous versions.
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *         If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to
-     *        the next auto minor version upgrade campaign. This parameter is disabled for previous versions. 
+     *        If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to
+     *        the next auto minor version upgrade campaign. This parameter is disabled for previous versions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2056,16 +2042,378 @@ public class ReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     *  If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the
-     * next auto minor version upgrade campaign. This parameter is disabled for previous versions. 
+     * If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to the next
+     * auto minor version upgrade campaign. This parameter is disabled for previous versions.
      * </p>
      * 
-     * @return  If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to
-     *         the next auto minor version upgrade campaign. This parameter is disabled for previous versions. 
+     * @return If you are running Redis engine version 6.0 or later, set this parameter to yes if you want to opt-in to
+     *         the next auto minor version upgrade campaign. This parameter is disabled for previous versions.
      */
 
     public Boolean isAutoMinorVersionUpgrade() {
         return this.autoMinorVersionUpgrade;
+    }
+
+    /**
+     * <p>
+     * Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads
+     * using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
+     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @param networkType
+     *        Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for
+     *        workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built
+     *        on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * @see NetworkType
+     */
+
+    public void setNetworkType(String networkType) {
+        this.networkType = networkType;
+    }
+
+    /**
+     * <p>
+     * Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads
+     * using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
+     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @return Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for
+     *         workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built
+     *         on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * @see NetworkType
+     */
+
+    public String getNetworkType() {
+        return this.networkType;
+    }
+
+    /**
+     * <p>
+     * Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads
+     * using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
+     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @param networkType
+     *        Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for
+     *        workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built
+     *        on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see NetworkType
+     */
+
+    public ReplicationGroup withNetworkType(String networkType) {
+        setNetworkType(networkType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads
+     * using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
+     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @param networkType
+     *        Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for
+     *        workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built
+     *        on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * @see NetworkType
+     */
+
+    public void setNetworkType(NetworkType networkType) {
+        withNetworkType(networkType);
+    }
+
+    /**
+     * <p>
+     * Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads
+     * using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
+     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @param networkType
+     *        Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for
+     *        workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built
+     *        on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see NetworkType
+     */
+
+    public ReplicationGroup withNetworkType(NetworkType networkType) {
+        this.networkType = networkType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is
+     * supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances
+     * built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @param ipDiscovery
+     *        The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6
+     *        is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     *        instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * @see IpDiscovery
+     */
+
+    public void setIpDiscovery(String ipDiscovery) {
+        this.ipDiscovery = ipDiscovery;
+    }
+
+    /**
+     * <p>
+     * The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is
+     * supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances
+     * built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @return The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6
+     *         is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     *         instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * @see IpDiscovery
+     */
+
+    public String getIpDiscovery() {
+        return this.ipDiscovery;
+    }
+
+    /**
+     * <p>
+     * The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is
+     * supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances
+     * built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @param ipDiscovery
+     *        The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6
+     *        is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     *        instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpDiscovery
+     */
+
+    public ReplicationGroup withIpDiscovery(String ipDiscovery) {
+        setIpDiscovery(ipDiscovery);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is
+     * supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances
+     * built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @param ipDiscovery
+     *        The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6
+     *        is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     *        instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * @see IpDiscovery
+     */
+
+    public void setIpDiscovery(IpDiscovery ipDiscovery) {
+        withIpDiscovery(ipDiscovery);
+    }
+
+    /**
+     * <p>
+     * The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6 is
+     * supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances
+     * built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @param ipDiscovery
+     *        The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>. IPv6
+     *        is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     *        instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpDiscovery
+     */
+
+    public ReplicationGroup withIpDiscovery(IpDiscovery ipDiscovery) {
+        this.ipDiscovery = ipDiscovery.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.
+     * </p>
+     * 
+     * @param transitEncryptionMode
+     *        A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.
+     * @see TransitEncryptionMode
+     */
+
+    public void setTransitEncryptionMode(String transitEncryptionMode) {
+        this.transitEncryptionMode = transitEncryptionMode;
+    }
+
+    /**
+     * <p>
+     * A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.
+     * </p>
+     * 
+     * @return A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.
+     * @see TransitEncryptionMode
+     */
+
+    public String getTransitEncryptionMode() {
+        return this.transitEncryptionMode;
+    }
+
+    /**
+     * <p>
+     * A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.
+     * </p>
+     * 
+     * @param transitEncryptionMode
+     *        A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TransitEncryptionMode
+     */
+
+    public ReplicationGroup withTransitEncryptionMode(String transitEncryptionMode) {
+        setTransitEncryptionMode(transitEncryptionMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.
+     * </p>
+     * 
+     * @param transitEncryptionMode
+     *        A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.
+     * @see TransitEncryptionMode
+     */
+
+    public void setTransitEncryptionMode(TransitEncryptionMode transitEncryptionMode) {
+        withTransitEncryptionMode(transitEncryptionMode);
+    }
+
+    /**
+     * <p>
+     * A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.
+     * </p>
+     * 
+     * @param transitEncryptionMode
+     *        A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TransitEncryptionMode
+     */
+
+    public ReplicationGroup withTransitEncryptionMode(TransitEncryptionMode transitEncryptionMode) {
+        this.transitEncryptionMode = transitEncryptionMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to
+     * Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode
+     * disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode
+     * configuration and set the cluster mode to Enabled.
+     * </p>
+     * 
+     * @param clusterMode
+     *        Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode
+     *        to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and
+     *        cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then
+     *        complete cluster mode configuration and set the cluster mode to Enabled.
+     * @see ClusterMode
+     */
+
+    public void setClusterMode(String clusterMode) {
+        this.clusterMode = clusterMode;
+    }
+
+    /**
+     * <p>
+     * Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to
+     * Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode
+     * disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode
+     * configuration and set the cluster mode to Enabled.
+     * </p>
+     * 
+     * @return Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode
+     *         to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and
+     *         cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then
+     *         complete cluster mode configuration and set the cluster mode to Enabled.
+     * @see ClusterMode
+     */
+
+    public String getClusterMode() {
+        return this.clusterMode;
+    }
+
+    /**
+     * <p>
+     * Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to
+     * Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode
+     * disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode
+     * configuration and set the cluster mode to Enabled.
+     * </p>
+     * 
+     * @param clusterMode
+     *        Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode
+     *        to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and
+     *        cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then
+     *        complete cluster mode configuration and set the cluster mode to Enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ClusterMode
+     */
+
+    public ReplicationGroup withClusterMode(String clusterMode) {
+        setClusterMode(clusterMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to
+     * Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode
+     * disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode
+     * configuration and set the cluster mode to Enabled.
+     * </p>
+     * 
+     * @param clusterMode
+     *        Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode
+     *        to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and
+     *        cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then
+     *        complete cluster mode configuration and set the cluster mode to Enabled.
+     * @see ClusterMode
+     */
+
+    public void setClusterMode(ClusterMode clusterMode) {
+        withClusterMode(clusterMode);
+    }
+
+    /**
+     * <p>
+     * Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to
+     * Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode
+     * disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode
+     * configuration and set the cluster mode to Enabled.
+     * </p>
+     * 
+     * @param clusterMode
+     *        Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode
+     *        to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and
+     *        cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then
+     *        complete cluster mode configuration and set the cluster mode to Enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ClusterMode
+     */
+
+    public ReplicationGroup withClusterMode(ClusterMode clusterMode) {
+        this.clusterMode = clusterMode.toString();
+        return this;
     }
 
     /**
@@ -2133,7 +2481,15 @@ public class ReplicationGroup implements Serializable, Cloneable {
         if (getDataTiering() != null)
             sb.append("DataTiering: ").append(getDataTiering()).append(",");
         if (getAutoMinorVersionUpgrade() != null)
-            sb.append("AutoMinorVersionUpgrade: ").append(getAutoMinorVersionUpgrade());
+            sb.append("AutoMinorVersionUpgrade: ").append(getAutoMinorVersionUpgrade()).append(",");
+        if (getNetworkType() != null)
+            sb.append("NetworkType: ").append(getNetworkType()).append(",");
+        if (getIpDiscovery() != null)
+            sb.append("IpDiscovery: ").append(getIpDiscovery()).append(",");
+        if (getTransitEncryptionMode() != null)
+            sb.append("TransitEncryptionMode: ").append(getTransitEncryptionMode()).append(",");
+        if (getClusterMode() != null)
+            sb.append("ClusterMode: ").append(getClusterMode());
         sb.append("}");
         return sb.toString();
     }
@@ -2256,6 +2612,22 @@ public class ReplicationGroup implements Serializable, Cloneable {
             return false;
         if (other.getAutoMinorVersionUpgrade() != null && other.getAutoMinorVersionUpgrade().equals(this.getAutoMinorVersionUpgrade()) == false)
             return false;
+        if (other.getNetworkType() == null ^ this.getNetworkType() == null)
+            return false;
+        if (other.getNetworkType() != null && other.getNetworkType().equals(this.getNetworkType()) == false)
+            return false;
+        if (other.getIpDiscovery() == null ^ this.getIpDiscovery() == null)
+            return false;
+        if (other.getIpDiscovery() != null && other.getIpDiscovery().equals(this.getIpDiscovery()) == false)
+            return false;
+        if (other.getTransitEncryptionMode() == null ^ this.getTransitEncryptionMode() == null)
+            return false;
+        if (other.getTransitEncryptionMode() != null && other.getTransitEncryptionMode().equals(this.getTransitEncryptionMode()) == false)
+            return false;
+        if (other.getClusterMode() == null ^ this.getClusterMode() == null)
+            return false;
+        if (other.getClusterMode() != null && other.getClusterMode().equals(this.getClusterMode()) == false)
+            return false;
         return true;
     }
 
@@ -2291,6 +2663,10 @@ public class ReplicationGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getReplicationGroupCreateTime() == null) ? 0 : getReplicationGroupCreateTime().hashCode());
         hashCode = prime * hashCode + ((getDataTiering() == null) ? 0 : getDataTiering().hashCode());
         hashCode = prime * hashCode + ((getAutoMinorVersionUpgrade() == null) ? 0 : getAutoMinorVersionUpgrade().hashCode());
+        hashCode = prime * hashCode + ((getNetworkType() == null) ? 0 : getNetworkType().hashCode());
+        hashCode = prime * hashCode + ((getIpDiscovery() == null) ? 0 : getIpDiscovery().hashCode());
+        hashCode = prime * hashCode + ((getTransitEncryptionMode() == null) ? 0 : getTransitEncryptionMode().hashCode());
+        hashCode = prime * hashCode + ((getClusterMode() == null) ? 0 : getClusterMode().hashCode());
         return hashCode;
     }
 

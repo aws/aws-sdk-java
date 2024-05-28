@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -73,6 +73,12 @@ public class JobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("documentParameters").build();
     private static final MarshallingInfo<Boolean> ISCONCURRENT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isConcurrent").build();
+    private static final MarshallingInfo<StructuredPojo> SCHEDULINGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("schedulingConfig").build();
+    private static final MarshallingInfo<List> SCHEDULEDJOBROLLOUTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scheduledJobRollouts").build();
+    private static final MarshallingInfo<List> DESTINATIONPACKAGEVERSIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destinationPackageVersions").build();
 
     private static final JobMarshaller instance = new JobMarshaller();
 
@@ -112,6 +118,9 @@ public class JobMarshaller {
             protocolMarshaller.marshall(job.getJobExecutionsRetryConfig(), JOBEXECUTIONSRETRYCONFIG_BINDING);
             protocolMarshaller.marshall(job.getDocumentParameters(), DOCUMENTPARAMETERS_BINDING);
             protocolMarshaller.marshall(job.getIsConcurrent(), ISCONCURRENT_BINDING);
+            protocolMarshaller.marshall(job.getSchedulingConfig(), SCHEDULINGCONFIG_BINDING);
+            protocolMarshaller.marshall(job.getScheduledJobRollouts(), SCHEDULEDJOBROLLOUTS_BINDING);
+            protocolMarshaller.marshall(job.getDestinationPackageVersions(), DESTINATIONPACKAGEVERSIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

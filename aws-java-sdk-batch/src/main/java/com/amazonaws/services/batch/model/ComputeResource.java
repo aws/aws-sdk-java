@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -91,18 +91,27 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * available for Spot Instance compute resources.
      * </p>
      * </dd>
+     * <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt>
+     * <dd>
+     * <p>
+     * The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot Instance
+     * pools that are the least likely to be interrupted and have the lowest possible price. This allocation strategy is
+     * only available for Spot Instance compute resources.
+     * </p>
+     * </dd>
      * </dl>
      * <p>
-     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand
-     * or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed
-     * <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance.
+     * With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and the
+     * <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet
+     * your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance.
      * </p>
      */
     private String allocationStrategy;
     /**
      * <p>
-     * The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is
+     * The minimum number of vCPUs that a compute environment should maintain (even if the compute environment is
      * <code>DISABLED</code>).
      * </p>
      * <note>
@@ -114,23 +123,23 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     private Integer minvCpus;
     /**
      * <p>
-     * The maximum number of Amazon EC2 vCPUs that a compute environment can reach.
+     * The maximum number of vCPUs that a compute environment can support.
      * </p>
      * <note>
      * <p>
-     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using
-     * On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to
-     * exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance from among
-     * those specified in your compute environment is allocated.
+     * With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and the
+     * <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet
+     * your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance.
      * </p>
      * </note>
      */
     private Integer maxvCpus;
     /**
      * <p>
-     * The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the minimum
-     * and maximum values based on job queue demand.
+     * The desired number of vCPUS in the compute environment. Batch modifies this value between the minimum and maximum
+     * values based on job queue demand.
      * </p>
      * <note>
      * <p>
@@ -193,6 +202,21 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the <i>Amazon
      * VPC User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * Batch on Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones">
+     * Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon EKS and Amazon Web Services Local
+     * Zones</a> in the <i>Amazon EKS User Guide</i> and <a href=
+     * "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones">
+     * Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services Outposts</a> in the <i>Amazon ECS
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * Batch on Fargate doesn't currently support Local Zones.
+     * </p>
+     * </note>
      */
     private java.util.List<String> subnets;
     /**
@@ -220,9 +244,9 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     private String ec2KeyPair;
     /**
      * <p>
-     * The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify the
-     * short name or full Amazon Resource Name (ARN) of an instance profile. For example,
-     * <code> <i>ecsInstanceRole</i> </code> or
+     * The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. This parameter is
+     * required for Amazon EC2 instances types. You can specify the short name or full Amazon Resource Name (ARN) of an
+     * instance profile. For example, <code> <i>ecsInstanceRole</i> </code> or
      * <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i> </code>. For more
      * information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS
      * instance role</a> in the <i>Batch User Guide</i>.
@@ -236,8 +260,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     private String instanceRole;
     /**
      * <p>
-     * Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these
-     * take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and
+     * Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment. For
+     * Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This
      * is helpful for recognizing your Batch instances in the Amazon EC2 console. Updating these tags requires an
      * infrastructure update to the compute environment. For more information, see <a
@@ -274,7 +298,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be
      * less than 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the lowest (market)
      * price and never more than your maximum percentage. If you leave this field empty, the default value is 100% of
-     * the On-Demand price.
+     * the On-Demand price. For most use cases, we recommend leaving this field empty.
      * </p>
      * <note>
      * <p>
@@ -309,10 +333,11 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The launch template to use for your compute resources. Any other compute resource parameters that you specify in
-     * a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must
-     * specify either the launch template ID or launch template name in the request, but not both. For more information,
-     * see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template
-     * support</a> in the <i>Batch User Guide</i>.
+     * a <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html">
+     * CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must specify
+     * either the launch template ID or launch template name in the request, but not both. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template support</a> in
+     * the <i>Batch User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -323,7 +348,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     private LaunchTemplateSpecification launchTemplate;
     /**
      * <p>
-     * Provides information that's used to select Amazon Machine Images (AMIs) for EC2 instances in the compute
+     * Provides information that's used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute
      * environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.
      * </p>
      * <p>
@@ -541,12 +566,21 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * available for Spot Instance compute resources.
      * </p>
      * </dd>
+     * <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt>
+     * <dd>
+     * <p>
+     * The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot Instance
+     * pools that are the least likely to be interrupted and have the lowest possible price. This allocation strategy is
+     * only available for Spot Instance compute resources.
+     * </p>
+     * </dd>
      * </dl>
      * <p>
-     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand
-     * or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed
-     * <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance.
+     * With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and the
+     * <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet
+     * your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance.
      * </p>
      * 
      * @param allocationStrategy
@@ -592,12 +626,21 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      *        strategy is only available for Spot Instance compute resources.
      *        </p>
      *        </dd>
+     *        <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt>
+     *        <dd>
+     *        <p>
+     *        The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot
+     *        Instance pools that are the least likely to be interrupted and have the lowest possible price. This
+     *        allocation strategy is only available for Spot Instance compute resources.
+     *        </p>
+     *        </dd>
      *        </dl>
      *        <p>
-     *        With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using
-     *        On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need
-     *        to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     *        <code>maxvCpus</code> by more than a single instance.
+     *        With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     *        <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and
+     *        the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code>
+     *        to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than
+     *        a single instance.
      * @see CRAllocationStrategy
      */
 
@@ -651,12 +694,21 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * available for Spot Instance compute resources.
      * </p>
      * </dd>
+     * <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt>
+     * <dd>
+     * <p>
+     * The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot Instance
+     * pools that are the least likely to be interrupted and have the lowest possible price. This allocation strategy is
+     * only available for Spot Instance compute resources.
+     * </p>
+     * </dd>
      * </dl>
      * <p>
-     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand
-     * or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed
-     * <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance.
+     * With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and the
+     * <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet
+     * your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance.
      * </p>
      * 
      * @return The allocation strategy to use for the compute resource if not enough instances of the best fitting
@@ -702,12 +754,21 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      *         strategy is only available for Spot Instance compute resources.
      *         </p>
      *         </dd>
+     *         <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt>
+     *         <dd>
+     *         <p>
+     *         The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot
+     *         Instance pools that are the least likely to be interrupted and have the lowest possible price. This
+     *         allocation strategy is only available for Spot Instance compute resources.
+     *         </p>
+     *         </dd>
      *         </dl>
      *         <p>
-     *         With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using
-     *         On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might
-     *         need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never
-     *         exceeds <code>maxvCpus</code> by more than a single instance.
+     *         With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     *         <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances,
+     *         and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed
+     *         <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
+     *         <code>maxvCpus</code> by more than a single instance.
      * @see CRAllocationStrategy
      */
 
@@ -761,12 +822,21 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * available for Spot Instance compute resources.
      * </p>
      * </dd>
+     * <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt>
+     * <dd>
+     * <p>
+     * The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot Instance
+     * pools that are the least likely to be interrupted and have the lowest possible price. This allocation strategy is
+     * only available for Spot Instance compute resources.
+     * </p>
+     * </dd>
      * </dl>
      * <p>
-     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand
-     * or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed
-     * <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance.
+     * With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and the
+     * <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet
+     * your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance.
      * </p>
      * 
      * @param allocationStrategy
@@ -812,12 +882,21 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      *        strategy is only available for Spot Instance compute resources.
      *        </p>
      *        </dd>
+     *        <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt>
+     *        <dd>
+     *        <p>
+     *        The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot
+     *        Instance pools that are the least likely to be interrupted and have the lowest possible price. This
+     *        allocation strategy is only available for Spot Instance compute resources.
+     *        </p>
+     *        </dd>
      *        </dl>
      *        <p>
-     *        With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using
-     *        On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need
-     *        to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     *        <code>maxvCpus</code> by more than a single instance.
+     *        With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     *        <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and
+     *        the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code>
+     *        to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than
+     *        a single instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CRAllocationStrategy
      */
@@ -873,12 +952,21 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * available for Spot Instance compute resources.
      * </p>
      * </dd>
+     * <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt>
+     * <dd>
+     * <p>
+     * The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot Instance
+     * pools that are the least likely to be interrupted and have the lowest possible price. This allocation strategy is
+     * only available for Spot Instance compute resources.
+     * </p>
+     * </dd>
      * </dl>
      * <p>
-     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand
-     * or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed
-     * <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance.
+     * With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and the
+     * <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet
+     * your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance.
      * </p>
      * 
      * @param allocationStrategy
@@ -924,12 +1012,21 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      *        strategy is only available for Spot Instance compute resources.
      *        </p>
      *        </dd>
+     *        <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt>
+     *        <dd>
+     *        <p>
+     *        The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot
+     *        Instance pools that are the least likely to be interrupted and have the lowest possible price. This
+     *        allocation strategy is only available for Spot Instance compute resources.
+     *        </p>
+     *        </dd>
      *        </dl>
      *        <p>
-     *        With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using
-     *        On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need
-     *        to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     *        <code>maxvCpus</code> by more than a single instance.
+     *        With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     *        <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and
+     *        the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code>
+     *        to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than
+     *        a single instance.
      * @see CRAllocationStrategy
      */
 
@@ -983,12 +1080,21 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * available for Spot Instance compute resources.
      * </p>
      * </dd>
+     * <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt>
+     * <dd>
+     * <p>
+     * The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot Instance
+     * pools that are the least likely to be interrupted and have the lowest possible price. This allocation strategy is
+     * only available for Spot Instance compute resources.
+     * </p>
+     * </dd>
      * </dl>
      * <p>
-     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand
-     * or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed
-     * <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance.
+     * With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and the
+     * <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet
+     * your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance.
      * </p>
      * 
      * @param allocationStrategy
@@ -1034,12 +1140,21 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      *        strategy is only available for Spot Instance compute resources.
      *        </p>
      *        </dd>
+     *        <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt>
+     *        <dd>
+     *        <p>
+     *        The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot
+     *        Instance pools that are the least likely to be interrupted and have the lowest possible price. This
+     *        allocation strategy is only available for Spot Instance compute resources.
+     *        </p>
+     *        </dd>
      *        </dl>
      *        <p>
-     *        With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using
-     *        On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need
-     *        to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     *        <code>maxvCpus</code> by more than a single instance.
+     *        With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     *        <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and
+     *        the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code>
+     *        to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than
+     *        a single instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CRAllocationStrategy
      */
@@ -1051,7 +1166,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is
+     * The minimum number of vCPUs that a compute environment should maintain (even if the compute environment is
      * <code>DISABLED</code>).
      * </p>
      * <note>
@@ -1061,8 +1176,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @param minvCpus
-     *        The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute
-     *        environment is <code>DISABLED</code>).</p> <note>
+     *        The minimum number of vCPUs that a compute environment should maintain (even if the compute environment is
+     *        <code>DISABLED</code>).</p> <note>
      *        <p>
      *        This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.
      *        </p>
@@ -1074,7 +1189,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is
+     * The minimum number of vCPUs that a compute environment should maintain (even if the compute environment is
      * <code>DISABLED</code>).
      * </p>
      * <note>
@@ -1083,8 +1198,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </note>
      * 
-     * @return The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute
-     *         environment is <code>DISABLED</code>).</p> <note>
+     * @return The minimum number of vCPUs that a compute environment should maintain (even if the compute environment
+     *         is <code>DISABLED</code>).</p> <note>
      *         <p>
      *         This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.
      *         </p>
@@ -1096,7 +1211,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is
+     * The minimum number of vCPUs that a compute environment should maintain (even if the compute environment is
      * <code>DISABLED</code>).
      * </p>
      * <note>
@@ -1106,8 +1221,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @param minvCpus
-     *        The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute
-     *        environment is <code>DISABLED</code>).</p> <note>
+     *        The minimum number of vCPUs that a compute environment should maintain (even if the compute environment is
+     *        <code>DISABLED</code>).</p> <note>
      *        <p>
      *        This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.
      *        </p>
@@ -1121,26 +1236,26 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The maximum number of Amazon EC2 vCPUs that a compute environment can reach.
+     * The maximum number of vCPUs that a compute environment can support.
      * </p>
      * <note>
      * <p>
-     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using
-     * On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to
-     * exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance from among
-     * those specified in your compute environment is allocated.
+     * With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and the
+     * <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet
+     * your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance.
      * </p>
      * </note>
      * 
      * @param maxvCpus
-     *        The maximum number of Amazon EC2 vCPUs that a compute environment can reach.</p> <note>
+     *        The maximum number of vCPUs that a compute environment can support.</p> <note>
      *        <p>
-     *        With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies
-     *        using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch
-     *        might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never
-     *        exceeds <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance
-     *        from among those specified in your compute environment is allocated.
+     *        With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     *        <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and
+     *        the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code>
+     *        to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than
+     *        a single instance.
      *        </p>
      */
 
@@ -1150,25 +1265,25 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The maximum number of Amazon EC2 vCPUs that a compute environment can reach.
+     * The maximum number of vCPUs that a compute environment can support.
      * </p>
      * <note>
      * <p>
-     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using
-     * On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to
-     * exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance from among
-     * those specified in your compute environment is allocated.
+     * With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and the
+     * <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet
+     * your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance.
      * </p>
      * </note>
      * 
-     * @return The maximum number of Amazon EC2 vCPUs that a compute environment can reach.</p> <note>
+     * @return The maximum number of vCPUs that a compute environment can support.</p> <note>
      *         <p>
-     *         With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation
-     *         strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot
-     *         Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this
-     *         event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. For example, no more
-     *         than a single instance from among those specified in your compute environment is allocated.
+     *         With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     *         <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances,
+     *         and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed
+     *         <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
+     *         <code>maxvCpus</code> by more than a single instance.
      *         </p>
      */
 
@@ -1178,26 +1293,26 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The maximum number of Amazon EC2 vCPUs that a compute environment can reach.
+     * The maximum number of vCPUs that a compute environment can support.
      * </p>
      * <note>
      * <p>
-     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using
-     * On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to
-     * exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance from among
-     * those specified in your compute environment is allocated.
+     * With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and the
+     * <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet
+     * your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance.
      * </p>
      * </note>
      * 
      * @param maxvCpus
-     *        The maximum number of Amazon EC2 vCPUs that a compute environment can reach.</p> <note>
+     *        The maximum number of vCPUs that a compute environment can support.</p> <note>
      *        <p>
-     *        With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies
-     *        using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch
-     *        might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never
-     *        exceeds <code>maxvCpus</code> by more than a single instance. For example, no more than a single instance
-     *        from among those specified in your compute environment is allocated.
+     *        With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     *        <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and
+     *        the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code>
+     *        to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than
+     *        a single instance.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1209,8 +1324,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the minimum
-     * and maximum values based on job queue demand.
+     * The desired number of vCPUS in the compute environment. Batch modifies this value between the minimum and maximum
+     * values based on job queue demand.
      * </p>
      * <note>
      * <p>
@@ -1219,8 +1334,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @param desiredvCpus
-     *        The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the
-     *        minimum and maximum values based on job queue demand.</p> <note>
+     *        The desired number of vCPUS in the compute environment. Batch modifies this value between the minimum and
+     *        maximum values based on job queue demand.</p> <note>
      *        <p>
      *        This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.
      *        </p>
@@ -1232,8 +1347,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the minimum
-     * and maximum values based on job queue demand.
+     * The desired number of vCPUS in the compute environment. Batch modifies this value between the minimum and maximum
+     * values based on job queue demand.
      * </p>
      * <note>
      * <p>
@@ -1241,8 +1356,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </note>
      * 
-     * @return The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the
-     *         minimum and maximum values based on job queue demand.</p> <note>
+     * @return The desired number of vCPUS in the compute environment. Batch modifies this value between the minimum and
+     *         maximum values based on job queue demand.</p> <note>
      *         <p>
      *         This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.
      *         </p>
@@ -1254,8 +1369,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the minimum
-     * and maximum values based on job queue demand.
+     * The desired number of vCPUS in the compute environment. Batch modifies this value between the minimum and maximum
+     * values based on job queue demand.
      * </p>
      * <note>
      * <p>
@@ -1264,8 +1379,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @param desiredvCpus
-     *        The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the
-     *        minimum and maximum values based on job queue demand.</p> <note>
+     *        The desired number of vCPUS in the compute environment. Batch modifies this value between the minimum and
+     *        maximum values based on job queue demand.</p> <note>
      *        <p>
      *        This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.
      *        </p>
@@ -1636,11 +1751,39 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the <i>Amazon
      * VPC User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * Batch on Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones">
+     * Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon EKS and Amazon Web Services Local
+     * Zones</a> in the <i>Amazon EKS User Guide</i> and <a href=
+     * "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones">
+     * Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services Outposts</a> in the <i>Amazon ECS
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * Batch on Fargate doesn't currently support Local Zones.
+     * </p>
+     * </note>
      * 
      * @return The VPC subnets where the compute resources are launched. These subnets must be within the same VPC.
      *         Fargate compute resources can contain up to 16 subnets. For more information, see <a
      *         href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the
-     *         <i>Amazon VPC User Guide</i>.
+     *         <i>Amazon VPC User Guide</i>.</p> <note>
+     *         <p>
+     *         Batch on Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones"
+     *         > Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon EKS and Amazon Web
+     *         Services Local Zones</a> in the <i>Amazon EKS User Guide</i> and <a href=
+     *         "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones"
+     *         > Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services Outposts</a> in the
+     *         <i>Amazon ECS Developer Guide</i>.
+     *         </p>
+     *         <p>
+     *         Batch on Fargate doesn't currently support Local Zones.
+     *         </p>
      */
 
     public java.util.List<String> getSubnets() {
@@ -1654,12 +1797,40 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the <i>Amazon
      * VPC User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * Batch on Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones">
+     * Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon EKS and Amazon Web Services Local
+     * Zones</a> in the <i>Amazon EKS User Guide</i> and <a href=
+     * "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones">
+     * Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services Outposts</a> in the <i>Amazon ECS
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * Batch on Fargate doesn't currently support Local Zones.
+     * </p>
+     * </note>
      * 
      * @param subnets
      *        The VPC subnets where the compute resources are launched. These subnets must be within the same VPC.
      *        Fargate compute resources can contain up to 16 subnets. For more information, see <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the
-     *        <i>Amazon VPC User Guide</i>.
+     *        <i>Amazon VPC User Guide</i>.</p> <note>
+     *        <p>
+     *        Batch on Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones"
+     *        > Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon EKS and Amazon Web
+     *        Services Local Zones</a> in the <i>Amazon EKS User Guide</i> and <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones"
+     *        > Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services Outposts</a> in the
+     *        <i>Amazon ECS Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        Batch on Fargate doesn't currently support Local Zones.
+     *        </p>
      */
 
     public void setSubnets(java.util.Collection<String> subnets) {
@@ -1678,6 +1849,21 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the <i>Amazon
      * VPC User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * Batch on Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones">
+     * Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon EKS and Amazon Web Services Local
+     * Zones</a> in the <i>Amazon EKS User Guide</i> and <a href=
+     * "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones">
+     * Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services Outposts</a> in the <i>Amazon ECS
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * Batch on Fargate doesn't currently support Local Zones.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSubnets(java.util.Collection)} or {@link #withSubnets(java.util.Collection)} if you want to override
@@ -1688,7 +1874,20 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      *        The VPC subnets where the compute resources are launched. These subnets must be within the same VPC.
      *        Fargate compute resources can contain up to 16 subnets. For more information, see <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the
-     *        <i>Amazon VPC User Guide</i>.
+     *        <i>Amazon VPC User Guide</i>.</p> <note>
+     *        <p>
+     *        Batch on Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones"
+     *        > Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon EKS and Amazon Web
+     *        Services Local Zones</a> in the <i>Amazon EKS User Guide</i> and <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones"
+     *        > Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services Outposts</a> in the
+     *        <i>Amazon ECS Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        Batch on Fargate doesn't currently support Local Zones.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1709,12 +1908,40 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the <i>Amazon
      * VPC User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * Batch on Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones">
+     * Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon EKS and Amazon Web Services Local
+     * Zones</a> in the <i>Amazon EKS User Guide</i> and <a href=
+     * "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones">
+     * Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services Outposts</a> in the <i>Amazon ECS
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * Batch on Fargate doesn't currently support Local Zones.
+     * </p>
+     * </note>
      * 
      * @param subnets
      *        The VPC subnets where the compute resources are launched. These subnets must be within the same VPC.
      *        Fargate compute resources can contain up to 16 subnets. For more information, see <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the
-     *        <i>Amazon VPC User Guide</i>.
+     *        <i>Amazon VPC User Guide</i>.</p> <note>
+     *        <p>
+     *        Batch on Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones"
+     *        > Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon EKS and Amazon Web
+     *        Services Local Zones</a> in the <i>Amazon EKS User Guide</i> and <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones"
+     *        > Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services Outposts</a> in the
+     *        <i>Amazon ECS Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        Batch on Fargate doesn't currently support Local Zones.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1905,9 +2132,9 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify the
-     * short name or full Amazon Resource Name (ARN) of an instance profile. For example,
-     * <code> <i>ecsInstanceRole</i> </code> or
+     * The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. This parameter is
+     * required for Amazon EC2 instances types. You can specify the short name or full Amazon Resource Name (ARN) of an
+     * instance profile. For example, <code> <i>ecsInstanceRole</i> </code> or
      * <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i> </code>. For more
      * information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS
      * instance role</a> in the <i>Batch User Guide</i>.
@@ -1919,9 +2146,9 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @param instanceRole
-     *        The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify
-     *        the short name or full Amazon Resource Name (ARN) of an instance profile. For example,
-     *        <code> <i>ecsInstanceRole</i> </code> or
+     *        The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. This parameter
+     *        is required for Amazon EC2 instances types. You can specify the short name or full Amazon Resource Name
+     *        (ARN) of an instance profile. For example, <code> <i>ecsInstanceRole</i> </code> or
      *        <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i> </code>. For more
      *        information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS instance
@@ -1937,9 +2164,9 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify the
-     * short name or full Amazon Resource Name (ARN) of an instance profile. For example,
-     * <code> <i>ecsInstanceRole</i> </code> or
+     * The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. This parameter is
+     * required for Amazon EC2 instances types. You can specify the short name or full Amazon Resource Name (ARN) of an
+     * instance profile. For example, <code> <i>ecsInstanceRole</i> </code> or
      * <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i> </code>. For more
      * information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS
      * instance role</a> in the <i>Batch User Guide</i>.
@@ -1950,9 +2177,9 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </note>
      * 
-     * @return The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify
-     *         the short name or full Amazon Resource Name (ARN) of an instance profile. For example,
-     *         <code> <i>ecsInstanceRole</i> </code> or
+     * @return The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. This parameter
+     *         is required for Amazon EC2 instances types. You can specify the short name or full Amazon Resource Name
+     *         (ARN) of an instance profile. For example, <code> <i>ecsInstanceRole</i> </code> or
      *         <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i> </code>. For
      *         more information, see <a
      *         href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS instance
@@ -1968,9 +2195,9 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify the
-     * short name or full Amazon Resource Name (ARN) of an instance profile. For example,
-     * <code> <i>ecsInstanceRole</i> </code> or
+     * The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. This parameter is
+     * required for Amazon EC2 instances types. You can specify the short name or full Amazon Resource Name (ARN) of an
+     * instance profile. For example, <code> <i>ecsInstanceRole</i> </code> or
      * <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i> </code>. For more
      * information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS
      * instance role</a> in the <i>Batch User Guide</i>.
@@ -1982,9 +2209,9 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @param instanceRole
-     *        The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify
-     *        the short name or full Amazon Resource Name (ARN) of an instance profile. For example,
-     *        <code> <i>ecsInstanceRole</i> </code> or
+     *        The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. This parameter
+     *        is required for Amazon EC2 instances types. You can specify the short name or full Amazon Resource Name
+     *        (ARN) of an instance profile. For example, <code> <i>ecsInstanceRole</i> </code> or
      *        <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i> </code>. For more
      *        information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS instance
@@ -2002,8 +2229,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these
-     * take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and
+     * Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment. For
+     * Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This
      * is helpful for recognizing your Batch instances in the Amazon EC2 console. Updating these tags requires an
      * infrastructure update to the compute environment. For more information, see <a
@@ -2017,9 +2244,9 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </note>
      * 
-     * @return Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For
-     *         Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag
-     *         key and <code>String2</code> is the tag value-for example,
+     * @return Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment.
+     *         For Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the
+     *         tag key and <code>String2</code> is the tag value-for example,
      *         <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
      *         instances in the Amazon EC2 console. Updating these tags requires an infrastructure update to the compute
      *         environment. For more information, see <a
@@ -2037,8 +2264,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these
-     * take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and
+     * Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment. For
+     * Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This
      * is helpful for recognizing your Batch instances in the Amazon EC2 console. Updating these tags requires an
      * infrastructure update to the compute environment. For more information, see <a
@@ -2053,9 +2280,9 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @param tags
-     *        Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For
-     *        Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key
-     *        and <code>String2</code> is the tag value-for example,
+     *        Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment.
+     *        For Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag
+     *        key and <code>String2</code> is the tag value-for example,
      *        <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
      *        instances in the Amazon EC2 console. Updating these tags requires an infrastructure update to the compute
      *        environment. For more information, see <a
@@ -2073,8 +2300,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these
-     * take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and
+     * Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment. For
+     * Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This
      * is helpful for recognizing your Batch instances in the Amazon EC2 console. Updating these tags requires an
      * infrastructure update to the compute environment. For more information, see <a
@@ -2089,9 +2316,9 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @param tags
-     *        Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For
-     *        Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key
-     *        and <code>String2</code> is the tag value-for example,
+     *        Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment.
+     *        For Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag
+     *        key and <code>String2</code> is the tag value-for example,
      *        <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
      *        instances in the Amazon EC2 console. Updating these tags requires an infrastructure update to the compute
      *        environment. For more information, see <a
@@ -2240,7 +2467,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be
      * less than 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the lowest (market)
      * price and never more than your maximum percentage. If you leave this field empty, the default value is 100% of
-     * the On-Demand price.
+     * the On-Demand price. For most use cases, we recommend leaving this field empty.
      * </p>
      * <note>
      * <p>
@@ -2253,7 +2480,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      *        instance type before instances are launched. For example, if your maximum percentage is 20%, then the Spot
      *        price must be less than 20% of the current On-Demand price for that Amazon EC2 instance. You always pay
      *        the lowest (market) price and never more than your maximum percentage. If you leave this field empty, the
-     *        default value is 100% of the On-Demand price.</p> <note>
+     *        default value is 100% of the On-Demand price. For most use cases, we recommend leaving this field
+     *        empty.</p> <note>
      *        <p>
      *        This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.
      *        </p>
@@ -2269,7 +2497,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be
      * less than 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the lowest (market)
      * price and never more than your maximum percentage. If you leave this field empty, the default value is 100% of
-     * the On-Demand price.
+     * the On-Demand price. For most use cases, we recommend leaving this field empty.
      * </p>
      * <note>
      * <p>
@@ -2281,7 +2509,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      *         instance type before instances are launched. For example, if your maximum percentage is 20%, then the
      *         Spot price must be less than 20% of the current On-Demand price for that Amazon EC2 instance. You always
      *         pay the lowest (market) price and never more than your maximum percentage. If you leave this field empty,
-     *         the default value is 100% of the On-Demand price.</p> <note>
+     *         the default value is 100% of the On-Demand price. For most use cases, we recommend leaving this field
+     *         empty.</p> <note>
      *         <p>
      *         This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.
      *         </p>
@@ -2297,7 +2526,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * type before instances are launched. For example, if your maximum percentage is 20%, then the Spot price must be
      * less than 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the lowest (market)
      * price and never more than your maximum percentage. If you leave this field empty, the default value is 100% of
-     * the On-Demand price.
+     * the On-Demand price. For most use cases, we recommend leaving this field empty.
      * </p>
      * <note>
      * <p>
@@ -2310,7 +2539,8 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      *        instance type before instances are launched. For example, if your maximum percentage is 20%, then the Spot
      *        price must be less than 20% of the current On-Demand price for that Amazon EC2 instance. You always pay
      *        the lowest (market) price and never more than your maximum percentage. If you leave this field empty, the
-     *        default value is 100% of the On-Demand price.</p> <note>
+     *        default value is 100% of the On-Demand price. For most use cases, we recommend leaving this field
+     *        empty.</p> <note>
      *        <p>
      *        This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.
      *        </p>
@@ -2464,10 +2694,11 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The launch template to use for your compute resources. Any other compute resource parameters that you specify in
-     * a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must
-     * specify either the launch template ID or launch template name in the request, but not both. For more information,
-     * see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template
-     * support</a> in the <i>Batch User Guide</i>.
+     * a <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html">
+     * CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must specify
+     * either the launch template ID or launch template name in the request, but not both. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template support</a> in
+     * the <i>Batch User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -2477,11 +2708,12 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param launchTemplate
      *        The launch template to use for your compute resources. Any other compute resource parameters that you
-     *        specify in a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch
-     *        template. You must specify either the launch template ID or launch template name in the request, but not
-     *        both. For more information, see <a
-     *        href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template
-     *        support</a> in the <i>Batch User Guide</i>.</p> <note>
+     *        specify in a <a
+     *        href="https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html"
+     *        >CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must
+     *        specify either the launch template ID or launch template name in the request, but not both. For more
+     *        information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch
+     *        template support</a> in the <i>Batch User Guide</i>.</p> <note>
      *        <p>
      *        This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.
      *        </p>
@@ -2494,10 +2726,11 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The launch template to use for your compute resources. Any other compute resource parameters that you specify in
-     * a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must
-     * specify either the launch template ID or launch template name in the request, but not both. For more information,
-     * see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template
-     * support</a> in the <i>Batch User Guide</i>.
+     * a <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html">
+     * CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must specify
+     * either the launch template ID or launch template name in the request, but not both. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template support</a> in
+     * the <i>Batch User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -2506,9 +2739,11 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @return The launch template to use for your compute resources. Any other compute resource parameters that you
-     *         specify in a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch
-     *         template. You must specify either the launch template ID or launch template name in the request, but not
-     *         both. For more information, see <a
+     *         specify in a <a
+     *         href="https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html"
+     *         >CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must
+     *         specify either the launch template ID or launch template name in the request, but not both. For more
+     *         information, see <a
      *         href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template
      *         support</a> in the <i>Batch User Guide</i>.</p> <note>
      *         <p>
@@ -2523,10 +2758,11 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The launch template to use for your compute resources. Any other compute resource parameters that you specify in
-     * a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must
-     * specify either the launch template ID or launch template name in the request, but not both. For more information,
-     * see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template
-     * support</a> in the <i>Batch User Guide</i>.
+     * a <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html">
+     * CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must specify
+     * either the launch template ID or launch template name in the request, but not both. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template support</a> in
+     * the <i>Batch User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -2536,11 +2772,12 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param launchTemplate
      *        The launch template to use for your compute resources. Any other compute resource parameters that you
-     *        specify in a <a>CreateComputeEnvironment</a> API operation override the same parameters in the launch
-     *        template. You must specify either the launch template ID or launch template name in the request, but not
-     *        both. For more information, see <a
-     *        href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch template
-     *        support</a> in the <i>Batch User Guide</i>.</p> <note>
+     *        specify in a <a
+     *        href="https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html"
+     *        >CreateComputeEnvironment</a> API operation override the same parameters in the launch template. You must
+     *        specify either the launch template ID or launch template name in the request, but not both. For more
+     *        information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/launch-templates.html">Launch
+     *        template support</a> in the <i>Batch User Guide</i>.</p> <note>
      *        <p>
      *        This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.
      *        </p>
@@ -2554,7 +2791,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Provides information that's used to select Amazon Machine Images (AMIs) for EC2 instances in the compute
+     * Provides information that's used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute
      * environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.
      * </p>
      * <p>
@@ -2566,8 +2803,9 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * </note>
      * 
-     * @return Provides information that's used to select Amazon Machine Images (AMIs) for EC2 instances in the compute
-     *         environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
+     * @return Provides information that's used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the
+     *         compute environment. If <code>Ec2Configuration</code> isn't specified, the default is
+     *         <code>ECS_AL2</code>.</p>
      *         <p>
      *         One or two values can be provided.
      *         </p>
@@ -2583,7 +2821,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Provides information that's used to select Amazon Machine Images (AMIs) for EC2 instances in the compute
+     * Provides information that's used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute
      * environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.
      * </p>
      * <p>
@@ -2596,8 +2834,9 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @param ec2Configuration
-     *        Provides information that's used to select Amazon Machine Images (AMIs) for EC2 instances in the compute
-     *        environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
+     *        Provides information that's used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the
+     *        compute environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>
+     *        .</p>
      *        <p>
      *        One or two values can be provided.
      *        </p>
@@ -2618,7 +2857,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Provides information that's used to select Amazon Machine Images (AMIs) for EC2 instances in the compute
+     * Provides information that's used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute
      * environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.
      * </p>
      * <p>
@@ -2636,8 +2875,9 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param ec2Configuration
-     *        Provides information that's used to select Amazon Machine Images (AMIs) for EC2 instances in the compute
-     *        environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
+     *        Provides information that's used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the
+     *        compute environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>
+     *        .</p>
      *        <p>
      *        One or two values can be provided.
      *        </p>
@@ -2660,7 +2900,7 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Provides information that's used to select Amazon Machine Images (AMIs) for EC2 instances in the compute
+     * Provides information that's used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute
      * environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.
      * </p>
      * <p>
@@ -2673,8 +2913,9 @@ public class ComputeResource implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @param ec2Configuration
-     *        Provides information that's used to select Amazon Machine Images (AMIs) for EC2 instances in the compute
-     *        environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
+     *        Provides information that's used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the
+     *        compute environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>
+     *        .</p>
      *        <p>
      *        One or two values can be provided.
      *        </p>

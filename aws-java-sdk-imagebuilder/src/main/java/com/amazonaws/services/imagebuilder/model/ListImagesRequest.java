@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -80,7 +80,7 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private Integer maxResults;
     /**
      * <p>
-     * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
+     * A token to specify where to start paginating. This is the nextToken from a previously truncated response.
      * </p>
      */
     private String nextToken;
@@ -542,11 +542,11 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
+     * A token to specify where to start paginating. This is the nextToken from a previously truncated response.
      * </p>
      * 
      * @param nextToken
-     *        A token to specify where to start paginating. This is the NextToken from a previously truncated response.
+     *        A token to specify where to start paginating. This is the nextToken from a previously truncated response.
      */
 
     public void setNextToken(String nextToken) {
@@ -555,10 +555,10 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
+     * A token to specify where to start paginating. This is the nextToken from a previously truncated response.
      * </p>
      * 
-     * @return A token to specify where to start paginating. This is the NextToken from a previously truncated response.
+     * @return A token to specify where to start paginating. This is the nextToken from a previously truncated response.
      */
 
     public String getNextToken() {
@@ -567,11 +567,11 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
+     * A token to specify where to start paginating. This is the nextToken from a previously truncated response.
      * </p>
      * 
      * @param nextToken
-     *        A token to specify where to start paginating. This is the NextToken from a previously truncated response.
+     *        A token to specify where to start paginating. This is the nextToken from a previously truncated response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,14 @@ public class GetCertificatesResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      */
     private java.util.List<CertificateSummary> certificates;
+    /**
+     * <p>
+     * If <code>NextPageToken</code> is returned there are more results available. The value of
+     * <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned
+     * token to retrieve the next page. Keep all other arguments unchanged.
+     * </p>
+     */
+    private String nextPageToken;
 
     /**
      * <p>
@@ -101,6 +109,58 @@ public class GetCertificatesResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
+     * <p>
+     * If <code>NextPageToken</code> is returned there are more results available. The value of
+     * <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned
+     * token to retrieve the next page. Keep all other arguments unchanged.
+     * </p>
+     * 
+     * @param nextPageToken
+     *        If <code>NextPageToken</code> is returned there are more results available. The value of
+     *        <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the
+     *        returned token to retrieve the next page. Keep all other arguments unchanged.
+     */
+
+    public void setNextPageToken(String nextPageToken) {
+        this.nextPageToken = nextPageToken;
+    }
+
+    /**
+     * <p>
+     * If <code>NextPageToken</code> is returned there are more results available. The value of
+     * <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned
+     * token to retrieve the next page. Keep all other arguments unchanged.
+     * </p>
+     * 
+     * @return If <code>NextPageToken</code> is returned there are more results available. The value of
+     *         <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the
+     *         returned token to retrieve the next page. Keep all other arguments unchanged.
+     */
+
+    public String getNextPageToken() {
+        return this.nextPageToken;
+    }
+
+    /**
+     * <p>
+     * If <code>NextPageToken</code> is returned there are more results available. The value of
+     * <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned
+     * token to retrieve the next page. Keep all other arguments unchanged.
+     * </p>
+     * 
+     * @param nextPageToken
+     *        If <code>NextPageToken</code> is returned there are more results available. The value of
+     *        <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the
+     *        returned token to retrieve the next page. Keep all other arguments unchanged.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetCertificatesResult withNextPageToken(String nextPageToken) {
+        setNextPageToken(nextPageToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -113,7 +173,9 @@ public class GetCertificatesResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCertificates() != null)
-            sb.append("Certificates: ").append(getCertificates());
+            sb.append("Certificates: ").append(getCertificates()).append(",");
+        if (getNextPageToken() != null)
+            sb.append("NextPageToken: ").append(getNextPageToken());
         sb.append("}");
         return sb.toString();
     }
@@ -132,6 +194,10 @@ public class GetCertificatesResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getCertificates() != null && other.getCertificates().equals(this.getCertificates()) == false)
             return false;
+        if (other.getNextPageToken() == null ^ this.getNextPageToken() == null)
+            return false;
+        if (other.getNextPageToken() != null && other.getNextPageToken().equals(this.getNextPageToken()) == false)
+            return false;
         return true;
     }
 
@@ -141,6 +207,7 @@ public class GetCertificatesResult extends com.amazonaws.AmazonWebServiceResult<
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCertificates() == null) ? 0 : getCertificates().hashCode());
+        hashCode = prime * hashCode + ((getNextPageToken() == null) ? 0 : getNextPageToken().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,9 +29,8 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront key
-     * pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is
-     * <code>false</code>.
+     * This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted
+     * signers. If not, this field is <code>false</code>.
      * </p>
      */
     private Boolean enabled;
@@ -70,15 +69,13 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront key
-     * pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is
-     * <code>false</code>.
+     * This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted
+     * signers. If not, this field is <code>false</code>.
      * </p>
      * 
      * @param enabled
-     *        This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active
-     *        CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies.
-     *        If not, this field is <code>false</code>.
+     *        This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as
+     *        trusted signers. If not, this field is <code>false</code>.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -87,14 +84,12 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront key
-     * pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is
-     * <code>false</code>.
+     * This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted
+     * signers. If not, this field is <code>false</code>.
      * </p>
      * 
-     * @return This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active
-     *         CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies.
-     *         If not, this field is <code>false</code>.
+     * @return This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as
+     *         trusted signers. If not, this field is <code>false</code>.
      */
 
     public Boolean getEnabled() {
@@ -103,15 +98,13 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront key
-     * pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is
-     * <code>false</code>.
+     * This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted
+     * signers. If not, this field is <code>false</code>.
      * </p>
      * 
      * @param enabled
-     *        This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active
-     *        CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies.
-     *        If not, this field is <code>false</code>.
+     *        This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as
+     *        trusted signers. If not, this field is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,14 +115,12 @@ public class ActiveTrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active CloudFront key
-     * pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this field is
-     * <code>false</code>.
+     * This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as trusted
+     * signers. If not, this field is <code>false</code>.
      * </p>
      * 
-     * @return This field is <code>true</code> if any of the Amazon Web Services accounts in the list have active
-     *         CloudFront key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies.
-     *         If not, this field is <code>false</code>.
+     * @return This field is <code>true</code> if any of the Amazon Web Services accounts in the list are configured as
+     *         trusted signers. If not, this field is <code>false</code>.
      */
 
     public Boolean isEnabled() {

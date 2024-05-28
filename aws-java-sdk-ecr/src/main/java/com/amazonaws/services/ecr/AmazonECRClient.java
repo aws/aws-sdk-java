@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,7 @@ import com.amazonaws.services.ecr.waiters.AmazonECRWaiters;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.ecr.model.*;
+
 import com.amazonaws.services.ecr.model.transform.*;
 
 /**
@@ -99,11 +100,17 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
                             new JsonErrorShapeMetadata().withErrorCode("RepositoryNotEmptyException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ecr.model.transform.RepositoryNotEmptyExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnableToGetUpstreamImageException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecr.model.transform.UnableToGetUpstreamImageExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("KmsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ecr.model.transform.KmsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LayerAlreadyExistsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ecr.model.transform.LayerAlreadyExistsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnableToAccessSecretException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecr.model.transform.UnableToAccessSecretExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("EmptyUploadException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ecr.model.transform.EmptyUploadExceptionUnmarshaller.getInstance()))
@@ -113,6 +120,9 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("RepositoryAlreadyExistsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ecr.model.transform.RepositoryAlreadyExistsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnableToDecryptSecretValueException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecr.model.transform.UnableToDecryptSecretValueExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("RepositoryPolicyNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ecr.model.transform.RepositoryPolicyNotFoundExceptionUnmarshaller.getInstance()))
@@ -144,6 +154,9 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
                             new JsonErrorShapeMetadata().withErrorCode("LifecyclePolicyPreviewNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ecr.model.transform.LifecyclePolicyPreviewNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("SecretNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecr.model.transform.SecretNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServerException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ecr.model.transform.ServerExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -161,6 +174,9 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("RegistryPolicyNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ecr.model.transform.RegistryPolicyNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnableToGetUpstreamLayerException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecr.model.transform.UnableToGetUpstreamLayerExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidTagParameterException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ecr.model.transform.InvalidTagParameterExceptionUnmarshaller.getInstance()))
@@ -552,6 +568,14 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      * @throws RepositoryNotFoundException
      *         The specified repository could not be found. Check the spelling of the specified repository and ensure
      *         that you are performing operations on the correct registry.
+     * @throws LimitExceededException
+     *         The operation did not succeed because it would have exceeded a service limit for your account. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR service
+     *         quotas</a> in the Amazon Elastic Container Registry User Guide.
+     * @throws UnableToGetUpstreamImageException
+     *         The image or images were unable to be pulled using the pull through cache rule. This is usually caused
+     *         because of an issue with the Secrets Manager secret containing the credentials for the upstream registry.
      * @sample AmazonECR.BatchGetImage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/BatchGetImage" target="_top">AWS API
      *      Documentation</a>
@@ -756,8 +780,10 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
 
     /**
      * <p>
-     * Creates a pull through cache rule. A pull through cache rule provides a way to cache images from an external
-     * public registry in your Amazon ECR private registry.
+     * Creates a pull through cache rule. A pull through cache rule provides a way to cache images from an upstream
+     * registry source in your Amazon ECR private registry. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/pull-through-cache.html">Using pull through cache
+     * rules</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
      * </p>
      * 
      * @param createPullThroughCacheRuleRequest
@@ -777,6 +803,13 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      *         information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR service
      *         quotas</a> in the Amazon Elastic Container Registry User Guide.
+     * @throws UnableToAccessSecretException
+     *         The secret is unable to be accessed. Verify the resource permissions for the secret and try again.
+     * @throws SecretNotFoundException
+     *         The ARN of the secret specified in the pull through cache rule was not found. Update the pull through
+     *         cache rule with a valid secret ARN and try again.
+     * @throws UnableToDecryptSecretValueException
+     *         The secret is accessible but is unable to be decrypted. Verify the resource permisisons and try again.
      * @sample AmazonECR.CreatePullThroughCacheRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreatePullThroughCacheRule" target="_top">AWS
      *      API Documentation</a>
@@ -919,6 +952,8 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      *         that you are performing operations on the correct registry.
      * @throws LifecyclePolicyNotFoundException
      *         The lifecycle policy could not be found, and no policy is set to the repository.
+     * @throws ValidationException
+     *         There was an exception validating this request.
      * @sample AmazonECR.DeleteLifecyclePolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteLifecyclePolicy" target="_top">AWS API
      *      Documentation</a>
@@ -1098,8 +1133,9 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
 
     /**
      * <p>
-     * Deletes a repository. If the repository contains images, you must either delete all images in the repository or
-     * use the <code>force</code> option to delete the repository.
+     * Deletes a repository. If the repository isn't empty, you must either delete the contents of the repository or use
+     * the <code>force</code> option to delete the repository and have Amazon ECR delete all of its contents on your
+     * behalf.
      * </p>
      * 
      * @param deleteRepositoryRequest
@@ -1727,6 +1763,8 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      * @throws RepositoryNotFoundException
      *         The specified repository could not be found. Check the spelling of the specified repository and ensure
      *         that you are performing operations on the correct registry.
+     * @throws UnableToGetUpstreamLayerException
+     *         There was an issue getting the upstream layer matching the pull through cache rule.
      * @sample AmazonECR.GetDownloadUrlForLayer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetDownloadUrlForLayer" target="_top">AWS API
      *      Documentation</a>
@@ -1792,6 +1830,8 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      *         that you are performing operations on the correct registry.
      * @throws LifecyclePolicyNotFoundException
      *         The lifecycle policy could not be found, and no policy is set to the repository.
+     * @throws ValidationException
+     *         There was an exception validating this request.
      * @sample AmazonECR.GetLifecyclePolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicy" target="_top">AWS API
      *      Documentation</a>
@@ -1856,6 +1896,8 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      *         that you are performing operations on the correct registry.
      * @throws LifecyclePolicyPreviewNotFoundException
      *         There is no dry run for this repository.
+     * @throws ValidationException
+     *         There was an exception validating this request.
      * @sample AmazonECR.GetLifecyclePolicyPreview
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/GetLifecyclePolicyPreview" target="_top">AWS
      *      API Documentation</a>
@@ -2547,6 +2589,8 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      * @throws RepositoryNotFoundException
      *         The specified repository could not be found. Check the spelling of the specified repository and ensure
      *         that you are performing operations on the correct registry.
+     * @throws ValidationException
+     *         There was an exception validating this request.
      * @sample AmazonECR.PutLifecyclePolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutLifecyclePolicy" target="_top">AWS API
      *      Documentation</a>
@@ -2960,6 +3004,8 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
      *         The lifecycle policy could not be found, and no policy is set to the repository.
      * @throws LifecyclePolicyPreviewInProgressException
      *         The previous lifecycle policy preview request has not completed. Wait and try again.
+     * @throws ValidationException
+     *         There was an exception validating this request.
      * @sample AmazonECR.StartLifecyclePolicyPreview
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartLifecyclePolicyPreview"
      *      target="_top">AWS API Documentation</a>
@@ -3149,6 +3195,78 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
 
     /**
      * <p>
+     * Updates an existing pull through cache rule.
+     * </p>
+     * 
+     * @param updatePullThroughCacheRuleRequest
+     * @return Result of the UpdatePullThroughCacheRule operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws ValidationException
+     *         There was an exception validating this request.
+     * @throws UnableToAccessSecretException
+     *         The secret is unable to be accessed. Verify the resource permissions for the secret and try again.
+     * @throws PullThroughCacheRuleNotFoundException
+     *         The pull through cache rule was not found. Specify a valid pull through cache rule and try again.
+     * @throws SecretNotFoundException
+     *         The ARN of the secret specified in the pull through cache rule was not found. Update the pull through
+     *         cache rule with a valid secret ARN and try again.
+     * @throws UnableToDecryptSecretValueException
+     *         The secret is accessible but is unable to be decrypted. Verify the resource permisisons and try again.
+     * @sample AmazonECR.UpdatePullThroughCacheRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UpdatePullThroughCacheRule" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdatePullThroughCacheRuleResult updatePullThroughCacheRule(UpdatePullThroughCacheRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdatePullThroughCacheRule(request);
+    }
+
+    @SdkInternalApi
+    final UpdatePullThroughCacheRuleResult executeUpdatePullThroughCacheRule(UpdatePullThroughCacheRuleRequest updatePullThroughCacheRuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updatePullThroughCacheRuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdatePullThroughCacheRuleRequest> request = null;
+        Response<UpdatePullThroughCacheRuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdatePullThroughCacheRuleRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updatePullThroughCacheRuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECR");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePullThroughCacheRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdatePullThroughCacheRuleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdatePullThroughCacheRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Uploads an image layer part to Amazon ECR.
      * </p>
      * <p>
@@ -3221,6 +3339,73 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
 
             HttpResponseHandler<AmazonWebServiceResponse<UploadLayerPartResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UploadLayerPartResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Validates an existing pull through cache rule for an upstream registry that requires authentication. This will
+     * retrieve the contents of the Amazon Web Services Secrets Manager secret, verify the syntax, and then validate
+     * that authentication to the upstream registry is successful.
+     * </p>
+     * 
+     * @param validatePullThroughCacheRuleRequest
+     * @return Result of the ValidatePullThroughCacheRule operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @throws ValidationException
+     *         There was an exception validating this request.
+     * @throws PullThroughCacheRuleNotFoundException
+     *         The pull through cache rule was not found. Specify a valid pull through cache rule and try again.
+     * @sample AmazonECR.ValidatePullThroughCacheRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ValidatePullThroughCacheRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ValidatePullThroughCacheRuleResult validatePullThroughCacheRule(ValidatePullThroughCacheRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeValidatePullThroughCacheRule(request);
+    }
+
+    @SdkInternalApi
+    final ValidatePullThroughCacheRuleResult executeValidatePullThroughCacheRule(ValidatePullThroughCacheRuleRequest validatePullThroughCacheRuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(validatePullThroughCacheRuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ValidatePullThroughCacheRuleRequest> request = null;
+        Response<ValidatePullThroughCacheRuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ValidatePullThroughCacheRuleRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(validatePullThroughCacheRuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECR");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ValidatePullThroughCacheRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ValidatePullThroughCacheRuleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ValidatePullThroughCacheRuleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

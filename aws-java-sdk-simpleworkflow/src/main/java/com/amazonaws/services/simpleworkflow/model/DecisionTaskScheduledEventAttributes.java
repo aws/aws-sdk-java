@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,6 +58,12 @@ public class DecisionTaskScheduledEventAttributes implements Serializable, Clone
      * </p>
      */
     private String startToCloseTimeout;
+    /**
+     * <p>
+     * The maximum amount of time the decision task can wait to be assigned to a worker.
+     * </p>
+     */
+    private String scheduleToStartTimeout;
 
     /**
      * <p>
@@ -246,6 +252,46 @@ public class DecisionTaskScheduledEventAttributes implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * The maximum amount of time the decision task can wait to be assigned to a worker.
+     * </p>
+     * 
+     * @param scheduleToStartTimeout
+     *        The maximum amount of time the decision task can wait to be assigned to a worker.
+     */
+
+    public void setScheduleToStartTimeout(String scheduleToStartTimeout) {
+        this.scheduleToStartTimeout = scheduleToStartTimeout;
+    }
+
+    /**
+     * <p>
+     * The maximum amount of time the decision task can wait to be assigned to a worker.
+     * </p>
+     * 
+     * @return The maximum amount of time the decision task can wait to be assigned to a worker.
+     */
+
+    public String getScheduleToStartTimeout() {
+        return this.scheduleToStartTimeout;
+    }
+
+    /**
+     * <p>
+     * The maximum amount of time the decision task can wait to be assigned to a worker.
+     * </p>
+     * 
+     * @param scheduleToStartTimeout
+     *        The maximum amount of time the decision task can wait to be assigned to a worker.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DecisionTaskScheduledEventAttributes withScheduleToStartTimeout(String scheduleToStartTimeout) {
+        setScheduleToStartTimeout(scheduleToStartTimeout);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -262,7 +308,9 @@ public class DecisionTaskScheduledEventAttributes implements Serializable, Clone
         if (getTaskPriority() != null)
             sb.append("TaskPriority: ").append(getTaskPriority()).append(",");
         if (getStartToCloseTimeout() != null)
-            sb.append("StartToCloseTimeout: ").append(getStartToCloseTimeout());
+            sb.append("StartToCloseTimeout: ").append(getStartToCloseTimeout()).append(",");
+        if (getScheduleToStartTimeout() != null)
+            sb.append("ScheduleToStartTimeout: ").append(getScheduleToStartTimeout());
         sb.append("}");
         return sb.toString();
     }
@@ -289,6 +337,10 @@ public class DecisionTaskScheduledEventAttributes implements Serializable, Clone
             return false;
         if (other.getStartToCloseTimeout() != null && other.getStartToCloseTimeout().equals(this.getStartToCloseTimeout()) == false)
             return false;
+        if (other.getScheduleToStartTimeout() == null ^ this.getScheduleToStartTimeout() == null)
+            return false;
+        if (other.getScheduleToStartTimeout() != null && other.getScheduleToStartTimeout().equals(this.getScheduleToStartTimeout()) == false)
+            return false;
         return true;
     }
 
@@ -300,6 +352,7 @@ public class DecisionTaskScheduledEventAttributes implements Serializable, Clone
         hashCode = prime * hashCode + ((getTaskList() == null) ? 0 : getTaskList().hashCode());
         hashCode = prime * hashCode + ((getTaskPriority() == null) ? 0 : getTaskPriority().hashCode());
         hashCode = prime * hashCode + ((getStartToCloseTimeout() == null) ? 0 : getStartToCloseTimeout().hashCode());
+        hashCode = prime * hashCode + ((getScheduleToStartTimeout() == null) ? 0 : getScheduleToStartTimeout().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -99,6 +99,13 @@ public class AllocateIpamPoolCidrRequest extends AmazonWebServiceRequest impleme
      * </p>
      */
     private Boolean previewNextCidr;
+    /**
+     * <p>
+     * Include a particular CIDR range that can be returned by the pool. Allowed CIDRs are only allowed if using netmask
+     * length for allocation.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> allowedCidrs;
     /**
      * <p>
      * Exclude a particular CIDR range from being returned by the pool. Disallowed CIDRs are only allowed if using
@@ -580,6 +587,87 @@ public class AllocateIpamPoolCidrRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
+     * Include a particular CIDR range that can be returned by the pool. Allowed CIDRs are only allowed if using netmask
+     * length for allocation.
+     * </p>
+     * 
+     * @return Include a particular CIDR range that can be returned by the pool. Allowed CIDRs are only allowed if using
+     *         netmask length for allocation.
+     */
+
+    public java.util.List<String> getAllowedCidrs() {
+        if (allowedCidrs == null) {
+            allowedCidrs = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return allowedCidrs;
+    }
+
+    /**
+     * <p>
+     * Include a particular CIDR range that can be returned by the pool. Allowed CIDRs are only allowed if using netmask
+     * length for allocation.
+     * </p>
+     * 
+     * @param allowedCidrs
+     *        Include a particular CIDR range that can be returned by the pool. Allowed CIDRs are only allowed if using
+     *        netmask length for allocation.
+     */
+
+    public void setAllowedCidrs(java.util.Collection<String> allowedCidrs) {
+        if (allowedCidrs == null) {
+            this.allowedCidrs = null;
+            return;
+        }
+
+        this.allowedCidrs = new com.amazonaws.internal.SdkInternalList<String>(allowedCidrs);
+    }
+
+    /**
+     * <p>
+     * Include a particular CIDR range that can be returned by the pool. Allowed CIDRs are only allowed if using netmask
+     * length for allocation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAllowedCidrs(java.util.Collection)} or {@link #withAllowedCidrs(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param allowedCidrs
+     *        Include a particular CIDR range that can be returned by the pool. Allowed CIDRs are only allowed if using
+     *        netmask length for allocation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AllocateIpamPoolCidrRequest withAllowedCidrs(String... allowedCidrs) {
+        if (this.allowedCidrs == null) {
+            setAllowedCidrs(new com.amazonaws.internal.SdkInternalList<String>(allowedCidrs.length));
+        }
+        for (String ele : allowedCidrs) {
+            this.allowedCidrs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Include a particular CIDR range that can be returned by the pool. Allowed CIDRs are only allowed if using netmask
+     * length for allocation.
+     * </p>
+     * 
+     * @param allowedCidrs
+     *        Include a particular CIDR range that can be returned by the pool. Allowed CIDRs are only allowed if using
+     *        netmask length for allocation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AllocateIpamPoolCidrRequest withAllowedCidrs(java.util.Collection<String> allowedCidrs) {
+        setAllowedCidrs(allowedCidrs);
+        return this;
+    }
+
+    /**
+     * <p>
      * Exclude a particular CIDR range from being returned by the pool. Disallowed CIDRs are only allowed if using
      * netmask length for allocation.
      * </p>
@@ -694,6 +782,8 @@ public class AllocateIpamPoolCidrRequest extends AmazonWebServiceRequest impleme
             sb.append("Description: ").append(getDescription()).append(",");
         if (getPreviewNextCidr() != null)
             sb.append("PreviewNextCidr: ").append(getPreviewNextCidr()).append(",");
+        if (getAllowedCidrs() != null)
+            sb.append("AllowedCidrs: ").append(getAllowedCidrs()).append(",");
         if (getDisallowedCidrs() != null)
             sb.append("DisallowedCidrs: ").append(getDisallowedCidrs());
         sb.append("}");
@@ -734,6 +824,10 @@ public class AllocateIpamPoolCidrRequest extends AmazonWebServiceRequest impleme
             return false;
         if (other.getPreviewNextCidr() != null && other.getPreviewNextCidr().equals(this.getPreviewNextCidr()) == false)
             return false;
+        if (other.getAllowedCidrs() == null ^ this.getAllowedCidrs() == null)
+            return false;
+        if (other.getAllowedCidrs() != null && other.getAllowedCidrs().equals(this.getAllowedCidrs()) == false)
+            return false;
         if (other.getDisallowedCidrs() == null ^ this.getDisallowedCidrs() == null)
             return false;
         if (other.getDisallowedCidrs() != null && other.getDisallowedCidrs().equals(this.getDisallowedCidrs()) == false)
@@ -752,6 +846,7 @@ public class AllocateIpamPoolCidrRequest extends AmazonWebServiceRequest impleme
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getPreviewNextCidr() == null) ? 0 : getPreviewNextCidr().hashCode());
+        hashCode = prime * hashCode + ((getAllowedCidrs() == null) ? 0 : getAllowedCidrs().hashCode());
         hashCode = prime * hashCode + ((getDisallowedCidrs() == null) ? 0 : getDisallowedCidrs().hashCode());
         return hashCode;
     }

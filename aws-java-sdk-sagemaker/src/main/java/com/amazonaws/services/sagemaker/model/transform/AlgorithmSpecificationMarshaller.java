@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,8 @@ public class AlgorithmSpecificationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContainerEntrypoint").build();
     private static final MarshallingInfo<List> CONTAINERARGUMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContainerArguments").build();
+    private static final MarshallingInfo<StructuredPojo> TRAININGIMAGECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrainingImageConfig").build();
 
     private static final AlgorithmSpecificationMarshaller instance = new AlgorithmSpecificationMarshaller();
 
@@ -66,6 +68,7 @@ public class AlgorithmSpecificationMarshaller {
             protocolMarshaller.marshall(algorithmSpecification.getEnableSageMakerMetricsTimeSeries(), ENABLESAGEMAKERMETRICSTIMESERIES_BINDING);
             protocolMarshaller.marshall(algorithmSpecification.getContainerEntrypoint(), CONTAINERENTRYPOINT_BINDING);
             protocolMarshaller.marshall(algorithmSpecification.getContainerArguments(), CONTAINERARGUMENTS_BINDING);
+            protocolMarshaller.marshall(algorithmSpecification.getTrainingImageConfig(), TRAININGIMAGECONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

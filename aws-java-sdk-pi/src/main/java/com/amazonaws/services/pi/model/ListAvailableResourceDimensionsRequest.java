@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,6 +60,17 @@ public class ListAvailableResourceDimensionsRequest extends com.amazonaws.Amazon
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * The actions to discover the dimensions you are authorized to access. If you specify multiple actions, then the
+     * response will contain the dimensions common for all the actions.
+     * </p>
+     * <p>
+     * When you don't specify this request parameter or provide an empty list, the response contains all the available
+     * dimensions for the target database engine whether or not you are authorized to access them.
+     * </p>
+     */
+    private java.util.List<String> authorizedActions;
 
     /**
      * <p>
@@ -342,6 +353,149 @@ public class ListAvailableResourceDimensionsRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * The actions to discover the dimensions you are authorized to access. If you specify multiple actions, then the
+     * response will contain the dimensions common for all the actions.
+     * </p>
+     * <p>
+     * When you don't specify this request parameter or provide an empty list, the response contains all the available
+     * dimensions for the target database engine whether or not you are authorized to access them.
+     * </p>
+     * 
+     * @return The actions to discover the dimensions you are authorized to access. If you specify multiple actions,
+     *         then the response will contain the dimensions common for all the actions.</p>
+     *         <p>
+     *         When you don't specify this request parameter or provide an empty list, the response contains all the
+     *         available dimensions for the target database engine whether or not you are authorized to access them.
+     * @see FineGrainedAction
+     */
+
+    public java.util.List<String> getAuthorizedActions() {
+        return authorizedActions;
+    }
+
+    /**
+     * <p>
+     * The actions to discover the dimensions you are authorized to access. If you specify multiple actions, then the
+     * response will contain the dimensions common for all the actions.
+     * </p>
+     * <p>
+     * When you don't specify this request parameter or provide an empty list, the response contains all the available
+     * dimensions for the target database engine whether or not you are authorized to access them.
+     * </p>
+     * 
+     * @param authorizedActions
+     *        The actions to discover the dimensions you are authorized to access. If you specify multiple actions, then
+     *        the response will contain the dimensions common for all the actions.</p>
+     *        <p>
+     *        When you don't specify this request parameter or provide an empty list, the response contains all the
+     *        available dimensions for the target database engine whether or not you are authorized to access them.
+     * @see FineGrainedAction
+     */
+
+    public void setAuthorizedActions(java.util.Collection<String> authorizedActions) {
+        if (authorizedActions == null) {
+            this.authorizedActions = null;
+            return;
+        }
+
+        this.authorizedActions = new java.util.ArrayList<String>(authorizedActions);
+    }
+
+    /**
+     * <p>
+     * The actions to discover the dimensions you are authorized to access. If you specify multiple actions, then the
+     * response will contain the dimensions common for all the actions.
+     * </p>
+     * <p>
+     * When you don't specify this request parameter or provide an empty list, the response contains all the available
+     * dimensions for the target database engine whether or not you are authorized to access them.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAuthorizedActions(java.util.Collection)} or {@link #withAuthorizedActions(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param authorizedActions
+     *        The actions to discover the dimensions you are authorized to access. If you specify multiple actions, then
+     *        the response will contain the dimensions common for all the actions.</p>
+     *        <p>
+     *        When you don't specify this request parameter or provide an empty list, the response contains all the
+     *        available dimensions for the target database engine whether or not you are authorized to access them.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FineGrainedAction
+     */
+
+    public ListAvailableResourceDimensionsRequest withAuthorizedActions(String... authorizedActions) {
+        if (this.authorizedActions == null) {
+            setAuthorizedActions(new java.util.ArrayList<String>(authorizedActions.length));
+        }
+        for (String ele : authorizedActions) {
+            this.authorizedActions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The actions to discover the dimensions you are authorized to access. If you specify multiple actions, then the
+     * response will contain the dimensions common for all the actions.
+     * </p>
+     * <p>
+     * When you don't specify this request parameter or provide an empty list, the response contains all the available
+     * dimensions for the target database engine whether or not you are authorized to access them.
+     * </p>
+     * 
+     * @param authorizedActions
+     *        The actions to discover the dimensions you are authorized to access. If you specify multiple actions, then
+     *        the response will contain the dimensions common for all the actions.</p>
+     *        <p>
+     *        When you don't specify this request parameter or provide an empty list, the response contains all the
+     *        available dimensions for the target database engine whether or not you are authorized to access them.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FineGrainedAction
+     */
+
+    public ListAvailableResourceDimensionsRequest withAuthorizedActions(java.util.Collection<String> authorizedActions) {
+        setAuthorizedActions(authorizedActions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The actions to discover the dimensions you are authorized to access. If you specify multiple actions, then the
+     * response will contain the dimensions common for all the actions.
+     * </p>
+     * <p>
+     * When you don't specify this request parameter or provide an empty list, the response contains all the available
+     * dimensions for the target database engine whether or not you are authorized to access them.
+     * </p>
+     * 
+     * @param authorizedActions
+     *        The actions to discover the dimensions you are authorized to access. If you specify multiple actions, then
+     *        the response will contain the dimensions common for all the actions.</p>
+     *        <p>
+     *        When you don't specify this request parameter or provide an empty list, the response contains all the
+     *        available dimensions for the target database engine whether or not you are authorized to access them.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FineGrainedAction
+     */
+
+    public ListAvailableResourceDimensionsRequest withAuthorizedActions(FineGrainedAction... authorizedActions) {
+        java.util.ArrayList<String> authorizedActionsCopy = new java.util.ArrayList<String>(authorizedActions.length);
+        for (FineGrainedAction value : authorizedActions) {
+            authorizedActionsCopy.add(value.toString());
+        }
+        if (getAuthorizedActions() == null) {
+            setAuthorizedActions(authorizedActionsCopy);
+        } else {
+            getAuthorizedActions().addAll(authorizedActionsCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -362,7 +516,9 @@ public class ListAvailableResourceDimensionsRequest extends com.amazonaws.Amazon
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getAuthorizedActions() != null)
+            sb.append("AuthorizedActions: ").append(getAuthorizedActions());
         sb.append("}");
         return sb.toString();
     }
@@ -397,6 +553,10 @@ public class ListAvailableResourceDimensionsRequest extends com.amazonaws.Amazon
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getAuthorizedActions() == null ^ this.getAuthorizedActions() == null)
+            return false;
+        if (other.getAuthorizedActions() != null && other.getAuthorizedActions().equals(this.getAuthorizedActions()) == false)
+            return false;
         return true;
     }
 
@@ -410,6 +570,7 @@ public class ListAvailableResourceDimensionsRequest extends com.amazonaws.Amazon
         hashCode = prime * hashCode + ((getMetrics() == null) ? 0 : getMetrics().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getAuthorizedActions() == null) ? 0 : getAuthorizedActions().hashCode());
         return hashCode;
     }
 

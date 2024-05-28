@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -600,6 +600,19 @@ public class AbstractAWSTransferAsync extends AbstractAWSTransfer implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<StartDirectoryListingResult> startDirectoryListingAsync(StartDirectoryListingRequest request) {
+
+        return startDirectoryListingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartDirectoryListingResult> startDirectoryListingAsync(StartDirectoryListingRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartDirectoryListingRequest, StartDirectoryListingResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StartFileTransferResult> startFileTransferAsync(StartFileTransferRequest request) {
 
         return startFileTransferAsync(request, null);
@@ -647,6 +660,19 @@ public class AbstractAWSTransferAsync extends AbstractAWSTransfer implements AWS
     @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TestConnectionResult> testConnectionAsync(TestConnectionRequest request) {
+
+        return testConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TestConnectionResult> testConnectionAsync(TestConnectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<TestConnectionRequest, TestConnectionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

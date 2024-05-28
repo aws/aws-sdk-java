@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class WriteApplicationSettingsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Limits").build();
     private static final MarshallingInfo<StructuredPojo> QUIETTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QuietTime").build();
+    private static final MarshallingInfo<StructuredPojo> JOURNEYLIMITS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JourneyLimits").build();
 
     private static final WriteApplicationSettingsRequestMarshaller instance = new WriteApplicationSettingsRequestMarshaller();
 
@@ -59,6 +61,7 @@ public class WriteApplicationSettingsRequestMarshaller {
             protocolMarshaller.marshall(writeApplicationSettingsRequest.getEventTaggingEnabled(), EVENTTAGGINGENABLED_BINDING);
             protocolMarshaller.marshall(writeApplicationSettingsRequest.getLimits(), LIMITS_BINDING);
             protocolMarshaller.marshall(writeApplicationSettingsRequest.getQuietTime(), QUIETTIME_BINDING);
+            protocolMarshaller.marshall(writeApplicationSettingsRequest.getJourneyLimits(), JOURNEYLIMITS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

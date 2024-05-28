@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class UpdateOriginEndpointResult extends com.amazonaws.AmazonWebServiceRe
     private String channelId;
 
     private CmafPackage cmafPackage;
+    /** The date and time the OriginEndpoint was created. */
+    private String createdAt;
 
     private DashPackage dashPackage;
     /** A short text description of the OriginEndpoint. */
@@ -183,6 +185,40 @@ public class UpdateOriginEndpointResult extends com.amazonaws.AmazonWebServiceRe
 
     public UpdateOriginEndpointResult withCmafPackage(CmafPackage cmafPackage) {
         setCmafPackage(cmafPackage);
+        return this;
+    }
+
+    /**
+     * The date and time the OriginEndpoint was created.
+     * 
+     * @param createdAt
+     *        The date and time the OriginEndpoint was created.
+     */
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    /**
+     * The date and time the OriginEndpoint was created.
+     * 
+     * @return The date and time the OriginEndpoint was created.
+     */
+
+    public String getCreatedAt() {
+        return this.createdAt;
+    }
+
+    /**
+     * The date and time the OriginEndpoint was created.
+     * 
+     * @param createdAt
+     *        The date and time the OriginEndpoint was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateOriginEndpointResult withCreatedAt(String createdAt) {
+        setCreatedAt(createdAt);
         return this;
     }
 
@@ -687,6 +723,8 @@ public class UpdateOriginEndpointResult extends com.amazonaws.AmazonWebServiceRe
             sb.append("ChannelId: ").append(getChannelId()).append(",");
         if (getCmafPackage() != null)
             sb.append("CmafPackage: ").append(getCmafPackage()).append(",");
+        if (getCreatedAt() != null)
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getDashPackage() != null)
             sb.append("DashPackage: ").append(getDashPackage()).append(",");
         if (getDescription() != null)
@@ -740,6 +778,10 @@ public class UpdateOriginEndpointResult extends com.amazonaws.AmazonWebServiceRe
         if (other.getCmafPackage() == null ^ this.getCmafPackage() == null)
             return false;
         if (other.getCmafPackage() != null && other.getCmafPackage().equals(this.getCmafPackage()) == false)
+            return false;
+        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
+            return false;
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
         if (other.getDashPackage() == null ^ this.getDashPackage() == null)
             return false;
@@ -801,6 +843,7 @@ public class UpdateOriginEndpointResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getAuthorization() == null) ? 0 : getAuthorization().hashCode());
         hashCode = prime * hashCode + ((getChannelId() == null) ? 0 : getChannelId().hashCode());
         hashCode = prime * hashCode + ((getCmafPackage() == null) ? 0 : getCmafPackage().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getDashPackage() == null) ? 0 : getDashPackage().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getHlsPackage() == null) ? 0 : getHlsPackage().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -82,6 +82,16 @@ public class ClusterSubnetGroupStaxUnmarshaller implements Unmarshaller<ClusterS
 
                 if (context.testExpression("Tags/Tag", targetDepth)) {
                     clusterSubnetGroup.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SupportedClusterIpAddressTypes", targetDepth)) {
+                    clusterSubnetGroup.withSupportedClusterIpAddressTypes(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("SupportedClusterIpAddressTypes/item", targetDepth)) {
+                    clusterSubnetGroup.withSupportedClusterIpAddressTypes(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

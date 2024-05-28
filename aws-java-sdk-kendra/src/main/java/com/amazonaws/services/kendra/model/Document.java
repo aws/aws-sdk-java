@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier of the document in the index.
+     * A identifier of the document in the index.
      * </p>
      * <p>
      * Note, each document ID must be unique per index. You cannot create a data source to index your documents with
@@ -90,6 +90,11 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The file type of the document in the <code>Blob</code> field.
      * </p>
+     * <p>
+     * If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you
+     * must add the <code>HTML</code> start and closing tags (<code>&lt;HTML&gt;content&lt;/HTML&gt;</code>) around the
+     * content.
+     * </p>
      */
     private String contentType;
     /**
@@ -101,7 +106,7 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier of the document in the index.
+     * A identifier of the document in the index.
      * </p>
      * <p>
      * Note, each document ID must be unique per index. You cannot create a data source to index your documents with
@@ -111,7 +116,7 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param id
-     *        A unique identifier of the document in the index.</p>
+     *        A identifier of the document in the index.</p>
      *        <p>
      *        Note, each document ID must be unique per index. You cannot create a data source to index your documents
      *        with their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or
@@ -125,7 +130,7 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier of the document in the index.
+     * A identifier of the document in the index.
      * </p>
      * <p>
      * Note, each document ID must be unique per index. You cannot create a data source to index your documents with
@@ -134,7 +139,7 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * vice versa.
      * </p>
      * 
-     * @return A unique identifier of the document in the index.</p>
+     * @return A identifier of the document in the index.</p>
      *         <p>
      *         Note, each document ID must be unique per index. You cannot create a data source to index your documents
      *         with their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or
@@ -148,7 +153,7 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier of the document in the index.
+     * A identifier of the document in the index.
      * </p>
      * <p>
      * Note, each document ID must be unique per index. You cannot create a data source to index your documents with
@@ -158,7 +163,7 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param id
-     *        A unique identifier of the document in the index.</p>
+     *        A identifier of the document in the index.</p>
      *        <p>
      *        Note, each document ID must be unique per index. You cannot create a data source to index your documents
      *        with their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or
@@ -621,9 +626,18 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The file type of the document in the <code>Blob</code> field.
      * </p>
+     * <p>
+     * If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you
+     * must add the <code>HTML</code> start and closing tags (<code>&lt;HTML&gt;content&lt;/HTML&gt;</code>) around the
+     * content.
+     * </p>
      * 
      * @param contentType
-     *        The file type of the document in the <code>Blob</code> field.
+     *        The file type of the document in the <code>Blob</code> field.</p>
+     *        <p>
+     *        If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents,
+     *        you must add the <code>HTML</code> start and closing tags (<code>&lt;HTML&gt;content&lt;/HTML&gt;</code>)
+     *        around the content.
      * @see ContentType
      */
 
@@ -635,8 +649,17 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The file type of the document in the <code>Blob</code> field.
      * </p>
+     * <p>
+     * If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you
+     * must add the <code>HTML</code> start and closing tags (<code>&lt;HTML&gt;content&lt;/HTML&gt;</code>) around the
+     * content.
+     * </p>
      * 
-     * @return The file type of the document in the <code>Blob</code> field.
+     * @return The file type of the document in the <code>Blob</code> field.</p>
+     *         <p>
+     *         If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents,
+     *         you must add the <code>HTML</code> start and closing tags (<code>&lt;HTML&gt;content&lt;/HTML&gt;</code>)
+     *         around the content.
      * @see ContentType
      */
 
@@ -648,9 +671,18 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The file type of the document in the <code>Blob</code> field.
      * </p>
+     * <p>
+     * If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you
+     * must add the <code>HTML</code> start and closing tags (<code>&lt;HTML&gt;content&lt;/HTML&gt;</code>) around the
+     * content.
+     * </p>
      * 
      * @param contentType
-     *        The file type of the document in the <code>Blob</code> field.
+     *        The file type of the document in the <code>Blob</code> field.</p>
+     *        <p>
+     *        If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents,
+     *        you must add the <code>HTML</code> start and closing tags (<code>&lt;HTML&gt;content&lt;/HTML&gt;</code>)
+     *        around the content.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContentType
      */
@@ -664,9 +696,18 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The file type of the document in the <code>Blob</code> field.
      * </p>
+     * <p>
+     * If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents, you
+     * must add the <code>HTML</code> start and closing tags (<code>&lt;HTML&gt;content&lt;/HTML&gt;</code>) around the
+     * content.
+     * </p>
      * 
      * @param contentType
-     *        The file type of the document in the <code>Blob</code> field.
+     *        The file type of the document in the <code>Blob</code> field.</p>
+     *        <p>
+     *        If you want to index snippets or subsets of HTML documents instead of the entirety of the HTML documents,
+     *        you must add the <code>HTML</code> start and closing tags (<code>&lt;HTML&gt;content&lt;/HTML&gt;</code>)
+     *        around the content.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ContentType
      */

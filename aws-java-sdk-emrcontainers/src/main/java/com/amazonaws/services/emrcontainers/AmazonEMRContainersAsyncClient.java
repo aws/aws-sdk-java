@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,7 +56,7 @@ import java.util.concurrent.ExecutorService;
  * It is the prefix used in Amazon EMR on EKS service endpoints. For example,
  * <code>emr-containers.us-east-2.amazonaws.com</code>. For more information, see <a
  * href="https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/service-quotas.html#service-endpoints"
- * >Amazon EMR on EKS Service Endpoints</a>.
+ * >Amazon EMR on EKSService Endpoints</a>.
  * </p>
  * </li>
  * </ul>
@@ -141,6 +141,39 @@ public class AmazonEMRContainersAsyncClient extends AmazonEMRContainersClient im
     }
 
     @Override
+    public java.util.concurrent.Future<CreateJobTemplateResult> createJobTemplateAsync(CreateJobTemplateRequest request) {
+
+        return createJobTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateJobTemplateResult> createJobTemplateAsync(final CreateJobTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateJobTemplateRequest, CreateJobTemplateResult> asyncHandler) {
+        final CreateJobTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateJobTemplateResult>() {
+            @Override
+            public CreateJobTemplateResult call() throws Exception {
+                CreateJobTemplateResult result = null;
+
+                try {
+                    result = executeCreateJobTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateManagedEndpointResult> createManagedEndpointAsync(CreateManagedEndpointRequest request) {
 
         return createManagedEndpointAsync(request, null);
@@ -174,6 +207,39 @@ public class AmazonEMRContainersAsyncClient extends AmazonEMRContainersClient im
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSecurityConfigurationResult> createSecurityConfigurationAsync(CreateSecurityConfigurationRequest request) {
+
+        return createSecurityConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSecurityConfigurationResult> createSecurityConfigurationAsync(final CreateSecurityConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateSecurityConfigurationRequest, CreateSecurityConfigurationResult> asyncHandler) {
+        final CreateSecurityConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateSecurityConfigurationResult>() {
+            @Override
+            public CreateSecurityConfigurationResult call() throws Exception {
+                CreateSecurityConfigurationResult result = null;
+
+                try {
+                    result = executeCreateSecurityConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateVirtualClusterResult> createVirtualClusterAsync(CreateVirtualClusterRequest request) {
 
         return createVirtualClusterAsync(request, null);
@@ -191,6 +257,39 @@ public class AmazonEMRContainersAsyncClient extends AmazonEMRContainersClient im
 
                 try {
                     result = executeCreateVirtualCluster(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteJobTemplateResult> deleteJobTemplateAsync(DeleteJobTemplateRequest request) {
+
+        return deleteJobTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteJobTemplateResult> deleteJobTemplateAsync(final DeleteJobTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteJobTemplateRequest, DeleteJobTemplateResult> asyncHandler) {
+        final DeleteJobTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteJobTemplateResult>() {
+            @Override
+            public DeleteJobTemplateResult call() throws Exception {
+                DeleteJobTemplateResult result = null;
+
+                try {
+                    result = executeDeleteJobTemplate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -306,6 +405,39 @@ public class AmazonEMRContainersAsyncClient extends AmazonEMRContainersClient im
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeJobTemplateResult> describeJobTemplateAsync(DescribeJobTemplateRequest request) {
+
+        return describeJobTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeJobTemplateResult> describeJobTemplateAsync(final DescribeJobTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeJobTemplateRequest, DescribeJobTemplateResult> asyncHandler) {
+        final DescribeJobTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeJobTemplateResult>() {
+            @Override
+            public DescribeJobTemplateResult call() throws Exception {
+                DescribeJobTemplateResult result = null;
+
+                try {
+                    result = executeDescribeJobTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeManagedEndpointResult> describeManagedEndpointAsync(DescribeManagedEndpointRequest request) {
 
         return describeManagedEndpointAsync(request, null);
@@ -323,6 +455,40 @@ public class AmazonEMRContainersAsyncClient extends AmazonEMRContainersClient im
 
                 try {
                     result = executeDescribeManagedEndpoint(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSecurityConfigurationResult> describeSecurityConfigurationAsync(DescribeSecurityConfigurationRequest request) {
+
+        return describeSecurityConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSecurityConfigurationResult> describeSecurityConfigurationAsync(
+            final DescribeSecurityConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeSecurityConfigurationRequest, DescribeSecurityConfigurationResult> asyncHandler) {
+        final DescribeSecurityConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeSecurityConfigurationResult>() {
+            @Override
+            public DescribeSecurityConfigurationResult call() throws Exception {
+                DescribeSecurityConfigurationResult result = null;
+
+                try {
+                    result = executeDescribeSecurityConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -372,6 +538,41 @@ public class AmazonEMRContainersAsyncClient extends AmazonEMRContainersClient im
     }
 
     @Override
+    public java.util.concurrent.Future<GetManagedEndpointSessionCredentialsResult> getManagedEndpointSessionCredentialsAsync(
+            GetManagedEndpointSessionCredentialsRequest request) {
+
+        return getManagedEndpointSessionCredentialsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetManagedEndpointSessionCredentialsResult> getManagedEndpointSessionCredentialsAsync(
+            final GetManagedEndpointSessionCredentialsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetManagedEndpointSessionCredentialsRequest, GetManagedEndpointSessionCredentialsResult> asyncHandler) {
+        final GetManagedEndpointSessionCredentialsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetManagedEndpointSessionCredentialsResult>() {
+            @Override
+            public GetManagedEndpointSessionCredentialsResult call() throws Exception {
+                GetManagedEndpointSessionCredentialsResult result = null;
+
+                try {
+                    result = executeGetManagedEndpointSessionCredentials(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListJobRunsResult> listJobRunsAsync(ListJobRunsRequest request) {
 
         return listJobRunsAsync(request, null);
@@ -405,6 +606,39 @@ public class AmazonEMRContainersAsyncClient extends AmazonEMRContainersClient im
     }
 
     @Override
+    public java.util.concurrent.Future<ListJobTemplatesResult> listJobTemplatesAsync(ListJobTemplatesRequest request) {
+
+        return listJobTemplatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListJobTemplatesResult> listJobTemplatesAsync(final ListJobTemplatesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListJobTemplatesRequest, ListJobTemplatesResult> asyncHandler) {
+        final ListJobTemplatesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListJobTemplatesResult>() {
+            @Override
+            public ListJobTemplatesResult call() throws Exception {
+                ListJobTemplatesResult result = null;
+
+                try {
+                    result = executeListJobTemplates(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListManagedEndpointsResult> listManagedEndpointsAsync(ListManagedEndpointsRequest request) {
 
         return listManagedEndpointsAsync(request, null);
@@ -422,6 +656,39 @@ public class AmazonEMRContainersAsyncClient extends AmazonEMRContainersClient im
 
                 try {
                     result = executeListManagedEndpoints(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSecurityConfigurationsResult> listSecurityConfigurationsAsync(ListSecurityConfigurationsRequest request) {
+
+        return listSecurityConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSecurityConfigurationsResult> listSecurityConfigurationsAsync(final ListSecurityConfigurationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSecurityConfigurationsRequest, ListSecurityConfigurationsResult> asyncHandler) {
+        final ListSecurityConfigurationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSecurityConfigurationsResult>() {
+            @Override
+            public ListSecurityConfigurationsResult call() throws Exception {
+                ListSecurityConfigurationsResult result = null;
+
+                try {
+                    result = executeListSecurityConfigurations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,10 +19,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The part of the web request that you want WAF to inspect. Include the single <code>FieldToMatch</code> type that you
- * want to inspect, with additional specifications as needed, according to the type. You specify a single request
- * component in <code>FieldToMatch</code> for each rule statement that requires it. To inspect more than one component
- * of the web request, create a separate rule statement for each component.
+ * Specifies a web request component to be used in a rule match statement or in a logging configuration.
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * In a rule statement, this is the part of the web request that you want WAF to inspect. Include the single
+ * <code>FieldToMatch</code> type that you want to inspect, with additional specifications as needed, according to the
+ * type. You specify a single request component in <code>FieldToMatch</code> for each rule statement that requires it.
+ * To inspect more than one component of the web request, create a separate rule statement for each component.
  * </p>
  * <p>
  * Example JSON for a <code>QueryString</code> field to match:
@@ -36,6 +41,34 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * <code> "FieldToMatch": { "Method": { "Name": "DELETE" } }</code>
  * </p>
+ * </li>
+ * <li>
+ * <p>
+ * In a logging configuration, this is used in the <code>RedactedFields</code> property to specify a field to redact
+ * from the logging records. For this use case, note the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Even though all <code>FieldToMatch</code> settings are available, the only valid settings for field redaction are
+ * <code>UriPath</code>, <code>QueryString</code>, <code>SingleHeader</code>, and <code>Method</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * In this documentation, the descriptions of the individual fields talk about specifying the web request component to
+ * inspect, but for field redaction, you are specifying the component type to redact from the logs.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * If you have request sampling enabled, the redacted fields configuration for logging has no impact on sampling. The
+ * only way to exclude fields from request sampling is by disabling sampling in the web ACL visibility configuration.
+ * </p>
+ * </li>
+ * </ul>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/FieldToMatch" target="_top">AWS API
  *      Documentation</a>
@@ -93,9 +126,26 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * body, such as data from a form.
      * </p>
      * <p>
-     * Only the first 8 KB (8192 bytes) of the request body are forwarded to WAF for inspection by the underlying host
-     * service. For information about how to handle oversized request bodies, see the <code>Body</code> object
-     * configuration.
+     * WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit for the
+     * resource type. When a web request body is larger than the limit, the underlying host service only forwards the
+     * contents that are within the limit to WAF for inspection.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384
+     * bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for
+     * additional processing fees.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For information about how to handle oversized request bodies, see the <code>Body</code> object configuration.
      * </p>
      */
     private Body body;
@@ -113,9 +163,26 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * as data from a form.
      * </p>
      * <p>
-     * Only the first 8 KB (8192 bytes) of the request body are forwarded to WAF for inspection by the underlying host
-     * service. For information about how to handle oversized request bodies, see the <code>JsonBody</code> object
-     * configuration.
+     * WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit for the
+     * resource type. When a web request body is larger than the limit, the underlying host service only forwards the
+     * contents that are within the limit to WAF for inspection.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384
+     * bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for
+     * additional processing fees.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For information about how to handle oversized request bodies, see the <code>JsonBody</code> object configuration.
      * </p>
      */
     private JsonBody jsonBody;
@@ -145,6 +212,41 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Cookies cookies;
+    /**
+     * <p>
+     * Inspect a string containing the list of the request's header names, ordered as they appear in the web request
+     * that WAF receives for inspection. WAF generates the string and then uses that as the field to match component in
+     * its inspection. WAF separates the header names in the string using colons and no added spaces, for example
+     * <code>host:user-agent:accept:authorization:referer</code>.
+     * </p>
+     */
+    private HeaderOrder headerOrder;
+    /**
+     * <p>
+     * Available for use with Amazon CloudFront distributions and Application Load Balancers. Match against the
+     * request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an
+     * incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. WAF
+     * calculates and logs this fingerprint for each request that has enough TLS Client Hello information for the
+     * calculation. Almost all web requests include this information.
+     * </p>
+     * <note>
+     * <p>
+     * You can use this choice only with a string match <code>ByteMatchStatement</code> with the
+     * <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
+     * </p>
+     * </note>
+     * <p>
+     * You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the
+     * fingerprint, it includes it in the logs. For information about the logging fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * Provide the JA3 fingerprint string from the logs in your string match statement specification, to match with any
+     * future requests that have the same TLS configuration.
+     * </p>
+     */
+    private JA3Fingerprint jA3Fingerprint;
 
     /**
      * <p>
@@ -429,9 +531,26 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * body, such as data from a form.
      * </p>
      * <p>
-     * Only the first 8 KB (8192 bytes) of the request body are forwarded to WAF for inspection by the underlying host
-     * service. For information about how to handle oversized request bodies, see the <code>Body</code> object
-     * configuration.
+     * WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit for the
+     * resource type. When a web request body is larger than the limit, the underlying host service only forwards the
+     * contents that are within the limit to WAF for inspection.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384
+     * bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for
+     * additional processing fees.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For information about how to handle oversized request bodies, see the <code>Body</code> object configuration.
      * </p>
      * 
      * @param body
@@ -439,9 +558,27 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      *        the part of a request that contains any additional data that you want to send to your web server as the
      *        HTTP request body, such as data from a form. </p>
      *        <p>
-     *        Only the first 8 KB (8192 bytes) of the request body are forwarded to WAF for inspection by the underlying
-     *        host service. For information about how to handle oversized request bodies, see the <code>Body</code>
-     *        object configuration.
+     *        WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit
+     *        for the resource type. When a web request body is larger than the limit, the underlying host service only
+     *        forwards the contents that are within the limit to WAF for inspection.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB
+     *        (16,384 bytes), and you can increase the limit for each resource type in the web ACL
+     *        <code>AssociationConfig</code>, for additional processing fees.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For information about how to handle oversized request bodies, see the <code>Body</code> object
+     *        configuration.
      */
 
     public void setBody(Body body) {
@@ -455,18 +592,53 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * body, such as data from a form.
      * </p>
      * <p>
-     * Only the first 8 KB (8192 bytes) of the request body are forwarded to WAF for inspection by the underlying host
-     * service. For information about how to handle oversized request bodies, see the <code>Body</code> object
-     * configuration.
+     * WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit for the
+     * resource type. When a web request body is larger than the limit, the underlying host service only forwards the
+     * contents that are within the limit to WAF for inspection.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384
+     * bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for
+     * additional processing fees.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For information about how to handle oversized request bodies, see the <code>Body</code> object configuration.
      * </p>
      * 
      * @return Inspect the request body as plain text. The request body immediately follows the request headers. This is
      *         the part of a request that contains any additional data that you want to send to your web server as the
      *         HTTP request body, such as data from a form. </p>
      *         <p>
-     *         Only the first 8 KB (8192 bytes) of the request body are forwarded to WAF for inspection by the
-     *         underlying host service. For information about how to handle oversized request bodies, see the
-     *         <code>Body</code> object configuration.
+     *         WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit
+     *         for the resource type. When a web request body is larger than the limit, the underlying host service only
+     *         forwards the contents that are within the limit to WAF for inspection.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB
+     *         (16,384 bytes), and you can increase the limit for each resource type in the web ACL
+     *         <code>AssociationConfig</code>, for additional processing fees.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For information about how to handle oversized request bodies, see the <code>Body</code> object
+     *         configuration.
      */
 
     public Body getBody() {
@@ -480,9 +652,26 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * body, such as data from a form.
      * </p>
      * <p>
-     * Only the first 8 KB (8192 bytes) of the request body are forwarded to WAF for inspection by the underlying host
-     * service. For information about how to handle oversized request bodies, see the <code>Body</code> object
-     * configuration.
+     * WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit for the
+     * resource type. When a web request body is larger than the limit, the underlying host service only forwards the
+     * contents that are within the limit to WAF for inspection.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384
+     * bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for
+     * additional processing fees.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For information about how to handle oversized request bodies, see the <code>Body</code> object configuration.
      * </p>
      * 
      * @param body
@@ -490,9 +679,27 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      *        the part of a request that contains any additional data that you want to send to your web server as the
      *        HTTP request body, such as data from a form. </p>
      *        <p>
-     *        Only the first 8 KB (8192 bytes) of the request body are forwarded to WAF for inspection by the underlying
-     *        host service. For information about how to handle oversized request bodies, see the <code>Body</code>
-     *        object configuration.
+     *        WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit
+     *        for the resource type. When a web request body is larger than the limit, the underlying host service only
+     *        forwards the contents that are within the limit to WAF for inspection.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB
+     *        (16,384 bytes), and you can increase the limit for each resource type in the web ACL
+     *        <code>AssociationConfig</code>, for additional processing fees.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For information about how to handle oversized request bodies, see the <code>Body</code> object
+     *        configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -554,9 +761,26 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * as data from a form.
      * </p>
      * <p>
-     * Only the first 8 KB (8192 bytes) of the request body are forwarded to WAF for inspection by the underlying host
-     * service. For information about how to handle oversized request bodies, see the <code>JsonBody</code> object
-     * configuration.
+     * WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit for the
+     * resource type. When a web request body is larger than the limit, the underlying host service only forwards the
+     * contents that are within the limit to WAF for inspection.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384
+     * bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for
+     * additional processing fees.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For information about how to handle oversized request bodies, see the <code>JsonBody</code> object configuration.
      * </p>
      * 
      * @param jsonBody
@@ -564,9 +788,27 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      *        part of a request that contains any additional data that you want to send to your web server as the HTTP
      *        request body, such as data from a form. </p>
      *        <p>
-     *        Only the first 8 KB (8192 bytes) of the request body are forwarded to WAF for inspection by the underlying
-     *        host service. For information about how to handle oversized request bodies, see the <code>JsonBody</code>
-     *        object configuration.
+     *        WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit
+     *        for the resource type. When a web request body is larger than the limit, the underlying host service only
+     *        forwards the contents that are within the limit to WAF for inspection.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB
+     *        (16,384 bytes), and you can increase the limit for each resource type in the web ACL
+     *        <code>AssociationConfig</code>, for additional processing fees.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For information about how to handle oversized request bodies, see the <code>JsonBody</code> object
+     *        configuration.
      */
 
     public void setJsonBody(JsonBody jsonBody) {
@@ -580,18 +822,53 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * as data from a form.
      * </p>
      * <p>
-     * Only the first 8 KB (8192 bytes) of the request body are forwarded to WAF for inspection by the underlying host
-     * service. For information about how to handle oversized request bodies, see the <code>JsonBody</code> object
-     * configuration.
+     * WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit for the
+     * resource type. When a web request body is larger than the limit, the underlying host service only forwards the
+     * contents that are within the limit to WAF for inspection.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384
+     * bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for
+     * additional processing fees.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For information about how to handle oversized request bodies, see the <code>JsonBody</code> object configuration.
      * </p>
      * 
      * @return Inspect the request body as JSON. The request body immediately follows the request headers. This is the
      *         part of a request that contains any additional data that you want to send to your web server as the HTTP
      *         request body, such as data from a form. </p>
      *         <p>
-     *         Only the first 8 KB (8192 bytes) of the request body are forwarded to WAF for inspection by the
-     *         underlying host service. For information about how to handle oversized request bodies, see the
-     *         <code>JsonBody</code> object configuration.
+     *         WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit
+     *         for the resource type. When a web request body is larger than the limit, the underlying host service only
+     *         forwards the contents that are within the limit to WAF for inspection.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB
+     *         (16,384 bytes), and you can increase the limit for each resource type in the web ACL
+     *         <code>AssociationConfig</code>, for additional processing fees.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For information about how to handle oversized request bodies, see the <code>JsonBody</code> object
+     *         configuration.
      */
 
     public JsonBody getJsonBody() {
@@ -605,9 +882,26 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * as data from a form.
      * </p>
      * <p>
-     * Only the first 8 KB (8192 bytes) of the request body are forwarded to WAF for inspection by the underlying host
-     * service. For information about how to handle oversized request bodies, see the <code>JsonBody</code> object
-     * configuration.
+     * WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit for the
+     * resource type. When a web request body is larger than the limit, the underlying host service only forwards the
+     * contents that are within the limit to WAF for inspection.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB (16,384
+     * bytes), and you can increase the limit for each resource type in the web ACL <code>AssociationConfig</code>, for
+     * additional processing fees.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For information about how to handle oversized request bodies, see the <code>JsonBody</code> object configuration.
      * </p>
      * 
      * @param jsonBody
@@ -615,9 +909,27 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      *        part of a request that contains any additional data that you want to send to your web server as the HTTP
      *        request body, such as data from a form. </p>
      *        <p>
-     *        Only the first 8 KB (8192 bytes) of the request body are forwarded to WAF for inspection by the underlying
-     *        host service. For information about how to handle oversized request bodies, see the <code>JsonBody</code>
-     *        object configuration.
+     *        WAF does not support inspecting the entire contents of the web request body if the body exceeds the limit
+     *        for the resource type. When a web request body is larger than the limit, the underlying host service only
+     *        forwards the contents that are within the limit to WAF for inspection.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the default limit is 16 KB
+     *        (16,384 bytes), and you can increase the limit for each resource type in the web ACL
+     *        <code>AssociationConfig</code>, for additional processing fees.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For information about how to handle oversized request bodies, see the <code>JsonBody</code> object
+     *        configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -791,6 +1103,218 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Inspect a string containing the list of the request's header names, ordered as they appear in the web request
+     * that WAF receives for inspection. WAF generates the string and then uses that as the field to match component in
+     * its inspection. WAF separates the header names in the string using colons and no added spaces, for example
+     * <code>host:user-agent:accept:authorization:referer</code>.
+     * </p>
+     * 
+     * @param headerOrder
+     *        Inspect a string containing the list of the request's header names, ordered as they appear in the web
+     *        request that WAF receives for inspection. WAF generates the string and then uses that as the field to
+     *        match component in its inspection. WAF separates the header names in the string using colons and no added
+     *        spaces, for example <code>host:user-agent:accept:authorization:referer</code>.
+     */
+
+    public void setHeaderOrder(HeaderOrder headerOrder) {
+        this.headerOrder = headerOrder;
+    }
+
+    /**
+     * <p>
+     * Inspect a string containing the list of the request's header names, ordered as they appear in the web request
+     * that WAF receives for inspection. WAF generates the string and then uses that as the field to match component in
+     * its inspection. WAF separates the header names in the string using colons and no added spaces, for example
+     * <code>host:user-agent:accept:authorization:referer</code>.
+     * </p>
+     * 
+     * @return Inspect a string containing the list of the request's header names, ordered as they appear in the web
+     *         request that WAF receives for inspection. WAF generates the string and then uses that as the field to
+     *         match component in its inspection. WAF separates the header names in the string using colons and no added
+     *         spaces, for example <code>host:user-agent:accept:authorization:referer</code>.
+     */
+
+    public HeaderOrder getHeaderOrder() {
+        return this.headerOrder;
+    }
+
+    /**
+     * <p>
+     * Inspect a string containing the list of the request's header names, ordered as they appear in the web request
+     * that WAF receives for inspection. WAF generates the string and then uses that as the field to match component in
+     * its inspection. WAF separates the header names in the string using colons and no added spaces, for example
+     * <code>host:user-agent:accept:authorization:referer</code>.
+     * </p>
+     * 
+     * @param headerOrder
+     *        Inspect a string containing the list of the request's header names, ordered as they appear in the web
+     *        request that WAF receives for inspection. WAF generates the string and then uses that as the field to
+     *        match component in its inspection. WAF separates the header names in the string using colons and no added
+     *        spaces, for example <code>host:user-agent:accept:authorization:referer</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FieldToMatch withHeaderOrder(HeaderOrder headerOrder) {
+        setHeaderOrder(headerOrder);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Available for use with Amazon CloudFront distributions and Application Load Balancers. Match against the
+     * request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an
+     * incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. WAF
+     * calculates and logs this fingerprint for each request that has enough TLS Client Hello information for the
+     * calculation. Almost all web requests include this information.
+     * </p>
+     * <note>
+     * <p>
+     * You can use this choice only with a string match <code>ByteMatchStatement</code> with the
+     * <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
+     * </p>
+     * </note>
+     * <p>
+     * You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the
+     * fingerprint, it includes it in the logs. For information about the logging fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * Provide the JA3 fingerprint string from the logs in your string match statement specification, to match with any
+     * future requests that have the same TLS configuration.
+     * </p>
+     * 
+     * @param jA3Fingerprint
+     *        Available for use with Amazon CloudFront distributions and Application Load Balancers. Match against the
+     *        request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of
+     *        an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration.
+     *        WAF calculates and logs this fingerprint for each request that has enough TLS Client Hello information for
+     *        the calculation. Almost all web requests include this information.</p> <note>
+     *        <p>
+     *        You can use this choice only with a string match <code>ByteMatchStatement</code> with the
+     *        <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate
+     *        the fingerprint, it includes it in the logs. For information about the logging fields, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the
+     *        <i>WAF Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        Provide the JA3 fingerprint string from the logs in your string match statement specification, to match
+     *        with any future requests that have the same TLS configuration.
+     */
+
+    public void setJA3Fingerprint(JA3Fingerprint jA3Fingerprint) {
+        this.jA3Fingerprint = jA3Fingerprint;
+    }
+
+    /**
+     * <p>
+     * Available for use with Amazon CloudFront distributions and Application Load Balancers. Match against the
+     * request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an
+     * incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. WAF
+     * calculates and logs this fingerprint for each request that has enough TLS Client Hello information for the
+     * calculation. Almost all web requests include this information.
+     * </p>
+     * <note>
+     * <p>
+     * You can use this choice only with a string match <code>ByteMatchStatement</code> with the
+     * <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
+     * </p>
+     * </note>
+     * <p>
+     * You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the
+     * fingerprint, it includes it in the logs. For information about the logging fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * Provide the JA3 fingerprint string from the logs in your string match statement specification, to match with any
+     * future requests that have the same TLS configuration.
+     * </p>
+     * 
+     * @return Available for use with Amazon CloudFront distributions and Application Load Balancers. Match against the
+     *         request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello
+     *         of an incoming request. This fingerprint serves as a unique identifier for the client's TLS
+     *         configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client Hello
+     *         information for the calculation. Almost all web requests include this information.</p> <note>
+     *         <p>
+     *         You can use this choice only with a string match <code>ByteMatchStatement</code> with the
+     *         <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate
+     *         the fingerprint, it includes it in the logs. For information about the logging fields, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the
+     *         <i>WAF Developer Guide</i>.
+     *         </p>
+     *         <p>
+     *         Provide the JA3 fingerprint string from the logs in your string match statement specification, to match
+     *         with any future requests that have the same TLS configuration.
+     */
+
+    public JA3Fingerprint getJA3Fingerprint() {
+        return this.jA3Fingerprint;
+    }
+
+    /**
+     * <p>
+     * Available for use with Amazon CloudFront distributions and Application Load Balancers. Match against the
+     * request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an
+     * incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. WAF
+     * calculates and logs this fingerprint for each request that has enough TLS Client Hello information for the
+     * calculation. Almost all web requests include this information.
+     * </p>
+     * <note>
+     * <p>
+     * You can use this choice only with a string match <code>ByteMatchStatement</code> with the
+     * <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
+     * </p>
+     * </note>
+     * <p>
+     * You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the
+     * fingerprint, it includes it in the logs. For information about the logging fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * Provide the JA3 fingerprint string from the logs in your string match statement specification, to match with any
+     * future requests that have the same TLS configuration.
+     * </p>
+     * 
+     * @param jA3Fingerprint
+     *        Available for use with Amazon CloudFront distributions and Application Load Balancers. Match against the
+     *        request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of
+     *        an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration.
+     *        WAF calculates and logs this fingerprint for each request that has enough TLS Client Hello information for
+     *        the calculation. Almost all web requests include this information.</p> <note>
+     *        <p>
+     *        You can use this choice only with a string match <code>ByteMatchStatement</code> with the
+     *        <code>PositionalConstraint</code> set to <code>EXACTLY</code>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate
+     *        the fingerprint, it includes it in the logs. For information about the logging fields, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the
+     *        <i>WAF Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        Provide the JA3 fingerprint string from the logs in your string match statement specification, to match
+     *        with any future requests that have the same TLS configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FieldToMatch withJA3Fingerprint(JA3Fingerprint jA3Fingerprint) {
+        setJA3Fingerprint(jA3Fingerprint);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -821,7 +1345,11 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
         if (getHeaders() != null)
             sb.append("Headers: ").append(getHeaders()).append(",");
         if (getCookies() != null)
-            sb.append("Cookies: ").append(getCookies());
+            sb.append("Cookies: ").append(getCookies()).append(",");
+        if (getHeaderOrder() != null)
+            sb.append("HeaderOrder: ").append(getHeaderOrder()).append(",");
+        if (getJA3Fingerprint() != null)
+            sb.append("JA3Fingerprint: ").append(getJA3Fingerprint());
         sb.append("}");
         return sb.toString();
     }
@@ -876,6 +1404,14 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCookies() != null && other.getCookies().equals(this.getCookies()) == false)
             return false;
+        if (other.getHeaderOrder() == null ^ this.getHeaderOrder() == null)
+            return false;
+        if (other.getHeaderOrder() != null && other.getHeaderOrder().equals(this.getHeaderOrder()) == false)
+            return false;
+        if (other.getJA3Fingerprint() == null ^ this.getJA3Fingerprint() == null)
+            return false;
+        if (other.getJA3Fingerprint() != null && other.getJA3Fingerprint().equals(this.getJA3Fingerprint()) == false)
+            return false;
         return true;
     }
 
@@ -894,6 +1430,8 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getJsonBody() == null) ? 0 : getJsonBody().hashCode());
         hashCode = prime * hashCode + ((getHeaders() == null) ? 0 : getHeaders().hashCode());
         hashCode = prime * hashCode + ((getCookies() == null) ? 0 : getCookies().hashCode());
+        hashCode = prime * hashCode + ((getHeaderOrder() == null) ? 0 : getHeaderOrder().hashCode());
+        hashCode = prime * hashCode + ((getJA3Fingerprint() == null) ? 0 : getJA3Fingerprint().hashCode());
         return hashCode;
     }
 

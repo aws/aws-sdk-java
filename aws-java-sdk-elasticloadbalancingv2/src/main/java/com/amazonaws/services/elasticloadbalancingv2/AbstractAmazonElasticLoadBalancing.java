@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,11 @@ public class AbstractAmazonElasticLoadBalancing implements AmazonElasticLoadBala
     }
 
     @Override
+    public AddTrustStoreRevocationsResult addTrustStoreRevocations(AddTrustStoreRevocationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateListenerResult createListener(CreateListenerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -69,6 +74,11 @@ public class AbstractAmazonElasticLoadBalancing implements AmazonElasticLoadBala
     }
 
     @Override
+    public CreateTrustStoreResult createTrustStore(CreateTrustStoreRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteListenerResult deleteListener(DeleteListenerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -85,6 +95,11 @@ public class AbstractAmazonElasticLoadBalancing implements AmazonElasticLoadBala
 
     @Override
     public DeleteTargetGroupResult deleteTargetGroup(DeleteTargetGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteTrustStoreResult deleteTrustStore(DeleteTrustStoreRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -149,6 +164,31 @@ public class AbstractAmazonElasticLoadBalancing implements AmazonElasticLoadBala
     }
 
     @Override
+    public DescribeTrustStoreAssociationsResult describeTrustStoreAssociations(DescribeTrustStoreAssociationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeTrustStoreRevocationsResult describeTrustStoreRevocations(DescribeTrustStoreRevocationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeTrustStoresResult describeTrustStores(DescribeTrustStoresRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetTrustStoreCaCertificatesBundleResult getTrustStoreCaCertificatesBundle(GetTrustStoreCaCertificatesBundleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetTrustStoreRevocationContentResult getTrustStoreRevocationContent(GetTrustStoreRevocationContentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ModifyListenerResult modifyListener(ModifyListenerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -174,6 +214,11 @@ public class AbstractAmazonElasticLoadBalancing implements AmazonElasticLoadBala
     }
 
     @Override
+    public ModifyTrustStoreResult modifyTrustStore(ModifyTrustStoreRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RegisterTargetsResult registerTargets(RegisterTargetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -185,6 +230,11 @@ public class AbstractAmazonElasticLoadBalancing implements AmazonElasticLoadBala
 
     @Override
     public RemoveTagsResult removeTags(RemoveTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RemoveTrustStoreRevocationsResult removeTrustStoreRevocations(RemoveTrustStoreRevocationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

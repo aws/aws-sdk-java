@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,8 @@ public class UpdateJobQueueRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("priority").build();
     private static final MarshallingInfo<List> COMPUTEENVIRONMENTORDER_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("computeEnvironmentOrder").build();
+    private static final MarshallingInfo<List> JOBSTATETIMELIMITACTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("jobStateTimeLimitActions").build();
 
     private static final UpdateJobQueueRequestMarshaller instance = new UpdateJobQueueRequestMarshaller();
 
@@ -60,6 +62,7 @@ public class UpdateJobQueueRequestMarshaller {
             protocolMarshaller.marshall(updateJobQueueRequest.getSchedulingPolicyArn(), SCHEDULINGPOLICYARN_BINDING);
             protocolMarshaller.marshall(updateJobQueueRequest.getPriority(), PRIORITY_BINDING);
             protocolMarshaller.marshall(updateJobQueueRequest.getComputeEnvironmentOrder(), COMPUTEENVIRONMENTORDER_BINDING);
+            protocolMarshaller.marshall(updateJobQueueRequest.getJobStateTimeLimitActions(), JOBSTATETIMELIMITACTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

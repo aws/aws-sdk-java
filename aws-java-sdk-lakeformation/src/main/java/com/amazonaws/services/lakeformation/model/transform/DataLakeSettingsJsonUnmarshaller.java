@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,6 +54,12 @@ public class DataLakeSettingsJsonUnmarshaller implements Unmarshaller<DataLakeSe
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("ReadOnlyAdmins", targetDepth)) {
+                    context.nextToken();
+                    dataLakeSettings.setReadOnlyAdmins(new ListUnmarshaller<DataLakePrincipal>(DataLakePrincipalJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("CreateDatabaseDefaultPermissions", targetDepth)) {
                     context.nextToken();
                     dataLakeSettings.setCreateDatabaseDefaultPermissions(new ListUnmarshaller<PrincipalPermissions>(PrincipalPermissionsJsonUnmarshaller
@@ -68,6 +74,11 @@ public class DataLakeSettingsJsonUnmarshaller implements Unmarshaller<DataLakeSe
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("Parameters", targetDepth)) {
+                    context.nextToken();
+                    dataLakeSettings.setParameters(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("TrustedResourceOwners", targetDepth)) {
                     context.nextToken();
                     dataLakeSettings.setTrustedResourceOwners(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
@@ -77,6 +88,10 @@ public class DataLakeSettingsJsonUnmarshaller implements Unmarshaller<DataLakeSe
                 if (context.testExpression("AllowExternalDataFiltering", targetDepth)) {
                     context.nextToken();
                     dataLakeSettings.setAllowExternalDataFiltering(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("AllowFullTableExternalDataAccess", targetDepth)) {
+                    context.nextToken();
+                    dataLakeSettings.setAllowFullTableExternalDataAccess(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ExternalDataFilteringAllowList", targetDepth)) {
                     context.nextToken();

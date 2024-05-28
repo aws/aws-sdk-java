@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,15 +46,16 @@ public class GetInstanceTypesFromInstanceRequirementsRequest extends AmazonWebSe
     private InstanceRequirementsRequest instanceRequirements;
     /**
      * <p>
-     * The maximum number of results to return in a single call. Specify a value between 1 and&#x2028; 1000. The default
-     * value is 1000. To retrieve the remaining results, make another call with&#x2028; the returned
-     * <code>NextToken</code> value.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The token for the next set of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      */
     private String nextToken;
@@ -303,15 +304,16 @@ public class GetInstanceTypesFromInstanceRequirementsRequest extends AmazonWebSe
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. Specify a value between 1 and&#x2028; 1000. The default
-     * value is 1000. To retrieve the remaining results, make another call with&#x2028; the returned
-     * <code>NextToken</code> value.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. Specify a value between 1 and&#x2028; 1000. The
-     *        default value is 1000. To retrieve the remaining results, make another call with&#x2028; the returned
-     *        <code>NextToken</code> value.
+     *        The maximum number of items to return for this request. To get the next page of items, make another
+     *        request with the token returned in the output. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *        >Pagination</a>.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -320,14 +322,15 @@ public class GetInstanceTypesFromInstanceRequirementsRequest extends AmazonWebSe
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. Specify a value between 1 and&#x2028; 1000. The default
-     * value is 1000. To retrieve the remaining results, make another call with&#x2028; the returned
-     * <code>NextToken</code> value.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
-     * @return The maximum number of results to return in a single call. Specify a value between 1 and&#x2028; 1000. The
-     *         default value is 1000. To retrieve the remaining results, make another call with&#x2028; the returned
-     *         <code>NextToken</code> value.
+     * @return The maximum number of items to return for this request. To get the next page of items, make another
+     *         request with the token returned in the output. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *         >Pagination</a>.
      */
 
     public Integer getMaxResults() {
@@ -336,15 +339,16 @@ public class GetInstanceTypesFromInstanceRequirementsRequest extends AmazonWebSe
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. Specify a value between 1 and&#x2028; 1000. The default
-     * value is 1000. To retrieve the remaining results, make another call with&#x2028; the returned
-     * <code>NextToken</code> value.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. Specify a value between 1 and&#x2028; 1000. The
-     *        default value is 1000. To retrieve the remaining results, make another call with&#x2028; the returned
-     *        <code>NextToken</code> value.
+     *        The maximum number of items to return for this request. To get the next page of items, make another
+     *        request with the token returned in the output. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *        >Pagination</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,11 +359,13 @@ public class GetInstanceTypesFromInstanceRequirementsRequest extends AmazonWebSe
 
     /**
      * <p>
-     * The token for the next set of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results.
+     *        The token returned from a previous paginated request. Pagination continues from the end of the items
+     *        returned by the previous request.
      */
 
     public void setNextToken(String nextToken) {
@@ -368,10 +374,12 @@ public class GetInstanceTypesFromInstanceRequirementsRequest extends AmazonWebSe
 
     /**
      * <p>
-     * The token for the next set of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
-     * @return The token for the next set of results.
+     * @return The token returned from a previous paginated request. Pagination continues from the end of the items
+     *         returned by the previous request.
      */
 
     public String getNextToken() {
@@ -380,11 +388,13 @@ public class GetInstanceTypesFromInstanceRequirementsRequest extends AmazonWebSe
 
     /**
      * <p>
-     * The token for the next set of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results.
+     *        The token returned from a previous paginated request. Pagination continues from the end of the items
+     *        returned by the previous request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

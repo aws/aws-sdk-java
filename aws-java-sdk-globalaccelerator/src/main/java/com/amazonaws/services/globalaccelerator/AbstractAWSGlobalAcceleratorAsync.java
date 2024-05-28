@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -93,6 +93,19 @@ public class AbstractAWSGlobalAcceleratorAsync extends AbstractAWSGlobalAccelera
     }
 
     @Override
+    public java.util.concurrent.Future<CreateCrossAccountAttachmentResult> createCrossAccountAttachmentAsync(CreateCrossAccountAttachmentRequest request) {
+
+        return createCrossAccountAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCrossAccountAttachmentResult> createCrossAccountAttachmentAsync(CreateCrossAccountAttachmentRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateCrossAccountAttachmentRequest, CreateCrossAccountAttachmentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateCustomRoutingAcceleratorResult> createCustomRoutingAcceleratorAsync(CreateCustomRoutingAcceleratorRequest request) {
 
         return createCustomRoutingAcceleratorAsync(request, null);
@@ -168,6 +181,19 @@ public class AbstractAWSGlobalAcceleratorAsync extends AbstractAWSGlobalAccelera
     @Override
     public java.util.concurrent.Future<DeleteAcceleratorResult> deleteAcceleratorAsync(DeleteAcceleratorRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteAcceleratorRequest, DeleteAcceleratorResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCrossAccountAttachmentResult> deleteCrossAccountAttachmentAsync(DeleteCrossAccountAttachmentRequest request) {
+
+        return deleteCrossAccountAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCrossAccountAttachmentResult> deleteCrossAccountAttachmentAsync(DeleteCrossAccountAttachmentRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteCrossAccountAttachmentRequest, DeleteCrossAccountAttachmentResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -292,6 +318,19 @@ public class AbstractAWSGlobalAcceleratorAsync extends AbstractAWSGlobalAccelera
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeCrossAccountAttachmentResult> describeCrossAccountAttachmentAsync(DescribeCrossAccountAttachmentRequest request) {
+
+        return describeCrossAccountAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCrossAccountAttachmentResult> describeCrossAccountAttachmentAsync(DescribeCrossAccountAttachmentRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeCrossAccountAttachmentRequest, DescribeCrossAccountAttachmentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeCustomRoutingAcceleratorResult> describeCustomRoutingAcceleratorAsync(
             DescribeCustomRoutingAcceleratorRequest request) {
 
@@ -397,6 +436,47 @@ public class AbstractAWSGlobalAcceleratorAsync extends AbstractAWSGlobalAccelera
     @Override
     public java.util.concurrent.Future<ListByoipCidrsResult> listByoipCidrsAsync(ListByoipCidrsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListByoipCidrsRequest, ListByoipCidrsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCrossAccountAttachmentsResult> listCrossAccountAttachmentsAsync(ListCrossAccountAttachmentsRequest request) {
+
+        return listCrossAccountAttachmentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCrossAccountAttachmentsResult> listCrossAccountAttachmentsAsync(ListCrossAccountAttachmentsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCrossAccountAttachmentsRequest, ListCrossAccountAttachmentsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCrossAccountResourceAccountsResult> listCrossAccountResourceAccountsAsync(
+            ListCrossAccountResourceAccountsRequest request) {
+
+        return listCrossAccountResourceAccountsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCrossAccountResourceAccountsResult> listCrossAccountResourceAccountsAsync(
+            ListCrossAccountResourceAccountsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCrossAccountResourceAccountsRequest, ListCrossAccountResourceAccountsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCrossAccountResourcesResult> listCrossAccountResourcesAsync(ListCrossAccountResourcesRequest request) {
+
+        return listCrossAccountResourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCrossAccountResourcesResult> listCrossAccountResourcesAsync(ListCrossAccountResourcesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCrossAccountResourcesRequest, ListCrossAccountResourcesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -596,6 +676,19 @@ public class AbstractAWSGlobalAcceleratorAsync extends AbstractAWSGlobalAccelera
     @Override
     public java.util.concurrent.Future<UpdateAcceleratorAttributesResult> updateAcceleratorAttributesAsync(UpdateAcceleratorAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateAcceleratorAttributesRequest, UpdateAcceleratorAttributesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCrossAccountAttachmentResult> updateCrossAccountAttachmentAsync(UpdateCrossAccountAttachmentRequest request) {
+
+        return updateCrossAccountAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCrossAccountAttachmentResult> updateCrossAccountAttachmentAsync(UpdateCrossAccountAttachmentRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateCrossAccountAttachmentRequest, UpdateCrossAccountAttachmentResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateReplicationConfigurationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Update replication configuration Account ID request.
+     * </p>
+     */
+    private String accountID;
     /**
      * <p>
      * Update replication configuration associate default Application Migration Service Security group request.
@@ -115,6 +121,52 @@ public class UpdateReplicationConfigurationRequest extends com.amazonaws.AmazonW
      * </p>
      */
     private Boolean useDedicatedReplicationServer;
+    /**
+     * <p>
+     * Update replication configuration use Fips Endpoint.
+     * </p>
+     */
+    private Boolean useFipsEndpoint;
+
+    /**
+     * <p>
+     * Update replication configuration Account ID request.
+     * </p>
+     * 
+     * @param accountID
+     *        Update replication configuration Account ID request.
+     */
+
+    public void setAccountID(String accountID) {
+        this.accountID = accountID;
+    }
+
+    /**
+     * <p>
+     * Update replication configuration Account ID request.
+     * </p>
+     * 
+     * @return Update replication configuration Account ID request.
+     */
+
+    public String getAccountID() {
+        return this.accountID;
+    }
+
+    /**
+     * <p>
+     * Update replication configuration Account ID request.
+     * </p>
+     * 
+     * @param accountID
+     *        Update replication configuration Account ID request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateReplicationConfigurationRequest withAccountID(String accountID) {
+        setAccountID(accountID);
+        return this;
+    }
 
     /**
      * <p>
@@ -899,6 +951,58 @@ public class UpdateReplicationConfigurationRequest extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * Update replication configuration use Fips Endpoint.
+     * </p>
+     * 
+     * @param useFipsEndpoint
+     *        Update replication configuration use Fips Endpoint.
+     */
+
+    public void setUseFipsEndpoint(Boolean useFipsEndpoint) {
+        this.useFipsEndpoint = useFipsEndpoint;
+    }
+
+    /**
+     * <p>
+     * Update replication configuration use Fips Endpoint.
+     * </p>
+     * 
+     * @return Update replication configuration use Fips Endpoint.
+     */
+
+    public Boolean getUseFipsEndpoint() {
+        return this.useFipsEndpoint;
+    }
+
+    /**
+     * <p>
+     * Update replication configuration use Fips Endpoint.
+     * </p>
+     * 
+     * @param useFipsEndpoint
+     *        Update replication configuration use Fips Endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateReplicationConfigurationRequest withUseFipsEndpoint(Boolean useFipsEndpoint) {
+        setUseFipsEndpoint(useFipsEndpoint);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Update replication configuration use Fips Endpoint.
+     * </p>
+     * 
+     * @return Update replication configuration use Fips Endpoint.
+     */
+
+    public Boolean isUseFipsEndpoint() {
+        return this.useFipsEndpoint;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -910,6 +1014,8 @@ public class UpdateReplicationConfigurationRequest extends com.amazonaws.AmazonW
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccountID() != null)
+            sb.append("AccountID: ").append(getAccountID()).append(",");
         if (getAssociateDefaultSecurityGroup() != null)
             sb.append("AssociateDefaultSecurityGroup: ").append(getAssociateDefaultSecurityGroup()).append(",");
         if (getBandwidthThrottling() != null)
@@ -939,7 +1045,9 @@ public class UpdateReplicationConfigurationRequest extends com.amazonaws.AmazonW
         if (getStagingAreaTags() != null)
             sb.append("StagingAreaTags: ").append("***Sensitive Data Redacted***").append(",");
         if (getUseDedicatedReplicationServer() != null)
-            sb.append("UseDedicatedReplicationServer: ").append(getUseDedicatedReplicationServer());
+            sb.append("UseDedicatedReplicationServer: ").append(getUseDedicatedReplicationServer()).append(",");
+        if (getUseFipsEndpoint() != null)
+            sb.append("UseFipsEndpoint: ").append(getUseFipsEndpoint());
         sb.append("}");
         return sb.toString();
     }
@@ -954,6 +1062,10 @@ public class UpdateReplicationConfigurationRequest extends com.amazonaws.AmazonW
         if (obj instanceof UpdateReplicationConfigurationRequest == false)
             return false;
         UpdateReplicationConfigurationRequest other = (UpdateReplicationConfigurationRequest) obj;
+        if (other.getAccountID() == null ^ this.getAccountID() == null)
+            return false;
+        if (other.getAccountID() != null && other.getAccountID().equals(this.getAccountID()) == false)
+            return false;
         if (other.getAssociateDefaultSecurityGroup() == null ^ this.getAssociateDefaultSecurityGroup() == null)
             return false;
         if (other.getAssociateDefaultSecurityGroup() != null
@@ -1018,6 +1130,10 @@ public class UpdateReplicationConfigurationRequest extends com.amazonaws.AmazonW
         if (other.getUseDedicatedReplicationServer() != null
                 && other.getUseDedicatedReplicationServer().equals(this.getUseDedicatedReplicationServer()) == false)
             return false;
+        if (other.getUseFipsEndpoint() == null ^ this.getUseFipsEndpoint() == null)
+            return false;
+        if (other.getUseFipsEndpoint() != null && other.getUseFipsEndpoint().equals(this.getUseFipsEndpoint()) == false)
+            return false;
         return true;
     }
 
@@ -1026,6 +1142,7 @@ public class UpdateReplicationConfigurationRequest extends com.amazonaws.AmazonW
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccountID() == null) ? 0 : getAccountID().hashCode());
         hashCode = prime * hashCode + ((getAssociateDefaultSecurityGroup() == null) ? 0 : getAssociateDefaultSecurityGroup().hashCode());
         hashCode = prime * hashCode + ((getBandwidthThrottling() == null) ? 0 : getBandwidthThrottling().hashCode());
         hashCode = prime * hashCode + ((getCreatePublicIP() == null) ? 0 : getCreatePublicIP().hashCode());
@@ -1041,6 +1158,7 @@ public class UpdateReplicationConfigurationRequest extends com.amazonaws.AmazonW
         hashCode = prime * hashCode + ((getStagingAreaSubnetId() == null) ? 0 : getStagingAreaSubnetId().hashCode());
         hashCode = prime * hashCode + ((getStagingAreaTags() == null) ? 0 : getStagingAreaTags().hashCode());
         hashCode = prime * hashCode + ((getUseDedicatedReplicationServer() == null) ? 0 : getUseDedicatedReplicationServer().hashCode());
+        hashCode = prime * hashCode + ((getUseFipsEndpoint() == null) ? 0 : getUseFipsEndpoint().hashCode());
         return hashCode;
     }
 

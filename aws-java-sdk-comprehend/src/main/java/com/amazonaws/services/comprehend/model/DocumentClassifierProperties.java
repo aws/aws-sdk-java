@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,8 +43,12 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
     /**
      * <p>
      * The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to use. If
-     * the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in
-     * the <code>Message</code> field.
+     * the status is <code>TRAINED_WITH_WARNINGS</code> the classifier training succeeded, but you should review the
+     * warnings returned in the <code>CreateDocumentClassifier</code> response.
+     * </p>
+     * <p>
+     * If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained
+     * in the <code>Message</code> field.
      * </p>
      */
     private String status;
@@ -102,16 +106,15 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
     private ClassifierMetadata classifierMetadata;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read
-     * access to your input data.
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.
      * </p>
      */
     private String dataAccessRoleArn;
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the
-     * following formats:
+     * ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on
+     * the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can
+     * be either of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -132,7 +135,7 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
      * <p>
      * Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for
      * your custom classifier. For more information, see <a
-     * href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
      * </p>
      */
     private VpcConfig vpcConfig;
@@ -146,8 +149,8 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
     private String mode;
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The
-     * ModelKmsKeyId can be either of the following formats:
+     * ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either
+     * of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -172,11 +175,17 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
     private String versionName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source model. This model was imported from a different AWS account to
-     * create the document classifier model in your AWS account.
+     * The Amazon Resource Name (ARN) of the source model. This model was imported from a different Amazon Web Services
+     * account to create the document classifier model in your Amazon Web Services account.
      * </p>
      */
     private String sourceModelArn;
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the flywheel
+     * </p>
+     */
+    private String flywheelArn;
 
     /**
      * <p>
@@ -280,14 +289,21 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
     /**
      * <p>
      * The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to use. If
-     * the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in
-     * the <code>Message</code> field.
+     * the status is <code>TRAINED_WITH_WARNINGS</code> the classifier training succeeded, but you should review the
+     * warnings returned in the <code>CreateDocumentClassifier</code> response.
+     * </p>
+     * <p>
+     * If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained
+     * in the <code>Message</code> field.
      * </p>
      * 
      * @param status
      *        The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to
-     *        use. If the status is <code>FAILED</code> you can see additional information about why the classifier
-     *        wasn't trained in the <code>Message</code> field.
+     *        use. If the status is <code>TRAINED_WITH_WARNINGS</code> the classifier training succeeded, but you should
+     *        review the warnings returned in the <code>CreateDocumentClassifier</code> response.</p>
+     *        <p>
+     *        If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't
+     *        trained in the <code>Message</code> field.
      * @see ModelStatus
      */
 
@@ -298,13 +314,20 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
     /**
      * <p>
      * The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to use. If
-     * the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in
-     * the <code>Message</code> field.
+     * the status is <code>TRAINED_WITH_WARNINGS</code> the classifier training succeeded, but you should review the
+     * warnings returned in the <code>CreateDocumentClassifier</code> response.
+     * </p>
+     * <p>
+     * If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained
+     * in the <code>Message</code> field.
      * </p>
      * 
      * @return The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to
-     *         use. If the status is <code>FAILED</code> you can see additional information about why the classifier
-     *         wasn't trained in the <code>Message</code> field.
+     *         use. If the status is <code>TRAINED_WITH_WARNINGS</code> the classifier training succeeded, but you
+     *         should review the warnings returned in the <code>CreateDocumentClassifier</code> response.</p>
+     *         <p>
+     *         If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't
+     *         trained in the <code>Message</code> field.
      * @see ModelStatus
      */
 
@@ -315,14 +338,21 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
     /**
      * <p>
      * The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to use. If
-     * the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in
-     * the <code>Message</code> field.
+     * the status is <code>TRAINED_WITH_WARNINGS</code> the classifier training succeeded, but you should review the
+     * warnings returned in the <code>CreateDocumentClassifier</code> response.
+     * </p>
+     * <p>
+     * If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained
+     * in the <code>Message</code> field.
      * </p>
      * 
      * @param status
      *        The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to
-     *        use. If the status is <code>FAILED</code> you can see additional information about why the classifier
-     *        wasn't trained in the <code>Message</code> field.
+     *        use. If the status is <code>TRAINED_WITH_WARNINGS</code> the classifier training succeeded, but you should
+     *        review the warnings returned in the <code>CreateDocumentClassifier</code> response.</p>
+     *        <p>
+     *        If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't
+     *        trained in the <code>Message</code> field.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ModelStatus
      */
@@ -335,14 +365,21 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
     /**
      * <p>
      * The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to use. If
-     * the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in
-     * the <code>Message</code> field.
+     * the status is <code>TRAINED_WITH_WARNINGS</code> the classifier training succeeded, but you should review the
+     * warnings returned in the <code>CreateDocumentClassifier</code> response.
+     * </p>
+     * <p>
+     * If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained
+     * in the <code>Message</code> field.
      * </p>
      * 
      * @param status
      *        The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to
-     *        use. If the status is <code>FAILED</code> you can see additional information about why the classifier
-     *        wasn't trained in the <code>Message</code> field.
+     *        use. If the status is <code>TRAINED_WITH_WARNINGS</code> the classifier training succeeded, but you should
+     *        review the warnings returned in the <code>CreateDocumentClassifier</code> response.</p>
+     *        <p>
+     *        If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't
+     *        trained in the <code>Message</code> field.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ModelStatus
      */
@@ -698,13 +735,12 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read
-     * access to your input data.
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend
-     *        read access to your input data.
+     *        The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input
+     *        data.
      */
 
     public void setDataAccessRoleArn(String dataAccessRoleArn) {
@@ -713,12 +749,11 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read
-     * access to your input data.
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon
-     *         Comprehend read access to your input data.
+     * @return The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input
+     *         data.
      */
 
     public String getDataAccessRoleArn() {
@@ -727,13 +762,12 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read
-     * access to your input data.
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend
-     *        read access to your input data.
+     *        The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input
+     *        data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -744,9 +778,9 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the
-     * following formats:
+     * ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on
+     * the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can
+     * be either of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -763,9 +797,9 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
      * </ul>
      * 
      * @param volumeKmsKeyId
-     *        ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage
-     *        volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be
-     *        either of the following formats:</p>
+     *        ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+     *        data on the storage volume attached to the ML compute instance(s) that process the analysis job. The
+     *        VolumeKmsKeyId can be either of the following formats:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -786,9 +820,9 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the
-     * following formats:
+     * ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on
+     * the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can
+     * be either of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -804,9 +838,9 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
      * </li>
      * </ul>
      * 
-     * @return ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the
-     *         storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId
-     *         can be either of the following formats:</p>
+     * @return ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+     *         data on the storage volume attached to the ML compute instance(s) that process the analysis job. The
+     *         VolumeKmsKeyId can be either of the following formats:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -827,9 +861,9 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the
-     * following formats:
+     * ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on
+     * the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can
+     * be either of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -846,9 +880,9 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
      * </ul>
      * 
      * @param volumeKmsKeyId
-     *        ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage
-     *        volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be
-     *        either of the following formats:</p>
+     *        ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+     *        data on the storage volume attached to the ML compute instance(s) that process the analysis job. The
+     *        VolumeKmsKeyId can be either of the following formats:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -873,13 +907,13 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
      * <p>
      * Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for
      * your custom classifier. For more information, see <a
-     * href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
      * </p>
      * 
      * @param vpcConfig
      *        Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using
      *        for your custom classifier. For more information, see <a
-     *        href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
      */
 
     public void setVpcConfig(VpcConfig vpcConfig) {
@@ -890,12 +924,12 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
      * <p>
      * Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for
      * your custom classifier. For more information, see <a
-     * href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
      * </p>
      * 
      * @return Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using
      *         for your custom classifier. For more information, see <a
-     *         href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     *         href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
      */
 
     public VpcConfig getVpcConfig() {
@@ -906,13 +940,13 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
      * <p>
      * Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using for
      * your custom classifier. For more information, see <a
-     * href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
      * </p>
      * 
      * @param vpcConfig
      *        Configuration parameters for a private Virtual Private Cloud (VPC) containing the resources you are using
      *        for your custom classifier. For more information, see <a
-     *        href="https://docs.aws.amazon.com/vppc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -998,8 +1032,8 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The
-     * ModelKmsKeyId can be either of the following formats:
+     * ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either
+     * of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -1016,8 +1050,8 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
      * </ul>
      * 
      * @param modelKmsKeyId
-     *        ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom
-     *        models. The ModelKmsKeyId can be either of the following formats:</p>
+     *        ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be
+     *        either of the following formats:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1038,8 +1072,8 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The
-     * ModelKmsKeyId can be either of the following formats:
+     * ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either
+     * of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -1055,8 +1089,8 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
      * </li>
      * </ul>
      * 
-     * @return ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom
-     *         models. The ModelKmsKeyId can be either of the following formats:</p>
+     * @return ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be
+     *         either of the following formats:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1077,8 +1111,8 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The
-     * ModelKmsKeyId can be either of the following formats:
+     * ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either
+     * of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -1095,8 +1129,8 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
      * </ul>
      * 
      * @param modelKmsKeyId
-     *        ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom
-     *        models. The ModelKmsKeyId can be either of the following formats:</p>
+     *        ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be
+     *        either of the following formats:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1159,13 +1193,13 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source model. This model was imported from a different AWS account to
-     * create the document classifier model in your AWS account.
+     * The Amazon Resource Name (ARN) of the source model. This model was imported from a different Amazon Web Services
+     * account to create the document classifier model in your Amazon Web Services account.
      * </p>
      * 
      * @param sourceModelArn
-     *        The Amazon Resource Name (ARN) of the source model. This model was imported from a different AWS account
-     *        to create the document classifier model in your AWS account.
+     *        The Amazon Resource Name (ARN) of the source model. This model was imported from a different Amazon Web
+     *        Services account to create the document classifier model in your Amazon Web Services account.
      */
 
     public void setSourceModelArn(String sourceModelArn) {
@@ -1174,12 +1208,12 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source model. This model was imported from a different AWS account to
-     * create the document classifier model in your AWS account.
+     * The Amazon Resource Name (ARN) of the source model. This model was imported from a different Amazon Web Services
+     * account to create the document classifier model in your Amazon Web Services account.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the source model. This model was imported from a different AWS account
-     *         to create the document classifier model in your AWS account.
+     * @return The Amazon Resource Name (ARN) of the source model. This model was imported from a different Amazon Web
+     *         Services account to create the document classifier model in your Amazon Web Services account.
      */
 
     public String getSourceModelArn() {
@@ -1188,18 +1222,58 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source model. This model was imported from a different AWS account to
-     * create the document classifier model in your AWS account.
+     * The Amazon Resource Name (ARN) of the source model. This model was imported from a different Amazon Web Services
+     * account to create the document classifier model in your Amazon Web Services account.
      * </p>
      * 
      * @param sourceModelArn
-     *        The Amazon Resource Name (ARN) of the source model. This model was imported from a different AWS account
-     *        to create the document classifier model in your AWS account.
+     *        The Amazon Resource Name (ARN) of the source model. This model was imported from a different Amazon Web
+     *        Services account to create the document classifier model in your Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DocumentClassifierProperties withSourceModelArn(String sourceModelArn) {
         setSourceModelArn(sourceModelArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the flywheel
+     * </p>
+     * 
+     * @param flywheelArn
+     *        The Amazon Resource Number (ARN) of the flywheel
+     */
+
+    public void setFlywheelArn(String flywheelArn) {
+        this.flywheelArn = flywheelArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the flywheel
+     * </p>
+     * 
+     * @return The Amazon Resource Number (ARN) of the flywheel
+     */
+
+    public String getFlywheelArn() {
+        return this.flywheelArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the flywheel
+     * </p>
+     * 
+     * @param flywheelArn
+     *        The Amazon Resource Number (ARN) of the flywheel
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentClassifierProperties withFlywheelArn(String flywheelArn) {
+        setFlywheelArn(flywheelArn);
         return this;
     }
 
@@ -1250,7 +1324,9 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
         if (getVersionName() != null)
             sb.append("VersionName: ").append(getVersionName()).append(",");
         if (getSourceModelArn() != null)
-            sb.append("SourceModelArn: ").append(getSourceModelArn());
+            sb.append("SourceModelArn: ").append(getSourceModelArn()).append(",");
+        if (getFlywheelArn() != null)
+            sb.append("FlywheelArn: ").append(getFlywheelArn());
         sb.append("}");
         return sb.toString();
     }
@@ -1337,6 +1413,10 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
             return false;
         if (other.getSourceModelArn() != null && other.getSourceModelArn().equals(this.getSourceModelArn()) == false)
             return false;
+        if (other.getFlywheelArn() == null ^ this.getFlywheelArn() == null)
+            return false;
+        if (other.getFlywheelArn() != null && other.getFlywheelArn().equals(this.getFlywheelArn()) == false)
+            return false;
         return true;
     }
 
@@ -1363,6 +1443,7 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
         hashCode = prime * hashCode + ((getModelKmsKeyId() == null) ? 0 : getModelKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getVersionName() == null) ? 0 : getVersionName().hashCode());
         hashCode = prime * hashCode + ((getSourceModelArn() == null) ? 0 : getSourceModelArn().hashCode());
+        hashCode = prime * hashCode + ((getFlywheelArn() == null) ? 0 : getFlywheelArn().hashCode());
         return hashCode;
     }
 

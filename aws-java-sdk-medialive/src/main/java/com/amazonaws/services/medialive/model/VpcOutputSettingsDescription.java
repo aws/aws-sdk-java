@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,13 +31,9 @@ public class VpcOutputSettingsDescription implements Serializable, Cloneable, St
      * in the list of subnets. The second Availability Zone applies to the second subnet.
      */
     private java.util.List<String> availabilityZones;
-    /**
-     * A list of Elastic Network Interfaces created by MediaLive in the customer's VPC
-     */
+    /** A list of Elastic Network Interfaces created by MediaLive in the customer's VPC */
     private java.util.List<String> networkInterfaceIds;
-    /**
-     * A list of up EC2 VPC security group IDs attached to the Output VPC network interfaces.
-     */
+    /** A list of up EC2 VPC security group IDs attached to the Output VPC network interfaces. */
     private java.util.List<String> securityGroupIds;
     /**
      * A list of VPC subnet IDs from the same VPC. If STANDARD channel, subnet IDs must be mapped to two unique
@@ -78,7 +74,6 @@ public class VpcOutputSettingsDescription implements Serializable, Cloneable, St
     /**
      * The Availability Zones where the vpc subnets are located. The first Availability Zone applies to the first subnet
      * in the list of subnets. The second Availability Zone applies to the second subnet.
-     * 
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAvailabilityZones(java.util.Collection)} or {@link #withAvailabilityZones(java.util.Collection)} if
@@ -144,7 +139,6 @@ public class VpcOutputSettingsDescription implements Serializable, Cloneable, St
 
     /**
      * A list of Elastic Network Interfaces created by MediaLive in the customer's VPC
-     * 
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setNetworkInterfaceIds(java.util.Collection)} or {@link #withNetworkInterfaceIds(java.util.Collection)}
@@ -207,7 +201,6 @@ public class VpcOutputSettingsDescription implements Serializable, Cloneable, St
 
     /**
      * A list of up EC2 VPC security group IDs attached to the Output VPC network interfaces.
-     * 
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSecurityGroupIds(java.util.Collection)} or {@link #withSecurityGroupIds(java.util.Collection)} if you
@@ -275,7 +268,6 @@ public class VpcOutputSettingsDescription implements Serializable, Cloneable, St
     /**
      * A list of VPC subnet IDs from the same VPC. If STANDARD channel, subnet IDs must be mapped to two unique
      * availability zones (AZ).
-     * 
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSubnetIds(java.util.Collection)} or {@link #withSubnetIds(java.util.Collection)} if you want to

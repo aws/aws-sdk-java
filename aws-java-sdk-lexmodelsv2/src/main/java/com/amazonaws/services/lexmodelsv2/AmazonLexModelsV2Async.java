@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,111 @@ import com.amazonaws.services.lexmodelsv2.model.*;
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
+
+    /**
+     * <p>
+     * Create a batch of custom vocabulary items for a given bot locale's custom vocabulary.
+     * </p>
+     * 
+     * @param batchCreateCustomVocabularyItemRequest
+     * @return A Java Future containing the result of the BatchCreateCustomVocabularyItem operation returned by the
+     *         service.
+     * @sample AmazonLexModelsV2Async.BatchCreateCustomVocabularyItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BatchCreateCustomVocabularyItem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchCreateCustomVocabularyItemResult> batchCreateCustomVocabularyItemAsync(
+            BatchCreateCustomVocabularyItemRequest batchCreateCustomVocabularyItemRequest);
+
+    /**
+     * <p>
+     * Create a batch of custom vocabulary items for a given bot locale's custom vocabulary.
+     * </p>
+     * 
+     * @param batchCreateCustomVocabularyItemRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchCreateCustomVocabularyItem operation returned by the
+     *         service.
+     * @sample AmazonLexModelsV2AsyncHandler.BatchCreateCustomVocabularyItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BatchCreateCustomVocabularyItem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchCreateCustomVocabularyItemResult> batchCreateCustomVocabularyItemAsync(
+            BatchCreateCustomVocabularyItemRequest batchCreateCustomVocabularyItemRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchCreateCustomVocabularyItemRequest, BatchCreateCustomVocabularyItemResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete a batch of custom vocabulary items for a given bot locale's custom vocabulary.
+     * </p>
+     * 
+     * @param batchDeleteCustomVocabularyItemRequest
+     * @return A Java Future containing the result of the BatchDeleteCustomVocabularyItem operation returned by the
+     *         service.
+     * @sample AmazonLexModelsV2Async.BatchDeleteCustomVocabularyItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BatchDeleteCustomVocabularyItem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDeleteCustomVocabularyItemResult> batchDeleteCustomVocabularyItemAsync(
+            BatchDeleteCustomVocabularyItemRequest batchDeleteCustomVocabularyItemRequest);
+
+    /**
+     * <p>
+     * Delete a batch of custom vocabulary items for a given bot locale's custom vocabulary.
+     * </p>
+     * 
+     * @param batchDeleteCustomVocabularyItemRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchDeleteCustomVocabularyItem operation returned by the
+     *         service.
+     * @sample AmazonLexModelsV2AsyncHandler.BatchDeleteCustomVocabularyItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BatchDeleteCustomVocabularyItem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDeleteCustomVocabularyItemResult> batchDeleteCustomVocabularyItemAsync(
+            BatchDeleteCustomVocabularyItemRequest batchDeleteCustomVocabularyItemRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchDeleteCustomVocabularyItemRequest, BatchDeleteCustomVocabularyItemResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update a batch of custom vocabulary items for a given bot locale's custom vocabulary.
+     * </p>
+     * 
+     * @param batchUpdateCustomVocabularyItemRequest
+     * @return A Java Future containing the result of the BatchUpdateCustomVocabularyItem operation returned by the
+     *         service.
+     * @sample AmazonLexModelsV2Async.BatchUpdateCustomVocabularyItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BatchUpdateCustomVocabularyItem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchUpdateCustomVocabularyItemResult> batchUpdateCustomVocabularyItemAsync(
+            BatchUpdateCustomVocabularyItemRequest batchUpdateCustomVocabularyItemRequest);
+
+    /**
+     * <p>
+     * Update a batch of custom vocabulary items for a given bot locale's custom vocabulary.
+     * </p>
+     * 
+     * @param batchUpdateCustomVocabularyItemRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchUpdateCustomVocabularyItem operation returned by the
+     *         service.
+     * @sample AmazonLexModelsV2AsyncHandler.BatchUpdateCustomVocabularyItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BatchUpdateCustomVocabularyItem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchUpdateCustomVocabularyItemResult> batchUpdateCustomVocabularyItemAsync(
+            BatchUpdateCustomVocabularyItemRequest batchUpdateCustomVocabularyItemRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchUpdateCustomVocabularyItemRequest, BatchUpdateCustomVocabularyItemResult> asyncHandler);
 
     /**
      * <p>
@@ -170,12 +275,41 @@ public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
 
     /**
      * <p>
-     * Creates a new version of the bot based on the <code>DRAFT</code> version. If the <code>DRAFT</code> version of
-     * this resource hasn't changed since you created the last version, Amazon Lex doesn't create a new version, it
-     * returns the last created version.
+     * Action to create a replication of the source bot in the secondary region.
      * </p>
+     * 
+     * @param createBotReplicaRequest
+     * @return A Java Future containing the result of the CreateBotReplica operation returned by the service.
+     * @sample AmazonLexModelsV2Async.CreateBotReplica
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateBotReplica" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateBotReplicaResult> createBotReplicaAsync(CreateBotReplicaRequest createBotReplicaRequest);
+
+    /**
      * <p>
-     * When you create the first version of a bot, Amazon Lex sets the version to 1. Subsequent versions increment by 1.
+     * Action to create a replication of the source bot in the secondary region.
+     * </p>
+     * 
+     * @param createBotReplicaRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateBotReplica operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.CreateBotReplica
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateBotReplica" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateBotReplicaResult> createBotReplicaAsync(CreateBotReplicaRequest createBotReplicaRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateBotReplicaRequest, CreateBotReplicaResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an immutable version of the bot. When you create the first version of a bot, Amazon Lex sets the version
+     * number to 1. Subsequent bot versions increase in an increment of 1. The version number will always represent the
+     * total number of versions created of the bot, not the current number of versions. If a bot version is deleted,
+     * that bot version number will not be reused.
      * </p>
      * 
      * @param createBotVersionRequest
@@ -188,12 +322,10 @@ public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
 
     /**
      * <p>
-     * Creates a new version of the bot based on the <code>DRAFT</code> version. If the <code>DRAFT</code> version of
-     * this resource hasn't changed since you created the last version, Amazon Lex doesn't create a new version, it
-     * returns the last created version.
-     * </p>
-     * <p>
-     * When you create the first version of a bot, Amazon Lex sets the version to 1. Subsequent versions increment by 1.
+     * Creates an immutable version of the bot. When you create the first version of a bot, Amazon Lex sets the version
+     * number to 1. Subsequent bot versions increase in an increment of 1. The version number will always represent the
+     * total number of versions created of the bot, not the current number of versions. If a bot version is deleted,
+     * that bot version number will not be reused.
      * </p>
      * 
      * @param createBotVersionRequest
@@ -527,6 +659,41 @@ public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
 
     /**
      * <p>
+     * Create a report that describes the differences between the bot and the test set.
+     * </p>
+     * 
+     * @param createTestSetDiscrepancyReportRequest
+     * @return A Java Future containing the result of the CreateTestSetDiscrepancyReport operation returned by the
+     *         service.
+     * @sample AmazonLexModelsV2Async.CreateTestSetDiscrepancyReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateTestSetDiscrepancyReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTestSetDiscrepancyReportResult> createTestSetDiscrepancyReportAsync(
+            CreateTestSetDiscrepancyReportRequest createTestSetDiscrepancyReportRequest);
+
+    /**
+     * <p>
+     * Create a report that describes the differences between the bot and the test set.
+     * </p>
+     * 
+     * @param createTestSetDiscrepancyReportRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTestSetDiscrepancyReport operation returned by the
+     *         service.
+     * @sample AmazonLexModelsV2AsyncHandler.CreateTestSetDiscrepancyReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateTestSetDiscrepancyReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTestSetDiscrepancyReportResult> createTestSetDiscrepancyReportAsync(
+            CreateTestSetDiscrepancyReportRequest createTestSetDiscrepancyReportRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateTestSetDiscrepancyReportRequest, CreateTestSetDiscrepancyReportResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets a pre-signed S3 write URL that you use to upload the zip archive when importing a bot or a bot locale.
      * </p>
      * 
@@ -677,8 +844,39 @@ public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
 
     /**
      * <p>
-     * Deletes a specific version of a bot. To delete all version of a bot, use the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteBot.html">DeleteBot</a> operation.
+     * The action to delete the replicated bot in the secondary region.
+     * </p>
+     * 
+     * @param deleteBotReplicaRequest
+     * @return A Java Future containing the result of the DeleteBotReplica operation returned by the service.
+     * @sample AmazonLexModelsV2Async.DeleteBotReplica
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteBotReplica" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteBotReplicaResult> deleteBotReplicaAsync(DeleteBotReplicaRequest deleteBotReplicaRequest);
+
+    /**
+     * <p>
+     * The action to delete the replicated bot in the secondary region.
+     * </p>
+     * 
+     * @param deleteBotReplicaRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteBotReplica operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.DeleteBotReplica
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteBotReplica" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteBotReplicaResult> deleteBotReplicaAsync(DeleteBotReplicaRequest deleteBotReplicaRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteBotReplicaRequest, DeleteBotReplicaResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a specific version of a bot. To delete all versions of a bot, use the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteBot.html">DeleteBot</a> operation.
      * </p>
      * 
      * @param deleteBotVersionRequest
@@ -691,8 +889,8 @@ public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
 
     /**
      * <p>
-     * Deletes a specific version of a bot. To delete all version of a bot, use the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteBot.html">DeleteBot</a> operation.
+     * Deletes a specific version of a bot. To delete all versions of a bot, use the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteBot.html">DeleteBot</a> operation.
      * </p>
      * 
      * @param deleteBotVersionRequest
@@ -982,13 +1180,44 @@ public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
 
     /**
      * <p>
+     * The action to delete the selected test set.
+     * </p>
+     * 
+     * @param deleteTestSetRequest
+     * @return A Java Future containing the result of the DeleteTestSet operation returned by the service.
+     * @sample AmazonLexModelsV2Async.DeleteTestSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteTestSet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTestSetResult> deleteTestSetAsync(DeleteTestSetRequest deleteTestSetRequest);
+
+    /**
+     * <p>
+     * The action to delete the selected test set.
+     * </p>
+     * 
+     * @param deleteTestSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTestSet operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.DeleteTestSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteTestSet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTestSetResult> deleteTestSetAsync(DeleteTestSetRequest deleteTestSetRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTestSetRequest, DeleteTestSetResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes stored utterances.
      * </p>
      * <p>
      * Amazon Lex stores the utterances that users send to your bot. Utterances are stored for 15 days for use with the
-     * <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a>
-     * operation, and then stored indefinitely for use in improving the ability of your bot to respond to user input..
+     * <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html">
+     * ListAggregatedUtterances</a> operation, and then stored indefinitely for use in improving the ability of your bot
+     * to respond to user input..
      * </p>
      * <p>
      * Use the <code>DeleteUtterances</code> operation to manually delete utterances for a specific session. When you
@@ -1011,9 +1240,9 @@ public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
      * </p>
      * <p>
      * Amazon Lex stores the utterances that users send to your bot. Utterances are stored for 15 days for use with the
-     * <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a>
-     * operation, and then stored indefinitely for use in improving the ability of your bot to respond to user input..
+     * <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html">
+     * ListAggregatedUtterances</a> operation, and then stored indefinitely for use in improving the ability of your bot
+     * to respond to user input..
      * </p>
      * <p>
      * Use the <code>DeleteUtterances</code> operation to manually delete utterances for a specific session. When you
@@ -1164,6 +1393,76 @@ public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
     java.util.concurrent.Future<DescribeBotRecommendationResult> describeBotRecommendationAsync(
             DescribeBotRecommendationRequest describeBotRecommendationRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeBotRecommendationRequest, DescribeBotRecommendationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Monitors the bot replication status through the UI console.
+     * </p>
+     * 
+     * @param describeBotReplicaRequest
+     * @return A Java Future containing the result of the DescribeBotReplica operation returned by the service.
+     * @sample AmazonLexModelsV2Async.DescribeBotReplica
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotReplica"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeBotReplicaResult> describeBotReplicaAsync(DescribeBotReplicaRequest describeBotReplicaRequest);
+
+    /**
+     * <p>
+     * Monitors the bot replication status through the UI console.
+     * </p>
+     * 
+     * @param describeBotReplicaRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeBotReplica operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.DescribeBotReplica
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotReplica"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeBotReplicaResult> describeBotReplicaAsync(DescribeBotReplicaRequest describeBotReplicaRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeBotReplicaRequest, DescribeBotReplicaResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about a request to generate a bot through natural language description, made through the
+     * <code>StartBotResource</code> API. Use the <code>generatedBotLocaleUrl</code> to retrieve the Amazon S3 object
+     * containing the bot locale configuration. You can then modify and import this configuration.
+     * </p>
+     * 
+     * @param describeBotResourceGenerationRequest
+     * @return A Java Future containing the result of the DescribeBotResourceGeneration operation returned by the
+     *         service.
+     * @sample AmazonLexModelsV2Async.DescribeBotResourceGeneration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotResourceGeneration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeBotResourceGenerationResult> describeBotResourceGenerationAsync(
+            DescribeBotResourceGenerationRequest describeBotResourceGenerationRequest);
+
+    /**
+     * <p>
+     * Returns information about a request to generate a bot through natural language description, made through the
+     * <code>StartBotResource</code> API. Use the <code>generatedBotLocaleUrl</code> to retrieve the Amazon S3 object
+     * containing the bot locale configuration. You can then modify and import this configuration.
+     * </p>
+     * 
+     * @param describeBotResourceGenerationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeBotResourceGeneration operation returned by the
+     *         service.
+     * @sample AmazonLexModelsV2AsyncHandler.DescribeBotResourceGeneration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotResourceGeneration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeBotResourceGenerationResult> describeBotResourceGenerationAsync(
+            DescribeBotResourceGenerationRequest describeBotResourceGenerationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeBotResourceGenerationRequest, DescribeBotResourceGenerationResult> asyncHandler);
 
     /**
      * <p>
@@ -1419,6 +1718,202 @@ public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
 
     /**
      * <p>
+     * Gets metadata information about the test execution.
+     * </p>
+     * 
+     * @param describeTestExecutionRequest
+     * @return A Java Future containing the result of the DescribeTestExecution operation returned by the service.
+     * @sample AmazonLexModelsV2Async.DescribeTestExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeTestExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTestExecutionResult> describeTestExecutionAsync(DescribeTestExecutionRequest describeTestExecutionRequest);
+
+    /**
+     * <p>
+     * Gets metadata information about the test execution.
+     * </p>
+     * 
+     * @param describeTestExecutionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTestExecution operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.DescribeTestExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeTestExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTestExecutionResult> describeTestExecutionAsync(DescribeTestExecutionRequest describeTestExecutionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTestExecutionRequest, DescribeTestExecutionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets metadata information about the test set.
+     * </p>
+     * 
+     * @param describeTestSetRequest
+     * @return A Java Future containing the result of the DescribeTestSet operation returned by the service.
+     * @sample AmazonLexModelsV2Async.DescribeTestSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeTestSet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTestSetResult> describeTestSetAsync(DescribeTestSetRequest describeTestSetRequest);
+
+    /**
+     * <p>
+     * Gets metadata information about the test set.
+     * </p>
+     * 
+     * @param describeTestSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTestSet operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.DescribeTestSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeTestSet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTestSetResult> describeTestSetAsync(DescribeTestSetRequest describeTestSetRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTestSetRequest, DescribeTestSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets metadata information about the test set discrepancy report.
+     * </p>
+     * 
+     * @param describeTestSetDiscrepancyReportRequest
+     * @return A Java Future containing the result of the DescribeTestSetDiscrepancyReport operation returned by the
+     *         service.
+     * @sample AmazonLexModelsV2Async.DescribeTestSetDiscrepancyReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeTestSetDiscrepancyReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTestSetDiscrepancyReportResult> describeTestSetDiscrepancyReportAsync(
+            DescribeTestSetDiscrepancyReportRequest describeTestSetDiscrepancyReportRequest);
+
+    /**
+     * <p>
+     * Gets metadata information about the test set discrepancy report.
+     * </p>
+     * 
+     * @param describeTestSetDiscrepancyReportRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTestSetDiscrepancyReport operation returned by the
+     *         service.
+     * @sample AmazonLexModelsV2AsyncHandler.DescribeTestSetDiscrepancyReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeTestSetDiscrepancyReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTestSetDiscrepancyReportResult> describeTestSetDiscrepancyReportAsync(
+            DescribeTestSetDiscrepancyReportRequest describeTestSetDiscrepancyReportRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTestSetDiscrepancyReportRequest, DescribeTestSetDiscrepancyReportResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets metadata information about the test set generation.
+     * </p>
+     * 
+     * @param describeTestSetGenerationRequest
+     * @return A Java Future containing the result of the DescribeTestSetGeneration operation returned by the service.
+     * @sample AmazonLexModelsV2Async.DescribeTestSetGeneration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeTestSetGeneration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTestSetGenerationResult> describeTestSetGenerationAsync(
+            DescribeTestSetGenerationRequest describeTestSetGenerationRequest);
+
+    /**
+     * <p>
+     * Gets metadata information about the test set generation.
+     * </p>
+     * 
+     * @param describeTestSetGenerationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTestSetGeneration operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.DescribeTestSetGeneration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeTestSetGeneration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTestSetGenerationResult> describeTestSetGenerationAsync(
+            DescribeTestSetGenerationRequest describeTestSetGenerationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTestSetGenerationRequest, DescribeTestSetGenerationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Generates sample utterances for an intent.
+     * </p>
+     * 
+     * @param generateBotElementRequest
+     * @return A Java Future containing the result of the GenerateBotElement operation returned by the service.
+     * @sample AmazonLexModelsV2Async.GenerateBotElement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/GenerateBotElement"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GenerateBotElementResult> generateBotElementAsync(GenerateBotElementRequest generateBotElementRequest);
+
+    /**
+     * <p>
+     * Generates sample utterances for an intent.
+     * </p>
+     * 
+     * @param generateBotElementRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GenerateBotElement operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.GenerateBotElement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/GenerateBotElement"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GenerateBotElementResult> generateBotElementAsync(GenerateBotElementRequest generateBotElementRequest,
+            com.amazonaws.handlers.AsyncHandler<GenerateBotElementRequest, GenerateBotElementResult> asyncHandler);
+
+    /**
+     * <p>
+     * The pre-signed Amazon S3 URL to download the test execution result artifacts.
+     * </p>
+     * 
+     * @param getTestExecutionArtifactsUrlRequest
+     * @return A Java Future containing the result of the GetTestExecutionArtifactsUrl operation returned by the
+     *         service.
+     * @sample AmazonLexModelsV2Async.GetTestExecutionArtifactsUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/GetTestExecutionArtifactsUrl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetTestExecutionArtifactsUrlResult> getTestExecutionArtifactsUrlAsync(
+            GetTestExecutionArtifactsUrlRequest getTestExecutionArtifactsUrlRequest);
+
+    /**
+     * <p>
+     * The pre-signed Amazon S3 URL to download the test execution result artifacts.
+     * </p>
+     * 
+     * @param getTestExecutionArtifactsUrlRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetTestExecutionArtifactsUrl operation returned by the
+     *         service.
+     * @sample AmazonLexModelsV2AsyncHandler.GetTestExecutionArtifactsUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/GetTestExecutionArtifactsUrl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetTestExecutionArtifactsUrlResult> getTestExecutionArtifactsUrlAsync(
+            GetTestExecutionArtifactsUrlRequest getTestExecutionArtifactsUrlRequest,
+            com.amazonaws.handlers.AsyncHandler<GetTestExecutionArtifactsUrlRequest, GetTestExecutionArtifactsUrlResult> asyncHandler);
+
+    /**
+     * <p>
      * Provides a list of utterances that users have sent to the bot.
      * </p>
      * <p>
@@ -1511,6 +2006,37 @@ public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
      */
     java.util.concurrent.Future<ListAggregatedUtterancesResult> listAggregatedUtterancesAsync(ListAggregatedUtterancesRequest listAggregatedUtterancesRequest,
             com.amazonaws.handlers.AsyncHandler<ListAggregatedUtterancesRequest, ListAggregatedUtterancesResult> asyncHandler);
+
+    /**
+     * <p>
+     * The action to list the replicated bots created from the source bot alias.
+     * </p>
+     * 
+     * @param listBotAliasReplicasRequest
+     * @return A Java Future containing the result of the ListBotAliasReplicas operation returned by the service.
+     * @sample AmazonLexModelsV2Async.ListBotAliasReplicas
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotAliasReplicas"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListBotAliasReplicasResult> listBotAliasReplicasAsync(ListBotAliasReplicasRequest listBotAliasReplicasRequest);
+
+    /**
+     * <p>
+     * The action to list the replicated bots created from the source bot alias.
+     * </p>
+     * 
+     * @param listBotAliasReplicasRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListBotAliasReplicas operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.ListBotAliasReplicas
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotAliasReplicas"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListBotAliasReplicasResult> listBotAliasReplicasAsync(ListBotAliasReplicasRequest listBotAliasReplicasRequest,
+            com.amazonaws.handlers.AsyncHandler<ListBotAliasReplicasRequest, ListBotAliasReplicasResult> asyncHandler);
 
     /**
      * <p>
@@ -1607,6 +2133,101 @@ public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
 
     /**
      * <p>
+     * The action to list the replicated bots.
+     * </p>
+     * 
+     * @param listBotReplicasRequest
+     * @return A Java Future containing the result of the ListBotReplicas operation returned by the service.
+     * @sample AmazonLexModelsV2Async.ListBotReplicas
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotReplicas" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListBotReplicasResult> listBotReplicasAsync(ListBotReplicasRequest listBotReplicasRequest);
+
+    /**
+     * <p>
+     * The action to list the replicated bots.
+     * </p>
+     * 
+     * @param listBotReplicasRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListBotReplicas operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.ListBotReplicas
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotReplicas" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListBotReplicasResult> listBotReplicasAsync(ListBotReplicasRequest listBotReplicasRequest,
+            com.amazonaws.handlers.AsyncHandler<ListBotReplicasRequest, ListBotReplicasResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the generation requests made for a bot locale.
+     * </p>
+     * 
+     * @param listBotResourceGenerationsRequest
+     * @return A Java Future containing the result of the ListBotResourceGenerations operation returned by the service.
+     * @sample AmazonLexModelsV2Async.ListBotResourceGenerations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotResourceGenerations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListBotResourceGenerationsResult> listBotResourceGenerationsAsync(
+            ListBotResourceGenerationsRequest listBotResourceGenerationsRequest);
+
+    /**
+     * <p>
+     * Lists the generation requests made for a bot locale.
+     * </p>
+     * 
+     * @param listBotResourceGenerationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListBotResourceGenerations operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.ListBotResourceGenerations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotResourceGenerations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListBotResourceGenerationsResult> listBotResourceGenerationsAsync(
+            ListBotResourceGenerationsRequest listBotResourceGenerationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListBotResourceGenerationsRequest, ListBotResourceGenerationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Contains information about all the versions replication statuses applicable for Global Resiliency.
+     * </p>
+     * 
+     * @param listBotVersionReplicasRequest
+     * @return A Java Future containing the result of the ListBotVersionReplicas operation returned by the service.
+     * @sample AmazonLexModelsV2Async.ListBotVersionReplicas
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotVersionReplicas"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListBotVersionReplicasResult> listBotVersionReplicasAsync(ListBotVersionReplicasRequest listBotVersionReplicasRequest);
+
+    /**
+     * <p>
+     * Contains information about all the versions replication statuses applicable for Global Resiliency.
+     * </p>
+     * 
+     * @param listBotVersionReplicasRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListBotVersionReplicas operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.ListBotVersionReplicas
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotVersionReplicas"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListBotVersionReplicasResult> listBotVersionReplicasAsync(ListBotVersionReplicasRequest listBotVersionReplicasRequest,
+            com.amazonaws.handlers.AsyncHandler<ListBotVersionReplicasRequest, ListBotVersionReplicasResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about all of the versions of a bot.
      * </p>
      * <p>
@@ -1690,7 +2311,8 @@ public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
      * <p>
      * To use a built-in intent as a the base for your own intent, include the built-in intent signature in the
      * <code>parentIntentSignature</code> parameter when you call the <code>CreateIntent</code> operation. For more
-     * information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateIntent.html">CreateIntent</a>.
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateIntent.html">CreateIntent</a>.
      * </p>
      * 
      * @param listBuiltInIntentsRequest
@@ -1708,7 +2330,8 @@ public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
      * <p>
      * To use a built-in intent as a the base for your own intent, include the built-in intent signature in the
      * <code>parentIntentSignature</code> parameter when you call the <code>CreateIntent</code> operation. For more
-     * information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateIntent.html">CreateIntent</a>.
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateIntent.html">CreateIntent</a>.
      * </p>
      * 
      * @param listBuiltInIntentsRequest
@@ -1754,6 +2377,39 @@ public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
      */
     java.util.concurrent.Future<ListBuiltInSlotTypesResult> listBuiltInSlotTypesAsync(ListBuiltInSlotTypesRequest listBuiltInSlotTypesRequest,
             com.amazonaws.handlers.AsyncHandler<ListBuiltInSlotTypesRequest, ListBuiltInSlotTypesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Paginated list of custom vocabulary items for a given bot locale's custom vocabulary.
+     * </p>
+     * 
+     * @param listCustomVocabularyItemsRequest
+     * @return A Java Future containing the result of the ListCustomVocabularyItems operation returned by the service.
+     * @sample AmazonLexModelsV2Async.ListCustomVocabularyItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListCustomVocabularyItems"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCustomVocabularyItemsResult> listCustomVocabularyItemsAsync(
+            ListCustomVocabularyItemsRequest listCustomVocabularyItemsRequest);
+
+    /**
+     * <p>
+     * Paginated list of custom vocabulary items for a given bot locale's custom vocabulary.
+     * </p>
+     * 
+     * @param listCustomVocabularyItemsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCustomVocabularyItems operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.ListCustomVocabularyItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListCustomVocabularyItems"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCustomVocabularyItemsResult> listCustomVocabularyItemsAsync(
+            ListCustomVocabularyItemsRequest listCustomVocabularyItemsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCustomVocabularyItemsRequest, ListCustomVocabularyItemsResult> asyncHandler);
 
     /**
      * <p>
@@ -1819,6 +2475,303 @@ public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
 
     /**
      * <p>
+     * Retrieves summary metrics for the intents in your bot. The following fields are required:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>metrics</code> – A list of <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsIntentMetric.html"
+     * >AnalyticsIntentMetric</a> objects. In each object, use the <code>name</code> field to specify the metric to
+     * calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>,
+     * <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field to specify whether to sort the
+     * results in <code>Ascending</code> or <code>Descending</code> order.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Of the optional fields, you can organize the results in the following ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>filters</code> field to filter the results, the <code>groupBy</code> field to specify categories by
+     * which to group the results, and the <code>binBy</code> field to specify time intervals by which to group the
+     * results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the <code>maxResults</code> field to limit the number of results to return in a single response and the
+     * <code>nextToken</code> field to return the next batch of results if the response does not return the full set of
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>. You can specify
+     * only one <code>order</code> in a given request.
+     * </p>
+     * 
+     * @param listIntentMetricsRequest
+     * @return A Java Future containing the result of the ListIntentMetrics operation returned by the service.
+     * @sample AmazonLexModelsV2Async.ListIntentMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntentMetrics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListIntentMetricsResult> listIntentMetricsAsync(ListIntentMetricsRequest listIntentMetricsRequest);
+
+    /**
+     * <p>
+     * Retrieves summary metrics for the intents in your bot. The following fields are required:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>metrics</code> – A list of <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsIntentMetric.html"
+     * >AnalyticsIntentMetric</a> objects. In each object, use the <code>name</code> field to specify the metric to
+     * calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>,
+     * <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field to specify whether to sort the
+     * results in <code>Ascending</code> or <code>Descending</code> order.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Of the optional fields, you can organize the results in the following ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>filters</code> field to filter the results, the <code>groupBy</code> field to specify categories by
+     * which to group the results, and the <code>binBy</code> field to specify time intervals by which to group the
+     * results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the <code>maxResults</code> field to limit the number of results to return in a single response and the
+     * <code>nextToken</code> field to return the next batch of results if the response does not return the full set of
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>. You can specify
+     * only one <code>order</code> in a given request.
+     * </p>
+     * 
+     * @param listIntentMetricsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListIntentMetrics operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.ListIntentMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntentMetrics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListIntentMetricsResult> listIntentMetricsAsync(ListIntentMetricsRequest listIntentMetricsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListIntentMetricsRequest, ListIntentMetricsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves summary statistics for a path of intents that users take over sessions with your bot. The following
+     * fields are required:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve
+     * results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>intentPath</code> – Define an order of intents for which you want to retrieve metrics. Separate intents in
+     * the path with a forward slash. For example, populate the <code>intentPath</code> field with
+     * <code>/BookCar/BookHotel</code> to see details about how many times users invoked the <code>BookCar</code> and
+     * <code>BookHotel</code> intents in that order.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Use the optional <code>filters</code> field to filter the results.
+     * </p>
+     * 
+     * @param listIntentPathsRequest
+     * @return A Java Future containing the result of the ListIntentPaths operation returned by the service.
+     * @sample AmazonLexModelsV2Async.ListIntentPaths
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntentPaths" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListIntentPathsResult> listIntentPathsAsync(ListIntentPathsRequest listIntentPathsRequest);
+
+    /**
+     * <p>
+     * Retrieves summary statistics for a path of intents that users take over sessions with your bot. The following
+     * fields are required:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve
+     * results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>intentPath</code> – Define an order of intents for which you want to retrieve metrics. Separate intents in
+     * the path with a forward slash. For example, populate the <code>intentPath</code> field with
+     * <code>/BookCar/BookHotel</code> to see details about how many times users invoked the <code>BookCar</code> and
+     * <code>BookHotel</code> intents in that order.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Use the optional <code>filters</code> field to filter the results.
+     * </p>
+     * 
+     * @param listIntentPathsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListIntentPaths operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.ListIntentPaths
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntentPaths" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListIntentPathsResult> listIntentPathsAsync(ListIntentPathsRequest listIntentPathsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListIntentPathsRequest, ListIntentPathsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves summary metrics for the stages within intents in your bot. The following fields are required:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>metrics</code> – A list of <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsIntentStageMetric.html"
+     * >AnalyticsIntentStageMetric</a> objects. In each object, use the <code>name</code> field to specify the metric to
+     * calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>,
+     * <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field to specify whether to sort the
+     * results in <code>Ascending</code> or <code>Descending</code> order.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Of the optional fields, you can organize the results in the following ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>filters</code> field to filter the results, the <code>groupBy</code> field to specify categories by
+     * which to group the results, and the <code>binBy</code> field to specify time intervals by which to group the
+     * results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the <code>maxResults</code> field to limit the number of results to return in a single response and the
+     * <code>nextToken</code> field to return the next batch of results if the response does not return the full set of
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>. You can only
+     * specify one <code>order</code> in a given request.
+     * </p>
+     * 
+     * @param listIntentStageMetricsRequest
+     * @return A Java Future containing the result of the ListIntentStageMetrics operation returned by the service.
+     * @sample AmazonLexModelsV2Async.ListIntentStageMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntentStageMetrics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListIntentStageMetricsResult> listIntentStageMetricsAsync(ListIntentStageMetricsRequest listIntentStageMetricsRequest);
+
+    /**
+     * <p>
+     * Retrieves summary metrics for the stages within intents in your bot. The following fields are required:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>metrics</code> – A list of <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsIntentStageMetric.html"
+     * >AnalyticsIntentStageMetric</a> objects. In each object, use the <code>name</code> field to specify the metric to
+     * calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>,
+     * <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field to specify whether to sort the
+     * results in <code>Ascending</code> or <code>Descending</code> order.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Of the optional fields, you can organize the results in the following ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>filters</code> field to filter the results, the <code>groupBy</code> field to specify categories by
+     * which to group the results, and the <code>binBy</code> field to specify time intervals by which to group the
+     * results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the <code>maxResults</code> field to limit the number of results to return in a single response and the
+     * <code>nextToken</code> field to return the next batch of results if the response does not return the full set of
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>. You can only
+     * specify one <code>order</code> in a given request.
+     * </p>
+     * 
+     * @param listIntentStageMetricsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListIntentStageMetrics operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.ListIntentStageMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntentStageMetrics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListIntentStageMetricsResult> listIntentStageMetricsAsync(ListIntentStageMetricsRequest listIntentStageMetricsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListIntentStageMetricsRequest, ListIntentStageMetricsResult> asyncHandler);
+
+    /**
+     * <p>
      * Get a list of intents that meet the specified criteria.
      * </p>
      * 
@@ -1850,7 +2803,8 @@ public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
 
     /**
      * <p>
-     * Gets a list of recommended intents provided by the bot recommendation that you can use in your bot.
+     * Gets a list of recommended intents provided by the bot recommendation that you can use in your bot. Intents in
+     * the response are ordered by relevance.
      * </p>
      * 
      * @param listRecommendedIntentsRequest
@@ -1863,7 +2817,8 @@ public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
 
     /**
      * <p>
-     * Gets a list of recommended intents provided by the bot recommendation that you can use in your bot.
+     * Gets a list of recommended intents provided by the bot recommendation that you can use in your bot. Intents in
+     * the response are ordered by relevance.
      * </p>
      * 
      * @param listRecommendedIntentsRequest
@@ -1878,6 +2833,184 @@ public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
      */
     java.util.concurrent.Future<ListRecommendedIntentsResult> listRecommendedIntentsAsync(ListRecommendedIntentsRequest listRecommendedIntentsRequest,
             com.amazonaws.handlers.AsyncHandler<ListRecommendedIntentsRequest, ListRecommendedIntentsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a list of metadata for individual user sessions with your bot. The <code>startDateTime</code> and
+     * <code>endDateTime</code> fields are required. These fields define a time range for which you want to retrieve
+     * results. Of the optional fields, you can organize the results in the following ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>filters</code> field to filter the results and the <code>sortBy</code> field to specify the values
+     * by which to sort the results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the <code>maxResults</code> field to limit the number of results to return in a single response and the
+     * <code>nextToken</code> field to return the next batch of results if the response does not return the full set of
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param listSessionAnalyticsDataRequest
+     * @return A Java Future containing the result of the ListSessionAnalyticsData operation returned by the service.
+     * @sample AmazonLexModelsV2Async.ListSessionAnalyticsData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListSessionAnalyticsData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSessionAnalyticsDataResult> listSessionAnalyticsDataAsync(ListSessionAnalyticsDataRequest listSessionAnalyticsDataRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of metadata for individual user sessions with your bot. The <code>startDateTime</code> and
+     * <code>endDateTime</code> fields are required. These fields define a time range for which you want to retrieve
+     * results. Of the optional fields, you can organize the results in the following ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>filters</code> field to filter the results and the <code>sortBy</code> field to specify the values
+     * by which to sort the results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the <code>maxResults</code> field to limit the number of results to return in a single response and the
+     * <code>nextToken</code> field to return the next batch of results if the response does not return the full set of
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param listSessionAnalyticsDataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSessionAnalyticsData operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.ListSessionAnalyticsData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListSessionAnalyticsData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSessionAnalyticsDataResult> listSessionAnalyticsDataAsync(ListSessionAnalyticsDataRequest listSessionAnalyticsDataRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSessionAnalyticsDataRequest, ListSessionAnalyticsDataResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves summary metrics for the user sessions with your bot. The following fields are required:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>metrics</code> – A list of <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsSessionMetric.html"
+     * >AnalyticsSessionMetric</a> objects. In each object, use the <code>name</code> field to specify the metric to
+     * calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>,
+     * <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field to specify whether to sort the
+     * results in <code>Ascending</code> or <code>Descending</code> order.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Of the optional fields, you can organize the results in the following ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>filters</code> field to filter the results, the <code>groupBy</code> field to specify categories by
+     * which to group the results, and the <code>binBy</code> field to specify time intervals by which to group the
+     * results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the <code>maxResults</code> field to limit the number of results to return in a single response and the
+     * <code>nextToken</code> field to return the next batch of results if the response does not return the full set of
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>. Currently, you
+     * can specify it in either field, but not in both.
+     * </p>
+     * 
+     * @param listSessionMetricsRequest
+     * @return A Java Future containing the result of the ListSessionMetrics operation returned by the service.
+     * @sample AmazonLexModelsV2Async.ListSessionMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListSessionMetrics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSessionMetricsResult> listSessionMetricsAsync(ListSessionMetricsRequest listSessionMetricsRequest);
+
+    /**
+     * <p>
+     * Retrieves summary metrics for the user sessions with your bot. The following fields are required:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>metrics</code> – A list of <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsSessionMetric.html"
+     * >AnalyticsSessionMetric</a> objects. In each object, use the <code>name</code> field to specify the metric to
+     * calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>,
+     * <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field to specify whether to sort the
+     * results in <code>Ascending</code> or <code>Descending</code> order.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Of the optional fields, you can organize the results in the following ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>filters</code> field to filter the results, the <code>groupBy</code> field to specify categories by
+     * which to group the results, and the <code>binBy</code> field to specify time intervals by which to group the
+     * results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the <code>maxResults</code> field to limit the number of results to return in a single response and the
+     * <code>nextToken</code> field to return the next batch of results if the response does not return the full set of
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>. Currently, you
+     * can specify it in either field, but not in both.
+     * </p>
+     * 
+     * @param listSessionMetricsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSessionMetrics operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.ListSessionMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListSessionMetrics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSessionMetricsResult> listSessionMetricsAsync(ListSessionMetricsRequest listSessionMetricsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSessionMetricsRequest, ListSessionMetricsResult> asyncHandler);
 
     /**
      * <p>
@@ -1976,6 +3109,368 @@ public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
 
     /**
      * <p>
+     * Gets a list of test execution result items.
+     * </p>
+     * 
+     * @param listTestExecutionResultItemsRequest
+     * @return A Java Future containing the result of the ListTestExecutionResultItems operation returned by the
+     *         service.
+     * @sample AmazonLexModelsV2Async.ListTestExecutionResultItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListTestExecutionResultItems"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTestExecutionResultItemsResult> listTestExecutionResultItemsAsync(
+            ListTestExecutionResultItemsRequest listTestExecutionResultItemsRequest);
+
+    /**
+     * <p>
+     * Gets a list of test execution result items.
+     * </p>
+     * 
+     * @param listTestExecutionResultItemsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTestExecutionResultItems operation returned by the
+     *         service.
+     * @sample AmazonLexModelsV2AsyncHandler.ListTestExecutionResultItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListTestExecutionResultItems"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTestExecutionResultItemsResult> listTestExecutionResultItemsAsync(
+            ListTestExecutionResultItemsRequest listTestExecutionResultItemsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTestExecutionResultItemsRequest, ListTestExecutionResultItemsResult> asyncHandler);
+
+    /**
+     * <p>
+     * The list of test set executions.
+     * </p>
+     * 
+     * @param listTestExecutionsRequest
+     * @return A Java Future containing the result of the ListTestExecutions operation returned by the service.
+     * @sample AmazonLexModelsV2Async.ListTestExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListTestExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTestExecutionsResult> listTestExecutionsAsync(ListTestExecutionsRequest listTestExecutionsRequest);
+
+    /**
+     * <p>
+     * The list of test set executions.
+     * </p>
+     * 
+     * @param listTestExecutionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTestExecutions operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.ListTestExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListTestExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTestExecutionsResult> listTestExecutionsAsync(ListTestExecutionsRequest listTestExecutionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTestExecutionsRequest, ListTestExecutionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * The list of test set records.
+     * </p>
+     * 
+     * @param listTestSetRecordsRequest
+     * @return A Java Future containing the result of the ListTestSetRecords operation returned by the service.
+     * @sample AmazonLexModelsV2Async.ListTestSetRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListTestSetRecords"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTestSetRecordsResult> listTestSetRecordsAsync(ListTestSetRecordsRequest listTestSetRecordsRequest);
+
+    /**
+     * <p>
+     * The list of test set records.
+     * </p>
+     * 
+     * @param listTestSetRecordsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTestSetRecords operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.ListTestSetRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListTestSetRecords"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTestSetRecordsResult> listTestSetRecordsAsync(ListTestSetRecordsRequest listTestSetRecordsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTestSetRecordsRequest, ListTestSetRecordsResult> asyncHandler);
+
+    /**
+     * <p>
+     * The list of the test sets
+     * </p>
+     * 
+     * @param listTestSetsRequest
+     * @return A Java Future containing the result of the ListTestSets operation returned by the service.
+     * @sample AmazonLexModelsV2Async.ListTestSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListTestSets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTestSetsResult> listTestSetsAsync(ListTestSetsRequest listTestSetsRequest);
+
+    /**
+     * <p>
+     * The list of the test sets
+     * </p>
+     * 
+     * @param listTestSetsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTestSets operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.ListTestSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListTestSets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTestSetsResult> listTestSetsAsync(ListTestSetsRequest listTestSetsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTestSetsRequest, ListTestSetsResult> asyncHandler);
+
+    /**
+     * <note>
+     * <p>
+     * To use this API operation, your IAM role must have permissions to perform the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html"
+     * >ListAggregatedUtterances</a> operation, which provides access to utterance-related analytics. See <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/monitoring-utterances.html">Viewing utterance statistics</a>
+     * for the IAM policy to apply to the IAM role.
+     * </p>
+     * </note>
+     * <p>
+     * Retrieves a list of metadata for individual user utterances to your bot. The following fields are required:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Of the optional fields, you can organize the results in the following ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>filters</code> field to filter the results and the <code>sortBy</code> field to specify the values
+     * by which to sort the results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the <code>maxResults</code> field to limit the number of results to return in a single response and the
+     * <code>nextToken</code> field to return the next batch of results if the response does not return the full set of
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param listUtteranceAnalyticsDataRequest
+     * @return A Java Future containing the result of the ListUtteranceAnalyticsData operation returned by the service.
+     * @sample AmazonLexModelsV2Async.ListUtteranceAnalyticsData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListUtteranceAnalyticsData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListUtteranceAnalyticsDataResult> listUtteranceAnalyticsDataAsync(
+            ListUtteranceAnalyticsDataRequest listUtteranceAnalyticsDataRequest);
+
+    /**
+     * <note>
+     * <p>
+     * To use this API operation, your IAM role must have permissions to perform the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html"
+     * >ListAggregatedUtterances</a> operation, which provides access to utterance-related analytics. See <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/monitoring-utterances.html">Viewing utterance statistics</a>
+     * for the IAM policy to apply to the IAM role.
+     * </p>
+     * </note>
+     * <p>
+     * Retrieves a list of metadata for individual user utterances to your bot. The following fields are required:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Of the optional fields, you can organize the results in the following ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>filters</code> field to filter the results and the <code>sortBy</code> field to specify the values
+     * by which to sort the results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the <code>maxResults</code> field to limit the number of results to return in a single response and the
+     * <code>nextToken</code> field to return the next batch of results if the response does not return the full set of
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param listUtteranceAnalyticsDataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListUtteranceAnalyticsData operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.ListUtteranceAnalyticsData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListUtteranceAnalyticsData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListUtteranceAnalyticsDataResult> listUtteranceAnalyticsDataAsync(
+            ListUtteranceAnalyticsDataRequest listUtteranceAnalyticsDataRequest,
+            com.amazonaws.handlers.AsyncHandler<ListUtteranceAnalyticsDataRequest, ListUtteranceAnalyticsDataResult> asyncHandler);
+
+    /**
+     * <note>
+     * <p>
+     * To use this API operation, your IAM role must have permissions to perform the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html"
+     * >ListAggregatedUtterances</a> operation, which provides access to utterance-related analytics. See <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/monitoring-utterances.html">Viewing utterance statistics</a>
+     * for the IAM policy to apply to the IAM role.
+     * </p>
+     * </note>
+     * <p>
+     * Retrieves summary metrics for the utterances in your bot. The following fields are required:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>metrics</code> – A list of <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsUtteranceMetric.html"
+     * >AnalyticsUtteranceMetric</a> objects. In each object, use the <code>name</code> field to specify the metric to
+     * calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>,
+     * <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field to specify whether to sort the
+     * results in <code>Ascending</code> or <code>Descending</code> order.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Of the optional fields, you can organize the results in the following ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>filters</code> field to filter the results, the <code>groupBy</code> field to specify categories by
+     * which to group the results, and the <code>binBy</code> field to specify time intervals by which to group the
+     * results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the <code>maxResults</code> field to limit the number of results to return in a single response and the
+     * <code>nextToken</code> field to return the next batch of results if the response does not return the full set of
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>. Currently, you
+     * can specify it in either field, but not in both.
+     * </p>
+     * 
+     * @param listUtteranceMetricsRequest
+     * @return A Java Future containing the result of the ListUtteranceMetrics operation returned by the service.
+     * @sample AmazonLexModelsV2Async.ListUtteranceMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListUtteranceMetrics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListUtteranceMetricsResult> listUtteranceMetricsAsync(ListUtteranceMetricsRequest listUtteranceMetricsRequest);
+
+    /**
+     * <note>
+     * <p>
+     * To use this API operation, your IAM role must have permissions to perform the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html"
+     * >ListAggregatedUtterances</a> operation, which provides access to utterance-related analytics. See <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/monitoring-utterances.html">Viewing utterance statistics</a>
+     * for the IAM policy to apply to the IAM role.
+     * </p>
+     * </note>
+     * <p>
+     * Retrieves summary metrics for the utterances in your bot. The following fields are required:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>metrics</code> – A list of <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsUtteranceMetric.html"
+     * >AnalyticsUtteranceMetric</a> objects. In each object, use the <code>name</code> field to specify the metric to
+     * calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>,
+     * <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field to specify whether to sort the
+     * results in <code>Ascending</code> or <code>Descending</code> order.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Of the optional fields, you can organize the results in the following ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>filters</code> field to filter the results, the <code>groupBy</code> field to specify categories by
+     * which to group the results, and the <code>binBy</code> field to specify time intervals by which to group the
+     * results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the <code>maxResults</code> field to limit the number of results to return in a single response and the
+     * <code>nextToken</code> field to return the next batch of results if the response does not return the full set of
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>. Currently, you
+     * can specify it in either field, but not in both.
+     * </p>
+     * 
+     * @param listUtteranceMetricsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListUtteranceMetrics operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.ListUtteranceMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListUtteranceMetrics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListUtteranceMetricsResult> listUtteranceMetricsAsync(ListUtteranceMetricsRequest listUtteranceMetricsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListUtteranceMetricsRequest, ListUtteranceMetricsResult> asyncHandler);
+
+    /**
+     * <p>
      * Search for associated transcripts that meet the specified criteria.
      * </p>
      * 
@@ -2040,6 +3535,47 @@ public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
 
     /**
      * <p>
+     * Starts a request for the descriptive bot builder to generate a bot locale configuration based on the prompt you
+     * provide it. After you make this call, use the <code>DescribeBotResourceGeneration</code> operation to check on
+     * the status of the generation and for the <code>generatedBotLocaleUrl</code> when the generation is complete. Use
+     * that value to retrieve the Amazon S3 object containing the bot locale configuration. You can then modify and
+     * import this configuration.
+     * </p>
+     * 
+     * @param startBotResourceGenerationRequest
+     * @return A Java Future containing the result of the StartBotResourceGeneration operation returned by the service.
+     * @sample AmazonLexModelsV2Async.StartBotResourceGeneration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartBotResourceGeneration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartBotResourceGenerationResult> startBotResourceGenerationAsync(
+            StartBotResourceGenerationRequest startBotResourceGenerationRequest);
+
+    /**
+     * <p>
+     * Starts a request for the descriptive bot builder to generate a bot locale configuration based on the prompt you
+     * provide it. After you make this call, use the <code>DescribeBotResourceGeneration</code> operation to check on
+     * the status of the generation and for the <code>generatedBotLocaleUrl</code> when the generation is complete. Use
+     * that value to retrieve the Amazon S3 object containing the bot locale configuration. You can then modify and
+     * import this configuration.
+     * </p>
+     * 
+     * @param startBotResourceGenerationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartBotResourceGeneration operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.StartBotResourceGeneration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartBotResourceGeneration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartBotResourceGenerationResult> startBotResourceGenerationAsync(
+            StartBotResourceGenerationRequest startBotResourceGenerationRequest,
+            com.amazonaws.handlers.AsyncHandler<StartBotResourceGenerationRequest, StartBotResourceGenerationResult> asyncHandler);
+
+    /**
+     * <p>
      * Starts importing a bot, bot locale, or custom vocabulary from a zip archive that you uploaded to an S3 bucket.
      * </p>
      * 
@@ -2068,6 +3604,68 @@ public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
      */
     java.util.concurrent.Future<StartImportResult> startImportAsync(StartImportRequest startImportRequest,
             com.amazonaws.handlers.AsyncHandler<StartImportRequest, StartImportResult> asyncHandler);
+
+    /**
+     * <p>
+     * The action to start test set execution.
+     * </p>
+     * 
+     * @param startTestExecutionRequest
+     * @return A Java Future containing the result of the StartTestExecution operation returned by the service.
+     * @sample AmazonLexModelsV2Async.StartTestExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartTestExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartTestExecutionResult> startTestExecutionAsync(StartTestExecutionRequest startTestExecutionRequest);
+
+    /**
+     * <p>
+     * The action to start test set execution.
+     * </p>
+     * 
+     * @param startTestExecutionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartTestExecution operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.StartTestExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartTestExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartTestExecutionResult> startTestExecutionAsync(StartTestExecutionRequest startTestExecutionRequest,
+            com.amazonaws.handlers.AsyncHandler<StartTestExecutionRequest, StartTestExecutionResult> asyncHandler);
+
+    /**
+     * <p>
+     * The action to start the generation of test set.
+     * </p>
+     * 
+     * @param startTestSetGenerationRequest
+     * @return A Java Future containing the result of the StartTestSetGeneration operation returned by the service.
+     * @sample AmazonLexModelsV2Async.StartTestSetGeneration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartTestSetGeneration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartTestSetGenerationResult> startTestSetGenerationAsync(StartTestSetGenerationRequest startTestSetGenerationRequest);
+
+    /**
+     * <p>
+     * The action to start the generation of test set.
+     * </p>
+     * 
+     * @param startTestSetGenerationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartTestSetGeneration operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.StartTestSetGeneration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartTestSetGeneration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartTestSetGenerationResult> startTestSetGenerationAsync(StartTestSetGenerationRequest startTestSetGenerationRequest,
+            com.amazonaws.handlers.AsyncHandler<StartTestSetGenerationRequest, StartTestSetGenerationResult> asyncHandler);
 
     /**
      * <p>
@@ -2295,7 +3893,8 @@ public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
      * <p>
      * The password is not required. If you don't supply a password, Amazon Lex generates a zip file that is not
      * protected by a password. This is the archive that is available at the pre-signed S3 URL provided by the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a> operation.
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html">DescribeExport</a>
+     * operation.
      * </p>
      * 
      * @param updateExportRequest
@@ -2313,7 +3912,8 @@ public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
      * <p>
      * The password is not required. If you don't supply a password, Amazon Lex generates a zip file that is not
      * protected by a password. This is the archive that is available at the pre-signed S3 URL provided by the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a> operation.
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html">DescribeExport</a>
+     * operation.
      * </p>
      * 
      * @param updateExportRequest
@@ -2454,5 +4054,36 @@ public interface AmazonLexModelsV2Async extends AmazonLexModelsV2 {
      */
     java.util.concurrent.Future<UpdateSlotTypeResult> updateSlotTypeAsync(UpdateSlotTypeRequest updateSlotTypeRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateSlotTypeRequest, UpdateSlotTypeResult> asyncHandler);
+
+    /**
+     * <p>
+     * The action to update the test set.
+     * </p>
+     * 
+     * @param updateTestSetRequest
+     * @return A Java Future containing the result of the UpdateTestSet operation returned by the service.
+     * @sample AmazonLexModelsV2Async.UpdateTestSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateTestSet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTestSetResult> updateTestSetAsync(UpdateTestSetRequest updateTestSetRequest);
+
+    /**
+     * <p>
+     * The action to update the test set.
+     * </p>
+     * 
+     * @param updateTestSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateTestSet operation returned by the service.
+     * @sample AmazonLexModelsV2AsyncHandler.UpdateTestSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateTestSet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTestSetResult> updateTestSetAsync(UpdateTestSetRequest updateTestSetRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateTestSetRequest, UpdateTestSetResult> asyncHandler);
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -235,6 +235,32 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ServiceRegistry> serviceRegistries;
+    /**
+     * <p>
+     * The configuration for this service to discover and connect to services, and be discovered by, and connected from,
+     * other services within a namespace.
+     * </p>
+     * <p>
+     * Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to
+     * services across all of the clusters in the namespace. Tasks connect through a managed proxy container that
+     * collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported
+     * with Service Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     */
+    private ServiceConnectConfiguration serviceConnectConfiguration;
+    /**
+     * <p>
+     * The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size, volumeType, IOPS,
+     * throughput, snapshot and encryption in <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ServiceManagedEBSVolumeConfiguration.html"
+     * >ServiceManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the <code>name</code>
+     * from the task definition. If set to null, no new deployment is triggered. Otherwise, if this configuration
+     * differs from the existing one, it triggers a new deployment.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ServiceVolumeConfiguration> volumeConfigurations;
 
     /**
      * <p>
@@ -1982,6 +2008,210 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The configuration for this service to discover and connect to services, and be discovered by, and connected from,
+     * other services within a namespace.
+     * </p>
+     * <p>
+     * Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to
+     * services across all of the clusters in the namespace. Tasks connect through a managed proxy container that
+     * collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported
+     * with Service Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param serviceConnectConfiguration
+     *        The configuration for this service to discover and connect to services, and be discovered by, and
+     *        connected from, other services within a namespace.</p>
+     *        <p>
+     *        Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can
+     *        connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy
+     *        container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services
+     *        create are supported with Service Connect. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     *        Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public void setServiceConnectConfiguration(ServiceConnectConfiguration serviceConnectConfiguration) {
+        this.serviceConnectConfiguration = serviceConnectConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration for this service to discover and connect to services, and be discovered by, and connected from,
+     * other services within a namespace.
+     * </p>
+     * <p>
+     * Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to
+     * services across all of the clusters in the namespace. Tasks connect through a managed proxy container that
+     * collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported
+     * with Service Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return The configuration for this service to discover and connect to services, and be discovered by, and
+     *         connected from, other services within a namespace.</p>
+     *         <p>
+     *         Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can
+     *         connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy
+     *         container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS
+     *         services create are supported with Service Connect. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     *         Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public ServiceConnectConfiguration getServiceConnectConfiguration() {
+        return this.serviceConnectConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration for this service to discover and connect to services, and be discovered by, and connected from,
+     * other services within a namespace.
+     * </p>
+     * <p>
+     * Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to
+     * services across all of the clusters in the namespace. Tasks connect through a managed proxy container that
+     * collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported
+     * with Service Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param serviceConnectConfiguration
+     *        The configuration for this service to discover and connect to services, and be discovered by, and
+     *        connected from, other services within a namespace.</p>
+     *        <p>
+     *        Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can
+     *        connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy
+     *        container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services
+     *        create are supported with Service Connect. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     *        Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateServiceRequest withServiceConnectConfiguration(ServiceConnectConfiguration serviceConnectConfiguration) {
+        setServiceConnectConfiguration(serviceConnectConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size, volumeType, IOPS,
+     * throughput, snapshot and encryption in <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ServiceManagedEBSVolumeConfiguration.html"
+     * >ServiceManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the <code>name</code>
+     * from the task definition. If set to null, no new deployment is triggered. Otherwise, if this configuration
+     * differs from the existing one, it triggers a new deployment.
+     * </p>
+     * 
+     * @return The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size,
+     *         volumeType, IOPS, throughput, snapshot and encryption in <a href=
+     *         "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ServiceManagedEBSVolumeConfiguration.html"
+     *         >ServiceManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the
+     *         <code>name</code> from the task definition. If set to null, no new deployment is triggered. Otherwise, if
+     *         this configuration differs from the existing one, it triggers a new deployment.
+     */
+
+    public java.util.List<ServiceVolumeConfiguration> getVolumeConfigurations() {
+        if (volumeConfigurations == null) {
+            volumeConfigurations = new com.amazonaws.internal.SdkInternalList<ServiceVolumeConfiguration>();
+        }
+        return volumeConfigurations;
+    }
+
+    /**
+     * <p>
+     * The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size, volumeType, IOPS,
+     * throughput, snapshot and encryption in <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ServiceManagedEBSVolumeConfiguration.html"
+     * >ServiceManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the <code>name</code>
+     * from the task definition. If set to null, no new deployment is triggered. Otherwise, if this configuration
+     * differs from the existing one, it triggers a new deployment.
+     * </p>
+     * 
+     * @param volumeConfigurations
+     *        The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size,
+     *        volumeType, IOPS, throughput, snapshot and encryption in <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ServiceManagedEBSVolumeConfiguration.html"
+     *        >ServiceManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the
+     *        <code>name</code> from the task definition. If set to null, no new deployment is triggered. Otherwise, if
+     *        this configuration differs from the existing one, it triggers a new deployment.
+     */
+
+    public void setVolumeConfigurations(java.util.Collection<ServiceVolumeConfiguration> volumeConfigurations) {
+        if (volumeConfigurations == null) {
+            this.volumeConfigurations = null;
+            return;
+        }
+
+        this.volumeConfigurations = new com.amazonaws.internal.SdkInternalList<ServiceVolumeConfiguration>(volumeConfigurations);
+    }
+
+    /**
+     * <p>
+     * The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size, volumeType, IOPS,
+     * throughput, snapshot and encryption in <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ServiceManagedEBSVolumeConfiguration.html"
+     * >ServiceManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the <code>name</code>
+     * from the task definition. If set to null, no new deployment is triggered. Otherwise, if this configuration
+     * differs from the existing one, it triggers a new deployment.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVolumeConfigurations(java.util.Collection)} or {@link #withVolumeConfigurations(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param volumeConfigurations
+     *        The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size,
+     *        volumeType, IOPS, throughput, snapshot and encryption in <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ServiceManagedEBSVolumeConfiguration.html"
+     *        >ServiceManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the
+     *        <code>name</code> from the task definition. If set to null, no new deployment is triggered. Otherwise, if
+     *        this configuration differs from the existing one, it triggers a new deployment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateServiceRequest withVolumeConfigurations(ServiceVolumeConfiguration... volumeConfigurations) {
+        if (this.volumeConfigurations == null) {
+            setVolumeConfigurations(new com.amazonaws.internal.SdkInternalList<ServiceVolumeConfiguration>(volumeConfigurations.length));
+        }
+        for (ServiceVolumeConfiguration ele : volumeConfigurations) {
+            this.volumeConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size, volumeType, IOPS,
+     * throughput, snapshot and encryption in <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ServiceManagedEBSVolumeConfiguration.html"
+     * >ServiceManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the <code>name</code>
+     * from the task definition. If set to null, no new deployment is triggered. Otherwise, if this configuration
+     * differs from the existing one, it triggers a new deployment.
+     * </p>
+     * 
+     * @param volumeConfigurations
+     *        The details of the volume that was <code>configuredAtLaunch</code>. You can configure the size,
+     *        volumeType, IOPS, throughput, snapshot and encryption in <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ServiceManagedEBSVolumeConfiguration.html"
+     *        >ServiceManagedEBSVolumeConfiguration</a>. The <code>name</code> of the volume must match the
+     *        <code>name</code> from the task definition. If set to null, no new deployment is triggered. Otherwise, if
+     *        this configuration differs from the existing one, it triggers a new deployment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateServiceRequest withVolumeConfigurations(java.util.Collection<ServiceVolumeConfiguration> volumeConfigurations) {
+        setVolumeConfigurations(volumeConfigurations);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2026,7 +2256,11 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getPropagateTags() != null)
             sb.append("PropagateTags: ").append(getPropagateTags()).append(",");
         if (getServiceRegistries() != null)
-            sb.append("ServiceRegistries: ").append(getServiceRegistries());
+            sb.append("ServiceRegistries: ").append(getServiceRegistries()).append(",");
+        if (getServiceConnectConfiguration() != null)
+            sb.append("ServiceConnectConfiguration: ").append(getServiceConnectConfiguration()).append(",");
+        if (getVolumeConfigurations() != null)
+            sb.append("VolumeConfigurations: ").append(getVolumeConfigurations());
         sb.append("}");
         return sb.toString();
     }
@@ -2110,6 +2344,14 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getServiceRegistries() != null && other.getServiceRegistries().equals(this.getServiceRegistries()) == false)
             return false;
+        if (other.getServiceConnectConfiguration() == null ^ this.getServiceConnectConfiguration() == null)
+            return false;
+        if (other.getServiceConnectConfiguration() != null && other.getServiceConnectConfiguration().equals(this.getServiceConnectConfiguration()) == false)
+            return false;
+        if (other.getVolumeConfigurations() == null ^ this.getVolumeConfigurations() == null)
+            return false;
+        if (other.getVolumeConfigurations() != null && other.getVolumeConfigurations().equals(this.getVolumeConfigurations()) == false)
+            return false;
         return true;
     }
 
@@ -2135,6 +2377,8 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getLoadBalancers() == null) ? 0 : getLoadBalancers().hashCode());
         hashCode = prime * hashCode + ((getPropagateTags() == null) ? 0 : getPropagateTags().hashCode());
         hashCode = prime * hashCode + ((getServiceRegistries() == null) ? 0 : getServiceRegistries().hashCode());
+        hashCode = prime * hashCode + ((getServiceConnectConfiguration() == null) ? 0 : getServiceConnectConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getVolumeConfigurations() == null) ? 0 : getVolumeConfigurations().hashCode());
         return hashCode;
     }
 

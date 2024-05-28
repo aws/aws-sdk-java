@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -1581,11 +1581,12 @@ public class AmazonHttpClient {
          */
         private void setUserAgent(Request<?> request) {
             RequestClientOptions opts = requestConfig.getRequestClientOptions();
+            AWSCredentials credentials = request.getHandlerContext(HandlerContextKey.AWS_CREDENTIALS);
             if (opts != null) {
                 request.addHeader(HEADER_USER_AGENT, RuntimeHttpUtils
-                        .getUserAgent(config, opts.getClientMarker(Marker.USER_AGENT)));
+                        .getUserAgent(config, opts.getClientMarker(Marker.USER_AGENT), credentials));
             } else {
-                request.addHeader(HEADER_USER_AGENT, RuntimeHttpUtils.getUserAgent(config, null));
+                request.addHeader(HEADER_USER_AGENT, RuntimeHttpUtils.getUserAgent(config, null, credentials));
             }
         }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class DescribeDataSharesForProducerRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the producer that returns in the list of datashares.
+     * The Amazon Resource Name (ARN) of the producer namespace that returns in the list of datashares.
      * </p>
      */
     private String producerArn;
@@ -59,11 +59,11 @@ public class DescribeDataSharesForProducerRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the producer that returns in the list of datashares.
+     * The Amazon Resource Name (ARN) of the producer namespace that returns in the list of datashares.
      * </p>
      * 
      * @param producerArn
-     *        The Amazon Resource Name (ARN) of the producer that returns in the list of datashares.
+     *        The Amazon Resource Name (ARN) of the producer namespace that returns in the list of datashares.
      */
 
     public void setProducerArn(String producerArn) {
@@ -72,10 +72,10 @@ public class DescribeDataSharesForProducerRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the producer that returns in the list of datashares.
+     * The Amazon Resource Name (ARN) of the producer namespace that returns in the list of datashares.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the producer that returns in the list of datashares.
+     * @return The Amazon Resource Name (ARN) of the producer namespace that returns in the list of datashares.
      */
 
     public String getProducerArn() {
@@ -84,11 +84,11 @@ public class DescribeDataSharesForProducerRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the producer that returns in the list of datashares.
+     * The Amazon Resource Name (ARN) of the producer namespace that returns in the list of datashares.
      * </p>
      * 
      * @param producerArn
-     *        The Amazon Resource Name (ARN) of the producer that returns in the list of datashares.
+     *        The Amazon Resource Name (ARN) of the producer namespace that returns in the list of datashares.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

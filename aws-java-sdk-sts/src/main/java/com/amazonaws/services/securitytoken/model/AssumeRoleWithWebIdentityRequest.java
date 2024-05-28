@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,7 +48,8 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your application
      * must get this token by authenticating the user who is using your application with a web identity provider before
-     * the application makes an <code>AssumeRoleWithWebIdentity</code> call.
+     * the application makes an <code>AssumeRoleWithWebIdentity</code> call. Only tokens with RSA algorithms (RS256) are
+     * supported.
      * </p>
      */
     private String webIdentityToken;
@@ -79,10 +80,10 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <note>
      * <p>
-     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
-     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
-     * and tags for your request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session
+     * tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * <p>
@@ -116,10 +117,10 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <note>
      * <p>
-     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
-     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
-     * and tags for your request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session
+     * tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper size limit.
      * </p>
      * </note>
      */
@@ -277,13 +278,15 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your application
      * must get this token by authenticating the user who is using your application with a web identity provider before
-     * the application makes an <code>AssumeRoleWithWebIdentity</code> call.
+     * the application makes an <code>AssumeRoleWithWebIdentity</code> call. Only tokens with RSA algorithms (RS256) are
+     * supported.
      * </p>
      * 
      * @param webIdentityToken
      *        The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your
      *        application must get this token by authenticating the user who is using your application with a web
-     *        identity provider before the application makes an <code>AssumeRoleWithWebIdentity</code> call.
+     *        identity provider before the application makes an <code>AssumeRoleWithWebIdentity</code> call. Only tokens
+     *        with RSA algorithms (RS256) are supported.
      */
 
     public void setWebIdentityToken(String webIdentityToken) {
@@ -294,12 +297,14 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your application
      * must get this token by authenticating the user who is using your application with a web identity provider before
-     * the application makes an <code>AssumeRoleWithWebIdentity</code> call.
+     * the application makes an <code>AssumeRoleWithWebIdentity</code> call. Only tokens with RSA algorithms (RS256) are
+     * supported.
      * </p>
      * 
      * @return The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your
      *         application must get this token by authenticating the user who is using your application with a web
-     *         identity provider before the application makes an <code>AssumeRoleWithWebIdentity</code> call.
+     *         identity provider before the application makes an <code>AssumeRoleWithWebIdentity</code> call. Only
+     *         tokens with RSA algorithms (RS256) are supported.
      */
 
     public String getWebIdentityToken() {
@@ -310,13 +315,15 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your application
      * must get this token by authenticating the user who is using your application with a web identity provider before
-     * the application makes an <code>AssumeRoleWithWebIdentity</code> call.
+     * the application makes an <code>AssumeRoleWithWebIdentity</code> call. Only tokens with RSA algorithms (RS256) are
+     * supported.
      * </p>
      * 
      * @param webIdentityToken
      *        The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your
      *        application must get this token by authenticating the user who is using your application with a web
-     *        identity provider before the application makes an <code>AssumeRoleWithWebIdentity</code> call.
+     *        identity provider before the application makes an <code>AssumeRoleWithWebIdentity</code> call. Only tokens
+     *        with RSA algorithms (RS256) are supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -423,10 +430,10 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <note>
      * <p>
-     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
-     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
-     * and tags for your request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session
+     * tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * <p>
@@ -450,10 +457,10 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      *         </p>
      *         <note>
      *         <p>
-     *         An Amazon Web Services conversion compresses the passed session policies and session tags into a packed
-     *         binary format that has a separate limit. Your request can fail for this limit even if your plaintext
-     *         meets the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage
-     *         how close the policies and tags for your request are to the upper size limit.
+     *         An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and
+     *         session tags into a packed binary format that has a separate limit. Your request can fail for this limit
+     *         even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element
+     *         indicates by percentage how close the policies and tags for your request are to the upper size limit.
      *         </p>
      *         </note>
      *         <p>
@@ -483,10 +490,10 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <note>
      * <p>
-     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
-     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
-     * and tags for your request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session
+     * tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * <p>
@@ -511,10 +518,10 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      *        </p>
      *        <note>
      *        <p>
-     *        An Amazon Web Services conversion compresses the passed session policies and session tags into a packed
-     *        binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets
-     *        the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how
-     *        close the policies and tags for your request are to the upper size limit.
+     *        An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and
+     *        session tags into a packed binary format that has a separate limit. Your request can fail for this limit
+     *        even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element
+     *        indicates by percentage how close the policies and tags for your request are to the upper size limit.
      *        </p>
      *        </note>
      *        <p>
@@ -549,10 +556,10 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <note>
      * <p>
-     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
-     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
-     * and tags for your request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session
+     * tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * <p>
@@ -582,10 +589,10 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      *        </p>
      *        <note>
      *        <p>
-     *        An Amazon Web Services conversion compresses the passed session policies and session tags into a packed
-     *        binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets
-     *        the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how
-     *        close the policies and tags for your request are to the upper size limit.
+     *        An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and
+     *        session tags into a packed binary format that has a separate limit. Your request can fail for this limit
+     *        even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element
+     *        indicates by percentage how close the policies and tags for your request are to the upper size limit.
      *        </p>
      *        </note>
      *        <p>
@@ -622,10 +629,10 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <note>
      * <p>
-     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
-     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
-     * and tags for your request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session
+     * tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * <p>
@@ -650,10 +657,10 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      *        </p>
      *        <note>
      *        <p>
-     *        An Amazon Web Services conversion compresses the passed session policies and session tags into a packed
-     *        binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets
-     *        the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how
-     *        close the policies and tags for your request are to the upper size limit.
+     *        An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and
+     *        session tags into a packed binary format that has a separate limit. Your request can fail for this limit
+     *        even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element
+     *        indicates by percentage how close the policies and tags for your request are to the upper size limit.
      *        </p>
      *        </note>
      *        <p>
@@ -692,10 +699,10 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <note>
      * <p>
-     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
-     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
-     * and tags for your request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session
+     * tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * 
@@ -719,10 +726,10 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      *        </p>
      *        <note>
      *        <p>
-     *        An Amazon Web Services conversion compresses the passed session policies and session tags into a packed
-     *        binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets
-     *        the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how
-     *        close the policies and tags for your request are to the upper size limit.
+     *        An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and
+     *        session tags into a packed binary format that has a separate limit. Your request can fail for this limit
+     *        even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element
+     *        indicates by percentage how close the policies and tags for your request are to the upper size limit.
      *        </p>
      */
 
@@ -750,10 +757,10 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <note>
      * <p>
-     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
-     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
-     * and tags for your request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session
+     * tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * 
@@ -776,10 +783,10 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      *         </p>
      *         <note>
      *         <p>
-     *         An Amazon Web Services conversion compresses the passed session policies and session tags into a packed
-     *         binary format that has a separate limit. Your request can fail for this limit even if your plaintext
-     *         meets the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage
-     *         how close the policies and tags for your request are to the upper size limit.
+     *         An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and
+     *         session tags into a packed binary format that has a separate limit. Your request can fail for this limit
+     *         even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element
+     *         indicates by percentage how close the policies and tags for your request are to the upper size limit.
      *         </p>
      */
 
@@ -807,10 +814,10 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <note>
      * <p>
-     * An Amazon Web Services conversion compresses the passed session policies and session tags into a packed binary
-     * format that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
-     * requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the policies
-     * and tags for your request are to the upper size limit.
+     * An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and session
+     * tags into a packed binary format that has a separate limit. Your request can fail for this limit even if your
+     * plaintext meets the other requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper size limit.
      * </p>
      * </note>
      * 
@@ -834,10 +841,10 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      *        </p>
      *        <note>
      *        <p>
-     *        An Amazon Web Services conversion compresses the passed session policies and session tags into a packed
-     *        binary format that has a separate limit. Your request can fail for this limit even if your plaintext meets
-     *        the other requirements. The <code>PackedPolicySize</code> response element indicates by percentage how
-     *        close the policies and tags for your request are to the upper size limit.
+     *        An Amazon Web Services conversion compresses the passed inline session policy, managed policy ARNs, and
+     *        session tags into a packed binary format that has a separate limit. Your request can fail for this limit
+     *        even if your plaintext meets the other requirements. The <code>PackedPolicySize</code> response element
+     *        indicates by percentage how close the policies and tags for your request are to the upper size limit.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1021,7 +1028,7 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
         if (getRoleSessionName() != null)
             sb.append("RoleSessionName: ").append(getRoleSessionName()).append(",");
         if (getWebIdentityToken() != null)
-            sb.append("WebIdentityToken: ").append(getWebIdentityToken()).append(",");
+            sb.append("WebIdentityToken: ").append("***Sensitive Data Redacted***").append(",");
         if (getProviderId() != null)
             sb.append("ProviderId: ").append(getProviderId()).append(",");
         if (getPolicyArns() != null)

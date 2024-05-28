@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -97,9 +97,9 @@ public class DBProxyEndpoint implements Serializable, Cloneable {
     private String targetRole;
     /**
      * <p>
-     * A value that indicates whether this endpoint is the default endpoint for the associated DB proxy. Default DB
-     * proxy endpoints always have read/write capability. Other endpoints that you associate with the DB proxy can be
-     * either read/write or read-only.
+     * Indicates whether this endpoint is the default endpoint for the associated DB proxy. Default DB proxy endpoints
+     * always have read/write capability. Other endpoints that you associate with the DB proxy can be either read/write
+     * or read-only.
      * </p>
      */
     private Boolean isDefault;
@@ -638,15 +638,15 @@ public class DBProxyEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether this endpoint is the default endpoint for the associated DB proxy. Default DB
-     * proxy endpoints always have read/write capability. Other endpoints that you associate with the DB proxy can be
-     * either read/write or read-only.
+     * Indicates whether this endpoint is the default endpoint for the associated DB proxy. Default DB proxy endpoints
+     * always have read/write capability. Other endpoints that you associate with the DB proxy can be either read/write
+     * or read-only.
      * </p>
      * 
      * @param isDefault
-     *        A value that indicates whether this endpoint is the default endpoint for the associated DB proxy. Default
-     *        DB proxy endpoints always have read/write capability. Other endpoints that you associate with the DB proxy
-     *        can be either read/write or read-only.
+     *        Indicates whether this endpoint is the default endpoint for the associated DB proxy. Default DB proxy
+     *        endpoints always have read/write capability. Other endpoints that you associate with the DB proxy can be
+     *        either read/write or read-only.
      */
 
     public void setIsDefault(Boolean isDefault) {
@@ -655,14 +655,14 @@ public class DBProxyEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether this endpoint is the default endpoint for the associated DB proxy. Default DB
-     * proxy endpoints always have read/write capability. Other endpoints that you associate with the DB proxy can be
-     * either read/write or read-only.
+     * Indicates whether this endpoint is the default endpoint for the associated DB proxy. Default DB proxy endpoints
+     * always have read/write capability. Other endpoints that you associate with the DB proxy can be either read/write
+     * or read-only.
      * </p>
      * 
-     * @return A value that indicates whether this endpoint is the default endpoint for the associated DB proxy. Default
-     *         DB proxy endpoints always have read/write capability. Other endpoints that you associate with the DB
-     *         proxy can be either read/write or read-only.
+     * @return Indicates whether this endpoint is the default endpoint for the associated DB proxy. Default DB proxy
+     *         endpoints always have read/write capability. Other endpoints that you associate with the DB proxy can be
+     *         either read/write or read-only.
      */
 
     public Boolean getIsDefault() {
@@ -671,15 +671,15 @@ public class DBProxyEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether this endpoint is the default endpoint for the associated DB proxy. Default DB
-     * proxy endpoints always have read/write capability. Other endpoints that you associate with the DB proxy can be
-     * either read/write or read-only.
+     * Indicates whether this endpoint is the default endpoint for the associated DB proxy. Default DB proxy endpoints
+     * always have read/write capability. Other endpoints that you associate with the DB proxy can be either read/write
+     * or read-only.
      * </p>
      * 
      * @param isDefault
-     *        A value that indicates whether this endpoint is the default endpoint for the associated DB proxy. Default
-     *        DB proxy endpoints always have read/write capability. Other endpoints that you associate with the DB proxy
-     *        can be either read/write or read-only.
+     *        Indicates whether this endpoint is the default endpoint for the associated DB proxy. Default DB proxy
+     *        endpoints always have read/write capability. Other endpoints that you associate with the DB proxy can be
+     *        either read/write or read-only.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -690,14 +690,14 @@ public class DBProxyEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether this endpoint is the default endpoint for the associated DB proxy. Default DB
-     * proxy endpoints always have read/write capability. Other endpoints that you associate with the DB proxy can be
-     * either read/write or read-only.
+     * Indicates whether this endpoint is the default endpoint for the associated DB proxy. Default DB proxy endpoints
+     * always have read/write capability. Other endpoints that you associate with the DB proxy can be either read/write
+     * or read-only.
      * </p>
      * 
-     * @return A value that indicates whether this endpoint is the default endpoint for the associated DB proxy. Default
-     *         DB proxy endpoints always have read/write capability. Other endpoints that you associate with the DB
-     *         proxy can be either read/write or read-only.
+     * @return Indicates whether this endpoint is the default endpoint for the associated DB proxy. Default DB proxy
+     *         endpoints always have read/write capability. Other endpoints that you associate with the DB proxy can be
+     *         either read/write or read-only.
      */
 
     public Boolean isDefault() {

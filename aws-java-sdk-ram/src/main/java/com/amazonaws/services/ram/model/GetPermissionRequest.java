@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,9 +27,9 @@ public class GetPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     * Name (ARN)</a> of the permission whose contents you want to retrieve. To find the ARN for a permission, use
-     * either the <a>ListPermissions</a> operation or go to the <a
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Name (ARN)</a> of the permission whose contents you want to retrieve. To find the ARN for a permission,
+     * use either the <a>ListPermissions</a> operation or go to the <a
      * href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and
      * then choose the name of the permission. The ARN is displayed on the detail page.
      * </p>
@@ -37,24 +37,27 @@ public class GetPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String permissionArn;
     /**
      * <p>
-     * Specifies identifier for the version of the RAM permission to retrieve. If you don't specify this parameter, the
+     * Specifies the version number of the RAM permission to retrieve. If you don't specify this parameter, the
      * operation retrieves the default version.
+     * </p>
+     * <p>
+     * To see the list of available versions, use <a>ListPermissionVersions</a>.
      * </p>
      */
     private Integer permissionVersion;
 
     /**
      * <p>
-     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     * Name (ARN)</a> of the permission whose contents you want to retrieve. To find the ARN for a permission, use
-     * either the <a>ListPermissions</a> operation or go to the <a
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Name (ARN)</a> of the permission whose contents you want to retrieve. To find the ARN for a permission,
+     * use either the <a>ListPermissions</a> operation or go to the <a
      * href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and
      * then choose the name of the permission. The ARN is displayed on the detail page.
      * </p>
      * 
      * @param permissionArn
      *        Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     *        Resoure Name (ARN)</a> of the permission whose contents you want to retrieve. To find the ARN for a
+     *        Resource Name (ARN)</a> of the permission whose contents you want to retrieve. To find the ARN for a
      *        permission, use either the <a>ListPermissions</a> operation or go to the <a
      *        href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM
      *        console and then choose the name of the permission. The ARN is displayed on the detail page.
@@ -66,15 +69,15 @@ public class GetPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     * Name (ARN)</a> of the permission whose contents you want to retrieve. To find the ARN for a permission, use
-     * either the <a>ListPermissions</a> operation or go to the <a
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Name (ARN)</a> of the permission whose contents you want to retrieve. To find the ARN for a permission,
+     * use either the <a>ListPermissions</a> operation or go to the <a
      * href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and
      * then choose the name of the permission. The ARN is displayed on the detail page.
      * </p>
      * 
      * @return Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     *         Resoure Name (ARN)</a> of the permission whose contents you want to retrieve. To find the ARN for a
+     *         Resource Name (ARN)</a> of the permission whose contents you want to retrieve. To find the ARN for a
      *         permission, use either the <a>ListPermissions</a> operation or go to the <a
      *         href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM
      *         console and then choose the name of the permission. The ARN is displayed on the detail page.
@@ -86,16 +89,16 @@ public class GetPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     * Name (ARN)</a> of the permission whose contents you want to retrieve. To find the ARN for a permission, use
-     * either the <a>ListPermissions</a> operation or go to the <a
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Name (ARN)</a> of the permission whose contents you want to retrieve. To find the ARN for a permission,
+     * use either the <a>ListPermissions</a> operation or go to the <a
      * href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM console and
      * then choose the name of the permission. The ARN is displayed on the detail page.
      * </p>
      * 
      * @param permissionArn
      *        Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     *        Resoure Name (ARN)</a> of the permission whose contents you want to retrieve. To find the ARN for a
+     *        Resource Name (ARN)</a> of the permission whose contents you want to retrieve. To find the ARN for a
      *        permission, use either the <a>ListPermissions</a> operation or go to the <a
      *        href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions library</a> page in the RAM
      *        console and then choose the name of the permission. The ARN is displayed on the detail page.
@@ -109,13 +112,18 @@ public class GetPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies identifier for the version of the RAM permission to retrieve. If you don't specify this parameter, the
+     * Specifies the version number of the RAM permission to retrieve. If you don't specify this parameter, the
      * operation retrieves the default version.
+     * </p>
+     * <p>
+     * To see the list of available versions, use <a>ListPermissionVersions</a>.
      * </p>
      * 
      * @param permissionVersion
-     *        Specifies identifier for the version of the RAM permission to retrieve. If you don't specify this
-     *        parameter, the operation retrieves the default version.
+     *        Specifies the version number of the RAM permission to retrieve. If you don't specify this parameter, the
+     *        operation retrieves the default version.</p>
+     *        <p>
+     *        To see the list of available versions, use <a>ListPermissionVersions</a>.
      */
 
     public void setPermissionVersion(Integer permissionVersion) {
@@ -124,12 +132,17 @@ public class GetPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies identifier for the version of the RAM permission to retrieve. If you don't specify this parameter, the
+     * Specifies the version number of the RAM permission to retrieve. If you don't specify this parameter, the
      * operation retrieves the default version.
      * </p>
+     * <p>
+     * To see the list of available versions, use <a>ListPermissionVersions</a>.
+     * </p>
      * 
-     * @return Specifies identifier for the version of the RAM permission to retrieve. If you don't specify this
-     *         parameter, the operation retrieves the default version.
+     * @return Specifies the version number of the RAM permission to retrieve. If you don't specify this parameter, the
+     *         operation retrieves the default version.</p>
+     *         <p>
+     *         To see the list of available versions, use <a>ListPermissionVersions</a>.
      */
 
     public Integer getPermissionVersion() {
@@ -138,13 +151,18 @@ public class GetPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies identifier for the version of the RAM permission to retrieve. If you don't specify this parameter, the
+     * Specifies the version number of the RAM permission to retrieve. If you don't specify this parameter, the
      * operation retrieves the default version.
+     * </p>
+     * <p>
+     * To see the list of available versions, use <a>ListPermissionVersions</a>.
      * </p>
      * 
      * @param permissionVersion
-     *        Specifies identifier for the version of the RAM permission to retrieve. If you don't specify this
-     *        parameter, the operation retrieves the default version.
+     *        Specifies the version number of the RAM permission to retrieve. If you don't specify this parameter, the
+     *        operation retrieves the default version.</p>
+     *        <p>
+     *        To see the list of available versions, use <a>ListPermissionVersions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

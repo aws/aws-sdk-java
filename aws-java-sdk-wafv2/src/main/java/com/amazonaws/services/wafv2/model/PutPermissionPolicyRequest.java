@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,7 +41,7 @@ public class PutPermissionPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.
+     * The policy must be composed using IAM Policy version 2012-10-17.
      * </p>
      * </li>
      * <li>
@@ -124,7 +124,7 @@ public class PutPermissionPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.
+     * The policy must be composed using IAM Policy version 2012-10-17.
      * </p>
      * </li>
      * <li>
@@ -163,7 +163,7 @@ public class PutPermissionPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *        <ul>
      *        <li>
      *        <p>
-     *        The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.
+     *        The policy must be composed using IAM Policy version 2012-10-17.
      *        </p>
      *        </li>
      *        <li>
@@ -209,7 +209,7 @@ public class PutPermissionPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.
+     * The policy must be composed using IAM Policy version 2012-10-17.
      * </p>
      * </li>
      * <li>
@@ -247,7 +247,7 @@ public class PutPermissionPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *         <ul>
      *         <li>
      *         <p>
-     *         The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.
+     *         The policy must be composed using IAM Policy version 2012-10-17.
      *         </p>
      *         </li>
      *         <li>
@@ -293,7 +293,7 @@ public class PutPermissionPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.
+     * The policy must be composed using IAM Policy version 2012-10-17.
      * </p>
      * </li>
      * <li>
@@ -332,7 +332,7 @@ public class PutPermissionPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *        <ul>
      *        <li>
      *        <p>
-     *        The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.
+     *        The policy must be composed using IAM Policy version 2012-10-17.
      *        </p>
      *        </li>
      *        <li>

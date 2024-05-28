@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,27 @@ public class UpdateRevealConfigurationResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The new configuration settings and the status of the configuration for the account.
+     * The KMS key to use to encrypt the sensitive data, and the status of the configuration for the Amazon Macie
+     * account.
      * </p>
      */
     private RevealConfiguration configuration;
+    /**
+     * <p>
+     * The access method and settings to use when retrieving the sensitive data.
+     * </p>
+     */
+    private RetrievalConfiguration retrievalConfiguration;
 
     /**
      * <p>
-     * The new configuration settings and the status of the configuration for the account.
+     * The KMS key to use to encrypt the sensitive data, and the status of the configuration for the Amazon Macie
+     * account.
      * </p>
      * 
      * @param configuration
-     *        The new configuration settings and the status of the configuration for the account.
+     *        The KMS key to use to encrypt the sensitive data, and the status of the configuration for the Amazon Macie
+     *        account.
      */
 
     public void setConfiguration(RevealConfiguration configuration) {
@@ -45,10 +54,12 @@ public class UpdateRevealConfigurationResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The new configuration settings and the status of the configuration for the account.
+     * The KMS key to use to encrypt the sensitive data, and the status of the configuration for the Amazon Macie
+     * account.
      * </p>
      * 
-     * @return The new configuration settings and the status of the configuration for the account.
+     * @return The KMS key to use to encrypt the sensitive data, and the status of the configuration for the Amazon
+     *         Macie account.
      */
 
     public RevealConfiguration getConfiguration() {
@@ -57,16 +68,58 @@ public class UpdateRevealConfigurationResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The new configuration settings and the status of the configuration for the account.
+     * The KMS key to use to encrypt the sensitive data, and the status of the configuration for the Amazon Macie
+     * account.
      * </p>
      * 
      * @param configuration
-     *        The new configuration settings and the status of the configuration for the account.
+     *        The KMS key to use to encrypt the sensitive data, and the status of the configuration for the Amazon Macie
+     *        account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateRevealConfigurationResult withConfiguration(RevealConfiguration configuration) {
         setConfiguration(configuration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The access method and settings to use when retrieving the sensitive data.
+     * </p>
+     * 
+     * @param retrievalConfiguration
+     *        The access method and settings to use when retrieving the sensitive data.
+     */
+
+    public void setRetrievalConfiguration(RetrievalConfiguration retrievalConfiguration) {
+        this.retrievalConfiguration = retrievalConfiguration;
+    }
+
+    /**
+     * <p>
+     * The access method and settings to use when retrieving the sensitive data.
+     * </p>
+     * 
+     * @return The access method and settings to use when retrieving the sensitive data.
+     */
+
+    public RetrievalConfiguration getRetrievalConfiguration() {
+        return this.retrievalConfiguration;
+    }
+
+    /**
+     * <p>
+     * The access method and settings to use when retrieving the sensitive data.
+     * </p>
+     * 
+     * @param retrievalConfiguration
+     *        The access method and settings to use when retrieving the sensitive data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateRevealConfigurationResult withRetrievalConfiguration(RetrievalConfiguration retrievalConfiguration) {
+        setRetrievalConfiguration(retrievalConfiguration);
         return this;
     }
 
@@ -83,7 +136,9 @@ public class UpdateRevealConfigurationResult extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConfiguration() != null)
-            sb.append("Configuration: ").append(getConfiguration());
+            sb.append("Configuration: ").append(getConfiguration()).append(",");
+        if (getRetrievalConfiguration() != null)
+            sb.append("RetrievalConfiguration: ").append(getRetrievalConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -102,6 +157,10 @@ public class UpdateRevealConfigurationResult extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
             return false;
+        if (other.getRetrievalConfiguration() == null ^ this.getRetrievalConfiguration() == null)
+            return false;
+        if (other.getRetrievalConfiguration() != null && other.getRetrievalConfiguration().equals(this.getRetrievalConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -111,6 +170,7 @@ public class UpdateRevealConfigurationResult extends com.amazonaws.AmazonWebServ
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getRetrievalConfiguration() == null) ? 0 : getRetrievalConfiguration().hashCode());
         return hashCode;
     }
 

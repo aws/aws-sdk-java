@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,7 +61,8 @@ public class Database implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date createTime;
     /**
      * <p>
-     * Creates a set of default permissions on the table for principals.
+     * Creates a set of default permissions on the table for principals. Used by Lake Formation. Not used in the normal
+     * course of Glue operations.
      * </p>
      */
     private java.util.List<PrincipalPermissions> createTableDefaultPermissions;
@@ -77,6 +78,12 @@ public class Database implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String catalogId;
+    /**
+     * <p>
+     * A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.
+     * </p>
+     */
+    private FederatedDatabase federatedDatabase;
 
     /**
      * <p>
@@ -308,10 +315,12 @@ public class Database implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Creates a set of default permissions on the table for principals.
+     * Creates a set of default permissions on the table for principals. Used by Lake Formation. Not used in the normal
+     * course of Glue operations.
      * </p>
      * 
-     * @return Creates a set of default permissions on the table for principals.
+     * @return Creates a set of default permissions on the table for principals. Used by Lake Formation. Not used in the
+     *         normal course of Glue operations.
      */
 
     public java.util.List<PrincipalPermissions> getCreateTableDefaultPermissions() {
@@ -320,11 +329,13 @@ public class Database implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Creates a set of default permissions on the table for principals.
+     * Creates a set of default permissions on the table for principals. Used by Lake Formation. Not used in the normal
+     * course of Glue operations.
      * </p>
      * 
      * @param createTableDefaultPermissions
-     *        Creates a set of default permissions on the table for principals.
+     *        Creates a set of default permissions on the table for principals. Used by Lake Formation. Not used in the
+     *        normal course of Glue operations.
      */
 
     public void setCreateTableDefaultPermissions(java.util.Collection<PrincipalPermissions> createTableDefaultPermissions) {
@@ -338,7 +349,8 @@ public class Database implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Creates a set of default permissions on the table for principals.
+     * Creates a set of default permissions on the table for principals. Used by Lake Formation. Not used in the normal
+     * course of Glue operations.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -347,7 +359,8 @@ public class Database implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param createTableDefaultPermissions
-     *        Creates a set of default permissions on the table for principals.
+     *        Creates a set of default permissions on the table for principals. Used by Lake Formation. Not used in the
+     *        normal course of Glue operations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -363,11 +376,13 @@ public class Database implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Creates a set of default permissions on the table for principals.
+     * Creates a set of default permissions on the table for principals. Used by Lake Formation. Not used in the normal
+     * course of Glue operations.
      * </p>
      * 
      * @param createTableDefaultPermissions
-     *        Creates a set of default permissions on the table for principals.
+     *        Creates a set of default permissions on the table for principals. Used by Lake Formation. Not used in the
+     *        normal course of Glue operations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -457,6 +472,46 @@ public class Database implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.
+     * </p>
+     * 
+     * @param federatedDatabase
+     *        A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.
+     */
+
+    public void setFederatedDatabase(FederatedDatabase federatedDatabase) {
+        this.federatedDatabase = federatedDatabase;
+    }
+
+    /**
+     * <p>
+     * A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.
+     * </p>
+     * 
+     * @return A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.
+     */
+
+    public FederatedDatabase getFederatedDatabase() {
+        return this.federatedDatabase;
+    }
+
+    /**
+     * <p>
+     * A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.
+     * </p>
+     * 
+     * @param federatedDatabase
+     *        A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Database withFederatedDatabase(FederatedDatabase federatedDatabase) {
+        setFederatedDatabase(federatedDatabase);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -483,7 +538,9 @@ public class Database implements Serializable, Cloneable, StructuredPojo {
         if (getTargetDatabase() != null)
             sb.append("TargetDatabase: ").append(getTargetDatabase()).append(",");
         if (getCatalogId() != null)
-            sb.append("CatalogId: ").append(getCatalogId());
+            sb.append("CatalogId: ").append(getCatalogId()).append(",");
+        if (getFederatedDatabase() != null)
+            sb.append("FederatedDatabase: ").append(getFederatedDatabase());
         sb.append("}");
         return sb.toString();
     }
@@ -531,6 +588,10 @@ public class Database implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCatalogId() != null && other.getCatalogId().equals(this.getCatalogId()) == false)
             return false;
+        if (other.getFederatedDatabase() == null ^ this.getFederatedDatabase() == null)
+            return false;
+        if (other.getFederatedDatabase() != null && other.getFederatedDatabase().equals(this.getFederatedDatabase()) == false)
+            return false;
         return true;
     }
 
@@ -547,6 +608,7 @@ public class Database implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreateTableDefaultPermissions() == null) ? 0 : getCreateTableDefaultPermissions().hashCode());
         hashCode = prime * hashCode + ((getTargetDatabase() == null) ? 0 : getTargetDatabase().hashCode());
         hashCode = prime * hashCode + ((getCatalogId() == null) ? 0 : getCatalogId().hashCode());
+        hashCode = prime * hashCode + ((getFederatedDatabase() == null) ? 0 : getFederatedDatabase().hashCode());
         return hashCode;
     }
 

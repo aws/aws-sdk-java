@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.simpleemailv2.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,8 @@ public class TemplateMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemplateArn").build();
     private static final MarshallingInfo<String> TEMPLATEDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemplateData").build();
+    private static final MarshallingInfo<List> HEADERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Headers").build();
 
     private static final TemplateMarshaller instance = new TemplateMarshaller();
 
@@ -53,6 +56,7 @@ public class TemplateMarshaller {
             protocolMarshaller.marshall(template.getTemplateName(), TEMPLATENAME_BINDING);
             protocolMarshaller.marshall(template.getTemplateArn(), TEMPLATEARN_BINDING);
             protocolMarshaller.marshall(template.getTemplateData(), TEMPLATEDATA_BINDING);
+            protocolMarshaller.marshall(template.getHeaders(), HEADERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

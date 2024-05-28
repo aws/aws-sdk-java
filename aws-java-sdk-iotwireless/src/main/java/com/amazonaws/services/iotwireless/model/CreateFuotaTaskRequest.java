@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,12 @@ public class CreateFuotaTaskRequest extends com.amazonaws.AmazonWebServiceReques
     private String firmwareUpdateRole;
 
     private java.util.List<Tag> tags;
+
+    private Integer redundancyPercent;
+
+    private Integer fragmentSizeBytes;
+
+    private Integer fragmentIntervalMS;
 
     /**
      * @param name
@@ -248,6 +254,84 @@ public class CreateFuotaTaskRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * @param redundancyPercent
+     */
+
+    public void setRedundancyPercent(Integer redundancyPercent) {
+        this.redundancyPercent = redundancyPercent;
+    }
+
+    /**
+     * @return
+     */
+
+    public Integer getRedundancyPercent() {
+        return this.redundancyPercent;
+    }
+
+    /**
+     * @param redundancyPercent
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFuotaTaskRequest withRedundancyPercent(Integer redundancyPercent) {
+        setRedundancyPercent(redundancyPercent);
+        return this;
+    }
+
+    /**
+     * @param fragmentSizeBytes
+     */
+
+    public void setFragmentSizeBytes(Integer fragmentSizeBytes) {
+        this.fragmentSizeBytes = fragmentSizeBytes;
+    }
+
+    /**
+     * @return
+     */
+
+    public Integer getFragmentSizeBytes() {
+        return this.fragmentSizeBytes;
+    }
+
+    /**
+     * @param fragmentSizeBytes
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFuotaTaskRequest withFragmentSizeBytes(Integer fragmentSizeBytes) {
+        setFragmentSizeBytes(fragmentSizeBytes);
+        return this;
+    }
+
+    /**
+     * @param fragmentIntervalMS
+     */
+
+    public void setFragmentIntervalMS(Integer fragmentIntervalMS) {
+        this.fragmentIntervalMS = fragmentIntervalMS;
+    }
+
+    /**
+     * @return
+     */
+
+    public Integer getFragmentIntervalMS() {
+        return this.fragmentIntervalMS;
+    }
+
+    /**
+     * @param fragmentIntervalMS
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFuotaTaskRequest withFragmentIntervalMS(Integer fragmentIntervalMS) {
+        setFragmentIntervalMS(fragmentIntervalMS);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -272,7 +356,13 @@ public class CreateFuotaTaskRequest extends com.amazonaws.AmazonWebServiceReques
         if (getFirmwareUpdateRole() != null)
             sb.append("FirmwareUpdateRole: ").append(getFirmwareUpdateRole()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getRedundancyPercent() != null)
+            sb.append("RedundancyPercent: ").append(getRedundancyPercent()).append(",");
+        if (getFragmentSizeBytes() != null)
+            sb.append("FragmentSizeBytes: ").append(getFragmentSizeBytes()).append(",");
+        if (getFragmentIntervalMS() != null)
+            sb.append("FragmentIntervalMS: ").append(getFragmentIntervalMS());
         sb.append("}");
         return sb.toString();
     }
@@ -315,6 +405,18 @@ public class CreateFuotaTaskRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getRedundancyPercent() == null ^ this.getRedundancyPercent() == null)
+            return false;
+        if (other.getRedundancyPercent() != null && other.getRedundancyPercent().equals(this.getRedundancyPercent()) == false)
+            return false;
+        if (other.getFragmentSizeBytes() == null ^ this.getFragmentSizeBytes() == null)
+            return false;
+        if (other.getFragmentSizeBytes() != null && other.getFragmentSizeBytes().equals(this.getFragmentSizeBytes()) == false)
+            return false;
+        if (other.getFragmentIntervalMS() == null ^ this.getFragmentIntervalMS() == null)
+            return false;
+        if (other.getFragmentIntervalMS() != null && other.getFragmentIntervalMS().equals(this.getFragmentIntervalMS()) == false)
+            return false;
         return true;
     }
 
@@ -330,6 +432,9 @@ public class CreateFuotaTaskRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getFirmwareUpdateImage() == null) ? 0 : getFirmwareUpdateImage().hashCode());
         hashCode = prime * hashCode + ((getFirmwareUpdateRole() == null) ? 0 : getFirmwareUpdateRole().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getRedundancyPercent() == null) ? 0 : getRedundancyPercent().hashCode());
+        hashCode = prime * hashCode + ((getFragmentSizeBytes() == null) ? 0 : getFragmentSizeBytes().hashCode());
+        hashCode = prime * hashCode + ((getFragmentIntervalMS() == null) ? 0 : getFragmentIntervalMS().hashCode());
         return hashCode;
     }
 

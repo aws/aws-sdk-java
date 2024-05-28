@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,9 +60,18 @@ public class GenerateEmbedUrlForAnonymousUserRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access during
-     * the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of
-     * dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25
-     * dashboard ARNs in each API call.
+     * the lifetime of the session.
+     * </p>
+     * <p>
+     * If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that
+     * you want the user to be able to view.
+     * </p>
+     * <p>
+     * If you want to make changes to the theme of your embedded content, pass a list of theme ARNs that the anonymous
+     * users need access to.
+     * </p>
+     * <p>
+     * Currently, you can pass up to 25 theme ARNs in each API call.
      * </p>
      */
     private java.util.List<String> authorizedResourceArns;
@@ -337,15 +346,32 @@ public class GenerateEmbedUrlForAnonymousUserRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access during
-     * the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of
-     * dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25
-     * dashboard ARNs in each API call.
+     * the lifetime of the session.
+     * </p>
+     * <p>
+     * If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that
+     * you want the user to be able to view.
+     * </p>
+     * <p>
+     * If you want to make changes to the theme of your embedded content, pass a list of theme ARNs that the anonymous
+     * users need access to.
+     * </p>
+     * <p>
+     * Currently, you can pass up to 25 theme ARNs in each API call.
      * </p>
      * 
      * @return The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to
-     *         access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience,
-     *         pass the list of dashboard ARNs in the account that you want the user to be able to view. Currently, you
-     *         can pass up to 25 dashboard ARNs in each API call.
+     *         access during the lifetime of the session.</p>
+     *         <p>
+     *         If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account
+     *         that you want the user to be able to view.
+     *         </p>
+     *         <p>
+     *         If you want to make changes to the theme of your embedded content, pass a list of theme ARNs that the
+     *         anonymous users need access to.
+     *         </p>
+     *         <p>
+     *         Currently, you can pass up to 25 theme ARNs in each API call.
      */
 
     public java.util.List<String> getAuthorizedResourceArns() {
@@ -355,16 +381,33 @@ public class GenerateEmbedUrlForAnonymousUserRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access during
-     * the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of
-     * dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25
-     * dashboard ARNs in each API call.
+     * the lifetime of the session.
+     * </p>
+     * <p>
+     * If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that
+     * you want the user to be able to view.
+     * </p>
+     * <p>
+     * If you want to make changes to the theme of your embedded content, pass a list of theme ARNs that the anonymous
+     * users need access to.
+     * </p>
+     * <p>
+     * Currently, you can pass up to 25 theme ARNs in each API call.
      * </p>
      * 
      * @param authorizedResourceArns
      *        The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access
-     *        during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the
-     *        list of dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass
-     *        up to 25 dashboard ARNs in each API call.
+     *        during the lifetime of the session.</p>
+     *        <p>
+     *        If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account
+     *        that you want the user to be able to view.
+     *        </p>
+     *        <p>
+     *        If you want to make changes to the theme of your embedded content, pass a list of theme ARNs that the
+     *        anonymous users need access to.
+     *        </p>
+     *        <p>
+     *        Currently, you can pass up to 25 theme ARNs in each API call.
      */
 
     public void setAuthorizedResourceArns(java.util.Collection<String> authorizedResourceArns) {
@@ -379,9 +422,18 @@ public class GenerateEmbedUrlForAnonymousUserRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access during
-     * the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of
-     * dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25
-     * dashboard ARNs in each API call.
+     * the lifetime of the session.
+     * </p>
+     * <p>
+     * If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that
+     * you want the user to be able to view.
+     * </p>
+     * <p>
+     * If you want to make changes to the theme of your embedded content, pass a list of theme ARNs that the anonymous
+     * users need access to.
+     * </p>
+     * <p>
+     * Currently, you can pass up to 25 theme ARNs in each API call.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -391,9 +443,17 @@ public class GenerateEmbedUrlForAnonymousUserRequest extends com.amazonaws.Amazo
      * 
      * @param authorizedResourceArns
      *        The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access
-     *        during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the
-     *        list of dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass
-     *        up to 25 dashboard ARNs in each API call.
+     *        during the lifetime of the session.</p>
+     *        <p>
+     *        If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account
+     *        that you want the user to be able to view.
+     *        </p>
+     *        <p>
+     *        If you want to make changes to the theme of your embedded content, pass a list of theme ARNs that the
+     *        anonymous users need access to.
+     *        </p>
+     *        <p>
+     *        Currently, you can pass up to 25 theme ARNs in each API call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -410,16 +470,33 @@ public class GenerateEmbedUrlForAnonymousUserRequest extends com.amazonaws.Amazo
     /**
      * <p>
      * The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access during
-     * the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of
-     * dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25
-     * dashboard ARNs in each API call.
+     * the lifetime of the session.
+     * </p>
+     * <p>
+     * If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account that
+     * you want the user to be able to view.
+     * </p>
+     * <p>
+     * If you want to make changes to the theme of your embedded content, pass a list of theme ARNs that the anonymous
+     * users need access to.
+     * </p>
+     * <p>
+     * Currently, you can pass up to 25 theme ARNs in each API call.
      * </p>
      * 
      * @param authorizedResourceArns
      *        The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access
-     *        during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the
-     *        list of dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass
-     *        up to 25 dashboard ARNs in each API call.
+     *        during the lifetime of the session.</p>
+     *        <p>
+     *        If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in the account
+     *        that you want the user to be able to view.
+     *        </p>
+     *        <p>
+     *        If you want to make changes to the theme of your embedded content, pass a list of theme ARNs that the
+     *        anonymous users need access to.
+     *        </p>
+     *        <p>
+     *        Currently, you can pass up to 25 theme ARNs in each API call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

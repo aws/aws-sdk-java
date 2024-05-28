@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,7 +44,42 @@ public class DescribeNetworkInsightsPathsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * destination-port - The destination port.
+     * filter-at-source.source-address - The source IPv4 address at the source.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-source.source-port-range - The source port range at the source.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-source.destination-address - The destination IPv4 address at the source.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-source.destination-port-range - The destination port range at the source.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-destination.source-address - The source IPv4 address at the destination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-destination.source-port-range - The source port range at the destination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-destination.destination-address - The destination IPv4 address at the destination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-destination.destination-port-range - The destination port range at the destination.
      * </p>
      * </li>
      * <li>
@@ -159,7 +194,42 @@ public class DescribeNetworkInsightsPathsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * destination-port - The destination port.
+     * filter-at-source.source-address - The source IPv4 address at the source.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-source.source-port-range - The source port range at the source.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-source.destination-address - The destination IPv4 address at the source.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-source.destination-port-range - The destination port range at the source.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-destination.source-address - The source IPv4 address at the destination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-destination.source-port-range - The source port range at the destination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-destination.destination-address - The destination IPv4 address at the destination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-destination.destination-port-range - The destination port range at the destination.
      * </p>
      * </li>
      * <li>
@@ -183,7 +253,42 @@ public class DescribeNetworkInsightsPathsRequest extends AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
-     *         destination-port - The destination port.
+     *         filter-at-source.source-address - The source IPv4 address at the source.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         filter-at-source.source-port-range - The source port range at the source.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         filter-at-source.destination-address - The destination IPv4 address at the source.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         filter-at-source.destination-port-range - The destination port range at the source.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         filter-at-destination.source-address - The source IPv4 address at the destination.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         filter-at-destination.source-port-range - The source port range at the destination.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         filter-at-destination.destination-address - The destination IPv4 address at the destination.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         filter-at-destination.destination-port-range - The destination port range at the destination.
      *         </p>
      *         </li>
      *         <li>
@@ -217,7 +322,42 @@ public class DescribeNetworkInsightsPathsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * destination-port - The destination port.
+     * filter-at-source.source-address - The source IPv4 address at the source.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-source.source-port-range - The source port range at the source.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-source.destination-address - The destination IPv4 address at the source.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-source.destination-port-range - The destination port range at the source.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-destination.source-address - The source IPv4 address at the destination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-destination.source-port-range - The source port range at the destination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-destination.destination-address - The destination IPv4 address at the destination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-destination.destination-port-range - The destination port range at the destination.
      * </p>
      * </li>
      * <li>
@@ -242,7 +382,42 @@ public class DescribeNetworkInsightsPathsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        destination-port - The destination port.
+     *        filter-at-source.source-address - The source IPv4 address at the source.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        filter-at-source.source-port-range - The source port range at the source.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        filter-at-source.destination-address - The destination IPv4 address at the source.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        filter-at-source.destination-port-range - The destination port range at the source.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        filter-at-destination.source-address - The source IPv4 address at the destination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        filter-at-destination.source-port-range - The source port range at the destination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        filter-at-destination.destination-address - The destination IPv4 address at the destination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        filter-at-destination.destination-port-range - The destination port range at the destination.
      *        </p>
      *        </li>
      *        <li>
@@ -278,7 +453,42 @@ public class DescribeNetworkInsightsPathsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * destination-port - The destination port.
+     * filter-at-source.source-address - The source IPv4 address at the source.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-source.source-port-range - The source port range at the source.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-source.destination-address - The destination IPv4 address at the source.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-source.destination-port-range - The destination port range at the source.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-destination.source-address - The source IPv4 address at the destination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-destination.source-port-range - The source port range at the destination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-destination.destination-address - The destination IPv4 address at the destination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-destination.destination-port-range - The destination port range at the destination.
      * </p>
      * </li>
      * <li>
@@ -308,7 +518,42 @@ public class DescribeNetworkInsightsPathsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        destination-port - The destination port.
+     *        filter-at-source.source-address - The source IPv4 address at the source.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        filter-at-source.source-port-range - The source port range at the source.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        filter-at-source.destination-address - The destination IPv4 address at the source.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        filter-at-source.destination-port-range - The destination port range at the source.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        filter-at-destination.source-address - The source IPv4 address at the destination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        filter-at-destination.source-port-range - The source port range at the destination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        filter-at-destination.destination-address - The destination IPv4 address at the destination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        filter-at-destination.destination-port-range - The destination port range at the destination.
      *        </p>
      *        </li>
      *        <li>
@@ -346,7 +591,42 @@ public class DescribeNetworkInsightsPathsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * destination-port - The destination port.
+     * filter-at-source.source-address - The source IPv4 address at the source.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-source.source-port-range - The source port range at the source.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-source.destination-address - The destination IPv4 address at the source.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-source.destination-port-range - The destination port range at the source.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-destination.source-address - The source IPv4 address at the destination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-destination.source-port-range - The source port range at the destination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-destination.destination-address - The destination IPv4 address at the destination.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * filter-at-destination.destination-port-range - The destination port range at the destination.
      * </p>
      * </li>
      * <li>
@@ -371,7 +651,42 @@ public class DescribeNetworkInsightsPathsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        destination-port - The destination port.
+     *        filter-at-source.source-address - The source IPv4 address at the source.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        filter-at-source.source-port-range - The source port range at the source.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        filter-at-source.destination-address - The destination IPv4 address at the source.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        filter-at-source.destination-port-range - The destination port range at the source.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        filter-at-destination.source-address - The source IPv4 address at the destination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        filter-at-destination.source-port-range - The source port range at the destination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        filter-at-destination.destination-address - The destination IPv4 address at the destination.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        filter-at-destination.destination-port-range - The destination port range at the destination.
      *        </p>
      *        </li>
      *        <li>

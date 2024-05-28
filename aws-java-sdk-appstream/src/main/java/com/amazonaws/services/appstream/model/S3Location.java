@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,38 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The S3 key of the S3 object.
      * </p>
+     * <p>
+     * This is required when used for the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * IconS3Location (Actions: CreateApplication and UpdateApplication)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SessionScriptS3Location (Actions: CreateFleet and UpdateFleet)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ScriptDetails (Actions: CreateAppBlock)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SourceS3Location when creating an app block with <code>CUSTOM</code> PackagingType (Actions: CreateAppBlock)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SourceS3Location when creating an app block with <code>APPSTREAM2</code> PackagingType, and using an existing
+     * application package (VHD file). In this case, <code>S3Key</code> refers to the VHD file. If a new application
+     * package is required, then <code>S3Key</code> is not required. (Actions: CreateAppBlock)
+     * </p>
+     * </li>
+     * </ul>
      */
     private String s3Key;
 
@@ -85,9 +117,73 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The S3 key of the S3 object.
      * </p>
+     * <p>
+     * This is required when used for the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * IconS3Location (Actions: CreateApplication and UpdateApplication)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SessionScriptS3Location (Actions: CreateFleet and UpdateFleet)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ScriptDetails (Actions: CreateAppBlock)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SourceS3Location when creating an app block with <code>CUSTOM</code> PackagingType (Actions: CreateAppBlock)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SourceS3Location when creating an app block with <code>APPSTREAM2</code> PackagingType, and using an existing
+     * application package (VHD file). In this case, <code>S3Key</code> refers to the VHD file. If a new application
+     * package is required, then <code>S3Key</code> is not required. (Actions: CreateAppBlock)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param s3Key
-     *        The S3 key of the S3 object.
+     *        The S3 key of the S3 object.</p>
+     *        <p>
+     *        This is required when used for the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        IconS3Location (Actions: CreateApplication and UpdateApplication)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SessionScriptS3Location (Actions: CreateFleet and UpdateFleet)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ScriptDetails (Actions: CreateAppBlock)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SourceS3Location when creating an app block with <code>CUSTOM</code> PackagingType (Actions:
+     *        CreateAppBlock)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SourceS3Location when creating an app block with <code>APPSTREAM2</code> PackagingType, and using an
+     *        existing application package (VHD file). In this case, <code>S3Key</code> refers to the VHD file. If a new
+     *        application package is required, then <code>S3Key</code> is not required. (Actions: CreateAppBlock)
+     *        </p>
+     *        </li>
      */
 
     public void setS3Key(String s3Key) {
@@ -98,8 +194,72 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The S3 key of the S3 object.
      * </p>
+     * <p>
+     * This is required when used for the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * IconS3Location (Actions: CreateApplication and UpdateApplication)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SessionScriptS3Location (Actions: CreateFleet and UpdateFleet)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ScriptDetails (Actions: CreateAppBlock)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SourceS3Location when creating an app block with <code>CUSTOM</code> PackagingType (Actions: CreateAppBlock)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SourceS3Location when creating an app block with <code>APPSTREAM2</code> PackagingType, and using an existing
+     * application package (VHD file). In this case, <code>S3Key</code> refers to the VHD file. If a new application
+     * package is required, then <code>S3Key</code> is not required. (Actions: CreateAppBlock)
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The S3 key of the S3 object.
+     * @return The S3 key of the S3 object.</p>
+     *         <p>
+     *         This is required when used for the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         IconS3Location (Actions: CreateApplication and UpdateApplication)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SessionScriptS3Location (Actions: CreateFleet and UpdateFleet)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ScriptDetails (Actions: CreateAppBlock)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SourceS3Location when creating an app block with <code>CUSTOM</code> PackagingType (Actions:
+     *         CreateAppBlock)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SourceS3Location when creating an app block with <code>APPSTREAM2</code> PackagingType, and using an
+     *         existing application package (VHD file). In this case, <code>S3Key</code> refers to the VHD file. If a
+     *         new application package is required, then <code>S3Key</code> is not required. (Actions: CreateAppBlock)
+     *         </p>
+     *         </li>
      */
 
     public String getS3Key() {
@@ -110,9 +270,73 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The S3 key of the S3 object.
      * </p>
+     * <p>
+     * This is required when used for the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * IconS3Location (Actions: CreateApplication and UpdateApplication)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SessionScriptS3Location (Actions: CreateFleet and UpdateFleet)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ScriptDetails (Actions: CreateAppBlock)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SourceS3Location when creating an app block with <code>CUSTOM</code> PackagingType (Actions: CreateAppBlock)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SourceS3Location when creating an app block with <code>APPSTREAM2</code> PackagingType, and using an existing
+     * application package (VHD file). In this case, <code>S3Key</code> refers to the VHD file. If a new application
+     * package is required, then <code>S3Key</code> is not required. (Actions: CreateAppBlock)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param s3Key
-     *        The S3 key of the S3 object.
+     *        The S3 key of the S3 object.</p>
+     *        <p>
+     *        This is required when used for the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        IconS3Location (Actions: CreateApplication and UpdateApplication)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SessionScriptS3Location (Actions: CreateFleet and UpdateFleet)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ScriptDetails (Actions: CreateAppBlock)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SourceS3Location when creating an app block with <code>CUSTOM</code> PackagingType (Actions:
+     *        CreateAppBlock)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SourceS3Location when creating an app block with <code>APPSTREAM2</code> PackagingType, and using an
+     *        existing application package (VHD file). In this case, <code>S3Key</code> refers to the VHD file. If a new
+     *        application package is required, then <code>S3Key</code> is not required. (Actions: CreateAppBlock)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

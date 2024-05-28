@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -158,9 +158,25 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
      * <code>Redis</code> - Infers that Redis might be running on the instances.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>Kafka</code> - Infers that Kafka might be running on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SQLServer</code> - Infers that SQLServer might be running on the instance.
+     * </p>
+     * </li>
      * </ul>
      */
     private java.util.List<String> inferredWorkloadTypes;
+    /**
+     * <p>
+     * Describes the GPU accelerator settings for the current instance type of the Auto Scaling group.
+     * </p>
+     */
+    private GpuInfo currentInstanceGpuInfo;
 
     /**
      * <p>
@@ -900,6 +916,16 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
      * <code>Redis</code> - Infers that Redis might be running on the instances.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>Kafka</code> - Infers that Kafka might be running on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SQLServer</code> - Infers that SQLServer might be running on the instance.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The applications that might be running on the instances in the Auto Scaling group as inferred by Compute
@@ -941,6 +967,16 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
      *         <li>
      *         <p>
      *         <code>Redis</code> - Infers that Redis might be running on the instances.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Kafka</code> - Infers that Kafka might be running on the instance.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SQLServer</code> - Infers that SQLServer might be running on the instance.
      *         </p>
      *         </li>
      * @see InferredWorkloadType
@@ -994,6 +1030,16 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
      * <code>Redis</code> - Infers that Redis might be running on the instances.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>Kafka</code> - Infers that Kafka might be running on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SQLServer</code> - Infers that SQLServer might be running on the instance.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param inferredWorkloadTypes
@@ -1036,6 +1082,16 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
      *        <li>
      *        <p>
      *        <code>Redis</code> - Infers that Redis might be running on the instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Kafka</code> - Infers that Kafka might be running on the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SQLServer</code> - Infers that SQLServer might be running on the instance.
      *        </p>
      *        </li>
      * @see InferredWorkloadType
@@ -1094,6 +1150,16 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
      * <code>Redis</code> - Infers that Redis might be running on the instances.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>Kafka</code> - Infers that Kafka might be running on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SQLServer</code> - Infers that SQLServer might be running on the instance.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1141,6 +1207,16 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
      *        <li>
      *        <p>
      *        <code>Redis</code> - Infers that Redis might be running on the instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Kafka</code> - Infers that Kafka might be running on the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SQLServer</code> - Infers that SQLServer might be running on the instance.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1201,6 +1277,16 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
      * <code>Redis</code> - Infers that Redis might be running on the instances.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>Kafka</code> - Infers that Kafka might be running on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SQLServer</code> - Infers that SQLServer might be running on the instance.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param inferredWorkloadTypes
@@ -1243,6 +1329,16 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
      *        <li>
      *        <p>
      *        <code>Redis</code> - Infers that Redis might be running on the instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Kafka</code> - Infers that Kafka might be running on the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SQLServer</code> - Infers that SQLServer might be running on the instance.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1298,6 +1394,16 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
      * <code>Redis</code> - Infers that Redis might be running on the instances.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>Kafka</code> - Infers that Kafka might be running on the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SQLServer</code> - Infers that SQLServer might be running on the instance.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param inferredWorkloadTypes
@@ -1342,6 +1448,16 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
      *        <code>Redis</code> - Infers that Redis might be running on the instances.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Kafka</code> - Infers that Kafka might be running on the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SQLServer</code> - Infers that SQLServer might be running on the instance.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InferredWorkloadType
      */
@@ -1356,6 +1472,46 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
         } else {
             getInferredWorkloadTypes().addAll(inferredWorkloadTypesCopy);
         }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the GPU accelerator settings for the current instance type of the Auto Scaling group.
+     * </p>
+     * 
+     * @param currentInstanceGpuInfo
+     *        Describes the GPU accelerator settings for the current instance type of the Auto Scaling group.
+     */
+
+    public void setCurrentInstanceGpuInfo(GpuInfo currentInstanceGpuInfo) {
+        this.currentInstanceGpuInfo = currentInstanceGpuInfo;
+    }
+
+    /**
+     * <p>
+     * Describes the GPU accelerator settings for the current instance type of the Auto Scaling group.
+     * </p>
+     * 
+     * @return Describes the GPU accelerator settings for the current instance type of the Auto Scaling group.
+     */
+
+    public GpuInfo getCurrentInstanceGpuInfo() {
+        return this.currentInstanceGpuInfo;
+    }
+
+    /**
+     * <p>
+     * Describes the GPU accelerator settings for the current instance type of the Auto Scaling group.
+     * </p>
+     * 
+     * @param currentInstanceGpuInfo
+     *        Describes the GPU accelerator settings for the current instance type of the Auto Scaling group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoScalingGroupRecommendation withCurrentInstanceGpuInfo(GpuInfo currentInstanceGpuInfo) {
+        setCurrentInstanceGpuInfo(currentInstanceGpuInfo);
         return this;
     }
 
@@ -1394,7 +1550,9 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
         if (getEffectiveRecommendationPreferences() != null)
             sb.append("EffectiveRecommendationPreferences: ").append(getEffectiveRecommendationPreferences()).append(",");
         if (getInferredWorkloadTypes() != null)
-            sb.append("InferredWorkloadTypes: ").append(getInferredWorkloadTypes());
+            sb.append("InferredWorkloadTypes: ").append(getInferredWorkloadTypes()).append(",");
+        if (getCurrentInstanceGpuInfo() != null)
+            sb.append("CurrentInstanceGpuInfo: ").append(getCurrentInstanceGpuInfo());
         sb.append("}");
         return sb.toString();
     }
@@ -1458,6 +1616,10 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
             return false;
         if (other.getInferredWorkloadTypes() != null && other.getInferredWorkloadTypes().equals(this.getInferredWorkloadTypes()) == false)
             return false;
+        if (other.getCurrentInstanceGpuInfo() == null ^ this.getCurrentInstanceGpuInfo() == null)
+            return false;
+        if (other.getCurrentInstanceGpuInfo() != null && other.getCurrentInstanceGpuInfo().equals(this.getCurrentInstanceGpuInfo()) == false)
+            return false;
         return true;
     }
 
@@ -1478,6 +1640,7 @@ public class AutoScalingGroupRecommendation implements Serializable, Cloneable, 
         hashCode = prime * hashCode + ((getCurrentPerformanceRisk() == null) ? 0 : getCurrentPerformanceRisk().hashCode());
         hashCode = prime * hashCode + ((getEffectiveRecommendationPreferences() == null) ? 0 : getEffectiveRecommendationPreferences().hashCode());
         hashCode = prime * hashCode + ((getInferredWorkloadTypes() == null) ? 0 : getInferredWorkloadTypes().hashCode());
+        hashCode = prime * hashCode + ((getCurrentInstanceGpuInfo() == null) ? 0 : getCurrentInstanceGpuInfo().hashCode());
         return hashCode;
     }
 

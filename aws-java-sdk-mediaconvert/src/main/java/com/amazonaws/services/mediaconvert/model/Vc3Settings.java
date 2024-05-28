@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VC3
+ * Required when you set Codec to the value VC3
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Vc3Settings" target="_top">AWS API
  *      Documentation</a>
@@ -30,21 +30,18 @@ public class Vc3Settings implements Serializable, Cloneable, StructuredPojo {
      * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to
      * keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion,
      * choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal
-     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your
-     * transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the
-     * service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the
-     * frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the
-     * settings FramerateNumerator and FramerateDenominator.
+     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
      */
     private String framerateControl;
     /**
-     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
-     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
-     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
-     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
-     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
-     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
-     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically
+     * simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might
+     * introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has
+     * already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation.
+     * FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding
+     * time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at
+     * least 128x96.
      */
     private String framerateConversionAlgorithm;
     /**
@@ -68,38 +65,35 @@ public class Vc3Settings implements Serializable, Cloneable, StructuredPojo {
     private String interlaceMode;
     /**
      * Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this
-     * situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In
-     * this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the
-     * default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing,
-     * MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized
-     * interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing,
-     * MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you
-     * must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine
-     * outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * situation, choose Optimized interlacing to create a better quality interlaced output. In this case, each
+     * progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic
+     * interlacing, for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate
+     * conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output
+     * frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set Telecine to None or Soft. You
+     * can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode to a value other than
+     * Progressive.
      */
     private String scanTypeConversionMode;
     /**
      * Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to
      * create a 25 fps output by relabeling the video frames and resampling your audio. Note that enabling this setting
-     * will slightly reduce the duration of your video. Related settings: You must also set Framerate to 25. In your JSON
-     * job specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to
-     * 1.
+     * will slightly reduce the duration of your video. Related settings: You must also set Framerate to 25.
      */
     private String slowPal;
     /**
      * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is
-     * interlaced, you can optionally enable hard telecine (HARD) to create a smoother picture. When you keep the
-     * default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything
-     * with the field polarity to create a smoother picture.
+     * interlaced, you can optionally enable hard telecine to create a smoother picture. When you keep the default
+     * value, None, MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field
+     * polarity to create a smoother picture.
      */
     private String telecine;
     /**
      * Specify the VC3 class to choose the quality characteristics for this output. VC3 class, together with the
      * settings Framerate (framerateNumerator and framerateDenominator) and Resolution (height and width), determine
      * your output bitrate. For example, say that your video resolution is 1920x1080 and your framerate is 29.97. Then
-     * Class 145 (CLASS_145) gives you an output with a bitrate of approximately 145 Mbps and Class 220 (CLASS_220) gives
-     * you and output with a bitrate of approximately 220 Mbps. VC3 class also specifies the color bit depth of your
-     * output.
+     * Class 145 gives you an output with a bitrate of approximately 145 Mbps and Class 220 gives you and output with a
+     * bitrate of approximately 220 Mbps. VC3 class also specifies the color bit depth of your output.
      */
     private String vc3Class;
 
@@ -107,22 +101,14 @@ public class Vc3Settings implements Serializable, Cloneable, StructuredPojo {
      * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to
      * keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion,
      * choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal
-     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your
-     * transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the
-     * service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the
-     * frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the
-     * settings FramerateNumerator and FramerateDenominator.
+     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
      * 
      * @param framerateControl
      *        If you are using the console, use the Framerate setting to specify the frame rate for this output. If you
      *        want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate
      *        conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the
      *        dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a
-     *        fraction. If you are creating your transcoding job specification as a JSON file without the console, use
-     *        FramerateControl to specify which value the service uses for the frame rate for this output. Choose
-     *        INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if
-     *        you want the service to use the frame rate you specify in the settings FramerateNumerator and
-     *        FramerateDenominator.
+     *        fraction.
      * @see Vc3FramerateControl
      */
 
@@ -134,21 +120,13 @@ public class Vc3Settings implements Serializable, Cloneable, StructuredPojo {
      * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to
      * keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion,
      * choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal
-     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your
-     * transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the
-     * service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the
-     * frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the
-     * settings FramerateNumerator and FramerateDenominator.
+     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
      * 
      * @return If you are using the console, use the Framerate setting to specify the frame rate for this output. If you
      *         want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate
      *         conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the
      *         dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a
-     *         fraction. If you are creating your transcoding job specification as a JSON file without the console, use
-     *         FramerateControl to specify which value the service uses for the frame rate for this output. Choose
-     *         INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if
-     *         you want the service to use the frame rate you specify in the settings FramerateNumerator and
-     *         FramerateDenominator.
+     *         fraction.
      * @see Vc3FramerateControl
      */
 
@@ -160,22 +138,14 @@ public class Vc3Settings implements Serializable, Cloneable, StructuredPojo {
      * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to
      * keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion,
      * choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal
-     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your
-     * transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the
-     * service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the
-     * frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the
-     * settings FramerateNumerator and FramerateDenominator.
+     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
      * 
      * @param framerateControl
      *        If you are using the console, use the Framerate setting to specify the frame rate for this output. If you
      *        want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate
      *        conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the
      *        dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a
-     *        fraction. If you are creating your transcoding job specification as a JSON file without the console, use
-     *        FramerateControl to specify which value the service uses for the frame rate for this output. Choose
-     *        INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if
-     *        you want the service to use the frame rate you specify in the settings FramerateNumerator and
-     *        FramerateDenominator.
+     *        fraction.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Vc3FramerateControl
      */
@@ -189,22 +159,14 @@ public class Vc3Settings implements Serializable, Cloneable, StructuredPojo {
      * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to
      * keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion,
      * choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal
-     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your
-     * transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the
-     * service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the
-     * frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the
-     * settings FramerateNumerator and FramerateDenominator.
+     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
      * 
      * @param framerateControl
      *        If you are using the console, use the Framerate setting to specify the frame rate for this output. If you
      *        want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate
      *        conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the
      *        dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a
-     *        fraction. If you are creating your transcoding job specification as a JSON file without the console, use
-     *        FramerateControl to specify which value the service uses for the frame rate for this output. Choose
-     *        INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if
-     *        you want the service to use the frame rate you specify in the settings FramerateNumerator and
-     *        FramerateDenominator.
+     *        fraction.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Vc3FramerateControl
      */
@@ -215,23 +177,24 @@ public class Vc3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
-     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
-     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
-     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
-     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
-     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
-     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically
+     * simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might
+     * introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has
+     * already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation.
+     * FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding
+     * time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at
+     * least 128x96.
      * 
      * @param framerateConversionAlgorithm
-     *        Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We
-     *        recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30
-     *        fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This
-     *        results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate
-     *        conversions, especially if your source video has already been converted from its original cadence, use
-     *        FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion
-     *        method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant
-     *        add-on cost.
+     *        Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For
+     *        numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value,
+     *        Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in
+     *        a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions,
+     *        especially if your source video has already been converted from its original cadence: Choose FrameFormer
+     *        to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note
+     *        that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you
+     *        choose FrameFormer, your input video resolution must be at least 128x96.
      * @see Vc3FramerateConversionAlgorithm
      */
 
@@ -240,22 +203,23 @@ public class Vc3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
-     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
-     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
-     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
-     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
-     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
-     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically
+     * simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might
+     * introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has
+     * already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation.
+     * FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding
+     * time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at
+     * least 128x96.
      * 
-     * @return Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We
-     *         recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30
-     *         fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This
-     *         results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate
-     *         conversions, especially if your source video has already been converted from its original cadence, use
-     *         FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion
-     *         method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a
-     *         significant add-on cost.
+     * @return Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For
+     *         numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value,
+     *         Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results
+     *         in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions,
+     *         especially if your source video has already been converted from its original cadence: Choose FrameFormer
+     *         to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note
+     *         that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you
+     *         choose FrameFormer, your input video resolution must be at least 128x96.
      * @see Vc3FramerateConversionAlgorithm
      */
 
@@ -264,23 +228,24 @@ public class Vc3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
-     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
-     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
-     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
-     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
-     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
-     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically
+     * simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might
+     * introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has
+     * already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation.
+     * FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding
+     * time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at
+     * least 128x96.
      * 
      * @param framerateConversionAlgorithm
-     *        Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We
-     *        recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30
-     *        fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This
-     *        results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate
-     *        conversions, especially if your source video has already been converted from its original cadence, use
-     *        FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion
-     *        method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant
-     *        add-on cost.
+     *        Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For
+     *        numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value,
+     *        Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in
+     *        a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions,
+     *        especially if your source video has already been converted from its original cadence: Choose FrameFormer
+     *        to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note
+     *        that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you
+     *        choose FrameFormer, your input video resolution must be at least 128x96.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Vc3FramerateConversionAlgorithm
      */
@@ -291,23 +256,24 @@ public class Vc3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
-     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
-     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
-     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
-     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
-     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
-     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically
+     * simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might
+     * introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has
+     * already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation.
+     * FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding
+     * time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at
+     * least 128x96.
      * 
      * @param framerateConversionAlgorithm
-     *        Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We
-     *        recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30
-     *        fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This
-     *        results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate
-     *        conversions, especially if your source video has already been converted from its original cadence, use
-     *        FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion
-     *        method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant
-     *        add-on cost.
+     *        Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For
+     *        numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value,
+     *        Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in
+     *        a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions,
+     *        especially if your source video has already been converted from its original cadence: Choose FrameFormer
+     *        to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note
+     *        that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you
+     *        choose FrameFormer, your input video resolution must be at least 128x96.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Vc3FramerateConversionAlgorithm
      */
@@ -488,26 +454,25 @@ public class Vc3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this
-     * situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In
-     * this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the
-     * default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing,
-     * MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized
-     * interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing,
-     * MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you
-     * must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine
-     * outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * situation, choose Optimized interlacing to create a better quality interlaced output. In this case, each
+     * progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic
+     * interlacing, for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate
+     * conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output
+     * frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set Telecine to None or Soft. You
+     * can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode to a value other than
+     * Progressive.
      * 
      * @param scanTypeConversionMode
      *        Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In
-     *        this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced
-     *        output. In this case, each progressive frame from the input corresponds to an interlaced field in the
-     *        output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With
-     *        basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames.
-     *        When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable
-     *        for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings:
-     *        To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't
-     *        use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to a
-     *        value other than Progressive (PROGRESSIVE).
+     *        this situation, choose Optimized interlacing to create a better quality interlaced output. In this case,
+     *        each progressive frame from the input corresponds to an interlaced field in the output. Keep the default
+     *        value, Basic interlacing, for all other output frame rates. With basic interlacing, MediaConvert performs
+     *        any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and
+     *        you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert
+     *        automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must
+     *        set Telecine to None or Soft. You can't use optimized interlacing for hard telecine outputs. You must also
+     *        set Interlace mode to a value other than Progressive.
      * @see Vc3ScanTypeConversionMode
      */
 
@@ -517,25 +482,24 @@ public class Vc3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this
-     * situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In
-     * this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the
-     * default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing,
-     * MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized
-     * interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing,
-     * MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you
-     * must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine
-     * outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * situation, choose Optimized interlacing to create a better quality interlaced output. In this case, each
+     * progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic
+     * interlacing, for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate
+     * conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output
+     * frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set Telecine to None or Soft. You
+     * can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode to a value other than
+     * Progressive.
      * 
      * @return Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In
-     *         this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced
-     *         output. In this case, each progressive frame from the input corresponds to an interlaced field in the
-     *         output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With
-     *         basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames.
-     *         When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable
-     *         for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings:
-     *         To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't
-     *         use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to
-     *         a value other than Progressive (PROGRESSIVE).
+     *         this situation, choose Optimized interlacing to create a better quality interlaced output. In this case,
+     *         each progressive frame from the input corresponds to an interlaced field in the output. Keep the default
+     *         value, Basic interlacing, for all other output frame rates. With basic interlacing, MediaConvert performs
+     *         any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and
+     *         you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert
+     *         automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must
+     *         set Telecine to None or Soft. You can't use optimized interlacing for hard telecine outputs. You must
+     *         also set Interlace mode to a value other than Progressive.
      * @see Vc3ScanTypeConversionMode
      */
 
@@ -545,26 +509,25 @@ public class Vc3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this
-     * situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In
-     * this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the
-     * default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing,
-     * MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized
-     * interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing,
-     * MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you
-     * must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine
-     * outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * situation, choose Optimized interlacing to create a better quality interlaced output. In this case, each
+     * progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic
+     * interlacing, for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate
+     * conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output
+     * frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set Telecine to None or Soft. You
+     * can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode to a value other than
+     * Progressive.
      * 
      * @param scanTypeConversionMode
      *        Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In
-     *        this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced
-     *        output. In this case, each progressive frame from the input corresponds to an interlaced field in the
-     *        output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With
-     *        basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames.
-     *        When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable
-     *        for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings:
-     *        To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't
-     *        use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to a
-     *        value other than Progressive (PROGRESSIVE).
+     *        this situation, choose Optimized interlacing to create a better quality interlaced output. In this case,
+     *        each progressive frame from the input corresponds to an interlaced field in the output. Keep the default
+     *        value, Basic interlacing, for all other output frame rates. With basic interlacing, MediaConvert performs
+     *        any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and
+     *        you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert
+     *        automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must
+     *        set Telecine to None or Soft. You can't use optimized interlacing for hard telecine outputs. You must also
+     *        set Interlace mode to a value other than Progressive.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Vc3ScanTypeConversionMode
      */
@@ -576,26 +539,25 @@ public class Vc3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this
-     * situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In
-     * this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the
-     * default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing,
-     * MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized
-     * interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing,
-     * MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you
-     * must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine
-     * outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * situation, choose Optimized interlacing to create a better quality interlaced output. In this case, each
+     * progressive frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic
+     * interlacing, for all other output frame rates. With basic interlacing, MediaConvert performs any frame rate
+     * conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your output
+     * frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to
+     * basic interlacing. Required settings: To use optimized interlacing, you must set Telecine to None or Soft. You
+     * can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode to a value other than
+     * Progressive.
      * 
      * @param scanTypeConversionMode
      *        Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In
-     *        this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced
-     *        output. In this case, each progressive frame from the input corresponds to an interlaced field in the
-     *        output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With
-     *        basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames.
-     *        When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable
-     *        for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings:
-     *        To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't
-     *        use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to a
-     *        value other than Progressive (PROGRESSIVE).
+     *        this situation, choose Optimized interlacing to create a better quality interlaced output. In this case,
+     *        each progressive frame from the input corresponds to an interlaced field in the output. Keep the default
+     *        value, Basic interlacing, for all other output frame rates. With basic interlacing, MediaConvert performs
+     *        any frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and
+     *        you set your output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert
+     *        automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you must
+     *        set Telecine to None or Soft. You can't use optimized interlacing for hard telecine outputs. You must also
+     *        set Interlace mode to a value other than Progressive.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Vc3ScanTypeConversionMode
      */
@@ -608,16 +570,13 @@ public class Vc3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to
      * create a 25 fps output by relabeling the video frames and resampling your audio. Note that enabling this setting
-     * will slightly reduce the duration of your video. Related settings: You must also set Framerate to 25. In your JSON
-     * job specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to
-     * 1.
+     * will slightly reduce the duration of your video. Related settings: You must also set Framerate to 25.
      * 
      * @param slowPal
      *        Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL
      *        to create a 25 fps output by relabeling the video frames and resampling your audio. Note that enabling
      *        this setting will slightly reduce the duration of your video. Related settings: You must also set
-     *        Framerate to 25. In your JSON job specification, set (framerateControl) to (SPECIFIED),
-     *        (framerateNumerator) to 25 and (framerateDenominator) to 1.
+     *        Framerate to 25.
      * @see Vc3SlowPal
      */
 
@@ -628,15 +587,12 @@ public class Vc3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to
      * create a 25 fps output by relabeling the video frames and resampling your audio. Note that enabling this setting
-     * will slightly reduce the duration of your video. Related settings: You must also set Framerate to 25. In your JSON
-     * job specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to
-     * 1.
+     * will slightly reduce the duration of your video. Related settings: You must also set Framerate to 25.
      * 
      * @return Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL
      *         to create a 25 fps output by relabeling the video frames and resampling your audio. Note that enabling
      *         this setting will slightly reduce the duration of your video. Related settings: You must also set
-     *         Framerate to 25. In your JSON job specification, set (framerateControl) to (SPECIFIED),
-     *         (framerateNumerator) to 25 and (framerateDenominator) to 1.
+     *         Framerate to 25.
      * @see Vc3SlowPal
      */
 
@@ -647,16 +603,13 @@ public class Vc3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to
      * create a 25 fps output by relabeling the video frames and resampling your audio. Note that enabling this setting
-     * will slightly reduce the duration of your video. Related settings: You must also set Framerate to 25. In your JSON
-     * job specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to
-     * 1.
+     * will slightly reduce the duration of your video. Related settings: You must also set Framerate to 25.
      * 
      * @param slowPal
      *        Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL
      *        to create a 25 fps output by relabeling the video frames and resampling your audio. Note that enabling
      *        this setting will slightly reduce the duration of your video. Related settings: You must also set
-     *        Framerate to 25. In your JSON job specification, set (framerateControl) to (SPECIFIED),
-     *        (framerateNumerator) to 25 and (framerateDenominator) to 1.
+     *        Framerate to 25.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Vc3SlowPal
      */
@@ -669,16 +622,13 @@ public class Vc3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to
      * create a 25 fps output by relabeling the video frames and resampling your audio. Note that enabling this setting
-     * will slightly reduce the duration of your video. Related settings: You must also set Framerate to 25. In your JSON
-     * job specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to
-     * 1.
+     * will slightly reduce the duration of your video. Related settings: You must also set Framerate to 25.
      * 
      * @param slowPal
      *        Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL
      *        to create a 25 fps output by relabeling the video frames and resampling your audio. Note that enabling
      *        this setting will slightly reduce the duration of your video. Related settings: You must also set
-     *        Framerate to 25. In your JSON job specification, set (framerateControl) to (SPECIFIED),
-     *        (framerateNumerator) to 25 and (framerateDenominator) to 1.
+     *        Framerate to 25.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Vc3SlowPal
      */
@@ -690,15 +640,15 @@ public class Vc3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is
-     * interlaced, you can optionally enable hard telecine (HARD) to create a smoother picture. When you keep the
-     * default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything
-     * with the field polarity to create a smoother picture.
+     * interlaced, you can optionally enable hard telecine to create a smoother picture. When you keep the default
+     * value, None, MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field
+     * polarity to create a smoother picture.
      * 
      * @param telecine
      *        When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan
-     *        type is interlaced, you can optionally enable hard telecine (HARD) to create a smoother picture. When you
-     *        keep the default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without
-     *        doing anything with the field polarity to create a smoother picture.
+     *        type is interlaced, you can optionally enable hard telecine to create a smoother picture. When you keep
+     *        the default value, None, MediaConvert does a standard frame rate conversion to 29.97 without doing
+     *        anything with the field polarity to create a smoother picture.
      * @see Vc3Telecine
      */
 
@@ -708,14 +658,14 @@ public class Vc3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is
-     * interlaced, you can optionally enable hard telecine (HARD) to create a smoother picture. When you keep the
-     * default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything
-     * with the field polarity to create a smoother picture.
+     * interlaced, you can optionally enable hard telecine to create a smoother picture. When you keep the default
+     * value, None, MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field
+     * polarity to create a smoother picture.
      * 
      * @return When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan
-     *         type is interlaced, you can optionally enable hard telecine (HARD) to create a smoother picture. When you
-     *         keep the default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without
-     *         doing anything with the field polarity to create a smoother picture.
+     *         type is interlaced, you can optionally enable hard telecine to create a smoother picture. When you keep
+     *         the default value, None, MediaConvert does a standard frame rate conversion to 29.97 without doing
+     *         anything with the field polarity to create a smoother picture.
      * @see Vc3Telecine
      */
 
@@ -725,15 +675,15 @@ public class Vc3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is
-     * interlaced, you can optionally enable hard telecine (HARD) to create a smoother picture. When you keep the
-     * default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything
-     * with the field polarity to create a smoother picture.
+     * interlaced, you can optionally enable hard telecine to create a smoother picture. When you keep the default
+     * value, None, MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field
+     * polarity to create a smoother picture.
      * 
      * @param telecine
      *        When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan
-     *        type is interlaced, you can optionally enable hard telecine (HARD) to create a smoother picture. When you
-     *        keep the default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without
-     *        doing anything with the field polarity to create a smoother picture.
+     *        type is interlaced, you can optionally enable hard telecine to create a smoother picture. When you keep
+     *        the default value, None, MediaConvert does a standard frame rate conversion to 29.97 without doing
+     *        anything with the field polarity to create a smoother picture.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Vc3Telecine
      */
@@ -745,15 +695,15 @@ public class Vc3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is
-     * interlaced, you can optionally enable hard telecine (HARD) to create a smoother picture. When you keep the
-     * default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything
-     * with the field polarity to create a smoother picture.
+     * interlaced, you can optionally enable hard telecine to create a smoother picture. When you keep the default
+     * value, None, MediaConvert does a standard frame rate conversion to 29.97 without doing anything with the field
+     * polarity to create a smoother picture.
      * 
      * @param telecine
      *        When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan
-     *        type is interlaced, you can optionally enable hard telecine (HARD) to create a smoother picture. When you
-     *        keep the default value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without
-     *        doing anything with the field polarity to create a smoother picture.
+     *        type is interlaced, you can optionally enable hard telecine to create a smoother picture. When you keep
+     *        the default value, None, MediaConvert does a standard frame rate conversion to 29.97 without doing
+     *        anything with the field polarity to create a smoother picture.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Vc3Telecine
      */
@@ -767,17 +717,16 @@ public class Vc3Settings implements Serializable, Cloneable, StructuredPojo {
      * Specify the VC3 class to choose the quality characteristics for this output. VC3 class, together with the
      * settings Framerate (framerateNumerator and framerateDenominator) and Resolution (height and width), determine
      * your output bitrate. For example, say that your video resolution is 1920x1080 and your framerate is 29.97. Then
-     * Class 145 (CLASS_145) gives you an output with a bitrate of approximately 145 Mbps and Class 220 (CLASS_220) gives
-     * you and output with a bitrate of approximately 220 Mbps. VC3 class also specifies the color bit depth of your
-     * output.
+     * Class 145 gives you an output with a bitrate of approximately 145 Mbps and Class 220 gives you and output with a
+     * bitrate of approximately 220 Mbps. VC3 class also specifies the color bit depth of your output.
      * 
      * @param vc3Class
      *        Specify the VC3 class to choose the quality characteristics for this output. VC3 class, together with the
      *        settings Framerate (framerateNumerator and framerateDenominator) and Resolution (height and width),
      *        determine your output bitrate. For example, say that your video resolution is 1920x1080 and your framerate
-     *        is 29.97. Then Class 145 (CLASS_145) gives you an output with a bitrate of approximately 145 Mbps and
-     *        Class 220 (CLASS_220) gives you and output with a bitrate of approximately 220 Mbps. VC3 class also
-     *        specifies the color bit depth of your output.
+     *        is 29.97. Then Class 145 gives you an output with a bitrate of approximately 145 Mbps and Class 220 gives
+     *        you and output with a bitrate of approximately 220 Mbps. VC3 class also specifies the color bit depth of
+     *        your output.
      * @see Vc3Class
      */
 
@@ -789,16 +738,15 @@ public class Vc3Settings implements Serializable, Cloneable, StructuredPojo {
      * Specify the VC3 class to choose the quality characteristics for this output. VC3 class, together with the
      * settings Framerate (framerateNumerator and framerateDenominator) and Resolution (height and width), determine
      * your output bitrate. For example, say that your video resolution is 1920x1080 and your framerate is 29.97. Then
-     * Class 145 (CLASS_145) gives you an output with a bitrate of approximately 145 Mbps and Class 220 (CLASS_220) gives
-     * you and output with a bitrate of approximately 220 Mbps. VC3 class also specifies the color bit depth of your
-     * output.
+     * Class 145 gives you an output with a bitrate of approximately 145 Mbps and Class 220 gives you and output with a
+     * bitrate of approximately 220 Mbps. VC3 class also specifies the color bit depth of your output.
      * 
      * @return Specify the VC3 class to choose the quality characteristics for this output. VC3 class, together with the
      *         settings Framerate (framerateNumerator and framerateDenominator) and Resolution (height and width),
      *         determine your output bitrate. For example, say that your video resolution is 1920x1080 and your
-     *         framerate is 29.97. Then Class 145 (CLASS_145) gives you an output with a bitrate of approximately 145
-     *         Mbps and Class 220 (CLASS_220) gives you and output with a bitrate of approximately 220 Mbps. VC3 class
-     *         also specifies the color bit depth of your output.
+     *         framerate is 29.97. Then Class 145 gives you an output with a bitrate of approximately 145 Mbps and Class
+     *         220 gives you and output with a bitrate of approximately 220 Mbps. VC3 class also specifies the color bit
+     *         depth of your output.
      * @see Vc3Class
      */
 
@@ -810,17 +758,16 @@ public class Vc3Settings implements Serializable, Cloneable, StructuredPojo {
      * Specify the VC3 class to choose the quality characteristics for this output. VC3 class, together with the
      * settings Framerate (framerateNumerator and framerateDenominator) and Resolution (height and width), determine
      * your output bitrate. For example, say that your video resolution is 1920x1080 and your framerate is 29.97. Then
-     * Class 145 (CLASS_145) gives you an output with a bitrate of approximately 145 Mbps and Class 220 (CLASS_220) gives
-     * you and output with a bitrate of approximately 220 Mbps. VC3 class also specifies the color bit depth of your
-     * output.
+     * Class 145 gives you an output with a bitrate of approximately 145 Mbps and Class 220 gives you and output with a
+     * bitrate of approximately 220 Mbps. VC3 class also specifies the color bit depth of your output.
      * 
      * @param vc3Class
      *        Specify the VC3 class to choose the quality characteristics for this output. VC3 class, together with the
      *        settings Framerate (framerateNumerator and framerateDenominator) and Resolution (height and width),
      *        determine your output bitrate. For example, say that your video resolution is 1920x1080 and your framerate
-     *        is 29.97. Then Class 145 (CLASS_145) gives you an output with a bitrate of approximately 145 Mbps and
-     *        Class 220 (CLASS_220) gives you and output with a bitrate of approximately 220 Mbps. VC3 class also
-     *        specifies the color bit depth of your output.
+     *        is 29.97. Then Class 145 gives you an output with a bitrate of approximately 145 Mbps and Class 220 gives
+     *        you and output with a bitrate of approximately 220 Mbps. VC3 class also specifies the color bit depth of
+     *        your output.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Vc3Class
      */
@@ -834,17 +781,16 @@ public class Vc3Settings implements Serializable, Cloneable, StructuredPojo {
      * Specify the VC3 class to choose the quality characteristics for this output. VC3 class, together with the
      * settings Framerate (framerateNumerator and framerateDenominator) and Resolution (height and width), determine
      * your output bitrate. For example, say that your video resolution is 1920x1080 and your framerate is 29.97. Then
-     * Class 145 (CLASS_145) gives you an output with a bitrate of approximately 145 Mbps and Class 220 (CLASS_220) gives
-     * you and output with a bitrate of approximately 220 Mbps. VC3 class also specifies the color bit depth of your
-     * output.
+     * Class 145 gives you an output with a bitrate of approximately 145 Mbps and Class 220 gives you and output with a
+     * bitrate of approximately 220 Mbps. VC3 class also specifies the color bit depth of your output.
      * 
      * @param vc3Class
      *        Specify the VC3 class to choose the quality characteristics for this output. VC3 class, together with the
      *        settings Framerate (framerateNumerator and framerateDenominator) and Resolution (height and width),
      *        determine your output bitrate. For example, say that your video resolution is 1920x1080 and your framerate
-     *        is 29.97. Then Class 145 (CLASS_145) gives you an output with a bitrate of approximately 145 Mbps and
-     *        Class 220 (CLASS_220) gives you and output with a bitrate of approximately 220 Mbps. VC3 class also
-     *        specifies the color bit depth of your output.
+     *        is 29.97. Then Class 145 gives you an output with a bitrate of approximately 145 Mbps and Class 220 gives
+     *        you and output with a bitrate of approximately 220 Mbps. VC3 class also specifies the color bit depth of
+     *        your output.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Vc3Class
      */

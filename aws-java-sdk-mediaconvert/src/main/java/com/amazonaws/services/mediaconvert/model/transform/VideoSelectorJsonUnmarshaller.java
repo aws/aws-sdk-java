@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,6 +67,10 @@ public class VideoSelectorJsonUnmarshaller implements Unmarshaller<VideoSelector
                 if (context.testExpression("hdr10Metadata", targetDepth)) {
                     context.nextToken();
                     videoSelector.setHdr10Metadata(Hdr10MetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("maxLuminance", targetDepth)) {
+                    context.nextToken();
+                    videoSelector.setMaxLuminance(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("padVideo", targetDepth)) {
                     context.nextToken();

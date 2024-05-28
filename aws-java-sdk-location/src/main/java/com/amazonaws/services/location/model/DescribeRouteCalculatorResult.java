@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,7 @@ public class DescribeRouteCalculatorResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource across
-     * AWS.
+     * Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -66,6 +66,11 @@ public class DescribeRouteCalculatorResult extends com.amazonaws.AmazonWebServic
      * <li>
      * <p>
      * <code>Esri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Grab</code>
      * </p>
      * </li>
      * <li>
@@ -119,7 +124,7 @@ public class DescribeRouteCalculatorResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource across
-     * AWS.
+     * Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -131,7 +136,7 @@ public class DescribeRouteCalculatorResult extends com.amazonaws.AmazonWebServic
      * 
      * @param calculatorArn
      *        The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource
-     *        across AWS.</p>
+     *        across Amazon Web Services.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -147,7 +152,7 @@ public class DescribeRouteCalculatorResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource across
-     * AWS.
+     * Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -158,7 +163,7 @@ public class DescribeRouteCalculatorResult extends com.amazonaws.AmazonWebServic
      * </ul>
      * 
      * @return The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource
-     *         across AWS.</p>
+     *         across Amazon Web Services.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -174,7 +179,7 @@ public class DescribeRouteCalculatorResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource across
-     * AWS.
+     * Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -186,7 +191,7 @@ public class DescribeRouteCalculatorResult extends com.amazonaws.AmazonWebServic
      * 
      * @param calculatorArn
      *        The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource
-     *        across AWS.</p>
+     *        across Amazon Web Services.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -344,6 +349,11 @@ public class DescribeRouteCalculatorResult extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * <code>Grab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Here</code>
      * </p>
      * </li>
@@ -360,6 +370,11 @@ public class DescribeRouteCalculatorResult extends com.amazonaws.AmazonWebServic
      *        <li>
      *        <p>
      *        <code>Esri</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Grab</code>
      *        </p>
      *        </li>
      *        <li>
@@ -390,6 +405,11 @@ public class DescribeRouteCalculatorResult extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * <code>Grab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Here</code>
      * </p>
      * </li>
@@ -405,6 +425,11 @@ public class DescribeRouteCalculatorResult extends com.amazonaws.AmazonWebServic
      *         <li>
      *         <p>
      *         <code>Esri</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Grab</code>
      *         </p>
      *         </li>
      *         <li>
@@ -435,6 +460,11 @@ public class DescribeRouteCalculatorResult extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * <code>Grab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Here</code>
      * </p>
      * </li>
@@ -451,6 +481,11 @@ public class DescribeRouteCalculatorResult extends com.amazonaws.AmazonWebServic
      *        <li>
      *        <p>
      *        <code>Esri</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Grab</code>
      *        </p>
      *        </li>
      *        <li>

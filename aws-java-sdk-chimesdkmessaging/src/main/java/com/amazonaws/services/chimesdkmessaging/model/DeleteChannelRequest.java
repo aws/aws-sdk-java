@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,16 +33,10 @@ public class DeleteChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String channelArn;
     /**
      * <p>
-     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      * </p>
      */
     private String chimeBearer;
-    /**
-     * <p>
-     * The ID of the SubChannel in the request.
-     * </p>
-     */
-    private String subChannelId;
 
     /**
      * <p>
@@ -86,11 +80,11 @@ public class DeleteChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      * </p>
      * 
      * @param chimeBearer
-     *        The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     *        The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      */
 
     public void setChimeBearer(String chimeBearer) {
@@ -99,10 +93,10 @@ public class DeleteChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      * </p>
      * 
-     * @return The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * @return The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      */
 
     public String getChimeBearer() {
@@ -111,56 +105,16 @@ public class DeleteChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      * </p>
      * 
      * @param chimeBearer
-     *        The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     *        The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteChannelRequest withChimeBearer(String chimeBearer) {
         setChimeBearer(chimeBearer);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The ID of the SubChannel in the request.
-     * </p>
-     * 
-     * @param subChannelId
-     *        The ID of the SubChannel in the request.
-     */
-
-    public void setSubChannelId(String subChannelId) {
-        this.subChannelId = subChannelId;
-    }
-
-    /**
-     * <p>
-     * The ID of the SubChannel in the request.
-     * </p>
-     * 
-     * @return The ID of the SubChannel in the request.
-     */
-
-    public String getSubChannelId() {
-        return this.subChannelId;
-    }
-
-    /**
-     * <p>
-     * The ID of the SubChannel in the request.
-     * </p>
-     * 
-     * @param subChannelId
-     *        The ID of the SubChannel in the request.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DeleteChannelRequest withSubChannelId(String subChannelId) {
-        setSubChannelId(subChannelId);
         return this;
     }
 
@@ -179,9 +133,7 @@ public class DeleteChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getChannelArn() != null)
             sb.append("ChannelArn: ").append(getChannelArn()).append(",");
         if (getChimeBearer() != null)
-            sb.append("ChimeBearer: ").append(getChimeBearer()).append(",");
-        if (getSubChannelId() != null)
-            sb.append("SubChannelId: ").append(getSubChannelId());
+            sb.append("ChimeBearer: ").append(getChimeBearer());
         sb.append("}");
         return sb.toString();
     }
@@ -204,10 +156,6 @@ public class DeleteChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getChimeBearer() != null && other.getChimeBearer().equals(this.getChimeBearer()) == false)
             return false;
-        if (other.getSubChannelId() == null ^ this.getSubChannelId() == null)
-            return false;
-        if (other.getSubChannelId() != null && other.getSubChannelId().equals(this.getSubChannelId()) == false)
-            return false;
         return true;
     }
 
@@ -218,7 +166,6 @@ public class DeleteChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
         hashCode = prime * hashCode + ((getChannelArn() == null) ? 0 : getChannelArn().hashCode());
         hashCode = prime * hashCode + ((getChimeBearer() == null) ? 0 : getChimeBearer().hashCode());
-        hashCode = prime * hashCode + ((getSubChannelId() == null) ? 0 : getSubChannelId().hashCode());
         return hashCode;
     }
 

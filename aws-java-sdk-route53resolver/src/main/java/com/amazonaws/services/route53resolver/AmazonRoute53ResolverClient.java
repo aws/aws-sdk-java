@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.route53resolver.AmazonRoute53ResolverClientBuilder
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.route53resolver.model.*;
+
 import com.amazonaws.services.route53resolver.model.transform.*;
 
 /**
@@ -111,38 +112,20 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.route53resolver.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.route53resolver.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.route53resolver.model.transform.InvalidRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidPolicyDocument").withExceptionUnmarshaller(
                                     com.amazonaws.services.route53resolver.model.transform.InvalidPolicyDocumentExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.route53resolver.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.route53resolver.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withExceptionUnmarshaller(
                                     com.amazonaws.services.route53resolver.model.transform.InvalidNextTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.route53resolver.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidTagException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.route53resolver.model.transform.InvalidTagExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.route53resolver.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.route53resolver.model.transform.ConflictExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnknownResourceException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.route53resolver.model.transform.UnknownResourceExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.route53resolver.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
@@ -158,6 +141,27 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceExistsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.route53resolver.model.transform.ResourceExistsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.route53resolver.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.route53resolver.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.route53resolver.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTagException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.route53resolver.model.transform.InvalidTagExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.route53resolver.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.route53resolver.model.transform.ConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnknownResourceException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.route53resolver.model.transform.UnknownResourceExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.route53resolver.model.AmazonRoute53ResolverException.class));
 
     public static AmazonRoute53ResolverClientBuilder builder() {
@@ -216,12 +220,20 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      * @throws ResourceNotFoundException
      *         The specified resource doesn't exist.
      * @throws ValidationException
+     *         You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request.
+     *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @throws LimitExceededException
      *         The request caused one or more limits to be exceeded.
      * @throws ConflictException
+     *         The requested state transition isn't valid. For example, you can't delete a firewall domain list if it is
+     *         in the process of being deleted, or you can't import domains into a domain list that is in the process of
+     *         being deleted.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -391,7 +403,10 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      *         The request was throttled. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @sample AmazonRoute53Resolver.AssociateResolverQueryLogConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/AssociateResolverQueryLogConfig"
      *      target="_top">AWS API Documentation</a>
@@ -530,9 +545,14 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      * @throws LimitExceededException
      *         The request caused one or more limits to be exceeded.
      * @throws ValidationException
+     *         You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request.
+     *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -597,11 +617,16 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      * @throws ResourceNotFoundException
      *         The specified resource doesn't exist.
      * @throws ValidationException
+     *         You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request.
+     *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @throws LimitExceededException
      *         The request caused one or more limits to be exceeded.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -665,9 +690,14 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      * @throws LimitExceededException
      *         The request caused one or more limits to be exceeded.
      * @throws ValidationException
+     *         You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request.
+     *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -724,6 +754,79 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
 
     /**
      * <p>
+     * Creates a Route 53 Resolver on an Outpost.
+     * </p>
+     * 
+     * @param createOutpostResolverRequest
+     * @return Result of the CreateOutpostResolver operation returned by the service.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ServiceQuotaExceededException
+     *         Fulfilling the request would cause one or more quotas to be exceeded.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @throws ValidationException
+     *         You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request.
+     *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
+     * @sample AmazonRoute53Resolver.CreateOutpostResolver
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateOutpostResolver"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateOutpostResolverResult createOutpostResolver(CreateOutpostResolverRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateOutpostResolver(request);
+    }
+
+    @SdkInternalApi
+    final CreateOutpostResolverResult executeCreateOutpostResolver(CreateOutpostResolverRequest createOutpostResolverRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createOutpostResolverRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateOutpostResolverRequest> request = null;
+        Response<CreateOutpostResolverResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateOutpostResolverRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createOutpostResolverRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateOutpostResolver");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateOutpostResolverResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new CreateOutpostResolverResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a Resolver endpoint. There are two types of Resolver endpoints, inbound and outbound:
      * </p>
      * <ul>
@@ -749,6 +852,12 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      *         The request is invalid.
      * @throws ResourceExistsException
      *         The resource that you tried to create already exists.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws LimitExceededException
      *         The request caused one or more limits to be exceeded.
      * @throws InternalServiceErrorException
@@ -841,7 +950,10 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      *         The request was throttled. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @sample AmazonRoute53Resolver.CreateResolverQueryLogConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateResolverQueryLogConfig"
      *      target="_top">AWS API Documentation</a>
@@ -914,6 +1026,12 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      *         The specified resource isn't available.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws ThrottlingException
      *         The request was throttled. Try again in a few minutes.
      * @sample AmazonRoute53Resolver.CreateResolverRule
@@ -974,9 +1092,15 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      * @throws ResourceNotFoundException
      *         The specified resource doesn't exist.
      * @throws ConflictException
+     *         The requested state transition isn't valid. For example, you can't delete a firewall domain list if it is
+     *         in the process of being deleted, or you can't import domains into a domain list that is in the process of
+     *         being deleted.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -1042,7 +1166,10 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      *         The specified resource doesn't exist.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -1105,10 +1232,18 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      * @throws ResourceNotFoundException
      *         The specified resource doesn't exist.
      * @throws ConflictException
+     *         The requested state transition isn't valid. For example, you can't delete a firewall domain list if it is
+     *         in the process of being deleted, or you can't import domains into a domain list that is in the process of
+     *         being deleted.
      * @throws ValidationException
+     *         You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request.
+     *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -1153,6 +1288,81 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
             HttpResponseHandler<AmazonWebServiceResponse<DeleteFirewallRuleGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteFirewallRuleGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a Resolver on the Outpost.
+     * </p>
+     * 
+     * @param deleteOutpostResolverRequest
+     * @return Result of the DeleteOutpostResolver operation returned by the service.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
+     * @throws ConflictException
+     *         The requested state transition isn't valid. For example, you can't delete a firewall domain list if it is
+     *         in the process of being deleted, or you can't import domains into a domain list that is in the process of
+     *         being deleted.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @throws ValidationException
+     *         You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request.
+     *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
+     * @sample AmazonRoute53Resolver.DeleteOutpostResolver
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteOutpostResolver"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteOutpostResolverResult deleteOutpostResolver(DeleteOutpostResolverRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteOutpostResolver(request);
+    }
+
+    @SdkInternalApi
+    final DeleteOutpostResolverResult executeDeleteOutpostResolver(DeleteOutpostResolverRequest deleteOutpostResolverRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteOutpostResolverRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteOutpostResolverRequest> request = null;
+        Response<DeleteOutpostResolverResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteOutpostResolverRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteOutpostResolverRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteOutpostResolver");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteOutpostResolverResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteOutpostResolverResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1277,7 +1487,10 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      *         The request was throttled. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @sample AmazonRoute53Resolver.DeleteResolverQueryLogConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteResolverQueryLogConfig"
      *      target="_top">AWS API Documentation</a>
@@ -1406,10 +1619,18 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      * @throws ResourceNotFoundException
      *         The specified resource doesn't exist.
      * @throws ValidationException
+     *         You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request.
+     *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws ConflictException
+     *         The requested state transition isn't valid. For example, you can't delete a firewall domain list if it is
+     *         in the process of being deleted, or you can't import domains into a domain list that is in the process of
+     *         being deleted.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -1579,7 +1800,10 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      *         The request was throttled. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @sample AmazonRoute53Resolver.DisassociateResolverQueryLogConfig
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DisassociateResolverQueryLogConfig"
@@ -1715,12 +1939,17 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      *         The specified resource doesn't exist.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
      *         The request was throttled. Try again in a few minutes.
      * @throws ValidationException
+     *         You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request.
+     *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @sample AmazonRoute53Resolver.GetFirewallConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetFirewallConfig"
      *      target="_top">AWS API Documentation</a>
@@ -1780,7 +2009,10 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      *         The specified resource doesn't exist.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -1845,7 +2077,10 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      *         The specified resource doesn't exist.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -1910,7 +2145,10 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      *         The specified resource doesn't exist.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -1975,11 +2213,16 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      * @param getFirewallRuleGroupPolicyRequest
      * @return Result of the GetFirewallRuleGroupPolicy operation returned by the service.
      * @throws ValidationException
+     *         You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request.
+     *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @throws ResourceNotFoundException
      *         The specified resource doesn't exist.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -2036,7 +2279,78 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
 
     /**
      * <p>
-     * Retrieves the behavior configuration of Route 53 Resolver behavior for a single VPC from Amazon Virtual Private
+     * Gets information about a specified Resolver on the Outpost, such as its instance count and type, name, and the
+     * current status of the Resolver.
+     * </p>
+     * 
+     * @param getOutpostResolverRequest
+     * @return Result of the GetOutpostResolver operation returned by the service.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @throws ValidationException
+     *         You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request.
+     *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
+     * @sample AmazonRoute53Resolver.GetOutpostResolver
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetOutpostResolver"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetOutpostResolverResult getOutpostResolver(GetOutpostResolverRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetOutpostResolver(request);
+    }
+
+    @SdkInternalApi
+    final GetOutpostResolverResult executeGetOutpostResolver(GetOutpostResolverRequest getOutpostResolverRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getOutpostResolverRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetOutpostResolverRequest> request = null;
+        Response<GetOutpostResolverResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetOutpostResolverRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getOutpostResolverRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOutpostResolver");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetOutpostResolverResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetOutpostResolverResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the behavior configuration of Route 53 Resolver behavior for a single VPC from Amazon Virtual Private
      * Cloud.
      * </p>
      * 
@@ -2052,7 +2366,13 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      *         The request was throttled. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
+     * @throws ValidationException
+     *         You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request.
+     *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @sample AmazonRoute53Resolver.GetResolverConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverConfig"
      *      target="_top">AWS API Documentation</a>
@@ -2120,7 +2440,10 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      *         The request was throttled. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @sample AmazonRoute53Resolver.GetResolverDnssecConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverDnssecConfig"
      *      target="_top">AWS API Documentation</a>
@@ -2255,7 +2578,10 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      *         The request was throttled. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @sample AmazonRoute53Resolver.GetResolverQueryLogConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverQueryLogConfig"
      *      target="_top">AWS API Documentation</a>
@@ -2327,7 +2653,10 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      *         The request was throttled. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @sample AmazonRoute53Resolver.GetResolverQueryLogConfigAssociation
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverQueryLogConfigAssociation"
@@ -2398,7 +2727,10 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @sample AmazonRoute53Resolver.GetResolverQueryLogConfigPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverQueryLogConfigPolicy"
      *      target="_top">AWS API Documentation</a>
@@ -2597,6 +2929,12 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      *         The specified resource doesn't exist.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @sample AmazonRoute53Resolver.GetResolverRulePolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverRulePolicy"
      *      target="_top">AWS API Documentation</a>
@@ -2675,14 +3013,22 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      * @param importFirewallDomainsRequest
      * @return Result of the ImportFirewallDomains operation returned by the service.
      * @throws ValidationException
+     *         You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request.
+     *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws ResourceNotFoundException
      *         The specified resource doesn't exist.
      * @throws LimitExceededException
      *         The request caused one or more limits to be exceeded.
      * @throws ConflictException
+     *         The requested state transition isn't valid. For example, you can't delete a firewall domain list if it is
+     *         in the process of being deleted, or you can't import domains into a domain list that is in the process of
+     *         being deleted.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -2749,9 +3095,14 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      * @param listFirewallConfigsRequest
      * @return Result of the ListFirewallConfigs operation returned by the service.
      * @throws ValidationException
+     *         You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request.
+     *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -2817,9 +3168,14 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      * @param listFirewallDomainListsRequest
      * @return Result of the ListFirewallDomainLists operation returned by the service.
      * @throws ValidationException
+     *         You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request.
+     *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -2887,9 +3243,14 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      * @throws ResourceNotFoundException
      *         The specified resource doesn't exist.
      * @throws ValidationException
+     *         You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request.
+     *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -2954,9 +3315,14 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      * @param listFirewallRuleGroupAssociationsRequest
      * @return Result of the ListFirewallRuleGroupAssociations operation returned by the service.
      * @throws ValidationException
+     *         You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request.
+     *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -3024,9 +3390,14 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      * @param listFirewallRuleGroupsRequest
      * @return Result of the ListFirewallRuleGroups operation returned by the service.
      * @throws ValidationException
+     *         You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request.
+     *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -3094,9 +3465,14 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      * @throws ResourceNotFoundException
      *         The specified resource doesn't exist.
      * @throws ValidationException
+     *         You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request.
+     *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -3151,7 +3527,77 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
 
     /**
      * <p>
-     * Retrieves the Resolver configurations that you have defined. Route 53 Resolver uses the configurations to manage
+     * Lists all the Resolvers on Outposts that were created using the current Amazon Web Services account.
+     * </p>
+     * 
+     * @param listOutpostResolversRequest
+     * @return Result of the ListOutpostResolvers operation returned by the service.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @throws ValidationException
+     *         You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request.
+     *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
+     * @sample AmazonRoute53Resolver.ListOutpostResolvers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListOutpostResolvers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListOutpostResolversResult listOutpostResolvers(ListOutpostResolversRequest request) {
+        request = beforeClientExecution(request);
+        return executeListOutpostResolvers(request);
+    }
+
+    @SdkInternalApi
+    final ListOutpostResolversResult executeListOutpostResolvers(ListOutpostResolversRequest listOutpostResolversRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listOutpostResolversRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListOutpostResolversRequest> request = null;
+        Response<ListOutpostResolversResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListOutpostResolversRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listOutpostResolversRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOutpostResolvers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListOutpostResolversResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListOutpostResolversResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the Resolver configurations that you have defined. Route 53 Resolver uses the configurations to manage
      * DNS resolution behavior for your VPCs.
      * </p>
      * 
@@ -3169,7 +3615,13 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      *         The request was throttled. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
+     * @throws ValidationException
+     *         You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request.
+     *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @sample AmazonRoute53Resolver.ListResolverConfigs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverConfigs"
      *      target="_top">AWS API Documentation</a>
@@ -3237,7 +3689,10 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      *         The request was throttled. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @sample AmazonRoute53Resolver.ListResolverDnssecConfigs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverDnssecConfigs"
      *      target="_top">AWS API Documentation</a>
@@ -3441,7 +3896,10 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      *         The request was throttled. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @sample AmazonRoute53Resolver.ListResolverQueryLogConfigAssociations
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverQueryLogConfigAssociations"
@@ -3514,7 +3972,10 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      *         The request was throttled. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @sample AmazonRoute53Resolver.ListResolverQueryLogConfigs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverQueryLogConfigs"
      *      target="_top">AWS API Documentation</a>
@@ -3774,11 +4235,16 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      * @param putFirewallRuleGroupPolicyRequest
      * @return Result of the PutFirewallRuleGroupPolicy operation returned by the service.
      * @throws ValidationException
+     *         You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request.
+     *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @throws ResourceNotFoundException
      *         The specified resource doesn't exist.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -3854,7 +4320,10 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @sample AmazonRoute53Resolver.PutResolverQueryLogConfigPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutResolverQueryLogConfigPolicy"
      *      target="_top">AWS API Documentation</a>
@@ -3922,6 +4391,12 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      *         The specified resource doesn't exist.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @sample AmazonRoute53Resolver.PutResolverRulePolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutResolverRulePolicy"
      *      target="_top">AWS API Documentation</a>
@@ -4114,11 +4589,16 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      * @param updateFirewallConfigRequest
      * @return Result of the UpdateFirewallConfig operation returned by the service.
      * @throws ValidationException
+     *         You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request.
+     *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @throws ResourceNotFoundException
      *         The specified resource doesn't exist.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -4179,14 +4659,22 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      * @param updateFirewallDomainsRequest
      * @return Result of the UpdateFirewallDomains operation returned by the service.
      * @throws ValidationException
+     *         You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request.
+     *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws ResourceNotFoundException
      *         The specified resource doesn't exist.
      * @throws LimitExceededException
      *         The request caused one or more limits to be exceeded.
      * @throws ConflictException
+     *         The requested state transition isn't valid. For example, you can't delete a firewall domain list if it is
+     *         in the process of being deleted, or you can't import domains into a domain list that is in the process of
+     *         being deleted.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -4250,10 +4738,18 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      * @throws ResourceNotFoundException
      *         The specified resource doesn't exist.
      * @throws ValidationException
+     *         You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request.
+     *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @throws ConflictException
+     *         The requested state transition isn't valid. For example, you can't delete a firewall domain list if it is
+     *         in the process of being deleted, or you can't import domains into a domain list that is in the process of
+     *         being deleted.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -4317,10 +4813,18 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      * @throws ResourceNotFoundException
      *         The specified resource doesn't exist.
      * @throws ValidationException
+     *         You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request.
+     *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @throws ConflictException
+     *         The requested state transition isn't valid. For example, you can't delete a firewall domain list if it is
+     *         in the process of being deleted, or you can't import domains into a domain list that is in the process of
+     *         being deleted.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -4379,7 +4883,85 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
 
     /**
      * <p>
-     * Updates the behavior configuration of Route 53 Resolver behavior for a single VPC from Amazon Virtual Private
+     * You can use <code>UpdateOutpostResolver</code> to update the instance count, type, or name of a Resolver on an
+     * Outpost.
+     * </p>
+     * 
+     * @param updateOutpostResolverRequest
+     * @return Result of the UpdateOutpostResolver operation returned by the service.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
+     * @throws ConflictException
+     *         The requested state transition isn't valid. For example, you can't delete a firewall domain list if it is
+     *         in the process of being deleted, or you can't import domains into a domain list that is in the process of
+     *         being deleted.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws ServiceQuotaExceededException
+     *         Fulfilling the request would cause one or more quotas to be exceeded.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @throws ValidationException
+     *         You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request.
+     *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
+     * @sample AmazonRoute53Resolver.UpdateOutpostResolver
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateOutpostResolver"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateOutpostResolverResult updateOutpostResolver(UpdateOutpostResolverRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateOutpostResolver(request);
+    }
+
+    @SdkInternalApi
+    final UpdateOutpostResolverResult executeUpdateOutpostResolver(UpdateOutpostResolverRequest updateOutpostResolverRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateOutpostResolverRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateOutpostResolverRequest> request = null;
+        Response<UpdateOutpostResolverResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateOutpostResolverRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateOutpostResolverRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route53Resolver");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateOutpostResolver");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateOutpostResolverResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new UpdateOutpostResolverResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the behavior configuration of Route 53 Resolver behavior for a single VPC from Amazon Virtual Private
      * Cloud.
      * </p>
      * 
@@ -4401,7 +4983,13 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      *         The request was throttled. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
+     * @throws ValidationException
+     *         You have provided an invalid command. If you ran the <code>UpdateFirewallDomains</code> request.
+     *         supported values are <code>ADD</code>, <code>REMOVE</code>, or <code>REPLACE</code> a domain.
      * @sample AmazonRoute53Resolver.UpdateResolverConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverConfig"
      *      target="_top">AWS API Documentation</a>
@@ -4470,7 +5058,10 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      *         The request was throttled. Try again in a few minutes.
      * @throws AccessDeniedException
      *         The current account doesn't have the IAM permissions required to perform the specified Resolver
-     *         operation.
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @sample AmazonRoute53Resolver.UpdateResolverDnssecConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverDnssecConfig"
      *      target="_top">AWS API Documentation</a>
@@ -4523,7 +5114,8 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
 
     /**
      * <p>
-     * Updates the name of an inbound or an outbound Resolver endpoint.
+     * Updates the name, or endpoint type for an inbound or an outbound Resolver endpoint. You can only update between
+     * IPV4 and DUALSTACK, IPV6 endpoint type can't be updated to other type.
      * </p>
      * 
      * @param updateResolverEndpointRequest
@@ -4534,6 +5126,12 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      *         One or more parameters in this request are not valid.
      * @throws InvalidRequestException
      *         The request is invalid.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -4609,6 +5207,12 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
      *         The request was throttled. Try again in a few minutes.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.</p>
+     *         <p>
+     *         This error can also be thrown when a customer has reached the 5120 character limit for a resource policy
+     *         for CloudWatch Logs.
      * @sample AmazonRoute53Resolver.UpdateResolverRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverRule"
      *      target="_top">AWS API Documentation</a>

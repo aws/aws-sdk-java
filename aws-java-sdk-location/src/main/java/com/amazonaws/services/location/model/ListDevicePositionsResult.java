@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,9 +25,7 @@ public class ListDevicePositionsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Contains details about each device's last known position. These details includes the device ID, the time when the
-     * position was sampled on the device, the time that the service received the update, and the most recent
-     * coordinates.
+     * Contains details about each device's last known position.
      * </p>
      */
     private java.util.List<ListDevicePositionsResponseEntry> entries;
@@ -41,14 +39,10 @@ public class ListDevicePositionsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Contains details about each device's last known position. These details includes the device ID, the time when the
-     * position was sampled on the device, the time that the service received the update, and the most recent
-     * coordinates.
+     * Contains details about each device's last known position.
      * </p>
      * 
-     * @return Contains details about each device's last known position. These details includes the device ID, the time
-     *         when the position was sampled on the device, the time that the service received the update, and the most
-     *         recent coordinates.
+     * @return Contains details about each device's last known position.
      */
 
     public java.util.List<ListDevicePositionsResponseEntry> getEntries() {
@@ -57,15 +51,11 @@ public class ListDevicePositionsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Contains details about each device's last known position. These details includes the device ID, the time when the
-     * position was sampled on the device, the time that the service received the update, and the most recent
-     * coordinates.
+     * Contains details about each device's last known position.
      * </p>
      * 
      * @param entries
-     *        Contains details about each device's last known position. These details includes the device ID, the time
-     *        when the position was sampled on the device, the time that the service received the update, and the most
-     *        recent coordinates.
+     *        Contains details about each device's last known position.
      */
 
     public void setEntries(java.util.Collection<ListDevicePositionsResponseEntry> entries) {
@@ -79,9 +69,7 @@ public class ListDevicePositionsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Contains details about each device's last known position. These details includes the device ID, the time when the
-     * position was sampled on the device, the time that the service received the update, and the most recent
-     * coordinates.
+     * Contains details about each device's last known position.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -90,9 +78,7 @@ public class ListDevicePositionsResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param entries
-     *        Contains details about each device's last known position. These details includes the device ID, the time
-     *        when the position was sampled on the device, the time that the service received the update, and the most
-     *        recent coordinates.
+     *        Contains details about each device's last known position.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,15 +94,11 @@ public class ListDevicePositionsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Contains details about each device's last known position. These details includes the device ID, the time when the
-     * position was sampled on the device, the time that the service received the update, and the most recent
-     * coordinates.
+     * Contains details about each device's last known position.
      * </p>
      * 
      * @param entries
-     *        Contains details about each device's last known position. These details includes the device ID, the time
-     *        when the position was sampled on the device, the time that the service received the update, and the most
-     *        recent coordinates.
+     *        Contains details about each device's last known position.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

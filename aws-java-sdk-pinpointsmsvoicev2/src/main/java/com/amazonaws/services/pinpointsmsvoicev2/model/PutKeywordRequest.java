@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,12 @@ public class PutKeywordRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The message associated with the keyword.
      * </p>
+     */
+    private String keywordMessage;
+    /**
+     * <p>
+     * The action to perform for the new keyword when it is received.
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -60,12 +66,6 @@ public class PutKeywordRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </li>
      * </ul>
-     */
-    private String keywordMessage;
-    /**
-     * <p>
-     * The action to perform for the new keyword when it is received.
-     * </p>
      */
     private String keywordAction;
 
@@ -165,6 +165,46 @@ public class PutKeywordRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The message associated with the keyword.
      * </p>
+     * 
+     * @param keywordMessage
+     *        The message associated with the keyword.
+     */
+
+    public void setKeywordMessage(String keywordMessage) {
+        this.keywordMessage = keywordMessage;
+    }
+
+    /**
+     * <p>
+     * The message associated with the keyword.
+     * </p>
+     * 
+     * @return The message associated with the keyword.
+     */
+
+    public String getKeywordMessage() {
+        return this.keywordMessage;
+    }
+
+    /**
+     * <p>
+     * The message associated with the keyword.
+     * </p>
+     * 
+     * @param keywordMessage
+     *        The message associated with the keyword.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutKeywordRequest withKeywordMessage(String keywordMessage) {
+        setKeywordMessage(keywordMessage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The action to perform for the new keyword when it is received.
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -183,8 +223,8 @@ public class PutKeywordRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * </ul>
      * 
-     * @param keywordMessage
-     *        The message associated with the keyword.</p>
+     * @param keywordAction
+     *        The action to perform for the new keyword when it is received.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -201,15 +241,16 @@ public class PutKeywordRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        OPT_IN: The recipient wants to receive future messages.
      *        </p>
      *        </li>
+     * @see KeywordAction
      */
 
-    public void setKeywordMessage(String keywordMessage) {
-        this.keywordMessage = keywordMessage;
+    public void setKeywordAction(String keywordAction) {
+        this.keywordAction = keywordAction;
     }
 
     /**
      * <p>
-     * The message associated with the keyword.
+     * The action to perform for the new keyword when it is received.
      * </p>
      * <ul>
      * <li>
@@ -229,7 +270,7 @@ public class PutKeywordRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * </ul>
      * 
-     * @return The message associated with the keyword.</p>
+     * @return The action to perform for the new keyword when it is received.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -246,15 +287,16 @@ public class PutKeywordRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         OPT_IN: The recipient wants to receive future messages.
      *         </p>
      *         </li>
+     * @see KeywordAction
      */
 
-    public String getKeywordMessage() {
-        return this.keywordMessage;
+    public String getKeywordAction() {
+        return this.keywordAction;
     }
 
     /**
      * <p>
-     * The message associated with the keyword.
+     * The action to perform for the new keyword when it is received.
      * </p>
      * <ul>
      * <li>
@@ -274,8 +316,8 @@ public class PutKeywordRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * </ul>
      * 
-     * @param keywordMessage
-     *        The message associated with the keyword.</p>
+     * @param keywordAction
+     *        The action to perform for the new keyword when it is received.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -293,48 +335,6 @@ public class PutKeywordRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PutKeywordRequest withKeywordMessage(String keywordMessage) {
-        setKeywordMessage(keywordMessage);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The action to perform for the new keyword when it is received.
-     * </p>
-     * 
-     * @param keywordAction
-     *        The action to perform for the new keyword when it is received.
-     * @see KeywordAction
-     */
-
-    public void setKeywordAction(String keywordAction) {
-        this.keywordAction = keywordAction;
-    }
-
-    /**
-     * <p>
-     * The action to perform for the new keyword when it is received.
-     * </p>
-     * 
-     * @return The action to perform for the new keyword when it is received.
-     * @see KeywordAction
-     */
-
-    public String getKeywordAction() {
-        return this.keywordAction;
-    }
-
-    /**
-     * <p>
-     * The action to perform for the new keyword when it is received.
-     * </p>
-     * 
-     * @param keywordAction
-     *        The action to perform for the new keyword when it is received.
-     * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeywordAction
      */
 
@@ -347,9 +347,42 @@ public class PutKeywordRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The action to perform for the new keyword when it is received.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AUTOMATIC_RESPONSE: A message is sent to the recipient.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OPT_OUT: Keeps the recipient from receiving future messages.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OPT_IN: The recipient wants to receive future messages.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param keywordAction
-     *        The action to perform for the new keyword when it is received.
+     *        The action to perform for the new keyword when it is received.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        AUTOMATIC_RESPONSE: A message is sent to the recipient.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OPT_OUT: Keeps the recipient from receiving future messages.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OPT_IN: The recipient wants to receive future messages.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeywordAction
      */

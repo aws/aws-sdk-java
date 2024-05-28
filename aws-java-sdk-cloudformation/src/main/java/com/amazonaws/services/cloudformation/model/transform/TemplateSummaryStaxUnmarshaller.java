@@ -1,0 +1,95 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.cloudformation.model.transform;
+
+import javax.xml.stream.events.XMLEvent;
+import javax.annotation.Generated;
+
+import com.amazonaws.services.cloudformation.model.*;
+import com.amazonaws.transform.Unmarshaller;
+
+import com.amazonaws.transform.StaxUnmarshallerContext;
+import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
+
+/**
+ * TemplateSummary StAX Unmarshaller
+ */
+
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class TemplateSummaryStaxUnmarshaller implements Unmarshaller<TemplateSummary, StaxUnmarshallerContext> {
+
+    public TemplateSummary unmarshall(StaxUnmarshallerContext context) throws Exception {
+        TemplateSummary templateSummary = new TemplateSummary();
+        int originalDepth = context.getCurrentDepth();
+        int targetDepth = originalDepth + 1;
+
+        if (context.isStartOfDocument())
+            targetDepth += 1;
+
+        while (true) {
+            XMLEvent xmlEvent = context.nextEvent();
+            if (xmlEvent.isEndDocument())
+                return templateSummary;
+
+            if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
+                if (context.testExpression("GeneratedTemplateId", targetDepth)) {
+                    templateSummary.setGeneratedTemplateId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("GeneratedTemplateName", targetDepth)) {
+                    templateSummary.setGeneratedTemplateName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Status", targetDepth)) {
+                    templateSummary.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("StatusReason", targetDepth)) {
+                    templateSummary.setStatusReason(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("CreationTime", targetDepth)) {
+                    templateSummary.setCreationTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("LastUpdatedTime", targetDepth)) {
+                    templateSummary.setLastUpdatedTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("NumberOfResources", targetDepth)) {
+                    templateSummary.setNumberOfResources(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+            } else if (xmlEvent.isEndElement()) {
+                if (context.getCurrentDepth() < originalDepth) {
+                    return templateSummary;
+                }
+            }
+        }
+    }
+
+    private static TemplateSummaryStaxUnmarshaller instance;
+
+    public static TemplateSummaryStaxUnmarshaller getInstance() {
+        if (instance == null)
+            instance = new TemplateSummaryStaxUnmarshaller();
+        return instance;
+    }
+}

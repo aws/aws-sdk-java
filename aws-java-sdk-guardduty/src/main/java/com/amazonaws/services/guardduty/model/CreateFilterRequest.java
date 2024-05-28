@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,14 +33,16 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String detectorId;
     /**
      * <p>
-     * The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric
-     * characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.
+     * The name of the filter. Valid characters include period (.), underscore (_), dash (-), and alphanumeric
+     * characters. A whitespace is considered to be an invalid character.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The description of the filter.
+     * The description of the filter. Valid characters include alphanumeric characters, and special characters such as
+     * hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>),
+     * forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.
      * </p>
      */
     private String description;
@@ -72,17 +74,58 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
+     * id
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * region
      * </p>
      * </li>
      * <li>
      * <p>
-     * confidence
+     * severity
+     * </p>
+     * <p>
+     * To filter on the basis of severity, the API and CLI use the following input list for the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html">FindingCriteria</a>
+     * condition:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Low</b>: <code>["1", "2", "3"]</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * id
+     * <b>Medium</b>: <code>["4", "5", "6"]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>High</b>: <code>["7", "8", "9"]</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html#guardduty_findings-severity"
+     * >Severity levels for GuardDuty findings</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * type
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * updatedAt
+     * </p>
+     * <p>
+     * Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value
+     * contains milliseconds.
      * </p>
      * </li>
      * <li>
@@ -122,7 +165,12 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * resource.instanceDetails.outpostArn
+     * resource.instanceDetails.tags.key
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.instanceDetails.tags.value
      * </p>
      * </li>
      * <li>
@@ -167,137 +215,12 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * resource.instanceDetails.tags.key
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * resource.instanceDetails.tags.value
+     * resource.instanceDetails.outpostArn
      * </p>
      * </li>
      * <li>
      * <p>
      * resource.resourceType
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.actionType
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.api
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.callerType
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.errorCode
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.userAgent
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.remoteIpDetails.city.cityName
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.remoteIpDetails.country.countryName
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.remoteIpDetails.ipAddressV4
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.remoteIpDetails.organization.asn
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.serviceName
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.dnsRequestAction.domain
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.blocked
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.connectionDirection
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.localPortDetails.port
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.protocol
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.localIpDetails.ipAddressV4
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.remoteIpDetails.city.cityName
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.remoteIpDetails.country.countryName
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.remoteIpDetails.ipAddressV4
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.remoteIpDetails.organization.asn
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.remotePortDetails.port
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.additionalInfo.threatListName
      * </p>
      * </li>
      * <li>
@@ -327,11 +250,187 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * service.archived
+     * service.action.actionType
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only unarchived
-     * findings are listed. When this attribute is not set, all existing findings are listed.
+     * service.action.awsApiCallAction.api
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.callerType
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.errorCode
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.remoteIpDetails.city.cityName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.remoteIpDetails.country.countryName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.remoteIpDetails.ipAddressV4
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.remoteIpDetails.ipAddressV6
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.remoteIpDetails.organization.asn
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.serviceName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.dnsRequestAction.domain
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.dnsRequestAction.domainWithSuffix
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.blocked
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.connectionDirection
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.localPortDetails.port
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.protocol
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.remoteIpDetails.city.cityName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.remoteIpDetails.country.countryName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.remoteIpDetails.ipAddressV4
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.remoteIpDetails.ipAddressV6
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.remoteIpDetails.organization.asn
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.remotePortDetails.port
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.remoteAccountDetails.affiliated
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV6
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.kubernetesApiCallAction.namespace
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.kubernetesApiCallAction.requestUri
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.kubernetesApiCallAction.statusCode
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.localIpDetails.ipAddressV4
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.localIpDetails.ipAddressV6
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.protocol
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.serviceName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.remoteAccountDetails.accountId
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.additionalInfo.threatListName
      * </p>
      * </li>
      * <li>
@@ -341,21 +440,137 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * severity
+     * resource.eksClusterDetails.name
      * </p>
      * </li>
      * <li>
      * <p>
-     * type
+     * resource.kubernetesDetails.kubernetesWorkloadDetails.name
      * </p>
      * </li>
      * <li>
      * <p>
-     * updatedAt
+     * resource.kubernetesDetails.kubernetesWorkloadDetails.namespace
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value
-     * contains milliseconds.
+     * resource.kubernetesDetails.kubernetesUserDetails.username
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.kubernetesDetails.kubernetesWorkloadDetails.containers.image
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.kubernetesDetails.kubernetesWorkloadDetails.containers.imagePrefix
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.ebsVolumeScanDetails.scanId
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.severity
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.hash
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.ecsClusterDetails.name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.ecsClusterDetails.taskDetails.containers.image
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.ecsClusterDetails.taskDetails.definitionArn
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.containerDetails.image
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.rdsDbInstanceDetails.dbInstanceIdentifier
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.rdsDbInstanceDetails.dbClusterIdentifier
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.rdsDbInstanceDetails.engine
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.rdsDbUserDetails.user
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.rdsDbInstanceDetails.tags.key
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.rdsDbInstanceDetails.tags.value
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.runtimeDetails.process.executableSha256
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.runtimeDetails.process.name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.runtimeDetails.process.name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.lambdaDetails.functionName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.lambdaDetails.functionArn
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.lambdaDetails.tags.key
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.lambdaDetails.tags.value
      * </p>
      * </li>
      * </ul>
@@ -416,13 +631,13 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric
-     * characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.
+     * The name of the filter. Valid characters include period (.), underscore (_), dash (-), and alphanumeric
+     * characters. A whitespace is considered to be an invalid character.
      * </p>
      * 
      * @param name
-     *        The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric
-     *        characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.
+     *        The name of the filter. Valid characters include period (.), underscore (_), dash (-), and alphanumeric
+     *        characters. A whitespace is considered to be an invalid character.
      */
 
     public void setName(String name) {
@@ -431,12 +646,12 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric
-     * characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.
+     * The name of the filter. Valid characters include period (.), underscore (_), dash (-), and alphanumeric
+     * characters. A whitespace is considered to be an invalid character.
      * </p>
      * 
-     * @return The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric
-     *         characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.
+     * @return The name of the filter. Valid characters include period (.), underscore (_), dash (-), and alphanumeric
+     *         characters. A whitespace is considered to be an invalid character.
      */
 
     public String getName() {
@@ -445,13 +660,13 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric
-     * characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.
+     * The name of the filter. Valid characters include period (.), underscore (_), dash (-), and alphanumeric
+     * characters. A whitespace is considered to be an invalid character.
      * </p>
      * 
      * @param name
-     *        The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric
-     *        characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.
+     *        The name of the filter. Valid characters include period (.), underscore (_), dash (-), and alphanumeric
+     *        characters. A whitespace is considered to be an invalid character.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -462,11 +677,16 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The description of the filter.
+     * The description of the filter. Valid characters include alphanumeric characters, and special characters such as
+     * hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>),
+     * forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.
      * </p>
      * 
      * @param description
-     *        The description of the filter.
+     *        The description of the filter. Valid characters include alphanumeric characters, and special characters
+     *        such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>[ ]</code>, and
+     *        <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and
+     *        whitespace.
      */
 
     public void setDescription(String description) {
@@ -475,10 +695,15 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The description of the filter.
+     * The description of the filter. Valid characters include alphanumeric characters, and special characters such as
+     * hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>),
+     * forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.
      * </p>
      * 
-     * @return The description of the filter.
+     * @return The description of the filter. Valid characters include alphanumeric characters, and special characters
+     *         such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>[ ]</code>, and
+     *         <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and
+     *         whitespace.
      */
 
     public String getDescription() {
@@ -487,11 +712,16 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The description of the filter.
+     * The description of the filter. Valid characters include alphanumeric characters, and special characters such as
+     * hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>[ ]</code>, and <code>( )</code>),
+     * forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.
      * </p>
      * 
      * @param description
-     *        The description of the filter.
+     *        The description of the filter. Valid characters include alphanumeric characters, and special characters
+     *        such as hyphen, period, colon, underscore, parentheses (<code>{ }</code>, <code>[ ]</code>, and
+     *        <code>( )</code>), forward slash, horizontal tab, vertical tab, newline, form feed, return, and
+     *        whitespace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -620,17 +850,58 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
+     * id
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * region
      * </p>
      * </li>
      * <li>
      * <p>
-     * confidence
+     * severity
+     * </p>
+     * <p>
+     * To filter on the basis of severity, the API and CLI use the following input list for the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html">FindingCriteria</a>
+     * condition:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Low</b>: <code>["1", "2", "3"]</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * id
+     * <b>Medium</b>: <code>["4", "5", "6"]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>High</b>: <code>["7", "8", "9"]</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html#guardduty_findings-severity"
+     * >Severity levels for GuardDuty findings</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * type
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * updatedAt
+     * </p>
+     * <p>
+     * Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value
+     * contains milliseconds.
      * </p>
      * </li>
      * <li>
@@ -670,7 +941,12 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * resource.instanceDetails.outpostArn
+     * resource.instanceDetails.tags.key
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.instanceDetails.tags.value
      * </p>
      * </li>
      * <li>
@@ -715,137 +991,12 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * resource.instanceDetails.tags.key
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * resource.instanceDetails.tags.value
+     * resource.instanceDetails.outpostArn
      * </p>
      * </li>
      * <li>
      * <p>
      * resource.resourceType
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.actionType
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.api
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.callerType
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.errorCode
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.userAgent
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.remoteIpDetails.city.cityName
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.remoteIpDetails.country.countryName
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.remoteIpDetails.ipAddressV4
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.remoteIpDetails.organization.asn
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.serviceName
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.dnsRequestAction.domain
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.blocked
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.connectionDirection
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.localPortDetails.port
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.protocol
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.localIpDetails.ipAddressV4
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.remoteIpDetails.city.cityName
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.remoteIpDetails.country.countryName
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.remoteIpDetails.ipAddressV4
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.remoteIpDetails.organization.asn
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.remotePortDetails.port
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.additionalInfo.threatListName
      * </p>
      * </li>
      * <li>
@@ -875,11 +1026,187 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * service.archived
+     * service.action.actionType
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only unarchived
-     * findings are listed. When this attribute is not set, all existing findings are listed.
+     * service.action.awsApiCallAction.api
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.callerType
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.errorCode
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.remoteIpDetails.city.cityName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.remoteIpDetails.country.countryName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.remoteIpDetails.ipAddressV4
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.remoteIpDetails.ipAddressV6
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.remoteIpDetails.organization.asn
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.serviceName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.dnsRequestAction.domain
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.dnsRequestAction.domainWithSuffix
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.blocked
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.connectionDirection
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.localPortDetails.port
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.protocol
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.remoteIpDetails.city.cityName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.remoteIpDetails.country.countryName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.remoteIpDetails.ipAddressV4
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.remoteIpDetails.ipAddressV6
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.remoteIpDetails.organization.asn
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.remotePortDetails.port
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.remoteAccountDetails.affiliated
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV6
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.kubernetesApiCallAction.namespace
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.kubernetesApiCallAction.requestUri
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.kubernetesApiCallAction.statusCode
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.localIpDetails.ipAddressV4
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.localIpDetails.ipAddressV6
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.protocol
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.serviceName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.remoteAccountDetails.accountId
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.additionalInfo.threatListName
      * </p>
      * </li>
      * <li>
@@ -889,21 +1216,137 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * severity
+     * resource.eksClusterDetails.name
      * </p>
      * </li>
      * <li>
      * <p>
-     * type
+     * resource.kubernetesDetails.kubernetesWorkloadDetails.name
      * </p>
      * </li>
      * <li>
      * <p>
-     * updatedAt
+     * resource.kubernetesDetails.kubernetesWorkloadDetails.namespace
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value
-     * contains milliseconds.
+     * resource.kubernetesDetails.kubernetesUserDetails.username
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.kubernetesDetails.kubernetesWorkloadDetails.containers.image
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.kubernetesDetails.kubernetesWorkloadDetails.containers.imagePrefix
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.ebsVolumeScanDetails.scanId
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.severity
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.hash
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.ecsClusterDetails.name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.ecsClusterDetails.taskDetails.containers.image
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.ecsClusterDetails.taskDetails.definitionArn
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.containerDetails.image
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.rdsDbInstanceDetails.dbInstanceIdentifier
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.rdsDbInstanceDetails.dbClusterIdentifier
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.rdsDbInstanceDetails.engine
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.rdsDbUserDetails.user
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.rdsDbInstanceDetails.tags.key
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.rdsDbInstanceDetails.tags.value
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.runtimeDetails.process.executableSha256
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.runtimeDetails.process.name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.runtimeDetails.process.name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.lambdaDetails.functionName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.lambdaDetails.functionArn
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.lambdaDetails.tags.key
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.lambdaDetails.tags.value
      * </p>
      * </li>
      * </ul>
@@ -921,17 +1364,58 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
+     *        id
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        region
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        confidence
+     *        severity
+     *        </p>
+     *        <p>
+     *        To filter on the basis of severity, the API and CLI use the following input list for the <a
+     *        href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html"
+     *        >FindingCriteria</a> condition:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Low</b>: <code>["1", "2", "3"]</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        id
+     *        <b>Medium</b>: <code>["4", "5", "6"]</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>High</b>: <code>["7", "8", "9"]</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html#guardduty_findings-severity"
+     *        >Severity levels for GuardDuty findings</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        type
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        updatedAt
+     *        </p>
+     *        <p>
+     *        Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the
+     *        value contains milliseconds.
      *        </p>
      *        </li>
      *        <li>
@@ -971,7 +1455,12 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        resource.instanceDetails.outpostArn
+     *        resource.instanceDetails.tags.key
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.instanceDetails.tags.value
      *        </p>
      *        </li>
      *        <li>
@@ -1016,137 +1505,12 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        resource.instanceDetails.tags.key
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        resource.instanceDetails.tags.value
+     *        resource.instanceDetails.outpostArn
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        resource.resourceType
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.actionType
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.awsApiCallAction.api
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.awsApiCallAction.callerType
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.awsApiCallAction.errorCode
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.awsApiCallAction.userAgent
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.awsApiCallAction.remoteIpDetails.city.cityName
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.awsApiCallAction.remoteIpDetails.country.countryName
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.awsApiCallAction.remoteIpDetails.ipAddressV4
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.awsApiCallAction.remoteIpDetails.organization.asn
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.awsApiCallAction.serviceName
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.dnsRequestAction.domain
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.networkConnectionAction.blocked
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.networkConnectionAction.connectionDirection
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.networkConnectionAction.localPortDetails.port
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.networkConnectionAction.protocol
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.networkConnectionAction.localIpDetails.ipAddressV4
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.networkConnectionAction.remoteIpDetails.city.cityName
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.networkConnectionAction.remoteIpDetails.country.countryName
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.networkConnectionAction.remoteIpDetails.ipAddressV4
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.networkConnectionAction.remoteIpDetails.organization.asn
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.networkConnectionAction.remotePortDetails.port
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.additionalInfo.threatListName
      *        </p>
      *        </li>
      *        <li>
@@ -1176,11 +1540,187 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        service.archived
+     *        service.action.actionType
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only
-     *        unarchived findings are listed. When this attribute is not set, all existing findings are listed.
+     *        service.action.awsApiCallAction.api
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.awsApiCallAction.callerType
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.awsApiCallAction.errorCode
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.awsApiCallAction.remoteIpDetails.city.cityName
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.awsApiCallAction.remoteIpDetails.country.countryName
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.awsApiCallAction.remoteIpDetails.ipAddressV4
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.awsApiCallAction.remoteIpDetails.ipAddressV6
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.awsApiCallAction.remoteIpDetails.organization.asn
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.awsApiCallAction.serviceName
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.dnsRequestAction.domain
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.dnsRequestAction.domainWithSuffix
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.networkConnectionAction.blocked
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.networkConnectionAction.connectionDirection
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.networkConnectionAction.localPortDetails.port
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.networkConnectionAction.protocol
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.networkConnectionAction.remoteIpDetails.city.cityName
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.networkConnectionAction.remoteIpDetails.country.countryName
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.networkConnectionAction.remoteIpDetails.ipAddressV4
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.networkConnectionAction.remoteIpDetails.ipAddressV6
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.networkConnectionAction.remoteIpDetails.organization.asn
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.networkConnectionAction.remotePortDetails.port
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.awsApiCallAction.remoteAccountDetails.affiliated
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV6
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.kubernetesApiCallAction.namespace
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.kubernetesApiCallAction.requestUri
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.kubernetesApiCallAction.statusCode
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.networkConnectionAction.localIpDetails.ipAddressV4
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.networkConnectionAction.localIpDetails.ipAddressV6
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.networkConnectionAction.protocol
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.awsApiCallAction.serviceName
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.awsApiCallAction.remoteAccountDetails.accountId
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.additionalInfo.threatListName
      *        </p>
      *        </li>
      *        <li>
@@ -1190,21 +1730,137 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        severity
+     *        resource.eksClusterDetails.name
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        type
+     *        resource.kubernetesDetails.kubernetesWorkloadDetails.name
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        updatedAt
+     *        resource.kubernetesDetails.kubernetesWorkloadDetails.namespace
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the
-     *        value contains milliseconds.
+     *        resource.kubernetesDetails.kubernetesUserDetails.username
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.kubernetesDetails.kubernetesWorkloadDetails.containers.image
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.kubernetesDetails.kubernetesWorkloadDetails.containers.imagePrefix
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.ebsVolumeScanDetails.scanId
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.name
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.severity
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.hash
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.ecsClusterDetails.name
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.ecsClusterDetails.taskDetails.containers.image
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.ecsClusterDetails.taskDetails.definitionArn
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.containerDetails.image
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.rdsDbInstanceDetails.dbInstanceIdentifier
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.rdsDbInstanceDetails.dbClusterIdentifier
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.rdsDbInstanceDetails.engine
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.rdsDbUserDetails.user
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.rdsDbInstanceDetails.tags.key
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.rdsDbInstanceDetails.tags.value
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.runtimeDetails.process.executableSha256
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.runtimeDetails.process.name
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.runtimeDetails.process.name
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.lambdaDetails.functionName
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.lambdaDetails.functionArn
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.lambdaDetails.tags.key
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.lambdaDetails.tags.value
      *        </p>
      *        </li>
      */
@@ -1228,17 +1884,58 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
+     * id
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * region
      * </p>
      * </li>
      * <li>
      * <p>
-     * confidence
+     * severity
+     * </p>
+     * <p>
+     * To filter on the basis of severity, the API and CLI use the following input list for the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html">FindingCriteria</a>
+     * condition:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Low</b>: <code>["1", "2", "3"]</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * id
+     * <b>Medium</b>: <code>["4", "5", "6"]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>High</b>: <code>["7", "8", "9"]</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html#guardduty_findings-severity"
+     * >Severity levels for GuardDuty findings</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * type
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * updatedAt
+     * </p>
+     * <p>
+     * Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value
+     * contains milliseconds.
      * </p>
      * </li>
      * <li>
@@ -1278,7 +1975,12 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * resource.instanceDetails.outpostArn
+     * resource.instanceDetails.tags.key
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.instanceDetails.tags.value
      * </p>
      * </li>
      * <li>
@@ -1323,137 +2025,12 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * resource.instanceDetails.tags.key
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * resource.instanceDetails.tags.value
+     * resource.instanceDetails.outpostArn
      * </p>
      * </li>
      * <li>
      * <p>
      * resource.resourceType
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.actionType
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.api
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.callerType
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.errorCode
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.userAgent
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.remoteIpDetails.city.cityName
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.remoteIpDetails.country.countryName
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.remoteIpDetails.ipAddressV4
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.remoteIpDetails.organization.asn
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.serviceName
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.dnsRequestAction.domain
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.blocked
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.connectionDirection
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.localPortDetails.port
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.protocol
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.localIpDetails.ipAddressV4
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.remoteIpDetails.city.cityName
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.remoteIpDetails.country.countryName
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.remoteIpDetails.ipAddressV4
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.remoteIpDetails.organization.asn
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.remotePortDetails.port
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.additionalInfo.threatListName
      * </p>
      * </li>
      * <li>
@@ -1483,11 +2060,187 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * service.archived
+     * service.action.actionType
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only unarchived
-     * findings are listed. When this attribute is not set, all existing findings are listed.
+     * service.action.awsApiCallAction.api
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.callerType
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.errorCode
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.remoteIpDetails.city.cityName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.remoteIpDetails.country.countryName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.remoteIpDetails.ipAddressV4
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.remoteIpDetails.ipAddressV6
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.remoteIpDetails.organization.asn
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.serviceName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.dnsRequestAction.domain
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.dnsRequestAction.domainWithSuffix
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.blocked
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.connectionDirection
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.localPortDetails.port
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.protocol
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.remoteIpDetails.city.cityName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.remoteIpDetails.country.countryName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.remoteIpDetails.ipAddressV4
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.remoteIpDetails.ipAddressV6
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.remoteIpDetails.organization.asn
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.remotePortDetails.port
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.remoteAccountDetails.affiliated
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV6
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.kubernetesApiCallAction.namespace
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.kubernetesApiCallAction.requestUri
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.kubernetesApiCallAction.statusCode
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.localIpDetails.ipAddressV4
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.localIpDetails.ipAddressV6
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.protocol
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.serviceName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.remoteAccountDetails.accountId
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.additionalInfo.threatListName
      * </p>
      * </li>
      * <li>
@@ -1497,21 +2250,137 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * severity
+     * resource.eksClusterDetails.name
      * </p>
      * </li>
      * <li>
      * <p>
-     * type
+     * resource.kubernetesDetails.kubernetesWorkloadDetails.name
      * </p>
      * </li>
      * <li>
      * <p>
-     * updatedAt
+     * resource.kubernetesDetails.kubernetesWorkloadDetails.namespace
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value
-     * contains milliseconds.
+     * resource.kubernetesDetails.kubernetesUserDetails.username
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.kubernetesDetails.kubernetesWorkloadDetails.containers.image
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.kubernetesDetails.kubernetesWorkloadDetails.containers.imagePrefix
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.ebsVolumeScanDetails.scanId
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.severity
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.hash
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.ecsClusterDetails.name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.ecsClusterDetails.taskDetails.containers.image
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.ecsClusterDetails.taskDetails.definitionArn
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.containerDetails.image
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.rdsDbInstanceDetails.dbInstanceIdentifier
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.rdsDbInstanceDetails.dbClusterIdentifier
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.rdsDbInstanceDetails.engine
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.rdsDbUserDetails.user
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.rdsDbInstanceDetails.tags.key
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.rdsDbInstanceDetails.tags.value
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.runtimeDetails.process.executableSha256
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.runtimeDetails.process.name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.runtimeDetails.process.name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.lambdaDetails.functionName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.lambdaDetails.functionArn
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.lambdaDetails.tags.key
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.lambdaDetails.tags.value
      * </p>
      * </li>
      * </ul>
@@ -1528,17 +2397,58 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
+     *         id
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         region
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         confidence
+     *         severity
+     *         </p>
+     *         <p>
+     *         To filter on the basis of severity, the API and CLI use the following input list for the <a
+     *         href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html"
+     *         >FindingCriteria</a> condition:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Low</b>: <code>["1", "2", "3"]</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         id
+     *         <b>Medium</b>: <code>["4", "5", "6"]</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>High</b>: <code>["7", "8", "9"]</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html#guardduty_findings-severity"
+     *         >Severity levels for GuardDuty findings</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         type
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         updatedAt
+     *         </p>
+     *         <p>
+     *         Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the
+     *         value contains milliseconds.
      *         </p>
      *         </li>
      *         <li>
@@ -1578,7 +2488,12 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         resource.instanceDetails.outpostArn
+     *         resource.instanceDetails.tags.key
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         resource.instanceDetails.tags.value
      *         </p>
      *         </li>
      *         <li>
@@ -1623,137 +2538,12 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         resource.instanceDetails.tags.key
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         resource.instanceDetails.tags.value
+     *         resource.instanceDetails.outpostArn
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         resource.resourceType
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         service.action.actionType
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         service.action.awsApiCallAction.api
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         service.action.awsApiCallAction.callerType
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         service.action.awsApiCallAction.errorCode
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         service.action.awsApiCallAction.userAgent
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         service.action.awsApiCallAction.remoteIpDetails.city.cityName
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         service.action.awsApiCallAction.remoteIpDetails.country.countryName
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         service.action.awsApiCallAction.remoteIpDetails.ipAddressV4
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         service.action.awsApiCallAction.remoteIpDetails.organization.asn
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         service.action.awsApiCallAction.serviceName
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         service.action.dnsRequestAction.domain
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         service.action.networkConnectionAction.blocked
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         service.action.networkConnectionAction.connectionDirection
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         service.action.networkConnectionAction.localPortDetails.port
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         service.action.networkConnectionAction.protocol
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         service.action.networkConnectionAction.localIpDetails.ipAddressV4
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         service.action.networkConnectionAction.remoteIpDetails.city.cityName
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         service.action.networkConnectionAction.remoteIpDetails.country.countryName
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         service.action.networkConnectionAction.remoteIpDetails.ipAddressV4
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         service.action.networkConnectionAction.remoteIpDetails.organization.asn
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         service.action.networkConnectionAction.remotePortDetails.port
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         service.additionalInfo.threatListName
      *         </p>
      *         </li>
      *         <li>
@@ -1783,11 +2573,187 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         service.archived
+     *         service.action.actionType
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only
-     *         unarchived findings are listed. When this attribute is not set, all existing findings are listed.
+     *         service.action.awsApiCallAction.api
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.awsApiCallAction.callerType
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.awsApiCallAction.errorCode
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.awsApiCallAction.remoteIpDetails.city.cityName
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.awsApiCallAction.remoteIpDetails.country.countryName
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.awsApiCallAction.remoteIpDetails.ipAddressV4
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.awsApiCallAction.remoteIpDetails.ipAddressV6
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.awsApiCallAction.remoteIpDetails.organization.asn
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.awsApiCallAction.serviceName
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.dnsRequestAction.domain
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.dnsRequestAction.domainWithSuffix
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.networkConnectionAction.blocked
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.networkConnectionAction.connectionDirection
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.networkConnectionAction.localPortDetails.port
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.networkConnectionAction.protocol
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.networkConnectionAction.remoteIpDetails.city.cityName
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.networkConnectionAction.remoteIpDetails.country.countryName
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.networkConnectionAction.remoteIpDetails.ipAddressV4
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.networkConnectionAction.remoteIpDetails.ipAddressV6
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.networkConnectionAction.remoteIpDetails.organization.asn
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.networkConnectionAction.remotePortDetails.port
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.awsApiCallAction.remoteAccountDetails.affiliated
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV6
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.kubernetesApiCallAction.namespace
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.kubernetesApiCallAction.requestUri
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.kubernetesApiCallAction.statusCode
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.networkConnectionAction.localIpDetails.ipAddressV4
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.networkConnectionAction.localIpDetails.ipAddressV6
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.networkConnectionAction.protocol
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.awsApiCallAction.serviceName
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.awsApiCallAction.remoteAccountDetails.accountId
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.additionalInfo.threatListName
      *         </p>
      *         </li>
      *         <li>
@@ -1797,21 +2763,137 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         severity
+     *         resource.eksClusterDetails.name
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         type
+     *         resource.kubernetesDetails.kubernetesWorkloadDetails.name
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         updatedAt
+     *         resource.kubernetesDetails.kubernetesWorkloadDetails.namespace
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the
-     *         value contains milliseconds.
+     *         resource.kubernetesDetails.kubernetesUserDetails.username
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         resource.kubernetesDetails.kubernetesWorkloadDetails.containers.image
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         resource.kubernetesDetails.kubernetesWorkloadDetails.containers.imagePrefix
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.ebsVolumeScanDetails.scanId
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.name
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.severity
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.hash
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         resource.ecsClusterDetails.name
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         resource.ecsClusterDetails.taskDetails.containers.image
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         resource.ecsClusterDetails.taskDetails.definitionArn
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         resource.containerDetails.image
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         resource.rdsDbInstanceDetails.dbInstanceIdentifier
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         resource.rdsDbInstanceDetails.dbClusterIdentifier
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         resource.rdsDbInstanceDetails.engine
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         resource.rdsDbUserDetails.user
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         resource.rdsDbInstanceDetails.tags.key
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         resource.rdsDbInstanceDetails.tags.value
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.runtimeDetails.process.executableSha256
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.runtimeDetails.process.name
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.runtimeDetails.process.name
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         resource.lambdaDetails.functionName
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         resource.lambdaDetails.functionArn
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         resource.lambdaDetails.tags.key
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         resource.lambdaDetails.tags.value
      *         </p>
      *         </li>
      */
@@ -1835,17 +2917,58 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
+     * id
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * region
      * </p>
      * </li>
      * <li>
      * <p>
-     * confidence
+     * severity
+     * </p>
+     * <p>
+     * To filter on the basis of severity, the API and CLI use the following input list for the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html">FindingCriteria</a>
+     * condition:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Low</b>: <code>["1", "2", "3"]</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * id
+     * <b>Medium</b>: <code>["4", "5", "6"]</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>High</b>: <code>["7", "8", "9"]</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html#guardduty_findings-severity"
+     * >Severity levels for GuardDuty findings</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * type
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * updatedAt
+     * </p>
+     * <p>
+     * Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value
+     * contains milliseconds.
      * </p>
      * </li>
      * <li>
@@ -1885,7 +3008,12 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * resource.instanceDetails.outpostArn
+     * resource.instanceDetails.tags.key
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.instanceDetails.tags.value
      * </p>
      * </li>
      * <li>
@@ -1930,137 +3058,12 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * resource.instanceDetails.tags.key
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * resource.instanceDetails.tags.value
+     * resource.instanceDetails.outpostArn
      * </p>
      * </li>
      * <li>
      * <p>
      * resource.resourceType
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.actionType
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.api
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.callerType
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.errorCode
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.userAgent
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.remoteIpDetails.city.cityName
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.remoteIpDetails.country.countryName
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.remoteIpDetails.ipAddressV4
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.remoteIpDetails.organization.asn
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.awsApiCallAction.serviceName
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.dnsRequestAction.domain
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.blocked
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.connectionDirection
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.localPortDetails.port
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.protocol
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.localIpDetails.ipAddressV4
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.remoteIpDetails.city.cityName
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.remoteIpDetails.country.countryName
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.remoteIpDetails.ipAddressV4
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.remoteIpDetails.organization.asn
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.action.networkConnectionAction.remotePortDetails.port
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * service.additionalInfo.threatListName
      * </p>
      * </li>
      * <li>
@@ -2090,11 +3093,187 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * service.archived
+     * service.action.actionType
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only unarchived
-     * findings are listed. When this attribute is not set, all existing findings are listed.
+     * service.action.awsApiCallAction.api
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.callerType
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.errorCode
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.remoteIpDetails.city.cityName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.remoteIpDetails.country.countryName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.remoteIpDetails.ipAddressV4
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.remoteIpDetails.ipAddressV6
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.remoteIpDetails.organization.asn
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.serviceName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.dnsRequestAction.domain
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.dnsRequestAction.domainWithSuffix
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.blocked
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.connectionDirection
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.localPortDetails.port
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.protocol
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.remoteIpDetails.city.cityName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.remoteIpDetails.country.countryName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.remoteIpDetails.ipAddressV4
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.remoteIpDetails.ipAddressV6
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.remoteIpDetails.organization.asn
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.remotePortDetails.port
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.remoteAccountDetails.affiliated
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV6
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.kubernetesApiCallAction.namespace
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.kubernetesApiCallAction.requestUri
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.kubernetesApiCallAction.statusCode
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.localIpDetails.ipAddressV4
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.localIpDetails.ipAddressV6
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.networkConnectionAction.protocol
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.serviceName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.awsApiCallAction.remoteAccountDetails.accountId
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.additionalInfo.threatListName
      * </p>
      * </li>
      * <li>
@@ -2104,21 +3283,137 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * severity
+     * resource.eksClusterDetails.name
      * </p>
      * </li>
      * <li>
      * <p>
-     * type
+     * resource.kubernetesDetails.kubernetesWorkloadDetails.name
      * </p>
      * </li>
      * <li>
      * <p>
-     * updatedAt
+     * resource.kubernetesDetails.kubernetesWorkloadDetails.namespace
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the value
-     * contains milliseconds.
+     * resource.kubernetesDetails.kubernetesUserDetails.username
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.kubernetesDetails.kubernetesWorkloadDetails.containers.image
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.kubernetesDetails.kubernetesWorkloadDetails.containers.imagePrefix
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.ebsVolumeScanDetails.scanId
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.severity
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.hash
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.ecsClusterDetails.name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.ecsClusterDetails.taskDetails.containers.image
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.ecsClusterDetails.taskDetails.definitionArn
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.containerDetails.image
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.rdsDbInstanceDetails.dbInstanceIdentifier
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.rdsDbInstanceDetails.dbClusterIdentifier
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.rdsDbInstanceDetails.engine
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.rdsDbUserDetails.user
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.rdsDbInstanceDetails.tags.key
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.rdsDbInstanceDetails.tags.value
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.runtimeDetails.process.executableSha256
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.runtimeDetails.process.name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.runtimeDetails.process.name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.lambdaDetails.functionName
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.lambdaDetails.functionArn
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.lambdaDetails.tags.key
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * resource.lambdaDetails.tags.value
      * </p>
      * </li>
      * </ul>
@@ -2136,17 +3431,58 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
+     *        id
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        region
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        confidence
+     *        severity
+     *        </p>
+     *        <p>
+     *        To filter on the basis of severity, the API and CLI use the following input list for the <a
+     *        href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html"
+     *        >FindingCriteria</a> condition:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Low</b>: <code>["1", "2", "3"]</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        id
+     *        <b>Medium</b>: <code>["4", "5", "6"]</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>High</b>: <code>["7", "8", "9"]</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html#guardduty_findings-severity"
+     *        >Severity levels for GuardDuty findings</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        type
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        updatedAt
+     *        </p>
+     *        <p>
+     *        Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the
+     *        value contains milliseconds.
      *        </p>
      *        </li>
      *        <li>
@@ -2186,7 +3522,12 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        resource.instanceDetails.outpostArn
+     *        resource.instanceDetails.tags.key
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.instanceDetails.tags.value
      *        </p>
      *        </li>
      *        <li>
@@ -2231,137 +3572,12 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        resource.instanceDetails.tags.key
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        resource.instanceDetails.tags.value
+     *        resource.instanceDetails.outpostArn
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        resource.resourceType
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.actionType
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.awsApiCallAction.api
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.awsApiCallAction.callerType
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.awsApiCallAction.errorCode
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.awsApiCallAction.userAgent
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.awsApiCallAction.remoteIpDetails.city.cityName
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.awsApiCallAction.remoteIpDetails.country.countryName
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.awsApiCallAction.remoteIpDetails.ipAddressV4
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.awsApiCallAction.remoteIpDetails.organization.asn
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.awsApiCallAction.serviceName
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.dnsRequestAction.domain
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.networkConnectionAction.blocked
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.networkConnectionAction.connectionDirection
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.networkConnectionAction.localPortDetails.port
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.networkConnectionAction.protocol
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.networkConnectionAction.localIpDetails.ipAddressV4
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.networkConnectionAction.remoteIpDetails.city.cityName
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.networkConnectionAction.remoteIpDetails.country.countryName
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.networkConnectionAction.remoteIpDetails.ipAddressV4
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.networkConnectionAction.remoteIpDetails.organization.asn
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.action.networkConnectionAction.remotePortDetails.port
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.additionalInfo.threatListName
      *        </p>
      *        </li>
      *        <li>
@@ -2391,11 +3607,187 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        service.archived
+     *        service.action.actionType
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only
-     *        unarchived findings are listed. When this attribute is not set, all existing findings are listed.
+     *        service.action.awsApiCallAction.api
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.awsApiCallAction.callerType
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.awsApiCallAction.errorCode
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.awsApiCallAction.remoteIpDetails.city.cityName
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.awsApiCallAction.remoteIpDetails.country.countryName
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.awsApiCallAction.remoteIpDetails.ipAddressV4
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.awsApiCallAction.remoteIpDetails.ipAddressV6
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.awsApiCallAction.remoteIpDetails.organization.asn
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.awsApiCallAction.remoteIpDetails.organization.asnOrg
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.awsApiCallAction.serviceName
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.dnsRequestAction.domain
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.dnsRequestAction.domainWithSuffix
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.networkConnectionAction.blocked
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.networkConnectionAction.connectionDirection
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.networkConnectionAction.localPortDetails.port
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.networkConnectionAction.protocol
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.networkConnectionAction.remoteIpDetails.city.cityName
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.networkConnectionAction.remoteIpDetails.country.countryName
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.networkConnectionAction.remoteIpDetails.ipAddressV4
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.networkConnectionAction.remoteIpDetails.ipAddressV6
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.networkConnectionAction.remoteIpDetails.organization.asn
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.networkConnectionAction.remoteIpDetails.organization.asnOrg
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.networkConnectionAction.remotePortDetails.port
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.awsApiCallAction.remoteAccountDetails.affiliated
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV4
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.kubernetesApiCallAction.remoteIpDetails.ipAddressV6
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.kubernetesApiCallAction.namespace
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.kubernetesApiCallAction.remoteIpDetails.organization.asn
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.kubernetesApiCallAction.requestUri
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.kubernetesApiCallAction.statusCode
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.networkConnectionAction.localIpDetails.ipAddressV4
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.networkConnectionAction.localIpDetails.ipAddressV6
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.networkConnectionAction.protocol
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.awsApiCallAction.serviceName
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.awsApiCallAction.remoteAccountDetails.accountId
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.additionalInfo.threatListName
      *        </p>
      *        </li>
      *        <li>
@@ -2405,21 +3797,137 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        severity
+     *        resource.eksClusterDetails.name
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        type
+     *        resource.kubernetesDetails.kubernetesWorkloadDetails.name
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        updatedAt
+     *        resource.kubernetesDetails.kubernetesWorkloadDetails.namespace
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        Type: ISO 8601 string format: YYYY-MM-DDTHH:MM:SS.SSSZ or YYYY-MM-DDTHH:MM:SSZ depending on whether the
-     *        value contains milliseconds.
+     *        resource.kubernetesDetails.kubernetesUserDetails.username
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.kubernetesDetails.kubernetesWorkloadDetails.containers.image
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.kubernetesDetails.kubernetesWorkloadDetails.containers.imagePrefix
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.ebsVolumeScanDetails.scanId
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.name
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.severity
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.ebsVolumeScanDetails.scanDetections.threatDetectedByName.threatNames.filePaths.hash
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.ecsClusterDetails.name
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.ecsClusterDetails.taskDetails.containers.image
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.ecsClusterDetails.taskDetails.definitionArn
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.containerDetails.image
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.rdsDbInstanceDetails.dbInstanceIdentifier
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.rdsDbInstanceDetails.dbClusterIdentifier
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.rdsDbInstanceDetails.engine
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.rdsDbUserDetails.user
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.rdsDbInstanceDetails.tags.key
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.rdsDbInstanceDetails.tags.value
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.runtimeDetails.process.executableSha256
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.runtimeDetails.process.name
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.runtimeDetails.process.name
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.lambdaDetails.functionName
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.lambdaDetails.functionArn
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.lambdaDetails.tags.key
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        resource.lambdaDetails.tags.value
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

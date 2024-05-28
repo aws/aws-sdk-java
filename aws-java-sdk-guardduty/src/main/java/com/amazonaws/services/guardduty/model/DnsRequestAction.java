@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class DnsRequestAction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The domain information for the API request.
+     * The domain information for the DNS query.
      * </p>
      */
     private String domain;
@@ -46,14 +46,22 @@ public class DnsRequestAction implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private Boolean blocked;
+    /**
+     * <p>
+     * The second and top level domain involved in the activity that potentially prompted GuardDuty to generate this
+     * finding. For a list of top-level and second-level domains, see <a href="https://publicsuffix.org/">public suffix
+     * list</a>.
+     * </p>
+     */
+    private String domainWithSuffix;
 
     /**
      * <p>
-     * The domain information for the API request.
+     * The domain information for the DNS query.
      * </p>
      * 
      * @param domain
-     *        The domain information for the API request.
+     *        The domain information for the DNS query.
      */
 
     public void setDomain(String domain) {
@@ -62,10 +70,10 @@ public class DnsRequestAction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The domain information for the API request.
+     * The domain information for the DNS query.
      * </p>
      * 
-     * @return The domain information for the API request.
+     * @return The domain information for the DNS query.
      */
 
     public String getDomain() {
@@ -74,11 +82,11 @@ public class DnsRequestAction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The domain information for the API request.
+     * The domain information for the DNS query.
      * </p>
      * 
      * @param domain
-     *        The domain information for the API request.
+     *        The domain information for the DNS query.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,6 +188,58 @@ public class DnsRequestAction implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The second and top level domain involved in the activity that potentially prompted GuardDuty to generate this
+     * finding. For a list of top-level and second-level domains, see <a href="https://publicsuffix.org/">public suffix
+     * list</a>.
+     * </p>
+     * 
+     * @param domainWithSuffix
+     *        The second and top level domain involved in the activity that potentially prompted GuardDuty to generate
+     *        this finding. For a list of top-level and second-level domains, see <a
+     *        href="https://publicsuffix.org/">public suffix list</a>.
+     */
+
+    public void setDomainWithSuffix(String domainWithSuffix) {
+        this.domainWithSuffix = domainWithSuffix;
+    }
+
+    /**
+     * <p>
+     * The second and top level domain involved in the activity that potentially prompted GuardDuty to generate this
+     * finding. For a list of top-level and second-level domains, see <a href="https://publicsuffix.org/">public suffix
+     * list</a>.
+     * </p>
+     * 
+     * @return The second and top level domain involved in the activity that potentially prompted GuardDuty to generate
+     *         this finding. For a list of top-level and second-level domains, see <a
+     *         href="https://publicsuffix.org/">public suffix list</a>.
+     */
+
+    public String getDomainWithSuffix() {
+        return this.domainWithSuffix;
+    }
+
+    /**
+     * <p>
+     * The second and top level domain involved in the activity that potentially prompted GuardDuty to generate this
+     * finding. For a list of top-level and second-level domains, see <a href="https://publicsuffix.org/">public suffix
+     * list</a>.
+     * </p>
+     * 
+     * @param domainWithSuffix
+     *        The second and top level domain involved in the activity that potentially prompted GuardDuty to generate
+     *        this finding. For a list of top-level and second-level domains, see <a
+     *        href="https://publicsuffix.org/">public suffix list</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DnsRequestAction withDomainWithSuffix(String domainWithSuffix) {
+        setDomainWithSuffix(domainWithSuffix);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -196,7 +256,9 @@ public class DnsRequestAction implements Serializable, Cloneable, StructuredPojo
         if (getProtocol() != null)
             sb.append("Protocol: ").append(getProtocol()).append(",");
         if (getBlocked() != null)
-            sb.append("Blocked: ").append(getBlocked());
+            sb.append("Blocked: ").append(getBlocked()).append(",");
+        if (getDomainWithSuffix() != null)
+            sb.append("DomainWithSuffix: ").append(getDomainWithSuffix());
         sb.append("}");
         return sb.toString();
     }
@@ -223,6 +285,10 @@ public class DnsRequestAction implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getBlocked() != null && other.getBlocked().equals(this.getBlocked()) == false)
             return false;
+        if (other.getDomainWithSuffix() == null ^ this.getDomainWithSuffix() == null)
+            return false;
+        if (other.getDomainWithSuffix() != null && other.getDomainWithSuffix().equals(this.getDomainWithSuffix()) == false)
+            return false;
         return true;
     }
 
@@ -234,6 +300,7 @@ public class DnsRequestAction implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
         hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode());
         hashCode = prime * hashCode + ((getBlocked() == null) ? 0 : getBlocked().hashCode());
+        hashCode = prime * hashCode + ((getDomainWithSuffix() == null) ? 0 : getDomainWithSuffix().hashCode());
         return hashCode;
     }
 

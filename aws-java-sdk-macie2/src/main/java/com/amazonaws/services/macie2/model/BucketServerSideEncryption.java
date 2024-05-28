@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,31 +34,37 @@ public class BucketServerSideEncryption implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The Amazon Resource Name (ARN) or unique identifier (key ID) for the KMS key that's used by default to encrypt
-     * objects that are added to the bucket. This value is null if the bucket uses an Amazon S3 managed key to encrypt
-     * new objects or the bucket doesn't encrypt new objects by default.
+     * objects that are added to the bucket. This value is null if the bucket is configured to use an Amazon S3 managed
+     * key to encrypt new objects.
      * </p>
      */
     private String kmsMasterKeyId;
     /**
      * <p>
-     * The type of server-side encryption that's used by default when storing new objects in the bucket. Possible values
-     * are:
+     * The server-side encryption algorithm that's used by default to encrypt objects that are added to the bucket.
+     * Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * AES256 - New objects are encrypted with an Amazon S3 managed key. They use SSE-S3 encryption.
+     * AES256 - New objects use SSE-S3 encryption. They're encrypted with an Amazon S3 managed key.
      * </p>
      * </li>
      * <li>
      * <p>
-     * aws:kms - New objects are encrypted with an KMS key (kmsMasterKeyId), either an Amazon Web Services managed key
-     * or a customer managed key. They use SSE-KMS encryption.
+     * aws:kms - New objects use SSE-KMS encryption. They're encrypted with an KMS key (kmsMasterKeyId), either an
+     * Amazon Web Services managed key or a customer managed key.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NONE - New objects aren't encrypted by default. Default encryption is disabled for the bucket.
+     * aws:kms:dsse - New objects use DSSE-KMS encryption. They're encrypted with an KMS key (kmsMasterKeyId), either an
+     * Amazon Web Services managed key or a customer managed key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NONE - The bucket's default encryption settings don't specify server-side encryption behavior for new objects.
      * </p>
      * </li>
      * </ul>
@@ -68,14 +74,14 @@ public class BucketServerSideEncryption implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The Amazon Resource Name (ARN) or unique identifier (key ID) for the KMS key that's used by default to encrypt
-     * objects that are added to the bucket. This value is null if the bucket uses an Amazon S3 managed key to encrypt
-     * new objects or the bucket doesn't encrypt new objects by default.
+     * objects that are added to the bucket. This value is null if the bucket is configured to use an Amazon S3 managed
+     * key to encrypt new objects.
      * </p>
      * 
      * @param kmsMasterKeyId
      *        The Amazon Resource Name (ARN) or unique identifier (key ID) for the KMS key that's used by default to
-     *        encrypt objects that are added to the bucket. This value is null if the bucket uses an Amazon S3 managed
-     *        key to encrypt new objects or the bucket doesn't encrypt new objects by default.
+     *        encrypt objects that are added to the bucket. This value is null if the bucket is configured to use an
+     *        Amazon S3 managed key to encrypt new objects.
      */
 
     public void setKmsMasterKeyId(String kmsMasterKeyId) {
@@ -85,13 +91,13 @@ public class BucketServerSideEncryption implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The Amazon Resource Name (ARN) or unique identifier (key ID) for the KMS key that's used by default to encrypt
-     * objects that are added to the bucket. This value is null if the bucket uses an Amazon S3 managed key to encrypt
-     * new objects or the bucket doesn't encrypt new objects by default.
+     * objects that are added to the bucket. This value is null if the bucket is configured to use an Amazon S3 managed
+     * key to encrypt new objects.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) or unique identifier (key ID) for the KMS key that's used by default to
-     *         encrypt objects that are added to the bucket. This value is null if the bucket uses an Amazon S3 managed
-     *         key to encrypt new objects or the bucket doesn't encrypt new objects by default.
+     *         encrypt objects that are added to the bucket. This value is null if the bucket is configured to use an
+     *         Amazon S3 managed key to encrypt new objects.
      */
 
     public String getKmsMasterKeyId() {
@@ -101,14 +107,14 @@ public class BucketServerSideEncryption implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The Amazon Resource Name (ARN) or unique identifier (key ID) for the KMS key that's used by default to encrypt
-     * objects that are added to the bucket. This value is null if the bucket uses an Amazon S3 managed key to encrypt
-     * new objects or the bucket doesn't encrypt new objects by default.
+     * objects that are added to the bucket. This value is null if the bucket is configured to use an Amazon S3 managed
+     * key to encrypt new objects.
      * </p>
      * 
      * @param kmsMasterKeyId
      *        The Amazon Resource Name (ARN) or unique identifier (key ID) for the KMS key that's used by default to
-     *        encrypt objects that are added to the bucket. This value is null if the bucket uses an Amazon S3 managed
-     *        key to encrypt new objects or the bucket doesn't encrypt new objects by default.
+     *        encrypt objects that are added to the bucket. This value is null if the bucket is configured to use an
+     *        Amazon S3 managed key to encrypt new objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,46 +125,59 @@ public class BucketServerSideEncryption implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The type of server-side encryption that's used by default when storing new objects in the bucket. Possible values
-     * are:
+     * The server-side encryption algorithm that's used by default to encrypt objects that are added to the bucket.
+     * Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * AES256 - New objects are encrypted with an Amazon S3 managed key. They use SSE-S3 encryption.
+     * AES256 - New objects use SSE-S3 encryption. They're encrypted with an Amazon S3 managed key.
      * </p>
      * </li>
      * <li>
      * <p>
-     * aws:kms - New objects are encrypted with an KMS key (kmsMasterKeyId), either an Amazon Web Services managed key
-     * or a customer managed key. They use SSE-KMS encryption.
+     * aws:kms - New objects use SSE-KMS encryption. They're encrypted with an KMS key (kmsMasterKeyId), either an
+     * Amazon Web Services managed key or a customer managed key.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NONE - New objects aren't encrypted by default. Default encryption is disabled for the bucket.
+     * aws:kms:dsse - New objects use DSSE-KMS encryption. They're encrypted with an KMS key (kmsMasterKeyId), either an
+     * Amazon Web Services managed key or a customer managed key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NONE - The bucket's default encryption settings don't specify server-side encryption behavior for new objects.
      * </p>
      * </li>
      * </ul>
      * 
      * @param type
-     *        The type of server-side encryption that's used by default when storing new objects in the bucket. Possible
-     *        values are:</p>
+     *        The server-side encryption algorithm that's used by default to encrypt objects that are added to the
+     *        bucket. Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        AES256 - New objects are encrypted with an Amazon S3 managed key. They use SSE-S3 encryption.
+     *        AES256 - New objects use SSE-S3 encryption. They're encrypted with an Amazon S3 managed key.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        aws:kms - New objects are encrypted with an KMS key (kmsMasterKeyId), either an Amazon Web Services
-     *        managed key or a customer managed key. They use SSE-KMS encryption.
+     *        aws:kms - New objects use SSE-KMS encryption. They're encrypted with an KMS key (kmsMasterKeyId), either
+     *        an Amazon Web Services managed key or a customer managed key.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        NONE - New objects aren't encrypted by default. Default encryption is disabled for the bucket.
+     *        aws:kms:dsse - New objects use DSSE-KMS encryption. They're encrypted with an KMS key (kmsMasterKeyId),
+     *        either an Amazon Web Services managed key or a customer managed key.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NONE - The bucket's default encryption settings don't specify server-side encryption behavior for new
+     *        objects.
      *        </p>
      *        </li>
      * @see Type
@@ -170,45 +189,58 @@ public class BucketServerSideEncryption implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The type of server-side encryption that's used by default when storing new objects in the bucket. Possible values
-     * are:
+     * The server-side encryption algorithm that's used by default to encrypt objects that are added to the bucket.
+     * Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * AES256 - New objects are encrypted with an Amazon S3 managed key. They use SSE-S3 encryption.
+     * AES256 - New objects use SSE-S3 encryption. They're encrypted with an Amazon S3 managed key.
      * </p>
      * </li>
      * <li>
      * <p>
-     * aws:kms - New objects are encrypted with an KMS key (kmsMasterKeyId), either an Amazon Web Services managed key
-     * or a customer managed key. They use SSE-KMS encryption.
+     * aws:kms - New objects use SSE-KMS encryption. They're encrypted with an KMS key (kmsMasterKeyId), either an
+     * Amazon Web Services managed key or a customer managed key.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NONE - New objects aren't encrypted by default. Default encryption is disabled for the bucket.
+     * aws:kms:dsse - New objects use DSSE-KMS encryption. They're encrypted with an KMS key (kmsMasterKeyId), either an
+     * Amazon Web Services managed key or a customer managed key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NONE - The bucket's default encryption settings don't specify server-side encryption behavior for new objects.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The type of server-side encryption that's used by default when storing new objects in the bucket.
-     *         Possible values are:</p>
+     * @return The server-side encryption algorithm that's used by default to encrypt objects that are added to the
+     *         bucket. Possible values are:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         AES256 - New objects are encrypted with an Amazon S3 managed key. They use SSE-S3 encryption.
+     *         AES256 - New objects use SSE-S3 encryption. They're encrypted with an Amazon S3 managed key.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         aws:kms - New objects are encrypted with an KMS key (kmsMasterKeyId), either an Amazon Web Services
-     *         managed key or a customer managed key. They use SSE-KMS encryption.
+     *         aws:kms - New objects use SSE-KMS encryption. They're encrypted with an KMS key (kmsMasterKeyId), either
+     *         an Amazon Web Services managed key or a customer managed key.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         NONE - New objects aren't encrypted by default. Default encryption is disabled for the bucket.
+     *         aws:kms:dsse - New objects use DSSE-KMS encryption. They're encrypted with an KMS key (kmsMasterKeyId),
+     *         either an Amazon Web Services managed key or a customer managed key.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         NONE - The bucket's default encryption settings don't specify server-side encryption behavior for new
+     *         objects.
      *         </p>
      *         </li>
      * @see Type
@@ -220,46 +252,59 @@ public class BucketServerSideEncryption implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The type of server-side encryption that's used by default when storing new objects in the bucket. Possible values
-     * are:
+     * The server-side encryption algorithm that's used by default to encrypt objects that are added to the bucket.
+     * Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * AES256 - New objects are encrypted with an Amazon S3 managed key. They use SSE-S3 encryption.
+     * AES256 - New objects use SSE-S3 encryption. They're encrypted with an Amazon S3 managed key.
      * </p>
      * </li>
      * <li>
      * <p>
-     * aws:kms - New objects are encrypted with an KMS key (kmsMasterKeyId), either an Amazon Web Services managed key
-     * or a customer managed key. They use SSE-KMS encryption.
+     * aws:kms - New objects use SSE-KMS encryption. They're encrypted with an KMS key (kmsMasterKeyId), either an
+     * Amazon Web Services managed key or a customer managed key.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NONE - New objects aren't encrypted by default. Default encryption is disabled for the bucket.
+     * aws:kms:dsse - New objects use DSSE-KMS encryption. They're encrypted with an KMS key (kmsMasterKeyId), either an
+     * Amazon Web Services managed key or a customer managed key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NONE - The bucket's default encryption settings don't specify server-side encryption behavior for new objects.
      * </p>
      * </li>
      * </ul>
      * 
      * @param type
-     *        The type of server-side encryption that's used by default when storing new objects in the bucket. Possible
-     *        values are:</p>
+     *        The server-side encryption algorithm that's used by default to encrypt objects that are added to the
+     *        bucket. Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        AES256 - New objects are encrypted with an Amazon S3 managed key. They use SSE-S3 encryption.
+     *        AES256 - New objects use SSE-S3 encryption. They're encrypted with an Amazon S3 managed key.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        aws:kms - New objects are encrypted with an KMS key (kmsMasterKeyId), either an Amazon Web Services
-     *        managed key or a customer managed key. They use SSE-KMS encryption.
+     *        aws:kms - New objects use SSE-KMS encryption. They're encrypted with an KMS key (kmsMasterKeyId), either
+     *        an Amazon Web Services managed key or a customer managed key.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        NONE - New objects aren't encrypted by default. Default encryption is disabled for the bucket.
+     *        aws:kms:dsse - New objects use DSSE-KMS encryption. They're encrypted with an KMS key (kmsMasterKeyId),
+     *        either an Amazon Web Services managed key or a customer managed key.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NONE - The bucket's default encryption settings don't specify server-side encryption behavior for new
+     *        objects.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -273,46 +318,59 @@ public class BucketServerSideEncryption implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The type of server-side encryption that's used by default when storing new objects in the bucket. Possible values
-     * are:
+     * The server-side encryption algorithm that's used by default to encrypt objects that are added to the bucket.
+     * Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * AES256 - New objects are encrypted with an Amazon S3 managed key. They use SSE-S3 encryption.
+     * AES256 - New objects use SSE-S3 encryption. They're encrypted with an Amazon S3 managed key.
      * </p>
      * </li>
      * <li>
      * <p>
-     * aws:kms - New objects are encrypted with an KMS key (kmsMasterKeyId), either an Amazon Web Services managed key
-     * or a customer managed key. They use SSE-KMS encryption.
+     * aws:kms - New objects use SSE-KMS encryption. They're encrypted with an KMS key (kmsMasterKeyId), either an
+     * Amazon Web Services managed key or a customer managed key.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NONE - New objects aren't encrypted by default. Default encryption is disabled for the bucket.
+     * aws:kms:dsse - New objects use DSSE-KMS encryption. They're encrypted with an KMS key (kmsMasterKeyId), either an
+     * Amazon Web Services managed key or a customer managed key.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * NONE - The bucket's default encryption settings don't specify server-side encryption behavior for new objects.
      * </p>
      * </li>
      * </ul>
      * 
      * @param type
-     *        The type of server-side encryption that's used by default when storing new objects in the bucket. Possible
-     *        values are:</p>
+     *        The server-side encryption algorithm that's used by default to encrypt objects that are added to the
+     *        bucket. Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        AES256 - New objects are encrypted with an Amazon S3 managed key. They use SSE-S3 encryption.
+     *        AES256 - New objects use SSE-S3 encryption. They're encrypted with an Amazon S3 managed key.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        aws:kms - New objects are encrypted with an KMS key (kmsMasterKeyId), either an Amazon Web Services
-     *        managed key or a customer managed key. They use SSE-KMS encryption.
+     *        aws:kms - New objects use SSE-KMS encryption. They're encrypted with an KMS key (kmsMasterKeyId), either
+     *        an Amazon Web Services managed key or a customer managed key.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        NONE - New objects aren't encrypted by default. Default encryption is disabled for the bucket.
+     *        aws:kms:dsse - New objects use DSSE-KMS encryption. They're encrypted with an KMS key (kmsMasterKeyId),
+     *        either an Amazon Web Services managed key or a customer managed key.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NONE - The bucket's default encryption settings don't specify server-side encryption behavior for new
+     *        objects.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

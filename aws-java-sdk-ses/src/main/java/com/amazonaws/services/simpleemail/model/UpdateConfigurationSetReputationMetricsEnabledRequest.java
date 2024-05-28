@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,13 +30,13 @@ public class UpdateConfigurationSetReputationMetricsEnabledRequest extends com.a
 
     /**
      * <p>
-     * The name of the configuration set that you want to update.
+     * The name of the configuration set to update.
      * </p>
      */
     private String configurationSetName;
     /**
      * <p>
-     * Describes whether or not Amazon SES will publish reputation metrics for the configuration set, such as bounce and
+     * Describes whether or not Amazon SES publishes reputation metrics for the configuration set, such as bounce and
      * complaint rates, to Amazon CloudWatch.
      * </p>
      */
@@ -44,11 +44,11 @@ public class UpdateConfigurationSetReputationMetricsEnabledRequest extends com.a
 
     /**
      * <p>
-     * The name of the configuration set that you want to update.
+     * The name of the configuration set to update.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set that you want to update.
+     *        The name of the configuration set to update.
      */
 
     public void setConfigurationSetName(String configurationSetName) {
@@ -57,10 +57,10 @@ public class UpdateConfigurationSetReputationMetricsEnabledRequest extends com.a
 
     /**
      * <p>
-     * The name of the configuration set that you want to update.
+     * The name of the configuration set to update.
      * </p>
      * 
-     * @return The name of the configuration set that you want to update.
+     * @return The name of the configuration set to update.
      */
 
     public String getConfigurationSetName() {
@@ -69,11 +69,11 @@ public class UpdateConfigurationSetReputationMetricsEnabledRequest extends com.a
 
     /**
      * <p>
-     * The name of the configuration set that you want to update.
+     * The name of the configuration set to update.
      * </p>
      * 
      * @param configurationSetName
-     *        The name of the configuration set that you want to update.
+     *        The name of the configuration set to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,13 +84,13 @@ public class UpdateConfigurationSetReputationMetricsEnabledRequest extends com.a
 
     /**
      * <p>
-     * Describes whether or not Amazon SES will publish reputation metrics for the configuration set, such as bounce and
+     * Describes whether or not Amazon SES publishes reputation metrics for the configuration set, such as bounce and
      * complaint rates, to Amazon CloudWatch.
      * </p>
      * 
      * @param enabled
-     *        Describes whether or not Amazon SES will publish reputation metrics for the configuration set, such as
-     *        bounce and complaint rates, to Amazon CloudWatch.
+     *        Describes whether or not Amazon SES publishes reputation metrics for the configuration set, such as bounce
+     *        and complaint rates, to Amazon CloudWatch.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -99,11 +99,11 @@ public class UpdateConfigurationSetReputationMetricsEnabledRequest extends com.a
 
     /**
      * <p>
-     * Describes whether or not Amazon SES will publish reputation metrics for the configuration set, such as bounce and
+     * Describes whether or not Amazon SES publishes reputation metrics for the configuration set, such as bounce and
      * complaint rates, to Amazon CloudWatch.
      * </p>
      * 
-     * @return Describes whether or not Amazon SES will publish reputation metrics for the configuration set, such as
+     * @return Describes whether or not Amazon SES publishes reputation metrics for the configuration set, such as
      *         bounce and complaint rates, to Amazon CloudWatch.
      */
 
@@ -113,13 +113,13 @@ public class UpdateConfigurationSetReputationMetricsEnabledRequest extends com.a
 
     /**
      * <p>
-     * Describes whether or not Amazon SES will publish reputation metrics for the configuration set, such as bounce and
+     * Describes whether or not Amazon SES publishes reputation metrics for the configuration set, such as bounce and
      * complaint rates, to Amazon CloudWatch.
      * </p>
      * 
      * @param enabled
-     *        Describes whether or not Amazon SES will publish reputation metrics for the configuration set, such as
-     *        bounce and complaint rates, to Amazon CloudWatch.
+     *        Describes whether or not Amazon SES publishes reputation metrics for the configuration set, such as bounce
+     *        and complaint rates, to Amazon CloudWatch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,11 +130,11 @@ public class UpdateConfigurationSetReputationMetricsEnabledRequest extends com.a
 
     /**
      * <p>
-     * Describes whether or not Amazon SES will publish reputation metrics for the configuration set, such as bounce and
+     * Describes whether or not Amazon SES publishes reputation metrics for the configuration set, such as bounce and
      * complaint rates, to Amazon CloudWatch.
      * </p>
      * 
-     * @return Describes whether or not Amazon SES will publish reputation metrics for the configuration set, such as
+     * @return Describes whether or not Amazon SES publishes reputation metrics for the configuration set, such as
      *         bounce and complaint rates, to Amazon CloudWatch.
      */
 

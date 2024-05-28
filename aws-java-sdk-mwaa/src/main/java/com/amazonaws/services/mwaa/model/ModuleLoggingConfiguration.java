@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,15 +30,6 @@ public class ModuleLoggingConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the CloudWatch Logs group where the Apache Airflow log type (e.g.
-     * <code>DagProcessingLogs</code>) is published. For example,
-     * <code>arn:aws:logs:us-east-1:123456789012:log-group:airflow-MyMWAAEnvironment-MwaaEnvironment-DAGProcessing:*</code>
-     * .
-     * </p>
-     */
-    private String cloudWatchLogGroupArn;
-    /**
-     * <p>
      * Indicates whether the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) is enabled.
      * </p>
      */
@@ -49,7 +40,6 @@ public class ModuleLoggingConfiguration implements Serializable, Cloneable, Stru
      * </p>
      */
     private String logLevel;
-
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the CloudWatch Logs group where the Apache Airflow log type (e.g.
@@ -57,56 +47,8 @@ public class ModuleLoggingConfiguration implements Serializable, Cloneable, Stru
      * <code>arn:aws:logs:us-east-1:123456789012:log-group:airflow-MyMWAAEnvironment-MwaaEnvironment-DAGProcessing:*</code>
      * .
      * </p>
-     * 
-     * @param cloudWatchLogGroupArn
-     *        The Amazon Resource Name (ARN) for the CloudWatch Logs group where the Apache Airflow log type (e.g.
-     *        <code>DagProcessingLogs</code>) is published. For example,
-     *        <code>arn:aws:logs:us-east-1:123456789012:log-group:airflow-MyMWAAEnvironment-MwaaEnvironment-DAGProcessing:*</code>
-     *        .
      */
-
-    public void setCloudWatchLogGroupArn(String cloudWatchLogGroupArn) {
-        this.cloudWatchLogGroupArn = cloudWatchLogGroupArn;
-    }
-
-    /**
-     * <p>
-     * The Amazon Resource Name (ARN) for the CloudWatch Logs group where the Apache Airflow log type (e.g.
-     * <code>DagProcessingLogs</code>) is published. For example,
-     * <code>arn:aws:logs:us-east-1:123456789012:log-group:airflow-MyMWAAEnvironment-MwaaEnvironment-DAGProcessing:*</code>
-     * .
-     * </p>
-     * 
-     * @return The Amazon Resource Name (ARN) for the CloudWatch Logs group where the Apache Airflow log type (e.g.
-     *         <code>DagProcessingLogs</code>) is published. For example,
-     *         <code>arn:aws:logs:us-east-1:123456789012:log-group:airflow-MyMWAAEnvironment-MwaaEnvironment-DAGProcessing:*</code>
-     *         .
-     */
-
-    public String getCloudWatchLogGroupArn() {
-        return this.cloudWatchLogGroupArn;
-    }
-
-    /**
-     * <p>
-     * The Amazon Resource Name (ARN) for the CloudWatch Logs group where the Apache Airflow log type (e.g.
-     * <code>DagProcessingLogs</code>) is published. For example,
-     * <code>arn:aws:logs:us-east-1:123456789012:log-group:airflow-MyMWAAEnvironment-MwaaEnvironment-DAGProcessing:*</code>
-     * .
-     * </p>
-     * 
-     * @param cloudWatchLogGroupArn
-     *        The Amazon Resource Name (ARN) for the CloudWatch Logs group where the Apache Airflow log type (e.g.
-     *        <code>DagProcessingLogs</code>) is published. For example,
-     *        <code>arn:aws:logs:us-east-1:123456789012:log-group:airflow-MyMWAAEnvironment-MwaaEnvironment-DAGProcessing:*</code>
-     *        .
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ModuleLoggingConfiguration withCloudWatchLogGroupArn(String cloudWatchLogGroupArn) {
-        setCloudWatchLogGroupArn(cloudWatchLogGroupArn);
-        return this;
-    }
+    private String cloudWatchLogGroupArn;
 
     /**
      * <p>
@@ -220,6 +162,64 @@ public class ModuleLoggingConfiguration implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the CloudWatch Logs group where the Apache Airflow log type (e.g.
+     * <code>DagProcessingLogs</code>) is published. For example,
+     * <code>arn:aws:logs:us-east-1:123456789012:log-group:airflow-MyMWAAEnvironment-MwaaEnvironment-DAGProcessing:*</code>
+     * .
+     * </p>
+     * 
+     * @param cloudWatchLogGroupArn
+     *        The Amazon Resource Name (ARN) for the CloudWatch Logs group where the Apache Airflow log type (e.g.
+     *        <code>DagProcessingLogs</code>) is published. For example,
+     *        <code>arn:aws:logs:us-east-1:123456789012:log-group:airflow-MyMWAAEnvironment-MwaaEnvironment-DAGProcessing:*</code>
+     *        .
+     */
+
+    public void setCloudWatchLogGroupArn(String cloudWatchLogGroupArn) {
+        this.cloudWatchLogGroupArn = cloudWatchLogGroupArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the CloudWatch Logs group where the Apache Airflow log type (e.g.
+     * <code>DagProcessingLogs</code>) is published. For example,
+     * <code>arn:aws:logs:us-east-1:123456789012:log-group:airflow-MyMWAAEnvironment-MwaaEnvironment-DAGProcessing:*</code>
+     * .
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the CloudWatch Logs group where the Apache Airflow log type (e.g.
+     *         <code>DagProcessingLogs</code>) is published. For example,
+     *         <code>arn:aws:logs:us-east-1:123456789012:log-group:airflow-MyMWAAEnvironment-MwaaEnvironment-DAGProcessing:*</code>
+     *         .
+     */
+
+    public String getCloudWatchLogGroupArn() {
+        return this.cloudWatchLogGroupArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the CloudWatch Logs group where the Apache Airflow log type (e.g.
+     * <code>DagProcessingLogs</code>) is published. For example,
+     * <code>arn:aws:logs:us-east-1:123456789012:log-group:airflow-MyMWAAEnvironment-MwaaEnvironment-DAGProcessing:*</code>
+     * .
+     * </p>
+     * 
+     * @param cloudWatchLogGroupArn
+     *        The Amazon Resource Name (ARN) for the CloudWatch Logs group where the Apache Airflow log type (e.g.
+     *        <code>DagProcessingLogs</code>) is published. For example,
+     *        <code>arn:aws:logs:us-east-1:123456789012:log-group:airflow-MyMWAAEnvironment-MwaaEnvironment-DAGProcessing:*</code>
+     *        .
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModuleLoggingConfiguration withCloudWatchLogGroupArn(String cloudWatchLogGroupArn) {
+        setCloudWatchLogGroupArn(cloudWatchLogGroupArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -231,12 +231,12 @@ public class ModuleLoggingConfiguration implements Serializable, Cloneable, Stru
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCloudWatchLogGroupArn() != null)
-            sb.append("CloudWatchLogGroupArn: ").append(getCloudWatchLogGroupArn()).append(",");
         if (getEnabled() != null)
             sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getLogLevel() != null)
-            sb.append("LogLevel: ").append(getLogLevel());
+            sb.append("LogLevel: ").append(getLogLevel()).append(",");
+        if (getCloudWatchLogGroupArn() != null)
+            sb.append("CloudWatchLogGroupArn: ").append(getCloudWatchLogGroupArn());
         sb.append("}");
         return sb.toString();
     }
@@ -251,10 +251,6 @@ public class ModuleLoggingConfiguration implements Serializable, Cloneable, Stru
         if (obj instanceof ModuleLoggingConfiguration == false)
             return false;
         ModuleLoggingConfiguration other = (ModuleLoggingConfiguration) obj;
-        if (other.getCloudWatchLogGroupArn() == null ^ this.getCloudWatchLogGroupArn() == null)
-            return false;
-        if (other.getCloudWatchLogGroupArn() != null && other.getCloudWatchLogGroupArn().equals(this.getCloudWatchLogGroupArn()) == false)
-            return false;
         if (other.getEnabled() == null ^ this.getEnabled() == null)
             return false;
         if (other.getEnabled() != null && other.getEnabled().equals(this.getEnabled()) == false)
@@ -262,6 +258,10 @@ public class ModuleLoggingConfiguration implements Serializable, Cloneable, Stru
         if (other.getLogLevel() == null ^ this.getLogLevel() == null)
             return false;
         if (other.getLogLevel() != null && other.getLogLevel().equals(this.getLogLevel()) == false)
+            return false;
+        if (other.getCloudWatchLogGroupArn() == null ^ this.getCloudWatchLogGroupArn() == null)
+            return false;
+        if (other.getCloudWatchLogGroupArn() != null && other.getCloudWatchLogGroupArn().equals(this.getCloudWatchLogGroupArn()) == false)
             return false;
         return true;
     }
@@ -271,9 +271,9 @@ public class ModuleLoggingConfiguration implements Serializable, Cloneable, Stru
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getCloudWatchLogGroupArn() == null) ? 0 : getCloudWatchLogGroupArn().hashCode());
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
         hashCode = prime * hashCode + ((getLogLevel() == null) ? 0 : getLogLevel().hashCode());
+        hashCode = prime * hashCode + ((getCloudWatchLogGroupArn() == null) ? 0 : getCloudWatchLogGroupArn().hashCode());
         return hashCode;
     }
 

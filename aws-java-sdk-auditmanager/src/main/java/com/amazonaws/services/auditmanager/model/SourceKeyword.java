@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The keyword to search for in CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names.
+ * A keyword that relates to the control data source.
+ * </p>
+ * <p>
+ * For manual evidence, this keyword indicates if the manual evidence is a file or text.
+ * </p>
+ * <p>
+ * For automated evidence, this keyword identifies a specific CloudTrail event, Config rule, Security Hub control, or
+ * Amazon Web Services API name.
  * </p>
  * <p>
  * To learn more about the supported keywords that you can use when mapping a control data source, see the following
@@ -28,13 +35,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <ul>
  * <li>
  * <p>
- * <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">Config rules
+ * <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-config.html">Config rules
  * supported by Audit Manager</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-config.html">Security Hub
+ * <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">Security Hub
  * controls supported by Audit Manager</a>
  * </p>
  * </li>
@@ -62,6 +69,40 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The input method for the keyword.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SELECT_FROM_LIST</code> is used when mapping a data source for automated evidence.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When <code>keywordInputType</code> is <code>SELECT_FROM_LIST</code>, a keyword must be selected to collect
+     * automated evidence. For example, this keyword can be a CloudTrail event name, a rule name for Config, a Security
+     * Hub control, or the name of an Amazon Web Services API call.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPLOAD_FILE</code> and <code>INPUT_TEXT</code> are only used when mapping a data source for manual
+     * evidence.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When <code>keywordInputType</code> is <code>UPLOAD_FILE</code>, a file must be uploaded as manual evidence.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When <code>keywordInputType</code> is <code>INPUT_TEXT</code>, text must be entered as manual evidence.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      */
     private String keywordInputType;
     /**
@@ -80,7 +121,12 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">managed
      * rules</a>, you can use the rule identifier as the <code>keywordValue</code>. You can find the rule identifier
      * from the <a href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">list
-     * of Config managed rules</a>.
+     * of Config managed rules</a>. For some rules, the rule identifier is different from the rule name. For example,
+     * the rule name <code>restricted-ssh</code> has the following rule identifier: <code>INCOMING_SSH_DISABLED</code>.
+     * Make sure to use the rule identifier, not the rule name.
+     * </p>
+     * <p>
+     * Keyword example for managed rules:
      * </p>
      * <ul>
      * <li>
@@ -99,7 +145,10 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">custom
      * rules</a>, you form the <code>keywordValue</code> by adding the <code>Custom_</code> prefix to the rule name.
-     * This prefix distinguishes the rule from a managed rule.
+     * This prefix distinguishes the custom rule from a managed rule.
+     * </p>
+     * <p>
+     * Keyword example for custom rules:
      * </p>
      * <ul>
      * <li>
@@ -119,6 +168,9 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      * -linked rules</a>, you form the <code>keywordValue</code> by adding the <code>Custom_</code> prefix to the rule
      * name. In addition, you remove the suffix ID that appears at the end of the rule name.
      * </p>
+     * <p>
+     * Keyword examples for service-linked rules:
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -126,14 +178,6 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * <code>keywordValue</code>: <code>Custom_CustomRuleForAccount-conformance-pack</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Service-linked rule name: securityhub-api-gw-cache-encrypted-101104e1
-     * </p>
-     * <p>
-     * <code>keywordValue</code>: <code>Custom_securityhub-api-gw-cache-encrypted</code>
      * </p>
      * </li>
      * <li>
@@ -147,6 +191,67 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * </li>
      * </ul>
+     * <important>
+     * <p>
+     * The <code>keywordValue</code> is case sensitive. If you enter a value incorrectly, Audit Manager might not
+     * recognize the data source mapping. As a result, you might not successfully collect evidence from that data source
+     * as intended.
+     * </p>
+     * <p>
+     * Keep in mind the following requirements, depending on the data source type that you're using.
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * For Config:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For managed rules, make sure that the <code>keywordValue</code> is the rule identifier in
+     * <code>ALL_CAPS_WITH_UNDERSCORES</code>. For example, <code>CLOUDWATCH_LOG_GROUP_ENCRYPTED</code>. For accuracy,
+     * we recommend that you reference the list of <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-config.html">supported
+     * Config managed rules</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For custom rules, make sure that the <code>keywordValue</code> has the <code>Custom_</code> prefix followed by
+     * the custom rule name. The format of the custom rule name itself may vary. For accuracy, we recommend that you
+     * visit the <a href="https://console.aws.amazon.com/config/">Config console</a> to verify your custom rule name.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * For Security Hub: The format varies for Security Hub control names. For accuracy, we recommend that you reference
+     * the list of <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">supported
+     * Security Hub controls</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon Web Services API calls: Make sure that the <code>keywordValue</code> is written as
+     * <code>serviceprefix_ActionName</code>. For example, <code>iam_ListGroups</code>. For accuracy, we recommend that
+     * you reference the list of <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-api.html">supported API
+     * calls</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For CloudTrail: Make sure that the <code>keywordValue</code> is written as <code>serviceprefix_ActionName</code>.
+     * For example, <code>cloudtrail_StartLogging</code>. For accuracy, we recommend that you review the Amazon Web
+     * Service prefix and action names in the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html"
+     * >Service Authorization Reference</a>.
+     * </p>
+     * </li>
+     * </ol>
+     * </important>
      */
     private String keywordValue;
 
@@ -154,9 +259,77 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The input method for the keyword.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SELECT_FROM_LIST</code> is used when mapping a data source for automated evidence.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When <code>keywordInputType</code> is <code>SELECT_FROM_LIST</code>, a keyword must be selected to collect
+     * automated evidence. For example, this keyword can be a CloudTrail event name, a rule name for Config, a Security
+     * Hub control, or the name of an Amazon Web Services API call.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPLOAD_FILE</code> and <code>INPUT_TEXT</code> are only used when mapping a data source for manual
+     * evidence.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When <code>keywordInputType</code> is <code>UPLOAD_FILE</code>, a file must be uploaded as manual evidence.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When <code>keywordInputType</code> is <code>INPUT_TEXT</code>, text must be entered as manual evidence.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @param keywordInputType
-     *        The input method for the keyword.
+     *        The input method for the keyword. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>SELECT_FROM_LIST</code> is used when mapping a data source for automated evidence.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        When <code>keywordInputType</code> is <code>SELECT_FROM_LIST</code>, a keyword must be selected to collect
+     *        automated evidence. For example, this keyword can be a CloudTrail event name, a rule name for Config, a
+     *        Security Hub control, or the name of an Amazon Web Services API call.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPLOAD_FILE</code> and <code>INPUT_TEXT</code> are only used when mapping a data source for manual
+     *        evidence.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        When <code>keywordInputType</code> is <code>UPLOAD_FILE</code>, a file must be uploaded as manual
+     *        evidence.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When <code>keywordInputType</code> is <code>INPUT_TEXT</code>, text must be entered as manual evidence.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
      * @see KeywordInputType
      */
 
@@ -168,8 +341,76 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The input method for the keyword.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SELECT_FROM_LIST</code> is used when mapping a data source for automated evidence.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When <code>keywordInputType</code> is <code>SELECT_FROM_LIST</code>, a keyword must be selected to collect
+     * automated evidence. For example, this keyword can be a CloudTrail event name, a rule name for Config, a Security
+     * Hub control, or the name of an Amazon Web Services API call.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPLOAD_FILE</code> and <code>INPUT_TEXT</code> are only used when mapping a data source for manual
+     * evidence.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When <code>keywordInputType</code> is <code>UPLOAD_FILE</code>, a file must be uploaded as manual evidence.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When <code>keywordInputType</code> is <code>INPUT_TEXT</code>, text must be entered as manual evidence.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
-     * @return The input method for the keyword.
+     * @return The input method for the keyword. </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>SELECT_FROM_LIST</code> is used when mapping a data source for automated evidence.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         When <code>keywordInputType</code> is <code>SELECT_FROM_LIST</code>, a keyword must be selected to
+     *         collect automated evidence. For example, this keyword can be a CloudTrail event name, a rule name for
+     *         Config, a Security Hub control, or the name of an Amazon Web Services API call.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UPLOAD_FILE</code> and <code>INPUT_TEXT</code> are only used when mapping a data source for manual
+     *         evidence.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         When <code>keywordInputType</code> is <code>UPLOAD_FILE</code>, a file must be uploaded as manual
+     *         evidence.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         When <code>keywordInputType</code> is <code>INPUT_TEXT</code>, text must be entered as manual evidence.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
      * @see KeywordInputType
      */
 
@@ -181,9 +422,77 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The input method for the keyword.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SELECT_FROM_LIST</code> is used when mapping a data source for automated evidence.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When <code>keywordInputType</code> is <code>SELECT_FROM_LIST</code>, a keyword must be selected to collect
+     * automated evidence. For example, this keyword can be a CloudTrail event name, a rule name for Config, a Security
+     * Hub control, or the name of an Amazon Web Services API call.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPLOAD_FILE</code> and <code>INPUT_TEXT</code> are only used when mapping a data source for manual
+     * evidence.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When <code>keywordInputType</code> is <code>UPLOAD_FILE</code>, a file must be uploaded as manual evidence.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When <code>keywordInputType</code> is <code>INPUT_TEXT</code>, text must be entered as manual evidence.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @param keywordInputType
-     *        The input method for the keyword.
+     *        The input method for the keyword. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>SELECT_FROM_LIST</code> is used when mapping a data source for automated evidence.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        When <code>keywordInputType</code> is <code>SELECT_FROM_LIST</code>, a keyword must be selected to collect
+     *        automated evidence. For example, this keyword can be a CloudTrail event name, a rule name for Config, a
+     *        Security Hub control, or the name of an Amazon Web Services API call.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPLOAD_FILE</code> and <code>INPUT_TEXT</code> are only used when mapping a data source for manual
+     *        evidence.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        When <code>keywordInputType</code> is <code>UPLOAD_FILE</code>, a file must be uploaded as manual
+     *        evidence.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When <code>keywordInputType</code> is <code>INPUT_TEXT</code>, text must be entered as manual evidence.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeywordInputType
      */
@@ -197,9 +506,77 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The input method for the keyword.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SELECT_FROM_LIST</code> is used when mapping a data source for automated evidence.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When <code>keywordInputType</code> is <code>SELECT_FROM_LIST</code>, a keyword must be selected to collect
+     * automated evidence. For example, this keyword can be a CloudTrail event name, a rule name for Config, a Security
+     * Hub control, or the name of an Amazon Web Services API call.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPLOAD_FILE</code> and <code>INPUT_TEXT</code> are only used when mapping a data source for manual
+     * evidence.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When <code>keywordInputType</code> is <code>UPLOAD_FILE</code>, a file must be uploaded as manual evidence.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When <code>keywordInputType</code> is <code>INPUT_TEXT</code>, text must be entered as manual evidence.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @param keywordInputType
-     *        The input method for the keyword.
+     *        The input method for the keyword. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>SELECT_FROM_LIST</code> is used when mapping a data source for automated evidence.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        When <code>keywordInputType</code> is <code>SELECT_FROM_LIST</code>, a keyword must be selected to collect
+     *        automated evidence. For example, this keyword can be a CloudTrail event name, a rule name for Config, a
+     *        Security Hub control, or the name of an Amazon Web Services API call.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPLOAD_FILE</code> and <code>INPUT_TEXT</code> are only used when mapping a data source for manual
+     *        evidence.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        When <code>keywordInputType</code> is <code>UPLOAD_FILE</code>, a file must be uploaded as manual
+     *        evidence.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When <code>keywordInputType</code> is <code>INPUT_TEXT</code>, text must be entered as manual evidence.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeywordInputType
      */
@@ -225,7 +602,12 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">managed
      * rules</a>, you can use the rule identifier as the <code>keywordValue</code>. You can find the rule identifier
      * from the <a href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">list
-     * of Config managed rules</a>.
+     * of Config managed rules</a>. For some rules, the rule identifier is different from the rule name. For example,
+     * the rule name <code>restricted-ssh</code> has the following rule identifier: <code>INCOMING_SSH_DISABLED</code>.
+     * Make sure to use the rule identifier, not the rule name.
+     * </p>
+     * <p>
+     * Keyword example for managed rules:
      * </p>
      * <ul>
      * <li>
@@ -244,7 +626,10 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">custom
      * rules</a>, you form the <code>keywordValue</code> by adding the <code>Custom_</code> prefix to the rule name.
-     * This prefix distinguishes the rule from a managed rule.
+     * This prefix distinguishes the custom rule from a managed rule.
+     * </p>
+     * <p>
+     * Keyword example for custom rules:
      * </p>
      * <ul>
      * <li>
@@ -264,6 +649,9 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      * -linked rules</a>, you form the <code>keywordValue</code> by adding the <code>Custom_</code> prefix to the rule
      * name. In addition, you remove the suffix ID that appears at the end of the rule name.
      * </p>
+     * <p>
+     * Keyword examples for service-linked rules:
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -271,14 +659,6 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * <code>keywordValue</code>: <code>Custom_CustomRuleForAccount-conformance-pack</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Service-linked rule name: securityhub-api-gw-cache-encrypted-101104e1
-     * </p>
-     * <p>
-     * <code>keywordValue</code>: <code>Custom_securityhub-api-gw-cache-encrypted</code>
      * </p>
      * </li>
      * <li>
@@ -292,6 +672,67 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * </li>
      * </ul>
+     * <important>
+     * <p>
+     * The <code>keywordValue</code> is case sensitive. If you enter a value incorrectly, Audit Manager might not
+     * recognize the data source mapping. As a result, you might not successfully collect evidence from that data source
+     * as intended.
+     * </p>
+     * <p>
+     * Keep in mind the following requirements, depending on the data source type that you're using.
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * For Config:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For managed rules, make sure that the <code>keywordValue</code> is the rule identifier in
+     * <code>ALL_CAPS_WITH_UNDERSCORES</code>. For example, <code>CLOUDWATCH_LOG_GROUP_ENCRYPTED</code>. For accuracy,
+     * we recommend that you reference the list of <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-config.html">supported
+     * Config managed rules</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For custom rules, make sure that the <code>keywordValue</code> has the <code>Custom_</code> prefix followed by
+     * the custom rule name. The format of the custom rule name itself may vary. For accuracy, we recommend that you
+     * visit the <a href="https://console.aws.amazon.com/config/">Config console</a> to verify your custom rule name.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * For Security Hub: The format varies for Security Hub control names. For accuracy, we recommend that you reference
+     * the list of <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">supported
+     * Security Hub controls</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon Web Services API calls: Make sure that the <code>keywordValue</code> is written as
+     * <code>serviceprefix_ActionName</code>. For example, <code>iam_ListGroups</code>. For accuracy, we recommend that
+     * you reference the list of <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-api.html">supported API
+     * calls</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For CloudTrail: Make sure that the <code>keywordValue</code> is written as <code>serviceprefix_ActionName</code>.
+     * For example, <code>cloudtrail_StartLogging</code>. For accuracy, we recommend that you review the Amazon Web
+     * Service prefix and action names in the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html"
+     * >Service Authorization Reference</a>.
+     * </p>
+     * </li>
+     * </ol>
+     * </important>
      * 
      * @param keywordValue
      *        The value of the keyword that's used when mapping a control data source. For example, this can be a
@@ -309,7 +750,12 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      *        >managed rules</a>, you can use the rule identifier as the <code>keywordValue</code>. You can find the
      *        rule identifier from the <a
      *        href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">list of
-     *        Config managed rules</a>.
+     *        Config managed rules</a>. For some rules, the rule identifier is different from the rule name. For
+     *        example, the rule name <code>restricted-ssh</code> has the following rule identifier:
+     *        <code>INCOMING_SSH_DISABLED</code>. Make sure to use the rule identifier, not the rule name.
+     *        </p>
+     *        <p>
+     *        Keyword example for managed rules:
      *        </p>
      *        <ul>
      *        <li>
@@ -328,7 +774,10 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        For <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">
      *        custom rules</a>, you form the <code>keywordValue</code> by adding the <code>Custom_</code> prefix to the
-     *        rule name. This prefix distinguishes the rule from a managed rule.
+     *        rule name. This prefix distinguishes the custom rule from a managed rule.
+     *        </p>
+     *        <p>
+     *        Keyword example for custom rules:
      *        </p>
      *        <ul>
      *        <li>
@@ -348,6 +797,9 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      *        service-linked rules</a>, you form the <code>keywordValue</code> by adding the <code>Custom_</code> prefix
      *        to the rule name. In addition, you remove the suffix ID that appears at the end of the rule name.
      *        </p>
+     *        <p>
+     *        Keyword examples for service-linked rules:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -355,14 +807,6 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        <code>keywordValue</code>: <code>Custom_CustomRuleForAccount-conformance-pack</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Service-linked rule name: securityhub-api-gw-cache-encrypted-101104e1
-     *        </p>
-     *        <p>
-     *        <code>keywordValue</code>: <code>Custom_securityhub-api-gw-cache-encrypted</code>
      *        </p>
      *        </li>
      *        <li>
@@ -375,6 +819,68 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        </li>
+     *        </ul>
+     *        <important>
+     *        <p>
+     *        The <code>keywordValue</code> is case sensitive. If you enter a value incorrectly, Audit Manager might not
+     *        recognize the data source mapping. As a result, you might not successfully collect evidence from that data
+     *        source as intended.
+     *        </p>
+     *        <p>
+     *        Keep in mind the following requirements, depending on the data source type that you're using.
+     *        </p>
+     *        <ol>
+     *        <li>
+     *        <p>
+     *        For Config:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For managed rules, make sure that the <code>keywordValue</code> is the rule identifier in
+     *        <code>ALL_CAPS_WITH_UNDERSCORES</code>. For example, <code>CLOUDWATCH_LOG_GROUP_ENCRYPTED</code>. For
+     *        accuracy, we recommend that you reference the list of <a
+     *        href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-config.html"
+     *        >supported Config managed rules</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For custom rules, make sure that the <code>keywordValue</code> has the <code>Custom_</code> prefix
+     *        followed by the custom rule name. The format of the custom rule name itself may vary. For accuracy, we
+     *        recommend that you visit the <a href="https://console.aws.amazon.com/config/">Config console</a> to verify
+     *        your custom rule name.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For Security Hub: The format varies for Security Hub control names. For accuracy, we recommend that you
+     *        reference the list of <a
+     *        href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">supported
+     *        Security Hub controls</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For Amazon Web Services API calls: Make sure that the <code>keywordValue</code> is written as
+     *        <code>serviceprefix_ActionName</code>. For example, <code>iam_ListGroups</code>. For accuracy, we
+     *        recommend that you reference the list of <a
+     *        href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-api.html">supported
+     *        API calls</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For CloudTrail: Make sure that the <code>keywordValue</code> is written as
+     *        <code>serviceprefix_ActionName</code>. For example, <code>cloudtrail_StartLogging</code>. For accuracy, we
+     *        recommend that you review the Amazon Web Service prefix and action names in the <a href=
+     *        "https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html"
+     *        >Service Authorization Reference</a>.
+     *        </p>
+     *        </li>
+     *        </ol>
      */
 
     public void setKeywordValue(String keywordValue) {
@@ -397,7 +903,12 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">managed
      * rules</a>, you can use the rule identifier as the <code>keywordValue</code>. You can find the rule identifier
      * from the <a href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">list
-     * of Config managed rules</a>.
+     * of Config managed rules</a>. For some rules, the rule identifier is different from the rule name. For example,
+     * the rule name <code>restricted-ssh</code> has the following rule identifier: <code>INCOMING_SSH_DISABLED</code>.
+     * Make sure to use the rule identifier, not the rule name.
+     * </p>
+     * <p>
+     * Keyword example for managed rules:
      * </p>
      * <ul>
      * <li>
@@ -416,7 +927,10 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">custom
      * rules</a>, you form the <code>keywordValue</code> by adding the <code>Custom_</code> prefix to the rule name.
-     * This prefix distinguishes the rule from a managed rule.
+     * This prefix distinguishes the custom rule from a managed rule.
+     * </p>
+     * <p>
+     * Keyword example for custom rules:
      * </p>
      * <ul>
      * <li>
@@ -436,6 +950,9 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      * -linked rules</a>, you form the <code>keywordValue</code> by adding the <code>Custom_</code> prefix to the rule
      * name. In addition, you remove the suffix ID that appears at the end of the rule name.
      * </p>
+     * <p>
+     * Keyword examples for service-linked rules:
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -443,14 +960,6 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * <code>keywordValue</code>: <code>Custom_CustomRuleForAccount-conformance-pack</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Service-linked rule name: securityhub-api-gw-cache-encrypted-101104e1
-     * </p>
-     * <p>
-     * <code>keywordValue</code>: <code>Custom_securityhub-api-gw-cache-encrypted</code>
      * </p>
      * </li>
      * <li>
@@ -464,6 +973,67 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * </li>
      * </ul>
+     * <important>
+     * <p>
+     * The <code>keywordValue</code> is case sensitive. If you enter a value incorrectly, Audit Manager might not
+     * recognize the data source mapping. As a result, you might not successfully collect evidence from that data source
+     * as intended.
+     * </p>
+     * <p>
+     * Keep in mind the following requirements, depending on the data source type that you're using.
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * For Config:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For managed rules, make sure that the <code>keywordValue</code> is the rule identifier in
+     * <code>ALL_CAPS_WITH_UNDERSCORES</code>. For example, <code>CLOUDWATCH_LOG_GROUP_ENCRYPTED</code>. For accuracy,
+     * we recommend that you reference the list of <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-config.html">supported
+     * Config managed rules</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For custom rules, make sure that the <code>keywordValue</code> has the <code>Custom_</code> prefix followed by
+     * the custom rule name. The format of the custom rule name itself may vary. For accuracy, we recommend that you
+     * visit the <a href="https://console.aws.amazon.com/config/">Config console</a> to verify your custom rule name.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * For Security Hub: The format varies for Security Hub control names. For accuracy, we recommend that you reference
+     * the list of <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">supported
+     * Security Hub controls</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon Web Services API calls: Make sure that the <code>keywordValue</code> is written as
+     * <code>serviceprefix_ActionName</code>. For example, <code>iam_ListGroups</code>. For accuracy, we recommend that
+     * you reference the list of <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-api.html">supported API
+     * calls</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For CloudTrail: Make sure that the <code>keywordValue</code> is written as <code>serviceprefix_ActionName</code>.
+     * For example, <code>cloudtrail_StartLogging</code>. For accuracy, we recommend that you review the Amazon Web
+     * Service prefix and action names in the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html"
+     * >Service Authorization Reference</a>.
+     * </p>
+     * </li>
+     * </ol>
+     * </important>
      * 
      * @return The value of the keyword that's used when mapping a control data source. For example, this can be a
      *         CloudTrail event name, a rule name for Config, a Security Hub control, or the name of an Amazon Web
@@ -480,7 +1050,12 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      *         >managed rules</a>, you can use the rule identifier as the <code>keywordValue</code>. You can find the
      *         rule identifier from the <a
      *         href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">list of
-     *         Config managed rules</a>.
+     *         Config managed rules</a>. For some rules, the rule identifier is different from the rule name. For
+     *         example, the rule name <code>restricted-ssh</code> has the following rule identifier:
+     *         <code>INCOMING_SSH_DISABLED</code>. Make sure to use the rule identifier, not the rule name.
+     *         </p>
+     *         <p>
+     *         Keyword example for managed rules:
      *         </p>
      *         <ul>
      *         <li>
@@ -500,7 +1075,10 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      *         For <a
      *         href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">custom
      *         rules</a>, you form the <code>keywordValue</code> by adding the <code>Custom_</code> prefix to the rule
-     *         name. This prefix distinguishes the rule from a managed rule.
+     *         name. This prefix distinguishes the custom rule from a managed rule.
+     *         </p>
+     *         <p>
+     *         Keyword example for custom rules:
      *         </p>
      *         <ul>
      *         <li>
@@ -520,6 +1098,9 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      *         >service-linked rules</a>, you form the <code>keywordValue</code> by adding the <code>Custom_</code>
      *         prefix to the rule name. In addition, you remove the suffix ID that appears at the end of the rule name.
      *         </p>
+     *         <p>
+     *         Keyword examples for service-linked rules:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -527,14 +1108,6 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <p>
      *         <code>keywordValue</code>: <code>Custom_CustomRuleForAccount-conformance-pack</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Service-linked rule name: securityhub-api-gw-cache-encrypted-101104e1
-     *         </p>
-     *         <p>
-     *         <code>keywordValue</code>: <code>Custom_securityhub-api-gw-cache-encrypted</code>
      *         </p>
      *         </li>
      *         <li>
@@ -547,6 +1120,68 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         </ul>
      *         </li>
+     *         </ul>
+     *         <important>
+     *         <p>
+     *         The <code>keywordValue</code> is case sensitive. If you enter a value incorrectly, Audit Manager might
+     *         not recognize the data source mapping. As a result, you might not successfully collect evidence from that
+     *         data source as intended.
+     *         </p>
+     *         <p>
+     *         Keep in mind the following requirements, depending on the data source type that you're using.
+     *         </p>
+     *         <ol>
+     *         <li>
+     *         <p>
+     *         For Config:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For managed rules, make sure that the <code>keywordValue</code> is the rule identifier in
+     *         <code>ALL_CAPS_WITH_UNDERSCORES</code>. For example, <code>CLOUDWATCH_LOG_GROUP_ENCRYPTED</code>. For
+     *         accuracy, we recommend that you reference the list of <a
+     *         href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-config.html"
+     *         >supported Config managed rules</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For custom rules, make sure that the <code>keywordValue</code> has the <code>Custom_</code> prefix
+     *         followed by the custom rule name. The format of the custom rule name itself may vary. For accuracy, we
+     *         recommend that you visit the <a href="https://console.aws.amazon.com/config/">Config console</a> to
+     *         verify your custom rule name.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For Security Hub: The format varies for Security Hub control names. For accuracy, we recommend that you
+     *         reference the list of <a
+     *         href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">supported
+     *         Security Hub controls</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For Amazon Web Services API calls: Make sure that the <code>keywordValue</code> is written as
+     *         <code>serviceprefix_ActionName</code>. For example, <code>iam_ListGroups</code>. For accuracy, we
+     *         recommend that you reference the list of <a
+     *         href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-api.html">supported
+     *         API calls</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For CloudTrail: Make sure that the <code>keywordValue</code> is written as
+     *         <code>serviceprefix_ActionName</code>. For example, <code>cloudtrail_StartLogging</code>. For accuracy,
+     *         we recommend that you review the Amazon Web Service prefix and action names in the <a href=
+     *         "https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html"
+     *         >Service Authorization Reference</a>.
+     *         </p>
+     *         </li>
+     *         </ol>
      */
 
     public String getKeywordValue() {
@@ -569,7 +1204,12 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">managed
      * rules</a>, you can use the rule identifier as the <code>keywordValue</code>. You can find the rule identifier
      * from the <a href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">list
-     * of Config managed rules</a>.
+     * of Config managed rules</a>. For some rules, the rule identifier is different from the rule name. For example,
+     * the rule name <code>restricted-ssh</code> has the following rule identifier: <code>INCOMING_SSH_DISABLED</code>.
+     * Make sure to use the rule identifier, not the rule name.
+     * </p>
+     * <p>
+     * Keyword example for managed rules:
      * </p>
      * <ul>
      * <li>
@@ -588,7 +1228,10 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">custom
      * rules</a>, you form the <code>keywordValue</code> by adding the <code>Custom_</code> prefix to the rule name.
-     * This prefix distinguishes the rule from a managed rule.
+     * This prefix distinguishes the custom rule from a managed rule.
+     * </p>
+     * <p>
+     * Keyword example for custom rules:
      * </p>
      * <ul>
      * <li>
@@ -608,6 +1251,9 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      * -linked rules</a>, you form the <code>keywordValue</code> by adding the <code>Custom_</code> prefix to the rule
      * name. In addition, you remove the suffix ID that appears at the end of the rule name.
      * </p>
+     * <p>
+     * Keyword examples for service-linked rules:
+     * </p>
      * <ul>
      * <li>
      * <p>
@@ -615,14 +1261,6 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * <code>keywordValue</code>: <code>Custom_CustomRuleForAccount-conformance-pack</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Service-linked rule name: securityhub-api-gw-cache-encrypted-101104e1
-     * </p>
-     * <p>
-     * <code>keywordValue</code>: <code>Custom_securityhub-api-gw-cache-encrypted</code>
      * </p>
      * </li>
      * <li>
@@ -636,6 +1274,67 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * </li>
      * </ul>
+     * <important>
+     * <p>
+     * The <code>keywordValue</code> is case sensitive. If you enter a value incorrectly, Audit Manager might not
+     * recognize the data source mapping. As a result, you might not successfully collect evidence from that data source
+     * as intended.
+     * </p>
+     * <p>
+     * Keep in mind the following requirements, depending on the data source type that you're using.
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * For Config:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For managed rules, make sure that the <code>keywordValue</code> is the rule identifier in
+     * <code>ALL_CAPS_WITH_UNDERSCORES</code>. For example, <code>CLOUDWATCH_LOG_GROUP_ENCRYPTED</code>. For accuracy,
+     * we recommend that you reference the list of <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-config.html">supported
+     * Config managed rules</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For custom rules, make sure that the <code>keywordValue</code> has the <code>Custom_</code> prefix followed by
+     * the custom rule name. The format of the custom rule name itself may vary. For accuracy, we recommend that you
+     * visit the <a href="https://console.aws.amazon.com/config/">Config console</a> to verify your custom rule name.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * For Security Hub: The format varies for Security Hub control names. For accuracy, we recommend that you reference
+     * the list of <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">supported
+     * Security Hub controls</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For Amazon Web Services API calls: Make sure that the <code>keywordValue</code> is written as
+     * <code>serviceprefix_ActionName</code>. For example, <code>iam_ListGroups</code>. For accuracy, we recommend that
+     * you reference the list of <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-api.html">supported API
+     * calls</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For CloudTrail: Make sure that the <code>keywordValue</code> is written as <code>serviceprefix_ActionName</code>.
+     * For example, <code>cloudtrail_StartLogging</code>. For accuracy, we recommend that you review the Amazon Web
+     * Service prefix and action names in the <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html"
+     * >Service Authorization Reference</a>.
+     * </p>
+     * </li>
+     * </ol>
+     * </important>
      * 
      * @param keywordValue
      *        The value of the keyword that's used when mapping a control data source. For example, this can be a
@@ -653,7 +1352,12 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      *        >managed rules</a>, you can use the rule identifier as the <code>keywordValue</code>. You can find the
      *        rule identifier from the <a
      *        href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">list of
-     *        Config managed rules</a>.
+     *        Config managed rules</a>. For some rules, the rule identifier is different from the rule name. For
+     *        example, the rule name <code>restricted-ssh</code> has the following rule identifier:
+     *        <code>INCOMING_SSH_DISABLED</code>. Make sure to use the rule identifier, not the rule name.
+     *        </p>
+     *        <p>
+     *        Keyword example for managed rules:
      *        </p>
      *        <ul>
      *        <li>
@@ -672,7 +1376,10 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        For <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">
      *        custom rules</a>, you form the <code>keywordValue</code> by adding the <code>Custom_</code> prefix to the
-     *        rule name. This prefix distinguishes the rule from a managed rule.
+     *        rule name. This prefix distinguishes the custom rule from a managed rule.
+     *        </p>
+     *        <p>
+     *        Keyword example for custom rules:
      *        </p>
      *        <ul>
      *        <li>
@@ -692,6 +1399,9 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      *        service-linked rules</a>, you form the <code>keywordValue</code> by adding the <code>Custom_</code> prefix
      *        to the rule name. In addition, you remove the suffix ID that appears at the end of the rule name.
      *        </p>
+     *        <p>
+     *        Keyword examples for service-linked rules:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -699,14 +1409,6 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        <code>keywordValue</code>: <code>Custom_CustomRuleForAccount-conformance-pack</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Service-linked rule name: securityhub-api-gw-cache-encrypted-101104e1
-     *        </p>
-     *        <p>
-     *        <code>keywordValue</code>: <code>Custom_securityhub-api-gw-cache-encrypted</code>
      *        </p>
      *        </li>
      *        <li>
@@ -719,6 +1421,68 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        </li>
+     *        </ul>
+     *        <important>
+     *        <p>
+     *        The <code>keywordValue</code> is case sensitive. If you enter a value incorrectly, Audit Manager might not
+     *        recognize the data source mapping. As a result, you might not successfully collect evidence from that data
+     *        source as intended.
+     *        </p>
+     *        <p>
+     *        Keep in mind the following requirements, depending on the data source type that you're using.
+     *        </p>
+     *        <ol>
+     *        <li>
+     *        <p>
+     *        For Config:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For managed rules, make sure that the <code>keywordValue</code> is the rule identifier in
+     *        <code>ALL_CAPS_WITH_UNDERSCORES</code>. For example, <code>CLOUDWATCH_LOG_GROUP_ENCRYPTED</code>. For
+     *        accuracy, we recommend that you reference the list of <a
+     *        href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-config.html"
+     *        >supported Config managed rules</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For custom rules, make sure that the <code>keywordValue</code> has the <code>Custom_</code> prefix
+     *        followed by the custom rule name. The format of the custom rule name itself may vary. For accuracy, we
+     *        recommend that you visit the <a href="https://console.aws.amazon.com/config/">Config console</a> to verify
+     *        your custom rule name.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For Security Hub: The format varies for Security Hub control names. For accuracy, we recommend that you
+     *        reference the list of <a
+     *        href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-ash.html">supported
+     *        Security Hub controls</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For Amazon Web Services API calls: Make sure that the <code>keywordValue</code> is written as
+     *        <code>serviceprefix_ActionName</code>. For example, <code>iam_ListGroups</code>. For accuracy, we
+     *        recommend that you reference the list of <a
+     *        href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-api.html">supported
+     *        API calls</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For CloudTrail: Make sure that the <code>keywordValue</code> is written as
+     *        <code>serviceprefix_ActionName</code>. For example, <code>cloudtrail_StartLogging</code>. For accuracy, we
+     *        recommend that you review the Amazon Web Service prefix and action names in the <a href=
+     *        "https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html"
+     *        >Service Authorization Reference</a>.
+     *        </p>
+     *        </li>
+     *        </ol>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

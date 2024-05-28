@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents a PartiQL statment that uses parameters.
+ * Represents a PartiQL statement that uses parameters.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ParameterizedStatement" target="_top">AWS
@@ -30,7 +30,7 @@ public class ParameterizedStatement implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A PartiQL statment that uses parameters.
+     * A PartiQL statement that uses parameters.
      * </p>
      */
     private String statement;
@@ -40,14 +40,25 @@ public class ParameterizedStatement implements Serializable, Cloneable, Structur
      * </p>
      */
     private java.util.List<AttributeValue> parameters;
+    /**
+     * <p>
+     * An optional parameter that returns the item attributes for a PartiQL <code>ParameterizedStatement</code>
+     * operation that failed a condition check.
+     * </p>
+     * <p>
+     * There is no additional cost associated with requesting a return value aside from the small network and processing
+     * overhead of receiving a larger response. No read capacity units are consumed.
+     * </p>
+     */
+    private String returnValuesOnConditionCheckFailure;
 
     /**
      * <p>
-     * A PartiQL statment that uses parameters.
+     * A PartiQL statement that uses parameters.
      * </p>
      * 
      * @param statement
-     *        A PartiQL statment that uses parameters.
+     *        A PartiQL statement that uses parameters.
      */
 
     public void setStatement(String statement) {
@@ -56,10 +67,10 @@ public class ParameterizedStatement implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A PartiQL statment that uses parameters.
+     * A PartiQL statement that uses parameters.
      * </p>
      * 
-     * @return A PartiQL statment that uses parameters.
+     * @return A PartiQL statement that uses parameters.
      */
 
     public String getStatement() {
@@ -68,11 +79,11 @@ public class ParameterizedStatement implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A PartiQL statment that uses parameters.
+     * A PartiQL statement that uses parameters.
      * </p>
      * 
      * @param statement
-     *        A PartiQL statment that uses parameters.
+     *        A PartiQL statement that uses parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,6 +163,101 @@ public class ParameterizedStatement implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * An optional parameter that returns the item attributes for a PartiQL <code>ParameterizedStatement</code>
+     * operation that failed a condition check.
+     * </p>
+     * <p>
+     * There is no additional cost associated with requesting a return value aside from the small network and processing
+     * overhead of receiving a larger response. No read capacity units are consumed.
+     * </p>
+     * 
+     * @param returnValuesOnConditionCheckFailure
+     *        An optional parameter that returns the item attributes for a PartiQL <code>ParameterizedStatement</code>
+     *        operation that failed a condition check.</p>
+     *        <p>
+     *        There is no additional cost associated with requesting a return value aside from the small network and
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
+     * @see ReturnValuesOnConditionCheckFailure
+     */
+
+    public void setReturnValuesOnConditionCheckFailure(String returnValuesOnConditionCheckFailure) {
+        this.returnValuesOnConditionCheckFailure = returnValuesOnConditionCheckFailure;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that returns the item attributes for a PartiQL <code>ParameterizedStatement</code>
+     * operation that failed a condition check.
+     * </p>
+     * <p>
+     * There is no additional cost associated with requesting a return value aside from the small network and processing
+     * overhead of receiving a larger response. No read capacity units are consumed.
+     * </p>
+     * 
+     * @return An optional parameter that returns the item attributes for a PartiQL <code>ParameterizedStatement</code>
+     *         operation that failed a condition check.</p>
+     *         <p>
+     *         There is no additional cost associated with requesting a return value aside from the small network and
+     *         processing overhead of receiving a larger response. No read capacity units are consumed.
+     * @see ReturnValuesOnConditionCheckFailure
+     */
+
+    public String getReturnValuesOnConditionCheckFailure() {
+        return this.returnValuesOnConditionCheckFailure;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that returns the item attributes for a PartiQL <code>ParameterizedStatement</code>
+     * operation that failed a condition check.
+     * </p>
+     * <p>
+     * There is no additional cost associated with requesting a return value aside from the small network and processing
+     * overhead of receiving a larger response. No read capacity units are consumed.
+     * </p>
+     * 
+     * @param returnValuesOnConditionCheckFailure
+     *        An optional parameter that returns the item attributes for a PartiQL <code>ParameterizedStatement</code>
+     *        operation that failed a condition check.</p>
+     *        <p>
+     *        There is no additional cost associated with requesting a return value aside from the small network and
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReturnValuesOnConditionCheckFailure
+     */
+
+    public ParameterizedStatement withReturnValuesOnConditionCheckFailure(String returnValuesOnConditionCheckFailure) {
+        setReturnValuesOnConditionCheckFailure(returnValuesOnConditionCheckFailure);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An optional parameter that returns the item attributes for a PartiQL <code>ParameterizedStatement</code>
+     * operation that failed a condition check.
+     * </p>
+     * <p>
+     * There is no additional cost associated with requesting a return value aside from the small network and processing
+     * overhead of receiving a larger response. No read capacity units are consumed.
+     * </p>
+     * 
+     * @param returnValuesOnConditionCheckFailure
+     *        An optional parameter that returns the item attributes for a PartiQL <code>ParameterizedStatement</code>
+     *        operation that failed a condition check.</p>
+     *        <p>
+     *        There is no additional cost associated with requesting a return value aside from the small network and
+     *        processing overhead of receiving a larger response. No read capacity units are consumed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReturnValuesOnConditionCheckFailure
+     */
+
+    public ParameterizedStatement withReturnValuesOnConditionCheckFailure(ReturnValuesOnConditionCheckFailure returnValuesOnConditionCheckFailure) {
+        this.returnValuesOnConditionCheckFailure = returnValuesOnConditionCheckFailure.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -166,7 +272,9 @@ public class ParameterizedStatement implements Serializable, Cloneable, Structur
         if (getStatement() != null)
             sb.append("Statement: ").append(getStatement()).append(",");
         if (getParameters() != null)
-            sb.append("Parameters: ").append(getParameters());
+            sb.append("Parameters: ").append(getParameters()).append(",");
+        if (getReturnValuesOnConditionCheckFailure() != null)
+            sb.append("ReturnValuesOnConditionCheckFailure: ").append(getReturnValuesOnConditionCheckFailure());
         sb.append("}");
         return sb.toString();
     }
@@ -189,6 +297,11 @@ public class ParameterizedStatement implements Serializable, Cloneable, Structur
             return false;
         if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false)
             return false;
+        if (other.getReturnValuesOnConditionCheckFailure() == null ^ this.getReturnValuesOnConditionCheckFailure() == null)
+            return false;
+        if (other.getReturnValuesOnConditionCheckFailure() != null
+                && other.getReturnValuesOnConditionCheckFailure().equals(this.getReturnValuesOnConditionCheckFailure()) == false)
+            return false;
         return true;
     }
 
@@ -199,6 +312,7 @@ public class ParameterizedStatement implements Serializable, Cloneable, Structur
 
         hashCode = prime * hashCode + ((getStatement() == null) ? 0 : getStatement().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
+        hashCode = prime * hashCode + ((getReturnValuesOnConditionCheckFailure() == null) ? 0 : getReturnValuesOnConditionCheckFailure().hashCode());
         return hashCode;
     }
 

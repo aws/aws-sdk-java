@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,8 +41,8 @@ public class ListDatabasesRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String database;
     /**
      * <p>
-     * The database user name. This parameter is required when connecting to a cluster and authenticating using
-     * temporary credentials.
+     * The database user name. This parameter is required when connecting to a cluster as a database user and
+     * authenticating using temporary credentials.
      * </p>
      */
     private String dbUser;
@@ -71,8 +71,8 @@ public class ListDatabasesRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String secretArn;
     /**
      * <p>
-     * The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
-     * authenticating using either Secrets Manager or temporary credentials.
+     * The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a
+     * serverless workgroup and authenticating using either Secrets Manager or temporary credentials.
      * </p>
      */
     private String workgroupName;
@@ -171,13 +171,13 @@ public class ListDatabasesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The database user name. This parameter is required when connecting to a cluster and authenticating using
-     * temporary credentials.
+     * The database user name. This parameter is required when connecting to a cluster as a database user and
+     * authenticating using temporary credentials.
      * </p>
      * 
      * @param dbUser
-     *        The database user name. This parameter is required when connecting to a cluster and authenticating using
-     *        temporary credentials.
+     *        The database user name. This parameter is required when connecting to a cluster as a database user and
+     *        authenticating using temporary credentials.
      */
 
     public void setDbUser(String dbUser) {
@@ -186,12 +186,12 @@ public class ListDatabasesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The database user name. This parameter is required when connecting to a cluster and authenticating using
-     * temporary credentials.
+     * The database user name. This parameter is required when connecting to a cluster as a database user and
+     * authenticating using temporary credentials.
      * </p>
      * 
-     * @return The database user name. This parameter is required when connecting to a cluster and authenticating using
-     *         temporary credentials.
+     * @return The database user name. This parameter is required when connecting to a cluster as a database user and
+     *         authenticating using temporary credentials.
      */
 
     public String getDbUser() {
@@ -200,13 +200,13 @@ public class ListDatabasesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The database user name. This parameter is required when connecting to a cluster and authenticating using
-     * temporary credentials.
+     * The database user name. This parameter is required when connecting to a cluster as a database user and
+     * authenticating using temporary credentials.
      * </p>
      * 
      * @param dbUser
-     *        The database user name. This parameter is required when connecting to a cluster and authenticating using
-     *        temporary credentials.
+     *        The database user name. This parameter is required when connecting to a cluster as a database user and
+     *        authenticating using temporary credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -367,13 +367,13 @@ public class ListDatabasesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
-     * authenticating using either Secrets Manager or temporary credentials.
+     * The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a
+     * serverless workgroup and authenticating using either Secrets Manager or temporary credentials.
      * </p>
      * 
      * @param workgroupName
-     *        The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
-     *        authenticating using either Secrets Manager or temporary credentials.
+     *        The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to
+     *        a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.
      */
 
     public void setWorkgroupName(String workgroupName) {
@@ -382,12 +382,12 @@ public class ListDatabasesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
-     * authenticating using either Secrets Manager or temporary credentials.
+     * The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a
+     * serverless workgroup and authenticating using either Secrets Manager or temporary credentials.
      * </p>
      * 
-     * @return The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
-     *         authenticating using either Secrets Manager or temporary credentials.
+     * @return The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting
+     *         to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.
      */
 
     public String getWorkgroupName() {
@@ -396,13 +396,13 @@ public class ListDatabasesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
-     * authenticating using either Secrets Manager or temporary credentials.
+     * The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a
+     * serverless workgroup and authenticating using either Secrets Manager or temporary credentials.
      * </p>
      * 
      * @param workgroupName
-     *        The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
-     *        authenticating using either Secrets Manager or temporary credentials.
+     *        The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to
+     *        a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

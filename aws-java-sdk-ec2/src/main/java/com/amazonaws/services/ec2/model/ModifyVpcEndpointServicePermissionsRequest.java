@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,14 +34,14 @@ public class ModifyVpcEndpointServicePermissionsRequest extends AmazonWebService
     private String serviceId;
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of one or more principals. Permissions are granted to the principals in this
-     * list. To grant permissions to all principals, specify an asterisk (*).
+     * The Amazon Resource Names (ARN) of the principals. Permissions are granted to the principals in this list. To
+     * grant permissions to all principals, specify an asterisk (*).
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> addAllowedPrincipals;
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of one or more principals. Permissions are revoked for principals in this list.
+     * The Amazon Resource Names (ARN) of the principals. Permissions are revoked for principals in this list.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> removeAllowedPrincipals;
@@ -88,12 +88,12 @@ public class ModifyVpcEndpointServicePermissionsRequest extends AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of one or more principals. Permissions are granted to the principals in this
-     * list. To grant permissions to all principals, specify an asterisk (*).
+     * The Amazon Resource Names (ARN) of the principals. Permissions are granted to the principals in this list. To
+     * grant permissions to all principals, specify an asterisk (*).
      * </p>
      * 
-     * @return The Amazon Resource Names (ARN) of one or more principals. Permissions are granted to the principals in
-     *         this list. To grant permissions to all principals, specify an asterisk (*).
+     * @return The Amazon Resource Names (ARN) of the principals. Permissions are granted to the principals in this
+     *         list. To grant permissions to all principals, specify an asterisk (*).
      */
 
     public java.util.List<String> getAddAllowedPrincipals() {
@@ -105,13 +105,13 @@ public class ModifyVpcEndpointServicePermissionsRequest extends AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of one or more principals. Permissions are granted to the principals in this
-     * list. To grant permissions to all principals, specify an asterisk (*).
+     * The Amazon Resource Names (ARN) of the principals. Permissions are granted to the principals in this list. To
+     * grant permissions to all principals, specify an asterisk (*).
      * </p>
      * 
      * @param addAllowedPrincipals
-     *        The Amazon Resource Names (ARN) of one or more principals. Permissions are granted to the principals in
-     *        this list. To grant permissions to all principals, specify an asterisk (*).
+     *        The Amazon Resource Names (ARN) of the principals. Permissions are granted to the principals in this list.
+     *        To grant permissions to all principals, specify an asterisk (*).
      */
 
     public void setAddAllowedPrincipals(java.util.Collection<String> addAllowedPrincipals) {
@@ -125,8 +125,8 @@ public class ModifyVpcEndpointServicePermissionsRequest extends AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of one or more principals. Permissions are granted to the principals in this
-     * list. To grant permissions to all principals, specify an asterisk (*).
+     * The Amazon Resource Names (ARN) of the principals. Permissions are granted to the principals in this list. To
+     * grant permissions to all principals, specify an asterisk (*).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -135,8 +135,8 @@ public class ModifyVpcEndpointServicePermissionsRequest extends AmazonWebService
      * </p>
      * 
      * @param addAllowedPrincipals
-     *        The Amazon Resource Names (ARN) of one or more principals. Permissions are granted to the principals in
-     *        this list. To grant permissions to all principals, specify an asterisk (*).
+     *        The Amazon Resource Names (ARN) of the principals. Permissions are granted to the principals in this list.
+     *        To grant permissions to all principals, specify an asterisk (*).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,13 +152,13 @@ public class ModifyVpcEndpointServicePermissionsRequest extends AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of one or more principals. Permissions are granted to the principals in this
-     * list. To grant permissions to all principals, specify an asterisk (*).
+     * The Amazon Resource Names (ARN) of the principals. Permissions are granted to the principals in this list. To
+     * grant permissions to all principals, specify an asterisk (*).
      * </p>
      * 
      * @param addAllowedPrincipals
-     *        The Amazon Resource Names (ARN) of one or more principals. Permissions are granted to the principals in
-     *        this list. To grant permissions to all principals, specify an asterisk (*).
+     *        The Amazon Resource Names (ARN) of the principals. Permissions are granted to the principals in this list.
+     *        To grant permissions to all principals, specify an asterisk (*).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,11 +169,10 @@ public class ModifyVpcEndpointServicePermissionsRequest extends AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of one or more principals. Permissions are revoked for principals in this list.
+     * The Amazon Resource Names (ARN) of the principals. Permissions are revoked for principals in this list.
      * </p>
      * 
-     * @return The Amazon Resource Names (ARN) of one or more principals. Permissions are revoked for principals in this
-     *         list.
+     * @return The Amazon Resource Names (ARN) of the principals. Permissions are revoked for principals in this list.
      */
 
     public java.util.List<String> getRemoveAllowedPrincipals() {
@@ -185,12 +184,11 @@ public class ModifyVpcEndpointServicePermissionsRequest extends AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of one or more principals. Permissions are revoked for principals in this list.
+     * The Amazon Resource Names (ARN) of the principals. Permissions are revoked for principals in this list.
      * </p>
      * 
      * @param removeAllowedPrincipals
-     *        The Amazon Resource Names (ARN) of one or more principals. Permissions are revoked for principals in this
-     *        list.
+     *        The Amazon Resource Names (ARN) of the principals. Permissions are revoked for principals in this list.
      */
 
     public void setRemoveAllowedPrincipals(java.util.Collection<String> removeAllowedPrincipals) {
@@ -204,7 +202,7 @@ public class ModifyVpcEndpointServicePermissionsRequest extends AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of one or more principals. Permissions are revoked for principals in this list.
+     * The Amazon Resource Names (ARN) of the principals. Permissions are revoked for principals in this list.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -213,8 +211,7 @@ public class ModifyVpcEndpointServicePermissionsRequest extends AmazonWebService
      * </p>
      * 
      * @param removeAllowedPrincipals
-     *        The Amazon Resource Names (ARN) of one or more principals. Permissions are revoked for principals in this
-     *        list.
+     *        The Amazon Resource Names (ARN) of the principals. Permissions are revoked for principals in this list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -230,12 +227,11 @@ public class ModifyVpcEndpointServicePermissionsRequest extends AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of one or more principals. Permissions are revoked for principals in this list.
+     * The Amazon Resource Names (ARN) of the principals. Permissions are revoked for principals in this list.
      * </p>
      * 
      * @param removeAllowedPrincipals
-     *        The Amazon Resource Names (ARN) of one or more principals. Permissions are revoked for principals in this
-     *        list.
+     *        The Amazon Resource Names (ARN) of the principals. Permissions are revoked for principals in this list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

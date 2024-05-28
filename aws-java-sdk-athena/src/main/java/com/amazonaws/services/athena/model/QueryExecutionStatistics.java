@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,6 +67,13 @@ public class QueryExecutionStatistics implements Serializable, Cloneable, Struct
     private Long queryQueueTimeInMillis;
     /**
      * <p>
+     * The number of milliseconds that Athena took to preprocess the query before submitting the query to the query
+     * engine.
+     * </p>
+     */
+    private Long servicePreProcessingTimeInMillis;
+    /**
+     * <p>
      * The number of milliseconds that Athena took to plan the query processing flow. This includes the time spent
      * retrieving table partitions from the data source. Note that because the query engine performs the query planning,
      * query planning time is a subset of engine processing time.
@@ -80,6 +87,12 @@ public class QueryExecutionStatistics implements Serializable, Cloneable, Struct
      * </p>
      */
     private Long serviceProcessingTimeInMillis;
+    /**
+     * <p>
+     * Contains information about whether previous query results were reused for the query.
+     * </p>
+     */
+    private ResultReuseInformation resultReuseInformation;
 
     /**
      * <p>
@@ -319,6 +332,52 @@ public class QueryExecutionStatistics implements Serializable, Cloneable, Struct
 
     /**
      * <p>
+     * The number of milliseconds that Athena took to preprocess the query before submitting the query to the query
+     * engine.
+     * </p>
+     * 
+     * @param servicePreProcessingTimeInMillis
+     *        The number of milliseconds that Athena took to preprocess the query before submitting the query to the
+     *        query engine.
+     */
+
+    public void setServicePreProcessingTimeInMillis(Long servicePreProcessingTimeInMillis) {
+        this.servicePreProcessingTimeInMillis = servicePreProcessingTimeInMillis;
+    }
+
+    /**
+     * <p>
+     * The number of milliseconds that Athena took to preprocess the query before submitting the query to the query
+     * engine.
+     * </p>
+     * 
+     * @return The number of milliseconds that Athena took to preprocess the query before submitting the query to the
+     *         query engine.
+     */
+
+    public Long getServicePreProcessingTimeInMillis() {
+        return this.servicePreProcessingTimeInMillis;
+    }
+
+    /**
+     * <p>
+     * The number of milliseconds that Athena took to preprocess the query before submitting the query to the query
+     * engine.
+     * </p>
+     * 
+     * @param servicePreProcessingTimeInMillis
+     *        The number of milliseconds that Athena took to preprocess the query before submitting the query to the
+     *        query engine.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public QueryExecutionStatistics withServicePreProcessingTimeInMillis(Long servicePreProcessingTimeInMillis) {
+        setServicePreProcessingTimeInMillis(servicePreProcessingTimeInMillis);
+        return this;
+    }
+
+    /**
+     * <p>
      * The number of milliseconds that Athena took to plan the query processing flow. This includes the time spent
      * retrieving table partitions from the data source. Note that because the query engine performs the query planning,
      * query planning time is a subset of engine processing time.
@@ -416,6 +475,46 @@ public class QueryExecutionStatistics implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * Contains information about whether previous query results were reused for the query.
+     * </p>
+     * 
+     * @param resultReuseInformation
+     *        Contains information about whether previous query results were reused for the query.
+     */
+
+    public void setResultReuseInformation(ResultReuseInformation resultReuseInformation) {
+        this.resultReuseInformation = resultReuseInformation;
+    }
+
+    /**
+     * <p>
+     * Contains information about whether previous query results were reused for the query.
+     * </p>
+     * 
+     * @return Contains information about whether previous query results were reused for the query.
+     */
+
+    public ResultReuseInformation getResultReuseInformation() {
+        return this.resultReuseInformation;
+    }
+
+    /**
+     * <p>
+     * Contains information about whether previous query results were reused for the query.
+     * </p>
+     * 
+     * @param resultReuseInformation
+     *        Contains information about whether previous query results were reused for the query.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public QueryExecutionStatistics withResultReuseInformation(ResultReuseInformation resultReuseInformation) {
+        setResultReuseInformation(resultReuseInformation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -437,10 +536,14 @@ public class QueryExecutionStatistics implements Serializable, Cloneable, Struct
             sb.append("TotalExecutionTimeInMillis: ").append(getTotalExecutionTimeInMillis()).append(",");
         if (getQueryQueueTimeInMillis() != null)
             sb.append("QueryQueueTimeInMillis: ").append(getQueryQueueTimeInMillis()).append(",");
+        if (getServicePreProcessingTimeInMillis() != null)
+            sb.append("ServicePreProcessingTimeInMillis: ").append(getServicePreProcessingTimeInMillis()).append(",");
         if (getQueryPlanningTimeInMillis() != null)
             sb.append("QueryPlanningTimeInMillis: ").append(getQueryPlanningTimeInMillis()).append(",");
         if (getServiceProcessingTimeInMillis() != null)
-            sb.append("ServiceProcessingTimeInMillis: ").append(getServiceProcessingTimeInMillis());
+            sb.append("ServiceProcessingTimeInMillis: ").append(getServiceProcessingTimeInMillis()).append(",");
+        if (getResultReuseInformation() != null)
+            sb.append("ResultReuseInformation: ").append(getResultReuseInformation());
         sb.append("}");
         return sb.toString();
     }
@@ -475,6 +578,11 @@ public class QueryExecutionStatistics implements Serializable, Cloneable, Struct
             return false;
         if (other.getQueryQueueTimeInMillis() != null && other.getQueryQueueTimeInMillis().equals(this.getQueryQueueTimeInMillis()) == false)
             return false;
+        if (other.getServicePreProcessingTimeInMillis() == null ^ this.getServicePreProcessingTimeInMillis() == null)
+            return false;
+        if (other.getServicePreProcessingTimeInMillis() != null
+                && other.getServicePreProcessingTimeInMillis().equals(this.getServicePreProcessingTimeInMillis()) == false)
+            return false;
         if (other.getQueryPlanningTimeInMillis() == null ^ this.getQueryPlanningTimeInMillis() == null)
             return false;
         if (other.getQueryPlanningTimeInMillis() != null && other.getQueryPlanningTimeInMillis().equals(this.getQueryPlanningTimeInMillis()) == false)
@@ -483,6 +591,10 @@ public class QueryExecutionStatistics implements Serializable, Cloneable, Struct
             return false;
         if (other.getServiceProcessingTimeInMillis() != null
                 && other.getServiceProcessingTimeInMillis().equals(this.getServiceProcessingTimeInMillis()) == false)
+            return false;
+        if (other.getResultReuseInformation() == null ^ this.getResultReuseInformation() == null)
+            return false;
+        if (other.getResultReuseInformation() != null && other.getResultReuseInformation().equals(this.getResultReuseInformation()) == false)
             return false;
         return true;
     }
@@ -497,8 +609,10 @@ public class QueryExecutionStatistics implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getDataManifestLocation() == null) ? 0 : getDataManifestLocation().hashCode());
         hashCode = prime * hashCode + ((getTotalExecutionTimeInMillis() == null) ? 0 : getTotalExecutionTimeInMillis().hashCode());
         hashCode = prime * hashCode + ((getQueryQueueTimeInMillis() == null) ? 0 : getQueryQueueTimeInMillis().hashCode());
+        hashCode = prime * hashCode + ((getServicePreProcessingTimeInMillis() == null) ? 0 : getServicePreProcessingTimeInMillis().hashCode());
         hashCode = prime * hashCode + ((getQueryPlanningTimeInMillis() == null) ? 0 : getQueryPlanningTimeInMillis().hashCode());
         hashCode = prime * hashCode + ((getServiceProcessingTimeInMillis() == null) ? 0 : getServiceProcessingTimeInMillis().hashCode());
+        hashCode = prime * hashCode + ((getResultReuseInformation() == null) ? 0 : getResultReuseInformation().hashCode());
         return hashCode;
     }
 

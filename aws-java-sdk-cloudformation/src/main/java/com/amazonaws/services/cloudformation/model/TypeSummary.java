@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,9 +37,9 @@ public class TypeSummary implements Serializable, Cloneable {
      * The name of the extension.
      * </p>
      * <p>
-     * If you specified a <code>TypeNameAlias</code> when you <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate this
-     * extension</a> in your account and region, CloudFormation considers that alias as the type name.
+     * If you specified a <code>TypeNameAlias</code> when you call the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+     * API operation in your account and Region, CloudFormation considers that alias as the type name.
      * </p>
      */
     private String typeName;
@@ -55,7 +55,7 @@ public class TypeSummary implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
      * <p>
-     * To set the default version of an extension, use <code> <a>SetTypeDefaultVersion</a> </code>.
+     * To set the default version of an extension, use <a>SetTypeDefaultVersion</a>.
      * </p>
      */
     private String defaultVersionId;
@@ -103,12 +103,12 @@ public class TypeSummary implements Serializable, Cloneable {
     private String publisherId;
     /**
      * <p>
-     * For public extensions that have been activated for this account and region, the type name of the public
+     * For public extensions that have been activated for this account and Region, the type name of the public
      * extension.
      * </p>
      * <p>
-     * If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region,
-     * CloudFormation treats that alias as the extension's type name within the account and region, not the type name of
+     * If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region,
+     * CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of
      * the public extension. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias"
      * >Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.
@@ -117,12 +117,12 @@ public class TypeSummary implements Serializable, Cloneable {
     private String originalTypeName;
     /**
      * <p>
-     * For public extensions that have been activated for this account and region, the version of the public extension
+     * For public extensions that have been activated for this account and Region, the version of the public extension
      * to be used for CloudFormation operations in this account and Region.
      * </p>
      * <p>
      * How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation
-     * automatically updates the extension in this account and region when a new version is released. For more
+     * automatically updates the extension in this account and Region when a new version is released. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto"
      * >Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User
@@ -132,13 +132,13 @@ public class TypeSummary implements Serializable, Cloneable {
     private String publicVersionNumber;
     /**
      * <p>
-     * For public extensions that have been activated for this account and region, the latest version of the public
+     * For public extensions that have been activated for this account and Region, the latest version of the public
      * extension <i>that is available</i>. For any extensions other than activated third-arty extensions, CloudFormation
      * returns <code>null</code>.
      * </p>
      * <p>
      * How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation
-     * automatically updates the extension in this account and region when a new version is released. For more
+     * automatically updates the extension in this account and Region when a new version is released. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto"
      * >Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User
@@ -166,7 +166,7 @@ public class TypeSummary implements Serializable, Cloneable {
     private String publisherName;
     /**
      * <p>
-     * Whether the extension is activated for this account and region.
+     * Whether the extension is activated for this account and Region.
      * </p>
      * <p>
      * This applies only to third-party public extensions. Extensions published by Amazon are activated by default.
@@ -238,17 +238,18 @@ public class TypeSummary implements Serializable, Cloneable {
      * The name of the extension.
      * </p>
      * <p>
-     * If you specified a <code>TypeNameAlias</code> when you <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate this
-     * extension</a> in your account and region, CloudFormation considers that alias as the type name.
+     * If you specified a <code>TypeNameAlias</code> when you call the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+     * API operation in your account and Region, CloudFormation considers that alias as the type name.
      * </p>
      * 
      * @param typeName
      *        The name of the extension.</p>
      *        <p>
-     *        If you specified a <code>TypeNameAlias</code> when you <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate
-     *        this extension</a> in your account and region, CloudFormation considers that alias as the type name.
+     *        If you specified a <code>TypeNameAlias</code> when you call the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html"
+     *        >ActivateType</a> API operation in your account and Region, CloudFormation considers that alias as the
+     *        type name.
      */
 
     public void setTypeName(String typeName) {
@@ -260,16 +261,17 @@ public class TypeSummary implements Serializable, Cloneable {
      * The name of the extension.
      * </p>
      * <p>
-     * If you specified a <code>TypeNameAlias</code> when you <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate this
-     * extension</a> in your account and region, CloudFormation considers that alias as the type name.
+     * If you specified a <code>TypeNameAlias</code> when you call the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+     * API operation in your account and Region, CloudFormation considers that alias as the type name.
      * </p>
      * 
      * @return The name of the extension.</p>
      *         <p>
-     *         If you specified a <code>TypeNameAlias</code> when you <a
-     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate
-     *         this extension</a> in your account and region, CloudFormation considers that alias as the type name.
+     *         If you specified a <code>TypeNameAlias</code> when you call the <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html"
+     *         >ActivateType</a> API operation in your account and Region, CloudFormation considers that alias as the
+     *         type name.
      */
 
     public String getTypeName() {
@@ -281,17 +283,18 @@ public class TypeSummary implements Serializable, Cloneable {
      * The name of the extension.
      * </p>
      * <p>
-     * If you specified a <code>TypeNameAlias</code> when you <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate this
-     * extension</a> in your account and region, CloudFormation considers that alias as the type name.
+     * If you specified a <code>TypeNameAlias</code> when you call the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+     * API operation in your account and Region, CloudFormation considers that alias as the type name.
      * </p>
      * 
      * @param typeName
      *        The name of the extension.</p>
      *        <p>
-     *        If you specified a <code>TypeNameAlias</code> when you <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate
-     *        this extension</a> in your account and region, CloudFormation considers that alias as the type name.
+     *        If you specified a <code>TypeNameAlias</code> when you call the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html"
+     *        >ActivateType</a> API operation in your account and Region, CloudFormation considers that alias as the
+     *        type name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -312,7 +315,7 @@ public class TypeSummary implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
      * <p>
-     * To set the default version of an extension, use <code> <a>SetTypeDefaultVersion</a> </code>.
+     * To set the default version of an extension, use <a>SetTypeDefaultVersion</a>.
      * </p>
      * 
      * @param defaultVersionId
@@ -326,7 +329,7 @@ public class TypeSummary implements Serializable, Cloneable {
      *        >RegisterType</a>.
      *        </p>
      *        <p>
-     *        To set the default version of an extension, use <code> <a>SetTypeDefaultVersion</a> </code>.
+     *        To set the default version of an extension, use <a>SetTypeDefaultVersion</a>.
      */
 
     public void setDefaultVersionId(String defaultVersionId) {
@@ -345,7 +348,7 @@ public class TypeSummary implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
      * <p>
-     * To set the default version of an extension, use <code> <a>SetTypeDefaultVersion</a> </code>.
+     * To set the default version of an extension, use <a>SetTypeDefaultVersion</a>.
      * </p>
      * 
      * @return The ID of the default version of the extension. The default version is used when the extension version
@@ -358,7 +361,7 @@ public class TypeSummary implements Serializable, Cloneable {
      *         >RegisterType</a>.
      *         </p>
      *         <p>
-     *         To set the default version of an extension, use <code> <a>SetTypeDefaultVersion</a> </code>.
+     *         To set the default version of an extension, use <a>SetTypeDefaultVersion</a>.
      */
 
     public String getDefaultVersionId() {
@@ -377,7 +380,7 @@ public class TypeSummary implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
      * <p>
-     * To set the default version of an extension, use <code> <a>SetTypeDefaultVersion</a> </code>.
+     * To set the default version of an extension, use <a>SetTypeDefaultVersion</a>.
      * </p>
      * 
      * @param defaultVersionId
@@ -391,7 +394,7 @@ public class TypeSummary implements Serializable, Cloneable {
      *        >RegisterType</a>.
      *        </p>
      *        <p>
-     *        To set the default version of an extension, use <code> <a>SetTypeDefaultVersion</a> </code>.
+     *        To set the default version of an extension, use <a>SetTypeDefaultVersion</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -673,23 +676,23 @@ public class TypeSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For public extensions that have been activated for this account and region, the type name of the public
+     * For public extensions that have been activated for this account and Region, the type name of the public
      * extension.
      * </p>
      * <p>
-     * If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region,
-     * CloudFormation treats that alias as the extension's type name within the account and region, not the type name of
+     * If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region,
+     * CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of
      * the public extension. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias"
      * >Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param originalTypeName
-     *        For public extensions that have been activated for this account and region, the type name of the public
+     *        For public extensions that have been activated for this account and Region, the type name of the public
      *        extension.</p>
      *        <p>
-     *        If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region,
-     *        CloudFormation treats that alias as the extension's type name within the account and region, not the type
+     *        If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region,
+     *        CloudFormation treats that alias as the extension's type name within the account and Region, not the type
      *        name of the public extension. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias"
      *        >Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.
@@ -701,22 +704,22 @@ public class TypeSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For public extensions that have been activated for this account and region, the type name of the public
+     * For public extensions that have been activated for this account and Region, the type name of the public
      * extension.
      * </p>
      * <p>
-     * If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region,
-     * CloudFormation treats that alias as the extension's type name within the account and region, not the type name of
+     * If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region,
+     * CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of
      * the public extension. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias"
      * >Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
-     * @return For public extensions that have been activated for this account and region, the type name of the public
+     * @return For public extensions that have been activated for this account and Region, the type name of the public
      *         extension.</p>
      *         <p>
-     *         If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region,
-     *         CloudFormation treats that alias as the extension's type name within the account and region, not the type
+     *         If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region,
+     *         CloudFormation treats that alias as the extension's type name within the account and Region, not the type
      *         name of the public extension. For more information, see <a href=
      *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias"
      *         >Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.
@@ -728,23 +731,23 @@ public class TypeSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For public extensions that have been activated for this account and region, the type name of the public
+     * For public extensions that have been activated for this account and Region, the type name of the public
      * extension.
      * </p>
      * <p>
-     * If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region,
-     * CloudFormation treats that alias as the extension's type name within the account and region, not the type name of
+     * If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region,
+     * CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of
      * the public extension. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias"
      * >Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param originalTypeName
-     *        For public extensions that have been activated for this account and region, the type name of the public
+     *        For public extensions that have been activated for this account and Region, the type name of the public
      *        extension.</p>
      *        <p>
-     *        If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region,
-     *        CloudFormation treats that alias as the extension's type name within the account and region, not the type
+     *        If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region,
+     *        CloudFormation treats that alias as the extension's type name within the account and Region, not the type
      *        name of the public extension. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias"
      *        >Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.
@@ -758,12 +761,12 @@ public class TypeSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For public extensions that have been activated for this account and region, the version of the public extension
+     * For public extensions that have been activated for this account and Region, the version of the public extension
      * to be used for CloudFormation operations in this account and Region.
      * </p>
      * <p>
      * How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation
-     * automatically updates the extension in this account and region when a new version is released. For more
+     * automatically updates the extension in this account and Region when a new version is released. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto"
      * >Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User
@@ -771,11 +774,11 @@ public class TypeSummary implements Serializable, Cloneable {
      * </p>
      * 
      * @param publicVersionNumber
-     *        For public extensions that have been activated for this account and region, the version of the public
+     *        For public extensions that have been activated for this account and Region, the version of the public
      *        extension to be used for CloudFormation operations in this account and Region.</p>
      *        <p>
      *        How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation
-     *        automatically updates the extension in this account and region when a new version is released. For more
+     *        automatically updates the extension in this account and Region when a new version is released. For more
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto"
      *        >Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User
@@ -788,23 +791,23 @@ public class TypeSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For public extensions that have been activated for this account and region, the version of the public extension
+     * For public extensions that have been activated for this account and Region, the version of the public extension
      * to be used for CloudFormation operations in this account and Region.
      * </p>
      * <p>
      * How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation
-     * automatically updates the extension in this account and region when a new version is released. For more
+     * automatically updates the extension in this account and Region when a new version is released. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto"
      * >Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User
      * Guide</i>.
      * </p>
      * 
-     * @return For public extensions that have been activated for this account and region, the version of the public
+     * @return For public extensions that have been activated for this account and Region, the version of the public
      *         extension to be used for CloudFormation operations in this account and Region.</p>
      *         <p>
      *         How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation
-     *         automatically updates the extension in this account and region when a new version is released. For more
+     *         automatically updates the extension in this account and Region when a new version is released. For more
      *         information, see <a href=
      *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto"
      *         >Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User
@@ -817,12 +820,12 @@ public class TypeSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For public extensions that have been activated for this account and region, the version of the public extension
+     * For public extensions that have been activated for this account and Region, the version of the public extension
      * to be used for CloudFormation operations in this account and Region.
      * </p>
      * <p>
      * How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation
-     * automatically updates the extension in this account and region when a new version is released. For more
+     * automatically updates the extension in this account and Region when a new version is released. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto"
      * >Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User
@@ -830,11 +833,11 @@ public class TypeSummary implements Serializable, Cloneable {
      * </p>
      * 
      * @param publicVersionNumber
-     *        For public extensions that have been activated for this account and region, the version of the public
+     *        For public extensions that have been activated for this account and Region, the version of the public
      *        extension to be used for CloudFormation operations in this account and Region.</p>
      *        <p>
      *        How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation
-     *        automatically updates the extension in this account and region when a new version is released. For more
+     *        automatically updates the extension in this account and Region when a new version is released. For more
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto"
      *        >Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User
@@ -849,13 +852,13 @@ public class TypeSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For public extensions that have been activated for this account and region, the latest version of the public
+     * For public extensions that have been activated for this account and Region, the latest version of the public
      * extension <i>that is available</i>. For any extensions other than activated third-arty extensions, CloudFormation
      * returns <code>null</code>.
      * </p>
      * <p>
      * How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation
-     * automatically updates the extension in this account and region when a new version is released. For more
+     * automatically updates the extension in this account and Region when a new version is released. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto"
      * >Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User
@@ -863,12 +866,12 @@ public class TypeSummary implements Serializable, Cloneable {
      * </p>
      * 
      * @param latestPublicVersion
-     *        For public extensions that have been activated for this account and region, the latest version of the
+     *        For public extensions that have been activated for this account and Region, the latest version of the
      *        public extension <i>that is available</i>. For any extensions other than activated third-arty extensions,
      *        CloudFormation returns <code>null</code>.</p>
      *        <p>
      *        How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation
-     *        automatically updates the extension in this account and region when a new version is released. For more
+     *        automatically updates the extension in this account and Region when a new version is released. For more
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto"
      *        >Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User
@@ -881,25 +884,25 @@ public class TypeSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For public extensions that have been activated for this account and region, the latest version of the public
+     * For public extensions that have been activated for this account and Region, the latest version of the public
      * extension <i>that is available</i>. For any extensions other than activated third-arty extensions, CloudFormation
      * returns <code>null</code>.
      * </p>
      * <p>
      * How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation
-     * automatically updates the extension in this account and region when a new version is released. For more
+     * automatically updates the extension in this account and Region when a new version is released. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto"
      * >Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User
      * Guide</i>.
      * </p>
      * 
-     * @return For public extensions that have been activated for this account and region, the latest version of the
+     * @return For public extensions that have been activated for this account and Region, the latest version of the
      *         public extension <i>that is available</i>. For any extensions other than activated third-arty extensions,
      *         CloudFormation returns <code>null</code>.</p>
      *         <p>
      *         How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation
-     *         automatically updates the extension in this account and region when a new version is released. For more
+     *         automatically updates the extension in this account and Region when a new version is released. For more
      *         information, see <a href=
      *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto"
      *         >Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User
@@ -912,13 +915,13 @@ public class TypeSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For public extensions that have been activated for this account and region, the latest version of the public
+     * For public extensions that have been activated for this account and Region, the latest version of the public
      * extension <i>that is available</i>. For any extensions other than activated third-arty extensions, CloudFormation
      * returns <code>null</code>.
      * </p>
      * <p>
      * How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation
-     * automatically updates the extension in this account and region when a new version is released. For more
+     * automatically updates the extension in this account and Region when a new version is released. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto"
      * >Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User
@@ -926,12 +929,12 @@ public class TypeSummary implements Serializable, Cloneable {
      * </p>
      * 
      * @param latestPublicVersion
-     *        For public extensions that have been activated for this account and region, the latest version of the
+     *        For public extensions that have been activated for this account and Region, the latest version of the
      *        public extension <i>that is available</i>. For any extensions other than activated third-arty extensions,
      *        CloudFormation returns <code>null</code>.</p>
      *        <p>
      *        How you specified <code>AutoUpdate</code> when enabling the extension affects whether CloudFormation
-     *        automatically updates the extension in this account and region when a new version is released. For more
+     *        automatically updates the extension in this account and Region when a new version is released. For more
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto"
      *        >Setting CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation User
@@ -1091,14 +1094,14 @@ public class TypeSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the extension is activated for this account and region.
+     * Whether the extension is activated for this account and Region.
      * </p>
      * <p>
      * This applies only to third-party public extensions. Extensions published by Amazon are activated by default.
      * </p>
      * 
      * @param isActivated
-     *        Whether the extension is activated for this account and region.</p>
+     *        Whether the extension is activated for this account and Region.</p>
      *        <p>
      *        This applies only to third-party public extensions. Extensions published by Amazon are activated by
      *        default.
@@ -1110,13 +1113,13 @@ public class TypeSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the extension is activated for this account and region.
+     * Whether the extension is activated for this account and Region.
      * </p>
      * <p>
      * This applies only to third-party public extensions. Extensions published by Amazon are activated by default.
      * </p>
      * 
-     * @return Whether the extension is activated for this account and region.</p>
+     * @return Whether the extension is activated for this account and Region.</p>
      *         <p>
      *         This applies only to third-party public extensions. Extensions published by Amazon are activated by
      *         default.
@@ -1128,14 +1131,14 @@ public class TypeSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the extension is activated for this account and region.
+     * Whether the extension is activated for this account and Region.
      * </p>
      * <p>
      * This applies only to third-party public extensions. Extensions published by Amazon are activated by default.
      * </p>
      * 
      * @param isActivated
-     *        Whether the extension is activated for this account and region.</p>
+     *        Whether the extension is activated for this account and Region.</p>
      *        <p>
      *        This applies only to third-party public extensions. Extensions published by Amazon are activated by
      *        default.
@@ -1149,13 +1152,13 @@ public class TypeSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Whether the extension is activated for this account and region.
+     * Whether the extension is activated for this account and Region.
      * </p>
      * <p>
      * This applies only to third-party public extensions. Extensions published by Amazon are activated by default.
      * </p>
      * 
-     * @return Whether the extension is activated for this account and region.</p>
+     * @return Whether the extension is activated for this account and Region.</p>
      *         <p>
      *         This applies only to third-party public extensions. Extensions published by Amazon are activated by
      *         default.

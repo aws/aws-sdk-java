@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A JSON-formatted object that contains the IDs for an Amazon Machine Image (AMI), including the Amazon EC2 AMI ID and
- * the Snow device AMI ID. Each AMI has these two IDs to simplify identifying the AMI in both the Amazon Web Services
- * Cloud and on the device.
+ * A JSON-formatted object that contains the IDs for an Amazon Machine Image (AMI), including the Amazon EC2-compatible
+ * AMI ID and the Snow device AMI ID. Each AMI has these two IDs to simplify identifying the AMI in both the Amazon Web
+ * Services Cloud and on the device.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/Ec2AmiResource" target="_top">AWS API

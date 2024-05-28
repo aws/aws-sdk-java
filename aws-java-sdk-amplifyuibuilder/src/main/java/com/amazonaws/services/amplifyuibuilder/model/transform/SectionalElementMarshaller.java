@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,16 +27,18 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class SectionalElementMarshaller {
 
-    private static final MarshallingInfo<Integer> LEVEL_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("level").build();
-    private static final MarshallingInfo<String> ORIENTATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("orientation").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("type").build();
     private static final MarshallingInfo<StructuredPojo> POSITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("position").build();
     private static final MarshallingInfo<String> TEXT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("text").build();
-    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("type").build();
+    private static final MarshallingInfo<Integer> LEVEL_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("level").build();
+    private static final MarshallingInfo<String> ORIENTATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("orientation").build();
+    private static final MarshallingInfo<Boolean> EXCLUDED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("excluded").build();
 
     private static final SectionalElementMarshaller instance = new SectionalElementMarshaller();
 
@@ -54,11 +56,12 @@ public class SectionalElementMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(sectionalElement.getLevel(), LEVEL_BINDING);
-            protocolMarshaller.marshall(sectionalElement.getOrientation(), ORIENTATION_BINDING);
+            protocolMarshaller.marshall(sectionalElement.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(sectionalElement.getPosition(), POSITION_BINDING);
             protocolMarshaller.marshall(sectionalElement.getText(), TEXT_BINDING);
-            protocolMarshaller.marshall(sectionalElement.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(sectionalElement.getLevel(), LEVEL_BINDING);
+            protocolMarshaller.marshall(sectionalElement.getOrientation(), ORIENTATION_BINDING);
+            protocolMarshaller.marshall(sectionalElement.getExcluded(), EXCLUDED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

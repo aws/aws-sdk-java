@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,13 @@ public class CreateStateMachineResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private java.util.Date creationDate;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that identifies the created state machine version. If you do not set the
+     * <code>publish</code> parameter to <code>true</code>, this field returns null value.
+     * </p>
+     */
+    private String stateMachineVersionArn;
 
     /**
      * <p>
@@ -117,6 +124,52 @@ public class CreateStateMachineResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) that identifies the created state machine version. If you do not set the
+     * <code>publish</code> parameter to <code>true</code>, this field returns null value.
+     * </p>
+     * 
+     * @param stateMachineVersionArn
+     *        The Amazon Resource Name (ARN) that identifies the created state machine version. If you do not set the
+     *        <code>publish</code> parameter to <code>true</code>, this field returns null value.
+     */
+
+    public void setStateMachineVersionArn(String stateMachineVersionArn) {
+        this.stateMachineVersionArn = stateMachineVersionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that identifies the created state machine version. If you do not set the
+     * <code>publish</code> parameter to <code>true</code>, this field returns null value.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) that identifies the created state machine version. If you do not set the
+     *         <code>publish</code> parameter to <code>true</code>, this field returns null value.
+     */
+
+    public String getStateMachineVersionArn() {
+        return this.stateMachineVersionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that identifies the created state machine version. If you do not set the
+     * <code>publish</code> parameter to <code>true</code>, this field returns null value.
+     * </p>
+     * 
+     * @param stateMachineVersionArn
+     *        The Amazon Resource Name (ARN) that identifies the created state machine version. If you do not set the
+     *        <code>publish</code> parameter to <code>true</code>, this field returns null value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStateMachineResult withStateMachineVersionArn(String stateMachineVersionArn) {
+        setStateMachineVersionArn(stateMachineVersionArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -131,7 +184,9 @@ public class CreateStateMachineResult extends com.amazonaws.AmazonWebServiceResu
         if (getStateMachineArn() != null)
             sb.append("StateMachineArn: ").append(getStateMachineArn()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: ").append(getCreationDate());
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
+        if (getStateMachineVersionArn() != null)
+            sb.append("StateMachineVersionArn: ").append(getStateMachineVersionArn());
         sb.append("}");
         return sb.toString();
     }
@@ -154,6 +209,10 @@ public class CreateStateMachineResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false)
             return false;
+        if (other.getStateMachineVersionArn() == null ^ this.getStateMachineVersionArn() == null)
+            return false;
+        if (other.getStateMachineVersionArn() != null && other.getStateMachineVersionArn().equals(this.getStateMachineVersionArn()) == false)
+            return false;
         return true;
     }
 
@@ -164,6 +223,7 @@ public class CreateStateMachineResult extends com.amazonaws.AmazonWebServiceResu
 
         hashCode = prime * hashCode + ((getStateMachineArn() == null) ? 0 : getStateMachineArn().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
+        hashCode = prime * hashCode + ((getStateMachineVersionArn() == null) ? 0 : getStateMachineVersionArn().hashCode());
         return hashCode;
     }
 

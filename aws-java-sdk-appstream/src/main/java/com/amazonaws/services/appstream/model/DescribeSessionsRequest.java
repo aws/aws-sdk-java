@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,12 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private String authenticationType;
+    /**
+     * <p>
+     * The identifier for the instance hosting the session.
+     * </p>
+     */
+    private String instanceId;
 
     /**
      * <p>
@@ -354,6 +360,46 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The identifier for the instance hosting the session.
+     * </p>
+     * 
+     * @param instanceId
+     *        The identifier for the instance hosting the session.
+     */
+
+    public void setInstanceId(String instanceId) {
+        this.instanceId = instanceId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the instance hosting the session.
+     * </p>
+     * 
+     * @return The identifier for the instance hosting the session.
+     */
+
+    public String getInstanceId() {
+        return this.instanceId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the instance hosting the session.
+     * </p>
+     * 
+     * @param instanceId
+     *        The identifier for the instance hosting the session.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSessionsRequest withInstanceId(String instanceId) {
+        setInstanceId(instanceId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -376,7 +422,9 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
         if (getLimit() != null)
             sb.append("Limit: ").append(getLimit()).append(",");
         if (getAuthenticationType() != null)
-            sb.append("AuthenticationType: ").append(getAuthenticationType());
+            sb.append("AuthenticationType: ").append(getAuthenticationType()).append(",");
+        if (getInstanceId() != null)
+            sb.append("InstanceId: ").append(getInstanceId());
         sb.append("}");
         return sb.toString();
     }
@@ -415,6 +463,10 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getAuthenticationType() != null && other.getAuthenticationType().equals(this.getAuthenticationType()) == false)
             return false;
+        if (other.getInstanceId() == null ^ this.getInstanceId() == null)
+            return false;
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
+            return false;
         return true;
     }
 
@@ -429,6 +481,7 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
         hashCode = prime * hashCode + ((getAuthenticationType() == null) ? 0 : getAuthenticationType().hashCode());
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         return hashCode;
     }
 

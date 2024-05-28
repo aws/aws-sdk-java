@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,8 @@ public class ProjectEnvironmentMarshaller {
             .marshallLocationName("image").build();
     private static final MarshallingInfo<String> COMPUTETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("computeType").build();
+    private static final MarshallingInfo<StructuredPojo> FLEET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fleet").build();
     private static final MarshallingInfo<List> ENVIRONMENTVARIABLES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("environmentVariables").build();
     private static final MarshallingInfo<Boolean> PRIVILEGEDMODE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -64,6 +66,7 @@ public class ProjectEnvironmentMarshaller {
             protocolMarshaller.marshall(projectEnvironment.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(projectEnvironment.getImage(), IMAGE_BINDING);
             protocolMarshaller.marshall(projectEnvironment.getComputeType(), COMPUTETYPE_BINDING);
+            protocolMarshaller.marshall(projectEnvironment.getFleet(), FLEET_BINDING);
             protocolMarshaller.marshall(projectEnvironment.getEnvironmentVariables(), ENVIRONMENTVARIABLES_BINDING);
             protocolMarshaller.marshall(projectEnvironment.getPrivilegedMode(), PRIVILEGEDMODE_BINDING);
             protocolMarshaller.marshall(projectEnvironment.getCertificate(), CERTIFICATE_BINDING);

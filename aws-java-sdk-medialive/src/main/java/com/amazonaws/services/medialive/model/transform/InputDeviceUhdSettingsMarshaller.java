@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.medialive.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -43,6 +44,14 @@ public class InputDeviceUhdSettingsMarshaller {
             .marshallLocationName("scanType").build();
     private static final MarshallingInfo<Integer> WIDTH_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("width").build();
+    private static final MarshallingInfo<Integer> LATENCYMS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("latencyMs").build();
+    private static final MarshallingInfo<String> CODEC_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("codec").build();
+    private static final MarshallingInfo<StructuredPojo> MEDIACONNECTSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mediaconnectSettings").build();
+    private static final MarshallingInfo<List> AUDIOCHANNELPAIRS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioChannelPairs").build();
 
     private static final InputDeviceUhdSettingsMarshaller instance = new InputDeviceUhdSettingsMarshaller();
 
@@ -68,6 +77,10 @@ public class InputDeviceUhdSettingsMarshaller {
             protocolMarshaller.marshall(inputDeviceUhdSettings.getMaxBitrate(), MAXBITRATE_BINDING);
             protocolMarshaller.marshall(inputDeviceUhdSettings.getScanType(), SCANTYPE_BINDING);
             protocolMarshaller.marshall(inputDeviceUhdSettings.getWidth(), WIDTH_BINDING);
+            protocolMarshaller.marshall(inputDeviceUhdSettings.getLatencyMs(), LATENCYMS_BINDING);
+            protocolMarshaller.marshall(inputDeviceUhdSettings.getCodec(), CODEC_BINDING);
+            protocolMarshaller.marshall(inputDeviceUhdSettings.getMediaconnectSettings(), MEDIACONNECTSETTINGS_BINDING);
+            protocolMarshaller.marshall(inputDeviceUhdSettings.getAudioChannelPairs(), AUDIOCHANNELPAIRS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

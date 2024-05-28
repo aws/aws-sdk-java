@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,10 @@ public class GetMapGlyphsResultJsonUnmarshaller implements Unmarshaller<GetMapGl
         GetMapGlyphsResult getMapGlyphsResult = new GetMapGlyphsResult();
 
         if (context.isStartOfDocument()) {
+            if (context.getHeader("Cache-Control") != null) {
+                context.setCurrentHeader("Cache-Control");
+                getMapGlyphsResult.setCacheControl(context.getUnmarshaller(String.class).unmarshall(context));
+            }
             if (context.getHeader("Content-Type") != null) {
                 context.setCurrentHeader("Content-Type");
                 getMapGlyphsResult.setContentType(context.getUnmarshaller(String.class).unmarshall(context));

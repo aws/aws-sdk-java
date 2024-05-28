@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,14 @@ public class PipelineDeclarationMarshaller {
             .marshallLocationName("stages").build();
     private static final MarshallingInfo<Integer> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("version").build();
+    private static final MarshallingInfo<String> EXECUTIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionMode").build();
+    private static final MarshallingInfo<String> PIPELINETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pipelineType").build();
+    private static final MarshallingInfo<List> VARIABLES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("variables").build();
+    private static final MarshallingInfo<List> TRIGGERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("triggers").build();
 
     private static final PipelineDeclarationMarshaller instance = new PipelineDeclarationMarshaller();
 
@@ -64,6 +72,10 @@ public class PipelineDeclarationMarshaller {
             protocolMarshaller.marshall(pipelineDeclaration.getArtifactStores(), ARTIFACTSTORES_BINDING);
             protocolMarshaller.marshall(pipelineDeclaration.getStages(), STAGES_BINDING);
             protocolMarshaller.marshall(pipelineDeclaration.getVersion(), VERSION_BINDING);
+            protocolMarshaller.marshall(pipelineDeclaration.getExecutionMode(), EXECUTIONMODE_BINDING);
+            protocolMarshaller.marshall(pipelineDeclaration.getPipelineType(), PIPELINETYPE_BINDING);
+            protocolMarshaller.marshall(pipelineDeclaration.getVariables(), VARIABLES_BINDING);
+            protocolMarshaller.marshall(pipelineDeclaration.getTriggers(), TRIGGERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

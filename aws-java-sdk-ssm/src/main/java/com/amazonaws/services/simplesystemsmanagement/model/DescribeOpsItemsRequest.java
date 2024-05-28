@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -129,6 +129,14 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      * <li>
      * <p>
      * Key: AutomationId
+     * </p>
+     * <p>
+     * Operations: Equals
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Key: AccountId
      * </p>
      * <p>
      * Operations: Equals
@@ -268,6 +276,14 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      * Operations: Equals
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Key: AccountId
+     * </p>
+     * <p>
+     * Operations: Equals
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * *The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters, they
@@ -379,6 +395,14 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      *         <li>
      *         <p>
      *         Key: AutomationId
+     *         </p>
+     *         <p>
+     *         Operations: Equals
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Key: AccountId
      *         </p>
      *         <p>
      *         Operations: Equals
@@ -510,6 +534,14 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      * Operations: Equals
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Key: AccountId
+     * </p>
+     * <p>
+     * Operations: Equals
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * *The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters, they
@@ -622,6 +654,14 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      *        <li>
      *        <p>
      *        Key: AutomationId
+     *        </p>
+     *        <p>
+     *        Operations: Equals
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Key: AccountId
      *        </p>
      *        <p>
      *        Operations: Equals
@@ -755,6 +795,14 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      * Operations: Equals
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Key: AccountId
+     * </p>
+     * <p>
+     * Operations: Equals
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * *The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters, they
@@ -872,6 +920,14 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      *        <li>
      *        <p>
      *        Key: AutomationId
+     *        </p>
+     *        <p>
+     *        Operations: Equals
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Key: AccountId
      *        </p>
      *        <p>
      *        Operations: Equals
@@ -1007,6 +1063,14 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      * Operations: Equals
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Key: AccountId
+     * </p>
+     * <p>
+     * Operations: Equals
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * *The Equals operator for Title matches the first 100 characters. If you specify more than 100 characters, they
@@ -1119,6 +1183,14 @@ public class DescribeOpsItemsRequest extends com.amazonaws.AmazonWebServiceReque
      *        <li>
      *        <p>
      *        Key: AutomationId
+     *        </p>
+     *        <p>
+     *        Operations: Equals
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Key: AccountId
      *        </p>
      *        <p>
      *        Operations: Equals

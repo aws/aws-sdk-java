@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,10 +27,56 @@ public class DisconnectFromServiceRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
+     * Request to disconnect Source Server from service by Account ID.
+     * </p>
+     */
+    private String accountID;
+    /**
+     * <p>
      * Request to disconnect Source Server from service by Server ID.
      * </p>
      */
     private String sourceServerID;
+
+    /**
+     * <p>
+     * Request to disconnect Source Server from service by Account ID.
+     * </p>
+     * 
+     * @param accountID
+     *        Request to disconnect Source Server from service by Account ID.
+     */
+
+    public void setAccountID(String accountID) {
+        this.accountID = accountID;
+    }
+
+    /**
+     * <p>
+     * Request to disconnect Source Server from service by Account ID.
+     * </p>
+     * 
+     * @return Request to disconnect Source Server from service by Account ID.
+     */
+
+    public String getAccountID() {
+        return this.accountID;
+    }
+
+    /**
+     * <p>
+     * Request to disconnect Source Server from service by Account ID.
+     * </p>
+     * 
+     * @param accountID
+     *        Request to disconnect Source Server from service by Account ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DisconnectFromServiceRequest withAccountID(String accountID) {
+        setAccountID(accountID);
+        return this;
+    }
 
     /**
      * <p>
@@ -84,6 +130,8 @@ public class DisconnectFromServiceRequest extends com.amazonaws.AmazonWebService
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccountID() != null)
+            sb.append("AccountID: ").append(getAccountID()).append(",");
         if (getSourceServerID() != null)
             sb.append("SourceServerID: ").append(getSourceServerID());
         sb.append("}");
@@ -100,6 +148,10 @@ public class DisconnectFromServiceRequest extends com.amazonaws.AmazonWebService
         if (obj instanceof DisconnectFromServiceRequest == false)
             return false;
         DisconnectFromServiceRequest other = (DisconnectFromServiceRequest) obj;
+        if (other.getAccountID() == null ^ this.getAccountID() == null)
+            return false;
+        if (other.getAccountID() != null && other.getAccountID().equals(this.getAccountID()) == false)
+            return false;
         if (other.getSourceServerID() == null ^ this.getSourceServerID() == null)
             return false;
         if (other.getSourceServerID() != null && other.getSourceServerID().equals(this.getSourceServerID()) == false)
@@ -112,6 +164,7 @@ public class DisconnectFromServiceRequest extends com.amazonaws.AmazonWebService
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccountID() == null) ? 0 : getAccountID().hashCode());
         hashCode = prime * hashCode + ((getSourceServerID() == null) ? 0 : getSourceServerID().hashCode());
         return hashCode;
     }

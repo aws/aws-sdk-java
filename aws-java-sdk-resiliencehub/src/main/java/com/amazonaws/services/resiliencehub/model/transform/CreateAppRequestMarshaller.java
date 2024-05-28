@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -13,7 +13,7 @@
 package com.amazonaws.services.resiliencehub.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -38,8 +38,12 @@ public class CreateAppRequestMarshaller {
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<List> EVENTSUBSCRIPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("eventSubscriptions").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<StructuredPojo> PERMISSIONMODEL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("permissionModel").build();
     private static final MarshallingInfo<String> POLICYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("policyArn").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -64,7 +68,9 @@ public class CreateAppRequestMarshaller {
             protocolMarshaller.marshall(createAppRequest.getAssessmentSchedule(), ASSESSMENTSCHEDULE_BINDING);
             protocolMarshaller.marshall(createAppRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createAppRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createAppRequest.getEventSubscriptions(), EVENTSUBSCRIPTIONS_BINDING);
             protocolMarshaller.marshall(createAppRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(createAppRequest.getPermissionModel(), PERMISSIONMODEL_BINDING);
             protocolMarshaller.marshall(createAppRequest.getPolicyArn(), POLICYARN_BINDING);
             protocolMarshaller.marshall(createAppRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {

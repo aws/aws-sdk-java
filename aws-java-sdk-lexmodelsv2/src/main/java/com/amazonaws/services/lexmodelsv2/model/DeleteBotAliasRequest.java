@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,8 +39,10 @@ public class DeleteBotAliasRequest extends com.amazonaws.AmazonWebServiceRequest
     private String botId;
     /**
      * <p>
-     * When this parameter is true, Amazon Lex doesn't check to see if any other resource is using the alias before it
-     * is deleted.
+     * By default, Amazon Lex checks if any other resource, such as a bot network, is using the bot alias before it is
+     * deleted and throws a <code>ResourceInUseException</code> exception if the alias is being used by another
+     * resource. Set this parameter to <code>true</code> to skip this check and remove the alias even if it is being
+     * used by another resource.
      * </p>
      */
     private Boolean skipResourceInUseCheck;
@@ -127,13 +129,17 @@ public class DeleteBotAliasRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * When this parameter is true, Amazon Lex doesn't check to see if any other resource is using the alias before it
-     * is deleted.
+     * By default, Amazon Lex checks if any other resource, such as a bot network, is using the bot alias before it is
+     * deleted and throws a <code>ResourceInUseException</code> exception if the alias is being used by another
+     * resource. Set this parameter to <code>true</code> to skip this check and remove the alias even if it is being
+     * used by another resource.
      * </p>
      * 
      * @param skipResourceInUseCheck
-     *        When this parameter is true, Amazon Lex doesn't check to see if any other resource is using the alias
-     *        before it is deleted.
+     *        By default, Amazon Lex checks if any other resource, such as a bot network, is using the bot alias before
+     *        it is deleted and throws a <code>ResourceInUseException</code> exception if the alias is being used by
+     *        another resource. Set this parameter to <code>true</code> to skip this check and remove the alias even if
+     *        it is being used by another resource.
      */
 
     public void setSkipResourceInUseCheck(Boolean skipResourceInUseCheck) {
@@ -142,12 +148,16 @@ public class DeleteBotAliasRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * When this parameter is true, Amazon Lex doesn't check to see if any other resource is using the alias before it
-     * is deleted.
+     * By default, Amazon Lex checks if any other resource, such as a bot network, is using the bot alias before it is
+     * deleted and throws a <code>ResourceInUseException</code> exception if the alias is being used by another
+     * resource. Set this parameter to <code>true</code> to skip this check and remove the alias even if it is being
+     * used by another resource.
      * </p>
      * 
-     * @return When this parameter is true, Amazon Lex doesn't check to see if any other resource is using the alias
-     *         before it is deleted.
+     * @return By default, Amazon Lex checks if any other resource, such as a bot network, is using the bot alias before
+     *         it is deleted and throws a <code>ResourceInUseException</code> exception if the alias is being used by
+     *         another resource. Set this parameter to <code>true</code> to skip this check and remove the alias even if
+     *         it is being used by another resource.
      */
 
     public Boolean getSkipResourceInUseCheck() {
@@ -156,13 +166,17 @@ public class DeleteBotAliasRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * When this parameter is true, Amazon Lex doesn't check to see if any other resource is using the alias before it
-     * is deleted.
+     * By default, Amazon Lex checks if any other resource, such as a bot network, is using the bot alias before it is
+     * deleted and throws a <code>ResourceInUseException</code> exception if the alias is being used by another
+     * resource. Set this parameter to <code>true</code> to skip this check and remove the alias even if it is being
+     * used by another resource.
      * </p>
      * 
      * @param skipResourceInUseCheck
-     *        When this parameter is true, Amazon Lex doesn't check to see if any other resource is using the alias
-     *        before it is deleted.
+     *        By default, Amazon Lex checks if any other resource, such as a bot network, is using the bot alias before
+     *        it is deleted and throws a <code>ResourceInUseException</code> exception if the alias is being used by
+     *        another resource. Set this parameter to <code>true</code> to skip this check and remove the alias even if
+     *        it is being used by another resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,12 +187,16 @@ public class DeleteBotAliasRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * When this parameter is true, Amazon Lex doesn't check to see if any other resource is using the alias before it
-     * is deleted.
+     * By default, Amazon Lex checks if any other resource, such as a bot network, is using the bot alias before it is
+     * deleted and throws a <code>ResourceInUseException</code> exception if the alias is being used by another
+     * resource. Set this parameter to <code>true</code> to skip this check and remove the alias even if it is being
+     * used by another resource.
      * </p>
      * 
-     * @return When this parameter is true, Amazon Lex doesn't check to see if any other resource is using the alias
-     *         before it is deleted.
+     * @return By default, Amazon Lex checks if any other resource, such as a bot network, is using the bot alias before
+     *         it is deleted and throws a <code>ResourceInUseException</code> exception if the alias is being used by
+     *         another resource. Set this parameter to <code>true</code> to skip this check and remove the alias even if
+     *         it is being used by another resource.
      */
 
     public Boolean isSkipResourceInUseCheck() {

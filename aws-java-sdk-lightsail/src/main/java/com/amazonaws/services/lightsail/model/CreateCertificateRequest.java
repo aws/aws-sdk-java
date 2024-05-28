@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,20 +33,20 @@ public class CreateCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
     private String certificateName;
     /**
      * <p>
-     * The domain name (e.g., <code>example.com</code>) for the certificate.
+     * The domain name (<code>example.com</code>) for the certificate.
      * </p>
      */
     private String domainName;
     /**
      * <p>
-     * An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g.,
+     * An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (
      * <code>blog.example.com</code>) for the certificate.
      * </p>
      * <p>
      * You can specify a maximum of nine alternate domains (in addition to the primary domain name).
      * </p>
      * <p>
-     * Wildcard domain entries (e.g., <code>*.example.com</code>) are not supported.
+     * Wildcard domain entries (<code>*.example.com</code>) are not supported.
      * </p>
      */
     private java.util.List<String> subjectAlternativeNames;
@@ -102,11 +102,11 @@ public class CreateCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The domain name (e.g., <code>example.com</code>) for the certificate.
+     * The domain name (<code>example.com</code>) for the certificate.
      * </p>
      * 
      * @param domainName
-     *        The domain name (e.g., <code>example.com</code>) for the certificate.
+     *        The domain name (<code>example.com</code>) for the certificate.
      */
 
     public void setDomainName(String domainName) {
@@ -115,10 +115,10 @@ public class CreateCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The domain name (e.g., <code>example.com</code>) for the certificate.
+     * The domain name (<code>example.com</code>) for the certificate.
      * </p>
      * 
-     * @return The domain name (e.g., <code>example.com</code>) for the certificate.
+     * @return The domain name (<code>example.com</code>) for the certificate.
      */
 
     public String getDomainName() {
@@ -127,11 +127,11 @@ public class CreateCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The domain name (e.g., <code>example.com</code>) for the certificate.
+     * The domain name (<code>example.com</code>) for the certificate.
      * </p>
      * 
      * @param domainName
-     *        The domain name (e.g., <code>example.com</code>) for the certificate.
+     *        The domain name (<code>example.com</code>) for the certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,23 +142,23 @@ public class CreateCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g.,
+     * An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (
      * <code>blog.example.com</code>) for the certificate.
      * </p>
      * <p>
      * You can specify a maximum of nine alternate domains (in addition to the primary domain name).
      * </p>
      * <p>
-     * Wildcard domain entries (e.g., <code>*.example.com</code>) are not supported.
+     * Wildcard domain entries (<code>*.example.com</code>) are not supported.
      * </p>
      * 
-     * @return An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains
-     *         (e.g., <code>blog.example.com</code>) for the certificate.</p>
+     * @return An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (
+     *         <code>blog.example.com</code>) for the certificate.</p>
      *         <p>
      *         You can specify a maximum of nine alternate domains (in addition to the primary domain name).
      *         </p>
      *         <p>
-     *         Wildcard domain entries (e.g., <code>*.example.com</code>) are not supported.
+     *         Wildcard domain entries (<code>*.example.com</code>) are not supported.
      */
 
     public java.util.List<String> getSubjectAlternativeNames() {
@@ -167,24 +167,24 @@ public class CreateCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g.,
+     * An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (
      * <code>blog.example.com</code>) for the certificate.
      * </p>
      * <p>
      * You can specify a maximum of nine alternate domains (in addition to the primary domain name).
      * </p>
      * <p>
-     * Wildcard domain entries (e.g., <code>*.example.com</code>) are not supported.
+     * Wildcard domain entries (<code>*.example.com</code>) are not supported.
      * </p>
      * 
      * @param subjectAlternativeNames
-     *        An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains
-     *        (e.g., <code>blog.example.com</code>) for the certificate.</p>
+     *        An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (
+     *        <code>blog.example.com</code>) for the certificate.</p>
      *        <p>
      *        You can specify a maximum of nine alternate domains (in addition to the primary domain name).
      *        </p>
      *        <p>
-     *        Wildcard domain entries (e.g., <code>*.example.com</code>) are not supported.
+     *        Wildcard domain entries (<code>*.example.com</code>) are not supported.
      */
 
     public void setSubjectAlternativeNames(java.util.Collection<String> subjectAlternativeNames) {
@@ -198,14 +198,14 @@ public class CreateCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g.,
+     * An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (
      * <code>blog.example.com</code>) for the certificate.
      * </p>
      * <p>
      * You can specify a maximum of nine alternate domains (in addition to the primary domain name).
      * </p>
      * <p>
-     * Wildcard domain entries (e.g., <code>*.example.com</code>) are not supported.
+     * Wildcard domain entries (<code>*.example.com</code>) are not supported.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -214,13 +214,13 @@ public class CreateCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param subjectAlternativeNames
-     *        An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains
-     *        (e.g., <code>blog.example.com</code>) for the certificate.</p>
+     *        An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (
+     *        <code>blog.example.com</code>) for the certificate.</p>
      *        <p>
      *        You can specify a maximum of nine alternate domains (in addition to the primary domain name).
      *        </p>
      *        <p>
-     *        Wildcard domain entries (e.g., <code>*.example.com</code>) are not supported.
+     *        Wildcard domain entries (<code>*.example.com</code>) are not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -236,24 +236,24 @@ public class CreateCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g.,
+     * An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (
      * <code>blog.example.com</code>) for the certificate.
      * </p>
      * <p>
      * You can specify a maximum of nine alternate domains (in addition to the primary domain name).
      * </p>
      * <p>
-     * Wildcard domain entries (e.g., <code>*.example.com</code>) are not supported.
+     * Wildcard domain entries (<code>*.example.com</code>) are not supported.
      * </p>
      * 
      * @param subjectAlternativeNames
-     *        An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains
-     *        (e.g., <code>blog.example.com</code>) for the certificate.</p>
+     *        An array of strings that specify the alternate domains (<code>example2.com</code>) and subdomains (
+     *        <code>blog.example.com</code>) for the certificate.</p>
      *        <p>
      *        You can specify a maximum of nine alternate domains (in addition to the primary domain name).
      *        </p>
      *        <p>
-     *        Wildcard domain entries (e.g., <code>*.example.com</code>) are not supported.
+     *        Wildcard domain entries (<code>*.example.com</code>) are not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

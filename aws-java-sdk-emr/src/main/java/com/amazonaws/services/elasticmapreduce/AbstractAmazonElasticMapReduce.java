@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -146,6 +146,11 @@ public class AbstractAmazonElasticMapReduce implements AmazonElasticMapReduce {
     }
 
     @Override
+    public GetClusterSessionCredentialsResult getClusterSessionCredentials(GetClusterSessionCredentialsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetManagedScalingPolicyResult getManagedScalingPolicy(GetManagedScalingPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -216,6 +221,11 @@ public class AbstractAmazonElasticMapReduce implements AmazonElasticMapReduce {
     }
 
     @Override
+    public ListSupportedInstanceTypesResult listSupportedInstanceTypes(ListSupportedInstanceTypesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ModifyClusterResult modifyCluster(ModifyClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -281,7 +291,17 @@ public class AbstractAmazonElasticMapReduce implements AmazonElasticMapReduce {
     }
 
     @Override
+    public SetKeepJobFlowAliveWhenNoStepsResult setKeepJobFlowAliveWhenNoSteps(SetKeepJobFlowAliveWhenNoStepsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SetTerminationProtectionResult setTerminationProtection(SetTerminationProtectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SetUnhealthyNodeReplacementResult setUnhealthyNodeReplacement(SetUnhealthyNodeReplacementRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,7 +51,7 @@ public class ActionExecutionInput implements Serializable, Cloneable, Structured
     private String roleArn;
     /**
      * <p>
-     * The AWS Region for the action, such as us-east-1.
+     * The Amazon Web Services Region for the action, such as us-east-1.
      * </p>
      */
     private String region;
@@ -285,11 +285,11 @@ public class ActionExecutionInput implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The AWS Region for the action, such as us-east-1.
+     * The Amazon Web Services Region for the action, such as us-east-1.
      * </p>
      * 
      * @param region
-     *        The AWS Region for the action, such as us-east-1.
+     *        The Amazon Web Services Region for the action, such as us-east-1.
      */
 
     public void setRegion(String region) {
@@ -298,10 +298,10 @@ public class ActionExecutionInput implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The AWS Region for the action, such as us-east-1.
+     * The Amazon Web Services Region for the action, such as us-east-1.
      * </p>
      * 
-     * @return The AWS Region for the action, such as us-east-1.
+     * @return The Amazon Web Services Region for the action, such as us-east-1.
      */
 
     public String getRegion() {
@@ -310,11 +310,11 @@ public class ActionExecutionInput implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The AWS Region for the action, such as us-east-1.
+     * The Amazon Web Services Region for the action, such as us-east-1.
      * </p>
      * 
      * @param region
-     *        The AWS Region for the action, such as us-east-1.
+     *        The Amazon Web Services Region for the action, such as us-east-1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

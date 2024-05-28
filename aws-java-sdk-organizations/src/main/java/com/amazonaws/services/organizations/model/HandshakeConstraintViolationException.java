@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,7 @@ import javax.annotation.Generated;
  * <important>
  * <p>
  * If you get this exception immediately after creating the organization, wait one hour and try again. If after an hour
- * it continues to fail with this error, contact <a href="https://docs.aws.amazon.com/support/home#/">Amazon Web
+ * it continues to fail with this error, contact <a href="https://console.aws.amazon.com/support/home#/">Amazon Web
  * Services Support</a>.
  * </p>
  * </important></li>

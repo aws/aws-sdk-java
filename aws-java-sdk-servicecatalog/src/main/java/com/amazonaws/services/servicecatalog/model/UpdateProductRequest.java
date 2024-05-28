@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,11 +30,6 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The language code.
      * </p>
      * <ul>
-     * <li>
-     * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
      * <li>
      * <p>
      * <code>jp</code> - Japanese
@@ -108,17 +103,32 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private java.util.List<String> removeTags;
+    /**
+     * <p>
+     * Specifies connection details for the updated product and syncs the product to the connection source artifact.
+     * This automatically manages the product's artifacts based on changes to the source. The
+     * <code>SourceConnection</code> parameter consists of the following sub-fields.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Type</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ConnectionParamters</code>
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private SourceConnection sourceConnection;
 
     /**
      * <p>
      * The language code.
      * </p>
      * <ul>
-     * <li>
-     * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
      * <li>
      * <p>
      * <code>jp</code> - Japanese
@@ -134,11 +144,6 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param acceptLanguage
      *        The language code.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>en</code> - English (default)
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>jp</code> - Japanese
@@ -162,11 +167,6 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -179,11 +179,6 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @return The language code.</p>
      *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>en</code> - English (default)
-     *         </p>
-     *         </li>
      *         <li>
      *         <p>
      *         <code>jp</code> - Japanese
@@ -207,11 +202,6 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -225,11 +215,6 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param acceptLanguage
      *        The language code.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>en</code> - English (default)
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>jp</code> - Japanese
@@ -709,6 +694,127 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * Specifies connection details for the updated product and syncs the product to the connection source artifact.
+     * This automatically manages the product's artifacts based on changes to the source. The
+     * <code>SourceConnection</code> parameter consists of the following sub-fields.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Type</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ConnectionParamters</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param sourceConnection
+     *        Specifies connection details for the updated product and syncs the product to the connection source
+     *        artifact. This automatically manages the product's artifacts based on changes to the source. The
+     *        <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Type</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ConnectionParamters</code>
+     *        </p>
+     *        </li>
+     */
+
+    public void setSourceConnection(SourceConnection sourceConnection) {
+        this.sourceConnection = sourceConnection;
+    }
+
+    /**
+     * <p>
+     * Specifies connection details for the updated product and syncs the product to the connection source artifact.
+     * This automatically manages the product's artifacts based on changes to the source. The
+     * <code>SourceConnection</code> parameter consists of the following sub-fields.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Type</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ConnectionParamters</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Specifies connection details for the updated product and syncs the product to the connection source
+     *         artifact. This automatically manages the product's artifacts based on changes to the source. The
+     *         <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Type</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ConnectionParamters</code>
+     *         </p>
+     *         </li>
+     */
+
+    public SourceConnection getSourceConnection() {
+        return this.sourceConnection;
+    }
+
+    /**
+     * <p>
+     * Specifies connection details for the updated product and syncs the product to the connection source artifact.
+     * This automatically manages the product's artifacts based on changes to the source. The
+     * <code>SourceConnection</code> parameter consists of the following sub-fields.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Type</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ConnectionParamters</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param sourceConnection
+     *        Specifies connection details for the updated product and syncs the product to the connection source
+     *        artifact. This automatically manages the product's artifacts based on changes to the source. The
+     *        <code>SourceConnection</code> parameter consists of the following sub-fields.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Type</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ConnectionParamters</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateProductRequest withSourceConnection(SourceConnection sourceConnection) {
+        setSourceConnection(sourceConnection);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -741,7 +847,9 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getAddTags() != null)
             sb.append("AddTags: ").append(getAddTags()).append(",");
         if (getRemoveTags() != null)
-            sb.append("RemoveTags: ").append(getRemoveTags());
+            sb.append("RemoveTags: ").append(getRemoveTags()).append(",");
+        if (getSourceConnection() != null)
+            sb.append("SourceConnection: ").append(getSourceConnection());
         sb.append("}");
         return sb.toString();
     }
@@ -800,6 +908,10 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getRemoveTags() != null && other.getRemoveTags().equals(this.getRemoveTags()) == false)
             return false;
+        if (other.getSourceConnection() == null ^ this.getSourceConnection() == null)
+            return false;
+        if (other.getSourceConnection() != null && other.getSourceConnection().equals(this.getSourceConnection()) == false)
+            return false;
         return true;
     }
 
@@ -819,6 +931,7 @@ public class UpdateProductRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getSupportUrl() == null) ? 0 : getSupportUrl().hashCode());
         hashCode = prime * hashCode + ((getAddTags() == null) ? 0 : getAddTags().hashCode());
         hashCode = prime * hashCode + ((getRemoveTags() == null) ? 0 : getRemoveTags().hashCode());
+        hashCode = prime * hashCode + ((getSourceConnection() == null) ? 0 : getSourceConnection().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,14 +26,16 @@ public class StartTargetedSentimentDetectionJobResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The identifier generated for the job. To get the status of a job, use this identifier with the operation.
+     * The identifier generated for the job. To get the status of a job, use this identifier with the
+     * <code>DescribeTargetedSentimentDetectionJob</code> operation.
      * </p>
      */
     private String jobId;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified
-     * identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:
+     * identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID.
+     * The format of the ARN is as follows:
      * </p>
      * <p>
      * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:targeted-sentiment-detection-job/&lt;job-id&gt;</code>
@@ -68,7 +70,8 @@ public class StartTargetedSentimentDetectionJobResult extends com.amazonaws.Amaz
      * </li>
      * <li>
      * <p>
-     * FAILED - The job did not complete. To get details, use the operation.
+     * FAILED - The job did not complete. To get details, use the <code>DescribeTargetedSentimentDetectionJob</code>
+     * operation.
      * </p>
      * </li>
      * </ul>
@@ -77,11 +80,13 @@ public class StartTargetedSentimentDetectionJobResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The identifier generated for the job. To get the status of a job, use this identifier with the operation.
+     * The identifier generated for the job. To get the status of a job, use this identifier with the
+     * <code>DescribeTargetedSentimentDetectionJob</code> operation.
      * </p>
      * 
      * @param jobId
-     *        The identifier generated for the job. To get the status of a job, use this identifier with the operation.
+     *        The identifier generated for the job. To get the status of a job, use this identifier with the
+     *        <code>DescribeTargetedSentimentDetectionJob</code> operation.
      */
 
     public void setJobId(String jobId) {
@@ -90,10 +95,12 @@ public class StartTargetedSentimentDetectionJobResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The identifier generated for the job. To get the status of a job, use this identifier with the operation.
+     * The identifier generated for the job. To get the status of a job, use this identifier with the
+     * <code>DescribeTargetedSentimentDetectionJob</code> operation.
      * </p>
      * 
-     * @return The identifier generated for the job. To get the status of a job, use this identifier with the operation.
+     * @return The identifier generated for the job. To get the status of a job, use this identifier with the
+     *         <code>DescribeTargetedSentimentDetectionJob</code> operation.
      */
 
     public String getJobId() {
@@ -102,11 +109,13 @@ public class StartTargetedSentimentDetectionJobResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The identifier generated for the job. To get the status of a job, use this identifier with the operation.
+     * The identifier generated for the job. To get the status of a job, use this identifier with the
+     * <code>DescribeTargetedSentimentDetectionJob</code> operation.
      * </p>
      * 
      * @param jobId
-     *        The identifier generated for the job. To get the status of a job, use this identifier with the operation.
+     *        The identifier generated for the job. To get the status of a job, use this identifier with the
+     *        <code>DescribeTargetedSentimentDetectionJob</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -118,7 +127,8 @@ public class StartTargetedSentimentDetectionJobResult extends com.amazonaws.Amaz
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified
-     * identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:
+     * identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID.
+     * The format of the ARN is as follows:
      * </p>
      * <p>
      * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:targeted-sentiment-detection-job/&lt;job-id&gt;</code>
@@ -132,8 +142,8 @@ public class StartTargetedSentimentDetectionJobResult extends com.amazonaws.Amaz
      * 
      * @param jobArn
      *        The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified
-     *        identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as
-     *        follows:</p>
+     *        identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the
+     *        job ID. The format of the ARN is as follows:</p>
      *        <p>
      *        <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:targeted-sentiment-detection-job/&lt;job-id&gt;</code>
      *        </p>
@@ -151,7 +161,8 @@ public class StartTargetedSentimentDetectionJobResult extends com.amazonaws.Amaz
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified
-     * identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:
+     * identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID.
+     * The format of the ARN is as follows:
      * </p>
      * <p>
      * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:targeted-sentiment-detection-job/&lt;job-id&gt;</code>
@@ -164,8 +175,8 @@ public class StartTargetedSentimentDetectionJobResult extends com.amazonaws.Amaz
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified
-     *         identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as
-     *         follows:</p>
+     *         identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the
+     *         job ID. The format of the ARN is as follows:</p>
      *         <p>
      *         <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:targeted-sentiment-detection-job/&lt;job-id&gt;</code>
      *         </p>
@@ -183,7 +194,8 @@ public class StartTargetedSentimentDetectionJobResult extends com.amazonaws.Amaz
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified
-     * identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:
+     * identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID.
+     * The format of the ARN is as follows:
      * </p>
      * <p>
      * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:targeted-sentiment-detection-job/&lt;job-id&gt;</code>
@@ -197,8 +209,8 @@ public class StartTargetedSentimentDetectionJobResult extends com.amazonaws.Amaz
      * 
      * @param jobArn
      *        The Amazon Resource Name (ARN) of the targeted sentiment detection job. It is a unique, fully qualified
-     *        identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as
-     *        follows:</p>
+     *        identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the
+     *        job ID. The format of the ARN is as follows:</p>
      *        <p>
      *        <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:targeted-sentiment-detection-job/&lt;job-id&gt;</code>
      *        </p>
@@ -237,7 +249,8 @@ public class StartTargetedSentimentDetectionJobResult extends com.amazonaws.Amaz
      * </li>
      * <li>
      * <p>
-     * FAILED - The job did not complete. To get details, use the operation.
+     * FAILED - The job did not complete. To get details, use the <code>DescribeTargetedSentimentDetectionJob</code>
+     * operation.
      * </p>
      * </li>
      * </ul>
@@ -262,7 +275,8 @@ public class StartTargetedSentimentDetectionJobResult extends com.amazonaws.Amaz
      *        </li>
      *        <li>
      *        <p>
-     *        FAILED - The job did not complete. To get details, use the operation.
+     *        FAILED - The job did not complete. To get details, use the
+     *        <code>DescribeTargetedSentimentDetectionJob</code> operation.
      *        </p>
      *        </li>
      * @see JobStatus
@@ -294,7 +308,8 @@ public class StartTargetedSentimentDetectionJobResult extends com.amazonaws.Amaz
      * </li>
      * <li>
      * <p>
-     * FAILED - The job did not complete. To get details, use the operation.
+     * FAILED - The job did not complete. To get details, use the <code>DescribeTargetedSentimentDetectionJob</code>
+     * operation.
      * </p>
      * </li>
      * </ul>
@@ -318,7 +333,8 @@ public class StartTargetedSentimentDetectionJobResult extends com.amazonaws.Amaz
      *         </li>
      *         <li>
      *         <p>
-     *         FAILED - The job did not complete. To get details, use the operation.
+     *         FAILED - The job did not complete. To get details, use the
+     *         <code>DescribeTargetedSentimentDetectionJob</code> operation.
      *         </p>
      *         </li>
      * @see JobStatus
@@ -350,7 +366,8 @@ public class StartTargetedSentimentDetectionJobResult extends com.amazonaws.Amaz
      * </li>
      * <li>
      * <p>
-     * FAILED - The job did not complete. To get details, use the operation.
+     * FAILED - The job did not complete. To get details, use the <code>DescribeTargetedSentimentDetectionJob</code>
+     * operation.
      * </p>
      * </li>
      * </ul>
@@ -375,7 +392,8 @@ public class StartTargetedSentimentDetectionJobResult extends com.amazonaws.Amaz
      *        </li>
      *        <li>
      *        <p>
-     *        FAILED - The job did not complete. To get details, use the operation.
+     *        FAILED - The job did not complete. To get details, use the
+     *        <code>DescribeTargetedSentimentDetectionJob</code> operation.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -409,7 +427,8 @@ public class StartTargetedSentimentDetectionJobResult extends com.amazonaws.Amaz
      * </li>
      * <li>
      * <p>
-     * FAILED - The job did not complete. To get details, use the operation.
+     * FAILED - The job did not complete. To get details, use the <code>DescribeTargetedSentimentDetectionJob</code>
+     * operation.
      * </p>
      * </li>
      * </ul>
@@ -434,7 +453,8 @@ public class StartTargetedSentimentDetectionJobResult extends com.amazonaws.Amaz
      *        </li>
      *        <li>
      *        <p>
-     *        FAILED - The job did not complete. To get details, use the operation.
+     *        FAILED - The job did not complete. To get details, use the
+     *        <code>DescribeTargetedSentimentDetectionJob</code> operation.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

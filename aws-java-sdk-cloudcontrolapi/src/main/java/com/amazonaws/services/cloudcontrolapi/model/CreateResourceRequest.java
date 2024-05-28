@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -91,10 +91,31 @@ public class CreateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
      * Cloud Control API currently supports JSON as a structured data format.
      * </p>
      * </note>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;Specify the desired state as one of the following:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A JSON blob&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A local path containing the desired state in JSON data format&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate&quot;&gt;Composing the desired state of the resource&lt;/a&gt; in the &lt;i&gt;Amazon Web Services Cloud Control API User Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;For more information about the properties of a specific resource, refer to the related topic for the resource in the &lt;a href=&quot;https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html&quot;&gt;Resource and property types reference&lt;/a&gt; in the &lt;i&gt;CloudFormation Users Guide&lt;/i&gt;.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * Specify the desired state as one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A JSON blob
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A local path containing the desired state in JSON data format
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate"
+     * >Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about the properties of a specific resource, refer to the related topic for the resource in
+     * the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
+     * Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.
+     * </p>
      */
     private String desiredState;
 
@@ -454,10 +475,31 @@ public class CreateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
      * Cloud Control API currently supports JSON as a structured data format.
      * </p>
      * </note>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;Specify the desired state as one of the following:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A JSON blob&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A local path containing the desired state in JSON data format&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate&quot;&gt;Composing the desired state of the resource&lt;/a&gt; in the &lt;i&gt;Amazon Web Services Cloud Control API User Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;For more information about the properties of a specific resource, refer to the related topic for the resource in the &lt;a href=&quot;https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html&quot;&gt;Resource and property types reference&lt;/a&gt; in the &lt;i&gt;CloudFormation Users Guide&lt;/i&gt;.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * Specify the desired state as one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A JSON blob
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A local path containing the desired state in JSON data format
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate"
+     * >Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about the properties of a specific resource, refer to the related topic for the resource in
+     * the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
+     * Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.
+     * </p>
      * 
      * @param desiredState
      *        Structured data format representing the desired state of the resource, consisting of that resource's
@@ -466,8 +508,32 @@ public class CreateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Cloud Control API currently supports JSON as a structured data format.
      *        </p>
      *        </note>
-     * 
-     * <pre><code> &lt;p&gt;Specify the desired state as one of the following:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A JSON blob&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A local path containing the desired state in JSON data format&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate&quot;&gt;Composing the desired state of the resource&lt;/a&gt; in the &lt;i&gt;Amazon Web Services Cloud Control API User Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;For more information about the properties of a specific resource, refer to the related topic for the resource in the &lt;a href=&quot;https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html&quot;&gt;Resource and property types reference&lt;/a&gt; in the &lt;i&gt;CloudFormation Users Guide&lt;/i&gt;.&lt;/p&gt; </code>
+     *        <p>
+     *        Specify the desired state as one of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        A JSON blob
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A local path containing the desired state in JSON data format
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate"
+     *        >Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User
+     *        Guide</i>.
+     *        </p>
+     *        <p>
+     *        For more information about the properties of a specific resource, refer to the related topic for the
+     *        resource in the <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
+     *        >Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.
      */
 
     public void setDesiredState(String desiredState) {
@@ -484,10 +550,31 @@ public class CreateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
      * Cloud Control API currently supports JSON as a structured data format.
      * </p>
      * </note>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;Specify the desired state as one of the following:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A JSON blob&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A local path containing the desired state in JSON data format&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate&quot;&gt;Composing the desired state of the resource&lt;/a&gt; in the &lt;i&gt;Amazon Web Services Cloud Control API User Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;For more information about the properties of a specific resource, refer to the related topic for the resource in the &lt;a href=&quot;https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html&quot;&gt;Resource and property types reference&lt;/a&gt; in the &lt;i&gt;CloudFormation Users Guide&lt;/i&gt;.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * Specify the desired state as one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A JSON blob
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A local path containing the desired state in JSON data format
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate"
+     * >Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about the properties of a specific resource, refer to the related topic for the resource in
+     * the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
+     * Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.
+     * </p>
      * 
      * @return Structured data format representing the desired state of the resource, consisting of that resource's
      *         properties and their desired values.</p> <note>
@@ -495,8 +582,32 @@ public class CreateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
      *         Cloud Control API currently supports JSON as a structured data format.
      *         </p>
      *         </note>
-     * 
-     * <pre><code> &lt;p&gt;Specify the desired state as one of the following:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A JSON blob&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A local path containing the desired state in JSON data format&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate&quot;&gt;Composing the desired state of the resource&lt;/a&gt; in the &lt;i&gt;Amazon Web Services Cloud Control API User Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;For more information about the properties of a specific resource, refer to the related topic for the resource in the &lt;a href=&quot;https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html&quot;&gt;Resource and property types reference&lt;/a&gt; in the &lt;i&gt;CloudFormation Users Guide&lt;/i&gt;.&lt;/p&gt; </code>
+     *         <p>
+     *         Specify the desired state as one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         A JSON blob
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A local path containing the desired state in JSON data format
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate"
+     *         >Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User
+     *         Guide</i>.
+     *         </p>
+     *         <p>
+     *         For more information about the properties of a specific resource, refer to the related topic for the
+     *         resource in the <a href=
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
+     *         >Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.
      */
 
     public String getDesiredState() {
@@ -513,10 +624,31 @@ public class CreateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
      * Cloud Control API currently supports JSON as a structured data format.
      * </p>
      * </note>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;Specify the desired state as one of the following:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A JSON blob&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A local path containing the desired state in JSON data format&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate&quot;&gt;Composing the desired state of the resource&lt;/a&gt; in the &lt;i&gt;Amazon Web Services Cloud Control API User Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;For more information about the properties of a specific resource, refer to the related topic for the resource in the &lt;a href=&quot;https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html&quot;&gt;Resource and property types reference&lt;/a&gt; in the &lt;i&gt;CloudFormation Users Guide&lt;/i&gt;.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * Specify the desired state as one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A JSON blob
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A local path containing the desired state in JSON data format
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate"
+     * >Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about the properties of a specific resource, refer to the related topic for the resource in
+     * the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">
+     * Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.
+     * </p>
      * 
      * @param desiredState
      *        Structured data format representing the desired state of the resource, consisting of that resource's
@@ -525,9 +657,32 @@ public class CreateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Cloud Control API currently supports JSON as a structured data format.
      *        </p>
      *        </note>
-     * 
-     *        <pre>
-     * <code> &lt;p&gt;Specify the desired state as one of the following:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;A JSON blob&lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;A local path containing the desired state in JSON data format&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate&quot;&gt;Composing the desired state of the resource&lt;/a&gt; in the &lt;i&gt;Amazon Web Services Cloud Control API User Guide&lt;/i&gt;.&lt;/p&gt; &lt;p&gt;For more information about the properties of a specific resource, refer to the related topic for the resource in the &lt;a href=&quot;https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html&quot;&gt;Resource and property types reference&lt;/a&gt; in the &lt;i&gt;CloudFormation Users Guide&lt;/i&gt;.&lt;/p&gt; </code>
+     *        <p>
+     *        Specify the desired state as one of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        A JSON blob
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A local path containing the desired state in JSON data format
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-create.html#resource-operations-create-desiredstate"
+     *        >Composing the desired state of the resource</a> in the <i>Amazon Web Services Cloud Control API User
+     *        Guide</i>.
+     *        </p>
+     *        <p>
+     *        For more information about the properties of a specific resource, refer to the related topic for the
+     *        resource in the <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
+     *        >Resource and property types reference</a> in the <i>CloudFormation Users Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

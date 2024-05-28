@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,13 +58,27 @@ public class CreateProgramResultJsonUnmarshaller implements Unmarshaller<CreateP
                     context.nextToken();
                     createProgramResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AudienceMedia", targetDepth)) {
+                    context.nextToken();
+                    createProgramResult.setAudienceMedia(new ListUnmarshaller<AudienceMedia>(AudienceMediaJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("ChannelName", targetDepth)) {
                     context.nextToken();
                     createProgramResult.setChannelName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ClipRange", targetDepth)) {
+                    context.nextToken();
+                    createProgramResult.setClipRange(ClipRangeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
                     createProgramResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("DurationMillis", targetDepth)) {
+                    context.nextToken();
+                    createProgramResult.setDurationMillis(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("LiveSourceName", targetDepth)) {
                     context.nextToken();

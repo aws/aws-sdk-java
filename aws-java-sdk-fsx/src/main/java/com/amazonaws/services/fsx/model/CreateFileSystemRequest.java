@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     * A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
      * automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
      * </p>
      */
@@ -70,8 +70,9 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * <p>
-     * <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can configure is from 1024 GiB up to
-     * 196,608 GiB (192 TiB).
+     * <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can configure depends on the value of
+     * the <code>HAPairs</code> property. The minimum value is calculated as 1,024 * <code>HAPairs</code> and the
+     * maximum is calculated as 524,288 * <code>HAPairs</code>.
      * </p>
      * <p>
      * <b>FSx for OpenZFS file systems</b> - The amount of storage capacity that you can configure is from 64 GiB up to
@@ -148,6 +149,12 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * A list of IDs specifying the security groups to apply to all network interfaces created for file system access.
      * This list isn't returned in later requests to describe the file system.
      * </p>
+     * <important>
+     * <p>
+     * You must specify a security group if you are creating a Multi-AZ FSx for ONTAP file system in a VPC subnet that
+     * has been shared with you.
+     * </p>
+     * </important>
      */
     private java.util.List<String> securityGroupIds;
     /**
@@ -172,7 +179,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * (Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating.
-     * Valid values are <code>2.10</code> and <code>2.12</code>:
+     * Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:
      * </p>
      * <ul>
      * <li>
@@ -182,8 +189,8 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * 2.12 is supported by all Lustre deployment types. <code>2.12</code> is required when setting FSx for Lustre
-     * <code>DeploymentType</code> to <code>PERSISTENT_2</code>.
+     * 2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code> is required
+     * when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.
      * </p>
      * </li>
      * </ul>
@@ -208,12 +215,12 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     * A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
      * automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
      * </p>
      * 
      * @param clientRequestToken
-     *        A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     *        A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
      *        automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web
      *        Services SDK.
      */
@@ -224,11 +231,11 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     * A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
      * automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
      * </p>
      * 
-     * @return A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     * @return A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
      *         automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web
      *         Services SDK.
      */
@@ -239,12 +246,12 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     * A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
      * automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
      * </p>
      * 
      * @param clientRequestToken
-     *        A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     *        A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
      *        automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web
      *        Services SDK.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -350,8 +357,9 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * <p>
-     * <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can configure is from 1024 GiB up to
-     * 196,608 GiB (192 TiB).
+     * <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can configure depends on the value of
+     * the <code>HAPairs</code> property. The minimum value is calculated as 1,024 * <code>HAPairs</code> and the
+     * maximum is calculated as 524,288 * <code>HAPairs</code>.
      * </p>
      * <p>
      * <b>FSx for OpenZFS file systems</b> - The amount of storage capacity that you can configure is from 64 GiB up to
@@ -401,8 +409,9 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        </ul>
      *        <p>
-     *        <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can configure is from 1024 GiB
-     *        up to 196,608 GiB (192 TiB).
+     *        <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can configure depends on the
+     *        value of the <code>HAPairs</code> property. The minimum value is calculated as 1,024 *
+     *        <code>HAPairs</code> and the maximum is calculated as 524,288 * <code>HAPairs</code>.
      *        </p>
      *        <p>
      *        <b>FSx for OpenZFS file systems</b> - The amount of storage capacity that you can configure is from 64 GiB
@@ -457,8 +466,9 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * <p>
-     * <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can configure is from 1024 GiB up to
-     * 196,608 GiB (192 TiB).
+     * <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can configure depends on the value of
+     * the <code>HAPairs</code> property. The minimum value is calculated as 1,024 * <code>HAPairs</code> and the
+     * maximum is calculated as 524,288 * <code>HAPairs</code>.
      * </p>
      * <p>
      * <b>FSx for OpenZFS file systems</b> - The amount of storage capacity that you can configure is from 64 GiB up to
@@ -507,8 +517,9 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         </ul>
      *         <p>
-     *         <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can configure is from 1024
-     *         GiB up to 196,608 GiB (192 TiB).
+     *         <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can configure depends on the
+     *         value of the <code>HAPairs</code> property. The minimum value is calculated as 1,024 *
+     *         <code>HAPairs</code> and the maximum is calculated as 524,288 * <code>HAPairs</code>.
      *         </p>
      *         <p>
      *         <b>FSx for OpenZFS file systems</b> - The amount of storage capacity that you can configure is from 64
@@ -563,8 +574,9 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * <p>
-     * <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can configure is from 1024 GiB up to
-     * 196,608 GiB (192 TiB).
+     * <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can configure depends on the value of
+     * the <code>HAPairs</code> property. The minimum value is calculated as 1,024 * <code>HAPairs</code> and the
+     * maximum is calculated as 524,288 * <code>HAPairs</code>.
      * </p>
      * <p>
      * <b>FSx for OpenZFS file systems</b> - The amount of storage capacity that you can configure is from 64 GiB up to
@@ -614,8 +626,9 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        </ul>
      *        <p>
-     *        <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can configure is from 1024 GiB
-     *        up to 196,608 GiB (192 TiB).
+     *        <b>FSx for ONTAP file systems</b> - The amount of storage capacity that you can configure depends on the
+     *        value of the <code>HAPairs</code> property. The minimum value is calculated as 1,024 *
+     *        <code>HAPairs</code> and the maximum is calculated as 524,288 * <code>HAPairs</code>.
      *        </p>
      *        <p>
      *        <b>FSx for OpenZFS file systems</b> - The amount of storage capacity that you can configure is from 64 GiB
@@ -1058,9 +1071,19 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * A list of IDs specifying the security groups to apply to all network interfaces created for file system access.
      * This list isn't returned in later requests to describe the file system.
      * </p>
+     * <important>
+     * <p>
+     * You must specify a security group if you are creating a Multi-AZ FSx for ONTAP file system in a VPC subnet that
+     * has been shared with you.
+     * </p>
+     * </important>
      * 
      * @return A list of IDs specifying the security groups to apply to all network interfaces created for file system
-     *         access. This list isn't returned in later requests to describe the file system.
+     *         access. This list isn't returned in later requests to describe the file system.</p> <important>
+     *         <p>
+     *         You must specify a security group if you are creating a Multi-AZ FSx for ONTAP file system in a VPC
+     *         subnet that has been shared with you.
+     *         </p>
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -1072,10 +1095,20 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * A list of IDs specifying the security groups to apply to all network interfaces created for file system access.
      * This list isn't returned in later requests to describe the file system.
      * </p>
+     * <important>
+     * <p>
+     * You must specify a security group if you are creating a Multi-AZ FSx for ONTAP file system in a VPC subnet that
+     * has been shared with you.
+     * </p>
+     * </important>
      * 
      * @param securityGroupIds
      *        A list of IDs specifying the security groups to apply to all network interfaces created for file system
-     *        access. This list isn't returned in later requests to describe the file system.
+     *        access. This list isn't returned in later requests to describe the file system.</p> <important>
+     *        <p>
+     *        You must specify a security group if you are creating a Multi-AZ FSx for ONTAP file system in a VPC subnet
+     *        that has been shared with you.
+     *        </p>
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -1092,6 +1125,12 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * A list of IDs specifying the security groups to apply to all network interfaces created for file system access.
      * This list isn't returned in later requests to describe the file system.
      * </p>
+     * <important>
+     * <p>
+     * You must specify a security group if you are creating a Multi-AZ FSx for ONTAP file system in a VPC subnet that
+     * has been shared with you.
+     * </p>
+     * </important>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSecurityGroupIds(java.util.Collection)} or {@link #withSecurityGroupIds(java.util.Collection)} if you
@@ -1100,7 +1139,11 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param securityGroupIds
      *        A list of IDs specifying the security groups to apply to all network interfaces created for file system
-     *        access. This list isn't returned in later requests to describe the file system.
+     *        access. This list isn't returned in later requests to describe the file system.</p> <important>
+     *        <p>
+     *        You must specify a security group if you are creating a Multi-AZ FSx for ONTAP file system in a VPC subnet
+     *        that has been shared with you.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1119,10 +1162,20 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * A list of IDs specifying the security groups to apply to all network interfaces created for file system access.
      * This list isn't returned in later requests to describe the file system.
      * </p>
+     * <important>
+     * <p>
+     * You must specify a security group if you are creating a Multi-AZ FSx for ONTAP file system in a VPC subnet that
+     * has been shared with you.
+     * </p>
+     * </important>
      * 
      * @param securityGroupIds
      *        A list of IDs specifying the security groups to apply to all network interfaces created for file system
-     *        access. This list isn't returned in later requests to describe the file system.
+     *        access. This list isn't returned in later requests to describe the file system.</p> <important>
+     *        <p>
+     *        You must specify a security group if you are creating a Multi-AZ FSx for ONTAP file system in a VPC subnet
+     *        that has been shared with you.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1330,7 +1383,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * (Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating.
-     * Valid values are <code>2.10</code> and <code>2.12</code>:
+     * Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:
      * </p>
      * <ul>
      * <li>
@@ -1340,8 +1393,8 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * 2.12 is supported by all Lustre deployment types. <code>2.12</code> is required when setting FSx for Lustre
-     * <code>DeploymentType</code> to <code>PERSISTENT_2</code>.
+     * 2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code> is required
+     * when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.
      * </p>
      * </li>
      * </ul>
@@ -1358,7 +1411,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param fileSystemTypeVersion
      *        (Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're
-     *        creating. Valid values are <code>2.10</code> and <code>2.12</code>:</p>
+     *        creating. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1367,8 +1420,8 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        2.12 is supported by all Lustre deployment types. <code>2.12</code> is required when setting FSx for
-     *        Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.
+     *        2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code> is
+     *        required when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -1390,7 +1443,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * (Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating.
-     * Valid values are <code>2.10</code> and <code>2.12</code>:
+     * Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:
      * </p>
      * <ul>
      * <li>
@@ -1400,8 +1453,8 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * 2.12 is supported by all Lustre deployment types. <code>2.12</code> is required when setting FSx for Lustre
-     * <code>DeploymentType</code> to <code>PERSISTENT_2</code>.
+     * 2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code> is required
+     * when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.
      * </p>
      * </li>
      * </ul>
@@ -1417,7 +1470,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </note>
      * 
      * @return (Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're
-     *         creating. Valid values are <code>2.10</code> and <code>2.12</code>:</p>
+     *         creating. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1426,8 +1479,8 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         <li>
      *         <p>
-     *         2.12 is supported by all Lustre deployment types. <code>2.12</code> is required when setting FSx for
-     *         Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.
+     *         2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code> is
+     *         required when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.
      *         </p>
      *         </li>
      *         </ul>
@@ -1449,7 +1502,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * (Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're creating.
-     * Valid values are <code>2.10</code> and <code>2.12</code>:
+     * Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:
      * </p>
      * <ul>
      * <li>
@@ -1459,8 +1512,8 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * 2.12 is supported by all Lustre deployment types. <code>2.12</code> is required when setting FSx for Lustre
-     * <code>DeploymentType</code> to <code>PERSISTENT_2</code>.
+     * 2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code> is required
+     * when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.
      * </p>
      * </li>
      * </ul>
@@ -1477,7 +1530,7 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param fileSystemTypeVersion
      *        (Optional) For FSx for Lustre file systems, sets the Lustre version for the file system that you're
-     *        creating. Valid values are <code>2.10</code> and <code>2.12</code>:</p>
+     *        creating. Valid values are <code>2.10</code>, <code>2.12</code>, and <code>2.15</code>:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1486,8 +1539,8 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        2.12 is supported by all Lustre deployment types. <code>2.12</code> is required when setting FSx for
-     *        Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.
+     *        2.12 and 2.15 are supported by all Lustre deployment types. <code>2.12</code> or <code>2.15</code> is
+     *        required when setting FSx for Lustre <code>DeploymentType</code> to <code>PERSISTENT_2</code>.
      *        </p>
      *        </li>
      *        </ul>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,35 @@ public class LabelSchema implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The action to take for unlabeled events.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use <code>IGNORE</code> if you want the unlabeled events to be ignored. This is recommended when the majority of
+     * the events in the dataset are labeled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>FRAUD</code> if you want to categorize all unlabeled events as “Fraud”. This is recommended when most
+     * of the events in your dataset are fraudulent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>LEGIT</code> if you want to categorize all unlabeled events as “Legit”. This is recommended when most
+     * of the events in your dataset are legitimate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>AUTO</code> if you want Amazon Fraud Detector to decide how to use the unlabeled data. This is
+     * recommended when there is significant unlabeled events in the dataset.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * By default, Amazon Fraud Detector ignores the unlabeled data.
      * </p>
      */
     private String unlabeledEventsTreatment;
@@ -158,9 +187,66 @@ public class LabelSchema implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The action to take for unlabeled events.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use <code>IGNORE</code> if you want the unlabeled events to be ignored. This is recommended when the majority of
+     * the events in the dataset are labeled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>FRAUD</code> if you want to categorize all unlabeled events as “Fraud”. This is recommended when most
+     * of the events in your dataset are fraudulent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>LEGIT</code> if you want to categorize all unlabeled events as “Legit”. This is recommended when most
+     * of the events in your dataset are legitimate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>AUTO</code> if you want Amazon Fraud Detector to decide how to use the unlabeled data. This is
+     * recommended when there is significant unlabeled events in the dataset.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * By default, Amazon Fraud Detector ignores the unlabeled data.
+     * </p>
      * 
      * @param unlabeledEventsTreatment
-     *        The action to take for unlabeled events.
+     *        The action to take for unlabeled events.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Use <code>IGNORE</code> if you want the unlabeled events to be ignored. This is recommended when the
+     *        majority of the events in the dataset are labeled.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Use <code>FRAUD</code> if you want to categorize all unlabeled events as “Fraud”. This is recommended when
+     *        most of the events in your dataset are fraudulent.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Use <code>LEGIT</code> if you want to categorize all unlabeled events as “Legit”. This is recommended when
+     *        most of the events in your dataset are legitimate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Use <code>AUTO</code> if you want Amazon Fraud Detector to decide how to use the unlabeled data. This is
+     *        recommended when there is significant unlabeled events in the dataset.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        By default, Amazon Fraud Detector ignores the unlabeled data.
      * @see UnlabeledEventsTreatment
      */
 
@@ -172,8 +258,65 @@ public class LabelSchema implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The action to take for unlabeled events.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use <code>IGNORE</code> if you want the unlabeled events to be ignored. This is recommended when the majority of
+     * the events in the dataset are labeled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>FRAUD</code> if you want to categorize all unlabeled events as “Fraud”. This is recommended when most
+     * of the events in your dataset are fraudulent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>LEGIT</code> if you want to categorize all unlabeled events as “Legit”. This is recommended when most
+     * of the events in your dataset are legitimate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>AUTO</code> if you want Amazon Fraud Detector to decide how to use the unlabeled data. This is
+     * recommended when there is significant unlabeled events in the dataset.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * By default, Amazon Fraud Detector ignores the unlabeled data.
+     * </p>
      * 
-     * @return The action to take for unlabeled events.
+     * @return The action to take for unlabeled events.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Use <code>IGNORE</code> if you want the unlabeled events to be ignored. This is recommended when the
+     *         majority of the events in the dataset are labeled.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Use <code>FRAUD</code> if you want to categorize all unlabeled events as “Fraud”. This is recommended
+     *         when most of the events in your dataset are fraudulent.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Use <code>LEGIT</code> if you want to categorize all unlabeled events as “Legit”. This is recommended
+     *         when most of the events in your dataset are legitimate.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Use <code>AUTO</code> if you want Amazon Fraud Detector to decide how to use the unlabeled data. This is
+     *         recommended when there is significant unlabeled events in the dataset.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         By default, Amazon Fraud Detector ignores the unlabeled data.
      * @see UnlabeledEventsTreatment
      */
 
@@ -185,9 +328,66 @@ public class LabelSchema implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The action to take for unlabeled events.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use <code>IGNORE</code> if you want the unlabeled events to be ignored. This is recommended when the majority of
+     * the events in the dataset are labeled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>FRAUD</code> if you want to categorize all unlabeled events as “Fraud”. This is recommended when most
+     * of the events in your dataset are fraudulent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>LEGIT</code> if you want to categorize all unlabeled events as “Legit”. This is recommended when most
+     * of the events in your dataset are legitimate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>AUTO</code> if you want Amazon Fraud Detector to decide how to use the unlabeled data. This is
+     * recommended when there is significant unlabeled events in the dataset.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * By default, Amazon Fraud Detector ignores the unlabeled data.
+     * </p>
      * 
      * @param unlabeledEventsTreatment
-     *        The action to take for unlabeled events.
+     *        The action to take for unlabeled events.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Use <code>IGNORE</code> if you want the unlabeled events to be ignored. This is recommended when the
+     *        majority of the events in the dataset are labeled.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Use <code>FRAUD</code> if you want to categorize all unlabeled events as “Fraud”. This is recommended when
+     *        most of the events in your dataset are fraudulent.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Use <code>LEGIT</code> if you want to categorize all unlabeled events as “Legit”. This is recommended when
+     *        most of the events in your dataset are legitimate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Use <code>AUTO</code> if you want Amazon Fraud Detector to decide how to use the unlabeled data. This is
+     *        recommended when there is significant unlabeled events in the dataset.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        By default, Amazon Fraud Detector ignores the unlabeled data.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UnlabeledEventsTreatment
      */
@@ -201,9 +401,66 @@ public class LabelSchema implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The action to take for unlabeled events.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use <code>IGNORE</code> if you want the unlabeled events to be ignored. This is recommended when the majority of
+     * the events in the dataset are labeled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>FRAUD</code> if you want to categorize all unlabeled events as “Fraud”. This is recommended when most
+     * of the events in your dataset are fraudulent.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>LEGIT</code> if you want to categorize all unlabeled events as “Legit”. This is recommended when most
+     * of the events in your dataset are legitimate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <code>AUTO</code> if you want Amazon Fraud Detector to decide how to use the unlabeled data. This is
+     * recommended when there is significant unlabeled events in the dataset.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * By default, Amazon Fraud Detector ignores the unlabeled data.
+     * </p>
      * 
      * @param unlabeledEventsTreatment
-     *        The action to take for unlabeled events.
+     *        The action to take for unlabeled events.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Use <code>IGNORE</code> if you want the unlabeled events to be ignored. This is recommended when the
+     *        majority of the events in the dataset are labeled.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Use <code>FRAUD</code> if you want to categorize all unlabeled events as “Fraud”. This is recommended when
+     *        most of the events in your dataset are fraudulent.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Use <code>LEGIT</code> if you want to categorize all unlabeled events as “Legit”. This is recommended when
+     *        most of the events in your dataset are legitimate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Use <code>AUTO</code> if you want Amazon Fraud Detector to decide how to use the unlabeled data. This is
+     *        recommended when there is significant unlabeled events in the dataset.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        By default, Amazon Fraud Detector ignores the unlabeled data.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UnlabeledEventsTreatment
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,11 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The name of the domain in which the workflow execution is created.
      * </p>
+     * <p>
+     * The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical
+     * bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.
+     * </p>
      */
     private String domain;
     /**
@@ -39,9 +44,9 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      * <code>workflowId</code> at the same time within the same domain.
      * </p>
      * <p>
-     * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
+     * The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical
+     * bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.
      * </p>
      */
     private String workflowId;
@@ -64,9 +69,9 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * <p>
-     * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
+     * The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical
+     * bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.
      * </p>
      */
     private TaskList taskList;
@@ -198,9 +203,18 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The name of the domain in which the workflow execution is created.
      * </p>
+     * <p>
+     * The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical
+     * bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.
+     * </p>
      * 
      * @param domain
-     *        The name of the domain in which the workflow execution is created.
+     *        The name of the domain in which the workflow execution is created.</p>
+     *        <p>
+     *        The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
+     *        (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also,
+     *        it must <i>not</i> be the literal string <code>arn</code>.
      */
 
     public void setDomain(String domain) {
@@ -211,8 +225,17 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The name of the domain in which the workflow execution is created.
      * </p>
+     * <p>
+     * The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical
+     * bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.
+     * </p>
      * 
-     * @return The name of the domain in which the workflow execution is created.
+     * @return The name of the domain in which the workflow execution is created.</p>
+     *         <p>
+     *         The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
+     *         (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>).
+     *         Also, it must <i>not</i> be the literal string <code>arn</code>.
      */
 
     public String getDomain() {
@@ -223,9 +246,18 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The name of the domain in which the workflow execution is created.
      * </p>
+     * <p>
+     * The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical
+     * bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.
+     * </p>
      * 
      * @param domain
-     *        The name of the domain in which the workflow execution is created.
+     *        The name of the domain in which the workflow execution is created.</p>
+     *        <p>
+     *        The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
+     *        (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also,
+     *        it must <i>not</i> be the literal string <code>arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -242,9 +274,9 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      * <code>workflowId</code> at the same time within the same domain.
      * </p>
      * <p>
-     * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
+     * The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical
+     * bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.
      * </p>
      * 
      * @param workflowId
@@ -253,10 +285,9 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      *        logically a <i>restart</i> of a previous execution. You cannot have two open workflow executions with the
      *        same <code>workflowId</code> at the same time within the same domain.</p>
      *        <p>
-     *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
-     *        <code>arn</code>.
+     *        The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
+     *        (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also,
+     *        it must <i>not</i> be the literal string <code>arn</code>.
      */
 
     public void setWorkflowId(String workflowId) {
@@ -271,9 +302,9 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      * <code>workflowId</code> at the same time within the same domain.
      * </p>
      * <p>
-     * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
+     * The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical
+     * bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.
      * </p>
      * 
      * @return The user defined identifier associated with the workflow execution. You can use this to associate a
@@ -281,10 +312,9 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      *         execution is logically a <i>restart</i> of a previous execution. You cannot have two open workflow
      *         executions with the same <code>workflowId</code> at the same time within the same domain.</p>
      *         <p>
-     *         The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *         <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
-     *         <code>arn</code>.
+     *         The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
+     *         (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>).
+     *         Also, it must <i>not</i> be the literal string <code>arn</code>.
      */
 
     public String getWorkflowId() {
@@ -299,9 +329,9 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      * <code>workflowId</code> at the same time within the same domain.
      * </p>
      * <p>
-     * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
+     * The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical
+     * bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.
      * </p>
      * 
      * @param workflowId
@@ -310,10 +340,9 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      *        logically a <i>restart</i> of a previous execution. You cannot have two open workflow executions with the
      *        same <code>workflowId</code> at the same time within the same domain.</p>
      *        <p>
-     *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
-     *        <code>arn</code>.
+     *        The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
+     *        (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also,
+     *        it must <i>not</i> be the literal string <code>arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -375,9 +404,9 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * <p>
-     * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
+     * The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical
+     * bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.
      * </p>
      * 
      * @param taskList
@@ -390,10 +419,9 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        </note>
      *        <p>
-     *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
-     *        <code>arn</code>.
+     *        The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
+     *        (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also,
+     *        it must <i>not</i> be the literal string <code>arn</code>.
      */
 
     public void setTaskList(TaskList taskList) {
@@ -413,9 +441,9 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * <p>
-     * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
+     * The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical
+     * bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.
      * </p>
      * 
      * @return The task list to use for the decision tasks generated for this workflow execution. This overrides the
@@ -427,10 +455,9 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      *         </p>
      *         </note>
      *         <p>
-     *         The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *         <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
-     *         <code>arn</code>.
+     *         The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
+     *         (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>).
+     *         Also, it must <i>not</i> be the literal string <code>arn</code>.
      */
 
     public TaskList getTaskList() {
@@ -450,9 +477,9 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * </note>
      * <p>
-     * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
+     * The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical
+     * bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.
      * </p>
      * 
      * @param taskList
@@ -465,10 +492,9 @@ public class StartWorkflowExecutionRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        </note>
      *        <p>
-     *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
-     *        <code>arn</code>.
+     *        The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
+     *        (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also,
+     *        it must <i>not</i> be the literal string <code>arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

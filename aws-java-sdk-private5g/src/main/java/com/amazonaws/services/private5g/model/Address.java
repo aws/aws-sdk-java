@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,13 +48,19 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
     private String country;
     /**
      * <p>
+     * The recipient's email address.
+     * </p>
+     */
+    private String emailAddress;
+    /**
+     * <p>
      * The recipient's name for this address.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The phone number for this address.
+     * The recipient's phone number.
      * </p>
      */
     private String phoneNumber;
@@ -211,6 +217,46 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The recipient's email address.
+     * </p>
+     * 
+     * @param emailAddress
+     *        The recipient's email address.
+     */
+
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
+    }
+
+    /**
+     * <p>
+     * The recipient's email address.
+     * </p>
+     * 
+     * @return The recipient's email address.
+     */
+
+    public String getEmailAddress() {
+        return this.emailAddress;
+    }
+
+    /**
+     * <p>
+     * The recipient's email address.
+     * </p>
+     * 
+     * @param emailAddress
+     *        The recipient's email address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Address withEmailAddress(String emailAddress) {
+        setEmailAddress(emailAddress);
+        return this;
+    }
+
+    /**
+     * <p>
      * The recipient's name for this address.
      * </p>
      * 
@@ -251,11 +297,11 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The phone number for this address.
+     * The recipient's phone number.
      * </p>
      * 
      * @param phoneNumber
-     *        The phone number for this address.
+     *        The recipient's phone number.
      */
 
     public void setPhoneNumber(String phoneNumber) {
@@ -264,10 +310,10 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The phone number for this address.
+     * The recipient's phone number.
      * </p>
      * 
-     * @return The phone number for this address.
+     * @return The recipient's phone number.
      */
 
     public String getPhoneNumber() {
@@ -276,11 +322,11 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The phone number for this address.
+     * The recipient's phone number.
      * </p>
      * 
      * @param phoneNumber
-     *        The phone number for this address.
+     *        The recipient's phone number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -507,6 +553,8 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
             sb.append("Company: ").append("***Sensitive Data Redacted***").append(",");
         if (getCountry() != null)
             sb.append("Country: ").append("***Sensitive Data Redacted***").append(",");
+        if (getEmailAddress() != null)
+            sb.append("EmailAddress: ").append("***Sensitive Data Redacted***").append(",");
         if (getName() != null)
             sb.append("Name: ").append("***Sensitive Data Redacted***").append(",");
         if (getPhoneNumber() != null)
@@ -547,6 +595,10 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCountry() != null && other.getCountry().equals(this.getCountry()) == false)
             return false;
+        if (other.getEmailAddress() == null ^ this.getEmailAddress() == null)
+            return false;
+        if (other.getEmailAddress() != null && other.getEmailAddress().equals(this.getEmailAddress()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -586,6 +638,7 @@ public class Address implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCity() == null) ? 0 : getCity().hashCode());
         hashCode = prime * hashCode + ((getCompany() == null) ? 0 : getCompany().hashCode());
         hashCode = prime * hashCode + ((getCountry() == null) ? 0 : getCountry().hashCode());
+        hashCode = prime * hashCode + ((getEmailAddress() == null) ? 0 : getEmailAddress().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getPhoneNumber() == null) ? 0 : getPhoneNumber().hashCode());
         hashCode = prime * hashCode + ((getPostalCode() == null) ? 0 : getPostalCode().hashCode());

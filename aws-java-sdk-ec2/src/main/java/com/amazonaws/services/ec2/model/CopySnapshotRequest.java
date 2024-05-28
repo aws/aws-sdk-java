@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,8 +40,8 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots"> Copy snapshots
-     * from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-snapshots"> Copy snapshots
+     * from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      */
     private String destinationOutpostArn;
@@ -63,8 +63,8 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * To encrypt a copy of an unencrypted snapshot if encryption by default is not enabled, enable encryption using
      * this parameter. Otherwise, omit this parameter. Encrypted snapshots are encrypted, even if you omit this
      * parameter and encryption by default is not enabled. You cannot set this parameter to false. For more information,
-     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon EBS encryption</a> in
+     * the <i>Amazon EBS User Guide</i>.
      * </p>
      */
     private Boolean encrypted;
@@ -192,8 +192,8 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots"> Copy snapshots
-     * from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-snapshots"> Copy snapshots
+     * from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param destinationOutpostArn
@@ -203,9 +203,8 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      *        Outpost to another, or within the same Outpost.</p>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots"> Copy
-     *        snapshots from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon Elastic Compute Cloud User
-     *        Guide</i>.
+     *        href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-snapshots"> Copy
+     *        snapshots from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EBS User Guide</i>.
      */
 
     public void setDestinationOutpostArn(String destinationOutpostArn) {
@@ -221,8 +220,8 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots"> Copy snapshots
-     * from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-snapshots"> Copy snapshots
+     * from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the Outpost to which to copy the snapshot. Only specify this parameter
@@ -231,9 +230,8 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      *         Outpost to another, or within the same Outpost.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots"> Copy
-     *         snapshots from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon Elastic Compute Cloud
-     *         User Guide</i>.
+     *         href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-snapshots"> Copy
+     *         snapshots from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EBS User Guide</i>.
      */
 
     public String getDestinationOutpostArn() {
@@ -249,8 +247,8 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots"> Copy snapshots
-     * from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-snapshots"> Copy snapshots
+     * from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param destinationOutpostArn
@@ -260,9 +258,8 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      *        Outpost to another, or within the same Outpost.</p>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots"> Copy
-     *        snapshots from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon Elastic Compute Cloud User
-     *        Guide</i>.
+     *        href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-snapshots"> Copy
+     *        snapshots from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EBS User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,16 +352,16 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * To encrypt a copy of an unencrypted snapshot if encryption by default is not enabled, enable encryption using
      * this parameter. Otherwise, omit this parameter. Encrypted snapshots are encrypted, even if you omit this
      * parameter and encryption by default is not enabled. You cannot set this parameter to false. For more information,
-     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon EBS encryption</a> in
+     * the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param encrypted
      *        To encrypt a copy of an unencrypted snapshot if encryption by default is not enabled, enable encryption
      *        using this parameter. Otherwise, omit this parameter. Encrypted snapshots are encrypted, even if you omit
      *        this parameter and encryption by default is not enabled. You cannot set this parameter to false. For more
-     *        information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     *        EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon EBS
+     *        encryption</a> in the <i>Amazon EBS User Guide</i>.
      */
 
     public void setEncrypted(Boolean encrypted) {
@@ -376,15 +373,15 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * To encrypt a copy of an unencrypted snapshot if encryption by default is not enabled, enable encryption using
      * this parameter. Otherwise, omit this parameter. Encrypted snapshots are encrypted, even if you omit this
      * parameter and encryption by default is not enabled. You cannot set this parameter to false. For more information,
-     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon EBS encryption</a> in
+     * the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @return To encrypt a copy of an unencrypted snapshot if encryption by default is not enabled, enable encryption
      *         using this parameter. Otherwise, omit this parameter. Encrypted snapshots are encrypted, even if you omit
      *         this parameter and encryption by default is not enabled. You cannot set this parameter to false. For more
-     *         information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     *         EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+     *         EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
      */
 
     public Boolean getEncrypted() {
@@ -396,16 +393,16 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * To encrypt a copy of an unencrypted snapshot if encryption by default is not enabled, enable encryption using
      * this parameter. Otherwise, omit this parameter. Encrypted snapshots are encrypted, even if you omit this
      * parameter and encryption by default is not enabled. You cannot set this parameter to false. For more information,
-     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon EBS encryption</a> in
+     * the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param encrypted
      *        To encrypt a copy of an unencrypted snapshot if encryption by default is not enabled, enable encryption
      *        using this parameter. Otherwise, omit this parameter. Encrypted snapshots are encrypted, even if you omit
      *        this parameter and encryption by default is not enabled. You cannot set this parameter to false. For more
-     *        information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     *        EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon EBS
+     *        encryption</a> in the <i>Amazon EBS User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -419,15 +416,15 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
      * To encrypt a copy of an unencrypted snapshot if encryption by default is not enabled, enable encryption using
      * this parameter. Otherwise, omit this parameter. Encrypted snapshots are encrypted, even if you omit this
      * parameter and encryption by default is not enabled. You cannot set this parameter to false. For more information,
-     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon EBS encryption</a> in
+     * the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @return To encrypt a copy of an unencrypted snapshot if encryption by default is not enabled, enable encryption
      *         using this parameter. Otherwise, omit this parameter. Encrypted snapshots are encrypted, even if you omit
      *         this parameter and encryption by default is not enabled. You cannot set this parameter to false. For more
-     *         information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     *         EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+     *         EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
      */
 
     public Boolean isEncrypted() {
@@ -959,7 +956,7 @@ public class CopySnapshotRequest extends AmazonWebServiceRequest implements Seri
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getPresignedUrl() != null)
-            sb.append("PresignedUrl: ").append(getPresignedUrl()).append(",");
+            sb.append("PresignedUrl: ").append("***Sensitive Data Redacted***").append(",");
         if (getSourceRegion() != null)
             sb.append("SourceRegion: ").append(getSourceRegion()).append(",");
         if (getSourceSnapshotId() != null)

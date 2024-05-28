@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,21 +27,23 @@ import com.amazonaws.services.iamrolesanywhere.model.*;
  * </p>
  * <p>
  * <p>
- * AWS Identity and Access Management Roles Anywhere provides a secure way for your workloads such as servers,
- * containers, and applications running outside of AWS to obtain Temporary AWS credentials. Your workloads can use the
- * same IAM policies and roles that you have configured with native AWS applications to access AWS resources. Using IAM
- * Roles Anywhere will eliminate the need to manage long term credentials for workloads running outside of AWS.
+ * Identity and Access Management Roles Anywhere provides a secure way for your workloads such as servers, containers,
+ * and applications that run outside of Amazon Web Services to obtain temporary Amazon Web Services credentials. Your
+ * workloads can use the same IAM policies and roles you have for native Amazon Web Services applications to access
+ * Amazon Web Services resources. Using IAM Roles Anywhere eliminates the need to manage long-term credentials for
+ * workloads running outside of Amazon Web Services.
  * </p>
  * <p>
- * To use IAM Roles Anywhere customer workloads will need to use X.509 certificates issued by their Certificate
- * Authority (CA) . The Certificate Authority (CA) needs to be registered with IAM Roles Anywhere as a trust anchor to
- * establish trust between customer PKI and IAM Roles Anywhere. Customers who do not manage their own PKI system can use
- * AWS Certificate Manager Private Certificate Authority (ACM PCA) to create a Certificate Authority and use that to
- * establish trust with IAM Roles Anywhere
+ * To use IAM Roles Anywhere, your workloads must use X.509 certificates issued by their certificate authority (CA). You
+ * register the CA with IAM Roles Anywhere as a trust anchor to establish trust between your public key infrastructure
+ * (PKI) and IAM Roles Anywhere. If you don't manage your own PKI system, you can use Private Certificate Authority to
+ * create a CA and then use that to establish trust with IAM Roles Anywhere.
  * </p>
  * <p>
- * This guide describes the IAM rolesanywhere operations that you can call programmatically. For general information
- * about IAM Roles Anywhere see <a href="https://docs.aws.amazon.com/">https://docs.aws.amazon.com/</a>
+ * This guide describes the IAM Roles Anywhere operations that you can call programmatically. For more information about
+ * IAM Roles Anywhere, see the <a
+ * href="https://docs.aws.amazon.com/rolesanywhere/latest/userguide/introduction.html">IAM Roles Anywhere User
+ * Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -57,8 +59,8 @@ public interface AWSIAMRolesAnywhere {
 
     /**
      * <p>
-     * Creates a profile. A profile is configuration resource to list the roles that RolesAnywhere service is trusted to
-     * assume. In addition, by applying a profile you can intersect permissions with IAM managed policies.
+     * Creates a <i>profile</i>, a list of the roles that Roles Anywhere service is trusted to assume. You use profiles
+     * to intersect permissions with IAM managed policies.
      * </p>
      * <p>
      * <b>Required permissions: </b> <code>rolesanywhere:CreateProfile</code>.
@@ -78,11 +80,10 @@ public interface AWSIAMRolesAnywhere {
 
     /**
      * <p>
-     * Creates a trust anchor. You establish trust between IAM Roles Anywhere and your certificate authority (CA) by
-     * configuring a trust anchor. A Trust Anchor is defined either as a reference to a AWS Certificate Manager Private
-     * Certificate Authority (ACM PCA), or by uploading a Certificate Authority (CA) certificate. Your AWS workloads can
-     * authenticate with the trust anchor using certificates issued by the trusted Certificate Authority (CA) in
-     * exchange for temporary AWS credentials.
+     * Creates a trust anchor to establish trust between IAM Roles Anywhere and your certificate authority (CA). You can
+     * define a trust anchor as a reference to an Private Certificate Authority (Private CA) or by uploading a CA
+     * certificate. Your Amazon Web Services workloads can authenticate with the trust anchor using certificates issued
+     * by the CA in exchange for temporary Amazon Web Services credentials.
      * </p>
      * <p>
      * <b>Required permissions: </b> <code>rolesanywhere:CreateTrustAnchor</code>.
@@ -99,6 +100,25 @@ public interface AWSIAMRolesAnywhere {
      *      target="_top">AWS API Documentation</a>
      */
     CreateTrustAnchorResult createTrustAnchor(CreateTrustAnchorRequest createTrustAnchorRequest);
+
+    /**
+     * <p>
+     * Delete an entry from the attribute mapping rules enforced by a given profile.
+     * </p>
+     * 
+     * @param deleteAttributeMappingRequest
+     * @return Result of the DeleteAttributeMapping operation returned by the service.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSIAMRolesAnywhere.DeleteAttributeMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DeleteAttributeMapping"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteAttributeMappingResult deleteAttributeMapping(DeleteAttributeMappingRequest deleteAttributeMappingRequest);
 
     /**
      * <p>
@@ -182,9 +202,7 @@ public interface AWSIAMRolesAnywhere {
 
     /**
      * <p>
-     * Disables a profile. When disabled, <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * requests with this profile fail.
+     * Disables a profile. When disabled, temporary credential requests with this profile fail.
      * </p>
      * <p>
      * <b>Required permissions: </b> <code>rolesanywhere:DisableProfile</code>.
@@ -204,9 +222,8 @@ public interface AWSIAMRolesAnywhere {
 
     /**
      * <p>
-     * Disables a trust anchor. When disabled, <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * requests specifying this trust anchor are unauthorized.
+     * Disables a trust anchor. When disabled, temporary credential requests specifying this trust anchor are
+     * unauthorized.
      * </p>
      * <p>
      * <b>Required permissions: </b> <code>rolesanywhere:DisableTrustAnchor</code>.
@@ -247,8 +264,7 @@ public interface AWSIAMRolesAnywhere {
 
     /**
      * <p>
-     * Enables the roles in a profile to receive session credentials in <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>.
+     * Enables temporary credential requests for a profile.
      * </p>
      * <p>
      * <b>Required permissions: </b> <code>rolesanywhere:EnableProfile</code>.
@@ -326,9 +342,9 @@ public interface AWSIAMRolesAnywhere {
 
     /**
      * <p>
-     * Gets a Subject. A Subject associates a certificate identity with authentication attempts by CreateSession. The
-     * Subject resources stores audit information such as status of the last authentication attempt, the certificate
-     * data used in the attempt, and the last time the associated identity attempted authentication.
+     * Gets a <i>subject</i>, which associates a certificate identity with authentication attempts. The subject stores
+     * auditing information such as the status of the last authentication attempt, the certificate data used in the
+     * attempt, and the last time the associated identity attempted authentication.
      * </p>
      * <p>
      * <b>Required permissions: </b> <code>rolesanywhere:GetSubject</code>.
@@ -370,8 +386,9 @@ public interface AWSIAMRolesAnywhere {
 
     /**
      * <p>
-     * Imports the certificate revocation list (CRL). CRl is a list of certificates that have been revoked by the
-     * issuing certificate Authority (CA). IAM Roles Anywhere validates against the crl list before issuing credentials.
+     * Imports the certificate revocation list (CRL). A CRL is a list of certificates that have been revoked by the
+     * issuing certificate Authority (CA).In order to be properly imported, a CRL must be in PEM format. IAM Roles
+     * Anywhere validates against the CRL before issuing credentials.
      * </p>
      * <p>
      * <b>Required permissions: </b> <code>rolesanywhere:ImportCrl</code>.
@@ -391,7 +408,7 @@ public interface AWSIAMRolesAnywhere {
 
     /**
      * <p>
-     * Lists all Crls in the authenticated account and Amazon Web Services Region.
+     * Lists all certificate revocation lists (CRL) in the authenticated account and Amazon Web Services Region.
      * </p>
      * <p>
      * <b>Required permissions: </b> <code>rolesanywhere:ListCrls</code>.
@@ -493,6 +510,74 @@ public interface AWSIAMRolesAnywhere {
 
     /**
      * <p>
+     * Put an entry in the attribute mapping rules that will be enforced by a given profile. A mapping specifies a
+     * certificate field and one or more specifiers that have contextual meanings.
+     * </p>
+     * 
+     * @param putAttributeMappingRequest
+     * @return Result of the PutAttributeMapping operation returned by the service.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSIAMRolesAnywhere.PutAttributeMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/PutAttributeMapping"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutAttributeMappingResult putAttributeMapping(PutAttributeMappingRequest putAttributeMappingRequest);
+
+    /**
+     * <p>
+     * Attaches a list of <i>notification settings</i> to a trust anchor.
+     * </p>
+     * <p>
+     * A notification setting includes information such as event name, threshold, status of the notification setting,
+     * and the channel to notify.
+     * </p>
+     * <p>
+     * <b>Required permissions: </b> <code>rolesanywhere:PutNotificationSettings</code>.
+     * </p>
+     * 
+     * @param putNotificationSettingsRequest
+     * @return Result of the PutNotificationSettings operation returned by the service.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSIAMRolesAnywhere.PutNotificationSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/PutNotificationSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutNotificationSettingsResult putNotificationSettings(PutNotificationSettingsRequest putNotificationSettingsRequest);
+
+    /**
+     * <p>
+     * Resets the <i>custom notification setting</i> to IAM Roles Anywhere default setting.
+     * </p>
+     * <p>
+     * <b>Required permissions: </b> <code>rolesanywhere:ResetNotificationSettings</code>.
+     * </p>
+     * 
+     * @param resetNotificationSettingsRequest
+     * @return Result of the ResetNotificationSettings operation returned by the service.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSIAMRolesAnywhere.ResetNotificationSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/ResetNotificationSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ResetNotificationSettingsResult resetNotificationSettings(ResetNotificationSettingsRequest resetNotificationSettingsRequest);
+
+    /**
+     * <p>
      * Attaches tags to a resource.
      * </p>
      * <p>
@@ -539,8 +624,8 @@ public interface AWSIAMRolesAnywhere {
 
     /**
      * <p>
-     * Updates the certificate revocation list (CRL). CRl is a list of certificates that have been revoked by the
-     * issuing certificate Authority (CA). IAM Roles Anywhere validates against the crl list before issuing credentials.
+     * Updates the certificate revocation list (CRL). A CRL is a list of certificates that have been revoked by the
+     * issuing certificate authority (CA). IAM Roles Anywhere validates against the CRL before issuing credentials.
      * </p>
      * <p>
      * <b>Required permissions: </b> <code>rolesanywhere:UpdateCrl</code>.
@@ -562,8 +647,8 @@ public interface AWSIAMRolesAnywhere {
 
     /**
      * <p>
-     * Updates the profile. A profile is configuration resource to list the roles that RolesAnywhere service is trusted
-     * to assume. In addition, by applying a profile you can scope-down permissions with IAM managed policies.
+     * Updates a <i>profile</i>, a list of the roles that IAM Roles Anywhere service is trusted to assume. You use
+     * profiles to intersect permissions with IAM managed policies.
      * </p>
      * <p>
      * <b>Required permissions: </b> <code>rolesanywhere:UpdateProfile</code>.
@@ -585,11 +670,10 @@ public interface AWSIAMRolesAnywhere {
 
     /**
      * <p>
-     * Updates the trust anchor.You establish trust between IAM Roles Anywhere and your certificate authority (CA) by
-     * configuring a trust anchor. A Trust Anchor is defined either as a reference to a AWS Certificate Manager Private
-     * Certificate Authority (ACM PCA), or by uploading a Certificate Authority (CA) certificate. Your AWS workloads can
-     * authenticate with the trust anchor using certificates issued by the trusted Certificate Authority (CA) in
-     * exchange for temporary AWS credentials.
+     * Updates a trust anchor. You establish trust between IAM Roles Anywhere and your certificate authority (CA) by
+     * configuring a trust anchor. You can define a trust anchor as a reference to an Private Certificate Authority
+     * (Private CA) or by uploading a CA certificate. Your Amazon Web Services workloads can authenticate with the trust
+     * anchor using certificates issued by the CA in exchange for temporary Amazon Web Services credentials.
      * </p>
      * <p>
      * <b>Required permissions: </b> <code>rolesanywhere:UpdateTrustAnchor</code>.

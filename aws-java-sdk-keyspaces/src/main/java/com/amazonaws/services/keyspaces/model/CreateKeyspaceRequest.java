@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,27 @@ public class CreateKeyspaceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * The replication specification of the keyspace includes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>replicationStrategy</code> - the required value is <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>regionList</code> - if the <code>replicationStrategy</code> is <code>MULTI_REGION</code>, the
+     * <code>regionList</code> requires the current Region and at least one additional Amazon Web Services Region where
+     * the keyspace is going to be replicated in. The maximum number of supported replication Regions including the
+     * current Region is six.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private ReplicationSpecification replicationSpecification;
 
     /**
      * <p>
@@ -190,6 +211,136 @@ public class CreateKeyspaceRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The replication specification of the keyspace includes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>replicationStrategy</code> - the required value is <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>regionList</code> - if the <code>replicationStrategy</code> is <code>MULTI_REGION</code>, the
+     * <code>regionList</code> requires the current Region and at least one additional Amazon Web Services Region where
+     * the keyspace is going to be replicated in. The maximum number of supported replication Regions including the
+     * current Region is six.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param replicationSpecification
+     *        The replication specification of the keyspace includes:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>replicationStrategy</code> - the required value is <code>SINGLE_REGION</code> or
+     *        <code>MULTI_REGION</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>regionList</code> - if the <code>replicationStrategy</code> is <code>MULTI_REGION</code>, the
+     *        <code>regionList</code> requires the current Region and at least one additional Amazon Web Services Region
+     *        where the keyspace is going to be replicated in. The maximum number of supported replication Regions
+     *        including the current Region is six.
+     *        </p>
+     *        </li>
+     */
+
+    public void setReplicationSpecification(ReplicationSpecification replicationSpecification) {
+        this.replicationSpecification = replicationSpecification;
+    }
+
+    /**
+     * <p>
+     * The replication specification of the keyspace includes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>replicationStrategy</code> - the required value is <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>regionList</code> - if the <code>replicationStrategy</code> is <code>MULTI_REGION</code>, the
+     * <code>regionList</code> requires the current Region and at least one additional Amazon Web Services Region where
+     * the keyspace is going to be replicated in. The maximum number of supported replication Regions including the
+     * current Region is six.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The replication specification of the keyspace includes:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>replicationStrategy</code> - the required value is <code>SINGLE_REGION</code> or
+     *         <code>MULTI_REGION</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>regionList</code> - if the <code>replicationStrategy</code> is <code>MULTI_REGION</code>, the
+     *         <code>regionList</code> requires the current Region and at least one additional Amazon Web Services
+     *         Region where the keyspace is going to be replicated in. The maximum number of supported replication
+     *         Regions including the current Region is six.
+     *         </p>
+     *         </li>
+     */
+
+    public ReplicationSpecification getReplicationSpecification() {
+        return this.replicationSpecification;
+    }
+
+    /**
+     * <p>
+     * The replication specification of the keyspace includes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>replicationStrategy</code> - the required value is <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>regionList</code> - if the <code>replicationStrategy</code> is <code>MULTI_REGION</code>, the
+     * <code>regionList</code> requires the current Region and at least one additional Amazon Web Services Region where
+     * the keyspace is going to be replicated in. The maximum number of supported replication Regions including the
+     * current Region is six.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param replicationSpecification
+     *        The replication specification of the keyspace includes:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>replicationStrategy</code> - the required value is <code>SINGLE_REGION</code> or
+     *        <code>MULTI_REGION</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>regionList</code> - if the <code>replicationStrategy</code> is <code>MULTI_REGION</code>, the
+     *        <code>regionList</code> requires the current Region and at least one additional Amazon Web Services Region
+     *        where the keyspace is going to be replicated in. The maximum number of supported replication Regions
+     *        including the current Region is six.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateKeyspaceRequest withReplicationSpecification(ReplicationSpecification replicationSpecification) {
+        setReplicationSpecification(replicationSpecification);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -204,7 +355,9 @@ public class CreateKeyspaceRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getKeyspaceName() != null)
             sb.append("KeyspaceName: ").append(getKeyspaceName()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getReplicationSpecification() != null)
+            sb.append("ReplicationSpecification: ").append(getReplicationSpecification());
         sb.append("}");
         return sb.toString();
     }
@@ -227,6 +380,10 @@ public class CreateKeyspaceRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getReplicationSpecification() == null ^ this.getReplicationSpecification() == null)
+            return false;
+        if (other.getReplicationSpecification() != null && other.getReplicationSpecification().equals(this.getReplicationSpecification()) == false)
+            return false;
         return true;
     }
 
@@ -237,6 +394,7 @@ public class CreateKeyspaceRequest extends com.amazonaws.AmazonWebServiceRequest
 
         hashCode = prime * hashCode + ((getKeyspaceName() == null) ? 0 : getKeyspaceName().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getReplicationSpecification() == null) ? 0 : getReplicationSpecification().hashCode());
         return hashCode;
     }
 

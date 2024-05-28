@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class EntityTypesListItem implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * Entity types must not contain the following invalid characters: \n (line break), \\n (escaped line break, \r
-     * (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), space, and , (comma).
+     * (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), and , (comma).
      * </p>
      */
     private String type;
@@ -45,7 +45,7 @@ public class EntityTypesListItem implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * Entity types must not contain the following invalid characters: \n (line break), \\n (escaped line break, \r
-     * (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), space, and , (comma).
+     * (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), and , (comma).
      * </p>
      * 
      * @param type
@@ -53,7 +53,7 @@ public class EntityTypesListItem implements Serializable, Cloneable, StructuredP
      *        recognizer.</p>
      *        <p>
      *        Entity types must not contain the following invalid characters: \n (line break), \\n (escaped line break,
-     *        \r (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), space, and , (comma).
+     *        \r (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), and , (comma).
      */
 
     public void setType(String type) {
@@ -66,14 +66,14 @@ public class EntityTypesListItem implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * Entity types must not contain the following invalid characters: \n (line break), \\n (escaped line break, \r
-     * (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), space, and , (comma).
+     * (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), and , (comma).
      * </p>
      * 
      * @return An entity type within a labeled training dataset that Amazon Comprehend uses to train a custom entity
      *         recognizer.</p>
      *         <p>
      *         Entity types must not contain the following invalid characters: \n (line break), \\n (escaped line break,
-     *         \r (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), space, and , (comma).
+     *         \r (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), and , (comma).
      */
 
     public String getType() {
@@ -86,7 +86,7 @@ public class EntityTypesListItem implements Serializable, Cloneable, StructuredP
      * </p>
      * <p>
      * Entity types must not contain the following invalid characters: \n (line break), \\n (escaped line break, \r
-     * (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), space, and , (comma).
+     * (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), and , (comma).
      * </p>
      * 
      * @param type
@@ -94,7 +94,7 @@ public class EntityTypesListItem implements Serializable, Cloneable, StructuredP
      *        recognizer.</p>
      *        <p>
      *        Entity types must not contain the following invalid characters: \n (line break), \\n (escaped line break,
-     *        \r (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), space, and , (comma).
+     *        \r (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), and , (comma).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

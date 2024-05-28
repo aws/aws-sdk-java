@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A user object that contains a specified user’s metadata and attributes.
+ * A user object that contains the metadata and attributes for a specified user.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/User" target="_top">AWS API
@@ -51,13 +51,13 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<ExternalId> externalIds;
     /**
      * <p>
-     * An object containing the user's name.
+     * An object containing the name of the user.
      * </p>
      */
     private Name name;
     /**
      * <p>
-     * A string containing the user's name that's formatted for display when the user is referenced. For example,
+     * A string containing the name of the user that is formatted for display when the user is referenced. For example,
      * "John Doe."
      * </p>
      */
@@ -70,7 +70,7 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     private String nickName;
     /**
      * <p>
-     * A string containing a URL that may be associated with the user.
+     * A string containing a URL that might be associated with the user.
      * </p>
      */
     private String profileUrl;
@@ -94,15 +94,15 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<PhoneNumber> phoneNumbers;
     /**
      * <p>
-     * A string indicating the user's type. Possible values depend on each customer's specific needs, so they are left
-     * unspecified.
+     * A string indicating the type of user. Possible values are left unspecified. The value can vary based on your
+     * specific use case.
      * </p>
      */
     private String userType;
     /**
      * <p>
-     * A string containing the user's title. Possible values depend on each customer's specific needs, so they are left
-     * unspecified.
+     * A string containing the title of the user. Possible values are left unspecified. The value can vary based on your
+     * specific use case.
      * </p>
      */
     private String title;
@@ -114,13 +114,13 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     private String preferredLanguage;
     /**
      * <p>
-     * A string containing the user's geographical region or location.
+     * A string containing the geographical region or location of the user.
      * </p>
      */
     private String locale;
     /**
      * <p>
-     * A string containing the user's time zone.
+     * A string containing the time zone of the user.
      * </p>
      */
     private String timezone;
@@ -303,11 +303,11 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object containing the user's name.
+     * An object containing the name of the user.
      * </p>
      * 
      * @param name
-     *        An object containing the user's name.
+     *        An object containing the name of the user.
      */
 
     public void setName(Name name) {
@@ -316,10 +316,10 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object containing the user's name.
+     * An object containing the name of the user.
      * </p>
      * 
-     * @return An object containing the user's name.
+     * @return An object containing the name of the user.
      */
 
     public Name getName() {
@@ -328,11 +328,11 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object containing the user's name.
+     * An object containing the name of the user.
      * </p>
      * 
      * @param name
-     *        An object containing the user's name.
+     *        An object containing the name of the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -343,13 +343,13 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string containing the user's name that's formatted for display when the user is referenced. For example,
+     * A string containing the name of the user that is formatted for display when the user is referenced. For example,
      * "John Doe."
      * </p>
      * 
      * @param displayName
-     *        A string containing the user's name that's formatted for display when the user is referenced. For example,
-     *        "John Doe."
+     *        A string containing the name of the user that is formatted for display when the user is referenced. For
+     *        example, "John Doe."
      */
 
     public void setDisplayName(String displayName) {
@@ -358,11 +358,11 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string containing the user's name that's formatted for display when the user is referenced. For example,
+     * A string containing the name of the user that is formatted for display when the user is referenced. For example,
      * "John Doe."
      * </p>
      * 
-     * @return A string containing the user's name that's formatted for display when the user is referenced. For
+     * @return A string containing the name of the user that is formatted for display when the user is referenced. For
      *         example, "John Doe."
      */
 
@@ -372,13 +372,13 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string containing the user's name that's formatted for display when the user is referenced. For example,
+     * A string containing the name of the user that is formatted for display when the user is referenced. For example,
      * "John Doe."
      * </p>
      * 
      * @param displayName
-     *        A string containing the user's name that's formatted for display when the user is referenced. For example,
-     *        "John Doe."
+     *        A string containing the name of the user that is formatted for display when the user is referenced. For
+     *        example, "John Doe."
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -429,11 +429,11 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string containing a URL that may be associated with the user.
+     * A string containing a URL that might be associated with the user.
      * </p>
      * 
      * @param profileUrl
-     *        A string containing a URL that may be associated with the user.
+     *        A string containing a URL that might be associated with the user.
      */
 
     public void setProfileUrl(String profileUrl) {
@@ -442,10 +442,10 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string containing a URL that may be associated with the user.
+     * A string containing a URL that might be associated with the user.
      * </p>
      * 
-     * @return A string containing a URL that may be associated with the user.
+     * @return A string containing a URL that might be associated with the user.
      */
 
     public String getProfileUrl() {
@@ -454,11 +454,11 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string containing a URL that may be associated with the user.
+     * A string containing a URL that might be associated with the user.
      * </p>
      * 
      * @param profileUrl
-     *        A string containing a URL that may be associated with the user.
+     *        A string containing a URL that might be associated with the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -679,13 +679,13 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string indicating the user's type. Possible values depend on each customer's specific needs, so they are left
-     * unspecified.
+     * A string indicating the type of user. Possible values are left unspecified. The value can vary based on your
+     * specific use case.
      * </p>
      * 
      * @param userType
-     *        A string indicating the user's type. Possible values depend on each customer's specific needs, so they are
-     *        left unspecified.
+     *        A string indicating the type of user. Possible values are left unspecified. The value can vary based on
+     *        your specific use case.
      */
 
     public void setUserType(String userType) {
@@ -694,12 +694,12 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string indicating the user's type. Possible values depend on each customer's specific needs, so they are left
-     * unspecified.
+     * A string indicating the type of user. Possible values are left unspecified. The value can vary based on your
+     * specific use case.
      * </p>
      * 
-     * @return A string indicating the user's type. Possible values depend on each customer's specific needs, so they
-     *         are left unspecified.
+     * @return A string indicating the type of user. Possible values are left unspecified. The value can vary based on
+     *         your specific use case.
      */
 
     public String getUserType() {
@@ -708,13 +708,13 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string indicating the user's type. Possible values depend on each customer's specific needs, so they are left
-     * unspecified.
+     * A string indicating the type of user. Possible values are left unspecified. The value can vary based on your
+     * specific use case.
      * </p>
      * 
      * @param userType
-     *        A string indicating the user's type. Possible values depend on each customer's specific needs, so they are
-     *        left unspecified.
+     *        A string indicating the type of user. Possible values are left unspecified. The value can vary based on
+     *        your specific use case.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -725,13 +725,13 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string containing the user's title. Possible values depend on each customer's specific needs, so they are left
-     * unspecified.
+     * A string containing the title of the user. Possible values are left unspecified. The value can vary based on your
+     * specific use case.
      * </p>
      * 
      * @param title
-     *        A string containing the user's title. Possible values depend on each customer's specific needs, so they
-     *        are left unspecified.
+     *        A string containing the title of the user. Possible values are left unspecified. The value can vary based
+     *        on your specific use case.
      */
 
     public void setTitle(String title) {
@@ -740,12 +740,12 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string containing the user's title. Possible values depend on each customer's specific needs, so they are left
-     * unspecified.
+     * A string containing the title of the user. Possible values are left unspecified. The value can vary based on your
+     * specific use case.
      * </p>
      * 
-     * @return A string containing the user's title. Possible values depend on each customer's specific needs, so they
-     *         are left unspecified.
+     * @return A string containing the title of the user. Possible values are left unspecified. The value can vary based
+     *         on your specific use case.
      */
 
     public String getTitle() {
@@ -754,13 +754,13 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string containing the user's title. Possible values depend on each customer's specific needs, so they are left
-     * unspecified.
+     * A string containing the title of the user. Possible values are left unspecified. The value can vary based on your
+     * specific use case.
      * </p>
      * 
      * @param title
-     *        A string containing the user's title. Possible values depend on each customer's specific needs, so they
-     *        are left unspecified.
+     *        A string containing the title of the user. Possible values are left unspecified. The value can vary based
+     *        on your specific use case.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -811,11 +811,11 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string containing the user's geographical region or location.
+     * A string containing the geographical region or location of the user.
      * </p>
      * 
      * @param locale
-     *        A string containing the user's geographical region or location.
+     *        A string containing the geographical region or location of the user.
      */
 
     public void setLocale(String locale) {
@@ -824,10 +824,10 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string containing the user's geographical region or location.
+     * A string containing the geographical region or location of the user.
      * </p>
      * 
-     * @return A string containing the user's geographical region or location.
+     * @return A string containing the geographical region or location of the user.
      */
 
     public String getLocale() {
@@ -836,11 +836,11 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string containing the user's geographical region or location.
+     * A string containing the geographical region or location of the user.
      * </p>
      * 
      * @param locale
-     *        A string containing the user's geographical region or location.
+     *        A string containing the geographical region or location of the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -851,11 +851,11 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string containing the user's time zone.
+     * A string containing the time zone of the user.
      * </p>
      * 
      * @param timezone
-     *        A string containing the user's time zone.
+     *        A string containing the time zone of the user.
      */
 
     public void setTimezone(String timezone) {
@@ -864,10 +864,10 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string containing the user's time zone.
+     * A string containing the time zone of the user.
      * </p>
      * 
-     * @return A string containing the user's time zone.
+     * @return A string containing the time zone of the user.
      */
 
     public String getTimezone() {
@@ -876,11 +876,11 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string containing the user's time zone.
+     * A string containing the time zone of the user.
      * </p>
      * 
      * @param timezone
-     *        A string containing the user's time zone.
+     *        A string containing the time zone of the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

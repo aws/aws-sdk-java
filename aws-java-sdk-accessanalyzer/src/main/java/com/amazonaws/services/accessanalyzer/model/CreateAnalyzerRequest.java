@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,8 +36,9 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
     private String analyzerName;
     /**
      * <p>
-     * The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one
-     * analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
+     * The type of analyzer to create. Only <code>ACCOUNT</code>, <code>ORGANIZATION</code>,
+     * <code>ACCOUNT_UNUSED_ACCESS</code>, and <code>ORGANIZATION_UNUSED_ACCESS</code> analyzers are supported. You can
+     * create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
      * </p>
      */
     private String type;
@@ -50,7 +51,7 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
     private java.util.List<InlineArchiveRule> archiveRules;
     /**
      * <p>
-     * The tags to apply to the analyzer.
+     * An array of key-value pairs to apply to the analyzer.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -60,6 +61,14 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String clientToken;
+    /**
+     * <p>
+     * Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer, the specified scope of
+     * unused access is used for the configuration. If the analyzer is an external access analyzer, this field is not
+     * used.
+     * </p>
+     */
+    private AnalyzerConfiguration configuration;
 
     /**
      * <p>
@@ -103,13 +112,16 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one
-     * analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
+     * The type of analyzer to create. Only <code>ACCOUNT</code>, <code>ORGANIZATION</code>,
+     * <code>ACCOUNT_UNUSED_ACCESS</code>, and <code>ORGANIZATION_UNUSED_ACCESS</code> analyzers are supported. You can
+     * create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
      * </p>
      * 
      * @param type
-     *        The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only
-     *        one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
+     *        The type of analyzer to create. Only <code>ACCOUNT</code>, <code>ORGANIZATION</code>,
+     *        <code>ACCOUNT_UNUSED_ACCESS</code>, and <code>ORGANIZATION_UNUSED_ACCESS</code> analyzers are supported.
+     *        You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization
+     *        per Region.
      * @see Type
      */
 
@@ -119,12 +131,15 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one
-     * analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
+     * The type of analyzer to create. Only <code>ACCOUNT</code>, <code>ORGANIZATION</code>,
+     * <code>ACCOUNT_UNUSED_ACCESS</code>, and <code>ORGANIZATION_UNUSED_ACCESS</code> analyzers are supported. You can
+     * create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
      * </p>
      * 
-     * @return The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create
-     *         only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
+     * @return The type of analyzer to create. Only <code>ACCOUNT</code>, <code>ORGANIZATION</code>,
+     *         <code>ACCOUNT_UNUSED_ACCESS</code>, and <code>ORGANIZATION_UNUSED_ACCESS</code> analyzers are supported.
+     *         You can create only one analyzer per account per Region. You can create up to 5 analyzers per
+     *         organization per Region.
      * @see Type
      */
 
@@ -134,13 +149,16 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one
-     * analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
+     * The type of analyzer to create. Only <code>ACCOUNT</code>, <code>ORGANIZATION</code>,
+     * <code>ACCOUNT_UNUSED_ACCESS</code>, and <code>ORGANIZATION_UNUSED_ACCESS</code> analyzers are supported. You can
+     * create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
      * </p>
      * 
      * @param type
-     *        The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only
-     *        one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
+     *        The type of analyzer to create. Only <code>ACCOUNT</code>, <code>ORGANIZATION</code>,
+     *        <code>ACCOUNT_UNUSED_ACCESS</code>, and <code>ORGANIZATION_UNUSED_ACCESS</code> analyzers are supported.
+     *        You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization
+     *        per Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Type
      */
@@ -152,13 +170,16 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one
-     * analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
+     * The type of analyzer to create. Only <code>ACCOUNT</code>, <code>ORGANIZATION</code>,
+     * <code>ACCOUNT_UNUSED_ACCESS</code>, and <code>ORGANIZATION_UNUSED_ACCESS</code> analyzers are supported. You can
+     * create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
      * </p>
      * 
      * @param type
-     *        The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only
-     *        one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
+     *        The type of analyzer to create. Only <code>ACCOUNT</code>, <code>ORGANIZATION</code>,
+     *        <code>ACCOUNT_UNUSED_ACCESS</code>, and <code>ORGANIZATION_UNUSED_ACCESS</code> analyzers are supported.
+     *        You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization
+     *        per Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Type
      */
@@ -248,10 +269,10 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The tags to apply to the analyzer.
+     * An array of key-value pairs to apply to the analyzer.
      * </p>
      * 
-     * @return The tags to apply to the analyzer.
+     * @return An array of key-value pairs to apply to the analyzer.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -260,11 +281,11 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The tags to apply to the analyzer.
+     * An array of key-value pairs to apply to the analyzer.
      * </p>
      * 
      * @param tags
-     *        The tags to apply to the analyzer.
+     *        An array of key-value pairs to apply to the analyzer.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -273,11 +294,11 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The tags to apply to the analyzer.
+     * An array of key-value pairs to apply to the analyzer.
      * </p>
      * 
      * @param tags
-     *        The tags to apply to the analyzer.
+     *        An array of key-value pairs to apply to the analyzer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,6 +376,58 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer, the specified scope of
+     * unused access is used for the configuration. If the analyzer is an external access analyzer, this field is not
+     * used.
+     * </p>
+     * 
+     * @param configuration
+     *        Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer, the specified
+     *        scope of unused access is used for the configuration. If the analyzer is an external access analyzer, this
+     *        field is not used.
+     */
+
+    public void setConfiguration(AnalyzerConfiguration configuration) {
+        this.configuration = configuration;
+    }
+
+    /**
+     * <p>
+     * Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer, the specified scope of
+     * unused access is used for the configuration. If the analyzer is an external access analyzer, this field is not
+     * used.
+     * </p>
+     * 
+     * @return Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer, the specified
+     *         scope of unused access is used for the configuration. If the analyzer is an external access analyzer,
+     *         this field is not used.
+     */
+
+    public AnalyzerConfiguration getConfiguration() {
+        return this.configuration;
+    }
+
+    /**
+     * <p>
+     * Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer, the specified scope of
+     * unused access is used for the configuration. If the analyzer is an external access analyzer, this field is not
+     * used.
+     * </p>
+     * 
+     * @param configuration
+     *        Specifies the configuration of the analyzer. If the analyzer is an unused access analyzer, the specified
+     *        scope of unused access is used for the configuration. If the analyzer is an external access analyzer, this
+     *        field is not used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAnalyzerRequest withConfiguration(AnalyzerConfiguration configuration) {
+        setConfiguration(configuration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -375,7 +448,9 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getConfiguration() != null)
+            sb.append("Configuration: ").append(getConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -410,6 +485,10 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
+        if (other.getConfiguration() == null ^ this.getConfiguration() == null)
+            return false;
+        if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -423,6 +502,7 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getArchiveRules() == null) ? 0 : getArchiveRules().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
         return hashCode;
     }
 

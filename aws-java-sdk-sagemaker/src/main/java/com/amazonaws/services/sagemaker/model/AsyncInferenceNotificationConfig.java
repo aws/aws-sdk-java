@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,17 @@ public class AsyncInferenceNotificationConfig implements Serializable, Cloneable
      * </p>
      */
     private String errorTopic;
+    /**
+     * <p>
+     * The Amazon SNS topics where you want the inference response to be included.
+     * </p>
+     * <note>
+     * <p>
+     * The inference response is included only if the response size is less than or equal to 128 KB.
+     * </p>
+     * </note>
+     */
+    private java.util.List<String> includeInferenceResponseIn;
 
     /**
      * <p>
@@ -136,6 +147,144 @@ public class AsyncInferenceNotificationConfig implements Serializable, Cloneable
     }
 
     /**
+     * <p>
+     * The Amazon SNS topics where you want the inference response to be included.
+     * </p>
+     * <note>
+     * <p>
+     * The inference response is included only if the response size is less than or equal to 128 KB.
+     * </p>
+     * </note>
+     * 
+     * @return The Amazon SNS topics where you want the inference response to be included.</p> <note>
+     *         <p>
+     *         The inference response is included only if the response size is less than or equal to 128 KB.
+     *         </p>
+     * @see AsyncNotificationTopicTypes
+     */
+
+    public java.util.List<String> getIncludeInferenceResponseIn() {
+        return includeInferenceResponseIn;
+    }
+
+    /**
+     * <p>
+     * The Amazon SNS topics where you want the inference response to be included.
+     * </p>
+     * <note>
+     * <p>
+     * The inference response is included only if the response size is less than or equal to 128 KB.
+     * </p>
+     * </note>
+     * 
+     * @param includeInferenceResponseIn
+     *        The Amazon SNS topics where you want the inference response to be included.</p> <note>
+     *        <p>
+     *        The inference response is included only if the response size is less than or equal to 128 KB.
+     *        </p>
+     * @see AsyncNotificationTopicTypes
+     */
+
+    public void setIncludeInferenceResponseIn(java.util.Collection<String> includeInferenceResponseIn) {
+        if (includeInferenceResponseIn == null) {
+            this.includeInferenceResponseIn = null;
+            return;
+        }
+
+        this.includeInferenceResponseIn = new java.util.ArrayList<String>(includeInferenceResponseIn);
+    }
+
+    /**
+     * <p>
+     * The Amazon SNS topics where you want the inference response to be included.
+     * </p>
+     * <note>
+     * <p>
+     * The inference response is included only if the response size is less than or equal to 128 KB.
+     * </p>
+     * </note>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIncludeInferenceResponseIn(java.util.Collection)} or
+     * {@link #withIncludeInferenceResponseIn(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param includeInferenceResponseIn
+     *        The Amazon SNS topics where you want the inference response to be included.</p> <note>
+     *        <p>
+     *        The inference response is included only if the response size is less than or equal to 128 KB.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AsyncNotificationTopicTypes
+     */
+
+    public AsyncInferenceNotificationConfig withIncludeInferenceResponseIn(String... includeInferenceResponseIn) {
+        if (this.includeInferenceResponseIn == null) {
+            setIncludeInferenceResponseIn(new java.util.ArrayList<String>(includeInferenceResponseIn.length));
+        }
+        for (String ele : includeInferenceResponseIn) {
+            this.includeInferenceResponseIn.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon SNS topics where you want the inference response to be included.
+     * </p>
+     * <note>
+     * <p>
+     * The inference response is included only if the response size is less than or equal to 128 KB.
+     * </p>
+     * </note>
+     * 
+     * @param includeInferenceResponseIn
+     *        The Amazon SNS topics where you want the inference response to be included.</p> <note>
+     *        <p>
+     *        The inference response is included only if the response size is less than or equal to 128 KB.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AsyncNotificationTopicTypes
+     */
+
+    public AsyncInferenceNotificationConfig withIncludeInferenceResponseIn(java.util.Collection<String> includeInferenceResponseIn) {
+        setIncludeInferenceResponseIn(includeInferenceResponseIn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon SNS topics where you want the inference response to be included.
+     * </p>
+     * <note>
+     * <p>
+     * The inference response is included only if the response size is less than or equal to 128 KB.
+     * </p>
+     * </note>
+     * 
+     * @param includeInferenceResponseIn
+     *        The Amazon SNS topics where you want the inference response to be included.</p> <note>
+     *        <p>
+     *        The inference response is included only if the response size is less than or equal to 128 KB.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AsyncNotificationTopicTypes
+     */
+
+    public AsyncInferenceNotificationConfig withIncludeInferenceResponseIn(AsyncNotificationTopicTypes... includeInferenceResponseIn) {
+        java.util.ArrayList<String> includeInferenceResponseInCopy = new java.util.ArrayList<String>(includeInferenceResponseIn.length);
+        for (AsyncNotificationTopicTypes value : includeInferenceResponseIn) {
+            includeInferenceResponseInCopy.add(value.toString());
+        }
+        if (getIncludeInferenceResponseIn() == null) {
+            setIncludeInferenceResponseIn(includeInferenceResponseInCopy);
+        } else {
+            getIncludeInferenceResponseIn().addAll(includeInferenceResponseInCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -150,7 +299,9 @@ public class AsyncInferenceNotificationConfig implements Serializable, Cloneable
         if (getSuccessTopic() != null)
             sb.append("SuccessTopic: ").append(getSuccessTopic()).append(",");
         if (getErrorTopic() != null)
-            sb.append("ErrorTopic: ").append(getErrorTopic());
+            sb.append("ErrorTopic: ").append(getErrorTopic()).append(",");
+        if (getIncludeInferenceResponseIn() != null)
+            sb.append("IncludeInferenceResponseIn: ").append(getIncludeInferenceResponseIn());
         sb.append("}");
         return sb.toString();
     }
@@ -173,6 +324,10 @@ public class AsyncInferenceNotificationConfig implements Serializable, Cloneable
             return false;
         if (other.getErrorTopic() != null && other.getErrorTopic().equals(this.getErrorTopic()) == false)
             return false;
+        if (other.getIncludeInferenceResponseIn() == null ^ this.getIncludeInferenceResponseIn() == null)
+            return false;
+        if (other.getIncludeInferenceResponseIn() != null && other.getIncludeInferenceResponseIn().equals(this.getIncludeInferenceResponseIn()) == false)
+            return false;
         return true;
     }
 
@@ -183,6 +338,7 @@ public class AsyncInferenceNotificationConfig implements Serializable, Cloneable
 
         hashCode = prime * hashCode + ((getSuccessTopic() == null) ? 0 : getSuccessTopic().hashCode());
         hashCode = prime * hashCode + ((getErrorTopic() == null) ? 0 : getErrorTopic().hashCode());
+        hashCode = prime * hashCode + ((getIncludeInferenceResponseIn() == null) ? 0 : getIncludeInferenceResponseIn().hashCode());
         return hashCode;
     }
 

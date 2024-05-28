@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,8 +18,8 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Use Manual audio remixing (RemixSettings) to adjust audio levels for each audio channel in each output of your job.
- * With audio remixing, you can output more or fewer audio channels than your input audio source provides.
+ * Use Manual audio remixing to adjust audio levels for each audio channel in each output of your job. With audio
+ * remixing, you can output more or fewer audio channels than your input audio source provides.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/RemixSettings" target="_top">AWS API
  *      Documentation</a>
@@ -28,14 +28,28 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class RemixSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each channel, in
-     * dB. Specify remix values to indicate how much of the content from your input audio channel you want in your
-     * output audio channels. Each instance of the InputChannels or InputChannelsFineTune array specifies these values
-     * for one output channel. Use one instance of this array for each output channel. In the console, each array
-     * corresponds to a column in the graphical depiction of the mapping matrix. The rows of the graphical matrix
-     * correspond to input channels. Valid values are within the range from -60 (mute) through 6. A setting of 0 passes
-     * the input channel unchanged to the output channel (no attenuation or amplification). Use InputChannels or
-     * InputChannelsFineTune to specify your remix values. Don't use both.
+     * Optionally specify the channel in your input that contains your audio description audio signal. MediaConvert
+     * mixes your audio signal across all output channels, while reducing their volume according to your data stream.
+     * When you specify an audio description audio channel, you must also specify an audio description data channel. For
+     * more information about audio description signals, see the BBC WHP 198 and 051 white papers.
+     */
+    private Integer audioDescriptionAudioChannel;
+    /**
+     * Optionally specify the channel in your input that contains your audio description data stream. MediaConvert mixes
+     * your audio signal across all output channels, while reducing their volume according to your data stream. When you
+     * specify an audio description data channel, you must also specify an audio description audio channel. For more
+     * information about audio description signals, see the BBC WHP 198 and 051 white papers.
+     */
+    private Integer audioDescriptionDataChannel;
+    /**
+     * Channel mapping contains the group of fields that hold the remixing value for each channel, in dB. Specify remix
+     * values to indicate how much of the content from your input audio channel you want in your output audio channels.
+     * Each instance of the InputChannels or InputChannelsFineTune array specifies these values for one output channel.
+     * Use one instance of this array for each output channel. In the console, each array corresponds to a column in the
+     * graphical depiction of the mapping matrix. The rows of the graphical matrix correspond to input channels. Valid
+     * values are within the range from -60 (mute) through 6. A setting of 0 passes the input channel unchanged to the
+     * output channel (no attenuation or amplification). Use InputChannels or InputChannelsFineTune to specify your remix
+     * values. Don't use both.
      */
     private ChannelMapping channelMapping;
     /**
@@ -53,24 +67,134 @@ public class RemixSettings implements Serializable, Cloneable, StructuredPojo {
     private Integer channelsOut;
 
     /**
-     * Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each channel, in
-     * dB. Specify remix values to indicate how much of the content from your input audio channel you want in your
-     * output audio channels. Each instance of the InputChannels or InputChannelsFineTune array specifies these values
-     * for one output channel. Use one instance of this array for each output channel. In the console, each array
-     * corresponds to a column in the graphical depiction of the mapping matrix. The rows of the graphical matrix
-     * correspond to input channels. Valid values are within the range from -60 (mute) through 6. A setting of 0 passes
-     * the input channel unchanged to the output channel (no attenuation or amplification). Use InputChannels or
-     * InputChannelsFineTune to specify your remix values. Don't use both.
+     * Optionally specify the channel in your input that contains your audio description audio signal. MediaConvert
+     * mixes your audio signal across all output channels, while reducing their volume according to your data stream.
+     * When you specify an audio description audio channel, you must also specify an audio description data channel. For
+     * more information about audio description signals, see the BBC WHP 198 and 051 white papers.
+     * 
+     * @param audioDescriptionAudioChannel
+     *        Optionally specify the channel in your input that contains your audio description audio signal.
+     *        MediaConvert mixes your audio signal across all output channels, while reducing their volume according to
+     *        your data stream. When you specify an audio description audio channel, you must also specify an audio
+     *        description data channel. For more information about audio description signals, see the BBC WHP 198 and
+     *        051 white papers.
+     */
+
+    public void setAudioDescriptionAudioChannel(Integer audioDescriptionAudioChannel) {
+        this.audioDescriptionAudioChannel = audioDescriptionAudioChannel;
+    }
+
+    /**
+     * Optionally specify the channel in your input that contains your audio description audio signal. MediaConvert
+     * mixes your audio signal across all output channels, while reducing their volume according to your data stream.
+     * When you specify an audio description audio channel, you must also specify an audio description data channel. For
+     * more information about audio description signals, see the BBC WHP 198 and 051 white papers.
+     * 
+     * @return Optionally specify the channel in your input that contains your audio description audio signal.
+     *         MediaConvert mixes your audio signal across all output channels, while reducing their volume according to
+     *         your data stream. When you specify an audio description audio channel, you must also specify an audio
+     *         description data channel. For more information about audio description signals, see the BBC WHP 198 and
+     *         051 white papers.
+     */
+
+    public Integer getAudioDescriptionAudioChannel() {
+        return this.audioDescriptionAudioChannel;
+    }
+
+    /**
+     * Optionally specify the channel in your input that contains your audio description audio signal. MediaConvert
+     * mixes your audio signal across all output channels, while reducing their volume according to your data stream.
+     * When you specify an audio description audio channel, you must also specify an audio description data channel. For
+     * more information about audio description signals, see the BBC WHP 198 and 051 white papers.
+     * 
+     * @param audioDescriptionAudioChannel
+     *        Optionally specify the channel in your input that contains your audio description audio signal.
+     *        MediaConvert mixes your audio signal across all output channels, while reducing their volume according to
+     *        your data stream. When you specify an audio description audio channel, you must also specify an audio
+     *        description data channel. For more information about audio description signals, see the BBC WHP 198 and
+     *        051 white papers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RemixSettings withAudioDescriptionAudioChannel(Integer audioDescriptionAudioChannel) {
+        setAudioDescriptionAudioChannel(audioDescriptionAudioChannel);
+        return this;
+    }
+
+    /**
+     * Optionally specify the channel in your input that contains your audio description data stream. MediaConvert mixes
+     * your audio signal across all output channels, while reducing their volume according to your data stream. When you
+     * specify an audio description data channel, you must also specify an audio description audio channel. For more
+     * information about audio description signals, see the BBC WHP 198 and 051 white papers.
+     * 
+     * @param audioDescriptionDataChannel
+     *        Optionally specify the channel in your input that contains your audio description data stream.
+     *        MediaConvert mixes your audio signal across all output channels, while reducing their volume according to
+     *        your data stream. When you specify an audio description data channel, you must also specify an audio
+     *        description audio channel. For more information about audio description signals, see the BBC WHP 198 and
+     *        051 white papers.
+     */
+
+    public void setAudioDescriptionDataChannel(Integer audioDescriptionDataChannel) {
+        this.audioDescriptionDataChannel = audioDescriptionDataChannel;
+    }
+
+    /**
+     * Optionally specify the channel in your input that contains your audio description data stream. MediaConvert mixes
+     * your audio signal across all output channels, while reducing their volume according to your data stream. When you
+     * specify an audio description data channel, you must also specify an audio description audio channel. For more
+     * information about audio description signals, see the BBC WHP 198 and 051 white papers.
+     * 
+     * @return Optionally specify the channel in your input that contains your audio description data stream.
+     *         MediaConvert mixes your audio signal across all output channels, while reducing their volume according to
+     *         your data stream. When you specify an audio description data channel, you must also specify an audio
+     *         description audio channel. For more information about audio description signals, see the BBC WHP 198 and
+     *         051 white papers.
+     */
+
+    public Integer getAudioDescriptionDataChannel() {
+        return this.audioDescriptionDataChannel;
+    }
+
+    /**
+     * Optionally specify the channel in your input that contains your audio description data stream. MediaConvert mixes
+     * your audio signal across all output channels, while reducing their volume according to your data stream. When you
+     * specify an audio description data channel, you must also specify an audio description audio channel. For more
+     * information about audio description signals, see the BBC WHP 198 and 051 white papers.
+     * 
+     * @param audioDescriptionDataChannel
+     *        Optionally specify the channel in your input that contains your audio description data stream.
+     *        MediaConvert mixes your audio signal across all output channels, while reducing their volume according to
+     *        your data stream. When you specify an audio description data channel, you must also specify an audio
+     *        description audio channel. For more information about audio description signals, see the BBC WHP 198 and
+     *        051 white papers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RemixSettings withAudioDescriptionDataChannel(Integer audioDescriptionDataChannel) {
+        setAudioDescriptionDataChannel(audioDescriptionDataChannel);
+        return this;
+    }
+
+    /**
+     * Channel mapping contains the group of fields that hold the remixing value for each channel, in dB. Specify remix
+     * values to indicate how much of the content from your input audio channel you want in your output audio channels.
+     * Each instance of the InputChannels or InputChannelsFineTune array specifies these values for one output channel.
+     * Use one instance of this array for each output channel. In the console, each array corresponds to a column in the
+     * graphical depiction of the mapping matrix. The rows of the graphical matrix correspond to input channels. Valid
+     * values are within the range from -60 (mute) through 6. A setting of 0 passes the input channel unchanged to the
+     * output channel (no attenuation or amplification). Use InputChannels or InputChannelsFineTune to specify your remix
+     * values. Don't use both.
      * 
      * @param channelMapping
-     *        Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each
-     *        channel, in dB. Specify remix values to indicate how much of the content from your input audio channel you
-     *        want in your output audio channels. Each instance of the InputChannels or InputChannelsFineTune array
-     *        specifies these values for one output channel. Use one instance of this array for each output channel. In
-     *        the console, each array corresponds to a column in the graphical depiction of the mapping matrix. The rows
-     *        of the graphical matrix correspond to input channels. Valid values are within the range from -60 (mute)
-     *        through 6. A setting of 0 passes the input channel unchanged to the output channel (no attenuation or
-     *        amplification). Use InputChannels or InputChannelsFineTune to specify your remix values. Don't use both.
+     *        Channel mapping contains the group of fields that hold the remixing value for each channel, in dB. Specify
+     *        remix values to indicate how much of the content from your input audio channel you want in your output
+     *        audio channels. Each instance of the InputChannels or InputChannelsFineTune array specifies these values
+     *        for one output channel. Use one instance of this array for each output channel. In the console, each array
+     *        corresponds to a column in the graphical depiction of the mapping matrix. The rows of the graphical matrix
+     *        correspond to input channels. Valid values are within the range from -60 (mute) through 6. A setting of 0
+     *        passes the input channel unchanged to the output channel (no attenuation or amplification). Use
+     *        InputChannels or InputChannelsFineTune to specify your remix values. Don't use both.
      */
 
     public void setChannelMapping(ChannelMapping channelMapping) {
@@ -78,24 +202,23 @@ public class RemixSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each channel, in
-     * dB. Specify remix values to indicate how much of the content from your input audio channel you want in your
-     * output audio channels. Each instance of the InputChannels or InputChannelsFineTune array specifies these values
-     * for one output channel. Use one instance of this array for each output channel. In the console, each array
-     * corresponds to a column in the graphical depiction of the mapping matrix. The rows of the graphical matrix
-     * correspond to input channels. Valid values are within the range from -60 (mute) through 6. A setting of 0 passes
-     * the input channel unchanged to the output channel (no attenuation or amplification). Use InputChannels or
-     * InputChannelsFineTune to specify your remix values. Don't use both.
+     * Channel mapping contains the group of fields that hold the remixing value for each channel, in dB. Specify remix
+     * values to indicate how much of the content from your input audio channel you want in your output audio channels.
+     * Each instance of the InputChannels or InputChannelsFineTune array specifies these values for one output channel.
+     * Use one instance of this array for each output channel. In the console, each array corresponds to a column in the
+     * graphical depiction of the mapping matrix. The rows of the graphical matrix correspond to input channels. Valid
+     * values are within the range from -60 (mute) through 6. A setting of 0 passes the input channel unchanged to the
+     * output channel (no attenuation or amplification). Use InputChannels or InputChannelsFineTune to specify your remix
+     * values. Don't use both.
      * 
-     * @return Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each
-     *         channel, in dB. Specify remix values to indicate how much of the content from your input audio channel
-     *         you want in your output audio channels. Each instance of the InputChannels or InputChannelsFineTune array
-     *         specifies these values for one output channel. Use one instance of this array for each output channel. In
-     *         the console, each array corresponds to a column in the graphical depiction of the mapping matrix. The
-     *         rows of the graphical matrix correspond to input channels. Valid values are within the range from -60
-     *         (mute) through 6. A setting of 0 passes the input channel unchanged to the output channel (no attenuation
-     *         or amplification). Use InputChannels or InputChannelsFineTune to specify your remix values. Don't use
-     *         both.
+     * @return Channel mapping contains the group of fields that hold the remixing value for each channel, in dB.
+     *         Specify remix values to indicate how much of the content from your input audio channel you want in your
+     *         output audio channels. Each instance of the InputChannels or InputChannelsFineTune array specifies these
+     *         values for one output channel. Use one instance of this array for each output channel. In the console,
+     *         each array corresponds to a column in the graphical depiction of the mapping matrix. The rows of the
+     *         graphical matrix correspond to input channels. Valid values are within the range from -60 (mute) through
+     *         6. A setting of 0 passes the input channel unchanged to the output channel (no attenuation or
+     *         amplification). Use InputChannels or InputChannelsFineTune to specify your remix values. Don't use both.
      */
 
     public ChannelMapping getChannelMapping() {
@@ -103,24 +226,24 @@ public class RemixSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each channel, in
-     * dB. Specify remix values to indicate how much of the content from your input audio channel you want in your
-     * output audio channels. Each instance of the InputChannels or InputChannelsFineTune array specifies these values
-     * for one output channel. Use one instance of this array for each output channel. In the console, each array
-     * corresponds to a column in the graphical depiction of the mapping matrix. The rows of the graphical matrix
-     * correspond to input channels. Valid values are within the range from -60 (mute) through 6. A setting of 0 passes
-     * the input channel unchanged to the output channel (no attenuation or amplification). Use InputChannels or
-     * InputChannelsFineTune to specify your remix values. Don't use both.
+     * Channel mapping contains the group of fields that hold the remixing value for each channel, in dB. Specify remix
+     * values to indicate how much of the content from your input audio channel you want in your output audio channels.
+     * Each instance of the InputChannels or InputChannelsFineTune array specifies these values for one output channel.
+     * Use one instance of this array for each output channel. In the console, each array corresponds to a column in the
+     * graphical depiction of the mapping matrix. The rows of the graphical matrix correspond to input channels. Valid
+     * values are within the range from -60 (mute) through 6. A setting of 0 passes the input channel unchanged to the
+     * output channel (no attenuation or amplification). Use InputChannels or InputChannelsFineTune to specify your remix
+     * values. Don't use both.
      * 
      * @param channelMapping
-     *        Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each
-     *        channel, in dB. Specify remix values to indicate how much of the content from your input audio channel you
-     *        want in your output audio channels. Each instance of the InputChannels or InputChannelsFineTune array
-     *        specifies these values for one output channel. Use one instance of this array for each output channel. In
-     *        the console, each array corresponds to a column in the graphical depiction of the mapping matrix. The rows
-     *        of the graphical matrix correspond to input channels. Valid values are within the range from -60 (mute)
-     *        through 6. A setting of 0 passes the input channel unchanged to the output channel (no attenuation or
-     *        amplification). Use InputChannels or InputChannelsFineTune to specify your remix values. Don't use both.
+     *        Channel mapping contains the group of fields that hold the remixing value for each channel, in dB. Specify
+     *        remix values to indicate how much of the content from your input audio channel you want in your output
+     *        audio channels. Each instance of the InputChannels or InputChannelsFineTune array specifies these values
+     *        for one output channel. Use one instance of this array for each output channel. In the console, each array
+     *        corresponds to a column in the graphical depiction of the mapping matrix. The rows of the graphical matrix
+     *        correspond to input channels. Valid values are within the range from -60 (mute) through 6. A setting of 0
+     *        passes the input channel unchanged to the output channel (no attenuation or amplification). Use
+     *        InputChannels or InputChannelsFineTune to specify your remix values. Don't use both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,6 +368,10 @@ public class RemixSettings implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAudioDescriptionAudioChannel() != null)
+            sb.append("AudioDescriptionAudioChannel: ").append(getAudioDescriptionAudioChannel()).append(",");
+        if (getAudioDescriptionDataChannel() != null)
+            sb.append("AudioDescriptionDataChannel: ").append(getAudioDescriptionDataChannel()).append(",");
         if (getChannelMapping() != null)
             sb.append("ChannelMapping: ").append(getChannelMapping()).append(",");
         if (getChannelsIn() != null)
@@ -265,6 +392,14 @@ public class RemixSettings implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof RemixSettings == false)
             return false;
         RemixSettings other = (RemixSettings) obj;
+        if (other.getAudioDescriptionAudioChannel() == null ^ this.getAudioDescriptionAudioChannel() == null)
+            return false;
+        if (other.getAudioDescriptionAudioChannel() != null && other.getAudioDescriptionAudioChannel().equals(this.getAudioDescriptionAudioChannel()) == false)
+            return false;
+        if (other.getAudioDescriptionDataChannel() == null ^ this.getAudioDescriptionDataChannel() == null)
+            return false;
+        if (other.getAudioDescriptionDataChannel() != null && other.getAudioDescriptionDataChannel().equals(this.getAudioDescriptionDataChannel()) == false)
+            return false;
         if (other.getChannelMapping() == null ^ this.getChannelMapping() == null)
             return false;
         if (other.getChannelMapping() != null && other.getChannelMapping().equals(this.getChannelMapping()) == false)
@@ -285,6 +420,8 @@ public class RemixSettings implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAudioDescriptionAudioChannel() == null) ? 0 : getAudioDescriptionAudioChannel().hashCode());
+        hashCode = prime * hashCode + ((getAudioDescriptionDataChannel() == null) ? 0 : getAudioDescriptionDataChannel().hashCode());
         hashCode = prime * hashCode + ((getChannelMapping() == null) ? 0 : getChannelMapping().hashCode());
         hashCode = prime * hashCode + ((getChannelsIn() == null) ? 0 : getChannelsIn().hashCode());
         hashCode = prime * hashCode + ((getChannelsOut() == null) ? 0 : getChannelsOut().hashCode());

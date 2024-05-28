@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The name for the alarm. This name must be unique within the Region.
      * </p>
+     * <p>
+     * The name must contain only UTF-8 characters, and can't contain ASCII control characters
+     * </p>
      */
     private String alarmName;
     /**
@@ -47,65 +50,331 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action
-     * is specified as an Amazon Resource Name (ARN).
+     * is specified as an Amazon Resource Name (ARN). Valid values:
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
-     * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * <b>EC2 actions:</b>
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Valid Values (for use with IAM roles):
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Autoscaling action:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Lambda actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Invoke the latest version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SNS notification action:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SSM integration actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> oKActions;
     /**
      * <p>
      * The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each
-     * action is specified as an Amazon Resource Name (ARN).
+     * action is specified as an Amazon Resource Name (ARN). Valid values:
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
-     * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
-     * | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code> |
-     * <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i> </code>
+     * <b>EC2 actions:</b>
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Valid Values (for use with IAM roles):
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Autoscaling action:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Lambda actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Invoke the latest version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SNS notification action:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SSM integration actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> alarmActions;
     /**
      * <p>
      * The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other
-     * state. Each action is specified as an Amazon Resource Name (ARN).
+     * state. Each action is specified as an Amazon Resource Name (ARN). Valid values:
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
-     * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * <b>EC2 actions:</b>
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Valid Values (for use with IAM roles):
-     * <code>&gt;arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Autoscaling action:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Lambda actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Invoke the latest version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SNS notification action:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SSM integration actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> insufficientDataActions;
     /**
@@ -115,9 +384,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the
-     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
-     * <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the <code>Metrics</code>
-     * array.
+     * <code>Namespace</code>, <code>Dimensions</code>, <code>Period</code>, <code>Unit</code>, <code>Statistic</code>,
+     * or <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the
+     * <code>Metrics</code> array.
      * </p>
      */
     private String metricName;
@@ -138,9 +407,74 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
     private String statistic;
     /**
      * <p>
-     * The percentile statistic for the metric specified in <code>MetricName</code>. Specify a value between p0.0 and
-     * p100. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either
-     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
+     * The extended statistic for the metric specified in <code>MetricName</code>. When you call
+     * <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either <code>Statistic</code>
+     * or <code>ExtendedStatistic</code> but not both.
+     * </p>
+     * <p>
+     * If you specify <code>ExtendedStatistic</code>, the following are valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>p90</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tm90</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tc90</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ts90</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wm90</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IQM</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PR(<i>n</i>:<i>m</i>)</code> where n and m are values of the metric
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TC(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TS(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about these extended statistics, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch
+     * statistics definitions</a>.
      * </p>
      */
     private String extendedStatistic;
@@ -180,7 +514,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * The unit of measure for the statistic. For example, the units for the Amazon EC2 NetworkIn metric are Bytes
      * because NetworkIn tracks the number of bytes that an instance receives on all network interfaces. You can also
      * specify a unit when you create a custom metric. Units help provide conceptual meaning to your data. Metric data
-     * points that specify a unit of measure, such as Percent, are aggregated separately.
+     * points that specify a unit of measure, such as Percent, are aggregated separately. If you are creating an alarm
+     * based on a metric math expression, you can specify the unit for each metric (if needed) within the objects in the
+     * <code>Metrics</code> array.
      * </p>
      * <p>
      * If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for the
@@ -288,16 +624,18 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * ="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.
      * </p>
      * <p>
-     * If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
-     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
-     * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you
+     * If you use the <code>Metrics</code> parameter, you cannot include the <code>Namespace</code>,
+     * <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>, <code>Unit</code>, <code>Statistic</code>,
+     * or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you
      * retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<MetricDataQuery> metrics;
     /**
      * <p>
-     * A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm.
+     * A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm. To be
+     * able to associate tags with the alarm when you create the alarm, you must have the
+     * <code>cloudwatch:TagResource</code> permission.
      * </p>
      * <p>
      * Tags can help you organize and categorize your resources. You can also use them to scope user permissions by
@@ -330,9 +668,14 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The name for the alarm. This name must be unique within the Region.
      * </p>
+     * <p>
+     * The name must contain only UTF-8 characters, and can't contain ASCII control characters
+     * </p>
      * 
      * @param alarmName
-     *        The name for the alarm. This name must be unique within the Region.
+     *        The name for the alarm. This name must be unique within the Region.</p>
+     *        <p>
+     *        The name must contain only UTF-8 characters, and can't contain ASCII control characters
      */
 
     public void setAlarmName(String alarmName) {
@@ -343,8 +686,13 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The name for the alarm. This name must be unique within the Region.
      * </p>
+     * <p>
+     * The name must contain only UTF-8 characters, and can't contain ASCII control characters
+     * </p>
      * 
-     * @return The name for the alarm. This name must be unique within the Region.
+     * @return The name for the alarm. This name must be unique within the Region.</p>
+     *         <p>
+     *         The name must contain only UTF-8 characters, and can't contain ASCII control characters
      */
 
     public String getAlarmName() {
@@ -355,9 +703,14 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The name for the alarm. This name must be unique within the Region.
      * </p>
+     * <p>
+     * The name must contain only UTF-8 characters, and can't contain ASCII control characters
+     * </p>
      * 
      * @param alarmName
-     *        The name for the alarm. This name must be unique within the Region.
+     *        The name for the alarm. This name must be unique within the Region.</p>
+     *        <p>
+     *        The name must contain only UTF-8 characters, and can't contain ASCII control characters
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -469,39 +822,216 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action
-     * is specified as an Amazon Resource Name (ARN).
+     * is specified as an Amazon Resource Name (ARN). Valid values:
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
-     * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * <b>EC2 actions:</b>
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Valid Values (for use with IAM roles):
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Autoscaling action:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Lambda actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Invoke the latest version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SNS notification action:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SSM integration actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each
-     *         action is specified as an Amazon Resource Name (ARN).</p>
+     *         action is specified as an Amazon Resource Name (ARN). Valid values:</p>
      *         <p>
-     *         Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-     *         <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     *         <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
-     *         <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
-     *         <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     *         <b>EC2 actions:</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:automate:<i>region</i>:ec2:terminate</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:automate:<i>region</i>:ec2:recover</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>Autoscaling action:</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
      *         <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
-     *         Valid Values (for use with IAM roles):
-     *         <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
-     *         <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
-     *         | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> |
-     *         <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
+     *         <b>Lambda actions:</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Invoke the latest version of a Lambda function:
+     *         <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Invoke a specific version of a Lambda function:
+     *         <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Invoke a function by using an alias Lambda function:
+     *         <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>SNS notification action:</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>SSM integration actions:</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code>
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<String> getOKActions() {
@@ -514,40 +1044,217 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action
-     * is specified as an Amazon Resource Name (ARN).
+     * is specified as an Amazon Resource Name (ARN). Valid values:
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
-     * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * <b>EC2 actions:</b>
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Valid Values (for use with IAM roles):
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Autoscaling action:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Lambda actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Invoke the latest version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SNS notification action:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SSM integration actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param oKActions
      *        The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each
-     *        action is specified as an Amazon Resource Name (ARN).</p>
+     *        action is specified as an Amazon Resource Name (ARN). Valid values:</p>
      *        <p>
-     *        Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
-     *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     *        <b>EC2 actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:terminate</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Autoscaling action:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
      *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
-     *        Valid Values (for use with IAM roles):
-     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
-     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |
-     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> |
-     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
+     *        <b>Lambda actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Invoke the latest version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a specific version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a function by using an alias Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>SNS notification action:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>SSM integration actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code>
+     *        </p>
+     *        </li>
      */
 
     public void setOKActions(java.util.Collection<String> oKActions) {
@@ -562,22 +1269,111 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action
-     * is specified as an Amazon Resource Name (ARN).
+     * is specified as an Amazon Resource Name (ARN). Valid values:
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
-     * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * <b>EC2 actions:</b>
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Valid Values (for use with IAM roles):
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Autoscaling action:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Lambda actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Invoke the latest version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SNS notification action:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SSM integration actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setOKActions(java.util.Collection)} or {@link #withOKActions(java.util.Collection)} if you want to
@@ -586,21 +1382,109 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param oKActions
      *        The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each
-     *        action is specified as an Amazon Resource Name (ARN).</p>
+     *        action is specified as an Amazon Resource Name (ARN). Valid values:</p>
      *        <p>
-     *        Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
-     *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     *        <b>EC2 actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:terminate</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Autoscaling action:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
      *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
-     *        Valid Values (for use with IAM roles):
-     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
-     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |
-     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> |
-     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
+     *        <b>Lambda actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Invoke the latest version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a specific version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a function by using an alias Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>SNS notification action:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>SSM integration actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -617,40 +1501,217 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each action
-     * is specified as an Amazon Resource Name (ARN).
+     * is specified as an Amazon Resource Name (ARN). Valid values:
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
-     * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * <b>EC2 actions:</b>
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Valid Values (for use with IAM roles):
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Autoscaling action:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Lambda actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Invoke the latest version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SNS notification action:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SSM integration actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param oKActions
      *        The actions to execute when this alarm transitions to an <code>OK</code> state from any other state. Each
-     *        action is specified as an Amazon Resource Name (ARN).</p>
+     *        action is specified as an Amazon Resource Name (ARN). Valid values:</p>
      *        <p>
-     *        Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
-     *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     *        <b>EC2 actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:terminate</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Autoscaling action:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
      *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
-     *        Valid Values (for use with IAM roles):
-     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
-     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |
-     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> |
-     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
+     *        <b>Lambda actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Invoke the latest version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a specific version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a function by using an alias Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>SNS notification action:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>SSM integration actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -662,43 +1723,216 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each
-     * action is specified as an Amazon Resource Name (ARN).
+     * action is specified as an Amazon Resource Name (ARN). Valid values:
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
-     * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
-     * | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code> |
-     * <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i> </code>
+     * <b>EC2 actions:</b>
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Valid Values (for use with IAM roles):
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Autoscaling action:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Lambda actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Invoke the latest version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SNS notification action:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SSM integration actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state.
-     *         Each action is specified as an Amazon Resource Name (ARN).</p>
+     *         Each action is specified as an Amazon Resource Name (ARN). Valid values:</p>
      *         <p>
-     *         Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-     *         <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     *         <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
-     *         <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
-     *         <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     *         <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
-     *         | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code> |
-     *         <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i> </code>
+     *         <b>EC2 actions:</b>
      *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         Valid Values (for use with IAM roles):
-     *         <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
+     *         <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:automate:<i>region</i>:ec2:terminate</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:automate:<i>region</i>:ec2:recover</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
-     *         | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> |
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>Autoscaling action:</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>Lambda actions:</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Invoke the latest version of a Lambda function:
+     *         <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Invoke a specific version of a Lambda function:
+     *         <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Invoke a function by using an alias Lambda function:
+     *         <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>SNS notification action:</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>SSM integration actions:</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code>
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<String> getAlarmActions() {
@@ -711,44 +1945,217 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each
-     * action is specified as an Amazon Resource Name (ARN).
+     * action is specified as an Amazon Resource Name (ARN). Valid values:
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
-     * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
-     * | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code> |
-     * <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i> </code>
+     * <b>EC2 actions:</b>
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Valid Values (for use with IAM roles):
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Autoscaling action:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Lambda actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Invoke the latest version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SNS notification action:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SSM integration actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param alarmActions
      *        The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state.
-     *        Each action is specified as an Amazon Resource Name (ARN).</p>
+     *        Each action is specified as an Amazon Resource Name (ARN). Valid values:</p>
      *        <p>
-     *        Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
-     *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
-     *        | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code> |
-     *        <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i> </code>
+     *        <b>EC2 actions:</b>
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        Valid Values (for use with IAM roles):
-     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
-     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |
-     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> |
+     *        <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:terminate</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Autoscaling action:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Lambda actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Invoke the latest version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a specific version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a function by using an alias Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>SNS notification action:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>SSM integration actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code>
+     *        </p>
+     *        </li>
      */
 
     public void setAlarmActions(java.util.Collection<String> alarmActions) {
@@ -763,24 +2170,111 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each
-     * action is specified as an Amazon Resource Name (ARN).
+     * action is specified as an Amazon Resource Name (ARN). Valid values:
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
-     * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
-     * | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code> |
-     * <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i> </code>
+     * <b>EC2 actions:</b>
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Valid Values (for use with IAM roles):
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Autoscaling action:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Lambda actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Invoke the latest version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SNS notification action:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SSM integration actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAlarmActions(java.util.Collection)} or {@link #withAlarmActions(java.util.Collection)} if you want to
@@ -789,23 +2283,109 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param alarmActions
      *        The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state.
-     *        Each action is specified as an Amazon Resource Name (ARN).</p>
+     *        Each action is specified as an Amazon Resource Name (ARN). Valid values:</p>
      *        <p>
-     *        Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
-     *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
-     *        | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code> |
-     *        <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i> </code>
+     *        <b>EC2 actions:</b>
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        Valid Values (for use with IAM roles):
-     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
-     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |
-     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> |
+     *        <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:terminate</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Autoscaling action:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Lambda actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Invoke the latest version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a specific version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a function by using an alias Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>SNS notification action:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>SSM integration actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -822,44 +2402,217 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state. Each
-     * action is specified as an Amazon Resource Name (ARN).
+     * action is specified as an Amazon Resource Name (ARN). Valid values:
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
-     * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
-     * | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code> |
-     * <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i> </code>
+     * <b>EC2 actions:</b>
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Valid Values (for use with IAM roles):
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Autoscaling action:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Lambda actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Invoke the latest version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SNS notification action:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SSM integration actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param alarmActions
      *        The actions to execute when this alarm transitions to the <code>ALARM</code> state from any other state.
-     *        Each action is specified as an Amazon Resource Name (ARN).</p>
+     *        Each action is specified as an Amazon Resource Name (ARN). Valid values:</p>
      *        <p>
-     *        Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
-     *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
-     *        | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </code> |
-     *        <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i> </code>
+     *        <b>EC2 actions:</b>
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        Valid Values (for use with IAM roles):
-     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
-     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |
-     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> |
+     *        <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:terminate</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Autoscaling action:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Lambda actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Invoke the latest version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a specific version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a function by using an alias Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>SNS notification action:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>SSM integration actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -871,37 +2624,216 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other
-     * state. Each action is specified as an Amazon Resource Name (ARN).
+     * state. Each action is specified as an Amazon Resource Name (ARN). Valid values:
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
-     * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * <b>EC2 actions:</b>
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Valid Values (for use with IAM roles):
-     * <code>&gt;arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Autoscaling action:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Lambda actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Invoke the latest version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SNS notification action:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SSM integration actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any
-     *         other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+     *         other state. Each action is specified as an Amazon Resource Name (ARN). Valid values:</p>
      *         <p>
-     *         Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-     *         <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     *         <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
-     *         <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
-     *         <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     *         <b>EC2 actions:</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:automate:<i>region</i>:ec2:terminate</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:automate:<i>region</i>:ec2:recover</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>Autoscaling action:</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
      *         <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
-     *         Valid Values (for use with IAM roles):
-     *         <code>&gt;arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
-     *         <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
-     *         | <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     *         <b>Lambda actions:</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Invoke the latest version of a Lambda function:
+     *         <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Invoke a specific version of a Lambda function:
+     *         <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Invoke a function by using an alias Lambda function:
+     *         <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>SNS notification action:</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>SSM integration actions:</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code>
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<String> getInsufficientDataActions() {
@@ -914,38 +2846,217 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other
-     * state. Each action is specified as an Amazon Resource Name (ARN).
+     * state. Each action is specified as an Amazon Resource Name (ARN). Valid values:
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
-     * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * <b>EC2 actions:</b>
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Valid Values (for use with IAM roles):
-     * <code>&gt;arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Autoscaling action:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Lambda actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Invoke the latest version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SNS notification action:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SSM integration actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param insufficientDataActions
      *        The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any
-     *        other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+     *        other state. Each action is specified as an Amazon Resource Name (ARN). Valid values:</p>
      *        <p>
-     *        Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
-     *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     *        <b>EC2 actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:terminate</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Autoscaling action:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
      *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
-     *        Valid Values (for use with IAM roles):
-     *        <code>&gt;arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
-     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |
-     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     *        <b>Lambda actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Invoke the latest version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a specific version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a function by using an alias Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>SNS notification action:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>SSM integration actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code>
+     *        </p>
+     *        </li>
      */
 
     public void setInsufficientDataActions(java.util.Collection<String> insufficientDataActions) {
@@ -960,21 +3071,111 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other
-     * state. Each action is specified as an Amazon Resource Name (ARN).
+     * state. Each action is specified as an Amazon Resource Name (ARN). Valid values:
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
-     * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * <b>EC2 actions:</b>
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Valid Values (for use with IAM roles):
-     * <code>&gt;arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Autoscaling action:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Lambda actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Invoke the latest version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SNS notification action:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SSM integration actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setInsufficientDataActions(java.util.Collection)} or
@@ -983,20 +3184,109 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param insufficientDataActions
      *        The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any
-     *        other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+     *        other state. Each action is specified as an Amazon Resource Name (ARN). Valid values:</p>
      *        <p>
-     *        Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
-     *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     *        <b>EC2 actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:terminate</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Autoscaling action:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
      *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
-     *        Valid Values (for use with IAM roles):
-     *        <code>&gt;arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
-     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |
-     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     *        <b>Lambda actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Invoke the latest version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a specific version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a function by using an alias Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>SNS notification action:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>SSM integration actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1013,38 +3303,217 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any other
-     * state. Each action is specified as an Amazon Resource Name (ARN).
+     * state. Each action is specified as an Amazon Resource Name (ARN). Valid values:
      * </p>
      * <p>
-     * Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
-     * | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
-     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * <b>EC2 actions:</b>
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Valid Values (for use with IAM roles):
-     * <code>&gt;arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
-     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:automate:<i>region</i>:ec2:recover</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Autoscaling action:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Lambda actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Invoke the latest version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SNS notification action:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SSM integration actions:</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param insufficientDataActions
      *        The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state from any
-     *        other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+     *        other state. Each action is specified as an Amazon Resource Name (ARN). Valid values:</p>
      *        <p>
-     *        Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
-     *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
-     *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code> |
+     *        <b>EC2 actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:terminate</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:automate:<i>region</i>:ec2:recover</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Autoscaling action:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
      *        <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i> </code>
      *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
-     *        Valid Values (for use with IAM roles):
-     *        <code>&gt;arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
-     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |
-     *        <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+     *        <b>Lambda actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Invoke the latest version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a specific version of a Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Invoke a function by using an alias Lambda function:
+     *        <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i> </code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>SNS notification action:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>SSM integration actions:</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1060,9 +3529,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the
-     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
-     * <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the <code>Metrics</code>
-     * array.
+     * <code>Namespace</code>, <code>Dimensions</code>, <code>Period</code>, <code>Unit</code>, <code>Statistic</code>,
+     * or <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the
+     * <code>Metrics</code> array.
      * </p>
      * 
      * @param metricName
@@ -1070,9 +3539,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p>
      *        <p>
      *        If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the
-     *        <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
-     *        <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the
-     *        <code>Metrics</code> array.
+     *        <code>Namespace</code>, <code>Dimensions</code>, <code>Period</code>, <code>Unit</code>,
+     *        <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead, you specify all this
+     *        information in the <code>Metrics</code> array.
      */
 
     public void setMetricName(String metricName) {
@@ -1086,18 +3555,18 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the
-     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
-     * <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the <code>Metrics</code>
-     * array.
+     * <code>Namespace</code>, <code>Dimensions</code>, <code>Period</code>, <code>Unit</code>, <code>Statistic</code>,
+     * or <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the
+     * <code>Metrics</code> array.
      * </p>
      * 
      * @return The name for the metric associated with the alarm. For each <code>PutMetricAlarm</code> operation, you
      *         must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p>
      *         <p>
      *         If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the
-     *         <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
-     *         <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the
-     *         <code>Metrics</code> array.
+     *         <code>Namespace</code>, <code>Dimensions</code>, <code>Period</code>, <code>Unit</code>,
+     *         <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead, you specify all this
+     *         information in the <code>Metrics</code> array.
      */
 
     public String getMetricName() {
@@ -1111,9 +3580,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the
-     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
-     * <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the <code>Metrics</code>
-     * array.
+     * <code>Namespace</code>, <code>Dimensions</code>, <code>Period</code>, <code>Unit</code>, <code>Statistic</code>,
+     * or <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the
+     * <code>Metrics</code> array.
      * </p>
      * 
      * @param metricName
@@ -1121,9 +3590,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p>
      *        <p>
      *        If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the
-     *        <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
-     *        <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the
-     *        <code>Metrics</code> array.
+     *        <code>Namespace</code>, <code>Dimensions</code>, <code>Period</code>, <code>Unit</code>,
+     *        <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead, you specify all this
+     *        information in the <code>Metrics</code> array.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1277,15 +3746,144 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The percentile statistic for the metric specified in <code>MetricName</code>. Specify a value between p0.0 and
-     * p100. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either
-     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
+     * The extended statistic for the metric specified in <code>MetricName</code>. When you call
+     * <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either <code>Statistic</code>
+     * or <code>ExtendedStatistic</code> but not both.
+     * </p>
+     * <p>
+     * If you specify <code>ExtendedStatistic</code>, the following are valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>p90</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tm90</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tc90</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ts90</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wm90</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IQM</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PR(<i>n</i>:<i>m</i>)</code> where n and m are values of the metric
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TC(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TS(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about these extended statistics, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch
+     * statistics definitions</a>.
      * </p>
      * 
      * @param extendedStatistic
-     *        The percentile statistic for the metric specified in <code>MetricName</code>. Specify a value between p0.0
-     *        and p100. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must
-     *        specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
+     *        The extended statistic for the metric specified in <code>MetricName</code>. When you call
+     *        <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either
+     *        <code>Statistic</code> or <code>ExtendedStatistic</code> but not both.</p>
+     *        <p>
+     *        If you specify <code>ExtendedStatistic</code>, the following are valid values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>p90</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tm90</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tc90</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ts90</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>wm90</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IQM</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PR(<i>n</i>:<i>m</i>)</code> where n and m are values of the metric
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TC(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TS(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>WM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information about these extended statistics, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html"
+     *        >CloudWatch statistics definitions</a>.
      */
 
     public void setExtendedStatistic(String extendedStatistic) {
@@ -1294,14 +3892,143 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The percentile statistic for the metric specified in <code>MetricName</code>. Specify a value between p0.0 and
-     * p100. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either
-     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
+     * The extended statistic for the metric specified in <code>MetricName</code>. When you call
+     * <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either <code>Statistic</code>
+     * or <code>ExtendedStatistic</code> but not both.
+     * </p>
+     * <p>
+     * If you specify <code>ExtendedStatistic</code>, the following are valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>p90</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tm90</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tc90</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ts90</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wm90</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IQM</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PR(<i>n</i>:<i>m</i>)</code> where n and m are values of the metric
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TC(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TS(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about these extended statistics, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch
+     * statistics definitions</a>.
      * </p>
      * 
-     * @return The percentile statistic for the metric specified in <code>MetricName</code>. Specify a value between
-     *         p0.0 and p100. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must
-     *         specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
+     * @return The extended statistic for the metric specified in <code>MetricName</code>. When you call
+     *         <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either
+     *         <code>Statistic</code> or <code>ExtendedStatistic</code> but not both.</p>
+     *         <p>
+     *         If you specify <code>ExtendedStatistic</code>, the following are valid values:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>p90</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>tm90</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>tc90</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ts90</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>wm90</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>IQM</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PR(<i>n</i>:<i>m</i>)</code> where n and m are values of the metric
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TC(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TS(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>WM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information about these extended statistics, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html"
+     *         >CloudWatch statistics definitions</a>.
      */
 
     public String getExtendedStatistic() {
@@ -1310,15 +4037,144 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The percentile statistic for the metric specified in <code>MetricName</code>. Specify a value between p0.0 and
-     * p100. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either
-     * <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
+     * The extended statistic for the metric specified in <code>MetricName</code>. When you call
+     * <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either <code>Statistic</code>
+     * or <code>ExtendedStatistic</code> but not both.
+     * </p>
+     * <p>
+     * If you specify <code>ExtendedStatistic</code>, the following are valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>p90</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tm90</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tc90</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ts90</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wm90</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IQM</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PR(<i>n</i>:<i>m</i>)</code> where n and m are values of the metric
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TC(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TS(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>WM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about these extended statistics, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">CloudWatch
+     * statistics definitions</a>.
      * </p>
      * 
      * @param extendedStatistic
-     *        The percentile statistic for the metric specified in <code>MetricName</code>. Specify a value between p0.0
-     *        and p100. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must
-     *        specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
+     *        The extended statistic for the metric specified in <code>MetricName</code>. When you call
+     *        <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either
+     *        <code>Statistic</code> or <code>ExtendedStatistic</code> but not both.</p>
+     *        <p>
+     *        If you specify <code>ExtendedStatistic</code>, the following are valid values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>p90</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tm90</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tc90</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ts90</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>wm90</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IQM</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PR(<i>n</i>:<i>m</i>)</code> where n and m are values of the metric
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TC(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TS(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>WM(<i>X</i>%:<i>X</i>%)</code> where X is between 10 and 90 inclusive.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information about these extended statistics, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html"
+     *        >CloudWatch statistics definitions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1556,7 +4412,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * The unit of measure for the statistic. For example, the units for the Amazon EC2 NetworkIn metric are Bytes
      * because NetworkIn tracks the number of bytes that an instance receives on all network interfaces. You can also
      * specify a unit when you create a custom metric. Units help provide conceptual meaning to your data. Metric data
-     * points that specify a unit of measure, such as Percent, are aggregated separately.
+     * points that specify a unit of measure, such as Percent, are aggregated separately. If you are creating an alarm
+     * based on a metric math expression, you can specify the unit for each metric (if needed) within the objects in the
+     * <code>Metrics</code> array.
      * </p>
      * <p>
      * If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for the
@@ -1576,7 +4434,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        The unit of measure for the statistic. For example, the units for the Amazon EC2 NetworkIn metric are
      *        Bytes because NetworkIn tracks the number of bytes that an instance receives on all network interfaces.
      *        You can also specify a unit when you create a custom metric. Units help provide conceptual meaning to your
-     *        data. Metric data points that specify a unit of measure, such as Percent, are aggregated separately.</p>
+     *        data. Metric data points that specify a unit of measure, such as Percent, are aggregated separately. If
+     *        you are creating an alarm based on a metric math expression, you can specify the unit for each metric (if
+     *        needed) within the objects in the <code>Metrics</code> array.</p>
      *        <p>
      *        If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for
      *        the metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the
@@ -1602,7 +4462,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * The unit of measure for the statistic. For example, the units for the Amazon EC2 NetworkIn metric are Bytes
      * because NetworkIn tracks the number of bytes that an instance receives on all network interfaces. You can also
      * specify a unit when you create a custom metric. Units help provide conceptual meaning to your data. Metric data
-     * points that specify a unit of measure, such as Percent, are aggregated separately.
+     * points that specify a unit of measure, such as Percent, are aggregated separately. If you are creating an alarm
+     * based on a metric math expression, you can specify the unit for each metric (if needed) within the objects in the
+     * <code>Metrics</code> array.
      * </p>
      * <p>
      * If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for the
@@ -1621,8 +4483,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * @return The unit of measure for the statistic. For example, the units for the Amazon EC2 NetworkIn metric are
      *         Bytes because NetworkIn tracks the number of bytes that an instance receives on all network interfaces.
      *         You can also specify a unit when you create a custom metric. Units help provide conceptual meaning to
-     *         your data. Metric data points that specify a unit of measure, such as Percent, are aggregated
-     *         separately.</p>
+     *         your data. Metric data points that specify a unit of measure, such as Percent, are aggregated separately.
+     *         If you are creating an alarm based on a metric math expression, you can specify the unit for each metric
+     *         (if needed) within the objects in the <code>Metrics</code> array.</p>
      *         <p>
      *         If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for
      *         the metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the
@@ -1648,7 +4511,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * The unit of measure for the statistic. For example, the units for the Amazon EC2 NetworkIn metric are Bytes
      * because NetworkIn tracks the number of bytes that an instance receives on all network interfaces. You can also
      * specify a unit when you create a custom metric. Units help provide conceptual meaning to your data. Metric data
-     * points that specify a unit of measure, such as Percent, are aggregated separately.
+     * points that specify a unit of measure, such as Percent, are aggregated separately. If you are creating an alarm
+     * based on a metric math expression, you can specify the unit for each metric (if needed) within the objects in the
+     * <code>Metrics</code> array.
      * </p>
      * <p>
      * If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for the
@@ -1668,7 +4533,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        The unit of measure for the statistic. For example, the units for the Amazon EC2 NetworkIn metric are
      *        Bytes because NetworkIn tracks the number of bytes that an instance receives on all network interfaces.
      *        You can also specify a unit when you create a custom metric. Units help provide conceptual meaning to your
-     *        data. Metric data points that specify a unit of measure, such as Percent, are aggregated separately.</p>
+     *        data. Metric data points that specify a unit of measure, such as Percent, are aggregated separately. If
+     *        you are creating an alarm based on a metric math expression, you can specify the unit for each metric (if
+     *        needed) within the objects in the <code>Metrics</code> array.</p>
      *        <p>
      *        If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for
      *        the metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the
@@ -1696,7 +4563,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * The unit of measure for the statistic. For example, the units for the Amazon EC2 NetworkIn metric are Bytes
      * because NetworkIn tracks the number of bytes that an instance receives on all network interfaces. You can also
      * specify a unit when you create a custom metric. Units help provide conceptual meaning to your data. Metric data
-     * points that specify a unit of measure, such as Percent, are aggregated separately.
+     * points that specify a unit of measure, such as Percent, are aggregated separately. If you are creating an alarm
+     * based on a metric math expression, you can specify the unit for each metric (if needed) within the objects in the
+     * <code>Metrics</code> array.
      * </p>
      * <p>
      * If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for the
@@ -1716,7 +4585,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        The unit of measure for the statistic. For example, the units for the Amazon EC2 NetworkIn metric are
      *        Bytes because NetworkIn tracks the number of bytes that an instance receives on all network interfaces.
      *        You can also specify a unit when you create a custom metric. Units help provide conceptual meaning to your
-     *        data. Metric data points that specify a unit of measure, such as Percent, are aggregated separately.</p>
+     *        data. Metric data points that specify a unit of measure, such as Percent, are aggregated separately. If
+     *        you are creating an alarm based on a metric math expression, you can specify the unit for each metric (if
+     *        needed) within the objects in the <code>Metrics</code> array.</p>
      *        <p>
      *        If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for
      *        the metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the
@@ -1742,7 +4613,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * The unit of measure for the statistic. For example, the units for the Amazon EC2 NetworkIn metric are Bytes
      * because NetworkIn tracks the number of bytes that an instance receives on all network interfaces. You can also
      * specify a unit when you create a custom metric. Units help provide conceptual meaning to your data. Metric data
-     * points that specify a unit of measure, such as Percent, are aggregated separately.
+     * points that specify a unit of measure, such as Percent, are aggregated separately. If you are creating an alarm
+     * based on a metric math expression, you can specify the unit for each metric (if needed) within the objects in the
+     * <code>Metrics</code> array.
      * </p>
      * <p>
      * If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for the
@@ -1762,7 +4635,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        The unit of measure for the statistic. For example, the units for the Amazon EC2 NetworkIn metric are
      *        Bytes because NetworkIn tracks the number of bytes that an instance receives on all network interfaces.
      *        You can also specify a unit when you create a custom metric. Units help provide conceptual meaning to your
-     *        data. Metric data points that specify a unit of measure, such as Percent, are aggregated separately.</p>
+     *        data. Metric data points that specify a unit of measure, such as Percent, are aggregated separately. If
+     *        you are creating an alarm based on a metric math expression, you can specify the unit for each metric (if
+     *        needed) within the objects in the <code>Metrics</code> array.</p>
      *        <p>
      *        If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for
      *        the metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the
@@ -2314,9 +5189,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * ="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.
      * </p>
      * <p>
-     * If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
-     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
-     * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you
+     * If you use the <code>Metrics</code> parameter, you cannot include the <code>Namespace</code>,
+     * <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>, <code>Unit</code>, <code>Statistic</code>,
+     * or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you
      * retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.
      * </p>
      * 
@@ -2333,10 +5208,11 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *         MetricDataQuery</a>.
      *         </p>
      *         <p>
-     *         If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
-     *         <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
-     *         <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead,
-     *         you retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.
+     *         If you use the <code>Metrics</code> parameter, you cannot include the <code>Namespace</code>,
+     *         <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>, <code>Unit</code>,
+     *         <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in
+     *         the same operation. Instead, you retrieve the metrics you are using in your math expression as part of
+     *         the <code>Metrics</code> array.
      */
 
     public java.util.List<MetricDataQuery> getMetrics() {
@@ -2362,9 +5238,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * ="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.
      * </p>
      * <p>
-     * If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
-     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
-     * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you
+     * If you use the <code>Metrics</code> parameter, you cannot include the <code>Namespace</code>,
+     * <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>, <code>Unit</code>, <code>Statistic</code>,
+     * or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you
      * retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.
      * </p>
      * 
@@ -2382,10 +5258,11 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        MetricDataQuery</a>.
      *        </p>
      *        <p>
-     *        If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
-     *        <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
-     *        <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead,
-     *        you retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.
+     *        If you use the <code>Metrics</code> parameter, you cannot include the <code>Namespace</code>,
+     *        <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>, <code>Unit</code>,
+     *        <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
+     *        same operation. Instead, you retrieve the metrics you are using in your math expression as part of the
+     *        <code>Metrics</code> array.
      */
 
     public void setMetrics(java.util.Collection<MetricDataQuery> metrics) {
@@ -2413,9 +5290,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * ="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.
      * </p>
      * <p>
-     * If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
-     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
-     * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you
+     * If you use the <code>Metrics</code> parameter, you cannot include the <code>Namespace</code>,
+     * <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>, <code>Unit</code>, <code>Statistic</code>,
+     * or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you
      * retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.
      * </p>
      * <p>
@@ -2438,10 +5315,11 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        MetricDataQuery</a>.
      *        </p>
      *        <p>
-     *        If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
-     *        <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
-     *        <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead,
-     *        you retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.
+     *        If you use the <code>Metrics</code> parameter, you cannot include the <code>Namespace</code>,
+     *        <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>, <code>Unit</code>,
+     *        <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
+     *        same operation. Instead, you retrieve the metrics you are using in your math expression as part of the
+     *        <code>Metrics</code> array.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2471,9 +5349,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * ="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDataQuery.html">MetricDataQuery</a>.
      * </p>
      * <p>
-     * If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
-     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
-     * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you
+     * If you use the <code>Metrics</code> parameter, you cannot include the <code>Namespace</code>,
+     * <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>, <code>Unit</code>, <code>Statistic</code>,
+     * or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you
      * retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.
      * </p>
      * 
@@ -2491,10 +5369,11 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        MetricDataQuery</a>.
      *        </p>
      *        <p>
-     *        If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
-     *        <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
-     *        <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead,
-     *        you retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.
+     *        If you use the <code>Metrics</code> parameter, you cannot include the <code>Namespace</code>,
+     *        <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>, <code>Unit</code>,
+     *        <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
+     *        same operation. Instead, you retrieve the metrics you are using in your math expression as part of the
+     *        <code>Metrics</code> array.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2505,7 +5384,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm.
+     * A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm. To be
+     * able to associate tags with the alarm when you create the alarm, you must have the
+     * <code>cloudwatch:TagResource</code> permission.
      * </p>
      * <p>
      * Tags can help you organize and categorize your resources. You can also use them to scope user permissions by
@@ -2520,7 +5401,8 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @return A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an
-     *         alarm.</p>
+     *         alarm. To be able to associate tags with the alarm when you create the alarm, you must have the
+     *         <code>cloudwatch:TagResource</code> permission.</p>
      *         <p>
      *         Tags can help you organize and categorize your resources. You can also use them to scope user permissions
      *         by granting a user permission to access or change only resources with certain tag values.
@@ -2543,7 +5425,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm.
+     * A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm. To be
+     * able to associate tags with the alarm when you create the alarm, you must have the
+     * <code>cloudwatch:TagResource</code> permission.
      * </p>
      * <p>
      * Tags can help you organize and categorize your resources. You can also use them to scope user permissions by
@@ -2558,8 +5442,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param tags
-     *        A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an
-     *        alarm.</p>
+     *        A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm.
+     *        To be able to associate tags with the alarm when you create the alarm, you must have the
+     *        <code>cloudwatch:TagResource</code> permission.</p>
      *        <p>
      *        Tags can help you organize and categorize your resources. You can also use them to scope user permissions
      *        by granting a user permission to access or change only resources with certain tag values.
@@ -2584,7 +5469,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm.
+     * A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm. To be
+     * able to associate tags with the alarm when you create the alarm, you must have the
+     * <code>cloudwatch:TagResource</code> permission.
      * </p>
      * <p>
      * Tags can help you organize and categorize your resources. You can also use them to scope user permissions by
@@ -2604,8 +5491,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param tags
-     *        A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an
-     *        alarm.</p>
+     *        A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm.
+     *        To be able to associate tags with the alarm when you create the alarm, you must have the
+     *        <code>cloudwatch:TagResource</code> permission.</p>
      *        <p>
      *        Tags can help you organize and categorize your resources. You can also use them to scope user permissions
      *        by granting a user permission to access or change only resources with certain tag values.
@@ -2632,7 +5520,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm.
+     * A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm. To be
+     * able to associate tags with the alarm when you create the alarm, you must have the
+     * <code>cloudwatch:TagResource</code> permission.
      * </p>
      * <p>
      * Tags can help you organize and categorize your resources. You can also use them to scope user permissions by
@@ -2647,8 +5537,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param tags
-     *        A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an
-     *        alarm.</p>
+     *        A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm.
+     *        To be able to associate tags with the alarm when you create the alarm, you must have the
+     *        <code>cloudwatch:TagResource</code> permission.</p>
      *        <p>
      *        Tags can help you organize and categorize your resources. You can also use them to scope user permissions
      *        by granting a user permission to access or change only resources with certain tag values.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,18 @@ public class SidewalkListDevice implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private java.util.List<CertificateList> deviceCertificates;
+    /**
+     * <p>
+     * Sidewalk object used by list functions.
+     * </p>
+     */
+    private String deviceProfileId;
+    /**
+     * <p>
+     * The status of the Sidewalk devices, such as provisioned or registered.
+     * </p>
+     */
+    private String status;
 
     /**
      * <p>
@@ -244,6 +256,105 @@ public class SidewalkListDevice implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * Sidewalk object used by list functions.
+     * </p>
+     * 
+     * @param deviceProfileId
+     *        Sidewalk object used by list functions.
+     */
+
+    public void setDeviceProfileId(String deviceProfileId) {
+        this.deviceProfileId = deviceProfileId;
+    }
+
+    /**
+     * <p>
+     * Sidewalk object used by list functions.
+     * </p>
+     * 
+     * @return Sidewalk object used by list functions.
+     */
+
+    public String getDeviceProfileId() {
+        return this.deviceProfileId;
+    }
+
+    /**
+     * <p>
+     * Sidewalk object used by list functions.
+     * </p>
+     * 
+     * @param deviceProfileId
+     *        Sidewalk object used by list functions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SidewalkListDevice withDeviceProfileId(String deviceProfileId) {
+        setDeviceProfileId(deviceProfileId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the Sidewalk devices, such as provisioned or registered.
+     * </p>
+     * 
+     * @param status
+     *        The status of the Sidewalk devices, such as provisioned or registered.
+     * @see WirelessDeviceSidewalkStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The status of the Sidewalk devices, such as provisioned or registered.
+     * </p>
+     * 
+     * @return The status of the Sidewalk devices, such as provisioned or registered.
+     * @see WirelessDeviceSidewalkStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The status of the Sidewalk devices, such as provisioned or registered.
+     * </p>
+     * 
+     * @param status
+     *        The status of the Sidewalk devices, such as provisioned or registered.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WirelessDeviceSidewalkStatus
+     */
+
+    public SidewalkListDevice withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the Sidewalk devices, such as provisioned or registered.
+     * </p>
+     * 
+     * @param status
+     *        The status of the Sidewalk devices, such as provisioned or registered.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WirelessDeviceSidewalkStatus
+     */
+
+    public SidewalkListDevice withStatus(WirelessDeviceSidewalkStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -262,7 +373,11 @@ public class SidewalkListDevice implements Serializable, Cloneable, StructuredPo
         if (getSidewalkManufacturingSn() != null)
             sb.append("SidewalkManufacturingSn: ").append(getSidewalkManufacturingSn()).append(",");
         if (getDeviceCertificates() != null)
-            sb.append("DeviceCertificates: ").append(getDeviceCertificates());
+            sb.append("DeviceCertificates: ").append(getDeviceCertificates()).append(",");
+        if (getDeviceProfileId() != null)
+            sb.append("DeviceProfileId: ").append(getDeviceProfileId()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -293,6 +408,14 @@ public class SidewalkListDevice implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getDeviceCertificates() != null && other.getDeviceCertificates().equals(this.getDeviceCertificates()) == false)
             return false;
+        if (other.getDeviceProfileId() == null ^ this.getDeviceProfileId() == null)
+            return false;
+        if (other.getDeviceProfileId() != null && other.getDeviceProfileId().equals(this.getDeviceProfileId()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
         return true;
     }
 
@@ -305,6 +428,8 @@ public class SidewalkListDevice implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getSidewalkId() == null) ? 0 : getSidewalkId().hashCode());
         hashCode = prime * hashCode + ((getSidewalkManufacturingSn() == null) ? 0 : getSidewalkManufacturingSn().hashCode());
         hashCode = prime * hashCode + ((getDeviceCertificates() == null) ? 0 : getDeviceCertificates().hashCode());
+        hashCode = prime * hashCode + ((getDeviceProfileId() == null) ? 0 : getDeviceProfileId().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 

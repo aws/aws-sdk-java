@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -103,6 +103,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationStateException
      *         The organization must have a valid state to perform certain operations on the organization or its
      *         members.
+     * @throws UnsupportedOperationException
+     *         You can't perform a write operation against a read-only directory.
      * @sample AmazonWorkMail.AssociateDelegateToResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/AssociateDelegateToResource"
      *      target="_top">AWS API Documentation</a>
@@ -393,6 +395,8 @@ public interface AmazonWorkMail {
      *         members.
      * @throws ReservedNameException
      *         This user, group, or resource name is not allowed in WorkMail.
+     * @throws UnsupportedOperationException
+     *         You can't perform a write operation against a read-only directory.
      * @sample AmazonWorkMail.CreateResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateResource" target="_top">AWS API
      *      Documentation</a>
@@ -688,6 +692,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationStateException
      *         The organization must have a valid state to perform certain operations on the organization or its
      *         members.
+     * @throws UnsupportedOperationException
+     *         You can't perform a write operation against a read-only directory.
      * @sample AmazonWorkMail.DeleteResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteResource" target="_top">AWS API
      *      Documentation</a>
@@ -830,6 +836,28 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
+     * Returns basic details about an entity in WorkMail.
+     * </p>
+     * 
+     * @param describeEntityRequest
+     * @return Result of the DescribeEntity operation returned by the service.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @sample AmazonWorkMail.DescribeEntity
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeEntity" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeEntityResult describeEntity(DescribeEntityRequest describeEntityRequest);
+
+    /**
+     * <p>
      * Returns the data available for the group.
      * </p>
      * 
@@ -923,6 +951,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationStateException
      *         The organization must have a valid state to perform certain operations on the organization or its
      *         members.
+     * @throws UnsupportedOperationException
+     *         You can't perform a write operation against a read-only directory.
      * @sample AmazonWorkMail.DescribeResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeResource" target="_top">AWS API
      *      Documentation</a>
@@ -970,6 +1000,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationStateException
      *         The organization must have a valid state to perform certain operations on the organization or its
      *         members.
+     * @throws UnsupportedOperationException
+     *         You can't perform a write operation against a read-only directory.
      * @sample AmazonWorkMail.DisassociateDelegateFromResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DisassociateDelegateFromResource"
      *      target="_top">AWS API Documentation</a>
@@ -1134,6 +1166,8 @@ public interface AmazonWorkMail {
      * 
      * @param getMailboxDetailsRequest
      * @return Result of the GetMailboxDetails operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
@@ -1303,6 +1337,31 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
+     * Returns all the groups to which an entity belongs.
+     * </p>
+     * 
+     * @param listGroupsForEntityRequest
+     * @return Result of the ListGroupsForEntity operation returned by the service.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @throws EntityStateException
+     *         You are performing an operation on a user, group, or resource that isn't in the expected state, such as
+     *         trying to delete an active user.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @sample AmazonWorkMail.ListGroupsForEntity
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListGroupsForEntity" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListGroupsForEntityResult listGroupsForEntity(ListGroupsForEntityRequest listGroupsForEntityRequest);
+
+    /**
+     * <p>
      * Lists all the impersonation roles for the given WorkMail organization.
      * </p>
      * 
@@ -1460,6 +1519,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationStateException
      *         The organization must have a valid state to perform certain operations on the organization or its
      *         members.
+     * @throws UnsupportedOperationException
+     *         You can't perform a write operation against a read-only directory.
      * @sample AmazonWorkMail.ListResourceDelegates
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListResourceDelegates" target="_top">AWS
      *      API Documentation</a>
@@ -1480,6 +1541,8 @@ public interface AmazonWorkMail {
      * @throws OrganizationStateException
      *         The organization must have a valid state to perform certain operations on the organization or its
      *         members.
+     * @throws UnsupportedOperationException
+     *         You can't perform a write operation against a read-only directory.
      * @sample AmazonWorkMail.ListResources
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListResources" target="_top">AWS API
      *      Documentation</a>
@@ -1802,6 +1865,8 @@ public interface AmazonWorkMail {
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
      * @throws ResourceNotFoundException
      *         The resource cannot be found.
      * @throws TooManyTagsException
@@ -1908,6 +1973,33 @@ public interface AmazonWorkMail {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateDefaultMailDomainResult updateDefaultMailDomain(UpdateDefaultMailDomainRequest updateDefaultMailDomainRequest);
+
+    /**
+     * <p>
+     * Updates attibutes in a group.
+     * </p>
+     * 
+     * @param updateGroupRequest
+     * @return Result of the UpdateGroup operation returned by the service.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @throws EntityStateException
+     *         You are performing an operation on a user, group, or resource that isn't in the expected state, such as
+     *         trying to delete an active user.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @throws UnsupportedOperationException
+     *         You can't perform a write operation against a read-only directory.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @sample AmazonWorkMail.UpdateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateGroupResult updateGroup(UpdateGroupRequest updateGroupRequest);
 
     /**
      * <p>
@@ -2060,11 +2152,47 @@ public interface AmazonWorkMail {
      * @throws OrganizationStateException
      *         The organization must have a valid state to perform certain operations on the organization or its
      *         members.
+     * @throws UnsupportedOperationException
+     *         You can't perform a write operation against a read-only directory.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
      * @sample AmazonWorkMail.UpdateResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateResource" target="_top">AWS API
      *      Documentation</a>
      */
     UpdateResourceResult updateResource(UpdateResourceRequest updateResourceRequest);
+
+    /**
+     * <p>
+     * Updates data for the user. To have the latest information, it must be preceded by a <a>DescribeUser</a> call. The
+     * dataset in the request should be the one expected when performing another <code>DescribeUser</code> call.
+     * </p>
+     * 
+     * @param updateUserRequest
+     * @return Result of the UpdateUser operation returned by the service.
+     * @throws DirectoryServiceAuthenticationFailedException
+     *         The directory service doesn't recognize the credentials supplied by WorkMail.
+     * @throws DirectoryUnavailableException
+     *         The directory is unavailable. It might be located in another Region or deleted.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @throws UnsupportedOperationException
+     *         You can't perform a write operation against a read-only directory.
+     * @throws EntityStateException
+     *         You are performing an operation on a user, group, or resource that isn't in the expected state, such as
+     *         trying to delete an active user.
+     * @sample AmazonWorkMail.UpdateUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateUserResult updateUser(UpdateUserRequest updateUserRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,9 @@ public class PutEventsResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * <p>
      * The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the
      * event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.
+     * </p>
+     * <p>
+     * For each record, the index of the response element is the same as the index in the request array.
      * </p>
      */
     private java.util.List<PutEventsResultEntry> entries;
@@ -82,10 +85,15 @@ public class PutEventsResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the
      * event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.
      * </p>
+     * <p>
+     * For each record, the index of the response element is the same as the index in the request array.
+     * </p>
      * 
      * @return The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry
      *         has the event ID in it. Otherwise, you can use the error code and error message to identify the problem
-     *         with the entry.
+     *         with the entry.</p>
+     *         <p>
+     *         For each record, the index of the response element is the same as the index in the request array.
      */
 
     public java.util.List<PutEventsResultEntry> getEntries() {
@@ -97,11 +105,16 @@ public class PutEventsResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the
      * event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.
      * </p>
+     * <p>
+     * For each record, the index of the response element is the same as the index in the request array.
+     * </p>
      * 
      * @param entries
      *        The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry
      *        has the event ID in it. Otherwise, you can use the error code and error message to identify the problem
-     *        with the entry.
+     *        with the entry.</p>
+     *        <p>
+     *        For each record, the index of the response element is the same as the index in the request array.
      */
 
     public void setEntries(java.util.Collection<PutEventsResultEntry> entries) {
@@ -119,6 +132,9 @@ public class PutEventsResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.
      * </p>
      * <p>
+     * For each record, the index of the response element is the same as the index in the request array.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setEntries(java.util.Collection)} or {@link #withEntries(java.util.Collection)} if you want to override
      * the existing values.
@@ -127,7 +143,9 @@ public class PutEventsResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * @param entries
      *        The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry
      *        has the event ID in it. Otherwise, you can use the error code and error message to identify the problem
-     *        with the entry.
+     *        with the entry.</p>
+     *        <p>
+     *        For each record, the index of the response element is the same as the index in the request array.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,11 +164,16 @@ public class PutEventsResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry has the
      * event ID in it. Otherwise, you can use the error code and error message to identify the problem with the entry.
      * </p>
+     * <p>
+     * For each record, the index of the response element is the same as the index in the request array.
+     * </p>
      * 
      * @param entries
      *        The successfully and unsuccessfully ingested events results. If the ingestion was successful, the entry
      *        has the event ID in it. Otherwise, you can use the error code and error message to identify the problem
-     *        with the entry.
+     *        with the entry.</p>
+     *        <p>
+     *        For each record, the index of the response element is the same as the index in the request array.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

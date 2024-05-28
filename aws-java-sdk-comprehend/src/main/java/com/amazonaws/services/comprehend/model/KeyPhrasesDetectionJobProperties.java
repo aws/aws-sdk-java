@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,8 @@ public class KeyPhrasesDetectionJobProperties implements Serializable, Cloneable
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the key phrases detection job. It is a unique, fully qualified identifier for
-     * the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:
+     * the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of
+     * the ARN is as follows:
      * </p>
      * <p>
      * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:key-phrases-detection-job/&lt;job-id&gt;</code>
@@ -101,15 +102,14 @@ public class KeyPhrasesDetectionJobProperties implements Serializable, Cloneable
     private String languageCode;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input data.
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.
      * </p>
      */
     private String dataAccessRoleArn;
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the
-     * following formats:
+     * ID for the KMS key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute
+     * instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -178,7 +178,8 @@ public class KeyPhrasesDetectionJobProperties implements Serializable, Cloneable
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the key phrases detection job. It is a unique, fully qualified identifier for
-     * the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:
+     * the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of
+     * the ARN is as follows:
      * </p>
      * <p>
      * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:key-phrases-detection-job/&lt;job-id&gt;</code>
@@ -192,8 +193,8 @@ public class KeyPhrasesDetectionJobProperties implements Serializable, Cloneable
      * 
      * @param jobArn
      *        The Amazon Resource Name (ARN) of the key phrases detection job. It is a unique, fully qualified
-     *        identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as
-     *        follows:</p>
+     *        identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the
+     *        job ID. The format of the ARN is as follows:</p>
      *        <p>
      *        <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:key-phrases-detection-job/&lt;job-id&gt;</code>
      *        </p>
@@ -211,7 +212,8 @@ public class KeyPhrasesDetectionJobProperties implements Serializable, Cloneable
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the key phrases detection job. It is a unique, fully qualified identifier for
-     * the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:
+     * the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of
+     * the ARN is as follows:
      * </p>
      * <p>
      * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:key-phrases-detection-job/&lt;job-id&gt;</code>
@@ -224,8 +226,8 @@ public class KeyPhrasesDetectionJobProperties implements Serializable, Cloneable
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the key phrases detection job. It is a unique, fully qualified
-     *         identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as
-     *         follows:</p>
+     *         identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the
+     *         job ID. The format of the ARN is as follows:</p>
      *         <p>
      *         <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:key-phrases-detection-job/&lt;job-id&gt;</code>
      *         </p>
@@ -243,7 +245,8 @@ public class KeyPhrasesDetectionJobProperties implements Serializable, Cloneable
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the key phrases detection job. It is a unique, fully qualified identifier for
-     * the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:
+     * the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of
+     * the ARN is as follows:
      * </p>
      * <p>
      * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:key-phrases-detection-job/&lt;job-id&gt;</code>
@@ -257,8 +260,8 @@ public class KeyPhrasesDetectionJobProperties implements Serializable, Cloneable
      * 
      * @param jobArn
      *        The Amazon Resource Name (ARN) of the key phrases detection job. It is a unique, fully qualified
-     *        identifier for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as
-     *        follows:</p>
+     *        identifier for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the
+     *        job ID. The format of the ARN is as follows:</p>
      *        <p>
      *        <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:key-phrases-detection-job/&lt;job-id&gt;</code>
      *        </p>
@@ -643,11 +646,12 @@ public class KeyPhrasesDetectionJobProperties implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input data.
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input data.
+     *        The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input
+     *        data.
      */
 
     public void setDataAccessRoleArn(String dataAccessRoleArn) {
@@ -656,10 +660,11 @@ public class KeyPhrasesDetectionJobProperties implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input data.
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input data.
+     * @return The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input
+     *         data.
      */
 
     public String getDataAccessRoleArn() {
@@ -668,11 +673,12 @@ public class KeyPhrasesDetectionJobProperties implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input data.
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input data.
+     *        The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input
+     *        data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -683,9 +689,8 @@ public class KeyPhrasesDetectionJobProperties implements Serializable, Cloneable
 
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the
-     * following formats:
+     * ID for the KMS key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute
+     * instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -702,9 +707,9 @@ public class KeyPhrasesDetectionJobProperties implements Serializable, Cloneable
      * </ul>
      * 
      * @param volumeKmsKeyId
-     *        ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage
-     *        volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be
-     *        either of the following formats:</p>
+     *        ID for the KMS key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML
+     *        compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following
+     *        formats:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -725,9 +730,8 @@ public class KeyPhrasesDetectionJobProperties implements Serializable, Cloneable
 
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the
-     * following formats:
+     * ID for the KMS key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute
+     * instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -743,9 +747,9 @@ public class KeyPhrasesDetectionJobProperties implements Serializable, Cloneable
      * </li>
      * </ul>
      * 
-     * @return ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the
-     *         storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId
-     *         can be either of the following formats:</p>
+     * @return ID for the KMS key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML
+     *         compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following
+     *         formats:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -766,9 +770,8 @@ public class KeyPhrasesDetectionJobProperties implements Serializable, Cloneable
 
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the
-     * following formats:
+     * ID for the KMS key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute
+     * instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -785,9 +788,9 @@ public class KeyPhrasesDetectionJobProperties implements Serializable, Cloneable
      * </ul>
      * 
      * @param volumeKmsKeyId
-     *        ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage
-     *        volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be
-     *        either of the following formats:</p>
+     *        ID for the KMS key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML
+     *        compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following
+     *        formats:</p>
      *        <ul>
      *        <li>
      *        <p>

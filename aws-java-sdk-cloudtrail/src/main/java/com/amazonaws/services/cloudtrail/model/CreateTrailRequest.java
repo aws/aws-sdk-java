@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -94,9 +94,9 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
     private Boolean includeGlobalServiceEvents;
     /**
      * <p>
-     * Specifies whether the trail is created in the current region or in all regions. The default is false, which
-     * creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log
-     * events in all regions.
+     * Specifies whether the trail is created in the current Region or in all Regions. The default is false, which
+     * creates a trail only in the Region where you are signed in. As a best practice, consider creating trails that log
+     * events in all Regions.
      * </p>
      */
     private Boolean isMultiRegionTrail;
@@ -119,13 +119,17 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group
-     * to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.
+     * to which CloudTrail logs will be delivered. You must use a log group that exists in your account.
+     * </p>
+     * <p>
+     * Not required unless you specify <code>CloudWatchLogsRoleArn</code>.
      * </p>
      */
     private String cloudWatchLogsLogGroupArn;
     /**
      * <p>
-     * Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.
+     * Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group. You must use a role
+     * that exists in your account.
      * </p>
      */
     private String cloudWatchLogsRoleArn;
@@ -171,7 +175,8 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the
      * current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf
-     * of an Amazon Web Services account that is the management account for an organization in Organizations.
+     * of an Amazon Web Services account that is the management account or delegated administrator account for an
+     * organization in Organizations.
      * </p>
      */
     private Boolean isOrganizationTrail;
@@ -593,15 +598,15 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether the trail is created in the current region or in all regions. The default is false, which
-     * creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log
-     * events in all regions.
+     * Specifies whether the trail is created in the current Region or in all Regions. The default is false, which
+     * creates a trail only in the Region where you are signed in. As a best practice, consider creating trails that log
+     * events in all Regions.
      * </p>
      * 
      * @param isMultiRegionTrail
-     *        Specifies whether the trail is created in the current region or in all regions. The default is false,
-     *        which creates a trail only in the region where you are signed in. As a best practice, consider creating
-     *        trails that log events in all regions.
+     *        Specifies whether the trail is created in the current Region or in all Regions. The default is false,
+     *        which creates a trail only in the Region where you are signed in. As a best practice, consider creating
+     *        trails that log events in all Regions.
      */
 
     public void setIsMultiRegionTrail(Boolean isMultiRegionTrail) {
@@ -610,14 +615,14 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether the trail is created in the current region or in all regions. The default is false, which
-     * creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log
-     * events in all regions.
+     * Specifies whether the trail is created in the current Region or in all Regions. The default is false, which
+     * creates a trail only in the Region where you are signed in. As a best practice, consider creating trails that log
+     * events in all Regions.
      * </p>
      * 
-     * @return Specifies whether the trail is created in the current region or in all regions. The default is false,
-     *         which creates a trail only in the region where you are signed in. As a best practice, consider creating
-     *         trails that log events in all regions.
+     * @return Specifies whether the trail is created in the current Region or in all Regions. The default is false,
+     *         which creates a trail only in the Region where you are signed in. As a best practice, consider creating
+     *         trails that log events in all Regions.
      */
 
     public Boolean getIsMultiRegionTrail() {
@@ -626,15 +631,15 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether the trail is created in the current region or in all regions. The default is false, which
-     * creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log
-     * events in all regions.
+     * Specifies whether the trail is created in the current Region or in all Regions. The default is false, which
+     * creates a trail only in the Region where you are signed in. As a best practice, consider creating trails that log
+     * events in all Regions.
      * </p>
      * 
      * @param isMultiRegionTrail
-     *        Specifies whether the trail is created in the current region or in all regions. The default is false,
-     *        which creates a trail only in the region where you are signed in. As a best practice, consider creating
-     *        trails that log events in all regions.
+     *        Specifies whether the trail is created in the current Region or in all Regions. The default is false,
+     *        which creates a trail only in the Region where you are signed in. As a best practice, consider creating
+     *        trails that log events in all Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -645,14 +650,14 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether the trail is created in the current region or in all regions. The default is false, which
-     * creates a trail only in the region where you are signed in. As a best practice, consider creating trails that log
-     * events in all regions.
+     * Specifies whether the trail is created in the current Region or in all Regions. The default is false, which
+     * creates a trail only in the Region where you are signed in. As a best practice, consider creating trails that log
+     * events in all Regions.
      * </p>
      * 
-     * @return Specifies whether the trail is created in the current region or in all regions. The default is false,
-     *         which creates a trail only in the region where you are signed in. As a best practice, consider creating
-     *         trails that log events in all regions.
+     * @return Specifies whether the trail is created in the current Region or in all Regions. The default is false,
+     *         which creates a trail only in the Region where you are signed in. As a best practice, consider creating
+     *         trails that log events in all Regions.
      */
 
     public Boolean isMultiRegionTrail() {
@@ -786,13 +791,18 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group
-     * to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.
+     * to which CloudTrail logs will be delivered. You must use a log group that exists in your account.
+     * </p>
+     * <p>
+     * Not required unless you specify <code>CloudWatchLogsRoleArn</code>.
      * </p>
      * 
      * @param cloudWatchLogsLogGroupArn
      *        Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the
-     *        log group to which CloudTrail logs will be delivered. Not required unless you specify
-     *        <code>CloudWatchLogsRoleArn</code>.
+     *        log group to which CloudTrail logs will be delivered. You must use a log group that exists in your
+     *        account.</p>
+     *        <p>
+     *        Not required unless you specify <code>CloudWatchLogsRoleArn</code>.
      */
 
     public void setCloudWatchLogsLogGroupArn(String cloudWatchLogsLogGroupArn) {
@@ -802,12 +812,17 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group
-     * to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.
+     * to which CloudTrail logs will be delivered. You must use a log group that exists in your account.
+     * </p>
+     * <p>
+     * Not required unless you specify <code>CloudWatchLogsRoleArn</code>.
      * </p>
      * 
      * @return Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the
-     *         log group to which CloudTrail logs will be delivered. Not required unless you specify
-     *         <code>CloudWatchLogsRoleArn</code>.
+     *         log group to which CloudTrail logs will be delivered. You must use a log group that exists in your
+     *         account.</p>
+     *         <p>
+     *         Not required unless you specify <code>CloudWatchLogsRoleArn</code>.
      */
 
     public String getCloudWatchLogsLogGroupArn() {
@@ -817,13 +832,18 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group
-     * to which CloudTrail logs will be delivered. Not required unless you specify <code>CloudWatchLogsRoleArn</code>.
+     * to which CloudTrail logs will be delivered. You must use a log group that exists in your account.
+     * </p>
+     * <p>
+     * Not required unless you specify <code>CloudWatchLogsRoleArn</code>.
      * </p>
      * 
      * @param cloudWatchLogsLogGroupArn
      *        Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the
-     *        log group to which CloudTrail logs will be delivered. Not required unless you specify
-     *        <code>CloudWatchLogsRoleArn</code>.
+     *        log group to which CloudTrail logs will be delivered. You must use a log group that exists in your
+     *        account.</p>
+     *        <p>
+     *        Not required unless you specify <code>CloudWatchLogsRoleArn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -834,11 +854,13 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.
+     * Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group. You must use a role
+     * that exists in your account.
      * </p>
      * 
      * @param cloudWatchLogsRoleArn
-     *        Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.
+     *        Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group. You must use
+     *        a role that exists in your account.
      */
 
     public void setCloudWatchLogsRoleArn(String cloudWatchLogsRoleArn) {
@@ -847,10 +869,12 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.
+     * Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group. You must use a role
+     * that exists in your account.
      * </p>
      * 
-     * @return Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.
+     * @return Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group. You must
+     *         use a role that exists in your account.
      */
 
     public String getCloudWatchLogsRoleArn() {
@@ -859,11 +883,13 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.
+     * Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group. You must use a role
+     * that exists in your account.
      * </p>
      * 
      * @param cloudWatchLogsRoleArn
-     *        Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.
+     *        Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group. You must use
+     *        a role that exists in your account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1105,14 +1131,15 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the
      * current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf
-     * of an Amazon Web Services account that is the management account for an organization in Organizations.
+     * of an Amazon Web Services account that is the management account or delegated administrator account for an
+     * organization in Organizations.
      * </p>
      * 
      * @param isOrganizationTrail
      *        Specifies whether the trail is created for all accounts in an organization in Organizations, or only for
      *        the current Amazon Web Services account. The default is false, and cannot be true unless the call is made
-     *        on behalf of an Amazon Web Services account that is the management account for an organization in
-     *        Organizations.
+     *        on behalf of an Amazon Web Services account that is the management account or delegated administrator
+     *        account for an organization in Organizations.
      */
 
     public void setIsOrganizationTrail(Boolean isOrganizationTrail) {
@@ -1123,13 +1150,14 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the
      * current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf
-     * of an Amazon Web Services account that is the management account for an organization in Organizations.
+     * of an Amazon Web Services account that is the management account or delegated administrator account for an
+     * organization in Organizations.
      * </p>
      * 
      * @return Specifies whether the trail is created for all accounts in an organization in Organizations, or only for
      *         the current Amazon Web Services account. The default is false, and cannot be true unless the call is made
-     *         on behalf of an Amazon Web Services account that is the management account for an organization in
-     *         Organizations.
+     *         on behalf of an Amazon Web Services account that is the management account or delegated administrator
+     *         account for an organization in Organizations.
      */
 
     public Boolean getIsOrganizationTrail() {
@@ -1140,14 +1168,15 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the
      * current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf
-     * of an Amazon Web Services account that is the management account for an organization in Organizations.
+     * of an Amazon Web Services account that is the management account or delegated administrator account for an
+     * organization in Organizations.
      * </p>
      * 
      * @param isOrganizationTrail
      *        Specifies whether the trail is created for all accounts in an organization in Organizations, or only for
      *        the current Amazon Web Services account. The default is false, and cannot be true unless the call is made
-     *        on behalf of an Amazon Web Services account that is the management account for an organization in
-     *        Organizations.
+     *        on behalf of an Amazon Web Services account that is the management account or delegated administrator
+     *        account for an organization in Organizations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1160,13 +1189,14 @@ public class CreateTrailRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * Specifies whether the trail is created for all accounts in an organization in Organizations, or only for the
      * current Amazon Web Services account. The default is false, and cannot be true unless the call is made on behalf
-     * of an Amazon Web Services account that is the management account for an organization in Organizations.
+     * of an Amazon Web Services account that is the management account or delegated administrator account for an
+     * organization in Organizations.
      * </p>
      * 
      * @return Specifies whether the trail is created for all accounts in an organization in Organizations, or only for
      *         the current Amazon Web Services account. The default is false, and cannot be true unless the call is made
-     *         on behalf of an Amazon Web Services account that is the management account for an organization in
-     *         Organizations.
+     *         on behalf of an Amazon Web Services account that is the management account or delegated administrator
+     *         account for an organization in Organizations.
      */
 
     public Boolean isOrganizationTrail() {

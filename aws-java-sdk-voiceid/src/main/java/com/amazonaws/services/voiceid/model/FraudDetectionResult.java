@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,13 +31,13 @@ public class FraudDetectionResult implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A timestamp indicating when audio aggregation ended for this fraud detection result.
+     * A timestamp of when audio aggregation ended for this fraud detection result.
      * </p>
      */
     private java.util.Date audioAggregationEndedAt;
     /**
      * <p>
-     * A timestamp indicating when audio aggregation started for this fraud detection result.
+     * A timestamp of when audio aggregation started for this fraud detection result.
      * </p>
      */
     private java.util.Date audioAggregationStartedAt;
@@ -81,11 +81,11 @@ public class FraudDetectionResult implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A timestamp indicating when audio aggregation ended for this fraud detection result.
+     * A timestamp of when audio aggregation ended for this fraud detection result.
      * </p>
      * 
      * @param audioAggregationEndedAt
-     *        A timestamp indicating when audio aggregation ended for this fraud detection result.
+     *        A timestamp of when audio aggregation ended for this fraud detection result.
      */
 
     public void setAudioAggregationEndedAt(java.util.Date audioAggregationEndedAt) {
@@ -94,10 +94,10 @@ public class FraudDetectionResult implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A timestamp indicating when audio aggregation ended for this fraud detection result.
+     * A timestamp of when audio aggregation ended for this fraud detection result.
      * </p>
      * 
-     * @return A timestamp indicating when audio aggregation ended for this fraud detection result.
+     * @return A timestamp of when audio aggregation ended for this fraud detection result.
      */
 
     public java.util.Date getAudioAggregationEndedAt() {
@@ -106,11 +106,11 @@ public class FraudDetectionResult implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A timestamp indicating when audio aggregation ended for this fraud detection result.
+     * A timestamp of when audio aggregation ended for this fraud detection result.
      * </p>
      * 
      * @param audioAggregationEndedAt
-     *        A timestamp indicating when audio aggregation ended for this fraud detection result.
+     *        A timestamp of when audio aggregation ended for this fraud detection result.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,11 +121,11 @@ public class FraudDetectionResult implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A timestamp indicating when audio aggregation started for this fraud detection result.
+     * A timestamp of when audio aggregation started for this fraud detection result.
      * </p>
      * 
      * @param audioAggregationStartedAt
-     *        A timestamp indicating when audio aggregation started for this fraud detection result.
+     *        A timestamp of when audio aggregation started for this fraud detection result.
      */
 
     public void setAudioAggregationStartedAt(java.util.Date audioAggregationStartedAt) {
@@ -134,10 +134,10 @@ public class FraudDetectionResult implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A timestamp indicating when audio aggregation started for this fraud detection result.
+     * A timestamp of when audio aggregation started for this fraud detection result.
      * </p>
      * 
-     * @return A timestamp indicating when audio aggregation started for this fraud detection result.
+     * @return A timestamp of when audio aggregation started for this fraud detection result.
      */
 
     public java.util.Date getAudioAggregationStartedAt() {
@@ -146,11 +146,11 @@ public class FraudDetectionResult implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A timestamp indicating when audio aggregation started for this fraud detection result.
+     * A timestamp of when audio aggregation started for this fraud detection result.
      * </p>
      * 
      * @param audioAggregationStartedAt
-     *        A timestamp indicating when audio aggregation started for this fraud detection result.
+     *        A timestamp of when audio aggregation started for this fraud detection result.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

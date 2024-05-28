@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,17 +48,33 @@ public class AccountAssignmentOperationStatusJsonUnmarshaller implements Unmarsh
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("Status", targetDepth)) {
+                if (context.testExpression("CreatedDate", targetDepth)) {
                     context.nextToken();
-                    accountAssignmentOperationStatus.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                    accountAssignmentOperationStatus.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("FailureReason", targetDepth)) {
+                    context.nextToken();
+                    accountAssignmentOperationStatus.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PermissionSetArn", targetDepth)) {
+                    context.nextToken();
+                    accountAssignmentOperationStatus.setPermissionSetArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PrincipalId", targetDepth)) {
+                    context.nextToken();
+                    accountAssignmentOperationStatus.setPrincipalId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PrincipalType", targetDepth)) {
+                    context.nextToken();
+                    accountAssignmentOperationStatus.setPrincipalType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("RequestId", targetDepth)) {
                     context.nextToken();
                     accountAssignmentOperationStatus.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("FailureReason", targetDepth)) {
+                if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
-                    accountAssignmentOperationStatus.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
+                    accountAssignmentOperationStatus.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("TargetId", targetDepth)) {
                     context.nextToken();
@@ -67,22 +83,6 @@ public class AccountAssignmentOperationStatusJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("TargetType", targetDepth)) {
                     context.nextToken();
                     accountAssignmentOperationStatus.setTargetType(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("PermissionSetArn", targetDepth)) {
-                    context.nextToken();
-                    accountAssignmentOperationStatus.setPermissionSetArn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("PrincipalType", targetDepth)) {
-                    context.nextToken();
-                    accountAssignmentOperationStatus.setPrincipalType(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("PrincipalId", targetDepth)) {
-                    context.nextToken();
-                    accountAssignmentOperationStatus.setPrincipalId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("CreatedDate", targetDepth)) {
-                    context.nextToken();
-                    accountAssignmentOperationStatus.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

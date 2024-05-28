@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -250,6 +250,12 @@ public class UpdateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
                                                         StringUtils.fromInteger(instanceRequirements.getSpotMaxPricePercentageOverLowestPrice()));
                                             }
 
+                                            if (instanceRequirements.getMaxSpotPriceAsPercentageOfOptimalOnDemandPrice() != null) {
+                                                request.addParameter("MixedInstancesPolicy.LaunchTemplate.Overrides.member." + overridesListIndex
+                                                        + ".InstanceRequirements.MaxSpotPriceAsPercentageOfOptimalOnDemandPrice",
+                                                        StringUtils.fromInteger(instanceRequirements.getMaxSpotPriceAsPercentageOfOptimalOnDemandPrice()));
+                                            }
+
                                             if (instanceRequirements.getOnDemandMaxPricePercentageOverLowestPrice() != null) {
                                                 request.addParameter("MixedInstancesPolicy.LaunchTemplate.Overrides.member." + overridesListIndex
                                                         + ".InstanceRequirements.OnDemandMaxPricePercentageOverLowestPrice",
@@ -436,6 +442,41 @@ public class UpdateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
                                                     }
                                                 }
                                             }
+
+                                            {
+                                                NetworkBandwidthGbpsRequest networkBandwidthGbps = instanceRequirements.getNetworkBandwidthGbps();
+                                                if (networkBandwidthGbps != null) {
+
+                                                    if (networkBandwidthGbps.getMin() != null) {
+                                                        request.addParameter("MixedInstancesPolicy.LaunchTemplate.Overrides.member." + overridesListIndex
+                                                                + ".InstanceRequirements.NetworkBandwidthGbps.Min",
+                                                                StringUtils.fromDouble(networkBandwidthGbps.getMin()));
+                                                    }
+
+                                                    if (networkBandwidthGbps.getMax() != null) {
+                                                        request.addParameter("MixedInstancesPolicy.LaunchTemplate.Overrides.member." + overridesListIndex
+                                                                + ".InstanceRequirements.NetworkBandwidthGbps.Max",
+                                                                StringUtils.fromDouble(networkBandwidthGbps.getMax()));
+                                                    }
+                                                }
+                                            }
+
+                                            if (!instanceRequirements.getAllowedInstanceTypes().isEmpty()
+                                                    || !((com.amazonaws.internal.SdkInternalList<String>) instanceRequirements.getAllowedInstanceTypes())
+                                                            .isAutoConstruct()) {
+                                                com.amazonaws.internal.SdkInternalList<String> allowedInstanceTypesList = (com.amazonaws.internal.SdkInternalList<String>) instanceRequirements
+                                                        .getAllowedInstanceTypes();
+                                                int allowedInstanceTypesListIndex = 1;
+
+                                                for (String allowedInstanceTypesListValue : allowedInstanceTypesList) {
+                                                    if (allowedInstanceTypesListValue != null) {
+                                                        request.addParameter("MixedInstancesPolicy.LaunchTemplate.Overrides.member." + overridesListIndex
+                                                                + ".InstanceRequirements.AllowedInstanceTypes.member." + allowedInstanceTypesListIndex,
+                                                                StringUtils.fromString(allowedInstanceTypesListValue));
+                                                    }
+                                                    allowedInstanceTypesListIndex++;
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -570,6 +611,22 @@ public class UpdateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
 
         if (updateAutoScalingGroupRequest.getDefaultInstanceWarmup() != null) {
             request.addParameter("DefaultInstanceWarmup", StringUtils.fromInteger(updateAutoScalingGroupRequest.getDefaultInstanceWarmup()));
+        }
+
+        {
+            InstanceMaintenancePolicy instanceMaintenancePolicy = updateAutoScalingGroupRequest.getInstanceMaintenancePolicy();
+            if (instanceMaintenancePolicy != null) {
+
+                if (instanceMaintenancePolicy.getMinHealthyPercentage() != null) {
+                    request.addParameter("InstanceMaintenancePolicy.MinHealthyPercentage",
+                            StringUtils.fromInteger(instanceMaintenancePolicy.getMinHealthyPercentage()));
+                }
+
+                if (instanceMaintenancePolicy.getMaxHealthyPercentage() != null) {
+                    request.addParameter("InstanceMaintenancePolicy.MaxHealthyPercentage",
+                            StringUtils.fromInteger(instanceMaintenancePolicy.getMaxHealthyPercentage()));
+                }
+            }
         }
 
         return request;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,43 +27,9 @@ import com.amazonaws.services.ec2.model.*;
  * <p>
  * <fullname>Amazon Elastic Compute Cloud</fullname>
  * <p>
- * Amazon Elastic Compute Cloud (Amazon EC2) provides secure and resizable computing capacity in the Amazon Web Services
- * Cloud. Using Amazon EC2 eliminates the need to invest in hardware up front, so you can develop and deploy
- * applications faster. Amazon Virtual Private Cloud (Amazon VPC) enables you to provision a logically isolated section
- * of the Amazon Web Services Cloud where you can launch Amazon Web Services resources in a virtual network that you've
- * defined. Amazon Elastic Block Store (Amazon EBS) provides block level storage volumes for use with EC2 instances. EBS
- * volumes are highly available and reliable storage volumes that can be attached to any running instance and used like
- * a hard drive.
+ * You can access the features of Amazon Elastic Compute Cloud (Amazon EC2) programmatically. For more information, see
+ * the <a href="https://docs.aws.amazon.com/ec2/latest/devguide">Amazon EC2 Developer Guide</a>.
  * </p>
- * <p>
- * To learn more, see the following resources:
- * </p>
- * <ul>
- * <li>
- * <p>
- * Amazon EC2: <a href="http://aws.amazon.com/ec2">AmazonEC2 product page</a>, <a
- * href="http://aws.amazon.com/documentation/ec2">Amazon EC2 documentation</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * Amazon EBS: <a href="http://aws.amazon.com/ebs">Amazon EBS product page</a>, <a
- * href="http://aws.amazon.com/documentation/ebs">Amazon EBS documentation</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * Amazon VPC: <a href="http://aws.amazon.com/vpc">Amazon VPC product page</a>, <a
- * href="http://aws.amazon.com/documentation/vpc">Amazon VPC documentation</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * Amazon Web Services VPN: <a href="http://aws.amazon.com/vpn">Amazon Web Services VPN product page</a>, <a
- * href="http://aws.amazon.com/documentation/vpn">Amazon Web Services VPN documentation</a>
- * </p>
- * </li>
- * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonEC2Async extends AmazonEC2 {
@@ -263,7 +229,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Accepts one or more interface VPC endpoint connection requests to your VPC endpoint service.
+     * Accepts connection requests to your VPC endpoint service.
      * </p>
      * 
      * @param acceptVpcEndpointConnectionsRequest
@@ -278,7 +244,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Accepts one or more interface VPC endpoint connection requests to your VPC endpoint service.
+     * Accepts connection requests to your VPC endpoint service.
      * </p>
      * 
      * @param acceptVpcEndpointConnectionsRequest
@@ -437,14 +403,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * [EC2-VPC] If you release an Elastic IP address, you might be able to recover it. You cannot recover an Elastic IP
-     * address that you released after it is allocated to another Amazon Web Services account. You cannot recover an
-     * Elastic IP address for EC2-Classic. To attempt to recover an Elastic IP address that you released, specify it in
-     * this operation.
-     * </p>
-     * <p>
-     * An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. By default, you can allocate 5
-     * Elastic IP addresses for EC2-Classic per Region and 5 Elastic IP addresses for EC2-VPC per Region.
+     * If you release an Elastic IP address, you might be able to recover it. You cannot recover an Elastic IP address
+     * that you released after it is allocated to another Amazon Web Services account. To attempt to recover an Elastic
+     * IP address that you released, specify it in this operation.
      * </p>
      * <p>
      * For more information, see <a
@@ -455,13 +416,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * You can allocate a carrier IP address which is a public IP address from a telecommunication carrier, to a network
      * interface which resides in a subnet in a Wavelength Zone (for example an EC2 instance).
      * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param allocateAddressRequest
      * @return A Java Future containing the result of the AllocateAddress operation returned by the service.
@@ -485,14 +439,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * [EC2-VPC] If you release an Elastic IP address, you might be able to recover it. You cannot recover an Elastic IP
-     * address that you released after it is allocated to another Amazon Web Services account. You cannot recover an
-     * Elastic IP address for EC2-Classic. To attempt to recover an Elastic IP address that you released, specify it in
-     * this operation.
-     * </p>
-     * <p>
-     * An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. By default, you can allocate 5
-     * Elastic IP addresses for EC2-Classic per Region and 5 Elastic IP addresses for EC2-VPC per Region.
+     * If you release an Elastic IP address, you might be able to recover it. You cannot recover an Elastic IP address
+     * that you released after it is allocated to another Amazon Web Services account. To attempt to recover an Elastic
+     * IP address that you released, specify it in this operation.
      * </p>
      * <p>
      * For more information, see <a
@@ -503,13 +452,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * You can allocate a carrier IP address which is a public IP address from a telecommunication carrier, to a network
      * interface which resides in a subnet in a Wavelength Zone (for example an EC2 instance).
      * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param allocateAddressRequest
      * @param asyncHandler
@@ -574,11 +516,20 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Allocate a CIDR from an IPAM pool. In IPAM, an allocation is a CIDR assignment from an IPAM pool to another
-     * resource or IPAM pool. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/ipam/allocate-cidrs-ipam.html">Allocate CIDRs</a> in the <i>Amazon
-     * VPC IPAM User Guide</i>.
+     * Allocate a CIDR from an IPAM pool. The Region you use should be the IPAM pool locale. The locale is the Amazon
+     * Web Services Region where this IPAM pool is available for allocations.
      * </p>
+     * <p>
+     * In IPAM, an allocation is a CIDR assignment from an IPAM pool to another IPAM pool or to a resource. For more
+     * information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/allocate-cidrs-ipam.html">Allocate
+     * CIDRs</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * This action creates an allocation with strong consistency. The returned CIDR will not overlap with any other
+     * allocations from the same pool.
+     * </p>
+     * </note>
      * 
      * @param allocateIpamPoolCidrRequest
      * @return A Java Future containing the result of the AllocateIpamPoolCidr operation returned by the service.
@@ -590,11 +541,20 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Allocate a CIDR from an IPAM pool. In IPAM, an allocation is a CIDR assignment from an IPAM pool to another
-     * resource or IPAM pool. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/ipam/allocate-cidrs-ipam.html">Allocate CIDRs</a> in the <i>Amazon
-     * VPC IPAM User Guide</i>.
+     * Allocate a CIDR from an IPAM pool. The Region you use should be the IPAM pool locale. The locale is the Amazon
+     * Web Services Region where this IPAM pool is available for allocations.
      * </p>
+     * <p>
+     * In IPAM, an allocation is a CIDR assignment from an IPAM pool to another IPAM pool or to a resource. For more
+     * information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/allocate-cidrs-ipam.html">Allocate
+     * CIDRs</a> in the <i>Amazon VPC IPAM User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * This action creates an allocation with strong consistency. The returned CIDR will not overlap with any other
+     * allocations from the same pool.
+     * </p>
+     * </note>
      * 
      * @param allocateIpamPoolCidrRequest
      * @param asyncHandler
@@ -794,26 +754,54 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Assigns one or more private IPv4 addresses to a private NAT gateway. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work with
+     * NAT gateways</a> in the <i>Amazon VPC User Guide</i>.
+     * </p>
+     * 
+     * @param assignPrivateNatGatewayAddressRequest
+     * @return A Java Future containing the result of the AssignPrivateNatGatewayAddress operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.AssignPrivateNatGatewayAddress
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateNatGatewayAddress"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssignPrivateNatGatewayAddressResult> assignPrivateNatGatewayAddressAsync(
+            AssignPrivateNatGatewayAddressRequest assignPrivateNatGatewayAddressRequest);
+
+    /**
+     * <p>
+     * Assigns one or more private IPv4 addresses to a private NAT gateway. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work with
+     * NAT gateways</a> in the <i>Amazon VPC User Guide</i>.
+     * </p>
+     * 
+     * @param assignPrivateNatGatewayAddressRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssignPrivateNatGatewayAddress operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.AssignPrivateNatGatewayAddress
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateNatGatewayAddress"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssignPrivateNatGatewayAddressResult> assignPrivateNatGatewayAddressAsync(
+            AssignPrivateNatGatewayAddressRequest assignPrivateNatGatewayAddressRequest,
+            com.amazonaws.handlers.AsyncHandler<AssignPrivateNatGatewayAddressRequest, AssignPrivateNatGatewayAddressResult> asyncHandler);
+
+    /**
+     * <p>
      * Associates an Elastic IP address, or carrier IP address (for instances that are in subnets in Wavelength Zones)
      * with an instance or a network interface. Before you can use an Elastic IP address, you must allocate it to your
      * account.
      * </p>
      * <p>
-     * An Elastic IP address is for use in either the EC2-Classic platform or in a VPC. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP Addresses</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * <p>
-     * [EC2-Classic, VPC in an EC2-VPC-only account] If the Elastic IP address is already associated with a different
-     * instance, it is disassociated from that instance and associated with the specified instance. If you associate an
-     * Elastic IP address with an instance that has an existing Elastic IP address, the existing address is
-     * disassociated from the instance, but remains allocated to your account.
-     * </p>
-     * <p>
-     * [VPC in an EC2-Classic account] If you don't specify a private IP address, the Elastic IP address is associated
-     * with the primary IP address. If the Elastic IP address is already associated with a different instance or a
-     * network interface, you get an error unless you allow reassociation. You cannot associate an Elastic IP address
-     * with an instance or network interface that has an existing Elastic IP address.
+     * If the Elastic IP address is already associated with a different instance, it is disassociated from that instance
+     * and associated with the specified instance. If you associate an Elastic IP address with an instance that has an
+     * existing Elastic IP address, the existing address is disassociated from the instance, but remains allocated to
+     * your account.
      * </p>
      * <p>
      * [Subnets in Wavelength Zones] You can associate an IP address from the telecommunication carrier to the instance
@@ -829,13 +817,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * information, see the <i>Elastic IP Addresses</i> section of <a href="http://aws.amazon.com/ec2/pricing/">Amazon
      * EC2 Pricing</a>.
      * </p>
-     * </important> <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
+     * </important>
      * 
      * @param associateAddressRequest
      * @return A Java Future containing the result of the AssociateAddress operation returned by the service.
@@ -852,21 +834,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * account.
      * </p>
      * <p>
-     * An Elastic IP address is for use in either the EC2-Classic platform or in a VPC. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP Addresses</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * <p>
-     * [EC2-Classic, VPC in an EC2-VPC-only account] If the Elastic IP address is already associated with a different
-     * instance, it is disassociated from that instance and associated with the specified instance. If you associate an
-     * Elastic IP address with an instance that has an existing Elastic IP address, the existing address is
-     * disassociated from the instance, but remains allocated to your account.
-     * </p>
-     * <p>
-     * [VPC in an EC2-Classic account] If you don't specify a private IP address, the Elastic IP address is associated
-     * with the primary IP address. If the Elastic IP address is already associated with a different instance or a
-     * network interface, you get an error unless you allow reassociation. You cannot associate an Elastic IP address
-     * with an instance or network interface that has an existing Elastic IP address.
+     * If the Elastic IP address is already associated with a different instance, it is disassociated from that instance
+     * and associated with the specified instance. If you associate an Elastic IP address with an instance that has an
+     * existing Elastic IP address, the existing address is disassociated from the instance, but remains allocated to
+     * your account.
      * </p>
      * <p>
      * [Subnets in Wavelength Zones] You can associate an IP address from the telecommunication carrier to the instance
@@ -882,13 +853,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * information, see the <i>Elastic IP Addresses</i> section of <a href="http://aws.amazon.com/ec2/pricing/">Amazon
      * EC2 Pricing</a>.
      * </p>
-     * </important> <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
+     * </important>
      * 
      * @param associateAddressRequest
      * @param asyncHandler
@@ -965,7 +930,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-     * options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * options sets</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @param associateDhcpOptionsRequest
@@ -989,7 +954,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-     * options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * options sets</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @param associateDhcpOptionsRequest
@@ -1158,6 +1123,165 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Associates your Autonomous System Number (ASN) with a BYOIP CIDR that you own in the same Amazon Web Services
+     * Region. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoasn.html">Tutorial: Bring your ASN to IPAM</a> in
+     * the <i>Amazon VPC IPAM guide</i>.
+     * </p>
+     * <p>
+     * After the association succeeds, the ASN is eligible for advertisement. You can view the association with <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeByoipCidrs.html">DescribeByoipCidrs</a>.
+     * You can advertise the CIDR with <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AdvertiseByoipCidr.html">AdvertiseByoipCidr</a>.
+     * </p>
+     * 
+     * @param associateIpamByoasnRequest
+     * @return A Java Future containing the result of the AssociateIpamByoasn operation returned by the service.
+     * @sample AmazonEC2Async.AssociateIpamByoasn
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIpamByoasn" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateIpamByoasnResult> associateIpamByoasnAsync(AssociateIpamByoasnRequest associateIpamByoasnRequest);
+
+    /**
+     * <p>
+     * Associates your Autonomous System Number (ASN) with a BYOIP CIDR that you own in the same Amazon Web Services
+     * Region. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoasn.html">Tutorial: Bring your ASN to IPAM</a> in
+     * the <i>Amazon VPC IPAM guide</i>.
+     * </p>
+     * <p>
+     * After the association succeeds, the ASN is eligible for advertisement. You can view the association with <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeByoipCidrs.html">DescribeByoipCidrs</a>.
+     * You can advertise the CIDR with <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AdvertiseByoipCidr.html">AdvertiseByoipCidr</a>.
+     * </p>
+     * 
+     * @param associateIpamByoasnRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateIpamByoasn operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.AssociateIpamByoasn
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIpamByoasn" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateIpamByoasnResult> associateIpamByoasnAsync(AssociateIpamByoasnRequest associateIpamByoasnRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateIpamByoasnRequest, AssociateIpamByoasnResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associates an IPAM resource discovery with an Amazon VPC IPAM. A resource discovery is an IPAM component that
+     * enables IPAM to manage and monitor resources that belong to the owning account.
+     * </p>
+     * 
+     * @param associateIpamResourceDiscoveryRequest
+     * @return A Java Future containing the result of the AssociateIpamResourceDiscovery operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.AssociateIpamResourceDiscovery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIpamResourceDiscovery"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateIpamResourceDiscoveryResult> associateIpamResourceDiscoveryAsync(
+            AssociateIpamResourceDiscoveryRequest associateIpamResourceDiscoveryRequest);
+
+    /**
+     * <p>
+     * Associates an IPAM resource discovery with an Amazon VPC IPAM. A resource discovery is an IPAM component that
+     * enables IPAM to manage and monitor resources that belong to the owning account.
+     * </p>
+     * 
+     * @param associateIpamResourceDiscoveryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateIpamResourceDiscovery operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.AssociateIpamResourceDiscovery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIpamResourceDiscovery"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateIpamResourceDiscoveryResult> associateIpamResourceDiscoveryAsync(
+            AssociateIpamResourceDiscoveryRequest associateIpamResourceDiscoveryRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateIpamResourceDiscoveryRequest, AssociateIpamResourceDiscoveryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associates Elastic IP addresses (EIPs) and private IPv4 addresses with a public NAT gateway. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work with
+     * NAT gateways</a> in the <i>Amazon VPC User Guide</i>.
+     * </p>
+     * <p>
+     * By default, you can associate up to 2 Elastic IP addresses per public NAT gateway. You can increase the limit by
+     * requesting a quota adjustment. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-eips">Elastic IP address
+     * quotas</a> in the <i>Amazon VPC User Guide</i>.
+     * </p>
+     * <important>
+     * <p>
+     * When you associate an EIP or secondary EIPs with a public NAT gateway, the network border group of the EIPs must
+     * match the network border group of the Availability Zone (AZ) that the public NAT gateway is in. If it's not the
+     * same, the EIP will fail to associate. You can see the network border group for the subnet's AZ by viewing the
+     * details of the subnet. Similarly, you can view the network border group of an EIP by viewing the details of the
+     * EIP address. For more information about network border groups and EIPs, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#allocate-eip">Allocate an Elastic IP
+     * address</a> in the <i>Amazon VPC User Guide</i>.
+     * </p>
+     * </important>
+     * 
+     * @param associateNatGatewayAddressRequest
+     * @return A Java Future containing the result of the AssociateNatGatewayAddress operation returned by the service.
+     * @sample AmazonEC2Async.AssociateNatGatewayAddress
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateNatGatewayAddress" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateNatGatewayAddressResult> associateNatGatewayAddressAsync(
+            AssociateNatGatewayAddressRequest associateNatGatewayAddressRequest);
+
+    /**
+     * <p>
+     * Associates Elastic IP addresses (EIPs) and private IPv4 addresses with a public NAT gateway. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work with
+     * NAT gateways</a> in the <i>Amazon VPC User Guide</i>.
+     * </p>
+     * <p>
+     * By default, you can associate up to 2 Elastic IP addresses per public NAT gateway. You can increase the limit by
+     * requesting a quota adjustment. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-eips">Elastic IP address
+     * quotas</a> in the <i>Amazon VPC User Guide</i>.
+     * </p>
+     * <important>
+     * <p>
+     * When you associate an EIP or secondary EIPs with a public NAT gateway, the network border group of the EIPs must
+     * match the network border group of the Availability Zone (AZ) that the public NAT gateway is in. If it's not the
+     * same, the EIP will fail to associate. You can see the network border group for the subnet's AZ by viewing the
+     * details of the subnet. Similarly, you can view the network border group of an EIP by viewing the details of the
+     * EIP address. For more information about network border groups and EIPs, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#allocate-eip">Allocate an Elastic IP
+     * address</a> in the <i>Amazon VPC User Guide</i>.
+     * </p>
+     * </important>
+     * 
+     * @param associateNatGatewayAddressRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateNatGatewayAddress operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.AssociateNatGatewayAddress
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateNatGatewayAddress" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateNatGatewayAddressResult> associateNatGatewayAddressAsync(
+            AssociateNatGatewayAddressRequest associateNatGatewayAddressRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateNatGatewayAddressRequest, AssociateNatGatewayAddressResult> asyncHandler);
+
+    /**
+     * <p>
      * Associates a subnet in your VPC or an internet gateway or virtual private gateway attached to your VPC with a
      * route table in your VPC. This association causes traffic from the subnet or gateway to be routed according to the
      * routes in the route table. The action returns an association ID, which you need in order to disassociate the
@@ -1165,7 +1289,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-     * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * tables</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @param associateRouteTableRequest
@@ -1185,7 +1309,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-     * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * tables</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @param associateRouteTableRequest
@@ -1203,8 +1327,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Associates a CIDR block with your subnet. You can only associate a single IPv6 CIDR block with your subnet. An
-     * IPv6 CIDR block must have a prefix length of /64.
+     * Associates a CIDR block with your subnet. You can only associate a single IPv6 CIDR block with your subnet.
      * </p>
      * 
      * @param associateSubnetCidrBlockRequest
@@ -1217,8 +1340,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Associates a CIDR block with your subnet. You can only associate a single IPv6 CIDR block with your subnet. An
-     * IPv6 CIDR block must have a prefix length of /64.
+     * Associates a CIDR block with your subnet. You can only associate a single IPv6 CIDR block with your subnet.
      * </p>
      * 
      * @param associateSubnetCidrBlockRequest
@@ -1354,12 +1476,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
             com.amazonaws.handlers.AsyncHandler<AssociateTransitGatewayRouteTableRequest, AssociateTransitGatewayRouteTableResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This API action is currently in <b>limited preview only</b>. If you are interested in using this feature, contact
-     * your account manager.
-     * </p>
-     * </note>
      * <p>
      * Associates a branch network interface with a trunk network interface.
      * </p>
@@ -1380,12 +1496,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<AssociateTrunkInterfaceResult> associateTrunkInterfaceAsync(AssociateTrunkInterfaceRequest associateTrunkInterfaceRequest);
 
     /**
-     * <note>
-     * <p>
-     * This API action is currently in <b>limited preview only</b>. If you are interested in using this feature, contact
-     * your account manager.
-     * </p>
-     * </note>
      * <p>
      * Associates a branch network interface with a trunk network interface.
      * </p>
@@ -1414,8 +1524,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Associates a CIDR block with your VPC. You can associate a secondary IPv4 CIDR block, an Amazon-provided IPv6
      * CIDR block, or an IPv6 CIDR block from an IPv6 address pool that you provisioned through bring your own IP
-     * addresses (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>). The IPv6 CIDR
-     * block size is fixed at /56.
+     * addresses (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).
      * </p>
      * <p>
      * You must specify one of the following in the request: an IPv4 CIDR block, an IPv6 pool, or an Amazon-provided
@@ -1423,8 +1532,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information about associating CIDR blocks with your VPC and applicable restrictions, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPC_Sizing">VPC and subnet sizing</a> in
-     * the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html">IP addressing for your VPCs and
+     * subnets</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @param associateVpcCidrBlockRequest
@@ -1439,8 +1548,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Associates a CIDR block with your VPC. You can associate a secondary IPv4 CIDR block, an Amazon-provided IPv6
      * CIDR block, or an IPv6 CIDR block from an IPv6 address pool that you provisioned through bring your own IP
-     * addresses (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>). The IPv6 CIDR
-     * block size is fixed at /56.
+     * addresses (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).
      * </p>
      * <p>
      * You must specify one of the following in the request: an IPv4 CIDR block, an IPv6 pool, or an Amazon-provided
@@ -1448,8 +1556,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information about associating CIDR blocks with your VPC and applicable restrictions, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPC_Sizing">VPC and subnet sizing</a> in
-     * the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html">IP addressing for your VPCs and
+     * subnets</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @param associateVpcCidrBlockRequest
@@ -1468,13 +1576,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <note>
      * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * This action is deprecated.
      * </p>
      * </note>
      * <p>
-     * Links an EC2-Classic instance to a ClassicLink-enabled VPC through one or more of the VPC's security groups. You
+     * Links an EC2-Classic instance to a ClassicLink-enabled VPC through one or more of the VPC security groups. You
      * cannot link an EC2-Classic instance to more than one VPC at a time. You can only link an instance that's in the
      * <code>running</code> state. An instance is automatically unlinked from a VPC when it's stopped - you can link it
      * to the VPC again when you restart it.
@@ -1498,13 +1604,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <note>
      * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * This action is deprecated.
      * </p>
      * </note>
      * <p>
-     * Links an EC2-Classic instance to a ClassicLink-enabled VPC through one or more of the VPC's security groups. You
+     * Links an EC2-Classic instance to a ClassicLink-enabled VPC through one or more of the VPC security groups. You
      * cannot link an EC2-Classic instance to more than one VPC at a time. You can only link an instance that's in the
      * <code>running</code> state. An instance is automatically unlinked from a VPC when it's stopped - you can link it
      * to the VPC again when you restart it.
@@ -1533,8 +1637,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Attaches an internet gateway or a virtual private gateway to a VPC, enabling connectivity between the internet
-     * and the VPC. For more information about your VPC and internet gateway, see the <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon Virtual Private Cloud User Guide</a>.
+     * and the VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html">Internet gateways</a> in the
+     * <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @param attachInternetGatewayRequest
@@ -1548,8 +1653,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Attaches an internet gateway or a virtual private gateway to a VPC, enabling connectivity between the internet
-     * and the VPC. For more information about your VPC and internet gateway, see the <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon Virtual Private Cloud User Guide</a>.
+     * and the VPC. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html">Internet gateways</a> in the
+     * <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @param attachInternetGatewayRequest
@@ -1600,18 +1706,55 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Attaches the specified Amazon Web Services Verified Access trust provider to the specified Amazon Web Services
+     * Verified Access instance.
+     * </p>
+     * 
+     * @param attachVerifiedAccessTrustProviderRequest
+     * @return A Java Future containing the result of the AttachVerifiedAccessTrustProvider operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.AttachVerifiedAccessTrustProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVerifiedAccessTrustProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AttachVerifiedAccessTrustProviderResult> attachVerifiedAccessTrustProviderAsync(
+            AttachVerifiedAccessTrustProviderRequest attachVerifiedAccessTrustProviderRequest);
+
+    /**
+     * <p>
+     * Attaches the specified Amazon Web Services Verified Access trust provider to the specified Amazon Web Services
+     * Verified Access instance.
+     * </p>
+     * 
+     * @param attachVerifiedAccessTrustProviderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AttachVerifiedAccessTrustProvider operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.AttachVerifiedAccessTrustProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVerifiedAccessTrustProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AttachVerifiedAccessTrustProviderResult> attachVerifiedAccessTrustProviderAsync(
+            AttachVerifiedAccessTrustProviderRequest attachVerifiedAccessTrustProviderRequest,
+            com.amazonaws.handlers.AsyncHandler<AttachVerifiedAccessTrustProviderRequest, AttachVerifiedAccessTrustProviderResult> asyncHandler);
+
+    /**
+     * <p>
      * Attaches an EBS volume to a running or stopped instance and exposes it to the instance with the specified device
      * name.
      * </p>
      * <p>
      * Encrypted EBS volumes must be attached to instances that support Amazon EBS encryption. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon EBS encryption</a> in the
+     * <i>Amazon EBS User Guide</i>.
      * </p>
      * <p>
      * After you attach an EBS volume, you must make it available. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html">Make an EBS volume available
-     * for use</a>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-using-volumes.html">Make an EBS volume available for
+     * use</a>.
      * </p>
      * <p>
      * If a volume has an Amazon Web Services Marketplace product code:
@@ -1641,8 +1784,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attach an Amazon EBS volume
-     * to an instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-attaching-volume.html">Attach an Amazon EBS volume to
+     * an instance</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param attachVolumeRequest
@@ -1660,13 +1803,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * Encrypted EBS volumes must be attached to instances that support Amazon EBS encryption. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon EBS encryption</a> in the
+     * <i>Amazon EBS User Guide</i>.
      * </p>
      * <p>
      * After you attach an EBS volume, you must make it available. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html">Make an EBS volume available
-     * for use</a>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-using-volumes.html">Make an EBS volume available for
+     * use</a>.
      * </p>
      * <p>
      * If a volume has an Amazon Web Services Marketplace product code:
@@ -1696,8 +1839,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attach an Amazon EBS volume
-     * to an instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-attaching-volume.html">Attach an Amazon EBS volume to
+     * an instance</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param attachVolumeRequest
@@ -1793,24 +1936,33 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * [VPC only] Adds the specified outbound (egress) rules to a security group for use with a VPC.
+     * Adds the specified outbound (egress) rules to a security group.
      * </p>
      * <p>
-     * An outbound rule permits instances to send traffic to the specified IPv4 or IPv6 CIDR address ranges, or to the
-     * instances that are associated with the specified source security groups. When specifying an outbound rule for
-     * your security group in a VPC, the <code>IpPermissions</code> must include a destination for the traffic.
+     * An outbound rule permits instances to send traffic to the specified IPv4 or IPv6 address ranges, the IP address
+     * ranges specified by a prefix list, or the instances that are associated with a source security group. For more
+     * information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-group-rules.html">Security
+     * group rules</a>.
      * </p>
      * <p>
-     * You specify a protocol for each rule (for example, TCP). For the TCP and UDP protocols, you must also specify the
-     * destination port or port range. For the ICMP protocol, you must also specify the ICMP type and code. You can use
-     * -1 for the type or code to mean all types or all codes.
+     * You must specify exactly one of the following destinations: an IPv4 or IPv6 address range, a prefix list, or a
+     * security group. You must specify a protocol for each rule (for example, TCP). If the protocol is TCP or UDP, you
+     * must also specify a port or port range. If the protocol is ICMP or ICMPv6, you must also specify the ICMP type
+     * and code.
      * </p>
      * <p>
-     * Rule changes are propagated to affected instances as quickly as possible. However, a small delay might occur.
+     * Rule changes are propagated to instances associated with the security group as quickly as possible. However, a
+     * small delay might occur.
      * </p>
      * <p>
-     * For information about VPC security group quotas, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC quotas</a>.
+     * For examples of rules that you can add to security groups for specific access scenarios, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html">Security group
+     * rules for different use cases</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * <p>
+     * For information about security group quotas, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC quotas</a> in the
+     * <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @param authorizeSecurityGroupEgressRequest
@@ -1825,24 +1977,33 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * [VPC only] Adds the specified outbound (egress) rules to a security group for use with a VPC.
+     * Adds the specified outbound (egress) rules to a security group.
      * </p>
      * <p>
-     * An outbound rule permits instances to send traffic to the specified IPv4 or IPv6 CIDR address ranges, or to the
-     * instances that are associated with the specified source security groups. When specifying an outbound rule for
-     * your security group in a VPC, the <code>IpPermissions</code> must include a destination for the traffic.
+     * An outbound rule permits instances to send traffic to the specified IPv4 or IPv6 address ranges, the IP address
+     * ranges specified by a prefix list, or the instances that are associated with a source security group. For more
+     * information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-group-rules.html">Security
+     * group rules</a>.
      * </p>
      * <p>
-     * You specify a protocol for each rule (for example, TCP). For the TCP and UDP protocols, you must also specify the
-     * destination port or port range. For the ICMP protocol, you must also specify the ICMP type and code. You can use
-     * -1 for the type or code to mean all types or all codes.
+     * You must specify exactly one of the following destinations: an IPv4 or IPv6 address range, a prefix list, or a
+     * security group. You must specify a protocol for each rule (for example, TCP). If the protocol is TCP or UDP, you
+     * must also specify a port or port range. If the protocol is ICMP or ICMPv6, you must also specify the ICMP type
+     * and code.
      * </p>
      * <p>
-     * Rule changes are propagated to affected instances as quickly as possible. However, a small delay might occur.
+     * Rule changes are propagated to instances associated with the security group as quickly as possible. However, a
+     * small delay might occur.
      * </p>
      * <p>
-     * For information about VPC security group quotas, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC quotas</a>.
+     * For examples of rules that you can add to security groups for specific access scenarios, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html">Security group
+     * rules for different use cases</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * <p>
+     * For information about security group quotas, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC quotas</a> in the
+     * <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @param authorizeSecurityGroupEgressRequest
@@ -1865,30 +2026,31 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Adds the specified inbound (ingress) rules to a security group.
      * </p>
      * <p>
-     * An inbound rule permits instances to receive traffic from the specified IPv4 or IPv6 CIDR address range, or from
-     * the instances that are associated with the specified destination security groups. When specifying an inbound rule
-     * for your security group in a VPC, the <code>IpPermissions</code> must include a source for the traffic.
+     * An inbound rule permits instances to receive traffic from the specified IPv4 or IPv6 address range, the IP
+     * address ranges that are specified by a prefix list, or the instances that are associated with a destination
+     * security group. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/security-group-rules.html">Security group rules</a>.
      * </p>
      * <p>
-     * You specify a protocol for each rule (for example, TCP). For TCP and UDP, you must also specify the destination
-     * port or port range. For ICMP/ICMPv6, you must also specify the ICMP/ICMPv6 type and code. You can use -1 to mean
-     * all types or all codes.
+     * You must specify exactly one of the following sources: an IPv4 or IPv6 address range, a prefix list, or a
+     * security group. You must specify a protocol for each rule (for example, TCP). If the protocol is TCP or UDP, you
+     * must also specify a port or port range. If the protocol is ICMP or ICMPv6, you must also specify the ICMP/ICMPv6
+     * type and code.
      * </p>
      * <p>
-     * Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay
-     * might occur.
+     * Rule changes are propagated to instances associated with the security group as quickly as possible. However, a
+     * small delay might occur.
      * </p>
      * <p>
-     * For more information about VPC security group quotas, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC quotas</a>.
+     * For examples of rules that you can add to security groups for specific access scenarios, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html">Security group
+     * rules for different use cases</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
-     * <note>
      * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * For more information about security group quotas, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC quotas</a> in the
+     * <i>Amazon VPC User Guide</i>.
      * </p>
-     * </note>
      * 
      * @param authorizeSecurityGroupIngressRequest
      * @return A Java Future containing the result of the AuthorizeSecurityGroupIngress operation returned by the
@@ -1905,30 +2067,31 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Adds the specified inbound (ingress) rules to a security group.
      * </p>
      * <p>
-     * An inbound rule permits instances to receive traffic from the specified IPv4 or IPv6 CIDR address range, or from
-     * the instances that are associated with the specified destination security groups. When specifying an inbound rule
-     * for your security group in a VPC, the <code>IpPermissions</code> must include a source for the traffic.
+     * An inbound rule permits instances to receive traffic from the specified IPv4 or IPv6 address range, the IP
+     * address ranges that are specified by a prefix list, or the instances that are associated with a destination
+     * security group. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/security-group-rules.html">Security group rules</a>.
      * </p>
      * <p>
-     * You specify a protocol for each rule (for example, TCP). For TCP and UDP, you must also specify the destination
-     * port or port range. For ICMP/ICMPv6, you must also specify the ICMP/ICMPv6 type and code. You can use -1 to mean
-     * all types or all codes.
+     * You must specify exactly one of the following sources: an IPv4 or IPv6 address range, a prefix list, or a
+     * security group. You must specify a protocol for each rule (for example, TCP). If the protocol is TCP or UDP, you
+     * must also specify a port or port range. If the protocol is ICMP or ICMPv6, you must also specify the ICMP/ICMPv6
+     * type and code.
      * </p>
      * <p>
-     * Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay
-     * might occur.
+     * Rule changes are propagated to instances associated with the security group as quickly as possible. However, a
+     * small delay might occur.
      * </p>
      * <p>
-     * For more information about VPC security group quotas, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC quotas</a>.
+     * For examples of rules that you can add to security groups for specific access scenarios, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html">Security group
+     * rules for different use cases</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
-     * <note>
      * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * For more information about security group quotas, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC quotas</a> in the
+     * <i>Amazon VPC User Guide</i>.
      * </p>
-     * </note>
      * 
      * @param authorizeSecurityGroupIngressRequest
      * @param asyncHandler
@@ -2231,6 +2394,43 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Removes your Amazon Web Services account from the launch permissions for the specified AMI. For more information,
+     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cancel-sharing-an-AMI.html"> Cancel having an
+     * AMI shared with your Amazon Web Services account</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param cancelImageLaunchPermissionRequest
+     * @return A Java Future containing the result of the CancelImageLaunchPermission operation returned by the service.
+     * @sample AmazonEC2Async.CancelImageLaunchPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelImageLaunchPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelImageLaunchPermissionResult> cancelImageLaunchPermissionAsync(
+            CancelImageLaunchPermissionRequest cancelImageLaunchPermissionRequest);
+
+    /**
+     * <p>
+     * Removes your Amazon Web Services account from the launch permissions for the specified AMI. For more information,
+     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cancel-sharing-an-AMI.html"> Cancel having an
+     * AMI shared with your Amazon Web Services account</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param cancelImageLaunchPermissionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelImageLaunchPermission operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.CancelImageLaunchPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelImageLaunchPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelImageLaunchPermissionResult> cancelImageLaunchPermissionAsync(
+            CancelImageLaunchPermissionRequest cancelImageLaunchPermissionRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelImageLaunchPermissionRequest, CancelImageLaunchPermissionResult> asyncHandler);
+
+    /**
+     * <p>
      * Cancels an in-process import virtual machine or import snapshot task.
      * </p>
      * 
@@ -2327,12 +2527,24 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Cancels the specified Spot Fleet requests.
      * </p>
      * <p>
-     * After you cancel a Spot Fleet request, the Spot Fleet launches no new Spot Instances. You must specify whether
-     * the Spot Fleet should also terminate its Spot Instances. If you terminate the instances, the Spot Fleet request
-     * enters the <code>cancelled_terminating</code> state. Otherwise, the Spot Fleet request enters the
-     * <code>cancelled_running</code> state and the instances continue to run until they are interrupted or you
-     * terminate them manually.
+     * After you cancel a Spot Fleet request, the Spot Fleet launches no new instances.
      * </p>
+     * <p>
+     * You must also specify whether a canceled Spot Fleet request should terminate its instances. If you choose to
+     * terminate the instances, the Spot Fleet request enters the <code>cancelled_terminating</code> state. Otherwise,
+     * the Spot Fleet request enters the <code>cancelled_running</code> state and the instances continue to run until
+     * they are interrupted or you terminate them manually.
+     * </p>
+     * <p class="title">
+     * <b>Restrictions</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can delete up to 100 fleets in a single request. If you exceed the specified number, no fleets are deleted.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param cancelSpotFleetRequestsRequest
      *        Contains the parameters for CancelSpotFleetRequests.
@@ -2348,12 +2560,24 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Cancels the specified Spot Fleet requests.
      * </p>
      * <p>
-     * After you cancel a Spot Fleet request, the Spot Fleet launches no new Spot Instances. You must specify whether
-     * the Spot Fleet should also terminate its Spot Instances. If you terminate the instances, the Spot Fleet request
-     * enters the <code>cancelled_terminating</code> state. Otherwise, the Spot Fleet request enters the
-     * <code>cancelled_running</code> state and the instances continue to run until they are interrupted or you
-     * terminate them manually.
+     * After you cancel a Spot Fleet request, the Spot Fleet launches no new instances.
      * </p>
+     * <p>
+     * You must also specify whether a canceled Spot Fleet request should terminate its instances. If you choose to
+     * terminate the instances, the Spot Fleet request enters the <code>cancelled_terminating</code> state. Otherwise,
+     * the Spot Fleet request enters the <code>cancelled_running</code> state and the instances continue to run until
+     * they are interrupted or you terminate them manually.
+     * </p>
+     * <p class="title">
+     * <b>Restrictions</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You can delete up to 100 fleets in a single request. If you exceed the specified number, no fleets are deleted.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param cancelSpotFleetRequestsRequest
      *        Contains the parameters for CancelSpotFleetRequests.
@@ -2499,13 +2723,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * and specify the ARN of the destination Outpost using <b>DestinationOutpostArn</b>. Backing snapshots copied to an
      * Outpost are encrypted by default using the default encryption key for the Region, or a different key that you
      * specify in the request using <b>KmsKeyId</b>. Outposts do not support unencrypted snapshots. For more
-     * information, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon
-     * EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * information, <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami"> Amazon EBS
+     * local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * <p>
      * For more information about the prerequisites and limits when copying an AMI, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying an AMI</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copy an AMI</a> in the <i>Amazon EC2
+     * User Guide</i>.
      * </p>
      * 
      * @param copyImageRequest
@@ -2536,13 +2760,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * and specify the ARN of the destination Outpost using <b>DestinationOutpostArn</b>. Backing snapshots copied to an
      * Outpost are encrypted by default using the default encryption key for the Region, or a different key that you
      * specify in the request using <b>KmsKeyId</b>. Outposts do not support unencrypted snapshots. For more
-     * information, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon
-     * EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * information, <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami"> Amazon EBS
+     * local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * <p>
      * For more information about the prerequisites and limits when copying an AMI, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying an AMI</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copy an AMI</a> in the <i>Amazon EC2
+     * User Guide</i>.
      * </p>
      * 
      * @param copyImageRequest
@@ -2579,17 +2803,16 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Snapshots copied to an Outpost are encrypted by default using the default encryption key for the Region, or a
      * different key that you specify in the request using <b>KmsKeyId</b>. Outposts do not support unencrypted
      * snapshots. For more information, <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon EBS local
-     * snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami"> Amazon EBS local snapshots
+     * on Outposts</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * <p>
      * Snapshots created by copying another snapshot have an arbitrary volume ID that should not be used for any
      * purpose.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copy an Amazon EBS snapshot</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-copy-snapshot.html">Copy
+     * an Amazon EBS snapshot</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param copySnapshotRequest
@@ -2620,17 +2843,16 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Snapshots copied to an Outpost are encrypted by default using the default encryption key for the Region, or a
      * different key that you specify in the request using <b>KmsKeyId</b>. Outposts do not support unencrypted
      * snapshots. For more information, <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon EBS local
-     * snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami"> Amazon EBS local snapshots
+     * on Outposts</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * <p>
      * Snapshots created by copying another snapshot have an arbitrary volume ID that should not be used for any
      * purpose.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copy an Amazon EBS snapshot</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-copy-snapshot.html">Copy
+     * an Amazon EBS snapshot</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param copySnapshotRequest
@@ -2994,8 +3216,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Creates a default subnet with a size <code>/20</code> IPv4 CIDR block in the specified Availability Zone in your
      * default VPC. You can have only one default subnet per Availability Zone. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Creating a default
-     * subnet</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Create a default
+     * subnet</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @param createDefaultSubnetRequest
@@ -3010,8 +3232,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Creates a default subnet with a size <code>/20</code> IPv4 CIDR block in the specified Availability Zone in your
      * default VPC. You can have only one default subnet per Availability Zone. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Creating a default
-     * subnet</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Create a default
+     * subnet</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @param createDefaultSubnetRequest
@@ -3031,27 +3253,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Creates a default VPC with a size <code>/16</code> IPv4 CIDR block and a default subnet in each Availability
      * Zone. For more information about the components of a default VPC, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html">Default VPC and default subnets</a> in
-     * the <i>Amazon Virtual Private Cloud User Guide</i>. You cannot specify the components of the default VPC
-     * yourself.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html">Default VPCs</a> in the <i>Amazon VPC
+     * User Guide</i>. You cannot specify the components of the default VPC yourself.
      * </p>
      * <p>
      * If you deleted your previous default VPC, you can create a default VPC. You cannot have more than one default VPC
      * per Region.
      * </p>
-     * <p>
-     * If your account supports EC2-Classic, you cannot use this action to create a default VPC in a Region that
-     * supports EC2-Classic. If you want a default VPC in a Region that supports EC2-Classic, see
-     * "I really want a default VPC for my existing EC2 account. Is that possible?" in the <a
-     * href="http://aws.amazon.com/vpc/faqs/#Default_VPCs">Default VPCs FAQ</a>.
-     * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param createDefaultVpcRequest
      * @return A Java Future containing the result of the CreateDefaultVpc operation returned by the service.
@@ -3065,27 +3273,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Creates a default VPC with a size <code>/16</code> IPv4 CIDR block and a default subnet in each Availability
      * Zone. For more information about the components of a default VPC, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html">Default VPC and default subnets</a> in
-     * the <i>Amazon Virtual Private Cloud User Guide</i>. You cannot specify the components of the default VPC
-     * yourself.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html">Default VPCs</a> in the <i>Amazon VPC
+     * User Guide</i>. You cannot specify the components of the default VPC yourself.
      * </p>
      * <p>
      * If you deleted your previous default VPC, you can create a default VPC. You cannot have more than one default VPC
      * per Region.
      * </p>
-     * <p>
-     * If your account supports EC2-Classic, you cannot use this action to create a default VPC in a Region that
-     * supports EC2-Classic. If you want a default VPC in a Region that supports EC2-Classic, see
-     * "I really want a default VPC for my existing EC2 account. Is that possible?" in the <a
-     * href="http://aws.amazon.com/vpc/faqs/#Default_VPCs">Default VPCs FAQ</a>.
-     * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param createDefaultVpcRequest
      * @param asyncHandler
@@ -3102,35 +3296,42 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a set of DHCP options for your VPC. After creating the set, you must associate it with the VPC, causing
-     * all existing and new instances that you launch in the VPC to use this set of DHCP options. The following are the
-     * individual DHCP options you can specify. For more information about the options, see <a
-     * href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.
+     * Creates a custom set of DHCP options. After you create a DHCP option set, you associate it with a VPC. After you
+     * associate a DHCP option set with a VPC, all existing and newly launched instances in the VPC use this set of DHCP
+     * options.
+     * </p>
+     * <p>
+     * The following are the individual DHCP options you can specify. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP options sets</a> in the
+     * <i>Amazon VPC User Guide</i>.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>domain-name-servers</code> - The IP addresses of up to four domain name servers, or AmazonProvidedDNS. The
-     * default DHCP option set specifies AmazonProvidedDNS. If specifying more than one domain name server, specify the
-     * IP addresses in a single parameter, separated by commas. To have your instance receive a custom DNS hostname as
-     * specified in <code>domain-name</code>, you must set <code>domain-name-servers</code> to a custom DNS server.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>domain-name</code> - If you're using AmazonProvidedDNS in <code>us-east-1</code>, specify
-     * <code>ec2.internal</code>. If you're using AmazonProvidedDNS in another Region, specify
-     * <code>region.compute.internal</code> (for example, <code>ap-northeast-1.compute.internal</code>). Otherwise,
-     * specify a domain name (for example, <code>ExampleCompany.com</code>). This value is used to complete unqualified
-     * DNS hostnames. <b>Important</b>: Some Linux operating systems accept multiple domain names separated by spaces.
-     * However, Windows and other Linux operating systems treat the value as a single domain, which results in
-     * unexpected behavior. If your DHCP options set is associated with a VPC that has instances with multiple operating
-     * systems, specify only one domain name.
+     * <code>ec2.internal</code>. If you're using AmazonProvidedDNS in any other Region, specify
+     * <code>region.compute.internal</code>. Otherwise, specify a custom domain name. This value is used to complete
+     * unqualified DNS hostnames.
+     * </p>
+     * <p>
+     * Some Linux operating systems accept multiple domain names separated by spaces. However, Windows and other Linux
+     * operating systems treat the value as a single domain, which results in unexpected behavior. If your DHCP option
+     * set is associated with a VPC that has instances running operating systems that treat the value as a single
+     * domain, specify only one domain name.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ntp-servers</code> - The IP addresses of up to four Network Time Protocol (NTP) servers.
+     * <code>domain-name-servers</code> - The IP addresses of up to four DNS servers, or AmazonProvidedDNS. To specify
+     * multiple domain name servers in a single parameter, separate the IP addresses using commas. To have your
+     * instances receive custom DNS hostnames as specified in <code>domain-name</code>, you must specify a custom DNS
+     * server.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ntp-servers</code> - The IP addresses of up to eight Network Time Protocol (NTP) servers (four IPv4
+     * addresses and four IPv6 addresses).
      * </p>
      * </li>
      * <li>
@@ -3140,20 +3341,21 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </li>
      * <li>
      * <p>
-     * <code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4, or 8). We recommend that you specify 2
-     * (broadcast and multicast are not currently supported). For more information about these node types, see <a
+     * <code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4, or 8). We recommend that you specify 2.
+     * Broadcast and multicast are not supported. For more information about NetBIOS node types, see <a
      * href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.
      * </p>
      * </li>
-     * </ul>
+     * <li>
      * <p>
-     * Your VPC automatically starts out with a set of DHCP options that includes only a DNS server that we provide
-     * (AmazonProvidedDNS). If you create a set of options, and if your VPC has an internet gateway, make sure to set
-     * the <code>domain-name-servers</code> option either to <code>AmazonProvidedDNS</code> or to a domain name server
-     * of your choice. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP options sets</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * <code>ipv6-address-preferred-lease-time</code> - A value (in seconds, minutes, hours, or years) for how
+     * frequently a running instance with an IPv6 assigned to it goes through DHCPv6 lease renewal. Acceptable values
+     * are between 140 and 2147483647 seconds (approximately 68 years). If no value is entered, the default lease time
+     * is 140 seconds. If you use long-term addressing for EC2 instances, you can increase the lease time and avoid
+     * frequent lease renewal requests. Lease renewal typically occurs when half of the lease time has elapsed.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param createDhcpOptionsRequest
      * @return A Java Future containing the result of the CreateDhcpOptions operation returned by the service.
@@ -3165,35 +3367,42 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a set of DHCP options for your VPC. After creating the set, you must associate it with the VPC, causing
-     * all existing and new instances that you launch in the VPC to use this set of DHCP options. The following are the
-     * individual DHCP options you can specify. For more information about the options, see <a
-     * href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.
+     * Creates a custom set of DHCP options. After you create a DHCP option set, you associate it with a VPC. After you
+     * associate a DHCP option set with a VPC, all existing and newly launched instances in the VPC use this set of DHCP
+     * options.
+     * </p>
+     * <p>
+     * The following are the individual DHCP options you can specify. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP options sets</a> in the
+     * <i>Amazon VPC User Guide</i>.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>domain-name-servers</code> - The IP addresses of up to four domain name servers, or AmazonProvidedDNS. The
-     * default DHCP option set specifies AmazonProvidedDNS. If specifying more than one domain name server, specify the
-     * IP addresses in a single parameter, separated by commas. To have your instance receive a custom DNS hostname as
-     * specified in <code>domain-name</code>, you must set <code>domain-name-servers</code> to a custom DNS server.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>domain-name</code> - If you're using AmazonProvidedDNS in <code>us-east-1</code>, specify
-     * <code>ec2.internal</code>. If you're using AmazonProvidedDNS in another Region, specify
-     * <code>region.compute.internal</code> (for example, <code>ap-northeast-1.compute.internal</code>). Otherwise,
-     * specify a domain name (for example, <code>ExampleCompany.com</code>). This value is used to complete unqualified
-     * DNS hostnames. <b>Important</b>: Some Linux operating systems accept multiple domain names separated by spaces.
-     * However, Windows and other Linux operating systems treat the value as a single domain, which results in
-     * unexpected behavior. If your DHCP options set is associated with a VPC that has instances with multiple operating
-     * systems, specify only one domain name.
+     * <code>ec2.internal</code>. If you're using AmazonProvidedDNS in any other Region, specify
+     * <code>region.compute.internal</code>. Otherwise, specify a custom domain name. This value is used to complete
+     * unqualified DNS hostnames.
+     * </p>
+     * <p>
+     * Some Linux operating systems accept multiple domain names separated by spaces. However, Windows and other Linux
+     * operating systems treat the value as a single domain, which results in unexpected behavior. If your DHCP option
+     * set is associated with a VPC that has instances running operating systems that treat the value as a single
+     * domain, specify only one domain name.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ntp-servers</code> - The IP addresses of up to four Network Time Protocol (NTP) servers.
+     * <code>domain-name-servers</code> - The IP addresses of up to four DNS servers, or AmazonProvidedDNS. To specify
+     * multiple domain name servers in a single parameter, separate the IP addresses using commas. To have your
+     * instances receive custom DNS hostnames as specified in <code>domain-name</code>, you must specify a custom DNS
+     * server.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ntp-servers</code> - The IP addresses of up to eight Network Time Protocol (NTP) servers (four IPv4
+     * addresses and four IPv6 addresses).
      * </p>
      * </li>
      * <li>
@@ -3203,20 +3412,21 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </li>
      * <li>
      * <p>
-     * <code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4, or 8). We recommend that you specify 2
-     * (broadcast and multicast are not currently supported). For more information about these node types, see <a
+     * <code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4, or 8). We recommend that you specify 2.
+     * Broadcast and multicast are not supported. For more information about NetBIOS node types, see <a
      * href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.
      * </p>
      * </li>
-     * </ul>
+     * <li>
      * <p>
-     * Your VPC automatically starts out with a set of DHCP options that includes only a DNS server that we provide
-     * (AmazonProvidedDNS). If you create a set of options, and if your VPC has an internet gateway, make sure to set
-     * the <code>domain-name-servers</code> option either to <code>AmazonProvidedDNS</code> or to a domain name server
-     * of your choice. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP options sets</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * <code>ipv6-address-preferred-lease-time</code> - A value (in seconds, minutes, hours, or years) for how
+     * frequently a running instance with an IPv6 assigned to it goes through DHCPv6 lease renewal. Acceptable values
+     * are between 140 and 2147483647 seconds (approximately 68 years). If no value is entered, the default lease time
+     * is 140 seconds. If you use long-term addressing for EC2 instances, you can increase the lease time and avoid
+     * frequent lease renewal requests. Lease renewal typically occurs when half of the lease time has elapsed.
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param createDhcpOptionsRequest
      * @param asyncHandler
@@ -3272,11 +3482,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Launches an EC2 Fleet.
+     * Creates an EC2 Fleet that contains the configuration information for On-Demand Instances and Spot Instances.
+     * Instances are launched immediately if there is available capacity.
      * </p>
      * <p>
-     * You can create a single EC2 Fleet that includes multiple launch specifications that vary by instance type, AMI,
-     * Availability Zone, or subnet.
+     * A single EC2 Fleet can include multiple launch specifications that vary by instance type, AMI, Availability Zone,
+     * or subnet.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html">EC2
@@ -3293,11 +3504,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Launches an EC2 Fleet.
+     * Creates an EC2 Fleet that contains the configuration information for On-Demand Instances and Spot Instances.
+     * Instances are launched immediately if there is available capacity.
      * </p>
      * <p>
-     * You can create a single EC2 Fleet that includes multiple launch specifications that vary by instance type, AMI,
-     * Availability Zone, or subnet.
+     * A single EC2 Fleet can include multiple launch specifications that vary by instance type, AMI, Availability Zone,
+     * or subnet.
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html">EC2
@@ -3432,27 +3644,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Creates an Amazon EBS-backed AMI from an Amazon EBS-backed instance that is either running or stopped.
      * </p>
      * <p>
-     * By default, when Amazon EC2 creates the new AMI, it reboots the instance so that it can take snapshots of the
-     * attached volumes while data is at rest, in order to ensure a consistent state. You can set the
-     * <code>NoReboot</code> parameter to <code>true</code> in the API request, or use the <code>--no-reboot</code>
-     * option in the CLI to prevent Amazon EC2 from shutting down and rebooting the instance.
-     * </p>
-     * <important>
-     * <p>
-     * If you choose to bypass the shutdown and reboot process by setting the <code>NoReboot</code> parameter to
-     * <code>true</code> in the API request, or by using the <code>--no-reboot</code> option in the CLI, we can't
-     * guarantee the file system integrity of the created image.
-     * </p>
-     * </important>
-     * <p>
      * If you customized your instance with instance store volumes or Amazon EBS volumes in addition to the root device
      * volume, the new AMI contains block device mapping information for those volumes. When you launch an instance from
      * this new AMI, the instance automatically launches with those additional volumes.
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating Amazon EBS-Backed
-     * Linux AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Create an Amazon EBS-backed
+     * Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param createImageRequest
@@ -3468,27 +3667,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Creates an Amazon EBS-backed AMI from an Amazon EBS-backed instance that is either running or stopped.
      * </p>
      * <p>
-     * By default, when Amazon EC2 creates the new AMI, it reboots the instance so that it can take snapshots of the
-     * attached volumes while data is at rest, in order to ensure a consistent state. You can set the
-     * <code>NoReboot</code> parameter to <code>true</code> in the API request, or use the <code>--no-reboot</code>
-     * option in the CLI to prevent Amazon EC2 from shutting down and rebooting the instance.
-     * </p>
-     * <important>
-     * <p>
-     * If you choose to bypass the shutdown and reboot process by setting the <code>NoReboot</code> parameter to
-     * <code>true</code> in the API request, or by using the <code>--no-reboot</code> option in the CLI, we can't
-     * guarantee the file system integrity of the created image.
-     * </p>
-     * </important>
-     * <p>
      * If you customized your instance with instance store volumes or Amazon EBS volumes in addition to the root device
      * volume, the new AMI contains block device mapping information for those volumes. When you launch an instance from
      * this new AMI, the instance automatically launches with those additional volumes.
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating Amazon EBS-Backed
-     * Linux AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Create an Amazon EBS-backed
+     * Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param createImageRequest
@@ -3503,6 +3689,55 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<CreateImageResult> createImageAsync(CreateImageRequest createImageRequest,
             com.amazonaws.handlers.AsyncHandler<CreateImageRequest, CreateImageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an EC2 Instance Connect Endpoint.
+     * </p>
+     * <p>
+     * An EC2 Instance Connect Endpoint allows you to connect to an instance, without requiring the instance to have a
+     * public IPv4 address. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect-Endpoint.html"
+     * >Connect to your instances without requiring a public IPv4 address using EC2 Instance Connect Endpoint</a> in the
+     * <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param createInstanceConnectEndpointRequest
+     * @return A Java Future containing the result of the CreateInstanceConnectEndpoint operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.CreateInstanceConnectEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceConnectEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateInstanceConnectEndpointResult> createInstanceConnectEndpointAsync(
+            CreateInstanceConnectEndpointRequest createInstanceConnectEndpointRequest);
+
+    /**
+     * <p>
+     * Creates an EC2 Instance Connect Endpoint.
+     * </p>
+     * <p>
+     * An EC2 Instance Connect Endpoint allows you to connect to an instance, without requiring the instance to have a
+     * public IPv4 address. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect-Endpoint.html"
+     * >Connect to your instances without requiring a public IPv4 address using EC2 Instance Connect Endpoint</a> in the
+     * <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param createInstanceConnectEndpointRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateInstanceConnectEndpoint operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.CreateInstanceConnectEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceConnectEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateInstanceConnectEndpointResult> createInstanceConnectEndpointAsync(
+            CreateInstanceConnectEndpointRequest createInstanceConnectEndpointRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateInstanceConnectEndpointRequest, CreateInstanceConnectEndpointResult> asyncHandler);
 
     /**
      * <p>
@@ -3614,8 +3849,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Exports a running or stopped instance to an Amazon S3 bucket.
      * </p>
      * <p>
-     * For information about the supported operating systems, image formats, and known limitations for the types of
-     * instances you can export, see <a
+     * For information about the prerequisites for your Amazon S3 bucket, supported operating systems, image formats,
+     * and known limitations for the types of instances you can export, see <a
      * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html">Exporting an instance as a VM Using
      * VM Import/Export</a> in the <i>VM Import/Export User Guide</i>.
      * </p>
@@ -3633,8 +3868,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Exports a running or stopped instance to an Amazon S3 bucket.
      * </p>
      * <p>
-     * For information about the supported operating systems, image formats, and known limitations for the types of
-     * instances you can export, see <a
+     * For information about the prerequisites for your Amazon S3 bucket, supported operating systems, image formats,
+     * and known limitations for the types of instances you can export, see <a
      * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html">Exporting an instance as a VM Using
      * VM Import/Export</a> in the <i>VM Import/Export User Guide</i>.
      * </p>
@@ -3658,8 +3893,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <a>AttachInternetGateway</a>.
      * </p>
      * <p>
-     * For more information about your VPC and internet gateway, see the <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon Virtual Private Cloud User Guide</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html">Internet gateways</a> in the
+     * <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @param createInternetGatewayRequest
@@ -3676,8 +3912,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <a>AttachInternetGateway</a>.
      * </p>
      * <p>
-     * For more information about your VPC and internet gateway, see the <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon Virtual Private Cloud User Guide</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html">Internet gateways</a> in the
+     * <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @param createInternetGatewayRequest
@@ -3798,6 +4035,41 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Creates an IPAM resource discovery. A resource discovery is an IPAM component that enables IPAM to manage and
+     * monitor resources that belong to the owning account.
+     * </p>
+     * 
+     * @param createIpamResourceDiscoveryRequest
+     * @return A Java Future containing the result of the CreateIpamResourceDiscovery operation returned by the service.
+     * @sample AmazonEC2Async.CreateIpamResourceDiscovery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamResourceDiscovery"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateIpamResourceDiscoveryResult> createIpamResourceDiscoveryAsync(
+            CreateIpamResourceDiscoveryRequest createIpamResourceDiscoveryRequest);
+
+    /**
+     * <p>
+     * Creates an IPAM resource discovery. A resource discovery is an IPAM component that enables IPAM to manage and
+     * monitor resources that belong to the owning account.
+     * </p>
+     * 
+     * @param createIpamResourceDiscoveryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateIpamResourceDiscovery operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.CreateIpamResourceDiscovery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamResourceDiscovery"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateIpamResourceDiscoveryResult> createIpamResourceDiscoveryAsync(
+            CreateIpamResourceDiscoveryRequest createIpamResourceDiscoveryRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateIpamResourceDiscoveryRequest, CreateIpamResourceDiscoveryResult> asyncHandler);
+
+    /**
+     * <p>
      * Create an IPAM scope. In IPAM, a scope is the highest-level container within IPAM. An IPAM contains two default
      * scopes. Each scope represents the IP space for a single network. The private scope is intended for all private IP
      * address space. The public scope is intended for all public IP address space. Scopes enable you to reuse IP
@@ -3914,8 +4186,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * launch template</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * If you want to clone an existing launch template as the basis for creating a new launch template, you can use the
-     * Amazon EC2 console. The API, SDKs, and CLI do not support cloning a template. For more information, see <a href=
+     * To clone an existing launch template as the basis for a new launch template, use the Amazon EC2 console. The API,
+     * SDKs, and CLI do not support cloning a template. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template-from-existing-launch-template"
      * >Create a launch template from an existing launch template</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.
@@ -3941,8 +4213,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * launch template</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * If you want to clone an existing launch template as the basis for creating a new launch template, you can use the
-     * Amazon EC2 console. The API, SDKs, and CLI do not support cloning a template. For more information, see <a href=
+     * To clone an existing launch template as the basis for a new launch template, use the Amazon EC2 console. The API,
+     * SDKs, and CLI do not support cloning a template. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template-from-existing-launch-template"
      * >Create a launch template from an existing launch template</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.
@@ -3963,16 +4235,17 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a new version of a launch template. You can specify an existing version of launch template from which to
-     * base the new version.
+     * Creates a new version of a launch template. You must specify an existing launch template, either by name or ID.
+     * You can determine whether the new version inherits parameters from a source version, and add or overwrite
+     * parameters as needed.
      * </p>
      * <p>
-     * Launch template versions are numbered in the order in which they are created. You cannot specify, change, or
+     * Launch template versions are numbered in the order in which they are created. You can't specify, change, or
      * replace the numbering of launch template versions.
      * </p>
      * <p>
      * Launch templates are immutable; after you create a launch template, you can't modify it. Instead, you can create
-     * a new version of the launch template that includes any changes you require.
+     * a new version of the launch template that includes the changes that you require.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -3992,16 +4265,17 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a new version of a launch template. You can specify an existing version of launch template from which to
-     * base the new version.
+     * Creates a new version of a launch template. You must specify an existing launch template, either by name or ID.
+     * You can determine whether the new version inherits parameters from a source version, and add or overwrite
+     * parameters as needed.
      * </p>
      * <p>
-     * Launch template versions are numbered in the order in which they are created. You cannot specify, change, or
+     * Launch template versions are numbered in the order in which they are created. You can't specify, change, or
      * replace the numbering of launch template versions.
      * </p>
      * <p>
      * Launch templates are immutable; after you create a launch template, you can't modify it. Instead, you can create
-     * a new version of the launch template that includes any changes you require.
+     * a new version of the launch template that includes the changes that you require.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -4238,8 +4512,19 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT
-     * gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * gateways</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
+     * <important>
+     * <p>
+     * When you create a public NAT gateway and assign it an EIP or secondary EIPs, the network border group of the EIPs
+     * must match the network border group of the Availability Zone (AZ) that the public NAT gateway is in. If it's not
+     * the same, the NAT gateway will fail to launch. You can see the network border group for the subnet's AZ by
+     * viewing the details of the subnet. Similarly, you can view the network border group of an EIP by viewing the
+     * details of the EIP address. For more information about network border groups and EIPs, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#allocate-eip">Allocate an Elastic IP
+     * address</a> in the <i>Amazon VPC User Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param createNatGatewayRequest
      * @return A Java Future containing the result of the CreateNatGateway operation returned by the service.
@@ -4266,8 +4551,19 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT
-     * gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * gateways</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
+     * <important>
+     * <p>
+     * When you create a public NAT gateway and assign it an EIP or secondary EIPs, the network border group of the EIPs
+     * must match the network border group of the Availability Zone (AZ) that the public NAT gateway is in. If it's not
+     * the same, the NAT gateway will fail to launch. You can see the network border group for the subnet's AZ by
+     * viewing the details of the subnet. Similarly, you can view the network border group of an EIP by viewing the
+     * details of the EIP address. For more information about network border groups and EIPs, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#allocate-eip">Allocate an Elastic IP
+     * address</a> in the <i>Amazon VPC User Guide</i>.
+     * </p>
+     * </important>
      * 
      * @param createNatGatewayRequest
      * @param asyncHandler
@@ -4288,8 +4584,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * groups) for the instances in your VPC.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network
-     * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html">Network ACLs</a> in the <i>Amazon
+     * VPC User Guide</i>.
      * </p>
      * 
      * @param createNetworkAclRequest
@@ -4306,8 +4603,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * groups) for the instances in your VPC.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network
-     * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html">Network ACLs</a> in the <i>Amazon
+     * VPC User Guide</i>.
      * </p>
      * 
      * @param createNetworkAclRequest
@@ -4341,8 +4639,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information about network ACLs, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon Virtual
-     * Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html">Network ACLs</a> in the <i>Amazon
+     * VPC User Guide</i>.
      * </p>
      * 
      * @param createNetworkAclEntryRequest
@@ -4371,8 +4669,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information about network ACLs, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon Virtual
-     * Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html">Network ACLs</a> in the <i>Amazon
+     * VPC User Guide</i>.
      * </p>
      * 
      * @param createNetworkAclEntryRequest
@@ -4441,8 +4739,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * Reachability Analyzer enables you to analyze and debug network reachability between two resources in your virtual
-     * private cloud (VPC). For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/reachability/">What is Reachability Analyzer</a>.
+     * private cloud (VPC). For more information, see the <a
+     * href="https://docs.aws.amazon.com/vpc/latest/reachability/">Reachability Analyzer Guide</a>.
      * </p>
      * 
      * @param createNetworkInsightsPathRequest
@@ -4460,8 +4758,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * Reachability Analyzer enables you to analyze and debug network reachability between two resources in your virtual
-     * private cloud (VPC). For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/reachability/">What is Reachability Analyzer</a>.
+     * private cloud (VPC). For more information, see the <a
+     * href="https://docs.aws.amazon.com/vpc/latest/reachability/">Reachability Analyzer Guide</a>.
      * </p>
      * 
      * @param createNetworkInsightsPathRequest
@@ -4675,9 +4973,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * or that is restored from an AMI that has the same key characteristics as that of the instance.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace a root
-     * volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replace-root.html">Replace
+     * a root volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param createReplaceRootVolumeTaskRequest
@@ -4696,9 +4993,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * or that is restored from an AMI that has the same key characteristics as that of the instance.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace a root
-     * volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replace-root.html">Replace
+     * a root volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param createReplaceRootVolumeTaskRequest
@@ -4811,12 +5107,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * To use this API, you must have the required permissions. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
-     * Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param createRestoreImageTaskRequest
@@ -4836,12 +5132,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * To use this API, you must have the required permissions. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
-     * Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param createRestoreImageTaskRequest
@@ -4889,7 +5185,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * For more information about route tables, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route tables</a> in the <i>Amazon
-     * Virtual Private Cloud User Guide</i>.
+     * VPC User Guide</i>.
      * </p>
      * 
      * @param createRouteRequest
@@ -4932,7 +5228,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * For more information about route tables, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route tables</a> in the <i>Amazon
-     * Virtual Private Cloud User Guide</i>.
+     * VPC User Guide</i>.
      * </p>
      * 
      * @param createRouteRequest
@@ -4955,7 +5251,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-     * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * tables</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @param createRouteTableRequest
@@ -4973,7 +5269,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-     * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * tables</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @param createRouteTableRequest
@@ -5001,15 +5297,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
-     * When you create a security group, you specify a friendly name of your choice. You can have a security group for
-     * use in EC2-Classic with the same name as a security group for use in a VPC. However, you can't have two security
-     * groups for use in EC2-Classic with the same name or two security groups for use in a VPC with the same name.
+     * When you create a security group, you specify a friendly name of your choice. You can't have two security groups
+     * for the same VPC with the same name.
      * </p>
      * <p>
-     * You have a default security group for use in EC2-Classic and a default security group for use in your VPC. If you
-     * don't specify a security group when you launch an instance, the instance is launched into the appropriate default
-     * security group. A default security group includes a default rule that grants instances unrestricted network
-     * access to each other.
+     * You have a default security group for use in your VPC. If you don't specify a security group when you launch an
+     * instance, the instance is launched into the appropriate default security group. A default security group includes
+     * a default rule that grants instances unrestricted network access to each other.
      * </p>
      * <p>
      * You can add or remove rules from your security groups using <a>AuthorizeSecurityGroupIngress</a>,
@@ -5019,13 +5313,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * For more information about VPC security group limits, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC Limits</a>.
      * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param createSecurityGroupRequest
      * @return A Java Future containing the result of the CreateSecurityGroup operation returned by the service.
@@ -5047,15 +5334,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * <p>
-     * When you create a security group, you specify a friendly name of your choice. You can have a security group for
-     * use in EC2-Classic with the same name as a security group for use in a VPC. However, you can't have two security
-     * groups for use in EC2-Classic with the same name or two security groups for use in a VPC with the same name.
+     * When you create a security group, you specify a friendly name of your choice. You can't have two security groups
+     * for the same VPC with the same name.
      * </p>
      * <p>
-     * You have a default security group for use in EC2-Classic and a default security group for use in your VPC. If you
-     * don't specify a security group when you launch an instance, the instance is launched into the appropriate default
-     * security group. A default security group includes a default rule that grants instances unrestricted network
-     * access to each other.
+     * You have a default security group for use in your VPC. If you don't specify a security group when you launch an
+     * instance, the instance is launched into the appropriate default security group. A default security group includes
+     * a default rule that grants instances unrestricted network access to each other.
      * </p>
      * <p>
      * You can add or remove rules from your security groups using <a>AuthorizeSecurityGroupIngress</a>,
@@ -5065,13 +5350,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * For more information about VPC security group limits, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC Limits</a>.
      * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param createSecurityGroupRequest
      * @param asyncHandler
@@ -5110,8 +5388,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * status is <code>pending</code>.
      * </p>
      * <p>
-     * To create a snapshot for Amazon EBS volumes that serve as root devices, you should stop the instance before
-     * taking the snapshot.
+     * When you create a snapshot for an EBS volume that serves as a root device, we recommend that you stop the
+     * instance before taking the snapshot.
      * </p>
      * <p>
      * Snapshots that are taken from encrypted volumes are automatically encrypted. Volumes that are created from
@@ -5124,10 +5402,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon
-     * Elastic Block Store</a> and <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html">Amazon
+     * Elastic Block Store</a> and <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+     * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param createSnapshotRequest
@@ -5162,8 +5439,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * status is <code>pending</code>.
      * </p>
      * <p>
-     * To create a snapshot for Amazon EBS volumes that serve as root devices, you should stop the instance before
-     * taking the snapshot.
+     * When you create a snapshot for an EBS volume that serves as a root device, we recommend that you stop the
+     * instance before taking the snapshot.
      * </p>
      * <p>
      * Snapshots that are taken from encrypted volumes are automatically encrypted. Volumes that are created from
@@ -5176,10 +5453,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon
-     * Elastic Block Store</a> and <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html">Amazon
+     * Elastic Block Store</a> and <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+     * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param createSnapshotRequest
@@ -5300,12 +5576,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * To use this API, you must have the required permissions. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
-     * Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param createStoreImageTaskRequest
@@ -5323,12 +5599,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * To use this API, you must have the required permissions. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
-     * Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param createStoreImageTaskRequest
@@ -5346,23 +5622,23 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a subnet in a specified VPC.
+     * Creates a subnet in the specified VPC. For an IPv4 only subnet, specify an IPv4 CIDR block. If the VPC has an
+     * IPv6 CIDR block, you can create an IPv6 only subnet or a dual stack subnet instead. For an IPv6 only subnet,
+     * specify an IPv6 CIDR block. For a dual stack subnet, specify both an IPv4 CIDR block and an IPv6 CIDR block.
      * </p>
      * <p>
-     * You must specify an IPv4 CIDR block for the subnet. After you create a subnet, you can't change its CIDR block.
-     * The allowed block size is between a /16 netmask (65,536 IP addresses) and /28 netmask (16 IP addresses). The CIDR
-     * block must not overlap with the CIDR block of an existing subnet in the VPC.
+     * A subnet CIDR block must not overlap the CIDR block of an existing subnet in the VPC. After you create a subnet,
+     * you can't change its CIDR block.
      * </p>
      * <p>
-     * If you've associated an IPv6 CIDR block with your VPC, you can create a subnet with an IPv6 CIDR block that uses
-     * a /64 prefix length.
+     * The allowed size for an IPv4 subnet is between a /28 netmask (16 IP addresses) and a /16 netmask (65,536 IP
+     * addresses). Amazon Web Services reserves both the first four and the last IPv4 address in each subnet's CIDR
+     * block. They're not available for your use.
      * </p>
-     * <important>
      * <p>
-     * Amazon Web Services reserves both the first four and the last IPv4 address in each subnet's CIDR block. They're
-     * not available for use.
+     * If you've associated an IPv6 CIDR block with your VPC, you can associate an IPv6 CIDR block with a subnet when
+     * you create it.
      * </p>
-     * </important>
      * <p>
      * If you add more than one subnet to a VPC, they're set up in a star topology with a logical router in the middle.
      * </p>
@@ -5371,9 +5647,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * subnet with no running instances (they're all stopped), but no remaining IP addresses available.
      * </p>
      * <p>
-     * For more information about subnets, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your VPC and subnets</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html">Subnets</a> in the <i>Amazon VPC
+     * User Guide</i>.
      * </p>
      * 
      * @param createSubnetRequest
@@ -5386,23 +5662,23 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a subnet in a specified VPC.
+     * Creates a subnet in the specified VPC. For an IPv4 only subnet, specify an IPv4 CIDR block. If the VPC has an
+     * IPv6 CIDR block, you can create an IPv6 only subnet or a dual stack subnet instead. For an IPv6 only subnet,
+     * specify an IPv6 CIDR block. For a dual stack subnet, specify both an IPv4 CIDR block and an IPv6 CIDR block.
      * </p>
      * <p>
-     * You must specify an IPv4 CIDR block for the subnet. After you create a subnet, you can't change its CIDR block.
-     * The allowed block size is between a /16 netmask (65,536 IP addresses) and /28 netmask (16 IP addresses). The CIDR
-     * block must not overlap with the CIDR block of an existing subnet in the VPC.
+     * A subnet CIDR block must not overlap the CIDR block of an existing subnet in the VPC. After you create a subnet,
+     * you can't change its CIDR block.
      * </p>
      * <p>
-     * If you've associated an IPv6 CIDR block with your VPC, you can create a subnet with an IPv6 CIDR block that uses
-     * a /64 prefix length.
+     * The allowed size for an IPv4 subnet is between a /28 netmask (16 IP addresses) and a /16 netmask (65,536 IP
+     * addresses). Amazon Web Services reserves both the first four and the last IPv4 address in each subnet's CIDR
+     * block. They're not available for your use.
      * </p>
-     * <important>
      * <p>
-     * Amazon Web Services reserves both the first four and the last IPv4 address in each subnet's CIDR block. They're
-     * not available for use.
+     * If you've associated an IPv6 CIDR block with your VPC, you can associate an IPv6 CIDR block with a subnet when
+     * you create it.
      * </p>
-     * </important>
      * <p>
      * If you add more than one subnet to a VPC, they're set up in a star topology with a logical router in the middle.
      * </p>
@@ -5411,9 +5687,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * subnet with no running instances (they're all stopped), but no remaining IP addresses available.
      * </p>
      * <p>
-     * For more information about subnets, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your VPC and subnets</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html">Subnets</a> in the <i>Amazon VPC
+     * User Guide</i>.
      * </p>
      * 
      * @param createSubnetRequest
@@ -5431,9 +5707,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a subnet CIDR reservation. For information about subnet CIDR reservations, see <a
+     * Creates a subnet CIDR reservation. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/subnet-cidr-reservation.html">Subnet CIDR reservations</a>
-     * in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">Assign prefixes to network
+     * interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param createSubnetCidrReservationRequest
@@ -5447,9 +5725,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a subnet CIDR reservation. For information about subnet CIDR reservations, see <a
+     * Creates a subnet CIDR reservation. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/subnet-cidr-reservation.html">Subnet CIDR reservations</a>
-     * in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * in the <i>Amazon Virtual Private Cloud User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html">Assign prefixes to network
+     * interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param createSubnetCidrReservationRequest
@@ -6224,6 +6504,158 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * An Amazon Web Services Verified Access endpoint is where you define your application along with an optional
+     * endpoint-level access policy.
+     * </p>
+     * 
+     * @param createVerifiedAccessEndpointRequest
+     * @return A Java Future containing the result of the CreateVerifiedAccessEndpoint operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.CreateVerifiedAccessEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVerifiedAccessEndpointResult> createVerifiedAccessEndpointAsync(
+            CreateVerifiedAccessEndpointRequest createVerifiedAccessEndpointRequest);
+
+    /**
+     * <p>
+     * An Amazon Web Services Verified Access endpoint is where you define your application along with an optional
+     * endpoint-level access policy.
+     * </p>
+     * 
+     * @param createVerifiedAccessEndpointRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateVerifiedAccessEndpoint operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.CreateVerifiedAccessEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVerifiedAccessEndpointResult> createVerifiedAccessEndpointAsync(
+            CreateVerifiedAccessEndpointRequest createVerifiedAccessEndpointRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateVerifiedAccessEndpointRequest, CreateVerifiedAccessEndpointResult> asyncHandler);
+
+    /**
+     * <p>
+     * An Amazon Web Services Verified Access group is a collection of Amazon Web Services Verified Access endpoints
+     * who's associated applications have similar security requirements. Each instance within a Verified Access group
+     * shares an Verified Access policy. For example, you can group all Verified Access instances associated with
+     * "sales" applications together and use one common Verified Access policy.
+     * </p>
+     * 
+     * @param createVerifiedAccessGroupRequest
+     * @return A Java Future containing the result of the CreateVerifiedAccessGroup operation returned by the service.
+     * @sample AmazonEC2Async.CreateVerifiedAccessGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVerifiedAccessGroupResult> createVerifiedAccessGroupAsync(
+            CreateVerifiedAccessGroupRequest createVerifiedAccessGroupRequest);
+
+    /**
+     * <p>
+     * An Amazon Web Services Verified Access group is a collection of Amazon Web Services Verified Access endpoints
+     * who's associated applications have similar security requirements. Each instance within a Verified Access group
+     * shares an Verified Access policy. For example, you can group all Verified Access instances associated with
+     * "sales" applications together and use one common Verified Access policy.
+     * </p>
+     * 
+     * @param createVerifiedAccessGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateVerifiedAccessGroup operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.CreateVerifiedAccessGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVerifiedAccessGroupResult> createVerifiedAccessGroupAsync(
+            CreateVerifiedAccessGroupRequest createVerifiedAccessGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateVerifiedAccessGroupRequest, CreateVerifiedAccessGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * An Amazon Web Services Verified Access instance is a regional entity that evaluates application requests and
+     * grants access only when your security requirements are met.
+     * </p>
+     * 
+     * @param createVerifiedAccessInstanceRequest
+     * @return A Java Future containing the result of the CreateVerifiedAccessInstance operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.CreateVerifiedAccessInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVerifiedAccessInstanceResult> createVerifiedAccessInstanceAsync(
+            CreateVerifiedAccessInstanceRequest createVerifiedAccessInstanceRequest);
+
+    /**
+     * <p>
+     * An Amazon Web Services Verified Access instance is a regional entity that evaluates application requests and
+     * grants access only when your security requirements are met.
+     * </p>
+     * 
+     * @param createVerifiedAccessInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateVerifiedAccessInstance operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.CreateVerifiedAccessInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVerifiedAccessInstanceResult> createVerifiedAccessInstanceAsync(
+            CreateVerifiedAccessInstanceRequest createVerifiedAccessInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateVerifiedAccessInstanceRequest, CreateVerifiedAccessInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * A trust provider is a third-party entity that creates, maintains, and manages identity information for users and
+     * devices. When an application request is made, the identity information sent by the trust provider is evaluated by
+     * Verified Access before allowing or denying the application request.
+     * </p>
+     * 
+     * @param createVerifiedAccessTrustProviderRequest
+     * @return A Java Future containing the result of the CreateVerifiedAccessTrustProvider operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.CreateVerifiedAccessTrustProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessTrustProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVerifiedAccessTrustProviderResult> createVerifiedAccessTrustProviderAsync(
+            CreateVerifiedAccessTrustProviderRequest createVerifiedAccessTrustProviderRequest);
+
+    /**
+     * <p>
+     * A trust provider is a third-party entity that creates, maintains, and manages identity information for users and
+     * devices. When an application request is made, the identity information sent by the trust provider is evaluated by
+     * Verified Access before allowing or denying the application request.
+     * </p>
+     * 
+     * @param createVerifiedAccessTrustProviderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateVerifiedAccessTrustProvider operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.CreateVerifiedAccessTrustProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessTrustProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVerifiedAccessTrustProviderResult> createVerifiedAccessTrustProviderAsync(
+            CreateVerifiedAccessTrustProviderRequest createVerifiedAccessTrustProviderRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateVerifiedAccessTrustProviderRequest, CreateVerifiedAccessTrustProviderResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an EBS volume that can be attached to an instance in the same Availability Zone.
      * </p>
      * <p>
@@ -6233,8 +6665,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * You can create encrypted volumes. Encrypted volumes must be attached to instances that support Amazon EBS
      * encryption. Volumes that are created from encrypted snapshots are also automatically encrypted. For more
-     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
-     * encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon EBS
+     * encryption</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * <p>
      * You can tag your volumes during creation. For more information, see <a
@@ -6243,8 +6675,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Create an Amazon EBS
-     * volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-creating-volume.html">Create an Amazon EBS volume</a>
+     * in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param createVolumeRequest
@@ -6266,8 +6698,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * You can create encrypted volumes. Encrypted volumes must be attached to instances that support Amazon EBS
      * encryption. Volumes that are created from encrypted snapshots are also automatically encrypted. For more
-     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
-     * encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon EBS
+     * encryption</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * <p>
      * You can tag your volumes during creation. For more information, see <a
@@ -6276,8 +6708,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Create an Amazon EBS
-     * volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-creating-volume.html">Create an Amazon EBS volume</a>
+     * in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param createVolumeRequest
@@ -6295,28 +6727,27 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a VPC with the specified IPv4 CIDR block. The smallest VPC you can create uses a /28 netmask (16 IPv4
-     * addresses), and the largest uses a /16 netmask (65,536 IPv4 addresses). For more information about how large to
-     * make your VPC, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your VPC and
-     * subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * Creates a VPC with the specified CIDR blocks. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html">IP addressing for your VPCs and
+     * subnets</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * <p>
      * You can optionally request an IPv6 CIDR block for the VPC. You can request an Amazon-provided IPv6 CIDR block
-     * from Amazon's pool of IPv6 addresses, or an IPv6 CIDR block from an IPv6 address pool that you provisioned
-     * through bring your own IP addresses (<a
+     * from Amazon's pool of IPv6 addresses or an IPv6 CIDR block from an IPv6 address pool that you provisioned through
+     * bring your own IP addresses (<a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).
      * </p>
      * <p>
-     * By default, each instance you launch in the VPC has the default DHCP options, which include only a default DNS
-     * server that we provide (AmazonProvidedDNS). For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP options sets</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * By default, each instance that you launch in the VPC has the default DHCP options, which include only a default
+     * DNS server that we provide (AmazonProvidedDNS). For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP option sets</a> in the
+     * <i>Amazon VPC User Guide</i>.
      * </p>
      * <p>
      * You can specify the instance tenancy value for the VPC when you create it. You can't change this value for the
      * VPC after you create it. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param createVpcRequest
@@ -6329,28 +6760,27 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a VPC with the specified IPv4 CIDR block. The smallest VPC you can create uses a /28 netmask (16 IPv4
-     * addresses), and the largest uses a /16 netmask (65,536 IPv4 addresses). For more information about how large to
-     * make your VPC, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your VPC and
-     * subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * Creates a VPC with the specified CIDR blocks. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html">IP addressing for your VPCs and
+     * subnets</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * <p>
      * You can optionally request an IPv6 CIDR block for the VPC. You can request an Amazon-provided IPv6 CIDR block
-     * from Amazon's pool of IPv6 addresses, or an IPv6 CIDR block from an IPv6 address pool that you provisioned
-     * through bring your own IP addresses (<a
+     * from Amazon's pool of IPv6 addresses or an IPv6 CIDR block from an IPv6 address pool that you provisioned through
+     * bring your own IP addresses (<a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).
      * </p>
      * <p>
-     * By default, each instance you launch in the VPC has the default DHCP options, which include only a default DNS
-     * server that we provide (AmazonProvidedDNS). For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP options sets</a> in the
-     * <i>Amazon Virtual Private Cloud User Guide</i>.
+     * By default, each instance that you launch in the VPC has the default DHCP options, which include only a default
+     * DNS server that we provide (AmazonProvidedDNS). For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP option sets</a> in the
+     * <i>Amazon VPC User Guide</i>.
      * </p>
      * <p>
      * You can specify the instance tenancy value for the VPC when you create it. You can't change this value for the
      * VPC after you create it. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param createVpcRequest
@@ -6368,14 +6798,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a VPC endpoint for a specified service. An endpoint enables you to create a private connection between
-     * your VPC and the service. The service may be provided by Amazon Web Services, an Amazon Web Services Marketplace
-     * Partner, or another Amazon Web Services account. For more information, see the <a
-     * href="https://docs.aws.amazon.com/vpc/latest/privatelink/">Amazon Web Services PrivateLink Guide</a>.
+     * Creates a VPC endpoint. A VPC endpoint provides a private connection between the specified VPC and the specified
+     * endpoint service. You can use an endpoint service provided by Amazon Web Services, an Amazon Web Services
+     * Marketplace Partner, or another Amazon Web Services account. For more information, see the <a
+     * href="https://docs.aws.amazon.com/vpc/latest/privatelink/">Amazon Web Services PrivateLink User Guide</a>.
      * </p>
      * 
      * @param createVpcEndpointRequest
-     *        Contains the parameters for CreateVpcEndpoint.
      * @return A Java Future containing the result of the CreateVpcEndpoint operation returned by the service.
      * @sample AmazonEC2Async.CreateVpcEndpoint
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpoint" target="_top">AWS API
@@ -6385,14 +6814,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a VPC endpoint for a specified service. An endpoint enables you to create a private connection between
-     * your VPC and the service. The service may be provided by Amazon Web Services, an Amazon Web Services Marketplace
-     * Partner, or another Amazon Web Services account. For more information, see the <a
-     * href="https://docs.aws.amazon.com/vpc/latest/privatelink/">Amazon Web Services PrivateLink Guide</a>.
+     * Creates a VPC endpoint. A VPC endpoint provides a private connection between the specified VPC and the specified
+     * endpoint service. You can use an endpoint service provided by Amazon Web Services, an Amazon Web Services
+     * Marketplace Partner, or another Amazon Web Services account. For more information, see the <a
+     * href="https://docs.aws.amazon.com/vpc/latest/privatelink/">Amazon Web Services PrivateLink User Guide</a>.
      * </p>
      * 
      * @param createVpcEndpointRequest
-     *        Contains the parameters for CreateVpcEndpoint.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -6454,8 +6882,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a VPC endpoint service to which service consumers (Amazon Web Services accounts, IAM users, and IAM
-     * roles) can connect.
+     * Creates a VPC endpoint service to which service consumers (Amazon Web Services accounts, users, and IAM roles)
+     * can connect.
      * </p>
      * <p>
      * Before you create an endpoint service, you must create one of the following for your service:
@@ -6494,8 +6922,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a VPC endpoint service to which service consumers (Amazon Web Services accounts, IAM users, and IAM
-     * roles) can connect.
+     * Creates a VPC endpoint service to which service consumers (Amazon Web Services accounts, users, and IAM roles)
+     * can connect.
      * </p>
      * <p>
      * Before you create an endpoint service, you must create one of the following for your service:
@@ -7068,19 +7496,20 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Deletes the specified EC2 Fleet.
+     * Deletes the specified EC2 Fleets.
      * </p>
      * <p>
      * After you delete an EC2 Fleet, it launches no new instances.
      * </p>
      * <p>
-     * You must specify whether a deleted EC2 Fleet should also terminate its instances. If you choose to terminate the
+     * You must also specify whether a deleted EC2 Fleet should terminate its instances. If you choose to terminate the
      * instances, the EC2 Fleet enters the <code>deleted_terminating</code> state. Otherwise, the EC2 Fleet enters the
      * <code>deleted_running</code> state, and the instances continue to run until they are interrupted or you terminate
      * them manually.
      * </p>
      * <p>
-     * For <code>instant</code> fleets, EC2 Fleet must terminate the instances when the fleet is deleted. A deleted
+     * For <code>instant</code> fleets, EC2 Fleet must terminate the instances when the fleet is deleted. Up to 1000
+     * instances can be terminated in a single request to delete <code>instant</code> fleets. A deleted
      * <code>instant</code> fleet with running instances is not supported.
      * </p>
      * <p class="title">
@@ -7089,14 +7518,23 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <ul>
      * <li>
      * <p>
-     * You can delete up to 25 <code>instant</code> fleets in a single request. If you exceed this number, no
-     * <code>instant</code> fleets are deleted and an error is returned. There is no restriction on the number of fleets
-     * of type <code>maintain</code> or <code>request</code> that can be deleted in a single request.
+     * You can delete up to 25 fleets of type <code>instant</code> in a single request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Up to 1000 instances can be terminated in a single request to delete <code>instant</code> fleets.
+     * You can delete up to 100 fleets of type <code>maintain</code> or <code>request</code> in a single request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can delete up to 125 fleets in a single request, provided you do not exceed the quota for each fleet type, as
+     * specified above.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you exceed the specified number of fleets to delete, no fleets are deleted.
      * </p>
      * </li>
      * </ul>
@@ -7116,19 +7554,20 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Deletes the specified EC2 Fleet.
+     * Deletes the specified EC2 Fleets.
      * </p>
      * <p>
      * After you delete an EC2 Fleet, it launches no new instances.
      * </p>
      * <p>
-     * You must specify whether a deleted EC2 Fleet should also terminate its instances. If you choose to terminate the
+     * You must also specify whether a deleted EC2 Fleet should terminate its instances. If you choose to terminate the
      * instances, the EC2 Fleet enters the <code>deleted_terminating</code> state. Otherwise, the EC2 Fleet enters the
      * <code>deleted_running</code> state, and the instances continue to run until they are interrupted or you terminate
      * them manually.
      * </p>
      * <p>
-     * For <code>instant</code> fleets, EC2 Fleet must terminate the instances when the fleet is deleted. A deleted
+     * For <code>instant</code> fleets, EC2 Fleet must terminate the instances when the fleet is deleted. Up to 1000
+     * instances can be terminated in a single request to delete <code>instant</code> fleets. A deleted
      * <code>instant</code> fleet with running instances is not supported.
      * </p>
      * <p class="title">
@@ -7137,14 +7576,23 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <ul>
      * <li>
      * <p>
-     * You can delete up to 25 <code>instant</code> fleets in a single request. If you exceed this number, no
-     * <code>instant</code> fleets are deleted and an error is returned. There is no restriction on the number of fleets
-     * of type <code>maintain</code> or <code>request</code> that can be deleted in a single request.
+     * You can delete up to 25 fleets of type <code>instant</code> in a single request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Up to 1000 instances can be terminated in a single request to delete <code>instant</code> fleets.
+     * You can delete up to 100 fleets of type <code>maintain</code> or <code>request</code> in a single request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can delete up to 125 fleets in a single request, provided you do not exceed the quota for each fleet type, as
+     * specified above.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you exceed the specified number of fleets to delete, no fleets are deleted.
      * </p>
      * </li>
      * </ul>
@@ -7228,6 +7676,41 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<DeleteFpgaImageResult> deleteFpgaImageAsync(DeleteFpgaImageRequest deleteFpgaImageRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteFpgaImageRequest, DeleteFpgaImageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified EC2 Instance Connect Endpoint.
+     * </p>
+     * 
+     * @param deleteInstanceConnectEndpointRequest
+     * @return A Java Future containing the result of the DeleteInstanceConnectEndpoint operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DeleteInstanceConnectEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInstanceConnectEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteInstanceConnectEndpointResult> deleteInstanceConnectEndpointAsync(
+            DeleteInstanceConnectEndpointRequest deleteInstanceConnectEndpointRequest);
+
+    /**
+     * <p>
+     * Deletes the specified EC2 Instance Connect Endpoint.
+     * </p>
+     * 
+     * @param deleteInstanceConnectEndpointRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteInstanceConnectEndpoint operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DeleteInstanceConnectEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteInstanceConnectEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteInstanceConnectEndpointResult> deleteInstanceConnectEndpointAsync(
+            DeleteInstanceConnectEndpointRequest deleteInstanceConnectEndpointRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteInstanceConnectEndpointRequest, DeleteInstanceConnectEndpointResult> asyncHandler);
 
     /**
      * <p>
@@ -7403,6 +7886,41 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Deletes an IPAM resource discovery. A resource discovery is an IPAM component that enables IPAM to manage and
+     * monitor resources that belong to the owning account.
+     * </p>
+     * 
+     * @param deleteIpamResourceDiscoveryRequest
+     * @return A Java Future containing the result of the DeleteIpamResourceDiscovery operation returned by the service.
+     * @sample AmazonEC2Async.DeleteIpamResourceDiscovery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamResourceDiscovery"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteIpamResourceDiscoveryResult> deleteIpamResourceDiscoveryAsync(
+            DeleteIpamResourceDiscoveryRequest deleteIpamResourceDiscoveryRequest);
+
+    /**
+     * <p>
+     * Deletes an IPAM resource discovery. A resource discovery is an IPAM component that enables IPAM to manage and
+     * monitor resources that belong to the owning account.
+     * </p>
+     * 
+     * @param deleteIpamResourceDiscoveryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteIpamResourceDiscovery operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DeleteIpamResourceDiscovery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamResourceDiscovery"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteIpamResourceDiscoveryResult> deleteIpamResourceDiscoveryAsync(
+            DeleteIpamResourceDiscoveryRequest deleteIpamResourceDiscoveryRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteIpamResourceDiscoveryRequest, DeleteIpamResourceDiscoveryResult> asyncHandler);
+
+    /**
+     * <p>
      * Delete the scope for an IPAM. You cannot delete the default scopes.
      * </p>
      * <p>
@@ -7504,9 +8022,21 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Deletes one or more versions of a launch template. You cannot delete the default version of a launch template;
-     * you must first assign a different version as the default. If the default version is the only version for the
-     * launch template, you must delete the entire launch template using <a>DeleteLaunchTemplate</a>.
+     * Deletes one or more versions of a launch template.
+     * </p>
+     * <p>
+     * You can't delete the default version of a launch template; you must first assign a different version as the
+     * default. If the default version is the only version for the launch template, you must delete the entire launch
+     * template using <a>DeleteLaunchTemplate</a>.
+     * </p>
+     * <p>
+     * You can delete up to 200 launch template versions in a single request. To delete more than 200 versions in a
+     * single request, use <a>DeleteLaunchTemplate</a>, which deletes the launch template and all of its versions.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-launch-template-versions.html#delete-launch-template-version"
+     * >Delete a launch template version</a> in the <i>EC2 User Guide</i>.
      * </p>
      * 
      * @param deleteLaunchTemplateVersionsRequest
@@ -7521,9 +8051,21 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Deletes one or more versions of a launch template. You cannot delete the default version of a launch template;
-     * you must first assign a different version as the default. If the default version is the only version for the
-     * launch template, you must delete the entire launch template using <a>DeleteLaunchTemplate</a>.
+     * Deletes one or more versions of a launch template.
+     * </p>
+     * <p>
+     * You can't delete the default version of a launch template; you must first assign a different version as the
+     * default. If the default version is the only version for the launch template, you must delete the entire launch
+     * template using <a>DeleteLaunchTemplate</a>.
+     * </p>
+     * <p>
+     * You can delete up to 200 launch template versions in a single request. To delete more than 200 versions in a
+     * single request, use <a>DeleteLaunchTemplate</a>, which deletes the launch template and all of its versions.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-launch-template-versions.html#delete-launch-template-version"
+     * >Delete a launch template version</a> in the <i>EC2 User Guide</i>.
      * </p>
      * 
      * @param deleteLaunchTemplateVersionsRequest
@@ -8199,17 +8741,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Deletes a security group.
      * </p>
      * <p>
-     * If you attempt to delete a security group that is associated with an instance, or is referenced by another
-     * security group, the operation fails with <code>InvalidGroup.InUse</code> in EC2-Classic or
-     * <code>DependencyViolation</code> in EC2-VPC.
+     * If you attempt to delete a security group that is associated with an instance or network interface or is
+     * referenced by another security group, the operation fails with <code>DependencyViolation</code>.
      * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param deleteSecurityGroupRequest
      * @return A Java Future containing the result of the DeleteSecurityGroup operation returned by the service.
@@ -8224,17 +8758,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Deletes a security group.
      * </p>
      * <p>
-     * If you attempt to delete a security group that is associated with an instance, or is referenced by another
-     * security group, the operation fails with <code>InvalidGroup.InUse</code> in EC2-Classic or
-     * <code>DependencyViolation</code> in EC2-VPC.
+     * If you attempt to delete a security group that is associated with an instance or network interface or is
+     * referenced by another security group, the operation fails with <code>DependencyViolation</code>.
      * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param deleteSecurityGroupRequest
      * @param asyncHandler
@@ -8265,8 +8791,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html">Delete an Amazon EBS
-     * snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-deleting-snapshot.html">Delete an Amazon EBS
+     * snapshot</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param deleteSnapshotRequest
@@ -8293,8 +8819,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html">Delete an Amazon EBS
-     * snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-deleting-snapshot.html">Delete an Amazon EBS
+     * snapshot</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param deleteSnapshotRequest
@@ -8890,8 +9416,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Deletes the specified transit gateway route table. You must disassociate the route table from any transit gateway
-     * route tables before you can delete it.
+     * Deletes the specified transit gateway route table. If there are any route tables associated with the transit
+     * gateway route table, you must first run <a>DisassociateRouteTable</a> before you can delete the transit gateway
+     * route table. This removes any route tables associated with the transit gateway route table.
      * </p>
      * 
      * @param deleteTransitGatewayRouteTableRequest
@@ -8906,8 +9433,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Deletes the specified transit gateway route table. You must disassociate the route table from any transit gateway
-     * route tables before you can delete it.
+     * Deletes the specified transit gateway route table. If there are any route tables associated with the transit
+     * gateway route table, you must first run <a>DisassociateRouteTable</a> before you can delete the transit gateway
+     * route table. This removes any route tables associated with the transit gateway route table.
      * </p>
      * 
      * @param deleteTransitGatewayRouteTableRequest
@@ -8997,6 +9525,144 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Delete an Amazon Web Services Verified Access endpoint.
+     * </p>
+     * 
+     * @param deleteVerifiedAccessEndpointRequest
+     * @return A Java Future containing the result of the DeleteVerifiedAccessEndpoint operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DeleteVerifiedAccessEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVerifiedAccessEndpointResult> deleteVerifiedAccessEndpointAsync(
+            DeleteVerifiedAccessEndpointRequest deleteVerifiedAccessEndpointRequest);
+
+    /**
+     * <p>
+     * Delete an Amazon Web Services Verified Access endpoint.
+     * </p>
+     * 
+     * @param deleteVerifiedAccessEndpointRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteVerifiedAccessEndpoint operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DeleteVerifiedAccessEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVerifiedAccessEndpointResult> deleteVerifiedAccessEndpointAsync(
+            DeleteVerifiedAccessEndpointRequest deleteVerifiedAccessEndpointRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteVerifiedAccessEndpointRequest, DeleteVerifiedAccessEndpointResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete an Amazon Web Services Verified Access group.
+     * </p>
+     * 
+     * @param deleteVerifiedAccessGroupRequest
+     * @return A Java Future containing the result of the DeleteVerifiedAccessGroup operation returned by the service.
+     * @sample AmazonEC2Async.DeleteVerifiedAccessGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVerifiedAccessGroupResult> deleteVerifiedAccessGroupAsync(
+            DeleteVerifiedAccessGroupRequest deleteVerifiedAccessGroupRequest);
+
+    /**
+     * <p>
+     * Delete an Amazon Web Services Verified Access group.
+     * </p>
+     * 
+     * @param deleteVerifiedAccessGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteVerifiedAccessGroup operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DeleteVerifiedAccessGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVerifiedAccessGroupResult> deleteVerifiedAccessGroupAsync(
+            DeleteVerifiedAccessGroupRequest deleteVerifiedAccessGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteVerifiedAccessGroupRequest, DeleteVerifiedAccessGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete an Amazon Web Services Verified Access instance.
+     * </p>
+     * 
+     * @param deleteVerifiedAccessInstanceRequest
+     * @return A Java Future containing the result of the DeleteVerifiedAccessInstance operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DeleteVerifiedAccessInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVerifiedAccessInstanceResult> deleteVerifiedAccessInstanceAsync(
+            DeleteVerifiedAccessInstanceRequest deleteVerifiedAccessInstanceRequest);
+
+    /**
+     * <p>
+     * Delete an Amazon Web Services Verified Access instance.
+     * </p>
+     * 
+     * @param deleteVerifiedAccessInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteVerifiedAccessInstance operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DeleteVerifiedAccessInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVerifiedAccessInstanceResult> deleteVerifiedAccessInstanceAsync(
+            DeleteVerifiedAccessInstanceRequest deleteVerifiedAccessInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteVerifiedAccessInstanceRequest, DeleteVerifiedAccessInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete an Amazon Web Services Verified Access trust provider.
+     * </p>
+     * 
+     * @param deleteVerifiedAccessTrustProviderRequest
+     * @return A Java Future containing the result of the DeleteVerifiedAccessTrustProvider operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DeleteVerifiedAccessTrustProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessTrustProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVerifiedAccessTrustProviderResult> deleteVerifiedAccessTrustProviderAsync(
+            DeleteVerifiedAccessTrustProviderRequest deleteVerifiedAccessTrustProviderRequest);
+
+    /**
+     * <p>
+     * Delete an Amazon Web Services Verified Access trust provider.
+     * </p>
+     * 
+     * @param deleteVerifiedAccessTrustProviderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteVerifiedAccessTrustProvider operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DeleteVerifiedAccessTrustProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessTrustProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVerifiedAccessTrustProviderResult> deleteVerifiedAccessTrustProviderAsync(
+            DeleteVerifiedAccessTrustProviderRequest deleteVerifiedAccessTrustProviderRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteVerifiedAccessTrustProviderRequest, DeleteVerifiedAccessTrustProviderResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified EBS volume. The volume must be in the <code>available</code> state (not attached to an
      * instance).
      * </p>
@@ -9005,8 +9671,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Delete an Amazon EBS
-     * volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-deleting-volume.html">Delete an Amazon EBS volume</a>
+     * in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param deleteVolumeRequest
@@ -9027,8 +9693,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Delete an Amazon EBS
-     * volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-deleting-volume.html">Delete an Amazon EBS volume</a>
+     * in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param deleteVolumeRequest
@@ -9049,7 +9715,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Deletes the specified VPC. You must detach or delete all gateways and resources that are associated with the VPC
      * before you can delete it. For example, you must terminate all instances running in the VPC, delete all security
      * groups associated with the VPC (except the default one), delete all route tables associated with the VPC (except
-     * the default one), and so on.
+     * the default one), and so on. When you delete the VPC, it deletes the VPC's default security group, network ACL,
+     * and route table.
      * </p>
      * 
      * @param deleteVpcRequest
@@ -9065,7 +9732,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Deletes the specified VPC. You must detach or delete all gateways and resources that are associated with the VPC
      * before you can delete it. For example, you must terminate all instances running in the VPC, delete all security
      * groups associated with the VPC (except the default one), delete all route tables associated with the VPC (except
-     * the default one), and so on.
+     * the default one), and so on. When you delete the VPC, it deletes the VPC's default security group, network ACL,
+     * and route table.
      * </p>
      * 
      * @param deleteVpcRequest
@@ -9083,7 +9751,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Deletes one or more VPC endpoint connection notifications.
+     * Deletes the specified VPC endpoint connection notifications.
      * </p>
      * 
      * @param deleteVpcEndpointConnectionNotificationsRequest
@@ -9098,7 +9766,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Deletes one or more VPC endpoint connection notifications.
+     * Deletes the specified VPC endpoint connection notifications.
      * </p>
      * 
      * @param deleteVpcEndpointConnectionNotificationsRequest
@@ -9118,7 +9786,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Deletes one or more VPC endpoint service configurations in your account. Before you delete the endpoint service
+     * Deletes the specified VPC endpoint service configurations. Before you can delete an endpoint service
      * configuration, you must reject any <code>Available</code> or <code>PendingAcceptance</code> interface endpoint
      * connections that are attached to the service.
      * </p>
@@ -9135,7 +9803,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Deletes one or more VPC endpoint service configurations in your account. Before you delete the endpoint service
+     * Deletes the specified VPC endpoint service configurations. Before you can delete an endpoint service
      * configuration, you must reject any <code>Available</code> or <code>PendingAcceptance</code> interface endpoint
      * connections that are attached to the service.
      * </p>
@@ -9157,53 +9825,20 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Deletes one or more specified VPC endpoints. You can delete any of the following types of VPC endpoints.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Gateway endpoint,
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Gateway Load Balancer endpoint,
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Interface endpoint
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * The following rules apply when you delete a VPC endpoint:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * When you delete a gateway endpoint, we delete the endpoint routes in the route tables that are associated with
-     * the endpoint.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * When you delete a Gateway Load Balancer endpoint, we delete the endpoint network interfaces.
+     * Deletes the specified VPC endpoints.
      * </p>
      * <p>
-     * You can only delete Gateway Load Balancer endpoints when the routes that are associated with the endpoint are
-     * deleted.
+     * When you delete a gateway endpoint, we delete the endpoint routes in the route tables for the endpoint.
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * When you delete an interface endpoint, we delete the endpoint network interfaces.
+     * When you delete a Gateway Load Balancer endpoint, we delete its endpoint network interfaces. You can only delete
+     * Gateway Load Balancer endpoints when the routes that are associated with the endpoint are deleted.
      * </p>
-     * </li>
-     * </ul>
+     * <p>
+     * When you delete an interface endpoint, we delete its endpoint network interfaces.
+     * </p>
      * 
      * @param deleteVpcEndpointsRequest
-     *        Contains the parameters for DeleteVpcEndpoints.
      * @return A Java Future containing the result of the DeleteVpcEndpoints operation returned by the service.
      * @sample AmazonEC2Async.DeleteVpcEndpoints
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVpcEndpoints" target="_top">AWS API
@@ -9213,53 +9848,20 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Deletes one or more specified VPC endpoints. You can delete any of the following types of VPC endpoints.
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Gateway endpoint,
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Gateway Load Balancer endpoint,
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Interface endpoint
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * The following rules apply when you delete a VPC endpoint:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * When you delete a gateway endpoint, we delete the endpoint routes in the route tables that are associated with
-     * the endpoint.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * When you delete a Gateway Load Balancer endpoint, we delete the endpoint network interfaces.
+     * Deletes the specified VPC endpoints.
      * </p>
      * <p>
-     * You can only delete Gateway Load Balancer endpoints when the routes that are associated with the endpoint are
-     * deleted.
+     * When you delete a gateway endpoint, we delete the endpoint routes in the route tables for the endpoint.
      * </p>
-     * </li>
-     * <li>
      * <p>
-     * When you delete an interface endpoint, we delete the endpoint network interfaces.
+     * When you delete a Gateway Load Balancer endpoint, we delete its endpoint network interfaces. You can only delete
+     * Gateway Load Balancer endpoints when the routes that are associated with the endpoint are deleted.
      * </p>
-     * </li>
-     * </ul>
+     * <p>
+     * When you delete an interface endpoint, we delete its endpoint network interfaces.
+     * </p>
      * 
      * @param deleteVpcEndpointsRequest
-     *        Contains the parameters for DeleteVpcEndpoints.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -9277,7 +9879,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Deletes a VPC peering connection. Either the owner of the requester VPC or the owner of the accepter VPC can
      * delete the VPC peering connection if it's in the <code>active</code> state. The owner of the requester VPC can
      * delete a VPC peering connection in the <code>pending-acceptance</code> state. You cannot delete a VPC peering
-     * connection that's in the <code>failed</code> state.
+     * connection that's in the <code>failed</code> or <code>rejected</code> state.
      * </p>
      * 
      * @param deleteVpcPeeringConnectionRequest
@@ -9294,7 +9896,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Deletes a VPC peering connection. Either the owner of the requester VPC or the owner of the accepter VPC can
      * delete the VPC peering connection if it's in the <code>active</code> state. The owner of the requester VPC can
      * delete a VPC peering connection in the <code>pending-acceptance</code> state. You cannot delete a VPC peering
-     * connection that's in the <code>failed</code> state.
+     * connection that's in the <code>failed</code> or <code>rejected</code> state.
      * </p>
      * 
      * @param deleteVpcPeeringConnectionRequest
@@ -9485,6 +10087,47 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Deprovisions your Autonomous System Number (ASN) from your Amazon Web Services account. This action can only be
+     * called after any BYOIP CIDR associations are removed from your Amazon Web Services account with <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateIpamByoasn.html"
+     * >DisassociateIpamByoasn</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoasn.html">Tutorial: Bring your ASN to IPAM</a> in
+     * the <i>Amazon VPC IPAM guide</i>.
+     * </p>
+     * 
+     * @param deprovisionIpamByoasnRequest
+     * @return A Java Future containing the result of the DeprovisionIpamByoasn operation returned by the service.
+     * @sample AmazonEC2Async.DeprovisionIpamByoasn
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionIpamByoasn" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeprovisionIpamByoasnResult> deprovisionIpamByoasnAsync(DeprovisionIpamByoasnRequest deprovisionIpamByoasnRequest);
+
+    /**
+     * <p>
+     * Deprovisions your Autonomous System Number (ASN) from your Amazon Web Services account. This action can only be
+     * called after any BYOIP CIDR associations are removed from your Amazon Web Services account with <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateIpamByoasn.html"
+     * >DisassociateIpamByoasn</a>. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoasn.html">Tutorial: Bring your ASN to IPAM</a> in
+     * the <i>Amazon VPC IPAM guide</i>.
+     * </p>
+     * 
+     * @param deprovisionIpamByoasnRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeprovisionIpamByoasn operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DeprovisionIpamByoasn
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeprovisionIpamByoasn" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeprovisionIpamByoasnResult> deprovisionIpamByoasnAsync(DeprovisionIpamByoasnRequest deprovisionIpamByoasnRequest,
+            com.amazonaws.handlers.AsyncHandler<DeprovisionIpamByoasnRequest, DeprovisionIpamByoasnResult> asyncHandler);
+
+    /**
+     * <p>
      * Deprovision a CIDR provisioned from an IPAM pool. If you deprovision a CIDR from a pool that has a source pool,
      * the CIDR is recycled back into the source pool. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/ipam/depro-pool-cidr-ipam.html">Deprovision pool CIDRs</a> in the
@@ -9562,8 +10205,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * If you deregister an AMI that matches a Recycle Bin retention rule, the AMI is retained in the Recycle Bin for
      * the specified retention period. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the Amazon Elastic
-     * Compute Cloud User Guide.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the <i>Amazon EC2
+     * User Guide</i>.
      * </p>
      * <p>
      * When you deregister an AMI, it doesn't affect any instances that you've already launched from the AMI. You'll
@@ -9591,8 +10234,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * If you deregister an AMI that matches a Recycle Bin retention rule, the AMI is retained in the Recycle Bin for
      * the specified retention period. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the Amazon Elastic
-     * Compute Cloud User Guide.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the <i>Amazon EC2
+     * User Guide</i>.
      * </p>
      * <p>
      * When you deregister an AMI, it doesn't affect any instances that you've already launched from the AMI. You'll
@@ -9738,12 +10381,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <ul>
      * <li>
      * <p>
-     * <code>supported-platforms</code>: Indicates whether your account can launch instances into EC2-Classic and
-     * EC2-VPC, or only into EC2-VPC.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>default-vpc</code>: The ID of the default VPC for your account, or <code>none</code>.
      * </p>
      * </li>
@@ -9757,28 +10394,30 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </li>
      * <li>
      * <p>
+     * <code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that you can allocate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>supported-platforms</code>: This attribute is deprecated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses that you can allocate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>vpc-max-security-groups-per-interface</code>: The maximum number of security groups that you can assign to
      * a network interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that you can allocate for use with
-     * EC2-Classic.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses that you can allocate for use with
-     * EC2-VPC.
      * </p>
      * </li>
      * </ul>
      * <note>
      * <p>
-     * We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from EC2-Classic to a VPC. For more
-     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from
-     * EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
      * </p>
      * </note>
      * 
@@ -9798,12 +10437,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <ul>
      * <li>
      * <p>
-     * <code>supported-platforms</code>: Indicates whether your account can launch instances into EC2-Classic and
-     * EC2-VPC, or only into EC2-VPC.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>default-vpc</code>: The ID of the default VPC for your account, or <code>none</code>.
      * </p>
      * </li>
@@ -9817,28 +10450,30 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </li>
      * <li>
      * <p>
+     * <code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that you can allocate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>supported-platforms</code>: This attribute is deprecated.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses that you can allocate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>vpc-max-security-groups-per-interface</code>: The maximum number of security groups that you can assign to
      * a network interface.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that you can allocate for use with
-     * EC2-Classic.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses that you can allocate for use with
-     * EC2-VPC.
      * </p>
      * </li>
      * </ul>
      * <note>
      * <p>
-     * We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from EC2-Classic to a VPC. For more
-     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from
-     * EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
      * </p>
      * </note>
      * 
@@ -9877,6 +10512,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer Elastic IP
      * addresses</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
+     * <p>
+     * When you transfer an Elastic IP address, there is a two-step handshake between the source and transfer Amazon Web
+     * Services accounts. When the source account starts the transfer, the transfer account has seven days to accept the
+     * Elastic IP address transfer. During those seven days, the source account can view the pending transfer by using
+     * this action. After seven days, the transfer expires and ownership of the Elastic IP address returns to the source
+     * account. Accepted transfers are visible to the source account for three days after the transfers have been
+     * accepted.
+     * </p>
      * 
      * @param describeAddressTransfersRequest
      * @return A Java Future containing the result of the DescribeAddressTransfers operation returned by the service.
@@ -9891,6 +10534,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes an Elastic IP address transfer. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer Elastic IP
      * addresses</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * </p>
+     * <p>
+     * When you transfer an Elastic IP address, there is a two-step handshake between the source and transfer Amazon Web
+     * Services accounts. When the source account starts the transfer, the transfer account has seven days to accept the
+     * Elastic IP address transfer. During those seven days, the source account can view the pending transfer by using
+     * this action. After seven days, the transfer expires and ownership of the Elastic IP address returns to the source
+     * account. Accepted transfers are visible to the source account for three days after the transfers have been
+     * accepted.
      * </p>
      * 
      * @param describeAddressTransfersRequest
@@ -9910,18 +10561,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Describes the specified Elastic IP addresses or all of your Elastic IP addresses.
      * </p>
-     * <p>
-     * An Elastic IP address is for use in either the EC2-Classic platform or in a VPC. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP Addresses</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param describeAddressesRequest
      * @return A Java Future containing the result of the DescribeAddresses operation returned by the service.
@@ -9935,18 +10574,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Describes the specified Elastic IP addresses or all of your Elastic IP addresses.
      * </p>
-     * <p>
-     * An Elastic IP address is for use in either the EC2-Classic platform or in a VPC. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP Addresses</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param describeAddressesRequest
      * @param asyncHandler
@@ -10090,6 +10717,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions and
      * zones</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
+     * </p>
+     * </note>
      * 
      * @param describeAvailabilityZonesRequest
      * @return A Java Future containing the result of the DescribeAvailabilityZones operation returned by the service.
@@ -10110,6 +10743,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions and
      * zones</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
+     * </p>
+     * </note>
      * 
      * @param describeAvailabilityZonesRequest
      * @param asyncHandler
@@ -10142,6 +10781,43 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Describes the current Infrastructure Performance metric subscriptions.
+     * </p>
+     * 
+     * @param describeAwsNetworkPerformanceMetricSubscriptionsRequest
+     * @return A Java Future containing the result of the DescribeAwsNetworkPerformanceMetricSubscriptions operation
+     *         returned by the service.
+     * @sample AmazonEC2Async.DescribeAwsNetworkPerformanceMetricSubscriptions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAwsNetworkPerformanceMetricSubscriptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAwsNetworkPerformanceMetricSubscriptionsResult> describeAwsNetworkPerformanceMetricSubscriptionsAsync(
+            DescribeAwsNetworkPerformanceMetricSubscriptionsRequest describeAwsNetworkPerformanceMetricSubscriptionsRequest);
+
+    /**
+     * <p>
+     * Describes the current Infrastructure Performance metric subscriptions.
+     * </p>
+     * 
+     * @param describeAwsNetworkPerformanceMetricSubscriptionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAwsNetworkPerformanceMetricSubscriptions operation
+     *         returned by the service.
+     * @sample AmazonEC2AsyncHandler.DescribeAwsNetworkPerformanceMetricSubscriptions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAwsNetworkPerformanceMetricSubscriptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAwsNetworkPerformanceMetricSubscriptionsResult> describeAwsNetworkPerformanceMetricSubscriptionsAsync(
+            DescribeAwsNetworkPerformanceMetricSubscriptionsRequest describeAwsNetworkPerformanceMetricSubscriptionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAwsNetworkPerformanceMetricSubscriptionsRequest, DescribeAwsNetworkPerformanceMetricSubscriptionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes the specified bundle tasks or all of your bundle tasks.
      * </p>
      * <note>
@@ -10149,6 +10825,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Completed bundle tasks are listed for only a limited time. If your bundle task is no longer in the list, you can
      * still register an AMI from it. Just use <code>RegisterImage</code> with the Amazon S3 bucket name and image
      * manifest name you provided to the bundle task.
+     * </p>
+     * </note> <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
      * </p>
      * </note>
      * 
@@ -10169,6 +10850,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Completed bundle tasks are listed for only a limited time. If your bundle task is no longer in the list, you can
      * still register an AMI from it. Just use <code>RegisterImage</code> with the Amazon S3 bucket name and image
      * manifest name you provided to the bundle task.
+     * </p>
+     * </note> <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
      * </p>
      * </note>
      * 
@@ -10238,6 +10924,43 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<DescribeByoipCidrsResult> describeByoipCidrsAsync(DescribeByoipCidrsRequest describeByoipCidrsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeByoipCidrsRequest, DescribeByoipCidrsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes Capacity Block offerings available for purchase in the Amazon Web Services Region that you're currently
+     * using. With Capacity Blocks, you purchase a specific instance type for a period of time.
+     * </p>
+     * 
+     * @param describeCapacityBlockOfferingsRequest
+     * @return A Java Future containing the result of the DescribeCapacityBlockOfferings operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeCapacityBlockOfferings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockOfferings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeCapacityBlockOfferingsResult> describeCapacityBlockOfferingsAsync(
+            DescribeCapacityBlockOfferingsRequest describeCapacityBlockOfferingsRequest);
+
+    /**
+     * <p>
+     * Describes Capacity Block offerings available for purchase in the Amazon Web Services Region that you're currently
+     * using. With Capacity Blocks, you purchase a specific instance type for a period of time.
+     * </p>
+     * 
+     * @param describeCapacityBlockOfferingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeCapacityBlockOfferings operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeCapacityBlockOfferings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCapacityBlockOfferings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeCapacityBlockOfferingsResult> describeCapacityBlockOfferingsAsync(
+            DescribeCapacityBlockOfferingsRequest describeCapacityBlockOfferingsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeCapacityBlockOfferingsRequest, DescribeCapacityBlockOfferingsResult> asyncHandler);
 
     /**
      * <p>
@@ -10343,18 +11066,16 @@ public interface AmazonEC2Async extends AmazonEC2 {
             com.amazonaws.handlers.AsyncHandler<DescribeCarrierGatewaysRequest, DescribeCarrierGatewaysResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This action is deprecated.
+     * </p>
+     * </note>
      * <p>
      * Describes one or more of your linked EC2-Classic instances. This request only returns information about
      * EC2-Classic instances linked to a VPC through ClassicLink. You cannot use this request to return information
      * about other instances.
      * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param describeClassicLinkInstancesRequest
      * @return A Java Future containing the result of the DescribeClassicLinkInstances operation returned by the
@@ -10367,18 +11088,16 @@ public interface AmazonEC2Async extends AmazonEC2 {
             DescribeClassicLinkInstancesRequest describeClassicLinkInstancesRequest);
 
     /**
+     * <note>
+     * <p>
+     * This action is deprecated.
+     * </p>
+     * </note>
      * <p>
      * Describes one or more of your linked EC2-Classic instances. This request only returns information about
      * EC2-Classic instances linked to a VPC through ClassicLink. You cannot use this request to return information
      * about other instances.
      * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param describeClassicLinkInstancesRequest
      * @param asyncHandler
@@ -10730,7 +11449,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-     * options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * options sets</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @param describeDhcpOptionsRequest
@@ -10747,7 +11466,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-     * options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * options sets</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @param describeDhcpOptionsRequest
@@ -10814,6 +11533,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
             com.amazonaws.handlers.AsyncHandler<DescribeEgressOnlyInternetGatewaysRequest, DescribeEgressOnlyInternetGatewaysResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration,
+     * we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.
+     * </p>
+     * </note>
      * <p>
      * Describes the Elastic Graphics accelerator associated with your instances. For more information about Elastic
      * Graphics, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
@@ -10829,6 +11554,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<DescribeElasticGpusResult> describeElasticGpusAsync(DescribeElasticGpusRequest describeElasticGpusRequest);
 
     /**
+     * <note>
+     * <p>
+     * Amazon Elastic Graphics reached end of life on January 8, 2024. For workloads that require graphics acceleration,
+     * we recommend that you use Amazon EC2 G4ad, G4dn, or G5 instances.
+     * </p>
+     * </note>
      * <p>
      * Describes the Elastic Graphics accelerator associated with your instances. For more information about Elastic
      * Graphics, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
@@ -10927,7 +11658,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describe details for Windows AMIs that are configured for faster launching.
+     * Describe details for Windows AMIs that are configured for Windows fast launch.
      * </p>
      * 
      * @param describeFastLaunchImagesRequest
@@ -10940,7 +11671,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describe details for Windows AMIs that are configured for faster launching.
+     * Describe details for Windows AMIs that are configured for Windows fast launch.
      * </p>
      * 
      * @param describeFastLaunchImagesRequest
@@ -11044,9 +11775,15 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Describes the running instances for the specified EC2 Fleet.
      * </p>
+     * <note>
+     * <p>
+     * Currently, <code>DescribeFleetInstances</code> does not support fleets of type <code>instant</code>. Instead, use
+     * <code>DescribeFleets</code>, specifying the <code>instant</code> fleet ID in the request.
+     * </p>
+     * </note>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Monitor your
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Describe your
      * EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
@@ -11062,9 +11799,15 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Describes the running instances for the specified EC2 Fleet.
      * </p>
+     * <note>
+     * <p>
+     * Currently, <code>DescribeFleetInstances</code> does not support fleets of type <code>instant</code>. Instead, use
+     * <code>DescribeFleets</code>, specifying the <code>instant</code> fleet ID in the request.
+     * </p>
+     * </note>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Monitor your
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Describe your
      * EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
@@ -11083,11 +11826,17 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes the specified EC2 Fleets or all of your EC2 Fleets.
+     * Describes the specified EC2 Fleet or all of your EC2 Fleets.
      * </p>
+     * <important>
+     * <p>
+     * If a fleet is of type <code>instant</code>, you must specify the fleet ID in the request, otherwise the fleet
+     * does not appear in the response.
+     * </p>
+     * </important>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Monitor your
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Describe your
      * EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
@@ -11101,11 +11850,17 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes the specified EC2 Fleets or all of your EC2 Fleets.
+     * Describes the specified EC2 Fleet or all of your EC2 Fleets.
      * </p>
+     * <important>
+     * <p>
+     * If a fleet is of type <code>instant</code>, you must specify the fleet ID in the request, otherwise the fleet
+     * does not appear in the response.
+     * </p>
+     * </important>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Monitor your
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Describe your
      * EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
@@ -11578,6 +12333,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Describes the specified attribute of the specified AMI. You can specify only one attribute at a time.
      * </p>
+     * <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
+     * </p>
+     * </note>
      * 
      * @param describeImageAttributeRequest
      *        Contains the parameters for DescribeImageAttribute.
@@ -11592,6 +12353,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Describes the specified attribute of the specified AMI. You can specify only one attribute at a time.
      * </p>
+     * <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
+     * </p>
+     * </note>
      * 
      * @param describeImageAttributeRequest
      *        Contains the parameters for DescribeImageAttribute.
@@ -11620,6 +12387,17 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * After all instances that reference a deregistered AMI are terminated, specifying the ID of the image will
      * eventually return an error indicating that the AMI ID cannot be found.
      * </p>
+     * <important>
+     * <p>
+     * We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and
+     * timeouts.
+     * </p>
+     * </important> <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
+     * </p>
+     * </note>
      * 
      * @param describeImagesRequest
      * @return A Java Future containing the result of the DescribeImages operation returned by the service.
@@ -11642,6 +12420,17 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * After all instances that reference a deregistered AMI are terminated, specifying the ID of the image will
      * eventually return an error indicating that the AMI ID cannot be found.
      * </p>
+     * <important>
+     * <p>
+     * We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and
+     * timeouts.
+     * </p>
+     * </important> <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
+     * </p>
+     * </note>
      * 
      * @param describeImagesRequest
      * @param asyncHandler
@@ -11805,6 +12594,41 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<DescribeInstanceAttributeResult> describeInstanceAttributeAsync(
             DescribeInstanceAttributeRequest describeInstanceAttributeRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeInstanceAttributeRequest, DescribeInstanceAttributeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the specified EC2 Instance Connect Endpoints or all EC2 Instance Connect Endpoints.
+     * </p>
+     * 
+     * @param describeInstanceConnectEndpointsRequest
+     * @return A Java Future containing the result of the DescribeInstanceConnectEndpoints operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeInstanceConnectEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceConnectEndpoints"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInstanceConnectEndpointsResult> describeInstanceConnectEndpointsAsync(
+            DescribeInstanceConnectEndpointsRequest describeInstanceConnectEndpointsRequest);
+
+    /**
+     * <p>
+     * Describes the specified EC2 Instance Connect Endpoints or all EC2 Instance Connect Endpoints.
+     * </p>
+     * 
+     * @param describeInstanceConnectEndpointsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeInstanceConnectEndpoints operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeInstanceConnectEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceConnectEndpoints"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInstanceConnectEndpointsResult> describeInstanceConnectEndpointsAsync(
+            DescribeInstanceConnectEndpointsRequest describeInstanceConnectEndpointsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeInstanceConnectEndpointsRequest, DescribeInstanceConnectEndpointsResult> asyncHandler);
 
     /**
      * <p>
@@ -12023,6 +12847,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
+     * </p>
+     * </note>
      * 
      * @param describeInstanceStatusRequest
      * @return A Java Future containing the result of the DescribeInstanceStatus operation returned by the service.
@@ -12068,6 +12898,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
+     * </p>
+     * </note>
      * 
      * @param describeInstanceStatusRequest
      * @param asyncHandler
@@ -12099,8 +12935,145 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Returns a list of all instance types offered. The results can be filtered by location (Region or Availability
-     * Zone). If no location is specified, the instance types offered in the current Region are returned.
+     * Describes a tree-based hierarchy that represents the physical host placement of your EC2 instances within an
+     * Availability Zone or Local Zone. You can use this information to determine the relative proximity of your EC2
+     * instances within the Amazon Web Services network to support your tightly coupled workloads.
+     * </p>
+     * <p class="title">
+     * <b>Limitations</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Supported zones
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Availability Zone
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Local Zone
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Supported instance types
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>hpc6a.48xlarge</code> | <code>hpc6id.32xlarge</code> | <code>hpc7a.12xlarge</code> |
+     * <code>hpc7a.24xlarge</code> | <code>hpc7a.48xlarge</code> | <code>hpc7a.96xlarge</code> |
+     * <code>hpc7g.4xlarge</code> | <code>hpc7g.8xlarge</code> | <code>hpc7g.16xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>p3dn.24xlarge</code> | <code>p4d.24xlarge</code> | <code>p4de.24xlarge</code> | <code>p5.48xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>trn1.2xlarge</code> | <code>trn1.32xlarge</code> | <code>trn1n.32xlarge</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology.html">Amazon EC2 instance
+     * topology</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param describeInstanceTopologyRequest
+     * @return A Java Future containing the result of the DescribeInstanceTopology operation returned by the service.
+     * @sample AmazonEC2Async.DescribeInstanceTopology
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTopology" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInstanceTopologyResult> describeInstanceTopologyAsync(DescribeInstanceTopologyRequest describeInstanceTopologyRequest);
+
+    /**
+     * <p>
+     * Describes a tree-based hierarchy that represents the physical host placement of your EC2 instances within an
+     * Availability Zone or Local Zone. You can use this information to determine the relative proximity of your EC2
+     * instances within the Amazon Web Services network to support your tightly coupled workloads.
+     * </p>
+     * <p class="title">
+     * <b>Limitations</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Supported zones
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Availability Zone
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Local Zone
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Supported instance types
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>hpc6a.48xlarge</code> | <code>hpc6id.32xlarge</code> | <code>hpc7a.12xlarge</code> |
+     * <code>hpc7a.24xlarge</code> | <code>hpc7a.48xlarge</code> | <code>hpc7a.96xlarge</code> |
+     * <code>hpc7g.4xlarge</code> | <code>hpc7g.8xlarge</code> | <code>hpc7g.16xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>p3dn.24xlarge</code> | <code>p4d.24xlarge</code> | <code>p4de.24xlarge</code> | <code>p5.48xlarge</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>trn1.2xlarge</code> | <code>trn1.32xlarge</code> | <code>trn1n.32xlarge</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-topology.html">Amazon EC2 instance
+     * topology</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param describeInstanceTopologyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeInstanceTopology operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DescribeInstanceTopology
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTopology" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInstanceTopologyResult> describeInstanceTopologyAsync(DescribeInstanceTopologyRequest describeInstanceTopologyRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeInstanceTopologyRequest, DescribeInstanceTopologyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the instance types that are offered for the specified location. If no location is specified, the default is
+     * to list the instance types that are offered in the current Region.
      * </p>
      * 
      * @param describeInstanceTypeOfferingsRequest
@@ -12115,8 +13088,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Returns a list of all instance types offered. The results can be filtered by location (Region or Availability
-     * Zone). If no location is specified, the instance types offered in the current Region are returned.
+     * Lists the instance types that are offered for the specified location. If no location is specified, the default is
+     * to list the instance types that are offered in the current Region.
      * </p>
      * 
      * @param describeInstanceTypeOfferingsRequest
@@ -12136,8 +13109,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes the details of the instance types that are offered in a location. The results can be filtered by the
-     * attributes of the instance types.
+     * Describes the specified instance types. By default, all instance types for the current Region are described.
+     * Alternatively, you can filter the results.
      * </p>
      * 
      * @param describeInstanceTypesRequest
@@ -12150,8 +13123,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes the details of the instance types that are offered in a location. The results can be filtered by the
-     * attributes of the instance types.
+     * Describes the specified instance types. By default, all instance types for the current Region are described.
+     * Alternatively, you can filter the results.
      * </p>
      * 
      * @param describeInstanceTypesRequest
@@ -12190,6 +13163,17 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * fails. If you describe instances and specify only instance IDs that are in an unaffected zone, the call works
      * normally.
      * </p>
+     * <important>
+     * <p>
+     * We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and
+     * timeouts.
+     * </p>
+     * </important> <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
+     * </p>
+     * </note>
      * 
      * @param describeInstancesRequest
      * @return A Java Future containing the result of the DescribeInstances operation returned by the service.
@@ -12222,6 +13206,17 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * fails. If you describe instances and specify only instance IDs that are in an unaffected zone, the call works
      * normally.
      * </p>
+     * <important>
+     * <p>
+     * We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and
+     * timeouts.
+     * </p>
+     * </important> <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
+     * </p>
+     * </note>
      * 
      * @param describeInstancesRequest
      * @param asyncHandler
@@ -12299,6 +13294,43 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Describes your Autonomous System Numbers (ASNs), their provisioning statuses, and the BYOIP CIDRs with which they
+     * are associated. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoasn.html">Tutorial: Bring your ASN to IPAM</a> in
+     * the <i>Amazon VPC IPAM guide</i>.
+     * </p>
+     * 
+     * @param describeIpamByoasnRequest
+     * @return A Java Future containing the result of the DescribeIpamByoasn operation returned by the service.
+     * @sample AmazonEC2Async.DescribeIpamByoasn
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamByoasn" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeIpamByoasnResult> describeIpamByoasnAsync(DescribeIpamByoasnRequest describeIpamByoasnRequest);
+
+    /**
+     * <p>
+     * Describes your Autonomous System Numbers (ASNs), their provisioning statuses, and the BYOIP CIDRs with which they
+     * are associated. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoasn.html">Tutorial: Bring your ASN to IPAM</a> in
+     * the <i>Amazon VPC IPAM guide</i>.
+     * </p>
+     * 
+     * @param describeIpamByoasnRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeIpamByoasn operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DescribeIpamByoasn
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamByoasn" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeIpamByoasnResult> describeIpamByoasnAsync(DescribeIpamByoasnRequest describeIpamByoasnRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeIpamByoasnRequest, DescribeIpamByoasnResult> asyncHandler);
+
+    /**
+     * <p>
      * Get information about your IPAM pools.
      * </p>
      * 
@@ -12327,6 +13359,80 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<DescribeIpamPoolsResult> describeIpamPoolsAsync(DescribeIpamPoolsRequest describeIpamPoolsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeIpamPoolsRequest, DescribeIpamPoolsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes IPAM resource discoveries. A resource discovery is an IPAM component that enables IPAM to manage and
+     * monitor resources that belong to the owning account.
+     * </p>
+     * 
+     * @param describeIpamResourceDiscoveriesRequest
+     * @return A Java Future containing the result of the DescribeIpamResourceDiscoveries operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeIpamResourceDiscoveries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamResourceDiscoveries"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeIpamResourceDiscoveriesResult> describeIpamResourceDiscoveriesAsync(
+            DescribeIpamResourceDiscoveriesRequest describeIpamResourceDiscoveriesRequest);
+
+    /**
+     * <p>
+     * Describes IPAM resource discoveries. A resource discovery is an IPAM component that enables IPAM to manage and
+     * monitor resources that belong to the owning account.
+     * </p>
+     * 
+     * @param describeIpamResourceDiscoveriesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeIpamResourceDiscoveries operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeIpamResourceDiscoveries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamResourceDiscoveries"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeIpamResourceDiscoveriesResult> describeIpamResourceDiscoveriesAsync(
+            DescribeIpamResourceDiscoveriesRequest describeIpamResourceDiscoveriesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeIpamResourceDiscoveriesRequest, DescribeIpamResourceDiscoveriesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes resource discovery association with an Amazon VPC IPAM. An associated resource discovery is a resource
+     * discovery that has been associated with an IPAM..
+     * </p>
+     * 
+     * @param describeIpamResourceDiscoveryAssociationsRequest
+     * @return A Java Future containing the result of the DescribeIpamResourceDiscoveryAssociations operation returned
+     *         by the service.
+     * @sample AmazonEC2Async.DescribeIpamResourceDiscoveryAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamResourceDiscoveryAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeIpamResourceDiscoveryAssociationsResult> describeIpamResourceDiscoveryAssociationsAsync(
+            DescribeIpamResourceDiscoveryAssociationsRequest describeIpamResourceDiscoveryAssociationsRequest);
+
+    /**
+     * <p>
+     * Describes resource discovery association with an Amazon VPC IPAM. An associated resource discovery is a resource
+     * discovery that has been associated with an IPAM..
+     * </p>
+     * 
+     * @param describeIpamResourceDiscoveryAssociationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeIpamResourceDiscoveryAssociations operation returned
+     *         by the service.
+     * @sample AmazonEC2AsyncHandler.DescribeIpamResourceDiscoveryAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamResourceDiscoveryAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeIpamResourceDiscoveryAssociationsResult> describeIpamResourceDiscoveryAssociationsAsync(
+            DescribeIpamResourceDiscoveryAssociationsRequest describeIpamResourceDiscoveryAssociationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeIpamResourceDiscoveryAssociationsRequest, DescribeIpamResourceDiscoveryAssociationsResult> asyncHandler);
 
     /**
      * <p>
@@ -12771,6 +13877,68 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Describes the lock status for a snapshot.
+     * </p>
+     * 
+     * @param describeLockedSnapshotsRequest
+     * @return A Java Future containing the result of the DescribeLockedSnapshots operation returned by the service.
+     * @sample AmazonEC2Async.DescribeLockedSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLockedSnapshots" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeLockedSnapshotsResult> describeLockedSnapshotsAsync(DescribeLockedSnapshotsRequest describeLockedSnapshotsRequest);
+
+    /**
+     * <p>
+     * Describes the lock status for a snapshot.
+     * </p>
+     * 
+     * @param describeLockedSnapshotsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeLockedSnapshots operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DescribeLockedSnapshots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLockedSnapshots" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeLockedSnapshotsResult> describeLockedSnapshotsAsync(DescribeLockedSnapshotsRequest describeLockedSnapshotsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeLockedSnapshotsRequest, DescribeLockedSnapshotsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the specified EC2 Mac Dedicated Host or all of your EC2 Mac Dedicated Hosts.
+     * </p>
+     * 
+     * @param describeMacHostsRequest
+     * @return A Java Future containing the result of the DescribeMacHosts operation returned by the service.
+     * @sample AmazonEC2Async.DescribeMacHosts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMacHosts" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeMacHostsResult> describeMacHostsAsync(DescribeMacHostsRequest describeMacHostsRequest);
+
+    /**
+     * <p>
+     * Describes the specified EC2 Mac Dedicated Host or all of your EC2 Mac Dedicated Hosts.
+     * </p>
+     * 
+     * @param describeMacHostsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeMacHosts operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DescribeMacHosts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMacHosts" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeMacHostsResult> describeMacHostsAsync(DescribeMacHostsRequest describeMacHostsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeMacHostsRequest, DescribeMacHostsResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes your managed prefix lists and any Amazon Web Services-managed prefix lists.
      * </p>
      * <p>
@@ -12809,10 +13977,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
             com.amazonaws.handlers.AsyncHandler<DescribeManagedPrefixListsRequest, DescribeManagedPrefixListsResult> asyncHandler);
 
     /**
+     * <note>
      * <p>
-     * Describes your Elastic IP addresses that are being moved to the EC2-VPC platform, or that are being restored to
-     * the EC2-Classic platform. This request does not return information about any other Elastic IP addresses in your
-     * account.
+     * This action is deprecated.
+     * </p>
+     * </note>
+     * <p>
+     * Describes your Elastic IP addresses that are being moved from or being restored to the EC2-Classic platform. This
+     * request does not return information about any other Elastic IP addresses in your account.
      * </p>
      * 
      * @param describeMovingAddressesRequest
@@ -12824,10 +13996,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<DescribeMovingAddressesResult> describeMovingAddressesAsync(DescribeMovingAddressesRequest describeMovingAddressesRequest);
 
     /**
+     * <note>
      * <p>
-     * Describes your Elastic IP addresses that are being moved to the EC2-VPC platform, or that are being restored to
-     * the EC2-Classic platform. This request does not return information about any other Elastic IP addresses in your
-     * account.
+     * This action is deprecated.
+     * </p>
+     * </note>
+     * <p>
+     * Describes your Elastic IP addresses that are being moved from or being restored to the EC2-Classic platform. This
+     * request does not return information about any other Elastic IP addresses in your account.
      * </p>
      * 
      * @param describeMovingAddressesRequest
@@ -12894,8 +14070,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes one or more of your network ACLs.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network
-     * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html">Network ACLs</a> in the <i>Amazon
+     * VPC User Guide</i>.
      * </p>
      * 
      * @param describeNetworkAclsRequest
@@ -12911,8 +14088,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes one or more of your network ACLs.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network
-     * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html">Network ACLs</a> in the <i>Amazon
+     * VPC User Guide</i>.
      * </p>
      * 
      * @param describeNetworkAclsRequest
@@ -13161,6 +14339,17 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Describes one or more of your network interfaces.
      * </p>
+     * <p>
+     * If you have a large number of network interfaces, the operation fails unless you use pagination or one of the
+     * following filters: <code>group-id</code>, <code>mac-address</code>, <code>private-dns-name</code>,
+     * <code>private-ip-address</code>, <code>private-dns-name</code>, <code>subnet-id</code>, or <code>vpc-id</code>.
+     * </p>
+     * <important>
+     * <p>
+     * We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and
+     * timeouts.
+     * </p>
+     * </important>
      * 
      * @param describeNetworkInterfacesRequest
      *        Contains the parameters for DescribeNetworkInterfaces.
@@ -13176,6 +14365,17 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Describes one or more of your network interfaces.
      * </p>
+     * <p>
+     * If you have a large number of network interfaces, the operation fails unless you use pagination or one of the
+     * following filters: <code>group-id</code>, <code>mac-address</code>, <code>private-dns-name</code>,
+     * <code>private-ip-address</code>, <code>private-dns-name</code>, <code>subnet-id</code>, or <code>vpc-id</code>.
+     * </p>
+     * <important>
+     * <p>
+     * We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and
+     * timeouts.
+     * </p>
+     * </important>
      * 
      * @param describeNetworkInterfacesRequest
      *        Contains the parameters for DescribeNetworkInterfaces.
@@ -13425,6 +14625,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html">Managing Amazon Web Services Regions</a>
      * in the <i>Amazon Web Services General Reference</i>.
      * </p>
+     * <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
+     * </p>
+     * </note>
      * 
      * @param describeRegionsRequest
      * @return A Java Future containing the result of the DescribeRegions operation returned by the service.
@@ -13448,6 +14654,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html">Managing Amazon Web Services Regions</a>
      * in the <i>Amazon Web Services General Reference</i>.
      * </p>
+     * <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
+     * </p>
+     * </note>
      * 
      * @param describeRegionsRequest
      * @param asyncHandler
@@ -13480,8 +14692,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Describes a root volume replacement task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace a root
-     * volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replace-root.html">Replace a root volume</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param describeReplaceRootVolumeTasksRequest
@@ -13497,8 +14709,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Describes a root volume replacement task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace a root
-     * volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replace-root.html">Replace a root volume</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param describeReplaceRootVolumeTasksRequest
@@ -13525,6 +14737,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
      * Instances</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
+     * </p>
+     * </note>
      * 
      * @param describeReservedInstancesRequest
      *        Contains the parameters for DescribeReservedInstances.
@@ -13545,6 +14763,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
      * Instances</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
+     * </p>
+     * </note>
      * 
      * @param describeReservedInstancesRequest
      *        Contains the parameters for DescribeReservedInstances.
@@ -13601,6 +14825,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved Instance
      * Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
+     * </p>
+     * </note>
      * 
      * @param describeReservedInstancesListingsRequest
      *        Contains the parameters for DescribeReservedInstancesListings.
@@ -13638,6 +14868,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved Instance
      * Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
+     * </p>
+     * </note>
      * 
      * @param describeReservedInstancesListingsRequest
      *        Contains the parameters for DescribeReservedInstancesListings.
@@ -13682,6 +14918,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying Reserved Instances</a> in
      * the <i>Amazon EC2 User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
+     * </p>
+     * </note>
      * 
      * @param describeReservedInstancesModificationsRequest
      *        Contains the parameters for DescribeReservedInstancesModifications.
@@ -13705,6 +14947,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying Reserved Instances</a> in
      * the <i>Amazon EC2 User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
+     * </p>
+     * </note>
      * 
      * @param describeReservedInstancesModificationsRequest
      *        Contains the parameters for DescribeReservedInstancesModifications.
@@ -13753,6 +15001,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved Instance
      * Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
+     * </p>
+     * </note>
      * 
      * @param describeReservedInstancesOfferingsRequest
      *        Contains the parameters for DescribeReservedInstancesOfferings.
@@ -13780,6 +15034,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved Instance
      * Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
+     * </p>
+     * </note>
      * 
      * @param describeReservedInstancesOfferingsRequest
      *        Contains the parameters for DescribeReservedInstancesOfferings.
@@ -13824,7 +15084,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-     * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * tables</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @param describeRouteTablesRequest
@@ -13846,7 +15106,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-     * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * tables</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @param describeRouteTablesRequest
@@ -13969,8 +15229,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * [VPC only] Describes the VPCs on the other side of a VPC peering connection that are referencing the security
-     * groups you've specified in this request.
+     * Describes the VPCs on the other side of a VPC peering connection that are referencing the security groups you've
+     * specified in this request.
      * </p>
      * 
      * @param describeSecurityGroupReferencesRequest
@@ -13985,8 +15245,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * [VPC only] Describes the VPCs on the other side of a VPC peering connection that are referencing the security
-     * groups you've specified in this request.
+     * Describes the VPCs on the other side of a VPC peering connection that are referencing the security groups you've
+     * specified in this request.
      * </p>
      * 
      * @param describeSecurityGroupReferencesRequest
@@ -14041,20 +15301,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Describes the specified security groups or all of your security groups.
      * </p>
-     * <p>
-     * A security group is for use with instances either in the EC2-Classic platform or in a specific VPC. For more
-     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
-     * EC2 security groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security groups for your
-     * VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
-     * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param describeSecurityGroupsRequest
      * @return A Java Future containing the result of the DescribeSecurityGroups operation returned by the service.
@@ -14068,20 +15314,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Describes the specified security groups or all of your security groups.
      * </p>
-     * <p>
-     * A security group is for use with instances either in the EC2-Classic platform or in a specific VPC. For more
-     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
-     * EC2 security groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i> and <a
-     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security groups for your
-     * VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
-     * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param describeSecurityGroupsRequest
      * @param asyncHandler
@@ -14117,8 +15349,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information about EBS snapshots, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon EBS snapshots</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-snapshots.html">Amazon EBS snapshots</a> in the
+     * <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param describeSnapshotAttributeRequest
@@ -14136,8 +15368,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information about EBS snapshots, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon EBS snapshots</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-snapshots.html">Amazon EBS snapshots</a> in the
+     * <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param describeSnapshotAttributeRequest
@@ -14240,19 +15472,23 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * If you are describing a long list of snapshots, we recommend that you paginate the output to make the list more
-     * manageable. The <code>MaxResults</code> parameter sets the maximum number of results returned in a single page.
-     * If the list of results exceeds your <code>MaxResults</code> value, then that number of results is returned along
-     * with a <code>NextToken</code> value that can be passed to a subsequent <code>DescribeSnapshots</code> request to
-     * retrieve the remaining results.
+     * manageable. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * <p>
      * To get the state of fast snapshot restores for a snapshot, use <a>DescribeFastSnapshotRestores</a>.
      * </p>
      * <p>
      * For more information about EBS snapshots, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon EBS snapshots</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-snapshots.html">Amazon EBS snapshots</a> in the
+     * <i>Amazon EBS User Guide</i>.
      * </p>
+     * <important>
+     * <p>
+     * We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and
+     * timeouts.
+     * </p>
+     * </important>
      * 
      * @param describeSnapshotsRequest
      * @return A Java Future containing the result of the DescribeSnapshots operation returned by the service.
@@ -14315,19 +15551,23 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * If you are describing a long list of snapshots, we recommend that you paginate the output to make the list more
-     * manageable. The <code>MaxResults</code> parameter sets the maximum number of results returned in a single page.
-     * If the list of results exceeds your <code>MaxResults</code> value, then that number of results is returned along
-     * with a <code>NextToken</code> value that can be passed to a subsequent <code>DescribeSnapshots</code> request to
-     * retrieve the remaining results.
+     * manageable. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * <p>
      * To get the state of fast snapshot restores for a snapshot, use <a>DescribeFastSnapshotRestores</a>.
      * </p>
      * <p>
      * For more information about EBS snapshots, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon EBS snapshots</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-snapshots.html">Amazon EBS snapshots</a> in the
+     * <i>Amazon EBS User Guide</i>.
      * </p>
+     * <important>
+     * <p>
+     * We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and
+     * timeouts.
+     * </p>
+     * </important>
      * 
      * @param describeSnapshotsRequest
      * @param asyncHandler
@@ -14460,7 +15700,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/fleet-monitor.html">Monitor fleet events using Amazon
-     * EventBridge</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * EventBridge</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param describeSpotFleetRequestHistoryRequest
@@ -14485,7 +15725,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/fleet-monitor.html">Monitor fleet events using Amazon
-     * EventBridge</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * EventBridge</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param describeSpotFleetRequestHistoryRequest
@@ -14572,11 +15812,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * filter to look for instances where the instance lifecycle is <code>spot</code>.
      * </p>
      * <p>
-     * We recommend that you set <code>MaxResults</code> to a value between 5 and 1000 to limit the number of results
-     * returned. This paginates the output, which makes the list more manageable and returns the results faster. If the
-     * list of results exceeds your <code>MaxResults</code> value, then that number of results is returned along with a
+     * We recommend that you set <code>MaxResults</code> to a value between 5 and 1000 to limit the number of items
+     * returned. This paginates the output, which makes the list more manageable and returns the items faster. If the
+     * list of items exceeds your <code>MaxResults</code> value, then that number of items is returned along with a
      * <code>NextToken</code> value that can be passed to a subsequent <code>DescribeSpotInstanceRequests</code> request
-     * to retrieve the remaining results.
+     * to retrieve the remaining items.
      * </p>
      * <p>
      * Spot Instance requests are deleted four hours after they are canceled and their instances are terminated.
@@ -14605,11 +15845,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * filter to look for instances where the instance lifecycle is <code>spot</code>.
      * </p>
      * <p>
-     * We recommend that you set <code>MaxResults</code> to a value between 5 and 1000 to limit the number of results
-     * returned. This paginates the output, which makes the list more manageable and returns the results faster. If the
-     * list of results exceeds your <code>MaxResults</code> value, then that number of results is returned along with a
+     * We recommend that you set <code>MaxResults</code> to a value between 5 and 1000 to limit the number of items
+     * returned. This paginates the output, which makes the list more manageable and returns the items faster. If the
+     * list of items exceeds your <code>MaxResults</code> value, then that number of items is returned along with a
      * <code>NextToken</code> value that can be passed to a subsequent <code>DescribeSpotInstanceRequests</code> request
-     * to retrieve the remaining results.
+     * to retrieve the remaining items.
      * </p>
      * <p>
      * Spot Instance requests are deleted four hours after they are canceled and their instances are terminated.
@@ -14710,9 +15950,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * [VPC only] Describes the stale security group rules for security groups in a specified VPC. Rules are stale when
-     * they reference a deleted security group in the same VPC or in a peer VPC, or if they reference a security group
-     * in a peer VPC for which the VPC peering connection has been deleted.
+     * Describes the stale security group rules for security groups in a specified VPC. Rules are stale when they
+     * reference a deleted security group in the same VPC or peered VPC. Rules can also be stale if they reference a
+     * security group in a peer VPC for which the VPC peering connection has been deleted.
      * </p>
      * 
      * @param describeStaleSecurityGroupsRequest
@@ -14726,9 +15966,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * [VPC only] Describes the stale security group rules for security groups in a specified VPC. Rules are stale when
-     * they reference a deleted security group in the same VPC or in a peer VPC, or if they reference a security group
-     * in a peer VPC for which the VPC peering connection has been deleted.
+     * Describes the stale security group rules for security groups in a specified VPC. Rules are stale when they
+     * reference a deleted security group in the same VPC or peered VPC. Rules can also be stale if they reference a
+     * security group in a peer VPC for which the VPC peering connection has been deleted.
      * </p>
      * 
      * @param describeStaleSecurityGroupsRequest
@@ -14761,12 +16001,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * To use this API, you must have the required permissions. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
-     * Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param describeStoreImageTasksRequest
@@ -14793,12 +16033,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * To use this API, you must have the required permissions. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
-     * Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param describeStoreImageTasksRequest
@@ -14819,8 +16059,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes one or more of your subnets.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your VPC
-     * and subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html">Subnets</a> in the <i>Amazon VPC
+     * User Guide</i>.
      * </p>
      * 
      * @param describeSubnetsRequest
@@ -14836,8 +16077,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes one or more of your subnets.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your VPC
-     * and subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html">Subnets</a> in the <i>Amazon VPC
+     * User Guide</i>.
      * </p>
      * 
      * @param describeSubnetsRequest
@@ -14877,6 +16119,17 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag your Amazon EC2 resources</a> in
      * the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
+     * <important>
+     * <p>
+     * We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and
+     * timeouts.
+     * </p>
+     * </important> <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
+     * </p>
+     * </note>
      * 
      * @param describeTagsRequest
      * @return A Java Future containing the result of the DescribeTags operation returned by the service.
@@ -14895,6 +16148,17 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag your Amazon EC2 resources</a> in
      * the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
+     * <important>
+     * <p>
+     * We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and
+     * timeouts.
+     * </p>
+     * </important> <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
+     * </p>
+     * </note>
      * 
      * @param describeTagsRequest
      * @param asyncHandler
@@ -15389,12 +16653,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
             com.amazonaws.handlers.AsyncHandler<DescribeTransitGatewaysRequest, DescribeTransitGatewaysResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This API action is currently in <b>limited preview only</b>. If you are interested in using this feature, contact
-     * your account manager.
-     * </p>
-     * </note>
      * <p>
      * Describes one or more network interface trunk associations.
      * </p>
@@ -15410,12 +16668,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
             DescribeTrunkInterfaceAssociationsRequest describeTrunkInterfaceAssociationsRequest);
 
     /**
-     * <note>
-     * <p>
-     * This API action is currently in <b>limited preview only</b>. If you are interested in using this feature, contact
-     * your account manager.
-     * </p>
-     * </note>
      * <p>
      * Describes one or more network interface trunk associations.
      * </p>
@@ -15437,12 +16689,189 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Describes the specified Amazon Web Services Verified Access endpoints.
+     * </p>
+     * 
+     * @param describeVerifiedAccessEndpointsRequest
+     * @return A Java Future containing the result of the DescribeVerifiedAccessEndpoints operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeVerifiedAccessEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessEndpoints"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVerifiedAccessEndpointsResult> describeVerifiedAccessEndpointsAsync(
+            DescribeVerifiedAccessEndpointsRequest describeVerifiedAccessEndpointsRequest);
+
+    /**
+     * <p>
+     * Describes the specified Amazon Web Services Verified Access endpoints.
+     * </p>
+     * 
+     * @param describeVerifiedAccessEndpointsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeVerifiedAccessEndpoints operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeVerifiedAccessEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessEndpoints"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVerifiedAccessEndpointsResult> describeVerifiedAccessEndpointsAsync(
+            DescribeVerifiedAccessEndpointsRequest describeVerifiedAccessEndpointsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeVerifiedAccessEndpointsRequest, DescribeVerifiedAccessEndpointsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the specified Verified Access groups.
+     * </p>
+     * 
+     * @param describeVerifiedAccessGroupsRequest
+     * @return A Java Future containing the result of the DescribeVerifiedAccessGroups operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeVerifiedAccessGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVerifiedAccessGroupsResult> describeVerifiedAccessGroupsAsync(
+            DescribeVerifiedAccessGroupsRequest describeVerifiedAccessGroupsRequest);
+
+    /**
+     * <p>
+     * Describes the specified Verified Access groups.
+     * </p>
+     * 
+     * @param describeVerifiedAccessGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeVerifiedAccessGroups operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeVerifiedAccessGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVerifiedAccessGroupsResult> describeVerifiedAccessGroupsAsync(
+            DescribeVerifiedAccessGroupsRequest describeVerifiedAccessGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeVerifiedAccessGroupsRequest, DescribeVerifiedAccessGroupsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the specified Amazon Web Services Verified Access instances.
+     * </p>
+     * 
+     * @param describeVerifiedAccessInstanceLoggingConfigurationsRequest
+     * @return A Java Future containing the result of the DescribeVerifiedAccessInstanceLoggingConfigurations operation
+     *         returned by the service.
+     * @sample AmazonEC2Async.DescribeVerifiedAccessInstanceLoggingConfigurations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessInstanceLoggingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVerifiedAccessInstanceLoggingConfigurationsResult> describeVerifiedAccessInstanceLoggingConfigurationsAsync(
+            DescribeVerifiedAccessInstanceLoggingConfigurationsRequest describeVerifiedAccessInstanceLoggingConfigurationsRequest);
+
+    /**
+     * <p>
+     * Describes the specified Amazon Web Services Verified Access instances.
+     * </p>
+     * 
+     * @param describeVerifiedAccessInstanceLoggingConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeVerifiedAccessInstanceLoggingConfigurations operation
+     *         returned by the service.
+     * @sample AmazonEC2AsyncHandler.DescribeVerifiedAccessInstanceLoggingConfigurations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessInstanceLoggingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVerifiedAccessInstanceLoggingConfigurationsResult> describeVerifiedAccessInstanceLoggingConfigurationsAsync(
+            DescribeVerifiedAccessInstanceLoggingConfigurationsRequest describeVerifiedAccessInstanceLoggingConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeVerifiedAccessInstanceLoggingConfigurationsRequest, DescribeVerifiedAccessInstanceLoggingConfigurationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the specified Amazon Web Services Verified Access instances.
+     * </p>
+     * 
+     * @param describeVerifiedAccessInstancesRequest
+     * @return A Java Future containing the result of the DescribeVerifiedAccessInstances operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeVerifiedAccessInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessInstances"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVerifiedAccessInstancesResult> describeVerifiedAccessInstancesAsync(
+            DescribeVerifiedAccessInstancesRequest describeVerifiedAccessInstancesRequest);
+
+    /**
+     * <p>
+     * Describes the specified Amazon Web Services Verified Access instances.
+     * </p>
+     * 
+     * @param describeVerifiedAccessInstancesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeVerifiedAccessInstances operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeVerifiedAccessInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessInstances"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVerifiedAccessInstancesResult> describeVerifiedAccessInstancesAsync(
+            DescribeVerifiedAccessInstancesRequest describeVerifiedAccessInstancesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeVerifiedAccessInstancesRequest, DescribeVerifiedAccessInstancesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the specified Amazon Web Services Verified Access trust providers.
+     * </p>
+     * 
+     * @param describeVerifiedAccessTrustProvidersRequest
+     * @return A Java Future containing the result of the DescribeVerifiedAccessTrustProviders operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeVerifiedAccessTrustProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessTrustProviders"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVerifiedAccessTrustProvidersResult> describeVerifiedAccessTrustProvidersAsync(
+            DescribeVerifiedAccessTrustProvidersRequest describeVerifiedAccessTrustProvidersRequest);
+
+    /**
+     * <p>
+     * Describes the specified Amazon Web Services Verified Access trust providers.
+     * </p>
+     * 
+     * @param describeVerifiedAccessTrustProvidersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeVerifiedAccessTrustProviders operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeVerifiedAccessTrustProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessTrustProviders"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVerifiedAccessTrustProvidersResult> describeVerifiedAccessTrustProvidersAsync(
+            DescribeVerifiedAccessTrustProvidersRequest describeVerifiedAccessTrustProvidersRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeVerifiedAccessTrustProvidersRequest, DescribeVerifiedAccessTrustProvidersResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes the specified attribute of the specified volume. You can specify only one attribute at a time.
      * </p>
      * <p>
      * For more information about EBS volumes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon EBS volumes</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes.html">Amazon EBS volumes</a> in the <i>Amazon
+     * EBS User Guide</i>.
      * </p>
      * 
      * @param describeVolumeAttributeRequest
@@ -15459,8 +16888,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information about EBS volumes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon EBS volumes</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes.html">Amazon EBS volumes</a> in the <i>Amazon
+     * EBS User Guide</i>.
      * </p>
      * 
      * @param describeVolumeAttributeRequest
@@ -15494,8 +16923,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * status of the volume is <code>ok</code>. If the check fails, the overall status is <code>impaired</code>. If the
      * status is <code>insufficient-data</code>, then the checks might still be taking place on your volume at the time.
      * We recommend that you retry the request. For more information about volume status, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitor the status of
-     * your volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-status.html">Monitor the status of your
+     * volumes</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * <p>
      * <i>Events</i>: Reflect the cause of a volume status and might require you to take action. For example, if your
@@ -15514,6 +16943,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * status does not indicate volumes in the <code>error</code> state (for example, when a volume is incapable of
      * accepting I/O.)
      * </p>
+     * <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
+     * </p>
+     * </note>
      * 
      * @param describeVolumeStatusRequest
      * @return A Java Future containing the result of the DescribeVolumeStatus operation returned by the service.
@@ -15541,8 +16976,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * status of the volume is <code>ok</code>. If the check fails, the overall status is <code>impaired</code>. If the
      * status is <code>insufficient-data</code>, then the checks might still be taking place on your volume at the time.
      * We recommend that you retry the request. For more information about volume status, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitor the status of
-     * your volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-status.html">Monitor the status of your
+     * volumes</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * <p>
      * <i>Events</i>: Reflect the cause of a volume status and might require you to take action. For example, if your
@@ -15561,6 +16996,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * status does not indicate volumes in the <code>error</code> state (for example, when a volume is incapable of
      * accepting I/O.)
      * </p>
+     * <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
+     * </p>
+     * </note>
      * 
      * @param describeVolumeStatusRequest
      * @param asyncHandler
@@ -15596,16 +17037,25 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * If you are describing a long list of volumes, we recommend that you paginate the output to make the list more
-     * manageable. The <code>MaxResults</code> parameter sets the maximum number of results returned in a single page.
-     * If the list of results exceeds your <code>MaxResults</code> value, then that number of results is returned along
-     * with a <code>NextToken</code> value that can be passed to a subsequent <code>DescribeVolumes</code> request to
-     * retrieve the remaining results.
+     * manageable. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * <p>
      * For more information about EBS volumes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon EBS volumes</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes.html">Amazon EBS volumes</a> in the <i>Amazon
+     * EBS User Guide</i>.
      * </p>
+     * <important>
+     * <p>
+     * We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and
+     * timeouts.
+     * </p>
+     * </important> <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
+     * </p>
+     * </note>
      * 
      * @param describeVolumesRequest
      * @return A Java Future containing the result of the DescribeVolumes operation returned by the service.
@@ -15621,16 +17071,25 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * If you are describing a long list of volumes, we recommend that you paginate the output to make the list more
-     * manageable. The <code>MaxResults</code> parameter sets the maximum number of results returned in a single page.
-     * If the list of results exceeds your <code>MaxResults</code> value, then that number of results is returned along
-     * with a <code>NextToken</code> value that can be passed to a subsequent <code>DescribeVolumes</code> request to
-     * retrieve the remaining results.
+     * manageable. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * <p>
      * For more information about EBS volumes, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon EBS volumes</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes.html">Amazon EBS volumes</a> in the <i>Amazon
+     * EBS User Guide</i>.
      * </p>
+     * <important>
+     * <p>
+     * We strongly recommend using only paginated requests. Unpaginated requests are susceptible to throttling and
+     * timeouts.
+     * </p>
+     * </important> <note>
+     * <p>
+     * The order of the elements in the response, including those within nested structures, might vary. Applications
+     * should not assume the elements appear in a particular order.
+     * </p>
+     * </note>
      * 
      * @param describeVolumesRequest
      * @param asyncHandler
@@ -15672,8 +17131,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * You can also use CloudWatch Events to check the status of a modification to an EBS volume. For information about
      * CloudWatch Events, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
      * CloudWatch Events User Guide</a>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-modifications.html">Monitor the
-     * progress of volume modifications</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-modifications.html">Monitor the progress
+     * of volume modifications</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param describeVolumesModificationsRequest
@@ -15698,8 +17157,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * You can also use CloudWatch Events to check the status of a modification to an EBS volume. For information about
      * CloudWatch Events, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
      * CloudWatch Events User Guide</a>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-modifications.html">Monitor the
-     * progress of volume modifications</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-modifications.html">Monitor the progress
+     * of volume modifications</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param describeVolumesModificationsRequest
@@ -15749,16 +17208,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
             com.amazonaws.handlers.AsyncHandler<DescribeVpcAttributeRequest, DescribeVpcAttributeResult> asyncHandler);
 
     /**
-     * <p>
-     * Describes the ClassicLink status of one or more VPCs.
-     * </p>
      * <note>
      * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * This action is deprecated.
      * </p>
      * </note>
+     * <p>
+     * Describes the ClassicLink status of the specified VPCs.
+     * </p>
      * 
      * @param describeVpcClassicLinkRequest
      * @return A Java Future containing the result of the DescribeVpcClassicLink operation returned by the service.
@@ -15769,16 +17226,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<DescribeVpcClassicLinkResult> describeVpcClassicLinkAsync(DescribeVpcClassicLinkRequest describeVpcClassicLinkRequest);
 
     /**
-     * <p>
-     * Describes the ClassicLink status of one or more VPCs.
-     * </p>
      * <note>
      * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * This action is deprecated.
      * </p>
      * </note>
+     * <p>
+     * Describes the ClassicLink status of the specified VPCs.
+     * </p>
      * 
      * @param describeVpcClassicLinkRequest
      * @param asyncHandler
@@ -15811,18 +17266,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <note>
      * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * This action is deprecated.
      * </p>
      * </note>
      * <p>
      * Describes the ClassicLink DNS support status of one or more VPCs. If enabled, the DNS hostname of a linked
      * EC2-Classic instance resolves to its private IP address when addressed from an instance in the VPC to which it's
      * linked. Similarly, the DNS hostname of an instance in a VPC resolves to its private IP address when addressed
-     * from a linked EC2-Classic instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * from a linked EC2-Classic instance.
      * </p>
      * 
      * @param describeVpcClassicLinkDnsSupportRequest
@@ -15838,18 +17289,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <note>
      * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * This action is deprecated.
      * </p>
      * </note>
      * <p>
      * Describes the ClassicLink DNS support status of one or more VPCs. If enabled, the DNS hostname of a linked
      * EC2-Classic instance resolves to its private IP address when addressed from an instance in the VPC to which it's
      * linked. Similarly, the DNS hostname of an instance in a VPC resolves to its private IP address when addressed
-     * from a linked EC2-Classic instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * from a linked EC2-Classic instance.
      * </p>
      * 
      * @param describeVpcClassicLinkDnsSupportRequest
@@ -16022,7 +17469,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeVpcEndpointServicesRequest
-     *        Contains the parameters for DescribeVpcEndpointServices.
      * @return A Java Future containing the result of the DescribeVpcEndpointServices operation returned by the service.
      * @sample AmazonEC2Async.DescribeVpcEndpointServices
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointServices"
@@ -16044,7 +17490,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param describeVpcEndpointServicesRequest
-     *        Contains the parameters for DescribeVpcEndpointServices.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -16075,11 +17520,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more of your VPC endpoints.
+     * Describes your VPC endpoints.
      * </p>
      * 
      * @param describeVpcEndpointsRequest
-     *        Contains the parameters for DescribeVpcEndpoints.
      * @return A Java Future containing the result of the DescribeVpcEndpoints operation returned by the service.
      * @sample AmazonEC2Async.DescribeVpcEndpoints
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpoints" target="_top">AWS API
@@ -16089,11 +17533,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes one or more of your VPC endpoints.
+     * Describes your VPC endpoints.
      * </p>
      * 
      * @param describeVpcEndpointsRequest
-     *        Contains the parameters for DescribeVpcEndpoints.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -16332,9 +17775,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <note>
      * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * This action is deprecated.
      * </p>
      * </note>
      * <p>
@@ -16354,9 +17795,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <note>
      * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * This action is deprecated.
      * </p>
      * </note>
      * <p>
@@ -16446,6 +17885,43 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Detaches the specified Amazon Web Services Verified Access trust provider from the specified Amazon Web Services
+     * Verified Access instance.
+     * </p>
+     * 
+     * @param detachVerifiedAccessTrustProviderRequest
+     * @return A Java Future containing the result of the DetachVerifiedAccessTrustProvider operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DetachVerifiedAccessTrustProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVerifiedAccessTrustProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DetachVerifiedAccessTrustProviderResult> detachVerifiedAccessTrustProviderAsync(
+            DetachVerifiedAccessTrustProviderRequest detachVerifiedAccessTrustProviderRequest);
+
+    /**
+     * <p>
+     * Detaches the specified Amazon Web Services Verified Access trust provider from the specified Amazon Web Services
+     * Verified Access instance.
+     * </p>
+     * 
+     * @param detachVerifiedAccessTrustProviderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DetachVerifiedAccessTrustProvider operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DetachVerifiedAccessTrustProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVerifiedAccessTrustProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DetachVerifiedAccessTrustProviderResult> detachVerifiedAccessTrustProviderAsync(
+            DetachVerifiedAccessTrustProviderRequest detachVerifiedAccessTrustProviderRequest,
+            com.amazonaws.handlers.AsyncHandler<DetachVerifiedAccessTrustProviderRequest, DetachVerifiedAccessTrustProviderResult> asyncHandler);
+
+    /**
+     * <p>
      * Detaches an EBS volume from an instance. Make sure to unmount any file systems on the device within your
      * operating system before detaching the volume. Failure to do so can result in the volume becoming stuck in the
      * <code>busy</code> state while detaching. If this happens, detachment can be delayed indefinitely until you
@@ -16458,9 +17934,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * is no longer associated with the instance.
      * </p>
      * <p>
+     * You can't detach or force detach volumes that are attached to Amazon ECS or Fargate tasks. Attempting to do this
+     * results in the <code>UnsupportedOperationException</code> exception with the
+     * <code>Unable to detach volume attached to ECS tasks</code> error message.
+     * </p>
+     * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html">Detach an Amazon EBS
-     * volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-detaching-volume.html">Detach an Amazon EBS volume</a>
+     * in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param detachVolumeRequest
@@ -16485,9 +17966,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * is no longer associated with the instance.
      * </p>
      * <p>
+     * You can't detach or force detach volumes that are attached to Amazon ECS or Fargate tasks. Attempting to do this
+     * results in the <code>UnsupportedOperationException</code> exception with the
+     * <code>Unable to detach volume attached to ECS tasks</code> error message.
+     * </p>
+     * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html">Detach an Amazon EBS
-     * volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-detaching-volume.html">Detach an Amazon EBS volume</a>
+     * in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param detachVolumeRequest
@@ -16585,6 +18071,43 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Disables Infrastructure Performance metric subscriptions.
+     * </p>
+     * 
+     * @param disableAwsNetworkPerformanceMetricSubscriptionRequest
+     * @return A Java Future containing the result of the DisableAwsNetworkPerformanceMetricSubscription operation
+     *         returned by the service.
+     * @sample AmazonEC2Async.DisableAwsNetworkPerformanceMetricSubscription
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAwsNetworkPerformanceMetricSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableAwsNetworkPerformanceMetricSubscriptionResult> disableAwsNetworkPerformanceMetricSubscriptionAsync(
+            DisableAwsNetworkPerformanceMetricSubscriptionRequest disableAwsNetworkPerformanceMetricSubscriptionRequest);
+
+    /**
+     * <p>
+     * Disables Infrastructure Performance metric subscriptions.
+     * </p>
+     * 
+     * @param disableAwsNetworkPerformanceMetricSubscriptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableAwsNetworkPerformanceMetricSubscription operation
+     *         returned by the service.
+     * @sample AmazonEC2AsyncHandler.DisableAwsNetworkPerformanceMetricSubscription
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAwsNetworkPerformanceMetricSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableAwsNetworkPerformanceMetricSubscriptionResult> disableAwsNetworkPerformanceMetricSubscriptionAsync(
+            DisableAwsNetworkPerformanceMetricSubscriptionRequest disableAwsNetworkPerformanceMetricSubscriptionRequest,
+            com.amazonaws.handlers.AsyncHandler<DisableAwsNetworkPerformanceMetricSubscriptionRequest, DisableAwsNetworkPerformanceMetricSubscriptionResult> asyncHandler);
+
+    /**
+     * <p>
      * Disables EBS encryption by default for your account in the current Region.
      * </p>
      * <p>
@@ -16595,8 +18118,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Disabling encryption by default does not change the encryption status of your existing volumes.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+     * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param disableEbsEncryptionByDefaultRequest
@@ -16621,8 +18144,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Disabling encryption by default does not change the encryption status of your existing volumes.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+     * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param disableEbsEncryptionByDefaultRequest
@@ -16642,13 +18165,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Discontinue faster launching for a Windows AMI, and clean up existing pre-provisioned snapshots. When you disable
-     * faster launching, the AMI uses the standard launch process for each instance. All pre-provisioned snapshots must
-     * be removed before you can enable faster launching again.
+     * Discontinue Windows fast launch for a Windows AMI, and clean up existing pre-provisioned snapshots. After you
+     * disable Windows fast launch, the AMI uses the standard launch process for each new instance. Amazon EC2 must
+     * remove all pre-provisioned snapshots before you can enable Windows fast launch again.
      * </p>
      * <note>
      * <p>
-     * To change these settings, you must own the AMI.
+     * You can only change these settings for Windows AMIs that you own or that have been shared with you.
      * </p>
      * </note>
      * 
@@ -16662,13 +18185,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Discontinue faster launching for a Windows AMI, and clean up existing pre-provisioned snapshots. When you disable
-     * faster launching, the AMI uses the standard launch process for each instance. All pre-provisioned snapshots must
-     * be removed before you can enable faster launching again.
+     * Discontinue Windows fast launch for a Windows AMI, and clean up existing pre-provisioned snapshots. After you
+     * disable Windows fast launch, the AMI uses the standard launch process for each new instance. Amazon EC2 must
+     * remove all pre-provisioned snapshots before you can enable Windows fast launch again.
      * </p>
      * <note>
      * <p>
-     * To change these settings, you must own the AMI.
+     * You can only change these settings for Windows AMIs that you own or that have been shared with you.
      * </p>
      * </note>
      * 
@@ -16720,12 +18243,150 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Sets the AMI state to <code>disabled</code> and removes all launch permissions from the AMI. A disabled AMI can't
+     * be used for instance launches.
+     * </p>
+     * <p>
+     * A disabled AMI can't be shared. If an AMI was public or previously shared, it is made private. If an AMI was
+     * shared with an Amazon Web Services account, organization, or Organizational Unit, they lose access to the
+     * disabled AMI.
+     * </p>
+     * <p>
+     * A disabled AMI does not appear in <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a> API
+     * calls by default.
+     * </p>
+     * <p>
+     * Only the AMI owner can disable an AMI.
+     * </p>
+     * <p>
+     * You can re-enable a disabled AMI using <a
+     * href="http://amazonaws.com/AWSEC2/latest/APIReference/API_EnableImage.html">EnableImage</a>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/disable-an-ami.html">Disable an AMI</a> in the
+     * <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param disableImageRequest
+     * @return A Java Future containing the result of the DisableImage operation returned by the service.
+     * @sample AmazonEC2Async.DisableImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DisableImageResult> disableImageAsync(DisableImageRequest disableImageRequest);
+
+    /**
+     * <p>
+     * Sets the AMI state to <code>disabled</code> and removes all launch permissions from the AMI. A disabled AMI can't
+     * be used for instance launches.
+     * </p>
+     * <p>
+     * A disabled AMI can't be shared. If an AMI was public or previously shared, it is made private. If an AMI was
+     * shared with an Amazon Web Services account, organization, or Organizational Unit, they lose access to the
+     * disabled AMI.
+     * </p>
+     * <p>
+     * A disabled AMI does not appear in <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImages.html">DescribeImages</a> API
+     * calls by default.
+     * </p>
+     * <p>
+     * Only the AMI owner can disable an AMI.
+     * </p>
+     * <p>
+     * You can re-enable a disabled AMI using <a
+     * href="http://amazonaws.com/AWSEC2/latest/APIReference/API_EnableImage.html">EnableImage</a>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/disable-an-ami.html">Disable an AMI</a> in the
+     * <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param disableImageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableImage operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DisableImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DisableImageResult> disableImageAsync(DisableImageRequest disableImageRequest,
+            com.amazonaws.handlers.AsyncHandler<DisableImageRequest, DisableImageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disables <i>block public access for AMIs</i> at the account level in the specified Amazon Web Services Region.
+     * This removes the <i>block public access</i> restriction from your account. With the restriction removed, you can
+     * publicly share your AMIs in the specified Amazon Web Services Region.
+     * </p>
+     * <p>
+     * The API can take up to 10 minutes to configure this setting. During this time, if you run <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageBlockPublicAccessState.html"
+     * >GetImageBlockPublicAccessState</a>, the response will be <code>block-new-sharing</code>. When the API has
+     * completed the configuration, the response will be <code>unblocked</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis"
+     * >Block public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param disableImageBlockPublicAccessRequest
+     * @return A Java Future containing the result of the DisableImageBlockPublicAccess operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DisableImageBlockPublicAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageBlockPublicAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableImageBlockPublicAccessResult> disableImageBlockPublicAccessAsync(
+            DisableImageBlockPublicAccessRequest disableImageBlockPublicAccessRequest);
+
+    /**
+     * <p>
+     * Disables <i>block public access for AMIs</i> at the account level in the specified Amazon Web Services Region.
+     * This removes the <i>block public access</i> restriction from your account. With the restriction removed, you can
+     * publicly share your AMIs in the specified Amazon Web Services Region.
+     * </p>
+     * <p>
+     * The API can take up to 10 minutes to configure this setting. During this time, if you run <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageBlockPublicAccessState.html"
+     * >GetImageBlockPublicAccessState</a>, the response will be <code>block-new-sharing</code>. When the API has
+     * completed the configuration, the response will be <code>unblocked</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis"
+     * >Block public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param disableImageBlockPublicAccessRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableImageBlockPublicAccess operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DisableImageBlockPublicAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageBlockPublicAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableImageBlockPublicAccessResult> disableImageBlockPublicAccessAsync(
+            DisableImageBlockPublicAccessRequest disableImageBlockPublicAccessRequest,
+            com.amazonaws.handlers.AsyncHandler<DisableImageBlockPublicAccessRequest, DisableImageBlockPublicAccessResult> asyncHandler);
+
+    /**
+     * <p>
      * Cancels the deprecation of the specified AMI.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate an AMI</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param disableImageDeprecationRequest
@@ -16743,7 +18404,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate an AMI</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param disableImageDeprecationRequest
@@ -16758,6 +18419,61 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<DisableImageDeprecationResult> disableImageDeprecationAsync(DisableImageDeprecationRequest disableImageDeprecationRequest,
             com.amazonaws.handlers.AsyncHandler<DisableImageDeprecationRequest, DisableImageDeprecationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disables deregistration protection for an AMI. When deregistration protection is disabled, the AMI can be
+     * deregistered.
+     * </p>
+     * <p>
+     * If you chose to include a 24-hour cooldown period when you enabled deregistration protection for the AMI, then,
+     * when you disable deregistration protection, you won’t immediately be able to deregister the AMI.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html#ami-deregistration-protection"
+     * >Protect an AMI from deregistration</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param disableImageDeregistrationProtectionRequest
+     * @return A Java Future containing the result of the DisableImageDeregistrationProtection operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DisableImageDeregistrationProtection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageDeregistrationProtection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableImageDeregistrationProtectionResult> disableImageDeregistrationProtectionAsync(
+            DisableImageDeregistrationProtectionRequest disableImageDeregistrationProtectionRequest);
+
+    /**
+     * <p>
+     * Disables deregistration protection for an AMI. When deregistration protection is disabled, the AMI can be
+     * deregistered.
+     * </p>
+     * <p>
+     * If you chose to include a 24-hour cooldown period when you enabled deregistration protection for the AMI, then,
+     * when you disable deregistration protection, you won’t immediately be able to deregister the AMI.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html#ami-deregistration-protection"
+     * >Protect an AMI from deregistration</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param disableImageDeregistrationProtectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableImageDeregistrationProtection operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DisableImageDeregistrationProtection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableImageDeregistrationProtection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableImageDeregistrationProtectionResult> disableImageDeregistrationProtectionAsync(
+            DisableImageDeregistrationProtectionRequest disableImageDeregistrationProtectionRequest,
+            com.amazonaws.handlers.AsyncHandler<DisableImageDeregistrationProtectionRequest, DisableImageDeregistrationProtectionResult> asyncHandler);
 
     /**
      * <p>
@@ -16839,6 +18555,67 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Disables the <i>block public access for snapshots</i> setting at the account level for the specified Amazon Web
+     * Services Region. After you disable block public access for snapshots in a Region, users can publicly share
+     * snapshots in that Region.
+     * </p>
+     * <p>
+     * If block public access is enabled in <code>block-all-sharing</code> mode, and you disable block public access,
+     * all snapshots that were previously publicly shared are no longer treated as private and they become publicly
+     * accessible again.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/block-public-access-snapshots.html"> Block public access
+     * for snapshots</a> in the <i>Amazon EBS User Guide</i> .
+     * </p>
+     * <p/>
+     * 
+     * @param disableSnapshotBlockPublicAccessRequest
+     * @return A Java Future containing the result of the DisableSnapshotBlockPublicAccess operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DisableSnapshotBlockPublicAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableSnapshotBlockPublicAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableSnapshotBlockPublicAccessResult> disableSnapshotBlockPublicAccessAsync(
+            DisableSnapshotBlockPublicAccessRequest disableSnapshotBlockPublicAccessRequest);
+
+    /**
+     * <p>
+     * Disables the <i>block public access for snapshots</i> setting at the account level for the specified Amazon Web
+     * Services Region. After you disable block public access for snapshots in a Region, users can publicly share
+     * snapshots in that Region.
+     * </p>
+     * <p>
+     * If block public access is enabled in <code>block-all-sharing</code> mode, and you disable block public access,
+     * all snapshots that were previously publicly shared are no longer treated as private and they become publicly
+     * accessible again.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/block-public-access-snapshots.html"> Block public access
+     * for snapshots</a> in the <i>Amazon EBS User Guide</i> .
+     * </p>
+     * <p/>
+     * 
+     * @param disableSnapshotBlockPublicAccessRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableSnapshotBlockPublicAccess operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DisableSnapshotBlockPublicAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableSnapshotBlockPublicAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableSnapshotBlockPublicAccessResult> disableSnapshotBlockPublicAccessAsync(
+            DisableSnapshotBlockPublicAccessRequest disableSnapshotBlockPublicAccessRequest,
+            com.amazonaws.handlers.AsyncHandler<DisableSnapshotBlockPublicAccessRequest, DisableSnapshotBlockPublicAccessResult> asyncHandler);
+
+    /**
+     * <p>
      * Disables the specified resource attachment from propagating routes to the specified propagation route table.
      * </p>
      * 
@@ -16908,17 +18685,15 @@ public interface AmazonEC2Async extends AmazonEC2 {
             com.amazonaws.handlers.AsyncHandler<DisableVgwRoutePropagationRequest, DisableVgwRoutePropagationResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This action is deprecated.
+     * </p>
+     * </note>
      * <p>
      * Disables ClassicLink for a VPC. You cannot disable ClassicLink for a VPC that has EC2-Classic instances linked to
      * it.
      * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param disableVpcClassicLinkRequest
      * @return A Java Future containing the result of the DisableVpcClassicLink operation returned by the service.
@@ -16929,17 +18704,15 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<DisableVpcClassicLinkResult> disableVpcClassicLinkAsync(DisableVpcClassicLinkRequest disableVpcClassicLinkRequest);
 
     /**
+     * <note>
+     * <p>
+     * This action is deprecated.
+     * </p>
+     * </note>
      * <p>
      * Disables ClassicLink for a VPC. You cannot disable ClassicLink for a VPC that has EC2-Classic instances linked to
      * it.
      * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param disableVpcClassicLinkRequest
      * @param asyncHandler
@@ -16955,23 +18728,18 @@ public interface AmazonEC2Async extends AmazonEC2 {
             com.amazonaws.handlers.AsyncHandler<DisableVpcClassicLinkRequest, DisableVpcClassicLinkResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This action is deprecated.
+     * </p>
+     * </note>
      * <p>
      * Disables ClassicLink DNS support for a VPC. If disabled, DNS hostnames resolve to public IP addresses when
-     * addressed between a linked EC2-Classic instance and instances in the VPC to which it's linked. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * addressed between a linked EC2-Classic instance and instances in the VPC to which it's linked.
      * </p>
      * <p>
      * You must specify a VPC ID in the request.
      * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param disableVpcClassicLinkDnsSupportRequest
      * @return A Java Future containing the result of the DisableVpcClassicLinkDnsSupport operation returned by the
@@ -16984,23 +18752,18 @@ public interface AmazonEC2Async extends AmazonEC2 {
             DisableVpcClassicLinkDnsSupportRequest disableVpcClassicLinkDnsSupportRequest);
 
     /**
+     * <note>
+     * <p>
+     * This action is deprecated.
+     * </p>
+     * </note>
      * <p>
      * Disables ClassicLink DNS support for a VPC. If disabled, DNS hostnames resolve to public IP addresses when
-     * addressed between a linked EC2-Classic instance and instances in the VPC to which it's linked. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * addressed between a linked EC2-Classic instance and instances in the VPC to which it's linked.
      * </p>
      * <p>
      * You must specify a VPC ID in the request.
      * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param disableVpcClassicLinkDnsSupportRequest
      * @param asyncHandler
@@ -17022,18 +18785,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Disassociates an Elastic IP address from the instance or network interface it's associated with.
      * </p>
      * <p>
-     * An Elastic IP address is for use in either the EC2-Classic platform or in a VPC. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP Addresses</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
-     * <p>
      * This is an idempotent operation. If you perform the operation more than once, Amazon EC2 doesn't return an error.
      * </p>
      * 
@@ -17049,18 +18800,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Disassociates an Elastic IP address from the instance or network interface it's associated with.
      * </p>
-     * <p>
-     * An Elastic IP address is for use in either the EC2-Classic platform or in a VPC. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP Addresses</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
      * <p>
      * This is an idempotent operation. If you perform the operation more than once, Amazon EC2 doesn't return an error.
      * </p>
@@ -17286,13 +19025,148 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Remove the association between your Autonomous System Number (ASN) and your BYOIP CIDR. You may want to use this
+     * action to disassociate an ASN from a CIDR or if you want to swap ASNs. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoasn.html">Tutorial: Bring your ASN to IPAM</a> in
+     * the <i>Amazon VPC IPAM guide</i>.
+     * </p>
+     * 
+     * @param disassociateIpamByoasnRequest
+     * @return A Java Future containing the result of the DisassociateIpamByoasn operation returned by the service.
+     * @sample AmazonEC2Async.DisassociateIpamByoasn
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIpamByoasn" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateIpamByoasnResult> disassociateIpamByoasnAsync(DisassociateIpamByoasnRequest disassociateIpamByoasnRequest);
+
+    /**
+     * <p>
+     * Remove the association between your Autonomous System Number (ASN) and your BYOIP CIDR. You may want to use this
+     * action to disassociate an ASN from a CIDR or if you want to swap ASNs. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoasn.html">Tutorial: Bring your ASN to IPAM</a> in
+     * the <i>Amazon VPC IPAM guide</i>.
+     * </p>
+     * 
+     * @param disassociateIpamByoasnRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateIpamByoasn operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DisassociateIpamByoasn
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIpamByoasn" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateIpamByoasnResult> disassociateIpamByoasnAsync(DisassociateIpamByoasnRequest disassociateIpamByoasnRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateIpamByoasnRequest, DisassociateIpamByoasnResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociates a resource discovery from an Amazon VPC IPAM. A resource discovery is an IPAM component that
+     * enables IPAM to manage and monitor resources that belong to the owning account.
+     * </p>
+     * 
+     * @param disassociateIpamResourceDiscoveryRequest
+     * @return A Java Future containing the result of the DisassociateIpamResourceDiscovery operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DisassociateIpamResourceDiscovery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIpamResourceDiscovery"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateIpamResourceDiscoveryResult> disassociateIpamResourceDiscoveryAsync(
+            DisassociateIpamResourceDiscoveryRequest disassociateIpamResourceDiscoveryRequest);
+
+    /**
+     * <p>
+     * Disassociates a resource discovery from an Amazon VPC IPAM. A resource discovery is an IPAM component that
+     * enables IPAM to manage and monitor resources that belong to the owning account.
+     * </p>
+     * 
+     * @param disassociateIpamResourceDiscoveryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateIpamResourceDiscovery operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DisassociateIpamResourceDiscovery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIpamResourceDiscovery"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateIpamResourceDiscoveryResult> disassociateIpamResourceDiscoveryAsync(
+            DisassociateIpamResourceDiscoveryRequest disassociateIpamResourceDiscoveryRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateIpamResourceDiscoveryRequest, DisassociateIpamResourceDiscoveryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociates secondary Elastic IP addresses (EIPs) from a public NAT gateway. You cannot disassociate your
+     * primary EIP. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit
+     * secondary IP address associations</a> in the <i>Amazon VPC User Guide</i>.
+     * </p>
+     * <p>
+     * While disassociating is in progress, you cannot associate/disassociate additional EIPs while the connections are
+     * being drained. You are, however, allowed to delete the NAT gateway.
+     * </p>
+     * <p>
+     * An EIP is released only at the end of MaxDrainDurationSeconds. It stays associated and supports the existing
+     * connections but does not support any new connections (new connections are distributed across the remaining
+     * associated EIPs). As the existing connections drain out, the EIPs (and the corresponding private IP addresses
+     * mapped to them) are released.
+     * </p>
+     * 
+     * @param disassociateNatGatewayAddressRequest
+     * @return A Java Future containing the result of the DisassociateNatGatewayAddress operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DisassociateNatGatewayAddress
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateNatGatewayAddress"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateNatGatewayAddressResult> disassociateNatGatewayAddressAsync(
+            DisassociateNatGatewayAddressRequest disassociateNatGatewayAddressRequest);
+
+    /**
+     * <p>
+     * Disassociates secondary Elastic IP addresses (EIPs) from a public NAT gateway. You cannot disassociate your
+     * primary EIP. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit
+     * secondary IP address associations</a> in the <i>Amazon VPC User Guide</i>.
+     * </p>
+     * <p>
+     * While disassociating is in progress, you cannot associate/disassociate additional EIPs while the connections are
+     * being drained. You are, however, allowed to delete the NAT gateway.
+     * </p>
+     * <p>
+     * An EIP is released only at the end of MaxDrainDurationSeconds. It stays associated and supports the existing
+     * connections but does not support any new connections (new connections are distributed across the remaining
+     * associated EIPs). As the existing connections drain out, the EIPs (and the corresponding private IP addresses
+     * mapped to them) are released.
+     * </p>
+     * 
+     * @param disassociateNatGatewayAddressRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateNatGatewayAddress operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DisassociateNatGatewayAddress
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateNatGatewayAddress"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateNatGatewayAddressResult> disassociateNatGatewayAddressAsync(
+            DisassociateNatGatewayAddressRequest disassociateNatGatewayAddressRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateNatGatewayAddressRequest, DisassociateNatGatewayAddressResult> asyncHandler);
+
+    /**
+     * <p>
      * Disassociates a subnet or gateway from a route table.
      * </p>
      * <p>
      * After you perform this action, the subnet no longer uses the routes in the route table. Instead, it uses the
      * routes in the VPC's main route table. For more information about route tables, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route tables</a> in the <i>Amazon
-     * Virtual Private Cloud User Guide</i>.
+     * VPC User Guide</i>.
      * </p>
      * 
      * @param disassociateRouteTableRequest
@@ -17311,7 +19185,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * After you perform this action, the subnet no longer uses the routes in the route table. Instead, it uses the
      * routes in the VPC's main route table. For more information about route tables, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route tables</a> in the <i>Amazon
-     * Virtual Private Cloud User Guide</i>.
+     * VPC User Guide</i>.
      * </p>
      * 
      * @param disassociateRouteTableRequest
@@ -17470,12 +19344,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
             com.amazonaws.handlers.AsyncHandler<DisassociateTransitGatewayRouteTableRequest, DisassociateTransitGatewayRouteTableResult> asyncHandler);
 
     /**
-     * <note>
-     * <p>
-     * This API action is currently in <b>limited preview only</b>. If you are interested in using this feature, contact
-     * your account manager.
-     * </p>
-     * </note>
      * <p>
      * Removes an association between a branch network interface with a trunk network interface.
      * </p>
@@ -17490,12 +19358,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
             DisassociateTrunkInterfaceRequest disassociateTrunkInterfaceRequest);
 
     /**
-     * <note>
-     * <p>
-     * This API action is currently in <b>limited preview only</b>. If you are interested in using this feature, contact
-     * your account manager.
-     * </p>
-     * </note>
      * <p>
      * Removes an association between a branch network interface with a trunk network interface.
      * </p>
@@ -17592,13 +19454,50 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Enables Infrastructure Performance subscriptions.
+     * </p>
+     * 
+     * @param enableAwsNetworkPerformanceMetricSubscriptionRequest
+     * @return A Java Future containing the result of the EnableAwsNetworkPerformanceMetricSubscription operation
+     *         returned by the service.
+     * @sample AmazonEC2Async.EnableAwsNetworkPerformanceMetricSubscription
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAwsNetworkPerformanceMetricSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableAwsNetworkPerformanceMetricSubscriptionResult> enableAwsNetworkPerformanceMetricSubscriptionAsync(
+            EnableAwsNetworkPerformanceMetricSubscriptionRequest enableAwsNetworkPerformanceMetricSubscriptionRequest);
+
+    /**
+     * <p>
+     * Enables Infrastructure Performance subscriptions.
+     * </p>
+     * 
+     * @param enableAwsNetworkPerformanceMetricSubscriptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableAwsNetworkPerformanceMetricSubscription operation
+     *         returned by the service.
+     * @sample AmazonEC2AsyncHandler.EnableAwsNetworkPerformanceMetricSubscription
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAwsNetworkPerformanceMetricSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableAwsNetworkPerformanceMetricSubscriptionResult> enableAwsNetworkPerformanceMetricSubscriptionAsync(
+            EnableAwsNetworkPerformanceMetricSubscriptionRequest enableAwsNetworkPerformanceMetricSubscriptionRequest,
+            com.amazonaws.handlers.AsyncHandler<EnableAwsNetworkPerformanceMetricSubscriptionRequest, EnableAwsNetworkPerformanceMetricSubscriptionResult> asyncHandler);
+
+    /**
+     * <p>
      * Enables EBS encryption by default for your account in the current Region.
      * </p>
      * <p>
      * After you enable encryption by default, the EBS volumes that you create are always encrypted, either using the
      * default KMS key or the KMS key that you specified when you created each volume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon EBS encryption</a> in the
+     * <i>Amazon EBS User Guide</i>.
      * </p>
      * <p>
      * You can specify the default KMS key for encryption by default using <a>ModifyEbsDefaultKmsKeyId</a> or
@@ -17609,8 +19508,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * After you enable encryption by default, you can no longer launch instances using instance types that do not
-     * support encryption. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
+     * support encryption. For more information, see <a href=
+     * "https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances"
      * >Supported instance types</a>.
      * </p>
      * 
@@ -17631,8 +19530,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * After you enable encryption by default, the EBS volumes that you create are always encrypted, either using the
      * default KMS key or the KMS key that you specified when you created each volume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon EBS encryption</a> in the
+     * <i>Amazon EBS User Guide</i>.
      * </p>
      * <p>
      * You can specify the default KMS key for encryption by default using <a>ModifyEbsDefaultKmsKeyId</a> or
@@ -17643,8 +19542,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * After you enable encryption by default, you can no longer launch instances using instance types that do not
-     * support encryption. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
+     * support encryption. For more information, see <a href=
+     * "https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances"
      * >Supported instance types</a>.
      * </p>
      * 
@@ -17665,7 +19564,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * When you enable faster launching for a Windows AMI, images are pre-provisioned, using snapshots to launch
+     * When you enable Windows fast launch for a Windows AMI, images are pre-provisioned, using snapshots to launch
      * instances up to 65% faster. To create the optimized Windows image, Amazon EC2 launches an instance and runs
      * through Sysprep steps, rebooting as required. Then it creates a set of reserved snapshots that are used for
      * subsequent launches. The reserved snapshots are automatically replenished as they are used, depending on your
@@ -17673,7 +19572,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <note>
      * <p>
-     * To change these settings, you must own the AMI.
+     * You can only change these settings for Windows AMIs that you own or that have been shared with you.
      * </p>
      * </note>
      * 
@@ -17687,7 +19586,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * When you enable faster launching for a Windows AMI, images are pre-provisioned, using snapshots to launch
+     * When you enable Windows fast launch for a Windows AMI, images are pre-provisioned, using snapshots to launch
      * instances up to 65% faster. To create the optimized Windows image, Amazon EC2 launches an instance and runs
      * through Sysprep steps, rebooting as required. Then it creates a set of reserved snapshots that are used for
      * subsequent launches. The reserved snapshots are automatically replenished as they are used, depending on your
@@ -17695,7 +19594,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <note>
      * <p>
-     * To change these settings, you must own the AMI.
+     * You can only change these settings for Windows AMIs that you own or that have been shared with you.
      * </p>
      * </note>
      * 
@@ -17723,8 +19622,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-fast-snapshot-restore.html">Amazon EBS fast
-     * snapshot restore</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-fast-snapshot-restore.html">Amazon EBS fast snapshot
+     * restore</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param enableFastSnapshotRestoresRequest
@@ -17747,8 +19646,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-fast-snapshot-restore.html">Amazon EBS fast
-     * snapshot restore</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-fast-snapshot-restore.html">Amazon EBS fast snapshot
+     * restore</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param enableFastSnapshotRestoresRequest
@@ -17767,12 +19666,126 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Re-enables a disabled AMI. The re-enabled AMI is marked as <code>available</code> and can be used for instance
+     * launches, appears in describe operations, and can be shared. Amazon Web Services accounts, organizations, and
+     * Organizational Units that lost access to the AMI when it was disabled do not regain access automatically. Once
+     * the AMI is available, it can be shared with them again.
+     * </p>
+     * <p>
+     * Only the AMI owner can re-enable a disabled AMI.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/disable-an-ami.html">Disable an AMI</a> in the
+     * <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param enableImageRequest
+     * @return A Java Future containing the result of the EnableImage operation returned by the service.
+     * @sample AmazonEC2Async.EnableImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<EnableImageResult> enableImageAsync(EnableImageRequest enableImageRequest);
+
+    /**
+     * <p>
+     * Re-enables a disabled AMI. The re-enabled AMI is marked as <code>available</code> and can be used for instance
+     * launches, appears in describe operations, and can be shared. Amazon Web Services accounts, organizations, and
+     * Organizational Units that lost access to the AMI when it was disabled do not regain access automatically. Once
+     * the AMI is available, it can be shared with them again.
+     * </p>
+     * <p>
+     * Only the AMI owner can re-enable a disabled AMI.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/disable-an-ami.html">Disable an AMI</a> in the
+     * <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param enableImageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableImage operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.EnableImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<EnableImageResult> enableImageAsync(EnableImageRequest enableImageRequest,
+            com.amazonaws.handlers.AsyncHandler<EnableImageRequest, EnableImageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Enables <i>block public access for AMIs</i> at the account level in the specified Amazon Web Services Region.
+     * This prevents the public sharing of your AMIs. However, if you already have public AMIs, they will remain
+     * publicly available.
+     * </p>
+     * <p>
+     * The API can take up to 10 minutes to configure this setting. During this time, if you run <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageBlockPublicAccessState.html"
+     * >GetImageBlockPublicAccessState</a>, the response will be <code>unblocked</code>. When the API has completed the
+     * configuration, the response will be <code>block-new-sharing</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis"
+     * >Block public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param enableImageBlockPublicAccessRequest
+     * @return A Java Future containing the result of the EnableImageBlockPublicAccess operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.EnableImageBlockPublicAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageBlockPublicAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableImageBlockPublicAccessResult> enableImageBlockPublicAccessAsync(
+            EnableImageBlockPublicAccessRequest enableImageBlockPublicAccessRequest);
+
+    /**
+     * <p>
+     * Enables <i>block public access for AMIs</i> at the account level in the specified Amazon Web Services Region.
+     * This prevents the public sharing of your AMIs. However, if you already have public AMIs, they will remain
+     * publicly available.
+     * </p>
+     * <p>
+     * The API can take up to 10 minutes to configure this setting. During this time, if you run <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageBlockPublicAccessState.html"
+     * >GetImageBlockPublicAccessState</a>, the response will be <code>unblocked</code>. When the API has completed the
+     * configuration, the response will be <code>block-new-sharing</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis"
+     * >Block public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param enableImageBlockPublicAccessRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableImageBlockPublicAccess operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.EnableImageBlockPublicAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageBlockPublicAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableImageBlockPublicAccessResult> enableImageBlockPublicAccessAsync(
+            EnableImageBlockPublicAccessRequest enableImageBlockPublicAccessRequest,
+            com.amazonaws.handlers.AsyncHandler<EnableImageBlockPublicAccessRequest, EnableImageBlockPublicAccessResult> asyncHandler);
+
+    /**
+     * <p>
      * Enables deprecation of the specified AMI at the specified date and time.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate an AMI</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param enableImageDeprecationRequest
@@ -17790,7 +19803,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate an AMI</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param enableImageDeprecationRequest
@@ -17805,6 +19818,61 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<EnableImageDeprecationResult> enableImageDeprecationAsync(EnableImageDeprecationRequest enableImageDeprecationRequest,
             com.amazonaws.handlers.AsyncHandler<EnableImageDeprecationRequest, EnableImageDeprecationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Enables deregistration protection for an AMI. When deregistration protection is enabled, the AMI can't be
+     * deregistered.
+     * </p>
+     * <p>
+     * To allow the AMI to be deregistered, you must first disable deregistration protection using
+     * <a>DisableImageDeregistrationProtection</a>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html#ami-deregistration-protection"
+     * >Protect an AMI from deregistration</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param enableImageDeregistrationProtectionRequest
+     * @return A Java Future containing the result of the EnableImageDeregistrationProtection operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.EnableImageDeregistrationProtection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageDeregistrationProtection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableImageDeregistrationProtectionResult> enableImageDeregistrationProtectionAsync(
+            EnableImageDeregistrationProtectionRequest enableImageDeregistrationProtectionRequest);
+
+    /**
+     * <p>
+     * Enables deregistration protection for an AMI. When deregistration protection is enabled, the AMI can't be
+     * deregistered.
+     * </p>
+     * <p>
+     * To allow the AMI to be deregistered, you must first disable deregistration protection using
+     * <a>DisableImageDeregistrationProtection</a>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html#ami-deregistration-protection"
+     * >Protect an AMI from deregistration</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param enableImageDeregistrationProtectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableImageDeregistrationProtection operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.EnableImageDeregistrationProtection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableImageDeregistrationProtection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableImageDeregistrationProtectionResult> enableImageDeregistrationProtectionAsync(
+            EnableImageDeregistrationProtectionRequest enableImageDeregistrationProtectionRequest,
+            com.amazonaws.handlers.AsyncHandler<EnableImageDeregistrationProtectionRequest, EnableImageDeregistrationProtectionResult> asyncHandler);
 
     /**
      * <p>
@@ -17849,6 +19917,53 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Establishes a trust relationship between Reachability Analyzer and Organizations. This operation must be
+     * performed by the management account for the organization.
+     * </p>
+     * <p>
+     * After you establish a trust relationship, a user in the management account or a delegated administrator account
+     * can run a cross-account analysis using resources from the member accounts.
+     * </p>
+     * 
+     * @param enableReachabilityAnalyzerOrganizationSharingRequest
+     * @return A Java Future containing the result of the EnableReachabilityAnalyzerOrganizationSharing operation
+     *         returned by the service.
+     * @sample AmazonEC2Async.EnableReachabilityAnalyzerOrganizationSharing
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableReachabilityAnalyzerOrganizationSharing"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableReachabilityAnalyzerOrganizationSharingResult> enableReachabilityAnalyzerOrganizationSharingAsync(
+            EnableReachabilityAnalyzerOrganizationSharingRequest enableReachabilityAnalyzerOrganizationSharingRequest);
+
+    /**
+     * <p>
+     * Establishes a trust relationship between Reachability Analyzer and Organizations. This operation must be
+     * performed by the management account for the organization.
+     * </p>
+     * <p>
+     * After you establish a trust relationship, a user in the management account or a delegated administrator account
+     * can run a cross-account analysis using resources from the member accounts.
+     * </p>
+     * 
+     * @param enableReachabilityAnalyzerOrganizationSharingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableReachabilityAnalyzerOrganizationSharing operation
+     *         returned by the service.
+     * @sample AmazonEC2AsyncHandler.EnableReachabilityAnalyzerOrganizationSharing
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableReachabilityAnalyzerOrganizationSharing"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableReachabilityAnalyzerOrganizationSharingResult> enableReachabilityAnalyzerOrganizationSharingAsync(
+            EnableReachabilityAnalyzerOrganizationSharingRequest enableReachabilityAnalyzerOrganizationSharingRequest,
+            com.amazonaws.handlers.AsyncHandler<EnableReachabilityAnalyzerOrganizationSharingRequest, EnableReachabilityAnalyzerOrganizationSharingResult> asyncHandler);
+
+    /**
+     * <p>
      * Enables access to the EC2 serial console of all instances for your account. By default, access to the EC2 serial
      * console is disabled for your account. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access"
@@ -17885,6 +20000,67 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<EnableSerialConsoleAccessResult> enableSerialConsoleAccessAsync(
             EnableSerialConsoleAccessRequest enableSerialConsoleAccessRequest,
             com.amazonaws.handlers.AsyncHandler<EnableSerialConsoleAccessRequest, EnableSerialConsoleAccessResult> asyncHandler);
+
+    /**
+     * <p>
+     * Enables or modifies the <i>block public access for snapshots</i> setting at the account level for the specified
+     * Amazon Web Services Region. After you enable block public access for snapshots in a Region, users can no longer
+     * request public sharing for snapshots in that Region. Snapshots that are already publicly shared are either
+     * treated as private or they remain publicly shared, depending on the <b>State</b> that you specify.
+     * </p>
+     * <p>
+     * If block public access is enabled in <code>block-all-sharing</code> mode, and you change the mode to
+     * <code>block-new-sharing</code>, all snapshots that were previously publicly shared are no longer treated as
+     * private and they become publicly accessible again.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/block-public-access-snapshots.html"> Block public access
+     * for snapshots</a> in the <i>Amazon EBS User Guide</i>.
+     * </p>
+     * 
+     * @param enableSnapshotBlockPublicAccessRequest
+     * @return A Java Future containing the result of the EnableSnapshotBlockPublicAccess operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.EnableSnapshotBlockPublicAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableSnapshotBlockPublicAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableSnapshotBlockPublicAccessResult> enableSnapshotBlockPublicAccessAsync(
+            EnableSnapshotBlockPublicAccessRequest enableSnapshotBlockPublicAccessRequest);
+
+    /**
+     * <p>
+     * Enables or modifies the <i>block public access for snapshots</i> setting at the account level for the specified
+     * Amazon Web Services Region. After you enable block public access for snapshots in a Region, users can no longer
+     * request public sharing for snapshots in that Region. Snapshots that are already publicly shared are either
+     * treated as private or they remain publicly shared, depending on the <b>State</b> that you specify.
+     * </p>
+     * <p>
+     * If block public access is enabled in <code>block-all-sharing</code> mode, and you change the mode to
+     * <code>block-new-sharing</code>, all snapshots that were previously publicly shared are no longer treated as
+     * private and they become publicly accessible again.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/block-public-access-snapshots.html"> Block public access
+     * for snapshots</a> in the <i>Amazon EBS User Guide</i>.
+     * </p>
+     * 
+     * @param enableSnapshotBlockPublicAccessRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableSnapshotBlockPublicAccess operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.EnableSnapshotBlockPublicAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableSnapshotBlockPublicAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableSnapshotBlockPublicAccessResult> enableSnapshotBlockPublicAccessAsync(
+            EnableSnapshotBlockPublicAccessRequest enableSnapshotBlockPublicAccessRequest,
+            com.amazonaws.handlers.AsyncHandler<EnableSnapshotBlockPublicAccessRequest, EnableSnapshotBlockPublicAccessResult> asyncHandler);
 
     /**
      * <p>
@@ -17992,19 +20168,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <note>
      * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * This action is deprecated.
      * </p>
      * </note>
      * <p>
      * Enables a VPC for ClassicLink. You can then link EC2-Classic instances to your ClassicLink-enabled VPC to allow
      * communication over private IP addresses. You cannot enable your VPC for ClassicLink if any of your VPC route
      * tables have existing routes for address ranges within the <code>10.0.0.0/8</code> IP address range, excluding
-     * local routes for VPCs in the <code>10.0.0.0/16</code> and <code>10.1.0.0/16</code> IP address ranges. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * local routes for VPCs in the <code>10.0.0.0/16</code> and <code>10.1.0.0/16</code> IP address ranges.
      * </p>
      * 
      * @param enableVpcClassicLinkRequest
@@ -18018,19 +20189,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <note>
      * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * This action is deprecated.
      * </p>
      * </note>
      * <p>
      * Enables a VPC for ClassicLink. You can then link EC2-Classic instances to your ClassicLink-enabled VPC to allow
      * communication over private IP addresses. You cannot enable your VPC for ClassicLink if any of your VPC route
      * tables have existing routes for address ranges within the <code>10.0.0.0/8</code> IP address range, excluding
-     * local routes for VPCs in the <code>10.0.0.0/16</code> and <code>10.1.0.0/16</code> IP address ranges. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * local routes for VPCs in the <code>10.0.0.0/16</code> and <code>10.1.0.0/16</code> IP address ranges.
      * </p>
      * 
      * @param enableVpcClassicLinkRequest
@@ -18049,18 +20215,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <note>
      * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * This action is deprecated.
      * </p>
      * </note>
      * <p>
      * Enables a VPC to support DNS hostname resolution for ClassicLink. If enabled, the DNS hostname of a linked
      * EC2-Classic instance resolves to its private IP address when addressed from an instance in the VPC to which it's
      * linked. Similarly, the DNS hostname of an instance in a VPC resolves to its private IP address when addressed
-     * from a linked EC2-Classic instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * from a linked EC2-Classic instance.
      * </p>
      * <p>
      * You must specify a VPC ID in the request.
@@ -18079,18 +20241,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <note>
      * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * This action is deprecated.
      * </p>
      * </note>
      * <p>
      * Enables a VPC to support DNS hostname resolution for ClassicLink. If enabled, the DNS hostname of a linked
      * EC2-Classic instance resolves to its private IP address when addressed from an instance in the VPC to which it's
      * linked. Similarly, the DNS hostname of an instance in a VPC resolves to its private IP address when addressed
-     * from a linked EC2-Classic instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * from a linked EC2-Classic instance.
      * </p>
      * <p>
      * You must specify a VPC ID in the request.
@@ -18341,6 +20499,41 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Gets network performance data.
+     * </p>
+     * 
+     * @param getAwsNetworkPerformanceDataRequest
+     * @return A Java Future containing the result of the GetAwsNetworkPerformanceData operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.GetAwsNetworkPerformanceData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAwsNetworkPerformanceData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAwsNetworkPerformanceDataResult> getAwsNetworkPerformanceDataAsync(
+            GetAwsNetworkPerformanceDataRequest getAwsNetworkPerformanceDataRequest);
+
+    /**
+     * <p>
+     * Gets network performance data.
+     * </p>
+     * 
+     * @param getAwsNetworkPerformanceDataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAwsNetworkPerformanceData operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.GetAwsNetworkPerformanceData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAwsNetworkPerformanceData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAwsNetworkPerformanceDataResult> getAwsNetworkPerformanceDataAsync(
+            GetAwsNetworkPerformanceDataRequest getAwsNetworkPerformanceDataRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAwsNetworkPerformanceDataRequest, GetAwsNetworkPerformanceDataResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets usage information about a Capacity Reservation. If the Capacity Reservation is shared, it shows usage
      * information for the Capacity Reservation owner and each Amazon Web Services account that is currently using the
      * shared capacity. If the Capacity Reservation is not shared, it shows only the Capacity Reservation owner's usage.
@@ -18477,6 +20670,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * The returned content is Base64-encoded.
      * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/troubleshoot-unreachable-instance.html#instance-console-console-output"
+     * >Instance console output</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
      * 
      * @param getConsoleScreenshotRequest
      * @return A Java Future containing the result of the GetConsoleScreenshot operation returned by the service.
@@ -18492,6 +20690,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * The returned content is Base64-encoded.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/troubleshoot-unreachable-instance.html#instance-console-console-output"
+     * >Instance console output</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param getConsoleScreenshotRequest
@@ -18559,8 +20762,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <a>ResetEbsDefaultKmsKeyId</a>.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+     * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param getEbsDefaultKmsKeyIdRequest
@@ -18578,8 +20781,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <a>ResetEbsDefaultKmsKeyId</a>.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+     * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param getEbsDefaultKmsKeyIdRequest
@@ -18600,8 +20803,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes whether EBS encryption by default is enabled for your account in the current Region.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+     * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param getEbsEncryptionByDefaultRequest
@@ -18618,8 +20821,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Describes whether EBS encryption by default is enabled for your account in the current Region.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+     * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param getEbsEncryptionByDefaultRequest
@@ -18664,6 +20867,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * <code>GetFlowLogsIntegrationTemplate</code> does not support integration between Amazon Web Services Transit
+     * Gateway Flow Logs and Amazon Athena.
+     * </p>
+     * </note>
      * 
      * @param getFlowLogsIntegrationTemplateRequest
      * @return A Java Future containing the result of the GetFlowLogsIntegrationTemplate operation returned by the
@@ -18703,6 +20912,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * <code>GetFlowLogsIntegrationTemplate</code> does not support integration between Amazon Web Services Transit
+     * Gateway Flow Logs and Amazon Athena.
+     * </p>
+     * </note>
      * 
      * @param getFlowLogsIntegrationTemplateRequest
      * @param asyncHandler
@@ -18798,6 +21013,131 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<GetHostReservationPurchasePreviewResult> getHostReservationPurchasePreviewAsync(
             GetHostReservationPurchasePreviewRequest getHostReservationPurchasePreviewRequest,
             com.amazonaws.handlers.AsyncHandler<GetHostReservationPurchasePreviewRequest, GetHostReservationPurchasePreviewResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the current state of <i>block public access for AMIs</i> at the account level in the specified Amazon Web
+     * Services Region.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis"
+     * >Block public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param getImageBlockPublicAccessStateRequest
+     * @return A Java Future containing the result of the GetImageBlockPublicAccessState operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.GetImageBlockPublicAccessState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetImageBlockPublicAccessState"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetImageBlockPublicAccessStateResult> getImageBlockPublicAccessStateAsync(
+            GetImageBlockPublicAccessStateRequest getImageBlockPublicAccessStateRequest);
+
+    /**
+     * <p>
+     * Gets the current state of <i>block public access for AMIs</i> at the account level in the specified Amazon Web
+     * Services Region.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-intro.html#block-public-access-to-amis"
+     * >Block public access to your AMIs</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param getImageBlockPublicAccessStateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetImageBlockPublicAccessState operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.GetImageBlockPublicAccessState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetImageBlockPublicAccessState"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetImageBlockPublicAccessStateResult> getImageBlockPublicAccessStateAsync(
+            GetImageBlockPublicAccessStateRequest getImageBlockPublicAccessStateRequest,
+            com.amazonaws.handlers.AsyncHandler<GetImageBlockPublicAccessStateRequest, GetImageBlockPublicAccessStateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the default instance metadata service (IMDS) settings that are set at the account level in the specified
+     * Amazon Web Services&#x2028; Region.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html#instance-metadata-options-order-of-precedence"
+     * >Order of precedence for instance metadata options</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param getInstanceMetadataDefaultsRequest
+     * @return A Java Future containing the result of the GetInstanceMetadataDefaults operation returned by the service.
+     * @sample AmazonEC2Async.GetInstanceMetadataDefaults
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceMetadataDefaults"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetInstanceMetadataDefaultsResult> getInstanceMetadataDefaultsAsync(
+            GetInstanceMetadataDefaultsRequest getInstanceMetadataDefaultsRequest);
+
+    /**
+     * <p>
+     * Gets the default instance metadata service (IMDS) settings that are set at the account level in the specified
+     * Amazon Web Services&#x2028; Region.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html#instance-metadata-options-order-of-precedence"
+     * >Order of precedence for instance metadata options</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param getInstanceMetadataDefaultsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetInstanceMetadataDefaults operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.GetInstanceMetadataDefaults
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceMetadataDefaults"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetInstanceMetadataDefaultsResult> getInstanceMetadataDefaultsAsync(
+            GetInstanceMetadataDefaultsRequest getInstanceMetadataDefaultsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetInstanceMetadataDefaultsRequest, GetInstanceMetadataDefaultsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the public endorsement key associated with the Nitro Trusted Platform Module (NitroTPM) for the specified
+     * instance.
+     * </p>
+     * 
+     * @param getInstanceTpmEkPubRequest
+     * @return A Java Future containing the result of the GetInstanceTpmEkPub operation returned by the service.
+     * @sample AmazonEC2Async.GetInstanceTpmEkPub
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceTpmEkPub" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetInstanceTpmEkPubResult> getInstanceTpmEkPubAsync(GetInstanceTpmEkPubRequest getInstanceTpmEkPubRequest);
+
+    /**
+     * <p>
+     * Gets the public endorsement key associated with the Nitro Trusted Platform Module (NitroTPM) for the specified
+     * instance.
+     * </p>
+     * 
+     * @param getInstanceTpmEkPubRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetInstanceTpmEkPub operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.GetInstanceTpmEkPub
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceTpmEkPub" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetInstanceTpmEkPubResult> getInstanceTpmEkPubAsync(GetInstanceTpmEkPubRequest getInstanceTpmEkPubRequest,
+            com.amazonaws.handlers.AsyncHandler<GetInstanceTpmEkPubRequest, GetInstanceTpmEkPubResult> asyncHandler);
 
     /**
      * <p>
@@ -18970,8 +21310,131 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Get a list of all the CIDR allocations in an IPAM pool.
+     * Gets IPAM discovered accounts. A discovered account is an Amazon Web Services account that is monitored under a
+     * resource discovery. If you have integrated IPAM with Amazon Web Services Organizations, all accounts in the
+     * organization are discovered accounts. Only the IPAM account can get all discovered accounts in the organization.
      * </p>
+     * 
+     * @param getIpamDiscoveredAccountsRequest
+     * @return A Java Future containing the result of the GetIpamDiscoveredAccounts operation returned by the service.
+     * @sample AmazonEC2Async.GetIpamDiscoveredAccounts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredAccounts" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetIpamDiscoveredAccountsResult> getIpamDiscoveredAccountsAsync(
+            GetIpamDiscoveredAccountsRequest getIpamDiscoveredAccountsRequest);
+
+    /**
+     * <p>
+     * Gets IPAM discovered accounts. A discovered account is an Amazon Web Services account that is monitored under a
+     * resource discovery. If you have integrated IPAM with Amazon Web Services Organizations, all accounts in the
+     * organization are discovered accounts. Only the IPAM account can get all discovered accounts in the organization.
+     * </p>
+     * 
+     * @param getIpamDiscoveredAccountsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetIpamDiscoveredAccounts operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.GetIpamDiscoveredAccounts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredAccounts" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetIpamDiscoveredAccountsResult> getIpamDiscoveredAccountsAsync(
+            GetIpamDiscoveredAccountsRequest getIpamDiscoveredAccountsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetIpamDiscoveredAccountsRequest, GetIpamDiscoveredAccountsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the public IP addresses that have been discovered by IPAM.
+     * </p>
+     * 
+     * @param getIpamDiscoveredPublicAddressesRequest
+     * @return A Java Future containing the result of the GetIpamDiscoveredPublicAddresses operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.GetIpamDiscoveredPublicAddresses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredPublicAddresses"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetIpamDiscoveredPublicAddressesResult> getIpamDiscoveredPublicAddressesAsync(
+            GetIpamDiscoveredPublicAddressesRequest getIpamDiscoveredPublicAddressesRequest);
+
+    /**
+     * <p>
+     * Gets the public IP addresses that have been discovered by IPAM.
+     * </p>
+     * 
+     * @param getIpamDiscoveredPublicAddressesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetIpamDiscoveredPublicAddresses operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.GetIpamDiscoveredPublicAddresses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredPublicAddresses"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetIpamDiscoveredPublicAddressesResult> getIpamDiscoveredPublicAddressesAsync(
+            GetIpamDiscoveredPublicAddressesRequest getIpamDiscoveredPublicAddressesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetIpamDiscoveredPublicAddressesRequest, GetIpamDiscoveredPublicAddressesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the resource CIDRs that are monitored as part of a resource discovery. A discovered resource is a
+     * resource CIDR monitored under a resource discovery. The following resources can be discovered: VPCs, Public IPv4
+     * pools, VPC subnets, and Elastic IP addresses.
+     * </p>
+     * 
+     * @param getIpamDiscoveredResourceCidrsRequest
+     * @return A Java Future containing the result of the GetIpamDiscoveredResourceCidrs operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.GetIpamDiscoveredResourceCidrs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredResourceCidrs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetIpamDiscoveredResourceCidrsResult> getIpamDiscoveredResourceCidrsAsync(
+            GetIpamDiscoveredResourceCidrsRequest getIpamDiscoveredResourceCidrsRequest);
+
+    /**
+     * <p>
+     * Returns the resource CIDRs that are monitored as part of a resource discovery. A discovered resource is a
+     * resource CIDR monitored under a resource discovery. The following resources can be discovered: VPCs, Public IPv4
+     * pools, VPC subnets, and Elastic IP addresses.
+     * </p>
+     * 
+     * @param getIpamDiscoveredResourceCidrsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetIpamDiscoveredResourceCidrs operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.GetIpamDiscoveredResourceCidrs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredResourceCidrs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetIpamDiscoveredResourceCidrsResult> getIpamDiscoveredResourceCidrsAsync(
+            GetIpamDiscoveredResourceCidrsRequest getIpamDiscoveredResourceCidrsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetIpamDiscoveredResourceCidrsRequest, GetIpamDiscoveredResourceCidrsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get a list of all the CIDR allocations in an IPAM pool. The Region you use should be the IPAM pool locale. The
+     * locale is the Amazon Web Services Region where this IPAM pool is available for allocations.
+     * </p>
+     * <note>
+     * <p>
+     * If you use this action after <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AllocateIpamPoolCidr.html"
+     * >AllocateIpamPoolCidr</a> or <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReleaseIpamPoolAllocation.html"
+     * >ReleaseIpamPoolAllocation</a>, note that all EC2 API actions follow an <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/query-api-troubleshooting.html#eventual-consistency"
+     * >eventual consistency</a> model.
+     * </p>
+     * </note>
      * 
      * @param getIpamPoolAllocationsRequest
      * @return A Java Future containing the result of the GetIpamPoolAllocations operation returned by the service.
@@ -18983,8 +21446,20 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Get a list of all the CIDR allocations in an IPAM pool.
+     * Get a list of all the CIDR allocations in an IPAM pool. The Region you use should be the IPAM pool locale. The
+     * locale is the Amazon Web Services Region where this IPAM pool is available for allocations.
      * </p>
+     * <note>
+     * <p>
+     * If you use this action after <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AllocateIpamPoolCidr.html"
+     * >AllocateIpamPoolCidr</a> or <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReleaseIpamPoolAllocation.html"
+     * >ReleaseIpamPoolAllocation</a>, note that all EC2 API actions follow an <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/query-api-troubleshooting.html#eventual-consistency"
+     * >eventual consistency</a> model.
+     * </p>
+     * </note>
      * 
      * @param getIpamPoolAllocationsRequest
      * @param asyncHandler
@@ -19032,7 +21507,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Get information about the resources in a scope.
+     * Returns resource CIDRs managed by IPAM in a given scope. If an IPAM is associated with more than one resource
+     * discovery, the resource CIDRs across all of the resource discoveries is returned. A resource discovery is an IPAM
+     * component that enables IPAM to manage and monitor resources that belong to the owning account.
      * </p>
      * 
      * @param getIpamResourceCidrsRequest
@@ -19045,7 +21522,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Get information about the resources in a scope.
+     * Returns resource CIDRs managed by IPAM in a given scope. If an IPAM is associated with more than one resource
+     * discovery, the resource CIDRs across all of the resource discoveries is returned. A resource discovery is an IPAM
+     * component that enables IPAM to manage and monitor resources that belong to the owning account.
      * </p>
      * 
      * @param getIpamResourceCidrsRequest
@@ -19069,8 +21548,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * This action calls on other describe actions to get instance information. Depending on your instance
      * configuration, you may need to allow the following actions in your IAM policy:
      * <code>DescribeSpotInstanceRequests</code>, <code>DescribeInstanceCreditSpecifications</code>,
-     * <code>DescribeVolumes</code>, <code>DescribeInstanceAttribute</code>, and <code>DescribeElasticGpus</code>. Or,
-     * you can allow <code>describe*</code> depending on your instance requirements.
+     * <code>DescribeVolumes</code>, and <code>DescribeInstanceAttribute</code>. Or, you can allow
+     * <code>describe*</code> depending on your instance requirements.
      * </p>
      * 
      * @param getLaunchTemplateDataRequest
@@ -19089,8 +21568,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * This action calls on other describe actions to get instance information. Depending on your instance
      * configuration, you may need to allow the following actions in your IAM policy:
      * <code>DescribeSpotInstanceRequests</code>, <code>DescribeInstanceCreditSpecifications</code>,
-     * <code>DescribeVolumes</code>, <code>DescribeInstanceAttribute</code>, and <code>DescribeElasticGpus</code>. Or,
-     * you can allow <code>describe*</code> depending on your instance requirements.
+     * <code>DescribeVolumes</code>, and <code>DescribeInstanceAttribute</code>. Or, you can allow
+     * <code>describe*</code> depending on your instance requirements.
      * </p>
      * 
      * @param getLaunchTemplateDataRequest
@@ -19362,6 +21841,39 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Gets security groups that can be associated by the Amazon Web Services account making the request with network
+     * interfaces in the specified VPC.
+     * </p>
+     * 
+     * @param getSecurityGroupsForVpcRequest
+     * @return A Java Future containing the result of the GetSecurityGroupsForVpc operation returned by the service.
+     * @sample AmazonEC2Async.GetSecurityGroupsForVpc
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSecurityGroupsForVpc" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSecurityGroupsForVpcResult> getSecurityGroupsForVpcAsync(GetSecurityGroupsForVpcRequest getSecurityGroupsForVpcRequest);
+
+    /**
+     * <p>
+     * Gets security groups that can be associated by the Amazon Web Services account making the request with network
+     * interfaces in the specified VPC.
+     * </p>
+     * 
+     * @param getSecurityGroupsForVpcRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSecurityGroupsForVpc operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.GetSecurityGroupsForVpc
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSecurityGroupsForVpc" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSecurityGroupsForVpcResult> getSecurityGroupsForVpcAsync(GetSecurityGroupsForVpcRequest getSecurityGroupsForVpcRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSecurityGroupsForVpcRequest, GetSecurityGroupsForVpcResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves the access status of your account to the EC2 serial console of all instances. By default, access to the
      * EC2 serial console is disabled for your account. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access"
@@ -19400,6 +21912,51 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<GetSerialConsoleAccessStatusResult> getSerialConsoleAccessStatusAsync(
             GetSerialConsoleAccessStatusRequest getSerialConsoleAccessStatusRequest,
             com.amazonaws.handlers.AsyncHandler<GetSerialConsoleAccessStatusRequest, GetSerialConsoleAccessStatusResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the current state of <i>block public access for snapshots</i> setting for the account and Region.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/block-public-access-snapshots.html"> Block public access
+     * for snapshots</a> in the <i>Amazon EBS User Guide</i>.
+     * </p>
+     * 
+     * @param getSnapshotBlockPublicAccessStateRequest
+     * @return A Java Future containing the result of the GetSnapshotBlockPublicAccessState operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.GetSnapshotBlockPublicAccessState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSnapshotBlockPublicAccessState"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSnapshotBlockPublicAccessStateResult> getSnapshotBlockPublicAccessStateAsync(
+            GetSnapshotBlockPublicAccessStateRequest getSnapshotBlockPublicAccessStateRequest);
+
+    /**
+     * <p>
+     * Gets the current state of <i>block public access for snapshots</i> setting for the account and Region.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/block-public-access-snapshots.html"> Block public access
+     * for snapshots</a> in the <i>Amazon EBS User Guide</i>.
+     * </p>
+     * 
+     * @param getSnapshotBlockPublicAccessStateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSnapshotBlockPublicAccessState operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.GetSnapshotBlockPublicAccessState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSnapshotBlockPublicAccessState"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSnapshotBlockPublicAccessStateResult> getSnapshotBlockPublicAccessStateAsync(
+            GetSnapshotBlockPublicAccessStateRequest getSnapshotBlockPublicAccessStateRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSnapshotBlockPublicAccessStateRequest, GetSnapshotBlockPublicAccessStateResult> asyncHandler);
 
     /**
      * <p>
@@ -19734,6 +22291,76 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Get the Verified Access policy associated with the endpoint.
+     * </p>
+     * 
+     * @param getVerifiedAccessEndpointPolicyRequest
+     * @return A Java Future containing the result of the GetVerifiedAccessEndpointPolicy operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.GetVerifiedAccessEndpointPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessEndpointPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetVerifiedAccessEndpointPolicyResult> getVerifiedAccessEndpointPolicyAsync(
+            GetVerifiedAccessEndpointPolicyRequest getVerifiedAccessEndpointPolicyRequest);
+
+    /**
+     * <p>
+     * Get the Verified Access policy associated with the endpoint.
+     * </p>
+     * 
+     * @param getVerifiedAccessEndpointPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetVerifiedAccessEndpointPolicy operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.GetVerifiedAccessEndpointPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessEndpointPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetVerifiedAccessEndpointPolicyResult> getVerifiedAccessEndpointPolicyAsync(
+            GetVerifiedAccessEndpointPolicyRequest getVerifiedAccessEndpointPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetVerifiedAccessEndpointPolicyRequest, GetVerifiedAccessEndpointPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Shows the contents of the Verified Access policy associated with the group.
+     * </p>
+     * 
+     * @param getVerifiedAccessGroupPolicyRequest
+     * @return A Java Future containing the result of the GetVerifiedAccessGroupPolicy operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.GetVerifiedAccessGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessGroupPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetVerifiedAccessGroupPolicyResult> getVerifiedAccessGroupPolicyAsync(
+            GetVerifiedAccessGroupPolicyRequest getVerifiedAccessGroupPolicyRequest);
+
+    /**
+     * <p>
+     * Shows the contents of the Verified Access policy associated with the group.
+     * </p>
+     * 
+     * @param getVerifiedAccessGroupPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetVerifiedAccessGroupPolicy operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.GetVerifiedAccessGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessGroupPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetVerifiedAccessGroupPolicyResult> getVerifiedAccessGroupPolicyAsync(
+            GetVerifiedAccessGroupPolicyRequest getVerifiedAccessGroupPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetVerifiedAccessGroupPolicyRequest, GetVerifiedAccessGroupPolicyResult> asyncHandler);
+
+    /**
+     * <p>
      * Download an Amazon Web Services-provided sample configuration file to be used with the customer gateway device
      * specified for your Site-to-Site VPN connection.
      * </p>
@@ -19810,6 +22437,41 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Get details of available tunnel endpoint maintenance.
+     * </p>
+     * 
+     * @param getVpnTunnelReplacementStatusRequest
+     * @return A Java Future containing the result of the GetVpnTunnelReplacementStatus operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.GetVpnTunnelReplacementStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpnTunnelReplacementStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetVpnTunnelReplacementStatusResult> getVpnTunnelReplacementStatusAsync(
+            GetVpnTunnelReplacementStatusRequest getVpnTunnelReplacementStatusRequest);
+
+    /**
+     * <p>
+     * Get details of available tunnel endpoint maintenance.
+     * </p>
+     * 
+     * @param getVpnTunnelReplacementStatusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetVpnTunnelReplacementStatus operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.GetVpnTunnelReplacementStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpnTunnelReplacementStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetVpnTunnelReplacementStatusResult> getVpnTunnelReplacementStatusAsync(
+            GetVpnTunnelReplacementStatusRequest getVpnTunnelReplacementStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<GetVpnTunnelReplacementStatusRequest, GetVpnTunnelReplacementStatusResult> asyncHandler);
+
+    /**
+     * <p>
      * Uploads a client certificate revocation list to the specified Client VPN endpoint. Uploading a client certificate
      * revocation list overwrites the existing client certificate revocation list.
      * </p>
@@ -19854,6 +22516,16 @@ public interface AmazonEC2Async extends AmazonEC2 {
             com.amazonaws.handlers.AsyncHandler<ImportClientVpnClientCertificateRevocationListRequest, ImportClientVpnClientCertificateRevocationListResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * To import your virtual machines (VMs) with a console-based experience, you can use the <i>Import virtual machine
+     * images to Amazon Web Services</i> template in the <a
+     * href="https://console.aws.amazon.com/migrationhub/orchestrator">Migration Hub Orchestrator console</a>. For more
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/migrationhub-orchestrator/latest/userguide/import-vm-images.html"> <i>Migration
+     * Hub Orchestrator User Guide</i> </a>.
+     * </p>
+     * </note>
      * <p>
      * Import single or multi-volume disk images or EBS snapshots into an Amazon Machine Image (AMI).
      * </p>
@@ -19879,6 +22551,16 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<ImportImageResult> importImageAsync(ImportImageRequest importImageRequest);
 
     /**
+     * <note>
+     * <p>
+     * To import your virtual machines (VMs) with a console-based experience, you can use the <i>Import virtual machine
+     * images to Amazon Web Services</i> template in the <a
+     * href="https://console.aws.amazon.com/migrationhub/orchestrator">Migration Hub Orchestrator console</a>. For more
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/migrationhub-orchestrator/latest/userguide/import-vm-images.html"> <i>Migration
+     * Hub Orchestrator User Guide</i> </a>.
+     * </p>
+     * </note>
      * <p>
      * Import single or multi-volume disk images or EBS snapshots into an Amazon Machine Image (AMI).
      * </p>
@@ -19923,17 +22605,26 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<ImportImageResult> importImageAsync(com.amazonaws.handlers.AsyncHandler<ImportImageRequest, ImportImageResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * We recommend that you use the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportImage.html"> <code>ImportImage</code> </a>
+     * API. For more information, see <a
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing a VM as an
+     * image using VM Import/Export</a> in the <i>VM Import/Export User Guide</i>.
+     * </p>
+     * </note>
      * <p>
      * Creates an import instance task using metadata from the specified disk image.
-     * </p>
-     * <p>
-     * This API action supports only single-volume VMs. To import multi-volume VMs, use <a>ImportImage</a> instead.
      * </p>
      * <p>
      * This API action is not supported by the Command Line Interface (CLI). For information about using the Amazon EC2
      * CLI, which is deprecated, see <a
      * href="https://awsdocs.s3.amazonaws.com/EC2/ec2-clt.pdf#UsingVirtualMachinesinAmazonEC2">Importing a VM to Amazon
      * EC2</a> in the <i>Amazon EC2 CLI Reference</i> PDF file.
+     * </p>
+     * <p>
+     * This API action supports only single-volume VMs. To import multi-volume VMs, use <a>ImportImage</a> instead.
      * </p>
      * <p>
      * For information about the import manifest referenced by this API action, see <a
@@ -19949,17 +22640,26 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<ImportInstanceResult> importInstanceAsync(ImportInstanceRequest importInstanceRequest);
 
     /**
+     * <note>
+     * <p>
+     * We recommend that you use the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportImage.html"> <code>ImportImage</code> </a>
+     * API. For more information, see <a
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing a VM as an
+     * image using VM Import/Export</a> in the <i>VM Import/Export User Guide</i>.
+     * </p>
+     * </note>
      * <p>
      * Creates an import instance task using metadata from the specified disk image.
-     * </p>
-     * <p>
-     * This API action supports only single-volume VMs. To import multi-volume VMs, use <a>ImportImage</a> instead.
      * </p>
      * <p>
      * This API action is not supported by the Command Line Interface (CLI). For information about using the Amazon EC2
      * CLI, which is deprecated, see <a
      * href="https://awsdocs.s3.amazonaws.com/EC2/ec2-clt.pdf#UsingVirtualMachinesinAmazonEC2">Importing a VM to Amazon
      * EC2</a> in the <i>Amazon EC2 CLI Reference</i> PDF file.
+     * </p>
+     * <p>
+     * This API action supports only single-volume VMs. To import multi-volume VMs, use <a>ImportImage</a> instead.
      * </p>
      * <p>
      * For information about the import manifest referenced by this API action, see <a
@@ -20144,8 +22844,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Lists one or more AMIs that are currently in the Recycle Bin. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the Amazon Elastic
-     * Compute Cloud User Guide.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the <i>Amazon EC2
+     * User Guide</i>.
      * </p>
      * 
      * @param listImagesInRecycleBinRequest
@@ -20159,8 +22859,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Lists one or more AMIs that are currently in the Recycle Bin. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the Amazon Elastic
-     * Compute Cloud User Guide.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the <i>Amazon EC2
+     * User Guide</i>.
      * </p>
      * 
      * @param listImagesInRecycleBinRequest
@@ -20208,6 +22908,87 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<ListSnapshotsInRecycleBinResult> listSnapshotsInRecycleBinAsync(
             ListSnapshotsInRecycleBinRequest listSnapshotsInRecycleBinRequest,
             com.amazonaws.handlers.AsyncHandler<ListSnapshotsInRecycleBinRequest, ListSnapshotsInRecycleBinResult> asyncHandler);
+
+    /**
+     * <p>
+     * Locks an Amazon EBS snapshot in either <i>governance</i> or <i>compliance</i> mode to protect it against
+     * accidental or malicious deletions for a specific duration. A locked snapshot can't be deleted.
+     * </p>
+     * <p>
+     * You can also use this action to modify the lock settings for a snapshot that is already locked. The allowed
+     * modifications depend on the lock mode and lock state:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the snapshot is locked in governance mode, you can modify the lock mode and the lock duration or lock
+     * expiration date.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the snapshot is locked in compliance mode and it is in the cooling-off period, you can modify the lock mode
+     * and the lock duration or lock expiration date.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the snapshot is locked in compliance mode and the cooling-off period has lapsed, you can only increase the
+     * lock duration or extend the lock expiration date.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param lockSnapshotRequest
+     * @return A Java Future containing the result of the LockSnapshot operation returned by the service.
+     * @sample AmazonEC2Async.LockSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LockSnapshot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<LockSnapshotResult> lockSnapshotAsync(LockSnapshotRequest lockSnapshotRequest);
+
+    /**
+     * <p>
+     * Locks an Amazon EBS snapshot in either <i>governance</i> or <i>compliance</i> mode to protect it against
+     * accidental or malicious deletions for a specific duration. A locked snapshot can't be deleted.
+     * </p>
+     * <p>
+     * You can also use this action to modify the lock settings for a snapshot that is already locked. The allowed
+     * modifications depend on the lock mode and lock state:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the snapshot is locked in governance mode, you can modify the lock mode and the lock duration or lock
+     * expiration date.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the snapshot is locked in compliance mode and it is in the cooling-off period, you can modify the lock mode
+     * and the lock duration or lock expiration date.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the snapshot is locked in compliance mode and the cooling-off period has lapsed, you can only increase the
+     * lock duration or extend the lock expiration date.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param lockSnapshotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the LockSnapshot operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.LockSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LockSnapshot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<LockSnapshotResult> lockSnapshotAsync(LockSnapshotRequest lockSnapshotRequest,
+            com.amazonaws.handlers.AsyncHandler<LockSnapshotRequest, LockSnapshotResult> asyncHandler);
 
     /**
      * <p>
@@ -20480,8 +23261,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * instances will fail to launch.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+     * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param modifyEbsDefaultKmsKeyIdRequest
@@ -20507,8 +23288,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * instances will fail to launch.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+     * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param modifyEbsDefaultKmsKeyIdRequest
@@ -20859,9 +23640,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Modifies the specified attribute of the specified AMI. You can specify only one attribute at a time. You can use
-     * the <code>Attribute</code> parameter to specify the attribute or one of the following parameters:
-     * <code>Description</code> or <code>LaunchPermission</code>.
+     * Modifies the specified attribute of the specified AMI. You can specify only one attribute at a time.
+     * </p>
+     * <p>
+     * To specify the attribute, you can use the <code>Attribute</code> parameter, or one of the following parameters:
+     * <code>Description</code>, <code>ImdsSupport</code>, or <code>LaunchPermission</code>.
      * </p>
      * <p>
      * Images with an Amazon Web Services Marketplace product code cannot be made public.
@@ -20882,9 +23665,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Modifies the specified attribute of the specified AMI. You can specify only one attribute at a time. You can use
-     * the <code>Attribute</code> parameter to specify the attribute or one of the following parameters:
-     * <code>Description</code> or <code>LaunchPermission</code>.
+     * Modifies the specified attribute of the specified AMI. You can specify only one attribute at a time.
+     * </p>
+     * <p>
+     * To specify the attribute, you can use the <code>Attribute</code> parameter, or one of the following parameters:
+     * <code>Description</code>, <code>ImdsSupport</code>, or <code>LaunchPermission</code>.
      * </p>
      * <p>
      * Images with an Amazon Web Services Marketplace product code cannot be made public.
@@ -20914,9 +23699,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * <b>Note: </b>Using this action to change the security groups associated with an elastic network interface (ENI)
-     * attached to an instance in a VPC can result in an error if the instance has more than one ENI. To change the
-     * security groups associated with an ENI attached to an instance that has multiple ENIs, we recommend that you use
-     * the <a>ModifyNetworkInterfaceAttribute</a> action.
+     * attached to an instance can result in an error if the instance has more than one ENI. To change the security
+     * groups associated with an ENI attached to an instance that has multiple ENIs, we recommend that you use the
+     * <a>ModifyNetworkInterfaceAttribute</a> action.
      * </p>
      * <p>
      * To modify some attributes, the instance must be stopped. For more information, see <a
@@ -20938,9 +23723,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * <b>Note: </b>Using this action to change the security groups associated with an elastic network interface (ENI)
-     * attached to an instance in a VPC can result in an error if the instance has more than one ENI. To change the
-     * security groups associated with an ENI attached to an instance that has multiple ENIs, we recommend that you use
-     * the <a>ModifyNetworkInterfaceAttribute</a> action.
+     * attached to an instance can result in an error if the instance has more than one ENI. To change the security
+     * groups associated with an ENI attached to an instance that has multiple ENIs, we recommend that you use the
+     * <a>ModifyNetworkInterfaceAttribute</a> action.
      * </p>
      * <p>
      * To modify some attributes, the instance must be stopped. For more information, see <a
@@ -21190,6 +23975,61 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Modifies the default instance metadata service (IMDS) settings at the account level in the specified Amazon Web
+     * Services&#x2028; Region.
+     * </p>
+     * <note>
+     * <p>
+     * To remove a parameter's account-level default setting, specify <code>no-preference</code>. If an account-level
+     * setting is cleared with <code>no-preference</code>, then the instance launch considers the other instance
+     * metadata settings. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html#instance-metadata-options-order-of-precedence"
+     * >Order of precedence for instance metadata options</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param modifyInstanceMetadataDefaultsRequest
+     * @return A Java Future containing the result of the ModifyInstanceMetadataDefaults operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.ModifyInstanceMetadataDefaults
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataDefaults"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyInstanceMetadataDefaultsResult> modifyInstanceMetadataDefaultsAsync(
+            ModifyInstanceMetadataDefaultsRequest modifyInstanceMetadataDefaultsRequest);
+
+    /**
+     * <p>
+     * Modifies the default instance metadata service (IMDS) settings at the account level in the specified Amazon Web
+     * Services&#x2028; Region.
+     * </p>
+     * <note>
+     * <p>
+     * To remove a parameter's account-level default setting, specify <code>no-preference</code>. If an account-level
+     * setting is cleared with <code>no-preference</code>, then the instance launch considers the other instance
+     * metadata settings. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html#instance-metadata-options-order-of-precedence"
+     * >Order of precedence for instance metadata options</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param modifyInstanceMetadataDefaultsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyInstanceMetadataDefaults operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.ModifyInstanceMetadataDefaults
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataDefaults"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyInstanceMetadataDefaultsResult> modifyInstanceMetadataDefaultsAsync(
+            ModifyInstanceMetadataDefaultsRequest modifyInstanceMetadataDefaultsRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyInstanceMetadataDefaultsRequest, ModifyInstanceMetadataDefaultsResult> asyncHandler);
+
+    /**
+     * <p>
      * Modify the instance metadata parameters on a running or stopped instance. When you modify the parameters on a
      * stopped instance, they are applied when the instance is started. When you modify the parameters on a running
      * instance, the API responds with a state of “pending”. After the parameter modifications are successfully applied
@@ -21245,7 +24085,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Modify the affinity between an instance and a <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated Host</a>. When
      * affinity is set to <code>host</code> and the instance is not associated with a specific Dedicated Host, the next
-     * time the instance is launched, it is automatically associated with the host on which it lands. If the instance is
+     * time the instance is started, it is automatically associated with the host on which it lands. If the instance is
      * restarted or rebooted, this relationship persists.
      * </p>
      * </li>
@@ -21293,7 +24133,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Modify the affinity between an instance and a <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated Host</a>. When
      * affinity is set to <code>host</code> and the instance is not associated with a specific Dedicated Host, the next
-     * time the instance is launched, it is automatically associated with the host on which it lands. If the instance is
+     * time the instance is started, it is automatically associated with the host on which it lands. If the instance is
      * restarted or rebooted, this relationship persists.
      * </p>
      * </li>
@@ -21452,6 +24292,41 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<ModifyIpamResourceCidrResult> modifyIpamResourceCidrAsync(ModifyIpamResourceCidrRequest modifyIpamResourceCidrRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyIpamResourceCidrRequest, ModifyIpamResourceCidrResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies a resource discovery. A resource discovery is an IPAM component that enables IPAM to manage and monitor
+     * resources that belong to the owning account.
+     * </p>
+     * 
+     * @param modifyIpamResourceDiscoveryRequest
+     * @return A Java Future containing the result of the ModifyIpamResourceDiscovery operation returned by the service.
+     * @sample AmazonEC2Async.ModifyIpamResourceDiscovery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamResourceDiscovery"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyIpamResourceDiscoveryResult> modifyIpamResourceDiscoveryAsync(
+            ModifyIpamResourceDiscoveryRequest modifyIpamResourceDiscoveryRequest);
+
+    /**
+     * <p>
+     * Modifies a resource discovery. A resource discovery is an IPAM component that enables IPAM to manage and monitor
+     * resources that belong to the owning account.
+     * </p>
+     * 
+     * @param modifyIpamResourceDiscoveryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyIpamResourceDiscovery operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.ModifyIpamResourceDiscovery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamResourceDiscovery"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyIpamResourceDiscoveryResult> modifyIpamResourceDiscoveryAsync(
+            ModifyIpamResourceDiscoveryRequest modifyIpamResourceDiscoveryRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyIpamResourceDiscoveryRequest, ModifyIpamResourceDiscoveryResult> asyncHandler);
 
     /**
      * <p>
@@ -21676,13 +24551,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying Reserved Instances</a> in
      * the <i>Amazon EC2 User Guide</i>.
      * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param modifyReservedInstancesRequest
      *        Contains the parameters for ModifyReservedInstances.
@@ -21704,13 +24572,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying Reserved Instances</a> in
      * the <i>Amazon EC2 User Guide</i>.
      * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param modifyReservedInstancesRequest
      *        Contains the parameters for ModifyReservedInstances.
@@ -21770,8 +24631,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information about modifying snapshot permissions, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Share a
-     * snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-modifying-snapshot-permissions.html">Share a
+     * snapshot</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param modifySnapshotAttributeRequest
@@ -21795,8 +24656,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information about modifying snapshot permissions, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Share a
-     * snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-modifying-snapshot-permissions.html">Share a
+     * snapshot</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param modifySnapshotAttributeRequest
@@ -21817,8 +24678,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Archives an Amazon EBS snapshot. When you archive a snapshot, it is converted to a full snapshot that includes
      * all of the blocks of data that were written to the volume at the time the snapshot was created, and moved from
      * the standard tier to the archive tier. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-archive.html">Archive Amazon EBS snapshots</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshot-archive.html">Archive Amazon EBS snapshots</a> in
+     * the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param modifySnapshotTierRequest
@@ -21834,8 +24695,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Archives an Amazon EBS snapshot. When you archive a snapshot, it is converted to a full snapshot that includes
      * all of the blocks of data that were written to the volume at the time the snapshot was created, and moved from
      * the standard tier to the archive tier. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-archive.html">Archive Amazon EBS snapshots</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshot-archive.html">Archive Amazon EBS snapshots</a> in
+     * the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param modifySnapshotTierRequest
@@ -22263,29 +25124,270 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Modifies the configuration of the specified Amazon Web Services Verified Access endpoint.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessEndpointRequest
+     * @return A Java Future containing the result of the ModifyVerifiedAccessEndpoint operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.ModifyVerifiedAccessEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVerifiedAccessEndpointResult> modifyVerifiedAccessEndpointAsync(
+            ModifyVerifiedAccessEndpointRequest modifyVerifiedAccessEndpointRequest);
+
+    /**
+     * <p>
+     * Modifies the configuration of the specified Amazon Web Services Verified Access endpoint.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessEndpointRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyVerifiedAccessEndpoint operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.ModifyVerifiedAccessEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVerifiedAccessEndpointResult> modifyVerifiedAccessEndpointAsync(
+            ModifyVerifiedAccessEndpointRequest modifyVerifiedAccessEndpointRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyVerifiedAccessEndpointRequest, ModifyVerifiedAccessEndpointResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the specified Amazon Web Services Verified Access endpoint policy.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessEndpointPolicyRequest
+     * @return A Java Future containing the result of the ModifyVerifiedAccessEndpointPolicy operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.ModifyVerifiedAccessEndpointPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessEndpointPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVerifiedAccessEndpointPolicyResult> modifyVerifiedAccessEndpointPolicyAsync(
+            ModifyVerifiedAccessEndpointPolicyRequest modifyVerifiedAccessEndpointPolicyRequest);
+
+    /**
+     * <p>
+     * Modifies the specified Amazon Web Services Verified Access endpoint policy.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessEndpointPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyVerifiedAccessEndpointPolicy operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.ModifyVerifiedAccessEndpointPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessEndpointPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVerifiedAccessEndpointPolicyResult> modifyVerifiedAccessEndpointPolicyAsync(
+            ModifyVerifiedAccessEndpointPolicyRequest modifyVerifiedAccessEndpointPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyVerifiedAccessEndpointPolicyRequest, ModifyVerifiedAccessEndpointPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the specified Amazon Web Services Verified Access group configuration.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessGroupRequest
+     * @return A Java Future containing the result of the ModifyVerifiedAccessGroup operation returned by the service.
+     * @sample AmazonEC2Async.ModifyVerifiedAccessGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVerifiedAccessGroupResult> modifyVerifiedAccessGroupAsync(
+            ModifyVerifiedAccessGroupRequest modifyVerifiedAccessGroupRequest);
+
+    /**
+     * <p>
+     * Modifies the specified Amazon Web Services Verified Access group configuration.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyVerifiedAccessGroup operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.ModifyVerifiedAccessGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVerifiedAccessGroupResult> modifyVerifiedAccessGroupAsync(
+            ModifyVerifiedAccessGroupRequest modifyVerifiedAccessGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyVerifiedAccessGroupRequest, ModifyVerifiedAccessGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the specified Amazon Web Services Verified Access group policy.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessGroupPolicyRequest
+     * @return A Java Future containing the result of the ModifyVerifiedAccessGroupPolicy operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.ModifyVerifiedAccessGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessGroupPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVerifiedAccessGroupPolicyResult> modifyVerifiedAccessGroupPolicyAsync(
+            ModifyVerifiedAccessGroupPolicyRequest modifyVerifiedAccessGroupPolicyRequest);
+
+    /**
+     * <p>
+     * Modifies the specified Amazon Web Services Verified Access group policy.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessGroupPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyVerifiedAccessGroupPolicy operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.ModifyVerifiedAccessGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessGroupPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVerifiedAccessGroupPolicyResult> modifyVerifiedAccessGroupPolicyAsync(
+            ModifyVerifiedAccessGroupPolicyRequest modifyVerifiedAccessGroupPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyVerifiedAccessGroupPolicyRequest, ModifyVerifiedAccessGroupPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the configuration of the specified Amazon Web Services Verified Access instance.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessInstanceRequest
+     * @return A Java Future containing the result of the ModifyVerifiedAccessInstance operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.ModifyVerifiedAccessInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVerifiedAccessInstanceResult> modifyVerifiedAccessInstanceAsync(
+            ModifyVerifiedAccessInstanceRequest modifyVerifiedAccessInstanceRequest);
+
+    /**
+     * <p>
+     * Modifies the configuration of the specified Amazon Web Services Verified Access instance.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyVerifiedAccessInstance operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.ModifyVerifiedAccessInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVerifiedAccessInstanceResult> modifyVerifiedAccessInstanceAsync(
+            ModifyVerifiedAccessInstanceRequest modifyVerifiedAccessInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyVerifiedAccessInstanceRequest, ModifyVerifiedAccessInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the logging configuration for the specified Amazon Web Services Verified Access instance.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessInstanceLoggingConfigurationRequest
+     * @return A Java Future containing the result of the ModifyVerifiedAccessInstanceLoggingConfiguration operation
+     *         returned by the service.
+     * @sample AmazonEC2Async.ModifyVerifiedAccessInstanceLoggingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessInstanceLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVerifiedAccessInstanceLoggingConfigurationResult> modifyVerifiedAccessInstanceLoggingConfigurationAsync(
+            ModifyVerifiedAccessInstanceLoggingConfigurationRequest modifyVerifiedAccessInstanceLoggingConfigurationRequest);
+
+    /**
+     * <p>
+     * Modifies the logging configuration for the specified Amazon Web Services Verified Access instance.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessInstanceLoggingConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyVerifiedAccessInstanceLoggingConfiguration operation
+     *         returned by the service.
+     * @sample AmazonEC2AsyncHandler.ModifyVerifiedAccessInstanceLoggingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessInstanceLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVerifiedAccessInstanceLoggingConfigurationResult> modifyVerifiedAccessInstanceLoggingConfigurationAsync(
+            ModifyVerifiedAccessInstanceLoggingConfigurationRequest modifyVerifiedAccessInstanceLoggingConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyVerifiedAccessInstanceLoggingConfigurationRequest, ModifyVerifiedAccessInstanceLoggingConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the configuration of the specified Amazon Web Services Verified Access trust provider.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessTrustProviderRequest
+     * @return A Java Future containing the result of the ModifyVerifiedAccessTrustProvider operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.ModifyVerifiedAccessTrustProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessTrustProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVerifiedAccessTrustProviderResult> modifyVerifiedAccessTrustProviderAsync(
+            ModifyVerifiedAccessTrustProviderRequest modifyVerifiedAccessTrustProviderRequest);
+
+    /**
+     * <p>
+     * Modifies the configuration of the specified Amazon Web Services Verified Access trust provider.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessTrustProviderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyVerifiedAccessTrustProvider operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.ModifyVerifiedAccessTrustProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessTrustProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVerifiedAccessTrustProviderResult> modifyVerifiedAccessTrustProviderAsync(
+            ModifyVerifiedAccessTrustProviderRequest modifyVerifiedAccessTrustProviderRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyVerifiedAccessTrustProviderRequest, ModifyVerifiedAccessTrustProviderResult> asyncHandler);
+
+    /**
+     * <p>
      * You can modify several parameters of an existing EBS volume, including volume size, volume type, and IOPS
      * capacity. If your EBS volume is attached to a current-generation EC2 instance type, you might be able to apply
      * these changes without stopping the instance or detaching the volume from it. For more information about modifying
-     * EBS volumes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modify-volume.html">Amazon EBS
-     * Elastic Volumes</a> (Linux instances) or <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-modify-volume.html">Amazon EBS Elastic
-     * Volumes</a> (Windows instances).
+     * EBS volumes, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-modify-volume.html">Amazon EBS
+     * Elastic Volumes</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * <p>
      * When you complete a resize operation on your volume, you need to extend the volume's file-system size to take
-     * advantage of the new storage capacity. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux"
-     * >Extend a Linux file system</a> or <a href=
-     * "https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows"
-     * >Extend a Windows file system</a>.
+     * advantage of the new storage capacity. For more information, see <a
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/recognize-expanded-volume-linux.html">Extend the file
+     * system</a>.
      * </p>
      * <p>
      * You can use CloudWatch Events to check the status of a modification to an EBS volume. For information about
      * CloudWatch Events, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
      * CloudWatch Events User Guide</a>. You can also track the status of a modification using
      * <a>DescribeVolumesModifications</a>. For information about tracking status changes using either method, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-modifications.html">Monitor the
-     * progress of volume modifications</a>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-modifications.html">Monitor the progress
+     * of volume modifications</a>.
      * </p>
      * <p>
      * With previous-generation instance types, resizing an EBS volume might require detaching and reattaching the
@@ -22310,26 +25412,22 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * You can modify several parameters of an existing EBS volume, including volume size, volume type, and IOPS
      * capacity. If your EBS volume is attached to a current-generation EC2 instance type, you might be able to apply
      * these changes without stopping the instance or detaching the volume from it. For more information about modifying
-     * EBS volumes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modify-volume.html">Amazon EBS
-     * Elastic Volumes</a> (Linux instances) or <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-modify-volume.html">Amazon EBS Elastic
-     * Volumes</a> (Windows instances).
+     * EBS volumes, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-modify-volume.html">Amazon EBS
+     * Elastic Volumes</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * <p>
      * When you complete a resize operation on your volume, you need to extend the volume's file-system size to take
-     * advantage of the new storage capacity. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux"
-     * >Extend a Linux file system</a> or <a href=
-     * "https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows"
-     * >Extend a Windows file system</a>.
+     * advantage of the new storage capacity. For more information, see <a
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/recognize-expanded-volume-linux.html">Extend the file
+     * system</a>.
      * </p>
      * <p>
      * You can use CloudWatch Events to check the status of a modification to an EBS volume. For information about
      * CloudWatch Events, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
      * CloudWatch Events User Guide</a>. You can also track the status of a modification using
      * <a>DescribeVolumesModifications</a>. For information about tracking status changes using either method, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-modifications.html">Monitor the
-     * progress of volume modifications</a>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-modifications.html">Monitor the progress
+     * of volume modifications</a>.
      * </p>
      * <p>
      * With previous-generation instance types, resizing an EBS volume might require detaching and reattaching the
@@ -22442,7 +25540,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param modifyVpcEndpointRequest
-     *        Contains the parameters for ModifyVpcEndpoint.
      * @return A Java Future containing the result of the ModifyVpcEndpoint operation returned by the service.
      * @sample AmazonEC2Async.ModifyVpcEndpoint
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpoint" target="_top">AWS API
@@ -22458,7 +25555,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * 
      * @param modifyVpcEndpointRequest
-     *        Contains the parameters for ModifyVpcEndpoint.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -22591,7 +25687,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Modifies the permissions for your VPC endpoint service. You can add or remove permissions for service consumers
-     * (IAM users, IAM roles, and Amazon Web Services accounts) to connect to your endpoint service.
+     * (Amazon Web Services accounts, users, and IAM roles) to connect to your endpoint service.
      * </p>
      * <p>
      * If you grant permissions to all principals, the service is public. Any users who know the name of a public
@@ -22612,7 +25708,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Modifies the permissions for your VPC endpoint service. You can add or remove permissions for service consumers
-     * (IAM users, IAM roles, and Amazon Web Services accounts) to connect to your endpoint service.
+     * (Amazon Web Services accounts, users, and IAM roles) to connect to your endpoint service.
      * </p>
      * <p>
      * If you grant permissions to all principals, the service is public. Any users who know the name of a public
@@ -22636,45 +25732,18 @@ public interface AmazonEC2Async extends AmazonEC2 {
             com.amazonaws.handlers.AsyncHandler<ModifyVpcEndpointServicePermissionsRequest, ModifyVpcEndpointServicePermissionsResult> asyncHandler);
 
     /**
-     * <note>
      * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Modifies the VPC peering connection options on one side of a VPC peering connection.
      * </p>
-     * </note>
-     * <p>
-     * Modifies the VPC peering connection options on one side of a VPC peering connection. You can do the following:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Enable/disable communication over the peering connection between an EC2-Classic instance that's linked to your
-     * VPC (using ClassicLink) and instances in the peer VPC.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Enable/disable communication over the peering connection between instances in your VPC and an EC2-Classic
-     * instance that's linked to the peer VPC.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Enable/disable the ability to resolve public DNS hostnames to private IP addresses when queried from instances in
-     * the peer VPC.
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * If the peered VPCs are in the same Amazon Web Services account, you can enable DNS resolution for queries from
      * the local VPC. This ensures that queries from the local VPC resolve to private IP addresses in the peer VPC. This
-     * option is not available if the peered VPCs are in different different Amazon Web Services accounts or different
-     * Regions. For peered VPCs in different Amazon Web Services accounts, each Amazon Web Services account owner must
-     * initiate a separate request to modify the peering connection options. For inter-region peering connections, you
-     * must use the Region for the requester VPC to modify the requester VPC peering options and the Region for the
-     * accepter VPC to modify the accepter VPC peering options. To verify which VPCs are the accepter and the requester
-     * for a VPC peering connection, use the <a>DescribeVpcPeeringConnections</a> command.
+     * option is not available if the peered VPCs are in different Amazon Web Services accounts or different Regions.
+     * For peered VPCs in different Amazon Web Services accounts, each Amazon Web Services account owner must initiate a
+     * separate request to modify the peering connection options. For inter-region peering connections, you must use the
+     * Region for the requester VPC to modify the requester VPC peering options and the Region for the accepter VPC to
+     * modify the accepter VPC peering options. To verify which VPCs are the accepter and the requester for a VPC
+     * peering connection, use the <a>DescribeVpcPeeringConnections</a> command.
      * </p>
      * 
      * @param modifyVpcPeeringConnectionOptionsRequest
@@ -22688,45 +25757,18 @@ public interface AmazonEC2Async extends AmazonEC2 {
             ModifyVpcPeeringConnectionOptionsRequest modifyVpcPeeringConnectionOptionsRequest);
 
     /**
-     * <note>
      * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Modifies the VPC peering connection options on one side of a VPC peering connection.
      * </p>
-     * </note>
-     * <p>
-     * Modifies the VPC peering connection options on one side of a VPC peering connection. You can do the following:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Enable/disable communication over the peering connection between an EC2-Classic instance that's linked to your
-     * VPC (using ClassicLink) and instances in the peer VPC.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Enable/disable communication over the peering connection between instances in your VPC and an EC2-Classic
-     * instance that's linked to the peer VPC.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Enable/disable the ability to resolve public DNS hostnames to private IP addresses when queried from instances in
-     * the peer VPC.
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * If the peered VPCs are in the same Amazon Web Services account, you can enable DNS resolution for queries from
      * the local VPC. This ensures that queries from the local VPC resolve to private IP addresses in the peer VPC. This
-     * option is not available if the peered VPCs are in different different Amazon Web Services accounts or different
-     * Regions. For peered VPCs in different Amazon Web Services accounts, each Amazon Web Services account owner must
-     * initiate a separate request to modify the peering connection options. For inter-region peering connections, you
-     * must use the Region for the requester VPC to modify the requester VPC peering options and the Region for the
-     * accepter VPC to modify the accepter VPC peering options. To verify which VPCs are the accepter and the requester
-     * for a VPC peering connection, use the <a>DescribeVpcPeeringConnections</a> command.
+     * option is not available if the peered VPCs are in different Amazon Web Services accounts or different Regions.
+     * For peered VPCs in different Amazon Web Services accounts, each Amazon Web Services account owner must initiate a
+     * separate request to modify the peering connection options. For inter-region peering connections, you must use the
+     * Region for the requester VPC to modify the requester VPC peering options and the Region for the accepter VPC to
+     * modify the accepter VPC peering options. To verify which VPCs are the accepter and the requester for a VPC
+     * peering connection, use the <a>DescribeVpcPeeringConnections</a> command.
      * </p>
      * 
      * @param modifyVpcPeeringConnectionOptionsRequest
@@ -22757,7 +25799,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param modifyVpcTenancyRequest
@@ -22781,7 +25823,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param modifyVpcTenancyRequest
@@ -23099,6 +26141,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
             com.amazonaws.handlers.AsyncHandler<MonitorInstancesRequest, MonitorInstancesResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This action is deprecated.
+     * </p>
+     * </note>
      * <p>
      * Moves an Elastic IP address from the EC2-Classic platform to the EC2-VPC platform. The Elastic IP address must be
      * allocated to your account for more than 24 hours, and it must not be associated with an instance. After the
@@ -23106,13 +26153,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * back using the <a>RestoreAddressToClassic</a> request. You cannot move an Elastic IP address that was originally
      * allocated for use in the EC2-VPC platform to the EC2-Classic platform.
      * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param moveAddressToVpcRequest
      * @return A Java Future containing the result of the MoveAddressToVpc operation returned by the service.
@@ -23123,6 +26163,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<MoveAddressToVpcResult> moveAddressToVpcAsync(MoveAddressToVpcRequest moveAddressToVpcRequest);
 
     /**
+     * <note>
+     * <p>
+     * This action is deprecated.
+     * </p>
+     * </note>
      * <p>
      * Moves an Elastic IP address from the EC2-Classic platform to the EC2-VPC platform. The Elastic IP address must be
      * allocated to your account for more than 24 hours, and it must not be associated with an instance. After the
@@ -23130,13 +26175,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * back using the <a>RestoreAddressToClassic</a> request. You cannot move an Elastic IP address that was originally
      * allocated for use in the EC2-VPC platform to the EC2-Classic platform.
      * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param moveAddressToVpcRequest
      * @param asyncHandler
@@ -23153,10 +26191,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Move an BYOIP IPv4 CIDR to IPAM from a public IPv4 pool.
+     * Move a BYOIPv4 CIDR to IPAM from a public IPv4 pool.
      * </p>
      * <p>
-     * If you already have an IPv4 BYOIP CIDR with Amazon Web Services, you can move the CIDR to IPAM from a public IPv4
+     * If you already have a BYOIPv4 CIDR with Amazon Web Services, you can move the CIDR to IPAM from a public IPv4
      * pool. You cannot move an IPv6 CIDR to IPAM. If you are bringing a new IP address to Amazon Web Services for the
      * first time, complete the steps in <a
      * href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoip-ipam.html">Tutorial: BYOIP address CIDRs to
@@ -23173,10 +26211,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Move an BYOIP IPv4 CIDR to IPAM from a public IPv4 pool.
+     * Move a BYOIPv4 CIDR to IPAM from a public IPv4 pool.
      * </p>
      * <p>
-     * If you already have an IPv4 BYOIP CIDR with Amazon Web Services, you can move the CIDR to IPAM from a public IPv4
+     * If you already have a BYOIPv4 CIDR with Amazon Web Services, you can move the CIDR to IPAM from a public IPv4
      * pool. You cannot move an IPv6 CIDR to IPAM. If you are bringing a new IP address to Amazon Web Services for the
      * first time, complete the steps in <a
      * href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoip-ipam.html">Tutorial: BYOIP address CIDRs to
@@ -23258,6 +26296,43 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<ProvisionByoipCidrResult> provisionByoipCidrAsync(ProvisionByoipCidrRequest provisionByoipCidrRequest,
             com.amazonaws.handlers.AsyncHandler<ProvisionByoipCidrRequest, ProvisionByoipCidrResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provisions your Autonomous System Number (ASN) for use in your Amazon Web Services account. This action requires
+     * authorization context for Amazon to bring the ASN to an Amazon Web Services account. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoasn.html">Tutorial: Bring your ASN to IPAM</a> in
+     * the <i>Amazon VPC IPAM guide</i>.
+     * </p>
+     * 
+     * @param provisionIpamByoasnRequest
+     * @return A Java Future containing the result of the ProvisionIpamByoasn operation returned by the service.
+     * @sample AmazonEC2Async.ProvisionIpamByoasn
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionIpamByoasn" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ProvisionIpamByoasnResult> provisionIpamByoasnAsync(ProvisionIpamByoasnRequest provisionIpamByoasnRequest);
+
+    /**
+     * <p>
+     * Provisions your Autonomous System Number (ASN) for use in your Amazon Web Services account. This action requires
+     * authorization context for Amazon to bring the ASN to an Amazon Web Services account. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoasn.html">Tutorial: Bring your ASN to IPAM</a> in
+     * the <i>Amazon VPC IPAM guide</i>.
+     * </p>
+     * 
+     * @param provisionIpamByoasnRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ProvisionIpamByoasn operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.ProvisionIpamByoasn
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionIpamByoasn" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ProvisionIpamByoasnResult> provisionIpamByoasnAsync(ProvisionIpamByoasnRequest provisionIpamByoasnRequest,
+            com.amazonaws.handlers.AsyncHandler<ProvisionIpamByoasnRequest, ProvisionIpamByoasnResult> asyncHandler);
 
     /**
      * <p>
@@ -23345,6 +26420,39 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Purchase the Capacity Block for use with your account. With Capacity Blocks you ensure GPU capacity is available
+     * for machine learning (ML) workloads. You must specify the ID of the Capacity Block offering you are purchasing.
+     * </p>
+     * 
+     * @param purchaseCapacityBlockRequest
+     * @return A Java Future containing the result of the PurchaseCapacityBlock operation returned by the service.
+     * @sample AmazonEC2Async.PurchaseCapacityBlock
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseCapacityBlock" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PurchaseCapacityBlockResult> purchaseCapacityBlockAsync(PurchaseCapacityBlockRequest purchaseCapacityBlockRequest);
+
+    /**
+     * <p>
+     * Purchase the Capacity Block for use with your account. With Capacity Blocks you ensure GPU capacity is available
+     * for machine learning (ML) workloads. You must specify the ID of the Capacity Block offering you are purchasing.
+     * </p>
+     * 
+     * @param purchaseCapacityBlockRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PurchaseCapacityBlock operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.PurchaseCapacityBlock
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseCapacityBlock" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PurchaseCapacityBlockResult> purchaseCapacityBlockAsync(PurchaseCapacityBlockRequest purchaseCapacityBlockRequest,
+            com.amazonaws.handlers.AsyncHandler<PurchaseCapacityBlockRequest, PurchaseCapacityBlockResult> asyncHandler);
+
+    /**
+     * <p>
      * Purchase a reservation with configurations that match those of your Dedicated Host. You must have active
      * Dedicated Hosts in your account before you purchase a reservation. This action results in the specified
      * reservation being purchased and charged to your account.
@@ -23398,13 +26506,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
      * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param purchaseReservedInstancesOfferingRequest
      *        Contains the parameters for PurchaseReservedInstancesOffering.
@@ -23437,13 +26538,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
      * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param purchaseReservedInstancesOfferingRequest
      *        Contains the parameters for PurchaseReservedInstancesOffering.
@@ -23577,9 +26671,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Registers an AMI. When you're creating an AMI, this is the final step you must complete before you can launch an
-     * instance from the AMI. For more information about creating AMIs, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Creating your own AMIs</a> in the
+     * Registers an AMI. When you're creating an instance-store backed AMI, registering the AMI is the final step in the
+     * creation process. For more information about creating AMIs, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Create your own AMI</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <note>
@@ -23644,8 +26738,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * billing product code, make sure that the Reserved Instance has the matching billing product code. If you purchase
      * a Reserved Instance without the matching billing product code, the Reserved Instance will not be applied to the
      * On-Demand Instance. For information about how to obtain the platform details and billing information of an AMI,
-     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding AMI
-     * billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand AMI billing
+     * information</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param registerImageRequest
@@ -23659,9 +26753,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Registers an AMI. When you're creating an AMI, this is the final step you must complete before you can launch an
-     * instance from the AMI. For more information about creating AMIs, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Creating your own AMIs</a> in the
+     * Registers an AMI. When you're creating an instance-store backed AMI, registering the AMI is the final step in the
+     * creation process. For more information about creating AMIs, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Create your own AMI</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <note>
@@ -23726,8 +26820,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * billing product code, make sure that the Reserved Instance has the matching billing product code. If you purchase
      * a Reserved Instance without the matching billing product code, the Reserved Instance will not be applied to the
      * On-Demand Instance. For information about how to obtain the platform details and billing information of an AMI,
-     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding AMI
-     * billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand AMI billing
+     * information</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param registerImageRequest
@@ -24020,7 +27114,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Rejects one or more VPC endpoint connection requests to your VPC endpoint service.
+     * Rejects VPC endpoint connection requests to your VPC endpoint service.
      * </p>
      * 
      * @param rejectVpcEndpointConnectionsRequest
@@ -24035,7 +27129,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Rejects one or more VPC endpoint connection requests to your VPC endpoint service.
+     * Rejects VPC endpoint connection requests to your VPC endpoint service.
      * </p>
      * 
      * @param rejectVpcEndpointConnectionsRequest
@@ -24097,16 +27191,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Releases the specified Elastic IP address.
      * </p>
      * <p>
-     * [EC2-Classic, default VPC] Releasing an Elastic IP address automatically disassociates it from any instance that
-     * it's associated with. To disassociate an Elastic IP address without releasing it, use <a>DisassociateAddress</a>.
+     * [Default VPC] Releasing an Elastic IP address automatically disassociates it from any instance that it's
+     * associated with. To disassociate an Elastic IP address without releasing it, use <a>DisassociateAddress</a>.
      * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
      * <p>
      * [Nondefault VPC] You must use <a>DisassociateAddress</a> to disassociate the Elastic IP address before you can
      * release it. Otherwise, Amazon EC2 returns an error (<code>InvalidIPAddress.InUse</code>).
@@ -24118,13 +27205,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * another Amazon Web Services account.
      * </p>
      * <p>
-     * [EC2-VPC] After you release an Elastic IP address for use in a VPC, you might be able to recover it. For more
-     * information, see <a>AllocateAddress</a>.
-     * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP Addresses</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * After you release an Elastic IP address, you might be able to recover it. For more information, see
+     * <a>AllocateAddress</a>.
      * </p>
      * 
      * @param releaseAddressRequest
@@ -24140,16 +27222,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Releases the specified Elastic IP address.
      * </p>
      * <p>
-     * [EC2-Classic, default VPC] Releasing an Elastic IP address automatically disassociates it from any instance that
-     * it's associated with. To disassociate an Elastic IP address without releasing it, use <a>DisassociateAddress</a>.
+     * [Default VPC] Releasing an Elastic IP address automatically disassociates it from any instance that it's
+     * associated with. To disassociate an Elastic IP address without releasing it, use <a>DisassociateAddress</a>.
      * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
      * <p>
      * [Nondefault VPC] You must use <a>DisassociateAddress</a> to disassociate the Elastic IP address before you can
      * release it. Otherwise, Amazon EC2 returns an error (<code>InvalidIPAddress.InUse</code>).
@@ -24161,13 +27236,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * another Amazon Web Services account.
      * </p>
      * <p>
-     * [EC2-VPC] After you release an Elastic IP address for use in a VPC, you might be able to recover it. For more
-     * information, see <a>AllocateAddress</a>.
-     * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP Addresses</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * After you release an Elastic IP address, you might be able to recover it. For more information, see
+     * <a>AllocateAddress</a>.
      * </p>
      * 
      * @param releaseAddressRequest
@@ -24236,13 +27306,22 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Release an allocation within an IPAM pool. You can only use this action to release manual allocations. To remove
-     * an allocation for a resource without deleting the resource, set its monitored state to false using <a
+     * Release an allocation within an IPAM pool. The Region you use should be the IPAM pool locale. The locale is the
+     * Amazon Web Services Region where this IPAM pool is available for allocations. You can only use this action to
+     * release manual allocations. To remove an allocation for a resource without deleting the resource, set its
+     * monitored state to false using <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamResourceCidr.html"
      * >ModifyIpamResourceCidr</a>. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/ipam/release-pool-alloc-ipam.html">Release an allocation</a> in the
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/release-alloc-ipam.html">Release an allocation</a> in the
      * <i>Amazon VPC IPAM User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * All EC2 API actions follow an <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/query-api-troubleshooting.html#eventual-consistency"
+     * >eventual consistency</a> model.
+     * </p>
+     * </note>
      * 
      * @param releaseIpamPoolAllocationRequest
      * @return A Java Future containing the result of the ReleaseIpamPoolAllocation operation returned by the service.
@@ -24255,13 +27334,22 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Release an allocation within an IPAM pool. You can only use this action to release manual allocations. To remove
-     * an allocation for a resource without deleting the resource, set its monitored state to false using <a
+     * Release an allocation within an IPAM pool. The Region you use should be the IPAM pool locale. The locale is the
+     * Amazon Web Services Region where this IPAM pool is available for allocations. You can only use this action to
+     * release manual allocations. To remove an allocation for a resource without deleting the resource, set its
+     * monitored state to false using <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamResourceCidr.html"
      * >ModifyIpamResourceCidr</a>. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/ipam/release-pool-alloc-ipam.html">Release an allocation</a> in the
+     * href="https://docs.aws.amazon.com/vpc/latest/ipam/release-alloc-ipam.html">Release an allocation</a> in the
      * <i>Amazon VPC IPAM User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * All EC2 API actions follow an <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/query-api-troubleshooting.html#eventual-consistency"
+     * >eventual consistency</a> model.
+     * </p>
+     * </note>
      * 
      * @param releaseIpamPoolAllocationRequest
      * @param asyncHandler
@@ -24326,8 +27414,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Changes which network ACL a subnet is associated with. By default when you create a subnet, it's automatically
      * associated with the default network ACL. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon Virtual
-     * Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html">Network ACLs</a> in the <i>Amazon
+     * VPC User Guide</i>.
      * </p>
      * <p>
      * This is an idempotent operation.
@@ -24347,8 +27435,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Changes which network ACL a subnet is associated with. By default when you create a subnet, it's automatically
      * associated with the default network ACL. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon Virtual
-     * Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html">Network ACLs</a> in the <i>Amazon
+     * VPC User Guide</i>.
      * </p>
      * <p>
      * This is an idempotent operation.
@@ -24372,8 +27460,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Replaces an entry (rule) in a network ACL. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon Virtual
-     * Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html">Network ACLs</a> in the <i>Amazon
+     * VPC User Guide</i>.
      * </p>
      * 
      * @param replaceNetworkAclEntryRequest
@@ -24387,8 +27475,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Replaces an entry (rule) in a network ACL. For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon Virtual
-     * Private Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html">Network ACLs</a> in the <i>Amazon
+     * VPC User Guide</i>.
      * </p>
      * 
      * @param replaceNetworkAclEntryRequest
@@ -24414,7 +27502,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-     * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * tables</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @param replaceRouteRequest
@@ -24435,7 +27523,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-     * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * tables</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * 
      * @param replaceRouteRequest
@@ -24456,7 +27544,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Changes the route table associated with a given subnet, internet gateway, or virtual private gateway in a VPC.
      * After the operation completes, the subnet or gateway uses the routes in the new route table. For more information
      * about route tables, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-     * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * tables</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * <p>
      * You can also use this operation to change which table is the main route table in the VPC. Specify the main route
@@ -24478,7 +27566,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Changes the route table associated with a given subnet, internet gateway, or virtual private gateway in a VPC.
      * After the operation completes, the subnet or gateway uses the routes in the new route table. For more information
      * about route tables, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-     * tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * tables</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * <p>
      * You can also use this operation to change which table is the main route table in the VPC. Specify the main route
@@ -24532,6 +27620,37 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<ReplaceTransitGatewayRouteResult> replaceTransitGatewayRouteAsync(
             ReplaceTransitGatewayRouteRequest replaceTransitGatewayRouteRequest,
             com.amazonaws.handlers.AsyncHandler<ReplaceTransitGatewayRouteRequest, ReplaceTransitGatewayRouteResult> asyncHandler);
+
+    /**
+     * <p>
+     * Trigger replacement of specified VPN tunnel.
+     * </p>
+     * 
+     * @param replaceVpnTunnelRequest
+     * @return A Java Future containing the result of the ReplaceVpnTunnel operation returned by the service.
+     * @sample AmazonEC2Async.ReplaceVpnTunnel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceVpnTunnel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ReplaceVpnTunnelResult> replaceVpnTunnelAsync(ReplaceVpnTunnelRequest replaceVpnTunnelRequest);
+
+    /**
+     * <p>
+     * Trigger replacement of specified VPN tunnel.
+     * </p>
+     * 
+     * @param replaceVpnTunnelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ReplaceVpnTunnel operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.ReplaceVpnTunnel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceVpnTunnel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ReplaceVpnTunnelResult> replaceVpnTunnelAsync(ReplaceVpnTunnelRequest replaceVpnTunnelRequest,
+            com.amazonaws.handlers.AsyncHandler<ReplaceVpnTunnelRequest, ReplaceVpnTunnelResult> asyncHandler);
 
     /**
      * <p>
@@ -24607,14 +27726,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot Fleet requests</a> in
-     * the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <important>
      * <p>
      * We strongly discourage using the RequestSpotFleet API because it is a legacy API with no planned investment. For
      * options for requesting Spot Instances, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html#which-spot-request-method-to-use"
-     * >Which is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * >Which is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * </important>
      * 
@@ -24658,14 +27777,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot Fleet requests</a> in
-     * the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <important>
      * <p>
      * We strongly discourage using the RequestSpotFleet API because it is a legacy API with no planned investment. For
      * options for requesting Spot Instances, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html#which-spot-request-method-to-use"
-     * >Which is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * >Which is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * </important>
      * 
@@ -24698,13 +27817,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html#which-spot-request-method-to-use"
      * >Which is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
-     * </important> <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
-     * </p>
-     * </note>
+     * </important>
      * 
      * @param requestSpotInstancesRequest
      *        Contains the parameters for RequestSpotInstances.
@@ -24730,13 +27843,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html#which-spot-request-method-to-use"
      * >Which is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
-     * </important> <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
-     * </p>
-     * </note>
+     * </important>
      * 
      * @param requestSpotInstancesRequest
      *        Contains the parameters for RequestSpotInstances.
@@ -24795,8 +27902,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * After resetting the default KMS key to the Amazon Web Services managed KMS key, you can continue to encrypt by a
      * customer managed KMS key by specifying it when you create the volume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon EBS encryption</a> in the
+     * <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param resetEbsDefaultKmsKeyIdRequest
@@ -24815,8 +27922,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * After resetting the default KMS key to the Amazon Web Services managed KMS key, you can continue to encrypt by a
      * customer managed KMS key by specifying it when you create the volume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon EBS encryption</a> in the
+     * <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param resetEbsDefaultKmsKeyIdRequest
@@ -24990,8 +28097,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information about modifying snapshot permissions, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Share a
-     * snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-modifying-snapshot-permissions.html">Share a
+     * snapshot</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param resetSnapshotAttributeRequest
@@ -25008,8 +28115,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information about modifying snapshot permissions, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Share a
-     * snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-modifying-snapshot-permissions.html">Share a
+     * snapshot</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param resetSnapshotAttributeRequest
@@ -25026,18 +28133,16 @@ public interface AmazonEC2Async extends AmazonEC2 {
             com.amazonaws.handlers.AsyncHandler<ResetSnapshotAttributeRequest, ResetSnapshotAttributeResult> asyncHandler);
 
     /**
+     * <note>
+     * <p>
+     * This action is deprecated.
+     * </p>
+     * </note>
      * <p>
      * Restores an Elastic IP address that was previously moved to the EC2-VPC platform back to the EC2-Classic
      * platform. You cannot move an Elastic IP address that was originally allocated for use in EC2-VPC. The Elastic IP
      * address must not be associated with an instance or network interface.
      * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param restoreAddressToClassicRequest
      * @return A Java Future containing the result of the RestoreAddressToClassic operation returned by the service.
@@ -25048,18 +28153,16 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<RestoreAddressToClassicResult> restoreAddressToClassicAsync(RestoreAddressToClassicRequest restoreAddressToClassicRequest);
 
     /**
+     * <note>
+     * <p>
+     * This action is deprecated.
+     * </p>
+     * </note>
      * <p>
      * Restores an Elastic IP address that was previously moved to the EC2-VPC platform back to the EC2-Classic
      * platform. You cannot move an Elastic IP address that was originally allocated for use in EC2-VPC. The Elastic IP
      * address must not be associated with an instance or network interface.
      * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param restoreAddressToClassicRequest
      * @param asyncHandler
@@ -25077,8 +28180,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Restores an AMI from the Recycle Bin. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the Amazon Elastic
-     * Compute Cloud User Guide.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the <i>Amazon EC2
+     * User Guide</i>.
      * </p>
      * 
      * @param restoreImageFromRecycleBinRequest
@@ -25093,8 +28196,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Restores an AMI from the Recycle Bin. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the Amazon Elastic
-     * Compute Cloud User Guide.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the <i>Amazon EC2
+     * User Guide</i>.
      * </p>
      * 
      * @param restoreImageFromRecycleBinRequest
@@ -25149,8 +28252,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Restores a snapshot from the Recycle Bin. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-snaps.html#recycle-bin-restore-snaps"
-     * >Restore snapshots from the Recycle Bin</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * "https://docs.aws.amazon.com/ebs/latest/userguide/recycle-bin-working-with-snaps.html#recycle-bin-restore-snaps"
+     * >Restore snapshots from the Recycle Bin</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param restoreSnapshotFromRecycleBinRequest
@@ -25166,8 +28269,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Restores a snapshot from the Recycle Bin. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-snaps.html#recycle-bin-restore-snaps"
-     * >Restore snapshots from the Recycle Bin</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * "https://docs.aws.amazon.com/ebs/latest/userguide/recycle-bin-working-with-snaps.html#recycle-bin-restore-snaps"
+     * >Restore snapshots from the Recycle Bin</a> in the <i>Amazon EBS User Guide</i>.
      * </p>
      * 
      * @param restoreSnapshotFromRecycleBinRequest
@@ -25192,11 +28295,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information see <a href=
-     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-snapshot-archiving.html#restore-archived-snapshot"
+     * "https://docs.aws.amazon.com/ebs/latest/userguide/working-with-snapshot-archiving.html#restore-archived-snapshot"
      * > Restore an archived snapshot</a> and <a href=
-     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-snapshot-archiving.html#modify-temp-restore-period"
-     * > modify the restore period or restore type for a temporarily restored snapshot</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * "https://docs.aws.amazon.com/ebs/latest/userguide/working-with-snapshot-archiving.html#modify-temp-restore-period"
+     * > modify the restore period or restore type for a temporarily restored snapshot</a> in the <i>Amazon EBS User
+     * Guide</i>.
      * </p>
      * 
      * @param restoreSnapshotTierRequest
@@ -25214,11 +28317,11 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information see <a href=
-     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-snapshot-archiving.html#restore-archived-snapshot"
+     * "https://docs.aws.amazon.com/ebs/latest/userguide/working-with-snapshot-archiving.html#restore-archived-snapshot"
      * > Restore an archived snapshot</a> and <a href=
-     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-snapshot-archiving.html#modify-temp-restore-period"
-     * > modify the restore period or restore type for a temporarily restored snapshot</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * "https://docs.aws.amazon.com/ebs/latest/userguide/working-with-snapshot-archiving.html#modify-temp-restore-period"
+     * > modify the restore period or restore type for a temporarily restored snapshot</a> in the <i>Amazon EBS User
+     * Guide</i>.
      * </p>
      * 
      * @param restoreSnapshotTierRequest
@@ -25267,8 +28370,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * [VPC only] Removes the specified outbound (egress) rules from a security group for EC2-VPC. This action does not
-     * apply to security groups for use in EC2-Classic.
+     * Removes the specified outbound (egress) rules from the specified security group.
      * </p>
      * <p>
      * You can specify rules using either rule IDs or security group rule properties. If you use rule properties, the
@@ -25279,8 +28381,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * description to revoke the rule.
      * </p>
      * <p>
-     * [Default VPC] If the values you specify do not match the existing rule's values, no error is returned, and the
-     * output describes the security group rules that were not revoked.
+     * For a default VPC, if the values you specify do not match the existing rule's values, no error is returned, and
+     * the output describes the security group rules that were not revoked.
      * </p>
      * <p>
      * Amazon Web Services recommends that you describe the security group to verify that the rules were removed.
@@ -25301,8 +28403,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * [VPC only] Removes the specified outbound (egress) rules from a security group for EC2-VPC. This action does not
-     * apply to security groups for use in EC2-Classic.
+     * Removes the specified outbound (egress) rules from the specified security group.
      * </p>
      * <p>
      * You can specify rules using either rule IDs or security group rule properties. If you use rule properties, the
@@ -25313,8 +28414,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * description to revoke the rule.
      * </p>
      * <p>
-     * [Default VPC] If the values you specify do not match the existing rule's values, no error is returned, and the
-     * output describes the security group rules that were not revoked.
+     * For a default VPC, if the values you specify do not match the existing rule's values, no error is returned, and
+     * the output describes the security group rules that were not revoked.
      * </p>
      * <p>
      * Amazon Web Services recommends that you describe the security group to verify that the rules were removed.
@@ -25351,8 +28452,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * description to revoke the rule.
      * </p>
      * <p>
-     * [EC2-Classic, default VPC] If the values you specify do not match the existing rule's values, no error is
-     * returned, and the output describes the security group rules that were not revoked.
+     * For a default VPC, if the values you specify do not match the existing rule's values, no error is returned, and
+     * the output describes the security group rules that were not revoked.
+     * </p>
+     * <p>
+     * For a non-default VPC, if the values you specify do not match the existing rule's values, an
+     * <code>InvalidPermission.NotFound</code> client error is returned, and no rules are revoked.
      * </p>
      * <p>
      * Amazon Web Services recommends that you describe the security group to verify that the rules were removed.
@@ -25361,13 +28466,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay
      * might occur.
      * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param revokeSecurityGroupIngressRequest
      * @return A Java Future containing the result of the RevokeSecurityGroupIngress operation returned by the service.
@@ -25391,8 +28489,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * description to revoke the rule.
      * </p>
      * <p>
-     * [EC2-Classic, default VPC] If the values you specify do not match the existing rule's values, no error is
-     * returned, and the output describes the security group rules that were not revoked.
+     * For a default VPC, if the values you specify do not match the existing rule's values, no error is returned, and
+     * the output describes the security group rules that were not revoked.
+     * </p>
+     * <p>
+     * For a non-default VPC, if the values you specify do not match the existing rule's values, an
+     * <code>InvalidPermission.NotFound</code> client error is returned, and no rules are revoked.
      * </p>
      * <p>
      * Amazon Web Services recommends that you describe the security group to verify that the rules were removed.
@@ -25401,13 +28503,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay
      * might occur.
      * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param revokeSecurityGroupIngressRequest
      * @param asyncHandler
@@ -25450,27 +28545,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <ul>
      * <li>
      * <p>
-     * [EC2-VPC] If you don't specify a subnet ID, we choose a default subnet from your default VPC for you. If you
-     * don't have a default VPC, you must specify a subnet ID in the request.
+     * If you don't specify a subnet ID, we choose a default subnet from your default VPC for you. If you don't have a
+     * default VPC, you must specify a subnet ID in the request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * [EC2-Classic] If don't specify an Availability Zone, we choose one for you.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Some instance types must be launched into a VPC. If you do not have a default VPC, or if you do not specify a
-     * subnet ID, the request fails. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance types
-     * available only in a VPC</a>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * [EC2-VPC] All instances have a network interface with a primary private IPv4 address. If you don't specify this
-     * address, we choose one from the IPv4 range of your subnet.
+     * All instances have a network interface with a primary private IPv4 address. If you don't specify this address, we
+     * choose one from the IPv4 range of your subnet.
      * </p>
      * </li>
      * <li>
@@ -25519,13 +28601,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html"
      * >Troubleshooting connecting to your instance</a>.
      * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon EC2 User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param runInstancesRequest
      * @return A Java Future containing the result of the RunInstances operation returned by the service.
@@ -25545,27 +28620,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <ul>
      * <li>
      * <p>
-     * [EC2-VPC] If you don't specify a subnet ID, we choose a default subnet from your default VPC for you. If you
-     * don't have a default VPC, you must specify a subnet ID in the request.
+     * If you don't specify a subnet ID, we choose a default subnet from your default VPC for you. If you don't have a
+     * default VPC, you must specify a subnet ID in the request.
      * </p>
      * </li>
      * <li>
      * <p>
-     * [EC2-Classic] If don't specify an Availability Zone, we choose one for you.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Some instance types must be launched into a VPC. If you do not have a default VPC, or if you do not specify a
-     * subnet ID, the request fails. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance types
-     * available only in a VPC</a>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * [EC2-VPC] All instances have a network interface with a primary private IPv4 address. If you don't specify this
-     * address, we choose one from the IPv4 range of your subnet.
+     * All instances have a network interface with a primary private IPv4 address. If you don't specify this address, we
+     * choose one from the IPv4 range of your subnet.
      * </p>
      * </li>
      * <li>
@@ -25614,13 +28676,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html"
      * >Troubleshooting connecting to your instance</a>.
      * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC. For more information, see
-     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     * VPC</a> in the <i>Amazon EC2 User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param runInstancesRequest
      * @param asyncHandler
@@ -25875,7 +28930,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Performing this operation on an instance that uses an instance store as its root device returns an error.
      * </p>
      * <p>
-     * If you attempt to start a T3 instance with <code>host</code> tenancy and the <code>unlimted</code> CPU credit
+     * If you attempt to start a T3 instance with <code>host</code> tenancy and the <code>unlimited</code> CPU credit
      * option, the request fails. The <code>unlimited</code> CPU credit option is not supported on Dedicated Hosts.
      * Before you start the instance, either change its CPU credit option to <code>standard</code>, or change its
      * tenancy to <code>default</code> or <code>dedicated</code>.
@@ -25912,7 +28967,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Performing this operation on an instance that uses an instance store as its root device returns an error.
      * </p>
      * <p>
-     * If you attempt to start a T3 instance with <code>host</code> tenancy and the <code>unlimted</code> CPU credit
+     * If you attempt to start a T3 instance with <code>host</code> tenancy and the <code>unlimited</code> CPU credit
      * option, the request fails. The <code>unlimited</code> CPU credit option is not supported on Dedicated Hosts.
      * Before you start the instance, either change its CPU credit option to <code>standard</code>, or change its
      * tenancy to <code>default</code> or <code>dedicated</code>.
@@ -26066,9 +29121,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * You can use the Stop action to hibernate an instance if the instance is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#enabling-hibernation">enabled for
-     * hibernation</a> and it meets the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enabling-hibernation.html">enabled for hibernation</a>
+     * and it meets the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
      * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
      * <i>Amazon EC2 User Guide</i>.
@@ -26124,9 +29179,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * You can use the Stop action to hibernate an instance if the instance is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#enabling-hibernation">enabled for
-     * hibernation</a> and it meets the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enabling-hibernation.html">enabled for hibernation</a>
+     * and it meets the <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
      * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
      * <i>Amazon EC2 User Guide</i>.
@@ -26489,6 +29544,106 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Unassigns secondary private IPv4 addresses from a private NAT gateway. You cannot unassign your primary private
+     * IP. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit
+     * secondary IP address associations</a> in the <i>Amazon VPC User Guide</i>.
+     * </p>
+     * <p>
+     * While unassigning is in progress, you cannot assign/unassign additional IP addresses while the connections are
+     * being drained. You are, however, allowed to delete the NAT gateway.
+     * </p>
+     * <p>
+     * A private IP address will only be released at the end of MaxDrainDurationSeconds. The private IP addresses stay
+     * associated and support the existing connections, but do not support any new connections (new connections are
+     * distributed across the remaining assigned private IP address). After the existing connections drain out, the
+     * private IP addresses are released.
+     * </p>
+     * <p/>
+     * <p/>
+     * 
+     * @param unassignPrivateNatGatewayAddressRequest
+     * @return A Java Future containing the result of the UnassignPrivateNatGatewayAddress operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.UnassignPrivateNatGatewayAddress
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignPrivateNatGatewayAddress"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UnassignPrivateNatGatewayAddressResult> unassignPrivateNatGatewayAddressAsync(
+            UnassignPrivateNatGatewayAddressRequest unassignPrivateNatGatewayAddressRequest);
+
+    /**
+     * <p>
+     * Unassigns secondary private IPv4 addresses from a private NAT gateway. You cannot unassign your primary private
+     * IP. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit
+     * secondary IP address associations</a> in the <i>Amazon VPC User Guide</i>.
+     * </p>
+     * <p>
+     * While unassigning is in progress, you cannot assign/unassign additional IP addresses while the connections are
+     * being drained. You are, however, allowed to delete the NAT gateway.
+     * </p>
+     * <p>
+     * A private IP address will only be released at the end of MaxDrainDurationSeconds. The private IP addresses stay
+     * associated and support the existing connections, but do not support any new connections (new connections are
+     * distributed across the remaining assigned private IP address). After the existing connections drain out, the
+     * private IP addresses are released.
+     * </p>
+     * <p/>
+     * <p/>
+     * 
+     * @param unassignPrivateNatGatewayAddressRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UnassignPrivateNatGatewayAddress operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.UnassignPrivateNatGatewayAddress
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignPrivateNatGatewayAddress"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UnassignPrivateNatGatewayAddressResult> unassignPrivateNatGatewayAddressAsync(
+            UnassignPrivateNatGatewayAddressRequest unassignPrivateNatGatewayAddressRequest,
+            com.amazonaws.handlers.AsyncHandler<UnassignPrivateNatGatewayAddressRequest, UnassignPrivateNatGatewayAddressResult> asyncHandler);
+
+    /**
+     * <p>
+     * Unlocks a snapshot that is locked in governance mode or that is locked in compliance mode but still in the
+     * cooling-off period. You can't unlock a snapshot that is locked in compliance mode after the cooling-off period
+     * has expired.
+     * </p>
+     * 
+     * @param unlockSnapshotRequest
+     * @return A Java Future containing the result of the UnlockSnapshot operation returned by the service.
+     * @sample AmazonEC2Async.UnlockSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnlockSnapshot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UnlockSnapshotResult> unlockSnapshotAsync(UnlockSnapshotRequest unlockSnapshotRequest);
+
+    /**
+     * <p>
+     * Unlocks a snapshot that is locked in governance mode or that is locked in compliance mode but still in the
+     * cooling-off period. You can't unlock a snapshot that is locked in compliance mode after the cooling-off period
+     * has expired.
+     * </p>
+     * 
+     * @param unlockSnapshotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UnlockSnapshot operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.UnlockSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnlockSnapshot" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UnlockSnapshotResult> unlockSnapshotAsync(UnlockSnapshotRequest unlockSnapshotRequest,
+            com.amazonaws.handlers.AsyncHandler<UnlockSnapshotRequest, UnlockSnapshotResult> asyncHandler);
+
+    /**
+     * <p>
      * Disables detailed monitoring for a running instance. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring your instances and
      * volumes</a> in the <i>Amazon EC2 User Guide</i>.
@@ -26524,9 +29679,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * [VPC only] Updates the description of an egress (outbound) security group rule. You can replace an existing
-     * description, or add a description to a rule that did not have one previously. You can remove a description for a
-     * security group rule by omitting the description parameter in the request.
+     * Updates the description of an egress (outbound) security group rule. You can replace an existing description, or
+     * add a description to a rule that did not have one previously. You can remove a description for a security group
+     * rule by omitting the description parameter in the request.
      * </p>
      * 
      * @param updateSecurityGroupRuleDescriptionsEgressRequest
@@ -26541,9 +29696,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * [VPC only] Updates the description of an egress (outbound) security group rule. You can replace an existing
-     * description, or add a description to a rule that did not have one previously. You can remove a description for a
-     * security group rule by omitting the description parameter in the request.
+     * Updates the description of an egress (outbound) security group rule. You can replace an existing description, or
+     * add a description to a rule that did not have one previously. You can remove a description for a security group
+     * rule by omitting the description parameter in the request.
      * </p>
      * 
      * @param updateSecurityGroupRuleDescriptionsEgressRequest

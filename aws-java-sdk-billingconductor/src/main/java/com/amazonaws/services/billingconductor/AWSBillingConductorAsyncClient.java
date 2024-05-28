@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,9 +26,9 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Amazon Web Services Billing Conductor is a fully managed service that you can use to customize a <a href=
- * "https://docs.aws.amazon.com/enterprisebilling/6b7c01c5-b592-467e-9769-90052eaf359c/userguide/understanding-eb.html#eb-other-definitions"
- * >pro forma</a> version of your billing data each month, to accurately show or chargeback your end customers. Amazon
+ * Amazon Web Services Billing Conductor is a fully managed service that you can use to customize a <a
+ * href="https://docs.aws.amazon.com/billingconductor/latest/userguide/understanding-eb.html#eb-other-definitions"
+ * >proforma</a> version of your billing data each month, to accurately show or chargeback your end customers. Amazon
  * Web Services Billing Conductor doesn't change the way you're billed by Amazon Web Services each month by design.
  * Instead, it provides you with a mechanism to configure, generate, and display rates to certain customers over a given
  * billing period. You can also analyze the difference between the rates you apply to your accounting groupings relative
@@ -39,10 +39,10 @@ import java.util.concurrent.ExecutorService;
  * </p>
  * <p>
  * This documentation shows how you can configure Amazon Web Services Billing Conductor using its API. For more
- * information about using the <a href="https://console.aws.amazon.com/enterprisebilling/">Amazon Web Services Billing
- * Conductor</a> user interface, see the <a href=
- * "https://docs.aws.amazon.com/enterprisebilling/6b7c01c5-b592-467e-9769-90052eaf359c/userguide/what-is-enterprisebilling.html"
- * > Amazon Web Services Enterprise Billing Console User Guide</a>.
+ * information about using the <a href="https://console.aws.amazon.com/billingconductor/">Amazon Web Services Billing
+ * Conductor</a> user interface, see the <a
+ * href="https://docs.aws.amazon.com/billingconductor/latest/userguide/what-is-billingconductor.html"> Amazon Web
+ * Services Billing Conductor User Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -558,6 +558,39 @@ public class AWSBillingConductorAsyncClient extends AWSBillingConductorClient im
     }
 
     @Override
+    public java.util.concurrent.Future<GetBillingGroupCostReportResult> getBillingGroupCostReportAsync(GetBillingGroupCostReportRequest request) {
+
+        return getBillingGroupCostReportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBillingGroupCostReportResult> getBillingGroupCostReportAsync(final GetBillingGroupCostReportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetBillingGroupCostReportRequest, GetBillingGroupCostReportResult> asyncHandler) {
+        final GetBillingGroupCostReportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetBillingGroupCostReportResult>() {
+            @Override
+            public GetBillingGroupCostReportResult call() throws Exception {
+                GetBillingGroupCostReportResult result = null;
+
+                try {
+                    result = executeGetBillingGroupCostReport(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAccountAssociationsResult> listAccountAssociationsAsync(ListAccountAssociationsRequest request) {
 
         return listAccountAssociationsAsync(request, null);
@@ -641,6 +674,39 @@ public class AWSBillingConductorAsyncClient extends AWSBillingConductorClient im
 
                 try {
                     result = executeListBillingGroups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCustomLineItemVersionsResult> listCustomLineItemVersionsAsync(ListCustomLineItemVersionsRequest request) {
+
+        return listCustomLineItemVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCustomLineItemVersionsResult> listCustomLineItemVersionsAsync(final ListCustomLineItemVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCustomLineItemVersionsRequest, ListCustomLineItemVersionsResult> asyncHandler) {
+        final ListCustomLineItemVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCustomLineItemVersionsResult>() {
+            @Override
+            public ListCustomLineItemVersionsResult call() throws Exception {
+                ListCustomLineItemVersionsResult result = null;
+
+                try {
+                    result = executeListCustomLineItemVersions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

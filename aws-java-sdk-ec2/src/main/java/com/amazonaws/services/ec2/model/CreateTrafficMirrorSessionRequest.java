@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,6 +54,11 @@ public class CreateTrafficMirrorSessionRequest extends AmazonWebServiceRequest i
      * <p>
      * If you do not want to mirror the entire packet, use the <code>PacketLength</code> parameter to specify the number
      * of bytes in each packet to mirror.
+     * </p>
+     * <p>
+     * For sessions with Network Load Balancer (NLB) Traffic Mirror targets the default <code>PacketLength</code> will
+     * be set to 8500. Valid values are 1-8500. Setting a <code>PacketLength</code> greater than 8500 will result in an
+     * error response.
      * </p>
      */
     private Integer packetLength;
@@ -228,6 +233,11 @@ public class CreateTrafficMirrorSessionRequest extends AmazonWebServiceRequest i
      * If you do not want to mirror the entire packet, use the <code>PacketLength</code> parameter to specify the number
      * of bytes in each packet to mirror.
      * </p>
+     * <p>
+     * For sessions with Network Load Balancer (NLB) Traffic Mirror targets the default <code>PacketLength</code> will
+     * be set to 8500. Valid values are 1-8500. Setting a <code>PacketLength</code> greater than 8500 will result in an
+     * error response.
+     * </p>
      * 
      * @param packetLength
      *        The number of bytes in each packet to mirror. These are bytes after the VXLAN header. Do not specify this
@@ -237,6 +247,11 @@ public class CreateTrafficMirrorSessionRequest extends AmazonWebServiceRequest i
      *        <p>
      *        If you do not want to mirror the entire packet, use the <code>PacketLength</code> parameter to specify the
      *        number of bytes in each packet to mirror.
+     *        </p>
+     *        <p>
+     *        For sessions with Network Load Balancer (NLB) Traffic Mirror targets the default <code>PacketLength</code>
+     *        will be set to 8500. Valid values are 1-8500. Setting a <code>PacketLength</code> greater than 8500 will
+     *        result in an error response.
      */
 
     public void setPacketLength(Integer packetLength) {
@@ -254,6 +269,11 @@ public class CreateTrafficMirrorSessionRequest extends AmazonWebServiceRequest i
      * If you do not want to mirror the entire packet, use the <code>PacketLength</code> parameter to specify the number
      * of bytes in each packet to mirror.
      * </p>
+     * <p>
+     * For sessions with Network Load Balancer (NLB) Traffic Mirror targets the default <code>PacketLength</code> will
+     * be set to 8500. Valid values are 1-8500. Setting a <code>PacketLength</code> greater than 8500 will result in an
+     * error response.
+     * </p>
      * 
      * @return The number of bytes in each packet to mirror. These are bytes after the VXLAN header. Do not specify this
      *         parameter when you want to mirror the entire packet. To mirror a subset of the packet, set this to the
@@ -262,6 +282,11 @@ public class CreateTrafficMirrorSessionRequest extends AmazonWebServiceRequest i
      *         <p>
      *         If you do not want to mirror the entire packet, use the <code>PacketLength</code> parameter to specify
      *         the number of bytes in each packet to mirror.
+     *         </p>
+     *         <p>
+     *         For sessions with Network Load Balancer (NLB) Traffic Mirror targets the default
+     *         <code>PacketLength</code> will be set to 8500. Valid values are 1-8500. Setting a
+     *         <code>PacketLength</code> greater than 8500 will result in an error response.
      */
 
     public Integer getPacketLength() {
@@ -279,6 +304,11 @@ public class CreateTrafficMirrorSessionRequest extends AmazonWebServiceRequest i
      * If you do not want to mirror the entire packet, use the <code>PacketLength</code> parameter to specify the number
      * of bytes in each packet to mirror.
      * </p>
+     * <p>
+     * For sessions with Network Load Balancer (NLB) Traffic Mirror targets the default <code>PacketLength</code> will
+     * be set to 8500. Valid values are 1-8500. Setting a <code>PacketLength</code> greater than 8500 will result in an
+     * error response.
+     * </p>
      * 
      * @param packetLength
      *        The number of bytes in each packet to mirror. These are bytes after the VXLAN header. Do not specify this
@@ -288,6 +318,11 @@ public class CreateTrafficMirrorSessionRequest extends AmazonWebServiceRequest i
      *        <p>
      *        If you do not want to mirror the entire packet, use the <code>PacketLength</code> parameter to specify the
      *        number of bytes in each packet to mirror.
+     *        </p>
+     *        <p>
+     *        For sessions with Network Load Balancer (NLB) Traffic Mirror targets the default <code>PacketLength</code>
+     *        will be set to 8500. Valid values are 1-8500. Setting a <code>PacketLength</code> greater than 8500 will
+     *        result in an error response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

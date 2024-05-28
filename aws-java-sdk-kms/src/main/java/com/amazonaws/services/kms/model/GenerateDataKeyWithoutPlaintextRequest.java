@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,6 +71,12 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
      * <p>
      * Specifies the encryption context that will be used when encrypting the data key.
      * </p>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important>
      * <p>
      * An <i>encryption context</i> is a collection of non-secret key-value pairs that represent additional
      * authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact
@@ -113,6 +119,17 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> grantTokens;
+    /**
+     * <p>
+     * Checks if your request will succeed. <code>DryRun</code> is an optional parameter.
+     * </p>
+     * <p>
+     * To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     * calls</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     */
+    private Boolean dryRun;
 
     /**
      * <p>
@@ -371,6 +388,12 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
      * <p>
      * Specifies the encryption context that will be used when encrypting the data key.
      * </p>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important>
      * <p>
      * An <i>encryption context</i> is a collection of non-secret key-value pairs that represent additional
      * authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact
@@ -384,7 +407,12 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
      * in the <i>Key Management Service Developer Guide</i>.
      * </p>
      * 
-     * @return Specifies the encryption context that will be used when encrypting the data key.</p>
+     * @return Specifies the encryption context that will be used when encrypting the data key.</p> <important>
+     *         <p>
+     *         Do not include confidential or sensitive information in this field. This field may be displayed in
+     *         plaintext in CloudTrail logs and other output.
+     *         </p>
+     *         </important>
      *         <p>
      *         An <i>encryption context</i> is a collection of non-secret key-value pairs that represent additional
      *         authenticated data. When you use an encryption context to encrypt data, you must specify the same (an
@@ -409,6 +437,12 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
      * <p>
      * Specifies the encryption context that will be used when encrypting the data key.
      * </p>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important>
      * <p>
      * An <i>encryption context</i> is a collection of non-secret key-value pairs that represent additional
      * authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact
@@ -423,7 +457,12 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
      * </p>
      * 
      * @param encryptionContext
-     *        Specifies the encryption context that will be used when encrypting the data key.</p>
+     *        Specifies the encryption context that will be used when encrypting the data key.</p> <important>
+     *        <p>
+     *        Do not include confidential or sensitive information in this field. This field may be displayed in
+     *        plaintext in CloudTrail logs and other output.
+     *        </p>
+     *        </important>
      *        <p>
      *        An <i>encryption context</i> is a collection of non-secret key-value pairs that represent additional
      *        authenticated data. When you use an encryption context to encrypt data, you must specify the same (an
@@ -445,6 +484,12 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
      * <p>
      * Specifies the encryption context that will be used when encrypting the data key.
      * </p>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important>
      * <p>
      * An <i>encryption context</i> is a collection of non-secret key-value pairs that represent additional
      * authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact
@@ -459,7 +504,12 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
      * </p>
      * 
      * @param encryptionContext
-     *        Specifies the encryption context that will be used when encrypting the data key.</p>
+     *        Specifies the encryption context that will be used when encrypting the data key.</p> <important>
+     *        <p>
+     *        Do not include confidential or sensitive information in this field. This field may be displayed in
+     *        plaintext in CloudTrail logs and other output.
+     *        </p>
+     *        </important>
      *        <p>
      *        An <i>encryption context</i> is a collection of non-secret key-value pairs that represent additional
      *        authenticated data. When you use an encryption context to encrypt data, you must specify the same (an
@@ -768,6 +818,94 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * Checks if your request will succeed. <code>DryRun</code> is an optional parameter.
+     * </p>
+     * <p>
+     * To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     * calls</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param dryRun
+     *        Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+     *        <p>
+     *        To learn more about how to use this parameter, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     *        calls</a> in the <i>Key Management Service Developer Guide</i>.
+     */
+
+    public void setDryRun(Boolean dryRun) {
+        this.dryRun = dryRun;
+    }
+
+    /**
+     * <p>
+     * Checks if your request will succeed. <code>DryRun</code> is an optional parameter.
+     * </p>
+     * <p>
+     * To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     * calls</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+     *         <p>
+     *         To learn more about how to use this parameter, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     *         calls</a> in the <i>Key Management Service Developer Guide</i>.
+     */
+
+    public Boolean getDryRun() {
+        return this.dryRun;
+    }
+
+    /**
+     * <p>
+     * Checks if your request will succeed. <code>DryRun</code> is an optional parameter.
+     * </p>
+     * <p>
+     * To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     * calls</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param dryRun
+     *        Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+     *        <p>
+     *        To learn more about how to use this parameter, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     *        calls</a> in the <i>Key Management Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GenerateDataKeyWithoutPlaintextRequest withDryRun(Boolean dryRun) {
+        setDryRun(dryRun);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Checks if your request will succeed. <code>DryRun</code> is an optional parameter.
+     * </p>
+     * <p>
+     * To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     * calls</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+     *         <p>
+     *         To learn more about how to use this parameter, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     *         calls</a> in the <i>Key Management Service Developer Guide</i>.
+     */
+
+    public Boolean isDryRun() {
+        return this.dryRun;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -788,7 +926,9 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
         if (getNumberOfBytes() != null)
             sb.append("NumberOfBytes: ").append(getNumberOfBytes()).append(",");
         if (getGrantTokens() != null)
-            sb.append("GrantTokens: ").append(getGrantTokens());
+            sb.append("GrantTokens: ").append(getGrantTokens()).append(",");
+        if (getDryRun() != null)
+            sb.append("DryRun: ").append(getDryRun());
         sb.append("}");
         return sb.toString();
     }
@@ -823,6 +963,10 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
             return false;
         if (other.getGrantTokens() != null && other.getGrantTokens().equals(this.getGrantTokens()) == false)
             return false;
+        if (other.getDryRun() == null ^ this.getDryRun() == null)
+            return false;
+        if (other.getDryRun() != null && other.getDryRun().equals(this.getDryRun()) == false)
+            return false;
         return true;
     }
 
@@ -836,6 +980,7 @@ public class GenerateDataKeyWithoutPlaintextRequest extends com.amazonaws.Amazon
         hashCode = prime * hashCode + ((getKeySpec() == null) ? 0 : getKeySpec().hashCode());
         hashCode = prime * hashCode + ((getNumberOfBytes() == null) ? 0 : getNumberOfBytes().hashCode());
         hashCode = prime * hashCode + ((getGrantTokens() == null) ? 0 : getGrantTokens().hashCode());
+        hashCode = prime * hashCode + ((getDryRun() == null) ? 0 : getDryRun().hashCode());
         return hashCode;
     }
 

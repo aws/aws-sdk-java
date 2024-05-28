@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class UpdateLensReviewRequestMarshaller {
             .marshallLocationName("LensNotes").build();
     private static final MarshallingInfo<Map> PILLARNOTES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("PillarNotes").build();
+    private static final MarshallingInfo<StructuredPojo> JIRACONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JiraConfiguration").build();
 
     private static final UpdateLensReviewRequestMarshaller instance = new UpdateLensReviewRequestMarshaller();
 
@@ -58,6 +60,7 @@ public class UpdateLensReviewRequestMarshaller {
             protocolMarshaller.marshall(updateLensReviewRequest.getLensAlias(), LENSALIAS_BINDING);
             protocolMarshaller.marshall(updateLensReviewRequest.getLensNotes(), LENSNOTES_BINDING);
             protocolMarshaller.marshall(updateLensReviewRequest.getPillarNotes(), PILLARNOTES_BINDING);
+            protocolMarshaller.marshall(updateLensReviewRequest.getJiraConfiguration(), JIRACONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

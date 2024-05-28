@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,7 @@ public class DescribeAffectedEntitiesForOrganizationRequest extends com.amazonaw
      * A JSON set of elements including the <code>awsAccountId</code> and the <code>eventArn</code>.
      * </p>
      */
+    @Deprecated
     private java.util.List<EventAccountFilter> organizationEntityFilters;
     /**
      * <p>
@@ -53,6 +54,13 @@ public class DescribeAffectedEntitiesForOrganizationRequest extends com.amazonaw
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * A JSON set of elements including the <code>awsAccountId</code>, <code>eventArn</code> and a set of
+     * <code>statusCodes</code>.
+     * </p>
+     */
+    private java.util.List<EntityAccountFilter> organizationEntityAccountFilters;
 
     /**
      * <p>
@@ -61,7 +69,7 @@ public class DescribeAffectedEntitiesForOrganizationRequest extends com.amazonaw
      * 
      * @return A JSON set of elements including the <code>awsAccountId</code> and the <code>eventArn</code>.
      */
-
+    @Deprecated
     public java.util.List<EventAccountFilter> getOrganizationEntityFilters() {
         return organizationEntityFilters;
     }
@@ -74,7 +82,7 @@ public class DescribeAffectedEntitiesForOrganizationRequest extends com.amazonaw
      * @param organizationEntityFilters
      *        A JSON set of elements including the <code>awsAccountId</code> and the <code>eventArn</code>.
      */
-
+    @Deprecated
     public void setOrganizationEntityFilters(java.util.Collection<EventAccountFilter> organizationEntityFilters) {
         if (organizationEntityFilters == null) {
             this.organizationEntityFilters = null;
@@ -98,7 +106,7 @@ public class DescribeAffectedEntitiesForOrganizationRequest extends com.amazonaw
      *        A JSON set of elements including the <code>awsAccountId</code> and the <code>eventArn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public DescribeAffectedEntitiesForOrganizationRequest withOrganizationEntityFilters(EventAccountFilter... organizationEntityFilters) {
         if (this.organizationEntityFilters == null) {
             setOrganizationEntityFilters(new java.util.ArrayList<EventAccountFilter>(organizationEntityFilters.length));
@@ -118,7 +126,7 @@ public class DescribeAffectedEntitiesForOrganizationRequest extends com.amazonaw
      *        A JSON set of elements including the <code>awsAccountId</code> and the <code>eventArn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public DescribeAffectedEntitiesForOrganizationRequest withOrganizationEntityFilters(java.util.Collection<EventAccountFilter> organizationEntityFilters) {
         setOrganizationEntityFilters(organizationEntityFilters);
         return this;
@@ -269,6 +277,85 @@ public class DescribeAffectedEntitiesForOrganizationRequest extends com.amazonaw
     }
 
     /**
+     * <p>
+     * A JSON set of elements including the <code>awsAccountId</code>, <code>eventArn</code> and a set of
+     * <code>statusCodes</code>.
+     * </p>
+     * 
+     * @return A JSON set of elements including the <code>awsAccountId</code>, <code>eventArn</code> and a set of
+     *         <code>statusCodes</code>.
+     */
+
+    public java.util.List<EntityAccountFilter> getOrganizationEntityAccountFilters() {
+        return organizationEntityAccountFilters;
+    }
+
+    /**
+     * <p>
+     * A JSON set of elements including the <code>awsAccountId</code>, <code>eventArn</code> and a set of
+     * <code>statusCodes</code>.
+     * </p>
+     * 
+     * @param organizationEntityAccountFilters
+     *        A JSON set of elements including the <code>awsAccountId</code>, <code>eventArn</code> and a set of
+     *        <code>statusCodes</code>.
+     */
+
+    public void setOrganizationEntityAccountFilters(java.util.Collection<EntityAccountFilter> organizationEntityAccountFilters) {
+        if (organizationEntityAccountFilters == null) {
+            this.organizationEntityAccountFilters = null;
+            return;
+        }
+
+        this.organizationEntityAccountFilters = new java.util.ArrayList<EntityAccountFilter>(organizationEntityAccountFilters);
+    }
+
+    /**
+     * <p>
+     * A JSON set of elements including the <code>awsAccountId</code>, <code>eventArn</code> and a set of
+     * <code>statusCodes</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setOrganizationEntityAccountFilters(java.util.Collection)} or
+     * {@link #withOrganizationEntityAccountFilters(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param organizationEntityAccountFilters
+     *        A JSON set of elements including the <code>awsAccountId</code>, <code>eventArn</code> and a set of
+     *        <code>statusCodes</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAffectedEntitiesForOrganizationRequest withOrganizationEntityAccountFilters(EntityAccountFilter... organizationEntityAccountFilters) {
+        if (this.organizationEntityAccountFilters == null) {
+            setOrganizationEntityAccountFilters(new java.util.ArrayList<EntityAccountFilter>(organizationEntityAccountFilters.length));
+        }
+        for (EntityAccountFilter ele : organizationEntityAccountFilters) {
+            this.organizationEntityAccountFilters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A JSON set of elements including the <code>awsAccountId</code>, <code>eventArn</code> and a set of
+     * <code>statusCodes</code>.
+     * </p>
+     * 
+     * @param organizationEntityAccountFilters
+     *        A JSON set of elements including the <code>awsAccountId</code>, <code>eventArn</code> and a set of
+     *        <code>statusCodes</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAffectedEntitiesForOrganizationRequest withOrganizationEntityAccountFilters(
+            java.util.Collection<EntityAccountFilter> organizationEntityAccountFilters) {
+        setOrganizationEntityAccountFilters(organizationEntityAccountFilters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -287,7 +374,9 @@ public class DescribeAffectedEntitiesForOrganizationRequest extends com.amazonaw
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getOrganizationEntityAccountFilters() != null)
+            sb.append("OrganizationEntityAccountFilters: ").append(getOrganizationEntityAccountFilters());
         sb.append("}");
         return sb.toString();
     }
@@ -318,6 +407,11 @@ public class DescribeAffectedEntitiesForOrganizationRequest extends com.amazonaw
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getOrganizationEntityAccountFilters() == null ^ this.getOrganizationEntityAccountFilters() == null)
+            return false;
+        if (other.getOrganizationEntityAccountFilters() != null
+                && other.getOrganizationEntityAccountFilters().equals(this.getOrganizationEntityAccountFilters()) == false)
+            return false;
         return true;
     }
 
@@ -330,6 +424,7 @@ public class DescribeAffectedEntitiesForOrganizationRequest extends com.amazonaw
         hashCode = prime * hashCode + ((getLocale() == null) ? 0 : getLocale().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getOrganizationEntityAccountFilters() == null) ? 0 : getOrganizationEntityAccountFilters().hashCode());
         return hashCode;
     }
 

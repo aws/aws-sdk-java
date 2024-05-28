@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CalculateRouteRequestMarshaller {
 
+    private static final MarshallingInfo<java.util.Date> ARRIVALTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ArrivalTime").timestampFormat("iso8601").build();
     private static final MarshallingInfo<String> CALCULATORNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("CalculatorName").build();
     private static final MarshallingInfo<StructuredPojo> CARMODEOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -44,6 +46,10 @@ public class CalculateRouteRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DistanceUnit").build();
     private static final MarshallingInfo<Boolean> INCLUDELEGGEOMETRY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeLegGeometry").build();
+    private static final MarshallingInfo<String> KEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("key").build();
+    private static final MarshallingInfo<String> OPTIMIZEFOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OptimizeFor").build();
     private static final MarshallingInfo<String> TRAVELMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TravelMode").build();
     private static final MarshallingInfo<StructuredPojo> TRUCKMODEOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -67,6 +73,7 @@ public class CalculateRouteRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(calculateRouteRequest.getArrivalTime(), ARRIVALTIME_BINDING);
             protocolMarshaller.marshall(calculateRouteRequest.getCalculatorName(), CALCULATORNAME_BINDING);
             protocolMarshaller.marshall(calculateRouteRequest.getCarModeOptions(), CARMODEOPTIONS_BINDING);
             protocolMarshaller.marshall(calculateRouteRequest.getDepartNow(), DEPARTNOW_BINDING);
@@ -75,6 +82,8 @@ public class CalculateRouteRequestMarshaller {
             protocolMarshaller.marshall(calculateRouteRequest.getDestinationPosition(), DESTINATIONPOSITION_BINDING);
             protocolMarshaller.marshall(calculateRouteRequest.getDistanceUnit(), DISTANCEUNIT_BINDING);
             protocolMarshaller.marshall(calculateRouteRequest.getIncludeLegGeometry(), INCLUDELEGGEOMETRY_BINDING);
+            protocolMarshaller.marshall(calculateRouteRequest.getKey(), KEY_BINDING);
+            protocolMarshaller.marshall(calculateRouteRequest.getOptimizeFor(), OPTIMIZEFOR_BINDING);
             protocolMarshaller.marshall(calculateRouteRequest.getTravelMode(), TRAVELMODE_BINDING);
             protocolMarshaller.marshall(calculateRouteRequest.getTruckModeOptions(), TRUCKMODEOPTIONS_BINDING);
             protocolMarshaller.marshall(calculateRouteRequest.getWaypointPositions(), WAYPOINTPOSITIONS_BINDING);

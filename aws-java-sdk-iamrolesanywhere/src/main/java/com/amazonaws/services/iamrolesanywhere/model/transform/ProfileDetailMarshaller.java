@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ProfileDetailMarshaller {
 
+    private static final MarshallingInfo<List> ATTRIBUTEMAPPINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("attributeMappings").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("iso8601").build();
     private static final MarshallingInfo<String> CREATEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -69,6 +71,7 @@ public class ProfileDetailMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(profileDetail.getAttributeMappings(), ATTRIBUTEMAPPINGS_BINDING);
             protocolMarshaller.marshall(profileDetail.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(profileDetail.getCreatedBy(), CREATEDBY_BINDING);
             protocolMarshaller.marshall(profileDetail.getDurationSeconds(), DURATIONSECONDS_BINDING);

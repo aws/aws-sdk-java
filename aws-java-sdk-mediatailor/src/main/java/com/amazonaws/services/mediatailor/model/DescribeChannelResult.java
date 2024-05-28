@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,12 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      */
     private String arn;
+    /**
+     * <p>
+     * The list of audiences defined in channel.
+     * </p>
+     */
+    private java.util.List<String> audiences;
     /**
      * <p>
      * The name of the channel.
@@ -61,6 +67,12 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
     private java.util.Date lastModifiedTime;
     /**
      * <p>
+     * The log configuration for the channel.
+     * </p>
+     */
+    private LogConfigurationForChannel logConfiguration;
+    /**
+     * <p>
      * The channel's output properties.
      * </p>
      */
@@ -86,6 +98,12 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      */
     private String tier;
+    /**
+     * <p>
+     * The time-shifted viewing configuration for the channel.
+     * </p>
+     */
+    private TimeShiftConfiguration timeShiftConfiguration;
 
     /**
      * <p>
@@ -124,6 +142,76 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
 
     public DescribeChannelResult withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of audiences defined in channel.
+     * </p>
+     * 
+     * @return The list of audiences defined in channel.
+     */
+
+    public java.util.List<String> getAudiences() {
+        return audiences;
+    }
+
+    /**
+     * <p>
+     * The list of audiences defined in channel.
+     * </p>
+     * 
+     * @param audiences
+     *        The list of audiences defined in channel.
+     */
+
+    public void setAudiences(java.util.Collection<String> audiences) {
+        if (audiences == null) {
+            this.audiences = null;
+            return;
+        }
+
+        this.audiences = new java.util.ArrayList<String>(audiences);
+    }
+
+    /**
+     * <p>
+     * The list of audiences defined in channel.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAudiences(java.util.Collection)} or {@link #withAudiences(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param audiences
+     *        The list of audiences defined in channel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeChannelResult withAudiences(String... audiences) {
+        if (this.audiences == null) {
+            setAudiences(new java.util.ArrayList<String>(audiences.length));
+        }
+        for (String ele : audiences) {
+            this.audiences.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of audiences defined in channel.
+     * </p>
+     * 
+     * @param audiences
+     *        The list of audiences defined in channel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeChannelResult withAudiences(java.util.Collection<String> audiences) {
+        setAudiences(audiences);
         return this;
     }
 
@@ -343,6 +431,46 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
 
     public DescribeChannelResult withLastModifiedTime(java.util.Date lastModifiedTime) {
         setLastModifiedTime(lastModifiedTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The log configuration for the channel.
+     * </p>
+     * 
+     * @param logConfiguration
+     *        The log configuration for the channel.
+     */
+
+    public void setLogConfiguration(LogConfigurationForChannel logConfiguration) {
+        this.logConfiguration = logConfiguration;
+    }
+
+    /**
+     * <p>
+     * The log configuration for the channel.
+     * </p>
+     * 
+     * @return The log configuration for the channel.
+     */
+
+    public LogConfigurationForChannel getLogConfiguration() {
+        return this.logConfiguration;
+    }
+
+    /**
+     * <p>
+     * The log configuration for the channel.
+     * </p>
+     * 
+     * @param logConfiguration
+     *        The log configuration for the channel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeChannelResult withLogConfiguration(LogConfigurationForChannel logConfiguration) {
+        setLogConfiguration(logConfiguration);
         return this;
     }
 
@@ -583,6 +711,46 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
+     * <p>
+     * The time-shifted viewing configuration for the channel.
+     * </p>
+     * 
+     * @param timeShiftConfiguration
+     *        The time-shifted viewing configuration for the channel.
+     */
+
+    public void setTimeShiftConfiguration(TimeShiftConfiguration timeShiftConfiguration) {
+        this.timeShiftConfiguration = timeShiftConfiguration;
+    }
+
+    /**
+     * <p>
+     * The time-shifted viewing configuration for the channel.
+     * </p>
+     * 
+     * @return The time-shifted viewing configuration for the channel.
+     */
+
+    public TimeShiftConfiguration getTimeShiftConfiguration() {
+        return this.timeShiftConfiguration;
+    }
+
+    /**
+     * <p>
+     * The time-shifted viewing configuration for the channel.
+     * </p>
+     * 
+     * @param timeShiftConfiguration
+     *        The time-shifted viewing configuration for the channel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeChannelResult withTimeShiftConfiguration(TimeShiftConfiguration timeShiftConfiguration) {
+        setTimeShiftConfiguration(timeShiftConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -596,6 +764,8 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getAudiences() != null)
+            sb.append("Audiences: ").append(getAudiences()).append(",");
         if (getChannelName() != null)
             sb.append("ChannelName: ").append(getChannelName()).append(",");
         if (getChannelState() != null)
@@ -606,6 +776,8 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
             sb.append("FillerSlate: ").append(getFillerSlate()).append(",");
         if (getLastModifiedTime() != null)
             sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
+        if (getLogConfiguration() != null)
+            sb.append("LogConfiguration: ").append(getLogConfiguration()).append(",");
         if (getOutputs() != null)
             sb.append("Outputs: ").append(getOutputs()).append(",");
         if (getPlaybackMode() != null)
@@ -613,7 +785,9 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getTier() != null)
-            sb.append("Tier: ").append(getTier());
+            sb.append("Tier: ").append(getTier()).append(",");
+        if (getTimeShiftConfiguration() != null)
+            sb.append("TimeShiftConfiguration: ").append(getTimeShiftConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -631,6 +805,10 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getAudiences() == null ^ this.getAudiences() == null)
+            return false;
+        if (other.getAudiences() != null && other.getAudiences().equals(this.getAudiences()) == false)
             return false;
         if (other.getChannelName() == null ^ this.getChannelName() == null)
             return false;
@@ -652,6 +830,10 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getLastModifiedTime() != null && other.getLastModifiedTime().equals(this.getLastModifiedTime()) == false)
             return false;
+        if (other.getLogConfiguration() == null ^ this.getLogConfiguration() == null)
+            return false;
+        if (other.getLogConfiguration() != null && other.getLogConfiguration().equals(this.getLogConfiguration()) == false)
+            return false;
         if (other.getOutputs() == null ^ this.getOutputs() == null)
             return false;
         if (other.getOutputs() != null && other.getOutputs().equals(this.getOutputs()) == false)
@@ -668,6 +850,10 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getTier() != null && other.getTier().equals(this.getTier()) == false)
             return false;
+        if (other.getTimeShiftConfiguration() == null ^ this.getTimeShiftConfiguration() == null)
+            return false;
+        if (other.getTimeShiftConfiguration() != null && other.getTimeShiftConfiguration().equals(this.getTimeShiftConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -677,15 +863,18 @@ public class DescribeChannelResult extends com.amazonaws.AmazonWebServiceResult<
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getAudiences() == null) ? 0 : getAudiences().hashCode());
         hashCode = prime * hashCode + ((getChannelName() == null) ? 0 : getChannelName().hashCode());
         hashCode = prime * hashCode + ((getChannelState() == null) ? 0 : getChannelState().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getFillerSlate() == null) ? 0 : getFillerSlate().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
+        hashCode = prime * hashCode + ((getLogConfiguration() == null) ? 0 : getLogConfiguration().hashCode());
         hashCode = prime * hashCode + ((getOutputs() == null) ? 0 : getOutputs().hashCode());
         hashCode = prime * hashCode + ((getPlaybackMode() == null) ? 0 : getPlaybackMode().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getTier() == null) ? 0 : getTier().hashCode());
+        hashCode = prime * hashCode + ((getTimeShiftConfiguration() == null) ? 0 : getTimeShiftConfiguration().hashCode());
         return hashCode;
     }
 

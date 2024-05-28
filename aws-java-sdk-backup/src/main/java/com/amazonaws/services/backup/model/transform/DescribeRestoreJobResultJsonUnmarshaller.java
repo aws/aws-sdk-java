@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -99,6 +99,30 @@ public class DescribeRestoreJobResultJsonUnmarshaller implements Unmarshaller<De
                 if (context.testExpression("ResourceType", targetDepth)) {
                     context.nextToken();
                     describeRestoreJobResult.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("RecoveryPointCreationDate", targetDepth)) {
+                    context.nextToken();
+                    describeRestoreJobResult.setRecoveryPointCreationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("CreatedBy", targetDepth)) {
+                    context.nextToken();
+                    describeRestoreJobResult.setCreatedBy(RestoreJobCreatorJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ValidationStatus", targetDepth)) {
+                    context.nextToken();
+                    describeRestoreJobResult.setValidationStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ValidationStatusMessage", targetDepth)) {
+                    context.nextToken();
+                    describeRestoreJobResult.setValidationStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DeletionStatus", targetDepth)) {
+                    context.nextToken();
+                    describeRestoreJobResult.setDeletionStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DeletionStatusMessage", targetDepth)) {
+                    context.nextToken();
+                    describeRestoreJobResult.setDeletionStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

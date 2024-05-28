@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents a single entry in a list of agents. <code>AgentListEntry</code> returns an array that contains a list of
- * agents when the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListAgents.html">ListAgents</a>
- * operation is called.
+ * Represents a single entry in a list (or array) of DataSync agents when you call the <a
+ * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListAgents.html">ListAgents</a> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/AgentListEntry" target="_top">AWS API
@@ -32,30 +31,51 @@ public class AgentListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the agent.
+     * The Amazon Resource Name (ARN) of a DataSync agent.
      * </p>
      */
     private String agentArn;
     /**
      * <p>
-     * The name of the agent.
+     * The name of an agent.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The status of the agent.
+     * The status of an agent.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or
+     * longer. This can happen for a few reasons. For more information, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline"
+     * >What do I do if my agent is offline?</a>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String status;
+    /**
+     * <p>
+     * The platform-related details about the agent, such as the version number.
+     * </p>
+     */
+    private Platform platform;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the agent.
+     * The Amazon Resource Name (ARN) of a DataSync agent.
      * </p>
      * 
      * @param agentArn
-     *        The Amazon Resource Name (ARN) of the agent.
+     *        The Amazon Resource Name (ARN) of a DataSync agent.
      */
 
     public void setAgentArn(String agentArn) {
@@ -64,10 +84,10 @@ public class AgentListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the agent.
+     * The Amazon Resource Name (ARN) of a DataSync agent.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the agent.
+     * @return The Amazon Resource Name (ARN) of a DataSync agent.
      */
 
     public String getAgentArn() {
@@ -76,11 +96,11 @@ public class AgentListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the agent.
+     * The Amazon Resource Name (ARN) of a DataSync agent.
      * </p>
      * 
      * @param agentArn
-     *        The Amazon Resource Name (ARN) of the agent.
+     *        The Amazon Resource Name (ARN) of a DataSync agent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,11 +111,11 @@ public class AgentListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the agent.
+     * The name of an agent.
      * </p>
      * 
      * @param name
-     *        The name of the agent.
+     *        The name of an agent.
      */
 
     public void setName(String name) {
@@ -104,10 +124,10 @@ public class AgentListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the agent.
+     * The name of an agent.
      * </p>
      * 
-     * @return The name of the agent.
+     * @return The name of an agent.
      */
 
     public String getName() {
@@ -116,11 +136,11 @@ public class AgentListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the agent.
+     * The name of an agent.
      * </p>
      * 
      * @param name
-     *        The name of the agent.
+     *        The name of an agent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,11 +151,40 @@ public class AgentListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the agent.
+     * The status of an agent.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or
+     * longer. This can happen for a few reasons. For more information, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline"
+     * >What do I do if my agent is offline?</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The status of the agent.
+     *        The status of an agent.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or
+     *        longer. This can happen for a few reasons. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline"
+     *        >What do I do if my agent is offline?</a>
+     *        </p>
+     *        </li>
      * @see AgentStatus
      */
 
@@ -145,10 +194,39 @@ public class AgentListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the agent.
+     * The status of an agent.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or
+     * longer. This can happen for a few reasons. For more information, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline"
+     * >What do I do if my agent is offline?</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The status of the agent.
+     * @return The status of an agent.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes
+     *         or longer. This can happen for a few reasons. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline"
+     *         >What do I do if my agent is offline?</a>
+     *         </p>
+     *         </li>
      * @see AgentStatus
      */
 
@@ -158,11 +236,40 @@ public class AgentListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the agent.
+     * The status of an agent.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or
+     * longer. This can happen for a few reasons. For more information, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline"
+     * >What do I do if my agent is offline?</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The status of the agent.
+     *        The status of an agent.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or
+     *        longer. This can happen for a few reasons. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline"
+     *        >What do I do if my agent is offline?</a>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AgentStatus
      */
@@ -174,17 +281,86 @@ public class AgentListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the agent.
+     * The status of an agent.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or
+     * longer. This can happen for a few reasons. For more information, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline"
+     * >What do I do if my agent is offline?</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The status of the agent.
+     *        The status of an agent.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the status is <code>ONLINE</code>, the agent is configured properly and ready to use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync for five minutes or
+     *        longer. This can happen for a few reasons. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline"
+     *        >What do I do if my agent is offline?</a>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AgentStatus
      */
 
     public AgentListEntry withStatus(AgentStatus status) {
         this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The platform-related details about the agent, such as the version number.
+     * </p>
+     * 
+     * @param platform
+     *        The platform-related details about the agent, such as the version number.
+     */
+
+    public void setPlatform(Platform platform) {
+        this.platform = platform;
+    }
+
+    /**
+     * <p>
+     * The platform-related details about the agent, such as the version number.
+     * </p>
+     * 
+     * @return The platform-related details about the agent, such as the version number.
+     */
+
+    public Platform getPlatform() {
+        return this.platform;
+    }
+
+    /**
+     * <p>
+     * The platform-related details about the agent, such as the version number.
+     * </p>
+     * 
+     * @param platform
+     *        The platform-related details about the agent, such as the version number.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AgentListEntry withPlatform(Platform platform) {
+        setPlatform(platform);
         return this;
     }
 
@@ -205,7 +381,9 @@ public class AgentListEntry implements Serializable, Cloneable, StructuredPojo {
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getPlatform() != null)
+            sb.append("Platform: ").append(getPlatform());
         sb.append("}");
         return sb.toString();
     }
@@ -232,6 +410,10 @@ public class AgentListEntry implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getPlatform() == null ^ this.getPlatform() == null)
+            return false;
+        if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false)
+            return false;
         return true;
     }
 
@@ -243,6 +425,7 @@ public class AgentListEntry implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAgentArn() == null) ? 0 : getAgentArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
         return hashCode;
     }
 

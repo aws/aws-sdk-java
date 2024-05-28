@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,7 +51,7 @@ public class CreateAppInstanceUserRequest extends com.amazonaws.AmazonWebService
     private String metadata;
     /**
      * <p>
-     * The token assigned to the user requesting an <code>AppInstance</code>.
+     * The unique ID of the request. Use different tokens to request additional <code>AppInstances</code>.
      * </p>
      */
     private String clientRequestToken;
@@ -61,6 +61,12 @@ public class CreateAppInstanceUserRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * Settings that control the interval after which the <code>AppInstanceUser</code> is automatically deleted.
+     * </p>
+     */
+    private ExpirationSettings expirationSettings;
 
     /**
      * <p>
@@ -224,11 +230,11 @@ public class CreateAppInstanceUserRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The token assigned to the user requesting an <code>AppInstance</code>.
+     * The unique ID of the request. Use different tokens to request additional <code>AppInstances</code>.
      * </p>
      * 
      * @param clientRequestToken
-     *        The token assigned to the user requesting an <code>AppInstance</code>.
+     *        The unique ID of the request. Use different tokens to request additional <code>AppInstances</code>.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -237,10 +243,10 @@ public class CreateAppInstanceUserRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The token assigned to the user requesting an <code>AppInstance</code>.
+     * The unique ID of the request. Use different tokens to request additional <code>AppInstances</code>.
      * </p>
      * 
-     * @return The token assigned to the user requesting an <code>AppInstance</code>.
+     * @return The unique ID of the request. Use different tokens to request additional <code>AppInstances</code>.
      */
 
     public String getClientRequestToken() {
@@ -249,11 +255,11 @@ public class CreateAppInstanceUserRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The token assigned to the user requesting an <code>AppInstance</code>.
+     * The unique ID of the request. Use different tokens to request additional <code>AppInstances</code>.
      * </p>
      * 
      * @param clientRequestToken
-     *        The token assigned to the user requesting an <code>AppInstance</code>.
+     *        The unique ID of the request. Use different tokens to request additional <code>AppInstances</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -333,6 +339,46 @@ public class CreateAppInstanceUserRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * Settings that control the interval after which the <code>AppInstanceUser</code> is automatically deleted.
+     * </p>
+     * 
+     * @param expirationSettings
+     *        Settings that control the interval after which the <code>AppInstanceUser</code> is automatically deleted.
+     */
+
+    public void setExpirationSettings(ExpirationSettings expirationSettings) {
+        this.expirationSettings = expirationSettings;
+    }
+
+    /**
+     * <p>
+     * Settings that control the interval after which the <code>AppInstanceUser</code> is automatically deleted.
+     * </p>
+     * 
+     * @return Settings that control the interval after which the <code>AppInstanceUser</code> is automatically deleted.
+     */
+
+    public ExpirationSettings getExpirationSettings() {
+        return this.expirationSettings;
+    }
+
+    /**
+     * <p>
+     * Settings that control the interval after which the <code>AppInstanceUser</code> is automatically deleted.
+     * </p>
+     * 
+     * @param expirationSettings
+     *        Settings that control the interval after which the <code>AppInstanceUser</code> is automatically deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAppInstanceUserRequest withExpirationSettings(ExpirationSettings expirationSettings) {
+        setExpirationSettings(expirationSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -353,9 +399,11 @@ public class CreateAppInstanceUserRequest extends com.amazonaws.AmazonWebService
         if (getMetadata() != null)
             sb.append("Metadata: ").append("***Sensitive Data Redacted***").append(",");
         if (getClientRequestToken() != null)
-            sb.append("ClientRequestToken: ").append("***Sensitive Data Redacted***").append(",");
+            sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getExpirationSettings() != null)
+            sb.append("ExpirationSettings: ").append(getExpirationSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -394,6 +442,10 @@ public class CreateAppInstanceUserRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getExpirationSettings() == null ^ this.getExpirationSettings() == null)
+            return false;
+        if (other.getExpirationSettings() != null && other.getExpirationSettings().equals(this.getExpirationSettings()) == false)
+            return false;
         return true;
     }
 
@@ -408,6 +460,7 @@ public class CreateAppInstanceUserRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getMetadata() == null) ? 0 : getMetadata().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getExpirationSettings() == null) ? 0 : getExpirationSettings().hashCode());
         return hashCode;
     }
 

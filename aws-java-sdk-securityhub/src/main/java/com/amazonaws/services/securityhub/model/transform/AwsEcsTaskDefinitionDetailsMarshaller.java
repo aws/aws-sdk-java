@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,8 @@ public class AwsEcsTaskDefinitionDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TaskRoleArn").build();
     private static final MarshallingInfo<List> VOLUMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Volumes").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Status").build();
 
     private static final AwsEcsTaskDefinitionDetailsMarshaller instance = new AwsEcsTaskDefinitionDetailsMarshaller();
 
@@ -87,6 +89,7 @@ public class AwsEcsTaskDefinitionDetailsMarshaller {
             protocolMarshaller.marshall(awsEcsTaskDefinitionDetails.getRequiresCompatibilities(), REQUIRESCOMPATIBILITIES_BINDING);
             protocolMarshaller.marshall(awsEcsTaskDefinitionDetails.getTaskRoleArn(), TASKROLEARN_BINDING);
             protocolMarshaller.marshall(awsEcsTaskDefinitionDetails.getVolumes(), VOLUMES_BINDING);
+            protocolMarshaller.marshall(awsEcsTaskDefinitionDetails.getStatus(), STATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

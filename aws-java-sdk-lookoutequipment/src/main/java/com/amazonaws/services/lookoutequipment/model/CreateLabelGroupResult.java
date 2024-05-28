@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,7 @@ public class CreateLabelGroupResult extends com.amazonaws.AmazonWebServiceResult
     private String labelGroupName;
     /**
      * <p>
-     * The ARN of the label group that you have created.
+     * The Amazon Resource Name (ARN) of the label group that you have created.
      * </p>
      */
     private String labelGroupArn;
@@ -85,11 +85,11 @@ public class CreateLabelGroupResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The ARN of the label group that you have created.
+     * The Amazon Resource Name (ARN) of the label group that you have created.
      * </p>
      * 
      * @param labelGroupArn
-     *        The ARN of the label group that you have created.
+     *        The Amazon Resource Name (ARN) of the label group that you have created.
      */
 
     public void setLabelGroupArn(String labelGroupArn) {
@@ -98,10 +98,10 @@ public class CreateLabelGroupResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The ARN of the label group that you have created.
+     * The Amazon Resource Name (ARN) of the label group that you have created.
      * </p>
      * 
-     * @return The ARN of the label group that you have created.
+     * @return The Amazon Resource Name (ARN) of the label group that you have created.
      */
 
     public String getLabelGroupArn() {
@@ -110,11 +110,11 @@ public class CreateLabelGroupResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The ARN of the label group that you have created.
+     * The Amazon Resource Name (ARN) of the label group that you have created.
      * </p>
      * 
      * @param labelGroupArn
-     *        The ARN of the label group that you have created.
+     *        The Amazon Resource Name (ARN) of the label group that you have created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

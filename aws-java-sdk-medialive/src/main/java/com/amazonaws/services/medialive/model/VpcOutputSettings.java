@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,7 +76,6 @@ public class VpcOutputSettings implements Serializable, Cloneable, StructuredPoj
     /**
      * List of public address allocation ids to associate with ENIs that will be created in Output VPC. Must specify one
      * for SINGLE_PIPELINE, two for STANDARD channels
-     * 
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setPublicAddressAllocationIds(java.util.Collection)} or
@@ -147,7 +146,6 @@ public class VpcOutputSettings implements Serializable, Cloneable, StructuredPoj
     /**
      * A list of up to 5 EC2 VPC security group IDs to attach to the Output VPC network interfaces. If none are
      * specified then the VPC default security group will be used
-     * 
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSecurityGroupIds(java.util.Collection)} or {@link #withSecurityGroupIds(java.util.Collection)} if you
@@ -218,7 +216,6 @@ public class VpcOutputSettings implements Serializable, Cloneable, StructuredPoj
     /**
      * A list of VPC subnet IDs from the same VPC. If STANDARD channel, subnet IDs must be mapped to two unique
      * availability zones (AZ).
-     * 
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSubnetIds(java.util.Collection)} or {@link #withSubnetIds(java.util.Collection)} if you want to

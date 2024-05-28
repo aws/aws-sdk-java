@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,12 @@ public class GenerateDataKeyPairWithoutPlaintextRequest extends com.amazonaws.Am
      * <p>
      * Specifies the encryption context that will be used when encrypting the private key in the data key pair.
      * </p>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important>
      * <p>
      * An <i>encryption context</i> is a collection of non-secret key-value pairs that represent additional
      * authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact
@@ -93,7 +99,6 @@ public class GenerateDataKeyPairWithoutPlaintextRequest extends com.amazonaws.Am
      * The KMS rule that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt or to sign and
      * verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not
      * effective on data key pairs, which are used outside of KMS. The SM2 key spec is only available in China Regions.
-     * RSA and ECC asymmetric key pairs are also available in China Regions.
      * </p>
      */
     private String keyPairSpec;
@@ -110,11 +115,28 @@ public class GenerateDataKeyPairWithoutPlaintextRequest extends com.amazonaws.Am
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> grantTokens;
+    /**
+     * <p>
+     * Checks if your request will succeed. <code>DryRun</code> is an optional parameter.
+     * </p>
+     * <p>
+     * To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     * calls</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     */
+    private Boolean dryRun;
 
     /**
      * <p>
      * Specifies the encryption context that will be used when encrypting the private key in the data key pair.
      * </p>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important>
      * <p>
      * An <i>encryption context</i> is a collection of non-secret key-value pairs that represent additional
      * authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact
@@ -129,7 +151,12 @@ public class GenerateDataKeyPairWithoutPlaintextRequest extends com.amazonaws.Am
      * </p>
      * 
      * @return Specifies the encryption context that will be used when encrypting the private key in the data key
-     *         pair.</p>
+     *         pair.</p> <important>
+     *         <p>
+     *         Do not include confidential or sensitive information in this field. This field may be displayed in
+     *         plaintext in CloudTrail logs and other output.
+     *         </p>
+     *         </important>
      *         <p>
      *         An <i>encryption context</i> is a collection of non-secret key-value pairs that represent additional
      *         authenticated data. When you use an encryption context to encrypt data, you must specify the same (an
@@ -154,6 +181,12 @@ public class GenerateDataKeyPairWithoutPlaintextRequest extends com.amazonaws.Am
      * <p>
      * Specifies the encryption context that will be used when encrypting the private key in the data key pair.
      * </p>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important>
      * <p>
      * An <i>encryption context</i> is a collection of non-secret key-value pairs that represent additional
      * authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact
@@ -169,7 +202,12 @@ public class GenerateDataKeyPairWithoutPlaintextRequest extends com.amazonaws.Am
      * 
      * @param encryptionContext
      *        Specifies the encryption context that will be used when encrypting the private key in the data key
-     *        pair.</p>
+     *        pair.</p> <important>
+     *        <p>
+     *        Do not include confidential or sensitive information in this field. This field may be displayed in
+     *        plaintext in CloudTrail logs and other output.
+     *        </p>
+     *        </important>
      *        <p>
      *        An <i>encryption context</i> is a collection of non-secret key-value pairs that represent additional
      *        authenticated data. When you use an encryption context to encrypt data, you must specify the same (an
@@ -191,6 +229,12 @@ public class GenerateDataKeyPairWithoutPlaintextRequest extends com.amazonaws.Am
      * <p>
      * Specifies the encryption context that will be used when encrypting the private key in the data key pair.
      * </p>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important>
      * <p>
      * An <i>encryption context</i> is a collection of non-secret key-value pairs that represent additional
      * authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact
@@ -206,7 +250,12 @@ public class GenerateDataKeyPairWithoutPlaintextRequest extends com.amazonaws.Am
      * 
      * @param encryptionContext
      *        Specifies the encryption context that will be used when encrypting the private key in the data key
-     *        pair.</p>
+     *        pair.</p> <important>
+     *        <p>
+     *        Do not include confidential or sensitive information in this field. This field may be displayed in
+     *        plaintext in CloudTrail logs and other output.
+     *        </p>
+     *        </important>
      *        <p>
      *        An <i>encryption context</i> is a collection of non-secret key-value pairs that represent additional
      *        authenticated data. When you use an encryption context to encrypt data, you must specify the same (an
@@ -515,7 +564,6 @@ public class GenerateDataKeyPairWithoutPlaintextRequest extends com.amazonaws.Am
      * The KMS rule that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt or to sign and
      * verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not
      * effective on data key pairs, which are used outside of KMS. The SM2 key spec is only available in China Regions.
-     * RSA and ECC asymmetric key pairs are also available in China Regions.
      * </p>
      * 
      * @param keyPairSpec
@@ -524,7 +572,7 @@ public class GenerateDataKeyPairWithoutPlaintextRequest extends com.amazonaws.Am
      *        The KMS rule that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt or to sign
      *        and verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are
      *        not effective on data key pairs, which are used outside of KMS. The SM2 key spec is only available in
-     *        China Regions. RSA and ECC asymmetric key pairs are also available in China Regions.
+     *        China Regions.
      * @see DataKeyPairSpec
      */
 
@@ -540,7 +588,6 @@ public class GenerateDataKeyPairWithoutPlaintextRequest extends com.amazonaws.Am
      * The KMS rule that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt or to sign and
      * verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not
      * effective on data key pairs, which are used outside of KMS. The SM2 key spec is only available in China Regions.
-     * RSA and ECC asymmetric key pairs are also available in China Regions.
      * </p>
      * 
      * @return Determines the type of data key pair that is generated.</p>
@@ -548,7 +595,7 @@ public class GenerateDataKeyPairWithoutPlaintextRequest extends com.amazonaws.Am
      *         The KMS rule that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt or to sign
      *         and verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are
      *         not effective on data key pairs, which are used outside of KMS. The SM2 key spec is only available in
-     *         China Regions. RSA and ECC asymmetric key pairs are also available in China Regions.
+     *         China Regions.
      * @see DataKeyPairSpec
      */
 
@@ -564,7 +611,6 @@ public class GenerateDataKeyPairWithoutPlaintextRequest extends com.amazonaws.Am
      * The KMS rule that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt or to sign and
      * verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not
      * effective on data key pairs, which are used outside of KMS. The SM2 key spec is only available in China Regions.
-     * RSA and ECC asymmetric key pairs are also available in China Regions.
      * </p>
      * 
      * @param keyPairSpec
@@ -573,7 +619,7 @@ public class GenerateDataKeyPairWithoutPlaintextRequest extends com.amazonaws.Am
      *        The KMS rule that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt or to sign
      *        and verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are
      *        not effective on data key pairs, which are used outside of KMS. The SM2 key spec is only available in
-     *        China Regions. RSA and ECC asymmetric key pairs are also available in China Regions.
+     *        China Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataKeyPairSpec
      */
@@ -591,7 +637,6 @@ public class GenerateDataKeyPairWithoutPlaintextRequest extends com.amazonaws.Am
      * The KMS rule that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt or to sign and
      * verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not
      * effective on data key pairs, which are used outside of KMS. The SM2 key spec is only available in China Regions.
-     * RSA and ECC asymmetric key pairs are also available in China Regions.
      * </p>
      * 
      * @param keyPairSpec
@@ -600,7 +645,7 @@ public class GenerateDataKeyPairWithoutPlaintextRequest extends com.amazonaws.Am
      *        The KMS rule that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt or to sign
      *        and verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are
      *        not effective on data key pairs, which are used outside of KMS. The SM2 key spec is only available in
-     *        China Regions. RSA and ECC asymmetric key pairs are also available in China Regions.
+     *        China Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataKeyPairSpec
      */
@@ -736,6 +781,94 @@ public class GenerateDataKeyPairWithoutPlaintextRequest extends com.amazonaws.Am
     }
 
     /**
+     * <p>
+     * Checks if your request will succeed. <code>DryRun</code> is an optional parameter.
+     * </p>
+     * <p>
+     * To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     * calls</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param dryRun
+     *        Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+     *        <p>
+     *        To learn more about how to use this parameter, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     *        calls</a> in the <i>Key Management Service Developer Guide</i>.
+     */
+
+    public void setDryRun(Boolean dryRun) {
+        this.dryRun = dryRun;
+    }
+
+    /**
+     * <p>
+     * Checks if your request will succeed. <code>DryRun</code> is an optional parameter.
+     * </p>
+     * <p>
+     * To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     * calls</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+     *         <p>
+     *         To learn more about how to use this parameter, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     *         calls</a> in the <i>Key Management Service Developer Guide</i>.
+     */
+
+    public Boolean getDryRun() {
+        return this.dryRun;
+    }
+
+    /**
+     * <p>
+     * Checks if your request will succeed. <code>DryRun</code> is an optional parameter.
+     * </p>
+     * <p>
+     * To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     * calls</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param dryRun
+     *        Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+     *        <p>
+     *        To learn more about how to use this parameter, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     *        calls</a> in the <i>Key Management Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GenerateDataKeyPairWithoutPlaintextRequest withDryRun(Boolean dryRun) {
+        setDryRun(dryRun);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Checks if your request will succeed. <code>DryRun</code> is an optional parameter.
+     * </p>
+     * <p>
+     * To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     * calls</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+     *         <p>
+     *         To learn more about how to use this parameter, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     *         calls</a> in the <i>Key Management Service Developer Guide</i>.
+     */
+
+    public Boolean isDryRun() {
+        return this.dryRun;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -754,7 +887,9 @@ public class GenerateDataKeyPairWithoutPlaintextRequest extends com.amazonaws.Am
         if (getKeyPairSpec() != null)
             sb.append("KeyPairSpec: ").append(getKeyPairSpec()).append(",");
         if (getGrantTokens() != null)
-            sb.append("GrantTokens: ").append(getGrantTokens());
+            sb.append("GrantTokens: ").append(getGrantTokens()).append(",");
+        if (getDryRun() != null)
+            sb.append("DryRun: ").append(getDryRun());
         sb.append("}");
         return sb.toString();
     }
@@ -785,6 +920,10 @@ public class GenerateDataKeyPairWithoutPlaintextRequest extends com.amazonaws.Am
             return false;
         if (other.getGrantTokens() != null && other.getGrantTokens().equals(this.getGrantTokens()) == false)
             return false;
+        if (other.getDryRun() == null ^ this.getDryRun() == null)
+            return false;
+        if (other.getDryRun() != null && other.getDryRun().equals(this.getDryRun()) == false)
+            return false;
         return true;
     }
 
@@ -797,6 +936,7 @@ public class GenerateDataKeyPairWithoutPlaintextRequest extends com.amazonaws.Am
         hashCode = prime * hashCode + ((getKeyId() == null) ? 0 : getKeyId().hashCode());
         hashCode = prime * hashCode + ((getKeyPairSpec() == null) ? 0 : getKeyPairSpec().hashCode());
         hashCode = prime * hashCode + ((getGrantTokens() == null) ? 0 : getGrantTokens().hashCode());
+        hashCode = prime * hashCode + ((getDryRun() == null) ? 0 : getDryRun().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class UpdateUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A system-assigned unique identifier for a server instance that the user account is assigned to.
+     * A system-assigned unique identifier for a Transfer Family server instance that the account is assigned to.
      * </p>
      */
     private String serverId;
@@ -41,11 +41,11 @@ public class UpdateUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A system-assigned unique identifier for a server instance that the user account is assigned to.
+     * A system-assigned unique identifier for a Transfer Family server instance that the account is assigned to.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for a server instance that the user account is assigned to.
+     *        A system-assigned unique identifier for a Transfer Family server instance that the account is assigned to.
      */
 
     public void setServerId(String serverId) {
@@ -54,10 +54,11 @@ public class UpdateUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A system-assigned unique identifier for a server instance that the user account is assigned to.
+     * A system-assigned unique identifier for a Transfer Family server instance that the account is assigned to.
      * </p>
      * 
-     * @return A system-assigned unique identifier for a server instance that the user account is assigned to.
+     * @return A system-assigned unique identifier for a Transfer Family server instance that the account is assigned
+     *         to.
      */
 
     public String getServerId() {
@@ -66,11 +67,11 @@ public class UpdateUserResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A system-assigned unique identifier for a server instance that the user account is assigned to.
+     * A system-assigned unique identifier for a Transfer Family server instance that the account is assigned to.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for a server instance that the user account is assigned to.
+     *        A system-assigned unique identifier for a Transfer Family server instance that the account is assigned to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,9 +30,9 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * and Amazon Web Services Service Namespaces</a>.
      * </p>
      */
     private String roleARN;
@@ -40,18 +40,17 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
      * <p>
      * The ARN of the Amazon ES domain. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * and Amazon Web Services Service Namespaces</a>.
      * </p>
      * <p>
-     * Kinesis Data Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to Amazon
-     * ES.
+     * Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to Amazon ES.
      * </p>
      */
     private String domainARN;
     /**
      * <p>
-     * The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this
-     * <code>ClusterEndpoint</code> or the <code>DomainARN</code> field to send data to Amazon ES.
+     * The endpoint to use when communicating with the cluster. Firehose uses either this <code>ClusterEndpoint</code>
+     * or the <code>DomainARN</code> field to send data to Amazon ES.
      * </p>
      */
     private String clusterEndpoint;
@@ -63,8 +62,8 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
     private String indexName;
     /**
      * <p>
-     * The Elasticsearch type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x, there's
-     * no value for <code>TypeName</code>.
+     * The Elasticsearch type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x and
+     * OpenSearch Service 1.x, there's no value for <code>TypeName</code>.
      * </p>
      */
     private String typeName;
@@ -112,22 +111,29 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
     private CloudWatchLoggingOptions cloudWatchLoggingOptions;
     /**
      * <p>
-     * The details of the VPC of the Amazon ES destination.
+     * The details of the VPC of the Amazon OpenSearch or the Amazon OpenSearch Serverless destination.
      * </p>
      */
     private VpcConfigurationDescription vpcConfigurationDescription;
+    /**
+     * <p>
+     * Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and
+     * OpenSearch Service generated document ID.
+     * </p>
+     */
+    private DocumentIdOptions documentIdOptions;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * and Amazon Web Services Service Namespaces</a>.
      * </p>
      * 
      * @param roleARN
-     *        The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     *        The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs) and AWS Service Namespaces</a>.
+     *        (ARNs) and Amazon Web Services Service Namespaces</a>.
      */
 
     public void setRoleARN(String roleARN) {
@@ -136,14 +142,14 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * and Amazon Web Services Service Namespaces</a>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * @return The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *         (ARNs) and AWS Service Namespaces</a>.
+     *         (ARNs) and Amazon Web Services Service Namespaces</a>.
      */
 
     public String getRoleARN() {
@@ -152,15 +158,15 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * and Amazon Web Services Service Namespaces</a>.
      * </p>
      * 
      * @param roleARN
-     *        The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     *        The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs) and AWS Service Namespaces</a>.
+     *        (ARNs) and Amazon Web Services Service Namespaces</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,20 +179,18 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
      * <p>
      * The ARN of the Amazon ES domain. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * and Amazon Web Services Service Namespaces</a>.
      * </p>
      * <p>
-     * Kinesis Data Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to Amazon
-     * ES.
+     * Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to Amazon ES.
      * </p>
      * 
      * @param domainARN
      *        The ARN of the Amazon ES domain. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs) and AWS Service Namespaces</a>.</p>
+     *        (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      *        <p>
-     *        Kinesis Data Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to
-     *        Amazon ES.
+     *        Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to Amazon ES.
      */
 
     public void setDomainARN(String domainARN) {
@@ -197,19 +201,17 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
      * <p>
      * The ARN of the Amazon ES domain. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * and Amazon Web Services Service Namespaces</a>.
      * </p>
      * <p>
-     * Kinesis Data Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to Amazon
-     * ES.
+     * Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to Amazon ES.
      * </p>
      * 
      * @return The ARN of the Amazon ES domain. For more information, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *         (ARNs) and AWS Service Namespaces</a>.</p>
+     *         (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      *         <p>
-     *         Kinesis Data Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to
-     *         Amazon ES.
+     *         Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to Amazon ES.
      */
 
     public String getDomainARN() {
@@ -220,20 +222,18 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
      * <p>
      * The ARN of the Amazon ES domain. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * and Amazon Web Services Service Namespaces</a>.
      * </p>
      * <p>
-     * Kinesis Data Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to Amazon
-     * ES.
+     * Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to Amazon ES.
      * </p>
      * 
      * @param domainARN
      *        The ARN of the Amazon ES domain. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs) and AWS Service Namespaces</a>.</p>
+     *        (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      *        <p>
-     *        Kinesis Data Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to
-     *        Amazon ES.
+     *        Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code> to send data to Amazon ES.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -244,12 +244,12 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this
-     * <code>ClusterEndpoint</code> or the <code>DomainARN</code> field to send data to Amazon ES.
+     * The endpoint to use when communicating with the cluster. Firehose uses either this <code>ClusterEndpoint</code>
+     * or the <code>DomainARN</code> field to send data to Amazon ES.
      * </p>
      * 
      * @param clusterEndpoint
-     *        The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this
+     *        The endpoint to use when communicating with the cluster. Firehose uses either this
      *        <code>ClusterEndpoint</code> or the <code>DomainARN</code> field to send data to Amazon ES.
      */
 
@@ -259,11 +259,11 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this
-     * <code>ClusterEndpoint</code> or the <code>DomainARN</code> field to send data to Amazon ES.
+     * The endpoint to use when communicating with the cluster. Firehose uses either this <code>ClusterEndpoint</code>
+     * or the <code>DomainARN</code> field to send data to Amazon ES.
      * </p>
      * 
-     * @return The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this
+     * @return The endpoint to use when communicating with the cluster. Firehose uses either this
      *         <code>ClusterEndpoint</code> or the <code>DomainARN</code> field to send data to Amazon ES.
      */
 
@@ -273,12 +273,12 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this
-     * <code>ClusterEndpoint</code> or the <code>DomainARN</code> field to send data to Amazon ES.
+     * The endpoint to use when communicating with the cluster. Firehose uses either this <code>ClusterEndpoint</code>
+     * or the <code>DomainARN</code> field to send data to Amazon ES.
      * </p>
      * 
      * @param clusterEndpoint
-     *        The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this
+     *        The endpoint to use when communicating with the cluster. Firehose uses either this
      *        <code>ClusterEndpoint</code> or the <code>DomainARN</code> field to send data to Amazon ES.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -330,13 +330,13 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The Elasticsearch type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x, there's
-     * no value for <code>TypeName</code>.
+     * The Elasticsearch type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x and
+     * OpenSearch Service 1.x, there's no value for <code>TypeName</code>.
      * </p>
      * 
      * @param typeName
-     *        The Elasticsearch type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x,
-     *        there's no value for <code>TypeName</code>.
+     *        The Elasticsearch type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x
+     *        and OpenSearch Service 1.x, there's no value for <code>TypeName</code>.
      */
 
     public void setTypeName(String typeName) {
@@ -345,12 +345,12 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The Elasticsearch type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x, there's
-     * no value for <code>TypeName</code>.
+     * The Elasticsearch type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x and
+     * OpenSearch Service 1.x, there's no value for <code>TypeName</code>.
      * </p>
      * 
-     * @return The Elasticsearch type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x,
-     *         there's no value for <code>TypeName</code>.
+     * @return The Elasticsearch type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x
+     *         and OpenSearch Service 1.x, there's no value for <code>TypeName</code>.
      */
 
     public String getTypeName() {
@@ -359,13 +359,13 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The Elasticsearch type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x, there's
-     * no value for <code>TypeName</code>.
+     * The Elasticsearch type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x and
+     * OpenSearch Service 1.x, there's no value for <code>TypeName</code>.
      * </p>
      * 
      * @param typeName
-     *        The Elasticsearch type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x,
-     *        there's no value for <code>TypeName</code>.
+     *        The Elasticsearch type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch 7.x
+     *        and OpenSearch Service 1.x, there's no value for <code>TypeName</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -722,11 +722,11 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The details of the VPC of the Amazon ES destination.
+     * The details of the VPC of the Amazon OpenSearch or the Amazon OpenSearch Serverless destination.
      * </p>
      * 
      * @param vpcConfigurationDescription
-     *        The details of the VPC of the Amazon ES destination.
+     *        The details of the VPC of the Amazon OpenSearch or the Amazon OpenSearch Serverless destination.
      */
 
     public void setVpcConfigurationDescription(VpcConfigurationDescription vpcConfigurationDescription) {
@@ -735,10 +735,10 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The details of the VPC of the Amazon ES destination.
+     * The details of the VPC of the Amazon OpenSearch or the Amazon OpenSearch Serverless destination.
      * </p>
      * 
-     * @return The details of the VPC of the Amazon ES destination.
+     * @return The details of the VPC of the Amazon OpenSearch or the Amazon OpenSearch Serverless destination.
      */
 
     public VpcConfigurationDescription getVpcConfigurationDescription() {
@@ -747,16 +747,62 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
 
     /**
      * <p>
-     * The details of the VPC of the Amazon ES destination.
+     * The details of the VPC of the Amazon OpenSearch or the Amazon OpenSearch Serverless destination.
      * </p>
      * 
      * @param vpcConfigurationDescription
-     *        The details of the VPC of the Amazon ES destination.
+     *        The details of the VPC of the Amazon OpenSearch or the Amazon OpenSearch Serverless destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ElasticsearchDestinationDescription withVpcConfigurationDescription(VpcConfigurationDescription vpcConfigurationDescription) {
         setVpcConfigurationDescription(vpcConfigurationDescription);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and
+     * OpenSearch Service generated document ID.
+     * </p>
+     * 
+     * @param documentIdOptions
+     *        Indicates the method for setting up document ID. The supported methods are Firehose generated document ID
+     *        and OpenSearch Service generated document ID.
+     */
+
+    public void setDocumentIdOptions(DocumentIdOptions documentIdOptions) {
+        this.documentIdOptions = documentIdOptions;
+    }
+
+    /**
+     * <p>
+     * Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and
+     * OpenSearch Service generated document ID.
+     * </p>
+     * 
+     * @return Indicates the method for setting up document ID. The supported methods are Firehose generated document ID
+     *         and OpenSearch Service generated document ID.
+     */
+
+    public DocumentIdOptions getDocumentIdOptions() {
+        return this.documentIdOptions;
+    }
+
+    /**
+     * <p>
+     * Indicates the method for setting up document ID. The supported methods are Firehose generated document ID and
+     * OpenSearch Service generated document ID.
+     * </p>
+     * 
+     * @param documentIdOptions
+     *        Indicates the method for setting up document ID. The supported methods are Firehose generated document ID
+     *        and OpenSearch Service generated document ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchDestinationDescription withDocumentIdOptions(DocumentIdOptions documentIdOptions) {
+        setDocumentIdOptions(documentIdOptions);
         return this;
     }
 
@@ -797,7 +843,9 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
         if (getCloudWatchLoggingOptions() != null)
             sb.append("CloudWatchLoggingOptions: ").append(getCloudWatchLoggingOptions()).append(",");
         if (getVpcConfigurationDescription() != null)
-            sb.append("VpcConfigurationDescription: ").append(getVpcConfigurationDescription());
+            sb.append("VpcConfigurationDescription: ").append(getVpcConfigurationDescription()).append(",");
+        if (getDocumentIdOptions() != null)
+            sb.append("DocumentIdOptions: ").append(getDocumentIdOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -864,6 +912,10 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
             return false;
         if (other.getVpcConfigurationDescription() != null && other.getVpcConfigurationDescription().equals(this.getVpcConfigurationDescription()) == false)
             return false;
+        if (other.getDocumentIdOptions() == null ^ this.getDocumentIdOptions() == null)
+            return false;
+        if (other.getDocumentIdOptions() != null && other.getDocumentIdOptions().equals(this.getDocumentIdOptions()) == false)
+            return false;
         return true;
     }
 
@@ -885,6 +937,7 @@ public class ElasticsearchDestinationDescription implements Serializable, Clonea
         hashCode = prime * hashCode + ((getProcessingConfiguration() == null) ? 0 : getProcessingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchLoggingOptions() == null) ? 0 : getCloudWatchLoggingOptions().hashCode());
         hashCode = prime * hashCode + ((getVpcConfigurationDescription() == null) ? 0 : getVpcConfigurationDescription().hashCode());
+        hashCode = prime * hashCode + ((getDocumentIdOptions() == null) ? 0 : getDocumentIdOptions().hashCode());
         return hashCode;
     }
 

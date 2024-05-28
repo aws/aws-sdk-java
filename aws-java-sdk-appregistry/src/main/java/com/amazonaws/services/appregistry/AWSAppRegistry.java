@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,9 +71,59 @@ public interface AWSAppRegistry {
 
     /**
      * <p>
-     * Associates a resource with an application. Both the resource and the application can be specified either by ID or
-     * name.
+     * Associates a resource with an application. The resource can be specified by its ARN or name. The application can
+     * be specified by ARN, ID, or name.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * You must have the following permissions to associate a resource using the <code>OPTIONS</code> parameter set to
+     * <code>APPLY_APPLICATION_TAG</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>tag:GetResources</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag:TagResources</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You must also have these additional permissions if you don't use the
+     * <code>AWSServiceCatalogAppRegistryFullAccess</code> policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/arguide/full.html"
+     * >AWSServiceCatalogAppRegistryFullAccess</a> in the AppRegistry Administrator Guide.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:AssociateResource</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cloudformation:UpdateStack</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cloudformation:DescribeStacks</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * In addition, you must have the tagging permission defined by the Amazon Web Services service that creates the
+     * resource. For more information, see <a
+     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_TagResources.html"
+     * >TagResources</a> in the <i>Resource Groups Tagging API Reference</i>.
+     * </p>
+     * </note>
      * 
      * @param associateResourceRequest
      * @return Result of the AssociateResource operation returned by the service.
@@ -88,6 +138,8 @@ public interface AWSAppRegistry {
      *         exists within the account).
      * @throws ValidationException
      *         The request has invalid or missing parameters.
+     * @throws ThrottlingException
+     *         The maximum number of API requests has been exceeded.
      * @sample AWSAppRegistry.AssociateResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AssociateResource"
      *      target="_top">AWS API Documentation</a>
@@ -110,6 +162,8 @@ public interface AWSAppRegistry {
      *         The service is experiencing internal problems.
      * @throws ValidationException
      *         The request has invalid or missing parameters.
+     * @throws ThrottlingException
+     *         The maximum number of API requests has been exceeded.
      * @sample AWSAppRegistry.CreateApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/CreateApplication"
      *      target="_top">AWS API Documentation</a>
@@ -142,8 +196,8 @@ public interface AWSAppRegistry {
 
     /**
      * <p>
-     * Deletes an application that is specified either by its application ID or name. All associated attribute groups
-     * and resources must be disassociated from it before deleting an application.
+     * Deletes an application that is specified either by its application ID, name, or ARN. All associated attribute
+     * groups and resources must be disassociated from it before deleting an application.
      * </p>
      * 
      * @param deleteApplicationRequest
@@ -162,7 +216,7 @@ public interface AWSAppRegistry {
 
     /**
      * <p>
-     * Deletes an attribute group, specified either by its attribute group ID or name.
+     * Deletes an attribute group, specified either by its attribute group ID, name, or ARN.
      * </p>
      * 
      * @param deleteAttributeGroupRequest
@@ -204,6 +258,58 @@ public interface AWSAppRegistry {
      * Disassociates a resource from application. Both the resource and the application can be specified either by ID or
      * name.
      * </p>
+     * <p>
+     * <b>Minimum permissions</b>
+     * </p>
+     * <p>
+     * You must have the following permissions to remove a resource that's been associated with an application using the
+     * <code>APPLY_APPLICATION_TAG</code> option for <a
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_AssociateResource.html"
+     * >AssociateResource</a>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>tag:GetResources</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tag:UntagResources</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You must also have the following permissions if you don't use the
+     * <code>AWSServiceCatalogAppRegistryFullAccess</code> policy. For more information, see <a
+     * href="https://docs.aws.amazon.com/servicecatalog/latest/arguide/full.html"
+     * >AWSServiceCatalogAppRegistryFullAccess</a> in the AppRegistry Administrator Guide.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resource-groups:DisassociateResource</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cloudformation:UpdateStack</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>cloudformation:DescribeStacks</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * In addition, you must have the tagging permission defined by the Amazon Web Services service that creates the
+     * resource. For more information, see <a
+     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_UntTagResources.html"
+     * >UntagResources</a> in the <i>Resource Groups Tagging API Reference</i>.
+     * </p>
+     * </note>
      * 
      * @param disassociateResourceRequest
      * @return Result of the DisassociateResource operation returned by the service.
@@ -213,6 +319,8 @@ public interface AWSAppRegistry {
      *         The service is experiencing internal problems.
      * @throws ValidationException
      *         The request has invalid or missing parameters.
+     * @throws ThrottlingException
+     *         The maximum number of API requests has been exceeded.
      * @sample AWSAppRegistry.DisassociateResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DisassociateResource"
      *      target="_top">AWS API Documentation</a>
@@ -221,9 +329,9 @@ public interface AWSAppRegistry {
 
     /**
      * <p>
-     * Retrieves metadata information about one of your applications. The application can be specified either by its
-     * unique ID or by its name (which is unique within one account in one region at a given point in time). Specify by
-     * ID in automated workflows if you want to make sure that the exact same application is returned or a
+     * Retrieves metadata information about one of your applications. The application can be specified by its ARN, ID,
+     * or name (which is unique within one account in one region at a given point in time). Specify by ARN or ID in
+     * automated workflows if you want to make sure that the exact same application is returned or a
      * <code>ResourceNotFoundException</code> is thrown, avoiding the ABA addressing problem.
      * </p>
      * 
@@ -265,8 +373,8 @@ public interface AWSAppRegistry {
 
     /**
      * <p>
-     * Retrieves an attribute group, either by its name or its ID. The attribute group can be specified either by its
-     * unique ID or by its name.
+     * Retrieves an attribute group by its ARN, ID, or name. The attribute group can be specified by its ARN, ID, or
+     * name.
      * </p>
      * 
      * @param getAttributeGroupRequest
@@ -285,6 +393,21 @@ public interface AWSAppRegistry {
      *      target="_top">AWS API Documentation</a>
      */
     GetAttributeGroupResult getAttributeGroup(GetAttributeGroupRequest getAttributeGroupRequest);
+
+    /**
+     * <p>
+     * Retrieves a <code>TagKey</code> configuration from an account.
+     * </p>
+     * 
+     * @param getConfigurationRequest
+     * @return Result of the GetConfiguration operation returned by the service.
+     * @throws InternalServerException
+     *         The service is experiencing internal problems.
+     * @sample AWSAppRegistry.GetConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetConfigurationResult getConfiguration(GetConfigurationRequest getConfigurationRequest);
 
     /**
      * <p>
@@ -324,8 +447,15 @@ public interface AWSAppRegistry {
 
     /**
      * <p>
-     * Lists all resources that are associated with specified application. Results are paginated.
+     * Lists all of the resources that are associated with the specified application. Results are paginated.
      * </p>
+     * <note>
+     * <p>
+     * If you share an application, and a consumer account associates a tag query to the application, all of the users
+     * who can access the application can also view the tag values in all accounts that are associated with it using
+     * this API.
+     * </p>
+     * </note>
      * 
      * @param listAssociatedResourcesRequest
      * @return Result of the ListAssociatedResources operation returned by the service.
@@ -399,6 +529,26 @@ public interface AWSAppRegistry {
 
     /**
      * <p>
+     * Associates a <code>TagKey</code> configuration to an account.
+     * </p>
+     * 
+     * @param putConfigurationRequest
+     * @return Result of the PutConfiguration operation returned by the service.
+     * @throws ConflictException
+     *         There was a conflict when processing the request (for example, a resource with the given name already
+     *         exists within the account).
+     * @throws InternalServerException
+     *         The service is experiencing internal problems.
+     * @throws ValidationException
+     *         The request has invalid or missing parameters.
+     * @sample AWSAppRegistry.PutConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/PutConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutConfigurationResult putConfiguration(PutConfigurationRequest putConfigurationRequest);
+
+    /**
+     * <p>
      * Syncs the resource with current AppRegistry records.
      * </p>
      * <p>
@@ -416,6 +566,10 @@ public interface AWSAppRegistry {
      * @throws ConflictException
      *         There was a conflict when processing the request (for example, a resource with the given name already
      *         exists within the account).
+     * @throws ThrottlingException
+     *         The maximum number of API requests has been exceeded.
+     * @throws ValidationException
+     *         The request has invalid or missing parameters.
      * @sample AWSAppRegistry.SyncResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/SyncResource" target="_top">AWS
      *      API Documentation</a>
@@ -482,10 +636,12 @@ public interface AWSAppRegistry {
      * @throws ConflictException
      *         There was a conflict when processing the request (for example, a resource with the given name already
      *         exists within the account).
-     * @throws InternalServerException
-     *         The service is experiencing internal problems.
      * @throws ValidationException
      *         The request has invalid or missing parameters.
+     * @throws InternalServerException
+     *         The service is experiencing internal problems.
+     * @throws ThrottlingException
+     *         The maximum number of API requests has been exceeded.
      * @sample AWSAppRegistry.UpdateApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UpdateApplication"
      *      target="_top">AWS API Documentation</a>

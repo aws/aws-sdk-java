@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,12 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      * The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active.
      * <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.
      * </p>
+     * <note>
+     * <p>
+     * When using a rate schedule, if you provide a start date that occurs in the past, the current date and time are
+     * used as the start date.
+     * </p>
+     * </note>
      */
     private String startDate;
     /**
@@ -238,11 +244,21 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      * The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active.
      * <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.
      * </p>
+     * <note>
+     * <p>
+     * When using a rate schedule, if you provide a start date that occurs in the past, the current date and time are
+     * used as the start date.
+     * </p>
+     * </note>
      * 
      * @param startDate
      *        The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active.
      *        <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future
-     *        date.
+     *        date.</p> <note>
+     *        <p>
+     *        When using a rate schedule, if you provide a start date that occurs in the past, the current date and time
+     *        are used as the start date.
+     *        </p>
      */
 
     public void setStartDate(String startDate) {
@@ -254,10 +270,20 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      * The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active.
      * <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.
      * </p>
+     * <note>
+     * <p>
+     * When using a rate schedule, if you provide a start date that occurs in the past, the current date and time are
+     * used as the start date.
+     * </p>
+     * </note>
      * 
      * @return The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become
      *         active. <code>StartDate</code> allows you to delay activation of the maintenance window until the
-     *         specified future date.
+     *         specified future date.</p> <note>
+     *         <p>
+     *         When using a rate schedule, if you provide a start date that occurs in the past, the current date and
+     *         time are used as the start date.
+     *         </p>
      */
 
     public String getStartDate() {
@@ -269,11 +295,21 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      * The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active.
      * <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future date.
      * </p>
+     * <note>
+     * <p>
+     * When using a rate schedule, if you provide a start date that occurs in the past, the current date and time are
+     * used as the start date.
+     * </p>
+     * </note>
      * 
      * @param startDate
      *        The date and time, in ISO-8601 Extended format, for when you want the maintenance window to become active.
      *        <code>StartDate</code> allows you to delay activation of the maintenance window until the specified future
-     *        date.
+     *        date.</p> <note>
+     *        <p>
+     *        When using a rate schedule, if you provide a start date that occurs in the past, the current date and time
+     *        are used as the start date.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

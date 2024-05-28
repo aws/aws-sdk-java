@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,10 @@ public class UpdateMissionProfileRequestMarshaller {
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("missionProfileId").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<StructuredPojo> STREAMSKMSKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("streamsKmsKey").build();
+    private static final MarshallingInfo<String> STREAMSKMSROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("streamsKmsRole").build();
     private static final MarshallingInfo<String> TRACKINGCONFIGARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("trackingConfigArn").build();
 
@@ -65,6 +69,8 @@ public class UpdateMissionProfileRequestMarshaller {
             protocolMarshaller.marshall(updateMissionProfileRequest.getMinimumViableContactDurationSeconds(), MINIMUMVIABLECONTACTDURATIONSECONDS_BINDING);
             protocolMarshaller.marshall(updateMissionProfileRequest.getMissionProfileId(), MISSIONPROFILEID_BINDING);
             protocolMarshaller.marshall(updateMissionProfileRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(updateMissionProfileRequest.getStreamsKmsKey(), STREAMSKMSKEY_BINDING);
+            protocolMarshaller.marshall(updateMissionProfileRequest.getStreamsKmsRole(), STREAMSKMSROLE_BINDING);
             protocolMarshaller.marshall(updateMissionProfileRequest.getTrackingConfigArn(), TRACKINGCONFIGARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

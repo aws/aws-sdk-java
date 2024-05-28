@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,12 @@ public class GCMChannelResponse implements Serializable, Cloneable, StructuredPo
     private String credential;
     /**
      * <p>
+     * The default authentication method used for GCM. Values are either "TOKEN" or "KEY". Defaults to "KEY".
+     * </p>
+     */
+    private String defaultAuthenticationMethod;
+    /**
+     * <p>
      * Specifies whether the GCM channel is enabled for the application.
      * </p>
      */
@@ -61,6 +67,13 @@ public class GCMChannelResponse implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private Boolean hasCredential;
+    /**
+     * <p>
+     * Returns true if the JSON file provided by Google during registration process was used in the <b>ServiceJson</b>
+     * field of the request.
+     * </p>
+     */
+    private Boolean hasFcmServiceCredentials;
     /**
      * <p>
      * (Deprecated) An identifier for the GCM channel. This property is retained only for backward compatibility.
@@ -226,6 +239,46 @@ public class GCMChannelResponse implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
+     * The default authentication method used for GCM. Values are either "TOKEN" or "KEY". Defaults to "KEY".
+     * </p>
+     * 
+     * @param defaultAuthenticationMethod
+     *        The default authentication method used for GCM. Values are either "TOKEN" or "KEY". Defaults to "KEY".
+     */
+
+    public void setDefaultAuthenticationMethod(String defaultAuthenticationMethod) {
+        this.defaultAuthenticationMethod = defaultAuthenticationMethod;
+    }
+
+    /**
+     * <p>
+     * The default authentication method used for GCM. Values are either "TOKEN" or "KEY". Defaults to "KEY".
+     * </p>
+     * 
+     * @return The default authentication method used for GCM. Values are either "TOKEN" or "KEY". Defaults to "KEY".
+     */
+
+    public String getDefaultAuthenticationMethod() {
+        return this.defaultAuthenticationMethod;
+    }
+
+    /**
+     * <p>
+     * The default authentication method used for GCM. Values are either "TOKEN" or "KEY". Defaults to "KEY".
+     * </p>
+     * 
+     * @param defaultAuthenticationMethod
+     *        The default authentication method used for GCM. Values are either "TOKEN" or "KEY". Defaults to "KEY".
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GCMChannelResponse withDefaultAuthenticationMethod(String defaultAuthenticationMethod) {
+        setDefaultAuthenticationMethod(defaultAuthenticationMethod);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies whether the GCM channel is enabled for the application.
      * </p>
      * 
@@ -326,6 +379,66 @@ public class GCMChannelResponse implements Serializable, Cloneable, StructuredPo
 
     public Boolean isHasCredential() {
         return this.hasCredential;
+    }
+
+    /**
+     * <p>
+     * Returns true if the JSON file provided by Google during registration process was used in the <b>ServiceJson</b>
+     * field of the request.
+     * </p>
+     * 
+     * @param hasFcmServiceCredentials
+     *        Returns true if the JSON file provided by Google during registration process was used in the
+     *        <b>ServiceJson</b> field of the request.
+     */
+
+    public void setHasFcmServiceCredentials(Boolean hasFcmServiceCredentials) {
+        this.hasFcmServiceCredentials = hasFcmServiceCredentials;
+    }
+
+    /**
+     * <p>
+     * Returns true if the JSON file provided by Google during registration process was used in the <b>ServiceJson</b>
+     * field of the request.
+     * </p>
+     * 
+     * @return Returns true if the JSON file provided by Google during registration process was used in the
+     *         <b>ServiceJson</b> field of the request.
+     */
+
+    public Boolean getHasFcmServiceCredentials() {
+        return this.hasFcmServiceCredentials;
+    }
+
+    /**
+     * <p>
+     * Returns true if the JSON file provided by Google during registration process was used in the <b>ServiceJson</b>
+     * field of the request.
+     * </p>
+     * 
+     * @param hasFcmServiceCredentials
+     *        Returns true if the JSON file provided by Google during registration process was used in the
+     *        <b>ServiceJson</b> field of the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GCMChannelResponse withHasFcmServiceCredentials(Boolean hasFcmServiceCredentials) {
+        setHasFcmServiceCredentials(hasFcmServiceCredentials);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns true if the JSON file provided by Google during registration process was used in the <b>ServiceJson</b>
+     * field of the request.
+     * </p>
+     * 
+     * @return Returns true if the JSON file provided by Google during registration process was used in the
+     *         <b>ServiceJson</b> field of the request.
+     */
+
+    public Boolean isHasFcmServiceCredentials() {
+        return this.hasFcmServiceCredentials;
     }
 
     /**
@@ -599,10 +712,14 @@ public class GCMChannelResponse implements Serializable, Cloneable, StructuredPo
             sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getCredential() != null)
             sb.append("Credential: ").append(getCredential()).append(",");
+        if (getDefaultAuthenticationMethod() != null)
+            sb.append("DefaultAuthenticationMethod: ").append(getDefaultAuthenticationMethod()).append(",");
         if (getEnabled() != null)
             sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getHasCredential() != null)
             sb.append("HasCredential: ").append(getHasCredential()).append(",");
+        if (getHasFcmServiceCredentials() != null)
+            sb.append("HasFcmServiceCredentials: ").append(getHasFcmServiceCredentials()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getIsArchived() != null)
@@ -641,6 +758,10 @@ public class GCMChannelResponse implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getCredential() != null && other.getCredential().equals(this.getCredential()) == false)
             return false;
+        if (other.getDefaultAuthenticationMethod() == null ^ this.getDefaultAuthenticationMethod() == null)
+            return false;
+        if (other.getDefaultAuthenticationMethod() != null && other.getDefaultAuthenticationMethod().equals(this.getDefaultAuthenticationMethod()) == false)
+            return false;
         if (other.getEnabled() == null ^ this.getEnabled() == null)
             return false;
         if (other.getEnabled() != null && other.getEnabled().equals(this.getEnabled()) == false)
@@ -648,6 +769,10 @@ public class GCMChannelResponse implements Serializable, Cloneable, StructuredPo
         if (other.getHasCredential() == null ^ this.getHasCredential() == null)
             return false;
         if (other.getHasCredential() != null && other.getHasCredential().equals(this.getHasCredential()) == false)
+            return false;
+        if (other.getHasFcmServiceCredentials() == null ^ this.getHasFcmServiceCredentials() == null)
+            return false;
+        if (other.getHasFcmServiceCredentials() != null && other.getHasFcmServiceCredentials().equals(this.getHasFcmServiceCredentials()) == false)
             return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
@@ -684,8 +809,10 @@ public class GCMChannelResponse implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         hashCode = prime * hashCode + ((getCredential() == null) ? 0 : getCredential().hashCode());
+        hashCode = prime * hashCode + ((getDefaultAuthenticationMethod() == null) ? 0 : getDefaultAuthenticationMethod().hashCode());
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
         hashCode = prime * hashCode + ((getHasCredential() == null) ? 0 : getHasCredential().hashCode());
+        hashCode = prime * hashCode + ((getHasFcmServiceCredentials() == null) ? 0 : getHasFcmServiceCredentials().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getIsArchived() == null) ? 0 : getIsArchived().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedBy() == null) ? 0 : getLastModifiedBy().hashCode());

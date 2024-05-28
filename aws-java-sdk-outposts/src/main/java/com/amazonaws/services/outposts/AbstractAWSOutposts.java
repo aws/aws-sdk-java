@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,11 @@ import com.amazonaws.*;
 public class AbstractAWSOutposts implements AWSOutposts {
 
     protected AbstractAWSOutposts() {
+    }
+
+    @Override
+    public CancelCapacityTaskResult cancelCapacityTask(CancelCapacityTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -58,6 +63,11 @@ public class AbstractAWSOutposts implements AWSOutposts {
     }
 
     @Override
+    public GetCapacityTaskResult getCapacityTask(GetCapacityTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetCatalogItemResult getCatalogItem(GetCatalogItemRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -83,6 +93,11 @@ public class AbstractAWSOutposts implements AWSOutposts {
     }
 
     @Override
+    public GetOutpostSupportedInstanceTypesResult getOutpostSupportedInstanceTypes(GetOutpostSupportedInstanceTypesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetSiteResult getSite(GetSiteRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -94,6 +109,11 @@ public class AbstractAWSOutposts implements AWSOutposts {
 
     @Override
     public ListAssetsResult listAssets(ListAssetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCapacityTasksResult listCapacityTasks(ListCapacityTasksRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -119,6 +139,11 @@ public class AbstractAWSOutposts implements AWSOutposts {
 
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartCapacityTaskResult startCapacityTask(StartCapacityTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

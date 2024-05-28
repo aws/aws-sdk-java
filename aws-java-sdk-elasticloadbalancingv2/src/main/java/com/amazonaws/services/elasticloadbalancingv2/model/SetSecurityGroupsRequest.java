@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,13 @@ public class SetSecurityGroupsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private java.util.List<String> securityGroups;
+    /**
+     * <p>
+     * Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through
+     * Amazon Web Services PrivateLink. The default is <code>on</code>.
+     * </p>
+     */
+    private String enforceSecurityGroupInboundRulesOnPrivateLinkTraffic;
 
     /**
      * <p>
@@ -149,6 +156,74 @@ public class SetSecurityGroupsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through
+     * Amazon Web Services PrivateLink. The default is <code>on</code>.
+     * </p>
+     * 
+     * @param enforceSecurityGroupInboundRulesOnPrivateLinkTraffic
+     *        Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer
+     *        through Amazon Web Services PrivateLink. The default is <code>on</code>.
+     * @see EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum
+     */
+
+    public void setEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(String enforceSecurityGroupInboundRulesOnPrivateLinkTraffic) {
+        this.enforceSecurityGroupInboundRulesOnPrivateLinkTraffic = enforceSecurityGroupInboundRulesOnPrivateLinkTraffic;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through
+     * Amazon Web Services PrivateLink. The default is <code>on</code>.
+     * </p>
+     * 
+     * @return Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer
+     *         through Amazon Web Services PrivateLink. The default is <code>on</code>.
+     * @see EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum
+     */
+
+    public String getEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic() {
+        return this.enforceSecurityGroupInboundRulesOnPrivateLinkTraffic;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through
+     * Amazon Web Services PrivateLink. The default is <code>on</code>.
+     * </p>
+     * 
+     * @param enforceSecurityGroupInboundRulesOnPrivateLinkTraffic
+     *        Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer
+     *        through Amazon Web Services PrivateLink. The default is <code>on</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum
+     */
+
+    public SetSecurityGroupsRequest withEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(String enforceSecurityGroupInboundRulesOnPrivateLinkTraffic) {
+        setEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(enforceSecurityGroupInboundRulesOnPrivateLinkTraffic);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer through
+     * Amazon Web Services PrivateLink. The default is <code>on</code>.
+     * </p>
+     * 
+     * @param enforceSecurityGroupInboundRulesOnPrivateLinkTraffic
+     *        Indicates whether to evaluate inbound security group rules for traffic sent to a Network Load Balancer
+     *        through Amazon Web Services PrivateLink. The default is <code>on</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum
+     */
+
+    public SetSecurityGroupsRequest withEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(
+            EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum enforceSecurityGroupInboundRulesOnPrivateLinkTraffic) {
+        this.enforceSecurityGroupInboundRulesOnPrivateLinkTraffic = enforceSecurityGroupInboundRulesOnPrivateLinkTraffic.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -163,7 +238,9 @@ public class SetSecurityGroupsRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getLoadBalancerArn() != null)
             sb.append("LoadBalancerArn: ").append(getLoadBalancerArn()).append(",");
         if (getSecurityGroups() != null)
-            sb.append("SecurityGroups: ").append(getSecurityGroups());
+            sb.append("SecurityGroups: ").append(getSecurityGroups()).append(",");
+        if (getEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic() != null)
+            sb.append("EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic: ").append(getEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic());
         sb.append("}");
         return sb.toString();
     }
@@ -186,6 +263,11 @@ public class SetSecurityGroupsRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false)
             return false;
+        if (other.getEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic() == null ^ this.getEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic() == null)
+            return false;
+        if (other.getEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic() != null
+                && other.getEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic().equals(this.getEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic()) == false)
+            return false;
         return true;
     }
 
@@ -196,6 +278,10 @@ public class SetSecurityGroupsRequest extends com.amazonaws.AmazonWebServiceRequ
 
         hashCode = prime * hashCode + ((getLoadBalancerArn() == null) ? 0 : getLoadBalancerArn().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
+        hashCode = prime
+                * hashCode
+                + ((getEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic() == null) ? 0 : getEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic()
+                        .hashCode());
         return hashCode;
     }
 

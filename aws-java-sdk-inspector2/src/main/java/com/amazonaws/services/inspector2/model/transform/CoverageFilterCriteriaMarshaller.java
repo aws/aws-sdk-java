@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,10 +36,22 @@ public class CoverageFilterCriteriaMarshaller {
             .marshallLocationName("ecrImageTags").build();
     private static final MarshallingInfo<List> ECRREPOSITORYNAME_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ecrRepositoryName").build();
+    private static final MarshallingInfo<List> IMAGEPULLEDAT_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("imagePulledAt").build();
+    private static final MarshallingInfo<List> LAMBDAFUNCTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lambdaFunctionName").build();
+    private static final MarshallingInfo<List> LAMBDAFUNCTIONRUNTIME_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lambdaFunctionRuntime").build();
+    private static final MarshallingInfo<List> LAMBDAFUNCTIONTAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lambdaFunctionTags").build();
+    private static final MarshallingInfo<List> LASTSCANNEDAT_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("lastScannedAt").build();
     private static final MarshallingInfo<List> RESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("resourceId").build();
     private static final MarshallingInfo<List> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("resourceType").build();
+    private static final MarshallingInfo<List> SCANMODE_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("scanMode").build();
     private static final MarshallingInfo<List> SCANSTATUSCODE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scanStatusCode").build();
     private static final MarshallingInfo<List> SCANSTATUSREASON_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -67,8 +79,14 @@ public class CoverageFilterCriteriaMarshaller {
             protocolMarshaller.marshall(coverageFilterCriteria.getEc2InstanceTags(), EC2INSTANCETAGS_BINDING);
             protocolMarshaller.marshall(coverageFilterCriteria.getEcrImageTags(), ECRIMAGETAGS_BINDING);
             protocolMarshaller.marshall(coverageFilterCriteria.getEcrRepositoryName(), ECRREPOSITORYNAME_BINDING);
+            protocolMarshaller.marshall(coverageFilterCriteria.getImagePulledAt(), IMAGEPULLEDAT_BINDING);
+            protocolMarshaller.marshall(coverageFilterCriteria.getLambdaFunctionName(), LAMBDAFUNCTIONNAME_BINDING);
+            protocolMarshaller.marshall(coverageFilterCriteria.getLambdaFunctionRuntime(), LAMBDAFUNCTIONRUNTIME_BINDING);
+            protocolMarshaller.marshall(coverageFilterCriteria.getLambdaFunctionTags(), LAMBDAFUNCTIONTAGS_BINDING);
+            protocolMarshaller.marshall(coverageFilterCriteria.getLastScannedAt(), LASTSCANNEDAT_BINDING);
             protocolMarshaller.marshall(coverageFilterCriteria.getResourceId(), RESOURCEID_BINDING);
             protocolMarshaller.marshall(coverageFilterCriteria.getResourceType(), RESOURCETYPE_BINDING);
+            protocolMarshaller.marshall(coverageFilterCriteria.getScanMode(), SCANMODE_BINDING);
             protocolMarshaller.marshall(coverageFilterCriteria.getScanStatusCode(), SCANSTATUSCODE_BINDING);
             protocolMarshaller.marshall(coverageFilterCriteria.getScanStatusReason(), SCANSTATUSREASON_BINDING);
             protocolMarshaller.marshall(coverageFilterCriteria.getScanType(), SCANTYPE_BINDING);

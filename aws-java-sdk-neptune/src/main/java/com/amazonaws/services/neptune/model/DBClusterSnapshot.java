@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -163,6 +163,12 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      * </p>
      */
     private Boolean iAMDatabaseAuthenticationEnabled;
+    /**
+     * <p>
+     * The storage type associated with the DB cluster snapshot.
+     * </p>
+     */
+    private String storageType;
 
     /**
      * <p>
@@ -1106,6 +1112,46 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The storage type associated with the DB cluster snapshot.
+     * </p>
+     * 
+     * @param storageType
+     *        The storage type associated with the DB cluster snapshot.
+     */
+
+    public void setStorageType(String storageType) {
+        this.storageType = storageType;
+    }
+
+    /**
+     * <p>
+     * The storage type associated with the DB cluster snapshot.
+     * </p>
+     * 
+     * @return The storage type associated with the DB cluster snapshot.
+     */
+
+    public String getStorageType() {
+        return this.storageType;
+    }
+
+    /**
+     * <p>
+     * The storage type associated with the DB cluster snapshot.
+     * </p>
+     * 
+     * @param storageType
+     *        The storage type associated with the DB cluster snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBClusterSnapshot withStorageType(String storageType) {
+        setStorageType(storageType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1156,7 +1202,9 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
         if (getSourceDBClusterSnapshotArn() != null)
             sb.append("SourceDBClusterSnapshotArn: ").append(getSourceDBClusterSnapshotArn()).append(",");
         if (getIAMDatabaseAuthenticationEnabled() != null)
-            sb.append("IAMDatabaseAuthenticationEnabled: ").append(getIAMDatabaseAuthenticationEnabled());
+            sb.append("IAMDatabaseAuthenticationEnabled: ").append(getIAMDatabaseAuthenticationEnabled()).append(",");
+        if (getStorageType() != null)
+            sb.append("StorageType: ").append(getStorageType());
         sb.append("}");
         return sb.toString();
     }
@@ -1252,6 +1300,10 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
         if (other.getIAMDatabaseAuthenticationEnabled() != null
                 && other.getIAMDatabaseAuthenticationEnabled().equals(this.getIAMDatabaseAuthenticationEnabled()) == false)
             return false;
+        if (other.getStorageType() == null ^ this.getStorageType() == null)
+            return false;
+        if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false)
+            return false;
         return true;
     }
 
@@ -1280,6 +1332,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDBClusterSnapshotArn() == null) ? 0 : getDBClusterSnapshotArn().hashCode());
         hashCode = prime * hashCode + ((getSourceDBClusterSnapshotArn() == null) ? 0 : getSourceDBClusterSnapshotArn().hashCode());
         hashCode = prime * hashCode + ((getIAMDatabaseAuthenticationEnabled() == null) ? 0 : getIAMDatabaseAuthenticationEnabled().hashCode());
+        hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode());
         return hashCode;
     }
 

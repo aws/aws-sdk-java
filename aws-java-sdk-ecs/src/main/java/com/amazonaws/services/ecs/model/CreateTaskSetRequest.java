@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,7 +48,8 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String externalId;
     /**
      * <p>
-     * The task definition for the tasks in the task set to use.
+     * The task definition for the tasks in the task set to use. If a revision isn't specified, the latest
+     * <code>ACTIVE</code> revision is used.
      * </p>
      */
     private String taskDefinition;
@@ -128,8 +129,8 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     private Scale scale;
     /**
      * <p>
-     * The identifier that you provide to ensure the idempotency of the request. It's case sensitive and must be unique.
-     * It can be up to 32 ASCII characters are allowed.
+     * An identifier that you provide to ensure the idempotency of the request. It must be unique and is case sensitive.
+     * Up to 36 ASCII characters in the range of 33-126 (inclusive) are allowed.
      * </p>
      */
     private String clientToken;
@@ -325,11 +326,13 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The task definition for the tasks in the task set to use.
+     * The task definition for the tasks in the task set to use. If a revision isn't specified, the latest
+     * <code>ACTIVE</code> revision is used.
      * </p>
      * 
      * @param taskDefinition
-     *        The task definition for the tasks in the task set to use.
+     *        The task definition for the tasks in the task set to use. If a revision isn't specified, the latest
+     *        <code>ACTIVE</code> revision is used.
      */
 
     public void setTaskDefinition(String taskDefinition) {
@@ -338,10 +341,12 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The task definition for the tasks in the task set to use.
+     * The task definition for the tasks in the task set to use. If a revision isn't specified, the latest
+     * <code>ACTIVE</code> revision is used.
      * </p>
      * 
-     * @return The task definition for the tasks in the task set to use.
+     * @return The task definition for the tasks in the task set to use. If a revision isn't specified, the latest
+     *         <code>ACTIVE</code> revision is used.
      */
 
     public String getTaskDefinition() {
@@ -350,11 +355,13 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The task definition for the tasks in the task set to use.
+     * The task definition for the tasks in the task set to use. If a revision isn't specified, the latest
+     * <code>ACTIVE</code> revision is used.
      * </p>
      * 
      * @param taskDefinition
-     *        The task definition for the tasks in the task set to use.
+     *        The task definition for the tasks in the task set to use. If a revision isn't specified, the latest
+     *        <code>ACTIVE</code> revision is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1021,13 +1028,13 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier that you provide to ensure the idempotency of the request. It's case sensitive and must be unique.
-     * It can be up to 32 ASCII characters are allowed.
+     * An identifier that you provide to ensure the idempotency of the request. It must be unique and is case sensitive.
+     * Up to 36 ASCII characters in the range of 33-126 (inclusive) are allowed.
      * </p>
      * 
      * @param clientToken
-     *        The identifier that you provide to ensure the idempotency of the request. It's case sensitive and must be
-     *        unique. It can be up to 32 ASCII characters are allowed.
+     *        An identifier that you provide to ensure the idempotency of the request. It must be unique and is case
+     *        sensitive. Up to 36 ASCII characters in the range of 33-126 (inclusive) are allowed.
      */
 
     public void setClientToken(String clientToken) {
@@ -1036,12 +1043,12 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier that you provide to ensure the idempotency of the request. It's case sensitive and must be unique.
-     * It can be up to 32 ASCII characters are allowed.
+     * An identifier that you provide to ensure the idempotency of the request. It must be unique and is case sensitive.
+     * Up to 36 ASCII characters in the range of 33-126 (inclusive) are allowed.
      * </p>
      * 
-     * @return The identifier that you provide to ensure the idempotency of the request. It's case sensitive and must be
-     *         unique. It can be up to 32 ASCII characters are allowed.
+     * @return An identifier that you provide to ensure the idempotency of the request. It must be unique and is case
+     *         sensitive. Up to 36 ASCII characters in the range of 33-126 (inclusive) are allowed.
      */
 
     public String getClientToken() {
@@ -1050,13 +1057,13 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The identifier that you provide to ensure the idempotency of the request. It's case sensitive and must be unique.
-     * It can be up to 32 ASCII characters are allowed.
+     * An identifier that you provide to ensure the idempotency of the request. It must be unique and is case sensitive.
+     * Up to 36 ASCII characters in the range of 33-126 (inclusive) are allowed.
      * </p>
      * 
      * @param clientToken
-     *        The identifier that you provide to ensure the idempotency of the request. It's case sensitive and must be
-     *        unique. It can be up to 32 ASCII characters are allowed.
+     *        An identifier that you provide to ensure the idempotency of the request. It must be unique and is case
+     *        sensitive. Up to 36 ASCII characters in the range of 33-126 (inclusive) are allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

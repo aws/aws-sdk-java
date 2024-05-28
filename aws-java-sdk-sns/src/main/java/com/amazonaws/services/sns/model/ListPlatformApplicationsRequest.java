@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Input for ListPlatformApplications action.
+ * Input for <code>ListPlatformApplications</code> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListPlatformApplications" target="_top">AWS API
@@ -30,21 +30,21 @@ public class ListPlatformApplicationsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * NextToken string is used when calling ListPlatformApplications action to retrieve additional records that are
-     * available after the first page results.
+     * <code>NextToken</code> string is used when calling <code>ListPlatformApplications</code> action to retrieve
+     * additional records that are available after the first page results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * NextToken string is used when calling ListPlatformApplications action to retrieve additional records that are
-     * available after the first page results.
+     * <code>NextToken</code> string is used when calling <code>ListPlatformApplications</code> action to retrieve
+     * additional records that are available after the first page results.
      * </p>
      * 
      * @param nextToken
-     *        NextToken string is used when calling ListPlatformApplications action to retrieve additional records that
-     *        are available after the first page results.
+     *        <code>NextToken</code> string is used when calling <code>ListPlatformApplications</code> action to
+     *        retrieve additional records that are available after the first page results.
      */
 
     public void setNextToken(String nextToken) {
@@ -53,12 +53,12 @@ public class ListPlatformApplicationsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * NextToken string is used when calling ListPlatformApplications action to retrieve additional records that are
-     * available after the first page results.
+     * <code>NextToken</code> string is used when calling <code>ListPlatformApplications</code> action to retrieve
+     * additional records that are available after the first page results.
      * </p>
      * 
-     * @return NextToken string is used when calling ListPlatformApplications action to retrieve additional records that
-     *         are available after the first page results.
+     * @return <code>NextToken</code> string is used when calling <code>ListPlatformApplications</code> action to
+     *         retrieve additional records that are available after the first page results.
      */
 
     public String getNextToken() {
@@ -67,13 +67,13 @@ public class ListPlatformApplicationsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * NextToken string is used when calling ListPlatformApplications action to retrieve additional records that are
-     * available after the first page results.
+     * <code>NextToken</code> string is used when calling <code>ListPlatformApplications</code> action to retrieve
+     * additional records that are available after the first page results.
      * </p>
      * 
      * @param nextToken
-     *        NextToken string is used when calling ListPlatformApplications action to retrieve additional records that
-     *        are available after the first page results.
+     *        <code>NextToken</code> string is used when calling <code>ListPlatformApplications</code> action to
+     *        retrieve additional records that are available after the first page results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

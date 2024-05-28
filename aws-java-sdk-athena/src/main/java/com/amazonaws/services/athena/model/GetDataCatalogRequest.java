@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,12 @@ public class GetDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * The name of the workgroup. Required if making an IAM Identity Center request.
+     * </p>
+     */
+    private String workGroup;
 
     /**
      * <p>
@@ -73,6 +79,46 @@ public class GetDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The name of the workgroup. Required if making an IAM Identity Center request.
+     * </p>
+     * 
+     * @param workGroup
+     *        The name of the workgroup. Required if making an IAM Identity Center request.
+     */
+
+    public void setWorkGroup(String workGroup) {
+        this.workGroup = workGroup;
+    }
+
+    /**
+     * <p>
+     * The name of the workgroup. Required if making an IAM Identity Center request.
+     * </p>
+     * 
+     * @return The name of the workgroup. Required if making an IAM Identity Center request.
+     */
+
+    public String getWorkGroup() {
+        return this.workGroup;
+    }
+
+    /**
+     * <p>
+     * The name of the workgroup. Required if making an IAM Identity Center request.
+     * </p>
+     * 
+     * @param workGroup
+     *        The name of the workgroup. Required if making an IAM Identity Center request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDataCatalogRequest withWorkGroup(String workGroup) {
+        setWorkGroup(workGroup);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -85,7 +131,9 @@ public class GetDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequest
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getWorkGroup() != null)
+            sb.append("WorkGroup: ").append(getWorkGroup());
         sb.append("}");
         return sb.toString();
     }
@@ -104,6 +152,10 @@ public class GetDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getWorkGroup() == null ^ this.getWorkGroup() == null)
+            return false;
+        if (other.getWorkGroup() != null && other.getWorkGroup().equals(this.getWorkGroup()) == false)
+            return false;
         return true;
     }
 
@@ -113,6 +165,7 @@ public class GetDataCatalogRequest extends com.amazonaws.AmazonWebServiceRequest
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getWorkGroup() == null) ? 0 : getWorkGroup().hashCode());
         return hashCode;
     }
 

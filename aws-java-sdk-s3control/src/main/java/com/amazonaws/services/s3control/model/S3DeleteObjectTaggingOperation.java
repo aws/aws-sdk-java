@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains no configuration parameters because the DELETE Object tagging API only accepts the bucket name and key name
- * as parameters, which are defined in the job's manifest.
+ * Contains no configuration parameters because the DELETE Object tagging (<code>DeleteObjectTagging</code>) API
+ * operation accepts only the bucket name and key name as parameters, which are defined in the job's manifest.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3DeleteObjectTaggingOperation"

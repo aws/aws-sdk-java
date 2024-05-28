@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -95,6 +95,17 @@ public class GetTableResultJsonUnmarshaller implements Unmarshaller<GetTableResu
                 if (context.testExpression("comment", targetDepth)) {
                     context.nextToken();
                     getTableResult.setComment(CommentJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("clientSideTimestamps", targetDepth)) {
+                    context.nextToken();
+                    getTableResult.setClientSideTimestamps(ClientSideTimestampsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("replicaSpecifications", targetDepth)) {
+                    context.nextToken();
+                    getTableResult.setReplicaSpecifications(new ListUnmarshaller<ReplicaSpecificationSummary>(ReplicaSpecificationSummaryJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

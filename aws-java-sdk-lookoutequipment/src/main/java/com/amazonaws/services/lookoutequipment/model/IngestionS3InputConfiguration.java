@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,8 +42,14 @@ public class IngestionS3InputConfiguration implements Serializable, Cloneable, S
     private String prefix;
     /**
      * <p>
-     * Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided, we will
-     * use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/*
+     * The pattern for matching the Amazon S3 files that will be used for ingestion. If the schema was created
+     * previously without any KeyPattern, then the default KeyPattern {prefix}/{component_name}/* is used to download
+     * files from Amazon S3 according to the schema. This field is required when ingestion is being done for the first
+     * time.
+     * </p>
+     * <p>
+     * Valid Values: {prefix}/{component_name}_* | {prefix}/{component_name}/* | {prefix}/{component_name}[DELIMITER]*
+     * (Allowed delimiters : space, dot, underscore, hyphen)
      * </p>
      */
     private String keyPattern;
@@ -130,14 +136,25 @@ public class IngestionS3InputConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided, we will
-     * use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/*
+     * The pattern for matching the Amazon S3 files that will be used for ingestion. If the schema was created
+     * previously without any KeyPattern, then the default KeyPattern {prefix}/{component_name}/* is used to download
+     * files from Amazon S3 according to the schema. This field is required when ingestion is being done for the first
+     * time.
+     * </p>
+     * <p>
+     * Valid Values: {prefix}/{component_name}_* | {prefix}/{component_name}/* | {prefix}/{component_name}[DELIMITER]*
+     * (Allowed delimiters : space, dot, underscore, hyphen)
      * </p>
      * 
      * @param keyPattern
-     *        Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided,
-     *        we will use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/
-     **/
+     *        The pattern for matching the Amazon S3 files that will be used for ingestion. If the schema was created
+     *        previously without any KeyPattern, then the default KeyPattern {prefix}/{component_name}/* is used to
+     *        download files from Amazon S3 according to the schema. This field is required when ingestion is being done
+     *        for the first time.</p>
+     *        <p>
+     *        Valid Values: {prefix}/{component_name}_* | {prefix}/{component_name}/* |
+     *        {prefix}/{component_name}[DELIMITER]* (Allowed delimiters : space, dot, underscore, hyphen)
+     */
 
     public void setKeyPattern(String keyPattern) {
         this.keyPattern = keyPattern;
@@ -145,13 +162,24 @@ public class IngestionS3InputConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided, we will
-     * use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/*
+     * The pattern for matching the Amazon S3 files that will be used for ingestion. If the schema was created
+     * previously without any KeyPattern, then the default KeyPattern {prefix}/{component_name}/* is used to download
+     * files from Amazon S3 according to the schema. This field is required when ingestion is being done for the first
+     * time.
+     * </p>
+     * <p>
+     * Valid Values: {prefix}/{component_name}_* | {prefix}/{component_name}/* | {prefix}/{component_name}[DELIMITER]*
+     * (Allowed delimiters : space, dot, underscore, hyphen)
      * </p>
      * 
-     * @return Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided,
-     *         we will use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/
-     **/
+     * @return The pattern for matching the Amazon S3 files that will be used for ingestion. If the schema was created
+     *         previously without any KeyPattern, then the default KeyPattern {prefix}/{component_name}/* is used to
+     *         download files from Amazon S3 according to the schema. This field is required when ingestion is being
+     *         done for the first time.</p>
+     *         <p>
+     *         Valid Values: {prefix}/{component_name}_* | {prefix}/{component_name}/* |
+     *         {prefix}/{component_name}[DELIMITER]* (Allowed delimiters : space, dot, underscore, hyphen)
+     */
 
     public String getKeyPattern() {
         return this.keyPattern;
@@ -159,13 +187,24 @@ public class IngestionS3InputConfiguration implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided, we will
-     * use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/*
+     * The pattern for matching the Amazon S3 files that will be used for ingestion. If the schema was created
+     * previously without any KeyPattern, then the default KeyPattern {prefix}/{component_name}/* is used to download
+     * files from Amazon S3 according to the schema. This field is required when ingestion is being done for the first
+     * time.
+     * </p>
+     * <p>
+     * Valid Values: {prefix}/{component_name}_* | {prefix}/{component_name}/* | {prefix}/{component_name}[DELIMITER]*
+     * (Allowed delimiters : space, dot, underscore, hyphen)
      * </p>
      * 
      * @param keyPattern
-     *        Pattern for matching the Amazon S3 files which will be used for ingestion. If no KeyPattern is provided,
-     *        we will use the default hierarchy file structure, which is same as KeyPattern {prefix}/{component_name}/*
+     *        The pattern for matching the Amazon S3 files that will be used for ingestion. If the schema was created
+     *        previously without any KeyPattern, then the default KeyPattern {prefix}/{component_name}/* is used to
+     *        download files from Amazon S3 according to the schema. This field is required when ingestion is being done
+     *        for the first time.</p>
+     *        <p>
+     *        Valid Values: {prefix}/{component_name}_* | {prefix}/{component_name}/* |
+     *        {prefix}/{component_name}[DELIMITER]* (Allowed delimiters : space, dot, underscore, hyphen)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

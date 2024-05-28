@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,6 +16,8 @@ import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
 import com.amazonaws.services.appflow.model.*;
+
+import com.amazonaws.util.IdempotentUtils;
 
 import com.amazonaws.protocol.*;
 import com.amazonaws.annotation.SdkInternalApi;
@@ -35,6 +37,9 @@ public class RegisterConnectorRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectorProvisioningType").build();
     private static final MarshallingInfo<StructuredPojo> CONNECTORPROVISIONINGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectorProvisioningConfig").build();
+    private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
+            .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
 
     private static final RegisterConnectorRequestMarshaller instance = new RegisterConnectorRequestMarshaller();
 
@@ -56,6 +61,7 @@ public class RegisterConnectorRequestMarshaller {
             protocolMarshaller.marshall(registerConnectorRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(registerConnectorRequest.getConnectorProvisioningType(), CONNECTORPROVISIONINGTYPE_BINDING);
             protocolMarshaller.marshall(registerConnectorRequest.getConnectorProvisioningConfig(), CONNECTORPROVISIONINGCONFIG_BINDING);
+            protocolMarshaller.marshall(registerConnectorRequest.getClientToken(), CLIENTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

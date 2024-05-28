@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,12 +63,11 @@ public class CreateProposalRequest extends com.amazonaws.AmazonWebServiceRequest
     private String description;
     /**
      * <p>
-     * Tags to assign to the proposal. Each tag consists of a key and optional value.
+     * Tags to assign to the proposal.
      * </p>
      * <p>
-     * When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an
-     * overall maximum of 50 tags added to each resource. If the proposal is for a network invitation, the invitation
-     * inherits the tags added to the proposal.
+     * Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request
+     * with an overall maximum of 50 tags allowed per resource.
      * </p>
      * <p>
      * For more information about tags, see <a
@@ -324,12 +323,11 @@ public class CreateProposalRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Tags to assign to the proposal. Each tag consists of a key and optional value.
+     * Tags to assign to the proposal.
      * </p>
      * <p>
-     * When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an
-     * overall maximum of 50 tags added to each resource. If the proposal is for a network invitation, the invitation
-     * inherits the tags added to the proposal.
+     * Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request
+     * with an overall maximum of 50 tags allowed per resource.
      * </p>
      * <p>
      * For more information about tags, see <a
@@ -339,11 +337,10 @@ public class CreateProposalRequest extends com.amazonaws.AmazonWebServiceRequest
      * >Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
      * </p>
      * 
-     * @return Tags to assign to the proposal. Each tag consists of a key and optional value.</p>
+     * @return Tags to assign to the proposal.</p>
      *         <p>
-     *         When specifying tags during creation, you can specify multiple key-value pairs in a single request, with
-     *         an overall maximum of 50 tags added to each resource. If the proposal is for a network invitation, the
-     *         invitation inherits the tags added to the proposal.
+     *         Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single
+     *         request with an overall maximum of 50 tags allowed per resource.
      *         </p>
      *         <p>
      *         For more information about tags, see <a
@@ -359,12 +356,11 @@ public class CreateProposalRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Tags to assign to the proposal. Each tag consists of a key and optional value.
+     * Tags to assign to the proposal.
      * </p>
      * <p>
-     * When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an
-     * overall maximum of 50 tags added to each resource. If the proposal is for a network invitation, the invitation
-     * inherits the tags added to the proposal.
+     * Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request
+     * with an overall maximum of 50 tags allowed per resource.
      * </p>
      * <p>
      * For more information about tags, see <a
@@ -375,11 +371,10 @@ public class CreateProposalRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param tags
-     *        Tags to assign to the proposal. Each tag consists of a key and optional value.</p>
+     *        Tags to assign to the proposal.</p>
      *        <p>
-     *        When specifying tags during creation, you can specify multiple key-value pairs in a single request, with
-     *        an overall maximum of 50 tags added to each resource. If the proposal is for a network invitation, the
-     *        invitation inherits the tags added to the proposal.
+     *        Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single
+     *        request with an overall maximum of 50 tags allowed per resource.
      *        </p>
      *        <p>
      *        For more information about tags, see <a
@@ -395,12 +390,11 @@ public class CreateProposalRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Tags to assign to the proposal. Each tag consists of a key and optional value.
+     * Tags to assign to the proposal.
      * </p>
      * <p>
-     * When specifying tags during creation, you can specify multiple key-value pairs in a single request, with an
-     * overall maximum of 50 tags added to each resource. If the proposal is for a network invitation, the invitation
-     * inherits the tags added to the proposal.
+     * Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request
+     * with an overall maximum of 50 tags allowed per resource.
      * </p>
      * <p>
      * For more information about tags, see <a
@@ -411,11 +405,10 @@ public class CreateProposalRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param tags
-     *        Tags to assign to the proposal. Each tag consists of a key and optional value.</p>
+     *        Tags to assign to the proposal.</p>
      *        <p>
-     *        When specifying tags during creation, you can specify multiple key-value pairs in a single request, with
-     *        an overall maximum of 50 tags added to each resource. If the proposal is for a network invitation, the
-     *        invitation inherits the tags added to the proposal.
+     *        Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single
+     *        request with an overall maximum of 50 tags allowed per resource.
      *        </p>
      *        <p>
      *        For more information about tags, see <a

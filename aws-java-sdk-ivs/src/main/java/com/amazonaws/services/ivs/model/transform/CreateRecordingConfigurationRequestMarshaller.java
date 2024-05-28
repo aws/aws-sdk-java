@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class CreateRecordingConfigurationRequestMarshaller {
             .marshallLocationName("name").build();
     private static final MarshallingInfo<Integer> RECORDINGRECONNECTWINDOWSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("recordingReconnectWindowSeconds").build();
+    private static final MarshallingInfo<StructuredPojo> RENDITIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("renditionConfiguration").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<StructuredPojo> THUMBNAILCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -59,6 +61,7 @@ public class CreateRecordingConfigurationRequestMarshaller {
             protocolMarshaller.marshall(createRecordingConfigurationRequest.getDestinationConfiguration(), DESTINATIONCONFIGURATION_BINDING);
             protocolMarshaller.marshall(createRecordingConfigurationRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createRecordingConfigurationRequest.getRecordingReconnectWindowSeconds(), RECORDINGRECONNECTWINDOWSECONDS_BINDING);
+            protocolMarshaller.marshall(createRecordingConfigurationRequest.getRenditionConfiguration(), RENDITIONCONFIGURATION_BINDING);
             protocolMarshaller.marshall(createRecordingConfigurationRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createRecordingConfigurationRequest.getThumbnailConfiguration(), THUMBNAILCONFIGURATION_BINDING);
         } catch (Exception e) {

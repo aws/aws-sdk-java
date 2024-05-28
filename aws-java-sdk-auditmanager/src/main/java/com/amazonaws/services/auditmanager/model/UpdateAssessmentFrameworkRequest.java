@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -305,7 +305,7 @@ public class UpdateAssessmentFrameworkRequest extends com.amazonaws.AmazonWebSer
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getComplianceType() != null)
-            sb.append("ComplianceType: ").append(getComplianceType()).append(",");
+            sb.append("ComplianceType: ").append("***Sensitive Data Redacted***").append(",");
         if (getControlSets() != null)
             sb.append("ControlSets: ").append(getControlSets());
         sb.append("}");

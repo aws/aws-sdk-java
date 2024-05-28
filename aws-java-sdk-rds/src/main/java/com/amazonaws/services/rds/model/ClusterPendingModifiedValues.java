@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,8 +42,8 @@ public class ClusterPendingModifiedValues implements Serializable, Cloneable {
     private String masterUserPassword;
     /**
      * <p>
-     * A value that indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
-     * database accounts is enabled.
+     * Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database
+     * accounts is enabled.
      * </p>
      */
     private Boolean iAMDatabaseAuthenticationEnabled;
@@ -53,6 +53,40 @@ public class ClusterPendingModifiedValues implements Serializable, Cloneable {
      * </p>
      */
     private String engineVersion;
+    /**
+     * <p>
+     * The number of days for which automatic DB snapshots are retained.
+     * </p>
+     */
+    private Integer backupRetentionPeriod;
+    /**
+     * <p>
+     * The allocated storage size in gibibytes (GiB) for all database engines except Amazon Aurora. For Aurora,
+     * <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead
+     * automatically adjusts as needed.
+     * </p>
+     */
+    private Integer allocatedStorage;
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     */
+    private RdsCustomClusterConfiguration rdsCustomClusterConfiguration;
+    /**
+     * <p>
+     * The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB clusters.
+     * </p>
+     */
+    private Integer iops;
+    /**
+     * <p>
+     * The storage type for the DB cluster.
+     * </p>
+     */
+    private String storageType;
+
+    private CertificateDetails certificateDetails;
 
     /**
      * @param pendingCloudwatchLogsExports
@@ -162,13 +196,13 @@ public class ClusterPendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
-     * database accounts is enabled.
+     * Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database
+     * accounts is enabled.
      * </p>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        A value that indicates whether mapping of Amazon Web Services Identity and Access Management (IAM)
-     *        accounts to database accounts is enabled.
+     *        Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database
+     *        accounts is enabled.
      */
 
     public void setIAMDatabaseAuthenticationEnabled(Boolean iAMDatabaseAuthenticationEnabled) {
@@ -177,12 +211,12 @@ public class ClusterPendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
-     * database accounts is enabled.
+     * Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database
+     * accounts is enabled.
      * </p>
      * 
-     * @return A value that indicates whether mapping of Amazon Web Services Identity and Access Management (IAM)
-     *         accounts to database accounts is enabled.
+     * @return Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     *         database accounts is enabled.
      */
 
     public Boolean getIAMDatabaseAuthenticationEnabled() {
@@ -191,13 +225,13 @@ public class ClusterPendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
-     * database accounts is enabled.
+     * Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database
+     * accounts is enabled.
      * </p>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        A value that indicates whether mapping of Amazon Web Services Identity and Access Management (IAM)
-     *        accounts to database accounts is enabled.
+     *        Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database
+     *        accounts is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -208,12 +242,12 @@ public class ClusterPendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A value that indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
-     * database accounts is enabled.
+     * Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database
+     * accounts is enabled.
      * </p>
      * 
-     * @return A value that indicates whether mapping of Amazon Web Services Identity and Access Management (IAM)
-     *         accounts to database accounts is enabled.
+     * @return Indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     *         database accounts is enabled.
      */
 
     public Boolean isIAMDatabaseAuthenticationEnabled() {
@@ -261,6 +295,247 @@ public class ClusterPendingModifiedValues implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The number of days for which automatic DB snapshots are retained.
+     * </p>
+     * 
+     * @param backupRetentionPeriod
+     *        The number of days for which automatic DB snapshots are retained.
+     */
+
+    public void setBackupRetentionPeriod(Integer backupRetentionPeriod) {
+        this.backupRetentionPeriod = backupRetentionPeriod;
+    }
+
+    /**
+     * <p>
+     * The number of days for which automatic DB snapshots are retained.
+     * </p>
+     * 
+     * @return The number of days for which automatic DB snapshots are retained.
+     */
+
+    public Integer getBackupRetentionPeriod() {
+        return this.backupRetentionPeriod;
+    }
+
+    /**
+     * <p>
+     * The number of days for which automatic DB snapshots are retained.
+     * </p>
+     * 
+     * @param backupRetentionPeriod
+     *        The number of days for which automatic DB snapshots are retained.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClusterPendingModifiedValues withBackupRetentionPeriod(Integer backupRetentionPeriod) {
+        setBackupRetentionPeriod(backupRetentionPeriod);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The allocated storage size in gibibytes (GiB) for all database engines except Amazon Aurora. For Aurora,
+     * <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead
+     * automatically adjusts as needed.
+     * </p>
+     * 
+     * @param allocatedStorage
+     *        The allocated storage size in gibibytes (GiB) for all database engines except Amazon Aurora. For Aurora,
+     *        <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but
+     *        instead automatically adjusts as needed.
+     */
+
+    public void setAllocatedStorage(Integer allocatedStorage) {
+        this.allocatedStorage = allocatedStorage;
+    }
+
+    /**
+     * <p>
+     * The allocated storage size in gibibytes (GiB) for all database engines except Amazon Aurora. For Aurora,
+     * <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead
+     * automatically adjusts as needed.
+     * </p>
+     * 
+     * @return The allocated storage size in gibibytes (GiB) for all database engines except Amazon Aurora. For Aurora,
+     *         <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but
+     *         instead automatically adjusts as needed.
+     */
+
+    public Integer getAllocatedStorage() {
+        return this.allocatedStorage;
+    }
+
+    /**
+     * <p>
+     * The allocated storage size in gibibytes (GiB) for all database engines except Amazon Aurora. For Aurora,
+     * <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead
+     * automatically adjusts as needed.
+     * </p>
+     * 
+     * @param allocatedStorage
+     *        The allocated storage size in gibibytes (GiB) for all database engines except Amazon Aurora. For Aurora,
+     *        <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but
+     *        instead automatically adjusts as needed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClusterPendingModifiedValues withAllocatedStorage(Integer allocatedStorage) {
+        setAllocatedStorage(allocatedStorage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @param rdsCustomClusterConfiguration
+     *        Reserved for future use.
+     */
+
+    public void setRdsCustomClusterConfiguration(RdsCustomClusterConfiguration rdsCustomClusterConfiguration) {
+        this.rdsCustomClusterConfiguration = rdsCustomClusterConfiguration;
+    }
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @return Reserved for future use.
+     */
+
+    public RdsCustomClusterConfiguration getRdsCustomClusterConfiguration() {
+        return this.rdsCustomClusterConfiguration;
+    }
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @param rdsCustomClusterConfiguration
+     *        Reserved for future use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClusterPendingModifiedValues withRdsCustomClusterConfiguration(RdsCustomClusterConfiguration rdsCustomClusterConfiguration) {
+        setRdsCustomClusterConfiguration(rdsCustomClusterConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB clusters.
+     * </p>
+     * 
+     * @param iops
+     *        The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB
+     *        clusters.
+     */
+
+    public void setIops(Integer iops) {
+        this.iops = iops;
+    }
+
+    /**
+     * <p>
+     * The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB clusters.
+     * </p>
+     * 
+     * @return The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB
+     *         clusters.
+     */
+
+    public Integer getIops() {
+        return this.iops;
+    }
+
+    /**
+     * <p>
+     * The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB clusters.
+     * </p>
+     * 
+     * @param iops
+     *        The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB
+     *        clusters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClusterPendingModifiedValues withIops(Integer iops) {
+        setIops(iops);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The storage type for the DB cluster.
+     * </p>
+     * 
+     * @param storageType
+     *        The storage type for the DB cluster.
+     */
+
+    public void setStorageType(String storageType) {
+        this.storageType = storageType;
+    }
+
+    /**
+     * <p>
+     * The storage type for the DB cluster.
+     * </p>
+     * 
+     * @return The storage type for the DB cluster.
+     */
+
+    public String getStorageType() {
+        return this.storageType;
+    }
+
+    /**
+     * <p>
+     * The storage type for the DB cluster.
+     * </p>
+     * 
+     * @param storageType
+     *        The storage type for the DB cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClusterPendingModifiedValues withStorageType(String storageType) {
+        setStorageType(storageType);
+        return this;
+    }
+
+    /**
+     * @param certificateDetails
+     */
+
+    public void setCertificateDetails(CertificateDetails certificateDetails) {
+        this.certificateDetails = certificateDetails;
+    }
+
+    /**
+     * @return
+     */
+
+    public CertificateDetails getCertificateDetails() {
+        return this.certificateDetails;
+    }
+
+    /**
+     * @param certificateDetails
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClusterPendingModifiedValues withCertificateDetails(CertificateDetails certificateDetails) {
+        setCertificateDetails(certificateDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -281,7 +556,19 @@ public class ClusterPendingModifiedValues implements Serializable, Cloneable {
         if (getIAMDatabaseAuthenticationEnabled() != null)
             sb.append("IAMDatabaseAuthenticationEnabled: ").append(getIAMDatabaseAuthenticationEnabled()).append(",");
         if (getEngineVersion() != null)
-            sb.append("EngineVersion: ").append(getEngineVersion());
+            sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
+        if (getBackupRetentionPeriod() != null)
+            sb.append("BackupRetentionPeriod: ").append(getBackupRetentionPeriod()).append(",");
+        if (getAllocatedStorage() != null)
+            sb.append("AllocatedStorage: ").append(getAllocatedStorage()).append(",");
+        if (getRdsCustomClusterConfiguration() != null)
+            sb.append("RdsCustomClusterConfiguration: ").append(getRdsCustomClusterConfiguration()).append(",");
+        if (getIops() != null)
+            sb.append("Iops: ").append(getIops()).append(",");
+        if (getStorageType() != null)
+            sb.append("StorageType: ").append(getStorageType()).append(",");
+        if (getCertificateDetails() != null)
+            sb.append("CertificateDetails: ").append(getCertificateDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -317,6 +604,31 @@ public class ClusterPendingModifiedValues implements Serializable, Cloneable {
             return false;
         if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false)
             return false;
+        if (other.getBackupRetentionPeriod() == null ^ this.getBackupRetentionPeriod() == null)
+            return false;
+        if (other.getBackupRetentionPeriod() != null && other.getBackupRetentionPeriod().equals(this.getBackupRetentionPeriod()) == false)
+            return false;
+        if (other.getAllocatedStorage() == null ^ this.getAllocatedStorage() == null)
+            return false;
+        if (other.getAllocatedStorage() != null && other.getAllocatedStorage().equals(this.getAllocatedStorage()) == false)
+            return false;
+        if (other.getRdsCustomClusterConfiguration() == null ^ this.getRdsCustomClusterConfiguration() == null)
+            return false;
+        if (other.getRdsCustomClusterConfiguration() != null
+                && other.getRdsCustomClusterConfiguration().equals(this.getRdsCustomClusterConfiguration()) == false)
+            return false;
+        if (other.getIops() == null ^ this.getIops() == null)
+            return false;
+        if (other.getIops() != null && other.getIops().equals(this.getIops()) == false)
+            return false;
+        if (other.getStorageType() == null ^ this.getStorageType() == null)
+            return false;
+        if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false)
+            return false;
+        if (other.getCertificateDetails() == null ^ this.getCertificateDetails() == null)
+            return false;
+        if (other.getCertificateDetails() != null && other.getCertificateDetails().equals(this.getCertificateDetails()) == false)
+            return false;
         return true;
     }
 
@@ -330,6 +642,12 @@ public class ClusterPendingModifiedValues implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMasterUserPassword() == null) ? 0 : getMasterUserPassword().hashCode());
         hashCode = prime * hashCode + ((getIAMDatabaseAuthenticationEnabled() == null) ? 0 : getIAMDatabaseAuthenticationEnabled().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
+        hashCode = prime * hashCode + ((getBackupRetentionPeriod() == null) ? 0 : getBackupRetentionPeriod().hashCode());
+        hashCode = prime * hashCode + ((getAllocatedStorage() == null) ? 0 : getAllocatedStorage().hashCode());
+        hashCode = prime * hashCode + ((getRdsCustomClusterConfiguration() == null) ? 0 : getRdsCustomClusterConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
+        hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode());
+        hashCode = prime * hashCode + ((getCertificateDetails() == null) ? 0 : getCertificateDetails().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An action defines the tasks the extension performs during the AppConfig workflow. Each action includes an action
+ * An action defines the tasks that the extension performs during the AppConfig workflow. Each action includes an action
  * point such as <code>ON_CREATE_HOSTED_CONFIGURATION</code>, <code>PRE_DEPLOYMENT</code>, or <code>ON_DEPLOYMENT</code>
  * . Each action also includes a name, a URI to an Lambda function, and an Amazon Resource Name (ARN) for an Identity
  * and Access Management assume role. You specify the name, URI, and ARN for each <i>action point</i> defined in the

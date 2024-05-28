@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,12 @@ public class UpdateServiceIntegrationConfig implements Serializable, Cloneable, 
      * </p>
      */
     private LogsAnomalyDetectionIntegrationConfig logsAnomalyDetection;
+    /**
+     * <p>
+     * Information about whether DevOps Guru is configured to encrypt server-side data using KMS.
+     * </p>
+     */
+    private KMSServerSideEncryptionIntegrationConfig kMSServerSideEncryption;
 
     /**
      * @param opsCenter
@@ -111,6 +117,46 @@ public class UpdateServiceIntegrationConfig implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * Information about whether DevOps Guru is configured to encrypt server-side data using KMS.
+     * </p>
+     * 
+     * @param kMSServerSideEncryption
+     *        Information about whether DevOps Guru is configured to encrypt server-side data using KMS.
+     */
+
+    public void setKMSServerSideEncryption(KMSServerSideEncryptionIntegrationConfig kMSServerSideEncryption) {
+        this.kMSServerSideEncryption = kMSServerSideEncryption;
+    }
+
+    /**
+     * <p>
+     * Information about whether DevOps Guru is configured to encrypt server-side data using KMS.
+     * </p>
+     * 
+     * @return Information about whether DevOps Guru is configured to encrypt server-side data using KMS.
+     */
+
+    public KMSServerSideEncryptionIntegrationConfig getKMSServerSideEncryption() {
+        return this.kMSServerSideEncryption;
+    }
+
+    /**
+     * <p>
+     * Information about whether DevOps Guru is configured to encrypt server-side data using KMS.
+     * </p>
+     * 
+     * @param kMSServerSideEncryption
+     *        Information about whether DevOps Guru is configured to encrypt server-side data using KMS.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateServiceIntegrationConfig withKMSServerSideEncryption(KMSServerSideEncryptionIntegrationConfig kMSServerSideEncryption) {
+        setKMSServerSideEncryption(kMSServerSideEncryption);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -125,7 +171,9 @@ public class UpdateServiceIntegrationConfig implements Serializable, Cloneable, 
         if (getOpsCenter() != null)
             sb.append("OpsCenter: ").append(getOpsCenter()).append(",");
         if (getLogsAnomalyDetection() != null)
-            sb.append("LogsAnomalyDetection: ").append(getLogsAnomalyDetection());
+            sb.append("LogsAnomalyDetection: ").append(getLogsAnomalyDetection()).append(",");
+        if (getKMSServerSideEncryption() != null)
+            sb.append("KMSServerSideEncryption: ").append(getKMSServerSideEncryption());
         sb.append("}");
         return sb.toString();
     }
@@ -148,6 +196,10 @@ public class UpdateServiceIntegrationConfig implements Serializable, Cloneable, 
             return false;
         if (other.getLogsAnomalyDetection() != null && other.getLogsAnomalyDetection().equals(this.getLogsAnomalyDetection()) == false)
             return false;
+        if (other.getKMSServerSideEncryption() == null ^ this.getKMSServerSideEncryption() == null)
+            return false;
+        if (other.getKMSServerSideEncryption() != null && other.getKMSServerSideEncryption().equals(this.getKMSServerSideEncryption()) == false)
+            return false;
         return true;
     }
 
@@ -158,6 +210,7 @@ public class UpdateServiceIntegrationConfig implements Serializable, Cloneable, 
 
         hashCode = prime * hashCode + ((getOpsCenter() == null) ? 0 : getOpsCenter().hashCode());
         hashCode = prime * hashCode + ((getLogsAnomalyDetection() == null) ? 0 : getLogsAnomalyDetection().hashCode());
+        hashCode = prime * hashCode + ((getKMSServerSideEncryption() == null) ? 0 : getKMSServerSideEncryption().hashCode());
         return hashCode;
     }
 

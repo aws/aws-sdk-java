@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,13 +28,15 @@ public class DisableControlRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the
-     * exception of the <b>Region deny</b> guardrail.
+     * exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>,
+     * see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.
      * </p>
      */
     private String controlIdentifier;
     /**
      * <p>
-     * The ARN of the organizational unit.
+     * The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a
+     * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.
      * </p>
      */
     private String targetIdentifier;
@@ -42,12 +44,15 @@ public class DisableControlRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the
-     * exception of the <b>Region deny</b> guardrail.
+     * exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>,
+     * see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.
      * </p>
      * 
      * @param controlIdentifier
      *        The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with
-     *        the exception of the <b>Region deny</b> guardrail.
+     *        the exception of the <b>Region deny</b> control. For information on how to find the
+     *        <code>controlIdentifier</code>, see <a
+     *        href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.
      */
 
     public void setControlIdentifier(String controlIdentifier) {
@@ -57,11 +62,14 @@ public class DisableControlRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the
-     * exception of the <b>Region deny</b> guardrail.
+     * exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>,
+     * see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.
      * </p>
      * 
      * @return The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with
-     *         the exception of the <b>Region deny</b> guardrail.
+     *         the exception of the <b>Region deny</b> control. For information on how to find the
+     *         <code>controlIdentifier</code>, see <a
+     *         href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.
      */
 
     public String getControlIdentifier() {
@@ -71,12 +79,15 @@ public class DisableControlRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the
-     * exception of the <b>Region deny</b> guardrail.
+     * exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>,
+     * see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.
      * </p>
      * 
      * @param controlIdentifier
      *        The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with
-     *        the exception of the <b>Region deny</b> guardrail.
+     *        the exception of the <b>Region deny</b> control. For information on how to find the
+     *        <code>controlIdentifier</code>, see <a
+     *        href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +98,13 @@ public class DisableControlRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the organizational unit.
+     * The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a
+     * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.
      * </p>
      * 
      * @param targetIdentifier
-     *        The ARN of the organizational unit.
+     *        The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see
+     *        <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.
      */
 
     public void setTargetIdentifier(String targetIdentifier) {
@@ -100,10 +113,13 @@ public class DisableControlRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the organizational unit.
+     * The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a
+     * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.
      * </p>
      * 
-     * @return The ARN of the organizational unit.
+     * @return The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see
+     *         <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview
+     *         page</a>.
      */
 
     public String getTargetIdentifier() {
@@ -112,11 +128,13 @@ public class DisableControlRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the organizational unit.
+     * The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a
+     * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.
      * </p>
      * 
      * @param targetIdentifier
-     *        The ARN of the organizational unit.
+     *        The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see
+     *        <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

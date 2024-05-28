@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,8 +65,8 @@ public class CreateOrganizationalUnitRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <note>
      * <p>
-     * If any one of the tags is invalid or if you exceed the allowed number of tags for an OU, then the entire request
-     * fails and the OU is not created.
+     * If any one of the tags is not valid or if you exceed the allowed number of tags for an OU, then the entire
+     * request fails and the OU is not created.
      * </p>
      * </note>
      */
@@ -267,8 +267,8 @@ public class CreateOrganizationalUnitRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <note>
      * <p>
-     * If any one of the tags is invalid or if you exceed the allowed number of tags for an OU, then the entire request
-     * fails and the OU is not created.
+     * If any one of the tags is not valid or if you exceed the allowed number of tags for an OU, then the entire
+     * request fails and the OU is not created.
      * </p>
      * </note>
      * 
@@ -278,8 +278,8 @@ public class CreateOrganizationalUnitRequest extends com.amazonaws.AmazonWebServ
      *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations
      *         resources</a> in the Organizations User Guide.</p> <note>
      *         <p>
-     *         If any one of the tags is invalid or if you exceed the allowed number of tags for an OU, then the entire
-     *         request fails and the OU is not created.
+     *         If any one of the tags is not valid or if you exceed the allowed number of tags for an OU, then the
+     *         entire request fails and the OU is not created.
      *         </p>
      */
 
@@ -297,8 +297,8 @@ public class CreateOrganizationalUnitRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <note>
      * <p>
-     * If any one of the tags is invalid or if you exceed the allowed number of tags for an OU, then the entire request
-     * fails and the OU is not created.
+     * If any one of the tags is not valid or if you exceed the allowed number of tags for an OU, then the entire
+     * request fails and the OU is not created.
      * </p>
      * </note>
      * 
@@ -309,7 +309,7 @@ public class CreateOrganizationalUnitRequest extends com.amazonaws.AmazonWebServ
      *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations
      *        resources</a> in the Organizations User Guide.</p> <note>
      *        <p>
-     *        If any one of the tags is invalid or if you exceed the allowed number of tags for an OU, then the entire
+     *        If any one of the tags is not valid or if you exceed the allowed number of tags for an OU, then the entire
      *        request fails and the OU is not created.
      *        </p>
      */
@@ -333,8 +333,8 @@ public class CreateOrganizationalUnitRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <note>
      * <p>
-     * If any one of the tags is invalid or if you exceed the allowed number of tags for an OU, then the entire request
-     * fails and the OU is not created.
+     * If any one of the tags is not valid or if you exceed the allowed number of tags for an OU, then the entire
+     * request fails and the OU is not created.
      * </p>
      * </note>
      * <p>
@@ -350,7 +350,7 @@ public class CreateOrganizationalUnitRequest extends com.amazonaws.AmazonWebServ
      *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations
      *        resources</a> in the Organizations User Guide.</p> <note>
      *        <p>
-     *        If any one of the tags is invalid or if you exceed the allowed number of tags for an OU, then the entire
+     *        If any one of the tags is not valid or if you exceed the allowed number of tags for an OU, then the entire
      *        request fails and the OU is not created.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -376,8 +376,8 @@ public class CreateOrganizationalUnitRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <note>
      * <p>
-     * If any one of the tags is invalid or if you exceed the allowed number of tags for an OU, then the entire request
-     * fails and the OU is not created.
+     * If any one of the tags is not valid or if you exceed the allowed number of tags for an OU, then the entire
+     * request fails and the OU is not created.
      * </p>
      * </note>
      * 
@@ -388,7 +388,7 @@ public class CreateOrganizationalUnitRequest extends com.amazonaws.AmazonWebServ
      *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations
      *        resources</a> in the Organizations User Guide.</p> <note>
      *        <p>
-     *        If any one of the tags is invalid or if you exceed the allowed number of tags for an OU, then the entire
+     *        If any one of the tags is not valid or if you exceed the allowed number of tags for an OU, then the entire
      *        request fails and the OU is not created.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,12 @@ public class ListMembersResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * A list of members.
      * </p>
+     * <note>
+     * <p>
+     * The values for <code>email</code> and <code>invitedAt</code> are available only if the member accounts are added
+     * by invitation.
+     * </p>
+     * </note>
      */
     private java.util.List<Member> members;
     /**
@@ -40,8 +46,18 @@ public class ListMembersResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * A list of members.
      * </p>
+     * <note>
+     * <p>
+     * The values for <code>email</code> and <code>invitedAt</code> are available only if the member accounts are added
+     * by invitation.
+     * </p>
+     * </note>
      * 
-     * @return A list of members.
+     * @return A list of members.</p> <note>
+     *         <p>
+     *         The values for <code>email</code> and <code>invitedAt</code> are available only if the member accounts
+     *         are added by invitation.
+     *         </p>
      */
 
     public java.util.List<Member> getMembers() {
@@ -52,9 +68,19 @@ public class ListMembersResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * A list of members.
      * </p>
+     * <note>
+     * <p>
+     * The values for <code>email</code> and <code>invitedAt</code> are available only if the member accounts are added
+     * by invitation.
+     * </p>
+     * </note>
      * 
      * @param members
-     *        A list of members.
+     *        A list of members.</p> <note>
+     *        <p>
+     *        The values for <code>email</code> and <code>invitedAt</code> are available only if the member accounts are
+     *        added by invitation.
+     *        </p>
      */
 
     public void setMembers(java.util.Collection<Member> members) {
@@ -70,6 +96,12 @@ public class ListMembersResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * A list of members.
      * </p>
+     * <note>
+     * <p>
+     * The values for <code>email</code> and <code>invitedAt</code> are available only if the member accounts are added
+     * by invitation.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setMembers(java.util.Collection)} or {@link #withMembers(java.util.Collection)} if you want to override
@@ -77,7 +109,11 @@ public class ListMembersResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param members
-     *        A list of members.
+     *        A list of members.</p> <note>
+     *        <p>
+     *        The values for <code>email</code> and <code>invitedAt</code> are available only if the member accounts are
+     *        added by invitation.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,9 +131,19 @@ public class ListMembersResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * A list of members.
      * </p>
+     * <note>
+     * <p>
+     * The values for <code>email</code> and <code>invitedAt</code> are available only if the member accounts are added
+     * by invitation.
+     * </p>
+     * </note>
      * 
      * @param members
-     *        A list of members.
+     *        A list of members.</p> <note>
+     *        <p>
+     *        The values for <code>email</code> and <code>invitedAt</code> are available only if the member accounts are
+     *        added by invitation.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

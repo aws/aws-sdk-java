@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -137,6 +137,15 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceIpv6Prefix> ipv6Prefixes;
+    /**
+     * <p>
+     * A security group connection tracking configuration that enables you to set the timeout for connection tracking on
+     * an Elastic network interface. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts"
+     * >Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     */
+    private ConnectionTrackingSpecificationResponse connectionTrackingConfiguration;
 
     /**
      * <p>
@@ -1084,6 +1093,64 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A security group connection tracking configuration that enables you to set the timeout for connection tracking on
+     * an Elastic network interface. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts"
+     * >Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param connectionTrackingConfiguration
+     *        A security group connection tracking configuration that enables you to set the timeout for connection
+     *        tracking on an Elastic network interface. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts"
+     *        >Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+
+    public void setConnectionTrackingConfiguration(ConnectionTrackingSpecificationResponse connectionTrackingConfiguration) {
+        this.connectionTrackingConfiguration = connectionTrackingConfiguration;
+    }
+
+    /**
+     * <p>
+     * A security group connection tracking configuration that enables you to set the timeout for connection tracking on
+     * an Elastic network interface. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts"
+     * >Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @return A security group connection tracking configuration that enables you to set the timeout for connection
+     *         tracking on an Elastic network interface. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts"
+     *         >Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     */
+
+    public ConnectionTrackingSpecificationResponse getConnectionTrackingConfiguration() {
+        return this.connectionTrackingConfiguration;
+    }
+
+    /**
+     * <p>
+     * A security group connection tracking configuration that enables you to set the timeout for connection tracking on
+     * an Elastic network interface. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts"
+     * >Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param connectionTrackingConfiguration
+     *        A security group connection tracking configuration that enables you to set the timeout for connection
+     *        tracking on an Elastic network interface. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts"
+     *        >Connection tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceNetworkInterface withConnectionTrackingConfiguration(ConnectionTrackingSpecificationResponse connectionTrackingConfiguration) {
+        setConnectionTrackingConfiguration(connectionTrackingConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1130,7 +1197,9 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
         if (getIpv4Prefixes() != null)
             sb.append("Ipv4Prefixes: ").append(getIpv4Prefixes()).append(",");
         if (getIpv6Prefixes() != null)
-            sb.append("Ipv6Prefixes: ").append(getIpv6Prefixes());
+            sb.append("Ipv6Prefixes: ").append(getIpv6Prefixes()).append(",");
+        if (getConnectionTrackingConfiguration() != null)
+            sb.append("ConnectionTrackingConfiguration: ").append(getConnectionTrackingConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1217,6 +1286,11 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
             return false;
         if (other.getIpv6Prefixes() != null && other.getIpv6Prefixes().equals(this.getIpv6Prefixes()) == false)
             return false;
+        if (other.getConnectionTrackingConfiguration() == null ^ this.getConnectionTrackingConfiguration() == null)
+            return false;
+        if (other.getConnectionTrackingConfiguration() != null
+                && other.getConnectionTrackingConfiguration().equals(this.getConnectionTrackingConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1243,6 +1317,7 @@ public class InstanceNetworkInterface implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getInterfaceType() == null) ? 0 : getInterfaceType().hashCode());
         hashCode = prime * hashCode + ((getIpv4Prefixes() == null) ? 0 : getIpv4Prefixes().hashCode());
         hashCode = prime * hashCode + ((getIpv6Prefixes() == null) ? 0 : getIpv6Prefixes().hashCode());
+        hashCode = prime * hashCode + ((getConnectionTrackingConfiguration() == null) ? 0 : getConnectionTrackingConfiguration().hashCode());
         return hashCode;
     }
 

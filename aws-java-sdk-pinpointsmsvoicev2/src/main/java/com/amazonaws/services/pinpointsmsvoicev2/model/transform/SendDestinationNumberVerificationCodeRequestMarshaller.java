@@ -1,0 +1,75 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.pinpointsmsvoicev2.model.transform;
+
+import java.util.Map;
+
+import javax.annotation.Generated;
+
+import com.amazonaws.SdkClientException;
+import com.amazonaws.services.pinpointsmsvoicev2.model.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
+
+/**
+ * SendDestinationNumberVerificationCodeRequestMarshaller
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class SendDestinationNumberVerificationCodeRequestMarshaller {
+
+    private static final MarshallingInfo<String> VERIFIEDDESTINATIONNUMBERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VerifiedDestinationNumberId").build();
+    private static final MarshallingInfo<String> VERIFICATIONCHANNEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VerificationChannel").build();
+    private static final MarshallingInfo<String> LANGUAGECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LanguageCode").build();
+    private static final MarshallingInfo<String> ORIGINATIONIDENTITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OriginationIdentity").build();
+    private static final MarshallingInfo<String> CONFIGURATIONSETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfigurationSetName").build();
+    private static final MarshallingInfo<Map> CONTEXT_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Context").build();
+    private static final MarshallingInfo<Map> DESTINATIONCOUNTRYPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DestinationCountryParameters").build();
+
+    private static final SendDestinationNumberVerificationCodeRequestMarshaller instance = new SendDestinationNumberVerificationCodeRequestMarshaller();
+
+    public static SendDestinationNumberVerificationCodeRequestMarshaller getInstance() {
+        return instance;
+    }
+
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(SendDestinationNumberVerificationCodeRequest sendDestinationNumberVerificationCodeRequest, ProtocolMarshaller protocolMarshaller) {
+
+        if (sendDestinationNumberVerificationCodeRequest == null) {
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
+        }
+
+        try {
+            protocolMarshaller.marshall(sendDestinationNumberVerificationCodeRequest.getVerifiedDestinationNumberId(), VERIFIEDDESTINATIONNUMBERID_BINDING);
+            protocolMarshaller.marshall(sendDestinationNumberVerificationCodeRequest.getVerificationChannel(), VERIFICATIONCHANNEL_BINDING);
+            protocolMarshaller.marshall(sendDestinationNumberVerificationCodeRequest.getLanguageCode(), LANGUAGECODE_BINDING);
+            protocolMarshaller.marshall(sendDestinationNumberVerificationCodeRequest.getOriginationIdentity(), ORIGINATIONIDENTITY_BINDING);
+            protocolMarshaller.marshall(sendDestinationNumberVerificationCodeRequest.getConfigurationSetName(), CONFIGURATIONSETNAME_BINDING);
+            protocolMarshaller.marshall(sendDestinationNumberVerificationCodeRequest.getContext(), CONTEXT_BINDING);
+            protocolMarshaller.marshall(sendDestinationNumberVerificationCodeRequest.getDestinationCountryParameters(), DESTINATIONCOUNTRYPARAMETERS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
+        }
+    }
+
+}

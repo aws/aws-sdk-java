@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,7 +53,7 @@ public class Update implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<UpdateParam> params;
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the update was created.
+     * The Unix epoch timestamp at object creation.
      * </p>
      */
     private java.util.Date createdAt;
@@ -294,11 +294,11 @@ public class Update implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the update was created.
+     * The Unix epoch timestamp at object creation.
      * </p>
      * 
      * @param createdAt
-     *        The Unix epoch timestamp in seconds for when the update was created.
+     *        The Unix epoch timestamp at object creation.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -307,10 +307,10 @@ public class Update implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the update was created.
+     * The Unix epoch timestamp at object creation.
      * </p>
      * 
-     * @return The Unix epoch timestamp in seconds for when the update was created.
+     * @return The Unix epoch timestamp at object creation.
      */
 
     public java.util.Date getCreatedAt() {
@@ -319,11 +319,11 @@ public class Update implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the update was created.
+     * The Unix epoch timestamp at object creation.
      * </p>
      * 
      * @param createdAt
-     *        The Unix epoch timestamp in seconds for when the update was created.
+     *        The Unix epoch timestamp at object creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

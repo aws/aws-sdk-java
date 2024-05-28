@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -83,6 +83,18 @@ public class GetFuotaTaskResultJsonUnmarshaller implements Unmarshaller<GetFuota
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
                     getFuotaTaskResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("RedundancyPercent", targetDepth)) {
+                    context.nextToken();
+                    getFuotaTaskResult.setRedundancyPercent(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("FragmentSizeBytes", targetDepth)) {
+                    context.nextToken();
+                    getFuotaTaskResult.setFragmentSizeBytes(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("FragmentIntervalMS", targetDepth)) {
+                    context.nextToken();
+                    getFuotaTaskResult.setFragmentIntervalMS(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

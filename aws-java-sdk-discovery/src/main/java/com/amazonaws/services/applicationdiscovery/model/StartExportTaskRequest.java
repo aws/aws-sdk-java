@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,8 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
      * If a filter is present, it selects the single <code>agentId</code> of the Application Discovery Agent for which
      * data is exported. The <code>agentId</code> can be found in the results of the <code>DescribeAgents</code> API or
      * CLI. If no filter is present, <code>startTime</code> and <code>endTime</code> are ignored and exported data
-     * includes both Agentless Discovery Connector data and summary data from Application Discovery agents.
+     * includes both Amazon Web Services Application Discovery Service Agentless Collector collectors data and summary
+     * data from Application Discovery Agent agents.
      * </p>
      */
     private java.util.List<ExportFilter> filters;
@@ -50,6 +51,14 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private java.util.Date endTime;
+    /**
+     * <p>
+     * Indicates the type of data that needs to be exported. Only one <a
+     * href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_ExportPreferences.html"
+     * >ExportPreferences</a> can be enabled at any time.
+     * </p>
+     */
+    private ExportPreferences preferences;
 
     /**
      * <p>
@@ -164,14 +173,16 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
      * If a filter is present, it selects the single <code>agentId</code> of the Application Discovery Agent for which
      * data is exported. The <code>agentId</code> can be found in the results of the <code>DescribeAgents</code> API or
      * CLI. If no filter is present, <code>startTime</code> and <code>endTime</code> are ignored and exported data
-     * includes both Agentless Discovery Connector data and summary data from Application Discovery agents.
+     * includes both Amazon Web Services Application Discovery Service Agentless Collector collectors data and summary
+     * data from Application Discovery Agent agents.
      * </p>
      * 
      * @return If a filter is present, it selects the single <code>agentId</code> of the Application Discovery Agent for
      *         which data is exported. The <code>agentId</code> can be found in the results of the
      *         <code>DescribeAgents</code> API or CLI. If no filter is present, <code>startTime</code> and
-     *         <code>endTime</code> are ignored and exported data includes both Agentless Discovery Connector data and
-     *         summary data from Application Discovery agents.
+     *         <code>endTime</code> are ignored and exported data includes both Amazon Web Services Application
+     *         Discovery Service Agentless Collector collectors data and summary data from Application Discovery Agent
+     *         agents.
      */
 
     public java.util.List<ExportFilter> getFilters() {
@@ -183,15 +194,16 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
      * If a filter is present, it selects the single <code>agentId</code> of the Application Discovery Agent for which
      * data is exported. The <code>agentId</code> can be found in the results of the <code>DescribeAgents</code> API or
      * CLI. If no filter is present, <code>startTime</code> and <code>endTime</code> are ignored and exported data
-     * includes both Agentless Discovery Connector data and summary data from Application Discovery agents.
+     * includes both Amazon Web Services Application Discovery Service Agentless Collector collectors data and summary
+     * data from Application Discovery Agent agents.
      * </p>
      * 
      * @param filters
      *        If a filter is present, it selects the single <code>agentId</code> of the Application Discovery Agent for
      *        which data is exported. The <code>agentId</code> can be found in the results of the
      *        <code>DescribeAgents</code> API or CLI. If no filter is present, <code>startTime</code> and
-     *        <code>endTime</code> are ignored and exported data includes both Agentless Discovery Connector data and
-     *        summary data from Application Discovery agents.
+     *        <code>endTime</code> are ignored and exported data includes both Amazon Web Services Application Discovery
+     *        Service Agentless Collector collectors data and summary data from Application Discovery Agent agents.
      */
 
     public void setFilters(java.util.Collection<ExportFilter> filters) {
@@ -208,7 +220,8 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
      * If a filter is present, it selects the single <code>agentId</code> of the Application Discovery Agent for which
      * data is exported. The <code>agentId</code> can be found in the results of the <code>DescribeAgents</code> API or
      * CLI. If no filter is present, <code>startTime</code> and <code>endTime</code> are ignored and exported data
-     * includes both Agentless Discovery Connector data and summary data from Application Discovery agents.
+     * includes both Amazon Web Services Application Discovery Service Agentless Collector collectors data and summary
+     * data from Application Discovery Agent agents.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -220,8 +233,8 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
      *        If a filter is present, it selects the single <code>agentId</code> of the Application Discovery Agent for
      *        which data is exported. The <code>agentId</code> can be found in the results of the
      *        <code>DescribeAgents</code> API or CLI. If no filter is present, <code>startTime</code> and
-     *        <code>endTime</code> are ignored and exported data includes both Agentless Discovery Connector data and
-     *        summary data from Application Discovery agents.
+     *        <code>endTime</code> are ignored and exported data includes both Amazon Web Services Application Discovery
+     *        Service Agentless Collector collectors data and summary data from Application Discovery Agent agents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -240,15 +253,16 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
      * If a filter is present, it selects the single <code>agentId</code> of the Application Discovery Agent for which
      * data is exported. The <code>agentId</code> can be found in the results of the <code>DescribeAgents</code> API or
      * CLI. If no filter is present, <code>startTime</code> and <code>endTime</code> are ignored and exported data
-     * includes both Agentless Discovery Connector data and summary data from Application Discovery agents.
+     * includes both Amazon Web Services Application Discovery Service Agentless Collector collectors data and summary
+     * data from Application Discovery Agent agents.
      * </p>
      * 
      * @param filters
      *        If a filter is present, it selects the single <code>agentId</code> of the Application Discovery Agent for
      *        which data is exported. The <code>agentId</code> can be found in the results of the
      *        <code>DescribeAgents</code> API or CLI. If no filter is present, <code>startTime</code> and
-     *        <code>endTime</code> are ignored and exported data includes both Agentless Discovery Connector data and
-     *        summary data from Application Discovery agents.
+     *        <code>endTime</code> are ignored and exported data includes both Amazon Web Services Application Discovery
+     *        Service Agentless Collector collectors data and summary data from Application Discovery Agent agents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -350,6 +364,58 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Indicates the type of data that needs to be exported. Only one <a
+     * href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_ExportPreferences.html"
+     * >ExportPreferences</a> can be enabled at any time.
+     * </p>
+     * 
+     * @param preferences
+     *        Indicates the type of data that needs to be exported. Only one <a
+     *        href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_ExportPreferences.html"
+     *        >ExportPreferences</a> can be enabled at any time.
+     */
+
+    public void setPreferences(ExportPreferences preferences) {
+        this.preferences = preferences;
+    }
+
+    /**
+     * <p>
+     * Indicates the type of data that needs to be exported. Only one <a
+     * href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_ExportPreferences.html"
+     * >ExportPreferences</a> can be enabled at any time.
+     * </p>
+     * 
+     * @return Indicates the type of data that needs to be exported. Only one <a
+     *         href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_ExportPreferences.html"
+     *         >ExportPreferences</a> can be enabled at any time.
+     */
+
+    public ExportPreferences getPreferences() {
+        return this.preferences;
+    }
+
+    /**
+     * <p>
+     * Indicates the type of data that needs to be exported. Only one <a
+     * href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_ExportPreferences.html"
+     * >ExportPreferences</a> can be enabled at any time.
+     * </p>
+     * 
+     * @param preferences
+     *        Indicates the type of data that needs to be exported. Only one <a
+     *        href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_ExportPreferences.html"
+     *        >ExportPreferences</a> can be enabled at any time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartExportTaskRequest withPreferences(ExportPreferences preferences) {
+        setPreferences(preferences);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -368,7 +434,9 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
         if (getStartTime() != null)
             sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
-            sb.append("EndTime: ").append(getEndTime());
+            sb.append("EndTime: ").append(getEndTime()).append(",");
+        if (getPreferences() != null)
+            sb.append("Preferences: ").append(getPreferences());
         sb.append("}");
         return sb.toString();
     }
@@ -399,6 +467,10 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false)
             return false;
+        if (other.getPreferences() == null ^ this.getPreferences() == null)
+            return false;
+        if (other.getPreferences() != null && other.getPreferences().equals(this.getPreferences()) == false)
+            return false;
         return true;
     }
 
@@ -411,6 +483,7 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
+        hashCode = prime * hashCode + ((getPreferences() == null) ? 0 : getPreferences().hashCode());
         return hashCode;
     }
 

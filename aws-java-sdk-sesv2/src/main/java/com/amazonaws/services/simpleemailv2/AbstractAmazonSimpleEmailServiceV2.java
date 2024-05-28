@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,11 @@ public class AbstractAmazonSimpleEmailServiceV2 implements AmazonSimpleEmailServ
 
     @Override
     public BatchGetMetricDataResult batchGetMetricData(BatchGetMetricDataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CancelExportJobResult cancelExportJob(CancelExportJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -79,6 +84,11 @@ public class AbstractAmazonSimpleEmailServiceV2 implements AmazonSimpleEmailServ
 
     @Override
     public CreateEmailTemplateResult createEmailTemplate(CreateEmailTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateExportJobResult createExportJob(CreateExportJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -223,7 +233,17 @@ public class AbstractAmazonSimpleEmailServiceV2 implements AmazonSimpleEmailServ
     }
 
     @Override
+    public GetExportJobResult getExportJob(GetExportJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetImportJobResult getImportJob(GetImportJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetMessageInsightsResult getMessageInsights(GetMessageInsightsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -274,6 +294,11 @@ public class AbstractAmazonSimpleEmailServiceV2 implements AmazonSimpleEmailServ
 
     @Override
     public ListEmailTemplatesResult listEmailTemplates(ListEmailTemplatesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListExportJobsResult listExportJobs(ListExportJobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -354,6 +379,11 @@ public class AbstractAmazonSimpleEmailServiceV2 implements AmazonSimpleEmailServ
 
     @Override
     public PutDedicatedIpInPoolResult putDedicatedIpInPool(PutDedicatedIpInPoolRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutDedicatedIpPoolScalingAttributesResult putDedicatedIpPoolScalingAttributes(PutDedicatedIpPoolScalingAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

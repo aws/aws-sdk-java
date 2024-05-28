@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,8 @@ public class SourceTableDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TableCreationDateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<StructuredPojo> PROVISIONEDTHROUGHPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisionedThroughput").build();
+    private static final MarshallingInfo<StructuredPojo> ONDEMANDTHROUGHPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OnDemandThroughput").build();
     private static final MarshallingInfo<Long> ITEMCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ItemCount").build();
     private static final MarshallingInfo<String> BILLINGMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -70,6 +72,7 @@ public class SourceTableDetailsMarshaller {
             protocolMarshaller.marshall(sourceTableDetails.getKeySchema(), KEYSCHEMA_BINDING);
             protocolMarshaller.marshall(sourceTableDetails.getTableCreationDateTime(), TABLECREATIONDATETIME_BINDING);
             protocolMarshaller.marshall(sourceTableDetails.getProvisionedThroughput(), PROVISIONEDTHROUGHPUT_BINDING);
+            protocolMarshaller.marshall(sourceTableDetails.getOnDemandThroughput(), ONDEMANDTHROUGHPUT_BINDING);
             protocolMarshaller.marshall(sourceTableDetails.getItemCount(), ITEMCOUNT_BINDING);
             protocolMarshaller.marshall(sourceTableDetails.getBillingMode(), BILLINGMODE_BINDING);
         } catch (Exception e) {

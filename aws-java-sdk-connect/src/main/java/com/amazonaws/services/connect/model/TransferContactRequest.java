@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,9 @@ public class TransferContactRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      */
     private String instanceId;
@@ -45,7 +47,7 @@ public class TransferContactRequest extends com.amazonaws.AmazonWebServiceReques
     private String queueId;
     /**
      * <p>
-     * The identifier for the user.
+     * The identifier for the user. This can be the ID or the ARN of the user.
      * </p>
      */
     private String userId;
@@ -67,11 +69,15 @@ public class TransferContactRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     *        The identifier of the Amazon Connect instance. You can <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *        ID</a> in the Amazon Resource Name (ARN) of the instance.
      */
 
     public void setInstanceId(String instanceId) {
@@ -80,10 +86,14 @@ public class TransferContactRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
-     * @return The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * @return The identifier of the Amazon Connect instance. You can <a
+     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *         ID</a> in the Amazon Resource Name (ARN) of the instance.
      */
 
     public String getInstanceId() {
@@ -92,11 +102,15 @@ public class TransferContactRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     *        The identifier of the Amazon Connect instance. You can <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *        ID</a> in the Amazon Resource Name (ARN) of the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,11 +201,11 @@ public class TransferContactRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier for the user.
+     * The identifier for the user. This can be the ID or the ARN of the user.
      * </p>
      * 
      * @param userId
-     *        The identifier for the user.
+     *        The identifier for the user. This can be the ID or the ARN of the user.
      */
 
     public void setUserId(String userId) {
@@ -200,10 +214,10 @@ public class TransferContactRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier for the user.
+     * The identifier for the user. This can be the ID or the ARN of the user.
      * </p>
      * 
-     * @return The identifier for the user.
+     * @return The identifier for the user. This can be the ID or the ARN of the user.
      */
 
     public String getUserId() {
@@ -212,11 +226,11 @@ public class TransferContactRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier for the user.
+     * The identifier for the user. This can be the ID or the ARN of the user.
      * </p>
      * 
      * @param userId
-     *        The identifier for the user.
+     *        The identifier for the user. This can be the ID or the ARN of the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

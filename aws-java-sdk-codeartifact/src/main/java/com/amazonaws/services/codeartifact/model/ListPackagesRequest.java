@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,24 +52,33 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String format;
     /**
      * <p>
-     * The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The
-     * package component that specifies its namespace depends on its type. For example:
+     * The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the
+     * provided string value are returned. Note that although this option is called <code>--namespace</code> and not
+     * <code>--namespace-prefix</code>, it has prefix-matching behavior.
+     * </p>
+     * <p>
+     * Each package format uses namespace as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The namespace of a Maven package is its <code>groupId</code>.
+     * The namespace of a Maven package version is its <code>groupId</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The namespace of an npm package is its <code>scope</code>.
+     * The namespace of an npm or Swift package version is its <code>scope</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a
-     * namespace.
+     * The namespace of a generic package is its <code>namespace</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Python, NuGet, and Ruby package versions do not contain a corresponding component, package versions of those
+     * formats do not have a namespace.
      * </p>
      * </li>
      * </ul>
@@ -301,46 +310,64 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The
-     * package component that specifies its namespace depends on its type. For example:
+     * The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the
+     * provided string value are returned. Note that although this option is called <code>--namespace</code> and not
+     * <code>--namespace-prefix</code>, it has prefix-matching behavior.
+     * </p>
+     * <p>
+     * Each package format uses namespace as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The namespace of a Maven package is its <code>groupId</code>.
+     * The namespace of a Maven package version is its <code>groupId</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The namespace of an npm package is its <code>scope</code>.
+     * The namespace of an npm or Swift package version is its <code>scope</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a
-     * namespace.
+     * The namespace of a generic package is its <code>namespace</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Python, NuGet, and Ruby package versions do not contain a corresponding component, package versions of those
+     * formats do not have a namespace.
      * </p>
      * </li>
      * </ul>
      * 
      * @param namespace
-     *        The namespace used to filter requested packages. Only packages with the provided namespace will be
-     *        returned. The package component that specifies its namespace depends on its type. For example:</p>
+     *        The namespace prefix used to filter requested packages. Only packages with a namespace that starts with
+     *        the provided string value are returned. Note that although this option is called <code>--namespace</code>
+     *        and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p>
+     *        <p>
+     *        Each package format uses namespace as follows:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        The namespace of a Maven package is its <code>groupId</code>.
+     *        The namespace of a Maven package version is its <code>groupId</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        The namespace of an npm package is its <code>scope</code>.
+     *        The namespace of an npm or Swift package version is its <code>scope</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Python and NuGet packages do not contain a corresponding component, packages of those formats do not have
-     *        a namespace.
+     *        The namespace of a generic package is its <code>namespace</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Python, NuGet, and Ruby package versions do not contain a corresponding component, package versions of
+     *        those formats do not have a namespace.
      *        </p>
      *        </li>
      */
@@ -351,45 +378,63 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The
-     * package component that specifies its namespace depends on its type. For example:
+     * The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the
+     * provided string value are returned. Note that although this option is called <code>--namespace</code> and not
+     * <code>--namespace-prefix</code>, it has prefix-matching behavior.
+     * </p>
+     * <p>
+     * Each package format uses namespace as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The namespace of a Maven package is its <code>groupId</code>.
+     * The namespace of a Maven package version is its <code>groupId</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The namespace of an npm package is its <code>scope</code>.
+     * The namespace of an npm or Swift package version is its <code>scope</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a
-     * namespace.
+     * The namespace of a generic package is its <code>namespace</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Python, NuGet, and Ruby package versions do not contain a corresponding component, package versions of those
+     * formats do not have a namespace.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The namespace used to filter requested packages. Only packages with the provided namespace will be
-     *         returned. The package component that specifies its namespace depends on its type. For example:</p>
+     * @return The namespace prefix used to filter requested packages. Only packages with a namespace that starts with
+     *         the provided string value are returned. Note that although this option is called <code>--namespace</code>
+     *         and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p>
+     *         <p>
+     *         Each package format uses namespace as follows:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         The namespace of a Maven package is its <code>groupId</code>.
+     *         The namespace of a Maven package version is its <code>groupId</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         The namespace of an npm package is its <code>scope</code>.
+     *         The namespace of an npm or Swift package version is its <code>scope</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Python and NuGet packages do not contain a corresponding component, packages of those formats do not have
-     *         a namespace.
+     *         The namespace of a generic package is its <code>namespace</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Python, NuGet, and Ruby package versions do not contain a corresponding component, package versions of
+     *         those formats do not have a namespace.
      *         </p>
      *         </li>
      */
@@ -400,46 +445,64 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The
-     * package component that specifies its namespace depends on its type. For example:
+     * The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the
+     * provided string value are returned. Note that although this option is called <code>--namespace</code> and not
+     * <code>--namespace-prefix</code>, it has prefix-matching behavior.
+     * </p>
+     * <p>
+     * Each package format uses namespace as follows:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The namespace of a Maven package is its <code>groupId</code>.
+     * The namespace of a Maven package version is its <code>groupId</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The namespace of an npm package is its <code>scope</code>.
+     * The namespace of an npm or Swift package version is its <code>scope</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a
-     * namespace.
+     * The namespace of a generic package is its <code>namespace</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Python, NuGet, and Ruby package versions do not contain a corresponding component, package versions of those
+     * formats do not have a namespace.
      * </p>
      * </li>
      * </ul>
      * 
      * @param namespace
-     *        The namespace used to filter requested packages. Only packages with the provided namespace will be
-     *        returned. The package component that specifies its namespace depends on its type. For example:</p>
+     *        The namespace prefix used to filter requested packages. Only packages with a namespace that starts with
+     *        the provided string value are returned. Note that although this option is called <code>--namespace</code>
+     *        and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p>
+     *        <p>
+     *        Each package format uses namespace as follows:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        The namespace of a Maven package is its <code>groupId</code>.
+     *        The namespace of a Maven package version is its <code>groupId</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        The namespace of an npm package is its <code>scope</code>.
+     *        The namespace of an npm or Swift package version is its <code>scope</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Python and NuGet packages do not contain a corresponding component, packages of those formats do not have
-     *        a namespace.
+     *        The namespace of a generic package is its <code>namespace</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Python, NuGet, and Ruby package versions do not contain a corresponding component, package versions of
+     *        those formats do not have a namespace.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -1,0 +1,328 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.connect.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * Object that describes attached file.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/RealTimeContactAnalysisAttachment"
+ *      target="_top">AWS API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class RealTimeContactAnalysisAttachment implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * A case-sensitive name of the attachment being uploaded. Can be redacted.
+     * </p>
+     */
+    private String attachmentName;
+    /**
+     * <p>
+     * Describes the MIME file type of the attachment. For a list of supported file types, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in
+     * the <i>Amazon Connect Administrator Guide</i>.
+     * </p>
+     */
+    private String contentType;
+    /**
+     * <p>
+     * A unique identifier for the attachment.
+     * </p>
+     */
+    private String attachmentId;
+    /**
+     * <p>
+     * Status of the attachment.
+     * </p>
+     */
+    private String status;
+
+    /**
+     * <p>
+     * A case-sensitive name of the attachment being uploaded. Can be redacted.
+     * </p>
+     * 
+     * @param attachmentName
+     *        A case-sensitive name of the attachment being uploaded. Can be redacted.
+     */
+
+    public void setAttachmentName(String attachmentName) {
+        this.attachmentName = attachmentName;
+    }
+
+    /**
+     * <p>
+     * A case-sensitive name of the attachment being uploaded. Can be redacted.
+     * </p>
+     * 
+     * @return A case-sensitive name of the attachment being uploaded. Can be redacted.
+     */
+
+    public String getAttachmentName() {
+        return this.attachmentName;
+    }
+
+    /**
+     * <p>
+     * A case-sensitive name of the attachment being uploaded. Can be redacted.
+     * </p>
+     * 
+     * @param attachmentName
+     *        A case-sensitive name of the attachment being uploaded. Can be redacted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RealTimeContactAnalysisAttachment withAttachmentName(String attachmentName) {
+        setAttachmentName(attachmentName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the MIME file type of the attachment. For a list of supported file types, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in
+     * the <i>Amazon Connect Administrator Guide</i>.
+     * </p>
+     * 
+     * @param contentType
+     *        Describes the MIME file type of the attachment. For a list of supported file types, see <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature
+     *        specifications</a> in the <i>Amazon Connect Administrator Guide</i>.
+     */
+
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
+    }
+
+    /**
+     * <p>
+     * Describes the MIME file type of the attachment. For a list of supported file types, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in
+     * the <i>Amazon Connect Administrator Guide</i>.
+     * </p>
+     * 
+     * @return Describes the MIME file type of the attachment. For a list of supported file types, see <a
+     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature
+     *         specifications</a> in the <i>Amazon Connect Administrator Guide</i>.
+     */
+
+    public String getContentType() {
+        return this.contentType;
+    }
+
+    /**
+     * <p>
+     * Describes the MIME file type of the attachment. For a list of supported file types, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in
+     * the <i>Amazon Connect Administrator Guide</i>.
+     * </p>
+     * 
+     * @param contentType
+     *        Describes the MIME file type of the attachment. For a list of supported file types, see <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature
+     *        specifications</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RealTimeContactAnalysisAttachment withContentType(String contentType) {
+        setContentType(contentType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the attachment.
+     * </p>
+     * 
+     * @param attachmentId
+     *        A unique identifier for the attachment.
+     */
+
+    public void setAttachmentId(String attachmentId) {
+        this.attachmentId = attachmentId;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the attachment.
+     * </p>
+     * 
+     * @return A unique identifier for the attachment.
+     */
+
+    public String getAttachmentId() {
+        return this.attachmentId;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the attachment.
+     * </p>
+     * 
+     * @param attachmentId
+     *        A unique identifier for the attachment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RealTimeContactAnalysisAttachment withAttachmentId(String attachmentId) {
+        setAttachmentId(attachmentId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Status of the attachment.
+     * </p>
+     * 
+     * @param status
+     *        Status of the attachment.
+     * @see ArtifactStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * Status of the attachment.
+     * </p>
+     * 
+     * @return Status of the attachment.
+     * @see ArtifactStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * Status of the attachment.
+     * </p>
+     * 
+     * @param status
+     *        Status of the attachment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ArtifactStatus
+     */
+
+    public RealTimeContactAnalysisAttachment withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Status of the attachment.
+     * </p>
+     * 
+     * @param status
+     *        Status of the attachment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ArtifactStatus
+     */
+
+    public RealTimeContactAnalysisAttachment withStatus(ArtifactStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getAttachmentName() != null)
+            sb.append("AttachmentName: ").append(getAttachmentName()).append(",");
+        if (getContentType() != null)
+            sb.append("ContentType: ").append(getContentType()).append(",");
+        if (getAttachmentId() != null)
+            sb.append("AttachmentId: ").append(getAttachmentId()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof RealTimeContactAnalysisAttachment == false)
+            return false;
+        RealTimeContactAnalysisAttachment other = (RealTimeContactAnalysisAttachment) obj;
+        if (other.getAttachmentName() == null ^ this.getAttachmentName() == null)
+            return false;
+        if (other.getAttachmentName() != null && other.getAttachmentName().equals(this.getAttachmentName()) == false)
+            return false;
+        if (other.getContentType() == null ^ this.getContentType() == null)
+            return false;
+        if (other.getContentType() != null && other.getContentType().equals(this.getContentType()) == false)
+            return false;
+        if (other.getAttachmentId() == null ^ this.getAttachmentId() == null)
+            return false;
+        if (other.getAttachmentId() != null && other.getAttachmentId().equals(this.getAttachmentId()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getAttachmentName() == null) ? 0 : getAttachmentName().hashCode());
+        hashCode = prime * hashCode + ((getContentType() == null) ? 0 : getContentType().hashCode());
+        hashCode = prime * hashCode + ((getAttachmentId() == null) ? 0 : getAttachmentId().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public RealTimeContactAnalysisAttachment clone() {
+        try {
+            return (RealTimeContactAnalysisAttachment) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.connect.model.transform.RealTimeContactAnalysisAttachmentMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

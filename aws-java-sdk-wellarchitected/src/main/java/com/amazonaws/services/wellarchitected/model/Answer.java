@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,7 +41,10 @@ public class Answer implements Serializable, Cloneable, StructuredPojo {
     private String helpfulResourceUrl;
     /**
      * <p>
-     * The helpful resource text to be displayed.
+     * The helpful resource text to be displayed for a custom lens.
+     * </p>
+     * <p>
+     * This field does not apply to Amazon Web Services official lenses.
      * </p>
      */
     private String helpfulResourceDisplayText;
@@ -67,6 +70,12 @@ public class Answer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String reason;
+    /**
+     * <p>
+     * Configuration of the Jira integration.
+     * </p>
+     */
+    private JiraConfiguration jiraConfiguration;
 
     /**
      * @param questionId
@@ -226,11 +235,16 @@ public class Answer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The helpful resource text to be displayed.
+     * The helpful resource text to be displayed for a custom lens.
+     * </p>
+     * <p>
+     * This field does not apply to Amazon Web Services official lenses.
      * </p>
      * 
      * @param helpfulResourceDisplayText
-     *        The helpful resource text to be displayed.
+     *        The helpful resource text to be displayed for a custom lens.</p>
+     *        <p>
+     *        This field does not apply to Amazon Web Services official lenses.
      */
 
     public void setHelpfulResourceDisplayText(String helpfulResourceDisplayText) {
@@ -239,10 +253,15 @@ public class Answer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The helpful resource text to be displayed.
+     * The helpful resource text to be displayed for a custom lens.
+     * </p>
+     * <p>
+     * This field does not apply to Amazon Web Services official lenses.
      * </p>
      * 
-     * @return The helpful resource text to be displayed.
+     * @return The helpful resource text to be displayed for a custom lens.</p>
+     *         <p>
+     *         This field does not apply to Amazon Web Services official lenses.
      */
 
     public String getHelpfulResourceDisplayText() {
@@ -251,11 +270,16 @@ public class Answer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The helpful resource text to be displayed.
+     * The helpful resource text to be displayed for a custom lens.
+     * </p>
+     * <p>
+     * This field does not apply to Amazon Web Services official lenses.
      * </p>
      * 
      * @param helpfulResourceDisplayText
-     *        The helpful resource text to be displayed.
+     *        The helpful resource text to be displayed for a custom lens.</p>
+     *        <p>
+     *        This field does not apply to Amazon Web Services official lenses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -598,6 +622,46 @@ public class Answer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Configuration of the Jira integration.
+     * </p>
+     * 
+     * @param jiraConfiguration
+     *        Configuration of the Jira integration.
+     */
+
+    public void setJiraConfiguration(JiraConfiguration jiraConfiguration) {
+        this.jiraConfiguration = jiraConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration of the Jira integration.
+     * </p>
+     * 
+     * @return Configuration of the Jira integration.
+     */
+
+    public JiraConfiguration getJiraConfiguration() {
+        return this.jiraConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration of the Jira integration.
+     * </p>
+     * 
+     * @param jiraConfiguration
+     *        Configuration of the Jira integration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Answer withJiraConfiguration(JiraConfiguration jiraConfiguration) {
+        setJiraConfiguration(jiraConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -636,7 +700,9 @@ public class Answer implements Serializable, Cloneable, StructuredPojo {
         if (getNotes() != null)
             sb.append("Notes: ").append(getNotes()).append(",");
         if (getReason() != null)
-            sb.append("Reason: ").append(getReason());
+            sb.append("Reason: ").append(getReason()).append(",");
+        if (getJiraConfiguration() != null)
+            sb.append("JiraConfiguration: ").append(getJiraConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -707,6 +773,10 @@ public class Answer implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getReason() != null && other.getReason().equals(this.getReason()) == false)
             return false;
+        if (other.getJiraConfiguration() == null ^ this.getJiraConfiguration() == null)
+            return false;
+        if (other.getJiraConfiguration() != null && other.getJiraConfiguration().equals(this.getJiraConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -729,6 +799,7 @@ public class Answer implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRisk() == null) ? 0 : getRisk().hashCode());
         hashCode = prime * hashCode + ((getNotes() == null) ? 0 : getNotes().hashCode());
         hashCode = prime * hashCode + ((getReason() == null) ? 0 : getReason().hashCode());
+        hashCode = prime * hashCode + ((getJiraConfiguration() == null) ? 0 : getJiraConfiguration().hashCode());
         return hashCode;
     }
 

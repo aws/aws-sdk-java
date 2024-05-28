@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,20 @@ public class OpenZFSVolumeConfigurationMarshaller {
             .marshallLocationName("NfsExports").build();
     private static final MarshallingInfo<List> USERANDGROUPQUOTAS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserAndGroupQuotas").build();
+    private static final MarshallingInfo<String> RESTORETOSNAPSHOT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RestoreToSnapshot").build();
+    private static final MarshallingInfo<Boolean> DELETEINTERMEDIATESNAPHOTS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeleteIntermediateSnaphots").build();
+    private static final MarshallingInfo<Boolean> DELETECLONEDVOLUMES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeleteClonedVolumes").build();
+    private static final MarshallingInfo<Boolean> DELETEINTERMEDIATEDATA_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeleteIntermediateData").build();
+    private static final MarshallingInfo<String> SOURCESNAPSHOTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceSnapshotARN").build();
+    private static final MarshallingInfo<String> DESTINATIONSNAPSHOT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DestinationSnapshot").build();
+    private static final MarshallingInfo<String> COPYSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CopyStrategy").build();
 
     private static final OpenZFSVolumeConfigurationMarshaller instance = new OpenZFSVolumeConfigurationMarshaller();
 
@@ -78,6 +92,13 @@ public class OpenZFSVolumeConfigurationMarshaller {
             protocolMarshaller.marshall(openZFSVolumeConfiguration.getReadOnly(), READONLY_BINDING);
             protocolMarshaller.marshall(openZFSVolumeConfiguration.getNfsExports(), NFSEXPORTS_BINDING);
             protocolMarshaller.marshall(openZFSVolumeConfiguration.getUserAndGroupQuotas(), USERANDGROUPQUOTAS_BINDING);
+            protocolMarshaller.marshall(openZFSVolumeConfiguration.getRestoreToSnapshot(), RESTORETOSNAPSHOT_BINDING);
+            protocolMarshaller.marshall(openZFSVolumeConfiguration.getDeleteIntermediateSnaphots(), DELETEINTERMEDIATESNAPHOTS_BINDING);
+            protocolMarshaller.marshall(openZFSVolumeConfiguration.getDeleteClonedVolumes(), DELETECLONEDVOLUMES_BINDING);
+            protocolMarshaller.marshall(openZFSVolumeConfiguration.getDeleteIntermediateData(), DELETEINTERMEDIATEDATA_BINDING);
+            protocolMarshaller.marshall(openZFSVolumeConfiguration.getSourceSnapshotARN(), SOURCESNAPSHOTARN_BINDING);
+            protocolMarshaller.marshall(openZFSVolumeConfiguration.getDestinationSnapshot(), DESTINATIONSNAPSHOT_BINDING);
+            protocolMarshaller.marshall(openZFSVolumeConfiguration.getCopyStrategy(), COPYSTRATEGY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

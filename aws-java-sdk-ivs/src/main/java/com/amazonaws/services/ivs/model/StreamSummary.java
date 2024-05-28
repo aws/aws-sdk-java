@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,7 +48,8 @@ public class StreamSummary implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date startTime;
     /**
      * <p>
-     * The stream’s state.
+     * The stream’s state. Do not rely on the <code>OFFLINE</code> state, as the API may not return it; instead, a
+     * "NotBroadcasting" error will indicate that the stream is not live.
      * </p>
      */
     private String state;
@@ -208,11 +209,13 @@ public class StreamSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The stream’s state.
+     * The stream’s state. Do not rely on the <code>OFFLINE</code> state, as the API may not return it; instead, a
+     * "NotBroadcasting" error will indicate that the stream is not live.
      * </p>
      * 
      * @param state
-     *        The stream’s state.
+     *        The stream’s state. Do not rely on the <code>OFFLINE</code> state, as the API may not return it; instead,
+     *        a "NotBroadcasting" error will indicate that the stream is not live.
      * @see StreamState
      */
 
@@ -222,10 +225,12 @@ public class StreamSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The stream’s state.
+     * The stream’s state. Do not rely on the <code>OFFLINE</code> state, as the API may not return it; instead, a
+     * "NotBroadcasting" error will indicate that the stream is not live.
      * </p>
      * 
-     * @return The stream’s state.
+     * @return The stream’s state. Do not rely on the <code>OFFLINE</code> state, as the API may not return it; instead,
+     *         a "NotBroadcasting" error will indicate that the stream is not live.
      * @see StreamState
      */
 
@@ -235,11 +240,13 @@ public class StreamSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The stream’s state.
+     * The stream’s state. Do not rely on the <code>OFFLINE</code> state, as the API may not return it; instead, a
+     * "NotBroadcasting" error will indicate that the stream is not live.
      * </p>
      * 
      * @param state
-     *        The stream’s state.
+     *        The stream’s state. Do not rely on the <code>OFFLINE</code> state, as the API may not return it; instead,
+     *        a "NotBroadcasting" error will indicate that the stream is not live.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StreamState
      */
@@ -251,11 +258,13 @@ public class StreamSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The stream’s state.
+     * The stream’s state. Do not rely on the <code>OFFLINE</code> state, as the API may not return it; instead, a
+     * "NotBroadcasting" error will indicate that the stream is not live.
      * </p>
      * 
      * @param state
-     *        The stream’s state.
+     *        The stream’s state. Do not rely on the <code>OFFLINE</code> state, as the API may not return it; instead,
+     *        a "NotBroadcasting" error will indicate that the stream is not live.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StreamState
      */

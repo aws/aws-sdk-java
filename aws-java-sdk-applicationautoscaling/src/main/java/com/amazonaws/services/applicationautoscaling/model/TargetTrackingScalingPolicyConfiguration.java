@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,6 +21,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Represents a target tracking scaling policy configuration to use with Application Auto Scaling.
  * </p>
+ * <p>
+ * For more information, see <a
+ * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html"
+ * >Target tracking scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.
+ * </p>
  * 
  * @see <a
  *      href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/TargetTrackingScalingPolicyConfiguration"
@@ -36,6 +41,12 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a
      * percent value that represents how much of the CPU can be used before scaling out.
      * </p>
+     * <note>
+     * <p>
+     * If the scaling policy specifies the <code>ALBRequestCountPerTarget</code> predefined metric, specify the target
+     * utilization as the optimal average request count per target during any one-minute interval.
+     * </p>
+     * </note>
      */
     private Double targetValue;
     /**
@@ -52,179 +63,20 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
     private CustomizedMetricSpecification customizedMetricSpecification;
     /**
      * <p>
-     * The amount of time, in seconds, to wait for a previous scale-out activity to take effect.
+     * The amount of time, in seconds, to wait for a previous scale-out activity to take effect. For more information
+     * and for default values, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown"
+     * >Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
-     * <p>
-     * With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale out.
-     * After Application Auto Scaling successfully scales out using a target tracking scaling policy, it starts to
-     * calculate the cooldown time. The scaling policy won't increase the desired capacity again unless either a larger
-     * scale out is triggered or the cooldown period ends. While the cooldown period is in effect, the capacity added by
-     * the initiating scale-out activity is calculated as part of the desired capacity for the next scale-out activity.
-     * </p>
-     * <p>
-     * Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups and a default
-     * value of 300 for the following scalable targets:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * AppStream 2.0 fleets
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Aurora DB clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ECS services
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EMR clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Neptune clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * SageMaker endpoint variants
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spot Fleets
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Custom resources
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For all other scalable targets, the default value is 0:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Amazon Comprehend document classification and entity recognizer endpoints
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * DynamoDB tables and global secondary indexes
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Amazon Keyspaces tables
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Lambda provisioned concurrency
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Amazon MSK broker storage
-     * </p>
-     * </li>
-     * </ul>
      */
     private Integer scaleOutCooldown;
     /**
      * <p>
      * The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start.
+     * For more information and for default values, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown"
+     * >Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
-     * <p>
-     * With the <i>scale-in cooldown period</i>, the intention is to scale in conservatively to protect your
-     * application’s availability, so scale-in activities are blocked until the cooldown period has expired. However, if
-     * another alarm triggers a scale-out activity during the scale-in cooldown period, Application Auto Scaling scales
-     * out the target immediately. In this case, the scale-in cooldown period stops and doesn't complete.
-     * </p>
-     * <p>
-     * Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups and a default
-     * value of 300 for the following scalable targets:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * AppStream 2.0 fleets
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Aurora DB clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ECS services
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EMR clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Neptune clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * SageMaker endpoint variants
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spot Fleets
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Custom resources
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For all other scalable targets, the default value is 0:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Amazon Comprehend document classification and entity recognizer endpoints
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * DynamoDB tables and global secondary indexes
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Amazon Keyspaces tables
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Lambda provisioned concurrency
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Amazon MSK broker storage
-     * </p>
-     * </li>
-     * </ul>
      */
     private Integer scaleInCooldown;
     /**
@@ -244,12 +96,23 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a
      * percent value that represents how much of the CPU can be used before scaling out.
      * </p>
+     * <note>
+     * <p>
+     * If the scaling policy specifies the <code>ALBRequestCountPerTarget</code> predefined metric, specify the target
+     * utilization as the optimal average request count per target during any one-minute interval.
+     * </p>
+     * </note>
      * 
      * @param targetValue
      *        The target value for the metric. Although this property accepts numbers of type Double, it won't accept
      *        values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value
      *        must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then
      *        the target value is a percent value that represents how much of the CPU can be used before scaling out.
+     *        </p> <note>
+     *        <p>
+     *        If the scaling policy specifies the <code>ALBRequestCountPerTarget</code> predefined metric, specify the
+     *        target utilization as the optimal average request count per target during any one-minute interval.
+     *        </p>
      */
 
     public void setTargetValue(Double targetValue) {
@@ -263,11 +126,22 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a
      * percent value that represents how much of the CPU can be used before scaling out.
      * </p>
+     * <note>
+     * <p>
+     * If the scaling policy specifies the <code>ALBRequestCountPerTarget</code> predefined metric, specify the target
+     * utilization as the optimal average request count per target during any one-minute interval.
+     * </p>
+     * </note>
      * 
      * @return The target value for the metric. Although this property accepts numbers of type Double, it won't accept
      *         values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value
      *         must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then
      *         the target value is a percent value that represents how much of the CPU can be used before scaling out.
+     *         </p> <note>
+     *         <p>
+     *         If the scaling policy specifies the <code>ALBRequestCountPerTarget</code> predefined metric, specify the
+     *         target utilization as the optimal average request count per target during any one-minute interval.
+     *         </p>
      */
 
     public Double getTargetValue() {
@@ -281,12 +155,23 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a
      * percent value that represents how much of the CPU can be used before scaling out.
      * </p>
+     * <note>
+     * <p>
+     * If the scaling policy specifies the <code>ALBRequestCountPerTarget</code> predefined metric, specify the target
+     * utilization as the optimal average request count per target during any one-minute interval.
+     * </p>
+     * </note>
      * 
      * @param targetValue
      *        The target value for the metric. Although this property accepts numbers of type Double, it won't accept
      *        values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value
      *        must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then
      *        the target value is a percent value that represents how much of the CPU can be used before scaling out.
+     *        </p> <note>
+     *        <p>
+     *        If the scaling policy specifies the <code>ALBRequestCountPerTarget</code> predefined metric, specify the
+     *        target utilization as the optimal average request count per target during any one-minute interval.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -377,177 +262,17 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
 
     /**
      * <p>
-     * The amount of time, in seconds, to wait for a previous scale-out activity to take effect.
+     * The amount of time, in seconds, to wait for a previous scale-out activity to take effect. For more information
+     * and for default values, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown"
+     * >Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
-     * <p>
-     * With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale out.
-     * After Application Auto Scaling successfully scales out using a target tracking scaling policy, it starts to
-     * calculate the cooldown time. The scaling policy won't increase the desired capacity again unless either a larger
-     * scale out is triggered or the cooldown period ends. While the cooldown period is in effect, the capacity added by
-     * the initiating scale-out activity is calculated as part of the desired capacity for the next scale-out activity.
-     * </p>
-     * <p>
-     * Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups and a default
-     * value of 300 for the following scalable targets:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * AppStream 2.0 fleets
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Aurora DB clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ECS services
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EMR clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Neptune clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * SageMaker endpoint variants
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spot Fleets
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Custom resources
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For all other scalable targets, the default value is 0:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Amazon Comprehend document classification and entity recognizer endpoints
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * DynamoDB tables and global secondary indexes
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Amazon Keyspaces tables
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Lambda provisioned concurrency
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Amazon MSK broker storage
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param scaleOutCooldown
-     *        The amount of time, in seconds, to wait for a previous scale-out activity to take effect.</p>
-     *        <p>
-     *        With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale
-     *        out. After Application Auto Scaling successfully scales out using a target tracking scaling policy, it
-     *        starts to calculate the cooldown time. The scaling policy won't increase the desired capacity again unless
-     *        either a larger scale out is triggered or the cooldown period ends. While the cooldown period is in
-     *        effect, the capacity added by the initiating scale-out activity is calculated as part of the desired
-     *        capacity for the next scale-out activity.
-     *        </p>
-     *        <p>
-     *        Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups and a
-     *        default value of 300 for the following scalable targets:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        AppStream 2.0 fleets
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Aurora DB clusters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        ECS services
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        EMR clusters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Neptune clusters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        SageMaker endpoint variants
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Spot Fleets
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Custom resources
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        For all other scalable targets, the default value is 0:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Amazon Comprehend document classification and entity recognizer endpoints
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        DynamoDB tables and global secondary indexes
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Amazon Keyspaces tables
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Lambda provisioned concurrency
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Amazon MSK broker storage
-     *        </p>
-     *        </li>
+     *        The amount of time, in seconds, to wait for a previous scale-out activity to take effect. For more
+     *        information and for default values, see <a href=
+     *        "https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown"
+     *        >Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.
      */
 
     public void setScaleOutCooldown(Integer scaleOutCooldown) {
@@ -556,176 +281,16 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
 
     /**
      * <p>
-     * The amount of time, in seconds, to wait for a previous scale-out activity to take effect.
+     * The amount of time, in seconds, to wait for a previous scale-out activity to take effect. For more information
+     * and for default values, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown"
+     * >Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
-     * <p>
-     * With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale out.
-     * After Application Auto Scaling successfully scales out using a target tracking scaling policy, it starts to
-     * calculate the cooldown time. The scaling policy won't increase the desired capacity again unless either a larger
-     * scale out is triggered or the cooldown period ends. While the cooldown period is in effect, the capacity added by
-     * the initiating scale-out activity is calculated as part of the desired capacity for the next scale-out activity.
-     * </p>
-     * <p>
-     * Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups and a default
-     * value of 300 for the following scalable targets:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * AppStream 2.0 fleets
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Aurora DB clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ECS services
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EMR clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Neptune clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * SageMaker endpoint variants
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spot Fleets
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Custom resources
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For all other scalable targets, the default value is 0:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Amazon Comprehend document classification and entity recognizer endpoints
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * DynamoDB tables and global secondary indexes
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Amazon Keyspaces tables
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Lambda provisioned concurrency
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Amazon MSK broker storage
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The amount of time, in seconds, to wait for a previous scale-out activity to take effect.</p>
-     *         <p>
-     *         With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale
-     *         out. After Application Auto Scaling successfully scales out using a target tracking scaling policy, it
-     *         starts to calculate the cooldown time. The scaling policy won't increase the desired capacity again
-     *         unless either a larger scale out is triggered or the cooldown period ends. While the cooldown period is
-     *         in effect, the capacity added by the initiating scale-out activity is calculated as part of the desired
-     *         capacity for the next scale-out activity.
-     *         </p>
-     *         <p>
-     *         Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups and a
-     *         default value of 300 for the following scalable targets:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         AppStream 2.0 fleets
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Aurora DB clusters
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         ECS services
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         EMR clusters
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Neptune clusters
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         SageMaker endpoint variants
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Spot Fleets
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Custom resources
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         For all other scalable targets, the default value is 0:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Amazon Comprehend document classification and entity recognizer endpoints
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         DynamoDB tables and global secondary indexes
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Amazon Keyspaces tables
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Lambda provisioned concurrency
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Amazon MSK broker storage
-     *         </p>
-     *         </li>
+     * @return The amount of time, in seconds, to wait for a previous scale-out activity to take effect. For more
+     *         information and for default values, see <a href=
+     *         "https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown"
+     *         >Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.
      */
 
     public Integer getScaleOutCooldown() {
@@ -734,177 +299,17 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
 
     /**
      * <p>
-     * The amount of time, in seconds, to wait for a previous scale-out activity to take effect.
+     * The amount of time, in seconds, to wait for a previous scale-out activity to take effect. For more information
+     * and for default values, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown"
+     * >Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
-     * <p>
-     * With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale out.
-     * After Application Auto Scaling successfully scales out using a target tracking scaling policy, it starts to
-     * calculate the cooldown time. The scaling policy won't increase the desired capacity again unless either a larger
-     * scale out is triggered or the cooldown period ends. While the cooldown period is in effect, the capacity added by
-     * the initiating scale-out activity is calculated as part of the desired capacity for the next scale-out activity.
-     * </p>
-     * <p>
-     * Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups and a default
-     * value of 300 for the following scalable targets:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * AppStream 2.0 fleets
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Aurora DB clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ECS services
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EMR clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Neptune clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * SageMaker endpoint variants
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spot Fleets
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Custom resources
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For all other scalable targets, the default value is 0:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Amazon Comprehend document classification and entity recognizer endpoints
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * DynamoDB tables and global secondary indexes
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Amazon Keyspaces tables
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Lambda provisioned concurrency
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Amazon MSK broker storage
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param scaleOutCooldown
-     *        The amount of time, in seconds, to wait for a previous scale-out activity to take effect.</p>
-     *        <p>
-     *        With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale
-     *        out. After Application Auto Scaling successfully scales out using a target tracking scaling policy, it
-     *        starts to calculate the cooldown time. The scaling policy won't increase the desired capacity again unless
-     *        either a larger scale out is triggered or the cooldown period ends. While the cooldown period is in
-     *        effect, the capacity added by the initiating scale-out activity is calculated as part of the desired
-     *        capacity for the next scale-out activity.
-     *        </p>
-     *        <p>
-     *        Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups and a
-     *        default value of 300 for the following scalable targets:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        AppStream 2.0 fleets
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Aurora DB clusters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        ECS services
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        EMR clusters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Neptune clusters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        SageMaker endpoint variants
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Spot Fleets
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Custom resources
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        For all other scalable targets, the default value is 0:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Amazon Comprehend document classification and entity recognizer endpoints
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        DynamoDB tables and global secondary indexes
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Amazon Keyspaces tables
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Lambda provisioned concurrency
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Amazon MSK broker storage
-     *        </p>
-     *        </li>
+     *        The amount of time, in seconds, to wait for a previous scale-out activity to take effect. For more
+     *        information and for default values, see <a href=
+     *        "https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown"
+     *        >Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -916,175 +321,16 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
     /**
      * <p>
      * The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start.
+     * For more information and for default values, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown"
+     * >Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
-     * <p>
-     * With the <i>scale-in cooldown period</i>, the intention is to scale in conservatively to protect your
-     * application’s availability, so scale-in activities are blocked until the cooldown period has expired. However, if
-     * another alarm triggers a scale-out activity during the scale-in cooldown period, Application Auto Scaling scales
-     * out the target immediately. In this case, the scale-in cooldown period stops and doesn't complete.
-     * </p>
-     * <p>
-     * Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups and a default
-     * value of 300 for the following scalable targets:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * AppStream 2.0 fleets
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Aurora DB clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ECS services
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EMR clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Neptune clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * SageMaker endpoint variants
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spot Fleets
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Custom resources
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For all other scalable targets, the default value is 0:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Amazon Comprehend document classification and entity recognizer endpoints
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * DynamoDB tables and global secondary indexes
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Amazon Keyspaces tables
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Lambda provisioned concurrency
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Amazon MSK broker storage
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param scaleInCooldown
      *        The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can
-     *        start.</p>
-     *        <p>
-     *        With the <i>scale-in cooldown period</i>, the intention is to scale in conservatively to protect your
-     *        application’s availability, so scale-in activities are blocked until the cooldown period has expired.
-     *        However, if another alarm triggers a scale-out activity during the scale-in cooldown period, Application
-     *        Auto Scaling scales out the target immediately. In this case, the scale-in cooldown period stops and
-     *        doesn't complete.
-     *        </p>
-     *        <p>
-     *        Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups and a
-     *        default value of 300 for the following scalable targets:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        AppStream 2.0 fleets
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Aurora DB clusters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        ECS services
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        EMR clusters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Neptune clusters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        SageMaker endpoint variants
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Spot Fleets
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Custom resources
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        For all other scalable targets, the default value is 0:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Amazon Comprehend document classification and entity recognizer endpoints
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        DynamoDB tables and global secondary indexes
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Amazon Keyspaces tables
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Lambda provisioned concurrency
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Amazon MSK broker storage
-     *        </p>
-     *        </li>
+     *        start. For more information and for default values, see <a href=
+     *        "https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown"
+     *        >Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.
      */
 
     public void setScaleInCooldown(Integer scaleInCooldown) {
@@ -1094,174 +340,15 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
     /**
      * <p>
      * The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start.
+     * For more information and for default values, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown"
+     * >Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
-     * <p>
-     * With the <i>scale-in cooldown period</i>, the intention is to scale in conservatively to protect your
-     * application’s availability, so scale-in activities are blocked until the cooldown period has expired. However, if
-     * another alarm triggers a scale-out activity during the scale-in cooldown period, Application Auto Scaling scales
-     * out the target immediately. In this case, the scale-in cooldown period stops and doesn't complete.
-     * </p>
-     * <p>
-     * Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups and a default
-     * value of 300 for the following scalable targets:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * AppStream 2.0 fleets
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Aurora DB clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ECS services
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EMR clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Neptune clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * SageMaker endpoint variants
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spot Fleets
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Custom resources
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For all other scalable targets, the default value is 0:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Amazon Comprehend document classification and entity recognizer endpoints
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * DynamoDB tables and global secondary indexes
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Amazon Keyspaces tables
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Lambda provisioned concurrency
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Amazon MSK broker storage
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @return The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can
-     *         start.</p>
-     *         <p>
-     *         With the <i>scale-in cooldown period</i>, the intention is to scale in conservatively to protect your
-     *         application’s availability, so scale-in activities are blocked until the cooldown period has expired.
-     *         However, if another alarm triggers a scale-out activity during the scale-in cooldown period, Application
-     *         Auto Scaling scales out the target immediately. In this case, the scale-in cooldown period stops and
-     *         doesn't complete.
-     *         </p>
-     *         <p>
-     *         Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups and a
-     *         default value of 300 for the following scalable targets:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         AppStream 2.0 fleets
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Aurora DB clusters
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         ECS services
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         EMR clusters
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Neptune clusters
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         SageMaker endpoint variants
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Spot Fleets
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Custom resources
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         For all other scalable targets, the default value is 0:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Amazon Comprehend document classification and entity recognizer endpoints
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         DynamoDB tables and global secondary indexes
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Amazon Keyspaces tables
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Lambda provisioned concurrency
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Amazon MSK broker storage
-     *         </p>
-     *         </li>
+     *         start. For more information and for default values, see <a href=
+     *         "https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown"
+     *         >Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.
      */
 
     public Integer getScaleInCooldown() {
@@ -1271,175 +358,16 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
     /**
      * <p>
      * The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can start.
+     * For more information and for default values, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown"
+     * >Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
-     * <p>
-     * With the <i>scale-in cooldown period</i>, the intention is to scale in conservatively to protect your
-     * application’s availability, so scale-in activities are blocked until the cooldown period has expired. However, if
-     * another alarm triggers a scale-out activity during the scale-in cooldown period, Application Auto Scaling scales
-     * out the target immediately. In this case, the scale-in cooldown period stops and doesn't complete.
-     * </p>
-     * <p>
-     * Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups and a default
-     * value of 300 for the following scalable targets:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * AppStream 2.0 fleets
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Aurora DB clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ECS services
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EMR clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Neptune clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * SageMaker endpoint variants
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spot Fleets
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Custom resources
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For all other scalable targets, the default value is 0:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Amazon Comprehend document classification and entity recognizer endpoints
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * DynamoDB tables and global secondary indexes
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Amazon Keyspaces tables
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Lambda provisioned concurrency
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Amazon MSK broker storage
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param scaleInCooldown
      *        The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can
-     *        start.</p>
-     *        <p>
-     *        With the <i>scale-in cooldown period</i>, the intention is to scale in conservatively to protect your
-     *        application’s availability, so scale-in activities are blocked until the cooldown period has expired.
-     *        However, if another alarm triggers a scale-out activity during the scale-in cooldown period, Application
-     *        Auto Scaling scales out the target immediately. In this case, the scale-in cooldown period stops and
-     *        doesn't complete.
-     *        </p>
-     *        <p>
-     *        Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups and a
-     *        default value of 300 for the following scalable targets:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        AppStream 2.0 fleets
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Aurora DB clusters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        ECS services
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        EMR clusters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Neptune clusters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        SageMaker endpoint variants
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Spot Fleets
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Custom resources
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        For all other scalable targets, the default value is 0:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Amazon Comprehend document classification and entity recognizer endpoints
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        DynamoDB tables and global secondary indexes
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Amazon Keyspaces tables
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Lambda provisioned concurrency
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Amazon MSK broker storage
-     *        </p>
-     *        </li>
+     *        start. For more information and for default values, see <a href=
+     *        "https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown"
+     *        >Define cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

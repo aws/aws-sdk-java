@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class AuthorizeDataShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the datashare that producers are to authorize sharing for.
+     * The Amazon Resource Name (ARN) of the datashare namespace that producers are to authorize sharing for.
      * </p>
      */
     private String dataShareArn;
@@ -38,14 +38,20 @@ public class AuthorizeDataShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String consumerIdentifier;
+    /**
+     * <p>
+     * If set to true, allows write operations for a datashare.
+     * </p>
+     */
+    private Boolean allowWrites;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the datashare that producers are to authorize sharing for.
+     * The Amazon Resource Name (ARN) of the datashare namespace that producers are to authorize sharing for.
      * </p>
      * 
      * @param dataShareArn
-     *        The Amazon Resource Name (ARN) of the datashare that producers are to authorize sharing for.
+     *        The Amazon Resource Name (ARN) of the datashare namespace that producers are to authorize sharing for.
      */
 
     public void setDataShareArn(String dataShareArn) {
@@ -54,10 +60,10 @@ public class AuthorizeDataShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the datashare that producers are to authorize sharing for.
+     * The Amazon Resource Name (ARN) of the datashare namespace that producers are to authorize sharing for.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the datashare that producers are to authorize sharing for.
+     * @return The Amazon Resource Name (ARN) of the datashare namespace that producers are to authorize sharing for.
      */
 
     public String getDataShareArn() {
@@ -66,11 +72,11 @@ public class AuthorizeDataShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the datashare that producers are to authorize sharing for.
+     * The Amazon Resource Name (ARN) of the datashare namespace that producers are to authorize sharing for.
      * </p>
      * 
      * @param dataShareArn
-     *        The Amazon Resource Name (ARN) of the datashare that producers are to authorize sharing for.
+     *        The Amazon Resource Name (ARN) of the datashare namespace that producers are to authorize sharing for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,6 +132,58 @@ public class AuthorizeDataShareRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * If set to true, allows write operations for a datashare.
+     * </p>
+     * 
+     * @param allowWrites
+     *        If set to true, allows write operations for a datashare.
+     */
+
+    public void setAllowWrites(Boolean allowWrites) {
+        this.allowWrites = allowWrites;
+    }
+
+    /**
+     * <p>
+     * If set to true, allows write operations for a datashare.
+     * </p>
+     * 
+     * @return If set to true, allows write operations for a datashare.
+     */
+
+    public Boolean getAllowWrites() {
+        return this.allowWrites;
+    }
+
+    /**
+     * <p>
+     * If set to true, allows write operations for a datashare.
+     * </p>
+     * 
+     * @param allowWrites
+     *        If set to true, allows write operations for a datashare.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AuthorizeDataShareRequest withAllowWrites(Boolean allowWrites) {
+        setAllowWrites(allowWrites);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If set to true, allows write operations for a datashare.
+     * </p>
+     * 
+     * @return If set to true, allows write operations for a datashare.
+     */
+
+    public Boolean isAllowWrites() {
+        return this.allowWrites;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -140,7 +198,9 @@ public class AuthorizeDataShareRequest extends com.amazonaws.AmazonWebServiceReq
         if (getDataShareArn() != null)
             sb.append("DataShareArn: ").append(getDataShareArn()).append(",");
         if (getConsumerIdentifier() != null)
-            sb.append("ConsumerIdentifier: ").append(getConsumerIdentifier());
+            sb.append("ConsumerIdentifier: ").append(getConsumerIdentifier()).append(",");
+        if (getAllowWrites() != null)
+            sb.append("AllowWrites: ").append(getAllowWrites());
         sb.append("}");
         return sb.toString();
     }
@@ -163,6 +223,10 @@ public class AuthorizeDataShareRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getConsumerIdentifier() != null && other.getConsumerIdentifier().equals(this.getConsumerIdentifier()) == false)
             return false;
+        if (other.getAllowWrites() == null ^ this.getAllowWrites() == null)
+            return false;
+        if (other.getAllowWrites() != null && other.getAllowWrites().equals(this.getAllowWrites()) == false)
+            return false;
         return true;
     }
 
@@ -173,6 +237,7 @@ public class AuthorizeDataShareRequest extends com.amazonaws.AmazonWebServiceReq
 
         hashCode = prime * hashCode + ((getDataShareArn() == null) ? 0 : getDataShareArn().hashCode());
         hashCode = prime * hashCode + ((getConsumerIdentifier() == null) ? 0 : getConsumerIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getAllowWrites() == null) ? 0 : getAllowWrites().hashCode());
         return hashCode;
     }
 

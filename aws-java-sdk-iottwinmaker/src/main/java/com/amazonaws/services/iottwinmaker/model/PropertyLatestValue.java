@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class PropertyLatestValue implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An object that specifies information about a property.&gt;
+     * An object that specifies information about a property.
      * </p>
      */
     private EntityPropertyReference propertyReference;
@@ -43,11 +43,11 @@ public class PropertyLatestValue implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An object that specifies information about a property.&gt;
+     * An object that specifies information about a property.
      * </p>
      * 
      * @param propertyReference
-     *        An object that specifies information about a property.&gt;
+     *        An object that specifies information about a property.
      */
 
     public void setPropertyReference(EntityPropertyReference propertyReference) {
@@ -56,10 +56,10 @@ public class PropertyLatestValue implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An object that specifies information about a property.&gt;
+     * An object that specifies information about a property.
      * </p>
      * 
-     * @return An object that specifies information about a property.&gt;
+     * @return An object that specifies information about a property.
      */
 
     public EntityPropertyReference getPropertyReference() {
@@ -68,11 +68,11 @@ public class PropertyLatestValue implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An object that specifies information about a property.&gt;
+     * An object that specifies information about a property.
      * </p>
      * 
      * @param propertyReference
-     *        An object that specifies information about a property.&gt;
+     *        An object that specifies information about a property.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

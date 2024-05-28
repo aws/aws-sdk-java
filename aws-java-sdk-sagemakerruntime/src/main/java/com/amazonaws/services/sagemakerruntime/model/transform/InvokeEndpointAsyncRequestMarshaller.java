@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,8 @@ public class InvokeEndpointAsyncRequestMarshaller {
             .marshallLocation(MarshallLocation.HEADER).marshallLocationName("X-Amzn-SageMaker-InputLocation").build();
     private static final MarshallingInfo<Integer> REQUESTTTLSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.HEADER).marshallLocationName("X-Amzn-SageMaker-RequestTTLSeconds").build();
+    private static final MarshallingInfo<Integer> INVOCATIONTIMEOUTSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("X-Amzn-SageMaker-InvocationTimeoutSeconds").build();
 
     private static final InvokeEndpointAsyncRequestMarshaller instance = new InvokeEndpointAsyncRequestMarshaller();
 
@@ -65,6 +67,7 @@ public class InvokeEndpointAsyncRequestMarshaller {
             protocolMarshaller.marshall(invokeEndpointAsyncRequest.getInferenceId(), INFERENCEID_BINDING);
             protocolMarshaller.marshall(invokeEndpointAsyncRequest.getInputLocation(), INPUTLOCATION_BINDING);
             protocolMarshaller.marshall(invokeEndpointAsyncRequest.getRequestTTLSeconds(), REQUESTTTLSECONDS_BINDING);
+            protocolMarshaller.marshall(invokeEndpointAsyncRequest.getInvocationTimeoutSeconds(), INVOCATIONTIMEOUTSECONDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

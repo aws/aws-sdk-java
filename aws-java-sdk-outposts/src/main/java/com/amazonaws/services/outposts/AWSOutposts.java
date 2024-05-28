@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,29 @@ public interface AWSOutposts {
      * @see RegionUtils#getRegionsForService(String)
      */
     String ENDPOINT_PREFIX = "outposts";
+
+    /**
+     * <p>
+     * Cancels the capacity task.
+     * </p>
+     * 
+     * @param cancelCapacityTaskRequest
+     * @return Result of the CancelCapacityTask operation returned by the service.
+     * @throws ValidationException
+     *         A parameter is not valid.
+     * @throws AccessDeniedException
+     *         You do not have permission to perform this operation.
+     * @throws NotFoundException
+     *         The specified request is not valid.
+     * @throws ConflictException
+     *         Updating or deleting this resource can cause an inconsistent state.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @sample AWSOutposts.CancelCapacityTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CancelCapacityTask" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CancelCapacityTaskResult cancelCapacityTask(CancelCapacityTaskRequest cancelCapacityTaskRequest);
 
     /**
      * <p>
@@ -192,6 +215,27 @@ public interface AWSOutposts {
 
     /**
      * <p>
+     * Gets details of the specified capacity task.
+     * </p>
+     * 
+     * @param getCapacityTaskRequest
+     * @return Result of the GetCapacityTask operation returned by the service.
+     * @throws ValidationException
+     *         A parameter is not valid.
+     * @throws AccessDeniedException
+     *         You do not have permission to perform this operation.
+     * @throws NotFoundException
+     *         The specified request is not valid.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @sample AWSOutposts.GetCapacityTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetCapacityTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetCapacityTaskResult getCapacityTask(GetCapacityTaskRequest getCapacityTaskRequest);
+
+    /**
+     * <p>
      * Gets information about the specified catalog item.
      * </p>
      * 
@@ -307,6 +351,29 @@ public interface AWSOutposts {
 
     /**
      * <p>
+     * Gets the instance types that an Outpost can support in <code>InstanceTypeCapacity</code>. This will generally
+     * include instance types that are not currently configured and therefore cannot be launched with the current
+     * Outpost capacity configuration.
+     * </p>
+     * 
+     * @param getOutpostSupportedInstanceTypesRequest
+     * @return Result of the GetOutpostSupportedInstanceTypes operation returned by the service.
+     * @throws ValidationException
+     *         A parameter is not valid.
+     * @throws AccessDeniedException
+     *         You do not have permission to perform this operation.
+     * @throws NotFoundException
+     *         The specified request is not valid.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @sample AWSOutposts.GetOutpostSupportedInstanceTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetOutpostSupportedInstanceTypes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetOutpostSupportedInstanceTypesResult getOutpostSupportedInstanceTypes(GetOutpostSupportedInstanceTypesRequest getOutpostSupportedInstanceTypesRequest);
+
+    /**
+     * <p>
      * Gets information about the specified Outpost site.
      * </p>
      * 
@@ -372,6 +439,32 @@ public interface AWSOutposts {
      *      Documentation</a>
      */
     ListAssetsResult listAssets(ListAssetsRequest listAssetsRequest);
+
+    /**
+     * <p>
+     * Lists the capacity tasks for your Amazon Web Services account.
+     * </p>
+     * <p>
+     * Use filters to return specific results. If you specify multiple filters, the results include only the resources
+     * that match all of the specified filters. For a filter where you can specify multiple values, the results include
+     * items that match any of the values that you specify for the filter.
+     * </p>
+     * 
+     * @param listCapacityTasksRequest
+     * @return Result of the ListCapacityTasks operation returned by the service.
+     * @throws ValidationException
+     *         A parameter is not valid.
+     * @throws AccessDeniedException
+     *         You do not have permission to perform this operation.
+     * @throws NotFoundException
+     *         The specified request is not valid.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @sample AWSOutposts.ListCapacityTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/ListCapacityTasks" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListCapacityTasksResult listCapacityTasks(ListCapacityTasksRequest listCapacityTasksRequest);
 
     /**
      * <p>
@@ -484,6 +577,29 @@ public interface AWSOutposts {
      *      API Documentation</a>
      */
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Starts the specified capacity task. You can have one active capacity task for an order.
+     * </p>
+     * 
+     * @param startCapacityTaskRequest
+     * @return Result of the StartCapacityTask operation returned by the service.
+     * @throws ValidationException
+     *         A parameter is not valid.
+     * @throws AccessDeniedException
+     *         You do not have permission to perform this operation.
+     * @throws NotFoundException
+     *         The specified request is not valid.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @throws ConflictException
+     *         Updating or deleting this resource can cause an inconsistent state.
+     * @sample AWSOutposts.StartCapacityTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/StartCapacityTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartCapacityTaskResult startCapacityTask(StartCapacityTaskRequest startCapacityTaskRequest);
 
     /**
      * <note>

@@ -122,7 +122,8 @@ final class AddMetadata {
                 .withEndpointPrefix(serviceMetadata.getEndpointPrefix())
                 .withSigningName(serviceMetadata.getSigningName())
                 .withRequiresApiKey(requiresApiKey(serviceModel))
-                .withUid(serviceMetadata.getUid());
+                .withUid(serviceMetadata.getUid())
+                .withAwsQueryCompatible(serviceMetadata.getAwsQueryCompatible());
 
         final String jsonVersion = getJsonVersion(metadata, serviceMetadata);
         metadata.setJsonVersion(jsonVersion);

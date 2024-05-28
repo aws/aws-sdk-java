@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,11 +32,17 @@ public class NetworkPathComponent implements Serializable, Cloneable, Structured
      * <p>
      * The identifier of a component in the network path.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 32.
+     * </p>
      */
     private String componentId;
     /**
      * <p>
      * The type of component.
+     * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 32.
      * </p>
      */
     private String componentType;
@@ -57,9 +63,14 @@ public class NetworkPathComponent implements Serializable, Cloneable, Structured
      * <p>
      * The identifier of a component in the network path.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 32.
+     * </p>
      * 
      * @param componentId
-     *        The identifier of a component in the network path.
+     *        The identifier of a component in the network path.</p>
+     *        <p>
+     *        Length Constraints: Minimum of 1. Maximum of 32.
      */
 
     public void setComponentId(String componentId) {
@@ -70,8 +81,13 @@ public class NetworkPathComponent implements Serializable, Cloneable, Structured
      * <p>
      * The identifier of a component in the network path.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 32.
+     * </p>
      * 
-     * @return The identifier of a component in the network path.
+     * @return The identifier of a component in the network path.</p>
+     *         <p>
+     *         Length Constraints: Minimum of 1. Maximum of 32.
      */
 
     public String getComponentId() {
@@ -82,9 +98,14 @@ public class NetworkPathComponent implements Serializable, Cloneable, Structured
      * <p>
      * The identifier of a component in the network path.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 32.
+     * </p>
      * 
      * @param componentId
-     *        The identifier of a component in the network path.
+     *        The identifier of a component in the network path.</p>
+     *        <p>
+     *        Length Constraints: Minimum of 1. Maximum of 32.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,9 +118,14 @@ public class NetworkPathComponent implements Serializable, Cloneable, Structured
      * <p>
      * The type of component.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 32.
+     * </p>
      * 
      * @param componentType
-     *        The type of component.
+     *        The type of component.</p>
+     *        <p>
+     *        Length Constraints: Minimum of 1. Maximum of 32.
      */
 
     public void setComponentType(String componentType) {
@@ -110,8 +136,13 @@ public class NetworkPathComponent implements Serializable, Cloneable, Structured
      * <p>
      * The type of component.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 32.
+     * </p>
      * 
-     * @return The type of component.
+     * @return The type of component.</p>
+     *         <p>
+     *         Length Constraints: Minimum of 1. Maximum of 32.
      */
 
     public String getComponentType() {
@@ -122,9 +153,14 @@ public class NetworkPathComponent implements Serializable, Cloneable, Structured
      * <p>
      * The type of component.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 32.
+     * </p>
      * 
      * @param componentType
-     *        The type of component.
+     *        The type of component.</p>
+     *        <p>
+     *        Length Constraints: Minimum of 1. Maximum of 32.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

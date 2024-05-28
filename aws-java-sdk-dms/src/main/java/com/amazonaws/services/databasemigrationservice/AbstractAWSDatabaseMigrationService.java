@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,7 +49,17 @@ public class AbstractAWSDatabaseMigrationService implements AWSDatabaseMigration
     }
 
     @Override
+    public BatchStartRecommendationsResult batchStartRecommendations(BatchStartRecommendationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CancelReplicationTaskAssessmentRunResult cancelReplicationTaskAssessmentRun(CancelReplicationTaskAssessmentRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateDataProviderResult createDataProvider(CreateDataProviderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -65,6 +75,21 @@ public class AbstractAWSDatabaseMigrationService implements AWSDatabaseMigration
 
     @Override
     public CreateFleetAdvisorCollectorResult createFleetAdvisorCollector(CreateFleetAdvisorCollectorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateInstanceProfileResult createInstanceProfile(CreateInstanceProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateMigrationProjectResult createMigrationProject(CreateMigrationProjectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateReplicationConfigResult createReplicationConfig(CreateReplicationConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -94,6 +119,11 @@ public class AbstractAWSDatabaseMigrationService implements AWSDatabaseMigration
     }
 
     @Override
+    public DeleteDataProviderResult deleteDataProvider(DeleteDataProviderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteEndpointResult deleteEndpoint(DeleteEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -110,6 +140,21 @@ public class AbstractAWSDatabaseMigrationService implements AWSDatabaseMigration
 
     @Override
     public DeleteFleetAdvisorDatabasesResult deleteFleetAdvisorDatabases(DeleteFleetAdvisorDatabasesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteInstanceProfileResult deleteInstanceProfile(DeleteInstanceProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteMigrationProjectResult deleteMigrationProject(DeleteMigrationProjectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteReplicationConfigResult deleteReplicationConfig(DeleteReplicationConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -154,6 +199,16 @@ public class AbstractAWSDatabaseMigrationService implements AWSDatabaseMigration
     }
 
     @Override
+    public DescribeConversionConfigurationResult describeConversionConfiguration(DescribeConversionConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeDataProvidersResult describeDataProviders(DescribeDataProvidersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeEndpointSettingsResult describeEndpointSettings(DescribeEndpointSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -169,6 +224,11 @@ public class AbstractAWSDatabaseMigrationService implements AWSDatabaseMigration
     }
 
     @Override
+    public DescribeEngineVersionsResult describeEngineVersions(DescribeEngineVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeEventCategoriesResult describeEventCategories(DescribeEventCategoriesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -180,6 +240,11 @@ public class AbstractAWSDatabaseMigrationService implements AWSDatabaseMigration
 
     @Override
     public DescribeEventsResult describeEvents(DescribeEventsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeExtensionPackAssociationsResult describeExtensionPackAssociations(DescribeExtensionPackAssociationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -209,6 +274,41 @@ public class AbstractAWSDatabaseMigrationService implements AWSDatabaseMigration
     }
 
     @Override
+    public DescribeInstanceProfilesResult describeInstanceProfiles(DescribeInstanceProfilesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeMetadataModelAssessmentsResult describeMetadataModelAssessments(DescribeMetadataModelAssessmentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeMetadataModelConversionsResult describeMetadataModelConversions(DescribeMetadataModelConversionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeMetadataModelExportsAsScriptResult describeMetadataModelExportsAsScript(DescribeMetadataModelExportsAsScriptRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeMetadataModelExportsToTargetResult describeMetadataModelExportsToTarget(DescribeMetadataModelExportsToTargetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeMetadataModelImportsResult describeMetadataModelImports(DescribeMetadataModelImportsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeMigrationProjectsResult describeMigrationProjects(DescribeMigrationProjectsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeOrderableReplicationInstancesResult describeOrderableReplicationInstances(DescribeOrderableReplicationInstancesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -219,7 +319,22 @@ public class AbstractAWSDatabaseMigrationService implements AWSDatabaseMigration
     }
 
     @Override
+    public DescribeRecommendationLimitationsResult describeRecommendationLimitations(DescribeRecommendationLimitationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeRecommendationsResult describeRecommendations(DescribeRecommendationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeRefreshSchemasStatusResult describeRefreshSchemasStatus(DescribeRefreshSchemasStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeReplicationConfigsResult describeReplicationConfigs(DescribeReplicationConfigsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -235,6 +350,11 @@ public class AbstractAWSDatabaseMigrationService implements AWSDatabaseMigration
 
     @Override
     public DescribeReplicationSubnetGroupsResult describeReplicationSubnetGroups(DescribeReplicationSubnetGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeReplicationTableStatisticsResult describeReplicationTableStatistics(DescribeReplicationTableStatisticsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -260,12 +380,22 @@ public class AbstractAWSDatabaseMigrationService implements AWSDatabaseMigration
     }
 
     @Override
+    public DescribeReplicationsResult describeReplications(DescribeReplicationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeSchemasResult describeSchemas(DescribeSchemasRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DescribeTableStatisticsResult describeTableStatistics(DescribeTableStatisticsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ExportMetadataModelAssessmentResult exportMetadataModelAssessment(ExportMetadataModelAssessmentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -280,12 +410,37 @@ public class AbstractAWSDatabaseMigrationService implements AWSDatabaseMigration
     }
 
     @Override
+    public ModifyConversionConfigurationResult modifyConversionConfiguration(ModifyConversionConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyDataProviderResult modifyDataProvider(ModifyDataProviderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ModifyEndpointResult modifyEndpoint(ModifyEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ModifyEventSubscriptionResult modifyEventSubscription(ModifyEventSubscriptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyInstanceProfileResult modifyInstanceProfile(ModifyInstanceProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyMigrationProjectResult modifyMigrationProject(ModifyMigrationProjectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyReplicationConfigResult modifyReplicationConfig(ModifyReplicationConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -320,6 +475,11 @@ public class AbstractAWSDatabaseMigrationService implements AWSDatabaseMigration
     }
 
     @Override
+    public ReloadReplicationTablesResult reloadReplicationTables(ReloadReplicationTablesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ReloadTablesResult reloadTables(ReloadTablesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -335,6 +495,46 @@ public class AbstractAWSDatabaseMigrationService implements AWSDatabaseMigration
     }
 
     @Override
+    public StartExtensionPackAssociationResult startExtensionPackAssociation(StartExtensionPackAssociationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartMetadataModelAssessmentResult startMetadataModelAssessment(StartMetadataModelAssessmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartMetadataModelConversionResult startMetadataModelConversion(StartMetadataModelConversionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartMetadataModelExportAsScriptResult startMetadataModelExportAsScript(StartMetadataModelExportAsScriptRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartMetadataModelExportToTargetResult startMetadataModelExportToTarget(StartMetadataModelExportToTargetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartMetadataModelImportResult startMetadataModelImport(StartMetadataModelImportRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartRecommendationsResult startRecommendations(StartRecommendationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartReplicationResult startReplication(StartReplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartReplicationTaskResult startReplicationTask(StartReplicationTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -346,6 +546,11 @@ public class AbstractAWSDatabaseMigrationService implements AWSDatabaseMigration
 
     @Override
     public StartReplicationTaskAssessmentRunResult startReplicationTaskAssessmentRun(StartReplicationTaskAssessmentRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopReplicationResult stopReplication(StopReplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

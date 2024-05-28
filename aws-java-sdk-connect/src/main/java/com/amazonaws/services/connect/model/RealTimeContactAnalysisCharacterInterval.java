@@ -1,0 +1,189 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.connect.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * Begin and end offsets for a part of text.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/RealTimeContactAnalysisCharacterInterval"
+ *      target="_top">AWS API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class RealTimeContactAnalysisCharacterInterval implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * The beginning of the character interval.
+     * </p>
+     */
+    private Integer beginOffsetChar;
+    /**
+     * <p>
+     * The end of the character interval.
+     * </p>
+     */
+    private Integer endOffsetChar;
+
+    /**
+     * <p>
+     * The beginning of the character interval.
+     * </p>
+     * 
+     * @param beginOffsetChar
+     *        The beginning of the character interval.
+     */
+
+    public void setBeginOffsetChar(Integer beginOffsetChar) {
+        this.beginOffsetChar = beginOffsetChar;
+    }
+
+    /**
+     * <p>
+     * The beginning of the character interval.
+     * </p>
+     * 
+     * @return The beginning of the character interval.
+     */
+
+    public Integer getBeginOffsetChar() {
+        return this.beginOffsetChar;
+    }
+
+    /**
+     * <p>
+     * The beginning of the character interval.
+     * </p>
+     * 
+     * @param beginOffsetChar
+     *        The beginning of the character interval.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RealTimeContactAnalysisCharacterInterval withBeginOffsetChar(Integer beginOffsetChar) {
+        setBeginOffsetChar(beginOffsetChar);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The end of the character interval.
+     * </p>
+     * 
+     * @param endOffsetChar
+     *        The end of the character interval.
+     */
+
+    public void setEndOffsetChar(Integer endOffsetChar) {
+        this.endOffsetChar = endOffsetChar;
+    }
+
+    /**
+     * <p>
+     * The end of the character interval.
+     * </p>
+     * 
+     * @return The end of the character interval.
+     */
+
+    public Integer getEndOffsetChar() {
+        return this.endOffsetChar;
+    }
+
+    /**
+     * <p>
+     * The end of the character interval.
+     * </p>
+     * 
+     * @param endOffsetChar
+     *        The end of the character interval.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RealTimeContactAnalysisCharacterInterval withEndOffsetChar(Integer endOffsetChar) {
+        setEndOffsetChar(endOffsetChar);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getBeginOffsetChar() != null)
+            sb.append("BeginOffsetChar: ").append(getBeginOffsetChar()).append(",");
+        if (getEndOffsetChar() != null)
+            sb.append("EndOffsetChar: ").append(getEndOffsetChar());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof RealTimeContactAnalysisCharacterInterval == false)
+            return false;
+        RealTimeContactAnalysisCharacterInterval other = (RealTimeContactAnalysisCharacterInterval) obj;
+        if (other.getBeginOffsetChar() == null ^ this.getBeginOffsetChar() == null)
+            return false;
+        if (other.getBeginOffsetChar() != null && other.getBeginOffsetChar().equals(this.getBeginOffsetChar()) == false)
+            return false;
+        if (other.getEndOffsetChar() == null ^ this.getEndOffsetChar() == null)
+            return false;
+        if (other.getEndOffsetChar() != null && other.getEndOffsetChar().equals(this.getEndOffsetChar()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getBeginOffsetChar() == null) ? 0 : getBeginOffsetChar().hashCode());
+        hashCode = prime * hashCode + ((getEndOffsetChar() == null) ? 0 : getEndOffsetChar().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public RealTimeContactAnalysisCharacterInterval clone() {
+        try {
+            return (RealTimeContactAnalysisCharacterInterval) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.connect.model.transform.RealTimeContactAnalysisCharacterIntervalMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

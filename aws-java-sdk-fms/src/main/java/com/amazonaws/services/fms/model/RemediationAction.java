@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -82,6 +82,30 @@ public class RemediationAction implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private FMSPolicyUpdateFirewallCreationConfigAction fMSPolicyUpdateFirewallCreationConfigAction;
+    /**
+     * <p>
+     * Information about the <code>CreateNetworkAcl</code> action in Amazon EC2.
+     * </p>
+     */
+    private CreateNetworkAclAction createNetworkAclAction;
+    /**
+     * <p>
+     * Information about the <code>ReplaceNetworkAclAssociation</code> action in Amazon EC2.
+     * </p>
+     */
+    private ReplaceNetworkAclAssociationAction replaceNetworkAclAssociationAction;
+    /**
+     * <p>
+     * Information about the <code>CreateNetworkAclEntries</code> action in Amazon EC2.
+     * </p>
+     */
+    private CreateNetworkAclEntriesAction createNetworkAclEntriesAction;
+    /**
+     * <p>
+     * Information about the <code>DeleteNetworkAclEntries</code> action in Amazon EC2.
+     * </p>
+     */
+    private DeleteNetworkAclEntriesAction deleteNetworkAclEntriesAction;
 
     /**
      * <p>
@@ -445,6 +469,166 @@ public class RemediationAction implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * Information about the <code>CreateNetworkAcl</code> action in Amazon EC2.
+     * </p>
+     * 
+     * @param createNetworkAclAction
+     *        Information about the <code>CreateNetworkAcl</code> action in Amazon EC2.
+     */
+
+    public void setCreateNetworkAclAction(CreateNetworkAclAction createNetworkAclAction) {
+        this.createNetworkAclAction = createNetworkAclAction;
+    }
+
+    /**
+     * <p>
+     * Information about the <code>CreateNetworkAcl</code> action in Amazon EC2.
+     * </p>
+     * 
+     * @return Information about the <code>CreateNetworkAcl</code> action in Amazon EC2.
+     */
+
+    public CreateNetworkAclAction getCreateNetworkAclAction() {
+        return this.createNetworkAclAction;
+    }
+
+    /**
+     * <p>
+     * Information about the <code>CreateNetworkAcl</code> action in Amazon EC2.
+     * </p>
+     * 
+     * @param createNetworkAclAction
+     *        Information about the <code>CreateNetworkAcl</code> action in Amazon EC2.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RemediationAction withCreateNetworkAclAction(CreateNetworkAclAction createNetworkAclAction) {
+        setCreateNetworkAclAction(createNetworkAclAction);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the <code>ReplaceNetworkAclAssociation</code> action in Amazon EC2.
+     * </p>
+     * 
+     * @param replaceNetworkAclAssociationAction
+     *        Information about the <code>ReplaceNetworkAclAssociation</code> action in Amazon EC2.
+     */
+
+    public void setReplaceNetworkAclAssociationAction(ReplaceNetworkAclAssociationAction replaceNetworkAclAssociationAction) {
+        this.replaceNetworkAclAssociationAction = replaceNetworkAclAssociationAction;
+    }
+
+    /**
+     * <p>
+     * Information about the <code>ReplaceNetworkAclAssociation</code> action in Amazon EC2.
+     * </p>
+     * 
+     * @return Information about the <code>ReplaceNetworkAclAssociation</code> action in Amazon EC2.
+     */
+
+    public ReplaceNetworkAclAssociationAction getReplaceNetworkAclAssociationAction() {
+        return this.replaceNetworkAclAssociationAction;
+    }
+
+    /**
+     * <p>
+     * Information about the <code>ReplaceNetworkAclAssociation</code> action in Amazon EC2.
+     * </p>
+     * 
+     * @param replaceNetworkAclAssociationAction
+     *        Information about the <code>ReplaceNetworkAclAssociation</code> action in Amazon EC2.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RemediationAction withReplaceNetworkAclAssociationAction(ReplaceNetworkAclAssociationAction replaceNetworkAclAssociationAction) {
+        setReplaceNetworkAclAssociationAction(replaceNetworkAclAssociationAction);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the <code>CreateNetworkAclEntries</code> action in Amazon EC2.
+     * </p>
+     * 
+     * @param createNetworkAclEntriesAction
+     *        Information about the <code>CreateNetworkAclEntries</code> action in Amazon EC2.
+     */
+
+    public void setCreateNetworkAclEntriesAction(CreateNetworkAclEntriesAction createNetworkAclEntriesAction) {
+        this.createNetworkAclEntriesAction = createNetworkAclEntriesAction;
+    }
+
+    /**
+     * <p>
+     * Information about the <code>CreateNetworkAclEntries</code> action in Amazon EC2.
+     * </p>
+     * 
+     * @return Information about the <code>CreateNetworkAclEntries</code> action in Amazon EC2.
+     */
+
+    public CreateNetworkAclEntriesAction getCreateNetworkAclEntriesAction() {
+        return this.createNetworkAclEntriesAction;
+    }
+
+    /**
+     * <p>
+     * Information about the <code>CreateNetworkAclEntries</code> action in Amazon EC2.
+     * </p>
+     * 
+     * @param createNetworkAclEntriesAction
+     *        Information about the <code>CreateNetworkAclEntries</code> action in Amazon EC2.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RemediationAction withCreateNetworkAclEntriesAction(CreateNetworkAclEntriesAction createNetworkAclEntriesAction) {
+        setCreateNetworkAclEntriesAction(createNetworkAclEntriesAction);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the <code>DeleteNetworkAclEntries</code> action in Amazon EC2.
+     * </p>
+     * 
+     * @param deleteNetworkAclEntriesAction
+     *        Information about the <code>DeleteNetworkAclEntries</code> action in Amazon EC2.
+     */
+
+    public void setDeleteNetworkAclEntriesAction(DeleteNetworkAclEntriesAction deleteNetworkAclEntriesAction) {
+        this.deleteNetworkAclEntriesAction = deleteNetworkAclEntriesAction;
+    }
+
+    /**
+     * <p>
+     * Information about the <code>DeleteNetworkAclEntries</code> action in Amazon EC2.
+     * </p>
+     * 
+     * @return Information about the <code>DeleteNetworkAclEntries</code> action in Amazon EC2.
+     */
+
+    public DeleteNetworkAclEntriesAction getDeleteNetworkAclEntriesAction() {
+        return this.deleteNetworkAclEntriesAction;
+    }
+
+    /**
+     * <p>
+     * Information about the <code>DeleteNetworkAclEntries</code> action in Amazon EC2.
+     * </p>
+     * 
+     * @param deleteNetworkAclEntriesAction
+     *        Information about the <code>DeleteNetworkAclEntries</code> action in Amazon EC2.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RemediationAction withDeleteNetworkAclEntriesAction(DeleteNetworkAclEntriesAction deleteNetworkAclEntriesAction) {
+        setDeleteNetworkAclEntriesAction(deleteNetworkAclEntriesAction);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -473,7 +657,15 @@ public class RemediationAction implements Serializable, Cloneable, StructuredPoj
         if (getEC2CreateRouteTableAction() != null)
             sb.append("EC2CreateRouteTableAction: ").append(getEC2CreateRouteTableAction()).append(",");
         if (getFMSPolicyUpdateFirewallCreationConfigAction() != null)
-            sb.append("FMSPolicyUpdateFirewallCreationConfigAction: ").append(getFMSPolicyUpdateFirewallCreationConfigAction());
+            sb.append("FMSPolicyUpdateFirewallCreationConfigAction: ").append(getFMSPolicyUpdateFirewallCreationConfigAction()).append(",");
+        if (getCreateNetworkAclAction() != null)
+            sb.append("CreateNetworkAclAction: ").append(getCreateNetworkAclAction()).append(",");
+        if (getReplaceNetworkAclAssociationAction() != null)
+            sb.append("ReplaceNetworkAclAssociationAction: ").append(getReplaceNetworkAclAssociationAction()).append(",");
+        if (getCreateNetworkAclEntriesAction() != null)
+            sb.append("CreateNetworkAclEntriesAction: ").append(getCreateNetworkAclEntriesAction()).append(",");
+        if (getDeleteNetworkAclEntriesAction() != null)
+            sb.append("DeleteNetworkAclEntriesAction: ").append(getDeleteNetworkAclEntriesAction());
         sb.append("}");
         return sb.toString();
     }
@@ -526,6 +718,25 @@ public class RemediationAction implements Serializable, Cloneable, StructuredPoj
         if (other.getFMSPolicyUpdateFirewallCreationConfigAction() != null
                 && other.getFMSPolicyUpdateFirewallCreationConfigAction().equals(this.getFMSPolicyUpdateFirewallCreationConfigAction()) == false)
             return false;
+        if (other.getCreateNetworkAclAction() == null ^ this.getCreateNetworkAclAction() == null)
+            return false;
+        if (other.getCreateNetworkAclAction() != null && other.getCreateNetworkAclAction().equals(this.getCreateNetworkAclAction()) == false)
+            return false;
+        if (other.getReplaceNetworkAclAssociationAction() == null ^ this.getReplaceNetworkAclAssociationAction() == null)
+            return false;
+        if (other.getReplaceNetworkAclAssociationAction() != null
+                && other.getReplaceNetworkAclAssociationAction().equals(this.getReplaceNetworkAclAssociationAction()) == false)
+            return false;
+        if (other.getCreateNetworkAclEntriesAction() == null ^ this.getCreateNetworkAclEntriesAction() == null)
+            return false;
+        if (other.getCreateNetworkAclEntriesAction() != null
+                && other.getCreateNetworkAclEntriesAction().equals(this.getCreateNetworkAclEntriesAction()) == false)
+            return false;
+        if (other.getDeleteNetworkAclEntriesAction() == null ^ this.getDeleteNetworkAclEntriesAction() == null)
+            return false;
+        if (other.getDeleteNetworkAclEntriesAction() != null
+                && other.getDeleteNetworkAclEntriesAction().equals(this.getDeleteNetworkAclEntriesAction()) == false)
+            return false;
         return true;
     }
 
@@ -544,6 +755,10 @@ public class RemediationAction implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getEC2CreateRouteTableAction() == null) ? 0 : getEC2CreateRouteTableAction().hashCode());
         hashCode = prime * hashCode
                 + ((getFMSPolicyUpdateFirewallCreationConfigAction() == null) ? 0 : getFMSPolicyUpdateFirewallCreationConfigAction().hashCode());
+        hashCode = prime * hashCode + ((getCreateNetworkAclAction() == null) ? 0 : getCreateNetworkAclAction().hashCode());
+        hashCode = prime * hashCode + ((getReplaceNetworkAclAssociationAction() == null) ? 0 : getReplaceNetworkAclAssociationAction().hashCode());
+        hashCode = prime * hashCode + ((getCreateNetworkAclEntriesAction() == null) ? 0 : getCreateNetworkAclEntriesAction().hashCode());
+        hashCode = prime * hashCode + ((getDeleteNetworkAclEntriesAction() == null) ? 0 : getDeleteNetworkAclEntriesAction().hashCode());
         return hashCode;
     }
 

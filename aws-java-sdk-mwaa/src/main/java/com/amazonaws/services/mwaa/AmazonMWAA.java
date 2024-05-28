@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ import com.amazonaws.services.mwaa.model.*;
  * <fullname>Amazon Managed Workflows for Apache Airflow</fullname>
  * <p>
  * This section contains the Amazon Managed Workflows for Apache Airflow (MWAA) API reference documentation. For more
- * information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html">What Is Amazon
+ * information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html">What is Amazon
  * MWAA?</a>.
  * </p>
  * <p>
@@ -100,29 +100,14 @@ import com.amazonaws.services.mwaa.model.*;
  * </p>
  * </li>
  * </ul>
- * <br />
- * </li>
- * <li>
- * <p>
- * <code>ops.airflow.{region}.amazonaws.com</code> - This endpoint is used to push environment metrics that track
- * environment health.
- * </p>
- * <ul>
- * <li>
- * <p>
- * <a href="https://docs.aws.amazon.com/mwaa/latest/API/API_PublishMetrics.html ">PublishMetrics</a>
- * </p>
- * </li>
- * </ul>
  * </li>
  * </ul>
  * <p>
  * <b>Regions</b>
  * </p>
  * <p>
- * For a list of regions that Amazon MWAA supports, see <a
- * href="https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html#regions-mwaa">Region availability</a> in
- * the <i>Amazon MWAA User Guide</i>.
+ * For a list of supported regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/mwaa.html">Amazon MWAA
+ * endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
  * </p>
  * </p>
  */
@@ -290,6 +275,7 @@ public interface AmazonMWAA {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/PublishMetrics" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     PublishMetricsResult publishMetrics(PublishMetricsRequest publishMetricsRequest);
 
     /**

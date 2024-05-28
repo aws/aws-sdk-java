@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,14 @@ public class MediaConcurrency implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private Integer concurrency;
+    /**
+     * <p>
+     * Defines the cross-channel routing behavior for each channel that is enabled for this Routing Profile. For
+     * example, this allows you to offer an agent a different contact from another channel when they are currently
+     * working with a contact from a Voice channel.
+     * </p>
+     */
+    private CrossChannelBehavior crossChannelBehavior;
 
     /**
      * <p>
@@ -202,6 +210,58 @@ public class MediaConcurrency implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Defines the cross-channel routing behavior for each channel that is enabled for this Routing Profile. For
+     * example, this allows you to offer an agent a different contact from another channel when they are currently
+     * working with a contact from a Voice channel.
+     * </p>
+     * 
+     * @param crossChannelBehavior
+     *        Defines the cross-channel routing behavior for each channel that is enabled for this Routing Profile. For
+     *        example, this allows you to offer an agent a different contact from another channel when they are
+     *        currently working with a contact from a Voice channel.
+     */
+
+    public void setCrossChannelBehavior(CrossChannelBehavior crossChannelBehavior) {
+        this.crossChannelBehavior = crossChannelBehavior;
+    }
+
+    /**
+     * <p>
+     * Defines the cross-channel routing behavior for each channel that is enabled for this Routing Profile. For
+     * example, this allows you to offer an agent a different contact from another channel when they are currently
+     * working with a contact from a Voice channel.
+     * </p>
+     * 
+     * @return Defines the cross-channel routing behavior for each channel that is enabled for this Routing Profile. For
+     *         example, this allows you to offer an agent a different contact from another channel when they are
+     *         currently working with a contact from a Voice channel.
+     */
+
+    public CrossChannelBehavior getCrossChannelBehavior() {
+        return this.crossChannelBehavior;
+    }
+
+    /**
+     * <p>
+     * Defines the cross-channel routing behavior for each channel that is enabled for this Routing Profile. For
+     * example, this allows you to offer an agent a different contact from another channel when they are currently
+     * working with a contact from a Voice channel.
+     * </p>
+     * 
+     * @param crossChannelBehavior
+     *        Defines the cross-channel routing behavior for each channel that is enabled for this Routing Profile. For
+     *        example, this allows you to offer an agent a different contact from another channel when they are
+     *        currently working with a contact from a Voice channel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MediaConcurrency withCrossChannelBehavior(CrossChannelBehavior crossChannelBehavior) {
+        setCrossChannelBehavior(crossChannelBehavior);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -216,7 +276,9 @@ public class MediaConcurrency implements Serializable, Cloneable, StructuredPojo
         if (getChannel() != null)
             sb.append("Channel: ").append(getChannel()).append(",");
         if (getConcurrency() != null)
-            sb.append("Concurrency: ").append(getConcurrency());
+            sb.append("Concurrency: ").append(getConcurrency()).append(",");
+        if (getCrossChannelBehavior() != null)
+            sb.append("CrossChannelBehavior: ").append(getCrossChannelBehavior());
         sb.append("}");
         return sb.toString();
     }
@@ -239,6 +301,10 @@ public class MediaConcurrency implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getConcurrency() != null && other.getConcurrency().equals(this.getConcurrency()) == false)
             return false;
+        if (other.getCrossChannelBehavior() == null ^ this.getCrossChannelBehavior() == null)
+            return false;
+        if (other.getCrossChannelBehavior() != null && other.getCrossChannelBehavior().equals(this.getCrossChannelBehavior()) == false)
+            return false;
         return true;
     }
 
@@ -249,6 +315,7 @@ public class MediaConcurrency implements Serializable, Cloneable, StructuredPojo
 
         hashCode = prime * hashCode + ((getChannel() == null) ? 0 : getChannel().hashCode());
         hashCode = prime * hashCode + ((getConcurrency() == null) ? 0 : getConcurrency().hashCode());
+        hashCode = prime * hashCode + ((getCrossChannelBehavior() == null) ? 0 : getCrossChannelBehavior().hashCode());
         return hashCode;
     }
 

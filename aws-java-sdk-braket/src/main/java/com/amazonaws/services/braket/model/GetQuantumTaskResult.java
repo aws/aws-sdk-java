@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,6 +23,12 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetQuantumTaskResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The list of Amazon Braket resources associated with the quantum task.
+     * </p>
+     */
+    private java.util.List<Association> associations;
     /**
      * <p>
      * The time at which the task was created.
@@ -79,6 +85,13 @@ public class GetQuantumTaskResult extends com.amazonaws.AmazonWebServiceResult<c
     private String quantumTaskArn;
     /**
      * <p>
+     * Queue information for the requested quantum task. Only returned if <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code> API request.
+     * </p>
+     */
+    private QuantumTaskQueueInfo queueInfo;
+    /**
+     * <p>
      * The number of shots used in the task.
      * </p>
      */
@@ -95,6 +108,76 @@ public class GetQuantumTaskResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private java.util.Map<String, String> tags;
+
+    /**
+     * <p>
+     * The list of Amazon Braket resources associated with the quantum task.
+     * </p>
+     * 
+     * @return The list of Amazon Braket resources associated with the quantum task.
+     */
+
+    public java.util.List<Association> getAssociations() {
+        return associations;
+    }
+
+    /**
+     * <p>
+     * The list of Amazon Braket resources associated with the quantum task.
+     * </p>
+     * 
+     * @param associations
+     *        The list of Amazon Braket resources associated with the quantum task.
+     */
+
+    public void setAssociations(java.util.Collection<Association> associations) {
+        if (associations == null) {
+            this.associations = null;
+            return;
+        }
+
+        this.associations = new java.util.ArrayList<Association>(associations);
+    }
+
+    /**
+     * <p>
+     * The list of Amazon Braket resources associated with the quantum task.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAssociations(java.util.Collection)} or {@link #withAssociations(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param associations
+     *        The list of Amazon Braket resources associated with the quantum task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetQuantumTaskResult withAssociations(Association... associations) {
+        if (this.associations == null) {
+            setAssociations(new java.util.ArrayList<Association>(associations.length));
+        }
+        for (Association ele : associations) {
+            this.associations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of Amazon Braket resources associated with the quantum task.
+     * </p>
+     * 
+     * @param associations
+     *        The list of Amazon Braket resources associated with the quantum task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetQuantumTaskResult withAssociations(java.util.Collection<Association> associations) {
+        setAssociations(associations);
+        return this;
+    }
 
     /**
      * <p>
@@ -478,6 +561,52 @@ public class GetQuantumTaskResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
+     * Queue information for the requested quantum task. Only returned if <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code> API request.
+     * </p>
+     * 
+     * @param queueInfo
+     *        Queue information for the requested quantum task. Only returned if <code>QueueInfo</code> is specified in
+     *        the <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code> API request.
+     */
+
+    public void setQueueInfo(QuantumTaskQueueInfo queueInfo) {
+        this.queueInfo = queueInfo;
+    }
+
+    /**
+     * <p>
+     * Queue information for the requested quantum task. Only returned if <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code> API request.
+     * </p>
+     * 
+     * @return Queue information for the requested quantum task. Only returned if <code>QueueInfo</code> is specified in
+     *         the <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code> API request.
+     */
+
+    public QuantumTaskQueueInfo getQueueInfo() {
+        return this.queueInfo;
+    }
+
+    /**
+     * <p>
+     * Queue information for the requested quantum task. Only returned if <code>QueueInfo</code> is specified in the
+     * <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code> API request.
+     * </p>
+     * 
+     * @param queueInfo
+     *        Queue information for the requested quantum task. Only returned if <code>QueueInfo</code> is specified in
+     *        the <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code> API request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetQuantumTaskResult withQueueInfo(QuantumTaskQueueInfo queueInfo) {
+        setQueueInfo(queueInfo);
+        return this;
+    }
+
+    /**
+     * <p>
      * The number of shots used in the task.
      * </p>
      * 
@@ -655,6 +784,8 @@ public class GetQuantumTaskResult extends com.amazonaws.AmazonWebServiceResult<c
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAssociations() != null)
+            sb.append("Associations: ").append(getAssociations()).append(",");
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getDeviceArn() != null)
@@ -673,6 +804,8 @@ public class GetQuantumTaskResult extends com.amazonaws.AmazonWebServiceResult<c
             sb.append("OutputS3Directory: ").append(getOutputS3Directory()).append(",");
         if (getQuantumTaskArn() != null)
             sb.append("QuantumTaskArn: ").append(getQuantumTaskArn()).append(",");
+        if (getQueueInfo() != null)
+            sb.append("QueueInfo: ").append(getQueueInfo()).append(",");
         if (getShots() != null)
             sb.append("Shots: ").append(getShots()).append(",");
         if (getStatus() != null)
@@ -693,6 +826,10 @@ public class GetQuantumTaskResult extends com.amazonaws.AmazonWebServiceResult<c
         if (obj instanceof GetQuantumTaskResult == false)
             return false;
         GetQuantumTaskResult other = (GetQuantumTaskResult) obj;
+        if (other.getAssociations() == null ^ this.getAssociations() == null)
+            return false;
+        if (other.getAssociations() != null && other.getAssociations().equals(this.getAssociations()) == false)
+            return false;
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
@@ -729,6 +866,10 @@ public class GetQuantumTaskResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getQuantumTaskArn() != null && other.getQuantumTaskArn().equals(this.getQuantumTaskArn()) == false)
             return false;
+        if (other.getQueueInfo() == null ^ this.getQueueInfo() == null)
+            return false;
+        if (other.getQueueInfo() != null && other.getQueueInfo().equals(this.getQueueInfo()) == false)
+            return false;
         if (other.getShots() == null ^ this.getShots() == null)
             return false;
         if (other.getShots() != null && other.getShots().equals(this.getShots()) == false)
@@ -749,6 +890,7 @@ public class GetQuantumTaskResult extends com.amazonaws.AmazonWebServiceResult<c
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAssociations() == null) ? 0 : getAssociations().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getDeviceArn() == null) ? 0 : getDeviceArn().hashCode());
         hashCode = prime * hashCode + ((getDeviceParameters() == null) ? 0 : getDeviceParameters().hashCode());
@@ -758,6 +900,7 @@ public class GetQuantumTaskResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getOutputS3Bucket() == null) ? 0 : getOutputS3Bucket().hashCode());
         hashCode = prime * hashCode + ((getOutputS3Directory() == null) ? 0 : getOutputS3Directory().hashCode());
         hashCode = prime * hashCode + ((getQuantumTaskArn() == null) ? 0 : getQuantumTaskArn().hashCode());
+        hashCode = prime * hashCode + ((getQueueInfo() == null) ? 0 : getQueueInfo().hashCode());
         hashCode = prime * hashCode + ((getShots() == null) ? 0 : getShots().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

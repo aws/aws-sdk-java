@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,8 +42,9 @@ public class Insight implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * One or more attributes used to filter the findings included in the insight. The insight only includes findings
-     * that match the criteria defined in the filters.
+     * One or more attributes used to filter the findings included in the insight. You can filter by up to ten finding
+     * attributes. For each attribute, you can provide up to 20 filter values. The insight only includes findings that
+     * match the criteria defined in the filters.
      * </p>
      */
     private AwsSecurityFindingFilters filters;
@@ -138,12 +139,14 @@ public class Insight implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more attributes used to filter the findings included in the insight. The insight only includes findings
-     * that match the criteria defined in the filters.
+     * One or more attributes used to filter the findings included in the insight. You can filter by up to ten finding
+     * attributes. For each attribute, you can provide up to 20 filter values. The insight only includes findings that
+     * match the criteria defined in the filters.
      * </p>
      * 
      * @param filters
-     *        One or more attributes used to filter the findings included in the insight. The insight only includes
+     *        One or more attributes used to filter the findings included in the insight. You can filter by up to ten
+     *        finding attributes. For each attribute, you can provide up to 20 filter values. The insight only includes
      *        findings that match the criteria defined in the filters.
      */
 
@@ -153,11 +156,13 @@ public class Insight implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more attributes used to filter the findings included in the insight. The insight only includes findings
-     * that match the criteria defined in the filters.
+     * One or more attributes used to filter the findings included in the insight. You can filter by up to ten finding
+     * attributes. For each attribute, you can provide up to 20 filter values. The insight only includes findings that
+     * match the criteria defined in the filters.
      * </p>
      * 
-     * @return One or more attributes used to filter the findings included in the insight. The insight only includes
+     * @return One or more attributes used to filter the findings included in the insight. You can filter by up to ten
+     *         finding attributes. For each attribute, you can provide up to 20 filter values. The insight only includes
      *         findings that match the criteria defined in the filters.
      */
 
@@ -167,12 +172,14 @@ public class Insight implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * One or more attributes used to filter the findings included in the insight. The insight only includes findings
-     * that match the criteria defined in the filters.
+     * One or more attributes used to filter the findings included in the insight. You can filter by up to ten finding
+     * attributes. For each attribute, you can provide up to 20 filter values. The insight only includes findings that
+     * match the criteria defined in the filters.
      * </p>
      * 
      * @param filters
-     *        One or more attributes used to filter the findings included in the insight. The insight only includes
+     *        One or more attributes used to filter the findings included in the insight. You can filter by up to ten
+     *        finding attributes. For each attribute, you can provide up to 20 filter values. The insight only includes
      *        findings that match the criteria defined in the filters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ControlOperationMarshaller {
 
+    private static final MarshallingInfo<String> CONTROLIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("controlIdentifier").build();
+    private static final MarshallingInfo<String> ENABLEDCONTROLIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enabledControlIdentifier").build();
     private static final MarshallingInfo<java.util.Date> ENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endTime").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<String> OPERATIONIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("operationIdentifier").build();
     private static final MarshallingInfo<String> OPERATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("operationType").build();
     private static final MarshallingInfo<java.util.Date> STARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -37,6 +43,8 @@ public class ControlOperationMarshaller {
             .marshallLocationName("status").build();
     private static final MarshallingInfo<String> STATUSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusMessage").build();
+    private static final MarshallingInfo<String> TARGETIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("targetIdentifier").build();
 
     private static final ControlOperationMarshaller instance = new ControlOperationMarshaller();
 
@@ -54,11 +62,15 @@ public class ControlOperationMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(controlOperation.getControlIdentifier(), CONTROLIDENTIFIER_BINDING);
+            protocolMarshaller.marshall(controlOperation.getEnabledControlIdentifier(), ENABLEDCONTROLIDENTIFIER_BINDING);
             protocolMarshaller.marshall(controlOperation.getEndTime(), ENDTIME_BINDING);
+            protocolMarshaller.marshall(controlOperation.getOperationIdentifier(), OPERATIONIDENTIFIER_BINDING);
             protocolMarshaller.marshall(controlOperation.getOperationType(), OPERATIONTYPE_BINDING);
             protocolMarshaller.marshall(controlOperation.getStartTime(), STARTTIME_BINDING);
             protocolMarshaller.marshall(controlOperation.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(controlOperation.getStatusMessage(), STATUSMESSAGE_BINDING);
+            protocolMarshaller.marshall(controlOperation.getTargetIdentifier(), TARGETIDENTIFIER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

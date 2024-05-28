@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.elasticmapreduce.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,8 @@ public class ClusterStatusMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StateChangeReason").build();
     private static final MarshallingInfo<StructuredPojo> TIMELINE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Timeline").build();
+    private static final MarshallingInfo<List> ERRORDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ErrorDetails").build();
 
     private static final ClusterStatusMarshaller instance = new ClusterStatusMarshaller();
 
@@ -53,6 +56,7 @@ public class ClusterStatusMarshaller {
             protocolMarshaller.marshall(clusterStatus.getState(), STATE_BINDING);
             protocolMarshaller.marshall(clusterStatus.getStateChangeReason(), STATECHANGEREASON_BINDING);
             protocolMarshaller.marshall(clusterStatus.getTimeline(), TIMELINE_BINDING);
+            protocolMarshaller.marshall(clusterStatus.getErrorDetails(), ERRORDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

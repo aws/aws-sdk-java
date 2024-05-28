@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,19 +37,19 @@ public class ListInventoryEntriesResult extends com.amazonaws.AmazonWebServiceRe
     private String instanceId;
     /**
      * <p>
-     * The inventory schema version used by the managed node(s).
+     * The inventory schema version used by the managed nodes.
      * </p>
      */
     private String schemaVersion;
     /**
      * <p>
-     * The time that inventory information was collected for the managed node(s).
+     * The time that inventory information was collected for the managed nodes.
      * </p>
      */
     private String captureTime;
     /**
      * <p>
-     * A list of inventory items on the managed node(s).
+     * A list of inventory items on the managed nodes.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<java.util.Map<String, String>> entries;
@@ -143,11 +143,11 @@ public class ListInventoryEntriesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The inventory schema version used by the managed node(s).
+     * The inventory schema version used by the managed nodes.
      * </p>
      * 
      * @param schemaVersion
-     *        The inventory schema version used by the managed node(s).
+     *        The inventory schema version used by the managed nodes.
      */
 
     public void setSchemaVersion(String schemaVersion) {
@@ -156,10 +156,10 @@ public class ListInventoryEntriesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The inventory schema version used by the managed node(s).
+     * The inventory schema version used by the managed nodes.
      * </p>
      * 
-     * @return The inventory schema version used by the managed node(s).
+     * @return The inventory schema version used by the managed nodes.
      */
 
     public String getSchemaVersion() {
@@ -168,11 +168,11 @@ public class ListInventoryEntriesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The inventory schema version used by the managed node(s).
+     * The inventory schema version used by the managed nodes.
      * </p>
      * 
      * @param schemaVersion
-     *        The inventory schema version used by the managed node(s).
+     *        The inventory schema version used by the managed nodes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,11 +183,11 @@ public class ListInventoryEntriesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The time that inventory information was collected for the managed node(s).
+     * The time that inventory information was collected for the managed nodes.
      * </p>
      * 
      * @param captureTime
-     *        The time that inventory information was collected for the managed node(s).
+     *        The time that inventory information was collected for the managed nodes.
      */
 
     public void setCaptureTime(String captureTime) {
@@ -196,10 +196,10 @@ public class ListInventoryEntriesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The time that inventory information was collected for the managed node(s).
+     * The time that inventory information was collected for the managed nodes.
      * </p>
      * 
-     * @return The time that inventory information was collected for the managed node(s).
+     * @return The time that inventory information was collected for the managed nodes.
      */
 
     public String getCaptureTime() {
@@ -208,11 +208,11 @@ public class ListInventoryEntriesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The time that inventory information was collected for the managed node(s).
+     * The time that inventory information was collected for the managed nodes.
      * </p>
      * 
      * @param captureTime
-     *        The time that inventory information was collected for the managed node(s).
+     *        The time that inventory information was collected for the managed nodes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -223,10 +223,10 @@ public class ListInventoryEntriesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of inventory items on the managed node(s).
+     * A list of inventory items on the managed nodes.
      * </p>
      * 
-     * @return A list of inventory items on the managed node(s).
+     * @return A list of inventory items on the managed nodes.
      */
 
     public java.util.List<java.util.Map<String, String>> getEntries() {
@@ -238,11 +238,11 @@ public class ListInventoryEntriesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of inventory items on the managed node(s).
+     * A list of inventory items on the managed nodes.
      * </p>
      * 
      * @param entries
-     *        A list of inventory items on the managed node(s).
+     *        A list of inventory items on the managed nodes.
      */
 
     public void setEntries(java.util.Collection<java.util.Map<String, String>> entries) {
@@ -256,7 +256,7 @@ public class ListInventoryEntriesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of inventory items on the managed node(s).
+     * A list of inventory items on the managed nodes.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -265,7 +265,7 @@ public class ListInventoryEntriesResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param entries
-     *        A list of inventory items on the managed node(s).
+     *        A list of inventory items on the managed nodes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -281,11 +281,11 @@ public class ListInventoryEntriesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of inventory items on the managed node(s).
+     * A list of inventory items on the managed nodes.
      * </p>
      * 
      * @param entries
-     *        A list of inventory items on the managed node(s).
+     *        A list of inventory items on the managed nodes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,0 +1,88 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.chimesdkvoice.model.transform;
+
+import java.math.*;
+
+import javax.annotation.Generated;
+
+import com.amazonaws.services.chimesdkvoice.model.*;
+import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
+import com.amazonaws.transform.*;
+
+import com.fasterxml.jackson.core.JsonToken;
+import static com.fasterxml.jackson.core.JsonToken.*;
+
+/**
+ * ValidateE911AddressResult JSON Unmarshaller
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ValidateE911AddressResultJsonUnmarshaller implements Unmarshaller<ValidateE911AddressResult, JsonUnmarshallerContext> {
+
+    public ValidateE911AddressResult unmarshall(JsonUnmarshallerContext context) throws Exception {
+        ValidateE911AddressResult validateE911AddressResult = new ValidateE911AddressResult();
+
+        int originalDepth = context.getCurrentDepth();
+        String currentParentElement = context.getCurrentParentElement();
+        int targetDepth = originalDepth + 1;
+
+        JsonToken token = context.getCurrentToken();
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL) {
+            return validateE911AddressResult;
+        }
+
+        while (true) {
+            if (token == null)
+                break;
+
+            if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("ValidationResult", targetDepth)) {
+                    context.nextToken();
+                    validateE911AddressResult.setValidationResult(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("AddressExternalId", targetDepth)) {
+                    context.nextToken();
+                    validateE911AddressResult.setAddressExternalId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Address", targetDepth)) {
+                    context.nextToken();
+                    validateE911AddressResult.setAddress(AddressJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("CandidateAddressList", targetDepth)) {
+                    context.nextToken();
+                    validateE911AddressResult.setCandidateAddressList(new ListUnmarshaller<CandidateAddress>(CandidateAddressJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+            } else if (token == END_ARRAY || token == END_OBJECT) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
+                }
+            }
+            token = context.nextToken();
+        }
+
+        return validateE911AddressResult;
+    }
+
+    private static ValidateE911AddressResultJsonUnmarshaller instance;
+
+    public static ValidateE911AddressResultJsonUnmarshaller getInstance() {
+        if (instance == null)
+            instance = new ValidateE911AddressResultJsonUnmarshaller();
+        return instance;
+    }
+}

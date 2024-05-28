@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,7 +52,8 @@ public enum ConstraintViolationExceptionReason {
     CLOSE_ACCOUNT_QUOTA_EXCEEDED("CLOSE_ACCOUNT_QUOTA_EXCEEDED"),
     CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED("CLOSE_ACCOUNT_REQUESTS_LIMIT_EXCEEDED"),
     SERVICE_ACCESS_NOT_ENABLED("SERVICE_ACCESS_NOT_ENABLED"),
-    INVALID_PAYMENT_INSTRUMENT("INVALID_PAYMENT_INSTRUMENT");
+    INVALID_PAYMENT_INSTRUMENT("INVALID_PAYMENT_INSTRUMENT"),
+    ACCOUNT_CREATION_NOT_COMPLETE("ACCOUNT_CREATION_NOT_COMPLETE");
 
     private String value;
 

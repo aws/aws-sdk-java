@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -110,7 +110,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
      * capacity while a negative number removes from the current capacity. For exact capacity, you must specify a
-     * positive value.
+     * non-negative value.
      * </p>
      * <p>
      * Required if the policy type is <code>SimpleScaling</code>. (Not used with any other policy type.)
@@ -749,7 +749,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
      * capacity while a negative number removes from the current capacity. For exact capacity, you must specify a
-     * positive value.
+     * non-negative value.
      * </p>
      * <p>
      * Required if the policy type is <code>SimpleScaling</code>. (Not used with any other policy type.)
@@ -758,7 +758,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * @param scalingAdjustment
      *        The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
      *        capacity while a negative number removes from the current capacity. For exact capacity, you must specify a
-     *        positive value.</p>
+     *        non-negative value.</p>
      *        <p>
      *        Required if the policy type is <code>SimpleScaling</code>. (Not used with any other policy type.)
      */
@@ -771,7 +771,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
      * capacity while a negative number removes from the current capacity. For exact capacity, you must specify a
-     * positive value.
+     * non-negative value.
      * </p>
      * <p>
      * Required if the policy type is <code>SimpleScaling</code>. (Not used with any other policy type.)
@@ -779,7 +779,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @return The amount by which to scale, based on the specified adjustment type. A positive value adds to the
      *         current capacity while a negative number removes from the current capacity. For exact capacity, you must
-     *         specify a positive value.</p>
+     *         specify a non-negative value.</p>
      *         <p>
      *         Required if the policy type is <code>SimpleScaling</code>. (Not used with any other policy type.)
      */
@@ -792,7 +792,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
      * capacity while a negative number removes from the current capacity. For exact capacity, you must specify a
-     * positive value.
+     * non-negative value.
      * </p>
      * <p>
      * Required if the policy type is <code>SimpleScaling</code>. (Not used with any other policy type.)
@@ -801,7 +801,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * @param scalingAdjustment
      *        The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
      *        capacity while a negative number removes from the current capacity. For exact capacity, you must specify a
-     *        positive value.</p>
+     *        non-negative value.</p>
      *        <p>
      *        Required if the policy type is <code>SimpleScaling</code>. (Not used with any other policy type.)
      * @return Returns a reference to this object so that method calls can be chained together.

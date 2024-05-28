@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,8 @@ public class DatasetImportJobSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTMODIFICATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModificationTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> IMPORTMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImportMode").build();
 
     private static final DatasetImportJobSummaryMarshaller instance = new DatasetImportJobSummaryMarshaller();
 
@@ -65,6 +67,7 @@ public class DatasetImportJobSummaryMarshaller {
             protocolMarshaller.marshall(datasetImportJobSummary.getMessage(), MESSAGE_BINDING);
             protocolMarshaller.marshall(datasetImportJobSummary.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(datasetImportJobSummary.getLastModificationTime(), LASTMODIFICATIONTIME_BINDING);
+            protocolMarshaller.marshall(datasetImportJobSummary.getImportMode(), IMPORTMODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

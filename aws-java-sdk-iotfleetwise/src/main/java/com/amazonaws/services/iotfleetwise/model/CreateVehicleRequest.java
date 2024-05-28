@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,10 @@ public class CreateVehicleRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Static information about a vehicle in a key-value pair. For example: <code>"engineType"</code> :
      * <code>"1.3 L R2"</code>
+     * </p>
+     * <p>
+     * A campaign must include the keys (attribute names) in <code>dataExtraDimensions</code> for them to display in
+     * Amazon Timestream.
      * </p>
      */
     private java.util.Map<String, String> attributes;
@@ -192,9 +196,16 @@ public class CreateVehicleRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Static information about a vehicle in a key-value pair. For example: <code>"engineType"</code> :
      * <code>"1.3 L R2"</code>
      * </p>
+     * <p>
+     * A campaign must include the keys (attribute names) in <code>dataExtraDimensions</code> for them to display in
+     * Amazon Timestream.
+     * </p>
      * 
      * @return Static information about a vehicle in a key-value pair. For example: <code>"engineType"</code> :
-     *         <code>"1.3 L R2"</code>
+     *         <code>"1.3 L R2"</code> </p>
+     *         <p>
+     *         A campaign must include the keys (attribute names) in <code>dataExtraDimensions</code> for them to
+     *         display in Amazon Timestream.
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -206,10 +217,17 @@ public class CreateVehicleRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Static information about a vehicle in a key-value pair. For example: <code>"engineType"</code> :
      * <code>"1.3 L R2"</code>
      * </p>
+     * <p>
+     * A campaign must include the keys (attribute names) in <code>dataExtraDimensions</code> for them to display in
+     * Amazon Timestream.
+     * </p>
      * 
      * @param attributes
      *        Static information about a vehicle in a key-value pair. For example: <code>"engineType"</code> :
-     *        <code>"1.3 L R2"</code>
+     *        <code>"1.3 L R2"</code> </p>
+     *        <p>
+     *        A campaign must include the keys (attribute names) in <code>dataExtraDimensions</code> for them to display
+     *        in Amazon Timestream.
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -221,10 +239,17 @@ public class CreateVehicleRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Static information about a vehicle in a key-value pair. For example: <code>"engineType"</code> :
      * <code>"1.3 L R2"</code>
      * </p>
+     * <p>
+     * A campaign must include the keys (attribute names) in <code>dataExtraDimensions</code> for them to display in
+     * Amazon Timestream.
+     * </p>
      * 
      * @param attributes
      *        Static information about a vehicle in a key-value pair. For example: <code>"engineType"</code> :
-     *        <code>"1.3 L R2"</code>
+     *        <code>"1.3 L R2"</code> </p>
+     *        <p>
+     *        A campaign must include the keys (attribute names) in <code>dataExtraDimensions</code> for them to display
+     *        in Amazon Timestream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

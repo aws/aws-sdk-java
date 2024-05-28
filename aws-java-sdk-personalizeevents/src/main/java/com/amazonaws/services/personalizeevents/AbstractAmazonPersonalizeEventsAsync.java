@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,32 @@ import com.amazonaws.services.personalizeevents.model.*;
 public class AbstractAmazonPersonalizeEventsAsync extends AbstractAmazonPersonalizeEvents implements AmazonPersonalizeEventsAsync {
 
     protected AbstractAmazonPersonalizeEventsAsync() {
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutActionInteractionsResult> putActionInteractionsAsync(PutActionInteractionsRequest request) {
+
+        return putActionInteractionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutActionInteractionsResult> putActionInteractionsAsync(PutActionInteractionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutActionInteractionsRequest, PutActionInteractionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutActionsResult> putActionsAsync(PutActionsRequest request) {
+
+        return putActionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutActionsResult> putActionsAsync(PutActionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutActionsRequest, PutActionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

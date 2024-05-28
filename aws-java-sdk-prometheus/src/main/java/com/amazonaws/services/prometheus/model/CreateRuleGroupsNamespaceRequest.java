@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a CreateRuleGroupsNamespace operation.
+ * Represents the input of a <code>CreateRuleGroupsNamespace</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateRuleGroupsNamespace" target="_top">AWS API
@@ -30,42 +30,50 @@ public class CreateRuleGroupsNamespaceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      * </p>
      */
     private String clientToken;
     /**
      * <p>
-     * The namespace data that define the rule groups.
+     * The rules file to use in the new namespace.
+     * </p>
+     * <p>
+     * Contains the base64-encoded version of the YAML rules file.
+     * </p>
+     * <p>
+     * For details about the rule groups namespace structure, see <a
+     * href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-RuleGroupsNamespaceData.html"
+     * >RuleGroupsNamespaceData</a>.
      * </p>
      */
     private java.nio.ByteBuffer data;
     /**
      * <p>
-     * The rule groups namespace name.
+     * The name for the new rule groups namespace.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Optional, user-provided tags for this rule groups namespace.
+     * The list of tag keys and values to associate with the rule groups namespace.
      * </p>
      */
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The ID of the workspace in which to create the rule group namespace.
+     * The ID of the workspace to add the rule groups namespace.
      * </p>
      */
     private String workspaceId;
 
     /**
      * <p>
-     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      * </p>
      * 
      * @param clientToken
-     *        Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     *        A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      */
 
     public void setClientToken(String clientToken) {
@@ -74,10 +82,10 @@ public class CreateRuleGroupsNamespaceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      * </p>
      * 
-     * @return Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * @return A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      */
 
     public String getClientToken() {
@@ -86,11 +94,11 @@ public class CreateRuleGroupsNamespaceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      * </p>
      * 
      * @param clientToken
-     *        Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     *        A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,7 +109,15 @@ public class CreateRuleGroupsNamespaceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The namespace data that define the rule groups.
+     * The rules file to use in the new namespace.
+     * </p>
+     * <p>
+     * Contains the base64-encoded version of the YAML rules file.
+     * </p>
+     * <p>
+     * For details about the rule groups namespace structure, see <a
+     * href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-RuleGroupsNamespaceData.html"
+     * >RuleGroupsNamespaceData</a>.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -115,7 +131,14 @@ public class CreateRuleGroupsNamespaceRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param data
-     *        The namespace data that define the rule groups.
+     *        The rules file to use in the new namespace.</p>
+     *        <p>
+     *        Contains the base64-encoded version of the YAML rules file.
+     *        </p>
+     *        <p>
+     *        For details about the rule groups namespace structure, see <a
+     *        href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-RuleGroupsNamespaceData.html"
+     *        >RuleGroupsNamespaceData</a>.
      */
 
     public void setData(java.nio.ByteBuffer data) {
@@ -124,7 +147,15 @@ public class CreateRuleGroupsNamespaceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The namespace data that define the rule groups.
+     * The rules file to use in the new namespace.
+     * </p>
+     * <p>
+     * Contains the base64-encoded version of the YAML rules file.
+     * </p>
+     * <p>
+     * For details about the rule groups namespace structure, see <a
+     * href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-RuleGroupsNamespaceData.html"
+     * >RuleGroupsNamespaceData</a>.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -134,7 +165,14 @@ public class CreateRuleGroupsNamespaceRequest extends com.amazonaws.AmazonWebSer
      * {@code position}.
      * </p>
      * 
-     * @return The namespace data that define the rule groups.
+     * @return The rules file to use in the new namespace.</p>
+     *         <p>
+     *         Contains the base64-encoded version of the YAML rules file.
+     *         </p>
+     *         <p>
+     *         For details about the rule groups namespace structure, see <a
+     *         href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-RuleGroupsNamespaceData.html"
+     *         >RuleGroupsNamespaceData</a>.
      */
 
     public java.nio.ByteBuffer getData() {
@@ -143,7 +181,15 @@ public class CreateRuleGroupsNamespaceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The namespace data that define the rule groups.
+     * The rules file to use in the new namespace.
+     * </p>
+     * <p>
+     * Contains the base64-encoded version of the YAML rules file.
+     * </p>
+     * <p>
+     * For details about the rule groups namespace structure, see <a
+     * href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-RuleGroupsNamespaceData.html"
+     * >RuleGroupsNamespaceData</a>.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -157,7 +203,14 @@ public class CreateRuleGroupsNamespaceRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param data
-     *        The namespace data that define the rule groups.
+     *        The rules file to use in the new namespace.</p>
+     *        <p>
+     *        Contains the base64-encoded version of the YAML rules file.
+     *        </p>
+     *        <p>
+     *        For details about the rule groups namespace structure, see <a
+     *        href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-RuleGroupsNamespaceData.html"
+     *        >RuleGroupsNamespaceData</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,11 +221,11 @@ public class CreateRuleGroupsNamespaceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The rule groups namespace name.
+     * The name for the new rule groups namespace.
      * </p>
      * 
      * @param name
-     *        The rule groups namespace name.
+     *        The name for the new rule groups namespace.
      */
 
     public void setName(String name) {
@@ -181,10 +234,10 @@ public class CreateRuleGroupsNamespaceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The rule groups namespace name.
+     * The name for the new rule groups namespace.
      * </p>
      * 
-     * @return The rule groups namespace name.
+     * @return The name for the new rule groups namespace.
      */
 
     public String getName() {
@@ -193,11 +246,11 @@ public class CreateRuleGroupsNamespaceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The rule groups namespace name.
+     * The name for the new rule groups namespace.
      * </p>
      * 
      * @param name
-     *        The rule groups namespace name.
+     *        The name for the new rule groups namespace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -208,10 +261,10 @@ public class CreateRuleGroupsNamespaceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Optional, user-provided tags for this rule groups namespace.
+     * The list of tag keys and values to associate with the rule groups namespace.
      * </p>
      * 
-     * @return Optional, user-provided tags for this rule groups namespace.
+     * @return The list of tag keys and values to associate with the rule groups namespace.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -220,11 +273,11 @@ public class CreateRuleGroupsNamespaceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Optional, user-provided tags for this rule groups namespace.
+     * The list of tag keys and values to associate with the rule groups namespace.
      * </p>
      * 
      * @param tags
-     *        Optional, user-provided tags for this rule groups namespace.
+     *        The list of tag keys and values to associate with the rule groups namespace.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -233,11 +286,11 @@ public class CreateRuleGroupsNamespaceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Optional, user-provided tags for this rule groups namespace.
+     * The list of tag keys and values to associate with the rule groups namespace.
      * </p>
      * 
      * @param tags
-     *        Optional, user-provided tags for this rule groups namespace.
+     *        The list of tag keys and values to associate with the rule groups namespace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -276,11 +329,11 @@ public class CreateRuleGroupsNamespaceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the workspace in which to create the rule group namespace.
+     * The ID of the workspace to add the rule groups namespace.
      * </p>
      * 
      * @param workspaceId
-     *        The ID of the workspace in which to create the rule group namespace.
+     *        The ID of the workspace to add the rule groups namespace.
      */
 
     public void setWorkspaceId(String workspaceId) {
@@ -289,10 +342,10 @@ public class CreateRuleGroupsNamespaceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the workspace in which to create the rule group namespace.
+     * The ID of the workspace to add the rule groups namespace.
      * </p>
      * 
-     * @return The ID of the workspace in which to create the rule group namespace.
+     * @return The ID of the workspace to add the rule groups namespace.
      */
 
     public String getWorkspaceId() {
@@ -301,11 +354,11 @@ public class CreateRuleGroupsNamespaceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ID of the workspace in which to create the rule group namespace.
+     * The ID of the workspace to add the rule groups namespace.
      * </p>
      * 
      * @param workspaceId
-     *        The ID of the workspace in which to create the rule group namespace.
+     *        The ID of the workspace to add the rule groups namespace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,7 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared
-     * with you from another account.
+     * with you from another Amazon Web Services account.
      * </p>
      * <p>
      * For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts,
@@ -55,7 +55,7 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
     private String name;
     /**
      * <p>
-     * The document version you want to associate with the target(s). Can be a specific version or the default version.
+     * The document version you want to associate with the targets. Can be a specific version or the default version.
      * </p>
      * <important>
      * <p>
@@ -97,14 +97,14 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of
      * <code>*</code>. For more information about choosing targets for an association, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html"
-     * >Using targets and rate controls with State Manager associations</a> in the <i>Amazon Web Services Systems
-     * Manager User Guide</i>.
+     * >About targets and rate controls in State Manager associations</a> in the <i>Amazon Web Services Systems Manager
+     * User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Target> targets;
     /**
      * <p>
-     * A cron expression when the association will be applied to the target(s).
+     * A cron expression when the association will be applied to the targets.
      * </p>
      */
     private String scheduleExpression;
@@ -224,6 +224,33 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
     private Integer scheduleOffset;
     /**
      * <p>
+     * The number of hours the association can run before it is canceled. Duration applies to associations that are
+     * currently running, and any pending and in progress commands on all targets. If a target was taken offline for the
+     * association to run, it is made available again immediately, without a reboot.
+     * </p>
+     * <p>
+     * The <code>Duration</code> parameter applies only when both these conditions are true:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The association for which you specify a duration is cancelable according to the parameters of the SSM command
+     * document or Automation runbook associated with this execution.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The command specifies the
+     * <code> <a href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociation.html#systemsmanager-CreateAssociation-request-ApplyOnlyAtCronInterval">ApplyOnlyAtCronInterval</a> </code>
+     * parameter, which means that the association doesn't run immediately after it is created, but only according to
+     * the specified schedule.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private Integer duration;
+    /**
+     * <p>
      * A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified
      * together.
      * </p>
@@ -248,7 +275,7 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared
-     * with you from another account.
+     * with you from another Amazon Web Services account.
      * </p>
      * <p>
      * For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts,
@@ -273,7 +300,7 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        the managed node.</p>
      *        <p>
      *        You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
-     *        shared with you from another account.
+     *        shared with you from another Amazon Web Services account.
      *        </p>
      *        <p>
      *        For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services
@@ -304,7 +331,7 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared
-     * with you from another account.
+     * with you from another Amazon Web Services account.
      * </p>
      * <p>
      * For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts,
@@ -328,7 +355,7 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      *         for the managed node.</p>
      *         <p>
      *         You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
-     *         shared with you from another account.
+     *         shared with you from another Amazon Web Services account.
      *         </p>
      *         <p>
      *         For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services
@@ -360,7 +387,7 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared
-     * with you from another account.
+     * with you from another Amazon Web Services account.
      * </p>
      * <p>
      * For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts,
@@ -385,7 +412,7 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        the managed node.</p>
      *        <p>
      *        You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
-     *        shared with you from another account.
+     *        shared with you from another Amazon Web Services account.
      *        </p>
      *        <p>
      *        For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services
@@ -413,7 +440,7 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The document version you want to associate with the target(s). Can be a specific version or the default version.
+     * The document version you want to associate with the targets. Can be a specific version or the default version.
      * </p>
      * <important>
      * <p>
@@ -426,7 +453,7 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </important>
      * 
      * @param documentVersion
-     *        The document version you want to associate with the target(s). Can be a specific version or the default
+     *        The document version you want to associate with the targets. Can be a specific version or the default
      *        version.</p> <important>
      *        <p>
      *        State Manager doesn't support running associations that use a new version of a document if that document
@@ -443,7 +470,7 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The document version you want to associate with the target(s). Can be a specific version or the default version.
+     * The document version you want to associate with the targets. Can be a specific version or the default version.
      * </p>
      * <important>
      * <p>
@@ -455,7 +482,7 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * </important>
      * 
-     * @return The document version you want to associate with the target(s). Can be a specific version or the default
+     * @return The document version you want to associate with the targets. Can be a specific version or the default
      *         version.</p> <important>
      *         <p>
      *         State Manager doesn't support running associations that use a new version of a document if that document
@@ -472,7 +499,7 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The document version you want to associate with the target(s). Can be a specific version or the default version.
+     * The document version you want to associate with the targets. Can be a specific version or the default version.
      * </p>
      * <important>
      * <p>
@@ -485,7 +512,7 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </important>
      * 
      * @param documentVersion
-     *        The document version you want to associate with the target(s). Can be a specific version or the default
+     *        The document version you want to associate with the targets. Can be a specific version or the default
      *        version.</p> <important>
      *        <p>
      *        State Manager doesn't support running associations that use a new version of a document if that document
@@ -674,8 +701,8 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of
      * <code>*</code>. For more information about choosing targets for an association, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html"
-     * >Using targets and rate controls with State Manager associations</a> in the <i>Amazon Web Services Systems
-     * Manager User Guide</i>.
+     * >About targets and rate controls in State Manager associations</a> in the <i>Amazon Web Services Systems Manager
+     * User Guide</i>.
      * </p>
      * 
      * @return The targets for the association. You can target managed nodes by using tags, Amazon Web Services resource
@@ -684,8 +711,8 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      *         with a value of <code>*</code>. For more information about choosing targets for an association, see <a
      *         href=
      *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html"
-     *         >Using targets and rate controls with State Manager associations</a> in the <i>Amazon Web Services
-     *         Systems Manager User Guide</i>.
+     *         >About targets and rate controls in State Manager associations</a> in the <i>Amazon Web Services Systems
+     *         Manager User Guide</i>.
      */
 
     public java.util.List<Target> getTargets() {
@@ -702,8 +729,8 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of
      * <code>*</code>. For more information about choosing targets for an association, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html"
-     * >Using targets and rate controls with State Manager associations</a> in the <i>Amazon Web Services Systems
-     * Manager User Guide</i>.
+     * >About targets and rate controls in State Manager associations</a> in the <i>Amazon Web Services Systems Manager
+     * User Guide</i>.
      * </p>
      * 
      * @param targets
@@ -713,7 +740,7 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        with a value of <code>*</code>. For more information about choosing targets for an association, see <a
      *        href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html"
-     *        >Using targets and rate controls with State Manager associations</a> in the <i>Amazon Web Services Systems
+     *        >About targets and rate controls in State Manager associations</a> in the <i>Amazon Web Services Systems
      *        Manager User Guide</i>.
      */
 
@@ -733,8 +760,8 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of
      * <code>*</code>. For more information about choosing targets for an association, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html"
-     * >Using targets and rate controls with State Manager associations</a> in the <i>Amazon Web Services Systems
-     * Manager User Guide</i>.
+     * >About targets and rate controls in State Manager associations</a> in the <i>Amazon Web Services Systems Manager
+     * User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -749,7 +776,7 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        with a value of <code>*</code>. For more information about choosing targets for an association, see <a
      *        href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html"
-     *        >Using targets and rate controls with State Manager associations</a> in the <i>Amazon Web Services Systems
+     *        >About targets and rate controls in State Manager associations</a> in the <i>Amazon Web Services Systems
      *        Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -771,8 +798,8 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code> key with a value of
      * <code>*</code>. For more information about choosing targets for an association, see <a href=
      * "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html"
-     * >Using targets and rate controls with State Manager associations</a> in the <i>Amazon Web Services Systems
-     * Manager User Guide</i>.
+     * >About targets and rate controls in State Manager associations</a> in the <i>Amazon Web Services Systems Manager
+     * User Guide</i>.
      * </p>
      * 
      * @param targets
@@ -782,7 +809,7 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        with a value of <code>*</code>. For more information about choosing targets for an association, see <a
      *        href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html"
-     *        >Using targets and rate controls with State Manager associations</a> in the <i>Amazon Web Services Systems
+     *        >About targets and rate controls in State Manager associations</a> in the <i>Amazon Web Services Systems
      *        Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -794,11 +821,11 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A cron expression when the association will be applied to the target(s).
+     * A cron expression when the association will be applied to the targets.
      * </p>
      * 
      * @param scheduleExpression
-     *        A cron expression when the association will be applied to the target(s).
+     *        A cron expression when the association will be applied to the targets.
      */
 
     public void setScheduleExpression(String scheduleExpression) {
@@ -807,10 +834,10 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A cron expression when the association will be applied to the target(s).
+     * A cron expression when the association will be applied to the targets.
      * </p>
      * 
-     * @return A cron expression when the association will be applied to the target(s).
+     * @return A cron expression when the association will be applied to the targets.
      */
 
     public String getScheduleExpression() {
@@ -819,11 +846,11 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A cron expression when the association will be applied to the target(s).
+     * A cron expression when the association will be applied to the targets.
      * </p>
      * 
      * @param scheduleExpression
-     *        A cron expression when the association will be applied to the target(s).
+     *        A cron expression when the association will be applied to the targets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1714,6 +1741,169 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
+     * The number of hours the association can run before it is canceled. Duration applies to associations that are
+     * currently running, and any pending and in progress commands on all targets. If a target was taken offline for the
+     * association to run, it is made available again immediately, without a reboot.
+     * </p>
+     * <p>
+     * The <code>Duration</code> parameter applies only when both these conditions are true:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The association for which you specify a duration is cancelable according to the parameters of the SSM command
+     * document or Automation runbook associated with this execution.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The command specifies the
+     * <code> <a href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociation.html#systemsmanager-CreateAssociation-request-ApplyOnlyAtCronInterval">ApplyOnlyAtCronInterval</a> </code>
+     * parameter, which means that the association doesn't run immediately after it is created, but only according to
+     * the specified schedule.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param duration
+     *        The number of hours the association can run before it is canceled. Duration applies to associations that
+     *        are currently running, and any pending and in progress commands on all targets. If a target was taken
+     *        offline for the association to run, it is made available again immediately, without a reboot. </p>
+     *        <p>
+     *        The <code>Duration</code> parameter applies only when both these conditions are true:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The association for which you specify a duration is cancelable according to the parameters of the SSM
+     *        command document or Automation runbook associated with this execution.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The command specifies the
+     *        <code> <a href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociation.html#systemsmanager-CreateAssociation-request-ApplyOnlyAtCronInterval">ApplyOnlyAtCronInterval</a> </code>
+     *        parameter, which means that the association doesn't run immediately after it is created, but only
+     *        according to the specified schedule.
+     *        </p>
+     *        </li>
+     */
+
+    public void setDuration(Integer duration) {
+        this.duration = duration;
+    }
+
+    /**
+     * <p>
+     * The number of hours the association can run before it is canceled. Duration applies to associations that are
+     * currently running, and any pending and in progress commands on all targets. If a target was taken offline for the
+     * association to run, it is made available again immediately, without a reboot.
+     * </p>
+     * <p>
+     * The <code>Duration</code> parameter applies only when both these conditions are true:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The association for which you specify a duration is cancelable according to the parameters of the SSM command
+     * document or Automation runbook associated with this execution.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The command specifies the
+     * <code> <a href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociation.html#systemsmanager-CreateAssociation-request-ApplyOnlyAtCronInterval">ApplyOnlyAtCronInterval</a> </code>
+     * parameter, which means that the association doesn't run immediately after it is created, but only according to
+     * the specified schedule.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The number of hours the association can run before it is canceled. Duration applies to associations that
+     *         are currently running, and any pending and in progress commands on all targets. If a target was taken
+     *         offline for the association to run, it is made available again immediately, without a reboot. </p>
+     *         <p>
+     *         The <code>Duration</code> parameter applies only when both these conditions are true:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The association for which you specify a duration is cancelable according to the parameters of the SSM
+     *         command document or Automation runbook associated with this execution.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The command specifies the
+     *         <code> <a href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociation.html#systemsmanager-CreateAssociation-request-ApplyOnlyAtCronInterval">ApplyOnlyAtCronInterval</a> </code>
+     *         parameter, which means that the association doesn't run immediately after it is created, but only
+     *         according to the specified schedule.
+     *         </p>
+     *         </li>
+     */
+
+    public Integer getDuration() {
+        return this.duration;
+    }
+
+    /**
+     * <p>
+     * The number of hours the association can run before it is canceled. Duration applies to associations that are
+     * currently running, and any pending and in progress commands on all targets. If a target was taken offline for the
+     * association to run, it is made available again immediately, without a reboot.
+     * </p>
+     * <p>
+     * The <code>Duration</code> parameter applies only when both these conditions are true:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The association for which you specify a duration is cancelable according to the parameters of the SSM command
+     * document or Automation runbook associated with this execution.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The command specifies the
+     * <code> <a href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociation.html#systemsmanager-CreateAssociation-request-ApplyOnlyAtCronInterval">ApplyOnlyAtCronInterval</a> </code>
+     * parameter, which means that the association doesn't run immediately after it is created, but only according to
+     * the specified schedule.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param duration
+     *        The number of hours the association can run before it is canceled. Duration applies to associations that
+     *        are currently running, and any pending and in progress commands on all targets. If a target was taken
+     *        offline for the association to run, it is made available again immediately, without a reboot. </p>
+     *        <p>
+     *        The <code>Duration</code> parameter applies only when both these conditions are true:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The association for which you specify a duration is cancelable according to the parameters of the SSM
+     *        command document or Automation runbook associated with this execution.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The command specifies the
+     *        <code> <a href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociation.html#systemsmanager-CreateAssociation-request-ApplyOnlyAtCronInterval">ApplyOnlyAtCronInterval</a> </code>
+     *        parameter, which means that the association doesn't run immediately after it is created, but only
+     *        according to the specified schedule.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAssociationRequest withDuration(Integer duration) {
+        setDuration(duration);
+        return this;
+    }
+
+    /**
+     * <p>
      * A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified
      * together.
      * </p>
@@ -1962,6 +2152,8 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("TargetLocations: ").append(getTargetLocations()).append(",");
         if (getScheduleOffset() != null)
             sb.append("ScheduleOffset: ").append(getScheduleOffset()).append(",");
+        if (getDuration() != null)
+            sb.append("Duration: ").append(getDuration()).append(",");
         if (getTargetMaps() != null)
             sb.append("TargetMaps: ").append(getTargetMaps()).append(",");
         if (getTags() != null)
@@ -2051,6 +2243,10 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getScheduleOffset() != null && other.getScheduleOffset().equals(this.getScheduleOffset()) == false)
             return false;
+        if (other.getDuration() == null ^ this.getDuration() == null)
+            return false;
+        if (other.getDuration() != null && other.getDuration().equals(this.getDuration()) == false)
+            return false;
         if (other.getTargetMaps() == null ^ this.getTargetMaps() == null)
             return false;
         if (other.getTargetMaps() != null && other.getTargetMaps().equals(this.getTargetMaps()) == false)
@@ -2088,6 +2284,7 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getCalendarNames() == null) ? 0 : getCalendarNames().hashCode());
         hashCode = prime * hashCode + ((getTargetLocations() == null) ? 0 : getTargetLocations().hashCode());
         hashCode = prime * hashCode + ((getScheduleOffset() == null) ? 0 : getScheduleOffset().hashCode());
+        hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode());
         hashCode = prime * hashCode + ((getTargetMaps() == null) ? 0 : getTargetMaps().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getAlarmConfiguration() == null) ? 0 : getAlarmConfiguration().hashCode());

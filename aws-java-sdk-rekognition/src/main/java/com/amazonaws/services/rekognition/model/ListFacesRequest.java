@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,18 @@ public class ListFacesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * An array of user IDs to filter results with when listing faces in a collection.
+     * </p>
+     */
+    private String userId;
+    /**
+     * <p>
+     * An array of face IDs to filter results with when listing faces in a collection.
+     * </p>
+     */
+    private java.util.List<String> faceIds;
 
     /**
      * <p>
@@ -170,6 +182,116 @@ public class ListFacesRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * An array of user IDs to filter results with when listing faces in a collection.
+     * </p>
+     * 
+     * @param userId
+     *        An array of user IDs to filter results with when listing faces in a collection.
+     */
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    /**
+     * <p>
+     * An array of user IDs to filter results with when listing faces in a collection.
+     * </p>
+     * 
+     * @return An array of user IDs to filter results with when listing faces in a collection.
+     */
+
+    public String getUserId() {
+        return this.userId;
+    }
+
+    /**
+     * <p>
+     * An array of user IDs to filter results with when listing faces in a collection.
+     * </p>
+     * 
+     * @param userId
+     *        An array of user IDs to filter results with when listing faces in a collection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListFacesRequest withUserId(String userId) {
+        setUserId(userId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of face IDs to filter results with when listing faces in a collection.
+     * </p>
+     * 
+     * @return An array of face IDs to filter results with when listing faces in a collection.
+     */
+
+    public java.util.List<String> getFaceIds() {
+        return faceIds;
+    }
+
+    /**
+     * <p>
+     * An array of face IDs to filter results with when listing faces in a collection.
+     * </p>
+     * 
+     * @param faceIds
+     *        An array of face IDs to filter results with when listing faces in a collection.
+     */
+
+    public void setFaceIds(java.util.Collection<String> faceIds) {
+        if (faceIds == null) {
+            this.faceIds = null;
+            return;
+        }
+
+        this.faceIds = new java.util.ArrayList<String>(faceIds);
+    }
+
+    /**
+     * <p>
+     * An array of face IDs to filter results with when listing faces in a collection.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFaceIds(java.util.Collection)} or {@link #withFaceIds(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param faceIds
+     *        An array of face IDs to filter results with when listing faces in a collection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListFacesRequest withFaceIds(String... faceIds) {
+        if (this.faceIds == null) {
+            setFaceIds(new java.util.ArrayList<String>(faceIds.length));
+        }
+        for (String ele : faceIds) {
+            this.faceIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of face IDs to filter results with when listing faces in a collection.
+     * </p>
+     * 
+     * @param faceIds
+     *        An array of face IDs to filter results with when listing faces in a collection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListFacesRequest withFaceIds(java.util.Collection<String> faceIds) {
+        setFaceIds(faceIds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -186,7 +308,11 @@ public class ListFacesRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getUserId() != null)
+            sb.append("UserId: ").append(getUserId()).append(",");
+        if (getFaceIds() != null)
+            sb.append("FaceIds: ").append(getFaceIds());
         sb.append("}");
         return sb.toString();
     }
@@ -213,6 +339,14 @@ public class ListFacesRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getUserId() == null ^ this.getUserId() == null)
+            return false;
+        if (other.getUserId() != null && other.getUserId().equals(this.getUserId()) == false)
+            return false;
+        if (other.getFaceIds() == null ^ this.getFaceIds() == null)
+            return false;
+        if (other.getFaceIds() != null && other.getFaceIds().equals(this.getFaceIds()) == false)
+            return false;
         return true;
     }
 
@@ -224,6 +358,8 @@ public class ListFacesRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getCollectionId() == null) ? 0 : getCollectionId().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getUserId() == null) ? 0 : getUserId().hashCode());
+        hashCode = prime * hashCode + ((getFaceIds() == null) ? 0 : getFaceIds().hashCode());
         return hashCode;
     }
 

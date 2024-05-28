@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,7 +40,7 @@ public class ApplyPendingMaintenanceActionRequest extends com.amazonaws.AmazonWe
      * The pending maintenance action to apply to this resource.
      * </p>
      * <p>
-     * Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>,
+     * Valid Values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>,
      * <code>ca-certificate-rotation</code>
      * </p>
      */
@@ -51,7 +51,7 @@ public class ApplyPendingMaintenanceActionRequest extends com.amazonaws.AmazonWe
      * <code>immediate</code> can't be undone.
      * </p>
      * <p>
-     * Valid values:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -136,14 +136,14 @@ public class ApplyPendingMaintenanceActionRequest extends com.amazonaws.AmazonWe
      * The pending maintenance action to apply to this resource.
      * </p>
      * <p>
-     * Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>,
+     * Valid Values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>,
      * <code>ca-certificate-rotation</code>
      * </p>
      * 
      * @param applyAction
      *        The pending maintenance action to apply to this resource.</p>
      *        <p>
-     *        Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>,
+     *        Valid Values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>,
      *        <code>ca-certificate-rotation</code>
      */
 
@@ -156,13 +156,13 @@ public class ApplyPendingMaintenanceActionRequest extends com.amazonaws.AmazonWe
      * The pending maintenance action to apply to this resource.
      * </p>
      * <p>
-     * Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>,
+     * Valid Values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>,
      * <code>ca-certificate-rotation</code>
      * </p>
      * 
      * @return The pending maintenance action to apply to this resource.</p>
      *         <p>
-     *         Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>,
+     *         Valid Values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>,
      *         <code>ca-certificate-rotation</code>
      */
 
@@ -175,14 +175,14 @@ public class ApplyPendingMaintenanceActionRequest extends com.amazonaws.AmazonWe
      * The pending maintenance action to apply to this resource.
      * </p>
      * <p>
-     * Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>,
+     * Valid Values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>,
      * <code>ca-certificate-rotation</code>
      * </p>
      * 
      * @param applyAction
      *        The pending maintenance action to apply to this resource.</p>
      *        <p>
-     *        Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>,
+     *        Valid Values: <code>system-update</code>, <code>db-upgrade</code>, <code>hardware-maintenance</code>,
      *        <code>ca-certificate-rotation</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -198,7 +198,7 @@ public class ApplyPendingMaintenanceActionRequest extends com.amazonaws.AmazonWe
      * <code>immediate</code> can't be undone.
      * </p>
      * <p>
-     * Valid values:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -222,7 +222,7 @@ public class ApplyPendingMaintenanceActionRequest extends com.amazonaws.AmazonWe
      *        A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type
      *        <code>immediate</code> can't be undone.</p>
      *        <p>
-     *        Valid values:
+     *        Valid Values:
      *        </p>
      *        <ul>
      *        <li>
@@ -253,7 +253,7 @@ public class ApplyPendingMaintenanceActionRequest extends com.amazonaws.AmazonWe
      * <code>immediate</code> can't be undone.
      * </p>
      * <p>
-     * Valid values:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -276,7 +276,7 @@ public class ApplyPendingMaintenanceActionRequest extends com.amazonaws.AmazonWe
      * @return A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type
      *         <code>immediate</code> can't be undone.</p>
      *         <p>
-     *         Valid values:
+     *         Valid Values:
      *         </p>
      *         <ul>
      *         <li>
@@ -307,7 +307,7 @@ public class ApplyPendingMaintenanceActionRequest extends com.amazonaws.AmazonWe
      * <code>immediate</code> can't be undone.
      * </p>
      * <p>
-     * Valid values:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -331,7 +331,7 @@ public class ApplyPendingMaintenanceActionRequest extends com.amazonaws.AmazonWe
      *        A value that specifies the type of opt-in request, or undoes an opt-in request. An opt-in request of type
      *        <code>immediate</code> can't be undone.</p>
      *        <p>
-     *        Valid values:
+     *        Valid Values:
      *        </p>
      *        <ul>
      *        <li>

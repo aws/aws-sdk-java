@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
     private String appId;
     /**
      * <p>
-     * The name for the branch, for the job.
+     * The name of the branch to use for the job.
      * </p>
      */
     private String branchName;
@@ -91,11 +91,11 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name for the branch, for the job.
+     * The name of the branch to use for the job.
      * </p>
      * 
      * @param branchName
-     *        The name for the branch, for the job.
+     *        The name of the branch to use for the job.
      */
 
     public void setBranchName(String branchName) {
@@ -104,10 +104,10 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name for the branch, for the job.
+     * The name of the branch to use for the job.
      * </p>
      * 
-     * @return The name for the branch, for the job.
+     * @return The name of the branch to use for the job.
      */
 
     public String getBranchName() {
@@ -116,11 +116,11 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name for the branch, for the job.
+     * The name of the branch to use for the job.
      * </p>
      * 
      * @param branchName
-     *        The name for the branch, for the job.
+     *        The name of the branch to use for the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

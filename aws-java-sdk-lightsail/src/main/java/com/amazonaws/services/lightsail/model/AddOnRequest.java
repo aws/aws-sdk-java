@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,18 @@ public class AddOnRequest implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private AutoSnapshotAddOnRequest autoSnapshotAddOnRequest;
+    /**
+     * <p>
+     * An object that represents additional parameters when enabling or modifying the <code>StopInstanceOnIdle</code>
+     * add-on.
+     * </p>
+     * <important>
+     * <p>
+     * This object only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     */
+    private StopInstanceOnIdleRequest stopInstanceOnIdleRequest;
 
     /**
      * <p>
@@ -147,6 +159,76 @@ public class AddOnRequest implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An object that represents additional parameters when enabling or modifying the <code>StopInstanceOnIdle</code>
+     * add-on.
+     * </p>
+     * <important>
+     * <p>
+     * This object only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     * 
+     * @param stopInstanceOnIdleRequest
+     *        An object that represents additional parameters when enabling or modifying the
+     *        <code>StopInstanceOnIdle</code> add-on.</p> <important>
+     *        <p>
+     *        This object only applies to Lightsail for Research resources.
+     *        </p>
+     */
+
+    public void setStopInstanceOnIdleRequest(StopInstanceOnIdleRequest stopInstanceOnIdleRequest) {
+        this.stopInstanceOnIdleRequest = stopInstanceOnIdleRequest;
+    }
+
+    /**
+     * <p>
+     * An object that represents additional parameters when enabling or modifying the <code>StopInstanceOnIdle</code>
+     * add-on.
+     * </p>
+     * <important>
+     * <p>
+     * This object only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     * 
+     * @return An object that represents additional parameters when enabling or modifying the
+     *         <code>StopInstanceOnIdle</code> add-on.</p> <important>
+     *         <p>
+     *         This object only applies to Lightsail for Research resources.
+     *         </p>
+     */
+
+    public StopInstanceOnIdleRequest getStopInstanceOnIdleRequest() {
+        return this.stopInstanceOnIdleRequest;
+    }
+
+    /**
+     * <p>
+     * An object that represents additional parameters when enabling or modifying the <code>StopInstanceOnIdle</code>
+     * add-on.
+     * </p>
+     * <important>
+     * <p>
+     * This object only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     * 
+     * @param stopInstanceOnIdleRequest
+     *        An object that represents additional parameters when enabling or modifying the
+     *        <code>StopInstanceOnIdle</code> add-on.</p> <important>
+     *        <p>
+     *        This object only applies to Lightsail for Research resources.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AddOnRequest withStopInstanceOnIdleRequest(StopInstanceOnIdleRequest stopInstanceOnIdleRequest) {
+        setStopInstanceOnIdleRequest(stopInstanceOnIdleRequest);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -161,7 +243,9 @@ public class AddOnRequest implements Serializable, Cloneable, StructuredPojo {
         if (getAddOnType() != null)
             sb.append("AddOnType: ").append(getAddOnType()).append(",");
         if (getAutoSnapshotAddOnRequest() != null)
-            sb.append("AutoSnapshotAddOnRequest: ").append(getAutoSnapshotAddOnRequest());
+            sb.append("AutoSnapshotAddOnRequest: ").append(getAutoSnapshotAddOnRequest()).append(",");
+        if (getStopInstanceOnIdleRequest() != null)
+            sb.append("StopInstanceOnIdleRequest: ").append(getStopInstanceOnIdleRequest());
         sb.append("}");
         return sb.toString();
     }
@@ -184,6 +268,10 @@ public class AddOnRequest implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAutoSnapshotAddOnRequest() != null && other.getAutoSnapshotAddOnRequest().equals(this.getAutoSnapshotAddOnRequest()) == false)
             return false;
+        if (other.getStopInstanceOnIdleRequest() == null ^ this.getStopInstanceOnIdleRequest() == null)
+            return false;
+        if (other.getStopInstanceOnIdleRequest() != null && other.getStopInstanceOnIdleRequest().equals(this.getStopInstanceOnIdleRequest()) == false)
+            return false;
         return true;
     }
 
@@ -194,6 +282,7 @@ public class AddOnRequest implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getAddOnType() == null) ? 0 : getAddOnType().hashCode());
         hashCode = prime * hashCode + ((getAutoSnapshotAddOnRequest() == null) ? 0 : getAutoSnapshotAddOnRequest().hashCode());
+        hashCode = prime * hashCode + ((getStopInstanceOnIdleRequest() == null) ? 0 : getStopInstanceOnIdleRequest().hashCode());
         return hashCode;
     }
 

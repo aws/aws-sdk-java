@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details about your login page username field, used in a <code>ManagedRuleGroupConfig</code>.
+ * The name of the field in the request payload that contains your customer's username.
+ * </p>
+ * <p>
+ * This data type is used in the <code>RequestInspection</code> and <code>RequestInspectionACFP</code> data types.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UsernameField" target="_top">AWS API
@@ -30,18 +33,92 @@ public class UsernameField implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the username field. For example <code>/form/username</code>.
+     * The name of the username field.
      * </p>
+     * <p>
+     * How you specify this depends on the request inspection payload type.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax,
+     * see the Internet Engineering Task Force (IETF) documentation <a
+     * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.
+     * </p>
+     * <p>
+     * For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>, the username field
+     * specification is <code>/form/username</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For form encoded payload types, use the HTML form names.
+     * </p>
+     * <p>
+     * For example, for an HTML form with the input element named <code>username1</code>, the username field
+     * specification is <code>username1</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String identifier;
 
     /**
      * <p>
-     * The name of the username field. For example <code>/form/username</code>.
+     * The name of the username field.
      * </p>
+     * <p>
+     * How you specify this depends on the request inspection payload type.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax,
+     * see the Internet Engineering Task Force (IETF) documentation <a
+     * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.
+     * </p>
+     * <p>
+     * For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>, the username field
+     * specification is <code>/form/username</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For form encoded payload types, use the HTML form names.
+     * </p>
+     * <p>
+     * For example, for an HTML form with the input element named <code>username1</code>, the username field
+     * specification is <code>username1</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param identifier
-     *        The name of the username field. For example <code>/form/username</code>.
+     *        The name of the username field. </p>
+     *        <p>
+     *        How you specify this depends on the request inspection payload type.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer
+     *        syntax, see the Internet Engineering Task Force (IETF) documentation <a
+     *        href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.
+     *        </p>
+     *        <p>
+     *        For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>, the username
+     *        field specification is <code>/form/username</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For form encoded payload types, use the HTML form names.
+     *        </p>
+     *        <p>
+     *        For example, for an HTML form with the input element named <code>username1</code>, the username field
+     *        specification is <code>username1</code>
+     *        </p>
+     *        </li>
      */
 
     public void setIdentifier(String identifier) {
@@ -50,10 +127,59 @@ public class UsernameField implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the username field. For example <code>/form/username</code>.
+     * The name of the username field.
      * </p>
+     * <p>
+     * How you specify this depends on the request inspection payload type.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax,
+     * see the Internet Engineering Task Force (IETF) documentation <a
+     * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.
+     * </p>
+     * <p>
+     * For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>, the username field
+     * specification is <code>/form/username</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For form encoded payload types, use the HTML form names.
+     * </p>
+     * <p>
+     * For example, for an HTML form with the input element named <code>username1</code>, the username field
+     * specification is <code>username1</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The name of the username field. For example <code>/form/username</code>.
+     * @return The name of the username field. </p>
+     *         <p>
+     *         How you specify this depends on the request inspection payload type.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer
+     *         syntax, see the Internet Engineering Task Force (IETF) documentation <a
+     *         href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.
+     *         </p>
+     *         <p>
+     *         For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>, the username
+     *         field specification is <code>/form/username</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For form encoded payload types, use the HTML form names.
+     *         </p>
+     *         <p>
+     *         For example, for an HTML form with the input element named <code>username1</code>, the username field
+     *         specification is <code>username1</code>
+     *         </p>
+     *         </li>
      */
 
     public String getIdentifier() {
@@ -62,11 +188,60 @@ public class UsernameField implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the username field. For example <code>/form/username</code>.
+     * The name of the username field.
      * </p>
+     * <p>
+     * How you specify this depends on the request inspection payload type.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer syntax,
+     * see the Internet Engineering Task Force (IETF) documentation <a
+     * href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.
+     * </p>
+     * <p>
+     * For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>, the username field
+     * specification is <code>/form/username</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For form encoded payload types, use the HTML form names.
+     * </p>
+     * <p>
+     * For example, for an HTML form with the input element named <code>username1</code>, the username field
+     * specification is <code>username1</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param identifier
-     *        The name of the username field. For example <code>/form/username</code>.
+     *        The name of the username field. </p>
+     *        <p>
+     *        How you specify this depends on the request inspection payload type.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For JSON payloads, specify the field name in JSON pointer syntax. For information about the JSON Pointer
+     *        syntax, see the Internet Engineering Task Force (IETF) documentation <a
+     *        href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.
+     *        </p>
+     *        <p>
+     *        For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>, the username
+     *        field specification is <code>/form/username</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For form encoded payload types, use the HTML form names.
+     *        </p>
+     *        <p>
+     *        For example, for an HTML form with the input element named <code>username1</code>, the username field
+     *        specification is <code>username1</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

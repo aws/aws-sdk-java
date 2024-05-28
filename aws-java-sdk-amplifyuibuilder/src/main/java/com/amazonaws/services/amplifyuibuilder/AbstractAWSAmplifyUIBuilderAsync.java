@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -158,6 +158,19 @@ public class AbstractAWSAmplifyUIBuilderAsync extends AbstractAWSAmplifyUIBuilde
     }
 
     @Override
+    public java.util.concurrent.Future<GetCodegenJobResult> getCodegenJobAsync(GetCodegenJobRequest request) {
+
+        return getCodegenJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCodegenJobResult> getCodegenJobAsync(GetCodegenJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCodegenJobRequest, GetCodegenJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetComponentResult> getComponentAsync(GetComponentRequest request) {
 
         return getComponentAsync(request, null);
@@ -210,6 +223,19 @@ public class AbstractAWSAmplifyUIBuilderAsync extends AbstractAWSAmplifyUIBuilde
     }
 
     @Override
+    public java.util.concurrent.Future<ListCodegenJobsResult> listCodegenJobsAsync(ListCodegenJobsRequest request) {
+
+        return listCodegenJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCodegenJobsResult> listCodegenJobsAsync(ListCodegenJobsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCodegenJobsRequest, ListCodegenJobsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListComponentsResult> listComponentsAsync(ListComponentsRequest request) {
 
         return listComponentsAsync(request, null);
@@ -231,6 +257,19 @@ public class AbstractAWSAmplifyUIBuilderAsync extends AbstractAWSAmplifyUIBuilde
     @Override
     public java.util.concurrent.Future<ListFormsResult> listFormsAsync(ListFormsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListFormsRequest, ListFormsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -270,6 +309,45 @@ public class AbstractAWSAmplifyUIBuilderAsync extends AbstractAWSAmplifyUIBuilde
     @Override
     public java.util.concurrent.Future<RefreshTokenResult> refreshTokenAsync(RefreshTokenRequest request,
             com.amazonaws.handlers.AsyncHandler<RefreshTokenRequest, RefreshTokenResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartCodegenJobResult> startCodegenJobAsync(StartCodegenJobRequest request) {
+
+        return startCodegenJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartCodegenJobResult> startCodegenJobAsync(StartCodegenJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartCodegenJobRequest, StartCodegenJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

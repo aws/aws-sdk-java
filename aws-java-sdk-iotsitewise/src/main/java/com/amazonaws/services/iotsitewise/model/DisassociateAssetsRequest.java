@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,15 +27,22 @@ public class DisassociateAssetsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the parent asset from which to disassociate the child asset.
+     * The ID of the parent asset from which to disassociate the child asset. This can be either the actual ID in UUID
+     * format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      */
     private String assetId;
     /**
      * <p>
-     * The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed
-     * that all come from the same asset model. You can use the hierarchy ID to identify the correct asset to
-     * disassociate. For more information, see <a
+     * The ID of a hierarchy in the parent asset's model. (This can be either the actual ID in UUID format, or else
+     * <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     * >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.) Hierarchies allow different
+     * groupings of assets to be formed that all come from the same asset model. You can use the hierarchy ID to
+     * identify the correct asset to disassociate. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
      * the <i>IoT SiteWise User Guide</i>.
      * </p>
@@ -43,7 +50,10 @@ public class DisassociateAssetsRequest extends com.amazonaws.AmazonWebServiceReq
     private String hierarchyId;
     /**
      * <p>
-     * The ID of the child asset to disassociate.
+     * The ID of the child asset to disassociate. This can be either the actual ID in UUID format, or else
+     * <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     * >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      */
     private String childAssetId;
@@ -57,11 +67,19 @@ public class DisassociateAssetsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the parent asset from which to disassociate the child asset.
+     * The ID of the parent asset from which to disassociate the child asset. This can be either the actual ID in UUID
+     * format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param assetId
-     *        The ID of the parent asset from which to disassociate the child asset.
+     *        The ID of the parent asset from which to disassociate the child asset. This can be either the actual ID in
+     *        UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     *        >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public void setAssetId(String assetId) {
@@ -70,10 +88,18 @@ public class DisassociateAssetsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the parent asset from which to disassociate the child asset.
+     * The ID of the parent asset from which to disassociate the child asset. This can be either the actual ID in UUID
+     * format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
-     * @return The ID of the parent asset from which to disassociate the child asset.
+     * @return The ID of the parent asset from which to disassociate the child asset. This can be either the actual ID
+     *         in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     *         >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public String getAssetId() {
@@ -82,11 +108,19 @@ public class DisassociateAssetsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the parent asset from which to disassociate the child asset.
+     * The ID of the parent asset from which to disassociate the child asset. This can be either the actual ID in UUID
+     * format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     * href
+     * ="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param assetId
-     *        The ID of the parent asset from which to disassociate the child asset.
+     *        The ID of the parent asset from which to disassociate the child asset. This can be either the actual ID in
+     *        UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     *        >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,17 +131,23 @@ public class DisassociateAssetsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed
-     * that all come from the same asset model. You can use the hierarchy ID to identify the correct asset to
-     * disassociate. For more information, see <a
+     * The ID of a hierarchy in the parent asset's model. (This can be either the actual ID in UUID format, or else
+     * <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     * >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.) Hierarchies allow different
+     * groupings of assets to be formed that all come from the same asset model. You can use the hierarchy ID to
+     * identify the correct asset to disassociate. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
      * the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param hierarchyId
-     *        The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be
-     *        formed that all come from the same asset model. You can use the hierarchy ID to identify the correct asset
-     *        to disassociate. For more information, see <a
+     *        The ID of a hierarchy in the parent asset's model. (This can be either the actual ID in UUID format, or
+     *        else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">
+     *        Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.) Hierarchies allow
+     *        different groupings of assets to be formed that all come from the same asset model. You can use the
+     *        hierarchy ID to identify the correct asset to disassociate. For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
      *        hierarchies</a> in the <i>IoT SiteWise User Guide</i>.
      */
@@ -118,16 +158,22 @@ public class DisassociateAssetsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed
-     * that all come from the same asset model. You can use the hierarchy ID to identify the correct asset to
-     * disassociate. For more information, see <a
+     * The ID of a hierarchy in the parent asset's model. (This can be either the actual ID in UUID format, or else
+     * <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     * >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.) Hierarchies allow different
+     * groupings of assets to be formed that all come from the same asset model. You can use the hierarchy ID to
+     * identify the correct asset to disassociate. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
      * the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
-     * @return The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be
-     *         formed that all come from the same asset model. You can use the hierarchy ID to identify the correct
-     *         asset to disassociate. For more information, see <a
+     * @return The ID of a hierarchy in the parent asset's model. (This can be either the actual ID in UUID format, or
+     *         else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">
+     *         Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.) Hierarchies allow
+     *         different groupings of assets to be formed that all come from the same asset model. You can use the
+     *         hierarchy ID to identify the correct asset to disassociate. For more information, see <a
      *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
      *         hierarchies</a> in the <i>IoT SiteWise User Guide</i>.
      */
@@ -138,17 +184,23 @@ public class DisassociateAssetsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed
-     * that all come from the same asset model. You can use the hierarchy ID to identify the correct asset to
-     * disassociate. For more information, see <a
+     * The ID of a hierarchy in the parent asset's model. (This can be either the actual ID in UUID format, or else
+     * <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     * >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.) Hierarchies allow different
+     * groupings of assets to be formed that all come from the same asset model. You can use the hierarchy ID to
+     * identify the correct asset to disassociate. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
      * the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param hierarchyId
-     *        The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be
-     *        formed that all come from the same asset model. You can use the hierarchy ID to identify the correct asset
-     *        to disassociate. For more information, see <a
+     *        The ID of a hierarchy in the parent asset's model. (This can be either the actual ID in UUID format, or
+     *        else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">
+     *        Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.) Hierarchies allow
+     *        different groupings of assets to be formed that all come from the same asset model. You can use the
+     *        hierarchy ID to identify the correct asset to disassociate. For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
      *        hierarchies</a> in the <i>IoT SiteWise User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -161,11 +213,17 @@ public class DisassociateAssetsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the child asset to disassociate.
+     * The ID of the child asset to disassociate. This can be either the actual ID in UUID format, or else
+     * <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     * >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param childAssetId
-     *        The ID of the child asset to disassociate.
+     *        The ID of the child asset to disassociate. This can be either the actual ID in UUID format, or else
+     *        <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     *        >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public void setChildAssetId(String childAssetId) {
@@ -174,10 +232,16 @@ public class DisassociateAssetsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the child asset to disassociate.
+     * The ID of the child asset to disassociate. This can be either the actual ID in UUID format, or else
+     * <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     * >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
-     * @return The ID of the child asset to disassociate.
+     * @return The ID of the child asset to disassociate. This can be either the actual ID in UUID format, or else
+     *         <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     *         >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public String getChildAssetId() {
@@ -186,11 +250,17 @@ public class DisassociateAssetsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the child asset to disassociate.
+     * The ID of the child asset to disassociate. This can be either the actual ID in UUID format, or else
+     * <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     * >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param childAssetId
-     *        The ID of the child asset to disassociate.
+     *        The ID of the child asset to disassociate. This can be either the actual ID in UUID format, or else
+     *        <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     *        >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

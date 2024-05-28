@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about the number of S3 buckets that use certain types of server-side encryption by default or
- * don't encrypt new objects by default. For detailed information about these settings, see <a
+ * Provides information about the number of S3 buckets whose settings do or don't specify default server-side encryption
+ * behavior for objects that are added to the buckets. For detailed information about these settings, see <a
  * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html">Setting default server-side
  * encryption behavior for Amazon S3 buckets</a> in the <i>Amazon Simple Storage Service User Guide</i>.
  * </p>
@@ -33,22 +33,23 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The total number of buckets that use an KMS key to encrypt new objects by default, either an Amazon Web Services
-     * managed key or a customer managed key. These buckets use KMS encryption (SSE-KMS) by default.
+     * The total number of buckets whose default encryption settings are configured to encrypt new objects with an KMS
+     * key, either an Amazon Web Services managed key or a customer managed key. By default, these buckets encrypt new
+     * objects automatically using DSSE-KMS or SSE-KMS encryption.
      * </p>
      */
     private Long kmsManaged;
     /**
      * <p>
-     * The total number of buckets that use an Amazon S3 managed key to encrypt new objects by default. These buckets
-     * use Amazon S3 managed encryption (SSE-S3) by default.
+     * The total number of buckets whose default encryption settings are configured to encrypt new objects with an
+     * Amazon S3 managed key. By default, these buckets encrypt new objects automatically using SSE-S3 encryption.
      * </p>
      */
     private Long s3Managed;
     /**
      * <p>
-     * The total number of buckets that don't encrypt new objects by default. Default encryption is disabled for these
-     * buckets.
+     * The total number of buckets that don't specify default server-side encryption behavior for new objects. Default
+     * encryption settings aren't configured for these buckets.
      * </p>
      */
     private Long unencrypted;
@@ -62,15 +63,15 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The total number of buckets that use an KMS key to encrypt new objects by default, either an Amazon Web Services
-     * managed key or a customer managed key. These buckets use KMS encryption (SSE-KMS) by default.
+     * The total number of buckets whose default encryption settings are configured to encrypt new objects with an KMS
+     * key, either an Amazon Web Services managed key or a customer managed key. By default, these buckets encrypt new
+     * objects automatically using DSSE-KMS or SSE-KMS encryption.
      * </p>
      * 
      * @param kmsManaged
-     *        <p>
-     *        The total number of buckets that use an KMS key to encrypt new objects by default, either an Amazon Web
-     *        Services managed key or a customer managed key. These buckets use KMS encryption (SSE-KMS) by default.
-     *        </p>
+     *        The total number of buckets whose default encryption settings are configured to encrypt new objects with
+     *        an KMS key, either an Amazon Web Services managed key or a customer managed key. By default, these buckets
+     *        encrypt new objects automatically using DSSE-KMS or SSE-KMS encryption.
      */
 
     public void setKmsManaged(Long kmsManaged) {
@@ -79,14 +80,14 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The total number of buckets that use an KMS key to encrypt new objects by default, either an Amazon Web Services
-     * managed key or a customer managed key. These buckets use KMS encryption (SSE-KMS) by default.
+     * The total number of buckets whose default encryption settings are configured to encrypt new objects with an KMS
+     * key, either an Amazon Web Services managed key or a customer managed key. By default, these buckets encrypt new
+     * objects automatically using DSSE-KMS or SSE-KMS encryption.
      * </p>
      * 
-     * @return <p>
-     *         The total number of buckets that use an KMS key to encrypt new objects by default, either an Amazon Web
-     *         Services managed key or a customer managed key. These buckets use KMS encryption (SSE-KMS) by default.
-     *         </p>
+     * @return The total number of buckets whose default encryption settings are configured to encrypt new objects with
+     *         an KMS key, either an Amazon Web Services managed key or a customer managed key. By default, these
+     *         buckets encrypt new objects automatically using DSSE-KMS or SSE-KMS encryption.
      */
 
     public Long getKmsManaged() {
@@ -95,15 +96,15 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The total number of buckets that use an KMS key to encrypt new objects by default, either an Amazon Web Services
-     * managed key or a customer managed key. These buckets use KMS encryption (SSE-KMS) by default.
+     * The total number of buckets whose default encryption settings are configured to encrypt new objects with an KMS
+     * key, either an Amazon Web Services managed key or a customer managed key. By default, these buckets encrypt new
+     * objects automatically using DSSE-KMS or SSE-KMS encryption.
      * </p>
      * 
      * @param kmsManaged
-     *        <p>
-     *        The total number of buckets that use an KMS key to encrypt new objects by default, either an Amazon Web
-     *        Services managed key or a customer managed key. These buckets use KMS encryption (SSE-KMS) by default.
-     *        </p>
+     *        The total number of buckets whose default encryption settings are configured to encrypt new objects with
+     *        an KMS key, either an Amazon Web Services managed key or a customer managed key. By default, these buckets
+     *        encrypt new objects automatically using DSSE-KMS or SSE-KMS encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,13 +115,14 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The total number of buckets that use an Amazon S3 managed key to encrypt new objects by default. These buckets
-     * use Amazon S3 managed encryption (SSE-S3) by default.
+     * The total number of buckets whose default encryption settings are configured to encrypt new objects with an
+     * Amazon S3 managed key. By default, these buckets encrypt new objects automatically using SSE-S3 encryption.
      * </p>
      * 
      * @param s3Managed
-     *        The total number of buckets that use an Amazon S3 managed key to encrypt new objects by default. These
-     *        buckets use Amazon S3 managed encryption (SSE-S3) by default.
+     *        The total number of buckets whose default encryption settings are configured to encrypt new objects with
+     *        an Amazon S3 managed key. By default, these buckets encrypt new objects automatically using SSE-S3
+     *        encryption.
      */
 
     public void setS3Managed(Long s3Managed) {
@@ -129,12 +131,13 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The total number of buckets that use an Amazon S3 managed key to encrypt new objects by default. These buckets
-     * use Amazon S3 managed encryption (SSE-S3) by default.
+     * The total number of buckets whose default encryption settings are configured to encrypt new objects with an
+     * Amazon S3 managed key. By default, these buckets encrypt new objects automatically using SSE-S3 encryption.
      * </p>
      * 
-     * @return The total number of buckets that use an Amazon S3 managed key to encrypt new objects by default. These
-     *         buckets use Amazon S3 managed encryption (SSE-S3) by default.
+     * @return The total number of buckets whose default encryption settings are configured to encrypt new objects with
+     *         an Amazon S3 managed key. By default, these buckets encrypt new objects automatically using SSE-S3
+     *         encryption.
      */
 
     public Long getS3Managed() {
@@ -143,13 +146,14 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The total number of buckets that use an Amazon S3 managed key to encrypt new objects by default. These buckets
-     * use Amazon S3 managed encryption (SSE-S3) by default.
+     * The total number of buckets whose default encryption settings are configured to encrypt new objects with an
+     * Amazon S3 managed key. By default, these buckets encrypt new objects automatically using SSE-S3 encryption.
      * </p>
      * 
      * @param s3Managed
-     *        The total number of buckets that use an Amazon S3 managed key to encrypt new objects by default. These
-     *        buckets use Amazon S3 managed encryption (SSE-S3) by default.
+     *        The total number of buckets whose default encryption settings are configured to encrypt new objects with
+     *        an Amazon S3 managed key. By default, these buckets encrypt new objects automatically using SSE-S3
+     *        encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,13 +164,13 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The total number of buckets that don't encrypt new objects by default. Default encryption is disabled for these
-     * buckets.
+     * The total number of buckets that don't specify default server-side encryption behavior for new objects. Default
+     * encryption settings aren't configured for these buckets.
      * </p>
      * 
      * @param unencrypted
-     *        The total number of buckets that don't encrypt new objects by default. Default encryption is disabled for
-     *        these buckets.
+     *        The total number of buckets that don't specify default server-side encryption behavior for new objects.
+     *        Default encryption settings aren't configured for these buckets.
      */
 
     public void setUnencrypted(Long unencrypted) {
@@ -175,12 +179,12 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The total number of buckets that don't encrypt new objects by default. Default encryption is disabled for these
-     * buckets.
+     * The total number of buckets that don't specify default server-side encryption behavior for new objects. Default
+     * encryption settings aren't configured for these buckets.
      * </p>
      * 
-     * @return The total number of buckets that don't encrypt new objects by default. Default encryption is disabled for
-     *         these buckets.
+     * @return The total number of buckets that don't specify default server-side encryption behavior for new objects.
+     *         Default encryption settings aren't configured for these buckets.
      */
 
     public Long getUnencrypted() {
@@ -189,13 +193,13 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The total number of buckets that don't encrypt new objects by default. Default encryption is disabled for these
-     * buckets.
+     * The total number of buckets that don't specify default server-side encryption behavior for new objects. Default
+     * encryption settings aren't configured for these buckets.
      * </p>
      * 
      * @param unencrypted
-     *        The total number of buckets that don't encrypt new objects by default. Default encryption is disabled for
-     *        these buckets.
+     *        The total number of buckets that don't specify default server-side encryption behavior for new objects.
+     *        Default encryption settings aren't configured for these buckets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

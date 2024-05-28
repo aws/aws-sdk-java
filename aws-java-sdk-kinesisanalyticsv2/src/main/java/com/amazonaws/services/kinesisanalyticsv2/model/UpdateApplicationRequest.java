@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -75,6 +75,24 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String conditionalToken;
+    /**
+     * <p>
+     * Updates the Managed Service for Apache Flink runtime environment used to run your code. To avoid issues you must:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Ensure your new jar and dependencies are compatible with the new runtime selected.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Ensure your new code's state is compatible with the snapshot from which your application will start
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String runtimeEnvironmentUpdate;
 
     /**
      * <p>
@@ -439,6 +457,161 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Updates the Managed Service for Apache Flink runtime environment used to run your code. To avoid issues you must:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Ensure your new jar and dependencies are compatible with the new runtime selected.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Ensure your new code's state is compatible with the snapshot from which your application will start
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param runtimeEnvironmentUpdate
+     *        Updates the Managed Service for Apache Flink runtime environment used to run your code. To avoid issues
+     *        you must:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Ensure your new jar and dependencies are compatible with the new runtime selected.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Ensure your new code's state is compatible with the snapshot from which your application will start
+     *        </p>
+     *        </li>
+     * @see RuntimeEnvironment
+     */
+
+    public void setRuntimeEnvironmentUpdate(String runtimeEnvironmentUpdate) {
+        this.runtimeEnvironmentUpdate = runtimeEnvironmentUpdate;
+    }
+
+    /**
+     * <p>
+     * Updates the Managed Service for Apache Flink runtime environment used to run your code. To avoid issues you must:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Ensure your new jar and dependencies are compatible with the new runtime selected.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Ensure your new code's state is compatible with the snapshot from which your application will start
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Updates the Managed Service for Apache Flink runtime environment used to run your code. To avoid issues
+     *         you must:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Ensure your new jar and dependencies are compatible with the new runtime selected.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Ensure your new code's state is compatible with the snapshot from which your application will start
+     *         </p>
+     *         </li>
+     * @see RuntimeEnvironment
+     */
+
+    public String getRuntimeEnvironmentUpdate() {
+        return this.runtimeEnvironmentUpdate;
+    }
+
+    /**
+     * <p>
+     * Updates the Managed Service for Apache Flink runtime environment used to run your code. To avoid issues you must:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Ensure your new jar and dependencies are compatible with the new runtime selected.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Ensure your new code's state is compatible with the snapshot from which your application will start
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param runtimeEnvironmentUpdate
+     *        Updates the Managed Service for Apache Flink runtime environment used to run your code. To avoid issues
+     *        you must:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Ensure your new jar and dependencies are compatible with the new runtime selected.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Ensure your new code's state is compatible with the snapshot from which your application will start
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RuntimeEnvironment
+     */
+
+    public UpdateApplicationRequest withRuntimeEnvironmentUpdate(String runtimeEnvironmentUpdate) {
+        setRuntimeEnvironmentUpdate(runtimeEnvironmentUpdate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Updates the Managed Service for Apache Flink runtime environment used to run your code. To avoid issues you must:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Ensure your new jar and dependencies are compatible with the new runtime selected.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Ensure your new code's state is compatible with the snapshot from which your application will start
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param runtimeEnvironmentUpdate
+     *        Updates the Managed Service for Apache Flink runtime environment used to run your code. To avoid issues
+     *        you must:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Ensure your new jar and dependencies are compatible with the new runtime selected.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Ensure your new code's state is compatible with the snapshot from which your application will start
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RuntimeEnvironment
+     */
+
+    public UpdateApplicationRequest withRuntimeEnvironmentUpdate(RuntimeEnvironment runtimeEnvironmentUpdate) {
+        this.runtimeEnvironmentUpdate = runtimeEnvironmentUpdate.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -463,7 +636,9 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getCloudWatchLoggingOptionUpdates() != null)
             sb.append("CloudWatchLoggingOptionUpdates: ").append(getCloudWatchLoggingOptionUpdates()).append(",");
         if (getConditionalToken() != null)
-            sb.append("ConditionalToken: ").append(getConditionalToken());
+            sb.append("ConditionalToken: ").append(getConditionalToken()).append(",");
+        if (getRuntimeEnvironmentUpdate() != null)
+            sb.append("RuntimeEnvironmentUpdate: ").append(getRuntimeEnvironmentUpdate());
         sb.append("}");
         return sb.toString();
     }
@@ -508,6 +683,10 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getConditionalToken() != null && other.getConditionalToken().equals(this.getConditionalToken()) == false)
             return false;
+        if (other.getRuntimeEnvironmentUpdate() == null ^ this.getRuntimeEnvironmentUpdate() == null)
+            return false;
+        if (other.getRuntimeEnvironmentUpdate() != null && other.getRuntimeEnvironmentUpdate().equals(this.getRuntimeEnvironmentUpdate()) == false)
+            return false;
         return true;
     }
 
@@ -523,6 +702,7 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getRunConfigurationUpdate() == null) ? 0 : getRunConfigurationUpdate().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchLoggingOptionUpdates() == null) ? 0 : getCloudWatchLoggingOptionUpdates().hashCode());
         hashCode = prime * hashCode + ((getConditionalToken() == null) ? 0 : getConditionalToken().hashCode());
+        hashCode = prime * hashCode + ((getRuntimeEnvironmentUpdate() == null) ? 0 : getRuntimeEnvironmentUpdate().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -199,6 +199,11 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * service.action.dnsRequestAction.domain
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * service.action.dnsRequestAction.domainWithSuffix
      * </p>
      * </li>
      * <li>
@@ -520,6 +525,11 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
+     * service.action.dnsRequestAction.domainWithSuffix
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * service.action.networkConnectionAction.blocked
      * </p>
      * </li>
@@ -768,6 +778,11 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        service.action.dnsRequestAction.domain
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.dnsRequestAction.domainWithSuffix
      *        </p>
      *        </li>
      *        <li>
@@ -1030,6 +1045,11 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
+     * service.action.dnsRequestAction.domainWithSuffix
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * service.action.networkConnectionAction.blocked
      * </p>
      * </li>
@@ -1277,6 +1297,11 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <li>
      *         <p>
      *         service.action.dnsRequestAction.domain
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         service.action.dnsRequestAction.domainWithSuffix
      *         </p>
      *         </li>
      *         <li>
@@ -1539,6 +1564,11 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
+     * service.action.dnsRequestAction.domainWithSuffix
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * service.action.networkConnectionAction.blocked
      * </p>
      * </li>
@@ -1787,6 +1817,11 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        service.action.dnsRequestAction.domain
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        service.action.dnsRequestAction.domainWithSuffix
      *        </p>
      *        </li>
      *        <li>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -118,6 +118,39 @@ public class AmazonAppflowAsyncClient extends AmazonAppflowClient implements Ama
      */
     public ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelFlowExecutionsResult> cancelFlowExecutionsAsync(CancelFlowExecutionsRequest request) {
+
+        return cancelFlowExecutionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelFlowExecutionsResult> cancelFlowExecutionsAsync(final CancelFlowExecutionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CancelFlowExecutionsRequest, CancelFlowExecutionsResult> asyncHandler) {
+        final CancelFlowExecutionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CancelFlowExecutionsResult>() {
+            @Override
+            public CancelFlowExecutionsResult call() throws Exception {
+                CancelFlowExecutionsResult result = null;
+
+                try {
+                    result = executeCancelFlowExecutions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -616,6 +649,39 @@ public class AmazonAppflowAsyncClient extends AmazonAppflowClient implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<ResetConnectorMetadataCacheResult> resetConnectorMetadataCacheAsync(ResetConnectorMetadataCacheRequest request) {
+
+        return resetConnectorMetadataCacheAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResetConnectorMetadataCacheResult> resetConnectorMetadataCacheAsync(final ResetConnectorMetadataCacheRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ResetConnectorMetadataCacheRequest, ResetConnectorMetadataCacheResult> asyncHandler) {
+        final ResetConnectorMetadataCacheRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ResetConnectorMetadataCacheResult>() {
+            @Override
+            public ResetConnectorMetadataCacheResult call() throws Exception {
+                ResetConnectorMetadataCacheResult result = null;
+
+                try {
+                    result = executeResetConnectorMetadataCache(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartFlowResult> startFlowAsync(StartFlowRequest request) {
 
         return startFlowAsync(request, null);
@@ -798,6 +864,39 @@ public class AmazonAppflowAsyncClient extends AmazonAppflowClient implements Ama
 
                 try {
                     result = executeUpdateConnectorProfile(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConnectorRegistrationResult> updateConnectorRegistrationAsync(UpdateConnectorRegistrationRequest request) {
+
+        return updateConnectorRegistrationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConnectorRegistrationResult> updateConnectorRegistrationAsync(final UpdateConnectorRegistrationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateConnectorRegistrationRequest, UpdateConnectorRegistrationResult> asyncHandler) {
+        final UpdateConnectorRegistrationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateConnectorRegistrationResult>() {
+            @Override
+            public UpdateConnectorRegistrationResult call() throws Exception {
+                UpdateConnectorRegistrationResult result = null;
+
+                try {
+                    result = executeUpdateConnectorRegistration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

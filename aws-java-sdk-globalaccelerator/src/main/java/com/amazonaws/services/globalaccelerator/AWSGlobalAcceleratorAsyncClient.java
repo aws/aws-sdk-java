@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,7 +56,7 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * Global Accelerator is a global service that supports endpoints in multiple Amazon Web Services Regions but you must
  * specify the US West (Oregon) Region to create, update, or otherwise work with accelerators. That is, for example,
- * specify <code>--region us-west-2</code> on AWS CLI commands.
+ * specify <code>--region us-west-2</code> on Amazon Web Services CLI commands.
  * </p>
  * </important>
  * <p>
@@ -65,7 +65,7 @@ import java.util.concurrent.ExecutorService;
  * static IPv4 addresses. For dual-stack, Global Accelerator provides a total of four addresses: two static IPv4
  * addresses and two static IPv6 addresses. With a standard accelerator for IPv4, instead of using the addresses that
  * Global Accelerator provides, you can configure these entry points to be IPv4 addresses from your own IP address
- * ranges that you bring toGlobal Accelerator (BYOIP).
+ * ranges that you bring to Global Accelerator (BYOIP).
  * </p>
  * <p>
  * For a standard accelerator, they distribute incoming application traffic across multiple endpoint resources in
@@ -310,6 +310,39 @@ public class AWSGlobalAcceleratorAsyncClient extends AWSGlobalAcceleratorClient 
     }
 
     @Override
+    public java.util.concurrent.Future<CreateCrossAccountAttachmentResult> createCrossAccountAttachmentAsync(CreateCrossAccountAttachmentRequest request) {
+
+        return createCrossAccountAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCrossAccountAttachmentResult> createCrossAccountAttachmentAsync(final CreateCrossAccountAttachmentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateCrossAccountAttachmentRequest, CreateCrossAccountAttachmentResult> asyncHandler) {
+        final CreateCrossAccountAttachmentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateCrossAccountAttachmentResult>() {
+            @Override
+            public CreateCrossAccountAttachmentResult call() throws Exception {
+                CreateCrossAccountAttachmentResult result = null;
+
+                try {
+                    result = executeCreateCrossAccountAttachment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateCustomRoutingAcceleratorResult> createCustomRoutingAcceleratorAsync(CreateCustomRoutingAcceleratorRequest request) {
 
         return createCustomRoutingAcceleratorAsync(request, null);
@@ -495,6 +528,39 @@ public class AWSGlobalAcceleratorAsyncClient extends AWSGlobalAcceleratorClient 
 
                 try {
                     result = executeDeleteAccelerator(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCrossAccountAttachmentResult> deleteCrossAccountAttachmentAsync(DeleteCrossAccountAttachmentRequest request) {
+
+        return deleteCrossAccountAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCrossAccountAttachmentResult> deleteCrossAccountAttachmentAsync(final DeleteCrossAccountAttachmentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteCrossAccountAttachmentRequest, DeleteCrossAccountAttachmentResult> asyncHandler) {
+        final DeleteCrossAccountAttachmentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteCrossAccountAttachmentResult>() {
+            @Override
+            public DeleteCrossAccountAttachmentResult call() throws Exception {
+                DeleteCrossAccountAttachmentResult result = null;
+
+                try {
+                    result = executeDeleteCrossAccountAttachment(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -812,6 +878,40 @@ public class AWSGlobalAcceleratorAsyncClient extends AWSGlobalAcceleratorClient 
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeCrossAccountAttachmentResult> describeCrossAccountAttachmentAsync(DescribeCrossAccountAttachmentRequest request) {
+
+        return describeCrossAccountAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCrossAccountAttachmentResult> describeCrossAccountAttachmentAsync(
+            final DescribeCrossAccountAttachmentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeCrossAccountAttachmentRequest, DescribeCrossAccountAttachmentResult> asyncHandler) {
+        final DescribeCrossAccountAttachmentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeCrossAccountAttachmentResult>() {
+            @Override
+            public DescribeCrossAccountAttachmentResult call() throws Exception {
+                DescribeCrossAccountAttachmentResult result = null;
+
+                try {
+                    result = executeDescribeCrossAccountAttachment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeCustomRoutingAcceleratorResult> describeCustomRoutingAcceleratorAsync(
             DescribeCustomRoutingAcceleratorRequest request) {
 
@@ -1067,6 +1167,107 @@ public class AWSGlobalAcceleratorAsyncClient extends AWSGlobalAcceleratorClient 
 
                 try {
                     result = executeListByoipCidrs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCrossAccountAttachmentsResult> listCrossAccountAttachmentsAsync(ListCrossAccountAttachmentsRequest request) {
+
+        return listCrossAccountAttachmentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCrossAccountAttachmentsResult> listCrossAccountAttachmentsAsync(final ListCrossAccountAttachmentsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCrossAccountAttachmentsRequest, ListCrossAccountAttachmentsResult> asyncHandler) {
+        final ListCrossAccountAttachmentsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCrossAccountAttachmentsResult>() {
+            @Override
+            public ListCrossAccountAttachmentsResult call() throws Exception {
+                ListCrossAccountAttachmentsResult result = null;
+
+                try {
+                    result = executeListCrossAccountAttachments(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCrossAccountResourceAccountsResult> listCrossAccountResourceAccountsAsync(
+            ListCrossAccountResourceAccountsRequest request) {
+
+        return listCrossAccountResourceAccountsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCrossAccountResourceAccountsResult> listCrossAccountResourceAccountsAsync(
+            final ListCrossAccountResourceAccountsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCrossAccountResourceAccountsRequest, ListCrossAccountResourceAccountsResult> asyncHandler) {
+        final ListCrossAccountResourceAccountsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCrossAccountResourceAccountsResult>() {
+            @Override
+            public ListCrossAccountResourceAccountsResult call() throws Exception {
+                ListCrossAccountResourceAccountsResult result = null;
+
+                try {
+                    result = executeListCrossAccountResourceAccounts(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCrossAccountResourcesResult> listCrossAccountResourcesAsync(ListCrossAccountResourcesRequest request) {
+
+        return listCrossAccountResourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCrossAccountResourcesResult> listCrossAccountResourcesAsync(final ListCrossAccountResourcesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCrossAccountResourcesRequest, ListCrossAccountResourcesResult> asyncHandler) {
+        final ListCrossAccountResourcesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCrossAccountResourcesResult>() {
+            @Override
+            public ListCrossAccountResourcesResult call() throws Exception {
+                ListCrossAccountResourcesResult result = null;
+
+                try {
+                    result = executeListCrossAccountResources(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1568,6 +1769,39 @@ public class AWSGlobalAcceleratorAsyncClient extends AWSGlobalAcceleratorClient 
 
                 try {
                     result = executeUpdateAcceleratorAttributes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCrossAccountAttachmentResult> updateCrossAccountAttachmentAsync(UpdateCrossAccountAttachmentRequest request) {
+
+        return updateCrossAccountAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCrossAccountAttachmentResult> updateCrossAccountAttachmentAsync(final UpdateCrossAccountAttachmentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateCrossAccountAttachmentRequest, UpdateCrossAccountAttachmentResult> asyncHandler) {
+        final UpdateCrossAccountAttachmentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateCrossAccountAttachmentResult>() {
+            @Override
+            public UpdateCrossAccountAttachmentResult call() throws Exception {
+                UpdateCrossAccountAttachmentResult result = null;
+
+                try {
+                    result = executeUpdateCrossAccountAttachment(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

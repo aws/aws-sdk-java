@@ -1,0 +1,126 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.iotsitewise.model.transform;
+
+import java.math.*;
+
+import javax.annotation.Generated;
+
+import com.amazonaws.services.iotsitewise.model.*;
+import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
+import com.amazonaws.transform.*;
+
+import com.fasterxml.jackson.core.JsonToken;
+import static com.fasterxml.jackson.core.JsonToken.*;
+
+/**
+ * DescribeAssetModelCompositeModelResult JSON Unmarshaller
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeAssetModelCompositeModelResultJsonUnmarshaller implements Unmarshaller<DescribeAssetModelCompositeModelResult, JsonUnmarshallerContext> {
+
+    public DescribeAssetModelCompositeModelResult unmarshall(JsonUnmarshallerContext context) throws Exception {
+        DescribeAssetModelCompositeModelResult describeAssetModelCompositeModelResult = new DescribeAssetModelCompositeModelResult();
+
+        int originalDepth = context.getCurrentDepth();
+        String currentParentElement = context.getCurrentParentElement();
+        int targetDepth = originalDepth + 1;
+
+        JsonToken token = context.getCurrentToken();
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL) {
+            return describeAssetModelCompositeModelResult;
+        }
+
+        while (true) {
+            if (token == null)
+                break;
+
+            if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("assetModelId", targetDepth)) {
+                    context.nextToken();
+                    describeAssetModelCompositeModelResult.setAssetModelId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("assetModelCompositeModelId", targetDepth)) {
+                    context.nextToken();
+                    describeAssetModelCompositeModelResult.setAssetModelCompositeModelId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("assetModelCompositeModelExternalId", targetDepth)) {
+                    context.nextToken();
+                    describeAssetModelCompositeModelResult.setAssetModelCompositeModelExternalId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("assetModelCompositeModelPath", targetDepth)) {
+                    context.nextToken();
+                    describeAssetModelCompositeModelResult.setAssetModelCompositeModelPath(new ListUnmarshaller<AssetModelCompositeModelPathSegment>(
+                            AssetModelCompositeModelPathSegmentJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("assetModelCompositeModelName", targetDepth)) {
+                    context.nextToken();
+                    describeAssetModelCompositeModelResult.setAssetModelCompositeModelName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("assetModelCompositeModelDescription", targetDepth)) {
+                    context.nextToken();
+                    describeAssetModelCompositeModelResult.setAssetModelCompositeModelDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("assetModelCompositeModelType", targetDepth)) {
+                    context.nextToken();
+                    describeAssetModelCompositeModelResult.setAssetModelCompositeModelType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("assetModelCompositeModelProperties", targetDepth)) {
+                    context.nextToken();
+                    describeAssetModelCompositeModelResult.setAssetModelCompositeModelProperties(new ListUnmarshaller<AssetModelProperty>(
+                            AssetModelPropertyJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("compositionDetails", targetDepth)) {
+                    context.nextToken();
+                    describeAssetModelCompositeModelResult.setCompositionDetails(CompositionDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("assetModelCompositeModelSummaries", targetDepth)) {
+                    context.nextToken();
+                    describeAssetModelCompositeModelResult.setAssetModelCompositeModelSummaries(new ListUnmarshaller<AssetModelCompositeModelSummary>(
+                            AssetModelCompositeModelSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("actionDefinitions", targetDepth)) {
+                    context.nextToken();
+                    describeAssetModelCompositeModelResult.setActionDefinitions(new ListUnmarshaller<ActionDefinition>(ActionDefinitionJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
+            } else if (token == END_ARRAY || token == END_OBJECT) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
+                }
+            }
+            token = context.nextToken();
+        }
+
+        return describeAssetModelCompositeModelResult;
+    }
+
+    private static DescribeAssetModelCompositeModelResultJsonUnmarshaller instance;
+
+    public static DescribeAssetModelCompositeModelResultJsonUnmarshaller getInstance() {
+        if (instance == null)
+            instance = new DescribeAssetModelCompositeModelResultJsonUnmarshaller();
+        return instance;
+    }
+}

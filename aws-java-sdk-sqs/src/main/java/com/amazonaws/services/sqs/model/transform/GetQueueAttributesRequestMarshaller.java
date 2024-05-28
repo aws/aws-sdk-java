@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,53 +12,48 @@
  */
 package com.amazonaws.services.sqs.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.sqs.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.StringUtils;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetQueueAttributesRequest Marshaller
+ * GetQueueAttributesRequestMarshaller
  */
-
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetQueueAttributesRequestMarshaller implements Marshaller<Request<GetQueueAttributesRequest>, GetQueueAttributesRequest> {
+@SdkInternalApi
+public class GetQueueAttributesRequestMarshaller {
 
-    public Request<GetQueueAttributesRequest> marshall(GetQueueAttributesRequest getQueueAttributesRequest) {
+    private static final MarshallingInfo<String> QUEUEURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("QueueUrl").build();
+    private static final MarshallingInfo<List> ATTRIBUTENAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AttributeNames").build();
+
+    private static final GetQueueAttributesRequestMarshaller instance = new GetQueueAttributesRequestMarshaller();
+
+    public static GetQueueAttributesRequestMarshaller getInstance() {
+        return instance;
+    }
+
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(GetQueueAttributesRequest getQueueAttributesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (getQueueAttributesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<GetQueueAttributesRequest> request = new DefaultRequest<GetQueueAttributesRequest>(getQueueAttributesRequest, "AmazonSQS");
-        request.addParameter("Action", "GetQueueAttributes");
-        request.addParameter("Version", "2012-11-05");
-        request.setHttpMethod(HttpMethodName.POST);
-
-        if (getQueueAttributesRequest.getQueueUrl() != null) {
-            request.addParameter("QueueUrl", StringUtils.fromString(getQueueAttributesRequest.getQueueUrl()));
+        try {
+            protocolMarshaller.marshall(getQueueAttributesRequest.getQueueUrl(), QUEUEURL_BINDING);
+            protocolMarshaller.marshall(getQueueAttributesRequest.getAttributeNames(), ATTRIBUTENAMES_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (!getQueueAttributesRequest.getAttributeNames().isEmpty()
-                || !((com.amazonaws.internal.SdkInternalList<String>) getQueueAttributesRequest.getAttributeNames()).isAutoConstruct()) {
-            com.amazonaws.internal.SdkInternalList<String> attributeNamesList = (com.amazonaws.internal.SdkInternalList<String>) getQueueAttributesRequest
-                    .getAttributeNames();
-            int attributeNamesListIndex = 1;
-
-            for (String attributeNamesListValue : attributeNamesList) {
-                if (attributeNamesListValue != null) {
-                    request.addParameter("AttributeName." + attributeNamesListIndex, StringUtils.fromString(attributeNamesListValue));
-                }
-                attributeNamesListIndex++;
-            }
-        }
-
-        return request;
     }
 
 }

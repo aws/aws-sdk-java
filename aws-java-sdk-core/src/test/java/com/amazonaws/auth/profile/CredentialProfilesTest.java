@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -156,9 +156,8 @@ public class CredentialProfilesTest {
      */
     @Test
     public void testProfileWithMultipleAccessOrSecretKeysUnderSameProfile() {
-        checkExpectedException(ProfileResourceLoader.profilesWithTwoAccessKeyUnderSameProfile(),
-                               IllegalArgumentException.class,
-                               "Should throw an exception as there is a profile with two AWS Access Key ID's.");
+        ProfilesConfigFile profile = new ProfilesConfigFile(ProfileResourceLoader.profilesWithTwoAccessKeyUnderSameProfile().asFile());
+        assertEquals("testProfile3", profile.getCredentials("test2").getAWSAccessKeyId());
     }
 
     /**

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,7 +24,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * with a lower order integer value is tried for job placement first. Compute environments must be in the
  * <code>VALID</code> state before you can associate them with a job queue. All of the compute environments must be
  * either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>);
- * EC2 and Fargate compute environments can't be mixed.
+ * Amazon EC2 and Fargate compute environments can't be mixed.
  * </p>
  * <note>
  * <p>

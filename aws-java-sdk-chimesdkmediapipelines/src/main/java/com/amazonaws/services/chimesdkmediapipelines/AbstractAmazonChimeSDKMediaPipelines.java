@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,7 +38,27 @@ public class AbstractAmazonChimeSDKMediaPipelines implements AmazonChimeSDKMedia
     }
 
     @Override
+    public CreateMediaInsightsPipelineResult createMediaInsightsPipeline(CreateMediaInsightsPipelineRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateMediaInsightsPipelineConfigurationResult createMediaInsightsPipelineConfiguration(CreateMediaInsightsPipelineConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateMediaLiveConnectorPipelineResult createMediaLiveConnectorPipeline(CreateMediaLiveConnectorPipelineRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateMediaPipelineKinesisVideoStreamPoolResult createMediaPipelineKinesisVideoStreamPool(CreateMediaPipelineKinesisVideoStreamPoolRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateMediaStreamPipelineResult createMediaStreamPipeline(CreateMediaStreamPipelineRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -48,7 +68,17 @@ public class AbstractAmazonChimeSDKMediaPipelines implements AmazonChimeSDKMedia
     }
 
     @Override
+    public DeleteMediaInsightsPipelineConfigurationResult deleteMediaInsightsPipelineConfiguration(DeleteMediaInsightsPipelineConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteMediaPipelineResult deleteMediaPipeline(DeleteMediaPipelineRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteMediaPipelineKinesisVideoStreamPoolResult deleteMediaPipelineKinesisVideoStreamPool(DeleteMediaPipelineKinesisVideoStreamPoolRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -58,12 +88,42 @@ public class AbstractAmazonChimeSDKMediaPipelines implements AmazonChimeSDKMedia
     }
 
     @Override
+    public GetMediaInsightsPipelineConfigurationResult getMediaInsightsPipelineConfiguration(GetMediaInsightsPipelineConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetMediaPipelineResult getMediaPipeline(GetMediaPipelineRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public GetMediaPipelineKinesisVideoStreamPoolResult getMediaPipelineKinesisVideoStreamPool(GetMediaPipelineKinesisVideoStreamPoolRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetSpeakerSearchTaskResult getSpeakerSearchTask(GetSpeakerSearchTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetVoiceToneAnalysisTaskResult getVoiceToneAnalysisTask(GetVoiceToneAnalysisTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListMediaCapturePipelinesResult listMediaCapturePipelines(ListMediaCapturePipelinesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListMediaInsightsPipelineConfigurationsResult listMediaInsightsPipelineConfigurations(ListMediaInsightsPipelineConfigurationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListMediaPipelineKinesisVideoStreamPoolsResult listMediaPipelineKinesisVideoStreamPools(ListMediaPipelineKinesisVideoStreamPoolsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -78,12 +138,47 @@ public class AbstractAmazonChimeSDKMediaPipelines implements AmazonChimeSDKMedia
     }
 
     @Override
+    public StartSpeakerSearchTaskResult startSpeakerSearchTask(StartSpeakerSearchTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartVoiceToneAnalysisTaskResult startVoiceToneAnalysisTask(StartVoiceToneAnalysisTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopSpeakerSearchTaskResult stopSpeakerSearchTask(StopSpeakerSearchTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopVoiceToneAnalysisTaskResult stopVoiceToneAnalysisTask(StopVoiceToneAnalysisTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateMediaInsightsPipelineConfigurationResult updateMediaInsightsPipelineConfiguration(UpdateMediaInsightsPipelineConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateMediaInsightsPipelineStatusResult updateMediaInsightsPipelineStatus(UpdateMediaInsightsPipelineStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateMediaPipelineKinesisVideoStreamPoolResult updateMediaPipelineKinesisVideoStreamPool(UpdateMediaPipelineKinesisVideoStreamPoolRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

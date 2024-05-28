@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -214,6 +214,72 @@ public class AWSSSMContactsAsyncClient extends AWSSSMContactsClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CreateRotationResult> createRotationAsync(CreateRotationRequest request) {
+
+        return createRotationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRotationResult> createRotationAsync(final CreateRotationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateRotationRequest, CreateRotationResult> asyncHandler) {
+        final CreateRotationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateRotationResult>() {
+            @Override
+            public CreateRotationResult call() throws Exception {
+                CreateRotationResult result = null;
+
+                try {
+                    result = executeCreateRotation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRotationOverrideResult> createRotationOverrideAsync(CreateRotationOverrideRequest request) {
+
+        return createRotationOverrideAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRotationOverrideResult> createRotationOverrideAsync(final CreateRotationOverrideRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateRotationOverrideRequest, CreateRotationOverrideResult> asyncHandler) {
+        final CreateRotationOverrideRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateRotationOverrideResult>() {
+            @Override
+            public CreateRotationOverrideResult call() throws Exception {
+                CreateRotationOverrideResult result = null;
+
+                try {
+                    result = executeCreateRotationOverride(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeactivateContactChannelResult> deactivateContactChannelAsync(DeactivateContactChannelRequest request) {
 
         return deactivateContactChannelAsync(request, null);
@@ -297,6 +363,72 @@ public class AWSSSMContactsAsyncClient extends AWSSSMContactsClient implements A
 
                 try {
                     result = executeDeleteContactChannel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRotationResult> deleteRotationAsync(DeleteRotationRequest request) {
+
+        return deleteRotationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRotationResult> deleteRotationAsync(final DeleteRotationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteRotationRequest, DeleteRotationResult> asyncHandler) {
+        final DeleteRotationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteRotationResult>() {
+            @Override
+            public DeleteRotationResult call() throws Exception {
+                DeleteRotationResult result = null;
+
+                try {
+                    result = executeDeleteRotation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRotationOverrideResult> deleteRotationOverrideAsync(DeleteRotationOverrideRequest request) {
+
+        return deleteRotationOverrideAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRotationOverrideResult> deleteRotationOverrideAsync(final DeleteRotationOverrideRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteRotationOverrideRequest, DeleteRotationOverrideResult> asyncHandler) {
+        final DeleteRotationOverrideRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteRotationOverrideResult>() {
+            @Override
+            public DeleteRotationOverrideResult call() throws Exception {
+                DeleteRotationOverrideResult result = null;
+
+                try {
+                    result = executeDeleteRotationOverride(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -478,6 +610,72 @@ public class AWSSSMContactsAsyncClient extends AWSSSMContactsClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetRotationResult> getRotationAsync(GetRotationRequest request) {
+
+        return getRotationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRotationResult> getRotationAsync(final GetRotationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRotationRequest, GetRotationResult> asyncHandler) {
+        final GetRotationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetRotationResult>() {
+            @Override
+            public GetRotationResult call() throws Exception {
+                GetRotationResult result = null;
+
+                try {
+                    result = executeGetRotation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRotationOverrideResult> getRotationOverrideAsync(GetRotationOverrideRequest request) {
+
+        return getRotationOverrideAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRotationOverrideResult> getRotationOverrideAsync(final GetRotationOverrideRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRotationOverrideRequest, GetRotationOverrideResult> asyncHandler) {
+        final GetRotationOverrideRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetRotationOverrideResult>() {
+            @Override
+            public GetRotationOverrideResult call() throws Exception {
+                GetRotationOverrideResult result = null;
+
+                try {
+                    result = executeGetRotationOverride(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListContactChannelsResult> listContactChannelsAsync(ListContactChannelsRequest request) {
 
         return listContactChannelsAsync(request, null);
@@ -610,6 +808,39 @@ public class AWSSSMContactsAsyncClient extends AWSSSMContactsClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<ListPageResolutionsResult> listPageResolutionsAsync(ListPageResolutionsRequest request) {
+
+        return listPageResolutionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPageResolutionsResult> listPageResolutionsAsync(final ListPageResolutionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPageResolutionsRequest, ListPageResolutionsResult> asyncHandler) {
+        final ListPageResolutionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPageResolutionsResult>() {
+            @Override
+            public ListPageResolutionsResult call() throws Exception {
+                ListPageResolutionsResult result = null;
+
+                try {
+                    result = executeListPageResolutions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPagesByContactResult> listPagesByContactAsync(ListPagesByContactRequest request) {
 
         return listPagesByContactAsync(request, null);
@@ -660,6 +891,138 @@ public class AWSSSMContactsAsyncClient extends AWSSSMContactsClient implements A
 
                 try {
                     result = executeListPagesByEngagement(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPreviewRotationShiftsResult> listPreviewRotationShiftsAsync(ListPreviewRotationShiftsRequest request) {
+
+        return listPreviewRotationShiftsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPreviewRotationShiftsResult> listPreviewRotationShiftsAsync(final ListPreviewRotationShiftsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPreviewRotationShiftsRequest, ListPreviewRotationShiftsResult> asyncHandler) {
+        final ListPreviewRotationShiftsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPreviewRotationShiftsResult>() {
+            @Override
+            public ListPreviewRotationShiftsResult call() throws Exception {
+                ListPreviewRotationShiftsResult result = null;
+
+                try {
+                    result = executeListPreviewRotationShifts(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRotationOverridesResult> listRotationOverridesAsync(ListRotationOverridesRequest request) {
+
+        return listRotationOverridesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRotationOverridesResult> listRotationOverridesAsync(final ListRotationOverridesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListRotationOverridesRequest, ListRotationOverridesResult> asyncHandler) {
+        final ListRotationOverridesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListRotationOverridesResult>() {
+            @Override
+            public ListRotationOverridesResult call() throws Exception {
+                ListRotationOverridesResult result = null;
+
+                try {
+                    result = executeListRotationOverrides(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRotationShiftsResult> listRotationShiftsAsync(ListRotationShiftsRequest request) {
+
+        return listRotationShiftsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRotationShiftsResult> listRotationShiftsAsync(final ListRotationShiftsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListRotationShiftsRequest, ListRotationShiftsResult> asyncHandler) {
+        final ListRotationShiftsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListRotationShiftsResult>() {
+            @Override
+            public ListRotationShiftsResult call() throws Exception {
+                ListRotationShiftsResult result = null;
+
+                try {
+                    result = executeListRotationShifts(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRotationsResult> listRotationsAsync(ListRotationsRequest request) {
+
+        return listRotationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRotationsResult> listRotationsAsync(final ListRotationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListRotationsRequest, ListRotationsResult> asyncHandler) {
+        final ListRotationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListRotationsResult>() {
+            @Override
+            public ListRotationsResult call() throws Exception {
+                ListRotationsResult result = null;
+
+                try {
+                    result = executeListRotations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -957,6 +1320,39 @@ public class AWSSSMContactsAsyncClient extends AWSSSMContactsClient implements A
 
                 try {
                     result = executeUpdateContactChannel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRotationResult> updateRotationAsync(UpdateRotationRequest request) {
+
+        return updateRotationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRotationResult> updateRotationAsync(final UpdateRotationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateRotationRequest, UpdateRotationResult> asyncHandler) {
+        final UpdateRotationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateRotationResult>() {
+            @Override
+            public UpdateRotationResult call() throws Exception {
+                UpdateRotationResult result = null;
+
+                try {
+                    result = executeUpdateRotation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

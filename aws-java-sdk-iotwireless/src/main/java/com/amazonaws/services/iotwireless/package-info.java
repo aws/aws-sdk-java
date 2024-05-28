@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,11 @@
  * downlink message to devices in the group. By using Firmware Updates Over-The-Air (FUOTA) API operations, you can
  * create a FUOTA task and schedule a session to update the firmware of individual devices or an entire group of devices
  * in a multicast group.
+ * </p>
+ * <p>
+ * To connect to the AWS IoT Wireless Service, use the Service endpoints as described in <a
+ * href="https://docs.aws.amazon.com/general/latest/gr/iot-lorawan.html#iot-wireless_region">IoT Wireless Service
+ * endpoints</a> in the <i>AWS General Reference</i>.
  * </p>
  */
 package com.amazonaws.services.iotwireless;

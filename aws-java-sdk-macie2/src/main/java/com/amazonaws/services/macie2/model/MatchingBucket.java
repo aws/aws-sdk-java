@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,9 +20,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Provides statistical data and other information about an S3 bucket that Amazon Macie monitors and analyzes for your
- * account. If an error occurs when Macie attempts to retrieve and process information about the bucket or the bucket's
- * objects, the value for most of these properties is null. Exceptions are accountId and bucketName. To identify the
- * cause of the error, refer to the errorCode and errorMessage values.
+ * account. By default, object count and storage size values include data for object parts that are the result of
+ * incomplete multipart uploads. For more information, see <a
+ * href="https://docs.aws.amazon.com/macie/latest/user/monitoring-s3-how-it-works.html">How Macie monitors Amazon S3
+ * data security</a> in the <i>Amazon Macie User Guide</i>.
+ * </p>
+ * <p>
+ * If an error occurs when Macie attempts to retrieve and process information about the bucket or the bucket's objects,
+ * the value for most of these properties is null. Key exceptions are accountId and bucketName. To identify the cause of
+ * the error, refer to the errorCode and errorMessage values.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/MatchingBucket" target="_top">AWS API
@@ -64,10 +70,10 @@ public class MatchingBucket implements Serializable, Cloneable, StructuredPojo {
     private Long classifiableSizeInBytes;
     /**
      * <p>
-     * Specifies the error code for an error that prevented Amazon Macie from retrieving and processing information
-     * about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
-     * retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the
-     * request. If this value is null, Macie was able to retrieve and process the information.
+     * The error code for an error that prevented Amazon Macie from retrieving and processing information about the
+     * bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
+     * information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this
+     * value is null, Macie was able to retrieve and process the information.
      * </p>
      */
     private String errorCode;
@@ -88,17 +94,32 @@ public class MatchingBucket implements Serializable, Cloneable, StructuredPojo {
     private JobDetails jobDetails;
     /**
      * <p>
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in the
+     * bucket while performing automated sensitive data discovery for your account. This value is null if automated
+     * sensitive data discovery is currently disabled for your account.
+     * </p>
+     */
+    private java.util.Date lastAutomatedDiscoveryTime;
+    /**
+     * <p>
      * The total number of objects in the bucket.
      * </p>
      */
     private Long objectCount;
     /**
      * <p>
-     * The total number of objects that are in the bucket, grouped by server-side encryption type. This includes a
-     * grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
+     * The total number of objects in the bucket, grouped by server-side encryption type. This includes a grouping that
+     * reports the total number of objects that aren't encrypted or use client-side encryption.
      * </p>
      */
     private ObjectCountByEncryptionType objectCountByEncryptionType;
+    /**
+     * <p>
+     * The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This
+     * value is null if automated sensitive data discovery is currently disabled for your account.
+     * </p>
+     */
+    private Integer sensitivityScore;
     /**
      * <p>
      * The total storage size, in bytes, of the bucket.
@@ -340,17 +361,17 @@ public class MatchingBucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the error code for an error that prevented Amazon Macie from retrieving and processing information
-     * about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
-     * retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the
-     * request. If this value is null, Macie was able to retrieve and process the information.
+     * The error code for an error that prevented Amazon Macie from retrieving and processing information about the
+     * bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
+     * information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this
+     * value is null, Macie was able to retrieve and process the information.
      * </p>
      * 
      * @param errorCode
-     *        Specifies the error code for an error that prevented Amazon Macie from retrieving and processing
-     *        information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have
-     *        permission to retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon
-     *        S3 denied the request. If this value is null, Macie was able to retrieve and process the information.
+     *        The error code for an error that prevented Amazon Macie from retrieving and processing information about
+     *        the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
+     *        retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the
+     *        request. If this value is null, Macie was able to retrieve and process the information.
      * @see BucketMetadataErrorCode
      */
 
@@ -360,17 +381,16 @@ public class MatchingBucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the error code for an error that prevented Amazon Macie from retrieving and processing information
-     * about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
-     * retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the
-     * request. If this value is null, Macie was able to retrieve and process the information.
+     * The error code for an error that prevented Amazon Macie from retrieving and processing information about the
+     * bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
+     * information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this
+     * value is null, Macie was able to retrieve and process the information.
      * </p>
      * 
-     * @return Specifies the error code for an error that prevented Amazon Macie from retrieving and processing
-     *         information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have
-     *         permission to retrieve the information. For example, the bucket has a restrictive bucket policy and
-     *         Amazon S3 denied the request. If this value is null, Macie was able to retrieve and process the
-     *         information.
+     * @return The error code for an error that prevented Amazon Macie from retrieving and processing information about
+     *         the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
+     *         retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied
+     *         the request. If this value is null, Macie was able to retrieve and process the information.
      * @see BucketMetadataErrorCode
      */
 
@@ -380,17 +400,17 @@ public class MatchingBucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the error code for an error that prevented Amazon Macie from retrieving and processing information
-     * about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
-     * retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the
-     * request. If this value is null, Macie was able to retrieve and process the information.
+     * The error code for an error that prevented Amazon Macie from retrieving and processing information about the
+     * bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
+     * information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this
+     * value is null, Macie was able to retrieve and process the information.
      * </p>
      * 
      * @param errorCode
-     *        Specifies the error code for an error that prevented Amazon Macie from retrieving and processing
-     *        information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have
-     *        permission to retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon
-     *        S3 denied the request. If this value is null, Macie was able to retrieve and process the information.
+     *        The error code for an error that prevented Amazon Macie from retrieving and processing information about
+     *        the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
+     *        retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the
+     *        request. If this value is null, Macie was able to retrieve and process the information.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BucketMetadataErrorCode
      */
@@ -402,17 +422,17 @@ public class MatchingBucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the error code for an error that prevented Amazon Macie from retrieving and processing information
-     * about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
-     * retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the
-     * request. If this value is null, Macie was able to retrieve and process the information.
+     * The error code for an error that prevented Amazon Macie from retrieving and processing information about the
+     * bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
+     * information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this
+     * value is null, Macie was able to retrieve and process the information.
      * </p>
      * 
      * @param errorCode
-     *        Specifies the error code for an error that prevented Amazon Macie from retrieving and processing
-     *        information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have
-     *        permission to retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon
-     *        S3 denied the request. If this value is null, Macie was able to retrieve and process the information.
+     *        The error code for an error that prevented Amazon Macie from retrieving and processing information about
+     *        the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
+     *        retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the
+     *        request. If this value is null, Macie was able to retrieve and process the information.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BucketMetadataErrorCode
      */
@@ -522,6 +542,58 @@ public class MatchingBucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in the
+     * bucket while performing automated sensitive data discovery for your account. This value is null if automated
+     * sensitive data discovery is currently disabled for your account.
+     * </p>
+     * 
+     * @param lastAutomatedDiscoveryTime
+     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in
+     *        the bucket while performing automated sensitive data discovery for your account. This value is null if
+     *        automated sensitive data discovery is currently disabled for your account.
+     */
+
+    public void setLastAutomatedDiscoveryTime(java.util.Date lastAutomatedDiscoveryTime) {
+        this.lastAutomatedDiscoveryTime = lastAutomatedDiscoveryTime;
+    }
+
+    /**
+     * <p>
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in the
+     * bucket while performing automated sensitive data discovery for your account. This value is null if automated
+     * sensitive data discovery is currently disabled for your account.
+     * </p>
+     * 
+     * @return The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in
+     *         the bucket while performing automated sensitive data discovery for your account. This value is null if
+     *         automated sensitive data discovery is currently disabled for your account.
+     */
+
+    public java.util.Date getLastAutomatedDiscoveryTime() {
+        return this.lastAutomatedDiscoveryTime;
+    }
+
+    /**
+     * <p>
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in the
+     * bucket while performing automated sensitive data discovery for your account. This value is null if automated
+     * sensitive data discovery is currently disabled for your account.
+     * </p>
+     * 
+     * @param lastAutomatedDiscoveryTime
+     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in
+     *        the bucket while performing automated sensitive data discovery for your account. This value is null if
+     *        automated sensitive data discovery is currently disabled for your account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MatchingBucket withLastAutomatedDiscoveryTime(java.util.Date lastAutomatedDiscoveryTime) {
+        setLastAutomatedDiscoveryTime(lastAutomatedDiscoveryTime);
+        return this;
+    }
+
+    /**
+     * <p>
      * The total number of objects in the bucket.
      * </p>
      * 
@@ -562,13 +634,13 @@ public class MatchingBucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total number of objects that are in the bucket, grouped by server-side encryption type. This includes a
-     * grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
+     * The total number of objects in the bucket, grouped by server-side encryption type. This includes a grouping that
+     * reports the total number of objects that aren't encrypted or use client-side encryption.
      * </p>
      * 
      * @param objectCountByEncryptionType
-     *        The total number of objects that are in the bucket, grouped by server-side encryption type. This includes
-     *        a grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
+     *        The total number of objects in the bucket, grouped by server-side encryption type. This includes a
+     *        grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
      */
 
     public void setObjectCountByEncryptionType(ObjectCountByEncryptionType objectCountByEncryptionType) {
@@ -577,12 +649,12 @@ public class MatchingBucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total number of objects that are in the bucket, grouped by server-side encryption type. This includes a
-     * grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
+     * The total number of objects in the bucket, grouped by server-side encryption type. This includes a grouping that
+     * reports the total number of objects that aren't encrypted or use client-side encryption.
      * </p>
      * 
-     * @return The total number of objects that are in the bucket, grouped by server-side encryption type. This includes
-     *         a grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
+     * @return The total number of objects in the bucket, grouped by server-side encryption type. This includes a
+     *         grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
      */
 
     public ObjectCountByEncryptionType getObjectCountByEncryptionType() {
@@ -591,18 +663,64 @@ public class MatchingBucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total number of objects that are in the bucket, grouped by server-side encryption type. This includes a
-     * grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
+     * The total number of objects in the bucket, grouped by server-side encryption type. This includes a grouping that
+     * reports the total number of objects that aren't encrypted or use client-side encryption.
      * </p>
      * 
      * @param objectCountByEncryptionType
-     *        The total number of objects that are in the bucket, grouped by server-side encryption type. This includes
-     *        a grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
+     *        The total number of objects in the bucket, grouped by server-side encryption type. This includes a
+     *        grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public MatchingBucket withObjectCountByEncryptionType(ObjectCountByEncryptionType objectCountByEncryptionType) {
         setObjectCountByEncryptionType(objectCountByEncryptionType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This
+     * value is null if automated sensitive data discovery is currently disabled for your account.
+     * </p>
+     * 
+     * @param sensitivityScore
+     *        The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive).
+     *        This value is null if automated sensitive data discovery is currently disabled for your account.
+     */
+
+    public void setSensitivityScore(Integer sensitivityScore) {
+        this.sensitivityScore = sensitivityScore;
+    }
+
+    /**
+     * <p>
+     * The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This
+     * value is null if automated sensitive data discovery is currently disabled for your account.
+     * </p>
+     * 
+     * @return The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive).
+     *         This value is null if automated sensitive data discovery is currently disabled for your account.
+     */
+
+    public Integer getSensitivityScore() {
+        return this.sensitivityScore;
+    }
+
+    /**
+     * <p>
+     * The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This
+     * value is null if automated sensitive data discovery is currently disabled for your account.
+     * </p>
+     * 
+     * @param sensitivityScore
+     *        The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive).
+     *        This value is null if automated sensitive data discovery is currently disabled for your account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MatchingBucket withSensitivityScore(Integer sensitivityScore) {
+        setSensitivityScore(sensitivityScore);
         return this;
     }
 
@@ -864,10 +982,14 @@ public class MatchingBucket implements Serializable, Cloneable, StructuredPojo {
             sb.append("ErrorMessage: ").append(getErrorMessage()).append(",");
         if (getJobDetails() != null)
             sb.append("JobDetails: ").append(getJobDetails()).append(",");
+        if (getLastAutomatedDiscoveryTime() != null)
+            sb.append("LastAutomatedDiscoveryTime: ").append(getLastAutomatedDiscoveryTime()).append(",");
         if (getObjectCount() != null)
             sb.append("ObjectCount: ").append(getObjectCount()).append(",");
         if (getObjectCountByEncryptionType() != null)
             sb.append("ObjectCountByEncryptionType: ").append(getObjectCountByEncryptionType()).append(",");
+        if (getSensitivityScore() != null)
+            sb.append("SensitivityScore: ").append(getSensitivityScore()).append(",");
         if (getSizeInBytes() != null)
             sb.append("SizeInBytes: ").append(getSizeInBytes()).append(",");
         if (getSizeInBytesCompressed() != null)
@@ -918,6 +1040,10 @@ public class MatchingBucket implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getJobDetails() != null && other.getJobDetails().equals(this.getJobDetails()) == false)
             return false;
+        if (other.getLastAutomatedDiscoveryTime() == null ^ this.getLastAutomatedDiscoveryTime() == null)
+            return false;
+        if (other.getLastAutomatedDiscoveryTime() != null && other.getLastAutomatedDiscoveryTime().equals(this.getLastAutomatedDiscoveryTime()) == false)
+            return false;
         if (other.getObjectCount() == null ^ this.getObjectCount() == null)
             return false;
         if (other.getObjectCount() != null && other.getObjectCount().equals(this.getObjectCount()) == false)
@@ -925,6 +1051,10 @@ public class MatchingBucket implements Serializable, Cloneable, StructuredPojo {
         if (other.getObjectCountByEncryptionType() == null ^ this.getObjectCountByEncryptionType() == null)
             return false;
         if (other.getObjectCountByEncryptionType() != null && other.getObjectCountByEncryptionType().equals(this.getObjectCountByEncryptionType()) == false)
+            return false;
+        if (other.getSensitivityScore() == null ^ this.getSensitivityScore() == null)
+            return false;
+        if (other.getSensitivityScore() != null && other.getSensitivityScore().equals(this.getSensitivityScore()) == false)
             return false;
         if (other.getSizeInBytes() == null ^ this.getSizeInBytes() == null)
             return false;
@@ -958,8 +1088,10 @@ public class MatchingBucket implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getErrorCode() == null) ? 0 : getErrorCode().hashCode());
         hashCode = prime * hashCode + ((getErrorMessage() == null) ? 0 : getErrorMessage().hashCode());
         hashCode = prime * hashCode + ((getJobDetails() == null) ? 0 : getJobDetails().hashCode());
+        hashCode = prime * hashCode + ((getLastAutomatedDiscoveryTime() == null) ? 0 : getLastAutomatedDiscoveryTime().hashCode());
         hashCode = prime * hashCode + ((getObjectCount() == null) ? 0 : getObjectCount().hashCode());
         hashCode = prime * hashCode + ((getObjectCountByEncryptionType() == null) ? 0 : getObjectCountByEncryptionType().hashCode());
+        hashCode = prime * hashCode + ((getSensitivityScore() == null) ? 0 : getSensitivityScore().hashCode());
         hashCode = prime * hashCode + ((getSizeInBytes() == null) ? 0 : getSizeInBytes().hashCode());
         hashCode = prime * hashCode + ((getSizeInBytesCompressed() == null) ? 0 : getSizeInBytesCompressed().hashCode());
         hashCode = prime * hashCode + ((getUnclassifiableObjectCount() == null) ? 0 : getUnclassifiableObjectCount().hashCode());

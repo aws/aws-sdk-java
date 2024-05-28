@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class DescribeQueryRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventDataStore").build();
     private static final MarshallingInfo<String> QUERYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("QueryId").build();
+    private static final MarshallingInfo<String> QUERYALIAS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QueryAlias").build();
 
     private static final DescribeQueryRequestMarshaller instance = new DescribeQueryRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class DescribeQueryRequestMarshaller {
         try {
             protocolMarshaller.marshall(describeQueryRequest.getEventDataStore(), EVENTDATASTORE_BINDING);
             protocolMarshaller.marshall(describeQueryRequest.getQueryId(), QUERYID_BINDING);
+            protocolMarshaller.marshall(describeQueryRequest.getQueryAlias(), QUERYALIAS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

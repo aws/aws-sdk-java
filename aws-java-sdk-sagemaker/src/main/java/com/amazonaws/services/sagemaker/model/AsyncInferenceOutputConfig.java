@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,12 @@ public class AsyncInferenceOutputConfig implements Serializable, Cloneable, Stru
      * </p>
      */
     private AsyncInferenceNotificationConfig notificationConfig;
+    /**
+     * <p>
+     * The Amazon S3 location to upload failure inference responses to.
+     * </p>
+     */
+    private String s3FailurePath;
 
     /**
      * <p>
@@ -182,6 +188,46 @@ public class AsyncInferenceOutputConfig implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * The Amazon S3 location to upload failure inference responses to.
+     * </p>
+     * 
+     * @param s3FailurePath
+     *        The Amazon S3 location to upload failure inference responses to.
+     */
+
+    public void setS3FailurePath(String s3FailurePath) {
+        this.s3FailurePath = s3FailurePath;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 location to upload failure inference responses to.
+     * </p>
+     * 
+     * @return The Amazon S3 location to upload failure inference responses to.
+     */
+
+    public String getS3FailurePath() {
+        return this.s3FailurePath;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 location to upload failure inference responses to.
+     * </p>
+     * 
+     * @param s3FailurePath
+     *        The Amazon S3 location to upload failure inference responses to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AsyncInferenceOutputConfig withS3FailurePath(String s3FailurePath) {
+        setS3FailurePath(s3FailurePath);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -198,7 +244,9 @@ public class AsyncInferenceOutputConfig implements Serializable, Cloneable, Stru
         if (getS3OutputPath() != null)
             sb.append("S3OutputPath: ").append(getS3OutputPath()).append(",");
         if (getNotificationConfig() != null)
-            sb.append("NotificationConfig: ").append(getNotificationConfig());
+            sb.append("NotificationConfig: ").append(getNotificationConfig()).append(",");
+        if (getS3FailurePath() != null)
+            sb.append("S3FailurePath: ").append(getS3FailurePath());
         sb.append("}");
         return sb.toString();
     }
@@ -225,6 +273,10 @@ public class AsyncInferenceOutputConfig implements Serializable, Cloneable, Stru
             return false;
         if (other.getNotificationConfig() != null && other.getNotificationConfig().equals(this.getNotificationConfig()) == false)
             return false;
+        if (other.getS3FailurePath() == null ^ this.getS3FailurePath() == null)
+            return false;
+        if (other.getS3FailurePath() != null && other.getS3FailurePath().equals(this.getS3FailurePath()) == false)
+            return false;
         return true;
     }
 
@@ -236,6 +288,7 @@ public class AsyncInferenceOutputConfig implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getS3OutputPath() == null) ? 0 : getS3OutputPath().hashCode());
         hashCode = prime * hashCode + ((getNotificationConfig() == null) ? 0 : getNotificationConfig().hashCode());
+        hashCode = prime * hashCode + ((getS3FailurePath() == null) ? 0 : getS3FailurePath().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -110,6 +110,12 @@ public class GetRestApiResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      */
     private Boolean disableExecuteApiEndpoint;
+    /**
+     * <p>
+     * The API's root resource ID.
+     * </p>
+     */
+    private String rootResourceId;
 
     /**
      * <p>
@@ -823,6 +829,46 @@ public class GetRestApiResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
+     * <p>
+     * The API's root resource ID.
+     * </p>
+     * 
+     * @param rootResourceId
+     *        The API's root resource ID.
+     */
+
+    public void setRootResourceId(String rootResourceId) {
+        this.rootResourceId = rootResourceId;
+    }
+
+    /**
+     * <p>
+     * The API's root resource ID.
+     * </p>
+     * 
+     * @return The API's root resource ID.
+     */
+
+    public String getRootResourceId() {
+        return this.rootResourceId;
+    }
+
+    /**
+     * <p>
+     * The API's root resource ID.
+     * </p>
+     * 
+     * @param rootResourceId
+     *        The API's root resource ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetRestApiResult withRootResourceId(String rootResourceId) {
+        setRootResourceId(rootResourceId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -859,7 +905,9 @@ public class GetRestApiResult extends com.amazonaws.AmazonWebServiceResult<com.a
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getDisableExecuteApiEndpoint() != null)
-            sb.append("DisableExecuteApiEndpoint: ").append(getDisableExecuteApiEndpoint());
+            sb.append("DisableExecuteApiEndpoint: ").append(getDisableExecuteApiEndpoint()).append(",");
+        if (getRootResourceId() != null)
+            sb.append("RootResourceId: ").append(getRootResourceId());
         sb.append("}");
         return sb.toString();
     }
@@ -926,6 +974,10 @@ public class GetRestApiResult extends com.amazonaws.AmazonWebServiceResult<com.a
             return false;
         if (other.getDisableExecuteApiEndpoint() != null && other.getDisableExecuteApiEndpoint().equals(this.getDisableExecuteApiEndpoint()) == false)
             return false;
+        if (other.getRootResourceId() == null ^ this.getRootResourceId() == null)
+            return false;
+        if (other.getRootResourceId() != null && other.getRootResourceId().equals(this.getRootResourceId()) == false)
+            return false;
         return true;
     }
 
@@ -947,6 +999,7 @@ public class GetRestApiResult extends com.amazonaws.AmazonWebServiceResult<com.a
         hashCode = prime * hashCode + ((getPolicy() == null) ? 0 : getPolicy().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getDisableExecuteApiEndpoint() == null) ? 0 : getDisableExecuteApiEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getRootResourceId() == null) ? 0 : getRootResourceId().hashCode());
         return hashCode;
     }
 

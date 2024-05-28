@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,20 @@ public class IpamPoolCidr implements Serializable, Cloneable {
      * </p>
      */
     private IpamPoolCidrFailureReason failureReason;
+    /**
+     * <p>
+     * The IPAM pool CIDR ID.
+     * </p>
+     */
+    private String ipamPoolCidrId;
+    /**
+     * <p>
+     * The netmask length of the CIDR you'd like to provision to a pool. Can be used for provisioning Amazon-provided
+     * IPv6 CIDRs to top-level pools and for provisioning CIDRs to pools with source pools. Cannot be used to provision
+     * BYOIP CIDRs to top-level pools. "NetmaskLength" or "Cidr" is required.
+     * </p>
+     */
+    private Integer netmaskLength;
 
     /**
      * <p>
@@ -199,6 +213,98 @@ public class IpamPoolCidr implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The IPAM pool CIDR ID.
+     * </p>
+     * 
+     * @param ipamPoolCidrId
+     *        The IPAM pool CIDR ID.
+     */
+
+    public void setIpamPoolCidrId(String ipamPoolCidrId) {
+        this.ipamPoolCidrId = ipamPoolCidrId;
+    }
+
+    /**
+     * <p>
+     * The IPAM pool CIDR ID.
+     * </p>
+     * 
+     * @return The IPAM pool CIDR ID.
+     */
+
+    public String getIpamPoolCidrId() {
+        return this.ipamPoolCidrId;
+    }
+
+    /**
+     * <p>
+     * The IPAM pool CIDR ID.
+     * </p>
+     * 
+     * @param ipamPoolCidrId
+     *        The IPAM pool CIDR ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IpamPoolCidr withIpamPoolCidrId(String ipamPoolCidrId) {
+        setIpamPoolCidrId(ipamPoolCidrId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The netmask length of the CIDR you'd like to provision to a pool. Can be used for provisioning Amazon-provided
+     * IPv6 CIDRs to top-level pools and for provisioning CIDRs to pools with source pools. Cannot be used to provision
+     * BYOIP CIDRs to top-level pools. "NetmaskLength" or "Cidr" is required.
+     * </p>
+     * 
+     * @param netmaskLength
+     *        The netmask length of the CIDR you'd like to provision to a pool. Can be used for provisioning
+     *        Amazon-provided IPv6 CIDRs to top-level pools and for provisioning CIDRs to pools with source pools.
+     *        Cannot be used to provision BYOIP CIDRs to top-level pools. "NetmaskLength" or "Cidr" is required.
+     */
+
+    public void setNetmaskLength(Integer netmaskLength) {
+        this.netmaskLength = netmaskLength;
+    }
+
+    /**
+     * <p>
+     * The netmask length of the CIDR you'd like to provision to a pool. Can be used for provisioning Amazon-provided
+     * IPv6 CIDRs to top-level pools and for provisioning CIDRs to pools with source pools. Cannot be used to provision
+     * BYOIP CIDRs to top-level pools. "NetmaskLength" or "Cidr" is required.
+     * </p>
+     * 
+     * @return The netmask length of the CIDR you'd like to provision to a pool. Can be used for provisioning
+     *         Amazon-provided IPv6 CIDRs to top-level pools and for provisioning CIDRs to pools with source pools.
+     *         Cannot be used to provision BYOIP CIDRs to top-level pools. "NetmaskLength" or "Cidr" is required.
+     */
+
+    public Integer getNetmaskLength() {
+        return this.netmaskLength;
+    }
+
+    /**
+     * <p>
+     * The netmask length of the CIDR you'd like to provision to a pool. Can be used for provisioning Amazon-provided
+     * IPv6 CIDRs to top-level pools and for provisioning CIDRs to pools with source pools. Cannot be used to provision
+     * BYOIP CIDRs to top-level pools. "NetmaskLength" or "Cidr" is required.
+     * </p>
+     * 
+     * @param netmaskLength
+     *        The netmask length of the CIDR you'd like to provision to a pool. Can be used for provisioning
+     *        Amazon-provided IPv6 CIDRs to top-level pools and for provisioning CIDRs to pools with source pools.
+     *        Cannot be used to provision BYOIP CIDRs to top-level pools. "NetmaskLength" or "Cidr" is required.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IpamPoolCidr withNetmaskLength(Integer netmaskLength) {
+        setNetmaskLength(netmaskLength);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -215,7 +321,11 @@ public class IpamPoolCidr implements Serializable, Cloneable {
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
         if (getFailureReason() != null)
-            sb.append("FailureReason: ").append(getFailureReason());
+            sb.append("FailureReason: ").append(getFailureReason()).append(",");
+        if (getIpamPoolCidrId() != null)
+            sb.append("IpamPoolCidrId: ").append(getIpamPoolCidrId()).append(",");
+        if (getNetmaskLength() != null)
+            sb.append("NetmaskLength: ").append(getNetmaskLength());
         sb.append("}");
         return sb.toString();
     }
@@ -242,6 +352,14 @@ public class IpamPoolCidr implements Serializable, Cloneable {
             return false;
         if (other.getFailureReason() != null && other.getFailureReason().equals(this.getFailureReason()) == false)
             return false;
+        if (other.getIpamPoolCidrId() == null ^ this.getIpamPoolCidrId() == null)
+            return false;
+        if (other.getIpamPoolCidrId() != null && other.getIpamPoolCidrId().equals(this.getIpamPoolCidrId()) == false)
+            return false;
+        if (other.getNetmaskLength() == null ^ this.getNetmaskLength() == null)
+            return false;
+        if (other.getNetmaskLength() != null && other.getNetmaskLength().equals(this.getNetmaskLength()) == false)
+            return false;
         return true;
     }
 
@@ -253,6 +371,8 @@ public class IpamPoolCidr implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCidr() == null) ? 0 : getCidr().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
+        hashCode = prime * hashCode + ((getIpamPoolCidrId() == null) ? 0 : getIpamPoolCidrId().hashCode());
+        hashCode = prime * hashCode + ((getNetmaskLength() == null) ? 0 : getNetmaskLength().hashCode());
         return hashCode;
     }
 

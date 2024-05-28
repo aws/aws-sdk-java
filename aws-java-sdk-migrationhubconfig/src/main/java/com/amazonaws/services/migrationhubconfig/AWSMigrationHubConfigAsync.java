@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -90,6 +90,39 @@ public interface AWSMigrationHubConfigAsync extends AWSMigrationHubConfig {
      */
     java.util.concurrent.Future<CreateHomeRegionControlResult> createHomeRegionControlAsync(CreateHomeRegionControlRequest createHomeRegionControlRequest,
             com.amazonaws.handlers.AsyncHandler<CreateHomeRegionControlRequest, CreateHomeRegionControlResult> asyncHandler);
+
+    /**
+     * <p>
+     * This operation deletes the home region configuration for the calling account. The operation does not delete
+     * discovery or migration tracking data in the home region.
+     * </p>
+     * 
+     * @param deleteHomeRegionControlRequest
+     * @return A Java Future containing the result of the DeleteHomeRegionControl operation returned by the service.
+     * @sample AWSMigrationHubConfigAsync.DeleteHomeRegionControl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/migrationhub-config-2019-06-30/DeleteHomeRegionControl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteHomeRegionControlResult> deleteHomeRegionControlAsync(DeleteHomeRegionControlRequest deleteHomeRegionControlRequest);
+
+    /**
+     * <p>
+     * This operation deletes the home region configuration for the calling account. The operation does not delete
+     * discovery or migration tracking data in the home region.
+     * </p>
+     * 
+     * @param deleteHomeRegionControlRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteHomeRegionControl operation returned by the service.
+     * @sample AWSMigrationHubConfigAsyncHandler.DeleteHomeRegionControl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/migrationhub-config-2019-06-30/DeleteHomeRegionControl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteHomeRegionControlResult> deleteHomeRegionControlAsync(DeleteHomeRegionControlRequest deleteHomeRegionControlRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteHomeRegionControlRequest, DeleteHomeRegionControlResult> asyncHandler);
 
     /**
      * <p>

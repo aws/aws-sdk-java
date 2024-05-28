@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,6 +66,13 @@ public class ConversionPropertiesJsonUnmarshaller implements Unmarshaller<Conver
                     conversionProperties.setVolumeToConversionMap(new MapUnmarshaller<String, java.util.Map<String, String>>(context
                             .getUnmarshaller(String.class), new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class))).unmarshall(context));
+                }
+                if (context.testExpression("volumeToProductCodes", targetDepth)) {
+                    context.nextToken();
+                    conversionProperties.setVolumeToProductCodes(new MapUnmarshaller<String, java.util.List<ProductCode>>(
+                            context.getUnmarshaller(String.class), new ListUnmarshaller<ProductCode>(ProductCodeJsonUnmarshaller.getInstance())
+
+                    ).unmarshall(context));
                 }
                 if (context.testExpression("volumeToVolumeSize", targetDepth)) {
                     context.nextToken();

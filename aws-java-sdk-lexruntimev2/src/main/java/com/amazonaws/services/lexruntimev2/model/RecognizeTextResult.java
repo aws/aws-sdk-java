@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,6 +62,12 @@ public class RecognizeTextResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      */
     private String sessionId;
+    /**
+     * <p>
+     * The bot member that recognized the text.
+     * </p>
+     */
+    private RecognizedBotMember recognizedBotMember;
 
     /**
      * <p>
@@ -411,6 +417,46 @@ public class RecognizeTextResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * The bot member that recognized the text.
+     * </p>
+     * 
+     * @param recognizedBotMember
+     *        The bot member that recognized the text.
+     */
+
+    public void setRecognizedBotMember(RecognizedBotMember recognizedBotMember) {
+        this.recognizedBotMember = recognizedBotMember;
+    }
+
+    /**
+     * <p>
+     * The bot member that recognized the text.
+     * </p>
+     * 
+     * @return The bot member that recognized the text.
+     */
+
+    public RecognizedBotMember getRecognizedBotMember() {
+        return this.recognizedBotMember;
+    }
+
+    /**
+     * <p>
+     * The bot member that recognized the text.
+     * </p>
+     * 
+     * @param recognizedBotMember
+     *        The bot member that recognized the text.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecognizeTextResult withRecognizedBotMember(RecognizedBotMember recognizedBotMember) {
+        setRecognizedBotMember(recognizedBotMember);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -431,7 +477,9 @@ public class RecognizeTextResult extends com.amazonaws.AmazonWebServiceResult<co
         if (getRequestAttributes() != null)
             sb.append("RequestAttributes: ").append(getRequestAttributes()).append(",");
         if (getSessionId() != null)
-            sb.append("SessionId: ").append(getSessionId());
+            sb.append("SessionId: ").append(getSessionId()).append(",");
+        if (getRecognizedBotMember() != null)
+            sb.append("RecognizedBotMember: ").append(getRecognizedBotMember());
         sb.append("}");
         return sb.toString();
     }
@@ -466,6 +514,10 @@ public class RecognizeTextResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getSessionId() != null && other.getSessionId().equals(this.getSessionId()) == false)
             return false;
+        if (other.getRecognizedBotMember() == null ^ this.getRecognizedBotMember() == null)
+            return false;
+        if (other.getRecognizedBotMember() != null && other.getRecognizedBotMember().equals(this.getRecognizedBotMember()) == false)
+            return false;
         return true;
     }
 
@@ -479,6 +531,7 @@ public class RecognizeTextResult extends com.amazonaws.AmazonWebServiceResult<co
         hashCode = prime * hashCode + ((getInterpretations() == null) ? 0 : getInterpretations().hashCode());
         hashCode = prime * hashCode + ((getRequestAttributes() == null) ? 0 : getRequestAttributes().hashCode());
         hashCode = prime * hashCode + ((getSessionId() == null) ? 0 : getSessionId().hashCode());
+        hashCode = prime * hashCode + ((getRecognizedBotMember() == null) ? 0 : getRecognizedBotMember().hashCode());
         return hashCode;
     }
 

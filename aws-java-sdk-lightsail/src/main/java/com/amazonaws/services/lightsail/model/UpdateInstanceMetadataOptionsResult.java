@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,10 +24,23 @@ import javax.annotation.Generated;
 public class UpdateInstanceMetadataOptionsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {
 
+    /**
+     * <p>
+     * An array of objects that describe the result of the action, such as the status of the request, the timestamp of
+     * the request, and the resources affected by the request.
+     * </p>
+     */
     private Operation operation;
 
     /**
+     * <p>
+     * An array of objects that describe the result of the action, such as the status of the request, the timestamp of
+     * the request, and the resources affected by the request.
+     * </p>
+     * 
      * @param operation
+     *        An array of objects that describe the result of the action, such as the status of the request, the
+     *        timestamp of the request, and the resources affected by the request.
      */
 
     public void setOperation(Operation operation) {
@@ -35,7 +48,13 @@ public class UpdateInstanceMetadataOptionsResult extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * @return
+     * <p>
+     * An array of objects that describe the result of the action, such as the status of the request, the timestamp of
+     * the request, and the resources affected by the request.
+     * </p>
+     * 
+     * @return An array of objects that describe the result of the action, such as the status of the request, the
+     *         timestamp of the request, and the resources affected by the request.
      */
 
     public Operation getOperation() {
@@ -43,7 +62,14 @@ public class UpdateInstanceMetadataOptionsResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * An array of objects that describe the result of the action, such as the status of the request, the timestamp of
+     * the request, and the resources affected by the request.
+     * </p>
+     * 
      * @param operation
+     *        An array of objects that describe the result of the action, such as the status of the request, the
+     *        timestamp of the request, and the resources affected by the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -134,9 +134,9 @@ public class UserIdentityInfoLite implements Serializable, Cloneable, Structured
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFirstName() != null)
-            sb.append("FirstName: ").append(getFirstName()).append(",");
+            sb.append("FirstName: ").append("***Sensitive Data Redacted***").append(",");
         if (getLastName() != null)
-            sb.append("LastName: ").append(getLastName());
+            sb.append("LastName: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

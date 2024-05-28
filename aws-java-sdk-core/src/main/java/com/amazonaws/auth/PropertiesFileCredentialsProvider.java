@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,6 +30,8 @@ import java.io.IOException;
 public class PropertiesFileCredentialsProvider implements
         AWSCredentialsProvider {
 
+    private static final String PROVIDER_NAME = "ProfileCredentialsProvider";
+
     private final String credentialsFilePath;
 
     /**
@@ -54,7 +56,7 @@ public class PropertiesFileCredentialsProvider implements
 
     public AWSCredentials getCredentials() {
         try {
-            return new PropertiesCredentials(new File(this.credentialsFilePath));
+            return new PropertiesCredentials(new File(this.credentialsFilePath), PROVIDER_NAME);
         } catch (IOException e) {
             throw new SdkClientException(
                     "Unable to load AWS credentials from the "

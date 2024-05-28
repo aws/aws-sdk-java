@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,27 @@ public class UpdateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The identifier of the resource to be updated.
      * </p>
+     * <p>
+     * The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats
+     * are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Resource ID: r-0123456789a0123456789b0123456789
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: resource@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Resource name: resource
+     * </p>
+     * </li>
+     * </ul>
      */
     private String resourceId;
     /**
@@ -49,6 +70,24 @@ public class UpdateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private BookingOptions bookingOptions;
+    /**
+     * <p>
+     * Updates the resource description.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
+     * Updates the resource type.
+     * </p>
+     */
+    private String type;
+    /**
+     * <p>
+     * If enabled, the resource is hidden from the global address list.
+     * </p>
+     */
+    private Boolean hiddenFromGlobalAddressList;
 
     /**
      * <p>
@@ -94,9 +133,50 @@ public class UpdateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The identifier of the resource to be updated.
      * </p>
+     * <p>
+     * The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats
+     * are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Resource ID: r-0123456789a0123456789b0123456789
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: resource@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Resource name: resource
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceId
-     *        The identifier of the resource to be updated.
+     *        The identifier of the resource to be updated.</p>
+     *        <p>
+     *        The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity
+     *        formats are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Resource ID: r-0123456789a0123456789b0123456789
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Email address: resource@domain.tld
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Resource name: resource
+     *        </p>
+     *        </li>
      */
 
     public void setResourceId(String resourceId) {
@@ -107,8 +187,49 @@ public class UpdateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The identifier of the resource to be updated.
      * </p>
+     * <p>
+     * The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats
+     * are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Resource ID: r-0123456789a0123456789b0123456789
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: resource@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Resource name: resource
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The identifier of the resource to be updated.
+     * @return The identifier of the resource to be updated.</p>
+     *         <p>
+     *         The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity
+     *         formats are available:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Resource ID: r-0123456789a0123456789b0123456789
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Email address: resource@domain.tld
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Resource name: resource
+     *         </p>
+     *         </li>
      */
 
     public String getResourceId() {
@@ -119,9 +240,50 @@ public class UpdateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The identifier of the resource to be updated.
      * </p>
+     * <p>
+     * The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats
+     * are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Resource ID: r-0123456789a0123456789b0123456789
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: resource@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Resource name: resource
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceId
-     *        The identifier of the resource to be updated.
+     *        The identifier of the resource to be updated.</p>
+     *        <p>
+     *        The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity
+     *        formats are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Resource ID: r-0123456789a0123456789b0123456789
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Email address: resource@domain.tld
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Resource name: resource
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -211,6 +373,157 @@ public class UpdateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Updates the resource description.
+     * </p>
+     * 
+     * @param description
+     *        Updates the resource description.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * Updates the resource description.
+     * </p>
+     * 
+     * @return Updates the resource description.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * Updates the resource description.
+     * </p>
+     * 
+     * @param description
+     *        Updates the resource description.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateResourceRequest withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Updates the resource type.
+     * </p>
+     * 
+     * @param type
+     *        Updates the resource type.
+     * @see ResourceType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * Updates the resource type.
+     * </p>
+     * 
+     * @return Updates the resource type.
+     * @see ResourceType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * Updates the resource type.
+     * </p>
+     * 
+     * @param type
+     *        Updates the resource type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceType
+     */
+
+    public UpdateResourceRequest withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Updates the resource type.
+     * </p>
+     * 
+     * @param type
+     *        Updates the resource type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceType
+     */
+
+    public UpdateResourceRequest withType(ResourceType type) {
+        this.type = type.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * If enabled, the resource is hidden from the global address list.
+     * </p>
+     * 
+     * @param hiddenFromGlobalAddressList
+     *        If enabled, the resource is hidden from the global address list.
+     */
+
+    public void setHiddenFromGlobalAddressList(Boolean hiddenFromGlobalAddressList) {
+        this.hiddenFromGlobalAddressList = hiddenFromGlobalAddressList;
+    }
+
+    /**
+     * <p>
+     * If enabled, the resource is hidden from the global address list.
+     * </p>
+     * 
+     * @return If enabled, the resource is hidden from the global address list.
+     */
+
+    public Boolean getHiddenFromGlobalAddressList() {
+        return this.hiddenFromGlobalAddressList;
+    }
+
+    /**
+     * <p>
+     * If enabled, the resource is hidden from the global address list.
+     * </p>
+     * 
+     * @param hiddenFromGlobalAddressList
+     *        If enabled, the resource is hidden from the global address list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateResourceRequest withHiddenFromGlobalAddressList(Boolean hiddenFromGlobalAddressList) {
+        setHiddenFromGlobalAddressList(hiddenFromGlobalAddressList);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If enabled, the resource is hidden from the global address list.
+     * </p>
+     * 
+     * @return If enabled, the resource is hidden from the global address list.
+     */
+
+    public Boolean isHiddenFromGlobalAddressList() {
+        return this.hiddenFromGlobalAddressList;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -229,7 +542,13 @@ public class UpdateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getBookingOptions() != null)
-            sb.append("BookingOptions: ").append(getBookingOptions());
+            sb.append("BookingOptions: ").append(getBookingOptions()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
+        if (getHiddenFromGlobalAddressList() != null)
+            sb.append("HiddenFromGlobalAddressList: ").append(getHiddenFromGlobalAddressList());
         sb.append("}");
         return sb.toString();
     }
@@ -260,6 +579,18 @@ public class UpdateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getBookingOptions() != null && other.getBookingOptions().equals(this.getBookingOptions()) == false)
             return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
+        if (other.getHiddenFromGlobalAddressList() == null ^ this.getHiddenFromGlobalAddressList() == null)
+            return false;
+        if (other.getHiddenFromGlobalAddressList() != null && other.getHiddenFromGlobalAddressList().equals(this.getHiddenFromGlobalAddressList()) == false)
+            return false;
         return true;
     }
 
@@ -272,6 +603,9 @@ public class UpdateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getBookingOptions() == null) ? 0 : getBookingOptions().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getHiddenFromGlobalAddressList() == null) ? 0 : getHiddenFromGlobalAddressList().hashCode());
         return hashCode;
     }
 

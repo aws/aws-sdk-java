@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about an application. EMR Serverless uses applications to run jobs.
+ * Information about an application. Amazon EMR Serverless uses applications to run jobs.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/Application" target="_top">AWS API
@@ -48,7 +48,7 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
     private String arn;
     /**
      * <p>
-     * The EMR release version associated with the application.
+     * The Amazon EMR release associated with the application.
      * </p>
      */
     private String releaseLabel;
@@ -120,6 +120,44 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private NetworkConfiguration networkConfiguration;
+    /**
+     * <p>
+     * The CPU architecture of an application.
+     * </p>
+     */
+    private String architecture;
+    /**
+     * <p>
+     * The image configuration applied to all worker types.
+     * </p>
+     */
+    private ImageConfiguration imageConfiguration;
+    /**
+     * <p>
+     * The specification applied to each worker type.
+     * </p>
+     */
+    private java.util.Map<String, WorkerTypeSpecification> workerTypeSpecifications;
+    /**
+     * <p>
+     * The <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+     * specifications of an application. Each configuration consists of a classification and properties. You use this
+     * parameter when creating or updating an application. To see the runtimeConfiguration object of an application, run
+     * the <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetApplication.html">GetApplication</a>
+     * API operation.
+     * </p>
+     */
+    private java.util.List<Configuration> runtimeConfiguration;
+
+    private MonitoringConfiguration monitoringConfiguration;
+    /**
+     * <p>
+     * The interactive configuration object that enables the interactive use cases for an application.
+     * </p>
+     */
+    private InteractiveConfiguration interactiveConfiguration;
 
     /**
      * <p>
@@ -243,11 +281,11 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The EMR release version associated with the application.
+     * The Amazon EMR release associated with the application.
      * </p>
      * 
      * @param releaseLabel
-     *        The EMR release version associated with the application.
+     *        The Amazon EMR release associated with the application.
      */
 
     public void setReleaseLabel(String releaseLabel) {
@@ -256,10 +294,10 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The EMR release version associated with the application.
+     * The Amazon EMR release associated with the application.
      * </p>
      * 
-     * @return The EMR release version associated with the application.
+     * @return The Amazon EMR release associated with the application.
      */
 
     public String getReleaseLabel() {
@@ -268,11 +306,11 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The EMR release version associated with the application.
+     * The Amazon EMR release associated with the application.
      * </p>
      * 
      * @param releaseLabel
-     *        The EMR release version associated with the application.
+     *        The Amazon EMR release associated with the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -809,6 +847,354 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The CPU architecture of an application.
+     * </p>
+     * 
+     * @param architecture
+     *        The CPU architecture of an application.
+     * @see Architecture
+     */
+
+    public void setArchitecture(String architecture) {
+        this.architecture = architecture;
+    }
+
+    /**
+     * <p>
+     * The CPU architecture of an application.
+     * </p>
+     * 
+     * @return The CPU architecture of an application.
+     * @see Architecture
+     */
+
+    public String getArchitecture() {
+        return this.architecture;
+    }
+
+    /**
+     * <p>
+     * The CPU architecture of an application.
+     * </p>
+     * 
+     * @param architecture
+     *        The CPU architecture of an application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Architecture
+     */
+
+    public Application withArchitecture(String architecture) {
+        setArchitecture(architecture);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The CPU architecture of an application.
+     * </p>
+     * 
+     * @param architecture
+     *        The CPU architecture of an application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Architecture
+     */
+
+    public Application withArchitecture(Architecture architecture) {
+        this.architecture = architecture.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The image configuration applied to all worker types.
+     * </p>
+     * 
+     * @param imageConfiguration
+     *        The image configuration applied to all worker types.
+     */
+
+    public void setImageConfiguration(ImageConfiguration imageConfiguration) {
+        this.imageConfiguration = imageConfiguration;
+    }
+
+    /**
+     * <p>
+     * The image configuration applied to all worker types.
+     * </p>
+     * 
+     * @return The image configuration applied to all worker types.
+     */
+
+    public ImageConfiguration getImageConfiguration() {
+        return this.imageConfiguration;
+    }
+
+    /**
+     * <p>
+     * The image configuration applied to all worker types.
+     * </p>
+     * 
+     * @param imageConfiguration
+     *        The image configuration applied to all worker types.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Application withImageConfiguration(ImageConfiguration imageConfiguration) {
+        setImageConfiguration(imageConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The specification applied to each worker type.
+     * </p>
+     * 
+     * @return The specification applied to each worker type.
+     */
+
+    public java.util.Map<String, WorkerTypeSpecification> getWorkerTypeSpecifications() {
+        return workerTypeSpecifications;
+    }
+
+    /**
+     * <p>
+     * The specification applied to each worker type.
+     * </p>
+     * 
+     * @param workerTypeSpecifications
+     *        The specification applied to each worker type.
+     */
+
+    public void setWorkerTypeSpecifications(java.util.Map<String, WorkerTypeSpecification> workerTypeSpecifications) {
+        this.workerTypeSpecifications = workerTypeSpecifications;
+    }
+
+    /**
+     * <p>
+     * The specification applied to each worker type.
+     * </p>
+     * 
+     * @param workerTypeSpecifications
+     *        The specification applied to each worker type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Application withWorkerTypeSpecifications(java.util.Map<String, WorkerTypeSpecification> workerTypeSpecifications) {
+        setWorkerTypeSpecifications(workerTypeSpecifications);
+        return this;
+    }
+
+    /**
+     * Add a single WorkerTypeSpecifications entry
+     *
+     * @see Application#withWorkerTypeSpecifications
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Application addWorkerTypeSpecificationsEntry(String key, WorkerTypeSpecification value) {
+        if (null == this.workerTypeSpecifications) {
+            this.workerTypeSpecifications = new java.util.HashMap<String, WorkerTypeSpecification>();
+        }
+        if (this.workerTypeSpecifications.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.workerTypeSpecifications.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into WorkerTypeSpecifications.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Application clearWorkerTypeSpecificationsEntries() {
+        this.workerTypeSpecifications = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+     * specifications of an application. Each configuration consists of a classification and properties. You use this
+     * parameter when creating or updating an application. To see the runtimeConfiguration object of an application, run
+     * the <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetApplication.html">GetApplication</a>
+     * API operation.
+     * </p>
+     * 
+     * @return The <a
+     *         href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration
+     *         </a> specifications of an application. Each configuration consists of a classification and properties.
+     *         You use this parameter when creating or updating an application. To see the runtimeConfiguration object
+     *         of an application, run the <a
+     *         href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetApplication.html"
+     *         >GetApplication</a> API operation.
+     */
+
+    public java.util.List<Configuration> getRuntimeConfiguration() {
+        return runtimeConfiguration;
+    }
+
+    /**
+     * <p>
+     * The <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+     * specifications of an application. Each configuration consists of a classification and properties. You use this
+     * parameter when creating or updating an application. To see the runtimeConfiguration object of an application, run
+     * the <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetApplication.html">GetApplication</a>
+     * API operation.
+     * </p>
+     * 
+     * @param runtimeConfiguration
+     *        The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">
+     *        Configuration</a> specifications of an application. Each configuration consists of a classification and
+     *        properties. You use this parameter when creating or updating an application. To see the
+     *        runtimeConfiguration object of an application, run the <a
+     *        href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetApplication.html"
+     *        >GetApplication</a> API operation.
+     */
+
+    public void setRuntimeConfiguration(java.util.Collection<Configuration> runtimeConfiguration) {
+        if (runtimeConfiguration == null) {
+            this.runtimeConfiguration = null;
+            return;
+        }
+
+        this.runtimeConfiguration = new java.util.ArrayList<Configuration>(runtimeConfiguration);
+    }
+
+    /**
+     * <p>
+     * The <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+     * specifications of an application. Each configuration consists of a classification and properties. You use this
+     * parameter when creating or updating an application. To see the runtimeConfiguration object of an application, run
+     * the <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetApplication.html">GetApplication</a>
+     * API operation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRuntimeConfiguration(java.util.Collection)} or {@link #withRuntimeConfiguration(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param runtimeConfiguration
+     *        The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">
+     *        Configuration</a> specifications of an application. Each configuration consists of a classification and
+     *        properties. You use this parameter when creating or updating an application. To see the
+     *        runtimeConfiguration object of an application, run the <a
+     *        href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetApplication.html"
+     *        >GetApplication</a> API operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Application withRuntimeConfiguration(Configuration... runtimeConfiguration) {
+        if (this.runtimeConfiguration == null) {
+            setRuntimeConfiguration(new java.util.ArrayList<Configuration>(runtimeConfiguration.length));
+        }
+        for (Configuration ele : runtimeConfiguration) {
+            this.runtimeConfiguration.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+     * specifications of an application. Each configuration consists of a classification and properties. You use this
+     * parameter when creating or updating an application. To see the runtimeConfiguration object of an application, run
+     * the <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetApplication.html">GetApplication</a>
+     * API operation.
+     * </p>
+     * 
+     * @param runtimeConfiguration
+     *        The <a href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">
+     *        Configuration</a> specifications of an application. Each configuration consists of a classification and
+     *        properties. You use this parameter when creating or updating an application. To see the
+     *        runtimeConfiguration object of an application, run the <a
+     *        href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetApplication.html"
+     *        >GetApplication</a> API operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Application withRuntimeConfiguration(java.util.Collection<Configuration> runtimeConfiguration) {
+        setRuntimeConfiguration(runtimeConfiguration);
+        return this;
+    }
+
+    /**
+     * @param monitoringConfiguration
+     */
+
+    public void setMonitoringConfiguration(MonitoringConfiguration monitoringConfiguration) {
+        this.monitoringConfiguration = monitoringConfiguration;
+    }
+
+    /**
+     * @return
+     */
+
+    public MonitoringConfiguration getMonitoringConfiguration() {
+        return this.monitoringConfiguration;
+    }
+
+    /**
+     * @param monitoringConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Application withMonitoringConfiguration(MonitoringConfiguration monitoringConfiguration) {
+        setMonitoringConfiguration(monitoringConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The interactive configuration object that enables the interactive use cases for an application.
+     * </p>
+     * 
+     * @param interactiveConfiguration
+     *        The interactive configuration object that enables the interactive use cases for an application.
+     */
+
+    public void setInteractiveConfiguration(InteractiveConfiguration interactiveConfiguration) {
+        this.interactiveConfiguration = interactiveConfiguration;
+    }
+
+    /**
+     * <p>
+     * The interactive configuration object that enables the interactive use cases for an application.
+     * </p>
+     * 
+     * @return The interactive configuration object that enables the interactive use cases for an application.
+     */
+
+    public InteractiveConfiguration getInteractiveConfiguration() {
+        return this.interactiveConfiguration;
+    }
+
+    /**
+     * <p>
+     * The interactive configuration object that enables the interactive use cases for an application.
+     * </p>
+     * 
+     * @param interactiveConfiguration
+     *        The interactive configuration object that enables the interactive use cases for an application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Application withInteractiveConfiguration(InteractiveConfiguration interactiveConfiguration) {
+        setInteractiveConfiguration(interactiveConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -849,7 +1235,19 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
         if (getAutoStopConfiguration() != null)
             sb.append("AutoStopConfiguration: ").append(getAutoStopConfiguration()).append(",");
         if (getNetworkConfiguration() != null)
-            sb.append("NetworkConfiguration: ").append(getNetworkConfiguration());
+            sb.append("NetworkConfiguration: ").append(getNetworkConfiguration()).append(",");
+        if (getArchitecture() != null)
+            sb.append("Architecture: ").append(getArchitecture()).append(",");
+        if (getImageConfiguration() != null)
+            sb.append("ImageConfiguration: ").append(getImageConfiguration()).append(",");
+        if (getWorkerTypeSpecifications() != null)
+            sb.append("WorkerTypeSpecifications: ").append(getWorkerTypeSpecifications()).append(",");
+        if (getRuntimeConfiguration() != null)
+            sb.append("RuntimeConfiguration: ").append(getRuntimeConfiguration()).append(",");
+        if (getMonitoringConfiguration() != null)
+            sb.append("MonitoringConfiguration: ").append(getMonitoringConfiguration()).append(",");
+        if (getInteractiveConfiguration() != null)
+            sb.append("InteractiveConfiguration: ").append(getInteractiveConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -924,6 +1322,30 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNetworkConfiguration() != null && other.getNetworkConfiguration().equals(this.getNetworkConfiguration()) == false)
             return false;
+        if (other.getArchitecture() == null ^ this.getArchitecture() == null)
+            return false;
+        if (other.getArchitecture() != null && other.getArchitecture().equals(this.getArchitecture()) == false)
+            return false;
+        if (other.getImageConfiguration() == null ^ this.getImageConfiguration() == null)
+            return false;
+        if (other.getImageConfiguration() != null && other.getImageConfiguration().equals(this.getImageConfiguration()) == false)
+            return false;
+        if (other.getWorkerTypeSpecifications() == null ^ this.getWorkerTypeSpecifications() == null)
+            return false;
+        if (other.getWorkerTypeSpecifications() != null && other.getWorkerTypeSpecifications().equals(this.getWorkerTypeSpecifications()) == false)
+            return false;
+        if (other.getRuntimeConfiguration() == null ^ this.getRuntimeConfiguration() == null)
+            return false;
+        if (other.getRuntimeConfiguration() != null && other.getRuntimeConfiguration().equals(this.getRuntimeConfiguration()) == false)
+            return false;
+        if (other.getMonitoringConfiguration() == null ^ this.getMonitoringConfiguration() == null)
+            return false;
+        if (other.getMonitoringConfiguration() != null && other.getMonitoringConfiguration().equals(this.getMonitoringConfiguration()) == false)
+            return false;
+        if (other.getInteractiveConfiguration() == null ^ this.getInteractiveConfiguration() == null)
+            return false;
+        if (other.getInteractiveConfiguration() != null && other.getInteractiveConfiguration().equals(this.getInteractiveConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -947,6 +1369,12 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAutoStartConfiguration() == null) ? 0 : getAutoStartConfiguration().hashCode());
         hashCode = prime * hashCode + ((getAutoStopConfiguration() == null) ? 0 : getAutoStopConfiguration().hashCode());
         hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode());
+        hashCode = prime * hashCode + ((getImageConfiguration() == null) ? 0 : getImageConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getWorkerTypeSpecifications() == null) ? 0 : getWorkerTypeSpecifications().hashCode());
+        hashCode = prime * hashCode + ((getRuntimeConfiguration() == null) ? 0 : getRuntimeConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getMonitoringConfiguration() == null) ? 0 : getMonitoringConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getInteractiveConfiguration() == null) ? 0 : getInteractiveConfiguration().hashCode());
         return hashCode;
     }
 

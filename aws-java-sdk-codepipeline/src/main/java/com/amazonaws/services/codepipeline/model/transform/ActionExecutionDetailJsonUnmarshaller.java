@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -75,6 +75,10 @@ public class ActionExecutionDetailJsonUnmarshaller implements Unmarshaller<Actio
                 if (context.testExpression("lastUpdateTime", targetDepth)) {
                     context.nextToken();
                     actionExecutionDetail.setLastUpdateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("updatedBy", targetDepth)) {
+                    context.nextToken();
+                    actionExecutionDetail.setUpdatedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();

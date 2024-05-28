@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class DiskSnapshot implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).
+     * The name of the disk snapshot (<code>my-disk-snapshot</code>).
      * </p>
      */
     private String name;
@@ -61,7 +61,7 @@ public class DiskSnapshot implements Serializable, Cloneable, StructuredPojo {
     private ResourceLocation location;
     /**
      * <p>
-     * The Lightsail resource type (e.g., <code>DiskSnapshot</code>).
+     * The Lightsail resource type (<code>DiskSnapshot</code>).
      * </p>
      */
     private String resourceType;
@@ -124,11 +124,11 @@ public class DiskSnapshot implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).
+     * The name of the disk snapshot (<code>my-disk-snapshot</code>).
      * </p>
      * 
      * @param name
-     *        The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).
+     *        The name of the disk snapshot (<code>my-disk-snapshot</code>).
      */
 
     public void setName(String name) {
@@ -137,10 +137,10 @@ public class DiskSnapshot implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).
+     * The name of the disk snapshot (<code>my-disk-snapshot</code>).
      * </p>
      * 
-     * @return The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).
+     * @return The name of the disk snapshot (<code>my-disk-snapshot</code>).
      */
 
     public String getName() {
@@ -149,11 +149,11 @@ public class DiskSnapshot implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).
+     * The name of the disk snapshot (<code>my-disk-snapshot</code>).
      * </p>
      * 
      * @param name
-     *        The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).
+     *        The name of the disk snapshot (<code>my-disk-snapshot</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -333,11 +333,11 @@ public class DiskSnapshot implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Lightsail resource type (e.g., <code>DiskSnapshot</code>).
+     * The Lightsail resource type (<code>DiskSnapshot</code>).
      * </p>
      * 
      * @param resourceType
-     *        The Lightsail resource type (e.g., <code>DiskSnapshot</code>).
+     *        The Lightsail resource type (<code>DiskSnapshot</code>).
      * @see ResourceType
      */
 
@@ -347,10 +347,10 @@ public class DiskSnapshot implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Lightsail resource type (e.g., <code>DiskSnapshot</code>).
+     * The Lightsail resource type (<code>DiskSnapshot</code>).
      * </p>
      * 
-     * @return The Lightsail resource type (e.g., <code>DiskSnapshot</code>).
+     * @return The Lightsail resource type (<code>DiskSnapshot</code>).
      * @see ResourceType
      */
 
@@ -360,11 +360,11 @@ public class DiskSnapshot implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Lightsail resource type (e.g., <code>DiskSnapshot</code>).
+     * The Lightsail resource type (<code>DiskSnapshot</code>).
      * </p>
      * 
      * @param resourceType
-     *        The Lightsail resource type (e.g., <code>DiskSnapshot</code>).
+     *        The Lightsail resource type (<code>DiskSnapshot</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -376,11 +376,11 @@ public class DiskSnapshot implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Lightsail resource type (e.g., <code>DiskSnapshot</code>).
+     * The Lightsail resource type (<code>DiskSnapshot</code>).
      * </p>
      * 
      * @param resourceType
-     *        The Lightsail resource type (e.g., <code>DiskSnapshot</code>).
+     *        The Lightsail resource type (<code>DiskSnapshot</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */

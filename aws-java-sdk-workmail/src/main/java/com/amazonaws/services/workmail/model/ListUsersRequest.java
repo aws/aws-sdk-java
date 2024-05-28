@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,12 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * Limit the user search results based on the filter criteria. You can only use one filter per request.
+     * </p>
+     */
+    private ListUsersFilters filters;
 
     /**
      * <p>
@@ -165,6 +171,46 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * Limit the user search results based on the filter criteria. You can only use one filter per request.
+     * </p>
+     * 
+     * @param filters
+     *        Limit the user search results based on the filter criteria. You can only use one filter per request.
+     */
+
+    public void setFilters(ListUsersFilters filters) {
+        this.filters = filters;
+    }
+
+    /**
+     * <p>
+     * Limit the user search results based on the filter criteria. You can only use one filter per request.
+     * </p>
+     * 
+     * @return Limit the user search results based on the filter criteria. You can only use one filter per request.
+     */
+
+    public ListUsersFilters getFilters() {
+        return this.filters;
+    }
+
+    /**
+     * <p>
+     * Limit the user search results based on the filter criteria. You can only use one filter per request.
+     * </p>
+     * 
+     * @param filters
+     *        Limit the user search results based on the filter criteria. You can only use one filter per request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListUsersRequest withFilters(ListUsersFilters filters) {
+        setFilters(filters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -181,7 +227,9 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getFilters() != null)
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +256,10 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getFilters() == null ^ this.getFilters() == null)
+            return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
         return true;
     }
 
@@ -219,6 +271,7 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getOrganizationId() == null) ? 0 : getOrganizationId().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         return hashCode;
     }
 

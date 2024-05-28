@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the output of a DescribeLoggingConfiguration operation.
+ * Represents the output of a <code>DescribeLoggingConfiguration</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeLoggingConfiguration" target="_top">AWS
@@ -28,18 +28,18 @@ public class DescribeLoggingConfigurationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Metadata object containing information about the logging configuration of a workspace.
+     * A structure that displays the information about the logging configuration.
      * </p>
      */
     private LoggingConfigurationMetadata loggingConfiguration;
 
     /**
      * <p>
-     * Metadata object containing information about the logging configuration of a workspace.
+     * A structure that displays the information about the logging configuration.
      * </p>
      * 
      * @param loggingConfiguration
-     *        Metadata object containing information about the logging configuration of a workspace.
+     *        A structure that displays the information about the logging configuration.
      */
 
     public void setLoggingConfiguration(LoggingConfigurationMetadata loggingConfiguration) {
@@ -48,10 +48,10 @@ public class DescribeLoggingConfigurationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Metadata object containing information about the logging configuration of a workspace.
+     * A structure that displays the information about the logging configuration.
      * </p>
      * 
-     * @return Metadata object containing information about the logging configuration of a workspace.
+     * @return A structure that displays the information about the logging configuration.
      */
 
     public LoggingConfigurationMetadata getLoggingConfiguration() {
@@ -60,11 +60,11 @@ public class DescribeLoggingConfigurationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Metadata object containing information about the logging configuration of a workspace.
+     * A structure that displays the information about the logging configuration.
      * </p>
      * 
      * @param loggingConfiguration
-     *        Metadata object containing information about the logging configuration of a workspace.
+     *        A structure that displays the information about the logging configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,9 +53,21 @@ public class VoiceTemplateRequest implements Serializable, Cloneable, Structured
      */
     private String languageCode;
     /**
+     * <note>
      * <p>
-     * A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag
-     * consists of a required tag key and an associated tag value.
+     * As of <b>22-05-2023</b> tags has been deprecated for update operations. After this date any value in tags is not
+     * processed and an error code is not returned. To manage tags we recommend using either <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a> in the <i>API
+     * Reference for Amazon Pinpoint</i>, <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html"
+     * >resourcegroupstaggingapi</a> commands in the <i>AWS Command Line Interface Documentation</i> or <a href=
+     * "https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html"
+     * >resourcegroupstaggingapi</a> in the <i>AWS SDK</i>.
+     * </p>
+     * </note>
+     * <p>
+     * (Deprecated) A string-to-string map of key-value pairs that defines the tags to associate with the message
+     * template. Each tag consists of a required tag key and an associated tag value.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -226,13 +238,31 @@ public class VoiceTemplateRequest implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <note>
      * <p>
-     * A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag
-     * consists of a required tag key and an associated tag value.
+     * As of <b>22-05-2023</b> tags has been deprecated for update operations. After this date any value in tags is not
+     * processed and an error code is not returned. To manage tags we recommend using either <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a> in the <i>API
+     * Reference for Amazon Pinpoint</i>, <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html"
+     * >resourcegroupstaggingapi</a> commands in the <i>AWS Command Line Interface Documentation</i> or <a href=
+     * "https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html"
+     * >resourcegroupstaggingapi</a> in the <i>AWS SDK</i>.
+     * </p>
+     * </note>
+     * <p>
+     * (Deprecated) A string-to-string map of key-value pairs that defines the tags to associate with the message
+     * template. Each tag consists of a required tag key and an associated tag value.
      * </p>
      * 
-     * @return A string-to-string map of key-value pairs that defines the tags to associate with the message template.
-     *         Each tag consists of a required tag key and an associated tag value.
+     * @return As of <b>22-05-2023</b> tags has been deprecated for update operations. After this date any value in tags
+     *         is not processed and an error code is not returned. To manage tags we recommend using either <a
+     *         href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a> in the
+     *         <i>API Reference for Amazon Pinpoint</i>, <a
+     *         href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html"
+     *         >resourcegroupstaggingapi</a> commands in the <i>AWS Command Line Interface Documentation</i> or <a href=
+     *         "https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html"
+     *         >resourcegroupstaggingapi</a> in the <i>AWS SDK</i>.</p></note>
      */
 
     public java.util.Map<String, String> getTags() {
@@ -240,14 +270,32 @@ public class VoiceTemplateRequest implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <note>
      * <p>
-     * A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag
-     * consists of a required tag key and an associated tag value.
+     * As of <b>22-05-2023</b> tags has been deprecated for update operations. After this date any value in tags is not
+     * processed and an error code is not returned. To manage tags we recommend using either <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a> in the <i>API
+     * Reference for Amazon Pinpoint</i>, <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html"
+     * >resourcegroupstaggingapi</a> commands in the <i>AWS Command Line Interface Documentation</i> or <a href=
+     * "https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html"
+     * >resourcegroupstaggingapi</a> in the <i>AWS SDK</i>.
+     * </p>
+     * </note>
+     * <p>
+     * (Deprecated) A string-to-string map of key-value pairs that defines the tags to associate with the message
+     * template. Each tag consists of a required tag key and an associated tag value.
      * </p>
      * 
      * @param tags
-     *        A string-to-string map of key-value pairs that defines the tags to associate with the message template.
-     *        Each tag consists of a required tag key and an associated tag value.
+     *        As of <b>22-05-2023</b> tags has been deprecated for update operations. After this date any value in tags
+     *        is not processed and an error code is not returned. To manage tags we recommend using either <a
+     *        href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a> in the
+     *        <i>API Reference for Amazon Pinpoint</i>, <a
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html"
+     *        >resourcegroupstaggingapi</a> commands in the <i>AWS Command Line Interface Documentation</i> or <a href=
+     *        "https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html"
+     *        >resourcegroupstaggingapi</a> in the <i>AWS SDK</i>.</p></note>
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -255,14 +303,32 @@ public class VoiceTemplateRequest implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <note>
      * <p>
-     * A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag
-     * consists of a required tag key and an associated tag value.
+     * As of <b>22-05-2023</b> tags has been deprecated for update operations. After this date any value in tags is not
+     * processed and an error code is not returned. To manage tags we recommend using either <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a> in the <i>API
+     * Reference for Amazon Pinpoint</i>, <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html"
+     * >resourcegroupstaggingapi</a> commands in the <i>AWS Command Line Interface Documentation</i> or <a href=
+     * "https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html"
+     * >resourcegroupstaggingapi</a> in the <i>AWS SDK</i>.
+     * </p>
+     * </note>
+     * <p>
+     * (Deprecated) A string-to-string map of key-value pairs that defines the tags to associate with the message
+     * template. Each tag consists of a required tag key and an associated tag value.
      * </p>
      * 
      * @param tags
-     *        A string-to-string map of key-value pairs that defines the tags to associate with the message template.
-     *        Each tag consists of a required tag key and an associated tag value.
+     *        As of <b>22-05-2023</b> tags has been deprecated for update operations. After this date any value in tags
+     *        is not processed and an error code is not returned. To manage tags we recommend using either <a
+     *        href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a> in the
+     *        <i>API Reference for Amazon Pinpoint</i>, <a
+     *        href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html"
+     *        >resourcegroupstaggingapi</a> commands in the <i>AWS Command Line Interface Documentation</i> or <a href=
+     *        "https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html"
+     *        >resourcegroupstaggingapi</a> in the <i>AWS SDK</i>.</p></note>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

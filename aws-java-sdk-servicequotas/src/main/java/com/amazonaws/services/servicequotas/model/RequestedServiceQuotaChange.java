@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,25 +42,27 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
     private String caseId;
     /**
      * <p>
-     * The service identifier.
+     * Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the
+     * <a>ListServices</a> operation.
      * </p>
      */
     private String serviceCode;
     /**
      * <p>
-     * The service name.
+     * Specifies the service name.
      * </p>
      */
     private String serviceName;
     /**
      * <p>
-     * The quota identifier.
+     * Specifies the quota identifier. To find the quota code for a specific quota, use the <a>ListServiceQuotas</a>
+     * operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.
      * </p>
      */
     private String quotaCode;
     /**
      * <p>
-     * The quota name.
+     * Specifies the quota name.
      * </p>
      */
     private String quotaName;
@@ -112,6 +114,18 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
      * </p>
      */
     private String unit;
+    /**
+     * <p>
+     * Specifies at which level within the Amazon Web Services account the quota request applies to.
+     * </p>
+     */
+    private String quotaRequestedAtLevel;
+    /**
+     * <p>
+     * The context for this service quota.
+     * </p>
+     */
+    private QuotaContextInfo quotaContext;
 
     /**
      * <p>
@@ -195,11 +209,13 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The service identifier.
+     * Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the
+     * <a>ListServices</a> operation.
      * </p>
      * 
      * @param serviceCode
-     *        The service identifier.
+     *        Specifies the service identifier. To find the service code value for an Amazon Web Services service, use
+     *        the <a>ListServices</a> operation.
      */
 
     public void setServiceCode(String serviceCode) {
@@ -208,10 +224,12 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The service identifier.
+     * Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the
+     * <a>ListServices</a> operation.
      * </p>
      * 
-     * @return The service identifier.
+     * @return Specifies the service identifier. To find the service code value for an Amazon Web Services service, use
+     *         the <a>ListServices</a> operation.
      */
 
     public String getServiceCode() {
@@ -220,11 +238,13 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The service identifier.
+     * Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the
+     * <a>ListServices</a> operation.
      * </p>
      * 
      * @param serviceCode
-     *        The service identifier.
+     *        Specifies the service identifier. To find the service code value for an Amazon Web Services service, use
+     *        the <a>ListServices</a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -235,11 +255,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The service name.
+     * Specifies the service name.
      * </p>
      * 
      * @param serviceName
-     *        The service name.
+     *        Specifies the service name.
      */
 
     public void setServiceName(String serviceName) {
@@ -248,10 +268,10 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The service name.
+     * Specifies the service name.
      * </p>
      * 
-     * @return The service name.
+     * @return Specifies the service name.
      */
 
     public String getServiceName() {
@@ -260,11 +280,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The service name.
+     * Specifies the service name.
      * </p>
      * 
      * @param serviceName
-     *        The service name.
+     *        Specifies the service name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -275,11 +295,14 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The quota identifier.
+     * Specifies the quota identifier. To find the quota code for a specific quota, use the <a>ListServiceQuotas</a>
+     * operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.
      * </p>
      * 
      * @param quotaCode
-     *        The quota identifier.
+     *        Specifies the quota identifier. To find the quota code for a specific quota, use the
+     *        <a>ListServiceQuotas</a> operation, and look for the <code>QuotaCode</code> response in the output for the
+     *        quota you want.
      */
 
     public void setQuotaCode(String quotaCode) {
@@ -288,10 +311,13 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The quota identifier.
+     * Specifies the quota identifier. To find the quota code for a specific quota, use the <a>ListServiceQuotas</a>
+     * operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.
      * </p>
      * 
-     * @return The quota identifier.
+     * @return Specifies the quota identifier. To find the quota code for a specific quota, use the
+     *         <a>ListServiceQuotas</a> operation, and look for the <code>QuotaCode</code> response in the output for
+     *         the quota you want.
      */
 
     public String getQuotaCode() {
@@ -300,11 +326,14 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The quota identifier.
+     * Specifies the quota identifier. To find the quota code for a specific quota, use the <a>ListServiceQuotas</a>
+     * operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.
      * </p>
      * 
      * @param quotaCode
-     *        The quota identifier.
+     *        Specifies the quota identifier. To find the quota code for a specific quota, use the
+     *        <a>ListServiceQuotas</a> operation, and look for the <code>QuotaCode</code> response in the output for the
+     *        quota you want.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -315,11 +344,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The quota name.
+     * Specifies the quota name.
      * </p>
      * 
      * @param quotaName
-     *        The quota name.
+     *        Specifies the quota name.
      */
 
     public void setQuotaName(String quotaName) {
@@ -328,10 +357,10 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The quota name.
+     * Specifies the quota name.
      * </p>
      * 
-     * @return The quota name.
+     * @return Specifies the quota name.
      */
 
     public String getQuotaName() {
@@ -340,11 +369,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The quota name.
+     * Specifies the quota name.
      * </p>
      * 
      * @param quotaName
-     *        The quota name.
+     *        Specifies the quota name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -705,6 +734,105 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * Specifies at which level within the Amazon Web Services account the quota request applies to.
+     * </p>
+     * 
+     * @param quotaRequestedAtLevel
+     *        Specifies at which level within the Amazon Web Services account the quota request applies to.
+     * @see AppliedLevelEnum
+     */
+
+    public void setQuotaRequestedAtLevel(String quotaRequestedAtLevel) {
+        this.quotaRequestedAtLevel = quotaRequestedAtLevel;
+    }
+
+    /**
+     * <p>
+     * Specifies at which level within the Amazon Web Services account the quota request applies to.
+     * </p>
+     * 
+     * @return Specifies at which level within the Amazon Web Services account the quota request applies to.
+     * @see AppliedLevelEnum
+     */
+
+    public String getQuotaRequestedAtLevel() {
+        return this.quotaRequestedAtLevel;
+    }
+
+    /**
+     * <p>
+     * Specifies at which level within the Amazon Web Services account the quota request applies to.
+     * </p>
+     * 
+     * @param quotaRequestedAtLevel
+     *        Specifies at which level within the Amazon Web Services account the quota request applies to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AppliedLevelEnum
+     */
+
+    public RequestedServiceQuotaChange withQuotaRequestedAtLevel(String quotaRequestedAtLevel) {
+        setQuotaRequestedAtLevel(quotaRequestedAtLevel);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies at which level within the Amazon Web Services account the quota request applies to.
+     * </p>
+     * 
+     * @param quotaRequestedAtLevel
+     *        Specifies at which level within the Amazon Web Services account the quota request applies to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AppliedLevelEnum
+     */
+
+    public RequestedServiceQuotaChange withQuotaRequestedAtLevel(AppliedLevelEnum quotaRequestedAtLevel) {
+        this.quotaRequestedAtLevel = quotaRequestedAtLevel.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The context for this service quota.
+     * </p>
+     * 
+     * @param quotaContext
+     *        The context for this service quota.
+     */
+
+    public void setQuotaContext(QuotaContextInfo quotaContext) {
+        this.quotaContext = quotaContext;
+    }
+
+    /**
+     * <p>
+     * The context for this service quota.
+     * </p>
+     * 
+     * @return The context for this service quota.
+     */
+
+    public QuotaContextInfo getQuotaContext() {
+        return this.quotaContext;
+    }
+
+    /**
+     * <p>
+     * The context for this service quota.
+     * </p>
+     * 
+     * @param quotaContext
+     *        The context for this service quota.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RequestedServiceQuotaChange withQuotaContext(QuotaContextInfo quotaContext) {
+        setQuotaContext(quotaContext);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -743,7 +871,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
         if (getGlobalQuota() != null)
             sb.append("GlobalQuota: ").append(getGlobalQuota()).append(",");
         if (getUnit() != null)
-            sb.append("Unit: ").append(getUnit());
+            sb.append("Unit: ").append(getUnit()).append(",");
+        if (getQuotaRequestedAtLevel() != null)
+            sb.append("QuotaRequestedAtLevel: ").append(getQuotaRequestedAtLevel()).append(",");
+        if (getQuotaContext() != null)
+            sb.append("QuotaContext: ").append(getQuotaContext());
         sb.append("}");
         return sb.toString();
     }
@@ -814,6 +946,14 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
             return false;
         if (other.getUnit() != null && other.getUnit().equals(this.getUnit()) == false)
             return false;
+        if (other.getQuotaRequestedAtLevel() == null ^ this.getQuotaRequestedAtLevel() == null)
+            return false;
+        if (other.getQuotaRequestedAtLevel() != null && other.getQuotaRequestedAtLevel().equals(this.getQuotaRequestedAtLevel()) == false)
+            return false;
+        if (other.getQuotaContext() == null ^ this.getQuotaContext() == null)
+            return false;
+        if (other.getQuotaContext() != null && other.getQuotaContext().equals(this.getQuotaContext()) == false)
+            return false;
         return true;
     }
 
@@ -836,6 +976,8 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
         hashCode = prime * hashCode + ((getQuotaArn() == null) ? 0 : getQuotaArn().hashCode());
         hashCode = prime * hashCode + ((getGlobalQuota() == null) ? 0 : getGlobalQuota().hashCode());
         hashCode = prime * hashCode + ((getUnit() == null) ? 0 : getUnit().hashCode());
+        hashCode = prime * hashCode + ((getQuotaRequestedAtLevel() == null) ? 0 : getQuotaRequestedAtLevel().hashCode());
+        hashCode = prime * hashCode + ((getQuotaContext() == null) ? 0 : getQuotaContext().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.savingsplans.AWSSavingsPlansClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.savingsplans.model.*;
+
 import com.amazonaws.services.savingsplans.model.transform.*;
 
 /**
@@ -51,10 +52,10 @@ import com.amazonaws.services.savingsplans.model.transform.*;
  * until the service call completes.
  * <p>
  * <p>
- * Savings Plans are a pricing model that offer significant savings on AWS usage (for example, on Amazon EC2 instances).
- * You commit to a consistent amount of usage, in USD per hour, for a term of 1 or 3 years, and receive a lower price
- * for that usage. For more information, see the <a
- * href="https://docs.aws.amazon.com/savingsplans/latest/userguide/">AWS Savings Plans User Guide</a>.
+ * Savings Plans are a pricing model that offer significant savings on Amazon Web Services usage (for example, on Amazon
+ * EC2 instances). You commit to a consistent amount of usage per hour, in the specified currency, for a term of one or
+ * three years, and receive a lower price for that usage. For more information, see the <a
+ * href="https://docs.aws.amazon.com/savingsplans/latest/userguide/">Amazon Web Services Savings Plans User Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -81,11 +82,11 @@ public class AWSSavingsPlansClient extends AmazonWebServiceClient implements AWS
                     .withSupportsIon(false)
                     .withContentTypeOverride("application/json")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.savingsplans.model.transform.ValidationExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.savingsplans.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.savingsplans.model.transform.ValidationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.savingsplans.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
@@ -270,7 +271,7 @@ public class AWSSavingsPlansClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Describes the specified Savings Plans rates.
+     * Describes the rates for the specified Savings Plan.
      * </p>
      * 
      * @param describeSavingsPlanRatesRequest
@@ -390,7 +391,7 @@ public class AWSSavingsPlansClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Describes the specified Savings Plans offering rates.
+     * Describes the offering rates for the specified Savings Plans.
      * </p>
      * 
      * @param describeSavingsPlansOfferingRatesRequest
@@ -452,7 +453,7 @@ public class AWSSavingsPlansClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Describes the specified Savings Plans offerings.
+     * Describes the offerings for the specified Savings Plans.
      * </p>
      * 
      * @param describeSavingsPlansOfferingsRequest
@@ -562,6 +563,69 @@ public class AWSSavingsPlansClient extends AmazonWebServiceClient implements AWS
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the specified Savings Plan.
+     * </p>
+     * 
+     * @param returnSavingsPlanRequest
+     * @return Result of the ReturnSavingsPlan operation returned by the service.
+     * @throws ValidationException
+     *         One of the input parameters is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServerException
+     *         An unexpected error occurred.
+     * @throws ServiceQuotaExceededException
+     *         A service quota has been exceeded.
+     * @sample AWSSavingsPlans.ReturnSavingsPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/ReturnSavingsPlan" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ReturnSavingsPlanResult returnSavingsPlan(ReturnSavingsPlanRequest request) {
+        request = beforeClientExecution(request);
+        return executeReturnSavingsPlan(request);
+    }
+
+    @SdkInternalApi
+    final ReturnSavingsPlanResult executeReturnSavingsPlan(ReturnSavingsPlanRequest returnSavingsPlanRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(returnSavingsPlanRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ReturnSavingsPlanRequest> request = null;
+        Response<ReturnSavingsPlanResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ReturnSavingsPlanRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(returnSavingsPlanRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "savingsplans");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ReturnSavingsPlan");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ReturnSavingsPlanResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ReturnSavingsPlanResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

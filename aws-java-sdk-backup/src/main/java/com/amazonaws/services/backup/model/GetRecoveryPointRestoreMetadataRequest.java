@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,12 @@ public class GetRecoveryPointRestoreMetadataRequest extends com.amazonaws.Amazon
      * </p>
      */
     private String recoveryPointArn;
+    /**
+     * <p>
+     * This is the account ID of the specified backup vault.
+     * </p>
+     */
+    private String backupVaultAccountId;
 
     /**
      * <p>
@@ -140,6 +146,46 @@ public class GetRecoveryPointRestoreMetadataRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * This is the account ID of the specified backup vault.
+     * </p>
+     * 
+     * @param backupVaultAccountId
+     *        This is the account ID of the specified backup vault.
+     */
+
+    public void setBackupVaultAccountId(String backupVaultAccountId) {
+        this.backupVaultAccountId = backupVaultAccountId;
+    }
+
+    /**
+     * <p>
+     * This is the account ID of the specified backup vault.
+     * </p>
+     * 
+     * @return This is the account ID of the specified backup vault.
+     */
+
+    public String getBackupVaultAccountId() {
+        return this.backupVaultAccountId;
+    }
+
+    /**
+     * <p>
+     * This is the account ID of the specified backup vault.
+     * </p>
+     * 
+     * @param backupVaultAccountId
+     *        This is the account ID of the specified backup vault.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetRecoveryPointRestoreMetadataRequest withBackupVaultAccountId(String backupVaultAccountId) {
+        setBackupVaultAccountId(backupVaultAccountId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -154,7 +200,9 @@ public class GetRecoveryPointRestoreMetadataRequest extends com.amazonaws.Amazon
         if (getBackupVaultName() != null)
             sb.append("BackupVaultName: ").append(getBackupVaultName()).append(",");
         if (getRecoveryPointArn() != null)
-            sb.append("RecoveryPointArn: ").append(getRecoveryPointArn());
+            sb.append("RecoveryPointArn: ").append(getRecoveryPointArn()).append(",");
+        if (getBackupVaultAccountId() != null)
+            sb.append("BackupVaultAccountId: ").append(getBackupVaultAccountId());
         sb.append("}");
         return sb.toString();
     }
@@ -177,6 +225,10 @@ public class GetRecoveryPointRestoreMetadataRequest extends com.amazonaws.Amazon
             return false;
         if (other.getRecoveryPointArn() != null && other.getRecoveryPointArn().equals(this.getRecoveryPointArn()) == false)
             return false;
+        if (other.getBackupVaultAccountId() == null ^ this.getBackupVaultAccountId() == null)
+            return false;
+        if (other.getBackupVaultAccountId() != null && other.getBackupVaultAccountId().equals(this.getBackupVaultAccountId()) == false)
+            return false;
         return true;
     }
 
@@ -187,6 +239,7 @@ public class GetRecoveryPointRestoreMetadataRequest extends com.amazonaws.Amazon
 
         hashCode = prime * hashCode + ((getBackupVaultName() == null) ? 0 : getBackupVaultName().hashCode());
         hashCode = prime * hashCode + ((getRecoveryPointArn() == null) ? 0 : getRecoveryPointArn().hashCode());
+        hashCode = prime * hashCode + ((getBackupVaultAccountId() == null) ? 0 : getBackupVaultAccountId().hashCode());
         return hashCode;
     }
 

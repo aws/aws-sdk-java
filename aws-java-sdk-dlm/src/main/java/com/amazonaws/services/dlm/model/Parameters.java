@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * <b>[Snapshot and AMI policies only]</b> Specifies optional parameters for snapshot and AMI policies. The set of valid
- * parameters depends on the combination of policy type and target resource type.
+ * <b>[Custom snapshot and AMI policies only]</b> Specifies optional parameters for snapshot and AMI policies. The set
+ * of valid parameters depends on the combination of policy type and target resource type.
  * </p>
  * <p>
  * If you choose to exclude boot volumes and you specify tags that consequently exclude all of the additional data
@@ -38,7 +38,7 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[Snapshot policies that target instances only]</b> Indicates whether to exclude the root volume from
+     * <b>[Custom snapshot policies that target instances only]</b> Indicates whether to exclude the root volume from
      * multi-volume snapshot sets. The default is <code>false</code>. If you specify <code>true</code>, then the root
      * volumes attached to targeted instances will be excluded from the multi-volume snapshot sets created by the
      * policy.
@@ -47,16 +47,16 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
     private Boolean excludeBootVolume;
     /**
      * <p>
-     * <b>[AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle policy runs.
-     * <code>true</code> indicates that targeted instances are not rebooted when the policy runs. <code>false</code>
-     * indicates that target instances are rebooted when the policy runs. The default is <code>true</code> (instances
-     * are not rebooted).
+     * <b>[Custom AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle policy
+     * runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs.
+     * <code>false</code> indicates that target instances are rebooted when the policy runs. The default is
+     * <code>true</code> (instances are not rebooted).
      * </p>
      */
     private Boolean noReboot;
     /**
      * <p>
-     * <b>[Snapshot policies that target instances only]</b> The tags used to identify data (non-root) volumes to
+     * <b>[Custom snapshot policies that target instances only]</b> The tags used to identify data (non-root) volumes to
      * exclude from multi-volume snapshot sets.
      * </p>
      * <p>
@@ -69,17 +69,17 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[Snapshot policies that target instances only]</b> Indicates whether to exclude the root volume from
+     * <b>[Custom snapshot policies that target instances only]</b> Indicates whether to exclude the root volume from
      * multi-volume snapshot sets. The default is <code>false</code>. If you specify <code>true</code>, then the root
      * volumes attached to targeted instances will be excluded from the multi-volume snapshot sets created by the
      * policy.
      * </p>
      * 
      * @param excludeBootVolume
-     *        <b>[Snapshot policies that target instances only]</b> Indicates whether to exclude the root volume from
-     *        multi-volume snapshot sets. The default is <code>false</code>. If you specify <code>true</code>, then the
-     *        root volumes attached to targeted instances will be excluded from the multi-volume snapshot sets created
-     *        by the policy.
+     *        <b>[Custom snapshot policies that target instances only]</b> Indicates whether to exclude the root volume
+     *        from multi-volume snapshot sets. The default is <code>false</code>. If you specify <code>true</code>, then
+     *        the root volumes attached to targeted instances will be excluded from the multi-volume snapshot sets
+     *        created by the policy.
      */
 
     public void setExcludeBootVolume(Boolean excludeBootVolume) {
@@ -88,16 +88,16 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[Snapshot policies that target instances only]</b> Indicates whether to exclude the root volume from
+     * <b>[Custom snapshot policies that target instances only]</b> Indicates whether to exclude the root volume from
      * multi-volume snapshot sets. The default is <code>false</code>. If you specify <code>true</code>, then the root
      * volumes attached to targeted instances will be excluded from the multi-volume snapshot sets created by the
      * policy.
      * </p>
      * 
-     * @return <b>[Snapshot policies that target instances only]</b> Indicates whether to exclude the root volume from
-     *         multi-volume snapshot sets. The default is <code>false</code>. If you specify <code>true</code>, then the
-     *         root volumes attached to targeted instances will be excluded from the multi-volume snapshot sets created
-     *         by the policy.
+     * @return <b>[Custom snapshot policies that target instances only]</b> Indicates whether to exclude the root volume
+     *         from multi-volume snapshot sets. The default is <code>false</code>. If you specify <code>true</code>,
+     *         then the root volumes attached to targeted instances will be excluded from the multi-volume snapshot sets
+     *         created by the policy.
      */
 
     public Boolean getExcludeBootVolume() {
@@ -106,17 +106,17 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[Snapshot policies that target instances only]</b> Indicates whether to exclude the root volume from
+     * <b>[Custom snapshot policies that target instances only]</b> Indicates whether to exclude the root volume from
      * multi-volume snapshot sets. The default is <code>false</code>. If you specify <code>true</code>, then the root
      * volumes attached to targeted instances will be excluded from the multi-volume snapshot sets created by the
      * policy.
      * </p>
      * 
      * @param excludeBootVolume
-     *        <b>[Snapshot policies that target instances only]</b> Indicates whether to exclude the root volume from
-     *        multi-volume snapshot sets. The default is <code>false</code>. If you specify <code>true</code>, then the
-     *        root volumes attached to targeted instances will be excluded from the multi-volume snapshot sets created
-     *        by the policy.
+     *        <b>[Custom snapshot policies that target instances only]</b> Indicates whether to exclude the root volume
+     *        from multi-volume snapshot sets. The default is <code>false</code>. If you specify <code>true</code>, then
+     *        the root volumes attached to targeted instances will be excluded from the multi-volume snapshot sets
+     *        created by the policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,16 +127,16 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[Snapshot policies that target instances only]</b> Indicates whether to exclude the root volume from
+     * <b>[Custom snapshot policies that target instances only]</b> Indicates whether to exclude the root volume from
      * multi-volume snapshot sets. The default is <code>false</code>. If you specify <code>true</code>, then the root
      * volumes attached to targeted instances will be excluded from the multi-volume snapshot sets created by the
      * policy.
      * </p>
      * 
-     * @return <b>[Snapshot policies that target instances only]</b> Indicates whether to exclude the root volume from
-     *         multi-volume snapshot sets. The default is <code>false</code>. If you specify <code>true</code>, then the
-     *         root volumes attached to targeted instances will be excluded from the multi-volume snapshot sets created
-     *         by the policy.
+     * @return <b>[Custom snapshot policies that target instances only]</b> Indicates whether to exclude the root volume
+     *         from multi-volume snapshot sets. The default is <code>false</code>. If you specify <code>true</code>,
+     *         then the root volumes attached to targeted instances will be excluded from the multi-volume snapshot sets
+     *         created by the policy.
      */
 
     public Boolean isExcludeBootVolume() {
@@ -145,15 +145,15 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle policy runs.
-     * <code>true</code> indicates that targeted instances are not rebooted when the policy runs. <code>false</code>
-     * indicates that target instances are rebooted when the policy runs. The default is <code>true</code> (instances
-     * are not rebooted).
+     * <b>[Custom AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle policy
+     * runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs.
+     * <code>false</code> indicates that target instances are rebooted when the policy runs. The default is
+     * <code>true</code> (instances are not rebooted).
      * </p>
      * 
      * @param noReboot
-     *        <b>[AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle policy
-     *        runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs.
+     *        <b>[Custom AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle
+     *        policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs.
      *        <code>false</code> indicates that target instances are rebooted when the policy runs. The default is
      *        <code>true</code> (instances are not rebooted).
      */
@@ -164,14 +164,14 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle policy runs.
-     * <code>true</code> indicates that targeted instances are not rebooted when the policy runs. <code>false</code>
-     * indicates that target instances are rebooted when the policy runs. The default is <code>true</code> (instances
-     * are not rebooted).
+     * <b>[Custom AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle policy
+     * runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs.
+     * <code>false</code> indicates that target instances are rebooted when the policy runs. The default is
+     * <code>true</code> (instances are not rebooted).
      * </p>
      * 
-     * @return <b>[AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle policy
-     *         runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs.
+     * @return <b>[Custom AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle
+     *         policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs.
      *         <code>false</code> indicates that target instances are rebooted when the policy runs. The default is
      *         <code>true</code> (instances are not rebooted).
      */
@@ -182,15 +182,15 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle policy runs.
-     * <code>true</code> indicates that targeted instances are not rebooted when the policy runs. <code>false</code>
-     * indicates that target instances are rebooted when the policy runs. The default is <code>true</code> (instances
-     * are not rebooted).
+     * <b>[Custom AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle policy
+     * runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs.
+     * <code>false</code> indicates that target instances are rebooted when the policy runs. The default is
+     * <code>true</code> (instances are not rebooted).
      * </p>
      * 
      * @param noReboot
-     *        <b>[AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle policy
-     *        runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs.
+     *        <b>[Custom AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle
+     *        policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs.
      *        <code>false</code> indicates that target instances are rebooted when the policy runs. The default is
      *        <code>true</code> (instances are not rebooted).
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -203,14 +203,14 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle policy runs.
-     * <code>true</code> indicates that targeted instances are not rebooted when the policy runs. <code>false</code>
-     * indicates that target instances are rebooted when the policy runs. The default is <code>true</code> (instances
-     * are not rebooted).
+     * <b>[Custom AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle policy
+     * runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs.
+     * <code>false</code> indicates that target instances are rebooted when the policy runs. The default is
+     * <code>true</code> (instances are not rebooted).
      * </p>
      * 
-     * @return <b>[AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle policy
-     *         runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs.
+     * @return <b>[Custom AMI policies only]</b> Indicates whether targeted instances are rebooted when the lifecycle
+     *         policy runs. <code>true</code> indicates that targeted instances are not rebooted when the policy runs.
      *         <code>false</code> indicates that target instances are rebooted when the policy runs. The default is
      *         <code>true</code> (instances are not rebooted).
      */
@@ -221,7 +221,7 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[Snapshot policies that target instances only]</b> The tags used to identify data (non-root) volumes to
+     * <b>[Custom snapshot policies that target instances only]</b> The tags used to identify data (non-root) volumes to
      * exclude from multi-volume snapshot sets.
      * </p>
      * <p>
@@ -230,8 +230,8 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
      * multi-volume snapshot sets created by the policy.
      * </p>
      * 
-     * @return <b>[Snapshot policies that target instances only]</b> The tags used to identify data (non-root) volumes
-     *         to exclude from multi-volume snapshot sets.</p>
+     * @return <b>[Custom snapshot policies that target instances only]</b> The tags used to identify data (non-root)
+     *         volumes to exclude from multi-volume snapshot sets.</p>
      *         <p>
      *         If you create a snapshot lifecycle policy that targets instances and you specify tags for this parameter,
      *         then data volumes with the specified tags that are attached to targeted instances will be excluded from
@@ -244,7 +244,7 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[Snapshot policies that target instances only]</b> The tags used to identify data (non-root) volumes to
+     * <b>[Custom snapshot policies that target instances only]</b> The tags used to identify data (non-root) volumes to
      * exclude from multi-volume snapshot sets.
      * </p>
      * <p>
@@ -254,8 +254,8 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param excludeDataVolumeTags
-     *        <b>[Snapshot policies that target instances only]</b> The tags used to identify data (non-root) volumes to
-     *        exclude from multi-volume snapshot sets.</p>
+     *        <b>[Custom snapshot policies that target instances only]</b> The tags used to identify data (non-root)
+     *        volumes to exclude from multi-volume snapshot sets.</p>
      *        <p>
      *        If you create a snapshot lifecycle policy that targets instances and you specify tags for this parameter,
      *        then data volumes with the specified tags that are attached to targeted instances will be excluded from
@@ -273,7 +273,7 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[Snapshot policies that target instances only]</b> The tags used to identify data (non-root) volumes to
+     * <b>[Custom snapshot policies that target instances only]</b> The tags used to identify data (non-root) volumes to
      * exclude from multi-volume snapshot sets.
      * </p>
      * <p>
@@ -288,8 +288,8 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param excludeDataVolumeTags
-     *        <b>[Snapshot policies that target instances only]</b> The tags used to identify data (non-root) volumes to
-     *        exclude from multi-volume snapshot sets.</p>
+     *        <b>[Custom snapshot policies that target instances only]</b> The tags used to identify data (non-root)
+     *        volumes to exclude from multi-volume snapshot sets.</p>
      *        <p>
      *        If you create a snapshot lifecycle policy that targets instances and you specify tags for this parameter,
      *        then data volumes with the specified tags that are attached to targeted instances will be excluded from
@@ -309,7 +309,7 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[Snapshot policies that target instances only]</b> The tags used to identify data (non-root) volumes to
+     * <b>[Custom snapshot policies that target instances only]</b> The tags used to identify data (non-root) volumes to
      * exclude from multi-volume snapshot sets.
      * </p>
      * <p>
@@ -319,8 +319,8 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param excludeDataVolumeTags
-     *        <b>[Snapshot policies that target instances only]</b> The tags used to identify data (non-root) volumes to
-     *        exclude from multi-volume snapshot sets.</p>
+     *        <b>[Custom snapshot policies that target instances only]</b> The tags used to identify data (non-root)
+     *        volumes to exclude from multi-volume snapshot sets.</p>
      *        <p>
      *        If you create a snapshot lifecycle policy that targets instances and you specify tags for this parameter,
      *        then data volumes with the specified tags that are attached to targeted instances will be excluded from

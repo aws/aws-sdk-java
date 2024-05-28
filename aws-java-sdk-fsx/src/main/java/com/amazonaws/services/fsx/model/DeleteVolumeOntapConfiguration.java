@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Use to specify skipping a final backup, or to add tags to a final backup.
+ * Use to specify skipping a final backup, adding tags to a final backup, or bypassing the retention period of an FSx
+ * for ONTAP SnapLock Enterprise volume when deleting an FSx for ONTAP volume.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteVolumeOntapConfiguration" target="_top">AWS
@@ -36,6 +37,20 @@ public class DeleteVolumeOntapConfiguration implements Serializable, Cloneable, 
     private Boolean skipFinalBackup;
 
     private java.util.List<Tag> finalBackupTags;
+    /**
+     * <p>
+     * Setting this to <code>true</code> allows a SnapLock administrator to delete an FSx for ONTAP SnapLock Enterprise
+     * volume with unexpired write once, read many (WORM) files. The IAM permission
+     * <code>fsx:BypassSnaplockEnterpriseRetention</code> is also required to delete SnapLock Enterprise volumes with
+     * unexpired WORM files. The default value is <code>false</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-delete-volume.html"> Deleting a SnapLock
+     * volume</a>.
+     * </p>
+     */
+    private Boolean bypassSnaplockEnterpriseRetention;
 
     /**
      * <p>
@@ -142,6 +157,118 @@ public class DeleteVolumeOntapConfiguration implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * Setting this to <code>true</code> allows a SnapLock administrator to delete an FSx for ONTAP SnapLock Enterprise
+     * volume with unexpired write once, read many (WORM) files. The IAM permission
+     * <code>fsx:BypassSnaplockEnterpriseRetention</code> is also required to delete SnapLock Enterprise volumes with
+     * unexpired WORM files. The default value is <code>false</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-delete-volume.html"> Deleting a SnapLock
+     * volume</a>.
+     * </p>
+     * 
+     * @param bypassSnaplockEnterpriseRetention
+     *        Setting this to <code>true</code> allows a SnapLock administrator to delete an FSx for ONTAP SnapLock
+     *        Enterprise volume with unexpired write once, read many (WORM) files. The IAM permission
+     *        <code>fsx:BypassSnaplockEnterpriseRetention</code> is also required to delete SnapLock Enterprise volumes
+     *        with unexpired WORM files. The default value is <code>false</code>. </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-delete-volume.html"> Deleting a SnapLock
+     *        volume</a>.
+     */
+
+    public void setBypassSnaplockEnterpriseRetention(Boolean bypassSnaplockEnterpriseRetention) {
+        this.bypassSnaplockEnterpriseRetention = bypassSnaplockEnterpriseRetention;
+    }
+
+    /**
+     * <p>
+     * Setting this to <code>true</code> allows a SnapLock administrator to delete an FSx for ONTAP SnapLock Enterprise
+     * volume with unexpired write once, read many (WORM) files. The IAM permission
+     * <code>fsx:BypassSnaplockEnterpriseRetention</code> is also required to delete SnapLock Enterprise volumes with
+     * unexpired WORM files. The default value is <code>false</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-delete-volume.html"> Deleting a SnapLock
+     * volume</a>.
+     * </p>
+     * 
+     * @return Setting this to <code>true</code> allows a SnapLock administrator to delete an FSx for ONTAP SnapLock
+     *         Enterprise volume with unexpired write once, read many (WORM) files. The IAM permission
+     *         <code>fsx:BypassSnaplockEnterpriseRetention</code> is also required to delete SnapLock Enterprise volumes
+     *         with unexpired WORM files. The default value is <code>false</code>. </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-delete-volume.html"> Deleting a SnapLock
+     *         volume</a>.
+     */
+
+    public Boolean getBypassSnaplockEnterpriseRetention() {
+        return this.bypassSnaplockEnterpriseRetention;
+    }
+
+    /**
+     * <p>
+     * Setting this to <code>true</code> allows a SnapLock administrator to delete an FSx for ONTAP SnapLock Enterprise
+     * volume with unexpired write once, read many (WORM) files. The IAM permission
+     * <code>fsx:BypassSnaplockEnterpriseRetention</code> is also required to delete SnapLock Enterprise volumes with
+     * unexpired WORM files. The default value is <code>false</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-delete-volume.html"> Deleting a SnapLock
+     * volume</a>.
+     * </p>
+     * 
+     * @param bypassSnaplockEnterpriseRetention
+     *        Setting this to <code>true</code> allows a SnapLock administrator to delete an FSx for ONTAP SnapLock
+     *        Enterprise volume with unexpired write once, read many (WORM) files. The IAM permission
+     *        <code>fsx:BypassSnaplockEnterpriseRetention</code> is also required to delete SnapLock Enterprise volumes
+     *        with unexpired WORM files. The default value is <code>false</code>. </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-delete-volume.html"> Deleting a SnapLock
+     *        volume</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteVolumeOntapConfiguration withBypassSnaplockEnterpriseRetention(Boolean bypassSnaplockEnterpriseRetention) {
+        setBypassSnaplockEnterpriseRetention(bypassSnaplockEnterpriseRetention);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Setting this to <code>true</code> allows a SnapLock administrator to delete an FSx for ONTAP SnapLock Enterprise
+     * volume with unexpired write once, read many (WORM) files. The IAM permission
+     * <code>fsx:BypassSnaplockEnterpriseRetention</code> is also required to delete SnapLock Enterprise volumes with
+     * unexpired WORM files. The default value is <code>false</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-delete-volume.html"> Deleting a SnapLock
+     * volume</a>.
+     * </p>
+     * 
+     * @return Setting this to <code>true</code> allows a SnapLock administrator to delete an FSx for ONTAP SnapLock
+     *         Enterprise volume with unexpired write once, read many (WORM) files. The IAM permission
+     *         <code>fsx:BypassSnaplockEnterpriseRetention</code> is also required to delete SnapLock Enterprise volumes
+     *         with unexpired WORM files. The default value is <code>false</code>. </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-delete-volume.html"> Deleting a SnapLock
+     *         volume</a>.
+     */
+
+    public Boolean isBypassSnaplockEnterpriseRetention() {
+        return this.bypassSnaplockEnterpriseRetention;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -156,7 +283,9 @@ public class DeleteVolumeOntapConfiguration implements Serializable, Cloneable, 
         if (getSkipFinalBackup() != null)
             sb.append("SkipFinalBackup: ").append(getSkipFinalBackup()).append(",");
         if (getFinalBackupTags() != null)
-            sb.append("FinalBackupTags: ").append(getFinalBackupTags());
+            sb.append("FinalBackupTags: ").append(getFinalBackupTags()).append(",");
+        if (getBypassSnaplockEnterpriseRetention() != null)
+            sb.append("BypassSnaplockEnterpriseRetention: ").append(getBypassSnaplockEnterpriseRetention());
         sb.append("}");
         return sb.toString();
     }
@@ -179,6 +308,11 @@ public class DeleteVolumeOntapConfiguration implements Serializable, Cloneable, 
             return false;
         if (other.getFinalBackupTags() != null && other.getFinalBackupTags().equals(this.getFinalBackupTags()) == false)
             return false;
+        if (other.getBypassSnaplockEnterpriseRetention() == null ^ this.getBypassSnaplockEnterpriseRetention() == null)
+            return false;
+        if (other.getBypassSnaplockEnterpriseRetention() != null
+                && other.getBypassSnaplockEnterpriseRetention().equals(this.getBypassSnaplockEnterpriseRetention()) == false)
+            return false;
         return true;
     }
 
@@ -189,6 +323,7 @@ public class DeleteVolumeOntapConfiguration implements Serializable, Cloneable, 
 
         hashCode = prime * hashCode + ((getSkipFinalBackup() == null) ? 0 : getSkipFinalBackup().hashCode());
         hashCode = prime * hashCode + ((getFinalBackupTags() == null) ? 0 : getFinalBackupTags().hashCode());
+        hashCode = prime * hashCode + ((getBypassSnaplockEnterpriseRetention() == null) ? 0 : getBypassSnaplockEnterpriseRetention().hashCode());
         return hashCode;
     }
 

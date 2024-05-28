@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,9 +58,46 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The frequency of data collection. This parameter is required for RELATED_TIME_SERIES datasets.
      * </p>
      * <p>
-     * Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes),
-     * 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates every day and "15min"
-     * indicates every 15 minutes.
+     * Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute).
+     * For example, "1D" indicates every day and "15min" indicates every 15 minutes. You cannot specify a value that
+     * would overlap with the next larger frequency. That means, for example, you cannot specify a frequency of 60
+     * minutes, because that is equivalent to 1 hour. The valid values for each frequency are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Minute - 1-59
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Hour - 1-23
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Day - 1-6
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Week - 1-4
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Month - 1-11
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Year - 1
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you specify
+     * "3M".
      * </p>
      */
     private String dataFrequency;
@@ -76,8 +113,8 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
     private Schema schema;
     /**
      * <p>
-     * An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon
-     * Forecast can assume to access the key.
+     * An Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can
+     * assume to access the key.
      * </p>
      */
     private EncryptionConfig encryptionConfig;
@@ -125,10 +162,10 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <li>
      * <p>
      * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this
-     * prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be
-     * a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not
-     * count against your tags per resource limit.
+     * keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values
+     * can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
+     * considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of
+     * <code>aws</code> do not count against your tags per resource limit.
      * </p>
      * </li>
      * </ul>
@@ -382,17 +419,92 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The frequency of data collection. This parameter is required for RELATED_TIME_SERIES datasets.
      * </p>
      * <p>
-     * Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes),
-     * 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates every day and "15min"
-     * indicates every 15 minutes.
+     * Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute).
+     * For example, "1D" indicates every day and "15min" indicates every 15 minutes. You cannot specify a value that
+     * would overlap with the next larger frequency. That means, for example, you cannot specify a frequency of 60
+     * minutes, because that is equivalent to 1 hour. The valid values for each frequency are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Minute - 1-59
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Hour - 1-23
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Day - 1-6
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Week - 1-4
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Month - 1-11
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Year - 1
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you specify
+     * "3M".
      * </p>
      * 
      * @param dataFrequency
      *        The frequency of data collection. This parameter is required for RELATED_TIME_SERIES datasets.</p>
      *        <p>
-     *        Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15
-     *        minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates every day
-     *        and "15min" indicates every 15 minutes.
+     *        Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min
+     *        (Minute). For example, "1D" indicates every day and "15min" indicates every 15 minutes. You cannot specify
+     *        a value that would overlap with the next larger frequency. That means, for example, you cannot specify a
+     *        frequency of 60 minutes, because that is equivalent to 1 hour. The valid values for each frequency are the
+     *        following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Minute - 1-59
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Hour - 1-23
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Day - 1-6
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Week - 1-4
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Month - 1-11
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Year - 1
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you
+     *        specify "3M".
      */
 
     public void setDataFrequency(String dataFrequency) {
@@ -404,16 +516,91 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The frequency of data collection. This parameter is required for RELATED_TIME_SERIES datasets.
      * </p>
      * <p>
-     * Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes),
-     * 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates every day and "15min"
-     * indicates every 15 minutes.
+     * Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute).
+     * For example, "1D" indicates every day and "15min" indicates every 15 minutes. You cannot specify a value that
+     * would overlap with the next larger frequency. That means, for example, you cannot specify a frequency of 60
+     * minutes, because that is equivalent to 1 hour. The valid values for each frequency are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Minute - 1-59
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Hour - 1-23
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Day - 1-6
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Week - 1-4
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Month - 1-11
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Year - 1
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you specify
+     * "3M".
      * </p>
      * 
      * @return The frequency of data collection. This parameter is required for RELATED_TIME_SERIES datasets.</p>
      *         <p>
-     *         Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15
-     *         minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates every day
-     *         and "15min" indicates every 15 minutes.
+     *         Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min
+     *         (Minute). For example, "1D" indicates every day and "15min" indicates every 15 minutes. You cannot
+     *         specify a value that would overlap with the next larger frequency. That means, for example, you cannot
+     *         specify a frequency of 60 minutes, because that is equivalent to 1 hour. The valid values for each
+     *         frequency are the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Minute - 1-59
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Hour - 1-23
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Day - 1-6
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Week - 1-4
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Month - 1-11
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Year - 1
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you
+     *         specify "3M".
      */
 
     public String getDataFrequency() {
@@ -425,17 +612,92 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The frequency of data collection. This parameter is required for RELATED_TIME_SERIES datasets.
      * </p>
      * <p>
-     * Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes),
-     * 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates every day and "15min"
-     * indicates every 15 minutes.
+     * Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute).
+     * For example, "1D" indicates every day and "15min" indicates every 15 minutes. You cannot specify a value that
+     * would overlap with the next larger frequency. That means, for example, you cannot specify a frequency of 60
+     * minutes, because that is equivalent to 1 hour. The valid values for each frequency are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Minute - 1-59
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Hour - 1-23
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Day - 1-6
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Week - 1-4
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Month - 1-11
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Year - 1
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you specify
+     * "3M".
      * </p>
      * 
      * @param dataFrequency
      *        The frequency of data collection. This parameter is required for RELATED_TIME_SERIES datasets.</p>
      *        <p>
-     *        Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15
-     *        minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates every day
-     *        and "15min" indicates every 15 minutes.
+     *        Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min
+     *        (Minute). For example, "1D" indicates every day and "15min" indicates every 15 minutes. You cannot specify
+     *        a value that would overlap with the next larger frequency. That means, for example, you cannot specify a
+     *        frequency of 60 minutes, because that is equivalent to 1 hour. The valid values for each frequency are the
+     *        following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Minute - 1-59
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Hour - 1-23
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Day - 1-6
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Week - 1-4
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Month - 1-11
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Year - 1
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you
+     *        specify "3M".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -513,13 +775,13 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon
-     * Forecast can assume to access the key.
+     * An Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can
+     * assume to access the key.
      * </p>
      * 
      * @param encryptionConfig
-     *        An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon
-     *        Forecast can assume to access the key.
+     *        An Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast
+     *        can assume to access the key.
      */
 
     public void setEncryptionConfig(EncryptionConfig encryptionConfig) {
@@ -528,11 +790,11 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon
-     * Forecast can assume to access the key.
+     * An Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can
+     * assume to access the key.
      * </p>
      * 
-     * @return An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon
+     * @return An Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon
      *         Forecast can assume to access the key.
      */
 
@@ -542,13 +804,13 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon
-     * Forecast can assume to access the key.
+     * An Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can
+     * assume to access the key.
      * </p>
      * 
      * @param encryptionConfig
-     *        An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon
-     *        Forecast can assume to access the key.
+     *        An Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast
+     *        can assume to access the key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -601,10 +863,10 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <li>
      * <p>
      * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this
-     * prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be
-     * a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not
-     * count against your tags per resource limit.
+     * keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values
+     * can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
+     * considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of
+     * <code>aws</code> do not count against your tags per resource limit.
      * </p>
      * </li>
      * </ul>
@@ -650,10 +912,10 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <li>
      *         <p>
      *         Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a
-     *         prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix.
-     *         Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then
-     *         Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the
-     *         key prefix of <code>aws</code> do not count against your tags per resource limit.
+     *         prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with
+     *         this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key
+     *         does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags
+     *         with only the key prefix of <code>aws</code> do not count against your tags per resource limit.
      *         </p>
      *         </li>
      */
@@ -706,10 +968,10 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <li>
      * <p>
      * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this
-     * prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be
-     * a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not
-     * count against your tags per resource limit.
+     * keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values
+     * can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
+     * considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of
+     * <code>aws</code> do not count against your tags per resource limit.
      * </p>
      * </li>
      * </ul>
@@ -756,10 +1018,10 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <li>
      *        <p>
      *        Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix
-     *        for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can
-     *        have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
-     *        considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix
-     *        of <code>aws</code> do not count against your tags per resource limit.
+     *        for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this
+     *        prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does
+     *        not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with
+     *        only the key prefix of <code>aws</code> do not count against your tags per resource limit.
      *        </p>
      *        </li>
      */
@@ -817,10 +1079,10 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <li>
      * <p>
      * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this
-     * prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be
-     * a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not
-     * count against your tags per resource limit.
+     * keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values
+     * can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
+     * considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of
+     * <code>aws</code> do not count against your tags per resource limit.
      * </p>
      * </li>
      * </ul>
@@ -872,10 +1134,10 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <li>
      *        <p>
      *        Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix
-     *        for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can
-     *        have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
-     *        considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix
-     *        of <code>aws</code> do not count against your tags per resource limit.
+     *        for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this
+     *        prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does
+     *        not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with
+     *        only the key prefix of <code>aws</code> do not count against your tags per resource limit.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -935,10 +1197,10 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <li>
      * <p>
      * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
-     * keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this
-     * prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be
-     * a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not
-     * count against your tags per resource limit.
+     * keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values
+     * can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
+     * considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of
+     * <code>aws</code> do not count against your tags per resource limit.
      * </p>
      * </li>
      * </ul>
@@ -985,10 +1247,10 @@ public class CreateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <li>
      *        <p>
      *        Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix
-     *        for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can
-     *        have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
-     *        considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix
-     *        of <code>aws</code> do not count against your tags per resource limit.
+     *        for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this
+     *        prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does
+     *        not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with
+     *        only the key prefix of <code>aws</code> do not count against your tags per resource limit.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

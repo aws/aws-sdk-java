@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Shows the final value for the objective metric for a training job that was launched by a hyperparameter tuning job.
- * You define the objective metric in the <code>HyperParameterTuningJobObjective</code> parameter of
- * <a>HyperParameterTuningJobConfig</a>.
+ * Shows the latest objective metric emitted by a training job that was launched by a hyperparameter tuning job. You
+ * define the objective metric in the <code>HyperParameterTuningJobObjective</code> parameter of <a
+ * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html"
+ * >HyperParameterTuningJobConfig</a>.
  * </p>
  * 
  * @see <a
@@ -33,13 +34,17 @@ public class FinalHyperParameterTuningJobObjectiveMetric implements Serializable
 
     /**
      * <p>
-     * Whether to minimize or maximize the objective metric. Valid values are Minimize and Maximize.
+     * Select if you want to minimize or maximize the objective metric during hyperparameter tuning.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * The name of the objective metric.
+     * The name of the objective metric. For SageMaker built-in algorithms, metrics are defined per algorithm. See the
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost-tuning.html">metrics for XGBoost</a> as an
+     * example. You can also use a custom algorithm for training and define your own metrics. For more information, see
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">
+     * Define metrics and environment variables</a>.
      * </p>
      */
     private String metricName;
@@ -52,11 +57,11 @@ public class FinalHyperParameterTuningJobObjectiveMetric implements Serializable
 
     /**
      * <p>
-     * Whether to minimize or maximize the objective metric. Valid values are Minimize and Maximize.
+     * Select if you want to minimize or maximize the objective metric during hyperparameter tuning.
      * </p>
      * 
      * @param type
-     *        Whether to minimize or maximize the objective metric. Valid values are Minimize and Maximize.
+     *        Select if you want to minimize or maximize the objective metric during hyperparameter tuning.
      * @see HyperParameterTuningJobObjectiveType
      */
 
@@ -66,10 +71,10 @@ public class FinalHyperParameterTuningJobObjectiveMetric implements Serializable
 
     /**
      * <p>
-     * Whether to minimize or maximize the objective metric. Valid values are Minimize and Maximize.
+     * Select if you want to minimize or maximize the objective metric during hyperparameter tuning.
      * </p>
      * 
-     * @return Whether to minimize or maximize the objective metric. Valid values are Minimize and Maximize.
+     * @return Select if you want to minimize or maximize the objective metric during hyperparameter tuning.
      * @see HyperParameterTuningJobObjectiveType
      */
 
@@ -79,11 +84,11 @@ public class FinalHyperParameterTuningJobObjectiveMetric implements Serializable
 
     /**
      * <p>
-     * Whether to minimize or maximize the objective metric. Valid values are Minimize and Maximize.
+     * Select if you want to minimize or maximize the objective metric during hyperparameter tuning.
      * </p>
      * 
      * @param type
-     *        Whether to minimize or maximize the objective metric. Valid values are Minimize and Maximize.
+     *        Select if you want to minimize or maximize the objective metric during hyperparameter tuning.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HyperParameterTuningJobObjectiveType
      */
@@ -95,11 +100,11 @@ public class FinalHyperParameterTuningJobObjectiveMetric implements Serializable
 
     /**
      * <p>
-     * Whether to minimize or maximize the objective metric. Valid values are Minimize and Maximize.
+     * Select if you want to minimize or maximize the objective metric during hyperparameter tuning.
      * </p>
      * 
      * @param type
-     *        Whether to minimize or maximize the objective metric. Valid values are Minimize and Maximize.
+     *        Select if you want to minimize or maximize the objective metric during hyperparameter tuning.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HyperParameterTuningJobObjectiveType
      */
@@ -111,11 +116,20 @@ public class FinalHyperParameterTuningJobObjectiveMetric implements Serializable
 
     /**
      * <p>
-     * The name of the objective metric.
+     * The name of the objective metric. For SageMaker built-in algorithms, metrics are defined per algorithm. See the
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost-tuning.html">metrics for XGBoost</a> as an
+     * example. You can also use a custom algorithm for training and define your own metrics. For more information, see
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">
+     * Define metrics and environment variables</a>.
      * </p>
      * 
      * @param metricName
-     *        The name of the objective metric.
+     *        The name of the objective metric. For SageMaker built-in algorithms, metrics are defined per algorithm.
+     *        See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost-tuning.html">metrics for
+     *        XGBoost</a> as an example. You can also use a custom algorithm for training and define your own metrics.
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html"
+     *        >Define metrics and environment variables</a>.
      */
 
     public void setMetricName(String metricName) {
@@ -124,10 +138,19 @@ public class FinalHyperParameterTuningJobObjectiveMetric implements Serializable
 
     /**
      * <p>
-     * The name of the objective metric.
+     * The name of the objective metric. For SageMaker built-in algorithms, metrics are defined per algorithm. See the
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost-tuning.html">metrics for XGBoost</a> as an
+     * example. You can also use a custom algorithm for training and define your own metrics. For more information, see
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">
+     * Define metrics and environment variables</a>.
      * </p>
      * 
-     * @return The name of the objective metric.
+     * @return The name of the objective metric. For SageMaker built-in algorithms, metrics are defined per algorithm.
+     *         See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost-tuning.html">metrics for
+     *         XGBoost</a> as an example. You can also use a custom algorithm for training and define your own metrics.
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html"
+     *         >Define metrics and environment variables</a>.
      */
 
     public String getMetricName() {
@@ -136,11 +159,20 @@ public class FinalHyperParameterTuningJobObjectiveMetric implements Serializable
 
     /**
      * <p>
-     * The name of the objective metric.
+     * The name of the objective metric. For SageMaker built-in algorithms, metrics are defined per algorithm. See the
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost-tuning.html">metrics for XGBoost</a> as an
+     * example. You can also use a custom algorithm for training and define your own metrics. For more information, see
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">
+     * Define metrics and environment variables</a>.
      * </p>
      * 
      * @param metricName
-     *        The name of the objective metric.
+     *        The name of the objective metric. For SageMaker built-in algorithms, metrics are defined per algorithm.
+     *        See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost-tuning.html">metrics for
+     *        XGBoost</a> as an example. You can also use a custom algorithm for training and define your own metrics.
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html"
+     *        >Define metrics and environment variables</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

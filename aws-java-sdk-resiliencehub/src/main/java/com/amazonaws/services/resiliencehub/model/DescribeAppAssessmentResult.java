@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class DescribeAppAssessmentResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The assessment for an AWS Resilience Hub application, returned as an object. This object includes Amazon Resource
+     * The assessment for an Resilience Hub application, returned as an object. This object includes Amazon Resource
      * Names (ARNs), compliance information, compliance status, cost, messages, resiliency scores, and more.
      * </p>
      */
@@ -33,12 +33,12 @@ public class DescribeAppAssessmentResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The assessment for an AWS Resilience Hub application, returned as an object. This object includes Amazon Resource
+     * The assessment for an Resilience Hub application, returned as an object. This object includes Amazon Resource
      * Names (ARNs), compliance information, compliance status, cost, messages, resiliency scores, and more.
      * </p>
      * 
      * @param assessment
-     *        The assessment for an AWS Resilience Hub application, returned as an object. This object includes Amazon
+     *        The assessment for an Resilience Hub application, returned as an object. This object includes Amazon
      *        Resource Names (ARNs), compliance information, compliance status, cost, messages, resiliency scores, and
      *        more.
      */
@@ -49,11 +49,11 @@ public class DescribeAppAssessmentResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The assessment for an AWS Resilience Hub application, returned as an object. This object includes Amazon Resource
+     * The assessment for an Resilience Hub application, returned as an object. This object includes Amazon Resource
      * Names (ARNs), compliance information, compliance status, cost, messages, resiliency scores, and more.
      * </p>
      * 
-     * @return The assessment for an AWS Resilience Hub application, returned as an object. This object includes Amazon
+     * @return The assessment for an Resilience Hub application, returned as an object. This object includes Amazon
      *         Resource Names (ARNs), compliance information, compliance status, cost, messages, resiliency scores, and
      *         more.
      */
@@ -64,12 +64,12 @@ public class DescribeAppAssessmentResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The assessment for an AWS Resilience Hub application, returned as an object. This object includes Amazon Resource
+     * The assessment for an Resilience Hub application, returned as an object. This object includes Amazon Resource
      * Names (ARNs), compliance information, compliance status, cost, messages, resiliency scores, and more.
      * </p>
      * 
      * @param assessment
-     *        The assessment for an AWS Resilience Hub application, returned as an object. This object includes Amazon
+     *        The assessment for an Resilience Hub application, returned as an object. This object includes Amazon
      *        Resource Names (ARNs), compliance information, compliance status, cost, messages, resiliency scores, and
      *        more.
      * @return Returns a reference to this object so that method calls can be chained together.

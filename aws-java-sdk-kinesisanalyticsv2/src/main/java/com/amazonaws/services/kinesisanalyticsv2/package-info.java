@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,10 +12,15 @@
  */
 
 /**
+ * <note>
  * <p>
- * Amazon Kinesis Data Analytics is a fully managed service that you can use to process and analyze streaming data using
- * Java, SQL, or Scala. The service enables you to quickly author and run Java, SQL, or Scala code against streaming
- * sources to perform time series analytics, feed real-time dashboards, and create real-time metrics.
+ * Amazon Managed Service for Apache Flink was previously known as Amazon Kinesis Data Analytics for Apache Flink.
+ * </p>
+ * </note>
+ * <p>
+ * Amazon Managed Service for Apache Flink is a fully managed service that you can use to process and analyze streaming
+ * data using Java, Python, SQL, or Scala. The service enables you to quickly author and run Java, SQL, or Scala code
+ * against streaming sources to perform time series analytics, feed real-time dashboards, and create real-time metrics.
  * </p>
  */
 package com.amazonaws.services.kinesisanalyticsv2;

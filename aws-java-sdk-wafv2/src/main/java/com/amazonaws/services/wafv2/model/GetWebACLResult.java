@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,9 +44,10 @@ public class GetWebACLResult extends com.amazonaws.AmazonWebServiceResult<com.am
     /**
      * <p>
      * The URL to use in SDK integrations with Amazon Web Services managed rule groups. For example, you can use the
-     * integration SDKs with the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>.
-     * This is only populated if you are using a rule group in your web ACL that integrates with your applications in
-     * this way. For more information, see <a
+     * integration SDKs with the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>
+     * and the account creation fraud prevention managed rule group <code>AWSManagedRulesACFPRuleSet</code>. This is
+     * only populated if you are using a rule group in your web ACL that integrates with your applications in this way.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
      * application integration</a> in the <i>WAF Developer Guide</i>.
      * </p>
@@ -175,9 +176,10 @@ public class GetWebACLResult extends com.amazonaws.AmazonWebServiceResult<com.am
     /**
      * <p>
      * The URL to use in SDK integrations with Amazon Web Services managed rule groups. For example, you can use the
-     * integration SDKs with the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>.
-     * This is only populated if you are using a rule group in your web ACL that integrates with your applications in
-     * this way. For more information, see <a
+     * integration SDKs with the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>
+     * and the account creation fraud prevention managed rule group <code>AWSManagedRulesACFPRuleSet</code>. This is
+     * only populated if you are using a rule group in your web ACL that integrates with your applications in this way.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
      * application integration</a> in the <i>WAF Developer Guide</i>.
      * </p>
@@ -185,7 +187,8 @@ public class GetWebACLResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * @param applicationIntegrationURL
      *        The URL to use in SDK integrations with Amazon Web Services managed rule groups. For example, you can use
      *        the integration SDKs with the account takeover prevention managed rule group
-     *        <code>AWSManagedRulesATPRuleSet</code>. This is only populated if you are using a rule group in your web
+     *        <code>AWSManagedRulesATPRuleSet</code> and the account creation fraud prevention managed rule group
+     *        <code>AWSManagedRulesACFPRuleSet</code>. This is only populated if you are using a rule group in your web
      *        ACL that integrates with your applications in this way. For more information, see <a
      *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
      *        application integration</a> in the <i>WAF Developer Guide</i>.
@@ -198,16 +201,18 @@ public class GetWebACLResult extends com.amazonaws.AmazonWebServiceResult<com.am
     /**
      * <p>
      * The URL to use in SDK integrations with Amazon Web Services managed rule groups. For example, you can use the
-     * integration SDKs with the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>.
-     * This is only populated if you are using a rule group in your web ACL that integrates with your applications in
-     * this way. For more information, see <a
+     * integration SDKs with the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>
+     * and the account creation fraud prevention managed rule group <code>AWSManagedRulesACFPRuleSet</code>. This is
+     * only populated if you are using a rule group in your web ACL that integrates with your applications in this way.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
      * application integration</a> in the <i>WAF Developer Guide</i>.
      * </p>
      * 
      * @return The URL to use in SDK integrations with Amazon Web Services managed rule groups. For example, you can use
      *         the integration SDKs with the account takeover prevention managed rule group
-     *         <code>AWSManagedRulesATPRuleSet</code>. This is only populated if you are using a rule group in your web
+     *         <code>AWSManagedRulesATPRuleSet</code> and the account creation fraud prevention managed rule group
+     *         <code>AWSManagedRulesACFPRuleSet</code>. This is only populated if you are using a rule group in your web
      *         ACL that integrates with your applications in this way. For more information, see <a
      *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
      *         application integration</a> in the <i>WAF Developer Guide</i>.
@@ -220,9 +225,10 @@ public class GetWebACLResult extends com.amazonaws.AmazonWebServiceResult<com.am
     /**
      * <p>
      * The URL to use in SDK integrations with Amazon Web Services managed rule groups. For example, you can use the
-     * integration SDKs with the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>.
-     * This is only populated if you are using a rule group in your web ACL that integrates with your applications in
-     * this way. For more information, see <a
+     * integration SDKs with the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>
+     * and the account creation fraud prevention managed rule group <code>AWSManagedRulesACFPRuleSet</code>. This is
+     * only populated if you are using a rule group in your web ACL that integrates with your applications in this way.
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
      * application integration</a> in the <i>WAF Developer Guide</i>.
      * </p>
@@ -230,7 +236,8 @@ public class GetWebACLResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * @param applicationIntegrationURL
      *        The URL to use in SDK integrations with Amazon Web Services managed rule groups. For example, you can use
      *        the integration SDKs with the account takeover prevention managed rule group
-     *        <code>AWSManagedRulesATPRuleSet</code>. This is only populated if you are using a rule group in your web
+     *        <code>AWSManagedRulesATPRuleSet</code> and the account creation fraud prevention managed rule group
+     *        <code>AWSManagedRulesACFPRuleSet</code>. This is only populated if you are using a rule group in your web
      *        ACL that integrates with your applications in this way. For more information, see <a
      *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
      *        application integration</a> in the <i>WAF Developer Guide</i>.

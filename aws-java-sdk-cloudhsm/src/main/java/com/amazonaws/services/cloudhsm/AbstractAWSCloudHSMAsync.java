@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,12 +28,14 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(AddTagsToResourceRequest request) {
 
         return addTagsToResourceAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(AddTagsToResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<AddTagsToResourceRequest, AddTagsToResourceResult> asyncHandler) {
 
@@ -41,12 +43,14 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateHapgResult> createHapgAsync(CreateHapgRequest request) {
 
         return createHapgAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateHapgResult> createHapgAsync(CreateHapgRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateHapgRequest, CreateHapgResult> asyncHandler) {
 
@@ -54,12 +58,14 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateHsmResult> createHsmAsync(CreateHsmRequest request) {
 
         return createHsmAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateHsmResult> createHsmAsync(CreateHsmRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateHsmRequest, CreateHsmResult> asyncHandler) {
 
@@ -67,12 +73,14 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateLunaClientResult> createLunaClientAsync(CreateLunaClientRequest request) {
 
         return createLunaClientAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateLunaClientResult> createLunaClientAsync(CreateLunaClientRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateLunaClientRequest, CreateLunaClientResult> asyncHandler) {
 
@@ -80,12 +88,14 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteHapgResult> deleteHapgAsync(DeleteHapgRequest request) {
 
         return deleteHapgAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteHapgResult> deleteHapgAsync(DeleteHapgRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteHapgRequest, DeleteHapgResult> asyncHandler) {
 
@@ -93,12 +103,14 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteHsmResult> deleteHsmAsync(DeleteHsmRequest request) {
 
         return deleteHsmAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteHsmResult> deleteHsmAsync(DeleteHsmRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteHsmRequest, DeleteHsmResult> asyncHandler) {
 
@@ -106,12 +118,14 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteLunaClientResult> deleteLunaClientAsync(DeleteLunaClientRequest request) {
 
         return deleteLunaClientAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteLunaClientResult> deleteLunaClientAsync(DeleteLunaClientRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteLunaClientRequest, DeleteLunaClientResult> asyncHandler) {
 
@@ -119,12 +133,14 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DescribeHapgResult> describeHapgAsync(DescribeHapgRequest request) {
 
         return describeHapgAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DescribeHapgResult> describeHapgAsync(DescribeHapgRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeHapgRequest, DescribeHapgResult> asyncHandler) {
 
@@ -132,12 +148,14 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DescribeHsmResult> describeHsmAsync(DescribeHsmRequest request) {
 
         return describeHsmAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DescribeHsmResult> describeHsmAsync(DescribeHsmRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeHsmRequest, DescribeHsmResult> asyncHandler) {
 
@@ -150,6 +168,7 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
      * @see #describeHsmAsync(DescribeHsmRequest)
      */
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DescribeHsmResult> describeHsmAsync() {
 
         return describeHsmAsync(new DescribeHsmRequest());
@@ -161,6 +180,7 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
      * @see #describeHsmAsync(DescribeHsmRequest, com.amazonaws.handlers.AsyncHandler)
      */
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DescribeHsmResult> describeHsmAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeHsmRequest, DescribeHsmResult> asyncHandler) {
 
@@ -168,12 +188,14 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DescribeLunaClientResult> describeLunaClientAsync(DescribeLunaClientRequest request) {
 
         return describeLunaClientAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DescribeLunaClientResult> describeLunaClientAsync(DescribeLunaClientRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeLunaClientRequest, DescribeLunaClientResult> asyncHandler) {
 
@@ -186,6 +208,7 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
      * @see #describeLunaClientAsync(DescribeLunaClientRequest)
      */
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DescribeLunaClientResult> describeLunaClientAsync() {
 
         return describeLunaClientAsync(new DescribeLunaClientRequest());
@@ -197,6 +220,7 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
      * @see #describeLunaClientAsync(DescribeLunaClientRequest, com.amazonaws.handlers.AsyncHandler)
      */
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DescribeLunaClientResult> describeLunaClientAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeLunaClientRequest, DescribeLunaClientResult> asyncHandler) {
 
@@ -204,12 +228,14 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetConfigResult> getConfigAsync(GetConfigRequest request) {
 
         return getConfigAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetConfigResult> getConfigAsync(GetConfigRequest request,
             com.amazonaws.handlers.AsyncHandler<GetConfigRequest, GetConfigResult> asyncHandler) {
 
@@ -217,12 +243,14 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListAvailableZonesResult> listAvailableZonesAsync(ListAvailableZonesRequest request) {
 
         return listAvailableZonesAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListAvailableZonesResult> listAvailableZonesAsync(ListAvailableZonesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAvailableZonesRequest, ListAvailableZonesResult> asyncHandler) {
 
@@ -235,6 +263,7 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
      * @see #listAvailableZonesAsync(ListAvailableZonesRequest)
      */
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListAvailableZonesResult> listAvailableZonesAsync() {
 
         return listAvailableZonesAsync(new ListAvailableZonesRequest());
@@ -246,6 +275,7 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
      * @see #listAvailableZonesAsync(ListAvailableZonesRequest, com.amazonaws.handlers.AsyncHandler)
      */
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListAvailableZonesResult> listAvailableZonesAsync(
             com.amazonaws.handlers.AsyncHandler<ListAvailableZonesRequest, ListAvailableZonesResult> asyncHandler) {
 
@@ -253,12 +283,14 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListHapgsResult> listHapgsAsync(ListHapgsRequest request) {
 
         return listHapgsAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListHapgsResult> listHapgsAsync(ListHapgsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListHapgsRequest, ListHapgsResult> asyncHandler) {
 
@@ -271,6 +303,7 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
      * @see #listHapgsAsync(ListHapgsRequest)
      */
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListHapgsResult> listHapgsAsync() {
 
         return listHapgsAsync(new ListHapgsRequest());
@@ -282,18 +315,21 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
      * @see #listHapgsAsync(ListHapgsRequest, com.amazonaws.handlers.AsyncHandler)
      */
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListHapgsResult> listHapgsAsync(com.amazonaws.handlers.AsyncHandler<ListHapgsRequest, ListHapgsResult> asyncHandler) {
 
         return listHapgsAsync(new ListHapgsRequest(), asyncHandler);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListHsmsResult> listHsmsAsync(ListHsmsRequest request) {
 
         return listHsmsAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListHsmsResult> listHsmsAsync(ListHsmsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListHsmsRequest, ListHsmsResult> asyncHandler) {
 
@@ -306,6 +342,7 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
      * @see #listHsmsAsync(ListHsmsRequest)
      */
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListHsmsResult> listHsmsAsync() {
 
         return listHsmsAsync(new ListHsmsRequest());
@@ -317,18 +354,21 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
      * @see #listHsmsAsync(ListHsmsRequest, com.amazonaws.handlers.AsyncHandler)
      */
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListHsmsResult> listHsmsAsync(com.amazonaws.handlers.AsyncHandler<ListHsmsRequest, ListHsmsResult> asyncHandler) {
 
         return listHsmsAsync(new ListHsmsRequest(), asyncHandler);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListLunaClientsResult> listLunaClientsAsync(ListLunaClientsRequest request) {
 
         return listLunaClientsAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListLunaClientsResult> listLunaClientsAsync(ListLunaClientsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListLunaClientsRequest, ListLunaClientsResult> asyncHandler) {
 
@@ -341,6 +381,7 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
      * @see #listLunaClientsAsync(ListLunaClientsRequest)
      */
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListLunaClientsResult> listLunaClientsAsync() {
 
         return listLunaClientsAsync(new ListLunaClientsRequest());
@@ -352,6 +393,7 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
      * @see #listLunaClientsAsync(ListLunaClientsRequest, com.amazonaws.handlers.AsyncHandler)
      */
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListLunaClientsResult> listLunaClientsAsync(
             com.amazonaws.handlers.AsyncHandler<ListLunaClientsRequest, ListLunaClientsResult> asyncHandler) {
 
@@ -359,12 +401,14 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
@@ -372,12 +416,14 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ModifyHapgResult> modifyHapgAsync(ModifyHapgRequest request) {
 
         return modifyHapgAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ModifyHapgResult> modifyHapgAsync(ModifyHapgRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyHapgRequest, ModifyHapgResult> asyncHandler) {
 
@@ -385,12 +431,14 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ModifyHsmResult> modifyHsmAsync(ModifyHsmRequest request) {
 
         return modifyHsmAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ModifyHsmResult> modifyHsmAsync(ModifyHsmRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyHsmRequest, ModifyHsmResult> asyncHandler) {
 
@@ -398,12 +446,14 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ModifyLunaClientResult> modifyLunaClientAsync(ModifyLunaClientRequest request) {
 
         return modifyLunaClientAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ModifyLunaClientResult> modifyLunaClientAsync(ModifyLunaClientRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyLunaClientRequest, ModifyLunaClientResult> asyncHandler) {
 
@@ -411,12 +461,14 @@ public class AbstractAWSCloudHSMAsync extends AbstractAWSCloudHSM implements AWS
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<RemoveTagsFromResourceResult> removeTagsFromResourceAsync(RemoveTagsFromResourceRequest request) {
 
         return removeTagsFromResourceAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<RemoveTagsFromResourceResult> removeTagsFromResourceAsync(RemoveTagsFromResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<RemoveTagsFromResourceRequest, RemoveTagsFromResourceResult> asyncHandler) {
 

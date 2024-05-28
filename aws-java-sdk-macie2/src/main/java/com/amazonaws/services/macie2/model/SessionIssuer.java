@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,8 @@ public class SessionIssuer implements Serializable, Cloneable, StructuredPojo {
     private String accountId;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source account, IAM user, or role that was used to get the credentials.
+     * The Amazon Resource Name (ARN) of the source account, Identity and Access Management (IAM) user, or role that was
+     * used to get the credentials.
      * </p>
      */
     private String arn;
@@ -109,12 +110,13 @@ public class SessionIssuer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source account, IAM user, or role that was used to get the credentials.
+     * The Amazon Resource Name (ARN) of the source account, Identity and Access Management (IAM) user, or role that was
+     * used to get the credentials.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the source account, IAM user, or role that was used to get the
-     *        credentials.
+     *        The Amazon Resource Name (ARN) of the source account, Identity and Access Management (IAM) user, or role
+     *        that was used to get the credentials.
      */
 
     public void setArn(String arn) {
@@ -123,11 +125,12 @@ public class SessionIssuer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source account, IAM user, or role that was used to get the credentials.
+     * The Amazon Resource Name (ARN) of the source account, Identity and Access Management (IAM) user, or role that was
+     * used to get the credentials.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the source account, IAM user, or role that was used to get the
-     *         credentials.
+     * @return The Amazon Resource Name (ARN) of the source account, Identity and Access Management (IAM) user, or role
+     *         that was used to get the credentials.
      */
 
     public String getArn() {
@@ -136,12 +139,13 @@ public class SessionIssuer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source account, IAM user, or role that was used to get the credentials.
+     * The Amazon Resource Name (ARN) of the source account, Identity and Access Management (IAM) user, or role that was
+     * used to get the credentials.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the source account, IAM user, or role that was used to get the
-     *        credentials.
+     *        The Amazon Resource Name (ARN) of the source account, Identity and Access Management (IAM) user, or role
+     *        that was used to get the credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

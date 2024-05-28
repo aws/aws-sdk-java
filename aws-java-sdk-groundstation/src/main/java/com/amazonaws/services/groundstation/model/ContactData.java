@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class ContactData implements Serializable, Cloneable, StructuredPojo {
     private String contactStatus;
     /**
      * <p>
-     * End time of a contact.
+     * End time of a contact in UTC.
      * </p>
      */
     private java.util.Date endTime;
@@ -97,7 +97,7 @@ public class ContactData implements Serializable, Cloneable, StructuredPojo {
     private String satelliteArn;
     /**
      * <p>
-     * Start time of a contact.
+     * Start time of a contact in UTC.
      * </p>
      */
     private java.util.Date startTime;
@@ -107,6 +107,26 @@ public class ContactData implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * Projected time in UTC your satellite will set below the <a
+     * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive mask</a>. This time is based
+     * on the satellite's current active ephemeris for future contacts and the ephemeris that was active during contact
+     * execution for completed contacts. <i>This field is not present for contacts with a <code>SCHEDULING</code> or
+     * <code>SCHEDULED</code> status.</i>
+     * </p>
+     */
+    private java.util.Date visibilityEndTime;
+    /**
+     * <p>
+     * Projected time in UTC your satellite will rise above the <a
+     * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive mask</a>. This time is based
+     * on the satellite's current active ephemeris for future contacts and the ephemeris that was active during contact
+     * execution for completed contacts. <i>This field is not present for contacts with a <code>SCHEDULING</code> or
+     * <code>SCHEDULED</code> status.</i>
+     * </p>
+     */
+    private java.util.Date visibilityStartTime;
 
     /**
      * <p>
@@ -209,11 +229,11 @@ public class ContactData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * End time of a contact.
+     * End time of a contact in UTC.
      * </p>
      * 
      * @param endTime
-     *        End time of a contact.
+     *        End time of a contact in UTC.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -222,10 +242,10 @@ public class ContactData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * End time of a contact.
+     * End time of a contact in UTC.
      * </p>
      * 
-     * @return End time of a contact.
+     * @return End time of a contact in UTC.
      */
 
     public java.util.Date getEndTime() {
@@ -234,11 +254,11 @@ public class ContactData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * End time of a contact.
+     * End time of a contact in UTC.
      * </p>
      * 
      * @param endTime
-     *        End time of a contact.
+     *        End time of a contact in UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -578,11 +598,11 @@ public class ContactData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Start time of a contact.
+     * Start time of a contact in UTC.
      * </p>
      * 
      * @param startTime
-     *        Start time of a contact.
+     *        Start time of a contact in UTC.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -591,10 +611,10 @@ public class ContactData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Start time of a contact.
+     * Start time of a contact in UTC.
      * </p>
      * 
-     * @return Start time of a contact.
+     * @return Start time of a contact in UTC.
      */
 
     public java.util.Date getStartTime() {
@@ -603,11 +623,11 @@ public class ContactData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Start time of a contact.
+     * Start time of a contact in UTC.
      * </p>
      * 
      * @param startTime
-     *        Start time of a contact.
+     *        Start time of a contact in UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -685,6 +705,134 @@ public class ContactData implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Projected time in UTC your satellite will set below the <a
+     * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive mask</a>. This time is based
+     * on the satellite's current active ephemeris for future contacts and the ephemeris that was active during contact
+     * execution for completed contacts. <i>This field is not present for contacts with a <code>SCHEDULING</code> or
+     * <code>SCHEDULED</code> status.</i>
+     * </p>
+     * 
+     * @param visibilityEndTime
+     *        Projected time in UTC your satellite will set below the <a
+     *        href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive mask</a>. This time is
+     *        based on the satellite's current active ephemeris for future contacts and the ephemeris that was active
+     *        during contact execution for completed contacts. <i>This field is not present for contacts with a
+     *        <code>SCHEDULING</code> or <code>SCHEDULED</code> status.</i>
+     */
+
+    public void setVisibilityEndTime(java.util.Date visibilityEndTime) {
+        this.visibilityEndTime = visibilityEndTime;
+    }
+
+    /**
+     * <p>
+     * Projected time in UTC your satellite will set below the <a
+     * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive mask</a>. This time is based
+     * on the satellite's current active ephemeris for future contacts and the ephemeris that was active during contact
+     * execution for completed contacts. <i>This field is not present for contacts with a <code>SCHEDULING</code> or
+     * <code>SCHEDULED</code> status.</i>
+     * </p>
+     * 
+     * @return Projected time in UTC your satellite will set below the <a
+     *         href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive mask</a>. This time
+     *         is based on the satellite's current active ephemeris for future contacts and the ephemeris that was
+     *         active during contact execution for completed contacts. <i>This field is not present for contacts with a
+     *         <code>SCHEDULING</code> or <code>SCHEDULED</code> status.</i>
+     */
+
+    public java.util.Date getVisibilityEndTime() {
+        return this.visibilityEndTime;
+    }
+
+    /**
+     * <p>
+     * Projected time in UTC your satellite will set below the <a
+     * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive mask</a>. This time is based
+     * on the satellite's current active ephemeris for future contacts and the ephemeris that was active during contact
+     * execution for completed contacts. <i>This field is not present for contacts with a <code>SCHEDULING</code> or
+     * <code>SCHEDULED</code> status.</i>
+     * </p>
+     * 
+     * @param visibilityEndTime
+     *        Projected time in UTC your satellite will set below the <a
+     *        href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive mask</a>. This time is
+     *        based on the satellite's current active ephemeris for future contacts and the ephemeris that was active
+     *        during contact execution for completed contacts. <i>This field is not present for contacts with a
+     *        <code>SCHEDULING</code> or <code>SCHEDULED</code> status.</i>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContactData withVisibilityEndTime(java.util.Date visibilityEndTime) {
+        setVisibilityEndTime(visibilityEndTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Projected time in UTC your satellite will rise above the <a
+     * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive mask</a>. This time is based
+     * on the satellite's current active ephemeris for future contacts and the ephemeris that was active during contact
+     * execution for completed contacts. <i>This field is not present for contacts with a <code>SCHEDULING</code> or
+     * <code>SCHEDULED</code> status.</i>
+     * </p>
+     * 
+     * @param visibilityStartTime
+     *        Projected time in UTC your satellite will rise above the <a
+     *        href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive mask</a>. This time is
+     *        based on the satellite's current active ephemeris for future contacts and the ephemeris that was active
+     *        during contact execution for completed contacts. <i>This field is not present for contacts with a
+     *        <code>SCHEDULING</code> or <code>SCHEDULED</code> status.</i>
+     */
+
+    public void setVisibilityStartTime(java.util.Date visibilityStartTime) {
+        this.visibilityStartTime = visibilityStartTime;
+    }
+
+    /**
+     * <p>
+     * Projected time in UTC your satellite will rise above the <a
+     * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive mask</a>. This time is based
+     * on the satellite's current active ephemeris for future contacts and the ephemeris that was active during contact
+     * execution for completed contacts. <i>This field is not present for contacts with a <code>SCHEDULING</code> or
+     * <code>SCHEDULED</code> status.</i>
+     * </p>
+     * 
+     * @return Projected time in UTC your satellite will rise above the <a
+     *         href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive mask</a>. This time
+     *         is based on the satellite's current active ephemeris for future contacts and the ephemeris that was
+     *         active during contact execution for completed contacts. <i>This field is not present for contacts with a
+     *         <code>SCHEDULING</code> or <code>SCHEDULED</code> status.</i>
+     */
+
+    public java.util.Date getVisibilityStartTime() {
+        return this.visibilityStartTime;
+    }
+
+    /**
+     * <p>
+     * Projected time in UTC your satellite will rise above the <a
+     * href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive mask</a>. This time is based
+     * on the satellite's current active ephemeris for future contacts and the ephemeris that was active during contact
+     * execution for completed contacts. <i>This field is not present for contacts with a <code>SCHEDULING</code> or
+     * <code>SCHEDULED</code> status.</i>
+     * </p>
+     * 
+     * @param visibilityStartTime
+     *        Projected time in UTC your satellite will rise above the <a
+     *        href="https://docs.aws.amazon.com/ground-station/latest/ug/site-masks.html">receive mask</a>. This time is
+     *        based on the satellite's current active ephemeris for future contacts and the ephemeris that was active
+     *        during contact execution for completed contacts. <i>This field is not present for contacts with a
+     *        <code>SCHEDULING</code> or <code>SCHEDULED</code> status.</i>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContactData withVisibilityStartTime(java.util.Date visibilityStartTime) {
+        setVisibilityStartTime(visibilityStartTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -721,7 +869,11 @@ public class ContactData implements Serializable, Cloneable, StructuredPojo {
         if (getStartTime() != null)
             sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getVisibilityEndTime() != null)
+            sb.append("VisibilityEndTime: ").append(getVisibilityEndTime()).append(",");
+        if (getVisibilityStartTime() != null)
+            sb.append("VisibilityStartTime: ").append(getVisibilityStartTime());
         sb.append("}");
         return sb.toString();
     }
@@ -788,6 +940,14 @@ public class ContactData implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getVisibilityEndTime() == null ^ this.getVisibilityEndTime() == null)
+            return false;
+        if (other.getVisibilityEndTime() != null && other.getVisibilityEndTime().equals(this.getVisibilityEndTime()) == false)
+            return false;
+        if (other.getVisibilityStartTime() == null ^ this.getVisibilityStartTime() == null)
+            return false;
+        if (other.getVisibilityStartTime() != null && other.getVisibilityStartTime().equals(this.getVisibilityStartTime()) == false)
+            return false;
         return true;
     }
 
@@ -809,6 +969,8 @@ public class ContactData implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSatelliteArn() == null) ? 0 : getSatelliteArn().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getVisibilityEndTime() == null) ? 0 : getVisibilityEndTime().hashCode());
+        hashCode = prime * hashCode + ((getVisibilityStartTime() == null) ? 0 : getVisibilityStartTime().hashCode());
         return hashCode;
     }
 

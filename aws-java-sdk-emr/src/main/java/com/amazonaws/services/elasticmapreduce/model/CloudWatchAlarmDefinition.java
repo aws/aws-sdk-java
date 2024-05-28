@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,8 +57,8 @@ public class CloudWatchAlarmDefinition implements Serializable, Cloneable, Struc
     private String namespace;
     /**
      * <p>
-     * The period, in seconds, over which the statistic is applied. EMR CloudWatch metrics are emitted every five
-     * minutes (300 seconds), so if an EMR CloudWatch metric is specified, specify <code>300</code>.
+     * The period, in seconds, over which the statistic is applied. CloudWatch metrics for Amazon EMR are emitted every
+     * five minutes (300 seconds), so if you specify a CloudWatch metric, specify <code>300</code>.
      * </p>
      */
     private Integer period;
@@ -299,13 +299,13 @@ public class CloudWatchAlarmDefinition implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The period, in seconds, over which the statistic is applied. EMR CloudWatch metrics are emitted every five
-     * minutes (300 seconds), so if an EMR CloudWatch metric is specified, specify <code>300</code>.
+     * The period, in seconds, over which the statistic is applied. CloudWatch metrics for Amazon EMR are emitted every
+     * five minutes (300 seconds), so if you specify a CloudWatch metric, specify <code>300</code>.
      * </p>
      * 
      * @param period
-     *        The period, in seconds, over which the statistic is applied. EMR CloudWatch metrics are emitted every five
-     *        minutes (300 seconds), so if an EMR CloudWatch metric is specified, specify <code>300</code>.
+     *        The period, in seconds, over which the statistic is applied. CloudWatch metrics for Amazon EMR are emitted
+     *        every five minutes (300 seconds), so if you specify a CloudWatch metric, specify <code>300</code>.
      */
 
     public void setPeriod(Integer period) {
@@ -314,12 +314,13 @@ public class CloudWatchAlarmDefinition implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The period, in seconds, over which the statistic is applied. EMR CloudWatch metrics are emitted every five
-     * minutes (300 seconds), so if an EMR CloudWatch metric is specified, specify <code>300</code>.
+     * The period, in seconds, over which the statistic is applied. CloudWatch metrics for Amazon EMR are emitted every
+     * five minutes (300 seconds), so if you specify a CloudWatch metric, specify <code>300</code>.
      * </p>
      * 
-     * @return The period, in seconds, over which the statistic is applied. EMR CloudWatch metrics are emitted every
-     *         five minutes (300 seconds), so if an EMR CloudWatch metric is specified, specify <code>300</code>.
+     * @return The period, in seconds, over which the statistic is applied. CloudWatch metrics for Amazon EMR are
+     *         emitted every five minutes (300 seconds), so if you specify a CloudWatch metric, specify <code>300</code>
+     *         .
      */
 
     public Integer getPeriod() {
@@ -328,13 +329,13 @@ public class CloudWatchAlarmDefinition implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The period, in seconds, over which the statistic is applied. EMR CloudWatch metrics are emitted every five
-     * minutes (300 seconds), so if an EMR CloudWatch metric is specified, specify <code>300</code>.
+     * The period, in seconds, over which the statistic is applied. CloudWatch metrics for Amazon EMR are emitted every
+     * five minutes (300 seconds), so if you specify a CloudWatch metric, specify <code>300</code>.
      * </p>
      * 
      * @param period
-     *        The period, in seconds, over which the statistic is applied. EMR CloudWatch metrics are emitted every five
-     *        minutes (300 seconds), so if an EMR CloudWatch metric is specified, specify <code>300</code>.
+     *        The period, in seconds, over which the statistic is applied. CloudWatch metrics for Amazon EMR are emitted
+     *        every five minutes (300 seconds), so if you specify a CloudWatch metric, specify <code>300</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,10 @@ public class ListShareInvitationsRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<String> PROFILENAMEPREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("ProfileNamePrefix").build();
+    private static final MarshallingInfo<String> TEMPLATENAMEPREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("TemplateNamePrefix").build();
 
     private static final ListShareInvitationsRequestMarshaller instance = new ListShareInvitationsRequestMarshaller();
 
@@ -59,6 +63,8 @@ public class ListShareInvitationsRequestMarshaller {
             protocolMarshaller.marshall(listShareInvitationsRequest.getShareResourceType(), SHARERESOURCETYPE_BINDING);
             protocolMarshaller.marshall(listShareInvitationsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listShareInvitationsRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listShareInvitationsRequest.getProfileNamePrefix(), PROFILENAMEPREFIX_BINDING);
+            protocolMarshaller.marshall(listShareInvitationsRequest.getTemplateNamePrefix(), TEMPLATENAMEPREFIX_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

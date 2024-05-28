@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2022 Amazon Technologies, Inc.
+ * Copyright 2011-2024 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,9 +30,21 @@ import java.util.concurrent.Callable;
  *
  * This credentials provider uses a background thread to refresh credentials. This background thread can be shut down via the
  * {@link #close()} method when the credentials provider is no longer used.
+ *
+ * <p>
+ * <b>Migrating to the AWS SDK for Java v2</b>
+ * <p>
+ * The v2 equivalent of this class is
+ * <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/sts/auth/StsGetSessionTokenCredentialsProvider.html">StsGetSessionTokenCredentialsProvider</a>
+ *
+ * <p>
+ * See <a href="https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/migration-client-credentials.html">Migration Guide</a>
+ * for more information.
  */
 @ThreadSafe
 public class STSSessionCredentialsProvider implements AWSSessionCredentialsProvider, Closeable {
+
+    private static final String PROVIDER_NAME = "STSSessionCredentialsProvider";
 
     /**
      * Default duration for started sessions
@@ -178,7 +190,7 @@ public class STSSessionCredentialsProvider implements AWSSessionCredentialsProvi
     private SessionCredentialsHolder newSession() {
         GetSessionTokenResult sessionTokenResult = securityTokenService.getSessionToken(
                 new GetSessionTokenRequest().withDurationSeconds(DEFAULT_DURATION_SECONDS));
-        return new SessionCredentialsHolder(sessionTokenResult.getCredentials());
+        return new SessionCredentialsHolder(sessionTokenResult.getCredentials(), PROVIDER_NAME);
     }
 
     /**

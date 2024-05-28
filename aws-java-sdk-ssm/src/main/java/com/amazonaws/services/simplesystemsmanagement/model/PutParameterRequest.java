@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,10 +27,17 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The fully qualified name of the parameter that you want to add to the system. The fully qualified name includes
-     * the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading
-     * forward slash character (/) when you create or reference a parameter. For example:
-     * <code>/Dev/DBServer/MySQL/db-string13</code>
+     * The fully qualified name of the parameter that you want to add to the system.
+     * </p>
+     * <note>
+     * <p>
+     * You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.
+     * </p>
+     * </note>
+     * <p>
+     * The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a
+     * hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For
+     * example: <code>/Dev/DBServer/MySQL/db-string13</code>
      * </p>
      * <p>
      * Naming Constraints:
@@ -134,21 +141,14 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String type;
     /**
      * <p>
-     * The Key Management Service (KMS) ID that you want to use to encrypt a parameter. Either the default KMS key
-     * automatically assigned to your Amazon Web Services account or a custom key. Required for parameters that use the
-     * <code>SecureString</code> data type.
+     * The Key Management Service (KMS) ID that you want to use to encrypt a parameter. Use a custom key for better
+     * security. Required for parameters that use the <code>SecureString</code> data type.
      * </p>
      * <p>
-     * If you don't specify a key ID, the system uses the default key associated with your Amazon Web Services account.
+     * If you don't specify a key ID, the system uses the default key associated with your Amazon Web Services account
+     * which is not as secure as using a custom key.
      * </p>
      * <ul>
-     * <li>
-     * <p>
-     * To use your default KMS key, choose the <code>SecureString</code> data type, and do <i>not</i> specify the
-     * <code>Key ID</code> when you create the parameter. The system automatically populates <code>Key ID</code> with
-     * your default KMS key.
-     * </p>
-     * </li>
      * <li>
      * <p>
      * To use a custom KMS key, choose the <code>SecureString</code> data type with the <code>Key ID</code> parameter.
@@ -216,7 +216,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * create a maximum of 100,000 advanced parameters for each Region in an Amazon Web Services account. Advanced
      * parameters incur a charge. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html"
-     * >Standard and advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * >Managing parameter tiers</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <p>
      * You can change a standard parameter to an advanced parameter any time. But you can't revert an advanced parameter
@@ -286,9 +286,9 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * For more information about configuring the default tier option, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a default
-     * parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * For more information about configuring the default tier option, see <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html#ps-default-tier"
+     * >Specifying a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      */
     private String tier;
@@ -350,20 +350,40 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web Services
      * Systems Manager validates the parameter value is in the required format, such as
      * <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your Amazon Web Services account.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
-     * parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web Services Systems Manager User
-     * Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * If the action is successful, the service sends back an HTTP 200 response which indicates a successful
+     * <code>PutParameter</code> call for all cases except for data type <code>aws:ec2:image</code>. If you call
+     * <code>PutParameter</code> with <code>aws:ec2:image</code> data type, a successful HTTP 200 response does not
+     * guarantee that your parameter was successfully created or updated. The <code>aws:ec2:image</code> value is
+     * validated asynchronously, and the <code>PutParameter</code> call returns before the validation is complete. If
+     * you submit an invalid AMI value, the PutParameter operation will return success, but the asynchronous validation
+     * will fail and the parameter will not be created or updated. To monitor whether your <code>aws:ec2:image</code>
+     * parameters are created successfully, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-cwe.html">Setting up
+     * notifications or trigger actions based on Parameter Store events</a>. For more information about AMI format
+     * validation , see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * parameter support for Amazon Machine Image IDs</a>.
+     * </p>
+     * </note>
      */
     private String dataType;
 
     /**
      * <p>
-     * The fully qualified name of the parameter that you want to add to the system. The fully qualified name includes
-     * the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading
-     * forward slash character (/) when you create or reference a parameter. For example:
-     * <code>/Dev/DBServer/MySQL/db-string13</code>
+     * The fully qualified name of the parameter that you want to add to the system.
+     * </p>
+     * <note>
+     * <p>
+     * You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.
+     * </p>
+     * </note>
+     * <p>
+     * The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a
+     * hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For
+     * example: <code>/Dev/DBServer/MySQL/db-string13</code>
      * </p>
      * <p>
      * Naming Constraints:
@@ -419,10 +439,16 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </note>
      * 
      * @param name
-     *        The fully qualified name of the parameter that you want to add to the system. The fully qualified name
-     *        includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must
-     *        include a leading forward slash character (/) when you create or reference a parameter. For example:
-     *        <code>/Dev/DBServer/MySQL/db-string13</code> </p>
+     *        The fully qualified name of the parameter that you want to add to the system.</p> <note>
+     *        <p>
+     *        You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in
+     *        a hierarchy, you must include a leading forward slash character (/) when you create or reference a
+     *        parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code>
+     *        </p>
      *        <p>
      *        Naming Constraints:
      *        </p>
@@ -482,10 +508,17 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The fully qualified name of the parameter that you want to add to the system. The fully qualified name includes
-     * the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading
-     * forward slash character (/) when you create or reference a parameter. For example:
-     * <code>/Dev/DBServer/MySQL/db-string13</code>
+     * The fully qualified name of the parameter that you want to add to the system.
+     * </p>
+     * <note>
+     * <p>
+     * You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.
+     * </p>
+     * </note>
+     * <p>
+     * The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a
+     * hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For
+     * example: <code>/Dev/DBServer/MySQL/db-string13</code>
      * </p>
      * <p>
      * Naming Constraints:
@@ -540,10 +573,16 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </note>
      * 
-     * @return The fully qualified name of the parameter that you want to add to the system. The fully qualified name
-     *         includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must
-     *         include a leading forward slash character (/) when you create or reference a parameter. For example:
-     *         <code>/Dev/DBServer/MySQL/db-string13</code> </p>
+     * @return The fully qualified name of the parameter that you want to add to the system.</p> <note>
+     *         <p>
+     *         You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters
+     *         in a hierarchy, you must include a leading forward slash character (/) when you create or reference a
+     *         parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code>
+     *         </p>
      *         <p>
      *         Naming Constraints:
      *         </p>
@@ -603,10 +642,17 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The fully qualified name of the parameter that you want to add to the system. The fully qualified name includes
-     * the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading
-     * forward slash character (/) when you create or reference a parameter. For example:
-     * <code>/Dev/DBServer/MySQL/db-string13</code>
+     * The fully qualified name of the parameter that you want to add to the system.
+     * </p>
+     * <note>
+     * <p>
+     * You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.
+     * </p>
+     * </note>
+     * <p>
+     * The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a
+     * hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For
+     * example: <code>/Dev/DBServer/MySQL/db-string13</code>
      * </p>
      * <p>
      * Naming Constraints:
@@ -662,10 +708,16 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </note>
      * 
      * @param name
-     *        The fully qualified name of the parameter that you want to add to the system. The fully qualified name
-     *        includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must
-     *        include a leading forward slash character (/) when you create or reference a parameter. For example:
-     *        <code>/Dev/DBServer/MySQL/db-string13</code> </p>
+     *        The fully qualified name of the parameter that you want to add to the system.</p> <note>
+     *        <p>
+     *        You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in
+     *        a hierarchy, you must include a leading forward slash character (/) when you create or reference a
+     *        parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code>
+     *        </p>
      *        <p>
      *        Naming Constraints:
      *        </p>
@@ -1093,21 +1145,14 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Key Management Service (KMS) ID that you want to use to encrypt a parameter. Either the default KMS key
-     * automatically assigned to your Amazon Web Services account or a custom key. Required for parameters that use the
-     * <code>SecureString</code> data type.
+     * The Key Management Service (KMS) ID that you want to use to encrypt a parameter. Use a custom key for better
+     * security. Required for parameters that use the <code>SecureString</code> data type.
      * </p>
      * <p>
-     * If you don't specify a key ID, the system uses the default key associated with your Amazon Web Services account.
+     * If you don't specify a key ID, the system uses the default key associated with your Amazon Web Services account
+     * which is not as secure as using a custom key.
      * </p>
      * <ul>
-     * <li>
-     * <p>
-     * To use your default KMS key, choose the <code>SecureString</code> data type, and do <i>not</i> specify the
-     * <code>Key ID</code> when you create the parameter. The system automatically populates <code>Key ID</code> with
-     * your default KMS key.
-     * </p>
-     * </li>
      * <li>
      * <p>
      * To use a custom KMS key, choose the <code>SecureString</code> data type with the <code>Key ID</code> parameter.
@@ -1116,21 +1161,13 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * 
      * @param keyId
-     *        The Key Management Service (KMS) ID that you want to use to encrypt a parameter. Either the default KMS
-     *        key automatically assigned to your Amazon Web Services account or a custom key. Required for parameters
-     *        that use the <code>SecureString</code> data type.</p>
+     *        The Key Management Service (KMS) ID that you want to use to encrypt a parameter. Use a custom key for
+     *        better security. Required for parameters that use the <code>SecureString</code> data type.</p>
      *        <p>
      *        If you don't specify a key ID, the system uses the default key associated with your Amazon Web Services
-     *        account.
+     *        account which is not as secure as using a custom key.
      *        </p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        To use your default KMS key, choose the <code>SecureString</code> data type, and do <i>not</i> specify the
-     *        <code>Key ID</code> when you create the parameter. The system automatically populates <code>Key ID</code>
-     *        with your default KMS key.
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        To use a custom KMS key, choose the <code>SecureString</code> data type with the <code>Key ID</code>
@@ -1145,21 +1182,14 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Key Management Service (KMS) ID that you want to use to encrypt a parameter. Either the default KMS key
-     * automatically assigned to your Amazon Web Services account or a custom key. Required for parameters that use the
-     * <code>SecureString</code> data type.
+     * The Key Management Service (KMS) ID that you want to use to encrypt a parameter. Use a custom key for better
+     * security. Required for parameters that use the <code>SecureString</code> data type.
      * </p>
      * <p>
-     * If you don't specify a key ID, the system uses the default key associated with your Amazon Web Services account.
+     * If you don't specify a key ID, the system uses the default key associated with your Amazon Web Services account
+     * which is not as secure as using a custom key.
      * </p>
      * <ul>
-     * <li>
-     * <p>
-     * To use your default KMS key, choose the <code>SecureString</code> data type, and do <i>not</i> specify the
-     * <code>Key ID</code> when you create the parameter. The system automatically populates <code>Key ID</code> with
-     * your default KMS key.
-     * </p>
-     * </li>
      * <li>
      * <p>
      * To use a custom KMS key, choose the <code>SecureString</code> data type with the <code>Key ID</code> parameter.
@@ -1167,21 +1197,13 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * 
-     * @return The Key Management Service (KMS) ID that you want to use to encrypt a parameter. Either the default KMS
-     *         key automatically assigned to your Amazon Web Services account or a custom key. Required for parameters
-     *         that use the <code>SecureString</code> data type.</p>
+     * @return The Key Management Service (KMS) ID that you want to use to encrypt a parameter. Use a custom key for
+     *         better security. Required for parameters that use the <code>SecureString</code> data type.</p>
      *         <p>
      *         If you don't specify a key ID, the system uses the default key associated with your Amazon Web Services
-     *         account.
+     *         account which is not as secure as using a custom key.
      *         </p>
      *         <ul>
-     *         <li>
-     *         <p>
-     *         To use your default KMS key, choose the <code>SecureString</code> data type, and do <i>not</i> specify
-     *         the <code>Key ID</code> when you create the parameter. The system automatically populates
-     *         <code>Key ID</code> with your default KMS key.
-     *         </p>
-     *         </li>
      *         <li>
      *         <p>
      *         To use a custom KMS key, choose the <code>SecureString</code> data type with the <code>Key ID</code>
@@ -1196,21 +1218,14 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Key Management Service (KMS) ID that you want to use to encrypt a parameter. Either the default KMS key
-     * automatically assigned to your Amazon Web Services account or a custom key. Required for parameters that use the
-     * <code>SecureString</code> data type.
+     * The Key Management Service (KMS) ID that you want to use to encrypt a parameter. Use a custom key for better
+     * security. Required for parameters that use the <code>SecureString</code> data type.
      * </p>
      * <p>
-     * If you don't specify a key ID, the system uses the default key associated with your Amazon Web Services account.
+     * If you don't specify a key ID, the system uses the default key associated with your Amazon Web Services account
+     * which is not as secure as using a custom key.
      * </p>
      * <ul>
-     * <li>
-     * <p>
-     * To use your default KMS key, choose the <code>SecureString</code> data type, and do <i>not</i> specify the
-     * <code>Key ID</code> when you create the parameter. The system automatically populates <code>Key ID</code> with
-     * your default KMS key.
-     * </p>
-     * </li>
      * <li>
      * <p>
      * To use a custom KMS key, choose the <code>SecureString</code> data type with the <code>Key ID</code> parameter.
@@ -1219,21 +1234,13 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * 
      * @param keyId
-     *        The Key Management Service (KMS) ID that you want to use to encrypt a parameter. Either the default KMS
-     *        key automatically assigned to your Amazon Web Services account or a custom key. Required for parameters
-     *        that use the <code>SecureString</code> data type.</p>
+     *        The Key Management Service (KMS) ID that you want to use to encrypt a parameter. Use a custom key for
+     *        better security. Required for parameters that use the <code>SecureString</code> data type.</p>
      *        <p>
      *        If you don't specify a key ID, the system uses the default key associated with your Amazon Web Services
-     *        account.
+     *        account which is not as secure as using a custom key.
      *        </p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        To use your default KMS key, choose the <code>SecureString</code> data type, and do <i>not</i> specify the
-     *        <code>Key ID</code> when you create the parameter. The system automatically populates <code>Key ID</code>
-     *        with your default KMS key.
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        To use a custom KMS key, choose the <code>SecureString</code> data type with the <code>Key ID</code>
@@ -1634,7 +1641,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * create a maximum of 100,000 advanced parameters for each Region in an Amazon Web Services account. Advanced
      * parameters incur a charge. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html"
-     * >Standard and advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * >Managing parameter tiers</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <p>
      * You can change a standard parameter to an advanced parameter any time. But you can't revert an advanced parameter
@@ -1704,9 +1711,9 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * For more information about configuring the default tier option, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a default
-     * parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * For more information about configuring the default tier option, see <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html#ps-default-tier"
+     * >Specifying a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param tier
@@ -1722,7 +1729,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        can create a maximum of 100,000 advanced parameters for each Region in an Amazon Web Services account.
      *        Advanced parameters incur a charge. For more information, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html"
-     *        >Standard and advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     *        >Managing parameter tiers</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      *        </p>
      *        <p>
      *        You can change a standard parameter to an advanced parameter any time. But you can't revert an advanced
@@ -1792,9 +1799,9 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information about configuring the default tier option, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a
-     *        default parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     *        For more information about configuring the default tier option, see <a href=
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html#ps-default-tier"
+     *        >Specifying a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @see ParameterTier
      */
 
@@ -1817,7 +1824,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * create a maximum of 100,000 advanced parameters for each Region in an Amazon Web Services account. Advanced
      * parameters incur a charge. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html"
-     * >Standard and advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * >Managing parameter tiers</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <p>
      * You can change a standard parameter to an advanced parameter any time. But you can't revert an advanced parameter
@@ -1887,9 +1894,9 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * For more information about configuring the default tier option, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a default
-     * parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * For more information about configuring the default tier option, see <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html#ps-default-tier"
+     * >Specifying a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @return The parameter tier to assign to a parameter.</p>
@@ -1904,7 +1911,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         You can create a maximum of 100,000 advanced parameters for each Region in an Amazon Web Services
      *         account. Advanced parameters incur a charge. For more information, see <a href=
      *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html"
-     *         >Standard and advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     *         >Managing parameter tiers</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      *         </p>
      *         <p>
      *         You can change a standard parameter to an advanced parameter any time. But you can't revert an advanced
@@ -1974,9 +1981,9 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         </ul>
      *         <p>
-     *         For more information about configuring the default tier option, see <a
-     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a
-     *         default parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     *         For more information about configuring the default tier option, see <a href=
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html#ps-default-tier"
+     *         >Specifying a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @see ParameterTier
      */
 
@@ -1999,7 +2006,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * create a maximum of 100,000 advanced parameters for each Region in an Amazon Web Services account. Advanced
      * parameters incur a charge. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html"
-     * >Standard and advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * >Managing parameter tiers</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <p>
      * You can change a standard parameter to an advanced parameter any time. But you can't revert an advanced parameter
@@ -2069,9 +2076,9 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * For more information about configuring the default tier option, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a default
-     * parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * For more information about configuring the default tier option, see <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html#ps-default-tier"
+     * >Specifying a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param tier
@@ -2087,7 +2094,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        can create a maximum of 100,000 advanced parameters for each Region in an Amazon Web Services account.
      *        Advanced parameters incur a charge. For more information, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html"
-     *        >Standard and advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     *        >Managing parameter tiers</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      *        </p>
      *        <p>
      *        You can change a standard parameter to an advanced parameter any time. But you can't revert an advanced
@@ -2157,9 +2164,9 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information about configuring the default tier option, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a
-     *        default parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     *        For more information about configuring the default tier option, see <a href=
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html#ps-default-tier"
+     *        >Specifying a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ParameterTier
      */
@@ -2184,7 +2191,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * create a maximum of 100,000 advanced parameters for each Region in an Amazon Web Services account. Advanced
      * parameters incur a charge. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html"
-     * >Standard and advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * >Managing parameter tiers</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <p>
      * You can change a standard parameter to an advanced parameter any time. But you can't revert an advanced parameter
@@ -2254,9 +2261,9 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * For more information about configuring the default tier option, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a default
-     * parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * For more information about configuring the default tier option, see <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html#ps-default-tier"
+     * >Specifying a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param tier
@@ -2272,7 +2279,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        can create a maximum of 100,000 advanced parameters for each Region in an Amazon Web Services account.
      *        Advanced parameters incur a charge. For more information, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html"
-     *        >Standard and advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     *        >Managing parameter tiers</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      *        </p>
      *        <p>
      *        You can change a standard parameter to an advanced parameter any time. But you can't revert an advanced
@@ -2342,9 +2349,9 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information about configuring the default tier option, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a
-     *        default parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     *        For more information about configuring the default tier option, see <a href=
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html#ps-default-tier"
+     *        >Specifying a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @see ParameterTier
      */
 
@@ -2367,7 +2374,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * create a maximum of 100,000 advanced parameters for each Region in an Amazon Web Services account. Advanced
      * parameters incur a charge. For more information, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html"
-     * >Standard and advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * >Managing parameter tiers</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <p>
      * You can change a standard parameter to an advanced parameter any time. But you can't revert an advanced parameter
@@ -2437,9 +2444,9 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * For more information about configuring the default tier option, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a default
-     * parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * For more information about configuring the default tier option, see <a href=
+     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html#ps-default-tier"
+     * >Specifying a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param tier
@@ -2455,7 +2462,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        can create a maximum of 100,000 advanced parameters for each Region in an Amazon Web Services account.
      *        Advanced parameters incur a charge. For more information, see <a href=
      *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html"
-     *        >Standard and advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     *        >Managing parameter tiers</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      *        </p>
      *        <p>
      *        You can change a standard parameter to an advanced parameter any time. But you can't revert an advanced
@@ -2525,9 +2532,9 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information about configuring the default tier option, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a
-     *        default parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     *        For more information about configuring the default tier option, see <a href=
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html#ps-default-tier"
+     *        >Specifying a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ParameterTier
      */
@@ -2741,11 +2748,24 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web Services
      * Systems Manager validates the parameter value is in the required format, such as
      * <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your Amazon Web Services account.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
-     * parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web Services Systems Manager User
-     * Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * If the action is successful, the service sends back an HTTP 200 response which indicates a successful
+     * <code>PutParameter</code> call for all cases except for data type <code>aws:ec2:image</code>. If you call
+     * <code>PutParameter</code> with <code>aws:ec2:image</code> data type, a successful HTTP 200 response does not
+     * guarantee that your parameter was successfully created or updated. The <code>aws:ec2:image</code> value is
+     * validated asynchronously, and the <code>PutParameter</code> call returns before the validation is complete. If
+     * you submit an invalid AMI value, the PutParameter operation will return success, but the asynchronous validation
+     * will fail and the parameter will not be created or updated. To monitor whether your <code>aws:ec2:image</code>
+     * parameters are created successfully, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-cwe.html">Setting up
+     * notifications or trigger actions based on Parameter Store events</a>. For more information about AMI format
+     * validation , see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * parameter support for Amazon Machine Image IDs</a>.
+     * </p>
+     * </note>
      * 
      * @param dataType
      *        The data type for a <code>String</code> parameter. Supported data types include plain text and Amazon
@@ -2774,10 +2794,24 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      *        Services Systems Manager validates the parameter value is in the required format, such as
      *        <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your Amazon Web Services
-     *        account. For more information, see <a
+     *        account.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If the action is successful, the service sends back an HTTP 200 response which indicates a successful
+     *        <code>PutParameter</code> call for all cases except for data type <code>aws:ec2:image</code>. If you call
+     *        <code>PutParameter</code> with <code>aws:ec2:image</code> data type, a successful HTTP 200 response does
+     *        not guarantee that your parameter was successfully created or updated. The <code>aws:ec2:image</code>
+     *        value is validated asynchronously, and the <code>PutParameter</code> call returns before the validation is
+     *        complete. If you submit an invalid AMI value, the PutParameter operation will return success, but the
+     *        asynchronous validation will fail and the parameter will not be created or updated. To monitor whether
+     *        your <code>aws:ec2:image</code> parameters are created successfully, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-cwe.html">Setting up
+     *        notifications or trigger actions based on Parameter Store events</a>. For more information about AMI
+     *        format validation , see <a
      *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html"
-     *        >Native parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web Services Systems
-     *        Manager User Guide</i>.
+     *        >Native parameter support for Amazon Machine Image IDs</a>.
+     *        </p>
      */
 
     public void setDataType(String dataType) {
@@ -2813,11 +2847,24 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web Services
      * Systems Manager validates the parameter value is in the required format, such as
      * <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your Amazon Web Services account.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
-     * parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web Services Systems Manager User
-     * Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * If the action is successful, the service sends back an HTTP 200 response which indicates a successful
+     * <code>PutParameter</code> call for all cases except for data type <code>aws:ec2:image</code>. If you call
+     * <code>PutParameter</code> with <code>aws:ec2:image</code> data type, a successful HTTP 200 response does not
+     * guarantee that your parameter was successfully created or updated. The <code>aws:ec2:image</code> value is
+     * validated asynchronously, and the <code>PutParameter</code> call returns before the validation is complete. If
+     * you submit an invalid AMI value, the PutParameter operation will return success, but the asynchronous validation
+     * will fail and the parameter will not be created or updated. To monitor whether your <code>aws:ec2:image</code>
+     * parameters are created successfully, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-cwe.html">Setting up
+     * notifications or trigger actions based on Parameter Store events</a>. For more information about AMI format
+     * validation , see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * parameter support for Amazon Machine Image IDs</a>.
+     * </p>
+     * </note>
      * 
      * @return The data type for a <code>String</code> parameter. Supported data types include plain text and Amazon
      *         Machine Image (AMI) IDs.</p>
@@ -2845,10 +2892,24 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      *         Services Systems Manager validates the parameter value is in the required format, such as
      *         <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your Amazon Web Services
-     *         account. For more information, see <a
+     *         account.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         If the action is successful, the service sends back an HTTP 200 response which indicates a successful
+     *         <code>PutParameter</code> call for all cases except for data type <code>aws:ec2:image</code>. If you call
+     *         <code>PutParameter</code> with <code>aws:ec2:image</code> data type, a successful HTTP 200 response does
+     *         not guarantee that your parameter was successfully created or updated. The <code>aws:ec2:image</code>
+     *         value is validated asynchronously, and the <code>PutParameter</code> call returns before the validation
+     *         is complete. If you submit an invalid AMI value, the PutParameter operation will return success, but the
+     *         asynchronous validation will fail and the parameter will not be created or updated. To monitor whether
+     *         your <code>aws:ec2:image</code> parameters are created successfully, see <a
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-cwe.html">Setting up
+     *         notifications or trigger actions based on Parameter Store events</a>. For more information about AMI
+     *         format validation , see <a
      *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html"
-     *         >Native parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web Services Systems
-     *         Manager User Guide</i>.
+     *         >Native parameter support for Amazon Machine Image IDs</a>.
+     *         </p>
      */
 
     public String getDataType() {
@@ -2884,11 +2945,24 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web Services
      * Systems Manager validates the parameter value is in the required format, such as
      * <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your Amazon Web Services account.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
-     * parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web Services Systems Manager User
-     * Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * If the action is successful, the service sends back an HTTP 200 response which indicates a successful
+     * <code>PutParameter</code> call for all cases except for data type <code>aws:ec2:image</code>. If you call
+     * <code>PutParameter</code> with <code>aws:ec2:image</code> data type, a successful HTTP 200 response does not
+     * guarantee that your parameter was successfully created or updated. The <code>aws:ec2:image</code> value is
+     * validated asynchronously, and the <code>PutParameter</code> call returns before the validation is complete. If
+     * you submit an invalid AMI value, the PutParameter operation will return success, but the asynchronous validation
+     * will fail and the parameter will not be created or updated. To monitor whether your <code>aws:ec2:image</code>
+     * parameters are created successfully, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-cwe.html">Setting up
+     * notifications or trigger actions based on Parameter Store events</a>. For more information about AMI format
+     * validation , see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
+     * parameter support for Amazon Machine Image IDs</a>.
+     * </p>
+     * </note>
      * 
      * @param dataType
      *        The data type for a <code>String</code> parameter. Supported data types include plain text and Amazon
@@ -2917,10 +2991,24 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web
      *        Services Systems Manager validates the parameter value is in the required format, such as
      *        <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your Amazon Web Services
-     *        account. For more information, see <a
+     *        account.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If the action is successful, the service sends back an HTTP 200 response which indicates a successful
+     *        <code>PutParameter</code> call for all cases except for data type <code>aws:ec2:image</code>. If you call
+     *        <code>PutParameter</code> with <code>aws:ec2:image</code> data type, a successful HTTP 200 response does
+     *        not guarantee that your parameter was successfully created or updated. The <code>aws:ec2:image</code>
+     *        value is validated asynchronously, and the <code>PutParameter</code> call returns before the validation is
+     *        complete. If you submit an invalid AMI value, the PutParameter operation will return success, but the
+     *        asynchronous validation will fail and the parameter will not be created or updated. To monitor whether
+     *        your <code>aws:ec2:image</code> parameters are created successfully, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-cwe.html">Setting up
+     *        notifications or trigger actions based on Parameter Store events</a>. For more information about AMI
+     *        format validation , see <a
      *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html"
-     *        >Native parameter support for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web Services Systems
-     *        Manager User Guide</i>.
+     *        >Native parameter support for Amazon Machine Image IDs</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

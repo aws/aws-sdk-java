@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -85,6 +85,12 @@ public class StartSnapshotResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      */
     private String kmsKeyArn;
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     */
+    private String sseType;
 
     /**
      * <p>
@@ -552,6 +558,65 @@ public class StartSnapshotResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @param sseType
+     *        Reserved for future use.
+     * @see SSEType
+     */
+
+    public void setSseType(String sseType) {
+        this.sseType = sseType;
+    }
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @return Reserved for future use.
+     * @see SSEType
+     */
+
+    public String getSseType() {
+        return this.sseType;
+    }
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @param sseType
+     *        Reserved for future use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SSEType
+     */
+
+    public StartSnapshotResult withSseType(String sseType) {
+        setSseType(sseType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @param sseType
+     *        Reserved for future use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SSEType
+     */
+
+    public StartSnapshotResult withSseType(SSEType sseType) {
+        this.sseType = sseType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -582,7 +647,9 @@ public class StartSnapshotResult extends com.amazonaws.AmazonWebServiceResult<co
         if (getParentSnapshotId() != null)
             sb.append("ParentSnapshotId: ").append(getParentSnapshotId()).append(",");
         if (getKmsKeyArn() != null)
-            sb.append("KmsKeyArn: ").append("***Sensitive Data Redacted***");
+            sb.append("KmsKeyArn: ").append("***Sensitive Data Redacted***").append(",");
+        if (getSseType() != null)
+            sb.append("SseType: ").append(getSseType());
         sb.append("}");
         return sb.toString();
     }
@@ -637,6 +704,10 @@ public class StartSnapshotResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getKmsKeyArn() != null && other.getKmsKeyArn().equals(this.getKmsKeyArn()) == false)
             return false;
+        if (other.getSseType() == null ^ this.getSseType() == null)
+            return false;
+        if (other.getSseType() != null && other.getSseType().equals(this.getSseType()) == false)
+            return false;
         return true;
     }
 
@@ -655,6 +726,7 @@ public class StartSnapshotResult extends com.amazonaws.AmazonWebServiceResult<co
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getParentSnapshotId() == null) ? 0 : getParentSnapshotId().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyArn() == null) ? 0 : getKmsKeyArn().hashCode());
+        hashCode = prime * hashCode + ((getSseType() == null) ? 0 : getSseType().hashCode());
         return hashCode;
     }
 

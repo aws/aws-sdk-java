@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -196,6 +196,8 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String backendEnvironmentArn;
+
+    private Backend backend;
 
     /**
      * <p>
@@ -1515,6 +1517,32 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param backend
+     */
+
+    public void setBackend(Backend backend) {
+        this.backend = backend;
+    }
+
+    /**
+     * @return
+     */
+
+    public Backend getBackend() {
+        return this.backend;
+    }
+
+    /**
+     * @param backend
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Branch withBackend(Backend backend) {
+        setBackend(backend);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1579,7 +1607,9 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
         if (getSourceBranch() != null)
             sb.append("SourceBranch: ").append(getSourceBranch()).append(",");
         if (getBackendEnvironmentArn() != null)
-            sb.append("BackendEnvironmentArn: ").append(getBackendEnvironmentArn());
+            sb.append("BackendEnvironmentArn: ").append(getBackendEnvironmentArn()).append(",");
+        if (getBackend() != null)
+            sb.append("Backend: ").append(getBackend());
         sb.append("}");
         return sb.toString();
     }
@@ -1702,6 +1732,10 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getBackendEnvironmentArn() != null && other.getBackendEnvironmentArn().equals(this.getBackendEnvironmentArn()) == false)
             return false;
+        if (other.getBackend() == null ^ this.getBackend() == null)
+            return false;
+        if (other.getBackend() != null && other.getBackend().equals(this.getBackend()) == false)
+            return false;
         return true;
     }
 
@@ -1737,6 +1771,7 @@ public class Branch implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDestinationBranch() == null) ? 0 : getDestinationBranch().hashCode());
         hashCode = prime * hashCode + ((getSourceBranch() == null) ? 0 : getSourceBranch().hashCode());
         hashCode = prime * hashCode + ((getBackendEnvironmentArn() == null) ? 0 : getBackendEnvironmentArn().hashCode());
+        hashCode = prime * hashCode + ((getBackend() == null) ? 0 : getBackend().hashCode());
         return hashCode;
     }
 

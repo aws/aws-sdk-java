@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,13 +27,13 @@ public class CreateStudioLifecycleConfigRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the Studio Lifecycle Configuration to create.
+     * The name of the Amazon SageMaker Studio Lifecycle Configuration to create.
      * </p>
      */
     private String studioLifecycleConfigName;
     /**
      * <p>
-     * The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.
+     * The content of your Amazon SageMaker Studio Lifecycle Configuration script. This content must be base64 encoded.
      * </p>
      */
     private String studioLifecycleConfigContent;
@@ -53,11 +53,11 @@ public class CreateStudioLifecycleConfigRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the Studio Lifecycle Configuration to create.
+     * The name of the Amazon SageMaker Studio Lifecycle Configuration to create.
      * </p>
      * 
      * @param studioLifecycleConfigName
-     *        The name of the Studio Lifecycle Configuration to create.
+     *        The name of the Amazon SageMaker Studio Lifecycle Configuration to create.
      */
 
     public void setStudioLifecycleConfigName(String studioLifecycleConfigName) {
@@ -66,10 +66,10 @@ public class CreateStudioLifecycleConfigRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the Studio Lifecycle Configuration to create.
+     * The name of the Amazon SageMaker Studio Lifecycle Configuration to create.
      * </p>
      * 
-     * @return The name of the Studio Lifecycle Configuration to create.
+     * @return The name of the Amazon SageMaker Studio Lifecycle Configuration to create.
      */
 
     public String getStudioLifecycleConfigName() {
@@ -78,11 +78,11 @@ public class CreateStudioLifecycleConfigRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the Studio Lifecycle Configuration to create.
+     * The name of the Amazon SageMaker Studio Lifecycle Configuration to create.
      * </p>
      * 
      * @param studioLifecycleConfigName
-     *        The name of the Studio Lifecycle Configuration to create.
+     *        The name of the Amazon SageMaker Studio Lifecycle Configuration to create.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,12 @@ public class CreateStudioLifecycleConfigRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.
+     * The content of your Amazon SageMaker Studio Lifecycle Configuration script. This content must be base64 encoded.
      * </p>
      * 
      * @param studioLifecycleConfigContent
-     *        The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.
+     *        The content of your Amazon SageMaker Studio Lifecycle Configuration script. This content must be base64
+     *        encoded.
      */
 
     public void setStudioLifecycleConfigContent(String studioLifecycleConfigContent) {
@@ -106,10 +107,11 @@ public class CreateStudioLifecycleConfigRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.
+     * The content of your Amazon SageMaker Studio Lifecycle Configuration script. This content must be base64 encoded.
      * </p>
      * 
-     * @return The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.
+     * @return The content of your Amazon SageMaker Studio Lifecycle Configuration script. This content must be base64
+     *         encoded.
      */
 
     public String getStudioLifecycleConfigContent() {
@@ -118,11 +120,12 @@ public class CreateStudioLifecycleConfigRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.
+     * The content of your Amazon SageMaker Studio Lifecycle Configuration script. This content must be base64 encoded.
      * </p>
      * 
      * @param studioLifecycleConfigContent
-     *        The content of your Studio Lifecycle Configuration script. This content must be base64 encoded.
+     *        The content of your Amazon SageMaker Studio Lifecycle Configuration script. This content must be base64
+     *        encoded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

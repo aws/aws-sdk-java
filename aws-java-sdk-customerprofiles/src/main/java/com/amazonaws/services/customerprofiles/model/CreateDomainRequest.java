@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,6 +67,16 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private MatchingRequest matching;
+    /**
+     * <p>
+     * The process of matching duplicate profiles using the Rule-Based matching. If <code>RuleBasedMatching</code> =
+     * true, Amazon Connect Customer Profiles will start to match and merge your profiles according to your
+     * configuration in the <code>RuleBasedMatchingRequest</code>. You can use the <code>ListRuleBasedMatches</code> and
+     * <code>GetSimilarProfiles</code> API to return and review the results. Also, if you have configured
+     * <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.
+     * </p>
+     */
+    private RuleBasedMatchingRequest ruleBasedMatching;
     /**
      * <p>
      * The tags used to organize, track, or control access for this resource.
@@ -345,6 +355,73 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
+     * The process of matching duplicate profiles using the Rule-Based matching. If <code>RuleBasedMatching</code> =
+     * true, Amazon Connect Customer Profiles will start to match and merge your profiles according to your
+     * configuration in the <code>RuleBasedMatchingRequest</code>. You can use the <code>ListRuleBasedMatches</code> and
+     * <code>GetSimilarProfiles</code> API to return and review the results. Also, if you have configured
+     * <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.
+     * </p>
+     * 
+     * @param ruleBasedMatching
+     *        The process of matching duplicate profiles using the Rule-Based matching. If
+     *        <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will start to match and merge your
+     *        profiles according to your configuration in the <code>RuleBasedMatchingRequest</code>. You can use the
+     *        <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to return and review the
+     *        results. Also, if you have configured <code>ExportingConfig</code> in the
+     *        <code>RuleBasedMatchingRequest</code>, you can download the results from S3.
+     */
+
+    public void setRuleBasedMatching(RuleBasedMatchingRequest ruleBasedMatching) {
+        this.ruleBasedMatching = ruleBasedMatching;
+    }
+
+    /**
+     * <p>
+     * The process of matching duplicate profiles using the Rule-Based matching. If <code>RuleBasedMatching</code> =
+     * true, Amazon Connect Customer Profiles will start to match and merge your profiles according to your
+     * configuration in the <code>RuleBasedMatchingRequest</code>. You can use the <code>ListRuleBasedMatches</code> and
+     * <code>GetSimilarProfiles</code> API to return and review the results. Also, if you have configured
+     * <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.
+     * </p>
+     * 
+     * @return The process of matching duplicate profiles using the Rule-Based matching. If
+     *         <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will start to match and merge
+     *         your profiles according to your configuration in the <code>RuleBasedMatchingRequest</code>. You can use
+     *         the <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to return and review the
+     *         results. Also, if you have configured <code>ExportingConfig</code> in the
+     *         <code>RuleBasedMatchingRequest</code>, you can download the results from S3.
+     */
+
+    public RuleBasedMatchingRequest getRuleBasedMatching() {
+        return this.ruleBasedMatching;
+    }
+
+    /**
+     * <p>
+     * The process of matching duplicate profiles using the Rule-Based matching. If <code>RuleBasedMatching</code> =
+     * true, Amazon Connect Customer Profiles will start to match and merge your profiles according to your
+     * configuration in the <code>RuleBasedMatchingRequest</code>. You can use the <code>ListRuleBasedMatches</code> and
+     * <code>GetSimilarProfiles</code> API to return and review the results. Also, if you have configured
+     * <code>ExportingConfig</code> in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.
+     * </p>
+     * 
+     * @param ruleBasedMatching
+     *        The process of matching duplicate profiles using the Rule-Based matching. If
+     *        <code>RuleBasedMatching</code> = true, Amazon Connect Customer Profiles will start to match and merge your
+     *        profiles according to your configuration in the <code>RuleBasedMatchingRequest</code>. You can use the
+     *        <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code> API to return and review the
+     *        results. Also, if you have configured <code>ExportingConfig</code> in the
+     *        <code>RuleBasedMatchingRequest</code>, you can download the results from S3.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDomainRequest withRuleBasedMatching(RuleBasedMatchingRequest ruleBasedMatching) {
+        setRuleBasedMatching(ruleBasedMatching);
+        return this;
+    }
+
+    /**
+     * <p>
      * The tags used to organize, track, or control access for this resource.
      * </p>
      * 
@@ -433,6 +510,8 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("DeadLetterQueueUrl: ").append(getDeadLetterQueueUrl()).append(",");
         if (getMatching() != null)
             sb.append("Matching: ").append(getMatching()).append(",");
+        if (getRuleBasedMatching() != null)
+            sb.append("RuleBasedMatching: ").append(getRuleBasedMatching()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -469,6 +548,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getMatching() != null && other.getMatching().equals(this.getMatching()) == false)
             return false;
+        if (other.getRuleBasedMatching() == null ^ this.getRuleBasedMatching() == null)
+            return false;
+        if (other.getRuleBasedMatching() != null && other.getRuleBasedMatching().equals(this.getRuleBasedMatching()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -486,6 +569,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getDefaultEncryptionKey() == null) ? 0 : getDefaultEncryptionKey().hashCode());
         hashCode = prime * hashCode + ((getDeadLetterQueueUrl() == null) ? 0 : getDeadLetterQueueUrl().hashCode());
         hashCode = prime * hashCode + ((getMatching() == null) ? 0 : getMatching().hashCode());
+        hashCode = prime * hashCode + ((getRuleBasedMatching() == null) ? 0 : getRuleBasedMatching().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

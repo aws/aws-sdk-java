@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,9 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
     /**
      * <p>
      * The instance type.
+     * </p>
+     * <p>
+     * <code>mac1.metal</code> is not supported as a launch template override.
      * </p>
      * <note>
      * <p>
@@ -67,6 +70,15 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      * <p>
      * The number of units provided by the specified instance type.
      * </p>
+     * <note>
+     * <p>
+     * When specifying weights, the price used in the <code>lowest-price</code> and
+     * <code>price-capacity-optimized</code> allocation strategies is per <i>unit</i> hour (where the instance price is
+     * divided by the specified weight). However, if all the specified weights are above the requested
+     * <code>TargetCapacity</code>, resulting in only 1 instance being launched, the price used is per <i>instance</i>
+     * hour.
+     * </p>
+     * </note>
      */
     private Double weightedCapacity;
     /**
@@ -109,8 +121,9 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
     private InstanceRequirements instanceRequirements;
     /**
      * <p>
-     * The ID of the AMI. An AMI is required to launch an instance. The AMI ID must be specified here or in the launch
-     * template.
+     * The ID of the AMI. An AMI is required to launch an instance. This parameter is only available for fleets of type
+     * <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must specify the AMI
+     * ID in the launch template.
      * </p>
      */
     private String imageId;
@@ -119,6 +132,9 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      * <p>
      * The instance type.
      * </p>
+     * <p>
+     * <code>mac1.metal</code> is not supported as a launch template override.
+     * </p>
      * <note>
      * <p>
      * If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
@@ -126,7 +142,11 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      * </note>
      * 
      * @param instanceType
-     *        The instance type.</p> <note>
+     *        The instance type.</p>
+     *        <p>
+     *        <code>mac1.metal</code> is not supported as a launch template override.
+     *        </p>
+     *        <note>
      *        <p>
      *        If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
      *        </p>
@@ -141,13 +161,20 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      * <p>
      * The instance type.
      * </p>
+     * <p>
+     * <code>mac1.metal</code> is not supported as a launch template override.
+     * </p>
      * <note>
      * <p>
      * If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
      * </p>
      * </note>
      * 
-     * @return The instance type.</p> <note>
+     * @return The instance type.</p>
+     *         <p>
+     *         <code>mac1.metal</code> is not supported as a launch template override.
+     *         </p>
+     *         <note>
      *         <p>
      *         If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
      *         </p>
@@ -162,6 +189,9 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      * <p>
      * The instance type.
      * </p>
+     * <p>
+     * <code>mac1.metal</code> is not supported as a launch template override.
+     * </p>
      * <note>
      * <p>
      * If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
@@ -169,7 +199,11 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      * </note>
      * 
      * @param instanceType
-     *        The instance type.</p> <note>
+     *        The instance type.</p>
+     *        <p>
+     *        <code>mac1.metal</code> is not supported as a launch template override.
+     *        </p>
+     *        <note>
      *        <p>
      *        If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
      *        </p>
@@ -186,6 +220,9 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      * <p>
      * The instance type.
      * </p>
+     * <p>
+     * <code>mac1.metal</code> is not supported as a launch template override.
+     * </p>
      * <note>
      * <p>
      * If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
@@ -193,7 +230,11 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      * </note>
      * 
      * @param instanceType
-     *        The instance type.</p> <note>
+     *        The instance type.</p>
+     *        <p>
+     *        <code>mac1.metal</code> is not supported as a launch template override.
+     *        </p>
+     *        <note>
      *        <p>
      *        If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
      *        </p>
@@ -372,9 +413,25 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      * <p>
      * The number of units provided by the specified instance type.
      * </p>
+     * <note>
+     * <p>
+     * When specifying weights, the price used in the <code>lowest-price</code> and
+     * <code>price-capacity-optimized</code> allocation strategies is per <i>unit</i> hour (where the instance price is
+     * divided by the specified weight). However, if all the specified weights are above the requested
+     * <code>TargetCapacity</code>, resulting in only 1 instance being launched, the price used is per <i>instance</i>
+     * hour.
+     * </p>
+     * </note>
      * 
      * @param weightedCapacity
-     *        The number of units provided by the specified instance type.
+     *        The number of units provided by the specified instance type.</p> <note>
+     *        <p>
+     *        When specifying weights, the price used in the <code>lowest-price</code> and
+     *        <code>price-capacity-optimized</code> allocation strategies is per <i>unit</i> hour (where the instance
+     *        price is divided by the specified weight). However, if all the specified weights are above the requested
+     *        <code>TargetCapacity</code>, resulting in only 1 instance being launched, the price used is per
+     *        <i>instance</i> hour.
+     *        </p>
      */
 
     public void setWeightedCapacity(Double weightedCapacity) {
@@ -385,8 +442,24 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      * <p>
      * The number of units provided by the specified instance type.
      * </p>
+     * <note>
+     * <p>
+     * When specifying weights, the price used in the <code>lowest-price</code> and
+     * <code>price-capacity-optimized</code> allocation strategies is per <i>unit</i> hour (where the instance price is
+     * divided by the specified weight). However, if all the specified weights are above the requested
+     * <code>TargetCapacity</code>, resulting in only 1 instance being launched, the price used is per <i>instance</i>
+     * hour.
+     * </p>
+     * </note>
      * 
-     * @return The number of units provided by the specified instance type.
+     * @return The number of units provided by the specified instance type.</p> <note>
+     *         <p>
+     *         When specifying weights, the price used in the <code>lowest-price</code> and
+     *         <code>price-capacity-optimized</code> allocation strategies is per <i>unit</i> hour (where the instance
+     *         price is divided by the specified weight). However, if all the specified weights are above the requested
+     *         <code>TargetCapacity</code>, resulting in only 1 instance being launched, the price used is per
+     *         <i>instance</i> hour.
+     *         </p>
      */
 
     public Double getWeightedCapacity() {
@@ -397,9 +470,25 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      * <p>
      * The number of units provided by the specified instance type.
      * </p>
+     * <note>
+     * <p>
+     * When specifying weights, the price used in the <code>lowest-price</code> and
+     * <code>price-capacity-optimized</code> allocation strategies is per <i>unit</i> hour (where the instance price is
+     * divided by the specified weight). However, if all the specified weights are above the requested
+     * <code>TargetCapacity</code>, resulting in only 1 instance being launched, the price used is per <i>instance</i>
+     * hour.
+     * </p>
+     * </note>
      * 
      * @param weightedCapacity
-     *        The number of units provided by the specified instance type.
+     *        The number of units provided by the specified instance type.</p> <note>
+     *        <p>
+     *        When specifying weights, the price used in the <code>lowest-price</code> and
+     *        <code>price-capacity-optimized</code> allocation strategies is per <i>unit</i> hour (where the instance
+     *        price is divided by the specified weight). However, if all the specified weights are above the requested
+     *        <code>TargetCapacity</code>, resulting in only 1 instance being launched, the price used is per
+     *        <i>instance</i> hour.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -641,13 +730,15 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AMI. An AMI is required to launch an instance. The AMI ID must be specified here or in the launch
-     * template.
+     * The ID of the AMI. An AMI is required to launch an instance. This parameter is only available for fleets of type
+     * <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must specify the AMI
+     * ID in the launch template.
      * </p>
      * 
      * @param imageId
-     *        The ID of the AMI. An AMI is required to launch an instance. The AMI ID must be specified here or in the
-     *        launch template.
+     *        The ID of the AMI. An AMI is required to launch an instance. This parameter is only available for fleets
+     *        of type <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must
+     *        specify the AMI ID in the launch template.
      */
 
     public void setImageId(String imageId) {
@@ -656,12 +747,14 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AMI. An AMI is required to launch an instance. The AMI ID must be specified here or in the launch
-     * template.
+     * The ID of the AMI. An AMI is required to launch an instance. This parameter is only available for fleets of type
+     * <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must specify the AMI
+     * ID in the launch template.
      * </p>
      * 
-     * @return The ID of the AMI. An AMI is required to launch an instance. The AMI ID must be specified here or in the
-     *         launch template.
+     * @return The ID of the AMI. An AMI is required to launch an instance. This parameter is only available for fleets
+     *         of type <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must
+     *         specify the AMI ID in the launch template.
      */
 
     public String getImageId() {
@@ -670,13 +763,15 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AMI. An AMI is required to launch an instance. The AMI ID must be specified here or in the launch
-     * template.
+     * The ID of the AMI. An AMI is required to launch an instance. This parameter is only available for fleets of type
+     * <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must specify the AMI
+     * ID in the launch template.
      * </p>
      * 
      * @param imageId
-     *        The ID of the AMI. An AMI is required to launch an instance. The AMI ID must be specified here or in the
-     *        launch template.
+     *        The ID of the AMI. An AMI is required to launch an instance. This parameter is only available for fleets
+     *        of type <code>instant</code>. For fleets of type <code>maintain</code> and <code>request</code>, you must
+     *        specify the AMI ID in the launch template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

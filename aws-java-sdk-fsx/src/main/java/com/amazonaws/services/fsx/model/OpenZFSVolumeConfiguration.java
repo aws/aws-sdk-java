@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -122,6 +122,72 @@ public class OpenZFSVolumeConfiguration implements Serializable, Cloneable, Stru
      * </p>
      */
     private java.util.List<OpenZFSUserOrGroupQuota> userAndGroupQuotas;
+    /**
+     * <p>
+     * Specifies the ID of the snapshot to which the volume was restored.
+     * </p>
+     */
+    private String restoreToSnapshot;
+    /**
+     * <p>
+     * A Boolean value indicating whether snapshots between the current state and the specified snapshot should be
+     * deleted when a volume is restored from snapshot.
+     * </p>
+     */
+    private Boolean deleteIntermediateSnaphots;
+    /**
+     * <p>
+     * A Boolean value indicating whether dependent clone volumes created from intermediate snapshots should be deleted
+     * when a volume is restored from snapshot.
+     * </p>
+     */
+    private Boolean deleteClonedVolumes;
+    /**
+     * <p>
+     * A Boolean value indicating whether snapshot data that differs between the current state and the specified
+     * snapshot should be overwritten when a volume is restored from a snapshot.
+     * </p>
+     */
+    private Boolean deleteIntermediateData;
+
+    private String sourceSnapshotARN;
+    /**
+     * <p>
+     * The ID of the snapshot that's being copied or was most recently copied to the destination volume.
+     * </p>
+     */
+    private String destinationSnapshot;
+    /**
+     * <p>
+     * Specifies the strategy used when copying data from the snapshot to the new volume.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CLONE</code> - The new volume references the data in the origin snapshot. Cloning a snapshot is faster than
+     * copying data from the snapshot to a new volume and doesn't consume disk throughput. However, the origin snapshot
+     * can't be deleted if there is a volume using its copied data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FULL_COPY</code> - Copies all data from the snapshot to the new volume.
+     * </p>
+     * <p>
+     * Specify this option to create the volume from a snapshot on another FSx for OpenZFS file system.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The <code>INCREMENTAL_COPY</code> option is only for updating an existing volume by using a snapshot from another
+     * FSx for OpenZFS file system. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html"
+     * >CopySnapshotAndUpdateVolume</a>.
+     * </p>
+     * </note>
+     */
+    private String copyStrategy;
 
     /**
      * <p>
@@ -879,6 +945,547 @@ public class OpenZFSVolumeConfiguration implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Specifies the ID of the snapshot to which the volume was restored.
+     * </p>
+     * 
+     * @param restoreToSnapshot
+     *        Specifies the ID of the snapshot to which the volume was restored.
+     */
+
+    public void setRestoreToSnapshot(String restoreToSnapshot) {
+        this.restoreToSnapshot = restoreToSnapshot;
+    }
+
+    /**
+     * <p>
+     * Specifies the ID of the snapshot to which the volume was restored.
+     * </p>
+     * 
+     * @return Specifies the ID of the snapshot to which the volume was restored.
+     */
+
+    public String getRestoreToSnapshot() {
+        return this.restoreToSnapshot;
+    }
+
+    /**
+     * <p>
+     * Specifies the ID of the snapshot to which the volume was restored.
+     * </p>
+     * 
+     * @param restoreToSnapshot
+     *        Specifies the ID of the snapshot to which the volume was restored.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OpenZFSVolumeConfiguration withRestoreToSnapshot(String restoreToSnapshot) {
+        setRestoreToSnapshot(restoreToSnapshot);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean value indicating whether snapshots between the current state and the specified snapshot should be
+     * deleted when a volume is restored from snapshot.
+     * </p>
+     * 
+     * @param deleteIntermediateSnaphots
+     *        A Boolean value indicating whether snapshots between the current state and the specified snapshot should
+     *        be deleted when a volume is restored from snapshot.
+     */
+
+    public void setDeleteIntermediateSnaphots(Boolean deleteIntermediateSnaphots) {
+        this.deleteIntermediateSnaphots = deleteIntermediateSnaphots;
+    }
+
+    /**
+     * <p>
+     * A Boolean value indicating whether snapshots between the current state and the specified snapshot should be
+     * deleted when a volume is restored from snapshot.
+     * </p>
+     * 
+     * @return A Boolean value indicating whether snapshots between the current state and the specified snapshot should
+     *         be deleted when a volume is restored from snapshot.
+     */
+
+    public Boolean getDeleteIntermediateSnaphots() {
+        return this.deleteIntermediateSnaphots;
+    }
+
+    /**
+     * <p>
+     * A Boolean value indicating whether snapshots between the current state and the specified snapshot should be
+     * deleted when a volume is restored from snapshot.
+     * </p>
+     * 
+     * @param deleteIntermediateSnaphots
+     *        A Boolean value indicating whether snapshots between the current state and the specified snapshot should
+     *        be deleted when a volume is restored from snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OpenZFSVolumeConfiguration withDeleteIntermediateSnaphots(Boolean deleteIntermediateSnaphots) {
+        setDeleteIntermediateSnaphots(deleteIntermediateSnaphots);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean value indicating whether snapshots between the current state and the specified snapshot should be
+     * deleted when a volume is restored from snapshot.
+     * </p>
+     * 
+     * @return A Boolean value indicating whether snapshots between the current state and the specified snapshot should
+     *         be deleted when a volume is restored from snapshot.
+     */
+
+    public Boolean isDeleteIntermediateSnaphots() {
+        return this.deleteIntermediateSnaphots;
+    }
+
+    /**
+     * <p>
+     * A Boolean value indicating whether dependent clone volumes created from intermediate snapshots should be deleted
+     * when a volume is restored from snapshot.
+     * </p>
+     * 
+     * @param deleteClonedVolumes
+     *        A Boolean value indicating whether dependent clone volumes created from intermediate snapshots should be
+     *        deleted when a volume is restored from snapshot.
+     */
+
+    public void setDeleteClonedVolumes(Boolean deleteClonedVolumes) {
+        this.deleteClonedVolumes = deleteClonedVolumes;
+    }
+
+    /**
+     * <p>
+     * A Boolean value indicating whether dependent clone volumes created from intermediate snapshots should be deleted
+     * when a volume is restored from snapshot.
+     * </p>
+     * 
+     * @return A Boolean value indicating whether dependent clone volumes created from intermediate snapshots should be
+     *         deleted when a volume is restored from snapshot.
+     */
+
+    public Boolean getDeleteClonedVolumes() {
+        return this.deleteClonedVolumes;
+    }
+
+    /**
+     * <p>
+     * A Boolean value indicating whether dependent clone volumes created from intermediate snapshots should be deleted
+     * when a volume is restored from snapshot.
+     * </p>
+     * 
+     * @param deleteClonedVolumes
+     *        A Boolean value indicating whether dependent clone volumes created from intermediate snapshots should be
+     *        deleted when a volume is restored from snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OpenZFSVolumeConfiguration withDeleteClonedVolumes(Boolean deleteClonedVolumes) {
+        setDeleteClonedVolumes(deleteClonedVolumes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean value indicating whether dependent clone volumes created from intermediate snapshots should be deleted
+     * when a volume is restored from snapshot.
+     * </p>
+     * 
+     * @return A Boolean value indicating whether dependent clone volumes created from intermediate snapshots should be
+     *         deleted when a volume is restored from snapshot.
+     */
+
+    public Boolean isDeleteClonedVolumes() {
+        return this.deleteClonedVolumes;
+    }
+
+    /**
+     * <p>
+     * A Boolean value indicating whether snapshot data that differs between the current state and the specified
+     * snapshot should be overwritten when a volume is restored from a snapshot.
+     * </p>
+     * 
+     * @param deleteIntermediateData
+     *        A Boolean value indicating whether snapshot data that differs between the current state and the specified
+     *        snapshot should be overwritten when a volume is restored from a snapshot.
+     */
+
+    public void setDeleteIntermediateData(Boolean deleteIntermediateData) {
+        this.deleteIntermediateData = deleteIntermediateData;
+    }
+
+    /**
+     * <p>
+     * A Boolean value indicating whether snapshot data that differs between the current state and the specified
+     * snapshot should be overwritten when a volume is restored from a snapshot.
+     * </p>
+     * 
+     * @return A Boolean value indicating whether snapshot data that differs between the current state and the specified
+     *         snapshot should be overwritten when a volume is restored from a snapshot.
+     */
+
+    public Boolean getDeleteIntermediateData() {
+        return this.deleteIntermediateData;
+    }
+
+    /**
+     * <p>
+     * A Boolean value indicating whether snapshot data that differs between the current state and the specified
+     * snapshot should be overwritten when a volume is restored from a snapshot.
+     * </p>
+     * 
+     * @param deleteIntermediateData
+     *        A Boolean value indicating whether snapshot data that differs between the current state and the specified
+     *        snapshot should be overwritten when a volume is restored from a snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OpenZFSVolumeConfiguration withDeleteIntermediateData(Boolean deleteIntermediateData) {
+        setDeleteIntermediateData(deleteIntermediateData);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean value indicating whether snapshot data that differs between the current state and the specified
+     * snapshot should be overwritten when a volume is restored from a snapshot.
+     * </p>
+     * 
+     * @return A Boolean value indicating whether snapshot data that differs between the current state and the specified
+     *         snapshot should be overwritten when a volume is restored from a snapshot.
+     */
+
+    public Boolean isDeleteIntermediateData() {
+        return this.deleteIntermediateData;
+    }
+
+    /**
+     * @param sourceSnapshotARN
+     */
+
+    public void setSourceSnapshotARN(String sourceSnapshotARN) {
+        this.sourceSnapshotARN = sourceSnapshotARN;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getSourceSnapshotARN() {
+        return this.sourceSnapshotARN;
+    }
+
+    /**
+     * @param sourceSnapshotARN
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OpenZFSVolumeConfiguration withSourceSnapshotARN(String sourceSnapshotARN) {
+        setSourceSnapshotARN(sourceSnapshotARN);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the snapshot that's being copied or was most recently copied to the destination volume.
+     * </p>
+     * 
+     * @param destinationSnapshot
+     *        The ID of the snapshot that's being copied or was most recently copied to the destination volume.
+     */
+
+    public void setDestinationSnapshot(String destinationSnapshot) {
+        this.destinationSnapshot = destinationSnapshot;
+    }
+
+    /**
+     * <p>
+     * The ID of the snapshot that's being copied or was most recently copied to the destination volume.
+     * </p>
+     * 
+     * @return The ID of the snapshot that's being copied or was most recently copied to the destination volume.
+     */
+
+    public String getDestinationSnapshot() {
+        return this.destinationSnapshot;
+    }
+
+    /**
+     * <p>
+     * The ID of the snapshot that's being copied or was most recently copied to the destination volume.
+     * </p>
+     * 
+     * @param destinationSnapshot
+     *        The ID of the snapshot that's being copied or was most recently copied to the destination volume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OpenZFSVolumeConfiguration withDestinationSnapshot(String destinationSnapshot) {
+        setDestinationSnapshot(destinationSnapshot);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the strategy used when copying data from the snapshot to the new volume.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CLONE</code> - The new volume references the data in the origin snapshot. Cloning a snapshot is faster than
+     * copying data from the snapshot to a new volume and doesn't consume disk throughput. However, the origin snapshot
+     * can't be deleted if there is a volume using its copied data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FULL_COPY</code> - Copies all data from the snapshot to the new volume.
+     * </p>
+     * <p>
+     * Specify this option to create the volume from a snapshot on another FSx for OpenZFS file system.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The <code>INCREMENTAL_COPY</code> option is only for updating an existing volume by using a snapshot from another
+     * FSx for OpenZFS file system. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html"
+     * >CopySnapshotAndUpdateVolume</a>.
+     * </p>
+     * </note>
+     * 
+     * @param copyStrategy
+     *        Specifies the strategy used when copying data from the snapshot to the new volume. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CLONE</code> - The new volume references the data in the origin snapshot. Cloning a snapshot is
+     *        faster than copying data from the snapshot to a new volume and doesn't consume disk throughput. However,
+     *        the origin snapshot can't be deleted if there is a volume using its copied data.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FULL_COPY</code> - Copies all data from the snapshot to the new volume.
+     *        </p>
+     *        <p>
+     *        Specify this option to create the volume from a snapshot on another FSx for OpenZFS file system.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The <code>INCREMENTAL_COPY</code> option is only for updating an existing volume by using a snapshot from
+     *        another FSx for OpenZFS file system. For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html"
+     *        >CopySnapshotAndUpdateVolume</a>.
+     *        </p>
+     * @see OpenZFSCopyStrategy
+     */
+
+    public void setCopyStrategy(String copyStrategy) {
+        this.copyStrategy = copyStrategy;
+    }
+
+    /**
+     * <p>
+     * Specifies the strategy used when copying data from the snapshot to the new volume.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CLONE</code> - The new volume references the data in the origin snapshot. Cloning a snapshot is faster than
+     * copying data from the snapshot to a new volume and doesn't consume disk throughput. However, the origin snapshot
+     * can't be deleted if there is a volume using its copied data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FULL_COPY</code> - Copies all data from the snapshot to the new volume.
+     * </p>
+     * <p>
+     * Specify this option to create the volume from a snapshot on another FSx for OpenZFS file system.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The <code>INCREMENTAL_COPY</code> option is only for updating an existing volume by using a snapshot from another
+     * FSx for OpenZFS file system. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html"
+     * >CopySnapshotAndUpdateVolume</a>.
+     * </p>
+     * </note>
+     * 
+     * @return Specifies the strategy used when copying data from the snapshot to the new volume. </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>CLONE</code> - The new volume references the data in the origin snapshot. Cloning a snapshot is
+     *         faster than copying data from the snapshot to a new volume and doesn't consume disk throughput. However,
+     *         the origin snapshot can't be deleted if there is a volume using its copied data.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>FULL_COPY</code> - Copies all data from the snapshot to the new volume.
+     *         </p>
+     *         <p>
+     *         Specify this option to create the volume from a snapshot on another FSx for OpenZFS file system.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         The <code>INCREMENTAL_COPY</code> option is only for updating an existing volume by using a snapshot from
+     *         another FSx for OpenZFS file system. For more information, see <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html"
+     *         >CopySnapshotAndUpdateVolume</a>.
+     *         </p>
+     * @see OpenZFSCopyStrategy
+     */
+
+    public String getCopyStrategy() {
+        return this.copyStrategy;
+    }
+
+    /**
+     * <p>
+     * Specifies the strategy used when copying data from the snapshot to the new volume.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CLONE</code> - The new volume references the data in the origin snapshot. Cloning a snapshot is faster than
+     * copying data from the snapshot to a new volume and doesn't consume disk throughput. However, the origin snapshot
+     * can't be deleted if there is a volume using its copied data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FULL_COPY</code> - Copies all data from the snapshot to the new volume.
+     * </p>
+     * <p>
+     * Specify this option to create the volume from a snapshot on another FSx for OpenZFS file system.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The <code>INCREMENTAL_COPY</code> option is only for updating an existing volume by using a snapshot from another
+     * FSx for OpenZFS file system. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html"
+     * >CopySnapshotAndUpdateVolume</a>.
+     * </p>
+     * </note>
+     * 
+     * @param copyStrategy
+     *        Specifies the strategy used when copying data from the snapshot to the new volume. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CLONE</code> - The new volume references the data in the origin snapshot. Cloning a snapshot is
+     *        faster than copying data from the snapshot to a new volume and doesn't consume disk throughput. However,
+     *        the origin snapshot can't be deleted if there is a volume using its copied data.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FULL_COPY</code> - Copies all data from the snapshot to the new volume.
+     *        </p>
+     *        <p>
+     *        Specify this option to create the volume from a snapshot on another FSx for OpenZFS file system.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The <code>INCREMENTAL_COPY</code> option is only for updating an existing volume by using a snapshot from
+     *        another FSx for OpenZFS file system. For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html"
+     *        >CopySnapshotAndUpdateVolume</a>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OpenZFSCopyStrategy
+     */
+
+    public OpenZFSVolumeConfiguration withCopyStrategy(String copyStrategy) {
+        setCopyStrategy(copyStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the strategy used when copying data from the snapshot to the new volume.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CLONE</code> - The new volume references the data in the origin snapshot. Cloning a snapshot is faster than
+     * copying data from the snapshot to a new volume and doesn't consume disk throughput. However, the origin snapshot
+     * can't be deleted if there is a volume using its copied data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FULL_COPY</code> - Copies all data from the snapshot to the new volume.
+     * </p>
+     * <p>
+     * Specify this option to create the volume from a snapshot on another FSx for OpenZFS file system.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The <code>INCREMENTAL_COPY</code> option is only for updating an existing volume by using a snapshot from another
+     * FSx for OpenZFS file system. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html"
+     * >CopySnapshotAndUpdateVolume</a>.
+     * </p>
+     * </note>
+     * 
+     * @param copyStrategy
+     *        Specifies the strategy used when copying data from the snapshot to the new volume. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CLONE</code> - The new volume references the data in the origin snapshot. Cloning a snapshot is
+     *        faster than copying data from the snapshot to a new volume and doesn't consume disk throughput. However,
+     *        the origin snapshot can't be deleted if there is a volume using its copied data.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FULL_COPY</code> - Copies all data from the snapshot to the new volume.
+     *        </p>
+     *        <p>
+     *        Specify this option to create the volume from a snapshot on another FSx for OpenZFS file system.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The <code>INCREMENTAL_COPY</code> option is only for updating an existing volume by using a snapshot from
+     *        another FSx for OpenZFS file system. For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html"
+     *        >CopySnapshotAndUpdateVolume</a>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OpenZFSCopyStrategy
+     */
+
+    public OpenZFSVolumeConfiguration withCopyStrategy(OpenZFSCopyStrategy copyStrategy) {
+        this.copyStrategy = copyStrategy.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -911,7 +1518,21 @@ public class OpenZFSVolumeConfiguration implements Serializable, Cloneable, Stru
         if (getNfsExports() != null)
             sb.append("NfsExports: ").append(getNfsExports()).append(",");
         if (getUserAndGroupQuotas() != null)
-            sb.append("UserAndGroupQuotas: ").append(getUserAndGroupQuotas());
+            sb.append("UserAndGroupQuotas: ").append(getUserAndGroupQuotas()).append(",");
+        if (getRestoreToSnapshot() != null)
+            sb.append("RestoreToSnapshot: ").append(getRestoreToSnapshot()).append(",");
+        if (getDeleteIntermediateSnaphots() != null)
+            sb.append("DeleteIntermediateSnaphots: ").append(getDeleteIntermediateSnaphots()).append(",");
+        if (getDeleteClonedVolumes() != null)
+            sb.append("DeleteClonedVolumes: ").append(getDeleteClonedVolumes()).append(",");
+        if (getDeleteIntermediateData() != null)
+            sb.append("DeleteIntermediateData: ").append(getDeleteIntermediateData()).append(",");
+        if (getSourceSnapshotARN() != null)
+            sb.append("SourceSnapshotARN: ").append(getSourceSnapshotARN()).append(",");
+        if (getDestinationSnapshot() != null)
+            sb.append("DestinationSnapshot: ").append(getDestinationSnapshot()).append(",");
+        if (getCopyStrategy() != null)
+            sb.append("CopyStrategy: ").append(getCopyStrategy());
         sb.append("}");
         return sb.toString();
     }
@@ -971,6 +1592,34 @@ public class OpenZFSVolumeConfiguration implements Serializable, Cloneable, Stru
             return false;
         if (other.getUserAndGroupQuotas() != null && other.getUserAndGroupQuotas().equals(this.getUserAndGroupQuotas()) == false)
             return false;
+        if (other.getRestoreToSnapshot() == null ^ this.getRestoreToSnapshot() == null)
+            return false;
+        if (other.getRestoreToSnapshot() != null && other.getRestoreToSnapshot().equals(this.getRestoreToSnapshot()) == false)
+            return false;
+        if (other.getDeleteIntermediateSnaphots() == null ^ this.getDeleteIntermediateSnaphots() == null)
+            return false;
+        if (other.getDeleteIntermediateSnaphots() != null && other.getDeleteIntermediateSnaphots().equals(this.getDeleteIntermediateSnaphots()) == false)
+            return false;
+        if (other.getDeleteClonedVolumes() == null ^ this.getDeleteClonedVolumes() == null)
+            return false;
+        if (other.getDeleteClonedVolumes() != null && other.getDeleteClonedVolumes().equals(this.getDeleteClonedVolumes()) == false)
+            return false;
+        if (other.getDeleteIntermediateData() == null ^ this.getDeleteIntermediateData() == null)
+            return false;
+        if (other.getDeleteIntermediateData() != null && other.getDeleteIntermediateData().equals(this.getDeleteIntermediateData()) == false)
+            return false;
+        if (other.getSourceSnapshotARN() == null ^ this.getSourceSnapshotARN() == null)
+            return false;
+        if (other.getSourceSnapshotARN() != null && other.getSourceSnapshotARN().equals(this.getSourceSnapshotARN()) == false)
+            return false;
+        if (other.getDestinationSnapshot() == null ^ this.getDestinationSnapshot() == null)
+            return false;
+        if (other.getDestinationSnapshot() != null && other.getDestinationSnapshot().equals(this.getDestinationSnapshot()) == false)
+            return false;
+        if (other.getCopyStrategy() == null ^ this.getCopyStrategy() == null)
+            return false;
+        if (other.getCopyStrategy() != null && other.getCopyStrategy().equals(this.getCopyStrategy()) == false)
+            return false;
         return true;
     }
 
@@ -990,6 +1639,13 @@ public class OpenZFSVolumeConfiguration implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getReadOnly() == null) ? 0 : getReadOnly().hashCode());
         hashCode = prime * hashCode + ((getNfsExports() == null) ? 0 : getNfsExports().hashCode());
         hashCode = prime * hashCode + ((getUserAndGroupQuotas() == null) ? 0 : getUserAndGroupQuotas().hashCode());
+        hashCode = prime * hashCode + ((getRestoreToSnapshot() == null) ? 0 : getRestoreToSnapshot().hashCode());
+        hashCode = prime * hashCode + ((getDeleteIntermediateSnaphots() == null) ? 0 : getDeleteIntermediateSnaphots().hashCode());
+        hashCode = prime * hashCode + ((getDeleteClonedVolumes() == null) ? 0 : getDeleteClonedVolumes().hashCode());
+        hashCode = prime * hashCode + ((getDeleteIntermediateData() == null) ? 0 : getDeleteIntermediateData().hashCode());
+        hashCode = prime * hashCode + ((getSourceSnapshotARN() == null) ? 0 : getSourceSnapshotARN().hashCode());
+        hashCode = prime * hashCode + ((getDestinationSnapshot() == null) ? 0 : getDestinationSnapshot().hashCode());
+        hashCode = prime * hashCode + ((getCopyStrategy() == null) ? 0 : getCopyStrategy().hashCode());
         return hashCode;
     }
 

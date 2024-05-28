@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,8 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A string containing the name of the group. This value is commonly displayed when the group is referenced.
+     * <code>Administrator</code> and <code>AWSAdministrators</code> are reserved names and can't be used for users or
+     * groups.
      * </p>
      */
     private String displayName;
@@ -87,10 +89,14 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A string containing the name of the group. This value is commonly displayed when the group is referenced.
+     * <code>Administrator</code> and <code>AWSAdministrators</code> are reserved names and can't be used for users or
+     * groups.
      * </p>
      * 
      * @param displayName
      *        A string containing the name of the group. This value is commonly displayed when the group is referenced.
+     *        <code>Administrator</code> and <code>AWSAdministrators</code> are reserved names and can't be used for
+     *        users or groups.
      */
 
     public void setDisplayName(String displayName) {
@@ -100,9 +106,13 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A string containing the name of the group. This value is commonly displayed when the group is referenced.
+     * <code>Administrator</code> and <code>AWSAdministrators</code> are reserved names and can't be used for users or
+     * groups.
      * </p>
      * 
      * @return A string containing the name of the group. This value is commonly displayed when the group is referenced.
+     *         <code>Administrator</code> and <code>AWSAdministrators</code> are reserved names and can't be used for
+     *         users or groups.
      */
 
     public String getDisplayName() {
@@ -112,10 +122,14 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A string containing the name of the group. This value is commonly displayed when the group is referenced.
+     * <code>Administrator</code> and <code>AWSAdministrators</code> are reserved names and can't be used for users or
+     * groups.
      * </p>
      * 
      * @param displayName
      *        A string containing the name of the group. This value is commonly displayed when the group is referenced.
+     *        <code>Administrator</code> and <code>AWSAdministrators</code> are reserved names and can't be used for
+     *        users or groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

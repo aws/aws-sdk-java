@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,6 +26,11 @@ import com.amazonaws.services.ssmincidents.waiters.AWSSSMIncidentsWaiters;
 public class AbstractAWSSSMIncidents implements AWSSSMIncidents {
 
     protected AbstractAWSSSMIncidents() {
+    }
+
+    @Override
+    public BatchGetIncidentFindingsResult batchGetIncidentFindings(BatchGetIncidentFindingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -90,6 +95,11 @@ public class AbstractAWSSSMIncidents implements AWSSSMIncidents {
 
     @Override
     public GetTimelineEventResult getTimelineEvent(GetTimelineEventRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListIncidentFindingsResult listIncidentFindings(ListIncidentFindingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

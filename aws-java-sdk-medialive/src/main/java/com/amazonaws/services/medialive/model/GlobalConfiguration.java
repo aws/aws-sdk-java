@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,8 @@ public class GlobalConfiguration implements Serializable, Cloneable, StructuredP
      * channels with less than one video frame per second.
      */
     private String supportLowFramerateInputs;
+    /** Advanced output locking settings */
+    private OutputLockingSettings outputLockingSettings;
 
     /**
      * Value to set the initial audio gain for the Live Event.
@@ -405,6 +407,40 @@ public class GlobalConfiguration implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * Advanced output locking settings
+     * 
+     * @param outputLockingSettings
+     *        Advanced output locking settings
+     */
+
+    public void setOutputLockingSettings(OutputLockingSettings outputLockingSettings) {
+        this.outputLockingSettings = outputLockingSettings;
+    }
+
+    /**
+     * Advanced output locking settings
+     * 
+     * @return Advanced output locking settings
+     */
+
+    public OutputLockingSettings getOutputLockingSettings() {
+        return this.outputLockingSettings;
+    }
+
+    /**
+     * Advanced output locking settings
+     * 
+     * @param outputLockingSettings
+     *        Advanced output locking settings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GlobalConfiguration withOutputLockingSettings(OutputLockingSettings outputLockingSettings) {
+        setOutputLockingSettings(outputLockingSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -427,7 +463,9 @@ public class GlobalConfiguration implements Serializable, Cloneable, StructuredP
         if (getOutputTimingSource() != null)
             sb.append("OutputTimingSource: ").append(getOutputTimingSource()).append(",");
         if (getSupportLowFramerateInputs() != null)
-            sb.append("SupportLowFramerateInputs: ").append(getSupportLowFramerateInputs());
+            sb.append("SupportLowFramerateInputs: ").append(getSupportLowFramerateInputs()).append(",");
+        if (getOutputLockingSettings() != null)
+            sb.append("OutputLockingSettings: ").append(getOutputLockingSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -466,6 +504,10 @@ public class GlobalConfiguration implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getSupportLowFramerateInputs() != null && other.getSupportLowFramerateInputs().equals(this.getSupportLowFramerateInputs()) == false)
             return false;
+        if (other.getOutputLockingSettings() == null ^ this.getOutputLockingSettings() == null)
+            return false;
+        if (other.getOutputLockingSettings() != null && other.getOutputLockingSettings().equals(this.getOutputLockingSettings()) == false)
+            return false;
         return true;
     }
 
@@ -480,6 +522,7 @@ public class GlobalConfiguration implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getOutputLockingMode() == null) ? 0 : getOutputLockingMode().hashCode());
         hashCode = prime * hashCode + ((getOutputTimingSource() == null) ? 0 : getOutputTimingSource().hashCode());
         hashCode = prime * hashCode + ((getSupportLowFramerateInputs() == null) ? 0 : getSupportLowFramerateInputs().hashCode());
+        hashCode = prime * hashCode + ((getOutputLockingSettings() == null) ? 0 : getOutputLockingSettings().hashCode());
         return hashCode;
     }
 

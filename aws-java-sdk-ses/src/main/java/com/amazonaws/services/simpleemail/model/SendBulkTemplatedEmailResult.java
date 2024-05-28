@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,17 +25,23 @@ public class SendBulkTemplatedEmailResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> action.
+     * One object per intended recipient. Check each response object and retry any messages with a failure status. (Note
+     * that order of responses will be respective to order of destinations in the request.)Receipt rules enable you to
+     * specify which actions
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<BulkEmailDestinationStatus> status;
 
     /**
      * <p>
-     * The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> action.
+     * One object per intended recipient. Check each response object and retry any messages with a failure status. (Note
+     * that order of responses will be respective to order of destinations in the request.)Receipt rules enable you to
+     * specify which actions
      * </p>
      * 
-     * @return The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> action.
+     * @return One object per intended recipient. Check each response object and retry any messages with a failure
+     *         status. (Note that order of responses will be respective to order of destinations in the request.)Receipt
+     *         rules enable you to specify which actions
      */
 
     public java.util.List<BulkEmailDestinationStatus> getStatus() {
@@ -47,11 +53,15 @@ public class SendBulkTemplatedEmailResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> action.
+     * One object per intended recipient. Check each response object and retry any messages with a failure status. (Note
+     * that order of responses will be respective to order of destinations in the request.)Receipt rules enable you to
+     * specify which actions
      * </p>
      * 
      * @param status
-     *        The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> action.
+     *        One object per intended recipient. Check each response object and retry any messages with a failure
+     *        status. (Note that order of responses will be respective to order of destinations in the request.)Receipt
+     *        rules enable you to specify which actions
      */
 
     public void setStatus(java.util.Collection<BulkEmailDestinationStatus> status) {
@@ -65,7 +75,9 @@ public class SendBulkTemplatedEmailResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> action.
+     * One object per intended recipient. Check each response object and retry any messages with a failure status. (Note
+     * that order of responses will be respective to order of destinations in the request.)Receipt rules enable you to
+     * specify which actions
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -74,7 +86,9 @@ public class SendBulkTemplatedEmailResult extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param status
-     *        The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> action.
+     *        One object per intended recipient. Check each response object and retry any messages with a failure
+     *        status. (Note that order of responses will be respective to order of destinations in the request.)Receipt
+     *        rules enable you to specify which actions
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +104,15 @@ public class SendBulkTemplatedEmailResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> action.
+     * One object per intended recipient. Check each response object and retry any messages with a failure status. (Note
+     * that order of responses will be respective to order of destinations in the request.)Receipt rules enable you to
+     * specify which actions
      * </p>
      * 
      * @param status
-     *        The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> action.
+     *        One object per intended recipient. Check each response object and retry any messages with a failure
+     *        status. (Note that order of responses will be respective to order of destinations in the request.)Receipt
+     *        rules enable you to specify which actions
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

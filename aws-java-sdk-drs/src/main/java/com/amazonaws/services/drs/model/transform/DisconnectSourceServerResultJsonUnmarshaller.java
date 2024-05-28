@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,10 @@ public class DisconnectSourceServerResultJsonUnmarshaller implements Unmarshalle
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("agentVersion", targetDepth)) {
+                    context.nextToken();
+                    disconnectSourceServerResult.setAgentVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
                     disconnectSourceServerResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
@@ -67,6 +71,22 @@ public class DisconnectSourceServerResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("recoveryInstanceId", targetDepth)) {
                     context.nextToken();
                     disconnectSourceServerResult.setRecoveryInstanceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("replicationDirection", targetDepth)) {
+                    context.nextToken();
+                    disconnectSourceServerResult.setReplicationDirection(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("reversedDirectionSourceServerArn", targetDepth)) {
+                    context.nextToken();
+                    disconnectSourceServerResult.setReversedDirectionSourceServerArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("sourceCloudProperties", targetDepth)) {
+                    context.nextToken();
+                    disconnectSourceServerResult.setSourceCloudProperties(SourceCloudPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("sourceNetworkID", targetDepth)) {
+                    context.nextToken();
+                    disconnectSourceServerResult.setSourceNetworkID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceProperties", targetDepth)) {
                     context.nextToken();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.apprunner.AWSAppRunnerClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.apprunner.model.*;
+
 import com.amazonaws.services.apprunner.model.transform.*;
 
 /**
@@ -328,8 +329,8 @@ public class AWSAppRunnerClient extends AmazonWebServiceClient implements AWSApp
      * multiple services.
      * </p>
      * <p>
-     * A connection resource is needed to access GitHub repositories. GitHub requires a user interface approval process
-     * through the App Runner console before you can use the connection.
+     * A connection resource is needed to access GitHub and Bitbucket repositories. Both require a user interface
+     * approval process through the App Runner console before you can use the connection.
      * </p>
      * 
      * @param createConnectionRequest
@@ -688,8 +689,10 @@ public class AWSAppRunnerClient extends AmazonWebServiceClient implements AWSApp
 
     /**
      * <p>
-     * Delete an App Runner automatic scaling configuration resource. You can delete a specific revision or the latest
-     * active revision. You can't delete a configuration that's used by one or more App Runner services.
+     * Delete an App Runner automatic scaling configuration resource. You can delete a top level auto scaling
+     * configuration, a specific revision of one, or all revisions associated with the top level configuration. You
+     * can't delete the default auto scaling configuration or a configuration that's used by one or more App Runner
+     * services.
      * </p>
      * 
      * @param deleteAutoScalingConfigurationRequest
@@ -1897,6 +1900,73 @@ public class AWSAppRunnerClient extends AmazonWebServiceClient implements AWSApp
 
     /**
      * <p>
+     * Returns a list of the associated App Runner services using an auto scaling configuration.
+     * </p>
+     * 
+     * @param listServicesForAutoScalingConfigurationRequest
+     * @return Result of the ListServicesForAutoScalingConfiguration operation returned by the service.
+     * @throws InvalidRequestException
+     *         One or more input parameters aren't valid. Refer to the API action's document page, correct the input
+     *         parameters, and try the action again.
+     * @throws InternalServiceErrorException
+     *         An unexpected service exception occurred.
+     * @throws ResourceNotFoundException
+     *         A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon Web Services
+     *         account.
+     * @sample AWSAppRunner.ListServicesForAutoScalingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListServicesForAutoScalingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListServicesForAutoScalingConfigurationResult listServicesForAutoScalingConfiguration(ListServicesForAutoScalingConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeListServicesForAutoScalingConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final ListServicesForAutoScalingConfigurationResult executeListServicesForAutoScalingConfiguration(
+            ListServicesForAutoScalingConfigurationRequest listServicesForAutoScalingConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listServicesForAutoScalingConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListServicesForAutoScalingConfigurationRequest> request = null;
+        Response<ListServicesForAutoScalingConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListServicesForAutoScalingConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listServicesForAutoScalingConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppRunner");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListServicesForAutoScalingConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListServicesForAutoScalingConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListServicesForAutoScalingConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * List tags that are associated with for an App Runner resource. The response contains a list of tag key-value
      * pairs.
      * </p>
@@ -2415,6 +2485,73 @@ public class AWSAppRunnerClient extends AmazonWebServiceClient implements AWSApp
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Update an auto scaling configuration to be the default. The existing default auto scaling configuration will be
+     * set to non-default automatically.
+     * </p>
+     * 
+     * @param updateDefaultAutoScalingConfigurationRequest
+     * @return Result of the UpdateDefaultAutoScalingConfiguration operation returned by the service.
+     * @throws InvalidRequestException
+     *         One or more input parameters aren't valid. Refer to the API action's document page, correct the input
+     *         parameters, and try the action again.
+     * @throws InternalServiceErrorException
+     *         An unexpected service exception occurred.
+     * @throws ResourceNotFoundException
+     *         A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon Web Services
+     *         account.
+     * @sample AWSAppRunner.UpdateDefaultAutoScalingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UpdateDefaultAutoScalingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateDefaultAutoScalingConfigurationResult updateDefaultAutoScalingConfiguration(UpdateDefaultAutoScalingConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDefaultAutoScalingConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDefaultAutoScalingConfigurationResult executeUpdateDefaultAutoScalingConfiguration(
+            UpdateDefaultAutoScalingConfigurationRequest updateDefaultAutoScalingConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateDefaultAutoScalingConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateDefaultAutoScalingConfigurationRequest> request = null;
+        Response<UpdateDefaultAutoScalingConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateDefaultAutoScalingConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateDefaultAutoScalingConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppRunner");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDefaultAutoScalingConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateDefaultAutoScalingConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateDefaultAutoScalingConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,14 @@ public class ScheduleConfigJsonUnmarshaller implements Unmarshaller<ScheduleConf
                 if (context.testExpression("ScheduleExpression", targetDepth)) {
                     context.nextToken();
                     scheduleConfig.setScheduleExpression(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DataAnalysisStartTime", targetDepth)) {
+                    context.nextToken();
+                    scheduleConfig.setDataAnalysisStartTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DataAnalysisEndTime", targetDepth)) {
+                    context.nextToken();
+                    scheduleConfig.setDataAnalysisEndTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

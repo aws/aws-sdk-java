@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -175,6 +175,19 @@ public class AbstractAmazonDetectiveAsync extends AbstractAmazonDetective implem
     }
 
     @Override
+    public java.util.concurrent.Future<GetInvestigationResult> getInvestigationAsync(GetInvestigationRequest request) {
+
+        return getInvestigationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInvestigationResult> getInvestigationAsync(GetInvestigationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetInvestigationRequest, GetInvestigationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetMembersResult> getMembersAsync(GetMembersRequest request) {
 
         return getMembersAsync(request, null);
@@ -209,6 +222,32 @@ public class AbstractAmazonDetectiveAsync extends AbstractAmazonDetective implem
     @Override
     public java.util.concurrent.Future<ListGraphsResult> listGraphsAsync(ListGraphsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListGraphsRequest, ListGraphsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListIndicatorsResult> listIndicatorsAsync(ListIndicatorsRequest request) {
+
+        return listIndicatorsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListIndicatorsResult> listIndicatorsAsync(ListIndicatorsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListIndicatorsRequest, ListIndicatorsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInvestigationsResult> listInvestigationsAsync(ListInvestigationsRequest request) {
+
+        return listInvestigationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInvestigationsResult> listInvestigationsAsync(ListInvestigationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListInvestigationsRequest, ListInvestigationsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -279,6 +318,19 @@ public class AbstractAmazonDetectiveAsync extends AbstractAmazonDetective implem
     }
 
     @Override
+    public java.util.concurrent.Future<StartInvestigationResult> startInvestigationAsync(StartInvestigationRequest request) {
+
+        return startInvestigationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartInvestigationResult> startInvestigationAsync(StartInvestigationRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartInvestigationRequest, StartInvestigationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StartMonitoringMemberResult> startMonitoringMemberAsync(StartMonitoringMemberRequest request) {
 
         return startMonitoringMemberAsync(request, null);
@@ -326,6 +378,19 @@ public class AbstractAmazonDetectiveAsync extends AbstractAmazonDetective implem
     @Override
     public java.util.concurrent.Future<UpdateDatasourcePackagesResult> updateDatasourcePackagesAsync(UpdateDatasourcePackagesRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDatasourcePackagesRequest, UpdateDatasourcePackagesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInvestigationStateResult> updateInvestigationStateAsync(UpdateInvestigationStateRequest request) {
+
+        return updateInvestigationStateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInvestigationStateResult> updateInvestigationStateAsync(UpdateInvestigationStateRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateInvestigationStateRequest, UpdateInvestigationStateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

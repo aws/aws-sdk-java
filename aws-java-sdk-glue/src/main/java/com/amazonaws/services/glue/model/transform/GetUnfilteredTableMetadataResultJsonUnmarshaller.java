@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,6 +67,32 @@ public class GetUnfilteredTableMetadataResultJsonUnmarshaller implements Unmarsh
                     getUnfilteredTableMetadataResult.setCellFilters(new ListUnmarshaller<ColumnRowFilter>(ColumnRowFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (context.testExpression("QueryAuthorizationId", targetDepth)) {
+                    context.nextToken();
+                    getUnfilteredTableMetadataResult.setQueryAuthorizationId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("IsMultiDialectView", targetDepth)) {
+                    context.nextToken();
+                    getUnfilteredTableMetadataResult.setIsMultiDialectView(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("ResourceArn", targetDepth)) {
+                    context.nextToken();
+                    getUnfilteredTableMetadataResult.setResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("IsProtected", targetDepth)) {
+                    context.nextToken();
+                    getUnfilteredTableMetadataResult.setIsProtected(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("Permissions", targetDepth)) {
+                    context.nextToken();
+                    getUnfilteredTableMetadataResult.setPermissions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("RowFilter", targetDepth)) {
+                    context.nextToken();
+                    getUnfilteredTableMetadataResult.setRowFilter(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

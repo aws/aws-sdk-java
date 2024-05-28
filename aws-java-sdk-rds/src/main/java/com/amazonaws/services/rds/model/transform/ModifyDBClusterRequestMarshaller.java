@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -263,6 +263,42 @@ public class ModifyDBClusterRequestMarshaller implements Marshaller<Request<Modi
 
         if (modifyDBClusterRequest.getNetworkType() != null) {
             request.addParameter("NetworkType", StringUtils.fromString(modifyDBClusterRequest.getNetworkType()));
+        }
+
+        if (modifyDBClusterRequest.getManageMasterUserPassword() != null) {
+            request.addParameter("ManageMasterUserPassword", StringUtils.fromBoolean(modifyDBClusterRequest.getManageMasterUserPassword()));
+        }
+
+        if (modifyDBClusterRequest.getRotateMasterUserPassword() != null) {
+            request.addParameter("RotateMasterUserPassword", StringUtils.fromBoolean(modifyDBClusterRequest.getRotateMasterUserPassword()));
+        }
+
+        if (modifyDBClusterRequest.getMasterUserSecretKmsKeyId() != null) {
+            request.addParameter("MasterUserSecretKmsKeyId", StringUtils.fromString(modifyDBClusterRequest.getMasterUserSecretKmsKeyId()));
+        }
+
+        if (modifyDBClusterRequest.getEngineMode() != null) {
+            request.addParameter("EngineMode", StringUtils.fromString(modifyDBClusterRequest.getEngineMode()));
+        }
+
+        if (modifyDBClusterRequest.getAllowEngineModeChange() != null) {
+            request.addParameter("AllowEngineModeChange", StringUtils.fromBoolean(modifyDBClusterRequest.getAllowEngineModeChange()));
+        }
+
+        if (modifyDBClusterRequest.getEnableLocalWriteForwarding() != null) {
+            request.addParameter("EnableLocalWriteForwarding", StringUtils.fromBoolean(modifyDBClusterRequest.getEnableLocalWriteForwarding()));
+        }
+
+        if (modifyDBClusterRequest.getAwsBackupRecoveryPointArn() != null) {
+            request.addParameter("AwsBackupRecoveryPointArn", StringUtils.fromString(modifyDBClusterRequest.getAwsBackupRecoveryPointArn()));
+        }
+
+        if (modifyDBClusterRequest.getEnableLimitlessDatabase() != null) {
+            request.addParameter("EnableLimitlessDatabase", StringUtils.fromBoolean(modifyDBClusterRequest.getEnableLimitlessDatabase()));
+        }
+
+        if (modifyDBClusterRequest.getCACertificateIdentifier() != null) {
+            request.addParameter("CACertificateIdentifier", StringUtils.fromString(modifyDBClusterRequest.getCACertificateIdentifier()));
         }
 
         return request;

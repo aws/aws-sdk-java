@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -88,6 +88,32 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      */
     private java.util.List<String> securityGroups;
+    /**
+     * <p>
+     * The replication details of the data replication-enabled broker. Only returned if dataReplicationMode is set to
+     * CRDR.
+     * </p>
+     */
+    private DataReplicationMetadataOutput dataReplicationMetadata;
+    /**
+     * <p>
+     * Describes whether this broker is a part of a data replication pair.
+     * </p>
+     */
+    private String dataReplicationMode;
+    /**
+     * <p>
+     * The pending replication details of the data replication-enabled broker. Only returned if
+     * pendingDataReplicationMode is set to CRDR.
+     * </p>
+     */
+    private DataReplicationMetadataOutput pendingDataReplicationMetadata;
+    /**
+     * <p>
+     * Describes whether this broker will be a part of a data replication pair after reboot.
+     * </p>
+     */
+    private String pendingDataReplicationMode;
 
     /**
      * <p>
@@ -586,6 +612,216 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * The replication details of the data replication-enabled broker. Only returned if dataReplicationMode is set to
+     * CRDR.
+     * </p>
+     * 
+     * @param dataReplicationMetadata
+     *        The replication details of the data replication-enabled broker. Only returned if dataReplicationMode is
+     *        set to CRDR.
+     */
+
+    public void setDataReplicationMetadata(DataReplicationMetadataOutput dataReplicationMetadata) {
+        this.dataReplicationMetadata = dataReplicationMetadata;
+    }
+
+    /**
+     * <p>
+     * The replication details of the data replication-enabled broker. Only returned if dataReplicationMode is set to
+     * CRDR.
+     * </p>
+     * 
+     * @return The replication details of the data replication-enabled broker. Only returned if dataReplicationMode is
+     *         set to CRDR.
+     */
+
+    public DataReplicationMetadataOutput getDataReplicationMetadata() {
+        return this.dataReplicationMetadata;
+    }
+
+    /**
+     * <p>
+     * The replication details of the data replication-enabled broker. Only returned if dataReplicationMode is set to
+     * CRDR.
+     * </p>
+     * 
+     * @param dataReplicationMetadata
+     *        The replication details of the data replication-enabled broker. Only returned if dataReplicationMode is
+     *        set to CRDR.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateBrokerResult withDataReplicationMetadata(DataReplicationMetadataOutput dataReplicationMetadata) {
+        setDataReplicationMetadata(dataReplicationMetadata);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes whether this broker is a part of a data replication pair.
+     * </p>
+     * 
+     * @param dataReplicationMode
+     *        Describes whether this broker is a part of a data replication pair.
+     * @see DataReplicationMode
+     */
+
+    public void setDataReplicationMode(String dataReplicationMode) {
+        this.dataReplicationMode = dataReplicationMode;
+    }
+
+    /**
+     * <p>
+     * Describes whether this broker is a part of a data replication pair.
+     * </p>
+     * 
+     * @return Describes whether this broker is a part of a data replication pair.
+     * @see DataReplicationMode
+     */
+
+    public String getDataReplicationMode() {
+        return this.dataReplicationMode;
+    }
+
+    /**
+     * <p>
+     * Describes whether this broker is a part of a data replication pair.
+     * </p>
+     * 
+     * @param dataReplicationMode
+     *        Describes whether this broker is a part of a data replication pair.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DataReplicationMode
+     */
+
+    public UpdateBrokerResult withDataReplicationMode(String dataReplicationMode) {
+        setDataReplicationMode(dataReplicationMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes whether this broker is a part of a data replication pair.
+     * </p>
+     * 
+     * @param dataReplicationMode
+     *        Describes whether this broker is a part of a data replication pair.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DataReplicationMode
+     */
+
+    public UpdateBrokerResult withDataReplicationMode(DataReplicationMode dataReplicationMode) {
+        this.dataReplicationMode = dataReplicationMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The pending replication details of the data replication-enabled broker. Only returned if
+     * pendingDataReplicationMode is set to CRDR.
+     * </p>
+     * 
+     * @param pendingDataReplicationMetadata
+     *        The pending replication details of the data replication-enabled broker. Only returned if
+     *        pendingDataReplicationMode is set to CRDR.
+     */
+
+    public void setPendingDataReplicationMetadata(DataReplicationMetadataOutput pendingDataReplicationMetadata) {
+        this.pendingDataReplicationMetadata = pendingDataReplicationMetadata;
+    }
+
+    /**
+     * <p>
+     * The pending replication details of the data replication-enabled broker. Only returned if
+     * pendingDataReplicationMode is set to CRDR.
+     * </p>
+     * 
+     * @return The pending replication details of the data replication-enabled broker. Only returned if
+     *         pendingDataReplicationMode is set to CRDR.
+     */
+
+    public DataReplicationMetadataOutput getPendingDataReplicationMetadata() {
+        return this.pendingDataReplicationMetadata;
+    }
+
+    /**
+     * <p>
+     * The pending replication details of the data replication-enabled broker. Only returned if
+     * pendingDataReplicationMode is set to CRDR.
+     * </p>
+     * 
+     * @param pendingDataReplicationMetadata
+     *        The pending replication details of the data replication-enabled broker. Only returned if
+     *        pendingDataReplicationMode is set to CRDR.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateBrokerResult withPendingDataReplicationMetadata(DataReplicationMetadataOutput pendingDataReplicationMetadata) {
+        setPendingDataReplicationMetadata(pendingDataReplicationMetadata);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes whether this broker will be a part of a data replication pair after reboot.
+     * </p>
+     * 
+     * @param pendingDataReplicationMode
+     *        Describes whether this broker will be a part of a data replication pair after reboot.
+     * @see DataReplicationMode
+     */
+
+    public void setPendingDataReplicationMode(String pendingDataReplicationMode) {
+        this.pendingDataReplicationMode = pendingDataReplicationMode;
+    }
+
+    /**
+     * <p>
+     * Describes whether this broker will be a part of a data replication pair after reboot.
+     * </p>
+     * 
+     * @return Describes whether this broker will be a part of a data replication pair after reboot.
+     * @see DataReplicationMode
+     */
+
+    public String getPendingDataReplicationMode() {
+        return this.pendingDataReplicationMode;
+    }
+
+    /**
+     * <p>
+     * Describes whether this broker will be a part of a data replication pair after reboot.
+     * </p>
+     * 
+     * @param pendingDataReplicationMode
+     *        Describes whether this broker will be a part of a data replication pair after reboot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DataReplicationMode
+     */
+
+    public UpdateBrokerResult withPendingDataReplicationMode(String pendingDataReplicationMode) {
+        setPendingDataReplicationMode(pendingDataReplicationMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes whether this broker will be a part of a data replication pair after reboot.
+     * </p>
+     * 
+     * @param pendingDataReplicationMode
+     *        Describes whether this broker will be a part of a data replication pair after reboot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DataReplicationMode
+     */
+
+    public UpdateBrokerResult withPendingDataReplicationMode(DataReplicationMode pendingDataReplicationMode) {
+        this.pendingDataReplicationMode = pendingDataReplicationMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -616,7 +852,15 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
         if (getMaintenanceWindowStartTime() != null)
             sb.append("MaintenanceWindowStartTime: ").append(getMaintenanceWindowStartTime()).append(",");
         if (getSecurityGroups() != null)
-            sb.append("SecurityGroups: ").append(getSecurityGroups());
+            sb.append("SecurityGroups: ").append(getSecurityGroups()).append(",");
+        if (getDataReplicationMetadata() != null)
+            sb.append("DataReplicationMetadata: ").append(getDataReplicationMetadata()).append(",");
+        if (getDataReplicationMode() != null)
+            sb.append("DataReplicationMode: ").append(getDataReplicationMode()).append(",");
+        if (getPendingDataReplicationMetadata() != null)
+            sb.append("PendingDataReplicationMetadata: ").append(getPendingDataReplicationMetadata()).append(",");
+        if (getPendingDataReplicationMode() != null)
+            sb.append("PendingDataReplicationMode: ").append(getPendingDataReplicationMode());
         sb.append("}");
         return sb.toString();
     }
@@ -671,6 +915,23 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
             return false;
         if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false)
             return false;
+        if (other.getDataReplicationMetadata() == null ^ this.getDataReplicationMetadata() == null)
+            return false;
+        if (other.getDataReplicationMetadata() != null && other.getDataReplicationMetadata().equals(this.getDataReplicationMetadata()) == false)
+            return false;
+        if (other.getDataReplicationMode() == null ^ this.getDataReplicationMode() == null)
+            return false;
+        if (other.getDataReplicationMode() != null && other.getDataReplicationMode().equals(this.getDataReplicationMode()) == false)
+            return false;
+        if (other.getPendingDataReplicationMetadata() == null ^ this.getPendingDataReplicationMetadata() == null)
+            return false;
+        if (other.getPendingDataReplicationMetadata() != null
+                && other.getPendingDataReplicationMetadata().equals(this.getPendingDataReplicationMetadata()) == false)
+            return false;
+        if (other.getPendingDataReplicationMode() == null ^ this.getPendingDataReplicationMode() == null)
+            return false;
+        if (other.getPendingDataReplicationMode() != null && other.getPendingDataReplicationMode().equals(this.getPendingDataReplicationMode()) == false)
+            return false;
         return true;
     }
 
@@ -689,6 +950,10 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
         hashCode = prime * hashCode + ((getLogs() == null) ? 0 : getLogs().hashCode());
         hashCode = prime * hashCode + ((getMaintenanceWindowStartTime() == null) ? 0 : getMaintenanceWindowStartTime().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
+        hashCode = prime * hashCode + ((getDataReplicationMetadata() == null) ? 0 : getDataReplicationMetadata().hashCode());
+        hashCode = prime * hashCode + ((getDataReplicationMode() == null) ? 0 : getDataReplicationMode().hashCode());
+        hashCode = prime * hashCode + ((getPendingDataReplicationMetadata() == null) ? 0 : getPendingDataReplicationMetadata().hashCode());
+        hashCode = prime * hashCode + ((getPendingDataReplicationMode() == null) ? 0 : getPendingDataReplicationMode().hashCode());
         return hashCode;
     }
 

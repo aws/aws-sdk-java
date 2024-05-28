@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -84,6 +84,13 @@ public class ApplicationSettingsResource implements Serializable, Cloneable, Str
      * </p>
      */
     private QuietTime quietTime;
+    /**
+     * <p>
+     * The default sending limits for journeys in the application. These limits apply to each journey for the
+     * application but can be overridden, on a per journey basis, with the JourneyLimits resource.
+     * </p>
+     */
+    private ApplicationSettingsJourneyLimits journeyLimits;
 
     /**
      * <p>
@@ -443,6 +450,52 @@ public class ApplicationSettingsResource implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * The default sending limits for journeys in the application. These limits apply to each journey for the
+     * application but can be overridden, on a per journey basis, with the JourneyLimits resource.
+     * </p>
+     * 
+     * @param journeyLimits
+     *        The default sending limits for journeys in the application. These limits apply to each journey for the
+     *        application but can be overridden, on a per journey basis, with the JourneyLimits resource.
+     */
+
+    public void setJourneyLimits(ApplicationSettingsJourneyLimits journeyLimits) {
+        this.journeyLimits = journeyLimits;
+    }
+
+    /**
+     * <p>
+     * The default sending limits for journeys in the application. These limits apply to each journey for the
+     * application but can be overridden, on a per journey basis, with the JourneyLimits resource.
+     * </p>
+     * 
+     * @return The default sending limits for journeys in the application. These limits apply to each journey for the
+     *         application but can be overridden, on a per journey basis, with the JourneyLimits resource.
+     */
+
+    public ApplicationSettingsJourneyLimits getJourneyLimits() {
+        return this.journeyLimits;
+    }
+
+    /**
+     * <p>
+     * The default sending limits for journeys in the application. These limits apply to each journey for the
+     * application but can be overridden, on a per journey basis, with the JourneyLimits resource.
+     * </p>
+     * 
+     * @param journeyLimits
+     *        The default sending limits for journeys in the application. These limits apply to each journey for the
+     *        application but can be overridden, on a per journey basis, with the JourneyLimits resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationSettingsResource withJourneyLimits(ApplicationSettingsJourneyLimits journeyLimits) {
+        setJourneyLimits(journeyLimits);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -463,7 +516,9 @@ public class ApplicationSettingsResource implements Serializable, Cloneable, Str
         if (getLimits() != null)
             sb.append("Limits: ").append(getLimits()).append(",");
         if (getQuietTime() != null)
-            sb.append("QuietTime: ").append(getQuietTime());
+            sb.append("QuietTime: ").append(getQuietTime()).append(",");
+        if (getJourneyLimits() != null)
+            sb.append("JourneyLimits: ").append(getJourneyLimits());
         sb.append("}");
         return sb.toString();
     }
@@ -498,6 +553,10 @@ public class ApplicationSettingsResource implements Serializable, Cloneable, Str
             return false;
         if (other.getQuietTime() != null && other.getQuietTime().equals(this.getQuietTime()) == false)
             return false;
+        if (other.getJourneyLimits() == null ^ this.getJourneyLimits() == null)
+            return false;
+        if (other.getJourneyLimits() != null && other.getJourneyLimits().equals(this.getJourneyLimits()) == false)
+            return false;
         return true;
     }
 
@@ -511,6 +570,7 @@ public class ApplicationSettingsResource implements Serializable, Cloneable, Str
         hashCode = prime * hashCode + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate().hashCode());
         hashCode = prime * hashCode + ((getLimits() == null) ? 0 : getLimits().hashCode());
         hashCode = prime * hashCode + ((getQuietTime() == null) ? 0 : getQuietTime().hashCode());
+        hashCode = prime * hashCode + ((getJourneyLimits() == null) ? 0 : getJourneyLimits().hashCode());
         return hashCode;
     }
 

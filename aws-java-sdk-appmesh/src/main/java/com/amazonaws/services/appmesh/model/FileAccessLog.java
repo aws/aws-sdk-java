@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,10 +41,12 @@ public class FileAccessLog implements Serializable, Cloneable, StructuredPojo {
      * to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's
      * file system to write the files to disk.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;note&gt; &lt;p&gt;The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.&lt;/p&gt; &lt;/note&gt; </code>
-     * </pre>
+     * <note>
+     * <p>
+     * The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to
+     * bootstrap properly.
+     * </p>
+     * </note>
      */
     private String path;
 
@@ -98,18 +100,22 @@ public class FileAccessLog implements Serializable, Cloneable, StructuredPojo {
      * to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's
      * file system to write the files to disk.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;note&gt; &lt;p&gt;The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.&lt;/p&gt; &lt;/note&gt; </code>
-     * </pre>
+     * <note>
+     * <p>
+     * The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to
+     * bootstrap properly.
+     * </p>
+     * </note>
      * 
      * @param path
      *        The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to
      *        standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to
      *        export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a
-     *        path in the Envoy container's file system to write the files to disk.</p>
-     * 
-     * <pre><code> &lt;note&gt; &lt;p&gt;The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.&lt;/p&gt; &lt;/note&gt; </code>
+     *        path in the Envoy container's file system to write the files to disk.</p> <note>
+     *        <p>
+     *        The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to
+     *        bootstrap properly.
+     *        </p>
      */
 
     public void setPath(String path) {
@@ -123,17 +129,21 @@ public class FileAccessLog implements Serializable, Cloneable, StructuredPojo {
      * to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's
      * file system to write the files to disk.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;note&gt; &lt;p&gt;The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.&lt;/p&gt; &lt;/note&gt; </code>
-     * </pre>
+     * <note>
+     * <p>
+     * The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to
+     * bootstrap properly.
+     * </p>
+     * </note>
      * 
      * @return The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to
      *         standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to
      *         export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a
-     *         path in the Envoy container's file system to write the files to disk.</p>
-     * 
-     * <pre><code> &lt;note&gt; &lt;p&gt;The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.&lt;/p&gt; &lt;/note&gt; </code>
+     *         path in the Envoy container's file system to write the files to disk.</p> <note>
+     *         <p>
+     *         The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails
+     *         to bootstrap properly.
+     *         </p>
      */
 
     public String getPath() {
@@ -147,19 +157,22 @@ public class FileAccessLog implements Serializable, Cloneable, StructuredPojo {
      * to a log storage service such as Amazon CloudWatch Logs. You can also specify a path in the Envoy container's
      * file system to write the files to disk.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;note&gt; &lt;p&gt;The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.&lt;/p&gt; &lt;/note&gt; </code>
-     * </pre>
+     * <note>
+     * <p>
+     * The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to
+     * bootstrap properly.
+     * </p>
+     * </note>
      * 
      * @param path
      *        The file path to write access logs to. You can use <code>/dev/stdout</code> to send access logs to
      *        standard out and configure your Envoy container to use a log driver, such as <code>awslogs</code>, to
      *        export the access logs to a log storage service such as Amazon CloudWatch Logs. You can also specify a
-     *        path in the Envoy container's file system to write the files to disk.</p>
-     * 
-     *        <pre>
-     * <code> &lt;note&gt; &lt;p&gt;The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to bootstrap properly.&lt;/p&gt; &lt;/note&gt; </code>
+     *        path in the Envoy container's file system to write the files to disk.</p> <note>
+     *        <p>
+     *        The Envoy process must have write permissions to the path that you specify here. Otherwise, Envoy fails to
+     *        bootstrap properly.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

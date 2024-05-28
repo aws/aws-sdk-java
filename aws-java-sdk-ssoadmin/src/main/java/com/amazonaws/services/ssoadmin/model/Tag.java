@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * A set of key-value pairs that are used to manage the resource. Tags can only be applied to permission sets and cannot
- * be applied to corresponding roles that IAM Identity Center creates in AWS accounts.
+ * be applied to corresponding roles that IAM Identity Center creates in Amazon Web Services accounts.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sso-admin-2020-07-20/Tag" target="_top">AWS API

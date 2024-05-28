@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.imagebuilder.AWSimagebuilderClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.imagebuilder.model.*;
+
 import com.amazonaws.services.imagebuilder.model.transform.*;
 
 /**
@@ -80,26 +81,11 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                     .withSupportsIon(false)
                     .withContentTypeOverride("application/json")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.imagebuilder.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValueException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.imagebuilder.model.transform.InvalidParameterValueExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.imagebuilder.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.imagebuilder.model.transform.InvalidRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.imagebuilder.model.transform.ServiceExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.imagebuilder.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CallRateLimitExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.imagebuilder.model.transform.CallRateLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.imagebuilder.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
@@ -113,12 +99,6 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                             new JsonErrorShapeMetadata().withErrorCode("IdempotentParameterMismatchException").withExceptionUnmarshaller(
                                     com.amazonaws.services.imagebuilder.model.transform.IdempotentParameterMismatchExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterCombinationException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.imagebuilder.model.transform.InvalidParameterCombinationExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.imagebuilder.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ForbiddenException").withExceptionUnmarshaller(
                                     com.amazonaws.services.imagebuilder.model.transform.ForbiddenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -130,6 +110,27 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidPaginationTokenException").withExceptionUnmarshaller(
                                     com.amazonaws.services.imagebuilder.model.transform.InvalidPaginationTokenExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.imagebuilder.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValueException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.imagebuilder.model.transform.InvalidParameterValueExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.imagebuilder.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.imagebuilder.model.transform.ServiceExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CallRateLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.imagebuilder.model.transform.CallRateLimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterCombinationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.imagebuilder.model.transform.InvalidParameterCombinationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.imagebuilder.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.imagebuilder.model.AWSimagebuilderException.class));
 
     public static AWSimagebuilderClientBuilder builder() {
@@ -195,7 +196,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws IdempotentParameterMismatchException
      *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
@@ -256,6 +257,83 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Cancel a specific image lifecycle policy runtime instance.
+     * </p>
+     * 
+     * @param cancelLifecycleExecutionRequest
+     * @return Result of the CancelLifecycleExecution operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws IdempotentParameterMismatchException
+     *         You have specified a client token for an operation using parameter values that differ from a previous
+     *         request that used the same client token.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @throws ResourceInUseException
+     *         The resource that you are trying to operate on is currently in use. Review the message details and retry
+     *         later.
+     * @sample AWSimagebuilder.CancelLifecycleExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CancelLifecycleExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CancelLifecycleExecutionResult cancelLifecycleExecution(CancelLifecycleExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelLifecycleExecution(request);
+    }
+
+    @SdkInternalApi
+    final CancelLifecycleExecutionResult executeCancelLifecycleExecution(CancelLifecycleExecutionRequest cancelLifecycleExecutionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelLifecycleExecutionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelLifecycleExecutionRequest> request = null;
+        Response<CancelLifecycleExecutionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelLifecycleExecutionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(cancelLifecycleExecutionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelLifecycleExecution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelLifecycleExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CancelLifecycleExecutionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new component that can be used to build, validate, test, and assess your image. The component is based
      * on a YAML document that you specify using exactly one of the following methods:
      * </p>
@@ -284,7 +362,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws IdempotentParameterMismatchException
      *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
@@ -367,7 +445,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws IdempotentParameterMismatchException
      *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
@@ -452,7 +530,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws IdempotentParameterMismatchException
      *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
@@ -540,7 +618,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws IdempotentParameterMismatchException
      *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
@@ -619,7 +697,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws IdempotentParameterMismatchException
      *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
@@ -700,7 +778,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws IdempotentParameterMismatchException
      *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
@@ -784,7 +862,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws IdempotentParameterMismatchException
      *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
@@ -854,6 +932,171 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Create a lifecycle policy resource.
+     * </p>
+     * 
+     * @param createLifecyclePolicyRequest
+     * @return Result of the CreateLifecyclePolicy operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws IdempotentParameterMismatchException
+     *         You have specified a client token for an operation using parameter values that differ from a previous
+     *         request that used the same client token.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @throws ResourceInUseException
+     *         The resource that you are trying to operate on is currently in use. Review the message details and retry
+     *         later.
+     * @throws ResourceAlreadyExistsException
+     *         The resource that you are trying to create already exists.
+     * @throws ServiceQuotaExceededException
+     *         You have exceeded the number of permitted resources or operations for this service. For service quotas,
+     *         see <a href="https://docs.aws.amazon.com/general/latest/gr/imagebuilder.html#limits_imagebuilder">EC2
+     *         Image Builder endpoints and quotas</a>.
+     * @sample AWSimagebuilder.CreateLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateLifecyclePolicyResult createLifecyclePolicy(CreateLifecyclePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateLifecyclePolicy(request);
+    }
+
+    @SdkInternalApi
+    final CreateLifecyclePolicyResult executeCreateLifecyclePolicy(CreateLifecyclePolicyRequest createLifecyclePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createLifecyclePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateLifecyclePolicyRequest> request = null;
+        Response<CreateLifecyclePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateLifecyclePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createLifecyclePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLifecyclePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateLifecyclePolicyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new CreateLifecyclePolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Create a new workflow or a new version of an existing workflow.
+     * </p>
+     * 
+     * @param createWorkflowRequest
+     * @return Result of the CreateWorkflow operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws IdempotentParameterMismatchException
+     *         You have specified a client token for an operation using parameter values that differ from a previous
+     *         request that used the same client token.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @throws InvalidVersionNumberException
+     *         Your version number is out of bounds or does not follow the required syntax.
+     * @throws ResourceInUseException
+     *         The resource that you are trying to operate on is currently in use. Review the message details and retry
+     *         later.
+     * @throws InvalidParameterCombinationException
+     *         You have specified two or more mutually exclusive parameters. Review the error message for details.
+     * @throws ServiceQuotaExceededException
+     *         You have exceeded the number of permitted resources or operations for this service. For service quotas,
+     *         see <a href="https://docs.aws.amazon.com/general/latest/gr/imagebuilder.html#limits_imagebuilder">EC2
+     *         Image Builder endpoints and quotas</a>.
+     * @sample AWSimagebuilder.CreateWorkflow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateWorkflow" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateWorkflowResult createWorkflow(CreateWorkflowRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateWorkflow(request);
+    }
+
+    @SdkInternalApi
+    final CreateWorkflowResult executeCreateWorkflow(CreateWorkflowRequest createWorkflowRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createWorkflowRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateWorkflowRequest> request = null;
+        Response<CreateWorkflowResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateWorkflowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createWorkflowRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateWorkflow");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateWorkflowResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateWorkflowResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a component build version.
      * </p>
      * 
@@ -868,7 +1111,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
@@ -940,7 +1183,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
@@ -1011,7 +1254,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
      *         identifier.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws ForbiddenException
@@ -1111,7 +1354,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
      *         identifier.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws ForbiddenException
@@ -1185,7 +1428,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
@@ -1257,7 +1500,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
@@ -1329,7 +1572,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
@@ -1390,6 +1633,151 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Delete the specified lifecycle policy resource.
+     * </p>
+     * 
+     * @param deleteLifecyclePolicyRequest
+     * @return Result of the DeleteLifecyclePolicy operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @throws ResourceDependencyException
+     *         You have attempted to mutate or delete a resource with a dependency that prohibits this action. See the
+     *         error message for more details.
+     * @sample AWSimagebuilder.DeleteLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteLifecyclePolicyResult deleteLifecyclePolicy(DeleteLifecyclePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteLifecyclePolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteLifecyclePolicyResult executeDeleteLifecyclePolicy(DeleteLifecyclePolicyRequest deleteLifecyclePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteLifecyclePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteLifecyclePolicyRequest> request = null;
+        Response<DeleteLifecyclePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteLifecyclePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLifecyclePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLifecyclePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteLifecyclePolicyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteLifecyclePolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a specific workflow resource.
+     * </p>
+     * 
+     * @param deleteWorkflowRequest
+     * @return Result of the DeleteWorkflow operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @throws ResourceDependencyException
+     *         You have attempted to mutate or delete a resource with a dependency that prohibits this action. See the
+     *         error message for more details.
+     * @sample AWSimagebuilder.DeleteWorkflow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteWorkflow" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteWorkflowResult deleteWorkflow(DeleteWorkflowRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteWorkflow(request);
+    }
+
+    @SdkInternalApi
+    final DeleteWorkflowResult executeDeleteWorkflow(DeleteWorkflowRequest deleteWorkflowRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteWorkflowRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteWorkflowRequest> request = null;
+        Response<DeleteWorkflowResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteWorkflowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteWorkflowRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteWorkflow");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteWorkflowResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteWorkflowResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets a component object.
      * </p>
      * 
@@ -1404,7 +1792,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
@@ -1471,7 +1859,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ResourceNotFoundException
      *         At least one of the resources referenced by your request does not exist.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
@@ -1540,7 +1928,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
@@ -1605,7 +1993,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ResourceNotFoundException
      *         At least one of the resources referenced by your request does not exist.
      * @throws ForbiddenException
@@ -1678,7 +2066,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
@@ -1749,7 +2137,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
@@ -1818,7 +2206,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
@@ -1885,7 +2273,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ResourceNotFoundException
      *         At least one of the resources referenced by your request does not exist.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
@@ -1954,7 +2342,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
@@ -2019,7 +2407,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ResourceNotFoundException
      *         At least one of the resources referenced by your request does not exist.
      * @throws ForbiddenException
@@ -2091,7 +2479,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ForbiddenException
      *         You are not authorized to perform the requested operation.
      * @throws CallRateLimitExceededException
@@ -2148,6 +2536,354 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Get the runtime information that was logged for a specific runtime instance of the lifecycle policy.
+     * </p>
+     * 
+     * @param getLifecycleExecutionRequest
+     * @return Result of the GetLifecycleExecution operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.GetLifecycleExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetLifecycleExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetLifecycleExecutionResult getLifecycleExecution(GetLifecycleExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetLifecycleExecution(request);
+    }
+
+    @SdkInternalApi
+    final GetLifecycleExecutionResult executeGetLifecycleExecution(GetLifecycleExecutionRequest getLifecycleExecutionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getLifecycleExecutionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetLifecycleExecutionRequest> request = null;
+        Response<GetLifecycleExecutionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetLifecycleExecutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLifecycleExecutionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLifecycleExecution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetLifecycleExecutionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new GetLifecycleExecutionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Get details for the specified image lifecycle policy.
+     * </p>
+     * 
+     * @param getLifecyclePolicyRequest
+     * @return Result of the GetLifecyclePolicy operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.GetLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetLifecyclePolicyResult getLifecyclePolicy(GetLifecyclePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetLifecyclePolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetLifecyclePolicyResult executeGetLifecyclePolicy(GetLifecyclePolicyRequest getLifecyclePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getLifecyclePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetLifecyclePolicyRequest> request = null;
+        Response<GetLifecyclePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetLifecyclePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLifecyclePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLifecyclePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetLifecyclePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetLifecyclePolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Get a workflow resource object.
+     * </p>
+     * 
+     * @param getWorkflowRequest
+     * @return Result of the GetWorkflow operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.GetWorkflow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetWorkflow" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetWorkflowResult getWorkflow(GetWorkflowRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetWorkflow(request);
+    }
+
+    @SdkInternalApi
+    final GetWorkflowResult executeGetWorkflow(GetWorkflowRequest getWorkflowRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getWorkflowRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetWorkflowRequest> request = null;
+        Response<GetWorkflowResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetWorkflowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getWorkflowRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetWorkflow");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetWorkflowResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetWorkflowResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Get the runtime information that was logged for a specific runtime instance of the workflow.
+     * </p>
+     * 
+     * @param getWorkflowExecutionRequest
+     * @return Result of the GetWorkflowExecution operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.GetWorkflowExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetWorkflowExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetWorkflowExecutionResult getWorkflowExecution(GetWorkflowExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetWorkflowExecution(request);
+    }
+
+    @SdkInternalApi
+    final GetWorkflowExecutionResult executeGetWorkflowExecution(GetWorkflowExecutionRequest getWorkflowExecutionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getWorkflowExecutionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetWorkflowExecutionRequest> request = null;
+        Response<GetWorkflowExecutionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetWorkflowExecutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getWorkflowExecutionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetWorkflowExecution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetWorkflowExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetWorkflowExecutionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Get the runtime information that was logged for a specific runtime instance of the workflow step.
+     * </p>
+     * 
+     * @param getWorkflowStepExecutionRequest
+     * @return Result of the GetWorkflowStepExecution operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.GetWorkflowStepExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetWorkflowStepExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetWorkflowStepExecutionResult getWorkflowStepExecution(GetWorkflowStepExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetWorkflowStepExecution(request);
+    }
+
+    @SdkInternalApi
+    final GetWorkflowStepExecutionResult executeGetWorkflowStepExecution(GetWorkflowStepExecutionRequest getWorkflowStepExecutionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getWorkflowStepExecutionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetWorkflowStepExecutionRequest> request = null;
+        Response<GetWorkflowStepExecutionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetWorkflowStepExecutionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getWorkflowStepExecutionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetWorkflowStepExecution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetWorkflowStepExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetWorkflowStepExecutionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Imports a component and transforms its data into a component document.
      * </p>
      * 
@@ -2162,7 +2898,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws IdempotentParameterMismatchException
      *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
@@ -2323,7 +3059,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws InvalidPaginationTokenException
      *         You have provided an invalid pagination token in your request.
      * @throws ForbiddenException
@@ -2382,7 +3118,9 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Returns the list of component build versions for the specified semantic version.
+     * Returns the list of components that can be filtered by name, or by using the listed <code>filters</code> to
+     * streamline results. Newly created components can take up to two minutes to appear in the ListComponents API
+     * Results.
      * </p>
      * <note>
      * <p>
@@ -2407,7 +3145,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws InvalidPaginationTokenException
      *         You have provided an invalid pagination token in your request.
      * @throws ForbiddenException
@@ -2478,7 +3216,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws InvalidPaginationTokenException
      *         You have provided an invalid pagination token in your request.
      * @throws ForbiddenException
@@ -2549,7 +3287,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws InvalidPaginationTokenException
      *         You have provided an invalid pagination token in your request.
      * @throws ForbiddenException
@@ -2622,7 +3360,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws InvalidPaginationTokenException
      *         You have provided an invalid pagination token in your request.
      * @throws ForbiddenException
@@ -2695,7 +3433,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws InvalidPaginationTokenException
      *         You have provided an invalid pagination token in your request.
      * @throws ResourceNotFoundException
@@ -2768,7 +3506,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws InvalidPaginationTokenException
      *         You have provided an invalid pagination token in your request.
      * @throws ResourceNotFoundException
@@ -2843,7 +3581,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws InvalidPaginationTokenException
      *         You have provided an invalid pagination token in your request.
      * @throws ForbiddenException
@@ -2914,7 +3652,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws InvalidPaginationTokenException
      *         You have provided an invalid pagination token in your request.
      * @throws ForbiddenException
@@ -2971,7 +3709,182 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Returns the list of images that you have access to.
+     * Returns a list of image scan aggregations for your account. You can filter by the type of key that Image Builder
+     * uses to group results. For example, if you want to get a list of findings by severity level for one of your
+     * pipelines, you might specify your pipeline with the <code>imagePipelineArn</code> filter. If you don't specify a
+     * filter, Image Builder returns an aggregation for your account.
+     * </p>
+     * <p>
+     * To streamline results, you can use the following filters in your request:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>accountId</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>imageBuildVersionArn</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>imagePipelineArn</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>vulnerabilityId</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param listImageScanFindingAggregationsRequest
+     * @return Result of the ListImageScanFindingAggregations operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws InvalidPaginationTokenException
+     *         You have provided an invalid pagination token in your request.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.ListImageScanFindingAggregations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageScanFindingAggregations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListImageScanFindingAggregationsResult listImageScanFindingAggregations(ListImageScanFindingAggregationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListImageScanFindingAggregations(request);
+    }
+
+    @SdkInternalApi
+    final ListImageScanFindingAggregationsResult executeListImageScanFindingAggregations(
+            ListImageScanFindingAggregationsRequest listImageScanFindingAggregationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listImageScanFindingAggregationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListImageScanFindingAggregationsRequest> request = null;
+        Response<ListImageScanFindingAggregationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListImageScanFindingAggregationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listImageScanFindingAggregationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListImageScanFindingAggregations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListImageScanFindingAggregationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListImageScanFindingAggregationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of image scan findings for your account.
+     * </p>
+     * 
+     * @param listImageScanFindingsRequest
+     * @return Result of the ListImageScanFindings operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws InvalidPaginationTokenException
+     *         You have provided an invalid pagination token in your request.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.ListImageScanFindings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageScanFindings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListImageScanFindingsResult listImageScanFindings(ListImageScanFindingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListImageScanFindings(request);
+    }
+
+    @SdkInternalApi
+    final ListImageScanFindingsResult executeListImageScanFindings(ListImageScanFindingsRequest listImageScanFindingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listImageScanFindingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListImageScanFindingsRequest> request = null;
+        Response<ListImageScanFindingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListImageScanFindingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listImageScanFindingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListImageScanFindings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListImageScanFindingsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListImageScanFindingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the list of images that you have access to. Newly created images can take up to two minutes to appear in
+     * the ListImages API Results.
      * </p>
      * 
      * @param listImagesRequest
@@ -2985,7 +3898,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws InvalidPaginationTokenException
      *         You have provided an invalid pagination token in your request.
      * @throws ForbiddenException
@@ -3056,7 +3969,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws InvalidPaginationTokenException
      *         You have provided an invalid pagination token in your request.
      * @throws ForbiddenException
@@ -3104,6 +4017,225 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
             HttpResponseHandler<AmazonWebServiceResponse<ListInfrastructureConfigurationsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListInfrastructureConfigurationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List resources that the runtime instance of the image lifecycle identified for lifecycle actions.
+     * </p>
+     * 
+     * @param listLifecycleExecutionResourcesRequest
+     * @return Result of the ListLifecycleExecutionResources operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws InvalidPaginationTokenException
+     *         You have provided an invalid pagination token in your request.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.ListLifecycleExecutionResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecycleExecutionResources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListLifecycleExecutionResourcesResult listLifecycleExecutionResources(ListLifecycleExecutionResourcesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListLifecycleExecutionResources(request);
+    }
+
+    @SdkInternalApi
+    final ListLifecycleExecutionResourcesResult executeListLifecycleExecutionResources(
+            ListLifecycleExecutionResourcesRequest listLifecycleExecutionResourcesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listLifecycleExecutionResourcesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListLifecycleExecutionResourcesRequest> request = null;
+        Response<ListLifecycleExecutionResourcesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListLifecycleExecutionResourcesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listLifecycleExecutionResourcesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLifecycleExecutionResources");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListLifecycleExecutionResourcesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListLifecycleExecutionResourcesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Get the lifecycle runtime history for the specified resource.
+     * </p>
+     * 
+     * @param listLifecycleExecutionsRequest
+     * @return Result of the ListLifecycleExecutions operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws InvalidPaginationTokenException
+     *         You have provided an invalid pagination token in your request.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.ListLifecycleExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecycleExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListLifecycleExecutionsResult listLifecycleExecutions(ListLifecycleExecutionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListLifecycleExecutions(request);
+    }
+
+    @SdkInternalApi
+    final ListLifecycleExecutionsResult executeListLifecycleExecutions(ListLifecycleExecutionsRequest listLifecycleExecutionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listLifecycleExecutionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListLifecycleExecutionsRequest> request = null;
+        Response<ListLifecycleExecutionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListLifecycleExecutionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listLifecycleExecutionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLifecycleExecutions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListLifecycleExecutionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListLifecycleExecutionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Get a list of lifecycle policies in your Amazon Web Services account.
+     * </p>
+     * 
+     * @param listLifecyclePoliciesRequest
+     * @return Result of the ListLifecyclePolicies operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws InvalidPaginationTokenException
+     *         You have provided an invalid pagination token in your request.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.ListLifecyclePolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecyclePolicies"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListLifecyclePoliciesResult listLifecyclePolicies(ListLifecyclePoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListLifecyclePolicies(request);
+    }
+
+    @SdkInternalApi
+    final ListLifecyclePoliciesResult executeListLifecyclePolicies(ListLifecyclePoliciesRequest listLifecyclePoliciesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listLifecyclePoliciesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListLifecyclePoliciesRequest> request = null;
+        Response<ListLifecyclePoliciesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListLifecyclePoliciesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLifecyclePoliciesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLifecyclePolicies");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListLifecyclePoliciesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListLifecyclePoliciesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3177,6 +4309,368 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Get a list of workflow steps that are waiting for action for workflows in your Amazon Web Services account.
+     * </p>
+     * 
+     * @param listWaitingWorkflowStepsRequest
+     * @return Result of the ListWaitingWorkflowSteps operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws InvalidPaginationTokenException
+     *         You have provided an invalid pagination token in your request.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.ListWaitingWorkflowSteps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWaitingWorkflowSteps"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListWaitingWorkflowStepsResult listWaitingWorkflowSteps(ListWaitingWorkflowStepsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListWaitingWorkflowSteps(request);
+    }
+
+    @SdkInternalApi
+    final ListWaitingWorkflowStepsResult executeListWaitingWorkflowSteps(ListWaitingWorkflowStepsRequest listWaitingWorkflowStepsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listWaitingWorkflowStepsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListWaitingWorkflowStepsRequest> request = null;
+        Response<ListWaitingWorkflowStepsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListWaitingWorkflowStepsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listWaitingWorkflowStepsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWaitingWorkflowSteps");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListWaitingWorkflowStepsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListWaitingWorkflowStepsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of build versions for a specific workflow resource.
+     * </p>
+     * 
+     * @param listWorkflowBuildVersionsRequest
+     * @return Result of the ListWorkflowBuildVersions operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws InvalidPaginationTokenException
+     *         You have provided an invalid pagination token in your request.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.ListWorkflowBuildVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflowBuildVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListWorkflowBuildVersionsResult listWorkflowBuildVersions(ListWorkflowBuildVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListWorkflowBuildVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListWorkflowBuildVersionsResult executeListWorkflowBuildVersions(ListWorkflowBuildVersionsRequest listWorkflowBuildVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listWorkflowBuildVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListWorkflowBuildVersionsRequest> request = null;
+        Response<ListWorkflowBuildVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListWorkflowBuildVersionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listWorkflowBuildVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWorkflowBuildVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListWorkflowBuildVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListWorkflowBuildVersionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of workflow runtime instance metadata objects for a specific image build version.
+     * </p>
+     * 
+     * @param listWorkflowExecutionsRequest
+     * @return Result of the ListWorkflowExecutions operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws InvalidPaginationTokenException
+     *         You have provided an invalid pagination token in your request.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.ListWorkflowExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflowExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListWorkflowExecutionsResult listWorkflowExecutions(ListWorkflowExecutionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListWorkflowExecutions(request);
+    }
+
+    @SdkInternalApi
+    final ListWorkflowExecutionsResult executeListWorkflowExecutions(ListWorkflowExecutionsRequest listWorkflowExecutionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listWorkflowExecutionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListWorkflowExecutionsRequest> request = null;
+        Response<ListWorkflowExecutionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListWorkflowExecutionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listWorkflowExecutionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWorkflowExecutions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListWorkflowExecutionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListWorkflowExecutionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns runtime data for each step in a runtime instance of the workflow that you specify in the request.
+     * </p>
+     * 
+     * @param listWorkflowStepExecutionsRequest
+     * @return Result of the ListWorkflowStepExecutions operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws InvalidPaginationTokenException
+     *         You have provided an invalid pagination token in your request.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.ListWorkflowStepExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflowStepExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListWorkflowStepExecutionsResult listWorkflowStepExecutions(ListWorkflowStepExecutionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListWorkflowStepExecutions(request);
+    }
+
+    @SdkInternalApi
+    final ListWorkflowStepExecutionsResult executeListWorkflowStepExecutions(ListWorkflowStepExecutionsRequest listWorkflowStepExecutionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listWorkflowStepExecutionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListWorkflowStepExecutionsRequest> request = null;
+        Response<ListWorkflowStepExecutionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListWorkflowStepExecutionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listWorkflowStepExecutionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWorkflowStepExecutions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListWorkflowStepExecutionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListWorkflowStepExecutionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists workflow build versions based on filtering parameters.
+     * </p>
+     * 
+     * @param listWorkflowsRequest
+     * @return Result of the ListWorkflows operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws InvalidPaginationTokenException
+     *         You have provided an invalid pagination token in your request.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @sample AWSimagebuilder.ListWorkflows
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflows" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListWorkflowsResult listWorkflows(ListWorkflowsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListWorkflows(request);
+    }
+
+    @SdkInternalApi
+    final ListWorkflowsResult executeListWorkflows(ListWorkflowsRequest listWorkflowsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listWorkflowsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListWorkflowsRequest> request = null;
+        Response<ListWorkflowsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListWorkflowsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listWorkflowsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWorkflows");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListWorkflowsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListWorkflowsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Applies a policy to a component. We recommend that you call the RAM API <a
      * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
      * to share resources. If you call the Image Builder API <code>PutComponentPolicy</code>, you must also call the RAM
@@ -3196,7 +4690,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws InvalidParameterValueException
      *         The value that you provided for the specified parameter is invalid.
      * @throws ResourceNotFoundException
@@ -3274,7 +4768,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws InvalidParameterValueException
      *         The value that you provided for the specified parameter is invalid.
      * @throws ResourceNotFoundException
@@ -3354,7 +4848,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws InvalidParameterValueException
      *         The value that you provided for the specified parameter is invalid.
      * @throws ResourceNotFoundException
@@ -3433,7 +4927,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws InvalidParameterValueException
      *         The value that you provided for the specified parameter is invalid.
      * @throws ResourceNotFoundException
@@ -3492,6 +4986,86 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Pauses or resumes image creation when the associated workflow runs a <code>WaitForAction</code> step.
+     * </p>
+     * 
+     * @param sendWorkflowStepActionRequest
+     * @return Result of the SendWorkflowStepAction operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ResourceNotFoundException
+     *         At least one of the resources referenced by your request does not exist.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws InvalidParameterValueException
+     *         The value that you provided for the specified parameter is invalid.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws IdempotentParameterMismatchException
+     *         You have specified a client token for an operation using parameter values that differ from a previous
+     *         request that used the same client token.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @throws ResourceInUseException
+     *         The resource that you are trying to operate on is currently in use. Review the message details and retry
+     *         later.
+     * @sample AWSimagebuilder.SendWorkflowStepAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/SendWorkflowStepAction"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SendWorkflowStepActionResult sendWorkflowStepAction(SendWorkflowStepActionRequest request) {
+        request = beforeClientExecution(request);
+        return executeSendWorkflowStepAction(request);
+    }
+
+    @SdkInternalApi
+    final SendWorkflowStepActionResult executeSendWorkflowStepAction(SendWorkflowStepActionRequest sendWorkflowStepActionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(sendWorkflowStepActionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SendWorkflowStepActionRequest> request = null;
+        Response<SendWorkflowStepActionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SendWorkflowStepActionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendWorkflowStepActionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendWorkflowStepAction");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SendWorkflowStepActionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new SendWorkflowStepActionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Manually triggers a pipeline to create an image.
      * </p>
      * 
@@ -3506,7 +5080,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws ResourceNotFoundException
      *         At least one of the resources referenced by your request does not exist.
      * @throws IdempotentParameterMismatchException
@@ -3559,6 +5133,85 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
             HttpResponseHandler<AmazonWebServiceResponse<StartImagePipelineExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new StartImagePipelineExecutionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Begin asynchronous resource state update for lifecycle changes to the specified image resources.
+     * </p>
+     * 
+     * @param startResourceStateUpdateRequest
+     * @return Result of the StartResourceStateUpdate operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws ResourceNotFoundException
+     *         At least one of the resources referenced by your request does not exist.
+     * @throws IdempotentParameterMismatchException
+     *         You have specified a client token for an operation using parameter values that differ from a previous
+     *         request that used the same client token.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @throws ResourceInUseException
+     *         The resource that you are trying to operate on is currently in use. Review the message details and retry
+     *         later.
+     * @sample AWSimagebuilder.StartResourceStateUpdate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/StartResourceStateUpdate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartResourceStateUpdateResult startResourceStateUpdate(StartResourceStateUpdateRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartResourceStateUpdate(request);
+    }
+
+    @SdkInternalApi
+    final StartResourceStateUpdateResult executeStartResourceStateUpdate(StartResourceStateUpdateRequest startResourceStateUpdateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startResourceStateUpdateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartResourceStateUpdateRequest> request = null;
+        Response<StartResourceStateUpdateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartResourceStateUpdateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startResourceStateUpdateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartResourceStateUpdate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartResourceStateUpdateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartResourceStateUpdateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3708,7 +5361,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws IdempotentParameterMismatchException
      *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
@@ -3774,7 +5427,9 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Updates an image pipeline. Image pipelines enable you to automate the creation and distribution of images.
+     * Updates an image pipeline. Image pipelines enable you to automate the creation and distribution of images. You
+     * must specify exactly one recipe for your image, using either a <code>containerRecipeArn</code> or an
+     * <code>imageRecipeArn</code>.
      * </p>
      * <note>
      * <p>
@@ -3794,7 +5449,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws IdempotentParameterMismatchException
      *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
@@ -3870,7 +5525,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
      * @throws ServiceUnavailableException
      *         The service is unable to process your request at this time.
      * @throws InvalidRequestException
-     *         You have made a request for an action that is not supported by the service.
+     *         You have requested an action that that the service doesn't support.
      * @throws IdempotentParameterMismatchException
      *         You have specified a client token for an operation using parameter values that differ from a previous
      *         request that used the same client token.
@@ -3922,6 +5577,84 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
             HttpResponseHandler<AmazonWebServiceResponse<UpdateInfrastructureConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateInfrastructureConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Update the specified lifecycle policy.
+     * </p>
+     * 
+     * @param updateLifecyclePolicyRequest
+     * @return Result of the UpdateLifecyclePolicy operation returned by the service.
+     * @throws ServiceException
+     *         This exception is thrown when the service encounters an unrecoverable exception.
+     * @throws ClientException
+     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
+     *         user that doesn't have permissions to use the action or resource, or specifying an invalid resource
+     *         identifier.
+     * @throws ServiceUnavailableException
+     *         The service is unable to process your request at this time.
+     * @throws InvalidRequestException
+     *         You have requested an action that that the service doesn't support.
+     * @throws IdempotentParameterMismatchException
+     *         You have specified a client token for an operation using parameter values that differ from a previous
+     *         request that used the same client token.
+     * @throws ForbiddenException
+     *         You are not authorized to perform the requested operation.
+     * @throws CallRateLimitExceededException
+     *         You have exceeded the permitted request rate for the specific operation.
+     * @throws ResourceInUseException
+     *         The resource that you are trying to operate on is currently in use. Review the message details and retry
+     *         later.
+     * @throws InvalidParameterCombinationException
+     *         You have specified two or more mutually exclusive parameters. Review the error message for details.
+     * @sample AWSimagebuilder.UpdateLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateLifecyclePolicyResult updateLifecyclePolicy(UpdateLifecyclePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateLifecyclePolicy(request);
+    }
+
+    @SdkInternalApi
+    final UpdateLifecyclePolicyResult executeUpdateLifecyclePolicy(UpdateLifecyclePolicyRequest updateLifecyclePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateLifecyclePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateLifecyclePolicyRequest> request = null;
+        Response<UpdateLifecyclePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateLifecyclePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateLifecyclePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateLifecyclePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateLifecyclePolicyResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new UpdateLifecyclePolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

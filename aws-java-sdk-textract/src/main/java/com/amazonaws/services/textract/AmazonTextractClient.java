@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.textract.AmazonTextractClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.textract.model.*;
+
 import com.amazonaws.services.textract.model.transform.*;
 
 /**
@@ -78,47 +79,59 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.textract.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("BadDocumentException").withExceptionUnmarshaller(
                                     com.amazonaws.services.textract.model.transform.BadDocumentExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
                                     com.amazonaws.services.textract.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidKMSKeyException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.textract.model.transform.InvalidKMSKeyExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
                                     com.amazonaws.services.textract.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("IdempotentParameterMismatchException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.textract.model.transform.IdempotentParameterMismatchExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("HumanLoopQuotaExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.textract.model.transform.HumanLoopQuotaExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.textract.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DocumentTooLargeException").withExceptionUnmarshaller(
                                     com.amazonaws.services.textract.model.transform.DocumentTooLargeExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ProvisionedThroughputExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.textract.model.transform.ProvisionedThroughputExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("UnsupportedDocumentException").withExceptionUnmarshaller(
                                     com.amazonaws.services.textract.model.transform.UnsupportedDocumentExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidJobIdException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.textract.model.transform.InvalidJobIdExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidS3ObjectException").withExceptionUnmarshaller(
                                     com.amazonaws.services.textract.model.transform.InvalidS3ObjectExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withExceptionUnmarshaller(
-                                    com.amazonaws.services.textract.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.textract.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.textract.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.textract.model.transform.ConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.textract.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidKMSKeyException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.textract.model.transform.InvalidKMSKeyExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("IdempotentParameterMismatchException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.textract.model.transform.IdempotentParameterMismatchExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.textract.model.transform.ValidationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ProvisionedThroughputExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.textract.model.transform.ProvisionedThroughputExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidJobIdException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.textract.model.transform.InvalidJobIdExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withExceptionUnmarshaller(
+                                    com.amazonaws.services.textract.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.textract.model.AmazonTextractException.class));
 
     public static AmazonTextractClientBuilder builder() {
@@ -194,6 +207,13 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      * Lines and words of text. A LINE <code>Block</code> object contains one or more WORD <code>Block</code> objects.
      * All lines and words that are detected in the document are returned (including text that doesn't have a
      * relationship with the value of <code>FeatureTypes</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Signatures. A SIGNATURE <code>Block</code> object contains the location information of a signature in a document.
+     * If used in conjunction with forms or tables, a signature can be given a Key-Value pairing or be detected in the
+     * cell of a table.
      * </p>
      * </li>
      * <li>
@@ -414,8 +434,8 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
     /**
      * <p>
      * Analyzes identity documents for relevant information. This information is extracted and returned as
-     * <code>IdentityDocumentFields</code>, which records both the normalized field and value of the extracted
-     * text.Unlike other Amazon Textract operations, <code>AnalyzeID</code> doesn't return any Geometry data.
+     * <code>IdentityDocumentFields</code>, which records both the normalized field and value of the extracted text.
+     * Unlike other Amazon Textract operations, <code>AnalyzeID</code> doesn't return any Geometry data.
      * </p>
      * 
      * @param analyzeIDRequest
@@ -487,6 +507,342 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<AnalyzeIDResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new AnalyzeIDResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an adapter, which can be fine-tuned for enhanced performance on user provided documents. Takes an
+     * AdapterName and FeatureType. Currently the only supported feature type is <code>QUERIES</code>. You can also
+     * provide a Description, Tags, and a ClientRequestToken. You can choose whether or not the adapter should be
+     * AutoUpdated with the AutoUpdate argument. By default, AutoUpdate is set to DISABLED.
+     * </p>
+     * 
+     * @param createAdapterRequest
+     * @return Result of the CreateAdapter operation returned by the service.
+     * @throws InvalidParameterException
+     *         An input parameter violated a constraint. For example, in synchronous operations, an
+     *         <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or
+     *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
+     *         parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Textract.
+     * @throws InternalServerErrorException
+     *         Amazon Textract experienced a service issue. Try your call again.
+     * @throws IdempotentParameterMismatchException
+     *         A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the
+     *         other input parameters is different from the previous call to the operation.
+     * @throws ThrottlingException
+     *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws LimitExceededException
+     *         An Amazon Textract service limit was exceeded. For example, if you start too many asynchronous jobs
+     *         concurrently, calls to start operations (<code>StartDocumentTextDetection</code>, for example) raise a
+     *         LimitExceededException exception (HTTP status code: 400) until the number of concurrently running jobs is
+     *         below the Amazon Textract service limit.
+     * @throws ValidationException
+     *         Indicates that a request was not valid. Check request for proper formatting.
+     * @throws ServiceQuotaExceededException
+     *         Returned when a request cannot be completed as it would exceed a maximum service quota.
+     * @sample AmazonTextract.CreateAdapter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/CreateAdapter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateAdapterResult createAdapter(CreateAdapterRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAdapter(request);
+    }
+
+    @SdkInternalApi
+    final CreateAdapterResult executeCreateAdapter(CreateAdapterRequest createAdapterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createAdapterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateAdapterRequest> request = null;
+        Response<CreateAdapterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAdapterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAdapterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAdapter");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAdapterResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateAdapterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new version of an adapter. Operates on a provided AdapterId and a specified dataset provided via the
+     * DatasetConfig argument. Requires that you specify an Amazon S3 bucket with the OutputConfig argument. You can
+     * provide an optional KMSKeyId, an optional ClientRequestToken, and optional tags.
+     * </p>
+     * 
+     * @param createAdapterVersionRequest
+     * @return Result of the CreateAdapterVersion operation returned by the service.
+     * @throws InvalidParameterException
+     *         An input parameter violated a constraint. For example, in synchronous operations, an
+     *         <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or
+     *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
+     *         parameter before calling the API operation again.
+     * @throws InvalidS3ObjectException
+     *         Amazon Textract is unable to access the S3 object that's specified in the request. for more information,
+     *         <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to
+     *         Amazon S3</a> For troubleshooting information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
+     * @throws InvalidKMSKeyException
+     *         Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered
+     *         incorrectly.
+     * @throws AccessDeniedException
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Textract.
+     * @throws InternalServerErrorException
+     *         Amazon Textract experienced a service issue. Try your call again.
+     * @throws IdempotentParameterMismatchException
+     *         A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the
+     *         other input parameters is different from the previous call to the operation.
+     * @throws ThrottlingException
+     *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws LimitExceededException
+     *         An Amazon Textract service limit was exceeded. For example, if you start too many asynchronous jobs
+     *         concurrently, calls to start operations (<code>StartDocumentTextDetection</code>, for example) raise a
+     *         LimitExceededException exception (HTTP status code: 400) until the number of concurrently running jobs is
+     *         below the Amazon Textract service limit.
+     * @throws ValidationException
+     *         Indicates that a request was not valid. Check request for proper formatting.
+     * @throws ServiceQuotaExceededException
+     *         Returned when a request cannot be completed as it would exceed a maximum service quota.
+     * @throws ResourceNotFoundException
+     *         Returned when an operation tried to access a nonexistent resource.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @sample AmazonTextract.CreateAdapterVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/CreateAdapterVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateAdapterVersionResult createAdapterVersion(CreateAdapterVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAdapterVersion(request);
+    }
+
+    @SdkInternalApi
+    final CreateAdapterVersionResult executeCreateAdapterVersion(CreateAdapterVersionRequest createAdapterVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createAdapterVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateAdapterVersionRequest> request = null;
+        Response<CreateAdapterVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAdapterVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAdapterVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAdapterVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAdapterVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateAdapterVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an Amazon Textract adapter. Takes an AdapterId and deletes the adapter specified by the ID.
+     * </p>
+     * 
+     * @param deleteAdapterRequest
+     * @return Result of the DeleteAdapter operation returned by the service.
+     * @throws InvalidParameterException
+     *         An input parameter violated a constraint. For example, in synchronous operations, an
+     *         <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or
+     *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
+     *         parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Textract.
+     * @throws InternalServerErrorException
+     *         Amazon Textract experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws ValidationException
+     *         Indicates that a request was not valid. Check request for proper formatting.
+     * @throws ResourceNotFoundException
+     *         Returned when an operation tried to access a nonexistent resource.
+     * @sample AmazonTextract.DeleteAdapter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DeleteAdapter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteAdapterResult deleteAdapter(DeleteAdapterRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAdapter(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAdapterResult executeDeleteAdapter(DeleteAdapterRequest deleteAdapterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAdapterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAdapterRequest> request = null;
+        Response<DeleteAdapterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAdapterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAdapterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAdapter");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAdapterResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteAdapterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an Amazon Textract adapter version. Requires that you specify both an AdapterId and a AdapterVersion.
+     * Deletes the adapter version specified by the AdapterId and the AdapterVersion.
+     * </p>
+     * 
+     * @param deleteAdapterVersionRequest
+     * @return Result of the DeleteAdapterVersion operation returned by the service.
+     * @throws InvalidParameterException
+     *         An input parameter violated a constraint. For example, in synchronous operations, an
+     *         <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or
+     *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
+     *         parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Textract.
+     * @throws InternalServerErrorException
+     *         Amazon Textract experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws ValidationException
+     *         Indicates that a request was not valid. Check request for proper formatting.
+     * @throws ResourceNotFoundException
+     *         Returned when an operation tried to access a nonexistent resource.
+     * @sample AmazonTextract.DeleteAdapterVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DeleteAdapterVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteAdapterVersionResult deleteAdapterVersion(DeleteAdapterVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAdapterVersion(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAdapterVersionResult executeDeleteAdapterVersion(DeleteAdapterVersionRequest deleteAdapterVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAdapterVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAdapterVersionRequest> request = null;
+        Response<DeleteAdapterVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAdapterVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAdapterVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAdapterVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAdapterVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteAdapterVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -599,6 +955,156 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Gets configuration information for an adapter specified by an AdapterId, returning information on AdapterName,
+     * Description, CreationTime, AutoUpdate status, and FeatureTypes.
+     * </p>
+     * 
+     * @param getAdapterRequest
+     * @return Result of the GetAdapter operation returned by the service.
+     * @throws InvalidParameterException
+     *         An input parameter violated a constraint. For example, in synchronous operations, an
+     *         <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or
+     *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
+     *         parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Textract.
+     * @throws InternalServerErrorException
+     *         Amazon Textract experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws ValidationException
+     *         Indicates that a request was not valid. Check request for proper formatting.
+     * @throws ResourceNotFoundException
+     *         Returned when an operation tried to access a nonexistent resource.
+     * @sample AmazonTextract.GetAdapter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetAdapter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetAdapterResult getAdapter(GetAdapterRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAdapter(request);
+    }
+
+    @SdkInternalApi
+    final GetAdapterResult executeGetAdapter(GetAdapterRequest getAdapterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAdapterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAdapterRequest> request = null;
+        Response<GetAdapterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAdapterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAdapterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAdapter");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAdapterResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetAdapterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets configuration information for the specified adapter version, including: AdapterId, AdapterVersion,
+     * FeatureTypes, Status, StatusMessage, DatasetConfig, KMSKeyId, OutputConfig, Tags and EvaluationMetrics.
+     * </p>
+     * 
+     * @param getAdapterVersionRequest
+     * @return Result of the GetAdapterVersion operation returned by the service.
+     * @throws InvalidParameterException
+     *         An input parameter violated a constraint. For example, in synchronous operations, an
+     *         <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or
+     *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
+     *         parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Textract.
+     * @throws InternalServerErrorException
+     *         Amazon Textract experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws ValidationException
+     *         Indicates that a request was not valid. Check request for proper formatting.
+     * @throws ResourceNotFoundException
+     *         Returned when an operation tried to access a nonexistent resource.
+     * @sample AmazonTextract.GetAdapterVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetAdapterVersion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetAdapterVersionResult getAdapterVersion(GetAdapterVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAdapterVersion(request);
+    }
+
+    @SdkInternalApi
+    final GetAdapterVersionResult executeGetAdapterVersion(GetAdapterVersionRequest getAdapterVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAdapterVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAdapterVersionRequest> request = null;
+        Response<GetAdapterVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAdapterVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAdapterVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAdapterVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAdapterVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetAdapterVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets the results for an Amazon Textract asynchronous operation that analyzes text in a document.
      * </p>
      * <p>
@@ -686,7 +1192,7 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Textract.
      * @throws InvalidJobIdException
-     *         An invalid job identifier was passed to <a>GetDocumentAnalysis</a> or to <a>GetDocumentAnalysis</a>.
+     *         An invalid job identifier was passed to an asynchronous analysis operation.
      * @throws InternalServerErrorException
      *         Amazon Textract experienced a service issue. Try your call again.
      * @throws ThrottlingException
@@ -796,7 +1302,7 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Textract.
      * @throws InvalidJobIdException
-     *         An invalid job identifier was passed to <a>GetDocumentAnalysis</a> or to <a>GetDocumentAnalysis</a>.
+     *         An invalid job identifier was passed to an asynchronous analysis operation.
      * @throws InternalServerErrorException
      *         Amazon Textract experienced a service issue. Try your call again.
      * @throws ThrottlingException
@@ -899,7 +1405,7 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Textract.
      * @throws InvalidJobIdException
-     *         An invalid job identifier was passed to <a>GetDocumentAnalysis</a> or to <a>GetDocumentAnalysis</a>.
+     *         An invalid job identifier was passed to an asynchronous analysis operation.
      * @throws InternalServerErrorException
      *         Amazon Textract experienced a service issue. Try your call again.
      * @throws ThrottlingException
@@ -950,6 +1456,413 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<GetExpenseAnalysisResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetExpenseAnalysisResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the results for an Amazon Textract asynchronous operation that analyzes text in a lending document.
+     * </p>
+     * <p>
+     * You start asynchronous text analysis by calling <code>StartLendingAnalysis</code>, which returns a job identifier
+     * (<code>JobId</code>). When the text analysis operation finishes, Amazon Textract publishes a completion status to
+     * the Amazon Simple Notification Service (Amazon SNS) topic that's registered in the initial call to
+     * <code>StartLendingAnalysis</code>.
+     * </p>
+     * <p>
+     * To get the results of the text analysis operation, first check that the status value published to the Amazon SNS
+     * topic is SUCCEEDED. If so, call GetLendingAnalysis, and pass the job identifier (<code>JobId</code>) from the
+     * initial call to <code>StartLendingAnalysis</code>.
+     * </p>
+     * 
+     * @param getLendingAnalysisRequest
+     * @return Result of the GetLendingAnalysis operation returned by the service.
+     * @throws InvalidParameterException
+     *         An input parameter violated a constraint. For example, in synchronous operations, an
+     *         <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or
+     *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
+     *         parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Textract.
+     * @throws InvalidJobIdException
+     *         An invalid job identifier was passed to an asynchronous analysis operation.
+     * @throws InternalServerErrorException
+     *         Amazon Textract experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws InvalidS3ObjectException
+     *         Amazon Textract is unable to access the S3 object that's specified in the request. for more information,
+     *         <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to
+     *         Amazon S3</a> For troubleshooting information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
+     * @throws InvalidKMSKeyException
+     *         Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered
+     *         incorrectly.
+     * @sample AmazonTextract.GetLendingAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetLendingAnalysis" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetLendingAnalysisResult getLendingAnalysis(GetLendingAnalysisRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetLendingAnalysis(request);
+    }
+
+    @SdkInternalApi
+    final GetLendingAnalysisResult executeGetLendingAnalysis(GetLendingAnalysisRequest getLendingAnalysisRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getLendingAnalysisRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetLendingAnalysisRequest> request = null;
+        Response<GetLendingAnalysisResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetLendingAnalysisRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLendingAnalysisRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLendingAnalysis");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetLendingAnalysisResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetLendingAnalysisResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets summarized results for the <code>StartLendingAnalysis</code> operation, which analyzes text in a lending
+     * document. The returned summary consists of information about documents grouped together by a common document
+     * type. Information like detected signatures, page numbers, and split documents is returned with respect to the
+     * type of grouped document.
+     * </p>
+     * <p>
+     * You start asynchronous text analysis by calling <code>StartLendingAnalysis</code>, which returns a job identifier
+     * (<code>JobId</code>). When the text analysis operation finishes, Amazon Textract publishes a completion status to
+     * the Amazon Simple Notification Service (Amazon SNS) topic that's registered in the initial call to
+     * <code>StartLendingAnalysis</code>.
+     * </p>
+     * <p>
+     * To get the results of the text analysis operation, first check that the status value published to the Amazon SNS
+     * topic is SUCCEEDED. If so, call <code>GetLendingAnalysisSummary</code>, and pass the job identifier (
+     * <code>JobId</code>) from the initial call to <code>StartLendingAnalysis</code>.
+     * </p>
+     * 
+     * @param getLendingAnalysisSummaryRequest
+     * @return Result of the GetLendingAnalysisSummary operation returned by the service.
+     * @throws InvalidParameterException
+     *         An input parameter violated a constraint. For example, in synchronous operations, an
+     *         <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or
+     *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
+     *         parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Textract.
+     * @throws InvalidJobIdException
+     *         An invalid job identifier was passed to an asynchronous analysis operation.
+     * @throws InternalServerErrorException
+     *         Amazon Textract experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws InvalidS3ObjectException
+     *         Amazon Textract is unable to access the S3 object that's specified in the request. for more information,
+     *         <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to
+     *         Amazon S3</a> For troubleshooting information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
+     * @throws InvalidKMSKeyException
+     *         Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered
+     *         incorrectly.
+     * @sample AmazonTextract.GetLendingAnalysisSummary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetLendingAnalysisSummary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetLendingAnalysisSummaryResult getLendingAnalysisSummary(GetLendingAnalysisSummaryRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetLendingAnalysisSummary(request);
+    }
+
+    @SdkInternalApi
+    final GetLendingAnalysisSummaryResult executeGetLendingAnalysisSummary(GetLendingAnalysisSummaryRequest getLendingAnalysisSummaryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getLendingAnalysisSummaryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetLendingAnalysisSummaryRequest> request = null;
+        Response<GetLendingAnalysisSummaryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetLendingAnalysisSummaryRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getLendingAnalysisSummaryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLendingAnalysisSummary");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetLendingAnalysisSummaryResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetLendingAnalysisSummaryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List all version of an adapter that meet the specified filtration criteria.
+     * </p>
+     * 
+     * @param listAdapterVersionsRequest
+     * @return Result of the ListAdapterVersions operation returned by the service.
+     * @throws InvalidParameterException
+     *         An input parameter violated a constraint. For example, in synchronous operations, an
+     *         <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or
+     *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
+     *         parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Textract.
+     * @throws InternalServerErrorException
+     *         Amazon Textract experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws ValidationException
+     *         Indicates that a request was not valid. Check request for proper formatting.
+     * @throws ResourceNotFoundException
+     *         Returned when an operation tried to access a nonexistent resource.
+     * @sample AmazonTextract.ListAdapterVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListAdapterVersions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListAdapterVersionsResult listAdapterVersions(ListAdapterVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAdapterVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListAdapterVersionsResult executeListAdapterVersions(ListAdapterVersionsRequest listAdapterVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAdapterVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAdapterVersionsRequest> request = null;
+        Response<ListAdapterVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAdapterVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAdapterVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAdapterVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAdapterVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAdapterVersionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all adapters that match the specified filtration criteria.
+     * </p>
+     * 
+     * @param listAdaptersRequest
+     * @return Result of the ListAdapters operation returned by the service.
+     * @throws InvalidParameterException
+     *         An input parameter violated a constraint. For example, in synchronous operations, an
+     *         <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or
+     *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
+     *         parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Textract.
+     * @throws InternalServerErrorException
+     *         Amazon Textract experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws ValidationException
+     *         Indicates that a request was not valid. Check request for proper formatting.
+     * @sample AmazonTextract.ListAdapters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListAdapters" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListAdaptersResult listAdapters(ListAdaptersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAdapters(request);
+    }
+
+    @SdkInternalApi
+    final ListAdaptersResult executeListAdapters(ListAdaptersRequest listAdaptersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAdaptersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAdaptersRequest> request = null;
+        Response<ListAdaptersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAdaptersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAdaptersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAdapters");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAdaptersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAdaptersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all tags for an Amazon Textract resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Returned when an operation tried to access a nonexistent resource.
+     * @throws InvalidParameterException
+     *         An input parameter violated a constraint. For example, in synchronous operations, an
+     *         <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or
+     *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
+     *         parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Textract.
+     * @throws InternalServerErrorException
+     *         Amazon Textract experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws ValidationException
+     *         Indicates that a request was not valid. Check request for proper formatting.
+     * @sample AmazonTextract.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1293,6 +2206,363 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<StartExpenseAnalysisResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartExpenseAnalysisResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts the classification and analysis of an input document. <code>StartLendingAnalysis</code> initiates the
+     * classification and analysis of a packet of lending documents. <code>StartLendingAnalysis</code> operates on a
+     * document file located in an Amazon S3 bucket.
+     * </p>
+     * <p>
+     * <code>StartLendingAnalysis</code> can analyze text in documents that are in one of the following formats: JPEG,
+     * PNG, TIFF, PDF. Use <code>DocumentLocation</code> to specify the bucket name and the file name of the document.
+     * </p>
+     * <p>
+     * <code>StartLendingAnalysis</code> returns a job identifier (<code>JobId</code>) that you use to get the results
+     * of the operation. When the text analysis is finished, Amazon Textract publishes a completion status to the Amazon
+     * Simple Notification Service (Amazon SNS) topic that you specify in <code>NotificationChannel</code>. To get the
+     * results of the text analysis operation, first check that the status value published to the Amazon SNS topic is
+     * SUCCEEDED. If the status is SUCCEEDED you can call either <code>GetLendingAnalysis</code> or
+     * <code>GetLendingAnalysisSummary</code> and provide the <code>JobId</code> to obtain the results of the analysis.
+     * </p>
+     * <p>
+     * If using <code>OutputConfig</code> to specify an Amazon S3 bucket, the output will be contained within the
+     * specified prefix in a directory labeled with the job-id. In the directory there are 3 sub-directories:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * detailedResponse (contains the GetLendingAnalysis response)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * summaryResponse (for the GetLendingAnalysisSummary response)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * splitDocuments (documents split across logical boundaries)
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param startLendingAnalysisRequest
+     * @return Result of the StartLendingAnalysis operation returned by the service.
+     * @throws InvalidParameterException
+     *         An input parameter violated a constraint. For example, in synchronous operations, an
+     *         <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or
+     *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
+     *         parameter before calling the API operation again.
+     * @throws InvalidS3ObjectException
+     *         Amazon Textract is unable to access the S3 object that's specified in the request. for more information,
+     *         <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to
+     *         Amazon S3</a> For troubleshooting information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
+     * @throws InvalidKMSKeyException
+     *         Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered
+     *         incorrectly.
+     * @throws UnsupportedDocumentException
+     *         The format of the input document isn't supported. Documents for operations can be in PNG, JPEG, PDF, or
+     *         TIFF format.
+     * @throws DocumentTooLargeException
+     *         The document can't be processed because it's too large. The maximum document size for synchronous
+     *         operations 10 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.
+     * @throws BadDocumentException
+     *         Amazon Textract isn't able to read the document. For more information on the document limits in Amazon
+     *         Textract, see <a>limits</a>.
+     * @throws AccessDeniedException
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Textract.
+     * @throws InternalServerErrorException
+     *         Amazon Textract experienced a service issue. Try your call again.
+     * @throws IdempotentParameterMismatchException
+     *         A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the
+     *         other input parameters is different from the previous call to the operation.
+     * @throws ThrottlingException
+     *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws LimitExceededException
+     *         An Amazon Textract service limit was exceeded. For example, if you start too many asynchronous jobs
+     *         concurrently, calls to start operations (<code>StartDocumentTextDetection</code>, for example) raise a
+     *         LimitExceededException exception (HTTP status code: 400) until the number of concurrently running jobs is
+     *         below the Amazon Textract service limit.
+     * @sample AmazonTextract.StartLendingAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartLendingAnalysis" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public StartLendingAnalysisResult startLendingAnalysis(StartLendingAnalysisRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartLendingAnalysis(request);
+    }
+
+    @SdkInternalApi
+    final StartLendingAnalysisResult executeStartLendingAnalysis(StartLendingAnalysisRequest startLendingAnalysisRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startLendingAnalysisRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartLendingAnalysisRequest> request = null;
+        Response<StartLendingAnalysisResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartLendingAnalysisRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startLendingAnalysisRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartLendingAnalysis");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartLendingAnalysisResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartLendingAnalysisResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds one or more tags to the specified resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Returned when an operation tried to access a nonexistent resource.
+     * @throws InvalidParameterException
+     *         An input parameter violated a constraint. For example, in synchronous operations, an
+     *         <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or
+     *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
+     *         parameter before calling the API operation again.
+     * @throws ServiceQuotaExceededException
+     *         Returned when a request cannot be completed as it would exceed a maximum service quota.
+     * @throws AccessDeniedException
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Textract.
+     * @throws InternalServerErrorException
+     *         Amazon Textract experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws ValidationException
+     *         Indicates that a request was not valid. Check request for proper formatting.
+     * @sample AmazonTextract.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes any tags with the specified keys from the specified resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Returned when an operation tried to access a nonexistent resource.
+     * @throws InvalidParameterException
+     *         An input parameter violated a constraint. For example, in synchronous operations, an
+     *         <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or
+     *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
+     *         parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Textract.
+     * @throws InternalServerErrorException
+     *         Amazon Textract experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws ValidationException
+     *         Indicates that a request was not valid. Check request for proper formatting.
+     * @sample AmazonTextract.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Update the configuration for an adapter. FeatureTypes configurations cannot be updated. At least one new
+     * parameter must be specified as an argument.
+     * </p>
+     * 
+     * @param updateAdapterRequest
+     * @return Result of the UpdateAdapter operation returned by the service.
+     * @throws InvalidParameterException
+     *         An input parameter violated a constraint. For example, in synchronous operations, an
+     *         <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or
+     *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
+     *         parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Textract.
+     * @throws InternalServerErrorException
+     *         Amazon Textract experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws ValidationException
+     *         Indicates that a request was not valid. Check request for proper formatting.
+     * @throws ResourceNotFoundException
+     *         Returned when an operation tried to access a nonexistent resource.
+     * @sample AmazonTextract.UpdateAdapter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/UpdateAdapter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateAdapterResult updateAdapter(UpdateAdapterRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAdapter(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAdapterResult executeUpdateAdapter(UpdateAdapterRequest updateAdapterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAdapterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAdapterRequest> request = null;
+        Response<UpdateAdapterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAdapterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAdapterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAdapter");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAdapterResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateAdapterResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

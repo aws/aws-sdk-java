@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,8 +26,11 @@ import com.amazonaws.services.comprehendmedical.model.*;
  * </p>
  * <p>
  * <p>
- * Comprehend Medical; extracts structured information from unstructured clinical text. Use these actions to gain
- * insight in your documents.
+ * Amazon Comprehend Medical extracts structured information from unstructured clinical text. Use these actions to gain
+ * insight in your documents. Amazon Comprehend Medical only detects entities in English language texts. Amazon
+ * Comprehend Medical places limits on the sizes of files allowed for different API operations. To learn more, see <a
+ * href="https://docs.aws.amazon.com/comprehend-medical/latest/dev/comprehendmedical-quotas.html">Guidelines and
+ * quotas</a> in the <i>Amazon Comprehend Medical Developer Guide</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -215,7 +218,7 @@ public interface AWSComprehendMedicalAsync extends AWSComprehendMedical {
      * </p>
      * <p>
      * Inspects the clinical text for a variety of medical entities and returns specific information about them such as
-     * entity category, location, and confidence score on that information .
+     * entity category, location, and confidence score on that information.
      * </p>
      * 
      * @param detectEntitiesRequest
@@ -234,7 +237,7 @@ public interface AWSComprehendMedicalAsync extends AWSComprehendMedical {
      * </p>
      * <p>
      * Inspects the clinical text for a variety of medical entities and returns specific information about them such as
-     * entity category, location, and confidence score on that information .
+     * entity category, location, and confidence score on that information.
      * </p>
      * 
      * @param detectEntitiesRequest
@@ -508,7 +511,7 @@ public interface AWSComprehendMedicalAsync extends AWSComprehendMedical {
 
     /**
      * <p>
-     * Gets a list of protected health information (PHI) detection jobs that you have submitted.
+     * Gets a list of protected health information (PHI) detection jobs you have submitted.
      * </p>
      * 
      * @param listPHIDetectionJobsRequest
@@ -521,7 +524,7 @@ public interface AWSComprehendMedicalAsync extends AWSComprehendMedical {
 
     /**
      * <p>
-     * Gets a list of protected health information (PHI) detection jobs that you have submitted.
+     * Gets a list of protected health information (PHI) detection jobs you have submitted.
      * </p>
      * 
      * @param listPHIDetectionJobsRequest

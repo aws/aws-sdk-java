@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,23 +28,26 @@ public class ListAgentsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of agents in your account.
+     * A list of DataSync agents in your Amazon Web Services account in the Amazon Web Services Region specified in the
+     * request. The list is ordered by the agents' Amazon Resource Names (ARNs).
      * </p>
      */
     private java.util.List<AgentListEntry> agents;
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin returning the next list of agents.
+     * The opaque string that indicates the position to begin the next list of results in the response.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A list of agents in your account.
+     * A list of DataSync agents in your Amazon Web Services account in the Amazon Web Services Region specified in the
+     * request. The list is ordered by the agents' Amazon Resource Names (ARNs).
      * </p>
      * 
-     * @return A list of agents in your account.
+     * @return A list of DataSync agents in your Amazon Web Services account in the Amazon Web Services Region specified
+     *         in the request. The list is ordered by the agents' Amazon Resource Names (ARNs).
      */
 
     public java.util.List<AgentListEntry> getAgents() {
@@ -53,11 +56,13 @@ public class ListAgentsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of agents in your account.
+     * A list of DataSync agents in your Amazon Web Services account in the Amazon Web Services Region specified in the
+     * request. The list is ordered by the agents' Amazon Resource Names (ARNs).
      * </p>
      * 
      * @param agents
-     *        A list of agents in your account.
+     *        A list of DataSync agents in your Amazon Web Services account in the Amazon Web Services Region specified
+     *        in the request. The list is ordered by the agents' Amazon Resource Names (ARNs).
      */
 
     public void setAgents(java.util.Collection<AgentListEntry> agents) {
@@ -71,7 +76,8 @@ public class ListAgentsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of agents in your account.
+     * A list of DataSync agents in your Amazon Web Services account in the Amazon Web Services Region specified in the
+     * request. The list is ordered by the agents' Amazon Resource Names (ARNs).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -80,7 +86,8 @@ public class ListAgentsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param agents
-     *        A list of agents in your account.
+     *        A list of DataSync agents in your Amazon Web Services account in the Amazon Web Services Region specified
+     *        in the request. The list is ordered by the agents' Amazon Resource Names (ARNs).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +103,13 @@ public class ListAgentsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of agents in your account.
+     * A list of DataSync agents in your Amazon Web Services account in the Amazon Web Services Region specified in the
+     * request. The list is ordered by the agents' Amazon Resource Names (ARNs).
      * </p>
      * 
      * @param agents
-     *        A list of agents in your account.
+     *        A list of DataSync agents in your Amazon Web Services account in the Amazon Web Services Region specified
+     *        in the request. The list is ordered by the agents' Amazon Resource Names (ARNs).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,11 +120,11 @@ public class ListAgentsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin returning the next list of agents.
+     * The opaque string that indicates the position to begin the next list of results in the response.
      * </p>
      * 
      * @param nextToken
-     *        An opaque string that indicates the position at which to begin returning the next list of agents.
+     *        The opaque string that indicates the position to begin the next list of results in the response.
      */
 
     public void setNextToken(String nextToken) {
@@ -124,10 +133,10 @@ public class ListAgentsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin returning the next list of agents.
+     * The opaque string that indicates the position to begin the next list of results in the response.
      * </p>
      * 
-     * @return An opaque string that indicates the position at which to begin returning the next list of agents.
+     * @return The opaque string that indicates the position to begin the next list of results in the response.
      */
 
     public String getNextToken() {
@@ -136,11 +145,11 @@ public class ListAgentsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin returning the next list of agents.
+     * The opaque string that indicates the position to begin the next list of results in the response.
      * </p>
      * 
      * @param nextToken
-     *        An opaque string that indicates the position at which to begin returning the next list of agents.
+     *        The opaque string that indicates the position to begin the next list of results in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

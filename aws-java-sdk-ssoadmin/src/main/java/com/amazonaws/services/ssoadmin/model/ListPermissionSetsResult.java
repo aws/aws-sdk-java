@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,87 +25,17 @@ public class ListPermissionSetsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Defines the level of access on an AWS account.
-     * </p>
-     */
-    private java.util.List<String> permissionSets;
-    /**
-     * <p>
      * The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make
      * subsequent calls.
      * </p>
      */
     private String nextToken;
-
     /**
      * <p>
-     * Defines the level of access on an AWS account.
+     * Defines the level of access on an Amazon Web Services account.
      * </p>
-     * 
-     * @return Defines the level of access on an AWS account.
      */
-
-    public java.util.List<String> getPermissionSets() {
-        return permissionSets;
-    }
-
-    /**
-     * <p>
-     * Defines the level of access on an AWS account.
-     * </p>
-     * 
-     * @param permissionSets
-     *        Defines the level of access on an AWS account.
-     */
-
-    public void setPermissionSets(java.util.Collection<String> permissionSets) {
-        if (permissionSets == null) {
-            this.permissionSets = null;
-            return;
-        }
-
-        this.permissionSets = new java.util.ArrayList<String>(permissionSets);
-    }
-
-    /**
-     * <p>
-     * Defines the level of access on an AWS account.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setPermissionSets(java.util.Collection)} or {@link #withPermissionSets(java.util.Collection)} if you want
-     * to override the existing values.
-     * </p>
-     * 
-     * @param permissionSets
-     *        Defines the level of access on an AWS account.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListPermissionSetsResult withPermissionSets(String... permissionSets) {
-        if (this.permissionSets == null) {
-            setPermissionSets(new java.util.ArrayList<String>(permissionSets.length));
-        }
-        for (String ele : permissionSets) {
-            this.permissionSets.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * Defines the level of access on an AWS account.
-     * </p>
-     * 
-     * @param permissionSets
-     *        Defines the level of access on an AWS account.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListPermissionSetsResult withPermissionSets(java.util.Collection<String> permissionSets) {
-        setPermissionSets(permissionSets);
-        return this;
-    }
+    private java.util.List<String> permissionSets;
 
     /**
      * <p>
@@ -154,6 +84,76 @@ public class ListPermissionSetsResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * Defines the level of access on an Amazon Web Services account.
+     * </p>
+     * 
+     * @return Defines the level of access on an Amazon Web Services account.
+     */
+
+    public java.util.List<String> getPermissionSets() {
+        return permissionSets;
+    }
+
+    /**
+     * <p>
+     * Defines the level of access on an Amazon Web Services account.
+     * </p>
+     * 
+     * @param permissionSets
+     *        Defines the level of access on an Amazon Web Services account.
+     */
+
+    public void setPermissionSets(java.util.Collection<String> permissionSets) {
+        if (permissionSets == null) {
+            this.permissionSets = null;
+            return;
+        }
+
+        this.permissionSets = new java.util.ArrayList<String>(permissionSets);
+    }
+
+    /**
+     * <p>
+     * Defines the level of access on an Amazon Web Services account.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPermissionSets(java.util.Collection)} or {@link #withPermissionSets(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param permissionSets
+     *        Defines the level of access on an Amazon Web Services account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListPermissionSetsResult withPermissionSets(String... permissionSets) {
+        if (this.permissionSets == null) {
+            setPermissionSets(new java.util.ArrayList<String>(permissionSets.length));
+        }
+        for (String ele : permissionSets) {
+            this.permissionSets.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Defines the level of access on an Amazon Web Services account.
+     * </p>
+     * 
+     * @param permissionSets
+     *        Defines the level of access on an Amazon Web Services account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListPermissionSetsResult withPermissionSets(java.util.Collection<String> permissionSets) {
+        setPermissionSets(permissionSets);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -165,10 +165,10 @@ public class ListPermissionSetsResult extends com.amazonaws.AmazonWebServiceResu
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getPermissionSets() != null)
-            sb.append("PermissionSets: ").append(getPermissionSets()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getPermissionSets() != null)
+            sb.append("PermissionSets: ").append(getPermissionSets());
         sb.append("}");
         return sb.toString();
     }
@@ -183,13 +183,13 @@ public class ListPermissionSetsResult extends com.amazonaws.AmazonWebServiceResu
         if (obj instanceof ListPermissionSetsResult == false)
             return false;
         ListPermissionSetsResult other = (ListPermissionSetsResult) obj;
-        if (other.getPermissionSets() == null ^ this.getPermissionSets() == null)
-            return false;
-        if (other.getPermissionSets() != null && other.getPermissionSets().equals(this.getPermissionSets()) == false)
-            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getPermissionSets() == null ^ this.getPermissionSets() == null)
+            return false;
+        if (other.getPermissionSets() != null && other.getPermissionSets().equals(this.getPermissionSets()) == false)
             return false;
         return true;
     }
@@ -199,8 +199,8 @@ public class ListPermissionSetsResult extends com.amazonaws.AmazonWebServiceResu
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getPermissionSets() == null) ? 0 : getPermissionSets().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getPermissionSets() == null) ? 0 : getPermissionSets().hashCode());
         return hashCode;
     }
 

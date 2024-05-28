@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details about a Kinesis data stream used as the source for a Kinesis Data Firehose delivery stream.
+ * Details about a Kinesis data stream used as the source for a Firehose delivery stream.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/SourceDescription" target="_top">AWS API
@@ -34,6 +34,12 @@ public class SourceDescription implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private KinesisStreamSourceDescription kinesisStreamSourceDescription;
+    /**
+     * <p>
+     * The configuration description for the Amazon MSK cluster to be used as the source for a delivery stream.
+     * </p>
+     */
+    private MSKSourceDescription mSKSourceDescription;
 
     /**
      * <p>
@@ -76,6 +82,46 @@ public class SourceDescription implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The configuration description for the Amazon MSK cluster to be used as the source for a delivery stream.
+     * </p>
+     * 
+     * @param mSKSourceDescription
+     *        The configuration description for the Amazon MSK cluster to be used as the source for a delivery stream.
+     */
+
+    public void setMSKSourceDescription(MSKSourceDescription mSKSourceDescription) {
+        this.mSKSourceDescription = mSKSourceDescription;
+    }
+
+    /**
+     * <p>
+     * The configuration description for the Amazon MSK cluster to be used as the source for a delivery stream.
+     * </p>
+     * 
+     * @return The configuration description for the Amazon MSK cluster to be used as the source for a delivery stream.
+     */
+
+    public MSKSourceDescription getMSKSourceDescription() {
+        return this.mSKSourceDescription;
+    }
+
+    /**
+     * <p>
+     * The configuration description for the Amazon MSK cluster to be used as the source for a delivery stream.
+     * </p>
+     * 
+     * @param mSKSourceDescription
+     *        The configuration description for the Amazon MSK cluster to be used as the source for a delivery stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SourceDescription withMSKSourceDescription(MSKSourceDescription mSKSourceDescription) {
+        setMSKSourceDescription(mSKSourceDescription);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +134,9 @@ public class SourceDescription implements Serializable, Cloneable, StructuredPoj
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKinesisStreamSourceDescription() != null)
-            sb.append("KinesisStreamSourceDescription: ").append(getKinesisStreamSourceDescription());
+            sb.append("KinesisStreamSourceDescription: ").append(getKinesisStreamSourceDescription()).append(",");
+        if (getMSKSourceDescription() != null)
+            sb.append("MSKSourceDescription: ").append(getMSKSourceDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -108,6 +156,10 @@ public class SourceDescription implements Serializable, Cloneable, StructuredPoj
         if (other.getKinesisStreamSourceDescription() != null
                 && other.getKinesisStreamSourceDescription().equals(this.getKinesisStreamSourceDescription()) == false)
             return false;
+        if (other.getMSKSourceDescription() == null ^ this.getMSKSourceDescription() == null)
+            return false;
+        if (other.getMSKSourceDescription() != null && other.getMSKSourceDescription().equals(this.getMSKSourceDescription()) == false)
+            return false;
         return true;
     }
 
@@ -117,6 +169,7 @@ public class SourceDescription implements Serializable, Cloneable, StructuredPoj
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getKinesisStreamSourceDescription() == null) ? 0 : getKinesisStreamSourceDescription().hashCode());
+        hashCode = prime * hashCode + ((getMSKSourceDescription() == null) ? 0 : getMSKSourceDescription().hashCode());
         return hashCode;
     }
 

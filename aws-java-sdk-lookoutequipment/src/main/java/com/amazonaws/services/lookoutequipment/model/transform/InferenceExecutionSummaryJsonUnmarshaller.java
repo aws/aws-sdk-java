@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -95,6 +95,14 @@ public class InferenceExecutionSummaryJsonUnmarshaller implements Unmarshaller<I
                 if (context.testExpression("FailedReason", targetDepth)) {
                     context.nextToken();
                     inferenceExecutionSummary.setFailedReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ModelVersion", targetDepth)) {
+                    context.nextToken();
+                    inferenceExecutionSummary.setModelVersion(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("ModelVersionArn", targetDepth)) {
+                    context.nextToken();
+                    inferenceExecutionSummary.setModelVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

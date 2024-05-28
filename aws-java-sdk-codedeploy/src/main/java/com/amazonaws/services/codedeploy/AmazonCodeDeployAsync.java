@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -834,8 +834,16 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Deletes resources linked to an external ID.
+     * Deletes resources linked to an external ID. This action only applies if you have configured blue/green
+     * deployments through CloudFormation.
      * </p>
+     * <note>
+     * <p>
+     * It is not necessary to call this action directly. CloudFormation calls it on your behalf when it needs to delete
+     * stack resources. This action is offered publicly in case you need to delete resources to comply with General Data
+     * Protection Regulation (GDPR) requirements.
+     * </p>
+     * </note>
      * 
      * @param deleteResourcesByExternalIdRequest
      * @return A Java Future containing the result of the DeleteResourcesByExternalId operation returned by the service.
@@ -848,8 +856,16 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Deletes resources linked to an external ID.
+     * Deletes resources linked to an external ID. This action only applies if you have configured blue/green
+     * deployments through CloudFormation.
      * </p>
+     * <note>
+     * <p>
+     * It is not necessary to call this action directly. CloudFormation calls it on your behalf when it needs to delete
+     * stack resources. This action is offered publicly in case you need to delete resources to comply with General Data
+     * Protection Regulation (GDPR) requirements.
+     * </p>
+     * </note>
      * 
      * @param deleteResourcesByExternalIdRequest
      * @param asyncHandler
@@ -1215,7 +1231,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Lists the applications registered with the IAM user or Amazon Web Services account.
+     * Lists the applications registered with the user or Amazon Web Services account.
      * </p>
      * 
      * @param listApplicationsRequest
@@ -1229,7 +1245,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Lists the applications registered with the IAM user or Amazon Web Services account.
+     * Lists the applications registered with the user or Amazon Web Services account.
      * </p>
      * 
      * @param listApplicationsRequest
@@ -1263,7 +1279,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Lists the deployment configurations with the IAM user or Amazon Web Services account.
+     * Lists the deployment configurations with the user or Amazon Web Services account.
      * </p>
      * 
      * @param listDeploymentConfigsRequest
@@ -1277,7 +1293,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Lists the deployment configurations with the IAM user or Amazon Web Services account.
+     * Lists the deployment configurations with the user or Amazon Web Services account.
      * </p>
      * 
      * @param listDeploymentConfigsRequest
@@ -1311,7 +1327,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Lists the deployment groups for an application registered with the IAM user or Amazon Web Services account.
+     * Lists the deployment groups for an application registered with the Amazon Web Services user or Amazon Web
+     * Services account.
      * </p>
      * 
      * @param listDeploymentGroupsRequest
@@ -1325,7 +1342,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Lists the deployment groups for an application registered with the IAM user or Amazon Web Services account.
+     * Lists the deployment groups for an application registered with the Amazon Web Services user or Amazon Web
+     * Services account.
      * </p>
      * 
      * @param listDeploymentGroupsRequest
@@ -1351,7 +1369,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * </note>
      * <p>
-     * Lists the instance for a deployment associated with the IAM user or Amazon Web Services account.
+     * Lists the instance for a deployment associated with the user or Amazon Web Services account.
      * </p>
      * 
      * @param listDeploymentInstancesRequest
@@ -1373,7 +1391,7 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
      * </p>
      * </note>
      * <p>
-     * Lists the instance for a deployment associated with the IAM user or Amazon Web Services account.
+     * Lists the instance for a deployment associated with the user or Amazon Web Services account.
      * </p>
      * 
      * @param listDeploymentInstancesRequest
@@ -1424,8 +1442,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Lists the deployments in a deployment group for an application registered with the IAM user or Amazon Web
-     * Services account.
+     * Lists the deployments in a deployment group for an application registered with the user or Amazon Web Services
+     * account.
      * </p>
      * 
      * @param listDeploymentsRequest
@@ -1439,8 +1457,8 @@ public interface AmazonCodeDeployAsync extends AmazonCodeDeploy {
 
     /**
      * <p>
-     * Lists the deployments in a deployment group for an application registered with the IAM user or Amazon Web
-     * Services account.
+     * Lists the deployments in a deployment group for an application registered with the user or Amazon Web Services
+     * account.
      * </p>
      * 
      * @param listDeploymentsRequest

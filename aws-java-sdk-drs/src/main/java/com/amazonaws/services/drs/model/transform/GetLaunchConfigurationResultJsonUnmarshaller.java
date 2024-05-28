@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,11 @@ public class GetLaunchConfigurationResultJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     getLaunchConfigurationResult.setLaunchDisposition(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("launchIntoInstanceProperties", targetDepth)) {
+                    context.nextToken();
+                    getLaunchConfigurationResult
+                            .setLaunchIntoInstanceProperties(LaunchIntoInstancePropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("licensing", targetDepth)) {
                     context.nextToken();
                     getLaunchConfigurationResult.setLicensing(LicensingJsonUnmarshaller.getInstance().unmarshall(context));
@@ -71,6 +76,10 @@ public class GetLaunchConfigurationResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     getLaunchConfigurationResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("postLaunchEnabled", targetDepth)) {
+                    context.nextToken();
+                    getLaunchConfigurationResult.setPostLaunchEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("sourceServerID", targetDepth)) {
                     context.nextToken();

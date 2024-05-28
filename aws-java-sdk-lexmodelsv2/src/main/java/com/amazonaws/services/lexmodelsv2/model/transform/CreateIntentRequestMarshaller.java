@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,6 +58,8 @@ public class CreateIntentRequestMarshaller {
             .marshallLocationName("localeId").build();
     private static final MarshallingInfo<StructuredPojo> INITIALRESPONSESETTING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("initialResponseSetting").build();
+    private static final MarshallingInfo<StructuredPojo> QNAINTENTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("qnAIntentConfiguration").build();
 
     private static final CreateIntentRequestMarshaller instance = new CreateIntentRequestMarshaller();
 
@@ -90,6 +92,7 @@ public class CreateIntentRequestMarshaller {
             protocolMarshaller.marshall(createIntentRequest.getBotVersion(), BOTVERSION_BINDING);
             protocolMarshaller.marshall(createIntentRequest.getLocaleId(), LOCALEID_BINDING);
             protocolMarshaller.marshall(createIntentRequest.getInitialResponseSetting(), INITIALRESPONSESETTING_BINDING);
+            protocolMarshaller.marshall(createIntentRequest.getQnAIntentConfiguration(), QNAINTENTCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

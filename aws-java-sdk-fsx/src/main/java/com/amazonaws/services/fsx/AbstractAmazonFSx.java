@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,11 @@ public class AbstractAmazonFSx implements AmazonFSx {
 
     @Override
     public CopyBackupResult copyBackup(CopyBackupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CopySnapshotAndUpdateVolumeResult copySnapshotAndUpdateVolume(CopySnapshotAndUpdateVolumeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -158,6 +163,11 @@ public class AbstractAmazonFSx implements AmazonFSx {
     }
 
     @Override
+    public DescribeSharedVpcConfigurationResult describeSharedVpcConfiguration(DescribeSharedVpcConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeSnapshotsResult describeSnapshots(DescribeSnapshotsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -193,6 +203,11 @@ public class AbstractAmazonFSx implements AmazonFSx {
     }
 
     @Override
+    public StartMisconfiguredStateRecoveryResult startMisconfiguredStateRecovery(StartMisconfiguredStateRecoveryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -214,6 +229,11 @@ public class AbstractAmazonFSx implements AmazonFSx {
 
     @Override
     public UpdateFileSystemResult updateFileSystem(UpdateFileSystemRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateSharedVpcConfigurationResult updateSharedVpcConfiguration(UpdateSharedVpcConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

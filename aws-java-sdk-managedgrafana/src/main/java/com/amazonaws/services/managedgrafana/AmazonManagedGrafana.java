@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,8 +51,9 @@ public interface AmazonManagedGrafana {
 
     /**
      * <p>
-     * Assigns a Grafana Enterprise license to a workspace. Upgrading to Grafana Enterprise incurs additional fees. For
-     * more information, see <a
+     * Assigns a Grafana Enterprise license to a workspace. To upgrade, you must use <code>ENTERPRISE</code> for the
+     * <code>licenseType</code>, and pass in a valid Grafana Labs token for the <code>grafanaToken</code>. Upgrading to
+     * Grafana Enterprise incurs additional fees. For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html">Upgrade a
      * workspace to Grafana Enterprise</a>.
      * </p>
@@ -107,11 +108,18 @@ public interface AmazonManagedGrafana {
 
     /**
      * <p>
-     * Creates an API key for the workspace. This key can be used to authenticate requests sent to the workspace's HTTP
-     * API. See <a href=" https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">
-     * https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a> for available APIs and example
+     * Creates a Grafana API key for the workspace. This key can be used to authenticate requests sent to the
+     * workspace's HTTP API. See <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">https
+     * ://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a> for available APIs and example
      * requests.
      * </p>
+     * <note>
+     * <p>
+     * In workspaces compatible with Grafana version 9 or above, use workspace service accounts instead of API keys. API
+     * keys will be removed in a future release.
+     * </p>
+     * </note>
      * 
      * @param createWorkspaceApiKeyRequest
      * @return Result of the CreateWorkspaceApiKey operation returned by the service.
@@ -134,6 +142,94 @@ public interface AmazonManagedGrafana {
      *      API Documentation</a>
      */
     CreateWorkspaceApiKeyResult createWorkspaceApiKey(CreateWorkspaceApiKeyRequest createWorkspaceApiKeyRequest);
+
+    /**
+     * <p>
+     * Creates a service account for the workspace. A service account can be used to call Grafana HTTP APIs, and run
+     * automated workloads. After creating the service account with the correct <code>GrafanaRole</code> for your use
+     * case, use <code>CreateWorkspaceServiceAccountToken</code> to create a token that can be used to authenticate and
+     * authorize Grafana HTTP API calls.
+     * </p>
+     * <p>
+     * You can only create service accounts for workspaces that are compatible with Grafana version 9 and above.
+     * </p>
+     * <note>
+     * <p>
+     * For more information about service accounts, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/service-accounts.html">Service accounts</a> in the
+     * <i>Amazon Managed Grafana User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about the Grafana HTTP APIs, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">Using Grafana HTTP APIs</a>
+     * in the <i>Amazon Managed Grafana User Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param createWorkspaceServiceAccountRequest
+     * @return Result of the CreateWorkspaceServiceAccount operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws ConflictException
+     *         A resource was in an inconsistent state during an update or a deletion.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error while processing the request. Retry the request.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause a service quota to be exceeded.
+     * @sample AmazonManagedGrafana.CreateWorkspaceServiceAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/CreateWorkspaceServiceAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateWorkspaceServiceAccountResult createWorkspaceServiceAccount(CreateWorkspaceServiceAccountRequest createWorkspaceServiceAccountRequest);
+
+    /**
+     * <p>
+     * Creates a token that can be used to authenticate and authorize Grafana HTTP API operations for the given <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/service-accounts.html">workspace service account</a>.
+     * The service account acts as a user for the API operations, and defines the permissions that are used by the API.
+     * </p>
+     * <important>
+     * <p>
+     * When you create the service account token, you will receive a key that is used when calling Grafana APIs. Do not
+     * lose this key, as it will not be retrievable again.
+     * </p>
+     * <p>
+     * If you do lose the key, you can delete the token and recreate it to receive a new key. This will disable the
+     * initial key.
+     * </p>
+     * </important>
+     * <p>
+     * Service accounts are only available for workspaces that are compatible with Grafana version 9 and above.
+     * </p>
+     * 
+     * @param createWorkspaceServiceAccountTokenRequest
+     * @return Result of the CreateWorkspaceServiceAccountToken operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws ConflictException
+     *         A resource was in an inconsistent state during an update or a deletion.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error while processing the request. Retry the request.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause a service quota to be exceeded.
+     * @sample AmazonManagedGrafana.CreateWorkspaceServiceAccountToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/CreateWorkspaceServiceAccountToken"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateWorkspaceServiceAccountTokenResult createWorkspaceServiceAccountToken(
+            CreateWorkspaceServiceAccountTokenRequest createWorkspaceServiceAccountTokenRequest);
 
     /**
      * <p>
@@ -162,8 +258,14 @@ public interface AmazonManagedGrafana {
 
     /**
      * <p>
-     * Deletes an API key for a workspace.
+     * Deletes a Grafana API key for the workspace.
      * </p>
+     * <note>
+     * <p>
+     * In workspaces compatible with Grafana version 9 or above, use workspace service accounts instead of API keys. API
+     * keys will be removed in a future release.
+     * </p>
+     * </note>
      * 
      * @param deleteWorkspaceApiKeyRequest
      * @return Result of the DeleteWorkspaceApiKey operation returned by the service.
@@ -184,6 +286,71 @@ public interface AmazonManagedGrafana {
      *      API Documentation</a>
      */
     DeleteWorkspaceApiKeyResult deleteWorkspaceApiKey(DeleteWorkspaceApiKeyRequest deleteWorkspaceApiKeyRequest);
+
+    /**
+     * <p>
+     * Deletes a workspace service account from the workspace.
+     * </p>
+     * <p>
+     * This will delete any tokens created for the service account, as well. If the tokens are currently in use, the
+     * will fail to authenticate / authorize after they are deleted.
+     * </p>
+     * <p>
+     * Service accounts are only available for workspaces that are compatible with Grafana version 9 and above.
+     * </p>
+     * 
+     * @param deleteWorkspaceServiceAccountRequest
+     * @return Result of the DeleteWorkspaceServiceAccount operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws ConflictException
+     *         A resource was in an inconsistent state during an update or a deletion.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error while processing the request. Retry the request.
+     * @sample AmazonManagedGrafana.DeleteWorkspaceServiceAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DeleteWorkspaceServiceAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteWorkspaceServiceAccountResult deleteWorkspaceServiceAccount(DeleteWorkspaceServiceAccountRequest deleteWorkspaceServiceAccountRequest);
+
+    /**
+     * <p>
+     * Deletes a token for the workspace service account.
+     * </p>
+     * <p>
+     * This will disable the key associated with the token. If any automation is currently using the key, it will no
+     * longer be authenticated or authorized to perform actions with the Grafana HTTP APIs.
+     * </p>
+     * <p>
+     * Service accounts are only available for workspaces that are compatible with Grafana version 9 and above.
+     * </p>
+     * 
+     * @param deleteWorkspaceServiceAccountTokenRequest
+     * @return Result of the DeleteWorkspaceServiceAccountToken operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws ConflictException
+     *         A resource was in an inconsistent state during an update or a deletion.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error while processing the request. Retry the request.
+     * @sample AmazonManagedGrafana.DeleteWorkspaceServiceAccountToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DeleteWorkspaceServiceAccountToken"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteWorkspaceServiceAccountTokenResult deleteWorkspaceServiceAccountToken(
+            DeleteWorkspaceServiceAccountTokenRequest deleteWorkspaceServiceAccountTokenRequest);
 
     /**
      * <p>
@@ -219,6 +386,8 @@ public interface AmazonManagedGrafana {
      *         The request references a resource that does not exist.
      * @throws ThrottlingException
      *         The request was denied because of request throttling. Retry the request.
+     * @throws ConflictException
+     *         A resource was in an inconsistent state during an update or a deletion.
      * @throws ValidationException
      *         The value of a parameter in the request caused an error.
      * @throws AccessDeniedException
@@ -230,6 +399,27 @@ public interface AmazonManagedGrafana {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeWorkspaceAuthenticationResult describeWorkspaceAuthentication(DescribeWorkspaceAuthenticationRequest describeWorkspaceAuthenticationRequest);
+
+    /**
+     * <p>
+     * Gets the current configuration string for the given workspace.
+     * </p>
+     * 
+     * @param describeWorkspaceConfigurationRequest
+     * @return Result of the DescribeWorkspaceConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error while processing the request. Retry the request.
+     * @sample AmazonManagedGrafana.DescribeWorkspaceConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DescribeWorkspaceConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeWorkspaceConfigurationResult describeWorkspaceConfiguration(DescribeWorkspaceConfigurationRequest describeWorkspaceConfigurationRequest);
 
     /**
      * <p>
@@ -305,6 +495,92 @@ public interface AmazonManagedGrafana {
      *      API Documentation</a>
      */
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Lists available versions of Grafana. These are available when calling <code>CreateWorkspace</code>. Optionally,
+     * include a workspace to list the versions to which it can be upgraded.
+     * </p>
+     * 
+     * @param listVersionsRequest
+     * @return Result of the ListVersions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error while processing the request. Retry the request.
+     * @sample AmazonManagedGrafana.ListVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListVersions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListVersionsResult listVersions(ListVersionsRequest listVersionsRequest);
+
+    /**
+     * <p>
+     * Returns a list of tokens for a workspace service account.
+     * </p>
+     * <note>
+     * <p>
+     * This does not return the key for each token. You cannot access keys after they are created. To create a new key,
+     * delete the token and recreate it.
+     * </p>
+     * </note>
+     * <p>
+     * Service accounts are only available for workspaces that are compatible with Grafana version 9 and above.
+     * </p>
+     * 
+     * @param listWorkspaceServiceAccountTokensRequest
+     * @return Result of the ListWorkspaceServiceAccountTokens operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws ConflictException
+     *         A resource was in an inconsistent state during an update or a deletion.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error while processing the request. Retry the request.
+     * @sample AmazonManagedGrafana.ListWorkspaceServiceAccountTokens
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListWorkspaceServiceAccountTokens"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListWorkspaceServiceAccountTokensResult listWorkspaceServiceAccountTokens(ListWorkspaceServiceAccountTokensRequest listWorkspaceServiceAccountTokensRequest);
+
+    /**
+     * <p>
+     * Returns a list of service accounts for a workspace.
+     * </p>
+     * <p>
+     * Service accounts are only available for workspaces that are compatible with Grafana version 9 and above.
+     * </p>
+     * 
+     * @param listWorkspaceServiceAccountsRequest
+     * @return Result of the ListWorkspaceServiceAccounts operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws ConflictException
+     *         A resource was in an inconsistent state during an update or a deletion.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error while processing the request. Retry the request.
+     * @sample AmazonManagedGrafana.ListWorkspaceServiceAccounts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListWorkspaceServiceAccounts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListWorkspaceServiceAccountsResult listWorkspaceServiceAccounts(ListWorkspaceServiceAccountsRequest listWorkspaceServiceAccountsRequest);
 
     /**
      * <p>
@@ -409,8 +685,8 @@ public interface AmazonManagedGrafana {
      * parameters, the existing values of those parameters are not changed.
      * </p>
      * <p>
-     * To modify the user authentication methods that the workspace uses, such as SAML or Amazon Web Services SSO, use
-     * <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspaceAuthentication.html">
+     * To modify the user authentication methods that the workspace uses, such as SAML or IAM Identity Center, use <a
+     * href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspaceAuthentication.html">
      * UpdateWorkspaceAuthentication</a>.
      * </p>
      * <p>
@@ -444,6 +720,11 @@ public interface AmazonManagedGrafana {
      * SAML. You can also map SAML assertion attributes to workspace user information and define which groups in the
      * assertion attribute are to have the <code>Admin</code> and <code>Editor</code> roles in the workspace.
      * </p>
+     * <note>
+     * <p>
+     * Changes to the authentication method for a workspace may take a few minutes to take effect.
+     * </p>
+     * </note>
      * 
      * @param updateWorkspaceAuthenticationRequest
      * @return Result of the UpdateWorkspaceAuthentication operation returned by the service.
@@ -464,6 +745,31 @@ public interface AmazonManagedGrafana {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateWorkspaceAuthenticationResult updateWorkspaceAuthentication(UpdateWorkspaceAuthenticationRequest updateWorkspaceAuthenticationRequest);
+
+    /**
+     * <p>
+     * Updates the configuration string for the given workspace
+     * </p>
+     * 
+     * @param updateWorkspaceConfigurationRequest
+     * @return Result of the UpdateWorkspaceConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws ConflictException
+     *         A resource was in an inconsistent state during an update or a deletion.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error while processing the request. Retry the request.
+     * @sample AmazonManagedGrafana.UpdateWorkspaceConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/UpdateWorkspaceConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateWorkspaceConfigurationResult updateWorkspaceConfiguration(UpdateWorkspaceConfigurationRequest updateWorkspaceConfigurationRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

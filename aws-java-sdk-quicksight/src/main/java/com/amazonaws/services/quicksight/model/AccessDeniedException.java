@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,7 @@ import javax.annotation.Generated;
  * <p>
  * You don't have access to this item. The provided credentials couldn't be validated. You might not be authorized to
  * carry out the request. Make sure that your account is authorized to use the Amazon QuickSight service, that your
- * policies have the correct permissions, and that you are using the correct access keys.
+ * policies have the correct permissions, and that you are using the correct credentials.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

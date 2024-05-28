@@ -1,0 +1,86 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.ssooidc.model.transform;
+
+import java.util.List;
+import javax.annotation.Generated;
+
+import com.amazonaws.SdkClientException;
+import com.amazonaws.services.ssooidc.model.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
+
+/**
+ * CreateTokenWithIAMRequestMarshaller
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class CreateTokenWithIAMRequestMarshaller {
+
+    private static final MarshallingInfo<String> CLIENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("clientId").build();
+    private static final MarshallingInfo<String> GRANTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("grantType").build();
+    private static final MarshallingInfo<String> CODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("code").build();
+    private static final MarshallingInfo<String> REFRESHTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("refreshToken").build();
+    private static final MarshallingInfo<String> ASSERTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("assertion").build();
+    private static final MarshallingInfo<List> SCOPE_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("scope").build();
+    private static final MarshallingInfo<String> REDIRECTURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("redirectUri").build();
+    private static final MarshallingInfo<String> SUBJECTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("subjectToken").build();
+    private static final MarshallingInfo<String> SUBJECTTOKENTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("subjectTokenType").build();
+    private static final MarshallingInfo<String> REQUESTEDTOKENTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requestedTokenType").build();
+    private static final MarshallingInfo<String> CODEVERIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("codeVerifier").build();
+
+    private static final CreateTokenWithIAMRequestMarshaller instance = new CreateTokenWithIAMRequestMarshaller();
+
+    public static CreateTokenWithIAMRequestMarshaller getInstance() {
+        return instance;
+    }
+
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(CreateTokenWithIAMRequest createTokenWithIAMRequest, ProtocolMarshaller protocolMarshaller) {
+
+        if (createTokenWithIAMRequest == null) {
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
+        }
+
+        try {
+            protocolMarshaller.marshall(createTokenWithIAMRequest.getClientId(), CLIENTID_BINDING);
+            protocolMarshaller.marshall(createTokenWithIAMRequest.getGrantType(), GRANTTYPE_BINDING);
+            protocolMarshaller.marshall(createTokenWithIAMRequest.getCode(), CODE_BINDING);
+            protocolMarshaller.marshall(createTokenWithIAMRequest.getRefreshToken(), REFRESHTOKEN_BINDING);
+            protocolMarshaller.marshall(createTokenWithIAMRequest.getAssertion(), ASSERTION_BINDING);
+            protocolMarshaller.marshall(createTokenWithIAMRequest.getScope(), SCOPE_BINDING);
+            protocolMarshaller.marshall(createTokenWithIAMRequest.getRedirectUri(), REDIRECTURI_BINDING);
+            protocolMarshaller.marshall(createTokenWithIAMRequest.getSubjectToken(), SUBJECTTOKEN_BINDING);
+            protocolMarshaller.marshall(createTokenWithIAMRequest.getSubjectTokenType(), SUBJECTTOKENTYPE_BINDING);
+            protocolMarshaller.marshall(createTokenWithIAMRequest.getRequestedTokenType(), REQUESTEDTOKENTYPE_BINDING);
+            protocolMarshaller.marshall(createTokenWithIAMRequest.getCodeVerifier(), CODEVERIFIER_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
+        }
+    }
+
+}

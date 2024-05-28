@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class ListQueuesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.
+     * A list of queue URLs, up to 1,000 entries, or the value of <code>MaxResults</code> that you sent in the request.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> queueUrls;
@@ -42,10 +42,11 @@ public class ListQueuesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.
+     * A list of queue URLs, up to 1,000 entries, or the value of <code>MaxResults</code> that you sent in the request.
      * </p>
      * 
-     * @return A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.
+     * @return A list of queue URLs, up to 1,000 entries, or the value of <code>MaxResults</code> that you sent in the
+     *         request.
      */
 
     public java.util.List<String> getQueueUrls() {
@@ -57,11 +58,12 @@ public class ListQueuesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.
+     * A list of queue URLs, up to 1,000 entries, or the value of <code>MaxResults</code> that you sent in the request.
      * </p>
      * 
      * @param queueUrls
-     *        A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.
+     *        A list of queue URLs, up to 1,000 entries, or the value of <code>MaxResults</code> that you sent in the
+     *        request.
      */
 
     public void setQueueUrls(java.util.Collection<String> queueUrls) {
@@ -75,7 +77,7 @@ public class ListQueuesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.
+     * A list of queue URLs, up to 1,000 entries, or the value of <code>MaxResults</code> that you sent in the request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -84,7 +86,8 @@ public class ListQueuesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param queueUrls
-     *        A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.
+     *        A list of queue URLs, up to 1,000 entries, or the value of <code>MaxResults</code> that you sent in the
+     *        request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,11 +103,12 @@ public class ListQueuesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.
+     * A list of queue URLs, up to 1,000 entries, or the value of <code>MaxResults</code> that you sent in the request.
      * </p>
      * 
      * @param queueUrls
-     *        A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.
+     *        A list of queue URLs, up to 1,000 entries, or the value of <code>MaxResults</code> that you sent in the
+     *        request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

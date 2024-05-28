@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,6 +71,16 @@ public class AssetModelPropertyJsonUnmarshaller implements Unmarshaller<AssetMod
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
                     assetModelProperty.setType(PropertyTypeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("path", targetDepth)) {
+                    context.nextToken();
+                    assetModelProperty.setPath(new ListUnmarshaller<AssetModelPropertyPathSegment>(AssetModelPropertyPathSegmentJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("externalId", targetDepth)) {
+                    context.nextToken();
+                    assetModelProperty.setExternalId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

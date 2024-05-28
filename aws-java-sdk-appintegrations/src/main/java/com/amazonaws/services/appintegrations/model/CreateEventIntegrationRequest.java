@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,13 +51,17 @@ public class CreateEventIntegrationRequest extends com.amazonaws.AmazonWebServic
     private String eventBridgeBus;
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>.
      * </p>
      */
     private String clientToken;
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -224,11 +228,17 @@ public class CreateEventIntegrationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not
+     *        provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     *        href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries
+     *        safe with idempotent APIs</a>.
      */
 
     public void setClientToken(String clientToken) {
@@ -237,10 +247,16 @@ public class CreateEventIntegrationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>.
      * </p>
      * 
-     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not
+     *         provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see
+     *         <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     *         retries safe with idempotent APIs</a>.
      */
 
     public String getClientToken() {
@@ -249,11 +265,17 @@ public class CreateEventIntegrationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not
+     *        provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     *        href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries
+     *        safe with idempotent APIs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -264,10 +286,12 @@ public class CreateEventIntegrationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      * 
-     * @return One or more tags.
+     * @return The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *         {"key1":"value1", "key2":"value2"} }.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -276,11 +300,13 @@ public class CreateEventIntegrationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      * 
      * @param tags
-     *        One or more tags.
+     *        The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *        {"key1":"value1", "key2":"value2"} }.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -289,11 +315,13 @@ public class CreateEventIntegrationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * One or more tags.
+     * The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1",
+     * "key2":"value2"} }.
      * </p>
      * 
      * @param tags
-     *        One or more tags.
+     *        The tags used to organize, track, or control access for this resource. For example, { "tags":
+     *        {"key1":"value1", "key2":"value2"} }.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

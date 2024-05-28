@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class SetIpAddressTypeRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceName").build();
     private static final MarshallingInfo<String> IPADDRESSTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ipAddressType").build();
+    private static final MarshallingInfo<Boolean> ACCEPTBUNDLEUPDATE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("acceptBundleUpdate").build();
 
     private static final SetIpAddressTypeRequestMarshaller instance = new SetIpAddressTypeRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class SetIpAddressTypeRequestMarshaller {
             protocolMarshaller.marshall(setIpAddressTypeRequest.getResourceType(), RESOURCETYPE_BINDING);
             protocolMarshaller.marshall(setIpAddressTypeRequest.getResourceName(), RESOURCENAME_BINDING);
             protocolMarshaller.marshall(setIpAddressTypeRequest.getIpAddressType(), IPADDRESSTYPE_BINDING);
+            protocolMarshaller.marshall(setIpAddressTypeRequest.getAcceptBundleUpdate(), ACCEPTBUNDLEUPDATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

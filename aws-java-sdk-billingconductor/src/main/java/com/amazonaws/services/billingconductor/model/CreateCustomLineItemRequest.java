@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,6 +68,12 @@ public class CreateCustomLineItemRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private CustomLineItemChargeDetails chargeDetails;
+    /**
+     * <p>
+     * The Amazon Web Services account in which this custom line item will be applied to.
+     * </p>
+     */
+    private String accountId;
 
     /**
      * <p>
@@ -387,6 +393,46 @@ public class CreateCustomLineItemRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The Amazon Web Services account in which this custom line item will be applied to.
+     * </p>
+     * 
+     * @param accountId
+     *        The Amazon Web Services account in which this custom line item will be applied to.
+     */
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services account in which this custom line item will be applied to.
+     * </p>
+     * 
+     * @return The Amazon Web Services account in which this custom line item will be applied to.
+     */
+
+    public String getAccountId() {
+        return this.accountId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services account in which this custom line item will be applied to.
+     * </p>
+     * 
+     * @param accountId
+     *        The Amazon Web Services account in which this custom line item will be applied to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCustomLineItemRequest withAccountId(String accountId) {
+        setAccountId(accountId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -411,7 +457,9 @@ public class CreateCustomLineItemRequest extends com.amazonaws.AmazonWebServiceR
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getChargeDetails() != null)
-            sb.append("ChargeDetails: ").append(getChargeDetails());
+            sb.append("ChargeDetails: ").append(getChargeDetails()).append(",");
+        if (getAccountId() != null)
+            sb.append("AccountId: ").append(getAccountId());
         sb.append("}");
         return sb.toString();
     }
@@ -454,6 +502,10 @@ public class CreateCustomLineItemRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getChargeDetails() != null && other.getChargeDetails().equals(this.getChargeDetails()) == false)
             return false;
+        if (other.getAccountId() == null ^ this.getAccountId() == null)
+            return false;
+        if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
+            return false;
         return true;
     }
 
@@ -469,6 +521,7 @@ public class CreateCustomLineItemRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getBillingPeriodRange() == null) ? 0 : getBillingPeriodRange().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getChargeDetails() == null) ? 0 : getChargeDetails().hashCode());
+        hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         return hashCode;
     }
 

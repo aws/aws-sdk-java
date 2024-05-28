@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,10 @@ public class EksPodPropertiesOverrideMarshaller {
 
     private static final MarshallingInfo<List> CONTAINERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("containers").build();
+    private static final MarshallingInfo<List> INITCONTAINERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("initContainers").build();
+    private static final MarshallingInfo<StructuredPojo> METADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("metadata").build();
 
     private static final EksPodPropertiesOverrideMarshaller instance = new EksPodPropertiesOverrideMarshaller();
 
@@ -48,6 +52,8 @@ public class EksPodPropertiesOverrideMarshaller {
 
         try {
             protocolMarshaller.marshall(eksPodPropertiesOverride.getContainers(), CONTAINERS_BINDING);
+            protocolMarshaller.marshall(eksPodPropertiesOverride.getInitContainers(), INITCONTAINERS_BINDING);
+            protocolMarshaller.marshall(eksPodPropertiesOverride.getMetadata(), METADATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

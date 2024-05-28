@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,13 +33,20 @@ public class SendChannelMessageRequest extends com.amazonaws.AmazonWebServiceReq
     private String channelArn;
     /**
      * <p>
-     * The content of the message.
+     * The content of the channel message.
      * </p>
      */
     private String content;
     /**
      * <p>
      * The type of message, <code>STANDARD</code> or <code>CONTROL</code>.
+     * </p>
+     * <p>
+     * <code>STANDARD</code> messages can be up to 4KB in size and contain metadata. Metadata is arbitrary, and you can
+     * use it in a variety of ways, such as containing a link to an attachment.
+     * </p>
+     * <p>
+     * <code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.
      * </p>
      */
     private String type;
@@ -63,7 +70,7 @@ public class SendChannelMessageRequest extends com.amazonaws.AmazonWebServiceReq
     private String clientRequestToken;
     /**
      * <p>
-     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      * </p>
      */
     private String chimeBearer;
@@ -86,6 +93,20 @@ public class SendChannelMessageRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String subChannelId;
+    /**
+     * <p>
+     * The content type of the channel message.
+     * </p>
+     */
+    private String contentType;
+    /**
+     * <p>
+     * The target of a message. Must be a member of the channel, such as another user, a bot, or the sender. Only the
+     * target and the sender can view targeted messages. Only users who can see targeted messages can take actions on
+     * them. However, administrators can delete targeted messages that they can’t see.
+     * </p>
+     */
+    private java.util.List<Target> target;
 
     /**
      * <p>
@@ -129,11 +150,11 @@ public class SendChannelMessageRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The content of the message.
+     * The content of the channel message.
      * </p>
      * 
      * @param content
-     *        The content of the message.
+     *        The content of the channel message.
      */
 
     public void setContent(String content) {
@@ -142,10 +163,10 @@ public class SendChannelMessageRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The content of the message.
+     * The content of the channel message.
      * </p>
      * 
-     * @return The content of the message.
+     * @return The content of the channel message.
      */
 
     public String getContent() {
@@ -154,11 +175,11 @@ public class SendChannelMessageRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The content of the message.
+     * The content of the channel message.
      * </p>
      * 
      * @param content
-     *        The content of the message.
+     *        The content of the channel message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -171,9 +192,22 @@ public class SendChannelMessageRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The type of message, <code>STANDARD</code> or <code>CONTROL</code>.
      * </p>
+     * <p>
+     * <code>STANDARD</code> messages can be up to 4KB in size and contain metadata. Metadata is arbitrary, and you can
+     * use it in a variety of ways, such as containing a link to an attachment.
+     * </p>
+     * <p>
+     * <code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.
+     * </p>
      * 
      * @param type
-     *        The type of message, <code>STANDARD</code> or <code>CONTROL</code>.
+     *        The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
+     *        <p>
+     *        <code>STANDARD</code> messages can be up to 4KB in size and contain metadata. Metadata is arbitrary, and
+     *        you can use it in a variety of ways, such as containing a link to an attachment.
+     *        </p>
+     *        <p>
+     *        <code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.
      * @see ChannelMessageType
      */
 
@@ -185,8 +219,21 @@ public class SendChannelMessageRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The type of message, <code>STANDARD</code> or <code>CONTROL</code>.
      * </p>
+     * <p>
+     * <code>STANDARD</code> messages can be up to 4KB in size and contain metadata. Metadata is arbitrary, and you can
+     * use it in a variety of ways, such as containing a link to an attachment.
+     * </p>
+     * <p>
+     * <code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.
+     * </p>
      * 
-     * @return The type of message, <code>STANDARD</code> or <code>CONTROL</code>.
+     * @return The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
+     *         <p>
+     *         <code>STANDARD</code> messages can be up to 4KB in size and contain metadata. Metadata is arbitrary, and
+     *         you can use it in a variety of ways, such as containing a link to an attachment.
+     *         </p>
+     *         <p>
+     *         <code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.
      * @see ChannelMessageType
      */
 
@@ -198,9 +245,22 @@ public class SendChannelMessageRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The type of message, <code>STANDARD</code> or <code>CONTROL</code>.
      * </p>
+     * <p>
+     * <code>STANDARD</code> messages can be up to 4KB in size and contain metadata. Metadata is arbitrary, and you can
+     * use it in a variety of ways, such as containing a link to an attachment.
+     * </p>
+     * <p>
+     * <code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.
+     * </p>
      * 
      * @param type
-     *        The type of message, <code>STANDARD</code> or <code>CONTROL</code>.
+     *        The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
+     *        <p>
+     *        <code>STANDARD</code> messages can be up to 4KB in size and contain metadata. Metadata is arbitrary, and
+     *        you can use it in a variety of ways, such as containing a link to an attachment.
+     *        </p>
+     *        <p>
+     *        <code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelMessageType
      */
@@ -214,9 +274,22 @@ public class SendChannelMessageRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The type of message, <code>STANDARD</code> or <code>CONTROL</code>.
      * </p>
+     * <p>
+     * <code>STANDARD</code> messages can be up to 4KB in size and contain metadata. Metadata is arbitrary, and you can
+     * use it in a variety of ways, such as containing a link to an attachment.
+     * </p>
+     * <p>
+     * <code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.
+     * </p>
      * 
      * @param type
-     *        The type of message, <code>STANDARD</code> or <code>CONTROL</code>.
+     *        The type of message, <code>STANDARD</code> or <code>CONTROL</code>.</p>
+     *        <p>
+     *        <code>STANDARD</code> messages can be up to 4KB in size and contain metadata. Metadata is arbitrary, and
+     *        you can use it in a variety of ways, such as containing a link to an attachment.
+     *        </p>
+     *        <p>
+     *        <code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelMessageType
      */
@@ -367,11 +440,11 @@ public class SendChannelMessageRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      * </p>
      * 
      * @param chimeBearer
-     *        The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     *        The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      */
 
     public void setChimeBearer(String chimeBearer) {
@@ -380,10 +453,10 @@ public class SendChannelMessageRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      * </p>
      * 
-     * @return The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * @return The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      */
 
     public String getChimeBearer() {
@@ -392,11 +465,11 @@ public class SendChannelMessageRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     * The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      * </p>
      * 
      * @param chimeBearer
-     *        The <code>AppInstanceUserArn</code> of the user that makes the API call.
+     *        The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -560,6 +633,132 @@ public class SendChannelMessageRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The content type of the channel message.
+     * </p>
+     * 
+     * @param contentType
+     *        The content type of the channel message.
+     */
+
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
+    }
+
+    /**
+     * <p>
+     * The content type of the channel message.
+     * </p>
+     * 
+     * @return The content type of the channel message.
+     */
+
+    public String getContentType() {
+        return this.contentType;
+    }
+
+    /**
+     * <p>
+     * The content type of the channel message.
+     * </p>
+     * 
+     * @param contentType
+     *        The content type of the channel message.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SendChannelMessageRequest withContentType(String contentType) {
+        setContentType(contentType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The target of a message. Must be a member of the channel, such as another user, a bot, or the sender. Only the
+     * target and the sender can view targeted messages. Only users who can see targeted messages can take actions on
+     * them. However, administrators can delete targeted messages that they can’t see.
+     * </p>
+     * 
+     * @return The target of a message. Must be a member of the channel, such as another user, a bot, or the sender.
+     *         Only the target and the sender can view targeted messages. Only users who can see targeted messages can
+     *         take actions on them. However, administrators can delete targeted messages that they can’t see.
+     */
+
+    public java.util.List<Target> getTarget() {
+        return target;
+    }
+
+    /**
+     * <p>
+     * The target of a message. Must be a member of the channel, such as another user, a bot, or the sender. Only the
+     * target and the sender can view targeted messages. Only users who can see targeted messages can take actions on
+     * them. However, administrators can delete targeted messages that they can’t see.
+     * </p>
+     * 
+     * @param target
+     *        The target of a message. Must be a member of the channel, such as another user, a bot, or the sender. Only
+     *        the target and the sender can view targeted messages. Only users who can see targeted messages can take
+     *        actions on them. However, administrators can delete targeted messages that they can’t see.
+     */
+
+    public void setTarget(java.util.Collection<Target> target) {
+        if (target == null) {
+            this.target = null;
+            return;
+        }
+
+        this.target = new java.util.ArrayList<Target>(target);
+    }
+
+    /**
+     * <p>
+     * The target of a message. Must be a member of the channel, such as another user, a bot, or the sender. Only the
+     * target and the sender can view targeted messages. Only users who can see targeted messages can take actions on
+     * them. However, administrators can delete targeted messages that they can’t see.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTarget(java.util.Collection)} or {@link #withTarget(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param target
+     *        The target of a message. Must be a member of the channel, such as another user, a bot, or the sender. Only
+     *        the target and the sender can view targeted messages. Only users who can see targeted messages can take
+     *        actions on them. However, administrators can delete targeted messages that they can’t see.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SendChannelMessageRequest withTarget(Target... target) {
+        if (this.target == null) {
+            setTarget(new java.util.ArrayList<Target>(target.length));
+        }
+        for (Target ele : target) {
+            this.target.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The target of a message. Must be a member of the channel, such as another user, a bot, or the sender. Only the
+     * target and the sender can view targeted messages. Only users who can see targeted messages can take actions on
+     * them. However, administrators can delete targeted messages that they can’t see.
+     * </p>
+     * 
+     * @param target
+     *        The target of a message. Must be a member of the channel, such as another user, a bot, or the sender. Only
+     *        the target and the sender can view targeted messages. Only users who can see targeted messages can take
+     *        actions on them. However, administrators can delete targeted messages that they can’t see.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SendChannelMessageRequest withTarget(java.util.Collection<Target> target) {
+        setTarget(target);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -590,7 +789,11 @@ public class SendChannelMessageRequest extends com.amazonaws.AmazonWebServiceReq
         if (getMessageAttributes() != null)
             sb.append("MessageAttributes: ").append("***Sensitive Data Redacted***").append(",");
         if (getSubChannelId() != null)
-            sb.append("SubChannelId: ").append(getSubChannelId());
+            sb.append("SubChannelId: ").append(getSubChannelId()).append(",");
+        if (getContentType() != null)
+            sb.append("ContentType: ").append("***Sensitive Data Redacted***").append(",");
+        if (getTarget() != null)
+            sb.append("Target: ").append(getTarget());
         sb.append("}");
         return sb.toString();
     }
@@ -645,6 +848,14 @@ public class SendChannelMessageRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getSubChannelId() != null && other.getSubChannelId().equals(this.getSubChannelId()) == false)
             return false;
+        if (other.getContentType() == null ^ this.getContentType() == null)
+            return false;
+        if (other.getContentType() != null && other.getContentType().equals(this.getContentType()) == false)
+            return false;
+        if (other.getTarget() == null ^ this.getTarget() == null)
+            return false;
+        if (other.getTarget() != null && other.getTarget().equals(this.getTarget()) == false)
+            return false;
         return true;
     }
 
@@ -663,6 +874,8 @@ public class SendChannelMessageRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getPushNotification() == null) ? 0 : getPushNotification().hashCode());
         hashCode = prime * hashCode + ((getMessageAttributes() == null) ? 0 : getMessageAttributes().hashCode());
         hashCode = prime * hashCode + ((getSubChannelId() == null) ? 0 : getSubChannelId().hashCode());
+        hashCode = prime * hashCode + ((getContentType() == null) ? 0 : getContentType().hashCode());
+        hashCode = prime * hashCode + ((getTarget() == null) ? 0 : getTarget().hashCode());
         return hashCode;
     }
 

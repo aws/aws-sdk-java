@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,6 +57,12 @@ public class FileSystemSize implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Long valueInStandard;
+    /**
+     * <p>
+     * The latest known metered size (in bytes) of data stored in the Archive storage class.
+     * </p>
+     */
+    private Long valueInArchive;
 
     /**
      * <p>
@@ -225,6 +231,46 @@ public class FileSystemSize implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The latest known metered size (in bytes) of data stored in the Archive storage class.
+     * </p>
+     * 
+     * @param valueInArchive
+     *        The latest known metered size (in bytes) of data stored in the Archive storage class.
+     */
+
+    public void setValueInArchive(Long valueInArchive) {
+        this.valueInArchive = valueInArchive;
+    }
+
+    /**
+     * <p>
+     * The latest known metered size (in bytes) of data stored in the Archive storage class.
+     * </p>
+     * 
+     * @return The latest known metered size (in bytes) of data stored in the Archive storage class.
+     */
+
+    public Long getValueInArchive() {
+        return this.valueInArchive;
+    }
+
+    /**
+     * <p>
+     * The latest known metered size (in bytes) of data stored in the Archive storage class.
+     * </p>
+     * 
+     * @param valueInArchive
+     *        The latest known metered size (in bytes) of data stored in the Archive storage class.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FileSystemSize withValueInArchive(Long valueInArchive) {
+        setValueInArchive(valueInArchive);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -243,7 +289,9 @@ public class FileSystemSize implements Serializable, Cloneable, StructuredPojo {
         if (getValueInIA() != null)
             sb.append("ValueInIA: ").append(getValueInIA()).append(",");
         if (getValueInStandard() != null)
-            sb.append("ValueInStandard: ").append(getValueInStandard());
+            sb.append("ValueInStandard: ").append(getValueInStandard()).append(",");
+        if (getValueInArchive() != null)
+            sb.append("ValueInArchive: ").append(getValueInArchive());
         sb.append("}");
         return sb.toString();
     }
@@ -274,6 +322,10 @@ public class FileSystemSize implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getValueInStandard() != null && other.getValueInStandard().equals(this.getValueInStandard()) == false)
             return false;
+        if (other.getValueInArchive() == null ^ this.getValueInArchive() == null)
+            return false;
+        if (other.getValueInArchive() != null && other.getValueInArchive().equals(this.getValueInArchive()) == false)
+            return false;
         return true;
     }
 
@@ -286,6 +338,7 @@ public class FileSystemSize implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
         hashCode = prime * hashCode + ((getValueInIA() == null) ? 0 : getValueInIA().hashCode());
         hashCode = prime * hashCode + ((getValueInStandard() == null) ? 0 : getValueInStandard().hashCode());
+        hashCode = prime * hashCode + ((getValueInArchive() == null) ? 0 : getValueInArchive().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class InstanceAssociation implements Serializable, Cloneable, StructuredP
     private String instanceId;
     /**
      * <p>
-     * The content of the association document for the managed node(s).
+     * The content of the association document for the managed nodes.
      * </p>
      */
     private String content;
@@ -135,11 +135,11 @@ public class InstanceAssociation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The content of the association document for the managed node(s).
+     * The content of the association document for the managed nodes.
      * </p>
      * 
      * @param content
-     *        The content of the association document for the managed node(s).
+     *        The content of the association document for the managed nodes.
      */
 
     public void setContent(String content) {
@@ -148,10 +148,10 @@ public class InstanceAssociation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The content of the association document for the managed node(s).
+     * The content of the association document for the managed nodes.
      * </p>
      * 
-     * @return The content of the association document for the managed node(s).
+     * @return The content of the association document for the managed nodes.
      */
 
     public String getContent() {
@@ -160,11 +160,11 @@ public class InstanceAssociation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The content of the association document for the managed node(s).
+     * The content of the association document for the managed nodes.
      * </p>
      * 
      * @param content
-     *        The content of the association document for the managed node(s).
+     *        The content of the association document for the managed nodes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

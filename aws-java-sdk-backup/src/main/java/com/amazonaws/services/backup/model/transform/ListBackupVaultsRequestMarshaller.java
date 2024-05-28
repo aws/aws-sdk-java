@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListBackupVaultsRequestMarshaller {
 
+    private static final MarshallingInfo<String> BYVAULTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("vaultType").build();
+    private static final MarshallingInfo<Boolean> BYSHARED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("shared").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -48,6 +52,8 @@ public class ListBackupVaultsRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(listBackupVaultsRequest.getByVaultType(), BYVAULTTYPE_BINDING);
+            protocolMarshaller.marshall(listBackupVaultsRequest.getByShared(), BYSHARED_BINDING);
             protocolMarshaller.marshall(listBackupVaultsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listBackupVaultsRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {

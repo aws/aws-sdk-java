@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,13 +19,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A data volume that's used in a task definition. For tasks that use the Amazon Elastic File System (Amazon EFS),
- * specify an <code>efsVolumeConfiguration</code>. For Windows tasks that use Amazon FSx for Windows File Server file
- * system, specify a <code>fsxWindowsFileServerVolumeConfiguration</code>. For tasks that use a Docker volume, specify a
- * <code>DockerVolumeConfiguration</code>. For tasks that use a bind mount host volume, specify a <code>host</code> and
- * optional <code>sourcePath</code>. For more information, see <a
- * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using Data Volumes in
- * Tasks</a>.
+ * The data volume configuration for tasks launched using this task definition. Specifying a volume configuration in a
+ * task definition is optional. The volume configuration may contain multiple volumes but only one volume configured at
+ * launch is supported. Each volume defined in the volume configuration may only specify a <code>name</code> and one of
+ * either <code>configuredAtLaunch</code>, <code>dockerVolumeConfiguration</code>, <code>efsVolumeConfiguration</code>,
+ * <code>fsxWindowsFileServerVolumeConfiguration</code>, or <code>host</code>. If an empty volume configuration is
+ * specified, by default Amazon ECS uses a host volume. For more information, see <a
+ * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using data volumes in
+ * tasks</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Volume" target="_top">AWS API Documentation</a>
@@ -36,8 +37,19 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
-     * allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>.
+     * allowed.
+     * </p>
+     * <p>
+     * When using a volume configured at launch, the <code>name</code> is required and must also be specified as the
+     * volume name in the <code>ServiceVolumeConfiguration</code> or <code>TaskVolumeConfiguration</code> parameter when
+     * creating your service or standalone task.
+     * </p>
+     * <p>
+     * For all other types of volumes, this name is referenced in the <code>sourceVolume</code> parameter of the
+     * <code>mountPoints</code> object in the container definition.
+     * </p>
+     * <p>
+     * When a volume is using the <code>efsVolumeConfiguration</code>, the name is required.
      * </p>
      */
     private String name;
@@ -83,18 +95,52 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private FSxWindowsFileServerVolumeConfiguration fsxWindowsFileServerVolumeConfiguration;
+    /**
+     * <p>
+     * Indicates whether the volume should be configured at launch time. This is used to create Amazon EBS volumes for
+     * standalone tasks or tasks created as part of a service. Each task definition revision may only have one volume
+     * configured at launch in the volume configuration.
+     * </p>
+     * <p>
+     * To configure a volume at launch time, use this task definition revision and specify a
+     * <code>volumeConfigurations</code> object when calling the <code>CreateService</code>, <code>UpdateService</code>,
+     * <code>RunTask</code> or <code>StartTask</code> APIs.
+     * </p>
+     */
+    private Boolean configuredAtLaunch;
 
     /**
      * <p>
      * The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
-     * allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>.
+     * allowed.
+     * </p>
+     * <p>
+     * When using a volume configured at launch, the <code>name</code> is required and must also be specified as the
+     * volume name in the <code>ServiceVolumeConfiguration</code> or <code>TaskVolumeConfiguration</code> parameter when
+     * creating your service or standalone task.
+     * </p>
+     * <p>
+     * For all other types of volumes, this name is referenced in the <code>sourceVolume</code> parameter of the
+     * <code>mountPoints</code> object in the container definition.
+     * </p>
+     * <p>
+     * When a volume is using the <code>efsVolumeConfiguration</code>, the name is required.
      * </p>
      * 
      * @param name
      *        The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
-     *        allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition
-     *        <code>mountPoints</code>.
+     *        allowed.</p>
+     *        <p>
+     *        When using a volume configured at launch, the <code>name</code> is required and must also be specified as
+     *        the volume name in the <code>ServiceVolumeConfiguration</code> or <code>TaskVolumeConfiguration</code>
+     *        parameter when creating your service or standalone task.
+     *        </p>
+     *        <p>
+     *        For all other types of volumes, this name is referenced in the <code>sourceVolume</code> parameter of the
+     *        <code>mountPoints</code> object in the container definition.
+     *        </p>
+     *        <p>
+     *        When a volume is using the <code>efsVolumeConfiguration</code>, the name is required.
      */
 
     public void setName(String name) {
@@ -104,13 +150,34 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
-     * allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>.
+     * allowed.
+     * </p>
+     * <p>
+     * When using a volume configured at launch, the <code>name</code> is required and must also be specified as the
+     * volume name in the <code>ServiceVolumeConfiguration</code> or <code>TaskVolumeConfiguration</code> parameter when
+     * creating your service or standalone task.
+     * </p>
+     * <p>
+     * For all other types of volumes, this name is referenced in the <code>sourceVolume</code> parameter of the
+     * <code>mountPoints</code> object in the container definition.
+     * </p>
+     * <p>
+     * When a volume is using the <code>efsVolumeConfiguration</code>, the name is required.
      * </p>
      * 
      * @return The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens
-     *         are allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition
-     *         <code>mountPoints</code>.
+     *         are allowed.</p>
+     *         <p>
+     *         When using a volume configured at launch, the <code>name</code> is required and must also be specified as
+     *         the volume name in the <code>ServiceVolumeConfiguration</code> or <code>TaskVolumeConfiguration</code>
+     *         parameter when creating your service or standalone task.
+     *         </p>
+     *         <p>
+     *         For all other types of volumes, this name is referenced in the <code>sourceVolume</code> parameter of the
+     *         <code>mountPoints</code> object in the container definition.
+     *         </p>
+     *         <p>
+     *         When a volume is using the <code>efsVolumeConfiguration</code>, the name is required.
      */
 
     public String getName() {
@@ -120,14 +187,35 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
-     * allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>.
+     * allowed.
+     * </p>
+     * <p>
+     * When using a volume configured at launch, the <code>name</code> is required and must also be specified as the
+     * volume name in the <code>ServiceVolumeConfiguration</code> or <code>TaskVolumeConfiguration</code> parameter when
+     * creating your service or standalone task.
+     * </p>
+     * <p>
+     * For all other types of volumes, this name is referenced in the <code>sourceVolume</code> parameter of the
+     * <code>mountPoints</code> object in the container definition.
+     * </p>
+     * <p>
+     * When a volume is using the <code>efsVolumeConfiguration</code>, the name is required.
      * </p>
      * 
      * @param name
      *        The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
-     *        allowed. This name is referenced in the <code>sourceVolume</code> parameter of container definition
-     *        <code>mountPoints</code>.
+     *        allowed.</p>
+     *        <p>
+     *        When using a volume configured at launch, the <code>name</code> is required and must also be specified as
+     *        the volume name in the <code>ServiceVolumeConfiguration</code> or <code>TaskVolumeConfiguration</code>
+     *        parameter when creating your service or standalone task.
+     *        </p>
+     *        <p>
+     *        For all other types of volumes, this name is referenced in the <code>sourceVolume</code> parameter of the
+     *        <code>mountPoints</code> object in the container definition.
+     *        </p>
+     *        <p>
+     *        When a volume is using the <code>efsVolumeConfiguration</code>, the name is required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -402,6 +490,110 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Indicates whether the volume should be configured at launch time. This is used to create Amazon EBS volumes for
+     * standalone tasks or tasks created as part of a service. Each task definition revision may only have one volume
+     * configured at launch in the volume configuration.
+     * </p>
+     * <p>
+     * To configure a volume at launch time, use this task definition revision and specify a
+     * <code>volumeConfigurations</code> object when calling the <code>CreateService</code>, <code>UpdateService</code>,
+     * <code>RunTask</code> or <code>StartTask</code> APIs.
+     * </p>
+     * 
+     * @param configuredAtLaunch
+     *        Indicates whether the volume should be configured at launch time. This is used to create Amazon EBS
+     *        volumes for standalone tasks or tasks created as part of a service. Each task definition revision may only
+     *        have one volume configured at launch in the volume configuration.</p>
+     *        <p>
+     *        To configure a volume at launch time, use this task definition revision and specify a
+     *        <code>volumeConfigurations</code> object when calling the <code>CreateService</code>,
+     *        <code>UpdateService</code>, <code>RunTask</code> or <code>StartTask</code> APIs.
+     */
+
+    public void setConfiguredAtLaunch(Boolean configuredAtLaunch) {
+        this.configuredAtLaunch = configuredAtLaunch;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the volume should be configured at launch time. This is used to create Amazon EBS volumes for
+     * standalone tasks or tasks created as part of a service. Each task definition revision may only have one volume
+     * configured at launch in the volume configuration.
+     * </p>
+     * <p>
+     * To configure a volume at launch time, use this task definition revision and specify a
+     * <code>volumeConfigurations</code> object when calling the <code>CreateService</code>, <code>UpdateService</code>,
+     * <code>RunTask</code> or <code>StartTask</code> APIs.
+     * </p>
+     * 
+     * @return Indicates whether the volume should be configured at launch time. This is used to create Amazon EBS
+     *         volumes for standalone tasks or tasks created as part of a service. Each task definition revision may
+     *         only have one volume configured at launch in the volume configuration.</p>
+     *         <p>
+     *         To configure a volume at launch time, use this task definition revision and specify a
+     *         <code>volumeConfigurations</code> object when calling the <code>CreateService</code>,
+     *         <code>UpdateService</code>, <code>RunTask</code> or <code>StartTask</code> APIs.
+     */
+
+    public Boolean getConfiguredAtLaunch() {
+        return this.configuredAtLaunch;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the volume should be configured at launch time. This is used to create Amazon EBS volumes for
+     * standalone tasks or tasks created as part of a service. Each task definition revision may only have one volume
+     * configured at launch in the volume configuration.
+     * </p>
+     * <p>
+     * To configure a volume at launch time, use this task definition revision and specify a
+     * <code>volumeConfigurations</code> object when calling the <code>CreateService</code>, <code>UpdateService</code>,
+     * <code>RunTask</code> or <code>StartTask</code> APIs.
+     * </p>
+     * 
+     * @param configuredAtLaunch
+     *        Indicates whether the volume should be configured at launch time. This is used to create Amazon EBS
+     *        volumes for standalone tasks or tasks created as part of a service. Each task definition revision may only
+     *        have one volume configured at launch in the volume configuration.</p>
+     *        <p>
+     *        To configure a volume at launch time, use this task definition revision and specify a
+     *        <code>volumeConfigurations</code> object when calling the <code>CreateService</code>,
+     *        <code>UpdateService</code>, <code>RunTask</code> or <code>StartTask</code> APIs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Volume withConfiguredAtLaunch(Boolean configuredAtLaunch) {
+        setConfiguredAtLaunch(configuredAtLaunch);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the volume should be configured at launch time. This is used to create Amazon EBS volumes for
+     * standalone tasks or tasks created as part of a service. Each task definition revision may only have one volume
+     * configured at launch in the volume configuration.
+     * </p>
+     * <p>
+     * To configure a volume at launch time, use this task definition revision and specify a
+     * <code>volumeConfigurations</code> object when calling the <code>CreateService</code>, <code>UpdateService</code>,
+     * <code>RunTask</code> or <code>StartTask</code> APIs.
+     * </p>
+     * 
+     * @return Indicates whether the volume should be configured at launch time. This is used to create Amazon EBS
+     *         volumes for standalone tasks or tasks created as part of a service. Each task definition revision may
+     *         only have one volume configured at launch in the volume configuration.</p>
+     *         <p>
+     *         To configure a volume at launch time, use this task definition revision and specify a
+     *         <code>volumeConfigurations</code> object when calling the <code>CreateService</code>,
+     *         <code>UpdateService</code>, <code>RunTask</code> or <code>StartTask</code> APIs.
+     */
+
+    public Boolean isConfiguredAtLaunch() {
+        return this.configuredAtLaunch;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -422,7 +614,9 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
         if (getEfsVolumeConfiguration() != null)
             sb.append("EfsVolumeConfiguration: ").append(getEfsVolumeConfiguration()).append(",");
         if (getFsxWindowsFileServerVolumeConfiguration() != null)
-            sb.append("FsxWindowsFileServerVolumeConfiguration: ").append(getFsxWindowsFileServerVolumeConfiguration());
+            sb.append("FsxWindowsFileServerVolumeConfiguration: ").append(getFsxWindowsFileServerVolumeConfiguration()).append(",");
+        if (getConfiguredAtLaunch() != null)
+            sb.append("ConfiguredAtLaunch: ").append(getConfiguredAtLaunch());
         sb.append("}");
         return sb.toString();
     }
@@ -458,6 +652,10 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
         if (other.getFsxWindowsFileServerVolumeConfiguration() != null
                 && other.getFsxWindowsFileServerVolumeConfiguration().equals(this.getFsxWindowsFileServerVolumeConfiguration()) == false)
             return false;
+        if (other.getConfiguredAtLaunch() == null ^ this.getConfiguredAtLaunch() == null)
+            return false;
+        if (other.getConfiguredAtLaunch() != null && other.getConfiguredAtLaunch().equals(this.getConfiguredAtLaunch()) == false)
+            return false;
         return true;
     }
 
@@ -471,6 +669,7 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDockerVolumeConfiguration() == null) ? 0 : getDockerVolumeConfiguration().hashCode());
         hashCode = prime * hashCode + ((getEfsVolumeConfiguration() == null) ? 0 : getEfsVolumeConfiguration().hashCode());
         hashCode = prime * hashCode + ((getFsxWindowsFileServerVolumeConfiguration() == null) ? 0 : getFsxWindowsFileServerVolumeConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getConfiguredAtLaunch() == null) ? 0 : getConfiguredAtLaunch().hashCode());
         return hashCode;
     }
 

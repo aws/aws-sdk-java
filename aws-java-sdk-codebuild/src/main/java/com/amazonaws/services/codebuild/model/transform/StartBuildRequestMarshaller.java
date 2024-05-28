@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -90,6 +90,8 @@ public class StartBuildRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imagePullCredentialsTypeOverride").build();
     private static final MarshallingInfo<Boolean> DEBUGSESSIONENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("debugSessionEnabled").build();
+    private static final MarshallingInfo<StructuredPojo> FLEETOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fleetOverride").build();
 
     private static final StartBuildRequestMarshaller instance = new StartBuildRequestMarshaller();
 
@@ -138,6 +140,7 @@ public class StartBuildRequestMarshaller {
             protocolMarshaller.marshall(startBuildRequest.getRegistryCredentialOverride(), REGISTRYCREDENTIALOVERRIDE_BINDING);
             protocolMarshaller.marshall(startBuildRequest.getImagePullCredentialsTypeOverride(), IMAGEPULLCREDENTIALSTYPEOVERRIDE_BINDING);
             protocolMarshaller.marshall(startBuildRequest.getDebugSessionEnabled(), DEBUGSESSIONENABLED_BINDING);
+            protocolMarshaller.marshall(startBuildRequest.getFleetOverride(), FLEETOVERRIDE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

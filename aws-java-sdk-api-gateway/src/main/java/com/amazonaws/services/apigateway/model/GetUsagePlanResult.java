@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,7 +66,8 @@ public class GetUsagePlanResult extends com.amazonaws.AmazonWebServiceResult<com
     private QuotaSettings quota;
     /**
      * <p>
-     * The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.
+     * The Amazon Web Services Marketplace product identifier to associate with the usage plan as a SaaS product on the
+     * Amazon Web Services Marketplace.
      * </p>
      */
     private String productCode;
@@ -349,12 +350,13 @@ public class GetUsagePlanResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.
+     * The Amazon Web Services Marketplace product identifier to associate with the usage plan as a SaaS product on the
+     * Amazon Web Services Marketplace.
      * </p>
      * 
      * @param productCode
-     *        The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS
-     *        Marketplace.
+     *        The Amazon Web Services Marketplace product identifier to associate with the usage plan as a SaaS product
+     *        on the Amazon Web Services Marketplace.
      */
 
     public void setProductCode(String productCode) {
@@ -363,11 +365,12 @@ public class GetUsagePlanResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.
+     * The Amazon Web Services Marketplace product identifier to associate with the usage plan as a SaaS product on the
+     * Amazon Web Services Marketplace.
      * </p>
      * 
-     * @return The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS
-     *         Marketplace.
+     * @return The Amazon Web Services Marketplace product identifier to associate with the usage plan as a SaaS product
+     *         on the Amazon Web Services Marketplace.
      */
 
     public String getProductCode() {
@@ -376,12 +379,13 @@ public class GetUsagePlanResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.
+     * The Amazon Web Services Marketplace product identifier to associate with the usage plan as a SaaS product on the
+     * Amazon Web Services Marketplace.
      * </p>
      * 
      * @param productCode
-     *        The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS
-     *        Marketplace.
+     *        The Amazon Web Services Marketplace product identifier to associate with the usage plan as a SaaS product
+     *        on the Amazon Web Services Marketplace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

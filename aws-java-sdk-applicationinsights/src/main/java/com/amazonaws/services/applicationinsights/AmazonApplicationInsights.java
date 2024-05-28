@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,27 @@ public interface AmazonApplicationInsights {
      * @see RegionUtils#getRegionsForService(String)
      */
     String ENDPOINT_PREFIX = "applicationinsights";
+
+    /**
+     * <p>
+     * Adds a workload to a component. Each component can have at most five workloads.
+     * </p>
+     * 
+     * @param addWorkloadRequest
+     * @return Result of the AddWorkload operation returned by the service.
+     * @throws ResourceInUseException
+     *         The resource is already created or in use.
+     * @throws ResourceNotFoundException
+     *         The resource does not exist in the customer account.
+     * @throws ValidationException
+     *         The parameter is not valid.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @sample AmazonApplicationInsights.AddWorkload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/AddWorkload"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AddWorkloadResult addWorkload(AddWorkloadRequest addWorkloadRequest);
 
     /**
      * <p>
@@ -337,6 +358,25 @@ public interface AmazonApplicationInsights {
 
     /**
      * <p>
+     * Describes a workload and its configuration.
+     * </p>
+     * 
+     * @param describeWorkloadRequest
+     * @return Result of the DescribeWorkload operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource does not exist in the customer account.
+     * @throws ValidationException
+     *         The parameter is not valid.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @sample AmazonApplicationInsights.DescribeWorkload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/DescribeWorkload"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeWorkloadResult describeWorkload(DescribeWorkloadRequest describeWorkloadRequest);
+
+    /**
+     * <p>
      * Lists the IDs of the applications that you are monitoring.
      * </p>
      * 
@@ -487,6 +527,44 @@ public interface AmazonApplicationInsights {
 
     /**
      * <p>
+     * Lists the workloads that are configured on a given component.
+     * </p>
+     * 
+     * @param listWorkloadsRequest
+     * @return Result of the ListWorkloads operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource does not exist in the customer account.
+     * @throws ValidationException
+     *         The parameter is not valid.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @sample AmazonApplicationInsights.ListWorkloads
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListWorkloads"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListWorkloadsResult listWorkloads(ListWorkloadsRequest listWorkloadsRequest);
+
+    /**
+     * <p>
+     * Remove workload from a component.
+     * </p>
+     * 
+     * @param removeWorkloadRequest
+     * @return Result of the RemoveWorkload operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource does not exist in the customer account.
+     * @throws ValidationException
+     *         The parameter is not valid.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @sample AmazonApplicationInsights.RemoveWorkload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/RemoveWorkload"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RemoveWorkloadResult removeWorkload(RemoveWorkloadRequest removeWorkloadRequest);
+
+    /**
+     * <p>
      * Add one or more tags (keys and values) to a specified application. A <i>tag</i> is a label that you optionally
      * define and associate with an application. Tags can help you categorize and manage application in different ways,
      * such as by purpose, owner, environment, or other criteria.
@@ -584,6 +662,8 @@ public interface AmazonApplicationInsights {
      *         The parameter is not valid.
      * @throws InternalServerException
      *         The server encountered an internal error and is unable to complete the request.
+     * @throws ResourceInUseException
+     *         The resource is already created or in use.
      * @sample AmazonApplicationInsights.UpdateComponentConfiguration
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateComponentConfiguration"
@@ -611,6 +691,44 @@ public interface AmazonApplicationInsights {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateLogPatternResult updateLogPattern(UpdateLogPatternRequest updateLogPatternRequest);
+
+    /**
+     * <p>
+     * Updates the visibility of the problem or specifies the problem as <code>RESOLVED</code>.
+     * </p>
+     * 
+     * @param updateProblemRequest
+     * @return Result of the UpdateProblem operation returned by the service.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @throws ValidationException
+     *         The parameter is not valid.
+     * @throws ResourceNotFoundException
+     *         The resource does not exist in the customer account.
+     * @sample AmazonApplicationInsights.UpdateProblem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateProblem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateProblemResult updateProblem(UpdateProblemRequest updateProblemRequest);
+
+    /**
+     * <p>
+     * Adds a workload to a component. Each component can have at most five workloads.
+     * </p>
+     * 
+     * @param updateWorkloadRequest
+     * @return Result of the UpdateWorkload operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource does not exist in the customer account.
+     * @throws ValidationException
+     *         The parameter is not valid.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @sample AmazonApplicationInsights.UpdateWorkload
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/UpdateWorkload"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateWorkloadResult updateWorkload(UpdateWorkloadRequest updateWorkloadRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

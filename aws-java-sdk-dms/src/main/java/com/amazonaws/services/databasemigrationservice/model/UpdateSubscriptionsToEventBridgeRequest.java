@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class UpdateSubscriptionsToEventBridgeRequest extends com.amazonaws.Amazo
      * <p>
      * When set to true, this operation migrates DMS subscriptions for Amazon SNS notifications no matter what your
      * replication instance version is. If not set or set to false, this operation runs only when all your replication
-     * instances are from DMS version 3.4.6 or higher.
+     * instances are from DMS version 3.4.5 or higher.
      * </p>
      */
     private Boolean forceMove;
@@ -39,13 +39,13 @@ public class UpdateSubscriptionsToEventBridgeRequest extends com.amazonaws.Amazo
      * <p>
      * When set to true, this operation migrates DMS subscriptions for Amazon SNS notifications no matter what your
      * replication instance version is. If not set or set to false, this operation runs only when all your replication
-     * instances are from DMS version 3.4.6 or higher.
+     * instances are from DMS version 3.4.5 or higher.
      * </p>
      * 
      * @param forceMove
      *        When set to true, this operation migrates DMS subscriptions for Amazon SNS notifications no matter what
      *        your replication instance version is. If not set or set to false, this operation runs only when all your
-     *        replication instances are from DMS version 3.4.6 or higher.
+     *        replication instances are from DMS version 3.4.5 or higher.
      */
 
     public void setForceMove(Boolean forceMove) {
@@ -56,12 +56,12 @@ public class UpdateSubscriptionsToEventBridgeRequest extends com.amazonaws.Amazo
      * <p>
      * When set to true, this operation migrates DMS subscriptions for Amazon SNS notifications no matter what your
      * replication instance version is. If not set or set to false, this operation runs only when all your replication
-     * instances are from DMS version 3.4.6 or higher.
+     * instances are from DMS version 3.4.5 or higher.
      * </p>
      * 
      * @return When set to true, this operation migrates DMS subscriptions for Amazon SNS notifications no matter what
      *         your replication instance version is. If not set or set to false, this operation runs only when all your
-     *         replication instances are from DMS version 3.4.6 or higher.
+     *         replication instances are from DMS version 3.4.5 or higher.
      */
 
     public Boolean getForceMove() {
@@ -72,13 +72,13 @@ public class UpdateSubscriptionsToEventBridgeRequest extends com.amazonaws.Amazo
      * <p>
      * When set to true, this operation migrates DMS subscriptions for Amazon SNS notifications no matter what your
      * replication instance version is. If not set or set to false, this operation runs only when all your replication
-     * instances are from DMS version 3.4.6 or higher.
+     * instances are from DMS version 3.4.5 or higher.
      * </p>
      * 
      * @param forceMove
      *        When set to true, this operation migrates DMS subscriptions for Amazon SNS notifications no matter what
      *        your replication instance version is. If not set or set to false, this operation runs only when all your
-     *        replication instances are from DMS version 3.4.6 or higher.
+     *        replication instances are from DMS version 3.4.5 or higher.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,12 +91,12 @@ public class UpdateSubscriptionsToEventBridgeRequest extends com.amazonaws.Amazo
      * <p>
      * When set to true, this operation migrates DMS subscriptions for Amazon SNS notifications no matter what your
      * replication instance version is. If not set or set to false, this operation runs only when all your replication
-     * instances are from DMS version 3.4.6 or higher.
+     * instances are from DMS version 3.4.5 or higher.
      * </p>
      * 
      * @return When set to true, this operation migrates DMS subscriptions for Amazon SNS notifications no matter what
      *         your replication instance version is. If not set or set to false, this operation runs only when all your
-     *         replication instances are from DMS version 3.4.6 or higher.
+     *         replication instances are from DMS version 3.4.5 or higher.
      */
 
     public Boolean isForceMove() {

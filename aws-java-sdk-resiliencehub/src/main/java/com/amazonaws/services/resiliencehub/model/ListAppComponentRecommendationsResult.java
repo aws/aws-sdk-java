@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,26 +26,27 @@ public class ListAppComponentRecommendationsResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The recommendations for an Resilience Hub application component, returned as an object. This object contains
-     * component names, configuration recommendations, and recommendation statuses.
+     * The recommendations for an Resilience Hub Application Component, returned as an object. This object contains the
+     * names of the Application Components, configuration recommendations, and recommendation statuses.
      * </p>
      */
     private java.util.List<ComponentRecommendation> componentRecommendations;
     /**
      * <p>
-     * The token for the next set of results, or null if there are no more results.
+     * Token for the next set of results, or null if there are no more results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The recommendations for an Resilience Hub application component, returned as an object. This object contains
-     * component names, configuration recommendations, and recommendation statuses.
+     * The recommendations for an Resilience Hub Application Component, returned as an object. This object contains the
+     * names of the Application Components, configuration recommendations, and recommendation statuses.
      * </p>
      * 
-     * @return The recommendations for an Resilience Hub application component, returned as an object. This object
-     *         contains component names, configuration recommendations, and recommendation statuses.
+     * @return The recommendations for an Resilience Hub Application Component, returned as an object. This object
+     *         contains the names of the Application Components, configuration recommendations, and recommendation
+     *         statuses.
      */
 
     public java.util.List<ComponentRecommendation> getComponentRecommendations() {
@@ -54,13 +55,14 @@ public class ListAppComponentRecommendationsResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The recommendations for an Resilience Hub application component, returned as an object. This object contains
-     * component names, configuration recommendations, and recommendation statuses.
+     * The recommendations for an Resilience Hub Application Component, returned as an object. This object contains the
+     * names of the Application Components, configuration recommendations, and recommendation statuses.
      * </p>
      * 
      * @param componentRecommendations
-     *        The recommendations for an Resilience Hub application component, returned as an object. This object
-     *        contains component names, configuration recommendations, and recommendation statuses.
+     *        The recommendations for an Resilience Hub Application Component, returned as an object. This object
+     *        contains the names of the Application Components, configuration recommendations, and recommendation
+     *        statuses.
      */
 
     public void setComponentRecommendations(java.util.Collection<ComponentRecommendation> componentRecommendations) {
@@ -74,8 +76,8 @@ public class ListAppComponentRecommendationsResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The recommendations for an Resilience Hub application component, returned as an object. This object contains
-     * component names, configuration recommendations, and recommendation statuses.
+     * The recommendations for an Resilience Hub Application Component, returned as an object. This object contains the
+     * names of the Application Components, configuration recommendations, and recommendation statuses.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -84,8 +86,9 @@ public class ListAppComponentRecommendationsResult extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param componentRecommendations
-     *        The recommendations for an Resilience Hub application component, returned as an object. This object
-     *        contains component names, configuration recommendations, and recommendation statuses.
+     *        The recommendations for an Resilience Hub Application Component, returned as an object. This object
+     *        contains the names of the Application Components, configuration recommendations, and recommendation
+     *        statuses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,13 +104,14 @@ public class ListAppComponentRecommendationsResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The recommendations for an Resilience Hub application component, returned as an object. This object contains
-     * component names, configuration recommendations, and recommendation statuses.
+     * The recommendations for an Resilience Hub Application Component, returned as an object. This object contains the
+     * names of the Application Components, configuration recommendations, and recommendation statuses.
      * </p>
      * 
      * @param componentRecommendations
-     *        The recommendations for an Resilience Hub application component, returned as an object. This object
-     *        contains component names, configuration recommendations, and recommendation statuses.
+     *        The recommendations for an Resilience Hub Application Component, returned as an object. This object
+     *        contains the names of the Application Components, configuration recommendations, and recommendation
+     *        statuses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -118,11 +122,11 @@ public class ListAppComponentRecommendationsResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The token for the next set of results, or null if there are no more results.
+     * Token for the next set of results, or null if there are no more results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results, or null if there are no more results.
+     *        Token for the next set of results, or null if there are no more results.
      */
 
     public void setNextToken(String nextToken) {
@@ -131,10 +135,10 @@ public class ListAppComponentRecommendationsResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The token for the next set of results, or null if there are no more results.
+     * Token for the next set of results, or null if there are no more results.
      * </p>
      * 
-     * @return The token for the next set of results, or null if there are no more results.
+     * @return Token for the next set of results, or null if there are no more results.
      */
 
     public String getNextToken() {
@@ -143,11 +147,11 @@ public class ListAppComponentRecommendationsResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The token for the next set of results, or null if there are no more results.
+     * Token for the next set of results, or null if there are no more results.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results, or null if there are no more results.
+     *        Token for the next set of results, or null if there are no more results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -111,6 +111,10 @@ public class TargetJsonUnmarshaller implements Unmarshaller<Target, JsonUnmarsha
                 if (context.testExpression("RetryPolicy", targetDepth)) {
                     context.nextToken();
                     target.setRetryPolicy(RetryPolicyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AppSyncParameters", targetDepth)) {
+                    context.nextToken();
+                    target.setAppSyncParameters(AppSyncParametersJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

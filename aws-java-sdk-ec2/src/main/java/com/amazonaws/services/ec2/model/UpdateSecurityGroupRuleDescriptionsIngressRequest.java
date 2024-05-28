@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,9 +35,8 @@ public class UpdateSecurityGroupRuleDescriptionsIngressRequest extends AmazonWeb
     private String groupId;
     /**
      * <p>
-     * [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID or the
-     * security group name in the request. For security groups in a nondefault VPC, you must specify the security group
-     * ID.
+     * [Default VPC] The name of the security group. You must specify either the security group ID or the security group
+     * name. For security groups in a nondefault VPC, you must specify the security group ID.
      * </p>
      */
     private String groupName;
@@ -49,8 +48,7 @@ public class UpdateSecurityGroupRuleDescriptionsIngressRequest extends AmazonWeb
     private com.amazonaws.internal.SdkInternalList<IpPermission> ipPermissions;
     /**
      * <p>
-     * [VPC only] The description for the ingress security group rules. You must specify either a description or IP
-     * permissions.
+     * The description for the ingress security group rules. You must specify either a description or IP permissions.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<SecurityGroupRuleDescription> securityGroupRuleDescriptions;
@@ -103,15 +101,13 @@ public class UpdateSecurityGroupRuleDescriptionsIngressRequest extends AmazonWeb
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID or the
-     * security group name in the request. For security groups in a nondefault VPC, you must specify the security group
-     * ID.
+     * [Default VPC] The name of the security group. You must specify either the security group ID or the security group
+     * name. For security groups in a nondefault VPC, you must specify the security group ID.
      * </p>
      * 
      * @param groupName
-     *        [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID
-     *        or the security group name in the request. For security groups in a nondefault VPC, you must specify the
-     *        security group ID.
+     *        [Default VPC] The name of the security group. You must specify either the security group ID or the
+     *        security group name. For security groups in a nondefault VPC, you must specify the security group ID.
      */
 
     public void setGroupName(String groupName) {
@@ -120,14 +116,12 @@ public class UpdateSecurityGroupRuleDescriptionsIngressRequest extends AmazonWeb
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID or the
-     * security group name in the request. For security groups in a nondefault VPC, you must specify the security group
-     * ID.
+     * [Default VPC] The name of the security group. You must specify either the security group ID or the security group
+     * name. For security groups in a nondefault VPC, you must specify the security group ID.
      * </p>
      * 
-     * @return [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID
-     *         or the security group name in the request. For security groups in a nondefault VPC, you must specify the
-     *         security group ID.
+     * @return [Default VPC] The name of the security group. You must specify either the security group ID or the
+     *         security group name. For security groups in a nondefault VPC, you must specify the security group ID.
      */
 
     public String getGroupName() {
@@ -136,15 +130,13 @@ public class UpdateSecurityGroupRuleDescriptionsIngressRequest extends AmazonWeb
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID or the
-     * security group name in the request. For security groups in a nondefault VPC, you must specify the security group
-     * ID.
+     * [Default VPC] The name of the security group. You must specify either the security group ID or the security group
+     * name. For security groups in a nondefault VPC, you must specify the security group ID.
      * </p>
      * 
      * @param groupName
-     *        [EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID
-     *        or the security group name in the request. For security groups in a nondefault VPC, you must specify the
-     *        security group ID.
+     *        [Default VPC] The name of the security group. You must specify either the security group ID or the
+     *        security group name. For security groups in a nondefault VPC, you must specify the security group ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -228,12 +220,11 @@ public class UpdateSecurityGroupRuleDescriptionsIngressRequest extends AmazonWeb
 
     /**
      * <p>
-     * [VPC only] The description for the ingress security group rules. You must specify either a description or IP
-     * permissions.
+     * The description for the ingress security group rules. You must specify either a description or IP permissions.
      * </p>
      * 
-     * @return [VPC only] The description for the ingress security group rules. You must specify either a description or
-     *         IP permissions.
+     * @return The description for the ingress security group rules. You must specify either a description or IP
+     *         permissions.
      */
 
     public java.util.List<SecurityGroupRuleDescription> getSecurityGroupRuleDescriptions() {
@@ -245,13 +236,12 @@ public class UpdateSecurityGroupRuleDescriptionsIngressRequest extends AmazonWeb
 
     /**
      * <p>
-     * [VPC only] The description for the ingress security group rules. You must specify either a description or IP
-     * permissions.
+     * The description for the ingress security group rules. You must specify either a description or IP permissions.
      * </p>
      * 
      * @param securityGroupRuleDescriptions
-     *        [VPC only] The description for the ingress security group rules. You must specify either a description or
-     *        IP permissions.
+     *        The description for the ingress security group rules. You must specify either a description or IP
+     *        permissions.
      */
 
     public void setSecurityGroupRuleDescriptions(java.util.Collection<SecurityGroupRuleDescription> securityGroupRuleDescriptions) {
@@ -265,8 +255,7 @@ public class UpdateSecurityGroupRuleDescriptionsIngressRequest extends AmazonWeb
 
     /**
      * <p>
-     * [VPC only] The description for the ingress security group rules. You must specify either a description or IP
-     * permissions.
+     * The description for the ingress security group rules. You must specify either a description or IP permissions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -275,8 +264,8 @@ public class UpdateSecurityGroupRuleDescriptionsIngressRequest extends AmazonWeb
      * </p>
      * 
      * @param securityGroupRuleDescriptions
-     *        [VPC only] The description for the ingress security group rules. You must specify either a description or
-     *        IP permissions.
+     *        The description for the ingress security group rules. You must specify either a description or IP
+     *        permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -292,13 +281,12 @@ public class UpdateSecurityGroupRuleDescriptionsIngressRequest extends AmazonWeb
 
     /**
      * <p>
-     * [VPC only] The description for the ingress security group rules. You must specify either a description or IP
-     * permissions.
+     * The description for the ingress security group rules. You must specify either a description or IP permissions.
      * </p>
      * 
      * @param securityGroupRuleDescriptions
-     *        [VPC only] The description for the ingress security group rules. You must specify either a description or
-     *        IP permissions.
+     *        The description for the ingress security group rules. You must specify either a description or IP
+     *        permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

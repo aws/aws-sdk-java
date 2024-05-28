@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,11 @@ public class ResourceChangeStaxUnmarshaller implements Unmarshaller<ResourceChan
                 return resourceChange;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
+                if (context.testExpression("PolicyAction", targetDepth)) {
+                    resourceChange.setPolicyAction(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
 
                 if (context.testExpression("Action", targetDepth)) {
                     resourceChange.setAction(StringStaxUnmarshaller.getInstance().unmarshall(context));
@@ -97,6 +102,16 @@ public class ResourceChangeStaxUnmarshaller implements Unmarshaller<ResourceChan
 
                 if (context.testExpression("ModuleInfo", targetDepth)) {
                     resourceChange.setModuleInfo(ModuleInfoStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("BeforeContext", targetDepth)) {
+                    resourceChange.setBeforeContext(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("AfterContext", targetDepth)) {
+                    resourceChange.setAfterContext(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

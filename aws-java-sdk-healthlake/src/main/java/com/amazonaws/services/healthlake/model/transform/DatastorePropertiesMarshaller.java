@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,10 @@ public class DatastorePropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SseConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> PRELOADDATACONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreloadDataConfig").build();
+    private static final MarshallingInfo<StructuredPojo> IDENTITYPROVIDERCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityProviderConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> ERRORCAUSE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ErrorCause").build();
 
     private static final DatastorePropertiesMarshaller instance = new DatastorePropertiesMarshaller();
 
@@ -71,6 +75,8 @@ public class DatastorePropertiesMarshaller {
             protocolMarshaller.marshall(datastoreProperties.getDatastoreEndpoint(), DATASTOREENDPOINT_BINDING);
             protocolMarshaller.marshall(datastoreProperties.getSseConfiguration(), SSECONFIGURATION_BINDING);
             protocolMarshaller.marshall(datastoreProperties.getPreloadDataConfig(), PRELOADDATACONFIG_BINDING);
+            protocolMarshaller.marshall(datastoreProperties.getIdentityProviderConfiguration(), IDENTITYPROVIDERCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(datastoreProperties.getErrorCause(), ERRORCAUSE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

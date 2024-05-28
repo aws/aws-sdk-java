@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,12 @@ public class CreateEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private String endpointArn;
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the model to which the endpoint is attached.
+     * </p>
+     */
+    private String modelArn;
 
     /**
      * <p>
@@ -71,6 +77,46 @@ public class CreateEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the model to which the endpoint is attached.
+     * </p>
+     * 
+     * @param modelArn
+     *        The Amazon Resource Number (ARN) of the model to which the endpoint is attached.
+     */
+
+    public void setModelArn(String modelArn) {
+        this.modelArn = modelArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the model to which the endpoint is attached.
+     * </p>
+     * 
+     * @return The Amazon Resource Number (ARN) of the model to which the endpoint is attached.
+     */
+
+    public String getModelArn() {
+        return this.modelArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the model to which the endpoint is attached.
+     * </p>
+     * 
+     * @param modelArn
+     *        The Amazon Resource Number (ARN) of the model to which the endpoint is attached.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEndpointResult withModelArn(String modelArn) {
+        setModelArn(modelArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -83,7 +129,9 @@ public class CreateEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEndpointArn() != null)
-            sb.append("EndpointArn: ").append(getEndpointArn());
+            sb.append("EndpointArn: ").append(getEndpointArn()).append(",");
+        if (getModelArn() != null)
+            sb.append("ModelArn: ").append(getModelArn());
         sb.append("}");
         return sb.toString();
     }
@@ -102,6 +150,10 @@ public class CreateEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getEndpointArn() != null && other.getEndpointArn().equals(this.getEndpointArn()) == false)
             return false;
+        if (other.getModelArn() == null ^ this.getModelArn() == null)
+            return false;
+        if (other.getModelArn() != null && other.getModelArn().equals(this.getModelArn()) == false)
+            return false;
         return true;
     }
 
@@ -111,6 +163,7 @@ public class CreateEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getEndpointArn() == null) ? 0 : getEndpointArn().hashCode());
+        hashCode = prime * hashCode + ((getModelArn() == null) ? 0 : getModelArn().hashCode());
         return hashCode;
     }
 

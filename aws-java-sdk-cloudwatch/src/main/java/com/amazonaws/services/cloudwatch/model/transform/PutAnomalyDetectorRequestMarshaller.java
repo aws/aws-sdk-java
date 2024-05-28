@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -107,8 +107,22 @@ public class PutAnomalyDetectorRequestMarshaller implements Marshaller<Request<P
         }
 
         {
+            MetricCharacteristics metricCharacteristics = putAnomalyDetectorRequest.getMetricCharacteristics();
+            if (metricCharacteristics != null) {
+
+                if (metricCharacteristics.getPeriodicSpikes() != null) {
+                    request.addParameter("MetricCharacteristics.PeriodicSpikes", StringUtils.fromBoolean(metricCharacteristics.getPeriodicSpikes()));
+                }
+            }
+        }
+
+        {
             SingleMetricAnomalyDetector singleMetricAnomalyDetector = putAnomalyDetectorRequest.getSingleMetricAnomalyDetector();
             if (singleMetricAnomalyDetector != null) {
+
+                if (singleMetricAnomalyDetector.getAccountId() != null) {
+                    request.addParameter("SingleMetricAnomalyDetector.AccountId", StringUtils.fromString(singleMetricAnomalyDetector.getAccountId()));
+                }
 
                 if (singleMetricAnomalyDetector.getNamespace() != null) {
                     request.addParameter("SingleMetricAnomalyDetector.Namespace", StringUtils.fromString(singleMetricAnomalyDetector.getNamespace()));

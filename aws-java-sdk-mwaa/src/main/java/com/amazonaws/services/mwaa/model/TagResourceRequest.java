@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,7 +35,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The key-value tag pairs you want to associate to your environment. For example,
-     * <code>"Environment": "Staging"</code>. To learn more, see <a
+     * <code>"Environment": "Staging"</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.
      * </p>
      */
@@ -90,12 +90,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The key-value tag pairs you want to associate to your environment. For example,
-     * <code>"Environment": "Staging"</code>. To learn more, see <a
+     * <code>"Environment": "Staging"</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.
      * </p>
      * 
      * @return The key-value tag pairs you want to associate to your environment. For example,
-     *         <code>"Environment": "Staging"</code>. To learn more, see <a
+     *         <code>"Environment": "Staging"</code>. For more information, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
      *         resources</a>.
      */
@@ -107,13 +107,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The key-value tag pairs you want to associate to your environment. For example,
-     * <code>"Environment": "Staging"</code>. To learn more, see <a
+     * <code>"Environment": "Staging"</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.
      * </p>
      * 
      * @param tags
      *        The key-value tag pairs you want to associate to your environment. For example,
-     *        <code>"Environment": "Staging"</code>. To learn more, see <a
+     *        <code>"Environment": "Staging"</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
      *        resources</a>.
      */
@@ -125,13 +125,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The key-value tag pairs you want to associate to your environment. For example,
-     * <code>"Environment": "Staging"</code>. To learn more, see <a
+     * <code>"Environment": "Staging"</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.
      * </p>
      * 
      * @param tags
      *        The key-value tag pairs you want to associate to your environment. For example,
-     *        <code>"Environment": "Staging"</code>. To learn more, see <a
+     *        <code>"Environment": "Staging"</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
      *        resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

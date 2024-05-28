@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -93,7 +93,7 @@ public class StackSet implements Serializable, Cloneable {
      * <p>
      * Use customized administrator roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
      * Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      */
@@ -162,6 +162,13 @@ public class StackSet implements Serializable, Cloneable {
      * </p>
      */
     private ManagedExecution managedExecution;
+    /**
+     * <p>
+     * Returns a list of all Amazon Web Services Regions the given StackSet has stack instances deployed in. The Amazon
+     * Web Services Regions list output is in no particular order.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> regions;
 
     /**
      * <p>
@@ -731,7 +738,7 @@ public class StackSet implements Serializable, Cloneable {
      * <p>
      * Use customized administrator roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
      * Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
@@ -740,8 +747,8 @@ public class StackSet implements Serializable, Cloneable {
      *        <p>
      *        Use customized administrator roles to control which users or groups can manage specific stack sets within
      *        the same administrator account. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
-     *        Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html"
+     *        >Prerequisites: Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.
      */
 
     public void setAdministrationRoleARN(String administrationRoleARN) {
@@ -755,7 +762,7 @@ public class StackSet implements Serializable, Cloneable {
      * <p>
      * Use customized administrator roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
      * Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
@@ -763,7 +770,7 @@ public class StackSet implements Serializable, Cloneable {
      *         <p>
      *         Use customized administrator roles to control which users or groups can manage specific stack sets within
      *         the same administrator account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html"
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html"
      *         >Prerequisites: Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User
      *         Guide</i>.
      */
@@ -779,7 +786,7 @@ public class StackSet implements Serializable, Cloneable {
      * <p>
      * Use customized administrator roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
      * Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
@@ -788,8 +795,8 @@ public class StackSet implements Serializable, Cloneable {
      *        <p>
      *        Use customized administrator roles to control which users or groups can manage specific stack sets within
      *        the same administrator account. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
-     *        Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html"
+     *        >Prerequisites: Granting Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1348,6 +1355,87 @@ public class StackSet implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Returns a list of all Amazon Web Services Regions the given StackSet has stack instances deployed in. The Amazon
+     * Web Services Regions list output is in no particular order.
+     * </p>
+     * 
+     * @return Returns a list of all Amazon Web Services Regions the given StackSet has stack instances deployed in. The
+     *         Amazon Web Services Regions list output is in no particular order.
+     */
+
+    public java.util.List<String> getRegions() {
+        if (regions == null) {
+            regions = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return regions;
+    }
+
+    /**
+     * <p>
+     * Returns a list of all Amazon Web Services Regions the given StackSet has stack instances deployed in. The Amazon
+     * Web Services Regions list output is in no particular order.
+     * </p>
+     * 
+     * @param regions
+     *        Returns a list of all Amazon Web Services Regions the given StackSet has stack instances deployed in. The
+     *        Amazon Web Services Regions list output is in no particular order.
+     */
+
+    public void setRegions(java.util.Collection<String> regions) {
+        if (regions == null) {
+            this.regions = null;
+            return;
+        }
+
+        this.regions = new com.amazonaws.internal.SdkInternalList<String>(regions);
+    }
+
+    /**
+     * <p>
+     * Returns a list of all Amazon Web Services Regions the given StackSet has stack instances deployed in. The Amazon
+     * Web Services Regions list output is in no particular order.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRegions(java.util.Collection)} or {@link #withRegions(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param regions
+     *        Returns a list of all Amazon Web Services Regions the given StackSet has stack instances deployed in. The
+     *        Amazon Web Services Regions list output is in no particular order.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackSet withRegions(String... regions) {
+        if (this.regions == null) {
+            setRegions(new com.amazonaws.internal.SdkInternalList<String>(regions.length));
+        }
+        for (String ele : regions) {
+            this.regions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns a list of all Amazon Web Services Regions the given StackSet has stack instances deployed in. The Amazon
+     * Web Services Regions list output is in no particular order.
+     * </p>
+     * 
+     * @param regions
+     *        Returns a list of all Amazon Web Services Regions the given StackSet has stack instances deployed in. The
+     *        Amazon Web Services Regions list output is in no particular order.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackSet withRegions(java.util.Collection<String> regions) {
+        setRegions(regions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1390,7 +1478,9 @@ public class StackSet implements Serializable, Cloneable {
         if (getOrganizationalUnitIds() != null)
             sb.append("OrganizationalUnitIds: ").append(getOrganizationalUnitIds()).append(",");
         if (getManagedExecution() != null)
-            sb.append("ManagedExecution: ").append(getManagedExecution());
+            sb.append("ManagedExecution: ").append(getManagedExecution()).append(",");
+        if (getRegions() != null)
+            sb.append("Regions: ").append(getRegions());
         sb.append("}");
         return sb.toString();
     }
@@ -1470,6 +1560,10 @@ public class StackSet implements Serializable, Cloneable {
             return false;
         if (other.getManagedExecution() != null && other.getManagedExecution().equals(this.getManagedExecution()) == false)
             return false;
+        if (other.getRegions() == null ^ this.getRegions() == null)
+            return false;
+        if (other.getRegions() != null && other.getRegions().equals(this.getRegions()) == false)
+            return false;
         return true;
     }
 
@@ -1494,6 +1588,7 @@ public class StackSet implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPermissionModel() == null) ? 0 : getPermissionModel().hashCode());
         hashCode = prime * hashCode + ((getOrganizationalUnitIds() == null) ? 0 : getOrganizationalUnitIds().hashCode());
         hashCode = prime * hashCode + ((getManagedExecution() == null) ? 0 : getManagedExecution().hashCode());
+        hashCode = prime * hashCode + ((getRegions() == null) ? 0 : getRegions().hashCode());
         return hashCode;
     }
 

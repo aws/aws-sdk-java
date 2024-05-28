@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -96,6 +96,8 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private String forwardingAddressId;
+
+    private PickupDetails pickupDetails;
 
     /**
      * <p>
@@ -664,6 +666,32 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * @param pickupDetails
+     */
+
+    public void setPickupDetails(PickupDetails pickupDetails) {
+        this.pickupDetails = pickupDetails;
+    }
+
+    /**
+     * @return
+     */
+
+    public PickupDetails getPickupDetails() {
+        return this.pickupDetails;
+    }
+
+    /**
+     * @param pickupDetails
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateJobRequest withPickupDetails(PickupDetails pickupDetails) {
+        setPickupDetails(pickupDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -694,7 +722,9 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getSnowballCapacityPreference() != null)
             sb.append("SnowballCapacityPreference: ").append(getSnowballCapacityPreference()).append(",");
         if (getForwardingAddressId() != null)
-            sb.append("ForwardingAddressId: ").append(getForwardingAddressId());
+            sb.append("ForwardingAddressId: ").append(getForwardingAddressId()).append(",");
+        if (getPickupDetails() != null)
+            sb.append("PickupDetails: ").append(getPickupDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -749,6 +779,10 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getForwardingAddressId() != null && other.getForwardingAddressId().equals(this.getForwardingAddressId()) == false)
             return false;
+        if (other.getPickupDetails() == null ^ this.getPickupDetails() == null)
+            return false;
+        if (other.getPickupDetails() != null && other.getPickupDetails().equals(this.getPickupDetails()) == false)
+            return false;
         return true;
     }
 
@@ -767,6 +801,7 @@ public class UpdateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getSnowballCapacityPreference() == null) ? 0 : getSnowballCapacityPreference().hashCode());
         hashCode = prime * hashCode + ((getForwardingAddressId() == null) ? 0 : getForwardingAddressId().hashCode());
+        hashCode = prime * hashCode + ((getPickupDetails() == null) ? 0 : getPickupDetails().hashCode());
         return hashCode;
     }
 

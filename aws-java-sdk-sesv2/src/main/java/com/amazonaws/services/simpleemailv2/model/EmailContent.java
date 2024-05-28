@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,7 +64,9 @@ public class EmailContent implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * The entire message must be Base64 encoded.
+     * The raw data of the message needs to base64-encoded if you are accessing Amazon SES directly through the HTTPS
+     * interface. If you are accessing Amazon SES using an Amazon Web Services SDK, the SDK takes care of the base
+     * 64-encoding for you.
      * </p>
      * </li>
      * <li>
@@ -156,7 +158,9 @@ public class EmailContent implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * The entire message must be Base64 encoded.
+     * The raw data of the message needs to base64-encoded if you are accessing Amazon SES directly through the HTTPS
+     * interface. If you are accessing Amazon SES using an Amazon Web Services SDK, the SDK takes care of the base
+     * 64-encoding for you.
      * </p>
      * </li>
      * <li>
@@ -198,7 +202,9 @@ public class EmailContent implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        The entire message must be Base64 encoded.
+     *        The raw data of the message needs to base64-encoded if you are accessing Amazon SES directly through the
+     *        HTTPS interface. If you are accessing Amazon SES using an Amazon Web Services SDK, the SDK takes care of
+     *        the base 64-encoding for you.
      *        </p>
      *        </li>
      *        <li>
@@ -247,7 +253,9 @@ public class EmailContent implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * The entire message must be Base64 encoded.
+     * The raw data of the message needs to base64-encoded if you are accessing Amazon SES directly through the HTTPS
+     * interface. If you are accessing Amazon SES using an Amazon Web Services SDK, the SDK takes care of the base
+     * 64-encoding for you.
      * </p>
      * </li>
      * <li>
@@ -288,7 +296,9 @@ public class EmailContent implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         The entire message must be Base64 encoded.
+     *         The raw data of the message needs to base64-encoded if you are accessing Amazon SES directly through the
+     *         HTTPS interface. If you are accessing Amazon SES using an Amazon Web Services SDK, the SDK takes care of
+     *         the base 64-encoding for you.
      *         </p>
      *         </li>
      *         <li>
@@ -337,7 +347,9 @@ public class EmailContent implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * The entire message must be Base64 encoded.
+     * The raw data of the message needs to base64-encoded if you are accessing Amazon SES directly through the HTTPS
+     * interface. If you are accessing Amazon SES using an Amazon Web Services SDK, the SDK takes care of the base
+     * 64-encoding for you.
      * </p>
      * </li>
      * <li>
@@ -379,7 +391,9 @@ public class EmailContent implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        The entire message must be Base64 encoded.
+     *        The raw data of the message needs to base64-encoded if you are accessing Amazon SES directly through the
+     *        HTTPS interface. If you are accessing Amazon SES using an Amazon Web Services SDK, the SDK takes care of
+     *        the base 64-encoding for you.
      *        </p>
      *        </li>
      *        <li>

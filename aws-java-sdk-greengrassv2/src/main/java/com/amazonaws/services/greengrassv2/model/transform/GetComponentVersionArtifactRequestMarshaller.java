@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,10 @@ public class GetComponentVersionArtifactRequestMarshaller {
             .marshallLocationName("arn").build();
     private static final MarshallingInfo<String> ARTIFACTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.GREEDY_PATH).marshallLocationName("artifactName").build();
+    private static final MarshallingInfo<String> S3ENDPOINTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("s3EndpointType").build();
+    private static final MarshallingInfo<String> IOTENDPOINTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("x-amz-iot-endpoint-type").build();
 
     private static final GetComponentVersionArtifactRequestMarshaller instance = new GetComponentVersionArtifactRequestMarshaller();
 
@@ -50,6 +54,8 @@ public class GetComponentVersionArtifactRequestMarshaller {
         try {
             protocolMarshaller.marshall(getComponentVersionArtifactRequest.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(getComponentVersionArtifactRequest.getArtifactName(), ARTIFACTNAME_BINDING);
+            protocolMarshaller.marshall(getComponentVersionArtifactRequest.getS3EndpointType(), S3ENDPOINTTYPE_BINDING);
+            protocolMarshaller.marshall(getComponentVersionArtifactRequest.getIotEndpointType(), IOTENDPOINTTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

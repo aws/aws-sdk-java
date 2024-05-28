@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,10 +15,10 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in
- * your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output. For
- * SCTE-35 markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM XML as a string in the setting
- * Signal processing notification XML (sccXml). Also enable ESAM SCTE-35 (include the property scte35Esam).
+ * For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35 markers that appear in your input to
+ * also appear in this output. Choose None if you don't want SCTE-35 markers in this output. For SCTE-35 markers from an
+ * ESAM XML document-- Choose None. Also provide the ESAM XML as a string in the setting Signal processing notification
+ * XML. Also enable ESAM SCTE-35 (include the property scte35Esam).
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum M2tsScte35Source {

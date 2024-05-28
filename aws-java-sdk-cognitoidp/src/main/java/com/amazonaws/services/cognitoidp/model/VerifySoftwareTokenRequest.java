@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -239,9 +239,9 @@ public class VerifySoftwareTokenRequest extends com.amazonaws.AmazonWebServiceRe
         if (getAccessToken() != null)
             sb.append("AccessToken: ").append("***Sensitive Data Redacted***").append(",");
         if (getSession() != null)
-            sb.append("Session: ").append(getSession()).append(",");
+            sb.append("Session: ").append("***Sensitive Data Redacted***").append(",");
         if (getUserCode() != null)
-            sb.append("UserCode: ").append(getUserCode()).append(",");
+            sb.append("UserCode: ").append("***Sensitive Data Redacted***").append(",");
         if (getFriendlyDeviceName() != null)
             sb.append("FriendlyDeviceName: ").append(getFriendlyDeviceName());
         sb.append("}");

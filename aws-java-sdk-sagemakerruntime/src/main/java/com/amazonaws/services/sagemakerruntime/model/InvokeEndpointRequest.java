@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,7 +51,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     private String contentType;
     /**
      * <p>
-     * The desired MIME type of the inference in the response.
+     * The desired MIME type of the inference response from the model container.
      * </p>
      */
     private String accept;
@@ -61,7 +61,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * SageMaker endpoint. The information is an opaque value that is forwarded verbatim. You could use this value, for
      * example, to provide an ID that you can use to track a request or to provide other metadata that a service
      * endpoint was programmed to process. The value must consist of no more than 1024 visible US-ASCII characters as
-     * specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value
+     * specified in <a href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value
      * Components</a> of the Hypertext Transfer Protocol (HTTP/1.1).
      * </p>
      * <p>
@@ -112,11 +112,18 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * An optional JMESPath expression used to override the <code>EnableExplanations</code> parameter of the
      * <code>ClarifyExplainerConfig</code> API. See the <a href=
-     * "https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable"
      * >EnableExplanations</a> section in the developer guide for more information.
      * </p>
      */
     private String enableExplanations;
+    /**
+     * <p>
+     * If the endpoint hosts one or more inference components, this parameter specifies the name of inference component
+     * to invoke.
+     * </p>
+     */
+    private String inferenceComponentName;
 
     /**
      * <p>
@@ -303,11 +310,11 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The desired MIME type of the inference in the response.
+     * The desired MIME type of the inference response from the model container.
      * </p>
      * 
      * @param accept
-     *        The desired MIME type of the inference in the response.
+     *        The desired MIME type of the inference response from the model container.
      */
 
     public void setAccept(String accept) {
@@ -316,10 +323,10 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The desired MIME type of the inference in the response.
+     * The desired MIME type of the inference response from the model container.
      * </p>
      * 
-     * @return The desired MIME type of the inference in the response.
+     * @return The desired MIME type of the inference response from the model container.
      */
 
     public String getAccept() {
@@ -328,11 +335,11 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The desired MIME type of the inference in the response.
+     * The desired MIME type of the inference response from the model container.
      * </p>
      * 
      * @param accept
-     *        The desired MIME type of the inference in the response.
+     *        The desired MIME type of the inference response from the model container.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -347,7 +354,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * SageMaker endpoint. The information is an opaque value that is forwarded verbatim. You could use this value, for
      * example, to provide an ID that you can use to track a request or to provide other metadata that a service
      * endpoint was programmed to process. The value must consist of no more than 1024 visible US-ASCII characters as
-     * specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value
+     * specified in <a href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value
      * Components</a> of the Hypertext Transfer Protocol (HTTP/1.1).
      * </p>
      * <p>
@@ -365,8 +372,8 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      *        SageMaker endpoint. The information is an opaque value that is forwarded verbatim. You could use this
      *        value, for example, to provide an ID that you can use to track a request or to provide other metadata that
      *        a service endpoint was programmed to process. The value must consist of no more than 1024 visible US-ASCII
-     *        characters as specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6.
-     *        Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p>
+     *        characters as specified in <a href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section
+     *        3.3.6. Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p>
      *        <p>
      *        The code in your model is responsible for setting or updating any custom attributes in the response. If
      *        your code does not set this value in the response, an empty value is returned. For example, if a custom
@@ -388,7 +395,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * SageMaker endpoint. The information is an opaque value that is forwarded verbatim. You could use this value, for
      * example, to provide an ID that you can use to track a request or to provide other metadata that a service
      * endpoint was programmed to process. The value must consist of no more than 1024 visible US-ASCII characters as
-     * specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value
+     * specified in <a href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value
      * Components</a> of the Hypertext Transfer Protocol (HTTP/1.1).
      * </p>
      * <p>
@@ -405,8 +412,9 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      *         SageMaker endpoint. The information is an opaque value that is forwarded verbatim. You could use this
      *         value, for example, to provide an ID that you can use to track a request or to provide other metadata
      *         that a service endpoint was programmed to process. The value must consist of no more than 1024 visible
-     *         US-ASCII characters as specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section
-     *         3.3.6. Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p>
+     *         US-ASCII characters as specified in <a
+     *         href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value
+     *         Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p>
      *         <p>
      *         The code in your model is responsible for setting or updating any custom attributes in the response. If
      *         your code does not set this value in the response, an empty value is returned. For example, if a custom
@@ -428,7 +436,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * SageMaker endpoint. The information is an opaque value that is forwarded verbatim. You could use this value, for
      * example, to provide an ID that you can use to track a request or to provide other metadata that a service
      * endpoint was programmed to process. The value must consist of no more than 1024 visible US-ASCII characters as
-     * specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value
+     * specified in <a href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value
      * Components</a> of the Hypertext Transfer Protocol (HTTP/1.1).
      * </p>
      * <p>
@@ -446,8 +454,8 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      *        SageMaker endpoint. The information is an opaque value that is forwarded verbatim. You could use this
      *        value, for example, to provide an ID that you can use to track a request or to provide other metadata that
      *        a service endpoint was programmed to process. The value must consist of no more than 1024 visible US-ASCII
-     *        characters as specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6.
-     *        Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p>
+     *        characters as specified in <a href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section
+     *        3.3.6. Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p>
      *        <p>
      *        The code in your model is responsible for setting or updating any custom attributes in the response. If
      *        your code does not set this value in the response, an empty value is returned. For example, if a custom
@@ -681,14 +689,14 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * An optional JMESPath expression used to override the <code>EnableExplanations</code> parameter of the
      * <code>ClarifyExplainerConfig</code> API. See the <a href=
-     * "https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable"
      * >EnableExplanations</a> section in the developer guide for more information.
      * </p>
      * 
      * @param enableExplanations
      *        An optional JMESPath expression used to override the <code>EnableExplanations</code> parameter of the
      *        <code>ClarifyExplainerConfig</code> API. See the <a href=
-     *        "https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable"
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable"
      *        >EnableExplanations</a> section in the developer guide for more information.
      */
 
@@ -700,13 +708,13 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * An optional JMESPath expression used to override the <code>EnableExplanations</code> parameter of the
      * <code>ClarifyExplainerConfig</code> API. See the <a href=
-     * "https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable"
      * >EnableExplanations</a> section in the developer guide for more information.
      * </p>
      * 
      * @return An optional JMESPath expression used to override the <code>EnableExplanations</code> parameter of the
      *         <code>ClarifyExplainerConfig</code> API. See the <a href=
-     *         "https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable"
+     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable"
      *         >EnableExplanations</a> section in the developer guide for more information.
      */
 
@@ -718,20 +726,66 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * An optional JMESPath expression used to override the <code>EnableExplanations</code> parameter of the
      * <code>ClarifyExplainerConfig</code> API. See the <a href=
-     * "https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable"
      * >EnableExplanations</a> section in the developer guide for more information.
      * </p>
      * 
      * @param enableExplanations
      *        An optional JMESPath expression used to override the <code>EnableExplanations</code> parameter of the
      *        <code>ClarifyExplainerConfig</code> API. See the <a href=
-     *        "https://docs.aws.amazon.com/clarify-online-explainability-create-endpoint.html#clarify-online-exaplainability-create-endpoint-enable"
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable"
      *        >EnableExplanations</a> section in the developer guide for more information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InvokeEndpointRequest withEnableExplanations(String enableExplanations) {
         setEnableExplanations(enableExplanations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If the endpoint hosts one or more inference components, this parameter specifies the name of inference component
+     * to invoke.
+     * </p>
+     * 
+     * @param inferenceComponentName
+     *        If the endpoint hosts one or more inference components, this parameter specifies the name of inference
+     *        component to invoke.
+     */
+
+    public void setInferenceComponentName(String inferenceComponentName) {
+        this.inferenceComponentName = inferenceComponentName;
+    }
+
+    /**
+     * <p>
+     * If the endpoint hosts one or more inference components, this parameter specifies the name of inference component
+     * to invoke.
+     * </p>
+     * 
+     * @return If the endpoint hosts one or more inference components, this parameter specifies the name of inference
+     *         component to invoke.
+     */
+
+    public String getInferenceComponentName() {
+        return this.inferenceComponentName;
+    }
+
+    /**
+     * <p>
+     * If the endpoint hosts one or more inference components, this parameter specifies the name of inference component
+     * to invoke.
+     * </p>
+     * 
+     * @param inferenceComponentName
+     *        If the endpoint hosts one or more inference components, this parameter specifies the name of inference
+     *        component to invoke.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InvokeEndpointRequest withInferenceComponentName(String inferenceComponentName) {
+        setInferenceComponentName(inferenceComponentName);
         return this;
     }
 
@@ -766,7 +820,9 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getInferenceId() != null)
             sb.append("InferenceId: ").append(getInferenceId()).append(",");
         if (getEnableExplanations() != null)
-            sb.append("EnableExplanations: ").append(getEnableExplanations());
+            sb.append("EnableExplanations: ").append(getEnableExplanations()).append(",");
+        if (getInferenceComponentName() != null)
+            sb.append("InferenceComponentName: ").append(getInferenceComponentName());
         sb.append("}");
         return sb.toString();
     }
@@ -821,6 +877,10 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getEnableExplanations() != null && other.getEnableExplanations().equals(this.getEnableExplanations()) == false)
             return false;
+        if (other.getInferenceComponentName() == null ^ this.getInferenceComponentName() == null)
+            return false;
+        if (other.getInferenceComponentName() != null && other.getInferenceComponentName().equals(this.getInferenceComponentName()) == false)
+            return false;
         return true;
     }
 
@@ -839,6 +899,7 @@ public class InvokeEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getTargetContainerHostname() == null) ? 0 : getTargetContainerHostname().hashCode());
         hashCode = prime * hashCode + ((getInferenceId() == null) ? 0 : getInferenceId().hashCode());
         hashCode = prime * hashCode + ((getEnableExplanations() == null) ? 0 : getEnableExplanations().hashCode());
+        hashCode = prime * hashCode + ((getInferenceComponentName() == null) ? 0 : getInferenceComponentName().hashCode());
         return hashCode;
     }
 

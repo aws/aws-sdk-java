@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,7 @@ import com.amazonaws.services.timestreamquery.AmazonTimestreamQueryClientBuilder
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.timestreamquery.model.*;
+
 import com.amazonaws.services.timestreamquery.model.transform.*;
 
 /**
@@ -172,7 +173,7 @@ public class AmazonTimestreamQueryClient extends AmazonWebServiceClient implemen
      * @throws AccessDeniedException
      *         You are not authorized to perform this action.
      * @throws InternalServerException
-     *         Timestream was unable to fully process this request because of an internal server error.
+     *         The service was unable to fully process this request because of an internal server error.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ValidationException
@@ -248,7 +249,7 @@ public class AmazonTimestreamQueryClient extends AmazonWebServiceClient implemen
      * @throws ConflictException
      *         Unable to poll results for a cancelled query.
      * @throws InternalServerException
-     *         Timestream was unable to fully process this request because of an internal server error.
+     *         The service was unable to fully process this request because of an internal server error.
      * @throws ServiceQuotaExceededException
      *         You have exceeded the service quota.
      * @throws ThrottlingException
@@ -321,7 +322,7 @@ public class AmazonTimestreamQueryClient extends AmazonWebServiceClient implemen
      * @throws AccessDeniedException
      *         You are not authorized to perform this action.
      * @throws InternalServerException
-     *         Timestream was unable to fully process this request because of an internal server error.
+     *         The service was unable to fully process this request because of an internal server error.
      * @throws ResourceNotFoundException
      *         The requested resource could not be found.
      * @throws ThrottlingException
@@ -386,6 +387,81 @@ public class AmazonTimestreamQueryClient extends AmazonWebServiceClient implemen
 
     /**
      * <p>
+     * Describes the settings for your account that include the query pricing model and the configured maximum TCUs the
+     * service can use for your query workload.
+     * </p>
+     * <p>
+     * You're charged only for the duration of compute units used for your workloads.
+     * </p>
+     * 
+     * @param describeAccountSettingsRequest
+     * @return Result of the DescribeAccountSettings operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform this action.
+     * @throws InternalServerException
+     *         The service was unable to fully process this request because of an internal server error.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InvalidEndpointException
+     *         The requested endpoint was not valid.
+     * @sample AmazonTimestreamQuery.DescribeAccountSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/DescribeAccountSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeAccountSettingsResult describeAccountSettings(DescribeAccountSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAccountSettings(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAccountSettingsResult executeDescribeAccountSettings(DescribeAccountSettingsRequest describeAccountSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAccountSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAccountSettingsRequest> request = null;
+        Response<DescribeAccountSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAccountSettingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAccountSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Timestream Query");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccountSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+            if (endpointDiscoveryEnabled) {
+                DescribeEndpointsRequest discoveryRequest = new DescribeEndpointsRequest();
+                cachedEndpoint = cache.get(awsCredentialsProvider.getCredentials().getAWSAccessKeyId(), discoveryRequest, true, endpoint);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAccountSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeAccountSettingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * DescribeEndpoints returns a list of available endpoints to make Timestream API calls against. This API is
      * available through both Write and Query.
      * </p>
@@ -420,7 +496,7 @@ public class AmazonTimestreamQueryClient extends AmazonWebServiceClient implemen
      * @param describeEndpointsRequest
      * @return Result of the DescribeEndpoints operation returned by the service.
      * @throws InternalServerException
-     *         Timestream was unable to fully process this request because of an internal server error.
+     *         The service was unable to fully process this request because of an internal server error.
      * @throws ValidationException
      *         Invalid or malformed request.
      * @throws ThrottlingException
@@ -483,7 +559,7 @@ public class AmazonTimestreamQueryClient extends AmazonWebServiceClient implemen
      * @throws AccessDeniedException
      *         You are not authorized to perform this action.
      * @throws InternalServerException
-     *         Timestream was unable to fully process this request because of an internal server error.
+     *         The service was unable to fully process this request because of an internal server error.
      * @throws ResourceNotFoundException
      *         The requested resource could not be found.
      * @throws ThrottlingException
@@ -557,7 +633,7 @@ public class AmazonTimestreamQueryClient extends AmazonWebServiceClient implemen
      * @throws AccessDeniedException
      *         You are not authorized to perform this action.
      * @throws InternalServerException
-     *         Timestream was unable to fully process this request because of an internal server error.
+     *         The service was unable to fully process this request because of an internal server error.
      * @throws ResourceNotFoundException
      *         The requested resource could not be found.
      * @throws ThrottlingException
@@ -632,7 +708,7 @@ public class AmazonTimestreamQueryClient extends AmazonWebServiceClient implemen
      * @throws AccessDeniedException
      *         You are not authorized to perform this action.
      * @throws InternalServerException
-     *         Timestream was unable to fully process this request because of an internal server error.
+     *         The service was unable to fully process this request because of an internal server error.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ValidationException
@@ -765,8 +841,7 @@ public class AmazonTimestreamQueryClient extends AmazonWebServiceClient implemen
     /**
      * <p>
      * A synchronous operation that allows you to submit a query with parameters to be stored by Timestream for later
-     * running. Timestream only supports using this operation with the <code>PrepareQueryRequest$ValidateOnly</code> set
-     * to <code>true</code>.
+     * running. Timestream only supports using this operation with <code>ValidateOnly</code> set to <code>true</code>.
      * </p>
      * 
      * @param prepareQueryRequest
@@ -774,7 +849,7 @@ public class AmazonTimestreamQueryClient extends AmazonWebServiceClient implemen
      * @throws AccessDeniedException
      *         You are not authorized to perform this action.
      * @throws InternalServerException
-     *         Timestream was unable to fully process this request because of an internal server error.
+     *         The service was unable to fully process this request because of an internal server error.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
      * @throws ValidationException
@@ -883,7 +958,7 @@ public class AmazonTimestreamQueryClient extends AmazonWebServiceClient implemen
      * @throws ConflictException
      *         Unable to poll results for a cancelled query.
      * @throws InternalServerException
-     *         Timestream was unable to fully process this request because of an internal server error.
+     *         The service was unable to fully process this request because of an internal server error.
      * @throws QueryExecutionException
      *         Timestream was unable to run the query successfully.
      * @throws ThrottlingException
@@ -1089,6 +1164,86 @@ public class AmazonTimestreamQueryClient extends AmazonWebServiceClient implemen
 
     /**
      * <p>
+     * Transitions your account to use TCUs for query pricing and modifies the maximum query compute units that you've
+     * configured. If you reduce the value of <code>MaxQueryTCU</code> to a desired configuration, the new value can
+     * take up to 24 hours to be effective.
+     * </p>
+     * <note>
+     * <p>
+     * After you've transitioned your account to use TCUs for query pricing, you can't transition to using bytes scanned
+     * for query pricing.
+     * </p>
+     * </note>
+     * 
+     * @param updateAccountSettingsRequest
+     * @return Result of the UpdateAccountSettings operation returned by the service.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform this action.
+     * @throws InternalServerException
+     *         The service was unable to fully process this request because of an internal server error.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         Invalid or malformed request.
+     * @throws InvalidEndpointException
+     *         The requested endpoint was not valid.
+     * @sample AmazonTimestreamQuery.UpdateAccountSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/UpdateAccountSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateAccountSettingsResult updateAccountSettings(UpdateAccountSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAccountSettings(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAccountSettingsResult executeUpdateAccountSettings(UpdateAccountSettingsRequest updateAccountSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAccountSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAccountSettingsRequest> request = null;
+        Response<UpdateAccountSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAccountSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAccountSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Timestream Query");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAccountSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+            if (endpointDiscoveryEnabled) {
+                DescribeEndpointsRequest discoveryRequest = new DescribeEndpointsRequest();
+                cachedEndpoint = cache.get(awsCredentialsProvider.getCredentials().getAWSAccessKeyId(), discoveryRequest, true, endpoint);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAccountSettingsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new UpdateAccountSettingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Update a scheduled query.
      * </p>
      * 
@@ -1097,7 +1252,7 @@ public class AmazonTimestreamQueryClient extends AmazonWebServiceClient implemen
      * @throws AccessDeniedException
      *         You are not authorized to perform this action.
      * @throws InternalServerException
-     *         Timestream was unable to fully process this request because of an internal server error.
+     *         The service was unable to fully process this request because of an internal server error.
      * @throws ResourceNotFoundException
      *         The requested resource could not be found.
      * @throws ThrottlingException

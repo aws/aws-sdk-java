@@ -29,7 +29,9 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ConflictException"}
       ],
-      "documentation":"<p>Adds a user account to a permission group to grant permissions for actions a user can perform in FinSpace.</p>"
+      "documentation":"<p>Adds a user to a permission group to grant permissions for actions a user can perform in FinSpace.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This method will be discontinued."
     },
     "CreateChangeset":{
       "name":"CreateChangeset",
@@ -48,7 +50,9 @@
         {"shape":"LimitExceededException"},
         {"shape":"ConflictException"}
       ],
-      "documentation":"<p>Creates a new Changeset in a FinSpace Dataset.</p>"
+      "documentation":"<p>Creates a new Changeset in a FinSpace Dataset.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This method will be discontinued."
     },
     "CreateDataView":{
       "name":"CreateDataView",
@@ -66,7 +70,9 @@
         {"shape":"ConflictException"},
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Creates a Dataview for a Dataset.</p>"
+      "documentation":"<p>Creates a Dataview for a Dataset.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This method will be discontinued."
     },
     "CreateDataset":{
       "name":"CreateDataset",
@@ -85,7 +91,9 @@
         {"shape":"ConflictException"},
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Creates a new FinSpace Dataset.</p>"
+      "documentation":"<p>Creates a new FinSpace Dataset.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This method will be discontinued."
     },
     "CreatePermissionGroup":{
       "name":"CreatePermissionGroup",
@@ -103,7 +111,9 @@
         {"shape":"LimitExceededException"},
         {"shape":"ConflictException"}
       ],
-      "documentation":"<p>Creates a group of permissions for various actions that a user can perform in FinSpace.</p>"
+      "documentation":"<p>Creates a group of permissions for various actions that a user can perform in FinSpace.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This method will be discontinued."
     },
     "CreateUser":{
       "name":"CreateUser",
@@ -121,7 +131,9 @@
         {"shape":"LimitExceededException"},
         {"shape":"ConflictException"}
       ],
-      "documentation":"<p>Creates a new user in FinSpace.</p>"
+      "documentation":"<p>Creates a new user in FinSpace.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This method will be discontinued."
     },
     "DeleteDataset":{
       "name":"DeleteDataset",
@@ -140,7 +152,9 @@
         {"shape":"LimitExceededException"},
         {"shape":"ConflictException"}
       ],
-      "documentation":"<p>Deletes a FinSpace Dataset.</p>"
+      "documentation":"<p>Deletes a FinSpace Dataset.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This method will be discontinued."
     },
     "DeletePermissionGroup":{
       "name":"DeletePermissionGroup",
@@ -159,7 +173,9 @@
         {"shape":"LimitExceededException"},
         {"shape":"ConflictException"}
       ],
-      "documentation":"<p>Deletes a permission group. This action is irreversible.</p>"
+      "documentation":"<p>Deletes a permission group. This action is irreversible.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This method will be discontinued."
     },
     "DisableUser":{
       "name":"DisableUser",
@@ -177,7 +193,9 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ConflictException"}
       ],
-      "documentation":"<p>Denies access to the FinSpace web application and API for the specified user.</p>"
+      "documentation":"<p>Denies access to the FinSpace web application and API for the specified user.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This method will be discontinued."
     },
     "DisassociateUserFromPermissionGroup":{
       "name":"DisassociateUserFromPermissionGroup",
@@ -195,7 +213,9 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ConflictException"}
       ],
-      "documentation":"<p>Removes a user account from a permission group.</p>"
+      "documentation":"<p>Removes a user from a permission group.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This method will be discontinued."
     },
     "EnableUser":{
       "name":"EnableUser",
@@ -214,7 +234,9 @@
         {"shape":"LimitExceededException"},
         {"shape":"ConflictException"}
       ],
-      "documentation":"<p> Allows the specified user to access the FinSpace web application and API.</p>"
+      "documentation":"<p> Allows the specified user to access the FinSpace web application and API.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This method will be discontinued."
     },
     "GetChangeset":{
       "name":"GetChangeset",
@@ -232,7 +254,9 @@
         {"shape":"AccessDeniedException"},
         {"shape":"ConflictException"}
       ],
-      "documentation":"<p>Get information about a Changeset.</p>"
+      "documentation":"<p>Get information about a Changeset.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This method will be discontinued."
     },
     "GetDataView":{
       "name":"GetDataView",
@@ -249,7 +273,9 @@
         {"shape":"ValidationException"},
         {"shape":"ConflictException"}
       ],
-      "documentation":"<p>Gets information about a Dataview.</p>"
+      "documentation":"<p>Gets information about a Dataview.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This method will be discontinued."
     },
     "GetDataset":{
       "name":"GetDataset",
@@ -267,7 +293,9 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ConflictException"}
       ],
-      "documentation":"<p>Returns information about a Dataset.</p>"
+      "documentation":"<p>Returns information about a Dataset.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This method will be discontinued."
     },
     "GetExternalDataViewAccessDetails":{
       "name":"GetExternalDataViewAccessDetails",
@@ -284,7 +312,9 @@
         {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
       ],
-      "documentation":"<p>Returns the credentials to access the external Dataview from an S3 location. To call this API:</p> <ul> <li> <p>You must retrieve the programmatic credentials.</p> </li> <li> <p>You must be a member of a FinSpace user group, where the dataset that you want to access has <code>Read Dataset Data</code> permissions.</p> </li> </ul>"
+      "documentation":"<p>Returns the credentials to access the external Dataview from an S3 location. To call this API:</p> <ul> <li> <p>You must retrieve the programmatic credentials.</p> </li> <li> <p>You must be a member of a FinSpace user group, where the dataset that you want to access has <code>Read Dataset Data</code> permissions.</p> </li> </ul>",
+      "deprecated":true,
+      "deprecatedMessage":"This method will be discontinued."
     },
     "GetPermissionGroup":{
       "name":"GetPermissionGroup",
@@ -301,7 +331,9 @@
         {"shape":"AccessDeniedException"},
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Retrieves the details of a specific permission group.</p>"
+      "documentation":"<p>Retrieves the details of a specific permission group.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This method will be discontinued."
     },
     "GetProgrammaticAccessCredentials":{
       "name":"GetProgrammaticAccessCredentials",
@@ -317,7 +349,9 @@
         {"shape":"ThrottlingException"},
         {"shape":"AccessDeniedException"}
       ],
-      "documentation":"<p>Request programmatic credentials to use with FinSpace SDK.</p>"
+      "documentation":"<p>Request programmatic credentials to use with FinSpace SDK. For more information, see <a href=\"https://docs.aws.amazon.com/finspace/latest/data-api/fs-using-the-finspace-api.html#accessing-credentials\">Step 2. Access credentials programmatically using IAM access key id and secret access key</a>.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This method will be discontinued."
     },
     "GetUser":{
       "name":"GetUser",
@@ -334,7 +368,9 @@
         {"shape":"AccessDeniedException"},
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Retrieves details for a specific user.</p>"
+      "documentation":"<p>Retrieves details for a specific user.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This method will be discontinued."
     },
     "GetWorkingLocation":{
       "name":"GetWorkingLocation",
@@ -350,7 +386,9 @@
         {"shape":"ThrottlingException"},
         {"shape":"ValidationException"}
       ],
-      "documentation":"<p>A temporary Amazon S3 location, where you can copy your files from a source location to stage or use as a scratch space in FinSpace notebook.</p>"
+      "documentation":"<p>A temporary Amazon S3 location, where you can copy your files from a source location to stage or use as a scratch space in FinSpace notebook.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This method will be discontinued."
     },
     "ListChangesets":{
       "name":"ListChangesets",
@@ -368,7 +406,9 @@
         {"shape":"AccessDeniedException"},
         {"shape":"ConflictException"}
       ],
-      "documentation":"<p>Lists the FinSpace Changesets for a Dataset.</p>"
+      "documentation":"<p>Lists the FinSpace Changesets for a Dataset.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This method will be discontinued."
     },
     "ListDataViews":{
       "name":"ListDataViews",
@@ -385,7 +425,9 @@
         {"shape":"ValidationException"},
         {"shape":"ConflictException"}
       ],
-      "documentation":"<p>Lists all available Dataviews for a Dataset.</p>"
+      "documentation":"<p>Lists all available Dataviews for a Dataset.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This method will be discontinued."
     },
     "ListDatasets":{
       "name":"ListDatasets",
@@ -402,7 +444,9 @@
         {"shape":"ConflictException"},
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Lists all of the active Datasets that a user has access to.</p>"
+      "documentation":"<p>Lists all of the active Datasets that a user has access to.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This method will be discontinued."
     },
     "ListPermissionGroups":{
       "name":"ListPermissionGroups",
@@ -418,7 +462,9 @@
         {"shape":"ThrottlingException"},
         {"shape":"AccessDeniedException"}
       ],
-      "documentation":"<p>Lists all available permission groups in FinSpace.</p>"
+      "documentation":"<p>Lists all available permission groups in FinSpace.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This method will be discontinued."
     },
     "ListPermissionGroupsByUser":{
       "name":"ListPermissionGroupsByUser",
@@ -435,7 +481,9 @@
         {"shape":"AccessDeniedException"},
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Lists all the permission groups that are associated with a specific user account.</p>"
+      "documentation":"<p>Lists all the permission groups that are associated with a specific user.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This method will be discontinued."
     },
     "ListUsers":{
       "name":"ListUsers",
@@ -451,7 +499,9 @@
         {"shape":"ThrottlingException"},
         {"shape":"AccessDeniedException"}
       ],
-      "documentation":"<p>Lists all available user accounts in FinSpace.</p>"
+      "documentation":"<p>Lists all available users in FinSpace.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This method will be discontinued."
     },
     "ListUsersByPermissionGroup":{
       "name":"ListUsersByPermissionGroup",
@@ -468,7 +518,9 @@
         {"shape":"AccessDeniedException"},
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Lists details of all the users in a specific permission group.</p>"
+      "documentation":"<p>Lists details of all the users in a specific permission group.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This method will be discontinued."
     },
     "ResetUserPassword":{
       "name":"ResetUserPassword",
@@ -486,7 +538,9 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ConflictException"}
       ],
-      "documentation":"<p>Resets the password for a specified user ID and generates a temporary one. Only a superuser can reset password for other users. Resetting the password immediately invalidates the previous password associated with the user.</p>"
+      "documentation":"<p>Resets the password for a specified user ID and generates a temporary one. Only a superuser can reset password for other users. Resetting the password immediately invalidates the previous password associated with the user.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This method will be discontinued."
     },
     "UpdateChangeset":{
       "name":"UpdateChangeset",
@@ -504,7 +558,9 @@
         {"shape":"AccessDeniedException"},
         {"shape":"ConflictException"}
       ],
-      "documentation":"<p>Updates a FinSpace Changeset.</p>"
+      "documentation":"<p>Updates a FinSpace Changeset.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This method will be discontinued."
     },
     "UpdateDataset":{
       "name":"UpdateDataset",
@@ -522,7 +578,9 @@
         {"shape":"ConflictException"},
         {"shape":"ResourceNotFoundException"}
       ],
-      "documentation":"<p>Updates a FinSpace Dataset.</p>"
+      "documentation":"<p>Updates a FinSpace Dataset.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This method will be discontinued."
     },
     "UpdatePermissionGroup":{
       "name":"UpdatePermissionGroup",
@@ -540,7 +598,9 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ConflictException"}
       ],
-      "documentation":"<p>Modifies the details of a permission group. You cannot modify a <code>permissionGroupID</code>.</p>"
+      "documentation":"<p>Modifies the details of a permission group. You cannot modify a <code>permissionGroupID</code>.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This method will be discontinued."
     },
     "UpdateUser":{
       "name":"UpdateUser",
@@ -558,7 +618,9 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ConflictException"}
       ],
-      "documentation":"<p>Modifies the details of the specified user account. You cannot update the <code>userId</code> for a user.</p>"
+      "documentation":"<p>Modifies the details of the specified user. You cannot update the <code>userId</code> for a user.</p>",
+      "deprecated":true,
+      "deprecatedMessage":"This method will be discontinued."
     }
   },
   "shapes":{
@@ -662,7 +724,8 @@
           "documentation":"<p> The Epoch time when the current credentials expire.</p>"
         }
       },
-      "documentation":"<p> The credentials required to access the external Dataview from the S3 location.</p>"
+      "documentation":"<p> The credentials required to access the external Dataview from the S3 location.</p>",
+      "sensitive":true
     },
     "Boolean":{
       "type":"boolean",
@@ -1058,7 +1121,7 @@
           "shape":"LastName",
           "documentation":"<p>The last name of the user that you want to register.</p>"
         },
-        "ApiAccess":{
+        "apiAccess":{
           "shape":"ApiAccess",
           "documentation":"<p>The option to indicate whether the user can use the <code>GetProgrammaticAccessCredentials</code> API to obtain credentials that can then be used to access other FinSpace Data API operations.</p> <ul> <li> <p> <code>ENABLED</code> – The user has permissions to use the APIs.</p> </li> <li> <p> <code>DISABLED</code> – The user does not have permissions to use any APIs.</p> </li> </ul>"
         },
@@ -1098,7 +1161,8 @@
           "documentation":"<p>The session token.</p>"
         }
       },
-      "documentation":"<p>Short term API credentials.</p>"
+      "documentation":"<p>Short term API credentials.</p>",
+      "sensitive":true
     },
     "DataViewArn":{
       "type":"string",
@@ -1395,7 +1459,7 @@
       "members":{
         "userId":{
           "shape":"UserId",
-          "documentation":"<p>The unique identifier for the user account that you want to disable.</p>",
+          "documentation":"<p>The unique identifier for the user that you want to deactivate.</p>",
           "location":"uri",
           "locationName":"userId"
         },
@@ -1411,7 +1475,7 @@
       "members":{
         "userId":{
           "shape":"UserId",
-          "documentation":"<p>The unique identifier for the disabled user account.</p>"
+          "documentation":"<p>The unique identifier for the deactivated user.</p>"
         }
       }
     },
@@ -1466,7 +1530,7 @@
       "members":{
         "userId":{
           "shape":"UserId",
-          "documentation":"<p>The unique identifier for the user account that you want to enable.</p>",
+          "documentation":"<p>The unique identifier for the user that you want to activate.</p>",
           "location":"uri",
           "locationName":"userId"
         },
@@ -1482,7 +1546,7 @@
       "members":{
         "userId":{
           "shape":"UserId",
-          "documentation":"<p>The unique identifier for the enabled user account.</p>"
+          "documentation":"<p>The unique identifier for the active user.</p>"
         }
       }
     },
@@ -1846,11 +1910,11 @@
       "members":{
         "userId":{
           "shape":"UserId",
-          "documentation":"<p>The unique identifier for the user account that is retrieved.</p>"
+          "documentation":"<p>The unique identifier for the user that is retrieved.</p>"
         },
         "status":{
           "shape":"UserStatus",
-          "documentation":"<p>The current status of the user account. </p> <ul> <li> <p> <code>CREATING</code> – The user account creation is in progress.</p> </li> <li> <p> <code>ENABLED</code> – The user account is created and is currently active.</p> </li> <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li> </ul>"
+          "documentation":"<p>The current status of the user. </p> <ul> <li> <p> <code>CREATING</code> – The creation is in progress.</p> </li> <li> <p> <code>ENABLED</code> – The user is created and is currently active.</p> </li> <li> <p> <code>DISABLED</code> – The user is currently inactive.</p> </li> </ul>"
         },
         "firstName":{
           "shape":"FirstName",
@@ -1878,19 +1942,19 @@
         },
         "createTime":{
           "shape":"TimestampEpoch",
-          "documentation":"<p>The timestamp at which the user account was created in FinSpace. The value is determined as epoch time in milliseconds. </p>"
+          "documentation":"<p>The timestamp at which the user was created in FinSpace. The value is determined as epoch time in milliseconds. </p>"
         },
         "lastEnabledTime":{
           "shape":"TimestampEpoch",
-          "documentation":"<p>Describes the last time the user account was enabled. The value is determined as epoch time in milliseconds.</p>"
+          "documentation":"<p>Describes the last time the user was activated. The value is determined as epoch time in milliseconds.</p>"
         },
         "lastDisabledTime":{
           "shape":"TimestampEpoch",
-          "documentation":"<p>Describes the last time the user account was disabled. The value is determined as epoch time in milliseconds.</p>"
+          "documentation":"<p>Describes the last time the user was deactivated. The value is determined as epoch time in milliseconds.</p>"
         },
         "lastModifiedTime":{
           "shape":"TimestampEpoch",
-          "documentation":"<p>Describes the last time the user account was updated. The value is determined as epoch time in milliseconds.</p>"
+          "documentation":"<p>Describes the last time the user details were updated. The value is determined as epoch time in milliseconds.</p>"
         },
         "lastLoginTime":{
           "shape":"TimestampEpoch",
@@ -2211,7 +2275,7 @@
       "members":{
         "users":{
           "shape":"UserList",
-          "documentation":"<p>A list of all the user accounts.</p>"
+          "documentation":"<p>A list of all the users.</p>"
         },
         "nextToken":{
           "shape":"PaginationToken",
@@ -2268,7 +2332,7 @@
         },
         "membershipStatus":{
           "shape":"PermissionGroupMembershipStatus",
-          "documentation":"<p>Indicates the status of the user account within a permission group.</p> <ul> <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.</p> </li> <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li> <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li> </ul>"
+          "documentation":"<p>Indicates the status of the user within a permission group.</p> <ul> <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.</p> </li> <li> <p> <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.</p> </li> <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li> </ul>"
         }
       },
       "documentation":"<p>The structure for a permission group.</p>"
@@ -2286,10 +2350,10 @@
         },
         "membershipStatus":{
           "shape":"PermissionGroupMembershipStatus",
-          "documentation":"<p>Indicates the status of the user account within a permission group.</p> <ul> <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.</p> </li> <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li> <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li> </ul>"
+          "documentation":"<p>Indicates the status of the user within a permission group.</p> <ul> <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.</p> </li> <li> <p> <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.</p> </li> <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li> </ul>"
         }
       },
-      "documentation":"<p>The structure of a permission group associated with a user account.</p>"
+      "documentation":"<p>The structure of a permission group associated with a user.</p>"
     },
     "PermissionGroupByUserList":{
       "type":"list",
@@ -2374,7 +2438,7 @@
         },
         "temporaryPassword":{
           "shape":"Password",
-          "documentation":"<p>A randomly generated temporary password for the requested user account. This password expires in 7 days.</p>"
+          "documentation":"<p>A randomly generated temporary password for the requested user. This password expires in 7 days.</p>"
         }
       }
     },
@@ -2482,8 +2546,8 @@
     },
     "SessionDuration":{
       "type":"long",
-      "max":720,
-      "min":60
+      "max":60,
+      "min":1
     },
     "SessionToken":{
       "type":"string",
@@ -2687,7 +2751,7 @@
       "members":{
         "userId":{
           "shape":"UserId",
-          "documentation":"<p>The unique identifier for the user account to update.</p>",
+          "documentation":"<p>The unique identifier for the user that you want to update.</p>",
           "location":"uri",
           "locationName":"userId"
         },
@@ -2723,7 +2787,7 @@
       "members":{
         "userId":{
           "shape":"UserId",
-          "documentation":"<p>The unique identifier of the updated user account.</p>"
+          "documentation":"<p>The unique identifier of the updated user.</p>"
         }
       }
     },
@@ -2736,7 +2800,7 @@
         },
         "status":{
           "shape":"UserStatus",
-          "documentation":"<p>The current status of the user account. </p> <ul> <li> <p> <code>CREATING</code> – The user account creation is in progress.</p> </li> <li> <p> <code>ENABLED</code> – The user account is created and is currently active.</p> </li> <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li> </ul>"
+          "documentation":"<p>The current status of the user. </p> <ul> <li> <p> <code>CREATING</code> – The user creation is in progress.</p> </li> <li> <p> <code>ENABLED</code> – The user is created and is currently active.</p> </li> <li> <p> <code>DISABLED</code> – The user is currently inactive.</p> </li> </ul>"
         },
         "firstName":{
           "shape":"FirstName",
@@ -2764,26 +2828,26 @@
         },
         "createTime":{
           "shape":"TimestampEpoch",
-          "documentation":"<p>The timestamp at which the user account was created in FinSpace. The value is determined as epoch time in milliseconds. </p>"
+          "documentation":"<p>The timestamp at which the user was created in FinSpace. The value is determined as epoch time in milliseconds. </p>"
         },
         "lastEnabledTime":{
           "shape":"TimestampEpoch",
-          "documentation":"<p> Describes the last time the user account was enabled. The value is determined as epoch time in milliseconds. </p>"
+          "documentation":"<p> Describes the last time the user was activated. The value is determined as epoch time in milliseconds. </p>"
         },
         "lastDisabledTime":{
           "shape":"TimestampEpoch",
-          "documentation":"<p>Describes the last time the user account was disabled. The value is determined as epoch time in milliseconds.</p>"
+          "documentation":"<p>Describes the last time the user was deactivated. The value is determined as epoch time in milliseconds.</p>"
         },
         "lastModifiedTime":{
           "shape":"TimestampEpoch",
-          "documentation":"<p>Describes the last time the user account was updated. The value is determined as epoch time in milliseconds. </p>"
+          "documentation":"<p>Describes the last time the user was updated. The value is determined as epoch time in milliseconds. </p>"
         },
         "lastLoginTime":{
           "shape":"TimestampEpoch",
           "documentation":"<p>Describes the last time that the user logged into their account. The value is determined as epoch time in milliseconds. </p>"
         }
       },
-      "documentation":"<p>The details of the user account.</p>"
+      "documentation":"<p>The details of the user.</p>"
     },
     "UserByPermissionGroup":{
       "type":"structure",
@@ -2794,7 +2858,7 @@
         },
         "status":{
           "shape":"UserStatus",
-          "documentation":"<p>The current status of the user account. </p> <ul> <li> <p> <code>CREATING</code> – The user account creation is in progress.</p> </li> <li> <p> <code>ENABLED</code> – The user account is created and is currently active.</p> </li> <li> <p> <code>DISABLED</code> – The user account is currently inactive.</p> </li> </ul>"
+          "documentation":"<p>The current status of the user. </p> <ul> <li> <p> <code>CREATING</code> – The user creation is in progress.</p> </li> <li> <p> <code>ENABLED</code> – The user is created and is currently active.</p> </li> <li> <p> <code>DISABLED</code> – The user is currently inactive.</p> </li> </ul>"
         },
         "firstName":{
           "shape":"FirstName",
@@ -2822,10 +2886,10 @@
         },
         "membershipStatus":{
           "shape":"PermissionGroupMembershipStatus",
-          "documentation":"<p>Indicates the status of the user account within a permission group.</p> <ul> <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.</p> </li> <li> <p> <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.</p> </li> <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li> </ul>"
+          "documentation":"<p>Indicates the status of the user within a permission group.</p> <ul> <li> <p> <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.</p> </li> <li> <p> <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.</p> </li> <li> <p> <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission group.</p> </li> </ul>"
         }
       },
-      "documentation":"<p>The structure of a user account associated with a permission group.</p>"
+      "documentation":"<p>The structure of a user associated with a permission group.</p>"
     },
     "UserByPermissionGroupList":{
       "type":"list",

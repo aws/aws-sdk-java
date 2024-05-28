@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,8 @@ public class CreateDeploymentGroupRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("onPremisesTagSet").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<Boolean> TERMINATIONHOOKENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("terminationHookEnabled").build();
 
     private static final CreateDeploymentGroupRequestMarshaller instance = new CreateDeploymentGroupRequestMarshaller();
 
@@ -99,6 +101,7 @@ public class CreateDeploymentGroupRequestMarshaller {
             protocolMarshaller.marshall(createDeploymentGroupRequest.getEcsServices(), ECSSERVICES_BINDING);
             protocolMarshaller.marshall(createDeploymentGroupRequest.getOnPremisesTagSet(), ONPREMISESTAGSET_BINDING);
             protocolMarshaller.marshall(createDeploymentGroupRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createDeploymentGroupRequest.getTerminationHookEnabled(), TERMINATIONHOOKENABLED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

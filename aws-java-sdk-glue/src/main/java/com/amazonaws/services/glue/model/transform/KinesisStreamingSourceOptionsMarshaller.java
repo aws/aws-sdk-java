@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,12 @@ public class KinesisStreamingSourceOptionsMarshaller {
             .marshallLocationName("RoleArn").build();
     private static final MarshallingInfo<String> ROLESESSIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RoleSessionName").build();
+    private static final MarshallingInfo<String> ADDRECORDTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AddRecordTimestamp").build();
+    private static final MarshallingInfo<String> EMITCONSUMERLAGMETRICS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EmitConsumerLagMetrics").build();
+    private static final MarshallingInfo<java.util.Date> STARTINGTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartingTimestamp").timestampFormat("iso8601").build();
 
     private static final KinesisStreamingSourceOptionsMarshaller instance = new KinesisStreamingSourceOptionsMarshaller();
 
@@ -98,6 +104,9 @@ public class KinesisStreamingSourceOptionsMarshaller {
             protocolMarshaller.marshall(kinesisStreamingSourceOptions.getStreamArn(), STREAMARN_BINDING);
             protocolMarshaller.marshall(kinesisStreamingSourceOptions.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(kinesisStreamingSourceOptions.getRoleSessionName(), ROLESESSIONNAME_BINDING);
+            protocolMarshaller.marshall(kinesisStreamingSourceOptions.getAddRecordTimestamp(), ADDRECORDTIMESTAMP_BINDING);
+            protocolMarshaller.marshall(kinesisStreamingSourceOptions.getEmitConsumerLagMetrics(), EMITCONSUMERLAGMETRICS_BINDING);
+            protocolMarshaller.marshall(kinesisStreamingSourceOptions.getStartingTimestamp(), STARTINGTIMESTAMP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -94,6 +94,10 @@ public class RequestPhoneNumberResultJsonUnmarshaller implements Unmarshaller<Re
                     context.nextToken();
                     requestPhoneNumberResult.setTwoWayChannelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("TwoWayChannelRole", targetDepth)) {
+                    context.nextToken();
+                    requestPhoneNumberResult.setTwoWayChannelRole(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("SelfManagedOptOutsEnabled", targetDepth)) {
                     context.nextToken();
                     requestPhoneNumberResult.setSelfManagedOptOutsEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
@@ -109,6 +113,10 @@ public class RequestPhoneNumberResultJsonUnmarshaller implements Unmarshaller<Re
                 if (context.testExpression("PoolId", targetDepth)) {
                     context.nextToken();
                     requestPhoneNumberResult.setPoolId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("RegistrationId", targetDepth)) {
+                    context.nextToken();
+                    requestPhoneNumberResult.setRegistrationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();

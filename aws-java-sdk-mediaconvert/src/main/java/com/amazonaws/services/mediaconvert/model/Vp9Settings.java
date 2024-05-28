@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP9.
+ * Required when you set Codec to the value VP9.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Vp9Settings" target="_top">AWS API
  *      Documentation</a>
@@ -32,21 +32,18 @@ public class Vp9Settings implements Serializable, Cloneable, StructuredPojo {
      * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to
      * keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion,
      * choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal
-     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your
-     * transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the
-     * service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the
-     * frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the
-     * settings FramerateNumerator and FramerateDenominator.
+     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
      */
     private String framerateControl;
     /**
-     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
-     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
-     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
-     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
-     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
-     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
-     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically
+     * simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might
+     * introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has
+     * already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation.
+     * FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding
+     * time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at
+     * least 128x96.
      */
     private String framerateConversionAlgorithm;
     /**
@@ -79,22 +76,22 @@ public class Vp9Settings implements Serializable, Cloneable, StructuredPojo {
      */
     private String parControl;
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value
-     * other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio
-     * 40:33. In this example, the value for parDenominator is 33.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other than
+     * Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR,
+     * provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In
+     * this example, the value for parDenominator is 33.
      */
     private Integer parDenominator;
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value
-     * other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio
-     * 40:33. In this example, the value for parNumerator is 40.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other than
+     * Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR,
+     * provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In
+     * this example, the value for parNumerator is 40.
      */
     private Integer parNumerator;
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for
-     * output video quality. The default behavior is faster, lower quality, multi-pass encoding.
+     * Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality.
+     * The default behavior is faster, lower quality, multi-pass encoding.
      */
     private String qualityTuningLevel;
     /** With the VP9 codec, you can use only the variable bitrate (VBR) rate control mode. */
@@ -138,22 +135,14 @@ public class Vp9Settings implements Serializable, Cloneable, StructuredPojo {
      * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to
      * keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion,
      * choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal
-     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your
-     * transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the
-     * service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the
-     * frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the
-     * settings FramerateNumerator and FramerateDenominator.
+     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
      * 
      * @param framerateControl
      *        If you are using the console, use the Framerate setting to specify the frame rate for this output. If you
      *        want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate
      *        conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the
      *        dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a
-     *        fraction. If you are creating your transcoding job specification as a JSON file without the console, use
-     *        FramerateControl to specify which value the service uses for the frame rate for this output. Choose
-     *        INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if
-     *        you want the service to use the frame rate you specify in the settings FramerateNumerator and
-     *        FramerateDenominator.
+     *        fraction.
      * @see Vp9FramerateControl
      */
 
@@ -165,21 +154,13 @@ public class Vp9Settings implements Serializable, Cloneable, StructuredPojo {
      * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to
      * keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion,
      * choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal
-     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your
-     * transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the
-     * service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the
-     * frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the
-     * settings FramerateNumerator and FramerateDenominator.
+     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
      * 
      * @return If you are using the console, use the Framerate setting to specify the frame rate for this output. If you
      *         want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate
      *         conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the
      *         dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a
-     *         fraction. If you are creating your transcoding job specification as a JSON file without the console, use
-     *         FramerateControl to specify which value the service uses for the frame rate for this output. Choose
-     *         INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if
-     *         you want the service to use the frame rate you specify in the settings FramerateNumerator and
-     *         FramerateDenominator.
+     *         fraction.
      * @see Vp9FramerateControl
      */
 
@@ -191,22 +172,14 @@ public class Vp9Settings implements Serializable, Cloneable, StructuredPojo {
      * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to
      * keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion,
      * choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal
-     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your
-     * transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the
-     * service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the
-     * frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the
-     * settings FramerateNumerator and FramerateDenominator.
+     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
      * 
      * @param framerateControl
      *        If you are using the console, use the Framerate setting to specify the frame rate for this output. If you
      *        want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate
      *        conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the
      *        dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a
-     *        fraction. If you are creating your transcoding job specification as a JSON file without the console, use
-     *        FramerateControl to specify which value the service uses for the frame rate for this output. Choose
-     *        INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if
-     *        you want the service to use the frame rate you specify in the settings FramerateNumerator and
-     *        FramerateDenominator.
+     *        fraction.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Vp9FramerateControl
      */
@@ -220,22 +193,14 @@ public class Vp9Settings implements Serializable, Cloneable, StructuredPojo {
      * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to
      * keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion,
      * choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal
-     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your
-     * transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the
-     * service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the
-     * frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the
-     * settings FramerateNumerator and FramerateDenominator.
+     * approximations of fractions. If you choose Custom, specify your frame rate as a fraction.
      * 
      * @param framerateControl
      *        If you are using the console, use the Framerate setting to specify the frame rate for this output. If you
      *        want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate
      *        conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the
      *        dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a
-     *        fraction. If you are creating your transcoding job specification as a JSON file without the console, use
-     *        FramerateControl to specify which value the service uses for the frame rate for this output. Choose
-     *        INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if
-     *        you want the service to use the frame rate you specify in the settings FramerateNumerator and
-     *        FramerateDenominator.
+     *        fraction.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Vp9FramerateControl
      */
@@ -246,23 +211,24 @@ public class Vp9Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
-     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
-     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
-     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
-     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
-     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
-     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically
+     * simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might
+     * introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has
+     * already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation.
+     * FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding
+     * time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at
+     * least 128x96.
      * 
      * @param framerateConversionAlgorithm
-     *        Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We
-     *        recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30
-     *        fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This
-     *        results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate
-     *        conversions, especially if your source video has already been converted from its original cadence, use
-     *        FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion
-     *        method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant
-     *        add-on cost.
+     *        Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For
+     *        numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value,
+     *        Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in
+     *        a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions,
+     *        especially if your source video has already been converted from its original cadence: Choose FrameFormer
+     *        to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note
+     *        that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you
+     *        choose FrameFormer, your input video resolution must be at least 128x96.
      * @see Vp9FramerateConversionAlgorithm
      */
 
@@ -271,22 +237,23 @@ public class Vp9Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
-     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
-     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
-     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
-     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
-     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
-     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically
+     * simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might
+     * introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has
+     * already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation.
+     * FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding
+     * time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at
+     * least 128x96.
      * 
-     * @return Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We
-     *         recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30
-     *         fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This
-     *         results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate
-     *         conversions, especially if your source video has already been converted from its original cadence, use
-     *         FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion
-     *         method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a
-     *         significant add-on cost.
+     * @return Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For
+     *         numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value,
+     *         Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results
+     *         in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions,
+     *         especially if your source video has already been converted from its original cadence: Choose FrameFormer
+     *         to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note
+     *         that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you
+     *         choose FrameFormer, your input video resolution must be at least 128x96.
      * @see Vp9FramerateConversionAlgorithm
      */
 
@@ -295,23 +262,24 @@ public class Vp9Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
-     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
-     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
-     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
-     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
-     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
-     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically
+     * simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might
+     * introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has
+     * already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation.
+     * FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding
+     * time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at
+     * least 128x96.
      * 
      * @param framerateConversionAlgorithm
-     *        Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We
-     *        recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30
-     *        fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This
-     *        results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate
-     *        conversions, especially if your source video has already been converted from its original cadence, use
-     *        FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion
-     *        method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant
-     *        add-on cost.
+     *        Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For
+     *        numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value,
+     *        Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in
+     *        a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions,
+     *        especially if your source video has already been converted from its original cadence: Choose FrameFormer
+     *        to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note
+     *        that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you
+     *        choose FrameFormer, your input video resolution must be at least 128x96.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Vp9FramerateConversionAlgorithm
      */
@@ -322,23 +290,24 @@ public class Vp9Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
-     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
-     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
-     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
-     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
-     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
-     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically
+     * simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might
+     * introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has
+     * already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation.
+     * FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding
+     * time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at
+     * least 128x96.
      * 
      * @param framerateConversionAlgorithm
-     *        Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We
-     *        recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30
-     *        fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This
-     *        results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate
-     *        conversions, especially if your source video has already been converted from its original cadence, use
-     *        FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion
-     *        method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant
-     *        add-on cost.
+     *        Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For
+     *        numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value,
+     *        Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in
+     *        a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions,
+     *        especially if your source video has already been converted from its original cadence: Choose FrameFormer
+     *        to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note
+     *        that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you
+     *        choose FrameFormer, your input video resolution must be at least 128x96.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Vp9FramerateConversionAlgorithm
      */
@@ -632,16 +601,16 @@ public class Vp9Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value
-     * other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio
-     * 40:33. In this example, the value for parDenominator is 33.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other than
+     * Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR,
+     * provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In
+     * this example, the value for parDenominator is 33.
      * 
      * @param parDenominator
-     *        Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to
-     *        any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different
-     *        from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you
-     *        would specify the ratio 40:33. In this example, the value for parDenominator is 33.
+     *        Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other
+     *        than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
+     *        video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify
+     *        the ratio 40:33. In this example, the value for parDenominator is 33.
      */
 
     public void setParDenominator(Integer parDenominator) {
@@ -649,15 +618,15 @@ public class Vp9Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value
-     * other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio
-     * 40:33. In this example, the value for parDenominator is 33.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other than
+     * Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR,
+     * provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In
+     * this example, the value for parDenominator is 33.
      * 
-     * @return Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to
-     *         any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different
-     *         from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen,
-     *         you would specify the ratio 40:33. In this example, the value for parDenominator is 33.
+     * @return Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value
+     *         other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your
+     *         input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
+     *         specify the ratio 40:33. In this example, the value for parDenominator is 33.
      */
 
     public Integer getParDenominator() {
@@ -665,16 +634,16 @@ public class Vp9Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value
-     * other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio
-     * 40:33. In this example, the value for parDenominator is 33.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other than
+     * Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR,
+     * provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In
+     * this example, the value for parDenominator is 33.
      * 
      * @param parDenominator
-     *        Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to
-     *        any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different
-     *        from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you
-     *        would specify the ratio 40:33. In this example, the value for parDenominator is 33.
+     *        Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other
+     *        than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
+     *        video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify
+     *        the ratio 40:33. In this example, the value for parDenominator is 33.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -684,16 +653,16 @@ public class Vp9Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value
-     * other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio
-     * 40:33. In this example, the value for parNumerator is 40.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other than
+     * Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR,
+     * provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In
+     * this example, the value for parNumerator is 40.
      * 
      * @param parNumerator
-     *        Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to
-     *        any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different
-     *        from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you
-     *        would specify the ratio 40:33. In this example, the value for parNumerator is 40.
+     *        Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other
+     *        than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
+     *        video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify
+     *        the ratio 40:33. In this example, the value for parNumerator is 40.
      */
 
     public void setParNumerator(Integer parNumerator) {
@@ -701,15 +670,15 @@ public class Vp9Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value
-     * other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio
-     * 40:33. In this example, the value for parNumerator is 40.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other than
+     * Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR,
+     * provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In
+     * this example, the value for parNumerator is 40.
      * 
-     * @return Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to
-     *         any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different
-     *         from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen,
-     *         you would specify the ratio 40:33. In this example, the value for parNumerator is 40.
+     * @return Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value
+     *         other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your
+     *         input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
+     *         specify the ratio 40:33. In this example, the value for parNumerator is 40.
      */
 
     public Integer getParNumerator() {
@@ -717,16 +686,16 @@ public class Vp9Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value
-     * other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
-     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio
-     * 40:33. In this example, the value for parNumerator is 40.
+     * Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other than
+     * Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input video PAR,
+     * provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio 40:33. In
+     * this example, the value for parNumerator is 40.
      * 
      * @param parNumerator
-     *        Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to
-     *        any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different
-     *        from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you
-     *        would specify the ratio 40:33. In this example, the value for parNumerator is 40.
+     *        Required when you set Pixel aspect ratio to SPECIFIED. On the console, this corresponds to any value other
+     *        than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
+     *        video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify
+     *        the ratio 40:33. In this example, the value for parNumerator is 40.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -736,12 +705,12 @@ public class Vp9Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for
-     * output video quality. The default behavior is faster, lower quality, multi-pass encoding.
+     * Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality.
+     * The default behavior is faster, lower quality, multi-pass encoding.
      * 
      * @param qualityTuningLevel
-     *        Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed
-     *        for output video quality. The default behavior is faster, lower quality, multi-pass encoding.
+     *        Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video
+     *        quality. The default behavior is faster, lower quality, multi-pass encoding.
      * @see Vp9QualityTuningLevel
      */
 
@@ -750,11 +719,11 @@ public class Vp9Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for
-     * output video quality. The default behavior is faster, lower quality, multi-pass encoding.
+     * Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality.
+     * The default behavior is faster, lower quality, multi-pass encoding.
      * 
-     * @return Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding
-     *         speed for output video quality. The default behavior is faster, lower quality, multi-pass encoding.
+     * @return Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video
+     *         quality. The default behavior is faster, lower quality, multi-pass encoding.
      * @see Vp9QualityTuningLevel
      */
 
@@ -763,12 +732,12 @@ public class Vp9Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for
-     * output video quality. The default behavior is faster, lower quality, multi-pass encoding.
+     * Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality.
+     * The default behavior is faster, lower quality, multi-pass encoding.
      * 
      * @param qualityTuningLevel
-     *        Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed
-     *        for output video quality. The default behavior is faster, lower quality, multi-pass encoding.
+     *        Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video
+     *        quality. The default behavior is faster, lower quality, multi-pass encoding.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Vp9QualityTuningLevel
      */
@@ -779,12 +748,12 @@ public class Vp9Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for
-     * output video quality. The default behavior is faster, lower quality, multi-pass encoding.
+     * Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video quality.
+     * The default behavior is faster, lower quality, multi-pass encoding.
      * 
      * @param qualityTuningLevel
-     *        Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed
-     *        for output video quality. The default behavior is faster, lower quality, multi-pass encoding.
+     *        Optional. Use Quality tuning level to choose how you want to trade off encoding speed for output video
+     *        quality. The default behavior is faster, lower quality, multi-pass encoding.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Vp9QualityTuningLevel
      */

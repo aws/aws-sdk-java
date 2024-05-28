@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,8 +33,10 @@ public class DeleteBotRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String botId;
     /**
      * <p>
-     * When <code>true</code>, Amazon Lex doesn't check to see if another resource, such as an alias, is using the bot
-     * before it is deleted.
+     * By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot version
+     * before it is deleted and throws a <code>ResourceInUseException</code> exception if the bot is being used by
+     * another resource. Set this parameter to <code>true</code> to skip this check and remove the bot even if it is
+     * being used by another resource.
      * </p>
      */
     private Boolean skipResourceInUseCheck;
@@ -81,13 +83,17 @@ public class DeleteBotRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * When <code>true</code>, Amazon Lex doesn't check to see if another resource, such as an alias, is using the bot
-     * before it is deleted.
+     * By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot version
+     * before it is deleted and throws a <code>ResourceInUseException</code> exception if the bot is being used by
+     * another resource. Set this parameter to <code>true</code> to skip this check and remove the bot even if it is
+     * being used by another resource.
      * </p>
      * 
      * @param skipResourceInUseCheck
-     *        When <code>true</code>, Amazon Lex doesn't check to see if another resource, such as an alias, is using
-     *        the bot before it is deleted.
+     *        By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot
+     *        version before it is deleted and throws a <code>ResourceInUseException</code> exception if the bot is
+     *        being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the
+     *        bot even if it is being used by another resource.
      */
 
     public void setSkipResourceInUseCheck(Boolean skipResourceInUseCheck) {
@@ -96,12 +102,16 @@ public class DeleteBotRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * When <code>true</code>, Amazon Lex doesn't check to see if another resource, such as an alias, is using the bot
-     * before it is deleted.
+     * By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot version
+     * before it is deleted and throws a <code>ResourceInUseException</code> exception if the bot is being used by
+     * another resource. Set this parameter to <code>true</code> to skip this check and remove the bot even if it is
+     * being used by another resource.
      * </p>
      * 
-     * @return When <code>true</code>, Amazon Lex doesn't check to see if another resource, such as an alias, is using
-     *         the bot before it is deleted.
+     * @return By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot
+     *         version before it is deleted and throws a <code>ResourceInUseException</code> exception if the bot is
+     *         being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the
+     *         bot even if it is being used by another resource.
      */
 
     public Boolean getSkipResourceInUseCheck() {
@@ -110,13 +120,17 @@ public class DeleteBotRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * When <code>true</code>, Amazon Lex doesn't check to see if another resource, such as an alias, is using the bot
-     * before it is deleted.
+     * By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot version
+     * before it is deleted and throws a <code>ResourceInUseException</code> exception if the bot is being used by
+     * another resource. Set this parameter to <code>true</code> to skip this check and remove the bot even if it is
+     * being used by another resource.
      * </p>
      * 
      * @param skipResourceInUseCheck
-     *        When <code>true</code>, Amazon Lex doesn't check to see if another resource, such as an alias, is using
-     *        the bot before it is deleted.
+     *        By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot
+     *        version before it is deleted and throws a <code>ResourceInUseException</code> exception if the bot is
+     *        being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the
+     *        bot even if it is being used by another resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,12 +141,16 @@ public class DeleteBotRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * When <code>true</code>, Amazon Lex doesn't check to see if another resource, such as an alias, is using the bot
-     * before it is deleted.
+     * By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot version
+     * before it is deleted and throws a <code>ResourceInUseException</code> exception if the bot is being used by
+     * another resource. Set this parameter to <code>true</code> to skip this check and remove the bot even if it is
+     * being used by another resource.
      * </p>
      * 
-     * @return When <code>true</code>, Amazon Lex doesn't check to see if another resource, such as an alias, is using
-     *         the bot before it is deleted.
+     * @return By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot
+     *         version before it is deleted and throws a <code>ResourceInUseException</code> exception if the bot is
+     *         being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the
+     *         bot even if it is being used by another resource.
      */
 
     public Boolean isSkipResourceInUseCheck() {

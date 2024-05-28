@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -69,6 +69,14 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
      * </p>
      */
     private String instanceFamily;
+    /**
+     * <p>
+     * Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host maintenance</a>
+     * in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     */
+    private String hostMaintenance;
 
     /**
      * <p>
@@ -456,6 +464,99 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
     }
 
     /**
+     * <p>
+     * Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host maintenance</a>
+     * in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param hostMaintenance
+     *        Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see
+     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host
+     *        maintenance</a> in the <i>Amazon EC2 User Guide</i>.
+     * @see HostMaintenance
+     */
+
+    public void setHostMaintenance(String hostMaintenance) {
+        this.hostMaintenance = hostMaintenance;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host maintenance</a>
+     * in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @return Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see
+     *         <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host
+     *         maintenance</a> in the <i>Amazon EC2 User Guide</i>.
+     * @see HostMaintenance
+     */
+
+    public String getHostMaintenance() {
+        return this.hostMaintenance;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host maintenance</a>
+     * in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param hostMaintenance
+     *        Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see
+     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host
+     *        maintenance</a> in the <i>Amazon EC2 User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HostMaintenance
+     */
+
+    public ModifyHostsRequest withHostMaintenance(String hostMaintenance) {
+        setHostMaintenance(hostMaintenance);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host maintenance</a>
+     * in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param hostMaintenance
+     *        Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see
+     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host
+     *        maintenance</a> in the <i>Amazon EC2 User Guide</i>.
+     * @see HostMaintenance
+     */
+
+    public void setHostMaintenance(HostMaintenance hostMaintenance) {
+        withHostMaintenance(hostMaintenance);
+    }
+
+    /**
+     * <p>
+     * Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host maintenance</a>
+     * in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param hostMaintenance
+     *        Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see
+     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host
+     *        maintenance</a> in the <i>Amazon EC2 User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HostMaintenance
+     */
+
+    public ModifyHostsRequest withHostMaintenance(HostMaintenance hostMaintenance) {
+        this.hostMaintenance = hostMaintenance.toString();
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -487,7 +588,9 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
         if (getInstanceType() != null)
             sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getInstanceFamily() != null)
-            sb.append("InstanceFamily: ").append(getInstanceFamily());
+            sb.append("InstanceFamily: ").append(getInstanceFamily()).append(",");
+        if (getHostMaintenance() != null)
+            sb.append("HostMaintenance: ").append(getHostMaintenance());
         sb.append("}");
         return sb.toString();
     }
@@ -522,6 +625,10 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
             return false;
         if (other.getInstanceFamily() != null && other.getInstanceFamily().equals(this.getInstanceFamily()) == false)
             return false;
+        if (other.getHostMaintenance() == null ^ this.getHostMaintenance() == null)
+            return false;
+        if (other.getHostMaintenance() != null && other.getHostMaintenance().equals(this.getHostMaintenance()) == false)
+            return false;
         return true;
     }
 
@@ -535,6 +642,7 @@ public class ModifyHostsRequest extends AmazonWebServiceRequest implements Seria
         hashCode = prime * hashCode + ((getHostRecovery() == null) ? 0 : getHostRecovery().hashCode());
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getInstanceFamily() == null) ? 0 : getInstanceFamily().hashCode());
+        hashCode = prime * hashCode + ((getHostMaintenance() == null) ? 0 : getHostMaintenance().hashCode());
         return hashCode;
     }
 

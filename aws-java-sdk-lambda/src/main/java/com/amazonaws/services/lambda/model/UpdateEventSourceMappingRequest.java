@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     private String uUID;
     /**
      * <p>
-     * The name of the Lambda function.
+     * The name or ARN of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -41,22 +41,22 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>MyFunction</code>.
+     * <b>Function name</b> – <code>MyFunction</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
+     * <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.
      * </p>
      * </li>
      * </ul>
@@ -84,33 +84,38 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * <b>Amazon Kinesis</b> - Default 100. Max 10,000.
+     * <b>Amazon Kinesis</b> – Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.
+     * <b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max
+     * <b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max
      * is 10.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.
+     * <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.
+     * <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.
+     * <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DocumentDB</b> – Default 100. Max 10,000.
      * </p>
      * </li>
      * </ul>
@@ -118,54 +123,61 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     private Integer batchSize;
     /**
      * <p>
-     * (Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process
-     * an event. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.
+     * An object that defines the filter criteria that determine whether Lambda should process an event. For more
+     * information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
+     * event filtering</a>.
      * </p>
      */
     private FilterCriteria filterCriteria;
     /**
      * <p>
-     * (Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering
-     * records before invoking the function.
+     * The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You
+     * can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in
+     * increments of seconds.
      * </p>
      * <p>
-     * Default: 0
+     * For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed
+     * Apache Kafka, Amazon MQ, and DocumentDB event sources, the default batching window is 500 ms. Note that because
+     * you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back
+     * to the 500 ms default batching window after you have changed it. To restore the default batching window, you must
+     * create a new event source mapping.
      * </p>
      * <p>
-     * Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
-     * <code>MaximumBatchingWindowInSeconds</code> to at least 1.
+     * Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater
+     * than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      * </p>
      */
     private Integer maximumBatchingWindowInSeconds;
     /**
      * <p>
-     * (Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     * (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A configuration object that specifies the
+     * destination of an event after Lambda processes it.
      * </p>
      */
     private DestinationConfig destinationConfig;
     /**
      * <p>
-     * (Streams only) Discard records older than the specified age. The default value is infinite (-1).
+     * (Kinesis and DynamoDB Streams only) Discard records older than the specified age. The default value is infinite
+     * (-1).
      * </p>
      */
     private Integer maximumRecordAgeInSeconds;
     /**
      * <p>
-     * (Streams only) If the function returns an error, split the batch in two and retry.
+     * (Kinesis and DynamoDB Streams only) If the function returns an error, split the batch in two and retry.
      * </p>
      */
     private Boolean bisectBatchOnFunctionError;
     /**
      * <p>
-     * (Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When
-     * set to infinite (-1), failed records are retried until the record expires.
+     * (Kinesis and DynamoDB Streams only) Discard records after the specified number of retries. The default value is
+     * infinite (-1). When set to infinite (-1), failed records are retried until the record expires.
      * </p>
      */
     private Integer maximumRetryAttempts;
     /**
      * <p>
-     * (Streams only) The number of batches to process from each shard concurrently.
+     * (Kinesis and DynamoDB Streams only) The number of batches to process from each shard concurrently.
      * </p>
      */
     private Integer parallelizationFactor;
@@ -177,16 +189,32 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     private com.amazonaws.internal.SdkInternalList<SourceAccessConfiguration> sourceAccessConfigurations;
     /**
      * <p>
-     * (Streams only) The duration in seconds of a processing window. The range is between 1 second and 900 seconds.
+     * (Kinesis and DynamoDB Streams only) The duration in seconds of a processing window for DynamoDB and Kinesis
+     * Streams event sources. A value of 0 seconds indicates no tumbling window.
      * </p>
      */
     private Integer tumblingWindowInSeconds;
     /**
      * <p>
-     * (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
+     * (Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type enums applied to the event source
+     * mapping.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> functionResponseTypes;
+    /**
+     * <p>
+     * (Amazon SQS only) The scaling configuration for the event source. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum
+     * concurrency for Amazon SQS event sources</a>.
+     * </p>
+     */
+    private ScalingConfig scalingConfig;
+    /**
+     * <p>
+     * Specific configuration settings for a DocumentDB event source.
+     * </p>
+     */
+    private DocumentDBEventSourceConfig documentDBEventSourceConfig;
 
     /**
      * <p>
@@ -230,7 +258,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the Lambda function.
+     * The name or ARN of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -238,22 +266,22 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>MyFunction</code>.
+     * <b>Function name</b> – <code>MyFunction</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
+     * <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.
      * </p>
      * </li>
      * </ul>
@@ -263,29 +291,29 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param functionName
-     *        The name of the Lambda function.</p>
+     *        The name or ARN of the Lambda function.</p>
      *        <p class="title">
      *        <b>Name formats</b>
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Function name</b> - <code>MyFunction</code>.
+     *        <b>Function name</b> – <code>MyFunction</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *        <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
+     *        <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *        <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -300,7 +328,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the Lambda function.
+     * The name or ARN of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -308,22 +336,22 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>MyFunction</code>.
+     * <b>Function name</b> – <code>MyFunction</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
+     * <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.
      * </p>
      * </li>
      * </ul>
@@ -332,30 +360,30 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * characters in length.
      * </p>
      * 
-     * @return The name of the Lambda function.</p>
+     * @return The name or ARN of the Lambda function.</p>
      *         <p class="title">
      *         <b>Name formats</b>
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Function name</b> - <code>MyFunction</code>.
+     *         <b>Function name</b> – <code>MyFunction</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *         <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>
+     *         <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>
      *         .
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *         <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.
      *         </p>
      *         </li>
      *         </ul>
@@ -370,7 +398,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the Lambda function.
+     * The name or ARN of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -378,22 +406,22 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>MyFunction</code>.
+     * <b>Function name</b> – <code>MyFunction</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
+     * <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.
      * </p>
      * </li>
      * </ul>
@@ -403,29 +431,29 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param functionName
-     *        The name of the Lambda function.</p>
+     *        The name or ARN of the Lambda function.</p>
      *        <p class="title">
      *        <b>Name formats</b>
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Function name</b> - <code>MyFunction</code>.
+     *        <b>Function name</b> – <code>MyFunction</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *        <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
+     *        <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *        <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -521,33 +549,38 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * <b>Amazon Kinesis</b> - Default 100. Max 10,000.
+     * <b>Amazon Kinesis</b> – Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.
+     * <b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max
+     * <b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max
      * is 10.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.
+     * <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.
+     * <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.
+     * <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DocumentDB</b> – Default 100. Max 10,000.
      * </p>
      * </li>
      * </ul>
@@ -559,33 +592,38 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Amazon Kinesis</b> - Default 100. Max 10,000.
+     *        <b>Amazon Kinesis</b> – Default 100. Max 10,000.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.
+     *        <b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues
+     *        <b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues
      *        the max is 10.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.
+     *        <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.
+     *        <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.
+     *        <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>DocumentDB</b> – Default 100. Max 10,000.
      *        </p>
      *        </li>
      */
@@ -603,33 +641,38 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * <b>Amazon Kinesis</b> - Default 100. Max 10,000.
+     * <b>Amazon Kinesis</b> – Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.
+     * <b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max
+     * <b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max
      * is 10.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.
+     * <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.
+     * <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.
+     * <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DocumentDB</b> – Default 100. Max 10,000.
      * </p>
      * </li>
      * </ul>
@@ -640,33 +683,38 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Amazon Kinesis</b> - Default 100. Max 10,000.
+     *         <b>Amazon Kinesis</b> – Default 100. Max 10,000.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.
+     *         <b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues
+     *         <b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues
      *         the max is 10.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.
+     *         <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.
+     *         <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.
+     *         <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>DocumentDB</b> – Default 100. Max 10,000.
      *         </p>
      *         </li>
      */
@@ -684,33 +732,38 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * <b>Amazon Kinesis</b> - Default 100. Max 10,000.
+     * <b>Amazon Kinesis</b> – Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.
+     * <b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues the max
+     * <b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues the max
      * is 10.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.
+     * <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.
+     * <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.
+     * <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DocumentDB</b> – Default 100. Max 10,000.
      * </p>
      * </li>
      * </ul>
@@ -722,33 +775,38 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Amazon Kinesis</b> - Default 100. Max 10,000.
+     *        <b>Amazon Kinesis</b> – Default 100. Max 10,000.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon DynamoDB Streams</b> - Default 100. Max 10,000.
+     *        <b>Amazon DynamoDB Streams</b> – Default 100. Max 10,000.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon Simple Queue Service</b> - Default 10. For standard queues the max is 10,000. For FIFO queues
+     *        <b>Amazon Simple Queue Service</b> – Default 10. For standard queues the max is 10,000. For FIFO queues
      *        the max is 10.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.
+     *        <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100. Max 10,000.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Self-managed Apache Kafka</b> - Default 100. Max 10,000.
+     *        <b>Self-managed Apache Kafka</b> – Default 100. Max 10,000.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> - Default 100. Max 10,000.
+     *        <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>DocumentDB</b> – Default 100. Max 10,000.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -761,14 +819,14 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process
-     * an event. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.
+     * An object that defines the filter criteria that determine whether Lambda should process an event. For more
+     * information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
+     * event filtering</a>.
      * </p>
      * 
      * @param filterCriteria
-     *        (Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should
-     *        process an event. For more information, see <a
+     *        An object that defines the filter criteria that determine whether Lambda should process an event. For more
+     *        information, see <a
      *        href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event
      *        filtering</a>.
      */
@@ -779,13 +837,13 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process
-     * an event. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.
+     * An object that defines the filter criteria that determine whether Lambda should process an event. For more
+     * information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
+     * event filtering</a>.
      * </p>
      * 
-     * @return (Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should
-     *         process an event. For more information, see <a
+     * @return An object that defines the filter criteria that determine whether Lambda should process an event. For
+     *         more information, see <a
      *         href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event
      *         filtering</a>.
      */
@@ -796,14 +854,14 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process
-     * an event. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.
+     * An object that defines the filter criteria that determine whether Lambda should process an event. For more
+     * information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
+     * event filtering</a>.
      * </p>
      * 
      * @param filterCriteria
-     *        (Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should
-     *        process an event. For more information, see <a
+     *        An object that defines the filter criteria that determine whether Lambda should process an event. For more
+     *        information, see <a
      *        href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event
      *        filtering</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -816,26 +874,36 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering
-     * records before invoking the function.
+     * The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You
+     * can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in
+     * increments of seconds.
      * </p>
      * <p>
-     * Default: 0
+     * For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed
+     * Apache Kafka, Amazon MQ, and DocumentDB event sources, the default batching window is 500 ms. Note that because
+     * you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back
+     * to the 500 ms default batching window after you have changed it. To restore the default batching window, you must
+     * create a new event source mapping.
      * </p>
      * <p>
-     * Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
-     * <code>MaximumBatchingWindowInSeconds</code> to at least 1.
+     * Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater
+     * than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      * </p>
      * 
      * @param maximumBatchingWindowInSeconds
-     *        (Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends
-     *        gathering records before invoking the function.</p>
+     *        The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.
+     *        You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds
+     *        in increments of seconds.</p>
      *        <p>
-     *        Default: 0
+     *        For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK,
+     *        Self-managed Apache Kafka, Amazon MQ, and DocumentDB event sources, the default batching window is 500 ms.
+     *        Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of
+     *        seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To
+     *        restore the default batching window, you must create a new event source mapping.
      *        </p>
      *        <p>
-     *        Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
-     *        <code>MaximumBatchingWindowInSeconds</code> to at least 1.
+     *        Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value
+     *        greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      */
 
     public void setMaximumBatchingWindowInSeconds(Integer maximumBatchingWindowInSeconds) {
@@ -844,25 +912,35 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering
-     * records before invoking the function.
+     * The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You
+     * can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in
+     * increments of seconds.
      * </p>
      * <p>
-     * Default: 0
+     * For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed
+     * Apache Kafka, Amazon MQ, and DocumentDB event sources, the default batching window is 500 ms. Note that because
+     * you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back
+     * to the 500 ms default batching window after you have changed it. To restore the default batching window, you must
+     * create a new event source mapping.
      * </p>
      * <p>
-     * Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
-     * <code>MaximumBatchingWindowInSeconds</code> to at least 1.
+     * Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater
+     * than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      * </p>
      * 
-     * @return (Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends
-     *         gathering records before invoking the function.</p>
+     * @return The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the
+     *         function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to
+     *         300 seconds in increments of seconds.</p>
      *         <p>
-     *         Default: 0
+     *         For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK,
+     *         Self-managed Apache Kafka, Amazon MQ, and DocumentDB event sources, the default batching window is 500
+     *         ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of
+     *         seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To
+     *         restore the default batching window, you must create a new event source mapping.
      *         </p>
      *         <p>
-     *         Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
-     *         <code>MaximumBatchingWindowInSeconds</code> to at least 1.
+     *         Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value
+     *         greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      */
 
     public Integer getMaximumBatchingWindowInSeconds() {
@@ -871,26 +949,36 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering
-     * records before invoking the function.
+     * The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You
+     * can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in
+     * increments of seconds.
      * </p>
      * <p>
-     * Default: 0
+     * For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed
+     * Apache Kafka, Amazon MQ, and DocumentDB event sources, the default batching window is 500 ms. Note that because
+     * you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back
+     * to the 500 ms default batching window after you have changed it. To restore the default batching window, you must
+     * create a new event source mapping.
      * </p>
      * <p>
-     * Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
-     * <code>MaximumBatchingWindowInSeconds</code> to at least 1.
+     * Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater
+     * than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      * </p>
      * 
      * @param maximumBatchingWindowInSeconds
-     *        (Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends
-     *        gathering records before invoking the function.</p>
+     *        The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.
+     *        You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds
+     *        in increments of seconds.</p>
      *        <p>
-     *        Default: 0
+     *        For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK,
+     *        Self-managed Apache Kafka, Amazon MQ, and DocumentDB event sources, the default batching window is 500 ms.
+     *        Note that because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of
+     *        seconds, you cannot revert back to the 500 ms default batching window after you have changed it. To
+     *        restore the default batching window, you must create a new event source mapping.
      *        </p>
      *        <p>
-     *        Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
-     *        <code>MaximumBatchingWindowInSeconds</code> to at least 1.
+     *        Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value
+     *        greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -901,11 +989,13 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     * (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A configuration object that specifies the
+     * destination of an event after Lambda processes it.
      * </p>
      * 
      * @param destinationConfig
-     *        (Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     *        (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A configuration object that specifies
+     *        the destination of an event after Lambda processes it.
      */
 
     public void setDestinationConfig(DestinationConfig destinationConfig) {
@@ -914,10 +1004,12 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     * (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A configuration object that specifies the
+     * destination of an event after Lambda processes it.
      * </p>
      * 
-     * @return (Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     * @return (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A configuration object that
+     *         specifies the destination of an event after Lambda processes it.
      */
 
     public DestinationConfig getDestinationConfig() {
@@ -926,11 +1018,13 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     * (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A configuration object that specifies the
+     * destination of an event after Lambda processes it.
      * </p>
      * 
      * @param destinationConfig
-     *        (Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+     *        (Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A configuration object that specifies
+     *        the destination of an event after Lambda processes it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -941,11 +1035,13 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams only) Discard records older than the specified age. The default value is infinite (-1).
+     * (Kinesis and DynamoDB Streams only) Discard records older than the specified age. The default value is infinite
+     * (-1).
      * </p>
      * 
      * @param maximumRecordAgeInSeconds
-     *        (Streams only) Discard records older than the specified age. The default value is infinite (-1).
+     *        (Kinesis and DynamoDB Streams only) Discard records older than the specified age. The default value is
+     *        infinite (-1).
      */
 
     public void setMaximumRecordAgeInSeconds(Integer maximumRecordAgeInSeconds) {
@@ -954,10 +1050,12 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams only) Discard records older than the specified age. The default value is infinite (-1).
+     * (Kinesis and DynamoDB Streams only) Discard records older than the specified age. The default value is infinite
+     * (-1).
      * </p>
      * 
-     * @return (Streams only) Discard records older than the specified age. The default value is infinite (-1).
+     * @return (Kinesis and DynamoDB Streams only) Discard records older than the specified age. The default value is
+     *         infinite (-1).
      */
 
     public Integer getMaximumRecordAgeInSeconds() {
@@ -966,11 +1064,13 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams only) Discard records older than the specified age. The default value is infinite (-1).
+     * (Kinesis and DynamoDB Streams only) Discard records older than the specified age. The default value is infinite
+     * (-1).
      * </p>
      * 
      * @param maximumRecordAgeInSeconds
-     *        (Streams only) Discard records older than the specified age. The default value is infinite (-1).
+     *        (Kinesis and DynamoDB Streams only) Discard records older than the specified age. The default value is
+     *        infinite (-1).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -981,11 +1081,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams only) If the function returns an error, split the batch in two and retry.
+     * (Kinesis and DynamoDB Streams only) If the function returns an error, split the batch in two and retry.
      * </p>
      * 
      * @param bisectBatchOnFunctionError
-     *        (Streams only) If the function returns an error, split the batch in two and retry.
+     *        (Kinesis and DynamoDB Streams only) If the function returns an error, split the batch in two and retry.
      */
 
     public void setBisectBatchOnFunctionError(Boolean bisectBatchOnFunctionError) {
@@ -994,10 +1094,10 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams only) If the function returns an error, split the batch in two and retry.
+     * (Kinesis and DynamoDB Streams only) If the function returns an error, split the batch in two and retry.
      * </p>
      * 
-     * @return (Streams only) If the function returns an error, split the batch in two and retry.
+     * @return (Kinesis and DynamoDB Streams only) If the function returns an error, split the batch in two and retry.
      */
 
     public Boolean getBisectBatchOnFunctionError() {
@@ -1006,11 +1106,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams only) If the function returns an error, split the batch in two and retry.
+     * (Kinesis and DynamoDB Streams only) If the function returns an error, split the batch in two and retry.
      * </p>
      * 
      * @param bisectBatchOnFunctionError
-     *        (Streams only) If the function returns an error, split the batch in two and retry.
+     *        (Kinesis and DynamoDB Streams only) If the function returns an error, split the batch in two and retry.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1021,10 +1121,10 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams only) If the function returns an error, split the batch in two and retry.
+     * (Kinesis and DynamoDB Streams only) If the function returns an error, split the batch in two and retry.
      * </p>
      * 
-     * @return (Streams only) If the function returns an error, split the batch in two and retry.
+     * @return (Kinesis and DynamoDB Streams only) If the function returns an error, split the batch in two and retry.
      */
 
     public Boolean isBisectBatchOnFunctionError() {
@@ -1033,13 +1133,13 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When
-     * set to infinite (-1), failed records are retried until the record expires.
+     * (Kinesis and DynamoDB Streams only) Discard records after the specified number of retries. The default value is
+     * infinite (-1). When set to infinite (-1), failed records are retried until the record expires.
      * </p>
      * 
      * @param maximumRetryAttempts
-     *        (Streams only) Discard records after the specified number of retries. The default value is infinite (-1).
-     *        When set to infinite (-1), failed records are retried until the record expires.
+     *        (Kinesis and DynamoDB Streams only) Discard records after the specified number of retries. The default
+     *        value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.
      */
 
     public void setMaximumRetryAttempts(Integer maximumRetryAttempts) {
@@ -1048,12 +1148,12 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When
-     * set to infinite (-1), failed records are retried until the record expires.
+     * (Kinesis and DynamoDB Streams only) Discard records after the specified number of retries. The default value is
+     * infinite (-1). When set to infinite (-1), failed records are retried until the record expires.
      * </p>
      * 
-     * @return (Streams only) Discard records after the specified number of retries. The default value is infinite (-1).
-     *         When set to infinite (-1), failed records are retried until the record expires.
+     * @return (Kinesis and DynamoDB Streams only) Discard records after the specified number of retries. The default
+     *         value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.
      */
 
     public Integer getMaximumRetryAttempts() {
@@ -1062,13 +1162,13 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When
-     * set to infinite (-1), failed records are retried until the record expires.
+     * (Kinesis and DynamoDB Streams only) Discard records after the specified number of retries. The default value is
+     * infinite (-1). When set to infinite (-1), failed records are retried until the record expires.
      * </p>
      * 
      * @param maximumRetryAttempts
-     *        (Streams only) Discard records after the specified number of retries. The default value is infinite (-1).
-     *        When set to infinite (-1), failed records are retried until the record expires.
+     *        (Kinesis and DynamoDB Streams only) Discard records after the specified number of retries. The default
+     *        value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1079,11 +1179,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams only) The number of batches to process from each shard concurrently.
+     * (Kinesis and DynamoDB Streams only) The number of batches to process from each shard concurrently.
      * </p>
      * 
      * @param parallelizationFactor
-     *        (Streams only) The number of batches to process from each shard concurrently.
+     *        (Kinesis and DynamoDB Streams only) The number of batches to process from each shard concurrently.
      */
 
     public void setParallelizationFactor(Integer parallelizationFactor) {
@@ -1092,10 +1192,10 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams only) The number of batches to process from each shard concurrently.
+     * (Kinesis and DynamoDB Streams only) The number of batches to process from each shard concurrently.
      * </p>
      * 
-     * @return (Streams only) The number of batches to process from each shard concurrently.
+     * @return (Kinesis and DynamoDB Streams only) The number of batches to process from each shard concurrently.
      */
 
     public Integer getParallelizationFactor() {
@@ -1104,11 +1204,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams only) The number of batches to process from each shard concurrently.
+     * (Kinesis and DynamoDB Streams only) The number of batches to process from each shard concurrently.
      * </p>
      * 
      * @param parallelizationFactor
-     *        (Streams only) The number of batches to process from each shard concurrently.
+     *        (Kinesis and DynamoDB Streams only) The number of batches to process from each shard concurrently.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1192,12 +1292,13 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams only) The duration in seconds of a processing window. The range is between 1 second and 900 seconds.
+     * (Kinesis and DynamoDB Streams only) The duration in seconds of a processing window for DynamoDB and Kinesis
+     * Streams event sources. A value of 0 seconds indicates no tumbling window.
      * </p>
      * 
      * @param tumblingWindowInSeconds
-     *        (Streams only) The duration in seconds of a processing window. The range is between 1 second and 900
-     *        seconds.
+     *        (Kinesis and DynamoDB Streams only) The duration in seconds of a processing window for DynamoDB and
+     *        Kinesis Streams event sources. A value of 0 seconds indicates no tumbling window.
      */
 
     public void setTumblingWindowInSeconds(Integer tumblingWindowInSeconds) {
@@ -1206,11 +1307,12 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams only) The duration in seconds of a processing window. The range is between 1 second and 900 seconds.
+     * (Kinesis and DynamoDB Streams only) The duration in seconds of a processing window for DynamoDB and Kinesis
+     * Streams event sources. A value of 0 seconds indicates no tumbling window.
      * </p>
      * 
-     * @return (Streams only) The duration in seconds of a processing window. The range is between 1 second and 900
-     *         seconds.
+     * @return (Kinesis and DynamoDB Streams only) The duration in seconds of a processing window for DynamoDB and
+     *         Kinesis Streams event sources. A value of 0 seconds indicates no tumbling window.
      */
 
     public Integer getTumblingWindowInSeconds() {
@@ -1219,12 +1321,13 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams only) The duration in seconds of a processing window. The range is between 1 second and 900 seconds.
+     * (Kinesis and DynamoDB Streams only) The duration in seconds of a processing window for DynamoDB and Kinesis
+     * Streams event sources. A value of 0 seconds indicates no tumbling window.
      * </p>
      * 
      * @param tumblingWindowInSeconds
-     *        (Streams only) The duration in seconds of a processing window. The range is between 1 second and 900
-     *        seconds.
+     *        (Kinesis and DynamoDB Streams only) The duration in seconds of a processing window for DynamoDB and
+     *        Kinesis Streams event sources. A value of 0 seconds indicates no tumbling window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1235,10 +1338,12 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
+     * (Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type enums applied to the event source
+     * mapping.
      * </p>
      * 
-     * @return (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
+     * @return (Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type enums applied to the event
+     *         source mapping.
      * @see FunctionResponseType
      */
 
@@ -1251,11 +1356,13 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
+     * (Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type enums applied to the event source
+     * mapping.
      * </p>
      * 
      * @param functionResponseTypes
-     *        (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
+     *        (Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type enums applied to the event
+     *        source mapping.
      * @see FunctionResponseType
      */
 
@@ -1270,7 +1377,8 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
+     * (Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type enums applied to the event source
+     * mapping.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1279,7 +1387,8 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param functionResponseTypes
-     *        (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
+     *        (Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type enums applied to the event
+     *        source mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FunctionResponseType
      */
@@ -1296,11 +1405,13 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
+     * (Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type enums applied to the event source
+     * mapping.
      * </p>
      * 
      * @param functionResponseTypes
-     *        (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
+     *        (Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type enums applied to the event
+     *        source mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FunctionResponseType
      */
@@ -1312,11 +1423,13 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
+     * (Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type enums applied to the event source
+     * mapping.
      * </p>
      * 
      * @param functionResponseTypes
-     *        (Streams and Amazon SQS) A list of current response type enums applied to the event source mapping.
+     *        (Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type enums applied to the event
+     *        source mapping.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FunctionResponseType
      */
@@ -1332,6 +1445,98 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
         } else {
             getFunctionResponseTypes().addAll(functionResponseTypesCopy);
         }
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Amazon SQS only) The scaling configuration for the event source. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum
+     * concurrency for Amazon SQS event sources</a>.
+     * </p>
+     * 
+     * @param scalingConfig
+     *        (Amazon SQS only) The scaling configuration for the event source. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
+     *        maximum concurrency for Amazon SQS event sources</a>.
+     */
+
+    public void setScalingConfig(ScalingConfig scalingConfig) {
+        this.scalingConfig = scalingConfig;
+    }
+
+    /**
+     * <p>
+     * (Amazon SQS only) The scaling configuration for the event source. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum
+     * concurrency for Amazon SQS event sources</a>.
+     * </p>
+     * 
+     * @return (Amazon SQS only) The scaling configuration for the event source. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
+     *         maximum concurrency for Amazon SQS event sources</a>.
+     */
+
+    public ScalingConfig getScalingConfig() {
+        return this.scalingConfig;
+    }
+
+    /**
+     * <p>
+     * (Amazon SQS only) The scaling configuration for the event source. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring maximum
+     * concurrency for Amazon SQS event sources</a>.
+     * </p>
+     * 
+     * @param scalingConfig
+     *        (Amazon SQS only) The scaling configuration for the event source. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
+     *        maximum concurrency for Amazon SQS event sources</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateEventSourceMappingRequest withScalingConfig(ScalingConfig scalingConfig) {
+        setScalingConfig(scalingConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specific configuration settings for a DocumentDB event source.
+     * </p>
+     * 
+     * @param documentDBEventSourceConfig
+     *        Specific configuration settings for a DocumentDB event source.
+     */
+
+    public void setDocumentDBEventSourceConfig(DocumentDBEventSourceConfig documentDBEventSourceConfig) {
+        this.documentDBEventSourceConfig = documentDBEventSourceConfig;
+    }
+
+    /**
+     * <p>
+     * Specific configuration settings for a DocumentDB event source.
+     * </p>
+     * 
+     * @return Specific configuration settings for a DocumentDB event source.
+     */
+
+    public DocumentDBEventSourceConfig getDocumentDBEventSourceConfig() {
+        return this.documentDBEventSourceConfig;
+    }
+
+    /**
+     * <p>
+     * Specific configuration settings for a DocumentDB event source.
+     * </p>
+     * 
+     * @param documentDBEventSourceConfig
+     *        Specific configuration settings for a DocumentDB event source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateEventSourceMappingRequest withDocumentDBEventSourceConfig(DocumentDBEventSourceConfig documentDBEventSourceConfig) {
+        setDocumentDBEventSourceConfig(documentDBEventSourceConfig);
         return this;
     }
 
@@ -1374,7 +1579,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
         if (getTumblingWindowInSeconds() != null)
             sb.append("TumblingWindowInSeconds: ").append(getTumblingWindowInSeconds()).append(",");
         if (getFunctionResponseTypes() != null)
-            sb.append("FunctionResponseTypes: ").append(getFunctionResponseTypes());
+            sb.append("FunctionResponseTypes: ").append(getFunctionResponseTypes()).append(",");
+        if (getScalingConfig() != null)
+            sb.append("ScalingConfig: ").append(getScalingConfig()).append(",");
+        if (getDocumentDBEventSourceConfig() != null)
+            sb.append("DocumentDBEventSourceConfig: ").append(getDocumentDBEventSourceConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1446,6 +1655,14 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getFunctionResponseTypes() != null && other.getFunctionResponseTypes().equals(this.getFunctionResponseTypes()) == false)
             return false;
+        if (other.getScalingConfig() == null ^ this.getScalingConfig() == null)
+            return false;
+        if (other.getScalingConfig() != null && other.getScalingConfig().equals(this.getScalingConfig()) == false)
+            return false;
+        if (other.getDocumentDBEventSourceConfig() == null ^ this.getDocumentDBEventSourceConfig() == null)
+            return false;
+        if (other.getDocumentDBEventSourceConfig() != null && other.getDocumentDBEventSourceConfig().equals(this.getDocumentDBEventSourceConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1468,6 +1685,8 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getSourceAccessConfigurations() == null) ? 0 : getSourceAccessConfigurations().hashCode());
         hashCode = prime * hashCode + ((getTumblingWindowInSeconds() == null) ? 0 : getTumblingWindowInSeconds().hashCode());
         hashCode = prime * hashCode + ((getFunctionResponseTypes() == null) ? 0 : getFunctionResponseTypes().hashCode());
+        hashCode = prime * hashCode + ((getScalingConfig() == null) ? 0 : getScalingConfig().hashCode());
+        hashCode = prime * hashCode + ((getDocumentDBEventSourceConfig() == null) ? 0 : getDocumentDBEventSourceConfig().hashCode());
         return hashCode;
     }
 

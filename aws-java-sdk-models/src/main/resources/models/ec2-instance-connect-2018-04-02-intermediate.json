@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -35,6 +35,7 @@
     "serviceClientHoldInputStream" : false,
     "shapeModifiers" : null,
     "shapeSubstitutions" : null,
+    "shapesToSkipPruning" : [ ],
     "simpleMethods" : null,
     "skipClientMethodForOperations" : [ ],
     "skipInterfaceAdditions" : false,
@@ -49,6 +50,7 @@
     "asyncClient" : "AWSEC2InstanceConnectAsyncClient",
     "asyncClientBuilderClassName" : "AWSEC2InstanceConnectAsyncClientBuilder",
     "asyncInterface" : "AWSEC2InstanceConnectAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,
@@ -56,7 +58,7 @@
     "defaultEndpoint" : "ec2-instance-connect.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "ec2-instance-connect.us-east-1.amazonaws.com",
     "defaultRegion" : null,
-    "documentation" : "<p>Amazon EC2 Instance Connect enables system administrators to publish one-time use SSH public keys to EC2, providing users a simple and secure way to connect to their instances.</p>",
+    "documentation" : "<p>This is the <i> Amazon EC2 Instance Connect API Reference</i>. It provides descriptions, syntax, and usage examples for each of the actions for Amazon EC2 Instance Connect. Amazon EC2 Instance Connect enables system administrators to publish one-time use SSH public keys to EC2, providing users a simple and secure way to connect to their instances.</p> <p>To view the Amazon EC2 Instance Connect content in the <i> Amazon EC2 User Guide</i>, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect.html\">Connect to your Linux instance using EC2 Instance Connect</a>.</p> <p>For Amazon EC2 APIs, see the <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Welcome.html\">Amazon EC2 API Reference</a>.</p>",
     "endpointPrefix" : "ec2-instance-connect",
     "hasApiWithStreamInput" : false,
     "ionProtocol" : false,
@@ -201,6 +203,10 @@
       }, {
         "exceptionName" : "EC2InstanceUnavailableException",
         "documentation" : "<p>The instance is currently unavailable. Wait a few minutes and try again.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "SerialConsoleSessionUnsupportedException",
+        "documentation" : "<p>Your instance's BIOS version is unsupported for serial console connection. Reboot your instance to update its BIOS, and then try again to connect.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -2311,6 +2317,47 @@
       },
       "wrapper" : false
     },
+    "SerialConsoleSessionUnsupportedException" : {
+      "c2jName" : "SerialConsoleSessionUnsupportedException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>Your instance's BIOS version is unsupported for serial console connection. Reboot your instance to update its BIOS, and then try again to connect.</p>",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : "SerialConsoleSessionUnsupportedException",
+      "fullyQualifiedName" : "com.amazonaws.services.ec2instanceconnect.exception.SerialConsoleSessionUnsupportedException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ ],
+      "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.ec2instanceconnect.exception",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ ],
+      "shapeName" : "SerialConsoleSessionUnsupportedException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "SerialConsoleSessionUnsupportedException",
+        "variableName" : "serialConsoleSessionUnsupportedException",
+        "variableType" : "SerialConsoleSessionUnsupportedException",
+        "documentation" : null,
+        "simpleType" : "SerialConsoleSessionUnsupportedException",
+        "variableSetterType" : "SerialConsoleSessionUnsupportedException"
+      },
+      "wrapper" : false
+    },
     "ServiceException" : {
       "c2jName" : "ServiceException",
       "customization" : {
@@ -2428,7 +2475,8 @@
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,
-  "fileHeader" : "/*\n * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "fileHeader" : "/*\n * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "hasShapes" : true,
   "hasWaiters" : false,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AWSEC2InstanceConnectException",

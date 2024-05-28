@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -125,7 +125,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
     /**
      * <p>
      * Adds the specified tags to the specified Elastic Load Balancing resource. You can tag your Application Load
-     * Balancers, Network Load Balancers, Gateway Load Balancers, target groups, listeners, and rules.
+     * Balancers, Network Load Balancers, Gateway Load Balancers, target groups, trust stores, listeners, and rules.
      * </p>
      * <p>
      * Each tag consists of a key and an optional value. If a resource already has a tag with the same key,
@@ -143,7 +143,7 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
     /**
      * <p>
      * Adds the specified tags to the specified Elastic Load Balancing resource. You can tag your Application Load
-     * Balancers, Network Load Balancers, Gateway Load Balancers, target groups, listeners, and rules.
+     * Balancers, Network Load Balancers, Gateway Load Balancers, target groups, trust stores, listeners, and rules.
      * </p>
      * <p>
      * Each tag consists of a key and an optional value. If a resource already has a tag with the same key,
@@ -162,6 +162,37 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      */
     java.util.concurrent.Future<AddTagsResult> addTagsAsync(AddTagsRequest addTagsRequest,
             com.amazonaws.handlers.AsyncHandler<AddTagsRequest, AddTagsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds the specified revocation file to the specified trust store.
+     * </p>
+     * 
+     * @param addTrustStoreRevocationsRequest
+     * @return A Java Future containing the result of the AddTrustStoreRevocations operation returned by the service.
+     * @sample AmazonElasticLoadBalancingAsync.AddTrustStoreRevocations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddTrustStoreRevocations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AddTrustStoreRevocationsResult> addTrustStoreRevocationsAsync(AddTrustStoreRevocationsRequest addTrustStoreRevocationsRequest);
+
+    /**
+     * <p>
+     * Adds the specified revocation file to the specified trust store.
+     * </p>
+     * 
+     * @param addTrustStoreRevocationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AddTrustStoreRevocations operation returned by the service.
+     * @sample AmazonElasticLoadBalancingAsyncHandler.AddTrustStoreRevocations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddTrustStoreRevocations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AddTrustStoreRevocationsResult> addTrustStoreRevocationsAsync(AddTrustStoreRevocationsRequest addTrustStoreRevocationsRequest,
+            com.amazonaws.handlers.AsyncHandler<AddTrustStoreRevocationsRequest, AddTrustStoreRevocationsResult> asyncHandler);
 
     /**
      * <p>
@@ -467,6 +498,37 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
+     * Creates a trust store.
+     * </p>
+     * 
+     * @param createTrustStoreRequest
+     * @return A Java Future containing the result of the CreateTrustStore operation returned by the service.
+     * @sample AmazonElasticLoadBalancingAsync.CreateTrustStore
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateTrustStore"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTrustStoreResult> createTrustStoreAsync(CreateTrustStoreRequest createTrustStoreRequest);
+
+    /**
+     * <p>
+     * Creates a trust store.
+     * </p>
+     * 
+     * @param createTrustStoreRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTrustStore operation returned by the service.
+     * @sample AmazonElasticLoadBalancingAsyncHandler.CreateTrustStore
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateTrustStore"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTrustStoreResult> createTrustStoreAsync(CreateTrustStoreRequest createTrustStoreRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateTrustStoreRequest, CreateTrustStoreResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified listener.
      * </p>
      * <p>
@@ -633,8 +695,73 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
+     * Deletes a trust store.
+     * </p>
+     * 
+     * @param deleteTrustStoreRequest
+     * @return A Java Future containing the result of the DeleteTrustStore operation returned by the service.
+     * @sample AmazonElasticLoadBalancingAsync.DeleteTrustStore
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteTrustStore"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTrustStoreResult> deleteTrustStoreAsync(DeleteTrustStoreRequest deleteTrustStoreRequest);
+
+    /**
+     * <p>
+     * Deletes a trust store.
+     * </p>
+     * 
+     * @param deleteTrustStoreRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTrustStore operation returned by the service.
+     * @sample AmazonElasticLoadBalancingAsyncHandler.DeleteTrustStore
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteTrustStore"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTrustStoreResult> deleteTrustStoreAsync(DeleteTrustStoreRequest deleteTrustStoreRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTrustStoreRequest, DeleteTrustStoreResult> asyncHandler);
+
+    /**
+     * <p>
      * Deregisters the specified targets from the specified target group. After the targets are deregistered, they no
      * longer receive traffic from the load balancer.
+     * </p>
+     * <p>
+     * The load balancer stops sending requests to targets that are deregistering, but uses connection draining to
+     * ensure that in-flight traffic completes on the existing connections. This deregistration delay is configured by
+     * default but can be updated for each target group.
+     * </p>
+     * <p>
+     * For more information, see the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#deregistration-delay"
+     * > Deregistration delay</a> in the <i>Application Load Balancers User Guide</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#deregistration-delay"
+     * > Deregistration delay</a> in the <i>Network Load Balancers User Guide</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/target-groups.html#deregistration-delay">
+     * Deregistration delay</a> in the <i>Gateway Load Balancers User Guide</i>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Note: If the specified target does not exist, the action returns successfully.
      * </p>
      * 
      * @param deregisterTargetsRequest
@@ -649,6 +776,40 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * <p>
      * Deregisters the specified targets from the specified target group. After the targets are deregistered, they no
      * longer receive traffic from the load balancer.
+     * </p>
+     * <p>
+     * The load balancer stops sending requests to targets that are deregistering, but uses connection draining to
+     * ensure that in-flight traffic completes on the existing connections. This deregistration delay is configured by
+     * default but can be updated for each target group.
+     * </p>
+     * <p>
+     * For more information, see the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#deregistration-delay"
+     * > Deregistration delay</a> in the <i>Application Load Balancers User Guide</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#deregistration-delay"
+     * > Deregistration delay</a> in the <i>Network Load Balancers User Guide</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/target-groups.html#deregistration-delay">
+     * Deregistration delay</a> in the <i>Gateway Load Balancers User Guide</i>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Note: If the specified target does not exist, the action returns successfully.
      * </p>
      * 
      * @param deregisterTargetsRequest
@@ -1223,6 +1384,197 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
+     * Describes all resources associated with the specified trust store.
+     * </p>
+     * 
+     * @param describeTrustStoreAssociationsRequest
+     * @return A Java Future containing the result of the DescribeTrustStoreAssociations operation returned by the
+     *         service.
+     * @sample AmazonElasticLoadBalancingAsync.DescribeTrustStoreAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTrustStoreAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTrustStoreAssociationsResult> describeTrustStoreAssociationsAsync(
+            DescribeTrustStoreAssociationsRequest describeTrustStoreAssociationsRequest);
+
+    /**
+     * <p>
+     * Describes all resources associated with the specified trust store.
+     * </p>
+     * 
+     * @param describeTrustStoreAssociationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTrustStoreAssociations operation returned by the
+     *         service.
+     * @sample AmazonElasticLoadBalancingAsyncHandler.DescribeTrustStoreAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTrustStoreAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTrustStoreAssociationsResult> describeTrustStoreAssociationsAsync(
+            DescribeTrustStoreAssociationsRequest describeTrustStoreAssociationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTrustStoreAssociationsRequest, DescribeTrustStoreAssociationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the revocation files in use by the specified trust store arn, or revocation ID.
+     * </p>
+     * 
+     * @param describeTrustStoreRevocationsRequest
+     * @return A Java Future containing the result of the DescribeTrustStoreRevocations operation returned by the
+     *         service.
+     * @sample AmazonElasticLoadBalancingAsync.DescribeTrustStoreRevocations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTrustStoreRevocations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTrustStoreRevocationsResult> describeTrustStoreRevocationsAsync(
+            DescribeTrustStoreRevocationsRequest describeTrustStoreRevocationsRequest);
+
+    /**
+     * <p>
+     * Describes the revocation files in use by the specified trust store arn, or revocation ID.
+     * </p>
+     * 
+     * @param describeTrustStoreRevocationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTrustStoreRevocations operation returned by the
+     *         service.
+     * @sample AmazonElasticLoadBalancingAsyncHandler.DescribeTrustStoreRevocations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTrustStoreRevocations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTrustStoreRevocationsResult> describeTrustStoreRevocationsAsync(
+            DescribeTrustStoreRevocationsRequest describeTrustStoreRevocationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTrustStoreRevocationsRequest, DescribeTrustStoreRevocationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes all trust stores for a given account by trust store arn’s or name.
+     * </p>
+     * 
+     * @param describeTrustStoresRequest
+     * @return A Java Future containing the result of the DescribeTrustStores operation returned by the service.
+     * @sample AmazonElasticLoadBalancingAsync.DescribeTrustStores
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTrustStores"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTrustStoresResult> describeTrustStoresAsync(DescribeTrustStoresRequest describeTrustStoresRequest);
+
+    /**
+     * <p>
+     * Describes all trust stores for a given account by trust store arn’s or name.
+     * </p>
+     * 
+     * @param describeTrustStoresRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTrustStores operation returned by the service.
+     * @sample AmazonElasticLoadBalancingAsyncHandler.DescribeTrustStores
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTrustStores"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTrustStoresResult> describeTrustStoresAsync(DescribeTrustStoresRequest describeTrustStoresRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTrustStoresRequest, DescribeTrustStoresResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the ca certificate bundle.
+     * </p>
+     * <p>
+     * This action returns a pre-signed S3 URI which is active for ten minutes.
+     * </p>
+     * 
+     * @param getTrustStoreCaCertificatesBundleRequest
+     * @return A Java Future containing the result of the GetTrustStoreCaCertificatesBundle operation returned by the
+     *         service.
+     * @sample AmazonElasticLoadBalancingAsync.GetTrustStoreCaCertificatesBundle
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/GetTrustStoreCaCertificatesBundle"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetTrustStoreCaCertificatesBundleResult> getTrustStoreCaCertificatesBundleAsync(
+            GetTrustStoreCaCertificatesBundleRequest getTrustStoreCaCertificatesBundleRequest);
+
+    /**
+     * <p>
+     * Retrieves the ca certificate bundle.
+     * </p>
+     * <p>
+     * This action returns a pre-signed S3 URI which is active for ten minutes.
+     * </p>
+     * 
+     * @param getTrustStoreCaCertificatesBundleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetTrustStoreCaCertificatesBundle operation returned by the
+     *         service.
+     * @sample AmazonElasticLoadBalancingAsyncHandler.GetTrustStoreCaCertificatesBundle
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/GetTrustStoreCaCertificatesBundle"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetTrustStoreCaCertificatesBundleResult> getTrustStoreCaCertificatesBundleAsync(
+            GetTrustStoreCaCertificatesBundleRequest getTrustStoreCaCertificatesBundleRequest,
+            com.amazonaws.handlers.AsyncHandler<GetTrustStoreCaCertificatesBundleRequest, GetTrustStoreCaCertificatesBundleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the specified revocation file.
+     * </p>
+     * <p>
+     * This action returns a pre-signed S3 URI which is active for ten minutes.
+     * </p>
+     * 
+     * @param getTrustStoreRevocationContentRequest
+     * @return A Java Future containing the result of the GetTrustStoreRevocationContent operation returned by the
+     *         service.
+     * @sample AmazonElasticLoadBalancingAsync.GetTrustStoreRevocationContent
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/GetTrustStoreRevocationContent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetTrustStoreRevocationContentResult> getTrustStoreRevocationContentAsync(
+            GetTrustStoreRevocationContentRequest getTrustStoreRevocationContentRequest);
+
+    /**
+     * <p>
+     * Retrieves the specified revocation file.
+     * </p>
+     * <p>
+     * This action returns a pre-signed S3 URI which is active for ten minutes.
+     * </p>
+     * 
+     * @param getTrustStoreRevocationContentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetTrustStoreRevocationContent operation returned by the
+     *         service.
+     * @sample AmazonElasticLoadBalancingAsyncHandler.GetTrustStoreRevocationContent
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/GetTrustStoreRevocationContent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetTrustStoreRevocationContentResult> getTrustStoreRevocationContentAsync(
+            GetTrustStoreRevocationContentRequest getTrustStoreRevocationContentRequest,
+            com.amazonaws.handlers.AsyncHandler<GetTrustStoreRevocationContentRequest, GetTrustStoreRevocationContentResult> asyncHandler);
+
+    /**
+     * <p>
      * Replaces the specified properties of the specified listener. Any properties that you do not specify remain
      * unchanged.
      * </p>
@@ -1362,10 +1714,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
      * <p>
      * Modifies the health checks used when evaluating the health state of the targets in the specified target group.
      * </p>
-     * <p>
-     * If the protocol of the target group is TCP, TLS, UDP, or TCP_UDP, you can't modify the health check protocol,
-     * interval, timeout, or success codes.
-     * </p>
      * 
      * @param modifyTargetGroupRequest
      * @return A Java Future containing the result of the ModifyTargetGroup operation returned by the service.
@@ -1378,10 +1726,6 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
     /**
      * <p>
      * Modifies the health checks used when evaluating the health state of the targets in the specified target group.
-     * </p>
-     * <p>
-     * If the protocol of the target group is TCP, TLS, UDP, or TCP_UDP, you can't modify the health check protocol,
-     * interval, timeout, or success codes.
      * </p>
      * 
      * @param modifyTargetGroupRequest
@@ -1431,6 +1775,37 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
     java.util.concurrent.Future<ModifyTargetGroupAttributesResult> modifyTargetGroupAttributesAsync(
             ModifyTargetGroupAttributesRequest modifyTargetGroupAttributesRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyTargetGroupAttributesRequest, ModifyTargetGroupAttributesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update the ca certificate bundle for a given trust store.
+     * </p>
+     * 
+     * @param modifyTrustStoreRequest
+     * @return A Java Future containing the result of the ModifyTrustStore operation returned by the service.
+     * @sample AmazonElasticLoadBalancingAsync.ModifyTrustStore
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyTrustStore"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyTrustStoreResult> modifyTrustStoreAsync(ModifyTrustStoreRequest modifyTrustStoreRequest);
+
+    /**
+     * <p>
+     * Update the ca certificate bundle for a given trust store.
+     * </p>
+     * 
+     * @param modifyTrustStoreRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyTrustStore operation returned by the service.
+     * @sample AmazonElasticLoadBalancingAsyncHandler.ModifyTrustStore
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyTrustStore"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyTrustStoreResult> modifyTrustStoreAsync(ModifyTrustStoreRequest modifyTrustStoreRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyTrustStoreRequest, ModifyTrustStoreResult> asyncHandler);
 
     /**
      * <p>
@@ -1561,6 +1936,41 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
+     * Removes the specified revocation file from the specified trust store.
+     * </p>
+     * 
+     * @param removeTrustStoreRevocationsRequest
+     * @return A Java Future containing the result of the RemoveTrustStoreRevocations operation returned by the service.
+     * @sample AmazonElasticLoadBalancingAsync.RemoveTrustStoreRevocations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveTrustStoreRevocations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveTrustStoreRevocationsResult> removeTrustStoreRevocationsAsync(
+            RemoveTrustStoreRevocationsRequest removeTrustStoreRevocationsRequest);
+
+    /**
+     * <p>
+     * Removes the specified revocation file from the specified trust store.
+     * </p>
+     * 
+     * @param removeTrustStoreRevocationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemoveTrustStoreRevocations operation returned by the service.
+     * @sample AmazonElasticLoadBalancingAsyncHandler.RemoveTrustStoreRevocations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveTrustStoreRevocations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveTrustStoreRevocationsResult> removeTrustStoreRevocationsAsync(
+            RemoveTrustStoreRevocationsRequest removeTrustStoreRevocationsRequest,
+            com.amazonaws.handlers.AsyncHandler<RemoveTrustStoreRevocationsRequest, RemoveTrustStoreRevocationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Sets the type of IP addresses used by the subnets of the specified load balancer.
      * </p>
      * 
@@ -1631,11 +2041,15 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
-     * Associates the specified security groups with the specified Application Load Balancer. The specified security
-     * groups override the previously associated security groups.
+     * Associates the specified security groups with the specified Application Load Balancer or Network Load Balancer.
+     * The specified security groups override the previously associated security groups.
      * </p>
      * <p>
-     * You can't specify a security group for a Network Load Balancer or Gateway Load Balancer.
+     * You can't perform this operation on a Network Load Balancer unless you specified a security group for the load
+     * balancer when you created it.
+     * </p>
+     * <p>
+     * You can't associate a security group with a Gateway Load Balancer.
      * </p>
      * 
      * @param setSecurityGroupsRequest
@@ -1648,11 +2062,15 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
-     * Associates the specified security groups with the specified Application Load Balancer. The specified security
-     * groups override the previously associated security groups.
+     * Associates the specified security groups with the specified Application Load Balancer or Network Load Balancer.
+     * The specified security groups override the previously associated security groups.
      * </p>
      * <p>
-     * You can't specify a security group for a Network Load Balancer or Gateway Load Balancer.
+     * You can't perform this operation on a Network Load Balancer unless you specified a security group for the load
+     * balancer when you created it.
+     * </p>
+     * <p>
+     * You can't associate a security group with a Gateway Load Balancer.
      * </p>
      * 
      * @param setSecurityGroupsRequest
@@ -1670,12 +2088,12 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
-     * Enables the Availability Zones for the specified public subnets for the specified Application Load Balancer or
-     * Network Load Balancer. The specified subnets replace the previously enabled subnets.
+     * Enables the Availability Zones for the specified public subnets for the specified Application Load Balancer,
+     * Network Load Balancer or Gateway Load Balancer. The specified subnets replace the previously enabled subnets.
      * </p>
      * <p>
-     * When you specify subnets for a Network Load Balancer, you must include all subnets that were enabled previously,
-     * with their existing configurations, plus any additional subnets.
+     * When you specify subnets for a Network Load Balancer, or Gateway Load Balancer you must include all subnets that
+     * were enabled previously, with their existing configurations, plus any additional subnets.
      * </p>
      * 
      * @param setSubnetsRequest
@@ -1688,12 +2106,12 @@ public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalanc
 
     /**
      * <p>
-     * Enables the Availability Zones for the specified public subnets for the specified Application Load Balancer or
-     * Network Load Balancer. The specified subnets replace the previously enabled subnets.
+     * Enables the Availability Zones for the specified public subnets for the specified Application Load Balancer,
+     * Network Load Balancer or Gateway Load Balancer. The specified subnets replace the previously enabled subnets.
      * </p>
      * <p>
-     * When you specify subnets for a Network Load Balancer, you must include all subnets that were enabled previously,
-     * with their existing configurations, plus any additional subnets.
+     * When you specify subnets for a Network Load Balancer, or Gateway Load Balancer you must include all subnets that
+     * were enabled previously, with their existing configurations, plus any additional subnets.
      * </p>
      * 
      * @param setSubnetsRequest

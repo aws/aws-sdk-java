@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,12 @@ public class ChangeProgressStatusDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TotalNumberOfStages").build();
     private static final MarshallingInfo<List> CHANGEPROGRESSSTAGES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChangeProgressStages").build();
+    private static final MarshallingInfo<String> CONFIGCHANGESTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfigChangeStatus").build();
+    private static final MarshallingInfo<java.util.Date> LASTUPDATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdatedTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> INITIATEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InitiatedBy").build();
 
     private static final ChangeProgressStatusDetailsMarshaller instance = new ChangeProgressStatusDetailsMarshaller();
 
@@ -66,6 +72,9 @@ public class ChangeProgressStatusDetailsMarshaller {
             protocolMarshaller.marshall(changeProgressStatusDetails.getCompletedProperties(), COMPLETEDPROPERTIES_BINDING);
             protocolMarshaller.marshall(changeProgressStatusDetails.getTotalNumberOfStages(), TOTALNUMBEROFSTAGES_BINDING);
             protocolMarshaller.marshall(changeProgressStatusDetails.getChangeProgressStages(), CHANGEPROGRESSSTAGES_BINDING);
+            protocolMarshaller.marshall(changeProgressStatusDetails.getConfigChangeStatus(), CONFIGCHANGESTATUS_BINDING);
+            protocolMarshaller.marshall(changeProgressStatusDetails.getLastUpdatedTime(), LASTUPDATEDTIME_BINDING);
+            protocolMarshaller.marshall(changeProgressStatusDetails.getInitiatedBy(), INITIATEDBY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

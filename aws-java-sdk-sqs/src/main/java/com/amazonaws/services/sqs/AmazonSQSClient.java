@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.sqs.AmazonSQSClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.sqs.model.*;
+
 import com.amazonaws.services.sqs.model.transform.*;
 
 /**
@@ -156,19 +157,96 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 
     private final AdvancedConfig advancedConfig;
 
-    /**
-     * Map of exception unmarshallers for all modeled exceptions
-     */
-    private final Map<String, Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallersMap = new HashMap<String, Unmarshaller<AmazonServiceException, Node>>();
-
-    /**
-     * List of exception unmarshallers for all modeled exceptions Even though this exceptionUnmarshallers is not used in
-     * Clients, this is not removed since this was directly used by Client extended classes. Using this list can cause
-     * performance impact.
-     */
-    protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
-
-    protected Unmarshaller<AmazonServiceException, Node> defaultUnmarshaller;
+    private static final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.0")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("PurgeQueueInProgress").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sqs.model.transform.PurgeQueueInProgressExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("KmsInvalidKeyUsage").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sqs.model.transform.KmsInvalidKeyUsageExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidAttributeName").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sqs.model.transform.InvalidAttributeNameExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("RequestThrottled").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sqs.model.transform.RequestThrottledExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("BatchEntryIdsNotDistinct").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sqs.model.transform.BatchEntryIdsNotDistinctExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyEntriesInBatchRequest").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sqs.model.transform.TooManyEntriesInBatchRequestExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sqs.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("BatchRequestTooLong").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sqs.model.transform.BatchRequestTooLongExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedOperation").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sqs.model.transform.UnsupportedOperationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("KmsInvalidState").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sqs.model.transform.KmsInvalidStateExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidIdFormat").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sqs.model.transform.InvalidIdFormatExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("KmsNotFound").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sqs.model.transform.KmsNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("KmsThrottled").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sqs.model.transform.KmsThrottledExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("KmsOptInRequired").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sqs.model.transform.KmsOptInRequiredExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("KmsAccessDenied").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sqs.model.transform.KmsAccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OverLimit").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sqs.model.transform.OverLimitExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("QueueDoesNotExist").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sqs.model.transform.QueueDoesNotExistExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("KmsDisabled").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sqs.model.transform.KmsDisabledExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("QueueNameExists").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sqs.model.transform.QueueNameExistsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MessageNotInflight").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sqs.model.transform.MessageNotInflightExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ReceiptHandleIsInvalid").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sqs.model.transform.ReceiptHandleIsInvalidExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidAttributeValue").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sqs.model.transform.InvalidAttributeValueExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidMessageContents").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sqs.model.transform.InvalidMessageContentsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("QueueDeletedRecently").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sqs.model.transform.QueueDeletedRecentlyExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("EmptyBatchRequest").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sqs.model.transform.EmptyBatchRequestExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidSecurity").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sqs.model.transform.InvalidSecurityExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidAddress").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sqs.model.transform.InvalidAddressExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidBatchEntryId").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sqs.model.transform.InvalidBatchEntryIdExceptionUnmarshaller.getInstance()))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.sqs.model.AmazonSQSException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon SQS. A credentials provider chain will be used that
@@ -358,77 +436,10 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
     }
 
     private void init() {
-        if (exceptionUnmarshallersMap.get("AWS.SimpleQueueService.PurgeQueueInProgress") == null) {
-            exceptionUnmarshallersMap.put("AWS.SimpleQueueService.PurgeQueueInProgress", new PurgeQueueInProgressExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new PurgeQueueInProgressExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("InvalidAttributeName") == null) {
-            exceptionUnmarshallersMap.put("InvalidAttributeName", new InvalidAttributeNameExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new InvalidAttributeNameExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("AWS.SimpleQueueService.BatchEntryIdsNotDistinct") == null) {
-            exceptionUnmarshallersMap.put("AWS.SimpleQueueService.BatchEntryIdsNotDistinct", new BatchEntryIdsNotDistinctExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new BatchEntryIdsNotDistinctExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("AWS.SimpleQueueService.TooManyEntriesInBatchRequest") == null) {
-            exceptionUnmarshallersMap.put("AWS.SimpleQueueService.TooManyEntriesInBatchRequest", new TooManyEntriesInBatchRequestExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new TooManyEntriesInBatchRequestExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("AWS.SimpleQueueService.BatchRequestTooLong") == null) {
-            exceptionUnmarshallersMap.put("AWS.SimpleQueueService.BatchRequestTooLong", new BatchRequestTooLongExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new BatchRequestTooLongExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("AWS.SimpleQueueService.UnsupportedOperation") == null) {
-            exceptionUnmarshallersMap.put("AWS.SimpleQueueService.UnsupportedOperation", new UnsupportedOperationExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new UnsupportedOperationExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("InvalidIdFormat") == null) {
-            exceptionUnmarshallersMap.put("InvalidIdFormat", new InvalidIdFormatExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new InvalidIdFormatExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("OverLimit") == null) {
-            exceptionUnmarshallersMap.put("OverLimit", new OverLimitExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new OverLimitExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("AWS.SimpleQueueService.NonExistentQueue") == null) {
-            exceptionUnmarshallersMap.put("AWS.SimpleQueueService.NonExistentQueue", new QueueDoesNotExistExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new QueueDoesNotExistExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("QueueAlreadyExists") == null) {
-            exceptionUnmarshallersMap.put("QueueAlreadyExists", new QueueNameExistsExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new QueueNameExistsExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("AWS.SimpleQueueService.MessageNotInflight") == null) {
-            exceptionUnmarshallersMap.put("AWS.SimpleQueueService.MessageNotInflight", new MessageNotInflightExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new MessageNotInflightExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("ReceiptHandleIsInvalid") == null) {
-            exceptionUnmarshallersMap.put("ReceiptHandleIsInvalid", new ReceiptHandleIsInvalidExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new ReceiptHandleIsInvalidExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("InvalidMessageContents") == null) {
-            exceptionUnmarshallersMap.put("InvalidMessageContents", new InvalidMessageContentsExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new InvalidMessageContentsExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("AWS.SimpleQueueService.QueueDeletedRecently") == null) {
-            exceptionUnmarshallersMap.put("AWS.SimpleQueueService.QueueDeletedRecently", new QueueDeletedRecentlyExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new QueueDeletedRecentlyExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("AWS.SimpleQueueService.EmptyBatchRequest") == null) {
-            exceptionUnmarshallersMap.put("AWS.SimpleQueueService.EmptyBatchRequest", new EmptyBatchRequestExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new EmptyBatchRequestExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("AWS.SimpleQueueService.InvalidBatchEntryId") == null) {
-            exceptionUnmarshallersMap.put("AWS.SimpleQueueService.InvalidBatchEntryId", new InvalidBatchEntryIdExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new InvalidBatchEntryIdExceptionUnmarshaller());
-        defaultUnmarshaller = new StandardErrorUnmarshaller(com.amazonaws.services.sqs.model.AmazonSQSException.class);
-        exceptionUnmarshallers.add(new StandardErrorUnmarshaller(com.amazonaws.services.sqs.model.AmazonSQSException.class));
-
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
         setEndpointPrefix(ENDPOINT_PREFIX);
         // calling this.setEndPoint(...) will also modify the signer accordingly
-        this.setEndpoint("https://sqs.us-east-1.amazonaws.com");
+        setEndpoint("https://sqs.us-east-1.amazonaws.com");
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/sqs/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/sqs/request.handler2s"));
@@ -459,7 +470,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * </li>
      * <li>
      * <p>
-     * An Amazon SQS policy can have a maximum of 7 actions.
+     * An Amazon SQS policy can have a maximum of seven actions per statement.
      * </p>
      * </li>
      * <li>
@@ -468,23 +479,17 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * <code>RemovePermission</code>, and <code>SetQueueAttributes</code> actions in your IAM policy.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon SQS <code>AddPermission</code> does not support adding a non-account principal.
+     * </p>
+     * </li>
      * </ul>
-     * </note>
-     * <p>
-     * Some actions take lists of parameters. These lists are specified using the <code>param.n</code> notation. Values
-     * of <code>n</code> are integers starting from 1. For example, a parameter list with two elements looks like this:
-     * </p>
-     * <p>
-     * <code>&amp;AttributeName.1=first</code>
-     * </p>
-     * <p>
-     * <code>&amp;AttributeName.2=second</code>
-     * </p>
-     * <note>
+     * </note> <note>
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Grant cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -492,8 +497,39 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * @return Result of the AddPermission operation returned by the service.
      * @throws OverLimitException
      *         The specified action violates a limit. For example, <code>ReceiveMessage</code> returns this error if the
-     *         maximum number of inflight messages is reached and <code>AddPermission</code> returns this error if the
+     *         maximum number of in flight messages is reached and <code>AddPermission</code> returns this error if the
      *         maximum number of permissions for the queue is reached.
+     * @throws RequestThrottledException
+     *         The request was denied due to request throttling.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The rate of requests per second exceeds the Amazon Web Services KMS request quota for an account and
+     *         Region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A burst or sustained high rate of requests to change the state of the same KMS key. This condition is
+     *         often known as a "hot key."
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might be throttled at a
+     *         lower-than-expected rate when the Amazon Web Services CloudHSM cluster associated with the Amazon Web
+     *         Services CloudHSM key store is processing numerous commands, including those unrelated to the Amazon Web
+     *         Services CloudHSM key store.
+     *         </p>
+     *         </li>
+     * @throws QueueDoesNotExistException
+     *         The specified queue doesn't exist.
+     * @throws InvalidAddressException
+     *         The <code>accountId</code> is invalid.
+     * @throws InvalidSecurityException
+     *         When the request to a queue is not HTTPS and SigV4.
+     * @throws UnsupportedOperationException
+     *         Error code 400. Unsupported operation.
      * @sample AmazonSQS.AddPermission
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission" target="_top">AWS API
      *      Documentation</a>
@@ -516,7 +552,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new AddPermissionRequestMarshaller().marshall(super.beforeMarshalling(addPermissionRequest));
+                request = new AddPermissionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addPermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
@@ -530,8 +566,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<AddPermissionResult> responseHandler = new StaxResponseHandler<AddPermissionResult>(new AddPermissionResultStaxUnmarshaller());
-
+            HttpResponseHandler<AmazonWebServiceResponse<AddPermissionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AddPermissionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -549,16 +585,124 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 
     /**
      * <p>
+     * Cancels a specified message movement task. A message movement can only be cancelled when the current status is
+     * RUNNING. Cancelling a message movement task does not revert the messages that have already been moved. It can
+     * only stop the messages that have not been moved yet.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * This action is currently limited to supporting message redrive from <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
+     * >dead-letter queues (DLQs)</a> only. In this context, the source queue is the dead-letter queue (DLQ), while the
+     * destination queue can be the original source queue (from which the messages were driven to the
+     * dead-letter-queue), or a custom destination queue.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Only one active message movement task is supported per queue at any given time.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param cancelMessageMoveTaskRequest
+     * @return Result of the CancelMessageMoveTask operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         One or more specified resources don't exist.
+     * @throws RequestThrottledException
+     *         The request was denied due to request throttling.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The rate of requests per second exceeds the Amazon Web Services KMS request quota for an account and
+     *         Region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A burst or sustained high rate of requests to change the state of the same KMS key. This condition is
+     *         often known as a "hot key."
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might be throttled at a
+     *         lower-than-expected rate when the Amazon Web Services CloudHSM cluster associated with the Amazon Web
+     *         Services CloudHSM key store is processing numerous commands, including those unrelated to the Amazon Web
+     *         Services CloudHSM key store.
+     *         </p>
+     *         </li>
+     * @throws InvalidAddressException
+     *         The <code>accountId</code> is invalid.
+     * @throws InvalidSecurityException
+     *         When the request to a queue is not HTTPS and SigV4.
+     * @throws UnsupportedOperationException
+     *         Error code 400. Unsupported operation.
+     * @sample AmazonSQS.CancelMessageMoveTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CancelMessageMoveTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CancelMessageMoveTaskResult cancelMessageMoveTask(CancelMessageMoveTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelMessageMoveTask(request);
+    }
+
+    @SdkInternalApi
+    final CancelMessageMoveTaskResult executeCancelMessageMoveTask(CancelMessageMoveTaskRequest cancelMessageMoveTaskRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelMessageMoveTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelMessageMoveTaskRequest> request = null;
+        Response<CancelMessageMoveTaskResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelMessageMoveTaskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelMessageMoveTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelMessageMoveTask");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelMessageMoveTaskResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new CancelMessageMoveTaskResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Changes the visibility timeout of a specified message in a queue to a new value. The default visibility timeout
      * for a message is 30 seconds. The minimum is 0 seconds. The maximum is 12 hours. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">
      * Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * <p>
-     * For example, you have a message with a visibility timeout of 5 minutes. After 3 minutes, you call
-     * <code>ChangeMessageVisibility</code> with a timeout of 10 minutes. You can continue to call
-     * <code>ChangeMessageVisibility</code> to extend the visibility timeout to the maximum allowed time. If you try to
-     * extend the visibility timeout beyond the maximum, your request is rejected.
+     * For example, if the default timeout for a queue is 60 seconds, 15 seconds have elapsed since you received the
+     * message, and you send a ChangeMessageVisibility call with <code>VisibilityTimeout</code> set to 10 seconds, the
+     * 10 seconds begin to count from the time that you make the <code>ChangeMessageVisibility</code> call. Thus, any
+     * attempt to change the visibility timeout or to delete that message 10 seconds after you initially change the
+     * visibility timeout (a total of 25 seconds) might result in an error.
      * </p>
      * <p>
      * An Amazon SQS message has three basic states:
@@ -584,14 +728,14 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * A message is considered to be <i>stored</i> after it is sent to a queue by a producer, but not yet received from
      * the queue by a consumer (that is, between states 1 and 2). There is no limit to the number of stored messages. A
      * message is considered to be <i>in flight</i> after it is received from a queue by a consumer, but not yet deleted
-     * from the queue (that is, between states 2 and 3). There is a limit to the number of inflight messages.
+     * from the queue (that is, between states 2 and 3). There is a limit to the number of in flight messages.
      * </p>
      * <p>
-     * Limits that apply to inflight messages are unrelated to the <i>unlimited</i> number of stored messages.
+     * Limits that apply to in flight messages are unrelated to the <i>unlimited</i> number of stored messages.
      * </p>
      * <p>
      * For most standard queues (depending on queue traffic and message backlog), there can be a maximum of
-     * approximately 120,000 inflight messages (received from a queue by a consumer, but not yet deleted from the
+     * approximately 120,000 in flight messages (received from a queue by a consumer, but not yet deleted from the
      * queue). If you reach this limit, Amazon SQS returns the <code>OverLimit</code> error message. To avoid reaching
      * the limit, you should delete messages from the queue after they're processed. You can also increase the number of
      * queues you use to process your messages. To request a limit increase, <a href=
@@ -599,8 +743,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * >file a support request</a>.
      * </p>
      * <p>
-     * For FIFO queues, there can be a maximum of 20,000 inflight messages (received from a queue by a consumer, but not
-     * yet deleted from the queue). If you reach this limit, Amazon SQS returns no error messages.
+     * For FIFO queues, there can be a maximum of 20,000 in flight messages (received from a queue by a consumer, but
+     * not yet deleted from the queue). If you reach this limit, Amazon SQS returns no error messages.
      * </p>
      * <important>
      * <p>
@@ -622,6 +766,37 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *         The specified message isn't in flight.
      * @throws ReceiptHandleIsInvalidException
      *         The specified receipt handle isn't valid.
+     * @throws RequestThrottledException
+     *         The request was denied due to request throttling.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The rate of requests per second exceeds the Amazon Web Services KMS request quota for an account and
+     *         Region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A burst or sustained high rate of requests to change the state of the same KMS key. This condition is
+     *         often known as a "hot key."
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might be throttled at a
+     *         lower-than-expected rate when the Amazon Web Services CloudHSM cluster associated with the Amazon Web
+     *         Services CloudHSM key store is processing numerous commands, including those unrelated to the Amazon Web
+     *         Services CloudHSM key store.
+     *         </p>
+     *         </li>
+     * @throws QueueDoesNotExistException
+     *         The specified queue doesn't exist.
+     * @throws UnsupportedOperationException
+     *         Error code 400. Unsupported operation.
+     * @throws InvalidAddressException
+     *         The <code>accountId</code> is invalid.
+     * @throws InvalidSecurityException
+     *         When the request to a queue is not HTTPS and SigV4.
      * @sample AmazonSQS.ChangeMessageVisibility
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility" target="_top">AWS
      *      API Documentation</a>
@@ -644,7 +819,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ChangeMessageVisibilityRequestMarshaller().marshall(super.beforeMarshalling(changeMessageVisibilityRequest));
+                request = new ChangeMessageVisibilityRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(changeMessageVisibilityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
@@ -658,9 +834,9 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<ChangeMessageVisibilityResult> responseHandler = new StaxResponseHandler<ChangeMessageVisibilityResult>(
-                    new ChangeMessageVisibilityResultStaxUnmarshaller());
-
+            HttpResponseHandler<AmazonWebServiceResponse<ChangeMessageVisibilityResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ChangeMessageVisibilityResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -690,16 +866,6 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * for batch errors even when the call returns an HTTP status code of <code>200</code>.
      * </p>
      * </important>
-     * <p>
-     * Some actions take lists of parameters. These lists are specified using the <code>param.n</code> notation. Values
-     * of <code>n</code> are integers starting from 1. For example, a parameter list with two elements looks like this:
-     * </p>
-     * <p>
-     * <code>&amp;AttributeName.1=first</code>
-     * </p>
-     * <p>
-     * <code>&amp;AttributeName.2=second</code>
-     * </p>
      * 
      * @param changeMessageVisibilityBatchRequest
      * @return Result of the ChangeMessageVisibilityBatch operation returned by the service.
@@ -711,6 +877,37 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *         Two or more batch entries in the request have the same <code>Id</code>.
      * @throws InvalidBatchEntryIdException
      *         The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
+     * @throws RequestThrottledException
+     *         The request was denied due to request throttling.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The rate of requests per second exceeds the Amazon Web Services KMS request quota for an account and
+     *         Region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A burst or sustained high rate of requests to change the state of the same KMS key. This condition is
+     *         often known as a "hot key."
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might be throttled at a
+     *         lower-than-expected rate when the Amazon Web Services CloudHSM cluster associated with the Amazon Web
+     *         Services CloudHSM key store is processing numerous commands, including those unrelated to the Amazon Web
+     *         Services CloudHSM key store.
+     *         </p>
+     *         </li>
+     * @throws QueueDoesNotExistException
+     *         The specified queue doesn't exist.
+     * @throws UnsupportedOperationException
+     *         Error code 400. Unsupported operation.
+     * @throws InvalidAddressException
+     *         The <code>accountId</code> is invalid.
+     * @throws InvalidSecurityException
+     *         When the request to a queue is not HTTPS and SigV4.
      * @sample AmazonSQS.ChangeMessageVisibilityBatch
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch"
      *      target="_top">AWS API Documentation</a>
@@ -733,7 +930,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ChangeMessageVisibilityBatchRequestMarshaller().marshall(super.beforeMarshalling(changeMessageVisibilityBatchRequest));
+                request = new ChangeMessageVisibilityBatchRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(changeMessageVisibilityBatchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
@@ -747,9 +945,9 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<ChangeMessageVisibilityBatchResult> responseHandler = new StaxResponseHandler<ChangeMessageVisibilityBatchResult>(
-                    new ChangeMessageVisibilityBatchResultStaxUnmarshaller());
-
+            HttpResponseHandler<AmazonWebServiceResponse<ChangeMessageVisibilityBatchResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ChangeMessageVisibilityBatchResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -824,21 +1022,11 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * Some actions take lists of parameters. These lists are specified using the <code>param.n</code> notation. Values
-     * of <code>n</code> are integers starting from 1. For example, a parameter list with two elements looks like this:
-     * </p>
-     * <p>
-     * <code>&amp;AttributeName.1=first</code>
-     * </p>
-     * <p>
-     * <code>&amp;AttributeName.2=second</code>
-     * </p>
      * <note>
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Grant cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </note>
      * 
@@ -849,6 +1037,39 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * @throws QueueNameExistsException
      *         A queue with this name already exists. Amazon SQS returns this error only if the request includes
      *         attributes whose values differ from those of the existing queue.
+     * @throws RequestThrottledException
+     *         The request was denied due to request throttling.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The rate of requests per second exceeds the Amazon Web Services KMS request quota for an account and
+     *         Region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A burst or sustained high rate of requests to change the state of the same KMS key. This condition is
+     *         often known as a "hot key."
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might be throttled at a
+     *         lower-than-expected rate when the Amazon Web Services CloudHSM cluster associated with the Amazon Web
+     *         Services CloudHSM key store is processing numerous commands, including those unrelated to the Amazon Web
+     *         Services CloudHSM key store.
+     *         </p>
+     *         </li>
+     * @throws InvalidAddressException
+     *         The <code>accountId</code> is invalid.
+     * @throws InvalidAttributeNameException
+     *         The specified attribute doesn't exist.
+     * @throws InvalidAttributeValueException
+     *         A queue attribute value is invalid.
+     * @throws UnsupportedOperationException
+     *         Error code 400. Unsupported operation.
+     * @throws InvalidSecurityException
+     *         When the request to a queue is not HTTPS and SigV4.
      * @sample AmazonSQS.CreateQueue
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue" target="_top">AWS API
      *      Documentation</a>
@@ -871,7 +1092,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new CreateQueueRequestMarshaller().marshall(super.beforeMarshalling(createQueueRequest));
+                request = new CreateQueueRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createQueueRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
@@ -885,8 +1106,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<CreateQueueResult> responseHandler = new StaxResponseHandler<CreateQueueResult>(new CreateQueueResultStaxUnmarshaller());
-
+            HttpResponseHandler<AmazonWebServiceResponse<CreateQueueResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateQueueResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -915,7 +1136,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * The <code>ReceiptHandle</code> is associated with a <i>specific instance</i> of receiving a message. If you
      * receive a message more than once, the <code>ReceiptHandle</code> is different each time you receive a message.
      * When you use the <code>DeleteMessage</code> action, you must provide the most recently received
-     * <code>ReceiptHandle</code> for the message (otherwise, the request succeeds, but the message might not be
+     * <code>ReceiptHandle</code> for the message (otherwise, the request succeeds, but the message will not be
      * deleted).
      * </p>
      * <p>
@@ -933,6 +1154,37 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *         The specified receipt handle isn't valid for the current version.
      * @throws ReceiptHandleIsInvalidException
      *         The specified receipt handle isn't valid.
+     * @throws RequestThrottledException
+     *         The request was denied due to request throttling.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The rate of requests per second exceeds the Amazon Web Services KMS request quota for an account and
+     *         Region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A burst or sustained high rate of requests to change the state of the same KMS key. This condition is
+     *         often known as a "hot key."
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might be throttled at a
+     *         lower-than-expected rate when the Amazon Web Services CloudHSM cluster associated with the Amazon Web
+     *         Services CloudHSM key store is processing numerous commands, including those unrelated to the Amazon Web
+     *         Services CloudHSM key store.
+     *         </p>
+     *         </li>
+     * @throws QueueDoesNotExistException
+     *         The specified queue doesn't exist.
+     * @throws UnsupportedOperationException
+     *         Error code 400. Unsupported operation.
+     * @throws InvalidSecurityException
+     *         When the request to a queue is not HTTPS and SigV4.
+     * @throws InvalidAddressException
+     *         The <code>accountId</code> is invalid.
      * @sample AmazonSQS.DeleteMessage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage" target="_top">AWS API
      *      Documentation</a>
@@ -955,7 +1207,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteMessageRequestMarshaller().marshall(super.beforeMarshalling(deleteMessageRequest));
+                request = new DeleteMessageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMessageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
@@ -969,8 +1221,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<DeleteMessageResult> responseHandler = new StaxResponseHandler<DeleteMessageResult>(new DeleteMessageResultStaxUnmarshaller());
-
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteMessageResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteMessageResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -998,16 +1250,6 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * for batch errors even when the call returns an HTTP status code of <code>200</code>.
      * </p>
      * </important>
-     * <p>
-     * Some actions take lists of parameters. These lists are specified using the <code>param.n</code> notation. Values
-     * of <code>n</code> are integers starting from 1. For example, a parameter list with two elements looks like this:
-     * </p>
-     * <p>
-     * <code>&amp;AttributeName.1=first</code>
-     * </p>
-     * <p>
-     * <code>&amp;AttributeName.2=second</code>
-     * </p>
      * 
      * @param deleteMessageBatchRequest
      * @return Result of the DeleteMessageBatch operation returned by the service.
@@ -1019,6 +1261,37 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *         Two or more batch entries in the request have the same <code>Id</code>.
      * @throws InvalidBatchEntryIdException
      *         The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
+     * @throws RequestThrottledException
+     *         The request was denied due to request throttling.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The rate of requests per second exceeds the Amazon Web Services KMS request quota for an account and
+     *         Region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A burst or sustained high rate of requests to change the state of the same KMS key. This condition is
+     *         often known as a "hot key."
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might be throttled at a
+     *         lower-than-expected rate when the Amazon Web Services CloudHSM cluster associated with the Amazon Web
+     *         Services CloudHSM key store is processing numerous commands, including those unrelated to the Amazon Web
+     *         Services CloudHSM key store.
+     *         </p>
+     *         </li>
+     * @throws QueueDoesNotExistException
+     *         The specified queue doesn't exist.
+     * @throws UnsupportedOperationException
+     *         Error code 400. Unsupported operation.
+     * @throws InvalidAddressException
+     *         The <code>accountId</code> is invalid.
+     * @throws InvalidSecurityException
+     *         When the request to a queue is not HTTPS and SigV4.
      * @sample AmazonSQS.DeleteMessageBatch
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch" target="_top">AWS API
      *      Documentation</a>
@@ -1041,7 +1314,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteMessageBatchRequestMarshaller().marshall(super.beforeMarshalling(deleteMessageBatchRequest));
+                request = new DeleteMessageBatchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMessageBatchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
@@ -1055,9 +1328,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<DeleteMessageBatchResult> responseHandler = new StaxResponseHandler<DeleteMessageBatchResult>(
-                    new DeleteMessageBatchResultStaxUnmarshaller());
-
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteMessageBatchResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteMessageBatchResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1095,12 +1367,46 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Grant cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer Guide</i>.
+     * </p>
+     * <p>
+     * The delete operation uses the HTTP <code>GET</code> verb.
      * </p>
      * </note>
      * 
      * @param deleteQueueRequest
      * @return Result of the DeleteQueue operation returned by the service.
+     * @throws RequestThrottledException
+     *         The request was denied due to request throttling.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The rate of requests per second exceeds the Amazon Web Services KMS request quota for an account and
+     *         Region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A burst or sustained high rate of requests to change the state of the same KMS key. This condition is
+     *         often known as a "hot key."
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might be throttled at a
+     *         lower-than-expected rate when the Amazon Web Services CloudHSM cluster associated with the Amazon Web
+     *         Services CloudHSM key store is processing numerous commands, including those unrelated to the Amazon Web
+     *         Services CloudHSM key store.
+     *         </p>
+     *         </li>
+     * @throws QueueDoesNotExistException
+     *         The specified queue doesn't exist.
+     * @throws InvalidAddressException
+     *         The <code>accountId</code> is invalid.
+     * @throws UnsupportedOperationException
+     *         Error code 400. Unsupported operation.
+     * @throws InvalidSecurityException
+     *         When the request to a queue is not HTTPS and SigV4.
      * @sample AmazonSQS.DeleteQueue
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue" target="_top">AWS API
      *      Documentation</a>
@@ -1123,7 +1429,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new DeleteQueueRequestMarshaller().marshall(super.beforeMarshalling(deleteQueueRequest));
+                request = new DeleteQueueRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteQueueRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
@@ -1137,8 +1443,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<DeleteQueueResult> responseHandler = new StaxResponseHandler<DeleteQueueResult>(new DeleteQueueResultStaxUnmarshaller());
-
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteQueueResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteQueueResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1170,6 +1476,37 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * @return Result of the GetQueueAttributes operation returned by the service.
      * @throws InvalidAttributeNameException
      *         The specified attribute doesn't exist.
+     * @throws RequestThrottledException
+     *         The request was denied due to request throttling.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The rate of requests per second exceeds the Amazon Web Services KMS request quota for an account and
+     *         Region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A burst or sustained high rate of requests to change the state of the same KMS key. This condition is
+     *         often known as a "hot key."
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might be throttled at a
+     *         lower-than-expected rate when the Amazon Web Services CloudHSM cluster associated with the Amazon Web
+     *         Services CloudHSM key store is processing numerous commands, including those unrelated to the Amazon Web
+     *         Services CloudHSM key store.
+     *         </p>
+     *         </li>
+     * @throws QueueDoesNotExistException
+     *         The specified queue doesn't exist.
+     * @throws UnsupportedOperationException
+     *         Error code 400. Unsupported operation.
+     * @throws InvalidSecurityException
+     *         When the request to a queue is not HTTPS and SigV4.
+     * @throws InvalidAddressException
+     *         The <code>accountId</code> is invalid.
      * @sample AmazonSQS.GetQueueAttributes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes" target="_top">AWS API
      *      Documentation</a>
@@ -1192,7 +1529,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetQueueAttributesRequestMarshaller().marshall(super.beforeMarshalling(getQueueAttributesRequest));
+                request = new GetQueueAttributesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getQueueAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
@@ -1206,9 +1543,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<GetQueueAttributesResult> responseHandler = new StaxResponseHandler<GetQueueAttributesResult>(
-                    new GetQueueAttributesResultStaxUnmarshaller());
-
+            HttpResponseHandler<AmazonWebServiceResponse<GetQueueAttributesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetQueueAttributesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1238,8 +1574,37 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * 
      * @param getQueueUrlRequest
      * @return Result of the GetQueueUrl operation returned by the service.
+     * @throws RequestThrottledException
+     *         The request was denied due to request throttling.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The rate of requests per second exceeds the Amazon Web Services KMS request quota for an account and
+     *         Region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A burst or sustained high rate of requests to change the state of the same KMS key. This condition is
+     *         often known as a "hot key."
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might be throttled at a
+     *         lower-than-expected rate when the Amazon Web Services CloudHSM cluster associated with the Amazon Web
+     *         Services CloudHSM key store is processing numerous commands, including those unrelated to the Amazon Web
+     *         Services CloudHSM key store.
+     *         </p>
+     *         </li>
      * @throws QueueDoesNotExistException
      *         The specified queue doesn't exist.
+     * @throws InvalidAddressException
+     *         The <code>accountId</code> is invalid.
+     * @throws InvalidSecurityException
+     *         When the request to a queue is not HTTPS and SigV4.
+     * @throws UnsupportedOperationException
+     *         Error code 400. Unsupported operation.
      * @sample AmazonSQS.GetQueueUrl
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl" target="_top">AWS API
      *      Documentation</a>
@@ -1262,7 +1627,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new GetQueueUrlRequestMarshaller().marshall(super.beforeMarshalling(getQueueUrlRequest));
+                request = new GetQueueUrlRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getQueueUrlRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
@@ -1276,8 +1641,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<GetQueueUrlResult> responseHandler = new StaxResponseHandler<GetQueueUrlResult>(new GetQueueUrlResultStaxUnmarshaller());
-
+            HttpResponseHandler<AmazonWebServiceResponse<GetQueueUrlResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetQueueUrlResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1316,6 +1681,35 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * @return Result of the ListDeadLetterSourceQueues operation returned by the service.
      * @throws QueueDoesNotExistException
      *         The specified queue doesn't exist.
+     * @throws RequestThrottledException
+     *         The request was denied due to request throttling.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The rate of requests per second exceeds the Amazon Web Services KMS request quota for an account and
+     *         Region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A burst or sustained high rate of requests to change the state of the same KMS key. This condition is
+     *         often known as a "hot key."
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might be throttled at a
+     *         lower-than-expected rate when the Amazon Web Services CloudHSM cluster associated with the Amazon Web
+     *         Services CloudHSM key store is processing numerous commands, including those unrelated to the Amazon Web
+     *         Services CloudHSM key store.
+     *         </p>
+     *         </li>
+     * @throws InvalidSecurityException
+     *         When the request to a queue is not HTTPS and SigV4.
+     * @throws InvalidAddressException
+     *         The <code>accountId</code> is invalid.
+     * @throws UnsupportedOperationException
+     *         Error code 400. Unsupported operation.
      * @sample AmazonSQS.ListDeadLetterSourceQueues
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueues" target="_top">AWS
      *      API Documentation</a>
@@ -1338,7 +1732,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListDeadLetterSourceQueuesRequestMarshaller().marshall(super.beforeMarshalling(listDeadLetterSourceQueuesRequest));
+                request = new ListDeadLetterSourceQueuesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listDeadLetterSourceQueuesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
@@ -1352,9 +1747,113 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<ListDeadLetterSourceQueuesResult> responseHandler = new StaxResponseHandler<ListDeadLetterSourceQueuesResult>(
-                    new ListDeadLetterSourceQueuesResultStaxUnmarshaller());
+            HttpResponseHandler<AmazonWebServiceResponse<ListDeadLetterSourceQueuesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListDeadLetterSourceQueuesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
 
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the most recent message movement tasks (up to 10) under a specific source queue.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * This action is currently limited to supporting message redrive from <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
+     * >dead-letter queues (DLQs)</a> only. In this context, the source queue is the dead-letter queue (DLQ), while the
+     * destination queue can be the original source queue (from which the messages were driven to the
+     * dead-letter-queue), or a custom destination queue.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Only one active message movement task is supported per queue at any given time.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param listMessageMoveTasksRequest
+     * @return Result of the ListMessageMoveTasks operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         One or more specified resources don't exist.
+     * @throws RequestThrottledException
+     *         The request was denied due to request throttling.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The rate of requests per second exceeds the Amazon Web Services KMS request quota for an account and
+     *         Region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A burst or sustained high rate of requests to change the state of the same KMS key. This condition is
+     *         often known as a "hot key."
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might be throttled at a
+     *         lower-than-expected rate when the Amazon Web Services CloudHSM cluster associated with the Amazon Web
+     *         Services CloudHSM key store is processing numerous commands, including those unrelated to the Amazon Web
+     *         Services CloudHSM key store.
+     *         </p>
+     *         </li>
+     * @throws InvalidAddressException
+     *         The <code>accountId</code> is invalid.
+     * @throws InvalidSecurityException
+     *         When the request to a queue is not HTTPS and SigV4.
+     * @throws UnsupportedOperationException
+     *         Error code 400. Unsupported operation.
+     * @sample AmazonSQS.ListMessageMoveTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListMessageMoveTasks" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListMessageMoveTasksResult listMessageMoveTasks(ListMessageMoveTasksRequest request) {
+        request = beforeClientExecution(request);
+        return executeListMessageMoveTasks(request);
+    }
+
+    @SdkInternalApi
+    final ListMessageMoveTasksResult executeListMessageMoveTasks(ListMessageMoveTasksRequest listMessageMoveTasksRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listMessageMoveTasksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListMessageMoveTasksRequest> request = null;
+        Response<ListMessageMoveTasksResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListMessageMoveTasksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMessageMoveTasksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMessageMoveTasks");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListMessageMoveTasksResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListMessageMoveTasksResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1375,12 +1874,43 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Grant cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </note>
      * 
      * @param listQueueTagsRequest
      * @return Result of the ListQueueTags operation returned by the service.
+     * @throws RequestThrottledException
+     *         The request was denied due to request throttling.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The rate of requests per second exceeds the Amazon Web Services KMS request quota for an account and
+     *         Region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A burst or sustained high rate of requests to change the state of the same KMS key. This condition is
+     *         often known as a "hot key."
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might be throttled at a
+     *         lower-than-expected rate when the Amazon Web Services CloudHSM cluster associated with the Amazon Web
+     *         Services CloudHSM key store is processing numerous commands, including those unrelated to the Amazon Web
+     *         Services CloudHSM key store.
+     *         </p>
+     *         </li>
+     * @throws QueueDoesNotExistException
+     *         The specified queue doesn't exist.
+     * @throws UnsupportedOperationException
+     *         Error code 400. Unsupported operation.
+     * @throws InvalidAddressException
+     *         The <code>accountId</code> is invalid.
+     * @throws InvalidSecurityException
+     *         When the request to a queue is not HTTPS and SigV4.
      * @sample AmazonSQS.ListQueueTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueueTags" target="_top">AWS API
      *      Documentation</a>
@@ -1403,7 +1933,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListQueueTagsRequestMarshaller().marshall(super.beforeMarshalling(listQueueTagsRequest));
+                request = new ListQueueTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listQueueTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
@@ -1417,8 +1947,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<ListQueueTagsResult> responseHandler = new StaxResponseHandler<ListQueueTagsResult>(new ListQueueTagsResultStaxUnmarshaller());
-
+            HttpResponseHandler<AmazonWebServiceResponse<ListQueueTagsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListQueueTagsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1451,12 +1981,41 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Grant cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </note>
      * 
      * @param listQueuesRequest
      * @return Result of the ListQueues operation returned by the service.
+     * @throws RequestThrottledException
+     *         The request was denied due to request throttling.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The rate of requests per second exceeds the Amazon Web Services KMS request quota for an account and
+     *         Region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A burst or sustained high rate of requests to change the state of the same KMS key. This condition is
+     *         often known as a "hot key."
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might be throttled at a
+     *         lower-than-expected rate when the Amazon Web Services CloudHSM cluster associated with the Amazon Web
+     *         Services CloudHSM key store is processing numerous commands, including those unrelated to the Amazon Web
+     *         Services CloudHSM key store.
+     *         </p>
+     *         </li>
+     * @throws InvalidSecurityException
+     *         When the request to a queue is not HTTPS and SigV4.
+     * @throws InvalidAddressException
+     *         The <code>accountId</code> is invalid.
+     * @throws UnsupportedOperationException
+     *         Error code 400. Unsupported operation.
      * @sample AmazonSQS.ListQueues
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues" target="_top">AWS API
      *      Documentation</a>
@@ -1479,7 +2038,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ListQueuesRequestMarshaller().marshall(super.beforeMarshalling(listQueuesRequest));
+                request = new ListQueuesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listQueuesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
@@ -1493,8 +2052,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<ListQueuesResult> responseHandler = new StaxResponseHandler<ListQueuesResult>(new ListQueuesResultStaxUnmarshaller());
-
+            HttpResponseHandler<AmazonWebServiceResponse<ListQueuesResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListQueuesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1517,7 +2076,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 
     /**
      * <p>
-     * Deletes the messages in a queue specified by the <code>QueueURL</code> parameter.
+     * Deletes available messages in a queue (including in-flight messages) specified by the <code>QueueURL</code>
+     * parameter.
      * </p>
      * <important>
      * <p>
@@ -1544,6 +2104,35 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * @throws PurgeQueueInProgressException
      *         Indicates that the specified queue previously received a <code>PurgeQueue</code> request within the last
      *         60 seconds (the time it can take to delete the messages in the queue).
+     * @throws RequestThrottledException
+     *         The request was denied due to request throttling.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The rate of requests per second exceeds the Amazon Web Services KMS request quota for an account and
+     *         Region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A burst or sustained high rate of requests to change the state of the same KMS key. This condition is
+     *         often known as a "hot key."
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might be throttled at a
+     *         lower-than-expected rate when the Amazon Web Services CloudHSM cluster associated with the Amazon Web
+     *         Services CloudHSM key store is processing numerous commands, including those unrelated to the Amazon Web
+     *         Services CloudHSM key store.
+     *         </p>
+     *         </li>
+     * @throws InvalidAddressException
+     *         The <code>accountId</code> is invalid.
+     * @throws InvalidSecurityException
+     *         When the request to a queue is not HTTPS and SigV4.
+     * @throws UnsupportedOperationException
+     *         Error code 400. Unsupported operation.
      * @sample AmazonSQS.PurgeQueue
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/PurgeQueue" target="_top">AWS API
      *      Documentation</a>
@@ -1566,7 +2155,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new PurgeQueueRequestMarshaller().marshall(super.beforeMarshalling(purgeQueueRequest));
+                request = new PurgeQueueRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(purgeQueueRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
@@ -1580,8 +2169,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<PurgeQueueResult> responseHandler = new StaxResponseHandler<PurgeQueueResult>(new PurgeQueueResultStaxUnmarshaller());
-
+            HttpResponseHandler<AmazonWebServiceResponse<PurgeQueueResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new PurgeQueueResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1669,10 +2258,67 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * 
      * @param receiveMessageRequest
      * @return Result of the ReceiveMessage operation returned by the service.
+     * @throws UnsupportedOperationException
+     *         Error code 400. Unsupported operation.
      * @throws OverLimitException
      *         The specified action violates a limit. For example, <code>ReceiveMessage</code> returns this error if the
-     *         maximum number of inflight messages is reached and <code>AddPermission</code> returns this error if the
+     *         maximum number of in flight messages is reached and <code>AddPermission</code> returns this error if the
      *         maximum number of permissions for the queue is reached.
+     * @throws RequestThrottledException
+     *         The request was denied due to request throttling.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The rate of requests per second exceeds the Amazon Web Services KMS request quota for an account and
+     *         Region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A burst or sustained high rate of requests to change the state of the same KMS key. This condition is
+     *         often known as a "hot key."
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might be throttled at a
+     *         lower-than-expected rate when the Amazon Web Services CloudHSM cluster associated with the Amazon Web
+     *         Services CloudHSM key store is processing numerous commands, including those unrelated to the Amazon Web
+     *         Services CloudHSM key store.
+     *         </p>
+     *         </li>
+     * @throws QueueDoesNotExistException
+     *         The specified queue doesn't exist.
+     * @throws InvalidSecurityException
+     *         When the request to a queue is not HTTPS and SigV4.
+     * @throws KmsDisabledException
+     *         The request was denied due to request throttling.
+     * @throws KmsInvalidStateException
+     *         The request was rejected because the state of the specified resource is not valid for this request.
+     * @throws KmsNotFoundException
+     *         The request was rejected because the specified entity or resource could not be found.
+     * @throws KmsOptInRequiredException
+     *         The request was rejected because the specified key policy isn't syntactically or semantically correct.
+     * @throws KmsThrottledException
+     *         Amazon Web Services KMS throttles requests for the following conditions.
+     * @throws KmsAccessDeniedException
+     *         The caller doesn't have the required KMS access.
+     * @throws KmsInvalidKeyUsageException
+     *         The request was rejected for one of the following reasons:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The KeyUsage value of the KMS key is incompatible with the API operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The encryption algorithm or signing algorithm specified for the operation is incompatible with the type
+     *         of key material in the KMS key (KeySpec).
+     *         </p>
+     *         </li>
+     * @throws InvalidAddressException
+     *         The <code>accountId</code> is invalid.
      * @sample AmazonSQS.ReceiveMessage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage" target="_top">AWS API
      *      Documentation</a>
@@ -1695,7 +2341,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new ReceiveMessageRequestMarshaller().marshall(super.beforeMarshalling(receiveMessageRequest));
+                request = new ReceiveMessageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(receiveMessageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
@@ -1709,9 +2355,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<ReceiveMessageResult> responseHandler = new StaxResponseHandler<ReceiveMessageResult>(
-                    new ReceiveMessageResultStaxUnmarshaller());
-
+            HttpResponseHandler<AmazonWebServiceResponse<ReceiveMessageResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ReceiveMessageResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1742,7 +2387,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Grant cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -1756,6 +2401,37 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * 
      * @param removePermissionRequest
      * @return Result of the RemovePermission operation returned by the service.
+     * @throws InvalidAddressException
+     *         The <code>accountId</code> is invalid.
+     * @throws RequestThrottledException
+     *         The request was denied due to request throttling.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The rate of requests per second exceeds the Amazon Web Services KMS request quota for an account and
+     *         Region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A burst or sustained high rate of requests to change the state of the same KMS key. This condition is
+     *         often known as a "hot key."
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might be throttled at a
+     *         lower-than-expected rate when the Amazon Web Services CloudHSM cluster associated with the Amazon Web
+     *         Services CloudHSM key store is processing numerous commands, including those unrelated to the Amazon Web
+     *         Services CloudHSM key store.
+     *         </p>
+     *         </li>
+     * @throws QueueDoesNotExistException
+     *         The specified queue doesn't exist.
+     * @throws InvalidSecurityException
+     *         When the request to a queue is not HTTPS and SigV4.
+     * @throws UnsupportedOperationException
+     *         Error code 400. Unsupported operation.
      * @sample AmazonSQS.RemovePermission
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission" target="_top">AWS API
      *      Documentation</a>
@@ -1778,7 +2454,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new RemovePermissionRequestMarshaller().marshall(super.beforeMarshalling(removePermissionRequest));
+                request = new RemovePermissionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removePermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
@@ -1792,9 +2468,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<RemovePermissionResult> responseHandler = new StaxResponseHandler<RemovePermissionResult>(
-                    new RemovePermissionResultStaxUnmarshaller());
-
+            HttpResponseHandler<AmazonWebServiceResponse<RemovePermissionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RemovePermissionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1834,6 +2509,61 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *         The message contains characters outside the allowed set.
      * @throws UnsupportedOperationException
      *         Error code 400. Unsupported operation.
+     * @throws RequestThrottledException
+     *         The request was denied due to request throttling.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The rate of requests per second exceeds the Amazon Web Services KMS request quota for an account and
+     *         Region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A burst or sustained high rate of requests to change the state of the same KMS key. This condition is
+     *         often known as a "hot key."
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might be throttled at a
+     *         lower-than-expected rate when the Amazon Web Services CloudHSM cluster associated with the Amazon Web
+     *         Services CloudHSM key store is processing numerous commands, including those unrelated to the Amazon Web
+     *         Services CloudHSM key store.
+     *         </p>
+     *         </li>
+     * @throws QueueDoesNotExistException
+     *         The specified queue doesn't exist.
+     * @throws InvalidSecurityException
+     *         When the request to a queue is not HTTPS and SigV4.
+     * @throws KmsDisabledException
+     *         The request was denied due to request throttling.
+     * @throws KmsInvalidStateException
+     *         The request was rejected because the state of the specified resource is not valid for this request.
+     * @throws KmsNotFoundException
+     *         The request was rejected because the specified entity or resource could not be found.
+     * @throws KmsOptInRequiredException
+     *         The request was rejected because the specified key policy isn't syntactically or semantically correct.
+     * @throws KmsThrottledException
+     *         Amazon Web Services KMS throttles requests for the following conditions.
+     * @throws KmsAccessDeniedException
+     *         The caller doesn't have the required KMS access.
+     * @throws KmsInvalidKeyUsageException
+     *         The request was rejected for one of the following reasons:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The KeyUsage value of the KMS key is incompatible with the API operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The encryption algorithm or signing algorithm specified for the operation is incompatible with the type
+     *         of key material in the KMS key (KeySpec).
+     *         </p>
+     *         </li>
+     * @throws InvalidAddressException
+     *         The <code>accountId</code> is invalid.
      * @sample AmazonSQS.SendMessage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessage" target="_top">AWS API
      *      Documentation</a>
@@ -1856,7 +2586,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SendMessageRequestMarshaller().marshall(super.beforeMarshalling(sendMessageRequest));
+                request = new SendMessageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendMessageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
@@ -1870,8 +2600,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<SendMessageResult> responseHandler = new StaxResponseHandler<SendMessageResult>(new SendMessageResultStaxUnmarshaller());
-
+            HttpResponseHandler<AmazonWebServiceResponse<SendMessageResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SendMessageResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1889,8 +2619,10 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 
     /**
      * <p>
-     * Delivers up to ten messages to the specified queue. This is a batch version of <code> <a>SendMessage</a>.</code>
-     * For a FIFO queue, multiple messages within a single batch are enqueued in the order they are sent.
+     * You can use <code>SendMessageBatch</code> to send up to 10 messages to the specified queue by assigning either
+     * identical or different values to each message (or by not assigning values at all). This is a batch version of
+     * <code> <a>SendMessage</a>.</code> For a FIFO queue, multiple messages within a single batch are enqueued in the
+     * order they are sent.
      * </p>
      * <p>
      * The result of sending each message is reported individually in the response. Because the batch request can result
@@ -1899,7 +2631,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * </p>
      * <p>
      * The maximum allowed individual message size and the maximum total payload size (the sum of the individual lengths
-     * of all of the batched messages) are both 256 KB (262,144 bytes).
+     * of all of the batched messages) are both 256 KiB (262,144 bytes).
      * </p>
      * <important>
      * <p>
@@ -1918,16 +2650,6 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * If you don't specify the <code>DelaySeconds</code> parameter for an entry, Amazon SQS uses the default value for
      * the queue.
      * </p>
-     * <p>
-     * Some actions take lists of parameters. These lists are specified using the <code>param.n</code> notation. Values
-     * of <code>n</code> are integers starting from 1. For example, a parameter list with two elements looks like this:
-     * </p>
-     * <p>
-     * <code>&amp;AttributeName.1=first</code>
-     * </p>
-     * <p>
-     * <code>&amp;AttributeName.2=second</code>
-     * </p>
      * 
      * @param sendMessageBatchRequest
      * @return Result of the SendMessageBatch operation returned by the service.
@@ -1943,6 +2665,61 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *         The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
      * @throws UnsupportedOperationException
      *         Error code 400. Unsupported operation.
+     * @throws RequestThrottledException
+     *         The request was denied due to request throttling.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The rate of requests per second exceeds the Amazon Web Services KMS request quota for an account and
+     *         Region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A burst or sustained high rate of requests to change the state of the same KMS key. This condition is
+     *         often known as a "hot key."
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might be throttled at a
+     *         lower-than-expected rate when the Amazon Web Services CloudHSM cluster associated with the Amazon Web
+     *         Services CloudHSM key store is processing numerous commands, including those unrelated to the Amazon Web
+     *         Services CloudHSM key store.
+     *         </p>
+     *         </li>
+     * @throws QueueDoesNotExistException
+     *         The specified queue doesn't exist.
+     * @throws InvalidSecurityException
+     *         When the request to a queue is not HTTPS and SigV4.
+     * @throws KmsDisabledException
+     *         The request was denied due to request throttling.
+     * @throws KmsInvalidStateException
+     *         The request was rejected because the state of the specified resource is not valid for this request.
+     * @throws KmsNotFoundException
+     *         The request was rejected because the specified entity or resource could not be found.
+     * @throws KmsOptInRequiredException
+     *         The request was rejected because the specified key policy isn't syntactically or semantically correct.
+     * @throws KmsThrottledException
+     *         Amazon Web Services KMS throttles requests for the following conditions.
+     * @throws KmsAccessDeniedException
+     *         The caller doesn't have the required KMS access.
+     * @throws KmsInvalidKeyUsageException
+     *         The request was rejected for one of the following reasons:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The KeyUsage value of the KMS key is incompatible with the API operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The encryption algorithm or signing algorithm specified for the operation is incompatible with the type
+     *         of key material in the KMS key (KeySpec).
+     *         </p>
+     *         </li>
+     * @throws InvalidAddressException
+     *         The <code>accountId</code> is invalid.
      * @sample AmazonSQS.SendMessageBatch
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SendMessageBatch" target="_top">AWS API
      *      Documentation</a>
@@ -1965,7 +2742,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SendMessageBatchRequestMarshaller().marshall(super.beforeMarshalling(sendMessageBatchRequest));
+                request = new SendMessageBatchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendMessageBatchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
@@ -1979,9 +2756,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<SendMessageBatchResult> responseHandler = new StaxResponseHandler<SendMessageBatchResult>(
-                    new SendMessageBatchResultStaxUnmarshaller());
-
+            HttpResponseHandler<AmazonWebServiceResponse<SendMessageBatchResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SendMessageBatchResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1999,9 +2775,11 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 
     /**
      * <p>
-     * Sets the value of one or more queue attributes. When you change a queue's attributes, the change can take up to
-     * 60 seconds for most of the attributes to propagate throughout the Amazon SQS system. Changes made to the
-     * <code>MessageRetentionPeriod</code> attribute can take up to 15 minutes.
+     * Sets the value of one or more queue attributes, like a policy. When you change a queue's attributes, the change
+     * can take up to 60 seconds for most of the attributes to propagate throughout the Amazon SQS system. Changes made
+     * to the <code>MessageRetentionPeriod</code> attribute can take up to 15 minutes and will impact existing messages
+     * in the queue potentially causing them to be expired and deleted if the <code>MessageRetentionPeriod</code> is
+     * reduced below the age of existing messages.
      * </p>
      * <note>
      * <ul>
@@ -2015,7 +2793,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Grant cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -2031,6 +2809,43 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * @return Result of the SetQueueAttributes operation returned by the service.
      * @throws InvalidAttributeNameException
      *         The specified attribute doesn't exist.
+     * @throws InvalidAttributeValueException
+     *         A queue attribute value is invalid.
+     * @throws RequestThrottledException
+     *         The request was denied due to request throttling.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The rate of requests per second exceeds the Amazon Web Services KMS request quota for an account and
+     *         Region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A burst or sustained high rate of requests to change the state of the same KMS key. This condition is
+     *         often known as a "hot key."
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might be throttled at a
+     *         lower-than-expected rate when the Amazon Web Services CloudHSM cluster associated with the Amazon Web
+     *         Services CloudHSM key store is processing numerous commands, including those unrelated to the Amazon Web
+     *         Services CloudHSM key store.
+     *         </p>
+     *         </li>
+     * @throws QueueDoesNotExistException
+     *         The specified queue doesn't exist.
+     * @throws UnsupportedOperationException
+     *         Error code 400. Unsupported operation.
+     * @throws OverLimitException
+     *         The specified action violates a limit. For example, <code>ReceiveMessage</code> returns this error if the
+     *         maximum number of in flight messages is reached and <code>AddPermission</code> returns this error if the
+     *         maximum number of permissions for the queue is reached.
+     * @throws InvalidAddressException
+     *         The <code>accountId</code> is invalid.
+     * @throws InvalidSecurityException
+     *         When the request to a queue is not HTTPS and SigV4.
      * @sample AmazonSQS.SetQueueAttributes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes" target="_top">AWS API
      *      Documentation</a>
@@ -2053,7 +2868,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new SetQueueAttributesRequestMarshaller().marshall(super.beforeMarshalling(setQueueAttributesRequest));
+                request = new SetQueueAttributesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setQueueAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
@@ -2067,9 +2882,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<SetQueueAttributesResult> responseHandler = new StaxResponseHandler<SetQueueAttributesResult>(
-                    new SetQueueAttributesResultStaxUnmarshaller());
-
+            HttpResponseHandler<AmazonWebServiceResponse<SetQueueAttributesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SetQueueAttributesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2083,6 +2897,116 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
     @Override
     public SetQueueAttributesResult setQueueAttributes(String queueUrl, java.util.Map<String, String> attributes) {
         return setQueueAttributes(new SetQueueAttributesRequest().withQueueUrl(queueUrl).withAttributes(attributes));
+    }
+
+    /**
+     * <p>
+     * Starts an asynchronous task to move messages from a specified source queue to a specified destination queue.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * This action is currently limited to supporting message redrive from queues that are configured as <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
+     * >dead-letter queues (DLQs)</a> of other Amazon SQS queues only. Non-SQS queue sources of dead-letter queues, such
+     * as Lambda or Amazon SNS topics, are currently not supported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In dead-letter queues redrive context, the <code>StartMessageMoveTask</code> the source queue is the DLQ, while
+     * the destination queue can be the original source queue (from which the messages were driven to the
+     * dead-letter-queue), or a custom destination queue.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Only one active message movement task is supported per queue at any given time.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param startMessageMoveTaskRequest
+     * @return Result of the StartMessageMoveTask operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         One or more specified resources don't exist.
+     * @throws RequestThrottledException
+     *         The request was denied due to request throttling.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The rate of requests per second exceeds the Amazon Web Services KMS request quota for an account and
+     *         Region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A burst or sustained high rate of requests to change the state of the same KMS key. This condition is
+     *         often known as a "hot key."
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might be throttled at a
+     *         lower-than-expected rate when the Amazon Web Services CloudHSM cluster associated with the Amazon Web
+     *         Services CloudHSM key store is processing numerous commands, including those unrelated to the Amazon Web
+     *         Services CloudHSM key store.
+     *         </p>
+     *         </li>
+     * @throws InvalidAddressException
+     *         The <code>accountId</code> is invalid.
+     * @throws InvalidSecurityException
+     *         When the request to a queue is not HTTPS and SigV4.
+     * @throws UnsupportedOperationException
+     *         Error code 400. Unsupported operation.
+     * @sample AmazonSQS.StartMessageMoveTask
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/StartMessageMoveTask" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StartMessageMoveTaskResult startMessageMoveTask(StartMessageMoveTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartMessageMoveTask(request);
+    }
+
+    @SdkInternalApi
+    final StartMessageMoveTaskResult executeStartMessageMoveTask(StartMessageMoveTaskRequest startMessageMoveTaskRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startMessageMoveTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartMessageMoveTaskRequest> request = null;
+        Response<StartMessageMoveTaskResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartMessageMoveTaskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startMessageMoveTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartMessageMoveTask");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartMessageMoveTaskResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartMessageMoveTaskResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -2125,12 +3049,43 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Grant cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </note>
      * 
      * @param tagQueueRequest
      * @return Result of the TagQueue operation returned by the service.
+     * @throws InvalidAddressException
+     *         The <code>accountId</code> is invalid.
+     * @throws RequestThrottledException
+     *         The request was denied due to request throttling.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The rate of requests per second exceeds the Amazon Web Services KMS request quota for an account and
+     *         Region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A burst or sustained high rate of requests to change the state of the same KMS key. This condition is
+     *         often known as a "hot key."
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might be throttled at a
+     *         lower-than-expected rate when the Amazon Web Services CloudHSM cluster associated with the Amazon Web
+     *         Services CloudHSM key store is processing numerous commands, including those unrelated to the Amazon Web
+     *         Services CloudHSM key store.
+     *         </p>
+     *         </li>
+     * @throws QueueDoesNotExistException
+     *         The specified queue doesn't exist.
+     * @throws InvalidSecurityException
+     *         When the request to a queue is not HTTPS and SigV4.
+     * @throws UnsupportedOperationException
+     *         Error code 400. Unsupported operation.
      * @sample AmazonSQS.TagQueue
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/TagQueue" target="_top">AWS API
      *      Documentation</a>
@@ -2153,7 +3108,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new TagQueueRequestMarshaller().marshall(super.beforeMarshalling(tagQueueRequest));
+                request = new TagQueueRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagQueueRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
@@ -2167,8 +3122,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<TagQueueResult> responseHandler = new StaxResponseHandler<TagQueueResult>(new TagQueueResultStaxUnmarshaller());
-
+            HttpResponseHandler<AmazonWebServiceResponse<TagQueueResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagQueueResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2194,12 +3149,43 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.
+     * >Grant cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer Guide</i>.
      * </p>
      * </note>
      * 
      * @param untagQueueRequest
      * @return Result of the UntagQueue operation returned by the service.
+     * @throws InvalidAddressException
+     *         The <code>accountId</code> is invalid.
+     * @throws RequestThrottledException
+     *         The request was denied due to request throttling.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The rate of requests per second exceeds the Amazon Web Services KMS request quota for an account and
+     *         Region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A burst or sustained high rate of requests to change the state of the same KMS key. This condition is
+     *         often known as a "hot key."
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might be throttled at a
+     *         lower-than-expected rate when the Amazon Web Services CloudHSM cluster associated with the Amazon Web
+     *         Services CloudHSM key store is processing numerous commands, including those unrelated to the Amazon Web
+     *         Services CloudHSM key store.
+     *         </p>
+     *         </li>
+     * @throws QueueDoesNotExistException
+     *         The specified queue doesn't exist.
+     * @throws InvalidSecurityException
+     *         When the request to a queue is not HTTPS and SigV4.
+     * @throws UnsupportedOperationException
+     *         Error code 400. Unsupported operation.
      * @sample AmazonSQS.UntagQueue
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/UntagQueue" target="_top">AWS API
      *      Documentation</a>
@@ -2222,7 +3208,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
-                request = new UntagQueueRequestMarshaller().marshall(super.beforeMarshalling(untagQueueRequest));
+                request = new UntagQueueRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagQueueRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
                 request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
@@ -2236,8 +3222,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<UntagQueueResult> responseHandler = new StaxResponseHandler<UntagQueueResult>(new UntagQueueResultStaxUnmarshaller());
-
+            HttpResponseHandler<AmazonWebServiceResponse<UntagQueueResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagQueueResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2324,9 +3310,15 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 
         request.setTimeOffset(timeOffset);
 
-        DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallersMap, defaultUnmarshaller);
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory.createErrorResponseHandler(new JsonErrorResponseMetadata()
+                .withAwsQueryCompatible(true));
 
         return client.execute(request, responseHandler, errorResponseHandler, executionContext);
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
+        return protocolFactory;
     }
 
     @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,9 +43,11 @@ public class RegexMatchStatement implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
-     * bypass detection. If you specify one or more transformations in a rule statement, WAF performs all
-     * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
-     * the lowest priority setting, before inspecting the content for a match.
+     * bypass detection. Text transformations are used in rule match statements, to transform the
+     * <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements,
+     * to transform request components before using them as custom aggregation keys. If you specify one or more
+     * transformations to apply, WAF performs all transformations on the specified content, starting from the lowest
+     * priority setting, and then uses the transformed component contents.
      * </p>
      */
     private java.util.List<TextTransformation> textTransformations;
@@ -133,15 +135,19 @@ public class RegexMatchStatement implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
-     * bypass detection. If you specify one or more transformations in a rule statement, WAF performs all
-     * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
-     * the lowest priority setting, before inspecting the content for a match.
+     * bypass detection. Text transformations are used in rule match statements, to transform the
+     * <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements,
+     * to transform request components before using them as custom aggregation keys. If you specify one or more
+     * transformations to apply, WAF performs all transformations on the specified content, starting from the lowest
+     * priority setting, and then uses the transformed component contents.
      * </p>
      * 
      * @return Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
-     *         effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs
-     *         all transformations on the content of the request component identified by <code>FieldToMatch</code>,
-     *         starting from the lowest priority setting, before inspecting the content for a match.
+     *         effort to bypass detection. Text transformations are used in rule match statements, to transform the
+     *         <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule
+     *         statements, to transform request components before using them as custom aggregation keys. If you specify
+     *         one or more transformations to apply, WAF performs all transformations on the specified content, starting
+     *         from the lowest priority setting, and then uses the transformed component contents.
      */
 
     public java.util.List<TextTransformation> getTextTransformations() {
@@ -151,16 +157,20 @@ public class RegexMatchStatement implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
-     * bypass detection. If you specify one or more transformations in a rule statement, WAF performs all
-     * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
-     * the lowest priority setting, before inspecting the content for a match.
+     * bypass detection. Text transformations are used in rule match statements, to transform the
+     * <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements,
+     * to transform request components before using them as custom aggregation keys. If you specify one or more
+     * transformations to apply, WAF performs all transformations on the specified content, starting from the lowest
+     * priority setting, and then uses the transformed component contents.
      * </p>
      * 
      * @param textTransformations
      *        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
-     *        effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs
-     *        all transformations on the content of the request component identified by <code>FieldToMatch</code>,
-     *        starting from the lowest priority setting, before inspecting the content for a match.
+     *        effort to bypass detection. Text transformations are used in rule match statements, to transform the
+     *        <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule
+     *        statements, to transform request components before using them as custom aggregation keys. If you specify
+     *        one or more transformations to apply, WAF performs all transformations on the specified content, starting
+     *        from the lowest priority setting, and then uses the transformed component contents.
      */
 
     public void setTextTransformations(java.util.Collection<TextTransformation> textTransformations) {
@@ -175,9 +185,11 @@ public class RegexMatchStatement implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
-     * bypass detection. If you specify one or more transformations in a rule statement, WAF performs all
-     * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
-     * the lowest priority setting, before inspecting the content for a match.
+     * bypass detection. Text transformations are used in rule match statements, to transform the
+     * <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements,
+     * to transform request components before using them as custom aggregation keys. If you specify one or more
+     * transformations to apply, WAF performs all transformations on the specified content, starting from the lowest
+     * priority setting, and then uses the transformed component contents.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -187,9 +199,11 @@ public class RegexMatchStatement implements Serializable, Cloneable, StructuredP
      * 
      * @param textTransformations
      *        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
-     *        effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs
-     *        all transformations on the content of the request component identified by <code>FieldToMatch</code>,
-     *        starting from the lowest priority setting, before inspecting the content for a match.
+     *        effort to bypass detection. Text transformations are used in rule match statements, to transform the
+     *        <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule
+     *        statements, to transform request components before using them as custom aggregation keys. If you specify
+     *        one or more transformations to apply, WAF performs all transformations on the specified content, starting
+     *        from the lowest priority setting, and then uses the transformed component contents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -206,16 +220,20 @@ public class RegexMatchStatement implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to
-     * bypass detection. If you specify one or more transformations in a rule statement, WAF performs all
-     * transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from
-     * the lowest priority setting, before inspecting the content for a match.
+     * bypass detection. Text transformations are used in rule match statements, to transform the
+     * <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements,
+     * to transform request components before using them as custom aggregation keys. If you specify one or more
+     * transformations to apply, WAF performs all transformations on the specified content, starting from the lowest
+     * priority setting, and then uses the transformed component contents.
      * </p>
      * 
      * @param textTransformations
      *        Text transformations eliminate some of the unusual formatting that attackers use in web requests in an
-     *        effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs
-     *        all transformations on the content of the request component identified by <code>FieldToMatch</code>,
-     *        starting from the lowest priority setting, before inspecting the content for a match.
+     *        effort to bypass detection. Text transformations are used in rule match statements, to transform the
+     *        <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule
+     *        statements, to transform request components before using them as custom aggregation keys. If you specify
+     *        one or more transformations to apply, WAF performs all transformations on the specified content, starting
+     *        from the lowest priority setting, and then uses the transformed component contents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,8 @@ import static org.junit.Assert.fail;
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.argThat;
 import static org.mockito.Matchers.eq;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
@@ -37,9 +39,13 @@ import com.amazonaws.retry.internal.CredentialsEndpointRetryParameters;
 import com.amazonaws.retry.internal.CredentialsEndpointRetryPolicy;
 import com.amazonaws.util.VersionInfoUtils;
 import com.github.tomakehurst.wiremock.junit.WireMockRule;
+
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import org.hamcrest.Matcher;
@@ -170,7 +176,7 @@ public class EC2ResourceFetcherTest {
     @Test
     @SuppressWarnings("unchecked")
     public void readResourceWithDefaultRetryPolicy_DoesNotRetry_ForIoException() throws IOException {
-        Mockito.when(mockConnection.connectToEndpoint(eq(endpoint), any(Map.class), eq("GET"))).thenThrow(new IOException());
+        when(mockConnection.connectToEndpoint(eq(endpoint), any(Map.class), eq("GET"))).thenThrow(new IOException());
 
         try {
             new DefaultEC2ResourceFetcher(mockConnection).readResource(endpoint);
@@ -188,7 +194,7 @@ public class EC2ResourceFetcherTest {
     @Test
     @SuppressWarnings("unchecked")
     public void readResourceWithCustomRetryPolicy_DoesRetry_ForIoException() throws IOException {
-        Mockito.when(mockConnection.connectToEndpoint(eq(endpoint), any(Map.class), eq("GET"))).thenThrow(new IOException());
+        when(mockConnection.connectToEndpoint(eq(endpoint), any(Map.class), eq("GET"))).thenThrow(new IOException());
 
         try {
             new DefaultEC2ResourceFetcher(mockConnection).readResource(endpoint, customRetryPolicy);
@@ -223,7 +229,7 @@ public class EC2ResourceFetcherTest {
     @Test
     @SuppressWarnings("unchecked")
     public void readResource_AddsSDKUserAgent() throws IOException {
-        Mockito.when(mockConnection.connectToEndpoint(eq(endpoint), any(Map.class), eq("GET"))).thenThrow(new IOException());
+        when(mockConnection.connectToEndpoint(eq(endpoint), any(Map.class), eq("GET"))).thenThrow(new IOException());
 
         try {
             new DefaultEC2ResourceFetcher(mockConnection).readResource(endpoint);
@@ -241,7 +247,7 @@ public class EC2ResourceFetcherTest {
     @Test
     @SuppressWarnings("unchecked")
     public void readResourceWithCustomRetryPolicy_AddsSDKUserAgent() throws IOException {
-        Mockito.when(mockConnection.connectToEndpoint(eq(endpoint), any(Map.class), eq("GET"))).thenThrow(new IOException());
+        when(mockConnection.connectToEndpoint(eq(endpoint), any(Map.class), eq("GET"))).thenThrow(new IOException());
 
         try {
             new DefaultEC2ResourceFetcher(mockConnection).readResource(endpoint, customRetryPolicy, new HashMap<String, String>());
@@ -260,7 +266,7 @@ public class EC2ResourceFetcherTest {
     @Test
     @SuppressWarnings("unchecked")
     public void readResourceWithCustomRetryPolicyAndHeaders_AddsSDKUserAgent() throws IOException {
-        Mockito.when(mockConnection.connectToEndpoint(eq(endpoint), any(Map.class), eq("GET"))).thenThrow(new IOException());
+        when(mockConnection.connectToEndpoint(eq(endpoint), any(Map.class), eq("GET"))).thenThrow(new IOException());
 
         try {
             Map<String, String> headers = new HashMap<String, String>();
@@ -273,6 +279,36 @@ public class EC2ResourceFetcherTest {
                 hasEntry("Foo", "Bar")
             );
             Mockito.verify(mockConnection, Mockito.times(CustomRetryPolicy.MAX_RETRIES + 1)).connectToEndpoint(eq(endpoint), (Map<String, String>) argThat(expectedHeaders), eq("GET"));
+        }
+    }
+
+    @Test
+    public void readResource_2xx_inputStreamClosed() throws IOException {
+        HttpURLConnection mockUrlConn = mock(HttpURLConnection.class);
+        when(mockUrlConn.getResponseCode()).thenReturn(200);
+        TestInputStream is = new TestInputStream();
+        when(mockUrlConn.getInputStream()).thenReturn(is);
+        when(mockConnection.connectToEndpoint(eq(endpoint), any(Map.class), eq("GET"))).thenReturn(mockUrlConn);
+
+        new DefaultEC2ResourceFetcher(mockConnection).readResource(endpoint, customRetryPolicy, Collections.<String, String>emptyMap());
+
+        assertTrue(is.closed);
+    }
+
+    @Test
+    public void readResource_4xx_inputStreamClosed() throws IOException {
+        HttpURLConnection mockUrlConn = mock(HttpURLConnection.class);
+        when(mockUrlConn.getResponseCode()).thenReturn(404);
+        TestInputStream is = new TestInputStream();
+        when(mockUrlConn.getErrorStream()).thenReturn(is);
+        when(mockConnection.connectToEndpoint(eq(endpoint), any(Map.class), eq("GET"))).thenReturn(mockUrlConn);
+
+        try {
+            new DefaultEC2ResourceFetcher(mockConnection).readResource(endpoint, customRetryPolicy,
+                    Collections.<String, String>emptyMap());
+        } catch (Exception ignored) {
+        } finally {
+            assertTrue(is.closed);
         }
     }
 
@@ -308,6 +344,20 @@ public class EC2ResourceFetcherTest {
             return false;
         }
 
+    }
+
+    private static class TestInputStream extends ByteArrayInputStream {
+        private boolean closed = false;
+
+        public TestInputStream() {
+            super(new byte[0]);
+        }
+
+        @Override
+        public void close() throws IOException {
+            closed = true;
+            super.close();
+        }
     }
 
 }

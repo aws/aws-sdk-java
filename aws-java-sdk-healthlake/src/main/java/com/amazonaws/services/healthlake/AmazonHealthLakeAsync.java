@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,7 @@ import com.amazonaws.services.healthlake.model.*;
  * </p>
  * <p>
  * <p>
- * Amazon HealthLake is a HIPAA eligibile service that allows customers to store, transform, query, and analyze their
+ * AWS HealthLake is a HIPAA eligibile service that allows customers to store, transform, query, and analyze their
  * FHIR-formatted data in a consistent fashion in the cloud.
  * </p>
  */
@@ -35,7 +35,7 @@ public interface AmazonHealthLakeAsync extends AmazonHealthLake {
 
     /**
      * <p>
-     * Creates a Data Store that can ingest and export FHIR formatted data.
+     * Creates a data store that can ingest and export FHIR formatted data.
      * </p>
      * 
      * @param createFHIRDatastoreRequest
@@ -48,7 +48,7 @@ public interface AmazonHealthLakeAsync extends AmazonHealthLake {
 
     /**
      * <p>
-     * Creates a Data Store that can ingest and export FHIR formatted data.
+     * Creates a data store that can ingest and export FHIR formatted data.
      * </p>
      * 
      * @param createFHIRDatastoreRequest
@@ -66,7 +66,7 @@ public interface AmazonHealthLakeAsync extends AmazonHealthLake {
 
     /**
      * <p>
-     * Deletes a Data Store.
+     * Deletes a data store.
      * </p>
      * 
      * @param deleteFHIRDatastoreRequest
@@ -79,7 +79,7 @@ public interface AmazonHealthLakeAsync extends AmazonHealthLake {
 
     /**
      * <p>
-     * Deletes a Data Store.
+     * Deletes a data store.
      * </p>
      * 
      * @param deleteFHIRDatastoreRequest
@@ -97,8 +97,8 @@ public interface AmazonHealthLakeAsync extends AmazonHealthLake {
 
     /**
      * <p>
-     * Gets the properties associated with the FHIR Data Store, including the Data Store ID, Data Store ARN, Data Store
-     * name, Data Store status, created at, Data Store type version, and Data Store endpoint.
+     * Gets the properties associated with the FHIR data store, including the data store ID, data store ARN, data store
+     * name, data store status, when the data store was created, data store type version, and the data store's endpoint.
      * </p>
      * 
      * @param describeFHIRDatastoreRequest
@@ -111,8 +111,8 @@ public interface AmazonHealthLakeAsync extends AmazonHealthLake {
 
     /**
      * <p>
-     * Gets the properties associated with the FHIR Data Store, including the Data Store ID, Data Store ARN, Data Store
-     * name, Data Store status, created at, Data Store type version, and Data Store endpoint.
+     * Gets the properties associated with the FHIR data store, including the data store ID, data store ARN, data store
+     * name, data store status, when the data store was created, data store type version, and the data store's endpoint.
      * </p>
      * 
      * @param describeFHIRDatastoreRequest
@@ -192,7 +192,7 @@ public interface AmazonHealthLakeAsync extends AmazonHealthLake {
 
     /**
      * <p>
-     * Lists all FHIR Data Stores that are in the user’s account, regardless of Data Store status.
+     * Lists all FHIR data stores that are in the user’s account, regardless of data store status.
      * </p>
      * 
      * @param listFHIRDatastoresRequest
@@ -205,7 +205,7 @@ public interface AmazonHealthLakeAsync extends AmazonHealthLake {
 
     /**
      * <p>
-     * Lists all FHIR Data Stores that are in the user’s account, regardless of Data Store status.
+     * Lists all FHIR data stores that are in the user’s account, regardless of data store status.
      * </p>
      * 
      * @param listFHIRDatastoresRequest
@@ -285,7 +285,7 @@ public interface AmazonHealthLakeAsync extends AmazonHealthLake {
 
     /**
      * <p>
-     * Returns a list of all existing tags associated with a Data Store.
+     * Returns a list of all existing tags associated with a data store.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -298,7 +298,7 @@ public interface AmazonHealthLakeAsync extends AmazonHealthLake {
 
     /**
      * <p>
-     * Returns a list of all existing tags associated with a Data Store.
+     * Returns a list of all existing tags associated with a data store.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -378,7 +378,7 @@ public interface AmazonHealthLakeAsync extends AmazonHealthLake {
 
     /**
      * <p>
-     * Adds a user specifed key and value tag to a Data Store.
+     * Adds a user specified key and value tag to a data store.
      * </p>
      * 
      * @param tagResourceRequest
@@ -391,7 +391,7 @@ public interface AmazonHealthLakeAsync extends AmazonHealthLake {
 
     /**
      * <p>
-     * Adds a user specifed key and value tag to a Data Store.
+     * Adds a user specified key and value tag to a data store.
      * </p>
      * 
      * @param tagResourceRequest
@@ -409,7 +409,7 @@ public interface AmazonHealthLakeAsync extends AmazonHealthLake {
 
     /**
      * <p>
-     * Removes tags from a Data Store.
+     * Removes tags from a data store.
      * </p>
      * 
      * @param untagResourceRequest
@@ -422,7 +422,7 @@ public interface AmazonHealthLakeAsync extends AmazonHealthLake {
 
     /**
      * <p>
-     * Removes tags from a Data Store.
+     * Removes tags from a data store.
      * </p>
      * 
      * @param untagResourceRequest

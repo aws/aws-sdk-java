@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class UpdateApiCacheRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("apiCachingBehavior").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("type").build();
+    private static final MarshallingInfo<String> HEALTHMETRICSCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("healthMetricsConfig").build();
 
     private static final UpdateApiCacheRequestMarshaller instance = new UpdateApiCacheRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class UpdateApiCacheRequestMarshaller {
             protocolMarshaller.marshall(updateApiCacheRequest.getTtl(), TTL_BINDING);
             protocolMarshaller.marshall(updateApiCacheRequest.getApiCachingBehavior(), APICACHINGBEHAVIOR_BINDING);
             protocolMarshaller.marshall(updateApiCacheRequest.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(updateApiCacheRequest.getHealthMetricsConfig(), HEALTHMETRICSCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

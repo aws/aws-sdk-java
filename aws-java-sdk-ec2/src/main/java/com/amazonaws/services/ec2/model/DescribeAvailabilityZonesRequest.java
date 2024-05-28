@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,7 +35,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * <p>
      * <code>group-name</code> - For Availability Zones, use the Region name. For Local Zones, use the name of the group
      * associated with the Local Zone (for example, <code>us-west-2-lax-1</code>) For Wavelength Zones, use the name of
-     * the group associated with the Wavelength Zone (for example, <code>us-east-1-wl1-bos-wlz-1</code>).
+     * the group associated with the Wavelength Zone (for example, <code>us-east-1-wl1</code>).
      * </p>
      * </li>
      * <li>
@@ -45,20 +45,20 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code>, and <code>not-opted-in</code> |
+     * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code> | <code>not-opted-in</code> |
      * <code>opt-in-not-required</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>parent-zoneID</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone control
+     * <code>parent-zone-id</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone control
      * plane operations, such as API calls.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>parent-zoneName</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone control
-     * plane operations, such as API calls.
+     * <code>parent-zone-name</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
+     * control plane operations, such as API calls.
      * </p>
      * </li>
      * <li>
@@ -80,11 +80,6 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>), the Local Zone
      * (for example, <code>us-west-2-lax-1a</code>), or the Wavelength Zone (for example,
      * <code>us-east-1-wl1-bos-wlz-1</code>).
@@ -92,7 +87,8 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
+     * <code>zone-type</code> - The type of zone (<code>availability-zone</code> | <code>local-zone</code> |
+     * <code>wavelength-zone</code>).
      * </p>
      * </li>
      * </ul>
@@ -130,7 +126,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * <p>
      * <code>group-name</code> - For Availability Zones, use the Region name. For Local Zones, use the name of the group
      * associated with the Local Zone (for example, <code>us-west-2-lax-1</code>) For Wavelength Zones, use the name of
-     * the group associated with the Wavelength Zone (for example, <code>us-east-1-wl1-bos-wlz-1</code>).
+     * the group associated with the Wavelength Zone (for example, <code>us-east-1-wl1</code>).
      * </p>
      * </li>
      * <li>
@@ -140,20 +136,20 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code>, and <code>not-opted-in</code> |
+     * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code> | <code>not-opted-in</code> |
      * <code>opt-in-not-required</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>parent-zoneID</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone control
+     * <code>parent-zone-id</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone control
      * plane operations, such as API calls.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>parent-zoneName</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone control
-     * plane operations, such as API calls.
+     * <code>parent-zone-name</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
+     * control plane operations, such as API calls.
      * </p>
      * </li>
      * <li>
@@ -175,11 +171,6 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>), the Local Zone
      * (for example, <code>us-west-2-lax-1a</code>), or the Wavelength Zone (for example,
      * <code>us-east-1-wl1-bos-wlz-1</code>).
@@ -187,7 +178,8 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
+     * <code>zone-type</code> - The type of zone (<code>availability-zone</code> | <code>local-zone</code> |
+     * <code>wavelength-zone</code>).
      * </p>
      * </li>
      * </ul>
@@ -199,7 +191,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *         <code>group-name</code> - For Availability Zones, use the Region name. For Local Zones, use the name of
      *         the group associated with the Local Zone (for example, <code>us-west-2-lax-1</code>) For Wavelength
      *         Zones, use the name of the group associated with the Wavelength Zone (for example,
-     *         <code>us-east-1-wl1-bos-wlz-1</code>).
+     *         <code>us-east-1-wl1</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -209,20 +201,20 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *         </li>
      *         <li>
      *         <p>
-     *         <code>opt-in-status</code> - The opt-in status (<code>opted-in</code>, and <code>not-opted-in</code> |
+     *         <code>opt-in-status</code> - The opt-in status (<code>opted-in</code> | <code>not-opted-in</code> |
      *         <code>opt-in-not-required</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>parent-zoneID</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
+     *         <code>parent-zone-id</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
      *         control plane operations, such as API calls.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>parent-zoneName</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
-     *         control plane operations, such as API calls.
+     *         <code>parent-zone-name</code> - The ID of the zone that handles some of the Local Zone and Wavelength
+     *         Zone control plane operations, such as API calls.
      *         </p>
      *         </li>
      *         <li>
@@ -245,11 +237,6 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *         </li>
      *         <li>
      *         <p>
-     *         <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>), the
      *         Local Zone (for example, <code>us-west-2-lax-1a</code>), or the Wavelength Zone (for example,
      *         <code>us-east-1-wl1-bos-wlz-1</code>).
@@ -257,7 +244,8 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *         </li>
      *         <li>
      *         <p>
-     *         <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
+     *         <code>zone-type</code> - The type of zone (<code>availability-zone</code> | <code>local-zone</code> |
+     *         <code>wavelength-zone</code>).
      *         </p>
      *         </li>
      */
@@ -278,7 +266,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * <p>
      * <code>group-name</code> - For Availability Zones, use the Region name. For Local Zones, use the name of the group
      * associated with the Local Zone (for example, <code>us-west-2-lax-1</code>) For Wavelength Zones, use the name of
-     * the group associated with the Wavelength Zone (for example, <code>us-east-1-wl1-bos-wlz-1</code>).
+     * the group associated with the Wavelength Zone (for example, <code>us-east-1-wl1</code>).
      * </p>
      * </li>
      * <li>
@@ -288,20 +276,20 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code>, and <code>not-opted-in</code> |
+     * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code> | <code>not-opted-in</code> |
      * <code>opt-in-not-required</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>parent-zoneID</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone control
+     * <code>parent-zone-id</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone control
      * plane operations, such as API calls.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>parent-zoneName</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone control
-     * plane operations, such as API calls.
+     * <code>parent-zone-name</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
+     * control plane operations, such as API calls.
      * </p>
      * </li>
      * <li>
@@ -323,11 +311,6 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>), the Local Zone
      * (for example, <code>us-west-2-lax-1a</code>), or the Wavelength Zone (for example,
      * <code>us-east-1-wl1-bos-wlz-1</code>).
@@ -335,7 +318,8 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
+     * <code>zone-type</code> - The type of zone (<code>availability-zone</code> | <code>local-zone</code> |
+     * <code>wavelength-zone</code>).
      * </p>
      * </li>
      * </ul>
@@ -347,8 +331,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *        <p>
      *        <code>group-name</code> - For Availability Zones, use the Region name. For Local Zones, use the name of
      *        the group associated with the Local Zone (for example, <code>us-west-2-lax-1</code>) For Wavelength Zones,
-     *        use the name of the group associated with the Wavelength Zone (for example,
-     *        <code>us-east-1-wl1-bos-wlz-1</code>).
+     *        use the name of the group associated with the Wavelength Zone (for example, <code>us-east-1-wl1</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -358,19 +341,19 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>opt-in-status</code> - The opt-in status (<code>opted-in</code>, and <code>not-opted-in</code> |
+     *        <code>opt-in-status</code> - The opt-in status (<code>opted-in</code> | <code>not-opted-in</code> |
      *        <code>opt-in-not-required</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>parent-zoneID</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
+     *        <code>parent-zone-id</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
      *        control plane operations, such as API calls.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>parent-zoneName</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
+     *        <code>parent-zone-name</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
      *        control plane operations, such as API calls.
      *        </p>
      *        </li>
@@ -394,11 +377,6 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>), the
      *        Local Zone (for example, <code>us-west-2-lax-1a</code>), or the Wavelength Zone (for example,
      *        <code>us-east-1-wl1-bos-wlz-1</code>).
@@ -406,7 +384,8 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
+     *        <code>zone-type</code> - The type of zone (<code>availability-zone</code> | <code>local-zone</code> |
+     *        <code>wavelength-zone</code>).
      *        </p>
      *        </li>
      */
@@ -429,7 +408,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * <p>
      * <code>group-name</code> - For Availability Zones, use the Region name. For Local Zones, use the name of the group
      * associated with the Local Zone (for example, <code>us-west-2-lax-1</code>) For Wavelength Zones, use the name of
-     * the group associated with the Wavelength Zone (for example, <code>us-east-1-wl1-bos-wlz-1</code>).
+     * the group associated with the Wavelength Zone (for example, <code>us-east-1-wl1</code>).
      * </p>
      * </li>
      * <li>
@@ -439,20 +418,20 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code>, and <code>not-opted-in</code> |
+     * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code> | <code>not-opted-in</code> |
      * <code>opt-in-not-required</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>parent-zoneID</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone control
+     * <code>parent-zone-id</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone control
      * plane operations, such as API calls.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>parent-zoneName</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone control
-     * plane operations, such as API calls.
+     * <code>parent-zone-name</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
+     * control plane operations, such as API calls.
      * </p>
      * </li>
      * <li>
@@ -474,11 +453,6 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>), the Local Zone
      * (for example, <code>us-west-2-lax-1a</code>), or the Wavelength Zone (for example,
      * <code>us-east-1-wl1-bos-wlz-1</code>).
@@ -486,7 +460,8 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
+     * <code>zone-type</code> - The type of zone (<code>availability-zone</code> | <code>local-zone</code> |
+     * <code>wavelength-zone</code>).
      * </p>
      * </li>
      * </ul>
@@ -503,8 +478,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *        <p>
      *        <code>group-name</code> - For Availability Zones, use the Region name. For Local Zones, use the name of
      *        the group associated with the Local Zone (for example, <code>us-west-2-lax-1</code>) For Wavelength Zones,
-     *        use the name of the group associated with the Wavelength Zone (for example,
-     *        <code>us-east-1-wl1-bos-wlz-1</code>).
+     *        use the name of the group associated with the Wavelength Zone (for example, <code>us-east-1-wl1</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -514,19 +488,19 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>opt-in-status</code> - The opt-in status (<code>opted-in</code>, and <code>not-opted-in</code> |
+     *        <code>opt-in-status</code> - The opt-in status (<code>opted-in</code> | <code>not-opted-in</code> |
      *        <code>opt-in-not-required</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>parent-zoneID</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
+     *        <code>parent-zone-id</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
      *        control plane operations, such as API calls.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>parent-zoneName</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
+     *        <code>parent-zone-name</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
      *        control plane operations, such as API calls.
      *        </p>
      *        </li>
@@ -550,11 +524,6 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>), the
      *        Local Zone (for example, <code>us-west-2-lax-1a</code>), or the Wavelength Zone (for example,
      *        <code>us-east-1-wl1-bos-wlz-1</code>).
@@ -562,7 +531,8 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
+     *        <code>zone-type</code> - The type of zone (<code>availability-zone</code> | <code>local-zone</code> |
+     *        <code>wavelength-zone</code>).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -587,7 +557,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * <p>
      * <code>group-name</code> - For Availability Zones, use the Region name. For Local Zones, use the name of the group
      * associated with the Local Zone (for example, <code>us-west-2-lax-1</code>) For Wavelength Zones, use the name of
-     * the group associated with the Wavelength Zone (for example, <code>us-east-1-wl1-bos-wlz-1</code>).
+     * the group associated with the Wavelength Zone (for example, <code>us-east-1-wl1</code>).
      * </p>
      * </li>
      * <li>
@@ -597,20 +567,20 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code>, and <code>not-opted-in</code> |
+     * <code>opt-in-status</code> - The opt-in status (<code>opted-in</code> | <code>not-opted-in</code> |
      * <code>opt-in-not-required</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>parent-zoneID</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone control
+     * <code>parent-zone-id</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone control
      * plane operations, such as API calls.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>parent-zoneName</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone control
-     * plane operations, such as API calls.
+     * <code>parent-zone-name</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
+     * control plane operations, such as API calls.
      * </p>
      * </li>
      * <li>
@@ -632,11 +602,6 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>), the Local Zone
      * (for example, <code>us-west-2-lax-1a</code>), or the Wavelength Zone (for example,
      * <code>us-east-1-wl1-bos-wlz-1</code>).
@@ -644,7 +609,8 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
+     * <code>zone-type</code> - The type of zone (<code>availability-zone</code> | <code>local-zone</code> |
+     * <code>wavelength-zone</code>).
      * </p>
      * </li>
      * </ul>
@@ -656,8 +622,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *        <p>
      *        <code>group-name</code> - For Availability Zones, use the Region name. For Local Zones, use the name of
      *        the group associated with the Local Zone (for example, <code>us-west-2-lax-1</code>) For Wavelength Zones,
-     *        use the name of the group associated with the Wavelength Zone (for example,
-     *        <code>us-east-1-wl1-bos-wlz-1</code>).
+     *        use the name of the group associated with the Wavelength Zone (for example, <code>us-east-1-wl1</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -667,19 +632,19 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>opt-in-status</code> - The opt-in status (<code>opted-in</code>, and <code>not-opted-in</code> |
+     *        <code>opt-in-status</code> - The opt-in status (<code>opted-in</code> | <code>not-opted-in</code> |
      *        <code>opt-in-not-required</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>parent-zoneID</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
+     *        <code>parent-zone-id</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
      *        control plane operations, such as API calls.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>parent-zoneName</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
+     *        <code>parent-zone-name</code> - The ID of the zone that handles some of the Local Zone and Wavelength Zone
      *        control plane operations, such as API calls.
      *        </p>
      *        </li>
@@ -703,11 +668,6 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>), the
      *        Local Zone (for example, <code>us-west-2-lax-1a</code>), or the Wavelength Zone (for example,
      *        <code>us-east-1-wl1-bos-wlz-1</code>).
@@ -715,7 +675,8 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>zone-type</code> - The type of zone, for example, <code>local-zone</code>.
+     *        <code>zone-type</code> - The type of zone (<code>availability-zone</code> | <code>local-zone</code> |
+     *        <code>wavelength-zone</code>).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

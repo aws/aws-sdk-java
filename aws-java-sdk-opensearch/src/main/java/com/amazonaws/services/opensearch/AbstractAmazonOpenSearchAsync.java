@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,19 @@ public class AbstractAmazonOpenSearchAsync extends AbstractAmazonOpenSearch impl
     }
 
     @Override
+    public java.util.concurrent.Future<AddDataSourceResult> addDataSourceAsync(AddDataSourceRequest request) {
+
+        return addDataSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddDataSourceResult> addDataSourceAsync(AddDataSourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<AddDataSourceRequest, AddDataSourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<AddTagsResult> addTagsAsync(AddTagsRequest request) {
 
         return addTagsAsync(request, null);
@@ -62,6 +75,32 @@ public class AbstractAmazonOpenSearchAsync extends AbstractAmazonOpenSearch impl
     @Override
     public java.util.concurrent.Future<AssociatePackageResult> associatePackageAsync(AssociatePackageRequest request,
             com.amazonaws.handlers.AsyncHandler<AssociatePackageRequest, AssociatePackageResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AuthorizeVpcEndpointAccessResult> authorizeVpcEndpointAccessAsync(AuthorizeVpcEndpointAccessRequest request) {
+
+        return authorizeVpcEndpointAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AuthorizeVpcEndpointAccessResult> authorizeVpcEndpointAccessAsync(AuthorizeVpcEndpointAccessRequest request,
+            com.amazonaws.handlers.AsyncHandler<AuthorizeVpcEndpointAccessRequest, AuthorizeVpcEndpointAccessResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelDomainConfigChangeResult> cancelDomainConfigChangeAsync(CancelDomainConfigChangeRequest request) {
+
+        return cancelDomainConfigChangeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelDomainConfigChangeResult> cancelDomainConfigChangeAsync(CancelDomainConfigChangeRequest request,
+            com.amazonaws.handlers.AsyncHandler<CancelDomainConfigChangeRequest, CancelDomainConfigChangeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -119,6 +158,32 @@ public class AbstractAmazonOpenSearchAsync extends AbstractAmazonOpenSearch impl
     }
 
     @Override
+    public java.util.concurrent.Future<CreateVpcEndpointResult> createVpcEndpointAsync(CreateVpcEndpointRequest request) {
+
+        return createVpcEndpointAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVpcEndpointResult> createVpcEndpointAsync(CreateVpcEndpointRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateVpcEndpointRequest, CreateVpcEndpointResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDataSourceResult> deleteDataSourceAsync(DeleteDataSourceRequest request) {
+
+        return deleteDataSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDataSourceResult> deleteDataSourceAsync(DeleteDataSourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteDataSourceRequest, DeleteDataSourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDomainResult> deleteDomainAsync(DeleteDomainRequest request) {
 
         return deleteDomainAsync(request, null);
@@ -166,6 +231,19 @@ public class AbstractAmazonOpenSearchAsync extends AbstractAmazonOpenSearch impl
     @Override
     public java.util.concurrent.Future<DeletePackageResult> deletePackageAsync(DeletePackageRequest request,
             com.amazonaws.handlers.AsyncHandler<DeletePackageRequest, DeletePackageResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVpcEndpointResult> deleteVpcEndpointAsync(DeleteVpcEndpointRequest request) {
+
+        return deleteVpcEndpointAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVpcEndpointResult> deleteVpcEndpointAsync(DeleteVpcEndpointRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteVpcEndpointRequest, DeleteVpcEndpointResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -223,6 +301,32 @@ public class AbstractAmazonOpenSearchAsync extends AbstractAmazonOpenSearch impl
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeDomainHealthResult> describeDomainHealthAsync(DescribeDomainHealthRequest request) {
+
+        return describeDomainHealthAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDomainHealthResult> describeDomainHealthAsync(DescribeDomainHealthRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeDomainHealthRequest, DescribeDomainHealthResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDomainNodesResult> describeDomainNodesAsync(DescribeDomainNodesRequest request) {
+
+        return describeDomainNodesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDomainNodesResult> describeDomainNodesAsync(DescribeDomainNodesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeDomainNodesRequest, DescribeDomainNodesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeDomainsResult> describeDomainsAsync(DescribeDomainsRequest request) {
 
         return describeDomainsAsync(request, null);
@@ -231,6 +335,19 @@ public class AbstractAmazonOpenSearchAsync extends AbstractAmazonOpenSearch impl
     @Override
     public java.util.concurrent.Future<DescribeDomainsResult> describeDomainsAsync(DescribeDomainsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeDomainsRequest, DescribeDomainsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDryRunProgressResult> describeDryRunProgressAsync(DescribeDryRunProgressRequest request) {
+
+        return describeDryRunProgressAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDryRunProgressResult> describeDryRunProgressAsync(DescribeDryRunProgressRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeDryRunProgressRequest, DescribeDryRunProgressResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -316,6 +433,19 @@ public class AbstractAmazonOpenSearchAsync extends AbstractAmazonOpenSearch impl
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeVpcEndpointsResult> describeVpcEndpointsAsync(DescribeVpcEndpointsRequest request) {
+
+        return describeVpcEndpointsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeVpcEndpointsResult> describeVpcEndpointsAsync(DescribeVpcEndpointsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeVpcEndpointsRequest, DescribeVpcEndpointsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DissociatePackageResult> dissociatePackageAsync(DissociatePackageRequest request) {
 
         return dissociatePackageAsync(request, null);
@@ -337,6 +467,32 @@ public class AbstractAmazonOpenSearchAsync extends AbstractAmazonOpenSearch impl
     @Override
     public java.util.concurrent.Future<GetCompatibleVersionsResult> getCompatibleVersionsAsync(GetCompatibleVersionsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetCompatibleVersionsRequest, GetCompatibleVersionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDataSourceResult> getDataSourceAsync(GetDataSourceRequest request) {
+
+        return getDataSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDataSourceResult> getDataSourceAsync(GetDataSourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDataSourceRequest, GetDataSourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDomainMaintenanceStatusResult> getDomainMaintenanceStatusAsync(GetDomainMaintenanceStatusRequest request) {
+
+        return getDomainMaintenanceStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDomainMaintenanceStatusResult> getDomainMaintenanceStatusAsync(GetDomainMaintenanceStatusRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDomainMaintenanceStatusRequest, GetDomainMaintenanceStatusResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -376,6 +532,32 @@ public class AbstractAmazonOpenSearchAsync extends AbstractAmazonOpenSearch impl
     @Override
     public java.util.concurrent.Future<GetUpgradeStatusResult> getUpgradeStatusAsync(GetUpgradeStatusRequest request,
             com.amazonaws.handlers.AsyncHandler<GetUpgradeStatusRequest, GetUpgradeStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataSourcesResult> listDataSourcesAsync(ListDataSourcesRequest request) {
+
+        return listDataSourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataSourcesResult> listDataSourcesAsync(ListDataSourcesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDataSourcesRequest, ListDataSourcesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDomainMaintenancesResult> listDomainMaintenancesAsync(ListDomainMaintenancesRequest request) {
+
+        return listDomainMaintenancesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDomainMaintenancesResult> listDomainMaintenancesAsync(ListDomainMaintenancesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDomainMaintenancesRequest, ListDomainMaintenancesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -433,6 +615,19 @@ public class AbstractAmazonOpenSearchAsync extends AbstractAmazonOpenSearch impl
     }
 
     @Override
+    public java.util.concurrent.Future<ListScheduledActionsResult> listScheduledActionsAsync(ListScheduledActionsRequest request) {
+
+        return listScheduledActionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListScheduledActionsResult> listScheduledActionsAsync(ListScheduledActionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListScheduledActionsRequest, ListScheduledActionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest request) {
 
         return listTagsAsync(request, null);
@@ -454,6 +649,45 @@ public class AbstractAmazonOpenSearchAsync extends AbstractAmazonOpenSearch impl
     @Override
     public java.util.concurrent.Future<ListVersionsResult> listVersionsAsync(ListVersionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListVersionsRequest, ListVersionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVpcEndpointAccessResult> listVpcEndpointAccessAsync(ListVpcEndpointAccessRequest request) {
+
+        return listVpcEndpointAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVpcEndpointAccessResult> listVpcEndpointAccessAsync(ListVpcEndpointAccessRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListVpcEndpointAccessRequest, ListVpcEndpointAccessResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVpcEndpointsResult> listVpcEndpointsAsync(ListVpcEndpointsRequest request) {
+
+        return listVpcEndpointsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVpcEndpointsResult> listVpcEndpointsAsync(ListVpcEndpointsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListVpcEndpointsRequest, ListVpcEndpointsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVpcEndpointsForDomainResult> listVpcEndpointsForDomainAsync(ListVpcEndpointsForDomainRequest request) {
+
+        return listVpcEndpointsForDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVpcEndpointsForDomainResult> listVpcEndpointsForDomainAsync(ListVpcEndpointsForDomainRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListVpcEndpointsForDomainRequest, ListVpcEndpointsForDomainResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -500,6 +734,32 @@ public class AbstractAmazonOpenSearchAsync extends AbstractAmazonOpenSearch impl
     }
 
     @Override
+    public java.util.concurrent.Future<RevokeVpcEndpointAccessResult> revokeVpcEndpointAccessAsync(RevokeVpcEndpointAccessRequest request) {
+
+        return revokeVpcEndpointAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RevokeVpcEndpointAccessResult> revokeVpcEndpointAccessAsync(RevokeVpcEndpointAccessRequest request,
+            com.amazonaws.handlers.AsyncHandler<RevokeVpcEndpointAccessRequest, RevokeVpcEndpointAccessResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartDomainMaintenanceResult> startDomainMaintenanceAsync(StartDomainMaintenanceRequest request) {
+
+        return startDomainMaintenanceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartDomainMaintenanceResult> startDomainMaintenanceAsync(StartDomainMaintenanceRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartDomainMaintenanceRequest, StartDomainMaintenanceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StartServiceSoftwareUpdateResult> startServiceSoftwareUpdateAsync(StartServiceSoftwareUpdateRequest request) {
 
         return startServiceSoftwareUpdateAsync(request, null);
@@ -508,6 +768,19 @@ public class AbstractAmazonOpenSearchAsync extends AbstractAmazonOpenSearch impl
     @Override
     public java.util.concurrent.Future<StartServiceSoftwareUpdateResult> startServiceSoftwareUpdateAsync(StartServiceSoftwareUpdateRequest request,
             com.amazonaws.handlers.AsyncHandler<StartServiceSoftwareUpdateRequest, StartServiceSoftwareUpdateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDataSourceResult> updateDataSourceAsync(UpdateDataSourceRequest request) {
+
+        return updateDataSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDataSourceResult> updateDataSourceAsync(UpdateDataSourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateDataSourceRequest, UpdateDataSourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -534,6 +807,32 @@ public class AbstractAmazonOpenSearchAsync extends AbstractAmazonOpenSearch impl
     @Override
     public java.util.concurrent.Future<UpdatePackageResult> updatePackageAsync(UpdatePackageRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdatePackageRequest, UpdatePackageResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateScheduledActionResult> updateScheduledActionAsync(UpdateScheduledActionRequest request) {
+
+        return updateScheduledActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateScheduledActionResult> updateScheduledActionAsync(UpdateScheduledActionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateScheduledActionRequest, UpdateScheduledActionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVpcEndpointResult> updateVpcEndpointAsync(UpdateVpcEndpointRequest request) {
+
+        return updateVpcEndpointAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVpcEndpointResult> updateVpcEndpointAsync(UpdateVpcEndpointRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateVpcEndpointRequest, UpdateVpcEndpointResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

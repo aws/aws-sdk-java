@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,20 +26,21 @@ import com.amazonaws.services.costandusagereport.model.*;
  * </p>
  * <p>
  * <p>
- * The AWS Cost and Usage Report API enables you to programmatically create, query, and delete AWS Cost and Usage report
- * definitions.
+ * You can use the Amazon Web Services Cost and Usage Report API to programmatically create, query, and delete Amazon
+ * Web Services Cost and Usage Report definitions.
  * </p>
  * <p>
- * AWS Cost and Usage reports track the monthly AWS costs and usage associated with your AWS account. The report
- * contains line items for each unique combination of AWS product, usage type, and operation that your AWS account uses.
- * You can configure the AWS Cost and Usage report to show only the data that you want, using the AWS Cost and Usage
- * API.
+ * Amazon Web Services Cost and Usage Report track the monthly Amazon Web Services costs and usage associated with your
+ * Amazon Web Services account. The report contains line items for each unique combination of Amazon Web Services
+ * product, usage type, and operation that your Amazon Web Services account uses. You can configure the Amazon Web
+ * Services Cost and Usage Report to show only the data that you want, using the Amazon Web Services Cost and Usage
+ * Report API.
  * </p>
  * <p>
  * Service Endpoint
  * </p>
  * <p>
- * The AWS Cost and Usage Report API provides the following endpoint:
+ * The Amazon Web Services Cost and Usage Report API provides the following endpoint:
  * </p>
  * <ul>
  * <li>
@@ -54,7 +55,7 @@ public interface AWSCostAndUsageReportAsync extends AWSCostAndUsageReport {
 
     /**
      * <p>
-     * Deletes the specified report.
+     * Deletes the specified report. Any tags associated with the report are also deleted.
      * </p>
      * 
      * @param deleteReportDefinitionRequest
@@ -68,7 +69,7 @@ public interface AWSCostAndUsageReportAsync extends AWSCostAndUsageReport {
 
     /**
      * <p>
-     * Deletes the specified report.
+     * Deletes the specified report. Any tags associated with the report are also deleted.
      * </p>
      * 
      * @param deleteReportDefinitionRequest
@@ -87,11 +88,11 @@ public interface AWSCostAndUsageReportAsync extends AWSCostAndUsageReport {
 
     /**
      * <p>
-     * Lists the AWS Cost and Usage reports available to this account.
+     * Lists the Amazon Web Services Cost and Usage Report available to this account.
      * </p>
      * 
      * @param describeReportDefinitionsRequest
-     *        Requests a list of AWS Cost and Usage reports owned by the account.
+     *        Requests a Amazon Web Services Cost and Usage Report list owned by the account.
      * @return A Java Future containing the result of the DescribeReportDefinitions operation returned by the service.
      * @sample AWSCostAndUsageReportAsync.DescribeReportDefinitions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DescribeReportDefinitions" target="_top">AWS
@@ -102,11 +103,11 @@ public interface AWSCostAndUsageReportAsync extends AWSCostAndUsageReport {
 
     /**
      * <p>
-     * Lists the AWS Cost and Usage reports available to this account.
+     * Lists the Amazon Web Services Cost and Usage Report available to this account.
      * </p>
      * 
      * @param describeReportDefinitionsRequest
-     *        Requests a list of AWS Cost and Usage reports owned by the account.
+     *        Requests a Amazon Web Services Cost and Usage Report list owned by the account.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -122,7 +123,38 @@ public interface AWSCostAndUsageReportAsync extends AWSCostAndUsageReport {
 
     /**
      * <p>
-     * Allows you to programatically update your report preferences.
+     * Lists the tags associated with the specified report definition.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSCostAndUsageReportAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Lists the tags associated with the specified report definition.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSCostAndUsageReportAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Allows you to programmatically update your report preferences.
      * </p>
      * 
      * @param modifyReportDefinitionRequest
@@ -135,7 +167,7 @@ public interface AWSCostAndUsageReportAsync extends AWSCostAndUsageReport {
 
     /**
      * <p>
-     * Allows you to programatically update your report preferences.
+     * Allows you to programmatically update your report preferences.
      * </p>
      * 
      * @param modifyReportDefinitionRequest
@@ -183,5 +215,67 @@ public interface AWSCostAndUsageReportAsync extends AWSCostAndUsageReport {
      */
     java.util.concurrent.Future<PutReportDefinitionResult> putReportDefinitionAsync(PutReportDefinitionRequest putReportDefinitionRequest,
             com.amazonaws.handlers.AsyncHandler<PutReportDefinitionRequest, PutReportDefinitionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associates a set of tags with a report definition.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSCostAndUsageReportAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Associates a set of tags with a report definition.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSCostAndUsageReportAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociates a set of tags from a report definition.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSCostAndUsageReportAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Disassociates a set of tags from a report definition.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSCostAndUsageReportAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,7 +66,7 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * Specifies whether this image is an AMI or a container image.
+     * Specifies whether this image produces an AMI or a container image.
      * </p>
      */
     private String type;
@@ -99,7 +99,7 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
     private String version;
     /**
      * <p>
-     * The platform of the image version, for example "Windows" or "Linux".
+     * The operating system platform of the image version, for example "Windows" or "Linux".
      * </p>
      */
     private String platform;
@@ -146,6 +146,12 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      */
     private String buildType;
+    /**
+     * <p>
+     * The origin of the base image that Image Builder used to build this image.
+     * </p>
+     */
+    private String imageSource;
 
     /**
      * <p>
@@ -368,11 +374,11 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether this image is an AMI or a container image.
+     * Specifies whether this image produces an AMI or a container image.
      * </p>
      * 
      * @param type
-     *        Specifies whether this image is an AMI or a container image.
+     *        Specifies whether this image produces an AMI or a container image.
      * @see ImageType
      */
 
@@ -382,10 +388,10 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether this image is an AMI or a container image.
+     * Specifies whether this image produces an AMI or a container image.
      * </p>
      * 
-     * @return Specifies whether this image is an AMI or a container image.
+     * @return Specifies whether this image produces an AMI or a container image.
      * @see ImageType
      */
 
@@ -395,11 +401,11 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether this image is an AMI or a container image.
+     * Specifies whether this image produces an AMI or a container image.
      * </p>
      * 
      * @param type
-     *        Specifies whether this image is an AMI or a container image.
+     *        Specifies whether this image produces an AMI or a container image.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImageType
      */
@@ -411,11 +417,11 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether this image is an AMI or a container image.
+     * Specifies whether this image produces an AMI or a container image.
      * </p>
      * 
      * @param type
-     *        Specifies whether this image is an AMI or a container image.
+     *        Specifies whether this image produces an AMI or a container image.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImageType
      */
@@ -590,11 +596,11 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform of the image version, for example "Windows" or "Linux".
+     * The operating system platform of the image version, for example "Windows" or "Linux".
      * </p>
      * 
      * @param platform
-     *        The platform of the image version, for example "Windows" or "Linux".
+     *        The operating system platform of the image version, for example "Windows" or "Linux".
      * @see Platform
      */
 
@@ -604,10 +610,10 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform of the image version, for example "Windows" or "Linux".
+     * The operating system platform of the image version, for example "Windows" or "Linux".
      * </p>
      * 
-     * @return The platform of the image version, for example "Windows" or "Linux".
+     * @return The operating system platform of the image version, for example "Windows" or "Linux".
      * @see Platform
      */
 
@@ -617,11 +623,11 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform of the image version, for example "Windows" or "Linux".
+     * The operating system platform of the image version, for example "Windows" or "Linux".
      * </p>
      * 
      * @param platform
-     *        The platform of the image version, for example "Windows" or "Linux".
+     *        The operating system platform of the image version, for example "Windows" or "Linux".
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Platform
      */
@@ -633,11 +639,11 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform of the image version, for example "Windows" or "Linux".
+     * The operating system platform of the image version, for example "Windows" or "Linux".
      * </p>
      * 
      * @param platform
-     *        The platform of the image version, for example "Windows" or "Linux".
+     *        The operating system platform of the image version, for example "Windows" or "Linux".
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Platform
      */
@@ -974,6 +980,65 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The origin of the base image that Image Builder used to build this image.
+     * </p>
+     * 
+     * @param imageSource
+     *        The origin of the base image that Image Builder used to build this image.
+     * @see ImageSource
+     */
+
+    public void setImageSource(String imageSource) {
+        this.imageSource = imageSource;
+    }
+
+    /**
+     * <p>
+     * The origin of the base image that Image Builder used to build this image.
+     * </p>
+     * 
+     * @return The origin of the base image that Image Builder used to build this image.
+     * @see ImageSource
+     */
+
+    public String getImageSource() {
+        return this.imageSource;
+    }
+
+    /**
+     * <p>
+     * The origin of the base image that Image Builder used to build this image.
+     * </p>
+     * 
+     * @param imageSource
+     *        The origin of the base image that Image Builder used to build this image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImageSource
+     */
+
+    public ImageVersion withImageSource(String imageSource) {
+        setImageSource(imageSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The origin of the base image that Image Builder used to build this image.
+     * </p>
+     * 
+     * @param imageSource
+     *        The origin of the base image that Image Builder used to build this image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImageSource
+     */
+
+    public ImageVersion withImageSource(ImageSource imageSource) {
+        this.imageSource = imageSource.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1002,7 +1067,9 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
         if (getDateCreated() != null)
             sb.append("DateCreated: ").append(getDateCreated()).append(",");
         if (getBuildType() != null)
-            sb.append("BuildType: ").append(getBuildType());
+            sb.append("BuildType: ").append(getBuildType()).append(",");
+        if (getImageSource() != null)
+            sb.append("ImageSource: ").append(getImageSource());
         sb.append("}");
         return sb.toString();
     }
@@ -1053,6 +1120,10 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getBuildType() != null && other.getBuildType().equals(this.getBuildType()) == false)
             return false;
+        if (other.getImageSource() == null ^ this.getImageSource() == null)
+            return false;
+        if (other.getImageSource() != null && other.getImageSource().equals(this.getImageSource()) == false)
+            return false;
         return true;
     }
 
@@ -1070,6 +1141,7 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
         hashCode = prime * hashCode + ((getDateCreated() == null) ? 0 : getDateCreated().hashCode());
         hashCode = prime * hashCode + ((getBuildType() == null) ? 0 : getBuildType().hashCode());
+        hashCode = prime * hashCode + ((getImageSource() == null) ? 0 : getImageSource().hashCode());
         return hashCode;
     }
 

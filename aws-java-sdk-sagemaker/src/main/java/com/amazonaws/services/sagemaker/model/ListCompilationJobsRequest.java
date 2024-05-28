@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,8 +70,7 @@ public class ListCompilationJobsRequest extends com.amazonaws.AmazonWebServiceRe
     private String nameContains;
     /**
      * <p>
-     * A filter that retrieves model compilation jobs with a specific
-     * <a>DescribeCompilationJobResponse$CompilationJobStatus</a> status.
+     * A filter that retrieves model compilation jobs with a specific <code>CompilationJobStatus</code> status.
      * </p>
      */
     private String statusEquals;
@@ -379,13 +378,11 @@ public class ListCompilationJobsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A filter that retrieves model compilation jobs with a specific
-     * <a>DescribeCompilationJobResponse$CompilationJobStatus</a> status.
+     * A filter that retrieves model compilation jobs with a specific <code>CompilationJobStatus</code> status.
      * </p>
      * 
      * @param statusEquals
-     *        A filter that retrieves model compilation jobs with a specific
-     *        <a>DescribeCompilationJobResponse$CompilationJobStatus</a> status.
+     *        A filter that retrieves model compilation jobs with a specific <code>CompilationJobStatus</code> status.
      * @see CompilationJobStatus
      */
 
@@ -395,12 +392,10 @@ public class ListCompilationJobsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A filter that retrieves model compilation jobs with a specific
-     * <a>DescribeCompilationJobResponse$CompilationJobStatus</a> status.
+     * A filter that retrieves model compilation jobs with a specific <code>CompilationJobStatus</code> status.
      * </p>
      * 
-     * @return A filter that retrieves model compilation jobs with a specific
-     *         <a>DescribeCompilationJobResponse$CompilationJobStatus</a> status.
+     * @return A filter that retrieves model compilation jobs with a specific <code>CompilationJobStatus</code> status.
      * @see CompilationJobStatus
      */
 
@@ -410,13 +405,11 @@ public class ListCompilationJobsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A filter that retrieves model compilation jobs with a specific
-     * <a>DescribeCompilationJobResponse$CompilationJobStatus</a> status.
+     * A filter that retrieves model compilation jobs with a specific <code>CompilationJobStatus</code> status.
      * </p>
      * 
      * @param statusEquals
-     *        A filter that retrieves model compilation jobs with a specific
-     *        <a>DescribeCompilationJobResponse$CompilationJobStatus</a> status.
+     *        A filter that retrieves model compilation jobs with a specific <code>CompilationJobStatus</code> status.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CompilationJobStatus
      */
@@ -428,13 +421,11 @@ public class ListCompilationJobsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A filter that retrieves model compilation jobs with a specific
-     * <a>DescribeCompilationJobResponse$CompilationJobStatus</a> status.
+     * A filter that retrieves model compilation jobs with a specific <code>CompilationJobStatus</code> status.
      * </p>
      * 
      * @param statusEquals
-     *        A filter that retrieves model compilation jobs with a specific
-     *        <a>DescribeCompilationJobResponse$CompilationJobStatus</a> status.
+     *        A filter that retrieves model compilation jobs with a specific <code>CompilationJobStatus</code> status.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CompilationJobStatus
      */

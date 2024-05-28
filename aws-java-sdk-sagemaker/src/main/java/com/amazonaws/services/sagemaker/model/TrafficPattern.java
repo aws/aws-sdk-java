@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class TrafficPattern implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Defines the traffic patterns.
+     * Defines the traffic patterns. Choose either <code>PHASES</code> or <code>STAIRS</code>.
      * </p>
      */
     private String trafficType;
@@ -40,14 +40,20 @@ public class TrafficPattern implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<Phase> phases;
+    /**
+     * <p>
+     * Defines the stairs traffic pattern.
+     * </p>
+     */
+    private Stairs stairs;
 
     /**
      * <p>
-     * Defines the traffic patterns.
+     * Defines the traffic patterns. Choose either <code>PHASES</code> or <code>STAIRS</code>.
      * </p>
      * 
      * @param trafficType
-     *        Defines the traffic patterns.
+     *        Defines the traffic patterns. Choose either <code>PHASES</code> or <code>STAIRS</code>.
      * @see TrafficType
      */
 
@@ -57,10 +63,10 @@ public class TrafficPattern implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Defines the traffic patterns.
+     * Defines the traffic patterns. Choose either <code>PHASES</code> or <code>STAIRS</code>.
      * </p>
      * 
-     * @return Defines the traffic patterns.
+     * @return Defines the traffic patterns. Choose either <code>PHASES</code> or <code>STAIRS</code>.
      * @see TrafficType
      */
 
@@ -70,11 +76,11 @@ public class TrafficPattern implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Defines the traffic patterns.
+     * Defines the traffic patterns. Choose either <code>PHASES</code> or <code>STAIRS</code>.
      * </p>
      * 
      * @param trafficType
-     *        Defines the traffic patterns.
+     *        Defines the traffic patterns. Choose either <code>PHASES</code> or <code>STAIRS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrafficType
      */
@@ -86,11 +92,11 @@ public class TrafficPattern implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Defines the traffic patterns.
+     * Defines the traffic patterns. Choose either <code>PHASES</code> or <code>STAIRS</code>.
      * </p>
      * 
      * @param trafficType
-     *        Defines the traffic patterns.
+     *        Defines the traffic patterns. Choose either <code>PHASES</code> or <code>STAIRS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrafficType
      */
@@ -171,6 +177,46 @@ public class TrafficPattern implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Defines the stairs traffic pattern.
+     * </p>
+     * 
+     * @param stairs
+     *        Defines the stairs traffic pattern.
+     */
+
+    public void setStairs(Stairs stairs) {
+        this.stairs = stairs;
+    }
+
+    /**
+     * <p>
+     * Defines the stairs traffic pattern.
+     * </p>
+     * 
+     * @return Defines the stairs traffic pattern.
+     */
+
+    public Stairs getStairs() {
+        return this.stairs;
+    }
+
+    /**
+     * <p>
+     * Defines the stairs traffic pattern.
+     * </p>
+     * 
+     * @param stairs
+     *        Defines the stairs traffic pattern.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrafficPattern withStairs(Stairs stairs) {
+        setStairs(stairs);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -185,7 +231,9 @@ public class TrafficPattern implements Serializable, Cloneable, StructuredPojo {
         if (getTrafficType() != null)
             sb.append("TrafficType: ").append(getTrafficType()).append(",");
         if (getPhases() != null)
-            sb.append("Phases: ").append(getPhases());
+            sb.append("Phases: ").append(getPhases()).append(",");
+        if (getStairs() != null)
+            sb.append("Stairs: ").append(getStairs());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +256,10 @@ public class TrafficPattern implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPhases() != null && other.getPhases().equals(this.getPhases()) == false)
             return false;
+        if (other.getStairs() == null ^ this.getStairs() == null)
+            return false;
+        if (other.getStairs() != null && other.getStairs().equals(this.getStairs()) == false)
+            return false;
         return true;
     }
 
@@ -218,6 +270,7 @@ public class TrafficPattern implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getTrafficType() == null) ? 0 : getTrafficType().hashCode());
         hashCode = prime * hashCode + ((getPhases() == null) ? 0 : getPhases().hashCode());
+        hashCode = prime * hashCode + ((getStairs() == null) ? 0 : getStairs().hashCode());
         return hashCode;
     }
 

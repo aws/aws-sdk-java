@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -276,7 +276,7 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.
      * </p>
      * <p>
-     * Specify a value between 600 and 360000.
+     * Specify a value between 600 and 432000.
      * </p>
      */
     private Integer maxUserDurationInSeconds;
@@ -405,6 +405,12 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private S3Location sessionScriptS3Location;
+    /**
+     * <p>
+     * The maximum number of user sessions on an instance. This only applies to multi-session fleets.
+     * </p>
+     */
+    private Integer maxSessionsPerInstance;
 
     /**
      * <p>
@@ -1899,7 +1905,7 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.
      * </p>
      * <p>
-     * Specify a value between 600 and 360000.
+     * Specify a value between 600 and 432000.
      * </p>
      * 
      * @param maxUserDurationInSeconds
@@ -1908,7 +1914,7 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        open documents before being disconnected. After this time elapses, the instance is terminated and replaced
      *        by a new instance.</p>
      *        <p>
-     *        Specify a value between 600 and 360000.
+     *        Specify a value between 600 and 432000.
      */
 
     public void setMaxUserDurationInSeconds(Integer maxUserDurationInSeconds) {
@@ -1922,7 +1928,7 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.
      * </p>
      * <p>
-     * Specify a value between 600 and 360000.
+     * Specify a value between 600 and 432000.
      * </p>
      * 
      * @return The maximum amount of time that a streaming session can remain active, in seconds. If users are still
@@ -1930,7 +1936,7 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         any open documents before being disconnected. After this time elapses, the instance is terminated and
      *         replaced by a new instance.</p>
      *         <p>
-     *         Specify a value between 600 and 360000.
+     *         Specify a value between 600 and 432000.
      */
 
     public Integer getMaxUserDurationInSeconds() {
@@ -1944,7 +1950,7 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.
      * </p>
      * <p>
-     * Specify a value between 600 and 360000.
+     * Specify a value between 600 and 432000.
      * </p>
      * 
      * @param maxUserDurationInSeconds
@@ -1953,7 +1959,7 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        open documents before being disconnected. After this time elapses, the instance is terminated and replaced
      *        by a new instance.</p>
      *        <p>
-     *        Specify a value between 600 and 360000.
+     *        Specify a value between 600 and 432000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2928,6 +2934,46 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The maximum number of user sessions on an instance. This only applies to multi-session fleets.
+     * </p>
+     * 
+     * @param maxSessionsPerInstance
+     *        The maximum number of user sessions on an instance. This only applies to multi-session fleets.
+     */
+
+    public void setMaxSessionsPerInstance(Integer maxSessionsPerInstance) {
+        this.maxSessionsPerInstance = maxSessionsPerInstance;
+    }
+
+    /**
+     * <p>
+     * The maximum number of user sessions on an instance. This only applies to multi-session fleets.
+     * </p>
+     * 
+     * @return The maximum number of user sessions on an instance. This only applies to multi-session fleets.
+     */
+
+    public Integer getMaxSessionsPerInstance() {
+        return this.maxSessionsPerInstance;
+    }
+
+    /**
+     * <p>
+     * The maximum number of user sessions on an instance. This only applies to multi-session fleets.
+     * </p>
+     * 
+     * @param maxSessionsPerInstance
+     *        The maximum number of user sessions on an instance. This only applies to multi-session fleets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFleetRequest withMaxSessionsPerInstance(Integer maxSessionsPerInstance) {
+        setMaxSessionsPerInstance(maxSessionsPerInstance);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2980,7 +3026,9 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getUsbDeviceFilterStrings() != null)
             sb.append("UsbDeviceFilterStrings: ").append(getUsbDeviceFilterStrings()).append(",");
         if (getSessionScriptS3Location() != null)
-            sb.append("SessionScriptS3Location: ").append(getSessionScriptS3Location());
+            sb.append("SessionScriptS3Location: ").append(getSessionScriptS3Location()).append(",");
+        if (getMaxSessionsPerInstance() != null)
+            sb.append("MaxSessionsPerInstance: ").append(getMaxSessionsPerInstance());
         sb.append("}");
         return sb.toString();
     }
@@ -3080,6 +3128,10 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getSessionScriptS3Location() != null && other.getSessionScriptS3Location().equals(this.getSessionScriptS3Location()) == false)
             return false;
+        if (other.getMaxSessionsPerInstance() == null ^ this.getMaxSessionsPerInstance() == null)
+            return false;
+        if (other.getMaxSessionsPerInstance() != null && other.getMaxSessionsPerInstance().equals(this.getMaxSessionsPerInstance()) == false)
+            return false;
         return true;
     }
 
@@ -3109,6 +3161,7 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getMaxConcurrentSessions() == null) ? 0 : getMaxConcurrentSessions().hashCode());
         hashCode = prime * hashCode + ((getUsbDeviceFilterStrings() == null) ? 0 : getUsbDeviceFilterStrings().hashCode());
         hashCode = prime * hashCode + ((getSessionScriptS3Location() == null) ? 0 : getSessionScriptS3Location().hashCode());
+        hashCode = prime * hashCode + ((getMaxSessionsPerInstance() == null) ? 0 : getMaxSessionsPerInstance().hashCode());
         return hashCode;
     }
 

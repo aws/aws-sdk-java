@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,18 @@ public class GetLayoutResultJsonUnmarshaller implements Unmarshaller<GetLayoutRe
                 if (context.testExpression("content", targetDepth)) {
                     context.nextToken();
                     getLayoutResult.setContent(LayoutContentJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("createdTime", targetDepth)) {
+                    context.nextToken();
+                    getLayoutResult.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("deleted", targetDepth)) {
+                    context.nextToken();
+                    getLayoutResult.setDeleted(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("lastModifiedTime", targetDepth)) {
+                    context.nextToken();
+                    getLayoutResult.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
                 if (context.testExpression("layoutArn", targetDepth)) {
                     context.nextToken();

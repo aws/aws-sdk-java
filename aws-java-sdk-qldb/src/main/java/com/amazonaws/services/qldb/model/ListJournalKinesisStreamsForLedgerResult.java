@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,7 @@ public class ListJournalKinesisStreamsForLedgerResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The array of QLDB journal stream descriptors that are associated with the given ledger.
+     * The QLDB journal streams that are currently associated with the given ledger.
      * </p>
      */
     private java.util.List<JournalKinesisStreamDescription> streams;
@@ -50,10 +50,10 @@ public class ListJournalKinesisStreamsForLedgerResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The array of QLDB journal stream descriptors that are associated with the given ledger.
+     * The QLDB journal streams that are currently associated with the given ledger.
      * </p>
      * 
-     * @return The array of QLDB journal stream descriptors that are associated with the given ledger.
+     * @return The QLDB journal streams that are currently associated with the given ledger.
      */
 
     public java.util.List<JournalKinesisStreamDescription> getStreams() {
@@ -62,11 +62,11 @@ public class ListJournalKinesisStreamsForLedgerResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The array of QLDB journal stream descriptors that are associated with the given ledger.
+     * The QLDB journal streams that are currently associated with the given ledger.
      * </p>
      * 
      * @param streams
-     *        The array of QLDB journal stream descriptors that are associated with the given ledger.
+     *        The QLDB journal streams that are currently associated with the given ledger.
      */
 
     public void setStreams(java.util.Collection<JournalKinesisStreamDescription> streams) {
@@ -80,7 +80,7 @@ public class ListJournalKinesisStreamsForLedgerResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The array of QLDB journal stream descriptors that are associated with the given ledger.
+     * The QLDB journal streams that are currently associated with the given ledger.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -89,7 +89,7 @@ public class ListJournalKinesisStreamsForLedgerResult extends com.amazonaws.Amaz
      * </p>
      * 
      * @param streams
-     *        The array of QLDB journal stream descriptors that are associated with the given ledger.
+     *        The QLDB journal streams that are currently associated with the given ledger.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,11 +105,11 @@ public class ListJournalKinesisStreamsForLedgerResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The array of QLDB journal stream descriptors that are associated with the given ledger.
+     * The QLDB journal streams that are currently associated with the given ledger.
      * </p>
      * 
      * @param streams
-     *        The array of QLDB journal stream descriptors that are associated with the given ledger.
+     *        The QLDB journal streams that are currently associated with the given ledger.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

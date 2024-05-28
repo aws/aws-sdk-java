@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,10 @@ public class RegisterDomainRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrivacyProtectRegistrantContact").build();
     private static final MarshallingInfo<Boolean> PRIVACYPROTECTTECHCONTACT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrivacyProtectTechContact").build();
+    private static final MarshallingInfo<StructuredPojo> BILLINGCONTACT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BillingContact").build();
+    private static final MarshallingInfo<Boolean> PRIVACYPROTECTBILLINGCONTACT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrivacyProtectBillingContact").build();
 
     private static final RegisterDomainRequestMarshaller instance = new RegisterDomainRequestMarshaller();
 
@@ -74,6 +78,8 @@ public class RegisterDomainRequestMarshaller {
             protocolMarshaller.marshall(registerDomainRequest.getPrivacyProtectAdminContact(), PRIVACYPROTECTADMINCONTACT_BINDING);
             protocolMarshaller.marshall(registerDomainRequest.getPrivacyProtectRegistrantContact(), PRIVACYPROTECTREGISTRANTCONTACT_BINDING);
             protocolMarshaller.marshall(registerDomainRequest.getPrivacyProtectTechContact(), PRIVACYPROTECTTECHCONTACT_BINDING);
+            protocolMarshaller.marshall(registerDomainRequest.getBillingContact(), BILLINGCONTACT_BINDING);
+            protocolMarshaller.marshall(registerDomainRequest.getPrivacyProtectBillingContact(), PRIVACYPROTECTBILLINGCONTACT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

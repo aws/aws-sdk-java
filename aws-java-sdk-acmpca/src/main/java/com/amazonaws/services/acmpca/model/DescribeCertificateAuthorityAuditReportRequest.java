@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,7 +38,7 @@ public class DescribeCertificateAuthorityAuditReportRequest extends com.amazonaw
     /**
      * <p>
      * The report ID returned by calling the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html"
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html"
      * >CreateCertificateAuthorityAuditReport</a> action.
      * </p>
      */
@@ -105,13 +105,13 @@ public class DescribeCertificateAuthorityAuditReportRequest extends com.amazonaw
     /**
      * <p>
      * The report ID returned by calling the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html"
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html"
      * >CreateCertificateAuthorityAuditReport</a> action.
      * </p>
      * 
      * @param auditReportId
      *        The report ID returned by calling the <a href=
-     *        "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html"
+     *        "https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html"
      *        >CreateCertificateAuthorityAuditReport</a> action.
      */
 
@@ -122,12 +122,12 @@ public class DescribeCertificateAuthorityAuditReportRequest extends com.amazonaw
     /**
      * <p>
      * The report ID returned by calling the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html"
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html"
      * >CreateCertificateAuthorityAuditReport</a> action.
      * </p>
      * 
      * @return The report ID returned by calling the <a
-     *         href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html"
+     *         href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html"
      *         >CreateCertificateAuthorityAuditReport</a> action.
      */
 
@@ -138,13 +138,13 @@ public class DescribeCertificateAuthorityAuditReportRequest extends com.amazonaw
     /**
      * <p>
      * The report ID returned by calling the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html"
+     * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html"
      * >CreateCertificateAuthorityAuditReport</a> action.
      * </p>
      * 
      * @param auditReportId
      *        The report ID returned by calling the <a href=
-     *        "https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html"
+     *        "https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html"
      *        >CreateCertificateAuthorityAuditReport</a> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class ExperimentSummaryMarshaller {
 
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("id").build();
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("arn").build();
     private static final MarshallingInfo<String> EXPERIMENTTEMPLATEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("experimentTemplateId").build();
     private static final MarshallingInfo<StructuredPojo> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -39,6 +41,8 @@ public class ExperimentSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<StructuredPojo> EXPERIMENTOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("experimentOptions").build();
 
     private static final ExperimentSummaryMarshaller instance = new ExperimentSummaryMarshaller();
 
@@ -57,10 +61,12 @@ public class ExperimentSummaryMarshaller {
 
         try {
             protocolMarshaller.marshall(experimentSummary.getId(), ID_BINDING);
+            protocolMarshaller.marshall(experimentSummary.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(experimentSummary.getExperimentTemplateId(), EXPERIMENTTEMPLATEID_BINDING);
             protocolMarshaller.marshall(experimentSummary.getState(), STATE_BINDING);
             protocolMarshaller.marshall(experimentSummary.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(experimentSummary.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(experimentSummary.getExperimentOptions(), EXPERIMENTOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

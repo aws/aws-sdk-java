@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,8 @@ public class RemoveDraftAppVersionResourceMappingsRequestMarshaller {
             .marshallLocationName("appArn").build();
     private static final MarshallingInfo<List> APPREGISTRYAPPNAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("appRegistryAppNames").build();
+    private static final MarshallingInfo<List> EKSSOURCENAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("eksSourceNames").build();
     private static final MarshallingInfo<List> LOGICALSTACKNAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logicalStackNames").build();
     private static final MarshallingInfo<List> RESOURCEGROUPNAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -59,6 +61,7 @@ public class RemoveDraftAppVersionResourceMappingsRequestMarshaller {
         try {
             protocolMarshaller.marshall(removeDraftAppVersionResourceMappingsRequest.getAppArn(), APPARN_BINDING);
             protocolMarshaller.marshall(removeDraftAppVersionResourceMappingsRequest.getAppRegistryAppNames(), APPREGISTRYAPPNAMES_BINDING);
+            protocolMarshaller.marshall(removeDraftAppVersionResourceMappingsRequest.getEksSourceNames(), EKSSOURCENAMES_BINDING);
             protocolMarshaller.marshall(removeDraftAppVersionResourceMappingsRequest.getLogicalStackNames(), LOGICALSTACKNAMES_BINDING);
             protocolMarshaller.marshall(removeDraftAppVersionResourceMappingsRequest.getResourceGroupNames(), RESOURCEGROUPNAMES_BINDING);
             protocolMarshaller.marshall(removeDraftAppVersionResourceMappingsRequest.getResourceNames(), RESOURCENAMES_BINDING);

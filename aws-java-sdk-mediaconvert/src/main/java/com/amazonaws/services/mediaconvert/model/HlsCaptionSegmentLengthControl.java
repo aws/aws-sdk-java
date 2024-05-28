@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,10 +15,10 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Set Caption segment length control (CaptionSegmentLengthControl) to Match video (MATCH_VIDEO) to create caption
- * segments that align with the video segments from the first video output in this output group. For example, if the
- * video segments are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the default setting, Large
- * segments (LARGE_SEGMENTS) to create caption segments that are 300 seconds long.
+ * Set Caption segment length control to Match video to create caption segments that align with the video segments from
+ * the first video output in this output group. For example, if the video segments are 2 seconds long, your WebVTT
+ * segments will also be 2 seconds long. Keep the default setting, Large segments to create caption segments that are
+ * 300 seconds long.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum HlsCaptionSegmentLengthControl {

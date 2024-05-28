@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,14 +44,15 @@ public class ArtifactStore implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The S3 bucket used for storing the artifacts for a pipeline. You can specify the name of an S3 bucket but not a
      * folder in the bucket. A folder to contain the pipeline artifacts is created for you based on the name of the
-     * pipeline. You can use any S3 bucket in the same AWS Region as the pipeline to store your pipeline artifacts.
+     * pipeline. You can use any S3 bucket in the same Amazon Web Services Region as the pipeline to store your pipeline
+     * artifacts.
      * </p>
      */
     private String location;
     /**
      * <p>
-     * The encryption key used to encrypt the data in the artifact store, such as an AWS Key Management Service (AWS
-     * KMS) key. If this is undefined, the default key for Amazon S3 is used.
+     * The encryption key used to encrypt the data in the artifact store, such as an Amazon Web Services Key Management
+     * Service key. If this is undefined, the default key for Amazon S3 is used.
      * </p>
      */
     private EncryptionKey encryptionKey;
@@ -133,14 +134,15 @@ public class ArtifactStore implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The S3 bucket used for storing the artifacts for a pipeline. You can specify the name of an S3 bucket but not a
      * folder in the bucket. A folder to contain the pipeline artifacts is created for you based on the name of the
-     * pipeline. You can use any S3 bucket in the same AWS Region as the pipeline to store your pipeline artifacts.
+     * pipeline. You can use any S3 bucket in the same Amazon Web Services Region as the pipeline to store your pipeline
+     * artifacts.
      * </p>
      * 
      * @param location
      *        The S3 bucket used for storing the artifacts for a pipeline. You can specify the name of an S3 bucket but
      *        not a folder in the bucket. A folder to contain the pipeline artifacts is created for you based on the
-     *        name of the pipeline. You can use any S3 bucket in the same AWS Region as the pipeline to store your
-     *        pipeline artifacts.
+     *        name of the pipeline. You can use any S3 bucket in the same Amazon Web Services Region as the pipeline to
+     *        store your pipeline artifacts.
      */
 
     public void setLocation(String location) {
@@ -151,13 +153,14 @@ public class ArtifactStore implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The S3 bucket used for storing the artifacts for a pipeline. You can specify the name of an S3 bucket but not a
      * folder in the bucket. A folder to contain the pipeline artifacts is created for you based on the name of the
-     * pipeline. You can use any S3 bucket in the same AWS Region as the pipeline to store your pipeline artifacts.
+     * pipeline. You can use any S3 bucket in the same Amazon Web Services Region as the pipeline to store your pipeline
+     * artifacts.
      * </p>
      * 
      * @return The S3 bucket used for storing the artifacts for a pipeline. You can specify the name of an S3 bucket but
      *         not a folder in the bucket. A folder to contain the pipeline artifacts is created for you based on the
-     *         name of the pipeline. You can use any S3 bucket in the same AWS Region as the pipeline to store your
-     *         pipeline artifacts.
+     *         name of the pipeline. You can use any S3 bucket in the same Amazon Web Services Region as the pipeline to
+     *         store your pipeline artifacts.
      */
 
     public String getLocation() {
@@ -168,14 +171,15 @@ public class ArtifactStore implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The S3 bucket used for storing the artifacts for a pipeline. You can specify the name of an S3 bucket but not a
      * folder in the bucket. A folder to contain the pipeline artifacts is created for you based on the name of the
-     * pipeline. You can use any S3 bucket in the same AWS Region as the pipeline to store your pipeline artifacts.
+     * pipeline. You can use any S3 bucket in the same Amazon Web Services Region as the pipeline to store your pipeline
+     * artifacts.
      * </p>
      * 
      * @param location
      *        The S3 bucket used for storing the artifacts for a pipeline. You can specify the name of an S3 bucket but
      *        not a folder in the bucket. A folder to contain the pipeline artifacts is created for you based on the
-     *        name of the pipeline. You can use any S3 bucket in the same AWS Region as the pipeline to store your
-     *        pipeline artifacts.
+     *        name of the pipeline. You can use any S3 bucket in the same Amazon Web Services Region as the pipeline to
+     *        store your pipeline artifacts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -186,13 +190,13 @@ public class ArtifactStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The encryption key used to encrypt the data in the artifact store, such as an AWS Key Management Service (AWS
-     * KMS) key. If this is undefined, the default key for Amazon S3 is used.
+     * The encryption key used to encrypt the data in the artifact store, such as an Amazon Web Services Key Management
+     * Service key. If this is undefined, the default key for Amazon S3 is used.
      * </p>
      * 
      * @param encryptionKey
-     *        The encryption key used to encrypt the data in the artifact store, such as an AWS Key Management Service
-     *        (AWS KMS) key. If this is undefined, the default key for Amazon S3 is used.
+     *        The encryption key used to encrypt the data in the artifact store, such as an Amazon Web Services Key
+     *        Management Service key. If this is undefined, the default key for Amazon S3 is used.
      */
 
     public void setEncryptionKey(EncryptionKey encryptionKey) {
@@ -201,12 +205,12 @@ public class ArtifactStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The encryption key used to encrypt the data in the artifact store, such as an AWS Key Management Service (AWS
-     * KMS) key. If this is undefined, the default key for Amazon S3 is used.
+     * The encryption key used to encrypt the data in the artifact store, such as an Amazon Web Services Key Management
+     * Service key. If this is undefined, the default key for Amazon S3 is used.
      * </p>
      * 
-     * @return The encryption key used to encrypt the data in the artifact store, such as an AWS Key Management Service
-     *         (AWS KMS) key. If this is undefined, the default key for Amazon S3 is used.
+     * @return The encryption key used to encrypt the data in the artifact store, such as an Amazon Web Services Key
+     *         Management Service key. If this is undefined, the default key for Amazon S3 is used.
      */
 
     public EncryptionKey getEncryptionKey() {
@@ -215,13 +219,13 @@ public class ArtifactStore implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The encryption key used to encrypt the data in the artifact store, such as an AWS Key Management Service (AWS
-     * KMS) key. If this is undefined, the default key for Amazon S3 is used.
+     * The encryption key used to encrypt the data in the artifact store, such as an Amazon Web Services Key Management
+     * Service key. If this is undefined, the default key for Amazon S3 is used.
      * </p>
      * 
      * @param encryptionKey
-     *        The encryption key used to encrypt the data in the artifact store, such as an AWS Key Management Service
-     *        (AWS KMS) key. If this is undefined, the default key for Amazon S3 is used.
+     *        The encryption key used to encrypt the data in the artifact store, such as an Amazon Web Services Key
+     *        Management Service key. If this is undefined, the default key for Amazon S3 is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

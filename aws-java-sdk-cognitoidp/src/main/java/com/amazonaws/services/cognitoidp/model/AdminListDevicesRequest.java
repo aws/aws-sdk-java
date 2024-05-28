@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,10 @@ public class AdminListDevicesRequest extends com.amazonaws.AmazonWebServiceReque
     private String userPoolId;
     /**
      * <p>
-     * The user name.
+     * The username of the user that you want to query or modify. The value of this parameter is typically your user's
+     * username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your
+     * user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party
+     * IdP.
      * </p>
      */
     private String username;
@@ -48,7 +51,10 @@ public class AdminListDevicesRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer limit;
     /**
      * <p>
-     * The pagination token.
+     * This API operation returns a limited number of results. The pagination token is an identifier that you can
+     * present in an additional API request with the same parameters. When you include the pagination token, Amazon
+     * Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token.
+     * By use of this token, you can paginate through the full list of items.
      * </p>
      */
     private String paginationToken;
@@ -95,11 +101,17 @@ public class AdminListDevicesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The user name.
+     * The username of the user that you want to query or modify. The value of this parameter is typically your user's
+     * username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your
+     * user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party
+     * IdP.
      * </p>
      * 
      * @param username
-     *        The user name.
+     *        The username of the user that you want to query or modify. The value of this parameter is typically your
+     *        user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias
+     *        attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a
+     *        user from a third-party IdP.
      */
 
     public void setUsername(String username) {
@@ -108,10 +120,16 @@ public class AdminListDevicesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The user name.
+     * The username of the user that you want to query or modify. The value of this parameter is typically your user's
+     * username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your
+     * user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party
+     * IdP.
      * </p>
      * 
-     * @return The user name.
+     * @return The username of the user that you want to query or modify. The value of this parameter is typically your
+     *         user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias
+     *         attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a
+     *         user from a third-party IdP.
      */
 
     public String getUsername() {
@@ -120,11 +138,17 @@ public class AdminListDevicesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The user name.
+     * The username of the user that you want to query or modify. The value of this parameter is typically your user's
+     * username, but it can be any of their alias attributes. If <code>username</code> isn't an alias attribute in your
+     * user pool, this value must be the <code>sub</code> of a local user or the username of a user from a third-party
+     * IdP.
      * </p>
      * 
      * @param username
-     *        The user name.
+     *        The username of the user that you want to query or modify. The value of this parameter is typically your
+     *        user's username, but it can be any of their alias attributes. If <code>username</code> isn't an alias
+     *        attribute in your user pool, this value must be the <code>sub</code> of a local user or the username of a
+     *        user from a third-party IdP.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +199,17 @@ public class AdminListDevicesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The pagination token.
+     * This API operation returns a limited number of results. The pagination token is an identifier that you can
+     * present in an additional API request with the same parameters. When you include the pagination token, Amazon
+     * Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token.
+     * By use of this token, you can paginate through the full list of items.
      * </p>
      * 
      * @param paginationToken
-     *        The pagination token.
+     *        This API operation returns a limited number of results. The pagination token is an identifier that you can
+     *        present in an additional API request with the same parameters. When you include the pagination token,
+     *        Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new
+     *        pagination token. By use of this token, you can paginate through the full list of items.
      */
 
     public void setPaginationToken(String paginationToken) {
@@ -188,10 +218,16 @@ public class AdminListDevicesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The pagination token.
+     * This API operation returns a limited number of results. The pagination token is an identifier that you can
+     * present in an additional API request with the same parameters. When you include the pagination token, Amazon
+     * Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token.
+     * By use of this token, you can paginate through the full list of items.
      * </p>
      * 
-     * @return The pagination token.
+     * @return This API operation returns a limited number of results. The pagination token is an identifier that you
+     *         can present in an additional API request with the same parameters. When you include the pagination token,
+     *         Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new
+     *         pagination token. By use of this token, you can paginate through the full list of items.
      */
 
     public String getPaginationToken() {
@@ -200,11 +236,17 @@ public class AdminListDevicesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The pagination token.
+     * This API operation returns a limited number of results. The pagination token is an identifier that you can
+     * present in an additional API request with the same parameters. When you include the pagination token, Amazon
+     * Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token.
+     * By use of this token, you can paginate through the full list of items.
      * </p>
      * 
      * @param paginationToken
-     *        The pagination token.
+     *        This API operation returns a limited number of results. The pagination token is an identifier that you can
+     *        present in an additional API request with the same parameters. When you include the pagination token,
+     *        Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new
+     *        pagination token. By use of this token, you can paginate through the full list of items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

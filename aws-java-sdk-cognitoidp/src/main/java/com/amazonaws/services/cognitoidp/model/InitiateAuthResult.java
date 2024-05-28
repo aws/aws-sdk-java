@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,7 +29,7 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The name of the challenge that you're responding to with this call. This name is returned in the
-     * <code>AdminInitiateAuth</code> response if you must pass another challenge.
+     * <code>InitiateAuth</code> response if you must pass another challenge.
      * </p>
      * <p>
      * Valid values include the following:
@@ -92,7 +92,7 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      * <li>
      * <p>
      * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types
-     * activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
+     * activated for the user pool will be listed in the challenge parameters <code>MFAS_CAN_SETUP</code> value.
      * </p>
      * <p>
      * To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
@@ -136,7 +136,7 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The name of the challenge that you're responding to with this call. This name is returned in the
-     * <code>AdminInitiateAuth</code> response if you must pass another challenge.
+     * <code>InitiateAuth</code> response if you must pass another challenge.
      * </p>
      * <p>
      * Valid values include the following:
@@ -199,7 +199,7 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      * <li>
      * <p>
      * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types
-     * activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
+     * activated for the user pool will be listed in the challenge parameters <code>MFAS_CAN_SETUP</code> value.
      * </p>
      * <p>
      * To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
@@ -213,7 +213,7 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      * 
      * @param challengeName
      *        The name of the challenge that you're responding to with this call. This name is returned in the
-     *        <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
+     *        <code>InitiateAuth</code> response if you must pass another challenge.</p>
      *        <p>
      *        Valid values include the following:
      *        </p>
@@ -276,7 +276,7 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      *        <li>
      *        <p>
      *        <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA
-     *        types activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code>
+     *        types activated for the user pool will be listed in the challenge parameters <code>MFAS_CAN_SETUP</code>
      *        value.
      *        </p>
      *        <p>
@@ -297,7 +297,7 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The name of the challenge that you're responding to with this call. This name is returned in the
-     * <code>AdminInitiateAuth</code> response if you must pass another challenge.
+     * <code>InitiateAuth</code> response if you must pass another challenge.
      * </p>
      * <p>
      * Valid values include the following:
@@ -360,7 +360,7 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      * <li>
      * <p>
      * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types
-     * activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
+     * activated for the user pool will be listed in the challenge parameters <code>MFAS_CAN_SETUP</code> value.
      * </p>
      * <p>
      * To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
@@ -373,7 +373,7 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      * </ul>
      * 
      * @return The name of the challenge that you're responding to with this call. This name is returned in the
-     *         <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
+     *         <code>InitiateAuth</code> response if you must pass another challenge.</p>
      *         <p>
      *         Valid values include the following:
      *         </p>
@@ -437,7 +437,7 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      *         <p>
      *         <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The
      *         MFA types activated for the user pool will be listed in the challenge parameters
-     *         <code>MFA_CAN_SETUP</code> value.
+     *         <code>MFAS_CAN_SETUP</code> value.
      *         </p>
      *         <p>
      *         To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
@@ -457,7 +457,7 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The name of the challenge that you're responding to with this call. This name is returned in the
-     * <code>AdminInitiateAuth</code> response if you must pass another challenge.
+     * <code>InitiateAuth</code> response if you must pass another challenge.
      * </p>
      * <p>
      * Valid values include the following:
@@ -520,7 +520,7 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      * <li>
      * <p>
      * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types
-     * activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
+     * activated for the user pool will be listed in the challenge parameters <code>MFAS_CAN_SETUP</code> value.
      * </p>
      * <p>
      * To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
@@ -534,7 +534,7 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      * 
      * @param challengeName
      *        The name of the challenge that you're responding to with this call. This name is returned in the
-     *        <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
+     *        <code>InitiateAuth</code> response if you must pass another challenge.</p>
      *        <p>
      *        Valid values include the following:
      *        </p>
@@ -597,7 +597,7 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      *        <li>
      *        <p>
      *        <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA
-     *        types activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code>
+     *        types activated for the user pool will be listed in the challenge parameters <code>MFAS_CAN_SETUP</code>
      *        value.
      *        </p>
      *        <p>
@@ -620,7 +620,7 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The name of the challenge that you're responding to with this call. This name is returned in the
-     * <code>AdminInitiateAuth</code> response if you must pass another challenge.
+     * <code>InitiateAuth</code> response if you must pass another challenge.
      * </p>
      * <p>
      * Valid values include the following:
@@ -683,7 +683,7 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      * <li>
      * <p>
      * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types
-     * activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
+     * activated for the user pool will be listed in the challenge parameters <code>MFAS_CAN_SETUP</code> value.
      * </p>
      * <p>
      * To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
@@ -697,7 +697,7 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      * 
      * @param challengeName
      *        The name of the challenge that you're responding to with this call. This name is returned in the
-     *        <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
+     *        <code>InitiateAuth</code> response if you must pass another challenge.</p>
      *        <p>
      *        Valid values include the following:
      *        </p>
@@ -760,7 +760,7 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      *        <li>
      *        <p>
      *        <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA
-     *        types activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code>
+     *        types activated for the user pool will be listed in the challenge parameters <code>MFAS_CAN_SETUP</code>
      *        value.
      *        </p>
      *        <p>
@@ -781,7 +781,7 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The name of the challenge that you're responding to with this call. This name is returned in the
-     * <code>AdminInitiateAuth</code> response if you must pass another challenge.
+     * <code>InitiateAuth</code> response if you must pass another challenge.
      * </p>
      * <p>
      * Valid values include the following:
@@ -844,7 +844,7 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      * <li>
      * <p>
      * <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA types
-     * activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code> value.
+     * activated for the user pool will be listed in the challenge parameters <code>MFAS_CAN_SETUP</code> value.
      * </p>
      * <p>
      * To set up software token MFA, use the session returned here from <code>InitiateAuth</code> as an input to
@@ -858,7 +858,7 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      * 
      * @param challengeName
      *        The name of the challenge that you're responding to with this call. This name is returned in the
-     *        <code>AdminInitiateAuth</code> response if you must pass another challenge.</p>
+     *        <code>InitiateAuth</code> response if you must pass another challenge.</p>
      *        <p>
      *        Valid values include the following:
      *        </p>
@@ -921,7 +921,7 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
      *        <li>
      *        <p>
      *        <code>MFA_SETUP</code>: For users who are required to setup an MFA factor before they can sign in. The MFA
-     *        types activated for the user pool will be listed in the challenge parameters <code>MFA_CAN_SETUP</code>
+     *        types activated for the user pool will be listed in the challenge parameters <code>MFAS_CAN_SETUP</code>
      *        value.
      *        </p>
      *        <p>
@@ -1155,7 +1155,7 @@ public class InitiateAuthResult extends com.amazonaws.AmazonWebServiceResult<com
         if (getChallengeName() != null)
             sb.append("ChallengeName: ").append(getChallengeName()).append(",");
         if (getSession() != null)
-            sb.append("Session: ").append(getSession()).append(",");
+            sb.append("Session: ").append("***Sensitive Data Redacted***").append(",");
         if (getChallengeParameters() != null)
             sb.append("ChallengeParameters: ").append(getChallengeParameters()).append(",");
         if (getAuthenticationResult() != null)

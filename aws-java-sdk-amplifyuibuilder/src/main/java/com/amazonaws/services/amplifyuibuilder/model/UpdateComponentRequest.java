@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,12 +33,6 @@ public class UpdateComponentRequest extends com.amazonaws.AmazonWebServiceReques
     private String appId;
     /**
      * <p>
-     * The unique client token.
-     * </p>
-     */
-    private String clientToken;
-    /**
-     * <p>
      * The name of the backend environment that is part of the Amplify app.
      * </p>
      */
@@ -49,6 +43,12 @@ public class UpdateComponentRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String id;
+    /**
+     * <p>
+     * The unique client token.
+     * </p>
+     */
+    private String clientToken;
     /**
      * <p>
      * The configuration of the updated component.
@@ -93,46 +93,6 @@ public class UpdateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     public UpdateComponentRequest withAppId(String appId) {
         setAppId(appId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The unique client token.
-     * </p>
-     * 
-     * @param clientToken
-     *        The unique client token.
-     */
-
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
-    }
-
-    /**
-     * <p>
-     * The unique client token.
-     * </p>
-     * 
-     * @return The unique client token.
-     */
-
-    public String getClientToken() {
-        return this.clientToken;
-    }
-
-    /**
-     * <p>
-     * The unique client token.
-     * </p>
-     * 
-     * @param clientToken
-     *        The unique client token.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateComponentRequest withClientToken(String clientToken) {
-        setClientToken(clientToken);
         return this;
     }
 
@@ -218,6 +178,46 @@ public class UpdateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
+     * The unique client token.
+     * </p>
+     * 
+     * @param clientToken
+     *        The unique client token.
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * <p>
+     * The unique client token.
+     * </p>
+     * 
+     * @return The unique client token.
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * <p>
+     * The unique client token.
+     * </p>
+     * 
+     * @param clientToken
+     *        The unique client token.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateComponentRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
+        return this;
+    }
+
+    /**
+     * <p>
      * The configuration of the updated component.
      * </p>
      * 
@@ -270,12 +270,12 @@ public class UpdateComponentRequest extends com.amazonaws.AmazonWebServiceReques
         sb.append("{");
         if (getAppId() != null)
             sb.append("AppId: ").append(getAppId()).append(",");
-        if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getEnvironmentName() != null)
             sb.append("EnvironmentName: ").append(getEnvironmentName()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getUpdatedComponent() != null)
             sb.append("UpdatedComponent: ").append(getUpdatedComponent());
         sb.append("}");
@@ -296,10 +296,6 @@ public class UpdateComponentRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getAppId() != null && other.getAppId().equals(this.getAppId()) == false)
             return false;
-        if (other.getClientToken() == null ^ this.getClientToken() == null)
-            return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
-            return false;
         if (other.getEnvironmentName() == null ^ this.getEnvironmentName() == null)
             return false;
         if (other.getEnvironmentName() != null && other.getEnvironmentName().equals(this.getEnvironmentName()) == false)
@@ -307,6 +303,10 @@ public class UpdateComponentRequest extends com.amazonaws.AmazonWebServiceReques
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
+            return false;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
         if (other.getUpdatedComponent() == null ^ this.getUpdatedComponent() == null)
             return false;
@@ -321,9 +321,9 @@ public class UpdateComponentRequest extends com.amazonaws.AmazonWebServiceReques
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAppId() == null) ? 0 : getAppId().hashCode());
-        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentName() == null) ? 0 : getEnvironmentName().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getUpdatedComponent() == null) ? 0 : getUpdatedComponent().hashCode());
         return hashCode;
     }

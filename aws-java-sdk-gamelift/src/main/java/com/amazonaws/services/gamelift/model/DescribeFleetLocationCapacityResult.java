@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,9 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * Represents the returned data in response to a request operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetLocationCapacity"
  *      target="_top">AWS API Documentation</a>
@@ -30,7 +27,7 @@ public class DescribeFleetLocationCapacityResult extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * Resource capacity information for the requested fleet location. Capacity objects are returned only for fleets and
-     * locations that currently exist.
+     * locations that currently exist. Changes in desired instance value can take up to 1 minute to be reflected.
      * </p>
      */
     private FleetCapacity fleetCapacity;
@@ -38,12 +35,13 @@ public class DescribeFleetLocationCapacityResult extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * Resource capacity information for the requested fleet location. Capacity objects are returned only for fleets and
-     * locations that currently exist.
+     * locations that currently exist. Changes in desired instance value can take up to 1 minute to be reflected.
      * </p>
      * 
      * @param fleetCapacity
      *        Resource capacity information for the requested fleet location. Capacity objects are returned only for
-     *        fleets and locations that currently exist.
+     *        fleets and locations that currently exist. Changes in desired instance value can take up to 1 minute to be
+     *        reflected.
      */
 
     public void setFleetCapacity(FleetCapacity fleetCapacity) {
@@ -53,11 +51,12 @@ public class DescribeFleetLocationCapacityResult extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * Resource capacity information for the requested fleet location. Capacity objects are returned only for fleets and
-     * locations that currently exist.
+     * locations that currently exist. Changes in desired instance value can take up to 1 minute to be reflected.
      * </p>
      * 
      * @return Resource capacity information for the requested fleet location. Capacity objects are returned only for
-     *         fleets and locations that currently exist.
+     *         fleets and locations that currently exist. Changes in desired instance value can take up to 1 minute to
+     *         be reflected.
      */
 
     public FleetCapacity getFleetCapacity() {
@@ -67,12 +66,13 @@ public class DescribeFleetLocationCapacityResult extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * Resource capacity information for the requested fleet location. Capacity objects are returned only for fleets and
-     * locations that currently exist.
+     * locations that currently exist. Changes in desired instance value can take up to 1 minute to be reflected.
      * </p>
      * 
      * @param fleetCapacity
      *        Resource capacity information for the requested fleet location. Capacity objects are returned only for
-     *        fleets and locations that currently exist.
+     *        fleets and locations that currently exist. Changes in desired instance value can take up to 1 minute to be
+     *        reflected.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

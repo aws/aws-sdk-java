@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,12 @@ public class LoRaWANMulticastSession implements Serializable, Cloneable, Structu
     private java.util.Date sessionStartTime;
 
     private Integer sessionTimeout;
+    /**
+     * <p>
+     * The PingSlotPeriod value.
+     * </p>
+     */
+    private Integer pingSlotPeriod;
 
     /**
      * @param dlDr
@@ -141,6 +147,46 @@ public class LoRaWANMulticastSession implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * The PingSlotPeriod value.
+     * </p>
+     * 
+     * @param pingSlotPeriod
+     *        The PingSlotPeriod value.
+     */
+
+    public void setPingSlotPeriod(Integer pingSlotPeriod) {
+        this.pingSlotPeriod = pingSlotPeriod;
+    }
+
+    /**
+     * <p>
+     * The PingSlotPeriod value.
+     * </p>
+     * 
+     * @return The PingSlotPeriod value.
+     */
+
+    public Integer getPingSlotPeriod() {
+        return this.pingSlotPeriod;
+    }
+
+    /**
+     * <p>
+     * The PingSlotPeriod value.
+     * </p>
+     * 
+     * @param pingSlotPeriod
+     *        The PingSlotPeriod value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoRaWANMulticastSession withPingSlotPeriod(Integer pingSlotPeriod) {
+        setPingSlotPeriod(pingSlotPeriod);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -159,7 +205,9 @@ public class LoRaWANMulticastSession implements Serializable, Cloneable, Structu
         if (getSessionStartTime() != null)
             sb.append("SessionStartTime: ").append(getSessionStartTime()).append(",");
         if (getSessionTimeout() != null)
-            sb.append("SessionTimeout: ").append(getSessionTimeout());
+            sb.append("SessionTimeout: ").append(getSessionTimeout()).append(",");
+        if (getPingSlotPeriod() != null)
+            sb.append("PingSlotPeriod: ").append(getPingSlotPeriod());
         sb.append("}");
         return sb.toString();
     }
@@ -190,6 +238,10 @@ public class LoRaWANMulticastSession implements Serializable, Cloneable, Structu
             return false;
         if (other.getSessionTimeout() != null && other.getSessionTimeout().equals(this.getSessionTimeout()) == false)
             return false;
+        if (other.getPingSlotPeriod() == null ^ this.getPingSlotPeriod() == null)
+            return false;
+        if (other.getPingSlotPeriod() != null && other.getPingSlotPeriod().equals(this.getPingSlotPeriod()) == false)
+            return false;
         return true;
     }
 
@@ -202,6 +254,7 @@ public class LoRaWANMulticastSession implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getDlFreq() == null) ? 0 : getDlFreq().hashCode());
         hashCode = prime * hashCode + ((getSessionStartTime() == null) ? 0 : getSessionStartTime().hashCode());
         hashCode = prime * hashCode + ((getSessionTimeout() == null) ? 0 : getSessionTimeout().hashCode());
+        hashCode = prime * hashCode + ((getPingSlotPeriod() == null) ? 0 : getPingSlotPeriod().hashCode());
         return hashCode;
     }
 

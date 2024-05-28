@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -146,7 +146,7 @@ public class RecognizeUtteranceRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses
      * Amazon Polly to generate the speech using the configuration that you specified in the
-     * <code>requestContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the value,
+     * <code>responseContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the value,
      * Amazon Lex V2 returns speech in the MPEG format.
      * </p>
      * </li>
@@ -863,7 +863,7 @@ public class RecognizeUtteranceRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses
      * Amazon Polly to generate the speech using the configuration that you specified in the
-     * <code>requestContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the value,
+     * <code>responseContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the value,
      * Amazon Lex V2 returns speech in the MPEG format.
      * </p>
      * </li>
@@ -920,7 +920,7 @@ public class RecognizeUtteranceRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2
      *        uses Amazon Polly to generate the speech using the configuration that you specified in the
-     *        <code>requestContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the
+     *        <code>responseContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the
      *        value, Amazon Lex V2 returns speech in the MPEG format.
      *        </p>
      *        </li>
@@ -983,7 +983,7 @@ public class RecognizeUtteranceRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses
      * Amazon Polly to generate the speech using the configuration that you specified in the
-     * <code>requestContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the value,
+     * <code>responseContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the value,
      * Amazon Lex V2 returns speech in the MPEG format.
      * </p>
      * </li>
@@ -1039,7 +1039,7 @@ public class RecognizeUtteranceRequest extends com.amazonaws.AmazonWebServiceReq
      *         <p>
      *         If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2
      *         uses Amazon Polly to generate the speech using the configuration that you specified in the
-     *         <code>requestContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the
+     *         <code>responseContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the
      *         value, Amazon Lex V2 returns speech in the MPEG format.
      *         </p>
      *         </li>
@@ -1102,7 +1102,7 @@ public class RecognizeUtteranceRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses
      * Amazon Polly to generate the speech using the configuration that you specified in the
-     * <code>requestContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the value,
+     * <code>responseContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the value,
      * Amazon Lex V2 returns speech in the MPEG format.
      * </p>
      * </li>
@@ -1159,7 +1159,7 @@ public class RecognizeUtteranceRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the response. Amazon Lex V2
      *        uses Amazon Polly to generate the speech using the configuration that you specified in the
-     *        <code>requestContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the
+     *        <code>responseContentType</code> parameter. For example, if you specify <code>audio/mpeg</code> as the
      *        value, Amazon Lex V2 returns speech in the MPEG format.
      *        </p>
      *        </li>

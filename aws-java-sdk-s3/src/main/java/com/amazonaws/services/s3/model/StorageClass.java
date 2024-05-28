@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -94,7 +94,10 @@ public enum StorageClass {
      * that is immediately accessible (less than a second for first byte latency). The target customers for this
      * storage class are those who access an object less than once a quarter but require immediate access.
      */
-    GlacierInstantRetrieval("GLACIER_IR")
+    GlacierInstantRetrieval("GLACIER_IR"),
+
+
+    Snow("SNOW")
     ;
 
     /**

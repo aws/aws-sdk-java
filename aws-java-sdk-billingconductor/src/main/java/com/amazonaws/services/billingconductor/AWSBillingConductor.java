@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,9 +27,9 @@ import com.amazonaws.services.billingconductor.model.*;
  * </p>
  * <p>
  * <p>
- * Amazon Web Services Billing Conductor is a fully managed service that you can use to customize a <a href=
- * "https://docs.aws.amazon.com/enterprisebilling/6b7c01c5-b592-467e-9769-90052eaf359c/userguide/understanding-eb.html#eb-other-definitions"
- * >pro forma</a> version of your billing data each month, to accurately show or chargeback your end customers. Amazon
+ * Amazon Web Services Billing Conductor is a fully managed service that you can use to customize a <a
+ * href="https://docs.aws.amazon.com/billingconductor/latest/userguide/understanding-eb.html#eb-other-definitions"
+ * >proforma</a> version of your billing data each month, to accurately show or chargeback your end customers. Amazon
  * Web Services Billing Conductor doesn't change the way you're billed by Amazon Web Services each month by design.
  * Instead, it provides you with a mechanism to configure, generate, and display rates to certain customers over a given
  * billing period. You can also analyze the difference between the rates you apply to your accounting groupings relative
@@ -40,10 +40,10 @@ import com.amazonaws.services.billingconductor.model.*;
  * </p>
  * <p>
  * This documentation shows how you can configure Amazon Web Services Billing Conductor using its API. For more
- * information about using the <a href="https://console.aws.amazon.com/enterprisebilling/">Amazon Web Services Billing
- * Conductor</a> user interface, see the <a href=
- * "https://docs.aws.amazon.com/enterprisebilling/6b7c01c5-b592-467e-9769-90052eaf359c/userguide/what-is-enterprisebilling.html"
- * > Amazon Web Services Enterprise Billing Console User Guide</a>.
+ * information about using the <a href="https://console.aws.amazon.com/billingconductor/">Amazon Web Services Billing
+ * Conductor</a> user interface, see the <a
+ * href="https://docs.aws.amazon.com/billingconductor/latest/userguide/what-is-billingconductor.html"> Amazon Web
+ * Services Billing Conductor User Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -73,7 +73,7 @@ public interface AWSBillingConductor {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
-     *         The input doesn't match with the constraints specified by Amazon Web Services services.
+     *         The input doesn't match with the constraints specified by Amazon Web Services.
      * @throws ServiceLimitExceededException
      *         The request would cause a service limit to exceed.
      * @throws InternalServerException
@@ -101,7 +101,7 @@ public interface AWSBillingConductor {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
-     *         The input doesn't match with the constraints specified by Amazon Web Services services.
+     *         The input doesn't match with the constraints specified by Amazon Web Services.
      * @throws ServiceLimitExceededException
      *         The request would cause a service limit to exceed.
      * @throws InternalServerException
@@ -128,7 +128,7 @@ public interface AWSBillingConductor {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
-     *         The input doesn't match with the constraints specified by Amazon Web Services services.
+     *         The input doesn't match with the constraints specified by Amazon Web Services.
      * @throws ServiceLimitExceededException
      *         The request would cause a service limit to exceed.
      * @throws InternalServerException
@@ -157,7 +157,7 @@ public interface AWSBillingConductor {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
-     *         The input doesn't match with the constraints specified by Amazon Web Services services.
+     *         The input doesn't match with the constraints specified by Amazon Web Services.
      * @throws InternalServerException
      *         An unexpected error occurred while processing a request.
      * @throws ResourceNotFoundException
@@ -185,7 +185,7 @@ public interface AWSBillingConductor {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
-     *         The input doesn't match with the constraints specified by Amazon Web Services services.
+     *         The input doesn't match with the constraints specified by Amazon Web Services.
      * @throws ServiceLimitExceededException
      *         The request would cause a service limit to exceed.
      * @throws InternalServerException
@@ -211,7 +211,7 @@ public interface AWSBillingConductor {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
-     *         The input doesn't match with the constraints specified by Amazon Web Services services.
+     *         The input doesn't match with the constraints specified by Amazon Web Services.
      * @throws ServiceLimitExceededException
      *         The request would cause a service limit to exceed.
      * @throws InternalServerException
@@ -236,7 +236,7 @@ public interface AWSBillingConductor {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
-     *         The input doesn't match with the constraints specified by Amazon Web Services services.
+     *         The input doesn't match with the constraints specified by Amazon Web Services.
      * @throws ServiceLimitExceededException
      *         The request would cause a service limit to exceed.
      * @throws InternalServerException
@@ -263,7 +263,7 @@ public interface AWSBillingConductor {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
-     *         The input doesn't match with the constraints specified by Amazon Web Services services.
+     *         The input doesn't match with the constraints specified by Amazon Web Services.
      * @throws ServiceLimitExceededException
      *         The request would cause a service limit to exceed.
      * @throws InternalServerException
@@ -286,7 +286,7 @@ public interface AWSBillingConductor {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
-     *         The input doesn't match with the constraints specified by Amazon Web Services services.
+     *         The input doesn't match with the constraints specified by Amazon Web Services.
      * @throws InternalServerException
      *         An unexpected error occurred while processing a request.
      * @sample AWSBillingConductor.DeleteBillingGroup
@@ -309,7 +309,7 @@ public interface AWSBillingConductor {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
-     *         The input doesn't match with the constraints specified by Amazon Web Services services.
+     *         The input doesn't match with the constraints specified by Amazon Web Services.
      * @throws InternalServerException
      *         An unexpected error occurred while processing a request.
      * @sample AWSBillingConductor.DeleteCustomLineItem
@@ -332,7 +332,7 @@ public interface AWSBillingConductor {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
-     *         The input doesn't match with the constraints specified by Amazon Web Services services.
+     *         The input doesn't match with the constraints specified by Amazon Web Services.
      * @throws InternalServerException
      *         An unexpected error occurred while processing a request.
      * @sample AWSBillingConductor.DeletePricingPlan
@@ -343,7 +343,7 @@ public interface AWSBillingConductor {
 
     /**
      * <p>
-     * Deletes the pricing rule identified by the input Amazon Resource Name (ARN).
+     * Deletes the pricing rule that's identified by the input Amazon Resource Name (ARN).
      * </p>
      * 
      * @param deletePricingRuleRequest
@@ -355,7 +355,7 @@ public interface AWSBillingConductor {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
-     *         The input doesn't match with the constraints specified by Amazon Web Services services.
+     *         The input doesn't match with the constraints specified by Amazon Web Services.
      * @throws InternalServerException
      *         An unexpected error occurred while processing a request.
      * @sample AWSBillingConductor.DeletePricingRule
@@ -378,7 +378,7 @@ public interface AWSBillingConductor {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
-     *         The input doesn't match with the constraints specified by Amazon Web Services services.
+     *         The input doesn't match with the constraints specified by Amazon Web Services.
      * @throws InternalServerException
      *         An unexpected error occurred while processing a request.
      * @throws ResourceNotFoundException
@@ -403,7 +403,7 @@ public interface AWSBillingConductor {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
-     *         The input doesn't match with the constraints specified by Amazon Web Services services.
+     *         The input doesn't match with the constraints specified by Amazon Web Services.
      * @throws InternalServerException
      *         An unexpected error occurred while processing a request.
      * @throws ResourceNotFoundException
@@ -416,14 +416,33 @@ public interface AWSBillingConductor {
 
     /**
      * <p>
-     * <i> <b>Amazon Web Services Billing Conductor is in beta release and is subject to change. Your use of Amazon Web
-     * Services Billing Conductor is subject to the Beta Service Participation terms of the <a
-     * href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> (Section 1.10).</b> </i>
+     * Retrieves the margin summary report, which includes the Amazon Web Services cost and charged amount (pro forma
+     * cost) by Amazon Web Service for a specific billing group.
      * </p>
+     * 
+     * @param getBillingGroupCostReportRequest
+     * @return Result of the GetBillingGroupCostReport operation returned by the service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The input doesn't match with the constraints specified by Amazon Web Services.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that doesn't exist.
+     * @sample AWSBillingConductor.GetBillingGroupCostReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/GetBillingGroupCostReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetBillingGroupCostReportResult getBillingGroupCostReport(GetBillingGroupCostReportRequest getBillingGroupCostReportRequest);
+
+    /**
      * <p>
      * This is a paginated call to list linked accounts that are linked to the payer account for the specified time
      * period. If no information is provided, the current billing period is used. The response will optionally include
-     * the billing group associated with the linked account.
+     * the billing group that's associated with the linked account.
      * </p>
      * 
      * @param listAccountAssociationsRequest
@@ -433,7 +452,7 @@ public interface AWSBillingConductor {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
-     *         The input doesn't match with the constraints specified by Amazon Web Services services.
+     *         The input doesn't match with the constraints specified by Amazon Web Services.
      * @throws InternalServerException
      *         An unexpected error occurred while processing a request.
      * @throws ResourceNotFoundException
@@ -457,7 +476,7 @@ public interface AWSBillingConductor {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
-     *         The input doesn't match with the constraints specified by Amazon Web Services services.
+     *         The input doesn't match with the constraints specified by Amazon Web Services.
      * @throws InternalServerException
      *         An unexpected error occurred while processing a request.
      * @throws ResourceNotFoundException
@@ -481,7 +500,7 @@ public interface AWSBillingConductor {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
-     *         The input doesn't match with the constraints specified by Amazon Web Services services.
+     *         The input doesn't match with the constraints specified by Amazon Web Services.
      * @throws InternalServerException
      *         An unexpected error occurred while processing a request.
      * @throws ResourceNotFoundException
@@ -491,6 +510,27 @@ public interface AWSBillingConductor {
      *      target="_top">AWS API Documentation</a>
      */
     ListBillingGroupsResult listBillingGroups(ListBillingGroupsRequest listBillingGroupsRequest);
+
+    /**
+     * <p>
+     * A paginated call to get a list of all custom line item versions.
+     * </p>
+     * 
+     * @param listCustomLineItemVersionsRequest
+     * @return Result of the ListCustomLineItemVersions operation returned by the service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The input doesn't match with the constraints specified by Amazon Web Services.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSBillingConductor.ListCustomLineItemVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListCustomLineItemVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListCustomLineItemVersionsResult listCustomLineItemVersions(ListCustomLineItemVersionsRequest listCustomLineItemVersionsRequest);
 
     /**
      * <p>
@@ -505,7 +545,7 @@ public interface AWSBillingConductor {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
-     *         The input doesn't match with the constraints specified by Amazon Web Services services.
+     *         The input doesn't match with the constraints specified by Amazon Web Services.
      * @throws InternalServerException
      *         An unexpected error occurred while processing a request.
      * @throws ResourceNotFoundException
@@ -529,7 +569,7 @@ public interface AWSBillingConductor {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
-     *         The input doesn't match with the constraints specified by Amazon Web Services services.
+     *         The input doesn't match with the constraints specified by Amazon Web Services.
      * @throws InternalServerException
      *         An unexpected error occurred while processing a request.
      * @sample AWSBillingConductor.ListPricingPlans
@@ -540,7 +580,7 @@ public interface AWSBillingConductor {
 
     /**
      * <p>
-     * A list of the pricing plans associated with a pricing rule.
+     * A list of the pricing plans that are associated with a pricing rule.
      * </p>
      * 
      * @param listPricingPlansAssociatedWithPricingRuleRequest
@@ -550,7 +590,7 @@ public interface AWSBillingConductor {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
-     *         The input doesn't match with the constraints specified by Amazon Web Services services.
+     *         The input doesn't match with the constraints specified by Amazon Web Services.
      * @throws InternalServerException
      *         An unexpected error occurred while processing a request.
      * @throws ResourceNotFoundException
@@ -575,7 +615,7 @@ public interface AWSBillingConductor {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
-     *         The input doesn't match with the constraints specified by Amazon Web Services services.
+     *         The input doesn't match with the constraints specified by Amazon Web Services.
      * @throws InternalServerException
      *         An unexpected error occurred while processing a request.
      * @sample AWSBillingConductor.ListPricingRules
@@ -586,7 +626,7 @@ public interface AWSBillingConductor {
 
     /**
      * <p>
-     * Lists the pricing rules associated with a pricing plan.
+     * Lists the pricing rules that are associated with a pricing plan.
      * </p>
      * 
      * @param listPricingRulesAssociatedToPricingPlanRequest
@@ -596,7 +636,7 @@ public interface AWSBillingConductor {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
-     *         The input doesn't match with the constraints specified by Amazon Web Services services.
+     *         The input doesn't match with the constraints specified by Amazon Web Services.
      * @throws InternalServerException
      *         An unexpected error occurred while processing a request.
      * @throws ResourceNotFoundException
@@ -611,7 +651,7 @@ public interface AWSBillingConductor {
 
     /**
      * <p>
-     * List the resources associated to a custom line item.
+     * List the resources that are associated to a custom line item.
      * </p>
      * 
      * @param listResourcesAssociatedToCustomLineItemRequest
@@ -621,7 +661,7 @@ public interface AWSBillingConductor {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
-     *         The input doesn't match with the constraints specified by Amazon Web Services services.
+     *         The input doesn't match with the constraints specified by Amazon Web Services.
      * @throws InternalServerException
      *         An unexpected error occurred while processing a request.
      * @throws ResourceNotFoundException
@@ -646,7 +686,7 @@ public interface AWSBillingConductor {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
-     *         The input doesn't match with the constraints specified by Amazon Web Services services.
+     *         The input doesn't match with the constraints specified by Amazon Web Services.
      * @throws InternalServerException
      *         An unexpected error occurred while processing a request.
      * @throws ResourceNotFoundException
@@ -670,7 +710,7 @@ public interface AWSBillingConductor {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
-     *         The input doesn't match with the constraints specified by Amazon Web Services services.
+     *         The input doesn't match with the constraints specified by Amazon Web Services.
      * @throws InternalServerException
      *         An unexpected error occurred while processing a request.
      * @throws ResourceNotFoundException
@@ -693,7 +733,7 @@ public interface AWSBillingConductor {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
-     *         The input doesn't match with the constraints specified by Amazon Web Services services.
+     *         The input doesn't match with the constraints specified by Amazon Web Services.
      * @throws InternalServerException
      *         An unexpected error occurred while processing a request.
      * @throws ResourceNotFoundException
@@ -718,7 +758,7 @@ public interface AWSBillingConductor {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
-     *         The input doesn't match with the constraints specified by Amazon Web Services services.
+     *         The input doesn't match with the constraints specified by Amazon Web Services.
      * @throws InternalServerException
      *         An unexpected error occurred while processing a request.
      * @throws ResourceNotFoundException
@@ -741,7 +781,7 @@ public interface AWSBillingConductor {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
-     *         The input doesn't match with the constraints specified by Amazon Web Services services.
+     *         The input doesn't match with the constraints specified by Amazon Web Services.
      * @throws InternalServerException
      *         An unexpected error occurred while processing a request.
      * @throws ResourceNotFoundException
@@ -766,7 +806,7 @@ public interface AWSBillingConductor {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
-     *         The input doesn't match with the constraints specified by Amazon Web Services services.
+     *         The input doesn't match with the constraints specified by Amazon Web Services.
      * @throws InternalServerException
      *         An unexpected error occurred while processing a request.
      * @throws ResourceNotFoundException
@@ -791,7 +831,7 @@ public interface AWSBillingConductor {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
-     *         The input doesn't match with the constraints specified by Amazon Web Services services.
+     *         The input doesn't match with the constraints specified by Amazon Web Services.
      * @throws InternalServerException
      *         An unexpected error occurred while processing a request.
      * @throws ResourceNotFoundException

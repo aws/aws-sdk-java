@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,6 +65,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * specified, the default branch's HEAD commit ID is used.
      * </p>
      * </dd>
+     * <dt>GitLab</dt>
+     * <dd>
+     * <p>
+     * The commit ID, branch, or Git tag to use.
+     * </p>
+     * </dd>
      * <dt>Bitbucket</dt>
      * <dd>
      * <p>
@@ -126,7 +132,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * An authorization type for this build that overrides the one defined in the build project. This override applies
-     * only if the build project's source is BitBucket or GitHub.
+     * only if the build project's source is BitBucket, GitHub, GitLab, or GitLab Self Managed.
      * </p>
      */
     private SourceAuth sourceAuthOverride;
@@ -145,8 +151,8 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private GitSubmodulesConfig gitSubmodulesConfigOverride;
     /**
      * <p>
-     * A buildspec file declaration that overrides, for this build only, the latest one already defined in the build
-     * project.
+     * A buildspec file declaration that overrides the latest one defined in the build project, for this build only. The
+     * buildspec defined on the project is not changed.
      * </p>
      * <p>
      * If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file
@@ -158,6 +164,14 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage"
      * >Buildspec File Name and Storage Location</a>.
      * </p>
+     * <note>
+     * <p>
+     * Since this property allows you to change the build commands that will run in the container, you should note that
+     * an IAM principal with the ability to call this API and set this parameter can override the default settings.
+     * Moreover, we encourage that you use a trustworthy buildspec location like a file in your source repository or a
+     * Amazon S3 bucket.
+     * </p>
+     * </note>
      */
     private String buildspecOverride;
     /**
@@ -239,7 +253,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private Boolean privilegedModeOverride;
     /**
      * <p>
-     * The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the latest
+     * The number of build timeout minutes, from 5 to 2160 (36 hours), that overrides, for this build only, the latest
      * setting already defined in the build project.
      * </p>
      */
@@ -320,6 +334,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private Boolean debugSessionEnabled;
+    /**
+     * <p>
+     * A ProjectFleet object specified for this build that overrides the one defined in the build project.
+     * </p>
+     */
+    private ProjectFleet fleetOverride;
 
     /**
      * <p>
@@ -530,6 +550,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * specified, the default branch's HEAD commit ID is used.
      * </p>
      * </dd>
+     * <dt>GitLab</dt>
+     * <dd>
+     * <p>
+     * The commit ID, branch, or Git tag to use.
+     * </p>
+     * </dd>
      * <dt>Bitbucket</dt>
      * <dd>
      * <p>
@@ -572,6 +598,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        code you want to build. If a pull request ID is specified, it must use the format
      *        <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the
      *        branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
+     *        </p>
+     *        </dd>
+     *        <dt>GitLab</dt>
+     *        <dd>
+     *        <p>
+     *        The commit ID, branch, or Git tag to use.
      *        </p>
      *        </dd>
      *        <dt>Bitbucket</dt>
@@ -624,6 +656,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * specified, the default branch's HEAD commit ID is used.
      * </p>
      * </dd>
+     * <dt>GitLab</dt>
+     * <dd>
+     * <p>
+     * The commit ID, branch, or Git tag to use.
+     * </p>
+     * </dd>
      * <dt>Bitbucket</dt>
      * <dd>
      * <p>
@@ -665,6 +703,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         code you want to build. If a pull request ID is specified, it must use the format
      *         <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the
      *         branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
+     *         </p>
+     *         </dd>
+     *         <dt>GitLab</dt>
+     *         <dd>
+     *         <p>
+     *         The commit ID, branch, or Git tag to use.
      *         </p>
      *         </dd>
      *         <dt>Bitbucket</dt>
@@ -717,6 +761,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * specified, the default branch's HEAD commit ID is used.
      * </p>
      * </dd>
+     * <dt>GitLab</dt>
+     * <dd>
+     * <p>
+     * The commit ID, branch, or Git tag to use.
+     * </p>
+     * </dd>
      * <dt>Bitbucket</dt>
      * <dd>
      * <p>
@@ -759,6 +809,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        code you want to build. If a pull request ID is specified, it must use the format
      *        <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a branch name is specified, the
      *        branch's HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is used.
+     *        </p>
+     *        </dd>
+     *        <dt>GitLab</dt>
+     *        <dd>
+     *        <p>
+     *        The commit ID, branch, or Git tag to use.
      *        </p>
      *        </dd>
      *        <dt>Bitbucket</dt>
@@ -1088,12 +1144,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * An authorization type for this build that overrides the one defined in the build project. This override applies
-     * only if the build project's source is BitBucket or GitHub.
+     * only if the build project's source is BitBucket, GitHub, GitLab, or GitLab Self Managed.
      * </p>
      * 
      * @param sourceAuthOverride
      *        An authorization type for this build that overrides the one defined in the build project. This override
-     *        applies only if the build project's source is BitBucket or GitHub.
+     *        applies only if the build project's source is BitBucket, GitHub, GitLab, or GitLab Self Managed.
      */
 
     public void setSourceAuthOverride(SourceAuth sourceAuthOverride) {
@@ -1103,11 +1159,11 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * An authorization type for this build that overrides the one defined in the build project. This override applies
-     * only if the build project's source is BitBucket or GitHub.
+     * only if the build project's source is BitBucket, GitHub, GitLab, or GitLab Self Managed.
      * </p>
      * 
      * @return An authorization type for this build that overrides the one defined in the build project. This override
-     *         applies only if the build project's source is BitBucket or GitHub.
+     *         applies only if the build project's source is BitBucket, GitHub, GitLab, or GitLab Self Managed.
      */
 
     public SourceAuth getSourceAuthOverride() {
@@ -1117,12 +1173,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * An authorization type for this build that overrides the one defined in the build project. This override applies
-     * only if the build project's source is BitBucket or GitHub.
+     * only if the build project's source is BitBucket, GitHub, GitLab, or GitLab Self Managed.
      * </p>
      * 
      * @param sourceAuthOverride
      *        An authorization type for this build that overrides the one defined in the build project. This override
-     *        applies only if the build project's source is BitBucket or GitHub.
+     *        applies only if the build project's source is BitBucket, GitHub, GitLab, or GitLab Self Managed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1219,8 +1275,8 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A buildspec file declaration that overrides, for this build only, the latest one already defined in the build
-     * project.
+     * A buildspec file declaration that overrides the latest one defined in the build project, for this build only. The
+     * buildspec defined on the project is not changed.
      * </p>
      * <p>
      * If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file
@@ -1232,10 +1288,18 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage"
      * >Buildspec File Name and Storage Location</a>.
      * </p>
+     * <note>
+     * <p>
+     * Since this property allows you to change the build commands that will run in the container, you should note that
+     * an IAM principal with the ability to call this API and set this parameter can override the default settings.
+     * Moreover, we encourage that you use a trustworthy buildspec location like a file in your source repository or a
+     * Amazon S3 bucket.
+     * </p>
+     * </note>
      * 
      * @param buildspecOverride
-     *        A buildspec file declaration that overrides, for this build only, the latest one already defined in the
-     *        build project.</p>
+     *        A buildspec file declaration that overrides the latest one defined in the build project, for this build
+     *        only. The buildspec defined on the project is not changed.</p>
      *        <p>
      *        If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec
      *        file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the
@@ -1246,6 +1310,14 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage"
      *        >Buildspec File Name and Storage Location</a>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Since this property allows you to change the build commands that will run in the container, you should
+     *        note that an IAM principal with the ability to call this API and set this parameter can override the
+     *        default settings. Moreover, we encourage that you use a trustworthy buildspec location like a file in your
+     *        source repository or a Amazon S3 bucket.
+     *        </p>
      */
 
     public void setBuildspecOverride(String buildspecOverride) {
@@ -1254,8 +1326,8 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A buildspec file declaration that overrides, for this build only, the latest one already defined in the build
-     * project.
+     * A buildspec file declaration that overrides the latest one defined in the build project, for this build only. The
+     * buildspec defined on the project is not changed.
      * </p>
      * <p>
      * If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file
@@ -1267,9 +1339,17 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage"
      * >Buildspec File Name and Storage Location</a>.
      * </p>
+     * <note>
+     * <p>
+     * Since this property allows you to change the build commands that will run in the container, you should note that
+     * an IAM principal with the ability to call this API and set this parameter can override the default settings.
+     * Moreover, we encourage that you use a trustworthy buildspec location like a file in your source repository or a
+     * Amazon S3 bucket.
+     * </p>
+     * </note>
      * 
-     * @return A buildspec file declaration that overrides, for this build only, the latest one already defined in the
-     *         build project.</p>
+     * @return A buildspec file declaration that overrides the latest one defined in the build project, for this build
+     *         only. The buildspec defined on the project is not changed.</p>
      *         <p>
      *         If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec
      *         file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the
@@ -1280,6 +1360,14 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         information, see <a href=
      *         "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage"
      *         >Buildspec File Name and Storage Location</a>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         Since this property allows you to change the build commands that will run in the container, you should
+     *         note that an IAM principal with the ability to call this API and set this parameter can override the
+     *         default settings. Moreover, we encourage that you use a trustworthy buildspec location like a file in
+     *         your source repository or a Amazon S3 bucket.
+     *         </p>
      */
 
     public String getBuildspecOverride() {
@@ -1288,8 +1376,8 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A buildspec file declaration that overrides, for this build only, the latest one already defined in the build
-     * project.
+     * A buildspec file declaration that overrides the latest one defined in the build project, for this build only. The
+     * buildspec defined on the project is not changed.
      * </p>
      * <p>
      * If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec file
@@ -1301,10 +1389,18 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage"
      * >Buildspec File Name and Storage Location</a>.
      * </p>
+     * <note>
+     * <p>
+     * Since this property allows you to change the build commands that will run in the container, you should note that
+     * an IAM principal with the ability to call this API and set this parameter can override the default settings.
+     * Moreover, we encourage that you use a trustworthy buildspec location like a file in your source repository or a
+     * Amazon S3 bucket.
+     * </p>
+     * </note>
      * 
      * @param buildspecOverride
-     *        A buildspec file declaration that overrides, for this build only, the latest one already defined in the
-     *        build project.</p>
+     *        A buildspec file declaration that overrides the latest one defined in the build project, for this build
+     *        only. The buildspec defined on the project is not changed.</p>
      *        <p>
      *        If this value is set, it can be either an inline buildspec definition, the path to an alternate buildspec
      *        file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the
@@ -1315,6 +1411,14 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage"
      *        >Buildspec File Name and Storage Location</a>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Since this property allows you to change the build commands that will run in the container, you should
+     *        note that an IAM principal with the ability to call this API and set this parameter can override the
+     *        default settings. Moreover, we encourage that you use a trustworthy buildspec location like a file in your
+     *        source repository or a Amazon S3 bucket.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1931,12 +2035,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the latest
+     * The number of build timeout minutes, from 5 to 2160 (36 hours), that overrides, for this build only, the latest
      * setting already defined in the build project.
      * </p>
      * 
      * @param timeoutInMinutesOverride
-     *        The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the
+     *        The number of build timeout minutes, from 5 to 2160 (36 hours), that overrides, for this build only, the
      *        latest setting already defined in the build project.
      */
 
@@ -1946,11 +2050,11 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the latest
+     * The number of build timeout minutes, from 5 to 2160 (36 hours), that overrides, for this build only, the latest
      * setting already defined in the build project.
      * </p>
      * 
-     * @return The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the
+     * @return The number of build timeout minutes, from 5 to 2160 (36 hours), that overrides, for this build only, the
      *         latest setting already defined in the build project.
      */
 
@@ -1960,12 +2064,12 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the latest
+     * The number of build timeout minutes, from 5 to 2160 (36 hours), that overrides, for this build only, the latest
      * setting already defined in the build project.
      * </p>
      * 
      * @param timeoutInMinutesOverride
-     *        The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the
+     *        The number of build timeout minutes, from 5 to 2160 (36 hours), that overrides, for this build only, the
      *        latest setting already defined in the build project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2523,6 +2627,46 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * A ProjectFleet object specified for this build that overrides the one defined in the build project.
+     * </p>
+     * 
+     * @param fleetOverride
+     *        A ProjectFleet object specified for this build that overrides the one defined in the build project.
+     */
+
+    public void setFleetOverride(ProjectFleet fleetOverride) {
+        this.fleetOverride = fleetOverride;
+    }
+
+    /**
+     * <p>
+     * A ProjectFleet object specified for this build that overrides the one defined in the build project.
+     * </p>
+     * 
+     * @return A ProjectFleet object specified for this build that overrides the one defined in the build project.
+     */
+
+    public ProjectFleet getFleetOverride() {
+        return this.fleetOverride;
+    }
+
+    /**
+     * <p>
+     * A ProjectFleet object specified for this build that overrides the one defined in the build project.
+     * </p>
+     * 
+     * @param fleetOverride
+     *        A ProjectFleet object specified for this build that overrides the one defined in the build project.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartBuildRequest withFleetOverride(ProjectFleet fleetOverride) {
+        setFleetOverride(fleetOverride);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2595,7 +2739,9 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getImagePullCredentialsTypeOverride() != null)
             sb.append("ImagePullCredentialsTypeOverride: ").append(getImagePullCredentialsTypeOverride()).append(",");
         if (getDebugSessionEnabled() != null)
-            sb.append("DebugSessionEnabled: ").append(getDebugSessionEnabled());
+            sb.append("DebugSessionEnabled: ").append(getDebugSessionEnabled()).append(",");
+        if (getFleetOverride() != null)
+            sb.append("FleetOverride: ").append(getFleetOverride());
         sb.append("}");
         return sb.toString();
     }
@@ -2737,6 +2883,10 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getDebugSessionEnabled() != null && other.getDebugSessionEnabled().equals(this.getDebugSessionEnabled()) == false)
             return false;
+        if (other.getFleetOverride() == null ^ this.getFleetOverride() == null)
+            return false;
+        if (other.getFleetOverride() != null && other.getFleetOverride().equals(this.getFleetOverride()) == false)
+            return false;
         return true;
     }
 
@@ -2776,6 +2926,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getRegistryCredentialOverride() == null) ? 0 : getRegistryCredentialOverride().hashCode());
         hashCode = prime * hashCode + ((getImagePullCredentialsTypeOverride() == null) ? 0 : getImagePullCredentialsTypeOverride().hashCode());
         hashCode = prime * hashCode + ((getDebugSessionEnabled() == null) ? 0 : getDebugSessionEnabled().hashCode());
+        hashCode = prime * hashCode + ((getFleetOverride() == null) ? 0 : getFleetOverride().hashCode());
         return hashCode;
     }
 

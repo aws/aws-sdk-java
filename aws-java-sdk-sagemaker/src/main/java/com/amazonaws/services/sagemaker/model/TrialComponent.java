@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The properties of a trial component as returned by the <a>Search</a> API.
+ * The properties of a trial component as returned by the <a
+ * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TrialComponent" target="_top">AWS API
@@ -127,7 +128,9 @@ public class TrialComponent implements Serializable, Cloneable, StructuredPojo {
     private String lineageGroupArn;
     /**
      * <p>
-     * The list of tags that are associated with the component. You can use <a>Search</a> API to search on the tags.
+     * The list of tags that are associated with the component. You can use <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the
+     * tags.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -138,6 +141,12 @@ public class TrialComponent implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<Parent> parents;
+    /**
+     * <p>
+     * The name of the experiment run.
+     * </p>
+     */
+    private String runName;
 
     /**
      * <p>
@@ -939,11 +948,14 @@ public class TrialComponent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of tags that are associated with the component. You can use <a>Search</a> API to search on the tags.
+     * The list of tags that are associated with the component. You can use <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the
+     * tags.
      * </p>
      * 
-     * @return The list of tags that are associated with the component. You can use <a>Search</a> API to search on the
-     *         tags.
+     * @return The list of tags that are associated with the component. You can use <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search
+     *         on the tags.
      */
 
     public java.util.List<Tag> getTags() {
@@ -952,12 +964,15 @@ public class TrialComponent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of tags that are associated with the component. You can use <a>Search</a> API to search on the tags.
+     * The list of tags that are associated with the component. You can use <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the
+     * tags.
      * </p>
      * 
      * @param tags
-     *        The list of tags that are associated with the component. You can use <a>Search</a> API to search on the
-     *        tags.
+     *        The list of tags that are associated with the component. You can use <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search
+     *        on the tags.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -971,7 +986,9 @@ public class TrialComponent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of tags that are associated with the component. You can use <a>Search</a> API to search on the tags.
+     * The list of tags that are associated with the component. You can use <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the
+     * tags.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -980,8 +997,9 @@ public class TrialComponent implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param tags
-     *        The list of tags that are associated with the component. You can use <a>Search</a> API to search on the
-     *        tags.
+     *        The list of tags that are associated with the component. You can use <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search
+     *        on the tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -997,12 +1015,15 @@ public class TrialComponent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of tags that are associated with the component. You can use <a>Search</a> API to search on the tags.
+     * The list of tags that are associated with the component. You can use <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the
+     * tags.
      * </p>
      * 
      * @param tags
-     *        The list of tags that are associated with the component. You can use <a>Search</a> API to search on the
-     *        tags.
+     *        The list of tags that are associated with the component. You can use <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search
+     *        on the tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1090,6 +1111,46 @@ public class TrialComponent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the experiment run.
+     * </p>
+     * 
+     * @param runName
+     *        The name of the experiment run.
+     */
+
+    public void setRunName(String runName) {
+        this.runName = runName;
+    }
+
+    /**
+     * <p>
+     * The name of the experiment run.
+     * </p>
+     * 
+     * @return The name of the experiment run.
+     */
+
+    public String getRunName() {
+        return this.runName;
+    }
+
+    /**
+     * <p>
+     * The name of the experiment run.
+     * </p>
+     * 
+     * @param runName
+     *        The name of the experiment run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrialComponent withRunName(String runName) {
+        setRunName(runName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1140,7 +1201,9 @@ public class TrialComponent implements Serializable, Cloneable, StructuredPojo {
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getParents() != null)
-            sb.append("Parents: ").append(getParents());
+            sb.append("Parents: ").append(getParents()).append(",");
+        if (getRunName() != null)
+            sb.append("RunName: ").append(getRunName());
         sb.append("}");
         return sb.toString();
     }
@@ -1235,6 +1298,10 @@ public class TrialComponent implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getParents() != null && other.getParents().equals(this.getParents()) == false)
             return false;
+        if (other.getRunName() == null ^ this.getRunName() == null)
+            return false;
+        if (other.getRunName() != null && other.getRunName().equals(this.getRunName()) == false)
+            return false;
         return true;
     }
 
@@ -1263,6 +1330,7 @@ public class TrialComponent implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLineageGroupArn() == null) ? 0 : getLineageGroupArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getParents() == null) ? 0 : getParents().hashCode());
+        hashCode = prime * hashCode + ((getRunName() == null) ? 0 : getRunName().hashCode());
         return hashCode;
     }
 

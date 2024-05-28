@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,8 @@ public class ContactFlowMarshaller {
             .marshallLocationName("Type").build();
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("State").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Status").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<String> CONTENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -67,6 +69,7 @@ public class ContactFlowMarshaller {
             protocolMarshaller.marshall(contactFlow.getName(), NAME_BINDING);
             protocolMarshaller.marshall(contactFlow.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(contactFlow.getState(), STATE_BINDING);
+            protocolMarshaller.marshall(contactFlow.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(contactFlow.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(contactFlow.getContent(), CONTENT_BINDING);
             protocolMarshaller.marshall(contactFlow.getTags(), TAGS_BINDING);

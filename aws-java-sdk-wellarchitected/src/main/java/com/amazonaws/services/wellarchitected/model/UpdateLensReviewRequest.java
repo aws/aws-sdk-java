@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,12 @@ public class UpdateLensReviewRequest extends com.amazonaws.AmazonWebServiceReque
     private String lensNotes;
 
     private java.util.Map<String, String> pillarNotes;
+    /**
+     * <p>
+     * Configuration of the Jira integration.
+     * </p>
+     */
+    private JiraSelectedQuestionConfiguration jiraConfiguration;
 
     /**
      * @param workloadId
@@ -169,6 +175,46 @@ public class UpdateLensReviewRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * Configuration of the Jira integration.
+     * </p>
+     * 
+     * @param jiraConfiguration
+     *        Configuration of the Jira integration.
+     */
+
+    public void setJiraConfiguration(JiraSelectedQuestionConfiguration jiraConfiguration) {
+        this.jiraConfiguration = jiraConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration of the Jira integration.
+     * </p>
+     * 
+     * @return Configuration of the Jira integration.
+     */
+
+    public JiraSelectedQuestionConfiguration getJiraConfiguration() {
+        return this.jiraConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration of the Jira integration.
+     * </p>
+     * 
+     * @param jiraConfiguration
+     *        Configuration of the Jira integration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateLensReviewRequest withJiraConfiguration(JiraSelectedQuestionConfiguration jiraConfiguration) {
+        setJiraConfiguration(jiraConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -187,7 +233,9 @@ public class UpdateLensReviewRequest extends com.amazonaws.AmazonWebServiceReque
         if (getLensNotes() != null)
             sb.append("LensNotes: ").append(getLensNotes()).append(",");
         if (getPillarNotes() != null)
-            sb.append("PillarNotes: ").append(getPillarNotes());
+            sb.append("PillarNotes: ").append(getPillarNotes()).append(",");
+        if (getJiraConfiguration() != null)
+            sb.append("JiraConfiguration: ").append(getJiraConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -218,6 +266,10 @@ public class UpdateLensReviewRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getPillarNotes() != null && other.getPillarNotes().equals(this.getPillarNotes()) == false)
             return false;
+        if (other.getJiraConfiguration() == null ^ this.getJiraConfiguration() == null)
+            return false;
+        if (other.getJiraConfiguration() != null && other.getJiraConfiguration().equals(this.getJiraConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -230,6 +282,7 @@ public class UpdateLensReviewRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getLensAlias() == null) ? 0 : getLensAlias().hashCode());
         hashCode = prime * hashCode + ((getLensNotes() == null) ? 0 : getLensNotes().hashCode());
         hashCode = prime * hashCode + ((getPillarNotes() == null) ? 0 : getPillarNotes().hashCode());
+        hashCode = prime * hashCode + ((getJiraConfiguration() == null) ? 0 : getJiraConfiguration().hashCode());
         return hashCode;
     }
 

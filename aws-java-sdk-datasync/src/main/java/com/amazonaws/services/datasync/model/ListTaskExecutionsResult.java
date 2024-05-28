@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,23 +28,23 @@ public class ListTaskExecutionsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A list of executed tasks.
+     * A list of the task's executions.
      * </p>
      */
     private java.util.List<TaskExecutionListEntry> taskExecutions;
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin returning the next list of executed tasks.
+     * The opaque string that indicates the position to begin the next list of results in the response.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A list of executed tasks.
+     * A list of the task's executions.
      * </p>
      * 
-     * @return A list of executed tasks.
+     * @return A list of the task's executions.
      */
 
     public java.util.List<TaskExecutionListEntry> getTaskExecutions() {
@@ -53,11 +53,11 @@ public class ListTaskExecutionsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A list of executed tasks.
+     * A list of the task's executions.
      * </p>
      * 
      * @param taskExecutions
-     *        A list of executed tasks.
+     *        A list of the task's executions.
      */
 
     public void setTaskExecutions(java.util.Collection<TaskExecutionListEntry> taskExecutions) {
@@ -71,7 +71,7 @@ public class ListTaskExecutionsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A list of executed tasks.
+     * A list of the task's executions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -80,7 +80,7 @@ public class ListTaskExecutionsResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param taskExecutions
-     *        A list of executed tasks.
+     *        A list of the task's executions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +96,11 @@ public class ListTaskExecutionsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * A list of executed tasks.
+     * A list of the task's executions.
      * </p>
      * 
      * @param taskExecutions
-     *        A list of executed tasks.
+     *        A list of the task's executions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,11 +111,11 @@ public class ListTaskExecutionsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin returning the next list of executed tasks.
+     * The opaque string that indicates the position to begin the next list of results in the response.
      * </p>
      * 
      * @param nextToken
-     *        An opaque string that indicates the position at which to begin returning the next list of executed tasks.
+     *        The opaque string that indicates the position to begin the next list of results in the response.
      */
 
     public void setNextToken(String nextToken) {
@@ -124,10 +124,10 @@ public class ListTaskExecutionsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin returning the next list of executed tasks.
+     * The opaque string that indicates the position to begin the next list of results in the response.
      * </p>
      * 
-     * @return An opaque string that indicates the position at which to begin returning the next list of executed tasks.
+     * @return The opaque string that indicates the position to begin the next list of results in the response.
      */
 
     public String getNextToken() {
@@ -136,11 +136,11 @@ public class ListTaskExecutionsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin returning the next list of executed tasks.
+     * The opaque string that indicates the position to begin the next list of results in the response.
      * </p>
      * 
      * @param nextToken
-     *        An opaque string that indicates the position at which to begin returning the next list of executed tasks.
+     *        The opaque string that indicates the position to begin the next list of results in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

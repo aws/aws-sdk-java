@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,30 @@ public class SidewalkDevice implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<CertificateList> deviceCertificates;
+    /**
+     * <p>
+     * The Sidewalk device private keys that will be used for onboarding the device.
+     * </p>
+     */
+    private java.util.List<CertificateList> privateKeys;
+    /**
+     * <p>
+     * The ID of the Sidewalk device profile.
+     * </p>
+     */
+    private String deviceProfileId;
+    /**
+     * <p>
+     * The ID of the Sidewalk device profile.
+     * </p>
+     */
+    private String certificateId;
+    /**
+     * <p>
+     * The Sidewalk device status, such as provisioned or registered.
+     * </p>
+     */
+    private String status;
 
     /**
      * @param amazonId
@@ -225,6 +249,215 @@ public class SidewalkDevice implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Sidewalk device private keys that will be used for onboarding the device.
+     * </p>
+     * 
+     * @return The Sidewalk device private keys that will be used for onboarding the device.
+     */
+
+    public java.util.List<CertificateList> getPrivateKeys() {
+        return privateKeys;
+    }
+
+    /**
+     * <p>
+     * The Sidewalk device private keys that will be used for onboarding the device.
+     * </p>
+     * 
+     * @param privateKeys
+     *        The Sidewalk device private keys that will be used for onboarding the device.
+     */
+
+    public void setPrivateKeys(java.util.Collection<CertificateList> privateKeys) {
+        if (privateKeys == null) {
+            this.privateKeys = null;
+            return;
+        }
+
+        this.privateKeys = new java.util.ArrayList<CertificateList>(privateKeys);
+    }
+
+    /**
+     * <p>
+     * The Sidewalk device private keys that will be used for onboarding the device.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPrivateKeys(java.util.Collection)} or {@link #withPrivateKeys(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param privateKeys
+     *        The Sidewalk device private keys that will be used for onboarding the device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SidewalkDevice withPrivateKeys(CertificateList... privateKeys) {
+        if (this.privateKeys == null) {
+            setPrivateKeys(new java.util.ArrayList<CertificateList>(privateKeys.length));
+        }
+        for (CertificateList ele : privateKeys) {
+            this.privateKeys.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Sidewalk device private keys that will be used for onboarding the device.
+     * </p>
+     * 
+     * @param privateKeys
+     *        The Sidewalk device private keys that will be used for onboarding the device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SidewalkDevice withPrivateKeys(java.util.Collection<CertificateList> privateKeys) {
+        setPrivateKeys(privateKeys);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the Sidewalk device profile.
+     * </p>
+     * 
+     * @param deviceProfileId
+     *        The ID of the Sidewalk device profile.
+     */
+
+    public void setDeviceProfileId(String deviceProfileId) {
+        this.deviceProfileId = deviceProfileId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Sidewalk device profile.
+     * </p>
+     * 
+     * @return The ID of the Sidewalk device profile.
+     */
+
+    public String getDeviceProfileId() {
+        return this.deviceProfileId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Sidewalk device profile.
+     * </p>
+     * 
+     * @param deviceProfileId
+     *        The ID of the Sidewalk device profile.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SidewalkDevice withDeviceProfileId(String deviceProfileId) {
+        setDeviceProfileId(deviceProfileId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the Sidewalk device profile.
+     * </p>
+     * 
+     * @param certificateId
+     *        The ID of the Sidewalk device profile.
+     */
+
+    public void setCertificateId(String certificateId) {
+        this.certificateId = certificateId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Sidewalk device profile.
+     * </p>
+     * 
+     * @return The ID of the Sidewalk device profile.
+     */
+
+    public String getCertificateId() {
+        return this.certificateId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Sidewalk device profile.
+     * </p>
+     * 
+     * @param certificateId
+     *        The ID of the Sidewalk device profile.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SidewalkDevice withCertificateId(String certificateId) {
+        setCertificateId(certificateId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Sidewalk device status, such as provisioned or registered.
+     * </p>
+     * 
+     * @param status
+     *        The Sidewalk device status, such as provisioned or registered.
+     * @see WirelessDeviceSidewalkStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The Sidewalk device status, such as provisioned or registered.
+     * </p>
+     * 
+     * @return The Sidewalk device status, such as provisioned or registered.
+     * @see WirelessDeviceSidewalkStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The Sidewalk device status, such as provisioned or registered.
+     * </p>
+     * 
+     * @param status
+     *        The Sidewalk device status, such as provisioned or registered.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WirelessDeviceSidewalkStatus
+     */
+
+    public SidewalkDevice withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Sidewalk device status, such as provisioned or registered.
+     * </p>
+     * 
+     * @param status
+     *        The Sidewalk device status, such as provisioned or registered.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WirelessDeviceSidewalkStatus
+     */
+
+    public SidewalkDevice withStatus(WirelessDeviceSidewalkStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -243,7 +476,15 @@ public class SidewalkDevice implements Serializable, Cloneable, StructuredPojo {
         if (getSidewalkManufacturingSn() != null)
             sb.append("SidewalkManufacturingSn: ").append(getSidewalkManufacturingSn()).append(",");
         if (getDeviceCertificates() != null)
-            sb.append("DeviceCertificates: ").append(getDeviceCertificates());
+            sb.append("DeviceCertificates: ").append(getDeviceCertificates()).append(",");
+        if (getPrivateKeys() != null)
+            sb.append("PrivateKeys: ").append(getPrivateKeys()).append(",");
+        if (getDeviceProfileId() != null)
+            sb.append("DeviceProfileId: ").append(getDeviceProfileId()).append(",");
+        if (getCertificateId() != null)
+            sb.append("CertificateId: ").append(getCertificateId()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -274,6 +515,22 @@ public class SidewalkDevice implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDeviceCertificates() != null && other.getDeviceCertificates().equals(this.getDeviceCertificates()) == false)
             return false;
+        if (other.getPrivateKeys() == null ^ this.getPrivateKeys() == null)
+            return false;
+        if (other.getPrivateKeys() != null && other.getPrivateKeys().equals(this.getPrivateKeys()) == false)
+            return false;
+        if (other.getDeviceProfileId() == null ^ this.getDeviceProfileId() == null)
+            return false;
+        if (other.getDeviceProfileId() != null && other.getDeviceProfileId().equals(this.getDeviceProfileId()) == false)
+            return false;
+        if (other.getCertificateId() == null ^ this.getCertificateId() == null)
+            return false;
+        if (other.getCertificateId() != null && other.getCertificateId().equals(this.getCertificateId()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
         return true;
     }
 
@@ -286,6 +543,10 @@ public class SidewalkDevice implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSidewalkId() == null) ? 0 : getSidewalkId().hashCode());
         hashCode = prime * hashCode + ((getSidewalkManufacturingSn() == null) ? 0 : getSidewalkManufacturingSn().hashCode());
         hashCode = prime * hashCode + ((getDeviceCertificates() == null) ? 0 : getDeviceCertificates().hashCode());
+        hashCode = prime * hashCode + ((getPrivateKeys() == null) ? 0 : getPrivateKeys().hashCode());
+        hashCode = prime * hashCode + ((getDeviceProfileId() == null) ? 0 : getDeviceProfileId().hashCode());
+        hashCode = prime * hashCode + ((getCertificateId() == null) ? 0 : getCertificateId().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 

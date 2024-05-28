@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,9 +40,9 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
     private String nextToken;
     /**
      * <p>
-     * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If
-     * <code>maxResults</code> is given a larger value than 500, you receive an error.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      */
     private Integer maxResults;
@@ -312,15 +312,16 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If
-     * <code>maxResults</code> is given a larger value than 500, you receive an error.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return for the request in a single page. The remaining results can be
-     *        seen by sending another request with the returned <code>nextToken</code> value. This value can be between
-     *        5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.
+     *        The maximum number of items to return for this request. To get the next page of items, make another
+     *        request with the token returned in the output. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *        >Pagination</a>.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -329,14 +330,15 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If
-     * <code>maxResults</code> is given a larger value than 500, you receive an error.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
-     * @return The maximum number of results to return for the request in a single page. The remaining results can be
-     *         seen by sending another request with the returned <code>nextToken</code> value. This value can be between
-     *         5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.
+     * @return The maximum number of items to return for this request. To get the next page of items, make another
+     *         request with the token returned in the output. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *         >Pagination</a>.
      */
 
     public Integer getMaxResults() {
@@ -345,15 +347,16 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If
-     * <code>maxResults</code> is given a larger value than 500, you receive an error.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return for the request in a single page. The remaining results can be
-     *        seen by sending another request with the returned <code>nextToken</code> value. This value can be between
-     *        5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.
+     *        The maximum number of items to return for this request. To get the next page of items, make another
+     *        request with the token returned in the output. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *        >Pagination</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

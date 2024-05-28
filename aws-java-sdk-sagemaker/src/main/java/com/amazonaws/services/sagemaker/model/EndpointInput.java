@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,7 @@ public class EndpointInput implements Serializable, Cloneable, StructuredPojo {
     private String s3InputMode;
     /**
      * <p>
-     * Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defaults to
+     * Whether input data distributed in Amazon S3 is fully replicated or sharded by an Amazon S3 key. Defaults to
      * <code>FullyReplicated</code>
      * </p>
      */
@@ -97,6 +97,12 @@ public class EndpointInput implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String endTimeOffset;
+    /**
+     * <p>
+     * The attributes of the input data to exclude from the analysis.
+     * </p>
+     */
+    private String excludeFeaturesAttribute;
 
     /**
      * <p>
@@ -255,13 +261,13 @@ public class EndpointInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defaults to
+     * Whether input data distributed in Amazon S3 is fully replicated or sharded by an Amazon S3 key. Defaults to
      * <code>FullyReplicated</code>
      * </p>
      * 
      * @param s3DataDistributionType
-     *        Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defaults to
-     *        <code>FullyReplicated</code>
+     *        Whether input data distributed in Amazon S3 is fully replicated or sharded by an Amazon S3 key. Defaults
+     *        to <code>FullyReplicated</code>
      * @see ProcessingS3DataDistributionType
      */
 
@@ -271,12 +277,12 @@ public class EndpointInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defaults to
+     * Whether input data distributed in Amazon S3 is fully replicated or sharded by an Amazon S3 key. Defaults to
      * <code>FullyReplicated</code>
      * </p>
      * 
-     * @return Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defaults to
-     *         <code>FullyReplicated</code>
+     * @return Whether input data distributed in Amazon S3 is fully replicated or sharded by an Amazon S3 key. Defaults
+     *         to <code>FullyReplicated</code>
      * @see ProcessingS3DataDistributionType
      */
 
@@ -286,13 +292,13 @@ public class EndpointInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defaults to
+     * Whether input data distributed in Amazon S3 is fully replicated or sharded by an Amazon S3 key. Defaults to
      * <code>FullyReplicated</code>
      * </p>
      * 
      * @param s3DataDistributionType
-     *        Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defaults to
-     *        <code>FullyReplicated</code>
+     *        Whether input data distributed in Amazon S3 is fully replicated or sharded by an Amazon S3 key. Defaults
+     *        to <code>FullyReplicated</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProcessingS3DataDistributionType
      */
@@ -304,13 +310,13 @@ public class EndpointInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defaults to
+     * Whether input data distributed in Amazon S3 is fully replicated or sharded by an Amazon S3 key. Defaults to
      * <code>FullyReplicated</code>
      * </p>
      * 
      * @param s3DataDistributionType
-     *        Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3 key. Defaults to
-     *        <code>FullyReplicated</code>
+     *        Whether input data distributed in Amazon S3 is fully replicated or sharded by an Amazon S3 key. Defaults
+     *        to <code>FullyReplicated</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProcessingS3DataDistributionType
      */
@@ -597,6 +603,46 @@ public class EndpointInput implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The attributes of the input data to exclude from the analysis.
+     * </p>
+     * 
+     * @param excludeFeaturesAttribute
+     *        The attributes of the input data to exclude from the analysis.
+     */
+
+    public void setExcludeFeaturesAttribute(String excludeFeaturesAttribute) {
+        this.excludeFeaturesAttribute = excludeFeaturesAttribute;
+    }
+
+    /**
+     * <p>
+     * The attributes of the input data to exclude from the analysis.
+     * </p>
+     * 
+     * @return The attributes of the input data to exclude from the analysis.
+     */
+
+    public String getExcludeFeaturesAttribute() {
+        return this.excludeFeaturesAttribute;
+    }
+
+    /**
+     * <p>
+     * The attributes of the input data to exclude from the analysis.
+     * </p>
+     * 
+     * @param excludeFeaturesAttribute
+     *        The attributes of the input data to exclude from the analysis.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EndpointInput withExcludeFeaturesAttribute(String excludeFeaturesAttribute) {
+        setExcludeFeaturesAttribute(excludeFeaturesAttribute);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -627,7 +673,9 @@ public class EndpointInput implements Serializable, Cloneable, StructuredPojo {
         if (getStartTimeOffset() != null)
             sb.append("StartTimeOffset: ").append(getStartTimeOffset()).append(",");
         if (getEndTimeOffset() != null)
-            sb.append("EndTimeOffset: ").append(getEndTimeOffset());
+            sb.append("EndTimeOffset: ").append(getEndTimeOffset()).append(",");
+        if (getExcludeFeaturesAttribute() != null)
+            sb.append("ExcludeFeaturesAttribute: ").append(getExcludeFeaturesAttribute());
         sb.append("}");
         return sb.toString();
     }
@@ -683,6 +731,10 @@ public class EndpointInput implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEndTimeOffset() != null && other.getEndTimeOffset().equals(this.getEndTimeOffset()) == false)
             return false;
+        if (other.getExcludeFeaturesAttribute() == null ^ this.getExcludeFeaturesAttribute() == null)
+            return false;
+        if (other.getExcludeFeaturesAttribute() != null && other.getExcludeFeaturesAttribute().equals(this.getExcludeFeaturesAttribute()) == false)
+            return false;
         return true;
     }
 
@@ -701,6 +753,7 @@ public class EndpointInput implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getProbabilityThresholdAttribute() == null) ? 0 : getProbabilityThresholdAttribute().hashCode());
         hashCode = prime * hashCode + ((getStartTimeOffset() == null) ? 0 : getStartTimeOffset().hashCode());
         hashCode = prime * hashCode + ((getEndTimeOffset() == null) ? 0 : getEndTimeOffset().hashCode());
+        hashCode = prime * hashCode + ((getExcludeFeaturesAttribute() == null) ? 0 : getExcludeFeaturesAttribute().hashCode());
         return hashCode;
     }
 

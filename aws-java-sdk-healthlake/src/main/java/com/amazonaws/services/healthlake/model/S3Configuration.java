@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class S3Configuration implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The S3Uri is the user specified S3 location of the FHIR data to be imported into Amazon HealthLake.
+     * The S3Uri is the user specified S3 location of the FHIR data to be imported into AWS HealthLake.
      * </p>
      */
     private String s3Uri;
@@ -44,11 +44,11 @@ public class S3Configuration implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The S3Uri is the user specified S3 location of the FHIR data to be imported into Amazon HealthLake.
+     * The S3Uri is the user specified S3 location of the FHIR data to be imported into AWS HealthLake.
      * </p>
      * 
      * @param s3Uri
-     *        The S3Uri is the user specified S3 location of the FHIR data to be imported into Amazon HealthLake.
+     *        The S3Uri is the user specified S3 location of the FHIR data to be imported into AWS HealthLake.
      */
 
     public void setS3Uri(String s3Uri) {
@@ -57,10 +57,10 @@ public class S3Configuration implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The S3Uri is the user specified S3 location of the FHIR data to be imported into Amazon HealthLake.
+     * The S3Uri is the user specified S3 location of the FHIR data to be imported into AWS HealthLake.
      * </p>
      * 
-     * @return The S3Uri is the user specified S3 location of the FHIR data to be imported into Amazon HealthLake.
+     * @return The S3Uri is the user specified S3 location of the FHIR data to be imported into AWS HealthLake.
      */
 
     public String getS3Uri() {
@@ -69,11 +69,11 @@ public class S3Configuration implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The S3Uri is the user specified S3 location of the FHIR data to be imported into Amazon HealthLake.
+     * The S3Uri is the user specified S3 location of the FHIR data to be imported into AWS HealthLake.
      * </p>
      * 
      * @param s3Uri
-     *        The S3Uri is the user specified S3 location of the FHIR data to be imported into Amazon HealthLake.
+     *        The S3Uri is the user specified S3 location of the FHIR data to be imported into AWS HealthLake.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

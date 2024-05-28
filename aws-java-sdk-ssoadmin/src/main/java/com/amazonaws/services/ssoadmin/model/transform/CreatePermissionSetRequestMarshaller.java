@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,16 +28,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreatePermissionSetRequestMarshaller {
 
-    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<String> INSTANCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceArn").build();
-    private static final MarshallingInfo<String> SESSIONDURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SessionDuration").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> RELAYSTATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RelayState").build();
+    private static final MarshallingInfo<String> SESSIONDURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SessionDuration").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
 
@@ -57,11 +57,11 @@ public class CreatePermissionSetRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(createPermissionSetRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createPermissionSetRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createPermissionSetRequest.getInstanceArn(), INSTANCEARN_BINDING);
-            protocolMarshaller.marshall(createPermissionSetRequest.getSessionDuration(), SESSIONDURATION_BINDING);
+            protocolMarshaller.marshall(createPermissionSetRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createPermissionSetRequest.getRelayState(), RELAYSTATE_BINDING);
+            protocolMarshaller.marshall(createPermissionSetRequest.getSessionDuration(), SESSIONDURATION_BINDING);
             protocolMarshaller.marshall(createPermissionSetRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

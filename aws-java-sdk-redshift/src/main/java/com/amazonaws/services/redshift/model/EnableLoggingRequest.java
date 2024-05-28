@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -113,7 +113,8 @@ public class EnableLoggingRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String logDestinationType;
     /**
      * <p>
-     * The collection of exported log types. Log types include the connection log, user log and user activity log.
+     * The collection of exported log types. Possible values are <code>connectionlog</code>,
+     * <code>useractivitylog</code>, and <code>userlog</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> logExports;
@@ -656,11 +657,12 @@ public class EnableLoggingRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The collection of exported log types. Log types include the connection log, user log and user activity log.
+     * The collection of exported log types. Possible values are <code>connectionlog</code>,
+     * <code>useractivitylog</code>, and <code>userlog</code>.
      * </p>
      * 
-     * @return The collection of exported log types. Log types include the connection log, user log and user activity
-     *         log.
+     * @return The collection of exported log types. Possible values are <code>connectionlog</code>,
+     *         <code>useractivitylog</code>, and <code>userlog</code>.
      */
 
     public java.util.List<String> getLogExports() {
@@ -672,12 +674,13 @@ public class EnableLoggingRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The collection of exported log types. Log types include the connection log, user log and user activity log.
+     * The collection of exported log types. Possible values are <code>connectionlog</code>,
+     * <code>useractivitylog</code>, and <code>userlog</code>.
      * </p>
      * 
      * @param logExports
-     *        The collection of exported log types. Log types include the connection log, user log and user activity
-     *        log.
+     *        The collection of exported log types. Possible values are <code>connectionlog</code>,
+     *        <code>useractivitylog</code>, and <code>userlog</code>.
      */
 
     public void setLogExports(java.util.Collection<String> logExports) {
@@ -691,7 +694,8 @@ public class EnableLoggingRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The collection of exported log types. Log types include the connection log, user log and user activity log.
+     * The collection of exported log types. Possible values are <code>connectionlog</code>,
+     * <code>useractivitylog</code>, and <code>userlog</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -700,8 +704,8 @@ public class EnableLoggingRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param logExports
-     *        The collection of exported log types. Log types include the connection log, user log and user activity
-     *        log.
+     *        The collection of exported log types. Possible values are <code>connectionlog</code>,
+     *        <code>useractivitylog</code>, and <code>userlog</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -717,12 +721,13 @@ public class EnableLoggingRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The collection of exported log types. Log types include the connection log, user log and user activity log.
+     * The collection of exported log types. Possible values are <code>connectionlog</code>,
+     * <code>useractivitylog</code>, and <code>userlog</code>.
      * </p>
      * 
      * @param logExports
-     *        The collection of exported log types. Log types include the connection log, user log and user activity
-     *        log.
+     *        The collection of exported log types. Possible values are <code>connectionlog</code>,
+     *        <code>useractivitylog</code>, and <code>userlog</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

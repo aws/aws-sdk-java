@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,8 +39,38 @@ public class AddProfilePermissionRequest extends com.amazonaws.AmazonWebServiceR
     private String profileVersion;
     /**
      * <p>
-     * The AWS Signer action permitted as part of cross-account permissions.
+     * For cross-account signing. Grant a designated account permission to perform one or more of the following actions.
+     * Each action is associated with a specific API's operations. For more information about cross-account signing, see
+     * <a href="https://docs.aws.amazon.com/signer/latest/developerguide/signing-profile-cross-account.html">Using
+     * cross-account signing with signing profiles</a> in the <i>AWS Signer Developer Guide</i>.
      * </p>
+     * <p>
+     * You can designate the following actions to an account.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>signer:StartSigningJob</code>. This action isn't supported for container image workflows. For details, see
+     * <a>StartSigningJob</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>signer:SignPayload</code>. This action isn't supported for AWS Lambda workflows. For details, see
+     * <a>SignPayload</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>signer:GetSigningProfile</code>. For details, see <a>GetSigningProfile</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>signer:RevokeSignature</code>. For details, see <a>RevokeSignature</a>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String action;
     /**
@@ -144,11 +174,71 @@ public class AddProfilePermissionRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The AWS Signer action permitted as part of cross-account permissions.
+     * For cross-account signing. Grant a designated account permission to perform one or more of the following actions.
+     * Each action is associated with a specific API's operations. For more information about cross-account signing, see
+     * <a href="https://docs.aws.amazon.com/signer/latest/developerguide/signing-profile-cross-account.html">Using
+     * cross-account signing with signing profiles</a> in the <i>AWS Signer Developer Guide</i>.
      * </p>
+     * <p>
+     * You can designate the following actions to an account.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>signer:StartSigningJob</code>. This action isn't supported for container image workflows. For details, see
+     * <a>StartSigningJob</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>signer:SignPayload</code>. This action isn't supported for AWS Lambda workflows. For details, see
+     * <a>SignPayload</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>signer:GetSigningProfile</code>. For details, see <a>GetSigningProfile</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>signer:RevokeSignature</code>. For details, see <a>RevokeSignature</a>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param action
-     *        The AWS Signer action permitted as part of cross-account permissions.
+     *        For cross-account signing. Grant a designated account permission to perform one or more of the following
+     *        actions. Each action is associated with a specific API's operations. For more information about
+     *        cross-account signing, see <a
+     *        href="https://docs.aws.amazon.com/signer/latest/developerguide/signing-profile-cross-account.html">Using
+     *        cross-account signing with signing profiles</a> in the <i>AWS Signer Developer Guide</i>.</p>
+     *        <p>
+     *        You can designate the following actions to an account.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>signer:StartSigningJob</code>. This action isn't supported for container image workflows. For
+     *        details, see <a>StartSigningJob</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>signer:SignPayload</code>. This action isn't supported for AWS Lambda workflows. For details, see
+     *        <a>SignPayload</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>signer:GetSigningProfile</code>. For details, see <a>GetSigningProfile</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>signer:RevokeSignature</code>. For details, see <a>RevokeSignature</a>.
+     *        </p>
+     *        </li>
      */
 
     public void setAction(String action) {
@@ -157,10 +247,70 @@ public class AddProfilePermissionRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The AWS Signer action permitted as part of cross-account permissions.
+     * For cross-account signing. Grant a designated account permission to perform one or more of the following actions.
+     * Each action is associated with a specific API's operations. For more information about cross-account signing, see
+     * <a href="https://docs.aws.amazon.com/signer/latest/developerguide/signing-profile-cross-account.html">Using
+     * cross-account signing with signing profiles</a> in the <i>AWS Signer Developer Guide</i>.
      * </p>
+     * <p>
+     * You can designate the following actions to an account.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>signer:StartSigningJob</code>. This action isn't supported for container image workflows. For details, see
+     * <a>StartSigningJob</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>signer:SignPayload</code>. This action isn't supported for AWS Lambda workflows. For details, see
+     * <a>SignPayload</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>signer:GetSigningProfile</code>. For details, see <a>GetSigningProfile</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>signer:RevokeSignature</code>. For details, see <a>RevokeSignature</a>.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The AWS Signer action permitted as part of cross-account permissions.
+     * @return For cross-account signing. Grant a designated account permission to perform one or more of the following
+     *         actions. Each action is associated with a specific API's operations. For more information about
+     *         cross-account signing, see <a
+     *         href="https://docs.aws.amazon.com/signer/latest/developerguide/signing-profile-cross-account.html">Using
+     *         cross-account signing with signing profiles</a> in the <i>AWS Signer Developer Guide</i>.</p>
+     *         <p>
+     *         You can designate the following actions to an account.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>signer:StartSigningJob</code>. This action isn't supported for container image workflows. For
+     *         details, see <a>StartSigningJob</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>signer:SignPayload</code>. This action isn't supported for AWS Lambda workflows. For details, see
+     *         <a>SignPayload</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>signer:GetSigningProfile</code>. For details, see <a>GetSigningProfile</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>signer:RevokeSignature</code>. For details, see <a>RevokeSignature</a>.
+     *         </p>
+     *         </li>
      */
 
     public String getAction() {
@@ -169,11 +319,71 @@ public class AddProfilePermissionRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The AWS Signer action permitted as part of cross-account permissions.
+     * For cross-account signing. Grant a designated account permission to perform one or more of the following actions.
+     * Each action is associated with a specific API's operations. For more information about cross-account signing, see
+     * <a href="https://docs.aws.amazon.com/signer/latest/developerguide/signing-profile-cross-account.html">Using
+     * cross-account signing with signing profiles</a> in the <i>AWS Signer Developer Guide</i>.
      * </p>
+     * <p>
+     * You can designate the following actions to an account.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>signer:StartSigningJob</code>. This action isn't supported for container image workflows. For details, see
+     * <a>StartSigningJob</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>signer:SignPayload</code>. This action isn't supported for AWS Lambda workflows. For details, see
+     * <a>SignPayload</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>signer:GetSigningProfile</code>. For details, see <a>GetSigningProfile</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>signer:RevokeSignature</code>. For details, see <a>RevokeSignature</a>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param action
-     *        The AWS Signer action permitted as part of cross-account permissions.
+     *        For cross-account signing. Grant a designated account permission to perform one or more of the following
+     *        actions. Each action is associated with a specific API's operations. For more information about
+     *        cross-account signing, see <a
+     *        href="https://docs.aws.amazon.com/signer/latest/developerguide/signing-profile-cross-account.html">Using
+     *        cross-account signing with signing profiles</a> in the <i>AWS Signer Developer Guide</i>.</p>
+     *        <p>
+     *        You can designate the following actions to an account.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>signer:StartSigningJob</code>. This action isn't supported for container image workflows. For
+     *        details, see <a>StartSigningJob</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>signer:SignPayload</code>. This action isn't supported for AWS Lambda workflows. For details, see
+     *        <a>SignPayload</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>signer:GetSigningProfile</code>. For details, see <a>GetSigningProfile</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>signer:RevokeSignature</code>. For details, see <a>RevokeSignature</a>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

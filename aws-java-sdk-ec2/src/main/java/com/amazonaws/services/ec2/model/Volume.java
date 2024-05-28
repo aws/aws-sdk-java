@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,6 +26,11 @@ import javax.annotation.Generated;
 public class Volume implements Serializable, Cloneable {
 
     /**
+     * <note>
+     * <p>
+     * This parameter is not returned by CreateVolume.
+     * </p>
+     * </note>
      * <p>
      * Information about the volume attachments.
      * </p>
@@ -108,6 +113,11 @@ public class Volume implements Serializable, Cloneable {
      */
     private String volumeType;
     /**
+     * <note>
+     * <p>
+     * This parameter is not returned by CreateVolume.
+     * </p>
+     * </note>
      * <p>
      * Indicates whether the volume was created using fast snapshot restore.
      * </p>
@@ -125,13 +135,34 @@ public class Volume implements Serializable, Cloneable {
      * </p>
      */
     private Integer throughput;
+    /**
+     * <note>
+     * <p>
+     * This parameter is not returned by CreateVolume.
+     * </p>
+     * </note>
+     * <p>
+     * Reserved for future use.
+     * </p>
+     */
+    private String sseType;
 
     /**
+     * <note>
+     * <p>
+     * This parameter is not returned by CreateVolume.
+     * </p>
+     * </note>
      * <p>
      * Information about the volume attachments.
      * </p>
      * 
-     * @return Information about the volume attachments.
+     * @return <p>
+     *         This parameter is not returned by CreateVolume.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         Information about the volume attachments.
      */
 
     public java.util.List<VolumeAttachment> getAttachments() {
@@ -142,11 +173,21 @@ public class Volume implements Serializable, Cloneable {
     }
 
     /**
+     * <note>
+     * <p>
+     * This parameter is not returned by CreateVolume.
+     * </p>
+     * </note>
      * <p>
      * Information about the volume attachments.
      * </p>
      * 
      * @param attachments
+     *        <p>
+     *        This parameter is not returned by CreateVolume.
+     *        </p>
+     *        </note>
+     *        <p>
      *        Information about the volume attachments.
      */
 
@@ -160,6 +201,11 @@ public class Volume implements Serializable, Cloneable {
     }
 
     /**
+     * <note>
+     * <p>
+     * This parameter is not returned by CreateVolume.
+     * </p>
+     * </note>
      * <p>
      * Information about the volume attachments.
      * </p>
@@ -170,6 +216,11 @@ public class Volume implements Serializable, Cloneable {
      * </p>
      * 
      * @param attachments
+     *        <p>
+     *        This parameter is not returned by CreateVolume.
+     *        </p>
+     *        </note>
+     *        <p>
      *        Information about the volume attachments.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -185,11 +236,21 @@ public class Volume implements Serializable, Cloneable {
     }
 
     /**
+     * <note>
+     * <p>
+     * This parameter is not returned by CreateVolume.
+     * </p>
+     * </note>
      * <p>
      * Information about the volume attachments.
      * </p>
      * 
      * @param attachments
+     *        <p>
+     *        This parameter is not returned by CreateVolume.
+     *        </p>
+     *        </note>
+     *        <p>
      *        Information about the volume attachments.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -815,11 +876,21 @@ public class Volume implements Serializable, Cloneable {
     }
 
     /**
+     * <note>
+     * <p>
+     * This parameter is not returned by CreateVolume.
+     * </p>
+     * </note>
      * <p>
      * Indicates whether the volume was created using fast snapshot restore.
      * </p>
      * 
      * @param fastRestored
+     *        <p>
+     *        This parameter is not returned by CreateVolume.
+     *        </p>
+     *        </note>
+     *        <p>
      *        Indicates whether the volume was created using fast snapshot restore.
      */
 
@@ -828,11 +899,21 @@ public class Volume implements Serializable, Cloneable {
     }
 
     /**
+     * <note>
+     * <p>
+     * This parameter is not returned by CreateVolume.
+     * </p>
+     * </note>
      * <p>
      * Indicates whether the volume was created using fast snapshot restore.
      * </p>
      * 
-     * @return Indicates whether the volume was created using fast snapshot restore.
+     * @return <p>
+     *         This parameter is not returned by CreateVolume.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         Indicates whether the volume was created using fast snapshot restore.
      */
 
     public Boolean getFastRestored() {
@@ -840,11 +921,21 @@ public class Volume implements Serializable, Cloneable {
     }
 
     /**
+     * <note>
+     * <p>
+     * This parameter is not returned by CreateVolume.
+     * </p>
+     * </note>
      * <p>
      * Indicates whether the volume was created using fast snapshot restore.
      * </p>
      * 
      * @param fastRestored
+     *        <p>
+     *        This parameter is not returned by CreateVolume.
+     *        </p>
+     *        </note>
+     *        <p>
      *        Indicates whether the volume was created using fast snapshot restore.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -855,11 +946,21 @@ public class Volume implements Serializable, Cloneable {
     }
 
     /**
+     * <note>
+     * <p>
+     * This parameter is not returned by CreateVolume.
+     * </p>
+     * </note>
      * <p>
      * Indicates whether the volume was created using fast snapshot restore.
      * </p>
      * 
-     * @return Indicates whether the volume was created using fast snapshot restore.
+     * @return <p>
+     *         This parameter is not returned by CreateVolume.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         Indicates whether the volume was created using fast snapshot restore.
      */
 
     public Boolean isFastRestored() {
@@ -959,6 +1060,129 @@ public class Volume implements Serializable, Cloneable {
     }
 
     /**
+     * <note>
+     * <p>
+     * This parameter is not returned by CreateVolume.
+     * </p>
+     * </note>
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @param sseType
+     *        <p>
+     *        This parameter is not returned by CreateVolume.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        Reserved for future use.
+     * @see SSEType
+     */
+
+    public void setSseType(String sseType) {
+        this.sseType = sseType;
+    }
+
+    /**
+     * <note>
+     * <p>
+     * This parameter is not returned by CreateVolume.
+     * </p>
+     * </note>
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @return <p>
+     *         This parameter is not returned by CreateVolume.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         Reserved for future use.
+     * @see SSEType
+     */
+
+    public String getSseType() {
+        return this.sseType;
+    }
+
+    /**
+     * <note>
+     * <p>
+     * This parameter is not returned by CreateVolume.
+     * </p>
+     * </note>
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @param sseType
+     *        <p>
+     *        This parameter is not returned by CreateVolume.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        Reserved for future use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SSEType
+     */
+
+    public Volume withSseType(String sseType) {
+        setSseType(sseType);
+        return this;
+    }
+
+    /**
+     * <note>
+     * <p>
+     * This parameter is not returned by CreateVolume.
+     * </p>
+     * </note>
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @param sseType
+     *        <p>
+     *        This parameter is not returned by CreateVolume.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        Reserved for future use.
+     * @see SSEType
+     */
+
+    public void setSseType(SSEType sseType) {
+        withSseType(sseType);
+    }
+
+    /**
+     * <note>
+     * <p>
+     * This parameter is not returned by CreateVolume.
+     * </p>
+     * </note>
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @param sseType
+     *        <p>
+     *        This parameter is not returned by CreateVolume.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        Reserved for future use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SSEType
+     */
+
+    public Volume withSseType(SSEType sseType) {
+        this.sseType = sseType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1001,7 +1225,9 @@ public class Volume implements Serializable, Cloneable {
         if (getMultiAttachEnabled() != null)
             sb.append("MultiAttachEnabled: ").append(getMultiAttachEnabled()).append(",");
         if (getThroughput() != null)
-            sb.append("Throughput: ").append(getThroughput());
+            sb.append("Throughput: ").append(getThroughput()).append(",");
+        if (getSseType() != null)
+            sb.append("SseType: ").append(getSseType());
         sb.append("}");
         return sb.toString();
     }
@@ -1080,6 +1306,10 @@ public class Volume implements Serializable, Cloneable {
             return false;
         if (other.getThroughput() != null && other.getThroughput().equals(this.getThroughput()) == false)
             return false;
+        if (other.getSseType() == null ^ this.getSseType() == null)
+            return false;
+        if (other.getSseType() != null && other.getSseType().equals(this.getSseType()) == false)
+            return false;
         return true;
     }
 
@@ -1104,6 +1334,7 @@ public class Volume implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getFastRestored() == null) ? 0 : getFastRestored().hashCode());
         hashCode = prime * hashCode + ((getMultiAttachEnabled() == null) ? 0 : getMultiAttachEnabled().hashCode());
         hashCode = prime * hashCode + ((getThroughput() == null) ? 0 : getThroughput().hashCode());
+        hashCode = prime * hashCode + ((getSseType() == null) ? 0 : getSseType().hashCode());
         return hashCode;
     }
 

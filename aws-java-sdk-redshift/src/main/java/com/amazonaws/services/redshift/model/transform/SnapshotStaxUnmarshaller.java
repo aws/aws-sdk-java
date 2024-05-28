@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -227,6 +227,21 @@ public class SnapshotStaxUnmarshaller implements Unmarshaller<Snapshot, StaxUnma
 
                 if (context.testExpression("SnapshotRetentionStartTime", targetDepth)) {
                     snapshot.setSnapshotRetentionStartTime(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MasterPasswordSecretArn", targetDepth)) {
+                    snapshot.setMasterPasswordSecretArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MasterPasswordSecretKmsKeyId", targetDepth)) {
+                    snapshot.setMasterPasswordSecretKmsKeyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SnapshotArn", targetDepth)) {
+                    snapshot.setSnapshotArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

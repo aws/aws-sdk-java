@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * A partition that contains unfiltered metadata.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UnfilteredPartition" target="_top">AWS API
  *      Documentation</a>
@@ -25,14 +28,32 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UnfilteredPartition implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The partition object.
+     * </p>
+     */
     private Partition partition;
-
+    /**
+     * <p>
+     * The list of columns the user has permissions to access.
+     * </p>
+     */
     private java.util.List<String> authorizedColumns;
-
+    /**
+     * <p>
+     * A Boolean value indicating that the partition location is registered with Lake Formation.
+     * </p>
+     */
     private Boolean isRegisteredWithLakeFormation;
 
     /**
+     * <p>
+     * The partition object.
+     * </p>
+     * 
      * @param partition
+     *        The partition object.
      */
 
     public void setPartition(Partition partition) {
@@ -40,7 +61,11 @@ public class UnfilteredPartition implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * The partition object.
+     * </p>
+     * 
+     * @return The partition object.
      */
 
     public Partition getPartition() {
@@ -48,7 +73,12 @@ public class UnfilteredPartition implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The partition object.
+     * </p>
+     * 
      * @param partition
+     *        The partition object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -58,7 +88,11 @@ public class UnfilteredPartition implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * The list of columns the user has permissions to access.
+     * </p>
+     * 
+     * @return The list of columns the user has permissions to access.
      */
 
     public java.util.List<String> getAuthorizedColumns() {
@@ -66,7 +100,12 @@ public class UnfilteredPartition implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The list of columns the user has permissions to access.
+     * </p>
+     * 
      * @param authorizedColumns
+     *        The list of columns the user has permissions to access.
      */
 
     public void setAuthorizedColumns(java.util.Collection<String> authorizedColumns) {
@@ -80,12 +119,16 @@ public class UnfilteredPartition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
+     * The list of columns the user has permissions to access.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAuthorizedColumns(java.util.Collection)} or {@link #withAuthorizedColumns(java.util.Collection)} if
      * you want to override the existing values.
      * </p>
      * 
      * @param authorizedColumns
+     *        The list of columns the user has permissions to access.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,7 +143,12 @@ public class UnfilteredPartition implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The list of columns the user has permissions to access.
+     * </p>
+     * 
      * @param authorizedColumns
+     *        The list of columns the user has permissions to access.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,7 +158,12 @@ public class UnfilteredPartition implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * A Boolean value indicating that the partition location is registered with Lake Formation.
+     * </p>
+     * 
      * @param isRegisteredWithLakeFormation
+     *        A Boolean value indicating that the partition location is registered with Lake Formation.
      */
 
     public void setIsRegisteredWithLakeFormation(Boolean isRegisteredWithLakeFormation) {
@@ -118,7 +171,11 @@ public class UnfilteredPartition implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * A Boolean value indicating that the partition location is registered with Lake Formation.
+     * </p>
+     * 
+     * @return A Boolean value indicating that the partition location is registered with Lake Formation.
      */
 
     public Boolean getIsRegisteredWithLakeFormation() {
@@ -126,7 +183,12 @@ public class UnfilteredPartition implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * A Boolean value indicating that the partition location is registered with Lake Formation.
+     * </p>
+     * 
      * @param isRegisteredWithLakeFormation
+     *        A Boolean value indicating that the partition location is registered with Lake Formation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,7 +198,11 @@ public class UnfilteredPartition implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * A Boolean value indicating that the partition location is registered with Lake Formation.
+     * </p>
+     * 
+     * @return A Boolean value indicating that the partition location is registered with Lake Formation.
      */
 
     public Boolean isRegisteredWithLakeFormation() {

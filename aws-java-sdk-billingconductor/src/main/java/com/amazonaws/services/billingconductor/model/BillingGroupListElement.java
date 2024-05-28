@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The billing group's name.
+     * The name of the billing group.
      * </p>
      */
     private String name;
@@ -42,7 +42,7 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
     private String arn;
     /**
      * <p>
-     * The billing group description.
+     * The description of the billing group.
      * </p>
      */
     private String description;
@@ -62,13 +62,13 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
     private Long size;
     /**
      * <p>
-     * The time the billing group was created.
+     * The time when the billing group was created.
      * </p>
      */
     private Long creationTime;
     /**
      * <p>
-     * The most recent time the billing group was modified.
+     * The most recent time when the billing group was modified.
      * </p>
      */
     private Long lastModifiedTime;
@@ -84,14 +84,20 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
      * </p>
      */
     private String statusReason;
+    /**
+     * <p>
+     * Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.
+     * </p>
+     */
+    private ListBillingGroupAccountGrouping accountGrouping;
 
     /**
      * <p>
-     * The billing group's name.
+     * The name of the billing group.
      * </p>
      * 
      * @param name
-     *        The billing group's name.
+     *        The name of the billing group.
      */
 
     public void setName(String name) {
@@ -100,10 +106,10 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The billing group's name.
+     * The name of the billing group.
      * </p>
      * 
-     * @return The billing group's name.
+     * @return The name of the billing group.
      */
 
     public String getName() {
@@ -112,11 +118,11 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The billing group's name.
+     * The name of the billing group.
      * </p>
      * 
      * @param name
-     *        The billing group's name.
+     *        The name of the billing group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -167,11 +173,11 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The billing group description.
+     * The description of the billing group.
      * </p>
      * 
      * @param description
-     *        The billing group description.
+     *        The description of the billing group.
      */
 
     public void setDescription(String description) {
@@ -180,10 +186,10 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The billing group description.
+     * The description of the billing group.
      * </p>
      * 
-     * @return The billing group description.
+     * @return The description of the billing group.
      */
 
     public String getDescription() {
@@ -192,11 +198,11 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The billing group description.
+     * The description of the billing group.
      * </p>
      * 
      * @param description
-     *        The billing group description.
+     *        The description of the billing group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -313,11 +319,11 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The time the billing group was created.
+     * The time when the billing group was created.
      * </p>
      * 
      * @param creationTime
-     *        The time the billing group was created.
+     *        The time when the billing group was created.
      */
 
     public void setCreationTime(Long creationTime) {
@@ -326,10 +332,10 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The time the billing group was created.
+     * The time when the billing group was created.
      * </p>
      * 
-     * @return The time the billing group was created.
+     * @return The time when the billing group was created.
      */
 
     public Long getCreationTime() {
@@ -338,11 +344,11 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The time the billing group was created.
+     * The time when the billing group was created.
      * </p>
      * 
      * @param creationTime
-     *        The time the billing group was created.
+     *        The time when the billing group was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -353,11 +359,11 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The most recent time the billing group was modified.
+     * The most recent time when the billing group was modified.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The most recent time the billing group was modified.
+     *        The most recent time when the billing group was modified.
      */
 
     public void setLastModifiedTime(Long lastModifiedTime) {
@@ -366,10 +372,10 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The most recent time the billing group was modified.
+     * The most recent time when the billing group was modified.
      * </p>
      * 
-     * @return The most recent time the billing group was modified.
+     * @return The most recent time when the billing group was modified.
      */
 
     public Long getLastModifiedTime() {
@@ -378,11 +384,11 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The most recent time the billing group was modified.
+     * The most recent time when the billing group was modified.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The most recent time the billing group was modified.
+     *        The most recent time when the billing group was modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -491,6 +497,46 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.
+     * </p>
+     * 
+     * @param accountGrouping
+     *        Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.
+     */
+
+    public void setAccountGrouping(ListBillingGroupAccountGrouping accountGrouping) {
+        this.accountGrouping = accountGrouping;
+    }
+
+    /**
+     * <p>
+     * Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.
+     * </p>
+     * 
+     * @return Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.
+     */
+
+    public ListBillingGroupAccountGrouping getAccountGrouping() {
+        return this.accountGrouping;
+    }
+
+    /**
+     * <p>
+     * Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.
+     * </p>
+     * 
+     * @param accountGrouping
+     *        Specifies if the billing group has automatic account association (<code>AutoAssociate</code>) enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BillingGroupListElement withAccountGrouping(ListBillingGroupAccountGrouping accountGrouping) {
+        setAccountGrouping(accountGrouping);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -521,7 +567,9 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusReason() != null)
-            sb.append("StatusReason: ").append(getStatusReason());
+            sb.append("StatusReason: ").append(getStatusReason()).append(",");
+        if (getAccountGrouping() != null)
+            sb.append("AccountGrouping: ").append(getAccountGrouping());
         sb.append("}");
         return sb.toString();
     }
@@ -576,6 +624,10 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
             return false;
         if (other.getStatusReason() != null && other.getStatusReason().equals(this.getStatusReason()) == false)
             return false;
+        if (other.getAccountGrouping() == null ^ this.getAccountGrouping() == null)
+            return false;
+        if (other.getAccountGrouping() != null && other.getAccountGrouping().equals(this.getAccountGrouping()) == false)
+            return false;
         return true;
     }
 
@@ -594,6 +646,7 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
+        hashCode = prime * hashCode + ((getAccountGrouping() == null) ? 0 : getAccountGrouping().hashCode());
         return hashCode;
     }
 

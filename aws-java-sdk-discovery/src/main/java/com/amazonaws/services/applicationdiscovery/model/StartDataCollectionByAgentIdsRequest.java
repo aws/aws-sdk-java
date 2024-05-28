@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,32 +22,29 @@ public class StartDataCollectionByAgentIdsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The IDs of the agents or connectors from which to start collecting data. If you send a request to an
-     * agent/connector ID that you do not have permission to contact, according to your Amazon Web Services account, the
-     * service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a
-     * request to multiple agents/connectors and you do not have permission to contact some of those agents/connectors,
-     * the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i>
-     * field.
+     * The IDs of the agents from which to start collecting data. If you send a request to an agent ID that you do not
+     * have permission to contact, according to your Amazon Web Services account, the service does not throw an
+     * exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple
+     * agents and you do not have permission to contact some of those agents, the system does not throw an exception.
+     * Instead, the system shows <code>Failed</code> in the <i>Description</i> field.
      * </p>
      */
     private java.util.List<String> agentIds;
 
     /**
      * <p>
-     * The IDs of the agents or connectors from which to start collecting data. If you send a request to an
-     * agent/connector ID that you do not have permission to contact, according to your Amazon Web Services account, the
-     * service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a
-     * request to multiple agents/connectors and you do not have permission to contact some of those agents/connectors,
-     * the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i>
-     * field.
+     * The IDs of the agents from which to start collecting data. If you send a request to an agent ID that you do not
+     * have permission to contact, according to your Amazon Web Services account, the service does not throw an
+     * exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple
+     * agents and you do not have permission to contact some of those agents, the system does not throw an exception.
+     * Instead, the system shows <code>Failed</code> in the <i>Description</i> field.
      * </p>
      * 
-     * @return The IDs of the agents or connectors from which to start collecting data. If you send a request to an
-     *         agent/connector ID that you do not have permission to contact, according to your Amazon Web Services
-     *         account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i>
-     *         field. If you send a request to multiple agents/connectors and you do not have permission to contact some
-     *         of those agents/connectors, the system does not throw an exception. Instead, the system shows
-     *         <code>Failed</code> in the <i>Description</i> field.
+     * @return The IDs of the agents from which to start collecting data. If you send a request to an agent ID that you
+     *         do not have permission to contact, according to your Amazon Web Services account, the service does not
+     *         throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request
+     *         to multiple agents and you do not have permission to contact some of those agents, the system does not
+     *         throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.
      */
 
     public java.util.List<String> getAgentIds() {
@@ -56,21 +53,19 @@ public class StartDataCollectionByAgentIdsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The IDs of the agents or connectors from which to start collecting data. If you send a request to an
-     * agent/connector ID that you do not have permission to contact, according to your Amazon Web Services account, the
-     * service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a
-     * request to multiple agents/connectors and you do not have permission to contact some of those agents/connectors,
-     * the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i>
-     * field.
+     * The IDs of the agents from which to start collecting data. If you send a request to an agent ID that you do not
+     * have permission to contact, according to your Amazon Web Services account, the service does not throw an
+     * exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple
+     * agents and you do not have permission to contact some of those agents, the system does not throw an exception.
+     * Instead, the system shows <code>Failed</code> in the <i>Description</i> field.
      * </p>
      * 
      * @param agentIds
-     *        The IDs of the agents or connectors from which to start collecting data. If you send a request to an
-     *        agent/connector ID that you do not have permission to contact, according to your Amazon Web Services
-     *        account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i>
-     *        field. If you send a request to multiple agents/connectors and you do not have permission to contact some
-     *        of those agents/connectors, the system does not throw an exception. Instead, the system shows
-     *        <code>Failed</code> in the <i>Description</i> field.
+     *        The IDs of the agents from which to start collecting data. If you send a request to an agent ID that you
+     *        do not have permission to contact, according to your Amazon Web Services account, the service does not
+     *        throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request
+     *        to multiple agents and you do not have permission to contact some of those agents, the system does not
+     *        throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.
      */
 
     public void setAgentIds(java.util.Collection<String> agentIds) {
@@ -84,12 +79,11 @@ public class StartDataCollectionByAgentIdsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The IDs of the agents or connectors from which to start collecting data. If you send a request to an
-     * agent/connector ID that you do not have permission to contact, according to your Amazon Web Services account, the
-     * service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a
-     * request to multiple agents/connectors and you do not have permission to contact some of those agents/connectors,
-     * the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i>
-     * field.
+     * The IDs of the agents from which to start collecting data. If you send a request to an agent ID that you do not
+     * have permission to contact, according to your Amazon Web Services account, the service does not throw an
+     * exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple
+     * agents and you do not have permission to contact some of those agents, the system does not throw an exception.
+     * Instead, the system shows <code>Failed</code> in the <i>Description</i> field.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -98,12 +92,11 @@ public class StartDataCollectionByAgentIdsRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param agentIds
-     *        The IDs of the agents or connectors from which to start collecting data. If you send a request to an
-     *        agent/connector ID that you do not have permission to contact, according to your Amazon Web Services
-     *        account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i>
-     *        field. If you send a request to multiple agents/connectors and you do not have permission to contact some
-     *        of those agents/connectors, the system does not throw an exception. Instead, the system shows
-     *        <code>Failed</code> in the <i>Description</i> field.
+     *        The IDs of the agents from which to start collecting data. If you send a request to an agent ID that you
+     *        do not have permission to contact, according to your Amazon Web Services account, the service does not
+     *        throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request
+     *        to multiple agents and you do not have permission to contact some of those agents, the system does not
+     *        throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,21 +112,19 @@ public class StartDataCollectionByAgentIdsRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The IDs of the agents or connectors from which to start collecting data. If you send a request to an
-     * agent/connector ID that you do not have permission to contact, according to your Amazon Web Services account, the
-     * service does not throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a
-     * request to multiple agents/connectors and you do not have permission to contact some of those agents/connectors,
-     * the system does not throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i>
-     * field.
+     * The IDs of the agents from which to start collecting data. If you send a request to an agent ID that you do not
+     * have permission to contact, according to your Amazon Web Services account, the service does not throw an
+     * exception. Instead, it returns the error in the <i>Description</i> field. If you send a request to multiple
+     * agents and you do not have permission to contact some of those agents, the system does not throw an exception.
+     * Instead, the system shows <code>Failed</code> in the <i>Description</i> field.
      * </p>
      * 
      * @param agentIds
-     *        The IDs of the agents or connectors from which to start collecting data. If you send a request to an
-     *        agent/connector ID that you do not have permission to contact, according to your Amazon Web Services
-     *        account, the service does not throw an exception. Instead, it returns the error in the <i>Description</i>
-     *        field. If you send a request to multiple agents/connectors and you do not have permission to contact some
-     *        of those agents/connectors, the system does not throw an exception. Instead, the system shows
-     *        <code>Failed</code> in the <i>Description</i> field.
+     *        The IDs of the agents from which to start collecting data. If you send a request to an agent ID that you
+     *        do not have permission to contact, according to your Amazon Web Services account, the service does not
+     *        throw an exception. Instead, it returns the error in the <i>Description</i> field. If you send a request
+     *        to multiple agents and you do not have permission to contact some of those agents, the system does not
+     *        throw an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i> field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

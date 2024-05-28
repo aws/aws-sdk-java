@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class ProductionVariantServerlessConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MemorySizeInMB").build();
     private static final MarshallingInfo<Integer> MAXCONCURRENCY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxConcurrency").build();
+    private static final MarshallingInfo<Integer> PROVISIONEDCONCURRENCY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisionedConcurrency").build();
 
     private static final ProductionVariantServerlessConfigMarshaller instance = new ProductionVariantServerlessConfigMarshaller();
 
@@ -50,6 +52,7 @@ public class ProductionVariantServerlessConfigMarshaller {
         try {
             protocolMarshaller.marshall(productionVariantServerlessConfig.getMemorySizeInMB(), MEMORYSIZEINMB_BINDING);
             protocolMarshaller.marshall(productionVariantServerlessConfig.getMaxConcurrency(), MAXCONCURRENCY_BINDING);
+            protocolMarshaller.marshall(productionVariantServerlessConfig.getProvisionedConcurrency(), PROVISIONEDCONCURRENCY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

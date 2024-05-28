@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.ivs.AmazonIVSClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.ivs.model.*;
+
 import com.amazonaws.services.ivs.model.transform.*;
 
 /**
@@ -90,41 +91,45 @@ import com.amazonaws.services.ivs.model.transform.*;
  * </li>
  * </ul>
  * <p>
- * <b>Resources</b>
- * </p>
- * <p>
- * The following resources contain information about your IVS live stream (see <a
- * href="https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html"> Getting Started with Amazon IVS</a>):
+ * <b>Key Concepts</b>
  * </p>
  * <ul>
  * <li>
  * <p>
- * Channel — Stores configuration data related to your live stream. You first create a channel and then use the
- * channel’s stream key to start your live stream. See the Channel endpoints for more information.
+ * <b>Channel</b> — Stores configuration data related to your live stream. You first create a channel and then use the
+ * channel’s stream key to start your live stream.
  * </p>
  * </li>
  * <li>
  * <p>
- * Stream key — An identifier assigned by Amazon IVS when you create a channel, which is then used to authorize
- * streaming. See the StreamKey endpoints for more information. <i> <b>Treat the stream key like a secret, since it
- * allows anyone to stream to the channel.</b> </i>
+ * <b>Stream key</b> — An identifier assigned by Amazon IVS when you create a channel, which is then used to authorize
+ * streaming. <i> <b>Treat the stream key like a secret, since it allows anyone to stream to the channel.</b> </i>
  * </p>
  * </li>
  * <li>
  * <p>
- * Playback key pair — Video playback may be restricted using playback-authorization tokens, which use public-key
+ * <b>Playback key pair</b> — Video playback may be restricted using playback-authorization tokens, which use public-key
  * encryption. A playback key pair is the public-private pair of keys used to sign and validate the
- * playback-authorization token. See the PlaybackKeyPair endpoints for more information.
+ * playback-authorization token.
  * </p>
  * </li>
  * <li>
  * <p>
- * Recording configuration — Stores configuration related to recording a live stream and where to store the recorded
- * content. Multiple channels can reference the same recording configuration. See the Recording Configuration endpoints
- * for more information.
+ * <b>Recording configuration</b> — Stores configuration related to recording a live stream and where to store the
+ * recorded content. Multiple channels can reference the same recording configuration.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Playback restriction policy</b> — Restricts playback by countries and/or origin sites.
  * </p>
  * </li>
  * </ul>
+ * <p>
+ * For more information about your IVS live stream, also see <a
+ * href="https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/getting-started.html">Getting Started with IVS
+ * Low-Latency Streaming</a>.
+ * </p>
  * <p>
  * <b>Tagging</b>
  * </p>
@@ -179,8 +184,8 @@ import com.amazonaws.services.ivs.model.transform.*;
  * </p>
  * <p>
  * You generate a signature using valid Amazon Web Services credentials that have permission to perform the requested
- * action. For example, you must sign PutMetadata requests with a signature generated from an IAM user account that has
- * the <code>ivs:PutMetadata</code> permission.
+ * action. For example, you must sign PutMetadata requests with a signature generated from a user account that has the
+ * <code>ivs:PutMetadata</code> permission.
  * </p>
  * <p>
  * For more information:
@@ -250,32 +255,106 @@ import com.amazonaws.services.ivs.model.transform.*;
  * </li>
  * </ul>
  * <p>
- * <b>StreamKey Endpoints</b>
+ * <b>Playback Restriction Policy Endpoints</b>
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a>CreateStreamKey</a> — Creates a stream key, used to initiate a stream, for the specified channel ARN.
+ * <a>CreatePlaybackRestrictionPolicy</a> — Creates a new playback restriction policy, for constraining playback by
+ * countries and/or origins.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>GetStreamKey</a> — Gets stream key information for the specified ARN.
+ * <a>DeletePlaybackRestrictionPolicy</a> — Deletes the specified playback restriction policy
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>BatchGetStreamKey</a> — Performs <a>GetStreamKey</a> on multiple ARNs simultaneously.
+ * <a>GetPlaybackRestrictionPolicy</a> — Gets the specified playback restriction policy.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ListStreamKeys</a> — Gets summary information about stream keys for the specified channel.
+ * <a>ListPlaybackRestrictionPolicies</a> — Gets summary information about playback restriction policies.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DeleteStreamKey</a> — Deletes the stream key for the specified ARN, so it can no longer be used to stream.
+ * <a>UpdatePlaybackRestrictionPolicy</a> — Updates a specified playback restriction policy.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <b>Private Channel Endpoints</b>
+ * </p>
+ * <p>
+ * For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting Up
+ * Private Channels</a> in the <i>Amazon IVS User Guide</i>.
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>ImportPlaybackKeyPair</a> — Imports the public portion of a new key pair and returns its <code>arn</code> and
+ * <code>fingerprint</code>. The <code>privateKey</code> can then be used to generate viewer authorization tokens, to
+ * grant viewers access to private channels (channels enabled for playback authorization).
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetPlaybackKeyPair</a> — Gets a specified playback authorization key pair and returns the <code>arn</code> and
+ * <code>fingerprint</code>. The <code>privateKey</code> held by the caller can be used to generate viewer authorization
+ * tokens, to grant viewers access to private channels.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListPlaybackKeyPairs</a> — Gets summary information about playback key pairs.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeletePlaybackKeyPair</a> — Deletes a specified authorization key pair. This invalidates future viewer tokens
+ * generated using the key pair’s <code>privateKey</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>StartViewerSessionRevocation</a> — Starts the process of revoking the viewer session associated with a specified
+ * channel ARN and viewer ID. Optionally, you can provide a version to revoke viewer sessions less than and including
+ * that version.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>BatchStartViewerSessionRevocation</a> — Performs <a>StartViewerSessionRevocation</a> on multiple channel ARN and
+ * viewer ID pairs simultaneously.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <b>Recording Configuration Endpoints</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreateRecordingConfiguration</a> — Creates a new recording configuration, used to enable recording to Amazon S3.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetRecordingConfiguration</a> — Gets the recording-configuration metadata for the specified ARN.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListRecordingConfigurations</a> — Gets summary information about all recording configurations in your account, in
+ * the Amazon Web Services region where the API request is processed.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteRecordingConfiguration</a> — Deletes the recording configuration for the specified ARN.
  * </p>
  * </li>
  * </ul>
@@ -320,62 +399,32 @@ import com.amazonaws.services.ivs.model.transform.*;
  * </li>
  * </ul>
  * <p>
- * <b>PlaybackKeyPair Endpoints</b>
- * </p>
- * <p>
- * For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting Up
- * Private Channels</a> in the <i>Amazon IVS User Guide</i>.
+ * <b>Stream Key Endpoints</b>
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a>ImportPlaybackKeyPair</a> — Imports the public portion of a new key pair and returns its <code>arn</code> and
- * <code>fingerprint</code>. The <code>privateKey</code> can then be used to generate viewer authorization tokens, to
- * grant viewers access to private channels (channels enabled for playback authorization).
+ * <a>CreateStreamKey</a> — Creates a stream key, used to initiate a stream, for the specified channel ARN.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>GetPlaybackKeyPair</a> — Gets a specified playback authorization key pair and returns the <code>arn</code> and
- * <code>fingerprint</code>. The <code>privateKey</code> held by the caller can be used to generate viewer authorization
- * tokens, to grant viewers access to private channels.
+ * <a>GetStreamKey</a> — Gets stream key information for the specified ARN.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ListPlaybackKeyPairs</a> — Gets summary information about playback key pairs.
+ * <a>BatchGetStreamKey</a> — Performs <a>GetStreamKey</a> on multiple ARNs simultaneously.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DeletePlaybackKeyPair</a> — Deletes a specified authorization key pair. This invalidates future viewer tokens
- * generated using the key pair’s <code>privateKey</code>.
- * </p>
- * </li>
- * </ul>
- * <p>
- * <b>RecordingConfiguration Endpoints</b>
- * </p>
- * <ul>
- * <li>
- * <p>
- * <a>CreateRecordingConfiguration</a> — Creates a new recording configuration, used to enable recording to Amazon S3.
+ * <a>ListStreamKeys</a> — Gets summary information about stream keys for the specified channel.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>GetRecordingConfiguration</a> — Gets the recording-configuration metadata for the specified ARN.
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>ListRecordingConfigurations</a> — Gets summary information about all recording configurations in your account, in
- * the Amazon Web Services region where the API request is processed.
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DeleteRecordingConfiguration</a> — Deletes the recording configuration for the specified ARN.
+ * <a>DeleteStreamKey</a> — Deletes the stream key for the specified ARN, so it can no longer be used to stream.
  * </p>
  * </li>
  * </ul>
@@ -427,23 +476,11 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
                             new JsonErrorShapeMetadata().withErrorCode("StreamUnavailable").withExceptionUnmarshaller(
                                     com.amazonaws.services.ivs.model.transform.StreamUnavailableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.ivs.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.ivs.model.transform.ConflictExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ChannelNotBroadcasting").withExceptionUnmarshaller(
                                     com.amazonaws.services.ivs.model.transform.ChannelNotBroadcastingExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.ivs.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ivs.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.ivs.model.transform.ValidationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ivs.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
@@ -453,6 +490,18 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ivs.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ivs.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ivs.model.transform.ConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ivs.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ivs.model.transform.ValidationExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.ivs.model.AmazonIVSException.class));
 
     public static AmazonIVSClientBuilder builder() {
@@ -613,6 +662,68 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
 
     /**
      * <p>
+     * Performs <a>StartViewerSessionRevocation</a> on multiple channel ARN and viewer ID pairs simultaneously.
+     * </p>
+     * 
+     * @param batchStartViewerSessionRevocationRequest
+     * @return Result of the BatchStartViewerSessionRevocation operation returned by the service.
+     * @throws AccessDeniedException
+     * @throws ValidationException
+     * @throws PendingVerificationException
+     * @throws ThrottlingException
+     * @sample AmazonIVS.BatchStartViewerSessionRevocation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/BatchStartViewerSessionRevocation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchStartViewerSessionRevocationResult batchStartViewerSessionRevocation(BatchStartViewerSessionRevocationRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchStartViewerSessionRevocation(request);
+    }
+
+    @SdkInternalApi
+    final BatchStartViewerSessionRevocationResult executeBatchStartViewerSessionRevocation(
+            BatchStartViewerSessionRevocationRequest batchStartViewerSessionRevocationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchStartViewerSessionRevocationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchStartViewerSessionRevocationRequest> request = null;
+        Response<BatchStartViewerSessionRevocationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchStartViewerSessionRevocationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(batchStartViewerSessionRevocationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchStartViewerSessionRevocation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchStartViewerSessionRevocationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new BatchStartViewerSessionRevocationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new channel and an associated stream key to start streaming.
      * </p>
      * 
@@ -661,6 +772,69 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateChannelResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateChannelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new playback restriction policy, for constraining playback by countries and/or origins.
+     * </p>
+     * 
+     * @param createPlaybackRestrictionPolicyRequest
+     * @return Result of the CreatePlaybackRestrictionPolicy operation returned by the service.
+     * @throws AccessDeniedException
+     * @throws ValidationException
+     * @throws PendingVerificationException
+     * @throws ThrottlingException
+     * @throws ServiceQuotaExceededException
+     * @sample AmazonIVS.CreatePlaybackRestrictionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreatePlaybackRestrictionPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreatePlaybackRestrictionPolicyResult createPlaybackRestrictionPolicy(CreatePlaybackRestrictionPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreatePlaybackRestrictionPolicy(request);
+    }
+
+    @SdkInternalApi
+    final CreatePlaybackRestrictionPolicyResult executeCreatePlaybackRestrictionPolicy(
+            CreatePlaybackRestrictionPolicyRequest createPlaybackRestrictionPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createPlaybackRestrictionPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreatePlaybackRestrictionPolicyRequest> request = null;
+        Response<CreatePlaybackRestrictionPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreatePlaybackRestrictionPolicyRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createPlaybackRestrictionPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePlaybackRestrictionPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreatePlaybackRestrictionPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreatePlaybackRestrictionPolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -817,7 +991,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
      * <p>
      * If you try to delete a live channel, you will get an error (409 ConflictException). To delete a channel that is
      * live, call <a>StopStream</a>, wait for the Amazon EventBridge "Stream End" event (to verify that the stream's
-     * state was changed from Live to Offline), then call DeleteChannel. (See <a
+     * state is no longer Live), then call DeleteChannel. (See <a
      * href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html"> Using EventBridge with Amazon IVS</a>.)
      * </p>
      * 
@@ -929,6 +1103,69 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
             HttpResponseHandler<AmazonWebServiceResponse<DeletePlaybackKeyPairResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new DeletePlaybackKeyPairResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified playback restriction policy.
+     * </p>
+     * 
+     * @param deletePlaybackRestrictionPolicyRequest
+     * @return Result of the DeletePlaybackRestrictionPolicy operation returned by the service.
+     * @throws ResourceNotFoundException
+     * @throws AccessDeniedException
+     * @throws ValidationException
+     * @throws PendingVerificationException
+     * @throws ConflictException
+     * @sample AmazonIVS.DeletePlaybackRestrictionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeletePlaybackRestrictionPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeletePlaybackRestrictionPolicyResult deletePlaybackRestrictionPolicy(DeletePlaybackRestrictionPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeletePlaybackRestrictionPolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeletePlaybackRestrictionPolicyResult executeDeletePlaybackRestrictionPolicy(
+            DeletePlaybackRestrictionPolicyRequest deletePlaybackRestrictionPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deletePlaybackRestrictionPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeletePlaybackRestrictionPolicyRequest> request = null;
+        Response<DeletePlaybackRestrictionPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeletePlaybackRestrictionPolicyRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deletePlaybackRestrictionPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePlaybackRestrictionPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeletePlaybackRestrictionPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeletePlaybackRestrictionPolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1176,6 +1413,67 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
 
             HttpResponseHandler<AmazonWebServiceResponse<GetPlaybackKeyPairResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetPlaybackKeyPairResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the specified playback restriction policy.
+     * </p>
+     * 
+     * @param getPlaybackRestrictionPolicyRequest
+     * @return Result of the GetPlaybackRestrictionPolicy operation returned by the service.
+     * @throws ResourceNotFoundException
+     * @throws AccessDeniedException
+     * @throws ValidationException
+     * @throws PendingVerificationException
+     * @sample AmazonIVS.GetPlaybackRestrictionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetPlaybackRestrictionPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetPlaybackRestrictionPolicyResult getPlaybackRestrictionPolicy(GetPlaybackRestrictionPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetPlaybackRestrictionPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetPlaybackRestrictionPolicyResult executeGetPlaybackRestrictionPolicy(GetPlaybackRestrictionPolicyRequest getPlaybackRestrictionPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getPlaybackRestrictionPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetPlaybackRestrictionPolicyRequest> request = null;
+        Response<GetPlaybackRestrictionPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetPlaybackRestrictionPolicyRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getPlaybackRestrictionPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPlaybackRestrictionPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetPlaybackRestrictionPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetPlaybackRestrictionPolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1609,6 +1907,68 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
 
     /**
      * <p>
+     * Gets summary information about playback restriction policies.
+     * </p>
+     * 
+     * @param listPlaybackRestrictionPoliciesRequest
+     * @return Result of the ListPlaybackRestrictionPolicies operation returned by the service.
+     * @throws AccessDeniedException
+     * @throws ValidationException
+     * @throws PendingVerificationException
+     * @throws ConflictException
+     * @sample AmazonIVS.ListPlaybackRestrictionPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListPlaybackRestrictionPolicies"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListPlaybackRestrictionPoliciesResult listPlaybackRestrictionPolicies(ListPlaybackRestrictionPoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPlaybackRestrictionPolicies(request);
+    }
+
+    @SdkInternalApi
+    final ListPlaybackRestrictionPoliciesResult executeListPlaybackRestrictionPolicies(
+            ListPlaybackRestrictionPoliciesRequest listPlaybackRestrictionPoliciesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listPlaybackRestrictionPoliciesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPlaybackRestrictionPoliciesRequest> request = null;
+        Response<ListPlaybackRestrictionPoliciesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPlaybackRestrictionPoliciesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listPlaybackRestrictionPoliciesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPlaybackRestrictionPolicies");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListPlaybackRestrictionPoliciesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListPlaybackRestrictionPoliciesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets summary information about all recording configurations in your account, in the Amazon Web Services region
      * where the API request is processed.
      * </p>
@@ -1967,6 +2327,72 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
 
     /**
      * <p>
+     * Starts the process of revoking the viewer session associated with a specified channel ARN and viewer ID.
+     * Optionally, you can provide a version to revoke viewer sessions less than and including that version. For
+     * instructions on associating a viewer ID with a viewer session, see <a
+     * href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting Up Private Channels</a>.
+     * </p>
+     * 
+     * @param startViewerSessionRevocationRequest
+     * @return Result of the StartViewerSessionRevocation operation returned by the service.
+     * @throws ResourceNotFoundException
+     * @throws InternalServerException
+     * @throws AccessDeniedException
+     * @throws ValidationException
+     * @throws PendingVerificationException
+     * @throws ThrottlingException
+     * @sample AmazonIVS.StartViewerSessionRevocation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/StartViewerSessionRevocation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartViewerSessionRevocationResult startViewerSessionRevocation(StartViewerSessionRevocationRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartViewerSessionRevocation(request);
+    }
+
+    @SdkInternalApi
+    final StartViewerSessionRevocationResult executeStartViewerSessionRevocation(StartViewerSessionRevocationRequest startViewerSessionRevocationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startViewerSessionRevocationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartViewerSessionRevocationRequest> request = null;
+        Response<StartViewerSessionRevocationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartViewerSessionRevocationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startViewerSessionRevocationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartViewerSessionRevocation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartViewerSessionRevocationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartViewerSessionRevocationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Disconnects the incoming RTMPS stream for the specified channel. Can be used in conjunction with
      * <a>DeleteStreamKey</a> to prevent further streaming to a channel.
      * </p>
@@ -2150,8 +2576,8 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
 
     /**
      * <p>
-     * Updates a channel's configuration. This does not affect an ongoing stream of this channel. You must stop and
-     * restart the stream for the changes to take effect.
+     * Updates a channel's configuration. Live channels cannot be updated. You must stop the ongoing stream, update the
+     * channel, and restart the stream for the changes to take effect.
      * </p>
      * 
      * @param updateChannelRequest
@@ -2199,6 +2625,69 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateChannelResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateChannelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a specified playback restriction policy.
+     * </p>
+     * 
+     * @param updatePlaybackRestrictionPolicyRequest
+     * @return Result of the UpdatePlaybackRestrictionPolicy operation returned by the service.
+     * @throws ResourceNotFoundException
+     * @throws AccessDeniedException
+     * @throws ValidationException
+     * @throws PendingVerificationException
+     * @throws ConflictException
+     * @sample AmazonIVS.UpdatePlaybackRestrictionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/UpdatePlaybackRestrictionPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdatePlaybackRestrictionPolicyResult updatePlaybackRestrictionPolicy(UpdatePlaybackRestrictionPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdatePlaybackRestrictionPolicy(request);
+    }
+
+    @SdkInternalApi
+    final UpdatePlaybackRestrictionPolicyResult executeUpdatePlaybackRestrictionPolicy(
+            UpdatePlaybackRestrictionPolicyRequest updatePlaybackRestrictionPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updatePlaybackRestrictionPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdatePlaybackRestrictionPolicyRequest> request = null;
+        Response<UpdatePlaybackRestrictionPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdatePlaybackRestrictionPolicyRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updatePlaybackRestrictionPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePlaybackRestrictionPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdatePlaybackRestrictionPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdatePlaybackRestrictionPolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

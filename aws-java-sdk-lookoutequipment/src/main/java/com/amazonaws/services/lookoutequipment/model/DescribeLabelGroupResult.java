@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class DescribeLabelGroupResult extends com.amazonaws.AmazonWebServiceResu
     private String labelGroupName;
     /**
      * <p>
-     * The ARN of the label group.
+     * The Amazon Resource Name (ARN) of the label group.
      * </p>
      */
     private String labelGroupArn;
@@ -96,11 +96,11 @@ public class DescribeLabelGroupResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The ARN of the label group.
+     * The Amazon Resource Name (ARN) of the label group.
      * </p>
      * 
      * @param labelGroupArn
-     *        The ARN of the label group.
+     *        The Amazon Resource Name (ARN) of the label group.
      */
 
     public void setLabelGroupArn(String labelGroupArn) {
@@ -109,10 +109,10 @@ public class DescribeLabelGroupResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The ARN of the label group.
+     * The Amazon Resource Name (ARN) of the label group.
      * </p>
      * 
-     * @return The ARN of the label group.
+     * @return The Amazon Resource Name (ARN) of the label group.
      */
 
     public String getLabelGroupArn() {
@@ -121,11 +121,11 @@ public class DescribeLabelGroupResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The ARN of the label group.
+     * The Amazon Resource Name (ARN) of the label group.
      * </p>
      * 
      * @param labelGroupArn
-     *        The ARN of the label group.
+     *        The Amazon Resource Name (ARN) of the label group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

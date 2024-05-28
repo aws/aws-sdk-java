@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,7 +45,7 @@ public class DescribeConfigRuleEvaluationStatusRequest extends com.amazonaws.Ama
      * The number of rule evaluation results that you want returned.
      * </p>
      * <p>
-     * This parameter is required if the rule limit for your account is more than the default of 150 rules.
+     * This parameter is required if the rule limit for your account is more than the default of 1000 rules.
      * </p>
      * <p>
      * For information about requesting a rule limit increase, see <a
@@ -187,7 +187,7 @@ public class DescribeConfigRuleEvaluationStatusRequest extends com.amazonaws.Ama
      * The number of rule evaluation results that you want returned.
      * </p>
      * <p>
-     * This parameter is required if the rule limit for your account is more than the default of 150 rules.
+     * This parameter is required if the rule limit for your account is more than the default of 1000 rules.
      * </p>
      * <p>
      * For information about requesting a rule limit increase, see <a
@@ -198,7 +198,7 @@ public class DescribeConfigRuleEvaluationStatusRequest extends com.amazonaws.Ama
      * @param limit
      *        The number of rule evaluation results that you want returned.</p>
      *        <p>
-     *        This parameter is required if the rule limit for your account is more than the default of 150 rules.
+     *        This parameter is required if the rule limit for your account is more than the default of 1000 rules.
      *        </p>
      *        <p>
      *        For information about requesting a rule limit increase, see <a
@@ -215,7 +215,7 @@ public class DescribeConfigRuleEvaluationStatusRequest extends com.amazonaws.Ama
      * The number of rule evaluation results that you want returned.
      * </p>
      * <p>
-     * This parameter is required if the rule limit for your account is more than the default of 150 rules.
+     * This parameter is required if the rule limit for your account is more than the default of 1000 rules.
      * </p>
      * <p>
      * For information about requesting a rule limit increase, see <a
@@ -225,7 +225,7 @@ public class DescribeConfigRuleEvaluationStatusRequest extends com.amazonaws.Ama
      * 
      * @return The number of rule evaluation results that you want returned.</p>
      *         <p>
-     *         This parameter is required if the rule limit for your account is more than the default of 150 rules.
+     *         This parameter is required if the rule limit for your account is more than the default of 1000 rules.
      *         </p>
      *         <p>
      *         For information about requesting a rule limit increase, see <a
@@ -242,7 +242,7 @@ public class DescribeConfigRuleEvaluationStatusRequest extends com.amazonaws.Ama
      * The number of rule evaluation results that you want returned.
      * </p>
      * <p>
-     * This parameter is required if the rule limit for your account is more than the default of 150 rules.
+     * This parameter is required if the rule limit for your account is more than the default of 1000 rules.
      * </p>
      * <p>
      * For information about requesting a rule limit increase, see <a
@@ -253,7 +253,7 @@ public class DescribeConfigRuleEvaluationStatusRequest extends com.amazonaws.Ama
      * @param limit
      *        The number of rule evaluation results that you want returned.</p>
      *        <p>
-     *        This parameter is required if the rule limit for your account is more than the default of 150 rules.
+     *        This parameter is required if the rule limit for your account is more than the default of 1000 rules.
      *        </p>
      *        <p>
      *        For information about requesting a rule limit increase, see <a

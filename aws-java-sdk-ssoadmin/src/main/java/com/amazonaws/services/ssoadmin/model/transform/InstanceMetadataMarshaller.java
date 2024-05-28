@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,10 +27,18 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class InstanceMetadataMarshaller {
 
-    private static final MarshallingInfo<String> INSTANCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceArn").build();
+    private static final MarshallingInfo<java.util.Date> CREATEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> IDENTITYSTOREID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentityStoreId").build();
+    private static final MarshallingInfo<String> INSTANCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceArn").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> OWNERACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OwnerAccountId").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Status").build();
 
     private static final InstanceMetadataMarshaller instance = new InstanceMetadataMarshaller();
 
@@ -48,8 +56,12 @@ public class InstanceMetadataMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(instanceMetadata.getInstanceArn(), INSTANCEARN_BINDING);
+            protocolMarshaller.marshall(instanceMetadata.getCreatedDate(), CREATEDDATE_BINDING);
             protocolMarshaller.marshall(instanceMetadata.getIdentityStoreId(), IDENTITYSTOREID_BINDING);
+            protocolMarshaller.marshall(instanceMetadata.getInstanceArn(), INSTANCEARN_BINDING);
+            protocolMarshaller.marshall(instanceMetadata.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(instanceMetadata.getOwnerAccountId(), OWNERACCOUNTID_BINDING);
+            protocolMarshaller.marshall(instanceMetadata.getStatus(), STATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

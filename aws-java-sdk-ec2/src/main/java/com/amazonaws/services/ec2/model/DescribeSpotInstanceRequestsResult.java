@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,24 +27,24 @@ public class DescribeSpotInstanceRequestsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * One or more Spot Instance requests.
+     * The Spot Instance requests.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<SpotInstanceRequest> spotInstanceRequests;
     /**
      * <p>
-     * The token to use to retrieve the next set of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * The token to include in another request to get the next page of items. This value is <code>null</code> when there
+     * are no more items to return.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * One or more Spot Instance requests.
+     * The Spot Instance requests.
      * </p>
      * 
-     * @return One or more Spot Instance requests.
+     * @return The Spot Instance requests.
      */
 
     public java.util.List<SpotInstanceRequest> getSpotInstanceRequests() {
@@ -56,11 +56,11 @@ public class DescribeSpotInstanceRequestsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * One or more Spot Instance requests.
+     * The Spot Instance requests.
      * </p>
      * 
      * @param spotInstanceRequests
-     *        One or more Spot Instance requests.
+     *        The Spot Instance requests.
      */
 
     public void setSpotInstanceRequests(java.util.Collection<SpotInstanceRequest> spotInstanceRequests) {
@@ -74,7 +74,7 @@ public class DescribeSpotInstanceRequestsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * One or more Spot Instance requests.
+     * The Spot Instance requests.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -83,7 +83,7 @@ public class DescribeSpotInstanceRequestsResult extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param spotInstanceRequests
-     *        One or more Spot Instance requests.
+     *        The Spot Instance requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +99,11 @@ public class DescribeSpotInstanceRequestsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * One or more Spot Instance requests.
+     * The Spot Instance requests.
      * </p>
      * 
      * @param spotInstanceRequests
-     *        One or more Spot Instance requests.
+     *        The Spot Instance requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,13 +114,13 @@ public class DescribeSpotInstanceRequestsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The token to use to retrieve the next set of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * The token to include in another request to get the next page of items. This value is <code>null</code> when there
+     * are no more items to return.
      * </p>
      * 
      * @param nextToken
-     *        The token to use to retrieve the next set of results. This value is <code>null</code> when there are no
-     *        more results to return.
+     *        The token to include in another request to get the next page of items. This value is <code>null</code>
+     *        when there are no more items to return.
      */
 
     public void setNextToken(String nextToken) {
@@ -129,12 +129,12 @@ public class DescribeSpotInstanceRequestsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The token to use to retrieve the next set of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * The token to include in another request to get the next page of items. This value is <code>null</code> when there
+     * are no more items to return.
      * </p>
      * 
-     * @return The token to use to retrieve the next set of results. This value is <code>null</code> when there are no
-     *         more results to return.
+     * @return The token to include in another request to get the next page of items. This value is <code>null</code>
+     *         when there are no more items to return.
      */
 
     public String getNextToken() {
@@ -143,13 +143,13 @@ public class DescribeSpotInstanceRequestsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The token to use to retrieve the next set of results. This value is <code>null</code> when there are no more
-     * results to return.
+     * The token to include in another request to get the next page of items. This value is <code>null</code> when there
+     * are no more items to return.
      * </p>
      * 
      * @param nextToken
-     *        The token to use to retrieve the next set of results. This value is <code>null</code> when there are no
-     *        more results to return.
+     *        The token to include in another request to get the next page of items. This value is <code>null</code>
+     *        when there are no more items to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

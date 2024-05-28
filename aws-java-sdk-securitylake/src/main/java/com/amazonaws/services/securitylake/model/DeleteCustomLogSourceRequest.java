@@ -1,0 +1,184 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.securitylake.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+import com.amazonaws.AmazonWebServiceRequest;
+
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteCustomLogSource" target="_top">AWS
+ *      API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DeleteCustomLogSourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * The source name of custom log source that you want to delete.
+     * </p>
+     */
+    private String sourceName;
+    /**
+     * <p>
+     * The source version for the third-party custom source. You can limit the custom source removal to the specified
+     * source version.
+     * </p>
+     */
+    private String sourceVersion;
+
+    /**
+     * <p>
+     * The source name of custom log source that you want to delete.
+     * </p>
+     * 
+     * @param sourceName
+     *        The source name of custom log source that you want to delete.
+     */
+
+    public void setSourceName(String sourceName) {
+        this.sourceName = sourceName;
+    }
+
+    /**
+     * <p>
+     * The source name of custom log source that you want to delete.
+     * </p>
+     * 
+     * @return The source name of custom log source that you want to delete.
+     */
+
+    public String getSourceName() {
+        return this.sourceName;
+    }
+
+    /**
+     * <p>
+     * The source name of custom log source that you want to delete.
+     * </p>
+     * 
+     * @param sourceName
+     *        The source name of custom log source that you want to delete.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteCustomLogSourceRequest withSourceName(String sourceName) {
+        setSourceName(sourceName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The source version for the third-party custom source. You can limit the custom source removal to the specified
+     * source version.
+     * </p>
+     * 
+     * @param sourceVersion
+     *        The source version for the third-party custom source. You can limit the custom source removal to the
+     *        specified source version.
+     */
+
+    public void setSourceVersion(String sourceVersion) {
+        this.sourceVersion = sourceVersion;
+    }
+
+    /**
+     * <p>
+     * The source version for the third-party custom source. You can limit the custom source removal to the specified
+     * source version.
+     * </p>
+     * 
+     * @return The source version for the third-party custom source. You can limit the custom source removal to the
+     *         specified source version.
+     */
+
+    public String getSourceVersion() {
+        return this.sourceVersion;
+    }
+
+    /**
+     * <p>
+     * The source version for the third-party custom source. You can limit the custom source removal to the specified
+     * source version.
+     * </p>
+     * 
+     * @param sourceVersion
+     *        The source version for the third-party custom source. You can limit the custom source removal to the
+     *        specified source version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteCustomLogSourceRequest withSourceVersion(String sourceVersion) {
+        setSourceVersion(sourceVersion);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getSourceName() != null)
+            sb.append("SourceName: ").append(getSourceName()).append(",");
+        if (getSourceVersion() != null)
+            sb.append("SourceVersion: ").append(getSourceVersion());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DeleteCustomLogSourceRequest == false)
+            return false;
+        DeleteCustomLogSourceRequest other = (DeleteCustomLogSourceRequest) obj;
+        if (other.getSourceName() == null ^ this.getSourceName() == null)
+            return false;
+        if (other.getSourceName() != null && other.getSourceName().equals(this.getSourceName()) == false)
+            return false;
+        if (other.getSourceVersion() == null ^ this.getSourceVersion() == null)
+            return false;
+        if (other.getSourceVersion() != null && other.getSourceVersion().equals(this.getSourceVersion()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getSourceName() == null) ? 0 : getSourceName().hashCode());
+        hashCode = prime * hashCode + ((getSourceVersion() == null) ? 0 : getSourceVersion().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public DeleteCustomLogSourceRequest clone() {
+        return (DeleteCustomLogSourceRequest) super.clone();
+    }
+
+}

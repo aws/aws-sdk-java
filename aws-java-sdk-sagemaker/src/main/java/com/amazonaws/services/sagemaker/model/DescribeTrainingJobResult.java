@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -104,7 +104,9 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * Provides detailed information about the state of the training job. For detailed information on the secondary
-     * status of the training job, see <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.
+     * status of the training job, see <code>StatusMessage</code> under <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html"
+     * >SecondaryStatusTransition</a>.
      * </p>
      * <p>
      * SageMaker provides primary statuses and secondary statuses that apply to each of them:
@@ -265,8 +267,15 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     private ResourceConfig resourceConfig;
     /**
      * <p>
-     * A <a>VpcConfig</a> object that specifies the VPC that this training job has access to. For more information, see
-     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
+     * The status of the warm pool associated with the training job.
+     * </p>
+     */
+    private WarmPoolStatus warmPoolStatus;
+    /**
+     * <p>
+     * A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object
+     * that specifies the VPC that this training job has access to. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
      * Virtual Private Cloud</a>.
      * </p>
      */
@@ -380,7 +389,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     private ExperimentConfig experimentConfig;
     /**
      * <p>
-     * Configuration information for Debugger rules for debugging output tensors.
+     * Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      * </p>
      */
     private java.util.List<DebugRuleConfiguration> debugRuleConfigurations;
@@ -388,7 +397,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     private TensorBoardOutputConfig tensorBoardOutputConfig;
     /**
      * <p>
-     * Evaluation status of Debugger rules for debugging on a training job.
+     * Evaluation status of Amazon SageMaker Debugger rules for debugging on a training job.
      * </p>
      */
     private java.util.List<DebugRuleEvaluationStatus> debugRuleEvaluationStatuses;
@@ -396,13 +405,13 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     private ProfilerConfig profilerConfig;
     /**
      * <p>
-     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * </p>
      */
     private java.util.List<ProfilerRuleConfiguration> profilerRuleConfigurations;
     /**
      * <p>
-     * Evaluation status of Debugger rules for profiling on a training job.
+     * Evaluation status of Amazon SageMaker Debugger rules for profiling on a training job.
      * </p>
      */
     private java.util.List<ProfilerRuleEvaluationStatus> profilerRuleEvaluationStatuses;
@@ -414,22 +423,30 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     private String profilingStatus;
     /**
      * <p>
-     * The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
-     * </p>
-     */
-    private RetryStrategy retryStrategy;
-    /**
-     * <p>
      * The environment variables to set in the Docker container.
      * </p>
      */
     private java.util.Map<String, String> environment;
     /**
      * <p>
-     * The status of the warm pool associated with the training job.
+     * The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
      * </p>
      */
-    private WarmPoolStatus warmPoolStatus;
+    private RetryStrategy retryStrategy;
+    /**
+     * <p>
+     * Configuration for remote debugging. To learn more about the remote debugging functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a training container
+     * through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.
+     * </p>
+     */
+    private RemoteDebugConfig remoteDebugConfig;
+    /**
+     * <p>
+     * Contains information about the infrastructure health check configuration for the training job.
+     * </p>
+     */
+    private InfraCheckConfig infraCheckConfig;
 
     /**
      * <p>
@@ -1013,7 +1030,9 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * Provides detailed information about the state of the training job. For detailed information on the secondary
-     * status of the training job, see <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.
+     * status of the training job, see <code>StatusMessage</code> under <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html"
+     * >SecondaryStatusTransition</a>.
      * </p>
      * <p>
      * SageMaker provides primary statuses and secondary statuses that apply to each of them:
@@ -1130,8 +1149,9 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * 
      * @param secondaryStatus
      *        Provides detailed information about the state of the training job. For detailed information on the
-     *        secondary status of the training job, see <code>StatusMessage</code> under
-     *        <a>SecondaryStatusTransition</a>.</p>
+     *        secondary status of the training job, see <code>StatusMessage</code> under <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html"
+     *        >SecondaryStatusTransition</a>.</p>
      *        <p>
      *        SageMaker provides primary statuses and secondary statuses that apply to each of them:
      *        </p>
@@ -1254,7 +1274,9 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * Provides detailed information about the state of the training job. For detailed information on the secondary
-     * status of the training job, see <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.
+     * status of the training job, see <code>StatusMessage</code> under <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html"
+     * >SecondaryStatusTransition</a>.
      * </p>
      * <p>
      * SageMaker provides primary statuses and secondary statuses that apply to each of them:
@@ -1370,8 +1392,9 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </ul>
      * 
      * @return Provides detailed information about the state of the training job. For detailed information on the
-     *         secondary status of the training job, see <code>StatusMessage</code> under
-     *         <a>SecondaryStatusTransition</a>.</p>
+     *         secondary status of the training job, see <code>StatusMessage</code> under <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html"
+     *         >SecondaryStatusTransition</a>.</p>
      *         <p>
      *         SageMaker provides primary statuses and secondary statuses that apply to each of them:
      *         </p>
@@ -1494,7 +1517,9 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * Provides detailed information about the state of the training job. For detailed information on the secondary
-     * status of the training job, see <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.
+     * status of the training job, see <code>StatusMessage</code> under <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html"
+     * >SecondaryStatusTransition</a>.
      * </p>
      * <p>
      * SageMaker provides primary statuses and secondary statuses that apply to each of them:
@@ -1611,8 +1636,9 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * 
      * @param secondaryStatus
      *        Provides detailed information about the state of the training job. For detailed information on the
-     *        secondary status of the training job, see <code>StatusMessage</code> under
-     *        <a>SecondaryStatusTransition</a>.</p>
+     *        secondary status of the training job, see <code>StatusMessage</code> under <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html"
+     *        >SecondaryStatusTransition</a>.</p>
      *        <p>
      *        SageMaker provides primary statuses and secondary statuses that apply to each of them:
      *        </p>
@@ -1737,7 +1763,9 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * Provides detailed information about the state of the training job. For detailed information on the secondary
-     * status of the training job, see <code>StatusMessage</code> under <a>SecondaryStatusTransition</a>.
+     * status of the training job, see <code>StatusMessage</code> under <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html"
+     * >SecondaryStatusTransition</a>.
      * </p>
      * <p>
      * SageMaker provides primary statuses and secondary statuses that apply to each of them:
@@ -1854,8 +1882,9 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * 
      * @param secondaryStatus
      *        Provides detailed information about the state of the training job. For detailed information on the
-     *        secondary status of the training job, see <code>StatusMessage</code> under
-     *        <a>SecondaryStatusTransition</a>.</p>
+     *        secondary status of the training job, see <code>StatusMessage</code> under <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html"
+     *        >SecondaryStatusTransition</a>.</p>
      *        <p>
      *        SageMaker provides primary statuses and secondary statuses that apply to each of them:
      *        </p>
@@ -2323,15 +2352,57 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A <a>VpcConfig</a> object that specifies the VPC that this training job has access to. For more information, see
-     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
+     * The status of the warm pool associated with the training job.
+     * </p>
+     * 
+     * @param warmPoolStatus
+     *        The status of the warm pool associated with the training job.
+     */
+
+    public void setWarmPoolStatus(WarmPoolStatus warmPoolStatus) {
+        this.warmPoolStatus = warmPoolStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the warm pool associated with the training job.
+     * </p>
+     * 
+     * @return The status of the warm pool associated with the training job.
+     */
+
+    public WarmPoolStatus getWarmPoolStatus() {
+        return this.warmPoolStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the warm pool associated with the training job.
+     * </p>
+     * 
+     * @param warmPoolStatus
+     *        The status of the warm pool associated with the training job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withWarmPoolStatus(WarmPoolStatus warmPoolStatus) {
+        setWarmPoolStatus(warmPoolStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object
+     * that specifies the VPC that this training job has access to. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
      * Virtual Private Cloud</a>.
      * </p>
      * 
      * @param vpcConfig
-     *        A <a>VpcConfig</a> object that specifies the VPC that this training job has access to. For more
-     *        information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training
-     *        Jobs by Using an Amazon Virtual Private Cloud</a>.
+     *        A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     *        object that specifies the VPC that this training job has access to. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an
+     *        Amazon Virtual Private Cloud</a>.
      */
 
     public void setVpcConfig(VpcConfig vpcConfig) {
@@ -2340,14 +2411,16 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A <a>VpcConfig</a> object that specifies the VPC that this training job has access to. For more information, see
-     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
+     * A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object
+     * that specifies the VPC that this training job has access to. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
      * Virtual Private Cloud</a>.
      * </p>
      * 
-     * @return A <a>VpcConfig</a> object that specifies the VPC that this training job has access to. For more
-     *         information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
-     *         Training Jobs by Using an Amazon Virtual Private Cloud</a>.
+     * @return A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     *         object that specifies the VPC that this training job has access to. For more information, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an
+     *         Amazon Virtual Private Cloud</a>.
      */
 
     public VpcConfig getVpcConfig() {
@@ -2356,15 +2429,17 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A <a>VpcConfig</a> object that specifies the VPC that this training job has access to. For more information, see
-     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
+     * A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> object
+     * that specifies the VPC that this training job has access to. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an Amazon
      * Virtual Private Cloud</a>.
      * </p>
      * 
      * @param vpcConfig
-     *        A <a>VpcConfig</a> object that specifies the VPC that this training job has access to. For more
-     *        information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training
-     *        Jobs by Using an Amazon Virtual Private Cloud</a>.
+     *        A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     *        object that specifies the VPC that this training job has access to. For more information, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect Training Jobs by Using an
+     *        Amazon Virtual Private Cloud</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3221,10 +3296,10 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Configuration information for Debugger rules for debugging output tensors.
+     * Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      * </p>
      * 
-     * @return Configuration information for Debugger rules for debugging output tensors.
+     * @return Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      */
 
     public java.util.List<DebugRuleConfiguration> getDebugRuleConfigurations() {
@@ -3233,11 +3308,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Configuration information for Debugger rules for debugging output tensors.
+     * Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      * </p>
      * 
      * @param debugRuleConfigurations
-     *        Configuration information for Debugger rules for debugging output tensors.
+     *        Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      */
 
     public void setDebugRuleConfigurations(java.util.Collection<DebugRuleConfiguration> debugRuleConfigurations) {
@@ -3251,7 +3326,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Configuration information for Debugger rules for debugging output tensors.
+     * Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -3260,7 +3335,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param debugRuleConfigurations
-     *        Configuration information for Debugger rules for debugging output tensors.
+     *        Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3276,11 +3351,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Configuration information for Debugger rules for debugging output tensors.
+     * Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      * </p>
      * 
      * @param debugRuleConfigurations
-     *        Configuration information for Debugger rules for debugging output tensors.
+     *        Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3317,10 +3392,10 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Evaluation status of Debugger rules for debugging on a training job.
+     * Evaluation status of Amazon SageMaker Debugger rules for debugging on a training job.
      * </p>
      * 
-     * @return Evaluation status of Debugger rules for debugging on a training job.
+     * @return Evaluation status of Amazon SageMaker Debugger rules for debugging on a training job.
      */
 
     public java.util.List<DebugRuleEvaluationStatus> getDebugRuleEvaluationStatuses() {
@@ -3329,11 +3404,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Evaluation status of Debugger rules for debugging on a training job.
+     * Evaluation status of Amazon SageMaker Debugger rules for debugging on a training job.
      * </p>
      * 
      * @param debugRuleEvaluationStatuses
-     *        Evaluation status of Debugger rules for debugging on a training job.
+     *        Evaluation status of Amazon SageMaker Debugger rules for debugging on a training job.
      */
 
     public void setDebugRuleEvaluationStatuses(java.util.Collection<DebugRuleEvaluationStatus> debugRuleEvaluationStatuses) {
@@ -3347,7 +3422,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Evaluation status of Debugger rules for debugging on a training job.
+     * Evaluation status of Amazon SageMaker Debugger rules for debugging on a training job.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -3356,7 +3431,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param debugRuleEvaluationStatuses
-     *        Evaluation status of Debugger rules for debugging on a training job.
+     *        Evaluation status of Amazon SageMaker Debugger rules for debugging on a training job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3372,11 +3447,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Evaluation status of Debugger rules for debugging on a training job.
+     * Evaluation status of Amazon SageMaker Debugger rules for debugging on a training job.
      * </p>
      * 
      * @param debugRuleEvaluationStatuses
-     *        Evaluation status of Debugger rules for debugging on a training job.
+     *        Evaluation status of Amazon SageMaker Debugger rules for debugging on a training job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3413,10 +3488,10 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * </p>
      * 
-     * @return Configuration information for Debugger rules for profiling system and framework metrics.
+     * @return Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      */
 
     public java.util.List<ProfilerRuleConfiguration> getProfilerRuleConfigurations() {
@@ -3425,11 +3500,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * </p>
      * 
      * @param profilerRuleConfigurations
-     *        Configuration information for Debugger rules for profiling system and framework metrics.
+     *        Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      */
 
     public void setProfilerRuleConfigurations(java.util.Collection<ProfilerRuleConfiguration> profilerRuleConfigurations) {
@@ -3443,7 +3518,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -3452,7 +3527,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param profilerRuleConfigurations
-     *        Configuration information for Debugger rules for profiling system and framework metrics.
+     *        Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3468,11 +3543,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * </p>
      * 
      * @param profilerRuleConfigurations
-     *        Configuration information for Debugger rules for profiling system and framework metrics.
+     *        Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3483,10 +3558,10 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Evaluation status of Debugger rules for profiling on a training job.
+     * Evaluation status of Amazon SageMaker Debugger rules for profiling on a training job.
      * </p>
      * 
-     * @return Evaluation status of Debugger rules for profiling on a training job.
+     * @return Evaluation status of Amazon SageMaker Debugger rules for profiling on a training job.
      */
 
     public java.util.List<ProfilerRuleEvaluationStatus> getProfilerRuleEvaluationStatuses() {
@@ -3495,11 +3570,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Evaluation status of Debugger rules for profiling on a training job.
+     * Evaluation status of Amazon SageMaker Debugger rules for profiling on a training job.
      * </p>
      * 
      * @param profilerRuleEvaluationStatuses
-     *        Evaluation status of Debugger rules for profiling on a training job.
+     *        Evaluation status of Amazon SageMaker Debugger rules for profiling on a training job.
      */
 
     public void setProfilerRuleEvaluationStatuses(java.util.Collection<ProfilerRuleEvaluationStatus> profilerRuleEvaluationStatuses) {
@@ -3513,7 +3588,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Evaluation status of Debugger rules for profiling on a training job.
+     * Evaluation status of Amazon SageMaker Debugger rules for profiling on a training job.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -3522,7 +3597,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param profilerRuleEvaluationStatuses
-     *        Evaluation status of Debugger rules for profiling on a training job.
+     *        Evaluation status of Amazon SageMaker Debugger rules for profiling on a training job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3538,11 +3613,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Evaluation status of Debugger rules for profiling on a training job.
+     * Evaluation status of Amazon SageMaker Debugger rules for profiling on a training job.
      * </p>
      * 
      * @param profilerRuleEvaluationStatuses
-     *        Evaluation status of Debugger rules for profiling on a training job.
+     *        Evaluation status of Amazon SageMaker Debugger rules for profiling on a training job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3607,46 +3682,6 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     public DescribeTrainingJobResult withProfilingStatus(ProfilingStatus profilingStatus) {
         this.profilingStatus = profilingStatus.toString();
-        return this;
-    }
-
-    /**
-     * <p>
-     * The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
-     * </p>
-     * 
-     * @param retryStrategy
-     *        The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
-     */
-
-    public void setRetryStrategy(RetryStrategy retryStrategy) {
-        this.retryStrategy = retryStrategy;
-    }
-
-    /**
-     * <p>
-     * The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
-     * </p>
-     * 
-     * @return The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
-     */
-
-    public RetryStrategy getRetryStrategy() {
-        return this.retryStrategy;
-    }
-
-    /**
-     * <p>
-     * The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
-     * </p>
-     * 
-     * @param retryStrategy
-     *        The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DescribeTrainingJobResult withRetryStrategy(RetryStrategy retryStrategy) {
-        setRetryStrategy(retryStrategy);
         return this;
     }
 
@@ -3720,41 +3755,133 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The status of the warm pool associated with the training job.
+     * The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
      * </p>
      * 
-     * @param warmPoolStatus
-     *        The status of the warm pool associated with the training job.
+     * @param retryStrategy
+     *        The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
      */
 
-    public void setWarmPoolStatus(WarmPoolStatus warmPoolStatus) {
-        this.warmPoolStatus = warmPoolStatus;
+    public void setRetryStrategy(RetryStrategy retryStrategy) {
+        this.retryStrategy = retryStrategy;
     }
 
     /**
      * <p>
-     * The status of the warm pool associated with the training job.
+     * The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
      * </p>
      * 
-     * @return The status of the warm pool associated with the training job.
+     * @return The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
      */
 
-    public WarmPoolStatus getWarmPoolStatus() {
-        return this.warmPoolStatus;
+    public RetryStrategy getRetryStrategy() {
+        return this.retryStrategy;
     }
 
     /**
      * <p>
-     * The status of the warm pool associated with the training job.
+     * The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
      * </p>
      * 
-     * @param warmPoolStatus
-     *        The status of the warm pool associated with the training job.
+     * @param retryStrategy
+     *        The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DescribeTrainingJobResult withWarmPoolStatus(WarmPoolStatus warmPoolStatus) {
-        setWarmPoolStatus(warmPoolStatus);
+    public DescribeTrainingJobResult withRetryStrategy(RetryStrategy retryStrategy) {
+        setRetryStrategy(retryStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configuration for remote debugging. To learn more about the remote debugging functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a training container
+     * through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.
+     * </p>
+     * 
+     * @param remoteDebugConfig
+     *        Configuration for remote debugging. To learn more about the remote debugging functionality of SageMaker,
+     *        see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a
+     *        training container through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.
+     */
+
+    public void setRemoteDebugConfig(RemoteDebugConfig remoteDebugConfig) {
+        this.remoteDebugConfig = remoteDebugConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration for remote debugging. To learn more about the remote debugging functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a training container
+     * through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.
+     * </p>
+     * 
+     * @return Configuration for remote debugging. To learn more about the remote debugging functionality of SageMaker,
+     *         see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a
+     *         training container through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.
+     */
+
+    public RemoteDebugConfig getRemoteDebugConfig() {
+        return this.remoteDebugConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration for remote debugging. To learn more about the remote debugging functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a training container
+     * through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.
+     * </p>
+     * 
+     * @param remoteDebugConfig
+     *        Configuration for remote debugging. To learn more about the remote debugging functionality of SageMaker,
+     *        see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access a
+     *        training container through Amazon Web Services Systems Manager (SSM) for remote debugging</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withRemoteDebugConfig(RemoteDebugConfig remoteDebugConfig) {
+        setRemoteDebugConfig(remoteDebugConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains information about the infrastructure health check configuration for the training job.
+     * </p>
+     * 
+     * @param infraCheckConfig
+     *        Contains information about the infrastructure health check configuration for the training job.
+     */
+
+    public void setInfraCheckConfig(InfraCheckConfig infraCheckConfig) {
+        this.infraCheckConfig = infraCheckConfig;
+    }
+
+    /**
+     * <p>
+     * Contains information about the infrastructure health check configuration for the training job.
+     * </p>
+     * 
+     * @return Contains information about the infrastructure health check configuration for the training job.
+     */
+
+    public InfraCheckConfig getInfraCheckConfig() {
+        return this.infraCheckConfig;
+    }
+
+    /**
+     * <p>
+     * Contains information about the infrastructure health check configuration for the training job.
+     * </p>
+     * 
+     * @param infraCheckConfig
+     *        Contains information about the infrastructure health check configuration for the training job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withInfraCheckConfig(InfraCheckConfig infraCheckConfig) {
+        setInfraCheckConfig(infraCheckConfig);
         return this;
     }
 
@@ -3800,6 +3927,8 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
             sb.append("OutputDataConfig: ").append(getOutputDataConfig()).append(",");
         if (getResourceConfig() != null)
             sb.append("ResourceConfig: ").append(getResourceConfig()).append(",");
+        if (getWarmPoolStatus() != null)
+            sb.append("WarmPoolStatus: ").append(getWarmPoolStatus()).append(",");
         if (getVpcConfig() != null)
             sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
         if (getStoppingCondition() != null)
@@ -3846,12 +3975,14 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
             sb.append("ProfilerRuleEvaluationStatuses: ").append(getProfilerRuleEvaluationStatuses()).append(",");
         if (getProfilingStatus() != null)
             sb.append("ProfilingStatus: ").append(getProfilingStatus()).append(",");
-        if (getRetryStrategy() != null)
-            sb.append("RetryStrategy: ").append(getRetryStrategy()).append(",");
         if (getEnvironment() != null)
             sb.append("Environment: ").append(getEnvironment()).append(",");
-        if (getWarmPoolStatus() != null)
-            sb.append("WarmPoolStatus: ").append(getWarmPoolStatus());
+        if (getRetryStrategy() != null)
+            sb.append("RetryStrategy: ").append(getRetryStrategy()).append(",");
+        if (getRemoteDebugConfig() != null)
+            sb.append("RemoteDebugConfig: ").append(getRemoteDebugConfig()).append(",");
+        if (getInfraCheckConfig() != null)
+            sb.append("InfraCheckConfig: ").append(getInfraCheckConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -3925,6 +4056,10 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
         if (other.getResourceConfig() == null ^ this.getResourceConfig() == null)
             return false;
         if (other.getResourceConfig() != null && other.getResourceConfig().equals(this.getResourceConfig()) == false)
+            return false;
+        if (other.getWarmPoolStatus() == null ^ this.getWarmPoolStatus() == null)
+            return false;
+        if (other.getWarmPoolStatus() != null && other.getWarmPoolStatus().equals(this.getWarmPoolStatus()) == false)
             return false;
         if (other.getVpcConfig() == null ^ this.getVpcConfig() == null)
             return false;
@@ -4020,17 +4155,21 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getProfilingStatus() != null && other.getProfilingStatus().equals(this.getProfilingStatus()) == false)
             return false;
-        if (other.getRetryStrategy() == null ^ this.getRetryStrategy() == null)
-            return false;
-        if (other.getRetryStrategy() != null && other.getRetryStrategy().equals(this.getRetryStrategy()) == false)
-            return false;
         if (other.getEnvironment() == null ^ this.getEnvironment() == null)
             return false;
         if (other.getEnvironment() != null && other.getEnvironment().equals(this.getEnvironment()) == false)
             return false;
-        if (other.getWarmPoolStatus() == null ^ this.getWarmPoolStatus() == null)
+        if (other.getRetryStrategy() == null ^ this.getRetryStrategy() == null)
             return false;
-        if (other.getWarmPoolStatus() != null && other.getWarmPoolStatus().equals(this.getWarmPoolStatus()) == false)
+        if (other.getRetryStrategy() != null && other.getRetryStrategy().equals(this.getRetryStrategy()) == false)
+            return false;
+        if (other.getRemoteDebugConfig() == null ^ this.getRemoteDebugConfig() == null)
+            return false;
+        if (other.getRemoteDebugConfig() != null && other.getRemoteDebugConfig().equals(this.getRemoteDebugConfig()) == false)
+            return false;
+        if (other.getInfraCheckConfig() == null ^ this.getInfraCheckConfig() == null)
+            return false;
+        if (other.getInfraCheckConfig() != null && other.getInfraCheckConfig().equals(this.getInfraCheckConfig()) == false)
             return false;
         return true;
     }
@@ -4055,6 +4194,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getInputDataConfig() == null) ? 0 : getInputDataConfig().hashCode());
         hashCode = prime * hashCode + ((getOutputDataConfig() == null) ? 0 : getOutputDataConfig().hashCode());
         hashCode = prime * hashCode + ((getResourceConfig() == null) ? 0 : getResourceConfig().hashCode());
+        hashCode = prime * hashCode + ((getWarmPoolStatus() == null) ? 0 : getWarmPoolStatus().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         hashCode = prime * hashCode + ((getStoppingCondition() == null) ? 0 : getStoppingCondition().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
@@ -4078,9 +4218,10 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getProfilerRuleConfigurations() == null) ? 0 : getProfilerRuleConfigurations().hashCode());
         hashCode = prime * hashCode + ((getProfilerRuleEvaluationStatuses() == null) ? 0 : getProfilerRuleEvaluationStatuses().hashCode());
         hashCode = prime * hashCode + ((getProfilingStatus() == null) ? 0 : getProfilingStatus().hashCode());
-        hashCode = prime * hashCode + ((getRetryStrategy() == null) ? 0 : getRetryStrategy().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
-        hashCode = prime * hashCode + ((getWarmPoolStatus() == null) ? 0 : getWarmPoolStatus().hashCode());
+        hashCode = prime * hashCode + ((getRetryStrategy() == null) ? 0 : getRetryStrategy().hashCode());
+        hashCode = prime * hashCode + ((getRemoteDebugConfig() == null) ? 0 : getRemoteDebugConfig().hashCode());
+        hashCode = prime * hashCode + ((getInfraCheckConfig() == null) ? 0 : getInfraCheckConfig().hashCode());
         return hashCode;
     }
 

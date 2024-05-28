@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,6 +68,26 @@ public class DescribeJobTemplateResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private JobExecutionsRetryConfig jobExecutionsRetryConfig;
+    /**
+     * <p>
+     * Allows you to configure an optional maintenance window for the rollout of a job document to all devices in the
+     * target group for a job.
+     * </p>
+     */
+    private java.util.List<MaintenanceWindow> maintenanceWindows;
+    /**
+     * <p>
+     * The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully
+     * completes. The package version must be in either the Published or Deprecated state when the job deploys. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     * >Package version lifecycle</a>.
+     * </p>
+     * <p>
+     * <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.
+     * </p>
+     */
+    private java.util.List<String> destinationPackageVersions;
 
     /**
      * <p>
@@ -454,6 +474,210 @@ public class DescribeJobTemplateResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * Allows you to configure an optional maintenance window for the rollout of a job document to all devices in the
+     * target group for a job.
+     * </p>
+     * 
+     * @return Allows you to configure an optional maintenance window for the rollout of a job document to all devices
+     *         in the target group for a job.
+     */
+
+    public java.util.List<MaintenanceWindow> getMaintenanceWindows() {
+        return maintenanceWindows;
+    }
+
+    /**
+     * <p>
+     * Allows you to configure an optional maintenance window for the rollout of a job document to all devices in the
+     * target group for a job.
+     * </p>
+     * 
+     * @param maintenanceWindows
+     *        Allows you to configure an optional maintenance window for the rollout of a job document to all devices in
+     *        the target group for a job.
+     */
+
+    public void setMaintenanceWindows(java.util.Collection<MaintenanceWindow> maintenanceWindows) {
+        if (maintenanceWindows == null) {
+            this.maintenanceWindows = null;
+            return;
+        }
+
+        this.maintenanceWindows = new java.util.ArrayList<MaintenanceWindow>(maintenanceWindows);
+    }
+
+    /**
+     * <p>
+     * Allows you to configure an optional maintenance window for the rollout of a job document to all devices in the
+     * target group for a job.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMaintenanceWindows(java.util.Collection)} or {@link #withMaintenanceWindows(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param maintenanceWindows
+     *        Allows you to configure an optional maintenance window for the rollout of a job document to all devices in
+     *        the target group for a job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeJobTemplateResult withMaintenanceWindows(MaintenanceWindow... maintenanceWindows) {
+        if (this.maintenanceWindows == null) {
+            setMaintenanceWindows(new java.util.ArrayList<MaintenanceWindow>(maintenanceWindows.length));
+        }
+        for (MaintenanceWindow ele : maintenanceWindows) {
+            this.maintenanceWindows.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Allows you to configure an optional maintenance window for the rollout of a job document to all devices in the
+     * target group for a job.
+     * </p>
+     * 
+     * @param maintenanceWindows
+     *        Allows you to configure an optional maintenance window for the rollout of a job document to all devices in
+     *        the target group for a job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeJobTemplateResult withMaintenanceWindows(java.util.Collection<MaintenanceWindow> maintenanceWindows) {
+        setMaintenanceWindows(maintenanceWindows);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully
+     * completes. The package version must be in either the Published or Deprecated state when the job deploys. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     * >Package version lifecycle</a>.
+     * </p>
+     * <p>
+     * <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.
+     * </p>
+     * 
+     * @return The package version Amazon Resource Names (ARNs) that are installed on the device when the job
+     *         successfully completes. The package version must be in either the Published or Deprecated state when the
+     *         job deploys. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     *         >Package version lifecycle</a>.</p>
+     *         <p>
+     *         <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are
+     *         allowed.
+     */
+
+    public java.util.List<String> getDestinationPackageVersions() {
+        return destinationPackageVersions;
+    }
+
+    /**
+     * <p>
+     * The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully
+     * completes. The package version must be in either the Published or Deprecated state when the job deploys. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     * >Package version lifecycle</a>.
+     * </p>
+     * <p>
+     * <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.
+     * </p>
+     * 
+     * @param destinationPackageVersions
+     *        The package version Amazon Resource Names (ARNs) that are installed on the device when the job
+     *        successfully completes. The package version must be in either the Published or Deprecated state when the
+     *        job deploys. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     *        >Package version lifecycle</a>.</p>
+     *        <p>
+     *        <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are
+     *        allowed.
+     */
+
+    public void setDestinationPackageVersions(java.util.Collection<String> destinationPackageVersions) {
+        if (destinationPackageVersions == null) {
+            this.destinationPackageVersions = null;
+            return;
+        }
+
+        this.destinationPackageVersions = new java.util.ArrayList<String>(destinationPackageVersions);
+    }
+
+    /**
+     * <p>
+     * The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully
+     * completes. The package version must be in either the Published or Deprecated state when the job deploys. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     * >Package version lifecycle</a>.
+     * </p>
+     * <p>
+     * <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDestinationPackageVersions(java.util.Collection)} or
+     * {@link #withDestinationPackageVersions(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param destinationPackageVersions
+     *        The package version Amazon Resource Names (ARNs) that are installed on the device when the job
+     *        successfully completes. The package version must be in either the Published or Deprecated state when the
+     *        job deploys. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     *        >Package version lifecycle</a>.</p>
+     *        <p>
+     *        <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are
+     *        allowed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeJobTemplateResult withDestinationPackageVersions(String... destinationPackageVersions) {
+        if (this.destinationPackageVersions == null) {
+            setDestinationPackageVersions(new java.util.ArrayList<String>(destinationPackageVersions.length));
+        }
+        for (String ele : destinationPackageVersions) {
+            this.destinationPackageVersions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The package version Amazon Resource Names (ARNs) that are installed on the device when the job successfully
+     * completes. The package version must be in either the Published or Deprecated state when the job deploys. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     * >Package version lifecycle</a>.
+     * </p>
+     * <p>
+     * <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are allowed.
+     * </p>
+     * 
+     * @param destinationPackageVersions
+     *        The package version Amazon Resource Names (ARNs) that are installed on the device when the job
+     *        successfully completes. The package version must be in either the Published or Deprecated state when the
+     *        job deploys. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle"
+     *        >Package version lifecycle</a>.</p>
+     *        <p>
+     *        <b>Note:</b>The following Length Constraints relates to a single ARN. Up to 25 package version ARNs are
+     *        allowed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeJobTemplateResult withDestinationPackageVersions(java.util.Collection<String> destinationPackageVersions) {
+        setDestinationPackageVersions(destinationPackageVersions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -486,7 +710,11 @@ public class DescribeJobTemplateResult extends com.amazonaws.AmazonWebServiceRes
         if (getTimeoutConfig() != null)
             sb.append("TimeoutConfig: ").append(getTimeoutConfig()).append(",");
         if (getJobExecutionsRetryConfig() != null)
-            sb.append("JobExecutionsRetryConfig: ").append(getJobExecutionsRetryConfig());
+            sb.append("JobExecutionsRetryConfig: ").append(getJobExecutionsRetryConfig()).append(",");
+        if (getMaintenanceWindows() != null)
+            sb.append("MaintenanceWindows: ").append(getMaintenanceWindows()).append(",");
+        if (getDestinationPackageVersions() != null)
+            sb.append("DestinationPackageVersions: ").append(getDestinationPackageVersions());
         sb.append("}");
         return sb.toString();
     }
@@ -545,6 +773,14 @@ public class DescribeJobTemplateResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getJobExecutionsRetryConfig() != null && other.getJobExecutionsRetryConfig().equals(this.getJobExecutionsRetryConfig()) == false)
             return false;
+        if (other.getMaintenanceWindows() == null ^ this.getMaintenanceWindows() == null)
+            return false;
+        if (other.getMaintenanceWindows() != null && other.getMaintenanceWindows().equals(this.getMaintenanceWindows()) == false)
+            return false;
+        if (other.getDestinationPackageVersions() == null ^ this.getDestinationPackageVersions() == null)
+            return false;
+        if (other.getDestinationPackageVersions() != null && other.getDestinationPackageVersions().equals(this.getDestinationPackageVersions()) == false)
+            return false;
         return true;
     }
 
@@ -564,6 +800,8 @@ public class DescribeJobTemplateResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getAbortConfig() == null) ? 0 : getAbortConfig().hashCode());
         hashCode = prime * hashCode + ((getTimeoutConfig() == null) ? 0 : getTimeoutConfig().hashCode());
         hashCode = prime * hashCode + ((getJobExecutionsRetryConfig() == null) ? 0 : getJobExecutionsRetryConfig().hashCode());
+        hashCode = prime * hashCode + ((getMaintenanceWindows() == null) ? 0 : getMaintenanceWindows().hashCode());
+        hashCode = prime * hashCode + ((getDestinationPackageVersions() == null) ? 0 : getDestinationPackageVersions().hashCode());
         return hashCode;
     }
 

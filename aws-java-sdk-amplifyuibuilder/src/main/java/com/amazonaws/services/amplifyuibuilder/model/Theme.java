@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,12 +37,6 @@ public class Theme implements Serializable, Cloneable, StructuredPojo {
     private String appId;
     /**
      * <p>
-     * The time that the theme was created.
-     * </p>
-     */
-    private java.util.Date createdAt;
-    /**
-     * <p>
      * The name of the backend environment that is a part of the Amplify app.
      * </p>
      */
@@ -55,16 +49,28 @@ public class Theme implements Serializable, Cloneable, StructuredPojo {
     private String id;
     /**
      * <p>
+     * The name of the theme.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
+     * The time that the theme was created.
+     * </p>
+     */
+    private java.util.Date createdAt;
+    /**
+     * <p>
      * The time that the theme was modified.
      * </p>
      */
     private java.util.Date modifiedAt;
     /**
      * <p>
-     * The name of the theme.
+     * A list of key-value pairs that defines the properties of the theme.
      * </p>
      */
-    private String name;
+    private java.util.List<ThemeValues> values;
     /**
      * <p>
      * Describes the properties that can be overriden to customize a theme.
@@ -77,12 +83,6 @@ public class Theme implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Map<String, String> tags;
-    /**
-     * <p>
-     * A list of key-value pairs that defines the properties of the theme.
-     * </p>
-     */
-    private java.util.List<ThemeValues> values;
 
     /**
      * <p>
@@ -121,46 +121,6 @@ public class Theme implements Serializable, Cloneable, StructuredPojo {
 
     public Theme withAppId(String appId) {
         setAppId(appId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The time that the theme was created.
-     * </p>
-     * 
-     * @param createdAt
-     *        The time that the theme was created.
-     */
-
-    public void setCreatedAt(java.util.Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    /**
-     * <p>
-     * The time that the theme was created.
-     * </p>
-     * 
-     * @return The time that the theme was created.
-     */
-
-    public java.util.Date getCreatedAt() {
-        return this.createdAt;
-    }
-
-    /**
-     * <p>
-     * The time that the theme was created.
-     * </p>
-     * 
-     * @param createdAt
-     *        The time that the theme was created.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Theme withCreatedAt(java.util.Date createdAt) {
-        setCreatedAt(createdAt);
         return this;
     }
 
@@ -246,6 +206,86 @@ public class Theme implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The name of the theme.
+     * </p>
+     * 
+     * @param name
+     *        The name of the theme.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The name of the theme.
+     * </p>
+     * 
+     * @return The name of the theme.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of the theme.
+     * </p>
+     * 
+     * @param name
+     *        The name of the theme.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Theme withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time that the theme was created.
+     * </p>
+     * 
+     * @param createdAt
+     *        The time that the theme was created.
+     */
+
+    public void setCreatedAt(java.util.Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    /**
+     * <p>
+     * The time that the theme was created.
+     * </p>
+     * 
+     * @return The time that the theme was created.
+     */
+
+    public java.util.Date getCreatedAt() {
+        return this.createdAt;
+    }
+
+    /**
+     * <p>
+     * The time that the theme was created.
+     * </p>
+     * 
+     * @param createdAt
+     *        The time that the theme was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Theme withCreatedAt(java.util.Date createdAt) {
+        setCreatedAt(createdAt);
+        return this;
+    }
+
+    /**
+     * <p>
      * The time that the theme was modified.
      * </p>
      * 
@@ -286,41 +326,71 @@ public class Theme implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the theme.
+     * A list of key-value pairs that defines the properties of the theme.
      * </p>
      * 
-     * @param name
-     *        The name of the theme.
+     * @return A list of key-value pairs that defines the properties of the theme.
      */
 
-    public void setName(String name) {
-        this.name = name;
+    public java.util.List<ThemeValues> getValues() {
+        return values;
     }
 
     /**
      * <p>
-     * The name of the theme.
+     * A list of key-value pairs that defines the properties of the theme.
      * </p>
      * 
-     * @return The name of the theme.
+     * @param values
+     *        A list of key-value pairs that defines the properties of the theme.
      */
 
-    public String getName() {
-        return this.name;
+    public void setValues(java.util.Collection<ThemeValues> values) {
+        if (values == null) {
+            this.values = null;
+            return;
+        }
+
+        this.values = new java.util.ArrayList<ThemeValues>(values);
     }
 
     /**
      * <p>
-     * The name of the theme.
+     * A list of key-value pairs that defines the properties of the theme.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the
+     * existing values.
      * </p>
      * 
-     * @param name
-     *        The name of the theme.
+     * @param values
+     *        A list of key-value pairs that defines the properties of the theme.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public Theme withName(String name) {
-        setName(name);
+    public Theme withValues(ThemeValues... values) {
+        if (this.values == null) {
+            setValues(new java.util.ArrayList<ThemeValues>(values.length));
+        }
+        for (ThemeValues ele : values) {
+            this.values.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of key-value pairs that defines the properties of the theme.
+     * </p>
+     * 
+     * @param values
+     *        A list of key-value pairs that defines the properties of the theme.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Theme withValues(java.util.Collection<ThemeValues> values) {
+        setValues(values);
         return this;
     }
 
@@ -463,76 +533,6 @@ public class Theme implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * A list of key-value pairs that defines the properties of the theme.
-     * </p>
-     * 
-     * @return A list of key-value pairs that defines the properties of the theme.
-     */
-
-    public java.util.List<ThemeValues> getValues() {
-        return values;
-    }
-
-    /**
-     * <p>
-     * A list of key-value pairs that defines the properties of the theme.
-     * </p>
-     * 
-     * @param values
-     *        A list of key-value pairs that defines the properties of the theme.
-     */
-
-    public void setValues(java.util.Collection<ThemeValues> values) {
-        if (values == null) {
-            this.values = null;
-            return;
-        }
-
-        this.values = new java.util.ArrayList<ThemeValues>(values);
-    }
-
-    /**
-     * <p>
-     * A list of key-value pairs that defines the properties of the theme.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the
-     * existing values.
-     * </p>
-     * 
-     * @param values
-     *        A list of key-value pairs that defines the properties of the theme.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Theme withValues(ThemeValues... values) {
-        if (this.values == null) {
-            setValues(new java.util.ArrayList<ThemeValues>(values.length));
-        }
-        for (ThemeValues ele : values) {
-            this.values.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * A list of key-value pairs that defines the properties of the theme.
-     * </p>
-     * 
-     * @param values
-     *        A list of key-value pairs that defines the properties of the theme.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Theme withValues(java.util.Collection<ThemeValues> values) {
-        setValues(values);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -546,22 +546,22 @@ public class Theme implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getAppId() != null)
             sb.append("AppId: ").append(getAppId()).append(",");
-        if (getCreatedAt() != null)
-            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getEnvironmentName() != null)
             sb.append("EnvironmentName: ").append(getEnvironmentName()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
-        if (getModifiedAt() != null)
-            sb.append("ModifiedAt: ").append(getModifiedAt()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getCreatedAt() != null)
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
+        if (getModifiedAt() != null)
+            sb.append("ModifiedAt: ").append(getModifiedAt()).append(",");
+        if (getValues() != null)
+            sb.append("Values: ").append(getValues()).append(",");
         if (getOverrides() != null)
             sb.append("Overrides: ").append(getOverrides()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags()).append(",");
-        if (getValues() != null)
-            sb.append("Values: ").append(getValues());
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -580,10 +580,6 @@ public class Theme implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAppId() != null && other.getAppId().equals(this.getAppId()) == false)
             return false;
-        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
-            return false;
-        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
-            return false;
         if (other.getEnvironmentName() == null ^ this.getEnvironmentName() == null)
             return false;
         if (other.getEnvironmentName() != null && other.getEnvironmentName().equals(this.getEnvironmentName()) == false)
@@ -592,13 +588,21 @@ public class Theme implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
+            return false;
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+            return false;
         if (other.getModifiedAt() == null ^ this.getModifiedAt() == null)
             return false;
         if (other.getModifiedAt() != null && other.getModifiedAt().equals(this.getModifiedAt()) == false)
             return false;
-        if (other.getName() == null ^ this.getName() == null)
+        if (other.getValues() == null ^ this.getValues() == null)
             return false;
-        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+        if (other.getValues() != null && other.getValues().equals(this.getValues()) == false)
             return false;
         if (other.getOverrides() == null ^ this.getOverrides() == null)
             return false;
@@ -607,10 +611,6 @@ public class Theme implements Serializable, Cloneable, StructuredPojo {
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
-            return false;
-        if (other.getValues() == null ^ this.getValues() == null)
-            return false;
-        if (other.getValues() != null && other.getValues().equals(this.getValues()) == false)
             return false;
         return true;
     }
@@ -621,14 +621,14 @@ public class Theme implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAppId() == null) ? 0 : getAppId().hashCode());
-        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentName() == null) ? 0 : getEnvironmentName().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
-        hashCode = prime * hashCode + ((getModifiedAt() == null) ? 0 : getModifiedAt().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getModifiedAt() == null) ? 0 : getModifiedAt().hashCode());
+        hashCode = prime * hashCode + ((getValues() == null) ? 0 : getValues().hashCode());
         hashCode = prime * hashCode + ((getOverrides() == null) ? 0 : getOverrides().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
-        hashCode = prime * hashCode + ((getValues() == null) ? 0 : getValues().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class LifecyclePolicyMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TransitionToIA").build();
     private static final MarshallingInfo<String> TRANSITIONTOPRIMARYSTORAGECLASS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TransitionToPrimaryStorageClass").build();
+    private static final MarshallingInfo<String> TRANSITIONTOARCHIVE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TransitionToArchive").build();
 
     private static final LifecyclePolicyMarshaller instance = new LifecyclePolicyMarshaller();
 
@@ -50,6 +52,7 @@ public class LifecyclePolicyMarshaller {
         try {
             protocolMarshaller.marshall(lifecyclePolicy.getTransitionToIA(), TRANSITIONTOIA_BINDING);
             protocolMarshaller.marshall(lifecyclePolicy.getTransitionToPrimaryStorageClass(), TRANSITIONTOPRIMARYSTORAGECLASS_BINDING);
+            protocolMarshaller.marshall(lifecyclePolicy.getTransitionToArchive(), TRANSITIONTOARCHIVE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

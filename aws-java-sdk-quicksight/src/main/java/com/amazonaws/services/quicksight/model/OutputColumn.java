@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class OutputColumn implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A display name for the dataset.
+     * The display name of the column..
      * </p>
      */
     private String name;
@@ -42,18 +42,24 @@ public class OutputColumn implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * Type.
+     * The data type of the column.
      * </p>
      */
     private String type;
+    /**
+     * <p>
+     * The sub data type of the column.
+     * </p>
+     */
+    private String subType;
 
     /**
      * <p>
-     * A display name for the dataset.
+     * The display name of the column..
      * </p>
      * 
      * @param name
-     *        A display name for the dataset.
+     *        The display name of the column..
      */
 
     public void setName(String name) {
@@ -62,10 +68,10 @@ public class OutputColumn implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A display name for the dataset.
+     * The display name of the column..
      * </p>
      * 
-     * @return A display name for the dataset.
+     * @return The display name of the column..
      */
 
     public String getName() {
@@ -74,11 +80,11 @@ public class OutputColumn implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A display name for the dataset.
+     * The display name of the column..
      * </p>
      * 
      * @param name
-     *        A display name for the dataset.
+     *        The display name of the column..
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +135,11 @@ public class OutputColumn implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type.
+     * The data type of the column.
      * </p>
      * 
      * @param type
-     *        Type.
+     *        The data type of the column.
      * @see ColumnDataType
      */
 
@@ -143,10 +149,10 @@ public class OutputColumn implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type.
+     * The data type of the column.
      * </p>
      * 
-     * @return Type.
+     * @return The data type of the column.
      * @see ColumnDataType
      */
 
@@ -156,11 +162,11 @@ public class OutputColumn implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type.
+     * The data type of the column.
      * </p>
      * 
      * @param type
-     *        Type.
+     *        The data type of the column.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ColumnDataType
      */
@@ -172,17 +178,76 @@ public class OutputColumn implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type.
+     * The data type of the column.
      * </p>
      * 
      * @param type
-     *        Type.
+     *        The data type of the column.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ColumnDataType
      */
 
     public OutputColumn withType(ColumnDataType type) {
         this.type = type.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The sub data type of the column.
+     * </p>
+     * 
+     * @param subType
+     *        The sub data type of the column.
+     * @see ColumnDataSubType
+     */
+
+    public void setSubType(String subType) {
+        this.subType = subType;
+    }
+
+    /**
+     * <p>
+     * The sub data type of the column.
+     * </p>
+     * 
+     * @return The sub data type of the column.
+     * @see ColumnDataSubType
+     */
+
+    public String getSubType() {
+        return this.subType;
+    }
+
+    /**
+     * <p>
+     * The sub data type of the column.
+     * </p>
+     * 
+     * @param subType
+     *        The sub data type of the column.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ColumnDataSubType
+     */
+
+    public OutputColumn withSubType(String subType) {
+        setSubType(subType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The sub data type of the column.
+     * </p>
+     * 
+     * @param subType
+     *        The sub data type of the column.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ColumnDataSubType
+     */
+
+    public OutputColumn withSubType(ColumnDataSubType subType) {
+        this.subType = subType.toString();
         return this;
     }
 
@@ -203,7 +268,9 @@ public class OutputColumn implements Serializable, Cloneable, StructuredPojo {
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getSubType() != null)
+            sb.append("SubType: ").append(getSubType());
         sb.append("}");
         return sb.toString();
     }
@@ -230,6 +297,10 @@ public class OutputColumn implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getSubType() == null ^ this.getSubType() == null)
+            return false;
+        if (other.getSubType() != null && other.getSubType().equals(this.getSubType()) == false)
+            return false;
         return true;
     }
 
@@ -241,6 +312,7 @@ public class OutputColumn implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getSubType() == null) ? 0 : getSubType().hashCode());
         return hashCode;
     }
 

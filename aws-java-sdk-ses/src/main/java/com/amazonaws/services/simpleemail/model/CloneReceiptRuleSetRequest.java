@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,8 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Represents a request to create a receipt rule set by cloning an existing one. You use receipt rule sets to receive
  * email with Amazon SES. For more information, see the <a
- * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html">Amazon SES Developer
- * Guide</a>.
+ * href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email-concepts.html">Amazon SES Developer Guide</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/CloneReceiptRuleSet" target="_top">AWS API
@@ -33,12 +32,12 @@ public class CloneReceiptRuleSetRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the rule set to create. The name must:
+     * The name of the rule set to create. The name must meet the following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
@@ -48,7 +47,7 @@ public class CloneReceiptRuleSetRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * Contain less than 64 characters.
+     * Contain 64 characters or fewer.
      * </p>
      * </li>
      * </ul>
@@ -63,12 +62,12 @@ public class CloneReceiptRuleSetRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the rule set to create. The name must:
+     * The name of the rule set to create. The name must meet the following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
@@ -78,17 +77,17 @@ public class CloneReceiptRuleSetRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * Contain less than 64 characters.
+     * Contain 64 characters or fewer.
      * </p>
      * </li>
      * </ul>
      * 
      * @param ruleSetName
-     *        The name of the rule set to create. The name must:</p>
+     *        The name of the rule set to create. The name must meet the following requirements:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      *        </p>
      *        </li>
      *        <li>
@@ -98,7 +97,7 @@ public class CloneReceiptRuleSetRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        Contain less than 64 characters.
+     *        Contain 64 characters or fewer.
      *        </p>
      *        </li>
      */
@@ -109,12 +108,12 @@ public class CloneReceiptRuleSetRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the rule set to create. The name must:
+     * The name of the rule set to create. The name must meet the following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
@@ -124,16 +123,16 @@ public class CloneReceiptRuleSetRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * Contain less than 64 characters.
+     * Contain 64 characters or fewer.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The name of the rule set to create. The name must:</p>
+     * @return The name of the rule set to create. The name must meet the following requirements:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      *         </p>
      *         </li>
      *         <li>
@@ -143,7 +142,7 @@ public class CloneReceiptRuleSetRequest extends com.amazonaws.AmazonWebServiceRe
      *         </li>
      *         <li>
      *         <p>
-     *         Contain less than 64 characters.
+     *         Contain 64 characters or fewer.
      *         </p>
      *         </li>
      */
@@ -154,12 +153,12 @@ public class CloneReceiptRuleSetRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the rule set to create. The name must:
+     * The name of the rule set to create. The name must meet the following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
@@ -169,17 +168,17 @@ public class CloneReceiptRuleSetRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * Contain less than 64 characters.
+     * Contain 64 characters or fewer.
      * </p>
      * </li>
      * </ul>
      * 
      * @param ruleSetName
-     *        The name of the rule set to create. The name must:</p>
+     *        The name of the rule set to create. The name must meet the following requirements:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      *        </p>
      *        </li>
      *        <li>
@@ -189,7 +188,7 @@ public class CloneReceiptRuleSetRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        Contain less than 64 characters.
+     *        Contain 64 characters or fewer.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

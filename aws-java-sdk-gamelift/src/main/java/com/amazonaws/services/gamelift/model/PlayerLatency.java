@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,10 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Regional latency information for a player, used when requesting a new game session with
- * <a>StartGameSessionPlacement</a>. This value indicates the amount of time lag that exists when the player is
- * connected to a fleet in the specified Region. The relative difference between a player's latency values for multiple
- * Regions are used to determine which fleets are best suited to place a new game session for the player.
+ * Regional latency information for a player, used when requesting a new game session. This value indicates the amount
+ * of time lag that exists when the player is connected to a fleet in the specified Region. The relative difference
+ * between a player's latency values for multiple Regions are used to determine which fleets are best suited to place a
+ * new game session for the player.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PlayerLatency" target="_top">AWS API
@@ -186,7 +186,7 @@ public class PlayerLatency implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPlayerId() != null)
-            sb.append("PlayerId: ").append(getPlayerId()).append(",");
+            sb.append("PlayerId: ").append("***Sensitive Data Redacted***").append(",");
         if (getRegionIdentifier() != null)
             sb.append("RegionIdentifier: ").append(getRegionIdentifier()).append(",");
         if (getLatencyInMilliseconds() != null)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,10 +29,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class SourceServerMarshaller {
 
+    private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("applicationID").build();
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
+    private static final MarshallingInfo<StructuredPojo> CONNECTORACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectorAction").build();
     private static final MarshallingInfo<StructuredPojo> DATAREPLICATIONINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataReplicationInfo").build();
+    private static final MarshallingInfo<String> FQDNFORACTIONFRAMEWORK_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fqdnForActionFramework").build();
     private static final MarshallingInfo<Boolean> ISARCHIVED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isArchived").build();
     private static final MarshallingInfo<StructuredPojo> LAUNCHEDINSTANCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -47,6 +53,8 @@ public class SourceServerMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceServerID").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<String> USERPROVIDEDID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("userProvidedID").build();
     private static final MarshallingInfo<String> VCENTERCLIENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vcenterClientID").build();
 
@@ -66,8 +74,11 @@ public class SourceServerMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(sourceServer.getApplicationID(), APPLICATIONID_BINDING);
             protocolMarshaller.marshall(sourceServer.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(sourceServer.getConnectorAction(), CONNECTORACTION_BINDING);
             protocolMarshaller.marshall(sourceServer.getDataReplicationInfo(), DATAREPLICATIONINFO_BINDING);
+            protocolMarshaller.marshall(sourceServer.getFqdnForActionFramework(), FQDNFORACTIONFRAMEWORK_BINDING);
             protocolMarshaller.marshall(sourceServer.getIsArchived(), ISARCHIVED_BINDING);
             protocolMarshaller.marshall(sourceServer.getLaunchedInstance(), LAUNCHEDINSTANCE_BINDING);
             protocolMarshaller.marshall(sourceServer.getLifeCycle(), LIFECYCLE_BINDING);
@@ -75,6 +86,7 @@ public class SourceServerMarshaller {
             protocolMarshaller.marshall(sourceServer.getSourceProperties(), SOURCEPROPERTIES_BINDING);
             protocolMarshaller.marshall(sourceServer.getSourceServerID(), SOURCESERVERID_BINDING);
             protocolMarshaller.marshall(sourceServer.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(sourceServer.getUserProvidedID(), USERPROVIDEDID_BINDING);
             protocolMarshaller.marshall(sourceServer.getVcenterClientID(), VCENTERCLIENTID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

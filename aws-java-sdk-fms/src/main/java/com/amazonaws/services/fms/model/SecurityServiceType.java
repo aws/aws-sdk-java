@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,9 @@ public enum SecurityServiceType {
     SECURITY_GROUPS_USAGE_AUDIT("SECURITY_GROUPS_USAGE_AUDIT"),
     NETWORK_FIREWALL("NETWORK_FIREWALL"),
     DNS_FIREWALL("DNS_FIREWALL"),
-    THIRD_PARTY_FIREWALL("THIRD_PARTY_FIREWALL");
+    THIRD_PARTY_FIREWALL("THIRD_PARTY_FIREWALL"),
+    IMPORT_NETWORK_FIREWALL("IMPORT_NETWORK_FIREWALL"),
+    NETWORK_ACL_COMMON("NETWORK_ACL_COMMON");
 
     private String value;
 

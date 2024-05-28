@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,7 +58,7 @@ public class SecurityGroup implements Serializable, Cloneable {
     private String groupId;
     /**
      * <p>
-     * [VPC only] The outbound rules associated with the security group.
+     * The outbound rules associated with the security group.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<IpPermission> ipPermissionsEgress;
@@ -70,7 +70,7 @@ public class SecurityGroup implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * [VPC only] The ID of the VPC for the security group.
+     * The ID of the VPC for the security group.
      * </p>
      */
     private String vpcId;
@@ -310,10 +310,10 @@ public class SecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [VPC only] The outbound rules associated with the security group.
+     * The outbound rules associated with the security group.
      * </p>
      * 
-     * @return [VPC only] The outbound rules associated with the security group.
+     * @return The outbound rules associated with the security group.
      */
 
     public java.util.List<IpPermission> getIpPermissionsEgress() {
@@ -325,11 +325,11 @@ public class SecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [VPC only] The outbound rules associated with the security group.
+     * The outbound rules associated with the security group.
      * </p>
      * 
      * @param ipPermissionsEgress
-     *        [VPC only] The outbound rules associated with the security group.
+     *        The outbound rules associated with the security group.
      */
 
     public void setIpPermissionsEgress(java.util.Collection<IpPermission> ipPermissionsEgress) {
@@ -343,7 +343,7 @@ public class SecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [VPC only] The outbound rules associated with the security group.
+     * The outbound rules associated with the security group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -352,7 +352,7 @@ public class SecurityGroup implements Serializable, Cloneable {
      * </p>
      * 
      * @param ipPermissionsEgress
-     *        [VPC only] The outbound rules associated with the security group.
+     *        The outbound rules associated with the security group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -368,11 +368,11 @@ public class SecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [VPC only] The outbound rules associated with the security group.
+     * The outbound rules associated with the security group.
      * </p>
      * 
      * @param ipPermissionsEgress
-     *        [VPC only] The outbound rules associated with the security group.
+     *        The outbound rules associated with the security group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -456,11 +456,11 @@ public class SecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [VPC only] The ID of the VPC for the security group.
+     * The ID of the VPC for the security group.
      * </p>
      * 
      * @param vpcId
-     *        [VPC only] The ID of the VPC for the security group.
+     *        The ID of the VPC for the security group.
      */
 
     public void setVpcId(String vpcId) {
@@ -469,10 +469,10 @@ public class SecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [VPC only] The ID of the VPC for the security group.
+     * The ID of the VPC for the security group.
      * </p>
      * 
-     * @return [VPC only] The ID of the VPC for the security group.
+     * @return The ID of the VPC for the security group.
      */
 
     public String getVpcId() {
@@ -481,11 +481,11 @@ public class SecurityGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [VPC only] The ID of the VPC for the security group.
+     * The ID of the VPC for the security group.
      * </p>
      * 
      * @param vpcId
-     *        [VPC only] The ID of the VPC for the security group.
+     *        The ID of the VPC for the security group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

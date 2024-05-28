@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,8 +15,8 @@
  * <p>
  * Amazon Connect Wisdom delivers agents the information they need to solve customer issues as they're actively speaking
  * with customers. Agents can search across connected repositories from within their agent desktop to find answers
- * quickly. Use the Amazon Connect Wisdom APIs to create an assistant and a knowledge base, for example, or manage
- * content by uploading custom files.
+ * quickly. Use Amazon Connect Wisdom to create an assistant and a knowledge base, for example, or manage content by
+ * uploading custom files.
  * </p>
  */
 package com.amazonaws.services.connectwisdom;

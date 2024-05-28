@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -234,6 +234,14 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
      * hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
      */
     private String videoPid;
+    /**
+     * Defines the amount SCTE-35 preroll will be increased (in milliseconds) on the output. Preroll is the amount of
+     * time between the presence of a SCTE-35 indication in a transport stream and the PTS of the video frame it
+     * references. Zero means don't add pullup (it doesn't mean set the preroll to zero). Negative pullup is not
+     * supported, which means that you can't make the preroll shorter. Be aware that latency in the output will increase
+     * by the pullup amount.
+     */
+    private Double scte35PrerollPullupMilliseconds;
 
     /**
      * When set to drop, output audio streams will be removed from the program if the selected input audio stream is
@@ -2558,6 +2566,64 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Defines the amount SCTE-35 preroll will be increased (in milliseconds) on the output. Preroll is the amount of
+     * time between the presence of a SCTE-35 indication in a transport stream and the PTS of the video frame it
+     * references. Zero means don't add pullup (it doesn't mean set the preroll to zero). Negative pullup is not
+     * supported, which means that you can't make the preroll shorter. Be aware that latency in the output will increase
+     * by the pullup amount.
+     * 
+     * @param scte35PrerollPullupMilliseconds
+     *        Defines the amount SCTE-35 preroll will be increased (in milliseconds) on the output. Preroll is the
+     *        amount of time between the presence of a SCTE-35 indication in a transport stream and the PTS of the video
+     *        frame it references. Zero means don't add pullup (it doesn't mean set the preroll to zero). Negative
+     *        pullup is not supported, which means that you can't make the preroll shorter. Be aware that latency in the
+     *        output will increase by the pullup amount.
+     */
+
+    public void setScte35PrerollPullupMilliseconds(Double scte35PrerollPullupMilliseconds) {
+        this.scte35PrerollPullupMilliseconds = scte35PrerollPullupMilliseconds;
+    }
+
+    /**
+     * Defines the amount SCTE-35 preroll will be increased (in milliseconds) on the output. Preroll is the amount of
+     * time between the presence of a SCTE-35 indication in a transport stream and the PTS of the video frame it
+     * references. Zero means don't add pullup (it doesn't mean set the preroll to zero). Negative pullup is not
+     * supported, which means that you can't make the preroll shorter. Be aware that latency in the output will increase
+     * by the pullup amount.
+     * 
+     * @return Defines the amount SCTE-35 preroll will be increased (in milliseconds) on the output. Preroll is the
+     *         amount of time between the presence of a SCTE-35 indication in a transport stream and the PTS of the
+     *         video frame it references. Zero means don't add pullup (it doesn't mean set the preroll to zero).
+     *         Negative pullup is not supported, which means that you can't make the preroll shorter. Be aware that
+     *         latency in the output will increase by the pullup amount.
+     */
+
+    public Double getScte35PrerollPullupMilliseconds() {
+        return this.scte35PrerollPullupMilliseconds;
+    }
+
+    /**
+     * Defines the amount SCTE-35 preroll will be increased (in milliseconds) on the output. Preroll is the amount of
+     * time between the presence of a SCTE-35 indication in a transport stream and the PTS of the video frame it
+     * references. Zero means don't add pullup (it doesn't mean set the preroll to zero). Negative pullup is not
+     * supported, which means that you can't make the preroll shorter. Be aware that latency in the output will increase
+     * by the pullup amount.
+     * 
+     * @param scte35PrerollPullupMilliseconds
+     *        Defines the amount SCTE-35 preroll will be increased (in milliseconds) on the output. Preroll is the
+     *        amount of time between the presence of a SCTE-35 indication in a transport stream and the PTS of the video
+     *        frame it references. Zero means don't add pullup (it doesn't mean set the preroll to zero). Negative
+     *        pullup is not supported, which means that you can't make the preroll shorter. Be aware that latency in the
+     *        output will increase by the pullup amount.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public M2tsSettings withScte35PrerollPullupMilliseconds(Double scte35PrerollPullupMilliseconds) {
+        setScte35PrerollPullupMilliseconds(scte35PrerollPullupMilliseconds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2662,7 +2728,9 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
         if (getTransportStreamId() != null)
             sb.append("TransportStreamId: ").append(getTransportStreamId()).append(",");
         if (getVideoPid() != null)
-            sb.append("VideoPid: ").append(getVideoPid());
+            sb.append("VideoPid: ").append(getVideoPid()).append(",");
+        if (getScte35PrerollPullupMilliseconds() != null)
+            sb.append("Scte35PrerollPullupMilliseconds: ").append(getScte35PrerollPullupMilliseconds());
         sb.append("}");
         return sb.toString();
     }
@@ -2865,6 +2933,11 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getVideoPid() != null && other.getVideoPid().equals(this.getVideoPid()) == false)
             return false;
+        if (other.getScte35PrerollPullupMilliseconds() == null ^ this.getScte35PrerollPullupMilliseconds() == null)
+            return false;
+        if (other.getScte35PrerollPullupMilliseconds() != null
+                && other.getScte35PrerollPullupMilliseconds().equals(this.getScte35PrerollPullupMilliseconds()) == false)
+            return false;
         return true;
     }
 
@@ -2920,6 +2993,7 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTimedMetadataPid() == null) ? 0 : getTimedMetadataPid().hashCode());
         hashCode = prime * hashCode + ((getTransportStreamId() == null) ? 0 : getTransportStreamId().hashCode());
         hashCode = prime * hashCode + ((getVideoPid() == null) ? 0 : getVideoPid().hashCode());
+        hashCode = prime * hashCode + ((getScte35PrerollPullupMilliseconds() == null) ? 0 : getScte35PrerollPullupMilliseconds().hashCode());
         return hashCode;
     }
 

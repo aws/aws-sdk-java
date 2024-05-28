@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -13,167 +13,63 @@
 package com.amazonaws.services.sqs.model.transform;
 
 import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.sqs.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.StringUtils;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * SendMessageRequest Marshaller
+ * SendMessageRequestMarshaller
  */
-
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SendMessageRequestMarshaller implements Marshaller<Request<SendMessageRequest>, SendMessageRequest> {
+@SdkInternalApi
+public class SendMessageRequestMarshaller {
 
-    public Request<SendMessageRequest> marshall(SendMessageRequest sendMessageRequest) {
+    private static final MarshallingInfo<String> QUEUEURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("QueueUrl").build();
+    private static final MarshallingInfo<String> MESSAGEBODY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MessageBody").build();
+    private static final MarshallingInfo<Integer> DELAYSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DelaySeconds").build();
+    private static final MarshallingInfo<Map> MESSAGEATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MessageAttributes").build();
+    private static final MarshallingInfo<Map> MESSAGESYSTEMATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MessageSystemAttributes").build();
+    private static final MarshallingInfo<String> MESSAGEDEDUPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MessageDeduplicationId").build();
+    private static final MarshallingInfo<String> MESSAGEGROUPID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MessageGroupId").build();
+
+    private static final SendMessageRequestMarshaller instance = new SendMessageRequestMarshaller();
+
+    public static SendMessageRequestMarshaller getInstance() {
+        return instance;
+    }
+
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(SendMessageRequest sendMessageRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (sendMessageRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<SendMessageRequest> request = new DefaultRequest<SendMessageRequest>(sendMessageRequest, "AmazonSQS");
-        request.addParameter("Action", "SendMessage");
-        request.addParameter("Version", "2012-11-05");
-        request.setHttpMethod(HttpMethodName.POST);
-
-        if (sendMessageRequest.getQueueUrl() != null) {
-            request.addParameter("QueueUrl", StringUtils.fromString(sendMessageRequest.getQueueUrl()));
+        try {
+            protocolMarshaller.marshall(sendMessageRequest.getQueueUrl(), QUEUEURL_BINDING);
+            protocolMarshaller.marshall(sendMessageRequest.getMessageBody(), MESSAGEBODY_BINDING);
+            protocolMarshaller.marshall(sendMessageRequest.getDelaySeconds(), DELAYSECONDS_BINDING);
+            protocolMarshaller.marshall(sendMessageRequest.getMessageAttributes(), MESSAGEATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(sendMessageRequest.getMessageSystemAttributes(), MESSAGESYSTEMATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(sendMessageRequest.getMessageDeduplicationId(), MESSAGEDEDUPLICATIONID_BINDING);
+            protocolMarshaller.marshall(sendMessageRequest.getMessageGroupId(), MESSAGEGROUPID_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (sendMessageRequest.getMessageBody() != null) {
-            request.addParameter("MessageBody", StringUtils.fromString(sendMessageRequest.getMessageBody()));
-        }
-
-        if (sendMessageRequest.getDelaySeconds() != null) {
-            request.addParameter("DelaySeconds", StringUtils.fromInteger(sendMessageRequest.getDelaySeconds()));
-        }
-
-        java.util.Map<String, MessageAttributeValue> messageAttributes = sendMessageRequest.getMessageAttributes();
-        int messageAttributesListIndex = 1;
-        for (Map.Entry<String, MessageAttributeValue> entry : messageAttributes.entrySet()) {
-            if (entry != null && entry.getKey() != null) {
-                request.addParameter("MessageAttribute." + messageAttributesListIndex + ".Name", StringUtils.fromString(entry.getKey()));
-            }
-            if (entry != null && entry.getValue() != null) {
-
-                if (entry.getValue().getStringValue() != null) {
-                    request.addParameter("MessageAttribute." + messageAttributesListIndex + ".Value.StringValue",
-                            StringUtils.fromString(entry.getValue().getStringValue()));
-                }
-
-                if (entry.getValue().getBinaryValue() != null) {
-                    request.addParameter("MessageAttribute." + messageAttributesListIndex + ".Value.BinaryValue",
-                            StringUtils.fromByteBuffer(entry.getValue().getBinaryValue()));
-                }
-
-                if (!entry.getValue().getStringListValues().isEmpty()
-                        || !((com.amazonaws.internal.SdkInternalList<String>) entry.getValue().getStringListValues()).isAutoConstruct()) {
-                    com.amazonaws.internal.SdkInternalList<String> stringListValuesList = (com.amazonaws.internal.SdkInternalList<String>) entry.getValue()
-                            .getStringListValues();
-                    int stringListValuesListIndex = 1;
-
-                    for (String stringListValuesListValue : stringListValuesList) {
-                        if (stringListValuesListValue != null) {
-                            request.addParameter("MessageAttribute." + messageAttributesListIndex + ".Value.StringListValue." + stringListValuesListIndex,
-                                    StringUtils.fromString(stringListValuesListValue));
-                        }
-                        stringListValuesListIndex++;
-                    }
-                }
-
-                if (!entry.getValue().getBinaryListValues().isEmpty()
-                        || !((com.amazonaws.internal.SdkInternalList<java.nio.ByteBuffer>) entry.getValue().getBinaryListValues()).isAutoConstruct()) {
-                    com.amazonaws.internal.SdkInternalList<java.nio.ByteBuffer> binaryListValuesList = (com.amazonaws.internal.SdkInternalList<java.nio.ByteBuffer>) entry
-                            .getValue().getBinaryListValues();
-                    int binaryListValuesListIndex = 1;
-
-                    for (java.nio.ByteBuffer binaryListValuesListValue : binaryListValuesList) {
-                        if (binaryListValuesListValue != null) {
-                            request.addParameter("MessageAttribute." + messageAttributesListIndex + ".Value.BinaryListValue." + binaryListValuesListIndex,
-                                    StringUtils.fromByteBuffer(binaryListValuesListValue));
-                        }
-                        binaryListValuesListIndex++;
-                    }
-                }
-
-                if (entry.getValue().getDataType() != null) {
-                    request.addParameter("MessageAttribute." + messageAttributesListIndex + ".Value.DataType",
-                            StringUtils.fromString(entry.getValue().getDataType()));
-                }
-            }
-            messageAttributesListIndex++;
-        }
-
-        java.util.Map<String, MessageSystemAttributeValue> messageSystemAttributes = sendMessageRequest.getMessageSystemAttributes();
-        int messageSystemAttributesListIndex = 1;
-        for (Map.Entry<String, MessageSystemAttributeValue> entry : messageSystemAttributes.entrySet()) {
-            if (entry != null && entry.getKey() != null) {
-                request.addParameter("MessageSystemAttribute." + messageSystemAttributesListIndex + ".Name", StringUtils.fromString(entry.getKey()));
-            }
-            if (entry != null && entry.getValue() != null) {
-
-                if (entry.getValue().getStringValue() != null) {
-                    request.addParameter("MessageSystemAttribute." + messageSystemAttributesListIndex + ".Value.StringValue",
-                            StringUtils.fromString(entry.getValue().getStringValue()));
-                }
-
-                if (entry.getValue().getBinaryValue() != null) {
-                    request.addParameter("MessageSystemAttribute." + messageSystemAttributesListIndex + ".Value.BinaryValue",
-                            StringUtils.fromByteBuffer(entry.getValue().getBinaryValue()));
-                }
-
-                if (!entry.getValue().getStringListValues().isEmpty()
-                        || !((com.amazonaws.internal.SdkInternalList<String>) entry.getValue().getStringListValues()).isAutoConstruct()) {
-                    com.amazonaws.internal.SdkInternalList<String> stringListValuesList = (com.amazonaws.internal.SdkInternalList<String>) entry.getValue()
-                            .getStringListValues();
-                    int stringListValuesListIndex = 1;
-
-                    for (String stringListValuesListValue : stringListValuesList) {
-                        if (stringListValuesListValue != null) {
-                            request.addParameter("MessageSystemAttribute." + messageSystemAttributesListIndex + ".Value.StringListValue."
-                                    + stringListValuesListIndex, StringUtils.fromString(stringListValuesListValue));
-                        }
-                        stringListValuesListIndex++;
-                    }
-                }
-
-                if (!entry.getValue().getBinaryListValues().isEmpty()
-                        || !((com.amazonaws.internal.SdkInternalList<java.nio.ByteBuffer>) entry.getValue().getBinaryListValues()).isAutoConstruct()) {
-                    com.amazonaws.internal.SdkInternalList<java.nio.ByteBuffer> binaryListValuesList = (com.amazonaws.internal.SdkInternalList<java.nio.ByteBuffer>) entry
-                            .getValue().getBinaryListValues();
-                    int binaryListValuesListIndex = 1;
-
-                    for (java.nio.ByteBuffer binaryListValuesListValue : binaryListValuesList) {
-                        if (binaryListValuesListValue != null) {
-                            request.addParameter("MessageSystemAttribute." + messageSystemAttributesListIndex + ".Value.BinaryListValue."
-                                    + binaryListValuesListIndex, StringUtils.fromByteBuffer(binaryListValuesListValue));
-                        }
-                        binaryListValuesListIndex++;
-                    }
-                }
-
-                if (entry.getValue().getDataType() != null) {
-                    request.addParameter("MessageSystemAttribute." + messageSystemAttributesListIndex + ".Value.DataType",
-                            StringUtils.fromString(entry.getValue().getDataType()));
-                }
-            }
-            messageSystemAttributesListIndex++;
-        }
-
-        if (sendMessageRequest.getMessageDeduplicationId() != null) {
-            request.addParameter("MessageDeduplicationId", StringUtils.fromString(sendMessageRequest.getMessageDeduplicationId()));
-        }
-
-        if (sendMessageRequest.getMessageGroupId() != null) {
-            request.addParameter("MessageGroupId", StringUtils.fromString(sendMessageRequest.getMessageGroupId()));
-        }
-
-        return request;
     }
 
 }

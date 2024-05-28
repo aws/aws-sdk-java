@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,7 +61,7 @@ public interface AWSRoute53RecoveryControlConfig {
      * @throws ServiceQuotaExceededException
      *         402 response
      * @throws AccessDeniedException
-     *         403 response - AccessDeniedException. You do not hace sufficient access to perform this action.
+     *         403 response - AccessDeniedException. You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
      *         404 response - MalformedQueryString. The query string contains a syntax error or resource not found.
      * @throws ThrottlingException
@@ -93,7 +93,7 @@ public interface AWSRoute53RecoveryControlConfig {
      * @throws ServiceQuotaExceededException
      *         402 response
      * @throws AccessDeniedException
-     *         403 response - AccessDeniedException. You do not hace sufficient access to perform this action.
+     *         403 response - AccessDeniedException. You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
      *         404 response - MalformedQueryString. The query string contains a syntax error or resource not found.
      * @throws ThrottlingException
@@ -131,7 +131,7 @@ public interface AWSRoute53RecoveryControlConfig {
      * @throws ServiceQuotaExceededException
      *         402 response
      * @throws AccessDeniedException
-     *         403 response - AccessDeniedException. You do not hace sufficient access to perform this action.
+     *         403 response - AccessDeniedException. You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
      *         404 response - MalformedQueryString. The query string contains a syntax error or resource not found.
      * @throws ThrottlingException
@@ -155,7 +155,7 @@ public interface AWSRoute53RecoveryControlConfig {
      * </p>
      * <p>
      * Assertion rule: An assertion rule enforces that, when you change a routing control state, that a certain criteria
-     * is met. For example, the criteria might be that at least one routing control state is On after the transation so
+     * is met. For example, the criteria might be that at least one routing control state is On after the transaction so
      * that traffic continues to flow to at least one cell for the application. This ensures that you avoid a fail-open
      * scenario.
      * </p>
@@ -197,7 +197,7 @@ public interface AWSRoute53RecoveryControlConfig {
      * @throws InternalServerException
      *         500 response - InternalServiceError. Temporary service error. Retry the request.
      * @throws AccessDeniedException
-     *         403 response - AccessDeniedException. You do not hace sufficient access to perform this action.
+     *         403 response - AccessDeniedException. You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
      *         404 response - MalformedQueryString. The query string contains a syntax error or resource not found.
      * @throws ThrottlingException
@@ -223,7 +223,7 @@ public interface AWSRoute53RecoveryControlConfig {
      * @throws InternalServerException
      *         500 response - InternalServiceError. Temporary service error. Retry the request.
      * @throws AccessDeniedException
-     *         403 response - AccessDeniedException. You do not hace sufficient access to perform this action.
+     *         403 response - AccessDeniedException. You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
      *         404 response - MalformedQueryString. The query string contains a syntax error or resource not found.
      * @throws ThrottlingException
@@ -250,7 +250,7 @@ public interface AWSRoute53RecoveryControlConfig {
      * @throws InternalServerException
      *         500 response - InternalServiceError. Temporary service error. Retry the request.
      * @throws AccessDeniedException
-     *         403 response - AccessDeniedException. You do not hace sufficient access to perform this action.
+     *         403 response - AccessDeniedException. You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
      *         404 response - MalformedQueryString. The query string contains a syntax error or resource not found.
      * @throws ThrottlingException
@@ -299,7 +299,7 @@ public interface AWSRoute53RecoveryControlConfig {
      * @throws InternalServerException
      *         500 response - InternalServiceError. Temporary service error. Retry the request.
      * @throws AccessDeniedException
-     *         403 response - AccessDeniedException. You do not hace sufficient access to perform this action.
+     *         403 response - AccessDeniedException. You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
      *         404 response - MalformedQueryString. The query string contains a syntax error or resource not found.
      * @throws ThrottlingException
@@ -325,7 +325,7 @@ public interface AWSRoute53RecoveryControlConfig {
      * @throws InternalServerException
      *         500 response - InternalServiceError. Temporary service error. Retry the request.
      * @throws AccessDeniedException
-     *         403 response - AccessDeniedException. You do not hace sufficient access to perform this action.
+     *         403 response - AccessDeniedException. You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
      *         404 response - MalformedQueryString. The query string contains a syntax error or resource not found.
      * @throws ThrottlingException
@@ -357,7 +357,7 @@ public interface AWSRoute53RecoveryControlConfig {
      * @throws InternalServerException
      *         500 response - InternalServiceError. Temporary service error. Retry the request.
      * @throws AccessDeniedException
-     *         403 response - AccessDeniedException. You do not hace sufficient access to perform this action.
+     *         403 response - AccessDeniedException. You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
      *         404 response - MalformedQueryString. The query string contains a syntax error or resource not found.
      * @throws ThrottlingException
@@ -389,6 +389,24 @@ public interface AWSRoute53RecoveryControlConfig {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeSafetyRuleResult describeSafetyRule(DescribeSafetyRuleRequest describeSafetyRuleRequest);
+
+    /**
+     * <p>
+     * Get information about the resource policy for a cluster.
+     * </p>
+     * 
+     * @param getResourcePolicyRequest
+     * @return Result of the GetResourcePolicy operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         404 response - MalformedQueryString. The query string contains a syntax error or resource not found.
+     * @throws InternalServerException
+     *         500 response - InternalServiceError. Temporary service error. Retry the request.
+     * @sample AWSRoute53RecoveryControlConfig.GetResourcePolicy
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/GetResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetResourcePolicyResult getResourcePolicy(GetResourcePolicyRequest getResourcePolicyRequest);
 
     /**
      * <p>
@@ -428,7 +446,7 @@ public interface AWSRoute53RecoveryControlConfig {
      * @throws InternalServerException
      *         500 response - InternalServiceError. Temporary service error. Retry the request.
      * @throws AccessDeniedException
-     *         403 response - AccessDeniedException. You do not hace sufficient access to perform this action.
+     *         403 response - AccessDeniedException. You do not have sufficient access to perform this action.
      * @sample AWSRoute53RecoveryControlConfig.ListClusters
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListClusters"
      *      target="_top">AWS API Documentation</a>
@@ -452,7 +470,7 @@ public interface AWSRoute53RecoveryControlConfig {
      * @throws InternalServerException
      *         500 response - InternalServiceError. Temporary service error. Retry the request.
      * @throws AccessDeniedException
-     *         403 response - AccessDeniedException. You do not hace sufficient access to perform this action.
+     *         403 response - AccessDeniedException. You do not have sufficient access to perform this action.
      * @sample AWSRoute53RecoveryControlConfig.ListControlPanels
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListControlPanels"
@@ -479,7 +497,7 @@ public interface AWSRoute53RecoveryControlConfig {
      * @throws InternalServerException
      *         500 response - InternalServiceError. Temporary service error. Retry the request.
      * @throws AccessDeniedException
-     *         403 response - AccessDeniedException. You do not hace sufficient access to perform this action.
+     *         403 response - AccessDeniedException. You do not have sufficient access to perform this action.
      * @sample AWSRoute53RecoveryControlConfig.ListRoutingControls
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListRoutingControls"
@@ -505,7 +523,7 @@ public interface AWSRoute53RecoveryControlConfig {
      * @throws InternalServerException
      *         500 response - InternalServiceError. Temporary service error. Retry the request.
      * @throws AccessDeniedException
-     *         403 response - AccessDeniedException. You do not hace sufficient access to perform this action.
+     *         403 response - AccessDeniedException. You do not have sufficient access to perform this action.
      * @sample AWSRoute53RecoveryControlConfig.ListSafetyRules
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/ListSafetyRules"
      *      target="_top">AWS API Documentation</a>
@@ -589,7 +607,7 @@ public interface AWSRoute53RecoveryControlConfig {
      * @throws InternalServerException
      *         500 response - InternalServiceError. Temporary service error. Retry the request.
      * @throws AccessDeniedException
-     *         403 response - AccessDeniedException. You do not hace sufficient access to perform this action.
+     *         403 response - AccessDeniedException. You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
      *         404 response - MalformedQueryString. The query string contains a syntax error or resource not found.
      * @throws ThrottlingException
@@ -619,7 +637,7 @@ public interface AWSRoute53RecoveryControlConfig {
      * @throws InternalServerException
      *         500 response - InternalServiceError. Temporary service error. Retry the request.
      * @throws AccessDeniedException
-     *         403 response - AccessDeniedException. You do not hace sufficient access to perform this action.
+     *         403 response - AccessDeniedException. You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
      *         404 response - MalformedQueryString. The query string contains a syntax error or resource not found.
      * @throws ThrottlingException

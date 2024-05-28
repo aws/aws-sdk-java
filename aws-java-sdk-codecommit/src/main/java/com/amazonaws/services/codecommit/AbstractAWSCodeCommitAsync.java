@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -625,6 +625,19 @@ public class AbstractAWSCodeCommitAsync extends AbstractAWSCodeCommit implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListFileCommitHistoryResult> listFileCommitHistoryAsync(ListFileCommitHistoryRequest request) {
+
+        return listFileCommitHistoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFileCommitHistoryResult> listFileCommitHistoryAsync(ListFileCommitHistoryRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListFileCommitHistoryRequest, ListFileCommitHistoryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPullRequestsResult> listPullRequestsAsync(ListPullRequestsRequest request) {
 
         return listPullRequestsAsync(request, null);
@@ -1033,6 +1046,19 @@ public class AbstractAWSCodeCommitAsync extends AbstractAWSCodeCommit implements
     @Override
     public java.util.concurrent.Future<UpdateRepositoryDescriptionResult> updateRepositoryDescriptionAsync(UpdateRepositoryDescriptionRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateRepositoryDescriptionRequest, UpdateRepositoryDescriptionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRepositoryEncryptionKeyResult> updateRepositoryEncryptionKeyAsync(UpdateRepositoryEncryptionKeyRequest request) {
+
+        return updateRepositoryEncryptionKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRepositoryEncryptionKeyResult> updateRepositoryEncryptionKeyAsync(UpdateRepositoryEncryptionKeyRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateRepositoryEncryptionKeyRequest, UpdateRepositoryEncryptionKeyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,6 +53,11 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
      * used.
      */
     private String metadataControl;
+    /**
+     * Applies a 3 dB attenuation to the surround channels. Applies only when the coding mode parameter is
+     * CODING_MODE_3_2_LFE.
+     */
+    private String attenuationControl;
 
     /**
      * Average bitrate in bits/second. Valid bitrates depend on the coding mode.
@@ -421,6 +426,65 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Applies a 3 dB attenuation to the surround channels. Applies only when the coding mode parameter is
+     * CODING_MODE_3_2_LFE.
+     * 
+     * @param attenuationControl
+     *        Applies a 3 dB attenuation to the surround channels. Applies only when the coding mode parameter is
+     *        CODING_MODE_3_2_LFE.
+     * @see Ac3AttenuationControl
+     */
+
+    public void setAttenuationControl(String attenuationControl) {
+        this.attenuationControl = attenuationControl;
+    }
+
+    /**
+     * Applies a 3 dB attenuation to the surround channels. Applies only when the coding mode parameter is
+     * CODING_MODE_3_2_LFE.
+     * 
+     * @return Applies a 3 dB attenuation to the surround channels. Applies only when the coding mode parameter is
+     *         CODING_MODE_3_2_LFE.
+     * @see Ac3AttenuationControl
+     */
+
+    public String getAttenuationControl() {
+        return this.attenuationControl;
+    }
+
+    /**
+     * Applies a 3 dB attenuation to the surround channels. Applies only when the coding mode parameter is
+     * CODING_MODE_3_2_LFE.
+     * 
+     * @param attenuationControl
+     *        Applies a 3 dB attenuation to the surround channels. Applies only when the coding mode parameter is
+     *        CODING_MODE_3_2_LFE.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Ac3AttenuationControl
+     */
+
+    public Ac3Settings withAttenuationControl(String attenuationControl) {
+        setAttenuationControl(attenuationControl);
+        return this;
+    }
+
+    /**
+     * Applies a 3 dB attenuation to the surround channels. Applies only when the coding mode parameter is
+     * CODING_MODE_3_2_LFE.
+     * 
+     * @param attenuationControl
+     *        Applies a 3 dB attenuation to the surround channels. Applies only when the coding mode parameter is
+     *        CODING_MODE_3_2_LFE.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Ac3AttenuationControl
+     */
+
+    public Ac3Settings withAttenuationControl(Ac3AttenuationControl attenuationControl) {
+        this.attenuationControl = attenuationControl.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -445,7 +509,9 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
         if (getLfeFilter() != null)
             sb.append("LfeFilter: ").append(getLfeFilter()).append(",");
         if (getMetadataControl() != null)
-            sb.append("MetadataControl: ").append(getMetadataControl());
+            sb.append("MetadataControl: ").append(getMetadataControl()).append(",");
+        if (getAttenuationControl() != null)
+            sb.append("AttenuationControl: ").append(getAttenuationControl());
         sb.append("}");
         return sb.toString();
     }
@@ -488,6 +554,10 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMetadataControl() != null && other.getMetadataControl().equals(this.getMetadataControl()) == false)
             return false;
+        if (other.getAttenuationControl() == null ^ this.getAttenuationControl() == null)
+            return false;
+        if (other.getAttenuationControl() != null && other.getAttenuationControl().equals(this.getAttenuationControl()) == false)
+            return false;
         return true;
     }
 
@@ -503,6 +573,7 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDrcProfile() == null) ? 0 : getDrcProfile().hashCode());
         hashCode = prime * hashCode + ((getLfeFilter() == null) ? 0 : getLfeFilter().hashCode());
         hashCode = prime * hashCode + ((getMetadataControl() == null) ? 0 : getMetadataControl().hashCode());
+        hashCode = prime * hashCode + ((getAttenuationControl() == null) ? 0 : getAttenuationControl().hashCode());
         return hashCode;
     }
 

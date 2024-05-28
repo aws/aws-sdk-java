@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -135,7 +135,7 @@ import com.amazonaws.services.detective.model.*;
  * </p>
  * <note>
  * <p>
- * We replaced the term "master account" with the term "administrator account." An administrator account is used to
+ * We replaced the term "master account" with the term "administrator account". An administrator account is used to
  * centrally manage multiple accounts. In the case of Detective, the administrator account manages the accounts in their
  * behavior graph.
  * </p>
@@ -265,12 +265,6 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
      * operation is called by the account that is enabling Detective.
      * </p>
      * <p>
-     * Before you try to enable Detective, make sure that your account has been enrolled in Amazon GuardDuty for at
-     * least 48 hours. If you do not meet this requirement, you cannot enable Detective. If you do meet the GuardDuty
-     * prerequisite, then when you make the request to enable Detective, it checks whether your data volume is within
-     * the Detective quota. If it exceeds the quota, then you cannot enable Detective.
-     * </p>
-     * <p>
      * The operation also enables Detective for the calling account in the currently selected Region. It returns the ARN
      * of the new behavior graph.
      * </p>
@@ -295,12 +289,6 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
      * <p>
      * Creates a new behavior graph for the calling account, and sets that account as the administrator account. This
      * operation is called by the account that is enabling Detective.
-     * </p>
-     * <p>
-     * Before you try to enable Detective, make sure that your account has been enrolled in Amazon GuardDuty for at
-     * least 48 hours. If you do not meet this requirement, you cannot enable Detective. If you do meet the GuardDuty
-     * prerequisite, then when you make the request to enable Detective, it checks whether your data volume is within
-     * the Detective quota. If it exceeds the quota, then you cannot enable Detective.
      * </p>
      * <p>
      * The operation also enables Detective for the calling account in the currently selected Region. It returns the ARN
@@ -749,6 +737,43 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
 
     /**
      * <p>
+     * Detective investigations lets you investigate IAM users and IAM roles using indicators of compromise. An
+     * indicator of compromise (IOC) is an artifact observed in or on a network, system, or environment that can (with a
+     * high level of confidence) identify malicious activity or a security incident. <code>GetInvestigation</code>
+     * returns the investigation results of an investigation for a behavior graph.
+     * </p>
+     * 
+     * @param getInvestigationRequest
+     * @return A Java Future containing the result of the GetInvestigation operation returned by the service.
+     * @sample AmazonDetectiveAsync.GetInvestigation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/GetInvestigation" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetInvestigationResult> getInvestigationAsync(GetInvestigationRequest getInvestigationRequest);
+
+    /**
+     * <p>
+     * Detective investigations lets you investigate IAM users and IAM roles using indicators of compromise. An
+     * indicator of compromise (IOC) is an artifact observed in or on a network, system, or environment that can (with a
+     * high level of confidence) identify malicious activity or a security incident. <code>GetInvestigation</code>
+     * returns the investigation results of an investigation for a behavior graph.
+     * </p>
+     * 
+     * @param getInvestigationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetInvestigation operation returned by the service.
+     * @sample AmazonDetectiveAsyncHandler.GetInvestigation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/GetInvestigation" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetInvestigationResult> getInvestigationAsync(GetInvestigationRequest getInvestigationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetInvestigationRequest, GetInvestigationResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the membership details for specified member accounts for a behavior graph.
      * </p>
      * 
@@ -849,6 +874,76 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
      */
     java.util.concurrent.Future<ListGraphsResult> listGraphsAsync(ListGraphsRequest listGraphsRequest,
             com.amazonaws.handlers.AsyncHandler<ListGraphsRequest, ListGraphsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the indicators from an investigation. You can use the information from the indicators to determine if an IAM
+     * user and/or IAM role is involved in an unusual activity that could indicate malicious behavior and its impact.
+     * </p>
+     * 
+     * @param listIndicatorsRequest
+     * @return A Java Future containing the result of the ListIndicators operation returned by the service.
+     * @sample AmazonDetectiveAsync.ListIndicators
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListIndicators" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListIndicatorsResult> listIndicatorsAsync(ListIndicatorsRequest listIndicatorsRequest);
+
+    /**
+     * <p>
+     * Gets the indicators from an investigation. You can use the information from the indicators to determine if an IAM
+     * user and/or IAM role is involved in an unusual activity that could indicate malicious behavior and its impact.
+     * </p>
+     * 
+     * @param listIndicatorsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListIndicators operation returned by the service.
+     * @sample AmazonDetectiveAsyncHandler.ListIndicators
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListIndicators" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListIndicatorsResult> listIndicatorsAsync(ListIndicatorsRequest listIndicatorsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListIndicatorsRequest, ListIndicatorsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Detective investigations lets you investigate IAM users and IAM roles using indicators of compromise. An
+     * indicator of compromise (IOC) is an artifact observed in or on a network, system, or environment that can (with a
+     * high level of confidence) identify malicious activity or a security incident. <code>ListInvestigations</code>
+     * lists all active Detective investigations.
+     * </p>
+     * 
+     * @param listInvestigationsRequest
+     * @return A Java Future containing the result of the ListInvestigations operation returned by the service.
+     * @sample AmazonDetectiveAsync.ListInvestigations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListInvestigations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListInvestigationsResult> listInvestigationsAsync(ListInvestigationsRequest listInvestigationsRequest);
+
+    /**
+     * <p>
+     * Detective investigations lets you investigate IAM users and IAM roles using indicators of compromise. An
+     * indicator of compromise (IOC) is an artifact observed in or on a network, system, or environment that can (with a
+     * high level of confidence) identify malicious activity or a security incident. <code>ListInvestigations</code>
+     * lists all active Detective investigations.
+     * </p>
+     * 
+     * @param listInvestigationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListInvestigations operation returned by the service.
+     * @sample AmazonDetectiveAsyncHandler.ListInvestigations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListInvestigations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListInvestigationsResult> listInvestigationsAsync(ListInvestigationsRequest listInvestigationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListInvestigationsRequest, ListInvestigationsResult> asyncHandler);
 
     /**
      * <p>
@@ -1053,6 +1148,43 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
 
     /**
      * <p>
+     * Detective investigations lets you investigate IAM users and IAM roles using indicators of compromise. An
+     * indicator of compromise (IOC) is an artifact observed in or on a network, system, or environment that can (with a
+     * high level of confidence) identify malicious activity or a security incident. <code>StartInvestigation</code>
+     * initiates an investigation on an entity in a behavior graph.
+     * </p>
+     * 
+     * @param startInvestigationRequest
+     * @return A Java Future containing the result of the StartInvestigation operation returned by the service.
+     * @sample AmazonDetectiveAsync.StartInvestigation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/StartInvestigation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StartInvestigationResult> startInvestigationAsync(StartInvestigationRequest startInvestigationRequest);
+
+    /**
+     * <p>
+     * Detective investigations lets you investigate IAM users and IAM roles using indicators of compromise. An
+     * indicator of compromise (IOC) is an artifact observed in or on a network, system, or environment that can (with a
+     * high level of confidence) identify malicious activity or a security incident. <code>StartInvestigation</code>
+     * initiates an investigation on an entity in a behavior graph.
+     * </p>
+     * 
+     * @param startInvestigationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartInvestigation operation returned by the service.
+     * @sample AmazonDetectiveAsyncHandler.StartInvestigation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/StartInvestigation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StartInvestigationResult> startInvestigationAsync(StartInvestigationRequest startInvestigationRequest,
+            com.amazonaws.handlers.AsyncHandler<StartInvestigationRequest, StartInvestigationResult> asyncHandler);
+
+    /**
+     * <p>
      * Sends a request to enable data ingest for a member account that has a status of
      * <code>ACCEPTED_BUT_DISABLED</code>.
      * </p>
@@ -1206,6 +1338,37 @@ public interface AmazonDetectiveAsync extends AmazonDetective {
      */
     java.util.concurrent.Future<UpdateDatasourcePackagesResult> updateDatasourcePackagesAsync(UpdateDatasourcePackagesRequest updateDatasourcePackagesRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateDatasourcePackagesRequest, UpdateDatasourcePackagesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the state of an investigation.
+     * </p>
+     * 
+     * @param updateInvestigationStateRequest
+     * @return A Java Future containing the result of the UpdateInvestigationState operation returned by the service.
+     * @sample AmazonDetectiveAsync.UpdateInvestigationState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UpdateInvestigationState"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateInvestigationStateResult> updateInvestigationStateAsync(UpdateInvestigationStateRequest updateInvestigationStateRequest);
+
+    /**
+     * <p>
+     * Updates the state of an investigation.
+     * </p>
+     * 
+     * @param updateInvestigationStateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateInvestigationState operation returned by the service.
+     * @sample AmazonDetectiveAsyncHandler.UpdateInvestigationState
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UpdateInvestigationState"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateInvestigationStateResult> updateInvestigationStateAsync(UpdateInvestigationStateRequest updateInvestigationStateRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateInvestigationStateRequest, UpdateInvestigationStateResult> asyncHandler);
 
     /**
      * <p>

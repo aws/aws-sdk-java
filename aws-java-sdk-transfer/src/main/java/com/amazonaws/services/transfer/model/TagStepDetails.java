@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,13 +51,13 @@ public class TagStepDetails implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses
+     * To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses
      * the output file from the previous workflow step as input. This is the default value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     * To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.
      * </p>
      * </li>
      * </ul>
@@ -182,13 +182,13 @@ public class TagStepDetails implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses
+     * To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses
      * the output file from the previous workflow step as input. This is the default value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     * To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.
      * </p>
      * </li>
      * </ul>
@@ -199,13 +199,13 @@ public class TagStepDetails implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow
+     *        To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow
      *        step uses the output file from the previous workflow step as input. This is the default value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     *        To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.
      *        </p>
      *        </li>
      */
@@ -222,13 +222,13 @@ public class TagStepDetails implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses
+     * To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses
      * the output file from the previous workflow step as input. This is the default value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     * To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.
      * </p>
      * </li>
      * </ul>
@@ -238,13 +238,13 @@ public class TagStepDetails implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow
+     *         To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow
      *         step uses the output file from the previous workflow step as input. This is the default value.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     *         To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.
      *         </p>
      *         </li>
      */
@@ -261,13 +261,13 @@ public class TagStepDetails implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow step uses
+     * To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses
      * the output file from the previous workflow step as input. This is the default value.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     * To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.
      * </p>
      * </li>
      * </ul>
@@ -278,13 +278,13 @@ public class TagStepDetails implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        Enter <code>${previous.file}</code> to use the previous file as the input. In this case, this workflow
+     *        To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow
      *        step uses the output file from the previous workflow step as input. This is the default value.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Enter <code>${original.file}</code> to use the originally-uploaded file location as input for this step.
+     *        To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

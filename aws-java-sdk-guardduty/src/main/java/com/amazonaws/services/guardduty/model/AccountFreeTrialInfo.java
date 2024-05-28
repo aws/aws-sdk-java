@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,14 @@ public class AccountFreeTrialInfo implements Serializable, Cloneable, Structured
      * Describes the data source enabled for the GuardDuty member account.
      * </p>
      */
+    @Deprecated
     private DataSourcesFreeTrial dataSources;
+    /**
+     * <p>
+     * A list of features enabled for the GuardDuty account.
+     * </p>
+     */
+    private java.util.List<FreeTrialFeatureConfigurationResult> features;
 
     /**
      * <p>
@@ -89,7 +96,7 @@ public class AccountFreeTrialInfo implements Serializable, Cloneable, Structured
      * @param dataSources
      *        Describes the data source enabled for the GuardDuty member account.
      */
-
+    @Deprecated
     public void setDataSources(DataSourcesFreeTrial dataSources) {
         this.dataSources = dataSources;
     }
@@ -101,7 +108,7 @@ public class AccountFreeTrialInfo implements Serializable, Cloneable, Structured
      * 
      * @return Describes the data source enabled for the GuardDuty member account.
      */
-
+    @Deprecated
     public DataSourcesFreeTrial getDataSources() {
         return this.dataSources;
     }
@@ -115,9 +122,79 @@ public class AccountFreeTrialInfo implements Serializable, Cloneable, Structured
      *        Describes the data source enabled for the GuardDuty member account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public AccountFreeTrialInfo withDataSources(DataSourcesFreeTrial dataSources) {
         setDataSources(dataSources);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of features enabled for the GuardDuty account.
+     * </p>
+     * 
+     * @return A list of features enabled for the GuardDuty account.
+     */
+
+    public java.util.List<FreeTrialFeatureConfigurationResult> getFeatures() {
+        return features;
+    }
+
+    /**
+     * <p>
+     * A list of features enabled for the GuardDuty account.
+     * </p>
+     * 
+     * @param features
+     *        A list of features enabled for the GuardDuty account.
+     */
+
+    public void setFeatures(java.util.Collection<FreeTrialFeatureConfigurationResult> features) {
+        if (features == null) {
+            this.features = null;
+            return;
+        }
+
+        this.features = new java.util.ArrayList<FreeTrialFeatureConfigurationResult>(features);
+    }
+
+    /**
+     * <p>
+     * A list of features enabled for the GuardDuty account.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFeatures(java.util.Collection)} or {@link #withFeatures(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param features
+     *        A list of features enabled for the GuardDuty account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccountFreeTrialInfo withFeatures(FreeTrialFeatureConfigurationResult... features) {
+        if (this.features == null) {
+            setFeatures(new java.util.ArrayList<FreeTrialFeatureConfigurationResult>(features.length));
+        }
+        for (FreeTrialFeatureConfigurationResult ele : features) {
+            this.features.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of features enabled for the GuardDuty account.
+     * </p>
+     * 
+     * @param features
+     *        A list of features enabled for the GuardDuty account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccountFreeTrialInfo withFeatures(java.util.Collection<FreeTrialFeatureConfigurationResult> features) {
+        setFeatures(features);
         return this;
     }
 
@@ -136,7 +213,9 @@ public class AccountFreeTrialInfo implements Serializable, Cloneable, Structured
         if (getAccountId() != null)
             sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getDataSources() != null)
-            sb.append("DataSources: ").append(getDataSources());
+            sb.append("DataSources: ").append(getDataSources()).append(",");
+        if (getFeatures() != null)
+            sb.append("Features: ").append(getFeatures());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +238,10 @@ public class AccountFreeTrialInfo implements Serializable, Cloneable, Structured
             return false;
         if (other.getDataSources() != null && other.getDataSources().equals(this.getDataSources()) == false)
             return false;
+        if (other.getFeatures() == null ^ this.getFeatures() == null)
+            return false;
+        if (other.getFeatures() != null && other.getFeatures().equals(this.getFeatures()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +252,7 @@ public class AccountFreeTrialInfo implements Serializable, Cloneable, Structured
 
         hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         hashCode = prime * hashCode + ((getDataSources() == null) ? 0 : getDataSources().hashCode());
+        hashCode = prime * hashCode + ((getFeatures() == null) ? 0 : getFeatures().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,7 +55,8 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * <p>
      * Modifies the <code>DeleteOnTermination</code> attribute for volumes that are currently attached. The volume must
      * be owned by the caller. If no value is specified for <code>DeleteOnTermination</code>, the default is
-     * <code>true</code> and the volume is deleted when the instance is terminated.
+     * <code>true</code> and the volume is deleted when the instance is terminated. You can't modify the
+     * <code>DeleteOnTermination</code> attribute for volumes that are attached to Fargate tasks.
      * </p>
      * <p>
      * To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the instance.
@@ -92,9 +93,8 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
     private Boolean enaSupport;
     /**
      * <p>
-     * [EC2-VPC] Replaces the security groups of the instance with the specified security groups. You must specify at
-     * least one security group, even if it's just the default security group for the VPC. You must specify the security
-     * group ID, not the security group name.
+     * Replaces the security groups of the instance with the specified security groups. You must specify the ID of at
+     * least one security group, even if it's just the default security group for the VPC.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> groups;
@@ -471,7 +471,8 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * <p>
      * Modifies the <code>DeleteOnTermination</code> attribute for volumes that are currently attached. The volume must
      * be owned by the caller. If no value is specified for <code>DeleteOnTermination</code>, the default is
-     * <code>true</code> and the volume is deleted when the instance is terminated.
+     * <code>true</code> and the volume is deleted when the instance is terminated. You can't modify the
+     * <code>DeleteOnTermination</code> attribute for volumes that are attached to Fargate tasks.
      * </p>
      * <p>
      * To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the instance.
@@ -482,7 +483,8 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * 
      * @return Modifies the <code>DeleteOnTermination</code> attribute for volumes that are currently attached. The
      *         volume must be owned by the caller. If no value is specified for <code>DeleteOnTermination</code>, the
-     *         default is <code>true</code> and the volume is deleted when the instance is terminated.</p>
+     *         default is <code>true</code> and the volume is deleted when the instance is terminated. You can't modify
+     *         the <code>DeleteOnTermination</code> attribute for volumes that are attached to Fargate tasks.</p>
      *         <p>
      *         To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the
      *         instance. For more information, see <a href=
@@ -501,7 +503,8 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * <p>
      * Modifies the <code>DeleteOnTermination</code> attribute for volumes that are currently attached. The volume must
      * be owned by the caller. If no value is specified for <code>DeleteOnTermination</code>, the default is
-     * <code>true</code> and the volume is deleted when the instance is terminated.
+     * <code>true</code> and the volume is deleted when the instance is terminated. You can't modify the
+     * <code>DeleteOnTermination</code> attribute for volumes that are attached to Fargate tasks.
      * </p>
      * <p>
      * To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the instance.
@@ -513,7 +516,8 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * @param blockDeviceMappings
      *        Modifies the <code>DeleteOnTermination</code> attribute for volumes that are currently attached. The
      *        volume must be owned by the caller. If no value is specified for <code>DeleteOnTermination</code>, the
-     *        default is <code>true</code> and the volume is deleted when the instance is terminated.</p>
+     *        default is <code>true</code> and the volume is deleted when the instance is terminated. You can't modify
+     *        the <code>DeleteOnTermination</code> attribute for volumes that are attached to Fargate tasks.</p>
      *        <p>
      *        To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the
      *        instance. For more information, see <a href=
@@ -534,7 +538,8 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * <p>
      * Modifies the <code>DeleteOnTermination</code> attribute for volumes that are currently attached. The volume must
      * be owned by the caller. If no value is specified for <code>DeleteOnTermination</code>, the default is
-     * <code>true</code> and the volume is deleted when the instance is terminated.
+     * <code>true</code> and the volume is deleted when the instance is terminated. You can't modify the
+     * <code>DeleteOnTermination</code> attribute for volumes that are attached to Fargate tasks.
      * </p>
      * <p>
      * To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the instance.
@@ -551,7 +556,8 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * @param blockDeviceMappings
      *        Modifies the <code>DeleteOnTermination</code> attribute for volumes that are currently attached. The
      *        volume must be owned by the caller. If no value is specified for <code>DeleteOnTermination</code>, the
-     *        default is <code>true</code> and the volume is deleted when the instance is terminated.</p>
+     *        default is <code>true</code> and the volume is deleted when the instance is terminated. You can't modify
+     *        the <code>DeleteOnTermination</code> attribute for volumes that are attached to Fargate tasks.</p>
      *        <p>
      *        To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the
      *        instance. For more information, see <a href=
@@ -574,7 +580,8 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * <p>
      * Modifies the <code>DeleteOnTermination</code> attribute for volumes that are currently attached. The volume must
      * be owned by the caller. If no value is specified for <code>DeleteOnTermination</code>, the default is
-     * <code>true</code> and the volume is deleted when the instance is terminated.
+     * <code>true</code> and the volume is deleted when the instance is terminated. You can't modify the
+     * <code>DeleteOnTermination</code> attribute for volumes that are attached to Fargate tasks.
      * </p>
      * <p>
      * To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the instance.
@@ -586,7 +593,8 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * @param blockDeviceMappings
      *        Modifies the <code>DeleteOnTermination</code> attribute for volumes that are currently attached. The
      *        volume must be owned by the caller. If no value is specified for <code>DeleteOnTermination</code>, the
-     *        default is <code>true</code> and the volume is deleted when the instance is terminated.</p>
+     *        default is <code>true</code> and the volume is deleted when the instance is terminated. You can't modify
+     *        the <code>DeleteOnTermination</code> attribute for volumes that are attached to Fargate tasks.</p>
      *        <p>
      *        To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the
      *        instance. For more information, see <a href=
@@ -814,14 +822,12 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * [EC2-VPC] Replaces the security groups of the instance with the specified security groups. You must specify at
-     * least one security group, even if it's just the default security group for the VPC. You must specify the security
-     * group ID, not the security group name.
+     * Replaces the security groups of the instance with the specified security groups. You must specify the ID of at
+     * least one security group, even if it's just the default security group for the VPC.
      * </p>
      * 
-     * @return [EC2-VPC] Replaces the security groups of the instance with the specified security groups. You must
-     *         specify at least one security group, even if it's just the default security group for the VPC. You must
-     *         specify the security group ID, not the security group name.
+     * @return Replaces the security groups of the instance with the specified security groups. You must specify the ID
+     *         of at least one security group, even if it's just the default security group for the VPC.
      */
 
     public java.util.List<String> getGroups() {
@@ -833,15 +839,13 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * [EC2-VPC] Replaces the security groups of the instance with the specified security groups. You must specify at
-     * least one security group, even if it's just the default security group for the VPC. You must specify the security
-     * group ID, not the security group name.
+     * Replaces the security groups of the instance with the specified security groups. You must specify the ID of at
+     * least one security group, even if it's just the default security group for the VPC.
      * </p>
      * 
      * @param groups
-     *        [EC2-VPC] Replaces the security groups of the instance with the specified security groups. You must
-     *        specify at least one security group, even if it's just the default security group for the VPC. You must
-     *        specify the security group ID, not the security group name.
+     *        Replaces the security groups of the instance with the specified security groups. You must specify the ID
+     *        of at least one security group, even if it's just the default security group for the VPC.
      */
 
     public void setGroups(java.util.Collection<String> groups) {
@@ -855,9 +859,8 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * [EC2-VPC] Replaces the security groups of the instance with the specified security groups. You must specify at
-     * least one security group, even if it's just the default security group for the VPC. You must specify the security
-     * group ID, not the security group name.
+     * Replaces the security groups of the instance with the specified security groups. You must specify the ID of at
+     * least one security group, even if it's just the default security group for the VPC.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -866,9 +869,8 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * </p>
      * 
      * @param groups
-     *        [EC2-VPC] Replaces the security groups of the instance with the specified security groups. You must
-     *        specify at least one security group, even if it's just the default security group for the VPC. You must
-     *        specify the security group ID, not the security group name.
+     *        Replaces the security groups of the instance with the specified security groups. You must specify the ID
+     *        of at least one security group, even if it's just the default security group for the VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -884,15 +886,13 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * [EC2-VPC] Replaces the security groups of the instance with the specified security groups. You must specify at
-     * least one security group, even if it's just the default security group for the VPC. You must specify the security
-     * group ID, not the security group name.
+     * Replaces the security groups of the instance with the specified security groups. You must specify the ID of at
+     * least one security group, even if it's just the default security group for the VPC.
      * </p>
      * 
      * @param groups
-     *        [EC2-VPC] Replaces the security groups of the instance with the specified security groups. You must
-     *        specify at least one security group, even if it's just the default security group for the VPC. You must
-     *        specify the security group ID, not the security group name.
+     *        Replaces the security groups of the instance with the specified security groups. You must specify the ID
+     *        of at least one security group, even if it's just the default security group for the VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

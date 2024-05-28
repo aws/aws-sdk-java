@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents user interaction event information sent using the <code>PutEvents</code> API.
+ * Represents item interaction event information sent using the <code>PutEvents</code> API.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/Event" target="_top">AWS API
@@ -31,7 +31,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An ID associated with the event. If an event ID is not provided, Amazon Personalize generates a unique ID for the
-     * event. An event ID is not used as an input to the model. Amazon Personalize uses the event ID to distinquish
+     * event. An event ID is not used as an input to the model. Amazon Personalize uses the event ID to distinguish
      * unique events. Any subsequent events after the first with the same event ID are not used in model training.
      * </p>
      */
@@ -39,19 +39,19 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The type of event, such as click or download. This property corresponds to the <code>EVENT_TYPE</code> field of
-     * your Interactions schema and depends on the types of events you are tracking.
+     * your Item interactions dataset's schema and depends on the types of events you are tracking.
      * </p>
      */
     private String eventType;
     /**
      * <p>
-     * The event value that corresponds to the <code>EVENT_VALUE</code> field of the Interactions schema.
+     * The event value that corresponds to the <code>EVENT_VALUE</code> field of the Item interactions schema.
      * </p>
      */
     private Float eventValue;
     /**
      * <p>
-     * The item ID key that corresponds to the <code>ITEM_ID</code> field of the Interactions schema.
+     * The item ID key that corresponds to the <code>ITEM_ID</code> field of the Item interactions dataset's schema.
      * </p>
      */
     private String itemId;
@@ -68,9 +68,45 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <code>{"numberOfRatings": "12"}</code>
      * </p>
      * <p>
-     * The keys use camel case names that match the fields in the Interactions schema. In the above example, the
-     * <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined in the Interactions schema.
+     * The keys use camel case names that match the fields in the Item interactions dataset's schema. In the above
+     * example, the <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined in the Item
+     * interactions dataset's schema.
      * </p>
+     * <p>
+     * The following can't be included as a keyword for properties (case insensitive).
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * userId
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * sessionId
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * eventType
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * timestamp
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * recommendationId
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * impression
+     * </p>
+     * </li>
+     * </ul>
      */
     private String properties;
     /**
@@ -81,29 +117,51 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date sentAt;
     /**
      * <p>
-     * The ID of the recommendation.
+     * The ID of the list of recommendations that contains the item the user interacted with. Provide a
+     * <code>recommendationId</code> to have Amazon Personalize implicitly record the recommendations you show your user
+     * as impressions data. Or provide a <code>recommendationId</code> if you use a metric attribution to measure the
+     * impact of recommendations.
+     * </p>
+     * <p>
+     * For more information on recording impressions data, see <a href=
+     * "https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data"
+     * >Recording impressions data</a>. For more information on creating a metric attribution see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of
+     * recommendations</a>.
      * </p>
      */
     private String recommendationId;
     /**
      * <p>
      * A list of item IDs that represents the sequence of items you have shown the user. For example,
-     * <code>["itemId1", "itemId2", "itemId3"]</code>.
+     * <code>["itemId1", "itemId2", "itemId3"]</code>. Provide a list of items to manually record impressions data for
+     * an event. For more information on recording impressions data, see <a href=
+     * "https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data"
+     * >Recording impressions data</a>.
      * </p>
      */
     private java.util.List<String> impression;
+    /**
+     * <p>
+     * Contains information about the metric attribution associated with an event. For more information about metric
+     * attributions, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of
+     * recommendations</a>.
+     * </p>
+     */
+    private MetricAttribution metricAttribution;
 
     /**
      * <p>
      * An ID associated with the event. If an event ID is not provided, Amazon Personalize generates a unique ID for the
-     * event. An event ID is not used as an input to the model. Amazon Personalize uses the event ID to distinquish
+     * event. An event ID is not used as an input to the model. Amazon Personalize uses the event ID to distinguish
      * unique events. Any subsequent events after the first with the same event ID are not used in model training.
      * </p>
      * 
      * @param eventId
      *        An ID associated with the event. If an event ID is not provided, Amazon Personalize generates a unique ID
      *        for the event. An event ID is not used as an input to the model. Amazon Personalize uses the event ID to
-     *        distinquish unique events. Any subsequent events after the first with the same event ID are not used in
+     *        distinguish unique events. Any subsequent events after the first with the same event ID are not used in
      *        model training.
      */
 
@@ -114,13 +172,13 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An ID associated with the event. If an event ID is not provided, Amazon Personalize generates a unique ID for the
-     * event. An event ID is not used as an input to the model. Amazon Personalize uses the event ID to distinquish
+     * event. An event ID is not used as an input to the model. Amazon Personalize uses the event ID to distinguish
      * unique events. Any subsequent events after the first with the same event ID are not used in model training.
      * </p>
      * 
      * @return An ID associated with the event. If an event ID is not provided, Amazon Personalize generates a unique ID
      *         for the event. An event ID is not used as an input to the model. Amazon Personalize uses the event ID to
-     *         distinquish unique events. Any subsequent events after the first with the same event ID are not used in
+     *         distinguish unique events. Any subsequent events after the first with the same event ID are not used in
      *         model training.
      */
 
@@ -131,14 +189,14 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An ID associated with the event. If an event ID is not provided, Amazon Personalize generates a unique ID for the
-     * event. An event ID is not used as an input to the model. Amazon Personalize uses the event ID to distinquish
+     * event. An event ID is not used as an input to the model. Amazon Personalize uses the event ID to distinguish
      * unique events. Any subsequent events after the first with the same event ID are not used in model training.
      * </p>
      * 
      * @param eventId
      *        An ID associated with the event. If an event ID is not provided, Amazon Personalize generates a unique ID
      *        for the event. An event ID is not used as an input to the model. Amazon Personalize uses the event ID to
-     *        distinquish unique events. Any subsequent events after the first with the same event ID are not used in
+     *        distinguish unique events. Any subsequent events after the first with the same event ID are not used in
      *        model training.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -151,12 +209,12 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The type of event, such as click or download. This property corresponds to the <code>EVENT_TYPE</code> field of
-     * your Interactions schema and depends on the types of events you are tracking.
+     * your Item interactions dataset's schema and depends on the types of events you are tracking.
      * </p>
      * 
      * @param eventType
      *        The type of event, such as click or download. This property corresponds to the <code>EVENT_TYPE</code>
-     *        field of your Interactions schema and depends on the types of events you are tracking.
+     *        field of your Item interactions dataset's schema and depends on the types of events you are tracking.
      */
 
     public void setEventType(String eventType) {
@@ -166,11 +224,11 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The type of event, such as click or download. This property corresponds to the <code>EVENT_TYPE</code> field of
-     * your Interactions schema and depends on the types of events you are tracking.
+     * your Item interactions dataset's schema and depends on the types of events you are tracking.
      * </p>
      * 
      * @return The type of event, such as click or download. This property corresponds to the <code>EVENT_TYPE</code>
-     *         field of your Interactions schema and depends on the types of events you are tracking.
+     *         field of your Item interactions dataset's schema and depends on the types of events you are tracking.
      */
 
     public String getEventType() {
@@ -180,12 +238,12 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The type of event, such as click or download. This property corresponds to the <code>EVENT_TYPE</code> field of
-     * your Interactions schema and depends on the types of events you are tracking.
+     * your Item interactions dataset's schema and depends on the types of events you are tracking.
      * </p>
      * 
      * @param eventType
      *        The type of event, such as click or download. This property corresponds to the <code>EVENT_TYPE</code>
-     *        field of your Interactions schema and depends on the types of events you are tracking.
+     *        field of your Item interactions dataset's schema and depends on the types of events you are tracking.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -196,11 +254,11 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The event value that corresponds to the <code>EVENT_VALUE</code> field of the Interactions schema.
+     * The event value that corresponds to the <code>EVENT_VALUE</code> field of the Item interactions schema.
      * </p>
      * 
      * @param eventValue
-     *        The event value that corresponds to the <code>EVENT_VALUE</code> field of the Interactions schema.
+     *        The event value that corresponds to the <code>EVENT_VALUE</code> field of the Item interactions schema.
      */
 
     public void setEventValue(Float eventValue) {
@@ -209,10 +267,10 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The event value that corresponds to the <code>EVENT_VALUE</code> field of the Interactions schema.
+     * The event value that corresponds to the <code>EVENT_VALUE</code> field of the Item interactions schema.
      * </p>
      * 
-     * @return The event value that corresponds to the <code>EVENT_VALUE</code> field of the Interactions schema.
+     * @return The event value that corresponds to the <code>EVENT_VALUE</code> field of the Item interactions schema.
      */
 
     public Float getEventValue() {
@@ -221,11 +279,11 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The event value that corresponds to the <code>EVENT_VALUE</code> field of the Interactions schema.
+     * The event value that corresponds to the <code>EVENT_VALUE</code> field of the Item interactions schema.
      * </p>
      * 
      * @param eventValue
-     *        The event value that corresponds to the <code>EVENT_VALUE</code> field of the Interactions schema.
+     *        The event value that corresponds to the <code>EVENT_VALUE</code> field of the Item interactions schema.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -236,11 +294,12 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The item ID key that corresponds to the <code>ITEM_ID</code> field of the Interactions schema.
+     * The item ID key that corresponds to the <code>ITEM_ID</code> field of the Item interactions dataset's schema.
      * </p>
      * 
      * @param itemId
-     *        The item ID key that corresponds to the <code>ITEM_ID</code> field of the Interactions schema.
+     *        The item ID key that corresponds to the <code>ITEM_ID</code> field of the Item interactions dataset's
+     *        schema.
      */
 
     public void setItemId(String itemId) {
@@ -249,10 +308,11 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The item ID key that corresponds to the <code>ITEM_ID</code> field of the Interactions schema.
+     * The item ID key that corresponds to the <code>ITEM_ID</code> field of the Item interactions dataset's schema.
      * </p>
      * 
-     * @return The item ID key that corresponds to the <code>ITEM_ID</code> field of the Interactions schema.
+     * @return The item ID key that corresponds to the <code>ITEM_ID</code> field of the Item interactions dataset's
+     *         schema.
      */
 
     public String getItemId() {
@@ -261,11 +321,12 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The item ID key that corresponds to the <code>ITEM_ID</code> field of the Interactions schema.
+     * The item ID key that corresponds to the <code>ITEM_ID</code> field of the Item interactions dataset's schema.
      * </p>
      * 
      * @param itemId
-     *        The item ID key that corresponds to the <code>ITEM_ID</code> field of the Interactions schema.
+     *        The item ID key that corresponds to the <code>ITEM_ID</code> field of the Item interactions dataset's
+     *        schema.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -287,9 +348,45 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <code>{"numberOfRatings": "12"}</code>
      * </p>
      * <p>
-     * The keys use camel case names that match the fields in the Interactions schema. In the above example, the
-     * <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined in the Interactions schema.
+     * The keys use camel case names that match the fields in the Item interactions dataset's schema. In the above
+     * example, the <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined in the Item
+     * interactions dataset's schema.
      * </p>
+     * <p>
+     * The following can't be included as a keyword for properties (case insensitive).
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * userId
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * sessionId
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * eventType
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * timestamp
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * recommendationId
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * impression
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * This field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For
      * example: '{"key": "value"}'.
@@ -310,8 +407,44 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        <code>{"numberOfRatings": "12"}</code>
      *        </p>
      *        <p>
-     *        The keys use camel case names that match the fields in the Interactions schema. In the above example, the
-     *        <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined in the Interactions schema.
+     *        The keys use camel case names that match the fields in the Item interactions dataset's schema. In the
+     *        above example, the <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined in the
+     *        Item interactions dataset's schema.
+     *        </p>
+     *        <p>
+     *        The following can't be included as a keyword for properties (case insensitive).
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        userId
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        sessionId
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        eventType
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        timestamp
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        recommendationId
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        impression
+     *        </p>
+     *        </li>
      */
 
     public void setProperties(String properties) {
@@ -331,9 +464,45 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <code>{"numberOfRatings": "12"}</code>
      * </p>
      * <p>
-     * The keys use camel case names that match the fields in the Interactions schema. In the above example, the
-     * <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined in the Interactions schema.
+     * The keys use camel case names that match the fields in the Item interactions dataset's schema. In the above
+     * example, the <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined in the Item
+     * interactions dataset's schema.
      * </p>
+     * <p>
+     * The following can't be included as a keyword for properties (case insensitive).
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * userId
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * sessionId
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * eventType
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * timestamp
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * recommendationId
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * impression
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * This field's value will be valid JSON according to RFC 7159, including the opening and closing braces. For
      * example: '{"key": "value"}'.
@@ -349,9 +518,44 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *         <code>{"numberOfRatings": "12"}</code>
      *         </p>
      *         <p>
-     *         The keys use camel case names that match the fields in the Interactions schema. In the above example, the
-     *         <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined in the Interactions
-     *         schema.
+     *         The keys use camel case names that match the fields in the Item interactions dataset's schema. In the
+     *         above example, the <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined in the
+     *         Item interactions dataset's schema.
+     *         </p>
+     *         <p>
+     *         The following can't be included as a keyword for properties (case insensitive).
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         userId
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         sessionId
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         eventType
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         timestamp
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         recommendationId
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         impression
+     *         </p>
+     *         </li>
      */
 
     public String getProperties() {
@@ -371,9 +575,45 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <code>{"numberOfRatings": "12"}</code>
      * </p>
      * <p>
-     * The keys use camel case names that match the fields in the Interactions schema. In the above example, the
-     * <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined in the Interactions schema.
+     * The keys use camel case names that match the fields in the Item interactions dataset's schema. In the above
+     * example, the <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined in the Item
+     * interactions dataset's schema.
      * </p>
+     * <p>
+     * The following can't be included as a keyword for properties (case insensitive).
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * userId
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * sessionId
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * eventType
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * timestamp
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * recommendationId
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * impression
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * This field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For
      * example: '{"key": "value"}'.
@@ -394,8 +634,44 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        <code>{"numberOfRatings": "12"}</code>
      *        </p>
      *        <p>
-     *        The keys use camel case names that match the fields in the Interactions schema. In the above example, the
-     *        <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined in the Interactions schema.
+     *        The keys use camel case names that match the fields in the Item interactions dataset's schema. In the
+     *        above example, the <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined in the
+     *        Item interactions dataset's schema.
+     *        </p>
+     *        <p>
+     *        The following can't be included as a keyword for properties (case insensitive).
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        userId
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        sessionId
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        eventType
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        timestamp
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        recommendationId
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        impression
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -446,11 +722,30 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the recommendation.
+     * The ID of the list of recommendations that contains the item the user interacted with. Provide a
+     * <code>recommendationId</code> to have Amazon Personalize implicitly record the recommendations you show your user
+     * as impressions data. Or provide a <code>recommendationId</code> if you use a metric attribution to measure the
+     * impact of recommendations.
+     * </p>
+     * <p>
+     * For more information on recording impressions data, see <a href=
+     * "https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data"
+     * >Recording impressions data</a>. For more information on creating a metric attribution see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of
+     * recommendations</a>.
      * </p>
      * 
      * @param recommendationId
-     *        The ID of the recommendation.
+     *        The ID of the list of recommendations that contains the item the user interacted with. Provide a
+     *        <code>recommendationId</code> to have Amazon Personalize implicitly record the recommendations you show
+     *        your user as impressions data. Or provide a <code>recommendationId</code> if you use a metric attribution
+     *        to measure the impact of recommendations. </p>
+     *        <p>
+     *        For more information on recording impressions data, see <a href=
+     *        "https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data"
+     *        >Recording impressions data</a>. For more information on creating a metric attribution see <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
+     *        impact of recommendations</a>.
      */
 
     public void setRecommendationId(String recommendationId) {
@@ -459,10 +754,29 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the recommendation.
+     * The ID of the list of recommendations that contains the item the user interacted with. Provide a
+     * <code>recommendationId</code> to have Amazon Personalize implicitly record the recommendations you show your user
+     * as impressions data. Or provide a <code>recommendationId</code> if you use a metric attribution to measure the
+     * impact of recommendations.
+     * </p>
+     * <p>
+     * For more information on recording impressions data, see <a href=
+     * "https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data"
+     * >Recording impressions data</a>. For more information on creating a metric attribution see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of
+     * recommendations</a>.
      * </p>
      * 
-     * @return The ID of the recommendation.
+     * @return The ID of the list of recommendations that contains the item the user interacted with. Provide a
+     *         <code>recommendationId</code> to have Amazon Personalize implicitly record the recommendations you show
+     *         your user as impressions data. Or provide a <code>recommendationId</code> if you use a metric attribution
+     *         to measure the impact of recommendations. </p>
+     *         <p>
+     *         For more information on recording impressions data, see <a href=
+     *         "https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data"
+     *         >Recording impressions data</a>. For more information on creating a metric attribution see <a
+     *         href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
+     *         impact of recommendations</a>.
      */
 
     public String getRecommendationId() {
@@ -471,11 +785,30 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the recommendation.
+     * The ID of the list of recommendations that contains the item the user interacted with. Provide a
+     * <code>recommendationId</code> to have Amazon Personalize implicitly record the recommendations you show your user
+     * as impressions data. Or provide a <code>recommendationId</code> if you use a metric attribution to measure the
+     * impact of recommendations.
+     * </p>
+     * <p>
+     * For more information on recording impressions data, see <a href=
+     * "https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data"
+     * >Recording impressions data</a>. For more information on creating a metric attribution see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of
+     * recommendations</a>.
      * </p>
      * 
      * @param recommendationId
-     *        The ID of the recommendation.
+     *        The ID of the list of recommendations that contains the item the user interacted with. Provide a
+     *        <code>recommendationId</code> to have Amazon Personalize implicitly record the recommendations you show
+     *        your user as impressions data. Or provide a <code>recommendationId</code> if you use a metric attribution
+     *        to measure the impact of recommendations. </p>
+     *        <p>
+     *        For more information on recording impressions data, see <a href=
+     *        "https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data"
+     *        >Recording impressions data</a>. For more information on creating a metric attribution see <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
+     *        impact of recommendations</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -487,11 +820,17 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of item IDs that represents the sequence of items you have shown the user. For example,
-     * <code>["itemId1", "itemId2", "itemId3"]</code>.
+     * <code>["itemId1", "itemId2", "itemId3"]</code>. Provide a list of items to manually record impressions data for
+     * an event. For more information on recording impressions data, see <a href=
+     * "https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data"
+     * >Recording impressions data</a>.
      * </p>
      * 
      * @return A list of item IDs that represents the sequence of items you have shown the user. For example,
-     *         <code>["itemId1", "itemId2", "itemId3"]</code>.
+     *         <code>["itemId1", "itemId2", "itemId3"]</code>. Provide a list of items to manually record impressions
+     *         data for an event. For more information on recording impressions data, see <a href=
+     *         "https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data"
+     *         >Recording impressions data</a>.
      */
 
     public java.util.List<String> getImpression() {
@@ -501,12 +840,18 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of item IDs that represents the sequence of items you have shown the user. For example,
-     * <code>["itemId1", "itemId2", "itemId3"]</code>.
+     * <code>["itemId1", "itemId2", "itemId3"]</code>. Provide a list of items to manually record impressions data for
+     * an event. For more information on recording impressions data, see <a href=
+     * "https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data"
+     * >Recording impressions data</a>.
      * </p>
      * 
      * @param impression
      *        A list of item IDs that represents the sequence of items you have shown the user. For example,
-     *        <code>["itemId1", "itemId2", "itemId3"]</code>.
+     *        <code>["itemId1", "itemId2", "itemId3"]</code>. Provide a list of items to manually record impressions
+     *        data for an event. For more information on recording impressions data, see <a href=
+     *        "https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data"
+     *        >Recording impressions data</a>.
      */
 
     public void setImpression(java.util.Collection<String> impression) {
@@ -521,7 +866,10 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of item IDs that represents the sequence of items you have shown the user. For example,
-     * <code>["itemId1", "itemId2", "itemId3"]</code>.
+     * <code>["itemId1", "itemId2", "itemId3"]</code>. Provide a list of items to manually record impressions data for
+     * an event. For more information on recording impressions data, see <a href=
+     * "https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data"
+     * >Recording impressions data</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -531,7 +879,10 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param impression
      *        A list of item IDs that represents the sequence of items you have shown the user. For example,
-     *        <code>["itemId1", "itemId2", "itemId3"]</code>.
+     *        <code>["itemId1", "itemId2", "itemId3"]</code>. Provide a list of items to manually record impressions
+     *        data for an event. For more information on recording impressions data, see <a href=
+     *        "https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data"
+     *        >Recording impressions data</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -548,17 +899,81 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of item IDs that represents the sequence of items you have shown the user. For example,
-     * <code>["itemId1", "itemId2", "itemId3"]</code>.
+     * <code>["itemId1", "itemId2", "itemId3"]</code>. Provide a list of items to manually record impressions data for
+     * an event. For more information on recording impressions data, see <a href=
+     * "https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data"
+     * >Recording impressions data</a>.
      * </p>
      * 
      * @param impression
      *        A list of item IDs that represents the sequence of items you have shown the user. For example,
-     *        <code>["itemId1", "itemId2", "itemId3"]</code>.
+     *        <code>["itemId1", "itemId2", "itemId3"]</code>. Provide a list of items to manually record impressions
+     *        data for an event. For more information on recording impressions data, see <a href=
+     *        "https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data"
+     *        >Recording impressions data</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Event withImpression(java.util.Collection<String> impression) {
         setImpression(impression);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains information about the metric attribution associated with an event. For more information about metric
+     * attributions, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of
+     * recommendations</a>.
+     * </p>
+     * 
+     * @param metricAttribution
+     *        Contains information about the metric attribution associated with an event. For more information about
+     *        metric attributions, see <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
+     *        impact of recommendations</a>.
+     */
+
+    public void setMetricAttribution(MetricAttribution metricAttribution) {
+        this.metricAttribution = metricAttribution;
+    }
+
+    /**
+     * <p>
+     * Contains information about the metric attribution associated with an event. For more information about metric
+     * attributions, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of
+     * recommendations</a>.
+     * </p>
+     * 
+     * @return Contains information about the metric attribution associated with an event. For more information about
+     *         metric attributions, see <a
+     *         href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
+     *         impact of recommendations</a>.
+     */
+
+    public MetricAttribution getMetricAttribution() {
+        return this.metricAttribution;
+    }
+
+    /**
+     * <p>
+     * Contains information about the metric attribution associated with an event. For more information about metric
+     * attributions, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of
+     * recommendations</a>.
+     * </p>
+     * 
+     * @param metricAttribution
+     *        Contains information about the metric attribution associated with an event. For more information about
+     *        metric attributions, see <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring
+     *        impact of recommendations</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Event withMetricAttribution(MetricAttribution metricAttribution) {
+        setMetricAttribution(metricAttribution);
         return this;
     }
 
@@ -581,15 +996,17 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
         if (getEventValue() != null)
             sb.append("EventValue: ").append(getEventValue()).append(",");
         if (getItemId() != null)
-            sb.append("ItemId: ").append(getItemId()).append(",");
+            sb.append("ItemId: ").append("***Sensitive Data Redacted***").append(",");
         if (getProperties() != null)
-            sb.append("Properties: ").append(getProperties()).append(",");
+            sb.append("Properties: ").append("***Sensitive Data Redacted***").append(",");
         if (getSentAt() != null)
             sb.append("SentAt: ").append(getSentAt()).append(",");
         if (getRecommendationId() != null)
             sb.append("RecommendationId: ").append(getRecommendationId()).append(",");
         if (getImpression() != null)
-            sb.append("Impression: ").append(getImpression());
+            sb.append("Impression: ").append("***Sensitive Data Redacted***").append(",");
+        if (getMetricAttribution() != null)
+            sb.append("MetricAttribution: ").append(getMetricAttribution());
         sb.append("}");
         return sb.toString();
     }
@@ -636,6 +1053,10 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getImpression() != null && other.getImpression().equals(this.getImpression()) == false)
             return false;
+        if (other.getMetricAttribution() == null ^ this.getMetricAttribution() == null)
+            return false;
+        if (other.getMetricAttribution() != null && other.getMetricAttribution().equals(this.getMetricAttribution()) == false)
+            return false;
         return true;
     }
 
@@ -652,6 +1073,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSentAt() == null) ? 0 : getSentAt().hashCode());
         hashCode = prime * hashCode + ((getRecommendationId() == null) ? 0 : getRecommendationId().hashCode());
         hashCode = prime * hashCode + ((getImpression() == null) ? 0 : getImpression().hashCode());
+        hashCode = prime * hashCode + ((getMetricAttribution() == null) ? 0 : getMetricAttribution().hashCode());
         return hashCode;
     }
 

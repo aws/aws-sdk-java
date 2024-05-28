@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,10 +48,51 @@ public class ResourceTargetDefinition implements Serializable, Cloneable {
      * <code>Conditionally</code>. To determine the conditions for a <code>Conditionally</code> recreation, see the
      * update behavior for that <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     * >property</a> in the CloudFormation User Guide.
+     * >property</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      */
     private String requiresRecreation;
+    /**
+     * <p>
+     * The property path of the property.
+     * </p>
+     */
+    private String path;
+    /**
+     * <p>
+     * The value of the property before the change is executed. Large values can be truncated.
+     * </p>
+     */
+    private String beforeValue;
+    /**
+     * <p>
+     * The value of the property after the change is executed. Large values can be truncated.
+     * </p>
+     */
+    private String afterValue;
+    /**
+     * <p>
+     * The type of change to be made to the property if the change is executed.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Add</code> The item will be added.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Remove</code> The item will be removed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Modify</code> The item will be modified.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String attributeChangeType;
 
     /**
      * <p>
@@ -189,7 +230,7 @@ public class ResourceTargetDefinition implements Serializable, Cloneable {
      * <code>Conditionally</code>. To determine the conditions for a <code>Conditionally</code> recreation, see the
      * update behavior for that <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     * >property</a> in the CloudFormation User Guide.
+     * >property</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param requiresRecreation
@@ -198,7 +239,7 @@ public class ResourceTargetDefinition implements Serializable, Cloneable {
      *        <code>Conditionally</code>. To determine the conditions for a <code>Conditionally</code> recreation, see
      *        the update behavior for that <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     *        >property</a> in the CloudFormation User Guide.
+     *        >property</a> in the <i>CloudFormation User Guide</i>.
      * @see RequiresRecreation
      */
 
@@ -213,7 +254,7 @@ public class ResourceTargetDefinition implements Serializable, Cloneable {
      * <code>Conditionally</code>. To determine the conditions for a <code>Conditionally</code> recreation, see the
      * update behavior for that <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     * >property</a> in the CloudFormation User Guide.
+     * >property</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @return If the <code>Attribute</code> value is <code>Properties</code>, indicates whether a change to this
@@ -221,7 +262,7 @@ public class ResourceTargetDefinition implements Serializable, Cloneable {
      *         or <code>Conditionally</code>. To determine the conditions for a <code>Conditionally</code> recreation,
      *         see the update behavior for that <a href=
      *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     *         >property</a> in the CloudFormation User Guide.
+     *         >property</a> in the <i>CloudFormation User Guide</i>.
      * @see RequiresRecreation
      */
 
@@ -236,7 +277,7 @@ public class ResourceTargetDefinition implements Serializable, Cloneable {
      * <code>Conditionally</code>. To determine the conditions for a <code>Conditionally</code> recreation, see the
      * update behavior for that <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     * >property</a> in the CloudFormation User Guide.
+     * >property</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param requiresRecreation
@@ -245,7 +286,7 @@ public class ResourceTargetDefinition implements Serializable, Cloneable {
      *        <code>Conditionally</code>. To determine the conditions for a <code>Conditionally</code> recreation, see
      *        the update behavior for that <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     *        >property</a> in the CloudFormation User Guide.
+     *        >property</a> in the <i>CloudFormation User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RequiresRecreation
      */
@@ -262,7 +303,7 @@ public class ResourceTargetDefinition implements Serializable, Cloneable {
      * <code>Conditionally</code>. To determine the conditions for a <code>Conditionally</code> recreation, see the
      * update behavior for that <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     * >property</a> in the CloudFormation User Guide.
+     * >property</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param requiresRecreation
@@ -271,7 +312,7 @@ public class ResourceTargetDefinition implements Serializable, Cloneable {
      *        <code>Conditionally</code>. To determine the conditions for a <code>Conditionally</code> recreation, see
      *        the update behavior for that <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     *        >property</a> in the CloudFormation User Guide.
+     *        >property</a> in the <i>CloudFormation User Guide</i>.
      * @see RequiresRecreation
      */
 
@@ -286,7 +327,7 @@ public class ResourceTargetDefinition implements Serializable, Cloneable {
      * <code>Conditionally</code>. To determine the conditions for a <code>Conditionally</code> recreation, see the
      * update behavior for that <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     * >property</a> in the CloudFormation User Guide.
+     * >property</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param requiresRecreation
@@ -295,13 +336,371 @@ public class ResourceTargetDefinition implements Serializable, Cloneable {
      *        <code>Conditionally</code>. To determine the conditions for a <code>Conditionally</code> recreation, see
      *        the update behavior for that <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     *        >property</a> in the CloudFormation User Guide.
+     *        >property</a> in the <i>CloudFormation User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RequiresRecreation
      */
 
     public ResourceTargetDefinition withRequiresRecreation(RequiresRecreation requiresRecreation) {
         this.requiresRecreation = requiresRecreation.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The property path of the property.
+     * </p>
+     * 
+     * @param path
+     *        The property path of the property.
+     */
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+    /**
+     * <p>
+     * The property path of the property.
+     * </p>
+     * 
+     * @return The property path of the property.
+     */
+
+    public String getPath() {
+        return this.path;
+    }
+
+    /**
+     * <p>
+     * The property path of the property.
+     * </p>
+     * 
+     * @param path
+     *        The property path of the property.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceTargetDefinition withPath(String path) {
+        setPath(path);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The value of the property before the change is executed. Large values can be truncated.
+     * </p>
+     * 
+     * @param beforeValue
+     *        The value of the property before the change is executed. Large values can be truncated.
+     */
+
+    public void setBeforeValue(String beforeValue) {
+        this.beforeValue = beforeValue;
+    }
+
+    /**
+     * <p>
+     * The value of the property before the change is executed. Large values can be truncated.
+     * </p>
+     * 
+     * @return The value of the property before the change is executed. Large values can be truncated.
+     */
+
+    public String getBeforeValue() {
+        return this.beforeValue;
+    }
+
+    /**
+     * <p>
+     * The value of the property before the change is executed. Large values can be truncated.
+     * </p>
+     * 
+     * @param beforeValue
+     *        The value of the property before the change is executed. Large values can be truncated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceTargetDefinition withBeforeValue(String beforeValue) {
+        setBeforeValue(beforeValue);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The value of the property after the change is executed. Large values can be truncated.
+     * </p>
+     * 
+     * @param afterValue
+     *        The value of the property after the change is executed. Large values can be truncated.
+     */
+
+    public void setAfterValue(String afterValue) {
+        this.afterValue = afterValue;
+    }
+
+    /**
+     * <p>
+     * The value of the property after the change is executed. Large values can be truncated.
+     * </p>
+     * 
+     * @return The value of the property after the change is executed. Large values can be truncated.
+     */
+
+    public String getAfterValue() {
+        return this.afterValue;
+    }
+
+    /**
+     * <p>
+     * The value of the property after the change is executed. Large values can be truncated.
+     * </p>
+     * 
+     * @param afterValue
+     *        The value of the property after the change is executed. Large values can be truncated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceTargetDefinition withAfterValue(String afterValue) {
+        setAfterValue(afterValue);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of change to be made to the property if the change is executed.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Add</code> The item will be added.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Remove</code> The item will be removed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Modify</code> The item will be modified.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param attributeChangeType
+     *        The type of change to be made to the property if the change is executed.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Add</code> The item will be added.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Remove</code> The item will be removed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Modify</code> The item will be modified.
+     *        </p>
+     *        </li>
+     * @see AttributeChangeType
+     */
+
+    public void setAttributeChangeType(String attributeChangeType) {
+        this.attributeChangeType = attributeChangeType;
+    }
+
+    /**
+     * <p>
+     * The type of change to be made to the property if the change is executed.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Add</code> The item will be added.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Remove</code> The item will be removed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Modify</code> The item will be modified.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The type of change to be made to the property if the change is executed.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Add</code> The item will be added.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Remove</code> The item will be removed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Modify</code> The item will be modified.
+     *         </p>
+     *         </li>
+     * @see AttributeChangeType
+     */
+
+    public String getAttributeChangeType() {
+        return this.attributeChangeType;
+    }
+
+    /**
+     * <p>
+     * The type of change to be made to the property if the change is executed.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Add</code> The item will be added.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Remove</code> The item will be removed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Modify</code> The item will be modified.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param attributeChangeType
+     *        The type of change to be made to the property if the change is executed.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Add</code> The item will be added.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Remove</code> The item will be removed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Modify</code> The item will be modified.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AttributeChangeType
+     */
+
+    public ResourceTargetDefinition withAttributeChangeType(String attributeChangeType) {
+        setAttributeChangeType(attributeChangeType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of change to be made to the property if the change is executed.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Add</code> The item will be added.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Remove</code> The item will be removed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Modify</code> The item will be modified.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param attributeChangeType
+     *        The type of change to be made to the property if the change is executed.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Add</code> The item will be added.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Remove</code> The item will be removed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Modify</code> The item will be modified.
+     *        </p>
+     *        </li>
+     * @see AttributeChangeType
+     */
+
+    public void setAttributeChangeType(AttributeChangeType attributeChangeType) {
+        withAttributeChangeType(attributeChangeType);
+    }
+
+    /**
+     * <p>
+     * The type of change to be made to the property if the change is executed.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Add</code> The item will be added.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Remove</code> The item will be removed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Modify</code> The item will be modified.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param attributeChangeType
+     *        The type of change to be made to the property if the change is executed.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Add</code> The item will be added.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Remove</code> The item will be removed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Modify</code> The item will be modified.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AttributeChangeType
+     */
+
+    public ResourceTargetDefinition withAttributeChangeType(AttributeChangeType attributeChangeType) {
+        this.attributeChangeType = attributeChangeType.toString();
         return this;
     }
 
@@ -322,7 +721,15 @@ public class ResourceTargetDefinition implements Serializable, Cloneable {
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getRequiresRecreation() != null)
-            sb.append("RequiresRecreation: ").append(getRequiresRecreation());
+            sb.append("RequiresRecreation: ").append(getRequiresRecreation()).append(",");
+        if (getPath() != null)
+            sb.append("Path: ").append(getPath()).append(",");
+        if (getBeforeValue() != null)
+            sb.append("BeforeValue: ").append(getBeforeValue()).append(",");
+        if (getAfterValue() != null)
+            sb.append("AfterValue: ").append(getAfterValue()).append(",");
+        if (getAttributeChangeType() != null)
+            sb.append("AttributeChangeType: ").append(getAttributeChangeType());
         sb.append("}");
         return sb.toString();
     }
@@ -349,6 +756,22 @@ public class ResourceTargetDefinition implements Serializable, Cloneable {
             return false;
         if (other.getRequiresRecreation() != null && other.getRequiresRecreation().equals(this.getRequiresRecreation()) == false)
             return false;
+        if (other.getPath() == null ^ this.getPath() == null)
+            return false;
+        if (other.getPath() != null && other.getPath().equals(this.getPath()) == false)
+            return false;
+        if (other.getBeforeValue() == null ^ this.getBeforeValue() == null)
+            return false;
+        if (other.getBeforeValue() != null && other.getBeforeValue().equals(this.getBeforeValue()) == false)
+            return false;
+        if (other.getAfterValue() == null ^ this.getAfterValue() == null)
+            return false;
+        if (other.getAfterValue() != null && other.getAfterValue().equals(this.getAfterValue()) == false)
+            return false;
+        if (other.getAttributeChangeType() == null ^ this.getAttributeChangeType() == null)
+            return false;
+        if (other.getAttributeChangeType() != null && other.getAttributeChangeType().equals(this.getAttributeChangeType()) == false)
+            return false;
         return true;
     }
 
@@ -360,6 +783,10 @@ public class ResourceTargetDefinition implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAttribute() == null) ? 0 : getAttribute().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getRequiresRecreation() == null) ? 0 : getRequiresRecreation().hashCode());
+        hashCode = prime * hashCode + ((getPath() == null) ? 0 : getPath().hashCode());
+        hashCode = prime * hashCode + ((getBeforeValue() == null) ? 0 : getBeforeValue().hashCode());
+        hashCode = prime * hashCode + ((getAfterValue() == null) ? 0 : getAfterValue().hashCode());
+        hashCode = prime * hashCode + ((getAttributeChangeType() == null) ? 0 : getAttributeChangeType().hashCode());
         return hashCode;
     }
 

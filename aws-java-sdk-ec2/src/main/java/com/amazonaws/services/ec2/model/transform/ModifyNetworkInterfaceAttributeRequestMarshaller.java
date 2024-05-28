@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -77,6 +77,49 @@ public class ModifyNetworkInterfaceAttributeRequestMarshaller implements
 
         if (modifyNetworkInterfaceAttributeRequest.getSourceDestCheck() != null) {
             request.addParameter("SourceDestCheck.Value", StringUtils.fromBoolean(modifyNetworkInterfaceAttributeRequest.getSourceDestCheck()));
+        }
+
+        EnaSrdSpecification enaSrdSpecification = modifyNetworkInterfaceAttributeRequest.getEnaSrdSpecification();
+        if (enaSrdSpecification != null) {
+
+            if (enaSrdSpecification.getEnaSrdEnabled() != null) {
+                request.addParameter("EnaSrdSpecification.EnaSrdEnabled", StringUtils.fromBoolean(enaSrdSpecification.getEnaSrdEnabled()));
+            }
+
+            EnaSrdUdpSpecification enaSrdUdpSpecification = enaSrdSpecification.getEnaSrdUdpSpecification();
+            if (enaSrdUdpSpecification != null) {
+
+                if (enaSrdUdpSpecification.getEnaSrdUdpEnabled() != null) {
+                    request.addParameter("EnaSrdSpecification.EnaSrdUdpSpecification.EnaSrdUdpEnabled",
+                            StringUtils.fromBoolean(enaSrdUdpSpecification.getEnaSrdUdpEnabled()));
+                }
+            }
+        }
+
+        if (modifyNetworkInterfaceAttributeRequest.getEnablePrimaryIpv6() != null) {
+            request.addParameter("EnablePrimaryIpv6", StringUtils.fromBoolean(modifyNetworkInterfaceAttributeRequest.getEnablePrimaryIpv6()));
+        }
+
+        ConnectionTrackingSpecificationRequest connectionTrackingSpecification = modifyNetworkInterfaceAttributeRequest.getConnectionTrackingSpecification();
+        if (connectionTrackingSpecification != null) {
+
+            if (connectionTrackingSpecification.getTcpEstablishedTimeout() != null) {
+                request.addParameter("ConnectionTrackingSpecification.TcpEstablishedTimeout",
+                        StringUtils.fromInteger(connectionTrackingSpecification.getTcpEstablishedTimeout()));
+            }
+
+            if (connectionTrackingSpecification.getUdpStreamTimeout() != null) {
+                request.addParameter("ConnectionTrackingSpecification.UdpStreamTimeout",
+                        StringUtils.fromInteger(connectionTrackingSpecification.getUdpStreamTimeout()));
+            }
+
+            if (connectionTrackingSpecification.getUdpTimeout() != null) {
+                request.addParameter("ConnectionTrackingSpecification.UdpTimeout", StringUtils.fromInteger(connectionTrackingSpecification.getUdpTimeout()));
+            }
+        }
+
+        if (modifyNetworkInterfaceAttributeRequest.getAssociatePublicIpAddress() != null) {
+            request.addParameter("AssociatePublicIpAddress", StringUtils.fromBoolean(modifyNetworkInterfaceAttributeRequest.getAssociatePublicIpAddress()));
         }
 
         return request;

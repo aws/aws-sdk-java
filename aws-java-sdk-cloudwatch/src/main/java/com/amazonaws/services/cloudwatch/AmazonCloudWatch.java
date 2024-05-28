@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -114,7 +114,10 @@ public interface AmazonCloudWatch {
      * one operation, but you can't delete two composite alarms with one operation.
      * </p>
      * <p>
-     * In the event of an error, no alarms are deleted.
+     * If you specify an incorrect alarm name or make any other error in the operation, no alarms are deleted. To
+     * confirm that alarms were deleted successfully, you can use the <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html"
+     * >DescribeAlarms</a> operation after using <code>DeleteAlarms</code>.
      * </p>
      * <note>
      * <p>
@@ -126,7 +129,7 @@ public interface AmazonCloudWatch {
      * <p>
      * To get out of such a situation, you must break the cycle by changing the rule of one of the composite alarms in
      * the cycle to remove a dependency that creates the cycle. The simplest change to make to break a cycle is to
-     * change the <code>AlarmRule</code> of one of the alarms to <code>False</code>.
+     * change the <code>AlarmRule</code> of one of the alarms to <code>false</code>.
      * </p>
      * <p>
      * Additionally, the evaluation of composite alarms stops if CloudWatch detects a cycle in the evaluation path.
@@ -817,18 +820,24 @@ public interface AmazonCloudWatch {
      * List the specified metrics. You can use the returned metrics with <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
      * or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">
-     * GetMetricStatistics</a> to obtain statistical data.
+     * GetMetricStatistics</a> to get statistical data.
      * </p>
      * <p>
      * Up to 500 results are returned for any one call. To retrieve additional results, use the returned token with
      * subsequent calls.
      * </p>
      * <p>
-     * After you create a metric, allow up to 15 minutes before the metric appears. You can see statistics about the
-     * metric sooner by using <a
+     * After you create a metric, allow up to 15 minutes for the metric to appear. To see metric statistics sooner, use
+     * <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
      * or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">
      * GetMetricStatistics</a>.
+     * </p>
+     * <p>
+     * If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and
+     * view metrics from the linked source accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html"
+     * >CloudWatch cross-account observability</a>.
      * </p>
      * <p>
      * <code>ListMetrics</code> doesn't return information about metrics if those metrics haven't reported data in the
@@ -883,6 +892,11 @@ public interface AmazonCloudWatch {
      * normal values when the metric is graphed.
      * </p>
      * <p>
+     * If you have enabled unified cross-account observability, and this account is a monitoring account, the metric can
+     * be in the same account or a source account. You can specify the account ID in the object you specify in the
+     * <code>SingleMetricAnomalyDetector</code> parameter.
+     * </p>
+     * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Anomaly_Detection.html"
      * >CloudWatch Anomaly Detection</a>.
@@ -923,8 +937,30 @@ public interface AmazonCloudWatch {
      * into ALARM state only when more than one of the underlying metric alarms are in ALARM state.
      * </p>
      * <p>
-     * Currently, the only alarm actions that can be taken by composite alarms are notifying SNS topics.
+     * Composite alarms can take the following actions:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Notify Amazon SNS topics.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Invoke Lambda functions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create OpsItems in Systems Manager Ops Center.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Create incidents in Systems Manager Incident Manager.
+     * </p>
+     * </li>
+     * </ul>
      * <note>
      * <p>
      * It is possible to create a loop or cycle of composite alarms, where composite alarm A depends on composite alarm
@@ -935,7 +971,7 @@ public interface AmazonCloudWatch {
      * <p>
      * To get out of such a situation, you must break the cycle by changing the rule of one of the composite alarms in
      * the cycle to remove a dependency that creates the cycle. The simplest change to make to break a cycle is to
-     * change the <code>AlarmRule</code> of one of the alarms to <code>False</code>.
+     * change the <code>AlarmRule</code> of one of the alarms to <code>false</code>.
      * </p>
      * <p>
      * Additionally, the evaluation of composite alarms stops if CloudWatch detects a cycle in the evaluation path.
@@ -1055,8 +1091,11 @@ public interface AmazonCloudWatch {
 
     /**
      * <p>
-     * Creates or updates an alarm and associates it with the specified metric, metric math expression, or anomaly
-     * detection model.
+     * Creates or updates an alarm and associates it with the specified metric, metric math expression, anomaly
+     * detection model, or Metrics Insights query. For more information about using a Metrics Insights query for an
+     * alarm, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create
+     * alarms on Metrics Insights queries</a>.
      * </p>
      * <p>
      * Alarms based on anomaly detection models cannot have Auto Scaling actions.
@@ -1076,12 +1115,13 @@ public interface AmazonCloudWatch {
      * <ul>
      * <li>
      * <p>
-     * The <code>iam:CreateServiceLinkedRole</code> for all alarms with EC2 actions
+     * The <code>iam:CreateServiceLinkedRole</code> permission for all alarms with EC2 actions
      * </p>
      * </li>
      * <li>
      * <p>
-     * The <code>iam:CreateServiceLinkedRole</code> to create an alarm with Systems Manager OpsItem actions.
+     * The <code>iam:CreateServiceLinkedRole</code> permissions to create an alarm with Systems Manager OpsItem or
+     * response plan actions.
      * </p>
      * </li>
      * </ul>
@@ -1092,6 +1132,9 @@ public interface AmazonCloudWatch {
      * <code>AWSServiceRoleForCloudWatchAlarms_ActionSSM</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role"
      * >Amazon Web Services service-linked role</a>.
+     * </p>
+     * <p>
+     * Each <code>PutMetricAlarm</code> action has a maximum uncompressed payload of 120 KB.
      * </p>
      * <p>
      * <b>Cross-account alarms</b>
@@ -1143,7 +1186,7 @@ public interface AmazonCloudWatch {
      * <p>
      * You can publish either individual data points in the <code>Value</code> field, or arrays of values and the number
      * of times each value occurred during the period by using the <code>Values</code> and <code>Counts</code> fields in
-     * the <code>MetricDatum</code> structure. Using the <code>Values</code> and <code>Counts</code> method enables you
+     * the <code>MetricData</code> structure. Using the <code>Values</code> and <code>Counts</code> method enables you
      * to publish up to 150 values per metric with one <code>PutMetricData</code> request, and supports retrieving
      * percentile statistics on this data.
      * </p>
@@ -1214,7 +1257,7 @@ public interface AmazonCloudWatch {
     /**
      * <p>
      * Creates or updates a metric stream. Metric streams can automatically stream CloudWatch metrics to Amazon Web
-     * Services destinations including Amazon S3 and to many third-party solutions.
+     * Services destinations, including Amazon S3, and to many third-party solutions.
      * </p>
      * <p>
      * For more information, see <a
@@ -1222,7 +1265,7 @@ public interface AmazonCloudWatch {
      * Metric Streams</a>.
      * </p>
      * <p>
-     * To create a metric stream, you must be logged on to an account that has the <code>iam:PassRole</code> permission
+     * To create a metric stream, you must be signed in to an account that has the <code>iam:PassRole</code> permission
      * and either the <code>CloudWatchFullAccess</code> policy or the <code>cloudwatch:PutMetricStream</code>
      * permission.
      * </p>
@@ -1250,13 +1293,19 @@ public interface AmazonCloudWatch {
      * <p>
      * By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and
      * <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use the
-     * <code>StatisticsConfigurations</code> parameter to have the metric stream also send additional statistics in the
+     * <code>StatisticsConfigurations</code> parameter to have the metric stream send additional statistics in the
      * stream. Streaming additional statistics incurs additional costs. For more information, see <a
      * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
      * </p>
      * <p>
      * When you use <code>PutMetricStream</code> to create a new metric stream, the stream is created in the
      * <code>running</code> state. If you use it to update an existing stream, the state of the stream is not changed.
+     * </p>
+     * <p>
+     * If you are using CloudWatch cross-account observability and you create a metric stream in a monitoring account,
+     * you can choose whether to include metrics from source accounts in the stream. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html"
+     * >CloudWatch cross-account observability</a>.
      * </p>
      * 
      * @param putMetricStreamRequest

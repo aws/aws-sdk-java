@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,25 @@ public class GetComponentVersionArtifactRequest extends com.amazonaws.AmazonWebS
      * </p>
      */
     private String artifactName;
+    /**
+     * <p>
+     * Specifies the endpoint to use when getting Amazon S3 pre-signed URLs.
+     * </p>
+     * <p>
+     * All Amazon Web Services Regions except US East (N. Virginia) use <code>REGIONAL</code> in all cases. In the US
+     * East (N. Virginia) Region the default is <code>GLOBAL</code>, but you can change it to <code>REGIONAL</code> with
+     * this parameter.
+     * </p>
+     */
+    private String s3EndpointType;
+    /**
+     * <p>
+     * Determines if the Amazon S3 URL returned is a FIPS pre-signed URL endpoint. Specify <code>fips</code> if you want
+     * the returned Amazon S3 pre-signed URL to point to an Amazon S3 FIPS endpoint. If you don't specify a value, the
+     * default is <code>standard</code>.
+     * </p>
+     */
+    private String iotEndpointType;
 
     /**
      * <p>
@@ -172,6 +191,176 @@ public class GetComponentVersionArtifactRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * Specifies the endpoint to use when getting Amazon S3 pre-signed URLs.
+     * </p>
+     * <p>
+     * All Amazon Web Services Regions except US East (N. Virginia) use <code>REGIONAL</code> in all cases. In the US
+     * East (N. Virginia) Region the default is <code>GLOBAL</code>, but you can change it to <code>REGIONAL</code> with
+     * this parameter.
+     * </p>
+     * 
+     * @param s3EndpointType
+     *        Specifies the endpoint to use when getting Amazon S3 pre-signed URLs.</p>
+     *        <p>
+     *        All Amazon Web Services Regions except US East (N. Virginia) use <code>REGIONAL</code> in all cases. In
+     *        the US East (N. Virginia) Region the default is <code>GLOBAL</code>, but you can change it to
+     *        <code>REGIONAL</code> with this parameter.
+     * @see S3EndpointType
+     */
+
+    public void setS3EndpointType(String s3EndpointType) {
+        this.s3EndpointType = s3EndpointType;
+    }
+
+    /**
+     * <p>
+     * Specifies the endpoint to use when getting Amazon S3 pre-signed URLs.
+     * </p>
+     * <p>
+     * All Amazon Web Services Regions except US East (N. Virginia) use <code>REGIONAL</code> in all cases. In the US
+     * East (N. Virginia) Region the default is <code>GLOBAL</code>, but you can change it to <code>REGIONAL</code> with
+     * this parameter.
+     * </p>
+     * 
+     * @return Specifies the endpoint to use when getting Amazon S3 pre-signed URLs.</p>
+     *         <p>
+     *         All Amazon Web Services Regions except US East (N. Virginia) use <code>REGIONAL</code> in all cases. In
+     *         the US East (N. Virginia) Region the default is <code>GLOBAL</code>, but you can change it to
+     *         <code>REGIONAL</code> with this parameter.
+     * @see S3EndpointType
+     */
+
+    public String getS3EndpointType() {
+        return this.s3EndpointType;
+    }
+
+    /**
+     * <p>
+     * Specifies the endpoint to use when getting Amazon S3 pre-signed URLs.
+     * </p>
+     * <p>
+     * All Amazon Web Services Regions except US East (N. Virginia) use <code>REGIONAL</code> in all cases. In the US
+     * East (N. Virginia) Region the default is <code>GLOBAL</code>, but you can change it to <code>REGIONAL</code> with
+     * this parameter.
+     * </p>
+     * 
+     * @param s3EndpointType
+     *        Specifies the endpoint to use when getting Amazon S3 pre-signed URLs.</p>
+     *        <p>
+     *        All Amazon Web Services Regions except US East (N. Virginia) use <code>REGIONAL</code> in all cases. In
+     *        the US East (N. Virginia) Region the default is <code>GLOBAL</code>, but you can change it to
+     *        <code>REGIONAL</code> with this parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see S3EndpointType
+     */
+
+    public GetComponentVersionArtifactRequest withS3EndpointType(String s3EndpointType) {
+        setS3EndpointType(s3EndpointType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the endpoint to use when getting Amazon S3 pre-signed URLs.
+     * </p>
+     * <p>
+     * All Amazon Web Services Regions except US East (N. Virginia) use <code>REGIONAL</code> in all cases. In the US
+     * East (N. Virginia) Region the default is <code>GLOBAL</code>, but you can change it to <code>REGIONAL</code> with
+     * this parameter.
+     * </p>
+     * 
+     * @param s3EndpointType
+     *        Specifies the endpoint to use when getting Amazon S3 pre-signed URLs.</p>
+     *        <p>
+     *        All Amazon Web Services Regions except US East (N. Virginia) use <code>REGIONAL</code> in all cases. In
+     *        the US East (N. Virginia) Region the default is <code>GLOBAL</code>, but you can change it to
+     *        <code>REGIONAL</code> with this parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see S3EndpointType
+     */
+
+    public GetComponentVersionArtifactRequest withS3EndpointType(S3EndpointType s3EndpointType) {
+        this.s3EndpointType = s3EndpointType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Determines if the Amazon S3 URL returned is a FIPS pre-signed URL endpoint. Specify <code>fips</code> if you want
+     * the returned Amazon S3 pre-signed URL to point to an Amazon S3 FIPS endpoint. If you don't specify a value, the
+     * default is <code>standard</code>.
+     * </p>
+     * 
+     * @param iotEndpointType
+     *        Determines if the Amazon S3 URL returned is a FIPS pre-signed URL endpoint. Specify <code>fips</code> if
+     *        you want the returned Amazon S3 pre-signed URL to point to an Amazon S3 FIPS endpoint. If you don't
+     *        specify a value, the default is <code>standard</code>.
+     * @see IotEndpointType
+     */
+
+    public void setIotEndpointType(String iotEndpointType) {
+        this.iotEndpointType = iotEndpointType;
+    }
+
+    /**
+     * <p>
+     * Determines if the Amazon S3 URL returned is a FIPS pre-signed URL endpoint. Specify <code>fips</code> if you want
+     * the returned Amazon S3 pre-signed URL to point to an Amazon S3 FIPS endpoint. If you don't specify a value, the
+     * default is <code>standard</code>.
+     * </p>
+     * 
+     * @return Determines if the Amazon S3 URL returned is a FIPS pre-signed URL endpoint. Specify <code>fips</code> if
+     *         you want the returned Amazon S3 pre-signed URL to point to an Amazon S3 FIPS endpoint. If you don't
+     *         specify a value, the default is <code>standard</code>.
+     * @see IotEndpointType
+     */
+
+    public String getIotEndpointType() {
+        return this.iotEndpointType;
+    }
+
+    /**
+     * <p>
+     * Determines if the Amazon S3 URL returned is a FIPS pre-signed URL endpoint. Specify <code>fips</code> if you want
+     * the returned Amazon S3 pre-signed URL to point to an Amazon S3 FIPS endpoint. If you don't specify a value, the
+     * default is <code>standard</code>.
+     * </p>
+     * 
+     * @param iotEndpointType
+     *        Determines if the Amazon S3 URL returned is a FIPS pre-signed URL endpoint. Specify <code>fips</code> if
+     *        you want the returned Amazon S3 pre-signed URL to point to an Amazon S3 FIPS endpoint. If you don't
+     *        specify a value, the default is <code>standard</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IotEndpointType
+     */
+
+    public GetComponentVersionArtifactRequest withIotEndpointType(String iotEndpointType) {
+        setIotEndpointType(iotEndpointType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Determines if the Amazon S3 URL returned is a FIPS pre-signed URL endpoint. Specify <code>fips</code> if you want
+     * the returned Amazon S3 pre-signed URL to point to an Amazon S3 FIPS endpoint. If you don't specify a value, the
+     * default is <code>standard</code>.
+     * </p>
+     * 
+     * @param iotEndpointType
+     *        Determines if the Amazon S3 URL returned is a FIPS pre-signed URL endpoint. Specify <code>fips</code> if
+     *        you want the returned Amazon S3 pre-signed URL to point to an Amazon S3 FIPS endpoint. If you don't
+     *        specify a value, the default is <code>standard</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IotEndpointType
+     */
+
+    public GetComponentVersionArtifactRequest withIotEndpointType(IotEndpointType iotEndpointType) {
+        this.iotEndpointType = iotEndpointType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -186,7 +375,11 @@ public class GetComponentVersionArtifactRequest extends com.amazonaws.AmazonWebS
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getArtifactName() != null)
-            sb.append("ArtifactName: ").append(getArtifactName());
+            sb.append("ArtifactName: ").append(getArtifactName()).append(",");
+        if (getS3EndpointType() != null)
+            sb.append("S3EndpointType: ").append(getS3EndpointType()).append(",");
+        if (getIotEndpointType() != null)
+            sb.append("IotEndpointType: ").append(getIotEndpointType());
         sb.append("}");
         return sb.toString();
     }
@@ -209,6 +402,14 @@ public class GetComponentVersionArtifactRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getArtifactName() != null && other.getArtifactName().equals(this.getArtifactName()) == false)
             return false;
+        if (other.getS3EndpointType() == null ^ this.getS3EndpointType() == null)
+            return false;
+        if (other.getS3EndpointType() != null && other.getS3EndpointType().equals(this.getS3EndpointType()) == false)
+            return false;
+        if (other.getIotEndpointType() == null ^ this.getIotEndpointType() == null)
+            return false;
+        if (other.getIotEndpointType() != null && other.getIotEndpointType().equals(this.getIotEndpointType()) == false)
+            return false;
         return true;
     }
 
@@ -219,6 +420,8 @@ public class GetComponentVersionArtifactRequest extends com.amazonaws.AmazonWebS
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getArtifactName() == null) ? 0 : getArtifactName().hashCode());
+        hashCode = prime * hashCode + ((getS3EndpointType() == null) ? 0 : getS3EndpointType().hashCode());
+        hashCode = prime * hashCode + ((getIotEndpointType() == null) ? 0 : getIotEndpointType().hashCode());
         return hashCode;
     }
 

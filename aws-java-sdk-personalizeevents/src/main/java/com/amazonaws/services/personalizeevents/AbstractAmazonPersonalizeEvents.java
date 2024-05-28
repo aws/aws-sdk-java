@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,16 @@ import com.amazonaws.*;
 public class AbstractAmazonPersonalizeEvents implements AmazonPersonalizeEvents {
 
     protected AbstractAmazonPersonalizeEvents() {
+    }
+
+    @Override
+    public PutActionInteractionsResult putActionInteractions(PutActionInteractionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutActionsResult putActions(PutActionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

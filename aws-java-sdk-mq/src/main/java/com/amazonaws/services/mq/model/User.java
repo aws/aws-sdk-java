@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A user associated with the broker. For RabbitMQ brokers, one and only one administrative user is accepted and created
- * when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to
- * brokers or via the RabbitMQ web console.
+ * A user associated with the broker. For Amazon MQ for RabbitMQ brokers, one and only one administrative user is
+ * accepted and created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ
+ * API calls directly to brokers or via the RabbitMQ web console.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/User" target="_top">AWS API Documentation</a>
@@ -52,19 +52,38 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     private String password;
     /**
      * <p>
-     * important><title>Amazon MQ for ActiveMQ</title> <para>For ActiveMQ brokers, this value can contain only
-     * alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters
-     * long.
+     * The username of the broker user. The following restrictions apply to broker usernames:
      * </p>
-     * /important> <important><title>Amazon MQ for RabbitMQ</title>
+     * <ul>
+     * <li>
      * <p>
-     * For RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _).
-     * This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value
-     * must be 2-100 characters long.
+     * For Amazon MQ for ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods,
+     * underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
      * </p>
-     * </important></para>
+     * </li>
+     * <li>
+     * <p>
+     * para>For Amazon MQ for RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods,
+     * underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid
+     * usename. This value must be 2-100 characters long.
+     * </p>
+     * </para></li>
+     * </ul>
+     * <important>
+     * <p>
+     * Do not add personally identifiable information (PII) or other confidential or sensitive information in broker
+     * usernames. Broker usernames are accessible to other Amazon Web Services services, including CloudWatch Logs.
+     * Broker usernames are not intended to be used for private or sensitive data.
+     * </p>
+     * </important>
      */
     private String username;
+    /**
+     * <p>
+     * Defines if this user is intended for CRDR replication purposes.
+     * </p>
+     */
+    private Boolean replicationUser;
 
     /**
      * <p>
@@ -252,28 +271,54 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * important><title>Amazon MQ for ActiveMQ</title> <para>For ActiveMQ brokers, this value can contain only
-     * alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters
-     * long.
+     * The username of the broker user. The following restrictions apply to broker usernames:
      * </p>
-     * /important> <important><title>Amazon MQ for RabbitMQ</title>
+     * <ul>
+     * <li>
      * <p>
-     * For RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _).
-     * This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value
-     * must be 2-100 characters long.
+     * For Amazon MQ for ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods,
+     * underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
      * </p>
-     * </important></para>
+     * </li>
+     * <li>
+     * <p>
+     * para>For Amazon MQ for RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods,
+     * underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid
+     * usename. This value must be 2-100 characters long.
+     * </p>
+     * </para></li>
+     * </ul>
+     * <important>
+     * <p>
+     * Do not add personally identifiable information (PII) or other confidential or sensitive information in broker
+     * usernames. Broker usernames are accessible to other Amazon Web Services services, including CloudWatch Logs.
+     * Broker usernames are not intended to be used for private or sensitive data.
+     * </p>
+     * </important>
      * 
      * @param username
-     *        important><title>Amazon MQ for ActiveMQ</title> <para>For ActiveMQ brokers, this value can contain only
-     *        alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100
-     *        characters long.</p>/important> <important><title>Amazon MQ for RabbitMQ</title>
+     *        The username of the broker user. The following restrictions apply to broker usernames:</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        For RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (-
-     *        . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid
-     *        usename. This value must be 2-100 characters long.
+     *        For Amazon MQ for ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods,
+     *        underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
      *        </p>
-     *        </important>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        para>For Amazon MQ for RabbitMQ brokers, this value can contain only alphanumeric characters, dashes,
+     *        periods, underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using
+     *        guest as a valid usename. This value must be 2-100 characters long.
+     *        </p>
+     *        </para></li>
+     *        </ul>
+     *        <important>
+     *        <p>
+     *        Do not add personally identifiable information (PII) or other confidential or sensitive information in
+     *        broker usernames. Broker usernames are accessible to other Amazon Web Services services, including
+     *        CloudWatch Logs. Broker usernames are not intended to be used for private or sensitive data.
+     *        </p>
      */
 
     public void setUsername(String username) {
@@ -282,27 +327,53 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * important><title>Amazon MQ for ActiveMQ</title> <para>For ActiveMQ brokers, this value can contain only
-     * alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters
-     * long.
+     * The username of the broker user. The following restrictions apply to broker usernames:
      * </p>
-     * /important> <important><title>Amazon MQ for RabbitMQ</title>
+     * <ul>
+     * <li>
      * <p>
-     * For RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _).
-     * This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value
-     * must be 2-100 characters long.
+     * For Amazon MQ for ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods,
+     * underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
      * </p>
-     * </important></para>
+     * </li>
+     * <li>
+     * <p>
+     * para>For Amazon MQ for RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods,
+     * underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid
+     * usename. This value must be 2-100 characters long.
+     * </p>
+     * </para></li>
+     * </ul>
+     * <important>
+     * <p>
+     * Do not add personally identifiable information (PII) or other confidential or sensitive information in broker
+     * usernames. Broker usernames are accessible to other Amazon Web Services services, including CloudWatch Logs.
+     * Broker usernames are not intended to be used for private or sensitive data.
+     * </p>
+     * </important>
      * 
-     * @return important><title>Amazon MQ for ActiveMQ</title> <para>For ActiveMQ brokers, this value can contain only
-     *         alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100
-     *         characters long.</p>/important> <important><title>Amazon MQ for RabbitMQ</title>
+     * @return The username of the broker user. The following restrictions apply to broker usernames:</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         For RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores
-     *         (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid
-     *         usename. This value must be 2-100 characters long.
+     *         For Amazon MQ for ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods,
+     *         underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
      *         </p>
-     *         </important>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         para>For Amazon MQ for RabbitMQ brokers, this value can contain only alphanumeric characters, dashes,
+     *         periods, underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using
+     *         guest as a valid usename. This value must be 2-100 characters long.
+     *         </p>
+     *         </para></li>
+     *         </ul>
+     *         <important>
+     *         <p>
+     *         Do not add personally identifiable information (PII) or other confidential or sensitive information in
+     *         broker usernames. Broker usernames are accessible to other Amazon Web Services services, including
+     *         CloudWatch Logs. Broker usernames are not intended to be used for private or sensitive data.
+     *         </p>
      */
 
     public String getUsername() {
@@ -311,34 +382,112 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * important><title>Amazon MQ for ActiveMQ</title> <para>For ActiveMQ brokers, this value can contain only
-     * alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters
-     * long.
+     * The username of the broker user. The following restrictions apply to broker usernames:
      * </p>
-     * /important> <important><title>Amazon MQ for RabbitMQ</title>
+     * <ul>
+     * <li>
      * <p>
-     * For RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (- . _).
-     * This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid usename. This value
-     * must be 2-100 characters long.
+     * For Amazon MQ for ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods,
+     * underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
      * </p>
-     * </important></para>
+     * </li>
+     * <li>
+     * <p>
+     * para>For Amazon MQ for RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods,
+     * underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid
+     * usename. This value must be 2-100 characters long.
+     * </p>
+     * </para></li>
+     * </ul>
+     * <important>
+     * <p>
+     * Do not add personally identifiable information (PII) or other confidential or sensitive information in broker
+     * usernames. Broker usernames are accessible to other Amazon Web Services services, including CloudWatch Logs.
+     * Broker usernames are not intended to be used for private or sensitive data.
+     * </p>
+     * </important>
      * 
      * @param username
-     *        important><title>Amazon MQ for ActiveMQ</title> <para>For ActiveMQ brokers, this value can contain only
-     *        alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100
-     *        characters long.</p>/important> <important><title>Amazon MQ for RabbitMQ</title>
+     *        The username of the broker user. The following restrictions apply to broker usernames:</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        For RabbitMQ brokers, this value can contain only alphanumeric characters, dashes, periods, underscores (-
-     *        . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using guest as a valid
-     *        usename. This value must be 2-100 characters long.
+     *        For Amazon MQ for ActiveMQ brokers, this value can contain only alphanumeric characters, dashes, periods,
+     *        underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
      *        </p>
-     *        </important>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        para>For Amazon MQ for RabbitMQ brokers, this value can contain only alphanumeric characters, dashes,
+     *        periods, underscores (- . _). This value must not contain a tilde (~) character. Amazon MQ prohibts using
+     *        guest as a valid usename. This value must be 2-100 characters long.
+     *        </p>
+     *        </para></li>
+     *        </ul>
+     *        <important>
+     *        <p>
+     *        Do not add personally identifiable information (PII) or other confidential or sensitive information in
+     *        broker usernames. Broker usernames are accessible to other Amazon Web Services services, including
+     *        CloudWatch Logs. Broker usernames are not intended to be used for private or sensitive data.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public User withUsername(String username) {
         setUsername(username);
         return this;
+    }
+
+    /**
+     * <p>
+     * Defines if this user is intended for CRDR replication purposes.
+     * </p>
+     * 
+     * @param replicationUser
+     *        Defines if this user is intended for CRDR replication purposes.
+     */
+
+    public void setReplicationUser(Boolean replicationUser) {
+        this.replicationUser = replicationUser;
+    }
+
+    /**
+     * <p>
+     * Defines if this user is intended for CRDR replication purposes.
+     * </p>
+     * 
+     * @return Defines if this user is intended for CRDR replication purposes.
+     */
+
+    public Boolean getReplicationUser() {
+        return this.replicationUser;
+    }
+
+    /**
+     * <p>
+     * Defines if this user is intended for CRDR replication purposes.
+     * </p>
+     * 
+     * @param replicationUser
+     *        Defines if this user is intended for CRDR replication purposes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public User withReplicationUser(Boolean replicationUser) {
+        setReplicationUser(replicationUser);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Defines if this user is intended for CRDR replication purposes.
+     * </p>
+     * 
+     * @return Defines if this user is intended for CRDR replication purposes.
+     */
+
+    public Boolean isReplicationUser() {
+        return this.replicationUser;
     }
 
     /**
@@ -360,7 +509,9 @@ public class User implements Serializable, Cloneable, StructuredPojo {
         if (getPassword() != null)
             sb.append("Password: ").append(getPassword()).append(",");
         if (getUsername() != null)
-            sb.append("Username: ").append(getUsername());
+            sb.append("Username: ").append(getUsername()).append(",");
+        if (getReplicationUser() != null)
+            sb.append("ReplicationUser: ").append(getReplicationUser());
         sb.append("}");
         return sb.toString();
     }
@@ -391,6 +542,10 @@ public class User implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getUsername() != null && other.getUsername().equals(this.getUsername()) == false)
             return false;
+        if (other.getReplicationUser() == null ^ this.getReplicationUser() == null)
+            return false;
+        if (other.getReplicationUser() != null && other.getReplicationUser().equals(this.getReplicationUser()) == false)
+            return false;
         return true;
     }
 
@@ -403,6 +558,7 @@ public class User implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getGroups() == null) ? 0 : getGroups().hashCode());
         hashCode = prime * hashCode + ((getPassword() == null) ? 0 : getPassword().hashCode());
         hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
+        hashCode = prime * hashCode + ((getReplicationUser() == null) ? 0 : getReplicationUser().hashCode());
         return hashCode;
     }
 

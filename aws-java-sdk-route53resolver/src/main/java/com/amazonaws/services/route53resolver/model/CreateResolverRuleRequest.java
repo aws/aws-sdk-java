@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,8 +68,8 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
     private String domainName;
     /**
      * <p>
-     * The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4 addresses. Separate IP
-     * addresses with a space.
+     * The IPs that you want Resolver to forward DNS queries to. You can specify either Ipv4 or Ipv6 addresses but not
+     * both in the same rule. Separate IP addresses with a space.
      * </p>
      * <p>
      * <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.
@@ -402,15 +402,15 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4 addresses. Separate IP
-     * addresses with a space.
+     * The IPs that you want Resolver to forward DNS queries to. You can specify either Ipv4 or Ipv6 addresses but not
+     * both in the same rule. Separate IP addresses with a space.
      * </p>
      * <p>
      * <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.
      * </p>
      * 
-     * @return The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4 addresses. Separate
-     *         IP addresses with a space.</p>
+     * @return The IPs that you want Resolver to forward DNS queries to. You can specify either Ipv4 or Ipv6 addresses
+     *         but not both in the same rule. Separate IP addresses with a space.</p>
      *         <p>
      *         <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.
      */
@@ -421,16 +421,16 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4 addresses. Separate IP
-     * addresses with a space.
+     * The IPs that you want Resolver to forward DNS queries to. You can specify either Ipv4 or Ipv6 addresses but not
+     * both in the same rule. Separate IP addresses with a space.
      * </p>
      * <p>
      * <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.
      * </p>
      * 
      * @param targetIps
-     *        The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4 addresses. Separate IP
-     *        addresses with a space.</p>
+     *        The IPs that you want Resolver to forward DNS queries to. You can specify either Ipv4 or Ipv6 addresses
+     *        but not both in the same rule. Separate IP addresses with a space.</p>
      *        <p>
      *        <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.
      */
@@ -446,8 +446,8 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4 addresses. Separate IP
-     * addresses with a space.
+     * The IPs that you want Resolver to forward DNS queries to. You can specify either Ipv4 or Ipv6 addresses but not
+     * both in the same rule. Separate IP addresses with a space.
      * </p>
      * <p>
      * <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.
@@ -459,8 +459,8 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param targetIps
-     *        The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4 addresses. Separate IP
-     *        addresses with a space.</p>
+     *        The IPs that you want Resolver to forward DNS queries to. You can specify either Ipv4 or Ipv6 addresses
+     *        but not both in the same rule. Separate IP addresses with a space.</p>
      *        <p>
      *        <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -478,16 +478,16 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4 addresses. Separate IP
-     * addresses with a space.
+     * The IPs that you want Resolver to forward DNS queries to. You can specify either Ipv4 or Ipv6 addresses but not
+     * both in the same rule. Separate IP addresses with a space.
      * </p>
      * <p>
      * <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.
      * </p>
      * 
      * @param targetIps
-     *        The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4 addresses. Separate IP
-     *        addresses with a space.</p>
+     *        The IPs that you want Resolver to forward DNS queries to. You can specify either Ipv4 or Ipv6 addresses
+     *        but not both in the same rule. Separate IP addresses with a space.</p>
      *        <p>
      *        <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.
      * @return Returns a reference to this object so that method calls can be chained together.

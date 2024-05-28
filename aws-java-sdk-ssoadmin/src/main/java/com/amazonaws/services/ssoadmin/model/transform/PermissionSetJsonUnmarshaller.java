@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,14 @@ public class PermissionSetJsonUnmarshaller implements Unmarshaller<PermissionSet
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("CreatedDate", targetDepth)) {
+                    context.nextToken();
+                    permissionSet.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("Description", targetDepth)) {
+                    context.nextToken();
+                    permissionSet.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
                     permissionSet.setName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -56,21 +64,13 @@ public class PermissionSetJsonUnmarshaller implements Unmarshaller<PermissionSet
                     context.nextToken();
                     permissionSet.setPermissionSetArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("Description", targetDepth)) {
+                if (context.testExpression("RelayState", targetDepth)) {
                     context.nextToken();
-                    permissionSet.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("CreatedDate", targetDepth)) {
-                    context.nextToken();
-                    permissionSet.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    permissionSet.setRelayState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SessionDuration", targetDepth)) {
                     context.nextToken();
                     permissionSet.setSessionDuration(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("RelayState", targetDepth)) {
-                    context.nextToken();
-                    permissionSet.setRelayState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

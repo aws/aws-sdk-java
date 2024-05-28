@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,8 @@ public class EndpointInputConfiguration implements Serializable, Cloneable, Stru
      * </p>
      */
     private String instanceType;
+
+    private ProductionVariantServerlessConfig serverlessConfig;
     /**
      * <p>
      * The inference specification name in the model package version.
@@ -103,6 +105,32 @@ public class EndpointInputConfiguration implements Serializable, Cloneable, Stru
 
     public EndpointInputConfiguration withInstanceType(ProductionVariantInstanceType instanceType) {
         this.instanceType = instanceType.toString();
+        return this;
+    }
+
+    /**
+     * @param serverlessConfig
+     */
+
+    public void setServerlessConfig(ProductionVariantServerlessConfig serverlessConfig) {
+        this.serverlessConfig = serverlessConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public ProductionVariantServerlessConfig getServerlessConfig() {
+        return this.serverlessConfig;
+    }
+
+    /**
+     * @param serverlessConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EndpointInputConfiguration withServerlessConfig(ProductionVariantServerlessConfig serverlessConfig) {
+        setServerlessConfig(serverlessConfig);
         return this;
     }
 
@@ -200,6 +228,8 @@ public class EndpointInputConfiguration implements Serializable, Cloneable, Stru
         sb.append("{");
         if (getInstanceType() != null)
             sb.append("InstanceType: ").append(getInstanceType()).append(",");
+        if (getServerlessConfig() != null)
+            sb.append("ServerlessConfig: ").append(getServerlessConfig()).append(",");
         if (getInferenceSpecificationName() != null)
             sb.append("InferenceSpecificationName: ").append(getInferenceSpecificationName()).append(",");
         if (getEnvironmentParameterRanges() != null)
@@ -222,6 +252,10 @@ public class EndpointInputConfiguration implements Serializable, Cloneable, Stru
             return false;
         if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
+        if (other.getServerlessConfig() == null ^ this.getServerlessConfig() == null)
+            return false;
+        if (other.getServerlessConfig() != null && other.getServerlessConfig().equals(this.getServerlessConfig()) == false)
+            return false;
         if (other.getInferenceSpecificationName() == null ^ this.getInferenceSpecificationName() == null)
             return false;
         if (other.getInferenceSpecificationName() != null && other.getInferenceSpecificationName().equals(this.getInferenceSpecificationName()) == false)
@@ -239,6 +273,7 @@ public class EndpointInputConfiguration implements Serializable, Cloneable, Stru
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getServerlessConfig() == null) ? 0 : getServerlessConfig().hashCode());
         hashCode = prime * hashCode + ((getInferenceSpecificationName() == null) ? 0 : getInferenceSpecificationName().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentParameterRanges() == null) ? 0 : getEnvironmentParameterRanges().hashCode());
         return hashCode;

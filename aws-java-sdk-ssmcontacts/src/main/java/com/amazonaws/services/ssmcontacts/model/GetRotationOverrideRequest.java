@@ -1,0 +1,177 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.ssmcontacts.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+import com.amazonaws.AmazonWebServiceRequest;
+
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/GetRotationOverride" target="_top">AWS
+ *      API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class GetRotationOverrideRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the overridden rotation to retrieve information about.
+     * </p>
+     */
+    private String rotationId;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the on-call rotation override to retrieve information about.
+     * </p>
+     */
+    private String rotationOverrideId;
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the overridden rotation to retrieve information about.
+     * </p>
+     * 
+     * @param rotationId
+     *        The Amazon Resource Name (ARN) of the overridden rotation to retrieve information about.
+     */
+
+    public void setRotationId(String rotationId) {
+        this.rotationId = rotationId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the overridden rotation to retrieve information about.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the overridden rotation to retrieve information about.
+     */
+
+    public String getRotationId() {
+        return this.rotationId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the overridden rotation to retrieve information about.
+     * </p>
+     * 
+     * @param rotationId
+     *        The Amazon Resource Name (ARN) of the overridden rotation to retrieve information about.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetRotationOverrideRequest withRotationId(String rotationId) {
+        setRotationId(rotationId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the on-call rotation override to retrieve information about.
+     * </p>
+     * 
+     * @param rotationOverrideId
+     *        The Amazon Resource Name (ARN) of the on-call rotation override to retrieve information about.
+     */
+
+    public void setRotationOverrideId(String rotationOverrideId) {
+        this.rotationOverrideId = rotationOverrideId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the on-call rotation override to retrieve information about.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the on-call rotation override to retrieve information about.
+     */
+
+    public String getRotationOverrideId() {
+        return this.rotationOverrideId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the on-call rotation override to retrieve information about.
+     * </p>
+     * 
+     * @param rotationOverrideId
+     *        The Amazon Resource Name (ARN) of the on-call rotation override to retrieve information about.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetRotationOverrideRequest withRotationOverrideId(String rotationOverrideId) {
+        setRotationOverrideId(rotationOverrideId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getRotationId() != null)
+            sb.append("RotationId: ").append(getRotationId()).append(",");
+        if (getRotationOverrideId() != null)
+            sb.append("RotationOverrideId: ").append(getRotationOverrideId());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof GetRotationOverrideRequest == false)
+            return false;
+        GetRotationOverrideRequest other = (GetRotationOverrideRequest) obj;
+        if (other.getRotationId() == null ^ this.getRotationId() == null)
+            return false;
+        if (other.getRotationId() != null && other.getRotationId().equals(this.getRotationId()) == false)
+            return false;
+        if (other.getRotationOverrideId() == null ^ this.getRotationOverrideId() == null)
+            return false;
+        if (other.getRotationOverrideId() != null && other.getRotationOverrideId().equals(this.getRotationOverrideId()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getRotationId() == null) ? 0 : getRotationId().hashCode());
+        hashCode = prime * hashCode + ((getRotationOverrideId() == null) ? 0 : getRotationOverrideId().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public GetRotationOverrideRequest clone() {
+        return (GetRotationOverrideRequest) super.clone();
+    }
+
+}

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,18 +30,18 @@ public class Characters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of characters present in the input text document as processed by Comprehend Medical.
+     * The number of characters present in the input text document as processed by Amazon Comprehend Medical.
      * </p>
      */
     private Integer originalTextCharacters;
 
     /**
      * <p>
-     * The number of characters present in the input text document as processed by Comprehend Medical.
+     * The number of characters present in the input text document as processed by Amazon Comprehend Medical.
      * </p>
      * 
      * @param originalTextCharacters
-     *        The number of characters present in the input text document as processed by Comprehend Medical.
+     *        The number of characters present in the input text document as processed by Amazon Comprehend Medical.
      */
 
     public void setOriginalTextCharacters(Integer originalTextCharacters) {
@@ -50,10 +50,10 @@ public class Characters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of characters present in the input text document as processed by Comprehend Medical.
+     * The number of characters present in the input text document as processed by Amazon Comprehend Medical.
      * </p>
      * 
-     * @return The number of characters present in the input text document as processed by Comprehend Medical.
+     * @return The number of characters present in the input text document as processed by Amazon Comprehend Medical.
      */
 
     public Integer getOriginalTextCharacters() {
@@ -62,11 +62,11 @@ public class Characters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of characters present in the input text document as processed by Comprehend Medical.
+     * The number of characters present in the input text document as processed by Amazon Comprehend Medical.
      * </p>
      * 
      * @param originalTextCharacters
-     *        The number of characters present in the input text document as processed by Comprehend Medical.
+     *        The number of characters present in the input text document as processed by Amazon Comprehend Medical.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,24 +50,44 @@ public class MediaPlacement implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The turn control URL.
      * </p>
+     * <important>
+     * <p>
+     * <b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b>
+     * </p>
+     * </important>
      */
     private String turnControlUrl;
     /**
      * <p>
      * The screen data URL.
      * </p>
+     * <important>
+     * <p>
+     * <b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b>
+     * </p>
+     * </important>
      */
     private String screenDataUrl;
     /**
      * <p>
      * The screen viewing URL.
      * </p>
+     * <important>
+     * <p>
+     * <b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b>
+     * </p>
+     * </important>
      */
     private String screenViewingUrl;
     /**
      * <p>
      * The screen sharing URL.
      * </p>
+     * <important>
+     * <p>
+     * <b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b>
+     * </p>
+     * </important>
      */
     private String screenSharingUrl;
     /**
@@ -201,9 +221,17 @@ public class MediaPlacement implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The turn control URL.
      * </p>
+     * <important>
+     * <p>
+     * <b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b>
+     * </p>
+     * </important>
      * 
      * @param turnControlUrl
-     *        The turn control URL.
+     *        The turn control URL.</p> <important>
+     *        <p>
+     *        <b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b>
+     *        </p>
      */
 
     public void setTurnControlUrl(String turnControlUrl) {
@@ -214,8 +242,16 @@ public class MediaPlacement implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The turn control URL.
      * </p>
+     * <important>
+     * <p>
+     * <b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b>
+     * </p>
+     * </important>
      * 
-     * @return The turn control URL.
+     * @return The turn control URL.</p> <important>
+     *         <p>
+     *         <b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b>
+     *         </p>
      */
 
     public String getTurnControlUrl() {
@@ -226,9 +262,17 @@ public class MediaPlacement implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The turn control URL.
      * </p>
+     * <important>
+     * <p>
+     * <b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b>
+     * </p>
+     * </important>
      * 
      * @param turnControlUrl
-     *        The turn control URL.
+     *        The turn control URL.</p> <important>
+     *        <p>
+     *        <b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b>
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -241,9 +285,17 @@ public class MediaPlacement implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The screen data URL.
      * </p>
+     * <important>
+     * <p>
+     * <b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b>
+     * </p>
+     * </important>
      * 
      * @param screenDataUrl
-     *        The screen data URL.
+     *        The screen data URL.</p> <important>
+     *        <p>
+     *        <b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b>
+     *        </p>
      */
 
     public void setScreenDataUrl(String screenDataUrl) {
@@ -254,8 +306,16 @@ public class MediaPlacement implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The screen data URL.
      * </p>
+     * <important>
+     * <p>
+     * <b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b>
+     * </p>
+     * </important>
      * 
-     * @return The screen data URL.
+     * @return The screen data URL.</p> <important>
+     *         <p>
+     *         <b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b>
+     *         </p>
      */
 
     public String getScreenDataUrl() {
@@ -266,9 +326,17 @@ public class MediaPlacement implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The screen data URL.
      * </p>
+     * <important>
+     * <p>
+     * <b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b>
+     * </p>
+     * </important>
      * 
      * @param screenDataUrl
-     *        The screen data URL.
+     *        The screen data URL.</p> <important>
+     *        <p>
+     *        <b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b>
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -281,9 +349,17 @@ public class MediaPlacement implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The screen viewing URL.
      * </p>
+     * <important>
+     * <p>
+     * <b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b>
+     * </p>
+     * </important>
      * 
      * @param screenViewingUrl
-     *        The screen viewing URL.
+     *        The screen viewing URL.</p> <important>
+     *        <p>
+     *        <b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b>
+     *        </p>
      */
 
     public void setScreenViewingUrl(String screenViewingUrl) {
@@ -294,8 +370,16 @@ public class MediaPlacement implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The screen viewing URL.
      * </p>
+     * <important>
+     * <p>
+     * <b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b>
+     * </p>
+     * </important>
      * 
-     * @return The screen viewing URL.
+     * @return The screen viewing URL.</p> <important>
+     *         <p>
+     *         <b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b>
+     *         </p>
      */
 
     public String getScreenViewingUrl() {
@@ -306,9 +390,17 @@ public class MediaPlacement implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The screen viewing URL.
      * </p>
+     * <important>
+     * <p>
+     * <b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b>
+     * </p>
+     * </important>
      * 
      * @param screenViewingUrl
-     *        The screen viewing URL.
+     *        The screen viewing URL.</p> <important>
+     *        <p>
+     *        <b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b>
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -321,9 +413,17 @@ public class MediaPlacement implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The screen sharing URL.
      * </p>
+     * <important>
+     * <p>
+     * <b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b>
+     * </p>
+     * </important>
      * 
      * @param screenSharingUrl
-     *        The screen sharing URL.
+     *        The screen sharing URL.</p> <important>
+     *        <p>
+     *        <b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b>
+     *        </p>
      */
 
     public void setScreenSharingUrl(String screenSharingUrl) {
@@ -334,8 +434,16 @@ public class MediaPlacement implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The screen sharing URL.
      * </p>
+     * <important>
+     * <p>
+     * <b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b>
+     * </p>
+     * </important>
      * 
-     * @return The screen sharing URL.
+     * @return The screen sharing URL.</p> <important>
+     *         <p>
+     *         <b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b>
+     *         </p>
      */
 
     public String getScreenSharingUrl() {
@@ -346,9 +454,17 @@ public class MediaPlacement implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The screen sharing URL.
      * </p>
+     * <important>
+     * <p>
+     * <b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b>
+     * </p>
+     * </important>
      * 
      * @param screenSharingUrl
-     *        The screen sharing URL.
+     *        The screen sharing URL.</p> <important>
+     *        <p>
+     *        <b>This parameter is deprecated and no longer used by the Amazon Chime SDK.</b>
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

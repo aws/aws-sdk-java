@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -13,7 +13,7 @@
 package com.amazonaws.services.iot.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -39,6 +39,8 @@ public class KafkaActionMarshaller {
             .marshallLocationName("partition").build();
     private static final MarshallingInfo<Map> CLIENTPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientProperties").build();
+    private static final MarshallingInfo<List> HEADERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("headers").build();
 
     private static final KafkaActionMarshaller instance = new KafkaActionMarshaller();
 
@@ -61,6 +63,7 @@ public class KafkaActionMarshaller {
             protocolMarshaller.marshall(kafkaAction.getKey(), KEY_BINDING);
             protocolMarshaller.marshall(kafkaAction.getPartition(), PARTITION_BINDING);
             protocolMarshaller.marshall(kafkaAction.getClientProperties(), CLIENTPROPERTIES_BINDING);
+            protocolMarshaller.marshall(kafkaAction.getHeaders(), HEADERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

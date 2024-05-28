@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,8 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset, the item
-     * is appended to the end of the reranked list. The maximum is 500.
+     * is appended to the end of the reranked list. If you are including metadata in recommendations, the maximum is 50.
+     * Otherwise, the maximum is 500.
      * </p>
      */
     private java.util.List<String> inputList;
@@ -78,6 +79,19 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private java.util.Map<String, String> filterValues;
+    /**
+     * <p>
+     * If you enabled metadata in recommendations when you created or updated the campaign, specify metadata columns
+     * from your Items dataset to include in the personalized ranking. The map key is <code>ITEMS</code> and the value
+     * is a list of column names from your Items dataset. The maximum number of columns you can provide is 10.
+     * </p>
+     * <p>
+     * For information about enabling metadata for a campaign, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata">Enabling
+     * metadata in recommendations for a campaign</a>.
+     * </p>
+     */
+    private java.util.Map<String, java.util.List<String>> metadataColumns;
 
     /**
      * <p>
@@ -122,11 +136,13 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset, the item
-     * is appended to the end of the reranked list. The maximum is 500.
+     * is appended to the end of the reranked list. If you are including metadata in recommendations, the maximum is 50.
+     * Otherwise, the maximum is 500.
      * </p>
      * 
      * @return A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset,
-     *         the item is appended to the end of the reranked list. The maximum is 500.
+     *         the item is appended to the end of the reranked list. If you are including metadata in recommendations,
+     *         the maximum is 50. Otherwise, the maximum is 500.
      */
 
     public java.util.List<String> getInputList() {
@@ -136,12 +152,14 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset, the item
-     * is appended to the end of the reranked list. The maximum is 500.
+     * is appended to the end of the reranked list. If you are including metadata in recommendations, the maximum is 50.
+     * Otherwise, the maximum is 500.
      * </p>
      * 
      * @param inputList
      *        A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset, the
-     *        item is appended to the end of the reranked list. The maximum is 500.
+     *        item is appended to the end of the reranked list. If you are including metadata in recommendations, the
+     *        maximum is 50. Otherwise, the maximum is 500.
      */
 
     public void setInputList(java.util.Collection<String> inputList) {
@@ -156,7 +174,8 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset, the item
-     * is appended to the end of the reranked list. The maximum is 500.
+     * is appended to the end of the reranked list. If you are including metadata in recommendations, the maximum is 50.
+     * Otherwise, the maximum is 500.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -166,7 +185,8 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param inputList
      *        A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset, the
-     *        item is appended to the end of the reranked list. The maximum is 500.
+     *        item is appended to the end of the reranked list. If you are including metadata in recommendations, the
+     *        maximum is 50. Otherwise, the maximum is 500.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,12 +203,14 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset, the item
-     * is appended to the end of the reranked list. The maximum is 500.
+     * is appended to the end of the reranked list. If you are including metadata in recommendations, the maximum is 50.
+     * Otherwise, the maximum is 500.
      * </p>
      * 
      * @param inputList
      *        A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset, the
-     *        item is appended to the end of the reranked list. The maximum is 500.
+     *        item is appended to the end of the reranked list. If you are including metadata in recommendations, the
+     *        maximum is 50. Otherwise, the maximum is 500.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -507,6 +529,116 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * If you enabled metadata in recommendations when you created or updated the campaign, specify metadata columns
+     * from your Items dataset to include in the personalized ranking. The map key is <code>ITEMS</code> and the value
+     * is a list of column names from your Items dataset. The maximum number of columns you can provide is 10.
+     * </p>
+     * <p>
+     * For information about enabling metadata for a campaign, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata">Enabling
+     * metadata in recommendations for a campaign</a>.
+     * </p>
+     * 
+     * @return If you enabled metadata in recommendations when you created or updated the campaign, specify metadata
+     *         columns from your Items dataset to include in the personalized ranking. The map key is <code>ITEMS</code>
+     *         and the value is a list of column names from your Items dataset. The maximum number of columns you can
+     *         provide is 10.</p>
+     *         <p>
+     *         For information about enabling metadata for a campaign, see <a
+     *         href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata"
+     *         >Enabling metadata in recommendations for a campaign</a>.
+     */
+
+    public java.util.Map<String, java.util.List<String>> getMetadataColumns() {
+        return metadataColumns;
+    }
+
+    /**
+     * <p>
+     * If you enabled metadata in recommendations when you created or updated the campaign, specify metadata columns
+     * from your Items dataset to include in the personalized ranking. The map key is <code>ITEMS</code> and the value
+     * is a list of column names from your Items dataset. The maximum number of columns you can provide is 10.
+     * </p>
+     * <p>
+     * For information about enabling metadata for a campaign, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata">Enabling
+     * metadata in recommendations for a campaign</a>.
+     * </p>
+     * 
+     * @param metadataColumns
+     *        If you enabled metadata in recommendations when you created or updated the campaign, specify metadata
+     *        columns from your Items dataset to include in the personalized ranking. The map key is <code>ITEMS</code>
+     *        and the value is a list of column names from your Items dataset. The maximum number of columns you can
+     *        provide is 10.</p>
+     *        <p>
+     *        For information about enabling metadata for a campaign, see <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata"
+     *        >Enabling metadata in recommendations for a campaign</a>.
+     */
+
+    public void setMetadataColumns(java.util.Map<String, java.util.List<String>> metadataColumns) {
+        this.metadataColumns = metadataColumns;
+    }
+
+    /**
+     * <p>
+     * If you enabled metadata in recommendations when you created or updated the campaign, specify metadata columns
+     * from your Items dataset to include in the personalized ranking. The map key is <code>ITEMS</code> and the value
+     * is a list of column names from your Items dataset. The maximum number of columns you can provide is 10.
+     * </p>
+     * <p>
+     * For information about enabling metadata for a campaign, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata">Enabling
+     * metadata in recommendations for a campaign</a>.
+     * </p>
+     * 
+     * @param metadataColumns
+     *        If you enabled metadata in recommendations when you created or updated the campaign, specify metadata
+     *        columns from your Items dataset to include in the personalized ranking. The map key is <code>ITEMS</code>
+     *        and the value is a list of column names from your Items dataset. The maximum number of columns you can
+     *        provide is 10.</p>
+     *        <p>
+     *        For information about enabling metadata for a campaign, see <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-return-metadata"
+     *        >Enabling metadata in recommendations for a campaign</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPersonalizedRankingRequest withMetadataColumns(java.util.Map<String, java.util.List<String>> metadataColumns) {
+        setMetadataColumns(metadataColumns);
+        return this;
+    }
+
+    /**
+     * Add a single MetadataColumns entry
+     *
+     * @see GetPersonalizedRankingRequest#withMetadataColumns
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPersonalizedRankingRequest addMetadataColumnsEntry(String key, java.util.List<String> value) {
+        if (null == this.metadataColumns) {
+            this.metadataColumns = new java.util.HashMap<String, java.util.List<String>>();
+        }
+        if (this.metadataColumns.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.metadataColumns.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into MetadataColumns.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPersonalizedRankingRequest clearMetadataColumnsEntries() {
+        this.metadataColumns = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -529,7 +661,9 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
         if (getFilterArn() != null)
             sb.append("FilterArn: ").append(getFilterArn()).append(",");
         if (getFilterValues() != null)
-            sb.append("FilterValues: ").append("***Sensitive Data Redacted***");
+            sb.append("FilterValues: ").append("***Sensitive Data Redacted***").append(",");
+        if (getMetadataColumns() != null)
+            sb.append("MetadataColumns: ").append(getMetadataColumns());
         sb.append("}");
         return sb.toString();
     }
@@ -568,6 +702,10 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getFilterValues() != null && other.getFilterValues().equals(this.getFilterValues()) == false)
             return false;
+        if (other.getMetadataColumns() == null ^ this.getMetadataColumns() == null)
+            return false;
+        if (other.getMetadataColumns() != null && other.getMetadataColumns().equals(this.getMetadataColumns()) == false)
+            return false;
         return true;
     }
 
@@ -582,6 +720,7 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getContext() == null) ? 0 : getContext().hashCode());
         hashCode = prime * hashCode + ((getFilterArn() == null) ? 0 : getFilterArn().hashCode());
         hashCode = prime * hashCode + ((getFilterValues() == null) ? 0 : getFilterValues().hashCode());
+        hashCode = prime * hashCode + ((getMetadataColumns() == null) ? 0 : getMetadataColumns().hashCode());
         return hashCode;
     }
 

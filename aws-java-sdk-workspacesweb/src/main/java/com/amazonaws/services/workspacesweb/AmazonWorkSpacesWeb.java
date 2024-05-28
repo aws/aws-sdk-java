@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -69,6 +69,31 @@ public interface AmazonWorkSpacesWeb {
      *      target="_top">AWS API Documentation</a>
      */
     AssociateBrowserSettingsResult associateBrowserSettings(AssociateBrowserSettingsRequest associateBrowserSettingsRequest);
+
+    /**
+     * <p>
+     * Associates an IP access settings resource with a web portal.
+     * </p>
+     * 
+     * @param associateIpAccessSettingsRequest
+     * @return Result of the AssociateIpAccessSettings operation returned by the service.
+     * @throws InternalServerException
+     *         There is an internal server error.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         There is a throttling error.
+     * @throws ValidationException
+     *         There is a validation error.
+     * @throws ConflictException
+     *         There is a conflict.
+     * @sample AmazonWorkSpacesWeb.AssociateIpAccessSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateIpAccessSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateIpAccessSettingsResult associateIpAccessSettings(AssociateIpAccessSettingsRequest associateIpAccessSettingsRequest);
 
     /**
      * <p>
@@ -224,6 +249,31 @@ public interface AmazonWorkSpacesWeb {
      *      target="_top">AWS API Documentation</a>
      */
     CreateIdentityProviderResult createIdentityProvider(CreateIdentityProviderRequest createIdentityProviderRequest);
+
+    /**
+     * <p>
+     * Creates an IP access settings resource that can be associated with a web portal.
+     * </p>
+     * 
+     * @param createIpAccessSettingsRequest
+     * @return Result of the CreateIpAccessSettings operation returned by the service.
+     * @throws InternalServerException
+     *         There is an internal server error.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         There is a throttling error.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
+     * @throws ValidationException
+     *         There is a validation error.
+     * @throws ConflictException
+     *         There is a conflict.
+     * @sample AmazonWorkSpacesWeb.CreateIpAccessSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateIpAccessSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateIpAccessSettingsResult createIpAccessSettings(CreateIpAccessSettingsRequest createIpAccessSettingsRequest);
 
     /**
      * <p>
@@ -405,6 +455,29 @@ public interface AmazonWorkSpacesWeb {
 
     /**
      * <p>
+     * Deletes IP access settings.
+     * </p>
+     * 
+     * @param deleteIpAccessSettingsRequest
+     * @return Result of the DeleteIpAccessSettings operation returned by the service.
+     * @throws InternalServerException
+     *         There is an internal server error.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         There is a throttling error.
+     * @throws ValidationException
+     *         There is a validation error.
+     * @throws ConflictException
+     *         There is a conflict.
+     * @sample AmazonWorkSpacesWeb.DeleteIpAccessSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteIpAccessSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteIpAccessSettingsResult deleteIpAccessSettings(DeleteIpAccessSettingsRequest deleteIpAccessSettingsRequest);
+
+    /**
+     * <p>
      * Deletes network settings.
      * </p>
      * 
@@ -540,6 +613,29 @@ public interface AmazonWorkSpacesWeb {
      *      target="_top">AWS API Documentation</a>
      */
     DisassociateBrowserSettingsResult disassociateBrowserSettings(DisassociateBrowserSettingsRequest disassociateBrowserSettingsRequest);
+
+    /**
+     * <p>
+     * Disassociates IP access settings from a web portal.
+     * </p>
+     * 
+     * @param disassociateIpAccessSettingsRequest
+     * @return Result of the DisassociateIpAccessSettings operation returned by the service.
+     * @throws InternalServerException
+     *         There is an internal server error.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         There is a throttling error.
+     * @throws ValidationException
+     *         There is a validation error.
+     * @sample AmazonWorkSpacesWeb.DisassociateIpAccessSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateIpAccessSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateIpAccessSettingsResult disassociateIpAccessSettings(DisassociateIpAccessSettingsRequest disassociateIpAccessSettingsRequest);
 
     /**
      * <p>
@@ -680,6 +776,29 @@ public interface AmazonWorkSpacesWeb {
      *      target="_top">AWS API Documentation</a>
      */
     GetIdentityProviderResult getIdentityProvider(GetIdentityProviderRequest getIdentityProviderRequest);
+
+    /**
+     * <p>
+     * Gets the IP access settings.
+     * </p>
+     * 
+     * @param getIpAccessSettingsRequest
+     * @return Result of the GetIpAccessSettings operation returned by the service.
+     * @throws InternalServerException
+     *         There is an internal server error.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         There is a throttling error.
+     * @throws ValidationException
+     *         There is a validation error.
+     * @sample AmazonWorkSpacesWeb.GetIpAccessSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetIpAccessSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetIpAccessSettingsResult getIpAccessSettings(GetIpAccessSettingsRequest getIpAccessSettingsRequest);
 
     /**
      * <p>
@@ -883,6 +1002,27 @@ public interface AmazonWorkSpacesWeb {
      *      target="_top">AWS API Documentation</a>
      */
     ListIdentityProvidersResult listIdentityProviders(ListIdentityProvidersRequest listIdentityProvidersRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of IP access settings.
+     * </p>
+     * 
+     * @param listIpAccessSettingsRequest
+     * @return Result of the ListIpAccessSettings operation returned by the service.
+     * @throws InternalServerException
+     *         There is an internal server error.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         There is a throttling error.
+     * @throws ValidationException
+     *         There is a validation error.
+     * @sample AmazonWorkSpacesWeb.ListIpAccessSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListIpAccessSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListIpAccessSettingsResult listIpAccessSettings(ListIpAccessSettingsRequest listIpAccessSettingsRequest);
 
     /**
      * <p>
@@ -1131,6 +1271,29 @@ public interface AmazonWorkSpacesWeb {
 
     /**
      * <p>
+     * Updates IP access settings.
+     * </p>
+     * 
+     * @param updateIpAccessSettingsRequest
+     * @return Result of the UpdateIpAccessSettings operation returned by the service.
+     * @throws InternalServerException
+     *         There is an internal server error.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         There is a throttling error.
+     * @throws ValidationException
+     *         There is a validation error.
+     * @sample AmazonWorkSpacesWeb.UpdateIpAccessSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateIpAccessSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateIpAccessSettingsResult updateIpAccessSettings(UpdateIpAccessSettingsRequest updateIpAccessSettingsRequest);
+
+    /**
+     * <p>
      * Updates network settings.
      * </p>
      * 
@@ -1167,8 +1330,12 @@ public interface AmazonWorkSpacesWeb {
      *         Access is denied.
      * @throws ThrottlingException
      *         There is a throttling error.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
      * @throws ValidationException
      *         There is a validation error.
+     * @throws ConflictException
+     *         There is a conflict.
      * @sample AmazonWorkSpacesWeb.UpdatePortal
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdatePortal" target="_top">AWS
      *      API Documentation</a>

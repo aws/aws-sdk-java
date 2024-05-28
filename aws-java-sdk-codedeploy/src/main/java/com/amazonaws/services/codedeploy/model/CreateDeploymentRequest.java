@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
+     * The name of an CodeDeploy application associated with the user or Amazon Web Services account.
      * </p>
      */
     private String applicationName;
@@ -48,7 +48,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
     private RevisionLocation revision;
     /**
      * <p>
-     * The name of a deployment configuration associated with the IAM user or Amazon Web Services account.
+     * The name of a deployment configuration associated with the user or Amazon Web Services account.
      * </p>
      * <p>
      * If not specified, the value configured in the deployment group is used as the default. If the deployment group
@@ -159,11 +159,11 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
+     * The name of an CodeDeploy application associated with the user or Amazon Web Services account.
      * </p>
      * 
      * @param applicationName
-     *        The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
+     *        The name of an CodeDeploy application associated with the user or Amazon Web Services account.
      */
 
     public void setApplicationName(String applicationName) {
@@ -172,10 +172,10 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
+     * The name of an CodeDeploy application associated with the user or Amazon Web Services account.
      * </p>
      * 
-     * @return The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
+     * @return The name of an CodeDeploy application associated with the user or Amazon Web Services account.
      */
 
     public String getApplicationName() {
@@ -184,11 +184,11 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
+     * The name of an CodeDeploy application associated with the user or Amazon Web Services account.
      * </p>
      * 
      * @param applicationName
-     *        The name of an CodeDeploy application associated with the IAM user or Amazon Web Services account.
+     *        The name of an CodeDeploy application associated with the user or Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,7 +279,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of a deployment configuration associated with the IAM user or Amazon Web Services account.
+     * The name of a deployment configuration associated with the user or Amazon Web Services account.
      * </p>
      * <p>
      * If not specified, the value configured in the deployment group is used as the default. If the deployment group
@@ -288,7 +288,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param deploymentConfigName
-     *        The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
+     *        The name of a deployment configuration associated with the user or Amazon Web Services account.</p>
      *        <p>
      *        If not specified, the value configured in the deployment group is used as the default. If the deployment
      *        group does not have a deployment configuration associated with it, <code>CodeDeployDefault</code>.
@@ -301,7 +301,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of a deployment configuration associated with the IAM user or Amazon Web Services account.
+     * The name of a deployment configuration associated with the user or Amazon Web Services account.
      * </p>
      * <p>
      * If not specified, the value configured in the deployment group is used as the default. If the deployment group
@@ -309,7 +309,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>OneAtATime</code> is used by default.
      * </p>
      * 
-     * @return The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
+     * @return The name of a deployment configuration associated with the user or Amazon Web Services account.</p>
      *         <p>
      *         If not specified, the value configured in the deployment group is used as the default. If the deployment
      *         group does not have a deployment configuration associated with it, <code>CodeDeployDefault</code>.
@@ -322,7 +322,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of a deployment configuration associated with the IAM user or Amazon Web Services account.
+     * The name of a deployment configuration associated with the user or Amazon Web Services account.
      * </p>
      * <p>
      * If not specified, the value configured in the deployment group is used as the default. If the deployment group
@@ -331,7 +331,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param deploymentConfigName
-     *        The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
+     *        The name of a deployment configuration associated with the user or Amazon Web Services account.</p>
      *        <p>
      *        If not specified, the value configured in the deployment group is used as the default. If the deployment
      *        group does not have a deployment configuration associated with it, <code>CodeDeployDefault</code>.

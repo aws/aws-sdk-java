@@ -188,6 +188,10 @@ public class IntermediateModel {
         return waiters.size() > 0;
     }
 
+    public boolean getHasShapes() {
+        return shapes.size() > 0;
+    }
+
     public String getSdkBaseResponseFqcn() {
         if (metadata.getProtocol() == Protocol.API_GATEWAY) {
             return "com.amazonaws.opensdk.BaseResult";

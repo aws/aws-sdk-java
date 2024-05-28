@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.fsx.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -45,6 +46,14 @@ public class OpenZFSFileSystemConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DiskIopsConfiguration").build();
     private static final MarshallingInfo<String> ROOTVOLUMEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RootVolumeId").build();
+    private static final MarshallingInfo<String> PREFERREDSUBNETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreferredSubnetId").build();
+    private static final MarshallingInfo<String> ENDPOINTIPADDRESSRANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointIpAddressRange").build();
+    private static final MarshallingInfo<List> ROUTETABLEIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("RouteTableIds").build();
+    private static final MarshallingInfo<String> ENDPOINTIPADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointIpAddress").build();
 
     private static final OpenZFSFileSystemConfigurationMarshaller instance = new OpenZFSFileSystemConfigurationMarshaller();
 
@@ -71,6 +80,10 @@ public class OpenZFSFileSystemConfigurationMarshaller {
             protocolMarshaller.marshall(openZFSFileSystemConfiguration.getWeeklyMaintenanceStartTime(), WEEKLYMAINTENANCESTARTTIME_BINDING);
             protocolMarshaller.marshall(openZFSFileSystemConfiguration.getDiskIopsConfiguration(), DISKIOPSCONFIGURATION_BINDING);
             protocolMarshaller.marshall(openZFSFileSystemConfiguration.getRootVolumeId(), ROOTVOLUMEID_BINDING);
+            protocolMarshaller.marshall(openZFSFileSystemConfiguration.getPreferredSubnetId(), PREFERREDSUBNETID_BINDING);
+            protocolMarshaller.marshall(openZFSFileSystemConfiguration.getEndpointIpAddressRange(), ENDPOINTIPADDRESSRANGE_BINDING);
+            protocolMarshaller.marshall(openZFSFileSystemConfiguration.getRouteTableIds(), ROUTETABLEIDS_BINDING);
+            protocolMarshaller.marshall(openZFSFileSystemConfiguration.getEndpointIpAddress(), ENDPOINTIPADDRESS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

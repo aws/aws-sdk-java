@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,6 +72,16 @@ public class ModifyCustomDBEngineVersionResultStaxUnmarshaller implements Unmars
 
                 if (context.testExpression("DefaultCharacterSet", targetDepth)) {
                     modifyCustomDBEngineVersionResult.setDefaultCharacterSet(CharacterSetStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Image", targetDepth)) {
+                    modifyCustomDBEngineVersionResult.setImage(CustomDBEngineVersionAMIStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("DBEngineMediaType", targetDepth)) {
+                    modifyCustomDBEngineVersionResult.setDBEngineMediaType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -212,6 +222,41 @@ public class ModifyCustomDBEngineVersionResultStaxUnmarshaller implements Unmars
 
                 if (context.testExpression("SupportsBabelfish", targetDepth)) {
                     modifyCustomDBEngineVersionResult.setSupportsBabelfish(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("CustomDBEngineVersionManifest", targetDepth)) {
+                    modifyCustomDBEngineVersionResult.setCustomDBEngineVersionManifest(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SupportsLimitlessDatabase", targetDepth)) {
+                    modifyCustomDBEngineVersionResult.setSupportsLimitlessDatabase(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SupportsCertificateRotationWithoutRestart", targetDepth)) {
+                    modifyCustomDBEngineVersionResult.setSupportsCertificateRotationWithoutRestart(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SupportedCACertificateIdentifiers", targetDepth)) {
+                    modifyCustomDBEngineVersionResult.withSupportedCACertificateIdentifiers(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("SupportedCACertificateIdentifiers/member", targetDepth)) {
+                    modifyCustomDBEngineVersionResult.withSupportedCACertificateIdentifiers(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SupportsLocalWriteForwarding", targetDepth)) {
+                    modifyCustomDBEngineVersionResult.setSupportsLocalWriteForwarding(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SupportsIntegrations", targetDepth)) {
+                    modifyCustomDBEngineVersionResult.setSupportsIntegrations(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

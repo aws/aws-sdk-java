@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,36 @@ public class UpdateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private java.util.List<AdditionalInferenceSpecificationDefinition> additionalInferenceSpecificationsToAdd;
+    /**
+     * <p>
+     * Specifies details about inference jobs that you can run with models based on this model package, including the
+     * following information:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The Amazon ECR paths of containers that contain the inference code and model artifacts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The instance types that the model package supports for transform jobs and real-time endpoints used for inference.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The input and output content formats that the model package supports for inference.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private InferenceSpecification inferenceSpecification;
+    /**
+     * <p>
+     * The URI of the source for the model package.
+     * </p>
+     */
+    private String sourceUri;
 
     /**
      * <p>
@@ -444,6 +474,194 @@ public class UpdateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Specifies details about inference jobs that you can run with models based on this model package, including the
+     * following information:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The Amazon ECR paths of containers that contain the inference code and model artifacts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The instance types that the model package supports for transform jobs and real-time endpoints used for inference.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The input and output content formats that the model package supports for inference.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param inferenceSpecification
+     *        Specifies details about inference jobs that you can run with models based on this model package, including
+     *        the following information:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The Amazon ECR paths of containers that contain the inference code and model artifacts.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The instance types that the model package supports for transform jobs and real-time endpoints used for
+     *        inference.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The input and output content formats that the model package supports for inference.
+     *        </p>
+     *        </li>
+     */
+
+    public void setInferenceSpecification(InferenceSpecification inferenceSpecification) {
+        this.inferenceSpecification = inferenceSpecification;
+    }
+
+    /**
+     * <p>
+     * Specifies details about inference jobs that you can run with models based on this model package, including the
+     * following information:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The Amazon ECR paths of containers that contain the inference code and model artifacts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The instance types that the model package supports for transform jobs and real-time endpoints used for inference.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The input and output content formats that the model package supports for inference.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Specifies details about inference jobs that you can run with models based on this model package,
+     *         including the following information:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The Amazon ECR paths of containers that contain the inference code and model artifacts.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The instance types that the model package supports for transform jobs and real-time endpoints used for
+     *         inference.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The input and output content formats that the model package supports for inference.
+     *         </p>
+     *         </li>
+     */
+
+    public InferenceSpecification getInferenceSpecification() {
+        return this.inferenceSpecification;
+    }
+
+    /**
+     * <p>
+     * Specifies details about inference jobs that you can run with models based on this model package, including the
+     * following information:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The Amazon ECR paths of containers that contain the inference code and model artifacts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The instance types that the model package supports for transform jobs and real-time endpoints used for inference.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The input and output content formats that the model package supports for inference.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param inferenceSpecification
+     *        Specifies details about inference jobs that you can run with models based on this model package, including
+     *        the following information:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The Amazon ECR paths of containers that contain the inference code and model artifacts.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The instance types that the model package supports for transform jobs and real-time endpoints used for
+     *        inference.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The input and output content formats that the model package supports for inference.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateModelPackageRequest withInferenceSpecification(InferenceSpecification inferenceSpecification) {
+        setInferenceSpecification(inferenceSpecification);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The URI of the source for the model package.
+     * </p>
+     * 
+     * @param sourceUri
+     *        The URI of the source for the model package.
+     */
+
+    public void setSourceUri(String sourceUri) {
+        this.sourceUri = sourceUri;
+    }
+
+    /**
+     * <p>
+     * The URI of the source for the model package.
+     * </p>
+     * 
+     * @return The URI of the source for the model package.
+     */
+
+    public String getSourceUri() {
+        return this.sourceUri;
+    }
+
+    /**
+     * <p>
+     * The URI of the source for the model package.
+     * </p>
+     * 
+     * @param sourceUri
+     *        The URI of the source for the model package.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateModelPackageRequest withSourceUri(String sourceUri) {
+        setSourceUri(sourceUri);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -466,7 +684,11 @@ public class UpdateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
         if (getCustomerMetadataPropertiesToRemove() != null)
             sb.append("CustomerMetadataPropertiesToRemove: ").append(getCustomerMetadataPropertiesToRemove()).append(",");
         if (getAdditionalInferenceSpecificationsToAdd() != null)
-            sb.append("AdditionalInferenceSpecificationsToAdd: ").append(getAdditionalInferenceSpecificationsToAdd());
+            sb.append("AdditionalInferenceSpecificationsToAdd: ").append(getAdditionalInferenceSpecificationsToAdd()).append(",");
+        if (getInferenceSpecification() != null)
+            sb.append("InferenceSpecification: ").append(getInferenceSpecification()).append(",");
+        if (getSourceUri() != null)
+            sb.append("SourceUri: ").append(getSourceUri());
         sb.append("}");
         return sb.toString();
     }
@@ -507,6 +729,14 @@ public class UpdateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
         if (other.getAdditionalInferenceSpecificationsToAdd() != null
                 && other.getAdditionalInferenceSpecificationsToAdd().equals(this.getAdditionalInferenceSpecificationsToAdd()) == false)
             return false;
+        if (other.getInferenceSpecification() == null ^ this.getInferenceSpecification() == null)
+            return false;
+        if (other.getInferenceSpecification() != null && other.getInferenceSpecification().equals(this.getInferenceSpecification()) == false)
+            return false;
+        if (other.getSourceUri() == null ^ this.getSourceUri() == null)
+            return false;
+        if (other.getSourceUri() != null && other.getSourceUri().equals(this.getSourceUri()) == false)
+            return false;
         return true;
     }
 
@@ -521,6 +751,8 @@ public class UpdateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getCustomerMetadataProperties() == null) ? 0 : getCustomerMetadataProperties().hashCode());
         hashCode = prime * hashCode + ((getCustomerMetadataPropertiesToRemove() == null) ? 0 : getCustomerMetadataPropertiesToRemove().hashCode());
         hashCode = prime * hashCode + ((getAdditionalInferenceSpecificationsToAdd() == null) ? 0 : getAdditionalInferenceSpecificationsToAdd().hashCode());
+        hashCode = prime * hashCode + ((getInferenceSpecification() == null) ? 0 : getInferenceSpecification().hashCode());
+        hashCode = prime * hashCode + ((getSourceUri() == null) ? 0 : getSourceUri().hashCode());
         return hashCode;
     }
 

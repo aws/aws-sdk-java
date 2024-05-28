@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -74,12 +74,14 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<AssociateUserToPermissionGroupResult> associateUserToPermissionGroupAsync(AssociateUserToPermissionGroupRequest request) {
 
         return associateUserToPermissionGroupAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<AssociateUserToPermissionGroupResult> associateUserToPermissionGroupAsync(
             final AssociateUserToPermissionGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<AssociateUserToPermissionGroupRequest, AssociateUserToPermissionGroupResult> asyncHandler) {
@@ -108,12 +110,14 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateChangesetResult> createChangesetAsync(CreateChangesetRequest request) {
 
         return createChangesetAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateChangesetResult> createChangesetAsync(final CreateChangesetRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateChangesetRequest, CreateChangesetResult> asyncHandler) {
         final CreateChangesetRequest finalRequest = beforeClientExecution(request);
@@ -141,12 +145,14 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateDataViewResult> createDataViewAsync(CreateDataViewRequest request) {
 
         return createDataViewAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateDataViewResult> createDataViewAsync(final CreateDataViewRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateDataViewRequest, CreateDataViewResult> asyncHandler) {
         final CreateDataViewRequest finalRequest = beforeClientExecution(request);
@@ -174,12 +180,14 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateDatasetResult> createDatasetAsync(CreateDatasetRequest request) {
 
         return createDatasetAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateDatasetResult> createDatasetAsync(final CreateDatasetRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateDatasetRequest, CreateDatasetResult> asyncHandler) {
         final CreateDatasetRequest finalRequest = beforeClientExecution(request);
@@ -207,12 +215,14 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreatePermissionGroupResult> createPermissionGroupAsync(CreatePermissionGroupRequest request) {
 
         return createPermissionGroupAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreatePermissionGroupResult> createPermissionGroupAsync(final CreatePermissionGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreatePermissionGroupRequest, CreatePermissionGroupResult> asyncHandler) {
         final CreatePermissionGroupRequest finalRequest = beforeClientExecution(request);
@@ -240,12 +250,14 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateUserResult> createUserAsync(CreateUserRequest request) {
 
         return createUserAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<CreateUserResult> createUserAsync(final CreateUserRequest request,
             final com.amazonaws.handlers.AsyncHandler<CreateUserRequest, CreateUserResult> asyncHandler) {
         final CreateUserRequest finalRequest = beforeClientExecution(request);
@@ -273,12 +285,14 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteDatasetResult> deleteDatasetAsync(DeleteDatasetRequest request) {
 
         return deleteDatasetAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeleteDatasetResult> deleteDatasetAsync(final DeleteDatasetRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeleteDatasetRequest, DeleteDatasetResult> asyncHandler) {
         final DeleteDatasetRequest finalRequest = beforeClientExecution(request);
@@ -306,12 +320,14 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeletePermissionGroupResult> deletePermissionGroupAsync(DeletePermissionGroupRequest request) {
 
         return deletePermissionGroupAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DeletePermissionGroupResult> deletePermissionGroupAsync(final DeletePermissionGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<DeletePermissionGroupRequest, DeletePermissionGroupResult> asyncHandler) {
         final DeletePermissionGroupRequest finalRequest = beforeClientExecution(request);
@@ -339,12 +355,14 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DisableUserResult> disableUserAsync(DisableUserRequest request) {
 
         return disableUserAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DisableUserResult> disableUserAsync(final DisableUserRequest request,
             final com.amazonaws.handlers.AsyncHandler<DisableUserRequest, DisableUserResult> asyncHandler) {
         final DisableUserRequest finalRequest = beforeClientExecution(request);
@@ -372,6 +390,7 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DisassociateUserFromPermissionGroupResult> disassociateUserFromPermissionGroupAsync(
             DisassociateUserFromPermissionGroupRequest request) {
 
@@ -379,6 +398,7 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<DisassociateUserFromPermissionGroupResult> disassociateUserFromPermissionGroupAsync(
             final DisassociateUserFromPermissionGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<DisassociateUserFromPermissionGroupRequest, DisassociateUserFromPermissionGroupResult> asyncHandler) {
@@ -407,12 +427,14 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<EnableUserResult> enableUserAsync(EnableUserRequest request) {
 
         return enableUserAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<EnableUserResult> enableUserAsync(final EnableUserRequest request,
             final com.amazonaws.handlers.AsyncHandler<EnableUserRequest, EnableUserResult> asyncHandler) {
         final EnableUserRequest finalRequest = beforeClientExecution(request);
@@ -440,12 +462,14 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetChangesetResult> getChangesetAsync(GetChangesetRequest request) {
 
         return getChangesetAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetChangesetResult> getChangesetAsync(final GetChangesetRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetChangesetRequest, GetChangesetResult> asyncHandler) {
         final GetChangesetRequest finalRequest = beforeClientExecution(request);
@@ -473,12 +497,14 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetDataViewResult> getDataViewAsync(GetDataViewRequest request) {
 
         return getDataViewAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetDataViewResult> getDataViewAsync(final GetDataViewRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetDataViewRequest, GetDataViewResult> asyncHandler) {
         final GetDataViewRequest finalRequest = beforeClientExecution(request);
@@ -506,12 +532,14 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetDatasetResult> getDatasetAsync(GetDatasetRequest request) {
 
         return getDatasetAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetDatasetResult> getDatasetAsync(final GetDatasetRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetDatasetRequest, GetDatasetResult> asyncHandler) {
         final GetDatasetRequest finalRequest = beforeClientExecution(request);
@@ -539,6 +567,7 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetExternalDataViewAccessDetailsResult> getExternalDataViewAccessDetailsAsync(
             GetExternalDataViewAccessDetailsRequest request) {
 
@@ -546,6 +575,7 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetExternalDataViewAccessDetailsResult> getExternalDataViewAccessDetailsAsync(
             final GetExternalDataViewAccessDetailsRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetExternalDataViewAccessDetailsRequest, GetExternalDataViewAccessDetailsResult> asyncHandler) {
@@ -574,12 +604,14 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetPermissionGroupResult> getPermissionGroupAsync(GetPermissionGroupRequest request) {
 
         return getPermissionGroupAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetPermissionGroupResult> getPermissionGroupAsync(final GetPermissionGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetPermissionGroupRequest, GetPermissionGroupResult> asyncHandler) {
         final GetPermissionGroupRequest finalRequest = beforeClientExecution(request);
@@ -607,6 +639,7 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetProgrammaticAccessCredentialsResult> getProgrammaticAccessCredentialsAsync(
             GetProgrammaticAccessCredentialsRequest request) {
 
@@ -614,6 +647,7 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetProgrammaticAccessCredentialsResult> getProgrammaticAccessCredentialsAsync(
             final GetProgrammaticAccessCredentialsRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetProgrammaticAccessCredentialsRequest, GetProgrammaticAccessCredentialsResult> asyncHandler) {
@@ -642,12 +676,14 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetUserResult> getUserAsync(GetUserRequest request) {
 
         return getUserAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetUserResult> getUserAsync(final GetUserRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetUserRequest, GetUserResult> asyncHandler) {
         final GetUserRequest finalRequest = beforeClientExecution(request);
@@ -675,12 +711,14 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetWorkingLocationResult> getWorkingLocationAsync(GetWorkingLocationRequest request) {
 
         return getWorkingLocationAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetWorkingLocationResult> getWorkingLocationAsync(final GetWorkingLocationRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetWorkingLocationRequest, GetWorkingLocationResult> asyncHandler) {
         final GetWorkingLocationRequest finalRequest = beforeClientExecution(request);
@@ -708,12 +746,14 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListChangesetsResult> listChangesetsAsync(ListChangesetsRequest request) {
 
         return listChangesetsAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListChangesetsResult> listChangesetsAsync(final ListChangesetsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListChangesetsRequest, ListChangesetsResult> asyncHandler) {
         final ListChangesetsRequest finalRequest = beforeClientExecution(request);
@@ -741,12 +781,14 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListDataViewsResult> listDataViewsAsync(ListDataViewsRequest request) {
 
         return listDataViewsAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListDataViewsResult> listDataViewsAsync(final ListDataViewsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListDataViewsRequest, ListDataViewsResult> asyncHandler) {
         final ListDataViewsRequest finalRequest = beforeClientExecution(request);
@@ -774,12 +816,14 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListDatasetsResult> listDatasetsAsync(ListDatasetsRequest request) {
 
         return listDatasetsAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListDatasetsResult> listDatasetsAsync(final ListDatasetsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListDatasetsRequest, ListDatasetsResult> asyncHandler) {
         final ListDatasetsRequest finalRequest = beforeClientExecution(request);
@@ -807,12 +851,14 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListPermissionGroupsResult> listPermissionGroupsAsync(ListPermissionGroupsRequest request) {
 
         return listPermissionGroupsAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListPermissionGroupsResult> listPermissionGroupsAsync(final ListPermissionGroupsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListPermissionGroupsRequest, ListPermissionGroupsResult> asyncHandler) {
         final ListPermissionGroupsRequest finalRequest = beforeClientExecution(request);
@@ -840,12 +886,14 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListPermissionGroupsByUserResult> listPermissionGroupsByUserAsync(ListPermissionGroupsByUserRequest request) {
 
         return listPermissionGroupsByUserAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListPermissionGroupsByUserResult> listPermissionGroupsByUserAsync(final ListPermissionGroupsByUserRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListPermissionGroupsByUserRequest, ListPermissionGroupsByUserResult> asyncHandler) {
         final ListPermissionGroupsByUserRequest finalRequest = beforeClientExecution(request);
@@ -873,12 +921,14 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListUsersResult> listUsersAsync(ListUsersRequest request) {
 
         return listUsersAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListUsersResult> listUsersAsync(final ListUsersRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListUsersRequest, ListUsersResult> asyncHandler) {
         final ListUsersRequest finalRequest = beforeClientExecution(request);
@@ -906,12 +956,14 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListUsersByPermissionGroupResult> listUsersByPermissionGroupAsync(ListUsersByPermissionGroupRequest request) {
 
         return listUsersByPermissionGroupAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListUsersByPermissionGroupResult> listUsersByPermissionGroupAsync(final ListUsersByPermissionGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListUsersByPermissionGroupRequest, ListUsersByPermissionGroupResult> asyncHandler) {
         final ListUsersByPermissionGroupRequest finalRequest = beforeClientExecution(request);
@@ -939,12 +991,14 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ResetUserPasswordResult> resetUserPasswordAsync(ResetUserPasswordRequest request) {
 
         return resetUserPasswordAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ResetUserPasswordResult> resetUserPasswordAsync(final ResetUserPasswordRequest request,
             final com.amazonaws.handlers.AsyncHandler<ResetUserPasswordRequest, ResetUserPasswordResult> asyncHandler) {
         final ResetUserPasswordRequest finalRequest = beforeClientExecution(request);
@@ -972,12 +1026,14 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdateChangesetResult> updateChangesetAsync(UpdateChangesetRequest request) {
 
         return updateChangesetAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdateChangesetResult> updateChangesetAsync(final UpdateChangesetRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateChangesetRequest, UpdateChangesetResult> asyncHandler) {
         final UpdateChangesetRequest finalRequest = beforeClientExecution(request);
@@ -1005,12 +1061,14 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdateDatasetResult> updateDatasetAsync(UpdateDatasetRequest request) {
 
         return updateDatasetAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdateDatasetResult> updateDatasetAsync(final UpdateDatasetRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateDatasetRequest, UpdateDatasetResult> asyncHandler) {
         final UpdateDatasetRequest finalRequest = beforeClientExecution(request);
@@ -1038,12 +1096,14 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdatePermissionGroupResult> updatePermissionGroupAsync(UpdatePermissionGroupRequest request) {
 
         return updatePermissionGroupAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdatePermissionGroupResult> updatePermissionGroupAsync(final UpdatePermissionGroupRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdatePermissionGroupRequest, UpdatePermissionGroupResult> asyncHandler) {
         final UpdatePermissionGroupRequest finalRequest = beforeClientExecution(request);
@@ -1071,12 +1131,14 @@ public class AWSFinSpaceDataAsyncClient extends AWSFinSpaceDataClient implements
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdateUserResult> updateUserAsync(UpdateUserRequest request) {
 
         return updateUserAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdateUserResult> updateUserAsync(final UpdateUserRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdateUserRequest, UpdateUserResult> asyncHandler) {
         final UpdateUserRequest finalRequest = beforeClientExecution(request);

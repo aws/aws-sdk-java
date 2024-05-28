@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Configuration properties for Hyperledger Fabric for a member in a Managed Blockchain network using the Hyperledger
- * Fabric framework.
+ * Configuration properties for Hyperledger Fabric for a member in a Managed Blockchain network that is using the
+ * Hyperledger Fabric framework.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/MemberFabricConfiguration"
@@ -37,7 +37,7 @@ public class MemberFabricConfiguration implements Serializable, Cloneable, Struc
     private String adminUsername;
     /**
      * <p>
-     * The password for the member's initial administrative user. The <code>AdminPassword</code> must be at least eight
+     * The password for the member's initial administrative user. The <code>AdminPassword</code> must be at least 8
      * characters long and no more than 32 characters. It must contain at least one uppercase letter, one lowercase
      * letter, and one digit. It cannot have a single quotation mark (‘), a double quotation marks (“), a forward
      * slash(/), a backward slash(\), @, or a space.
@@ -87,7 +87,7 @@ public class MemberFabricConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The password for the member's initial administrative user. The <code>AdminPassword</code> must be at least eight
+     * The password for the member's initial administrative user. The <code>AdminPassword</code> must be at least 8
      * characters long and no more than 32 characters. It must contain at least one uppercase letter, one lowercase
      * letter, and one digit. It cannot have a single quotation mark (‘), a double quotation marks (“), a forward
      * slash(/), a backward slash(\), @, or a space.
@@ -95,7 +95,7 @@ public class MemberFabricConfiguration implements Serializable, Cloneable, Struc
      * 
      * @param adminPassword
      *        The password for the member's initial administrative user. The <code>AdminPassword</code> must be at least
-     *        eight characters long and no more than 32 characters. It must contain at least one uppercase letter, one
+     *        8 characters long and no more than 32 characters. It must contain at least one uppercase letter, one
      *        lowercase letter, and one digit. It cannot have a single quotation mark (‘), a double quotation marks (“),
      *        a forward slash(/), a backward slash(\), @, or a space.
      */
@@ -106,16 +106,16 @@ public class MemberFabricConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The password for the member's initial administrative user. The <code>AdminPassword</code> must be at least eight
+     * The password for the member's initial administrative user. The <code>AdminPassword</code> must be at least 8
      * characters long and no more than 32 characters. It must contain at least one uppercase letter, one lowercase
      * letter, and one digit. It cannot have a single quotation mark (‘), a double quotation marks (“), a forward
      * slash(/), a backward slash(\), @, or a space.
      * </p>
      * 
      * @return The password for the member's initial administrative user. The <code>AdminPassword</code> must be at
-     *         least eight characters long and no more than 32 characters. It must contain at least one uppercase
-     *         letter, one lowercase letter, and one digit. It cannot have a single quotation mark (‘), a double
-     *         quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.
+     *         least 8 characters long and no more than 32 characters. It must contain at least one uppercase letter,
+     *         one lowercase letter, and one digit. It cannot have a single quotation mark (‘), a double quotation marks
+     *         (“), a forward slash(/), a backward slash(\), @, or a space.
      */
 
     public String getAdminPassword() {
@@ -124,7 +124,7 @@ public class MemberFabricConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The password for the member's initial administrative user. The <code>AdminPassword</code> must be at least eight
+     * The password for the member's initial administrative user. The <code>AdminPassword</code> must be at least 8
      * characters long and no more than 32 characters. It must contain at least one uppercase letter, one lowercase
      * letter, and one digit. It cannot have a single quotation mark (‘), a double quotation marks (“), a forward
      * slash(/), a backward slash(\), @, or a space.
@@ -132,7 +132,7 @@ public class MemberFabricConfiguration implements Serializable, Cloneable, Struc
      * 
      * @param adminPassword
      *        The password for the member's initial administrative user. The <code>AdminPassword</code> must be at least
-     *        eight characters long and no more than 32 characters. It must contain at least one uppercase letter, one
+     *        8 characters long and no more than 32 characters. It must contain at least one uppercase letter, one
      *        lowercase letter, and one digit. It cannot have a single quotation mark (‘), a double quotation marks (“),
      *        a forward slash(/), a backward slash(\), @, or a space.
      * @return Returns a reference to this object so that method calls can be chained together.

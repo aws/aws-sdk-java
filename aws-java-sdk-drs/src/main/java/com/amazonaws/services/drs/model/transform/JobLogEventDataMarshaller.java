@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class JobLogEventDataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("conversionProperties").build();
     private static final MarshallingInfo<String> CONVERSIONSERVERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("conversionServerID").build();
+    private static final MarshallingInfo<StructuredPojo> EVENTRESOURCEDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("eventResourceData").build();
     private static final MarshallingInfo<String> RAWERROR_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("rawError").build();
     private static final MarshallingInfo<String> SOURCESERVERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -56,6 +58,7 @@ public class JobLogEventDataMarshaller {
         try {
             protocolMarshaller.marshall(jobLogEventData.getConversionProperties(), CONVERSIONPROPERTIES_BINDING);
             protocolMarshaller.marshall(jobLogEventData.getConversionServerID(), CONVERSIONSERVERID_BINDING);
+            protocolMarshaller.marshall(jobLogEventData.getEventResourceData(), EVENTRESOURCEDATA_BINDING);
             protocolMarshaller.marshall(jobLogEventData.getRawError(), RAWERROR_BINDING);
             protocolMarshaller.marshall(jobLogEventData.getSourceServerID(), SOURCESERVERID_BINDING);
             protocolMarshaller.marshall(jobLogEventData.getTargetInstanceID(), TARGETINSTANCEID_BINDING);

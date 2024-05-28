@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,14 +27,41 @@ public class AssociateInstanceStorageConfigRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      */
     private String instanceId;
     /**
      * <p>
-     * A valid resource type.
+     * A valid resource type. To <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-contact-analysis-segment-streams.html">enable
+     * streaming for real-time analysis of contacts</a>, use the following types:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For chat contacts, use <code>REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For voice contacts, use <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * <code>REAL_TIME_CONTACT_ANALYSIS_SEGMENTS</code> is deprecated, but it is still supported and will apply only to
+     * VOICE channel contacts. Use <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code> for voice contacts moving
+     * forward.
+     * </p>
+     * <p>
+     * If you have previously associated a stream with <code>REAL_TIME_CONTACT_ANALYSIS_SEGMENTS</code>, no action is
+     * needed to update the stream to <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code>.
+     * </p>
+     * </note>
      */
     private String resourceType;
     /**
@@ -46,11 +73,15 @@ public class AssociateInstanceStorageConfigRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     *        The identifier of the Amazon Connect instance. You can <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *        ID</a> in the Amazon Resource Name (ARN) of the instance.
      */
 
     public void setInstanceId(String instanceId) {
@@ -59,10 +90,14 @@ public class AssociateInstanceStorageConfigRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
-     * @return The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * @return The identifier of the Amazon Connect instance. You can <a
+     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *         ID</a> in the Amazon Resource Name (ARN) of the instance.
      */
 
     public String getInstanceId() {
@@ -71,11 +106,15 @@ public class AssociateInstanceStorageConfigRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     *        The identifier of the Amazon Connect instance. You can <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *        ID</a> in the Amazon Resource Name (ARN) of the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +125,60 @@ public class AssociateInstanceStorageConfigRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A valid resource type.
+     * A valid resource type. To <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-contact-analysis-segment-streams.html">enable
+     * streaming for real-time analysis of contacts</a>, use the following types:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For chat contacts, use <code>REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For voice contacts, use <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * <code>REAL_TIME_CONTACT_ANALYSIS_SEGMENTS</code> is deprecated, but it is still supported and will apply only to
+     * VOICE channel contacts. Use <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code> for voice contacts moving
+     * forward.
+     * </p>
+     * <p>
+     * If you have previously associated a stream with <code>REAL_TIME_CONTACT_ANALYSIS_SEGMENTS</code>, no action is
+     * needed to update the stream to <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code>.
+     * </p>
+     * </note>
      * 
      * @param resourceType
-     *        A valid resource type.
+     *        A valid resource type. To <a href=
+     *        "https://docs.aws.amazon.com/connect/latest/adminguide/enable-contact-analysis-segment-streams.html"
+     *        >enable streaming for real-time analysis of contacts</a>, use the following types:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For chat contacts, use <code>REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For voice contacts, use <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        <code>REAL_TIME_CONTACT_ANALYSIS_SEGMENTS</code> is deprecated, but it is still supported and will apply
+     *        only to VOICE channel contacts. Use <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code> for voice
+     *        contacts moving forward.
+     *        </p>
+     *        <p>
+     *        If you have previously associated a stream with <code>REAL_TIME_CONTACT_ANALYSIS_SEGMENTS</code>, no
+     *        action is needed to update the stream to <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code>.
+     *        </p>
      * @see InstanceStorageResourceType
      */
 
@@ -100,10 +188,59 @@ public class AssociateInstanceStorageConfigRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A valid resource type.
+     * A valid resource type. To <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-contact-analysis-segment-streams.html">enable
+     * streaming for real-time analysis of contacts</a>, use the following types:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For chat contacts, use <code>REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For voice contacts, use <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * <code>REAL_TIME_CONTACT_ANALYSIS_SEGMENTS</code> is deprecated, but it is still supported and will apply only to
+     * VOICE channel contacts. Use <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code> for voice contacts moving
+     * forward.
+     * </p>
+     * <p>
+     * If you have previously associated a stream with <code>REAL_TIME_CONTACT_ANALYSIS_SEGMENTS</code>, no action is
+     * needed to update the stream to <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code>.
+     * </p>
+     * </note>
      * 
-     * @return A valid resource type.
+     * @return A valid resource type. To <a
+     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-contact-analysis-segment-streams.html"
+     *         >enable streaming for real-time analysis of contacts</a>, use the following types:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For chat contacts, use <code>REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For voice contacts, use <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         <code>REAL_TIME_CONTACT_ANALYSIS_SEGMENTS</code> is deprecated, but it is still supported and will apply
+     *         only to VOICE channel contacts. Use <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code> for voice
+     *         contacts moving forward.
+     *         </p>
+     *         <p>
+     *         If you have previously associated a stream with <code>REAL_TIME_CONTACT_ANALYSIS_SEGMENTS</code>, no
+     *         action is needed to update the stream to <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code>.
+     *         </p>
      * @see InstanceStorageResourceType
      */
 
@@ -113,11 +250,60 @@ public class AssociateInstanceStorageConfigRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A valid resource type.
+     * A valid resource type. To <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-contact-analysis-segment-streams.html">enable
+     * streaming for real-time analysis of contacts</a>, use the following types:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For chat contacts, use <code>REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For voice contacts, use <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * <code>REAL_TIME_CONTACT_ANALYSIS_SEGMENTS</code> is deprecated, but it is still supported and will apply only to
+     * VOICE channel contacts. Use <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code> for voice contacts moving
+     * forward.
+     * </p>
+     * <p>
+     * If you have previously associated a stream with <code>REAL_TIME_CONTACT_ANALYSIS_SEGMENTS</code>, no action is
+     * needed to update the stream to <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code>.
+     * </p>
+     * </note>
      * 
      * @param resourceType
-     *        A valid resource type.
+     *        A valid resource type. To <a href=
+     *        "https://docs.aws.amazon.com/connect/latest/adminguide/enable-contact-analysis-segment-streams.html"
+     *        >enable streaming for real-time analysis of contacts</a>, use the following types:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For chat contacts, use <code>REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For voice contacts, use <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        <code>REAL_TIME_CONTACT_ANALYSIS_SEGMENTS</code> is deprecated, but it is still supported and will apply
+     *        only to VOICE channel contacts. Use <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code> for voice
+     *        contacts moving forward.
+     *        </p>
+     *        <p>
+     *        If you have previously associated a stream with <code>REAL_TIME_CONTACT_ANALYSIS_SEGMENTS</code>, no
+     *        action is needed to update the stream to <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceStorageResourceType
      */
@@ -129,11 +315,60 @@ public class AssociateInstanceStorageConfigRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * A valid resource type.
+     * A valid resource type. To <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-contact-analysis-segment-streams.html">enable
+     * streaming for real-time analysis of contacts</a>, use the following types:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For chat contacts, use <code>REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For voice contacts, use <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * <code>REAL_TIME_CONTACT_ANALYSIS_SEGMENTS</code> is deprecated, but it is still supported and will apply only to
+     * VOICE channel contacts. Use <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code> for voice contacts moving
+     * forward.
+     * </p>
+     * <p>
+     * If you have previously associated a stream with <code>REAL_TIME_CONTACT_ANALYSIS_SEGMENTS</code>, no action is
+     * needed to update the stream to <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code>.
+     * </p>
+     * </note>
      * 
      * @param resourceType
-     *        A valid resource type.
+     *        A valid resource type. To <a href=
+     *        "https://docs.aws.amazon.com/connect/latest/adminguide/enable-contact-analysis-segment-streams.html"
+     *        >enable streaming for real-time analysis of contacts</a>, use the following types:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For chat contacts, use <code>REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For voice contacts, use <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        <code>REAL_TIME_CONTACT_ANALYSIS_SEGMENTS</code> is deprecated, but it is still supported and will apply
+     *        only to VOICE channel contacts. Use <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code> for voice
+     *        contacts moving forward.
+     *        </p>
+     *        <p>
+     *        If you have previously associated a stream with <code>REAL_TIME_CONTACT_ANALYSIS_SEGMENTS</code>, no
+     *        action is needed to update the stream to <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceStorageResourceType
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,12 @@ public class LocalIpDetails implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String ipAddressV4;
+    /**
+     * <p>
+     * The IPv6 local address of the connection.
+     * </p>
+     */
+    private String ipAddressV6;
 
     /**
      * <p>
@@ -76,6 +82,46 @@ public class LocalIpDetails implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The IPv6 local address of the connection.
+     * </p>
+     * 
+     * @param ipAddressV6
+     *        The IPv6 local address of the connection.
+     */
+
+    public void setIpAddressV6(String ipAddressV6) {
+        this.ipAddressV6 = ipAddressV6;
+    }
+
+    /**
+     * <p>
+     * The IPv6 local address of the connection.
+     * </p>
+     * 
+     * @return The IPv6 local address of the connection.
+     */
+
+    public String getIpAddressV6() {
+        return this.ipAddressV6;
+    }
+
+    /**
+     * <p>
+     * The IPv6 local address of the connection.
+     * </p>
+     * 
+     * @param ipAddressV6
+     *        The IPv6 local address of the connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LocalIpDetails withIpAddressV6(String ipAddressV6) {
+        setIpAddressV6(ipAddressV6);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +134,9 @@ public class LocalIpDetails implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIpAddressV4() != null)
-            sb.append("IpAddressV4: ").append(getIpAddressV4());
+            sb.append("IpAddressV4: ").append("***Sensitive Data Redacted***").append(",");
+        if (getIpAddressV6() != null)
+            sb.append("IpAddressV6: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +155,10 @@ public class LocalIpDetails implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getIpAddressV4() != null && other.getIpAddressV4().equals(this.getIpAddressV4()) == false)
             return false;
+        if (other.getIpAddressV6() == null ^ this.getIpAddressV6() == null)
+            return false;
+        if (other.getIpAddressV6() != null && other.getIpAddressV6().equals(this.getIpAddressV6()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +168,7 @@ public class LocalIpDetails implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getIpAddressV4() == null) ? 0 : getIpAddressV4().hashCode());
+        hashCode = prime * hashCode + ((getIpAddressV6() == null) ? 0 : getIpAddressV6().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class ThirdPartyJobDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The identifier used to identify the job details in AWS CodePipeline.
+     * The identifier used to identify the job details in CodePipeline.
      * </p>
      */
     private String id;
@@ -42,19 +42,19 @@ public class ThirdPartyJobDetails implements Serializable, Cloneable, Structured
     private ThirdPartyJobData data;
     /**
      * <p>
-     * A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one
-     * job worker. Use this number in an <a>AcknowledgeThirdPartyJob</a> request.
+     * A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job
+     * worker. Use this number in an <a>AcknowledgeThirdPartyJob</a> request.
      * </p>
      */
     private String nonce;
 
     /**
      * <p>
-     * The identifier used to identify the job details in AWS CodePipeline.
+     * The identifier used to identify the job details in CodePipeline.
      * </p>
      * 
      * @param id
-     *        The identifier used to identify the job details in AWS CodePipeline.
+     *        The identifier used to identify the job details in CodePipeline.
      */
 
     public void setId(String id) {
@@ -63,10 +63,10 @@ public class ThirdPartyJobDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The identifier used to identify the job details in AWS CodePipeline.
+     * The identifier used to identify the job details in CodePipeline.
      * </p>
      * 
-     * @return The identifier used to identify the job details in AWS CodePipeline.
+     * @return The identifier used to identify the job details in CodePipeline.
      */
 
     public String getId() {
@@ -75,11 +75,11 @@ public class ThirdPartyJobDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The identifier used to identify the job details in AWS CodePipeline.
+     * The identifier used to identify the job details in CodePipeline.
      * </p>
      * 
      * @param id
-     *        The identifier used to identify the job details in AWS CodePipeline.
+     *        The identifier used to identify the job details in CodePipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,13 +130,13 @@ public class ThirdPartyJobDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one
-     * job worker. Use this number in an <a>AcknowledgeThirdPartyJob</a> request.
+     * A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job
+     * worker. Use this number in an <a>AcknowledgeThirdPartyJob</a> request.
      * </p>
      * 
      * @param nonce
-     *        A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by
-     *        only one job worker. Use this number in an <a>AcknowledgeThirdPartyJob</a> request.
+     *        A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only
+     *        one job worker. Use this number in an <a>AcknowledgeThirdPartyJob</a> request.
      */
 
     public void setNonce(String nonce) {
@@ -145,12 +145,12 @@ public class ThirdPartyJobDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one
-     * job worker. Use this number in an <a>AcknowledgeThirdPartyJob</a> request.
+     * A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job
+     * worker. Use this number in an <a>AcknowledgeThirdPartyJob</a> request.
      * </p>
      * 
-     * @return A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by
-     *         only one job worker. Use this number in an <a>AcknowledgeThirdPartyJob</a> request.
+     * @return A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only
+     *         one job worker. Use this number in an <a>AcknowledgeThirdPartyJob</a> request.
      */
 
     public String getNonce() {
@@ -159,13 +159,13 @@ public class ThirdPartyJobDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one
-     * job worker. Use this number in an <a>AcknowledgeThirdPartyJob</a> request.
+     * A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job
+     * worker. Use this number in an <a>AcknowledgeThirdPartyJob</a> request.
      * </p>
      * 
      * @param nonce
-     *        A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by
-     *        only one job worker. Use this number in an <a>AcknowledgeThirdPartyJob</a> request.
+     *        A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only
+     *        one job worker. Use this number in an <a>AcknowledgeThirdPartyJob</a> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

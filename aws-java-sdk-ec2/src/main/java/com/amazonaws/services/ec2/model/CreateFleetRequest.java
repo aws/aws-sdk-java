@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,9 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is
      * decreased below the current size of the EC2 Fleet.
+     * </p>
+     * <p>
+     * Supported only for fleets of type <code>maintain</code>.
      * </p>
      */
     private String excessCapacityTerminationPolicy;
@@ -131,8 +134,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
     /**
      * <p>
      * The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging your
-     * resources</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag your resources</a>.
      * </p>
      * <p>
      * If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet or
@@ -297,10 +299,15 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is
      * decreased below the current size of the EC2 Fleet.
      * </p>
+     * <p>
+     * Supported only for fleets of type <code>maintain</code>.
+     * </p>
      * 
      * @param excessCapacityTerminationPolicy
      *        Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is
-     *        decreased below the current size of the EC2 Fleet.
+     *        decreased below the current size of the EC2 Fleet.</p>
+     *        <p>
+     *        Supported only for fleets of type <code>maintain</code>.
      * @see FleetExcessCapacityTerminationPolicy
      */
 
@@ -313,9 +320,14 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is
      * decreased below the current size of the EC2 Fleet.
      * </p>
+     * <p>
+     * Supported only for fleets of type <code>maintain</code>.
+     * </p>
      * 
      * @return Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is
-     *         decreased below the current size of the EC2 Fleet.
+     *         decreased below the current size of the EC2 Fleet.</p>
+     *         <p>
+     *         Supported only for fleets of type <code>maintain</code>.
      * @see FleetExcessCapacityTerminationPolicy
      */
 
@@ -328,10 +340,15 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is
      * decreased below the current size of the EC2 Fleet.
      * </p>
+     * <p>
+     * Supported only for fleets of type <code>maintain</code>.
+     * </p>
      * 
      * @param excessCapacityTerminationPolicy
      *        Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is
-     *        decreased below the current size of the EC2 Fleet.
+     *        decreased below the current size of the EC2 Fleet.</p>
+     *        <p>
+     *        Supported only for fleets of type <code>maintain</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetExcessCapacityTerminationPolicy
      */
@@ -346,10 +363,15 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is
      * decreased below the current size of the EC2 Fleet.
      * </p>
+     * <p>
+     * Supported only for fleets of type <code>maintain</code>.
+     * </p>
      * 
      * @param excessCapacityTerminationPolicy
      *        Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is
-     *        decreased below the current size of the EC2 Fleet.
+     *        decreased below the current size of the EC2 Fleet.</p>
+     *        <p>
+     *        Supported only for fleets of type <code>maintain</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetExcessCapacityTerminationPolicy
      */
@@ -973,8 +995,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
     /**
      * <p>
      * The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging your
-     * resources</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag your resources</a>.
      * </p>
      * <p>
      * If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet or
@@ -989,7 +1010,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * </p>
      * 
      * @return The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging your
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag your
      *         resources</a>.</p>
      *         <p>
      *         If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet
@@ -1013,8 +1034,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
     /**
      * <p>
      * The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging your
-     * resources</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag your resources</a>.
      * </p>
      * <p>
      * If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet or
@@ -1030,7 +1050,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * 
      * @param tagSpecifications
      *        The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging your
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag your
      *        resources</a>.</p>
      *        <p>
      *        If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet
@@ -1056,8 +1076,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
     /**
      * <p>
      * The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging your
-     * resources</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag your resources</a>.
      * </p>
      * <p>
      * If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet or
@@ -1078,7 +1097,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * 
      * @param tagSpecifications
      *        The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging your
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag your
      *        resources</a>.</p>
      *        <p>
      *        If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet
@@ -1106,8 +1125,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
     /**
      * <p>
      * The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging your
-     * resources</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag your resources</a>.
      * </p>
      * <p>
      * If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet or
@@ -1123,7 +1141,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * 
      * @param tagSpecifications
      *        The key-value pair for tagging the EC2 Fleet request on creation. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging your
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag your
      *        resources</a>.</p>
      *        <p>
      *        If the fleet type is <code>instant</code>, specify a resource type of <code>fleet</code> to tag the fleet

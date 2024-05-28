@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,9 @@ public class ListIntegrationAssociationsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      */
     private String instanceId;
@@ -50,14 +52,24 @@ public class ListIntegrationAssociationsRequest extends com.amazonaws.AmazonWebS
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the integration.
+     * </p>
+     */
+    private String integrationArn;
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     *        The identifier of the Amazon Connect instance. You can <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *        ID</a> in the Amazon Resource Name (ARN) of the instance.
      */
 
     public void setInstanceId(String instanceId) {
@@ -66,10 +78,14 @@ public class ListIntegrationAssociationsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
-     * @return The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * @return The identifier of the Amazon Connect instance. You can <a
+     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *         ID</a> in the Amazon Resource Name (ARN) of the instance.
      */
 
     public String getInstanceId() {
@@ -78,11 +94,15 @@ public class ListIntegrationAssociationsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     *        The identifier of the Amazon Connect instance. You can <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *        ID</a> in the Amazon Resource Name (ARN) of the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -237,6 +257,46 @@ public class ListIntegrationAssociationsRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the integration.
+     * </p>
+     * 
+     * @param integrationArn
+     *        The Amazon Resource Name (ARN) of the integration.
+     */
+
+    public void setIntegrationArn(String integrationArn) {
+        this.integrationArn = integrationArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the integration.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the integration.
+     */
+
+    public String getIntegrationArn() {
+        return this.integrationArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the integration.
+     * </p>
+     * 
+     * @param integrationArn
+     *        The Amazon Resource Name (ARN) of the integration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListIntegrationAssociationsRequest withIntegrationArn(String integrationArn) {
+        setIntegrationArn(integrationArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -255,7 +315,9 @@ public class ListIntegrationAssociationsRequest extends com.amazonaws.AmazonWebS
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getIntegrationArn() != null)
+            sb.append("IntegrationArn: ").append(getIntegrationArn());
         sb.append("}");
         return sb.toString();
     }
@@ -286,6 +348,10 @@ public class ListIntegrationAssociationsRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getIntegrationArn() == null ^ this.getIntegrationArn() == null)
+            return false;
+        if (other.getIntegrationArn() != null && other.getIntegrationArn().equals(this.getIntegrationArn()) == false)
+            return false;
         return true;
     }
 
@@ -298,6 +364,7 @@ public class ListIntegrationAssociationsRequest extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getIntegrationType() == null) ? 0 : getIntegrationType().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getIntegrationArn() == null) ? 0 : getIntegrationArn().hashCode());
         return hashCode;
     }
 

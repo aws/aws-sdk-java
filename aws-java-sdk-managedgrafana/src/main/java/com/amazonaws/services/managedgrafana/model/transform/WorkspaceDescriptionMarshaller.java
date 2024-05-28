@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,8 @@ public class WorkspaceDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("freeTrialConsumed").build();
     private static final MarshallingInfo<java.util.Date> FREETRIALEXPIRATION_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("freeTrialExpiration").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> GRAFANATOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("grafanaToken").build();
     private static final MarshallingInfo<String> GRAFANAVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("grafanaVersion").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -57,6 +59,8 @@ public class WorkspaceDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("modified").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<StructuredPojo> NETWORKACCESSCONTROL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkAccessControl").build();
     private static final MarshallingInfo<List> NOTIFICATIONDESTINATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("notificationDestinations").build();
     private static final MarshallingInfo<String> ORGANIZATIONROLENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -71,6 +75,8 @@ public class WorkspaceDescriptionMarshaller {
             .marshallLocationName("status").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<StructuredPojo> VPCCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vpcConfiguration").build();
     private static final MarshallingInfo<String> WORKSPACEROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("workspaceRoleArn").build();
 
@@ -98,12 +104,14 @@ public class WorkspaceDescriptionMarshaller {
             protocolMarshaller.marshall(workspaceDescription.getEndpoint(), ENDPOINT_BINDING);
             protocolMarshaller.marshall(workspaceDescription.getFreeTrialConsumed(), FREETRIALCONSUMED_BINDING);
             protocolMarshaller.marshall(workspaceDescription.getFreeTrialExpiration(), FREETRIALEXPIRATION_BINDING);
+            protocolMarshaller.marshall(workspaceDescription.getGrafanaToken(), GRAFANATOKEN_BINDING);
             protocolMarshaller.marshall(workspaceDescription.getGrafanaVersion(), GRAFANAVERSION_BINDING);
             protocolMarshaller.marshall(workspaceDescription.getId(), ID_BINDING);
             protocolMarshaller.marshall(workspaceDescription.getLicenseExpiration(), LICENSEEXPIRATION_BINDING);
             protocolMarshaller.marshall(workspaceDescription.getLicenseType(), LICENSETYPE_BINDING);
             protocolMarshaller.marshall(workspaceDescription.getModified(), MODIFIED_BINDING);
             protocolMarshaller.marshall(workspaceDescription.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(workspaceDescription.getNetworkAccessControl(), NETWORKACCESSCONTROL_BINDING);
             protocolMarshaller.marshall(workspaceDescription.getNotificationDestinations(), NOTIFICATIONDESTINATIONS_BINDING);
             protocolMarshaller.marshall(workspaceDescription.getOrganizationRoleName(), ORGANIZATIONROLENAME_BINDING);
             protocolMarshaller.marshall(workspaceDescription.getOrganizationalUnits(), ORGANIZATIONALUNITS_BINDING);
@@ -111,6 +119,7 @@ public class WorkspaceDescriptionMarshaller {
             protocolMarshaller.marshall(workspaceDescription.getStackSetName(), STACKSETNAME_BINDING);
             protocolMarshaller.marshall(workspaceDescription.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(workspaceDescription.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(workspaceDescription.getVpcConfiguration(), VPCCONFIGURATION_BINDING);
             protocolMarshaller.marshall(workspaceDescription.getWorkspaceRoleArn(), WORKSPACEROLEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

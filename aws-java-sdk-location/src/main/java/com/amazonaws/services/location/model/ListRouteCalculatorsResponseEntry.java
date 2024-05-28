@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A route calculator resource listed in your AWS account.
+ * A route calculator resource listed in your Amazon Web Services account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListRouteCalculatorsResponseEntry"
@@ -57,6 +57,11 @@ public class ListRouteCalculatorsResponseEntry implements Serializable, Cloneabl
      * <li>
      * <p>
      * <code>Esri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Grab</code>
      * </p>
      * </li>
      * <li>
@@ -244,6 +249,11 @@ public class ListRouteCalculatorsResponseEntry implements Serializable, Cloneabl
      * </li>
      * <li>
      * <p>
+     * <code>Grab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Here</code>
      * </p>
      * </li>
@@ -260,6 +270,11 @@ public class ListRouteCalculatorsResponseEntry implements Serializable, Cloneabl
      *        <li>
      *        <p>
      *        <code>Esri</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Grab</code>
      *        </p>
      *        </li>
      *        <li>
@@ -290,6 +305,11 @@ public class ListRouteCalculatorsResponseEntry implements Serializable, Cloneabl
      * </li>
      * <li>
      * <p>
+     * <code>Grab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Here</code>
      * </p>
      * </li>
@@ -305,6 +325,11 @@ public class ListRouteCalculatorsResponseEntry implements Serializable, Cloneabl
      *         <li>
      *         <p>
      *         <code>Esri</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Grab</code>
      *         </p>
      *         </li>
      *         <li>
@@ -335,6 +360,11 @@ public class ListRouteCalculatorsResponseEntry implements Serializable, Cloneabl
      * </li>
      * <li>
      * <p>
+     * <code>Grab</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Here</code>
      * </p>
      * </li>
@@ -351,6 +381,11 @@ public class ListRouteCalculatorsResponseEntry implements Serializable, Cloneabl
      *        <li>
      *        <p>
      *        <code>Esri</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Grab</code>
      *        </p>
      *        </li>
      *        <li>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -102,7 +102,7 @@ public interface AmazonElasticMapReduce {
      * </p>
      * <note>
      * <p>
-     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x.
+     * The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x.
      * </p>
      * </note>
      * 
@@ -142,9 +142,7 @@ public interface AmazonElasticMapReduce {
      * If your cluster is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps
      * to process your data. You can bypass the 256-step limitation in various ways, including using SSH to connect to
      * the master node and submitting queries directly to the software running on the master node, such as Hive and
-     * Hadoop. For more information on how to do this, see <a
-     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/AddMoreThan256Steps.html">Add More than 256 Steps to
-     * a Cluster</a> in the <i>Amazon EMR Management Guide</i>.
+     * Hadoop.
      * </p>
      * <p>
      * A step specifies the location of a JAR file stored either on the master node of the cluster or in Amazon S3. Each
@@ -203,7 +201,7 @@ public interface AmazonElasticMapReduce {
      * Cancels a pending step or steps in a running cluster. Available only in Amazon EMR versions 4.8.0 and later,
      * excluding version 5.0.0. A maximum of 256 steps are allowed in each CancelSteps request. CancelSteps is
      * idempotent but asynchronous; it does not guarantee that a step will be canceled, even if the request is
-     * successfully submitted. When you use Amazon EMR versions 5.28.0 and later, you can cancel steps that are in a
+     * successfully submitted. When you use Amazon EMR releases 5.28.0 and later, you can cancel steps that are in a
      * <code>PENDING</code> or <code>RUNNING</code> state. In earlier versions of Amazon EMR, you can only cancel steps
      * that are in a <code>PENDING</code> state.
      * </p>
@@ -259,7 +257,7 @@ public interface AmazonElasticMapReduce {
      * <p>
      * Maps a user or group to the Amazon EMR Studio specified by <code>StudioId</code>, and applies a session policy to
      * refine Studio permissions for that user or group. Use <code>CreateStudioSessionMapping</code> to assign users to
-     * a Studio when you use Amazon Web Services SSO authentication. For instructions on how to assign users to a Studio
+     * a Studio when you use IAM Identity Center authentication. For instructions on how to assign users to a Studio
      * when you use IAM authentication, see <a href=
      * "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-manage-users.html#emr-studio-assign-users-groups"
      * >Assign a user or group to your EMR Studio</a>.
@@ -417,9 +415,9 @@ public interface AmazonElasticMapReduce {
 
     /**
      * <p>
-     * Provides EMR release label details, such as releases available the region where the API request is run, and the
-     * available applications for a specific EMR release label. Can also list EMR release versions that support a
-     * specified version of Spark.
+     * Provides Amazon EMR release label details, such as the releases available the Region where the API request is
+     * run, and the available applications for a specific Amazon EMR release label. Can also list Amazon EMR releases
+     * that support a specified version of Spark.
      * </p>
      * 
      * @param describeReleaseLabelRequest
@@ -522,6 +520,25 @@ public interface AmazonElasticMapReduce {
 
     /**
      * <p>
+     * Provides temporary, HTTP basic credentials that are associated with a given runtime IAM role and used by a
+     * cluster with fine-grained access control activated. You can use these credentials to connect to cluster endpoints
+     * that support username and password authentication.
+     * </p>
+     * 
+     * @param getClusterSessionCredentialsRequest
+     * @return Result of the GetClusterSessionCredentials operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Indicates that an error occurred while processing the request and that the request was not completed.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.GetClusterSessionCredentials
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetClusterSessionCredentials"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetClusterSessionCredentialsResult getClusterSessionCredentials(GetClusterSessionCredentialsRequest getClusterSessionCredentialsRequest);
+
+    /**
+     * <p>
      * Fetches the attached managed scaling policy for an Amazon EMR cluster.
      * </p>
      * 
@@ -602,7 +619,7 @@ public interface AmazonElasticMapReduce {
      * </p>
      * <note>
      * <p>
-     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x
      * versions.
      * </p>
      * </note>
@@ -639,9 +656,9 @@ public interface AmazonElasticMapReduce {
 
     /**
      * <p>
-     * Provides information for all active EC2 instances and EC2 instances terminated in the last 30 days, up to a
-     * maximum of 2,000. EC2 instances in any of the following states are considered active: AWAITING_FULFILLMENT,
-     * PROVISIONING, BOOTSTRAPPING, RUNNING.
+     * Provides information for all active Amazon EC2 instances and Amazon EC2 instances terminated in the last 30 days,
+     * up to a maximum of 2,000. Amazon EC2 instances in any of the following states are considered active:
+     * AWAITING_FULFILLMENT, PROVISIONING, BOOTSTRAPPING, RUNNING.
      * </p>
      * 
      * @param listInstancesRequest
@@ -661,7 +678,7 @@ public interface AmazonElasticMapReduce {
      * <p>
      * Provides summaries of all notebook executions. You can filter the list based on multiple criteria such as status,
      * time range, and editor id. Returns a maximum of 50 notebook executions and a marker to track the paging of a
-     * longer notebook execution list across multiple <code>ListNotebookExecution</code> calls.
+     * longer notebook execution list across multiple <code>ListNotebookExecutions</code> calls.
      * </p>
      * 
      * @param listNotebookExecutionsRequest
@@ -678,7 +695,7 @@ public interface AmazonElasticMapReduce {
 
     /**
      * <p>
-     * Retrieves release labels of EMR services in the region where the API is called.
+     * Retrieves release labels of Amazon EMR services in the Region where the API is called.
      * </p>
      * 
      * @param listReleaseLabelsRequest
@@ -771,6 +788,24 @@ public interface AmazonElasticMapReduce {
 
     /**
      * <p>
+     * A list of the instance types that Amazon EMR supports. You can filter the list by Amazon Web Services Region and
+     * Amazon EMR release.
+     * </p>
+     * 
+     * @param listSupportedInstanceTypesRequest
+     * @return Result of the ListSupportedInstanceTypes operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Amazon EMR service.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.ListSupportedInstanceTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSupportedInstanceTypes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListSupportedInstanceTypesResult listSupportedInstanceTypes(ListSupportedInstanceTypesRequest listSupportedInstanceTypesRequest);
+
+    /**
+     * <p>
      * Modifies the number of steps that can be executed concurrently for the cluster specified using ClusterID.
      * </p>
      * 
@@ -793,7 +828,7 @@ public interface AmazonElasticMapReduce {
      * </p>
      * <note>
      * <p>
-     * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x
      * versions.
      * </p>
      * </note>
@@ -838,8 +873,8 @@ public interface AmazonElasticMapReduce {
     /**
      * <p>
      * Creates or updates an automatic scaling policy for a core instance group or task instance group in an Amazon EMR
-     * cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates EC2 instances
-     * in response to the value of a CloudWatch metric.
+     * cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2
+     * instances in response to the value of a CloudWatch metric.
      * </p>
      * 
      * @param putAutoScalingPolicyRequest
@@ -853,7 +888,7 @@ public interface AmazonElasticMapReduce {
     /**
      * <note>
      * <p>
-     * Auto-termination is supported in Amazon EMR versions 5.30.0 and 6.1.0 and later. For more information, see <a
+     * Auto-termination is supported in Amazon EMR releases 5.30.0 and 6.1.0 and later. For more information, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-auto-termination-policy.html">Using an
      * auto-termination policy</a>.
      * </p>
@@ -898,8 +933,8 @@ public interface AmazonElasticMapReduce {
     /**
      * <p>
      * Creates or updates a managed scaling policy for an Amazon EMR cluster. The managed scaling policy defines the
-     * limits for resources, such as EC2 instances that can be added or terminated from a cluster. The policy only
-     * applies to the core and task nodes. The master node cannot be scaled after initial configuration.
+     * limits for resources, such as Amazon EC2 instances that can be added or terminated from a cluster. The policy
+     * only applies to the core and task nodes. The master node cannot be scaled after initial configuration.
      * </p>
      * 
      * @param putManagedScalingPolicyRequest
@@ -912,7 +947,7 @@ public interface AmazonElasticMapReduce {
 
     /**
      * <p>
-     * Removes an automatic scaling policy from a specified instance group within an EMR cluster.
+     * Removes an automatic scaling policy from a specified instance group within an Amazon EMR cluster.
      * </p>
      * 
      * @param removeAutoScalingPolicyRequest
@@ -938,7 +973,7 @@ public interface AmazonElasticMapReduce {
 
     /**
      * <p>
-     * Removes a managed scaling policy from a specified EMR cluster.
+     * Removes a managed scaling policy from a specified Amazon EMR cluster.
      * </p>
      * 
      * @param removeManagedScalingPolicyRequest
@@ -993,16 +1028,14 @@ public interface AmazonElasticMapReduce {
      * If your cluster is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps
      * to process your data. You can bypass the 256-step limitation in various ways, including using the SSH shell to
      * connect to the master node and submitting queries directly to the software running on the master node, such as
-     * Hive and Hadoop. For more information on how to do this, see <a
-     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/AddMoreThan256Steps.html">Add More than 256 Steps to
-     * a Cluster</a> in the <i>Amazon EMR Management Guide</i>.
+     * Hive and Hadoop.
      * </p>
      * <p>
-     * For long running clusters, we recommend that you periodically store your results.
+     * For long-running clusters, we recommend that you periodically store your results.
      * </p>
      * <note>
      * <p>
-     * The instance fleets configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+     * The instance fleets configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x
      * versions. The RunJobFlow request can contain InstanceFleets parameters or InstanceGroups parameters, but not
      * both.
      * </p>
@@ -1021,10 +1054,33 @@ public interface AmazonElasticMapReduce {
 
     /**
      * <p>
-     * SetTerminationProtection locks a cluster (job flow) so the EC2 instances in the cluster cannot be terminated by
-     * user intervention, an API call, or in the event of a job-flow error. The cluster still terminates upon successful
-     * completion of the job flow. Calling <code>SetTerminationProtection</code> on a cluster is similar to calling the
-     * Amazon EC2 <code>DisableAPITermination</code> API on all EC2 instances in a cluster.
+     * You can use the <code>SetKeepJobFlowAliveWhenNoSteps</code> to configure a cluster (job flow) to terminate after
+     * the step execution, i.e., all your steps are executed. If you want a transient cluster that shuts down after the
+     * last of the current executing steps are completed, you can configure <code>SetKeepJobFlowAliveWhenNoSteps</code>
+     * to false. If you want a long running cluster, configure <code>SetKeepJobFlowAliveWhenNoSteps</code> to true.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_TerminationProtection.html">Managing
+     * Cluster Termination</a> in the <i>Amazon EMR Management Guide</i>.
+     * </p>
+     * 
+     * @param setKeepJobFlowAliveWhenNoStepsRequest
+     * @return Result of the SetKeepJobFlowAliveWhenNoSteps operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Indicates that an error occurred while processing the request and that the request was not completed.
+     * @sample AmazonElasticMapReduce.SetKeepJobFlowAliveWhenNoSteps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetKeepJobFlowAliveWhenNoSteps"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SetKeepJobFlowAliveWhenNoStepsResult setKeepJobFlowAliveWhenNoSteps(SetKeepJobFlowAliveWhenNoStepsRequest setKeepJobFlowAliveWhenNoStepsRequest);
+
+    /**
+     * <p>
+     * SetTerminationProtection locks a cluster (job flow) so the Amazon EC2 instances in the cluster cannot be
+     * terminated by user intervention, an API call, or in the event of a job-flow error. The cluster still terminates
+     * upon successful completion of the job flow. Calling <code>SetTerminationProtection</code> on a cluster is similar
+     * to calling the Amazon EC2 <code>DisableAPITermination</code> API on all Amazon EC2 instances in a cluster.
      * </p>
      * <p>
      * <code>SetTerminationProtection</code> is used to prevent accidental termination of a cluster and to ensure that
@@ -1037,7 +1093,7 @@ public interface AmazonElasticMapReduce {
      * set the value to <code>false</code>.
      * </p>
      * <p>
-     * For more information, see<a
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_TerminationProtection.html">Managing
      * Cluster Termination</a> in the <i>Amazon EMR Management Guide</i>.
      * </p>
@@ -1054,19 +1110,49 @@ public interface AmazonElasticMapReduce {
     SetTerminationProtectionResult setTerminationProtection(SetTerminationProtectionRequest setTerminationProtectionRequest);
 
     /**
+     * <p>
+     * Specify whether to enable unhealthy node replacement, which lets Amazon EMR gracefully replace core nodes on a
+     * cluster if any nodes become unhealthy. For example, a node becomes unhealthy if disk usage is above 90%. If
+     * unhealthy node replacement is on and <code>TerminationProtected</code> are off, Amazon EMR immediately terminates
+     * the unhealthy core nodes. To use unhealthy node replacement and retain unhealthy core nodes, use to turn on
+     * termination protection. In such cases, Amazon EMR adds the unhealthy nodes to a denylist, reducing job
+     * interruptions and failures.
+     * </p>
+     * <p>
+     * If unhealthy node replacement is on, Amazon EMR notifies YARN and other applications on the cluster to stop
+     * scheduling tasks with these nodes, moves the data, and then terminates the nodes.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-node-replacement.html">graceful node
+     * replacement</a> in the <i>Amazon EMR Management Guide</i>.
+     * </p>
+     * 
+     * @param setUnhealthyNodeReplacementRequest
+     * @return Result of the SetUnhealthyNodeReplacement operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Indicates that an error occurred while processing the request and that the request was not completed.
+     * @sample AmazonElasticMapReduce.SetUnhealthyNodeReplacement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetUnhealthyNodeReplacement"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SetUnhealthyNodeReplacementResult setUnhealthyNodeReplacement(SetUnhealthyNodeReplacementRequest setUnhealthyNodeReplacementRequest);
+
+    /**
      * <important>
      * <p>
      * The SetVisibleToAllUsers parameter is no longer supported. Your cluster may be visible to all users in your
      * account. To restrict cluster access using an IAM policy, see <a
-     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html">Identity and Access
-     * Management for EMR</a>.
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-IAM.html">Identity and Access
+     * Management for Amazon EMR</a>.
      * </p>
      * </important>
      * <p>
-     * Sets the <a>Cluster$VisibleToAllUsers</a> value for an EMR cluster. When <code>true</code>, IAM principals in the
-     * Amazon Web Services account can perform EMR cluster actions that their IAM policies allow. When
+     * Sets the <a>Cluster$VisibleToAllUsers</a> value for an Amazon EMR cluster. When <code>true</code>, IAM principals
+     * in the Amazon Web Services account can perform Amazon EMR cluster actions that their IAM policies allow. When
      * <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user
-     * can perform EMR actions on the cluster, regardless of IAM permissions policies attached to other IAM principals.
+     * can perform Amazon EMR actions on the cluster, regardless of IAM permissions policies attached to other IAM
+     * principals.
      * </p>
      * <p>
      * This action works on running clusters. When you create a cluster, use the
@@ -1074,8 +1160,8 @@ public interface AmazonElasticMapReduce {
      * </p>
      * <p>
      * For more information, see <a href=
-     * "https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users"
-     * >Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.
+     * "https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_IAM_emr-with-IAM.html#security_set_visible_to_all_users"
+     * >Understanding the Amazon EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR Management Guide</i>.
      * </p>
      * 
      * @param setVisibleToAllUsersRequest
@@ -1126,7 +1212,7 @@ public interface AmazonElasticMapReduce {
     /**
      * <p>
      * TerminateJobFlows shuts a list of clusters (job flows) down. When a job flow is shut down, any step not yet
-     * completed is canceled and the EC2 instances on which the cluster is running are stopped. Any log files not
+     * completed is canceled and the Amazon EC2 instances on which the cluster is running are stopped. Any log files not
      * already saved are uploaded to Amazon S3 if a LogUri was specified when the cluster was created.
      * </p>
      * <p>

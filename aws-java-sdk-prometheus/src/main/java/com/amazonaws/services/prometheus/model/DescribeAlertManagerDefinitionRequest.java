@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a DescribeAlertManagerDefinition operation.
+ * Represents the input of a <code>DescribeAlertManagerDefinition</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeAlertManagerDefinition" target="_top">AWS
@@ -30,18 +30,18 @@ public class DescribeAlertManagerDefinitionRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The ID of the workspace to describe.
+     * The ID of the workspace to retrieve the alert manager definition from.
      * </p>
      */
     private String workspaceId;
 
     /**
      * <p>
-     * The ID of the workspace to describe.
+     * The ID of the workspace to retrieve the alert manager definition from.
      * </p>
      * 
      * @param workspaceId
-     *        The ID of the workspace to describe.
+     *        The ID of the workspace to retrieve the alert manager definition from.
      */
 
     public void setWorkspaceId(String workspaceId) {
@@ -50,10 +50,10 @@ public class DescribeAlertManagerDefinitionRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The ID of the workspace to describe.
+     * The ID of the workspace to retrieve the alert manager definition from.
      * </p>
      * 
-     * @return The ID of the workspace to describe.
+     * @return The ID of the workspace to retrieve the alert manager definition from.
      */
 
     public String getWorkspaceId() {
@@ -62,11 +62,11 @@ public class DescribeAlertManagerDefinitionRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The ID of the workspace to describe.
+     * The ID of the workspace to retrieve the alert manager definition from.
      * </p>
      * 
      * @param workspaceId
-     *        The ID of the workspace to describe.
+     *        The ID of the workspace to retrieve the alert manager definition from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

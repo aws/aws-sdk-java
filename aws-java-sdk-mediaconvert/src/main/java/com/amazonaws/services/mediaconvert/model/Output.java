@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,37 +29,37 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class Output implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * (AudioDescriptions) contains groups of audio encoding settings organized by audio codec. Include one instance of
-     * (AudioDescriptions) per output. (AudioDescriptions) can contain multiple groups of encoding settings.
+     * Contains groups of audio encoding settings organized by audio codec. Include one instance of per output. Can
+     * contain multiple groups of encoding settings.
      */
     private java.util.List<AudioDescription> audioDescriptions;
     /**
-     * (CaptionDescriptions) contains groups of captions settings. For each output that has captions, include one
-     * instance of (CaptionDescriptions). (CaptionDescriptions) can contain multiple groups of captions settings.
+     * Contains groups of captions settings. For each output that has captions, include one instance of
+     * CaptionDescriptions. Can contain multiple groups of captions settings.
      */
     private java.util.List<CaptionDescription> captionDescriptions;
     /** Container specific settings. */
     private ContainerSettings containerSettings;
     /**
-     * Use Extension (Extension) to specify the file extension for outputs in File output groups. If you do not specify
-     * a value, the service will use default extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No Container, the service
-     * will use codec extensions (e.g. AAC, H265, H265, AC3)
+     * Use Extension to specify the file extension for outputs in File output groups. If you do not specify a value, the
+     * service will use default extensions by container type as follows * MPEG-2 transport stream, m2ts * Quicktime, mov
+     * * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No Container, the service will use codec
+     * extensions (e.g. AAC, H265, H265, AC3)
      */
     private String extension;
     /**
-     * Use Name modifier (NameModifier) to have the service add a string to the end of each output filename. You specify
-     * the base filename as part of your destination URI. When you create multiple outputs in the same output group,
-     * Name modifier (NameModifier) is required. Name modifier also accepts format identifiers. For DASH ISO outputs, if
-     * you use the format identifiers $Number$ or $Time$ in one output, you must use them in the same way in all outputs
-     * of the output group.
+     * Use Name modifier to have the service add a string to the end of each output filename. You specify the base
+     * filename as part of your destination URI. When you create multiple outputs in the same output group, Name
+     * modifier is required. Name modifier also accepts format identifiers. For DASH ISO outputs, if you use the format
+     * identifiers $Number$ or $Time$ in one output, you must use them in the same way in all outputs of the output
+     * group.
      */
     private String nameModifier;
     /** Specific settings for this type of output. */
     private OutputSettings outputSettings;
     /**
-     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide the system or custom preset name.
-     * You can specify either Preset (Preset) or Container settings (ContainerSettings), but not both.
+     * Use Preset to specify a preset for your transcoding settings. Provide the system or custom preset name. You can
+     * specify either Preset or Container settings, but not both.
      */
     private String preset;
     /**
@@ -69,12 +69,11 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     private VideoDescription videoDescription;
 
     /**
-     * (AudioDescriptions) contains groups of audio encoding settings organized by audio codec. Include one instance of
-     * (AudioDescriptions) per output. (AudioDescriptions) can contain multiple groups of encoding settings.
+     * Contains groups of audio encoding settings organized by audio codec. Include one instance of per output. Can
+     * contain multiple groups of encoding settings.
      * 
-     * @return (AudioDescriptions) contains groups of audio encoding settings organized by audio codec. Include one
-     *         instance of (AudioDescriptions) per output. (AudioDescriptions) can contain multiple groups of encoding
-     *         settings.
+     * @return Contains groups of audio encoding settings organized by audio codec. Include one instance of per output.
+     *         Can contain multiple groups of encoding settings.
      */
 
     public java.util.List<AudioDescription> getAudioDescriptions() {
@@ -82,13 +81,12 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * (AudioDescriptions) contains groups of audio encoding settings organized by audio codec. Include one instance of
-     * (AudioDescriptions) per output. (AudioDescriptions) can contain multiple groups of encoding settings.
+     * Contains groups of audio encoding settings organized by audio codec. Include one instance of per output. Can
+     * contain multiple groups of encoding settings.
      * 
      * @param audioDescriptions
-     *        (AudioDescriptions) contains groups of audio encoding settings organized by audio codec. Include one
-     *        instance of (AudioDescriptions) per output. (AudioDescriptions) can contain multiple groups of encoding
-     *        settings.
+     *        Contains groups of audio encoding settings organized by audio codec. Include one instance of per output.
+     *        Can contain multiple groups of encoding settings.
      */
 
     public void setAudioDescriptions(java.util.Collection<AudioDescription> audioDescriptions) {
@@ -101,8 +99,8 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * (AudioDescriptions) contains groups of audio encoding settings organized by audio codec. Include one instance of
-     * (AudioDescriptions) per output. (AudioDescriptions) can contain multiple groups of encoding settings.
+     * Contains groups of audio encoding settings organized by audio codec. Include one instance of per output. Can
+     * contain multiple groups of encoding settings.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAudioDescriptions(java.util.Collection)} or {@link #withAudioDescriptions(java.util.Collection)} if
@@ -110,9 +108,8 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param audioDescriptions
-     *        (AudioDescriptions) contains groups of audio encoding settings organized by audio codec. Include one
-     *        instance of (AudioDescriptions) per output. (AudioDescriptions) can contain multiple groups of encoding
-     *        settings.
+     *        Contains groups of audio encoding settings organized by audio codec. Include one instance of per output.
+     *        Can contain multiple groups of encoding settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,13 +124,12 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * (AudioDescriptions) contains groups of audio encoding settings organized by audio codec. Include one instance of
-     * (AudioDescriptions) per output. (AudioDescriptions) can contain multiple groups of encoding settings.
+     * Contains groups of audio encoding settings organized by audio codec. Include one instance of per output. Can
+     * contain multiple groups of encoding settings.
      * 
      * @param audioDescriptions
-     *        (AudioDescriptions) contains groups of audio encoding settings organized by audio codec. Include one
-     *        instance of (AudioDescriptions) per output. (AudioDescriptions) can contain multiple groups of encoding
-     *        settings.
+     *        Contains groups of audio encoding settings organized by audio codec. Include one instance of per output.
+     *        Can contain multiple groups of encoding settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,12 +139,11 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * (CaptionDescriptions) contains groups of captions settings. For each output that has captions, include one
-     * instance of (CaptionDescriptions). (CaptionDescriptions) can contain multiple groups of captions settings.
+     * Contains groups of captions settings. For each output that has captions, include one instance of
+     * CaptionDescriptions. Can contain multiple groups of captions settings.
      * 
-     * @return (CaptionDescriptions) contains groups of captions settings. For each output that has captions, include
-     *         one instance of (CaptionDescriptions). (CaptionDescriptions) can contain multiple groups of captions
-     *         settings.
+     * @return Contains groups of captions settings. For each output that has captions, include one instance of
+     *         CaptionDescriptions. Can contain multiple groups of captions settings.
      */
 
     public java.util.List<CaptionDescription> getCaptionDescriptions() {
@@ -156,12 +151,12 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * (CaptionDescriptions) contains groups of captions settings. For each output that has captions, include one
-     * instance of (CaptionDescriptions). (CaptionDescriptions) can contain multiple groups of captions settings.
+     * Contains groups of captions settings. For each output that has captions, include one instance of
+     * CaptionDescriptions. Can contain multiple groups of captions settings.
      * 
      * @param captionDescriptions
-     *        (CaptionDescriptions) contains groups of captions settings. For each output that has captions, include one
-     *        instance of (CaptionDescriptions). (CaptionDescriptions) can contain multiple groups of captions settings.
+     *        Contains groups of captions settings. For each output that has captions, include one instance of
+     *        CaptionDescriptions. Can contain multiple groups of captions settings.
      */
 
     public void setCaptionDescriptions(java.util.Collection<CaptionDescription> captionDescriptions) {
@@ -174,8 +169,8 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * (CaptionDescriptions) contains groups of captions settings. For each output that has captions, include one
-     * instance of (CaptionDescriptions). (CaptionDescriptions) can contain multiple groups of captions settings.
+     * Contains groups of captions settings. For each output that has captions, include one instance of
+     * CaptionDescriptions. Can contain multiple groups of captions settings.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setCaptionDescriptions(java.util.Collection)} or {@link #withCaptionDescriptions(java.util.Collection)}
@@ -183,8 +178,8 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param captionDescriptions
-     *        (CaptionDescriptions) contains groups of captions settings. For each output that has captions, include one
-     *        instance of (CaptionDescriptions). (CaptionDescriptions) can contain multiple groups of captions settings.
+     *        Contains groups of captions settings. For each output that has captions, include one instance of
+     *        CaptionDescriptions. Can contain multiple groups of captions settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,12 +194,12 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * (CaptionDescriptions) contains groups of captions settings. For each output that has captions, include one
-     * instance of (CaptionDescriptions). (CaptionDescriptions) can contain multiple groups of captions settings.
+     * Contains groups of captions settings. For each output that has captions, include one instance of
+     * CaptionDescriptions. Can contain multiple groups of captions settings.
      * 
      * @param captionDescriptions
-     *        (CaptionDescriptions) contains groups of captions settings. For each output that has captions, include one
-     *        instance of (CaptionDescriptions). (CaptionDescriptions) can contain multiple groups of captions settings.
+     *        Contains groups of captions settings. For each output that has captions, include one instance of
+     *        CaptionDescriptions. Can contain multiple groups of captions settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -248,16 +243,16 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Extension (Extension) to specify the file extension for outputs in File output groups. If you do not specify
-     * a value, the service will use default extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No Container, the service
-     * will use codec extensions (e.g. AAC, H265, H265, AC3)
+     * Use Extension to specify the file extension for outputs in File output groups. If you do not specify a value, the
+     * service will use default extensions by container type as follows * MPEG-2 transport stream, m2ts * Quicktime, mov
+     * * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No Container, the service will use codec
+     * extensions (e.g. AAC, H265, H265, AC3)
      * 
      * @param extension
-     *        Use Extension (Extension) to specify the file extension for outputs in File output groups. If you do not
-     *        specify a value, the service will use default extensions by container type as follows * MPEG-2 transport
-     *        stream, m2ts * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No
-     *        Container, the service will use codec extensions (e.g. AAC, H265, H265, AC3)
+     *        Use Extension to specify the file extension for outputs in File output groups. If you do not specify a
+     *        value, the service will use default extensions by container type as follows * MPEG-2 transport stream,
+     *        m2ts * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No Container,
+     *        the service will use codec extensions (e.g. AAC, H265, H265, AC3)
      */
 
     public void setExtension(String extension) {
@@ -265,15 +260,15 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Extension (Extension) to specify the file extension for outputs in File output groups. If you do not specify
-     * a value, the service will use default extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No Container, the service
-     * will use codec extensions (e.g. AAC, H265, H265, AC3)
+     * Use Extension to specify the file extension for outputs in File output groups. If you do not specify a value, the
+     * service will use default extensions by container type as follows * MPEG-2 transport stream, m2ts * Quicktime, mov
+     * * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No Container, the service will use codec
+     * extensions (e.g. AAC, H265, H265, AC3)
      * 
-     * @return Use Extension (Extension) to specify the file extension for outputs in File output groups. If you do not
-     *         specify a value, the service will use default extensions by container type as follows * MPEG-2 transport
-     *         stream, m2ts * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No
-     *         Container, the service will use codec extensions (e.g. AAC, H265, H265, AC3)
+     * @return Use Extension to specify the file extension for outputs in File output groups. If you do not specify a
+     *         value, the service will use default extensions by container type as follows * MPEG-2 transport stream,
+     *         m2ts * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No Container,
+     *         the service will use codec extensions (e.g. AAC, H265, H265, AC3)
      */
 
     public String getExtension() {
@@ -281,16 +276,16 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Extension (Extension) to specify the file extension for outputs in File output groups. If you do not specify
-     * a value, the service will use default extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No Container, the service
-     * will use codec extensions (e.g. AAC, H265, H265, AC3)
+     * Use Extension to specify the file extension for outputs in File output groups. If you do not specify a value, the
+     * service will use default extensions by container type as follows * MPEG-2 transport stream, m2ts * Quicktime, mov
+     * * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No Container, the service will use codec
+     * extensions (e.g. AAC, H265, H265, AC3)
      * 
      * @param extension
-     *        Use Extension (Extension) to specify the file extension for outputs in File output groups. If you do not
-     *        specify a value, the service will use default extensions by container type as follows * MPEG-2 transport
-     *        stream, m2ts * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No
-     *        Container, the service will use codec extensions (e.g. AAC, H265, H265, AC3)
+     *        Use Extension to specify the file extension for outputs in File output groups. If you do not specify a
+     *        value, the service will use default extensions by container type as follows * MPEG-2 transport stream,
+     *        m2ts * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No Container,
+     *        the service will use codec extensions (e.g. AAC, H265, H265, AC3)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -300,18 +295,18 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Name modifier (NameModifier) to have the service add a string to the end of each output filename. You specify
-     * the base filename as part of your destination URI. When you create multiple outputs in the same output group,
-     * Name modifier (NameModifier) is required. Name modifier also accepts format identifiers. For DASH ISO outputs, if
-     * you use the format identifiers $Number$ or $Time$ in one output, you must use them in the same way in all outputs
-     * of the output group.
+     * Use Name modifier to have the service add a string to the end of each output filename. You specify the base
+     * filename as part of your destination URI. When you create multiple outputs in the same output group, Name
+     * modifier is required. Name modifier also accepts format identifiers. For DASH ISO outputs, if you use the format
+     * identifiers $Number$ or $Time$ in one output, you must use them in the same way in all outputs of the output
+     * group.
      * 
      * @param nameModifier
-     *        Use Name modifier (NameModifier) to have the service add a string to the end of each output filename. You
-     *        specify the base filename as part of your destination URI. When you create multiple outputs in the same
-     *        output group, Name modifier (NameModifier) is required. Name modifier also accepts format identifiers. For
-     *        DASH ISO outputs, if you use the format identifiers $Number$ or $Time$ in one output, you must use them in
-     *        the same way in all outputs of the output group.
+     *        Use Name modifier to have the service add a string to the end of each output filename. You specify the
+     *        base filename as part of your destination URI. When you create multiple outputs in the same output group,
+     *        Name modifier is required. Name modifier also accepts format identifiers. For DASH ISO outputs, if you use
+     *        the format identifiers $Number$ or $Time$ in one output, you must use them in the same way in all outputs
+     *        of the output group.
      */
 
     public void setNameModifier(String nameModifier) {
@@ -319,17 +314,17 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Name modifier (NameModifier) to have the service add a string to the end of each output filename. You specify
-     * the base filename as part of your destination URI. When you create multiple outputs in the same output group,
-     * Name modifier (NameModifier) is required. Name modifier also accepts format identifiers. For DASH ISO outputs, if
-     * you use the format identifiers $Number$ or $Time$ in one output, you must use them in the same way in all outputs
-     * of the output group.
+     * Use Name modifier to have the service add a string to the end of each output filename. You specify the base
+     * filename as part of your destination URI. When you create multiple outputs in the same output group, Name
+     * modifier is required. Name modifier also accepts format identifiers. For DASH ISO outputs, if you use the format
+     * identifiers $Number$ or $Time$ in one output, you must use them in the same way in all outputs of the output
+     * group.
      * 
-     * @return Use Name modifier (NameModifier) to have the service add a string to the end of each output filename. You
-     *         specify the base filename as part of your destination URI. When you create multiple outputs in the same
-     *         output group, Name modifier (NameModifier) is required. Name modifier also accepts format identifiers.
-     *         For DASH ISO outputs, if you use the format identifiers $Number$ or $Time$ in one output, you must use
-     *         them in the same way in all outputs of the output group.
+     * @return Use Name modifier to have the service add a string to the end of each output filename. You specify the
+     *         base filename as part of your destination URI. When you create multiple outputs in the same output group,
+     *         Name modifier is required. Name modifier also accepts format identifiers. For DASH ISO outputs, if you
+     *         use the format identifiers $Number$ or $Time$ in one output, you must use them in the same way in all
+     *         outputs of the output group.
      */
 
     public String getNameModifier() {
@@ -337,18 +332,18 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Name modifier (NameModifier) to have the service add a string to the end of each output filename. You specify
-     * the base filename as part of your destination URI. When you create multiple outputs in the same output group,
-     * Name modifier (NameModifier) is required. Name modifier also accepts format identifiers. For DASH ISO outputs, if
-     * you use the format identifiers $Number$ or $Time$ in one output, you must use them in the same way in all outputs
-     * of the output group.
+     * Use Name modifier to have the service add a string to the end of each output filename. You specify the base
+     * filename as part of your destination URI. When you create multiple outputs in the same output group, Name
+     * modifier is required. Name modifier also accepts format identifiers. For DASH ISO outputs, if you use the format
+     * identifiers $Number$ or $Time$ in one output, you must use them in the same way in all outputs of the output
+     * group.
      * 
      * @param nameModifier
-     *        Use Name modifier (NameModifier) to have the service add a string to the end of each output filename. You
-     *        specify the base filename as part of your destination URI. When you create multiple outputs in the same
-     *        output group, Name modifier (NameModifier) is required. Name modifier also accepts format identifiers. For
-     *        DASH ISO outputs, if you use the format identifiers $Number$ or $Time$ in one output, you must use them in
-     *        the same way in all outputs of the output group.
+     *        Use Name modifier to have the service add a string to the end of each output filename. You specify the
+     *        base filename as part of your destination URI. When you create multiple outputs in the same output group,
+     *        Name modifier is required. Name modifier also accepts format identifiers. For DASH ISO outputs, if you use
+     *        the format identifiers $Number$ or $Time$ in one output, you must use them in the same way in all outputs
+     *        of the output group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -392,12 +387,12 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide the system or custom preset name.
-     * You can specify either Preset (Preset) or Container settings (ContainerSettings), but not both.
+     * Use Preset to specify a preset for your transcoding settings. Provide the system or custom preset name. You can
+     * specify either Preset or Container settings, but not both.
      * 
      * @param preset
-     *        Use Preset (Preset) to specify a preset for your transcoding settings. Provide the system or custom preset
-     *        name. You can specify either Preset (Preset) or Container settings (ContainerSettings), but not both.
+     *        Use Preset to specify a preset for your transcoding settings. Provide the system or custom preset name.
+     *        You can specify either Preset or Container settings, but not both.
      */
 
     public void setPreset(String preset) {
@@ -405,12 +400,11 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide the system or custom preset name.
-     * You can specify either Preset (Preset) or Container settings (ContainerSettings), but not both.
+     * Use Preset to specify a preset for your transcoding settings. Provide the system or custom preset name. You can
+     * specify either Preset or Container settings, but not both.
      * 
-     * @return Use Preset (Preset) to specify a preset for your transcoding settings. Provide the system or custom
-     *         preset name. You can specify either Preset (Preset) or Container settings (ContainerSettings), but not
-     *         both.
+     * @return Use Preset to specify a preset for your transcoding settings. Provide the system or custom preset name.
+     *         You can specify either Preset or Container settings, but not both.
      */
 
     public String getPreset() {
@@ -418,12 +412,12 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide the system or custom preset name.
-     * You can specify either Preset (Preset) or Container settings (ContainerSettings), but not both.
+     * Use Preset to specify a preset for your transcoding settings. Provide the system or custom preset name. You can
+     * specify either Preset or Container settings, but not both.
      * 
      * @param preset
-     *        Use Preset (Preset) to specify a preset for your transcoding settings. Provide the system or custom preset
-     *        name. You can specify either Preset (Preset) or Container settings (ContainerSettings), but not both.
+     *        Use Preset to specify a preset for your transcoding settings. Provide the system or custom preset name.
+     *        You can specify either Preset or Container settings, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

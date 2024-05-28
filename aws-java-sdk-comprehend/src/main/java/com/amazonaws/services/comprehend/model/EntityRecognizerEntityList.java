@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the entity recognizer submitted with an entity recognizer.
+ * Describes the entity list submitted with an entity recognizer.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/EntityRecognizerEntityList"
@@ -30,7 +30,7 @@ public class EntityRecognizerEntityList implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Specifies the Amazon S3 location where the entity list is located. The URI must be in the same region as the API
+     * Specifies the Amazon S3 location where the entity list is located. The URI must be in the same Region as the API
      * endpoint that you are calling.
      * </p>
      */
@@ -38,12 +38,12 @@ public class EntityRecognizerEntityList implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Specifies the Amazon S3 location where the entity list is located. The URI must be in the same region as the API
+     * Specifies the Amazon S3 location where the entity list is located. The URI must be in the same Region as the API
      * endpoint that you are calling.
      * </p>
      * 
      * @param s3Uri
-     *        Specifies the Amazon S3 location where the entity list is located. The URI must be in the same region as
+     *        Specifies the Amazon S3 location where the entity list is located. The URI must be in the same Region as
      *        the API endpoint that you are calling.
      */
 
@@ -53,11 +53,11 @@ public class EntityRecognizerEntityList implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Specifies the Amazon S3 location where the entity list is located. The URI must be in the same region as the API
+     * Specifies the Amazon S3 location where the entity list is located. The URI must be in the same Region as the API
      * endpoint that you are calling.
      * </p>
      * 
-     * @return Specifies the Amazon S3 location where the entity list is located. The URI must be in the same region as
+     * @return Specifies the Amazon S3 location where the entity list is located. The URI must be in the same Region as
      *         the API endpoint that you are calling.
      */
 
@@ -67,12 +67,12 @@ public class EntityRecognizerEntityList implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Specifies the Amazon S3 location where the entity list is located. The URI must be in the same region as the API
+     * Specifies the Amazon S3 location where the entity list is located. The URI must be in the same Region as the API
      * endpoint that you are calling.
      * </p>
      * 
      * @param s3Uri
-     *        Specifies the Amazon S3 location where the entity list is located. The URI must be in the same region as
+     *        Specifies the Amazon S3 location where the entity list is located. The URI must be in the same Region as
      *        the API endpoint that you are calling.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListProblemsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The AWS account ID for the resource group owner.
+     * </p>
+     */
+    private String accountId;
     /**
      * <p>
      * The name of the resource group.
@@ -64,6 +70,52 @@ public class ListProblemsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String componentName;
+    /**
+     * <p>
+     * Specifies whether or not you can view the problem. If not specified, visible and ignored problems are returned.
+     * </p>
+     */
+    private String visibility;
+
+    /**
+     * <p>
+     * The AWS account ID for the resource group owner.
+     * </p>
+     * 
+     * @param accountId
+     *        The AWS account ID for the resource group owner.
+     */
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID for the resource group owner.
+     * </p>
+     * 
+     * @return The AWS account ID for the resource group owner.
+     */
+
+    public String getAccountId() {
+        return this.accountId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID for the resource group owner.
+     * </p>
+     * 
+     * @param accountId
+     *        The AWS account ID for the resource group owner.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListProblemsRequest withAccountId(String accountId) {
+        setAccountId(accountId);
+        return this;
+    }
 
     /**
      * <p>
@@ -324,6 +376,69 @@ public class ListProblemsRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * Specifies whether or not you can view the problem. If not specified, visible and ignored problems are returned.
+     * </p>
+     * 
+     * @param visibility
+     *        Specifies whether or not you can view the problem. If not specified, visible and ignored problems are
+     *        returned.
+     * @see Visibility
+     */
+
+    public void setVisibility(String visibility) {
+        this.visibility = visibility;
+    }
+
+    /**
+     * <p>
+     * Specifies whether or not you can view the problem. If not specified, visible and ignored problems are returned.
+     * </p>
+     * 
+     * @return Specifies whether or not you can view the problem. If not specified, visible and ignored problems are
+     *         returned.
+     * @see Visibility
+     */
+
+    public String getVisibility() {
+        return this.visibility;
+    }
+
+    /**
+     * <p>
+     * Specifies whether or not you can view the problem. If not specified, visible and ignored problems are returned.
+     * </p>
+     * 
+     * @param visibility
+     *        Specifies whether or not you can view the problem. If not specified, visible and ignored problems are
+     *        returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Visibility
+     */
+
+    public ListProblemsRequest withVisibility(String visibility) {
+        setVisibility(visibility);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether or not you can view the problem. If not specified, visible and ignored problems are returned.
+     * </p>
+     * 
+     * @param visibility
+     *        Specifies whether or not you can view the problem. If not specified, visible and ignored problems are
+     *        returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Visibility
+     */
+
+    public ListProblemsRequest withVisibility(Visibility visibility) {
+        this.visibility = visibility.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -335,6 +450,8 @@ public class ListProblemsRequest extends com.amazonaws.AmazonWebServiceRequest i
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccountId() != null)
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getResourceGroupName() != null)
             sb.append("ResourceGroupName: ").append(getResourceGroupName()).append(",");
         if (getStartTime() != null)
@@ -346,7 +463,9 @@ public class ListProblemsRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getComponentName() != null)
-            sb.append("ComponentName: ").append(getComponentName());
+            sb.append("ComponentName: ").append(getComponentName()).append(",");
+        if (getVisibility() != null)
+            sb.append("Visibility: ").append(getVisibility());
         sb.append("}");
         return sb.toString();
     }
@@ -361,6 +480,10 @@ public class ListProblemsRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (obj instanceof ListProblemsRequest == false)
             return false;
         ListProblemsRequest other = (ListProblemsRequest) obj;
+        if (other.getAccountId() == null ^ this.getAccountId() == null)
+            return false;
+        if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
+            return false;
         if (other.getResourceGroupName() == null ^ this.getResourceGroupName() == null)
             return false;
         if (other.getResourceGroupName() != null && other.getResourceGroupName().equals(this.getResourceGroupName()) == false)
@@ -385,6 +508,10 @@ public class ListProblemsRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getComponentName() != null && other.getComponentName().equals(this.getComponentName()) == false)
             return false;
+        if (other.getVisibility() == null ^ this.getVisibility() == null)
+            return false;
+        if (other.getVisibility() != null && other.getVisibility().equals(this.getVisibility()) == false)
+            return false;
         return true;
     }
 
@@ -393,12 +520,14 @@ public class ListProblemsRequest extends com.amazonaws.AmazonWebServiceRequest i
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         hashCode = prime * hashCode + ((getResourceGroupName() == null) ? 0 : getResourceGroupName().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getComponentName() == null) ? 0 : getComponentName().hashCode());
+        hashCode = prime * hashCode + ((getVisibility() == null) ? 0 : getVisibility().hashCode());
         return hashCode;
     }
 

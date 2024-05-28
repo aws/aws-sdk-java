@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,8 @@ public class SourcePropertiesMarshaller {
             .marshallLocationName("ramBytes").build();
     private static final MarshallingInfo<String> RECOMMENDEDINSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("recommendedInstanceType").build();
+    private static final MarshallingInfo<Boolean> SUPPORTSNITROINSTANCES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("supportsNitroInstances").build();
 
     private static final SourcePropertiesMarshaller instance = new SourcePropertiesMarshaller();
 
@@ -69,6 +71,7 @@ public class SourcePropertiesMarshaller {
             protocolMarshaller.marshall(sourceProperties.getOs(), OS_BINDING);
             protocolMarshaller.marshall(sourceProperties.getRamBytes(), RAMBYTES_BINDING);
             protocolMarshaller.marshall(sourceProperties.getRecommendedInstanceType(), RECOMMENDEDINSTANCETYPE_BINDING);
+            protocolMarshaller.marshall(sourceProperties.getSupportsNitroInstances(), SUPPORTSNITROINSTANCES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

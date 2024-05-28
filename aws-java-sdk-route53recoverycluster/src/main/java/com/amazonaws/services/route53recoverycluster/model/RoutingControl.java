@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * A routing control, which is a simple on/off switch that you can use to route traffic to cells. When a routing control
- * state is On, traffic flows to a cell. When the state is Off, traffic does not flow.
+ * state is set to ON, traffic flows to a cell. When the state is set to OFF, traffic does not flow.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-cluster-2019-12-02/RoutingControl"
@@ -37,7 +37,8 @@ public class RoutingControl implements Serializable, Cloneable, StructuredPojo {
     private String controlPanelArn;
     /**
      * <p>
-     * The name of the control panel where the routing control is located.
+     * The name of the control panel where the routing control is located. Only ASCII characters are supported for
+     * control panel names.
      * </p>
      */
     private String controlPanelName;
@@ -55,11 +56,17 @@ public class RoutingControl implements Serializable, Cloneable, StructuredPojo {
     private String routingControlName;
     /**
      * <p>
-     * The current state of the routing control. When a routing control state is On, traffic flows to a cell. When the
-     * state is Off, traffic does not flow.
+     * The current state of the routing control. When a routing control state is set to ON, traffic flows to a cell.
+     * When the state is set to OFF, traffic does not flow.
      * </p>
      */
     private String routingControlState;
+    /**
+     * <p>
+     * The Amazon Web Services account ID of the routing control owner.
+     * </p>
+     */
+    private String owner;
 
     /**
      * <p>
@@ -103,11 +110,13 @@ public class RoutingControl implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the control panel where the routing control is located.
+     * The name of the control panel where the routing control is located. Only ASCII characters are supported for
+     * control panel names.
      * </p>
      * 
      * @param controlPanelName
-     *        The name of the control panel where the routing control is located.
+     *        The name of the control panel where the routing control is located. Only ASCII characters are supported
+     *        for control panel names.
      */
 
     public void setControlPanelName(String controlPanelName) {
@@ -116,10 +125,12 @@ public class RoutingControl implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the control panel where the routing control is located.
+     * The name of the control panel where the routing control is located. Only ASCII characters are supported for
+     * control panel names.
      * </p>
      * 
-     * @return The name of the control panel where the routing control is located.
+     * @return The name of the control panel where the routing control is located. Only ASCII characters are supported
+     *         for control panel names.
      */
 
     public String getControlPanelName() {
@@ -128,11 +139,13 @@ public class RoutingControl implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the control panel where the routing control is located.
+     * The name of the control panel where the routing control is located. Only ASCII characters are supported for
+     * control panel names.
      * </p>
      * 
      * @param controlPanelName
-     *        The name of the control panel where the routing control is located.
+     *        The name of the control panel where the routing control is located. Only ASCII characters are supported
+     *        for control panel names.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -223,13 +236,13 @@ public class RoutingControl implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current state of the routing control. When a routing control state is On, traffic flows to a cell. When the
-     * state is Off, traffic does not flow.
+     * The current state of the routing control. When a routing control state is set to ON, traffic flows to a cell.
+     * When the state is set to OFF, traffic does not flow.
      * </p>
      * 
      * @param routingControlState
-     *        The current state of the routing control. When a routing control state is On, traffic flows to a cell.
-     *        When the state is Off, traffic does not flow.
+     *        The current state of the routing control. When a routing control state is set to ON, traffic flows to a
+     *        cell. When the state is set to OFF, traffic does not flow.
      * @see RoutingControlState
      */
 
@@ -239,12 +252,12 @@ public class RoutingControl implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current state of the routing control. When a routing control state is On, traffic flows to a cell. When the
-     * state is Off, traffic does not flow.
+     * The current state of the routing control. When a routing control state is set to ON, traffic flows to a cell.
+     * When the state is set to OFF, traffic does not flow.
      * </p>
      * 
-     * @return The current state of the routing control. When a routing control state is On, traffic flows to a cell.
-     *         When the state is Off, traffic does not flow.
+     * @return The current state of the routing control. When a routing control state is set to ON, traffic flows to a
+     *         cell. When the state is set to OFF, traffic does not flow.
      * @see RoutingControlState
      */
 
@@ -254,13 +267,13 @@ public class RoutingControl implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current state of the routing control. When a routing control state is On, traffic flows to a cell. When the
-     * state is Off, traffic does not flow.
+     * The current state of the routing control. When a routing control state is set to ON, traffic flows to a cell.
+     * When the state is set to OFF, traffic does not flow.
      * </p>
      * 
      * @param routingControlState
-     *        The current state of the routing control. When a routing control state is On, traffic flows to a cell.
-     *        When the state is Off, traffic does not flow.
+     *        The current state of the routing control. When a routing control state is set to ON, traffic flows to a
+     *        cell. When the state is set to OFF, traffic does not flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RoutingControlState
      */
@@ -272,19 +285,59 @@ public class RoutingControl implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current state of the routing control. When a routing control state is On, traffic flows to a cell. When the
-     * state is Off, traffic does not flow.
+     * The current state of the routing control. When a routing control state is set to ON, traffic flows to a cell.
+     * When the state is set to OFF, traffic does not flow.
      * </p>
      * 
      * @param routingControlState
-     *        The current state of the routing control. When a routing control state is On, traffic flows to a cell.
-     *        When the state is Off, traffic does not flow.
+     *        The current state of the routing control. When a routing control state is set to ON, traffic flows to a
+     *        cell. When the state is set to OFF, traffic does not flow.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RoutingControlState
      */
 
     public RoutingControl withRoutingControlState(RoutingControlState routingControlState) {
         this.routingControlState = routingControlState.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services account ID of the routing control owner.
+     * </p>
+     * 
+     * @param owner
+     *        The Amazon Web Services account ID of the routing control owner.
+     */
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services account ID of the routing control owner.
+     * </p>
+     * 
+     * @return The Amazon Web Services account ID of the routing control owner.
+     */
+
+    public String getOwner() {
+        return this.owner;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services account ID of the routing control owner.
+     * </p>
+     * 
+     * @param owner
+     *        The Amazon Web Services account ID of the routing control owner.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RoutingControl withOwner(String owner) {
+        setOwner(owner);
         return this;
     }
 
@@ -309,7 +362,9 @@ public class RoutingControl implements Serializable, Cloneable, StructuredPojo {
         if (getRoutingControlName() != null)
             sb.append("RoutingControlName: ").append(getRoutingControlName()).append(",");
         if (getRoutingControlState() != null)
-            sb.append("RoutingControlState: ").append(getRoutingControlState());
+            sb.append("RoutingControlState: ").append(getRoutingControlState()).append(",");
+        if (getOwner() != null)
+            sb.append("Owner: ").append(getOwner());
         sb.append("}");
         return sb.toString();
     }
@@ -344,6 +399,10 @@ public class RoutingControl implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRoutingControlState() != null && other.getRoutingControlState().equals(this.getRoutingControlState()) == false)
             return false;
+        if (other.getOwner() == null ^ this.getOwner() == null)
+            return false;
+        if (other.getOwner() != null && other.getOwner().equals(this.getOwner()) == false)
+            return false;
         return true;
     }
 
@@ -357,6 +416,7 @@ public class RoutingControl implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRoutingControlArn() == null) ? 0 : getRoutingControlArn().hashCode());
         hashCode = prime * hashCode + ((getRoutingControlName() == null) ? 0 : getRoutingControlName().hashCode());
         hashCode = prime * hashCode + ((getRoutingControlState() == null) ? 0 : getRoutingControlState().hashCode());
+        hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
         return hashCode;
     }
 

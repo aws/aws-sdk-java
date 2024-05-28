@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,10 @@ public class DecryptRequestMarshaller {
             .marshallLocationName("KeyId").build();
     private static final MarshallingInfo<String> ENCRYPTIONALGORITHM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EncryptionAlgorithm").build();
+    private static final MarshallingInfo<StructuredPojo> RECIPIENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Recipient").build();
+    private static final MarshallingInfo<Boolean> DRYRUN_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("DryRun").build();
 
     private static final DecryptRequestMarshaller instance = new DecryptRequestMarshaller();
 
@@ -61,6 +65,8 @@ public class DecryptRequestMarshaller {
             protocolMarshaller.marshall(decryptRequest.getGrantTokens(), GRANTTOKENS_BINDING);
             protocolMarshaller.marshall(decryptRequest.getKeyId(), KEYID_BINDING);
             protocolMarshaller.marshall(decryptRequest.getEncryptionAlgorithm(), ENCRYPTIONALGORITHM_BINDING);
+            protocolMarshaller.marshall(decryptRequest.getRecipient(), RECIPIENT_BINDING);
+            protocolMarshaller.marshall(decryptRequest.getDryRun(), DRYRUN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

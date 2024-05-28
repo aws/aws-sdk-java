@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class GetConnectionStatusResult extends com.amazonaws.AmazonWebServiceRes
     private String target;
     /**
      * <p>
-     * The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.
+     * The status of the connection to the managed node.
      * </p>
      */
     private String status;
@@ -78,11 +78,11 @@ public class GetConnectionStatusResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.
+     * The status of the connection to the managed node.
      * </p>
      * 
      * @param status
-     *        The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.
+     *        The status of the connection to the managed node.
      * @see ConnectionStatus
      */
 
@@ -92,10 +92,10 @@ public class GetConnectionStatusResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.
+     * The status of the connection to the managed node.
      * </p>
      * 
-     * @return The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.
+     * @return The status of the connection to the managed node.
      * @see ConnectionStatus
      */
 
@@ -105,11 +105,11 @@ public class GetConnectionStatusResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.
+     * The status of the connection to the managed node.
      * </p>
      * 
      * @param status
-     *        The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.
+     *        The status of the connection to the managed node.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionStatus
      */
@@ -121,11 +121,11 @@ public class GetConnectionStatusResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.
+     * The status of the connection to the managed node.
      * </p>
      * 
      * @param status
-     *        The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.
+     *        The status of the connection to the managed node.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionStatus
      */

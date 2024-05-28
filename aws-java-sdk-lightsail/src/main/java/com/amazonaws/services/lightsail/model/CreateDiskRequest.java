@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,14 +27,14 @@ public class CreateDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique Lightsail disk name (e.g., <code>my-disk</code>).
+     * The unique Lightsail disk name (<code>my-disk</code>).
      * </p>
      */
     private String diskName;
     /**
      * <p>
-     * The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Use the same
-     * Availability Zone as the Lightsail instance to which you want to attach the disk.
+     * The Availability Zone where you want to create the disk (<code>us-east-2a</code>). Use the same Availability Zone
+     * as the Lightsail instance to which you want to attach the disk.
      * </p>
      * <p>
      * Use the <code>get regions</code> operation to list the Availability Zones where Lightsail is currently available.
@@ -43,7 +43,7 @@ public class CreateDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String availabilityZone;
     /**
      * <p>
-     * The size of the disk in GB (e.g., <code>32</code>).
+     * The size of the disk in GB (<code>32</code>).
      * </p>
      */
     private Integer sizeInGb;
@@ -65,11 +65,11 @@ public class CreateDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique Lightsail disk name (e.g., <code>my-disk</code>).
+     * The unique Lightsail disk name (<code>my-disk</code>).
      * </p>
      * 
      * @param diskName
-     *        The unique Lightsail disk name (e.g., <code>my-disk</code>).
+     *        The unique Lightsail disk name (<code>my-disk</code>).
      */
 
     public void setDiskName(String diskName) {
@@ -78,10 +78,10 @@ public class CreateDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique Lightsail disk name (e.g., <code>my-disk</code>).
+     * The unique Lightsail disk name (<code>my-disk</code>).
      * </p>
      * 
-     * @return The unique Lightsail disk name (e.g., <code>my-disk</code>).
+     * @return The unique Lightsail disk name (<code>my-disk</code>).
      */
 
     public String getDiskName() {
@@ -90,11 +90,11 @@ public class CreateDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique Lightsail disk name (e.g., <code>my-disk</code>).
+     * The unique Lightsail disk name (<code>my-disk</code>).
      * </p>
      * 
      * @param diskName
-     *        The unique Lightsail disk name (e.g., <code>my-disk</code>).
+     *        The unique Lightsail disk name (<code>my-disk</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,15 +105,15 @@ public class CreateDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Use the same
-     * Availability Zone as the Lightsail instance to which you want to attach the disk.
+     * The Availability Zone where you want to create the disk (<code>us-east-2a</code>). Use the same Availability Zone
+     * as the Lightsail instance to which you want to attach the disk.
      * </p>
      * <p>
      * Use the <code>get regions</code> operation to list the Availability Zones where Lightsail is currently available.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Use the same
+     *        The Availability Zone where you want to create the disk (<code>us-east-2a</code>). Use the same
      *        Availability Zone as the Lightsail instance to which you want to attach the disk.</p>
      *        <p>
      *        Use the <code>get regions</code> operation to list the Availability Zones where Lightsail is currently
@@ -126,14 +126,14 @@ public class CreateDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Use the same
-     * Availability Zone as the Lightsail instance to which you want to attach the disk.
+     * The Availability Zone where you want to create the disk (<code>us-east-2a</code>). Use the same Availability Zone
+     * as the Lightsail instance to which you want to attach the disk.
      * </p>
      * <p>
      * Use the <code>get regions</code> operation to list the Availability Zones where Lightsail is currently available.
      * </p>
      * 
-     * @return The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Use the same
+     * @return The Availability Zone where you want to create the disk (<code>us-east-2a</code>). Use the same
      *         Availability Zone as the Lightsail instance to which you want to attach the disk.</p>
      *         <p>
      *         Use the <code>get regions</code> operation to list the Availability Zones where Lightsail is currently
@@ -146,15 +146,15 @@ public class CreateDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Use the same
-     * Availability Zone as the Lightsail instance to which you want to attach the disk.
+     * The Availability Zone where you want to create the disk (<code>us-east-2a</code>). Use the same Availability Zone
+     * as the Lightsail instance to which you want to attach the disk.
      * </p>
      * <p>
      * Use the <code>get regions</code> operation to list the Availability Zones where Lightsail is currently available.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Use the same
+     *        The Availability Zone where you want to create the disk (<code>us-east-2a</code>). Use the same
      *        Availability Zone as the Lightsail instance to which you want to attach the disk.</p>
      *        <p>
      *        Use the <code>get regions</code> operation to list the Availability Zones where Lightsail is currently
@@ -169,11 +169,11 @@ public class CreateDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The size of the disk in GB (e.g., <code>32</code>).
+     * The size of the disk in GB (<code>32</code>).
      * </p>
      * 
      * @param sizeInGb
-     *        The size of the disk in GB (e.g., <code>32</code>).
+     *        The size of the disk in GB (<code>32</code>).
      */
 
     public void setSizeInGb(Integer sizeInGb) {
@@ -182,10 +182,10 @@ public class CreateDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The size of the disk in GB (e.g., <code>32</code>).
+     * The size of the disk in GB (<code>32</code>).
      * </p>
      * 
-     * @return The size of the disk in GB (e.g., <code>32</code>).
+     * @return The size of the disk in GB (<code>32</code>).
      */
 
     public Integer getSizeInGb() {
@@ -194,11 +194,11 @@ public class CreateDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The size of the disk in GB (e.g., <code>32</code>).
+     * The size of the disk in GB (<code>32</code>).
      * </p>
      * 
      * @param sizeInGb
-     *        The size of the disk in GB (e.g., <code>32</code>).
+     *        The size of the disk in GB (<code>32</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

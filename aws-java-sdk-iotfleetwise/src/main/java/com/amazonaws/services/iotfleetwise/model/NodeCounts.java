@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,6 +58,18 @@ public class NodeCounts implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Integer totalActuators;
+    /**
+     * <p>
+     * The total structure for the node.
+     * </p>
+     */
+    private Integer totalStructs;
+    /**
+     * <p>
+     * The total properties for the node.
+     * </p>
+     */
+    private Integer totalProperties;
 
     /**
      * <p>
@@ -260,6 +272,86 @@ public class NodeCounts implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The total structure for the node.
+     * </p>
+     * 
+     * @param totalStructs
+     *        The total structure for the node.
+     */
+
+    public void setTotalStructs(Integer totalStructs) {
+        this.totalStructs = totalStructs;
+    }
+
+    /**
+     * <p>
+     * The total structure for the node.
+     * </p>
+     * 
+     * @return The total structure for the node.
+     */
+
+    public Integer getTotalStructs() {
+        return this.totalStructs;
+    }
+
+    /**
+     * <p>
+     * The total structure for the node.
+     * </p>
+     * 
+     * @param totalStructs
+     *        The total structure for the node.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NodeCounts withTotalStructs(Integer totalStructs) {
+        setTotalStructs(totalStructs);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The total properties for the node.
+     * </p>
+     * 
+     * @param totalProperties
+     *        The total properties for the node.
+     */
+
+    public void setTotalProperties(Integer totalProperties) {
+        this.totalProperties = totalProperties;
+    }
+
+    /**
+     * <p>
+     * The total properties for the node.
+     * </p>
+     * 
+     * @return The total properties for the node.
+     */
+
+    public Integer getTotalProperties() {
+        return this.totalProperties;
+    }
+
+    /**
+     * <p>
+     * The total properties for the node.
+     * </p>
+     * 
+     * @param totalProperties
+     *        The total properties for the node.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NodeCounts withTotalProperties(Integer totalProperties) {
+        setTotalProperties(totalProperties);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -280,7 +372,11 @@ public class NodeCounts implements Serializable, Cloneable, StructuredPojo {
         if (getTotalAttributes() != null)
             sb.append("TotalAttributes: ").append(getTotalAttributes()).append(",");
         if (getTotalActuators() != null)
-            sb.append("TotalActuators: ").append(getTotalActuators());
+            sb.append("TotalActuators: ").append(getTotalActuators()).append(",");
+        if (getTotalStructs() != null)
+            sb.append("TotalStructs: ").append(getTotalStructs()).append(",");
+        if (getTotalProperties() != null)
+            sb.append("TotalProperties: ").append(getTotalProperties());
         sb.append("}");
         return sb.toString();
     }
@@ -315,6 +411,14 @@ public class NodeCounts implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTotalActuators() != null && other.getTotalActuators().equals(this.getTotalActuators()) == false)
             return false;
+        if (other.getTotalStructs() == null ^ this.getTotalStructs() == null)
+            return false;
+        if (other.getTotalStructs() != null && other.getTotalStructs().equals(this.getTotalStructs()) == false)
+            return false;
+        if (other.getTotalProperties() == null ^ this.getTotalProperties() == null)
+            return false;
+        if (other.getTotalProperties() != null && other.getTotalProperties().equals(this.getTotalProperties()) == false)
+            return false;
         return true;
     }
 
@@ -328,6 +432,8 @@ public class NodeCounts implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTotalSensors() == null) ? 0 : getTotalSensors().hashCode());
         hashCode = prime * hashCode + ((getTotalAttributes() == null) ? 0 : getTotalAttributes().hashCode());
         hashCode = prime * hashCode + ((getTotalActuators() == null) ? 0 : getTotalActuators().hashCode());
+        hashCode = prime * hashCode + ((getTotalStructs() == null) ? 0 : getTotalStructs().hashCode());
+        hashCode = prime * hashCode + ((getTotalProperties() == null) ? 0 : getTotalProperties().hashCode());
         return hashCode;
     }
 

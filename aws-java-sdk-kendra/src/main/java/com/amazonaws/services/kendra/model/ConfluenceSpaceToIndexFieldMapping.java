@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * &gt;Maps attributes or field names of Confluence spaces to Amazon Kendra index field names. To create custom fields,
- * use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a
+ * Maps attributes or field names of Confluence spaces to Amazon Kendra index field names. To create custom fields, use
+ * the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a
  * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence
  * data source field names must exist in your Confluence custom metadata.
  * </p>

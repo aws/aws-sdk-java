@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,10 +30,10 @@ public class FieldValidationConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The validation to perform on a number value.
+     * The validation to perform on an object type.<code/>
      * </p>
      */
-    private java.util.List<Integer> numValues;
+    private String type;
     /**
      * <p>
      * The validation to perform on a string value.
@@ -42,10 +42,10 @@ public class FieldValidationConfiguration implements Serializable, Cloneable, St
     private java.util.List<String> strValues;
     /**
      * <p>
-     * The validation to perform on an object type.<code/>
+     * The validation to perform on a number value.
      * </p>
      */
-    private String type;
+    private java.util.List<Integer> numValues;
     /**
      * <p>
      * The validation message to display.
@@ -55,71 +55,41 @@ public class FieldValidationConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The validation to perform on a number value.
+     * The validation to perform on an object type.<code/>
      * </p>
      * 
-     * @return The validation to perform on a number value.
+     * @param type
+     *        The validation to perform on an object type.<code/>
      */
 
-    public java.util.List<Integer> getNumValues() {
-        return numValues;
+    public void setType(String type) {
+        this.type = type;
     }
 
     /**
      * <p>
-     * The validation to perform on a number value.
+     * The validation to perform on an object type.<code/>
      * </p>
      * 
-     * @param numValues
-     *        The validation to perform on a number value.
+     * @return The validation to perform on an object type.<code/>
      */
 
-    public void setNumValues(java.util.Collection<Integer> numValues) {
-        if (numValues == null) {
-            this.numValues = null;
-            return;
-        }
-
-        this.numValues = new java.util.ArrayList<Integer>(numValues);
+    public String getType() {
+        return this.type;
     }
 
     /**
      * <p>
-     * The validation to perform on a number value.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setNumValues(java.util.Collection)} or {@link #withNumValues(java.util.Collection)} if you want to
-     * override the existing values.
+     * The validation to perform on an object type.<code/>
      * </p>
      * 
-     * @param numValues
-     *        The validation to perform on a number value.
+     * @param type
+     *        The validation to perform on an object type.<code/>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public FieldValidationConfiguration withNumValues(Integer... numValues) {
-        if (this.numValues == null) {
-            setNumValues(new java.util.ArrayList<Integer>(numValues.length));
-        }
-        for (Integer ele : numValues) {
-            this.numValues.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * The validation to perform on a number value.
-     * </p>
-     * 
-     * @param numValues
-     *        The validation to perform on a number value.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public FieldValidationConfiguration withNumValues(java.util.Collection<Integer> numValues) {
-        setNumValues(numValues);
+    public FieldValidationConfiguration withType(String type) {
+        setType(type);
         return this;
     }
 
@@ -195,41 +165,71 @@ public class FieldValidationConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The validation to perform on an object type.<code/>
+     * The validation to perform on a number value.
      * </p>
      * 
-     * @param type
-     *        The validation to perform on an object type.<code/>
+     * @return The validation to perform on a number value.
      */
 
-    public void setType(String type) {
-        this.type = type;
+    public java.util.List<Integer> getNumValues() {
+        return numValues;
     }
 
     /**
      * <p>
-     * The validation to perform on an object type.<code/>
+     * The validation to perform on a number value.
      * </p>
      * 
-     * @return The validation to perform on an object type.<code/>
+     * @param numValues
+     *        The validation to perform on a number value.
      */
 
-    public String getType() {
-        return this.type;
+    public void setNumValues(java.util.Collection<Integer> numValues) {
+        if (numValues == null) {
+            this.numValues = null;
+            return;
+        }
+
+        this.numValues = new java.util.ArrayList<Integer>(numValues);
     }
 
     /**
      * <p>
-     * The validation to perform on an object type.<code/>
+     * The validation to perform on a number value.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNumValues(java.util.Collection)} or {@link #withNumValues(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
-     * @param type
-     *        The validation to perform on an object type.<code/>
+     * @param numValues
+     *        The validation to perform on a number value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public FieldValidationConfiguration withType(String type) {
-        setType(type);
+    public FieldValidationConfiguration withNumValues(Integer... numValues) {
+        if (this.numValues == null) {
+            setNumValues(new java.util.ArrayList<Integer>(numValues.length));
+        }
+        for (Integer ele : numValues) {
+            this.numValues.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The validation to perform on a number value.
+     * </p>
+     * 
+     * @param numValues
+     *        The validation to perform on a number value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FieldValidationConfiguration withNumValues(java.util.Collection<Integer> numValues) {
+        setNumValues(numValues);
         return this;
     }
 
@@ -285,12 +285,12 @@ public class FieldValidationConfiguration implements Serializable, Cloneable, St
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getNumValues() != null)
-            sb.append("NumValues: ").append(getNumValues()).append(",");
-        if (getStrValues() != null)
-            sb.append("StrValues: ").append(getStrValues()).append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
+        if (getStrValues() != null)
+            sb.append("StrValues: ").append(getStrValues()).append(",");
+        if (getNumValues() != null)
+            sb.append("NumValues: ").append(getNumValues()).append(",");
         if (getValidationMessage() != null)
             sb.append("ValidationMessage: ").append(getValidationMessage());
         sb.append("}");
@@ -307,17 +307,17 @@ public class FieldValidationConfiguration implements Serializable, Cloneable, St
         if (obj instanceof FieldValidationConfiguration == false)
             return false;
         FieldValidationConfiguration other = (FieldValidationConfiguration) obj;
-        if (other.getNumValues() == null ^ this.getNumValues() == null)
+        if (other.getType() == null ^ this.getType() == null)
             return false;
-        if (other.getNumValues() != null && other.getNumValues().equals(this.getNumValues()) == false)
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         if (other.getStrValues() == null ^ this.getStrValues() == null)
             return false;
         if (other.getStrValues() != null && other.getStrValues().equals(this.getStrValues()) == false)
             return false;
-        if (other.getType() == null ^ this.getType() == null)
+        if (other.getNumValues() == null ^ this.getNumValues() == null)
             return false;
-        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+        if (other.getNumValues() != null && other.getNumValues().equals(this.getNumValues()) == false)
             return false;
         if (other.getValidationMessage() == null ^ this.getValidationMessage() == null)
             return false;
@@ -331,9 +331,9 @@ public class FieldValidationConfiguration implements Serializable, Cloneable, St
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getNumValues() == null) ? 0 : getNumValues().hashCode());
-        hashCode = prime * hashCode + ((getStrValues() == null) ? 0 : getStrValues().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getStrValues() == null) ? 0 : getStrValues().hashCode());
+        hashCode = prime * hashCode + ((getNumValues() == null) ? 0 : getNumValues().hashCode());
         hashCode = prime * hashCode + ((getValidationMessage() == null) ? 0 : getValidationMessage().hashCode());
         return hashCode;
     }

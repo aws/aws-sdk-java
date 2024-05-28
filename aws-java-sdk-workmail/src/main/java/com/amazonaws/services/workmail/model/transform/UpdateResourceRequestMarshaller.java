@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,12 @@ public class UpdateResourceRequestMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<StructuredPojo> BOOKINGOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BookingOptions").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Type").build();
+    private static final MarshallingInfo<Boolean> HIDDENFROMGLOBALADDRESSLIST_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HiddenFromGlobalAddressList").build();
 
     private static final UpdateResourceRequestMarshaller instance = new UpdateResourceRequestMarshaller();
 
@@ -56,6 +62,9 @@ public class UpdateResourceRequestMarshaller {
             protocolMarshaller.marshall(updateResourceRequest.getResourceId(), RESOURCEID_BINDING);
             protocolMarshaller.marshall(updateResourceRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(updateResourceRequest.getBookingOptions(), BOOKINGOPTIONS_BINDING);
+            protocolMarshaller.marshall(updateResourceRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(updateResourceRequest.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(updateResourceRequest.getHiddenFromGlobalAddressList(), HIDDENFROMGLOBALADDRESSLIST_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

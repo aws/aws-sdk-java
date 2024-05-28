@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,9 +17,9 @@ import javax.annotation.Generated;
 /**
  * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the
  * Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert ignores
- * any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For information about
- * the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide
- * at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+ * any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC operating
+ * modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+ * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Eac3DynamicRangeCompressionLine {

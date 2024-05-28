@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,8 +47,9 @@ public class MetricStreamStatisticsConfiguration implements Serializable, Clonea
      * <code>IncludeMetrics</code> array in this structure. This list can include as many as 20 statistics.
      * </p>
      * <p>
-     * If the <code>OutputFormat</code> for the stream is <code>opentelemetry0.7</code>, the only valid values are
-     * <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>, <code>p99</code> and so on.
+     * If the <code>OutputFormat</code> for the stream is <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>
+     * , the only valid values are <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>,
+     * <code>p99</code> and so on.
      * </p>
      * <p>
      * If the <code>OutputFormat</code> for the stream is <code>json</code>, the valid values include the abbreviations
@@ -175,8 +176,9 @@ public class MetricStreamStatisticsConfiguration implements Serializable, Clonea
      * <code>IncludeMetrics</code> array in this structure. This list can include as many as 20 statistics.
      * </p>
      * <p>
-     * If the <code>OutputFormat</code> for the stream is <code>opentelemetry0.7</code>, the only valid values are
-     * <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>, <code>p99</code> and so on.
+     * If the <code>OutputFormat</code> for the stream is <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>
+     * , the only valid values are <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>,
+     * <code>p99</code> and so on.
      * </p>
      * <p>
      * If the <code>OutputFormat</code> for the stream is <code>json</code>, the valid values include the abbreviations
@@ -189,8 +191,9 @@ public class MetricStreamStatisticsConfiguration implements Serializable, Clonea
      * @return The list of additional statistics that are to be streamed for the metrics listed in the
      *         <code>IncludeMetrics</code> array in this structure. This list can include as many as 20 statistics.</p>
      *         <p>
-     *         If the <code>OutputFormat</code> for the stream is <code>opentelemetry0.7</code>, the only valid values
-     *         are <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>, <code>p99</code> and so on.
+     *         If the <code>OutputFormat</code> for the stream is <code>opentelemetry1.0</code> or
+     *         <code>opentelemetry0.7</code>, the only valid values are <code>p<i>??</i> </code> percentile statistics
+     *         such as <code>p90</code>, <code>p99</code> and so on.
      *         </p>
      *         <p>
      *         If the <code>OutputFormat</code> for the stream is <code>json</code>, the valid values include the
@@ -213,8 +216,9 @@ public class MetricStreamStatisticsConfiguration implements Serializable, Clonea
      * <code>IncludeMetrics</code> array in this structure. This list can include as many as 20 statistics.
      * </p>
      * <p>
-     * If the <code>OutputFormat</code> for the stream is <code>opentelemetry0.7</code>, the only valid values are
-     * <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>, <code>p99</code> and so on.
+     * If the <code>OutputFormat</code> for the stream is <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>
+     * , the only valid values are <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>,
+     * <code>p99</code> and so on.
      * </p>
      * <p>
      * If the <code>OutputFormat</code> for the stream is <code>json</code>, the valid values include the abbreviations
@@ -228,8 +232,9 @@ public class MetricStreamStatisticsConfiguration implements Serializable, Clonea
      *        The list of additional statistics that are to be streamed for the metrics listed in the
      *        <code>IncludeMetrics</code> array in this structure. This list can include as many as 20 statistics.</p>
      *        <p>
-     *        If the <code>OutputFormat</code> for the stream is <code>opentelemetry0.7</code>, the only valid values
-     *        are <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>, <code>p99</code> and so on.
+     *        If the <code>OutputFormat</code> for the stream is <code>opentelemetry1.0</code> or
+     *        <code>opentelemetry0.7</code>, the only valid values are <code>p<i>??</i> </code> percentile statistics
+     *        such as <code>p90</code>, <code>p99</code> and so on.
      *        </p>
      *        <p>
      *        If the <code>OutputFormat</code> for the stream is <code>json</code>, the valid values include the
@@ -254,8 +259,9 @@ public class MetricStreamStatisticsConfiguration implements Serializable, Clonea
      * <code>IncludeMetrics</code> array in this structure. This list can include as many as 20 statistics.
      * </p>
      * <p>
-     * If the <code>OutputFormat</code> for the stream is <code>opentelemetry0.7</code>, the only valid values are
-     * <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>, <code>p99</code> and so on.
+     * If the <code>OutputFormat</code> for the stream is <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>
+     * , the only valid values are <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>,
+     * <code>p99</code> and so on.
      * </p>
      * <p>
      * If the <code>OutputFormat</code> for the stream is <code>json</code>, the valid values include the abbreviations
@@ -274,8 +280,9 @@ public class MetricStreamStatisticsConfiguration implements Serializable, Clonea
      *        The list of additional statistics that are to be streamed for the metrics listed in the
      *        <code>IncludeMetrics</code> array in this structure. This list can include as many as 20 statistics.</p>
      *        <p>
-     *        If the <code>OutputFormat</code> for the stream is <code>opentelemetry0.7</code>, the only valid values
-     *        are <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>, <code>p99</code> and so on.
+     *        If the <code>OutputFormat</code> for the stream is <code>opentelemetry1.0</code> or
+     *        <code>opentelemetry0.7</code>, the only valid values are <code>p<i>??</i> </code> percentile statistics
+     *        such as <code>p90</code>, <code>p99</code> and so on.
      *        </p>
      *        <p>
      *        If the <code>OutputFormat</code> for the stream is <code>json</code>, the valid values include the
@@ -302,8 +309,9 @@ public class MetricStreamStatisticsConfiguration implements Serializable, Clonea
      * <code>IncludeMetrics</code> array in this structure. This list can include as many as 20 statistics.
      * </p>
      * <p>
-     * If the <code>OutputFormat</code> for the stream is <code>opentelemetry0.7</code>, the only valid values are
-     * <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>, <code>p99</code> and so on.
+     * If the <code>OutputFormat</code> for the stream is <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>
+     * , the only valid values are <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>,
+     * <code>p99</code> and so on.
      * </p>
      * <p>
      * If the <code>OutputFormat</code> for the stream is <code>json</code>, the valid values include the abbreviations
@@ -317,8 +325,9 @@ public class MetricStreamStatisticsConfiguration implements Serializable, Clonea
      *        The list of additional statistics that are to be streamed for the metrics listed in the
      *        <code>IncludeMetrics</code> array in this structure. This list can include as many as 20 statistics.</p>
      *        <p>
-     *        If the <code>OutputFormat</code> for the stream is <code>opentelemetry0.7</code>, the only valid values
-     *        are <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>, <code>p99</code> and so on.
+     *        If the <code>OutputFormat</code> for the stream is <code>opentelemetry1.0</code> or
+     *        <code>opentelemetry0.7</code>, the only valid values are <code>p<i>??</i> </code> percentile statistics
+     *        such as <code>p90</code>, <code>p99</code> and so on.
      *        </p>
      *        <p>
      *        If the <code>OutputFormat</code> for the stream is <code>json</code>, the valid values include the

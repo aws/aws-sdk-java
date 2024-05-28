@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,6 +24,19 @@ import com.amazonaws.services.eks.model.*;
 public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonEKSAsync {
 
     protected AbstractAmazonEKSAsync() {
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateAccessPolicyResult> associateAccessPolicyAsync(AssociateAccessPolicyRequest request) {
+
+        return associateAccessPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateAccessPolicyResult> associateAccessPolicyAsync(AssociateAccessPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateAccessPolicyRequest, AssociateAccessPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -55,6 +68,19 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAccessEntryResult> createAccessEntryAsync(CreateAccessEntryRequest request) {
+
+        return createAccessEntryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAccessEntryResult> createAccessEntryAsync(CreateAccessEntryRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateAccessEntryRequest, CreateAccessEntryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAddonResult> createAddonAsync(CreateAddonRequest request) {
 
         return createAddonAsync(request, null);
@@ -76,6 +102,19 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     @Override
     public java.util.concurrent.Future<CreateClusterResult> createClusterAsync(CreateClusterRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateClusterRequest, CreateClusterResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEksAnywhereSubscriptionResult> createEksAnywhereSubscriptionAsync(CreateEksAnywhereSubscriptionRequest request) {
+
+        return createEksAnywhereSubscriptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEksAnywhereSubscriptionResult> createEksAnywhereSubscriptionAsync(CreateEksAnywhereSubscriptionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateEksAnywhereSubscriptionRequest, CreateEksAnywhereSubscriptionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -107,6 +146,32 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<CreatePodIdentityAssociationResult> createPodIdentityAssociationAsync(CreatePodIdentityAssociationRequest request) {
+
+        return createPodIdentityAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePodIdentityAssociationResult> createPodIdentityAssociationAsync(CreatePodIdentityAssociationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreatePodIdentityAssociationRequest, CreatePodIdentityAssociationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccessEntryResult> deleteAccessEntryAsync(DeleteAccessEntryRequest request) {
+
+        return deleteAccessEntryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccessEntryResult> deleteAccessEntryAsync(DeleteAccessEntryRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAccessEntryRequest, DeleteAccessEntryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteAddonResult> deleteAddonAsync(DeleteAddonRequest request) {
 
         return deleteAddonAsync(request, null);
@@ -128,6 +193,19 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     @Override
     public java.util.concurrent.Future<DeleteClusterResult> deleteClusterAsync(DeleteClusterRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteClusterRequest, DeleteClusterResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEksAnywhereSubscriptionResult> deleteEksAnywhereSubscriptionAsync(DeleteEksAnywhereSubscriptionRequest request) {
+
+        return deleteEksAnywhereSubscriptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEksAnywhereSubscriptionResult> deleteEksAnywhereSubscriptionAsync(DeleteEksAnywhereSubscriptionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteEksAnywhereSubscriptionRequest, DeleteEksAnywhereSubscriptionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -159,6 +237,19 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<DeletePodIdentityAssociationResult> deletePodIdentityAssociationAsync(DeletePodIdentityAssociationRequest request) {
+
+        return deletePodIdentityAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePodIdentityAssociationResult> deletePodIdentityAssociationAsync(DeletePodIdentityAssociationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeletePodIdentityAssociationRequest, DeletePodIdentityAssociationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeregisterClusterResult> deregisterClusterAsync(DeregisterClusterRequest request) {
 
         return deregisterClusterAsync(request, null);
@@ -172,6 +263,19 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAccessEntryResult> describeAccessEntryAsync(DescribeAccessEntryRequest request) {
+
+        return describeAccessEntryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccessEntryResult> describeAccessEntryAsync(DescribeAccessEntryRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAccessEntryRequest, DescribeAccessEntryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAddonResult> describeAddonAsync(DescribeAddonRequest request) {
 
         return describeAddonAsync(request, null);
@@ -180,6 +284,19 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     @Override
     public java.util.concurrent.Future<DescribeAddonResult> describeAddonAsync(DescribeAddonRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAddonRequest, DescribeAddonResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAddonConfigurationResult> describeAddonConfigurationAsync(DescribeAddonConfigurationRequest request) {
+
+        return describeAddonConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAddonConfigurationResult> describeAddonConfigurationAsync(DescribeAddonConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAddonConfigurationRequest, DescribeAddonConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -211,6 +328,21 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeEksAnywhereSubscriptionResult> describeEksAnywhereSubscriptionAsync(
+            DescribeEksAnywhereSubscriptionRequest request) {
+
+        return describeEksAnywhereSubscriptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEksAnywhereSubscriptionResult> describeEksAnywhereSubscriptionAsync(
+            DescribeEksAnywhereSubscriptionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeEksAnywhereSubscriptionRequest, DescribeEksAnywhereSubscriptionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeFargateProfileResult> describeFargateProfileAsync(DescribeFargateProfileRequest request) {
 
         return describeFargateProfileAsync(request, null);
@@ -237,6 +369,19 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeInsightResult> describeInsightAsync(DescribeInsightRequest request) {
+
+        return describeInsightAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInsightResult> describeInsightAsync(DescribeInsightRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeInsightRequest, DescribeInsightResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeNodegroupResult> describeNodegroupAsync(DescribeNodegroupRequest request) {
 
         return describeNodegroupAsync(request, null);
@@ -250,6 +395,19 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<DescribePodIdentityAssociationResult> describePodIdentityAssociationAsync(DescribePodIdentityAssociationRequest request) {
+
+        return describePodIdentityAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePodIdentityAssociationResult> describePodIdentityAssociationAsync(DescribePodIdentityAssociationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribePodIdentityAssociationRequest, DescribePodIdentityAssociationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeUpdateResult> describeUpdateAsync(DescribeUpdateRequest request) {
 
         return describeUpdateAsync(request, null);
@@ -258,6 +416,19 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     @Override
     public java.util.concurrent.Future<DescribeUpdateResult> describeUpdateAsync(DescribeUpdateRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeUpdateRequest, DescribeUpdateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateAccessPolicyResult> disassociateAccessPolicyAsync(DisassociateAccessPolicyRequest request) {
+
+        return disassociateAccessPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateAccessPolicyResult> disassociateAccessPolicyAsync(DisassociateAccessPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateAccessPolicyRequest, DisassociateAccessPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -278,6 +449,32 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<ListAccessEntriesResult> listAccessEntriesAsync(ListAccessEntriesRequest request) {
+
+        return listAccessEntriesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessEntriesResult> listAccessEntriesAsync(ListAccessEntriesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAccessEntriesRequest, ListAccessEntriesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessPoliciesResult> listAccessPoliciesAsync(ListAccessPoliciesRequest request) {
+
+        return listAccessPoliciesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessPoliciesResult> listAccessPoliciesAsync(ListAccessPoliciesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAccessPoliciesRequest, ListAccessPoliciesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAddonsResult> listAddonsAsync(ListAddonsRequest request) {
 
         return listAddonsAsync(request, null);
@@ -291,6 +488,19 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<ListAssociatedAccessPoliciesResult> listAssociatedAccessPoliciesAsync(ListAssociatedAccessPoliciesRequest request) {
+
+        return listAssociatedAccessPoliciesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssociatedAccessPoliciesResult> listAssociatedAccessPoliciesAsync(ListAssociatedAccessPoliciesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAssociatedAccessPoliciesRequest, ListAssociatedAccessPoliciesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListClustersResult> listClustersAsync(ListClustersRequest request) {
 
         return listClustersAsync(request, null);
@@ -299,6 +509,19 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     @Override
     public java.util.concurrent.Future<ListClustersResult> listClustersAsync(ListClustersRequest request,
             com.amazonaws.handlers.AsyncHandler<ListClustersRequest, ListClustersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEksAnywhereSubscriptionsResult> listEksAnywhereSubscriptionsAsync(ListEksAnywhereSubscriptionsRequest request) {
+
+        return listEksAnywhereSubscriptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEksAnywhereSubscriptionsResult> listEksAnywhereSubscriptionsAsync(ListEksAnywhereSubscriptionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListEksAnywhereSubscriptionsRequest, ListEksAnywhereSubscriptionsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -330,6 +553,19 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<ListInsightsResult> listInsightsAsync(ListInsightsRequest request) {
+
+        return listInsightsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInsightsResult> listInsightsAsync(ListInsightsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListInsightsRequest, ListInsightsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListNodegroupsResult> listNodegroupsAsync(ListNodegroupsRequest request) {
 
         return listNodegroupsAsync(request, null);
@@ -338,6 +574,19 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     @Override
     public java.util.concurrent.Future<ListNodegroupsResult> listNodegroupsAsync(ListNodegroupsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListNodegroupsRequest, ListNodegroupsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPodIdentityAssociationsResult> listPodIdentityAssociationsAsync(ListPodIdentityAssociationsRequest request) {
+
+        return listPodIdentityAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPodIdentityAssociationsResult> listPodIdentityAssociationsAsync(ListPodIdentityAssociationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListPodIdentityAssociationsRequest, ListPodIdentityAssociationsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -408,6 +657,19 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateAccessEntryResult> updateAccessEntryAsync(UpdateAccessEntryRequest request) {
+
+        return updateAccessEntryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAccessEntryResult> updateAccessEntryAsync(UpdateAccessEntryRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateAccessEntryRequest, UpdateAccessEntryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateAddonResult> updateAddonAsync(UpdateAddonRequest request) {
 
         return updateAddonAsync(request, null);
@@ -447,6 +709,19 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateEksAnywhereSubscriptionResult> updateEksAnywhereSubscriptionAsync(UpdateEksAnywhereSubscriptionRequest request) {
+
+        return updateEksAnywhereSubscriptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEksAnywhereSubscriptionResult> updateEksAnywhereSubscriptionAsync(UpdateEksAnywhereSubscriptionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateEksAnywhereSubscriptionRequest, UpdateEksAnywhereSubscriptionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateNodegroupConfigResult> updateNodegroupConfigAsync(UpdateNodegroupConfigRequest request) {
 
         return updateNodegroupConfigAsync(request, null);
@@ -468,6 +743,19 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     @Override
     public java.util.concurrent.Future<UpdateNodegroupVersionResult> updateNodegroupVersionAsync(UpdateNodegroupVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateNodegroupVersionRequest, UpdateNodegroupVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePodIdentityAssociationResult> updatePodIdentityAssociationAsync(UpdatePodIdentityAssociationRequest request) {
+
+        return updatePodIdentityAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePodIdentityAssociationResult> updatePodIdentityAssociationAsync(UpdatePodIdentityAssociationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdatePodIdentityAssociationRequest, UpdatePodIdentityAssociationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

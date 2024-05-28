@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,9 +21,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Describes an application's checkpointing configuration. Checkpointing is the process of persisting application state
  * for fault tolerance. For more information, see <a href=
- * "https://ci.apache.org/projects/flink/flink-docs-release-1.8/concepts/programming-model.html#checkpoints-for-fault-tolerance"
+ * "https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/dev/datastream/fault-tolerance/checkpointing/#enabling-and-configuring-checkpointing"
  * > Checkpoints for Fault Tolerance</a> in the <a
- * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>.
+ * href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink Documentation</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CheckpointConfiguration"
@@ -34,8 +34,8 @@ public class CheckpointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Describes whether the application uses Kinesis Data Analytics' default checkpointing behavior. You must set this
-     * property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
+     * Describes whether the application uses Managed Service for Apache Flink' default checkpointing behavior. You must
+     * set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
      * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.
      * </p>
      * <note>
@@ -65,7 +65,7 @@ public class CheckpointConfiguration implements Serializable, Cloneable, Structu
     private String configurationType;
     /**
      * <p>
-     * Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.
+     * Describes whether checkpointing is enabled for a Managed Service for Apache Flink application.
      * </p>
      * <note>
      * <p>
@@ -94,8 +94,8 @@ public class CheckpointConfiguration implements Serializable, Cloneable, Structu
      * Describes the minimum time in milliseconds after a checkpoint operation completes that a new checkpoint operation
      * can start. If a checkpoint operation takes longer than the <code>CheckpointInterval</code>, the application
      * otherwise performs continual checkpoint operations. For more information, see <a href=
-     * "https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/large_state_tuning.html#tuning-checkpointing"
-     * > Tuning Checkpointing</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache
+     * "https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/ops/state/large_state_tuning/#tuning-checkpointing"
+     * > Tuning Checkpointing</a> in the <a href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache
      * Flink Documentation</a>.
      * </p>
      * <note>
@@ -110,8 +110,8 @@ public class CheckpointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Describes whether the application uses Kinesis Data Analytics' default checkpointing behavior. You must set this
-     * property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
+     * Describes whether the application uses Managed Service for Apache Flink' default checkpointing behavior. You must
+     * set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
      * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.
      * </p>
      * <note>
@@ -139,8 +139,8 @@ public class CheckpointConfiguration implements Serializable, Cloneable, Structu
      * </note>
      * 
      * @param configurationType
-     *        Describes whether the application uses Kinesis Data Analytics' default checkpointing behavior. You must
-     *        set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
+     *        Describes whether the application uses Managed Service for Apache Flink' default checkpointing behavior.
+     *        You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
      *        <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.</p> <note>
      *        <p>
      *        If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they
@@ -172,8 +172,8 @@ public class CheckpointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Describes whether the application uses Kinesis Data Analytics' default checkpointing behavior. You must set this
-     * property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
+     * Describes whether the application uses Managed Service for Apache Flink' default checkpointing behavior. You must
+     * set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
      * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.
      * </p>
      * <note>
@@ -200,8 +200,8 @@ public class CheckpointConfiguration implements Serializable, Cloneable, Structu
      * </ul>
      * </note>
      * 
-     * @return Describes whether the application uses Kinesis Data Analytics' default checkpointing behavior. You must
-     *         set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
+     * @return Describes whether the application uses Managed Service for Apache Flink' default checkpointing behavior.
+     *         You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
      *         <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.</p> <note>
      *         <p>
      *         If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they
@@ -233,8 +233,8 @@ public class CheckpointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Describes whether the application uses Kinesis Data Analytics' default checkpointing behavior. You must set this
-     * property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
+     * Describes whether the application uses Managed Service for Apache Flink' default checkpointing behavior. You must
+     * set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
      * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.
      * </p>
      * <note>
@@ -262,8 +262,8 @@ public class CheckpointConfiguration implements Serializable, Cloneable, Structu
      * </note>
      * 
      * @param configurationType
-     *        Describes whether the application uses Kinesis Data Analytics' default checkpointing behavior. You must
-     *        set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
+     *        Describes whether the application uses Managed Service for Apache Flink' default checkpointing behavior.
+     *        You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
      *        <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.</p> <note>
      *        <p>
      *        If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they
@@ -297,8 +297,8 @@ public class CheckpointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Describes whether the application uses Kinesis Data Analytics' default checkpointing behavior. You must set this
-     * property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
+     * Describes whether the application uses Managed Service for Apache Flink' default checkpointing behavior. You must
+     * set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
      * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.
      * </p>
      * <note>
@@ -326,8 +326,8 @@ public class CheckpointConfiguration implements Serializable, Cloneable, Structu
      * </note>
      * 
      * @param configurationType
-     *        Describes whether the application uses Kinesis Data Analytics' default checkpointing behavior. You must
-     *        set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
+     *        Describes whether the application uses Managed Service for Apache Flink' default checkpointing behavior.
+     *        You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
      *        <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.</p> <note>
      *        <p>
      *        If this value is set to <code>DEFAULT</code>, the application will use the following values, even if they
@@ -361,7 +361,7 @@ public class CheckpointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.
+     * Describes whether checkpointing is enabled for a Managed Service for Apache Flink application.
      * </p>
      * <note>
      * <p>
@@ -372,8 +372,7 @@ public class CheckpointConfiguration implements Serializable, Cloneable, Structu
      * </note>
      * 
      * @param checkpointingEnabled
-     *        Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p>
-     *        <note>
+     *        Describes whether checkpointing is enabled for a Managed Service for Apache Flink application.</p> <note>
      *        <p>
      *        If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
      *        use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another
@@ -387,7 +386,7 @@ public class CheckpointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.
+     * Describes whether checkpointing is enabled for a Managed Service for Apache Flink application.
      * </p>
      * <note>
      * <p>
@@ -397,8 +396,7 @@ public class CheckpointConfiguration implements Serializable, Cloneable, Structu
      * </p>
      * </note>
      * 
-     * @return Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p>
-     *         <note>
+     * @return Describes whether checkpointing is enabled for a Managed Service for Apache Flink application.</p> <note>
      *         <p>
      *         If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
      *         use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another
@@ -412,7 +410,7 @@ public class CheckpointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.
+     * Describes whether checkpointing is enabled for a Managed Service for Apache Flink application.
      * </p>
      * <note>
      * <p>
@@ -423,8 +421,7 @@ public class CheckpointConfiguration implements Serializable, Cloneable, Structu
      * </note>
      * 
      * @param checkpointingEnabled
-     *        Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p>
-     *        <note>
+     *        Describes whether checkpointing is enabled for a Managed Service for Apache Flink application.</p> <note>
      *        <p>
      *        If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
      *        use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another
@@ -440,7 +437,7 @@ public class CheckpointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.
+     * Describes whether checkpointing is enabled for a Managed Service for Apache Flink application.
      * </p>
      * <note>
      * <p>
@@ -450,8 +447,7 @@ public class CheckpointConfiguration implements Serializable, Cloneable, Structu
      * </p>
      * </note>
      * 
-     * @return Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p>
-     *         <note>
+     * @return Describes whether checkpointing is enabled for a Managed Service for Apache Flink application.</p> <note>
      *         <p>
      *         If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
      *         use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another
@@ -544,8 +540,8 @@ public class CheckpointConfiguration implements Serializable, Cloneable, Structu
      * Describes the minimum time in milliseconds after a checkpoint operation completes that a new checkpoint operation
      * can start. If a checkpoint operation takes longer than the <code>CheckpointInterval</code>, the application
      * otherwise performs continual checkpoint operations. For more information, see <a href=
-     * "https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/large_state_tuning.html#tuning-checkpointing"
-     * > Tuning Checkpointing</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache
+     * "https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/ops/state/large_state_tuning/#tuning-checkpointing"
+     * > Tuning Checkpointing</a> in the <a href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache
      * Flink Documentation</a>.
      * </p>
      * <note>
@@ -560,9 +556,9 @@ public class CheckpointConfiguration implements Serializable, Cloneable, Structu
      *        Describes the minimum time in milliseconds after a checkpoint operation completes that a new checkpoint
      *        operation can start. If a checkpoint operation takes longer than the <code>CheckpointInterval</code>, the
      *        application otherwise performs continual checkpoint operations. For more information, see <a href=
-     *        "https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/large_state_tuning.html#tuning-checkpointing"
+     *        "https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/ops/state/large_state_tuning/#tuning-checkpointing"
      *        > Tuning Checkpointing</a> in the <a
-     *        href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>.</p>
+     *        href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink Documentation</a>.</p>
      *        <note>
      *        <p>
      *        If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
@@ -580,8 +576,8 @@ public class CheckpointConfiguration implements Serializable, Cloneable, Structu
      * Describes the minimum time in milliseconds after a checkpoint operation completes that a new checkpoint operation
      * can start. If a checkpoint operation takes longer than the <code>CheckpointInterval</code>, the application
      * otherwise performs continual checkpoint operations. For more information, see <a href=
-     * "https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/large_state_tuning.html#tuning-checkpointing"
-     * > Tuning Checkpointing</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache
+     * "https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/ops/state/large_state_tuning/#tuning-checkpointing"
+     * > Tuning Checkpointing</a> in the <a href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache
      * Flink Documentation</a>.
      * </p>
      * <note>
@@ -595,9 +591,9 @@ public class CheckpointConfiguration implements Serializable, Cloneable, Structu
      * @return Describes the minimum time in milliseconds after a checkpoint operation completes that a new checkpoint
      *         operation can start. If a checkpoint operation takes longer than the <code>CheckpointInterval</code>, the
      *         application otherwise performs continual checkpoint operations. For more information, see <a href=
-     *         "https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/large_state_tuning.html#tuning-checkpointing"
+     *         "https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/ops/state/large_state_tuning/#tuning-checkpointing"
      *         > Tuning Checkpointing</a> in the <a
-     *         href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>.</p>
+     *         href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink Documentation</a>.</p>
      *         <note>
      *         <p>
      *         If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
@@ -615,8 +611,8 @@ public class CheckpointConfiguration implements Serializable, Cloneable, Structu
      * Describes the minimum time in milliseconds after a checkpoint operation completes that a new checkpoint operation
      * can start. If a checkpoint operation takes longer than the <code>CheckpointInterval</code>, the application
      * otherwise performs continual checkpoint operations. For more information, see <a href=
-     * "https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/large_state_tuning.html#tuning-checkpointing"
-     * > Tuning Checkpointing</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache
+     * "https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/ops/state/large_state_tuning/#tuning-checkpointing"
+     * > Tuning Checkpointing</a> in the <a href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache
      * Flink Documentation</a>.
      * </p>
      * <note>
@@ -631,9 +627,9 @@ public class CheckpointConfiguration implements Serializable, Cloneable, Structu
      *        Describes the minimum time in milliseconds after a checkpoint operation completes that a new checkpoint
      *        operation can start. If a checkpoint operation takes longer than the <code>CheckpointInterval</code>, the
      *        application otherwise performs continual checkpoint operations. For more information, see <a href=
-     *        "https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/large_state_tuning.html#tuning-checkpointing"
+     *        "https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/ops/state/large_state_tuning/#tuning-checkpointing"
      *        > Tuning Checkpointing</a> in the <a
-     *        href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink Documentation</a>.</p>
+     *        href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink Documentation</a>.</p>
      *        <note>
      *        <p>
      *        If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will

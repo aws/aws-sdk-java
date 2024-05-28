@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,7 @@ public class ThrottlingException extends com.amazonaws.services.identitystore.mo
     private String requestId;
     /**
      * <p>
-     * The number of seconds that you would like to wait before retrying the next request.
+     * The number of seconds to wait before retrying the next request.
      * </p>
      */
     private Integer retryAfterSeconds;
@@ -97,11 +97,11 @@ public class ThrottlingException extends com.amazonaws.services.identitystore.mo
 
     /**
      * <p>
-     * The number of seconds that you would like to wait before retrying the next request.
+     * The number of seconds to wait before retrying the next request.
      * </p>
      * 
      * @param retryAfterSeconds
-     *        The number of seconds that you would like to wait before retrying the next request.
+     *        The number of seconds to wait before retrying the next request.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("RetryAfterSeconds")
@@ -111,10 +111,10 @@ public class ThrottlingException extends com.amazonaws.services.identitystore.mo
 
     /**
      * <p>
-     * The number of seconds that you would like to wait before retrying the next request.
+     * The number of seconds to wait before retrying the next request.
      * </p>
      * 
-     * @return The number of seconds that you would like to wait before retrying the next request.
+     * @return The number of seconds to wait before retrying the next request.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("RetryAfterSeconds")
@@ -124,11 +124,11 @@ public class ThrottlingException extends com.amazonaws.services.identitystore.mo
 
     /**
      * <p>
-     * The number of seconds that you would like to wait before retrying the next request.
+     * The number of seconds to wait before retrying the next request.
      * </p>
      * 
      * @param retryAfterSeconds
-     *        The number of seconds that you would like to wait before retrying the next request.
+     *        The number of seconds to wait before retrying the next request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

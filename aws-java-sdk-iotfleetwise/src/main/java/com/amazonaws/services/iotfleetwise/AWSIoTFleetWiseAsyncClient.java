@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -661,6 +661,39 @@ public class AWSIoTFleetWiseAsyncClient extends AWSIoTFleetWiseClient implements
 
                 try {
                     result = executeGetDecoderManifest(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEncryptionConfigurationResult> getEncryptionConfigurationAsync(GetEncryptionConfigurationRequest request) {
+
+        return getEncryptionConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEncryptionConfigurationResult> getEncryptionConfigurationAsync(final GetEncryptionConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetEncryptionConfigurationRequest, GetEncryptionConfigurationResult> asyncHandler) {
+        final GetEncryptionConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetEncryptionConfigurationResult>() {
+            @Override
+            public GetEncryptionConfigurationResult call() throws Exception {
+                GetEncryptionConfigurationResult result = null;
+
+                try {
+                    result = executeGetEncryptionConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1389,6 +1422,39 @@ public class AWSIoTFleetWiseAsyncClient extends AWSIoTFleetWiseClient implements
 
                 try {
                     result = executeListVehiclesInFleet(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutEncryptionConfigurationResult> putEncryptionConfigurationAsync(PutEncryptionConfigurationRequest request) {
+
+        return putEncryptionConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutEncryptionConfigurationResult> putEncryptionConfigurationAsync(final PutEncryptionConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutEncryptionConfigurationRequest, PutEncryptionConfigurationResult> asyncHandler) {
+        final PutEncryptionConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutEncryptionConfigurationResult>() {
+            @Override
+            public PutEncryptionConfigurationResult call() throws Exception {
+                PutEncryptionConfigurationResult result = null;
+
+                try {
+                    result = executePutEncryptionConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

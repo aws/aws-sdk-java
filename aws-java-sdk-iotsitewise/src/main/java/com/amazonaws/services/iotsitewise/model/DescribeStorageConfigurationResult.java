@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -81,7 +81,7 @@ public class DescribeStorageConfigurationResult extends com.amazonaws.AmazonWebS
     private String disassociatedDataStorage;
     /**
      * <p>
-     * How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.
+     * The number of days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.
      * </p>
      */
     private RetentionPeriod retentionPeriod;
@@ -93,6 +93,20 @@ public class DescribeStorageConfigurationResult extends com.amazonaws.AmazonWebS
      * </p>
      */
     private java.util.Date lastUpdateDate;
+    /**
+     * <p>
+     * A service managed storage tier optimized for analytical queries. It stores periodically uploaded, buffered and
+     * historical data ingested with the CreaeBulkImportJob API.
+     * </p>
+     */
+    private String warmTier;
+    /**
+     * <p>
+     * Set this period to specify how long your data is stored in the warm tier before it is deleted. You can set this
+     * only if cold tier is enabled.
+     * </p>
+     */
+    private WarmTierRetentionPeriod warmTierRetentionPeriod;
 
     /**
      * <p>
@@ -550,12 +564,12 @@ public class DescribeStorageConfigurationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.
+     * The number of days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.
      * </p>
      * 
      * @param retentionPeriod
-     *        How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot
-     *        tier.
+     *        The number of days your data is kept in the hot tier. By default, your data is kept indefinitely in the
+     *        hot tier.
      */
 
     public void setRetentionPeriod(RetentionPeriod retentionPeriod) {
@@ -564,11 +578,11 @@ public class DescribeStorageConfigurationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.
+     * The number of days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.
      * </p>
      * 
-     * @return How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot
-     *         tier.
+     * @return The number of days your data is kept in the hot tier. By default, your data is kept indefinitely in the
+     *         hot tier.
      */
 
     public RetentionPeriod getRetentionPeriod() {
@@ -577,12 +591,12 @@ public class DescribeStorageConfigurationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.
+     * The number of days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.
      * </p>
      * 
      * @param retentionPeriod
-     *        How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot
-     *        tier.
+     *        The number of days your data is kept in the hot tier. By default, your data is kept indefinitely in the
+     *        hot tier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -658,6 +672,119 @@ public class DescribeStorageConfigurationResult extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * A service managed storage tier optimized for analytical queries. It stores periodically uploaded, buffered and
+     * historical data ingested with the CreaeBulkImportJob API.
+     * </p>
+     * 
+     * @param warmTier
+     *        A service managed storage tier optimized for analytical queries. It stores periodically uploaded, buffered
+     *        and historical data ingested with the CreaeBulkImportJob API.
+     * @see WarmTierState
+     */
+
+    public void setWarmTier(String warmTier) {
+        this.warmTier = warmTier;
+    }
+
+    /**
+     * <p>
+     * A service managed storage tier optimized for analytical queries. It stores periodically uploaded, buffered and
+     * historical data ingested with the CreaeBulkImportJob API.
+     * </p>
+     * 
+     * @return A service managed storage tier optimized for analytical queries. It stores periodically uploaded,
+     *         buffered and historical data ingested with the CreaeBulkImportJob API.
+     * @see WarmTierState
+     */
+
+    public String getWarmTier() {
+        return this.warmTier;
+    }
+
+    /**
+     * <p>
+     * A service managed storage tier optimized for analytical queries. It stores periodically uploaded, buffered and
+     * historical data ingested with the CreaeBulkImportJob API.
+     * </p>
+     * 
+     * @param warmTier
+     *        A service managed storage tier optimized for analytical queries. It stores periodically uploaded, buffered
+     *        and historical data ingested with the CreaeBulkImportJob API.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WarmTierState
+     */
+
+    public DescribeStorageConfigurationResult withWarmTier(String warmTier) {
+        setWarmTier(warmTier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A service managed storage tier optimized for analytical queries. It stores periodically uploaded, buffered and
+     * historical data ingested with the CreaeBulkImportJob API.
+     * </p>
+     * 
+     * @param warmTier
+     *        A service managed storage tier optimized for analytical queries. It stores periodically uploaded, buffered
+     *        and historical data ingested with the CreaeBulkImportJob API.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WarmTierState
+     */
+
+    public DescribeStorageConfigurationResult withWarmTier(WarmTierState warmTier) {
+        this.warmTier = warmTier.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set this period to specify how long your data is stored in the warm tier before it is deleted. You can set this
+     * only if cold tier is enabled.
+     * </p>
+     * 
+     * @param warmTierRetentionPeriod
+     *        Set this period to specify how long your data is stored in the warm tier before it is deleted. You can set
+     *        this only if cold tier is enabled.
+     */
+
+    public void setWarmTierRetentionPeriod(WarmTierRetentionPeriod warmTierRetentionPeriod) {
+        this.warmTierRetentionPeriod = warmTierRetentionPeriod;
+    }
+
+    /**
+     * <p>
+     * Set this period to specify how long your data is stored in the warm tier before it is deleted. You can set this
+     * only if cold tier is enabled.
+     * </p>
+     * 
+     * @return Set this period to specify how long your data is stored in the warm tier before it is deleted. You can
+     *         set this only if cold tier is enabled.
+     */
+
+    public WarmTierRetentionPeriod getWarmTierRetentionPeriod() {
+        return this.warmTierRetentionPeriod;
+    }
+
+    /**
+     * <p>
+     * Set this period to specify how long your data is stored in the warm tier before it is deleted. You can set this
+     * only if cold tier is enabled.
+     * </p>
+     * 
+     * @param warmTierRetentionPeriod
+     *        Set this period to specify how long your data is stored in the warm tier before it is deleted. You can set
+     *        this only if cold tier is enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeStorageConfigurationResult withWarmTierRetentionPeriod(WarmTierRetentionPeriod warmTierRetentionPeriod) {
+        setWarmTierRetentionPeriod(warmTierRetentionPeriod);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -680,7 +807,11 @@ public class DescribeStorageConfigurationResult extends com.amazonaws.AmazonWebS
         if (getConfigurationStatus() != null)
             sb.append("ConfigurationStatus: ").append(getConfigurationStatus()).append(",");
         if (getLastUpdateDate() != null)
-            sb.append("LastUpdateDate: ").append(getLastUpdateDate());
+            sb.append("LastUpdateDate: ").append(getLastUpdateDate()).append(",");
+        if (getWarmTier() != null)
+            sb.append("WarmTier: ").append(getWarmTier()).append(",");
+        if (getWarmTierRetentionPeriod() != null)
+            sb.append("WarmTierRetentionPeriod: ").append(getWarmTierRetentionPeriod());
         sb.append("}");
         return sb.toString();
     }
@@ -719,6 +850,14 @@ public class DescribeStorageConfigurationResult extends com.amazonaws.AmazonWebS
             return false;
         if (other.getLastUpdateDate() != null && other.getLastUpdateDate().equals(this.getLastUpdateDate()) == false)
             return false;
+        if (other.getWarmTier() == null ^ this.getWarmTier() == null)
+            return false;
+        if (other.getWarmTier() != null && other.getWarmTier().equals(this.getWarmTier()) == false)
+            return false;
+        if (other.getWarmTierRetentionPeriod() == null ^ this.getWarmTierRetentionPeriod() == null)
+            return false;
+        if (other.getWarmTierRetentionPeriod() != null && other.getWarmTierRetentionPeriod().equals(this.getWarmTierRetentionPeriod()) == false)
+            return false;
         return true;
     }
 
@@ -733,6 +872,8 @@ public class DescribeStorageConfigurationResult extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getRetentionPeriod() == null) ? 0 : getRetentionPeriod().hashCode());
         hashCode = prime * hashCode + ((getConfigurationStatus() == null) ? 0 : getConfigurationStatus().hashCode());
         hashCode = prime * hashCode + ((getLastUpdateDate() == null) ? 0 : getLastUpdateDate().hashCode());
+        hashCode = prime * hashCode + ((getWarmTier() == null) ? 0 : getWarmTier().hashCode());
+        hashCode = prime * hashCode + ((getWarmTierRetentionPeriod() == null) ? 0 : getWarmTierRetentionPeriod().hashCode());
         return hashCode;
     }
 

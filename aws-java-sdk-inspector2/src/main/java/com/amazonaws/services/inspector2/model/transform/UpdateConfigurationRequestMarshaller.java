@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateConfigurationRequestMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> EC2CONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ec2Configuration").build();
     private static final MarshallingInfo<StructuredPojo> ECRCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ecrConfiguration").build();
 
@@ -46,6 +48,7 @@ public class UpdateConfigurationRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(updateConfigurationRequest.getEc2Configuration(), EC2CONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateConfigurationRequest.getEcrConfiguration(), ECRCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

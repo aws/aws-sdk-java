@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,6 +59,24 @@ public class SenderIdInformation implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String monthlyLeasingPrice;
+    /**
+     * <p>
+     * By default this is set to false. When set to true the sender ID can't be deleted.
+     * </p>
+     */
+    private Boolean deletionProtectionEnabled;
+    /**
+     * <p>
+     * True if the sender ID is registered.
+     * </p>
+     */
+    private Boolean registered;
+    /**
+     * <p>
+     * The unique identifier for the registration.
+     * </p>
+     */
+    private String registrationId;
 
     /**
      * <p>
@@ -329,6 +347,150 @@ public class SenderIdInformation implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * By default this is set to false. When set to true the sender ID can't be deleted.
+     * </p>
+     * 
+     * @param deletionProtectionEnabled
+     *        By default this is set to false. When set to true the sender ID can't be deleted.
+     */
+
+    public void setDeletionProtectionEnabled(Boolean deletionProtectionEnabled) {
+        this.deletionProtectionEnabled = deletionProtectionEnabled;
+    }
+
+    /**
+     * <p>
+     * By default this is set to false. When set to true the sender ID can't be deleted.
+     * </p>
+     * 
+     * @return By default this is set to false. When set to true the sender ID can't be deleted.
+     */
+
+    public Boolean getDeletionProtectionEnabled() {
+        return this.deletionProtectionEnabled;
+    }
+
+    /**
+     * <p>
+     * By default this is set to false. When set to true the sender ID can't be deleted.
+     * </p>
+     * 
+     * @param deletionProtectionEnabled
+     *        By default this is set to false. When set to true the sender ID can't be deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SenderIdInformation withDeletionProtectionEnabled(Boolean deletionProtectionEnabled) {
+        setDeletionProtectionEnabled(deletionProtectionEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * By default this is set to false. When set to true the sender ID can't be deleted.
+     * </p>
+     * 
+     * @return By default this is set to false. When set to true the sender ID can't be deleted.
+     */
+
+    public Boolean isDeletionProtectionEnabled() {
+        return this.deletionProtectionEnabled;
+    }
+
+    /**
+     * <p>
+     * True if the sender ID is registered.
+     * </p>
+     * 
+     * @param registered
+     *        True if the sender ID is registered.
+     */
+
+    public void setRegistered(Boolean registered) {
+        this.registered = registered;
+    }
+
+    /**
+     * <p>
+     * True if the sender ID is registered.
+     * </p>
+     * 
+     * @return True if the sender ID is registered.
+     */
+
+    public Boolean getRegistered() {
+        return this.registered;
+    }
+
+    /**
+     * <p>
+     * True if the sender ID is registered.
+     * </p>
+     * 
+     * @param registered
+     *        True if the sender ID is registered.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SenderIdInformation withRegistered(Boolean registered) {
+        setRegistered(registered);
+        return this;
+    }
+
+    /**
+     * <p>
+     * True if the sender ID is registered.
+     * </p>
+     * 
+     * @return True if the sender ID is registered.
+     */
+
+    public Boolean isRegistered() {
+        return this.registered;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for the registration.
+     * </p>
+     * 
+     * @param registrationId
+     *        The unique identifier for the registration.
+     */
+
+    public void setRegistrationId(String registrationId) {
+        this.registrationId = registrationId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for the registration.
+     * </p>
+     * 
+     * @return The unique identifier for the registration.
+     */
+
+    public String getRegistrationId() {
+        return this.registrationId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for the registration.
+     * </p>
+     * 
+     * @param registrationId
+     *        The unique identifier for the registration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SenderIdInformation withRegistrationId(String registrationId) {
+        setRegistrationId(registrationId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -349,7 +511,13 @@ public class SenderIdInformation implements Serializable, Cloneable, StructuredP
         if (getMessageTypes() != null)
             sb.append("MessageTypes: ").append(getMessageTypes()).append(",");
         if (getMonthlyLeasingPrice() != null)
-            sb.append("MonthlyLeasingPrice: ").append(getMonthlyLeasingPrice());
+            sb.append("MonthlyLeasingPrice: ").append(getMonthlyLeasingPrice()).append(",");
+        if (getDeletionProtectionEnabled() != null)
+            sb.append("DeletionProtectionEnabled: ").append(getDeletionProtectionEnabled()).append(",");
+        if (getRegistered() != null)
+            sb.append("Registered: ").append(getRegistered()).append(",");
+        if (getRegistrationId() != null)
+            sb.append("RegistrationId: ").append(getRegistrationId());
         sb.append("}");
         return sb.toString();
     }
@@ -384,6 +552,18 @@ public class SenderIdInformation implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getMonthlyLeasingPrice() != null && other.getMonthlyLeasingPrice().equals(this.getMonthlyLeasingPrice()) == false)
             return false;
+        if (other.getDeletionProtectionEnabled() == null ^ this.getDeletionProtectionEnabled() == null)
+            return false;
+        if (other.getDeletionProtectionEnabled() != null && other.getDeletionProtectionEnabled().equals(this.getDeletionProtectionEnabled()) == false)
+            return false;
+        if (other.getRegistered() == null ^ this.getRegistered() == null)
+            return false;
+        if (other.getRegistered() != null && other.getRegistered().equals(this.getRegistered()) == false)
+            return false;
+        if (other.getRegistrationId() == null ^ this.getRegistrationId() == null)
+            return false;
+        if (other.getRegistrationId() != null && other.getRegistrationId().equals(this.getRegistrationId()) == false)
+            return false;
         return true;
     }
 
@@ -397,6 +577,9 @@ public class SenderIdInformation implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getIsoCountryCode() == null) ? 0 : getIsoCountryCode().hashCode());
         hashCode = prime * hashCode + ((getMessageTypes() == null) ? 0 : getMessageTypes().hashCode());
         hashCode = prime * hashCode + ((getMonthlyLeasingPrice() == null) ? 0 : getMonthlyLeasingPrice().hashCode());
+        hashCode = prime * hashCode + ((getDeletionProtectionEnabled() == null) ? 0 : getDeletionProtectionEnabled().hashCode());
+        hashCode = prime * hashCode + ((getRegistered() == null) ? 0 : getRegistered().hashCode());
+        hashCode = prime * hashCode + ((getRegistrationId() == null) ? 0 : getRegistrationId().hashCode());
         return hashCode;
     }
 

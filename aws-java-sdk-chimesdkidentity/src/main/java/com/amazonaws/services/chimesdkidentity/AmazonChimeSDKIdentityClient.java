@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.chimesdkidentity.AmazonChimeSDKIdentityClientBuild
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.chimesdkidentity.model.*;
+
 import com.amazonaws.services.chimesdkidentity.model.transform.*;
 
 /**
@@ -82,11 +83,17 @@ public class AmazonChimeSDKIdentityClient extends AmazonWebServiceClient impleme
                     .withSupportsIon(false)
                     .withContentTypeOverride("application/json")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.chimesdkidentity.model.transform.ConflictExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("UnauthorizedClientException").withExceptionUnmarshaller(
                                     com.amazonaws.services.chimesdkidentity.model.transform.UnauthorizedClientExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.chimesdkidentity.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceFailureException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.chimesdkidentity.model.transform.ServiceFailureExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.chimesdkidentity.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ThrottledClientException").withExceptionUnmarshaller(
                                     com.amazonaws.services.chimesdkidentity.model.transform.ThrottledClientExceptionUnmarshaller.getInstance()))
@@ -102,9 +109,6 @@ public class AmazonChimeSDKIdentityClient extends AmazonWebServiceClient impleme
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.chimesdkidentity.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceFailureException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.chimesdkidentity.model.transform.ServiceFailureExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.chimesdkidentity.model.AmazonChimeSDKIdentityException.class));
 
     public static AmazonChimeSDKIdentityClientBuilder builder() {
@@ -230,8 +234,8 @@ public class AmazonChimeSDKIdentityClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>. The promoted user can perform the
-     * following actions.
+     * Promotes an <code>AppInstanceUser</code> or <code>AppInstanceBot</code> to an <code>AppInstanceAdmin</code>. The
+     * promoted entity can perform the following actions.
      * </p>
      * <ul>
      * <li>
@@ -246,7 +250,8 @@ public class AmazonChimeSDKIdentityClient extends AmazonWebServiceClient impleme
      * </li>
      * </ul>
      * <p>
-     * Only an <code>AppInstanceUser</code> can be promoted to an <code>AppInstanceAdmin</code> role.
+     * Only an <code>AppInstanceUser</code> and <code>AppInstanceBot</code> can be promoted to an
+     * <code>AppInstanceAdmin</code> role.
      * </p>
      * 
      * @param createAppInstanceAdminRequest
@@ -306,6 +311,78 @@ public class AmazonChimeSDKIdentityClient extends AmazonWebServiceClient impleme
             HttpResponseHandler<AmazonWebServiceResponse<CreateAppInstanceAdminResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateAppInstanceAdminResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a bot under an Amazon Chime <code>AppInstance</code>. The request consists of a unique
+     * <code>Configuration</code> and <code>Name</code> for that bot.
+     * </p>
+     * 
+     * @param createAppInstanceBotRequest
+     * @return Result of the CreateAppInstanceBot operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChimeSDKIdentity.CreateAppInstanceBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/CreateAppInstanceBot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateAppInstanceBotResult createAppInstanceBot(CreateAppInstanceBotRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAppInstanceBot(request);
+    }
+
+    @SdkInternalApi
+    final CreateAppInstanceBotResult executeCreateAppInstanceBot(CreateAppInstanceBotRequest createAppInstanceBotRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createAppInstanceBotRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateAppInstanceBotRequest> request = null;
+        Response<CreateAppInstanceBotResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAppInstanceBotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAppInstanceBotRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime SDK Identity");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAppInstanceBot");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAppInstanceBotResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateAppInstanceBotResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -460,8 +537,8 @@ public class AmazonChimeSDKIdentityClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code>. This action does not delete the
-     * user.
+     * Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code> or <code>AppInstanceBot</code>. This
+     * action does not delete the user.
      * </p>
      * 
      * @param deleteAppInstanceAdminRequest
@@ -521,6 +598,77 @@ public class AmazonChimeSDKIdentityClient extends AmazonWebServiceClient impleme
             HttpResponseHandler<AmazonWebServiceResponse<DeleteAppInstanceAdminResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteAppInstanceAdminResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an <code>AppInstanceBot</code>.
+     * </p>
+     * 
+     * @param deleteAppInstanceBotRequest
+     * @return Result of the DeleteAppInstanceBot operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChimeSDKIdentity.DeleteAppInstanceBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DeleteAppInstanceBot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteAppInstanceBotResult deleteAppInstanceBot(DeleteAppInstanceBotRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAppInstanceBot(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAppInstanceBotResult executeDeleteAppInstanceBot(DeleteAppInstanceBotRequest deleteAppInstanceBotRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAppInstanceBotRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAppInstanceBotRequest> request = null;
+        Response<DeleteAppInstanceBotResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAppInstanceBotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAppInstanceBotRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime SDK Identity");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAppInstanceBot");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAppInstanceBotResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteAppInstanceBotResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -812,6 +960,76 @@ public class AmazonChimeSDKIdentityClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * The <code>AppInstanceBot's</code> information.
+     * </p>
+     * 
+     * @param describeAppInstanceBotRequest
+     * @return Result of the DescribeAppInstanceBot operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChimeSDKIdentity.DescribeAppInstanceBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DescribeAppInstanceBot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeAppInstanceBotResult describeAppInstanceBot(DescribeAppInstanceBotRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAppInstanceBot(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAppInstanceBotResult executeDescribeAppInstanceBot(DescribeAppInstanceBotRequest describeAppInstanceBotRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAppInstanceBotRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAppInstanceBotRequest> request = null;
+        Response<DescribeAppInstanceBotResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAppInstanceBotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAppInstanceBotRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime SDK Identity");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAppInstanceBot");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAppInstanceBotResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeAppInstanceBotResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns the full details of an <code>AppInstanceUser</code>.
      * </p>
      * 
@@ -1081,6 +1299,75 @@ public class AmazonChimeSDKIdentityClient extends AmazonWebServiceClient impleme
             HttpResponseHandler<AmazonWebServiceResponse<ListAppInstanceAdminsResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new ListAppInstanceAdminsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all <code>AppInstanceBots</code> created under a single <code>AppInstance</code>.
+     * </p>
+     * 
+     * @param listAppInstanceBotsRequest
+     * @return Result of the ListAppInstanceBots operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChimeSDKIdentity.ListAppInstanceBots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/ListAppInstanceBots"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListAppInstanceBotsResult listAppInstanceBots(ListAppInstanceBotsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAppInstanceBots(request);
+    }
+
+    @SdkInternalApi
+    final ListAppInstanceBotsResult executeListAppInstanceBots(ListAppInstanceBotsRequest listAppInstanceBotsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAppInstanceBotsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAppInstanceBotsRequest> request = null;
+        Response<ListAppInstanceBotsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAppInstanceBotsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAppInstanceBotsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime SDK Identity");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAppInstanceBots");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAppInstanceBotsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAppInstanceBotsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1434,6 +1721,89 @@ public class AmazonChimeSDKIdentityClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Sets the number of days before the <code>AppInstanceUser</code> is automatically deleted.
+     * </p>
+     * <note>
+     * <p>
+     * A background process deletes expired <code>AppInstanceUsers</code> within 6 hours of expiration. Actual deletion
+     * times may vary.
+     * </p>
+     * <p>
+     * Expired <code>AppInstanceUsers</code> that have not yet been deleted appear as active, and you can update their
+     * expiration settings. The system honors the new settings.
+     * </p>
+     * </note>
+     * 
+     * @param putAppInstanceUserExpirationSettingsRequest
+     * @return Result of the PutAppInstanceUserExpirationSettings operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChimeSDKIdentity.PutAppInstanceUserExpirationSettings
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/PutAppInstanceUserExpirationSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutAppInstanceUserExpirationSettingsResult putAppInstanceUserExpirationSettings(PutAppInstanceUserExpirationSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executePutAppInstanceUserExpirationSettings(request);
+    }
+
+    @SdkInternalApi
+    final PutAppInstanceUserExpirationSettingsResult executePutAppInstanceUserExpirationSettings(
+            PutAppInstanceUserExpirationSettingsRequest putAppInstanceUserExpirationSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putAppInstanceUserExpirationSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutAppInstanceUserExpirationSettingsRequest> request = null;
+        Response<PutAppInstanceUserExpirationSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutAppInstanceUserExpirationSettingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putAppInstanceUserExpirationSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime SDK Identity");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAppInstanceUserExpirationSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutAppInstanceUserExpirationSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutAppInstanceUserExpirationSettingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Registers an endpoint under an Amazon Chime <code>AppInstanceUser</code>. The endpoint receives messages for a
      * user. For push notifications, the endpoint is a mobile device used to receive mobile push notifications for a
      * user.
@@ -1704,6 +2074,77 @@ public class AmazonChimeSDKIdentityClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateAppInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateAppInstanceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the name and metadata of an <code>AppInstanceBot</code>.
+     * </p>
+     * 
+     * @param updateAppInstanceBotRequest
+     * @return Result of the UpdateAppInstanceBot operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChimeSDKIdentity.UpdateAppInstanceBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/UpdateAppInstanceBot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateAppInstanceBotResult updateAppInstanceBot(UpdateAppInstanceBotRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAppInstanceBot(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAppInstanceBotResult executeUpdateAppInstanceBot(UpdateAppInstanceBotRequest updateAppInstanceBotRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAppInstanceBotRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAppInstanceBotRequest> request = null;
+        Response<UpdateAppInstanceBotResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAppInstanceBotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAppInstanceBotRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime SDK Identity");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAppInstanceBot");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAppInstanceBotResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateAppInstanceBotResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

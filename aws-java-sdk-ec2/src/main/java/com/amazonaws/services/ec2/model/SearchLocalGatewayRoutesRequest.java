@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,11 @@ public class SearchLocalGatewayRoutesRequest extends AmazonWebServiceRequest imp
      * One or more filters.
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>prefix-list-id</code> - The ID of the prefix list.
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>route-search.exact-match</code> - The exact match of the specified filter.
@@ -133,6 +138,11 @@ public class SearchLocalGatewayRoutesRequest extends AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
+     * <code>prefix-list-id</code> - The ID of the prefix list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>route-search.exact-match</code> - The exact match of the specified filter.
      * </p>
      * </li>
@@ -167,6 +177,11 @@ public class SearchLocalGatewayRoutesRequest extends AmazonWebServiceRequest imp
      * 
      * @return One or more filters.</p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>prefix-list-id</code> - The ID of the prefix list.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <code>route-search.exact-match</code> - The exact match of the specified filter.
@@ -216,6 +231,11 @@ public class SearchLocalGatewayRoutesRequest extends AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
+     * <code>prefix-list-id</code> - The ID of the prefix list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>route-search.exact-match</code> - The exact match of the specified filter.
      * </p>
      * </li>
@@ -251,6 +271,11 @@ public class SearchLocalGatewayRoutesRequest extends AmazonWebServiceRequest imp
      * @param filters
      *        One or more filters.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>prefix-list-id</code> - The ID of the prefix list.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>route-search.exact-match</code> - The exact match of the specified filter.
@@ -301,6 +326,11 @@ public class SearchLocalGatewayRoutesRequest extends AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
+     * <code>prefix-list-id</code> - The ID of the prefix list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>route-search.exact-match</code> - The exact match of the specified filter.
      * </p>
      * </li>
@@ -341,6 +371,11 @@ public class SearchLocalGatewayRoutesRequest extends AmazonWebServiceRequest imp
      * @param filters
      *        One or more filters.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>prefix-list-id</code> - The ID of the prefix list.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>route-search.exact-match</code> - The exact match of the specified filter.
@@ -393,6 +428,11 @@ public class SearchLocalGatewayRoutesRequest extends AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
+     * <code>prefix-list-id</code> - The ID of the prefix list.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>route-search.exact-match</code> - The exact match of the specified filter.
      * </p>
      * </li>
@@ -428,6 +468,11 @@ public class SearchLocalGatewayRoutesRequest extends AmazonWebServiceRequest imp
      * @param filters
      *        One or more filters.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>prefix-list-id</code> - The ID of the prefix list.
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>route-search.exact-match</code> - The exact match of the specified filter.

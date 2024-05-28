@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,10 @@ public class AppDetailsJsonUnmarshaller implements Unmarshaller<AppDetails, Json
                     context.nextToken();
                     appDetails.setUserProfileName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SpaceName", targetDepth)) {
+                    context.nextToken();
+                    appDetails.setSpaceName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("AppType", targetDepth)) {
                     context.nextToken();
                     appDetails.setAppType(context.getUnmarshaller(String.class).unmarshall(context));
@@ -71,6 +75,10 @@ public class AppDetailsJsonUnmarshaller implements Unmarshaller<AppDetails, Json
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
                     appDetails.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("ResourceSpec", targetDepth)) {
+                    context.nextToken();
+                    appDetails.setResourceSpec(ResourceSpecJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

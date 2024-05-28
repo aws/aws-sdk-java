@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,12 @@ public class AssociateResourceResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private String resourceArn;
+    /**
+     * <p>
+     * Determines whether an application tag is applied or skipped.
+     * </p>
+     */
+    private java.util.List<String> options;
 
     /**
      * <p>
@@ -117,6 +123,104 @@ public class AssociateResourceResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * Determines whether an application tag is applied or skipped.
+     * </p>
+     * 
+     * @return Determines whether an application tag is applied or skipped.
+     * @see AssociationOption
+     */
+
+    public java.util.List<String> getOptions() {
+        return options;
+    }
+
+    /**
+     * <p>
+     * Determines whether an application tag is applied or skipped.
+     * </p>
+     * 
+     * @param options
+     *        Determines whether an application tag is applied or skipped.
+     * @see AssociationOption
+     */
+
+    public void setOptions(java.util.Collection<String> options) {
+        if (options == null) {
+            this.options = null;
+            return;
+        }
+
+        this.options = new java.util.ArrayList<String>(options);
+    }
+
+    /**
+     * <p>
+     * Determines whether an application tag is applied or skipped.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setOptions(java.util.Collection)} or {@link #withOptions(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param options
+     *        Determines whether an application tag is applied or skipped.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssociationOption
+     */
+
+    public AssociateResourceResult withOptions(String... options) {
+        if (this.options == null) {
+            setOptions(new java.util.ArrayList<String>(options.length));
+        }
+        for (String ele : options) {
+            this.options.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Determines whether an application tag is applied or skipped.
+     * </p>
+     * 
+     * @param options
+     *        Determines whether an application tag is applied or skipped.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssociationOption
+     */
+
+    public AssociateResourceResult withOptions(java.util.Collection<String> options) {
+        setOptions(options);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Determines whether an application tag is applied or skipped.
+     * </p>
+     * 
+     * @param options
+     *        Determines whether an application tag is applied or skipped.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssociationOption
+     */
+
+    public AssociateResourceResult withOptions(AssociationOption... options) {
+        java.util.ArrayList<String> optionsCopy = new java.util.ArrayList<String>(options.length);
+        for (AssociationOption value : options) {
+            optionsCopy.add(value.toString());
+        }
+        if (getOptions() == null) {
+            setOptions(optionsCopy);
+        } else {
+            getOptions().addAll(optionsCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -131,7 +235,9 @@ public class AssociateResourceResult extends com.amazonaws.AmazonWebServiceResul
         if (getApplicationArn() != null)
             sb.append("ApplicationArn: ").append(getApplicationArn()).append(",");
         if (getResourceArn() != null)
-            sb.append("ResourceArn: ").append(getResourceArn());
+            sb.append("ResourceArn: ").append(getResourceArn()).append(",");
+        if (getOptions() != null)
+            sb.append("Options: ").append(getOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -154,6 +260,10 @@ public class AssociateResourceResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
             return false;
+        if (other.getOptions() == null ^ this.getOptions() == null)
+            return false;
+        if (other.getOptions() != null && other.getOptions().equals(this.getOptions()) == false)
+            return false;
         return true;
     }
 
@@ -164,6 +274,7 @@ public class AssociateResourceResult extends com.amazonaws.AmazonWebServiceResul
 
         hashCode = prime * hashCode + ((getApplicationArn() == null) ? 0 : getApplicationArn().hashCode());
         hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
+        hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode());
         return hashCode;
     }
 

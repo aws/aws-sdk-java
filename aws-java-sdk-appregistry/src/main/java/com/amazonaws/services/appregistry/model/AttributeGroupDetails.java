@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,11 +41,23 @@ public class AttributeGroupDetails implements Serializable, Cloneable, Structure
      */
     private String arn;
     /**
+     * <important>
+     * <p>
+     * This field is no longer supported. We recommend you don't use the field when using
+     * <code>ListAttributeGroupsForApplication</code>.
+     * </p>
+     * </important>
      * <p>
      * The name of the attribute group.
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * The service principal that created the attribute group.
+     * </p>
+     */
+    private String createdBy;
 
     /**
      * <p>
@@ -128,11 +140,23 @@ public class AttributeGroupDetails implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <important>
+     * <p>
+     * This field is no longer supported. We recommend you don't use the field when using
+     * <code>ListAttributeGroupsForApplication</code>.
+     * </p>
+     * </important>
      * <p>
      * The name of the attribute group.
      * </p>
      * 
      * @param name
+     *        <p>
+     *        This field is no longer supported. We recommend you don't use the field when using
+     *        <code>ListAttributeGroupsForApplication</code>.
+     *        </p>
+     *        </important>
+     *        <p>
      *        The name of the attribute group.
      */
 
@@ -141,11 +165,23 @@ public class AttributeGroupDetails implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <important>
+     * <p>
+     * This field is no longer supported. We recommend you don't use the field when using
+     * <code>ListAttributeGroupsForApplication</code>.
+     * </p>
+     * </important>
      * <p>
      * The name of the attribute group.
      * </p>
      * 
-     * @return The name of the attribute group.
+     * @return <p>
+     *         This field is no longer supported. We recommend you don't use the field when using
+     *         <code>ListAttributeGroupsForApplication</code>.
+     *         </p>
+     *         </important>
+     *         <p>
+     *         The name of the attribute group.
      */
 
     public String getName() {
@@ -153,17 +189,69 @@ public class AttributeGroupDetails implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <important>
+     * <p>
+     * This field is no longer supported. We recommend you don't use the field when using
+     * <code>ListAttributeGroupsForApplication</code>.
+     * </p>
+     * </important>
      * <p>
      * The name of the attribute group.
      * </p>
      * 
      * @param name
+     *        <p>
+     *        This field is no longer supported. We recommend you don't use the field when using
+     *        <code>ListAttributeGroupsForApplication</code>.
+     *        </p>
+     *        </important>
+     *        <p>
      *        The name of the attribute group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AttributeGroupDetails withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The service principal that created the attribute group.
+     * </p>
+     * 
+     * @param createdBy
+     *        The service principal that created the attribute group.
+     */
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    /**
+     * <p>
+     * The service principal that created the attribute group.
+     * </p>
+     * 
+     * @return The service principal that created the attribute group.
+     */
+
+    public String getCreatedBy() {
+        return this.createdBy;
+    }
+
+    /**
+     * <p>
+     * The service principal that created the attribute group.
+     * </p>
+     * 
+     * @param createdBy
+     *        The service principal that created the attribute group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AttributeGroupDetails withCreatedBy(String createdBy) {
+        setCreatedBy(createdBy);
         return this;
     }
 
@@ -184,7 +272,9 @@ public class AttributeGroupDetails implements Serializable, Cloneable, Structure
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getCreatedBy() != null)
+            sb.append("CreatedBy: ").append(getCreatedBy());
         sb.append("}");
         return sb.toString();
     }
@@ -211,6 +301,10 @@ public class AttributeGroupDetails implements Serializable, Cloneable, Structure
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getCreatedBy() == null ^ this.getCreatedBy() == null)
+            return false;
+        if (other.getCreatedBy() != null && other.getCreatedBy().equals(this.getCreatedBy()) == false)
+            return false;
         return true;
     }
 
@@ -222,6 +316,7 @@ public class AttributeGroupDetails implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getCreatedBy() == null) ? 0 : getCreatedBy().hashCode());
         return hashCode;
     }
 

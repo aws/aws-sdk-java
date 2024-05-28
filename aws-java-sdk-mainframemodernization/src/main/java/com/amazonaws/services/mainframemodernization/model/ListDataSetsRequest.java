@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,12 @@ public class ListDataSetsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * Filter dataset name matching the specified pattern. Can use * and % as wild cards.
+     * </p>
+     */
+    private String nameFilter;
     /**
      * <p>
      * A pagination token returned from a previous call to this operation. This specifies the next item to return. To
@@ -128,6 +134,46 @@ public class ListDataSetsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     public ListDataSetsRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filter dataset name matching the specified pattern. Can use * and % as wild cards.
+     * </p>
+     * 
+     * @param nameFilter
+     *        Filter dataset name matching the specified pattern. Can use * and % as wild cards.
+     */
+
+    public void setNameFilter(String nameFilter) {
+        this.nameFilter = nameFilter;
+    }
+
+    /**
+     * <p>
+     * Filter dataset name matching the specified pattern. Can use * and % as wild cards.
+     * </p>
+     * 
+     * @return Filter dataset name matching the specified pattern. Can use * and % as wild cards.
+     */
+
+    public String getNameFilter() {
+        return this.nameFilter;
+    }
+
+    /**
+     * <p>
+     * Filter dataset name matching the specified pattern. Can use * and % as wild cards.
+     * </p>
+     * 
+     * @param nameFilter
+     *        Filter dataset name matching the specified pattern. Can use * and % as wild cards.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListDataSetsRequest withNameFilter(String nameFilter) {
+        setNameFilter(nameFilter);
         return this;
     }
 
@@ -233,6 +279,8 @@ public class ListDataSetsRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getNameFilter() != null)
+            sb.append("NameFilter: ").append(getNameFilter()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getPrefix() != null)
@@ -259,6 +307,10 @@ public class ListDataSetsRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getNameFilter() == null ^ this.getNameFilter() == null)
+            return false;
+        if (other.getNameFilter() != null && other.getNameFilter().equals(this.getNameFilter()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
@@ -277,6 +329,7 @@ public class ListDataSetsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getNameFilter() == null) ? 0 : getNameFilter().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getPrefix() == null) ? 0 : getPrefix().hashCode());
         return hashCode;

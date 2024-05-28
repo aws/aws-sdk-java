@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -89,6 +89,12 @@ public class EnvironmentSummary implements Serializable, Cloneable, StructuredPo
     private String environmentAccountId;
     /**
      * <p>
+     * The ID of the last attempted deployment of this environment.
+     * </p>
+     */
+    private String lastAttemptedDeploymentId;
+    /**
+     * <p>
      * The time when a deployment of the environment was last attempted.
      * </p>
      */
@@ -99,6 +105,12 @@ public class EnvironmentSummary implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private java.util.Date lastDeploymentSucceededAt;
+    /**
+     * <p>
+     * The ID of the last successful deployment of this environment.
+     * </p>
+     */
+    private String lastSucceededDeploymentId;
     /**
      * <p>
      * The name of the environment.
@@ -538,6 +550,46 @@ public class EnvironmentSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
+     * The ID of the last attempted deployment of this environment.
+     * </p>
+     * 
+     * @param lastAttemptedDeploymentId
+     *        The ID of the last attempted deployment of this environment.
+     */
+
+    public void setLastAttemptedDeploymentId(String lastAttemptedDeploymentId) {
+        this.lastAttemptedDeploymentId = lastAttemptedDeploymentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the last attempted deployment of this environment.
+     * </p>
+     * 
+     * @return The ID of the last attempted deployment of this environment.
+     */
+
+    public String getLastAttemptedDeploymentId() {
+        return this.lastAttemptedDeploymentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the last attempted deployment of this environment.
+     * </p>
+     * 
+     * @param lastAttemptedDeploymentId
+     *        The ID of the last attempted deployment of this environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EnvironmentSummary withLastAttemptedDeploymentId(String lastAttemptedDeploymentId) {
+        setLastAttemptedDeploymentId(lastAttemptedDeploymentId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The time when a deployment of the environment was last attempted.
      * </p>
      * 
@@ -613,6 +665,46 @@ public class EnvironmentSummary implements Serializable, Cloneable, StructuredPo
 
     public EnvironmentSummary withLastDeploymentSucceededAt(java.util.Date lastDeploymentSucceededAt) {
         setLastDeploymentSucceededAt(lastDeploymentSucceededAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the last successful deployment of this environment.
+     * </p>
+     * 
+     * @param lastSucceededDeploymentId
+     *        The ID of the last successful deployment of this environment.
+     */
+
+    public void setLastSucceededDeploymentId(String lastSucceededDeploymentId) {
+        this.lastSucceededDeploymentId = lastSucceededDeploymentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the last successful deployment of this environment.
+     * </p>
+     * 
+     * @return The ID of the last successful deployment of this environment.
+     */
+
+    public String getLastSucceededDeploymentId() {
+        return this.lastSucceededDeploymentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the last successful deployment of this environment.
+     * </p>
+     * 
+     * @param lastSucceededDeploymentId
+     *        The ID of the last successful deployment of this environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EnvironmentSummary withLastSucceededDeploymentId(String lastSucceededDeploymentId) {
+        setLastSucceededDeploymentId(lastSucceededDeploymentId);
         return this;
     }
 
@@ -913,10 +1005,14 @@ public class EnvironmentSummary implements Serializable, Cloneable, StructuredPo
             sb.append("EnvironmentAccountConnectionId: ").append(getEnvironmentAccountConnectionId()).append(",");
         if (getEnvironmentAccountId() != null)
             sb.append("EnvironmentAccountId: ").append(getEnvironmentAccountId()).append(",");
+        if (getLastAttemptedDeploymentId() != null)
+            sb.append("LastAttemptedDeploymentId: ").append(getLastAttemptedDeploymentId()).append(",");
         if (getLastDeploymentAttemptedAt() != null)
             sb.append("LastDeploymentAttemptedAt: ").append(getLastDeploymentAttemptedAt()).append(",");
         if (getLastDeploymentSucceededAt() != null)
             sb.append("LastDeploymentSucceededAt: ").append(getLastDeploymentSucceededAt()).append(",");
+        if (getLastSucceededDeploymentId() != null)
+            sb.append("LastSucceededDeploymentId: ").append(getLastSucceededDeploymentId()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getProtonServiceRoleArn() != null)
@@ -976,6 +1072,10 @@ public class EnvironmentSummary implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getEnvironmentAccountId() != null && other.getEnvironmentAccountId().equals(this.getEnvironmentAccountId()) == false)
             return false;
+        if (other.getLastAttemptedDeploymentId() == null ^ this.getLastAttemptedDeploymentId() == null)
+            return false;
+        if (other.getLastAttemptedDeploymentId() != null && other.getLastAttemptedDeploymentId().equals(this.getLastAttemptedDeploymentId()) == false)
+            return false;
         if (other.getLastDeploymentAttemptedAt() == null ^ this.getLastDeploymentAttemptedAt() == null)
             return false;
         if (other.getLastDeploymentAttemptedAt() != null && other.getLastDeploymentAttemptedAt().equals(this.getLastDeploymentAttemptedAt()) == false)
@@ -983,6 +1083,10 @@ public class EnvironmentSummary implements Serializable, Cloneable, StructuredPo
         if (other.getLastDeploymentSucceededAt() == null ^ this.getLastDeploymentSucceededAt() == null)
             return false;
         if (other.getLastDeploymentSucceededAt() != null && other.getLastDeploymentSucceededAt().equals(this.getLastDeploymentSucceededAt()) == false)
+            return false;
+        if (other.getLastSucceededDeploymentId() == null ^ this.getLastSucceededDeploymentId() == null)
+            return false;
+        if (other.getLastSucceededDeploymentId() != null && other.getLastSucceededDeploymentId().equals(this.getLastSucceededDeploymentId()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
@@ -1024,8 +1128,10 @@ public class EnvironmentSummary implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentAccountConnectionId() == null) ? 0 : getEnvironmentAccountConnectionId().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentAccountId() == null) ? 0 : getEnvironmentAccountId().hashCode());
+        hashCode = prime * hashCode + ((getLastAttemptedDeploymentId() == null) ? 0 : getLastAttemptedDeploymentId().hashCode());
         hashCode = prime * hashCode + ((getLastDeploymentAttemptedAt() == null) ? 0 : getLastDeploymentAttemptedAt().hashCode());
         hashCode = prime * hashCode + ((getLastDeploymentSucceededAt() == null) ? 0 : getLastDeploymentSucceededAt().hashCode());
+        hashCode = prime * hashCode + ((getLastSucceededDeploymentId() == null) ? 0 : getLastSucceededDeploymentId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getProtonServiceRoleArn() == null) ? 0 : getProtonServiceRoleArn().hashCode());
         hashCode = prime * hashCode + ((getProvisioning() == null) ? 0 : getProvisioning().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,8 +38,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For more information about how to use targets, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and
-     * rate controls to send commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run commands at
+     * scale</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> instanceIds;
@@ -55,8 +55,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For more information about how to use targets, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending commands
-     * to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run commands at
+     * scale</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Target> targets;
@@ -65,7 +65,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document
      * or a custom document. To run a shared document belonging to another account, specify the document Amazon Resource
      * Name (ARN). For more information about how to use shared documents, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Sharing SSM
      * documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <note>
@@ -221,8 +221,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For more information about how to use targets, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and
-     * rate controls to send commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run commands at
+     * scale</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @return The IDs of the managed nodes where the command should run. Specifying managed node IDs is most useful
@@ -235,9 +235,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </p>
      *         <p>
      *         For more information about how to use targets, see <a
-     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
-     *         targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web Services Systems Manager
-     *         User Guide</i>.
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run
+     *         commands at scale</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public java.util.List<String> getInstanceIds() {
@@ -260,8 +259,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For more information about how to use targets, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and
-     * rate controls to send commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run commands at
+     * scale</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param instanceIds
@@ -275,9 +274,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        <p>
      *        For more information about how to use targets, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
-     *        targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web Services Systems Manager
-     *        User Guide</i>.
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run
+     *        commands at scale</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
@@ -302,8 +300,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For more information about how to use targets, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and
-     * rate controls to send commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run commands at
+     * scale</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -322,9 +320,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        <p>
      *        For more information about how to use targets, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
-     *        targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web Services Systems Manager
-     *        User Guide</i>.
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run
+     *        commands at scale</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -351,8 +348,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For more information about how to use targets, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and
-     * rate controls to send commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run commands at
+     * scale</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param instanceIds
@@ -366,9 +363,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        <p>
      *        For more information about how to use targets, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
-     *        targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web Services Systems Manager
-     *        User Guide</i>.
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run
+     *        commands at scale</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -389,8 +385,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For more information about how to use targets, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending commands
-     * to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run commands at
+     * scale</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @return An array of search criteria that targets managed nodes using a <code>Key,Value</code> combination that
@@ -403,8 +399,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </p>
      *         <p>
      *         For more information about how to use targets, see <a
-     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     *         commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run
+     *         commands at scale</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public java.util.List<Target> getTargets() {
@@ -426,8 +422,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For more information about how to use targets, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending commands
-     * to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run commands at
+     * scale</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param targets
@@ -441,8 +437,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        <p>
      *        For more information about how to use targets, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     *        commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run
+     *        commands at scale</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
     public void setTargets(java.util.Collection<Target> targets) {
@@ -466,8 +462,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For more information about how to use targets, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending commands
-     * to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run commands at
+     * scale</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -486,8 +482,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        <p>
      *        For more information about how to use targets, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     *        commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run
+     *        commands at scale</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -513,8 +509,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <p>
      * For more information about how to use targets, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending commands
-     * to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run commands at
+     * scale</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
      * @param targets
@@ -528,8 +524,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        <p>
      *        For more information about how to use targets, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     *        commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run
+     *        commands at scale</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -543,7 +539,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document
      * or a custom document. To run a shared document belonging to another account, specify the document Amazon Resource
      * Name (ARN). For more information about how to use shared documents, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Sharing SSM
      * documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <note>
@@ -557,7 +553,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public
      *        document or a custom document. To run a shared document belonging to another account, specify the document
      *        Amazon Resource Name (ARN). For more information about how to use shared documents, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Sharing SSM
      *        documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
      *        <p>
      *        If you specify a document name or ARN that hasn't been shared with your account, you receive an
@@ -574,7 +570,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document
      * or a custom document. To run a shared document belonging to another account, specify the document Amazon Resource
      * Name (ARN). For more information about how to use shared documents, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Sharing SSM
      * documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <note>
@@ -587,8 +583,8 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @return The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public
      *         document or a custom document. To run a shared document belonging to another account, specify the
      *         document Amazon Resource Name (ARN). For more information about how to use shared documents, see <a
-     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared
-     *         SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Sharing SSM
+     *         documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
      *         <p>
      *         If you specify a document name or ARN that hasn't been shared with your account, you receive an
      *         <code>InvalidDocument</code> error.
@@ -604,7 +600,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document
      * or a custom document. To run a shared document belonging to another account, specify the document Amazon Resource
      * Name (ARN). For more information about how to use shared documents, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Sharing SSM
      * documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * <note>
@@ -618,7 +614,7 @@ public class SendCommandRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public
      *        document or a custom document. To run a shared document belonging to another account, specify the document
      *        Amazon Resource Name (ARN). For more information about how to use shared documents, see <a
-     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Sharing SSM
      *        documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note>
      *        <p>
      *        If you specify a document name or ARN that hasn't been shared with your account, you receive an

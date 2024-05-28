@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,7 +40,7 @@ public class UpdateGroupQueryRequest extends com.amazonaws.AmazonWebServiceReque
     private String group;
     /**
      * <p>
-     * The resource query to determine which AWS resources are members of this resource group.
+     * The resource query to determine which Amazon Web Services resources are members of this resource group.
      * </p>
      * <note>
      * <p>
@@ -132,7 +132,7 @@ public class UpdateGroupQueryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The resource query to determine which AWS resources are members of this resource group.
+     * The resource query to determine which Amazon Web Services resources are members of this resource group.
      * </p>
      * <note>
      * <p>
@@ -141,7 +141,8 @@ public class UpdateGroupQueryRequest extends com.amazonaws.AmazonWebServiceReque
      * </note>
      * 
      * @param resourceQuery
-     *        The resource query to determine which AWS resources are members of this resource group.</p> <note>
+     *        The resource query to determine which Amazon Web Services resources are members of this resource
+     *        group.</p> <note>
      *        <p>
      *        A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not
      *        both.
@@ -154,7 +155,7 @@ public class UpdateGroupQueryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The resource query to determine which AWS resources are members of this resource group.
+     * The resource query to determine which Amazon Web Services resources are members of this resource group.
      * </p>
      * <note>
      * <p>
@@ -162,7 +163,8 @@ public class UpdateGroupQueryRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * </note>
      * 
-     * @return The resource query to determine which AWS resources are members of this resource group.</p> <note>
+     * @return The resource query to determine which Amazon Web Services resources are members of this resource
+     *         group.</p> <note>
      *         <p>
      *         A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not
      *         both.
@@ -175,7 +177,7 @@ public class UpdateGroupQueryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The resource query to determine which AWS resources are members of this resource group.
+     * The resource query to determine which Amazon Web Services resources are members of this resource group.
      * </p>
      * <note>
      * <p>
@@ -184,7 +186,8 @@ public class UpdateGroupQueryRequest extends com.amazonaws.AmazonWebServiceReque
      * </note>
      * 
      * @param resourceQuery
-     *        The resource query to determine which AWS resources are members of this resource group.</p> <note>
+     *        The resource query to determine which Amazon Web Services resources are members of this resource
+     *        group.</p> <note>
      *        <p>
      *        A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not
      *        both.

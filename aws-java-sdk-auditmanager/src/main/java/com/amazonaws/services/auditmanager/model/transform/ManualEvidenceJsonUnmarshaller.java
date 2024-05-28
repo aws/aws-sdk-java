@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,14 @@ public class ManualEvidenceJsonUnmarshaller implements Unmarshaller<ManualEviden
                 if (context.testExpression("s3ResourcePath", targetDepth)) {
                     context.nextToken();
                     manualEvidence.setS3ResourcePath(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("textResponse", targetDepth)) {
+                    context.nextToken();
+                    manualEvidence.setTextResponse(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("evidenceFileName", targetDepth)) {
+                    context.nextToken();
+                    manualEvidence.setEvidenceFileName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

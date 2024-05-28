@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class StartTaskExecutionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task to start.
+     * Specifies the Amazon Resource Name (ARN) of the task that you want to start.
      * </p>
      */
     private String taskArn;
@@ -38,30 +38,73 @@ public class StartTaskExecutionRequest extends com.amazonaws.AmazonWebServiceReq
     private Options overrideOptions;
     /**
      * <p>
-     * A list of filter rules that determines which files to include when running a task. The pattern should contain a
-     * single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a
-     * pipe), for example, <code>"/folder1|/folder2"</code>.
-     * </p>
-     * <p>
+     * Specifies a list of filter rules that determines which files to include when running a task. The pattern should
+     * contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that
+     * is, a pipe), for example, <code>"/folder1|/folder2"</code>.
      * </p>
      */
     private java.util.List<FilterRule> includes;
     /**
      * <p>
-     * A list of filter rules that determines which files to exclude from a task. The list contains a single filter
-     * string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
+     * Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single
+     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
      * example, <code>"/folder1|/folder2"</code>.
      * </p>
      */
     private java.util.List<FilterRule> excludes;
+    /**
+     * <p>
+     * Configures a manifest, which is a list of files or objects that you want DataSync to transfer. For more
+     * information and configuration examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what
+     * DataSync transfers by using a manifest</a>.
+     * </p>
+     * <p>
+     * When using this parameter, your caller identity (the role that you're using DataSync with) must have the
+     * <code>iam:PassRole</code> permission. The <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess"
+     * >AWSDataSyncFullAccess</a> policy includes this permission.
+     * </p>
+     * <p>
+     * To remove a manifest configuration, specify this parameter with an empty value.
+     * </p>
+     */
+    private ManifestConfig manifestConfig;
+    /**
+     * <p>
+     * Specifies how you want to configure a task report, which provides detailed information about your DataSync
+     * transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring your DataSync transfers
+     * with task reports</a>.
+     * </p>
+     * <p>
+     * When using this parameter, your caller identity (the role that you're using DataSync with) must have the
+     * <code>iam:PassRole</code> permission. The <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess"
+     * >AWSDataSyncFullAccess</a> policy includes this permission.
+     * </p>
+     * <p>
+     * To remove a task report configuration, specify this parameter as empty.
+     * </p>
+     */
+    private TaskReportConfig taskReportConfig;
+    /**
+     * <p>
+     * Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task execution.
+     * </p>
+     * <p>
+     * <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.
+     * </p>
+     */
+    private java.util.List<TagListEntry> tags;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task to start.
+     * Specifies the Amazon Resource Name (ARN) of the task that you want to start.
      * </p>
      * 
      * @param taskArn
-     *        The Amazon Resource Name (ARN) of the task to start.
+     *        Specifies the Amazon Resource Name (ARN) of the task that you want to start.
      */
 
     public void setTaskArn(String taskArn) {
@@ -70,10 +113,10 @@ public class StartTaskExecutionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task to start.
+     * Specifies the Amazon Resource Name (ARN) of the task that you want to start.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the task to start.
+     * @return Specifies the Amazon Resource Name (ARN) of the task that you want to start.
      */
 
     public String getTaskArn() {
@@ -82,11 +125,11 @@ public class StartTaskExecutionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task to start.
+     * Specifies the Amazon Resource Name (ARN) of the task that you want to start.
      * </p>
      * 
      * @param taskArn
-     *        The Amazon Resource Name (ARN) of the task to start.
+     *        Specifies the Amazon Resource Name (ARN) of the task that you want to start.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,17 +166,14 @@ public class StartTaskExecutionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of filter rules that determines which files to include when running a task. The pattern should contain a
-     * single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a
-     * pipe), for example, <code>"/folder1|/folder2"</code>.
-     * </p>
-     * <p>
+     * Specifies a list of filter rules that determines which files to include when running a task. The pattern should
+     * contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that
+     * is, a pipe), for example, <code>"/folder1|/folder2"</code>.
      * </p>
      * 
-     * @return A list of filter rules that determines which files to include when running a task. The pattern should
-     *         contain a single filter string that consists of the patterns to include. The patterns are delimited by
-     *         "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-     *         <p>
+     * @return Specifies a list of filter rules that determines which files to include when running a task. The pattern
+     *         should contain a single filter string that consists of the patterns to include. The patterns are
+     *         delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.
      */
 
     public java.util.List<FilterRule> getIncludes() {
@@ -142,18 +182,15 @@ public class StartTaskExecutionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of filter rules that determines which files to include when running a task. The pattern should contain a
-     * single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a
-     * pipe), for example, <code>"/folder1|/folder2"</code>.
-     * </p>
-     * <p>
+     * Specifies a list of filter rules that determines which files to include when running a task. The pattern should
+     * contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that
+     * is, a pipe), for example, <code>"/folder1|/folder2"</code>.
      * </p>
      * 
      * @param includes
-     *        A list of filter rules that determines which files to include when running a task. The pattern should
-     *        contain a single filter string that consists of the patterns to include. The patterns are delimited by "|"
-     *        (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-     *        <p>
+     *        Specifies a list of filter rules that determines which files to include when running a task. The pattern
+     *        should contain a single filter string that consists of the patterns to include. The patterns are delimited
+     *        by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.
      */
 
     public void setIncludes(java.util.Collection<FilterRule> includes) {
@@ -167,11 +204,9 @@ public class StartTaskExecutionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of filter rules that determines which files to include when running a task. The pattern should contain a
-     * single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a
-     * pipe), for example, <code>"/folder1|/folder2"</code>.
-     * </p>
-     * <p>
+     * Specifies a list of filter rules that determines which files to include when running a task. The pattern should
+     * contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that
+     * is, a pipe), for example, <code>"/folder1|/folder2"</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -180,10 +215,9 @@ public class StartTaskExecutionRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param includes
-     *        A list of filter rules that determines which files to include when running a task. The pattern should
-     *        contain a single filter string that consists of the patterns to include. The patterns are delimited by "|"
-     *        (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-     *        <p>
+     *        Specifies a list of filter rules that determines which files to include when running a task. The pattern
+     *        should contain a single filter string that consists of the patterns to include. The patterns are delimited
+     *        by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,18 +233,15 @@ public class StartTaskExecutionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of filter rules that determines which files to include when running a task. The pattern should contain a
-     * single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a
-     * pipe), for example, <code>"/folder1|/folder2"</code>.
-     * </p>
-     * <p>
+     * Specifies a list of filter rules that determines which files to include when running a task. The pattern should
+     * contain a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that
+     * is, a pipe), for example, <code>"/folder1|/folder2"</code>.
      * </p>
      * 
      * @param includes
-     *        A list of filter rules that determines which files to include when running a task. The pattern should
-     *        contain a single filter string that consists of the patterns to include. The patterns are delimited by "|"
-     *        (that is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-     *        <p>
+     *        Specifies a list of filter rules that determines which files to include when running a task. The pattern
+     *        should contain a single filter string that consists of the patterns to include. The patterns are delimited
+     *        by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,14 +252,14 @@ public class StartTaskExecutionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of filter rules that determines which files to exclude from a task. The list contains a single filter
-     * string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
+     * Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single
+     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
      * example, <code>"/folder1|/folder2"</code>.
      * </p>
      * 
-     * @return A list of filter rules that determines which files to exclude from a task. The list contains a single
-     *         filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a
-     *         pipe), for example, <code>"/folder1|/folder2"</code>.
+     * @return Specifies a list of filter rules that determines which files to exclude from a task. The list contains a
+     *         single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that
+     *         is, a pipe), for example, <code>"/folder1|/folder2"</code>.
      */
 
     public java.util.List<FilterRule> getExcludes() {
@@ -237,15 +268,15 @@ public class StartTaskExecutionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of filter rules that determines which files to exclude from a task. The list contains a single filter
-     * string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
+     * Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single
+     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
      * example, <code>"/folder1|/folder2"</code>.
      * </p>
      * 
      * @param excludes
-     *        A list of filter rules that determines which files to exclude from a task. The list contains a single
-     *        filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a
-     *        pipe), for example, <code>"/folder1|/folder2"</code>.
+     *        Specifies a list of filter rules that determines which files to exclude from a task. The list contains a
+     *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
+     *        a pipe), for example, <code>"/folder1|/folder2"</code>.
      */
 
     public void setExcludes(java.util.Collection<FilterRule> excludes) {
@@ -259,8 +290,8 @@ public class StartTaskExecutionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of filter rules that determines which files to exclude from a task. The list contains a single filter
-     * string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
+     * Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single
+     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
      * example, <code>"/folder1|/folder2"</code>.
      * </p>
      * <p>
@@ -270,9 +301,9 @@ public class StartTaskExecutionRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param excludes
-     *        A list of filter rules that determines which files to exclude from a task. The list contains a single
-     *        filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a
-     *        pipe), for example, <code>"/folder1|/folder2"</code>.
+     *        Specifies a list of filter rules that determines which files to exclude from a task. The list contains a
+     *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
+     *        a pipe), for example, <code>"/folder1|/folder2"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -288,20 +319,332 @@ public class StartTaskExecutionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of filter rules that determines which files to exclude from a task. The list contains a single filter
-     * string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
+     * Specifies a list of filter rules that determines which files to exclude from a task. The list contains a single
+     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
      * example, <code>"/folder1|/folder2"</code>.
      * </p>
      * 
      * @param excludes
-     *        A list of filter rules that determines which files to exclude from a task. The list contains a single
-     *        filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a
-     *        pipe), for example, <code>"/folder1|/folder2"</code>.
+     *        Specifies a list of filter rules that determines which files to exclude from a task. The list contains a
+     *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
+     *        a pipe), for example, <code>"/folder1|/folder2"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StartTaskExecutionRequest withExcludes(java.util.Collection<FilterRule> excludes) {
         setExcludes(excludes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configures a manifest, which is a list of files or objects that you want DataSync to transfer. For more
+     * information and configuration examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what
+     * DataSync transfers by using a manifest</a>.
+     * </p>
+     * <p>
+     * When using this parameter, your caller identity (the role that you're using DataSync with) must have the
+     * <code>iam:PassRole</code> permission. The <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess"
+     * >AWSDataSyncFullAccess</a> policy includes this permission.
+     * </p>
+     * <p>
+     * To remove a manifest configuration, specify this parameter with an empty value.
+     * </p>
+     * 
+     * @param manifestConfig
+     *        Configures a manifest, which is a list of files or objects that you want DataSync to transfer. For more
+     *        information and configuration examples, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying
+     *        what DataSync transfers by using a manifest</a>.</p>
+     *        <p>
+     *        When using this parameter, your caller identity (the role that you're using DataSync with) must have the
+     *        <code>iam:PassRole</code> permission. The <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess"
+     *        >AWSDataSyncFullAccess</a> policy includes this permission.
+     *        </p>
+     *        <p>
+     *        To remove a manifest configuration, specify this parameter with an empty value.
+     */
+
+    public void setManifestConfig(ManifestConfig manifestConfig) {
+        this.manifestConfig = manifestConfig;
+    }
+
+    /**
+     * <p>
+     * Configures a manifest, which is a list of files or objects that you want DataSync to transfer. For more
+     * information and configuration examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what
+     * DataSync transfers by using a manifest</a>.
+     * </p>
+     * <p>
+     * When using this parameter, your caller identity (the role that you're using DataSync with) must have the
+     * <code>iam:PassRole</code> permission. The <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess"
+     * >AWSDataSyncFullAccess</a> policy includes this permission.
+     * </p>
+     * <p>
+     * To remove a manifest configuration, specify this parameter with an empty value.
+     * </p>
+     * 
+     * @return Configures a manifest, which is a list of files or objects that you want DataSync to transfer. For more
+     *         information and configuration examples, see <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying
+     *         what DataSync transfers by using a manifest</a>.</p>
+     *         <p>
+     *         When using this parameter, your caller identity (the role that you're using DataSync with) must have the
+     *         <code>iam:PassRole</code> permission. The <a href=
+     *         "https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess"
+     *         >AWSDataSyncFullAccess</a> policy includes this permission.
+     *         </p>
+     *         <p>
+     *         To remove a manifest configuration, specify this parameter with an empty value.
+     */
+
+    public ManifestConfig getManifestConfig() {
+        return this.manifestConfig;
+    }
+
+    /**
+     * <p>
+     * Configures a manifest, which is a list of files or objects that you want DataSync to transfer. For more
+     * information and configuration examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying what
+     * DataSync transfers by using a manifest</a>.
+     * </p>
+     * <p>
+     * When using this parameter, your caller identity (the role that you're using DataSync with) must have the
+     * <code>iam:PassRole</code> permission. The <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess"
+     * >AWSDataSyncFullAccess</a> policy includes this permission.
+     * </p>
+     * <p>
+     * To remove a manifest configuration, specify this parameter with an empty value.
+     * </p>
+     * 
+     * @param manifestConfig
+     *        Configures a manifest, which is a list of files or objects that you want DataSync to transfer. For more
+     *        information and configuration examples, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying
+     *        what DataSync transfers by using a manifest</a>.</p>
+     *        <p>
+     *        When using this parameter, your caller identity (the role that you're using DataSync with) must have the
+     *        <code>iam:PassRole</code> permission. The <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess"
+     *        >AWSDataSyncFullAccess</a> policy includes this permission.
+     *        </p>
+     *        <p>
+     *        To remove a manifest configuration, specify this parameter with an empty value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTaskExecutionRequest withManifestConfig(ManifestConfig manifestConfig) {
+        setManifestConfig(manifestConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies how you want to configure a task report, which provides detailed information about your DataSync
+     * transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring your DataSync transfers
+     * with task reports</a>.
+     * </p>
+     * <p>
+     * When using this parameter, your caller identity (the role that you're using DataSync with) must have the
+     * <code>iam:PassRole</code> permission. The <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess"
+     * >AWSDataSyncFullAccess</a> policy includes this permission.
+     * </p>
+     * <p>
+     * To remove a task report configuration, specify this parameter as empty.
+     * </p>
+     * 
+     * @param taskReportConfig
+     *        Specifies how you want to configure a task report, which provides detailed information about your DataSync
+     *        transfer. For more information, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring your DataSync
+     *        transfers with task reports</a>.</p>
+     *        <p>
+     *        When using this parameter, your caller identity (the role that you're using DataSync with) must have the
+     *        <code>iam:PassRole</code> permission. The <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess"
+     *        >AWSDataSyncFullAccess</a> policy includes this permission.
+     *        </p>
+     *        <p>
+     *        To remove a task report configuration, specify this parameter as empty.
+     */
+
+    public void setTaskReportConfig(TaskReportConfig taskReportConfig) {
+        this.taskReportConfig = taskReportConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies how you want to configure a task report, which provides detailed information about your DataSync
+     * transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring your DataSync transfers
+     * with task reports</a>.
+     * </p>
+     * <p>
+     * When using this parameter, your caller identity (the role that you're using DataSync with) must have the
+     * <code>iam:PassRole</code> permission. The <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess"
+     * >AWSDataSyncFullAccess</a> policy includes this permission.
+     * </p>
+     * <p>
+     * To remove a task report configuration, specify this parameter as empty.
+     * </p>
+     * 
+     * @return Specifies how you want to configure a task report, which provides detailed information about your
+     *         DataSync transfer. For more information, see <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring your DataSync
+     *         transfers with task reports</a>.</p>
+     *         <p>
+     *         When using this parameter, your caller identity (the role that you're using DataSync with) must have the
+     *         <code>iam:PassRole</code> permission. The <a href=
+     *         "https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess"
+     *         >AWSDataSyncFullAccess</a> policy includes this permission.
+     *         </p>
+     *         <p>
+     *         To remove a task report configuration, specify this parameter as empty.
+     */
+
+    public TaskReportConfig getTaskReportConfig() {
+        return this.taskReportConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies how you want to configure a task report, which provides detailed information about your DataSync
+     * transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring your DataSync transfers
+     * with task reports</a>.
+     * </p>
+     * <p>
+     * When using this parameter, your caller identity (the role that you're using DataSync with) must have the
+     * <code>iam:PassRole</code> permission. The <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess"
+     * >AWSDataSyncFullAccess</a> policy includes this permission.
+     * </p>
+     * <p>
+     * To remove a task report configuration, specify this parameter as empty.
+     * </p>
+     * 
+     * @param taskReportConfig
+     *        Specifies how you want to configure a task report, which provides detailed information about your DataSync
+     *        transfer. For more information, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring your DataSync
+     *        transfers with task reports</a>.</p>
+     *        <p>
+     *        When using this parameter, your caller identity (the role that you're using DataSync with) must have the
+     *        <code>iam:PassRole</code> permission. The <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/security-iam-awsmanpol.html#security-iam-awsmanpol-awsdatasyncfullaccess"
+     *        >AWSDataSyncFullAccess</a> policy includes this permission.
+     *        </p>
+     *        <p>
+     *        To remove a task report configuration, specify this parameter as empty.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTaskExecutionRequest withTaskReportConfig(TaskReportConfig taskReportConfig) {
+        setTaskReportConfig(taskReportConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task execution.
+     * </p>
+     * <p>
+     * <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.
+     * </p>
+     * 
+     * @return Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task
+     *         execution.</p>
+     *         <p>
+     *         <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.
+     */
+
+    public java.util.List<TagListEntry> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task execution.
+     * </p>
+     * <p>
+     * <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.
+     * </p>
+     * 
+     * @param tags
+     *        Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task
+     *        execution.</p>
+     *        <p>
+     *        <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.
+     */
+
+    public void setTags(java.util.Collection<TagListEntry> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<TagListEntry>(tags);
+    }
+
+    /**
+     * <p>
+     * Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task execution.
+     * </p>
+     * <p>
+     * <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task
+     *        execution.</p>
+     *        <p>
+     *        <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTaskExecutionRequest withTags(TagListEntry... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<TagListEntry>(tags.length));
+        }
+        for (TagListEntry ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task execution.
+     * </p>
+     * <p>
+     * <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.
+     * </p>
+     * 
+     * @param tags
+     *        Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task
+     *        execution.</p>
+     *        <p>
+     *        <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTaskExecutionRequest withTags(java.util.Collection<TagListEntry> tags) {
+        setTags(tags);
         return this;
     }
 
@@ -324,7 +667,13 @@ public class StartTaskExecutionRequest extends com.amazonaws.AmazonWebServiceReq
         if (getIncludes() != null)
             sb.append("Includes: ").append(getIncludes()).append(",");
         if (getExcludes() != null)
-            sb.append("Excludes: ").append(getExcludes());
+            sb.append("Excludes: ").append(getExcludes()).append(",");
+        if (getManifestConfig() != null)
+            sb.append("ManifestConfig: ").append(getManifestConfig()).append(",");
+        if (getTaskReportConfig() != null)
+            sb.append("TaskReportConfig: ").append(getTaskReportConfig()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -355,6 +704,18 @@ public class StartTaskExecutionRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getExcludes() != null && other.getExcludes().equals(this.getExcludes()) == false)
             return false;
+        if (other.getManifestConfig() == null ^ this.getManifestConfig() == null)
+            return false;
+        if (other.getManifestConfig() != null && other.getManifestConfig().equals(this.getManifestConfig()) == false)
+            return false;
+        if (other.getTaskReportConfig() == null ^ this.getTaskReportConfig() == null)
+            return false;
+        if (other.getTaskReportConfig() != null && other.getTaskReportConfig().equals(this.getTaskReportConfig()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -367,6 +728,9 @@ public class StartTaskExecutionRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getOverrideOptions() == null) ? 0 : getOverrideOptions().hashCode());
         hashCode = prime * hashCode + ((getIncludes() == null) ? 0 : getIncludes().hashCode());
         hashCode = prime * hashCode + ((getExcludes() == null) ? 0 : getExcludes().hashCode());
+        hashCode = prime * hashCode + ((getManifestConfig() == null) ? 0 : getManifestConfig().hashCode());
+        hashCode = prime * hashCode + ((getTaskReportConfig() == null) ? 0 : getTaskReportConfig().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

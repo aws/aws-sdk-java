@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,7 +65,9 @@ public class App implements Serializable, Cloneable, StructuredPojo {
     private String repository;
     /**
      * <p>
-     * The platform for the Amplify app.
+     * The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic
+     * server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify
+     * Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.
      * </p>
      */
     private String platform;
@@ -91,6 +93,11 @@ public class App implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The environment variables for the Amplify app.
      * </p>
+     * <p>
+     * For a list of the environment variables that are accessible to Amplify by default, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-console-environment-variables.html">Amplify
+     * Environment variables</a> in the <i>Amplify Hosting User Guide</i>.
+     * </p>
      */
     private java.util.Map<String, String> environmentVariables;
     /**
@@ -107,7 +114,7 @@ public class App implements Serializable, Cloneable, StructuredPojo {
     private Boolean enableBranchAutoBuild;
     /**
      * <p>
-     * Automatically disconnect a branch in the Amplify Console when you delete a branch from your Git repository.
+     * Automatically disconnect a branch in the Amplify console when you delete a branch from your Git repository.
      * </p>
      */
     private Boolean enableBranchAutoDeletion;
@@ -450,11 +457,15 @@ public class App implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform for the Amplify app.
+     * The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic
+     * server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify
+     * Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.
      * </p>
      * 
      * @param platform
-     *        The platform for the Amplify app.
+     *        The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a
+     *        dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app
+     *        requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.
      * @see Platform
      */
 
@@ -464,10 +475,14 @@ public class App implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform for the Amplify app.
+     * The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic
+     * server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify
+     * Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.
      * </p>
      * 
-     * @return The platform for the Amplify app.
+     * @return The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a
+     *         dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app
+     *         requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.
      * @see Platform
      */
 
@@ -477,11 +492,15 @@ public class App implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform for the Amplify app.
+     * The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic
+     * server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify
+     * Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.
      * </p>
      * 
      * @param platform
-     *        The platform for the Amplify app.
+     *        The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a
+     *        dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app
+     *        requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Platform
      */
@@ -493,11 +512,15 @@ public class App implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform for the Amplify app.
+     * The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic
+     * server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify
+     * Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.
      * </p>
      * 
      * @param platform
-     *        The platform for the Amplify app.
+     *        The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a
+     *        dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app
+     *        requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Platform
      */
@@ -634,8 +657,17 @@ public class App implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The environment variables for the Amplify app.
      * </p>
+     * <p>
+     * For a list of the environment variables that are accessible to Amplify by default, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-console-environment-variables.html">Amplify
+     * Environment variables</a> in the <i>Amplify Hosting User Guide</i>.
+     * </p>
      * 
-     * @return The environment variables for the Amplify app.
+     * @return The environment variables for the Amplify app. </p>
+     *         <p>
+     *         For a list of the environment variables that are accessible to Amplify by default, see <a
+     *         href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-console-environment-variables.html"
+     *         >Amplify Environment variables</a> in the <i>Amplify Hosting User Guide</i>.
      */
 
     public java.util.Map<String, String> getEnvironmentVariables() {
@@ -646,9 +678,18 @@ public class App implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The environment variables for the Amplify app.
      * </p>
+     * <p>
+     * For a list of the environment variables that are accessible to Amplify by default, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-console-environment-variables.html">Amplify
+     * Environment variables</a> in the <i>Amplify Hosting User Guide</i>.
+     * </p>
      * 
      * @param environmentVariables
-     *        The environment variables for the Amplify app.
+     *        The environment variables for the Amplify app. </p>
+     *        <p>
+     *        For a list of the environment variables that are accessible to Amplify by default, see <a
+     *        href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-console-environment-variables.html"
+     *        >Amplify Environment variables</a> in the <i>Amplify Hosting User Guide</i>.
      */
 
     public void setEnvironmentVariables(java.util.Map<String, String> environmentVariables) {
@@ -659,9 +700,18 @@ public class App implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The environment variables for the Amplify app.
      * </p>
+     * <p>
+     * For a list of the environment variables that are accessible to Amplify by default, see <a
+     * href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-console-environment-variables.html">Amplify
+     * Environment variables</a> in the <i>Amplify Hosting User Guide</i>.
+     * </p>
      * 
      * @param environmentVariables
-     *        The environment variables for the Amplify app.
+     *        The environment variables for the Amplify app. </p>
+     *        <p>
+     *        For a list of the environment variables that are accessible to Amplify by default, see <a
+     *        href="https://docs.aws.amazon.com/amplify/latest/userguide/amplify-console-environment-variables.html"
+     *        >Amplify Environment variables</a> in the <i>Amplify Hosting User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -792,11 +842,11 @@ public class App implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Automatically disconnect a branch in the Amplify Console when you delete a branch from your Git repository.
+     * Automatically disconnect a branch in the Amplify console when you delete a branch from your Git repository.
      * </p>
      * 
      * @param enableBranchAutoDeletion
-     *        Automatically disconnect a branch in the Amplify Console when you delete a branch from your Git
+     *        Automatically disconnect a branch in the Amplify console when you delete a branch from your Git
      *        repository.
      */
 
@@ -806,10 +856,10 @@ public class App implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Automatically disconnect a branch in the Amplify Console when you delete a branch from your Git repository.
+     * Automatically disconnect a branch in the Amplify console when you delete a branch from your Git repository.
      * </p>
      * 
-     * @return Automatically disconnect a branch in the Amplify Console when you delete a branch from your Git
+     * @return Automatically disconnect a branch in the Amplify console when you delete a branch from your Git
      *         repository.
      */
 
@@ -819,11 +869,11 @@ public class App implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Automatically disconnect a branch in the Amplify Console when you delete a branch from your Git repository.
+     * Automatically disconnect a branch in the Amplify console when you delete a branch from your Git repository.
      * </p>
      * 
      * @param enableBranchAutoDeletion
-     *        Automatically disconnect a branch in the Amplify Console when you delete a branch from your Git
+     *        Automatically disconnect a branch in the Amplify console when you delete a branch from your Git
      *        repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -835,10 +885,10 @@ public class App implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Automatically disconnect a branch in the Amplify Console when you delete a branch from your Git repository.
+     * Automatically disconnect a branch in the Amplify console when you delete a branch from your Git repository.
      * </p>
      * 
-     * @return Automatically disconnect a branch in the Amplify Console when you delete a branch from your Git
+     * @return Automatically disconnect a branch in the Amplify console when you delete a branch from your Git
      *         repository.
      */
 

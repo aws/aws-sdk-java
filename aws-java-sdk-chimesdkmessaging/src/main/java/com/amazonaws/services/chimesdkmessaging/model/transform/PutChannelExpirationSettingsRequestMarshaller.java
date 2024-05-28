@@ -1,0 +1,61 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.chimesdkmessaging.model.transform;
+
+import javax.annotation.Generated;
+
+import com.amazonaws.SdkClientException;
+import com.amazonaws.services.chimesdkmessaging.model.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
+
+/**
+ * PutChannelExpirationSettingsRequestMarshaller
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class PutChannelExpirationSettingsRequestMarshaller {
+
+    private static final MarshallingInfo<String> CHANNELARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("channelArn").build();
+    private static final MarshallingInfo<String> CHIMEBEARER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("x-amz-chime-bearer").build();
+    private static final MarshallingInfo<StructuredPojo> EXPIRATIONSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExpirationSettings").build();
+
+    private static final PutChannelExpirationSettingsRequestMarshaller instance = new PutChannelExpirationSettingsRequestMarshaller();
+
+    public static PutChannelExpirationSettingsRequestMarshaller getInstance() {
+        return instance;
+    }
+
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(PutChannelExpirationSettingsRequest putChannelExpirationSettingsRequest, ProtocolMarshaller protocolMarshaller) {
+
+        if (putChannelExpirationSettingsRequest == null) {
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
+        }
+
+        try {
+            protocolMarshaller.marshall(putChannelExpirationSettingsRequest.getChannelArn(), CHANNELARN_BINDING);
+            protocolMarshaller.marshall(putChannelExpirationSettingsRequest.getChimeBearer(), CHIMEBEARER_BINDING);
+            protocolMarshaller.marshall(putChannelExpirationSettingsRequest.getExpirationSettings(), EXPIRATIONSETTINGS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
+        }
+    }
+
+}

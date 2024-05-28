@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -132,6 +132,19 @@ public class AbstractAmazonComprehendAsync extends AbstractAmazonComprehend impl
     }
 
     @Override
+    public java.util.concurrent.Future<CreateDatasetResult> createDatasetAsync(CreateDatasetRequest request) {
+
+        return createDatasetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDatasetResult> createDatasetAsync(CreateDatasetRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateDatasetRequest, CreateDatasetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDocumentClassifierResult> createDocumentClassifierAsync(CreateDocumentClassifierRequest request) {
 
         return createDocumentClassifierAsync(request, null);
@@ -166,6 +179,19 @@ public class AbstractAmazonComprehendAsync extends AbstractAmazonComprehend impl
     @Override
     public java.util.concurrent.Future<CreateEntityRecognizerResult> createEntityRecognizerAsync(CreateEntityRecognizerRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateEntityRecognizerRequest, CreateEntityRecognizerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFlywheelResult> createFlywheelAsync(CreateFlywheelRequest request) {
+
+        return createFlywheelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFlywheelResult> createFlywheelAsync(CreateFlywheelRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateFlywheelRequest, CreateFlywheelResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -210,6 +236,19 @@ public class AbstractAmazonComprehendAsync extends AbstractAmazonComprehend impl
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteFlywheelResult> deleteFlywheelAsync(DeleteFlywheelRequest request) {
+
+        return deleteFlywheelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFlywheelResult> deleteFlywheelAsync(DeleteFlywheelRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteFlywheelRequest, DeleteFlywheelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest request) {
 
         return deleteResourcePolicyAsync(request, null);
@@ -218,6 +257,19 @@ public class AbstractAmazonComprehendAsync extends AbstractAmazonComprehend impl
     @Override
     public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteResourcePolicyRequest, DeleteResourcePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDatasetResult> describeDatasetAsync(DescribeDatasetRequest request) {
+
+        return describeDatasetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDatasetResult> describeDatasetAsync(DescribeDatasetRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeDatasetRequest, DescribeDatasetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -313,6 +365,32 @@ public class AbstractAmazonComprehendAsync extends AbstractAmazonComprehend impl
     @Override
     public java.util.concurrent.Future<DescribeEventsDetectionJobResult> describeEventsDetectionJobAsync(DescribeEventsDetectionJobRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeEventsDetectionJobRequest, DescribeEventsDetectionJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFlywheelResult> describeFlywheelAsync(DescribeFlywheelRequest request) {
+
+        return describeFlywheelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFlywheelResult> describeFlywheelAsync(DescribeFlywheelRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeFlywheelRequest, DescribeFlywheelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFlywheelIterationResult> describeFlywheelIterationAsync(DescribeFlywheelIterationRequest request) {
+
+        return describeFlywheelIterationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeFlywheelIterationResult> describeFlywheelIterationAsync(DescribeFlywheelIterationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeFlywheelIterationRequest, DescribeFlywheelIterationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -491,6 +569,19 @@ public class AbstractAmazonComprehendAsync extends AbstractAmazonComprehend impl
     }
 
     @Override
+    public java.util.concurrent.Future<DetectToxicContentResult> detectToxicContentAsync(DetectToxicContentRequest request) {
+
+        return detectToxicContentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetectToxicContentResult> detectToxicContentAsync(DetectToxicContentRequest request,
+            com.amazonaws.handlers.AsyncHandler<DetectToxicContentRequest, DetectToxicContentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ImportModelResult> importModelAsync(ImportModelRequest request) {
 
         return importModelAsync(request, null);
@@ -499,6 +590,19 @@ public class AbstractAmazonComprehendAsync extends AbstractAmazonComprehend impl
     @Override
     public java.util.concurrent.Future<ImportModelResult> importModelAsync(ImportModelRequest request,
             com.amazonaws.handlers.AsyncHandler<ImportModelRequest, ImportModelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDatasetsResult> listDatasetsAsync(ListDatasetsRequest request) {
+
+        return listDatasetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDatasetsResult> listDatasetsAsync(ListDatasetsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDatasetsRequest, ListDatasetsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -620,6 +724,32 @@ public class AbstractAmazonComprehendAsync extends AbstractAmazonComprehend impl
     @Override
     public java.util.concurrent.Future<ListEventsDetectionJobsResult> listEventsDetectionJobsAsync(ListEventsDetectionJobsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListEventsDetectionJobsRequest, ListEventsDetectionJobsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFlywheelIterationHistoryResult> listFlywheelIterationHistoryAsync(ListFlywheelIterationHistoryRequest request) {
+
+        return listFlywheelIterationHistoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFlywheelIterationHistoryResult> listFlywheelIterationHistoryAsync(ListFlywheelIterationHistoryRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListFlywheelIterationHistoryRequest, ListFlywheelIterationHistoryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFlywheelsResult> listFlywheelsAsync(ListFlywheelsRequest request) {
+
+        return listFlywheelsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFlywheelsResult> listFlywheelsAsync(ListFlywheelsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListFlywheelsRequest, ListFlywheelsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -767,6 +897,19 @@ public class AbstractAmazonComprehendAsync extends AbstractAmazonComprehend impl
     @Override
     public java.util.concurrent.Future<StartEventsDetectionJobResult> startEventsDetectionJobAsync(StartEventsDetectionJobRequest request,
             com.amazonaws.handlers.AsyncHandler<StartEventsDetectionJobRequest, StartEventsDetectionJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartFlywheelIterationResult> startFlywheelIterationAsync(StartFlywheelIterationRequest request) {
+
+        return startFlywheelIterationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartFlywheelIterationResult> startFlywheelIterationAsync(StartFlywheelIterationRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartFlywheelIterationRequest, StartFlywheelIterationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -994,6 +1137,19 @@ public class AbstractAmazonComprehendAsync extends AbstractAmazonComprehend impl
     @Override
     public java.util.concurrent.Future<UpdateEndpointResult> updateEndpointAsync(UpdateEndpointRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateEndpointRequest, UpdateEndpointResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFlywheelResult> updateFlywheelAsync(UpdateFlywheelRequest request) {
+
+        return updateFlywheelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFlywheelResult> updateFlywheelAsync(UpdateFlywheelRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateFlywheelRequest, UpdateFlywheelResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.managedgrafana.AmazonManagedGrafanaClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.managedgrafana.model.*;
+
 import com.amazonaws.services.managedgrafana.model.transform.*;
 
 /**
@@ -156,8 +157,9 @@ public class AmazonManagedGrafanaClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Assigns a Grafana Enterprise license to a workspace. Upgrading to Grafana Enterprise incurs additional fees. For
-     * more information, see <a
+     * Assigns a Grafana Enterprise license to a workspace. To upgrade, you must use <code>ENTERPRISE</code> for the
+     * <code>licenseType</code>, and pass in a valid Grafana Labs token for the <code>grafanaToken</code>. Upgrading to
+     * Grafana Enterprise incurs additional fees. For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html">Upgrade a
      * workspace to Grafana Enterprise</a>.
      * </p>
@@ -296,11 +298,18 @@ public class AmazonManagedGrafanaClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Creates an API key for the workspace. This key can be used to authenticate requests sent to the workspace's HTTP
-     * API. See <a href=" https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">
-     * https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a> for available APIs and example
+     * Creates a Grafana API key for the workspace. This key can be used to authenticate requests sent to the
+     * workspace's HTTP API. See <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">https
+     * ://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a> for available APIs and example
      * requests.
      * </p>
+     * <note>
+     * <p>
+     * In workspaces compatible with Grafana version 9 or above, use workspace service accounts instead of API keys. API
+     * keys will be removed in a future release.
+     * </p>
+     * </note>
      * 
      * @param createWorkspaceApiKeyRequest
      * @return Result of the CreateWorkspaceApiKey operation returned by the service.
@@ -357,6 +366,182 @@ public class AmazonManagedGrafanaClient extends AmazonWebServiceClient implement
             HttpResponseHandler<AmazonWebServiceResponse<CreateWorkspaceApiKeyResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new CreateWorkspaceApiKeyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a service account for the workspace. A service account can be used to call Grafana HTTP APIs, and run
+     * automated workloads. After creating the service account with the correct <code>GrafanaRole</code> for your use
+     * case, use <code>CreateWorkspaceServiceAccountToken</code> to create a token that can be used to authenticate and
+     * authorize Grafana HTTP API calls.
+     * </p>
+     * <p>
+     * You can only create service accounts for workspaces that are compatible with Grafana version 9 and above.
+     * </p>
+     * <note>
+     * <p>
+     * For more information about service accounts, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/service-accounts.html">Service accounts</a> in the
+     * <i>Amazon Managed Grafana User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about the Grafana HTTP APIs, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">Using Grafana HTTP APIs</a>
+     * in the <i>Amazon Managed Grafana User Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param createWorkspaceServiceAccountRequest
+     * @return Result of the CreateWorkspaceServiceAccount operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws ConflictException
+     *         A resource was in an inconsistent state during an update or a deletion.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error while processing the request. Retry the request.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause a service quota to be exceeded.
+     * @sample AmazonManagedGrafana.CreateWorkspaceServiceAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/CreateWorkspaceServiceAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateWorkspaceServiceAccountResult createWorkspaceServiceAccount(CreateWorkspaceServiceAccountRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateWorkspaceServiceAccount(request);
+    }
+
+    @SdkInternalApi
+    final CreateWorkspaceServiceAccountResult executeCreateWorkspaceServiceAccount(CreateWorkspaceServiceAccountRequest createWorkspaceServiceAccountRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createWorkspaceServiceAccountRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateWorkspaceServiceAccountRequest> request = null;
+        Response<CreateWorkspaceServiceAccountResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateWorkspaceServiceAccountRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createWorkspaceServiceAccountRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "grafana");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateWorkspaceServiceAccount");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateWorkspaceServiceAccountResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateWorkspaceServiceAccountResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a token that can be used to authenticate and authorize Grafana HTTP API operations for the given <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/service-accounts.html">workspace service account</a>.
+     * The service account acts as a user for the API operations, and defines the permissions that are used by the API.
+     * </p>
+     * <important>
+     * <p>
+     * When you create the service account token, you will receive a key that is used when calling Grafana APIs. Do not
+     * lose this key, as it will not be retrievable again.
+     * </p>
+     * <p>
+     * If you do lose the key, you can delete the token and recreate it to receive a new key. This will disable the
+     * initial key.
+     * </p>
+     * </important>
+     * <p>
+     * Service accounts are only available for workspaces that are compatible with Grafana version 9 and above.
+     * </p>
+     * 
+     * @param createWorkspaceServiceAccountTokenRequest
+     * @return Result of the CreateWorkspaceServiceAccountToken operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws ConflictException
+     *         A resource was in an inconsistent state during an update or a deletion.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error while processing the request. Retry the request.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause a service quota to be exceeded.
+     * @sample AmazonManagedGrafana.CreateWorkspaceServiceAccountToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/CreateWorkspaceServiceAccountToken"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateWorkspaceServiceAccountTokenResult createWorkspaceServiceAccountToken(CreateWorkspaceServiceAccountTokenRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateWorkspaceServiceAccountToken(request);
+    }
+
+    @SdkInternalApi
+    final CreateWorkspaceServiceAccountTokenResult executeCreateWorkspaceServiceAccountToken(
+            CreateWorkspaceServiceAccountTokenRequest createWorkspaceServiceAccountTokenRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createWorkspaceServiceAccountTokenRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateWorkspaceServiceAccountTokenRequest> request = null;
+        Response<CreateWorkspaceServiceAccountTokenResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateWorkspaceServiceAccountTokenRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createWorkspaceServiceAccountTokenRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "grafana");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateWorkspaceServiceAccountToken");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateWorkspaceServiceAccountTokenResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateWorkspaceServiceAccountTokenResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -436,8 +621,14 @@ public class AmazonManagedGrafanaClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Deletes an API key for a workspace.
+     * Deletes a Grafana API key for the workspace.
      * </p>
+     * <note>
+     * <p>
+     * In workspaces compatible with Grafana version 9 or above, use workspace service accounts instead of API keys. API
+     * keys will be removed in a future release.
+     * </p>
+     * </note>
      * 
      * @param deleteWorkspaceApiKeyRequest
      * @return Result of the DeleteWorkspaceApiKey operation returned by the service.
@@ -492,6 +683,159 @@ public class AmazonManagedGrafanaClient extends AmazonWebServiceClient implement
             HttpResponseHandler<AmazonWebServiceResponse<DeleteWorkspaceApiKeyResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new DeleteWorkspaceApiKeyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a workspace service account from the workspace.
+     * </p>
+     * <p>
+     * This will delete any tokens created for the service account, as well. If the tokens are currently in use, the
+     * will fail to authenticate / authorize after they are deleted.
+     * </p>
+     * <p>
+     * Service accounts are only available for workspaces that are compatible with Grafana version 9 and above.
+     * </p>
+     * 
+     * @param deleteWorkspaceServiceAccountRequest
+     * @return Result of the DeleteWorkspaceServiceAccount operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws ConflictException
+     *         A resource was in an inconsistent state during an update or a deletion.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error while processing the request. Retry the request.
+     * @sample AmazonManagedGrafana.DeleteWorkspaceServiceAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DeleteWorkspaceServiceAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteWorkspaceServiceAccountResult deleteWorkspaceServiceAccount(DeleteWorkspaceServiceAccountRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteWorkspaceServiceAccount(request);
+    }
+
+    @SdkInternalApi
+    final DeleteWorkspaceServiceAccountResult executeDeleteWorkspaceServiceAccount(DeleteWorkspaceServiceAccountRequest deleteWorkspaceServiceAccountRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteWorkspaceServiceAccountRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteWorkspaceServiceAccountRequest> request = null;
+        Response<DeleteWorkspaceServiceAccountResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteWorkspaceServiceAccountRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteWorkspaceServiceAccountRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "grafana");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteWorkspaceServiceAccount");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteWorkspaceServiceAccountResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteWorkspaceServiceAccountResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a token for the workspace service account.
+     * </p>
+     * <p>
+     * This will disable the key associated with the token. If any automation is currently using the key, it will no
+     * longer be authenticated or authorized to perform actions with the Grafana HTTP APIs.
+     * </p>
+     * <p>
+     * Service accounts are only available for workspaces that are compatible with Grafana version 9 and above.
+     * </p>
+     * 
+     * @param deleteWorkspaceServiceAccountTokenRequest
+     * @return Result of the DeleteWorkspaceServiceAccountToken operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws ConflictException
+     *         A resource was in an inconsistent state during an update or a deletion.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error while processing the request. Retry the request.
+     * @sample AmazonManagedGrafana.DeleteWorkspaceServiceAccountToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DeleteWorkspaceServiceAccountToken"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteWorkspaceServiceAccountTokenResult deleteWorkspaceServiceAccountToken(DeleteWorkspaceServiceAccountTokenRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteWorkspaceServiceAccountToken(request);
+    }
+
+    @SdkInternalApi
+    final DeleteWorkspaceServiceAccountTokenResult executeDeleteWorkspaceServiceAccountToken(
+            DeleteWorkspaceServiceAccountTokenRequest deleteWorkspaceServiceAccountTokenRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteWorkspaceServiceAccountTokenRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteWorkspaceServiceAccountTokenRequest> request = null;
+        Response<DeleteWorkspaceServiceAccountTokenResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteWorkspaceServiceAccountTokenRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteWorkspaceServiceAccountTokenRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "grafana");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteWorkspaceServiceAccountToken");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteWorkspaceServiceAccountTokenResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteWorkspaceServiceAccountTokenResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -578,6 +922,8 @@ public class AmazonManagedGrafanaClient extends AmazonWebServiceClient implement
      *         The request references a resource that does not exist.
      * @throws ThrottlingException
      *         The request was denied because of request throttling. Retry the request.
+     * @throws ConflictException
+     *         A resource was in an inconsistent state during an update or a deletion.
      * @throws ValidationException
      *         The value of a parameter in the request caused an error.
      * @throws AccessDeniedException
@@ -625,6 +971,71 @@ public class AmazonManagedGrafanaClient extends AmazonWebServiceClient implement
             HttpResponseHandler<AmazonWebServiceResponse<DescribeWorkspaceAuthenticationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeWorkspaceAuthenticationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the current configuration string for the given workspace.
+     * </p>
+     * 
+     * @param describeWorkspaceConfigurationRequest
+     * @return Result of the DescribeWorkspaceConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error while processing the request. Retry the request.
+     * @sample AmazonManagedGrafana.DescribeWorkspaceConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DescribeWorkspaceConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeWorkspaceConfigurationResult describeWorkspaceConfiguration(DescribeWorkspaceConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeWorkspaceConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DescribeWorkspaceConfigurationResult executeDescribeWorkspaceConfiguration(DescribeWorkspaceConfigurationRequest describeWorkspaceConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeWorkspaceConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeWorkspaceConfigurationRequest> request = null;
+        Response<DescribeWorkspaceConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeWorkspaceConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeWorkspaceConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "grafana");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeWorkspaceConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeWorkspaceConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeWorkspaceConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -826,6 +1237,223 @@ public class AmazonManagedGrafanaClient extends AmazonWebServiceClient implement
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists available versions of Grafana. These are available when calling <code>CreateWorkspace</code>. Optionally,
+     * include a workspace to list the versions to which it can be upgraded.
+     * </p>
+     * 
+     * @param listVersionsRequest
+     * @return Result of the ListVersions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error while processing the request. Retry the request.
+     * @sample AmazonManagedGrafana.ListVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListVersions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListVersionsResult listVersions(ListVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListVersionsResult executeListVersions(ListVersionsRequest listVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListVersionsRequest> request = null;
+        Response<ListVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "grafana");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListVersionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of tokens for a workspace service account.
+     * </p>
+     * <note>
+     * <p>
+     * This does not return the key for each token. You cannot access keys after they are created. To create a new key,
+     * delete the token and recreate it.
+     * </p>
+     * </note>
+     * <p>
+     * Service accounts are only available for workspaces that are compatible with Grafana version 9 and above.
+     * </p>
+     * 
+     * @param listWorkspaceServiceAccountTokensRequest
+     * @return Result of the ListWorkspaceServiceAccountTokens operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws ConflictException
+     *         A resource was in an inconsistent state during an update or a deletion.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error while processing the request. Retry the request.
+     * @sample AmazonManagedGrafana.ListWorkspaceServiceAccountTokens
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListWorkspaceServiceAccountTokens"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListWorkspaceServiceAccountTokensResult listWorkspaceServiceAccountTokens(ListWorkspaceServiceAccountTokensRequest request) {
+        request = beforeClientExecution(request);
+        return executeListWorkspaceServiceAccountTokens(request);
+    }
+
+    @SdkInternalApi
+    final ListWorkspaceServiceAccountTokensResult executeListWorkspaceServiceAccountTokens(
+            ListWorkspaceServiceAccountTokensRequest listWorkspaceServiceAccountTokensRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listWorkspaceServiceAccountTokensRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListWorkspaceServiceAccountTokensRequest> request = null;
+        Response<ListWorkspaceServiceAccountTokensResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListWorkspaceServiceAccountTokensRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listWorkspaceServiceAccountTokensRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "grafana");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWorkspaceServiceAccountTokens");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListWorkspaceServiceAccountTokensResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListWorkspaceServiceAccountTokensResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of service accounts for a workspace.
+     * </p>
+     * <p>
+     * Service accounts are only available for workspaces that are compatible with Grafana version 9 and above.
+     * </p>
+     * 
+     * @param listWorkspaceServiceAccountsRequest
+     * @return Result of the ListWorkspaceServiceAccounts operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws ConflictException
+     *         A resource was in an inconsistent state during an update or a deletion.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error while processing the request. Retry the request.
+     * @sample AmazonManagedGrafana.ListWorkspaceServiceAccounts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListWorkspaceServiceAccounts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListWorkspaceServiceAccountsResult listWorkspaceServiceAccounts(ListWorkspaceServiceAccountsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListWorkspaceServiceAccounts(request);
+    }
+
+    @SdkInternalApi
+    final ListWorkspaceServiceAccountsResult executeListWorkspaceServiceAccounts(ListWorkspaceServiceAccountsRequest listWorkspaceServiceAccountsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listWorkspaceServiceAccountsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListWorkspaceServiceAccountsRequest> request = null;
+        Response<ListWorkspaceServiceAccountsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListWorkspaceServiceAccountsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listWorkspaceServiceAccountsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "grafana");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWorkspaceServiceAccounts");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListWorkspaceServiceAccountsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListWorkspaceServiceAccountsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1107,8 +1735,8 @@ public class AmazonManagedGrafanaClient extends AmazonWebServiceClient implement
      * parameters, the existing values of those parameters are not changed.
      * </p>
      * <p>
-     * To modify the user authentication methods that the workspace uses, such as SAML or Amazon Web Services SSO, use
-     * <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspaceAuthentication.html">
+     * To modify the user authentication methods that the workspace uses, such as SAML or IAM Identity Center, use <a
+     * href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspaceAuthentication.html">
      * UpdateWorkspaceAuthentication</a>.
      * </p>
      * <p>
@@ -1184,6 +1812,11 @@ public class AmazonManagedGrafanaClient extends AmazonWebServiceClient implement
      * SAML. You can also map SAML assertion attributes to workspace user information and define which groups in the
      * assertion attribute are to have the <code>Admin</code> and <code>Editor</code> roles in the workspace.
      * </p>
+     * <note>
+     * <p>
+     * Changes to the authentication method for a workspace may take a few minutes to take effect.
+     * </p>
+     * </note>
      * 
      * @param updateWorkspaceAuthenticationRequest
      * @return Result of the UpdateWorkspaceAuthentication operation returned by the service.
@@ -1239,6 +1872,75 @@ public class AmazonManagedGrafanaClient extends AmazonWebServiceClient implement
             HttpResponseHandler<AmazonWebServiceResponse<UpdateWorkspaceAuthenticationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateWorkspaceAuthenticationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the configuration string for the given workspace
+     * </p>
+     * 
+     * @param updateWorkspaceConfigurationRequest
+     * @return Result of the UpdateWorkspaceConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws ConflictException
+     *         A resource was in an inconsistent state during an update or a deletion.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error while processing the request. Retry the request.
+     * @sample AmazonManagedGrafana.UpdateWorkspaceConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/UpdateWorkspaceConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateWorkspaceConfigurationResult updateWorkspaceConfiguration(UpdateWorkspaceConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateWorkspaceConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final UpdateWorkspaceConfigurationResult executeUpdateWorkspaceConfiguration(UpdateWorkspaceConfigurationRequest updateWorkspaceConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateWorkspaceConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateWorkspaceConfigurationRequest> request = null;
+        Response<UpdateWorkspaceConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateWorkspaceConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateWorkspaceConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "grafana");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateWorkspaceConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateWorkspaceConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateWorkspaceConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

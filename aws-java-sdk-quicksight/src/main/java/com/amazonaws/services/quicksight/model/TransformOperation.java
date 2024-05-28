@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,6 +67,8 @@ public class TransformOperation implements Serializable, Cloneable, StructuredPo
     private TagColumnOperation tagColumnOperation;
 
     private UntagColumnOperation untagColumnOperation;
+
+    private OverrideDatasetParameterOperation overrideDatasetParameterOperation;
 
     /**
      * <p>
@@ -341,6 +343,32 @@ public class TransformOperation implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * @param overrideDatasetParameterOperation
+     */
+
+    public void setOverrideDatasetParameterOperation(OverrideDatasetParameterOperation overrideDatasetParameterOperation) {
+        this.overrideDatasetParameterOperation = overrideDatasetParameterOperation;
+    }
+
+    /**
+     * @return
+     */
+
+    public OverrideDatasetParameterOperation getOverrideDatasetParameterOperation() {
+        return this.overrideDatasetParameterOperation;
+    }
+
+    /**
+     * @param overrideDatasetParameterOperation
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TransformOperation withOverrideDatasetParameterOperation(OverrideDatasetParameterOperation overrideDatasetParameterOperation) {
+        setOverrideDatasetParameterOperation(overrideDatasetParameterOperation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -365,7 +393,9 @@ public class TransformOperation implements Serializable, Cloneable, StructuredPo
         if (getTagColumnOperation() != null)
             sb.append("TagColumnOperation: ").append(getTagColumnOperation()).append(",");
         if (getUntagColumnOperation() != null)
-            sb.append("UntagColumnOperation: ").append(getUntagColumnOperation());
+            sb.append("UntagColumnOperation: ").append(getUntagColumnOperation()).append(",");
+        if (getOverrideDatasetParameterOperation() != null)
+            sb.append("OverrideDatasetParameterOperation: ").append(getOverrideDatasetParameterOperation());
         sb.append("}");
         return sb.toString();
     }
@@ -408,6 +438,11 @@ public class TransformOperation implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getUntagColumnOperation() != null && other.getUntagColumnOperation().equals(this.getUntagColumnOperation()) == false)
             return false;
+        if (other.getOverrideDatasetParameterOperation() == null ^ this.getOverrideDatasetParameterOperation() == null)
+            return false;
+        if (other.getOverrideDatasetParameterOperation() != null
+                && other.getOverrideDatasetParameterOperation().equals(this.getOverrideDatasetParameterOperation()) == false)
+            return false;
         return true;
     }
 
@@ -423,6 +458,7 @@ public class TransformOperation implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getCastColumnTypeOperation() == null) ? 0 : getCastColumnTypeOperation().hashCode());
         hashCode = prime * hashCode + ((getTagColumnOperation() == null) ? 0 : getTagColumnOperation().hashCode());
         hashCode = prime * hashCode + ((getUntagColumnOperation() == null) ? 0 : getUntagColumnOperation().hashCode());
+        hashCode = prime * hashCode + ((getOverrideDatasetParameterOperation() == null) ? 0 : getOverrideDatasetParameterOperation().hashCode());
         return hashCode;
     }
 

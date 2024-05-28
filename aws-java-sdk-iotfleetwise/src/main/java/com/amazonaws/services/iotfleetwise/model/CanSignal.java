@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,13 +48,19 @@ public class CanSignal implements Serializable, Cloneable, StructuredPojo {
     private Boolean isSigned;
     /**
      * <p>
-     * Indicates the beginning of the CAN message.
+     * Indicates the beginning of the CAN signal. This should always be the least significant bit (LSB).
+     * </p>
+     * <p>
+     * This value might be different from the value in a DBC file. For little endian signals, <code>startBit</code> is
+     * the same value as in the DBC file. For big endian signals in a DBC file, the start bit is the most significant
+     * bit (MSB). You will have to calculate the LSB instead and pass it as the <code>startBit</code>.
      * </p>
      */
     private Integer startBit;
     /**
      * <p>
-     * Indicates where data appears in the CAN message.
+     * The offset used to calculate the signal value. Combined with factor, the calculation is
+     * <code>value = raw_value * factor + offset</code>.
      * </p>
      */
     private Double offset;
@@ -223,11 +229,21 @@ public class CanSignal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates the beginning of the CAN message.
+     * Indicates the beginning of the CAN signal. This should always be the least significant bit (LSB).
+     * </p>
+     * <p>
+     * This value might be different from the value in a DBC file. For little endian signals, <code>startBit</code> is
+     * the same value as in the DBC file. For big endian signals in a DBC file, the start bit is the most significant
+     * bit (MSB). You will have to calculate the LSB instead and pass it as the <code>startBit</code>.
      * </p>
      * 
      * @param startBit
-     *        Indicates the beginning of the CAN message.
+     *        Indicates the beginning of the CAN signal. This should always be the least significant bit (LSB).</p>
+     *        <p>
+     *        This value might be different from the value in a DBC file. For little endian signals,
+     *        <code>startBit</code> is the same value as in the DBC file. For big endian signals in a DBC file, the
+     *        start bit is the most significant bit (MSB). You will have to calculate the LSB instead and pass it as the
+     *        <code>startBit</code>.
      */
 
     public void setStartBit(Integer startBit) {
@@ -236,10 +252,20 @@ public class CanSignal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates the beginning of the CAN message.
+     * Indicates the beginning of the CAN signal. This should always be the least significant bit (LSB).
+     * </p>
+     * <p>
+     * This value might be different from the value in a DBC file. For little endian signals, <code>startBit</code> is
+     * the same value as in the DBC file. For big endian signals in a DBC file, the start bit is the most significant
+     * bit (MSB). You will have to calculate the LSB instead and pass it as the <code>startBit</code>.
      * </p>
      * 
-     * @return Indicates the beginning of the CAN message.
+     * @return Indicates the beginning of the CAN signal. This should always be the least significant bit (LSB).</p>
+     *         <p>
+     *         This value might be different from the value in a DBC file. For little endian signals,
+     *         <code>startBit</code> is the same value as in the DBC file. For big endian signals in a DBC file, the
+     *         start bit is the most significant bit (MSB). You will have to calculate the LSB instead and pass it as
+     *         the <code>startBit</code>.
      */
 
     public Integer getStartBit() {
@@ -248,11 +274,21 @@ public class CanSignal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates the beginning of the CAN message.
+     * Indicates the beginning of the CAN signal. This should always be the least significant bit (LSB).
+     * </p>
+     * <p>
+     * This value might be different from the value in a DBC file. For little endian signals, <code>startBit</code> is
+     * the same value as in the DBC file. For big endian signals in a DBC file, the start bit is the most significant
+     * bit (MSB). You will have to calculate the LSB instead and pass it as the <code>startBit</code>.
      * </p>
      * 
      * @param startBit
-     *        Indicates the beginning of the CAN message.
+     *        Indicates the beginning of the CAN signal. This should always be the least significant bit (LSB).</p>
+     *        <p>
+     *        This value might be different from the value in a DBC file. For little endian signals,
+     *        <code>startBit</code> is the same value as in the DBC file. For big endian signals in a DBC file, the
+     *        start bit is the most significant bit (MSB). You will have to calculate the LSB instead and pass it as the
+     *        <code>startBit</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -263,11 +299,13 @@ public class CanSignal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates where data appears in the CAN message.
+     * The offset used to calculate the signal value. Combined with factor, the calculation is
+     * <code>value = raw_value * factor + offset</code>.
      * </p>
      * 
      * @param offset
-     *        Indicates where data appears in the CAN message.
+     *        The offset used to calculate the signal value. Combined with factor, the calculation is
+     *        <code>value = raw_value * factor + offset</code>.
      */
 
     public void setOffset(Double offset) {
@@ -276,10 +314,12 @@ public class CanSignal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates where data appears in the CAN message.
+     * The offset used to calculate the signal value. Combined with factor, the calculation is
+     * <code>value = raw_value * factor + offset</code>.
      * </p>
      * 
-     * @return Indicates where data appears in the CAN message.
+     * @return The offset used to calculate the signal value. Combined with factor, the calculation is
+     *         <code>value = raw_value * factor + offset</code>.
      */
 
     public Double getOffset() {
@@ -288,11 +328,13 @@ public class CanSignal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates where data appears in the CAN message.
+     * The offset used to calculate the signal value. Combined with factor, the calculation is
+     * <code>value = raw_value * factor + offset</code>.
      * </p>
      * 
      * @param offset
-     *        Indicates where data appears in the CAN message.
+     *        The offset used to calculate the signal value. Combined with factor, the calculation is
+     *        <code>value = raw_value * factor + offset</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

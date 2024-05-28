@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,7 +54,7 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * The sign-in url for the web application of your FinSpace environment.
+     * The sign-in URL for the web application of your FinSpace environment.
      * </p>
      */
     private String environmentUrl;
@@ -72,7 +72,7 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     private String environmentArn;
     /**
      * <p>
-     * The url of the integrated FinSpace notebook environment in your web application.
+     * The URL of the integrated FinSpace notebook environment in your web application.
      * </p>
      */
     private String sageMakerStudioDomainUrl;
@@ -282,11 +282,11 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The sign-in url for the web application of your FinSpace environment.
+     * The sign-in URL for the web application of your FinSpace environment.
      * </p>
      * 
      * @param environmentUrl
-     *        The sign-in url for the web application of your FinSpace environment.
+     *        The sign-in URL for the web application of your FinSpace environment.
      */
 
     public void setEnvironmentUrl(String environmentUrl) {
@@ -295,10 +295,10 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The sign-in url for the web application of your FinSpace environment.
+     * The sign-in URL for the web application of your FinSpace environment.
      * </p>
      * 
-     * @return The sign-in url for the web application of your FinSpace environment.
+     * @return The sign-in URL for the web application of your FinSpace environment.
      */
 
     public String getEnvironmentUrl() {
@@ -307,11 +307,11 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The sign-in url for the web application of your FinSpace environment.
+     * The sign-in URL for the web application of your FinSpace environment.
      * </p>
      * 
      * @param environmentUrl
-     *        The sign-in url for the web application of your FinSpace environment.
+     *        The sign-in URL for the web application of your FinSpace environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -402,11 +402,11 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The url of the integrated FinSpace notebook environment in your web application.
+     * The URL of the integrated FinSpace notebook environment in your web application.
      * </p>
      * 
      * @param sageMakerStudioDomainUrl
-     *        The url of the integrated FinSpace notebook environment in your web application.
+     *        The URL of the integrated FinSpace notebook environment in your web application.
      */
 
     public void setSageMakerStudioDomainUrl(String sageMakerStudioDomainUrl) {
@@ -415,10 +415,10 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The url of the integrated FinSpace notebook environment in your web application.
+     * The URL of the integrated FinSpace notebook environment in your web application.
      * </p>
      * 
-     * @return The url of the integrated FinSpace notebook environment in your web application.
+     * @return The URL of the integrated FinSpace notebook environment in your web application.
      */
 
     public String getSageMakerStudioDomainUrl() {
@@ -427,11 +427,11 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The url of the integrated FinSpace notebook environment in your web application.
+     * The URL of the integrated FinSpace notebook environment in your web application.
      * </p>
      * 
      * @param sageMakerStudioDomainUrl
-     *        The url of the integrated FinSpace notebook environment in your web application.
+     *        The URL of the integrated FinSpace notebook environment in your web application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

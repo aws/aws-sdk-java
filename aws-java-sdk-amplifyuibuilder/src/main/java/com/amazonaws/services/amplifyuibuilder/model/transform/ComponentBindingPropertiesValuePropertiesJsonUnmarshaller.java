@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,25 +49,13 @@ public class ComponentBindingPropertiesValuePropertiesJsonUnmarshaller implement
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("bucket", targetDepth)) {
+                if (context.testExpression("model", targetDepth)) {
                     context.nextToken();
-                    componentBindingPropertiesValueProperties.setBucket(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("defaultValue", targetDepth)) {
-                    context.nextToken();
-                    componentBindingPropertiesValueProperties.setDefaultValue(context.getUnmarshaller(String.class).unmarshall(context));
+                    componentBindingPropertiesValueProperties.setModel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("field", targetDepth)) {
                     context.nextToken();
                     componentBindingPropertiesValueProperties.setField(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("key", targetDepth)) {
-                    context.nextToken();
-                    componentBindingPropertiesValueProperties.setKey(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("model", targetDepth)) {
-                    context.nextToken();
-                    componentBindingPropertiesValueProperties.setModel(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("predicates", targetDepth)) {
                     context.nextToken();
@@ -75,13 +63,25 @@ public class ComponentBindingPropertiesValuePropertiesJsonUnmarshaller implement
 
                     .unmarshall(context));
                 }
-                if (context.testExpression("slotName", targetDepth)) {
-                    context.nextToken();
-                    componentBindingPropertiesValueProperties.setSlotName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("userAttribute", targetDepth)) {
                     context.nextToken();
                     componentBindingPropertiesValueProperties.setUserAttribute(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("bucket", targetDepth)) {
+                    context.nextToken();
+                    componentBindingPropertiesValueProperties.setBucket(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("key", targetDepth)) {
+                    context.nextToken();
+                    componentBindingPropertiesValueProperties.setKey(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("defaultValue", targetDepth)) {
+                    context.nextToken();
+                    componentBindingPropertiesValueProperties.setDefaultValue(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("slotName", targetDepth)) {
+                    context.nextToken();
+                    componentBindingPropertiesValueProperties.setSlotName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

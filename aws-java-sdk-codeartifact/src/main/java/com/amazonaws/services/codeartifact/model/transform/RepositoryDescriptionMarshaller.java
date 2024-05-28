@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,8 @@ public class RepositoryDescriptionMarshaller {
             .marshallLocationName("upstreams").build();
     private static final MarshallingInfo<List> EXTERNALCONNECTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("externalConnections").build();
+    private static final MarshallingInfo<java.util.Date> CREATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdTime").timestampFormat("unixTimestamp").build();
 
     private static final RepositoryDescriptionMarshaller instance = new RepositoryDescriptionMarshaller();
 
@@ -69,6 +71,7 @@ public class RepositoryDescriptionMarshaller {
             protocolMarshaller.marshall(repositoryDescription.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(repositoryDescription.getUpstreams(), UPSTREAMS_BINDING);
             protocolMarshaller.marshall(repositoryDescription.getExternalConnections(), EXTERNALCONNECTIONS_BINDING);
+            protocolMarshaller.marshall(repositoryDescription.getCreatedTime(), CREATEDTIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

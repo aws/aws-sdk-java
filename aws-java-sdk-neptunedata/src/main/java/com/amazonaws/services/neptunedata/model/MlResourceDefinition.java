@@ -1,0 +1,401 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.neptunedata.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * Defines a Neptune ML resource.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/MlResourceDefinition" target="_top">AWS
+ *      API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class MlResourceDefinition implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * The resource name.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
+     * The resource ARN.
+     * </p>
+     */
+    private String arn;
+    /**
+     * <p>
+     * The resource status.
+     * </p>
+     */
+    private String status;
+    /**
+     * <p>
+     * The output location.
+     * </p>
+     */
+    private String outputLocation;
+    /**
+     * <p>
+     * The failure reason, in case of a failure.
+     * </p>
+     */
+    private String failureReason;
+    /**
+     * <p>
+     * The CloudWatch log URL for the resource.
+     * </p>
+     */
+    private String cloudwatchLogUrl;
+
+    /**
+     * <p>
+     * The resource name.
+     * </p>
+     * 
+     * @param name
+     *        The resource name.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The resource name.
+     * </p>
+     * 
+     * @return The resource name.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The resource name.
+     * </p>
+     * 
+     * @param name
+     *        The resource name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MlResourceDefinition withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The resource ARN.
+     * </p>
+     * 
+     * @param arn
+     *        The resource ARN.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The resource ARN.
+     * </p>
+     * 
+     * @return The resource ARN.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The resource ARN.
+     * </p>
+     * 
+     * @param arn
+     *        The resource ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MlResourceDefinition withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The resource status.
+     * </p>
+     * 
+     * @param status
+     *        The resource status.
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The resource status.
+     * </p>
+     * 
+     * @return The resource status.
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The resource status.
+     * </p>
+     * 
+     * @param status
+     *        The resource status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MlResourceDefinition withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The output location.
+     * </p>
+     * 
+     * @param outputLocation
+     *        The output location.
+     */
+
+    public void setOutputLocation(String outputLocation) {
+        this.outputLocation = outputLocation;
+    }
+
+    /**
+     * <p>
+     * The output location.
+     * </p>
+     * 
+     * @return The output location.
+     */
+
+    public String getOutputLocation() {
+        return this.outputLocation;
+    }
+
+    /**
+     * <p>
+     * The output location.
+     * </p>
+     * 
+     * @param outputLocation
+     *        The output location.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MlResourceDefinition withOutputLocation(String outputLocation) {
+        setOutputLocation(outputLocation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The failure reason, in case of a failure.
+     * </p>
+     * 
+     * @param failureReason
+     *        The failure reason, in case of a failure.
+     */
+
+    public void setFailureReason(String failureReason) {
+        this.failureReason = failureReason;
+    }
+
+    /**
+     * <p>
+     * The failure reason, in case of a failure.
+     * </p>
+     * 
+     * @return The failure reason, in case of a failure.
+     */
+
+    public String getFailureReason() {
+        return this.failureReason;
+    }
+
+    /**
+     * <p>
+     * The failure reason, in case of a failure.
+     * </p>
+     * 
+     * @param failureReason
+     *        The failure reason, in case of a failure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MlResourceDefinition withFailureReason(String failureReason) {
+        setFailureReason(failureReason);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The CloudWatch log URL for the resource.
+     * </p>
+     * 
+     * @param cloudwatchLogUrl
+     *        The CloudWatch log URL for the resource.
+     */
+
+    public void setCloudwatchLogUrl(String cloudwatchLogUrl) {
+        this.cloudwatchLogUrl = cloudwatchLogUrl;
+    }
+
+    /**
+     * <p>
+     * The CloudWatch log URL for the resource.
+     * </p>
+     * 
+     * @return The CloudWatch log URL for the resource.
+     */
+
+    public String getCloudwatchLogUrl() {
+        return this.cloudwatchLogUrl;
+    }
+
+    /**
+     * <p>
+     * The CloudWatch log URL for the resource.
+     * </p>
+     * 
+     * @param cloudwatchLogUrl
+     *        The CloudWatch log URL for the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MlResourceDefinition withCloudwatchLogUrl(String cloudwatchLogUrl) {
+        setCloudwatchLogUrl(cloudwatchLogUrl);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getOutputLocation() != null)
+            sb.append("OutputLocation: ").append(getOutputLocation()).append(",");
+        if (getFailureReason() != null)
+            sb.append("FailureReason: ").append(getFailureReason()).append(",");
+        if (getCloudwatchLogUrl() != null)
+            sb.append("CloudwatchLogUrl: ").append(getCloudwatchLogUrl());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof MlResourceDefinition == false)
+            return false;
+        MlResourceDefinition other = (MlResourceDefinition) obj;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getOutputLocation() == null ^ this.getOutputLocation() == null)
+            return false;
+        if (other.getOutputLocation() != null && other.getOutputLocation().equals(this.getOutputLocation()) == false)
+            return false;
+        if (other.getFailureReason() == null ^ this.getFailureReason() == null)
+            return false;
+        if (other.getFailureReason() != null && other.getFailureReason().equals(this.getFailureReason()) == false)
+            return false;
+        if (other.getCloudwatchLogUrl() == null ^ this.getCloudwatchLogUrl() == null)
+            return false;
+        if (other.getCloudwatchLogUrl() != null && other.getCloudwatchLogUrl().equals(this.getCloudwatchLogUrl()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getOutputLocation() == null) ? 0 : getOutputLocation().hashCode());
+        hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
+        hashCode = prime * hashCode + ((getCloudwatchLogUrl() == null) ? 0 : getCloudwatchLogUrl().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public MlResourceDefinition clone() {
+        try {
+            return (MlResourceDefinition) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.neptunedata.model.transform.MlResourceDefinitionMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

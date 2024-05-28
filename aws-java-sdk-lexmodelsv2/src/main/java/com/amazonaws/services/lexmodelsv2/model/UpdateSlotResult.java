@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,7 +67,7 @@ public class UpdateSlotResult extends com.amazonaws.AmazonWebServiceResult<com.a
     private String botId;
     /**
      * <p>
-     * The identifier of the slot version that contains the slot. Will always be <code>DRAFT</code>.
+     * The version of the bot that contains the slot. Will always be <code>DRAFT</code>.
      * </p>
      */
     private String botVersion;
@@ -393,11 +393,11 @@ public class UpdateSlotResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The identifier of the slot version that contains the slot. Will always be <code>DRAFT</code>.
+     * The version of the bot that contains the slot. Will always be <code>DRAFT</code>.
      * </p>
      * 
      * @param botVersion
-     *        The identifier of the slot version that contains the slot. Will always be <code>DRAFT</code>.
+     *        The version of the bot that contains the slot. Will always be <code>DRAFT</code>.
      */
 
     public void setBotVersion(String botVersion) {
@@ -406,10 +406,10 @@ public class UpdateSlotResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The identifier of the slot version that contains the slot. Will always be <code>DRAFT</code>.
+     * The version of the bot that contains the slot. Will always be <code>DRAFT</code>.
      * </p>
      * 
-     * @return The identifier of the slot version that contains the slot. Will always be <code>DRAFT</code>.
+     * @return The version of the bot that contains the slot. Will always be <code>DRAFT</code>.
      */
 
     public String getBotVersion() {
@@ -418,11 +418,11 @@ public class UpdateSlotResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The identifier of the slot version that contains the slot. Will always be <code>DRAFT</code>.
+     * The version of the bot that contains the slot. Will always be <code>DRAFT</code>.
      * </p>
      * 
      * @param botVersion
-     *        The identifier of the slot version that contains the slot. Will always be <code>DRAFT</code>.
+     *        The version of the bot that contains the slot. Will always be <code>DRAFT</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,34 +30,34 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The next action that the bot should take in its interaction with the user. The possible values are:
+     * The next action that the bot should take in its interaction with the user. The following values are possible:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Close</code> - Indicates that there will not be a response from the user. For example, the statement
+     * <code>Close</code> – Indicates that there will not be a response from the user. For example, the statement
      * "Your order has been placed" does not require a response.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be
+     * <code>ConfirmIntent</code> – The next action is asking the user if the intent is complete and ready to be
      * fulfilled. This is a yes/no question such as "Place the order?"
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Delegate</code> - The next action is determined by Amazon Lex V2.
+     * <code>Delegate</code> – The next action is determined by Amazon Lex V2.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ElicitIntent</code> - The next action is to elicit an intent from the user.
+     * <code>ElicitIntent</code> – The next action is to elicit an intent from the user.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.
+     * <code>ElicitSlot</code> – The next action is to elicit a slot value from the user.
      * </p>
      * </li>
      * </ul>
@@ -87,7 +87,7 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using
+     * For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/spelling-styles.html"> Using
      * spelling to enter slot values </a>.
      * </p>
      */
@@ -102,66 +102,67 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The next action that the bot should take in its interaction with the user. The possible values are:
+     * The next action that the bot should take in its interaction with the user. The following values are possible:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Close</code> - Indicates that there will not be a response from the user. For example, the statement
+     * <code>Close</code> – Indicates that there will not be a response from the user. For example, the statement
      * "Your order has been placed" does not require a response.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be
+     * <code>ConfirmIntent</code> – The next action is asking the user if the intent is complete and ready to be
      * fulfilled. This is a yes/no question such as "Place the order?"
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Delegate</code> - The next action is determined by Amazon Lex V2.
+     * <code>Delegate</code> – The next action is determined by Amazon Lex V2.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ElicitIntent</code> - The next action is to elicit an intent from the user.
+     * <code>ElicitIntent</code> – The next action is to elicit an intent from the user.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.
+     * <code>ElicitSlot</code> – The next action is to elicit a slot value from the user.
      * </p>
      * </li>
      * </ul>
      * 
      * @param type
-     *        The next action that the bot should take in its interaction with the user. The possible values are:</p>
+     *        The next action that the bot should take in its interaction with the user. The following values are
+     *        possible:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Close</code> - Indicates that there will not be a response from the user. For example, the statement
+     *        <code>Close</code> – Indicates that there will not be a response from the user. For example, the statement
      *        "Your order has been placed" does not require a response.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be
+     *        <code>ConfirmIntent</code> – The next action is asking the user if the intent is complete and ready to be
      *        fulfilled. This is a yes/no question such as "Place the order?"
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Delegate</code> - The next action is determined by Amazon Lex V2.
+     *        <code>Delegate</code> – The next action is determined by Amazon Lex V2.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ElicitIntent</code> - The next action is to elicit an intent from the user.
+     *        <code>ElicitIntent</code> – The next action is to elicit an intent from the user.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.
+     *        <code>ElicitSlot</code> – The next action is to elicit a slot value from the user.
      *        </p>
      *        </li>
      * @see DialogActionType
@@ -173,65 +174,66 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The next action that the bot should take in its interaction with the user. The possible values are:
+     * The next action that the bot should take in its interaction with the user. The following values are possible:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Close</code> - Indicates that there will not be a response from the user. For example, the statement
+     * <code>Close</code> – Indicates that there will not be a response from the user. For example, the statement
      * "Your order has been placed" does not require a response.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be
+     * <code>ConfirmIntent</code> – The next action is asking the user if the intent is complete and ready to be
      * fulfilled. This is a yes/no question such as "Place the order?"
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Delegate</code> - The next action is determined by Amazon Lex V2.
+     * <code>Delegate</code> – The next action is determined by Amazon Lex V2.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ElicitIntent</code> - The next action is to elicit an intent from the user.
+     * <code>ElicitIntent</code> – The next action is to elicit an intent from the user.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.
+     * <code>ElicitSlot</code> – The next action is to elicit a slot value from the user.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The next action that the bot should take in its interaction with the user. The possible values are:</p>
+     * @return The next action that the bot should take in its interaction with the user. The following values are
+     *         possible:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>Close</code> - Indicates that there will not be a response from the user. For example, the
+     *         <code>Close</code> – Indicates that there will not be a response from the user. For example, the
      *         statement "Your order has been placed" does not require a response.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be
+     *         <code>ConfirmIntent</code> – The next action is asking the user if the intent is complete and ready to be
      *         fulfilled. This is a yes/no question such as "Place the order?"
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Delegate</code> - The next action is determined by Amazon Lex V2.
+     *         <code>Delegate</code> – The next action is determined by Amazon Lex V2.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ElicitIntent</code> - The next action is to elicit an intent from the user.
+     *         <code>ElicitIntent</code> – The next action is to elicit an intent from the user.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.
+     *         <code>ElicitSlot</code> – The next action is to elicit a slot value from the user.
      *         </p>
      *         </li>
      * @see DialogActionType
@@ -243,66 +245,67 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The next action that the bot should take in its interaction with the user. The possible values are:
+     * The next action that the bot should take in its interaction with the user. The following values are possible:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Close</code> - Indicates that there will not be a response from the user. For example, the statement
+     * <code>Close</code> – Indicates that there will not be a response from the user. For example, the statement
      * "Your order has been placed" does not require a response.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be
+     * <code>ConfirmIntent</code> – The next action is asking the user if the intent is complete and ready to be
      * fulfilled. This is a yes/no question such as "Place the order?"
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Delegate</code> - The next action is determined by Amazon Lex V2.
+     * <code>Delegate</code> – The next action is determined by Amazon Lex V2.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ElicitIntent</code> - The next action is to elicit an intent from the user.
+     * <code>ElicitIntent</code> – The next action is to elicit an intent from the user.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.
+     * <code>ElicitSlot</code> – The next action is to elicit a slot value from the user.
      * </p>
      * </li>
      * </ul>
      * 
      * @param type
-     *        The next action that the bot should take in its interaction with the user. The possible values are:</p>
+     *        The next action that the bot should take in its interaction with the user. The following values are
+     *        possible:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Close</code> - Indicates that there will not be a response from the user. For example, the statement
+     *        <code>Close</code> – Indicates that there will not be a response from the user. For example, the statement
      *        "Your order has been placed" does not require a response.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be
+     *        <code>ConfirmIntent</code> – The next action is asking the user if the intent is complete and ready to be
      *        fulfilled. This is a yes/no question such as "Place the order?"
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Delegate</code> - The next action is determined by Amazon Lex V2.
+     *        <code>Delegate</code> – The next action is determined by Amazon Lex V2.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ElicitIntent</code> - The next action is to elicit an intent from the user.
+     *        <code>ElicitIntent</code> – The next action is to elicit an intent from the user.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.
+     *        <code>ElicitSlot</code> – The next action is to elicit a slot value from the user.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -316,66 +319,67 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The next action that the bot should take in its interaction with the user. The possible values are:
+     * The next action that the bot should take in its interaction with the user. The following values are possible:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Close</code> - Indicates that there will not be a response from the user. For example, the statement
+     * <code>Close</code> – Indicates that there will not be a response from the user. For example, the statement
      * "Your order has been placed" does not require a response.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be
+     * <code>ConfirmIntent</code> – The next action is asking the user if the intent is complete and ready to be
      * fulfilled. This is a yes/no question such as "Place the order?"
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Delegate</code> - The next action is determined by Amazon Lex V2.
+     * <code>Delegate</code> – The next action is determined by Amazon Lex V2.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ElicitIntent</code> - The next action is to elicit an intent from the user.
+     * <code>ElicitIntent</code> – The next action is to elicit an intent from the user.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.
+     * <code>ElicitSlot</code> – The next action is to elicit a slot value from the user.
      * </p>
      * </li>
      * </ul>
      * 
      * @param type
-     *        The next action that the bot should take in its interaction with the user. The possible values are:</p>
+     *        The next action that the bot should take in its interaction with the user. The following values are
+     *        possible:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Close</code> - Indicates that there will not be a response from the user. For example, the statement
+     *        <code>Close</code> – Indicates that there will not be a response from the user. For example, the statement
      *        "Your order has been placed" does not require a response.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ConfirmIntent</code> - The next action is asking the user if the intent is complete and ready to be
+     *        <code>ConfirmIntent</code> – The next action is asking the user if the intent is complete and ready to be
      *        fulfilled. This is a yes/no question such as "Place the order?"
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Delegate</code> - The next action is determined by Amazon Lex V2.
+     *        <code>Delegate</code> – The next action is determined by Amazon Lex V2.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ElicitIntent</code> - The next action is to elicit an intent from the user.
+     *        <code>ElicitIntent</code> – The next action is to elicit an intent from the user.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.
+     *        <code>ElicitSlot</code> – The next action is to elicit a slot value from the user.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -445,7 +449,7 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using
+     * For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/spelling-styles.html"> Using
      * spelling to enter slot values </a>.
      * </p>
      * 
@@ -465,8 +469,8 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using
-     *        spelling to enter slot values </a>.
+     *        For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/spelling-styles.html">
+     *        Using spelling to enter slot values </a>.
      * @see StyleType
      */
 
@@ -492,7 +496,7 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using
+     * For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/spelling-styles.html"> Using
      * spelling to enter slot values </a>.
      * </p>
      * 
@@ -511,7 +515,7 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         </ul>
      *         <p>
-     *         For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html">
+     *         For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/spelling-styles.html">
      *         Using spelling to enter slot values </a>.
      * @see StyleType
      */
@@ -538,7 +542,7 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using
+     * For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/spelling-styles.html"> Using
      * spelling to enter slot values </a>.
      * </p>
      * 
@@ -558,8 +562,8 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using
-     *        spelling to enter slot values </a>.
+     *        For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/spelling-styles.html">
+     *        Using spelling to enter slot values </a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StyleType
      */
@@ -587,7 +591,7 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using
+     * For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/spelling-styles.html"> Using
      * spelling to enter slot values </a>.
      * </p>
      * 
@@ -607,8 +611,8 @@ public class DialogAction implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-spelling.html"> Using
-     *        spelling to enter slot values </a>.
+     *        For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/spelling-styles.html">
+     *        Using spelling to enter slot values </a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StyleType
      */

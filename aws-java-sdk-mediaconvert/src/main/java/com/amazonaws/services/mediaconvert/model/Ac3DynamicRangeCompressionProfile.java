@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,12 +16,11 @@ import javax.annotation.Generated;
 
 /**
  * When you want to add Dolby dynamic range compression (DRC) signaling to your output stream, we recommend that you use
- * the mode-specific settings instead of Dynamic range compression profile (DynamicRangeCompressionProfile). The
- * mode-specific settings are Dynamic range compression profile, line mode (dynamicRangeCompressionLine) and Dynamic
- * range compression profile, RF mode (dynamicRangeCompressionRf). Note that when you specify values for all three
- * settings, MediaConvert ignores the value of this setting in favor of the mode-specific settings. If you do use this
- * setting instead of the mode-specific settings, choose None (NONE) to leave out DRC signaling. Keep the default Film
- * standard (FILM_STANDARD) to set the profile to Dolby's film standard profile for all operating modes.
+ * the mode-specific settings instead of Dynamic range compression profile. The mode-specific settings are Dynamic range
+ * compression profile, line mode and Dynamic range compression profile, RF mode. Note that when you specify values for
+ * all three settings, MediaConvert ignores the value of this setting in favor of the mode-specific settings. If you do
+ * use this setting instead of the mode-specific settings, choose None to leave out DRC signaling. Keep the default Film
+ * standard to set the profile to Dolby's film standard profile for all operating modes.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Ac3DynamicRangeCompressionProfile {

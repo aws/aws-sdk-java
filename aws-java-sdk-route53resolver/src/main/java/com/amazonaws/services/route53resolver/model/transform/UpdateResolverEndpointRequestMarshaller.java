@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.route53resolver.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,12 @@ public class UpdateResolverEndpointRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResolverEndpointId").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> RESOLVERENDPOINTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResolverEndpointType").build();
+    private static final MarshallingInfo<List> UPDATEIPADDRESSES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpdateIpAddresses").build();
+    private static final MarshallingInfo<List> PROTOCOLS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Protocols").build();
 
     private static final UpdateResolverEndpointRequestMarshaller instance = new UpdateResolverEndpointRequestMarshaller();
 
@@ -50,6 +57,9 @@ public class UpdateResolverEndpointRequestMarshaller {
         try {
             protocolMarshaller.marshall(updateResolverEndpointRequest.getResolverEndpointId(), RESOLVERENDPOINTID_BINDING);
             protocolMarshaller.marshall(updateResolverEndpointRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(updateResolverEndpointRequest.getResolverEndpointType(), RESOLVERENDPOINTTYPE_BINDING);
+            protocolMarshaller.marshall(updateResolverEndpointRequest.getUpdateIpAddresses(), UPDATEIPADDRESSES_BINDING);
+            protocolMarshaller.marshall(updateResolverEndpointRequest.getProtocols(), PROTOCOLS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

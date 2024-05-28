@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,12 @@ public class RefreshTokenRequestBody implements Serializable, Cloneable, Structu
      * </p>
      */
     private String token;
+    /**
+     * <p>
+     * The ID of the client to request the token from.
+     * </p>
+     */
+    private String clientId;
 
     /**
      * <p>
@@ -76,6 +82,46 @@ public class RefreshTokenRequestBody implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * The ID of the client to request the token from.
+     * </p>
+     * 
+     * @param clientId
+     *        The ID of the client to request the token from.
+     */
+
+    public void setClientId(String clientId) {
+        this.clientId = clientId;
+    }
+
+    /**
+     * <p>
+     * The ID of the client to request the token from.
+     * </p>
+     * 
+     * @return The ID of the client to request the token from.
+     */
+
+    public String getClientId() {
+        return this.clientId;
+    }
+
+    /**
+     * <p>
+     * The ID of the client to request the token from.
+     * </p>
+     * 
+     * @param clientId
+     *        The ID of the client to request the token from.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RefreshTokenRequestBody withClientId(String clientId) {
+        setClientId(clientId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +134,9 @@ public class RefreshTokenRequestBody implements Serializable, Cloneable, Structu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getToken() != null)
-            sb.append("Token: ").append("***Sensitive Data Redacted***");
+            sb.append("Token: ").append("***Sensitive Data Redacted***").append(",");
+        if (getClientId() != null)
+            sb.append("ClientId: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +155,10 @@ public class RefreshTokenRequestBody implements Serializable, Cloneable, Structu
             return false;
         if (other.getToken() != null && other.getToken().equals(this.getToken()) == false)
             return false;
+        if (other.getClientId() == null ^ this.getClientId() == null)
+            return false;
+        if (other.getClientId() != null && other.getClientId().equals(this.getClientId()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +168,7 @@ public class RefreshTokenRequestBody implements Serializable, Cloneable, Structu
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getToken() == null) ? 0 : getToken().hashCode());
+        hashCode = prime * hashCode + ((getClientId() == null) ? 0 : getClientId().hashCode());
         return hashCode;
     }
 

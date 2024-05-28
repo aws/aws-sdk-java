@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,11 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A two-part error structure that can occur in <code>ListGroupResources</code> or <code>SearchResources</code>
- * operations on CloudFormation stack-based queries. The error occurs if the CloudFormation stack on which the query is
- * based either does not exist, or has a status that renders the stack inactive. A <code>QueryError</code> occurrence
- * does not necessarily mean that AWS Resource Groups could not complete the operation, but the resulting group might
- * have no member resources.
+ * A two-part error structure that can occur in <code>ListGroupResources</code> or <code>SearchResources</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/QueryError" target="_top">AWS API
@@ -34,30 +30,24 @@ public class QueryError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Possible values are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>
-     * .
+     * Specifies the error code that was raised.
      * </p>
      */
     private String errorCode;
     /**
      * <p>
-     * A message that explains the <code>ErrorCode</code> value. Messages might state that the specified CloudFormation
-     * stack does not exist (or no longer exists). For <code>CLOUDFORMATION_STACK_INACTIVE</code>, the message typically
-     * states that the CloudFormation stack has a status that is not (or no longer) active, such as
-     * <code>CREATE_FAILED</code>.
+     * A message that explains the <code>ErrorCode</code>.
      * </p>
      */
     private String message;
 
     /**
      * <p>
-     * Possible values are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>
-     * .
+     * Specifies the error code that was raised.
      * </p>
      * 
      * @param errorCode
-     *        Possible values are <code>CLOUDFORMATION_STACK_INACTIVE</code> and
-     *        <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.
+     *        Specifies the error code that was raised.
      * @see QueryErrorCode
      */
 
@@ -67,12 +57,10 @@ public class QueryError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Possible values are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>
-     * .
+     * Specifies the error code that was raised.
      * </p>
      * 
-     * @return Possible values are <code>CLOUDFORMATION_STACK_INACTIVE</code> and
-     *         <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.
+     * @return Specifies the error code that was raised.
      * @see QueryErrorCode
      */
 
@@ -82,13 +70,11 @@ public class QueryError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Possible values are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>
-     * .
+     * Specifies the error code that was raised.
      * </p>
      * 
      * @param errorCode
-     *        Possible values are <code>CLOUDFORMATION_STACK_INACTIVE</code> and
-     *        <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.
+     *        Specifies the error code that was raised.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see QueryErrorCode
      */
@@ -100,13 +86,11 @@ public class QueryError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Possible values are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>
-     * .
+     * Specifies the error code that was raised.
      * </p>
      * 
      * @param errorCode
-     *        Possible values are <code>CLOUDFORMATION_STACK_INACTIVE</code> and
-     *        <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.
+     *        Specifies the error code that was raised.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see QueryErrorCode
      */
@@ -118,17 +102,11 @@ public class QueryError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A message that explains the <code>ErrorCode</code> value. Messages might state that the specified CloudFormation
-     * stack does not exist (or no longer exists). For <code>CLOUDFORMATION_STACK_INACTIVE</code>, the message typically
-     * states that the CloudFormation stack has a status that is not (or no longer) active, such as
-     * <code>CREATE_FAILED</code>.
+     * A message that explains the <code>ErrorCode</code>.
      * </p>
      * 
      * @param message
-     *        A message that explains the <code>ErrorCode</code> value. Messages might state that the specified
-     *        CloudFormation stack does not exist (or no longer exists). For <code>CLOUDFORMATION_STACK_INACTIVE</code>,
-     *        the message typically states that the CloudFormation stack has a status that is not (or no longer) active,
-     *        such as <code>CREATE_FAILED</code>.
+     *        A message that explains the <code>ErrorCode</code>.
      */
 
     public void setMessage(String message) {
@@ -137,16 +115,10 @@ public class QueryError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A message that explains the <code>ErrorCode</code> value. Messages might state that the specified CloudFormation
-     * stack does not exist (or no longer exists). For <code>CLOUDFORMATION_STACK_INACTIVE</code>, the message typically
-     * states that the CloudFormation stack has a status that is not (or no longer) active, such as
-     * <code>CREATE_FAILED</code>.
+     * A message that explains the <code>ErrorCode</code>.
      * </p>
      * 
-     * @return A message that explains the <code>ErrorCode</code> value. Messages might state that the specified
-     *         CloudFormation stack does not exist (or no longer exists). For <code>CLOUDFORMATION_STACK_INACTIVE</code>
-     *         , the message typically states that the CloudFormation stack has a status that is not (or no longer)
-     *         active, such as <code>CREATE_FAILED</code>.
+     * @return A message that explains the <code>ErrorCode</code>.
      */
 
     public String getMessage() {
@@ -155,17 +127,11 @@ public class QueryError implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A message that explains the <code>ErrorCode</code> value. Messages might state that the specified CloudFormation
-     * stack does not exist (or no longer exists). For <code>CLOUDFORMATION_STACK_INACTIVE</code>, the message typically
-     * states that the CloudFormation stack has a status that is not (or no longer) active, such as
-     * <code>CREATE_FAILED</code>.
+     * A message that explains the <code>ErrorCode</code>.
      * </p>
      * 
      * @param message
-     *        A message that explains the <code>ErrorCode</code> value. Messages might state that the specified
-     *        CloudFormation stack does not exist (or no longer exists). For <code>CLOUDFORMATION_STACK_INACTIVE</code>,
-     *        the message typically states that the CloudFormation stack has a status that is not (or no longer) active,
-     *        such as <code>CREATE_FAILED</code>.
+     *        A message that explains the <code>ErrorCode</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

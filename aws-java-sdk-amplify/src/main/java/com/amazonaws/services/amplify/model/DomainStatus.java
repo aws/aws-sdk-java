@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,7 +23,9 @@ public enum DomainStatus {
     PENDING_VERIFICATION("PENDING_VERIFICATION"),
     IN_PROGRESS("IN_PROGRESS"),
     AVAILABLE("AVAILABLE"),
+    IMPORTING_CUSTOM_CERTIFICATE("IMPORTING_CUSTOM_CERTIFICATE"),
     PENDING_DEPLOYMENT("PENDING_DEPLOYMENT"),
+    AWAITING_APP_CNAME("AWAITING_APP_CNAME"),
     FAILED("FAILED"),
     CREATING("CREATING"),
     REQUESTING_CERTIFICATE("REQUESTING_CERTIFICATE"),

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,37 +26,11 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateCampaignResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    private String arn;
-
     private String id;
 
+    private String arn;
+
     private java.util.Map<String, String> tags;
-
-    /**
-     * @param arn
-     */
-
-    public void setArn(String arn) {
-        this.arn = arn;
-    }
-
-    /**
-     * @return
-     */
-
-    public String getArn() {
-        return this.arn;
-    }
-
-    /**
-     * @param arn
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateCampaignResult withArn(String arn) {
-        setArn(arn);
-        return this;
-    }
 
     /**
      * @param id
@@ -81,6 +55,32 @@ public class CreateCampaignResult extends com.amazonaws.AmazonWebServiceResult<c
 
     public CreateCampaignResult withId(String id) {
         setId(id);
+        return this;
+    }
+
+    /**
+     * @param arn
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * @param arn
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCampaignResult withArn(String arn) {
+        setArn(arn);
         return this;
     }
 
@@ -150,10 +150,10 @@ public class CreateCampaignResult extends com.amazonaws.AmazonWebServiceResult<c
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getArn() != null)
-            sb.append("Arn: ").append(getArn()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -170,13 +170,13 @@ public class CreateCampaignResult extends com.amazonaws.AmazonWebServiceResult<c
         if (obj instanceof CreateCampaignResult == false)
             return false;
         CreateCampaignResult other = (CreateCampaignResult) obj;
-        if (other.getArn() == null ^ this.getArn() == null)
-            return false;
-        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
-            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
+            return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
@@ -190,8 +190,8 @@ public class CreateCampaignResult extends com.amazonaws.AmazonWebServiceResult<c
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

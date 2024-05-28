@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,6 +54,19 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateChannelResult> createChannelAsync(CreateChannelRequest request) {
+
+        return createChannelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateChannelResult> createChannelAsync(CreateChannelRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateChannelRequest, CreateChannelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateEventDataStoreResult> createEventDataStoreAsync(CreateEventDataStoreRequest request) {
 
         return createEventDataStoreAsync(request, null);
@@ -80,6 +93,19 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteChannelResult> deleteChannelAsync(DeleteChannelRequest request) {
+
+        return deleteChannelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteChannelResult> deleteChannelAsync(DeleteChannelRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteChannelRequest, DeleteChannelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteEventDataStoreResult> deleteEventDataStoreAsync(DeleteEventDataStoreRequest request) {
 
         return deleteEventDataStoreAsync(request, null);
@@ -93,6 +119,19 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest request) {
+
+        return deleteResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteResourcePolicyRequest, DeleteResourcePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteTrailResult> deleteTrailAsync(DeleteTrailRequest request) {
 
         return deleteTrailAsync(request, null);
@@ -101,6 +140,21 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
     @Override
     public java.util.concurrent.Future<DeleteTrailResult> deleteTrailAsync(DeleteTrailRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteTrailRequest, DeleteTrailResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterOrganizationDelegatedAdminResult> deregisterOrganizationDelegatedAdminAsync(
+            DeregisterOrganizationDelegatedAdminRequest request) {
+
+        return deregisterOrganizationDelegatedAdminAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterOrganizationDelegatedAdminResult> deregisterOrganizationDelegatedAdminAsync(
+            DeregisterOrganizationDelegatedAdminRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeregisterOrganizationDelegatedAdminRequest, DeregisterOrganizationDelegatedAdminResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -152,6 +206,32 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
             com.amazonaws.handlers.AsyncHandler<DescribeTrailsRequest, DescribeTrailsResult> asyncHandler) {
 
         return describeTrailsAsync(new DescribeTrailsRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableFederationResult> disableFederationAsync(DisableFederationRequest request) {
+
+        return disableFederationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableFederationResult> disableFederationAsync(DisableFederationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisableFederationRequest, DisableFederationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableFederationResult> enableFederationAsync(EnableFederationRequest request) {
+
+        return enableFederationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableFederationResult> enableFederationAsync(EnableFederationRequest request,
+            com.amazonaws.handlers.AsyncHandler<EnableFederationRequest, EnableFederationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -233,6 +313,19 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest request) {
+
+        return getResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourcePolicyResult> getResourcePolicyAsync(GetResourcePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetResourcePolicyRequest, GetResourcePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetTrailResult> getTrailAsync(GetTrailRequest request) {
 
         return getTrailAsync(request, null);
@@ -306,6 +399,19 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
     @Override
     public java.util.concurrent.Future<ListImportsResult> listImportsAsync(ListImportsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListImportsRequest, ListImportsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInsightsMetricDataResult> listInsightsMetricDataAsync(ListInsightsMetricDataRequest request) {
+
+        return listInsightsMetricDataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInsightsMetricDataResult> listInsightsMetricDataAsync(ListInsightsMetricDataRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListInsightsMetricDataRequest, ListInsightsMetricDataResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -448,6 +554,34 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
     }
 
     @Override
+    public java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest request) {
+
+        return putResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutResourcePolicyRequest, PutResourcePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterOrganizationDelegatedAdminResult> registerOrganizationDelegatedAdminAsync(
+            RegisterOrganizationDelegatedAdminRequest request) {
+
+        return registerOrganizationDelegatedAdminAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterOrganizationDelegatedAdminResult> registerOrganizationDelegatedAdminAsync(
+            RegisterOrganizationDelegatedAdminRequest request,
+            com.amazonaws.handlers.AsyncHandler<RegisterOrganizationDelegatedAdminRequest, RegisterOrganizationDelegatedAdminResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<RemoveTagsResult> removeTagsAsync(RemoveTagsRequest request) {
 
         return removeTagsAsync(request, null);
@@ -469,6 +603,19 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
     @Override
     public java.util.concurrent.Future<RestoreEventDataStoreResult> restoreEventDataStoreAsync(RestoreEventDataStoreRequest request,
             com.amazonaws.handlers.AsyncHandler<RestoreEventDataStoreRequest, RestoreEventDataStoreResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartEventDataStoreIngestionResult> startEventDataStoreIngestionAsync(StartEventDataStoreIngestionRequest request) {
+
+        return startEventDataStoreIngestionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartEventDataStoreIngestionResult> startEventDataStoreIngestionAsync(StartEventDataStoreIngestionRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartEventDataStoreIngestionRequest, StartEventDataStoreIngestionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -513,6 +660,19 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
     }
 
     @Override
+    public java.util.concurrent.Future<StopEventDataStoreIngestionResult> stopEventDataStoreIngestionAsync(StopEventDataStoreIngestionRequest request) {
+
+        return stopEventDataStoreIngestionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopEventDataStoreIngestionResult> stopEventDataStoreIngestionAsync(StopEventDataStoreIngestionRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopEventDataStoreIngestionRequest, StopEventDataStoreIngestionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StopImportResult> stopImportAsync(StopImportRequest request) {
 
         return stopImportAsync(request, null);
@@ -534,6 +694,19 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
     @Override
     public java.util.concurrent.Future<StopLoggingResult> stopLoggingAsync(StopLoggingRequest request,
             com.amazonaws.handlers.AsyncHandler<StopLoggingRequest, StopLoggingResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateChannelResult> updateChannelAsync(UpdateChannelRequest request) {
+
+        return updateChannelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateChannelResult> updateChannelAsync(UpdateChannelRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateChannelRequest, UpdateChannelResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

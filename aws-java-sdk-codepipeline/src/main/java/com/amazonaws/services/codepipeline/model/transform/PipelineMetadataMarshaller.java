@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class PipelineMetadataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("created").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> UPDATED_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updated").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> POLLINGDISABLEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pollingDisabledAt").timestampFormat("unixTimestamp").build();
 
     private static final PipelineMetadataMarshaller instance = new PipelineMetadataMarshaller();
 
@@ -53,6 +55,7 @@ public class PipelineMetadataMarshaller {
             protocolMarshaller.marshall(pipelineMetadata.getPipelineArn(), PIPELINEARN_BINDING);
             protocolMarshaller.marshall(pipelineMetadata.getCreated(), CREATED_BINDING);
             protocolMarshaller.marshall(pipelineMetadata.getUpdated(), UPDATED_BINDING);
+            protocolMarshaller.marshall(pipelineMetadata.getPollingDisabledAt(), POLLINGDISABLEDAT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

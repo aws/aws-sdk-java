@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,78 @@ public interface AmazonLexModelsV2 {
      * @see RegionUtils#getRegionsForService(String)
      */
     String ENDPOINT_PREFIX = "models-v2-lex";
+
+    /**
+     * <p>
+     * Create a batch of custom vocabulary items for a given bot locale's custom vocabulary.
+     * </p>
+     * 
+     * @param batchCreateCustomVocabularyItemRequest
+     * @return Result of the BatchCreateCustomVocabularyItem operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.BatchCreateCustomVocabularyItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BatchCreateCustomVocabularyItem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchCreateCustomVocabularyItemResult batchCreateCustomVocabularyItem(BatchCreateCustomVocabularyItemRequest batchCreateCustomVocabularyItemRequest);
+
+    /**
+     * <p>
+     * Delete a batch of custom vocabulary items for a given bot locale's custom vocabulary.
+     * </p>
+     * 
+     * @param batchDeleteCustomVocabularyItemRequest
+     * @return Result of the BatchDeleteCustomVocabularyItem operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.BatchDeleteCustomVocabularyItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BatchDeleteCustomVocabularyItem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchDeleteCustomVocabularyItemResult batchDeleteCustomVocabularyItem(BatchDeleteCustomVocabularyItemRequest batchDeleteCustomVocabularyItemRequest);
+
+    /**
+     * <p>
+     * Update a batch of custom vocabulary items for a given bot locale's custom vocabulary.
+     * </p>
+     * 
+     * @param batchUpdateCustomVocabularyItemRequest
+     * @return Result of the BatchUpdateCustomVocabularyItem operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.BatchUpdateCustomVocabularyItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BatchUpdateCustomVocabularyItem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchUpdateCustomVocabularyItemResult batchUpdateCustomVocabularyItem(BatchUpdateCustomVocabularyItemRequest batchUpdateCustomVocabularyItemRequest);
 
     /**
      * <p>
@@ -157,12 +229,37 @@ public interface AmazonLexModelsV2 {
 
     /**
      * <p>
-     * Creates a new version of the bot based on the <code>DRAFT</code> version. If the <code>DRAFT</code> version of
-     * this resource hasn't changed since you created the last version, Amazon Lex doesn't create a new version, it
-     * returns the last created version.
+     * Action to create a replication of the source bot in the secondary region.
      * </p>
+     * 
+     * @param createBotReplicaRequest
+     * @return Result of the CreateBotReplica operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws PreconditionFailedException
+     *         Your request couldn't be completed because one or more request fields aren't valid. Check the fields in
+     *         your request and try again.
+     * @throws ConflictException
+     *         The action that you tried to perform couldn't be completed because the resource is in a conflicting
+     *         state. For example, deleting a bot that is in the CREATING state. Try your request again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.CreateBotReplica
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateBotReplica" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateBotReplicaResult createBotReplica(CreateBotReplicaRequest createBotReplicaRequest);
+
+    /**
      * <p>
-     * When you create the first version of a bot, Amazon Lex sets the version to 1. Subsequent versions increment by 1.
+     * Creates an immutable version of the bot. When you create the first version of a bot, Amazon Lex sets the version
+     * number to 1. Subsequent bot versions increase in an increment of 1. The version number will always represent the
+     * total number of versions created of the bot, not the current number of versions. If a bot version is deleted,
+     * that bot version number will not be reused.
      * </p>
      * 
      * @param createBotVersionRequest
@@ -417,6 +514,33 @@ public interface AmazonLexModelsV2 {
 
     /**
      * <p>
+     * Create a report that describes the differences between the bot and the test set.
+     * </p>
+     * 
+     * @param createTestSetDiscrepancyReportRequest
+     * @return Result of the CreateTestSetDiscrepancyReport operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ConflictException
+     *         The action that you tried to perform couldn't be completed because the resource is in a conflicting
+     *         state. For example, deleting a bot that is in the CREATING state. Try your request again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @sample AmazonLexModelsV2.CreateTestSetDiscrepancyReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/CreateTestSetDiscrepancyReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateTestSetDiscrepancyReportResult createTestSetDiscrepancyReport(CreateTestSetDiscrepancyReportRequest createTestSetDiscrepancyReportRequest);
+
+    /**
+     * <p>
      * Gets a pre-signed S3 write URL that you use to upload the zip archive when importing a bot or a bot locale.
      * </p>
      * 
@@ -536,8 +660,35 @@ public interface AmazonLexModelsV2 {
 
     /**
      * <p>
-     * Deletes a specific version of a bot. To delete all version of a bot, use the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DeleteBot.html">DeleteBot</a> operation.
+     * The action to delete the replicated bot in the secondary region.
+     * </p>
+     * 
+     * @param deleteBotReplicaRequest
+     * @return Result of the DeleteBotReplica operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws PreconditionFailedException
+     *         Your request couldn't be completed because one or more request fields aren't valid. Check the fields in
+     *         your request and try again.
+     * @throws ConflictException
+     *         The action that you tried to perform couldn't be completed because the resource is in a conflicting
+     *         state. For example, deleting a bot that is in the CREATING state. Try your request again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.DeleteBotReplica
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteBotReplica" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteBotReplicaResult deleteBotReplica(DeleteBotReplicaRequest deleteBotReplicaRequest);
+
+    /**
+     * <p>
+     * Deletes a specific version of a bot. To delete all versions of a bot, use the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteBot.html">DeleteBot</a> operation.
      * </p>
      * 
      * @param deleteBotVersionRequest
@@ -776,13 +927,40 @@ public interface AmazonLexModelsV2 {
 
     /**
      * <p>
+     * The action to delete the selected test set.
+     * </p>
+     * 
+     * @param deleteTestSetRequest
+     * @return Result of the DeleteTestSet operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ConflictException
+     *         The action that you tried to perform couldn't be completed because the resource is in a conflicting
+     *         state. For example, deleting a bot that is in the CREATING state. Try your request again.
+     * @throws PreconditionFailedException
+     *         Your request couldn't be completed because one or more request fields aren't valid. Check the fields in
+     *         your request and try again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.DeleteTestSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DeleteTestSet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteTestSetResult deleteTestSet(DeleteTestSetRequest deleteTestSetRequest);
+
+    /**
+     * <p>
      * Deletes stored utterances.
      * </p>
      * <p>
      * Amazon Lex stores the utterances that users send to your bot. Utterances are stored for 15 days for use with the
-     * <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a>
-     * operation, and then stored indefinitely for use in improving the ability of your bot to respond to user input..
+     * <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html">
+     * ListAggregatedUtterances</a> operation, and then stored indefinitely for use in improving the ability of your bot
+     * to respond to user input..
      * </p>
      * <p>
      * Use the <code>DeleteUtterances</code> operation to manually delete utterances for a specific session. When you
@@ -900,6 +1078,54 @@ public interface AmazonLexModelsV2 {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeBotRecommendationResult describeBotRecommendation(DescribeBotRecommendationRequest describeBotRecommendationRequest);
+
+    /**
+     * <p>
+     * Monitors the bot replication status through the UI console.
+     * </p>
+     * 
+     * @param describeBotReplicaRequest
+     * @return Result of the DescribeBotReplica operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.DescribeBotReplica
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotReplica"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeBotReplicaResult describeBotReplica(DescribeBotReplicaRequest describeBotReplicaRequest);
+
+    /**
+     * <p>
+     * Returns information about a request to generate a bot through natural language description, made through the
+     * <code>StartBotResource</code> API. Use the <code>generatedBotLocaleUrl</code> to retrieve the Amazon S3 object
+     * containing the bot locale configuration. You can then modify and import this configuration.
+     * </p>
+     * 
+     * @param describeBotResourceGenerationRequest
+     * @return Result of the DescribeBotResourceGeneration operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.DescribeBotResourceGeneration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeBotResourceGeneration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeBotResourceGenerationResult describeBotResourceGeneration(DescribeBotResourceGenerationRequest describeBotResourceGenerationRequest);
 
     /**
      * <p>
@@ -1087,6 +1313,159 @@ public interface AmazonLexModelsV2 {
 
     /**
      * <p>
+     * Gets metadata information about the test execution.
+     * </p>
+     * 
+     * @param describeTestExecutionRequest
+     * @return Result of the DescribeTestExecution operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.DescribeTestExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeTestExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeTestExecutionResult describeTestExecution(DescribeTestExecutionRequest describeTestExecutionRequest);
+
+    /**
+     * <p>
+     * Gets metadata information about the test set.
+     * </p>
+     * 
+     * @param describeTestSetRequest
+     * @return Result of the DescribeTestSet operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.DescribeTestSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeTestSet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeTestSetResult describeTestSet(DescribeTestSetRequest describeTestSetRequest);
+
+    /**
+     * <p>
+     * Gets metadata information about the test set discrepancy report.
+     * </p>
+     * 
+     * @param describeTestSetDiscrepancyReportRequest
+     * @return Result of the DescribeTestSetDiscrepancyReport operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.DescribeTestSetDiscrepancyReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeTestSetDiscrepancyReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeTestSetDiscrepancyReportResult describeTestSetDiscrepancyReport(DescribeTestSetDiscrepancyReportRequest describeTestSetDiscrepancyReportRequest);
+
+    /**
+     * <p>
+     * Gets metadata information about the test set generation.
+     * </p>
+     * 
+     * @param describeTestSetGenerationRequest
+     * @return Result of the DescribeTestSetGeneration operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.DescribeTestSetGeneration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/DescribeTestSetGeneration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeTestSetGenerationResult describeTestSetGeneration(DescribeTestSetGenerationRequest describeTestSetGenerationRequest);
+
+    /**
+     * <p>
+     * Generates sample utterances for an intent.
+     * </p>
+     * 
+     * @param generateBotElementRequest
+     * @return Result of the GenerateBotElement operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws ConflictException
+     *         The action that you tried to perform couldn't be completed because the resource is in a conflicting
+     *         state. For example, deleting a bot that is in the CREATING state. Try your request again.
+     * @throws PreconditionFailedException
+     *         Your request couldn't be completed because one or more request fields aren't valid. Check the fields in
+     *         your request and try again.
+     * @throws ConflictException
+     *         The action that you tried to perform couldn't be completed because the resource is in a conflicting
+     *         state. For example, deleting a bot that is in the CREATING state. Try your request again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.GenerateBotElement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/GenerateBotElement"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GenerateBotElementResult generateBotElement(GenerateBotElementRequest generateBotElementRequest);
+
+    /**
+     * <p>
+     * The pre-signed Amazon S3 URL to download the test execution result artifacts.
+     * </p>
+     * 
+     * @param getTestExecutionArtifactsUrlRequest
+     * @return Result of the GetTestExecutionArtifactsUrl operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.GetTestExecutionArtifactsUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/GetTestExecutionArtifactsUrl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetTestExecutionArtifactsUrlResult getTestExecutionArtifactsUrl(GetTestExecutionArtifactsUrlRequest getTestExecutionArtifactsUrlRequest);
+
+    /**
+     * <p>
      * Provides a list of utterances that users have sent to the bot.
      * </p>
      * <p>
@@ -1138,6 +1517,27 @@ public interface AmazonLexModelsV2 {
      *      target="_top">AWS API Documentation</a>
      */
     ListAggregatedUtterancesResult listAggregatedUtterances(ListAggregatedUtterancesRequest listAggregatedUtterancesRequest);
+
+    /**
+     * <p>
+     * The action to list the replicated bots created from the source bot alias.
+     * </p>
+     * 
+     * @param listBotAliasReplicasRequest
+     * @return Result of the ListBotAliasReplicas operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.ListBotAliasReplicas
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotAliasReplicas"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListBotAliasReplicasResult listBotAliasReplicas(ListBotAliasReplicasRequest listBotAliasReplicasRequest);
 
     /**
      * <p>
@@ -1205,6 +1605,70 @@ public interface AmazonLexModelsV2 {
 
     /**
      * <p>
+     * The action to list the replicated bots.
+     * </p>
+     * 
+     * @param listBotReplicasRequest
+     * @return Result of the ListBotReplicas operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.ListBotReplicas
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotReplicas" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListBotReplicasResult listBotReplicas(ListBotReplicasRequest listBotReplicasRequest);
+
+    /**
+     * <p>
+     * Lists the generation requests made for a bot locale.
+     * </p>
+     * 
+     * @param listBotResourceGenerationsRequest
+     * @return Result of the ListBotResourceGenerations operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @sample AmazonLexModelsV2.ListBotResourceGenerations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotResourceGenerations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListBotResourceGenerationsResult listBotResourceGenerations(ListBotResourceGenerationsRequest listBotResourceGenerationsRequest);
+
+    /**
+     * <p>
+     * Contains information about all the versions replication statuses applicable for Global Resiliency.
+     * </p>
+     * 
+     * @param listBotVersionReplicasRequest
+     * @return Result of the ListBotVersionReplicas operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.ListBotVersionReplicas
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListBotVersionReplicas"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListBotVersionReplicasResult listBotVersionReplicas(ListBotVersionReplicasRequest listBotVersionReplicasRequest);
+
+    /**
+     * <p>
      * Gets information about all of the versions of a bot.
      * </p>
      * <p>
@@ -1260,7 +1724,8 @@ public interface AmazonLexModelsV2 {
      * <p>
      * To use a built-in intent as a the base for your own intent, include the built-in intent signature in the
      * <code>parentIntentSignature</code> parameter when you call the <code>CreateIntent</code> operation. For more
-     * information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateIntent.html">CreateIntent</a>.
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateIntent.html">CreateIntent</a>.
      * </p>
      * 
      * @param listBuiltInIntentsRequest
@@ -1302,6 +1767,30 @@ public interface AmazonLexModelsV2 {
 
     /**
      * <p>
+     * Paginated list of custom vocabulary items for a given bot locale's custom vocabulary.
+     * </p>
+     * 
+     * @param listCustomVocabularyItemsRequest
+     * @return Result of the ListCustomVocabularyItems operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.ListCustomVocabularyItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListCustomVocabularyItems"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListCustomVocabularyItemsResult listCustomVocabularyItems(ListCustomVocabularyItemsRequest listCustomVocabularyItemsRequest);
+
+    /**
+     * <p>
      * Lists the exports for a bot, bot locale, or custom vocabulary. Exports are kept in the list for 7 days.
      * </p>
      * 
@@ -1340,6 +1829,180 @@ public interface AmazonLexModelsV2 {
 
     /**
      * <p>
+     * Retrieves summary metrics for the intents in your bot. The following fields are required:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>metrics</code> – A list of <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsIntentMetric.html"
+     * >AnalyticsIntentMetric</a> objects. In each object, use the <code>name</code> field to specify the metric to
+     * calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>,
+     * <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field to specify whether to sort the
+     * results in <code>Ascending</code> or <code>Descending</code> order.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Of the optional fields, you can organize the results in the following ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>filters</code> field to filter the results, the <code>groupBy</code> field to specify categories by
+     * which to group the results, and the <code>binBy</code> field to specify time intervals by which to group the
+     * results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the <code>maxResults</code> field to limit the number of results to return in a single response and the
+     * <code>nextToken</code> field to return the next batch of results if the response does not return the full set of
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>. You can specify
+     * only one <code>order</code> in a given request.
+     * </p>
+     * 
+     * @param listIntentMetricsRequest
+     * @return Result of the ListIntentMetrics operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws PreconditionFailedException
+     *         Your request couldn't be completed because one or more request fields aren't valid. Check the fields in
+     *         your request and try again.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.ListIntentMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntentMetrics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListIntentMetricsResult listIntentMetrics(ListIntentMetricsRequest listIntentMetricsRequest);
+
+    /**
+     * <p>
+     * Retrieves summary statistics for a path of intents that users take over sessions with your bot. The following
+     * fields are required:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve
+     * results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>intentPath</code> – Define an order of intents for which you want to retrieve metrics. Separate intents in
+     * the path with a forward slash. For example, populate the <code>intentPath</code> field with
+     * <code>/BookCar/BookHotel</code> to see details about how many times users invoked the <code>BookCar</code> and
+     * <code>BookHotel</code> intents in that order.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Use the optional <code>filters</code> field to filter the results.
+     * </p>
+     * 
+     * @param listIntentPathsRequest
+     * @return Result of the ListIntentPaths operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws PreconditionFailedException
+     *         Your request couldn't be completed because one or more request fields aren't valid. Check the fields in
+     *         your request and try again.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.ListIntentPaths
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntentPaths" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListIntentPathsResult listIntentPaths(ListIntentPathsRequest listIntentPathsRequest);
+
+    /**
+     * <p>
+     * Retrieves summary metrics for the stages within intents in your bot. The following fields are required:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>metrics</code> – A list of <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsIntentStageMetric.html"
+     * >AnalyticsIntentStageMetric</a> objects. In each object, use the <code>name</code> field to specify the metric to
+     * calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>,
+     * <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field to specify whether to sort the
+     * results in <code>Ascending</code> or <code>Descending</code> order.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Of the optional fields, you can organize the results in the following ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>filters</code> field to filter the results, the <code>groupBy</code> field to specify categories by
+     * which to group the results, and the <code>binBy</code> field to specify time intervals by which to group the
+     * results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the <code>maxResults</code> field to limit the number of results to return in a single response and the
+     * <code>nextToken</code> field to return the next batch of results if the response does not return the full set of
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>. You can only
+     * specify one <code>order</code> in a given request.
+     * </p>
+     * 
+     * @param listIntentStageMetricsRequest
+     * @return Result of the ListIntentStageMetrics operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws PreconditionFailedException
+     *         Your request couldn't be completed because one or more request fields aren't valid. Check the fields in
+     *         your request and try again.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.ListIntentStageMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListIntentStageMetrics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListIntentStageMetricsResult listIntentStageMetrics(ListIntentStageMetricsRequest listIntentStageMetricsRequest);
+
+    /**
+     * <p>
      * Get a list of intents that meet the specified criteria.
      * </p>
      * 
@@ -1361,7 +2024,8 @@ public interface AmazonLexModelsV2 {
 
     /**
      * <p>
-     * Gets a list of recommended intents provided by the bot recommendation that you can use in your bot.
+     * Gets a list of recommended intents provided by the bot recommendation that you can use in your bot. Intents in
+     * the response are ordered by relevance.
      * </p>
      * 
      * @param listRecommendedIntentsRequest
@@ -1382,6 +2046,112 @@ public interface AmazonLexModelsV2 {
      *      target="_top">AWS API Documentation</a>
      */
     ListRecommendedIntentsResult listRecommendedIntents(ListRecommendedIntentsRequest listRecommendedIntentsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of metadata for individual user sessions with your bot. The <code>startDateTime</code> and
+     * <code>endDateTime</code> fields are required. These fields define a time range for which you want to retrieve
+     * results. Of the optional fields, you can organize the results in the following ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>filters</code> field to filter the results and the <code>sortBy</code> field to specify the values
+     * by which to sort the results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the <code>maxResults</code> field to limit the number of results to return in a single response and the
+     * <code>nextToken</code> field to return the next batch of results if the response does not return the full set of
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param listSessionAnalyticsDataRequest
+     * @return Result of the ListSessionAnalyticsData operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws PreconditionFailedException
+     *         Your request couldn't be completed because one or more request fields aren't valid. Check the fields in
+     *         your request and try again.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.ListSessionAnalyticsData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListSessionAnalyticsData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListSessionAnalyticsDataResult listSessionAnalyticsData(ListSessionAnalyticsDataRequest listSessionAnalyticsDataRequest);
+
+    /**
+     * <p>
+     * Retrieves summary metrics for the user sessions with your bot. The following fields are required:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>metrics</code> – A list of <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsSessionMetric.html"
+     * >AnalyticsSessionMetric</a> objects. In each object, use the <code>name</code> field to specify the metric to
+     * calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>,
+     * <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field to specify whether to sort the
+     * results in <code>Ascending</code> or <code>Descending</code> order.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Of the optional fields, you can organize the results in the following ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>filters</code> field to filter the results, the <code>groupBy</code> field to specify categories by
+     * which to group the results, and the <code>binBy</code> field to specify time intervals by which to group the
+     * results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the <code>maxResults</code> field to limit the number of results to return in a single response and the
+     * <code>nextToken</code> field to return the next batch of results if the response does not return the full set of
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>. Currently, you
+     * can specify it in either field, but not in both.
+     * </p>
+     * 
+     * @param listSessionMetricsRequest
+     * @return Result of the ListSessionMetrics operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws PreconditionFailedException
+     *         Your request couldn't be completed because one or more request fields aren't valid. Check the fields in
+     *         your request and try again.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.ListSessionMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListSessionMetrics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListSessionMetricsResult listSessionMetrics(ListSessionMetricsRequest listSessionMetricsRequest);
 
     /**
      * <p>
@@ -1450,6 +2220,229 @@ public interface AmazonLexModelsV2 {
 
     /**
      * <p>
+     * Gets a list of test execution result items.
+     * </p>
+     * 
+     * @param listTestExecutionResultItemsRequest
+     * @return Result of the ListTestExecutionResultItems operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.ListTestExecutionResultItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListTestExecutionResultItems"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTestExecutionResultItemsResult listTestExecutionResultItems(ListTestExecutionResultItemsRequest listTestExecutionResultItemsRequest);
+
+    /**
+     * <p>
+     * The list of test set executions.
+     * </p>
+     * 
+     * @param listTestExecutionsRequest
+     * @return Result of the ListTestExecutions operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.ListTestExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListTestExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTestExecutionsResult listTestExecutions(ListTestExecutionsRequest listTestExecutionsRequest);
+
+    /**
+     * <p>
+     * The list of test set records.
+     * </p>
+     * 
+     * @param listTestSetRecordsRequest
+     * @return Result of the ListTestSetRecords operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.ListTestSetRecords
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListTestSetRecords"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTestSetRecordsResult listTestSetRecords(ListTestSetRecordsRequest listTestSetRecordsRequest);
+
+    /**
+     * <p>
+     * The list of the test sets
+     * </p>
+     * 
+     * @param listTestSetsRequest
+     * @return Result of the ListTestSets operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.ListTestSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListTestSets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTestSetsResult listTestSets(ListTestSetsRequest listTestSetsRequest);
+
+    /**
+     * <note>
+     * <p>
+     * To use this API operation, your IAM role must have permissions to perform the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html"
+     * >ListAggregatedUtterances</a> operation, which provides access to utterance-related analytics. See <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/monitoring-utterances.html">Viewing utterance statistics</a>
+     * for the IAM policy to apply to the IAM role.
+     * </p>
+     * </note>
+     * <p>
+     * Retrieves a list of metadata for individual user utterances to your bot. The following fields are required:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Of the optional fields, you can organize the results in the following ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>filters</code> field to filter the results and the <code>sortBy</code> field to specify the values
+     * by which to sort the results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the <code>maxResults</code> field to limit the number of results to return in a single response and the
+     * <code>nextToken</code> field to return the next batch of results if the response does not return the full set of
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param listUtteranceAnalyticsDataRequest
+     * @return Result of the ListUtteranceAnalyticsData operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws PreconditionFailedException
+     *         Your request couldn't be completed because one or more request fields aren't valid. Check the fields in
+     *         your request and try again.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.ListUtteranceAnalyticsData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListUtteranceAnalyticsData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListUtteranceAnalyticsDataResult listUtteranceAnalyticsData(ListUtteranceAnalyticsDataRequest listUtteranceAnalyticsDataRequest);
+
+    /**
+     * <note>
+     * <p>
+     * To use this API operation, your IAM role must have permissions to perform the <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html"
+     * >ListAggregatedUtterances</a> operation, which provides access to utterance-related analytics. See <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/dg/monitoring-utterances.html">Viewing utterance statistics</a>
+     * for the IAM policy to apply to the IAM role.
+     * </p>
+     * </note>
+     * <p>
+     * Retrieves summary metrics for the utterances in your bot. The following fields are required:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>metrics</code> – A list of <a
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsUtteranceMetric.html"
+     * >AnalyticsUtteranceMetric</a> objects. In each object, use the <code>name</code> field to specify the metric to
+     * calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>,
+     * <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field to specify whether to sort the
+     * results in <code>Ascending</code> or <code>Descending</code> order.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Of the optional fields, you can organize the results in the following ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the <code>filters</code> field to filter the results, the <code>groupBy</code> field to specify categories by
+     * which to group the results, and the <code>binBy</code> field to specify time intervals by which to group the
+     * results.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the <code>maxResults</code> field to limit the number of results to return in a single response and the
+     * <code>nextToken</code> field to return the next batch of results if the response does not return the full set of
+     * results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>. Currently, you
+     * can specify it in either field, but not in both.
+     * </p>
+     * 
+     * @param listUtteranceMetricsRequest
+     * @return Result of the ListUtteranceMetrics operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws PreconditionFailedException
+     *         Your request couldn't be completed because one or more request fields aren't valid. Check the fields in
+     *         your request and try again.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.ListUtteranceMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListUtteranceMetrics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListUtteranceMetricsResult listUtteranceMetrics(ListUtteranceMetricsRequest listUtteranceMetricsRequest);
+
+    /**
+     * <p>
      * Search for associated transcripts that meet the specified criteria.
      * </p>
      * 
@@ -1507,6 +2500,37 @@ public interface AmazonLexModelsV2 {
 
     /**
      * <p>
+     * Starts a request for the descriptive bot builder to generate a bot locale configuration based on the prompt you
+     * provide it. After you make this call, use the <code>DescribeBotResourceGeneration</code> operation to check on
+     * the status of the generation and for the <code>generatedBotLocaleUrl</code> when the generation is complete. Use
+     * that value to retrieve the Amazon S3 object containing the bot locale configuration. You can then modify and
+     * import this configuration.
+     * </p>
+     * 
+     * @param startBotResourceGenerationRequest
+     * @return Result of the StartBotResourceGeneration operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws PreconditionFailedException
+     *         Your request couldn't be completed because one or more request fields aren't valid. Check the fields in
+     *         your request and try again.
+     * @throws ConflictException
+     *         The action that you tried to perform couldn't be completed because the resource is in a conflicting
+     *         state. For example, deleting a bot that is in the CREATING state. Try your request again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.StartBotResourceGeneration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartBotResourceGeneration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartBotResourceGenerationResult startBotResourceGeneration(StartBotResourceGenerationRequest startBotResourceGenerationRequest);
+
+    /**
+     * <p>
      * Starts importing a bot, bot locale, or custom vocabulary from a zip archive that you uploaded to an S3 bucket.
      * </p>
      * 
@@ -1531,6 +2555,60 @@ public interface AmazonLexModelsV2 {
      *      Documentation</a>
      */
     StartImportResult startImport(StartImportRequest startImportRequest);
+
+    /**
+     * <p>
+     * The action to start test set execution.
+     * </p>
+     * 
+     * @param startTestExecutionRequest
+     * @return Result of the StartTestExecution operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ConflictException
+     *         The action that you tried to perform couldn't be completed because the resource is in a conflicting
+     *         state. For example, deleting a bot that is in the CREATING state. Try your request again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.StartTestExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartTestExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartTestExecutionResult startTestExecution(StartTestExecutionRequest startTestExecutionRequest);
+
+    /**
+     * <p>
+     * The action to start the generation of test set.
+     * </p>
+     * 
+     * @param startTestSetGenerationRequest
+     * @return Result of the StartTestSetGeneration operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ConflictException
+     *         The action that you tried to perform couldn't be completed because the resource is in a conflicting
+     *         state. For example, deleting a bot that is in the CREATING state. Try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.StartTestSetGeneration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/StartTestSetGeneration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartTestSetGenerationResult startTestSetGeneration(StartTestSetGenerationRequest startTestSetGenerationRequest);
 
     /**
      * <p>
@@ -1731,7 +2809,8 @@ public interface AmazonLexModelsV2 {
      * <p>
      * The password is not required. If you don't supply a password, Amazon Lex generates a zip file that is not
      * protected by a password. This is the archive that is available at the pre-signed S3 URL provided by the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeExport.html">DescribeExport</a> operation.
+     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html">DescribeExport</a>
+     * operation.
      * </p>
      * 
      * @param updateExportRequest
@@ -1864,6 +2943,33 @@ public interface AmazonLexModelsV2 {
      *      API Documentation</a>
      */
     UpdateSlotTypeResult updateSlotType(UpdateSlotTypeRequest updateSlotTypeRequest);
+
+    /**
+     * <p>
+     * The action to update the test set.
+     * </p>
+     * 
+     * @param updateTestSetRequest
+     * @return Result of the UpdateTestSet operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws PreconditionFailedException
+     *         Your request couldn't be completed because one or more request fields aren't valid. Check the fields in
+     *         your request and try again.
+     * @throws ConflictException
+     *         The action that you tried to perform couldn't be completed because the resource is in a conflicting
+     *         state. For example, deleting a bot that is in the CREATING state. Try your request again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.UpdateTestSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/UpdateTestSet" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateTestSetResult updateTestSet(UpdateTestSetRequest updateTestSetRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

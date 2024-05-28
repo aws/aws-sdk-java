@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,7 +45,9 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     private RoutingConfig routingConfig;
     /**
      * <p>
-     * Enable or disable event replication.
+     * Enable or disable event replication. The default state is <code>ENABLED</code> which means you must supply a
+     * <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want event replication enabled, set
+     * the state to <code>DISABLED</code>.
      * </p>
      */
     private ReplicationConfig replicationConfig;
@@ -189,11 +191,15 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Enable or disable event replication.
+     * Enable or disable event replication. The default state is <code>ENABLED</code> which means you must supply a
+     * <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want event replication enabled, set
+     * the state to <code>DISABLED</code>.
      * </p>
      * 
      * @param replicationConfig
-     *        Enable or disable event replication.
+     *        Enable or disable event replication. The default state is <code>ENABLED</code> which means you must supply
+     *        a <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want event replication
+     *        enabled, set the state to <code>DISABLED</code>.
      */
 
     public void setReplicationConfig(ReplicationConfig replicationConfig) {
@@ -202,10 +208,14 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Enable or disable event replication.
+     * Enable or disable event replication. The default state is <code>ENABLED</code> which means you must supply a
+     * <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want event replication enabled, set
+     * the state to <code>DISABLED</code>.
      * </p>
      * 
-     * @return Enable or disable event replication.
+     * @return Enable or disable event replication. The default state is <code>ENABLED</code> which means you must
+     *         supply a <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want event
+     *         replication enabled, set the state to <code>DISABLED</code>.
      */
 
     public ReplicationConfig getReplicationConfig() {
@@ -214,11 +224,15 @@ public class CreateEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Enable or disable event replication.
+     * Enable or disable event replication. The default state is <code>ENABLED</code> which means you must supply a
+     * <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want event replication enabled, set
+     * the state to <code>DISABLED</code>.
      * </p>
      * 
      * @param replicationConfig
-     *        Enable or disable event replication.
+     *        Enable or disable event replication. The default state is <code>ENABLED</code> which means you must supply
+     *        a <code>RoleArn</code>. If you don't have a <code>RoleArn</code> or you don't want event replication
+     *        enabled, set the state to <code>DISABLED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

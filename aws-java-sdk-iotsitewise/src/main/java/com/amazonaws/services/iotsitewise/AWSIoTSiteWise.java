@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -441,6 +441,23 @@ public interface AWSIoTSiteWise {
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/define-models.html">Defining asset models</a> in
      * the <i>IoT SiteWise User Guide</i>.
      * </p>
+     * <p>
+     * You can create two types of asset models, <code>ASSET_MODEL</code> or <code>COMPONENT_MODEL</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createAssetModelRequest
      * @return Result of the CreateAssetModel operation returned by the service.
@@ -480,16 +497,83 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
+     * Creates a custom composite model from specified property and hierarchy definitions. There are two types of custom
+     * composite models, <code>inline</code> and <code>component-model-based</code>.
+     * </p>
+     * <p>
+     * Use component-model-based custom composite models to define standard, reusable components. A
+     * component-model-based custom composite model consists of a name, a description, and the ID of the component model
+     * it references. A component-model-based custom composite model has no properties of its own; its referenced
+     * component model provides its associated properties to any created assets. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/custom-composite-models.html">Custom composite
+     * models (Components)</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * <p>
+     * Use inline custom composite models to organize the properties of an asset model. The properties of inline custom
+     * composite models are local to the asset model where they are included and can't be used to create multiple
+     * assets.
+     * </p>
+     * <p>
+     * To create a component-model-based model, specify the <code>composedAssetModelId</code> of an existing asset model
+     * with <code>assetModelType</code> of <code>COMPONENT_MODEL</code>.
+     * </p>
+     * <p>
+     * To create an inline model, specify the <code>assetModelCompositeModelProperties</code> and don't include an
+     * <code>composedAssetModelId</code>.
+     * </p>
+     * 
+     * @param createAssetModelCompositeModelRequest
+     * @return Result of the CreateAssetModelCompositeModel operation returned by the service.
+     * @throws ConflictingOperationException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time.
+     * @throws InternalFailureException
+     *         IoT SiteWise can't process your request right now. Try again later.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @throws LimitExceededException
+     *         You've reached the limit for a resource. For example, this can occur if you're trying to associate more
+     *         than the allowed number of child assets or attempting to create more than the allowed number of
+     *         properties for an asset model.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @sample AWSIoTSiteWise.CreateAssetModelCompositeModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreateAssetModelCompositeModel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateAssetModelCompositeModelResult createAssetModelCompositeModel(CreateAssetModelCompositeModelRequest createAssetModelCompositeModelRequest);
+
+    /**
+     * <p>
      * Defines a job to ingest data to IoT SiteWise from Amazon S3. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/CreateBulkImportJob.html">Create a bulk import
      * job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.
      * </p>
      * <important>
      * <p>
-     * You must enable IoT SiteWise to export data to Amazon S3 before you create a bulk import job. For more
+     * Before you create a bulk import job, you must enable IoT SiteWise warm tier or IoT SiteWise cold tier. For more
      * information about how to configure storage settings, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutStorageConfiguration.html"
      * >PutStorageConfiguration</a>.
+     * </p>
+     * <p>
+     * Bulk import is designed to store historical data to IoT SiteWise. It does not trigger computations or
+     * notifications on IoT SiteWise warm or cold tier storage.
      * </p>
      * </important>
      * 
@@ -794,6 +878,41 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
+     * Deletes a composite model. This action can't be undone. You must delete all assets created from a composite model
+     * before you can delete the model. Also, you can't delete a composite model if a parent asset model exists that
+     * contains a property formula expression that depends on the asset model that you want to delete. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting assets
+     * and models</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param deleteAssetModelCompositeModelRequest
+     * @return Result of the DeleteAssetModelCompositeModel operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @throws InternalFailureException
+     *         IoT SiteWise can't process your request right now. Try again later.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @throws ConflictingOperationException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time.
+     * @sample AWSIoTSiteWise.DeleteAssetModelCompositeModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DeleteAssetModelCompositeModel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteAssetModelCompositeModelResult deleteAssetModelCompositeModel(DeleteAssetModelCompositeModelRequest deleteAssetModelCompositeModelRequest);
+
+    /**
+     * <p>
      * Deletes a dashboard from IoT SiteWise Monitor.
      * </p>
      * 
@@ -991,6 +1110,33 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
+     * Retrieves information about an action.
+     * </p>
+     * 
+     * @param describeActionRequest
+     * @return Result of the DescribeAction operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @throws InternalFailureException
+     *         IoT SiteWise can't process your request right now. Try again later.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @sample AWSIoTSiteWise.DescribeAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeActionResult describeAction(DescribeActionRequest describeActionRequest);
+
+    /**
+     * <p>
      * Retrieves information about an asset.
      * </p>
      * 
@@ -1018,6 +1164,37 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
+     * Retrieves information about an asset composite model (also known as an asset component). An
+     * <code>AssetCompositeModel</code> is an instance of an <code>AssetModelCompositeModel</code>. If you want to see
+     * information about the model this is based on, call <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModelCompositeModel.html"
+     * >DescribeAssetModelCompositeModel</a>.
+     * </p>
+     * 
+     * @param describeAssetCompositeModelRequest
+     * @return Result of the DescribeAssetCompositeModel operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @throws InternalFailureException
+     *         IoT SiteWise can't process your request right now. Try again later.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @sample AWSIoTSiteWise.DescribeAssetCompositeModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetCompositeModel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeAssetCompositeModelResult describeAssetCompositeModel(DescribeAssetCompositeModelRequest describeAssetCompositeModelRequest);
+
+    /**
+     * <p>
      * Retrieves information about an asset model.
      * </p>
      * 
@@ -1042,6 +1219,36 @@ public interface AWSIoTSiteWise {
      *      API Documentation</a>
      */
     DescribeAssetModelResult describeAssetModel(DescribeAssetModelRequest describeAssetModelRequest);
+
+    /**
+     * <p>
+     * Retrieves information about an asset model composite model (also known as an asset model component). For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/custom-composite-models.html">Custom composite
+     * models (Components)</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param describeAssetModelCompositeModelRequest
+     * @return Result of the DescribeAssetModelCompositeModel operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @throws InternalFailureException
+     *         IoT SiteWise can't process your request right now. Try again later.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @sample AWSIoTSiteWise.DescribeAssetModelCompositeModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetModelCompositeModel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeAssetModelCompositeModelResult describeAssetModelCompositeModel(DescribeAssetModelCompositeModelRequest describeAssetModelCompositeModelRequest);
 
     /**
      * <p>
@@ -1466,6 +1673,79 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
+     * Executes an action on a target resource.
+     * </p>
+     * 
+     * @param executeActionRequest
+     * @return Result of the ExecuteAction operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @throws InternalFailureException
+     *         IoT SiteWise can't process your request right now. Try again later.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @throws LimitExceededException
+     *         You've reached the limit for a resource. For example, this can occur if you're trying to associate more
+     *         than the allowed number of child assets or attempting to create more than the allowed number of
+     *         properties for an asset model.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @throws ConflictingOperationException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time.
+     * @sample AWSIoTSiteWise.ExecuteAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ExecuteAction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ExecuteActionResult executeAction(ExecuteActionRequest executeActionRequest);
+
+    /**
+     * <p>
+     * Run SQL queries to retrieve metadata and time-series data from asset models, assets, measurements, metrics,
+     * transforms, and aggregates.
+     * </p>
+     * 
+     * @param executeQueryRequest
+     * @return Result of the ExecuteQuery operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ValidationException
+     *         The validation failed for this query.
+     * @throws QueryTimeoutException
+     *         The query timed out.
+     * @throws InternalFailureException
+     *         IoT SiteWise can't process your request right now. Try again later.
+     * @throws ServiceUnavailableException
+     *         The requested service is unavailable.
+     * @sample AWSIoTSiteWise.ExecuteQuery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ExecuteQuery" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ExecuteQueryResult executeQuery(ExecuteQueryRequest executeQueryRequest);
+
+    /**
+     * <p>
      * Gets aggregated values for an asset property. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#aggregates">Querying
      * aggregates</a> in the <i>IoT SiteWise User Guide</i>.
@@ -1693,6 +1973,60 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
+     * Retrieves a paginated list of actions for a specific target resource.
+     * </p>
+     * 
+     * @param listActionsRequest
+     * @return Result of the ListActions operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws InternalFailureException
+     *         IoT SiteWise can't process your request right now. Try again later.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @sample AWSIoTSiteWise.ListActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListActions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListActionsResult listActions(ListActionsRequest listActionsRequest);
+
+    /**
+     * <p>
+     * Retrieves a paginated list of composite models associated with the asset model
+     * </p>
+     * 
+     * @param listAssetModelCompositeModelsRequest
+     * @return Result of the ListAssetModelCompositeModels operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws InternalFailureException
+     *         IoT SiteWise can't process your request right now. Try again later.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @sample AWSIoTSiteWise.ListAssetModelCompositeModels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModelCompositeModels"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListAssetModelCompositeModelsResult listAssetModelCompositeModels(ListAssetModelCompositeModelsRequest listAssetModelCompositeModelsRequest);
+
+    /**
+     * <p>
      * Retrieves a paginated list of properties associated with an asset model. If you update properties associated with
      * the model before you finish listing all the properties, you need to start all over again.
      * </p>
@@ -1917,6 +2251,33 @@ public interface AWSIoTSiteWise {
      *      API Documentation</a>
      */
     ListBulkImportJobsResult listBulkImportJobs(ListBulkImportJobsRequest listBulkImportJobsRequest);
+
+    /**
+     * <p>
+     * Retrieves a paginated list of composition relationships for an asset model of type <code>COMPONENT_MODEL</code>.
+     * </p>
+     * 
+     * @param listCompositionRelationshipsRequest
+     * @return Result of the ListCompositionRelationships operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws InternalFailureException
+     *         IoT SiteWise can't process your request right now. Try again later.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @sample AWSIoTSiteWise.ListCompositionRelationships
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListCompositionRelationships"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListCompositionRelationshipsResult listCompositionRelationships(ListCompositionRelationshipsRequest listCompositionRelationshipsRequest);
 
     /**
      * <p>
@@ -2427,6 +2788,74 @@ public interface AWSIoTSiteWise {
      *      API Documentation</a>
      */
     UpdateAssetModelResult updateAssetModel(UpdateAssetModelRequest updateAssetModelRequest);
+
+    /**
+     * <p>
+     * Updates a composite model and all of the assets that were created from the model. Each asset created from the
+     * model inherits the updated asset model's property and hierarchy definitions. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating assets
+     * and models</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * <important>
+     * <p>
+     * If you remove a property from a composite asset model, IoT SiteWise deletes all previous data for that property.
+     * You can’t change the type or data type of an existing property.
+     * </p>
+     * <p>
+     * To replace an existing composite asset model property with a new one with the same <code>name</code>, do the
+     * following:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Submit an <code>UpdateAssetModelCompositeModel</code> request with the entire existing property removed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Submit a second <code>UpdateAssetModelCompositeModel</code> request that includes the new property. The new asset
+     * property will have the same <code>name</code> as the previous one and IoT SiteWise will generate a new unique
+     * <code>id</code>.
+     * </p>
+     * </li>
+     * </ol>
+     * </important>
+     * 
+     * @param updateAssetModelCompositeModelRequest
+     * @return Result of the UpdateAssetModelCompositeModel operation returned by the service.
+     * @throws ConflictingOperationException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time.
+     * @throws InternalFailureException
+     *         IoT SiteWise can't process your request right now. Try again later.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @throws LimitExceededException
+     *         You've reached the limit for a resource. For example, this can occur if you're trying to associate more
+     *         than the allowed number of child assets or attempting to create more than the allowed number of
+     *         properties for an asset model.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @sample AWSIoTSiteWise.UpdateAssetModelCompositeModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/UpdateAssetModelCompositeModel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateAssetModelCompositeModelResult updateAssetModelCompositeModel(UpdateAssetModelCompositeModelRequest updateAssetModelCompositeModelRequest);
 
     /**
      * <p>

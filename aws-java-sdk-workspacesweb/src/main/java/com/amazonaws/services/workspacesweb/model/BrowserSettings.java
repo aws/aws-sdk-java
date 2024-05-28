@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,12 @@ public class BrowserSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * The additional encryption context of the browser settings.
+     * </p>
+     */
+    private java.util.Map<String, String> additionalEncryptionContext;
+    /**
+     * <p>
      * A list of web portal ARNs that this browser settings is associated with.
      * </p>
      */
@@ -47,6 +53,80 @@ public class BrowserSettings implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String browserSettingsArn;
+    /**
+     * <p>
+     * The customer managed key used to encrypt sensitive information in the browser settings.
+     * </p>
+     */
+    private String customerManagedKey;
+
+    /**
+     * <p>
+     * The additional encryption context of the browser settings.
+     * </p>
+     * 
+     * @return The additional encryption context of the browser settings.
+     */
+
+    public java.util.Map<String, String> getAdditionalEncryptionContext() {
+        return additionalEncryptionContext;
+    }
+
+    /**
+     * <p>
+     * The additional encryption context of the browser settings.
+     * </p>
+     * 
+     * @param additionalEncryptionContext
+     *        The additional encryption context of the browser settings.
+     */
+
+    public void setAdditionalEncryptionContext(java.util.Map<String, String> additionalEncryptionContext) {
+        this.additionalEncryptionContext = additionalEncryptionContext;
+    }
+
+    /**
+     * <p>
+     * The additional encryption context of the browser settings.
+     * </p>
+     * 
+     * @param additionalEncryptionContext
+     *        The additional encryption context of the browser settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BrowserSettings withAdditionalEncryptionContext(java.util.Map<String, String> additionalEncryptionContext) {
+        setAdditionalEncryptionContext(additionalEncryptionContext);
+        return this;
+    }
+
+    /**
+     * Add a single AdditionalEncryptionContext entry
+     *
+     * @see BrowserSettings#withAdditionalEncryptionContext
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BrowserSettings addAdditionalEncryptionContextEntry(String key, String value) {
+        if (null == this.additionalEncryptionContext) {
+            this.additionalEncryptionContext = new java.util.HashMap<String, String>();
+        }
+        if (this.additionalEncryptionContext.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.additionalEncryptionContext.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into AdditionalEncryptionContext.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BrowserSettings clearAdditionalEncryptionContextEntries() {
+        this.additionalEncryptionContext = null;
+        return this;
+    }
 
     /**
      * <p>
@@ -199,6 +279,46 @@ public class BrowserSettings implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The customer managed key used to encrypt sensitive information in the browser settings.
+     * </p>
+     * 
+     * @param customerManagedKey
+     *        The customer managed key used to encrypt sensitive information in the browser settings.
+     */
+
+    public void setCustomerManagedKey(String customerManagedKey) {
+        this.customerManagedKey = customerManagedKey;
+    }
+
+    /**
+     * <p>
+     * The customer managed key used to encrypt sensitive information in the browser settings.
+     * </p>
+     * 
+     * @return The customer managed key used to encrypt sensitive information in the browser settings.
+     */
+
+    public String getCustomerManagedKey() {
+        return this.customerManagedKey;
+    }
+
+    /**
+     * <p>
+     * The customer managed key used to encrypt sensitive information in the browser settings.
+     * </p>
+     * 
+     * @param customerManagedKey
+     *        The customer managed key used to encrypt sensitive information in the browser settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BrowserSettings withCustomerManagedKey(String customerManagedKey) {
+        setCustomerManagedKey(customerManagedKey);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -210,12 +330,16 @@ public class BrowserSettings implements Serializable, Cloneable, StructuredPojo 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAdditionalEncryptionContext() != null)
+            sb.append("AdditionalEncryptionContext: ").append(getAdditionalEncryptionContext()).append(",");
         if (getAssociatedPortalArns() != null)
             sb.append("AssociatedPortalArns: ").append(getAssociatedPortalArns()).append(",");
         if (getBrowserPolicy() != null)
             sb.append("BrowserPolicy: ").append("***Sensitive Data Redacted***").append(",");
         if (getBrowserSettingsArn() != null)
-            sb.append("BrowserSettingsArn: ").append(getBrowserSettingsArn());
+            sb.append("BrowserSettingsArn: ").append(getBrowserSettingsArn()).append(",");
+        if (getCustomerManagedKey() != null)
+            sb.append("CustomerManagedKey: ").append(getCustomerManagedKey());
         sb.append("}");
         return sb.toString();
     }
@@ -230,6 +354,10 @@ public class BrowserSettings implements Serializable, Cloneable, StructuredPojo 
         if (obj instanceof BrowserSettings == false)
             return false;
         BrowserSettings other = (BrowserSettings) obj;
+        if (other.getAdditionalEncryptionContext() == null ^ this.getAdditionalEncryptionContext() == null)
+            return false;
+        if (other.getAdditionalEncryptionContext() != null && other.getAdditionalEncryptionContext().equals(this.getAdditionalEncryptionContext()) == false)
+            return false;
         if (other.getAssociatedPortalArns() == null ^ this.getAssociatedPortalArns() == null)
             return false;
         if (other.getAssociatedPortalArns() != null && other.getAssociatedPortalArns().equals(this.getAssociatedPortalArns()) == false)
@@ -242,6 +370,10 @@ public class BrowserSettings implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getBrowserSettingsArn() != null && other.getBrowserSettingsArn().equals(this.getBrowserSettingsArn()) == false)
             return false;
+        if (other.getCustomerManagedKey() == null ^ this.getCustomerManagedKey() == null)
+            return false;
+        if (other.getCustomerManagedKey() != null && other.getCustomerManagedKey().equals(this.getCustomerManagedKey()) == false)
+            return false;
         return true;
     }
 
@@ -250,9 +382,11 @@ public class BrowserSettings implements Serializable, Cloneable, StructuredPojo 
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAdditionalEncryptionContext() == null) ? 0 : getAdditionalEncryptionContext().hashCode());
         hashCode = prime * hashCode + ((getAssociatedPortalArns() == null) ? 0 : getAssociatedPortalArns().hashCode());
         hashCode = prime * hashCode + ((getBrowserPolicy() == null) ? 0 : getBrowserPolicy().hashCode());
         hashCode = prime * hashCode + ((getBrowserSettingsArn() == null) ? 0 : getBrowserSettingsArn().hashCode());
+        hashCode = prime * hashCode + ((getCustomerManagedKey() == null) ? 0 : getCustomerManagedKey().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the configuration of the Microsoft Active Directory (AD) directory to which the Amazon FSx for ONTAP
- * storage virtual machine (SVM) is joined. Pleae note, account credentials are not returned in the response payload.
+ * Describes the Microsoft Active Directory (AD) directory configuration to which the FSx for ONTAP storage virtual
+ * machine (SVM) is joined. Note that account credentials are not returned in the response payload.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/SvmActiveDirectoryConfiguration"
@@ -31,7 +31,7 @@ public class SvmActiveDirectoryConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The NetBIOS name of the Active Directory computer object that is joined to your SVM.
+     * The NetBIOS name of the AD computer object to which the SVM is joined.
      * </p>
      */
     private String netBiosName;
@@ -40,11 +40,11 @@ public class SvmActiveDirectoryConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The NetBIOS name of the Active Directory computer object that is joined to your SVM.
+     * The NetBIOS name of the AD computer object to which the SVM is joined.
      * </p>
      * 
      * @param netBiosName
-     *        The NetBIOS name of the Active Directory computer object that is joined to your SVM.
+     *        The NetBIOS name of the AD computer object to which the SVM is joined.
      */
 
     public void setNetBiosName(String netBiosName) {
@@ -53,10 +53,10 @@ public class SvmActiveDirectoryConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The NetBIOS name of the Active Directory computer object that is joined to your SVM.
+     * The NetBIOS name of the AD computer object to which the SVM is joined.
      * </p>
      * 
-     * @return The NetBIOS name of the Active Directory computer object that is joined to your SVM.
+     * @return The NetBIOS name of the AD computer object to which the SVM is joined.
      */
 
     public String getNetBiosName() {
@@ -65,11 +65,11 @@ public class SvmActiveDirectoryConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The NetBIOS name of the Active Directory computer object that is joined to your SVM.
+     * The NetBIOS name of the AD computer object to which the SVM is joined.
      * </p>
      * 
      * @param netBiosName
-     *        The NetBIOS name of the Active Directory computer object that is joined to your SVM.
+     *        The NetBIOS name of the AD computer object to which the SVM is joined.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

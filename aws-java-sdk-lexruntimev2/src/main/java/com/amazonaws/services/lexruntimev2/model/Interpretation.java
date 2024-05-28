@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An intent that Amazon Lex V2 determined might satisfy the user's utterance. The intents are ordered by the confidence
- * score.
+ * An object containing information about an intent that Amazon Lex V2 determined might satisfy the user's utterance.
+ * The intents are ordered by the confidence score.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex.v2-2020-08-07/Interpretation" target="_top">AWS API
@@ -54,6 +54,12 @@ public class Interpretation implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Intent intent;
+    /**
+     * <p>
+     * Specifies the service that interpreted the input.
+     * </p>
+     */
+    private String interpretationSource;
 
     /**
      * <p>
@@ -218,6 +224,65 @@ public class Interpretation implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies the service that interpreted the input.
+     * </p>
+     * 
+     * @param interpretationSource
+     *        Specifies the service that interpreted the input.
+     * @see InterpretationSource
+     */
+
+    public void setInterpretationSource(String interpretationSource) {
+        this.interpretationSource = interpretationSource;
+    }
+
+    /**
+     * <p>
+     * Specifies the service that interpreted the input.
+     * </p>
+     * 
+     * @return Specifies the service that interpreted the input.
+     * @see InterpretationSource
+     */
+
+    public String getInterpretationSource() {
+        return this.interpretationSource;
+    }
+
+    /**
+     * <p>
+     * Specifies the service that interpreted the input.
+     * </p>
+     * 
+     * @param interpretationSource
+     *        Specifies the service that interpreted the input.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InterpretationSource
+     */
+
+    public Interpretation withInterpretationSource(String interpretationSource) {
+        setInterpretationSource(interpretationSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the service that interpreted the input.
+     * </p>
+     * 
+     * @param interpretationSource
+     *        Specifies the service that interpreted the input.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InterpretationSource
+     */
+
+    public Interpretation withInterpretationSource(InterpretationSource interpretationSource) {
+        this.interpretationSource = interpretationSource.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -234,7 +299,9 @@ public class Interpretation implements Serializable, Cloneable, StructuredPojo {
         if (getSentimentResponse() != null)
             sb.append("SentimentResponse: ").append(getSentimentResponse()).append(",");
         if (getIntent() != null)
-            sb.append("Intent: ").append(getIntent());
+            sb.append("Intent: ").append(getIntent()).append(",");
+        if (getInterpretationSource() != null)
+            sb.append("InterpretationSource: ").append(getInterpretationSource());
         sb.append("}");
         return sb.toString();
     }
@@ -261,6 +328,10 @@ public class Interpretation implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getIntent() != null && other.getIntent().equals(this.getIntent()) == false)
             return false;
+        if (other.getInterpretationSource() == null ^ this.getInterpretationSource() == null)
+            return false;
+        if (other.getInterpretationSource() != null && other.getInterpretationSource().equals(this.getInterpretationSource()) == false)
+            return false;
         return true;
     }
 
@@ -272,6 +343,7 @@ public class Interpretation implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getNluConfidence() == null) ? 0 : getNluConfidence().hashCode());
         hashCode = prime * hashCode + ((getSentimentResponse() == null) ? 0 : getSentimentResponse().hashCode());
         hashCode = prime * hashCode + ((getIntent() == null) ? 0 : getIntent().hashCode());
+        hashCode = prime * hashCode + ((getInterpretationSource() == null) ? 0 : getInterpretationSource().hashCode());
         return hashCode;
     }
 

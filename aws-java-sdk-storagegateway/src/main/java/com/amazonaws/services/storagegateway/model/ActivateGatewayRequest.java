@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -88,10 +88,10 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
     private String gatewayName;
     /**
      * <p>
-     * A value that indicates the time zone you want to set for the gateway. The time zone is of the format "GMT-hr:mm"
-     * or "GMT+hr:mm". For example, GMT-4:00 indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2
-     * hours ahead of GMT. The time zone is used, for example, for scheduling snapshots and your gateway's maintenance
-     * schedule.
+     * A value that indicates the time zone you want to set for the gateway. The time zone is of the format "GMT",
+     * "GMT-hr:mm", or "GMT+hr:mm". For example, GMT indicates Greenwich Mean Time without any offset. GMT-4:00
+     * indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours ahead of GMT. The time zone is
+     * used, for example, for scheduling snapshots and your gateway's maintenance schedule.
      * </p>
      */
     private String gatewayTimezone;
@@ -115,8 +115,8 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * the gateway and cannot be changed after activation. The default value is <code>CACHED</code>.
      * </p>
      * <p>
-     * Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>VTL_SNOW</code> |
-     * <code>FILE_S3</code> | <code>FILE_FSX_SMB</code>
+     * Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code> |
+     * <code>FILE_FSX_SMB</code>
      * </p>
      */
     private String gatewayType;
@@ -285,17 +285,17 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates the time zone you want to set for the gateway. The time zone is of the format "GMT-hr:mm"
-     * or "GMT+hr:mm". For example, GMT-4:00 indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2
-     * hours ahead of GMT. The time zone is used, for example, for scheduling snapshots and your gateway's maintenance
-     * schedule.
+     * A value that indicates the time zone you want to set for the gateway. The time zone is of the format "GMT",
+     * "GMT-hr:mm", or "GMT+hr:mm". For example, GMT indicates Greenwich Mean Time without any offset. GMT-4:00
+     * indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours ahead of GMT. The time zone is
+     * used, for example, for scheduling snapshots and your gateway's maintenance schedule.
      * </p>
      * 
      * @param gatewayTimezone
      *        A value that indicates the time zone you want to set for the gateway. The time zone is of the format
-     *        "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00 indicates the time is 4 hours behind GMT. GMT+2:00
-     *        indicates the time is 2 hours ahead of GMT. The time zone is used, for example, for scheduling snapshots
-     *        and your gateway's maintenance schedule.
+     *        "GMT", "GMT-hr:mm", or "GMT+hr:mm". For example, GMT indicates Greenwich Mean Time without any offset.
+     *        GMT-4:00 indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours ahead of GMT.
+     *        The time zone is used, for example, for scheduling snapshots and your gateway's maintenance schedule.
      */
 
     public void setGatewayTimezone(String gatewayTimezone) {
@@ -304,16 +304,16 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates the time zone you want to set for the gateway. The time zone is of the format "GMT-hr:mm"
-     * or "GMT+hr:mm". For example, GMT-4:00 indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2
-     * hours ahead of GMT. The time zone is used, for example, for scheduling snapshots and your gateway's maintenance
-     * schedule.
+     * A value that indicates the time zone you want to set for the gateway. The time zone is of the format "GMT",
+     * "GMT-hr:mm", or "GMT+hr:mm". For example, GMT indicates Greenwich Mean Time without any offset. GMT-4:00
+     * indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours ahead of GMT. The time zone is
+     * used, for example, for scheduling snapshots and your gateway's maintenance schedule.
      * </p>
      * 
      * @return A value that indicates the time zone you want to set for the gateway. The time zone is of the format
-     *         "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00 indicates the time is 4 hours behind GMT. GMT+2:00
-     *         indicates the time is 2 hours ahead of GMT. The time zone is used, for example, for scheduling snapshots
-     *         and your gateway's maintenance schedule.
+     *         "GMT", "GMT-hr:mm", or "GMT+hr:mm". For example, GMT indicates Greenwich Mean Time without any offset.
+     *         GMT-4:00 indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours ahead of GMT.
+     *         The time zone is used, for example, for scheduling snapshots and your gateway's maintenance schedule.
      */
 
     public String getGatewayTimezone() {
@@ -322,17 +322,17 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates the time zone you want to set for the gateway. The time zone is of the format "GMT-hr:mm"
-     * or "GMT+hr:mm". For example, GMT-4:00 indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2
-     * hours ahead of GMT. The time zone is used, for example, for scheduling snapshots and your gateway's maintenance
-     * schedule.
+     * A value that indicates the time zone you want to set for the gateway. The time zone is of the format "GMT",
+     * "GMT-hr:mm", or "GMT+hr:mm". For example, GMT indicates Greenwich Mean Time without any offset. GMT-4:00
+     * indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours ahead of GMT. The time zone is
+     * used, for example, for scheduling snapshots and your gateway's maintenance schedule.
      * </p>
      * 
      * @param gatewayTimezone
      *        A value that indicates the time zone you want to set for the gateway. The time zone is of the format
-     *        "GMT-hr:mm" or "GMT+hr:mm". For example, GMT-4:00 indicates the time is 4 hours behind GMT. GMT+2:00
-     *        indicates the time is 2 hours ahead of GMT. The time zone is used, for example, for scheduling snapshots
-     *        and your gateway's maintenance schedule.
+     *        "GMT", "GMT-hr:mm", or "GMT+hr:mm". For example, GMT indicates Greenwich Mean Time without any offset.
+     *        GMT-4:00 indicates the time is 4 hours behind GMT. GMT+2:00 indicates the time is 2 hours ahead of GMT.
+     *        The time zone is used, for example, for scheduling snapshots and your gateway's maintenance schedule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -435,8 +435,8 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * the gateway and cannot be changed after activation. The default value is <code>CACHED</code>.
      * </p>
      * <p>
-     * Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>VTL_SNOW</code> |
-     * <code>FILE_S3</code> | <code>FILE_FSX_SMB</code>
+     * Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code> |
+     * <code>FILE_FSX_SMB</code>
      * </p>
      * 
      * @param gatewayType
@@ -444,8 +444,8 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      *        functions of the gateway and cannot be changed after activation. The default value is <code>CACHED</code>
      *        .</p>
      *        <p>
-     *        Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>VTL_SNOW</code> |
-     *        <code>FILE_S3</code> | <code>FILE_FSX_SMB</code>
+     *        Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code> |
+     *        <code>FILE_FSX_SMB</code>
      */
 
     public void setGatewayType(String gatewayType) {
@@ -458,16 +458,16 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * the gateway and cannot be changed after activation. The default value is <code>CACHED</code>.
      * </p>
      * <p>
-     * Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>VTL_SNOW</code> |
-     * <code>FILE_S3</code> | <code>FILE_FSX_SMB</code>
+     * Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code> |
+     * <code>FILE_FSX_SMB</code>
      * </p>
      * 
      * @return A value that defines the type of gateway to activate. The type specified is critical to all later
      *         functions of the gateway and cannot be changed after activation. The default value is <code>CACHED</code>
      *         .</p>
      *         <p>
-     *         Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>VTL_SNOW</code> |
-     *         <code>FILE_S3</code> | <code>FILE_FSX_SMB</code>
+     *         Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code> |
+     *         <code>FILE_FSX_SMB</code>
      */
 
     public String getGatewayType() {
@@ -480,8 +480,8 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * the gateway and cannot be changed after activation. The default value is <code>CACHED</code>.
      * </p>
      * <p>
-     * Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>VTL_SNOW</code> |
-     * <code>FILE_S3</code> | <code>FILE_FSX_SMB</code>
+     * Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code> |
+     * <code>FILE_FSX_SMB</code>
      * </p>
      * 
      * @param gatewayType
@@ -489,8 +489,8 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      *        functions of the gateway and cannot be changed after activation. The default value is <code>CACHED</code>
      *        .</p>
      *        <p>
-     *        Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>VTL_SNOW</code> |
-     *        <code>FILE_S3</code> | <code>FILE_FSX_SMB</code>
+     *        Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code> |
+     *        <code>FILE_FSX_SMB</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,26 +25,26 @@ public class ListEnabledControlsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it
-     * contains.
+     * Lists the controls enabled by Amazon Web Services Control Tower on the specified organizational unit and the
+     * accounts it contains.
      * </p>
      */
     private java.util.List<EnabledControlSummary> enabledControls;
     /**
      * <p>
-     * Retrieves the next page of results. If the string is empty, the current response is the end of the results.
+     * Retrieves the next page of results. If the string is empty, the response is the end of the results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it
-     * contains.
+     * Lists the controls enabled by Amazon Web Services Control Tower on the specified organizational unit and the
+     * accounts it contains.
      * </p>
      * 
-     * @return Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it
-     *         contains.
+     * @return Lists the controls enabled by Amazon Web Services Control Tower on the specified organizational unit and
+     *         the accounts it contains.
      */
 
     public java.util.List<EnabledControlSummary> getEnabledControls() {
@@ -53,13 +53,13 @@ public class ListEnabledControlsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it
-     * contains.
+     * Lists the controls enabled by Amazon Web Services Control Tower on the specified organizational unit and the
+     * accounts it contains.
      * </p>
      * 
      * @param enabledControls
-     *        Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it
-     *        contains.
+     *        Lists the controls enabled by Amazon Web Services Control Tower on the specified organizational unit and
+     *        the accounts it contains.
      */
 
     public void setEnabledControls(java.util.Collection<EnabledControlSummary> enabledControls) {
@@ -73,8 +73,8 @@ public class ListEnabledControlsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it
-     * contains.
+     * Lists the controls enabled by Amazon Web Services Control Tower on the specified organizational unit and the
+     * accounts it contains.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -83,8 +83,8 @@ public class ListEnabledControlsResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param enabledControls
-     *        Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it
-     *        contains.
+     *        Lists the controls enabled by Amazon Web Services Control Tower on the specified organizational unit and
+     *        the accounts it contains.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,13 +100,13 @@ public class ListEnabledControlsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it
-     * contains.
+     * Lists the controls enabled by Amazon Web Services Control Tower on the specified organizational unit and the
+     * accounts it contains.
      * </p>
      * 
      * @param enabledControls
-     *        Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it
-     *        contains.
+     *        Lists the controls enabled by Amazon Web Services Control Tower on the specified organizational unit and
+     *        the accounts it contains.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,12 +117,11 @@ public class ListEnabledControlsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Retrieves the next page of results. If the string is empty, the current response is the end of the results.
+     * Retrieves the next page of results. If the string is empty, the response is the end of the results.
      * </p>
      * 
      * @param nextToken
-     *        Retrieves the next page of results. If the string is empty, the current response is the end of the
-     *        results.
+     *        Retrieves the next page of results. If the string is empty, the response is the end of the results.
      */
 
     public void setNextToken(String nextToken) {
@@ -131,11 +130,10 @@ public class ListEnabledControlsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Retrieves the next page of results. If the string is empty, the current response is the end of the results.
+     * Retrieves the next page of results. If the string is empty, the response is the end of the results.
      * </p>
      * 
-     * @return Retrieves the next page of results. If the string is empty, the current response is the end of the
-     *         results.
+     * @return Retrieves the next page of results. If the string is empty, the response is the end of the results.
      */
 
     public String getNextToken() {
@@ -144,12 +142,11 @@ public class ListEnabledControlsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Retrieves the next page of results. If the string is empty, the current response is the end of the results.
+     * Retrieves the next page of results. If the string is empty, the response is the end of the results.
      * </p>
      * 
      * @param nextToken
-     *        Retrieves the next page of results. If the string is empty, the current response is the end of the
-     *        results.
+     *        Retrieves the next page of results. If the string is empty, the response is the end of the results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

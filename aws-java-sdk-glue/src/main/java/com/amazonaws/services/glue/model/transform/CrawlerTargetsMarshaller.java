@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,10 @@ public class CrawlerTargetsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CatalogTargets").build();
     private static final MarshallingInfo<List> DELTATARGETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("DeltaTargets").build();
+    private static final MarshallingInfo<List> ICEBERGTARGETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IcebergTargets").build();
+    private static final MarshallingInfo<List> HUDITARGETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("HudiTargets").build();
 
     private static final CrawlerTargetsMarshaller instance = new CrawlerTargetsMarshaller();
 
@@ -63,6 +67,8 @@ public class CrawlerTargetsMarshaller {
             protocolMarshaller.marshall(crawlerTargets.getDynamoDBTargets(), DYNAMODBTARGETS_BINDING);
             protocolMarshaller.marshall(crawlerTargets.getCatalogTargets(), CATALOGTARGETS_BINDING);
             protocolMarshaller.marshall(crawlerTargets.getDeltaTargets(), DELTATARGETS_BINDING);
+            protocolMarshaller.marshall(crawlerTargets.getIcebergTargets(), ICEBERGTARGETS_BINDING);
+            protocolMarshaller.marshall(crawlerTargets.getHudiTargets(), HUDITARGETS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

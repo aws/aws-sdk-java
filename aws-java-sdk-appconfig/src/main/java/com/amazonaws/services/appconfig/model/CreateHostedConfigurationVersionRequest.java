@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,13 @@ public class CreateHostedConfigurationVersionRequest extends com.amazonaws.Amazo
      * </p>
      */
     private Integer latestVersionNumber;
+    /**
+     * <p>
+     * An optional, user-defined label for the AppConfig hosted configuration version. This value must contain at least
+     * one non-numeric character. For example, "v2.2.0".
+     * </p>
+     */
+    private String versionLabel;
 
     /**
      * <p>
@@ -352,6 +359,52 @@ public class CreateHostedConfigurationVersionRequest extends com.amazonaws.Amazo
     }
 
     /**
+     * <p>
+     * An optional, user-defined label for the AppConfig hosted configuration version. This value must contain at least
+     * one non-numeric character. For example, "v2.2.0".
+     * </p>
+     * 
+     * @param versionLabel
+     *        An optional, user-defined label for the AppConfig hosted configuration version. This value must contain at
+     *        least one non-numeric character. For example, "v2.2.0".
+     */
+
+    public void setVersionLabel(String versionLabel) {
+        this.versionLabel = versionLabel;
+    }
+
+    /**
+     * <p>
+     * An optional, user-defined label for the AppConfig hosted configuration version. This value must contain at least
+     * one non-numeric character. For example, "v2.2.0".
+     * </p>
+     * 
+     * @return An optional, user-defined label for the AppConfig hosted configuration version. This value must contain
+     *         at least one non-numeric character. For example, "v2.2.0".
+     */
+
+    public String getVersionLabel() {
+        return this.versionLabel;
+    }
+
+    /**
+     * <p>
+     * An optional, user-defined label for the AppConfig hosted configuration version. This value must contain at least
+     * one non-numeric character. For example, "v2.2.0".
+     * </p>
+     * 
+     * @param versionLabel
+     *        An optional, user-defined label for the AppConfig hosted configuration version. This value must contain at
+     *        least one non-numeric character. For example, "v2.2.0".
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateHostedConfigurationVersionRequest withVersionLabel(String versionLabel) {
+        setVersionLabel(versionLabel);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -374,7 +427,9 @@ public class CreateHostedConfigurationVersionRequest extends com.amazonaws.Amazo
         if (getContentType() != null)
             sb.append("ContentType: ").append(getContentType()).append(",");
         if (getLatestVersionNumber() != null)
-            sb.append("LatestVersionNumber: ").append(getLatestVersionNumber());
+            sb.append("LatestVersionNumber: ").append(getLatestVersionNumber()).append(",");
+        if (getVersionLabel() != null)
+            sb.append("VersionLabel: ").append(getVersionLabel());
         sb.append("}");
         return sb.toString();
     }
@@ -413,6 +468,10 @@ public class CreateHostedConfigurationVersionRequest extends com.amazonaws.Amazo
             return false;
         if (other.getLatestVersionNumber() != null && other.getLatestVersionNumber().equals(this.getLatestVersionNumber()) == false)
             return false;
+        if (other.getVersionLabel() == null ^ this.getVersionLabel() == null)
+            return false;
+        if (other.getVersionLabel() != null && other.getVersionLabel().equals(this.getVersionLabel()) == false)
+            return false;
         return true;
     }
 
@@ -427,6 +486,7 @@ public class CreateHostedConfigurationVersionRequest extends com.amazonaws.Amazo
         hashCode = prime * hashCode + ((getContent() == null) ? 0 : getContent().hashCode());
         hashCode = prime * hashCode + ((getContentType() == null) ? 0 : getContentType().hashCode());
         hashCode = prime * hashCode + ((getLatestVersionNumber() == null) ? 0 : getLatestVersionNumber().hashCode());
+        hashCode = prime * hashCode + ((getVersionLabel() == null) ? 0 : getVersionLabel().hashCode());
         return hashCode;
     }
 

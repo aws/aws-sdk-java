@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.lakeformation.AWSLakeFormationClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.lakeformation.model.*;
+
 import com.amazonaws.services.lakeformation.model.transform.*;
 
 /**
@@ -188,7 +189,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @param addLFTagsToResourceRequest
      * @return Result of the AddLFTagsToResource operation returned by the service.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws InternalServiceException
@@ -271,7 +272,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws OperationTimeoutException
      *         The operation timed out.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws AccessDeniedException
      *         Access to a resource was denied.
      * @sample AWSLakeFormation.AssumeDecoratedRoleWithSAML
@@ -454,7 +455,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InternalServiceException
      *         An internal service error occurred.
      * @throws OperationTimeoutException
@@ -525,7 +526,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InternalServiceException
      *         An internal service error occurred.
      * @throws OperationTimeoutException
@@ -594,7 +595,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws ResourceNumberLimitExceededException
      *         A resource numerical limit was exceeded.
      * @throws InternalServiceException
@@ -660,7 +661,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @param createLFTagRequest
      * @return Result of the CreateLFTag operation returned by the service.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws ResourceNumberLimitExceededException
@@ -721,6 +722,148 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Creates an IAM Identity Center connection with Lake Formation to allow IAM Identity Center users and groups to
+     * access Data Catalog resources.
+     * </p>
+     * 
+     * @param createLakeFormationIdentityCenterConfigurationRequest
+     * @return Result of the CreateLakeFormationIdentityCenterConfiguration operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws AlreadyExistsException
+     *         A resource to be created or added already exists.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @throws ConcurrentModificationException
+     *         Two processes are trying to modify a resource simultaneously.
+     * @sample AWSLakeFormation.CreateLakeFormationIdentityCenterConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLakeFormationIdentityCenterConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateLakeFormationIdentityCenterConfigurationResult createLakeFormationIdentityCenterConfiguration(
+            CreateLakeFormationIdentityCenterConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateLakeFormationIdentityCenterConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final CreateLakeFormationIdentityCenterConfigurationResult executeCreateLakeFormationIdentityCenterConfiguration(
+            CreateLakeFormationIdentityCenterConfigurationRequest createLakeFormationIdentityCenterConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createLakeFormationIdentityCenterConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateLakeFormationIdentityCenterConfigurationRequest> request = null;
+        Response<CreateLakeFormationIdentityCenterConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateLakeFormationIdentityCenterConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createLakeFormationIdentityCenterConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLakeFormationIdentityCenterConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateLakeFormationIdentityCenterConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new CreateLakeFormationIdentityCenterConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Enforce Lake Formation permissions for the given databases, tables, and principals.
+     * </p>
+     * 
+     * @param createLakeFormationOptInRequest
+     * @return Result of the CreateLakeFormationOptIn operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @throws ConcurrentModificationException
+     *         Two processes are trying to modify a resource simultaneously.
+     * @sample AWSLakeFormation.CreateLakeFormationOptIn
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLakeFormationOptIn"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateLakeFormationOptInResult createLakeFormationOptIn(CreateLakeFormationOptInRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateLakeFormationOptIn(request);
+    }
+
+    @SdkInternalApi
+    final CreateLakeFormationOptInResult executeCreateLakeFormationOptIn(CreateLakeFormationOptInRequest createLakeFormationOptInRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createLakeFormationOptInRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateLakeFormationOptInRequest> request = null;
+        Response<CreateLakeFormationOptInResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateLakeFormationOptInRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createLakeFormationOptInRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLakeFormationOptIn");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateLakeFormationOptInResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateLakeFormationOptInResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a data cell filter.
      * </p>
      * 
@@ -729,7 +872,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InternalServiceException
      *         An internal service error occurred.
      * @throws OperationTimeoutException
@@ -796,7 +939,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @param deleteLFTagRequest
      * @return Result of the DeleteLFTag operation returned by the service.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws InternalServiceException
@@ -855,6 +998,147 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Deletes an IAM Identity Center connection with Lake Formation.
+     * </p>
+     * 
+     * @param deleteLakeFormationIdentityCenterConfigurationRequest
+     * @return Result of the DeleteLakeFormationIdentityCenterConfiguration operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @throws ConcurrentModificationException
+     *         Two processes are trying to modify a resource simultaneously.
+     * @sample AWSLakeFormation.DeleteLakeFormationIdentityCenterConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLakeFormationIdentityCenterConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteLakeFormationIdentityCenterConfigurationResult deleteLakeFormationIdentityCenterConfiguration(
+            DeleteLakeFormationIdentityCenterConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteLakeFormationIdentityCenterConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteLakeFormationIdentityCenterConfigurationResult executeDeleteLakeFormationIdentityCenterConfiguration(
+            DeleteLakeFormationIdentityCenterConfigurationRequest deleteLakeFormationIdentityCenterConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteLakeFormationIdentityCenterConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteLakeFormationIdentityCenterConfigurationRequest> request = null;
+        Response<DeleteLakeFormationIdentityCenterConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteLakeFormationIdentityCenterConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteLakeFormationIdentityCenterConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLakeFormationIdentityCenterConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteLakeFormationIdentityCenterConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteLakeFormationIdentityCenterConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Remove the Lake Formation permissions enforcement of the given databases, tables, and principals.
+     * </p>
+     * 
+     * @param deleteLakeFormationOptInRequest
+     * @return Result of the DeleteLakeFormationOptIn operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @throws ConcurrentModificationException
+     *         Two processes are trying to modify a resource simultaneously.
+     * @sample AWSLakeFormation.DeleteLakeFormationOptIn
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLakeFormationOptIn"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteLakeFormationOptInResult deleteLakeFormationOptIn(DeleteLakeFormationOptInRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteLakeFormationOptIn(request);
+    }
+
+    @SdkInternalApi
+    final DeleteLakeFormationOptInResult executeDeleteLakeFormationOptIn(DeleteLakeFormationOptInRequest deleteLakeFormationOptInRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteLakeFormationOptInRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteLakeFormationOptInRequest> request = null;
+        Response<DeleteLakeFormationOptInResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteLakeFormationOptInRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteLakeFormationOptInRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLakeFormationOptIn");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteLakeFormationOptInResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteLakeFormationOptInResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * For a specific governed table, provides a list of Amazon S3 objects that will be written during the current
      * transaction and that can be automatically deleted if the transaction is canceled. Without this call, no Amazon S3
      * objects are automatically deleted when a transaction cancels.
@@ -875,7 +1159,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws OperationTimeoutException
      *         The operation timed out.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws TransactionCommittedException
      *         Contains details about an error where the specified transaction has already been committed and cannot be
      *         used for <code>UpdateTableObjects</code>.
@@ -952,7 +1236,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws OperationTimeoutException
      *         The operation timed out.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @sample AWSLakeFormation.DeregisterResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeregisterResource"
      *      target="_top">AWS API Documentation</a>
@@ -1003,6 +1287,76 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Retrieves the instance ARN and application ARN for the connection.
+     * </p>
+     * 
+     * @param describeLakeFormationIdentityCenterConfigurationRequest
+     * @return Result of the DescribeLakeFormationIdentityCenterConfiguration operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @sample AWSLakeFormation.DescribeLakeFormationIdentityCenterConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DescribeLakeFormationIdentityCenterConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeLakeFormationIdentityCenterConfigurationResult describeLakeFormationIdentityCenterConfiguration(
+            DescribeLakeFormationIdentityCenterConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeLakeFormationIdentityCenterConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DescribeLakeFormationIdentityCenterConfigurationResult executeDescribeLakeFormationIdentityCenterConfiguration(
+            DescribeLakeFormationIdentityCenterConfigurationRequest describeLakeFormationIdentityCenterConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeLakeFormationIdentityCenterConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeLakeFormationIdentityCenterConfigurationRequest> request = null;
+        Response<DescribeLakeFormationIdentityCenterConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeLakeFormationIdentityCenterConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeLakeFormationIdentityCenterConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLakeFormationIdentityCenterConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeLakeFormationIdentityCenterConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeLakeFormationIdentityCenterConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves the current data access role for the given resource registered in Lake Formation.
      * </p>
      * 
@@ -1015,7 +1369,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws OperationTimeoutException
      *         The operation timed out.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @sample AWSLakeFormation.DescribeResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DescribeResource" target="_top">AWS
      *      API Documentation</a>
@@ -1072,7 +1426,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @param describeTransactionRequest
      * @return Result of the DescribeTransaction operation returned by the service.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws InternalServiceException
@@ -1141,7 +1495,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InternalServiceException
      *         An internal service error occurred.
      * @throws OperationTimeoutException
@@ -1203,6 +1557,132 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Returns a data cells filter.
+     * </p>
+     * 
+     * @param getDataCellsFilterRequest
+     * @return Result of the GetDataCellsFilter operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @sample AWSLakeFormation.GetDataCellsFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataCellsFilter"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetDataCellsFilterResult getDataCellsFilter(GetDataCellsFilterRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDataCellsFilter(request);
+    }
+
+    @SdkInternalApi
+    final GetDataCellsFilterResult executeGetDataCellsFilter(GetDataCellsFilterRequest getDataCellsFilterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDataCellsFilterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDataCellsFilterRequest> request = null;
+        Response<GetDataCellsFilterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDataCellsFilterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDataCellsFilterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDataCellsFilter");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDataCellsFilterResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDataCellsFilterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the identity of the invoking principal.
+     * </p>
+     * 
+     * @param getDataLakePrincipalRequest
+     * @return Result of the GetDataLakePrincipal operation returned by the service.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @sample AWSLakeFormation.GetDataLakePrincipal
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataLakePrincipal"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetDataLakePrincipalResult getDataLakePrincipal(GetDataLakePrincipalRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDataLakePrincipal(request);
+    }
+
+    @SdkInternalApi
+    final GetDataLakePrincipalResult executeGetDataLakePrincipal(GetDataLakePrincipalRequest getDataLakePrincipalRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDataLakePrincipalRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDataLakePrincipalRequest> request = null;
+        Response<GetDataLakePrincipalResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDataLakePrincipalRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDataLakePrincipalRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDataLakePrincipal");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDataLakePrincipalResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDataLakePrincipalResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves the list of the data lake administrators of a Lake Formation-managed data lake.
      * </p>
      * 
@@ -1213,7 +1693,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @sample AWSLakeFormation.GetDataLakeSettings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataLakeSettings"
      *      target="_top">AWS API Documentation</a>
@@ -1273,7 +1753,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws OperationTimeoutException
      *         The operation timed out.
      * @throws InternalServiceException
@@ -1336,7 +1816,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @param getLFTagRequest
      * @return Result of the GetLFTag operation returned by the service.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws InternalServiceException
@@ -1549,7 +2029,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @param getResourceLFTagsRequest
      * @return Result of the GetResourceLFTags operation returned by the service.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws InternalServiceException
@@ -1617,7 +2097,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @param getTableObjectsRequest
      * @return Result of the GetTableObjects operation returned by the service.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InternalServiceException
      *         An internal service error occurred.
      * @throws InvalidInputException
@@ -1695,7 +2175,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws OperationTimeoutException
      *         The operation timed out.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws AccessDeniedException
      *         Access to a resource was denied.
      * @throws PermissionTypeMismatchException
@@ -1771,7 +2251,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws OperationTimeoutException
      *         The operation timed out.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws AccessDeniedException
      *         Access to a resource was denied.
      * @throws PermissionTypeMismatchException
@@ -1987,7 +2467,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * </p>
      * <p>
      * For information about permissions, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control
      * to Metadata and Data</a>.
      * </p>
      * 
@@ -1996,7 +2476,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws ConcurrentModificationException
      *         Two processes are trying to modify a resource simultaneously.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @sample AWSLakeFormation.GrantPermissions
@@ -2118,7 +2598,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @param listLFTagsRequest
      * @return Result of the ListLFTags operation returned by the service.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws InternalServiceException
@@ -2177,6 +2657,71 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Retrieve the current list of resources and principals that are opt in to enforce Lake Formation permissions.
+     * </p>
+     * 
+     * @param listLakeFormationOptInsRequest
+     * @return Result of the ListLakeFormationOptIns operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @sample AWSLakeFormation.ListLakeFormationOptIns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListLakeFormationOptIns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListLakeFormationOptInsResult listLakeFormationOptIns(ListLakeFormationOptInsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListLakeFormationOptIns(request);
+    }
+
+    @SdkInternalApi
+    final ListLakeFormationOptInsResult executeListLakeFormationOptIns(ListLakeFormationOptInsRequest listLakeFormationOptInsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listLakeFormationOptInsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListLakeFormationOptInsRequest> request = null;
+        Response<ListLakeFormationOptInsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListLakeFormationOptInsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listLakeFormationOptInsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLakeFormationOptIns");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListLakeFormationOptInsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListLakeFormationOptInsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of the principal permissions on the resource, filtered by the permissions of the caller. For
      * example, if you are granted an ALTER permission, you are able to see only the principal permissions for ALTER.
      * </p>
@@ -2185,7 +2730,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * </p>
      * <p>
      * For information about permissions, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control
      * to Metadata and Data</a>.
      * </p>
      * 
@@ -2314,7 +2859,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @param listTableStorageOptimizersRequest
      * @return Result of the ListTableStorageOptimizers operation returned by the service.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws AccessDeniedException
@@ -2538,7 +3083,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws AlreadyExistsException
      *         A resource to be created or added already exists.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws ResourceNumberLimitExceededException
      *         A resource numerical limit was exceeded.
      * @throws AccessDeniedException
@@ -2600,7 +3145,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @param removeLFTagsFromResourceRequest
      * @return Result of the RemoveLFTagsFromResource operation returned by the service.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws InternalServiceException
@@ -2674,7 +3219,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws ConcurrentModificationException
      *         Two processes are trying to modify a resource simultaneously.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @sample AWSLakeFormation.RevokePermissions
@@ -2736,7 +3281,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @param searchDatabasesByLFTagsRequest
      * @return Result of the SearchDatabasesByLFTags operation returned by the service.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InternalServiceException
      *         An internal service error occurred.
      * @throws InvalidInputException
@@ -2808,7 +3353,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @param searchTablesByLFTagsRequest
      * @return Result of the SearchTablesByLFTags operation returned by the service.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InternalServiceException
      *         An internal service error occurred.
      * @throws InvalidInputException
@@ -3005,6 +3550,74 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Updates a data cell filter.
+     * </p>
+     * 
+     * @param updateDataCellsFilterRequest
+     * @return Result of the UpdateDataCellsFilter operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Two processes are trying to modify a resource simultaneously.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @sample AWSLakeFormation.UpdateDataCellsFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateDataCellsFilter"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateDataCellsFilterResult updateDataCellsFilter(UpdateDataCellsFilterRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDataCellsFilter(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDataCellsFilterResult executeUpdateDataCellsFilter(UpdateDataCellsFilterRequest updateDataCellsFilterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateDataCellsFilterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateDataCellsFilterRequest> request = null;
+        Response<UpdateDataCellsFilterResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateDataCellsFilterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDataCellsFilterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDataCellsFilter");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateDataCellsFilterResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new UpdateDataCellsFilterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates the list of possible values for the specified LF-tag key. If the LF-tag does not exist, the operation
      * throws an EntityNotFoundException. The values in the delete key values will be deleted from list of possible
      * values. If any value in the delete key values is attached to a resource, then API errors out with a 400 Exception
@@ -3014,7 +3627,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @param updateLFTagRequest
      * @return Result of the UpdateLFTag operation returned by the service.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws InternalServiceException
@@ -3075,6 +3688,78 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Updates the IAM Identity Center connection parameters.
+     * </p>
+     * 
+     * @param updateLakeFormationIdentityCenterConfigurationRequest
+     * @return Result of the UpdateLakeFormationIdentityCenterConfiguration operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @throws ConcurrentModificationException
+     *         Two processes are trying to modify a resource simultaneously.
+     * @sample AWSLakeFormation.UpdateLakeFormationIdentityCenterConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateLakeFormationIdentityCenterConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateLakeFormationIdentityCenterConfigurationResult updateLakeFormationIdentityCenterConfiguration(
+            UpdateLakeFormationIdentityCenterConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateLakeFormationIdentityCenterConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final UpdateLakeFormationIdentityCenterConfigurationResult executeUpdateLakeFormationIdentityCenterConfiguration(
+            UpdateLakeFormationIdentityCenterConfigurationRequest updateLakeFormationIdentityCenterConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateLakeFormationIdentityCenterConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateLakeFormationIdentityCenterConfigurationRequest> request = null;
+        Response<UpdateLakeFormationIdentityCenterConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateLakeFormationIdentityCenterConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateLakeFormationIdentityCenterConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateLakeFormationIdentityCenterConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateLakeFormationIdentityCenterConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new UpdateLakeFormationIdentityCenterConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates the data access role used for vending access to the given (registered) resource in Lake Formation.
      * </p>
      * 
@@ -3087,7 +3772,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws OperationTimeoutException
      *         The operation timed out.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @sample AWSLakeFormation.UpdateResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateResource" target="_top">AWS
      *      API Documentation</a>
@@ -3150,7 +3835,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws OperationTimeoutException
      *         The operation timed out.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws TransactionCommittedException
      *         Contains details about an error where the specified transaction has already been committed and cannot be
      *         used for <code>UpdateTableObjects</code>.
@@ -3218,7 +3903,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @param updateTableStorageOptimizerRequest
      * @return Result of the UpdateTableStorageOptimizer operation returned by the service.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws AccessDeniedException

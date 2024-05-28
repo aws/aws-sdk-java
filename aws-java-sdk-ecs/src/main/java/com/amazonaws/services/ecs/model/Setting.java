@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,17 +35,28 @@ public class Setting implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * Determines whether the account setting is enabled or disabled for the specified resource.
+     * Determines whether the account setting is on or off for the specified resource.
      * </p>
      */
     private String value;
     /**
      * <p>
-     * The ARN of the principal. It can be an IAM user, IAM role, or the root user. If this field is omitted, the
-     * authenticated user is assumed.
+     * The ARN of the principal. It can be a user, role, or the root user. If this field is omitted, the authenticated
+     * user is assumed.
      * </p>
      */
     private String principalArn;
+    /**
+     * <p>
+     * Indicates whether Amazon Web Services manages the account setting, or if the user manages it.
+     * </p>
+     * <p>
+     * <code>aws_managed</code> account settings are read-only, as Amazon Web Services manages such on the customer's
+     * behalf. Currently, the <code>guardDutyActivate</code> account setting is the only one Amazon Web Services
+     * manages.
+     * </p>
+     */
+    private String type;
 
     /**
      * <p>
@@ -108,11 +119,11 @@ public class Setting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines whether the account setting is enabled or disabled for the specified resource.
+     * Determines whether the account setting is on or off for the specified resource.
      * </p>
      * 
      * @param value
-     *        Determines whether the account setting is enabled or disabled for the specified resource.
+     *        Determines whether the account setting is on or off for the specified resource.
      */
 
     public void setValue(String value) {
@@ -121,10 +132,10 @@ public class Setting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines whether the account setting is enabled or disabled for the specified resource.
+     * Determines whether the account setting is on or off for the specified resource.
      * </p>
      * 
-     * @return Determines whether the account setting is enabled or disabled for the specified resource.
+     * @return Determines whether the account setting is on or off for the specified resource.
      */
 
     public String getValue() {
@@ -133,11 +144,11 @@ public class Setting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines whether the account setting is enabled or disabled for the specified resource.
+     * Determines whether the account setting is on or off for the specified resource.
      * </p>
      * 
      * @param value
-     *        Determines whether the account setting is enabled or disabled for the specified resource.
+     *        Determines whether the account setting is on or off for the specified resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,12 +159,12 @@ public class Setting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the principal. It can be an IAM user, IAM role, or the root user. If this field is omitted, the
-     * authenticated user is assumed.
+     * The ARN of the principal. It can be a user, role, or the root user. If this field is omitted, the authenticated
+     * user is assumed.
      * </p>
      * 
      * @param principalArn
-     *        The ARN of the principal. It can be an IAM user, IAM role, or the root user. If this field is omitted, the
+     *        The ARN of the principal. It can be a user, role, or the root user. If this field is omitted, the
      *        authenticated user is assumed.
      */
 
@@ -163,12 +174,12 @@ public class Setting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the principal. It can be an IAM user, IAM role, or the root user. If this field is omitted, the
-     * authenticated user is assumed.
+     * The ARN of the principal. It can be a user, role, or the root user. If this field is omitted, the authenticated
+     * user is assumed.
      * </p>
      * 
-     * @return The ARN of the principal. It can be an IAM user, IAM role, or the root user. If this field is omitted,
-     *         the authenticated user is assumed.
+     * @return The ARN of the principal. It can be a user, role, or the root user. If this field is omitted, the
+     *         authenticated user is assumed.
      */
 
     public String getPrincipalArn() {
@@ -177,18 +188,113 @@ public class Setting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the principal. It can be an IAM user, IAM role, or the root user. If this field is omitted, the
-     * authenticated user is assumed.
+     * The ARN of the principal. It can be a user, role, or the root user. If this field is omitted, the authenticated
+     * user is assumed.
      * </p>
      * 
      * @param principalArn
-     *        The ARN of the principal. It can be an IAM user, IAM role, or the root user. If this field is omitted, the
+     *        The ARN of the principal. It can be a user, role, or the root user. If this field is omitted, the
      *        authenticated user is assumed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Setting withPrincipalArn(String principalArn) {
         setPrincipalArn(principalArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Amazon Web Services manages the account setting, or if the user manages it.
+     * </p>
+     * <p>
+     * <code>aws_managed</code> account settings are read-only, as Amazon Web Services manages such on the customer's
+     * behalf. Currently, the <code>guardDutyActivate</code> account setting is the only one Amazon Web Services
+     * manages.
+     * </p>
+     * 
+     * @param type
+     *        Indicates whether Amazon Web Services manages the account setting, or if the user manages it.</p>
+     *        <p>
+     *        <code>aws_managed</code> account settings are read-only, as Amazon Web Services manages such on the
+     *        customer's behalf. Currently, the <code>guardDutyActivate</code> account setting is the only one Amazon
+     *        Web Services manages.
+     * @see SettingType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Amazon Web Services manages the account setting, or if the user manages it.
+     * </p>
+     * <p>
+     * <code>aws_managed</code> account settings are read-only, as Amazon Web Services manages such on the customer's
+     * behalf. Currently, the <code>guardDutyActivate</code> account setting is the only one Amazon Web Services
+     * manages.
+     * </p>
+     * 
+     * @return Indicates whether Amazon Web Services manages the account setting, or if the user manages it.</p>
+     *         <p>
+     *         <code>aws_managed</code> account settings are read-only, as Amazon Web Services manages such on the
+     *         customer's behalf. Currently, the <code>guardDutyActivate</code> account setting is the only one Amazon
+     *         Web Services manages.
+     * @see SettingType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Amazon Web Services manages the account setting, or if the user manages it.
+     * </p>
+     * <p>
+     * <code>aws_managed</code> account settings are read-only, as Amazon Web Services manages such on the customer's
+     * behalf. Currently, the <code>guardDutyActivate</code> account setting is the only one Amazon Web Services
+     * manages.
+     * </p>
+     * 
+     * @param type
+     *        Indicates whether Amazon Web Services manages the account setting, or if the user manages it.</p>
+     *        <p>
+     *        <code>aws_managed</code> account settings are read-only, as Amazon Web Services manages such on the
+     *        customer's behalf. Currently, the <code>guardDutyActivate</code> account setting is the only one Amazon
+     *        Web Services manages.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SettingType
+     */
+
+    public Setting withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Amazon Web Services manages the account setting, or if the user manages it.
+     * </p>
+     * <p>
+     * <code>aws_managed</code> account settings are read-only, as Amazon Web Services manages such on the customer's
+     * behalf. Currently, the <code>guardDutyActivate</code> account setting is the only one Amazon Web Services
+     * manages.
+     * </p>
+     * 
+     * @param type
+     *        Indicates whether Amazon Web Services manages the account setting, or if the user manages it.</p>
+     *        <p>
+     *        <code>aws_managed</code> account settings are read-only, as Amazon Web Services manages such on the
+     *        customer's behalf. Currently, the <code>guardDutyActivate</code> account setting is the only one Amazon
+     *        Web Services manages.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SettingType
+     */
+
+    public Setting withType(SettingType type) {
+        this.type = type.toString();
         return this;
     }
 
@@ -209,7 +315,9 @@ public class Setting implements Serializable, Cloneable, StructuredPojo {
         if (getValue() != null)
             sb.append("Value: ").append(getValue()).append(",");
         if (getPrincipalArn() != null)
-            sb.append("PrincipalArn: ").append(getPrincipalArn());
+            sb.append("PrincipalArn: ").append(getPrincipalArn()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType());
         sb.append("}");
         return sb.toString();
     }
@@ -236,6 +344,10 @@ public class Setting implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPrincipalArn() != null && other.getPrincipalArn().equals(this.getPrincipalArn()) == false)
             return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
         return true;
     }
 
@@ -247,6 +359,7 @@ public class Setting implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
         hashCode = prime * hashCode + ((getPrincipalArn() == null) ? 0 : getPrincipalArn().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -156,27 +156,27 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * <p>
      * An array of unique identifiers, one for each managed data identifier that the job is explicitly configured to
      * include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data
-     * identifier selection type specified for the job (managedDataIdentifierSelector). This value is null if the job's
-     * managed data identifier selection type is ALL or the job uses only custom data identifiers
-     * (customDataIdentifierIds) to analyze data.
+     * identifier selection type specified for the job (managedDataIdentifierSelector).
+     * </p>
+     * <p>
+     * This value is null if the job's managed data identifier selection type is ALL, NONE, or RECOMMENDED.
      * </p>
      */
     private java.util.List<String> managedDataIdentifierIds;
     /**
      * <p>
-     * The selection type that determines which managed data identifiers the job uses to analyze data. Possible values
-     * are:
+     * The selection type that determines which managed data identifiers the job uses when it analyzes data. Possible
+     * values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * ALL - Use all the managed data identifiers that Amazon Macie provides.
+     * ALL - Use all managed data identifiers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified
-     * by the managedDataIdentifierIds property.
+     * EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds property.
      * </p>
      * </li>
      * <li>
@@ -186,13 +186,29 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * NONE - Don't use any managed data identifiers.
+     * NONE - Don't use any managed data identifiers. Use only custom data identifiers (customDataIdentifierIds).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RECOMMENDED (default) - Use the recommended set of managed data identifiers.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE for a
-     * recurring job, the job also uses new managed data identifiers as they are released.
+     * If this value is null, the job uses the recommended set of managed data identifiers.
+     * </p>
+     * <p>
+     * If the job is a recurring job and this value is ALL or EXCLUDE, each job run automatically uses new managed data
+     * identifiers that are released. If this value is null or RECOMMENDED for a recurring job, each job run uses all
+     * the managed data identifiers that are in the recommended set when the run starts.
+     * </p>
+     * <p>
+     * For information about individual managed data identifiers or to determine which ones are in the recommended set,
+     * see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data
+     * identifiers</a> and <a
+     * href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended managed
+     * data identifiers</a> in the <i>Amazon Macie User Guide</i>.
      * </p>
      */
     private String managedDataIdentifierSelector;
@@ -1283,16 +1299,17 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * <p>
      * An array of unique identifiers, one for each managed data identifier that the job is explicitly configured to
      * include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data
-     * identifier selection type specified for the job (managedDataIdentifierSelector). This value is null if the job's
-     * managed data identifier selection type is ALL or the job uses only custom data identifiers
-     * (customDataIdentifierIds) to analyze data.
+     * identifier selection type specified for the job (managedDataIdentifierSelector).
+     * </p>
+     * <p>
+     * This value is null if the job's managed data identifier selection type is ALL, NONE, or RECOMMENDED.
      * </p>
      * 
      * @return An array of unique identifiers, one for each managed data identifier that the job is explicitly
      *         configured to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on
-     *         the managed data identifier selection type specified for the job (managedDataIdentifierSelector). This
-     *         value is null if the job's managed data identifier selection type is ALL or the job uses only custom data
-     *         identifiers (customDataIdentifierIds) to analyze data.
+     *         the managed data identifier selection type specified for the job (managedDataIdentifierSelector).</p>
+     *         <p>
+     *         This value is null if the job's managed data identifier selection type is ALL, NONE, or RECOMMENDED.
      */
 
     public java.util.List<String> getManagedDataIdentifierIds() {
@@ -1303,17 +1320,18 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * <p>
      * An array of unique identifiers, one for each managed data identifier that the job is explicitly configured to
      * include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data
-     * identifier selection type specified for the job (managedDataIdentifierSelector). This value is null if the job's
-     * managed data identifier selection type is ALL or the job uses only custom data identifiers
-     * (customDataIdentifierIds) to analyze data.
+     * identifier selection type specified for the job (managedDataIdentifierSelector).
+     * </p>
+     * <p>
+     * This value is null if the job's managed data identifier selection type is ALL, NONE, or RECOMMENDED.
      * </p>
      * 
      * @param managedDataIdentifierIds
      *        An array of unique identifiers, one for each managed data identifier that the job is explicitly configured
      *        to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed
-     *        data identifier selection type specified for the job (managedDataIdentifierSelector). This value is null
-     *        if the job's managed data identifier selection type is ALL or the job uses only custom data identifiers
-     *        (customDataIdentifierIds) to analyze data.
+     *        data identifier selection type specified for the job (managedDataIdentifierSelector).</p>
+     *        <p>
+     *        This value is null if the job's managed data identifier selection type is ALL, NONE, or RECOMMENDED.
      */
 
     public void setManagedDataIdentifierIds(java.util.Collection<String> managedDataIdentifierIds) {
@@ -1329,9 +1347,10 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * <p>
      * An array of unique identifiers, one for each managed data identifier that the job is explicitly configured to
      * include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data
-     * identifier selection type specified for the job (managedDataIdentifierSelector). This value is null if the job's
-     * managed data identifier selection type is ALL or the job uses only custom data identifiers
-     * (customDataIdentifierIds) to analyze data.
+     * identifier selection type specified for the job (managedDataIdentifierSelector).
+     * </p>
+     * <p>
+     * This value is null if the job's managed data identifier selection type is ALL, NONE, or RECOMMENDED.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1342,9 +1361,9 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * @param managedDataIdentifierIds
      *        An array of unique identifiers, one for each managed data identifier that the job is explicitly configured
      *        to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed
-     *        data identifier selection type specified for the job (managedDataIdentifierSelector). This value is null
-     *        if the job's managed data identifier selection type is ALL or the job uses only custom data identifiers
-     *        (customDataIdentifierIds) to analyze data.
+     *        data identifier selection type specified for the job (managedDataIdentifierSelector).</p>
+     *        <p>
+     *        This value is null if the job's managed data identifier selection type is ALL, NONE, or RECOMMENDED.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1362,17 +1381,18 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * <p>
      * An array of unique identifiers, one for each managed data identifier that the job is explicitly configured to
      * include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed data
-     * identifier selection type specified for the job (managedDataIdentifierSelector). This value is null if the job's
-     * managed data identifier selection type is ALL or the job uses only custom data identifiers
-     * (customDataIdentifierIds) to analyze data.
+     * identifier selection type specified for the job (managedDataIdentifierSelector).
+     * </p>
+     * <p>
+     * This value is null if the job's managed data identifier selection type is ALL, NONE, or RECOMMENDED.
      * </p>
      * 
      * @param managedDataIdentifierIds
      *        An array of unique identifiers, one for each managed data identifier that the job is explicitly configured
      *        to include (use) or exclude (not use) when it analyzes data. Inclusion or exclusion depends on the managed
-     *        data identifier selection type specified for the job (managedDataIdentifierSelector). This value is null
-     *        if the job's managed data identifier selection type is ALL or the job uses only custom data identifiers
-     *        (customDataIdentifierIds) to analyze data.
+     *        data identifier selection type specified for the job (managedDataIdentifierSelector).</p>
+     *        <p>
+     *        This value is null if the job's managed data identifier selection type is ALL, NONE, or RECOMMENDED.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1383,19 +1403,18 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The selection type that determines which managed data identifiers the job uses to analyze data. Possible values
-     * are:
+     * The selection type that determines which managed data identifiers the job uses when it analyzes data. Possible
+     * values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * ALL - Use all the managed data identifiers that Amazon Macie provides.
+     * ALL - Use all managed data identifiers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified
-     * by the managedDataIdentifierIds property.
+     * EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds property.
      * </p>
      * </li>
      * <li>
@@ -1405,28 +1424,44 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * NONE - Don't use any managed data identifiers.
+     * NONE - Don't use any managed data identifiers. Use only custom data identifiers (customDataIdentifierIds).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RECOMMENDED (default) - Use the recommended set of managed data identifiers.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE for a
-     * recurring job, the job also uses new managed data identifiers as they are released.
+     * If this value is null, the job uses the recommended set of managed data identifiers.
+     * </p>
+     * <p>
+     * If the job is a recurring job and this value is ALL or EXCLUDE, each job run automatically uses new managed data
+     * identifiers that are released. If this value is null or RECOMMENDED for a recurring job, each job run uses all
+     * the managed data identifiers that are in the recommended set when the run starts.
+     * </p>
+     * <p>
+     * For information about individual managed data identifiers or to determine which ones are in the recommended set,
+     * see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data
+     * identifiers</a> and <a
+     * href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended managed
+     * data identifiers</a> in the <i>Amazon Macie User Guide</i>.
      * </p>
      * 
      * @param managedDataIdentifierSelector
-     *        The selection type that determines which managed data identifiers the job uses to analyze data. Possible
-     *        values are:</p>
+     *        The selection type that determines which managed data identifiers the job uses when it analyzes data.
+     *        Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        ALL - Use all the managed data identifiers that Amazon Macie provides.
+     *        ALL - Use all managed data identifiers.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers
-     *        specified by the managedDataIdentifierIds property.
+     *        EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds
+     *        property.
      *        </p>
      *        </li>
      *        <li>
@@ -1436,13 +1471,30 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        NONE - Don't use any managed data identifiers.
+     *        NONE - Don't use any managed data identifiers. Use only custom data identifiers (customDataIdentifierIds).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RECOMMENDED (default) - Use the recommended set of managed data identifiers.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE
-     *        for a recurring job, the job also uses new managed data identifiers as they are released.
+     *        If this value is null, the job uses the recommended set of managed data identifiers.
+     *        </p>
+     *        <p>
+     *        If the job is a recurring job and this value is ALL or EXCLUDE, each job run automatically uses new
+     *        managed data identifiers that are released. If this value is null or RECOMMENDED for a recurring job, each
+     *        job run uses all the managed data identifiers that are in the recommended set when the run starts.
+     *        </p>
+     *        <p>
+     *        For information about individual managed data identifiers or to determine which ones are in the
+     *        recommended set, see <a
+     *        href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data
+     *        identifiers</a> and <a
+     *        href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended
+     *        managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.
      * @see ManagedDataIdentifierSelector
      */
 
@@ -1452,19 +1504,18 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The selection type that determines which managed data identifiers the job uses to analyze data. Possible values
-     * are:
+     * The selection type that determines which managed data identifiers the job uses when it analyzes data. Possible
+     * values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * ALL - Use all the managed data identifiers that Amazon Macie provides.
+     * ALL - Use all managed data identifiers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified
-     * by the managedDataIdentifierIds property.
+     * EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds property.
      * </p>
      * </li>
      * <li>
@@ -1474,27 +1525,43 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * NONE - Don't use any managed data identifiers.
+     * NONE - Don't use any managed data identifiers. Use only custom data identifiers (customDataIdentifierIds).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RECOMMENDED (default) - Use the recommended set of managed data identifiers.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE for a
-     * recurring job, the job also uses new managed data identifiers as they are released.
+     * If this value is null, the job uses the recommended set of managed data identifiers.
+     * </p>
+     * <p>
+     * If the job is a recurring job and this value is ALL or EXCLUDE, each job run automatically uses new managed data
+     * identifiers that are released. If this value is null or RECOMMENDED for a recurring job, each job run uses all
+     * the managed data identifiers that are in the recommended set when the run starts.
+     * </p>
+     * <p>
+     * For information about individual managed data identifiers or to determine which ones are in the recommended set,
+     * see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data
+     * identifiers</a> and <a
+     * href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended managed
+     * data identifiers</a> in the <i>Amazon Macie User Guide</i>.
      * </p>
      * 
-     * @return The selection type that determines which managed data identifiers the job uses to analyze data. Possible
-     *         values are:</p>
+     * @return The selection type that determines which managed data identifiers the job uses when it analyzes data.
+     *         Possible values are:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         ALL - Use all the managed data identifiers that Amazon Macie provides.
+     *         ALL - Use all managed data identifiers.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers
-     *         specified by the managedDataIdentifierIds property.
+     *         EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds
+     *         property.
      *         </p>
      *         </li>
      *         <li>
@@ -1504,13 +1571,31 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      *         </li>
      *         <li>
      *         <p>
-     *         NONE - Don't use any managed data identifiers.
+     *         NONE - Don't use any managed data identifiers. Use only custom data identifiers
+     *         (customDataIdentifierIds).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         RECOMMENDED (default) - Use the recommended set of managed data identifiers.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE
-     *         for a recurring job, the job also uses new managed data identifiers as they are released.
+     *         If this value is null, the job uses the recommended set of managed data identifiers.
+     *         </p>
+     *         <p>
+     *         If the job is a recurring job and this value is ALL or EXCLUDE, each job run automatically uses new
+     *         managed data identifiers that are released. If this value is null or RECOMMENDED for a recurring job,
+     *         each job run uses all the managed data identifiers that are in the recommended set when the run starts.
+     *         </p>
+     *         <p>
+     *         For information about individual managed data identifiers or to determine which ones are in the
+     *         recommended set, see <a
+     *         href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data
+     *         identifiers</a> and <a
+     *         href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended
+     *         managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.
      * @see ManagedDataIdentifierSelector
      */
 
@@ -1520,19 +1605,18 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The selection type that determines which managed data identifiers the job uses to analyze data. Possible values
-     * are:
+     * The selection type that determines which managed data identifiers the job uses when it analyzes data. Possible
+     * values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * ALL - Use all the managed data identifiers that Amazon Macie provides.
+     * ALL - Use all managed data identifiers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified
-     * by the managedDataIdentifierIds property.
+     * EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds property.
      * </p>
      * </li>
      * <li>
@@ -1542,28 +1626,44 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * NONE - Don't use any managed data identifiers.
+     * NONE - Don't use any managed data identifiers. Use only custom data identifiers (customDataIdentifierIds).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RECOMMENDED (default) - Use the recommended set of managed data identifiers.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE for a
-     * recurring job, the job also uses new managed data identifiers as they are released.
+     * If this value is null, the job uses the recommended set of managed data identifiers.
+     * </p>
+     * <p>
+     * If the job is a recurring job and this value is ALL or EXCLUDE, each job run automatically uses new managed data
+     * identifiers that are released. If this value is null or RECOMMENDED for a recurring job, each job run uses all
+     * the managed data identifiers that are in the recommended set when the run starts.
+     * </p>
+     * <p>
+     * For information about individual managed data identifiers or to determine which ones are in the recommended set,
+     * see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data
+     * identifiers</a> and <a
+     * href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended managed
+     * data identifiers</a> in the <i>Amazon Macie User Guide</i>.
      * </p>
      * 
      * @param managedDataIdentifierSelector
-     *        The selection type that determines which managed data identifiers the job uses to analyze data. Possible
-     *        values are:</p>
+     *        The selection type that determines which managed data identifiers the job uses when it analyzes data.
+     *        Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        ALL - Use all the managed data identifiers that Amazon Macie provides.
+     *        ALL - Use all managed data identifiers.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers
-     *        specified by the managedDataIdentifierIds property.
+     *        EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds
+     *        property.
      *        </p>
      *        </li>
      *        <li>
@@ -1573,13 +1673,30 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        NONE - Don't use any managed data identifiers.
+     *        NONE - Don't use any managed data identifiers. Use only custom data identifiers (customDataIdentifierIds).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RECOMMENDED (default) - Use the recommended set of managed data identifiers.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE
-     *        for a recurring job, the job also uses new managed data identifiers as they are released.
+     *        If this value is null, the job uses the recommended set of managed data identifiers.
+     *        </p>
+     *        <p>
+     *        If the job is a recurring job and this value is ALL or EXCLUDE, each job run automatically uses new
+     *        managed data identifiers that are released. If this value is null or RECOMMENDED for a recurring job, each
+     *        job run uses all the managed data identifiers that are in the recommended set when the run starts.
+     *        </p>
+     *        <p>
+     *        For information about individual managed data identifiers or to determine which ones are in the
+     *        recommended set, see <a
+     *        href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data
+     *        identifiers</a> and <a
+     *        href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended
+     *        managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ManagedDataIdentifierSelector
      */
@@ -1591,19 +1708,18 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The selection type that determines which managed data identifiers the job uses to analyze data. Possible values
-     * are:
+     * The selection type that determines which managed data identifiers the job uses when it analyzes data. Possible
+     * values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * ALL - Use all the managed data identifiers that Amazon Macie provides.
+     * ALL - Use all managed data identifiers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers specified
-     * by the managedDataIdentifierIds property.
+     * EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds property.
      * </p>
      * </li>
      * <li>
@@ -1613,28 +1729,44 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * </li>
      * <li>
      * <p>
-     * NONE - Don't use any managed data identifiers.
+     * NONE - Don't use any managed data identifiers. Use only custom data identifiers (customDataIdentifierIds).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * RECOMMENDED (default) - Use the recommended set of managed data identifiers.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE for a
-     * recurring job, the job also uses new managed data identifiers as they are released.
+     * If this value is null, the job uses the recommended set of managed data identifiers.
+     * </p>
+     * <p>
+     * If the job is a recurring job and this value is ALL or EXCLUDE, each job run automatically uses new managed data
+     * identifiers that are released. If this value is null or RECOMMENDED for a recurring job, each job run uses all
+     * the managed data identifiers that are in the recommended set when the run starts.
+     * </p>
+     * <p>
+     * For information about individual managed data identifiers or to determine which ones are in the recommended set,
+     * see <a href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data
+     * identifiers</a> and <a
+     * href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended managed
+     * data identifiers</a> in the <i>Amazon Macie User Guide</i>.
      * </p>
      * 
      * @param managedDataIdentifierSelector
-     *        The selection type that determines which managed data identifiers the job uses to analyze data. Possible
-     *        values are:</p>
+     *        The selection type that determines which managed data identifiers the job uses when it analyzes data.
+     *        Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        ALL - Use all the managed data identifiers that Amazon Macie provides.
+     *        ALL - Use all managed data identifiers.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        EXCLUDE - Use all the managed data identifiers that Macie provides except the managed data identifiers
-     *        specified by the managedDataIdentifierIds property.
+     *        EXCLUDE - Use all managed data identifiers except the ones specified by the managedDataIdentifierIds
+     *        property.
      *        </p>
      *        </li>
      *        <li>
@@ -1644,13 +1776,30 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      *        </li>
      *        <li>
      *        <p>
-     *        NONE - Don't use any managed data identifiers.
+     *        NONE - Don't use any managed data identifiers. Use only custom data identifiers (customDataIdentifierIds).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        RECOMMENDED (default) - Use the recommended set of managed data identifiers.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If this value is null, the job uses all managed data identifiers. If this value is null, ALL, or EXCLUDE
-     *        for a recurring job, the job also uses new managed data identifiers as they are released.
+     *        If this value is null, the job uses the recommended set of managed data identifiers.
+     *        </p>
+     *        <p>
+     *        If the job is a recurring job and this value is ALL or EXCLUDE, each job run automatically uses new
+     *        managed data identifiers that are released. If this value is null or RECOMMENDED for a recurring job, each
+     *        job run uses all the managed data identifiers that are in the recommended set when the run starts.
+     *        </p>
+     *        <p>
+     *        For information about individual managed data identifiers or to determine which ones are in the
+     *        recommended set, see <a
+     *        href="https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html">Using managed data
+     *        identifiers</a> and <a
+     *        href="https://docs.aws.amazon.com/macie/latest/user/discovery-jobs-mdis-recommended.html">Recommended
+     *        managed data identifiers</a> in the <i>Amazon Macie User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ManagedDataIdentifierSelector
      */

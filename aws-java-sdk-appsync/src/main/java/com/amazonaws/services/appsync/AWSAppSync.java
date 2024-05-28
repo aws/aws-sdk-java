@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,6 +62,58 @@ public interface AWSAppSync {
      *      Documentation</a>
      */
     AssociateApiResult associateApi(AssociateApiRequest associateApiRequest);
+
+    /**
+     * <p>
+     * Creates an association between a Merged API and source API using the source API's identifier.
+     * </p>
+     * 
+     * @param associateMergedGraphqlApiRequest
+     * @return Result of the AssociateMergedGraphqlApi operation returned by the service.
+     * @throws UnauthorizedException
+     *         You aren't authorized to perform this operation.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws InternalFailureException
+     *         An internal AppSync error occurred. Try your request again.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws LimitExceededException
+     *         The request exceeded a limit. Try your request again.
+     * @throws ConcurrentModificationException
+     *         Another modification is in progress at this time and it must complete before you can make your change.
+     * @sample AWSAppSync.AssociateMergedGraphqlApi
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/AssociateMergedGraphqlApi"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateMergedGraphqlApiResult associateMergedGraphqlApi(AssociateMergedGraphqlApiRequest associateMergedGraphqlApiRequest);
+
+    /**
+     * <p>
+     * Creates an association between a Merged API and source API using the Merged API's identifier.
+     * </p>
+     * 
+     * @param associateSourceGraphqlApiRequest
+     * @return Result of the AssociateSourceGraphqlApi operation returned by the service.
+     * @throws UnauthorizedException
+     *         You aren't authorized to perform this operation.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws InternalFailureException
+     *         An internal AppSync error occurred. Try your request again.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws LimitExceededException
+     *         The request exceeded a limit. Try your request again.
+     * @throws ConcurrentModificationException
+     *         Another modification is in progress at this time and it must complete before you can make your change.
+     * @sample AWSAppSync.AssociateSourceGraphqlApi
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/AssociateSourceGraphqlApi"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateSourceGraphqlApiResult associateSourceGraphqlApi(AssociateSourceGraphqlApiRequest associateSourceGraphqlApiRequest);
 
     /**
      * <p>
@@ -181,6 +233,9 @@ public interface AWSAppSync {
      *         You aren't authorized to perform this operation.
      * @throws InternalFailureException
      *         An internal AppSync error occurred. Try your request again.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
      * @sample AWSAppSync.CreateFunction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateFunction" target="_top">AWS API
      *      Documentation</a>
@@ -232,6 +287,9 @@ public interface AWSAppSync {
      *         You aren't authorized to perform this operation.
      * @throws InternalFailureException
      *         An internal AppSync error occurred. Try your request again.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
      * @sample AWSAppSync.CreateResolver
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateResolver" target="_top">AWS API
      *      Documentation</a>
@@ -372,6 +430,9 @@ public interface AWSAppSync {
      *         You aren't authorized to perform this operation.
      * @throws InternalFailureException
      *         An internal AppSync error occurred. Try your request again.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
      * @sample AWSAppSync.DeleteFunction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteFunction" target="_top">AWS API
      *      Documentation</a>
@@ -419,6 +480,9 @@ public interface AWSAppSync {
      *         You aren't authorized to perform this operation.
      * @throws InternalFailureException
      *         An internal AppSync error occurred. Try your request again.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
      * @sample AWSAppSync.DeleteResolver
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteResolver" target="_top">AWS API
      *      Documentation</a>
@@ -472,6 +536,80 @@ public interface AWSAppSync {
      *      Documentation</a>
      */
     DisassociateApiResult disassociateApi(DisassociateApiRequest disassociateApiRequest);
+
+    /**
+     * <p>
+     * Deletes an association between a Merged API and source API using the source API's identifier and the association
+     * ID.
+     * </p>
+     * 
+     * @param disassociateMergedGraphqlApiRequest
+     * @return Result of the DisassociateMergedGraphqlApi operation returned by the service.
+     * @throws UnauthorizedException
+     *         You aren't authorized to perform this operation.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws InternalFailureException
+     *         An internal AppSync error occurred. Try your request again.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws ConcurrentModificationException
+     *         Another modification is in progress at this time and it must complete before you can make your change.
+     * @sample AWSAppSync.DisassociateMergedGraphqlApi
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DisassociateMergedGraphqlApi"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateMergedGraphqlApiResult disassociateMergedGraphqlApi(DisassociateMergedGraphqlApiRequest disassociateMergedGraphqlApiRequest);
+
+    /**
+     * <p>
+     * Deletes an association between a Merged API and source API using the Merged API's identifier and the association
+     * ID.
+     * </p>
+     * 
+     * @param disassociateSourceGraphqlApiRequest
+     * @return Result of the DisassociateSourceGraphqlApi operation returned by the service.
+     * @throws UnauthorizedException
+     *         You aren't authorized to perform this operation.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws InternalFailureException
+     *         An internal AppSync error occurred. Try your request again.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws ConcurrentModificationException
+     *         Another modification is in progress at this time and it must complete before you can make your change.
+     * @sample AWSAppSync.DisassociateSourceGraphqlApi
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DisassociateSourceGraphqlApi"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateSourceGraphqlApiResult disassociateSourceGraphqlApi(DisassociateSourceGraphqlApiRequest disassociateSourceGraphqlApiRequest);
+
+    /**
+     * <p>
+     * Evaluates the given code and returns the response. The code definition requirements depend on the specified
+     * runtime. For <code>APPSYNC_JS</code> runtimes, the code defines the request and response functions. The request
+     * function takes the incoming request after a GraphQL operation is parsed and converts it into a request
+     * configuration for the selected data source operation. The response function interprets responses from the data
+     * source and maps it to the shape of the GraphQL field output type.
+     * </p>
+     * 
+     * @param evaluateCodeRequest
+     * @return Result of the EvaluateCode operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to perform this operation on this resource.
+     * @throws InternalFailureException
+     *         An internal AppSync error occurred. Try your request again.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @sample AWSAppSync.EvaluateCode
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/EvaluateCode" target="_top">AWS API
+     *      Documentation</a>
+     */
+    EvaluateCodeResult evaluateCode(EvaluateCodeRequest evaluateCodeRequest);
 
     /**
      * <p>
@@ -599,6 +737,28 @@ public interface AWSAppSync {
 
     /**
      * <p>
+     * Retrieves the record of an existing introspection. If the retrieval is successful, the result of the
+     * instrospection will also be returned. If the retrieval fails the operation, an error message will be returned
+     * instead.
+     * </p>
+     * 
+     * @param getDataSourceIntrospectionRequest
+     * @return Result of the GetDataSourceIntrospection operation returned by the service.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws InternalFailureException
+     *         An internal AppSync error occurred. Try your request again.
+     * @sample AWSAppSync.GetDataSourceIntrospection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetDataSourceIntrospection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetDataSourceIntrospectionResult getDataSourceIntrospection(GetDataSourceIntrospectionRequest getDataSourceIntrospectionRequest);
+
+    /**
+     * <p>
      * Retrieves a custom <code>DomainName</code> object.
      * </p>
      * 
@@ -664,6 +824,30 @@ public interface AWSAppSync {
 
     /**
      * <p>
+     * Retrieves the list of environmental variable key-value pairs associated with an API by its ID value.
+     * </p>
+     * 
+     * @param getGraphqlApiEnvironmentVariablesRequest
+     * @return Result of the GetGraphqlApiEnvironmentVariables operation returned by the service.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws UnauthorizedException
+     *         You aren't authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An internal AppSync error occurred. Try your request again.
+     * @throws AccessDeniedException
+     *         You don't have access to perform this operation on this resource.
+     * @sample AWSAppSync.GetGraphqlApiEnvironmentVariables
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetGraphqlApiEnvironmentVariables"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetGraphqlApiEnvironmentVariablesResult getGraphqlApiEnvironmentVariables(GetGraphqlApiEnvironmentVariablesRequest getGraphqlApiEnvironmentVariablesRequest);
+
+    /**
+     * <p>
      * Retrieves the introspection schema for a GraphQL API.
      * </p>
      * 
@@ -723,6 +907,28 @@ public interface AWSAppSync {
      *      target="_top">AWS API Documentation</a>
      */
     GetSchemaCreationStatusResult getSchemaCreationStatus(GetSchemaCreationStatusRequest getSchemaCreationStatusRequest);
+
+    /**
+     * <p>
+     * Retrieves a <code>SourceApiAssociation</code> object.
+     * </p>
+     * 
+     * @param getSourceApiAssociationRequest
+     * @return Result of the GetSourceApiAssociation operation returned by the service.
+     * @throws UnauthorizedException
+     *         You aren't authorized to perform this operation.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws InternalFailureException
+     *         An internal AppSync error occurred. Try your request again.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @sample AWSAppSync.GetSourceApiAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetSourceApiAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetSourceApiAssociationResult getSourceApiAssociation(GetSourceApiAssociationRequest getSourceApiAssociationRequest);
 
     /**
      * <p>
@@ -907,6 +1113,28 @@ public interface AWSAppSync {
 
     /**
      * <p>
+     * Lists the <code>SourceApiAssociationSummary</code> data.
+     * </p>
+     * 
+     * @param listSourceApiAssociationsRequest
+     * @return Result of the ListSourceApiAssociations operation returned by the service.
+     * @throws UnauthorizedException
+     *         You aren't authorized to perform this operation.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws InternalFailureException
+     *         An internal AppSync error occurred. Try your request again.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @sample AWSAppSync.ListSourceApiAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListSourceApiAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListSourceApiAssociationsResult listSourceApiAssociations(ListSourceApiAssociationsRequest listSourceApiAssociationsRequest);
+
+    /**
+     * <p>
      * Lists the tags for a resource.
      * </p>
      * 
@@ -957,6 +1185,146 @@ public interface AWSAppSync {
 
     /**
      * <p>
+     * Lists <code>Type</code> objects by the source API association ID.
+     * </p>
+     * 
+     * @param listTypesByAssociationRequest
+     * @return Result of the ListTypesByAssociation operation returned by the service.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws ConcurrentModificationException
+     *         Another modification is in progress at this time and it must complete before you can make your change.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws UnauthorizedException
+     *         You aren't authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An internal AppSync error occurred. Try your request again.
+     * @sample AWSAppSync.ListTypesByAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListTypesByAssociation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTypesByAssociationResult listTypesByAssociation(ListTypesByAssociationRequest listTypesByAssociationRequest);
+
+    /**
+     * <p>
+     * Creates a list of environmental variables in an API by its ID value.
+     * </p>
+     * <p>
+     * When creating an environmental variable, it must follow the constraints below:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Both JavaScript and VTL templates support environmental variables.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Environmental variables are not evaluated before function invocation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Environmental variables only support string values.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Any defined value in an environmental variable is considered a string literal and not expanded.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Variable evaluations should ideally be performed in the function code.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When creating an environmental variable key-value pair, it must follow the additional constraints below:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Keys must begin with a letter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Keys must be at least two characters long.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Keys can only contain letters, numbers, and the underscore character (_).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Values can be up to 512 characters long.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can configure up to 50 key-value pairs in a GraphQL API.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can create a list of environmental variables by adding it to the <code>environmentVariables</code> payload as
+     * a list in the format <code>{"key1":"value1","key2":"value2", …}</code>. Note that each call of the
+     * <code>PutGraphqlApiEnvironmentVariables</code> action will result in the overwriting of the existing
+     * environmental variable list of that API. This means the existing environmental variables will be lost. To avoid
+     * this, you must include all existing and new environmental variables in the list each time you call this action.
+     * </p>
+     * 
+     * @param putGraphqlApiEnvironmentVariablesRequest
+     * @return Result of the PutGraphqlApiEnvironmentVariables operation returned by the service.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws ConcurrentModificationException
+     *         Another modification is in progress at this time and it must complete before you can make your change.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws UnauthorizedException
+     *         You aren't authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An internal AppSync error occurred. Try your request again.
+     * @throws AccessDeniedException
+     *         You don't have access to perform this operation on this resource.
+     * @sample AWSAppSync.PutGraphqlApiEnvironmentVariables
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/PutGraphqlApiEnvironmentVariables"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutGraphqlApiEnvironmentVariablesResult putGraphqlApiEnvironmentVariables(PutGraphqlApiEnvironmentVariablesRequest putGraphqlApiEnvironmentVariablesRequest);
+
+    /**
+     * <p>
+     * Creates a new introspection. Returns the <code>introspectionId</code> of the new introspection after its
+     * creation.
+     * </p>
+     * 
+     * @param startDataSourceIntrospectionRequest
+     * @return Result of the StartDataSourceIntrospection operation returned by the service.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws UnauthorizedException
+     *         You aren't authorized to perform this operation.
+     * @throws InternalFailureException
+     *         An internal AppSync error occurred. Try your request again.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @sample AWSAppSync.StartDataSourceIntrospection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/StartDataSourceIntrospection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartDataSourceIntrospectionResult startDataSourceIntrospection(StartDataSourceIntrospectionRequest startDataSourceIntrospectionRequest);
+
+    /**
+     * <p>
      * Adds a new schema to your GraphQL API.
      * </p>
      * <p>
@@ -981,6 +1349,30 @@ public interface AWSAppSync {
      *      API Documentation</a>
      */
     StartSchemaCreationResult startSchemaCreation(StartSchemaCreationRequest startSchemaCreationRequest);
+
+    /**
+     * <p>
+     * Initiates a merge operation. Returns a status that shows the result of the merge operation.
+     * </p>
+     * 
+     * @param startSchemaMergeRequest
+     * @return Result of the StartSchemaMerge operation returned by the service.
+     * @throws UnauthorizedException
+     *         You aren't authorized to perform this operation.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws InternalFailureException
+     *         An internal AppSync error occurred. Try your request again.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws ConcurrentModificationException
+     *         Another modification is in progress at this time and it must complete before you can make your change.
+     * @sample AWSAppSync.StartSchemaMerge
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/StartSchemaMerge" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartSchemaMergeResult startSchemaMerge(StartSchemaMergeRequest startSchemaMergeRequest);
 
     /**
      * <p>
@@ -1149,6 +1541,9 @@ public interface AWSAppSync {
      *         You aren't authorized to perform this operation.
      * @throws InternalFailureException
      *         An internal AppSync error occurred. Try your request again.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
      * @sample AWSAppSync.UpdateFunction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateFunction" target="_top">AWS API
      *      Documentation</a>
@@ -1196,11 +1591,38 @@ public interface AWSAppSync {
      *         You aren't authorized to perform this operation.
      * @throws InternalFailureException
      *         An internal AppSync error occurred. Try your request again.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
      * @sample AWSAppSync.UpdateResolver
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateResolver" target="_top">AWS API
      *      Documentation</a>
      */
     UpdateResolverResult updateResolver(UpdateResolverRequest updateResolverRequest);
+
+    /**
+     * <p>
+     * Updates some of the configuration choices of a particular source API association.
+     * </p>
+     * 
+     * @param updateSourceApiAssociationRequest
+     * @return Result of the UpdateSourceApiAssociation operation returned by the service.
+     * @throws UnauthorizedException
+     *         You aren't authorized to perform this operation.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @throws InternalFailureException
+     *         An internal AppSync error occurred. Try your request again.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found. Check the resource, and then try again.
+     * @throws ConcurrentModificationException
+     *         Another modification is in progress at this time and it must complete before you can make your change.
+     * @sample AWSAppSync.UpdateSourceApiAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateSourceApiAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateSourceApiAssociationResult updateSourceApiAssociation(UpdateSourceApiAssociationRequest updateSourceApiAssociationRequest);
 
     /**
      * <p>

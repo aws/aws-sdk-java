@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,13 +19,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes an instance fleet, which is a group of EC2 instances that host a particular node type (master, core, or
- * task) in an Amazon EMR cluster. Instance fleets can consist of a mix of instance types and On-Demand and Spot
+ * Describes an instance fleet, which is a group of Amazon EC2 instances that host a particular node type (master, core,
+ * or task) in an Amazon EMR cluster. Instance fleets can consist of a mix of instance types and On-Demand and Spot
  * Instances, which are provisioned to meet a defined target capacity.
  * </p>
  * <note>
  * <p>
- * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
+ * The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.
  * </p>
  * </note>
  * 
@@ -132,6 +132,12 @@ public class InstanceFleet implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private InstanceFleetProvisioningSpecifications launchSpecifications;
+    /**
+     * <p>
+     * The resize specification for the instance fleet.
+     * </p>
+     */
+    private InstanceFleetResizingSpecifications resizeSpecifications;
 
     /**
      * <p>
@@ -814,6 +820,46 @@ public class InstanceFleet implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The resize specification for the instance fleet.
+     * </p>
+     * 
+     * @param resizeSpecifications
+     *        The resize specification for the instance fleet.
+     */
+
+    public void setResizeSpecifications(InstanceFleetResizingSpecifications resizeSpecifications) {
+        this.resizeSpecifications = resizeSpecifications;
+    }
+
+    /**
+     * <p>
+     * The resize specification for the instance fleet.
+     * </p>
+     * 
+     * @return The resize specification for the instance fleet.
+     */
+
+    public InstanceFleetResizingSpecifications getResizeSpecifications() {
+        return this.resizeSpecifications;
+    }
+
+    /**
+     * <p>
+     * The resize specification for the instance fleet.
+     * </p>
+     * 
+     * @param resizeSpecifications
+     *        The resize specification for the instance fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceFleet withResizeSpecifications(InstanceFleetResizingSpecifications resizeSpecifications) {
+        setResizeSpecifications(resizeSpecifications);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -844,7 +890,9 @@ public class InstanceFleet implements Serializable, Cloneable, StructuredPojo {
         if (getInstanceTypeSpecifications() != null)
             sb.append("InstanceTypeSpecifications: ").append(getInstanceTypeSpecifications()).append(",");
         if (getLaunchSpecifications() != null)
-            sb.append("LaunchSpecifications: ").append(getLaunchSpecifications());
+            sb.append("LaunchSpecifications: ").append(getLaunchSpecifications()).append(",");
+        if (getResizeSpecifications() != null)
+            sb.append("ResizeSpecifications: ").append(getResizeSpecifications());
         sb.append("}");
         return sb.toString();
     }
@@ -899,6 +947,10 @@ public class InstanceFleet implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLaunchSpecifications() != null && other.getLaunchSpecifications().equals(this.getLaunchSpecifications()) == false)
             return false;
+        if (other.getResizeSpecifications() == null ^ this.getResizeSpecifications() == null)
+            return false;
+        if (other.getResizeSpecifications() != null && other.getResizeSpecifications().equals(this.getResizeSpecifications()) == false)
+            return false;
         return true;
     }
 
@@ -917,6 +969,7 @@ public class InstanceFleet implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getProvisionedSpotCapacity() == null) ? 0 : getProvisionedSpotCapacity().hashCode());
         hashCode = prime * hashCode + ((getInstanceTypeSpecifications() == null) ? 0 : getInstanceTypeSpecifications().hashCode());
         hashCode = prime * hashCode + ((getLaunchSpecifications() == null) ? 0 : getLaunchSpecifications().hashCode());
+        hashCode = prime * hashCode + ((getResizeSpecifications() == null) ? 0 : getResizeSpecifications().hashCode());
         return hashCode;
     }
 

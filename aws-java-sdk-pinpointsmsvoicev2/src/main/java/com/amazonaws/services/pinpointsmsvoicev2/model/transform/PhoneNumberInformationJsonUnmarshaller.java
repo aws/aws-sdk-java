@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -94,6 +94,10 @@ public class PhoneNumberInformationJsonUnmarshaller implements Unmarshaller<Phon
                     context.nextToken();
                     phoneNumberInformation.setTwoWayChannelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("TwoWayChannelRole", targetDepth)) {
+                    context.nextToken();
+                    phoneNumberInformation.setTwoWayChannelRole(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("SelfManagedOptOutsEnabled", targetDepth)) {
                     context.nextToken();
                     phoneNumberInformation.setSelfManagedOptOutsEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
@@ -109,6 +113,10 @@ public class PhoneNumberInformationJsonUnmarshaller implements Unmarshaller<Phon
                 if (context.testExpression("PoolId", targetDepth)) {
                     context.nextToken();
                     phoneNumberInformation.setPoolId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("RegistrationId", targetDepth)) {
+                    context.nextToken();
+                    phoneNumberInformation.setRegistrationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
                     context.nextToken();

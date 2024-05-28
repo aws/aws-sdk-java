@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -94,7 +94,7 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
     private java.util.Map<String, String> metadata;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target recovery point; for example,
+     * The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example:
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.
      * </p>
      */
@@ -120,6 +120,11 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <li>
      * <p>
      * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CloudFormation</code> for CloudFormation
      * </p>
      * </li>
      * <li>
@@ -159,6 +164,11 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
+     * <code>Redshift</code> for Amazon Redshift
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Storage Gateway</code> for Storage Gateway
      * </p>
      * </li>
@@ -169,12 +179,27 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
+     * <code>Timestream</code> for Amazon Timestream
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>VirtualMachine</code> for virtual machines
      * </p>
      * </li>
      * </ul>
      */
     private String resourceType;
+    /**
+     * <p>
+     * This is an optional parameter. If this equals <code>True</code>, tags included in the backup will be copied to
+     * the restored resource.
+     * </p>
+     * <p>
+     * This can only be applied to backups created through Backup.
+     * </p>
+     */
+    private Boolean copySourceTagsToRestoredResource;
 
     /**
      * <p>
@@ -616,13 +641,13 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target recovery point; for example,
+     * The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example:
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.
      * </p>
      * 
      * @param iamRoleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target recovery point; for
-     *        example, <code>arn:aws:iam::123456789012:role/S3Access</code>.
+     *        The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for
+     *        example: <code>arn:aws:iam::123456789012:role/S3Access</code>.
      */
 
     public void setIamRoleArn(String iamRoleArn) {
@@ -631,12 +656,12 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target recovery point; for example,
+     * The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example:
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target recovery point; for
-     *         example, <code>arn:aws:iam::123456789012:role/S3Access</code>.
+     * @return The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for
+     *         example: <code>arn:aws:iam::123456789012:role/S3Access</code>.
      */
 
     public String getIamRoleArn() {
@@ -645,13 +670,13 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target recovery point; for example,
+     * The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example:
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.
      * </p>
      * 
      * @param iamRoleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target recovery point; for
-     *        example, <code>arn:aws:iam::123456789012:role/S3Access</code>.
+     *        The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for
+     *        example: <code>arn:aws:iam::123456789012:role/S3Access</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -729,6 +754,11 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
+     * <code>CloudFormation</code> for CloudFormation
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>DynamoDB</code> for Amazon DynamoDB
      * </p>
      * </li>
@@ -764,12 +794,22 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
+     * <code>Redshift</code> for Amazon Redshift
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Storage Gateway</code> for Storage Gateway
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>S3</code> for Amazon S3
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Timestream</code> for Amazon Timestream
      * </p>
      * </li>
      * <li>
@@ -790,6 +830,11 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        <li>
      *        <p>
      *        <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CloudFormation</code> for CloudFormation
      *        </p>
      *        </li>
      *        <li>
@@ -829,12 +874,22 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
+     *        <code>Redshift</code> for Amazon Redshift
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>Storage Gateway</code> for Storage Gateway
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>S3</code> for Amazon S3
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Timestream</code> for Amazon Timestream
      *        </p>
      *        </li>
      *        <li>
@@ -861,6 +916,11 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <li>
      * <p>
      * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CloudFormation</code> for CloudFormation
      * </p>
      * </li>
      * <li>
@@ -900,12 +960,22 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
+     * <code>Redshift</code> for Amazon Redshift
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Storage Gateway</code> for Storage Gateway
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>S3</code> for Amazon S3
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Timestream</code> for Amazon Timestream
      * </p>
      * </li>
      * <li>
@@ -925,6 +995,11 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *         <li>
      *         <p>
      *         <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CloudFormation</code> for CloudFormation
      *         </p>
      *         </li>
      *         <li>
@@ -964,12 +1039,22 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *         </li>
      *         <li>
      *         <p>
+     *         <code>Redshift</code> for Amazon Redshift
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>Storage Gateway</code> for Storage Gateway
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>S3</code> for Amazon S3
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Timestream</code> for Amazon Timestream
      *         </p>
      *         </li>
      *         <li>
@@ -996,6 +1081,11 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <li>
      * <p>
      * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CloudFormation</code> for CloudFormation
      * </p>
      * </li>
      * <li>
@@ -1035,12 +1125,22 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
+     * <code>Redshift</code> for Amazon Redshift
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Storage Gateway</code> for Storage Gateway
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>S3</code> for Amazon S3
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Timestream</code> for Amazon Timestream
      * </p>
      * </li>
      * <li>
@@ -1061,6 +1161,11 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        <li>
      *        <p>
      *        <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CloudFormation</code> for CloudFormation
      *        </p>
      *        </li>
      *        <li>
@@ -1100,12 +1205,22 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
+     *        <code>Redshift</code> for Amazon Redshift
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>Storage Gateway</code> for Storage Gateway
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>S3</code> for Amazon S3
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Timestream</code> for Amazon Timestream
      *        </p>
      *        </li>
      *        <li>
@@ -1119,6 +1234,86 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
     public StartRestoreJobRequest withResourceType(String resourceType) {
         setResourceType(resourceType);
         return this;
+    }
+
+    /**
+     * <p>
+     * This is an optional parameter. If this equals <code>True</code>, tags included in the backup will be copied to
+     * the restored resource.
+     * </p>
+     * <p>
+     * This can only be applied to backups created through Backup.
+     * </p>
+     * 
+     * @param copySourceTagsToRestoredResource
+     *        This is an optional parameter. If this equals <code>True</code>, tags included in the backup will be
+     *        copied to the restored resource.</p>
+     *        <p>
+     *        This can only be applied to backups created through Backup.
+     */
+
+    public void setCopySourceTagsToRestoredResource(Boolean copySourceTagsToRestoredResource) {
+        this.copySourceTagsToRestoredResource = copySourceTagsToRestoredResource;
+    }
+
+    /**
+     * <p>
+     * This is an optional parameter. If this equals <code>True</code>, tags included in the backup will be copied to
+     * the restored resource.
+     * </p>
+     * <p>
+     * This can only be applied to backups created through Backup.
+     * </p>
+     * 
+     * @return This is an optional parameter. If this equals <code>True</code>, tags included in the backup will be
+     *         copied to the restored resource.</p>
+     *         <p>
+     *         This can only be applied to backups created through Backup.
+     */
+
+    public Boolean getCopySourceTagsToRestoredResource() {
+        return this.copySourceTagsToRestoredResource;
+    }
+
+    /**
+     * <p>
+     * This is an optional parameter. If this equals <code>True</code>, tags included in the backup will be copied to
+     * the restored resource.
+     * </p>
+     * <p>
+     * This can only be applied to backups created through Backup.
+     * </p>
+     * 
+     * @param copySourceTagsToRestoredResource
+     *        This is an optional parameter. If this equals <code>True</code>, tags included in the backup will be
+     *        copied to the restored resource.</p>
+     *        <p>
+     *        This can only be applied to backups created through Backup.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartRestoreJobRequest withCopySourceTagsToRestoredResource(Boolean copySourceTagsToRestoredResource) {
+        setCopySourceTagsToRestoredResource(copySourceTagsToRestoredResource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This is an optional parameter. If this equals <code>True</code>, tags included in the backup will be copied to
+     * the restored resource.
+     * </p>
+     * <p>
+     * This can only be applied to backups created through Backup.
+     * </p>
+     * 
+     * @return This is an optional parameter. If this equals <code>True</code>, tags included in the backup will be
+     *         copied to the restored resource.</p>
+     *         <p>
+     *         This can only be applied to backups created through Backup.
+     */
+
+    public Boolean isCopySourceTagsToRestoredResource() {
+        return this.copySourceTagsToRestoredResource;
     }
 
     /**
@@ -1142,7 +1337,9 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
         if (getIdempotencyToken() != null)
             sb.append("IdempotencyToken: ").append(getIdempotencyToken()).append(",");
         if (getResourceType() != null)
-            sb.append("ResourceType: ").append(getResourceType());
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
+        if (getCopySourceTagsToRestoredResource() != null)
+            sb.append("CopySourceTagsToRestoredResource: ").append(getCopySourceTagsToRestoredResource());
         sb.append("}");
         return sb.toString();
     }
@@ -1177,6 +1374,11 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
             return false;
+        if (other.getCopySourceTagsToRestoredResource() == null ^ this.getCopySourceTagsToRestoredResource() == null)
+            return false;
+        if (other.getCopySourceTagsToRestoredResource() != null
+                && other.getCopySourceTagsToRestoredResource().equals(this.getCopySourceTagsToRestoredResource()) == false)
+            return false;
         return true;
     }
 
@@ -1190,6 +1392,7 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getIamRoleArn() == null) ? 0 : getIamRoleArn().hashCode());
         hashCode = prime * hashCode + ((getIdempotencyToken() == null) ? 0 : getIdempotencyToken().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
+        hashCode = prime * hashCode + ((getCopySourceTagsToRestoredResource() == null) ? 0 : getCopySourceTagsToRestoredResource().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class RemixSettingsMarshaller {
 
+    private static final MarshallingInfo<Integer> AUDIODESCRIPTIONAUDIOCHANNEL_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioDescriptionAudioChannel").build();
+    private static final MarshallingInfo<Integer> AUDIODESCRIPTIONDATACHANNEL_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioDescriptionDataChannel").build();
     private static final MarshallingInfo<StructuredPojo> CHANNELMAPPING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("channelMapping").build();
     private static final MarshallingInfo<Integer> CHANNELSIN_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -50,6 +54,8 @@ public class RemixSettingsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(remixSettings.getAudioDescriptionAudioChannel(), AUDIODESCRIPTIONAUDIOCHANNEL_BINDING);
+            protocolMarshaller.marshall(remixSettings.getAudioDescriptionDataChannel(), AUDIODESCRIPTIONDATACHANNEL_BINDING);
             protocolMarshaller.marshall(remixSettings.getChannelMapping(), CHANNELMAPPING_BINDING);
             protocolMarshaller.marshall(remixSettings.getChannelsIn(), CHANNELSIN_BINDING);
             protocolMarshaller.marshall(remixSettings.getChannelsOut(), CHANNELSOUT_BINDING);

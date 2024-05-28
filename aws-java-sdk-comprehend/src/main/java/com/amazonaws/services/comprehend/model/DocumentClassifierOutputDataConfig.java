@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides output results configuration parameters for custom classifier jobs.
+ * Provide the location for output data from a custom classifier job. This field is mandatory if you are training a
+ * native document model.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DocumentClassifierOutputDataConfig"
@@ -31,8 +32,9 @@ public class DocumentClassifierOutputDataConfig implements Serializable, Cloneab
     /**
      * <p>
      * When you use the <code>OutputDataConfig</code> object while creating a custom classifier, you specify the Amazon
-     * S3 location where you want to write the confusion matrix. The URI must be in the same region as the API endpoint
-     * that you are calling. The location is used as the prefix for the actual location of this output file.
+     * S3 location where you want to write the confusion matrix and other output files. The URI must be in the same
+     * Region as the API endpoint that you are calling. The location is used as the prefix for the actual location of
+     * this output file.
      * </p>
      * <p>
      * When the custom classifier job is finished, the service creates the output file in a directory specific to the
@@ -43,8 +45,8 @@ public class DocumentClassifierOutputDataConfig implements Serializable, Cloneab
     private String s3Uri;
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the output results from an
-     * analysis job. The KmsKeyId can be one of the following formats:
+     * ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the output
+     * results from an analysis job. The KmsKeyId can be one of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -71,12 +73,19 @@ public class DocumentClassifierOutputDataConfig implements Serializable, Cloneab
      * </ul>
      */
     private String kmsKeyId;
+    /**
+     * <p>
+     * The Amazon S3 prefix for the data lake location of the flywheel statistics.
+     * </p>
+     */
+    private String flywheelStatsS3Prefix;
 
     /**
      * <p>
      * When you use the <code>OutputDataConfig</code> object while creating a custom classifier, you specify the Amazon
-     * S3 location where you want to write the confusion matrix. The URI must be in the same region as the API endpoint
-     * that you are calling. The location is used as the prefix for the actual location of this output file.
+     * S3 location where you want to write the confusion matrix and other output files. The URI must be in the same
+     * Region as the API endpoint that you are calling. The location is used as the prefix for the actual location of
+     * this output file.
      * </p>
      * <p>
      * When the custom classifier job is finished, the service creates the output file in a directory specific to the
@@ -86,9 +95,9 @@ public class DocumentClassifierOutputDataConfig implements Serializable, Cloneab
      * 
      * @param s3Uri
      *        When you use the <code>OutputDataConfig</code> object while creating a custom classifier, you specify the
-     *        Amazon S3 location where you want to write the confusion matrix. The URI must be in the same region as the
-     *        API endpoint that you are calling. The location is used as the prefix for the actual location of this
-     *        output file.</p>
+     *        Amazon S3 location where you want to write the confusion matrix and other output files. The URI must be in
+     *        the same Region as the API endpoint that you are calling. The location is used as the prefix for the
+     *        actual location of this output file.</p>
      *        <p>
      *        When the custom classifier job is finished, the service creates the output file in a directory specific to
      *        the job. The <code>S3Uri</code> field contains the location of the output file, called
@@ -102,8 +111,9 @@ public class DocumentClassifierOutputDataConfig implements Serializable, Cloneab
     /**
      * <p>
      * When you use the <code>OutputDataConfig</code> object while creating a custom classifier, you specify the Amazon
-     * S3 location where you want to write the confusion matrix. The URI must be in the same region as the API endpoint
-     * that you are calling. The location is used as the prefix for the actual location of this output file.
+     * S3 location where you want to write the confusion matrix and other output files. The URI must be in the same
+     * Region as the API endpoint that you are calling. The location is used as the prefix for the actual location of
+     * this output file.
      * </p>
      * <p>
      * When the custom classifier job is finished, the service creates the output file in a directory specific to the
@@ -112,9 +122,9 @@ public class DocumentClassifierOutputDataConfig implements Serializable, Cloneab
      * </p>
      * 
      * @return When you use the <code>OutputDataConfig</code> object while creating a custom classifier, you specify the
-     *         Amazon S3 location where you want to write the confusion matrix. The URI must be in the same region as
-     *         the API endpoint that you are calling. The location is used as the prefix for the actual location of this
-     *         output file.</p>
+     *         Amazon S3 location where you want to write the confusion matrix and other output files. The URI must be
+     *         in the same Region as the API endpoint that you are calling. The location is used as the prefix for the
+     *         actual location of this output file.</p>
      *         <p>
      *         When the custom classifier job is finished, the service creates the output file in a directory specific
      *         to the job. The <code>S3Uri</code> field contains the location of the output file, called
@@ -128,8 +138,9 @@ public class DocumentClassifierOutputDataConfig implements Serializable, Cloneab
     /**
      * <p>
      * When you use the <code>OutputDataConfig</code> object while creating a custom classifier, you specify the Amazon
-     * S3 location where you want to write the confusion matrix. The URI must be in the same region as the API endpoint
-     * that you are calling. The location is used as the prefix for the actual location of this output file.
+     * S3 location where you want to write the confusion matrix and other output files. The URI must be in the same
+     * Region as the API endpoint that you are calling. The location is used as the prefix for the actual location of
+     * this output file.
      * </p>
      * <p>
      * When the custom classifier job is finished, the service creates the output file in a directory specific to the
@@ -139,9 +150,9 @@ public class DocumentClassifierOutputDataConfig implements Serializable, Cloneab
      * 
      * @param s3Uri
      *        When you use the <code>OutputDataConfig</code> object while creating a custom classifier, you specify the
-     *        Amazon S3 location where you want to write the confusion matrix. The URI must be in the same region as the
-     *        API endpoint that you are calling. The location is used as the prefix for the actual location of this
-     *        output file.</p>
+     *        Amazon S3 location where you want to write the confusion matrix and other output files. The URI must be in
+     *        the same Region as the API endpoint that you are calling. The location is used as the prefix for the
+     *        actual location of this output file.</p>
      *        <p>
      *        When the custom classifier job is finished, the service creates the output file in a directory specific to
      *        the job. The <code>S3Uri</code> field contains the location of the output file, called
@@ -156,8 +167,8 @@ public class DocumentClassifierOutputDataConfig implements Serializable, Cloneab
 
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the output results from an
-     * analysis job. The KmsKeyId can be one of the following formats:
+     * ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the output
+     * results from an analysis job. The KmsKeyId can be one of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -184,8 +195,8 @@ public class DocumentClassifierOutputDataConfig implements Serializable, Cloneab
      * </ul>
      * 
      * @param kmsKeyId
-     *        ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the output results
-     *        from an analysis job. The KmsKeyId can be one of the following formats:</p>
+     *        ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the
+     *        output results from an analysis job. The KmsKeyId can be one of the following formats:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -216,8 +227,8 @@ public class DocumentClassifierOutputDataConfig implements Serializable, Cloneab
 
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the output results from an
-     * analysis job. The KmsKeyId can be one of the following formats:
+     * ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the output
+     * results from an analysis job. The KmsKeyId can be one of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -243,8 +254,8 @@ public class DocumentClassifierOutputDataConfig implements Serializable, Cloneab
      * </li>
      * </ul>
      * 
-     * @return ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the output results
-     *         from an analysis job. The KmsKeyId can be one of the following formats:</p>
+     * @return ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+     *         the output results from an analysis job. The KmsKeyId can be one of the following formats:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -275,8 +286,8 @@ public class DocumentClassifierOutputDataConfig implements Serializable, Cloneab
 
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the output results from an
-     * analysis job. The KmsKeyId can be one of the following formats:
+     * ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the output
+     * results from an analysis job. The KmsKeyId can be one of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -303,8 +314,8 @@ public class DocumentClassifierOutputDataConfig implements Serializable, Cloneab
      * </ul>
      * 
      * @param kmsKeyId
-     *        ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the output results
-     *        from an analysis job. The KmsKeyId can be one of the following formats:</p>
+     *        ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the
+     *        output results from an analysis job. The KmsKeyId can be one of the following formats:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -336,6 +347,46 @@ public class DocumentClassifierOutputDataConfig implements Serializable, Cloneab
     }
 
     /**
+     * <p>
+     * The Amazon S3 prefix for the data lake location of the flywheel statistics.
+     * </p>
+     * 
+     * @param flywheelStatsS3Prefix
+     *        The Amazon S3 prefix for the data lake location of the flywheel statistics.
+     */
+
+    public void setFlywheelStatsS3Prefix(String flywheelStatsS3Prefix) {
+        this.flywheelStatsS3Prefix = flywheelStatsS3Prefix;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 prefix for the data lake location of the flywheel statistics.
+     * </p>
+     * 
+     * @return The Amazon S3 prefix for the data lake location of the flywheel statistics.
+     */
+
+    public String getFlywheelStatsS3Prefix() {
+        return this.flywheelStatsS3Prefix;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 prefix for the data lake location of the flywheel statistics.
+     * </p>
+     * 
+     * @param flywheelStatsS3Prefix
+     *        The Amazon S3 prefix for the data lake location of the flywheel statistics.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentClassifierOutputDataConfig withFlywheelStatsS3Prefix(String flywheelStatsS3Prefix) {
+        setFlywheelStatsS3Prefix(flywheelStatsS3Prefix);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -350,7 +401,9 @@ public class DocumentClassifierOutputDataConfig implements Serializable, Cloneab
         if (getS3Uri() != null)
             sb.append("S3Uri: ").append(getS3Uri()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: ").append(getKmsKeyId());
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
+        if (getFlywheelStatsS3Prefix() != null)
+            sb.append("FlywheelStatsS3Prefix: ").append(getFlywheelStatsS3Prefix());
         sb.append("}");
         return sb.toString();
     }
@@ -373,6 +426,10 @@ public class DocumentClassifierOutputDataConfig implements Serializable, Cloneab
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
+        if (other.getFlywheelStatsS3Prefix() == null ^ this.getFlywheelStatsS3Prefix() == null)
+            return false;
+        if (other.getFlywheelStatsS3Prefix() != null && other.getFlywheelStatsS3Prefix().equals(this.getFlywheelStatsS3Prefix()) == false)
+            return false;
         return true;
     }
 
@@ -383,6 +440,7 @@ public class DocumentClassifierOutputDataConfig implements Serializable, Cloneab
 
         hashCode = prime * hashCode + ((getS3Uri() == null) ? 0 : getS3Uri().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getFlywheelStatsS3Prefix() == null) ? 0 : getFlywheelStatsS3Prefix().hashCode());
         return hashCode;
     }
 

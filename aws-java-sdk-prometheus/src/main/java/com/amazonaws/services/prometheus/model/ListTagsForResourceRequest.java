@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,18 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the resource.
+     * The ARN of the resource to list tages for. Must be a workspace or rule groups namespace resource.
      * </p>
      */
     private String resourceArn;
 
     /**
      * <p>
-     * The ARN of the resource.
+     * The ARN of the resource to list tages for. Must be a workspace or rule groups namespace resource.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN of the resource.
+     *        The ARN of the resource to list tages for. Must be a workspace or rule groups namespace resource.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -47,10 +47,10 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the resource.
+     * The ARN of the resource to list tages for. Must be a workspace or rule groups namespace resource.
      * </p>
      * 
-     * @return The ARN of the resource.
+     * @return The ARN of the resource to list tages for. Must be a workspace or rule groups namespace resource.
      */
 
     public String getResourceArn() {
@@ -59,11 +59,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the resource.
+     * The ARN of the resource to list tages for. Must be a workspace or rule groups namespace resource.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN of the resource.
+     *        The ARN of the resource to list tages for. Must be a workspace or rule groups namespace resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

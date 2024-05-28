@@ -1,0 +1,302 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.chimesdkvoice.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+import com.amazonaws.AmazonWebServiceRequest;
+
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdatePhoneNumber" target="_top">AWS
+ *      API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class UpdatePhoneNumberRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * The phone number ID.
+     * </p>
+     */
+    private String phoneNumberId;
+    /**
+     * <p>
+     * The product type.
+     * </p>
+     */
+    private String productType;
+    /**
+     * <p>
+     * The outbound calling name associated with the phone number.
+     * </p>
+     */
+    private String callingName;
+    /**
+     * <p>
+     * Specifies the updated name assigned to one or more phone numbers.
+     * </p>
+     */
+    private String name;
+
+    /**
+     * <p>
+     * The phone number ID.
+     * </p>
+     * 
+     * @param phoneNumberId
+     *        The phone number ID.
+     */
+
+    public void setPhoneNumberId(String phoneNumberId) {
+        this.phoneNumberId = phoneNumberId;
+    }
+
+    /**
+     * <p>
+     * The phone number ID.
+     * </p>
+     * 
+     * @return The phone number ID.
+     */
+
+    public String getPhoneNumberId() {
+        return this.phoneNumberId;
+    }
+
+    /**
+     * <p>
+     * The phone number ID.
+     * </p>
+     * 
+     * @param phoneNumberId
+     *        The phone number ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdatePhoneNumberRequest withPhoneNumberId(String phoneNumberId) {
+        setPhoneNumberId(phoneNumberId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The product type.
+     * </p>
+     * 
+     * @param productType
+     *        The product type.
+     * @see PhoneNumberProductType
+     */
+
+    public void setProductType(String productType) {
+        this.productType = productType;
+    }
+
+    /**
+     * <p>
+     * The product type.
+     * </p>
+     * 
+     * @return The product type.
+     * @see PhoneNumberProductType
+     */
+
+    public String getProductType() {
+        return this.productType;
+    }
+
+    /**
+     * <p>
+     * The product type.
+     * </p>
+     * 
+     * @param productType
+     *        The product type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PhoneNumberProductType
+     */
+
+    public UpdatePhoneNumberRequest withProductType(String productType) {
+        setProductType(productType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The product type.
+     * </p>
+     * 
+     * @param productType
+     *        The product type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PhoneNumberProductType
+     */
+
+    public UpdatePhoneNumberRequest withProductType(PhoneNumberProductType productType) {
+        this.productType = productType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The outbound calling name associated with the phone number.
+     * </p>
+     * 
+     * @param callingName
+     *        The outbound calling name associated with the phone number.
+     */
+
+    public void setCallingName(String callingName) {
+        this.callingName = callingName;
+    }
+
+    /**
+     * <p>
+     * The outbound calling name associated with the phone number.
+     * </p>
+     * 
+     * @return The outbound calling name associated with the phone number.
+     */
+
+    public String getCallingName() {
+        return this.callingName;
+    }
+
+    /**
+     * <p>
+     * The outbound calling name associated with the phone number.
+     * </p>
+     * 
+     * @param callingName
+     *        The outbound calling name associated with the phone number.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdatePhoneNumberRequest withCallingName(String callingName) {
+        setCallingName(callingName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the updated name assigned to one or more phone numbers.
+     * </p>
+     * 
+     * @param name
+     *        Specifies the updated name assigned to one or more phone numbers.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * Specifies the updated name assigned to one or more phone numbers.
+     * </p>
+     * 
+     * @return Specifies the updated name assigned to one or more phone numbers.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * Specifies the updated name assigned to one or more phone numbers.
+     * </p>
+     * 
+     * @param name
+     *        Specifies the updated name assigned to one or more phone numbers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdatePhoneNumberRequest withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getPhoneNumberId() != null)
+            sb.append("PhoneNumberId: ").append("***Sensitive Data Redacted***").append(",");
+        if (getProductType() != null)
+            sb.append("ProductType: ").append(getProductType()).append(",");
+        if (getCallingName() != null)
+            sb.append("CallingName: ").append("***Sensitive Data Redacted***").append(",");
+        if (getName() != null)
+            sb.append("Name: ").append("***Sensitive Data Redacted***");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof UpdatePhoneNumberRequest == false)
+            return false;
+        UpdatePhoneNumberRequest other = (UpdatePhoneNumberRequest) obj;
+        if (other.getPhoneNumberId() == null ^ this.getPhoneNumberId() == null)
+            return false;
+        if (other.getPhoneNumberId() != null && other.getPhoneNumberId().equals(this.getPhoneNumberId()) == false)
+            return false;
+        if (other.getProductType() == null ^ this.getProductType() == null)
+            return false;
+        if (other.getProductType() != null && other.getProductType().equals(this.getProductType()) == false)
+            return false;
+        if (other.getCallingName() == null ^ this.getCallingName() == null)
+            return false;
+        if (other.getCallingName() != null && other.getCallingName().equals(this.getCallingName()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getPhoneNumberId() == null) ? 0 : getPhoneNumberId().hashCode());
+        hashCode = prime * hashCode + ((getProductType() == null) ? 0 : getProductType().hashCode());
+        hashCode = prime * hashCode + ((getCallingName() == null) ? 0 : getCallingName().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public UpdatePhoneNumberRequest clone() {
+        return (UpdatePhoneNumberRequest) super.clone();
+    }
+
+}

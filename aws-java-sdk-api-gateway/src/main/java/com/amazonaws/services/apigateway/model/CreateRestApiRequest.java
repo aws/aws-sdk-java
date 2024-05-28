@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,9 +67,9 @@ public class CreateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
     private Integer minimumCompressionSize;
     /**
      * <p>
-     * The source of the API key for metering requests according to a usage plan. Valid values are: &gt;
-     * <code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.
-     * <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.
+     * The source of the API key for metering requests according to a usage plan. Valid values are: <code>HEADER</code>
+     * to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API
+     * key from the <code>UsageIdentifierKey</code> from a custom authorizer.
      * </p>
      */
     private String apiKeySource;
@@ -400,13 +400,13 @@ public class CreateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The source of the API key for metering requests according to a usage plan. Valid values are: &gt;
-     * <code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.
-     * <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.
+     * The source of the API key for metering requests according to a usage plan. Valid values are: <code>HEADER</code>
+     * to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API
+     * key from the <code>UsageIdentifierKey</code> from a custom authorizer.
      * </p>
      * 
      * @param apiKeySource
-     *        The source of the API key for metering requests according to a usage plan. Valid values are: &gt;
+     *        The source of the API key for metering requests according to a usage plan. Valid values are:
      *        <code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.
      *        <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
      *        authorizer.
@@ -419,12 +419,12 @@ public class CreateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The source of the API key for metering requests according to a usage plan. Valid values are: &gt;
-     * <code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.
-     * <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.
+     * The source of the API key for metering requests according to a usage plan. Valid values are: <code>HEADER</code>
+     * to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API
+     * key from the <code>UsageIdentifierKey</code> from a custom authorizer.
      * </p>
      * 
-     * @return The source of the API key for metering requests according to a usage plan. Valid values are: &gt;
+     * @return The source of the API key for metering requests according to a usage plan. Valid values are:
      *         <code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.
      *         <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
      *         authorizer.
@@ -437,13 +437,13 @@ public class CreateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The source of the API key for metering requests according to a usage plan. Valid values are: &gt;
-     * <code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.
-     * <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.
+     * The source of the API key for metering requests according to a usage plan. Valid values are: <code>HEADER</code>
+     * to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API
+     * key from the <code>UsageIdentifierKey</code> from a custom authorizer.
      * </p>
      * 
      * @param apiKeySource
-     *        The source of the API key for metering requests according to a usage plan. Valid values are: &gt;
+     *        The source of the API key for metering requests according to a usage plan. Valid values are:
      *        <code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.
      *        <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
      *        authorizer.
@@ -458,13 +458,13 @@ public class CreateRestApiRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The source of the API key for metering requests according to a usage plan. Valid values are: &gt;
-     * <code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.
-     * <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.
+     * The source of the API key for metering requests according to a usage plan. Valid values are: <code>HEADER</code>
+     * to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API
+     * key from the <code>UsageIdentifierKey</code> from a custom authorizer.
      * </p>
      * 
      * @param apiKeySource
-     *        The source of the API key for metering requests according to a usage plan. Valid values are: &gt;
+     *        The source of the API key for metering requests according to a usage plan. Valid values are:
      *        <code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request.
      *        <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom
      *        authorizer.

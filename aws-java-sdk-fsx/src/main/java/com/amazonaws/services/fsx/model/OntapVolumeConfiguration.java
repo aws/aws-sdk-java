@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -135,6 +135,77 @@ public class OntapVolumeConfiguration implements Serializable, Cloneable, Struct
      * </ul>
      */
     private String ontapVolumeType;
+    /**
+     * <p>
+     * Specifies the snapshot policy for the volume. There are three built-in snapshot policies:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the
+     * hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of
+     * two weekly snapshots taken every Sunday at 15 minutes after midnight.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only
+     * retains one snapshot from the weekly schedule.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent
+     * automatic snapshots from being taken.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
+     * policies</a> in the Amazon FSx for NetApp ONTAP User Guide.
+     * </p>
+     */
+    private String snapshotPolicy;
+    /**
+     * <p>
+     * A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false.
+     * If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the
+     * user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are
+     * copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from
+     * the volume, regardless of this value.
+     * </p>
+     */
+    private Boolean copyTagsToBackups;
+    /**
+     * <p>
+     * The SnapLock configuration object for an FSx for ONTAP SnapLock volume.
+     * </p>
+     */
+    private SnaplockConfiguration snaplockConfiguration;
+    /**
+     * <p>
+     * Use to specify the style of an ONTAP volume. For more information about FlexVols and FlexGroups, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume types</a> in Amazon FSx for
+     * NetApp ONTAP User Guide.
+     * </p>
+     */
+    private String volumeStyle;
+    /**
+     * <p>
+     * This structure specifies configuration options for a volume’s storage aggregate or aggregates.
+     * </p>
+     */
+    private AggregateConfiguration aggregateConfiguration;
+    /**
+     * <p>
+     * The configured size of the volume, in bytes.
+     * </p>
+     */
+    private Long sizeInBytes;
 
     /**
      * <p>
@@ -986,6 +1057,496 @@ public class OntapVolumeConfiguration implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * Specifies the snapshot policy for the volume. There are three built-in snapshot policies:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the
+     * hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of
+     * two weekly snapshots taken every Sunday at 15 minutes after midnight.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only
+     * retains one snapshot from the weekly schedule.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent
+     * automatic snapshots from being taken.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
+     * policies</a> in the Amazon FSx for NetApp ONTAP User Guide.
+     * </p>
+     * 
+     * @param snapshotPolicy
+     *        Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes
+     *        past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after
+     *        midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it
+     *        only retains one snapshot from the weekly schedule.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to
+     *        prevent automatic snapshots from being taken.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
+     *        policies</a> in the Amazon FSx for NetApp ONTAP User Guide.
+     */
+
+    public void setSnapshotPolicy(String snapshotPolicy) {
+        this.snapshotPolicy = snapshotPolicy;
+    }
+
+    /**
+     * <p>
+     * Specifies the snapshot policy for the volume. There are three built-in snapshot policies:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the
+     * hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of
+     * two weekly snapshots taken every Sunday at 15 minutes after midnight.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only
+     * retains one snapshot from the weekly schedule.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent
+     * automatic snapshots from being taken.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
+     * policies</a> in the Amazon FSx for NetApp ONTAP User Guide.
+     * </p>
+     * 
+     * @return Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes
+     *         past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after
+     *         midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it
+     *         only retains one snapshot from the weekly schedule.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to
+     *         prevent automatic snapshots from being taken.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
+     *         policies</a> in the Amazon FSx for NetApp ONTAP User Guide.
+     */
+
+    public String getSnapshotPolicy() {
+        return this.snapshotPolicy;
+    }
+
+    /**
+     * <p>
+     * Specifies the snapshot policy for the volume. There are three built-in snapshot policies:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the
+     * hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of
+     * two weekly snapshots taken every Sunday at 15 minutes after midnight.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only
+     * retains one snapshot from the weekly schedule.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent
+     * automatic snapshots from being taken.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
+     * policies</a> in the Amazon FSx for NetApp ONTAP User Guide.
+     * </p>
+     * 
+     * @param snapshotPolicy
+     *        Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes
+     *        past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after
+     *        midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it
+     *        only retains one snapshot from the weekly schedule.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to
+     *        prevent automatic snapshots from being taken.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
+     *        policies</a> in the Amazon FSx for NetApp ONTAP User Guide.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OntapVolumeConfiguration withSnapshotPolicy(String snapshotPolicy) {
+        setSnapshotPolicy(snapshotPolicy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false.
+     * If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the
+     * user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are
+     * copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from
+     * the volume, regardless of this value.
+     * </p>
+     * 
+     * @param copyTagsToBackups
+     *        A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to
+     *        false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups
+     *        where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the
+     *        specified tags are copied to backups. If you specify one or more tags when creating a user-initiated
+     *        backup, no tags are copied from the volume, regardless of this value.
+     */
+
+    public void setCopyTagsToBackups(Boolean copyTagsToBackups) {
+        this.copyTagsToBackups = copyTagsToBackups;
+    }
+
+    /**
+     * <p>
+     * A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false.
+     * If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the
+     * user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are
+     * copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from
+     * the volume, regardless of this value.
+     * </p>
+     * 
+     * @return A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to
+     *         false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated
+     *         backups where the user doesn't specify tags. If this value is true, and you specify one or more tags,
+     *         only the specified tags are copied to backups. If you specify one or more tags when creating a
+     *         user-initiated backup, no tags are copied from the volume, regardless of this value.
+     */
+
+    public Boolean getCopyTagsToBackups() {
+        return this.copyTagsToBackups;
+    }
+
+    /**
+     * <p>
+     * A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false.
+     * If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the
+     * user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are
+     * copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from
+     * the volume, regardless of this value.
+     * </p>
+     * 
+     * @param copyTagsToBackups
+     *        A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to
+     *        false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups
+     *        where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the
+     *        specified tags are copied to backups. If you specify one or more tags when creating a user-initiated
+     *        backup, no tags are copied from the volume, regardless of this value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OntapVolumeConfiguration withCopyTagsToBackups(Boolean copyTagsToBackups) {
+        setCopyTagsToBackups(copyTagsToBackups);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false.
+     * If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the
+     * user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are
+     * copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from
+     * the volume, regardless of this value.
+     * </p>
+     * 
+     * @return A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to
+     *         false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated
+     *         backups where the user doesn't specify tags. If this value is true, and you specify one or more tags,
+     *         only the specified tags are copied to backups. If you specify one or more tags when creating a
+     *         user-initiated backup, no tags are copied from the volume, regardless of this value.
+     */
+
+    public Boolean isCopyTagsToBackups() {
+        return this.copyTagsToBackups;
+    }
+
+    /**
+     * <p>
+     * The SnapLock configuration object for an FSx for ONTAP SnapLock volume.
+     * </p>
+     * 
+     * @param snaplockConfiguration
+     *        The SnapLock configuration object for an FSx for ONTAP SnapLock volume.
+     */
+
+    public void setSnaplockConfiguration(SnaplockConfiguration snaplockConfiguration) {
+        this.snaplockConfiguration = snaplockConfiguration;
+    }
+
+    /**
+     * <p>
+     * The SnapLock configuration object for an FSx for ONTAP SnapLock volume.
+     * </p>
+     * 
+     * @return The SnapLock configuration object for an FSx for ONTAP SnapLock volume.
+     */
+
+    public SnaplockConfiguration getSnaplockConfiguration() {
+        return this.snaplockConfiguration;
+    }
+
+    /**
+     * <p>
+     * The SnapLock configuration object for an FSx for ONTAP SnapLock volume.
+     * </p>
+     * 
+     * @param snaplockConfiguration
+     *        The SnapLock configuration object for an FSx for ONTAP SnapLock volume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OntapVolumeConfiguration withSnaplockConfiguration(SnaplockConfiguration snaplockConfiguration) {
+        setSnaplockConfiguration(snaplockConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Use to specify the style of an ONTAP volume. For more information about FlexVols and FlexGroups, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume types</a> in Amazon FSx for
+     * NetApp ONTAP User Guide.
+     * </p>
+     * 
+     * @param volumeStyle
+     *        Use to specify the style of an ONTAP volume. For more information about FlexVols and FlexGroups, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume types</a> in Amazon FSx
+     *        for NetApp ONTAP User Guide.
+     * @see VolumeStyle
+     */
+
+    public void setVolumeStyle(String volumeStyle) {
+        this.volumeStyle = volumeStyle;
+    }
+
+    /**
+     * <p>
+     * Use to specify the style of an ONTAP volume. For more information about FlexVols and FlexGroups, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume types</a> in Amazon FSx for
+     * NetApp ONTAP User Guide.
+     * </p>
+     * 
+     * @return Use to specify the style of an ONTAP volume. For more information about FlexVols and FlexGroups, see <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume types</a> in Amazon FSx
+     *         for NetApp ONTAP User Guide.
+     * @see VolumeStyle
+     */
+
+    public String getVolumeStyle() {
+        return this.volumeStyle;
+    }
+
+    /**
+     * <p>
+     * Use to specify the style of an ONTAP volume. For more information about FlexVols and FlexGroups, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume types</a> in Amazon FSx for
+     * NetApp ONTAP User Guide.
+     * </p>
+     * 
+     * @param volumeStyle
+     *        Use to specify the style of an ONTAP volume. For more information about FlexVols and FlexGroups, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume types</a> in Amazon FSx
+     *        for NetApp ONTAP User Guide.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VolumeStyle
+     */
+
+    public OntapVolumeConfiguration withVolumeStyle(String volumeStyle) {
+        setVolumeStyle(volumeStyle);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Use to specify the style of an ONTAP volume. For more information about FlexVols and FlexGroups, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume types</a> in Amazon FSx for
+     * NetApp ONTAP User Guide.
+     * </p>
+     * 
+     * @param volumeStyle
+     *        Use to specify the style of an ONTAP volume. For more information about FlexVols and FlexGroups, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume types</a> in Amazon FSx
+     *        for NetApp ONTAP User Guide.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VolumeStyle
+     */
+
+    public OntapVolumeConfiguration withVolumeStyle(VolumeStyle volumeStyle) {
+        this.volumeStyle = volumeStyle.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * This structure specifies configuration options for a volume’s storage aggregate or aggregates.
+     * </p>
+     * 
+     * @param aggregateConfiguration
+     *        This structure specifies configuration options for a volume’s storage aggregate or aggregates.
+     */
+
+    public void setAggregateConfiguration(AggregateConfiguration aggregateConfiguration) {
+        this.aggregateConfiguration = aggregateConfiguration;
+    }
+
+    /**
+     * <p>
+     * This structure specifies configuration options for a volume’s storage aggregate or aggregates.
+     * </p>
+     * 
+     * @return This structure specifies configuration options for a volume’s storage aggregate or aggregates.
+     */
+
+    public AggregateConfiguration getAggregateConfiguration() {
+        return this.aggregateConfiguration;
+    }
+
+    /**
+     * <p>
+     * This structure specifies configuration options for a volume’s storage aggregate or aggregates.
+     * </p>
+     * 
+     * @param aggregateConfiguration
+     *        This structure specifies configuration options for a volume’s storage aggregate or aggregates.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OntapVolumeConfiguration withAggregateConfiguration(AggregateConfiguration aggregateConfiguration) {
+        setAggregateConfiguration(aggregateConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configured size of the volume, in bytes.
+     * </p>
+     * 
+     * @param sizeInBytes
+     *        The configured size of the volume, in bytes.
+     */
+
+    public void setSizeInBytes(Long sizeInBytes) {
+        this.sizeInBytes = sizeInBytes;
+    }
+
+    /**
+     * <p>
+     * The configured size of the volume, in bytes.
+     * </p>
+     * 
+     * @return The configured size of the volume, in bytes.
+     */
+
+    public Long getSizeInBytes() {
+        return this.sizeInBytes;
+    }
+
+    /**
+     * <p>
+     * The configured size of the volume, in bytes.
+     * </p>
+     * 
+     * @param sizeInBytes
+     *        The configured size of the volume, in bytes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OntapVolumeConfiguration withSizeInBytes(Long sizeInBytes) {
+        setSizeInBytes(sizeInBytes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1016,7 +1577,19 @@ public class OntapVolumeConfiguration implements Serializable, Cloneable, Struct
         if (getUUID() != null)
             sb.append("UUID: ").append(getUUID()).append(",");
         if (getOntapVolumeType() != null)
-            sb.append("OntapVolumeType: ").append(getOntapVolumeType());
+            sb.append("OntapVolumeType: ").append(getOntapVolumeType()).append(",");
+        if (getSnapshotPolicy() != null)
+            sb.append("SnapshotPolicy: ").append(getSnapshotPolicy()).append(",");
+        if (getCopyTagsToBackups() != null)
+            sb.append("CopyTagsToBackups: ").append(getCopyTagsToBackups()).append(",");
+        if (getSnaplockConfiguration() != null)
+            sb.append("SnaplockConfiguration: ").append(getSnaplockConfiguration()).append(",");
+        if (getVolumeStyle() != null)
+            sb.append("VolumeStyle: ").append(getVolumeStyle()).append(",");
+        if (getAggregateConfiguration() != null)
+            sb.append("AggregateConfiguration: ").append(getAggregateConfiguration()).append(",");
+        if (getSizeInBytes() != null)
+            sb.append("SizeInBytes: ").append(getSizeInBytes());
         sb.append("}");
         return sb.toString();
     }
@@ -1071,6 +1644,30 @@ public class OntapVolumeConfiguration implements Serializable, Cloneable, Struct
             return false;
         if (other.getOntapVolumeType() != null && other.getOntapVolumeType().equals(this.getOntapVolumeType()) == false)
             return false;
+        if (other.getSnapshotPolicy() == null ^ this.getSnapshotPolicy() == null)
+            return false;
+        if (other.getSnapshotPolicy() != null && other.getSnapshotPolicy().equals(this.getSnapshotPolicy()) == false)
+            return false;
+        if (other.getCopyTagsToBackups() == null ^ this.getCopyTagsToBackups() == null)
+            return false;
+        if (other.getCopyTagsToBackups() != null && other.getCopyTagsToBackups().equals(this.getCopyTagsToBackups()) == false)
+            return false;
+        if (other.getSnaplockConfiguration() == null ^ this.getSnaplockConfiguration() == null)
+            return false;
+        if (other.getSnaplockConfiguration() != null && other.getSnaplockConfiguration().equals(this.getSnaplockConfiguration()) == false)
+            return false;
+        if (other.getVolumeStyle() == null ^ this.getVolumeStyle() == null)
+            return false;
+        if (other.getVolumeStyle() != null && other.getVolumeStyle().equals(this.getVolumeStyle()) == false)
+            return false;
+        if (other.getAggregateConfiguration() == null ^ this.getAggregateConfiguration() == null)
+            return false;
+        if (other.getAggregateConfiguration() != null && other.getAggregateConfiguration().equals(this.getAggregateConfiguration()) == false)
+            return false;
+        if (other.getSizeInBytes() == null ^ this.getSizeInBytes() == null)
+            return false;
+        if (other.getSizeInBytes() != null && other.getSizeInBytes().equals(this.getSizeInBytes()) == false)
+            return false;
         return true;
     }
 
@@ -1089,6 +1686,12 @@ public class OntapVolumeConfiguration implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getTieringPolicy() == null) ? 0 : getTieringPolicy().hashCode());
         hashCode = prime * hashCode + ((getUUID() == null) ? 0 : getUUID().hashCode());
         hashCode = prime * hashCode + ((getOntapVolumeType() == null) ? 0 : getOntapVolumeType().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotPolicy() == null) ? 0 : getSnapshotPolicy().hashCode());
+        hashCode = prime * hashCode + ((getCopyTagsToBackups() == null) ? 0 : getCopyTagsToBackups().hashCode());
+        hashCode = prime * hashCode + ((getSnaplockConfiguration() == null) ? 0 : getSnaplockConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getVolumeStyle() == null) ? 0 : getVolumeStyle().hashCode());
+        hashCode = prime * hashCode + ((getAggregateConfiguration() == null) ? 0 : getAggregateConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getSizeInBytes() == null) ? 0 : getSizeInBytes().hashCode());
         return hashCode;
     }
 

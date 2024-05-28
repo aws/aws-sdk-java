@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -73,6 +73,28 @@ public class PipelineExecutionJsonUnmarshaller implements Unmarshaller<PipelineE
                     pipelineExecution.setArtifactRevisions(new ListUnmarshaller<ArtifactRevision>(ArtifactRevisionJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (context.testExpression("variables", targetDepth)) {
+                    context.nextToken();
+                    pipelineExecution.setVariables(new ListUnmarshaller<ResolvedPipelineVariable>(ResolvedPipelineVariableJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("trigger", targetDepth)) {
+                    context.nextToken();
+                    pipelineExecution.setTrigger(ExecutionTriggerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("executionMode", targetDepth)) {
+                    context.nextToken();
+                    pipelineExecution.setExecutionMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("executionType", targetDepth)) {
+                    context.nextToken();
+                    pipelineExecution.setExecutionType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("rollbackMetadata", targetDepth)) {
+                    context.nextToken();
+                    pipelineExecution.setRollbackMetadata(PipelineRollbackMetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

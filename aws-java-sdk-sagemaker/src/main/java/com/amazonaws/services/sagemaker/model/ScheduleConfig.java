@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,12 +33,12 @@ public class ScheduleConfig implements Serializable, Cloneable, StructuredPojo {
      * A cron expression that describes details about the monitoring schedule.
      * </p>
      * <p>
-     * Currently the only supported cron expressions are:
+     * The supported cron expressions are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If you want to set the job to start every hour, please use the following:
+     * If you want to set the job to start every hour, use the following:
      * </p>
      * <p>
      * <code>Hourly: cron(0 * ? * * *)</code>
@@ -50,6 +50,14 @@ public class ScheduleConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * <code>cron(0 [00-23] ? * * *)</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you want to run the job one time, immediately, use the following keyword:
+     * </p>
+     * <p>
+     * <code>NOW</code>
      * </p>
      * </li>
      * </ul>
@@ -105,20 +113,56 @@ public class ScheduleConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * </note>
+     * <p>
+     * You can also specify the keyword <code>NOW</code> to run the monitoring job immediately, one time, without
+     * recurring.
+     * </p>
      */
     private String scheduleExpression;
+    /**
+     * <p>
+     * Sets the start time for a monitoring job window. Express this time as an offset to the times that you schedule
+     * your monitoring jobs to run. You schedule monitoring jobs with the <code>ScheduleExpression</code> parameter.
+     * Specify this offset in ISO 8601 duration format. For example, if you want to monitor the five hours of data in
+     * your dataset that precede the start of each monitoring job, you would specify: <code>"-PT5H"</code>.
+     * </p>
+     * <p>
+     * The start time that you specify must not precede the end time that you specify by more than 24 hours. You specify
+     * the end time with the <code>DataAnalysisEndTime</code> parameter.
+     * </p>
+     * <p>
+     * If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is required.
+     * </p>
+     */
+    private String dataAnalysisStartTime;
+    /**
+     * <p>
+     * Sets the end time for a monitoring job window. Express this time as an offset to the times that you schedule your
+     * monitoring jobs to run. You schedule monitoring jobs with the <code>ScheduleExpression</code> parameter. Specify
+     * this offset in ISO 8601 duration format. For example, if you want to end the window one hour before the start of
+     * each monitoring job, you would specify: <code>"-PT1H"</code>.
+     * </p>
+     * <p>
+     * The end time that you specify must not follow the start time that you specify by more than 24 hours. You specify
+     * the start time with the <code>DataAnalysisStartTime</code> parameter.
+     * </p>
+     * <p>
+     * If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is required.
+     * </p>
+     */
+    private String dataAnalysisEndTime;
 
     /**
      * <p>
      * A cron expression that describes details about the monitoring schedule.
      * </p>
      * <p>
-     * Currently the only supported cron expressions are:
+     * The supported cron expressions are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If you want to set the job to start every hour, please use the following:
+     * If you want to set the job to start every hour, use the following:
      * </p>
      * <p>
      * <code>Hourly: cron(0 * ? * * *)</code>
@@ -130,6 +174,14 @@ public class ScheduleConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * <code>cron(0 [00-23] ? * * *)</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you want to run the job one time, immediately, use the following keyword:
+     * </p>
+     * <p>
+     * <code>NOW</code>
      * </p>
      * </li>
      * </ul>
@@ -185,16 +237,20 @@ public class ScheduleConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * </note>
+     * <p>
+     * You can also specify the keyword <code>NOW</code> to run the monitoring job immediately, one time, without
+     * recurring.
+     * </p>
      * 
      * @param scheduleExpression
      *        A cron expression that describes details about the monitoring schedule.</p>
      *        <p>
-     *        Currently the only supported cron expressions are:
+     *        The supported cron expressions are:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        If you want to set the job to start every hour, please use the following:
+     *        If you want to set the job to start every hour, use the following:
      *        </p>
      *        <p>
      *        <code>Hourly: cron(0 * ? * * *)</code>
@@ -206,6 +262,14 @@ public class ScheduleConfig implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        <code>cron(0 [00-23] ? * * *)</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you want to run the job one time, immediately, use the following keyword:
+     *        </p>
+     *        <p>
+     *        <code>NOW</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -260,6 +324,10 @@ public class ScheduleConfig implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </li>
      *        </ul>
+     *        </note>
+     *        <p>
+     *        You can also specify the keyword <code>NOW</code> to run the monitoring job immediately, one time, without
+     *        recurring.
      */
 
     public void setScheduleExpression(String scheduleExpression) {
@@ -271,12 +339,12 @@ public class ScheduleConfig implements Serializable, Cloneable, StructuredPojo {
      * A cron expression that describes details about the monitoring schedule.
      * </p>
      * <p>
-     * Currently the only supported cron expressions are:
+     * The supported cron expressions are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If you want to set the job to start every hour, please use the following:
+     * If you want to set the job to start every hour, use the following:
      * </p>
      * <p>
      * <code>Hourly: cron(0 * ? * * *)</code>
@@ -288,6 +356,14 @@ public class ScheduleConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * <code>cron(0 [00-23] ? * * *)</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you want to run the job one time, immediately, use the following keyword:
+     * </p>
+     * <p>
+     * <code>NOW</code>
      * </p>
      * </li>
      * </ul>
@@ -343,15 +419,19 @@ public class ScheduleConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * </note>
+     * <p>
+     * You can also specify the keyword <code>NOW</code> to run the monitoring job immediately, one time, without
+     * recurring.
+     * </p>
      * 
      * @return A cron expression that describes details about the monitoring schedule.</p>
      *         <p>
-     *         Currently the only supported cron expressions are:
+     *         The supported cron expressions are:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         If you want to set the job to start every hour, please use the following:
+     *         If you want to set the job to start every hour, use the following:
      *         </p>
      *         <p>
      *         <code>Hourly: cron(0 * ? * * *)</code>
@@ -363,6 +443,14 @@ public class ScheduleConfig implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <p>
      *         <code>cron(0 [00-23] ? * * *)</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you want to run the job one time, immediately, use the following keyword:
+     *         </p>
+     *         <p>
+     *         <code>NOW</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -417,6 +505,10 @@ public class ScheduleConfig implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         </li>
      *         </ul>
+     *         </note>
+     *         <p>
+     *         You can also specify the keyword <code>NOW</code> to run the monitoring job immediately, one time,
+     *         without recurring.
      */
 
     public String getScheduleExpression() {
@@ -428,12 +520,12 @@ public class ScheduleConfig implements Serializable, Cloneable, StructuredPojo {
      * A cron expression that describes details about the monitoring schedule.
      * </p>
      * <p>
-     * Currently the only supported cron expressions are:
+     * The supported cron expressions are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If you want to set the job to start every hour, please use the following:
+     * If you want to set the job to start every hour, use the following:
      * </p>
      * <p>
      * <code>Hourly: cron(0 * ? * * *)</code>
@@ -445,6 +537,14 @@ public class ScheduleConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * <code>cron(0 [00-23] ? * * *)</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you want to run the job one time, immediately, use the following keyword:
+     * </p>
+     * <p>
+     * <code>NOW</code>
      * </p>
      * </li>
      * </ul>
@@ -500,16 +600,20 @@ public class ScheduleConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * </note>
+     * <p>
+     * You can also specify the keyword <code>NOW</code> to run the monitoring job immediately, one time, without
+     * recurring.
+     * </p>
      * 
      * @param scheduleExpression
      *        A cron expression that describes details about the monitoring schedule.</p>
      *        <p>
-     *        Currently the only supported cron expressions are:
+     *        The supported cron expressions are:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        If you want to set the job to start every hour, please use the following:
+     *        If you want to set the job to start every hour, use the following:
      *        </p>
      *        <p>
      *        <code>Hourly: cron(0 * ? * * *)</code>
@@ -521,6 +625,14 @@ public class ScheduleConfig implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        <code>cron(0 [00-23] ? * * *)</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you want to run the job one time, immediately, use the following keyword:
+     *        </p>
+     *        <p>
+     *        <code>NOW</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -575,11 +687,215 @@ public class ScheduleConfig implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </li>
      *        </ul>
+     *        </note>
+     *        <p>
+     *        You can also specify the keyword <code>NOW</code> to run the monitoring job immediately, one time, without
+     *        recurring.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ScheduleConfig withScheduleExpression(String scheduleExpression) {
         setScheduleExpression(scheduleExpression);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets the start time for a monitoring job window. Express this time as an offset to the times that you schedule
+     * your monitoring jobs to run. You schedule monitoring jobs with the <code>ScheduleExpression</code> parameter.
+     * Specify this offset in ISO 8601 duration format. For example, if you want to monitor the five hours of data in
+     * your dataset that precede the start of each monitoring job, you would specify: <code>"-PT5H"</code>.
+     * </p>
+     * <p>
+     * The start time that you specify must not precede the end time that you specify by more than 24 hours. You specify
+     * the end time with the <code>DataAnalysisEndTime</code> parameter.
+     * </p>
+     * <p>
+     * If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is required.
+     * </p>
+     * 
+     * @param dataAnalysisStartTime
+     *        Sets the start time for a monitoring job window. Express this time as an offset to the times that you
+     *        schedule your monitoring jobs to run. You schedule monitoring jobs with the
+     *        <code>ScheduleExpression</code> parameter. Specify this offset in ISO 8601 duration format. For example,
+     *        if you want to monitor the five hours of data in your dataset that precede the start of each monitoring
+     *        job, you would specify: <code>"-PT5H"</code>.</p>
+     *        <p>
+     *        The start time that you specify must not precede the end time that you specify by more than 24 hours. You
+     *        specify the end time with the <code>DataAnalysisEndTime</code> parameter.
+     *        </p>
+     *        <p>
+     *        If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is required.
+     */
+
+    public void setDataAnalysisStartTime(String dataAnalysisStartTime) {
+        this.dataAnalysisStartTime = dataAnalysisStartTime;
+    }
+
+    /**
+     * <p>
+     * Sets the start time for a monitoring job window. Express this time as an offset to the times that you schedule
+     * your monitoring jobs to run. You schedule monitoring jobs with the <code>ScheduleExpression</code> parameter.
+     * Specify this offset in ISO 8601 duration format. For example, if you want to monitor the five hours of data in
+     * your dataset that precede the start of each monitoring job, you would specify: <code>"-PT5H"</code>.
+     * </p>
+     * <p>
+     * The start time that you specify must not precede the end time that you specify by more than 24 hours. You specify
+     * the end time with the <code>DataAnalysisEndTime</code> parameter.
+     * </p>
+     * <p>
+     * If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is required.
+     * </p>
+     * 
+     * @return Sets the start time for a monitoring job window. Express this time as an offset to the times that you
+     *         schedule your monitoring jobs to run. You schedule monitoring jobs with the
+     *         <code>ScheduleExpression</code> parameter. Specify this offset in ISO 8601 duration format. For example,
+     *         if you want to monitor the five hours of data in your dataset that precede the start of each monitoring
+     *         job, you would specify: <code>"-PT5H"</code>.</p>
+     *         <p>
+     *         The start time that you specify must not precede the end time that you specify by more than 24 hours. You
+     *         specify the end time with the <code>DataAnalysisEndTime</code> parameter.
+     *         </p>
+     *         <p>
+     *         If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is required.
+     */
+
+    public String getDataAnalysisStartTime() {
+        return this.dataAnalysisStartTime;
+    }
+
+    /**
+     * <p>
+     * Sets the start time for a monitoring job window. Express this time as an offset to the times that you schedule
+     * your monitoring jobs to run. You schedule monitoring jobs with the <code>ScheduleExpression</code> parameter.
+     * Specify this offset in ISO 8601 duration format. For example, if you want to monitor the five hours of data in
+     * your dataset that precede the start of each monitoring job, you would specify: <code>"-PT5H"</code>.
+     * </p>
+     * <p>
+     * The start time that you specify must not precede the end time that you specify by more than 24 hours. You specify
+     * the end time with the <code>DataAnalysisEndTime</code> parameter.
+     * </p>
+     * <p>
+     * If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is required.
+     * </p>
+     * 
+     * @param dataAnalysisStartTime
+     *        Sets the start time for a monitoring job window. Express this time as an offset to the times that you
+     *        schedule your monitoring jobs to run. You schedule monitoring jobs with the
+     *        <code>ScheduleExpression</code> parameter. Specify this offset in ISO 8601 duration format. For example,
+     *        if you want to monitor the five hours of data in your dataset that precede the start of each monitoring
+     *        job, you would specify: <code>"-PT5H"</code>.</p>
+     *        <p>
+     *        The start time that you specify must not precede the end time that you specify by more than 24 hours. You
+     *        specify the end time with the <code>DataAnalysisEndTime</code> parameter.
+     *        </p>
+     *        <p>
+     *        If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is required.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduleConfig withDataAnalysisStartTime(String dataAnalysisStartTime) {
+        setDataAnalysisStartTime(dataAnalysisStartTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets the end time for a monitoring job window. Express this time as an offset to the times that you schedule your
+     * monitoring jobs to run. You schedule monitoring jobs with the <code>ScheduleExpression</code> parameter. Specify
+     * this offset in ISO 8601 duration format. For example, if you want to end the window one hour before the start of
+     * each monitoring job, you would specify: <code>"-PT1H"</code>.
+     * </p>
+     * <p>
+     * The end time that you specify must not follow the start time that you specify by more than 24 hours. You specify
+     * the start time with the <code>DataAnalysisStartTime</code> parameter.
+     * </p>
+     * <p>
+     * If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is required.
+     * </p>
+     * 
+     * @param dataAnalysisEndTime
+     *        Sets the end time for a monitoring job window. Express this time as an offset to the times that you
+     *        schedule your monitoring jobs to run. You schedule monitoring jobs with the
+     *        <code>ScheduleExpression</code> parameter. Specify this offset in ISO 8601 duration format. For example,
+     *        if you want to end the window one hour before the start of each monitoring job, you would specify:
+     *        <code>"-PT1H"</code>.</p>
+     *        <p>
+     *        The end time that you specify must not follow the start time that you specify by more than 24 hours. You
+     *        specify the start time with the <code>DataAnalysisStartTime</code> parameter.
+     *        </p>
+     *        <p>
+     *        If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is required.
+     */
+
+    public void setDataAnalysisEndTime(String dataAnalysisEndTime) {
+        this.dataAnalysisEndTime = dataAnalysisEndTime;
+    }
+
+    /**
+     * <p>
+     * Sets the end time for a monitoring job window. Express this time as an offset to the times that you schedule your
+     * monitoring jobs to run. You schedule monitoring jobs with the <code>ScheduleExpression</code> parameter. Specify
+     * this offset in ISO 8601 duration format. For example, if you want to end the window one hour before the start of
+     * each monitoring job, you would specify: <code>"-PT1H"</code>.
+     * </p>
+     * <p>
+     * The end time that you specify must not follow the start time that you specify by more than 24 hours. You specify
+     * the start time with the <code>DataAnalysisStartTime</code> parameter.
+     * </p>
+     * <p>
+     * If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is required.
+     * </p>
+     * 
+     * @return Sets the end time for a monitoring job window. Express this time as an offset to the times that you
+     *         schedule your monitoring jobs to run. You schedule monitoring jobs with the
+     *         <code>ScheduleExpression</code> parameter. Specify this offset in ISO 8601 duration format. For example,
+     *         if you want to end the window one hour before the start of each monitoring job, you would specify:
+     *         <code>"-PT1H"</code>.</p>
+     *         <p>
+     *         The end time that you specify must not follow the start time that you specify by more than 24 hours. You
+     *         specify the start time with the <code>DataAnalysisStartTime</code> parameter.
+     *         </p>
+     *         <p>
+     *         If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is required.
+     */
+
+    public String getDataAnalysisEndTime() {
+        return this.dataAnalysisEndTime;
+    }
+
+    /**
+     * <p>
+     * Sets the end time for a monitoring job window. Express this time as an offset to the times that you schedule your
+     * monitoring jobs to run. You schedule monitoring jobs with the <code>ScheduleExpression</code> parameter. Specify
+     * this offset in ISO 8601 duration format. For example, if you want to end the window one hour before the start of
+     * each monitoring job, you would specify: <code>"-PT1H"</code>.
+     * </p>
+     * <p>
+     * The end time that you specify must not follow the start time that you specify by more than 24 hours. You specify
+     * the start time with the <code>DataAnalysisStartTime</code> parameter.
+     * </p>
+     * <p>
+     * If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is required.
+     * </p>
+     * 
+     * @param dataAnalysisEndTime
+     *        Sets the end time for a monitoring job window. Express this time as an offset to the times that you
+     *        schedule your monitoring jobs to run. You schedule monitoring jobs with the
+     *        <code>ScheduleExpression</code> parameter. Specify this offset in ISO 8601 duration format. For example,
+     *        if you want to end the window one hour before the start of each monitoring job, you would specify:
+     *        <code>"-PT1H"</code>.</p>
+     *        <p>
+     *        The end time that you specify must not follow the start time that you specify by more than 24 hours. You
+     *        specify the start time with the <code>DataAnalysisStartTime</code> parameter.
+     *        </p>
+     *        <p>
+     *        If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is required.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduleConfig withDataAnalysisEndTime(String dataAnalysisEndTime) {
+        setDataAnalysisEndTime(dataAnalysisEndTime);
         return this;
     }
 
@@ -596,7 +912,11 @@ public class ScheduleConfig implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getScheduleExpression() != null)
-            sb.append("ScheduleExpression: ").append(getScheduleExpression());
+            sb.append("ScheduleExpression: ").append(getScheduleExpression()).append(",");
+        if (getDataAnalysisStartTime() != null)
+            sb.append("DataAnalysisStartTime: ").append(getDataAnalysisStartTime()).append(",");
+        if (getDataAnalysisEndTime() != null)
+            sb.append("DataAnalysisEndTime: ").append(getDataAnalysisEndTime());
         sb.append("}");
         return sb.toString();
     }
@@ -615,6 +935,14 @@ public class ScheduleConfig implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getScheduleExpression() != null && other.getScheduleExpression().equals(this.getScheduleExpression()) == false)
             return false;
+        if (other.getDataAnalysisStartTime() == null ^ this.getDataAnalysisStartTime() == null)
+            return false;
+        if (other.getDataAnalysisStartTime() != null && other.getDataAnalysisStartTime().equals(this.getDataAnalysisStartTime()) == false)
+            return false;
+        if (other.getDataAnalysisEndTime() == null ^ this.getDataAnalysisEndTime() == null)
+            return false;
+        if (other.getDataAnalysisEndTime() != null && other.getDataAnalysisEndTime().equals(this.getDataAnalysisEndTime()) == false)
+            return false;
         return true;
     }
 
@@ -624,6 +952,8 @@ public class ScheduleConfig implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getScheduleExpression() == null) ? 0 : getScheduleExpression().hashCode());
+        hashCode = prime * hashCode + ((getDataAnalysisStartTime() == null) ? 0 : getDataAnalysisStartTime().hashCode());
+        hashCode = prime * hashCode + ((getDataAnalysisEndTime() == null) ? 0 : getDataAnalysisEndTime().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class ListPipelineExecutionsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pipelineName").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
+    private static final MarshallingInfo<StructuredPojo> FILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("filter").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("nextToken").build();
 
@@ -52,6 +54,7 @@ public class ListPipelineExecutionsRequestMarshaller {
         try {
             protocolMarshaller.marshall(listPipelineExecutionsRequest.getPipelineName(), PIPELINENAME_BINDING);
             protocolMarshaller.marshall(listPipelineExecutionsRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listPipelineExecutionsRequest.getFilter(), FILTER_BINDING);
             protocolMarshaller.marshall(listPipelineExecutionsRequest.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

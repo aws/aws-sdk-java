@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,7 +32,7 @@ import java.util.List;
  * create a logical hierarchy by using object key names that imply a folder structure. For example, instead of naming an object
  * <code>sample.jpg</code>, you can name it <code>photos/2006/February/sample.jpg</code>.</p>
  *
- * <p>To get an object from such a \ logical hierarchy, specify the full key name for the object in the <code>GET</code>
+ * <p>To get an object from such a logical hierarchy, specify the full key name for the object in the <code>GET</code>
  * operation. For a virtual hosted-style request example, if you have the object <code>photos/2006/February/sample.jpg</code>,
  * specify the resource as <code>/photos/2006/February/sample.jpg</code>. For a path-style request example, if you have the
  * object <code>photos/2006/February/sample.jpg</code> in the bucket named <code>examplebucket</code>, specify the resource as
@@ -48,7 +48,7 @@ import java.util.List;
  * <p>If the object you are retrieving is stored in the S3 Glacier or S3 Glacier Deep Archive storage class, or S3 Intelligent-
  * Tiering Archive or S3 Intelligent-Tiering Deep Archive tiers, before you can retrieve the object you must first restore a copy
  * using <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html\">RestoreObject</a>. Otherwise, this
- * action returns an <code>InvalidObjectStateError</code> error. For information about restoring archived objects, see
+ * action returns an <code>InvalidObjectState</code> error. For information about restoring archived objects, see
  * <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html\">Restoring Archived Objects</a>.</p>
  *
  * <p>Encryption request headers, like <code>x-amz-server-side-encryption</code>, should not be sent for GET requests if your
@@ -210,19 +210,43 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
      * Constructs a new {@link GetObjectRequest} with all the required parameters.
      *
      * <p>
-     * When using this API with an access point, you must direct requests
-     * to the access point hostname. The access point hostname takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this action with an access point, you must direct requests to the access point hostname. The
+     * access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action
+     * with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the
+     * bucket name. For more information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a>
+     * in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
-     * When using this operation using an access point through the Amazon Web Services SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about access point
-     * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
-     * Using access points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The
+     * S3 on Outposts hostname takes the form
+     * <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     * When you use this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts
+     * access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts</a> in the
+     * <i>Amazon S3 User Guide</i>.
      * </p>
      *
      * @param bucketName
      *            The name of the bucket, or access point ARN, containing the desired object.
+     *            <p>
+     *            When using this action with an access point, you must direct requests to the access point hostname.
+     *            The access point hostname takes the form
+     *            <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this
+     *            action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in
+     *            place of the bucket name. For more information about access point ARNs, see <a
+     *            href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access
+     *            points</a> in the <i>Amazon S3 User Guide</i>.
+     *            </p>
+     *            <p>
+     *            When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts
+     *            hostname. The S3 on Outposts hostname takes the form
+     *            <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     *            When you use this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts
+     *            access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a
+     *            href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts</a>
+     *            in the <i>Amazon S3 User Guide</i>.
      * @param key
      *            The key in the specified bucket under which the object is
      *            stored.
@@ -238,19 +262,43 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
      * Constructs a new {@link GetObjectRequest} with all the required parameters.
      *
      * <p>
-     * When using this API with an access point, you must direct requests
-     * to the access point hostname. The access point hostname takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this action with an access point, you must direct requests to the access point hostname. The
+     * access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action
+     * with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the
+     * bucket name. For more information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a>
+     * in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
-     * When using this operation using an access point through the Amazon Web Services SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about access point
-     * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
-     * Using access points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The
+     * S3 on Outposts hostname takes the form
+     * <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     * When you use this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts
+     * access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts</a> in the
+     * <i>Amazon S3 User Guide</i>.
      * </p>
      *
      * @param bucketName
      *            The name of the bucket, or access point ARN, containing the desired object.
+     *            <p>
+     *            When using this action with an access point, you must direct requests to the access point hostname.
+     *            The access point hostname takes the form
+     *            <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this
+     *            action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in
+     *            place of the bucket name. For more information about access point ARNs, see <a
+     *            href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access
+     *            points</a> in the <i>Amazon S3 User Guide</i>.
+     *            </p>
+     *            <p>
+     *            When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts
+     *            hostname. The S3 on Outposts hostname takes the form
+     *            <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     *            When you use this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts
+     *            access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a
+     *            href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts</a>
+     *            in the <i>Amazon S3 User Guide</i>.
      * @param key
      *            The key in the specified bucket under which the object is
      *            stored.
@@ -276,19 +324,43 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
      * parameters.
      *
      * <p>
-     * When using this API with an access point, you must direct requests
-     * to the access point hostname. The access point hostname takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this action with an access point, you must direct requests to the access point hostname. The
+     * access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action
+     * with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the
+     * bucket name. For more information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a>
+     * in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
-     * When using this operation using an access point through the Amazon Web Services SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about access point
-     * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
-     * Using access points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The
+     * S3 on Outposts hostname takes the form
+     * <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     * When you use this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts
+     * access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts</a> in the
+     * <i>Amazon S3 User Guide</i>.
      * </p>
      *
      * @param bucketName
      *            The name of the bucket, or access point ARN, containing the desired object.
+     *            <p>
+     *            When using this action with an access point, you must direct requests to the access point hostname.
+     *            The access point hostname takes the form
+     *            <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this
+     *            action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in
+     *            place of the bucket name. For more information about access point ARNs, see <a
+     *            href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access
+     *            points</a> in the <i>Amazon S3 User Guide</i>.
+     *            </p>
+     *            <p>
+     *            When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts
+     *            hostname. The S3 on Outposts hostname takes the form
+     *            <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     *            When you use this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts
+     *            access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a
+     *            href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts</a>
+     *            in the <i>Amazon S3 User Guide</i>.
      * @param key
      *            The key in the specified bucket under which the object is
      *            stored.
@@ -326,27 +398,28 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
      * The bucket name containing the object.
      * </p>
      * <p>
-     * When using this action with an access point, you must direct requests to the access point hostname. The access
-     * point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the Amazon Web Services SDKs, you provide the access point
-     * ARN in place of the bucket name. For more information about access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in
-     * the <i>Amazon S3 User Guide</i>.
+     * When using this action with an access point, you must direct requests to the access point hostname. The
+     * access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action
+     * with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the
+     * bucket name. For more information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a>
+     * in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
-     * When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The
+     * When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The
      * S3 on Outposts hostname takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this
-     * action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of
-     * the bucket name. For more information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the
+     * <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     * When you use this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts
+     * access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts</a> in the
      * <i>Amazon S3 User Guide</i>.
      * </p>
      *
      * @return The bucket name containing the object. </p>
      *         <p>
-     *         When using this action with an access point, you must direct requests to the access point hostname. The
-     *         access point hostname takes the form
+     *         When using this action with an access point, you must direct requests to the access point hostname.
+     *         The access point hostname takes the form
      *         <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this
      *         action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in
      *         place of the bucket name. For more information about access point ARNs, see <a
@@ -354,12 +427,12 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
      *         points</a> in the <i>Amazon S3 User Guide</i>.
      *         </p>
      *         <p>
-     *         When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts
+     *         When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts
      *         hostname. The S3 on Outposts hostname takes the form
-     *         <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When
-     *         using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts
-     *         bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a
-     *         href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a>
+     *         <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     *         When you use this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts
+     *         access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts</a>
      *         in the <i>Amazon S3 User Guide</i>.
      *
      * @see GetObjectRequest#setBucketName(String)
@@ -383,13 +456,13 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
      * in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
-     * When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname.
-     * The S3 on Outposts hostname takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using
-     * this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in
-     * place of the bucket name. For more information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in
-     * the <i>Amazon S3 User Guide</i>.
+     * When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The
+     * S3 on Outposts hostname takes the form
+     * <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     * When you use this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts
+     * access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts</a> in the
+     * <i>Amazon S3 User Guide</i>.
      * </p>
      *
      * @param bucketName
@@ -404,13 +477,13 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
      *        points</a> in the <i>Amazon S3 User Guide</i>.
      *        </p>
      *        <p>
-     *        When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts
+     *        When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts
      *        hostname. The S3 on Outposts hostname takes the form
-     *        <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When
-     *        using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts
-     *        bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a
-     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on
-     *        Outposts</a> in the <i>Amazon S3 User Guide</i>.
+     *        <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     *        When you use this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts
+     *        access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts</a>
+     *        in the <i>Amazon S3 User Guide</i>.
      *
      * @see GetObjectRequest#getBucketName()
      * @see GetObjectRequest#withBucketName(String)
@@ -433,13 +506,13 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
      * in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
-     * When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname.
-     * The S3 on Outposts hostname takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using
-     * this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in
-     * place of the bucket name. For more information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in
-     * the <i>Amazon S3 User Guide</i>.
+     * When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The
+     * S3 on Outposts hostname takes the form
+     * <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     * When you use this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts
+     * access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts</a> in the
+     * <i>Amazon S3 User Guide</i>.
      * </p>
      *
      * @param bucketName
@@ -454,13 +527,13 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
      *        points</a> in the <i>Amazon S3 User Guide</i>.
      *        </p>
      *        <p>
-     *        When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts
+     *        When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts
      *        hostname. The S3 on Outposts hostname takes the form
-     *        <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When
-     *        using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts
-     *        bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a
-     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on
-     *        Outposts</a> in the <i>Amazon S3 User Guide</i>.
+     *        <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+     *        When you use this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts
+     *        access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts</a>
+     *        in the <i>Amazon S3 User Guide</i>.
      *
      * @return This {@link GetObjectRequest}, enabling additional method
      *         calls to be chained together.

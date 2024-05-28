@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class ModelPackageContainerDefinitionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImageDigest").build();
     private static final MarshallingInfo<String> MODELDATAURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelDataUrl").build();
+    private static final MarshallingInfo<StructuredPojo> MODELDATASOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelDataSource").build();
     private static final MarshallingInfo<String> PRODUCTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ProductId").build();
     private static final MarshallingInfo<Map> ENVIRONMENT_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -49,6 +51,8 @@ public class ModelPackageContainerDefinitionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FrameworkVersion").build();
     private static final MarshallingInfo<String> NEARESTMODELNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NearestModelName").build();
+    private static final MarshallingInfo<StructuredPojo> ADDITIONALS3DATASOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdditionalS3DataSource").build();
 
     private static final ModelPackageContainerDefinitionMarshaller instance = new ModelPackageContainerDefinitionMarshaller();
 
@@ -70,12 +74,14 @@ public class ModelPackageContainerDefinitionMarshaller {
             protocolMarshaller.marshall(modelPackageContainerDefinition.getImage(), IMAGE_BINDING);
             protocolMarshaller.marshall(modelPackageContainerDefinition.getImageDigest(), IMAGEDIGEST_BINDING);
             protocolMarshaller.marshall(modelPackageContainerDefinition.getModelDataUrl(), MODELDATAURL_BINDING);
+            protocolMarshaller.marshall(modelPackageContainerDefinition.getModelDataSource(), MODELDATASOURCE_BINDING);
             protocolMarshaller.marshall(modelPackageContainerDefinition.getProductId(), PRODUCTID_BINDING);
             protocolMarshaller.marshall(modelPackageContainerDefinition.getEnvironment(), ENVIRONMENT_BINDING);
             protocolMarshaller.marshall(modelPackageContainerDefinition.getModelInput(), MODELINPUT_BINDING);
             protocolMarshaller.marshall(modelPackageContainerDefinition.getFramework(), FRAMEWORK_BINDING);
             protocolMarshaller.marshall(modelPackageContainerDefinition.getFrameworkVersion(), FRAMEWORKVERSION_BINDING);
             protocolMarshaller.marshall(modelPackageContainerDefinition.getNearestModelName(), NEARESTMODELNAME_BINDING);
+            protocolMarshaller.marshall(modelPackageContainerDefinition.getAdditionalS3DataSource(), ADDITIONALS3DATASOURCE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

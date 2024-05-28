@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,92 +30,18 @@ public class ComponentVariant implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The properties of the component variant that can be overriden when customizing an instance of the component. You
-     * can't specify <code>tags</code> as a valid property for <code>overrides</code>.
-     * </p>
-     */
-    private java.util.Map<String, java.util.Map<String, String>> overrides;
-    /**
-     * <p>
      * The combination of variants that comprise this variant. You can't specify <code>tags</code> as a valid property
      * for <code>variantValues</code>.
      * </p>
      */
     private java.util.Map<String, String> variantValues;
-
     /**
      * <p>
      * The properties of the component variant that can be overriden when customizing an instance of the component. You
      * can't specify <code>tags</code> as a valid property for <code>overrides</code>.
      * </p>
-     * 
-     * @return The properties of the component variant that can be overriden when customizing an instance of the
-     *         component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.
      */
-
-    public java.util.Map<String, java.util.Map<String, String>> getOverrides() {
-        return overrides;
-    }
-
-    /**
-     * <p>
-     * The properties of the component variant that can be overriden when customizing an instance of the component. You
-     * can't specify <code>tags</code> as a valid property for <code>overrides</code>.
-     * </p>
-     * 
-     * @param overrides
-     *        The properties of the component variant that can be overriden when customizing an instance of the
-     *        component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.
-     */
-
-    public void setOverrides(java.util.Map<String, java.util.Map<String, String>> overrides) {
-        this.overrides = overrides;
-    }
-
-    /**
-     * <p>
-     * The properties of the component variant that can be overriden when customizing an instance of the component. You
-     * can't specify <code>tags</code> as a valid property for <code>overrides</code>.
-     * </p>
-     * 
-     * @param overrides
-     *        The properties of the component variant that can be overriden when customizing an instance of the
-     *        component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ComponentVariant withOverrides(java.util.Map<String, java.util.Map<String, String>> overrides) {
-        setOverrides(overrides);
-        return this;
-    }
-
-    /**
-     * Add a single Overrides entry
-     *
-     * @see ComponentVariant#withOverrides
-     * @returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ComponentVariant addOverridesEntry(String key, java.util.Map<String, String> value) {
-        if (null == this.overrides) {
-            this.overrides = new java.util.HashMap<String, java.util.Map<String, String>>();
-        }
-        if (this.overrides.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.overrides.put(key, value);
-        return this;
-    }
-
-    /**
-     * Removes all the entries added into Overrides.
-     *
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ComponentVariant clearOverridesEntries() {
-        this.overrides = null;
-        return this;
-    }
+    private java.util.Map<String, java.util.Map<String, String>> overrides;
 
     /**
      * <p>
@@ -192,6 +118,80 @@ public class ComponentVariant implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The properties of the component variant that can be overriden when customizing an instance of the component. You
+     * can't specify <code>tags</code> as a valid property for <code>overrides</code>.
+     * </p>
+     * 
+     * @return The properties of the component variant that can be overriden when customizing an instance of the
+     *         component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.
+     */
+
+    public java.util.Map<String, java.util.Map<String, String>> getOverrides() {
+        return overrides;
+    }
+
+    /**
+     * <p>
+     * The properties of the component variant that can be overriden when customizing an instance of the component. You
+     * can't specify <code>tags</code> as a valid property for <code>overrides</code>.
+     * </p>
+     * 
+     * @param overrides
+     *        The properties of the component variant that can be overriden when customizing an instance of the
+     *        component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.
+     */
+
+    public void setOverrides(java.util.Map<String, java.util.Map<String, String>> overrides) {
+        this.overrides = overrides;
+    }
+
+    /**
+     * <p>
+     * The properties of the component variant that can be overriden when customizing an instance of the component. You
+     * can't specify <code>tags</code> as a valid property for <code>overrides</code>.
+     * </p>
+     * 
+     * @param overrides
+     *        The properties of the component variant that can be overriden when customizing an instance of the
+     *        component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentVariant withOverrides(java.util.Map<String, java.util.Map<String, String>> overrides) {
+        setOverrides(overrides);
+        return this;
+    }
+
+    /**
+     * Add a single Overrides entry
+     *
+     * @see ComponentVariant#withOverrides
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentVariant addOverridesEntry(String key, java.util.Map<String, String> value) {
+        if (null == this.overrides) {
+            this.overrides = new java.util.HashMap<String, java.util.Map<String, String>>();
+        }
+        if (this.overrides.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.overrides.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Overrides.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentVariant clearOverridesEntries() {
+        this.overrides = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -203,10 +203,10 @@ public class ComponentVariant implements Serializable, Cloneable, StructuredPojo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getOverrides() != null)
-            sb.append("Overrides: ").append(getOverrides()).append(",");
         if (getVariantValues() != null)
-            sb.append("VariantValues: ").append(getVariantValues());
+            sb.append("VariantValues: ").append(getVariantValues()).append(",");
+        if (getOverrides() != null)
+            sb.append("Overrides: ").append(getOverrides());
         sb.append("}");
         return sb.toString();
     }
@@ -221,13 +221,13 @@ public class ComponentVariant implements Serializable, Cloneable, StructuredPojo
         if (obj instanceof ComponentVariant == false)
             return false;
         ComponentVariant other = (ComponentVariant) obj;
-        if (other.getOverrides() == null ^ this.getOverrides() == null)
-            return false;
-        if (other.getOverrides() != null && other.getOverrides().equals(this.getOverrides()) == false)
-            return false;
         if (other.getVariantValues() == null ^ this.getVariantValues() == null)
             return false;
         if (other.getVariantValues() != null && other.getVariantValues().equals(this.getVariantValues()) == false)
+            return false;
+        if (other.getOverrides() == null ^ this.getOverrides() == null)
+            return false;
+        if (other.getOverrides() != null && other.getOverrides().equals(this.getOverrides()) == false)
             return false;
         return true;
     }
@@ -237,8 +237,8 @@ public class ComponentVariant implements Serializable, Cloneable, StructuredPojo
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getOverrides() == null) ? 0 : getOverrides().hashCode());
         hashCode = prime * hashCode + ((getVariantValues() == null) ? 0 : getVariantValues().hashCode());
+        hashCode = prime * hashCode + ((getOverrides() == null) ? 0 : getOverrides().hashCode());
         return hashCode;
     }
 

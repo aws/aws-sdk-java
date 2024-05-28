@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the login information for the container image registry of an Amazon Lightsail account.
+ * Describes the sign-in credentials for the container image registry of an Amazon Lightsail account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ContainerServiceRegistryLogin"
@@ -44,7 +44,7 @@ public class ContainerServiceRegistryLogin implements Serializable, Cloneable, S
     private String password;
     /**
      * <p>
-     * The timestamp of when the container image registry username and password expire.
+     * The timestamp of when the container image registry sign-in credentials expire.
      * </p>
      * <p>
      * The log in credentials expire 12 hours after they are created, at which point you will need to create a new set
@@ -153,7 +153,7 @@ public class ContainerServiceRegistryLogin implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The timestamp of when the container image registry username and password expire.
+     * The timestamp of when the container image registry sign-in credentials expire.
      * </p>
      * <p>
      * The log in credentials expire 12 hours after they are created, at which point you will need to create a new set
@@ -161,7 +161,7 @@ public class ContainerServiceRegistryLogin implements Serializable, Cloneable, S
      * </p>
      * 
      * @param expiresAt
-     *        The timestamp of when the container image registry username and password expire.</p>
+     *        The timestamp of when the container image registry sign-in credentials expire.</p>
      *        <p>
      *        The log in credentials expire 12 hours after they are created, at which point you will need to create a
      *        new set of log in credentials using the <code>CreateContainerServiceRegistryLogin</code> action.
@@ -173,14 +173,14 @@ public class ContainerServiceRegistryLogin implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The timestamp of when the container image registry username and password expire.
+     * The timestamp of when the container image registry sign-in credentials expire.
      * </p>
      * <p>
      * The log in credentials expire 12 hours after they are created, at which point you will need to create a new set
      * of log in credentials using the <code>CreateContainerServiceRegistryLogin</code> action.
      * </p>
      * 
-     * @return The timestamp of when the container image registry username and password expire.</p>
+     * @return The timestamp of when the container image registry sign-in credentials expire.</p>
      *         <p>
      *         The log in credentials expire 12 hours after they are created, at which point you will need to create a
      *         new set of log in credentials using the <code>CreateContainerServiceRegistryLogin</code> action.
@@ -192,7 +192,7 @@ public class ContainerServiceRegistryLogin implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The timestamp of when the container image registry username and password expire.
+     * The timestamp of when the container image registry sign-in credentials expire.
      * </p>
      * <p>
      * The log in credentials expire 12 hours after they are created, at which point you will need to create a new set
@@ -200,7 +200,7 @@ public class ContainerServiceRegistryLogin implements Serializable, Cloneable, S
      * </p>
      * 
      * @param expiresAt
-     *        The timestamp of when the container image registry username and password expire.</p>
+     *        The timestamp of when the container image registry sign-in credentials expire.</p>
      *        <p>
      *        The log in credentials expire 12 hours after they are created, at which point you will need to create a
      *        new set of log in credentials using the <code>CreateContainerServiceRegistryLogin</code> action.

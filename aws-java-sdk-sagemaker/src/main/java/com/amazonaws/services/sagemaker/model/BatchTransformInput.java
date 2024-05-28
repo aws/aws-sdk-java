@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -96,13 +96,19 @@ public class BatchTransformInput implements Serializable, Cloneable, StructuredP
     private String startTimeOffset;
     /**
      * <p>
-     * If specified, monitoring jobs substract this time from the end time. For information about using offsets for
+     * If specified, monitoring jobs subtract this time from the end time. For information about using offsets for
      * scheduling monitoring jobs, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model
      * Quality Monitoring Jobs</a>.
      * </p>
      */
     private String endTimeOffset;
+    /**
+     * <p>
+     * The attributes of the input data to exclude from the analysis.
+     * </p>
+     */
+    private String excludeFeaturesAttribute;
 
     /**
      * <p>
@@ -586,14 +592,14 @@ public class BatchTransformInput implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * If specified, monitoring jobs substract this time from the end time. For information about using offsets for
+     * If specified, monitoring jobs subtract this time from the end time. For information about using offsets for
      * scheduling monitoring jobs, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model
      * Quality Monitoring Jobs</a>.
      * </p>
      * 
      * @param endTimeOffset
-     *        If specified, monitoring jobs substract this time from the end time. For information about using offsets
+     *        If specified, monitoring jobs subtract this time from the end time. For information about using offsets
      *        for scheduling monitoring jobs, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule
      *        Model Quality Monitoring Jobs</a>.
@@ -605,13 +611,13 @@ public class BatchTransformInput implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * If specified, monitoring jobs substract this time from the end time. For information about using offsets for
+     * If specified, monitoring jobs subtract this time from the end time. For information about using offsets for
      * scheduling monitoring jobs, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model
      * Quality Monitoring Jobs</a>.
      * </p>
      * 
-     * @return If specified, monitoring jobs substract this time from the end time. For information about using offsets
+     * @return If specified, monitoring jobs subtract this time from the end time. For information about using offsets
      *         for scheduling monitoring jobs, see <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule
      *         Model Quality Monitoring Jobs</a>.
@@ -623,14 +629,14 @@ public class BatchTransformInput implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * If specified, monitoring jobs substract this time from the end time. For information about using offsets for
+     * If specified, monitoring jobs subtract this time from the end time. For information about using offsets for
      * scheduling monitoring jobs, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model
      * Quality Monitoring Jobs</a>.
      * </p>
      * 
      * @param endTimeOffset
-     *        If specified, monitoring jobs substract this time from the end time. For information about using offsets
+     *        If specified, monitoring jobs subtract this time from the end time. For information about using offsets
      *        for scheduling monitoring jobs, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule
      *        Model Quality Monitoring Jobs</a>.
@@ -639,6 +645,46 @@ public class BatchTransformInput implements Serializable, Cloneable, StructuredP
 
     public BatchTransformInput withEndTimeOffset(String endTimeOffset) {
         setEndTimeOffset(endTimeOffset);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The attributes of the input data to exclude from the analysis.
+     * </p>
+     * 
+     * @param excludeFeaturesAttribute
+     *        The attributes of the input data to exclude from the analysis.
+     */
+
+    public void setExcludeFeaturesAttribute(String excludeFeaturesAttribute) {
+        this.excludeFeaturesAttribute = excludeFeaturesAttribute;
+    }
+
+    /**
+     * <p>
+     * The attributes of the input data to exclude from the analysis.
+     * </p>
+     * 
+     * @return The attributes of the input data to exclude from the analysis.
+     */
+
+    public String getExcludeFeaturesAttribute() {
+        return this.excludeFeaturesAttribute;
+    }
+
+    /**
+     * <p>
+     * The attributes of the input data to exclude from the analysis.
+     * </p>
+     * 
+     * @param excludeFeaturesAttribute
+     *        The attributes of the input data to exclude from the analysis.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchTransformInput withExcludeFeaturesAttribute(String excludeFeaturesAttribute) {
+        setExcludeFeaturesAttribute(excludeFeaturesAttribute);
         return this;
     }
 
@@ -675,7 +721,9 @@ public class BatchTransformInput implements Serializable, Cloneable, StructuredP
         if (getStartTimeOffset() != null)
             sb.append("StartTimeOffset: ").append(getStartTimeOffset()).append(",");
         if (getEndTimeOffset() != null)
-            sb.append("EndTimeOffset: ").append(getEndTimeOffset());
+            sb.append("EndTimeOffset: ").append(getEndTimeOffset()).append(",");
+        if (getExcludeFeaturesAttribute() != null)
+            sb.append("ExcludeFeaturesAttribute: ").append(getExcludeFeaturesAttribute());
         sb.append("}");
         return sb.toString();
     }
@@ -735,6 +783,10 @@ public class BatchTransformInput implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getEndTimeOffset() != null && other.getEndTimeOffset().equals(this.getEndTimeOffset()) == false)
             return false;
+        if (other.getExcludeFeaturesAttribute() == null ^ this.getExcludeFeaturesAttribute() == null)
+            return false;
+        if (other.getExcludeFeaturesAttribute() != null && other.getExcludeFeaturesAttribute().equals(this.getExcludeFeaturesAttribute()) == false)
+            return false;
         return true;
     }
 
@@ -754,6 +806,7 @@ public class BatchTransformInput implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getProbabilityThresholdAttribute() == null) ? 0 : getProbabilityThresholdAttribute().hashCode());
         hashCode = prime * hashCode + ((getStartTimeOffset() == null) ? 0 : getStartTimeOffset().hashCode());
         hashCode = prime * hashCode + ((getEndTimeOffset() == null) ? 0 : getEndTimeOffset().hashCode());
+        hashCode = prime * hashCode + ((getExcludeFeaturesAttribute() == null) ? 0 : getExcludeFeaturesAttribute().hashCode());
         return hashCode;
     }
 

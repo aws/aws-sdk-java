@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,28 +25,28 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The unique identifier for the user account that is retrieved.
+     * The unique identifier for the user that is retrieved.
      * </p>
      */
     private String userId;
     /**
      * <p>
-     * The current status of the user account.
+     * The current status of the user.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> – The user account creation is in progress.
+     * <code>CREATING</code> – The creation is in progress.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ENABLED</code> – The user account is created and is currently active.
+     * <code>ENABLED</code> – The user is created and is currently active.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DISABLED</code> – The user account is currently inactive.
+     * <code>DISABLED</code> – The user is currently inactive.
      * </p>
      * </li>
      * </ul>
@@ -120,26 +120,25 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     private String apiAccessPrincipalArn;
     /**
      * <p>
-     * The timestamp at which the user account was created in FinSpace. The value is determined as epoch time in
-     * milliseconds.
+     * The timestamp at which the user was created in FinSpace. The value is determined as epoch time in milliseconds.
      * </p>
      */
     private Long createTime;
     /**
      * <p>
-     * Describes the last time the user account was enabled. The value is determined as epoch time in milliseconds.
+     * Describes the last time the user was activated. The value is determined as epoch time in milliseconds.
      * </p>
      */
     private Long lastEnabledTime;
     /**
      * <p>
-     * Describes the last time the user account was disabled. The value is determined as epoch time in milliseconds.
+     * Describes the last time the user was deactivated. The value is determined as epoch time in milliseconds.
      * </p>
      */
     private Long lastDisabledTime;
     /**
      * <p>
-     * Describes the last time the user account was updated. The value is determined as epoch time in milliseconds.
+     * Describes the last time the user details were updated. The value is determined as epoch time in milliseconds.
      * </p>
      */
     private Long lastModifiedTime;
@@ -153,11 +152,11 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The unique identifier for the user account that is retrieved.
+     * The unique identifier for the user that is retrieved.
      * </p>
      * 
      * @param userId
-     *        The unique identifier for the user account that is retrieved.
+     *        The unique identifier for the user that is retrieved.
      */
 
     public void setUserId(String userId) {
@@ -166,10 +165,10 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The unique identifier for the user account that is retrieved.
+     * The unique identifier for the user that is retrieved.
      * </p>
      * 
-     * @return The unique identifier for the user account that is retrieved.
+     * @return The unique identifier for the user that is retrieved.
      */
 
     public String getUserId() {
@@ -178,11 +177,11 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The unique identifier for the user account that is retrieved.
+     * The unique identifier for the user that is retrieved.
      * </p>
      * 
      * @param userId
-     *        The unique identifier for the user account that is retrieved.
+     *        The unique identifier for the user that is retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,42 +192,42 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The current status of the user account.
+     * The current status of the user.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> – The user account creation is in progress.
+     * <code>CREATING</code> – The creation is in progress.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ENABLED</code> – The user account is created and is currently active.
+     * <code>ENABLED</code> – The user is created and is currently active.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DISABLED</code> – The user account is currently inactive.
+     * <code>DISABLED</code> – The user is currently inactive.
      * </p>
      * </li>
      * </ul>
      * 
      * @param status
-     *        The current status of the user account. </p>
+     *        The current status of the user. </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATING</code> – The user account creation is in progress.
+     *        <code>CREATING</code> – The creation is in progress.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ENABLED</code> – The user account is created and is currently active.
+     *        <code>ENABLED</code> – The user is created and is currently active.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DISABLED</code> – The user account is currently inactive.
+     *        <code>DISABLED</code> – The user is currently inactive.
      *        </p>
      *        </li>
      * @see UserStatus
@@ -240,41 +239,41 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The current status of the user account.
+     * The current status of the user.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> – The user account creation is in progress.
+     * <code>CREATING</code> – The creation is in progress.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ENABLED</code> – The user account is created and is currently active.
+     * <code>ENABLED</code> – The user is created and is currently active.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DISABLED</code> – The user account is currently inactive.
+     * <code>DISABLED</code> – The user is currently inactive.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The current status of the user account. </p>
+     * @return The current status of the user. </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>CREATING</code> – The user account creation is in progress.
+     *         <code>CREATING</code> – The creation is in progress.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ENABLED</code> – The user account is created and is currently active.
+     *         <code>ENABLED</code> – The user is created and is currently active.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>DISABLED</code> – The user account is currently inactive.
+     *         <code>DISABLED</code> – The user is currently inactive.
      *         </p>
      *         </li>
      * @see UserStatus
@@ -286,42 +285,42 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The current status of the user account.
+     * The current status of the user.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> – The user account creation is in progress.
+     * <code>CREATING</code> – The creation is in progress.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ENABLED</code> – The user account is created and is currently active.
+     * <code>ENABLED</code> – The user is created and is currently active.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DISABLED</code> – The user account is currently inactive.
+     * <code>DISABLED</code> – The user is currently inactive.
      * </p>
      * </li>
      * </ul>
      * 
      * @param status
-     *        The current status of the user account. </p>
+     *        The current status of the user. </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATING</code> – The user account creation is in progress.
+     *        <code>CREATING</code> – The creation is in progress.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ENABLED</code> – The user account is created and is currently active.
+     *        <code>ENABLED</code> – The user is created and is currently active.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DISABLED</code> – The user account is currently inactive.
+     *        <code>DISABLED</code> – The user is currently inactive.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -335,42 +334,42 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The current status of the user account.
+     * The current status of the user.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> – The user account creation is in progress.
+     * <code>CREATING</code> – The creation is in progress.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ENABLED</code> – The user account is created and is currently active.
+     * <code>ENABLED</code> – The user is created and is currently active.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DISABLED</code> – The user account is currently inactive.
+     * <code>DISABLED</code> – The user is currently inactive.
      * </p>
      * </li>
      * </ul>
      * 
      * @param status
-     *        The current status of the user account. </p>
+     *        The current status of the user. </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATING</code> – The user account creation is in progress.
+     *        <code>CREATING</code> – The creation is in progress.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ENABLED</code> – The user account is created and is currently active.
+     *        <code>ENABLED</code> – The user is created and is currently active.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DISABLED</code> – The user account is currently inactive.
+     *        <code>DISABLED</code> – The user is currently inactive.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -890,12 +889,11 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The timestamp at which the user account was created in FinSpace. The value is determined as epoch time in
-     * milliseconds.
+     * The timestamp at which the user was created in FinSpace. The value is determined as epoch time in milliseconds.
      * </p>
      * 
      * @param createTime
-     *        The timestamp at which the user account was created in FinSpace. The value is determined as epoch time in
+     *        The timestamp at which the user was created in FinSpace. The value is determined as epoch time in
      *        milliseconds.
      */
 
@@ -905,11 +903,10 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The timestamp at which the user account was created in FinSpace. The value is determined as epoch time in
-     * milliseconds.
+     * The timestamp at which the user was created in FinSpace. The value is determined as epoch time in milliseconds.
      * </p>
      * 
-     * @return The timestamp at which the user account was created in FinSpace. The value is determined as epoch time in
+     * @return The timestamp at which the user was created in FinSpace. The value is determined as epoch time in
      *         milliseconds.
      */
 
@@ -919,12 +916,11 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The timestamp at which the user account was created in FinSpace. The value is determined as epoch time in
-     * milliseconds.
+     * The timestamp at which the user was created in FinSpace. The value is determined as epoch time in milliseconds.
      * </p>
      * 
      * @param createTime
-     *        The timestamp at which the user account was created in FinSpace. The value is determined as epoch time in
+     *        The timestamp at which the user was created in FinSpace. The value is determined as epoch time in
      *        milliseconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -936,12 +932,11 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * Describes the last time the user account was enabled. The value is determined as epoch time in milliseconds.
+     * Describes the last time the user was activated. The value is determined as epoch time in milliseconds.
      * </p>
      * 
      * @param lastEnabledTime
-     *        Describes the last time the user account was enabled. The value is determined as epoch time in
-     *        milliseconds.
+     *        Describes the last time the user was activated. The value is determined as epoch time in milliseconds.
      */
 
     public void setLastEnabledTime(Long lastEnabledTime) {
@@ -950,11 +945,10 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * Describes the last time the user account was enabled. The value is determined as epoch time in milliseconds.
+     * Describes the last time the user was activated. The value is determined as epoch time in milliseconds.
      * </p>
      * 
-     * @return Describes the last time the user account was enabled. The value is determined as epoch time in
-     *         milliseconds.
+     * @return Describes the last time the user was activated. The value is determined as epoch time in milliseconds.
      */
 
     public Long getLastEnabledTime() {
@@ -963,12 +957,11 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * Describes the last time the user account was enabled. The value is determined as epoch time in milliseconds.
+     * Describes the last time the user was activated. The value is determined as epoch time in milliseconds.
      * </p>
      * 
      * @param lastEnabledTime
-     *        Describes the last time the user account was enabled. The value is determined as epoch time in
-     *        milliseconds.
+     *        Describes the last time the user was activated. The value is determined as epoch time in milliseconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -979,12 +972,11 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * Describes the last time the user account was disabled. The value is determined as epoch time in milliseconds.
+     * Describes the last time the user was deactivated. The value is determined as epoch time in milliseconds.
      * </p>
      * 
      * @param lastDisabledTime
-     *        Describes the last time the user account was disabled. The value is determined as epoch time in
-     *        milliseconds.
+     *        Describes the last time the user was deactivated. The value is determined as epoch time in milliseconds.
      */
 
     public void setLastDisabledTime(Long lastDisabledTime) {
@@ -993,11 +985,10 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * Describes the last time the user account was disabled. The value is determined as epoch time in milliseconds.
+     * Describes the last time the user was deactivated. The value is determined as epoch time in milliseconds.
      * </p>
      * 
-     * @return Describes the last time the user account was disabled. The value is determined as epoch time in
-     *         milliseconds.
+     * @return Describes the last time the user was deactivated. The value is determined as epoch time in milliseconds.
      */
 
     public Long getLastDisabledTime() {
@@ -1006,12 +997,11 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * Describes the last time the user account was disabled. The value is determined as epoch time in milliseconds.
+     * Describes the last time the user was deactivated. The value is determined as epoch time in milliseconds.
      * </p>
      * 
      * @param lastDisabledTime
-     *        Describes the last time the user account was disabled. The value is determined as epoch time in
-     *        milliseconds.
+     *        Describes the last time the user was deactivated. The value is determined as epoch time in milliseconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1022,11 +1012,11 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * Describes the last time the user account was updated. The value is determined as epoch time in milliseconds.
+     * Describes the last time the user details were updated. The value is determined as epoch time in milliseconds.
      * </p>
      * 
      * @param lastModifiedTime
-     *        Describes the last time the user account was updated. The value is determined as epoch time in
+     *        Describes the last time the user details were updated. The value is determined as epoch time in
      *        milliseconds.
      */
 
@@ -1036,10 +1026,10 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * Describes the last time the user account was updated. The value is determined as epoch time in milliseconds.
+     * Describes the last time the user details were updated. The value is determined as epoch time in milliseconds.
      * </p>
      * 
-     * @return Describes the last time the user account was updated. The value is determined as epoch time in
+     * @return Describes the last time the user details were updated. The value is determined as epoch time in
      *         milliseconds.
      */
 
@@ -1049,11 +1039,11 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * Describes the last time the user account was updated. The value is determined as epoch time in milliseconds.
+     * Describes the last time the user details were updated. The value is determined as epoch time in milliseconds.
      * </p>
      * 
      * @param lastModifiedTime
-     *        Describes the last time the user account was updated. The value is determined as epoch time in
+     *        Describes the last time the user details were updated. The value is determined as epoch time in
      *        milliseconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

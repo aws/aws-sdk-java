@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,12 @@ public class TitleAggregation implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * The type of finding to aggregate on.
+     * </p>
+     */
+    private String findingType;
+    /**
+     * <p>
      * The resource type to aggregate on.
      * </p>
      */
@@ -58,6 +64,65 @@ public class TitleAggregation implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private java.util.List<StringFilter> vulnerabilityIds;
+
+    /**
+     * <p>
+     * The type of finding to aggregate on.
+     * </p>
+     * 
+     * @param findingType
+     *        The type of finding to aggregate on.
+     * @see AggregationFindingType
+     */
+
+    public void setFindingType(String findingType) {
+        this.findingType = findingType;
+    }
+
+    /**
+     * <p>
+     * The type of finding to aggregate on.
+     * </p>
+     * 
+     * @return The type of finding to aggregate on.
+     * @see AggregationFindingType
+     */
+
+    public String getFindingType() {
+        return this.findingType;
+    }
+
+    /**
+     * <p>
+     * The type of finding to aggregate on.
+     * </p>
+     * 
+     * @param findingType
+     *        The type of finding to aggregate on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AggregationFindingType
+     */
+
+    public TitleAggregation withFindingType(String findingType) {
+        setFindingType(findingType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of finding to aggregate on.
+     * </p>
+     * 
+     * @param findingType
+     *        The type of finding to aggregate on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AggregationFindingType
+     */
+
+    public TitleAggregation withFindingType(AggregationFindingType findingType) {
+        this.findingType = findingType.toString();
+        return this;
+    }
 
     /**
      * <p>
@@ -388,6 +453,8 @@ public class TitleAggregation implements Serializable, Cloneable, StructuredPojo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getFindingType() != null)
+            sb.append("FindingType: ").append(getFindingType()).append(",");
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getSortBy() != null)
@@ -412,6 +479,10 @@ public class TitleAggregation implements Serializable, Cloneable, StructuredPojo
         if (obj instanceof TitleAggregation == false)
             return false;
         TitleAggregation other = (TitleAggregation) obj;
+        if (other.getFindingType() == null ^ this.getFindingType() == null)
+            return false;
+        if (other.getFindingType() != null && other.getFindingType().equals(this.getFindingType()) == false)
+            return false;
         if (other.getResourceType() == null ^ this.getResourceType() == null)
             return false;
         if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
@@ -440,6 +511,7 @@ public class TitleAggregation implements Serializable, Cloneable, StructuredPojo
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getFindingType() == null) ? 0 : getFindingType().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getSortBy() == null) ? 0 : getSortBy().hashCode());
         hashCode = prime * hashCode + ((getSortOrder() == null) ? 0 : getSortOrder().hashCode());

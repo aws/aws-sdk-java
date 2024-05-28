@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,13 @@ public class Lifecycle implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Long deleteAfterDays;
+    /**
+     * <p>
+     * Optional Boolean. If this is true, this setting will instruct your backup plan to transition supported resources
+     * to archive (cold) storage tier in accordance with your lifecycle settings.
+     * </p>
+     */
+    private Boolean optInToArchiveForSupportedResources;
 
     /**
      * <p>
@@ -140,6 +147,66 @@ public class Lifecycle implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Optional Boolean. If this is true, this setting will instruct your backup plan to transition supported resources
+     * to archive (cold) storage tier in accordance with your lifecycle settings.
+     * </p>
+     * 
+     * @param optInToArchiveForSupportedResources
+     *        Optional Boolean. If this is true, this setting will instruct your backup plan to transition supported
+     *        resources to archive (cold) storage tier in accordance with your lifecycle settings.
+     */
+
+    public void setOptInToArchiveForSupportedResources(Boolean optInToArchiveForSupportedResources) {
+        this.optInToArchiveForSupportedResources = optInToArchiveForSupportedResources;
+    }
+
+    /**
+     * <p>
+     * Optional Boolean. If this is true, this setting will instruct your backup plan to transition supported resources
+     * to archive (cold) storage tier in accordance with your lifecycle settings.
+     * </p>
+     * 
+     * @return Optional Boolean. If this is true, this setting will instruct your backup plan to transition supported
+     *         resources to archive (cold) storage tier in accordance with your lifecycle settings.
+     */
+
+    public Boolean getOptInToArchiveForSupportedResources() {
+        return this.optInToArchiveForSupportedResources;
+    }
+
+    /**
+     * <p>
+     * Optional Boolean. If this is true, this setting will instruct your backup plan to transition supported resources
+     * to archive (cold) storage tier in accordance with your lifecycle settings.
+     * </p>
+     * 
+     * @param optInToArchiveForSupportedResources
+     *        Optional Boolean. If this is true, this setting will instruct your backup plan to transition supported
+     *        resources to archive (cold) storage tier in accordance with your lifecycle settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Lifecycle withOptInToArchiveForSupportedResources(Boolean optInToArchiveForSupportedResources) {
+        setOptInToArchiveForSupportedResources(optInToArchiveForSupportedResources);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Optional Boolean. If this is true, this setting will instruct your backup plan to transition supported resources
+     * to archive (cold) storage tier in accordance with your lifecycle settings.
+     * </p>
+     * 
+     * @return Optional Boolean. If this is true, this setting will instruct your backup plan to transition supported
+     *         resources to archive (cold) storage tier in accordance with your lifecycle settings.
+     */
+
+    public Boolean isOptInToArchiveForSupportedResources() {
+        return this.optInToArchiveForSupportedResources;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -154,7 +221,9 @@ public class Lifecycle implements Serializable, Cloneable, StructuredPojo {
         if (getMoveToColdStorageAfterDays() != null)
             sb.append("MoveToColdStorageAfterDays: ").append(getMoveToColdStorageAfterDays()).append(",");
         if (getDeleteAfterDays() != null)
-            sb.append("DeleteAfterDays: ").append(getDeleteAfterDays());
+            sb.append("DeleteAfterDays: ").append(getDeleteAfterDays()).append(",");
+        if (getOptInToArchiveForSupportedResources() != null)
+            sb.append("OptInToArchiveForSupportedResources: ").append(getOptInToArchiveForSupportedResources());
         sb.append("}");
         return sb.toString();
     }
@@ -177,6 +246,11 @@ public class Lifecycle implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDeleteAfterDays() != null && other.getDeleteAfterDays().equals(this.getDeleteAfterDays()) == false)
             return false;
+        if (other.getOptInToArchiveForSupportedResources() == null ^ this.getOptInToArchiveForSupportedResources() == null)
+            return false;
+        if (other.getOptInToArchiveForSupportedResources() != null
+                && other.getOptInToArchiveForSupportedResources().equals(this.getOptInToArchiveForSupportedResources()) == false)
+            return false;
         return true;
     }
 
@@ -187,6 +261,7 @@ public class Lifecycle implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getMoveToColdStorageAfterDays() == null) ? 0 : getMoveToColdStorageAfterDays().hashCode());
         hashCode = prime * hashCode + ((getDeleteAfterDays() == null) ? 0 : getDeleteAfterDays().hashCode());
+        hashCode = prime * hashCode + ((getOptInToArchiveForSupportedResources() == null) ? 0 : getOptInToArchiveForSupportedResources().hashCode());
         return hashCode;
     }
 

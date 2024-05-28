@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,14 @@ public class MemberDataSourceConfiguration implements Serializable, Cloneable, S
      * Contains information on the status of data sources for the account.
      * </p>
      */
+    @Deprecated
     private DataSourceConfigurationsResult dataSources;
+    /**
+     * <p>
+     * Contains information about the status of the features for the member account.
+     * </p>
+     */
+    private java.util.List<MemberFeaturesConfigurationResult> features;
 
     /**
      * <p>
@@ -89,7 +96,7 @@ public class MemberDataSourceConfiguration implements Serializable, Cloneable, S
      * @param dataSources
      *        Contains information on the status of data sources for the account.
      */
-
+    @Deprecated
     public void setDataSources(DataSourceConfigurationsResult dataSources) {
         this.dataSources = dataSources;
     }
@@ -101,7 +108,7 @@ public class MemberDataSourceConfiguration implements Serializable, Cloneable, S
      * 
      * @return Contains information on the status of data sources for the account.
      */
-
+    @Deprecated
     public DataSourceConfigurationsResult getDataSources() {
         return this.dataSources;
     }
@@ -115,9 +122,79 @@ public class MemberDataSourceConfiguration implements Serializable, Cloneable, S
      *        Contains information on the status of data sources for the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public MemberDataSourceConfiguration withDataSources(DataSourceConfigurationsResult dataSources) {
         setDataSources(dataSources);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains information about the status of the features for the member account.
+     * </p>
+     * 
+     * @return Contains information about the status of the features for the member account.
+     */
+
+    public java.util.List<MemberFeaturesConfigurationResult> getFeatures() {
+        return features;
+    }
+
+    /**
+     * <p>
+     * Contains information about the status of the features for the member account.
+     * </p>
+     * 
+     * @param features
+     *        Contains information about the status of the features for the member account.
+     */
+
+    public void setFeatures(java.util.Collection<MemberFeaturesConfigurationResult> features) {
+        if (features == null) {
+            this.features = null;
+            return;
+        }
+
+        this.features = new java.util.ArrayList<MemberFeaturesConfigurationResult>(features);
+    }
+
+    /**
+     * <p>
+     * Contains information about the status of the features for the member account.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFeatures(java.util.Collection)} or {@link #withFeatures(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param features
+     *        Contains information about the status of the features for the member account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MemberDataSourceConfiguration withFeatures(MemberFeaturesConfigurationResult... features) {
+        if (this.features == null) {
+            setFeatures(new java.util.ArrayList<MemberFeaturesConfigurationResult>(features.length));
+        }
+        for (MemberFeaturesConfigurationResult ele : features) {
+            this.features.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains information about the status of the features for the member account.
+     * </p>
+     * 
+     * @param features
+     *        Contains information about the status of the features for the member account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MemberDataSourceConfiguration withFeatures(java.util.Collection<MemberFeaturesConfigurationResult> features) {
+        setFeatures(features);
         return this;
     }
 
@@ -136,7 +213,9 @@ public class MemberDataSourceConfiguration implements Serializable, Cloneable, S
         if (getAccountId() != null)
             sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getDataSources() != null)
-            sb.append("DataSources: ").append(getDataSources());
+            sb.append("DataSources: ").append(getDataSources()).append(",");
+        if (getFeatures() != null)
+            sb.append("Features: ").append(getFeatures());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +238,10 @@ public class MemberDataSourceConfiguration implements Serializable, Cloneable, S
             return false;
         if (other.getDataSources() != null && other.getDataSources().equals(this.getDataSources()) == false)
             return false;
+        if (other.getFeatures() == null ^ this.getFeatures() == null)
+            return false;
+        if (other.getFeatures() != null && other.getFeatures().equals(this.getFeatures()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +252,7 @@ public class MemberDataSourceConfiguration implements Serializable, Cloneable, S
 
         hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         hashCode = prime * hashCode + ((getDataSources() == null) ? 0 : getDataSources().hashCode());
+        hashCode = prime * hashCode + ((getFeatures() == null) ? 0 : getFeatures().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -79,6 +79,66 @@ public class DescribeUserResultJsonUnmarshaller implements Unmarshaller<Describe
                 if (context.testExpression("DisabledDate", targetDepth)) {
                     context.nextToken();
                     describeUserResult.setDisabledDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("MailboxProvisionedDate", targetDepth)) {
+                    context.nextToken();
+                    describeUserResult.setMailboxProvisionedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("MailboxDeprovisionedDate", targetDepth)) {
+                    context.nextToken();
+                    describeUserResult.setMailboxDeprovisionedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("FirstName", targetDepth)) {
+                    context.nextToken();
+                    describeUserResult.setFirstName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LastName", targetDepth)) {
+                    context.nextToken();
+                    describeUserResult.setLastName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("HiddenFromGlobalAddressList", targetDepth)) {
+                    context.nextToken();
+                    describeUserResult.setHiddenFromGlobalAddressList(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("Initials", targetDepth)) {
+                    context.nextToken();
+                    describeUserResult.setInitials(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Telephone", targetDepth)) {
+                    context.nextToken();
+                    describeUserResult.setTelephone(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Street", targetDepth)) {
+                    context.nextToken();
+                    describeUserResult.setStreet(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("JobTitle", targetDepth)) {
+                    context.nextToken();
+                    describeUserResult.setJobTitle(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("City", targetDepth)) {
+                    context.nextToken();
+                    describeUserResult.setCity(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Company", targetDepth)) {
+                    context.nextToken();
+                    describeUserResult.setCompany(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ZipCode", targetDepth)) {
+                    context.nextToken();
+                    describeUserResult.setZipCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Department", targetDepth)) {
+                    context.nextToken();
+                    describeUserResult.setDepartment(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Country", targetDepth)) {
+                    context.nextToken();
+                    describeUserResult.setCountry(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Office", targetDepth)) {
+                    context.nextToken();
+                    describeUserResult.setOffice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

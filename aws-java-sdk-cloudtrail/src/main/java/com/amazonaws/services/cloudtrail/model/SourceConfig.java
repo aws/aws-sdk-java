@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class SourceConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the channel applies to a single region or to all regions.
+     * Specifies whether the channel applies to a single Region or to all Regions.
      * </p>
      */
     private Boolean applyToAllRegions;
@@ -43,11 +43,11 @@ public class SourceConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the channel applies to a single region or to all regions.
+     * Specifies whether the channel applies to a single Region or to all Regions.
      * </p>
      * 
      * @param applyToAllRegions
-     *        Specifies whether the channel applies to a single region or to all regions.
+     *        Specifies whether the channel applies to a single Region or to all Regions.
      */
 
     public void setApplyToAllRegions(Boolean applyToAllRegions) {
@@ -56,10 +56,10 @@ public class SourceConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the channel applies to a single region or to all regions.
+     * Specifies whether the channel applies to a single Region or to all Regions.
      * </p>
      * 
-     * @return Specifies whether the channel applies to a single region or to all regions.
+     * @return Specifies whether the channel applies to a single Region or to all Regions.
      */
 
     public Boolean getApplyToAllRegions() {
@@ -68,11 +68,11 @@ public class SourceConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the channel applies to a single region or to all regions.
+     * Specifies whether the channel applies to a single Region or to all Regions.
      * </p>
      * 
      * @param applyToAllRegions
-     *        Specifies whether the channel applies to a single region or to all regions.
+     *        Specifies whether the channel applies to a single Region or to all Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,10 +83,10 @@ public class SourceConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the channel applies to a single region or to all regions.
+     * Specifies whether the channel applies to a single Region or to all Regions.
      * </p>
      * 
-     * @return Specifies whether the channel applies to a single region or to all regions.
+     * @return Specifies whether the channel applies to a single Region or to all Regions.
      */
 
     public Boolean isApplyToAllRegions() {

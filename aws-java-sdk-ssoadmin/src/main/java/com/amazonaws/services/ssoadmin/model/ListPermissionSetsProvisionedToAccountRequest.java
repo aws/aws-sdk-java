@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,24 +27,18 @@ public class ListPermissionSetsProvisionedToAccountRequest extends com.amazonaws
 
     /**
      * <p>
-     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
-     * </p>
-     */
-    private String instanceArn;
-    /**
-     * <p>
-     * The identifier of the AWS account from which to list the assignments.
+     * The identifier of the Amazon Web Services account from which to list the assignments.
      * </p>
      */
     private String accountId;
     /**
      * <p>
-     * The status object for the permission set provisioning operation.
+     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
-    private String provisioningStatus;
+    private String instanceArn;
     /**
      * <p>
      * The maximum number of results to display for the assignment.
@@ -58,66 +52,20 @@ public class ListPermissionSetsProvisionedToAccountRequest extends com.amazonaws
      * </p>
      */
     private String nextToken;
-
     /**
      * <p>
-     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * The status object for the permission set provisioning operation.
      * </p>
-     * 
-     * @param instanceArn
-     *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
-     *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *        Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
-
-    public void setInstanceArn(String instanceArn) {
-        this.instanceArn = instanceArn;
-    }
+    private String provisioningStatus;
 
     /**
      * <p>
-     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
-     * </p>
-     * 
-     * @return The ARN of the IAM Identity Center instance under which the operation will be executed. For more
-     *         information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *         Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-     */
-
-    public String getInstanceArn() {
-        return this.instanceArn;
-    }
-
-    /**
-     * <p>
-     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
-     * </p>
-     * 
-     * @param instanceArn
-     *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
-     *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *        Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListPermissionSetsProvisionedToAccountRequest withInstanceArn(String instanceArn) {
-        setInstanceArn(instanceArn);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The identifier of the AWS account from which to list the assignments.
+     * The identifier of the Amazon Web Services account from which to list the assignments.
      * </p>
      * 
      * @param accountId
-     *        The identifier of the AWS account from which to list the assignments.
+     *        The identifier of the Amazon Web Services account from which to list the assignments.
      */
 
     public void setAccountId(String accountId) {
@@ -126,10 +74,10 @@ public class ListPermissionSetsProvisionedToAccountRequest extends com.amazonaws
 
     /**
      * <p>
-     * The identifier of the AWS account from which to list the assignments.
+     * The identifier of the Amazon Web Services account from which to list the assignments.
      * </p>
      * 
-     * @return The identifier of the AWS account from which to list the assignments.
+     * @return The identifier of the Amazon Web Services account from which to list the assignments.
      */
 
     public String getAccountId() {
@@ -138,11 +86,11 @@ public class ListPermissionSetsProvisionedToAccountRequest extends com.amazonaws
 
     /**
      * <p>
-     * The identifier of the AWS account from which to list the assignments.
+     * The identifier of the Amazon Web Services account from which to list the assignments.
      * </p>
      * 
      * @param accountId
-     *        The identifier of the AWS account from which to list the assignments.
+     *        The identifier of the Amazon Web Services account from which to list the assignments.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,60 +101,56 @@ public class ListPermissionSetsProvisionedToAccountRequest extends com.amazonaws
 
     /**
      * <p>
-     * The status object for the permission set provisioning operation.
+     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
-     * @param provisioningStatus
-     *        The status object for the permission set provisioning operation.
-     * @see ProvisioningStatus
+     * @param instanceArn
+     *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
+     *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     *        Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     *        Reference</i>.
      */
 
-    public void setProvisioningStatus(String provisioningStatus) {
-        this.provisioningStatus = provisioningStatus;
+    public void setInstanceArn(String instanceArn) {
+        this.instanceArn = instanceArn;
     }
 
     /**
      * <p>
-     * The status object for the permission set provisioning operation.
+     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
-     * @return The status object for the permission set provisioning operation.
-     * @see ProvisioningStatus
+     * @return The ARN of the IAM Identity Center instance under which the operation will be executed. For more
+     *         information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     *         Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     *         Reference</i>.
      */
 
-    public String getProvisioningStatus() {
-        return this.provisioningStatus;
+    public String getInstanceArn() {
+        return this.instanceArn;
     }
 
     /**
      * <p>
-     * The status object for the permission set provisioning operation.
+     * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
-     * @param provisioningStatus
-     *        The status object for the permission set provisioning operation.
+     * @param instanceArn
+     *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
+     *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     *        Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     *        Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see ProvisioningStatus
      */
 
-    public ListPermissionSetsProvisionedToAccountRequest withProvisioningStatus(String provisioningStatus) {
-        setProvisioningStatus(provisioningStatus);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The status object for the permission set provisioning operation.
-     * </p>
-     * 
-     * @param provisioningStatus
-     *        The status object for the permission set provisioning operation.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see ProvisioningStatus
-     */
-
-    public ListPermissionSetsProvisionedToAccountRequest withProvisioningStatus(ProvisioningStatus provisioningStatus) {
-        this.provisioningStatus = provisioningStatus.toString();
+    public ListPermissionSetsProvisionedToAccountRequest withInstanceArn(String instanceArn) {
+        setInstanceArn(instanceArn);
         return this;
     }
 
@@ -297,6 +241,65 @@ public class ListPermissionSetsProvisionedToAccountRequest extends com.amazonaws
     }
 
     /**
+     * <p>
+     * The status object for the permission set provisioning operation.
+     * </p>
+     * 
+     * @param provisioningStatus
+     *        The status object for the permission set provisioning operation.
+     * @see ProvisioningStatus
+     */
+
+    public void setProvisioningStatus(String provisioningStatus) {
+        this.provisioningStatus = provisioningStatus;
+    }
+
+    /**
+     * <p>
+     * The status object for the permission set provisioning operation.
+     * </p>
+     * 
+     * @return The status object for the permission set provisioning operation.
+     * @see ProvisioningStatus
+     */
+
+    public String getProvisioningStatus() {
+        return this.provisioningStatus;
+    }
+
+    /**
+     * <p>
+     * The status object for the permission set provisioning operation.
+     * </p>
+     * 
+     * @param provisioningStatus
+     *        The status object for the permission set provisioning operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ProvisioningStatus
+     */
+
+    public ListPermissionSetsProvisionedToAccountRequest withProvisioningStatus(String provisioningStatus) {
+        setProvisioningStatus(provisioningStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status object for the permission set provisioning operation.
+     * </p>
+     * 
+     * @param provisioningStatus
+     *        The status object for the permission set provisioning operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ProvisioningStatus
+     */
+
+    public ListPermissionSetsProvisionedToAccountRequest withProvisioningStatus(ProvisioningStatus provisioningStatus) {
+        this.provisioningStatus = provisioningStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -308,16 +311,16 @@ public class ListPermissionSetsProvisionedToAccountRequest extends com.amazonaws
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getInstanceArn() != null)
-            sb.append("InstanceArn: ").append(getInstanceArn()).append(",");
         if (getAccountId() != null)
             sb.append("AccountId: ").append(getAccountId()).append(",");
-        if (getProvisioningStatus() != null)
-            sb.append("ProvisioningStatus: ").append(getProvisioningStatus()).append(",");
+        if (getInstanceArn() != null)
+            sb.append("InstanceArn: ").append(getInstanceArn()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getProvisioningStatus() != null)
+            sb.append("ProvisioningStatus: ").append(getProvisioningStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -332,17 +335,13 @@ public class ListPermissionSetsProvisionedToAccountRequest extends com.amazonaws
         if (obj instanceof ListPermissionSetsProvisionedToAccountRequest == false)
             return false;
         ListPermissionSetsProvisionedToAccountRequest other = (ListPermissionSetsProvisionedToAccountRequest) obj;
-        if (other.getInstanceArn() == null ^ this.getInstanceArn() == null)
-            return false;
-        if (other.getInstanceArn() != null && other.getInstanceArn().equals(this.getInstanceArn()) == false)
-            return false;
         if (other.getAccountId() == null ^ this.getAccountId() == null)
             return false;
         if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
             return false;
-        if (other.getProvisioningStatus() == null ^ this.getProvisioningStatus() == null)
+        if (other.getInstanceArn() == null ^ this.getInstanceArn() == null)
             return false;
-        if (other.getProvisioningStatus() != null && other.getProvisioningStatus().equals(this.getProvisioningStatus()) == false)
+        if (other.getInstanceArn() != null && other.getInstanceArn().equals(this.getInstanceArn()) == false)
             return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
@@ -352,6 +351,10 @@ public class ListPermissionSetsProvisionedToAccountRequest extends com.amazonaws
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getProvisioningStatus() == null ^ this.getProvisioningStatus() == null)
+            return false;
+        if (other.getProvisioningStatus() != null && other.getProvisioningStatus().equals(this.getProvisioningStatus()) == false)
+            return false;
         return true;
     }
 
@@ -360,11 +363,11 @@ public class ListPermissionSetsProvisionedToAccountRequest extends com.amazonaws
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getInstanceArn() == null) ? 0 : getInstanceArn().hashCode());
         hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
-        hashCode = prime * hashCode + ((getProvisioningStatus() == null) ? 0 : getProvisioningStatus().hashCode());
+        hashCode = prime * hashCode + ((getInstanceArn() == null) ? 0 : getInstanceArn().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getProvisioningStatus() == null) ? 0 : getProvisioningStatus().hashCode());
         return hashCode;
     }
 

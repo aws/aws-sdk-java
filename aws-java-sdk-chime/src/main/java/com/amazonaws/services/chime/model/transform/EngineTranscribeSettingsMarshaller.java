@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,16 @@ public class EngineTranscribeSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PiiEntityTypes").build();
     private static final MarshallingInfo<String> LANGUAGEMODELNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LanguageModelName").build();
+    private static final MarshallingInfo<Boolean> IDENTIFYLANGUAGE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentifyLanguage").build();
+    private static final MarshallingInfo<String> LANGUAGEOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LanguageOptions").build();
+    private static final MarshallingInfo<String> PREFERREDLANGUAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreferredLanguage").build();
+    private static final MarshallingInfo<String> VOCABULARYNAMES_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VocabularyNames").build();
+    private static final MarshallingInfo<String> VOCABULARYFILTERNAMES_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VocabularyFilterNames").build();
 
     private static final EngineTranscribeSettingsMarshaller instance = new EngineTranscribeSettingsMarshaller();
 
@@ -77,6 +87,11 @@ public class EngineTranscribeSettingsMarshaller {
             protocolMarshaller.marshall(engineTranscribeSettings.getContentRedactionType(), CONTENTREDACTIONTYPE_BINDING);
             protocolMarshaller.marshall(engineTranscribeSettings.getPiiEntityTypes(), PIIENTITYTYPES_BINDING);
             protocolMarshaller.marshall(engineTranscribeSettings.getLanguageModelName(), LANGUAGEMODELNAME_BINDING);
+            protocolMarshaller.marshall(engineTranscribeSettings.getIdentifyLanguage(), IDENTIFYLANGUAGE_BINDING);
+            protocolMarshaller.marshall(engineTranscribeSettings.getLanguageOptions(), LANGUAGEOPTIONS_BINDING);
+            protocolMarshaller.marshall(engineTranscribeSettings.getPreferredLanguage(), PREFERREDLANGUAGE_BINDING);
+            protocolMarshaller.marshall(engineTranscribeSettings.getVocabularyNames(), VOCABULARYNAMES_BINDING);
+            protocolMarshaller.marshall(engineTranscribeSettings.getVocabularyFilterNames(), VOCABULARYFILTERNAMES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,11 +32,17 @@ public class FilePaths implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Path to the infected or suspicious file on the resource it was detected on.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 128 length.
+     * </p>
      */
     private String filePath;
     /**
      * <p>
      * The name of the infected or suspicious file corresponding to the hash.
+     * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 128 length.
      * </p>
      */
     private String fileName;
@@ -44,11 +50,17 @@ public class FilePaths implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Amazon Resource Name (ARN) of the resource on which the threat was detected.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 128 length.
+     * </p>
      */
     private String resourceId;
     /**
      * <p>
      * The hash value for the infected or suspicious file.
+     * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 128 length.
      * </p>
      */
     private String hash;
@@ -57,9 +69,14 @@ public class FilePaths implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Path to the infected or suspicious file on the resource it was detected on.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 128 length.
+     * </p>
      * 
      * @param filePath
-     *        Path to the infected or suspicious file on the resource it was detected on.
+     *        Path to the infected or suspicious file on the resource it was detected on. </p>
+     *        <p>
+     *        Length Constraints: Minimum of 1 length. Maximum of 128 length.
      */
 
     public void setFilePath(String filePath) {
@@ -70,8 +87,13 @@ public class FilePaths implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Path to the infected or suspicious file on the resource it was detected on.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 128 length.
+     * </p>
      * 
-     * @return Path to the infected or suspicious file on the resource it was detected on.
+     * @return Path to the infected or suspicious file on the resource it was detected on. </p>
+     *         <p>
+     *         Length Constraints: Minimum of 1 length. Maximum of 128 length.
      */
 
     public String getFilePath() {
@@ -82,9 +104,14 @@ public class FilePaths implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Path to the infected or suspicious file on the resource it was detected on.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 128 length.
+     * </p>
      * 
      * @param filePath
-     *        Path to the infected or suspicious file on the resource it was detected on.
+     *        Path to the infected or suspicious file on the resource it was detected on. </p>
+     *        <p>
+     *        Length Constraints: Minimum of 1 length. Maximum of 128 length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,9 +124,14 @@ public class FilePaths implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the infected or suspicious file corresponding to the hash.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 128 length.
+     * </p>
      * 
      * @param fileName
-     *        The name of the infected or suspicious file corresponding to the hash.
+     *        The name of the infected or suspicious file corresponding to the hash. </p>
+     *        <p>
+     *        Length Constraints: Minimum of 1 length. Maximum of 128 length.
      */
 
     public void setFileName(String fileName) {
@@ -110,8 +142,13 @@ public class FilePaths implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the infected or suspicious file corresponding to the hash.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 128 length.
+     * </p>
      * 
-     * @return The name of the infected or suspicious file corresponding to the hash.
+     * @return The name of the infected or suspicious file corresponding to the hash. </p>
+     *         <p>
+     *         Length Constraints: Minimum of 1 length. Maximum of 128 length.
      */
 
     public String getFileName() {
@@ -122,9 +159,14 @@ public class FilePaths implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the infected or suspicious file corresponding to the hash.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 128 length.
+     * </p>
      * 
      * @param fileName
-     *        The name of the infected or suspicious file corresponding to the hash.
+     *        The name of the infected or suspicious file corresponding to the hash. </p>
+     *        <p>
+     *        Length Constraints: Minimum of 1 length. Maximum of 128 length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,9 +179,14 @@ public class FilePaths implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Amazon Resource Name (ARN) of the resource on which the threat was detected.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 128 length.
+     * </p>
      * 
      * @param resourceId
-     *        The Amazon Resource Name (ARN) of the resource on which the threat was detected.
+     *        The Amazon Resource Name (ARN) of the resource on which the threat was detected. </p>
+     *        <p>
+     *        Length Constraints: Minimum of 1 length. Maximum of 128 length.
      */
 
     public void setResourceId(String resourceId) {
@@ -150,8 +197,13 @@ public class FilePaths implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Amazon Resource Name (ARN) of the resource on which the threat was detected.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 128 length.
+     * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource on which the threat was detected.
+     * @return The Amazon Resource Name (ARN) of the resource on which the threat was detected. </p>
+     *         <p>
+     *         Length Constraints: Minimum of 1 length. Maximum of 128 length.
      */
 
     public String getResourceId() {
@@ -162,9 +214,14 @@ public class FilePaths implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The Amazon Resource Name (ARN) of the resource on which the threat was detected.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 128 length.
+     * </p>
      * 
      * @param resourceId
-     *        The Amazon Resource Name (ARN) of the resource on which the threat was detected.
+     *        The Amazon Resource Name (ARN) of the resource on which the threat was detected. </p>
+     *        <p>
+     *        Length Constraints: Minimum of 1 length. Maximum of 128 length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -177,9 +234,14 @@ public class FilePaths implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The hash value for the infected or suspicious file.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 128 length.
+     * </p>
      * 
      * @param hash
-     *        The hash value for the infected or suspicious file.
+     *        The hash value for the infected or suspicious file. </p>
+     *        <p>
+     *        Length Constraints: Minimum of 1 length. Maximum of 128 length.
      */
 
     public void setHash(String hash) {
@@ -190,8 +252,13 @@ public class FilePaths implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The hash value for the infected or suspicious file.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 128 length.
+     * </p>
      * 
-     * @return The hash value for the infected or suspicious file.
+     * @return The hash value for the infected or suspicious file. </p>
+     *         <p>
+     *         Length Constraints: Minimum of 1 length. Maximum of 128 length.
      */
 
     public String getHash() {
@@ -202,9 +269,14 @@ public class FilePaths implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The hash value for the infected or suspicious file.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 128 length.
+     * </p>
      * 
      * @param hash
-     *        The hash value for the infected or suspicious file.
+     *        The hash value for the infected or suspicious file. </p>
+     *        <p>
+     *        Length Constraints: Minimum of 1 length. Maximum of 128 length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

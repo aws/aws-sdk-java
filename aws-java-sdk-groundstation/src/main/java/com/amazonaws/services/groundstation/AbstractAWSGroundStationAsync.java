@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,6 +67,19 @@ public class AbstractAWSGroundStationAsync extends AbstractAWSGroundStation impl
     }
 
     @Override
+    public java.util.concurrent.Future<CreateEphemerisResult> createEphemerisAsync(CreateEphemerisRequest request) {
+
+        return createEphemerisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEphemerisResult> createEphemerisAsync(CreateEphemerisRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateEphemerisRequest, CreateEphemerisResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateMissionProfileResult> createMissionProfileAsync(CreateMissionProfileRequest request) {
 
         return createMissionProfileAsync(request, null);
@@ -106,6 +119,19 @@ public class AbstractAWSGroundStationAsync extends AbstractAWSGroundStation impl
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteEphemerisResult> deleteEphemerisAsync(DeleteEphemerisRequest request) {
+
+        return deleteEphemerisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEphemerisResult> deleteEphemerisAsync(DeleteEphemerisRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteEphemerisRequest, DeleteEphemerisResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteMissionProfileResult> deleteMissionProfileAsync(DeleteMissionProfileRequest request) {
 
         return deleteMissionProfileAsync(request, null);
@@ -127,6 +153,32 @@ public class AbstractAWSGroundStationAsync extends AbstractAWSGroundStation impl
     @Override
     public java.util.concurrent.Future<DescribeContactResult> describeContactAsync(DescribeContactRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeContactRequest, DescribeContactResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEphemerisResult> describeEphemerisAsync(DescribeEphemerisRequest request) {
+
+        return describeEphemerisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEphemerisResult> describeEphemerisAsync(DescribeEphemerisRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeEphemerisRequest, DescribeEphemerisResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAgentConfigurationResult> getAgentConfigurationAsync(GetAgentConfigurationRequest request) {
+
+        return getAgentConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAgentConfigurationResult> getAgentConfigurationAsync(GetAgentConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetAgentConfigurationRequest, GetAgentConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -236,6 +288,19 @@ public class AbstractAWSGroundStationAsync extends AbstractAWSGroundStation impl
     }
 
     @Override
+    public java.util.concurrent.Future<ListEphemeridesResult> listEphemeridesAsync(ListEphemeridesRequest request) {
+
+        return listEphemeridesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEphemeridesResult> listEphemeridesAsync(ListEphemeridesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListEphemeridesRequest, ListEphemeridesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListGroundStationsResult> listGroundStationsAsync(ListGroundStationsRequest request) {
 
         return listGroundStationsAsync(request, null);
@@ -288,6 +353,19 @@ public class AbstractAWSGroundStationAsync extends AbstractAWSGroundStation impl
     }
 
     @Override
+    public java.util.concurrent.Future<RegisterAgentResult> registerAgentAsync(RegisterAgentRequest request) {
+
+        return registerAgentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterAgentResult> registerAgentAsync(RegisterAgentRequest request,
+            com.amazonaws.handlers.AsyncHandler<RegisterAgentRequest, RegisterAgentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ReserveContactResult> reserveContactAsync(ReserveContactRequest request) {
 
         return reserveContactAsync(request, null);
@@ -327,6 +405,19 @@ public class AbstractAWSGroundStationAsync extends AbstractAWSGroundStation impl
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateAgentStatusResult> updateAgentStatusAsync(UpdateAgentStatusRequest request) {
+
+        return updateAgentStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAgentStatusResult> updateAgentStatusAsync(UpdateAgentStatusRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateAgentStatusRequest, UpdateAgentStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateConfigResult> updateConfigAsync(UpdateConfigRequest request) {
 
         return updateConfigAsync(request, null);
@@ -335,6 +426,19 @@ public class AbstractAWSGroundStationAsync extends AbstractAWSGroundStation impl
     @Override
     public java.util.concurrent.Future<UpdateConfigResult> updateConfigAsync(UpdateConfigRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateConfigRequest, UpdateConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEphemerisResult> updateEphemerisAsync(UpdateEphemerisRequest request) {
+
+        return updateEphemerisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEphemerisResult> updateEphemerisAsync(UpdateEphemerisRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateEphemerisRequest, UpdateEphemerisResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,10 @@ public class CreateBulkImportJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("errorReportLocation").build();
     private static final MarshallingInfo<StructuredPojo> JOBCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("jobConfiguration").build();
+    private static final MarshallingInfo<Boolean> ADAPTIVEINGESTION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("adaptiveIngestion").build();
+    private static final MarshallingInfo<Boolean> DELETEFILESAFTERIMPORT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deleteFilesAfterImport").build();
 
     private static final CreateBulkImportJobRequestMarshaller instance = new CreateBulkImportJobRequestMarshaller();
 
@@ -60,6 +64,8 @@ public class CreateBulkImportJobRequestMarshaller {
             protocolMarshaller.marshall(createBulkImportJobRequest.getFiles(), FILES_BINDING);
             protocolMarshaller.marshall(createBulkImportJobRequest.getErrorReportLocation(), ERRORREPORTLOCATION_BINDING);
             protocolMarshaller.marshall(createBulkImportJobRequest.getJobConfiguration(), JOBCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createBulkImportJobRequest.getAdaptiveIngestion(), ADAPTIVEINGESTION_BINDING);
+            protocolMarshaller.marshall(createBulkImportJobRequest.getDeleteFilesAfterImport(), DELETEFILESAFTERIMPORT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,10 +44,17 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     private Boolean autoMinorVersionUpgrade;
     /**
      * <p>
-     * Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain
-     * only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters,
-     * or special characters.
+     * Required. The broker's name. This value must be unique in your Amazon Web Services account, 1-50 characters long,
+     * must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets,
+     * wildcard characters, or special characters.
      * </p>
+     * <important>
+     * <p>
+     * Do not add personally identifiable information (PII) or other confidential or sensitive information in broker
+     * names. Broker names are accessible to other Amazon Web Services services, including CloudWatch Logs. Broker names
+     * are not intended to be used for private or sensitive data.
+     * </p>
+     * </important>
      */
     private String brokerName;
     /**
@@ -59,9 +66,13 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action.
-     * Note: We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the
+     * </p>
+     * <note>
+     * <p>
+     * We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the
      * creatorRequestId if your application doesn't require idempotency.
      * </p>
+     * </note>
      */
     private String creatorRequestId;
     /**
@@ -72,7 +83,7 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String deploymentMode;
     /**
      * <p>
-     * Encryption options for the broker. Does not apply to RabbitMQ brokers.
+     * Encryption options for the broker.
      * </p>
      */
     private EncryptionOptions encryptionOptions;
@@ -146,8 +157,9 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <important>
      * <p>
      * If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared
-     * VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your AWS
-     * account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.
+     * VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your
+     * Amazon Web Services account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by
+     * your Amazon Web Services account.
      * </p>
      * </important>
      */
@@ -160,19 +172,26 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * Required. The list of broker users (persons or applications) who can access queues and topics. This value can
-     * contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be
-     * 2-100 characters long.
+     * The list of broker users (persons or applications) who can access queues and topics. For Amazon MQ for RabbitMQ
+     * brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All
+     * subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web
+     * console.
      * </p>
-     * <important><title>Amazon MQ for RabbitMQ</title>
-     * <p>
-     * When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and created
-     * when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly
-     * to brokers or via the RabbitMQ web console.
-     * </p>
-     * </important>
      */
     private java.util.List<User> users;
+    /**
+     * <p>
+     * Defines whether this broker is a part of a data replication pair.
+     * </p>
+     */
+    private String dataReplicationMode;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the primary broker that is used to replicate data from in a data replication
+     * pair, and is applied to the replica broker. Must be set when dataReplicationMode is set to CRDR.
+     * </p>
+     */
+    private String dataReplicationPrimaryBrokerArn;
 
     /**
      * <p>
@@ -303,15 +322,27 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain
-     * only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters,
-     * or special characters.
+     * Required. The broker's name. This value must be unique in your Amazon Web Services account, 1-50 characters long,
+     * must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets,
+     * wildcard characters, or special characters.
      * </p>
+     * <important>
+     * <p>
+     * Do not add personally identifiable information (PII) or other confidential or sensitive information in broker
+     * names. Broker names are accessible to other Amazon Web Services services, including CloudWatch Logs. Broker names
+     * are not intended to be used for private or sensitive data.
+     * </p>
+     * </important>
      * 
      * @param brokerName
-     *        Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must
-     *        contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets,
-     *        wildcard characters, or special characters.
+     *        Required. The broker's name. This value must be unique in your Amazon Web Services account, 1-50
+     *        characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white
+     *        spaces, brackets, wildcard characters, or special characters.</p> <important>
+     *        <p>
+     *        Do not add personally identifiable information (PII) or other confidential or sensitive information in
+     *        broker names. Broker names are accessible to other Amazon Web Services services, including CloudWatch
+     *        Logs. Broker names are not intended to be used for private or sensitive data.
+     *        </p>
      */
 
     public void setBrokerName(String brokerName) {
@@ -320,14 +351,26 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain
-     * only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters,
-     * or special characters.
+     * Required. The broker's name. This value must be unique in your Amazon Web Services account, 1-50 characters long,
+     * must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets,
+     * wildcard characters, or special characters.
      * </p>
+     * <important>
+     * <p>
+     * Do not add personally identifiable information (PII) or other confidential or sensitive information in broker
+     * names. Broker names are accessible to other Amazon Web Services services, including CloudWatch Logs. Broker names
+     * are not intended to be used for private or sensitive data.
+     * </p>
+     * </important>
      * 
-     * @return Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must
-     *         contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets,
-     *         wildcard characters, or special characters.
+     * @return Required. The broker's name. This value must be unique in your Amazon Web Services account, 1-50
+     *         characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white
+     *         spaces, brackets, wildcard characters, or special characters.</p> <important>
+     *         <p>
+     *         Do not add personally identifiable information (PII) or other confidential or sensitive information in
+     *         broker names. Broker names are accessible to other Amazon Web Services services, including CloudWatch
+     *         Logs. Broker names are not intended to be used for private or sensitive data.
+     *         </p>
      */
 
     public String getBrokerName() {
@@ -336,15 +379,27 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must contain
-     * only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets, wildcard characters,
-     * or special characters.
+     * Required. The broker's name. This value must be unique in your Amazon Web Services account, 1-50 characters long,
+     * must contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets,
+     * wildcard characters, or special characters.
      * </p>
+     * <important>
+     * <p>
+     * Do not add personally identifiable information (PII) or other confidential or sensitive information in broker
+     * names. Broker names are accessible to other Amazon Web Services services, including CloudWatch Logs. Broker names
+     * are not intended to be used for private or sensitive data.
+     * </p>
+     * </important>
      * 
      * @param brokerName
-     *        Required. The broker's name. This value must be unique in your AWS account, 1-50 characters long, must
-     *        contain only letters, numbers, dashes, and underscores, and must not contain white spaces, brackets,
-     *        wildcard characters, or special characters.
+     *        Required. The broker's name. This value must be unique in your Amazon Web Services account, 1-50
+     *        characters long, must contain only letters, numbers, dashes, and underscores, and must not contain white
+     *        spaces, brackets, wildcard characters, or special characters.</p> <important>
+     *        <p>
+     *        Do not add personally identifiable information (PII) or other confidential or sensitive information in
+     *        broker names. Broker names are accessible to other Amazon Web Services services, including CloudWatch
+     *        Logs. Broker names are not intended to be used for private or sensitive data.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -396,14 +451,21 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action.
-     * Note: We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the
+     * </p>
+     * <note>
+     * <p>
+     * We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the
      * creatorRequestId if your application doesn't require idempotency.
      * </p>
+     * </note>
      * 
      * @param creatorRequestId
      *        The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API
-     *        action. Note: We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may
-     *        omit the creatorRequestId if your application doesn't require idempotency.
+     *        action.</p> <note>
+     *        <p>
+     *        We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the
+     *        creatorRequestId if your application doesn't require idempotency.
+     *        </p>
      */
 
     public void setCreatorRequestId(String creatorRequestId) {
@@ -413,13 +475,20 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action.
-     * Note: We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the
+     * </p>
+     * <note>
+     * <p>
+     * We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the
      * creatorRequestId if your application doesn't require idempotency.
      * </p>
+     * </note>
      * 
      * @return The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API
-     *         action. Note: We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may
-     *         omit the creatorRequestId if your application doesn't require idempotency.
+     *         action.</p> <note>
+     *         <p>
+     *         We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the
+     *         creatorRequestId if your application doesn't require idempotency.
+     *         </p>
      */
 
     public String getCreatorRequestId() {
@@ -429,14 +498,21 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API action.
-     * Note: We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the
+     * </p>
+     * <note>
+     * <p>
+     * We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the
      * creatorRequestId if your application doesn't require idempotency.
      * </p>
+     * </note>
      * 
      * @param creatorRequestId
      *        The unique ID that the requester receives for the created broker. Amazon MQ passes your ID with the API
-     *        action. Note: We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may
-     *        omit the creatorRequestId if your application doesn't require idempotency.
+     *        action.</p> <note>
+     *        <p>
+     *        We recommend using a Universally Unique Identifier (UUID) for the creatorRequestId. You may omit the
+     *        creatorRequestId if your application doesn't require idempotency.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -506,11 +582,11 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Encryption options for the broker. Does not apply to RabbitMQ brokers.
+     * Encryption options for the broker.
      * </p>
      * 
      * @param encryptionOptions
-     *        Encryption options for the broker. Does not apply to RabbitMQ brokers.
+     *        Encryption options for the broker.
      */
 
     public void setEncryptionOptions(EncryptionOptions encryptionOptions) {
@@ -519,10 +595,10 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Encryption options for the broker. Does not apply to RabbitMQ brokers.
+     * Encryption options for the broker.
      * </p>
      * 
-     * @return Encryption options for the broker. Does not apply to RabbitMQ brokers.
+     * @return Encryption options for the broker.
      */
 
     public EncryptionOptions getEncryptionOptions() {
@@ -531,11 +607,11 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Encryption options for the broker. Does not apply to RabbitMQ brokers.
+     * Encryption options for the broker.
      * </p>
      * 
      * @param encryptionOptions
-     *        Encryption options for the broker. Does not apply to RabbitMQ brokers.
+     *        Encryption options for the broker.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1020,8 +1096,9 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <important>
      * <p>
      * If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared
-     * VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your AWS
-     * account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.
+     * VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your
+     * Amazon Web Services account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by
+     * your Amazon Web Services account.
      * </p>
      * </important>
      * 
@@ -1035,8 +1112,9 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <p>
      *         If you specify subnets in a <a
      *         href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ
-     *         broker, the associated VPC to which the specified subnets belong must be owned by your AWS account.
-     *         Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.
+     *         broker, the associated VPC to which the specified subnets belong must be owned by your Amazon Web
+     *         Services account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your
+     *         Amazon Web Services account.
      *         </p>
      */
 
@@ -1057,8 +1135,9 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <important>
      * <p>
      * If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared
-     * VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your AWS
-     * account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.
+     * VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your
+     * Amazon Web Services account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by
+     * your Amazon Web Services account.
      * </p>
      * </important>
      * 
@@ -1073,8 +1152,9 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        If you specify subnets in a <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ
-     *        broker, the associated VPC to which the specified subnets belong must be owned by your AWS account. Amazon
-     *        MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.
+     *        broker, the associated VPC to which the specified subnets belong must be owned by your Amazon Web Services
+     *        account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your Amazon Web
+     *        Services account.
      *        </p>
      */
 
@@ -1100,8 +1180,9 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <important>
      * <p>
      * If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared
-     * VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your AWS
-     * account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.
+     * VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your
+     * Amazon Web Services account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by
+     * your Amazon Web Services account.
      * </p>
      * </important>
      * <p>
@@ -1121,8 +1202,9 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        If you specify subnets in a <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ
-     *        broker, the associated VPC to which the specified subnets belong must be owned by your AWS account. Amazon
-     *        MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.
+     *        broker, the associated VPC to which the specified subnets belong must be owned by your Amazon Web Services
+     *        account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your Amazon Web
+     *        Services account.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1150,8 +1232,9 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <important>
      * <p>
      * If you specify subnets in a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared
-     * VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your AWS
-     * account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.
+     * VPC</a> for a RabbitMQ broker, the associated VPC to which the specified subnets belong must be owned by your
+     * Amazon Web Services account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by
+     * your Amazon Web Services account.
      * </p>
      * </important>
      * 
@@ -1166,8 +1249,9 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        If you specify subnets in a <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">shared VPC</a> for a RabbitMQ
-     *        broker, the associated VPC to which the specified subnets belong must be owned by your AWS account. Amazon
-     *        MQ will not be able to create VPC endpoints in VPCs that are not owned by your AWS account.
+     *        broker, the associated VPC to which the specified subnets belong must be owned by your Amazon Web Services
+     *        account. Amazon MQ will not be able to create VPC endpoints in VPCs that are not owned by your Amazon Web
+     *        Services account.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1247,26 +1331,16 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Required. The list of broker users (persons or applications) who can access queues and topics. This value can
-     * contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be
-     * 2-100 characters long.
+     * The list of broker users (persons or applications) who can access queues and topics. For Amazon MQ for RabbitMQ
+     * brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All
+     * subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web
+     * console.
      * </p>
-     * <important><title>Amazon MQ for RabbitMQ</title>
-     * <p>
-     * When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and created
-     * when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly
-     * to brokers or via the RabbitMQ web console.
-     * </p>
-     * </important>
      * 
-     * @return Required. The list of broker users (persons or applications) who can access queues and topics. This value
-     *         can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value
-     *         must be 2-100 characters long.</p> <important><title>Amazon MQ for RabbitMQ</title>
-     *         <p>
-     *         When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and
-     *         created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ
-     *         API calls directly to brokers or via the RabbitMQ web console.
-     *         </p>
+     * @return The list of broker users (persons or applications) who can access queues and topics. For Amazon MQ for
+     *         RabbitMQ brokers, one and only one administrative user is accepted and created when a broker is first
+     *         provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or
+     *         via the RabbitMQ web console.
      */
 
     public java.util.List<User> getUsers() {
@@ -1275,27 +1349,17 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Required. The list of broker users (persons or applications) who can access queues and topics. This value can
-     * contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be
-     * 2-100 characters long.
+     * The list of broker users (persons or applications) who can access queues and topics. For Amazon MQ for RabbitMQ
+     * brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All
+     * subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web
+     * console.
      * </p>
-     * <important><title>Amazon MQ for RabbitMQ</title>
-     * <p>
-     * When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and created
-     * when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly
-     * to brokers or via the RabbitMQ web console.
-     * </p>
-     * </important>
      * 
      * @param users
-     *        Required. The list of broker users (persons or applications) who can access queues and topics. This value
-     *        can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value
-     *        must be 2-100 characters long.</p> <important><title>Amazon MQ for RabbitMQ</title>
-     *        <p>
-     *        When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and
-     *        created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API
-     *        calls directly to brokers or via the RabbitMQ web console.
-     *        </p>
+     *        The list of broker users (persons or applications) who can access queues and topics. For Amazon MQ for
+     *        RabbitMQ brokers, one and only one administrative user is accepted and created when a broker is first
+     *        provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or
+     *        via the RabbitMQ web console.
      */
 
     public void setUsers(java.util.Collection<User> users) {
@@ -1309,17 +1373,11 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Required. The list of broker users (persons or applications) who can access queues and topics. This value can
-     * contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be
-     * 2-100 characters long.
+     * The list of broker users (persons or applications) who can access queues and topics. For Amazon MQ for RabbitMQ
+     * brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All
+     * subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web
+     * console.
      * </p>
-     * <important><title>Amazon MQ for RabbitMQ</title>
-     * <p>
-     * When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and created
-     * when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly
-     * to brokers or via the RabbitMQ web console.
-     * </p>
-     * </important>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setUsers(java.util.Collection)} or {@link #withUsers(java.util.Collection)} if you want to override the
@@ -1327,14 +1385,10 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param users
-     *        Required. The list of broker users (persons or applications) who can access queues and topics. This value
-     *        can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value
-     *        must be 2-100 characters long.</p> <important><title>Amazon MQ for RabbitMQ</title>
-     *        <p>
-     *        When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and
-     *        created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API
-     *        calls directly to brokers or via the RabbitMQ web console.
-     *        </p>
+     *        The list of broker users (persons or applications) who can access queues and topics. For Amazon MQ for
+     *        RabbitMQ brokers, one and only one administrative user is accepted and created when a broker is first
+     *        provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or
+     *        via the RabbitMQ web console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1350,32 +1404,130 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Required. The list of broker users (persons or applications) who can access queues and topics. This value can
-     * contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be
-     * 2-100 characters long.
+     * The list of broker users (persons or applications) who can access queues and topics. For Amazon MQ for RabbitMQ
+     * brokers, one and only one administrative user is accepted and created when a broker is first provisioned. All
+     * subsequent broker users are created by making RabbitMQ API calls directly to brokers or via the RabbitMQ web
+     * console.
      * </p>
-     * <important><title>Amazon MQ for RabbitMQ</title>
-     * <p>
-     * When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and created
-     * when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API calls directly
-     * to brokers or via the RabbitMQ web console.
-     * </p>
-     * </important>
      * 
      * @param users
-     *        Required. The list of broker users (persons or applications) who can access queues and topics. This value
-     *        can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value
-     *        must be 2-100 characters long.</p> <important><title>Amazon MQ for RabbitMQ</title>
-     *        <p>
-     *        When you create an Amazon MQ for RabbitMQ broker, one and only one administrative user is accepted and
-     *        created when a broker is first provisioned. All subsequent broker users are created by making RabbitMQ API
-     *        calls directly to brokers or via the RabbitMQ web console.
-     *        </p>
+     *        The list of broker users (persons or applications) who can access queues and topics. For Amazon MQ for
+     *        RabbitMQ brokers, one and only one administrative user is accepted and created when a broker is first
+     *        provisioned. All subsequent broker users are created by making RabbitMQ API calls directly to brokers or
+     *        via the RabbitMQ web console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateBrokerRequest withUsers(java.util.Collection<User> users) {
         setUsers(users);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Defines whether this broker is a part of a data replication pair.
+     * </p>
+     * 
+     * @param dataReplicationMode
+     *        Defines whether this broker is a part of a data replication pair.
+     * @see DataReplicationMode
+     */
+
+    public void setDataReplicationMode(String dataReplicationMode) {
+        this.dataReplicationMode = dataReplicationMode;
+    }
+
+    /**
+     * <p>
+     * Defines whether this broker is a part of a data replication pair.
+     * </p>
+     * 
+     * @return Defines whether this broker is a part of a data replication pair.
+     * @see DataReplicationMode
+     */
+
+    public String getDataReplicationMode() {
+        return this.dataReplicationMode;
+    }
+
+    /**
+     * <p>
+     * Defines whether this broker is a part of a data replication pair.
+     * </p>
+     * 
+     * @param dataReplicationMode
+     *        Defines whether this broker is a part of a data replication pair.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DataReplicationMode
+     */
+
+    public CreateBrokerRequest withDataReplicationMode(String dataReplicationMode) {
+        setDataReplicationMode(dataReplicationMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Defines whether this broker is a part of a data replication pair.
+     * </p>
+     * 
+     * @param dataReplicationMode
+     *        Defines whether this broker is a part of a data replication pair.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DataReplicationMode
+     */
+
+    public CreateBrokerRequest withDataReplicationMode(DataReplicationMode dataReplicationMode) {
+        this.dataReplicationMode = dataReplicationMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the primary broker that is used to replicate data from in a data replication
+     * pair, and is applied to the replica broker. Must be set when dataReplicationMode is set to CRDR.
+     * </p>
+     * 
+     * @param dataReplicationPrimaryBrokerArn
+     *        The Amazon Resource Name (ARN) of the primary broker that is used to replicate data from in a data
+     *        replication pair, and is applied to the replica broker. Must be set when dataReplicationMode is set to
+     *        CRDR.
+     */
+
+    public void setDataReplicationPrimaryBrokerArn(String dataReplicationPrimaryBrokerArn) {
+        this.dataReplicationPrimaryBrokerArn = dataReplicationPrimaryBrokerArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the primary broker that is used to replicate data from in a data replication
+     * pair, and is applied to the replica broker. Must be set when dataReplicationMode is set to CRDR.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the primary broker that is used to replicate data from in a data
+     *         replication pair, and is applied to the replica broker. Must be set when dataReplicationMode is set to
+     *         CRDR.
+     */
+
+    public String getDataReplicationPrimaryBrokerArn() {
+        return this.dataReplicationPrimaryBrokerArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the primary broker that is used to replicate data from in a data replication
+     * pair, and is applied to the replica broker. Must be set when dataReplicationMode is set to CRDR.
+     * </p>
+     * 
+     * @param dataReplicationPrimaryBrokerArn
+     *        The Amazon Resource Name (ARN) of the primary broker that is used to replicate data from in a data
+     *        replication pair, and is applied to the replica broker. Must be set when dataReplicationMode is set to
+     *        CRDR.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateBrokerRequest withDataReplicationPrimaryBrokerArn(String dataReplicationPrimaryBrokerArn) {
+        setDataReplicationPrimaryBrokerArn(dataReplicationPrimaryBrokerArn);
         return this;
     }
 
@@ -1428,7 +1580,11 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getUsers() != null)
-            sb.append("Users: ").append(getUsers());
+            sb.append("Users: ").append(getUsers()).append(",");
+        if (getDataReplicationMode() != null)
+            sb.append("DataReplicationMode: ").append(getDataReplicationMode()).append(",");
+        if (getDataReplicationPrimaryBrokerArn() != null)
+            sb.append("DataReplicationPrimaryBrokerArn: ").append(getDataReplicationPrimaryBrokerArn());
         sb.append("}");
         return sb.toString();
     }
@@ -1519,6 +1675,15 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getUsers() != null && other.getUsers().equals(this.getUsers()) == false)
             return false;
+        if (other.getDataReplicationMode() == null ^ this.getDataReplicationMode() == null)
+            return false;
+        if (other.getDataReplicationMode() != null && other.getDataReplicationMode().equals(this.getDataReplicationMode()) == false)
+            return false;
+        if (other.getDataReplicationPrimaryBrokerArn() == null ^ this.getDataReplicationPrimaryBrokerArn() == null)
+            return false;
+        if (other.getDataReplicationPrimaryBrokerArn() != null
+                && other.getDataReplicationPrimaryBrokerArn().equals(this.getDataReplicationPrimaryBrokerArn()) == false)
+            return false;
         return true;
     }
 
@@ -1546,6 +1711,8 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getUsers() == null) ? 0 : getUsers().hashCode());
+        hashCode = prime * hashCode + ((getDataReplicationMode() == null) ? 0 : getDataReplicationMode().hashCode());
+        hashCode = prime * hashCode + ((getDataReplicationPrimaryBrokerArn() == null) ? 0 : getDataReplicationPrimaryBrokerArn().hashCode());
         return hashCode;
     }
 

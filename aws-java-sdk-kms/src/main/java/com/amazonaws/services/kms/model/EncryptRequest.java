@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -79,6 +79,12 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * cryptographic operations</a> with a symmetric encryption KMS key. The standard asymmetric encryption algorithms
      * and HMAC algorithms that KMS uses do not support an encryption context.
      * </p>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important>
      * <p>
      * An <i>encryption context</i> is a collection of non-secret key-value pairs that represent additional
      * authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact
@@ -116,8 +122,22 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * the algorithm used for symmetric encryption KMS keys. If you are using an asymmetric KMS key, we recommend
      * RSAES_OAEP_SHA_256.
      * </p>
+     * <p>
+     * The SM2PKE algorithm is only available in China Regions.
+     * </p>
      */
     private String encryptionAlgorithm;
+    /**
+     * <p>
+     * Checks if your request will succeed. <code>DryRun</code> is an optional parameter.
+     * </p>
+     * <p>
+     * To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     * calls</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     */
+    private Boolean dryRun;
 
     /**
      * <p>
@@ -446,6 +466,12 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * cryptographic operations</a> with a symmetric encryption KMS key. The standard asymmetric encryption algorithms
      * and HMAC algorithms that KMS uses do not support an encryption context.
      * </p>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important>
      * <p>
      * An <i>encryption context</i> is a collection of non-secret key-value pairs that represent additional
      * authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact
@@ -463,7 +489,12 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *         only for <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations"
      *         >cryptographic operations</a> with a symmetric encryption KMS key. The standard asymmetric encryption
-     *         algorithms and HMAC algorithms that KMS uses do not support an encryption context. </p>
+     *         algorithms and HMAC algorithms that KMS uses do not support an encryption context. </p> <important>
+     *         <p>
+     *         Do not include confidential or sensitive information in this field. This field may be displayed in
+     *         plaintext in CloudTrail logs and other output.
+     *         </p>
+     *         </important>
      *         <p>
      *         An <i>encryption context</i> is a collection of non-secret key-value pairs that represent additional
      *         authenticated data. When you use an encryption context to encrypt data, you must specify the same (an
@@ -491,6 +522,12 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * cryptographic operations</a> with a symmetric encryption KMS key. The standard asymmetric encryption algorithms
      * and HMAC algorithms that KMS uses do not support an encryption context.
      * </p>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important>
      * <p>
      * An <i>encryption context</i> is a collection of non-secret key-value pairs that represent additional
      * authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact
@@ -509,7 +546,12 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        only for <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations"
      *        >cryptographic operations</a> with a symmetric encryption KMS key. The standard asymmetric encryption
-     *        algorithms and HMAC algorithms that KMS uses do not support an encryption context. </p>
+     *        algorithms and HMAC algorithms that KMS uses do not support an encryption context. </p> <important>
+     *        <p>
+     *        Do not include confidential or sensitive information in this field. This field may be displayed in
+     *        plaintext in CloudTrail logs and other output.
+     *        </p>
+     *        </important>
      *        <p>
      *        An <i>encryption context</i> is a collection of non-secret key-value pairs that represent additional
      *        authenticated data. When you use an encryption context to encrypt data, you must specify the same (an
@@ -534,6 +576,12 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * cryptographic operations</a> with a symmetric encryption KMS key. The standard asymmetric encryption algorithms
      * and HMAC algorithms that KMS uses do not support an encryption context.
      * </p>
+     * <important>
+     * <p>
+     * Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.
+     * </p>
+     * </important>
      * <p>
      * An <i>encryption context</i> is a collection of non-secret key-value pairs that represent additional
      * authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact
@@ -552,7 +600,12 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        only for <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations"
      *        >cryptographic operations</a> with a symmetric encryption KMS key. The standard asymmetric encryption
-     *        algorithms and HMAC algorithms that KMS uses do not support an encryption context. </p>
+     *        algorithms and HMAC algorithms that KMS uses do not support an encryption context. </p> <important>
+     *        <p>
+     *        Do not include confidential or sensitive information in this field. This field may be displayed in
+     *        plaintext in CloudTrail logs and other output.
+     *        </p>
+     *        </important>
      *        <p>
      *        An <i>encryption context</i> is a collection of non-secret key-value pairs that represent additional
      *        authenticated data. When you use an encryption context to encrypt data, you must specify the same (an
@@ -735,6 +788,9 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * the algorithm used for symmetric encryption KMS keys. If you are using an asymmetric KMS key, we recommend
      * RSAES_OAEP_SHA_256.
      * </p>
+     * <p>
+     * The SM2PKE algorithm is only available in China Regions.
+     * </p>
      * 
      * @param encryptionAlgorithm
      *        Specifies the encryption algorithm that KMS will use to encrypt the plaintext message. The algorithm must
@@ -743,6 +799,9 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        This parameter is required only for asymmetric KMS keys. The default value, <code>SYMMETRIC_DEFAULT</code>
      *        , is the algorithm used for symmetric encryption KMS keys. If you are using an asymmetric KMS key, we
      *        recommend RSAES_OAEP_SHA_256.
+     *        </p>
+     *        <p>
+     *        The SM2PKE algorithm is only available in China Regions.
      * @see EncryptionAlgorithmSpec
      */
 
@@ -760,6 +819,9 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * the algorithm used for symmetric encryption KMS keys. If you are using an asymmetric KMS key, we recommend
      * RSAES_OAEP_SHA_256.
      * </p>
+     * <p>
+     * The SM2PKE algorithm is only available in China Regions.
+     * </p>
      * 
      * @return Specifies the encryption algorithm that KMS will use to encrypt the plaintext message. The algorithm must
      *         be compatible with the KMS key that you specify.</p>
@@ -767,6 +829,9 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *         This parameter is required only for asymmetric KMS keys. The default value,
      *         <code>SYMMETRIC_DEFAULT</code>, is the algorithm used for symmetric encryption KMS keys. If you are using
      *         an asymmetric KMS key, we recommend RSAES_OAEP_SHA_256.
+     *         </p>
+     *         <p>
+     *         The SM2PKE algorithm is only available in China Regions.
      * @see EncryptionAlgorithmSpec
      */
 
@@ -784,6 +849,9 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * the algorithm used for symmetric encryption KMS keys. If you are using an asymmetric KMS key, we recommend
      * RSAES_OAEP_SHA_256.
      * </p>
+     * <p>
+     * The SM2PKE algorithm is only available in China Regions.
+     * </p>
      * 
      * @param encryptionAlgorithm
      *        Specifies the encryption algorithm that KMS will use to encrypt the plaintext message. The algorithm must
@@ -792,6 +860,9 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        This parameter is required only for asymmetric KMS keys. The default value, <code>SYMMETRIC_DEFAULT</code>
      *        , is the algorithm used for symmetric encryption KMS keys. If you are using an asymmetric KMS key, we
      *        recommend RSAES_OAEP_SHA_256.
+     *        </p>
+     *        <p>
+     *        The SM2PKE algorithm is only available in China Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EncryptionAlgorithmSpec
      */
@@ -811,6 +882,9 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * the algorithm used for symmetric encryption KMS keys. If you are using an asymmetric KMS key, we recommend
      * RSAES_OAEP_SHA_256.
      * </p>
+     * <p>
+     * The SM2PKE algorithm is only available in China Regions.
+     * </p>
      * 
      * @param encryptionAlgorithm
      *        Specifies the encryption algorithm that KMS will use to encrypt the plaintext message. The algorithm must
@@ -819,6 +893,9 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        This parameter is required only for asymmetric KMS keys. The default value, <code>SYMMETRIC_DEFAULT</code>
      *        , is the algorithm used for symmetric encryption KMS keys. If you are using an asymmetric KMS key, we
      *        recommend RSAES_OAEP_SHA_256.
+     *        </p>
+     *        <p>
+     *        The SM2PKE algorithm is only available in China Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EncryptionAlgorithmSpec
      */
@@ -826,6 +903,94 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
     public EncryptRequest withEncryptionAlgorithm(EncryptionAlgorithmSpec encryptionAlgorithm) {
         this.encryptionAlgorithm = encryptionAlgorithm.toString();
         return this;
+    }
+
+    /**
+     * <p>
+     * Checks if your request will succeed. <code>DryRun</code> is an optional parameter.
+     * </p>
+     * <p>
+     * To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     * calls</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param dryRun
+     *        Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+     *        <p>
+     *        To learn more about how to use this parameter, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     *        calls</a> in the <i>Key Management Service Developer Guide</i>.
+     */
+
+    public void setDryRun(Boolean dryRun) {
+        this.dryRun = dryRun;
+    }
+
+    /**
+     * <p>
+     * Checks if your request will succeed. <code>DryRun</code> is an optional parameter.
+     * </p>
+     * <p>
+     * To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     * calls</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+     *         <p>
+     *         To learn more about how to use this parameter, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     *         calls</a> in the <i>Key Management Service Developer Guide</i>.
+     */
+
+    public Boolean getDryRun() {
+        return this.dryRun;
+    }
+
+    /**
+     * <p>
+     * Checks if your request will succeed. <code>DryRun</code> is an optional parameter.
+     * </p>
+     * <p>
+     * To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     * calls</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param dryRun
+     *        Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+     *        <p>
+     *        To learn more about how to use this parameter, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     *        calls</a> in the <i>Key Management Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EncryptRequest withDryRun(Boolean dryRun) {
+        setDryRun(dryRun);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Checks if your request will succeed. <code>DryRun</code> is an optional parameter.
+     * </p>
+     * <p>
+     * To learn more about how to use this parameter, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     * calls</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return Checks if your request will succeed. <code>DryRun</code> is an optional parameter. </p>
+     *         <p>
+     *         To learn more about how to use this parameter, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing your KMS API
+     *         calls</a> in the <i>Key Management Service Developer Guide</i>.
+     */
+
+    public Boolean isDryRun() {
+        return this.dryRun;
     }
 
     /**
@@ -849,7 +1014,9 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
         if (getGrantTokens() != null)
             sb.append("GrantTokens: ").append(getGrantTokens()).append(",");
         if (getEncryptionAlgorithm() != null)
-            sb.append("EncryptionAlgorithm: ").append(getEncryptionAlgorithm());
+            sb.append("EncryptionAlgorithm: ").append(getEncryptionAlgorithm()).append(",");
+        if (getDryRun() != null)
+            sb.append("DryRun: ").append(getDryRun());
         sb.append("}");
         return sb.toString();
     }
@@ -884,6 +1051,10 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
             return false;
         if (other.getEncryptionAlgorithm() != null && other.getEncryptionAlgorithm().equals(this.getEncryptionAlgorithm()) == false)
             return false;
+        if (other.getDryRun() == null ^ this.getDryRun() == null)
+            return false;
+        if (other.getDryRun() != null && other.getDryRun().equals(this.getDryRun()) == false)
+            return false;
         return true;
     }
 
@@ -897,6 +1068,7 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
         hashCode = prime * hashCode + ((getEncryptionContext() == null) ? 0 : getEncryptionContext().hashCode());
         hashCode = prime * hashCode + ((getGrantTokens() == null) ? 0 : getGrantTokens().hashCode());
         hashCode = prime * hashCode + ((getEncryptionAlgorithm() == null) ? 0 : getEncryptionAlgorithm().hashCode());
+        hashCode = prime * hashCode + ((getDryRun() == null) ? 0 : getDryRun().hashCode());
         return hashCode;
     }
 

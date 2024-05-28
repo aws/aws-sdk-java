@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -69,8 +69,8 @@ public class CreateDBProxyRequest extends com.amazonaws.AmazonWebServiceRequest 
     private com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupIds;
     /**
      * <p>
-     * A Boolean parameter that specifies whether Transport Layer Security (TLS) encryption is required for connections
-     * to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy.
+     * Specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling
+     * this setting, you can enforce encrypted TLS connections to the proxy.
      * </p>
      */
     private Boolean requireTLS;
@@ -83,10 +83,10 @@ public class CreateDBProxyRequest extends com.amazonaws.AmazonWebServiceRequest 
     private Integer idleClientTimeout;
     /**
      * <p>
-     * Whether the proxy includes detailed information about SQL statements in its logs. This information helps you to
-     * debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug
-     * information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting
-     * when needed for debugging, and only when you have security measures in place to safeguard any sensitive
+     * Specifies whether the proxy includes detailed information about SQL statements in its logs. This information
+     * helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The
+     * debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this
+     * setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive
      * information that appears in the logs.
      * </p>
      */
@@ -507,14 +507,13 @@ public class CreateDBProxyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A Boolean parameter that specifies whether Transport Layer Security (TLS) encryption is required for connections
-     * to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy.
+     * Specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling
+     * this setting, you can enforce encrypted TLS connections to the proxy.
      * </p>
      * 
      * @param requireTLS
-     *        A Boolean parameter that specifies whether Transport Layer Security (TLS) encryption is required for
-     *        connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the
-     *        proxy.
+     *        Specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By
+     *        enabling this setting, you can enforce encrypted TLS connections to the proxy.
      */
 
     public void setRequireTLS(Boolean requireTLS) {
@@ -523,13 +522,12 @@ public class CreateDBProxyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A Boolean parameter that specifies whether Transport Layer Security (TLS) encryption is required for connections
-     * to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy.
+     * Specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling
+     * this setting, you can enforce encrypted TLS connections to the proxy.
      * </p>
      * 
-     * @return A Boolean parameter that specifies whether Transport Layer Security (TLS) encryption is required for
-     *         connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the
-     *         proxy.
+     * @return Specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By
+     *         enabling this setting, you can enforce encrypted TLS connections to the proxy.
      */
 
     public Boolean getRequireTLS() {
@@ -538,14 +536,13 @@ public class CreateDBProxyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A Boolean parameter that specifies whether Transport Layer Security (TLS) encryption is required for connections
-     * to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy.
+     * Specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling
+     * this setting, you can enforce encrypted TLS connections to the proxy.
      * </p>
      * 
      * @param requireTLS
-     *        A Boolean parameter that specifies whether Transport Layer Security (TLS) encryption is required for
-     *        connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the
-     *        proxy.
+     *        Specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By
+     *        enabling this setting, you can enforce encrypted TLS connections to the proxy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -556,13 +553,12 @@ public class CreateDBProxyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A Boolean parameter that specifies whether Transport Layer Security (TLS) encryption is required for connections
-     * to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy.
+     * Specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling
+     * this setting, you can enforce encrypted TLS connections to the proxy.
      * </p>
      * 
-     * @return A Boolean parameter that specifies whether Transport Layer Security (TLS) encryption is required for
-     *         connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the
-     *         proxy.
+     * @return Specifies whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By
+     *         enabling this setting, you can enforce encrypted TLS connections to the proxy.
      */
 
     public Boolean isRequireTLS() {
@@ -617,19 +613,19 @@ public class CreateDBProxyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Whether the proxy includes detailed information about SQL statements in its logs. This information helps you to
-     * debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug
-     * information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting
-     * when needed for debugging, and only when you have security measures in place to safeguard any sensitive
+     * Specifies whether the proxy includes detailed information about SQL statements in its logs. This information
+     * helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The
+     * debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this
+     * setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive
      * information that appears in the logs.
      * </p>
      * 
      * @param debugLogging
-     *        Whether the proxy includes detailed information about SQL statements in its logs. This information helps
-     *        you to debug issues involving SQL behavior or the performance and scalability of the proxy connections.
-     *        The debug information includes the text of SQL statements that you submit through the proxy. Thus, only
-     *        enable this setting when needed for debugging, and only when you have security measures in place to
-     *        safeguard any sensitive information that appears in the logs.
+     *        Specifies whether the proxy includes detailed information about SQL statements in its logs. This
+     *        information helps you to debug issues involving SQL behavior or the performance and scalability of the
+     *        proxy connections. The debug information includes the text of SQL statements that you submit through the
+     *        proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures
+     *        in place to safeguard any sensitive information that appears in the logs.
      */
 
     public void setDebugLogging(Boolean debugLogging) {
@@ -638,18 +634,18 @@ public class CreateDBProxyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Whether the proxy includes detailed information about SQL statements in its logs. This information helps you to
-     * debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug
-     * information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting
-     * when needed for debugging, and only when you have security measures in place to safeguard any sensitive
+     * Specifies whether the proxy includes detailed information about SQL statements in its logs. This information
+     * helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The
+     * debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this
+     * setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive
      * information that appears in the logs.
      * </p>
      * 
-     * @return Whether the proxy includes detailed information about SQL statements in its logs. This information helps
-     *         you to debug issues involving SQL behavior or the performance and scalability of the proxy connections.
-     *         The debug information includes the text of SQL statements that you submit through the proxy. Thus, only
-     *         enable this setting when needed for debugging, and only when you have security measures in place to
-     *         safeguard any sensitive information that appears in the logs.
+     * @return Specifies whether the proxy includes detailed information about SQL statements in its logs. This
+     *         information helps you to debug issues involving SQL behavior or the performance and scalability of the
+     *         proxy connections. The debug information includes the text of SQL statements that you submit through the
+     *         proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures
+     *         in place to safeguard any sensitive information that appears in the logs.
      */
 
     public Boolean getDebugLogging() {
@@ -658,19 +654,19 @@ public class CreateDBProxyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Whether the proxy includes detailed information about SQL statements in its logs. This information helps you to
-     * debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug
-     * information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting
-     * when needed for debugging, and only when you have security measures in place to safeguard any sensitive
+     * Specifies whether the proxy includes detailed information about SQL statements in its logs. This information
+     * helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The
+     * debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this
+     * setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive
      * information that appears in the logs.
      * </p>
      * 
      * @param debugLogging
-     *        Whether the proxy includes detailed information about SQL statements in its logs. This information helps
-     *        you to debug issues involving SQL behavior or the performance and scalability of the proxy connections.
-     *        The debug information includes the text of SQL statements that you submit through the proxy. Thus, only
-     *        enable this setting when needed for debugging, and only when you have security measures in place to
-     *        safeguard any sensitive information that appears in the logs.
+     *        Specifies whether the proxy includes detailed information about SQL statements in its logs. This
+     *        information helps you to debug issues involving SQL behavior or the performance and scalability of the
+     *        proxy connections. The debug information includes the text of SQL statements that you submit through the
+     *        proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures
+     *        in place to safeguard any sensitive information that appears in the logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -681,18 +677,18 @@ public class CreateDBProxyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Whether the proxy includes detailed information about SQL statements in its logs. This information helps you to
-     * debug issues involving SQL behavior or the performance and scalability of the proxy connections. The debug
-     * information includes the text of SQL statements that you submit through the proxy. Thus, only enable this setting
-     * when needed for debugging, and only when you have security measures in place to safeguard any sensitive
+     * Specifies whether the proxy includes detailed information about SQL statements in its logs. This information
+     * helps you to debug issues involving SQL behavior or the performance and scalability of the proxy connections. The
+     * debug information includes the text of SQL statements that you submit through the proxy. Thus, only enable this
+     * setting when needed for debugging, and only when you have security measures in place to safeguard any sensitive
      * information that appears in the logs.
      * </p>
      * 
-     * @return Whether the proxy includes detailed information about SQL statements in its logs. This information helps
-     *         you to debug issues involving SQL behavior or the performance and scalability of the proxy connections.
-     *         The debug information includes the text of SQL statements that you submit through the proxy. Thus, only
-     *         enable this setting when needed for debugging, and only when you have security measures in place to
-     *         safeguard any sensitive information that appears in the logs.
+     * @return Specifies whether the proxy includes detailed information about SQL statements in its logs. This
+     *         information helps you to debug issues involving SQL behavior or the performance and scalability of the
+     *         proxy connections. The debug information includes the text of SQL statements that you submit through the
+     *         proxy. Thus, only enable this setting when needed for debugging, and only when you have security measures
+     *         in place to safeguard any sensitive information that appears in the logs.
      */
 
     public Boolean isDebugLogging() {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,6 +57,12 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String jobID;
+    /**
+     * <p>
+     * A list of resources that the Job is acting upon.
+     * </p>
+     */
+    private java.util.List<ParticipatingResource> participatingResources;
     /**
      * <p>
      * A list of servers that the Job is acting upon.
@@ -298,6 +304,76 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     public Job withJobID(String jobID) {
         setJobID(jobID);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of resources that the Job is acting upon.
+     * </p>
+     * 
+     * @return A list of resources that the Job is acting upon.
+     */
+
+    public java.util.List<ParticipatingResource> getParticipatingResources() {
+        return participatingResources;
+    }
+
+    /**
+     * <p>
+     * A list of resources that the Job is acting upon.
+     * </p>
+     * 
+     * @param participatingResources
+     *        A list of resources that the Job is acting upon.
+     */
+
+    public void setParticipatingResources(java.util.Collection<ParticipatingResource> participatingResources) {
+        if (participatingResources == null) {
+            this.participatingResources = null;
+            return;
+        }
+
+        this.participatingResources = new java.util.ArrayList<ParticipatingResource>(participatingResources);
+    }
+
+    /**
+     * <p>
+     * A list of resources that the Job is acting upon.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setParticipatingResources(java.util.Collection)} or
+     * {@link #withParticipatingResources(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param participatingResources
+     *        A list of resources that the Job is acting upon.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withParticipatingResources(ParticipatingResource... participatingResources) {
+        if (this.participatingResources == null) {
+            setParticipatingResources(new java.util.ArrayList<ParticipatingResource>(participatingResources.length));
+        }
+        for (ParticipatingResource ele : participatingResources) {
+            this.participatingResources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of resources that the Job is acting upon.
+     * </p>
+     * 
+     * @param participatingResources
+     *        A list of resources that the Job is acting upon.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withParticipatingResources(java.util.Collection<ParticipatingResource> participatingResources) {
+        setParticipatingResources(participatingResources);
         return this;
     }
 
@@ -579,6 +655,8 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             sb.append("InitiatedBy: ").append(getInitiatedBy()).append(",");
         if (getJobID() != null)
             sb.append("JobID: ").append(getJobID()).append(",");
+        if (getParticipatingResources() != null)
+            sb.append("ParticipatingResources: ").append(getParticipatingResources()).append(",");
         if (getParticipatingServers() != null)
             sb.append("ParticipatingServers: ").append(getParticipatingServers()).append(",");
         if (getStatus() != null)
@@ -621,6 +699,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getJobID() != null && other.getJobID().equals(this.getJobID()) == false)
             return false;
+        if (other.getParticipatingResources() == null ^ this.getParticipatingResources() == null)
+            return false;
+        if (other.getParticipatingResources() != null && other.getParticipatingResources().equals(this.getParticipatingResources()) == false)
+            return false;
         if (other.getParticipatingServers() == null ^ this.getParticipatingServers() == null)
             return false;
         if (other.getParticipatingServers() != null && other.getParticipatingServers().equals(this.getParticipatingServers()) == false)
@@ -650,6 +732,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEndDateTime() == null) ? 0 : getEndDateTime().hashCode());
         hashCode = prime * hashCode + ((getInitiatedBy() == null) ? 0 : getInitiatedBy().hashCode());
         hashCode = prime * hashCode + ((getJobID() == null) ? 0 : getJobID().hashCode());
+        hashCode = prime * hashCode + ((getParticipatingResources() == null) ? 0 : getParticipatingResources().hashCode());
         hashCode = prime * hashCode + ((getParticipatingServers() == null) ? 0 : getParticipatingServers().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

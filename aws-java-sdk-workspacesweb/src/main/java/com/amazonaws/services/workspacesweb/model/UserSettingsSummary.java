@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UserSettingsSummary implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The configuration that specifies which cookies should be synchronized from the end user's local browser to the
+     * remote browser.
+     * </p>
+     */
+    private CookieSynchronizationConfiguration cookieSynchronizationConfiguration;
     /**
      * <p>
      * Specifies whether the user can copy text from the streaming session to the local device.
@@ -77,6 +84,52 @@ public class UserSettingsSummary implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String userSettingsArn;
+
+    /**
+     * <p>
+     * The configuration that specifies which cookies should be synchronized from the end user's local browser to the
+     * remote browser.
+     * </p>
+     * 
+     * @param cookieSynchronizationConfiguration
+     *        The configuration that specifies which cookies should be synchronized from the end user's local browser to
+     *        the remote browser.
+     */
+
+    public void setCookieSynchronizationConfiguration(CookieSynchronizationConfiguration cookieSynchronizationConfiguration) {
+        this.cookieSynchronizationConfiguration = cookieSynchronizationConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration that specifies which cookies should be synchronized from the end user's local browser to the
+     * remote browser.
+     * </p>
+     * 
+     * @return The configuration that specifies which cookies should be synchronized from the end user's local browser
+     *         to the remote browser.
+     */
+
+    public CookieSynchronizationConfiguration getCookieSynchronizationConfiguration() {
+        return this.cookieSynchronizationConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration that specifies which cookies should be synchronized from the end user's local browser to the
+     * remote browser.
+     * </p>
+     * 
+     * @param cookieSynchronizationConfiguration
+     *        The configuration that specifies which cookies should be synchronized from the end user's local browser to
+     *        the remote browser.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserSettingsSummary withCookieSynchronizationConfiguration(CookieSynchronizationConfiguration cookieSynchronizationConfiguration) {
+        setCookieSynchronizationConfiguration(cookieSynchronizationConfiguration);
+        return this;
+    }
 
     /**
      * <p>
@@ -511,6 +564,8 @@ public class UserSettingsSummary implements Serializable, Cloneable, StructuredP
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCookieSynchronizationConfiguration() != null)
+            sb.append("CookieSynchronizationConfiguration: ").append("***Sensitive Data Redacted***").append(",");
         if (getCopyAllowed() != null)
             sb.append("CopyAllowed: ").append(getCopyAllowed()).append(",");
         if (getDisconnectTimeoutInMinutes() != null)
@@ -541,6 +596,11 @@ public class UserSettingsSummary implements Serializable, Cloneable, StructuredP
         if (obj instanceof UserSettingsSummary == false)
             return false;
         UserSettingsSummary other = (UserSettingsSummary) obj;
+        if (other.getCookieSynchronizationConfiguration() == null ^ this.getCookieSynchronizationConfiguration() == null)
+            return false;
+        if (other.getCookieSynchronizationConfiguration() != null
+                && other.getCookieSynchronizationConfiguration().equals(this.getCookieSynchronizationConfiguration()) == false)
+            return false;
         if (other.getCopyAllowed() == null ^ this.getCopyAllowed() == null)
             return false;
         if (other.getCopyAllowed() != null && other.getCopyAllowed().equals(this.getCopyAllowed()) == false)
@@ -582,6 +642,7 @@ public class UserSettingsSummary implements Serializable, Cloneable, StructuredP
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCookieSynchronizationConfiguration() == null) ? 0 : getCookieSynchronizationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCopyAllowed() == null) ? 0 : getCopyAllowed().hashCode());
         hashCode = prime * hashCode + ((getDisconnectTimeoutInMinutes() == null) ? 0 : getDisconnectTimeoutInMinutes().hashCode());
         hashCode = prime * hashCode + ((getDownloadAllowed() == null) ? 0 : getDownloadAllowed().hashCode());

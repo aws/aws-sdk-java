@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,7 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is
+     * The minimum number of vCPUs that an environment should maintain (even if the compute environment is
      * <code>DISABLED</code>).
      * </p>
      * <note>
@@ -48,23 +48,39 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using
-     * On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to
-     * exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance. That is, no more than a single instance from among those
-     * specified in your compute environment.
+     * With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and the
+     * <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet
+     * your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance.
      * </p>
      * </note>
      */
     private Integer maxvCpus;
     /**
      * <p>
-     * The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the minimum
-     * and maximum values based on job queue demand.
+     * The desired number of vCPUS in the compute environment. Batch modifies this value between the minimum and maximum
+     * values based on job queue demand.
      * </p>
      * <note>
      * <p>
      * This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.
+     * </p>
+     * </note> <note>
+     * <p>
+     * Batch doesn't support changing the desired number of vCPUs of an existing compute environment. Don't specify this
+     * parameter for compute environments using Amazon EKS clusters.
+     * </p>
+     * </note> <note>
+     * <p>
+     * When you update the <code>desiredvCpus</code> setting, the value must be between the <code>minvCpus</code> and
+     * <code>maxvCpus</code> values.
+     * </p>
+     * <p>
+     * Additionally, the updated <code>desiredvCpus</code> value must be greater than or equal to the current
+     * <code>desiredvCpus</code> value. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#error-desired-vcpus-update"
+     * >Troubleshooting Batch</a> in the <i>Batch User Guide</i>.
      * </p>
      * </note>
      */
@@ -73,8 +89,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * <p>
      * The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16 subnets.
      * For Fargate compute resources, providing an empty list will be handled as if this parameter wasn't specified and
-     * no change is made. For EC2 compute resources, providing an empty list removes the VPC subnets from the compute
-     * resource. For more information, see <a
+     * no change is made. For Amazon EC2 compute resources, providing an empty list removes the VPC subnets from the
+     * compute resource. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the <i>Amazon
      * VPC User Guide</i>.
      * </p>
@@ -84,6 +100,21 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
      * environments</a> in the <i>Batch User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * Batch on Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones">
+     * Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon EKS and Amazon Web Services Local
+     * Zones</a> in the <i>Amazon EKS User Guide</i> and <a href=
+     * "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones">
+     * Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services Outposts</a> in the <i>Amazon ECS
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * Batch on Fargate doesn't currently support Local Zones.
+     * </p>
+     * </note>
      */
     private java.util.List<String> subnets;
     /**
@@ -91,11 +122,12 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * The Amazon EC2 security groups that are associated with instances launched in the compute environment. This
      * parameter is required for Fargate compute resources, where it can contain up to 5 security groups. For Fargate
      * compute resources, providing an empty list is handled as if this parameter wasn't specified and no change is
-     * made. For EC2 compute resources, providing an empty list removes the security groups from the compute resource.
+     * made. For Amazon EC2 compute resources, providing an empty list removes the security groups from the compute
+     * resource.
      * </p>
      * <p>
-     * When updating a compute environment, changing the EC2 security groups requires an infrastructure update of the
-     * compute environment. For more information, see <a
+     * When updating a compute environment, changing the Amazon EC2 security groups requires an infrastructure update of
+     * the compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
      * environments</a> in the <i>Batch User Guide</i>.
      * </p>
@@ -139,12 +171,21 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * available for Spot Instance compute resources.
      * </p>
      * </dd>
+     * <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt>
+     * <dd>
+     * <p>
+     * The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot Instance
+     * pools that are the least likely to be interrupted and have the lowest possible price. This allocation strategy is
+     * only available for Spot Instance compute resources.
+     * </p>
+     * </dd>
      * </dl>
      * <p>
-     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand
-     * or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed
-     * <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance.
+     * With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and the
+     * <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet
+     * your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance.
      * </p>
      */
     private String allocationStrategy;
@@ -185,8 +226,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * to log in to your instances with SSH. To remove the Amazon EC2 key pair, set this value to an empty string.
      * </p>
      * <p>
-     * When updating a compute environment, changing the EC2 key pair requires an infrastructure update of the compute
-     * environment. For more information, see <a
+     * When updating a compute environment, changing the Amazon EC2 key pair requires an infrastructure update of the
+     * compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
      * environments</a> in the <i>Batch User Guide</i>.
      * </p>
@@ -199,8 +240,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
     private String ec2KeyPair;
     /**
      * <p>
-     * The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify the
-     * short name or full Amazon Resource Name (ARN) of an instance profile. For example,
+     * The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. Required for Amazon EC2
+     * instances. You can specify the short name or full Amazon Resource Name (ARN) of an instance profile. For example,
      * <code> <i>ecsInstanceRole</i> </code> or
      * <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i> </code>. For more
      * information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS
@@ -221,8 +262,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
     private String instanceRole;
     /**
      * <p>
-     * Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these
-     * take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and
+     * Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment. For
+     * Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This
      * is helpful for recognizing your Batch instances in the Amazon EC2 console. These tags aren't seen when using the
      * Batch <code>ListTagsForResource</code> API operation.
@@ -267,7 +308,7 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance
      * type before instances are launched. For example, if your maximum percentage is 20%, the Spot price must be less
      * than 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the lowest (market) price
-     * and never more than your maximum percentage.
+     * and never more than your maximum percentage. For most use cases, we recommend leaving this field empty.
      * </p>
      * <p>
      * When updating a compute environment, changing the bid percentage requires an infrastructure update of the compute
@@ -308,15 +349,15 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
     private LaunchTemplateSpecification launchTemplate;
     /**
      * <p>
-     * Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment. If
-     * <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.
+     * Provides information used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute
+     * environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.
      * </p>
      * <p>
      * When updating a compute environment, changing this setting requires an infrastructure update of the compute
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
-     * environments</a> in the <i>Batch User Guide</i>. To remove the EC2 configuration and any custom AMI ID specified
-     * in <code>imageIdOverride</code>, set this value to an empty string.
+     * environments</a> in the <i>Batch User Guide</i>. To remove the Amazon EC2 configuration and any custom AMI ID
+     * specified in <code>imageIdOverride</code>, set this value to an empty string.
      * </p>
      * <p>
      * One or two values can be provided.
@@ -403,7 +444,7 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is
+     * The minimum number of vCPUs that an environment should maintain (even if the compute environment is
      * <code>DISABLED</code>).
      * </p>
      * <note>
@@ -413,8 +454,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </note>
      * 
      * @param minvCpus
-     *        The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute
-     *        environment is <code>DISABLED</code>).</p> <note>
+     *        The minimum number of vCPUs that an environment should maintain (even if the compute environment is
+     *        <code>DISABLED</code>).</p> <note>
      *        <p>
      *        This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.
      *        </p>
@@ -426,7 +467,7 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is
+     * The minimum number of vCPUs that an environment should maintain (even if the compute environment is
      * <code>DISABLED</code>).
      * </p>
      * <note>
@@ -435,8 +476,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * </note>
      * 
-     * @return The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute
-     *         environment is <code>DISABLED</code>).</p> <note>
+     * @return The minimum number of vCPUs that an environment should maintain (even if the compute environment is
+     *         <code>DISABLED</code>).</p> <note>
      *         <p>
      *         This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.
      *         </p>
@@ -448,7 +489,7 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute environment is
+     * The minimum number of vCPUs that an environment should maintain (even if the compute environment is
      * <code>DISABLED</code>).
      * </p>
      * <note>
@@ -458,8 +499,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </note>
      * 
      * @param minvCpus
-     *        The minimum number of Amazon EC2 vCPUs that an environment should maintain (even if the compute
-     *        environment is <code>DISABLED</code>).</p> <note>
+     *        The minimum number of vCPUs that an environment should maintain (even if the compute environment is
+     *        <code>DISABLED</code>).</p> <note>
      *        <p>
      *        This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.
      *        </p>
@@ -477,22 +518,22 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using
-     * On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to
-     * exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance. That is, no more than a single instance from among those
-     * specified in your compute environment.
+     * With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and the
+     * <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet
+     * your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance.
      * </p>
      * </note>
      * 
      * @param maxvCpus
      *        The maximum number of Amazon EC2 vCPUs that an environment can reach.</p> <note>
      *        <p>
-     *        With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies
-     *        using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch
-     *        might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never
-     *        exceeds <code>maxvCpus</code> by more than a single instance. That is, no more than a single instance from
-     *        among those specified in your compute environment.
+     *        With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     *        <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and
+     *        the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code>
+     *        to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than
+     *        a single instance.
      *        </p>
      */
 
@@ -506,21 +547,21 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using
-     * On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to
-     * exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance. That is, no more than a single instance from among those
-     * specified in your compute environment.
+     * With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and the
+     * <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet
+     * your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance.
      * </p>
      * </note>
      * 
      * @return The maximum number of Amazon EC2 vCPUs that an environment can reach.</p> <note>
      *         <p>
-     *         With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation
-     *         strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot
-     *         Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this
-     *         event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. That is, no more than a
-     *         single instance from among those specified in your compute environment.
+     *         With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     *         <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances,
+     *         and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed
+     *         <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
+     *         <code>maxvCpus</code> by more than a single instance.
      *         </p>
      */
 
@@ -534,22 +575,22 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using
-     * On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to
-     * exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance. That is, no more than a single instance from among those
-     * specified in your compute environment.
+     * With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and the
+     * <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet
+     * your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance.
      * </p>
      * </note>
      * 
      * @param maxvCpus
      *        The maximum number of Amazon EC2 vCPUs that an environment can reach.</p> <note>
      *        <p>
-     *        With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies
-     *        using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch
-     *        might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never
-     *        exceeds <code>maxvCpus</code> by more than a single instance. That is, no more than a single instance from
-     *        among those specified in your compute environment.
+     *        With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     *        <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and
+     *        the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code>
+     *        to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than
+     *        a single instance.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -561,20 +602,52 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the minimum
-     * and maximum values based on job queue demand.
+     * The desired number of vCPUS in the compute environment. Batch modifies this value between the minimum and maximum
+     * values based on job queue demand.
      * </p>
      * <note>
      * <p>
      * This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.
      * </p>
+     * </note> <note>
+     * <p>
+     * Batch doesn't support changing the desired number of vCPUs of an existing compute environment. Don't specify this
+     * parameter for compute environments using Amazon EKS clusters.
+     * </p>
+     * </note> <note>
+     * <p>
+     * When you update the <code>desiredvCpus</code> setting, the value must be between the <code>minvCpus</code> and
+     * <code>maxvCpus</code> values.
+     * </p>
+     * <p>
+     * Additionally, the updated <code>desiredvCpus</code> value must be greater than or equal to the current
+     * <code>desiredvCpus</code> value. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#error-desired-vcpus-update"
+     * >Troubleshooting Batch</a> in the <i>Batch User Guide</i>.
+     * </p>
      * </note>
      * 
      * @param desiredvCpus
-     *        The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the
-     *        minimum and maximum values based on job queue demand.</p> <note>
+     *        The desired number of vCPUS in the compute environment. Batch modifies this value between the minimum and
+     *        maximum values based on job queue demand.</p> <note>
      *        <p>
      *        This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        Batch doesn't support changing the desired number of vCPUs of an existing compute environment. Don't
+     *        specify this parameter for compute environments using Amazon EKS clusters.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        When you update the <code>desiredvCpus</code> setting, the value must be between the <code>minvCpus</code>
+     *        and <code>maxvCpus</code> values.
+     *        </p>
+     *        <p>
+     *        Additionally, the updated <code>desiredvCpus</code> value must be greater than or equal to the current
+     *        <code>desiredvCpus</code> value. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#error-desired-vcpus-update"
+     *        >Troubleshooting Batch</a> in the <i>Batch User Guide</i>.
      *        </p>
      */
 
@@ -584,19 +657,51 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the minimum
-     * and maximum values based on job queue demand.
+     * The desired number of vCPUS in the compute environment. Batch modifies this value between the minimum and maximum
+     * values based on job queue demand.
      * </p>
      * <note>
      * <p>
      * This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.
      * </p>
+     * </note> <note>
+     * <p>
+     * Batch doesn't support changing the desired number of vCPUs of an existing compute environment. Don't specify this
+     * parameter for compute environments using Amazon EKS clusters.
+     * </p>
+     * </note> <note>
+     * <p>
+     * When you update the <code>desiredvCpus</code> setting, the value must be between the <code>minvCpus</code> and
+     * <code>maxvCpus</code> values.
+     * </p>
+     * <p>
+     * Additionally, the updated <code>desiredvCpus</code> value must be greater than or equal to the current
+     * <code>desiredvCpus</code> value. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#error-desired-vcpus-update"
+     * >Troubleshooting Batch</a> in the <i>Batch User Guide</i>.
+     * </p>
      * </note>
      * 
-     * @return The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the
-     *         minimum and maximum values based on job queue demand.</p> <note>
+     * @return The desired number of vCPUS in the compute environment. Batch modifies this value between the minimum and
+     *         maximum values based on job queue demand.</p> <note>
      *         <p>
      *         This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.
+     *         </p>
+     *         </note> <note>
+     *         <p>
+     *         Batch doesn't support changing the desired number of vCPUs of an existing compute environment. Don't
+     *         specify this parameter for compute environments using Amazon EKS clusters.
+     *         </p>
+     *         </note> <note>
+     *         <p>
+     *         When you update the <code>desiredvCpus</code> setting, the value must be between the
+     *         <code>minvCpus</code> and <code>maxvCpus</code> values.
+     *         </p>
+     *         <p>
+     *         Additionally, the updated <code>desiredvCpus</code> value must be greater than or equal to the current
+     *         <code>desiredvCpus</code> value. For more information, see <a
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#error-desired-vcpus-update"
+     *         >Troubleshooting Batch</a> in the <i>Batch User Guide</i>.
      *         </p>
      */
 
@@ -606,20 +711,52 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the minimum
-     * and maximum values based on job queue demand.
+     * The desired number of vCPUS in the compute environment. Batch modifies this value between the minimum and maximum
+     * values based on job queue demand.
      * </p>
      * <note>
      * <p>
      * This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.
      * </p>
+     * </note> <note>
+     * <p>
+     * Batch doesn't support changing the desired number of vCPUs of an existing compute environment. Don't specify this
+     * parameter for compute environments using Amazon EKS clusters.
+     * </p>
+     * </note> <note>
+     * <p>
+     * When you update the <code>desiredvCpus</code> setting, the value must be between the <code>minvCpus</code> and
+     * <code>maxvCpus</code> values.
+     * </p>
+     * <p>
+     * Additionally, the updated <code>desiredvCpus</code> value must be greater than or equal to the current
+     * <code>desiredvCpus</code> value. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#error-desired-vcpus-update"
+     * >Troubleshooting Batch</a> in the <i>Batch User Guide</i>.
+     * </p>
      * </note>
      * 
      * @param desiredvCpus
-     *        The desired number of Amazon EC2 vCPUS in the compute environment. Batch modifies this value between the
-     *        minimum and maximum values based on job queue demand.</p> <note>
+     *        The desired number of vCPUS in the compute environment. Batch modifies this value between the minimum and
+     *        maximum values based on job queue demand.</p> <note>
      *        <p>
      *        This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        Batch doesn't support changing the desired number of vCPUs of an existing compute environment. Don't
+     *        specify this parameter for compute environments using Amazon EKS clusters.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        When you update the <code>desiredvCpus</code> setting, the value must be between the <code>minvCpus</code>
+     *        and <code>maxvCpus</code> values.
+     *        </p>
+     *        <p>
+     *        Additionally, the updated <code>desiredvCpus</code> value must be greater than or equal to the current
+     *        <code>desiredvCpus</code> value. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#error-desired-vcpus-update"
+     *        >Troubleshooting Batch</a> in the <i>Batch User Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -633,8 +770,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * <p>
      * The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16 subnets.
      * For Fargate compute resources, providing an empty list will be handled as if this parameter wasn't specified and
-     * no change is made. For EC2 compute resources, providing an empty list removes the VPC subnets from the compute
-     * resource. For more information, see <a
+     * no change is made. For Amazon EC2 compute resources, providing an empty list removes the VPC subnets from the
+     * compute resource. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the <i>Amazon
      * VPC User Guide</i>.
      * </p>
@@ -644,11 +781,26 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
      * environments</a> in the <i>Batch User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * Batch on Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones">
+     * Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon EKS and Amazon Web Services Local
+     * Zones</a> in the <i>Amazon EKS User Guide</i> and <a href=
+     * "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones">
+     * Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services Outposts</a> in the <i>Amazon ECS
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * Batch on Fargate doesn't currently support Local Zones.
+     * </p>
+     * </note>
      * 
      * @return The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16
      *         subnets. For Fargate compute resources, providing an empty list will be handled as if this parameter
-     *         wasn't specified and no change is made. For EC2 compute resources, providing an empty list removes the
-     *         VPC subnets from the compute resource. For more information, see <a
+     *         wasn't specified and no change is made. For Amazon EC2 compute resources, providing an empty list removes
+     *         the VPC subnets from the compute resource. For more information, see <a
      *         href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the
      *         <i>Amazon VPC User Guide</i>.</p>
      *         <p>
@@ -656,6 +808,21 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      *         compute environment. For more information, see <a
      *         href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      *         compute environments</a> in the <i>Batch User Guide</i>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         Batch on Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones"
+     *         > Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon EKS and Amazon Web
+     *         Services Local Zones</a> in the <i>Amazon EKS User Guide</i> and <a href=
+     *         "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones"
+     *         > Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services Outposts</a> in the
+     *         <i>Amazon ECS Developer Guide</i>.
+     *         </p>
+     *         <p>
+     *         Batch on Fargate doesn't currently support Local Zones.
+     *         </p>
      */
 
     public java.util.List<String> getSubnets() {
@@ -666,8 +833,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * <p>
      * The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16 subnets.
      * For Fargate compute resources, providing an empty list will be handled as if this parameter wasn't specified and
-     * no change is made. For EC2 compute resources, providing an empty list removes the VPC subnets from the compute
-     * resource. For more information, see <a
+     * no change is made. For Amazon EC2 compute resources, providing an empty list removes the VPC subnets from the
+     * compute resource. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the <i>Amazon
      * VPC User Guide</i>.
      * </p>
@@ -677,12 +844,27 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
      * environments</a> in the <i>Batch User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * Batch on Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones">
+     * Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon EKS and Amazon Web Services Local
+     * Zones</a> in the <i>Amazon EKS User Guide</i> and <a href=
+     * "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones">
+     * Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services Outposts</a> in the <i>Amazon ECS
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * Batch on Fargate doesn't currently support Local Zones.
+     * </p>
+     * </note>
      * 
      * @param subnets
      *        The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16
      *        subnets. For Fargate compute resources, providing an empty list will be handled as if this parameter
-     *        wasn't specified and no change is made. For EC2 compute resources, providing an empty list removes the VPC
-     *        subnets from the compute resource. For more information, see <a
+     *        wasn't specified and no change is made. For Amazon EC2 compute resources, providing an empty list removes
+     *        the VPC subnets from the compute resource. For more information, see <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the
      *        <i>Amazon VPC User Guide</i>.</p>
      *        <p>
@@ -690,6 +872,21 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      *        compute environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      *        compute environments</a> in the <i>Batch User Guide</i>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Batch on Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones"
+     *        > Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon EKS and Amazon Web
+     *        Services Local Zones</a> in the <i>Amazon EKS User Guide</i> and <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones"
+     *        > Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services Outposts</a> in the
+     *        <i>Amazon ECS Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        Batch on Fargate doesn't currently support Local Zones.
+     *        </p>
      */
 
     public void setSubnets(java.util.Collection<String> subnets) {
@@ -705,8 +902,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * <p>
      * The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16 subnets.
      * For Fargate compute resources, providing an empty list will be handled as if this parameter wasn't specified and
-     * no change is made. For EC2 compute resources, providing an empty list removes the VPC subnets from the compute
-     * resource. For more information, see <a
+     * no change is made. For Amazon EC2 compute resources, providing an empty list removes the VPC subnets from the
+     * compute resource. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the <i>Amazon
      * VPC User Guide</i>.
      * </p>
@@ -716,6 +913,21 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
      * environments</a> in the <i>Batch User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * Batch on Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones">
+     * Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon EKS and Amazon Web Services Local
+     * Zones</a> in the <i>Amazon EKS User Guide</i> and <a href=
+     * "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones">
+     * Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services Outposts</a> in the <i>Amazon ECS
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * Batch on Fargate doesn't currently support Local Zones.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSubnets(java.util.Collection)} or {@link #withSubnets(java.util.Collection)} if you want to override
@@ -725,8 +937,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * @param subnets
      *        The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16
      *        subnets. For Fargate compute resources, providing an empty list will be handled as if this parameter
-     *        wasn't specified and no change is made. For EC2 compute resources, providing an empty list removes the VPC
-     *        subnets from the compute resource. For more information, see <a
+     *        wasn't specified and no change is made. For Amazon EC2 compute resources, providing an empty list removes
+     *        the VPC subnets from the compute resource. For more information, see <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the
      *        <i>Amazon VPC User Guide</i>.</p>
      *        <p>
@@ -734,6 +946,21 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      *        compute environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      *        compute environments</a> in the <i>Batch User Guide</i>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Batch on Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones"
+     *        > Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon EKS and Amazon Web
+     *        Services Local Zones</a> in the <i>Amazon EKS User Guide</i> and <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones"
+     *        > Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services Outposts</a> in the
+     *        <i>Amazon ECS Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        Batch on Fargate doesn't currently support Local Zones.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -751,8 +978,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * <p>
      * The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16 subnets.
      * For Fargate compute resources, providing an empty list will be handled as if this parameter wasn't specified and
-     * no change is made. For EC2 compute resources, providing an empty list removes the VPC subnets from the compute
-     * resource. For more information, see <a
+     * no change is made. For Amazon EC2 compute resources, providing an empty list removes the VPC subnets from the
+     * compute resource. For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the <i>Amazon
      * VPC User Guide</i>.
      * </p>
@@ -762,12 +989,27 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
      * environments</a> in the <i>Batch User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * Batch on Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones">
+     * Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon EKS and Amazon Web Services Local
+     * Zones</a> in the <i>Amazon EKS User Guide</i> and <a href=
+     * "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones">
+     * Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services Outposts</a> in the <i>Amazon ECS
+     * Developer Guide</i>.
+     * </p>
+     * <p>
+     * Batch on Fargate doesn't currently support Local Zones.
+     * </p>
+     * </note>
      * 
      * @param subnets
      *        The VPC subnets where the compute resources are launched. Fargate compute resources can contain up to 16
      *        subnets. For Fargate compute resources, providing an empty list will be handled as if this parameter
-     *        wasn't specified and no change is made. For EC2 compute resources, providing an empty list removes the VPC
-     *        subnets from the compute resource. For more information, see <a
+     *        wasn't specified and no change is made. For Amazon EC2 compute resources, providing an empty list removes
+     *        the VPC subnets from the compute resource. For more information, see <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and subnets</a> in the
      *        <i>Amazon VPC User Guide</i>.</p>
      *        <p>
@@ -775,6 +1017,21 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      *        compute environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      *        compute environments</a> in the <i>Batch User Guide</i>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Batch on Amazon EC2 and Batch on Amazon EKS support Local Zones. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones"
+     *        > Local Zones</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>, <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/local-zones.html">Amazon EKS and Amazon Web
+     *        Services Local Zones</a> in the <i>Amazon EKS User Guide</i> and <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-regions-zones.html#clusters-local-zones"
+     *        > Amazon ECS clusters in Local Zones, Wavelength Zones, and Amazon Web Services Outposts</a> in the
+     *        <i>Amazon ECS Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        Batch on Fargate doesn't currently support Local Zones.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -788,11 +1045,12 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * The Amazon EC2 security groups that are associated with instances launched in the compute environment. This
      * parameter is required for Fargate compute resources, where it can contain up to 5 security groups. For Fargate
      * compute resources, providing an empty list is handled as if this parameter wasn't specified and no change is
-     * made. For EC2 compute resources, providing an empty list removes the security groups from the compute resource.
+     * made. For Amazon EC2 compute resources, providing an empty list removes the security groups from the compute
+     * resource.
      * </p>
      * <p>
-     * When updating a compute environment, changing the EC2 security groups requires an infrastructure update of the
-     * compute environment. For more information, see <a
+     * When updating a compute environment, changing the Amazon EC2 security groups requires an infrastructure update of
+     * the compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
      * environments</a> in the <i>Batch User Guide</i>.
      * </p>
@@ -800,11 +1058,11 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * @return The Amazon EC2 security groups that are associated with instances launched in the compute environment.
      *         This parameter is required for Fargate compute resources, where it can contain up to 5 security groups.
      *         For Fargate compute resources, providing an empty list is handled as if this parameter wasn't specified
-     *         and no change is made. For EC2 compute resources, providing an empty list removes the security groups
-     *         from the compute resource.</p>
+     *         and no change is made. For Amazon EC2 compute resources, providing an empty list removes the security
+     *         groups from the compute resource.</p>
      *         <p>
-     *         When updating a compute environment, changing the EC2 security groups requires an infrastructure update
-     *         of the compute environment. For more information, see <a
+     *         When updating a compute environment, changing the Amazon EC2 security groups requires an infrastructure
+     *         update of the compute environment. For more information, see <a
      *         href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      *         compute environments</a> in the <i>Batch User Guide</i>.
      */
@@ -818,11 +1076,12 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * The Amazon EC2 security groups that are associated with instances launched in the compute environment. This
      * parameter is required for Fargate compute resources, where it can contain up to 5 security groups. For Fargate
      * compute resources, providing an empty list is handled as if this parameter wasn't specified and no change is
-     * made. For EC2 compute resources, providing an empty list removes the security groups from the compute resource.
+     * made. For Amazon EC2 compute resources, providing an empty list removes the security groups from the compute
+     * resource.
      * </p>
      * <p>
-     * When updating a compute environment, changing the EC2 security groups requires an infrastructure update of the
-     * compute environment. For more information, see <a
+     * When updating a compute environment, changing the Amazon EC2 security groups requires an infrastructure update of
+     * the compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
      * environments</a> in the <i>Batch User Guide</i>.
      * </p>
@@ -831,11 +1090,11 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      *        The Amazon EC2 security groups that are associated with instances launched in the compute environment.
      *        This parameter is required for Fargate compute resources, where it can contain up to 5 security groups.
      *        For Fargate compute resources, providing an empty list is handled as if this parameter wasn't specified
-     *        and no change is made. For EC2 compute resources, providing an empty list removes the security groups from
-     *        the compute resource.</p>
+     *        and no change is made. For Amazon EC2 compute resources, providing an empty list removes the security
+     *        groups from the compute resource.</p>
      *        <p>
-     *        When updating a compute environment, changing the EC2 security groups requires an infrastructure update of
-     *        the compute environment. For more information, see <a
+     *        When updating a compute environment, changing the Amazon EC2 security groups requires an infrastructure
+     *        update of the compute environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      *        compute environments</a> in the <i>Batch User Guide</i>.
      */
@@ -854,11 +1113,12 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * The Amazon EC2 security groups that are associated with instances launched in the compute environment. This
      * parameter is required for Fargate compute resources, where it can contain up to 5 security groups. For Fargate
      * compute resources, providing an empty list is handled as if this parameter wasn't specified and no change is
-     * made. For EC2 compute resources, providing an empty list removes the security groups from the compute resource.
+     * made. For Amazon EC2 compute resources, providing an empty list removes the security groups from the compute
+     * resource.
      * </p>
      * <p>
-     * When updating a compute environment, changing the EC2 security groups requires an infrastructure update of the
-     * compute environment. For more information, see <a
+     * When updating a compute environment, changing the Amazon EC2 security groups requires an infrastructure update of
+     * the compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
      * environments</a> in the <i>Batch User Guide</i>.
      * </p>
@@ -872,11 +1132,11 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      *        The Amazon EC2 security groups that are associated with instances launched in the compute environment.
      *        This parameter is required for Fargate compute resources, where it can contain up to 5 security groups.
      *        For Fargate compute resources, providing an empty list is handled as if this parameter wasn't specified
-     *        and no change is made. For EC2 compute resources, providing an empty list removes the security groups from
-     *        the compute resource.</p>
+     *        and no change is made. For Amazon EC2 compute resources, providing an empty list removes the security
+     *        groups from the compute resource.</p>
      *        <p>
-     *        When updating a compute environment, changing the EC2 security groups requires an infrastructure update of
-     *        the compute environment. For more information, see <a
+     *        When updating a compute environment, changing the Amazon EC2 security groups requires an infrastructure
+     *        update of the compute environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      *        compute environments</a> in the <i>Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -897,11 +1157,12 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * The Amazon EC2 security groups that are associated with instances launched in the compute environment. This
      * parameter is required for Fargate compute resources, where it can contain up to 5 security groups. For Fargate
      * compute resources, providing an empty list is handled as if this parameter wasn't specified and no change is
-     * made. For EC2 compute resources, providing an empty list removes the security groups from the compute resource.
+     * made. For Amazon EC2 compute resources, providing an empty list removes the security groups from the compute
+     * resource.
      * </p>
      * <p>
-     * When updating a compute environment, changing the EC2 security groups requires an infrastructure update of the
-     * compute environment. For more information, see <a
+     * When updating a compute environment, changing the Amazon EC2 security groups requires an infrastructure update of
+     * the compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
      * environments</a> in the <i>Batch User Guide</i>.
      * </p>
@@ -910,11 +1171,11 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      *        The Amazon EC2 security groups that are associated with instances launched in the compute environment.
      *        This parameter is required for Fargate compute resources, where it can contain up to 5 security groups.
      *        For Fargate compute resources, providing an empty list is handled as if this parameter wasn't specified
-     *        and no change is made. For EC2 compute resources, providing an empty list removes the security groups from
-     *        the compute resource.</p>
+     *        and no change is made. For Amazon EC2 compute resources, providing an empty list removes the security
+     *        groups from the compute resource.</p>
      *        <p>
-     *        When updating a compute environment, changing the EC2 security groups requires an infrastructure update of
-     *        the compute environment. For more information, see <a
+     *        When updating a compute environment, changing the Amazon EC2 security groups requires an infrastructure
+     *        update of the compute environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      *        compute environments</a> in the <i>Batch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -963,12 +1224,21 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * available for Spot Instance compute resources.
      * </p>
      * </dd>
+     * <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt>
+     * <dd>
+     * <p>
+     * The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot Instance
+     * pools that are the least likely to be interrupted and have the lowest possible price. This allocation strategy is
+     * only available for Spot Instance compute resources.
+     * </p>
+     * </dd>
      * </dl>
      * <p>
-     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand
-     * or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed
-     * <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance.
+     * With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and the
+     * <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet
+     * your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance.
      * </p>
      * 
      * @param allocationStrategy
@@ -1008,12 +1278,21 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      *        strategy is only available for Spot Instance compute resources.
      *        </p>
      *        </dd>
+     *        <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt>
+     *        <dd>
+     *        <p>
+     *        The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot
+     *        Instance pools that are the least likely to be interrupted and have the lowest possible price. This
+     *        allocation strategy is only available for Spot Instance compute resources.
+     *        </p>
+     *        </dd>
      *        </dl>
      *        <p>
-     *        With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using
-     *        On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need
-     *        to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     *        <code>maxvCpus</code> by more than a single instance.
+     *        With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     *        <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and
+     *        the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code>
+     *        to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than
+     *        a single instance.
      * @see CRUpdateAllocationStrategy
      */
 
@@ -1059,12 +1338,21 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * available for Spot Instance compute resources.
      * </p>
      * </dd>
+     * <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt>
+     * <dd>
+     * <p>
+     * The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot Instance
+     * pools that are the least likely to be interrupted and have the lowest possible price. This allocation strategy is
+     * only available for Spot Instance compute resources.
+     * </p>
+     * </dd>
      * </dl>
      * <p>
-     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand
-     * or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed
-     * <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance.
+     * With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and the
+     * <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet
+     * your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance.
      * </p>
      * 
      * @return The allocation strategy to use for the compute resource if there's not enough instances of the best
@@ -1103,12 +1391,21 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      *         strategy is only available for Spot Instance compute resources.
      *         </p>
      *         </dd>
+     *         <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt>
+     *         <dd>
+     *         <p>
+     *         The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot
+     *         Instance pools that are the least likely to be interrupted and have the lowest possible price. This
+     *         allocation strategy is only available for Spot Instance compute resources.
+     *         </p>
+     *         </dd>
      *         </dl>
      *         <p>
-     *         With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using
-     *         On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might
-     *         need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never
-     *         exceeds <code>maxvCpus</code> by more than a single instance.
+     *         With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     *         <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances,
+     *         and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed
+     *         <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
+     *         <code>maxvCpus</code> by more than a single instance.
      * @see CRUpdateAllocationStrategy
      */
 
@@ -1154,12 +1451,21 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * available for Spot Instance compute resources.
      * </p>
      * </dd>
+     * <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt>
+     * <dd>
+     * <p>
+     * The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot Instance
+     * pools that are the least likely to be interrupted and have the lowest possible price. This allocation strategy is
+     * only available for Spot Instance compute resources.
+     * </p>
+     * </dd>
      * </dl>
      * <p>
-     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand
-     * or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed
-     * <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance.
+     * With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and the
+     * <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet
+     * your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance.
      * </p>
      * 
      * @param allocationStrategy
@@ -1199,12 +1505,21 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      *        strategy is only available for Spot Instance compute resources.
      *        </p>
      *        </dd>
+     *        <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt>
+     *        <dd>
+     *        <p>
+     *        The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot
+     *        Instance pools that are the least likely to be interrupted and have the lowest possible price. This
+     *        allocation strategy is only available for Spot Instance compute resources.
+     *        </p>
+     *        </dd>
      *        </dl>
      *        <p>
-     *        With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using
-     *        On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need
-     *        to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     *        <code>maxvCpus</code> by more than a single instance.
+     *        With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     *        <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and
+     *        the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code>
+     *        to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than
+     *        a single instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CRUpdateAllocationStrategy
      */
@@ -1252,12 +1567,21 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * available for Spot Instance compute resources.
      * </p>
      * </dd>
+     * <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt>
+     * <dd>
+     * <p>
+     * The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot Instance
+     * pools that are the least likely to be interrupted and have the lowest possible price. This allocation strategy is
+     * only available for Spot Instance compute resources.
+     * </p>
+     * </dd>
      * </dl>
      * <p>
-     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand
-     * or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed
-     * <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance.
+     * With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and the
+     * <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet
+     * your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance.
      * </p>
      * 
      * @param allocationStrategy
@@ -1297,12 +1621,21 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      *        strategy is only available for Spot Instance compute resources.
      *        </p>
      *        </dd>
+     *        <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt>
+     *        <dd>
+     *        <p>
+     *        The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot
+     *        Instance pools that are the least likely to be interrupted and have the lowest possible price. This
+     *        allocation strategy is only available for Spot Instance compute resources.
+     *        </p>
+     *        </dd>
      *        </dl>
      *        <p>
-     *        With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using
-     *        On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need
-     *        to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     *        <code>maxvCpus</code> by more than a single instance.
+     *        With <code>BEST_FIT_PROGRESSIVE</code>,<code>SPOT_CAPACITY_OPTIMIZED</code> and
+     *        <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> (recommended) strategies using On-Demand or Spot Instances, and
+     *        the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code>
+     *        to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than
+     *        a single instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CRUpdateAllocationStrategy
      */
@@ -1589,8 +1922,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * to log in to your instances with SSH. To remove the Amazon EC2 key pair, set this value to an empty string.
      * </p>
      * <p>
-     * When updating a compute environment, changing the EC2 key pair requires an infrastructure update of the compute
-     * environment. For more information, see <a
+     * When updating a compute environment, changing the Amazon EC2 key pair requires an infrastructure update of the
+     * compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
      * environments</a> in the <i>Batch User Guide</i>.
      * </p>
@@ -1605,8 +1938,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      *        key pair to log in to your instances with SSH. To remove the Amazon EC2 key pair, set this value to an
      *        empty string.</p>
      *        <p>
-     *        When updating a compute environment, changing the EC2 key pair requires an infrastructure update of the
-     *        compute environment. For more information, see <a
+     *        When updating a compute environment, changing the Amazon EC2 key pair requires an infrastructure update of
+     *        the compute environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      *        compute environments</a> in the <i>Batch User Guide</i>.
      *        </p>
@@ -1626,8 +1959,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * to log in to your instances with SSH. To remove the Amazon EC2 key pair, set this value to an empty string.
      * </p>
      * <p>
-     * When updating a compute environment, changing the EC2 key pair requires an infrastructure update of the compute
-     * environment. For more information, see <a
+     * When updating a compute environment, changing the Amazon EC2 key pair requires an infrastructure update of the
+     * compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
      * environments</a> in the <i>Batch User Guide</i>.
      * </p>
@@ -1641,8 +1974,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      *         key pair to log in to your instances with SSH. To remove the Amazon EC2 key pair, set this value to an
      *         empty string.</p>
      *         <p>
-     *         When updating a compute environment, changing the EC2 key pair requires an infrastructure update of the
-     *         compute environment. For more information, see <a
+     *         When updating a compute environment, changing the Amazon EC2 key pair requires an infrastructure update
+     *         of the compute environment. For more information, see <a
      *         href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      *         compute environments</a> in the <i>Batch User Guide</i>.
      *         </p>
@@ -1662,8 +1995,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * to log in to your instances with SSH. To remove the Amazon EC2 key pair, set this value to an empty string.
      * </p>
      * <p>
-     * When updating a compute environment, changing the EC2 key pair requires an infrastructure update of the compute
-     * environment. For more information, see <a
+     * When updating a compute environment, changing the Amazon EC2 key pair requires an infrastructure update of the
+     * compute environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
      * environments</a> in the <i>Batch User Guide</i>.
      * </p>
@@ -1678,8 +2011,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      *        key pair to log in to your instances with SSH. To remove the Amazon EC2 key pair, set this value to an
      *        empty string.</p>
      *        <p>
-     *        When updating a compute environment, changing the EC2 key pair requires an infrastructure update of the
-     *        compute environment. For more information, see <a
+     *        When updating a compute environment, changing the Amazon EC2 key pair requires an infrastructure update of
+     *        the compute environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
      *        compute environments</a> in the <i>Batch User Guide</i>.
      *        </p>
@@ -1697,8 +2030,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify the
-     * short name or full Amazon Resource Name (ARN) of an instance profile. For example,
+     * The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. Required for Amazon EC2
+     * instances. You can specify the short name or full Amazon Resource Name (ARN) of an instance profile. For example,
      * <code> <i>ecsInstanceRole</i> </code> or
      * <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i> </code>. For more
      * information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS
@@ -1717,9 +2050,9 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </note>
      * 
      * @param instanceRole
-     *        The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify
-     *        the short name or full Amazon Resource Name (ARN) of an instance profile. For example,
-     *        <code> <i>ecsInstanceRole</i> </code> or
+     *        The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. Required for
+     *        Amazon EC2 instances. You can specify the short name or full Amazon Resource Name (ARN) of an instance
+     *        profile. For example, <code> <i>ecsInstanceRole</i> </code> or
      *        <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i> </code>. For more
      *        information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS instance
@@ -1742,8 +2075,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify the
-     * short name or full Amazon Resource Name (ARN) of an instance profile. For example,
+     * The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. Required for Amazon EC2
+     * instances. You can specify the short name or full Amazon Resource Name (ARN) of an instance profile. For example,
      * <code> <i>ecsInstanceRole</i> </code> or
      * <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i> </code>. For more
      * information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS
@@ -1761,9 +2094,9 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * </note>
      * 
-     * @return The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify
-     *         the short name or full Amazon Resource Name (ARN) of an instance profile. For example,
-     *         <code> <i>ecsInstanceRole</i> </code> or
+     * @return The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. Required for
+     *         Amazon EC2 instances. You can specify the short name or full Amazon Resource Name (ARN) of an instance
+     *         profile. For example, <code> <i>ecsInstanceRole</i> </code> or
      *         <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i> </code>. For
      *         more information, see <a
      *         href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS instance
@@ -1786,8 +2119,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify the
-     * short name or full Amazon Resource Name (ARN) of an instance profile. For example,
+     * The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. Required for Amazon EC2
+     * instances. You can specify the short name or full Amazon Resource Name (ARN) of an instance profile. For example,
      * <code> <i>ecsInstanceRole</i> </code> or
      * <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i> </code>. For more
      * information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS
@@ -1806,9 +2139,9 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </note>
      * 
      * @param instanceRole
-     *        The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify
-     *        the short name or full Amazon Resource Name (ARN) of an instance profile. For example,
-     *        <code> <i>ecsInstanceRole</i> </code> or
+     *        The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. Required for
+     *        Amazon EC2 instances. You can specify the short name or full Amazon Resource Name (ARN) of an instance
+     *        profile. For example, <code> <i>ecsInstanceRole</i> </code> or
      *        <code>arn:aws:iam::<i>&lt;aws_account_id&gt;</i>:instance-profile/<i>ecsInstanceRole</i> </code>. For more
      *        information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS instance
@@ -1833,8 +2166,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these
-     * take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and
+     * Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment. For
+     * Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This
      * is helpful for recognizing your Batch instances in the Amazon EC2 console. These tags aren't seen when using the
      * Batch <code>ListTagsForResource</code> API operation.
@@ -1851,9 +2184,9 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * </note>
      * 
-     * @return Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For
-     *         Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag
-     *         key and <code>String2</code> is the tag value-for example,
+     * @return Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment.
+     *         For Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the
+     *         tag key and <code>String2</code> is the tag value-for example,
      *         <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
      *         instances in the Amazon EC2 console. These tags aren't seen when using the Batch
      *         <code>ListTagsForResource</code> API operation.</p>
@@ -1875,8 +2208,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these
-     * take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and
+     * Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment. For
+     * Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This
      * is helpful for recognizing your Batch instances in the Amazon EC2 console. These tags aren't seen when using the
      * Batch <code>ListTagsForResource</code> API operation.
@@ -1894,9 +2227,9 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </note>
      * 
      * @param tags
-     *        Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For
-     *        Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key
-     *        and <code>String2</code> is the tag value-for example,
+     *        Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment.
+     *        For Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag
+     *        key and <code>String2</code> is the tag value-for example,
      *        <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
      *        instances in the Amazon EC2 console. These tags aren't seen when using the Batch
      *        <code>ListTagsForResource</code> API operation.</p>
@@ -1918,8 +2251,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For Batch, these
-     * take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and
+     * Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment. For
+     * Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key and
      * <code>String2</code> is the tag value-for example, <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This
      * is helpful for recognizing your Batch instances in the Amazon EC2 console. These tags aren't seen when using the
      * Batch <code>ListTagsForResource</code> API operation.
@@ -1937,9 +2270,9 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </note>
      * 
      * @param tags
-     *        Key-value pair tags to be applied to EC2 resources that are launched in the compute environment. For
-     *        Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag key
-     *        and <code>String2</code> is the tag value-for example,
+     *        Key-value pair tags to be applied to Amazon EC2 resources that are launched in the compute environment.
+     *        For Batch, these take the form of <code>"String1": "String2"</code>, where <code>String1</code> is the tag
+     *        key and <code>String2</code> is the tag value-for example,
      *        <code>{ "Name": "Batch Instance - C4OnDemand" }</code>. This is helpful for recognizing your Batch
      *        instances in the Amazon EC2 console. These tags aren't seen when using the Batch
      *        <code>ListTagsForResource</code> API operation.</p>
@@ -2130,7 +2463,7 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance
      * type before instances are launched. For example, if your maximum percentage is 20%, the Spot price must be less
      * than 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the lowest (market) price
-     * and never more than your maximum percentage.
+     * and never more than your maximum percentage. For most use cases, we recommend leaving this field empty.
      * </p>
      * <p>
      * When updating a compute environment, changing the bid percentage requires an infrastructure update of the compute
@@ -2148,7 +2481,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      *        The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that
      *        instance type before instances are launched. For example, if your maximum percentage is 20%, the Spot
      *        price must be less than 20% of the current On-Demand price for that Amazon EC2 instance. You always pay
-     *        the lowest (market) price and never more than your maximum percentage.</p>
+     *        the lowest (market) price and never more than your maximum percentage. For most use cases, we recommend
+     *        leaving this field empty.</p>
      *        <p>
      *        When updating a compute environment, changing the bid percentage requires an infrastructure update of the
      *        compute environment. For more information, see <a
@@ -2170,7 +2504,7 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance
      * type before instances are launched. For example, if your maximum percentage is 20%, the Spot price must be less
      * than 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the lowest (market) price
-     * and never more than your maximum percentage.
+     * and never more than your maximum percentage. For most use cases, we recommend leaving this field empty.
      * </p>
      * <p>
      * When updating a compute environment, changing the bid percentage requires an infrastructure update of the compute
@@ -2187,7 +2521,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * @return The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that
      *         instance type before instances are launched. For example, if your maximum percentage is 20%, the Spot
      *         price must be less than 20% of the current On-Demand price for that Amazon EC2 instance. You always pay
-     *         the lowest (market) price and never more than your maximum percentage.</p>
+     *         the lowest (market) price and never more than your maximum percentage. For most use cases, we recommend
+     *         leaving this field empty.</p>
      *         <p>
      *         When updating a compute environment, changing the bid percentage requires an infrastructure update of the
      *         compute environment. For more information, see <a
@@ -2209,7 +2544,7 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that instance
      * type before instances are launched. For example, if your maximum percentage is 20%, the Spot price must be less
      * than 20% of the current On-Demand price for that Amazon EC2 instance. You always pay the lowest (market) price
-     * and never more than your maximum percentage.
+     * and never more than your maximum percentage. For most use cases, we recommend leaving this field empty.
      * </p>
      * <p>
      * When updating a compute environment, changing the bid percentage requires an infrastructure update of the compute
@@ -2227,7 +2562,8 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      *        The maximum percentage that a Spot Instance price can be when compared with the On-Demand price for that
      *        instance type before instances are launched. For example, if your maximum percentage is 20%, the Spot
      *        price must be less than 20% of the current On-Demand price for that Amazon EC2 instance. You always pay
-     *        the lowest (market) price and never more than your maximum percentage.</p>
+     *        the lowest (market) price and never more than your maximum percentage. For most use cases, we recommend
+     *        leaving this field empty.</p>
      *        <p>
      *        When updating a compute environment, changing the bid percentage requires an infrastructure update of the
      *        compute environment. For more information, see <a
@@ -2394,15 +2730,15 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment. If
-     * <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.
+     * Provides information used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute
+     * environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.
      * </p>
      * <p>
      * When updating a compute environment, changing this setting requires an infrastructure update of the compute
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
-     * environments</a> in the <i>Batch User Guide</i>. To remove the EC2 configuration and any custom AMI ID specified
-     * in <code>imageIdOverride</code>, set this value to an empty string.
+     * environments</a> in the <i>Batch User Guide</i>. To remove the Amazon EC2 configuration and any custom AMI ID
+     * specified in <code>imageIdOverride</code>, set this value to an empty string.
      * </p>
      * <p>
      * One or two values can be provided.
@@ -2413,14 +2749,14 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * </note>
      * 
-     * @return Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute
+     * @return Provides information used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute
      *         environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
      *         <p>
      *         When updating a compute environment, changing this setting requires an infrastructure update of the
      *         compute environment. For more information, see <a
      *         href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
-     *         compute environments</a> in the <i>Batch User Guide</i>. To remove the EC2 configuration and any custom
-     *         AMI ID specified in <code>imageIdOverride</code>, set this value to an empty string.
+     *         compute environments</a> in the <i>Batch User Guide</i>. To remove the Amazon EC2 configuration and any
+     *         custom AMI ID specified in <code>imageIdOverride</code>, set this value to an empty string.
      *         </p>
      *         <p>
      *         One or two values can be provided.
@@ -2437,15 +2773,15 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment. If
-     * <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.
+     * Provides information used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute
+     * environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.
      * </p>
      * <p>
      * When updating a compute environment, changing this setting requires an infrastructure update of the compute
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
-     * environments</a> in the <i>Batch User Guide</i>. To remove the EC2 configuration and any custom AMI ID specified
-     * in <code>imageIdOverride</code>, set this value to an empty string.
+     * environments</a> in the <i>Batch User Guide</i>. To remove the Amazon EC2 configuration and any custom AMI ID
+     * specified in <code>imageIdOverride</code>, set this value to an empty string.
      * </p>
      * <p>
      * One or two values can be provided.
@@ -2457,14 +2793,14 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </note>
      * 
      * @param ec2Configuration
-     *        Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute
+     *        Provides information used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute
      *        environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
      *        <p>
      *        When updating a compute environment, changing this setting requires an infrastructure update of the
      *        compute environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
-     *        compute environments</a> in the <i>Batch User Guide</i>. To remove the EC2 configuration and any custom
-     *        AMI ID specified in <code>imageIdOverride</code>, set this value to an empty string.
+     *        compute environments</a> in the <i>Batch User Guide</i>. To remove the Amazon EC2 configuration and any
+     *        custom AMI ID specified in <code>imageIdOverride</code>, set this value to an empty string.
      *        </p>
      *        <p>
      *        One or two values can be provided.
@@ -2486,15 +2822,15 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment. If
-     * <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.
+     * Provides information used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute
+     * environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.
      * </p>
      * <p>
      * When updating a compute environment, changing this setting requires an infrastructure update of the compute
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
-     * environments</a> in the <i>Batch User Guide</i>. To remove the EC2 configuration and any custom AMI ID specified
-     * in <code>imageIdOverride</code>, set this value to an empty string.
+     * environments</a> in the <i>Batch User Guide</i>. To remove the Amazon EC2 configuration and any custom AMI ID
+     * specified in <code>imageIdOverride</code>, set this value to an empty string.
      * </p>
      * <p>
      * One or two values can be provided.
@@ -2511,14 +2847,14 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * 
      * @param ec2Configuration
-     *        Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute
+     *        Provides information used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute
      *        environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
      *        <p>
      *        When updating a compute environment, changing this setting requires an infrastructure update of the
      *        compute environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
-     *        compute environments</a> in the <i>Batch User Guide</i>. To remove the EC2 configuration and any custom
-     *        AMI ID specified in <code>imageIdOverride</code>, set this value to an empty string.
+     *        compute environments</a> in the <i>Batch User Guide</i>. To remove the Amazon EC2 configuration and any
+     *        custom AMI ID specified in <code>imageIdOverride</code>, set this value to an empty string.
      *        </p>
      *        <p>
      *        One or two values can be provided.
@@ -2542,15 +2878,15 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute environment. If
-     * <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.
+     * Provides information used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute
+     * environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.
      * </p>
      * <p>
      * When updating a compute environment, changing this setting requires an infrastructure update of the compute
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute
-     * environments</a> in the <i>Batch User Guide</i>. To remove the EC2 configuration and any custom AMI ID specified
-     * in <code>imageIdOverride</code>, set this value to an empty string.
+     * environments</a> in the <i>Batch User Guide</i>. To remove the Amazon EC2 configuration and any custom AMI ID
+     * specified in <code>imageIdOverride</code>, set this value to an empty string.
      * </p>
      * <p>
      * One or two values can be provided.
@@ -2562,14 +2898,14 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </note>
      * 
      * @param ec2Configuration
-     *        Provides information used to select Amazon Machine Images (AMIs) for EC2 instances in the compute
+     *        Provides information used to select Amazon Machine Images (AMIs) for Amazon EC2 instances in the compute
      *        environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code>.</p>
      *        <p>
      *        When updating a compute environment, changing this setting requires an infrastructure update of the
      *        compute environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
-     *        compute environments</a> in the <i>Batch User Guide</i>. To remove the EC2 configuration and any custom
-     *        AMI ID specified in <code>imageIdOverride</code>, set this value to an empty string.
+     *        compute environments</a> in the <i>Batch User Guide</i>. To remove the Amazon EC2 configuration and any
+     *        custom AMI ID specified in <code>imageIdOverride</code>, set this value to an empty string.
      *        </p>
      *        <p>
      *        One or two values can be provided.

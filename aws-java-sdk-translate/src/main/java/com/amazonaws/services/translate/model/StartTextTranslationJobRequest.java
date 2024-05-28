@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,11 +54,11 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
     private String dataAccessRoleArn;
     /**
      * <p>
-     * The language code of the input language. For a list of language codes, see <a
+     * The language code of the input language. Specify the language if all input documents share the same language. If
+     * you don't know the language of the source files, or your input documents contains different source languages,
+     * select <code>auto</code>. Amazon Translate auto detects the source language for each input document. For a list
+     * of supported language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
-     * </p>
-     * <p>
-     * Amazon Translate does not automatically detect a source language during batch translation jobs.
      * </p>
      */
     private String sourceLanguageCode;
@@ -68,7 +68,7 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
      * each target language.
      * </p>
      * <p>
-     * Each language code is two or five characters long. For a list of language codes, see <a
+     * Each language code is 2 or 5 characters long. For a list of language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * </p>
      */
@@ -130,9 +130,25 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
     private String clientToken;
     /**
      * <p>
-     * Settings to configure your translation output, including the option to set the formality level of the output text
-     * and the option to mask profane words and phrases.
+     * Settings to configure your translation output. You can configure the following options:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Brevity: not supported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Formality: sets the formality level of the output text.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Profanity: masks profane words and phrases in your translation output.
+     * </p>
+     * </li>
+     * </ul>
      */
     private TranslationSettings settings;
 
@@ -316,18 +332,19 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The language code of the input language. For a list of language codes, see <a
+     * The language code of the input language. Specify the language if all input documents share the same language. If
+     * you don't know the language of the source files, or your input documents contains different source languages,
+     * select <code>auto</code>. Amazon Translate auto detects the source language for each input document. For a list
+     * of supported language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
-     * </p>
-     * <p>
-     * Amazon Translate does not automatically detect a source language during batch translation jobs.
      * </p>
      * 
      * @param sourceLanguageCode
-     *        The language code of the input language. For a list of language codes, see <a
-     *        href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
-     *        <p>
-     *        Amazon Translate does not automatically detect a source language during batch translation jobs.
+     *        The language code of the input language. Specify the language if all input documents share the same
+     *        language. If you don't know the language of the source files, or your input documents contains different
+     *        source languages, select <code>auto</code>. Amazon Translate auto detects the source language for each
+     *        input document. For a list of supported language codes, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      */
 
     public void setSourceLanguageCode(String sourceLanguageCode) {
@@ -336,18 +353,18 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The language code of the input language. For a list of language codes, see <a
+     * The language code of the input language. Specify the language if all input documents share the same language. If
+     * you don't know the language of the source files, or your input documents contains different source languages,
+     * select <code>auto</code>. Amazon Translate auto detects the source language for each input document. For a list
+     * of supported language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * </p>
-     * <p>
-     * Amazon Translate does not automatically detect a source language during batch translation jobs.
-     * </p>
      * 
-     * @return The language code of the input language. For a list of language codes, see <a
-     *         href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
-     *         languages</a>.</p>
-     *         <p>
-     *         Amazon Translate does not automatically detect a source language during batch translation jobs.
+     * @return The language code of the input language. Specify the language if all input documents share the same
+     *         language. If you don't know the language of the source files, or your input documents contains different
+     *         source languages, select <code>auto</code>. Amazon Translate auto detects the source language for each
+     *         input document. For a list of supported language codes, see <a
+     *         href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      */
 
     public String getSourceLanguageCode() {
@@ -356,18 +373,19 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The language code of the input language. For a list of language codes, see <a
+     * The language code of the input language. Specify the language if all input documents share the same language. If
+     * you don't know the language of the source files, or your input documents contains different source languages,
+     * select <code>auto</code>. Amazon Translate auto detects the source language for each input document. For a list
+     * of supported language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
-     * </p>
-     * <p>
-     * Amazon Translate does not automatically detect a source language during batch translation jobs.
      * </p>
      * 
      * @param sourceLanguageCode
-     *        The language code of the input language. For a list of language codes, see <a
-     *        href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
-     *        <p>
-     *        Amazon Translate does not automatically detect a source language during batch translation jobs.
+     *        The language code of the input language. Specify the language if all input documents share the same
+     *        language. If you don't know the language of the source files, or your input documents contains different
+     *        source languages, select <code>auto</code>. Amazon Translate auto detects the source language for each
+     *        input document. For a list of supported language codes, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -382,14 +400,14 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
      * each target language.
      * </p>
      * <p>
-     * Each language code is two or five characters long. For a list of language codes, see <a
+     * Each language code is 2 or 5 characters long. For a list of language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * </p>
      * 
      * @return The target languages of the translation job. Enter up to 10 language codes. Each input file is translated
      *         into each target language.</p>
      *         <p>
-     *         Each language code is two or five characters long. For a list of language codes, see <a
+     *         Each language code is 2 or 5 characters long. For a list of language codes, see <a
      *         href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      */
 
@@ -403,7 +421,7 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
      * each target language.
      * </p>
      * <p>
-     * Each language code is two or five characters long. For a list of language codes, see <a
+     * Each language code is 2 or 5 characters long. For a list of language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * </p>
      * 
@@ -411,7 +429,7 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
      *        The target languages of the translation job. Enter up to 10 language codes. Each input file is translated
      *        into each target language.</p>
      *        <p>
-     *        Each language code is two or five characters long. For a list of language codes, see <a
+     *        Each language code is 2 or 5 characters long. For a list of language codes, see <a
      *        href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      */
 
@@ -430,7 +448,7 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
      * each target language.
      * </p>
      * <p>
-     * Each language code is two or five characters long. For a list of language codes, see <a
+     * Each language code is 2 or 5 characters long. For a list of language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * </p>
      * <p>
@@ -443,7 +461,7 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
      *        The target languages of the translation job. Enter up to 10 language codes. Each input file is translated
      *        into each target language.</p>
      *        <p>
-     *        Each language code is two or five characters long. For a list of language codes, see <a
+     *        Each language code is 2 or 5 characters long. For a list of language codes, see <a
      *        href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -464,7 +482,7 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
      * each target language.
      * </p>
      * <p>
-     * Each language code is two or five characters long. For a list of language codes, see <a
+     * Each language code is 2 or 5 characters long. For a list of language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * </p>
      * 
@@ -472,7 +490,7 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
      *        The target languages of the translation job. Enter up to 10 language codes. Each input file is translated
      *        into each target language.</p>
      *        <p>
-     *        Each language code is two or five characters long. For a list of language codes, see <a
+     *        Each language code is 2 or 5 characters long. For a list of language codes, see <a
      *        href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -954,13 +972,44 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Settings to configure your translation output, including the option to set the formality level of the output text
-     * and the option to mask profane words and phrases.
+     * Settings to configure your translation output. You can configure the following options:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Brevity: not supported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Formality: sets the formality level of the output text.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Profanity: masks profane words and phrases in your translation output.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param settings
-     *        Settings to configure your translation output, including the option to set the formality level of the
-     *        output text and the option to mask profane words and phrases.
+     *        Settings to configure your translation output. You can configure the following options:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Brevity: not supported.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Formality: sets the formality level of the output text.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Profanity: masks profane words and phrases in your translation output.
+     *        </p>
+     *        </li>
      */
 
     public void setSettings(TranslationSettings settings) {
@@ -969,12 +1018,43 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Settings to configure your translation output, including the option to set the formality level of the output text
-     * and the option to mask profane words and phrases.
+     * Settings to configure your translation output. You can configure the following options:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Brevity: not supported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Formality: sets the formality level of the output text.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Profanity: masks profane words and phrases in your translation output.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Settings to configure your translation output, including the option to set the formality level of the
-     *         output text and the option to mask profane words and phrases.
+     * @return Settings to configure your translation output. You can configure the following options:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Brevity: not supported.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Formality: sets the formality level of the output text.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Profanity: masks profane words and phrases in your translation output.
+     *         </p>
+     *         </li>
      */
 
     public TranslationSettings getSettings() {
@@ -983,13 +1063,44 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Settings to configure your translation output, including the option to set the formality level of the output text
-     * and the option to mask profane words and phrases.
+     * Settings to configure your translation output. You can configure the following options:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Brevity: not supported.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Formality: sets the formality level of the output text.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Profanity: masks profane words and phrases in your translation output.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param settings
-     *        Settings to configure your translation output, including the option to set the formality level of the
-     *        output text and the option to mask profane words and phrases.
+     *        Settings to configure your translation output. You can configure the following options:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Brevity: not supported.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Formality: sets the formality level of the output text.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Profanity: masks profane words and phrases in your translation output.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

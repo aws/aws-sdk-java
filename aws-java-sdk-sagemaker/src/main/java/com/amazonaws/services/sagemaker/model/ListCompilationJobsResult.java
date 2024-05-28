@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,8 @@ public class ListCompilationJobsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An array of <a>CompilationJobSummary</a> objects, each describing a model compilation job.
+     * An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html">
+     * CompilationJobSummary</a> objects, each describing a model compilation job.
      * </p>
      */
     private java.util.List<CompilationJobSummary> compilationJobSummaries;
@@ -39,10 +40,13 @@ public class ListCompilationJobsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An array of <a>CompilationJobSummary</a> objects, each describing a model compilation job.
+     * An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html">
+     * CompilationJobSummary</a> objects, each describing a model compilation job.
      * </p>
      * 
-     * @return An array of <a>CompilationJobSummary</a> objects, each describing a model compilation job.
+     * @return An array of <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html"
+     *         >CompilationJobSummary</a> objects, each describing a model compilation job.
      */
 
     public java.util.List<CompilationJobSummary> getCompilationJobSummaries() {
@@ -51,11 +55,14 @@ public class ListCompilationJobsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An array of <a>CompilationJobSummary</a> objects, each describing a model compilation job.
+     * An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html">
+     * CompilationJobSummary</a> objects, each describing a model compilation job.
      * </p>
      * 
      * @param compilationJobSummaries
-     *        An array of <a>CompilationJobSummary</a> objects, each describing a model compilation job.
+     *        An array of <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html"
+     *        >CompilationJobSummary</a> objects, each describing a model compilation job.
      */
 
     public void setCompilationJobSummaries(java.util.Collection<CompilationJobSummary> compilationJobSummaries) {
@@ -69,7 +76,8 @@ public class ListCompilationJobsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An array of <a>CompilationJobSummary</a> objects, each describing a model compilation job.
+     * An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html">
+     * CompilationJobSummary</a> objects, each describing a model compilation job.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +86,9 @@ public class ListCompilationJobsResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param compilationJobSummaries
-     *        An array of <a>CompilationJobSummary</a> objects, each describing a model compilation job.
+     *        An array of <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html"
+     *        >CompilationJobSummary</a> objects, each describing a model compilation job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +104,14 @@ public class ListCompilationJobsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An array of <a>CompilationJobSummary</a> objects, each describing a model compilation job.
+     * An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html">
+     * CompilationJobSummary</a> objects, each describing a model compilation job.
      * </p>
      * 
      * @param compilationJobSummaries
-     *        An array of <a>CompilationJobSummary</a> objects, each describing a model compilation job.
+     *        An array of <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html"
+     *        >CompilationJobSummary</a> objects, each describing a model compilation job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

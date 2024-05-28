@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,7 +23,8 @@ public enum ConfigurationSetFilterName {
     EventDestinationName("event-destination-name"),
     MatchingEventTypes("matching-event-types"),
     DefaultMessageType("default-message-type"),
-    DefaultSenderId("default-sender-id");
+    DefaultSenderId("default-sender-id"),
+    ProtectConfigurationId("protect-configuration-id");
 
     private String value;
 

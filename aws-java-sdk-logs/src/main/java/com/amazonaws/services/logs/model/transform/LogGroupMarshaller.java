@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.logs.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -41,6 +42,14 @@ public class LogGroupMarshaller {
             .marshallLocationName("storedBytes").build();
     private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("kmsKeyId").build();
+    private static final MarshallingInfo<String> DATAPROTECTIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataProtectionStatus").build();
+    private static final MarshallingInfo<List> INHERITEDPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inheritedProperties").build();
+    private static final MarshallingInfo<String> LOGGROUPCLASS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logGroupClass").build();
+    private static final MarshallingInfo<String> LOGGROUPARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logGroupArn").build();
 
     private static final LogGroupMarshaller instance = new LogGroupMarshaller();
 
@@ -65,6 +74,10 @@ public class LogGroupMarshaller {
             protocolMarshaller.marshall(logGroup.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(logGroup.getStoredBytes(), STOREDBYTES_BINDING);
             protocolMarshaller.marshall(logGroup.getKmsKeyId(), KMSKEYID_BINDING);
+            protocolMarshaller.marshall(logGroup.getDataProtectionStatus(), DATAPROTECTIONSTATUS_BINDING);
+            protocolMarshaller.marshall(logGroup.getInheritedProperties(), INHERITEDPROPERTIES_BINDING);
+            protocolMarshaller.marshall(logGroup.getLogGroupClass(), LOGGROUPCLASS_BINDING);
+            protocolMarshaller.marshall(logGroup.getLogGroupArn(), LOGGROUPARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,6 +62,19 @@ public class AbstractAmazonS3OutpostsAsync extends AbstractAmazonS3Outposts impl
     @Override
     public java.util.concurrent.Future<ListEndpointsResult> listEndpointsAsync(ListEndpointsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListEndpointsRequest, ListEndpointsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOutpostsWithS3Result> listOutpostsWithS3Async(ListOutpostsWithS3Request request) {
+
+        return listOutpostsWithS3Async(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOutpostsWithS3Result> listOutpostsWithS3Async(ListOutpostsWithS3Request request,
+            com.amazonaws.handlers.AsyncHandler<ListOutpostsWithS3Request, ListOutpostsWithS3Result> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

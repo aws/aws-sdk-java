@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,10 +49,16 @@ public class IpAddressUpdate implements Serializable, Cloneable, StructuredPojo 
     private String subnetId;
     /**
      * <p>
-     * The new IP address.
+     * The new IPv4 address.
      * </p>
      */
     private String ip;
+    /**
+     * <p>
+     * The new IPv6 address.
+     * </p>
+     */
+    private String ipv6;
 
     /**
      * <p>
@@ -166,11 +172,11 @@ public class IpAddressUpdate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The new IP address.
+     * The new IPv4 address.
      * </p>
      * 
      * @param ip
-     *        The new IP address.
+     *        The new IPv4 address.
      */
 
     public void setIp(String ip) {
@@ -179,10 +185,10 @@ public class IpAddressUpdate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The new IP address.
+     * The new IPv4 address.
      * </p>
      * 
-     * @return The new IP address.
+     * @return The new IPv4 address.
      */
 
     public String getIp() {
@@ -191,16 +197,56 @@ public class IpAddressUpdate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The new IP address.
+     * The new IPv4 address.
      * </p>
      * 
      * @param ip
-     *        The new IP address.
+     *        The new IPv4 address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public IpAddressUpdate withIp(String ip) {
         setIp(ip);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The new IPv6 address.
+     * </p>
+     * 
+     * @param ipv6
+     *        The new IPv6 address.
+     */
+
+    public void setIpv6(String ipv6) {
+        this.ipv6 = ipv6;
+    }
+
+    /**
+     * <p>
+     * The new IPv6 address.
+     * </p>
+     * 
+     * @return The new IPv6 address.
+     */
+
+    public String getIpv6() {
+        return this.ipv6;
+    }
+
+    /**
+     * <p>
+     * The new IPv6 address.
+     * </p>
+     * 
+     * @param ipv6
+     *        The new IPv6 address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IpAddressUpdate withIpv6(String ipv6) {
+        setIpv6(ipv6);
         return this;
     }
 
@@ -221,7 +267,9 @@ public class IpAddressUpdate implements Serializable, Cloneable, StructuredPojo 
         if (getSubnetId() != null)
             sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getIp() != null)
-            sb.append("Ip: ").append(getIp());
+            sb.append("Ip: ").append(getIp()).append(",");
+        if (getIpv6() != null)
+            sb.append("Ipv6: ").append(getIpv6());
         sb.append("}");
         return sb.toString();
     }
@@ -248,6 +296,10 @@ public class IpAddressUpdate implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getIp() != null && other.getIp().equals(this.getIp()) == false)
             return false;
+        if (other.getIpv6() == null ^ this.getIpv6() == null)
+            return false;
+        if (other.getIpv6() != null && other.getIpv6().equals(this.getIpv6()) == false)
+            return false;
         return true;
     }
 
@@ -259,6 +311,7 @@ public class IpAddressUpdate implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getIpId() == null) ? 0 : getIpId().hashCode());
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
         hashCode = prime * hashCode + ((getIp() == null) ? 0 : getIp().hashCode());
+        hashCode = prime * hashCode + ((getIpv6() == null) ? 0 : getIpv6().hashCode());
         return hashCode;
     }
 

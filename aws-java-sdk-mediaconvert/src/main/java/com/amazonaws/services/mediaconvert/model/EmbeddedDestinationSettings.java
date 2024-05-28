@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,9 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * Settings related to CEA/EIA-608 and CEA/EIA-708 (also called embedded or ancillary) captions. Set up embedded
  * captions in the same output as your video. For more information, see
- * https://docs.aws.amazon.com/mediaconvert/latest/ug/embedded-output-captions.html. When you work directly in your JSON
- * job specification, include this object and any required children when you set destinationType to EMBEDDED,
- * EMBEDDED_PLUS_SCTE20, or SCTE20_PLUS_EMBEDDED.
+ * https://docs.aws.amazon.com/mediaconvert/latest/ug/embedded-output-captions.html.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/EmbeddedDestinationSettings"
  *      target="_top">AWS API Documentation</a>
@@ -40,10 +38,9 @@ public class EmbeddedDestinationSettings implements Serializable, Cloneable, Str
     /**
      * Ignore this setting unless your input captions are SCC format and you want both 608 and 708 captions embedded in
      * your output stream. Optionally, specify the 708 service number for each output captions channel. Choose a
-     * different number for each channel. To use this setting, also set Force 608 to 708 upconvert (Convert608To708) to
-     * Upconvert (UPCONVERT) in your input captions selector settings. If you choose to upconvert but don't specify a 708
-     * service number, MediaConvert uses the number that you specify for CC channel number (destination608ChannelNumber)
-     * for the 708 service number. For more information, see
+     * different number for each channel. To use this setting, also set Force 608 to 708 upconvert to Upconvert in your
+     * input captions selector settings. If you choose to upconvert but don't specify a 708 service number, MediaConvert
+     * uses the number that you specify for CC channel number for the 708 service number. For more information, see
      * https://docs.aws.amazon.com/console/mediaconvert/dual-scc-to-embedded.
      */
     private Integer destination708ServiceNumber;
@@ -103,19 +100,18 @@ public class EmbeddedDestinationSettings implements Serializable, Cloneable, Str
     /**
      * Ignore this setting unless your input captions are SCC format and you want both 608 and 708 captions embedded in
      * your output stream. Optionally, specify the 708 service number for each output captions channel. Choose a
-     * different number for each channel. To use this setting, also set Force 608 to 708 upconvert (Convert608To708) to
-     * Upconvert (UPCONVERT) in your input captions selector settings. If you choose to upconvert but don't specify a 708
-     * service number, MediaConvert uses the number that you specify for CC channel number (destination608ChannelNumber)
-     * for the 708 service number. For more information, see
+     * different number for each channel. To use this setting, also set Force 608 to 708 upconvert to Upconvert in your
+     * input captions selector settings. If you choose to upconvert but don't specify a 708 service number, MediaConvert
+     * uses the number that you specify for CC channel number for the 708 service number. For more information, see
      * https://docs.aws.amazon.com/console/mediaconvert/dual-scc-to-embedded.
      * 
      * @param destination708ServiceNumber
      *        Ignore this setting unless your input captions are SCC format and you want both 608 and 708 captions
      *        embedded in your output stream. Optionally, specify the 708 service number for each output captions
      *        channel. Choose a different number for each channel. To use this setting, also set Force 608 to 708
-     *        upconvert (Convert608To708) to Upconvert (UPCONVERT) in your input captions selector settings. If you
-     *        choose to upconvert but don't specify a 708 service number, MediaConvert uses the number that you specify
-     *        for CC channel number (destination608ChannelNumber) for the 708 service number. For more information, see
+     *        upconvert to Upconvert in your input captions selector settings. If you choose to upconvert but don't
+     *        specify a 708 service number, MediaConvert uses the number that you specify for CC channel number for the
+     *        708 service number. For more information, see
      *        https://docs.aws.amazon.com/console/mediaconvert/dual-scc-to-embedded.
      */
 
@@ -126,18 +122,17 @@ public class EmbeddedDestinationSettings implements Serializable, Cloneable, Str
     /**
      * Ignore this setting unless your input captions are SCC format and you want both 608 and 708 captions embedded in
      * your output stream. Optionally, specify the 708 service number for each output captions channel. Choose a
-     * different number for each channel. To use this setting, also set Force 608 to 708 upconvert (Convert608To708) to
-     * Upconvert (UPCONVERT) in your input captions selector settings. If you choose to upconvert but don't specify a 708
-     * service number, MediaConvert uses the number that you specify for CC channel number (destination608ChannelNumber)
-     * for the 708 service number. For more information, see
+     * different number for each channel. To use this setting, also set Force 608 to 708 upconvert to Upconvert in your
+     * input captions selector settings. If you choose to upconvert but don't specify a 708 service number, MediaConvert
+     * uses the number that you specify for CC channel number for the 708 service number. For more information, see
      * https://docs.aws.amazon.com/console/mediaconvert/dual-scc-to-embedded.
      * 
      * @return Ignore this setting unless your input captions are SCC format and you want both 608 and 708 captions
      *         embedded in your output stream. Optionally, specify the 708 service number for each output captions
      *         channel. Choose a different number for each channel. To use this setting, also set Force 608 to 708
-     *         upconvert (Convert608To708) to Upconvert (UPCONVERT) in your input captions selector settings. If you
-     *         choose to upconvert but don't specify a 708 service number, MediaConvert uses the number that you specify
-     *         for CC channel number (destination608ChannelNumber) for the 708 service number. For more information, see
+     *         upconvert to Upconvert in your input captions selector settings. If you choose to upconvert but don't
+     *         specify a 708 service number, MediaConvert uses the number that you specify for CC channel number for the
+     *         708 service number. For more information, see
      *         https://docs.aws.amazon.com/console/mediaconvert/dual-scc-to-embedded.
      */
 
@@ -148,19 +143,18 @@ public class EmbeddedDestinationSettings implements Serializable, Cloneable, Str
     /**
      * Ignore this setting unless your input captions are SCC format and you want both 608 and 708 captions embedded in
      * your output stream. Optionally, specify the 708 service number for each output captions channel. Choose a
-     * different number for each channel. To use this setting, also set Force 608 to 708 upconvert (Convert608To708) to
-     * Upconvert (UPCONVERT) in your input captions selector settings. If you choose to upconvert but don't specify a 708
-     * service number, MediaConvert uses the number that you specify for CC channel number (destination608ChannelNumber)
-     * for the 708 service number. For more information, see
+     * different number for each channel. To use this setting, also set Force 608 to 708 upconvert to Upconvert in your
+     * input captions selector settings. If you choose to upconvert but don't specify a 708 service number, MediaConvert
+     * uses the number that you specify for CC channel number for the 708 service number. For more information, see
      * https://docs.aws.amazon.com/console/mediaconvert/dual-scc-to-embedded.
      * 
      * @param destination708ServiceNumber
      *        Ignore this setting unless your input captions are SCC format and you want both 608 and 708 captions
      *        embedded in your output stream. Optionally, specify the 708 service number for each output captions
      *        channel. Choose a different number for each channel. To use this setting, also set Force 608 to 708
-     *        upconvert (Convert608To708) to Upconvert (UPCONVERT) in your input captions selector settings. If you
-     *        choose to upconvert but don't specify a 708 service number, MediaConvert uses the number that you specify
-     *        for CC channel number (destination608ChannelNumber) for the 708 service number. For more information, see
+     *        upconvert to Upconvert in your input captions selector settings. If you choose to upconvert but don't
+     *        specify a 708 service number, MediaConvert uses the number that you specify for CC channel number for the
+     *        708 service number. For more information, see
      *        https://docs.aws.amazon.com/console/mediaconvert/dual-scc-to-embedded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

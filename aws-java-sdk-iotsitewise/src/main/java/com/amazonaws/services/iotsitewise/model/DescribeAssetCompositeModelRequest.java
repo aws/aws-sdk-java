@@ -1,0 +1,219 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.iotsitewise.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+import com.amazonaws.AmazonWebServiceRequest;
+
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/DescribeAssetCompositeModel"
+ *      target="_top">AWS API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class DescribeAssetCompositeModelRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * The ID of the asset. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed
+     * by the external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     * >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     */
+    private String assetId;
+    /**
+     * <p>
+     * The ID of a composite model on this asset. This can be either the actual ID in UUID format, or else
+     * <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     * >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     */
+    private String assetCompositeModelId;
+
+    /**
+     * <p>
+     * The ID of the asset. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed
+     * by the external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     * >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param assetId
+     *        The ID of the asset. This can be either the actual ID in UUID format, or else <code>externalId:</code>
+     *        followed by the external ID, if it has one. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     *        >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     */
+
+    public void setAssetId(String assetId) {
+        this.assetId = assetId;
+    }
+
+    /**
+     * <p>
+     * The ID of the asset. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed
+     * by the external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     * >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @return The ID of the asset. This can be either the actual ID in UUID format, or else <code>externalId:</code>
+     *         followed by the external ID, if it has one. For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     *         >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     */
+
+    public String getAssetId() {
+        return this.assetId;
+    }
+
+    /**
+     * <p>
+     * The ID of the asset. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed
+     * by the external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     * >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param assetId
+     *        The ID of the asset. This can be either the actual ID in UUID format, or else <code>externalId:</code>
+     *        followed by the external ID, if it has one. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     *        >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAssetCompositeModelRequest withAssetId(String assetId) {
+        setAssetId(assetId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of a composite model on this asset. This can be either the actual ID in UUID format, or else
+     * <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     * >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param assetCompositeModelId
+     *        The ID of a composite model on this asset. This can be either the actual ID in UUID format, or else
+     *        <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     *        >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     */
+
+    public void setAssetCompositeModelId(String assetCompositeModelId) {
+        this.assetCompositeModelId = assetCompositeModelId;
+    }
+
+    /**
+     * <p>
+     * The ID of a composite model on this asset. This can be either the actual ID in UUID format, or else
+     * <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     * >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @return The ID of a composite model on this asset. This can be either the actual ID in UUID format, or else
+     *         <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     *         >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     */
+
+    public String getAssetCompositeModelId() {
+        return this.assetCompositeModelId;
+    }
+
+    /**
+     * <p>
+     * The ID of a composite model on this asset. This can be either the actual ID in UUID format, or else
+     * <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     * >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param assetCompositeModelId
+     *        The ID of a composite model on this asset. This can be either the actual ID in UUID format, or else
+     *        <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     *        >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAssetCompositeModelRequest withAssetCompositeModelId(String assetCompositeModelId) {
+        setAssetCompositeModelId(assetCompositeModelId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getAssetId() != null)
+            sb.append("AssetId: ").append(getAssetId()).append(",");
+        if (getAssetCompositeModelId() != null)
+            sb.append("AssetCompositeModelId: ").append(getAssetCompositeModelId());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof DescribeAssetCompositeModelRequest == false)
+            return false;
+        DescribeAssetCompositeModelRequest other = (DescribeAssetCompositeModelRequest) obj;
+        if (other.getAssetId() == null ^ this.getAssetId() == null)
+            return false;
+        if (other.getAssetId() != null && other.getAssetId().equals(this.getAssetId()) == false)
+            return false;
+        if (other.getAssetCompositeModelId() == null ^ this.getAssetCompositeModelId() == null)
+            return false;
+        if (other.getAssetCompositeModelId() != null && other.getAssetCompositeModelId().equals(this.getAssetCompositeModelId()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getAssetId() == null) ? 0 : getAssetId().hashCode());
+        hashCode = prime * hashCode + ((getAssetCompositeModelId() == null) ? 0 : getAssetCompositeModelId().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public DescribeAssetCompositeModelRequest clone() {
+        return (DescribeAssetCompositeModelRequest) super.clone();
+    }
+
+}

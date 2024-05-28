@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -296,8 +296,9 @@ public interface AWSServiceDiscovery {
     /**
      * <p>
      * Discovers registered instances for a specified namespace and service. You can use <code>DiscoverInstances</code>
-     * to discover instances for any type of namespace. For public and private DNS namespaces, you can also use DNS
-     * queries to discover instances.
+     * to discover instances for any type of namespace. <code>DiscoverInstances</code> returns a randomized list of
+     * instances allowing customers to distribute traffic evenly across instances. For public and private DNS
+     * namespaces, you can also use DNS queries to discover instances.
      * </p>
      * 
      * @param discoverInstancesRequest
@@ -318,6 +319,30 @@ public interface AWSServiceDiscovery {
      *      target="_top">AWS API Documentation</a>
      */
     DiscoverInstancesResult discoverInstances(DiscoverInstancesRequest discoverInstancesRequest);
+
+    /**
+     * <p>
+     * Discovers the increasing revision associated with an instance.
+     * </p>
+     * 
+     * @param discoverInstancesRevisionRequest
+     * @return Result of the DiscoverInstancesRevision operation returned by the service.
+     * @throws ServiceNotFoundException
+     *         No service exists with the specified ID.
+     * @throws NamespaceNotFoundException
+     *         No namespace exists with the specified ID.
+     * @throws InvalidInputException
+     *         One or more specified values aren't valid. For example, a required value might be missing, a numeric
+     *         value might be outside the allowed range, or a string value might exceed length constraints.
+     * @throws RequestLimitExceededException
+     *         The operation can't be completed because you've reached the quota for the number of requests. For more
+     *         information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud Map API
+     *         request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
+     * @sample AWSServiceDiscovery.DiscoverInstancesRevision
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DiscoverInstancesRevision"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DiscoverInstancesRevisionResult discoverInstancesRevision(DiscoverInstancesRevisionRequest discoverInstancesRevisionRequest);
 
     /**
      * <p>
@@ -389,7 +414,7 @@ public interface AWSServiceDiscovery {
     /**
      * <p>
      * Gets information about any operation that returns an operation ID in the response, such as a
-     * <code>CreateService</code> request.
+     * <code>CreateHttpNamespace</code> request.
      * </p>
      * <note>
      * <p>
@@ -481,7 +506,7 @@ public interface AWSServiceDiscovery {
 
     /**
      * <p>
-     * Lists summary information for all the services that are associated with one or more specified namespaces.
+     * Lists summary information for all the services that are associated with one or more namespaces.
      * </p>
      * 
      * @param listServicesRequest

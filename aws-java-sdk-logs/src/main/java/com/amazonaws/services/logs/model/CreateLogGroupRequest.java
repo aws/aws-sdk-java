@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,15 +27,15 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the log group.
+     * A name for the log group.
      * </p>
      */
     private String logGroupName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
+     * The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
-     * Names - Key Management Service</a>.
+     * Names</a>.
      * </p>
      */
     private String kmsKeyId;
@@ -44,14 +44,47 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
      * The key-value pairs to use for the tags.
      * </p>
      * <p>
-     * CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log groups using
-     * the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition keys. For more information
-     * about using tags to control access, see <a
+     * You can grant users access to certain log groups while preventing them from accessing other log groups. To do so,
+     * tag your groups and use IAM policies that refer to those tags. To assign tags when you create a log group, you
+     * must have either the <code>logs:TagResource</code> or <code>logs:TagLogGroup</code> permission. For more
+     * information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a>. For more information about using tags to control access, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web
      * Services resources using tags</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> tags;
+    /**
+     * <p>
+     * Use this parameter to specify the log group class for this log group. There are two classes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The <code>Standard</code> log class supports all CloudWatch Logs features.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower
+     * costs.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you omit this parameter, the default of <code>STANDARD</code> is used.
+     * </p>
+     * <important>
+     * <p>
+     * The value of <code>logGroupClass</code> can't be changed after a log group is created.
+     * </p>
+     * </important>
+     * <p>
+     * For details about the features supported by each class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a>
+     * </p>
+     */
+    private String logGroupClass;
 
     /**
      * Default constructor for CreateLogGroupRequest object. Callers should use the setter or fluent setter (with...)
@@ -65,7 +98,7 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
      * to initialize any additional object members.
      * 
      * @param logGroupName
-     *        The name of the log group.
+     *        A name for the log group.
      */
     public CreateLogGroupRequest(String logGroupName) {
         setLogGroupName(logGroupName);
@@ -73,11 +106,11 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the log group.
+     * A name for the log group.
      * </p>
      * 
      * @param logGroupName
-     *        The name of the log group.
+     *        A name for the log group.
      */
 
     public void setLogGroupName(String logGroupName) {
@@ -86,10 +119,10 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the log group.
+     * A name for the log group.
      * </p>
      * 
-     * @return The name of the log group.
+     * @return A name for the log group.
      */
 
     public String getLogGroupName() {
@@ -98,11 +131,11 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the log group.
+     * A name for the log group.
      * </p>
      * 
      * @param logGroupName
-     *        The name of the log group.
+     *        A name for the log group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,15 +146,15 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
+     * The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
-     * Names - Key Management Service</a>.
+     * Names</a>.
      * </p>
      * 
      * @param kmsKeyId
-     *        The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     *        Resource Names - Key Management Service</a>.
+     *        The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data. For more information, see
+     *        <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
+     *        Resource Names</a>.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -130,14 +163,15 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
+     * The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
-     * Names - Key Management Service</a>.
+     * Names</a>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
+     * @return The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data. For more information, see
+     *         <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     *         Resource Names - Key Management Service</a>.
+     *         Resource Names</a>.
      */
 
     public String getKmsKeyId() {
@@ -146,15 +180,15 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
+     * The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
-     * Names - Key Management Service</a>.
+     * Names</a>.
      * </p>
      * 
      * @param kmsKeyId
-     *        The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     *        Resource Names - Key Management Service</a>.
+     *        The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data. For more information, see
+     *        <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
+     *        Resource Names</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,18 +202,23 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
      * The key-value pairs to use for the tags.
      * </p>
      * <p>
-     * CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log groups using
-     * the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition keys. For more information
-     * about using tags to control access, see <a
+     * You can grant users access to certain log groups while preventing them from accessing other log groups. To do so,
+     * tag your groups and use IAM policies that refer to those tags. To assign tags when you create a log group, you
+     * must have either the <code>logs:TagResource</code> or <code>logs:TagLogGroup</code> permission. For more
+     * information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a>. For more information about using tags to control access, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web
      * Services resources using tags</a>.
      * </p>
      * 
      * @return The key-value pairs to use for the tags.</p>
      *         <p>
-     *         CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log
-     *         groups using the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition keys.
-     *         For more information about using tags to control access, see <a
+     *         You can grant users access to certain log groups while preventing them from accessing other log groups.
+     *         To do so, tag your groups and use IAM policies that refer to those tags. To assign tags when you create a
+     *         log group, you must have either the <code>logs:TagResource</code> or <code>logs:TagLogGroup</code>
+     *         permission. For more information about tagging, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *         resources</a>. For more information about using tags to control access, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web
      *         Services resources using tags</a>.
      */
@@ -196,9 +235,11 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
      * The key-value pairs to use for the tags.
      * </p>
      * <p>
-     * CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log groups using
-     * the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition keys. For more information
-     * about using tags to control access, see <a
+     * You can grant users access to certain log groups while preventing them from accessing other log groups. To do so,
+     * tag your groups and use IAM policies that refer to those tags. To assign tags when you create a log group, you
+     * must have either the <code>logs:TagResource</code> or <code>logs:TagLogGroup</code> permission. For more
+     * information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a>. For more information about using tags to control access, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web
      * Services resources using tags</a>.
      * </p>
@@ -206,9 +247,12 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param tags
      *        The key-value pairs to use for the tags.</p>
      *        <p>
-     *        CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log
-     *        groups using the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition keys.
-     *        For more information about using tags to control access, see <a
+     *        You can grant users access to certain log groups while preventing them from accessing other log groups. To
+     *        do so, tag your groups and use IAM policies that refer to those tags. To assign tags when you create a log
+     *        group, you must have either the <code>logs:TagResource</code> or <code>logs:TagLogGroup</code> permission.
+     *        For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        resources</a>. For more information about using tags to control access, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web
      *        Services resources using tags</a>.
      */
@@ -222,9 +266,11 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
      * The key-value pairs to use for the tags.
      * </p>
      * <p>
-     * CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log groups using
-     * the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition keys. For more information
-     * about using tags to control access, see <a
+     * You can grant users access to certain log groups while preventing them from accessing other log groups. To do so,
+     * tag your groups and use IAM policies that refer to those tags. To assign tags when you create a log group, you
+     * must have either the <code>logs:TagResource</code> or <code>logs:TagLogGroup</code> permission. For more
+     * information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a>. For more information about using tags to control access, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web
      * Services resources using tags</a>.
      * </p>
@@ -232,9 +278,12 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param tags
      *        The key-value pairs to use for the tags.</p>
      *        <p>
-     *        CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log
-     *        groups using the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition keys.
-     *        For more information about using tags to control access, see <a
+     *        You can grant users access to certain log groups while preventing them from accessing other log groups. To
+     *        do so, tag your groups and use IAM policies that refer to those tags. To assign tags when you create a log
+     *        group, you must have either the <code>logs:TagResource</code> or <code>logs:TagLogGroup</code> permission.
+     *        For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        resources</a>. For more information about using tags to control access, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web
      *        Services resources using tags</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -274,6 +323,265 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Use this parameter to specify the log group class for this log group. There are two classes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The <code>Standard</code> log class supports all CloudWatch Logs features.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower
+     * costs.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you omit this parameter, the default of <code>STANDARD</code> is used.
+     * </p>
+     * <important>
+     * <p>
+     * The value of <code>logGroupClass</code> can't be changed after a log group is created.
+     * </p>
+     * </important>
+     * <p>
+     * For details about the features supported by each class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a>
+     * </p>
+     * 
+     * @param logGroupClass
+     *        Use this parameter to specify the log group class for this log group. There are two classes:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The <code>Standard</code> log class supports all CloudWatch Logs features.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs
+     *        lower costs.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you omit this parameter, the default of <code>STANDARD</code> is used.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        The value of <code>logGroupClass</code> can't be changed after a log group is created.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        For details about the features supported by each class, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+     *        classes</a>
+     * @see LogGroupClass
+     */
+
+    public void setLogGroupClass(String logGroupClass) {
+        this.logGroupClass = logGroupClass;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to specify the log group class for this log group. There are two classes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The <code>Standard</code> log class supports all CloudWatch Logs features.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower
+     * costs.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you omit this parameter, the default of <code>STANDARD</code> is used.
+     * </p>
+     * <important>
+     * <p>
+     * The value of <code>logGroupClass</code> can't be changed after a log group is created.
+     * </p>
+     * </important>
+     * <p>
+     * For details about the features supported by each class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a>
+     * </p>
+     * 
+     * @return Use this parameter to specify the log group class for this log group. There are two classes:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The <code>Standard</code> log class supports all CloudWatch Logs features.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs
+     *         lower costs.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If you omit this parameter, the default of <code>STANDARD</code> is used.
+     *         </p>
+     *         <important>
+     *         <p>
+     *         The value of <code>logGroupClass</code> can't be changed after a log group is created.
+     *         </p>
+     *         </important>
+     *         <p>
+     *         For details about the features supported by each class, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+     *         classes</a>
+     * @see LogGroupClass
+     */
+
+    public String getLogGroupClass() {
+        return this.logGroupClass;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to specify the log group class for this log group. There are two classes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The <code>Standard</code> log class supports all CloudWatch Logs features.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower
+     * costs.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you omit this parameter, the default of <code>STANDARD</code> is used.
+     * </p>
+     * <important>
+     * <p>
+     * The value of <code>logGroupClass</code> can't be changed after a log group is created.
+     * </p>
+     * </important>
+     * <p>
+     * For details about the features supported by each class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a>
+     * </p>
+     * 
+     * @param logGroupClass
+     *        Use this parameter to specify the log group class for this log group. There are two classes:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The <code>Standard</code> log class supports all CloudWatch Logs features.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs
+     *        lower costs.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you omit this parameter, the default of <code>STANDARD</code> is used.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        The value of <code>logGroupClass</code> can't be changed after a log group is created.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        For details about the features supported by each class, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+     *        classes</a>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LogGroupClass
+     */
+
+    public CreateLogGroupRequest withLogGroupClass(String logGroupClass) {
+        setLogGroupClass(logGroupClass);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to specify the log group class for this log group. There are two classes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The <code>Standard</code> log class supports all CloudWatch Logs features.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs lower
+     * costs.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you omit this parameter, the default of <code>STANDARD</code> is used.
+     * </p>
+     * <important>
+     * <p>
+     * The value of <code>logGroupClass</code> can't be changed after a log group is created.
+     * </p>
+     * </important>
+     * <p>
+     * For details about the features supported by each class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log classes</a>
+     * </p>
+     * 
+     * @param logGroupClass
+     *        Use this parameter to specify the log group class for this log group. There are two classes:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The <code>Standard</code> log class supports all CloudWatch Logs features.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs features and incurs
+     *        lower costs.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you omit this parameter, the default of <code>STANDARD</code> is used.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        The value of <code>logGroupClass</code> can't be changed after a log group is created.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        For details about the features supported by each class, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+     *        classes</a>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LogGroupClass
+     */
+
+    public CreateLogGroupRequest withLogGroupClass(LogGroupClass logGroupClass) {
+        this.logGroupClass = logGroupClass.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -290,7 +598,9 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getLogGroupClass() != null)
+            sb.append("LogGroupClass: ").append(getLogGroupClass());
         sb.append("}");
         return sb.toString();
     }
@@ -317,6 +627,10 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getLogGroupClass() == null ^ this.getLogGroupClass() == null)
+            return false;
+        if (other.getLogGroupClass() != null && other.getLogGroupClass().equals(this.getLogGroupClass()) == false)
+            return false;
         return true;
     }
 
@@ -328,6 +642,7 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getLogGroupName() == null) ? 0 : getLogGroupName().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getLogGroupClass() == null) ? 0 : getLogGroupClass().hashCode());
         return hashCode;
     }
 

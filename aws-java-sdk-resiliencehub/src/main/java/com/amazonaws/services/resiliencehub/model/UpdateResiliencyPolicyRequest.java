@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,10 +40,10 @@ public class UpdateResiliencyPolicyRequest extends com.amazonaws.AmazonWebServic
     private java.util.Map<String, FailurePolicy> policy;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>
+     * Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>
      * :resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more
      * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      */
     private String policyArn;
@@ -206,18 +206,18 @@ public class UpdateResiliencyPolicyRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>
+     * Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>
      * :resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more
      * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
      * @param policyArn
-     *        The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:
+     *        Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:
      *        <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/
      *        <code>policy-id</code>. For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     *        (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      */
 
     public void setPolicyArn(String policyArn) {
@@ -226,17 +226,17 @@ public class UpdateResiliencyPolicyRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>
+     * Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>
      * :resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more
      * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:
+     * @return Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:
      *         <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/
      *         <code>policy-id</code>. For more information about ARNs, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     *         (ARNs)</a> in the <i>AWS General Reference</i>.
+     *         (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      */
 
     public String getPolicyArn() {
@@ -245,18 +245,18 @@ public class UpdateResiliencyPolicyRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>
+     * Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>
      * :resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more
      * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
      * @param policyArn
-     *        The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:
+     *        Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:
      *        <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/
      *        <code>policy-id</code>. For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     *        (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,7 +56,7 @@ import com.amazonaws.services.emrcontainers.model.*;
  * It is the prefix used in Amazon EMR on EKS service endpoints. For example,
  * <code>emr-containers.us-east-2.amazonaws.com</code>. For more information, see <a
  * href="https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/service-quotas.html#service-endpoints"
- * >Amazon EMR on EKS Service Endpoints</a>.
+ * >Amazon EMR on EKSService Endpoints</a>.
  * </p>
  * </li>
  * </ul>
@@ -99,8 +99,43 @@ public interface AmazonEMRContainersAsync extends AmazonEMRContainers {
 
     /**
      * <p>
-     * Creates a managed endpoint. A managed endpoint is a gateway that connects EMR Studio to Amazon EMR on EKS so that
-     * EMR Studio can communicate with your virtual cluster.
+     * Creates a job template. Job template stores values of StartJobRun API request in a template and can be used to
+     * start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values,
+     * enforcing certain values in StartJobRun API request.
+     * </p>
+     * 
+     * @param createJobTemplateRequest
+     * @return A Java Future containing the result of the CreateJobTemplate operation returned by the service.
+     * @sample AmazonEMRContainersAsync.CreateJobTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateJobTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateJobTemplateResult> createJobTemplateAsync(CreateJobTemplateRequest createJobTemplateRequest);
+
+    /**
+     * <p>
+     * Creates a job template. Job template stores values of StartJobRun API request in a template and can be used to
+     * start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values,
+     * enforcing certain values in StartJobRun API request.
+     * </p>
+     * 
+     * @param createJobTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateJobTemplate operation returned by the service.
+     * @sample AmazonEMRContainersAsyncHandler.CreateJobTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateJobTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateJobTemplateResult> createJobTemplateAsync(CreateJobTemplateRequest createJobTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateJobTemplateRequest, CreateJobTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a managed endpoint. A managed endpoint is a gateway that connects Amazon EMR Studio to Amazon EMR on EKS
+     * so that Amazon EMR Studio can communicate with your virtual cluster.
      * </p>
      * 
      * @param createManagedEndpointRequest
@@ -113,8 +148,8 @@ public interface AmazonEMRContainersAsync extends AmazonEMRContainers {
 
     /**
      * <p>
-     * Creates a managed endpoint. A managed endpoint is a gateway that connects EMR Studio to Amazon EMR on EKS so that
-     * EMR Studio can communicate with your virtual cluster.
+     * Creates a managed endpoint. A managed endpoint is a gateway that connects Amazon EMR Studio to Amazon EMR on EKS
+     * so that Amazon EMR Studio can communicate with your virtual cluster.
      * </p>
      * 
      * @param createManagedEndpointRequest
@@ -129,6 +164,43 @@ public interface AmazonEMRContainersAsync extends AmazonEMRContainers {
      */
     java.util.concurrent.Future<CreateManagedEndpointResult> createManagedEndpointAsync(CreateManagedEndpointRequest createManagedEndpointRequest,
             com.amazonaws.handlers.AsyncHandler<CreateManagedEndpointRequest, CreateManagedEndpointResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a security configuration. Security configurations in Amazon EMR on EKS are templates for different
+     * security setups. You can use security configurations to configure the Lake Formation integration setup. You can
+     * also create a security configuration to re-use a security setup each time you create a virtual cluster.
+     * </p>
+     * 
+     * @param createSecurityConfigurationRequest
+     * @return A Java Future containing the result of the CreateSecurityConfiguration operation returned by the service.
+     * @sample AmazonEMRContainersAsync.CreateSecurityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateSecurityConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSecurityConfigurationResult> createSecurityConfigurationAsync(
+            CreateSecurityConfigurationRequest createSecurityConfigurationRequest);
+
+    /**
+     * <p>
+     * Creates a security configuration. Security configurations in Amazon EMR on EKS are templates for different
+     * security setups. You can use security configurations to configure the Lake Formation integration setup. You can
+     * also create a security configuration to re-use a security setup each time you create a virtual cluster.
+     * </p>
+     * 
+     * @param createSecurityConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateSecurityConfiguration operation returned by the service.
+     * @sample AmazonEMRContainersAsyncHandler.CreateSecurityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateSecurityConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSecurityConfigurationResult> createSecurityConfigurationAsync(
+            CreateSecurityConfigurationRequest createSecurityConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateSecurityConfigurationRequest, CreateSecurityConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -169,8 +241,43 @@ public interface AmazonEMRContainersAsync extends AmazonEMRContainers {
 
     /**
      * <p>
-     * Deletes a managed endpoint. A managed endpoint is a gateway that connects EMR Studio to Amazon EMR on EKS so that
-     * EMR Studio can communicate with your virtual cluster.
+     * Deletes a job template. Job template stores values of StartJobRun API request in a template and can be used to
+     * start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values,
+     * enforcing certain values in StartJobRun API request.
+     * </p>
+     * 
+     * @param deleteJobTemplateRequest
+     * @return A Java Future containing the result of the DeleteJobTemplate operation returned by the service.
+     * @sample AmazonEMRContainersAsync.DeleteJobTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DeleteJobTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteJobTemplateResult> deleteJobTemplateAsync(DeleteJobTemplateRequest deleteJobTemplateRequest);
+
+    /**
+     * <p>
+     * Deletes a job template. Job template stores values of StartJobRun API request in a template and can be used to
+     * start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values,
+     * enforcing certain values in StartJobRun API request.
+     * </p>
+     * 
+     * @param deleteJobTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteJobTemplate operation returned by the service.
+     * @sample AmazonEMRContainersAsyncHandler.DeleteJobTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DeleteJobTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteJobTemplateResult> deleteJobTemplateAsync(DeleteJobTemplateRequest deleteJobTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteJobTemplateRequest, DeleteJobTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a managed endpoint. A managed endpoint is a gateway that connects Amazon EMR Studio to Amazon EMR on EKS
+     * so that Amazon EMR Studio can communicate with your virtual cluster.
      * </p>
      * 
      * @param deleteManagedEndpointRequest
@@ -183,8 +290,8 @@ public interface AmazonEMRContainersAsync extends AmazonEMRContainers {
 
     /**
      * <p>
-     * Deletes a managed endpoint. A managed endpoint is a gateway that connects EMR Studio to Amazon EMR on EKS so that
-     * EMR Studio can communicate with your virtual cluster.
+     * Deletes a managed endpoint. A managed endpoint is a gateway that connects Amazon EMR Studio to Amazon EMR on EKS
+     * so that Amazon EMR Studio can communicate with your virtual cluster.
      * </p>
      * 
      * @param deleteManagedEndpointRequest
@@ -272,8 +379,43 @@ public interface AmazonEMRContainersAsync extends AmazonEMRContainers {
 
     /**
      * <p>
-     * Displays detailed information about a managed endpoint. A managed endpoint is a gateway that connects EMR Studio
-     * to Amazon EMR on EKS so that EMR Studio can communicate with your virtual cluster.
+     * Displays detailed information about a specified job template. Job template stores values of StartJobRun API
+     * request in a template and can be used to start a job run. Job template allows two use cases: avoid repeating
+     * recurring StartJobRun API request values, enforcing certain values in StartJobRun API request.
+     * </p>
+     * 
+     * @param describeJobTemplateRequest
+     * @return A Java Future containing the result of the DescribeJobTemplate operation returned by the service.
+     * @sample AmazonEMRContainersAsync.DescribeJobTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeJobTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeJobTemplateResult> describeJobTemplateAsync(DescribeJobTemplateRequest describeJobTemplateRequest);
+
+    /**
+     * <p>
+     * Displays detailed information about a specified job template. Job template stores values of StartJobRun API
+     * request in a template and can be used to start a job run. Job template allows two use cases: avoid repeating
+     * recurring StartJobRun API request values, enforcing certain values in StartJobRun API request.
+     * </p>
+     * 
+     * @param describeJobTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeJobTemplate operation returned by the service.
+     * @sample AmazonEMRContainersAsyncHandler.DescribeJobTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeJobTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeJobTemplateResult> describeJobTemplateAsync(DescribeJobTemplateRequest describeJobTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeJobTemplateRequest, DescribeJobTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Displays detailed information about a managed endpoint. A managed endpoint is a gateway that connects Amazon EMR
+     * Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual cluster.
      * </p>
      * 
      * @param describeManagedEndpointRequest
@@ -286,8 +428,8 @@ public interface AmazonEMRContainersAsync extends AmazonEMRContainers {
 
     /**
      * <p>
-     * Displays detailed information about a managed endpoint. A managed endpoint is a gateway that connects EMR Studio
-     * to Amazon EMR on EKS so that EMR Studio can communicate with your virtual cluster.
+     * Displays detailed information about a managed endpoint. A managed endpoint is a gateway that connects Amazon EMR
+     * Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual cluster.
      * </p>
      * 
      * @param describeManagedEndpointRequest
@@ -302,6 +444,47 @@ public interface AmazonEMRContainersAsync extends AmazonEMRContainers {
      */
     java.util.concurrent.Future<DescribeManagedEndpointResult> describeManagedEndpointAsync(DescribeManagedEndpointRequest describeManagedEndpointRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeManagedEndpointRequest, DescribeManagedEndpointResult> asyncHandler);
+
+    /**
+     * <p>
+     * Displays detailed information about a specified security configuration. Security configurations in Amazon EMR on
+     * EKS are templates for different security setups. You can use security configurations to configure the Lake
+     * Formation integration setup. You can also create a security configuration to re-use a security setup each time
+     * you create a virtual cluster.
+     * </p>
+     * 
+     * @param describeSecurityConfigurationRequest
+     * @return A Java Future containing the result of the DescribeSecurityConfiguration operation returned by the
+     *         service.
+     * @sample AmazonEMRContainersAsync.DescribeSecurityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeSecurityConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeSecurityConfigurationResult> describeSecurityConfigurationAsync(
+            DescribeSecurityConfigurationRequest describeSecurityConfigurationRequest);
+
+    /**
+     * <p>
+     * Displays detailed information about a specified security configuration. Security configurations in Amazon EMR on
+     * EKS are templates for different security setups. You can use security configurations to configure the Lake
+     * Formation integration setup. You can also create a security configuration to re-use a security setup each time
+     * you create a virtual cluster.
+     * </p>
+     * 
+     * @param describeSecurityConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeSecurityConfiguration operation returned by the
+     *         service.
+     * @sample AmazonEMRContainersAsyncHandler.DescribeSecurityConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeSecurityConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeSecurityConfigurationResult> describeSecurityConfigurationAsync(
+            DescribeSecurityConfigurationRequest describeSecurityConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeSecurityConfigurationRequest, DescribeSecurityConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -342,6 +525,43 @@ public interface AmazonEMRContainersAsync extends AmazonEMRContainers {
 
     /**
      * <p>
+     * Generate a session token to connect to a managed endpoint.
+     * </p>
+     * 
+     * @param getManagedEndpointSessionCredentialsRequest
+     * @return A Java Future containing the result of the GetManagedEndpointSessionCredentials operation returned by the
+     *         service.
+     * @sample AmazonEMRContainersAsync.GetManagedEndpointSessionCredentials
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/GetManagedEndpointSessionCredentials"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetManagedEndpointSessionCredentialsResult> getManagedEndpointSessionCredentialsAsync(
+            GetManagedEndpointSessionCredentialsRequest getManagedEndpointSessionCredentialsRequest);
+
+    /**
+     * <p>
+     * Generate a session token to connect to a managed endpoint.
+     * </p>
+     * 
+     * @param getManagedEndpointSessionCredentialsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetManagedEndpointSessionCredentials operation returned by the
+     *         service.
+     * @sample AmazonEMRContainersAsyncHandler.GetManagedEndpointSessionCredentials
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/GetManagedEndpointSessionCredentials"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetManagedEndpointSessionCredentialsResult> getManagedEndpointSessionCredentialsAsync(
+            GetManagedEndpointSessionCredentialsRequest getManagedEndpointSessionCredentialsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetManagedEndpointSessionCredentialsRequest, GetManagedEndpointSessionCredentialsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists job runs based on a set of parameters. A job run is a unit of work, such as a Spark jar, PySpark script, or
      * SparkSQL query, that you submit to Amazon EMR on EKS.
      * </p>
@@ -375,8 +595,43 @@ public interface AmazonEMRContainersAsync extends AmazonEMRContainers {
 
     /**
      * <p>
-     * Lists managed endpoints based on a set of parameters. A managed endpoint is a gateway that connects EMR Studio to
-     * Amazon EMR on EKS so that EMR Studio can communicate with your virtual cluster.
+     * Lists job templates based on a set of parameters. Job template stores values of StartJobRun API request in a
+     * template and can be used to start a job run. Job template allows two use cases: avoid repeating recurring
+     * StartJobRun API request values, enforcing certain values in StartJobRun API request.
+     * </p>
+     * 
+     * @param listJobTemplatesRequest
+     * @return A Java Future containing the result of the ListJobTemplates operation returned by the service.
+     * @sample AmazonEMRContainersAsync.ListJobTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListJobTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListJobTemplatesResult> listJobTemplatesAsync(ListJobTemplatesRequest listJobTemplatesRequest);
+
+    /**
+     * <p>
+     * Lists job templates based on a set of parameters. Job template stores values of StartJobRun API request in a
+     * template and can be used to start a job run. Job template allows two use cases: avoid repeating recurring
+     * StartJobRun API request values, enforcing certain values in StartJobRun API request.
+     * </p>
+     * 
+     * @param listJobTemplatesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListJobTemplates operation returned by the service.
+     * @sample AmazonEMRContainersAsyncHandler.ListJobTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListJobTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListJobTemplatesResult> listJobTemplatesAsync(ListJobTemplatesRequest listJobTemplatesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListJobTemplatesRequest, ListJobTemplatesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists managed endpoints based on a set of parameters. A managed endpoint is a gateway that connects Amazon EMR
+     * Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual cluster.
      * </p>
      * 
      * @param listManagedEndpointsRequest
@@ -389,8 +644,8 @@ public interface AmazonEMRContainersAsync extends AmazonEMRContainers {
 
     /**
      * <p>
-     * Lists managed endpoints based on a set of parameters. A managed endpoint is a gateway that connects EMR Studio to
-     * Amazon EMR on EKS so that EMR Studio can communicate with your virtual cluster.
+     * Lists managed endpoints based on a set of parameters. A managed endpoint is a gateway that connects Amazon EMR
+     * Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual cluster.
      * </p>
      * 
      * @param listManagedEndpointsRequest
@@ -405,6 +660,45 @@ public interface AmazonEMRContainersAsync extends AmazonEMRContainers {
      */
     java.util.concurrent.Future<ListManagedEndpointsResult> listManagedEndpointsAsync(ListManagedEndpointsRequest listManagedEndpointsRequest,
             com.amazonaws.handlers.AsyncHandler<ListManagedEndpointsRequest, ListManagedEndpointsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists security configurations based on a set of parameters. Security configurations in Amazon EMR on EKS are
+     * templates for different security setups. You can use security configurations to configure the Lake Formation
+     * integration setup. You can also create a security configuration to re-use a security setup each time you create a
+     * virtual cluster.
+     * </p>
+     * 
+     * @param listSecurityConfigurationsRequest
+     * @return A Java Future containing the result of the ListSecurityConfigurations operation returned by the service.
+     * @sample AmazonEMRContainersAsync.ListSecurityConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListSecurityConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSecurityConfigurationsResult> listSecurityConfigurationsAsync(
+            ListSecurityConfigurationsRequest listSecurityConfigurationsRequest);
+
+    /**
+     * <p>
+     * Lists security configurations based on a set of parameters. Security configurations in Amazon EMR on EKS are
+     * templates for different security setups. You can use security configurations to configure the Lake Formation
+     * integration setup. You can also create a security configuration to re-use a security setup each time you create a
+     * virtual cluster.
+     * </p>
+     * 
+     * @param listSecurityConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSecurityConfigurations operation returned by the service.
+     * @sample AmazonEMRContainersAsyncHandler.ListSecurityConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListSecurityConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSecurityConfigurationsResult> listSecurityConfigurationsAsync(
+            ListSecurityConfigurationsRequest listSecurityConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSecurityConfigurationsRequest, ListSecurityConfigurationsResult> asyncHandler);
 
     /**
      * <p>
@@ -509,13 +803,13 @@ public interface AmazonEMRContainersAsync extends AmazonEMRContainers {
 
     /**
      * <p>
-     * Assigns tags to resources. A tag is a label that you assign to an AWS resource. Each tag consists of a key and an
-     * optional value, both of which you define. Tags enable you to categorize your AWS resources by attributes such as
-     * purpose, owner, or environment. When you have many resources of the same type, you can quickly identify a
-     * specific resource based on the tags you've assigned to it. For example, you can define a set of tags for your
-     * Amazon EMR on EKS clusters to help you track each cluster's owner and stack level. We recommend that you devise a
-     * consistent set of tag keys for each resource type. You can then search and filter the resources based on the tags
-     * that you add.
+     * Assigns tags to resources. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists
+     * of a key and an optional value, both of which you define. Tags enable you to categorize your Amazon Web Services
+     * resources by attributes such as purpose, owner, or environment. When you have many resources of the same type,
+     * you can quickly identify a specific resource based on the tags you've assigned to it. For example, you can define
+     * a set of tags for your Amazon EMR on EKS clusters to help you track each cluster's owner and stack level. We
+     * recommend that you devise a consistent set of tag keys for each resource type. You can then search and filter the
+     * resources based on the tags that you add.
      * </p>
      * 
      * @param tagResourceRequest
@@ -528,13 +822,13 @@ public interface AmazonEMRContainersAsync extends AmazonEMRContainers {
 
     /**
      * <p>
-     * Assigns tags to resources. A tag is a label that you assign to an AWS resource. Each tag consists of a key and an
-     * optional value, both of which you define. Tags enable you to categorize your AWS resources by attributes such as
-     * purpose, owner, or environment. When you have many resources of the same type, you can quickly identify a
-     * specific resource based on the tags you've assigned to it. For example, you can define a set of tags for your
-     * Amazon EMR on EKS clusters to help you track each cluster's owner and stack level. We recommend that you devise a
-     * consistent set of tag keys for each resource type. You can then search and filter the resources based on the tags
-     * that you add.
+     * Assigns tags to resources. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists
+     * of a key and an optional value, both of which you define. Tags enable you to categorize your Amazon Web Services
+     * resources by attributes such as purpose, owner, or environment. When you have many resources of the same type,
+     * you can quickly identify a specific resource based on the tags you've assigned to it. For example, you can define
+     * a set of tags for your Amazon EMR on EKS clusters to help you track each cluster's owner and stack level. We
+     * recommend that you devise a consistent set of tag keys for each resource type. You can then search and filter the
+     * resources based on the tags that you add.
      * </p>
      * 
      * @param tagResourceRequest

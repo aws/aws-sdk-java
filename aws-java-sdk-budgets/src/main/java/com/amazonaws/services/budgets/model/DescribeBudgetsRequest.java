@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,13 +27,13 @@ public class DescribeBudgetsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The <code>accountId</code> that is associated with the budgets that you want descriptions of.
+     * The <code>accountId</code> that is associated with the budgets that you want to describe.
      * </p>
      */
     private String accountId;
     /**
      * <p>
-     * An optional integer that represents how many entries a paginated response contains. The maximum is 100.
+     * An integer that represents how many budgets a paginated response contains. The default is 100.
      * </p>
      */
     private Integer maxResults;
@@ -47,11 +47,11 @@ public class DescribeBudgetsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The <code>accountId</code> that is associated with the budgets that you want descriptions of.
+     * The <code>accountId</code> that is associated with the budgets that you want to describe.
      * </p>
      * 
      * @param accountId
-     *        The <code>accountId</code> that is associated with the budgets that you want descriptions of.
+     *        The <code>accountId</code> that is associated with the budgets that you want to describe.
      */
 
     public void setAccountId(String accountId) {
@@ -60,10 +60,10 @@ public class DescribeBudgetsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The <code>accountId</code> that is associated with the budgets that you want descriptions of.
+     * The <code>accountId</code> that is associated with the budgets that you want to describe.
      * </p>
      * 
-     * @return The <code>accountId</code> that is associated with the budgets that you want descriptions of.
+     * @return The <code>accountId</code> that is associated with the budgets that you want to describe.
      */
 
     public String getAccountId() {
@@ -72,11 +72,11 @@ public class DescribeBudgetsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The <code>accountId</code> that is associated with the budgets that you want descriptions of.
+     * The <code>accountId</code> that is associated with the budgets that you want to describe.
      * </p>
      * 
      * @param accountId
-     *        The <code>accountId</code> that is associated with the budgets that you want descriptions of.
+     *        The <code>accountId</code> that is associated with the budgets that you want to describe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class DescribeBudgetsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * An optional integer that represents how many entries a paginated response contains. The maximum is 100.
+     * An integer that represents how many budgets a paginated response contains. The default is 100.
      * </p>
      * 
      * @param maxResults
-     *        An optional integer that represents how many entries a paginated response contains. The maximum is 100.
+     *        An integer that represents how many budgets a paginated response contains. The default is 100.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -100,10 +100,10 @@ public class DescribeBudgetsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * An optional integer that represents how many entries a paginated response contains. The maximum is 100.
+     * An integer that represents how many budgets a paginated response contains. The default is 100.
      * </p>
      * 
-     * @return An optional integer that represents how many entries a paginated response contains. The maximum is 100.
+     * @return An integer that represents how many budgets a paginated response contains. The default is 100.
      */
 
     public Integer getMaxResults() {
@@ -112,11 +112,11 @@ public class DescribeBudgetsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * An optional integer that represents how many entries a paginated response contains. The maximum is 100.
+     * An integer that represents how many budgets a paginated response contains. The default is 100.
      * </p>
      * 
      * @param maxResults
-     *        An optional integer that represents how many entries a paginated response contains. The maximum is 100.
+     *        An integer that represents how many budgets a paginated response contains. The default is 100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

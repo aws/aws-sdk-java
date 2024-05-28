@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package com.amazonaws.auth;
 import java.util.LinkedList;
 import java.util.List;
 
+import com.amazonaws.internal.ExceptionUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -125,8 +126,13 @@ public class AWSCredentialsProviderChain implements AWSCredentialsProvider {
                 }
             } catch (Exception e) {
                 // Ignore any exceptions and move onto the next provider
-                String message = provider + ": " + e.getMessage();
-                log.debug("Unable to load credentials from " + message);
+                String message;
+                if (log.isDebugEnabled()) {
+                    message = provider + ": " + ExceptionUtils.exceptionStackTrace(e);
+                    log.debug("Unable to load credentials from " + message);
+                } else {
+                    message = provider + ": " + e.getMessage();
+                }
                 if (exceptionMessages == null) {
                     exceptionMessages = new LinkedList<String>();
                 }

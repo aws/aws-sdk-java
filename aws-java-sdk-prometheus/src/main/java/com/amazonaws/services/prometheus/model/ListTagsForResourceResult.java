@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,10 +23,19 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The list of tag keys and values associated with the resource.
+     * </p>
+     */
     private java.util.Map<String, String> tags;
 
     /**
-     * @return
+     * <p>
+     * The list of tag keys and values associated with the resource.
+     * </p>
+     * 
+     * @return The list of tag keys and values associated with the resource.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -34,7 +43,12 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * The list of tag keys and values associated with the resource.
+     * </p>
+     * 
      * @param tags
+     *        The list of tag keys and values associated with the resource.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -42,7 +56,12 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * The list of tag keys and values associated with the resource.
+     * </p>
+     * 
      * @param tags
+     *        The list of tag keys and values associated with the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

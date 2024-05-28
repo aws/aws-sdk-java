@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,6 +72,12 @@ public class DeletePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * For security group common policies, even if set to <code>False</code>, Firewall Manager deletes all security
+     * groups created by Firewall Manager that aren't associated with any other resources through another policy.
+     * </p>
+     * </note>
      * <p>
      * After the cleanup, in-scope resources are no longer protected by web ACLs in this policy. Protection of
      * out-of-scope resources remains unchanged. Scope is determined by tags that you create and accounts that you
@@ -168,6 +174,12 @@ public class DeletePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * For security group common policies, even if set to <code>False</code>, Firewall Manager deletes all security
+     * groups created by Firewall Manager that aren't associated with any other resources through another policy.
+     * </p>
+     * </note>
      * <p>
      * After the cleanup, in-scope resources are no longer protected by web ACLs in this policy. Protection of
      * out-of-scope resources remains unchanged. Scope is determined by tags that you create and accounts that you
@@ -214,6 +226,13 @@ public class DeletePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </p>
      *        </li>
      *        </ul>
+     *        <note>
+     *        <p>
+     *        For security group common policies, even if set to <code>False</code>, Firewall Manager deletes all
+     *        security groups created by Firewall Manager that aren't associated with any other resources through
+     *        another policy.
+     *        </p>
+     *        </note>
      *        <p>
      *        After the cleanup, in-scope resources are no longer protected by web ACLs in this policy. Protection of
      *        out-of-scope resources remains unchanged. Scope is determined by tags that you create and accounts that
@@ -266,6 +285,12 @@ public class DeletePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * For security group common policies, even if set to <code>False</code>, Firewall Manager deletes all security
+     * groups created by Firewall Manager that aren't associated with any other resources through another policy.
+     * </p>
+     * </note>
      * <p>
      * After the cleanup, in-scope resources are no longer protected by web ACLs in this policy. Protection of
      * out-of-scope resources remains unchanged. Scope is determined by tags that you create and accounts that you
@@ -311,6 +336,13 @@ public class DeletePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </p>
      *         </li>
      *         </ul>
+     *         <note>
+     *         <p>
+     *         For security group common policies, even if set to <code>False</code>, Firewall Manager deletes all
+     *         security groups created by Firewall Manager that aren't associated with any other resources through
+     *         another policy.
+     *         </p>
+     *         </note>
      *         <p>
      *         After the cleanup, in-scope resources are no longer protected by web ACLs in this policy. Protection of
      *         out-of-scope resources remains unchanged. Scope is determined by tags that you create and accounts that
@@ -364,6 +396,12 @@ public class DeletePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * For security group common policies, even if set to <code>False</code>, Firewall Manager deletes all security
+     * groups created by Firewall Manager that aren't associated with any other resources through another policy.
+     * </p>
+     * </note>
      * <p>
      * After the cleanup, in-scope resources are no longer protected by web ACLs in this policy. Protection of
      * out-of-scope resources remains unchanged. Scope is determined by tags that you create and accounts that you
@@ -410,6 +448,13 @@ public class DeletePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </p>
      *        </li>
      *        </ul>
+     *        <note>
+     *        <p>
+     *        For security group common policies, even if set to <code>False</code>, Firewall Manager deletes all
+     *        security groups created by Firewall Manager that aren't associated with any other resources through
+     *        another policy.
+     *        </p>
+     *        </note>
      *        <p>
      *        After the cleanup, in-scope resources are no longer protected by web ACLs in this policy. Protection of
      *        out-of-scope resources remains unchanged. Scope is determined by tags that you create and accounts that
@@ -464,6 +509,12 @@ public class DeletePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * For security group common policies, even if set to <code>False</code>, Firewall Manager deletes all security
+     * groups created by Firewall Manager that aren't associated with any other resources through another policy.
+     * </p>
+     * </note>
      * <p>
      * After the cleanup, in-scope resources are no longer protected by web ACLs in this policy. Protection of
      * out-of-scope resources remains unchanged. Scope is determined by tags that you create and accounts that you
@@ -509,6 +560,13 @@ public class DeletePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </p>
      *         </li>
      *         </ul>
+     *         <note>
+     *         <p>
+     *         For security group common policies, even if set to <code>False</code>, Firewall Manager deletes all
+     *         security groups created by Firewall Manager that aren't associated with any other resources through
+     *         another policy.
+     *         </p>
+     *         </note>
      *         <p>
      *         After the cleanup, in-scope resources are no longer protected by web ACLs in this policy. Protection of
      *         out-of-scope resources remains unchanged. Scope is determined by tags that you create and accounts that

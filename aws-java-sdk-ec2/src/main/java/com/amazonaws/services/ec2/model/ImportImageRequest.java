@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -93,9 +93,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * </li>
      * <li>
      * <p>
-     * Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the key, the
-     * Amazon Web Services account ID of the key owner, the <code>alias</code> namespace, and then the key alias. For
-     * example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     * Key alias
      * </p>
      * </li>
      * <li>
@@ -145,7 +143,8 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
     private String licenseType;
     /**
      * <p>
-     * The operating system of the virtual machine.
+     * The operating system of the virtual machine. If you import a VM that is compatible with Unified Extensible
+     * Firmware Interface (UEFI) using an EBS snapshot, you must specify a value for the platform.
      * </p>
      * <p>
      * Valid values: <code>Windows</code> | <code>Linux</code>
@@ -182,6 +181,13 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * The boot mode of the virtual machine.
      * </p>
+     * <note>
+     * <p>
+     * The <code>uefi-preferred</code> boot mode isn't supported for importing images. For more information, see <a
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/prerequisites.html#vmimport-boot-modes">Boot
+     * modes</a> in the <i>VM Import/Export User Guide</i>.
+     * </p>
+     * </note>
      */
     private String bootMode;
 
@@ -581,9 +587,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * </li>
      * <li>
      * <p>
-     * Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the key, the
-     * Amazon Web Services account ID of the key owner, the <code>alias</code> namespace, and then the key alias. For
-     * example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     * Key alias
      * </p>
      * </li>
      * <li>
@@ -628,9 +632,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      *        </li>
      *        <li>
      *        <p>
-     *        Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
-     *        key, the Amazon Web Services account ID of the key owner, the <code>alias</code> namespace, and then the
-     *        key alias. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     *        Key alias
      *        </p>
      *        </li>
      *        <li>
@@ -683,9 +685,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * </li>
      * <li>
      * <p>
-     * Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the key, the
-     * Amazon Web Services account ID of the key owner, the <code>alias</code> namespace, and then the key alias. For
-     * example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     * Key alias
      * </p>
      * </li>
      * <li>
@@ -729,9 +729,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      *         </li>
      *         <li>
      *         <p>
-     *         Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
-     *         key, the Amazon Web Services account ID of the key owner, the <code>alias</code> namespace, and then the
-     *         key alias. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     *         Key alias
      *         </p>
      *         </li>
      *         <li>
@@ -784,9 +782,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * </li>
      * <li>
      * <p>
-     * Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the key, the
-     * Amazon Web Services account ID of the key owner, the <code>alias</code> namespace, and then the key alias. For
-     * example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     * Key alias
      * </p>
      * </li>
      * <li>
@@ -831,9 +827,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      *        </li>
      *        <li>
      *        <p>
-     *        Key alias. The alias ARN contains the <code>arn:aws:kms</code> namespace, followed by the Region of the
-     *        key, the Amazon Web Services account ID of the key owner, the <code>alias</code> namespace, and then the
-     *        key alias. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     *        Key alias
      *        </p>
      *        </li>
      *        <li>
@@ -985,14 +979,16 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The operating system of the virtual machine.
+     * The operating system of the virtual machine. If you import a VM that is compatible with Unified Extensible
+     * Firmware Interface (UEFI) using an EBS snapshot, you must specify a value for the platform.
      * </p>
      * <p>
      * Valid values: <code>Windows</code> | <code>Linux</code>
      * </p>
      * 
      * @param platform
-     *        The operating system of the virtual machine.</p>
+     *        The operating system of the virtual machine. If you import a VM that is compatible with Unified Extensible
+     *        Firmware Interface (UEFI) using an EBS snapshot, you must specify a value for the platform.</p>
      *        <p>
      *        Valid values: <code>Windows</code> | <code>Linux</code>
      */
@@ -1003,13 +999,16 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The operating system of the virtual machine.
+     * The operating system of the virtual machine. If you import a VM that is compatible with Unified Extensible
+     * Firmware Interface (UEFI) using an EBS snapshot, you must specify a value for the platform.
      * </p>
      * <p>
      * Valid values: <code>Windows</code> | <code>Linux</code>
      * </p>
      * 
-     * @return The operating system of the virtual machine.</p>
+     * @return The operating system of the virtual machine. If you import a VM that is compatible with Unified
+     *         Extensible Firmware Interface (UEFI) using an EBS snapshot, you must specify a value for the
+     *         platform.</p>
      *         <p>
      *         Valid values: <code>Windows</code> | <code>Linux</code>
      */
@@ -1020,14 +1019,16 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The operating system of the virtual machine.
+     * The operating system of the virtual machine. If you import a VM that is compatible with Unified Extensible
+     * Firmware Interface (UEFI) using an EBS snapshot, you must specify a value for the platform.
      * </p>
      * <p>
      * Valid values: <code>Windows</code> | <code>Linux</code>
      * </p>
      * 
      * @param platform
-     *        The operating system of the virtual machine.</p>
+     *        The operating system of the virtual machine. If you import a VM that is compatible with Unified Extensible
+     *        Firmware Interface (UEFI) using an EBS snapshot, you must specify a value for the platform.</p>
      *        <p>
      *        Valid values: <code>Windows</code> | <code>Linux</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1280,9 +1281,21 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * The boot mode of the virtual machine.
      * </p>
+     * <note>
+     * <p>
+     * The <code>uefi-preferred</code> boot mode isn't supported for importing images. For more information, see <a
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/prerequisites.html#vmimport-boot-modes">Boot
+     * modes</a> in the <i>VM Import/Export User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param bootMode
-     *        The boot mode of the virtual machine.
+     *        The boot mode of the virtual machine.</p> <note>
+     *        <p>
+     *        The <code>uefi-preferred</code> boot mode isn't supported for importing images. For more information, see
+     *        <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/prerequisites.html#vmimport-boot-modes">
+     *        Boot modes</a> in the <i>VM Import/Export User Guide</i>.
+     *        </p>
      * @see BootModeValues
      */
 
@@ -1294,8 +1307,20 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * The boot mode of the virtual machine.
      * </p>
+     * <note>
+     * <p>
+     * The <code>uefi-preferred</code> boot mode isn't supported for importing images. For more information, see <a
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/prerequisites.html#vmimport-boot-modes">Boot
+     * modes</a> in the <i>VM Import/Export User Guide</i>.
+     * </p>
+     * </note>
      * 
-     * @return The boot mode of the virtual machine.
+     * @return The boot mode of the virtual machine.</p> <note>
+     *         <p>
+     *         The <code>uefi-preferred</code> boot mode isn't supported for importing images. For more information, see
+     *         <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/prerequisites.html#vmimport-boot-modes">
+     *         Boot modes</a> in the <i>VM Import/Export User Guide</i>.
+     *         </p>
      * @see BootModeValues
      */
 
@@ -1307,9 +1332,21 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * The boot mode of the virtual machine.
      * </p>
+     * <note>
+     * <p>
+     * The <code>uefi-preferred</code> boot mode isn't supported for importing images. For more information, see <a
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/prerequisites.html#vmimport-boot-modes">Boot
+     * modes</a> in the <i>VM Import/Export User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param bootMode
-     *        The boot mode of the virtual machine.
+     *        The boot mode of the virtual machine.</p> <note>
+     *        <p>
+     *        The <code>uefi-preferred</code> boot mode isn't supported for importing images. For more information, see
+     *        <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/prerequisites.html#vmimport-boot-modes">
+     *        Boot modes</a> in the <i>VM Import/Export User Guide</i>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BootModeValues
      */
@@ -1323,9 +1360,21 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * The boot mode of the virtual machine.
      * </p>
+     * <note>
+     * <p>
+     * The <code>uefi-preferred</code> boot mode isn't supported for importing images. For more information, see <a
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/prerequisites.html#vmimport-boot-modes">Boot
+     * modes</a> in the <i>VM Import/Export User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param bootMode
-     *        The boot mode of the virtual machine.
+     *        The boot mode of the virtual machine.</p> <note>
+     *        <p>
+     *        The <code>uefi-preferred</code> boot mode isn't supported for importing images. For more information, see
+     *        <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/prerequisites.html#vmimport-boot-modes">
+     *        Boot modes</a> in the <i>VM Import/Export User Guide</i>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BootModeValues
      */

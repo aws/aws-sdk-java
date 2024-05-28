@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,6 +60,41 @@ import com.amazonaws.services.appstream.model.*;
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonAppStreamAsync extends AmazonAppStream {
+
+    /**
+     * <p>
+     * Associates the specified app block builder with the specified app block.
+     * </p>
+     * 
+     * @param associateAppBlockBuilderAppBlockRequest
+     * @return A Java Future containing the result of the AssociateAppBlockBuilderAppBlock operation returned by the
+     *         service.
+     * @sample AmazonAppStreamAsync.AssociateAppBlockBuilderAppBlock
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateAppBlockBuilderAppBlock"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateAppBlockBuilderAppBlockResult> associateAppBlockBuilderAppBlockAsync(
+            AssociateAppBlockBuilderAppBlockRequest associateAppBlockBuilderAppBlockRequest);
+
+    /**
+     * <p>
+     * Associates the specified app block builder with the specified app block.
+     * </p>
+     * 
+     * @param associateAppBlockBuilderAppBlockRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateAppBlockBuilderAppBlock operation returned by the
+     *         service.
+     * @sample AmazonAppStreamAsyncHandler.AssociateAppBlockBuilderAppBlock
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateAppBlockBuilderAppBlock"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateAppBlockBuilderAppBlockResult> associateAppBlockBuilderAppBlockAsync(
+            AssociateAppBlockBuilderAppBlockRequest associateAppBlockBuilderAppBlockRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateAppBlockBuilderAppBlockRequest, AssociateAppBlockBuilderAppBlockResult> asyncHandler);
 
     /**
      * <p>
@@ -307,6 +342,72 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      */
     java.util.concurrent.Future<CreateAppBlockResult> createAppBlockAsync(CreateAppBlockRequest createAppBlockRequest,
             com.amazonaws.handlers.AsyncHandler<CreateAppBlockRequest, CreateAppBlockResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an app block builder.
+     * </p>
+     * 
+     * @param createAppBlockBuilderRequest
+     * @return A Java Future containing the result of the CreateAppBlockBuilder operation returned by the service.
+     * @sample AmazonAppStreamAsync.CreateAppBlockBuilder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateAppBlockBuilder"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAppBlockBuilderResult> createAppBlockBuilderAsync(CreateAppBlockBuilderRequest createAppBlockBuilderRequest);
+
+    /**
+     * <p>
+     * Creates an app block builder.
+     * </p>
+     * 
+     * @param createAppBlockBuilderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAppBlockBuilder operation returned by the service.
+     * @sample AmazonAppStreamAsyncHandler.CreateAppBlockBuilder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateAppBlockBuilder"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAppBlockBuilderResult> createAppBlockBuilderAsync(CreateAppBlockBuilderRequest createAppBlockBuilderRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAppBlockBuilderRequest, CreateAppBlockBuilderResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a URL to start a create app block builder streaming session.
+     * </p>
+     * 
+     * @param createAppBlockBuilderStreamingURLRequest
+     * @return A Java Future containing the result of the CreateAppBlockBuilderStreamingURL operation returned by the
+     *         service.
+     * @sample AmazonAppStreamAsync.CreateAppBlockBuilderStreamingURL
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateAppBlockBuilderStreamingURL"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAppBlockBuilderStreamingURLResult> createAppBlockBuilderStreamingURLAsync(
+            CreateAppBlockBuilderStreamingURLRequest createAppBlockBuilderStreamingURLRequest);
+
+    /**
+     * <p>
+     * Creates a URL to start a create app block builder streaming session.
+     * </p>
+     * 
+     * @param createAppBlockBuilderStreamingURLRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAppBlockBuilderStreamingURL operation returned by the
+     *         service.
+     * @sample AmazonAppStreamAsyncHandler.CreateAppBlockBuilderStreamingURL
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateAppBlockBuilderStreamingURL"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAppBlockBuilderStreamingURLResult> createAppBlockBuilderStreamingURLAsync(
+            CreateAppBlockBuilderStreamingURLRequest createAppBlockBuilderStreamingURLRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAppBlockBuilderStreamingURLRequest, CreateAppBlockBuilderStreamingURLResult> asyncHandler);
 
     /**
      * <p>
@@ -740,6 +841,43 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
 
     /**
      * <p>
+     * Deletes an app block builder.
+     * </p>
+     * <p>
+     * An app block builder can only be deleted when it has no association with an app block.
+     * </p>
+     * 
+     * @param deleteAppBlockBuilderRequest
+     * @return A Java Future containing the result of the DeleteAppBlockBuilder operation returned by the service.
+     * @sample AmazonAppStreamAsync.DeleteAppBlockBuilder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteAppBlockBuilder"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAppBlockBuilderResult> deleteAppBlockBuilderAsync(DeleteAppBlockBuilderRequest deleteAppBlockBuilderRequest);
+
+    /**
+     * <p>
+     * Deletes an app block builder.
+     * </p>
+     * <p>
+     * An app block builder can only be deleted when it has no association with an app block.
+     * </p>
+     * 
+     * @param deleteAppBlockBuilderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAppBlockBuilder operation returned by the service.
+     * @sample AmazonAppStreamAsyncHandler.DeleteAppBlockBuilder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteAppBlockBuilder"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAppBlockBuilderResult> deleteAppBlockBuilderAsync(DeleteAppBlockBuilderRequest deleteAppBlockBuilderRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAppBlockBuilderRequest, DeleteAppBlockBuilderResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes an application.
      * </p>
      * 
@@ -1061,6 +1199,74 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      */
     java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(DeleteUserRequest deleteUserRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteUserRequest, DeleteUserResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a list that describes one or more app block builder associations.
+     * </p>
+     * 
+     * @param describeAppBlockBuilderAppBlockAssociationsRequest
+     * @return A Java Future containing the result of the DescribeAppBlockBuilderAppBlockAssociations operation returned
+     *         by the service.
+     * @sample AmazonAppStreamAsync.DescribeAppBlockBuilderAppBlockAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppBlockBuilderAppBlockAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAppBlockBuilderAppBlockAssociationsResult> describeAppBlockBuilderAppBlockAssociationsAsync(
+            DescribeAppBlockBuilderAppBlockAssociationsRequest describeAppBlockBuilderAppBlockAssociationsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list that describes one or more app block builder associations.
+     * </p>
+     * 
+     * @param describeAppBlockBuilderAppBlockAssociationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAppBlockBuilderAppBlockAssociations operation returned
+     *         by the service.
+     * @sample AmazonAppStreamAsyncHandler.DescribeAppBlockBuilderAppBlockAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppBlockBuilderAppBlockAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAppBlockBuilderAppBlockAssociationsResult> describeAppBlockBuilderAppBlockAssociationsAsync(
+            DescribeAppBlockBuilderAppBlockAssociationsRequest describeAppBlockBuilderAppBlockAssociationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAppBlockBuilderAppBlockAssociationsRequest, DescribeAppBlockBuilderAppBlockAssociationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a list that describes one or more app block builders.
+     * </p>
+     * 
+     * @param describeAppBlockBuildersRequest
+     * @return A Java Future containing the result of the DescribeAppBlockBuilders operation returned by the service.
+     * @sample AmazonAppStreamAsync.DescribeAppBlockBuilders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppBlockBuilders"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAppBlockBuildersResult> describeAppBlockBuildersAsync(DescribeAppBlockBuildersRequest describeAppBlockBuildersRequest);
+
+    /**
+     * <p>
+     * Retrieves a list that describes one or more app block builders.
+     * </p>
+     * 
+     * @param describeAppBlockBuildersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAppBlockBuilders operation returned by the service.
+     * @sample AmazonAppStreamAsyncHandler.DescribeAppBlockBuilders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppBlockBuilders"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAppBlockBuildersResult> describeAppBlockBuildersAsync(DescribeAppBlockBuildersRequest describeAppBlockBuildersRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAppBlockBuildersRequest, DescribeAppBlockBuildersResult> asyncHandler);
 
     /**
      * <p>
@@ -1597,6 +1803,41 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
 
     /**
      * <p>
+     * Disassociates a specified app block builder from a specified app block.
+     * </p>
+     * 
+     * @param disassociateAppBlockBuilderAppBlockRequest
+     * @return A Java Future containing the result of the DisassociateAppBlockBuilderAppBlock operation returned by the
+     *         service.
+     * @sample AmazonAppStreamAsync.DisassociateAppBlockBuilderAppBlock
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateAppBlockBuilderAppBlock"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateAppBlockBuilderAppBlockResult> disassociateAppBlockBuilderAppBlockAsync(
+            DisassociateAppBlockBuilderAppBlockRequest disassociateAppBlockBuilderAppBlockRequest);
+
+    /**
+     * <p>
+     * Disassociates a specified app block builder from a specified app block.
+     * </p>
+     * 
+     * @param disassociateAppBlockBuilderAppBlockRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateAppBlockBuilderAppBlock operation returned by the
+     *         service.
+     * @sample AmazonAppStreamAsyncHandler.DisassociateAppBlockBuilderAppBlock
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateAppBlockBuilderAppBlock"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateAppBlockBuilderAppBlockResult> disassociateAppBlockBuilderAppBlockAsync(
+            DisassociateAppBlockBuilderAppBlockRequest disassociateAppBlockBuilderAppBlockRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateAppBlockBuilderAppBlockRequest, DisassociateAppBlockBuilderAppBlockResult> asyncHandler);
+
+    /**
+     * <p>
      * Disassociates the specified application from the fleet.
      * </p>
      * 
@@ -1898,6 +2139,51 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
 
     /**
      * <p>
+     * Starts an app block builder.
+     * </p>
+     * <p>
+     * An app block builder can only be started when it's associated with an app block.
+     * </p>
+     * <p>
+     * Starting an app block builder starts a new instance, which is equivalent to an elastic fleet instance with
+     * application builder assistance functionality.
+     * </p>
+     * 
+     * @param startAppBlockBuilderRequest
+     * @return A Java Future containing the result of the StartAppBlockBuilder operation returned by the service.
+     * @sample AmazonAppStreamAsync.StartAppBlockBuilder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartAppBlockBuilder" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StartAppBlockBuilderResult> startAppBlockBuilderAsync(StartAppBlockBuilderRequest startAppBlockBuilderRequest);
+
+    /**
+     * <p>
+     * Starts an app block builder.
+     * </p>
+     * <p>
+     * An app block builder can only be started when it's associated with an app block.
+     * </p>
+     * <p>
+     * Starting an app block builder starts a new instance, which is equivalent to an elastic fleet instance with
+     * application builder assistance functionality.
+     * </p>
+     * 
+     * @param startAppBlockBuilderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartAppBlockBuilder operation returned by the service.
+     * @sample AmazonAppStreamAsyncHandler.StartAppBlockBuilder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartAppBlockBuilder" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StartAppBlockBuilderResult> startAppBlockBuilderAsync(StartAppBlockBuilderRequest startAppBlockBuilderRequest,
+            com.amazonaws.handlers.AsyncHandler<StartAppBlockBuilderRequest, StartAppBlockBuilderResult> asyncHandler);
+
+    /**
+     * <p>
      * Starts the specified fleet.
      * </p>
      * 
@@ -1957,6 +2243,43 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      */
     java.util.concurrent.Future<StartImageBuilderResult> startImageBuilderAsync(StartImageBuilderRequest startImageBuilderRequest,
             com.amazonaws.handlers.AsyncHandler<StartImageBuilderRequest, StartImageBuilderResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops an app block builder.
+     * </p>
+     * <p>
+     * Stopping an app block builder terminates the instance, and the instance state is not persisted.
+     * </p>
+     * 
+     * @param stopAppBlockBuilderRequest
+     * @return A Java Future containing the result of the StopAppBlockBuilder operation returned by the service.
+     * @sample AmazonAppStreamAsync.StopAppBlockBuilder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopAppBlockBuilder" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StopAppBlockBuilderResult> stopAppBlockBuilderAsync(StopAppBlockBuilderRequest stopAppBlockBuilderRequest);
+
+    /**
+     * <p>
+     * Stops an app block builder.
+     * </p>
+     * <p>
+     * Stopping an app block builder terminates the instance, and the instance state is not persisted.
+     * </p>
+     * 
+     * @param stopAppBlockBuilderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopAppBlockBuilder operation returned by the service.
+     * @sample AmazonAppStreamAsyncHandler.StopAppBlockBuilder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopAppBlockBuilder" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StopAppBlockBuilderResult> stopAppBlockBuilderAsync(StopAppBlockBuilderRequest stopAppBlockBuilderRequest,
+            com.amazonaws.handlers.AsyncHandler<StopAppBlockBuilderRequest, StopAppBlockBuilderResult> asyncHandler);
 
     /**
      * <p>
@@ -2125,6 +2448,47 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an app block builder.
+     * </p>
+     * <p>
+     * If the app block builder is in the <code>STARTING</code> or <code>STOPPING</code> state, you can't update it. If
+     * the app block builder is in the <code>RUNNING</code> state, you can only update the DisplayName and Description.
+     * If the app block builder is in the <code>STOPPED</code> state, you can update any attribute except the Name.
+     * </p>
+     * 
+     * @param updateAppBlockBuilderRequest
+     * @return A Java Future containing the result of the UpdateAppBlockBuilder operation returned by the service.
+     * @sample AmazonAppStreamAsync.UpdateAppBlockBuilder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateAppBlockBuilder"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAppBlockBuilderResult> updateAppBlockBuilderAsync(UpdateAppBlockBuilderRequest updateAppBlockBuilderRequest);
+
+    /**
+     * <p>
+     * Updates an app block builder.
+     * </p>
+     * <p>
+     * If the app block builder is in the <code>STARTING</code> or <code>STOPPING</code> state, you can't update it. If
+     * the app block builder is in the <code>RUNNING</code> state, you can only update the DisplayName and Description.
+     * If the app block builder is in the <code>STOPPED</code> state, you can update any attribute except the Name.
+     * </p>
+     * 
+     * @param updateAppBlockBuilderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAppBlockBuilder operation returned by the service.
+     * @sample AmazonAppStreamAsyncHandler.UpdateAppBlockBuilder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateAppBlockBuilder"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAppBlockBuilderResult> updateAppBlockBuilderAsync(UpdateAppBlockBuilderRequest updateAppBlockBuilderRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAppBlockBuilderRequest, UpdateAppBlockBuilderResult> asyncHandler);
 
     /**
      * <p>

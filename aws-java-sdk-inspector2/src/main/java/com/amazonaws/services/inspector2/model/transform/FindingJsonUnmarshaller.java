@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,9 +52,25 @@ public class FindingJsonUnmarshaller implements Unmarshaller<Finding, JsonUnmars
                     context.nextToken();
                     finding.setAwsAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("codeVulnerabilityDetails", targetDepth)) {
+                    context.nextToken();
+                    finding.setCodeVulnerabilityDetails(CodeVulnerabilityDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
                     finding.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("epss", targetDepth)) {
+                    context.nextToken();
+                    finding.setEpss(EpssDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("exploitAvailable", targetDepth)) {
+                    context.nextToken();
+                    finding.setExploitAvailable(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("exploitabilityDetails", targetDepth)) {
+                    context.nextToken();
+                    finding.setExploitabilityDetails(ExploitabilityDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("findingArn", targetDepth)) {
                     context.nextToken();

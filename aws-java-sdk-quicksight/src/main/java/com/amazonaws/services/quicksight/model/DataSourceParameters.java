@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -161,6 +161,30 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
      * </p>
      */
     private ExasolParameters exasolParameters;
+    /**
+     * <p>
+     * The parameters that are required to connect to a Databricks data source.
+     * </p>
+     */
+    private DatabricksParameters databricksParameters;
+    /**
+     * <p>
+     * The parameters that are required to connect to a Starburst data source.
+     * </p>
+     */
+    private StarburstParameters starburstParameters;
+    /**
+     * <p>
+     * The parameters that are required to connect to a Trino data source.
+     * </p>
+     */
+    private TrinoParameters trinoParameters;
+    /**
+     * <p>
+     * The parameters that are required to connect to a Google BigQuery data source.
+     * </p>
+     */
+    private BigQueryParameters bigQueryParameters;
 
     /**
      * <p>
@@ -1043,6 +1067,166 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The parameters that are required to connect to a Databricks data source.
+     * </p>
+     * 
+     * @param databricksParameters
+     *        The parameters that are required to connect to a Databricks data source.
+     */
+
+    public void setDatabricksParameters(DatabricksParameters databricksParameters) {
+        this.databricksParameters = databricksParameters;
+    }
+
+    /**
+     * <p>
+     * The parameters that are required to connect to a Databricks data source.
+     * </p>
+     * 
+     * @return The parameters that are required to connect to a Databricks data source.
+     */
+
+    public DatabricksParameters getDatabricksParameters() {
+        return this.databricksParameters;
+    }
+
+    /**
+     * <p>
+     * The parameters that are required to connect to a Databricks data source.
+     * </p>
+     * 
+     * @param databricksParameters
+     *        The parameters that are required to connect to a Databricks data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceParameters withDatabricksParameters(DatabricksParameters databricksParameters) {
+        setDatabricksParameters(databricksParameters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The parameters that are required to connect to a Starburst data source.
+     * </p>
+     * 
+     * @param starburstParameters
+     *        The parameters that are required to connect to a Starburst data source.
+     */
+
+    public void setStarburstParameters(StarburstParameters starburstParameters) {
+        this.starburstParameters = starburstParameters;
+    }
+
+    /**
+     * <p>
+     * The parameters that are required to connect to a Starburst data source.
+     * </p>
+     * 
+     * @return The parameters that are required to connect to a Starburst data source.
+     */
+
+    public StarburstParameters getStarburstParameters() {
+        return this.starburstParameters;
+    }
+
+    /**
+     * <p>
+     * The parameters that are required to connect to a Starburst data source.
+     * </p>
+     * 
+     * @param starburstParameters
+     *        The parameters that are required to connect to a Starburst data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceParameters withStarburstParameters(StarburstParameters starburstParameters) {
+        setStarburstParameters(starburstParameters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The parameters that are required to connect to a Trino data source.
+     * </p>
+     * 
+     * @param trinoParameters
+     *        The parameters that are required to connect to a Trino data source.
+     */
+
+    public void setTrinoParameters(TrinoParameters trinoParameters) {
+        this.trinoParameters = trinoParameters;
+    }
+
+    /**
+     * <p>
+     * The parameters that are required to connect to a Trino data source.
+     * </p>
+     * 
+     * @return The parameters that are required to connect to a Trino data source.
+     */
+
+    public TrinoParameters getTrinoParameters() {
+        return this.trinoParameters;
+    }
+
+    /**
+     * <p>
+     * The parameters that are required to connect to a Trino data source.
+     * </p>
+     * 
+     * @param trinoParameters
+     *        The parameters that are required to connect to a Trino data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceParameters withTrinoParameters(TrinoParameters trinoParameters) {
+        setTrinoParameters(trinoParameters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The parameters that are required to connect to a Google BigQuery data source.
+     * </p>
+     * 
+     * @param bigQueryParameters
+     *        The parameters that are required to connect to a Google BigQuery data source.
+     */
+
+    public void setBigQueryParameters(BigQueryParameters bigQueryParameters) {
+        this.bigQueryParameters = bigQueryParameters;
+    }
+
+    /**
+     * <p>
+     * The parameters that are required to connect to a Google BigQuery data source.
+     * </p>
+     * 
+     * @return The parameters that are required to connect to a Google BigQuery data source.
+     */
+
+    public BigQueryParameters getBigQueryParameters() {
+        return this.bigQueryParameters;
+    }
+
+    /**
+     * <p>
+     * The parameters that are required to connect to a Google BigQuery data source.
+     * </p>
+     * 
+     * @param bigQueryParameters
+     *        The parameters that are required to connect to a Google BigQuery data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceParameters withBigQueryParameters(BigQueryParameters bigQueryParameters) {
+        setBigQueryParameters(bigQueryParameters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1097,7 +1281,15 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
         if (getAmazonOpenSearchParameters() != null)
             sb.append("AmazonOpenSearchParameters: ").append(getAmazonOpenSearchParameters()).append(",");
         if (getExasolParameters() != null)
-            sb.append("ExasolParameters: ").append(getExasolParameters());
+            sb.append("ExasolParameters: ").append(getExasolParameters()).append(",");
+        if (getDatabricksParameters() != null)
+            sb.append("DatabricksParameters: ").append(getDatabricksParameters()).append(",");
+        if (getStarburstParameters() != null)
+            sb.append("StarburstParameters: ").append(getStarburstParameters()).append(",");
+        if (getTrinoParameters() != null)
+            sb.append("TrinoParameters: ").append(getTrinoParameters()).append(",");
+        if (getBigQueryParameters() != null)
+            sb.append("BigQueryParameters: ").append(getBigQueryParameters());
         sb.append("}");
         return sb.toString();
     }
@@ -1201,6 +1393,22 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
             return false;
         if (other.getExasolParameters() != null && other.getExasolParameters().equals(this.getExasolParameters()) == false)
             return false;
+        if (other.getDatabricksParameters() == null ^ this.getDatabricksParameters() == null)
+            return false;
+        if (other.getDatabricksParameters() != null && other.getDatabricksParameters().equals(this.getDatabricksParameters()) == false)
+            return false;
+        if (other.getStarburstParameters() == null ^ this.getStarburstParameters() == null)
+            return false;
+        if (other.getStarburstParameters() != null && other.getStarburstParameters().equals(this.getStarburstParameters()) == false)
+            return false;
+        if (other.getTrinoParameters() == null ^ this.getTrinoParameters() == null)
+            return false;
+        if (other.getTrinoParameters() != null && other.getTrinoParameters().equals(this.getTrinoParameters()) == false)
+            return false;
+        if (other.getBigQueryParameters() == null ^ this.getBigQueryParameters() == null)
+            return false;
+        if (other.getBigQueryParameters() != null && other.getBigQueryParameters().equals(this.getBigQueryParameters()) == false)
+            return false;
         return true;
     }
 
@@ -1231,6 +1439,10 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getTwitterParameters() == null) ? 0 : getTwitterParameters().hashCode());
         hashCode = prime * hashCode + ((getAmazonOpenSearchParameters() == null) ? 0 : getAmazonOpenSearchParameters().hashCode());
         hashCode = prime * hashCode + ((getExasolParameters() == null) ? 0 : getExasolParameters().hashCode());
+        hashCode = prime * hashCode + ((getDatabricksParameters() == null) ? 0 : getDatabricksParameters().hashCode());
+        hashCode = prime * hashCode + ((getStarburstParameters() == null) ? 0 : getStarburstParameters().hashCode());
+        hashCode = prime * hashCode + ((getTrinoParameters() == null) ? 0 : getTrinoParameters().hashCode());
+        hashCode = prime * hashCode + ((getBigQueryParameters() == null) ? 0 : getBigQueryParameters().hashCode());
         return hashCode;
     }
 

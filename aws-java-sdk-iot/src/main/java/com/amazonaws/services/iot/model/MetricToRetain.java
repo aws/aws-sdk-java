@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,12 @@ public class MetricToRetain implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private MetricDimension metricDimension;
+    /**
+     * <p>
+     * The value indicates exporting metrics related to the <code>MetricToRetain </code> when it's true.
+     * </p>
+     */
+    private Boolean exportMetric;
 
     /**
      * <p>
@@ -119,6 +125,58 @@ public class MetricToRetain implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The value indicates exporting metrics related to the <code>MetricToRetain </code> when it's true.
+     * </p>
+     * 
+     * @param exportMetric
+     *        The value indicates exporting metrics related to the <code>MetricToRetain </code> when it's true.
+     */
+
+    public void setExportMetric(Boolean exportMetric) {
+        this.exportMetric = exportMetric;
+    }
+
+    /**
+     * <p>
+     * The value indicates exporting metrics related to the <code>MetricToRetain </code> when it's true.
+     * </p>
+     * 
+     * @return The value indicates exporting metrics related to the <code>MetricToRetain </code> when it's true.
+     */
+
+    public Boolean getExportMetric() {
+        return this.exportMetric;
+    }
+
+    /**
+     * <p>
+     * The value indicates exporting metrics related to the <code>MetricToRetain </code> when it's true.
+     * </p>
+     * 
+     * @param exportMetric
+     *        The value indicates exporting metrics related to the <code>MetricToRetain </code> when it's true.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MetricToRetain withExportMetric(Boolean exportMetric) {
+        setExportMetric(exportMetric);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The value indicates exporting metrics related to the <code>MetricToRetain </code> when it's true.
+     * </p>
+     * 
+     * @return The value indicates exporting metrics related to the <code>MetricToRetain </code> when it's true.
+     */
+
+    public Boolean isExportMetric() {
+        return this.exportMetric;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,7 +191,9 @@ public class MetricToRetain implements Serializable, Cloneable, StructuredPojo {
         if (getMetric() != null)
             sb.append("Metric: ").append(getMetric()).append(",");
         if (getMetricDimension() != null)
-            sb.append("MetricDimension: ").append(getMetricDimension());
+            sb.append("MetricDimension: ").append(getMetricDimension()).append(",");
+        if (getExportMetric() != null)
+            sb.append("ExportMetric: ").append(getExportMetric());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +216,10 @@ public class MetricToRetain implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMetricDimension() != null && other.getMetricDimension().equals(this.getMetricDimension()) == false)
             return false;
+        if (other.getExportMetric() == null ^ this.getExportMetric() == null)
+            return false;
+        if (other.getExportMetric() != null && other.getExportMetric().equals(this.getExportMetric()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +230,7 @@ public class MetricToRetain implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getMetric() == null) ? 0 : getMetric().hashCode());
         hashCode = prime * hashCode + ((getMetricDimension() == null) ? 0 : getMetricDimension().hashCode());
+        hashCode = prime * hashCode + ((getExportMetric() == null) ? 0 : getExportMetric().hashCode());
         return hashCode;
     }
 

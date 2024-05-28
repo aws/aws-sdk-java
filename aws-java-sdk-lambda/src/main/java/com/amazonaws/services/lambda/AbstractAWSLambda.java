@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -199,6 +199,11 @@ public class AbstractAWSLambda implements AWSLambda {
     }
 
     @Override
+    public GetRuntimeManagementConfigResult getRuntimeManagementConfig(GetRuntimeManagementConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public InvokeResult invoke(InvokeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -306,6 +311,11 @@ public class AbstractAWSLambda implements AWSLambda {
 
     @Override
     public PutProvisionedConcurrencyConfigResult putProvisionedConcurrencyConfig(PutProvisionedConcurrencyConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutRuntimeManagementConfigResult putRuntimeManagementConfig(PutRuntimeManagementConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

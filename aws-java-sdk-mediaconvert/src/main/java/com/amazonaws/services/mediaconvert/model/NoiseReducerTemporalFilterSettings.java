@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,19 +32,17 @@ public class NoiseReducerTemporalFilterSettings implements Serializable, Cloneab
      */
     private Integer aggressiveMode;
     /**
-     * When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the bandwidth and sharpness of your output is
-     * reduced. You can optionally use Post temporal sharpening (postTemporalSharpening) to apply sharpening to the
-     * edges of your output. Note that Post temporal sharpening will also make the bandwidth reduction from the Noise
-     * reducer smaller. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply
-     * sharpening, depending on your input type and quality. When you set Post temporal sharpening to Enabled (ENABLED),
-     * specify how much sharpening is applied using Post temporal sharpening strength (postTemporalSharpeningStrength).
-     * Set Post temporal sharpening to Disabled (DISABLED) to not apply sharpening.
+     * When you set Noise reducer to Temporal, the bandwidth and sharpness of your output is reduced. You can optionally
+     * use Post temporal sharpening to apply sharpening to the edges of your output. Note that Post temporal sharpening
+     * will also make the bandwidth reduction from the Noise reducer smaller. The default behavior, Auto, allows the
+     * transcoder to determine whether to apply sharpening, depending on your input type and quality. When you set Post
+     * temporal sharpening to Enabled, specify how much sharpening is applied using Post temporal sharpening strength.
+     * Set Post temporal sharpening to Disabled to not apply sharpening.
      */
     private String postTemporalSharpening;
     /**
-     * Use Post temporal sharpening strength (postTemporalSharpeningStrength) to define the amount of sharpening the
-     * transcoder applies to your output. Set Post temporal sharpening strength to Low (LOW), Medium (MEDIUM), or High
-     * (HIGH) to indicate the amount of sharpening.
+     * Use Post temporal sharpening strength to define the amount of sharpening the transcoder applies to your output.
+     * Set Post temporal sharpening strength to Low, Medium, or High to indicate the amount of sharpening.
      */
     private String postTemporalSharpeningStrength;
     /**
@@ -104,23 +102,20 @@ public class NoiseReducerTemporalFilterSettings implements Serializable, Cloneab
     }
 
     /**
-     * When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the bandwidth and sharpness of your output is
-     * reduced. You can optionally use Post temporal sharpening (postTemporalSharpening) to apply sharpening to the
-     * edges of your output. Note that Post temporal sharpening will also make the bandwidth reduction from the Noise
-     * reducer smaller. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply
-     * sharpening, depending on your input type and quality. When you set Post temporal sharpening to Enabled (ENABLED),
-     * specify how much sharpening is applied using Post temporal sharpening strength (postTemporalSharpeningStrength).
-     * Set Post temporal sharpening to Disabled (DISABLED) to not apply sharpening.
+     * When you set Noise reducer to Temporal, the bandwidth and sharpness of your output is reduced. You can optionally
+     * use Post temporal sharpening to apply sharpening to the edges of your output. Note that Post temporal sharpening
+     * will also make the bandwidth reduction from the Noise reducer smaller. The default behavior, Auto, allows the
+     * transcoder to determine whether to apply sharpening, depending on your input type and quality. When you set Post
+     * temporal sharpening to Enabled, specify how much sharpening is applied using Post temporal sharpening strength.
+     * Set Post temporal sharpening to Disabled to not apply sharpening.
      * 
      * @param postTemporalSharpening
-     *        When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the bandwidth and sharpness of your
-     *        output is reduced. You can optionally use Post temporal sharpening (postTemporalSharpening) to apply
-     *        sharpening to the edges of your output. Note that Post temporal sharpening will also make the bandwidth
-     *        reduction from the Noise reducer smaller. The default behavior, Auto (AUTO), allows the transcoder to
-     *        determine whether to apply sharpening, depending on your input type and quality. When you set Post
-     *        temporal sharpening to Enabled (ENABLED), specify how much sharpening is applied using Post temporal
-     *        sharpening strength (postTemporalSharpeningStrength). Set Post temporal sharpening to Disabled (DISABLED)
-     *        to not apply sharpening.
+     *        When you set Noise reducer to Temporal, the bandwidth and sharpness of your output is reduced. You can
+     *        optionally use Post temporal sharpening to apply sharpening to the edges of your output. Note that Post
+     *        temporal sharpening will also make the bandwidth reduction from the Noise reducer smaller. The default
+     *        behavior, Auto, allows the transcoder to determine whether to apply sharpening, depending on your input
+     *        type and quality. When you set Post temporal sharpening to Enabled, specify how much sharpening is applied
+     *        using Post temporal sharpening strength. Set Post temporal sharpening to Disabled to not apply sharpening.
      * @see NoiseFilterPostTemporalSharpening
      */
 
@@ -129,22 +124,20 @@ public class NoiseReducerTemporalFilterSettings implements Serializable, Cloneab
     }
 
     /**
-     * When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the bandwidth and sharpness of your output is
-     * reduced. You can optionally use Post temporal sharpening (postTemporalSharpening) to apply sharpening to the
-     * edges of your output. Note that Post temporal sharpening will also make the bandwidth reduction from the Noise
-     * reducer smaller. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply
-     * sharpening, depending on your input type and quality. When you set Post temporal sharpening to Enabled (ENABLED),
-     * specify how much sharpening is applied using Post temporal sharpening strength (postTemporalSharpeningStrength).
-     * Set Post temporal sharpening to Disabled (DISABLED) to not apply sharpening.
+     * When you set Noise reducer to Temporal, the bandwidth and sharpness of your output is reduced. You can optionally
+     * use Post temporal sharpening to apply sharpening to the edges of your output. Note that Post temporal sharpening
+     * will also make the bandwidth reduction from the Noise reducer smaller. The default behavior, Auto, allows the
+     * transcoder to determine whether to apply sharpening, depending on your input type and quality. When you set Post
+     * temporal sharpening to Enabled, specify how much sharpening is applied using Post temporal sharpening strength.
+     * Set Post temporal sharpening to Disabled to not apply sharpening.
      * 
-     * @return When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the bandwidth and sharpness of your
-     *         output is reduced. You can optionally use Post temporal sharpening (postTemporalSharpening) to apply
-     *         sharpening to the edges of your output. Note that Post temporal sharpening will also make the bandwidth
-     *         reduction from the Noise reducer smaller. The default behavior, Auto (AUTO), allows the transcoder to
-     *         determine whether to apply sharpening, depending on your input type and quality. When you set Post
-     *         temporal sharpening to Enabled (ENABLED), specify how much sharpening is applied using Post temporal
-     *         sharpening strength (postTemporalSharpeningStrength). Set Post temporal sharpening to Disabled (DISABLED)
-     *         to not apply sharpening.
+     * @return When you set Noise reducer to Temporal, the bandwidth and sharpness of your output is reduced. You can
+     *         optionally use Post temporal sharpening to apply sharpening to the edges of your output. Note that Post
+     *         temporal sharpening will also make the bandwidth reduction from the Noise reducer smaller. The default
+     *         behavior, Auto, allows the transcoder to determine whether to apply sharpening, depending on your input
+     *         type and quality. When you set Post temporal sharpening to Enabled, specify how much sharpening is
+     *         applied using Post temporal sharpening strength. Set Post temporal sharpening to Disabled to not apply
+     *         sharpening.
      * @see NoiseFilterPostTemporalSharpening
      */
 
@@ -153,23 +146,20 @@ public class NoiseReducerTemporalFilterSettings implements Serializable, Cloneab
     }
 
     /**
-     * When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the bandwidth and sharpness of your output is
-     * reduced. You can optionally use Post temporal sharpening (postTemporalSharpening) to apply sharpening to the
-     * edges of your output. Note that Post temporal sharpening will also make the bandwidth reduction from the Noise
-     * reducer smaller. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply
-     * sharpening, depending on your input type and quality. When you set Post temporal sharpening to Enabled (ENABLED),
-     * specify how much sharpening is applied using Post temporal sharpening strength (postTemporalSharpeningStrength).
-     * Set Post temporal sharpening to Disabled (DISABLED) to not apply sharpening.
+     * When you set Noise reducer to Temporal, the bandwidth and sharpness of your output is reduced. You can optionally
+     * use Post temporal sharpening to apply sharpening to the edges of your output. Note that Post temporal sharpening
+     * will also make the bandwidth reduction from the Noise reducer smaller. The default behavior, Auto, allows the
+     * transcoder to determine whether to apply sharpening, depending on your input type and quality. When you set Post
+     * temporal sharpening to Enabled, specify how much sharpening is applied using Post temporal sharpening strength.
+     * Set Post temporal sharpening to Disabled to not apply sharpening.
      * 
      * @param postTemporalSharpening
-     *        When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the bandwidth and sharpness of your
-     *        output is reduced. You can optionally use Post temporal sharpening (postTemporalSharpening) to apply
-     *        sharpening to the edges of your output. Note that Post temporal sharpening will also make the bandwidth
-     *        reduction from the Noise reducer smaller. The default behavior, Auto (AUTO), allows the transcoder to
-     *        determine whether to apply sharpening, depending on your input type and quality. When you set Post
-     *        temporal sharpening to Enabled (ENABLED), specify how much sharpening is applied using Post temporal
-     *        sharpening strength (postTemporalSharpeningStrength). Set Post temporal sharpening to Disabled (DISABLED)
-     *        to not apply sharpening.
+     *        When you set Noise reducer to Temporal, the bandwidth and sharpness of your output is reduced. You can
+     *        optionally use Post temporal sharpening to apply sharpening to the edges of your output. Note that Post
+     *        temporal sharpening will also make the bandwidth reduction from the Noise reducer smaller. The default
+     *        behavior, Auto, allows the transcoder to determine whether to apply sharpening, depending on your input
+     *        type and quality. When you set Post temporal sharpening to Enabled, specify how much sharpening is applied
+     *        using Post temporal sharpening strength. Set Post temporal sharpening to Disabled to not apply sharpening.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NoiseFilterPostTemporalSharpening
      */
@@ -180,23 +170,20 @@ public class NoiseReducerTemporalFilterSettings implements Serializable, Cloneab
     }
 
     /**
-     * When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the bandwidth and sharpness of your output is
-     * reduced. You can optionally use Post temporal sharpening (postTemporalSharpening) to apply sharpening to the
-     * edges of your output. Note that Post temporal sharpening will also make the bandwidth reduction from the Noise
-     * reducer smaller. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply
-     * sharpening, depending on your input type and quality. When you set Post temporal sharpening to Enabled (ENABLED),
-     * specify how much sharpening is applied using Post temporal sharpening strength (postTemporalSharpeningStrength).
-     * Set Post temporal sharpening to Disabled (DISABLED) to not apply sharpening.
+     * When you set Noise reducer to Temporal, the bandwidth and sharpness of your output is reduced. You can optionally
+     * use Post temporal sharpening to apply sharpening to the edges of your output. Note that Post temporal sharpening
+     * will also make the bandwidth reduction from the Noise reducer smaller. The default behavior, Auto, allows the
+     * transcoder to determine whether to apply sharpening, depending on your input type and quality. When you set Post
+     * temporal sharpening to Enabled, specify how much sharpening is applied using Post temporal sharpening strength.
+     * Set Post temporal sharpening to Disabled to not apply sharpening.
      * 
      * @param postTemporalSharpening
-     *        When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the bandwidth and sharpness of your
-     *        output is reduced. You can optionally use Post temporal sharpening (postTemporalSharpening) to apply
-     *        sharpening to the edges of your output. Note that Post temporal sharpening will also make the bandwidth
-     *        reduction from the Noise reducer smaller. The default behavior, Auto (AUTO), allows the transcoder to
-     *        determine whether to apply sharpening, depending on your input type and quality. When you set Post
-     *        temporal sharpening to Enabled (ENABLED), specify how much sharpening is applied using Post temporal
-     *        sharpening strength (postTemporalSharpeningStrength). Set Post temporal sharpening to Disabled (DISABLED)
-     *        to not apply sharpening.
+     *        When you set Noise reducer to Temporal, the bandwidth and sharpness of your output is reduced. You can
+     *        optionally use Post temporal sharpening to apply sharpening to the edges of your output. Note that Post
+     *        temporal sharpening will also make the bandwidth reduction from the Noise reducer smaller. The default
+     *        behavior, Auto, allows the transcoder to determine whether to apply sharpening, depending on your input
+     *        type and quality. When you set Post temporal sharpening to Enabled, specify how much sharpening is applied
+     *        using Post temporal sharpening strength. Set Post temporal sharpening to Disabled to not apply sharpening.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NoiseFilterPostTemporalSharpening
      */
@@ -207,14 +194,13 @@ public class NoiseReducerTemporalFilterSettings implements Serializable, Cloneab
     }
 
     /**
-     * Use Post temporal sharpening strength (postTemporalSharpeningStrength) to define the amount of sharpening the
-     * transcoder applies to your output. Set Post temporal sharpening strength to Low (LOW), Medium (MEDIUM), or High
-     * (HIGH) to indicate the amount of sharpening.
+     * Use Post temporal sharpening strength to define the amount of sharpening the transcoder applies to your output.
+     * Set Post temporal sharpening strength to Low, Medium, or High to indicate the amount of sharpening.
      * 
      * @param postTemporalSharpeningStrength
-     *        Use Post temporal sharpening strength (postTemporalSharpeningStrength) to define the amount of sharpening
-     *        the transcoder applies to your output. Set Post temporal sharpening strength to Low (LOW), Medium
-     *        (MEDIUM), or High (HIGH) to indicate the amount of sharpening.
+     *        Use Post temporal sharpening strength to define the amount of sharpening the transcoder applies to your
+     *        output. Set Post temporal sharpening strength to Low, Medium, or High to indicate the amount of
+     *        sharpening.
      * @see NoiseFilterPostTemporalSharpeningStrength
      */
 
@@ -223,13 +209,12 @@ public class NoiseReducerTemporalFilterSettings implements Serializable, Cloneab
     }
 
     /**
-     * Use Post temporal sharpening strength (postTemporalSharpeningStrength) to define the amount of sharpening the
-     * transcoder applies to your output. Set Post temporal sharpening strength to Low (LOW), Medium (MEDIUM), or High
-     * (HIGH) to indicate the amount of sharpening.
+     * Use Post temporal sharpening strength to define the amount of sharpening the transcoder applies to your output.
+     * Set Post temporal sharpening strength to Low, Medium, or High to indicate the amount of sharpening.
      * 
-     * @return Use Post temporal sharpening strength (postTemporalSharpeningStrength) to define the amount of sharpening
-     *         the transcoder applies to your output. Set Post temporal sharpening strength to Low (LOW), Medium
-     *         (MEDIUM), or High (HIGH) to indicate the amount of sharpening.
+     * @return Use Post temporal sharpening strength to define the amount of sharpening the transcoder applies to your
+     *         output. Set Post temporal sharpening strength to Low, Medium, or High to indicate the amount of
+     *         sharpening.
      * @see NoiseFilterPostTemporalSharpeningStrength
      */
 
@@ -238,14 +223,13 @@ public class NoiseReducerTemporalFilterSettings implements Serializable, Cloneab
     }
 
     /**
-     * Use Post temporal sharpening strength (postTemporalSharpeningStrength) to define the amount of sharpening the
-     * transcoder applies to your output. Set Post temporal sharpening strength to Low (LOW), Medium (MEDIUM), or High
-     * (HIGH) to indicate the amount of sharpening.
+     * Use Post temporal sharpening strength to define the amount of sharpening the transcoder applies to your output.
+     * Set Post temporal sharpening strength to Low, Medium, or High to indicate the amount of sharpening.
      * 
      * @param postTemporalSharpeningStrength
-     *        Use Post temporal sharpening strength (postTemporalSharpeningStrength) to define the amount of sharpening
-     *        the transcoder applies to your output. Set Post temporal sharpening strength to Low (LOW), Medium
-     *        (MEDIUM), or High (HIGH) to indicate the amount of sharpening.
+     *        Use Post temporal sharpening strength to define the amount of sharpening the transcoder applies to your
+     *        output. Set Post temporal sharpening strength to Low, Medium, or High to indicate the amount of
+     *        sharpening.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NoiseFilterPostTemporalSharpeningStrength
      */
@@ -256,14 +240,13 @@ public class NoiseReducerTemporalFilterSettings implements Serializable, Cloneab
     }
 
     /**
-     * Use Post temporal sharpening strength (postTemporalSharpeningStrength) to define the amount of sharpening the
-     * transcoder applies to your output. Set Post temporal sharpening strength to Low (LOW), Medium (MEDIUM), or High
-     * (HIGH) to indicate the amount of sharpening.
+     * Use Post temporal sharpening strength to define the amount of sharpening the transcoder applies to your output.
+     * Set Post temporal sharpening strength to Low, Medium, or High to indicate the amount of sharpening.
      * 
      * @param postTemporalSharpeningStrength
-     *        Use Post temporal sharpening strength (postTemporalSharpeningStrength) to define the amount of sharpening
-     *        the transcoder applies to your output. Set Post temporal sharpening strength to Low (LOW), Medium
-     *        (MEDIUM), or High (HIGH) to indicate the amount of sharpening.
+     *        Use Post temporal sharpening strength to define the amount of sharpening the transcoder applies to your
+     *        output. Set Post temporal sharpening strength to Low, Medium, or High to indicate the amount of
+     *        sharpening.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NoiseFilterPostTemporalSharpeningStrength
      */

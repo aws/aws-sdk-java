@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,12 @@ public class GetEbsEncryptionByDefaultResult extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private Boolean ebsEncryptionByDefault;
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     */
+    private String sseType;
 
     /**
      * <p>
@@ -83,6 +89,65 @@ public class GetEbsEncryptionByDefaultResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @param sseType
+     *        Reserved for future use.
+     * @see SSEType
+     */
+
+    public void setSseType(String sseType) {
+        this.sseType = sseType;
+    }
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @return Reserved for future use.
+     * @see SSEType
+     */
+
+    public String getSseType() {
+        return this.sseType;
+    }
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @param sseType
+     *        Reserved for future use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SSEType
+     */
+
+    public GetEbsEncryptionByDefaultResult withSseType(String sseType) {
+        setSseType(sseType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @param sseType
+     *        Reserved for future use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SSEType
+     */
+
+    public GetEbsEncryptionByDefaultResult withSseType(SSEType sseType) {
+        this.sseType = sseType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -95,7 +160,9 @@ public class GetEbsEncryptionByDefaultResult extends com.amazonaws.AmazonWebServ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEbsEncryptionByDefault() != null)
-            sb.append("EbsEncryptionByDefault: ").append(getEbsEncryptionByDefault());
+            sb.append("EbsEncryptionByDefault: ").append(getEbsEncryptionByDefault()).append(",");
+        if (getSseType() != null)
+            sb.append("SseType: ").append(getSseType());
         sb.append("}");
         return sb.toString();
     }
@@ -114,6 +181,10 @@ public class GetEbsEncryptionByDefaultResult extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getEbsEncryptionByDefault() != null && other.getEbsEncryptionByDefault().equals(this.getEbsEncryptionByDefault()) == false)
             return false;
+        if (other.getSseType() == null ^ this.getSseType() == null)
+            return false;
+        if (other.getSseType() != null && other.getSseType().equals(this.getSseType()) == false)
+            return false;
         return true;
     }
 
@@ -123,6 +194,7 @@ public class GetEbsEncryptionByDefaultResult extends com.amazonaws.AmazonWebServ
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getEbsEncryptionByDefault() == null) ? 0 : getEbsEncryptionByDefault().hashCode());
+        hashCode = prime * hashCode + ((getSseType() == null) ? 0 : getSseType().hashCode());
         return hashCode;
     }
 

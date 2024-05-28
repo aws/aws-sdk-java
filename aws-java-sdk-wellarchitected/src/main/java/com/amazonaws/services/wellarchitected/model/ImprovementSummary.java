@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,12 @@ public class ImprovementSummary implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private java.util.List<ChoiceImprovementPlan> improvementPlans;
+    /**
+     * <p>
+     * Configuration of the Jira integration.
+     * </p>
+     */
+    private JiraConfiguration jiraConfiguration;
 
     /**
      * @param questionId
@@ -259,6 +265,46 @@ public class ImprovementSummary implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * Configuration of the Jira integration.
+     * </p>
+     * 
+     * @param jiraConfiguration
+     *        Configuration of the Jira integration.
+     */
+
+    public void setJiraConfiguration(JiraConfiguration jiraConfiguration) {
+        this.jiraConfiguration = jiraConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration of the Jira integration.
+     * </p>
+     * 
+     * @return Configuration of the Jira integration.
+     */
+
+    public JiraConfiguration getJiraConfiguration() {
+        return this.jiraConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration of the Jira integration.
+     * </p>
+     * 
+     * @param jiraConfiguration
+     *        Configuration of the Jira integration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImprovementSummary withJiraConfiguration(JiraConfiguration jiraConfiguration) {
+        setJiraConfiguration(jiraConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -281,7 +327,9 @@ public class ImprovementSummary implements Serializable, Cloneable, StructuredPo
         if (getImprovementPlanUrl() != null)
             sb.append("ImprovementPlanUrl: ").append(getImprovementPlanUrl()).append(",");
         if (getImprovementPlans() != null)
-            sb.append("ImprovementPlans: ").append(getImprovementPlans());
+            sb.append("ImprovementPlans: ").append(getImprovementPlans()).append(",");
+        if (getJiraConfiguration() != null)
+            sb.append("JiraConfiguration: ").append(getJiraConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -320,6 +368,10 @@ public class ImprovementSummary implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getImprovementPlans() != null && other.getImprovementPlans().equals(this.getImprovementPlans()) == false)
             return false;
+        if (other.getJiraConfiguration() == null ^ this.getJiraConfiguration() == null)
+            return false;
+        if (other.getJiraConfiguration() != null && other.getJiraConfiguration().equals(this.getJiraConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -334,6 +386,7 @@ public class ImprovementSummary implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getRisk() == null) ? 0 : getRisk().hashCode());
         hashCode = prime * hashCode + ((getImprovementPlanUrl() == null) ? 0 : getImprovementPlanUrl().hashCode());
         hashCode = prime * hashCode + ((getImprovementPlans() == null) ? 0 : getImprovementPlans().hashCode());
+        hashCode = prime * hashCode + ((getJiraConfiguration() == null) ? 0 : getJiraConfiguration().hashCode());
         return hashCode;
     }
 

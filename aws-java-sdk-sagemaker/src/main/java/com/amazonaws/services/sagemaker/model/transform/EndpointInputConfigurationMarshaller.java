@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class EndpointInputConfigurationMarshaller {
 
     private static final MarshallingInfo<String> INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceType").build();
+    private static final MarshallingInfo<StructuredPojo> SERVERLESSCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerlessConfig").build();
     private static final MarshallingInfo<String> INFERENCESPECIFICATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InferenceSpecificationName").build();
     private static final MarshallingInfo<StructuredPojo> ENVIRONMENTPARAMETERRANGES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -51,6 +53,7 @@ public class EndpointInputConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(endpointInputConfiguration.getInstanceType(), INSTANCETYPE_BINDING);
+            protocolMarshaller.marshall(endpointInputConfiguration.getServerlessConfig(), SERVERLESSCONFIG_BINDING);
             protocolMarshaller.marshall(endpointInputConfiguration.getInferenceSpecificationName(), INFERENCESPECIFICATIONNAME_BINDING);
             protocolMarshaller.marshall(endpointInputConfiguration.getEnvironmentParameterRanges(), ENVIRONMENTPARAMETERRANGES_BINDING);
         } catch (Exception e) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class Variant implements Serializable, Cloneable, StructuredPojo {
     private String stringValue;
     /**
      * <p>
-     * Asset property data of type integer (whole number).
+     * Asset property data of type integer (number that's greater than or equal to zero).
      * </p>
      */
     private Integer integerValue;
@@ -95,11 +95,11 @@ public class Variant implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Asset property data of type integer (whole number).
+     * Asset property data of type integer (number that's greater than or equal to zero).
      * </p>
      * 
      * @param integerValue
-     *        Asset property data of type integer (whole number).
+     *        Asset property data of type integer (number that's greater than or equal to zero).
      */
 
     public void setIntegerValue(Integer integerValue) {
@@ -108,10 +108,10 @@ public class Variant implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Asset property data of type integer (whole number).
+     * Asset property data of type integer (number that's greater than or equal to zero).
      * </p>
      * 
-     * @return Asset property data of type integer (whole number).
+     * @return Asset property data of type integer (number that's greater than or equal to zero).
      */
 
     public Integer getIntegerValue() {
@@ -120,11 +120,11 @@ public class Variant implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Asset property data of type integer (whole number).
+     * Asset property data of type integer (number that's greater than or equal to zero).
      * </p>
      * 
      * @param integerValue
-     *        Asset property data of type integer (whole number).
+     *        Asset property data of type integer (number that's greater than or equal to zero).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

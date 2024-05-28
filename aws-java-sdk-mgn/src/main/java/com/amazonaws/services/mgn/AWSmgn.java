@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,90 @@ public interface AWSmgn {
 
     /**
      * <p>
+     * Archive application.
+     * </p>
+     * 
+     * @param archiveApplicationRequest
+     * @return Result of the ArchiveApplication operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.ArchiveApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ArchiveApplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ArchiveApplicationResult archiveApplication(ArchiveApplicationRequest archiveApplicationRequest);
+
+    /**
+     * <p>
+     * Archive wave.
+     * </p>
+     * 
+     * @param archiveWaveRequest
+     * @return Result of the ArchiveWave operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.ArchiveWave
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ArchiveWave" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ArchiveWaveResult archiveWave(ArchiveWaveRequest archiveWaveRequest);
+
+    /**
+     * <p>
+     * Associate applications to wave.
+     * </p>
+     * 
+     * @param associateApplicationsRequest
+     * @return Result of the AssociateApplications operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.AssociateApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/AssociateApplications" target="_top">AWS API
+     *      Documentation</a>
+     */
+    AssociateApplicationsResult associateApplications(AssociateApplicationsRequest associateApplicationsRequest);
+
+    /**
+     * <p>
+     * Associate source servers to application.
+     * </p>
+     * 
+     * @param associateSourceServersRequest
+     * @return Result of the AssociateSourceServers operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.AssociateSourceServers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/AssociateSourceServers" target="_top">AWS API
+     *      Documentation</a>
+     */
+    AssociateSourceServersResult associateSourceServers(AssociateSourceServersRequest associateSourceServersRequest);
+
+    /**
+     * <p>
      * Allows the user to set the SourceServer.LifeCycle.state property for specific Source Server IDs to one of the
      * following: READY_FOR_TEST or READY_FOR_CUTOVER. This command only works if the Source Server is already
      * launchable (dataReplicationInfo.lagDuration is not null.)
@@ -66,7 +150,43 @@ public interface AWSmgn {
 
     /**
      * <p>
-     * Creates a new ReplicationConfigurationTemplate.
+     * Create application.
+     * </p>
+     * 
+     * @param createApplicationRequest
+     * @return Result of the CreateApplication operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.CreateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateApplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateApplicationResult createApplication(CreateApplicationRequest createApplicationRequest);
+
+    /**
+     * <p>
+     * Create Connector.
+     * </p>
+     * 
+     * @param createConnectorRequest
+     * @return Result of the CreateConnector operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @sample AWSmgn.CreateConnector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateConnector" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateConnectorResult createConnector(CreateConnectorRequest createConnectorRequest);
+
+    /**
+     * <p>
+     * Creates a new Launch Configuration Template.
      * </p>
      * 
      * @param createLaunchConfigurationTemplateRequest
@@ -105,6 +225,63 @@ public interface AWSmgn {
 
     /**
      * <p>
+     * Create wave.
+     * </p>
+     * 
+     * @param createWaveRequest
+     * @return Result of the CreateWave operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.CreateWave
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateWave" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateWaveResult createWave(CreateWaveRequest createWaveRequest);
+
+    /**
+     * <p>
+     * Delete application.
+     * </p>
+     * 
+     * @param deleteApplicationRequest
+     * @return Result of the DeleteApplication operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.DeleteApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteApplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteApplicationResult deleteApplication(DeleteApplicationRequest deleteApplicationRequest);
+
+    /**
+     * <p>
+     * Delete Connector.
+     * </p>
+     * 
+     * @param deleteConnectorRequest
+     * @return Result of the DeleteConnector operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @sample AWSmgn.DeleteConnector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteConnector" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteConnectorResult deleteConnector(DeleteConnectorRequest deleteConnectorRequest);
+
+    /**
+     * <p>
      * Deletes a single Job by ID.
      * </p>
      * 
@@ -124,7 +301,7 @@ public interface AWSmgn {
 
     /**
      * <p>
-     * Creates a new ReplicationConfigurationTemplate.
+     * Deletes a single Launch Configuration Template by ID.
      * </p>
      * 
      * @param deleteLaunchConfigurationTemplateRequest
@@ -201,6 +378,25 @@ public interface AWSmgn {
 
     /**
      * <p>
+     * Delete wave.
+     * </p>
+     * 
+     * @param deleteWaveRequest
+     * @return Result of the DeleteWave operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.DeleteWave
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteWave" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteWaveResult deleteWave(DeleteWaveRequest deleteWaveRequest);
+
+    /**
+     * <p>
      * Retrieves detailed job log items with paging.
      * </p>
      * 
@@ -239,7 +435,7 @@ public interface AWSmgn {
 
     /**
      * <p>
-     * Creates a new ReplicationConfigurationTemplate.
+     * Lists all Launch Configuration Templates, filtered by Launch Configuration Template IDs
      * </p>
      * 
      * @param describeLaunchConfigurationTemplatesRequest
@@ -312,6 +508,44 @@ public interface AWSmgn {
      *      Documentation</a>
      */
     DescribeVcenterClientsResult describeVcenterClients(DescribeVcenterClientsRequest describeVcenterClientsRequest);
+
+    /**
+     * <p>
+     * Disassociate applications from wave.
+     * </p>
+     * 
+     * @param disassociateApplicationsRequest
+     * @return Result of the DisassociateApplications operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.DisassociateApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DisassociateApplications" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DisassociateApplicationsResult disassociateApplications(DisassociateApplicationsRequest disassociateApplicationsRequest);
+
+    /**
+     * <p>
+     * Disassociate source servers from application.
+     * </p>
+     * 
+     * @param disassociateSourceServersRequest
+     * @return Result of the DisassociateSourceServers operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.DisassociateSourceServers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DisassociateSourceServers" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DisassociateSourceServersResult disassociateSourceServers(DisassociateSourceServersRequest disassociateSourceServersRequest);
 
     /**
      * <p>
@@ -419,6 +653,143 @@ public interface AWSmgn {
 
     /**
      * <p>
+     * Retrieves all applications or multiple applications by ID.
+     * </p>
+     * 
+     * @param listApplicationsRequest
+     * @return Result of the ListApplications operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @sample AWSmgn.ListApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListApplications" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListApplicationsResult listApplications(ListApplicationsRequest listApplicationsRequest);
+
+    /**
+     * <p>
+     * List Connectors.
+     * </p>
+     * 
+     * @param listConnectorsRequest
+     * @return Result of the ListConnectors operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @sample AWSmgn.ListConnectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListConnectors" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListConnectorsResult listConnectors(ListConnectorsRequest listConnectorsRequest);
+
+    /**
+     * <p>
+     * List export errors.
+     * </p>
+     * 
+     * @param listExportErrorsRequest
+     *        List export errors request.
+     * @return Result of the ListExportErrors operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @sample AWSmgn.ListExportErrors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExportErrors" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListExportErrorsResult listExportErrors(ListExportErrorsRequest listExportErrorsRequest);
+
+    /**
+     * <p>
+     * List exports.
+     * </p>
+     * 
+     * @param listExportsRequest
+     *        List export request.
+     * @return Result of the ListExports operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @sample AWSmgn.ListExports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExports" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListExportsResult listExports(ListExportsRequest listExportsRequest);
+
+    /**
+     * <p>
+     * List import errors.
+     * </p>
+     * 
+     * @param listImportErrorsRequest
+     *        List import errors request.
+     * @return Result of the ListImportErrors operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @sample AWSmgn.ListImportErrors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImportErrors" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListImportErrorsResult listImportErrors(ListImportErrorsRequest listImportErrorsRequest);
+
+    /**
+     * <p>
+     * List imports.
+     * </p>
+     * 
+     * @param listImportsRequest
+     *        List imports request.
+     * @return Result of the ListImports operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @sample AWSmgn.ListImports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImports" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListImportsResult listImports(ListImportsRequest listImportsRequest);
+
+    /**
+     * <p>
+     * List Managed Accounts.
+     * </p>
+     * 
+     * @param listManagedAccountsRequest
+     *        List managed accounts request.
+     * @return Result of the ListManagedAccounts operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @sample AWSmgn.ListManagedAccounts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListManagedAccounts" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListManagedAccountsResult listManagedAccounts(ListManagedAccountsRequest listManagedAccountsRequest);
+
+    /**
+     * <p>
+     * List source server post migration custom actions.
+     * </p>
+     * 
+     * @param listSourceServerActionsRequest
+     * @return Result of the ListSourceServerActions operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @sample AWSmgn.ListSourceServerActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListSourceServerActions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListSourceServerActionsResult listSourceServerActions(ListSourceServerActionsRequest listSourceServerActionsRequest);
+
+    /**
+     * <p>
      * List all tags for your Application Migration Service resources.
      * </p>
      * 
@@ -442,6 +813,38 @@ public interface AWSmgn {
 
     /**
      * <p>
+     * List template post migration custom actions.
+     * </p>
+     * 
+     * @param listTemplateActionsRequest
+     * @return Result of the ListTemplateActions operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @sample AWSmgn.ListTemplateActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListTemplateActions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTemplateActionsResult listTemplateActions(ListTemplateActionsRequest listTemplateActionsRequest);
+
+    /**
+     * <p>
+     * Retrieves all waves or multiple waves by ID.
+     * </p>
+     * 
+     * @param listWavesRequest
+     * @return Result of the ListWaves operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @sample AWSmgn.ListWaves
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListWaves" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListWavesResult listWaves(ListWavesRequest listWavesRequest);
+
+    /**
+     * <p>
      * Archives specific Source Servers by setting the SourceServer.isArchived property to true for specified
      * SourceServers by ID. This command only works for SourceServers with a lifecycle. state which equals DISCONNECTED
      * or CUTOVER.
@@ -460,6 +863,132 @@ public interface AWSmgn {
      *      Documentation</a>
      */
     MarkAsArchivedResult markAsArchived(MarkAsArchivedRequest markAsArchivedRequest);
+
+    /**
+     * <p>
+     * Pause Replication.
+     * </p>
+     * 
+     * @param pauseReplicationRequest
+     * @return Result of the PauseReplication operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.PauseReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PauseReplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PauseReplicationResult pauseReplication(PauseReplicationRequest pauseReplicationRequest);
+
+    /**
+     * <p>
+     * Put source server post migration custom action.
+     * </p>
+     * 
+     * @param putSourceServerActionRequest
+     * @return Result of the PutSourceServerAction operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.PutSourceServerAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PutSourceServerAction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PutSourceServerActionResult putSourceServerAction(PutSourceServerActionRequest putSourceServerActionRequest);
+
+    /**
+     * <p>
+     * Put template post migration custom action.
+     * </p>
+     * 
+     * @param putTemplateActionRequest
+     * @return Result of the PutTemplateAction operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.PutTemplateAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PutTemplateAction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PutTemplateActionResult putTemplateAction(PutTemplateActionRequest putTemplateActionRequest);
+
+    /**
+     * <p>
+     * Remove source server post migration custom action.
+     * </p>
+     * 
+     * @param removeSourceServerActionRequest
+     * @return Result of the RemoveSourceServerAction operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @sample AWSmgn.RemoveSourceServerAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/RemoveSourceServerAction" target="_top">AWS
+     *      API Documentation</a>
+     */
+    RemoveSourceServerActionResult removeSourceServerAction(RemoveSourceServerActionRequest removeSourceServerActionRequest);
+
+    /**
+     * <p>
+     * Remove template post migration custom action.
+     * </p>
+     * 
+     * @param removeTemplateActionRequest
+     * @return Result of the RemoveTemplateAction operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @sample AWSmgn.RemoveTemplateAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/RemoveTemplateAction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    RemoveTemplateActionResult removeTemplateAction(RemoveTemplateActionRequest removeTemplateActionRequest);
+
+    /**
+     * <p>
+     * Resume Replication.
+     * </p>
+     * 
+     * @param resumeReplicationRequest
+     * @return Result of the ResumeReplication operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.ResumeReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ResumeReplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ResumeReplicationResult resumeReplication(ResumeReplicationRequest resumeReplicationRequest);
 
     /**
      * <p>
@@ -504,6 +1033,50 @@ public interface AWSmgn {
 
     /**
      * <p>
+     * Start export.
+     * </p>
+     * 
+     * @param startExportRequest
+     *        Start export request.
+     * @return Result of the StartExport operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @sample AWSmgn.StartExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartExport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartExportResult startExport(StartExportRequest startExportRequest);
+
+    /**
+     * <p>
+     * Start import.
+     * </p>
+     * 
+     * @param startImportRequest
+     *        Start import request.
+     * @return Result of the StartImport operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.StartImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartImport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartImportResult startImport(StartImportRequest startImportRequest);
+
+    /**
+     * <p>
      * Starts replication for SNAPSHOT_SHIPPING agents.
      * </p>
      * 
@@ -544,6 +1117,29 @@ public interface AWSmgn {
      *      Documentation</a>
      */
     StartTestResult startTest(StartTestRequest startTestRequest);
+
+    /**
+     * <p>
+     * Stop Replication.
+     * </p>
+     * 
+     * @param stopReplicationRequest
+     * @return Result of the StopReplication operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.StopReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StopReplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StopReplicationResult stopReplication(StopReplicationRequest stopReplicationRequest);
 
     /**
      * <p>
@@ -592,6 +1188,44 @@ public interface AWSmgn {
 
     /**
      * <p>
+     * Unarchive application.
+     * </p>
+     * 
+     * @param unarchiveApplicationRequest
+     * @return Result of the UnarchiveApplication operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @sample AWSmgn.UnarchiveApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UnarchiveApplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UnarchiveApplicationResult unarchiveApplication(UnarchiveApplicationRequest unarchiveApplicationRequest);
+
+    /**
+     * <p>
+     * Unarchive wave.
+     * </p>
+     * 
+     * @param unarchiveWaveRequest
+     * @return Result of the UnarchiveWave operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @sample AWSmgn.UnarchiveWave
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UnarchiveWave" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UnarchiveWaveResult unarchiveWave(UnarchiveWaveRequest unarchiveWaveRequest);
+
+    /**
+     * <p>
      * Deletes the specified set of tags from the specified set of Application Migration Service resources.
      * </p>
      * 
@@ -615,8 +1249,51 @@ public interface AWSmgn {
 
     /**
      * <p>
+     * Update application.
+     * </p>
+     * 
+     * @param updateApplicationRequest
+     * @return Result of the UpdateApplication operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.UpdateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateApplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateApplicationResult updateApplication(UpdateApplicationRequest updateApplicationRequest);
+
+    /**
+     * <p>
+     * Update Connector.
+     * </p>
+     * 
+     * @param updateConnectorRequest
+     * @return Result of the UpdateConnector operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @sample AWSmgn.UpdateConnector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateConnector" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateConnectorResult updateConnector(UpdateConnectorRequest updateConnectorRequest);
+
+    /**
+     * <p>
      * Updates multiple LaunchConfigurations by Source Server ID.
      * </p>
+     * <note>
+     * <p>
+     * bootMode valid values are <code>LEGACY_BIOS | UEFI</code>
+     * </p>
+     * </note>
      * 
      * @param updateLaunchConfigurationRequest
      * @return Result of the UpdateLaunchConfiguration operation returned by the service.
@@ -636,7 +1313,7 @@ public interface AWSmgn {
 
     /**
      * <p>
-     * Creates a new ReplicationConfigurationTemplate.
+     * Updates an existing Launch Configuration Template by ID.
      * </p>
      * 
      * @param updateLaunchConfigurationTemplateRequest
@@ -702,6 +1379,25 @@ public interface AWSmgn {
 
     /**
      * <p>
+     * Update Source Server.
+     * </p>
+     * 
+     * @param updateSourceServerRequest
+     * @return Result of the UpdateSourceServer operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.UpdateSourceServer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateSourceServer" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateSourceServerResult updateSourceServer(UpdateSourceServerRequest updateSourceServerRequest);
+
+    /**
+     * <p>
      * Allows you to change between the AGENT_BASED replication type and the SNAPSHOT_SHIPPING replication type.
      * </p>
      * 
@@ -720,6 +1416,25 @@ public interface AWSmgn {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateSourceServerReplicationTypeResult updateSourceServerReplicationType(UpdateSourceServerReplicationTypeRequest updateSourceServerReplicationTypeRequest);
+
+    /**
+     * <p>
+     * Update wave.
+     * </p>
+     * 
+     * @param updateWaveRequest
+     * @return Result of the UpdateWave operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.UpdateWave
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateWave" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateWaveResult updateWave(UpdateWaveRequest updateWaveRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

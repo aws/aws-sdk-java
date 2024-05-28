@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,10 +48,10 @@ public class CreateResourcePolicyStatementRequest extends com.amazonaws.AmazonWe
     private String effect;
     /**
      * <p>
-     * An IAM principal, such as an IAM users, IAM roles, or AWS services that is allowed or denied access to a
-     * resource. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS JSON
-     * policy elements: Principal</a>.
+     * An IAM principal, such as an IAM user, IAM role, or Amazon Web Services services that is allowed or denied access
+     * to a resource. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">Amazon Web
+     * Services JSON policy elements: Principal</a>.
      * </p>
      */
     private java.util.List<Principal> principal;
@@ -247,16 +247,16 @@ public class CreateResourcePolicyStatementRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * An IAM principal, such as an IAM users, IAM roles, or AWS services that is allowed or denied access to a
-     * resource. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS JSON
-     * policy elements: Principal</a>.
+     * An IAM principal, such as an IAM user, IAM role, or Amazon Web Services services that is allowed or denied access
+     * to a resource. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">Amazon Web
+     * Services JSON policy elements: Principal</a>.
      * </p>
      * 
-     * @return An IAM principal, such as an IAM users, IAM roles, or AWS services that is allowed or denied access to a
-     *         resource. For more information, see <a
-     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS
-     *         JSON policy elements: Principal</a>.
+     * @return An IAM principal, such as an IAM user, IAM role, or Amazon Web Services services that is allowed or
+     *         denied access to a resource. For more information, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">Amazon
+     *         Web Services JSON policy elements: Principal</a>.
      */
 
     public java.util.List<Principal> getPrincipal() {
@@ -265,17 +265,17 @@ public class CreateResourcePolicyStatementRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * An IAM principal, such as an IAM users, IAM roles, or AWS services that is allowed or denied access to a
-     * resource. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS JSON
-     * policy elements: Principal</a>.
+     * An IAM principal, such as an IAM user, IAM role, or Amazon Web Services services that is allowed or denied access
+     * to a resource. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">Amazon Web
+     * Services JSON policy elements: Principal</a>.
      * </p>
      * 
      * @param principal
-     *        An IAM principal, such as an IAM users, IAM roles, or AWS services that is allowed or denied access to a
-     *        resource. For more information, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS
-     *        JSON policy elements: Principal</a>.
+     *        An IAM principal, such as an IAM user, IAM role, or Amazon Web Services services that is allowed or denied
+     *        access to a resource. For more information, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">Amazon
+     *        Web Services JSON policy elements: Principal</a>.
      */
 
     public void setPrincipal(java.util.Collection<Principal> principal) {
@@ -289,10 +289,10 @@ public class CreateResourcePolicyStatementRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * An IAM principal, such as an IAM users, IAM roles, or AWS services that is allowed or denied access to a
-     * resource. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS JSON
-     * policy elements: Principal</a>.
+     * An IAM principal, such as an IAM user, IAM role, or Amazon Web Services services that is allowed or denied access
+     * to a resource. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">Amazon Web
+     * Services JSON policy elements: Principal</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -301,10 +301,10 @@ public class CreateResourcePolicyStatementRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param principal
-     *        An IAM principal, such as an IAM users, IAM roles, or AWS services that is allowed or denied access to a
-     *        resource. For more information, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS
-     *        JSON policy elements: Principal</a>.
+     *        An IAM principal, such as an IAM user, IAM role, or Amazon Web Services services that is allowed or denied
+     *        access to a resource. For more information, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">Amazon
+     *        Web Services JSON policy elements: Principal</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -320,17 +320,17 @@ public class CreateResourcePolicyStatementRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * An IAM principal, such as an IAM users, IAM roles, or AWS services that is allowed or denied access to a
-     * resource. For more information, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS JSON
-     * policy elements: Principal</a>.
+     * An IAM principal, such as an IAM user, IAM role, or Amazon Web Services services that is allowed or denied access
+     * to a resource. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">Amazon Web
+     * Services JSON policy elements: Principal</a>.
      * </p>
      * 
      * @param principal
-     *        An IAM principal, such as an IAM users, IAM roles, or AWS services that is allowed or denied access to a
-     *        resource. For more information, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS
-     *        JSON policy elements: Principal</a>.
+     *        An IAM principal, such as an IAM user, IAM role, or Amazon Web Services services that is allowed or denied
+     *        access to a resource. For more information, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">Amazon
+     *        Web Services JSON policy elements: Principal</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

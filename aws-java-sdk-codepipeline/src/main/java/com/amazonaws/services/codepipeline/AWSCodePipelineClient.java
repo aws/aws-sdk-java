@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,23 +44,24 @@ import com.amazonaws.services.codepipeline.AWSCodePipelineClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.codepipeline.model.*;
+
 import com.amazonaws.services.codepipeline.model.transform.*;
 
 /**
  * Client for accessing CodePipeline. All service calls made using this client are blocking, and will not return until
  * the service call completes.
  * <p>
- * <fullname>AWS CodePipeline</fullname>
+ * <fullname>CodePipeline</fullname>
  * <p>
  * <b>Overview</b>
  * </p>
  * <p>
- * This is the AWS CodePipeline API Reference. This guide provides descriptions of the actions and data types for AWS
+ * This is the CodePipeline API Reference. This guide provides descriptions of the actions and data types for
  * CodePipeline. Some functionality for your pipeline can only be configured through the API. For more information, see
- * the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS CodePipeline User Guide</a>.
+ * the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">CodePipeline User Guide</a>.
  * </p>
  * <p>
- * You can use the AWS CodePipeline API to work with pipelines, stages, actions, and transitions.
+ * You can use the CodePipeline API to work with pipelines, stages, actions, and transitions.
  * </p>
  * <p>
  * <i>Pipelines</i> are models of automated release processes. Each pipeline is uniquely named, and consists of stages,
@@ -136,7 +137,7 @@ import com.amazonaws.services.codepipeline.model.transform.*;
  * recent artifact through the pipeline. You can call <a>GetPipelineState</a>, which displays the status of a pipeline,
  * including the status of stages in the pipeline, or <a>GetPipeline</a>, which returns the entire structure of the
  * pipeline, including the stages of that pipeline. For more information about the structure of stages and actions, see
- * <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS CodePipeline Pipeline
+ * <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">CodePipeline Pipeline
  * Structure Reference</a>.
  * </p>
  * <p>
@@ -198,12 +199,12 @@ import com.amazonaws.services.codepipeline.model.transform.*;
  * </li>
  * </ul>
  * <p>
- * <b>Using the API to integrate with AWS CodePipeline</b>
+ * <b>Using the API to integrate with CodePipeline</b>
  * </p>
  * <p>
- * For third-party integrators or developers who want to create their own integrations with AWS CodePipeline, the
- * expected sequence varies from the standard API user. To integrate with AWS CodePipeline, developers need to work with
- * the following items:
+ * For third-party integrators or developers who want to create their own integrations with CodePipeline, the expected
+ * sequence varies from the standard API user. To integrate with CodePipeline, developers need to work with the
+ * following items:
  * </p>
  * <p>
  * <b>Jobs</b>, which are instances of an action. For example, a job for a source action might import a revision of an
@@ -240,8 +241,8 @@ import com.amazonaws.services.codepipeline.model.transform.*;
  * </li>
  * </ul>
  * <p>
- * <b>Third party jobs</b>, which are instances of an action created by a partner action and integrated into AWS
- * CodePipeline. Partner actions are created by members of the AWS Partner Network.
+ * <b>Third party jobs</b>, which are instances of an action created by a partner action and integrated into
+ * CodePipeline. Partner actions are created by members of the Amazon Web Services Partner Network.
  * </p>
  * <p>
  * You can work with third party jobs by calling:
@@ -382,6 +383,9 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                             new JsonErrorShapeMetadata().withErrorCode("PipelineNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codepipeline.model.transform.PipelineNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("PipelineExecutionOutdatedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.PipelineExecutionOutdatedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("StageNotRetryableException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codepipeline.model.transform.StageNotRetryableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -391,11 +395,18 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                             new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codepipeline.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentPipelineExecutionsLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.ConcurrentPipelineExecutionsLimitExceededExceptionUnmarshaller
+                                            .getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidStructureException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codepipeline.model.transform.InvalidStructureExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidBlockerDeclarationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codepipeline.model.transform.InvalidBlockerDeclarationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnableToRollbackStageException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.UnableToRollbackStageExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidNonceException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codepipeline.model.transform.InvalidNonceExceptionUnmarshaller.getInstance()))
@@ -737,8 +748,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Creates a new custom action that can be used in all pipelines associated with the AWS account. Only used for
-     * custom actions.
+     * Creates a new custom action that can be used in all pipelines associated with the Amazon Web Services account.
+     * Only used for custom actions.
      * </p>
      * 
      * @param createCustomActionTypeRequest
@@ -747,7 +758,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The validation was specified in an invalid format.
      * @throws LimitExceededException
-     *         The number of pipelines associated with the AWS account has exceeded the limit allowed for the account.
+     *         The number of pipelines associated with the Amazon Web Services account has exceeded the limit allowed
+     *         for the account.
      * @throws TooManyTagsException
      *         The tags limit for a resource has been exceeded.
      * @throws InvalidTagsException
@@ -831,7 +843,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @throws InvalidStructureException
      *         The structure was specified in an invalid format.
      * @throws LimitExceededException
-     *         The number of pipelines associated with the AWS account has exceeded the limit allowed for the account.
+     *         The number of pipelines associated with the Amazon Web Services account has exceeded the limit allowed
+     *         for the account.
      * @throws TooManyTagsException
      *         The tags limit for a resource has been exceeded.
      * @throws InvalidTagsException
@@ -1019,10 +1032,10 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Deletes a previously created webhook by name. Deleting the webhook stops AWS CodePipeline from starting a
-     * pipeline every time an external event occurs. The API returns successfully when trying to delete a webhook that
-     * is already deleted. If a deleted webhook is re-created by calling PutWebhook with the same name, it will have a
-     * different URL.
+     * Deletes a previously created webhook by name. Deleting the webhook stops CodePipeline from starting a pipeline
+     * every time an external event occurs. The API returns successfully when trying to delete a webhook that is already
+     * deleted. If a deleted webhook is re-created by calling PutWebhook with the same name, it will have a different
+     * URL.
      * </p>
      * 
      * @param deleteWebhookRequest
@@ -1334,8 +1347,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * </p>
      * <important>
      * <p>
-     * When this API is called, AWS CodePipeline returns temporary credentials for the S3 bucket used to store artifacts
-     * for the pipeline, if the action requires access to that S3 bucket for input or output artifacts. This API also
+     * When this API is called, CodePipeline returns temporary credentials for the S3 bucket used to store artifacts for
+     * the pipeline, if the action requires access to that S3 bucket for input or output artifacts. This API also
      * returns any secret values defined for the action.
      * </p>
      * </important>
@@ -1595,8 +1608,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * </p>
      * <important>
      * <p>
-     * When this API is called, AWS CodePipeline returns temporary credentials for the S3 bucket used to store artifacts
-     * for the pipeline, if the action requires access to that S3 bucket for input or output artifacts. This API also
+     * When this API is called, CodePipeline returns temporary credentials for the S3 bucket used to store artifacts for
+     * the pipeline, if the action requires access to that S3 bucket for input or output artifacts. This API also
      * returns any secret values defined for the action.
      * </p>
      * </important>
@@ -1729,7 +1742,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Gets a summary of all AWS CodePipeline action types associated with your account.
+     * Gets a summary of all CodePipeline action types associated with your account.
      * </p>
      * 
      * @param listActionTypesRequest
@@ -1979,8 +1992,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Gets a listing of all the webhooks in this AWS Region for this account. The output lists all webhooks and
-     * includes the webhook URL and ARN and the configuration for each webhook.
+     * Gets a listing of all the webhooks in this Amazon Web Services Region for this account. The output lists all
+     * webhooks and includes the webhook URL and ARN and the configuration for each webhook.
      * </p>
      * 
      * @param listWebhooksRequest
@@ -2040,14 +2053,14 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Returns information about any jobs for AWS CodePipeline to act on. <code>PollForJobs</code> is valid only for
-     * action types with "Custom" in the owner field. If the action type contains "AWS" or "ThirdParty" in the owner
-     * field, the <code>PollForJobs</code> action returns an error.
+     * Returns information about any jobs for CodePipeline to act on. <code>PollForJobs</code> is valid only for action
+     * types with "Custom" in the owner field. If the action type contains <code>AWS</code> or <code>ThirdParty</code>
+     * in the owner field, the <code>PollForJobs</code> action returns an error.
      * </p>
      * <important>
      * <p>
-     * When this API is called, AWS CodePipeline returns temporary credentials for the S3 bucket used to store artifacts
-     * for the pipeline, if the action requires access to that S3 bucket for input or output artifacts. This API also
+     * When this API is called, CodePipeline returns temporary credentials for the S3 bucket used to store artifacts for
+     * the pipeline, if the action requires access to that S3 bucket for input or output artifacts. This API also
      * returns any secret values defined for the action.
      * </p>
      * </important>
@@ -2113,8 +2126,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * </p>
      * <important>
      * <p>
-     * When this API is called, AWS CodePipeline returns temporary credentials for the S3 bucket used to store artifacts
-     * for the pipeline, if the action requires access to that S3 bucket for input or output artifacts.
+     * When this API is called, CodePipeline returns temporary credentials for the S3 bucket used to store artifacts for
+     * the pipeline, if the action requires access to that S3 bucket for input or output artifacts.
      * </p>
      * </important>
      * 
@@ -2176,7 +2189,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Provides information to AWS CodePipeline about new revisions to a source.
+     * Provides information to CodePipeline about new revisions to a source.
      * </p>
      * 
      * @param putActionRevisionRequest
@@ -2240,7 +2253,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Provides the response to a manual approval request to AWS CodePipeline. Valid responses include Approved and
+     * Provides the response to a manual approval request to CodePipeline. Valid responses include Approved and
      * Rejected.
      * </p>
      * 
@@ -2582,7 +2595,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @throws ValidationException
      *         The validation was specified in an invalid format.
      * @throws LimitExceededException
-     *         The number of pipelines associated with the AWS account has exceeded the limit allowed for the account.
+     *         The number of pipelines associated with the Amazon Web Services account has exceeded the limit allowed
+     *         for the account.
      * @throws InvalidWebhookFilterPatternException
      *         The specified event filter rule is in an invalid format.
      * @throws InvalidWebhookAuthenticationParametersException
@@ -2706,9 +2720,12 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Resumes the pipeline execution by retrying the last failed actions in a stage. You can retry a stage immediately
-     * if any of the actions in the stage fail. When you retry, all actions that are still in progress continue working,
-     * and failed actions are triggered again.
+     * You can retry a stage that has failed without having to run a pipeline again from the beginning. You do this by
+     * either retrying the failed actions in a stage or by retrying all actions in the stage starting from the first
+     * action in the stage. When you retry the failed actions in a stage, all actions that are still in progress
+     * continue working, and failed actions are triggered again. When you retry a failed stage from the first action in
+     * the stage, the stage cannot have any actions in progress. Before a stage can be retried, it must either have all
+     * actions failed or some actions failed and some succeeded.
      * </p>
      * 
      * @param retryStageExecutionRequest
@@ -2726,8 +2743,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *         Unable to retry. The pipeline structure or stage state might have changed while actions awaited retry, or
      *         the stage contains no failed actions.
      * @throws NotLatestPipelineExecutionException
-     *         The stage has failed in a later run of the pipeline and the pipelineExecutionId associated with the
-     *         request is out of date.
+     *         The stage has failed in a later run of the pipeline and the <code>pipelineExecutionId</code> associated
+     *         with the request is out of date.
      * @sample AWSCodePipeline.RetryStageExecution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/RetryStageExecution"
      *      target="_top">AWS API Documentation</a>
@@ -2778,6 +2795,79 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Rolls back a stage execution.
+     * </p>
+     * 
+     * @param rollbackStageRequest
+     * @return Result of the RollbackStage operation returned by the service.
+     * @throws ValidationException
+     *         The validation was specified in an invalid format.
+     * @throws ConflictException
+     *         Your request cannot be handled because the pipeline is busy handling ongoing activities. Try again later.
+     * @throws PipelineNotFoundException
+     *         The pipeline was specified in an invalid format or cannot be found.
+     * @throws PipelineExecutionNotFoundException
+     *         The pipeline execution was specified in an invalid format or cannot be found, or an execution ID does not
+     *         belong to the specified pipeline.
+     * @throws PipelineExecutionOutdatedException
+     *         The specified pipeline execution is outdated and cannot be used as a target pipeline execution for
+     *         rollback.
+     * @throws StageNotFoundException
+     *         The stage was specified in an invalid format or cannot be found.
+     * @throws UnableToRollbackStageException
+     *         Unable to roll back the stage. The cause might be if the pipeline version has changed since the target
+     *         pipeline execution was deployed, the stage is currently running, or an incorrect target pipeline
+     *         execution ID was provided.
+     * @sample AWSCodePipeline.RollbackStage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/RollbackStage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public RollbackStageResult rollbackStage(RollbackStageRequest request) {
+        request = beforeClientExecution(request);
+        return executeRollbackStage(request);
+    }
+
+    @SdkInternalApi
+    final RollbackStageResult executeRollbackStage(RollbackStageRequest rollbackStageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(rollbackStageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RollbackStageRequest> request = null;
+        Response<RollbackStageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RollbackStageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(rollbackStageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RollbackStage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RollbackStageResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RollbackStageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Starts the specified pipeline. Specifically, it begins processing the latest commit to the source location
      * specified as part of the pipeline.
      * </p>
@@ -2791,6 +2881,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      *         Your request cannot be handled because the pipeline is busy handling ongoing activities. Try again later.
      * @throws PipelineNotFoundException
      *         The pipeline was specified in an invalid format or cannot be found.
+     * @throws ConcurrentPipelineExecutionsLimitExceededException
+     *         The pipeline has reached the limit for concurrent pipeline executions.
      * @sample AWSCodePipeline.StartPipelineExecution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StartPipelineExecution"
      *      target="_top">AWS API Documentation</a>
@@ -2982,7 +3074,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Removes tags from an AWS resource.
+     * Removes tags from an Amazon Web Services resource.
      * </p>
      * 
      * @param untagResourceRequest
@@ -3129,7 +3221,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @throws InvalidStructureException
      *         The structure was specified in an invalid format.
      * @throws LimitExceededException
-     *         The number of pipelines associated with the AWS account has exceeded the limit allowed for the account.
+     *         The number of pipelines associated with the Amazon Web Services account has exceeded the limit allowed
+     *         for the account.
      * @sample AWSCodePipeline.UpdatePipeline
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdatePipeline" target="_top">AWS
      *      API Documentation</a>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,35 +19,55 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides filtering the query results based on document attributes or metadata fields.
+ * Filters the search results based on document attributes or fields.
  * </p>
  * <p>
- * When you use the <code>AndAllFilters</code> or <code>OrAllFilters</code>, filters you can use 2 layers under the
- * first attribute filter. For example, you can use:
+ * You can filter results using attributes for your particular documents. The attributes must exist in your index. For
+ * example, if your documents include the custom attribute "Department", you can filter documents that belong to the
+ * "HR" department. You would use the <code>EqualsTo</code> operation to filter results or documents with "Department"
+ * equals to "HR".
  * </p>
  * <p>
- * <code>&lt;AndAllFilters&gt;</code>
+ * You can use <code>AndAllFilters</code> and <code>AndOrFilters</code> in combination with each other or with other
+ * operations such as <code>EqualsTo</code>. For example:
  * </p>
- * <ol>
+ * <p>
+ * <code>AndAllFilters</code>
+ * </p>
+ * <ul>
  * <li>
  * <p>
- * <code> &lt;OrAllFilters&gt;</code>
+ * <code>EqualsTo</code>: "Department", "HR"
  * </p>
  * </li>
  * <li>
  * <p>
- * <code> &lt;EqualsTo&gt;</code>
+ * <code>AndOrFilters</code>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>ContainsAny</code>: "Project Name", ["new hires", "new hiring"]
  * </p>
  * </li>
- * </ol>
+ * </ul>
+ * </li>
+ * </ul>
  * <p>
- * If you use more than 2 layers, you receive a <code>ValidationException</code> exception with the message "
- * <code>AttributeFilter</code> cannot have a depth of more than 2."
+ * This example filters results or documents that belong to the HR department <i>and</i> belong to projects that contain
+ * "new hires" <i>or</i> "new hiring" in the project name (must use <code>ContainAny</code> with
+ * <code>StringListValue</code>). This example is filtering with a depth of 2.
  * </p>
  * <p>
- * If you use more than 10 attribute filters in a given list for <code>AndAllFilters</code> or <code>OrAllFilters</code>
- * , you receive a <code>ValidationException</code> with the message "<code>AttributeFilter</code> cannot have a length
- * of more than 10".
+ * You cannot filter more than a depth of 2, otherwise you receive a <code>ValidationException</code> exception with the
+ * message "AttributeFilter cannot have a depth of more than 2." Also, if you use more than 10 attribute filters in a
+ * given list for <code>AndAllFilters</code> or <code>OrAllFilters</code>, you receive a
+ * <code>ValidationException</code> with the message "AttributeFilter cannot have a length of more than 10".
+ * </p>
+ * <p>
+ * For examples of using <code>AttributeFilter</code>, see <a
+ * href="https://docs.aws.amazon.com/kendra/latest/dg/filtering.html#search-filtering">Using document attributes to
+ * filter search results</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AttributeFilter" target="_top">AWS API
@@ -58,77 +78,85 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a logical <code>AND</code> operation on all supplied filters.
+     * Performs a logical <code>AND</code> operation on all filters that you specify.
      * </p>
      */
     private java.util.List<AttributeFilter> andAllFilters;
     /**
      * <p>
-     * Performs a logical <code>OR</code> operation on all supplied filters.
+     * Performs a logical <code>OR</code> operation on all filters that you specify.
      * </p>
      */
     private java.util.List<AttributeFilter> orAllFilters;
     /**
      * <p>
-     * Performs a logical <code>NOT</code> operation on all supplied filters.
+     * Performs a logical <code>NOT</code> operation on all filters that you specify.
      * </p>
      */
     private AttributeFilter notFilter;
     /**
      * <p>
-     * Performs an equals operation on two document attributes or metadata fields.
+     * Performs an equals operation on document attributes/fields and their values.
      * </p>
      */
     private DocumentAttribute equalsTo;
     /**
      * <p>
-     * Returns true when a document contains all of the specified document attributes or metadata fields. This filter is
-     * only applicable to <code>StringListValue</code> metadata.
+     * Returns true when a document contains all of the specified document attributes/fields. This filter is only
+     * applicable to <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">StringListValue
+     * </a>.
      * </p>
      */
     private DocumentAttribute containsAll;
     /**
      * <p>
-     * Returns true when a document contains any of the specified document attributes or metadata fields. This filter is
-     * only applicable to <code>StringListValue</code> metadata.
+     * Returns true when a document contains any of the specified document attributes/fields. This filter is only
+     * applicable to <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">StringListValue
+     * </a>.
      * </p>
      */
     private DocumentAttribute containsAny;
     /**
      * <p>
-     * Performs a greater than operation on two document attributes or metadata fields. Use with a document attribute of
-     * type <code>Date</code> or <code>Long</code>.
+     * Performs a greater than operation on document attributes/fields and their values. Use with the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document attribute
+     * type</a> <code>Date</code> or <code>Long</code>.
      * </p>
      */
     private DocumentAttribute greaterThan;
     /**
      * <p>
-     * Performs a greater or equals than operation on two document attributes or metadata fields. Use with a document
-     * attribute of type <code>Date</code> or <code>Long</code>.
+     * Performs a greater or equals than operation on document attributes/fields and their values. Use with the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document attribute
+     * type</a> <code>Date</code> or <code>Long</code>.
      * </p>
      */
     private DocumentAttribute greaterThanOrEquals;
     /**
      * <p>
-     * Performs a less than operation on two document attributes or metadata fields. Use with a document attribute of
-     * type <code>Date</code> or <code>Long</code>.
+     * Performs a less than operation on document attributes/fields and their values. Use with the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document attribute
+     * type</a> <code>Date</code> or <code>Long</code>.
      * </p>
      */
     private DocumentAttribute lessThan;
     /**
      * <p>
-     * Performs a less than or equals operation on two document attributes or metadata fields. Use with a document
-     * attribute of type <code>Date</code> or <code>Long</code>.
+     * Performs a less than or equals operation on document attributes/fields and their values. Use with the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document attribute
+     * type</a> <code>Date</code> or <code>Long</code>.
      * </p>
      */
     private DocumentAttribute lessThanOrEquals;
 
     /**
      * <p>
-     * Performs a logical <code>AND</code> operation on all supplied filters.
+     * Performs a logical <code>AND</code> operation on all filters that you specify.
      * </p>
      * 
-     * @return Performs a logical <code>AND</code> operation on all supplied filters.
+     * @return Performs a logical <code>AND</code> operation on all filters that you specify.
      */
 
     public java.util.List<AttributeFilter> getAndAllFilters() {
@@ -137,11 +165,11 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a logical <code>AND</code> operation on all supplied filters.
+     * Performs a logical <code>AND</code> operation on all filters that you specify.
      * </p>
      * 
      * @param andAllFilters
-     *        Performs a logical <code>AND</code> operation on all supplied filters.
+     *        Performs a logical <code>AND</code> operation on all filters that you specify.
      */
 
     public void setAndAllFilters(java.util.Collection<AttributeFilter> andAllFilters) {
@@ -155,7 +183,7 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a logical <code>AND</code> operation on all supplied filters.
+     * Performs a logical <code>AND</code> operation on all filters that you specify.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -164,7 +192,7 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param andAllFilters
-     *        Performs a logical <code>AND</code> operation on all supplied filters.
+     *        Performs a logical <code>AND</code> operation on all filters that you specify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,11 +208,11 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a logical <code>AND</code> operation on all supplied filters.
+     * Performs a logical <code>AND</code> operation on all filters that you specify.
      * </p>
      * 
      * @param andAllFilters
-     *        Performs a logical <code>AND</code> operation on all supplied filters.
+     *        Performs a logical <code>AND</code> operation on all filters that you specify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -195,10 +223,10 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a logical <code>OR</code> operation on all supplied filters.
+     * Performs a logical <code>OR</code> operation on all filters that you specify.
      * </p>
      * 
-     * @return Performs a logical <code>OR</code> operation on all supplied filters.
+     * @return Performs a logical <code>OR</code> operation on all filters that you specify.
      */
 
     public java.util.List<AttributeFilter> getOrAllFilters() {
@@ -207,11 +235,11 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a logical <code>OR</code> operation on all supplied filters.
+     * Performs a logical <code>OR</code> operation on all filters that you specify.
      * </p>
      * 
      * @param orAllFilters
-     *        Performs a logical <code>OR</code> operation on all supplied filters.
+     *        Performs a logical <code>OR</code> operation on all filters that you specify.
      */
 
     public void setOrAllFilters(java.util.Collection<AttributeFilter> orAllFilters) {
@@ -225,7 +253,7 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a logical <code>OR</code> operation on all supplied filters.
+     * Performs a logical <code>OR</code> operation on all filters that you specify.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -234,7 +262,7 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param orAllFilters
-     *        Performs a logical <code>OR</code> operation on all supplied filters.
+     *        Performs a logical <code>OR</code> operation on all filters that you specify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -250,11 +278,11 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a logical <code>OR</code> operation on all supplied filters.
+     * Performs a logical <code>OR</code> operation on all filters that you specify.
      * </p>
      * 
      * @param orAllFilters
-     *        Performs a logical <code>OR</code> operation on all supplied filters.
+     *        Performs a logical <code>OR</code> operation on all filters that you specify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -265,11 +293,11 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a logical <code>NOT</code> operation on all supplied filters.
+     * Performs a logical <code>NOT</code> operation on all filters that you specify.
      * </p>
      * 
      * @param notFilter
-     *        Performs a logical <code>NOT</code> operation on all supplied filters.
+     *        Performs a logical <code>NOT</code> operation on all filters that you specify.
      */
 
     public void setNotFilter(AttributeFilter notFilter) {
@@ -278,10 +306,10 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a logical <code>NOT</code> operation on all supplied filters.
+     * Performs a logical <code>NOT</code> operation on all filters that you specify.
      * </p>
      * 
-     * @return Performs a logical <code>NOT</code> operation on all supplied filters.
+     * @return Performs a logical <code>NOT</code> operation on all filters that you specify.
      */
 
     public AttributeFilter getNotFilter() {
@@ -290,11 +318,11 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a logical <code>NOT</code> operation on all supplied filters.
+     * Performs a logical <code>NOT</code> operation on all filters that you specify.
      * </p>
      * 
      * @param notFilter
-     *        Performs a logical <code>NOT</code> operation on all supplied filters.
+     *        Performs a logical <code>NOT</code> operation on all filters that you specify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -305,11 +333,11 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs an equals operation on two document attributes or metadata fields.
+     * Performs an equals operation on document attributes/fields and their values.
      * </p>
      * 
      * @param equalsTo
-     *        Performs an equals operation on two document attributes or metadata fields.
+     *        Performs an equals operation on document attributes/fields and their values.
      */
 
     public void setEqualsTo(DocumentAttribute equalsTo) {
@@ -318,10 +346,10 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs an equals operation on two document attributes or metadata fields.
+     * Performs an equals operation on document attributes/fields and their values.
      * </p>
      * 
-     * @return Performs an equals operation on two document attributes or metadata fields.
+     * @return Performs an equals operation on document attributes/fields and their values.
      */
 
     public DocumentAttribute getEqualsTo() {
@@ -330,11 +358,11 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs an equals operation on two document attributes or metadata fields.
+     * Performs an equals operation on document attributes/fields and their values.
      * </p>
      * 
      * @param equalsTo
-     *        Performs an equals operation on two document attributes or metadata fields.
+     *        Performs an equals operation on document attributes/fields and their values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -345,13 +373,17 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Returns true when a document contains all of the specified document attributes or metadata fields. This filter is
-     * only applicable to <code>StringListValue</code> metadata.
+     * Returns true when a document contains all of the specified document attributes/fields. This filter is only
+     * applicable to <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">StringListValue
+     * </a>.
      * </p>
      * 
      * @param containsAll
-     *        Returns true when a document contains all of the specified document attributes or metadata fields. This
-     *        filter is only applicable to <code>StringListValue</code> metadata.
+     *        Returns true when a document contains all of the specified document attributes/fields. This filter is only
+     *        applicable to <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html"
+     *        >StringListValue</a>.
      */
 
     public void setContainsAll(DocumentAttribute containsAll) {
@@ -360,12 +392,16 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Returns true when a document contains all of the specified document attributes or metadata fields. This filter is
-     * only applicable to <code>StringListValue</code> metadata.
+     * Returns true when a document contains all of the specified document attributes/fields. This filter is only
+     * applicable to <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">StringListValue
+     * </a>.
      * </p>
      * 
-     * @return Returns true when a document contains all of the specified document attributes or metadata fields. This
-     *         filter is only applicable to <code>StringListValue</code> metadata.
+     * @return Returns true when a document contains all of the specified document attributes/fields. This filter is
+     *         only applicable to <a
+     *         href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html"
+     *         >StringListValue</a>.
      */
 
     public DocumentAttribute getContainsAll() {
@@ -374,13 +410,17 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Returns true when a document contains all of the specified document attributes or metadata fields. This filter is
-     * only applicable to <code>StringListValue</code> metadata.
+     * Returns true when a document contains all of the specified document attributes/fields. This filter is only
+     * applicable to <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">StringListValue
+     * </a>.
      * </p>
      * 
      * @param containsAll
-     *        Returns true when a document contains all of the specified document attributes or metadata fields. This
-     *        filter is only applicable to <code>StringListValue</code> metadata.
+     *        Returns true when a document contains all of the specified document attributes/fields. This filter is only
+     *        applicable to <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html"
+     *        >StringListValue</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -391,13 +431,17 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Returns true when a document contains any of the specified document attributes or metadata fields. This filter is
-     * only applicable to <code>StringListValue</code> metadata.
+     * Returns true when a document contains any of the specified document attributes/fields. This filter is only
+     * applicable to <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">StringListValue
+     * </a>.
      * </p>
      * 
      * @param containsAny
-     *        Returns true when a document contains any of the specified document attributes or metadata fields. This
-     *        filter is only applicable to <code>StringListValue</code> metadata.
+     *        Returns true when a document contains any of the specified document attributes/fields. This filter is only
+     *        applicable to <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html"
+     *        >StringListValue</a>.
      */
 
     public void setContainsAny(DocumentAttribute containsAny) {
@@ -406,12 +450,16 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Returns true when a document contains any of the specified document attributes or metadata fields. This filter is
-     * only applicable to <code>StringListValue</code> metadata.
+     * Returns true when a document contains any of the specified document attributes/fields. This filter is only
+     * applicable to <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">StringListValue
+     * </a>.
      * </p>
      * 
-     * @return Returns true when a document contains any of the specified document attributes or metadata fields. This
-     *         filter is only applicable to <code>StringListValue</code> metadata.
+     * @return Returns true when a document contains any of the specified document attributes/fields. This filter is
+     *         only applicable to <a
+     *         href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html"
+     *         >StringListValue</a>.
      */
 
     public DocumentAttribute getContainsAny() {
@@ -420,13 +468,17 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Returns true when a document contains any of the specified document attributes or metadata fields. This filter is
-     * only applicable to <code>StringListValue</code> metadata.
+     * Returns true when a document contains any of the specified document attributes/fields. This filter is only
+     * applicable to <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">StringListValue
+     * </a>.
      * </p>
      * 
      * @param containsAny
-     *        Returns true when a document contains any of the specified document attributes or metadata fields. This
-     *        filter is only applicable to <code>StringListValue</code> metadata.
+     *        Returns true when a document contains any of the specified document attributes/fields. This filter is only
+     *        applicable to <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html"
+     *        >StringListValue</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -437,13 +489,15 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a greater than operation on two document attributes or metadata fields. Use with a document attribute of
-     * type <code>Date</code> or <code>Long</code>.
+     * Performs a greater than operation on document attributes/fields and their values. Use with the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document attribute
+     * type</a> <code>Date</code> or <code>Long</code>.
      * </p>
      * 
      * @param greaterThan
-     *        Performs a greater than operation on two document attributes or metadata fields. Use with a document
-     *        attribute of type <code>Date</code> or <code>Long</code>.
+     *        Performs a greater than operation on document attributes/fields and their values. Use with the <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document
+     *        attribute type</a> <code>Date</code> or <code>Long</code>.
      */
 
     public void setGreaterThan(DocumentAttribute greaterThan) {
@@ -452,12 +506,14 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a greater than operation on two document attributes or metadata fields. Use with a document attribute of
-     * type <code>Date</code> or <code>Long</code>.
+     * Performs a greater than operation on document attributes/fields and their values. Use with the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document attribute
+     * type</a> <code>Date</code> or <code>Long</code>.
      * </p>
      * 
-     * @return Performs a greater than operation on two document attributes or metadata fields. Use with a document
-     *         attribute of type <code>Date</code> or <code>Long</code>.
+     * @return Performs a greater than operation on document attributes/fields and their values. Use with the <a
+     *         href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document
+     *         attribute type</a> <code>Date</code> or <code>Long</code>.
      */
 
     public DocumentAttribute getGreaterThan() {
@@ -466,13 +522,15 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a greater than operation on two document attributes or metadata fields. Use with a document attribute of
-     * type <code>Date</code> or <code>Long</code>.
+     * Performs a greater than operation on document attributes/fields and their values. Use with the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document attribute
+     * type</a> <code>Date</code> or <code>Long</code>.
      * </p>
      * 
      * @param greaterThan
-     *        Performs a greater than operation on two document attributes or metadata fields. Use with a document
-     *        attribute of type <code>Date</code> or <code>Long</code>.
+     *        Performs a greater than operation on document attributes/fields and their values. Use with the <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document
+     *        attribute type</a> <code>Date</code> or <code>Long</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -483,13 +541,15 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a greater or equals than operation on two document attributes or metadata fields. Use with a document
-     * attribute of type <code>Date</code> or <code>Long</code>.
+     * Performs a greater or equals than operation on document attributes/fields and their values. Use with the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document attribute
+     * type</a> <code>Date</code> or <code>Long</code>.
      * </p>
      * 
      * @param greaterThanOrEquals
-     *        Performs a greater or equals than operation on two document attributes or metadata fields. Use with a
-     *        document attribute of type <code>Date</code> or <code>Long</code>.
+     *        Performs a greater or equals than operation on document attributes/fields and their values. Use with the
+     *        <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document
+     *        attribute type</a> <code>Date</code> or <code>Long</code>.
      */
 
     public void setGreaterThanOrEquals(DocumentAttribute greaterThanOrEquals) {
@@ -498,12 +558,14 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a greater or equals than operation on two document attributes or metadata fields. Use with a document
-     * attribute of type <code>Date</code> or <code>Long</code>.
+     * Performs a greater or equals than operation on document attributes/fields and their values. Use with the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document attribute
+     * type</a> <code>Date</code> or <code>Long</code>.
      * </p>
      * 
-     * @return Performs a greater or equals than operation on two document attributes or metadata fields. Use with a
-     *         document attribute of type <code>Date</code> or <code>Long</code>.
+     * @return Performs a greater or equals than operation on document attributes/fields and their values. Use with the
+     *         <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document
+     *         attribute type</a> <code>Date</code> or <code>Long</code>.
      */
 
     public DocumentAttribute getGreaterThanOrEquals() {
@@ -512,13 +574,15 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a greater or equals than operation on two document attributes or metadata fields. Use with a document
-     * attribute of type <code>Date</code> or <code>Long</code>.
+     * Performs a greater or equals than operation on document attributes/fields and their values. Use with the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document attribute
+     * type</a> <code>Date</code> or <code>Long</code>.
      * </p>
      * 
      * @param greaterThanOrEquals
-     *        Performs a greater or equals than operation on two document attributes or metadata fields. Use with a
-     *        document attribute of type <code>Date</code> or <code>Long</code>.
+     *        Performs a greater or equals than operation on document attributes/fields and their values. Use with the
+     *        <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document
+     *        attribute type</a> <code>Date</code> or <code>Long</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -529,13 +593,15 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a less than operation on two document attributes or metadata fields. Use with a document attribute of
-     * type <code>Date</code> or <code>Long</code>.
+     * Performs a less than operation on document attributes/fields and their values. Use with the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document attribute
+     * type</a> <code>Date</code> or <code>Long</code>.
      * </p>
      * 
      * @param lessThan
-     *        Performs a less than operation on two document attributes or metadata fields. Use with a document
-     *        attribute of type <code>Date</code> or <code>Long</code>.
+     *        Performs a less than operation on document attributes/fields and their values. Use with the <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document
+     *        attribute type</a> <code>Date</code> or <code>Long</code>.
      */
 
     public void setLessThan(DocumentAttribute lessThan) {
@@ -544,12 +610,14 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a less than operation on two document attributes or metadata fields. Use with a document attribute of
-     * type <code>Date</code> or <code>Long</code>.
+     * Performs a less than operation on document attributes/fields and their values. Use with the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document attribute
+     * type</a> <code>Date</code> or <code>Long</code>.
      * </p>
      * 
-     * @return Performs a less than operation on two document attributes or metadata fields. Use with a document
-     *         attribute of type <code>Date</code> or <code>Long</code>.
+     * @return Performs a less than operation on document attributes/fields and their values. Use with the <a
+     *         href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document
+     *         attribute type</a> <code>Date</code> or <code>Long</code>.
      */
 
     public DocumentAttribute getLessThan() {
@@ -558,13 +626,15 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a less than operation on two document attributes or metadata fields. Use with a document attribute of
-     * type <code>Date</code> or <code>Long</code>.
+     * Performs a less than operation on document attributes/fields and their values. Use with the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document attribute
+     * type</a> <code>Date</code> or <code>Long</code>.
      * </p>
      * 
      * @param lessThan
-     *        Performs a less than operation on two document attributes or metadata fields. Use with a document
-     *        attribute of type <code>Date</code> or <code>Long</code>.
+     *        Performs a less than operation on document attributes/fields and their values. Use with the <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document
+     *        attribute type</a> <code>Date</code> or <code>Long</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -575,13 +645,15 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a less than or equals operation on two document attributes or metadata fields. Use with a document
-     * attribute of type <code>Date</code> or <code>Long</code>.
+     * Performs a less than or equals operation on document attributes/fields and their values. Use with the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document attribute
+     * type</a> <code>Date</code> or <code>Long</code>.
      * </p>
      * 
      * @param lessThanOrEquals
-     *        Performs a less than or equals operation on two document attributes or metadata fields. Use with a
-     *        document attribute of type <code>Date</code> or <code>Long</code>.
+     *        Performs a less than or equals operation on document attributes/fields and their values. Use with the <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document
+     *        attribute type</a> <code>Date</code> or <code>Long</code>.
      */
 
     public void setLessThanOrEquals(DocumentAttribute lessThanOrEquals) {
@@ -590,12 +662,14 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a less than or equals operation on two document attributes or metadata fields. Use with a document
-     * attribute of type <code>Date</code> or <code>Long</code>.
+     * Performs a less than or equals operation on document attributes/fields and their values. Use with the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document attribute
+     * type</a> <code>Date</code> or <code>Long</code>.
      * </p>
      * 
-     * @return Performs a less than or equals operation on two document attributes or metadata fields. Use with a
-     *         document attribute of type <code>Date</code> or <code>Long</code>.
+     * @return Performs a less than or equals operation on document attributes/fields and their values. Use with the <a
+     *         href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document
+     *         attribute type</a> <code>Date</code> or <code>Long</code>.
      */
 
     public DocumentAttribute getLessThanOrEquals() {
@@ -604,13 +678,15 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Performs a less than or equals operation on two document attributes or metadata fields. Use with a document
-     * attribute of type <code>Date</code> or <code>Long</code>.
+     * Performs a less than or equals operation on document attributes/fields and their values. Use with the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document attribute
+     * type</a> <code>Date</code> or <code>Long</code>.
      * </p>
      * 
      * @param lessThanOrEquals
-     *        Performs a less than or equals operation on two document attributes or metadata fields. Use with a
-     *        document attribute of type <code>Date</code> or <code>Long</code>.
+     *        Performs a less than or equals operation on document attributes/fields and their values. Use with the <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document
+     *        attribute type</a> <code>Date</code> or <code>Long</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

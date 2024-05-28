@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.pinpointsmsvoicev2.AmazonPinpointSMSVoiceV2ClientB
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.pinpointsmsvoicev2.model.*;
+
 import com.amazonaws.services.pinpointsmsvoicev2.model.transform.*;
 
 /**
@@ -57,15 +58,35 @@ import com.amazonaws.services.pinpointsmsvoicev2.model.transform.*;
  * <p>
  * Amazon Pinpoint is an Amazon Web Services service that you can use to engage with your recipients across multiple
  * messaging channels. The Amazon Pinpoint SMS and Voice, version 2 API provides programmatic access to options that are
- * unique to the SMS and voice channels and supplements the resources provided by the Amazon Pinpoint API.
+ * unique to the SMS and voice channels. Amazon Pinpoint SMS and Voice, version 2 resources such as phone numbers,
+ * sender IDs, and opt-out lists can be used by the Amazon Pinpoint API.
  * </p>
  * <p>
- * If you're new to Amazon Pinpoint, it's also helpful to review the <a
- * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html"> Amazon Pinpoint Developer Guide</a>.
- * The <i>Amazon Pinpoint Developer Guide</i> provides tutorials, code samples, and procedures that demonstrate how to
- * use Amazon Pinpoint features programmatically and how to integrate Amazon Pinpoint functionality into mobile apps and
- * other types of applications. The guide also provides key information, such as Amazon Pinpoint integration with other
- * Amazon Web Services services, and the quotas that apply to use of the service.
+ * If you're new to Amazon Pinpoint SMS, it's also helpful to review the <a
+ * href="https://docs.aws.amazon.com/sms-voice/latest/userguide/what-is-service.html"> Amazon Pinpoint SMS User
+ * Guide</a>. The <i>Amazon Pinpoint Developer Guide</i> provides tutorials, code samples, and procedures that
+ * demonstrate how to use Amazon Pinpoint SMS features programmatically and how to integrate Amazon Pinpoint
+ * functionality into mobile apps and other types of applications. The guide also provides key information, such as
+ * Amazon Pinpoint integration with other Amazon Web Services services, and the quotas that apply to use of the service.
+ * </p>
+ * <p>
+ * <b>Regional availability</b>
+ * </p>
+ * <p>
+ * The <i>Amazon Pinpoint SMS and Voice, version 2 API Reference</i> is available in several Amazon Web Services Regions
+ * and it provides an endpoint for each of these Regions. For a list of all the Regions and endpoints where the API is
+ * currently available, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#pinpoint_region">Amazon
+ * Web Services Service Endpoints</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/pinpoint.html">Amazon
+ * Pinpoint endpoints and quotas</a> in the Amazon Web Services General Reference. To learn more about Amazon Web
+ * Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html">Managing Amazon Web
+ * Services Regions</a> in the Amazon Web Services General Reference.
+ * </p>
+ * <p>
+ * In each Region, Amazon Web Services maintains multiple Availability Zones. These Availability Zones are physically
+ * isolated from each other, but are united by private, low-latency, high-throughput, and highly redundant network
+ * connections. These Availability Zones enable us to provide very high levels of availability and redundancy, while
+ * also minimizing latency. To learn more about the number of Availability Zones that are available in each Region, see
+ * <a href="https://aws.amazon.com/about-aws/global-infrastructure/">Amazon Web Services Global Infrastructure.</a>
  * </p>
  */
 @ThreadSafe
@@ -91,26 +112,26 @@ public class AmazonPinpointSMSVoiceV2Client extends AmazonWebServiceClient imple
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.pinpointsmsvoicev2.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.pinpointsmsvoicev2.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
                                     com.amazonaws.services.pinpointsmsvoicev2.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.pinpointsmsvoicev2.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.pinpointsmsvoicev2.model.transform.ConflictExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.pinpointsmsvoicev2.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.pinpointsmsvoicev2.model.transform.ValidationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.pinpointsmsvoicev2.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.pinpointsmsvoicev2.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.pinpointsmsvoicev2.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.pinpointsmsvoicev2.model.AmazonPinpointSMSVoiceV2Exception.class));
 
     public static AmazonPinpointSMSVoiceV2ClientBuilder builder() {
@@ -164,11 +185,11 @@ public class AmazonPinpointSMSVoiceV2Client extends AmazonWebServiceClient imple
      * Associates the specified origination identity with a pool.
      * </p>
      * <p>
-     * If the origination identity is a phone number and is already associated with another pool, an Error is returned.
+     * If the origination identity is a phone number and is already associated with another pool, an error is returned.
      * A sender ID can be associated with multiple pools.
      * </p>
      * <p>
-     * If the origination identity configuration doesn't match the pool's configuration, an Error is returned.
+     * If the origination identity configuration doesn't match the pool's configuration, an error is returned.
      * </p>
      * 
      * @param associateOriginationIdentityRequest
@@ -231,6 +252,81 @@ public class AmazonPinpointSMSVoiceV2Client extends AmazonWebServiceClient imple
             HttpResponseHandler<AmazonWebServiceResponse<AssociateOriginationIdentityResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new AssociateOriginationIdentityResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Associate a protect configuration with a configuration set. This replaces the configuration sets current protect
+     * configuration. A configuration set can only be associated with one protect configuration at a time. A protect
+     * configuration can be associated with multiple configuration sets.
+     * </p>
+     * 
+     * @param associateProtectConfigurationRequest
+     * @return Result of the AssociateProtectConfiguration operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.AssociateProtectConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/AssociateProtectConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateProtectConfigurationResult associateProtectConfiguration(AssociateProtectConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateProtectConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final AssociateProtectConfigurationResult executeAssociateProtectConfiguration(AssociateProtectConfigurationRequest associateProtectConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateProtectConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateProtectConfigurationRequest> request = null;
+        Response<AssociateProtectConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateProtectConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(associateProtectConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateProtectConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateProtectConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AssociateProtectConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -407,7 +503,7 @@ public class AmazonPinpointSMSVoiceV2Client extends AmazonWebServiceClient imple
      * Creates a new opt-out list.
      * </p>
      * <p>
-     * If the opt-out list name already exists, an Error is returned.
+     * If the opt-out list name already exists, an error is returned.
      * </p>
      * <p>
      * An opt-out list is a list of phone numbers that are opted out, meaning you can't send SMS or voice messages to
@@ -494,7 +590,7 @@ public class AmazonPinpointSMSVoiceV2Client extends AmazonWebServiceClient imple
      * inherited from the origination identity and defaults to false.
      * </p>
      * <p>
-     * If the origination identity is a phone number and is already associated with another pool, an Error is returned.
+     * If the origination identity is a phone number and is already associated with another pool, an error is returned.
      * A sender ID can be associated with multiple pools.
      * </p>
      * 
@@ -555,6 +651,517 @@ public class AmazonPinpointSMSVoiceV2Client extends AmazonWebServiceClient imple
 
             HttpResponseHandler<AmazonWebServiceResponse<CreatePoolResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreatePoolResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Create a new protect configuration. By default all country rule sets for each capability are set to
+     * <code>ALLOW</code>. Update the country rule sets using <code>UpdateProtectConfigurationCountryRuleSet</code>. A
+     * protect configurations name is stored as a Tag with the key set to <code>Name</code> and value as the name of the
+     * protect configuration.
+     * </p>
+     * 
+     * @param createProtectConfigurationRequest
+     * @return Result of the CreateProtectConfiguration operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause a service quota to be exceeded.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.CreateProtectConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateProtectConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateProtectConfigurationResult createProtectConfiguration(CreateProtectConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateProtectConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final CreateProtectConfigurationResult executeCreateProtectConfiguration(CreateProtectConfigurationRequest createProtectConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createProtectConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateProtectConfigurationRequest> request = null;
+        Response<CreateProtectConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateProtectConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createProtectConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProtectConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateProtectConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateProtectConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new registration based on the <b>RegistrationType</b> field.
+     * </p>
+     * 
+     * @param createRegistrationRequest
+     * @return Result of the CreateRegistration operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause a service quota to be exceeded.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.CreateRegistration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateRegistration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateRegistrationResult createRegistration(CreateRegistrationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateRegistration(request);
+    }
+
+    @SdkInternalApi
+    final CreateRegistrationResult executeCreateRegistration(CreateRegistrationRequest createRegistrationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createRegistrationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateRegistrationRequest> request = null;
+        Response<CreateRegistrationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateRegistrationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRegistrationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRegistration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateRegistrationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateRegistrationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Associate the registration with an origination identity such as a phone number or sender ID.
+     * </p>
+     * 
+     * @param createRegistrationAssociationRequest
+     * @return Result of the CreateRegistrationAssociation operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause a service quota to be exceeded.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.CreateRegistrationAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateRegistrationAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateRegistrationAssociationResult createRegistrationAssociation(CreateRegistrationAssociationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateRegistrationAssociation(request);
+    }
+
+    @SdkInternalApi
+    final CreateRegistrationAssociationResult executeCreateRegistrationAssociation(CreateRegistrationAssociationRequest createRegistrationAssociationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createRegistrationAssociationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateRegistrationAssociationRequest> request = null;
+        Response<CreateRegistrationAssociationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateRegistrationAssociationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createRegistrationAssociationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRegistrationAssociation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateRegistrationAssociationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateRegistrationAssociationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Create a new registration attachment to use for uploading a file or a URL to a file. The maximum file size is
+     * 1MiB and valid file extensions are PDF, JPEG and PNG. For example, many sender ID registrations require a signed
+     * “letter of authorization” (LOA) to be submitted.
+     * </p>
+     * 
+     * @param createRegistrationAttachmentRequest
+     * @return Result of the CreateRegistrationAttachment operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause a service quota to be exceeded.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.CreateRegistrationAttachment
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateRegistrationAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateRegistrationAttachmentResult createRegistrationAttachment(CreateRegistrationAttachmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateRegistrationAttachment(request);
+    }
+
+    @SdkInternalApi
+    final CreateRegistrationAttachmentResult executeCreateRegistrationAttachment(CreateRegistrationAttachmentRequest createRegistrationAttachmentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createRegistrationAttachmentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateRegistrationAttachmentRequest> request = null;
+        Response<CreateRegistrationAttachmentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateRegistrationAttachmentRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createRegistrationAttachmentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRegistrationAttachment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateRegistrationAttachmentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateRegistrationAttachmentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Create a new version of the registration and increase the <b>VersionNumber</b>. The previous version of the
+     * registration becomes read-only.
+     * </p>
+     * 
+     * @param createRegistrationVersionRequest
+     * @return Result of the CreateRegistrationVersion operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause a service quota to be exceeded.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.CreateRegistrationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateRegistrationVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateRegistrationVersionResult createRegistrationVersion(CreateRegistrationVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateRegistrationVersion(request);
+    }
+
+    @SdkInternalApi
+    final CreateRegistrationVersionResult executeCreateRegistrationVersion(CreateRegistrationVersionRequest createRegistrationVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createRegistrationVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateRegistrationVersionRequest> request = null;
+        Response<CreateRegistrationVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateRegistrationVersionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createRegistrationVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRegistrationVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateRegistrationVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateRegistrationVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * You can only send messages to verified destination numbers when your account is in the sandbox. You can add up to
+     * 10 verified destination numbers.
+     * </p>
+     * 
+     * @param createVerifiedDestinationNumberRequest
+     * @return Result of the CreateVerifiedDestinationNumber operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause a service quota to be exceeded.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.CreateVerifiedDestinationNumber
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateVerifiedDestinationNumber"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateVerifiedDestinationNumberResult createVerifiedDestinationNumber(CreateVerifiedDestinationNumberRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateVerifiedDestinationNumber(request);
+    }
+
+    @SdkInternalApi
+    final CreateVerifiedDestinationNumberResult executeCreateVerifiedDestinationNumber(
+            CreateVerifiedDestinationNumberRequest createVerifiedDestinationNumberRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createVerifiedDestinationNumberRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateVerifiedDestinationNumberRequest> request = null;
+        Response<CreateVerifiedDestinationNumberResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateVerifiedDestinationNumberRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createVerifiedDestinationNumberRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVerifiedDestinationNumber");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateVerifiedDestinationNumberResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateVerifiedDestinationNumberResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes the current account default protect configuration.
+     * </p>
+     * 
+     * @param deleteAccountDefaultProtectConfigurationRequest
+     * @return Result of the DeleteAccountDefaultProtectConfiguration operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DeleteAccountDefaultProtectConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteAccountDefaultProtectConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteAccountDefaultProtectConfigurationResult deleteAccountDefaultProtectConfiguration(DeleteAccountDefaultProtectConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAccountDefaultProtectConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAccountDefaultProtectConfigurationResult executeDeleteAccountDefaultProtectConfiguration(
+            DeleteAccountDefaultProtectConfigurationRequest deleteAccountDefaultProtectConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAccountDefaultProtectConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAccountDefaultProtectConfigurationRequest> request = null;
+        Response<DeleteAccountDefaultProtectConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAccountDefaultProtectConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteAccountDefaultProtectConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAccountDefaultProtectConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAccountDefaultProtectConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteAccountDefaultProtectConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -934,10 +1541,82 @@ public class AmazonPinpointSMSVoiceV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Deletes an account-level monthly spending limit override for sending multimedia messages (MMS). Deleting a spend
+     * limit override will set the <code>EnforcedLimit</code> to equal the <code>MaxLimit</code>, which is controlled by
+     * Amazon Web Services. For more information on spend limits (quotas) see <a
+     * href="https://docs.aws.amazon.com/sms-voice/latest/userguide/quotas.html">Quotas for Server Migration Service</a>
+     * in the <i>Server Migration Service User Guide</i>.
+     * </p>
+     * 
+     * @param deleteMediaMessageSpendLimitOverrideRequest
+     * @return Result of the DeleteMediaMessageSpendLimitOverride operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DeleteMediaMessageSpendLimitOverride
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteMediaMessageSpendLimitOverride"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteMediaMessageSpendLimitOverrideResult deleteMediaMessageSpendLimitOverride(DeleteMediaMessageSpendLimitOverrideRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteMediaMessageSpendLimitOverride(request);
+    }
+
+    @SdkInternalApi
+    final DeleteMediaMessageSpendLimitOverrideResult executeDeleteMediaMessageSpendLimitOverride(
+            DeleteMediaMessageSpendLimitOverrideRequest deleteMediaMessageSpendLimitOverrideRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteMediaMessageSpendLimitOverrideRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteMediaMessageSpendLimitOverrideRequest> request = null;
+        Response<DeleteMediaMessageSpendLimitOverrideResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteMediaMessageSpendLimitOverrideRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteMediaMessageSpendLimitOverrideRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMediaMessageSpendLimitOverride");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteMediaMessageSpendLimitOverrideResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteMediaMessageSpendLimitOverrideResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes an existing opt-out list. All opted out phone numbers in the opt-out list are deleted.
      * </p>
      * <p>
-     * If the specified opt-out list name doesn't exist or is in-use by an origination phone number or pool, an Error is
+     * If the specified opt-out list name doesn't exist or is in-use by an origination phone number or pool, an error is
      * returned.
      * </p>
      * 
@@ -1014,7 +1693,7 @@ public class AmazonPinpointSMSVoiceV2Client extends AmazonWebServiceClient imple
      * Each destination phone number can only be deleted once every 30 days.
      * </p>
      * <p>
-     * If the specified destination phone number doesn't exist or if the opt-out list doesn't exist, an Error is
+     * If the specified destination phone number doesn't exist or if the opt-out list doesn't exist, an error is
      * returned.
      * </p>
      * 
@@ -1088,7 +1767,7 @@ public class AmazonPinpointSMSVoiceV2Client extends AmazonWebServiceClient imple
      * Deletes an existing pool. Deleting a pool disassociates all origination identities from that pool.
      * </p>
      * <p>
-     * If the pool status isn't active or if deletion protection is enabled, an Error is returned.
+     * If the pool status isn't active or if deletion protection is enabled, an error is returned.
      * </p>
      * <p>
      * A pool is a collection of phone numbers and SenderIds. A pool can include one or more phone numbers and SenderIds
@@ -1162,6 +1841,295 @@ public class AmazonPinpointSMSVoiceV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Permanently delete the protect configuration. The protect configuration must have deletion protection disabled
+     * and must not be associated as the account default protect configuration or associated with a configuration set.
+     * </p>
+     * 
+     * @param deleteProtectConfigurationRequest
+     * @return Result of the DeleteProtectConfiguration operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DeleteProtectConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteProtectConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteProtectConfigurationResult deleteProtectConfiguration(DeleteProtectConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteProtectConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteProtectConfigurationResult executeDeleteProtectConfiguration(DeleteProtectConfigurationRequest deleteProtectConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteProtectConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteProtectConfigurationRequest> request = null;
+        Response<DeleteProtectConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteProtectConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteProtectConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProtectConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteProtectConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteProtectConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Permanently delete an existing registration from your account.
+     * </p>
+     * 
+     * @param deleteRegistrationRequest
+     * @return Result of the DeleteRegistration operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DeleteRegistration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteRegistration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteRegistrationResult deleteRegistration(DeleteRegistrationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRegistration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRegistrationResult executeDeleteRegistration(DeleteRegistrationRequest deleteRegistrationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteRegistrationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteRegistrationRequest> request = null;
+        Response<DeleteRegistrationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteRegistrationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRegistrationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRegistration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteRegistrationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteRegistrationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Permanently delete the specified registration attachment.
+     * </p>
+     * 
+     * @param deleteRegistrationAttachmentRequest
+     * @return Result of the DeleteRegistrationAttachment operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DeleteRegistrationAttachment
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteRegistrationAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteRegistrationAttachmentResult deleteRegistrationAttachment(DeleteRegistrationAttachmentRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRegistrationAttachment(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRegistrationAttachmentResult executeDeleteRegistrationAttachment(DeleteRegistrationAttachmentRequest deleteRegistrationAttachmentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteRegistrationAttachmentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteRegistrationAttachmentRequest> request = null;
+        Response<DeleteRegistrationAttachmentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteRegistrationAttachmentRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteRegistrationAttachmentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRegistrationAttachment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteRegistrationAttachmentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteRegistrationAttachmentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Delete the value in a registration form field.
+     * </p>
+     * 
+     * @param deleteRegistrationFieldValueRequest
+     * @return Result of the DeleteRegistrationFieldValue operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DeleteRegistrationFieldValue
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteRegistrationFieldValue"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteRegistrationFieldValueResult deleteRegistrationFieldValue(DeleteRegistrationFieldValueRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRegistrationFieldValue(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRegistrationFieldValueResult executeDeleteRegistrationFieldValue(DeleteRegistrationFieldValueRequest deleteRegistrationFieldValueRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteRegistrationFieldValueRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteRegistrationFieldValueRequest> request = null;
+        Response<DeleteRegistrationFieldValueResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteRegistrationFieldValueRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteRegistrationFieldValueRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRegistrationFieldValue");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteRegistrationFieldValueResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteRegistrationFieldValueResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes an account-level monthly spending limit override for sending text messages. Deleting a spend limit
      * override will set the <code>EnforcedLimit</code> to equal the <code>MaxLimit</code>, which is controlled by
      * Amazon Web Services. For more information on spend limits (quotas) see <a
@@ -1222,6 +2190,80 @@ public class AmazonPinpointSMSVoiceV2Client extends AmazonWebServiceClient imple
             HttpResponseHandler<AmazonWebServiceResponse<DeleteTextMessageSpendLimitOverrideResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteTextMessageSpendLimitOverrideResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Delete a verified destination phone number.
+     * </p>
+     * 
+     * @param deleteVerifiedDestinationNumberRequest
+     * @return Result of the DeleteVerifiedDestinationNumber operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DeleteVerifiedDestinationNumber
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteVerifiedDestinationNumber"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteVerifiedDestinationNumberResult deleteVerifiedDestinationNumber(DeleteVerifiedDestinationNumberRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteVerifiedDestinationNumber(request);
+    }
+
+    @SdkInternalApi
+    final DeleteVerifiedDestinationNumberResult executeDeleteVerifiedDestinationNumber(
+            DeleteVerifiedDestinationNumberRequest deleteVerifiedDestinationNumberRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteVerifiedDestinationNumberRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteVerifiedDestinationNumberRequest> request = null;
+        Response<DeleteVerifiedDestinationNumberResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteVerifiedDestinationNumberRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteVerifiedDestinationNumberRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVerifiedDestinationNumber");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteVerifiedDestinationNumberResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteVerifiedDestinationNumberResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1536,7 +2578,7 @@ public class AmazonPinpointSMSVoiceV2Client extends AmazonWebServiceClient imple
      * customizable message.
      * </p>
      * <p>
-     * If you specify a keyword that isn't valid, an Error is returned.
+     * If you specify a keyword that isn't valid, an error is returned.
      * </p>
      * 
      * @param describeKeywordsRequest
@@ -1610,7 +2652,7 @@ public class AmazonPinpointSMSVoiceV2Client extends AmazonWebServiceClient imple
      * output includes information for all opt-out lists.
      * </p>
      * <p>
-     * If you specify an opt-out list name that isn't valid, an Error is returned.
+     * If you specify an opt-out list name that isn't valid, an error is returned.
      * </p>
      * 
      * @param describeOptOutListsRequest
@@ -1685,7 +2727,7 @@ public class AmazonPinpointSMSVoiceV2Client extends AmazonWebServiceClient imple
      * destination numbers in your opt-out list.
      * </p>
      * <p>
-     * If you specify an opted out number that isn't valid, an Error is returned.
+     * If you specify an opted out number that isn't valid, an error is returned.
      * </p>
      * 
      * @param describeOptedOutNumbersRequest
@@ -1761,7 +2803,7 @@ public class AmazonPinpointSMSVoiceV2Client extends AmazonWebServiceClient imple
      * you don't specify phone number IDs or filters, the output includes information for all phone numbers.
      * </p>
      * <p>
-     * If you specify a phone number ID that isn't valid, an Error is returned.
+     * If you specify a phone number ID that isn't valid, an error is returned.
      * </p>
      * 
      * @param describePhoneNumbersRequest
@@ -1835,7 +2877,7 @@ public class AmazonPinpointSMSVoiceV2Client extends AmazonWebServiceClient imple
      * or filters, the output includes information for all pools.
      * </p>
      * <p>
-     * If you specify a pool ID that isn't valid, an Error is returned.
+     * If you specify a pool ID that isn't valid, an error is returned.
      * </p>
      * <p>
      * A pool is a collection of phone numbers and SenderIds. A pool can include one or more phone numbers and SenderIds
@@ -1905,6 +2947,560 @@ public class AmazonPinpointSMSVoiceV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Retrieves the protect configurations that match any of filters. If a filter isn’t provided then all protect
+     * configurations are returned.
+     * </p>
+     * 
+     * @param describeProtectConfigurationsRequest
+     * @return Result of the DescribeProtectConfigurations operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DescribeProtectConfigurations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeProtectConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeProtectConfigurationsResult describeProtectConfigurations(DescribeProtectConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeProtectConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final DescribeProtectConfigurationsResult executeDescribeProtectConfigurations(DescribeProtectConfigurationsRequest describeProtectConfigurationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeProtectConfigurationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeProtectConfigurationsRequest> request = null;
+        Response<DescribeProtectConfigurationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeProtectConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeProtectConfigurationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProtectConfigurations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeProtectConfigurationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeProtectConfigurationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the specified registration attachments or all registration attachments associated with your Amazon Web
+     * Services account.
+     * </p>
+     * 
+     * @param describeRegistrationAttachmentsRequest
+     * @return Result of the DescribeRegistrationAttachments operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DescribeRegistrationAttachments
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationAttachments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeRegistrationAttachmentsResult describeRegistrationAttachments(DescribeRegistrationAttachmentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeRegistrationAttachments(request);
+    }
+
+    @SdkInternalApi
+    final DescribeRegistrationAttachmentsResult executeDescribeRegistrationAttachments(
+            DescribeRegistrationAttachmentsRequest describeRegistrationAttachmentsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeRegistrationAttachmentsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeRegistrationAttachmentsRequest> request = null;
+        Response<DescribeRegistrationAttachmentsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeRegistrationAttachmentsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeRegistrationAttachmentsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRegistrationAttachments");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeRegistrationAttachmentsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeRegistrationAttachmentsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the specified registration type field definitions. You can use DescribeRegistrationFieldDefinitions to
+     * view the requirements for creating, filling out, and submitting each registration type.
+     * </p>
+     * 
+     * @param describeRegistrationFieldDefinitionsRequest
+     * @return Result of the DescribeRegistrationFieldDefinitions operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DescribeRegistrationFieldDefinitions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationFieldDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeRegistrationFieldDefinitionsResult describeRegistrationFieldDefinitions(DescribeRegistrationFieldDefinitionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeRegistrationFieldDefinitions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeRegistrationFieldDefinitionsResult executeDescribeRegistrationFieldDefinitions(
+            DescribeRegistrationFieldDefinitionsRequest describeRegistrationFieldDefinitionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeRegistrationFieldDefinitionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeRegistrationFieldDefinitionsRequest> request = null;
+        Response<DescribeRegistrationFieldDefinitionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeRegistrationFieldDefinitionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeRegistrationFieldDefinitionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRegistrationFieldDefinitions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeRegistrationFieldDefinitionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeRegistrationFieldDefinitionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the specified registration field values.
+     * </p>
+     * 
+     * @param describeRegistrationFieldValuesRequest
+     * @return Result of the DescribeRegistrationFieldValues operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DescribeRegistrationFieldValues
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationFieldValues"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeRegistrationFieldValuesResult describeRegistrationFieldValues(DescribeRegistrationFieldValuesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeRegistrationFieldValues(request);
+    }
+
+    @SdkInternalApi
+    final DescribeRegistrationFieldValuesResult executeDescribeRegistrationFieldValues(
+            DescribeRegistrationFieldValuesRequest describeRegistrationFieldValuesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeRegistrationFieldValuesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeRegistrationFieldValuesRequest> request = null;
+        Response<DescribeRegistrationFieldValuesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeRegistrationFieldValuesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeRegistrationFieldValuesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRegistrationFieldValues");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeRegistrationFieldValuesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeRegistrationFieldValuesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the specified registration section definitions. You can use DescribeRegistrationSectionDefinitions to
+     * view the requirements for creating, filling out, and submitting each registration type.
+     * </p>
+     * 
+     * @param describeRegistrationSectionDefinitionsRequest
+     * @return Result of the DescribeRegistrationSectionDefinitions operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DescribeRegistrationSectionDefinitions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationSectionDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeRegistrationSectionDefinitionsResult describeRegistrationSectionDefinitions(DescribeRegistrationSectionDefinitionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeRegistrationSectionDefinitions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeRegistrationSectionDefinitionsResult executeDescribeRegistrationSectionDefinitions(
+            DescribeRegistrationSectionDefinitionsRequest describeRegistrationSectionDefinitionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeRegistrationSectionDefinitionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeRegistrationSectionDefinitionsRequest> request = null;
+        Response<DescribeRegistrationSectionDefinitionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeRegistrationSectionDefinitionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeRegistrationSectionDefinitionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRegistrationSectionDefinitions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeRegistrationSectionDefinitionsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeRegistrationSectionDefinitionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the specified registration type definitions. You can use DescribeRegistrationTypeDefinitions to view
+     * the requirements for creating, filling out, and submitting each registration type.
+     * </p>
+     * 
+     * @param describeRegistrationTypeDefinitionsRequest
+     * @return Result of the DescribeRegistrationTypeDefinitions operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DescribeRegistrationTypeDefinitions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationTypeDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeRegistrationTypeDefinitionsResult describeRegistrationTypeDefinitions(DescribeRegistrationTypeDefinitionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeRegistrationTypeDefinitions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeRegistrationTypeDefinitionsResult executeDescribeRegistrationTypeDefinitions(
+            DescribeRegistrationTypeDefinitionsRequest describeRegistrationTypeDefinitionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeRegistrationTypeDefinitionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeRegistrationTypeDefinitionsRequest> request = null;
+        Response<DescribeRegistrationTypeDefinitionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeRegistrationTypeDefinitionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeRegistrationTypeDefinitionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRegistrationTypeDefinitions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeRegistrationTypeDefinitionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeRegistrationTypeDefinitionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the specified registration version.
+     * </p>
+     * 
+     * @param describeRegistrationVersionsRequest
+     * @return Result of the DescribeRegistrationVersions operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DescribeRegistrationVersions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeRegistrationVersionsResult describeRegistrationVersions(DescribeRegistrationVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeRegistrationVersions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeRegistrationVersionsResult executeDescribeRegistrationVersions(DescribeRegistrationVersionsRequest describeRegistrationVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeRegistrationVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeRegistrationVersionsRequest> request = null;
+        Response<DescribeRegistrationVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeRegistrationVersionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeRegistrationVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRegistrationVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeRegistrationVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeRegistrationVersionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the specified registrations.
+     * </p>
+     * 
+     * @param describeRegistrationsRequest
+     * @return Result of the DescribeRegistrations operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DescribeRegistrations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeRegistrationsResult describeRegistrations(DescribeRegistrationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeRegistrations(request);
+    }
+
+    @SdkInternalApi
+    final DescribeRegistrationsResult executeDescribeRegistrations(DescribeRegistrationsRequest describeRegistrationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeRegistrationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeRegistrationsRequest> request = null;
+        Response<DescribeRegistrationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeRegistrationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRegistrationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRegistrations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeRegistrationsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeRegistrationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes the specified SenderIds or all SenderIds associated with your Amazon Web Services account.
      * </p>
      * <p>
@@ -1913,7 +3509,7 @@ public class AmazonPinpointSMSVoiceV2Client extends AmazonWebServiceClient imple
      * specify SenderIds or filters, the output includes information for all SenderIds.
      * </p>
      * <p>
-     * f you specify a sender ID that isn't valid, an Error is returned.
+     * f you specify a sender ID that isn't valid, an error is returned.
      * </p>
      * 
      * @param describeSenderIdsRequest
@@ -2050,10 +3646,80 @@ public class AmazonPinpointSMSVoiceV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Retrieves the specified verified destiona numbers.
+     * </p>
+     * 
+     * @param describeVerifiedDestinationNumbersRequest
+     * @return Result of the DescribeVerifiedDestinationNumbers operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DescribeVerifiedDestinationNumbers
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeVerifiedDestinationNumbers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeVerifiedDestinationNumbersResult describeVerifiedDestinationNumbers(DescribeVerifiedDestinationNumbersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeVerifiedDestinationNumbers(request);
+    }
+
+    @SdkInternalApi
+    final DescribeVerifiedDestinationNumbersResult executeDescribeVerifiedDestinationNumbers(
+            DescribeVerifiedDestinationNumbersRequest describeVerifiedDestinationNumbersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeVerifiedDestinationNumbersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeVerifiedDestinationNumbersRequest> request = null;
+        Response<DescribeVerifiedDestinationNumbersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeVerifiedDestinationNumbersRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeVerifiedDestinationNumbersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVerifiedDestinationNumbers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeVerifiedDestinationNumbersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeVerifiedDestinationNumbersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Removes the specified origination identity from an existing pool.
      * </p>
      * <p>
-     * If the origination identity isn't associated with the specified pool, an Error is returned.
+     * If the origination identity isn't associated with the specified pool, an error is returned.
      * </p>
      * 
      * @param disassociateOriginationIdentityRequest
@@ -2127,6 +3793,222 @@ public class AmazonPinpointSMSVoiceV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Disassociate a protect configuration from a configuration set.
+     * </p>
+     * 
+     * @param disassociateProtectConfigurationRequest
+     * @return Result of the DisassociateProtectConfiguration operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DisassociateProtectConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DisassociateProtectConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateProtectConfigurationResult disassociateProtectConfiguration(DisassociateProtectConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateProtectConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateProtectConfigurationResult executeDisassociateProtectConfiguration(
+            DisassociateProtectConfigurationRequest disassociateProtectConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateProtectConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateProtectConfigurationRequest> request = null;
+        Response<DisassociateProtectConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateProtectConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateProtectConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateProtectConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateProtectConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateProtectConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Discard the current version of the registration.
+     * </p>
+     * 
+     * @param discardRegistrationVersionRequest
+     * @return Result of the DiscardRegistrationVersion operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DiscardRegistrationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DiscardRegistrationVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DiscardRegistrationVersionResult discardRegistrationVersion(DiscardRegistrationVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDiscardRegistrationVersion(request);
+    }
+
+    @SdkInternalApi
+    final DiscardRegistrationVersionResult executeDiscardRegistrationVersion(DiscardRegistrationVersionRequest discardRegistrationVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(discardRegistrationVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DiscardRegistrationVersionRequest> request = null;
+        Response<DiscardRegistrationVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DiscardRegistrationVersionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(discardRegistrationVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DiscardRegistrationVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DiscardRegistrationVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DiscardRegistrationVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieve the CountryRuleSet for the specified NumberCapability from a protect configuration.
+     * </p>
+     * 
+     * @param getProtectConfigurationCountryRuleSetRequest
+     * @return Result of the GetProtectConfigurationCountryRuleSet operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.GetProtectConfigurationCountryRuleSet
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/GetProtectConfigurationCountryRuleSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetProtectConfigurationCountryRuleSetResult getProtectConfigurationCountryRuleSet(GetProtectConfigurationCountryRuleSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetProtectConfigurationCountryRuleSet(request);
+    }
+
+    @SdkInternalApi
+    final GetProtectConfigurationCountryRuleSetResult executeGetProtectConfigurationCountryRuleSet(
+            GetProtectConfigurationCountryRuleSetRequest getProtectConfigurationCountryRuleSetRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getProtectConfigurationCountryRuleSetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetProtectConfigurationCountryRuleSetRequest> request = null;
+        Response<GetProtectConfigurationCountryRuleSetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetProtectConfigurationCountryRuleSetRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getProtectConfigurationCountryRuleSetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetProtectConfigurationCountryRuleSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetProtectConfigurationCountryRuleSetResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetProtectConfigurationCountryRuleSetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists all associated origination identities in your pool.
      * </p>
      * <p>
@@ -2188,6 +4070,75 @@ public class AmazonPinpointSMSVoiceV2Client extends AmazonWebServiceClient imple
             HttpResponseHandler<AmazonWebServiceResponse<ListPoolOriginationIdentitiesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListPoolOriginationIdentitiesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retreive all of the origination identies that are associated with a registration.
+     * </p>
+     * 
+     * @param listRegistrationAssociationsRequest
+     * @return Result of the ListRegistrationAssociations operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.ListRegistrationAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/ListRegistrationAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListRegistrationAssociationsResult listRegistrationAssociations(ListRegistrationAssociationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRegistrationAssociations(request);
+    }
+
+    @SdkInternalApi
+    final ListRegistrationAssociationsResult executeListRegistrationAssociations(ListRegistrationAssociationsRequest listRegistrationAssociationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listRegistrationAssociationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListRegistrationAssociationsRequest> request = null;
+        Response<ListRegistrationAssociationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListRegistrationAssociationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listRegistrationAssociationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRegistrationAssociations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListRegistrationAssociationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListRegistrationAssociationsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2275,7 +4226,7 @@ public class AmazonPinpointSMSVoiceV2Client extends AmazonWebServiceClient imple
      * customizable message.
      * </p>
      * <p>
-     * If you specify a keyword that isn't valid, an Error is returned.
+     * If you specify a keyword that isn't valid, an error is returned.
      * </p>
      * 
      * @param putKeywordRequest
@@ -2350,7 +4301,7 @@ public class AmazonPinpointSMSVoiceV2Client extends AmazonWebServiceClient imple
      * Creates an opted out destination phone number in the opt-out list.
      * </p>
      * <p>
-     * If the destination phone number isn't valid or if the specified opt-out list doesn't exist, an Error is returned.
+     * If the destination phone number isn't valid or if the specified opt-out list doesn't exist, an error is returned.
      * </p>
      * 
      * @param putOptedOutNumberRequest
@@ -2416,11 +4367,83 @@ public class AmazonPinpointSMSVoiceV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Creates or updates a field value for a registration.
+     * </p>
+     * 
+     * @param putRegistrationFieldValueRequest
+     * @return Result of the PutRegistrationFieldValue operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.PutRegistrationFieldValue
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/PutRegistrationFieldValue"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutRegistrationFieldValueResult putRegistrationFieldValue(PutRegistrationFieldValueRequest request) {
+        request = beforeClientExecution(request);
+        return executePutRegistrationFieldValue(request);
+    }
+
+    @SdkInternalApi
+    final PutRegistrationFieldValueResult executePutRegistrationFieldValue(PutRegistrationFieldValueRequest putRegistrationFieldValueRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putRegistrationFieldValueRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutRegistrationFieldValueRequest> request = null;
+        Response<PutRegistrationFieldValueResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutRegistrationFieldValueRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putRegistrationFieldValueRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRegistrationFieldValue");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutRegistrationFieldValueResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutRegistrationFieldValueResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Releases an existing origination phone number in your account. Once released, a phone number is no longer
      * available for sending messages.
      * </p>
      * <p>
-     * If the origination phone number has deletion protection enabled or is associated with a pool, an Error is
+     * If the origination phone number has deletion protection enabled or is associated with a pool, an error is
      * returned.
      * </p>
      * 
@@ -2479,6 +4502,76 @@ public class AmazonPinpointSMSVoiceV2Client extends AmazonWebServiceClient imple
 
             HttpResponseHandler<AmazonWebServiceResponse<ReleasePhoneNumberResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ReleasePhoneNumberResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Releases an existing sender ID in your account.
+     * </p>
+     * 
+     * @param releaseSenderIdRequest
+     * @return Result of the ReleaseSenderId operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.ReleaseSenderId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/ReleaseSenderId"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ReleaseSenderIdResult releaseSenderId(ReleaseSenderIdRequest request) {
+        request = beforeClientExecution(request);
+        return executeReleaseSenderId(request);
+    }
+
+    @SdkInternalApi
+    final ReleaseSenderIdResult executeReleaseSenderId(ReleaseSenderIdRequest releaseSenderIdRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(releaseSenderIdRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ReleaseSenderIdRequest> request = null;
+        Response<ReleaseSenderIdResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ReleaseSenderIdRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(releaseSenderIdRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ReleaseSenderId");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ReleaseSenderIdResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ReleaseSenderIdResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2553,6 +4646,227 @@ public class AmazonPinpointSMSVoiceV2Client extends AmazonWebServiceClient imple
 
             HttpResponseHandler<AmazonWebServiceResponse<RequestPhoneNumberResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RequestPhoneNumberResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Request a new sender ID that doesn't require registration.
+     * </p>
+     * 
+     * @param requestSenderIdRequest
+     * @return Result of the RequestSenderId operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause a service quota to be exceeded.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.RequestSenderId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/RequestSenderId"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RequestSenderIdResult requestSenderId(RequestSenderIdRequest request) {
+        request = beforeClientExecution(request);
+        return executeRequestSenderId(request);
+    }
+
+    @SdkInternalApi
+    final RequestSenderIdResult executeRequestSenderId(RequestSenderIdRequest requestSenderIdRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(requestSenderIdRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RequestSenderIdRequest> request = null;
+        Response<RequestSenderIdResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RequestSenderIdRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(requestSenderIdRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RequestSenderId");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RequestSenderIdResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RequestSenderIdResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Before you can send test messages to a verified destination phone number you need to opt-in the verified
+     * destination phone number. Creates a new text message with a verification code and send it to a verified
+     * destination phone number. Once you have the verification code use <a>VerifyDestinationNumber</a> to opt-in the
+     * verified destination phone number to receive messages.
+     * </p>
+     * 
+     * @param sendDestinationNumberVerificationCodeRequest
+     * @return Result of the SendDestinationNumberVerificationCode operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause a service quota to be exceeded.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.SendDestinationNumberVerificationCode
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SendDestinationNumberVerificationCode"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SendDestinationNumberVerificationCodeResult sendDestinationNumberVerificationCode(SendDestinationNumberVerificationCodeRequest request) {
+        request = beforeClientExecution(request);
+        return executeSendDestinationNumberVerificationCode(request);
+    }
+
+    @SdkInternalApi
+    final SendDestinationNumberVerificationCodeResult executeSendDestinationNumberVerificationCode(
+            SendDestinationNumberVerificationCodeRequest sendDestinationNumberVerificationCodeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(sendDestinationNumberVerificationCodeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SendDestinationNumberVerificationCodeRequest> request = null;
+        Response<SendDestinationNumberVerificationCodeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SendDestinationNumberVerificationCodeRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(sendDestinationNumberVerificationCodeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendDestinationNumberVerificationCode");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SendDestinationNumberVerificationCodeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new SendDestinationNumberVerificationCodeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new multimedia message (MMS) and sends it to a recipient's phone number.
+     * </p>
+     * 
+     * @param sendMediaMessageRequest
+     * @return Result of the SendMediaMessage operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause a service quota to be exceeded.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.SendMediaMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SendMediaMessage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SendMediaMessageResult sendMediaMessage(SendMediaMessageRequest request) {
+        request = beforeClientExecution(request);
+        return executeSendMediaMessage(request);
+    }
+
+    @SdkInternalApi
+    final SendMediaMessageResult executeSendMediaMessage(SendMediaMessageRequest sendMediaMessageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(sendMediaMessageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SendMediaMessageRequest> request = null;
+        Response<SendMediaMessageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SendMediaMessageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendMediaMessageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendMediaMessage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SendMediaMessageResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SendMediaMessageResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2644,7 +4958,7 @@ public class AmazonPinpointSMSVoiceV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Allows you to send a request that sends a text message through Amazon Pinpoint. This operation uses <a
+     * Allows you to send a request that sends a voice message through Amazon Pinpoint. This operation uses <a
      * href="http://aws.amazon.com/polly/">Amazon Polly</a> to convert a text script into a voice message.
      * </p>
      * 
@@ -2705,6 +5019,77 @@ public class AmazonPinpointSMSVoiceV2Client extends AmazonWebServiceClient imple
 
             HttpResponseHandler<AmazonWebServiceResponse<SendVoiceMessageResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SendVoiceMessageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Set a protect configuration as your account default. You can only have one account default protect configuration
+     * at a time. The current account default protect configuration is replaced with the provided protect configuration.
+     * </p>
+     * 
+     * @param setAccountDefaultProtectConfigurationRequest
+     * @return Result of the SetAccountDefaultProtectConfiguration operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.SetAccountDefaultProtectConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SetAccountDefaultProtectConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SetAccountDefaultProtectConfigurationResult setAccountDefaultProtectConfiguration(SetAccountDefaultProtectConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetAccountDefaultProtectConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final SetAccountDefaultProtectConfigurationResult executeSetAccountDefaultProtectConfiguration(
+            SetAccountDefaultProtectConfigurationRequest setAccountDefaultProtectConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(setAccountDefaultProtectConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SetAccountDefaultProtectConfigurationRequest> request = null;
+        Response<SetAccountDefaultProtectConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SetAccountDefaultProtectConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(setAccountDefaultProtectConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetAccountDefaultProtectConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SetAccountDefaultProtectConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new SetAccountDefaultProtectConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2861,6 +5246,75 @@ public class AmazonPinpointSMSVoiceV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
+     * Sets an account level monthly spend limit override for sending MMS messages. The requested spend limit must be
+     * less than or equal to the <code>MaxLimit</code>, which is set by Amazon Web Services.
+     * </p>
+     * 
+     * @param setMediaMessageSpendLimitOverrideRequest
+     * @return Result of the SetMediaMessageSpendLimitOverride operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.SetMediaMessageSpendLimitOverride
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SetMediaMessageSpendLimitOverride"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SetMediaMessageSpendLimitOverrideResult setMediaMessageSpendLimitOverride(SetMediaMessageSpendLimitOverrideRequest request) {
+        request = beforeClientExecution(request);
+        return executeSetMediaMessageSpendLimitOverride(request);
+    }
+
+    @SdkInternalApi
+    final SetMediaMessageSpendLimitOverrideResult executeSetMediaMessageSpendLimitOverride(
+            SetMediaMessageSpendLimitOverrideRequest setMediaMessageSpendLimitOverrideRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(setMediaMessageSpendLimitOverrideRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SetMediaMessageSpendLimitOverrideRequest> request = null;
+        Response<SetMediaMessageSpendLimitOverrideResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SetMediaMessageSpendLimitOverrideRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(setMediaMessageSpendLimitOverrideRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetMediaMessageSpendLimitOverride");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SetMediaMessageSpendLimitOverrideResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new SetMediaMessageSpendLimitOverrideResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Sets an account level monthly spend limit override for sending text messages. The requested spend limit must be
      * less than or equal to the <code>MaxLimit</code>, which is set by Amazon Web Services.
      * </p>
@@ -2987,6 +5441,78 @@ public class AmazonPinpointSMSVoiceV2Client extends AmazonWebServiceClient imple
             HttpResponseHandler<AmazonWebServiceResponse<SetVoiceMessageSpendLimitOverrideResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new SetVoiceMessageSpendLimitOverrideResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Submit the specified registration for review and approval.
+     * </p>
+     * 
+     * @param submitRegistrationVersionRequest
+     * @return Result of the SubmitRegistrationVersion operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.SubmitRegistrationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SubmitRegistrationVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SubmitRegistrationVersionResult submitRegistrationVersion(SubmitRegistrationVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeSubmitRegistrationVersion(request);
+    }
+
+    @SdkInternalApi
+    final SubmitRegistrationVersionResult executeSubmitRegistrationVersion(SubmitRegistrationVersionRequest submitRegistrationVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(submitRegistrationVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SubmitRegistrationVersionRequest> request = null;
+        Response<SubmitRegistrationVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SubmitRegistrationVersionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(submitRegistrationVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SubmitRegistrationVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SubmitRegistrationVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new SubmitRegistrationVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3222,7 +5748,7 @@ public class AmazonPinpointSMSVoiceV2Client extends AmazonWebServiceClient imple
      * disable deletion protection.
      * </p>
      * <p>
-     * If the origination phone number is associated with a pool, an Error is returned.
+     * If the origination phone number is associated with a pool, an error is returned.
      * </p>
      * 
      * @param updatePhoneNumberRequest
@@ -3352,6 +5878,285 @@ public class AmazonPinpointSMSVoiceV2Client extends AmazonWebServiceClient imple
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdatePoolResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdatePoolResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Update the setting for an existing protect configuration.
+     * </p>
+     * 
+     * @param updateProtectConfigurationRequest
+     * @return Result of the UpdateProtectConfiguration operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.UpdateProtectConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/UpdateProtectConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateProtectConfigurationResult updateProtectConfiguration(UpdateProtectConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateProtectConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final UpdateProtectConfigurationResult executeUpdateProtectConfiguration(UpdateProtectConfigurationRequest updateProtectConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateProtectConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateProtectConfigurationRequest> request = null;
+        Response<UpdateProtectConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateProtectConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateProtectConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateProtectConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateProtectConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateProtectConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Update a country rule set to <code>ALLOW</code> or <code>BLOCK</code> messages to be sent to the specified
+     * destination counties. You can update one or multiple countries at a time. The updates are only applied to the
+     * specified NumberCapability type.
+     * </p>
+     * 
+     * @param updateProtectConfigurationCountryRuleSetRequest
+     * @return Result of the UpdateProtectConfigurationCountryRuleSet operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.UpdateProtectConfigurationCountryRuleSet
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/UpdateProtectConfigurationCountryRuleSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateProtectConfigurationCountryRuleSetResult updateProtectConfigurationCountryRuleSet(UpdateProtectConfigurationCountryRuleSetRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateProtectConfigurationCountryRuleSet(request);
+    }
+
+    @SdkInternalApi
+    final UpdateProtectConfigurationCountryRuleSetResult executeUpdateProtectConfigurationCountryRuleSet(
+            UpdateProtectConfigurationCountryRuleSetRequest updateProtectConfigurationCountryRuleSetRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateProtectConfigurationCountryRuleSetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateProtectConfigurationCountryRuleSetRequest> request = null;
+        Response<UpdateProtectConfigurationCountryRuleSetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateProtectConfigurationCountryRuleSetRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateProtectConfigurationCountryRuleSetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateProtectConfigurationCountryRuleSet");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateProtectConfigurationCountryRuleSetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new UpdateProtectConfigurationCountryRuleSetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the configuration of an existing sender ID.
+     * </p>
+     * 
+     * @param updateSenderIdRequest
+     * @return Result of the UpdateSenderId operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.UpdateSenderId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/UpdateSenderId"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateSenderIdResult updateSenderId(UpdateSenderIdRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateSenderId(request);
+    }
+
+    @SdkInternalApi
+    final UpdateSenderIdResult executeUpdateSenderId(UpdateSenderIdRequest updateSenderIdRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateSenderIdRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateSenderIdRequest> request = null;
+        Response<UpdateSenderIdResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateSenderIdRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateSenderIdRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSenderId");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateSenderIdResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateSenderIdResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Use the verification code that was received by the verified destination phone number to opt-in the verified
+     * destination phone number to receive more messages.
+     * </p>
+     * 
+     * @param verifyDestinationNumberRequest
+     * @return Result of the VerifyDestinationNumber operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.VerifyDestinationNumber
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/VerifyDestinationNumber"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public VerifyDestinationNumberResult verifyDestinationNumber(VerifyDestinationNumberRequest request) {
+        request = beforeClientExecution(request);
+        return executeVerifyDestinationNumber(request);
+    }
+
+    @SdkInternalApi
+    final VerifyDestinationNumberResult executeVerifyDestinationNumber(VerifyDestinationNumberRequest verifyDestinationNumberRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(verifyDestinationNumberRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<VerifyDestinationNumberRequest> request = null;
+        Response<VerifyDestinationNumberResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new VerifyDestinationNumberRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(verifyDestinationNumberRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint SMS Voice V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "VerifyDestinationNumber");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<VerifyDestinationNumberResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new VerifyDestinationNumberResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

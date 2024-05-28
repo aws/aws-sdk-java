@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
     private String stackId;
     /**
      * <p>
-     * The stack name.
+     * The stack name. Stack names can be a maximum of 64 characters.
      * </p>
      */
     private String name;
@@ -48,8 +48,9 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
     private String arn;
     /**
      * <p>
-     * The stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * The stack Amazon Web Services Region, such as <code>ap-northeast-2</code>. For more information about Amazon Web
+     * Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * Endpoints</a>.
      * </p>
      */
     private String region;
@@ -67,7 +68,7 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalMap<String, String> attributes;
     /**
      * <p>
-     * The stack AWS Identity and Access Management (IAM) role.
+     * The stack Identity and Access Management (IAM) role.
      * </p>
      */
     private String serviceRoleArn;
@@ -142,8 +143,7 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
     private Boolean useCustomCookbooks;
     /**
      * <p>
-     * Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the stack's
-     * layers.
+     * Whether the stack automatically associates the OpsWorks Stacks built-in security groups with the stack's layers.
      * </p>
      */
     private Boolean useOpsworksSecurityGroups;
@@ -227,11 +227,11 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The stack name.
+     * The stack name. Stack names can be a maximum of 64 characters.
      * </p>
      * 
      * @param name
-     *        The stack name.
+     *        The stack name. Stack names can be a maximum of 64 characters.
      */
 
     public void setName(String name) {
@@ -240,10 +240,10 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The stack name.
+     * The stack name. Stack names can be a maximum of 64 characters.
      * </p>
      * 
-     * @return The stack name.
+     * @return The stack name. Stack names can be a maximum of 64 characters.
      */
 
     public String getName() {
@@ -252,11 +252,11 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The stack name.
+     * The stack name. Stack names can be a maximum of 64 characters.
      * </p>
      * 
      * @param name
-     *        The stack name.
+     *        The stack name. Stack names can be a maximum of 64 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -307,12 +307,14 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * The stack Amazon Web Services Region, such as <code>ap-northeast-2</code>. For more information about Amazon Web
+     * Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * Endpoints</a>.
      * </p>
      * 
      * @param region
-     *        The stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a
+     *        The stack Amazon Web Services Region, such as <code>ap-northeast-2</code>. For more information about
+     *        Amazon Web Services Regions, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      */
 
@@ -322,11 +324,13 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * The stack Amazon Web Services Region, such as <code>ap-northeast-2</code>. For more information about Amazon Web
+     * Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * Endpoints</a>.
      * </p>
      * 
-     * @return The stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a
+     * @return The stack Amazon Web Services Region, such as <code>ap-northeast-2</code>. For more information about
+     *         Amazon Web Services Regions, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      */
 
@@ -336,12 +340,14 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
+     * The stack Amazon Web Services Region, such as <code>ap-northeast-2</code>. For more information about Amazon Web
+     * Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * Endpoints</a>.
      * </p>
      * 
      * @param region
-     *        The stack AWS region, such as "ap-northeast-2". For more information about AWS regions, see <a
+     *        The stack Amazon Web Services Region, such as <code>ap-northeast-2</code>. For more information about
+     *        Amazon Web Services Regions, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -464,11 +470,11 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The stack AWS Identity and Access Management (IAM) role.
+     * The stack Identity and Access Management (IAM) role.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The stack AWS Identity and Access Management (IAM) role.
+     *        The stack Identity and Access Management (IAM) role.
      */
 
     public void setServiceRoleArn(String serviceRoleArn) {
@@ -477,10 +483,10 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The stack AWS Identity and Access Management (IAM) role.
+     * The stack Identity and Access Management (IAM) role.
      * </p>
      * 
-     * @return The stack AWS Identity and Access Management (IAM) role.
+     * @return The stack Identity and Access Management (IAM) role.
      */
 
     public String getServiceRoleArn() {
@@ -489,11 +495,11 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The stack AWS Identity and Access Management (IAM) role.
+     * The stack Identity and Access Management (IAM) role.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The stack AWS Identity and Access Management (IAM) role.
+     *        The stack Identity and Access Management (IAM) role.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -966,13 +972,12 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the stack's
-     * layers.
+     * Whether the stack automatically associates the OpsWorks Stacks built-in security groups with the stack's layers.
      * </p>
      * 
      * @param useOpsworksSecurityGroups
-     *        Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the
-     *        stack's layers.
+     *        Whether the stack automatically associates the OpsWorks Stacks built-in security groups with the stack's
+     *        layers.
      */
 
     public void setUseOpsworksSecurityGroups(Boolean useOpsworksSecurityGroups) {
@@ -981,12 +986,11 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the stack's
-     * layers.
+     * Whether the stack automatically associates the OpsWorks Stacks built-in security groups with the stack's layers.
      * </p>
      * 
-     * @return Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the
-     *         stack's layers.
+     * @return Whether the stack automatically associates the OpsWorks Stacks built-in security groups with the stack's
+     *         layers.
      */
 
     public Boolean getUseOpsworksSecurityGroups() {
@@ -995,13 +999,12 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the stack's
-     * layers.
+     * Whether the stack automatically associates the OpsWorks Stacks built-in security groups with the stack's layers.
      * </p>
      * 
      * @param useOpsworksSecurityGroups
-     *        Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the
-     *        stack's layers.
+     *        Whether the stack automatically associates the OpsWorks Stacks built-in security groups with the stack's
+     *        layers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1012,12 +1015,11 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the stack's
-     * layers.
+     * Whether the stack automatically associates the OpsWorks Stacks built-in security groups with the stack's layers.
      * </p>
      * 
-     * @return Whether the stack automatically associates the AWS OpsWorks Stacks built-in security groups with the
-     *         stack's layers.
+     * @return Whether the stack automatically associates the OpsWorks Stacks built-in security groups with the stack's
+     *         layers.
      */
 
     public Boolean isUseOpsworksSecurityGroups() {

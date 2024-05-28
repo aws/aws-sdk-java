@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,9 +30,9 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * and Amazon Web Services Service Namespaces</a>.
      * </p>
      */
     private String roleARN;
@@ -56,8 +56,8 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable, 
     private String username;
     /**
      * <p>
-     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value
-     * is 3600 (60 minutes).
+     * The retry behavior in case Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60
+     * minutes).
      * </p>
      */
     private RedshiftRetryOptions retryOptions;
@@ -94,15 +94,15 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * and Amazon Web Services Service Namespaces</a>.
      * </p>
      * 
      * @param roleARN
-     *        The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     *        The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs) and AWS Service Namespaces</a>.
+     *        (ARNs) and Amazon Web Services Service Namespaces</a>.
      */
 
     public void setRoleARN(String roleARN) {
@@ -111,14 +111,14 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * and Amazon Web Services Service Namespaces</a>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * @return The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *         (ARNs) and AWS Service Namespaces</a>.
+     *         (ARNs) and Amazon Web Services Service Namespaces</a>.
      */
 
     public String getRoleARN() {
@@ -127,15 +127,15 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     * The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * and Amazon Web Services Service Namespaces</a>.
      * </p>
      * 
      * @param roleARN
-     *        The Amazon Resource Name (ARN) of the AWS credentials. For more information, see <a
+     *        The Amazon Resource Name (ARN) of the Amazon Web Services credentials. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs) and AWS Service Namespaces</a>.
+     *        (ARNs) and Amazon Web Services Service Namespaces</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -266,13 +266,13 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value
-     * is 3600 (60 minutes).
+     * The retry behavior in case Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60
+     * minutes).
      * </p>
      * 
      * @param retryOptions
-     *        The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift.
-     *        Default value is 3600 (60 minutes).
+     *        The retry behavior in case Firehose is unable to deliver documents to Amazon Redshift. Default value is
+     *        3600 (60 minutes).
      */
 
     public void setRetryOptions(RedshiftRetryOptions retryOptions) {
@@ -281,12 +281,12 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value
-     * is 3600 (60 minutes).
+     * The retry behavior in case Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60
+     * minutes).
      * </p>
      * 
-     * @return The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift.
-     *         Default value is 3600 (60 minutes).
+     * @return The retry behavior in case Firehose is unable to deliver documents to Amazon Redshift. Default value is
+     *         3600 (60 minutes).
      */
 
     public RedshiftRetryOptions getRetryOptions() {
@@ -295,13 +295,13 @@ public class RedshiftDestinationDescription implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift. Default value
-     * is 3600 (60 minutes).
+     * The retry behavior in case Firehose is unable to deliver documents to Amazon Redshift. Default value is 3600 (60
+     * minutes).
      * </p>
      * 
      * @param retryOptions
-     *        The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon Redshift.
-     *        Default value is 3600 (60 minutes).
+     *        The retry behavior in case Firehose is unable to deliver documents to Amazon Redshift. Default value is
+     *        3600 (60 minutes).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

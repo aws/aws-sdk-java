@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,8 @@ public class ParameterHistory implements Serializable, Cloneable, StructuredPojo
     private String type;
     /**
      * <p>
-     * The ID of the query key used for this parameter.
+     * The alias of the Key Management Service (KMS) key used to encrypt the parameter. Applies to
+     * <code>SecureString</code> parameters only
      * </p>
      */
     private String keyId;
@@ -230,11 +231,13 @@ public class ParameterHistory implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ID of the query key used for this parameter.
+     * The alias of the Key Management Service (KMS) key used to encrypt the parameter. Applies to
+     * <code>SecureString</code> parameters only
      * </p>
      * 
      * @param keyId
-     *        The ID of the query key used for this parameter.
+     *        The alias of the Key Management Service (KMS) key used to encrypt the parameter. Applies to
+     *        <code>SecureString</code> parameters only
      */
 
     public void setKeyId(String keyId) {
@@ -243,10 +246,12 @@ public class ParameterHistory implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ID of the query key used for this parameter.
+     * The alias of the Key Management Service (KMS) key used to encrypt the parameter. Applies to
+     * <code>SecureString</code> parameters only
      * </p>
      * 
-     * @return The ID of the query key used for this parameter.
+     * @return The alias of the Key Management Service (KMS) key used to encrypt the parameter. Applies to
+     *         <code>SecureString</code> parameters only
      */
 
     public String getKeyId() {
@@ -255,11 +260,13 @@ public class ParameterHistory implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ID of the query key used for this parameter.
+     * The alias of the Key Management Service (KMS) key used to encrypt the parameter. Applies to
+     * <code>SecureString</code> parameters only
      * </p>
      * 
      * @param keyId
-     *        The ID of the query key used for this parameter.
+     *        The alias of the Key Management Service (KMS) key used to encrypt the parameter. Applies to
+     *        <code>SecureString</code> parameters only
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

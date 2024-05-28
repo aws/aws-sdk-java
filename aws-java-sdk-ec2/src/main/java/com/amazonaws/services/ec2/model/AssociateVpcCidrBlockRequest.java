@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,7 +29,7 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
     /**
      * <p>
      * Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of
-     * IPv6 addresses, or the size of the CIDR block.
+     * IPv6 addresses or the size of the CIDR block.
      * </p>
      */
     private Boolean amazonProvidedIpv6CidrBlock;
@@ -111,12 +111,12 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
     /**
      * <p>
      * Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of
-     * IPv6 addresses, or the size of the CIDR block.
+     * IPv6 addresses or the size of the CIDR block.
      * </p>
      * 
      * @param amazonProvidedIpv6CidrBlock
      *        Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the
-     *        range of IPv6 addresses, or the size of the CIDR block.
+     *        range of IPv6 addresses or the size of the CIDR block.
      */
 
     public void setAmazonProvidedIpv6CidrBlock(Boolean amazonProvidedIpv6CidrBlock) {
@@ -126,11 +126,11 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
     /**
      * <p>
      * Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of
-     * IPv6 addresses, or the size of the CIDR block.
+     * IPv6 addresses or the size of the CIDR block.
      * </p>
      * 
      * @return Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the
-     *         range of IPv6 addresses, or the size of the CIDR block.
+     *         range of IPv6 addresses or the size of the CIDR block.
      */
 
     public Boolean getAmazonProvidedIpv6CidrBlock() {
@@ -140,12 +140,12 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
     /**
      * <p>
      * Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of
-     * IPv6 addresses, or the size of the CIDR block.
+     * IPv6 addresses or the size of the CIDR block.
      * </p>
      * 
      * @param amazonProvidedIpv6CidrBlock
      *        Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the
-     *        range of IPv6 addresses, or the size of the CIDR block.
+     *        range of IPv6 addresses or the size of the CIDR block.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,11 +157,11 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
     /**
      * <p>
      * Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of
-     * IPv6 addresses, or the size of the CIDR block.
+     * IPv6 addresses or the size of the CIDR block.
      * </p>
      * 
      * @return Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the
-     *         range of IPv6 addresses, or the size of the CIDR block.
+     *         range of IPv6 addresses or the size of the CIDR block.
      */
 
     public Boolean isAmazonProvidedIpv6CidrBlock() {

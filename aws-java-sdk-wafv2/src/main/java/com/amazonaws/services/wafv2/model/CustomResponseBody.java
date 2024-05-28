@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,8 +45,8 @@ public class CustomResponseBody implements Serializable, Cloneable, StructuredPo
      * </p>
      * <p>
      * For information about the limits on count and size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer
+     * Guide</i>.
      * </p>
      */
     private String content;
@@ -120,8 +120,8 @@ public class CustomResponseBody implements Serializable, Cloneable, StructuredPo
      * </p>
      * <p>
      * For information about the limits on count and size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer
+     * Guide</i>.
      * </p>
      * 
      * @param content
@@ -132,8 +132,8 @@ public class CustomResponseBody implements Serializable, Cloneable, StructuredPo
      *        </p>
      *        <p>
      *        For information about the limits on count and size for custom request and response settings, see <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF
+     *        Developer Guide</i>.
      */
 
     public void setContent(String content) {
@@ -150,8 +150,8 @@ public class CustomResponseBody implements Serializable, Cloneable, StructuredPo
      * </p>
      * <p>
      * For information about the limits on count and size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer
+     * Guide</i>.
      * </p>
      * 
      * @return The payload of the custom response. </p>
@@ -161,8 +161,8 @@ public class CustomResponseBody implements Serializable, Cloneable, StructuredPo
      *         </p>
      *         <p>
      *         For information about the limits on count and size for custom request and response settings, see <a
-     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a
-     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF
+     *         Developer Guide</i>.
      */
 
     public String getContent() {
@@ -179,8 +179,8 @@ public class CustomResponseBody implements Serializable, Cloneable, StructuredPo
      * </p>
      * <p>
      * For information about the limits on count and size for custom request and response settings, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer
+     * Guide</i>.
      * </p>
      * 
      * @param content
@@ -191,8 +191,8 @@ public class CustomResponseBody implements Serializable, Cloneable, StructuredPo
      *        </p>
      *        <p>
      *        For information about the limits on count and size for custom request and response settings, see <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF
+     *        Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

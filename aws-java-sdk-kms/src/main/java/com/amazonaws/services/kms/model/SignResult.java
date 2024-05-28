@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,7 +44,7 @@ public class SignResult extends com.amazonaws.AmazonWebServiceResult<com.amazona
      * <li>
      * <p>
      * When used with the <code>ECDSA_SHA_256</code>, <code>ECDSA_SHA_384</code>, or <code>ECDSA_SHA_512</code> signing
-     * algorithms, this value is a DER-encoded object as defined by ANS X9.62–2005 and <a
+     * algorithms, this value is a DER-encoded object as defined by ANSI X9.62–2005 and <a
      * href="https://tools.ietf.org/html/rfc3279#section-2.2.3">RFC 3279 Section 2.2.3</a>. This is the most commonly
      * used signature format and is appropriate for most uses.
      * </p>
@@ -129,7 +129,7 @@ public class SignResult extends com.amazonaws.AmazonWebServiceResult<com.amazona
      * <li>
      * <p>
      * When used with the <code>ECDSA_SHA_256</code>, <code>ECDSA_SHA_384</code>, or <code>ECDSA_SHA_512</code> signing
-     * algorithms, this value is a DER-encoded object as defined by ANS X9.62–2005 and <a
+     * algorithms, this value is a DER-encoded object as defined by ANSI X9.62–2005 and <a
      * href="https://tools.ietf.org/html/rfc3279#section-2.2.3">RFC 3279 Section 2.2.3</a>. This is the most commonly
      * used signature format and is appropriate for most uses.
      * </p>
@@ -162,7 +162,7 @@ public class SignResult extends com.amazonaws.AmazonWebServiceResult<com.amazona
      *        <li>
      *        <p>
      *        When used with the <code>ECDSA_SHA_256</code>, <code>ECDSA_SHA_384</code>, or <code>ECDSA_SHA_512</code>
-     *        signing algorithms, this value is a DER-encoded object as defined by ANS X9.62–2005 and <a
+     *        signing algorithms, this value is a DER-encoded object as defined by ANSI X9.62–2005 and <a
      *        href="https://tools.ietf.org/html/rfc3279#section-2.2.3">RFC 3279 Section 2.2.3</a>. This is the most
      *        commonly used signature format and is appropriate for most uses.
      *        </p>
@@ -191,7 +191,7 @@ public class SignResult extends com.amazonaws.AmazonWebServiceResult<com.amazona
      * <li>
      * <p>
      * When used with the <code>ECDSA_SHA_256</code>, <code>ECDSA_SHA_384</code>, or <code>ECDSA_SHA_512</code> signing
-     * algorithms, this value is a DER-encoded object as defined by ANS X9.62–2005 and <a
+     * algorithms, this value is a DER-encoded object as defined by ANSI X9.62–2005 and <a
      * href="https://tools.ietf.org/html/rfc3279#section-2.2.3">RFC 3279 Section 2.2.3</a>. This is the most commonly
      * used signature format and is appropriate for most uses.
      * </p>
@@ -220,7 +220,7 @@ public class SignResult extends com.amazonaws.AmazonWebServiceResult<com.amazona
      *         <li>
      *         <p>
      *         When used with the <code>ECDSA_SHA_256</code>, <code>ECDSA_SHA_384</code>, or <code>ECDSA_SHA_512</code>
-     *         signing algorithms, this value is a DER-encoded object as defined by ANS X9.62–2005 and <a
+     *         signing algorithms, this value is a DER-encoded object as defined by ANSI X9.62–2005 and <a
      *         href="https://tools.ietf.org/html/rfc3279#section-2.2.3">RFC 3279 Section 2.2.3</a>. This is the most
      *         commonly used signature format and is appropriate for most uses.
      *         </p>
@@ -249,7 +249,7 @@ public class SignResult extends com.amazonaws.AmazonWebServiceResult<com.amazona
      * <li>
      * <p>
      * When used with the <code>ECDSA_SHA_256</code>, <code>ECDSA_SHA_384</code>, or <code>ECDSA_SHA_512</code> signing
-     * algorithms, this value is a DER-encoded object as defined by ANS X9.62–2005 and <a
+     * algorithms, this value is a DER-encoded object as defined by ANSI X9.62–2005 and <a
      * href="https://tools.ietf.org/html/rfc3279#section-2.2.3">RFC 3279 Section 2.2.3</a>. This is the most commonly
      * used signature format and is appropriate for most uses.
      * </p>
@@ -282,7 +282,7 @@ public class SignResult extends com.amazonaws.AmazonWebServiceResult<com.amazona
      *        <li>
      *        <p>
      *        When used with the <code>ECDSA_SHA_256</code>, <code>ECDSA_SHA_384</code>, or <code>ECDSA_SHA_512</code>
-     *        signing algorithms, this value is a DER-encoded object as defined by ANS X9.62–2005 and <a
+     *        signing algorithms, this value is a DER-encoded object as defined by ANSI X9.62–2005 and <a
      *        href="https://tools.ietf.org/html/rfc3279#section-2.2.3">RFC 3279 Section 2.2.3</a>. This is the most
      *        commonly used signature format and is appropriate for most uses.
      *        </p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,7 +68,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     private String arn;
     /**
      * <p>
-     * The Amazon Web Services service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.
+     * The Amazon Web Service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.
      * </p>
      */
     private String service;
@@ -125,8 +125,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     private String statusCode;
     /**
      * <p>
-     * This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific
-     * event.
+     * This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.
      * </p>
      * <ul>
      * <li>
@@ -240,12 +239,11 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Web Services service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.
+     * The Amazon Web Service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.
      * </p>
      * 
      * @param service
-     *        The Amazon Web Services service that is affected by the event. For example, <code>EC2</code>,
-     *        <code>RDS</code>.
+     *        The Amazon Web Service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.
      */
 
     public void setService(String service) {
@@ -254,11 +252,10 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Web Services service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.
+     * The Amazon Web Service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.
      * </p>
      * 
-     * @return The Amazon Web Services service that is affected by the event. For example, <code>EC2</code>,
-     *         <code>RDS</code>.
+     * @return The Amazon Web Service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.
      */
 
     public String getService() {
@@ -267,12 +264,11 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Web Services service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.
+     * The Amazon Web Service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.
      * </p>
      * 
      * @param service
-     *        The Amazon Web Services service that is affected by the event. For example, <code>EC2</code>,
-     *        <code>RDS</code>.
+     *        The Amazon Web Service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -703,8 +699,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific
-     * event.
+     * This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.
      * </p>
      * <ul>
      * <li>
@@ -730,8 +725,8 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param eventScopeCode
-     *        This parameter specifies if the Health event is a public Amazon Web Services service event or an
-     *        account-specific event.</p>
+     *        This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific
+     *        event.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -762,8 +757,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific
-     * event.
+     * This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.
      * </p>
      * <ul>
      * <li>
@@ -788,8 +782,8 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return This parameter specifies if the Health event is a public Amazon Web Services service event or an
-     *         account-specific event.</p>
+     * @return This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific
+     *         event.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -820,8 +814,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific
-     * event.
+     * This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.
      * </p>
      * <ul>
      * <li>
@@ -847,8 +840,8 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param eventScopeCode
-     *        This parameter specifies if the Health event is a public Amazon Web Services service event or an
-     *        account-specific event.</p>
+     *        This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific
+     *        event.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -881,8 +874,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific
-     * event.
+     * This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.
      * </p>
      * <ul>
      * <li>
@@ -908,8 +900,8 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param eventScopeCode
-     *        This parameter specifies if the Health event is a public Amazon Web Services service event or an
-     *        account-specific event.</p>
+     *        This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific
+     *        event.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -940,8 +932,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific
-     * event.
+     * This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific event.
      * </p>
      * <ul>
      * <li>
@@ -967,8 +958,8 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param eventScopeCode
-     *        This parameter specifies if the Health event is a public Amazon Web Services service event or an
-     *        account-specific event.</p>
+     *        This parameter specifies if the Health event is a public Amazon Web Service event or an account-specific
+     *        event.</p>
      *        <ul>
      *        <li>
      *        <p>

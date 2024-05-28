@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -2150,6 +2150,100 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
+     * Retrieves (queries) pre-aggregated data for a standard run execution metric that applies to a journey activity.
+     * </p>
+     * 
+     * @param getJourneyRunExecutionActivityMetricsRequest
+     * @return Result of the GetJourneyRunExecutionActivityMetrics operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.GetJourneyRunExecutionActivityMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRunExecutionActivityMetrics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetJourneyRunExecutionActivityMetricsResult getJourneyRunExecutionActivityMetrics(
+            GetJourneyRunExecutionActivityMetricsRequest getJourneyRunExecutionActivityMetricsRequest);
+
+    /**
+     * <p>
+     * Retrieves (queries) pre-aggregated data for a standard run execution metric that applies to a journey.
+     * </p>
+     * 
+     * @param getJourneyRunExecutionMetricsRequest
+     * @return Result of the GetJourneyRunExecutionMetrics operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.GetJourneyRunExecutionMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRunExecutionMetrics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetJourneyRunExecutionMetricsResult getJourneyRunExecutionMetrics(GetJourneyRunExecutionMetricsRequest getJourneyRunExecutionMetricsRequest);
+
+    /**
+     * <p>
+     * Provides information about the runs of a journey.
+     * </p>
+     * 
+     * @param getJourneyRunsRequest
+     * @return Result of the GetJourneyRuns operation returned by the service.
+     * @throws BadRequestException
+     *         The request contains a syntax error (BadRequestException).
+     * @throws InternalServerErrorException
+     *         The request failed due to an unknown internal server error, exception, or failure
+     *         (InternalServerErrorException).
+     * @throws PayloadTooLargeException
+     *         The request failed because the payload for the body of the request is too large
+     *         (RequestEntityTooLargeException).
+     * @throws ForbiddenException
+     *         The request was denied because access to the specified resource is forbidden (ForbiddenException).
+     * @throws NotFoundException
+     *         The request failed because the specified resource was not found (NotFoundException).
+     * @throws MethodNotAllowedException
+     *         The request failed because the method is not allowed for the specified resource
+     *         (MethodNotAllowedException).
+     * @throws TooManyRequestsException
+     *         The request failed because too many requests were sent during a certain amount of time
+     *         (TooManyRequestsException).
+     * @sample AmazonPinpoint.GetJourneyRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRuns" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetJourneyRunsResult getJourneyRuns(GetJourneyRunsRequest getJourneyRunsRequest);
+
+    /**
+     * <p>
      * Retrieves the content and settings of a message template for messages that are sent through a push notification
      * channel.
      * </p>
@@ -2788,8 +2882,8 @@ public interface AmazonPinpoint {
 
     /**
      * <p>
-     * Removes one or more attributes, of the same attribute type, from all the endpoints that are associated with an
-     * application.
+     * Removes one or more custom attributes, of the same attribute type, from the application. Existing endpoints still
+     * have the attributes but Amazon Pinpoint will stop capturing new or changed values for these attributes.
      * </p>
      * 
      * @param removeAttributesRequest

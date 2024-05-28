@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,12 @@ public class GetDeviceProfileResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private LoRaWANDeviceProfile loRaWAN;
+    /**
+     * <p>
+     * Information about the Sidewalk parameters in the device profile.
+     * </p>
+     */
+    private SidewalkGetDeviceProfile sidewalk;
 
     /**
      * <p>
@@ -209,6 +215,46 @@ public class GetDeviceProfileResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * Information about the Sidewalk parameters in the device profile.
+     * </p>
+     * 
+     * @param sidewalk
+     *        Information about the Sidewalk parameters in the device profile.
+     */
+
+    public void setSidewalk(SidewalkGetDeviceProfile sidewalk) {
+        this.sidewalk = sidewalk;
+    }
+
+    /**
+     * <p>
+     * Information about the Sidewalk parameters in the device profile.
+     * </p>
+     * 
+     * @return Information about the Sidewalk parameters in the device profile.
+     */
+
+    public SidewalkGetDeviceProfile getSidewalk() {
+        return this.sidewalk;
+    }
+
+    /**
+     * <p>
+     * Information about the Sidewalk parameters in the device profile.
+     * </p>
+     * 
+     * @param sidewalk
+     *        Information about the Sidewalk parameters in the device profile.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDeviceProfileResult withSidewalk(SidewalkGetDeviceProfile sidewalk) {
+        setSidewalk(sidewalk);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -227,7 +273,9 @@ public class GetDeviceProfileResult extends com.amazonaws.AmazonWebServiceResult
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getLoRaWAN() != null)
-            sb.append("LoRaWAN: ").append(getLoRaWAN());
+            sb.append("LoRaWAN: ").append(getLoRaWAN()).append(",");
+        if (getSidewalk() != null)
+            sb.append("Sidewalk: ").append(getSidewalk());
         sb.append("}");
         return sb.toString();
     }
@@ -258,6 +306,10 @@ public class GetDeviceProfileResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getLoRaWAN() != null && other.getLoRaWAN().equals(this.getLoRaWAN()) == false)
             return false;
+        if (other.getSidewalk() == null ^ this.getSidewalk() == null)
+            return false;
+        if (other.getSidewalk() != null && other.getSidewalk().equals(this.getSidewalk()) == false)
+            return false;
         return true;
     }
 
@@ -270,6 +322,7 @@ public class GetDeviceProfileResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getLoRaWAN() == null) ? 0 : getLoRaWAN().hashCode());
+        hashCode = prime * hashCode + ((getSidewalk() == null) ? 0 : getSidewalk().hashCode());
         return hashCode;
     }
 

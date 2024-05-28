@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,7 +23,11 @@ public enum AccountLimitName {
     PHONE_NUMBERS("PHONE_NUMBERS"),
     POOLS("POOLS"),
     CONFIGURATION_SETS("CONFIGURATION_SETS"),
-    OPT_OUT_LISTS("OPT_OUT_LISTS");
+    OPT_OUT_LISTS("OPT_OUT_LISTS"),
+    SENDER_IDS("SENDER_IDS"),
+    REGISTRATIONS("REGISTRATIONS"),
+    REGISTRATION_ATTACHMENTS("REGISTRATION_ATTACHMENTS"),
+    VERIFIED_DESTINATION_NUMBERS("VERIFIED_DESTINATION_NUMBERS");
 
     private String value;
 

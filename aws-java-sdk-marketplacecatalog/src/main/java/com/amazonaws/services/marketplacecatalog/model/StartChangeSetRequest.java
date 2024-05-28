@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,22 @@ public class StartChangeSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String clientRequestToken;
+    /**
+     * <p>
+     * A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property.
+     * </p>
+     */
+    private java.util.List<Tag> changeSetTags;
+    /**
+     * <p>
+     * The intent related to the request. The default is <code>APPLY</code>. To test your request before applying
+     * changes to your entities, use <code>VALIDATE</code>. This feature is currently available for adding versions to
+     * single-AMI products. For more information, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#ami-add-version">Add
+     * a new version</a>.
+     * </p>
+     */
+    private String intent;
 
     /**
      * <p>
@@ -248,6 +264,167 @@ public class StartChangeSetRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property.
+     * </p>
+     * 
+     * @return A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property.
+     */
+
+    public java.util.List<Tag> getChangeSetTags() {
+        return changeSetTags;
+    }
+
+    /**
+     * <p>
+     * A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property.
+     * </p>
+     * 
+     * @param changeSetTags
+     *        A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property.
+     */
+
+    public void setChangeSetTags(java.util.Collection<Tag> changeSetTags) {
+        if (changeSetTags == null) {
+            this.changeSetTags = null;
+            return;
+        }
+
+        this.changeSetTags = new java.util.ArrayList<Tag>(changeSetTags);
+    }
+
+    /**
+     * <p>
+     * A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setChangeSetTags(java.util.Collection)} or {@link #withChangeSetTags(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param changeSetTags
+     *        A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartChangeSetRequest withChangeSetTags(Tag... changeSetTags) {
+        if (this.changeSetTags == null) {
+            setChangeSetTags(new java.util.ArrayList<Tag>(changeSetTags.length));
+        }
+        for (Tag ele : changeSetTags) {
+            this.changeSetTags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property.
+     * </p>
+     * 
+     * @param changeSetTags
+     *        A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartChangeSetRequest withChangeSetTags(java.util.Collection<Tag> changeSetTags) {
+        setChangeSetTags(changeSetTags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The intent related to the request. The default is <code>APPLY</code>. To test your request before applying
+     * changes to your entities, use <code>VALIDATE</code>. This feature is currently available for adding versions to
+     * single-AMI products. For more information, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#ami-add-version">Add
+     * a new version</a>.
+     * </p>
+     * 
+     * @param intent
+     *        The intent related to the request. The default is <code>APPLY</code>. To test your request before applying
+     *        changes to your entities, use <code>VALIDATE</code>. This feature is currently available for adding
+     *        versions to single-AMI products. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#ami-add-version"
+     *        >Add a new version</a>.
+     * @see Intent
+     */
+
+    public void setIntent(String intent) {
+        this.intent = intent;
+    }
+
+    /**
+     * <p>
+     * The intent related to the request. The default is <code>APPLY</code>. To test your request before applying
+     * changes to your entities, use <code>VALIDATE</code>. This feature is currently available for adding versions to
+     * single-AMI products. For more information, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#ami-add-version">Add
+     * a new version</a>.
+     * </p>
+     * 
+     * @return The intent related to the request. The default is <code>APPLY</code>. To test your request before
+     *         applying changes to your entities, use <code>VALIDATE</code>. This feature is currently available for
+     *         adding versions to single-AMI products. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#ami-add-version"
+     *         >Add a new version</a>.
+     * @see Intent
+     */
+
+    public String getIntent() {
+        return this.intent;
+    }
+
+    /**
+     * <p>
+     * The intent related to the request. The default is <code>APPLY</code>. To test your request before applying
+     * changes to your entities, use <code>VALIDATE</code>. This feature is currently available for adding versions to
+     * single-AMI products. For more information, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#ami-add-version">Add
+     * a new version</a>.
+     * </p>
+     * 
+     * @param intent
+     *        The intent related to the request. The default is <code>APPLY</code>. To test your request before applying
+     *        changes to your entities, use <code>VALIDATE</code>. This feature is currently available for adding
+     *        versions to single-AMI products. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#ami-add-version"
+     *        >Add a new version</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Intent
+     */
+
+    public StartChangeSetRequest withIntent(String intent) {
+        setIntent(intent);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The intent related to the request. The default is <code>APPLY</code>. To test your request before applying
+     * changes to your entities, use <code>VALIDATE</code>. This feature is currently available for adding versions to
+     * single-AMI products. For more information, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#ami-add-version">Add
+     * a new version</a>.
+     * </p>
+     * 
+     * @param intent
+     *        The intent related to the request. The default is <code>APPLY</code>. To test your request before applying
+     *        changes to your entities, use <code>VALIDATE</code>. This feature is currently available for adding
+     *        versions to single-AMI products. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#ami-add-version"
+     *        >Add a new version</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Intent
+     */
+
+    public StartChangeSetRequest withIntent(Intent intent) {
+        this.intent = intent.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -266,7 +443,11 @@ public class StartChangeSetRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getChangeSetName() != null)
             sb.append("ChangeSetName: ").append(getChangeSetName()).append(",");
         if (getClientRequestToken() != null)
-            sb.append("ClientRequestToken: ").append(getClientRequestToken());
+            sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
+        if (getChangeSetTags() != null)
+            sb.append("ChangeSetTags: ").append(getChangeSetTags()).append(",");
+        if (getIntent() != null)
+            sb.append("Intent: ").append(getIntent());
         sb.append("}");
         return sb.toString();
     }
@@ -297,6 +478,14 @@ public class StartChangeSetRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
             return false;
+        if (other.getChangeSetTags() == null ^ this.getChangeSetTags() == null)
+            return false;
+        if (other.getChangeSetTags() != null && other.getChangeSetTags().equals(this.getChangeSetTags()) == false)
+            return false;
+        if (other.getIntent() == null ^ this.getIntent() == null)
+            return false;
+        if (other.getIntent() != null && other.getIntent().equals(this.getIntent()) == false)
+            return false;
         return true;
     }
 
@@ -309,6 +498,8 @@ public class StartChangeSetRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getChangeSet() == null) ? 0 : getChangeSet().hashCode());
         hashCode = prime * hashCode + ((getChangeSetName() == null) ? 0 : getChangeSetName().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
+        hashCode = prime * hashCode + ((getChangeSetTags() == null) ? 0 : getChangeSetTags().hashCode());
+        hashCode = prime * hashCode + ((getIntent() == null) ? 0 : getIntent().hashCode());
         return hashCode;
     }
 

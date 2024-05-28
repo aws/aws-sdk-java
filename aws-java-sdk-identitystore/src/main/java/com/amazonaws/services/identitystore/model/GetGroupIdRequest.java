@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,8 +34,8 @@ public class GetGroupIdRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from
-     * an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For
-     * example, a unique <code>GroupDisplayName</code>.
+     * an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the
+     * unique attribute, the only valid path is <code>displayName</code>.
      * </p>
      */
     private AlternateIdentifier alternateIdentifier;
@@ -83,14 +83,14 @@ public class GetGroupIdRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from
-     * an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For
-     * example, a unique <code>GroupDisplayName</code>.
+     * an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the
+     * unique attribute, the only valid path is <code>displayName</code>.
      * </p>
      * 
      * @param alternateIdentifier
      *        A unique identifier for a user or group that is not the primary identifier. This value can be an
      *        identifier from an external identity provider (IdP) that is associated with the user, the group, or a
-     *        unique attribute. For example, a unique <code>GroupDisplayName</code>.
+     *        unique attribute. For the unique attribute, the only valid path is <code>displayName</code>.
      */
 
     public void setAlternateIdentifier(AlternateIdentifier alternateIdentifier) {
@@ -100,13 +100,13 @@ public class GetGroupIdRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from
-     * an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For
-     * example, a unique <code>GroupDisplayName</code>.
+     * an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the
+     * unique attribute, the only valid path is <code>displayName</code>.
      * </p>
      * 
      * @return A unique identifier for a user or group that is not the primary identifier. This value can be an
      *         identifier from an external identity provider (IdP) that is associated with the user, the group, or a
-     *         unique attribute. For example, a unique <code>GroupDisplayName</code>.
+     *         unique attribute. For the unique attribute, the only valid path is <code>displayName</code>.
      */
 
     public AlternateIdentifier getAlternateIdentifier() {
@@ -116,14 +116,14 @@ public class GetGroupIdRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from
-     * an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For
-     * example, a unique <code>GroupDisplayName</code>.
+     * an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the
+     * unique attribute, the only valid path is <code>displayName</code>.
      * </p>
      * 
      * @param alternateIdentifier
      *        A unique identifier for a user or group that is not the primary identifier. This value can be an
      *        identifier from an external identity provider (IdP) that is associated with the user, the group, or a
-     *        unique attribute. For example, a unique <code>GroupDisplayName</code>.
+     *        unique attribute. For the unique attribute, the only valid path is <code>displayName</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

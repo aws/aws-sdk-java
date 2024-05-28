@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -143,8 +143,8 @@ public interface AWSAppRunner {
      * multiple services.
      * </p>
      * <p>
-     * A connection resource is needed to access GitHub repositories. GitHub requires a user interface approval process
-     * through the App Runner console before you can use the connection.
+     * A connection resource is needed to access GitHub and Bitbucket repositories. Both require a user interface
+     * approval process through the App Runner console before you can use the connection.
      * </p>
      * 
      * @param createConnectionRequest
@@ -288,8 +288,10 @@ public interface AWSAppRunner {
 
     /**
      * <p>
-     * Delete an App Runner automatic scaling configuration resource. You can delete a specific revision or the latest
-     * active revision. You can't delete a configuration that's used by one or more App Runner services.
+     * Delete an App Runner automatic scaling configuration resource. You can delete a top level auto scaling
+     * configuration, a specific revision of one, or all revisions associated with the top level configuration. You
+     * can't delete the default auto scaling configuration or a configuration that's used by one or more App Runner
+     * services.
      * </p>
      * 
      * @param deleteAutoScalingConfigurationRequest
@@ -719,6 +721,29 @@ public interface AWSAppRunner {
 
     /**
      * <p>
+     * Returns a list of the associated App Runner services using an auto scaling configuration.
+     * </p>
+     * 
+     * @param listServicesForAutoScalingConfigurationRequest
+     * @return Result of the ListServicesForAutoScalingConfiguration operation returned by the service.
+     * @throws InvalidRequestException
+     *         One or more input parameters aren't valid. Refer to the API action's document page, correct the input
+     *         parameters, and try the action again.
+     * @throws InternalServiceErrorException
+     *         An unexpected service exception occurred.
+     * @throws ResourceNotFoundException
+     *         A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon Web Services
+     *         account.
+     * @sample AWSAppRunner.ListServicesForAutoScalingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/ListServicesForAutoScalingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListServicesForAutoScalingConfigurationResult listServicesForAutoScalingConfiguration(
+            ListServicesForAutoScalingConfigurationRequest listServicesForAutoScalingConfigurationRequest);
+
+    /**
+     * <p>
      * List tags that are associated with for an App Runner resource. The response contains a list of tag key-value
      * pairs.
      * </p>
@@ -908,6 +933,29 @@ public interface AWSAppRunner {
      *      Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Update an auto scaling configuration to be the default. The existing default auto scaling configuration will be
+     * set to non-default automatically.
+     * </p>
+     * 
+     * @param updateDefaultAutoScalingConfigurationRequest
+     * @return Result of the UpdateDefaultAutoScalingConfiguration operation returned by the service.
+     * @throws InvalidRequestException
+     *         One or more input parameters aren't valid. Refer to the API action's document page, correct the input
+     *         parameters, and try the action again.
+     * @throws InternalServiceErrorException
+     *         An unexpected service exception occurred.
+     * @throws ResourceNotFoundException
+     *         A resource doesn't exist for the specified Amazon Resource Name (ARN) in your Amazon Web Services
+     *         account.
+     * @sample AWSAppRunner.UpdateDefaultAutoScalingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/apprunner-2020-05-15/UpdateDefaultAutoScalingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateDefaultAutoScalingConfigurationResult updateDefaultAutoScalingConfiguration(
+            UpdateDefaultAutoScalingConfigurationRequest updateDefaultAutoScalingConfigurationRequest);
 
     /**
      * <p>

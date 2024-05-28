@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes code configuration updates for an application. This is supported for a Flink-based Kinesis Data Analytics
+ * Describes code configuration updates for an application. This is supported for a Managed Service for Apache Flink
  * application or a SQL-based Kinesis Data Analytics application.
  * </p>
  * 

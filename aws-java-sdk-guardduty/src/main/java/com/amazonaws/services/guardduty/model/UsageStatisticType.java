@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,7 +23,9 @@ public enum UsageStatisticType {
     SUM_BY_ACCOUNT("SUM_BY_ACCOUNT"),
     SUM_BY_DATA_SOURCE("SUM_BY_DATA_SOURCE"),
     SUM_BY_RESOURCE("SUM_BY_RESOURCE"),
-    TOP_RESOURCES("TOP_RESOURCES");
+    TOP_RESOURCES("TOP_RESOURCES"),
+    SUM_BY_FEATURES("SUM_BY_FEATURES"),
+    TOP_ACCOUNTS_BY_FEATURE("TOP_ACCOUNTS_BY_FEATURE");
 
     private String value;
 

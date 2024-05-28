@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,8 +34,8 @@ public class RequiredActivatedType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An alias assigned to the public extension, in this account and region. If you specify an alias for the extension,
-     * CloudFormation treats the alias as the extension type name within this account and region. You must use the alias
+     * An alias assigned to the public extension, in this account and Region. If you specify an alias for the extension,
+     * CloudFormation treats the alias as the extension type name within this account and Region. You must use the alias
      * to refer to the extension in your templates, API calls, and CloudFormation console.
      * </p>
      */
@@ -45,8 +45,8 @@ public class RequiredActivatedType implements Serializable, Cloneable {
      * The type name of the public extension.
      * </p>
      * <p>
-     * If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region,
-     * CloudFormation treats that alias as the extension's type name within the account and region, not the type name of
+     * If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region,
+     * CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of
      * the public extension. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias"
      * >Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.
@@ -68,14 +68,14 @@ public class RequiredActivatedType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An alias assigned to the public extension, in this account and region. If you specify an alias for the extension,
-     * CloudFormation treats the alias as the extension type name within this account and region. You must use the alias
+     * An alias assigned to the public extension, in this account and Region. If you specify an alias for the extension,
+     * CloudFormation treats the alias as the extension type name within this account and Region. You must use the alias
      * to refer to the extension in your templates, API calls, and CloudFormation console.
      * </p>
      * 
      * @param typeNameAlias
-     *        An alias assigned to the public extension, in this account and region. If you specify an alias for the
-     *        extension, CloudFormation treats the alias as the extension type name within this account and region. You
+     *        An alias assigned to the public extension, in this account and Region. If you specify an alias for the
+     *        extension, CloudFormation treats the alias as the extension type name within this account and Region. You
      *        must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.
      */
 
@@ -85,13 +85,13 @@ public class RequiredActivatedType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An alias assigned to the public extension, in this account and region. If you specify an alias for the extension,
-     * CloudFormation treats the alias as the extension type name within this account and region. You must use the alias
+     * An alias assigned to the public extension, in this account and Region. If you specify an alias for the extension,
+     * CloudFormation treats the alias as the extension type name within this account and Region. You must use the alias
      * to refer to the extension in your templates, API calls, and CloudFormation console.
      * </p>
      * 
-     * @return An alias assigned to the public extension, in this account and region. If you specify an alias for the
-     *         extension, CloudFormation treats the alias as the extension type name within this account and region. You
+     * @return An alias assigned to the public extension, in this account and Region. If you specify an alias for the
+     *         extension, CloudFormation treats the alias as the extension type name within this account and Region. You
      *         must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.
      */
 
@@ -101,14 +101,14 @@ public class RequiredActivatedType implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An alias assigned to the public extension, in this account and region. If you specify an alias for the extension,
-     * CloudFormation treats the alias as the extension type name within this account and region. You must use the alias
+     * An alias assigned to the public extension, in this account and Region. If you specify an alias for the extension,
+     * CloudFormation treats the alias as the extension type name within this account and Region. You must use the alias
      * to refer to the extension in your templates, API calls, and CloudFormation console.
      * </p>
      * 
      * @param typeNameAlias
-     *        An alias assigned to the public extension, in this account and region. If you specify an alias for the
-     *        extension, CloudFormation treats the alias as the extension type name within this account and region. You
+     *        An alias assigned to the public extension, in this account and Region. If you specify an alias for the
+     *        extension, CloudFormation treats the alias as the extension type name within this account and Region. You
      *        must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -123,8 +123,8 @@ public class RequiredActivatedType implements Serializable, Cloneable {
      * The type name of the public extension.
      * </p>
      * <p>
-     * If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region,
-     * CloudFormation treats that alias as the extension's type name within the account and region, not the type name of
+     * If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region,
+     * CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of
      * the public extension. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias"
      * >Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.
@@ -133,8 +133,8 @@ public class RequiredActivatedType implements Serializable, Cloneable {
      * @param originalTypeName
      *        The type name of the public extension.</p>
      *        <p>
-     *        If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region,
-     *        CloudFormation treats that alias as the extension's type name within the account and region, not the type
+     *        If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region,
+     *        CloudFormation treats that alias as the extension's type name within the account and Region, not the type
      *        name of the public extension. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias"
      *        >Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.
@@ -149,8 +149,8 @@ public class RequiredActivatedType implements Serializable, Cloneable {
      * The type name of the public extension.
      * </p>
      * <p>
-     * If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region,
-     * CloudFormation treats that alias as the extension's type name within the account and region, not the type name of
+     * If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region,
+     * CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of
      * the public extension. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias"
      * >Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.
@@ -158,8 +158,8 @@ public class RequiredActivatedType implements Serializable, Cloneable {
      * 
      * @return The type name of the public extension.</p>
      *         <p>
-     *         If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region,
-     *         CloudFormation treats that alias as the extension's type name within the account and region, not the type
+     *         If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region,
+     *         CloudFormation treats that alias as the extension's type name within the account and Region, not the type
      *         name of the public extension. For more information, see <a href=
      *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias"
      *         >Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.
@@ -174,8 +174,8 @@ public class RequiredActivatedType implements Serializable, Cloneable {
      * The type name of the public extension.
      * </p>
      * <p>
-     * If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region,
-     * CloudFormation treats that alias as the extension's type name within the account and region, not the type name of
+     * If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region,
+     * CloudFormation treats that alias as the extension's type name within the account and Region, not the type name of
      * the public extension. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias"
      * >Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.
@@ -184,8 +184,8 @@ public class RequiredActivatedType implements Serializable, Cloneable {
      * @param originalTypeName
      *        The type name of the public extension.</p>
      *        <p>
-     *        If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and region,
-     *        CloudFormation treats that alias as the extension's type name within the account and region, not the type
+     *        If you specified a <code>TypeNameAlias</code> when enabling the extension in this account and Region,
+     *        CloudFormation treats that alias as the extension's type name within the account and Region, not the type
      *        name of the public extension. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias"
      *        >Specifying aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.

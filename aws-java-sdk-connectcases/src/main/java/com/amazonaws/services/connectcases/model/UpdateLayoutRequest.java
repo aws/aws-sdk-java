@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,7 @@ public class UpdateLayoutRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Information about which fields will be present in the layout, the order of the fields, and a read-only attribute
-     * of the field.
+     * Information about which fields will be present in the layout, the order of the fields.
      * </p>
      */
     private LayoutContent content;
@@ -53,13 +52,11 @@ public class UpdateLayoutRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Information about which fields will be present in the layout, the order of the fields, and a read-only attribute
-     * of the field.
+     * Information about which fields will be present in the layout, the order of the fields.
      * </p>
      * 
      * @param content
-     *        Information about which fields will be present in the layout, the order of the fields, and a read-only
-     *        attribute of the field.
+     *        Information about which fields will be present in the layout, the order of the fields.
      */
 
     public void setContent(LayoutContent content) {
@@ -68,12 +65,10 @@ public class UpdateLayoutRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Information about which fields will be present in the layout, the order of the fields, and a read-only attribute
-     * of the field.
+     * Information about which fields will be present in the layout, the order of the fields.
      * </p>
      * 
-     * @return Information about which fields will be present in the layout, the order of the fields, and a read-only
-     *         attribute of the field.
+     * @return Information about which fields will be present in the layout, the order of the fields.
      */
 
     public LayoutContent getContent() {
@@ -82,13 +77,11 @@ public class UpdateLayoutRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Information about which fields will be present in the layout, the order of the fields, and a read-only attribute
-     * of the field.
+     * Information about which fields will be present in the layout, the order of the fields.
      * </p>
      * 
      * @param content
-     *        Information about which fields will be present in the layout, the order of the fields, and a read-only
-     *        attribute of the field.
+     *        Information about which fields will be present in the layout, the order of the fields.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

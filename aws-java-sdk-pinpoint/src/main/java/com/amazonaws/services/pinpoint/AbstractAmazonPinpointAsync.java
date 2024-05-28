@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -896,6 +896,47 @@ public class AbstractAmazonPinpointAsync extends AbstractAmazonPinpoint implemen
     @Override
     public java.util.concurrent.Future<GetJourneyExecutionMetricsResult> getJourneyExecutionMetricsAsync(GetJourneyExecutionMetricsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetJourneyExecutionMetricsRequest, GetJourneyExecutionMetricsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetJourneyRunExecutionActivityMetricsResult> getJourneyRunExecutionActivityMetricsAsync(
+            GetJourneyRunExecutionActivityMetricsRequest request) {
+
+        return getJourneyRunExecutionActivityMetricsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetJourneyRunExecutionActivityMetricsResult> getJourneyRunExecutionActivityMetricsAsync(
+            GetJourneyRunExecutionActivityMetricsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetJourneyRunExecutionActivityMetricsRequest, GetJourneyRunExecutionActivityMetricsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetJourneyRunExecutionMetricsResult> getJourneyRunExecutionMetricsAsync(GetJourneyRunExecutionMetricsRequest request) {
+
+        return getJourneyRunExecutionMetricsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetJourneyRunExecutionMetricsResult> getJourneyRunExecutionMetricsAsync(GetJourneyRunExecutionMetricsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetJourneyRunExecutionMetricsRequest, GetJourneyRunExecutionMetricsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetJourneyRunsResult> getJourneyRunsAsync(GetJourneyRunsRequest request) {
+
+        return getJourneyRunsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetJourneyRunsResult> getJourneyRunsAsync(GetJourneyRunsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetJourneyRunsRequest, GetJourneyRunsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

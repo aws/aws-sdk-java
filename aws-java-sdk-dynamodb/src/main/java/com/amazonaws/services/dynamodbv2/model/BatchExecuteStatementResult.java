@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,8 @@ public class BatchExecuteStatementResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The response to each PartiQL statement in the batch.
+     * The response to each PartiQL statement in the batch. The values of the list are ordered according to the ordering
+     * of the request statements.
      * </p>
      */
     private java.util.List<BatchStatementResponse> responses;
@@ -39,10 +40,12 @@ public class BatchExecuteStatementResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The response to each PartiQL statement in the batch.
+     * The response to each PartiQL statement in the batch. The values of the list are ordered according to the ordering
+     * of the request statements.
      * </p>
      * 
-     * @return The response to each PartiQL statement in the batch.
+     * @return The response to each PartiQL statement in the batch. The values of the list are ordered according to the
+     *         ordering of the request statements.
      */
 
     public java.util.List<BatchStatementResponse> getResponses() {
@@ -51,11 +54,13 @@ public class BatchExecuteStatementResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The response to each PartiQL statement in the batch.
+     * The response to each PartiQL statement in the batch. The values of the list are ordered according to the ordering
+     * of the request statements.
      * </p>
      * 
      * @param responses
-     *        The response to each PartiQL statement in the batch.
+     *        The response to each PartiQL statement in the batch. The values of the list are ordered according to the
+     *        ordering of the request statements.
      */
 
     public void setResponses(java.util.Collection<BatchStatementResponse> responses) {
@@ -69,7 +74,8 @@ public class BatchExecuteStatementResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The response to each PartiQL statement in the batch.
+     * The response to each PartiQL statement in the batch. The values of the list are ordered according to the ordering
+     * of the request statements.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +84,8 @@ public class BatchExecuteStatementResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param responses
-     *        The response to each PartiQL statement in the batch.
+     *        The response to each PartiQL statement in the batch. The values of the list are ordered according to the
+     *        ordering of the request statements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +101,13 @@ public class BatchExecuteStatementResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The response to each PartiQL statement in the batch.
+     * The response to each PartiQL statement in the batch. The values of the list are ordered according to the ordering
+     * of the request statements.
      * </p>
      * 
      * @param responses
-     *        The response to each PartiQL statement in the batch.
+     *        The response to each PartiQL statement in the batch. The values of the list are ordered according to the
+     *        ordering of the request statements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

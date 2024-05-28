@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,12 +31,16 @@ public enum CodebuildActions implements Action {
     BatchGetBuildBatches("codebuild:BatchGetBuildBatches"),
     /** Action for the BatchGetBuilds operation. */
     BatchGetBuilds("codebuild:BatchGetBuilds"),
+    /** Action for the BatchGetFleets operation. */
+    BatchGetFleets("codebuild:BatchGetFleets"),
     /** Action for the BatchGetProjects operation. */
     BatchGetProjects("codebuild:BatchGetProjects"),
     /** Action for the BatchGetReportGroups operation. */
     BatchGetReportGroups("codebuild:BatchGetReportGroups"),
     /** Action for the BatchGetReports operation. */
     BatchGetReports("codebuild:BatchGetReports"),
+    /** Action for the CreateFleet operation. */
+    CreateFleet("codebuild:CreateFleet"),
     /** Action for the CreateProject operation. */
     CreateProject("codebuild:CreateProject"),
     /** Action for the CreateReportGroup operation. */
@@ -45,6 +49,8 @@ public enum CodebuildActions implements Action {
     CreateWebhook("codebuild:CreateWebhook"),
     /** Action for the DeleteBuildBatch operation. */
     DeleteBuildBatch("codebuild:DeleteBuildBatch"),
+    /** Action for the DeleteFleet operation. */
+    DeleteFleet("codebuild:DeleteFleet"),
     /** Action for the DeleteProject operation. */
     DeleteProject("codebuild:DeleteProject"),
     /** Action for the DeleteReport operation. */
@@ -79,6 +85,8 @@ public enum CodebuildActions implements Action {
     ListBuildsForProject("codebuild:ListBuildsForProject"),
     /** Action for the ListCuratedEnvironmentImages operation. */
     ListCuratedEnvironmentImages("codebuild:ListCuratedEnvironmentImages"),
+    /** Action for the ListFleets operation. */
+    ListFleets("codebuild:ListFleets"),
     /** Action for the ListProjects operation. */
     ListProjects("codebuild:ListProjects"),
     /** Action for the ListReportGroups operation. */
@@ -107,6 +115,8 @@ public enum CodebuildActions implements Action {
     StopBuild("codebuild:StopBuild"),
     /** Action for the StopBuildBatch operation. */
     StopBuildBatch("codebuild:StopBuildBatch"),
+    /** Action for the UpdateFleet operation. */
+    UpdateFleet("codebuild:UpdateFleet"),
     /** Action for the UpdateProject operation. */
     UpdateProject("codebuild:UpdateProject"),
     /** Action for the UpdateProjectVisibility operation. */

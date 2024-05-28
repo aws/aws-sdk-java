@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -103,7 +103,7 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
-     * Adds metadata tags to an DMS resource, including replication instance, endpoint, security group, and migration
+     * Adds metadata tags to an DMS resource, including replication instance, endpoint, subnet group, and migration
      * task. These tags can also be used with cost allocation reporting to track cost associated with DMS resources, or
      * used in a Condition statement in an IAM policy for DMS. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html"> <code>Tag</code> </a> data type
@@ -138,6 +138,33 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
+     * Starts the analysis of up to 20 source databases to recommend target engines for each source database. This is a
+     * batch version of <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartRecommendations.html">StartRecommendations
+     * </a>.
+     * </p>
+     * <p>
+     * The result of analysis of each source database is reported individually in the response. Because the batch
+     * request can result in a combination of successful and unsuccessful actions, you should check for batch errors
+     * even when the call returns an HTTP status code of <code>200</code>.
+     * </p>
+     * 
+     * @param batchStartRecommendationsRequest
+     * @return Result of the BatchStartRecommendations operation returned by the service.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AWSDatabaseMigrationService.BatchStartRecommendations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/BatchStartRecommendations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    BatchStartRecommendationsResult batchStartRecommendations(BatchStartRecommendationsRequest batchStartRecommendationsRequest);
+
+    /**
+     * <p>
      * Cancels a single premigration assessment run.
      * </p>
      * <p>
@@ -159,6 +186,26 @@ public interface AWSDatabaseMigrationService {
      */
     CancelReplicationTaskAssessmentRunResult cancelReplicationTaskAssessmentRun(
             CancelReplicationTaskAssessmentRunRequest cancelReplicationTaskAssessmentRunRequest);
+
+    /**
+     * <p>
+     * Creates a data provider using the provided settings. A data provider stores a data store type and location
+     * information about your database.
+     * </p>
+     * 
+     * @param createDataProviderRequest
+     * @return Result of the CreateDataProvider operation returned by the service.
+     * @throws ResourceQuotaExceededException
+     *         The quota for this resource quota has been exceeded.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws ResourceAlreadyExistsException
+     *         The resource you are attempting to create already exists.
+     * @sample AWSDatabaseMigrationService.CreateDataProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateDataProvider" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateDataProviderResult createDataProvider(CreateDataProviderRequest createDataProviderRequest);
 
     /**
      * <p>
@@ -269,6 +316,97 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
+     * Creates the instance profile using the specified parameters.
+     * </p>
+     * 
+     * @param createInstanceProfileRequest
+     * @return Result of the CreateInstanceProfile operation returned by the service.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws ResourceAlreadyExistsException
+     *         The resource you are attempting to create already exists.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ResourceQuotaExceededException
+     *         The quota for this resource quota has been exceeded.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @throws KMSKeyNotAccessibleException
+     *         DMS cannot access the KMS key.
+     * @throws S3ResourceNotFoundException
+     *         A specified Amazon S3 bucket, bucket folder, or other object can't be found.
+     * @throws S3AccessDeniedException
+     *         Insufficient privileges are preventing access to an Amazon S3 object.
+     * @sample AWSDatabaseMigrationService.CreateInstanceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateInstanceProfile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateInstanceProfileResult createInstanceProfile(CreateInstanceProfileRequest createInstanceProfileRequest);
+
+    /**
+     * <p>
+     * Creates the migration project using the specified parameters.
+     * </p>
+     * <p>
+     * You can run this action only after you create an instance profile and data providers using <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateInstanceProfile.html"
+     * >CreateInstanceProfile</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateDataProvider.html">CreateDataProvider</a>.
+     * </p>
+     * 
+     * @param createMigrationProjectRequest
+     * @return Result of the CreateMigrationProject operation returned by the service.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws ResourceAlreadyExistsException
+     *         The resource you are attempting to create already exists.
+     * @throws ResourceQuotaExceededException
+     *         The quota for this resource quota has been exceeded.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws S3ResourceNotFoundException
+     *         A specified Amazon S3 bucket, bucket folder, or other object can't be found.
+     * @throws S3AccessDeniedException
+     *         Insufficient privileges are preventing access to an Amazon S3 object.
+     * @sample AWSDatabaseMigrationService.CreateMigrationProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateMigrationProject" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateMigrationProjectResult createMigrationProject(CreateMigrationProjectRequest createMigrationProjectRequest);
+
+    /**
+     * <p>
+     * Creates a configuration that you can later provide to configure and start an DMS Serverless replication. You can
+     * also provide options to validate the configuration inputs before you start the replication.
+     * </p>
+     * 
+     * @param createReplicationConfigRequest
+     * @return Result of the CreateReplicationConfig operation returned by the service.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws ResourceAlreadyExistsException
+     *         The resource you are attempting to create already exists.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @throws ReplicationSubnetGroupDoesNotCoverEnoughAZsException
+     *         The replication subnet group does not cover enough Availability Zones (AZs). Edit the replication subnet
+     *         group and add more AZs.
+     * @throws InvalidSubnetException
+     *         The subnet provided isn't valid.
+     * @throws KMSKeyNotAccessibleException
+     *         DMS cannot access the KMS key.
+     * @throws ResourceQuotaExceededException
+     *         The quota for this resource quota has been exceeded.
+     * @sample AWSDatabaseMigrationService.CreateReplicationConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateReplicationConfigResult createReplicationConfig(CreateReplicationConfigRequest createReplicationConfigRequest);
+
+    /**
+     * <p>
      * Creates the replication instance using the specified parameters.
      * </p>
      * <p>
@@ -279,6 +417,13 @@ public interface AWSDatabaseMigrationService {
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#CHAP_Security.IAMPermissions">IAM
      * Permissions Needed to Use DMS</a>.
      * </p>
+     * <note>
+     * <p>
+     * If you don't specify a version when creating a replication instance, DMS will create the instance using the
+     * default engine version. For information about the default engine version, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReleaseNotes.html">Release Notes</a>.
+     * </p>
+     * </note>
      * 
      * @param createReplicationInstanceRequest
      * @return Result of the CreateReplicationInstance operation returned by the service.
@@ -300,7 +445,7 @@ public interface AWSDatabaseMigrationService {
      * @throws InvalidResourceStateException
      *         The resource is in a state that prevents it from being used for database migration.
      * @throws InvalidSubnetException
-     *         The subnet provided is invalid.
+     *         The subnet provided isn't valid.
      * @throws KMSKeyNotAccessibleException
      *         DMS cannot access the KMS key.
      * @sample AWSDatabaseMigrationService.CreateReplicationInstance
@@ -317,6 +462,14 @@ public interface AWSDatabaseMigrationService {
      * The VPC needs to have at least one subnet in at least two availability zones in the Amazon Web Services Region,
      * otherwise the service will throw a <code>ReplicationSubnetGroupDoesNotCoverEnoughAZs</code> exception.
      * </p>
+     * <p>
+     * If a replication subnet group exists in your Amazon Web Services account, the CreateReplicationSubnetGroup action
+     * returns the following error message: The Replication Subnet Group already exists. In this case, delete the
+     * existing replication subnet group. To do so, use the <a
+     * href="https://docs.aws.amazon.com/en_us/dms/latest/APIReference/API_DeleteReplicationSubnetGroup.html"
+     * >DeleteReplicationSubnetGroup</a> action. Optionally, choose Subnet groups in the DMS console, then choose your
+     * subnet group. Next, choose Delete from Actions.
+     * </p>
      * 
      * @param createReplicationSubnetGroupRequest
      * @return Result of the CreateReplicationSubnetGroup operation returned by the service.
@@ -332,7 +485,7 @@ public interface AWSDatabaseMigrationService {
      *         The replication subnet group does not cover enough Availability Zones (AZs). Edit the replication subnet
      *         group and add more AZs.
      * @throws InvalidSubnetException
-     *         The subnet provided is invalid.
+     *         The subnet provided isn't valid.
      * @sample AWSDatabaseMigrationService.CreateReplicationSubnetGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationSubnetGroup"
      *      target="_top">AWS API Documentation</a>
@@ -399,6 +552,31 @@ public interface AWSDatabaseMigrationService {
      *      Documentation</a>
      */
     DeleteConnectionResult deleteConnection(DeleteConnectionRequest deleteConnectionRequest);
+
+    /**
+     * <p>
+     * Deletes the specified data provider.
+     * </p>
+     * <note>
+     * <p>
+     * All migration projects associated with the data provider must be deleted or modified before you can delete the
+     * data provider.
+     * </p>
+     * </note>
+     * 
+     * @param deleteDataProviderRequest
+     * @return Result of the DeleteDataProvider operation returned by the service.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @sample AWSDatabaseMigrationService.DeleteDataProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteDataProvider" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteDataProviderResult deleteDataProvider(DeleteDataProviderRequest deleteDataProviderRequest);
 
     /**
      * <p>
@@ -473,6 +651,76 @@ public interface AWSDatabaseMigrationService {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteFleetAdvisorDatabasesResult deleteFleetAdvisorDatabases(DeleteFleetAdvisorDatabasesRequest deleteFleetAdvisorDatabasesRequest);
+
+    /**
+     * <p>
+     * Deletes the specified instance profile.
+     * </p>
+     * <note>
+     * <p>
+     * All migration projects associated with the instance profile must be deleted or modified before you can delete the
+     * instance profile.
+     * </p>
+     * </note>
+     * 
+     * @param deleteInstanceProfileRequest
+     * @return Result of the DeleteInstanceProfile operation returned by the service.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @sample AWSDatabaseMigrationService.DeleteInstanceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteInstanceProfile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteInstanceProfileResult deleteInstanceProfile(DeleteInstanceProfileRequest deleteInstanceProfileRequest);
+
+    /**
+     * <p>
+     * Deletes the specified migration project.
+     * </p>
+     * <note>
+     * <p>
+     * The migration project must be closed before you can delete it.
+     * </p>
+     * </note>
+     * 
+     * @param deleteMigrationProjectRequest
+     * @return Result of the DeleteMigrationProject operation returned by the service.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @sample AWSDatabaseMigrationService.DeleteMigrationProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteMigrationProject" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteMigrationProjectResult deleteMigrationProject(DeleteMigrationProjectRequest deleteMigrationProjectRequest);
+
+    /**
+     * <p>
+     * Deletes an DMS Serverless replication configuration. This effectively deprovisions any and all replications that
+     * use this configuration. You can't delete the configuration for an DMS Serverless replication that is ongoing. You
+     * can delete the configuration when the replication is in a non-RUNNING and non-STARTING state.
+     * </p>
+     * 
+     * @param deleteReplicationConfigRequest
+     * @return Result of the DeleteReplicationConfig operation returned by the service.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @sample AWSDatabaseMigrationService.DeleteReplicationConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteReplicationConfigResult deleteReplicationConfig(DeleteReplicationConfigRequest deleteReplicationConfigRequest);
 
     /**
      * <p>
@@ -647,6 +895,38 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
+     * Returns configuration parameters for a schema conversion project.
+     * </p>
+     * 
+     * @param describeConversionConfigurationRequest
+     * @return Result of the DescribeConversionConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AWSDatabaseMigrationService.DescribeConversionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeConversionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeConversionConfigurationResult describeConversionConfiguration(DescribeConversionConfigurationRequest describeConversionConfigurationRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of data providers for your account in the current region.
+     * </p>
+     * 
+     * @param describeDataProvidersRequest
+     * @return Result of the DescribeDataProviders operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @sample AWSDatabaseMigrationService.DescribeDataProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeDataProviders" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeDataProvidersResult describeDataProviders(DescribeDataProvidersRequest describeDataProvidersRequest);
+
+    /**
+     * <p>
      * Returns information about the possible endpoint settings available when you create an endpoint for a specific
      * database engine.
      * </p>
@@ -686,6 +966,19 @@ public interface AWSDatabaseMigrationService {
      *      Documentation</a>
      */
     DescribeEndpointsResult describeEndpoints(DescribeEndpointsRequest describeEndpointsRequest);
+
+    /**
+     * <p>
+     * Returns information about the replication instance versions used in the project.
+     * </p>
+     * 
+     * @param describeEngineVersionsRequest
+     * @return Result of the DescribeEngineVersions operation returned by the service.
+     * @sample AWSDatabaseMigrationService.DescribeEngineVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEngineVersions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeEngineVersionsResult describeEngineVersions(DescribeEngineVersionsRequest describeEngineVersionsRequest);
 
     /**
      * <p>
@@ -738,6 +1031,21 @@ public interface AWSDatabaseMigrationService {
      *      Documentation</a>
      */
     DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of extension pack associations for the specified migration project. An extension pack is
+     * an add-on module that emulates functions present in a source database that are required when converting objects
+     * to the target database.
+     * </p>
+     * 
+     * @param describeExtensionPackAssociationsRequest
+     * @return Result of the DescribeExtensionPackAssociations operation returned by the service.
+     * @sample AWSDatabaseMigrationService.DescribeExtensionPackAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeExtensionPackAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeExtensionPackAssociationsResult describeExtensionPackAssociations(DescribeExtensionPackAssociationsRequest describeExtensionPackAssociationsRequest);
 
     /**
      * <p>
@@ -817,6 +1125,117 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
+     * Returns a paginated list of instance profiles for your account in the current region.
+     * </p>
+     * 
+     * @param describeInstanceProfilesRequest
+     * @return Result of the DescribeInstanceProfiles operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @sample AWSDatabaseMigrationService.DescribeInstanceProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeInstanceProfiles" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeInstanceProfilesResult describeInstanceProfiles(DescribeInstanceProfilesRequest describeInstanceProfilesRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of metadata model assessments for your account in the current region.
+     * </p>
+     * 
+     * @param describeMetadataModelAssessmentsRequest
+     * @return Result of the DescribeMetadataModelAssessments operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AWSDatabaseMigrationService.DescribeMetadataModelAssessments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelAssessments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeMetadataModelAssessmentsResult describeMetadataModelAssessments(DescribeMetadataModelAssessmentsRequest describeMetadataModelAssessmentsRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of metadata model conversions for a migration project.
+     * </p>
+     * 
+     * @param describeMetadataModelConversionsRequest
+     * @return Result of the DescribeMetadataModelConversions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AWSDatabaseMigrationService.DescribeMetadataModelConversions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelConversions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeMetadataModelConversionsResult describeMetadataModelConversions(DescribeMetadataModelConversionsRequest describeMetadataModelConversionsRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of metadata model exports.
+     * </p>
+     * 
+     * @param describeMetadataModelExportsAsScriptRequest
+     * @return Result of the DescribeMetadataModelExportsAsScript operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AWSDatabaseMigrationService.DescribeMetadataModelExportsAsScript
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelExportsAsScript"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeMetadataModelExportsAsScriptResult describeMetadataModelExportsAsScript(
+            DescribeMetadataModelExportsAsScriptRequest describeMetadataModelExportsAsScriptRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of metadata model exports.
+     * </p>
+     * 
+     * @param describeMetadataModelExportsToTargetRequest
+     * @return Result of the DescribeMetadataModelExportsToTarget operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AWSDatabaseMigrationService.DescribeMetadataModelExportsToTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelExportsToTarget"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeMetadataModelExportsToTargetResult describeMetadataModelExportsToTarget(
+            DescribeMetadataModelExportsToTargetRequest describeMetadataModelExportsToTargetRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of metadata model imports.
+     * </p>
+     * 
+     * @param describeMetadataModelImportsRequest
+     * @return Result of the DescribeMetadataModelImports operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AWSDatabaseMigrationService.DescribeMetadataModelImports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMetadataModelImports"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeMetadataModelImportsResult describeMetadataModelImports(DescribeMetadataModelImportsRequest describeMetadataModelImportsRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of migration projects for your account in the current region.
+     * </p>
+     * 
+     * @param describeMigrationProjectsRequest
+     * @return Result of the DescribeMigrationProjects operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @sample AWSDatabaseMigrationService.DescribeMigrationProjects
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeMigrationProjects" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeMigrationProjectsResult describeMigrationProjects(DescribeMigrationProjectsRequest describeMigrationProjectsRequest);
+
+    /**
+     * <p>
      * Returns information about the replication instance types that can be created in the specified region.
      * </p>
      * 
@@ -846,6 +1265,40 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
+     * Returns a paginated list of limitations for recommendations of target Amazon Web Services engines.
+     * </p>
+     * 
+     * @param describeRecommendationLimitationsRequest
+     * @return Result of the DescribeRecommendationLimitations operation returned by the service.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @sample AWSDatabaseMigrationService.DescribeRecommendationLimitations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeRecommendationLimitations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeRecommendationLimitationsResult describeRecommendationLimitations(DescribeRecommendationLimitationsRequest describeRecommendationLimitationsRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of target engine recommendations for your source databases.
+     * </p>
+     * 
+     * @param describeRecommendationsRequest
+     * @return Result of the DescribeRecommendations operation returned by the service.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @sample AWSDatabaseMigrationService.DescribeRecommendations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeRecommendations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeRecommendationsResult describeRecommendations(DescribeRecommendationsRequest describeRecommendationsRequest);
+
+    /**
+     * <p>
      * Returns the status of the RefreshSchemas operation.
      * </p>
      * 
@@ -860,6 +1313,21 @@ public interface AWSDatabaseMigrationService {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeRefreshSchemasStatusResult describeRefreshSchemasStatus(DescribeRefreshSchemasStatusRequest describeRefreshSchemasStatusRequest);
+
+    /**
+     * <p>
+     * Returns one or more existing DMS Serverless replication configurations as a list of structures.
+     * </p>
+     * 
+     * @param describeReplicationConfigsRequest
+     * @return Result of the DescribeReplicationConfigs operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AWSDatabaseMigrationService.DescribeReplicationConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationConfigs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeReplicationConfigsResult describeReplicationConfigs(DescribeReplicationConfigsRequest describeReplicationConfigsRequest);
 
     /**
      * <p>
@@ -908,6 +1376,25 @@ public interface AWSDatabaseMigrationService {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeReplicationSubnetGroupsResult describeReplicationSubnetGroups(DescribeReplicationSubnetGroupsRequest describeReplicationSubnetGroupsRequest);
+
+    /**
+     * <p>
+     * Returns table and schema statistics for one or more provisioned replications that use a given DMS Serverless
+     * replication configuration.
+     * </p>
+     * 
+     * @param describeReplicationTableStatisticsRequest
+     * @return Result of the DescribeReplicationTableStatistics operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @sample AWSDatabaseMigrationService.DescribeReplicationTableStatistics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTableStatistics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeReplicationTableStatisticsResult describeReplicationTableStatistics(
+            DescribeReplicationTableStatisticsRequest describeReplicationTableStatisticsRequest);
 
     /**
      * <p>
@@ -994,6 +1481,22 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
+     * Provides details on replication progress by returning status information for one or more provisioned DMS
+     * Serverless replications.
+     * </p>
+     * 
+     * @param describeReplicationsRequest
+     * @return Result of the DescribeReplications operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AWSDatabaseMigrationService.DescribeReplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplications" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeReplicationsResult describeReplications(DescribeReplicationsRequest describeReplicationsRequest);
+
+    /**
+     * <p>
      * Returns information about the schema for the specified endpoint.
      * </p>
      * <p/>
@@ -1034,6 +1537,22 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
+     * Saves a copy of a database migration assessment report to your Amazon S3 bucket. DMS can save your assessment
+     * report as a comma-separated value (CSV) or a PDF file.
+     * </p>
+     * 
+     * @param exportMetadataModelAssessmentRequest
+     * @return Result of the ExportMetadataModelAssessment operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AWSDatabaseMigrationService.ExportMetadataModelAssessment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ExportMetadataModelAssessment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ExportMetadataModelAssessmentResult exportMetadataModelAssessment(ExportMetadataModelAssessmentRequest exportMetadataModelAssessmentRequest);
+
+    /**
+     * <p>
      * Uploads the specified certificate.
      * </p>
      * 
@@ -1053,8 +1572,8 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
-     * Lists all metadata tags attached to an DMS resource, including replication instance, endpoint, security group,
-     * and migration task. For more information, see <a
+     * Lists all metadata tags attached to an DMS resource, including replication instance, endpoint, subnet group, and
+     * migration task. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html"> <code>Tag</code> </a> data type
      * description.
      * </p>
@@ -1068,6 +1587,47 @@ public interface AWSDatabaseMigrationService {
      *      Documentation</a>
      */
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Modifies the specified schema conversion configuration using the provided parameters.
+     * </p>
+     * 
+     * @param modifyConversionConfigurationRequest
+     * @return Result of the ModifyConversionConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @sample AWSDatabaseMigrationService.ModifyConversionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyConversionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ModifyConversionConfigurationResult modifyConversionConfiguration(ModifyConversionConfigurationRequest modifyConversionConfigurationRequest);
+
+    /**
+     * <p>
+     * Modifies the specified data provider using the provided settings.
+     * </p>
+     * <note>
+     * <p>
+     * You must remove the data provider from all migration projects before you can modify it.
+     * </p>
+     * </note>
+     * 
+     * @param modifyDataProviderRequest
+     * @return Result of the ModifyDataProvider operation returned by the service.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @sample AWSDatabaseMigrationService.ModifyDataProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyDataProvider" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ModifyDataProviderResult modifyDataProvider(ModifyDataProviderRequest modifyDataProviderRequest);
 
     /**
      * <p>
@@ -1133,6 +1693,99 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
+     * Modifies the specified instance profile using the provided parameters.
+     * </p>
+     * <note>
+     * <p>
+     * All migration projects associated with the instance profile must be deleted or modified before you can modify the
+     * instance profile.
+     * </p>
+     * </note>
+     * 
+     * @param modifyInstanceProfileRequest
+     * @return Result of the ModifyInstanceProfile operation returned by the service.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @throws KMSKeyNotAccessibleException
+     *         DMS cannot access the KMS key.
+     * @throws S3ResourceNotFoundException
+     *         A specified Amazon S3 bucket, bucket folder, or other object can't be found.
+     * @throws S3AccessDeniedException
+     *         Insufficient privileges are preventing access to an Amazon S3 object.
+     * @sample AWSDatabaseMigrationService.ModifyInstanceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyInstanceProfile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ModifyInstanceProfileResult modifyInstanceProfile(ModifyInstanceProfileRequest modifyInstanceProfileRequest);
+
+    /**
+     * <p>
+     * Modifies the specified migration project using the provided parameters.
+     * </p>
+     * <note>
+     * <p>
+     * The migration project must be closed before you can modify it.
+     * </p>
+     * </note>
+     * 
+     * @param modifyMigrationProjectRequest
+     * @return Result of the ModifyMigrationProject operation returned by the service.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @throws S3ResourceNotFoundException
+     *         A specified Amazon S3 bucket, bucket folder, or other object can't be found.
+     * @throws S3AccessDeniedException
+     *         Insufficient privileges are preventing access to an Amazon S3 object.
+     * @sample AWSDatabaseMigrationService.ModifyMigrationProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyMigrationProject" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ModifyMigrationProjectResult modifyMigrationProject(ModifyMigrationProjectRequest modifyMigrationProjectRequest);
+
+    /**
+     * <p>
+     * Modifies an existing DMS Serverless replication configuration that you can use to start a replication. This
+     * command includes input validation and logic to check the state of any replication that uses this configuration.
+     * You can only modify a replication configuration before any replication that uses it has started. As soon as you
+     * have initially started a replication with a given configuiration, you can't modify that configuration, even if
+     * you stop it.
+     * </p>
+     * <p>
+     * Other run statuses that allow you to run this command include FAILED and CREATED. A provisioning state that
+     * allows you to run this command is FAILED_PROVISION.
+     * </p>
+     * 
+     * @param modifyReplicationConfigRequest
+     * @return Result of the ModifyReplicationConfig operation returned by the service.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ReplicationSubnetGroupDoesNotCoverEnoughAZsException
+     *         The replication subnet group does not cover enough Availability Zones (AZs). Edit the replication subnet
+     *         group and add more AZs.
+     * @throws InvalidSubnetException
+     *         The subnet provided isn't valid.
+     * @throws KMSKeyNotAccessibleException
+     *         DMS cannot access the KMS key.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @sample AWSDatabaseMigrationService.ModifyReplicationConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ModifyReplicationConfigResult modifyReplicationConfig(ModifyReplicationConfigRequest modifyReplicationConfigRequest);
+
+    /**
+     * <p>
      * Modifies the replication instance to apply new settings. You can change one or more parameters by specifying
      * these parameters and the new values in the request.
      * </p>
@@ -1182,7 +1835,7 @@ public interface AWSDatabaseMigrationService {
      *         The replication subnet group does not cover enough Availability Zones (AZs). Edit the replication subnet
      *         group and add more AZs.
      * @throws InvalidSubnetException
-     *         The subnet provided is invalid.
+     *         The subnet provided isn't valid.
      * @sample AWSDatabaseMigrationService.ModifyReplicationSubnetGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationSubnetGroup"
      *      target="_top">AWS API Documentation</a>
@@ -1285,6 +1938,27 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
+     * Reloads the target database table with the source data for a given DMS Serverless replication configuration.
+     * </p>
+     * <p>
+     * You can only use this operation with a task in the RUNNING state, otherwise the service will throw an
+     * <code>InvalidResourceStateFault</code> exception.
+     * </p>
+     * 
+     * @param reloadReplicationTablesRequest
+     * @return Result of the ReloadReplicationTables operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @sample AWSDatabaseMigrationService.ReloadReplicationTables
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReloadReplicationTables" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ReloadReplicationTablesResult reloadReplicationTables(ReloadReplicationTablesRequest reloadReplicationTablesRequest);
+
+    /**
+     * <p>
      * Reloads the target database table with the source data.
      * </p>
      * <p>
@@ -1306,10 +1980,9 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
-     * Removes metadata tags from an DMS resource, including replication instance, endpoint, security group, and
-     * migration task. For more information, see <a
-     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html"> <code>Tag</code> </a> data type
-     * description.
+     * Removes metadata tags from an DMS resource, including replication instance, endpoint, subnet group, and migration
+     * task. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_Tag.html">
+     * <code>Tag</code> </a> data type description.
      * </p>
      * 
      * @param removeTagsFromResourceRequest
@@ -1339,6 +2012,232 @@ public interface AWSDatabaseMigrationService {
      *      API Documentation</a>
      */
     RunFleetAdvisorLsaAnalysisResult runFleetAdvisorLsaAnalysis(RunFleetAdvisorLsaAnalysisRequest runFleetAdvisorLsaAnalysisRequest);
+
+    /**
+     * <p>
+     * Applies the extension pack to your target database. An extension pack is an add-on module that emulates functions
+     * present in a source database that are required when converting objects to the target database.
+     * </p>
+     * 
+     * @param startExtensionPackAssociationRequest
+     * @return Result of the StartExtensionPackAssociation operation returned by the service.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @throws ResourceAlreadyExistsException
+     *         The resource you are attempting to create already exists.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws KMSKeyNotAccessibleException
+     *         DMS cannot access the KMS key.
+     * @throws ResourceQuotaExceededException
+     *         The quota for this resource quota has been exceeded.
+     * @throws S3ResourceNotFoundException
+     *         A specified Amazon S3 bucket, bucket folder, or other object can't be found.
+     * @throws S3AccessDeniedException
+     *         Insufficient privileges are preventing access to an Amazon S3 object.
+     * @sample AWSDatabaseMigrationService.StartExtensionPackAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartExtensionPackAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartExtensionPackAssociationResult startExtensionPackAssociation(StartExtensionPackAssociationRequest startExtensionPackAssociationRequest);
+
+    /**
+     * <p>
+     * Creates a database migration assessment report by assessing the migration complexity for your source database. A
+     * database migration assessment report summarizes all of the schema conversion tasks. It also details the action
+     * items for database objects that can't be converted to the database engine of your target database instance.
+     * </p>
+     * 
+     * @param startMetadataModelAssessmentRequest
+     * @return Result of the StartMetadataModelAssessment operation returned by the service.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @throws ResourceAlreadyExistsException
+     *         The resource you are attempting to create already exists.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws KMSKeyNotAccessibleException
+     *         DMS cannot access the KMS key.
+     * @throws ResourceQuotaExceededException
+     *         The quota for this resource quota has been exceeded.
+     * @throws S3ResourceNotFoundException
+     *         A specified Amazon S3 bucket, bucket folder, or other object can't be found.
+     * @throws S3AccessDeniedException
+     *         Insufficient privileges are preventing access to an Amazon S3 object.
+     * @sample AWSDatabaseMigrationService.StartMetadataModelAssessment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelAssessment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartMetadataModelAssessmentResult startMetadataModelAssessment(StartMetadataModelAssessmentRequest startMetadataModelAssessmentRequest);
+
+    /**
+     * <p>
+     * Converts your source database objects to a format compatible with the target database.
+     * </p>
+     * 
+     * @param startMetadataModelConversionRequest
+     * @return Result of the StartMetadataModelConversion operation returned by the service.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @throws ResourceAlreadyExistsException
+     *         The resource you are attempting to create already exists.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws KMSKeyNotAccessibleException
+     *         DMS cannot access the KMS key.
+     * @throws ResourceQuotaExceededException
+     *         The quota for this resource quota has been exceeded.
+     * @throws S3ResourceNotFoundException
+     *         A specified Amazon S3 bucket, bucket folder, or other object can't be found.
+     * @throws S3AccessDeniedException
+     *         Insufficient privileges are preventing access to an Amazon S3 object.
+     * @sample AWSDatabaseMigrationService.StartMetadataModelConversion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelConversion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartMetadataModelConversionResult startMetadataModelConversion(StartMetadataModelConversionRequest startMetadataModelConversionRequest);
+
+    /**
+     * <p>
+     * Saves your converted code to a file as a SQL script, and stores this file on your Amazon S3 bucket.
+     * </p>
+     * 
+     * @param startMetadataModelExportAsScriptRequest
+     * @return Result of the StartMetadataModelExportAsScript operation returned by the service.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @throws ResourceAlreadyExistsException
+     *         The resource you are attempting to create already exists.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws KMSKeyNotAccessibleException
+     *         DMS cannot access the KMS key.
+     * @throws ResourceQuotaExceededException
+     *         The quota for this resource quota has been exceeded.
+     * @throws S3ResourceNotFoundException
+     *         A specified Amazon S3 bucket, bucket folder, or other object can't be found.
+     * @throws S3AccessDeniedException
+     *         Insufficient privileges are preventing access to an Amazon S3 object.
+     * @sample AWSDatabaseMigrationService.StartMetadataModelExportAsScript
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelExportAsScript"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartMetadataModelExportAsScriptResult startMetadataModelExportAsScript(StartMetadataModelExportAsScriptRequest startMetadataModelExportAsScriptRequest);
+
+    /**
+     * <p>
+     * Applies converted database objects to your target database.
+     * </p>
+     * 
+     * @param startMetadataModelExportToTargetRequest
+     * @return Result of the StartMetadataModelExportToTarget operation returned by the service.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @throws ResourceAlreadyExistsException
+     *         The resource you are attempting to create already exists.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws KMSKeyNotAccessibleException
+     *         DMS cannot access the KMS key.
+     * @throws ResourceQuotaExceededException
+     *         The quota for this resource quota has been exceeded.
+     * @throws S3ResourceNotFoundException
+     *         A specified Amazon S3 bucket, bucket folder, or other object can't be found.
+     * @throws S3AccessDeniedException
+     *         Insufficient privileges are preventing access to an Amazon S3 object.
+     * @sample AWSDatabaseMigrationService.StartMetadataModelExportToTarget
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelExportToTarget"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartMetadataModelExportToTargetResult startMetadataModelExportToTarget(StartMetadataModelExportToTargetRequest startMetadataModelExportToTargetRequest);
+
+    /**
+     * <p>
+     * Loads the metadata for all the dependent database objects of the parent object.
+     * </p>
+     * <p>
+     * This operation uses your project's Amazon S3 bucket as a metadata cache to improve performance.
+     * </p>
+     * 
+     * @param startMetadataModelImportRequest
+     * @return Result of the StartMetadataModelImport operation returned by the service.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @throws ResourceAlreadyExistsException
+     *         The resource you are attempting to create already exists.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws KMSKeyNotAccessibleException
+     *         DMS cannot access the KMS key.
+     * @throws ResourceQuotaExceededException
+     *         The quota for this resource quota has been exceeded.
+     * @throws S3ResourceNotFoundException
+     *         A specified Amazon S3 bucket, bucket folder, or other object can't be found.
+     * @throws S3AccessDeniedException
+     *         Insufficient privileges are preventing access to an Amazon S3 object.
+     * @sample AWSDatabaseMigrationService.StartMetadataModelImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartMetadataModelImport" target="_top">AWS
+     *      API Documentation</a>
+     */
+    StartMetadataModelImportResult startMetadataModelImport(StartMetadataModelImportRequest startMetadataModelImportRequest);
+
+    /**
+     * <p>
+     * Starts the analysis of your source database to provide recommendations of target engines.
+     * </p>
+     * <p>
+     * You can create recommendations for multiple source databases using <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_BatchStartRecommendations.html"
+     * >BatchStartRecommendations</a>.
+     * </p>
+     * 
+     * @param startRecommendationsRequest
+     * @return Result of the StartRecommendations operation returned by the service.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AWSDatabaseMigrationService.StartRecommendations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartRecommendations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartRecommendationsResult startRecommendations(StartRecommendationsRequest startRecommendationsRequest);
+
+    /**
+     * <p>
+     * For a given DMS Serverless replication configuration, DMS connects to the source endpoint and collects the
+     * metadata to analyze the replication workload. Using this metadata, DMS then computes and provisions the required
+     * capacity and starts replicating to the target endpoint using the server resources that DMS has provisioned for
+     * the DMS Serverless replication.
+     * </p>
+     * 
+     * @param startReplicationRequest
+     * @return Result of the StartReplication operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @sample AWSDatabaseMigrationService.StartReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartReplicationResult startReplication(StartReplicationRequest startReplicationRequest);
 
     /**
      * <p>
@@ -1449,6 +2348,26 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
+     * For a given DMS Serverless replication configuration, DMS stops any and all ongoing DMS Serverless replications.
+     * This command doesn't deprovision the stopped replications.
+     * </p>
+     * 
+     * @param stopReplicationRequest
+     * @return Result of the StopReplication operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @sample AWSDatabaseMigrationService.StopReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StopReplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StopReplicationResult stopReplication(StopReplicationRequest stopReplicationRequest);
+
+    /**
+     * <p>
      * Stops the replication task.
      * </p>
      * 
@@ -1491,10 +2410,10 @@ public interface AWSDatabaseMigrationService {
      * <p>
      * Migrates 10 active and enabled Amazon SNS subscriptions at a time and converts them to corresponding Amazon
      * EventBridge rules. By default, this operation migrates subscriptions only when all your replication instance
-     * versions are 3.4.6 or higher. If any replication instances are from versions earlier than 3.4.6, the operation
-     * raises an error and tells you to upgrade these instances to version 3.4.6 or higher. To enable migration
+     * versions are 3.4.5 or higher. If any replication instances are from versions earlier than 3.4.5, the operation
+     * raises an error and tells you to upgrade these instances to version 3.4.5 or higher. To enable migration
      * regardless of version, set the <code>Force</code> option to true. However, if you don't upgrade instances earlier
-     * than version 3.4.6, some types of events might not be available when you use Amazon EventBridge.
+     * than version 3.4.5, some types of events might not be available when you use Amazon EventBridge.
      * </p>
      * <p>
      * To call this operation, make sure that you have certain permissions added to your user account. For more

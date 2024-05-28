@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,8 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format
      * <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short
-     * version using the form <code>${JobDefinitionName}:${Revision}</code>.
+     * version using the form <code>${JobDefinitionName}:${Revision}</code>. This parameter can't be used with other
+     * parameters.
      * </p>
      */
     private java.util.List<String> jobDefinitions;
@@ -79,12 +80,14 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format
      * <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short
-     * version using the form <code>${JobDefinitionName}:${Revision}</code>.
+     * version using the form <code>${JobDefinitionName}:${Revision}</code>. This parameter can't be used with other
+     * parameters.
      * </p>
      * 
      * @return A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format
      *         <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a
-     *         short version using the form <code>${JobDefinitionName}:${Revision}</code>.
+     *         short version using the form <code>${JobDefinitionName}:${Revision}</code>. This parameter can't be used
+     *         with other parameters.
      */
 
     public java.util.List<String> getJobDefinitions() {
@@ -95,13 +98,15 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format
      * <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short
-     * version using the form <code>${JobDefinitionName}:${Revision}</code>.
+     * version using the form <code>${JobDefinitionName}:${Revision}</code>. This parameter can't be used with other
+     * parameters.
      * </p>
      * 
      * @param jobDefinitions
      *        A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format
      *        <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short
-     *        version using the form <code>${JobDefinitionName}:${Revision}</code>.
+     *        version using the form <code>${JobDefinitionName}:${Revision}</code>. This parameter can't be used with
+     *        other parameters.
      */
 
     public void setJobDefinitions(java.util.Collection<String> jobDefinitions) {
@@ -117,7 +122,8 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format
      * <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short
-     * version using the form <code>${JobDefinitionName}:${Revision}</code>.
+     * version using the form <code>${JobDefinitionName}:${Revision}</code>. This parameter can't be used with other
+     * parameters.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -128,7 +134,8 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
      * @param jobDefinitions
      *        A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format
      *        <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short
-     *        version using the form <code>${JobDefinitionName}:${Revision}</code>.
+     *        version using the form <code>${JobDefinitionName}:${Revision}</code>. This parameter can't be used with
+     *        other parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,13 +153,15 @@ public class DescribeJobDefinitionsRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format
      * <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short
-     * version using the form <code>${JobDefinitionName}:${Revision}</code>.
+     * version using the form <code>${JobDefinitionName}:${Revision}</code>. This parameter can't be used with other
+     * parameters.
      * </p>
      * 
      * @param jobDefinitions
      *        A list of up to 100 job definitions. Each entry in the list can either be an ARN in the format
      *        <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code> or a short
-     *        version using the form <code>${JobDefinitionName}:${Revision}</code>.
+     *        version using the form <code>${JobDefinitionName}:${Revision}</code>. This parameter can't be used with
+     *        other parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

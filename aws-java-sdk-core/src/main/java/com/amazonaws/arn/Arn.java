@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ import com.amazonaws.util.ValidationUtils;
  * <p>
  * The primary supported ARN format is: {@code arn:<partition>:<service>:<region>:<account>:<resource>}
  * <p>
- * To parse an ARN from a string use ARN.fromString(). To convert an ARN to it's
- * string representation use ARN.toString(). For instance, for a string s, containing a well-formed ARN the
+ * To parse an ARN from a string use Arn.fromString(). To convert an ARN to it's
+ * string representation use Arn.toString(). For instance, for a string s, containing a well-formed ARN the
  * following should always be true:
  * <pre>
  * ARN theArn = Arn.fromString(s);

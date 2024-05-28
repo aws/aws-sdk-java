@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,12 @@ public class TraceSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String id;
+    /**
+     * <p>
+     * The start time of a trace, based on the earliest trace segment start time.
+     * </p>
+     */
+    private java.util.Date startTime;
     /**
      * <p>
      * The length of time in seconds between the start time of the root segment and the end time of the last segment
@@ -189,6 +195,46 @@ public class TraceSummary implements Serializable, Cloneable, StructuredPojo {
 
     public TraceSummary withId(String id) {
         setId(id);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The start time of a trace, based on the earliest trace segment start time.
+     * </p>
+     * 
+     * @param startTime
+     *        The start time of a trace, based on the earliest trace segment start time.
+     */
+
+    public void setStartTime(java.util.Date startTime) {
+        this.startTime = startTime;
+    }
+
+    /**
+     * <p>
+     * The start time of a trace, based on the earliest trace segment start time.
+     * </p>
+     * 
+     * @return The start time of a trace, based on the earliest trace segment start time.
+     */
+
+    public java.util.Date getStartTime() {
+        return this.startTime;
+    }
+
+    /**
+     * <p>
+     * The start time of a trace, based on the earliest trace segment start time.
+     * </p>
+     * 
+     * @param startTime
+     *        The start time of a trace, based on the earliest trace segment start time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TraceSummary withStartTime(java.util.Date startTime) {
+        setStartTime(startTime);
         return this;
     }
 
@@ -1300,6 +1346,8 @@ public class TraceSummary implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
+        if (getStartTime() != null)
+            sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getDuration() != null)
             sb.append("Duration: ").append(getDuration()).append(",");
         if (getResponseTime() != null)
@@ -1355,6 +1403,10 @@ public class TraceSummary implements Serializable, Cloneable, StructuredPojo {
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
+            return false;
+        if (other.getStartTime() == null ^ this.getStartTime() == null)
+            return false;
+        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
             return false;
         if (other.getDuration() == null ^ this.getDuration() == null)
             return false;
@@ -1441,6 +1493,7 @@ public class TraceSummary implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode());
         hashCode = prime * hashCode + ((getResponseTime() == null) ? 0 : getResponseTime().hashCode());
         hashCode = prime * hashCode + ((getHasFault() == null) ? 0 : getHasFault().hashCode());

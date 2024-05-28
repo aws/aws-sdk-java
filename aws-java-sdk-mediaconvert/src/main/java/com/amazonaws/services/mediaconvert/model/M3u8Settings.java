@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,13 +30,13 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
      * sensitive to very small duration differences between video and audio. For this situation, choose Match video
-     * duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
-     * (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with
-     * silence or trims them to ensure that the total duration of each audio stream is at least as long as the total
-     * duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame
-     * longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment
-     * of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the
-     * default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+     * duration. In all other cases, keep the default value, Default codec duration. When you choose Match video
+     * duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration
+     * of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the
+     * audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding
+     * or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding
+     * only to the end of the file. When you keep the default value, any minor discrepancies between audio and video
+     * duration will depend on your output audio codec.
      */
     private String audioDuration;
     /** The number of audio frames to insert for each PES packet. */
@@ -49,7 +49,7 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS)
      * values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with
-     * lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
+     * lesser PTS values). Keep the default value AUTO to allow all PTS values.
      */
     private String dataPTSControl;
     /**
@@ -83,21 +83,33 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
     private Integer privateMetadataPid;
     /** The value of the program number field in the Program Map Table. */
     private Integer programNumber;
+    /**
+     * Manually specify the initial PTS offset, in seconds, when you set PTS offset to Seconds. Enter an integer from 0
+     * to 3600. Leave blank to keep the default value 2.
+     */
+    private Integer ptsOffset;
+    /**
+     * Specify the initial presentation timestamp (PTS) offset for your transport stream output. To let MediaConvert
+     * automatically determine the initial PTS offset: Keep the default value, Auto. We recommend that you choose Auto
+     * for the widest player compatibility. The initial PTS will be at least two seconds and vary depending on your
+     * output's bitrate, HRD buffer size and HRD buffer initial fill percentage. To manually specify an initial PTS
+     * offset: Choose Seconds. Then specify the number of seconds with PTS offset.
+     */
+    private String ptsOffsetMode;
     /** Packet Identifier (PID) of the SCTE-35 stream in the transport stream. */
     private Integer scte35Pid;
     /**
-     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in
-     * your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output.
-     * For SCTE-35 markers from an ESAM XML document-- Choose None (NONE) if you don't want manifest conditioning. Choose
-     * Passthrough (PASSTHROUGH) and choose Ad markers (adMarkers) if you do want manifest conditioning. In both cases,
-     * also provide the ESAM XML as a string in the setting Signal processing notification XML (sccXml).
+     * For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35 markers that appear in your input to
+     * also appear in this output. Choose None if you don't want SCTE-35 markers in this output. For SCTE-35 markers
+     * from an ESAM XML document-- Choose None if you don't want manifest conditioning. Choose Passthrough and choose Ad
+     * markers if you do want manifest conditioning. In both cases, also provide the ESAM XML as a string in the setting
+     * Signal processing notification XML.
      */
     private String scte35Source;
     /**
-     * Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3 metadata in this output. This
-     * includes ID3 metadata from the following features: ID3 timestamp period (timedMetadataId3Period), and Custom ID3
-     * metadata inserter (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3 metadata to None
-     * (NONE) or leave blank.
+     * Set ID3 metadata to Passthrough to include ID3 metadata in this output. This includes ID3 metadata from the
+     * following features: ID3 timestamp period, and Custom ID3 metadata inserter. To exclude this ID3 metadata in this
+     * output: set ID3 metadata to None or leave blank.
      */
     private String timedMetadata;
     /** Packet Identifier (PID) of the ID3 metadata stream in the transport stream. */
@@ -110,25 +122,24 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
      * sensitive to very small duration differences between video and audio. For this situation, choose Match video
-     * duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
-     * (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with
-     * silence or trims them to ensure that the total duration of each audio stream is at least as long as the total
-     * duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame
-     * longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment
-     * of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the
-     * default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+     * duration. In all other cases, keep the default value, Default codec duration. When you choose Match video
+     * duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration
+     * of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the
+     * audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding
+     * or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding
+     * only to the end of the file. When you keep the default value, any minor discrepancies between audio and video
+     * duration will depend on your output audio codec.
      * 
      * @param audioDuration
      *        Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
      *        sensitive to very small duration differences between video and audio. For this situation, choose Match
-     *        video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
-     *        (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams
-     *        with silence or trims them to ensure that the total duration of each audio stream is at least as long as
-     *        the total duration of the video stream. After padding or trimming, the audio stream duration is no more
-     *        than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the
-     *        end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end
-     *        of the file. When you keep the default value, any minor discrepancies between audio and video duration
-     *        will depend on your output audio codec.
+     *        video duration. In all other cases, keep the default value, Default codec duration. When you choose Match
+     *        video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the
+     *        total duration of each audio stream is at least as long as the total duration of the video stream. After
+     *        padding or trimming, the audio stream duration is no more than one frame longer than the video stream.
+     *        MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For
+     *        unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default
+     *        value, any minor discrepancies between audio and video duration will depend on your output audio codec.
      * @see M3u8AudioDuration
      */
 
@@ -139,24 +150,23 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
      * sensitive to very small duration differences between video and audio. For this situation, choose Match video
-     * duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
-     * (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with
-     * silence or trims them to ensure that the total duration of each audio stream is at least as long as the total
-     * duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame
-     * longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment
-     * of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the
-     * default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+     * duration. In all other cases, keep the default value, Default codec duration. When you choose Match video
+     * duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration
+     * of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the
+     * audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding
+     * or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding
+     * only to the end of the file. When you keep the default value, any minor discrepancies between audio and video
+     * duration will depend on your output audio codec.
      * 
      * @return Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
      *         sensitive to very small duration differences between video and audio. For this situation, choose Match
-     *         video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
-     *         (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio
-     *         streams with silence or trims them to ensure that the total duration of each audio stream is at least as
-     *         long as the total duration of the video stream. After padding or trimming, the audio stream duration is
-     *         no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only
-     *         to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to
-     *         the end of the file. When you keep the default value, any minor discrepancies between audio and video
-     *         duration will depend on your output audio codec.
+     *         video duration. In all other cases, keep the default value, Default codec duration. When you choose Match
+     *         video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the
+     *         total duration of each audio stream is at least as long as the total duration of the video stream. After
+     *         padding or trimming, the audio stream duration is no more than one frame longer than the video stream.
+     *         MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For
+     *         unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default
+     *         value, any minor discrepancies between audio and video duration will depend on your output audio codec.
      * @see M3u8AudioDuration
      */
 
@@ -167,25 +177,24 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
      * sensitive to very small duration differences between video and audio. For this situation, choose Match video
-     * duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
-     * (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with
-     * silence or trims them to ensure that the total duration of each audio stream is at least as long as the total
-     * duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame
-     * longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment
-     * of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the
-     * default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+     * duration. In all other cases, keep the default value, Default codec duration. When you choose Match video
+     * duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration
+     * of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the
+     * audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding
+     * or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding
+     * only to the end of the file. When you keep the default value, any minor discrepancies between audio and video
+     * duration will depend on your output audio codec.
      * 
      * @param audioDuration
      *        Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
      *        sensitive to very small duration differences between video and audio. For this situation, choose Match
-     *        video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
-     *        (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams
-     *        with silence or trims them to ensure that the total duration of each audio stream is at least as long as
-     *        the total duration of the video stream. After padding or trimming, the audio stream duration is no more
-     *        than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the
-     *        end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end
-     *        of the file. When you keep the default value, any minor discrepancies between audio and video duration
-     *        will depend on your output audio codec.
+     *        video duration. In all other cases, keep the default value, Default codec duration. When you choose Match
+     *        video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the
+     *        total duration of each audio stream is at least as long as the total duration of the video stream. After
+     *        padding or trimming, the audio stream duration is no more than one frame longer than the video stream.
+     *        MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For
+     *        unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default
+     *        value, any minor discrepancies between audio and video duration will depend on your output audio codec.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M3u8AudioDuration
      */
@@ -198,25 +207,24 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
      * sensitive to very small duration differences between video and audio. For this situation, choose Match video
-     * duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
-     * (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with
-     * silence or trims them to ensure that the total duration of each audio stream is at least as long as the total
-     * duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame
-     * longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment
-     * of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the
-     * default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+     * duration. In all other cases, keep the default value, Default codec duration. When you choose Match video
+     * duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration
+     * of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the
+     * audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding
+     * or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding
+     * only to the end of the file. When you keep the default value, any minor discrepancies between audio and video
+     * duration will depend on your output audio codec.
      * 
      * @param audioDuration
      *        Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
      *        sensitive to very small duration differences between video and audio. For this situation, choose Match
-     *        video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration
-     *        (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams
-     *        with silence or trims them to ensure that the total duration of each audio stream is at least as long as
-     *        the total duration of the video stream. After padding or trimming, the audio stream duration is no more
-     *        than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the
-     *        end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end
-     *        of the file. When you keep the default value, any minor discrepancies between audio and video duration
-     *        will depend on your output audio codec.
+     *        video duration. In all other cases, keep the default value, Default codec duration. When you choose Match
+     *        video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the
+     *        total duration of each audio stream is at least as long as the total duration of the video stream. After
+     *        padding or trimming, the audio stream duration is no more than one frame longer than the video stream.
+     *        MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For
+     *        unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default
+     *        value, any minor discrepancies between audio and video duration will depend on your output audio codec.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M3u8AudioDuration
      */
@@ -333,12 +341,12 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS)
      * values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with
-     * lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
+     * lesser PTS values). Keep the default value AUTO to allow all PTS values.
      * 
      * @param dataPTSControl
      *        If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp
      *        (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data
-     *        packets with lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
+     *        packets with lesser PTS values). Keep the default value AUTO to allow all PTS values.
      * @see M3u8DataPtsControl
      */
 
@@ -349,11 +357,11 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS)
      * values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with
-     * lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
+     * lesser PTS values). Keep the default value AUTO to allow all PTS values.
      * 
      * @return If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp
      *         (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data
-     *         packets with lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
+     *         packets with lesser PTS values). Keep the default value AUTO to allow all PTS values.
      * @see M3u8DataPtsControl
      */
 
@@ -364,12 +372,12 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS)
      * values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with
-     * lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
+     * lesser PTS values). Keep the default value AUTO to allow all PTS values.
      * 
      * @param dataPTSControl
      *        If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp
      *        (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data
-     *        packets with lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
+     *        packets with lesser PTS values). Keep the default value AUTO to allow all PTS values.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M3u8DataPtsControl
      */
@@ -382,12 +390,12 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS)
      * values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with
-     * lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
+     * lesser PTS values). Keep the default value AUTO to allow all PTS values.
      * 
      * @param dataPTSControl
      *        If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp
      *        (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data
-     *        packets with lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
+     *        packets with lesser PTS values). Keep the default value AUTO to allow all PTS values.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M3u8DataPtsControl
      */
@@ -774,6 +782,133 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Manually specify the initial PTS offset, in seconds, when you set PTS offset to Seconds. Enter an integer from 0
+     * to 3600. Leave blank to keep the default value 2.
+     * 
+     * @param ptsOffset
+     *        Manually specify the initial PTS offset, in seconds, when you set PTS offset to Seconds. Enter an integer
+     *        from 0 to 3600. Leave blank to keep the default value 2.
+     */
+
+    public void setPtsOffset(Integer ptsOffset) {
+        this.ptsOffset = ptsOffset;
+    }
+
+    /**
+     * Manually specify the initial PTS offset, in seconds, when you set PTS offset to Seconds. Enter an integer from 0
+     * to 3600. Leave blank to keep the default value 2.
+     * 
+     * @return Manually specify the initial PTS offset, in seconds, when you set PTS offset to Seconds. Enter an integer
+     *         from 0 to 3600. Leave blank to keep the default value 2.
+     */
+
+    public Integer getPtsOffset() {
+        return this.ptsOffset;
+    }
+
+    /**
+     * Manually specify the initial PTS offset, in seconds, when you set PTS offset to Seconds. Enter an integer from 0
+     * to 3600. Leave blank to keep the default value 2.
+     * 
+     * @param ptsOffset
+     *        Manually specify the initial PTS offset, in seconds, when you set PTS offset to Seconds. Enter an integer
+     *        from 0 to 3600. Leave blank to keep the default value 2.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public M3u8Settings withPtsOffset(Integer ptsOffset) {
+        setPtsOffset(ptsOffset);
+        return this;
+    }
+
+    /**
+     * Specify the initial presentation timestamp (PTS) offset for your transport stream output. To let MediaConvert
+     * automatically determine the initial PTS offset: Keep the default value, Auto. We recommend that you choose Auto
+     * for the widest player compatibility. The initial PTS will be at least two seconds and vary depending on your
+     * output's bitrate, HRD buffer size and HRD buffer initial fill percentage. To manually specify an initial PTS
+     * offset: Choose Seconds. Then specify the number of seconds with PTS offset.
+     * 
+     * @param ptsOffsetMode
+     *        Specify the initial presentation timestamp (PTS) offset for your transport stream output. To let
+     *        MediaConvert automatically determine the initial PTS offset: Keep the default value, Auto. We recommend
+     *        that you choose Auto for the widest player compatibility. The initial PTS will be at least two seconds and
+     *        vary depending on your output's bitrate, HRD buffer size and HRD buffer initial fill percentage. To
+     *        manually specify an initial PTS offset: Choose Seconds. Then specify the number of seconds with PTS
+     *        offset.
+     * @see TsPtsOffset
+     */
+
+    public void setPtsOffsetMode(String ptsOffsetMode) {
+        this.ptsOffsetMode = ptsOffsetMode;
+    }
+
+    /**
+     * Specify the initial presentation timestamp (PTS) offset for your transport stream output. To let MediaConvert
+     * automatically determine the initial PTS offset: Keep the default value, Auto. We recommend that you choose Auto
+     * for the widest player compatibility. The initial PTS will be at least two seconds and vary depending on your
+     * output's bitrate, HRD buffer size and HRD buffer initial fill percentage. To manually specify an initial PTS
+     * offset: Choose Seconds. Then specify the number of seconds with PTS offset.
+     * 
+     * @return Specify the initial presentation timestamp (PTS) offset for your transport stream output. To let
+     *         MediaConvert automatically determine the initial PTS offset: Keep the default value, Auto. We recommend
+     *         that you choose Auto for the widest player compatibility. The initial PTS will be at least two seconds
+     *         and vary depending on your output's bitrate, HRD buffer size and HRD buffer initial fill percentage. To
+     *         manually specify an initial PTS offset: Choose Seconds. Then specify the number of seconds with PTS
+     *         offset.
+     * @see TsPtsOffset
+     */
+
+    public String getPtsOffsetMode() {
+        return this.ptsOffsetMode;
+    }
+
+    /**
+     * Specify the initial presentation timestamp (PTS) offset for your transport stream output. To let MediaConvert
+     * automatically determine the initial PTS offset: Keep the default value, Auto. We recommend that you choose Auto
+     * for the widest player compatibility. The initial PTS will be at least two seconds and vary depending on your
+     * output's bitrate, HRD buffer size and HRD buffer initial fill percentage. To manually specify an initial PTS
+     * offset: Choose Seconds. Then specify the number of seconds with PTS offset.
+     * 
+     * @param ptsOffsetMode
+     *        Specify the initial presentation timestamp (PTS) offset for your transport stream output. To let
+     *        MediaConvert automatically determine the initial PTS offset: Keep the default value, Auto. We recommend
+     *        that you choose Auto for the widest player compatibility. The initial PTS will be at least two seconds and
+     *        vary depending on your output's bitrate, HRD buffer size and HRD buffer initial fill percentage. To
+     *        manually specify an initial PTS offset: Choose Seconds. Then specify the number of seconds with PTS
+     *        offset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TsPtsOffset
+     */
+
+    public M3u8Settings withPtsOffsetMode(String ptsOffsetMode) {
+        setPtsOffsetMode(ptsOffsetMode);
+        return this;
+    }
+
+    /**
+     * Specify the initial presentation timestamp (PTS) offset for your transport stream output. To let MediaConvert
+     * automatically determine the initial PTS offset: Keep the default value, Auto. We recommend that you choose Auto
+     * for the widest player compatibility. The initial PTS will be at least two seconds and vary depending on your
+     * output's bitrate, HRD buffer size and HRD buffer initial fill percentage. To manually specify an initial PTS
+     * offset: Choose Seconds. Then specify the number of seconds with PTS offset.
+     * 
+     * @param ptsOffsetMode
+     *        Specify the initial presentation timestamp (PTS) offset for your transport stream output. To let
+     *        MediaConvert automatically determine the initial PTS offset: Keep the default value, Auto. We recommend
+     *        that you choose Auto for the widest player compatibility. The initial PTS will be at least two seconds and
+     *        vary depending on your output's bitrate, HRD buffer size and HRD buffer initial fill percentage. To
+     *        manually specify an initial PTS offset: Choose Seconds. Then specify the number of seconds with PTS
+     *        offset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TsPtsOffset
+     */
+
+    public M3u8Settings withPtsOffsetMode(TsPtsOffset ptsOffsetMode) {
+        this.ptsOffsetMode = ptsOffsetMode.toString();
+        return this;
+    }
+
+    /**
      * Packet Identifier (PID) of the SCTE-35 stream in the transport stream.
      * 
      * @param scte35Pid
@@ -808,19 +943,18 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in
-     * your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output.
-     * For SCTE-35 markers from an ESAM XML document-- Choose None (NONE) if you don't want manifest conditioning. Choose
-     * Passthrough (PASSTHROUGH) and choose Ad markers (adMarkers) if you do want manifest conditioning. In both cases,
-     * also provide the ESAM XML as a string in the setting Signal processing notification XML (sccXml).
+     * For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35 markers that appear in your input to
+     * also appear in this output. Choose None if you don't want SCTE-35 markers in this output. For SCTE-35 markers
+     * from an ESAM XML document-- Choose None if you don't want manifest conditioning. Choose Passthrough and choose Ad
+     * markers if you do want manifest conditioning. In both cases, also provide the ESAM XML as a string in the setting
+     * Signal processing notification XML.
      * 
      * @param scte35Source
-     *        For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that
-     *        appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers
-     *        in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE) if you don't want
-     *        manifest conditioning. Choose Passthrough (PASSTHROUGH) and choose Ad markers (adMarkers) if you do want
-     *        manifest conditioning. In both cases, also provide the ESAM XML as a string in the setting Signal
-     *        processing notification XML (sccXml).
+     *        For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35 markers that appear in your
+     *        input to also appear in this output. Choose None if you don't want SCTE-35 markers in this output. For
+     *        SCTE-35 markers from an ESAM XML document-- Choose None if you don't want manifest conditioning. Choose
+     *        Passthrough and choose Ad markers if you do want manifest conditioning. In both cases, also provide the
+     *        ESAM XML as a string in the setting Signal processing notification XML.
      * @see M3u8Scte35Source
      */
 
@@ -829,18 +963,17 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in
-     * your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output.
-     * For SCTE-35 markers from an ESAM XML document-- Choose None (NONE) if you don't want manifest conditioning. Choose
-     * Passthrough (PASSTHROUGH) and choose Ad markers (adMarkers) if you do want manifest conditioning. In both cases,
-     * also provide the ESAM XML as a string in the setting Signal processing notification XML (sccXml).
+     * For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35 markers that appear in your input to
+     * also appear in this output. Choose None if you don't want SCTE-35 markers in this output. For SCTE-35 markers
+     * from an ESAM XML document-- Choose None if you don't want manifest conditioning. Choose Passthrough and choose Ad
+     * markers if you do want manifest conditioning. In both cases, also provide the ESAM XML as a string in the setting
+     * Signal processing notification XML.
      * 
-     * @return For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that
-     *         appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers
-     *         in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE) if you don't want
-     *         manifest conditioning. Choose Passthrough (PASSTHROUGH) and choose Ad markers (adMarkers) if you do want
-     *         manifest conditioning. In both cases, also provide the ESAM XML as a string in the setting Signal
-     *         processing notification XML (sccXml).
+     * @return For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35 markers that appear in your
+     *         input to also appear in this output. Choose None if you don't want SCTE-35 markers in this output. For
+     *         SCTE-35 markers from an ESAM XML document-- Choose None if you don't want manifest conditioning. Choose
+     *         Passthrough and choose Ad markers if you do want manifest conditioning. In both cases, also provide the
+     *         ESAM XML as a string in the setting Signal processing notification XML.
      * @see M3u8Scte35Source
      */
 
@@ -849,19 +982,18 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in
-     * your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output.
-     * For SCTE-35 markers from an ESAM XML document-- Choose None (NONE) if you don't want manifest conditioning. Choose
-     * Passthrough (PASSTHROUGH) and choose Ad markers (adMarkers) if you do want manifest conditioning. In both cases,
-     * also provide the ESAM XML as a string in the setting Signal processing notification XML (sccXml).
+     * For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35 markers that appear in your input to
+     * also appear in this output. Choose None if you don't want SCTE-35 markers in this output. For SCTE-35 markers
+     * from an ESAM XML document-- Choose None if you don't want manifest conditioning. Choose Passthrough and choose Ad
+     * markers if you do want manifest conditioning. In both cases, also provide the ESAM XML as a string in the setting
+     * Signal processing notification XML.
      * 
      * @param scte35Source
-     *        For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that
-     *        appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers
-     *        in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE) if you don't want
-     *        manifest conditioning. Choose Passthrough (PASSTHROUGH) and choose Ad markers (adMarkers) if you do want
-     *        manifest conditioning. In both cases, also provide the ESAM XML as a string in the setting Signal
-     *        processing notification XML (sccXml).
+     *        For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35 markers that appear in your
+     *        input to also appear in this output. Choose None if you don't want SCTE-35 markers in this output. For
+     *        SCTE-35 markers from an ESAM XML document-- Choose None if you don't want manifest conditioning. Choose
+     *        Passthrough and choose Ad markers if you do want manifest conditioning. In both cases, also provide the
+     *        ESAM XML as a string in the setting Signal processing notification XML.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M3u8Scte35Source
      */
@@ -872,19 +1004,18 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in
-     * your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output.
-     * For SCTE-35 markers from an ESAM XML document-- Choose None (NONE) if you don't want manifest conditioning. Choose
-     * Passthrough (PASSTHROUGH) and choose Ad markers (adMarkers) if you do want manifest conditioning. In both cases,
-     * also provide the ESAM XML as a string in the setting Signal processing notification XML (sccXml).
+     * For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35 markers that appear in your input to
+     * also appear in this output. Choose None if you don't want SCTE-35 markers in this output. For SCTE-35 markers
+     * from an ESAM XML document-- Choose None if you don't want manifest conditioning. Choose Passthrough and choose Ad
+     * markers if you do want manifest conditioning. In both cases, also provide the ESAM XML as a string in the setting
+     * Signal processing notification XML.
      * 
      * @param scte35Source
-     *        For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that
-     *        appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers
-     *        in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE) if you don't want
-     *        manifest conditioning. Choose Passthrough (PASSTHROUGH) and choose Ad markers (adMarkers) if you do want
-     *        manifest conditioning. In both cases, also provide the ESAM XML as a string in the setting Signal
-     *        processing notification XML (sccXml).
+     *        For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35 markers that appear in your
+     *        input to also appear in this output. Choose None if you don't want SCTE-35 markers in this output. For
+     *        SCTE-35 markers from an ESAM XML document-- Choose None if you don't want manifest conditioning. Choose
+     *        Passthrough and choose Ad markers if you do want manifest conditioning. In both cases, also provide the
+     *        ESAM XML as a string in the setting Signal processing notification XML.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M3u8Scte35Source
      */
@@ -895,16 +1026,14 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3 metadata in this output. This
-     * includes ID3 metadata from the following features: ID3 timestamp period (timedMetadataId3Period), and Custom ID3
-     * metadata inserter (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3 metadata to None
-     * (NONE) or leave blank.
+     * Set ID3 metadata to Passthrough to include ID3 metadata in this output. This includes ID3 metadata from the
+     * following features: ID3 timestamp period, and Custom ID3 metadata inserter. To exclude this ID3 metadata in this
+     * output: set ID3 metadata to None or leave blank.
      * 
      * @param timedMetadata
-     *        Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3 metadata in this output. This
-     *        includes ID3 metadata from the following features: ID3 timestamp period (timedMetadataId3Period), and
-     *        Custom ID3 metadata inserter (timedMetadataInsertion). To exclude this ID3 metadata in this output: set
-     *        ID3 metadata to None (NONE) or leave blank.
+     *        Set ID3 metadata to Passthrough to include ID3 metadata in this output. This includes ID3 metadata from
+     *        the following features: ID3 timestamp period, and Custom ID3 metadata inserter. To exclude this ID3
+     *        metadata in this output: set ID3 metadata to None or leave blank.
      * @see TimedMetadata
      */
 
@@ -913,15 +1042,13 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3 metadata in this output. This
-     * includes ID3 metadata from the following features: ID3 timestamp period (timedMetadataId3Period), and Custom ID3
-     * metadata inserter (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3 metadata to None
-     * (NONE) or leave blank.
+     * Set ID3 metadata to Passthrough to include ID3 metadata in this output. This includes ID3 metadata from the
+     * following features: ID3 timestamp period, and Custom ID3 metadata inserter. To exclude this ID3 metadata in this
+     * output: set ID3 metadata to None or leave blank.
      * 
-     * @return Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3 metadata in this output.
-     *         This includes ID3 metadata from the following features: ID3 timestamp period (timedMetadataId3Period),
-     *         and Custom ID3 metadata inserter (timedMetadataInsertion). To exclude this ID3 metadata in this output:
-     *         set ID3 metadata to None (NONE) or leave blank.
+     * @return Set ID3 metadata to Passthrough to include ID3 metadata in this output. This includes ID3 metadata from
+     *         the following features: ID3 timestamp period, and Custom ID3 metadata inserter. To exclude this ID3
+     *         metadata in this output: set ID3 metadata to None or leave blank.
      * @see TimedMetadata
      */
 
@@ -930,16 +1057,14 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3 metadata in this output. This
-     * includes ID3 metadata from the following features: ID3 timestamp period (timedMetadataId3Period), and Custom ID3
-     * metadata inserter (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3 metadata to None
-     * (NONE) or leave blank.
+     * Set ID3 metadata to Passthrough to include ID3 metadata in this output. This includes ID3 metadata from the
+     * following features: ID3 timestamp period, and Custom ID3 metadata inserter. To exclude this ID3 metadata in this
+     * output: set ID3 metadata to None or leave blank.
      * 
      * @param timedMetadata
-     *        Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3 metadata in this output. This
-     *        includes ID3 metadata from the following features: ID3 timestamp period (timedMetadataId3Period), and
-     *        Custom ID3 metadata inserter (timedMetadataInsertion). To exclude this ID3 metadata in this output: set
-     *        ID3 metadata to None (NONE) or leave blank.
+     *        Set ID3 metadata to Passthrough to include ID3 metadata in this output. This includes ID3 metadata from
+     *        the following features: ID3 timestamp period, and Custom ID3 metadata inserter. To exclude this ID3
+     *        metadata in this output: set ID3 metadata to None or leave blank.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimedMetadata
      */
@@ -950,16 +1075,14 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3 metadata in this output. This
-     * includes ID3 metadata from the following features: ID3 timestamp period (timedMetadataId3Period), and Custom ID3
-     * metadata inserter (timedMetadataInsertion). To exclude this ID3 metadata in this output: set ID3 metadata to None
-     * (NONE) or leave blank.
+     * Set ID3 metadata to Passthrough to include ID3 metadata in this output. This includes ID3 metadata from the
+     * following features: ID3 timestamp period, and Custom ID3 metadata inserter. To exclude this ID3 metadata in this
+     * output: set ID3 metadata to None or leave blank.
      * 
      * @param timedMetadata
-     *        Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH) to include ID3 metadata in this output. This
-     *        includes ID3 metadata from the following features: ID3 timestamp period (timedMetadataId3Period), and
-     *        Custom ID3 metadata inserter (timedMetadataInsertion). To exclude this ID3 metadata in this output: set
-     *        ID3 metadata to None (NONE) or leave blank.
+     *        Set ID3 metadata to Passthrough to include ID3 metadata in this output. This includes ID3 metadata from
+     *        the following features: ID3 timestamp period, and Custom ID3 metadata inserter. To exclude this ID3
+     *        metadata in this output: set ID3 metadata to None or leave blank.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimedMetadata
      */
@@ -1109,6 +1232,10 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
             sb.append("PrivateMetadataPid: ").append(getPrivateMetadataPid()).append(",");
         if (getProgramNumber() != null)
             sb.append("ProgramNumber: ").append(getProgramNumber()).append(",");
+        if (getPtsOffset() != null)
+            sb.append("PtsOffset: ").append(getPtsOffset()).append(",");
+        if (getPtsOffsetMode() != null)
+            sb.append("PtsOffsetMode: ").append(getPtsOffsetMode()).append(",");
         if (getScte35Pid() != null)
             sb.append("Scte35Pid: ").append(getScte35Pid()).append(",");
         if (getScte35Source() != null)
@@ -1187,6 +1314,14 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getProgramNumber() != null && other.getProgramNumber().equals(this.getProgramNumber()) == false)
             return false;
+        if (other.getPtsOffset() == null ^ this.getPtsOffset() == null)
+            return false;
+        if (other.getPtsOffset() != null && other.getPtsOffset().equals(this.getPtsOffset()) == false)
+            return false;
+        if (other.getPtsOffsetMode() == null ^ this.getPtsOffsetMode() == null)
+            return false;
+        if (other.getPtsOffsetMode() != null && other.getPtsOffsetMode().equals(this.getPtsOffsetMode()) == false)
+            return false;
         if (other.getScte35Pid() == null ^ this.getScte35Pid() == null)
             return false;
         if (other.getScte35Pid() != null && other.getScte35Pid().equals(this.getScte35Pid()) == false)
@@ -1232,6 +1367,8 @@ public class M3u8Settings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPmtPid() == null) ? 0 : getPmtPid().hashCode());
         hashCode = prime * hashCode + ((getPrivateMetadataPid() == null) ? 0 : getPrivateMetadataPid().hashCode());
         hashCode = prime * hashCode + ((getProgramNumber() == null) ? 0 : getProgramNumber().hashCode());
+        hashCode = prime * hashCode + ((getPtsOffset() == null) ? 0 : getPtsOffset().hashCode());
+        hashCode = prime * hashCode + ((getPtsOffsetMode() == null) ? 0 : getPtsOffsetMode().hashCode());
         hashCode = prime * hashCode + ((getScte35Pid() == null) ? 0 : getScte35Pid().hashCode());
         hashCode = prime * hashCode + ((getScte35Source() == null) ? 0 : getScte35Source().hashCode());
         hashCode = prime * hashCode + ((getTimedMetadata() == null) ? 0 : getTimedMetadata().hashCode());

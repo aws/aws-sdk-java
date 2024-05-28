@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -85,6 +85,18 @@ public class ResourceJsonUnmarshaller implements Unmarshaller<Resource, JsonUnma
                 if (context.testExpression("containerDetails", targetDepth)) {
                     context.nextToken();
                     resource.setContainerDetails(ContainerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("rdsDbInstanceDetails", targetDepth)) {
+                    context.nextToken();
+                    resource.setRdsDbInstanceDetails(RdsDbInstanceDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("rdsDbUserDetails", targetDepth)) {
+                    context.nextToken();
+                    resource.setRdsDbUserDetails(RdsDbUserDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("lambdaDetails", targetDepth)) {
+                    context.nextToken();
+                    resource.setLambdaDetails(LambdaDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

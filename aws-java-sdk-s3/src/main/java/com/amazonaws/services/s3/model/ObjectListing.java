@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.internal.S3RequesterChargedResult;
 
 /**
  * Contains the results of listing the objects in an Amazon S3 bucket.
@@ -32,7 +33,7 @@ import com.amazonaws.services.s3.AmazonS3;
  * @see AmazonS3#listObjects(ListObjectsRequest)
  * @see AmazonS3#listNextBatchOfObjects(ObjectListing)
  */
-public class ObjectListing implements Serializable {
+public class ObjectListing implements Serializable, S3RequesterChargedResult {
     
     /** A list of summary information describing the objects stored in the bucket */
     private List<S3ObjectSummary> objectSummaries = new ArrayList<S3ObjectSummary>();
@@ -93,6 +94,11 @@ public class ObjectListing implements Serializable {
      */
     private String encodingType;
 
+    /**
+     * Indicate if the requester is charged for conducting this operation from
+     * Requester Pays Buckets.
+     */
+    private boolean isRequesterCharged;
 
     /**
      * Gets the list of object summaries describing the objects stored in the
@@ -383,4 +389,13 @@ public class ObjectListing implements Serializable {
         this.encodingType = encodingType;
     }
 
+    @Override
+    public boolean isRequesterCharged() {
+        return isRequesterCharged;
+    }
+
+    @Override
+    public void setRequesterCharged(boolean isRequesterCharged) {
+        this.isRequesterCharged = isRequesterCharged;
+    }
 }

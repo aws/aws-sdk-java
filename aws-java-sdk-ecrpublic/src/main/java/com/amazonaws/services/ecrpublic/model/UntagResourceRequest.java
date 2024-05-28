@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported resource is an
+     * The Amazon Resource Name (ARN) of the resource to delete tags from. Currently, the supported resource is an
      * Amazon ECR Public repository.
      * </p>
      */
@@ -41,13 +41,13 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported resource is an
+     * The Amazon Resource Name (ARN) of the resource to delete tags from. Currently, the supported resource is an
      * Amazon ECR Public repository.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported
-     *        resource is an Amazon ECR Public repository.
+     *        The Amazon Resource Name (ARN) of the resource to delete tags from. Currently, the supported resource is
+     *        an Amazon ECR Public repository.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -56,12 +56,12 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported resource is an
+     * The Amazon Resource Name (ARN) of the resource to delete tags from. Currently, the supported resource is an
      * Amazon ECR Public repository.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported
-     *         resource is an Amazon ECR Public repository.
+     * @return The Amazon Resource Name (ARN) of the resource to delete tags from. Currently, the supported resource is
+     *         an Amazon ECR Public repository.
      */
 
     public String getResourceArn() {
@@ -70,13 +70,13 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported resource is an
+     * The Amazon Resource Name (ARN) of the resource to delete tags from. Currently, the supported resource is an
      * Amazon ECR Public repository.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported
-     *        resource is an Amazon ECR Public repository.
+     *        The Amazon Resource Name (ARN) of the resource to delete tags from. Currently, the supported resource is
+     *        an Amazon ECR Public repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

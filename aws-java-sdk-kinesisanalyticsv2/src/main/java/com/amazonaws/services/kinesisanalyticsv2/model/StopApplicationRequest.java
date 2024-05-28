@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class StopApplicationRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * Set to <code>true</code> to force the application to stop. If you set <code>Force</code> to <code>true</code>,
-     * Kinesis Data Analytics stops the application without taking a snapshot.
+     * Managed Service for Apache Flink stops the application without taking a snapshot.
      * </p>
      * <note>
      * <p>
@@ -43,8 +43,8 @@ public class StopApplicationRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * </note>
      * <p>
-     * You can only force stop a Flink-based Kinesis Data Analytics application. You can't force stop a SQL-based
-     * Kinesis Data Analytics application.
+     * You can only force stop a Managed Service for Apache Flink application. You can't force stop a SQL-based Kinesis
+     * Data Analytics application.
      * </p>
      * <p>
      * The application must be in the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>,
@@ -96,7 +96,7 @@ public class StopApplicationRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * Set to <code>true</code> to force the application to stop. If you set <code>Force</code> to <code>true</code>,
-     * Kinesis Data Analytics stops the application without taking a snapshot.
+     * Managed Service for Apache Flink stops the application without taking a snapshot.
      * </p>
      * <note>
      * <p>
@@ -105,8 +105,8 @@ public class StopApplicationRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * </note>
      * <p>
-     * You can only force stop a Flink-based Kinesis Data Analytics application. You can't force stop a SQL-based
-     * Kinesis Data Analytics application.
+     * You can only force stop a Managed Service for Apache Flink application. You can't force stop a SQL-based Kinesis
+     * Data Analytics application.
      * </p>
      * <p>
      * The application must be in the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>,
@@ -115,7 +115,8 @@ public class StopApplicationRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param force
      *        Set to <code>true</code> to force the application to stop. If you set <code>Force</code> to
-     *        <code>true</code>, Kinesis Data Analytics stops the application without taking a snapshot. </p> <note>
+     *        <code>true</code>, Managed Service for Apache Flink stops the application without taking a snapshot. </p>
+     *        <note>
      *        <p>
      *        Force-stopping your application may lead to data loss or duplication. To prevent data loss or duplicate
      *        processing of data during application restarts, we recommend you to take frequent snapshots of your
@@ -123,7 +124,7 @@ public class StopApplicationRequest extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        </note>
      *        <p>
-     *        You can only force stop a Flink-based Kinesis Data Analytics application. You can't force stop a SQL-based
+     *        You can only force stop a Managed Service for Apache Flink application. You can't force stop a SQL-based
      *        Kinesis Data Analytics application.
      *        </p>
      *        <p>
@@ -138,7 +139,7 @@ public class StopApplicationRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * Set to <code>true</code> to force the application to stop. If you set <code>Force</code> to <code>true</code>,
-     * Kinesis Data Analytics stops the application without taking a snapshot.
+     * Managed Service for Apache Flink stops the application without taking a snapshot.
      * </p>
      * <note>
      * <p>
@@ -147,8 +148,8 @@ public class StopApplicationRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * </note>
      * <p>
-     * You can only force stop a Flink-based Kinesis Data Analytics application. You can't force stop a SQL-based
-     * Kinesis Data Analytics application.
+     * You can only force stop a Managed Service for Apache Flink application. You can't force stop a SQL-based Kinesis
+     * Data Analytics application.
      * </p>
      * <p>
      * The application must be in the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>,
@@ -156,7 +157,8 @@ public class StopApplicationRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @return Set to <code>true</code> to force the application to stop. If you set <code>Force</code> to
-     *         <code>true</code>, Kinesis Data Analytics stops the application without taking a snapshot. </p> <note>
+     *         <code>true</code>, Managed Service for Apache Flink stops the application without taking a snapshot. </p>
+     *         <note>
      *         <p>
      *         Force-stopping your application may lead to data loss or duplication. To prevent data loss or duplicate
      *         processing of data during application restarts, we recommend you to take frequent snapshots of your
@@ -164,8 +166,8 @@ public class StopApplicationRequest extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         </note>
      *         <p>
-     *         You can only force stop a Flink-based Kinesis Data Analytics application. You can't force stop a
-     *         SQL-based Kinesis Data Analytics application.
+     *         You can only force stop a Managed Service for Apache Flink application. You can't force stop a SQL-based
+     *         Kinesis Data Analytics application.
      *         </p>
      *         <p>
      *         The application must be in the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>,
@@ -179,7 +181,7 @@ public class StopApplicationRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * Set to <code>true</code> to force the application to stop. If you set <code>Force</code> to <code>true</code>,
-     * Kinesis Data Analytics stops the application without taking a snapshot.
+     * Managed Service for Apache Flink stops the application without taking a snapshot.
      * </p>
      * <note>
      * <p>
@@ -188,8 +190,8 @@ public class StopApplicationRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * </note>
      * <p>
-     * You can only force stop a Flink-based Kinesis Data Analytics application. You can't force stop a SQL-based
-     * Kinesis Data Analytics application.
+     * You can only force stop a Managed Service for Apache Flink application. You can't force stop a SQL-based Kinesis
+     * Data Analytics application.
      * </p>
      * <p>
      * The application must be in the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>,
@@ -198,7 +200,8 @@ public class StopApplicationRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param force
      *        Set to <code>true</code> to force the application to stop. If you set <code>Force</code> to
-     *        <code>true</code>, Kinesis Data Analytics stops the application without taking a snapshot. </p> <note>
+     *        <code>true</code>, Managed Service for Apache Flink stops the application without taking a snapshot. </p>
+     *        <note>
      *        <p>
      *        Force-stopping your application may lead to data loss or duplication. To prevent data loss or duplicate
      *        processing of data during application restarts, we recommend you to take frequent snapshots of your
@@ -206,7 +209,7 @@ public class StopApplicationRequest extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        </note>
      *        <p>
-     *        You can only force stop a Flink-based Kinesis Data Analytics application. You can't force stop a SQL-based
+     *        You can only force stop a Managed Service for Apache Flink application. You can't force stop a SQL-based
      *        Kinesis Data Analytics application.
      *        </p>
      *        <p>
@@ -223,7 +226,7 @@ public class StopApplicationRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * Set to <code>true</code> to force the application to stop. If you set <code>Force</code> to <code>true</code>,
-     * Kinesis Data Analytics stops the application without taking a snapshot.
+     * Managed Service for Apache Flink stops the application without taking a snapshot.
      * </p>
      * <note>
      * <p>
@@ -232,8 +235,8 @@ public class StopApplicationRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * </note>
      * <p>
-     * You can only force stop a Flink-based Kinesis Data Analytics application. You can't force stop a SQL-based
-     * Kinesis Data Analytics application.
+     * You can only force stop a Managed Service for Apache Flink application. You can't force stop a SQL-based Kinesis
+     * Data Analytics application.
      * </p>
      * <p>
      * The application must be in the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>,
@@ -241,7 +244,8 @@ public class StopApplicationRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @return Set to <code>true</code> to force the application to stop. If you set <code>Force</code> to
-     *         <code>true</code>, Kinesis Data Analytics stops the application without taking a snapshot. </p> <note>
+     *         <code>true</code>, Managed Service for Apache Flink stops the application without taking a snapshot. </p>
+     *         <note>
      *         <p>
      *         Force-stopping your application may lead to data loss or duplication. To prevent data loss or duplicate
      *         processing of data during application restarts, we recommend you to take frequent snapshots of your
@@ -249,8 +253,8 @@ public class StopApplicationRequest extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         </note>
      *         <p>
-     *         You can only force stop a Flink-based Kinesis Data Analytics application. You can't force stop a
-     *         SQL-based Kinesis Data Analytics application.
+     *         You can only force stop a Managed Service for Apache Flink application. You can't force stop a SQL-based
+     *         Kinesis Data Analytics application.
      *         </p>
      *         <p>
      *         The application must be in the <code>STARTING</code>, <code>UPDATING</code>, <code>STOPPING</code>,

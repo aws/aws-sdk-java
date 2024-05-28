@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -81,8 +81,16 @@ public class CreateConnectorRequest extends com.amazonaws.AmazonWebServiceReques
      */
     private LogDelivery logDelivery;
     /**
+     * <important>
      * <p>
-     * Specifies which plugins to use for the connector.
+     * Amazon MSK Connect does not currently support specifying multiple plugins as a list. To use more than one plugin
+     * for your connector, you can create a single custom plugin using a ZIP file that bundles multiple plugins
+     * together.
+     * </p>
+     * </important>
+     * <p>
+     * Specifies which plugin to use for the connector. You must specify a single-element list containing one
+     * <code>customPlugin</code> object.
      * </p>
      */
     private java.util.List<Plugin> plugins;
@@ -94,6 +102,12 @@ public class CreateConnectorRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String serviceExecutionRoleArn;
+    /**
+     * <p>
+     * The tags you want to attach to the connector.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
     /**
      * <p>
      * Specifies which worker configuration to use with the connector.
@@ -499,11 +513,27 @@ public class CreateConnectorRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <important>
      * <p>
-     * Specifies which plugins to use for the connector.
+     * Amazon MSK Connect does not currently support specifying multiple plugins as a list. To use more than one plugin
+     * for your connector, you can create a single custom plugin using a ZIP file that bundles multiple plugins
+     * together.
+     * </p>
+     * </important>
+     * <p>
+     * Specifies which plugin to use for the connector. You must specify a single-element list containing one
+     * <code>customPlugin</code> object.
      * </p>
      * 
-     * @return Specifies which plugins to use for the connector.
+     * @return <p>
+     *         Amazon MSK Connect does not currently support specifying multiple plugins as a list. To use more than one
+     *         plugin for your connector, you can create a single custom plugin using a ZIP file that bundles multiple
+     *         plugins together.
+     *         </p>
+     *         </important>
+     *         <p>
+     *         Specifies which plugin to use for the connector. You must specify a single-element list containing one
+     *         <code>customPlugin</code> object.
      */
 
     public java.util.List<Plugin> getPlugins() {
@@ -511,12 +541,28 @@ public class CreateConnectorRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <important>
      * <p>
-     * Specifies which plugins to use for the connector.
+     * Amazon MSK Connect does not currently support specifying multiple plugins as a list. To use more than one plugin
+     * for your connector, you can create a single custom plugin using a ZIP file that bundles multiple plugins
+     * together.
+     * </p>
+     * </important>
+     * <p>
+     * Specifies which plugin to use for the connector. You must specify a single-element list containing one
+     * <code>customPlugin</code> object.
      * </p>
      * 
      * @param plugins
-     *        Specifies which plugins to use for the connector.
+     *        <p>
+     *        Amazon MSK Connect does not currently support specifying multiple plugins as a list. To use more than one
+     *        plugin for your connector, you can create a single custom plugin using a ZIP file that bundles multiple
+     *        plugins together.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        Specifies which plugin to use for the connector. You must specify a single-element list containing one
+     *        <code>customPlugin</code> object.
      */
 
     public void setPlugins(java.util.Collection<Plugin> plugins) {
@@ -529,8 +575,16 @@ public class CreateConnectorRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <important>
      * <p>
-     * Specifies which plugins to use for the connector.
+     * Amazon MSK Connect does not currently support specifying multiple plugins as a list. To use more than one plugin
+     * for your connector, you can create a single custom plugin using a ZIP file that bundles multiple plugins
+     * together.
+     * </p>
+     * </important>
+     * <p>
+     * Specifies which plugin to use for the connector. You must specify a single-element list containing one
+     * <code>customPlugin</code> object.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -539,7 +593,15 @@ public class CreateConnectorRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param plugins
-     *        Specifies which plugins to use for the connector.
+     *        <p>
+     *        Amazon MSK Connect does not currently support specifying multiple plugins as a list. To use more than one
+     *        plugin for your connector, you can create a single custom plugin using a ZIP file that bundles multiple
+     *        plugins together.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        Specifies which plugin to use for the connector. You must specify a single-element list containing one
+     *        <code>customPlugin</code> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -554,12 +616,28 @@ public class CreateConnectorRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <important>
      * <p>
-     * Specifies which plugins to use for the connector.
+     * Amazon MSK Connect does not currently support specifying multiple plugins as a list. To use more than one plugin
+     * for your connector, you can create a single custom plugin using a ZIP file that bundles multiple plugins
+     * together.
+     * </p>
+     * </important>
+     * <p>
+     * Specifies which plugin to use for the connector. You must specify a single-element list containing one
+     * <code>customPlugin</code> object.
      * </p>
      * 
      * @param plugins
-     *        Specifies which plugins to use for the connector.
+     *        <p>
+     *        Amazon MSK Connect does not currently support specifying multiple plugins as a list. To use more than one
+     *        plugin for your connector, you can create a single custom plugin using a ZIP file that bundles multiple
+     *        plugins together.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        Specifies which plugin to use for the connector. You must specify a single-element list containing one
+     *        <code>customPlugin</code> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -620,6 +698,74 @@ public class CreateConnectorRequest extends com.amazonaws.AmazonWebServiceReques
 
     public CreateConnectorRequest withServiceExecutionRoleArn(String serviceExecutionRoleArn) {
         setServiceExecutionRoleArn(serviceExecutionRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags you want to attach to the connector.
+     * </p>
+     * 
+     * @return The tags you want to attach to the connector.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags you want to attach to the connector.
+     * </p>
+     * 
+     * @param tags
+     *        The tags you want to attach to the connector.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags you want to attach to the connector.
+     * </p>
+     * 
+     * @param tags
+     *        The tags you want to attach to the connector.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateConnectorRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see CreateConnectorRequest#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateConnectorRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateConnectorRequest clearTagsEntries() {
+        this.tags = null;
         return this;
     }
 
@@ -697,6 +843,8 @@ public class CreateConnectorRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("Plugins: ").append(getPlugins()).append(",");
         if (getServiceExecutionRoleArn() != null)
             sb.append("ServiceExecutionRoleArn: ").append(getServiceExecutionRoleArn()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getWorkerConfiguration() != null)
             sb.append("WorkerConfiguration: ").append(getWorkerConfiguration());
         sb.append("}");
@@ -759,6 +907,10 @@ public class CreateConnectorRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getServiceExecutionRoleArn() != null && other.getServiceExecutionRoleArn().equals(this.getServiceExecutionRoleArn()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         if (other.getWorkerConfiguration() == null ^ this.getWorkerConfiguration() == null)
             return false;
         if (other.getWorkerConfiguration() != null && other.getWorkerConfiguration().equals(this.getWorkerConfiguration()) == false)
@@ -782,6 +934,7 @@ public class CreateConnectorRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getLogDelivery() == null) ? 0 : getLogDelivery().hashCode());
         hashCode = prime * hashCode + ((getPlugins() == null) ? 0 : getPlugins().hashCode());
         hashCode = prime * hashCode + ((getServiceExecutionRoleArn() == null) ? 0 : getServiceExecutionRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getWorkerConfiguration() == null) ? 0 : getWorkerConfiguration().hashCode());
         return hashCode;
     }

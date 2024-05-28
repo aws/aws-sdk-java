@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,13 +30,13 @@ public class ElasticLoadBalancer implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Elastic Load Balancing instance's name.
+     * The Elastic Load Balancing instance name.
      * </p>
      */
     private String elasticLoadBalancerName;
     /**
      * <p>
-     * The instance's AWS region.
+     * The instance's Amazon Web Services Region.
      * </p>
      */
     private String region;
@@ -48,13 +48,13 @@ public class ElasticLoadBalancer implements Serializable, Cloneable, StructuredP
     private String dnsName;
     /**
      * <p>
-     * The ID of the stack that the instance is associated with.
+     * The ID of the stack with which the instance is associated.
      * </p>
      */
     private String stackId;
     /**
      * <p>
-     * The ID of the layer that the instance is attached to.
+     * The ID of the layer to which the instance is attached.
      * </p>
      */
     private String layerId;
@@ -78,18 +78,18 @@ public class ElasticLoadBalancer implements Serializable, Cloneable, StructuredP
     private com.amazonaws.internal.SdkInternalList<String> subnetIds;
     /**
      * <p>
-     * A list of the EC2 instances that the Elastic Load Balancing instance is managing traffic for.
+     * A list of the EC2 instances for which the Elastic Load Balancing instance is managing traffic.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> ec2InstanceIds;
 
     /**
      * <p>
-     * The Elastic Load Balancing instance's name.
+     * The Elastic Load Balancing instance name.
      * </p>
      * 
      * @param elasticLoadBalancerName
-     *        The Elastic Load Balancing instance's name.
+     *        The Elastic Load Balancing instance name.
      */
 
     public void setElasticLoadBalancerName(String elasticLoadBalancerName) {
@@ -98,10 +98,10 @@ public class ElasticLoadBalancer implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Elastic Load Balancing instance's name.
+     * The Elastic Load Balancing instance name.
      * </p>
      * 
-     * @return The Elastic Load Balancing instance's name.
+     * @return The Elastic Load Balancing instance name.
      */
 
     public String getElasticLoadBalancerName() {
@@ -110,11 +110,11 @@ public class ElasticLoadBalancer implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Elastic Load Balancing instance's name.
+     * The Elastic Load Balancing instance name.
      * </p>
      * 
      * @param elasticLoadBalancerName
-     *        The Elastic Load Balancing instance's name.
+     *        The Elastic Load Balancing instance name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -125,11 +125,11 @@ public class ElasticLoadBalancer implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The instance's AWS region.
+     * The instance's Amazon Web Services Region.
      * </p>
      * 
      * @param region
-     *        The instance's AWS region.
+     *        The instance's Amazon Web Services Region.
      */
 
     public void setRegion(String region) {
@@ -138,10 +138,10 @@ public class ElasticLoadBalancer implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The instance's AWS region.
+     * The instance's Amazon Web Services Region.
      * </p>
      * 
-     * @return The instance's AWS region.
+     * @return The instance's Amazon Web Services Region.
      */
 
     public String getRegion() {
@@ -150,11 +150,11 @@ public class ElasticLoadBalancer implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The instance's AWS region.
+     * The instance's Amazon Web Services Region.
      * </p>
      * 
      * @param region
-     *        The instance's AWS region.
+     *        The instance's Amazon Web Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -205,11 +205,11 @@ public class ElasticLoadBalancer implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The ID of the stack that the instance is associated with.
+     * The ID of the stack with which the instance is associated.
      * </p>
      * 
      * @param stackId
-     *        The ID of the stack that the instance is associated with.
+     *        The ID of the stack with which the instance is associated.
      */
 
     public void setStackId(String stackId) {
@@ -218,10 +218,10 @@ public class ElasticLoadBalancer implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The ID of the stack that the instance is associated with.
+     * The ID of the stack with which the instance is associated.
      * </p>
      * 
-     * @return The ID of the stack that the instance is associated with.
+     * @return The ID of the stack with which the instance is associated.
      */
 
     public String getStackId() {
@@ -230,11 +230,11 @@ public class ElasticLoadBalancer implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The ID of the stack that the instance is associated with.
+     * The ID of the stack with which the instance is associated.
      * </p>
      * 
      * @param stackId
-     *        The ID of the stack that the instance is associated with.
+     *        The ID of the stack with which the instance is associated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,11 +245,11 @@ public class ElasticLoadBalancer implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The ID of the layer that the instance is attached to.
+     * The ID of the layer to which the instance is attached.
      * </p>
      * 
      * @param layerId
-     *        The ID of the layer that the instance is attached to.
+     *        The ID of the layer to which the instance is attached.
      */
 
     public void setLayerId(String layerId) {
@@ -258,10 +258,10 @@ public class ElasticLoadBalancer implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The ID of the layer that the instance is attached to.
+     * The ID of the layer to which the instance is attached.
      * </p>
      * 
-     * @return The ID of the layer that the instance is attached to.
+     * @return The ID of the layer to which the instance is attached.
      */
 
     public String getLayerId() {
@@ -270,11 +270,11 @@ public class ElasticLoadBalancer implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The ID of the layer that the instance is attached to.
+     * The ID of the layer to which the instance is attached.
      * </p>
      * 
      * @param layerId
-     *        The ID of the layer that the instance is attached to.
+     *        The ID of the layer to which the instance is attached.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -471,10 +471,10 @@ public class ElasticLoadBalancer implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of the EC2 instances that the Elastic Load Balancing instance is managing traffic for.
+     * A list of the EC2 instances for which the Elastic Load Balancing instance is managing traffic.
      * </p>
      * 
-     * @return A list of the EC2 instances that the Elastic Load Balancing instance is managing traffic for.
+     * @return A list of the EC2 instances for which the Elastic Load Balancing instance is managing traffic.
      */
 
     public java.util.List<String> getEc2InstanceIds() {
@@ -486,11 +486,11 @@ public class ElasticLoadBalancer implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of the EC2 instances that the Elastic Load Balancing instance is managing traffic for.
+     * A list of the EC2 instances for which the Elastic Load Balancing instance is managing traffic.
      * </p>
      * 
      * @param ec2InstanceIds
-     *        A list of the EC2 instances that the Elastic Load Balancing instance is managing traffic for.
+     *        A list of the EC2 instances for which the Elastic Load Balancing instance is managing traffic.
      */
 
     public void setEc2InstanceIds(java.util.Collection<String> ec2InstanceIds) {
@@ -504,7 +504,7 @@ public class ElasticLoadBalancer implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of the EC2 instances that the Elastic Load Balancing instance is managing traffic for.
+     * A list of the EC2 instances for which the Elastic Load Balancing instance is managing traffic.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -513,7 +513,7 @@ public class ElasticLoadBalancer implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param ec2InstanceIds
-     *        A list of the EC2 instances that the Elastic Load Balancing instance is managing traffic for.
+     *        A list of the EC2 instances for which the Elastic Load Balancing instance is managing traffic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -529,11 +529,11 @@ public class ElasticLoadBalancer implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of the EC2 instances that the Elastic Load Balancing instance is managing traffic for.
+     * A list of the EC2 instances for which the Elastic Load Balancing instance is managing traffic.
      * </p>
      * 
      * @param ec2InstanceIds
-     *        A list of the EC2 instances that the Elastic Load Balancing instance is managing traffic for.
+     *        A list of the EC2 instances for which the Elastic Load Balancing instance is managing traffic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -174,25 +174,25 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
-     * Grants an Amazon Web Services service, account, or organization permission to use a function. You can apply the
-     * policy at the function level, or specify a qualifier to restrict access to a single version or alias. If you use
-     * a qualifier, the invoker must use the full Amazon Resource Name (ARN) of that version or alias to invoke the
-     * function. Note: Lambda does not support adding policies to version $LATEST.
+     * Grants an Amazon Web Service, Amazon Web Services account, or Amazon Web Services organization permission to use
+     * a function. You can apply the policy at the function level, or specify a qualifier to restrict access to a single
+     * version or alias. If you use a qualifier, the invoker must use the full Amazon Resource Name (ARN) of that
+     * version or alias to invoke the function. Note: Lambda does not support adding policies to version $LATEST.
      * </p>
      * <p>
      * To grant permission to another account, specify the account ID as the <code>Principal</code>. To grant permission
      * to an organization defined in Organizations, specify the organization ID as the <code>PrincipalOrgID</code>. For
-     * Amazon Web Services services, the principal is a domain-style identifier defined by the service, like
-     * <code>s3.amazonaws.com</code> or <code>sns.amazonaws.com</code>. For Amazon Web Services services, you can also
-     * specify the ARN of the associated resource as the <code>SourceArn</code>. If you grant permission to a service
-     * principal without specifying the source, other accounts could potentially configure resources in their account to
-     * invoke your Lambda function.
+     * Amazon Web Services, the principal is a domain-style identifier that the service defines, such as
+     * <code>s3.amazonaws.com</code> or <code>sns.amazonaws.com</code>. For Amazon Web Services, you can also specify
+     * the ARN of the associated resource as the <code>SourceArn</code>. If you grant permission to a service principal
+     * without specifying the source, other accounts could potentially configure resources in their account to invoke
+     * your Lambda function.
      * </p>
      * <p>
-     * This action adds a statement to a resource-based permissions policy for the function. For more information about
-     * function policies, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Lambda Function
-     * Policies</a>.
+     * This operation adds a statement to a resource-based permissions policy for the function. For more information
+     * about function policies, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Using resource-based
+     * policies for Lambda</a>.
      * </p>
      * 
      * @param addPermissionRequest
@@ -205,25 +205,25 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
-     * Grants an Amazon Web Services service, account, or organization permission to use a function. You can apply the
-     * policy at the function level, or specify a qualifier to restrict access to a single version or alias. If you use
-     * a qualifier, the invoker must use the full Amazon Resource Name (ARN) of that version or alias to invoke the
-     * function. Note: Lambda does not support adding policies to version $LATEST.
+     * Grants an Amazon Web Service, Amazon Web Services account, or Amazon Web Services organization permission to use
+     * a function. You can apply the policy at the function level, or specify a qualifier to restrict access to a single
+     * version or alias. If you use a qualifier, the invoker must use the full Amazon Resource Name (ARN) of that
+     * version or alias to invoke the function. Note: Lambda does not support adding policies to version $LATEST.
      * </p>
      * <p>
      * To grant permission to another account, specify the account ID as the <code>Principal</code>. To grant permission
      * to an organization defined in Organizations, specify the organization ID as the <code>PrincipalOrgID</code>. For
-     * Amazon Web Services services, the principal is a domain-style identifier defined by the service, like
-     * <code>s3.amazonaws.com</code> or <code>sns.amazonaws.com</code>. For Amazon Web Services services, you can also
-     * specify the ARN of the associated resource as the <code>SourceArn</code>. If you grant permission to a service
-     * principal without specifying the source, other accounts could potentially configure resources in their account to
-     * invoke your Lambda function.
+     * Amazon Web Services, the principal is a domain-style identifier that the service defines, such as
+     * <code>s3.amazonaws.com</code> or <code>sns.amazonaws.com</code>. For Amazon Web Services, you can also specify
+     * the ARN of the associated resource as the <code>SourceArn</code>. If you grant permission to a service principal
+     * without specifying the source, other accounts could potentially configure resources in their account to invoke
+     * your Lambda function.
      * </p>
      * <p>
-     * This action adds a statement to a resource-based permissions policy for the function. For more information about
-     * function policies, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Lambda Function
-     * Policies</a>.
+     * This operation adds a statement to a resource-based permissions policy for the function. For more information
+     * about function policies, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Using resource-based
+     * policies for Lambda</a>.
      * </p>
      * 
      * @param addPermissionRequest
@@ -241,9 +241,9 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
-     * Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a> for a Lambda
-     * function version. Use aliases to provide clients with a function identifier that you can update to invoke a
-     * different version.
+     * Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a> for a
+     * Lambda function version. Use aliases to provide clients with a function identifier that you can update to invoke
+     * a different version.
      * </p>
      * <p>
      * You can also map an alias to split invocation requests between two versions. Use the <code>RoutingConfig</code>
@@ -260,9 +260,9 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
-     * Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a> for a Lambda
-     * function version. Use aliases to provide clients with a function identifier that you can update to invoke a
-     * different version.
+     * Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a> for a
+     * Lambda function version. Use aliases to provide clients with a function identifier that you can update to invoke
+     * a different version.
      * </p>
      * <p>
      * You can also map an alias to split invocation requests between two versions. Use the <code>RoutingConfig</code>
@@ -285,7 +285,7 @@ public interface AWSLambdaAsync extends AWSLambda {
     /**
      * <p>
      * Creates a code signing configuration. A <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-trustedcode.html">code signing configuration</a>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html">code signing configuration</a>
      * defines a list of allowed signing profiles and defines the code-signing validation policy (action to be taken if
      * deployment validation checks fail).
      * </p>
@@ -301,7 +301,7 @@ public interface AWSLambdaAsync extends AWSLambda {
     /**
      * <p>
      * Creates a code signing configuration. A <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-trustedcode.html">code signing configuration</a>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html">code signing configuration</a>
      * defines a list of allowed signing profiles and defines the code-signing validation policy (action to be taken if
      * deployment validation checks fail).
      * </p>
@@ -361,6 +361,11 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html"> Apache Kafka</a>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html"> Amazon DocumentDB</a>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The following error handling options are available only for stream sources (DynamoDB and Kinesis):
@@ -368,29 +373,29 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <ul>
      * <li>
      * <p>
-     * <code>BisectBatchOnFunctionError</code> - If the function returns an error, split the batch in two and retry.
+     * <code>BisectBatchOnFunctionError</code> – If the function returns an error, split the batch in two and retry.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue or Amazon SNS topic.
+     * <code>DestinationConfig</code> – Send discarded records to an Amazon SQS queue or Amazon SNS topic.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age. The default value is
+     * <code>MaximumRecordAgeInSeconds</code> – Discard records older than the specified age. The default value is
      * infinite (-1). When set to infinite (-1), failed records are retried until the record expires
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries. The default value is
+     * <code>MaximumRetryAttempts</code> – Discard records after the specified number of retries. The default value is
      * infinite (-1). When set to infinite (-1), failed records are retried until the record expires.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ParallelizationFactor</code> - Process multiple batches from each shard concurrently.
+     * <code>ParallelizationFactor</code> – Process multiple batches from each shard concurrently.
      * </p>
      * </li>
      * </ul>
@@ -429,6 +434,12 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <li>
      * <p>
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-kafka-parms"> Apache Kafka</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html#docdb-configuration"> Amazon
+     * DocumentDB</a>
      * </p>
      * </li>
      * </ul>
@@ -483,6 +494,11 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html"> Apache Kafka</a>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html"> Amazon DocumentDB</a>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The following error handling options are available only for stream sources (DynamoDB and Kinesis):
@@ -490,29 +506,29 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <ul>
      * <li>
      * <p>
-     * <code>BisectBatchOnFunctionError</code> - If the function returns an error, split the batch in two and retry.
+     * <code>BisectBatchOnFunctionError</code> – If the function returns an error, split the batch in two and retry.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue or Amazon SNS topic.
+     * <code>DestinationConfig</code> – Send discarded records to an Amazon SQS queue or Amazon SNS topic.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age. The default value is
+     * <code>MaximumRecordAgeInSeconds</code> – Discard records older than the specified age. The default value is
      * infinite (-1). When set to infinite (-1), failed records are retried until the record expires
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries. The default value is
+     * <code>MaximumRetryAttempts</code> – Discard records after the specified number of retries. The default value is
      * infinite (-1). When set to infinite (-1), failed records are retried until the record expires.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ParallelizationFactor</code> - Process multiple batches from each shard concurrently.
+     * <code>ParallelizationFactor</code> – Process multiple batches from each shard concurrently.
      * </p>
      * </li>
      * </ul>
@@ -553,6 +569,12 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-kafka-parms"> Apache Kafka</a>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html#docdb-configuration"> Amazon
+     * DocumentDB</a>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param createEventSourceMappingRequest
@@ -574,30 +596,31 @@ public interface AWSLambdaAsync extends AWSLambda {
      * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html">deployment package</a> and an <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">
      * execution role</a>. The deployment package is a .zip file archive or container image that contains your function
-     * code. The execution role grants the function permission to use Amazon Web Services services, such as Amazon
-     * CloudWatch Logs for log streaming and X-Ray for request tracing.
+     * code. The execution role grants the function permission to use Amazon Web Services, such as Amazon CloudWatch
+     * Logs for log streaming and X-Ray for request tracing.
      * </p>
      * <p>
-     * You set the package type to <code>Image</code> if the deployment package is a <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a>. For a container
-     * image, the code property must include the URI of a container image in the Amazon ECR registry. You do not need to
-     * specify the handler and runtime properties.
+     * If the deployment package is a <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a>, then you set the
+     * package type to <code>Image</code>. For a container image, the code property must include the URI of a container
+     * image in the Amazon ECR registry. You do not need to specify the handler and runtime properties.
      * </p>
      * <p>
-     * You set the package type to <code>Zip</code> if the deployment package is a <a
+     * If the deployment package is a <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip
-     * file archive</a>. For a .zip file archive, the code property specifies the location of the .zip file. You must
-     * also specify the handler and runtime properties. The code in the deployment package must be compatible with the
-     * target instruction set architecture of the function (<code>x86-64</code> or <code>arm64</code>). If you do not
-     * specify the architecture, the default value is <code>x86-64</code>.
+     * file archive</a>, then you set the package type to <code>Zip</code>. For a .zip file archive, the code property
+     * specifies the location of the .zip file. You must also specify the handler and runtime properties. The code in
+     * the deployment package must be compatible with the target instruction set architecture of the function (
+     * <code>x86-64</code> or <code>arm64</code>). If you do not specify the architecture, then the default value is
+     * <code>x86-64</code>.
      * </p>
      * <p>
      * When you create a function, Lambda provisions an instance of the function and its supporting resources. If your
      * function connects to a VPC, this process can take a minute or so. During this time, you can't invoke or modify
      * the function. The <code>State</code>, <code>StateReason</code>, and <code>StateReasonCode</code> fields in the
      * response from <a>GetFunctionConfiguration</a> indicate when the function is ready to invoke. For more
-     * information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Function
-     * States</a>.
+     * information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Lambda function
+     * states</a>.
      * </p>
      * <p>
      * A function has an unpublished version, and can have published versions and aliases. The unpublished version
@@ -616,19 +639,19 @@ public interface AWSLambdaAsync extends AWSLambda {
      * You can use code signing if your deployment package is a .zip file archive. To enable code signing for this
      * function, specify the ARN of a code-signing configuration. When a user attempts to deploy a code package with
      * <a>UpdateFunctionCode</a>, Lambda checks that the code package has a valid signature from a trusted publisher.
-     * The code-signing configuration includes set set of signing profiles, which define the trusted publishers for this
+     * The code-signing configuration includes set of signing profiles, which define the trusted publishers for this
      * function.
      * </p>
      * <p>
-     * If another account or an Amazon Web Services service invokes your function, use <a>AddPermission</a> to grant
-     * permission by creating a resource-based IAM policy. You can grant permissions at the function level, on a
-     * version, or on an alias.
+     * If another Amazon Web Services account or an Amazon Web Service invokes your function, use <a>AddPermission</a>
+     * to grant permission by creating a resource-based Identity and Access Management (IAM) policy. You can grant
+     * permissions at the function level, on a version, or on an alias.
      * </p>
      * <p>
      * To invoke your function directly, use <a>Invoke</a>. To invoke your function in response to events in other
-     * Amazon Web Services services, create an event source mapping (<a>CreateEventSourceMapping</a>), or configure a
-     * function trigger in the other service. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html">Invoking Functions</a>.
+     * Amazon Web Services, create an event source mapping (<a>CreateEventSourceMapping</a>), or configure a function
+     * trigger in the other service. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html">Invoking Lambda functions</a>.
      * </p>
      * 
      * @param createFunctionRequest
@@ -645,30 +668,31 @@ public interface AWSLambdaAsync extends AWSLambda {
      * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html">deployment package</a> and an <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">
      * execution role</a>. The deployment package is a .zip file archive or container image that contains your function
-     * code. The execution role grants the function permission to use Amazon Web Services services, such as Amazon
-     * CloudWatch Logs for log streaming and X-Ray for request tracing.
+     * code. The execution role grants the function permission to use Amazon Web Services, such as Amazon CloudWatch
+     * Logs for log streaming and X-Ray for request tracing.
      * </p>
      * <p>
-     * You set the package type to <code>Image</code> if the deployment package is a <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a>. For a container
-     * image, the code property must include the URI of a container image in the Amazon ECR registry. You do not need to
-     * specify the handler and runtime properties.
+     * If the deployment package is a <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a>, then you set the
+     * package type to <code>Image</code>. For a container image, the code property must include the URI of a container
+     * image in the Amazon ECR registry. You do not need to specify the handler and runtime properties.
      * </p>
      * <p>
-     * You set the package type to <code>Zip</code> if the deployment package is a <a
+     * If the deployment package is a <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip
-     * file archive</a>. For a .zip file archive, the code property specifies the location of the .zip file. You must
-     * also specify the handler and runtime properties. The code in the deployment package must be compatible with the
-     * target instruction set architecture of the function (<code>x86-64</code> or <code>arm64</code>). If you do not
-     * specify the architecture, the default value is <code>x86-64</code>.
+     * file archive</a>, then you set the package type to <code>Zip</code>. For a .zip file archive, the code property
+     * specifies the location of the .zip file. You must also specify the handler and runtime properties. The code in
+     * the deployment package must be compatible with the target instruction set architecture of the function (
+     * <code>x86-64</code> or <code>arm64</code>). If you do not specify the architecture, then the default value is
+     * <code>x86-64</code>.
      * </p>
      * <p>
      * When you create a function, Lambda provisions an instance of the function and its supporting resources. If your
      * function connects to a VPC, this process can take a minute or so. During this time, you can't invoke or modify
      * the function. The <code>State</code>, <code>StateReason</code>, and <code>StateReasonCode</code> fields in the
      * response from <a>GetFunctionConfiguration</a> indicate when the function is ready to invoke. For more
-     * information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Function
-     * States</a>.
+     * information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Lambda function
+     * states</a>.
      * </p>
      * <p>
      * A function has an unpublished version, and can have published versions and aliases. The unpublished version
@@ -687,19 +711,19 @@ public interface AWSLambdaAsync extends AWSLambda {
      * You can use code signing if your deployment package is a .zip file archive. To enable code signing for this
      * function, specify the ARN of a code-signing configuration. When a user attempts to deploy a code package with
      * <a>UpdateFunctionCode</a>, Lambda checks that the code package has a valid signature from a trusted publisher.
-     * The code-signing configuration includes set set of signing profiles, which define the trusted publishers for this
+     * The code-signing configuration includes set of signing profiles, which define the trusted publishers for this
      * function.
      * </p>
      * <p>
-     * If another account or an Amazon Web Services service invokes your function, use <a>AddPermission</a> to grant
-     * permission by creating a resource-based IAM policy. You can grant permissions at the function level, on a
-     * version, or on an alias.
+     * If another Amazon Web Services account or an Amazon Web Service invokes your function, use <a>AddPermission</a>
+     * to grant permission by creating a resource-based Identity and Access Management (IAM) policy. You can grant
+     * permissions at the function level, on a version, or on an alias.
      * </p>
      * <p>
      * To invoke your function directly, use <a>Invoke</a>. To invoke your function in response to events in other
-     * Amazon Web Services services, create an event source mapping (<a>CreateEventSourceMapping</a>), or configure a
-     * function trigger in the other service. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html">Invoking Functions</a>.
+     * Amazon Web Services, create an event source mapping (<a>CreateEventSourceMapping</a>), or configure a function
+     * trigger in the other service. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html">Invoking Lambda functions</a>.
      * </p>
      * 
      * @param createFunctionRequest
@@ -751,7 +775,7 @@ public interface AWSLambdaAsync extends AWSLambda {
     /**
      * <p>
      * Deletes a Lambda function <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.
      * </p>
      * 
      * @param deleteAliasRequest
@@ -765,7 +789,7 @@ public interface AWSLambdaAsync extends AWSLambda {
     /**
      * <p>
      * Deletes a Lambda function <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.
      * </p>
      * 
      * @param deleteAliasRequest
@@ -858,12 +882,13 @@ public interface AWSLambdaAsync extends AWSLambda {
     /**
      * <p>
      * Deletes a Lambda function. To delete a specific function version, use the <code>Qualifier</code> parameter.
-     * Otherwise, all versions and aliases are deleted.
+     * Otherwise, all versions and aliases are deleted. This doesn't require the user to have explicit permissions for
+     * <a>DeleteAlias</a>.
      * </p>
      * <p>
      * To delete Lambda event source mappings that invoke a function, use <a>DeleteEventSourceMapping</a>. For Amazon
-     * Web Services services and resources that invoke your function directly, delete the trigger in the service where
-     * you originally configured it.
+     * Web Services and resources that invoke your function directly, delete the trigger in the service where you
+     * originally configured it.
      * </p>
      * 
      * @param deleteFunctionRequest
@@ -877,12 +902,13 @@ public interface AWSLambdaAsync extends AWSLambda {
     /**
      * <p>
      * Deletes a Lambda function. To delete a specific function version, use the <code>Qualifier</code> parameter.
-     * Otherwise, all versions and aliases are deleted.
+     * Otherwise, all versions and aliases are deleted. This doesn't require the user to have explicit permissions for
+     * <a>DeleteAlias</a>.
      * </p>
      * <p>
      * To delete Lambda event source mappings that invoke a function, use <a>DeleteEventSourceMapping</a>. For Amazon
-     * Web Services services and resources that invoke your function directly, delete the trigger in the service where
-     * you originally configured it.
+     * Web Services and resources that invoke your function directly, delete the trigger in the service where you
+     * originally configured it.
      * </p>
      * 
      * @param deleteFunctionRequest
@@ -1148,7 +1174,7 @@ public interface AWSLambdaAsync extends AWSLambda {
     /**
      * <p>
      * Returns details about a Lambda function <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.
      * </p>
      * 
      * @param getAliasRequest
@@ -1162,7 +1188,7 @@ public interface AWSLambdaAsync extends AWSLambda {
     /**
      * <p>
      * Returns details about a Lambda function <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.
      * </p>
      * 
      * @param getAliasRequest
@@ -1633,8 +1659,52 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
+     * Retrieves the runtime management configuration for a function's version. If the runtime update mode is
+     * <b>Manual</b>, this includes the ARN of the runtime version and the runtime update mode. If the runtime update
+     * mode is <b>Auto</b> or <b>Function update</b>, this includes the runtime update mode and <code>null</code> is
+     * returned for the ARN. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html">Runtime updates</a>.
+     * </p>
+     * 
+     * @param getRuntimeManagementConfigRequest
+     * @return A Java Future containing the result of the GetRuntimeManagementConfig operation returned by the service.
+     * @sample AWSLambdaAsync.GetRuntimeManagementConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetRuntimeManagementConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRuntimeManagementConfigResult> getRuntimeManagementConfigAsync(
+            GetRuntimeManagementConfigRequest getRuntimeManagementConfigRequest);
+
+    /**
+     * <p>
+     * Retrieves the runtime management configuration for a function's version. If the runtime update mode is
+     * <b>Manual</b>, this includes the ARN of the runtime version and the runtime update mode. If the runtime update
+     * mode is <b>Auto</b> or <b>Function update</b>, this includes the runtime update mode and <code>null</code> is
+     * returned for the ARN. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html">Runtime updates</a>.
+     * </p>
+     * 
+     * @param getRuntimeManagementConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRuntimeManagementConfig operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.GetRuntimeManagementConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetRuntimeManagementConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRuntimeManagementConfigResult> getRuntimeManagementConfigAsync(
+            GetRuntimeManagementConfigRequest getRuntimeManagementConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRuntimeManagementConfigRequest, GetRuntimeManagementConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * Invokes a Lambda function. You can invoke a function synchronously (and wait for the response), or
-     * asynchronously. To invoke a function asynchronously, set <code>InvocationType</code> to <code>Event</code>.
+     * asynchronously. By default, Lambda invokes your function synchronously (i.e. the<code>InvocationType</code> is
+     * <code>RequestResponse</code>). To invoke a function asynchronously, set <code>InvocationType</code> to
+     * <code>Event</code>. Lambda passes the <code>ClientContext</code> object to your function for synchronous
+     * invocations only.
      * </p>
      * <p>
      * For <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-sync.html">synchronous invocation</a>,
@@ -1647,28 +1717,30 @@ public interface AWSLambdaAsync extends AWSLambda {
      * When an error occurs, your function may be invoked multiple times. Retry behavior varies by error type, client,
      * event source, and invocation type. For example, if you invoke a function asynchronously and it returns an error,
      * Lambda executes the function up to two more times. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/retries-on-errors.html">Retry Behavior</a>.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-retries.html">Error handling and automatic retries
+     * in Lambda</a>.
      * </p>
      * <p>
      * For <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html">asynchronous invocation</a>,
      * Lambda adds events to a queue before sending them to your function. If your function does not have enough
      * capacity to keep up with the queue, events may be lost. Occasionally, your function may receive the same event
      * multiple times, even if no error occurs. To retain events that were not processed, configure your function with a
-     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">dead-letter queue</a>.
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-dlq">dead-letter
+     * queue</a>.
      * </p>
      * <p>
      * The status code in the API response doesn't reflect function errors. Error codes are reserved for errors that
      * prevent your function from executing, such as permissions errors, <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limit errors</a>, or issues with your function's
-     * code and configuration. For example, Lambda returns <code>TooManyRequestsException</code> if executing the
-     * function would cause you to exceed a concurrency limit at either the account level (
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">quota</a> errors, or issues with
+     * your function's code and configuration. For example, Lambda returns <code>TooManyRequestsException</code> if
+     * running the function would cause you to exceed a concurrency limit at either the account level (
      * <code>ConcurrentInvocationLimitExceeded</code>) or function level (
      * <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>).
      * </p>
      * <p>
-     * For functions with a long timeout, your client might be disconnected during synchronous invocation while it waits
-     * for a response. Configure your HTTP client, SDK, firewall, proxy, or operating system to allow for long
-     * connections with timeout or keep-alive settings.
+     * For functions with a long timeout, your client might disconnect during synchronous invocation while it waits for
+     * a response. Configure your HTTP client, SDK, firewall, proxy, or operating system to allow for long connections
+     * with timeout or keep-alive settings.
      * </p>
      * <p>
      * This operation requires permission for the <a
@@ -1689,7 +1761,10 @@ public interface AWSLambdaAsync extends AWSLambda {
     /**
      * <p>
      * Invokes a Lambda function. You can invoke a function synchronously (and wait for the response), or
-     * asynchronously. To invoke a function asynchronously, set <code>InvocationType</code> to <code>Event</code>.
+     * asynchronously. By default, Lambda invokes your function synchronously (i.e. the<code>InvocationType</code> is
+     * <code>RequestResponse</code>). To invoke a function asynchronously, set <code>InvocationType</code> to
+     * <code>Event</code>. Lambda passes the <code>ClientContext</code> object to your function for synchronous
+     * invocations only.
      * </p>
      * <p>
      * For <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-sync.html">synchronous invocation</a>,
@@ -1702,28 +1777,30 @@ public interface AWSLambdaAsync extends AWSLambda {
      * When an error occurs, your function may be invoked multiple times. Retry behavior varies by error type, client,
      * event source, and invocation type. For example, if you invoke a function asynchronously and it returns an error,
      * Lambda executes the function up to two more times. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/retries-on-errors.html">Retry Behavior</a>.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-retries.html">Error handling and automatic retries
+     * in Lambda</a>.
      * </p>
      * <p>
      * For <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html">asynchronous invocation</a>,
      * Lambda adds events to a queue before sending them to your function. If your function does not have enough
      * capacity to keep up with the queue, events may be lost. Occasionally, your function may receive the same event
      * multiple times, even if no error occurs. To retain events that were not processed, configure your function with a
-     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">dead-letter queue</a>.
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-dlq">dead-letter
+     * queue</a>.
      * </p>
      * <p>
      * The status code in the API response doesn't reflect function errors. Error codes are reserved for errors that
      * prevent your function from executing, such as permissions errors, <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limit errors</a>, or issues with your function's
-     * code and configuration. For example, Lambda returns <code>TooManyRequestsException</code> if executing the
-     * function would cause you to exceed a concurrency limit at either the account level (
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">quota</a> errors, or issues with
+     * your function's code and configuration. For example, Lambda returns <code>TooManyRequestsException</code> if
+     * running the function would cause you to exceed a concurrency limit at either the account level (
      * <code>ConcurrentInvocationLimitExceeded</code>) or function level (
      * <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>).
      * </p>
      * <p>
-     * For functions with a long timeout, your client might be disconnected during synchronous invocation while it waits
-     * for a response. Configure your HTTP client, SDK, firewall, proxy, or operating system to allow for long
-     * connections with timeout or keep-alive settings.
+     * For functions with a long timeout, your client might disconnect during synchronous invocation while it waits for
+     * a response. Configure your HTTP client, SDK, firewall, proxy, or operating system to allow for long connections
+     * with timeout or keep-alive settings.
      * </p>
      * <p>
      * This operation requires permission for the <a
@@ -1755,6 +1832,12 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <p>
      * Invokes a function asynchronously.
      * </p>
+     * <note>
+     * <p>
+     * If you do use the InvokeAsync action, note that it doesn't support the use of X-Ray active tracing. Trace ID is
+     * not propagated to the function, even if X-Ray active tracing is turned on.
+     * </p>
+     * </note>
      * 
      * @param invokeAsyncRequest
      * @return A Java Future containing the result of the InvokeAsync operation returned by the service.
@@ -1774,6 +1857,12 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <p>
      * Invokes a function asynchronously.
      * </p>
+     * <note>
+     * <p>
+     * If you do use the InvokeAsync action, note that it doesn't support the use of X-Ray active tracing. Trace ID is
+     * not propagated to the function, even if X-Ray active tracing is turned on.
+     * </p>
+     * </note>
      * 
      * @param invokeAsyncRequest
      * @param asyncHandler
@@ -1791,8 +1880,8 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
-     * Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">aliases</a> for
-     * a Lambda function.
+     * Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">aliases</a>
+     * for a Lambda function.
      * </p>
      * 
      * @param listAliasesRequest
@@ -1805,8 +1894,8 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
-     * Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">aliases</a> for
-     * a Lambda function.
+     * Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">aliases</a>
+     * for a Lambda function.
      * </p>
      * 
      * @param listAliasesRequest
@@ -1988,9 +2077,9 @@ public interface AWSLambdaAsync extends AWSLambda {
      * </p>
      * <note>
      * <p>
-     * The <code>ListFunctions</code> action returns a subset of the <a>FunctionConfiguration</a> fields. To get the
+     * The <code>ListFunctions</code> operation returns a subset of the <a>FunctionConfiguration</a> fields. To get the
      * additional fields (State, StateReasonCode, StateReason, LastUpdateStatus, LastUpdateStatusReason,
-     * LastUpdateStatusReasonCode) for a function or version, use <a>GetFunction</a>.
+     * LastUpdateStatusReasonCode, RuntimeVersionConfig) for a function or version, use <a>GetFunction</a>.
      * </p>
      * </note>
      * 
@@ -2013,9 +2102,9 @@ public interface AWSLambdaAsync extends AWSLambda {
      * </p>
      * <note>
      * <p>
-     * The <code>ListFunctions</code> action returns a subset of the <a>FunctionConfiguration</a> fields. To get the
+     * The <code>ListFunctions</code> operation returns a subset of the <a>FunctionConfiguration</a> fields. To get the
      * additional fields (State, StateReasonCode, StateReason, LastUpdateStatus, LastUpdateStatusReason,
-     * LastUpdateStatusReasonCode) for a function or version, use <a>GetFunction</a>.
+     * LastUpdateStatusReasonCode, RuntimeVersionConfig) for a function or version, use <a>GetFunction</a>.
      * </p>
      * </note>
      * 
@@ -2409,7 +2498,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      * Use <a>GetAccountSettings</a> to see your Regional concurrency limit. You can reserve concurrency for as many
      * functions as you like, as long as you leave at least 100 simultaneous executions unreserved for functions that
      * aren't configured with a per-function limit. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing Concurrency</a>.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-scaling.html">Lambda function scaling</a>.
      * </p>
      * 
      * @param putFunctionConcurrencyRequest
@@ -2435,7 +2524,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      * Use <a>GetAccountSettings</a> to see your Regional concurrency limit. You can reserve concurrency for as many
      * functions as you like, as long as you leave at least 100 simultaneous executions unreserved for functions that
      * aren't configured with a per-function limit. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing Concurrency</a>.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-scaling.html">Lambda function scaling</a>.
      * </p>
      * 
      * @param putFunctionConcurrencyRequest
@@ -2555,6 +2644,41 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
+     * Sets the runtime management configuration for a function's version. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html">Runtime updates</a>.
+     * </p>
+     * 
+     * @param putRuntimeManagementConfigRequest
+     * @return A Java Future containing the result of the PutRuntimeManagementConfig operation returned by the service.
+     * @sample AWSLambdaAsync.PutRuntimeManagementConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutRuntimeManagementConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutRuntimeManagementConfigResult> putRuntimeManagementConfigAsync(
+            PutRuntimeManagementConfigRequest putRuntimeManagementConfigRequest);
+
+    /**
+     * <p>
+     * Sets the runtime management configuration for a function's version. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html">Runtime updates</a>.
+     * </p>
+     * 
+     * @param putRuntimeManagementConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutRuntimeManagementConfig operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.PutRuntimeManagementConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutRuntimeManagementConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutRuntimeManagementConfigResult> putRuntimeManagementConfigAsync(
+            PutRuntimeManagementConfigRequest putRuntimeManagementConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<PutRuntimeManagementConfigRequest, PutRuntimeManagementConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * Removes a statement from the permissions policy for a version of an <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>. For more
      * information, see <a>AddLayerVersionPermission</a>.
@@ -2594,8 +2718,8 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
-     * Revokes function-use permission from an Amazon Web Services service or another account. You can get the ID of the
-     * statement from the output of <a>GetPolicy</a>.
+     * Revokes function-use permission from an Amazon Web Service or another Amazon Web Services account. You can get
+     * the ID of the statement from the output of <a>GetPolicy</a>.
      * </p>
      * 
      * @param removePermissionRequest
@@ -2608,8 +2732,8 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
-     * Revokes function-use permission from an Amazon Web Services service or another account. You can get the ID of the
-     * statement from the output of <a>GetPolicy</a>.
+     * Revokes function-use permission from an Amazon Web Service or another Amazon Web Services account. You can get
+     * the ID of the statement from the output of <a>GetPolicy</a>.
      * </p>
      * 
      * @param removePermissionRequest
@@ -2690,7 +2814,7 @@ public interface AWSLambdaAsync extends AWSLambda {
     /**
      * <p>
      * Updates the configuration of a Lambda function <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.
      * </p>
      * 
      * @param updateAliasRequest
@@ -2704,7 +2828,7 @@ public interface AWSLambdaAsync extends AWSLambda {
     /**
      * <p>
      * Updates the configuration of a Lambda function <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.
      * </p>
      * 
      * @param updateAliasRequest
@@ -2795,6 +2919,11 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html"> Apache Kafka</a>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html"> Amazon DocumentDB</a>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The following error handling options are available only for stream sources (DynamoDB and Kinesis):
@@ -2802,29 +2931,29 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <ul>
      * <li>
      * <p>
-     * <code>BisectBatchOnFunctionError</code> - If the function returns an error, split the batch in two and retry.
+     * <code>BisectBatchOnFunctionError</code> – If the function returns an error, split the batch in two and retry.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue or Amazon SNS topic.
+     * <code>DestinationConfig</code> – Send discarded records to an Amazon SQS queue or Amazon SNS topic.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age. The default value is
+     * <code>MaximumRecordAgeInSeconds</code> – Discard records older than the specified age. The default value is
      * infinite (-1). When set to infinite (-1), failed records are retried until the record expires
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries. The default value is
+     * <code>MaximumRetryAttempts</code> – Discard records after the specified number of retries. The default value is
      * infinite (-1). When set to infinite (-1), failed records are retried until the record expires.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ParallelizationFactor</code> - Process multiple batches from each shard concurrently.
+     * <code>ParallelizationFactor</code> – Process multiple batches from each shard concurrently.
      * </p>
      * </li>
      * </ul>
@@ -2863,6 +2992,12 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <li>
      * <p>
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-kafka-parms"> Apache Kafka</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html#docdb-configuration"> Amazon
+     * DocumentDB</a>
      * </p>
      * </li>
      * </ul>
@@ -2917,6 +3052,11 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html"> Apache Kafka</a>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html"> Amazon DocumentDB</a>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The following error handling options are available only for stream sources (DynamoDB and Kinesis):
@@ -2924,29 +3064,29 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <ul>
      * <li>
      * <p>
-     * <code>BisectBatchOnFunctionError</code> - If the function returns an error, split the batch in two and retry.
+     * <code>BisectBatchOnFunctionError</code> – If the function returns an error, split the batch in two and retry.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue or Amazon SNS topic.
+     * <code>DestinationConfig</code> – Send discarded records to an Amazon SQS queue or Amazon SNS topic.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age. The default value is
+     * <code>MaximumRecordAgeInSeconds</code> – Discard records older than the specified age. The default value is
      * infinite (-1). When set to infinite (-1), failed records are retried until the record expires
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries. The default value is
+     * <code>MaximumRetryAttempts</code> – Discard records after the specified number of retries. The default value is
      * infinite (-1). When set to infinite (-1), failed records are retried until the record expires.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ParallelizationFactor</code> - Process multiple batches from each shard concurrently.
+     * <code>ParallelizationFactor</code> – Process multiple batches from each shard concurrently.
      * </p>
      * </li>
      * </ul>
@@ -2987,6 +3127,12 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-kafka-parms"> Apache Kafka</a>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html#docdb-configuration"> Amazon
+     * DocumentDB</a>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param updateEventSourceMappingRequest
@@ -3006,15 +3152,17 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <p>
      * Updates a Lambda function's code. If code signing is enabled for the function, the code package must be signed by
      * a trusted publisher. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-trustedcode.html">Configuring code signing</a>.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html">Configuring code signing for
+     * Lambda</a>.
      * </p>
      * <p>
-     * If the function's package type is <code>Image</code>, you must specify the code package in <code>ImageUri</code>
-     * as the URI of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a> in
-     * the Amazon ECR registry.
+     * If the function's package type is <code>Image</code>, then you must specify the code package in
+     * <code>ImageUri</code> as the URI of a <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a> in the Amazon ECR
+     * registry.
      * </p>
      * <p>
-     * If the function's package type is <code>Zip</code>, you must specify the deployment package as a <a
+     * If the function's package type is <code>Zip</code>, then you must specify the deployment package as a <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip
      * file archive</a>. Enter the Amazon S3 bucket and key of the code .zip file location. You can also provide the
      * function code inline using the <code>ZipFile</code> field.
@@ -3046,15 +3194,17 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <p>
      * Updates a Lambda function's code. If code signing is enabled for the function, the code package must be signed by
      * a trusted publisher. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-trustedcode.html">Configuring code signing</a>.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html">Configuring code signing for
+     * Lambda</a>.
      * </p>
      * <p>
-     * If the function's package type is <code>Image</code>, you must specify the code package in <code>ImageUri</code>
-     * as the URI of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a> in
-     * the Amazon ECR registry.
+     * If the function's package type is <code>Image</code>, then you must specify the code package in
+     * <code>ImageUri</code> as the URI of a <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a> in the Amazon ECR
+     * registry.
      * </p>
      * <p>
-     * If the function's package type is <code>Zip</code>, you must specify the deployment package as a <a
+     * If the function's package type is <code>Zip</code>, then you must specify the deployment package as a <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip
      * file archive</a>. Enter the Amazon S3 bucket and key of the code .zip file location. You can also provide the
      * function code inline using the <code>ZipFile</code> field.
@@ -3097,15 +3247,15 @@ public interface AWSLambdaAsync extends AWSLambda {
      * you can still invoke it. The <code>LastUpdateStatus</code>, <code>LastUpdateStatusReason</code>, and
      * <code>LastUpdateStatusReasonCode</code> fields in the response from <a>GetFunctionConfiguration</a> indicate when
      * the update is complete and the function is processing events with the new configuration. For more information,
-     * see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Function States</a>.
+     * see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Lambda function states</a>.
      * </p>
      * <p>
      * These settings can vary between versions of a function and are locked when you publish a version. You can't
      * modify the configuration of a published version, only the unpublished version.
      * </p>
      * <p>
-     * To configure function concurrency, use <a>PutFunctionConcurrency</a>. To grant invoke permissions to an account
-     * or Amazon Web Services service, use <a>AddPermission</a>.
+     * To configure function concurrency, use <a>PutFunctionConcurrency</a>. To grant invoke permissions to an Amazon
+     * Web Services account or Amazon Web Service, use <a>AddPermission</a>.
      * </p>
      * 
      * @param updateFunctionConfigurationRequest
@@ -3127,15 +3277,15 @@ public interface AWSLambdaAsync extends AWSLambda {
      * you can still invoke it. The <code>LastUpdateStatus</code>, <code>LastUpdateStatusReason</code>, and
      * <code>LastUpdateStatusReasonCode</code> fields in the response from <a>GetFunctionConfiguration</a> indicate when
      * the update is complete and the function is processing events with the new configuration. For more information,
-     * see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Function States</a>.
+     * see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Lambda function states</a>.
      * </p>
      * <p>
      * These settings can vary between versions of a function and are locked when you publish a version. You can't
      * modify the configuration of a published version, only the unpublished version.
      * </p>
      * <p>
-     * To configure function concurrency, use <a>PutFunctionConcurrency</a>. To grant invoke permissions to an account
-     * or Amazon Web Services service, use <a>AddPermission</a>.
+     * To configure function concurrency, use <a>PutFunctionConcurrency</a>. To grant invoke permissions to an Amazon
+     * Web Services account or Amazon Web Service, use <a>AddPermission</a>.
      * </p>
      * 
      * @param updateFunctionConfigurationRequest

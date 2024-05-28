@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,10 +36,10 @@ public class HttpEndpointDestinationConfiguration implements Serializable, Clone
     private HttpEndpointConfiguration endpointConfiguration;
     /**
      * <p>
-     * The buffering options that can be used before data is delivered to the specified destination. Kinesis Data
-     * Firehose treats these options as hints, and it might choose to use more optimal values. The
-     * <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if you specify a
-     * value for one of them, you must also provide a value for the other.
+     * The buffering options that can be used before data is delivered to the specified destination. Firehose treats
+     * these options as hints, and it might choose to use more optimal values. The <code>SizeInMBs</code> and
+     * <code>IntervalInSeconds</code> parameters are optional. However, if you specify a value for one of them, you must
+     * also provide a value for the other.
      * </p>
      */
     private HttpEndpointBufferingHints bufferingHints;
@@ -55,23 +55,23 @@ public class HttpEndpointDestinationConfiguration implements Serializable, Clone
     private ProcessingConfiguration processingConfiguration;
     /**
      * <p>
-     * Kinesis Data Firehose uses this IAM role for all the permissions that the delivery stream needs.
+     * Firehose uses this IAM role for all the permissions that the delivery stream needs.
      * </p>
      */
     private String roleARN;
     /**
      * <p>
-     * Describes the retry behavior in case Kinesis Data Firehose is unable to deliver data to the specified HTTP
-     * endpoint destination, or if it doesn't receive a valid acknowledgment of receipt from the specified HTTP endpoint
+     * Describes the retry behavior in case Firehose is unable to deliver data to the specified HTTP endpoint
+     * destination, or if it doesn't receive a valid acknowledgment of receipt from the specified HTTP endpoint
      * destination.
      * </p>
      */
     private HttpEndpointRetryOptions retryOptions;
     /**
      * <p>
-     * Describes the S3 bucket backup options for the data that Kinesis Data Firehose delivers to the HTTP endpoint
-     * destination. You can back up all documents (<code>AllData</code>) or only the documents that Kinesis Data
-     * Firehose could not deliver to the specified HTTP endpoint destination (<code>FailedDataOnly</code>).
+     * Describes the S3 bucket backup options for the data that Firehose delivers to the HTTP endpoint destination. You
+     * can back up all documents (<code>AllData</code>) or only the documents that Firehose could not deliver to the
+     * specified HTTP endpoint destination (<code>FailedDataOnly</code>).
      * </p>
      */
     private String s3BackupMode;
@@ -120,17 +120,17 @@ public class HttpEndpointDestinationConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * The buffering options that can be used before data is delivered to the specified destination. Kinesis Data
-     * Firehose treats these options as hints, and it might choose to use more optimal values. The
-     * <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if you specify a
-     * value for one of them, you must also provide a value for the other.
+     * The buffering options that can be used before data is delivered to the specified destination. Firehose treats
+     * these options as hints, and it might choose to use more optimal values. The <code>SizeInMBs</code> and
+     * <code>IntervalInSeconds</code> parameters are optional. However, if you specify a value for one of them, you must
+     * also provide a value for the other.
      * </p>
      * 
      * @param bufferingHints
-     *        The buffering options that can be used before data is delivered to the specified destination. Kinesis Data
-     *        Firehose treats these options as hints, and it might choose to use more optimal values. The
-     *        <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if you specify
-     *        a value for one of them, you must also provide a value for the other.
+     *        The buffering options that can be used before data is delivered to the specified destination. Firehose
+     *        treats these options as hints, and it might choose to use more optimal values. The <code>SizeInMBs</code>
+     *        and <code>IntervalInSeconds</code> parameters are optional. However, if you specify a value for one of
+     *        them, you must also provide a value for the other.
      */
 
     public void setBufferingHints(HttpEndpointBufferingHints bufferingHints) {
@@ -139,16 +139,16 @@ public class HttpEndpointDestinationConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * The buffering options that can be used before data is delivered to the specified destination. Kinesis Data
-     * Firehose treats these options as hints, and it might choose to use more optimal values. The
-     * <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if you specify a
-     * value for one of them, you must also provide a value for the other.
+     * The buffering options that can be used before data is delivered to the specified destination. Firehose treats
+     * these options as hints, and it might choose to use more optimal values. The <code>SizeInMBs</code> and
+     * <code>IntervalInSeconds</code> parameters are optional. However, if you specify a value for one of them, you must
+     * also provide a value for the other.
      * </p>
      * 
-     * @return The buffering options that can be used before data is delivered to the specified destination. Kinesis
-     *         Data Firehose treats these options as hints, and it might choose to use more optimal values. The
-     *         <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if you
-     *         specify a value for one of them, you must also provide a value for the other.
+     * @return The buffering options that can be used before data is delivered to the specified destination. Firehose
+     *         treats these options as hints, and it might choose to use more optimal values. The <code>SizeInMBs</code>
+     *         and <code>IntervalInSeconds</code> parameters are optional. However, if you specify a value for one of
+     *         them, you must also provide a value for the other.
      */
 
     public HttpEndpointBufferingHints getBufferingHints() {
@@ -157,17 +157,17 @@ public class HttpEndpointDestinationConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * The buffering options that can be used before data is delivered to the specified destination. Kinesis Data
-     * Firehose treats these options as hints, and it might choose to use more optimal values. The
-     * <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if you specify a
-     * value for one of them, you must also provide a value for the other.
+     * The buffering options that can be used before data is delivered to the specified destination. Firehose treats
+     * these options as hints, and it might choose to use more optimal values. The <code>SizeInMBs</code> and
+     * <code>IntervalInSeconds</code> parameters are optional. However, if you specify a value for one of them, you must
+     * also provide a value for the other.
      * </p>
      * 
      * @param bufferingHints
-     *        The buffering options that can be used before data is delivered to the specified destination. Kinesis Data
-     *        Firehose treats these options as hints, and it might choose to use more optimal values. The
-     *        <code>SizeInMBs</code> and <code>IntervalInSeconds</code> parameters are optional. However, if you specify
-     *        a value for one of them, you must also provide a value for the other.
+     *        The buffering options that can be used before data is delivered to the specified destination. Firehose
+     *        treats these options as hints, and it might choose to use more optimal values. The <code>SizeInMBs</code>
+     *        and <code>IntervalInSeconds</code> parameters are optional. However, if you specify a value for one of
+     *        them, you must also provide a value for the other.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -270,11 +270,11 @@ public class HttpEndpointDestinationConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * Kinesis Data Firehose uses this IAM role for all the permissions that the delivery stream needs.
+     * Firehose uses this IAM role for all the permissions that the delivery stream needs.
      * </p>
      * 
      * @param roleARN
-     *        Kinesis Data Firehose uses this IAM role for all the permissions that the delivery stream needs.
+     *        Firehose uses this IAM role for all the permissions that the delivery stream needs.
      */
 
     public void setRoleARN(String roleARN) {
@@ -283,10 +283,10 @@ public class HttpEndpointDestinationConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * Kinesis Data Firehose uses this IAM role for all the permissions that the delivery stream needs.
+     * Firehose uses this IAM role for all the permissions that the delivery stream needs.
      * </p>
      * 
-     * @return Kinesis Data Firehose uses this IAM role for all the permissions that the delivery stream needs.
+     * @return Firehose uses this IAM role for all the permissions that the delivery stream needs.
      */
 
     public String getRoleARN() {
@@ -295,11 +295,11 @@ public class HttpEndpointDestinationConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * Kinesis Data Firehose uses this IAM role for all the permissions that the delivery stream needs.
+     * Firehose uses this IAM role for all the permissions that the delivery stream needs.
      * </p>
      * 
      * @param roleARN
-     *        Kinesis Data Firehose uses this IAM role for all the permissions that the delivery stream needs.
+     *        Firehose uses this IAM role for all the permissions that the delivery stream needs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -310,15 +310,15 @@ public class HttpEndpointDestinationConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * Describes the retry behavior in case Kinesis Data Firehose is unable to deliver data to the specified HTTP
-     * endpoint destination, or if it doesn't receive a valid acknowledgment of receipt from the specified HTTP endpoint
+     * Describes the retry behavior in case Firehose is unable to deliver data to the specified HTTP endpoint
+     * destination, or if it doesn't receive a valid acknowledgment of receipt from the specified HTTP endpoint
      * destination.
      * </p>
      * 
      * @param retryOptions
-     *        Describes the retry behavior in case Kinesis Data Firehose is unable to deliver data to the specified HTTP
-     *        endpoint destination, or if it doesn't receive a valid acknowledgment of receipt from the specified HTTP
-     *        endpoint destination.
+     *        Describes the retry behavior in case Firehose is unable to deliver data to the specified HTTP endpoint
+     *        destination, or if it doesn't receive a valid acknowledgment of receipt from the specified HTTP endpoint
+     *        destination.
      */
 
     public void setRetryOptions(HttpEndpointRetryOptions retryOptions) {
@@ -327,14 +327,14 @@ public class HttpEndpointDestinationConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * Describes the retry behavior in case Kinesis Data Firehose is unable to deliver data to the specified HTTP
-     * endpoint destination, or if it doesn't receive a valid acknowledgment of receipt from the specified HTTP endpoint
+     * Describes the retry behavior in case Firehose is unable to deliver data to the specified HTTP endpoint
+     * destination, or if it doesn't receive a valid acknowledgment of receipt from the specified HTTP endpoint
      * destination.
      * </p>
      * 
-     * @return Describes the retry behavior in case Kinesis Data Firehose is unable to deliver data to the specified
-     *         HTTP endpoint destination, or if it doesn't receive a valid acknowledgment of receipt from the specified
-     *         HTTP endpoint destination.
+     * @return Describes the retry behavior in case Firehose is unable to deliver data to the specified HTTP endpoint
+     *         destination, or if it doesn't receive a valid acknowledgment of receipt from the specified HTTP endpoint
+     *         destination.
      */
 
     public HttpEndpointRetryOptions getRetryOptions() {
@@ -343,15 +343,15 @@ public class HttpEndpointDestinationConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * Describes the retry behavior in case Kinesis Data Firehose is unable to deliver data to the specified HTTP
-     * endpoint destination, or if it doesn't receive a valid acknowledgment of receipt from the specified HTTP endpoint
+     * Describes the retry behavior in case Firehose is unable to deliver data to the specified HTTP endpoint
+     * destination, or if it doesn't receive a valid acknowledgment of receipt from the specified HTTP endpoint
      * destination.
      * </p>
      * 
      * @param retryOptions
-     *        Describes the retry behavior in case Kinesis Data Firehose is unable to deliver data to the specified HTTP
-     *        endpoint destination, or if it doesn't receive a valid acknowledgment of receipt from the specified HTTP
-     *        endpoint destination.
+     *        Describes the retry behavior in case Firehose is unable to deliver data to the specified HTTP endpoint
+     *        destination, or if it doesn't receive a valid acknowledgment of receipt from the specified HTTP endpoint
+     *        destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -362,16 +362,15 @@ public class HttpEndpointDestinationConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * Describes the S3 bucket backup options for the data that Kinesis Data Firehose delivers to the HTTP endpoint
-     * destination. You can back up all documents (<code>AllData</code>) or only the documents that Kinesis Data
-     * Firehose could not deliver to the specified HTTP endpoint destination (<code>FailedDataOnly</code>).
+     * Describes the S3 bucket backup options for the data that Firehose delivers to the HTTP endpoint destination. You
+     * can back up all documents (<code>AllData</code>) or only the documents that Firehose could not deliver to the
+     * specified HTTP endpoint destination (<code>FailedDataOnly</code>).
      * </p>
      * 
      * @param s3BackupMode
-     *        Describes the S3 bucket backup options for the data that Kinesis Data Firehose delivers to the HTTP
-     *        endpoint destination. You can back up all documents (<code>AllData</code>) or only the documents that
-     *        Kinesis Data Firehose could not deliver to the specified HTTP endpoint destination (
-     *        <code>FailedDataOnly</code>).
+     *        Describes the S3 bucket backup options for the data that Firehose delivers to the HTTP endpoint
+     *        destination. You can back up all documents (<code>AllData</code>) or only the documents that Firehose
+     *        could not deliver to the specified HTTP endpoint destination (<code>FailedDataOnly</code>).
      * @see HttpEndpointS3BackupMode
      */
 
@@ -381,15 +380,14 @@ public class HttpEndpointDestinationConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * Describes the S3 bucket backup options for the data that Kinesis Data Firehose delivers to the HTTP endpoint
-     * destination. You can back up all documents (<code>AllData</code>) or only the documents that Kinesis Data
-     * Firehose could not deliver to the specified HTTP endpoint destination (<code>FailedDataOnly</code>).
+     * Describes the S3 bucket backup options for the data that Firehose delivers to the HTTP endpoint destination. You
+     * can back up all documents (<code>AllData</code>) or only the documents that Firehose could not deliver to the
+     * specified HTTP endpoint destination (<code>FailedDataOnly</code>).
      * </p>
      * 
-     * @return Describes the S3 bucket backup options for the data that Kinesis Data Firehose delivers to the HTTP
-     *         endpoint destination. You can back up all documents (<code>AllData</code>) or only the documents that
-     *         Kinesis Data Firehose could not deliver to the specified HTTP endpoint destination (
-     *         <code>FailedDataOnly</code>).
+     * @return Describes the S3 bucket backup options for the data that Firehose delivers to the HTTP endpoint
+     *         destination. You can back up all documents (<code>AllData</code>) or only the documents that Firehose
+     *         could not deliver to the specified HTTP endpoint destination (<code>FailedDataOnly</code>).
      * @see HttpEndpointS3BackupMode
      */
 
@@ -399,16 +397,15 @@ public class HttpEndpointDestinationConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * Describes the S3 bucket backup options for the data that Kinesis Data Firehose delivers to the HTTP endpoint
-     * destination. You can back up all documents (<code>AllData</code>) or only the documents that Kinesis Data
-     * Firehose could not deliver to the specified HTTP endpoint destination (<code>FailedDataOnly</code>).
+     * Describes the S3 bucket backup options for the data that Firehose delivers to the HTTP endpoint destination. You
+     * can back up all documents (<code>AllData</code>) or only the documents that Firehose could not deliver to the
+     * specified HTTP endpoint destination (<code>FailedDataOnly</code>).
      * </p>
      * 
      * @param s3BackupMode
-     *        Describes the S3 bucket backup options for the data that Kinesis Data Firehose delivers to the HTTP
-     *        endpoint destination. You can back up all documents (<code>AllData</code>) or only the documents that
-     *        Kinesis Data Firehose could not deliver to the specified HTTP endpoint destination (
-     *        <code>FailedDataOnly</code>).
+     *        Describes the S3 bucket backup options for the data that Firehose delivers to the HTTP endpoint
+     *        destination. You can back up all documents (<code>AllData</code>) or only the documents that Firehose
+     *        could not deliver to the specified HTTP endpoint destination (<code>FailedDataOnly</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HttpEndpointS3BackupMode
      */
@@ -420,16 +417,15 @@ public class HttpEndpointDestinationConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * Describes the S3 bucket backup options for the data that Kinesis Data Firehose delivers to the HTTP endpoint
-     * destination. You can back up all documents (<code>AllData</code>) or only the documents that Kinesis Data
-     * Firehose could not deliver to the specified HTTP endpoint destination (<code>FailedDataOnly</code>).
+     * Describes the S3 bucket backup options for the data that Firehose delivers to the HTTP endpoint destination. You
+     * can back up all documents (<code>AllData</code>) or only the documents that Firehose could not deliver to the
+     * specified HTTP endpoint destination (<code>FailedDataOnly</code>).
      * </p>
      * 
      * @param s3BackupMode
-     *        Describes the S3 bucket backup options for the data that Kinesis Data Firehose delivers to the HTTP
-     *        endpoint destination. You can back up all documents (<code>AllData</code>) or only the documents that
-     *        Kinesis Data Firehose could not deliver to the specified HTTP endpoint destination (
-     *        <code>FailedDataOnly</code>).
+     *        Describes the S3 bucket backup options for the data that Firehose delivers to the HTTP endpoint
+     *        destination. You can back up all documents (<code>AllData</code>) or only the documents that Firehose
+     *        could not deliver to the specified HTTP endpoint destination (<code>FailedDataOnly</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HttpEndpointS3BackupMode
      */

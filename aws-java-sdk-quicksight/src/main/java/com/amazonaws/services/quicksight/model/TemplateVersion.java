@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,8 +48,45 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
     private Long versionNumber;
     /**
      * <p>
-     * The HTTP status of the request.
+     * The status that is associated with the template.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATION_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATION_SUCCESSFUL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATION_FAILED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_SUCCESSFUL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_FAILED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String status;
     /**
@@ -236,11 +273,84 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The HTTP status of the request.
+     * The status that is associated with the template.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATION_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATION_SUCCESSFUL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATION_FAILED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_SUCCESSFUL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_FAILED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The HTTP status of the request.
+     *        The status that is associated with the template.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CREATION_IN_PROGRESS</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATION_SUCCESSFUL</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATION_FAILED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATE_IN_PROGRESS</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATE_SUCCESSFUL</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATE_FAILED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETED</code>
+     *        </p>
+     *        </li>
      * @see ResourceStatus
      */
 
@@ -250,10 +360,83 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The HTTP status of the request.
+     * The status that is associated with the template.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATION_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATION_SUCCESSFUL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATION_FAILED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_SUCCESSFUL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_FAILED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The HTTP status of the request.
+     * @return The status that is associated with the template.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>CREATION_IN_PROGRESS</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CREATION_SUCCESSFUL</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CREATION_FAILED</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UPDATE_IN_PROGRESS</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UPDATE_SUCCESSFUL</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UPDATE_FAILED</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DELETED</code>
+     *         </p>
+     *         </li>
      * @see ResourceStatus
      */
 
@@ -263,11 +446,84 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The HTTP status of the request.
+     * The status that is associated with the template.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATION_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATION_SUCCESSFUL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATION_FAILED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_SUCCESSFUL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_FAILED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The HTTP status of the request.
+     *        The status that is associated with the template.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CREATION_IN_PROGRESS</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATION_SUCCESSFUL</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATION_FAILED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATE_IN_PROGRESS</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATE_SUCCESSFUL</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATE_FAILED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETED</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceStatus
      */
@@ -279,11 +535,84 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The HTTP status of the request.
+     * The status that is associated with the template.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATION_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATION_SUCCESSFUL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATION_FAILED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_IN_PROGRESS</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_SUCCESSFUL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_FAILED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The HTTP status of the request.
+     *        The status that is associated with the template.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CREATION_IN_PROGRESS</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATION_SUCCESSFUL</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATION_FAILED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATE_IN_PROGRESS</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATE_SUCCESSFUL</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATE_FAILED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETED</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceStatus
      */

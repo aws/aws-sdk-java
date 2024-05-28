@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -240,6 +240,7 @@ import com.amazonaws.services.s3.model.ListPartsRequest;
 import com.amazonaws.services.s3.model.ListVersionsRequest;
 import com.amazonaws.services.s3.model.MultiFactorAuthentication;
 import com.amazonaws.services.s3.model.MultiObjectDeleteException;
+import com.amazonaws.services.s3.model.MultiObjectDeleteSlowdownException;
 import com.amazonaws.services.s3.model.MultipartUploadListing;
 import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.ObjectMetadata;
@@ -350,6 +351,7 @@ import com.amazonaws.util.Base64;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.CredentialUtils;
 import com.amazonaws.util.DateUtils;
+import com.amazonaws.util.HostnameValidator;
 import com.amazonaws.util.IOUtils;
 import com.amazonaws.util.LengthCheckInputStream;
 import com.amazonaws.util.Md5Utils;
@@ -883,11 +885,22 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         addParameterIfNotNull(request, "key-marker", listVersionsRequest.getKeyMarker());
         addParameterIfNotNull(request, "version-id-marker", listVersionsRequest.getVersionIdMarker());
         addParameterIfNotNull(request, "delimiter", listVersionsRequest.getDelimiter());
+        addStringListHeader(request, Headers.OPTIONAL_OBJECT_ATTRIBUTE, listVersionsRequest.getOptionalObjectAttributes());
 
         if (listVersionsRequest.getMaxResults() != null && listVersionsRequest.getMaxResults() >= 0) request.addParameter("max-keys", listVersionsRequest.getMaxResults().toString());
         request.addParameter("encoding-type", shouldSDKDecodeResponse ? Constants.URL_ENCODING : listVersionsRequest.getEncodingType());
 
-        return invoke(request, new Unmarshallers.VersionListUnmarshaller(shouldSDKDecodeResponse), listVersionsRequest.getBucketName(), null);
+        populateRequesterPaysHeader(request, listVersionsRequest.isRequesterPays());
+
+        @SuppressWarnings("unchecked")
+        ResponseHeaderHandlerChain<VersionListing> responseHandler =
+                new ResponseHeaderHandlerChain<VersionListing>(
+                        // xml payload unmarshaller
+                        new Unmarshallers.VersionListUnmarshaller(shouldSDKDecodeResponse),
+                        // header handler
+                        new S3RequesterChargedHeaderHandler<VersionListing>());
+
+        return invoke(request, responseHandler, listVersionsRequest.getBucketName(), null);
     }
 
     @Override
@@ -920,12 +933,21 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         addParameterIfNotNull(request, "prefix", listObjectsRequest.getPrefix());
         addParameterIfNotNull(request, "marker", listObjectsRequest.getMarker());
         addParameterIfNotNull(request, "delimiter", listObjectsRequest.getDelimiter());
+        addStringListHeader(request, Headers.OPTIONAL_OBJECT_ATTRIBUTE, listObjectsRequest.getOptionalObjectAttributes());
         if (listObjectsRequest.getMaxKeys() != null && listObjectsRequest.getMaxKeys().intValue() >= 0) request.addParameter("max-keys", listObjectsRequest.getMaxKeys().toString());
         request.addParameter("encoding-type", shouldSDKDecodeResponse ? Constants.URL_ENCODING : listObjectsRequest.getEncodingType());
 
         populateRequesterPaysHeader(request, listObjectsRequest.isRequesterPays());
 
-        return invoke(request, new Unmarshallers.ListObjectsUnmarshaller(shouldSDKDecodeResponse), listObjectsRequest.getBucketName(), null);
+        @SuppressWarnings("unchecked")
+        ResponseHeaderHandlerChain<ObjectListing> responseHandler =
+                new ResponseHeaderHandlerChain<ObjectListing>(
+                        // xml payload unmarshaller
+                        new Unmarshallers.ListObjectsUnmarshaller(shouldSDKDecodeResponse),
+                        // header handler
+                        new S3RequesterChargedHeaderHandler<ObjectListing>());
+
+        return invoke(request, responseHandler, listObjectsRequest.getBucketName(), null);
     }
 
     @Override
@@ -959,6 +981,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         addParameterIfNotNull(request, "max-keys", listObjectsV2Request.getMaxKeys());
         addParameterIfNotNull(request, "prefix", listObjectsV2Request.getPrefix());
         addParameterIfNotNull(request, "encoding-type", listObjectsV2Request.getEncodingType());
+        addStringListHeader(request, Headers.OPTIONAL_OBJECT_ATTRIBUTE, listObjectsV2Request.getOptionalObjectAttributes());
         request.addParameter("fetch-owner", Boolean.toString(listObjectsV2Request.isFetchOwner()));
 
         populateRequesterPaysHeader(request, listObjectsV2Request.isRequesterPays());
@@ -968,7 +991,15 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
          */
         final boolean shouldSDKDecodeResponse = Constants.URL_ENCODING.equals(listObjectsV2Request.getEncodingType());
 
-        return invoke(request, new Unmarshallers.ListObjectsV2Unmarshaller(shouldSDKDecodeResponse), listObjectsV2Request.getBucketName(), null);
+        @SuppressWarnings("unchecked")
+        ResponseHeaderHandlerChain<ListObjectsV2Result> responseHandler =
+                new ResponseHeaderHandlerChain<ListObjectsV2Result>(
+                        // xml payload unmarshaller
+                        new Unmarshallers.ListObjectsV2Unmarshaller(shouldSDKDecodeResponse),
+                        // header handler
+                        new S3RequesterChargedHeaderHandler<ListObjectsV2Result>());
+
+        return invoke(request, responseHandler, listObjectsV2Request.getBucketName(), null);
     }
 
     @Override
@@ -2329,10 +2360,22 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 new Unmarshallers.DeleteObjectsResultUnmarshaller(),
                 new S3RequesterChargedHeaderHandler<DeleteObjectsResponse>());
 
+        DeleteObjectsResponse response = null;
+        try {
+            response = invoke(request, responseHandler, deleteObjectsRequest.getBucketName(), null);
+        } catch (SdkClientException e) {
 
+            /*
+             * If there was a SlowDown error, the returned S3 response will not contain the progress made. We'll throw
+             * an {@code MultiObjectDeleteSlowdownException} in this case.
+             */
+            if (e.getCause() instanceof MultiObjectDeleteSlowdownException) {
+                MultiObjectDeleteSlowdownException ex = (MultiObjectDeleteSlowdownException) e.getCause();
+                handleSlowDownException(ex, responseHandler.getResponseHeaders());
+            }
 
-
-        DeleteObjectsResponse response = invoke(request, responseHandler, deleteObjectsRequest.getBucketName(), null);
+            throw e;
+        }
 
         /*
          * If the result was only partially successful, throw an exception
@@ -2352,10 +2395,21 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
             throw ex;
         }
+
         DeleteObjectsResult result = new DeleteObjectsResult(response.getDeletedObjects(), response.isRequesterCharged());
 
         return result;
     }
+
+    private void handleSlowDownException(MultiObjectDeleteSlowdownException e, Map<String, String> headers) {
+        e.setRequestId(headers.get(Headers.REQUEST_ID));
+        e.setExtendedRequestId(headers.get(Headers.EXTENDED_REQUEST_ID));
+        e.setCloudFrontId(headers.get(Headers.CLOUD_FRONT_ID));
+        e.setProxyHost(clientConfiguration.getProxyHost());
+
+        throw e;
+    }
+
 
     @Override
     public void deleteVersion(String bucketName, String key, String versionId)
@@ -2913,7 +2967,17 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBucketAccelerateConfiguration");
         request.addParameter("accelerate", null);
 
-        return invoke(request, new Unmarshallers.BucketAccelerateConfigurationUnmarshaller(), bucketName, null);
+        populateRequesterPaysHeader(request, getBucketAccelerateConfigurationRequest.isRequesterPays());
+
+        @SuppressWarnings("unchecked")
+        ResponseHeaderHandlerChain<BucketAccelerateConfiguration> responseHandler =
+                new ResponseHeaderHandlerChain<BucketAccelerateConfiguration>(
+                        // xml payload unmarshaller
+                        new Unmarshallers.BucketAccelerateConfigurationUnmarshaller(),
+                        // header handler
+                        new S3RequesterChargedHeaderHandler<BucketAccelerateConfiguration>());
+
+        return invoke(request, responseHandler, bucketName, null);
     }
 
     @Override
@@ -3611,6 +3675,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             request.addParameter("uploadId", uploadId);
 
             populateRequesterPaysHeader(request, completeMultipartUploadRequest.isRequesterPays());
+            populateSSE_C(request, completeMultipartUploadRequest.getSSECustomerKey());
 
             byte[] xml = RequestXmlFactory.convertToXmlByteArray(completeMultipartUploadRequest.getPartETags());
             request.addHeader("Content-Type", "application/xml");
@@ -3628,6 +3693,20 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                     new S3VersionHeaderHandler<CompleteMultipartUploadHandler>(),
                     new S3RequesterChargedHeaderHandler<CompleteMultipartUploadHandler>());
             handler = invoke(request, responseHandler, bucketName, key);
+
+            /**
+             * When the number of parts is greater than 1000, CompleteMultipartUpload will return an HTTP 200 OK code
+             * even when there is an error, e.g., Slowdown, EntityTooSmall. We need to manually set the status code and
+             * service name in this case of a 200 error response, similar to CopyObject.
+             */
+            AmazonS3Exception ase = handler.getAmazonS3Exception();
+            if (ase != null) {
+                ase.setStatusCode(200);
+                ase.setServiceName(request.getServiceName());
+
+                throw ase;
+            }
+
             if (handler.getCompleteMultipartUploadResult() != null) {
                 return handler.getCompleteMultipartUploadResult();
             }
@@ -3749,7 +3828,17 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         if (listMultipartUploadsRequest.getPrefix() != null) request.addParameter("prefix", listMultipartUploadsRequest.getPrefix());
         if (listMultipartUploadsRequest.getEncodingType() != null) request.addParameter("encoding-type", listMultipartUploadsRequest.getEncodingType());
 
-        return invoke(request, new Unmarshallers.ListMultipartUploadsResultUnmarshaller(), listMultipartUploadsRequest.getBucketName(), null);
+        populateRequesterPaysHeader(request, listMultipartUploadsRequest.isRequesterPays());
+
+        @SuppressWarnings("unchecked")
+        ResponseHeaderHandlerChain<MultipartUploadListing> responseHandler =
+                new ResponseHeaderHandlerChain<MultipartUploadListing>(
+                        // xml payload unmarshaller
+                        new Unmarshallers.ListMultipartUploadsResultUnmarshaller(),
+                        // header handler
+                        new S3RequesterChargedHeaderHandler<MultipartUploadListing>());
+
+        return invoke(request, responseHandler, listMultipartUploadsRequest.getBucketName(), null);
     }
 
     @Override
@@ -4189,7 +4278,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                      // update the request with that endpoint if accelerate mode is not enabled
                      request.addHandlerContext(HandlerContextKey.SIGNING_REGION, region);
                      if (!clientOptions.isAccelerateModeEnabled()) {
-                         resolveRequestEndpoint(request, bucketName, key, RuntimeHttpUtils.toUri(RegionUtils.getRegion(region).getServiceEndpoint(S3_SERVICE_NAME), clientConfiguration));
+                         String serviceEndpoint = RegionUtils.getRegion(region).getServiceEndpoint(S3_SERVICE_NAME);
+                         resolveRequestEndpoint(request,
+                                                bucketName,
+                                                key,
+                                                RuntimeHttpUtils.toUri(serviceEndpoint, clientConfiguration),
+                                                region);
                      }
                      return updateSigV4SignerWithServiceAndRegion((AWSS3V4Signer) signer, request, region);
                 } else if (request.getOriginalRequest() instanceof GeneratePresignedUrlRequest) {
@@ -4837,7 +4931,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                                                + "in the AWS SDK for Java 2.x.");
         }
         Request<?> request = new DefaultRequest<Object>(Constants.S3_SERVICE_DISPLAY_NAME);
-        resolveRequestEndpoint(request, bucketName, key, endpoint);
+        resolveRequestEndpoint(request, bucketName, key, endpoint, null);
         return ServiceUtils.convertRequestToUrl(request, false, false);
     }
 
@@ -4977,7 +5071,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             com.amazonaws.regions.Region region = RegionUtils.getRegion(getRegionName());
             endpoint = getEndpointForObjectLambdas(region.getDomain(), region.getName());
 
-            resolveRequestEndpoint(request, null, null, endpoint);
+            resolveRequestEndpoint(request, null, null, endpoint, null);
 
             if (originalRequest instanceof WriteGetObjectResponseRequest
                 && !clientConfiguration.isDisableHostPrefixInjection()) {
@@ -4985,6 +5079,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 WriteGetObjectResponseRequest writeGetObjectResponseRequest = (WriteGetObjectResponseRequest) originalRequest;
 
                 rejectNull(writeGetObjectResponseRequest.getRequestRoute(), "requestRoute must not be null");
+                HostnameValidator.validateHostnameCompliant(writeGetObjectResponseRequest.getRequestRoute(),
+                        "RequestRoute", "writeGetObjectResponseRequest");
 
                 String requestRoute = writeGetObjectResponseRequest.getRequestRoute() + ".";
                 URI newEndpoint = UriResourcePathUtils.updateUriHost(request.getEndpoint(), requestRoute);
@@ -5010,7 +5106,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             }
         }
 
-        resolveRequestEndpoint(request, bucketName, key, endpoint);
+        resolveRequestEndpoint(request, bucketName, key, endpoint, null);
         request.addHandlerContext(HandlerContextKey.SIGNING_REGION, signingRegion);
 
         return request;
@@ -5202,19 +5298,25 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      * Configure the given request with an endpoint and resource path based on the bucket name and
      * key provided
      */
-    private void resolveRequestEndpoint(Request<?> request, String bucketName, String key, URI endpoint) {
-        ServiceEndpointBuilder builder = getBuilder(endpoint, endpoint.getScheme(), false);
+    private void resolveRequestEndpoint(Request<?> request, String bucketName, String key, URI endpoint, String regionStr) {
+        ServiceEndpointBuilder builder = getBuilder(endpoint, regionStr, endpoint.getScheme(), false);
         buildEndpointResolver(builder, bucketName, key).resolveRequestEndpoint(request);
     }
 
     private S3RequestEndpointResolver buildDefaultEndpointResolver(String protocol, String bucketName, String key) {
-        ServiceEndpointBuilder builder = getBuilder(endpoint, protocol, true);
+        ServiceEndpointBuilder builder = getBuilder(endpoint, null, protocol, true);
         return new S3RequestEndpointResolver(builder, clientOptions.isPathStyleAccess(), bucketName, key);
     }
 
-    private ServiceEndpointBuilder getBuilder(URI endpoint, String protocol, boolean useDefaultBuilder) {
+    private ServiceEndpointBuilder getBuilder(URI endpoint, String regionStr, String protocol, boolean useDefaultBuilder) {
         if(clientOptions.isDualstackEnabled() && !clientOptions.isAccelerateModeEnabled()) {
-            return new DualstackEndpointBuilder(getServiceNameIntern(), protocol, getRegion().toAWSRegion());
+            com.amazonaws.regions.Region awsRegion;
+            if (regionStr != null) {
+                awsRegion = RegionUtils.getRegion(regionStr);
+            } else {
+                awsRegion = getRegion().toAWSRegion();
+            }
+            return new DualstackEndpointBuilder(getServiceNameIntern(), protocol, awsRegion);
         } else {
             if(useDefaultBuilder) {
                 return new DefaultServiceEndpointBuilder(getServiceName(), protocol);
@@ -5474,6 +5576,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                     ase.setErrorMessage("The bucket is in this region: " + region +
                                         ". Please use this region to retry the request");
                 }
+            } else if ("SignatureDoesNotMatch".equals(ase.getErrorCode()) && !BucketNameUtils.isDNSBucketName(bucket)) {
+                String originalMsg = ase.getErrorMessage();
+                ase.setErrorMessage(originalMsg + " If you start to see this issue after you upgrade the SDK to 1.12.460 or "
+                                    + "later, it could be because the bucket provided contains '/'. "
+                                    + "See https://github.com/aws/aws-sdk-java/discussions/2976 for more details");
             }
             throw ase;
         } finally {

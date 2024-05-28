@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -426,7 +426,7 @@ public interface AWSIoTFleetWiseAsync extends AWSIoTFleetWise {
      * </p>
      * <note>
      * <p>
-     * If you have an existing Amazon Web Services IoT Thing, you can use Amazon Web Services IoT FleetWise to create a
+     * If you have an existing Amazon Web Services IoT thing, you can use Amazon Web Services IoT FleetWise to create a
      * vehicle and collect data from your thing.
      * </p>
      * </note>
@@ -451,7 +451,7 @@ public interface AWSIoTFleetWiseAsync extends AWSIoTFleetWise {
      * </p>
      * <note>
      * <p>
-     * If you have an existing Amazon Web Services IoT Thing, you can use Amazon Web Services IoT FleetWise to create a
+     * If you have an existing Amazon Web Services IoT thing, you can use Amazon Web Services IoT FleetWise to create a
      * vehicle and collect data from your thing.
      * </p>
      * </note>
@@ -834,6 +834,39 @@ public interface AWSIoTFleetWiseAsync extends AWSIoTFleetWise {
      */
     java.util.concurrent.Future<GetDecoderManifestResult> getDecoderManifestAsync(GetDecoderManifestRequest getDecoderManifestRequest,
             com.amazonaws.handlers.AsyncHandler<GetDecoderManifestRequest, GetDecoderManifestResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the encryption configuration for resources and data in Amazon Web Services IoT FleetWise.
+     * </p>
+     * 
+     * @param getEncryptionConfigurationRequest
+     * @return A Java Future containing the result of the GetEncryptionConfiguration operation returned by the service.
+     * @sample AWSIoTFleetWiseAsync.GetEncryptionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/GetEncryptionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetEncryptionConfigurationResult> getEncryptionConfigurationAsync(
+            GetEncryptionConfigurationRequest getEncryptionConfigurationRequest);
+
+    /**
+     * <p>
+     * Retrieves the encryption configuration for resources and data in Amazon Web Services IoT FleetWise.
+     * </p>
+     * 
+     * @param getEncryptionConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetEncryptionConfiguration operation returned by the service.
+     * @sample AWSIoTFleetWiseAsyncHandler.GetEncryptionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/GetEncryptionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetEncryptionConfigurationResult> getEncryptionConfigurationAsync(
+            GetEncryptionConfigurationRequest getEncryptionConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetEncryptionConfigurationRequest, GetEncryptionConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -1701,6 +1734,47 @@ public interface AWSIoTFleetWiseAsync extends AWSIoTFleetWise {
 
     /**
      * <p>
+     * Creates or updates the encryption configuration. Amazon Web Services IoT FleetWise can encrypt your data and
+     * resources using an Amazon Web Services managed key. Or, you can use a KMS key that you own and manage. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/data-encryption.html">Data encryption</a>
+     * in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.
+     * </p>
+     * 
+     * @param putEncryptionConfigurationRequest
+     * @return A Java Future containing the result of the PutEncryptionConfiguration operation returned by the service.
+     * @sample AWSIoTFleetWiseAsync.PutEncryptionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/PutEncryptionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutEncryptionConfigurationResult> putEncryptionConfigurationAsync(
+            PutEncryptionConfigurationRequest putEncryptionConfigurationRequest);
+
+    /**
+     * <p>
+     * Creates or updates the encryption configuration. Amazon Web Services IoT FleetWise can encrypt your data and
+     * resources using an Amazon Web Services managed key. Or, you can use a KMS key that you own and manage. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/data-encryption.html">Data encryption</a>
+     * in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.
+     * </p>
+     * 
+     * @param putEncryptionConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutEncryptionConfiguration operation returned by the service.
+     * @sample AWSIoTFleetWiseAsyncHandler.PutEncryptionConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotfleetwise-2021-06-17/PutEncryptionConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutEncryptionConfigurationResult> putEncryptionConfigurationAsync(
+            PutEncryptionConfigurationRequest putEncryptionConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutEncryptionConfigurationRequest, PutEncryptionConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates or updates the logging option.
      * </p>
      * 
@@ -1731,6 +1805,28 @@ public interface AWSIoTFleetWiseAsync extends AWSIoTFleetWise {
             com.amazonaws.handlers.AsyncHandler<PutLoggingOptionsRequest, PutLoggingOptionsResult> asyncHandler);
 
     /**
+     * <important>
+     * <p>
+     * This API operation contains deprecated parameters. Register your account again without the Timestream resources
+     * parameter so that Amazon Web Services IoT FleetWise can remove the Timestream metadata stored. You should then
+     * pass the data destination into the <a
+     * href="https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_CreateCampaign.html">CreateCampaign</a>
+     * API operation.
+     * </p>
+     * <p>
+     * You must delete any existing campaigns that include an empty data destination before you register your account
+     * again. For more information, see the <a
+     * href="https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_DeleteCampaign.html">DeleteCampaign</a>
+     * API operation.
+     * </p>
+     * <p>
+     * If you want to delete the Timestream inline policy from the service-linked role, such as to mitigate an overly
+     * permissive policy, you must first delete any existing campaigns. Then delete the service-linked role and register
+     * your account again to enable CloudWatch metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServiceLinkedRole.html"
+     * >DeleteServiceLinkedRole</a> in the <i>Identity and Access Management API Reference</i>.
+     * </p>
+     * </important>
      * <p>
      * Registers your Amazon Web Services account, IAM, and Amazon Timestream resources so Amazon Web Services IoT
      * FleetWise can transfer your vehicle data to the Amazon Web Services Cloud. For more information, including
@@ -1740,7 +1836,7 @@ public interface AWSIoTFleetWiseAsync extends AWSIoTFleetWise {
      * </p>
      * <note>
      * <p>
-     * An Amazon Web Services account is <b>not</b> the same thing as a "user account". An <a href=
+     * An Amazon Web Services account is <b>not</b> the same thing as a "user." An <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction_identity-management.html#intro-identity-users"
      * >Amazon Web Services user</a> is an identity that you create using Identity and Access Management (IAM) and takes
      * the form of either an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html">IAM user</a> or an
@@ -1758,6 +1854,28 @@ public interface AWSIoTFleetWiseAsync extends AWSIoTFleetWise {
     java.util.concurrent.Future<RegisterAccountResult> registerAccountAsync(RegisterAccountRequest registerAccountRequest);
 
     /**
+     * <important>
+     * <p>
+     * This API operation contains deprecated parameters. Register your account again without the Timestream resources
+     * parameter so that Amazon Web Services IoT FleetWise can remove the Timestream metadata stored. You should then
+     * pass the data destination into the <a
+     * href="https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_CreateCampaign.html">CreateCampaign</a>
+     * API operation.
+     * </p>
+     * <p>
+     * You must delete any existing campaigns that include an empty data destination before you register your account
+     * again. For more information, see the <a
+     * href="https://docs.aws.amazon.com/iot-fleetwise/latest/APIReference/API_DeleteCampaign.html">DeleteCampaign</a>
+     * API operation.
+     * </p>
+     * <p>
+     * If you want to delete the Timestream inline policy from the service-linked role, such as to mitigate an overly
+     * permissive policy, you must first delete any existing campaigns. Then delete the service-linked role and register
+     * your account again to enable CloudWatch metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServiceLinkedRole.html"
+     * >DeleteServiceLinkedRole</a> in the <i>Identity and Access Management API Reference</i>.
+     * </p>
+     * </important>
      * <p>
      * Registers your Amazon Web Services account, IAM, and Amazon Timestream resources so Amazon Web Services IoT
      * FleetWise can transfer your vehicle data to the Amazon Web Services Cloud. For more information, including
@@ -1767,7 +1885,7 @@ public interface AWSIoTFleetWiseAsync extends AWSIoTFleetWise {
      * </p>
      * <note>
      * <p>
-     * An Amazon Web Services account is <b>not</b> the same thing as a "user account". An <a href=
+     * An Amazon Web Services account is <b>not</b> the same thing as a "user." An <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction_identity-management.html#intro-identity-users"
      * >Amazon Web Services user</a> is an identity that you create using Identity and Access Management (IAM) and takes
      * the form of either an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html">IAM user</a> or an

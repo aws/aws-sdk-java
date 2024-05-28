@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,10 +18,19 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <note>
  * <p>
- * Specifies the Auto-Tune maintenance schedule. See <a
- * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune
- * for Amazon OpenSearch Service </a> for more information.
+ * This object is deprecated. Use the domain's <a
+ * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak window</a> to
+ * schedule Auto-Tune optimizations. For migration instructions, see <a
+ * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html#off-peak-migrate">Migrating
+ * from Auto-Tune maintenance windows</a>.
+ * </p>
+ * </note>
+ * <p>
+ * The Auto-Tune maintenance schedule. For more information, see <a
+ * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune for Amazon
+ * OpenSearch Service</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -29,34 +38,30 @@ public class AutoTuneMaintenanceSchedule implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The timestamp at which the Auto-Tune maintenance schedule starts.
+     * The Epoch timestamp at which the Auto-Tune maintenance schedule starts.
      * </p>
      */
     private java.util.Date startAt;
     /**
      * <p>
-     * Specifies maintenance schedule duration: duration value and duration unit. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * The duration of the maintenance schedule. For example, <code>"Duration": {"Value": 2, "Unit": "HOURS"}</code>.
      * </p>
      */
     private Duration duration;
     /**
      * <p>
-     * A cron expression for a recurring maintenance schedule. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * A cron expression for a recurring maintenance schedule during which Auto-Tune can deploy changes.
      * </p>
      */
     private String cronExpressionForRecurrence;
 
     /**
      * <p>
-     * The timestamp at which the Auto-Tune maintenance schedule starts.
+     * The Epoch timestamp at which the Auto-Tune maintenance schedule starts.
      * </p>
      * 
      * @param startAt
-     *        The timestamp at which the Auto-Tune maintenance schedule starts.
+     *        The Epoch timestamp at which the Auto-Tune maintenance schedule starts.
      */
 
     public void setStartAt(java.util.Date startAt) {
@@ -65,10 +70,10 @@ public class AutoTuneMaintenanceSchedule implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The timestamp at which the Auto-Tune maintenance schedule starts.
+     * The Epoch timestamp at which the Auto-Tune maintenance schedule starts.
      * </p>
      * 
-     * @return The timestamp at which the Auto-Tune maintenance schedule starts.
+     * @return The Epoch timestamp at which the Auto-Tune maintenance schedule starts.
      */
 
     public java.util.Date getStartAt() {
@@ -77,11 +82,11 @@ public class AutoTuneMaintenanceSchedule implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The timestamp at which the Auto-Tune maintenance schedule starts.
+     * The Epoch timestamp at which the Auto-Tune maintenance schedule starts.
      * </p>
      * 
      * @param startAt
-     *        The timestamp at which the Auto-Tune maintenance schedule starts.
+     *        The Epoch timestamp at which the Auto-Tune maintenance schedule starts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,15 +97,12 @@ public class AutoTuneMaintenanceSchedule implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specifies maintenance schedule duration: duration value and duration unit. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * The duration of the maintenance schedule. For example, <code>"Duration": {"Value": 2, "Unit": "HOURS"}</code>.
      * </p>
      * 
      * @param duration
-     *        Specifies maintenance schedule duration: duration value and duration unit. See <a
-     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     *        target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     *        The duration of the maintenance schedule. For example,
+     *        <code>"Duration": {"Value": 2, "Unit": "HOURS"}</code>.
      */
 
     public void setDuration(Duration duration) {
@@ -109,14 +111,11 @@ public class AutoTuneMaintenanceSchedule implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specifies maintenance schedule duration: duration value and duration unit. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * The duration of the maintenance schedule. For example, <code>"Duration": {"Value": 2, "Unit": "HOURS"}</code>.
      * </p>
      * 
-     * @return Specifies maintenance schedule duration: duration value and duration unit. See <a
-     *         href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     *         target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * @return The duration of the maintenance schedule. For example,
+     *         <code>"Duration": {"Value": 2, "Unit": "HOURS"}</code>.
      */
 
     public Duration getDuration() {
@@ -125,15 +124,12 @@ public class AutoTuneMaintenanceSchedule implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specifies maintenance schedule duration: duration value and duration unit. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * The duration of the maintenance schedule. For example, <code>"Duration": {"Value": 2, "Unit": "HOURS"}</code>.
      * </p>
      * 
      * @param duration
-     *        Specifies maintenance schedule duration: duration value and duration unit. See <a
-     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     *        target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     *        The duration of the maintenance schedule. For example,
+     *        <code>"Duration": {"Value": 2, "Unit": "HOURS"}</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,15 +140,11 @@ public class AutoTuneMaintenanceSchedule implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * A cron expression for a recurring maintenance schedule. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * A cron expression for a recurring maintenance schedule during which Auto-Tune can deploy changes.
      * </p>
      * 
      * @param cronExpressionForRecurrence
-     *        A cron expression for a recurring maintenance schedule. See <a
-     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     *        target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     *        A cron expression for a recurring maintenance schedule during which Auto-Tune can deploy changes.
      */
 
     public void setCronExpressionForRecurrence(String cronExpressionForRecurrence) {
@@ -161,14 +153,10 @@ public class AutoTuneMaintenanceSchedule implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * A cron expression for a recurring maintenance schedule. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * A cron expression for a recurring maintenance schedule during which Auto-Tune can deploy changes.
      * </p>
      * 
-     * @return A cron expression for a recurring maintenance schedule. See <a
-     *         href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     *         target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * @return A cron expression for a recurring maintenance schedule during which Auto-Tune can deploy changes.
      */
 
     public String getCronExpressionForRecurrence() {
@@ -177,15 +165,11 @@ public class AutoTuneMaintenanceSchedule implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * A cron expression for a recurring maintenance schedule. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * A cron expression for a recurring maintenance schedule during which Auto-Tune can deploy changes.
      * </p>
      * 
      * @param cronExpressionForRecurrence
-     *        A cron expression for a recurring maintenance schedule. See <a
-     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     *        target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     *        A cron expression for a recurring maintenance schedule during which Auto-Tune can deploy changes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

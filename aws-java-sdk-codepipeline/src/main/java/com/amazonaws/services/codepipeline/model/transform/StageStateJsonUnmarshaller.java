@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,12 @@ public class StageStateJsonUnmarshaller implements Unmarshaller<StageState, Json
                 if (context.testExpression("inboundExecution", targetDepth)) {
                     context.nextToken();
                     stageState.setInboundExecution(StageExecutionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("inboundExecutions", targetDepth)) {
+                    context.nextToken();
+                    stageState.setInboundExecutions(new ListUnmarshaller<StageExecution>(StageExecutionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("inboundTransitionState", targetDepth)) {
                     context.nextToken();

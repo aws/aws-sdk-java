@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Updates to the configuration of Kinesis Data Analytics Studio notebook.
+ * Updates to the configuration of Managed Service for Apache Flink Studio notebook.
  * </p>
  * 
  * @see <a
@@ -31,14 +31,14 @@ public class ZeppelinApplicationConfigurationUpdate implements Serializable, Clo
 
     /**
      * <p>
-     * Updates to the monitoring configuration of a Kinesis Data Analytics Studio notebook.
+     * Updates to the monitoring configuration of a Managed Service for Apache Flink Studio notebook.
      * </p>
      */
     private ZeppelinMonitoringConfigurationUpdate monitoringConfigurationUpdate;
     /**
      * <p>
-     * Updates to the configuration of the Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics
-     * Studio notebook.
+     * Updates to the configuration of the Amazon Glue Data Catalog that is associated with the Managed Service for
+     * Apache Flink Studio notebook.
      * </p>
      */
     private CatalogConfigurationUpdate catalogConfigurationUpdate;
@@ -53,11 +53,11 @@ public class ZeppelinApplicationConfigurationUpdate implements Serializable, Clo
 
     /**
      * <p>
-     * Updates to the monitoring configuration of a Kinesis Data Analytics Studio notebook.
+     * Updates to the monitoring configuration of a Managed Service for Apache Flink Studio notebook.
      * </p>
      * 
      * @param monitoringConfigurationUpdate
-     *        Updates to the monitoring configuration of a Kinesis Data Analytics Studio notebook.
+     *        Updates to the monitoring configuration of a Managed Service for Apache Flink Studio notebook.
      */
 
     public void setMonitoringConfigurationUpdate(ZeppelinMonitoringConfigurationUpdate monitoringConfigurationUpdate) {
@@ -66,10 +66,10 @@ public class ZeppelinApplicationConfigurationUpdate implements Serializable, Clo
 
     /**
      * <p>
-     * Updates to the monitoring configuration of a Kinesis Data Analytics Studio notebook.
+     * Updates to the monitoring configuration of a Managed Service for Apache Flink Studio notebook.
      * </p>
      * 
-     * @return Updates to the monitoring configuration of a Kinesis Data Analytics Studio notebook.
+     * @return Updates to the monitoring configuration of a Managed Service for Apache Flink Studio notebook.
      */
 
     public ZeppelinMonitoringConfigurationUpdate getMonitoringConfigurationUpdate() {
@@ -78,11 +78,11 @@ public class ZeppelinApplicationConfigurationUpdate implements Serializable, Clo
 
     /**
      * <p>
-     * Updates to the monitoring configuration of a Kinesis Data Analytics Studio notebook.
+     * Updates to the monitoring configuration of a Managed Service for Apache Flink Studio notebook.
      * </p>
      * 
      * @param monitoringConfigurationUpdate
-     *        Updates to the monitoring configuration of a Kinesis Data Analytics Studio notebook.
+     *        Updates to the monitoring configuration of a Managed Service for Apache Flink Studio notebook.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,13 +93,13 @@ public class ZeppelinApplicationConfigurationUpdate implements Serializable, Clo
 
     /**
      * <p>
-     * Updates to the configuration of the Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics
-     * Studio notebook.
+     * Updates to the configuration of the Amazon Glue Data Catalog that is associated with the Managed Service for
+     * Apache Flink Studio notebook.
      * </p>
      * 
      * @param catalogConfigurationUpdate
-     *        Updates to the configuration of the Amazon Glue Data Catalog that is associated with the Kinesis Data
-     *        Analytics Studio notebook.
+     *        Updates to the configuration of the Amazon Glue Data Catalog that is associated with the Managed Service
+     *        for Apache Flink Studio notebook.
      */
 
     public void setCatalogConfigurationUpdate(CatalogConfigurationUpdate catalogConfigurationUpdate) {
@@ -108,12 +108,12 @@ public class ZeppelinApplicationConfigurationUpdate implements Serializable, Clo
 
     /**
      * <p>
-     * Updates to the configuration of the Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics
-     * Studio notebook.
+     * Updates to the configuration of the Amazon Glue Data Catalog that is associated with the Managed Service for
+     * Apache Flink Studio notebook.
      * </p>
      * 
-     * @return Updates to the configuration of the Amazon Glue Data Catalog that is associated with the Kinesis Data
-     *         Analytics Studio notebook.
+     * @return Updates to the configuration of the Amazon Glue Data Catalog that is associated with the Managed Service
+     *         for Apache Flink Studio notebook.
      */
 
     public CatalogConfigurationUpdate getCatalogConfigurationUpdate() {
@@ -122,13 +122,13 @@ public class ZeppelinApplicationConfigurationUpdate implements Serializable, Clo
 
     /**
      * <p>
-     * Updates to the configuration of the Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics
-     * Studio notebook.
+     * Updates to the configuration of the Amazon Glue Data Catalog that is associated with the Managed Service for
+     * Apache Flink Studio notebook.
      * </p>
      * 
      * @param catalogConfigurationUpdate
-     *        Updates to the configuration of the Amazon Glue Data Catalog that is associated with the Kinesis Data
-     *        Analytics Studio notebook.
+     *        Updates to the configuration of the Amazon Glue Data Catalog that is associated with the Managed Service
+     *        for Apache Flink Studio notebook.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,10 +24,20 @@ import javax.annotation.Generated;
 public class UpdateSipMediaApplicationCallResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {
 
+    /**
+     * <p>
+     * A <code>Call</code> instance for a SIP media application.
+     * </p>
+     */
     private SipMediaApplicationCall sipMediaApplicationCall;
 
     /**
+     * <p>
+     * A <code>Call</code> instance for a SIP media application.
+     * </p>
+     * 
      * @param sipMediaApplicationCall
+     *        A <code>Call</code> instance for a SIP media application.
      */
 
     public void setSipMediaApplicationCall(SipMediaApplicationCall sipMediaApplicationCall) {
@@ -35,7 +45,11 @@ public class UpdateSipMediaApplicationCallResult extends com.amazonaws.AmazonWeb
     }
 
     /**
-     * @return
+     * <p>
+     * A <code>Call</code> instance for a SIP media application.
+     * </p>
+     * 
+     * @return A <code>Call</code> instance for a SIP media application.
      */
 
     public SipMediaApplicationCall getSipMediaApplicationCall() {
@@ -43,7 +57,12 @@ public class UpdateSipMediaApplicationCallResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * A <code>Call</code> instance for a SIP media application.
+     * </p>
+     * 
      * @param sipMediaApplicationCall
+     *        A <code>Call</code> instance for a SIP media application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

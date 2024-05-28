@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class TraceSummaryMarshaller {
 
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Id").build();
+    private static final MarshallingInfo<java.util.Date> STARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Double> DURATION_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Duration").build();
     private static final MarshallingInfo<Double> RESPONSETIME_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
@@ -87,6 +89,7 @@ public class TraceSummaryMarshaller {
 
         try {
             protocolMarshaller.marshall(traceSummary.getId(), ID_BINDING);
+            protocolMarshaller.marshall(traceSummary.getStartTime(), STARTTIME_BINDING);
             protocolMarshaller.marshall(traceSummary.getDuration(), DURATION_BINDING);
             protocolMarshaller.marshall(traceSummary.getResponseTime(), RESPONSETIME_BINDING);
             protocolMarshaller.marshall(traceSummary.getHasFault(), HASFAULT_BINDING);

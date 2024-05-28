@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -77,6 +77,10 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>StartDataSourceSyncJob</code> API to update the index.
      * </p>
      * <p>
+     * Specify a <code>cron-</code> format schedule string or an empty string to indicate that the index is updated on
+     * demand.
+     * </p>
+     * <p>
      * You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to
      * <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
      * </p>
@@ -84,9 +88,9 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
     private String schedule;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a role with permission to access the data source and required resources. For
-     * more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon
-     * Kendra</a>.
+     * The Amazon Resource Name (ARN) of an IAM role with permission to access the data source and required resources.
+     * For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles
+     * for Amazon Kendra.</a>.
      * </p>
      * <p>
      * You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to
@@ -99,8 +103,9 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
     private String roleArn;
     /**
      * <p>
-     * A list of key-value pairs that identify the data source connector. You can use the tags to identify and organize
-     * your resources and to control access to resources.
+     * A list of key-value pairs that identify or categorize the data source connector. You can also use tags to help
+     * control access to the data source connector. Tag keys and values can consist of Unicode letters, digits, white
+     * space, and any of the following symbols: _ . : / = + - @.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -450,6 +455,10 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>StartDataSourceSyncJob</code> API to update the index.
      * </p>
      * <p>
+     * Specify a <code>cron-</code> format schedule string or an empty string to indicate that the index is updated on
+     * demand.
+     * </p>
+     * <p>
      * You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to
      * <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
      * </p>
@@ -458,6 +467,10 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Sets the frequency for Amazon Kendra to check the documents in your data source repository and update the
      *        index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the
      *        <code>StartDataSourceSyncJob</code> API to update the index.</p>
+     *        <p>
+     *        Specify a <code>cron-</code> format schedule string or an empty string to indicate that the index is
+     *        updated on demand.
+     *        </p>
      *        <p>
      *        You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to
      *        <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
@@ -474,6 +487,10 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>StartDataSourceSyncJob</code> API to update the index.
      * </p>
      * <p>
+     * Specify a <code>cron-</code> format schedule string or an empty string to indicate that the index is updated on
+     * demand.
+     * </p>
+     * <p>
      * You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to
      * <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
      * </p>
@@ -481,6 +498,10 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * @return Sets the frequency for Amazon Kendra to check the documents in your data source repository and update the
      *         index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the
      *         <code>StartDataSourceSyncJob</code> API to update the index.</p>
+     *         <p>
+     *         Specify a <code>cron-</code> format schedule string or an empty string to indicate that the index is
+     *         updated on demand.
+     *         </p>
      *         <p>
      *         You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to
      *         <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
@@ -497,6 +518,10 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>StartDataSourceSyncJob</code> API to update the index.
      * </p>
      * <p>
+     * Specify a <code>cron-</code> format schedule string or an empty string to indicate that the index is updated on
+     * demand.
+     * </p>
+     * <p>
      * You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to
      * <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
      * </p>
@@ -505,6 +530,10 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Sets the frequency for Amazon Kendra to check the documents in your data source repository and update the
      *        index. If you don't set a schedule Amazon Kendra will not periodically update the index. You can call the
      *        <code>StartDataSourceSyncJob</code> API to update the index.</p>
+     *        <p>
+     *        Specify a <code>cron-</code> format schedule string or an empty string to indicate that the index is
+     *        updated on demand.
+     *        </p>
      *        <p>
      *        You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter is set to
      *        <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
@@ -518,9 +547,9 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a role with permission to access the data source and required resources. For
-     * more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon
-     * Kendra</a>.
+     * The Amazon Resource Name (ARN) of an IAM role with permission to access the data source and required resources.
+     * For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles
+     * for Amazon Kendra.</a>.
      * </p>
      * <p>
      * You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to
@@ -531,9 +560,10 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of a role with permission to access the data source and required resources.
-     *        For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles
-     *        for Amazon Kendra</a>.</p>
+     *        The Amazon Resource Name (ARN) of an IAM role with permission to access the data source and required
+     *        resources. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon
+     *        Kendra.</a>.</p>
      *        <p>
      *        You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to
      *        <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
@@ -548,9 +578,9 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a role with permission to access the data source and required resources. For
-     * more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon
-     * Kendra</a>.
+     * The Amazon Resource Name (ARN) of an IAM role with permission to access the data source and required resources.
+     * For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles
+     * for Amazon Kendra.</a>.
      * </p>
      * <p>
      * You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to
@@ -560,9 +590,10 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * The <code>RoleArn</code> parameter is required for all other data sources.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of a role with permission to access the data source and required
+     * @return The Amazon Resource Name (ARN) of an IAM role with permission to access the data source and required
      *         resources. For more information, see <a
-     *         href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon Kendra</a>.</p>
+     *         href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon
+     *         Kendra.</a>.</p>
      *         <p>
      *         You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to
      *         <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
@@ -577,9 +608,9 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of a role with permission to access the data source and required resources. For
-     * more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for Amazon
-     * Kendra</a>.
+     * The Amazon Resource Name (ARN) of an IAM role with permission to access the data source and required resources.
+     * For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles
+     * for Amazon Kendra.</a>.
      * </p>
      * <p>
      * You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to
@@ -590,9 +621,10 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of a role with permission to access the data source and required resources.
-     *        For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles
-     *        for Amazon Kendra</a>.</p>
+     *        The Amazon Resource Name (ARN) of an IAM role with permission to access the data source and required
+     *        resources. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon
+     *        Kendra.</a>.</p>
      *        <p>
      *        You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter is set to
      *        <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code> exception.
@@ -609,12 +641,14 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of key-value pairs that identify the data source connector. You can use the tags to identify and organize
-     * your resources and to control access to resources.
+     * A list of key-value pairs that identify or categorize the data source connector. You can also use tags to help
+     * control access to the data source connector. Tag keys and values can consist of Unicode letters, digits, white
+     * space, and any of the following symbols: _ . : / = + - @.
      * </p>
      * 
-     * @return A list of key-value pairs that identify the data source connector. You can use the tags to identify and
-     *         organize your resources and to control access to resources.
+     * @return A list of key-value pairs that identify or categorize the data source connector. You can also use tags to
+     *         help control access to the data source connector. Tag keys and values can consist of Unicode letters,
+     *         digits, white space, and any of the following symbols: _ . : / = + - @.
      */
 
     public java.util.List<Tag> getTags() {
@@ -623,13 +657,15 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of key-value pairs that identify the data source connector. You can use the tags to identify and organize
-     * your resources and to control access to resources.
+     * A list of key-value pairs that identify or categorize the data source connector. You can also use tags to help
+     * control access to the data source connector. Tag keys and values can consist of Unicode letters, digits, white
+     * space, and any of the following symbols: _ . : / = + - @.
      * </p>
      * 
      * @param tags
-     *        A list of key-value pairs that identify the data source connector. You can use the tags to identify and
-     *        organize your resources and to control access to resources.
+     *        A list of key-value pairs that identify or categorize the data source connector. You can also use tags to
+     *        help control access to the data source connector. Tag keys and values can consist of Unicode letters,
+     *        digits, white space, and any of the following symbols: _ . : / = + - @.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -643,8 +679,9 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of key-value pairs that identify the data source connector. You can use the tags to identify and organize
-     * your resources and to control access to resources.
+     * A list of key-value pairs that identify or categorize the data source connector. You can also use tags to help
+     * control access to the data source connector. Tag keys and values can consist of Unicode letters, digits, white
+     * space, and any of the following symbols: _ . : / = + - @.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -653,8 +690,9 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param tags
-     *        A list of key-value pairs that identify the data source connector. You can use the tags to identify and
-     *        organize your resources and to control access to resources.
+     *        A list of key-value pairs that identify or categorize the data source connector. You can also use tags to
+     *        help control access to the data source connector. Tag keys and values can consist of Unicode letters,
+     *        digits, white space, and any of the following symbols: _ . : / = + - @.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -670,13 +708,15 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A list of key-value pairs that identify the data source connector. You can use the tags to identify and organize
-     * your resources and to control access to resources.
+     * A list of key-value pairs that identify or categorize the data source connector. You can also use tags to help
+     * control access to the data source connector. Tag keys and values can consist of Unicode letters, digits, white
+     * space, and any of the following symbols: _ . : / = + - @.
      * </p>
      * 
      * @param tags
-     *        A list of key-value pairs that identify the data source connector. You can use the tags to identify and
-     *        organize your resources and to control access to resources.
+     *        A list of key-value pairs that identify or categorize the data source connector. You can also use tags to
+     *        help control access to the data source connector. Tag keys and values can consist of Unicode letters,
+     *        digits, white space, and any of the following symbols: _ . : / = + - @.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

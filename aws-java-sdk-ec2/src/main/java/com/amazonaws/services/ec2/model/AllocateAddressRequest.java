@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,17 +27,13 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * Indicates whether the Elastic IP address is for use with instances in a VPC or instances in EC2-Classic.
-     * </p>
-     * <p>
-     * Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default is
-     * <code>vpc</code>.
+     * The network (<code>vpc</code>).
      * </p>
      */
     private String domain;
     /**
      * <p>
-     * [EC2-VPC] The Elastic IP address to recover or an IPv4 address from an address pool.
+     * The Elastic IP address to recover or an IPv4 address from an address pool.
      * </p>
      */
     private String address;
@@ -58,10 +54,6 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
      * Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
      * DescribeAvailabilityZones</a> to view the network border groups.
      * </p>
-     * <p>
-     * You cannot use a network border group with EC2 Classic. If you attempt this operation on EC2 Classic, you receive
-     * an <code>InvalidParameterCombination</code> error.
-     * </p>
      */
     private String networkBorderGroup;
     /**
@@ -80,19 +72,11 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * Indicates whether the Elastic IP address is for use with instances in a VPC or instances in EC2-Classic.
-     * </p>
-     * <p>
-     * Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default is
-     * <code>vpc</code>.
+     * The network (<code>vpc</code>).
      * </p>
      * 
      * @param domain
-     *        Indicates whether the Elastic IP address is for use with instances in a VPC or instances in
-     *        EC2-Classic.</p>
-     *        <p>
-     *        Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default
-     *        is <code>vpc</code>.
+     *        The network (<code>vpc</code>).
      * @see DomainType
      */
 
@@ -102,18 +86,10 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * Indicates whether the Elastic IP address is for use with instances in a VPC or instances in EC2-Classic.
-     * </p>
-     * <p>
-     * Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default is
-     * <code>vpc</code>.
+     * The network (<code>vpc</code>).
      * </p>
      * 
-     * @return Indicates whether the Elastic IP address is for use with instances in a VPC or instances in
-     *         EC2-Classic.</p>
-     *         <p>
-     *         Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default
-     *         is <code>vpc</code>.
+     * @return The network (<code>vpc</code>).
      * @see DomainType
      */
 
@@ -123,19 +99,11 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * Indicates whether the Elastic IP address is for use with instances in a VPC or instances in EC2-Classic.
-     * </p>
-     * <p>
-     * Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default is
-     * <code>vpc</code>.
+     * The network (<code>vpc</code>).
      * </p>
      * 
      * @param domain
-     *        Indicates whether the Elastic IP address is for use with instances in a VPC or instances in
-     *        EC2-Classic.</p>
-     *        <p>
-     *        Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default
-     *        is <code>vpc</code>.
+     *        The network (<code>vpc</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DomainType
      */
@@ -147,19 +115,11 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * Indicates whether the Elastic IP address is for use with instances in a VPC or instances in EC2-Classic.
-     * </p>
-     * <p>
-     * Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default is
-     * <code>vpc</code>.
+     * The network (<code>vpc</code>).
      * </p>
      * 
      * @param domain
-     *        Indicates whether the Elastic IP address is for use with instances in a VPC or instances in
-     *        EC2-Classic.</p>
-     *        <p>
-     *        Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default
-     *        is <code>vpc</code>.
+     *        The network (<code>vpc</code>).
      * @see DomainType
      */
 
@@ -169,19 +129,11 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * Indicates whether the Elastic IP address is for use with instances in a VPC or instances in EC2-Classic.
-     * </p>
-     * <p>
-     * Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default is
-     * <code>vpc</code>.
+     * The network (<code>vpc</code>).
      * </p>
      * 
      * @param domain
-     *        Indicates whether the Elastic IP address is for use with instances in a VPC or instances in
-     *        EC2-Classic.</p>
-     *        <p>
-     *        Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default
-     *        is <code>vpc</code>.
+     *        The network (<code>vpc</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DomainType
      */
@@ -193,11 +145,11 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * [EC2-VPC] The Elastic IP address to recover or an IPv4 address from an address pool.
+     * The Elastic IP address to recover or an IPv4 address from an address pool.
      * </p>
      * 
      * @param address
-     *        [EC2-VPC] The Elastic IP address to recover or an IPv4 address from an address pool.
+     *        The Elastic IP address to recover or an IPv4 address from an address pool.
      */
 
     public void setAddress(String address) {
@@ -206,10 +158,10 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * [EC2-VPC] The Elastic IP address to recover or an IPv4 address from an address pool.
+     * The Elastic IP address to recover or an IPv4 address from an address pool.
      * </p>
      * 
-     * @return [EC2-VPC] The Elastic IP address to recover or an IPv4 address from an address pool.
+     * @return The Elastic IP address to recover or an IPv4 address from an address pool.
      */
 
     public String getAddress() {
@@ -218,11 +170,11 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * [EC2-VPC] The Elastic IP address to recover or an IPv4 address from an address pool.
+     * The Elastic IP address to recover or an IPv4 address from an address pool.
      * </p>
      * 
      * @param address
-     *        [EC2-VPC] The Elastic IP address to recover or an IPv4 address from an address pool.
+     *        The Elastic IP address to recover or an IPv4 address from an address pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -290,10 +242,6 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
      * Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
      * DescribeAvailabilityZones</a> to view the network border groups.
      * </p>
-     * <p>
-     * You cannot use a network border group with EC2 Classic. If you attempt this operation on EC2 Classic, you receive
-     * an <code>InvalidParameterCombination</code> error.
-     * </p>
      * 
      * @param networkBorderGroup
      *        A unique set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services
@@ -302,10 +250,6 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
      *        <p>
      *        Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
      *        DescribeAvailabilityZones</a> to view the network border groups.
-     *        </p>
-     *        <p>
-     *        You cannot use a network border group with EC2 Classic. If you attempt this operation on EC2 Classic, you
-     *        receive an <code>InvalidParameterCombination</code> error.
      */
 
     public void setNetworkBorderGroup(String networkBorderGroup) {
@@ -322,10 +266,6 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
      * Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
      * DescribeAvailabilityZones</a> to view the network border groups.
      * </p>
-     * <p>
-     * You cannot use a network border group with EC2 Classic. If you attempt this operation on EC2 Classic, you receive
-     * an <code>InvalidParameterCombination</code> error.
-     * </p>
      * 
      * @return A unique set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services
      *         advertises IP addresses. Use this parameter to limit the IP address to this location. IP addresses cannot
@@ -333,10 +273,6 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
      *         <p>
      *         Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
      *         DescribeAvailabilityZones</a> to view the network border groups.
-     *         </p>
-     *         <p>
-     *         You cannot use a network border group with EC2 Classic. If you attempt this operation on EC2 Classic, you
-     *         receive an <code>InvalidParameterCombination</code> error.
      */
 
     public String getNetworkBorderGroup() {
@@ -353,10 +289,6 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
      * Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
      * DescribeAvailabilityZones</a> to view the network border groups.
      * </p>
-     * <p>
-     * You cannot use a network border group with EC2 Classic. If you attempt this operation on EC2 Classic, you receive
-     * an <code>InvalidParameterCombination</code> error.
-     * </p>
      * 
      * @param networkBorderGroup
      *        A unique set of Availability Zones, Local Zones, or Wavelength Zones from which Amazon Web Services
@@ -365,10 +297,6 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
      *        <p>
      *        Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
      *        DescribeAvailabilityZones</a> to view the network border groups.
-     *        </p>
-     *        <p>
-     *        You cannot use a network border group with EC2 Classic. If you attempt this operation on EC2 Classic, you
-     *        receive an <code>InvalidParameterCombination</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,12 @@ public class InferenceDeviceInfo implements Serializable, Cloneable {
      * </p>
      */
     private String manufacturer;
+    /**
+     * <p>
+     * Describes the memory available to the inference accelerator.
+     * </p>
+     */
+    private InferenceDeviceMemoryInfo memoryInfo;
 
     /**
      * <p>
@@ -166,6 +172,46 @@ public class InferenceDeviceInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Describes the memory available to the inference accelerator.
+     * </p>
+     * 
+     * @param memoryInfo
+     *        Describes the memory available to the inference accelerator.
+     */
+
+    public void setMemoryInfo(InferenceDeviceMemoryInfo memoryInfo) {
+        this.memoryInfo = memoryInfo;
+    }
+
+    /**
+     * <p>
+     * Describes the memory available to the inference accelerator.
+     * </p>
+     * 
+     * @return Describes the memory available to the inference accelerator.
+     */
+
+    public InferenceDeviceMemoryInfo getMemoryInfo() {
+        return this.memoryInfo;
+    }
+
+    /**
+     * <p>
+     * Describes the memory available to the inference accelerator.
+     * </p>
+     * 
+     * @param memoryInfo
+     *        Describes the memory available to the inference accelerator.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InferenceDeviceInfo withMemoryInfo(InferenceDeviceMemoryInfo memoryInfo) {
+        setMemoryInfo(memoryInfo);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -182,7 +228,9 @@ public class InferenceDeviceInfo implements Serializable, Cloneable {
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getManufacturer() != null)
-            sb.append("Manufacturer: ").append(getManufacturer());
+            sb.append("Manufacturer: ").append(getManufacturer()).append(",");
+        if (getMemoryInfo() != null)
+            sb.append("MemoryInfo: ").append(getMemoryInfo());
         sb.append("}");
         return sb.toString();
     }
@@ -209,6 +257,10 @@ public class InferenceDeviceInfo implements Serializable, Cloneable {
             return false;
         if (other.getManufacturer() != null && other.getManufacturer().equals(this.getManufacturer()) == false)
             return false;
+        if (other.getMemoryInfo() == null ^ this.getMemoryInfo() == null)
+            return false;
+        if (other.getMemoryInfo() != null && other.getMemoryInfo().equals(this.getMemoryInfo()) == false)
+            return false;
         return true;
     }
 
@@ -220,6 +272,7 @@ public class InferenceDeviceInfo implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCount() == null) ? 0 : getCount().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getManufacturer() == null) ? 0 : getManufacturer().hashCode());
+        hashCode = prime * hashCode + ((getMemoryInfo() == null) ? 0 : getMemoryInfo().hashCode());
         return hashCode;
     }
 

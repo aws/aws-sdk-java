@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,17 @@ public class ActionExecutionFilter implements Serializable, Cloneable, Structure
      * </p>
      */
     private String pipelineExecutionId;
+    /**
+     * <p>
+     * The latest execution in the pipeline.
+     * </p>
+     * <note>
+     * <p>
+     * Filtering on the latest execution is available for executions run on or after February 08, 2024.
+     * </p>
+     * </note>
+     */
+    private LatestInPipelineExecutionFilter latestInPipelineExecution;
 
     /**
      * <p>
@@ -76,6 +87,70 @@ public class ActionExecutionFilter implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The latest execution in the pipeline.
+     * </p>
+     * <note>
+     * <p>
+     * Filtering on the latest execution is available for executions run on or after February 08, 2024.
+     * </p>
+     * </note>
+     * 
+     * @param latestInPipelineExecution
+     *        The latest execution in the pipeline.</p> <note>
+     *        <p>
+     *        Filtering on the latest execution is available for executions run on or after February 08, 2024.
+     *        </p>
+     */
+
+    public void setLatestInPipelineExecution(LatestInPipelineExecutionFilter latestInPipelineExecution) {
+        this.latestInPipelineExecution = latestInPipelineExecution;
+    }
+
+    /**
+     * <p>
+     * The latest execution in the pipeline.
+     * </p>
+     * <note>
+     * <p>
+     * Filtering on the latest execution is available for executions run on or after February 08, 2024.
+     * </p>
+     * </note>
+     * 
+     * @return The latest execution in the pipeline.</p> <note>
+     *         <p>
+     *         Filtering on the latest execution is available for executions run on or after February 08, 2024.
+     *         </p>
+     */
+
+    public LatestInPipelineExecutionFilter getLatestInPipelineExecution() {
+        return this.latestInPipelineExecution;
+    }
+
+    /**
+     * <p>
+     * The latest execution in the pipeline.
+     * </p>
+     * <note>
+     * <p>
+     * Filtering on the latest execution is available for executions run on or after February 08, 2024.
+     * </p>
+     * </note>
+     * 
+     * @param latestInPipelineExecution
+     *        The latest execution in the pipeline.</p> <note>
+     *        <p>
+     *        Filtering on the latest execution is available for executions run on or after February 08, 2024.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActionExecutionFilter withLatestInPipelineExecution(LatestInPipelineExecutionFilter latestInPipelineExecution) {
+        setLatestInPipelineExecution(latestInPipelineExecution);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +163,9 @@ public class ActionExecutionFilter implements Serializable, Cloneable, Structure
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPipelineExecutionId() != null)
-            sb.append("PipelineExecutionId: ").append(getPipelineExecutionId());
+            sb.append("PipelineExecutionId: ").append(getPipelineExecutionId()).append(",");
+        if (getLatestInPipelineExecution() != null)
+            sb.append("LatestInPipelineExecution: ").append(getLatestInPipelineExecution());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +184,10 @@ public class ActionExecutionFilter implements Serializable, Cloneable, Structure
             return false;
         if (other.getPipelineExecutionId() != null && other.getPipelineExecutionId().equals(this.getPipelineExecutionId()) == false)
             return false;
+        if (other.getLatestInPipelineExecution() == null ^ this.getLatestInPipelineExecution() == null)
+            return false;
+        if (other.getLatestInPipelineExecution() != null && other.getLatestInPipelineExecution().equals(this.getLatestInPipelineExecution()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +197,7 @@ public class ActionExecutionFilter implements Serializable, Cloneable, Structure
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getPipelineExecutionId() == null) ? 0 : getPipelineExecutionId().hashCode());
+        hashCode = prime * hashCode + ((getLatestInPipelineExecution() == null) ? 0 : getLatestInPipelineExecution().hashCode());
         return hashCode;
     }
 

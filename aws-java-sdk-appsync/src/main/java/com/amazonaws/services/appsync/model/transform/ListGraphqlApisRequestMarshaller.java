@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,10 @@ public class ListGraphqlApisRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
+    private static final MarshallingInfo<String> APITYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("apiType").build();
+    private static final MarshallingInfo<String> OWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("owner").build();
 
     private static final ListGraphqlApisRequestMarshaller instance = new ListGraphqlApisRequestMarshaller();
 
@@ -50,6 +54,8 @@ public class ListGraphqlApisRequestMarshaller {
         try {
             protocolMarshaller.marshall(listGraphqlApisRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listGraphqlApisRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listGraphqlApisRequest.getApiType(), APITYPE_BINDING);
+            protocolMarshaller.marshall(listGraphqlApisRequest.getOwner(), OWNER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

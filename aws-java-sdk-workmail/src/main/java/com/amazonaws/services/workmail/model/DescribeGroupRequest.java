@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,27 @@ public class DescribeGroupRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The identifier for the group to be described.
      * </p>
+     * <p>
+     * The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity formats are
+     * available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: group@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Group name: group
+     * </p>
+     * </li>
+     * </ul>
      */
     private String groupId;
 
@@ -82,9 +103,50 @@ public class DescribeGroupRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The identifier for the group to be described.
      * </p>
+     * <p>
+     * The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity formats are
+     * available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: group@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Group name: group
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param groupId
-     *        The identifier for the group to be described.
+     *        The identifier for the group to be described.</p>
+     *        <p>
+     *        The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity
+     *        formats are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Email address: group@domain.tld
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Group name: group
+     *        </p>
+     *        </li>
      */
 
     public void setGroupId(String groupId) {
@@ -95,8 +157,49 @@ public class DescribeGroupRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The identifier for the group to be described.
      * </p>
+     * <p>
+     * The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity formats are
+     * available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: group@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Group name: group
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The identifier for the group to be described.
+     * @return The identifier for the group to be described.</p>
+     *         <p>
+     *         The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity
+     *         formats are available:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Email address: group@domain.tld
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Group name: group
+     *         </p>
+     *         </li>
      */
 
     public String getGroupId() {
@@ -107,9 +210,50 @@ public class DescribeGroupRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The identifier for the group to be described.
      * </p>
+     * <p>
+     * The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity formats are
+     * available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: group@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Group name: group
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param groupId
-     *        The identifier for the group to be described.
+     *        The identifier for the group to be described.</p>
+     *        <p>
+     *        The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity
+     *        formats are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Email address: group@domain.tld
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Group name: group
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

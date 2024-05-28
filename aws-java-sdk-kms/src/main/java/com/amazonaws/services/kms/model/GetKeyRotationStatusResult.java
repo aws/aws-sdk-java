@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,37 @@ public class GetKeyRotationStatusResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private Boolean keyRotationEnabled;
+    /**
+     * <p>
+     * Identifies the specified symmetric encryption KMS key.
+     * </p>
+     */
+    private String keyId;
+    /**
+     * <p>
+     * The number of days between each automatic rotation. The default value is 365 days.
+     * </p>
+     */
+    private Integer rotationPeriodInDays;
+    /**
+     * <p>
+     * The next date that KMS will automatically rotate the key material.
+     * </p>
+     */
+    private java.util.Date nextRotationDate;
+    /**
+     * <p>
+     * Identifies the date and time that an in progress on-demand rotation was initiated.
+     * </p>
+     * <p>
+     * The KMS API follows an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">eventual
+     * consistency</a> model due to the distributed nature of the system. As a result, there might be a slight delay
+     * between initiating on-demand key rotation and the rotation's completion. Once the on-demand rotation is complete,
+     * use <a>ListKeyRotations</a> to view the details of the on-demand rotation.
+     * </p>
+     */
+    private java.util.Date onDemandRotationStartDate;
 
     /**
      * <p>
@@ -83,6 +114,206 @@ public class GetKeyRotationStatusResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Identifies the specified symmetric encryption KMS key.
+     * </p>
+     * 
+     * @param keyId
+     *        Identifies the specified symmetric encryption KMS key.
+     */
+
+    public void setKeyId(String keyId) {
+        this.keyId = keyId;
+    }
+
+    /**
+     * <p>
+     * Identifies the specified symmetric encryption KMS key.
+     * </p>
+     * 
+     * @return Identifies the specified symmetric encryption KMS key.
+     */
+
+    public String getKeyId() {
+        return this.keyId;
+    }
+
+    /**
+     * <p>
+     * Identifies the specified symmetric encryption KMS key.
+     * </p>
+     * 
+     * @param keyId
+     *        Identifies the specified symmetric encryption KMS key.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetKeyRotationStatusResult withKeyId(String keyId) {
+        setKeyId(keyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of days between each automatic rotation. The default value is 365 days.
+     * </p>
+     * 
+     * @param rotationPeriodInDays
+     *        The number of days between each automatic rotation. The default value is 365 days.
+     */
+
+    public void setRotationPeriodInDays(Integer rotationPeriodInDays) {
+        this.rotationPeriodInDays = rotationPeriodInDays;
+    }
+
+    /**
+     * <p>
+     * The number of days between each automatic rotation. The default value is 365 days.
+     * </p>
+     * 
+     * @return The number of days between each automatic rotation. The default value is 365 days.
+     */
+
+    public Integer getRotationPeriodInDays() {
+        return this.rotationPeriodInDays;
+    }
+
+    /**
+     * <p>
+     * The number of days between each automatic rotation. The default value is 365 days.
+     * </p>
+     * 
+     * @param rotationPeriodInDays
+     *        The number of days between each automatic rotation. The default value is 365 days.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetKeyRotationStatusResult withRotationPeriodInDays(Integer rotationPeriodInDays) {
+        setRotationPeriodInDays(rotationPeriodInDays);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The next date that KMS will automatically rotate the key material.
+     * </p>
+     * 
+     * @param nextRotationDate
+     *        The next date that KMS will automatically rotate the key material.
+     */
+
+    public void setNextRotationDate(java.util.Date nextRotationDate) {
+        this.nextRotationDate = nextRotationDate;
+    }
+
+    /**
+     * <p>
+     * The next date that KMS will automatically rotate the key material.
+     * </p>
+     * 
+     * @return The next date that KMS will automatically rotate the key material.
+     */
+
+    public java.util.Date getNextRotationDate() {
+        return this.nextRotationDate;
+    }
+
+    /**
+     * <p>
+     * The next date that KMS will automatically rotate the key material.
+     * </p>
+     * 
+     * @param nextRotationDate
+     *        The next date that KMS will automatically rotate the key material.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetKeyRotationStatusResult withNextRotationDate(java.util.Date nextRotationDate) {
+        setNextRotationDate(nextRotationDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Identifies the date and time that an in progress on-demand rotation was initiated.
+     * </p>
+     * <p>
+     * The KMS API follows an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">eventual
+     * consistency</a> model due to the distributed nature of the system. As a result, there might be a slight delay
+     * between initiating on-demand key rotation and the rotation's completion. Once the on-demand rotation is complete,
+     * use <a>ListKeyRotations</a> to view the details of the on-demand rotation.
+     * </p>
+     * 
+     * @param onDemandRotationStartDate
+     *        Identifies the date and time that an in progress on-demand rotation was initiated.</p>
+     *        <p>
+     *        The KMS API follows an <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html"
+     *        >eventual consistency</a> model due to the distributed nature of the system. As a result, there might be a
+     *        slight delay between initiating on-demand key rotation and the rotation's completion. Once the on-demand
+     *        rotation is complete, use <a>ListKeyRotations</a> to view the details of the on-demand rotation.
+     */
+
+    public void setOnDemandRotationStartDate(java.util.Date onDemandRotationStartDate) {
+        this.onDemandRotationStartDate = onDemandRotationStartDate;
+    }
+
+    /**
+     * <p>
+     * Identifies the date and time that an in progress on-demand rotation was initiated.
+     * </p>
+     * <p>
+     * The KMS API follows an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">eventual
+     * consistency</a> model due to the distributed nature of the system. As a result, there might be a slight delay
+     * between initiating on-demand key rotation and the rotation's completion. Once the on-demand rotation is complete,
+     * use <a>ListKeyRotations</a> to view the details of the on-demand rotation.
+     * </p>
+     * 
+     * @return Identifies the date and time that an in progress on-demand rotation was initiated.</p>
+     *         <p>
+     *         The KMS API follows an <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html"
+     *         >eventual consistency</a> model due to the distributed nature of the system. As a result, there might be
+     *         a slight delay between initiating on-demand key rotation and the rotation's completion. Once the
+     *         on-demand rotation is complete, use <a>ListKeyRotations</a> to view the details of the on-demand
+     *         rotation.
+     */
+
+    public java.util.Date getOnDemandRotationStartDate() {
+        return this.onDemandRotationStartDate;
+    }
+
+    /**
+     * <p>
+     * Identifies the date and time that an in progress on-demand rotation was initiated.
+     * </p>
+     * <p>
+     * The KMS API follows an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html">eventual
+     * consistency</a> model due to the distributed nature of the system. As a result, there might be a slight delay
+     * between initiating on-demand key rotation and the rotation's completion. Once the on-demand rotation is complete,
+     * use <a>ListKeyRotations</a> to view the details of the on-demand rotation.
+     * </p>
+     * 
+     * @param onDemandRotationStartDate
+     *        Identifies the date and time that an in progress on-demand rotation was initiated.</p>
+     *        <p>
+     *        The KMS API follows an <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-eventual-consistency.html"
+     *        >eventual consistency</a> model due to the distributed nature of the system. As a result, there might be a
+     *        slight delay between initiating on-demand key rotation and the rotation's completion. Once the on-demand
+     *        rotation is complete, use <a>ListKeyRotations</a> to view the details of the on-demand rotation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetKeyRotationStatusResult withOnDemandRotationStartDate(java.util.Date onDemandRotationStartDate) {
+        setOnDemandRotationStartDate(onDemandRotationStartDate);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -95,7 +326,15 @@ public class GetKeyRotationStatusResult extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getKeyRotationEnabled() != null)
-            sb.append("KeyRotationEnabled: ").append(getKeyRotationEnabled());
+            sb.append("KeyRotationEnabled: ").append(getKeyRotationEnabled()).append(",");
+        if (getKeyId() != null)
+            sb.append("KeyId: ").append(getKeyId()).append(",");
+        if (getRotationPeriodInDays() != null)
+            sb.append("RotationPeriodInDays: ").append(getRotationPeriodInDays()).append(",");
+        if (getNextRotationDate() != null)
+            sb.append("NextRotationDate: ").append(getNextRotationDate()).append(",");
+        if (getOnDemandRotationStartDate() != null)
+            sb.append("OnDemandRotationStartDate: ").append(getOnDemandRotationStartDate());
         sb.append("}");
         return sb.toString();
     }
@@ -114,6 +353,22 @@ public class GetKeyRotationStatusResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getKeyRotationEnabled() != null && other.getKeyRotationEnabled().equals(this.getKeyRotationEnabled()) == false)
             return false;
+        if (other.getKeyId() == null ^ this.getKeyId() == null)
+            return false;
+        if (other.getKeyId() != null && other.getKeyId().equals(this.getKeyId()) == false)
+            return false;
+        if (other.getRotationPeriodInDays() == null ^ this.getRotationPeriodInDays() == null)
+            return false;
+        if (other.getRotationPeriodInDays() != null && other.getRotationPeriodInDays().equals(this.getRotationPeriodInDays()) == false)
+            return false;
+        if (other.getNextRotationDate() == null ^ this.getNextRotationDate() == null)
+            return false;
+        if (other.getNextRotationDate() != null && other.getNextRotationDate().equals(this.getNextRotationDate()) == false)
+            return false;
+        if (other.getOnDemandRotationStartDate() == null ^ this.getOnDemandRotationStartDate() == null)
+            return false;
+        if (other.getOnDemandRotationStartDate() != null && other.getOnDemandRotationStartDate().equals(this.getOnDemandRotationStartDate()) == false)
+            return false;
         return true;
     }
 
@@ -123,6 +378,10 @@ public class GetKeyRotationStatusResult extends com.amazonaws.AmazonWebServiceRe
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getKeyRotationEnabled() == null) ? 0 : getKeyRotationEnabled().hashCode());
+        hashCode = prime * hashCode + ((getKeyId() == null) ? 0 : getKeyId().hashCode());
+        hashCode = prime * hashCode + ((getRotationPeriodInDays() == null) ? 0 : getRotationPeriodInDays().hashCode());
+        hashCode = prime * hashCode + ((getNextRotationDate() == null) ? 0 : getNextRotationDate().hashCode());
+        hashCode = prime * hashCode + ((getOnDemandRotationStartDate() == null) ? 0 : getOnDemandRotationStartDate().hashCode());
         return hashCode;
     }
 

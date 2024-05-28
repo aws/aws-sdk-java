@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,10 @@ public class JobRunMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkConfiguration").build();
     private static final MarshallingInfo<Integer> TOTALEXECUTIONDURATIONSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("totalExecutionDurationSeconds").build();
+    private static final MarshallingInfo<Long> EXECUTIONTIMEOUTMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionTimeoutMinutes").build();
+    private static final MarshallingInfo<StructuredPojo> BILLEDRESOURCEUTILIZATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("billedResourceUtilization").build();
 
     private static final JobRunMarshaller instance = new JobRunMarshaller();
 
@@ -97,6 +101,8 @@ public class JobRunMarshaller {
             protocolMarshaller.marshall(jobRun.getTotalResourceUtilization(), TOTALRESOURCEUTILIZATION_BINDING);
             protocolMarshaller.marshall(jobRun.getNetworkConfiguration(), NETWORKCONFIGURATION_BINDING);
             protocolMarshaller.marshall(jobRun.getTotalExecutionDurationSeconds(), TOTALEXECUTIONDURATIONSECONDS_BINDING);
+            protocolMarshaller.marshall(jobRun.getExecutionTimeoutMinutes(), EXECUTIONTIMEOUTMINUTES_BINDING);
+            protocolMarshaller.marshall(jobRun.getBilledResourceUtilization(), BILLEDRESOURCEUTILIZATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

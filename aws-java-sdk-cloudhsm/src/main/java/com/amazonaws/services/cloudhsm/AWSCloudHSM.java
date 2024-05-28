@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -134,6 +134,7 @@ public interface AWSCloudHSM {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/AddTagsToResource" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     AddTagsToResourceResult addTagsToResource(AddTagsToResourceRequest addTagsToResourceRequest);
 
     /**
@@ -167,6 +168,7 @@ public interface AWSCloudHSM {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHapg" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     CreateHapgResult createHapg(CreateHapgRequest createHapgRequest);
 
     /**
@@ -211,6 +213,7 @@ public interface AWSCloudHSM {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateHsm" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     CreateHsmResult createHsm(CreateHsmRequest createHsmRequest);
 
     /**
@@ -243,6 +246,7 @@ public interface AWSCloudHSM {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/CreateLunaClient" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     CreateLunaClientResult createLunaClient(CreateLunaClientRequest createLunaClientRequest);
 
     /**
@@ -275,6 +279,7 @@ public interface AWSCloudHSM {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHapg" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     DeleteHapgResult deleteHapg(DeleteHapgRequest deleteHapgRequest);
 
     /**
@@ -307,6 +312,7 @@ public interface AWSCloudHSM {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteHsm" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     DeleteHsmResult deleteHsm(DeleteHsmRequest deleteHsmRequest);
 
     /**
@@ -338,6 +344,7 @@ public interface AWSCloudHSM {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DeleteLunaClient" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     DeleteLunaClientResult deleteLunaClient(DeleteLunaClientRequest deleteLunaClientRequest);
 
     /**
@@ -370,6 +377,7 @@ public interface AWSCloudHSM {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHapg" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     DescribeHapgResult describeHapg(DescribeHapgRequest describeHapgRequest);
 
     /**
@@ -402,6 +410,7 @@ public interface AWSCloudHSM {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeHsm" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     DescribeHsmResult describeHsm(DescribeHsmRequest describeHsmRequest);
 
     /**
@@ -409,6 +418,7 @@ public interface AWSCloudHSM {
      *
      * @see #describeHsm(DescribeHsmRequest)
      */
+    @Deprecated
     DescribeHsmResult describeHsm();
 
     /**
@@ -440,6 +450,7 @@ public interface AWSCloudHSM {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/DescribeLunaClient" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     DescribeLunaClientResult describeLunaClient(DescribeLunaClientRequest describeLunaClientRequest);
 
     /**
@@ -447,6 +458,7 @@ public interface AWSCloudHSM {
      *
      * @see #describeLunaClient(DescribeLunaClientRequest)
      */
+    @Deprecated
     DescribeLunaClientResult describeLunaClient();
 
     /**
@@ -479,6 +491,7 @@ public interface AWSCloudHSM {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/GetConfig" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     GetConfigResult getConfig(GetConfigRequest getConfigRequest);
 
     /**
@@ -511,6 +524,7 @@ public interface AWSCloudHSM {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListAvailableZones" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     ListAvailableZonesResult listAvailableZones(ListAvailableZonesRequest listAvailableZonesRequest);
 
     /**
@@ -518,6 +532,7 @@ public interface AWSCloudHSM {
      *
      * @see #listAvailableZones(ListAvailableZonesRequest)
      */
+    @Deprecated
     ListAvailableZonesResult listAvailableZones();
 
     /**
@@ -554,6 +569,7 @@ public interface AWSCloudHSM {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHapgs" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     ListHapgsResult listHapgs(ListHapgsRequest listHapgsRequest);
 
     /**
@@ -561,6 +577,7 @@ public interface AWSCloudHSM {
      *
      * @see #listHapgs(ListHapgsRequest)
      */
+    @Deprecated
     ListHapgsResult listHapgs();
 
     /**
@@ -597,6 +614,7 @@ public interface AWSCloudHSM {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListHsms" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     ListHsmsResult listHsms(ListHsmsRequest listHsmsRequest);
 
     /**
@@ -604,6 +622,7 @@ public interface AWSCloudHSM {
      *
      * @see #listHsms(ListHsmsRequest)
      */
+    @Deprecated
     ListHsmsResult listHsms();
 
     /**
@@ -640,6 +659,7 @@ public interface AWSCloudHSM {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListLunaClients" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     ListLunaClientsResult listLunaClients(ListLunaClientsRequest listLunaClientsRequest);
 
     /**
@@ -647,6 +667,7 @@ public interface AWSCloudHSM {
      *
      * @see #listLunaClients(ListLunaClientsRequest)
      */
+    @Deprecated
     ListLunaClientsResult listLunaClients();
 
     /**
@@ -678,6 +699,7 @@ public interface AWSCloudHSM {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ListTagsForResource" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
 
     /**
@@ -709,6 +731,7 @@ public interface AWSCloudHSM {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHapg" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     ModifyHapgResult modifyHapg(ModifyHapgRequest modifyHapgRequest);
 
     /**
@@ -748,6 +771,7 @@ public interface AWSCloudHSM {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyHsm" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     ModifyHsmResult modifyHsm(ModifyHsmRequest modifyHsmRequest);
 
     /**
@@ -778,6 +802,7 @@ public interface AWSCloudHSM {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/ModifyLunaClient" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     ModifyLunaClientResult modifyLunaClient(ModifyLunaClientRequest modifyLunaClientRequest);
 
     /**
@@ -813,6 +838,7 @@ public interface AWSCloudHSM {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsm-2014-05-30/RemoveTagsFromResource"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     RemoveTagsFromResourceResult removeTagsFromResource(RemoveTagsFromResourceRequest removeTagsFromResourceRequest);
 
     /**

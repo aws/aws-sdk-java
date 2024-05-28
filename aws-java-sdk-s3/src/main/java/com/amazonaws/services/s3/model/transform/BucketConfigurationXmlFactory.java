@@ -20,6 +20,7 @@ import static com.amazonaws.services.s3.model.transform.BucketConfigurationXmlFa
 import static com.amazonaws.services.s3.model.transform.BucketConfigurationXmlFactoryFunctions.writePrefix;
 
 import com.amazonaws.SdkClientException;
+import com.amazonaws.services.s3.TargetObjectKeyFormat;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.ServiceUtils;
 import com.amazonaws.services.s3.internal.XmlWriter;
@@ -48,6 +49,8 @@ import com.amazonaws.services.s3.model.FilterRule;
 import com.amazonaws.services.s3.model.LambdaConfiguration;
 import com.amazonaws.services.s3.model.Metrics;
 import com.amazonaws.services.s3.model.NotificationConfiguration;
+import com.amazonaws.services.s3.model.PartitionDateSource;
+import com.amazonaws.services.s3.model.PartitionedPrefix;
 import com.amazonaws.services.s3.model.PublicAccessBlockConfiguration;
 import com.amazonaws.services.s3.model.QueueConfiguration;
 import com.amazonaws.services.s3.model.RedirectRule;
@@ -180,6 +183,23 @@ public class BucketConfigurationXmlFactory {
             xml.start("LoggingEnabled");
             xml.start("TargetBucket").value(loggingConfiguration.getDestinationBucketName()).end();
             xml.start("TargetPrefix").value(loggingConfiguration.getLogFilePrefix()).end();
+
+            TargetObjectKeyFormat targetObjectKeyFormat = loggingConfiguration.getTargetObjectKeyFormat();
+            if (targetObjectKeyFormat != null) {
+                xml.start("TargetObjectKeyFormat");
+                PartitionedPrefix partitionedPrefix = targetObjectKeyFormat.getPartitionedPrefix();
+                if (partitionedPrefix != null) {
+                    xml.start("PartitionedPrefix");
+                    PartitionDateSource partitionDateSource = partitionedPrefix.getPartitionDateSource();
+                    if (partitionDateSource != null) {
+                        xml.start("PartitionDateSource").value(partitionedPrefix.getPartitionDateSourceAsString()).end();
+                    }
+                    xml.end();
+                } else if (targetObjectKeyFormat.getSimplePrefix() != null){
+                    xml.start("SimplePrefix").end();
+                }
+                xml.end();
+            }
             xml.end();
         }
         xml.end();

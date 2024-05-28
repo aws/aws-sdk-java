@@ -1,0 +1,256 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.cleanrooms.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+import com.amazonaws.AmazonWebServiceRequest;
+
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateConfiguredTableAnalysisRule"
+ *      target="_top">AWS API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class CreateConfiguredTableAnalysisRuleRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * The identifier for the configured table to create the analysis rule for. Currently accepts the configured table
+     * ID.
+     * </p>
+     */
+    private String configuredTableIdentifier;
+    /**
+     * <p>
+     * The type of analysis rule.
+     * </p>
+     */
+    private String analysisRuleType;
+    /**
+     * <p>
+     * The entire created configured table analysis rule object.
+     * </p>
+     */
+    private ConfiguredTableAnalysisRulePolicy analysisRulePolicy;
+
+    /**
+     * <p>
+     * The identifier for the configured table to create the analysis rule for. Currently accepts the configured table
+     * ID.
+     * </p>
+     * 
+     * @param configuredTableIdentifier
+     *        The identifier for the configured table to create the analysis rule for. Currently accepts the configured
+     *        table ID.
+     */
+
+    public void setConfiguredTableIdentifier(String configuredTableIdentifier) {
+        this.configuredTableIdentifier = configuredTableIdentifier;
+    }
+
+    /**
+     * <p>
+     * The identifier for the configured table to create the analysis rule for. Currently accepts the configured table
+     * ID.
+     * </p>
+     * 
+     * @return The identifier for the configured table to create the analysis rule for. Currently accepts the configured
+     *         table ID.
+     */
+
+    public String getConfiguredTableIdentifier() {
+        return this.configuredTableIdentifier;
+    }
+
+    /**
+     * <p>
+     * The identifier for the configured table to create the analysis rule for. Currently accepts the configured table
+     * ID.
+     * </p>
+     * 
+     * @param configuredTableIdentifier
+     *        The identifier for the configured table to create the analysis rule for. Currently accepts the configured
+     *        table ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateConfiguredTableAnalysisRuleRequest withConfiguredTableIdentifier(String configuredTableIdentifier) {
+        setConfiguredTableIdentifier(configuredTableIdentifier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of analysis rule.
+     * </p>
+     * 
+     * @param analysisRuleType
+     *        The type of analysis rule.
+     * @see ConfiguredTableAnalysisRuleType
+     */
+
+    public void setAnalysisRuleType(String analysisRuleType) {
+        this.analysisRuleType = analysisRuleType;
+    }
+
+    /**
+     * <p>
+     * The type of analysis rule.
+     * </p>
+     * 
+     * @return The type of analysis rule.
+     * @see ConfiguredTableAnalysisRuleType
+     */
+
+    public String getAnalysisRuleType() {
+        return this.analysisRuleType;
+    }
+
+    /**
+     * <p>
+     * The type of analysis rule.
+     * </p>
+     * 
+     * @param analysisRuleType
+     *        The type of analysis rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConfiguredTableAnalysisRuleType
+     */
+
+    public CreateConfiguredTableAnalysisRuleRequest withAnalysisRuleType(String analysisRuleType) {
+        setAnalysisRuleType(analysisRuleType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of analysis rule.
+     * </p>
+     * 
+     * @param analysisRuleType
+     *        The type of analysis rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConfiguredTableAnalysisRuleType
+     */
+
+    public CreateConfiguredTableAnalysisRuleRequest withAnalysisRuleType(ConfiguredTableAnalysisRuleType analysisRuleType) {
+        this.analysisRuleType = analysisRuleType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The entire created configured table analysis rule object.
+     * </p>
+     * 
+     * @param analysisRulePolicy
+     *        The entire created configured table analysis rule object.
+     */
+
+    public void setAnalysisRulePolicy(ConfiguredTableAnalysisRulePolicy analysisRulePolicy) {
+        this.analysisRulePolicy = analysisRulePolicy;
+    }
+
+    /**
+     * <p>
+     * The entire created configured table analysis rule object.
+     * </p>
+     * 
+     * @return The entire created configured table analysis rule object.
+     */
+
+    public ConfiguredTableAnalysisRulePolicy getAnalysisRulePolicy() {
+        return this.analysisRulePolicy;
+    }
+
+    /**
+     * <p>
+     * The entire created configured table analysis rule object.
+     * </p>
+     * 
+     * @param analysisRulePolicy
+     *        The entire created configured table analysis rule object.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateConfiguredTableAnalysisRuleRequest withAnalysisRulePolicy(ConfiguredTableAnalysisRulePolicy analysisRulePolicy) {
+        setAnalysisRulePolicy(analysisRulePolicy);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getConfiguredTableIdentifier() != null)
+            sb.append("ConfiguredTableIdentifier: ").append(getConfiguredTableIdentifier()).append(",");
+        if (getAnalysisRuleType() != null)
+            sb.append("AnalysisRuleType: ").append(getAnalysisRuleType()).append(",");
+        if (getAnalysisRulePolicy() != null)
+            sb.append("AnalysisRulePolicy: ").append(getAnalysisRulePolicy());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof CreateConfiguredTableAnalysisRuleRequest == false)
+            return false;
+        CreateConfiguredTableAnalysisRuleRequest other = (CreateConfiguredTableAnalysisRuleRequest) obj;
+        if (other.getConfiguredTableIdentifier() == null ^ this.getConfiguredTableIdentifier() == null)
+            return false;
+        if (other.getConfiguredTableIdentifier() != null && other.getConfiguredTableIdentifier().equals(this.getConfiguredTableIdentifier()) == false)
+            return false;
+        if (other.getAnalysisRuleType() == null ^ this.getAnalysisRuleType() == null)
+            return false;
+        if (other.getAnalysisRuleType() != null && other.getAnalysisRuleType().equals(this.getAnalysisRuleType()) == false)
+            return false;
+        if (other.getAnalysisRulePolicy() == null ^ this.getAnalysisRulePolicy() == null)
+            return false;
+        if (other.getAnalysisRulePolicy() != null && other.getAnalysisRulePolicy().equals(this.getAnalysisRulePolicy()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getConfiguredTableIdentifier() == null) ? 0 : getConfiguredTableIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getAnalysisRuleType() == null) ? 0 : getAnalysisRuleType().hashCode());
+        hashCode = prime * hashCode + ((getAnalysisRulePolicy() == null) ? 0 : getAnalysisRulePolicy().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public CreateConfiguredTableAnalysisRuleRequest clone() {
+        return (CreateConfiguredTableAnalysisRuleRequest) super.clone();
+    }
+
+}

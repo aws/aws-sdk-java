@@ -1,0 +1,153 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.kinesisfirehose.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * Configure a Snowflake VPC
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/SnowflakeVpcConfiguration" target="_top">AWS
+ *      API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class SnowflakeVpcConfiguration implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * The VPCE ID for Firehose to privately connect with Snowflake. The ID format is
+     * com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see <a
+     * href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon PrivateLink &amp; Snowflake</a>
+     * </p>
+     */
+    private String privateLinkVpceId;
+
+    /**
+     * <p>
+     * The VPCE ID for Firehose to privately connect with Snowflake. The ID format is
+     * com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see <a
+     * href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon PrivateLink &amp; Snowflake</a>
+     * </p>
+     * 
+     * @param privateLinkVpceId
+     *        The VPCE ID for Firehose to privately connect with Snowflake. The ID format is
+     *        com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see <a
+     *        href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon PrivateLink &amp;
+     *        Snowflake</a>
+     */
+
+    public void setPrivateLinkVpceId(String privateLinkVpceId) {
+        this.privateLinkVpceId = privateLinkVpceId;
+    }
+
+    /**
+     * <p>
+     * The VPCE ID for Firehose to privately connect with Snowflake. The ID format is
+     * com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see <a
+     * href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon PrivateLink &amp; Snowflake</a>
+     * </p>
+     * 
+     * @return The VPCE ID for Firehose to privately connect with Snowflake. The ID format is
+     *         com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see <a
+     *         href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon PrivateLink &amp;
+     *         Snowflake</a>
+     */
+
+    public String getPrivateLinkVpceId() {
+        return this.privateLinkVpceId;
+    }
+
+    /**
+     * <p>
+     * The VPCE ID for Firehose to privately connect with Snowflake. The ID format is
+     * com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see <a
+     * href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon PrivateLink &amp; Snowflake</a>
+     * </p>
+     * 
+     * @param privateLinkVpceId
+     *        The VPCE ID for Firehose to privately connect with Snowflake. The ID format is
+     *        com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see <a
+     *        href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon PrivateLink &amp;
+     *        Snowflake</a>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SnowflakeVpcConfiguration withPrivateLinkVpceId(String privateLinkVpceId) {
+        setPrivateLinkVpceId(privateLinkVpceId);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getPrivateLinkVpceId() != null)
+            sb.append("PrivateLinkVpceId: ").append("***Sensitive Data Redacted***");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof SnowflakeVpcConfiguration == false)
+            return false;
+        SnowflakeVpcConfiguration other = (SnowflakeVpcConfiguration) obj;
+        if (other.getPrivateLinkVpceId() == null ^ this.getPrivateLinkVpceId() == null)
+            return false;
+        if (other.getPrivateLinkVpceId() != null && other.getPrivateLinkVpceId().equals(this.getPrivateLinkVpceId()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getPrivateLinkVpceId() == null) ? 0 : getPrivateLinkVpceId().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public SnowflakeVpcConfiguration clone() {
+        try {
+            return (SnowflakeVpcConfiguration) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.kinesisfirehose.model.transform.SnowflakeVpcConfigurationMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

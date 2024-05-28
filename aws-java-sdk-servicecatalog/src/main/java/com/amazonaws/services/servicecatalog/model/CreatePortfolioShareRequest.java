@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,11 +30,6 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
      * The language code.
      * </p>
      * <ul>
-     * <li>
-     * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
      * <li>
      * <p>
      * <code>jp</code> - Japanese
@@ -76,17 +71,29 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private Boolean shareTagOptions;
+    /**
+     * <p>
+     * This parameter is only supported for portfolios with an <b>OrganizationalNode</b> Type of
+     * <code>ORGANIZATION</code> or <code>ORGANIZATIONAL_UNIT</code>.
+     * </p>
+     * <p>
+     * Enables or disables <code>Principal</code> sharing when creating the portfolio share. If you do <b>not</b>
+     * provide this flag, principal sharing is disabled.
+     * </p>
+     * <p>
+     * When you enable Principal Name Sharing for a portfolio share, the share recipient account end users with a
+     * principal that matches any of the associated IAM patterns can provision products from the portfolio. Once shared,
+     * the share recipient can view associations of <code>PrincipalType</code>: <code>IAM_PATTERN</code> on their
+     * portfolio. You can create the principals in the recipient account before or after creating the share.
+     * </p>
+     */
+    private Boolean sharePrincipals;
 
     /**
      * <p>
      * The language code.
      * </p>
      * <ul>
-     * <li>
-     * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
      * <li>
      * <p>
      * <code>jp</code> - Japanese
@@ -102,11 +109,6 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
      * @param acceptLanguage
      *        The language code.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>en</code> - English (default)
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>jp</code> - Japanese
@@ -130,11 +132,6 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -147,11 +144,6 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @return The language code.</p>
      *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>en</code> - English (default)
-     *         </p>
-     *         </li>
      *         <li>
      *         <p>
      *         <code>jp</code> - Japanese
@@ -175,11 +167,6 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -193,11 +180,6 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
      * @param acceptLanguage
      *        The language code.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>en</code> - English (default)
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>jp</code> - Japanese
@@ -415,6 +397,146 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * This parameter is only supported for portfolios with an <b>OrganizationalNode</b> Type of
+     * <code>ORGANIZATION</code> or <code>ORGANIZATIONAL_UNIT</code>.
+     * </p>
+     * <p>
+     * Enables or disables <code>Principal</code> sharing when creating the portfolio share. If you do <b>not</b>
+     * provide this flag, principal sharing is disabled.
+     * </p>
+     * <p>
+     * When you enable Principal Name Sharing for a portfolio share, the share recipient account end users with a
+     * principal that matches any of the associated IAM patterns can provision products from the portfolio. Once shared,
+     * the share recipient can view associations of <code>PrincipalType</code>: <code>IAM_PATTERN</code> on their
+     * portfolio. You can create the principals in the recipient account before or after creating the share.
+     * </p>
+     * 
+     * @param sharePrincipals
+     *        This parameter is only supported for portfolios with an <b>OrganizationalNode</b> Type of
+     *        <code>ORGANIZATION</code> or <code>ORGANIZATIONAL_UNIT</code>. </p>
+     *        <p>
+     *        Enables or disables <code>Principal</code> sharing when creating the portfolio share. If you do <b>not</b>
+     *        provide this flag, principal sharing is disabled.
+     *        </p>
+     *        <p>
+     *        When you enable Principal Name Sharing for a portfolio share, the share recipient account end users with a
+     *        principal that matches any of the associated IAM patterns can provision products from the portfolio. Once
+     *        shared, the share recipient can view associations of <code>PrincipalType</code>: <code>IAM_PATTERN</code>
+     *        on their portfolio. You can create the principals in the recipient account before or after creating the
+     *        share.
+     */
+
+    public void setSharePrincipals(Boolean sharePrincipals) {
+        this.sharePrincipals = sharePrincipals;
+    }
+
+    /**
+     * <p>
+     * This parameter is only supported for portfolios with an <b>OrganizationalNode</b> Type of
+     * <code>ORGANIZATION</code> or <code>ORGANIZATIONAL_UNIT</code>.
+     * </p>
+     * <p>
+     * Enables or disables <code>Principal</code> sharing when creating the portfolio share. If you do <b>not</b>
+     * provide this flag, principal sharing is disabled.
+     * </p>
+     * <p>
+     * When you enable Principal Name Sharing for a portfolio share, the share recipient account end users with a
+     * principal that matches any of the associated IAM patterns can provision products from the portfolio. Once shared,
+     * the share recipient can view associations of <code>PrincipalType</code>: <code>IAM_PATTERN</code> on their
+     * portfolio. You can create the principals in the recipient account before or after creating the share.
+     * </p>
+     * 
+     * @return This parameter is only supported for portfolios with an <b>OrganizationalNode</b> Type of
+     *         <code>ORGANIZATION</code> or <code>ORGANIZATIONAL_UNIT</code>. </p>
+     *         <p>
+     *         Enables or disables <code>Principal</code> sharing when creating the portfolio share. If you do
+     *         <b>not</b> provide this flag, principal sharing is disabled.
+     *         </p>
+     *         <p>
+     *         When you enable Principal Name Sharing for a portfolio share, the share recipient account end users with
+     *         a principal that matches any of the associated IAM patterns can provision products from the portfolio.
+     *         Once shared, the share recipient can view associations of <code>PrincipalType</code>:
+     *         <code>IAM_PATTERN</code> on their portfolio. You can create the principals in the recipient account
+     *         before or after creating the share.
+     */
+
+    public Boolean getSharePrincipals() {
+        return this.sharePrincipals;
+    }
+
+    /**
+     * <p>
+     * This parameter is only supported for portfolios with an <b>OrganizationalNode</b> Type of
+     * <code>ORGANIZATION</code> or <code>ORGANIZATIONAL_UNIT</code>.
+     * </p>
+     * <p>
+     * Enables or disables <code>Principal</code> sharing when creating the portfolio share. If you do <b>not</b>
+     * provide this flag, principal sharing is disabled.
+     * </p>
+     * <p>
+     * When you enable Principal Name Sharing for a portfolio share, the share recipient account end users with a
+     * principal that matches any of the associated IAM patterns can provision products from the portfolio. Once shared,
+     * the share recipient can view associations of <code>PrincipalType</code>: <code>IAM_PATTERN</code> on their
+     * portfolio. You can create the principals in the recipient account before or after creating the share.
+     * </p>
+     * 
+     * @param sharePrincipals
+     *        This parameter is only supported for portfolios with an <b>OrganizationalNode</b> Type of
+     *        <code>ORGANIZATION</code> or <code>ORGANIZATIONAL_UNIT</code>. </p>
+     *        <p>
+     *        Enables or disables <code>Principal</code> sharing when creating the portfolio share. If you do <b>not</b>
+     *        provide this flag, principal sharing is disabled.
+     *        </p>
+     *        <p>
+     *        When you enable Principal Name Sharing for a portfolio share, the share recipient account end users with a
+     *        principal that matches any of the associated IAM patterns can provision products from the portfolio. Once
+     *        shared, the share recipient can view associations of <code>PrincipalType</code>: <code>IAM_PATTERN</code>
+     *        on their portfolio. You can create the principals in the recipient account before or after creating the
+     *        share.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePortfolioShareRequest withSharePrincipals(Boolean sharePrincipals) {
+        setSharePrincipals(sharePrincipals);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This parameter is only supported for portfolios with an <b>OrganizationalNode</b> Type of
+     * <code>ORGANIZATION</code> or <code>ORGANIZATIONAL_UNIT</code>.
+     * </p>
+     * <p>
+     * Enables or disables <code>Principal</code> sharing when creating the portfolio share. If you do <b>not</b>
+     * provide this flag, principal sharing is disabled.
+     * </p>
+     * <p>
+     * When you enable Principal Name Sharing for a portfolio share, the share recipient account end users with a
+     * principal that matches any of the associated IAM patterns can provision products from the portfolio. Once shared,
+     * the share recipient can view associations of <code>PrincipalType</code>: <code>IAM_PATTERN</code> on their
+     * portfolio. You can create the principals in the recipient account before or after creating the share.
+     * </p>
+     * 
+     * @return This parameter is only supported for portfolios with an <b>OrganizationalNode</b> Type of
+     *         <code>ORGANIZATION</code> or <code>ORGANIZATIONAL_UNIT</code>. </p>
+     *         <p>
+     *         Enables or disables <code>Principal</code> sharing when creating the portfolio share. If you do
+     *         <b>not</b> provide this flag, principal sharing is disabled.
+     *         </p>
+     *         <p>
+     *         When you enable Principal Name Sharing for a portfolio share, the share recipient account end users with
+     *         a principal that matches any of the associated IAM patterns can provision products from the portfolio.
+     *         Once shared, the share recipient can view associations of <code>PrincipalType</code>:
+     *         <code>IAM_PATTERN</code> on their portfolio. You can create the principals in the recipient account
+     *         before or after creating the share.
+     */
+
+    public Boolean isSharePrincipals() {
+        return this.sharePrincipals;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -435,7 +557,9 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
         if (getOrganizationNode() != null)
             sb.append("OrganizationNode: ").append(getOrganizationNode()).append(",");
         if (getShareTagOptions() != null)
-            sb.append("ShareTagOptions: ").append(getShareTagOptions());
+            sb.append("ShareTagOptions: ").append(getShareTagOptions()).append(",");
+        if (getSharePrincipals() != null)
+            sb.append("SharePrincipals: ").append(getSharePrincipals());
         sb.append("}");
         return sb.toString();
     }
@@ -470,6 +594,10 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getShareTagOptions() != null && other.getShareTagOptions().equals(this.getShareTagOptions()) == false)
             return false;
+        if (other.getSharePrincipals() == null ^ this.getSharePrincipals() == null)
+            return false;
+        if (other.getSharePrincipals() != null && other.getSharePrincipals().equals(this.getSharePrincipals()) == false)
+            return false;
         return true;
     }
 
@@ -483,6 +611,7 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         hashCode = prime * hashCode + ((getOrganizationNode() == null) ? 0 : getOrganizationNode().hashCode());
         hashCode = prime * hashCode + ((getShareTagOptions() == null) ? 0 : getShareTagOptions().hashCode());
+        hashCode = prime * hashCode + ((getSharePrincipals() == null) ? 0 : getSharePrincipals().hashCode());
         return hashCode;
     }
 

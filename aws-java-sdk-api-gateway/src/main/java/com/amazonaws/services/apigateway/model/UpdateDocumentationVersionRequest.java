@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class UpdateDocumentationVersionRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The string identifier of the associated RestApi..
+     * The string identifier of the associated RestApi.
      * </p>
      */
     private String restApiId;
@@ -47,11 +47,11 @@ public class UpdateDocumentationVersionRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The string identifier of the associated RestApi..
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated RestApi..
+     *        The string identifier of the associated RestApi.
      */
 
     public void setRestApiId(String restApiId) {
@@ -60,10 +60,10 @@ public class UpdateDocumentationVersionRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The string identifier of the associated RestApi..
+     * The string identifier of the associated RestApi.
      * </p>
      * 
-     * @return The string identifier of the associated RestApi..
+     * @return The string identifier of the associated RestApi.
      */
 
     public String getRestApiId() {
@@ -72,11 +72,11 @@ public class UpdateDocumentationVersionRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The string identifier of the associated RestApi..
+     * The string identifier of the associated RestApi.
      * </p>
      * 
      * @param restApiId
-     *        The string identifier of the associated RestApi..
+     *        The string identifier of the associated RestApi.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

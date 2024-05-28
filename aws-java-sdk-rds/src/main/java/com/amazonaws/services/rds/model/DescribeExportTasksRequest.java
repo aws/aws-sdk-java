@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,20 +27,20 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The identifier of the snapshot export task to be described.
+     * The identifier of the snapshot or cluster export task to be described.
      * </p>
      */
     private String exportTaskIdentifier;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3.
+     * The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.
      * </p>
      */
     private String sourceArn;
     /**
      * <p>
-     * Filters specify one or more snapshot exports to describe. The filters are specified as name-value pairs that
-     * define what to include in the output. Filter names and values are case-sensitive.
+     * Filters specify one or more snapshot or cluster exports to describe. The filters are specified as name-value
+     * pairs that define what to include in the output. Filter names and values are case-sensitive.
      * </p>
      * <p>
      * Supported filters include the following:
@@ -48,17 +48,17 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>export-task-identifier</code> - An identifier for the snapshot export task.
+     * <code>export-task-identifier</code> - An identifier for the snapshot or cluster export task.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>s3-bucket</code> - The Amazon S3 bucket the snapshot is exported to.
+     * <code>s3-bucket</code> - The Amazon S3 bucket the data is exported to.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3
+     * <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.
      * </p>
      * </li>
      * <li>
@@ -132,11 +132,11 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The identifier of the snapshot export task to be described.
+     * The identifier of the snapshot or cluster export task to be described.
      * </p>
      * 
      * @param exportTaskIdentifier
-     *        The identifier of the snapshot export task to be described.
+     *        The identifier of the snapshot or cluster export task to be described.
      */
 
     public void setExportTaskIdentifier(String exportTaskIdentifier) {
@@ -145,10 +145,10 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The identifier of the snapshot export task to be described.
+     * The identifier of the snapshot or cluster export task to be described.
      * </p>
      * 
-     * @return The identifier of the snapshot export task to be described.
+     * @return The identifier of the snapshot or cluster export task to be described.
      */
 
     public String getExportTaskIdentifier() {
@@ -157,11 +157,11 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The identifier of the snapshot export task to be described.
+     * The identifier of the snapshot or cluster export task to be described.
      * </p>
      * 
      * @param exportTaskIdentifier
-     *        The identifier of the snapshot export task to be described.
+     *        The identifier of the snapshot or cluster export task to be described.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,11 +172,11 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3.
+     * The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.
      * </p>
      * 
      * @param sourceArn
-     *        The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3.
+     *        The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.
      */
 
     public void setSourceArn(String sourceArn) {
@@ -185,10 +185,10 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3.
+     * The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3.
+     * @return The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.
      */
 
     public String getSourceArn() {
@@ -197,11 +197,11 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3.
+     * The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.
      * </p>
      * 
      * @param sourceArn
-     *        The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3.
+     *        The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,8 +212,8 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Filters specify one or more snapshot exports to describe. The filters are specified as name-value pairs that
-     * define what to include in the output. Filter names and values are case-sensitive.
+     * Filters specify one or more snapshot or cluster exports to describe. The filters are specified as name-value
+     * pairs that define what to include in the output. Filter names and values are case-sensitive.
      * </p>
      * <p>
      * Supported filters include the following:
@@ -221,17 +221,17 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>export-task-identifier</code> - An identifier for the snapshot export task.
+     * <code>export-task-identifier</code> - An identifier for the snapshot or cluster export task.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>s3-bucket</code> - The Amazon S3 bucket the snapshot is exported to.
+     * <code>s3-bucket</code> - The Amazon S3 bucket the data is exported to.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3
+     * <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.
      * </p>
      * </li>
      * <li>
@@ -273,25 +273,27 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * </ul>
      * 
-     * @return Filters specify one or more snapshot exports to describe. The filters are specified as name-value pairs
-     *         that define what to include in the output. Filter names and values are case-sensitive.</p>
+     * @return Filters specify one or more snapshot or cluster exports to describe. The filters are specified as
+     *         name-value pairs that define what to include in the output. Filter names and values are
+     *         case-sensitive.</p>
      *         <p>
      *         Supported filters include the following:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>export-task-identifier</code> - An identifier for the snapshot export task.
+     *         <code>export-task-identifier</code> - An identifier for the snapshot or cluster export task.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>s3-bucket</code> - The Amazon S3 bucket the snapshot is exported to.
+     *         <code>s3-bucket</code> - The Amazon S3 bucket the data is exported to.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3
+     *         <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon
+     *         S3.
      *         </p>
      *         </li>
      *         <li>
@@ -342,8 +344,8 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Filters specify one or more snapshot exports to describe. The filters are specified as name-value pairs that
-     * define what to include in the output. Filter names and values are case-sensitive.
+     * Filters specify one or more snapshot or cluster exports to describe. The filters are specified as name-value
+     * pairs that define what to include in the output. Filter names and values are case-sensitive.
      * </p>
      * <p>
      * Supported filters include the following:
@@ -351,17 +353,17 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>export-task-identifier</code> - An identifier for the snapshot export task.
+     * <code>export-task-identifier</code> - An identifier for the snapshot or cluster export task.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>s3-bucket</code> - The Amazon S3 bucket the snapshot is exported to.
+     * <code>s3-bucket</code> - The Amazon S3 bucket the data is exported to.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3
+     * <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.
      * </p>
      * </li>
      * <li>
@@ -404,25 +406,26 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      * </ul>
      * 
      * @param filters
-     *        Filters specify one or more snapshot exports to describe. The filters are specified as name-value pairs
-     *        that define what to include in the output. Filter names and values are case-sensitive.</p>
+     *        Filters specify one or more snapshot or cluster exports to describe. The filters are specified as
+     *        name-value pairs that define what to include in the output. Filter names and values are
+     *        case-sensitive.</p>
      *        <p>
      *        Supported filters include the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>export-task-identifier</code> - An identifier for the snapshot export task.
+     *        <code>export-task-identifier</code> - An identifier for the snapshot or cluster export task.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>s3-bucket</code> - The Amazon S3 bucket the snapshot is exported to.
+     *        <code>s3-bucket</code> - The Amazon S3 bucket the data is exported to.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3
+     *        <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.
      *        </p>
      *        </li>
      *        <li>
@@ -475,8 +478,8 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Filters specify one or more snapshot exports to describe. The filters are specified as name-value pairs that
-     * define what to include in the output. Filter names and values are case-sensitive.
+     * Filters specify one or more snapshot or cluster exports to describe. The filters are specified as name-value
+     * pairs that define what to include in the output. Filter names and values are case-sensitive.
      * </p>
      * <p>
      * Supported filters include the following:
@@ -484,17 +487,17 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>export-task-identifier</code> - An identifier for the snapshot export task.
+     * <code>export-task-identifier</code> - An identifier for the snapshot or cluster export task.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>s3-bucket</code> - The Amazon S3 bucket the snapshot is exported to.
+     * <code>s3-bucket</code> - The Amazon S3 bucket the data is exported to.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3
+     * <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.
      * </p>
      * </li>
      * <li>
@@ -542,25 +545,26 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param filters
-     *        Filters specify one or more snapshot exports to describe. The filters are specified as name-value pairs
-     *        that define what to include in the output. Filter names and values are case-sensitive.</p>
+     *        Filters specify one or more snapshot or cluster exports to describe. The filters are specified as
+     *        name-value pairs that define what to include in the output. Filter names and values are
+     *        case-sensitive.</p>
      *        <p>
      *        Supported filters include the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>export-task-identifier</code> - An identifier for the snapshot export task.
+     *        <code>export-task-identifier</code> - An identifier for the snapshot or cluster export task.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>s3-bucket</code> - The Amazon S3 bucket the snapshot is exported to.
+     *        <code>s3-bucket</code> - The Amazon S3 bucket the data is exported to.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3
+     *        <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.
      *        </p>
      *        </li>
      *        <li>
@@ -615,8 +619,8 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Filters specify one or more snapshot exports to describe. The filters are specified as name-value pairs that
-     * define what to include in the output. Filter names and values are case-sensitive.
+     * Filters specify one or more snapshot or cluster exports to describe. The filters are specified as name-value
+     * pairs that define what to include in the output. Filter names and values are case-sensitive.
      * </p>
      * <p>
      * Supported filters include the following:
@@ -624,17 +628,17 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>export-task-identifier</code> - An identifier for the snapshot export task.
+     * <code>export-task-identifier</code> - An identifier for the snapshot or cluster export task.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>s3-bucket</code> - The Amazon S3 bucket the snapshot is exported to.
+     * <code>s3-bucket</code> - The Amazon S3 bucket the data is exported to.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3
+     * <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.
      * </p>
      * </li>
      * <li>
@@ -677,25 +681,26 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      * </ul>
      * 
      * @param filters
-     *        Filters specify one or more snapshot exports to describe. The filters are specified as name-value pairs
-     *        that define what to include in the output. Filter names and values are case-sensitive.</p>
+     *        Filters specify one or more snapshot or cluster exports to describe. The filters are specified as
+     *        name-value pairs that define what to include in the output. Filter names and values are
+     *        case-sensitive.</p>
      *        <p>
      *        Supported filters include the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>export-task-identifier</code> - An identifier for the snapshot export task.
+     *        <code>export-task-identifier</code> - An identifier for the snapshot or cluster export task.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>s3-bucket</code> - The Amazon S3 bucket the snapshot is exported to.
+     *        <code>s3-bucket</code> - The Amazon S3 bucket the data is exported to.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot exported to Amazon S3
+     *        <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot or cluster exported to Amazon S3.
      *        </p>
      *        </li>
      *        <li>

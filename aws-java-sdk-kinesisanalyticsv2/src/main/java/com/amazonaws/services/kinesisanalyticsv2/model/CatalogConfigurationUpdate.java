@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Updates to the configuration parameters for the default Amazon Glue database. You use this database for SQL queries
- * that you write in a Kinesis Data Analytics Studio notebook.
+ * that you write in a Managed Service for Apache Flink Studio notebook.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CatalogConfigurationUpdate"
@@ -32,7 +32,7 @@ public class CatalogConfigurationUpdate implements Serializable, Cloneable, Stru
     /**
      * <p>
      * Updates to the configuration parameters for the default Amazon Glue database. You use this database for SQL
-     * queries that you write in a Kinesis Data Analytics Studio notebook.
+     * queries that you write in a Managed Service for Apache Flink Studio notebook.
      * </p>
      */
     private GlueDataCatalogConfigurationUpdate glueDataCatalogConfigurationUpdate;
@@ -40,12 +40,12 @@ public class CatalogConfigurationUpdate implements Serializable, Cloneable, Stru
     /**
      * <p>
      * Updates to the configuration parameters for the default Amazon Glue database. You use this database for SQL
-     * queries that you write in a Kinesis Data Analytics Studio notebook.
+     * queries that you write in a Managed Service for Apache Flink Studio notebook.
      * </p>
      * 
      * @param glueDataCatalogConfigurationUpdate
      *        Updates to the configuration parameters for the default Amazon Glue database. You use this database for
-     *        SQL queries that you write in a Kinesis Data Analytics Studio notebook.
+     *        SQL queries that you write in a Managed Service for Apache Flink Studio notebook.
      */
 
     public void setGlueDataCatalogConfigurationUpdate(GlueDataCatalogConfigurationUpdate glueDataCatalogConfigurationUpdate) {
@@ -55,11 +55,11 @@ public class CatalogConfigurationUpdate implements Serializable, Cloneable, Stru
     /**
      * <p>
      * Updates to the configuration parameters for the default Amazon Glue database. You use this database for SQL
-     * queries that you write in a Kinesis Data Analytics Studio notebook.
+     * queries that you write in a Managed Service for Apache Flink Studio notebook.
      * </p>
      * 
      * @return Updates to the configuration parameters for the default Amazon Glue database. You use this database for
-     *         SQL queries that you write in a Kinesis Data Analytics Studio notebook.
+     *         SQL queries that you write in a Managed Service for Apache Flink Studio notebook.
      */
 
     public GlueDataCatalogConfigurationUpdate getGlueDataCatalogConfigurationUpdate() {
@@ -69,12 +69,12 @@ public class CatalogConfigurationUpdate implements Serializable, Cloneable, Stru
     /**
      * <p>
      * Updates to the configuration parameters for the default Amazon Glue database. You use this database for SQL
-     * queries that you write in a Kinesis Data Analytics Studio notebook.
+     * queries that you write in a Managed Service for Apache Flink Studio notebook.
      * </p>
      * 
      * @param glueDataCatalogConfigurationUpdate
      *        Updates to the configuration parameters for the default Amazon Glue database. You use this database for
-     *        SQL queries that you write in a Kinesis Data Analytics Studio notebook.
+     *        SQL queries that you write in a Managed Service for Apache Flink Studio notebook.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

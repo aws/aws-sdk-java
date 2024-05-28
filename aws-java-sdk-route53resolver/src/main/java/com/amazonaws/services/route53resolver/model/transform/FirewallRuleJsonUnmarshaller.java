@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -95,6 +95,14 @@ public class FirewallRuleJsonUnmarshaller implements Unmarshaller<FirewallRule, 
                 if (context.testExpression("ModificationTime", targetDepth)) {
                     context.nextToken();
                     firewallRule.setModificationTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("FirewallDomainRedirectionAction", targetDepth)) {
+                    context.nextToken();
+                    firewallRule.setFirewallDomainRedirectionAction(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Qtype", targetDepth)) {
+                    context.nextToken();
+                    firewallRule.setQtype(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

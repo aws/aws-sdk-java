@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,7 +48,8 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date userCreateDate;
     /**
      * <p>
-     * The last modified date of the user.
+     * The date and time when the item was modified. Amazon Cognito returns this timestamp in UNIX epoch time format.
+     * Your SDK might render the output in a human-readable format like ISO 8601 or a Java <code>Date</code> object.
      * </p>
      */
     private java.util.Date userLastModifiedDate;
@@ -76,11 +77,6 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * EXTERNAL_PROVIDER - User signed in with a third-party IdP.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ARCHIVED - User is no longer active.
      * </p>
      * </li>
      * <li>
@@ -262,11 +258,14 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last modified date of the user.
+     * The date and time when the item was modified. Amazon Cognito returns this timestamp in UNIX epoch time format.
+     * Your SDK might render the output in a human-readable format like ISO 8601 or a Java <code>Date</code> object.
      * </p>
      * 
      * @param userLastModifiedDate
-     *        The last modified date of the user.
+     *        The date and time when the item was modified. Amazon Cognito returns this timestamp in UNIX epoch time
+     *        format. Your SDK might render the output in a human-readable format like ISO 8601 or a Java
+     *        <code>Date</code> object.
      */
 
     public void setUserLastModifiedDate(java.util.Date userLastModifiedDate) {
@@ -275,10 +274,13 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last modified date of the user.
+     * The date and time when the item was modified. Amazon Cognito returns this timestamp in UNIX epoch time format.
+     * Your SDK might render the output in a human-readable format like ISO 8601 or a Java <code>Date</code> object.
      * </p>
      * 
-     * @return The last modified date of the user.
+     * @return The date and time when the item was modified. Amazon Cognito returns this timestamp in UNIX epoch time
+     *         format. Your SDK might render the output in a human-readable format like ISO 8601 or a Java
+     *         <code>Date</code> object.
      */
 
     public java.util.Date getUserLastModifiedDate() {
@@ -287,11 +289,14 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The last modified date of the user.
+     * The date and time when the item was modified. Amazon Cognito returns this timestamp in UNIX epoch time format.
+     * Your SDK might render the output in a human-readable format like ISO 8601 or a Java <code>Date</code> object.
      * </p>
      * 
      * @param userLastModifiedDate
-     *        The last modified date of the user.
+     *        The date and time when the item was modified. Amazon Cognito returns this timestamp in UNIX epoch time
+     *        format. Your SDK might render the output in a human-readable format like ISO 8601 or a Java
+     *        <code>Date</code> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -374,11 +379,6 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * ARCHIVED - User is no longer active.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * UNKNOWN - User status isn't known.
      * </p>
      * </li>
@@ -412,11 +412,6 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        EXTERNAL_PROVIDER - User signed in with a third-party IdP.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        ARCHIVED - User is no longer active.
      *        </p>
      *        </li>
      *        <li>
@@ -465,11 +460,6 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * ARCHIVED - User is no longer active.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * UNKNOWN - User status isn't known.
      * </p>
      * </li>
@@ -502,11 +492,6 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         EXTERNAL_PROVIDER - User signed in with a third-party IdP.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         ARCHIVED - User is no longer active.
      *         </p>
      *         </li>
      *         <li>
@@ -555,11 +540,6 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * ARCHIVED - User is no longer active.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * UNKNOWN - User status isn't known.
      * </p>
      * </li>
@@ -593,11 +573,6 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        EXTERNAL_PROVIDER - User signed in with a third-party IdP.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        ARCHIVED - User is no longer active.
      *        </p>
      *        </li>
      *        <li>
@@ -648,11 +623,6 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * ARCHIVED - User is no longer active.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * UNKNOWN - User status isn't known.
      * </p>
      * </li>
@@ -686,11 +656,6 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        EXTERNAL_PROVIDER - User signed in with a third-party IdP.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        ARCHIVED - User is no longer active.
      *        </p>
      *        </li>
      *        <li>
@@ -739,11 +704,6 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * ARCHIVED - User is no longer active.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * UNKNOWN - User status isn't known.
      * </p>
      * </li>
@@ -777,11 +737,6 @@ public class UserType implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        EXTERNAL_PROVIDER - User signed in with a third-party IdP.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        ARCHIVED - User is no longer active.
      *        </p>
      *        </li>
      *        <li>

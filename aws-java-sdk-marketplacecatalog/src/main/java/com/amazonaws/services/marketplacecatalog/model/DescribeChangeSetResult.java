@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,13 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private String changeSetName;
+    /**
+     * <p>
+     * The optional intent provided in the <code>StartChangeSet</code> request. If you do not provide an intent,
+     * <code>APPLY</code> is set by default.
+     * </p>
+     */
+    private String intent;
     /**
      * <p>
      * The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started.
@@ -206,6 +213,73 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
 
     public DescribeChangeSetResult withChangeSetName(String changeSetName) {
         setChangeSetName(changeSetName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The optional intent provided in the <code>StartChangeSet</code> request. If you do not provide an intent,
+     * <code>APPLY</code> is set by default.
+     * </p>
+     * 
+     * @param intent
+     *        The optional intent provided in the <code>StartChangeSet</code> request. If you do not provide an intent,
+     *        <code>APPLY</code> is set by default.
+     * @see Intent
+     */
+
+    public void setIntent(String intent) {
+        this.intent = intent;
+    }
+
+    /**
+     * <p>
+     * The optional intent provided in the <code>StartChangeSet</code> request. If you do not provide an intent,
+     * <code>APPLY</code> is set by default.
+     * </p>
+     * 
+     * @return The optional intent provided in the <code>StartChangeSet</code> request. If you do not provide an intent,
+     *         <code>APPLY</code> is set by default.
+     * @see Intent
+     */
+
+    public String getIntent() {
+        return this.intent;
+    }
+
+    /**
+     * <p>
+     * The optional intent provided in the <code>StartChangeSet</code> request. If you do not provide an intent,
+     * <code>APPLY</code> is set by default.
+     * </p>
+     * 
+     * @param intent
+     *        The optional intent provided in the <code>StartChangeSet</code> request. If you do not provide an intent,
+     *        <code>APPLY</code> is set by default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Intent
+     */
+
+    public DescribeChangeSetResult withIntent(String intent) {
+        setIntent(intent);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The optional intent provided in the <code>StartChangeSet</code> request. If you do not provide an intent,
+     * <code>APPLY</code> is set by default.
+     * </p>
+     * 
+     * @param intent
+     *        The optional intent provided in the <code>StartChangeSet</code> request. If you do not provide an intent,
+     *        <code>APPLY</code> is set by default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Intent
+     */
+
+    public DescribeChangeSetResult withIntent(Intent intent) {
+        this.intent = intent.toString();
         return this;
     }
 
@@ -567,6 +641,8 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
             sb.append("ChangeSetArn: ").append(getChangeSetArn()).append(",");
         if (getChangeSetName() != null)
             sb.append("ChangeSetName: ").append(getChangeSetName()).append(",");
+        if (getIntent() != null)
+            sb.append("Intent: ").append(getIntent()).append(",");
         if (getStartTime() != null)
             sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
@@ -605,6 +681,10 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getChangeSetName() != null && other.getChangeSetName().equals(this.getChangeSetName()) == false)
             return false;
+        if (other.getIntent() == null ^ this.getIntent() == null)
+            return false;
+        if (other.getIntent() != null && other.getIntent().equals(this.getIntent()) == false)
+            return false;
         if (other.getStartTime() == null ^ this.getStartTime() == null)
             return false;
         if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
@@ -640,6 +720,7 @@ public class DescribeChangeSetResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getChangeSetId() == null) ? 0 : getChangeSetId().hashCode());
         hashCode = prime * hashCode + ((getChangeSetArn() == null) ? 0 : getChangeSetArn().hashCode());
         hashCode = prime * hashCode + ((getChangeSetName() == null) ? 0 : getChangeSetName().hashCode());
+        hashCode = prime * hashCode + ((getIntent() == null) ? 0 : getIntent().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());

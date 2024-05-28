@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,7 +43,7 @@
  * It is the prefix used in Amazon EMR on EKS service endpoints. For example,
  * <code>emr-containers.us-east-2.amazonaws.com</code>. For more information, see <a
  * href="https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/service-quotas.html#service-endpoints"
- * >Amazon EMR on EKS Service Endpoints</a>.
+ * >Amazon EMR on EKSService Endpoints</a>.
  * </p>
  * </li>
  * </ul>

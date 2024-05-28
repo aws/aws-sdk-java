@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,8 @@ public class PhoneNumberInformationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TwoWayEnabled").build();
     private static final MarshallingInfo<String> TWOWAYCHANNELARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TwoWayChannelArn").build();
+    private static final MarshallingInfo<String> TWOWAYCHANNELROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TwoWayChannelRole").build();
     private static final MarshallingInfo<Boolean> SELFMANAGEDOPTOUTSENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelfManagedOptOutsEnabled").build();
     private static final MarshallingInfo<String> OPTOUTLISTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -58,6 +60,8 @@ public class PhoneNumberInformationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeletionProtectionEnabled").build();
     private static final MarshallingInfo<String> POOLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("PoolId").build();
+    private static final MarshallingInfo<String> REGISTRATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RegistrationId").build();
     private static final MarshallingInfo<java.util.Date> CREATEDTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedTimestamp").timestampFormat("unixTimestamp").build();
 
@@ -88,10 +92,12 @@ public class PhoneNumberInformationMarshaller {
             protocolMarshaller.marshall(phoneNumberInformation.getMonthlyLeasingPrice(), MONTHLYLEASINGPRICE_BINDING);
             protocolMarshaller.marshall(phoneNumberInformation.getTwoWayEnabled(), TWOWAYENABLED_BINDING);
             protocolMarshaller.marshall(phoneNumberInformation.getTwoWayChannelArn(), TWOWAYCHANNELARN_BINDING);
+            protocolMarshaller.marshall(phoneNumberInformation.getTwoWayChannelRole(), TWOWAYCHANNELROLE_BINDING);
             protocolMarshaller.marshall(phoneNumberInformation.getSelfManagedOptOutsEnabled(), SELFMANAGEDOPTOUTSENABLED_BINDING);
             protocolMarshaller.marshall(phoneNumberInformation.getOptOutListName(), OPTOUTLISTNAME_BINDING);
             protocolMarshaller.marshall(phoneNumberInformation.getDeletionProtectionEnabled(), DELETIONPROTECTIONENABLED_BINDING);
             protocolMarshaller.marshall(phoneNumberInformation.getPoolId(), POOLID_BINDING);
+            protocolMarshaller.marshall(phoneNumberInformation.getRegistrationId(), REGISTRATIONID_BINDING);
             protocolMarshaller.marshall(phoneNumberInformation.getCreatedTimestamp(), CREATEDTIMESTAMP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

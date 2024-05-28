@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,7 @@ import com.amazonaws.services.appstream.waiters.AmazonAppStreamWaiters;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.appstream.model.*;
+
 import com.amazonaws.services.appstream.model.transform.*;
 
 /**
@@ -350,6 +351,74 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/appstream/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/appstream/request.handler2s"));
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * Associates the specified app block builder with the specified app block.
+     * </p>
+     * 
+     * @param associateAppBlockBuilderAppBlockRequest
+     * @return Result of the AssociateAppBlockBuilderAppBlock operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         An API error occurred. Wait a few minutes and try again.
+     * @throws LimitExceededException
+     *         The requested limit exceeds the permitted limit for an account.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParameterCombinationException
+     *         Indicates an incorrect combination of parameters, or a missing parameter.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
+     * @sample AmazonAppStream.AssociateAppBlockBuilderAppBlock
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AssociateAppBlockBuilderAppBlock"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateAppBlockBuilderAppBlockResult associateAppBlockBuilderAppBlock(AssociateAppBlockBuilderAppBlockRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateAppBlockBuilderAppBlock(request);
+    }
+
+    @SdkInternalApi
+    final AssociateAppBlockBuilderAppBlockResult executeAssociateAppBlockBuilderAppBlock(
+            AssociateAppBlockBuilderAppBlockRequest associateAppBlockBuilderAppBlockRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateAppBlockBuilderAppBlockRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateAppBlockBuilderAppBlockRequest> request = null;
+        Response<AssociateAppBlockBuilderAppBlockResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateAppBlockBuilderAppBlockRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(associateAppBlockBuilderAppBlockRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateAppBlockBuilderAppBlock");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateAppBlockBuilderAppBlockResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AssociateAppBlockBuilderAppBlockResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -821,6 +890,146 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Creates an app block builder.
+     * </p>
+     * 
+     * @param createAppBlockBuilderRequest
+     * @return Result of the CreateAppBlockBuilder operation returned by the service.
+     * @throws LimitExceededException
+     *         The requested limit exceeds the permitted limit for an account.
+     * @throws RequestLimitExceededException
+     *         AppStream 2.0 can’t process the request right now because the Describe calls from your AWS account are
+     *         being throttled by Amazon EC2. Try again later.
+     * @throws InvalidAccountStatusException
+     *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
+     *         Support.
+     * @throws InvalidRoleException
+     *         The specified role is invalid.
+     * @throws ConcurrentModificationException
+     *         An API error occurred. Wait a few minutes and try again.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
+     * @throws ResourceAlreadyExistsException
+     *         The specified resource already exists.
+     * @throws ResourceNotAvailableException
+     *         The specified resource exists and is not in use, but isn't available.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidParameterCombinationException
+     *         Indicates an incorrect combination of parameters, or a missing parameter.
+     * @sample AmazonAppStream.CreateAppBlockBuilder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateAppBlockBuilder"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateAppBlockBuilderResult createAppBlockBuilder(CreateAppBlockBuilderRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAppBlockBuilder(request);
+    }
+
+    @SdkInternalApi
+    final CreateAppBlockBuilderResult executeCreateAppBlockBuilder(CreateAppBlockBuilderRequest createAppBlockBuilderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createAppBlockBuilderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateAppBlockBuilderRequest> request = null;
+        Response<CreateAppBlockBuilderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAppBlockBuilderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAppBlockBuilderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAppBlockBuilder");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAppBlockBuilderResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new CreateAppBlockBuilderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a URL to start a create app block builder streaming session.
+     * </p>
+     * 
+     * @param createAppBlockBuilderStreamingURLRequest
+     * @return Result of the CreateAppBlockBuilderStreamingURL operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
+     * @sample AmazonAppStream.CreateAppBlockBuilderStreamingURL
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateAppBlockBuilderStreamingURL"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateAppBlockBuilderStreamingURLResult createAppBlockBuilderStreamingURL(CreateAppBlockBuilderStreamingURLRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAppBlockBuilderStreamingURL(request);
+    }
+
+    @SdkInternalApi
+    final CreateAppBlockBuilderStreamingURLResult executeCreateAppBlockBuilderStreamingURL(
+            CreateAppBlockBuilderStreamingURLRequest createAppBlockBuilderStreamingURLRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createAppBlockBuilderStreamingURLRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateAppBlockBuilderStreamingURLRequest> request = null;
+        Response<CreateAppBlockBuilderStreamingURLResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAppBlockBuilderStreamingURLRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createAppBlockBuilderStreamingURLRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAppBlockBuilderStreamingURL");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAppBlockBuilderStreamingURLResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateAppBlockBuilderStreamingURLResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates an application.
      * </p>
      * <p>
@@ -1275,6 +1484,8 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
      *         The specified resource was not found.
      * @throws InvalidParameterCombinationException
      *         Indicates an incorrect combination of parameters, or a missing parameter.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
      * @sample AmazonAppStream.CreateStack
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateStack" target="_top">AWS API
      *      Documentation</a>
@@ -1644,6 +1855,73 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteAppBlockResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteAppBlockResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an app block builder.
+     * </p>
+     * <p>
+     * An app block builder can only be deleted when it has no association with an app block.
+     * </p>
+     * 
+     * @param deleteAppBlockBuilderRequest
+     * @return Result of the DeleteAppBlockBuilder operation returned by the service.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
+     * @throws ConcurrentModificationException
+     *         An API error occurred. Wait a few minutes and try again.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonAppStream.DeleteAppBlockBuilder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DeleteAppBlockBuilder"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteAppBlockBuilderResult deleteAppBlockBuilder(DeleteAppBlockBuilderRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAppBlockBuilder(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAppBlockBuilderResult executeDeleteAppBlockBuilder(DeleteAppBlockBuilderRequest deleteAppBlockBuilderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAppBlockBuilderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAppBlockBuilderRequest> request = null;
+        Response<DeleteAppBlockBuilderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAppBlockBuilderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAppBlockBuilderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAppBlockBuilder");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAppBlockBuilderResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteAppBlockBuilderResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2264,6 +2542,131 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteUserResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteUserResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a list that describes one or more app block builder associations.
+     * </p>
+     * 
+     * @param describeAppBlockBuilderAppBlockAssociationsRequest
+     * @return Result of the DescribeAppBlockBuilderAppBlockAssociations operation returned by the service.
+     * @throws InvalidParameterCombinationException
+     *         Indicates an incorrect combination of parameters, or a missing parameter.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
+     * @sample AmazonAppStream.DescribeAppBlockBuilderAppBlockAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppBlockBuilderAppBlockAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeAppBlockBuilderAppBlockAssociationsResult describeAppBlockBuilderAppBlockAssociations(
+            DescribeAppBlockBuilderAppBlockAssociationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAppBlockBuilderAppBlockAssociations(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAppBlockBuilderAppBlockAssociationsResult executeDescribeAppBlockBuilderAppBlockAssociations(
+            DescribeAppBlockBuilderAppBlockAssociationsRequest describeAppBlockBuilderAppBlockAssociationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAppBlockBuilderAppBlockAssociationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAppBlockBuilderAppBlockAssociationsRequest> request = null;
+        Response<DescribeAppBlockBuilderAppBlockAssociationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAppBlockBuilderAppBlockAssociationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAppBlockBuilderAppBlockAssociationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAppBlockBuilderAppBlockAssociations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAppBlockBuilderAppBlockAssociationsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeAppBlockBuilderAppBlockAssociationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a list that describes one or more app block builders.
+     * </p>
+     * 
+     * @param describeAppBlockBuildersRequest
+     * @return Result of the DescribeAppBlockBuilders operation returned by the service.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonAppStream.DescribeAppBlockBuilders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeAppBlockBuilders"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeAppBlockBuildersResult describeAppBlockBuilders(DescribeAppBlockBuildersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAppBlockBuilders(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAppBlockBuildersResult executeDescribeAppBlockBuilders(DescribeAppBlockBuildersRequest describeAppBlockBuildersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAppBlockBuildersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAppBlockBuildersRequest> request = null;
+        Response<DescribeAppBlockBuildersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAppBlockBuildersRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAppBlockBuildersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAppBlockBuilders");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAppBlockBuildersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeAppBlockBuildersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3193,6 +3596,72 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Disassociates a specified app block builder from a specified app block.
+     * </p>
+     * 
+     * @param disassociateAppBlockBuilderAppBlockRequest
+     * @return Result of the DisassociateAppBlockBuilderAppBlock operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         An API error occurred. Wait a few minutes and try again.
+     * @throws InvalidParameterCombinationException
+     *         Indicates an incorrect combination of parameters, or a missing parameter.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonAppStream.DisassociateAppBlockBuilderAppBlock
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DisassociateAppBlockBuilderAppBlock"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateAppBlockBuilderAppBlockResult disassociateAppBlockBuilderAppBlock(DisassociateAppBlockBuilderAppBlockRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateAppBlockBuilderAppBlock(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateAppBlockBuilderAppBlockResult executeDisassociateAppBlockBuilderAppBlock(
+            DisassociateAppBlockBuilderAppBlockRequest disassociateAppBlockBuilderAppBlockRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateAppBlockBuilderAppBlockRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateAppBlockBuilderAppBlockRequest> request = null;
+        Response<DisassociateAppBlockBuilderAppBlockResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateAppBlockBuilderAppBlockRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateAppBlockBuilderAppBlockRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateAppBlockBuilderAppBlock");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateAppBlockBuilderAppBlockResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateAppBlockBuilderAppBlockResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Disassociates the specified application from the fleet.
      * </p>
      * 
@@ -3737,6 +4206,84 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Starts an app block builder.
+     * </p>
+     * <p>
+     * An app block builder can only be started when it's associated with an app block.
+     * </p>
+     * <p>
+     * Starting an app block builder starts a new instance, which is equivalent to an elastic fleet instance with
+     * application builder assistance functionality.
+     * </p>
+     * 
+     * @param startAppBlockBuilderRequest
+     * @return Result of the StartAppBlockBuilder operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         An API error occurred. Wait a few minutes and try again.
+     * @throws InvalidAccountStatusException
+     *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
+     *         Support.
+     * @throws LimitExceededException
+     *         The requested limit exceeds the permitted limit for an account.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
+     * @throws RequestLimitExceededException
+     *         AppStream 2.0 can’t process the request right now because the Describe calls from your AWS account are
+     *         being throttled by Amazon EC2. Try again later.
+     * @throws ResourceNotAvailableException
+     *         The specified resource exists and is not in use, but isn't available.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonAppStream.StartAppBlockBuilder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartAppBlockBuilder" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public StartAppBlockBuilderResult startAppBlockBuilder(StartAppBlockBuilderRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartAppBlockBuilder(request);
+    }
+
+    @SdkInternalApi
+    final StartAppBlockBuilderResult executeStartAppBlockBuilder(StartAppBlockBuilderRequest startAppBlockBuilderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startAppBlockBuilderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartAppBlockBuilderRequest> request = null;
+        Response<StartAppBlockBuilderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartAppBlockBuilderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startAppBlockBuilderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartAppBlockBuilder");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartAppBlockBuilderResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartAppBlockBuilderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Starts the specified fleet.
      * </p>
      * 
@@ -3864,6 +4411,70 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<StartImageBuilderResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartImageBuilderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops an app block builder.
+     * </p>
+     * <p>
+     * Stopping an app block builder terminates the instance, and the instance state is not persisted.
+     * </p>
+     * 
+     * @param stopAppBlockBuilderRequest
+     * @return Result of the StopAppBlockBuilder operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         An API error occurred. Wait a few minutes and try again.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonAppStream.StopAppBlockBuilder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StopAppBlockBuilder" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public StopAppBlockBuilderResult stopAppBlockBuilder(StopAppBlockBuilderRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopAppBlockBuilder(request);
+    }
+
+    @SdkInternalApi
+    final StopAppBlockBuilderResult executeStopAppBlockBuilder(StopAppBlockBuilderRequest stopAppBlockBuilderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopAppBlockBuilderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopAppBlockBuilderRequest> request = null;
+        Response<StopAppBlockBuilderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopAppBlockBuilderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopAppBlockBuilderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopAppBlockBuilder");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopAppBlockBuilderResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopAppBlockBuilderResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4125,6 +4736,89 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an app block builder.
+     * </p>
+     * <p>
+     * If the app block builder is in the <code>STARTING</code> or <code>STOPPING</code> state, you can't update it. If
+     * the app block builder is in the <code>RUNNING</code> state, you can only update the DisplayName and Description.
+     * If the app block builder is in the <code>STOPPED</code> state, you can update any attribute except the Name.
+     * </p>
+     * 
+     * @param updateAppBlockBuilderRequest
+     * @return Result of the UpdateAppBlockBuilder operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         An API error occurred. Wait a few minutes and try again.
+     * @throws InvalidAccountStatusException
+     *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
+     *         Support.
+     * @throws InvalidParameterCombinationException
+     *         Indicates an incorrect combination of parameters, or a missing parameter.
+     * @throws InvalidRoleException
+     *         The specified role is invalid.
+     * @throws LimitExceededException
+     *         The requested limit exceeds the permitted limit for an account.
+     * @throws OperationNotPermittedException
+     *         The attempted operation is not permitted.
+     * @throws RequestLimitExceededException
+     *         AppStream 2.0 can’t process the request right now because the Describe calls from your AWS account are
+     *         being throttled by Amazon EC2. Try again later.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws ResourceNotAvailableException
+     *         The specified resource exists and is not in use, but isn't available.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonAppStream.UpdateAppBlockBuilder
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/UpdateAppBlockBuilder"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateAppBlockBuilderResult updateAppBlockBuilder(UpdateAppBlockBuilderRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAppBlockBuilder(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAppBlockBuilderResult executeUpdateAppBlockBuilder(UpdateAppBlockBuilderRequest updateAppBlockBuilderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAppBlockBuilderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAppBlockBuilderRequest> request = null;
+        Response<UpdateAppBlockBuilderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAppBlockBuilderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAppBlockBuilderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppStream");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAppBlockBuilder");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAppBlockBuilderResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new UpdateAppBlockBuilderResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

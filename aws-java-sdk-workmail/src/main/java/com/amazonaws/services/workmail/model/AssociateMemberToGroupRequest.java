@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,12 +35,53 @@ public class AssociateMemberToGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The group to which the member (user or group) is associated.
      * </p>
+     * <p>
+     * The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity formats are
+     * available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: group@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Group name: group
+     * </p>
+     * </li>
+     * </ul>
      */
     private String groupId;
     /**
      * <p>
      * The member (user or group) to associate to the group.
      * </p>
+     * <p>
+     * The member ID can accept <i>UserID or GroupId</i>, <i>Username or Groupname</i>, or <i>email</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Member: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: member@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Member name: member
+     * </p>
+     * </li>
+     * </ul>
      */
     private String memberId;
 
@@ -88,9 +129,50 @@ public class AssociateMemberToGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The group to which the member (user or group) is associated.
      * </p>
+     * <p>
+     * The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity formats are
+     * available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: group@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Group name: group
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param groupId
-     *        The group to which the member (user or group) is associated.
+     *        The group to which the member (user or group) is associated.</p>
+     *        <p>
+     *        The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity
+     *        formats are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Email address: group@domain.tld
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Group name: group
+     *        </p>
+     *        </li>
      */
 
     public void setGroupId(String groupId) {
@@ -101,8 +183,49 @@ public class AssociateMemberToGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The group to which the member (user or group) is associated.
      * </p>
+     * <p>
+     * The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity formats are
+     * available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: group@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Group name: group
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The group to which the member (user or group) is associated.
+     * @return The group to which the member (user or group) is associated.</p>
+     *         <p>
+     *         The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity
+     *         formats are available:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Email address: group@domain.tld
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Group name: group
+     *         </p>
+     *         </li>
      */
 
     public String getGroupId() {
@@ -113,9 +236,50 @@ public class AssociateMemberToGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The group to which the member (user or group) is associated.
      * </p>
+     * <p>
+     * The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity formats are
+     * available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: group@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Group name: group
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param groupId
-     *        The group to which the member (user or group) is associated.
+     *        The group to which the member (user or group) is associated.</p>
+     *        <p>
+     *        The identifier can accept <i>GroupId</i>, <i>Groupname</i>, or <i>email</i>. The following identity
+     *        formats are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Group ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Email address: group@domain.tld
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Group name: group
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -128,9 +292,48 @@ public class AssociateMemberToGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The member (user or group) to associate to the group.
      * </p>
+     * <p>
+     * The member ID can accept <i>UserID or GroupId</i>, <i>Username or Groupname</i>, or <i>email</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Member: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: member@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Member name: member
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param memberId
-     *        The member (user or group) to associate to the group.
+     *        The member (user or group) to associate to the group.</p>
+     *        <p>
+     *        The member ID can accept <i>UserID or GroupId</i>, <i>Username or Groupname</i>, or <i>email</i>.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Member: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Email address: member@domain.tld
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Member name: member
+     *        </p>
+     *        </li>
      */
 
     public void setMemberId(String memberId) {
@@ -141,8 +344,47 @@ public class AssociateMemberToGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The member (user or group) to associate to the group.
      * </p>
+     * <p>
+     * The member ID can accept <i>UserID or GroupId</i>, <i>Username or Groupname</i>, or <i>email</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Member: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: member@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Member name: member
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The member (user or group) to associate to the group.
+     * @return The member (user or group) to associate to the group.</p>
+     *         <p>
+     *         The member ID can accept <i>UserID or GroupId</i>, <i>Username or Groupname</i>, or <i>email</i>.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Member: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Email address: member@domain.tld
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Member name: member
+     *         </p>
+     *         </li>
      */
 
     public String getMemberId() {
@@ -153,9 +395,48 @@ public class AssociateMemberToGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The member (user or group) to associate to the group.
      * </p>
+     * <p>
+     * The member ID can accept <i>UserID or GroupId</i>, <i>Username or Groupname</i>, or <i>email</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Member: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: member@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Member name: member
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param memberId
-     *        The member (user or group) to associate to the group.
+     *        The member (user or group) to associate to the group.</p>
+     *        <p>
+     *        The member ID can accept <i>UserID or GroupId</i>, <i>Username or Groupname</i>, or <i>email</i>.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Member: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Email address: member@domain.tld
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Member name: member
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

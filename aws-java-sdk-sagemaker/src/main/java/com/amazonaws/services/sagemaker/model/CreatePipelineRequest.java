@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,9 @@ public class CreatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
     private String pipelineDisplayName;
     /**
      * <p>
-     * The JSON pipeline definition of the pipeline.
+     * The <a
+     * href="https://aws-sagemaker-mlops.github.io/sagemaker-model-building-pipeline-definition-JSON-schema/">JSON
+     * pipeline definition</a> of the pipeline.
      * </p>
      */
     private String pipelineDefinition;
@@ -165,11 +167,15 @@ public class CreatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The JSON pipeline definition of the pipeline.
+     * The <a
+     * href="https://aws-sagemaker-mlops.github.io/sagemaker-model-building-pipeline-definition-JSON-schema/">JSON
+     * pipeline definition</a> of the pipeline.
      * </p>
      * 
      * @param pipelineDefinition
-     *        The JSON pipeline definition of the pipeline.
+     *        The <a
+     *        href="https://aws-sagemaker-mlops.github.io/sagemaker-model-building-pipeline-definition-JSON-schema/"
+     *        >JSON pipeline definition</a> of the pipeline.
      */
 
     public void setPipelineDefinition(String pipelineDefinition) {
@@ -178,10 +184,14 @@ public class CreatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The JSON pipeline definition of the pipeline.
+     * The <a
+     * href="https://aws-sagemaker-mlops.github.io/sagemaker-model-building-pipeline-definition-JSON-schema/">JSON
+     * pipeline definition</a> of the pipeline.
      * </p>
      * 
-     * @return The JSON pipeline definition of the pipeline.
+     * @return The <a
+     *         href="https://aws-sagemaker-mlops.github.io/sagemaker-model-building-pipeline-definition-JSON-schema/"
+     *         >JSON pipeline definition</a> of the pipeline.
      */
 
     public String getPipelineDefinition() {
@@ -190,11 +200,15 @@ public class CreatePipelineRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The JSON pipeline definition of the pipeline.
+     * The <a
+     * href="https://aws-sagemaker-mlops.github.io/sagemaker-model-building-pipeline-definition-JSON-schema/">JSON
+     * pipeline definition</a> of the pipeline.
      * </p>
      * 
      * @param pipelineDefinition
-     *        The JSON pipeline definition of the pipeline.
+     *        The <a
+     *        href="https://aws-sagemaker-mlops.github.io/sagemaker-model-building-pipeline-definition-JSON-schema/"
+     *        >JSON pipeline definition</a> of the pipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

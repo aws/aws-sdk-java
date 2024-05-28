@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,22 +21,24 @@ import javax.annotation.Generated;
 public enum AutoMLJobSecondaryStatus {
 
     Starting("Starting"),
-    AnalyzingData("AnalyzingData"),
-    FeatureEngineering("FeatureEngineering"),
-    ModelTuning("ModelTuning"),
     MaxCandidatesReached("MaxCandidatesReached"),
     Failed("Failed"),
     Stopped("Stopped"),
     MaxAutoMLJobRuntimeReached("MaxAutoMLJobRuntimeReached"),
     Stopping("Stopping"),
     CandidateDefinitionsGenerated("CandidateDefinitionsGenerated"),
-    GeneratingExplainabilityReport("GeneratingExplainabilityReport"),
     Completed("Completed"),
     ExplainabilityError("ExplainabilityError"),
     DeployingModel("DeployingModel"),
     ModelDeploymentError("ModelDeploymentError"),
     GeneratingModelInsightsReport("GeneratingModelInsightsReport"),
-    ModelInsightsError("ModelInsightsError");
+    ModelInsightsError("ModelInsightsError"),
+    AnalyzingData("AnalyzingData"),
+    FeatureEngineering("FeatureEngineering"),
+    ModelTuning("ModelTuning"),
+    GeneratingExplainabilityReport("GeneratingExplainabilityReport"),
+    TrainingModels("TrainingModels"),
+    PreTraining("PreTraining");
 
     private String value;
 

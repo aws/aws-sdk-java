@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AdBreak implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * Defines a list of key/value pairs that MediaTailor generates within the <code>EXT-X-ASSET</code>tag for
+     * <code>SCTE35_ENHANCED</code> output.
+     * </p>
+     */
+    private java.util.List<KeyValuePair> adBreakMetadata;
     /**
      * <p>
      * The SCTE-35 ad insertion type. Accepted value: <code>SPLICE_INSERT</code>, <code>TIME_SIGNAL</code>.
@@ -68,6 +75,84 @@ public class AdBreak implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private TimeSignalMessage timeSignalMessage;
+
+    /**
+     * <p>
+     * Defines a list of key/value pairs that MediaTailor generates within the <code>EXT-X-ASSET</code>tag for
+     * <code>SCTE35_ENHANCED</code> output.
+     * </p>
+     * 
+     * @return Defines a list of key/value pairs that MediaTailor generates within the <code>EXT-X-ASSET</code>tag for
+     *         <code>SCTE35_ENHANCED</code> output.
+     */
+
+    public java.util.List<KeyValuePair> getAdBreakMetadata() {
+        return adBreakMetadata;
+    }
+
+    /**
+     * <p>
+     * Defines a list of key/value pairs that MediaTailor generates within the <code>EXT-X-ASSET</code>tag for
+     * <code>SCTE35_ENHANCED</code> output.
+     * </p>
+     * 
+     * @param adBreakMetadata
+     *        Defines a list of key/value pairs that MediaTailor generates within the <code>EXT-X-ASSET</code>tag for
+     *        <code>SCTE35_ENHANCED</code> output.
+     */
+
+    public void setAdBreakMetadata(java.util.Collection<KeyValuePair> adBreakMetadata) {
+        if (adBreakMetadata == null) {
+            this.adBreakMetadata = null;
+            return;
+        }
+
+        this.adBreakMetadata = new java.util.ArrayList<KeyValuePair>(adBreakMetadata);
+    }
+
+    /**
+     * <p>
+     * Defines a list of key/value pairs that MediaTailor generates within the <code>EXT-X-ASSET</code>tag for
+     * <code>SCTE35_ENHANCED</code> output.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAdBreakMetadata(java.util.Collection)} or {@link #withAdBreakMetadata(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param adBreakMetadata
+     *        Defines a list of key/value pairs that MediaTailor generates within the <code>EXT-X-ASSET</code>tag for
+     *        <code>SCTE35_ENHANCED</code> output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AdBreak withAdBreakMetadata(KeyValuePair... adBreakMetadata) {
+        if (this.adBreakMetadata == null) {
+            setAdBreakMetadata(new java.util.ArrayList<KeyValuePair>(adBreakMetadata.length));
+        }
+        for (KeyValuePair ele : adBreakMetadata) {
+            this.adBreakMetadata.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Defines a list of key/value pairs that MediaTailor generates within the <code>EXT-X-ASSET</code>tag for
+     * <code>SCTE35_ENHANCED</code> output.
+     * </p>
+     * 
+     * @param adBreakMetadata
+     *        Defines a list of key/value pairs that MediaTailor generates within the <code>EXT-X-ASSET</code>tag for
+     *        <code>SCTE35_ENHANCED</code> output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AdBreak withAdBreakMetadata(java.util.Collection<KeyValuePair> adBreakMetadata) {
+        setAdBreakMetadata(adBreakMetadata);
+        return this;
+    }
 
     /**
      * <p>
@@ -357,6 +442,8 @@ public class AdBreak implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAdBreakMetadata() != null)
+            sb.append("AdBreakMetadata: ").append(getAdBreakMetadata()).append(",");
         if (getMessageType() != null)
             sb.append("MessageType: ").append(getMessageType()).append(",");
         if (getOffsetMillis() != null)
@@ -381,6 +468,10 @@ public class AdBreak implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof AdBreak == false)
             return false;
         AdBreak other = (AdBreak) obj;
+        if (other.getAdBreakMetadata() == null ^ this.getAdBreakMetadata() == null)
+            return false;
+        if (other.getAdBreakMetadata() != null && other.getAdBreakMetadata().equals(this.getAdBreakMetadata()) == false)
+            return false;
         if (other.getMessageType() == null ^ this.getMessageType() == null)
             return false;
         if (other.getMessageType() != null && other.getMessageType().equals(this.getMessageType()) == false)
@@ -409,6 +500,7 @@ public class AdBreak implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAdBreakMetadata() == null) ? 0 : getAdBreakMetadata().hashCode());
         hashCode = prime * hashCode + ((getMessageType() == null) ? 0 : getMessageType().hashCode());
         hashCode = prime * hashCode + ((getOffsetMillis() == null) ? 0 : getOffsetMillis().hashCode());
         hashCode = prime * hashCode + ((getSlate() == null) ? 0 : getSlate().hashCode());

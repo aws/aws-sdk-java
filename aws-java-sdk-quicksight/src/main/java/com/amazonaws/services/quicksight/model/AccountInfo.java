@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -88,6 +88,12 @@ public class AccountInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String accountSubscriptionStatus;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the IAM Identity Center instance.
+     * </p>
+     */
+    private String iAMIdentityCenterInstanceArn;
 
     /**
      * <p>
@@ -327,6 +333,46 @@ public class AccountInfo implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the IAM Identity Center instance.
+     * </p>
+     * 
+     * @param iAMIdentityCenterInstanceArn
+     *        The Amazon Resource Name (ARN) for the IAM Identity Center instance.
+     */
+
+    public void setIAMIdentityCenterInstanceArn(String iAMIdentityCenterInstanceArn) {
+        this.iAMIdentityCenterInstanceArn = iAMIdentityCenterInstanceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the IAM Identity Center instance.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the IAM Identity Center instance.
+     */
+
+    public String getIAMIdentityCenterInstanceArn() {
+        return this.iAMIdentityCenterInstanceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the IAM Identity Center instance.
+     * </p>
+     * 
+     * @param iAMIdentityCenterInstanceArn
+     *        The Amazon Resource Name (ARN) for the IAM Identity Center instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccountInfo withIAMIdentityCenterInstanceArn(String iAMIdentityCenterInstanceArn) {
+        setIAMIdentityCenterInstanceArn(iAMIdentityCenterInstanceArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -347,7 +393,9 @@ public class AccountInfo implements Serializable, Cloneable, StructuredPojo {
         if (getAuthenticationType() != null)
             sb.append("AuthenticationType: ").append(getAuthenticationType()).append(",");
         if (getAccountSubscriptionStatus() != null)
-            sb.append("AccountSubscriptionStatus: ").append(getAccountSubscriptionStatus());
+            sb.append("AccountSubscriptionStatus: ").append(getAccountSubscriptionStatus()).append(",");
+        if (getIAMIdentityCenterInstanceArn() != null)
+            sb.append("IAMIdentityCenterInstanceArn: ").append(getIAMIdentityCenterInstanceArn());
         sb.append("}");
         return sb.toString();
     }
@@ -382,6 +430,10 @@ public class AccountInfo implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAccountSubscriptionStatus() != null && other.getAccountSubscriptionStatus().equals(this.getAccountSubscriptionStatus()) == false)
             return false;
+        if (other.getIAMIdentityCenterInstanceArn() == null ^ this.getIAMIdentityCenterInstanceArn() == null)
+            return false;
+        if (other.getIAMIdentityCenterInstanceArn() != null && other.getIAMIdentityCenterInstanceArn().equals(this.getIAMIdentityCenterInstanceArn()) == false)
+            return false;
         return true;
     }
 
@@ -395,6 +447,7 @@ public class AccountInfo implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getNotificationEmail() == null) ? 0 : getNotificationEmail().hashCode());
         hashCode = prime * hashCode + ((getAuthenticationType() == null) ? 0 : getAuthenticationType().hashCode());
         hashCode = prime * hashCode + ((getAccountSubscriptionStatus() == null) ? 0 : getAccountSubscriptionStatus().hashCode());
+        hashCode = prime * hashCode + ((getIAMIdentityCenterInstanceArn() == null) ? 0 : getIAMIdentityCenterInstanceArn().hashCode());
         return hashCode;
     }
 

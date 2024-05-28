@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -144,6 +144,18 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * Example: <code>cluster:mycluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier
+     * is the resource ID. Example: <code>inference-component/my-inference-component</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String resourceId;
@@ -202,7 +214,7 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -260,6 +272,18 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * <li>
      * <p>
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
      * </p>
      * </li>
      * </ul>
@@ -495,6 +519,18 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * Example: <code>cluster:mycluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier
+     * is the resource ID. Example: <code>inference-component/my-inference-component</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -601,6 +637,18 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *        <p>
      *        Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
      *        Example: <code>cluster:mycluster</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     *        resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SageMaker inference component - The resource type is <code>inference-component</code> and the unique
+     *        identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.
      *        </p>
      *        </li>
      */
@@ -715,6 +763,18 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * Example: <code>cluster:mycluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier
+     * is the resource ID. Example: <code>inference-component/my-inference-component</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The identifier of the resource associated with the scalable target. This string consists of the resource
@@ -821,6 +881,18 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *         <p>
      *         Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster
      *         name. Example: <code>cluster:mycluster</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is
+     *         the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SageMaker inference component - The resource type is <code>inference-component</code> and the unique
+     *         identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.
      *         </p>
      *         </li>
      */
@@ -935,6 +1007,18 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * Example: <code>cluster:mycluster</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     * resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker inference component - The resource type is <code>inference-component</code> and the unique identifier
+     * is the resource ID. Example: <code>inference-component/my-inference-component</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -1043,6 +1127,18 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *        Example: <code>cluster:mycluster</code>.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        SageMaker Serverless endpoint - The resource type is <code>variant</code> and the unique identifier is the
+     *        resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SageMaker inference component - The resource type is <code>inference-component</code> and the unique
+     *        identifier is the resource ID. Example: <code>inference-component/my-inference-component</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1106,7 +1202,7 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1166,6 +1262,18 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1222,7 +1330,7 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -1283,6 +1391,18 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *        <p>
      *        <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
      *        cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     *        Serverless endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for
+     *        a SageMaker inference component.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -1347,7 +1467,7 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1407,6 +1527,18 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The scalable dimension. This string consists of the service namespace, resource type, and scaling
@@ -1462,7 +1594,7 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *         </li>
      *         <li>
      *         <p>
-     *         <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *         <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *         endpoint variant.
      *         </p>
      *         </li>
@@ -1523,6 +1655,18 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *         <p>
      *         <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
      *         cluster.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a
+     *         SageMaker Serverless endpoint.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for
+     *         a SageMaker inference component.
      *         </p>
      *         </li>
      * @see ScalableDimension
@@ -1587,7 +1731,7 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1647,6 +1791,18 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1703,7 +1859,7 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -1764,6 +1920,18 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *        <p>
      *        <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
      *        cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     *        Serverless endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for
+     *        a SageMaker inference component.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1830,7 +1998,7 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1890,6 +2058,18 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1946,7 +2126,7 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -2007,6 +2187,18 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *        <p>
      *        <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
      *        cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     *        Serverless endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for
+     *        a SageMaker inference component.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -2071,7 +2263,7 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -2131,6 +2323,18 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     * Serverless endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for a
+     * SageMaker inference component.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -2187,7 +2391,7 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -2248,6 +2452,18 @@ public class DeleteScalingPolicyRequest extends com.amazonaws.AmazonWebServiceRe
      *        <p>
      *        <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB
      *        cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency for a SageMaker
+     *        Serverless endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of copies across an endpoint for
+     *        a SageMaker inference component.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

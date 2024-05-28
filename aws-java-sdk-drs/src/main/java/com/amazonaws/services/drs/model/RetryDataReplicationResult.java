@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,6 +23,12 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RetryDataReplicationResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The version of the DRS agent installed on the source server
+     * </p>
+     */
+    private String agentVersion;
     /**
      * <p>
      * The ARN of the Source Server.
@@ -55,6 +61,31 @@ public class RetryDataReplicationResult extends com.amazonaws.AmazonWebServiceRe
     private String recoveryInstanceId;
     /**
      * <p>
+     * Replication direction of the Source Server.
+     * </p>
+     */
+    private String replicationDirection;
+    /**
+     * <p>
+     * For EC2-originated Source Servers which have been failed over and then failed back, this value will mean the ARN
+     * of the Source Server on the opposite replication direction.
+     * </p>
+     */
+    private String reversedDirectionSourceServerArn;
+    /**
+     * <p>
+     * Source cloud properties of the Source Server.
+     * </p>
+     */
+    private SourceCloudProperties sourceCloudProperties;
+    /**
+     * <p>
+     * ID of the Source Network which is protecting this Source Server's network.
+     * </p>
+     */
+    private String sourceNetworkID;
+    /**
+     * <p>
      * The source properties of the Source Server.
      * </p>
      */
@@ -77,6 +108,46 @@ public class RetryDataReplicationResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private java.util.Map<String, String> tags;
+
+    /**
+     * <p>
+     * The version of the DRS agent installed on the source server
+     * </p>
+     * 
+     * @param agentVersion
+     *        The version of the DRS agent installed on the source server
+     */
+
+    public void setAgentVersion(String agentVersion) {
+        this.agentVersion = agentVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the DRS agent installed on the source server
+     * </p>
+     * 
+     * @return The version of the DRS agent installed on the source server
+     */
+
+    public String getAgentVersion() {
+        return this.agentVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the DRS agent installed on the source server
+     * </p>
+     * 
+     * @param agentVersion
+     *        The version of the DRS agent installed on the source server
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RetryDataReplicationResult withAgentVersion(String agentVersion) {
+        setAgentVersion(agentVersion);
+        return this;
+    }
 
     /**
      * <p>
@@ -299,6 +370,191 @@ public class RetryDataReplicationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * Replication direction of the Source Server.
+     * </p>
+     * 
+     * @param replicationDirection
+     *        Replication direction of the Source Server.
+     * @see ReplicationDirection
+     */
+
+    public void setReplicationDirection(String replicationDirection) {
+        this.replicationDirection = replicationDirection;
+    }
+
+    /**
+     * <p>
+     * Replication direction of the Source Server.
+     * </p>
+     * 
+     * @return Replication direction of the Source Server.
+     * @see ReplicationDirection
+     */
+
+    public String getReplicationDirection() {
+        return this.replicationDirection;
+    }
+
+    /**
+     * <p>
+     * Replication direction of the Source Server.
+     * </p>
+     * 
+     * @param replicationDirection
+     *        Replication direction of the Source Server.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReplicationDirection
+     */
+
+    public RetryDataReplicationResult withReplicationDirection(String replicationDirection) {
+        setReplicationDirection(replicationDirection);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Replication direction of the Source Server.
+     * </p>
+     * 
+     * @param replicationDirection
+     *        Replication direction of the Source Server.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReplicationDirection
+     */
+
+    public RetryDataReplicationResult withReplicationDirection(ReplicationDirection replicationDirection) {
+        this.replicationDirection = replicationDirection.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * For EC2-originated Source Servers which have been failed over and then failed back, this value will mean the ARN
+     * of the Source Server on the opposite replication direction.
+     * </p>
+     * 
+     * @param reversedDirectionSourceServerArn
+     *        For EC2-originated Source Servers which have been failed over and then failed back, this value will mean
+     *        the ARN of the Source Server on the opposite replication direction.
+     */
+
+    public void setReversedDirectionSourceServerArn(String reversedDirectionSourceServerArn) {
+        this.reversedDirectionSourceServerArn = reversedDirectionSourceServerArn;
+    }
+
+    /**
+     * <p>
+     * For EC2-originated Source Servers which have been failed over and then failed back, this value will mean the ARN
+     * of the Source Server on the opposite replication direction.
+     * </p>
+     * 
+     * @return For EC2-originated Source Servers which have been failed over and then failed back, this value will mean
+     *         the ARN of the Source Server on the opposite replication direction.
+     */
+
+    public String getReversedDirectionSourceServerArn() {
+        return this.reversedDirectionSourceServerArn;
+    }
+
+    /**
+     * <p>
+     * For EC2-originated Source Servers which have been failed over and then failed back, this value will mean the ARN
+     * of the Source Server on the opposite replication direction.
+     * </p>
+     * 
+     * @param reversedDirectionSourceServerArn
+     *        For EC2-originated Source Servers which have been failed over and then failed back, this value will mean
+     *        the ARN of the Source Server on the opposite replication direction.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RetryDataReplicationResult withReversedDirectionSourceServerArn(String reversedDirectionSourceServerArn) {
+        setReversedDirectionSourceServerArn(reversedDirectionSourceServerArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Source cloud properties of the Source Server.
+     * </p>
+     * 
+     * @param sourceCloudProperties
+     *        Source cloud properties of the Source Server.
+     */
+
+    public void setSourceCloudProperties(SourceCloudProperties sourceCloudProperties) {
+        this.sourceCloudProperties = sourceCloudProperties;
+    }
+
+    /**
+     * <p>
+     * Source cloud properties of the Source Server.
+     * </p>
+     * 
+     * @return Source cloud properties of the Source Server.
+     */
+
+    public SourceCloudProperties getSourceCloudProperties() {
+        return this.sourceCloudProperties;
+    }
+
+    /**
+     * <p>
+     * Source cloud properties of the Source Server.
+     * </p>
+     * 
+     * @param sourceCloudProperties
+     *        Source cloud properties of the Source Server.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RetryDataReplicationResult withSourceCloudProperties(SourceCloudProperties sourceCloudProperties) {
+        setSourceCloudProperties(sourceCloudProperties);
+        return this;
+    }
+
+    /**
+     * <p>
+     * ID of the Source Network which is protecting this Source Server's network.
+     * </p>
+     * 
+     * @param sourceNetworkID
+     *        ID of the Source Network which is protecting this Source Server's network.
+     */
+
+    public void setSourceNetworkID(String sourceNetworkID) {
+        this.sourceNetworkID = sourceNetworkID;
+    }
+
+    /**
+     * <p>
+     * ID of the Source Network which is protecting this Source Server's network.
+     * </p>
+     * 
+     * @return ID of the Source Network which is protecting this Source Server's network.
+     */
+
+    public String getSourceNetworkID() {
+        return this.sourceNetworkID;
+    }
+
+    /**
+     * <p>
+     * ID of the Source Network which is protecting this Source Server's network.
+     * </p>
+     * 
+     * @param sourceNetworkID
+     *        ID of the Source Network which is protecting this Source Server's network.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RetryDataReplicationResult withSourceNetworkID(String sourceNetworkID) {
+        setSourceNetworkID(sourceNetworkID);
+        return this;
+    }
+
+    /**
+     * <p>
      * The source properties of the Source Server.
      * </p>
      * 
@@ -497,6 +753,8 @@ public class RetryDataReplicationResult extends com.amazonaws.AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAgentVersion() != null)
+            sb.append("AgentVersion: ").append(getAgentVersion()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getDataReplicationInfo() != null)
@@ -507,6 +765,14 @@ public class RetryDataReplicationResult extends com.amazonaws.AmazonWebServiceRe
             sb.append("LifeCycle: ").append(getLifeCycle()).append(",");
         if (getRecoveryInstanceId() != null)
             sb.append("RecoveryInstanceId: ").append(getRecoveryInstanceId()).append(",");
+        if (getReplicationDirection() != null)
+            sb.append("ReplicationDirection: ").append(getReplicationDirection()).append(",");
+        if (getReversedDirectionSourceServerArn() != null)
+            sb.append("ReversedDirectionSourceServerArn: ").append(getReversedDirectionSourceServerArn()).append(",");
+        if (getSourceCloudProperties() != null)
+            sb.append("SourceCloudProperties: ").append(getSourceCloudProperties()).append(",");
+        if (getSourceNetworkID() != null)
+            sb.append("SourceNetworkID: ").append(getSourceNetworkID()).append(",");
         if (getSourceProperties() != null)
             sb.append("SourceProperties: ").append(getSourceProperties()).append(",");
         if (getSourceServerID() != null)
@@ -529,6 +795,10 @@ public class RetryDataReplicationResult extends com.amazonaws.AmazonWebServiceRe
         if (obj instanceof RetryDataReplicationResult == false)
             return false;
         RetryDataReplicationResult other = (RetryDataReplicationResult) obj;
+        if (other.getAgentVersion() == null ^ this.getAgentVersion() == null)
+            return false;
+        if (other.getAgentVersion() != null && other.getAgentVersion().equals(this.getAgentVersion()) == false)
+            return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
@@ -548,6 +818,23 @@ public class RetryDataReplicationResult extends com.amazonaws.AmazonWebServiceRe
         if (other.getRecoveryInstanceId() == null ^ this.getRecoveryInstanceId() == null)
             return false;
         if (other.getRecoveryInstanceId() != null && other.getRecoveryInstanceId().equals(this.getRecoveryInstanceId()) == false)
+            return false;
+        if (other.getReplicationDirection() == null ^ this.getReplicationDirection() == null)
+            return false;
+        if (other.getReplicationDirection() != null && other.getReplicationDirection().equals(this.getReplicationDirection()) == false)
+            return false;
+        if (other.getReversedDirectionSourceServerArn() == null ^ this.getReversedDirectionSourceServerArn() == null)
+            return false;
+        if (other.getReversedDirectionSourceServerArn() != null
+                && other.getReversedDirectionSourceServerArn().equals(this.getReversedDirectionSourceServerArn()) == false)
+            return false;
+        if (other.getSourceCloudProperties() == null ^ this.getSourceCloudProperties() == null)
+            return false;
+        if (other.getSourceCloudProperties() != null && other.getSourceCloudProperties().equals(this.getSourceCloudProperties()) == false)
+            return false;
+        if (other.getSourceNetworkID() == null ^ this.getSourceNetworkID() == null)
+            return false;
+        if (other.getSourceNetworkID() != null && other.getSourceNetworkID().equals(this.getSourceNetworkID()) == false)
             return false;
         if (other.getSourceProperties() == null ^ this.getSourceProperties() == null)
             return false;
@@ -573,11 +860,16 @@ public class RetryDataReplicationResult extends com.amazonaws.AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAgentVersion() == null) ? 0 : getAgentVersion().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getDataReplicationInfo() == null) ? 0 : getDataReplicationInfo().hashCode());
         hashCode = prime * hashCode + ((getLastLaunchResult() == null) ? 0 : getLastLaunchResult().hashCode());
         hashCode = prime * hashCode + ((getLifeCycle() == null) ? 0 : getLifeCycle().hashCode());
         hashCode = prime * hashCode + ((getRecoveryInstanceId() == null) ? 0 : getRecoveryInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getReplicationDirection() == null) ? 0 : getReplicationDirection().hashCode());
+        hashCode = prime * hashCode + ((getReversedDirectionSourceServerArn() == null) ? 0 : getReversedDirectionSourceServerArn().hashCode());
+        hashCode = prime * hashCode + ((getSourceCloudProperties() == null) ? 0 : getSourceCloudProperties().hashCode());
+        hashCode = prime * hashCode + ((getSourceNetworkID() == null) ? 0 : getSourceNetworkID().hashCode());
         hashCode = prime * hashCode + ((getSourceProperties() == null) ? 0 : getSourceProperties().hashCode());
         hashCode = prime * hashCode + ((getSourceServerID() == null) ? 0 : getSourceServerID().hashCode());
         hashCode = prime * hashCode + ((getStagingArea() == null) ? 0 : getStagingArea().hashCode());

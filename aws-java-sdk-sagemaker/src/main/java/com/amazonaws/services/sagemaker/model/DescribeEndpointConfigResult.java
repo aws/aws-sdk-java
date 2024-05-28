@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,6 +70,28 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
      * </p>
      */
     private ExplainerConfig explainerConfig;
+    /**
+     * <p>
+     * An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in
+     * shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.
+     * </p>
+     */
+    private java.util.List<ProductionVariant> shadowProductionVariants;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role that you assigned to the endpoint configuration.
+     * </p>
+     */
+    private String executionRoleArn;
+
+    private VpcConfig vpcConfig;
+    /**
+     * <p>
+     * Indicates whether all model containers deployed to the endpoint are isolated. If they are, no inbound or outbound
+     * network calls can be made to or from the model containers.
+     * </p>
+     */
+    private Boolean enableNetworkIsolation;
 
     /**
      * <p>
@@ -430,6 +452,214 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in
+     * shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.
+     * </p>
+     * 
+     * @return An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this
+     *         endpoint in shadow mode with production traffic replicated from the model specified on
+     *         <code>ProductionVariants</code>.
+     */
+
+    public java.util.List<ProductionVariant> getShadowProductionVariants() {
+        return shadowProductionVariants;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in
+     * shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.
+     * </p>
+     * 
+     * @param shadowProductionVariants
+     *        An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this
+     *        endpoint in shadow mode with production traffic replicated from the model specified on
+     *        <code>ProductionVariants</code>.
+     */
+
+    public void setShadowProductionVariants(java.util.Collection<ProductionVariant> shadowProductionVariants) {
+        if (shadowProductionVariants == null) {
+            this.shadowProductionVariants = null;
+            return;
+        }
+
+        this.shadowProductionVariants = new java.util.ArrayList<ProductionVariant>(shadowProductionVariants);
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in
+     * shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setShadowProductionVariants(java.util.Collection)} or
+     * {@link #withShadowProductionVariants(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param shadowProductionVariants
+     *        An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this
+     *        endpoint in shadow mode with production traffic replicated from the model specified on
+     *        <code>ProductionVariants</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeEndpointConfigResult withShadowProductionVariants(ProductionVariant... shadowProductionVariants) {
+        if (this.shadowProductionVariants == null) {
+            setShadowProductionVariants(new java.util.ArrayList<ProductionVariant>(shadowProductionVariants.length));
+        }
+        for (ProductionVariant ele : shadowProductionVariants) {
+            this.shadowProductionVariants.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in
+     * shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.
+     * </p>
+     * 
+     * @param shadowProductionVariants
+     *        An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this
+     *        endpoint in shadow mode with production traffic replicated from the model specified on
+     *        <code>ProductionVariants</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeEndpointConfigResult withShadowProductionVariants(java.util.Collection<ProductionVariant> shadowProductionVariants) {
+        setShadowProductionVariants(shadowProductionVariants);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role that you assigned to the endpoint configuration.
+     * </p>
+     * 
+     * @param executionRoleArn
+     *        The Amazon Resource Name (ARN) of the IAM role that you assigned to the endpoint configuration.
+     */
+
+    public void setExecutionRoleArn(String executionRoleArn) {
+        this.executionRoleArn = executionRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role that you assigned to the endpoint configuration.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the IAM role that you assigned to the endpoint configuration.
+     */
+
+    public String getExecutionRoleArn() {
+        return this.executionRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role that you assigned to the endpoint configuration.
+     * </p>
+     * 
+     * @param executionRoleArn
+     *        The Amazon Resource Name (ARN) of the IAM role that you assigned to the endpoint configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeEndpointConfigResult withExecutionRoleArn(String executionRoleArn) {
+        setExecutionRoleArn(executionRoleArn);
+        return this;
+    }
+
+    /**
+     * @param vpcConfig
+     */
+
+    public void setVpcConfig(VpcConfig vpcConfig) {
+        this.vpcConfig = vpcConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public VpcConfig getVpcConfig() {
+        return this.vpcConfig;
+    }
+
+    /**
+     * @param vpcConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeEndpointConfigResult withVpcConfig(VpcConfig vpcConfig) {
+        setVpcConfig(vpcConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether all model containers deployed to the endpoint are isolated. If they are, no inbound or outbound
+     * network calls can be made to or from the model containers.
+     * </p>
+     * 
+     * @param enableNetworkIsolation
+     *        Indicates whether all model containers deployed to the endpoint are isolated. If they are, no inbound or
+     *        outbound network calls can be made to or from the model containers.
+     */
+
+    public void setEnableNetworkIsolation(Boolean enableNetworkIsolation) {
+        this.enableNetworkIsolation = enableNetworkIsolation;
+    }
+
+    /**
+     * <p>
+     * Indicates whether all model containers deployed to the endpoint are isolated. If they are, no inbound or outbound
+     * network calls can be made to or from the model containers.
+     * </p>
+     * 
+     * @return Indicates whether all model containers deployed to the endpoint are isolated. If they are, no inbound or
+     *         outbound network calls can be made to or from the model containers.
+     */
+
+    public Boolean getEnableNetworkIsolation() {
+        return this.enableNetworkIsolation;
+    }
+
+    /**
+     * <p>
+     * Indicates whether all model containers deployed to the endpoint are isolated. If they are, no inbound or outbound
+     * network calls can be made to or from the model containers.
+     * </p>
+     * 
+     * @param enableNetworkIsolation
+     *        Indicates whether all model containers deployed to the endpoint are isolated. If they are, no inbound or
+     *        outbound network calls can be made to or from the model containers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeEndpointConfigResult withEnableNetworkIsolation(Boolean enableNetworkIsolation) {
+        setEnableNetworkIsolation(enableNetworkIsolation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether all model containers deployed to the endpoint are isolated. If they are, no inbound or outbound
+     * network calls can be made to or from the model containers.
+     * </p>
+     * 
+     * @return Indicates whether all model containers deployed to the endpoint are isolated. If they are, no inbound or
+     *         outbound network calls can be made to or from the model containers.
+     */
+
+    public Boolean isEnableNetworkIsolation() {
+        return this.enableNetworkIsolation;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -456,7 +686,15 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
         if (getAsyncInferenceConfig() != null)
             sb.append("AsyncInferenceConfig: ").append(getAsyncInferenceConfig()).append(",");
         if (getExplainerConfig() != null)
-            sb.append("ExplainerConfig: ").append(getExplainerConfig());
+            sb.append("ExplainerConfig: ").append(getExplainerConfig()).append(",");
+        if (getShadowProductionVariants() != null)
+            sb.append("ShadowProductionVariants: ").append(getShadowProductionVariants()).append(",");
+        if (getExecutionRoleArn() != null)
+            sb.append("ExecutionRoleArn: ").append(getExecutionRoleArn()).append(",");
+        if (getVpcConfig() != null)
+            sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
+        if (getEnableNetworkIsolation() != null)
+            sb.append("EnableNetworkIsolation: ").append(getEnableNetworkIsolation());
         sb.append("}");
         return sb.toString();
     }
@@ -503,6 +741,22 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
             return false;
         if (other.getExplainerConfig() != null && other.getExplainerConfig().equals(this.getExplainerConfig()) == false)
             return false;
+        if (other.getShadowProductionVariants() == null ^ this.getShadowProductionVariants() == null)
+            return false;
+        if (other.getShadowProductionVariants() != null && other.getShadowProductionVariants().equals(this.getShadowProductionVariants()) == false)
+            return false;
+        if (other.getExecutionRoleArn() == null ^ this.getExecutionRoleArn() == null)
+            return false;
+        if (other.getExecutionRoleArn() != null && other.getExecutionRoleArn().equals(this.getExecutionRoleArn()) == false)
+            return false;
+        if (other.getVpcConfig() == null ^ this.getVpcConfig() == null)
+            return false;
+        if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
+            return false;
+        if (other.getEnableNetworkIsolation() == null ^ this.getEnableNetworkIsolation() == null)
+            return false;
+        if (other.getEnableNetworkIsolation() != null && other.getEnableNetworkIsolation().equals(this.getEnableNetworkIsolation()) == false)
+            return false;
         return true;
     }
 
@@ -519,6 +773,10 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getAsyncInferenceConfig() == null) ? 0 : getAsyncInferenceConfig().hashCode());
         hashCode = prime * hashCode + ((getExplainerConfig() == null) ? 0 : getExplainerConfig().hashCode());
+        hashCode = prime * hashCode + ((getShadowProductionVariants() == null) ? 0 : getShadowProductionVariants().hashCode());
+        hashCode = prime * hashCode + ((getExecutionRoleArn() == null) ? 0 : getExecutionRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
+        hashCode = prime * hashCode + ((getEnableNetworkIsolation() == null) ? 0 : getEnableNetworkIsolation().hashCode());
         return hashCode;
     }
 

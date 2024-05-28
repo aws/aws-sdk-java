@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The structure of a permission group associated with a user account.
+ * The structure of a permission group associated with a user.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2020-07-13/PermissionGroupByUser" target="_top">AWS API
@@ -42,17 +42,17 @@ public class PermissionGroupByUser implements Serializable, Cloneable, Structure
     private String name;
     /**
      * <p>
-     * Indicates the status of the user account within a permission group.
+     * Indicates the status of the user within a permission group.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.
+     * <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.
+     * <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.
      * </p>
      * </li>
      * <li>
@@ -146,17 +146,17 @@ public class PermissionGroupByUser implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Indicates the status of the user account within a permission group.
+     * Indicates the status of the user within a permission group.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.
+     * <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.
+     * <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.
      * </p>
      * </li>
      * <li>
@@ -167,16 +167,16 @@ public class PermissionGroupByUser implements Serializable, Cloneable, Structure
      * </ul>
      * 
      * @param membershipStatus
-     *        Indicates the status of the user account within a permission group.</p>
+     *        Indicates the status of the user within a permission group.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.
+     *        <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.
+     *        <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.
      *        </p>
      *        </li>
      *        <li>
@@ -193,17 +193,17 @@ public class PermissionGroupByUser implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Indicates the status of the user account within a permission group.
+     * Indicates the status of the user within a permission group.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.
+     * <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.
+     * <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.
      * </p>
      * </li>
      * <li>
@@ -213,16 +213,16 @@ public class PermissionGroupByUser implements Serializable, Cloneable, Structure
      * </li>
      * </ul>
      * 
-     * @return Indicates the status of the user account within a permission group.</p>
+     * @return Indicates the status of the user within a permission group.</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.
+     *         <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.
+     *         <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.
      *         </p>
      *         </li>
      *         <li>
@@ -239,17 +239,17 @@ public class PermissionGroupByUser implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Indicates the status of the user account within a permission group.
+     * Indicates the status of the user within a permission group.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.
+     * <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.
+     * <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.
      * </p>
      * </li>
      * <li>
@@ -260,16 +260,16 @@ public class PermissionGroupByUser implements Serializable, Cloneable, Structure
      * </ul>
      * 
      * @param membershipStatus
-     *        Indicates the status of the user account within a permission group.</p>
+     *        Indicates the status of the user within a permission group.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.
+     *        <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.
+     *        <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.
      *        </p>
      *        </li>
      *        <li>
@@ -288,17 +288,17 @@ public class PermissionGroupByUser implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Indicates the status of the user account within a permission group.
+     * Indicates the status of the user within a permission group.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.
+     * <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.
+     * <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.
      * </p>
      * </li>
      * <li>
@@ -309,16 +309,16 @@ public class PermissionGroupByUser implements Serializable, Cloneable, Structure
      * </ul>
      * 
      * @param membershipStatus
-     *        Indicates the status of the user account within a permission group.</p>
+     *        Indicates the status of the user within a permission group.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>ADDITION_IN_PROGRESS</code> – The user account is currently being added to the permission group.
+     *        <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission group.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ADDITION_SUCCESS</code> – The user account is successfully added to the permission group.
+     *        <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission group.
      *        </p>
      *        </li>
      *        <li>

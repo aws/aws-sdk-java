@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The action required to resolve a broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state.
+ * Action required for a broker.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ActionRequired" target="_top">AWS API
@@ -30,38 +30,24 @@ public class ActionRequired implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The code you can use to resolve your broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state. You can
-     * find instructions by choosing the link for your code from the list of action required codes in <a
-     * href="https://docs.aws.amazon.com//latest/developer-guide/troubleshooting-action-required-codes.html">Amazon MQ
-     * action required codes</a>. Each code references a topic with detailed information, instructions, and
-     * recommendations for how to resolve the issue and prevent future occurrences.
+     * The code you can use to find instructions on the action required to resolve your broker issue.
      * </p>
      */
     private String actionRequiredCode;
     /**
      * <p>
-     * Information about the action required to resolve your broker issue when the broker is in a
-     * CRITICAL_ACTION_REQUIRED state.
+     * Information about the action required to resolve your broker issue.
      * </p>
      */
     private String actionRequiredInfo;
 
     /**
      * <p>
-     * The code you can use to resolve your broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state. You can
-     * find instructions by choosing the link for your code from the list of action required codes in <a
-     * href="https://docs.aws.amazon.com//latest/developer-guide/troubleshooting-action-required-codes.html">Amazon MQ
-     * action required codes</a>. Each code references a topic with detailed information, instructions, and
-     * recommendations for how to resolve the issue and prevent future occurrences.
+     * The code you can use to find instructions on the action required to resolve your broker issue.
      * </p>
      * 
      * @param actionRequiredCode
-     *        The code you can use to resolve your broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state.
-     *        You can find instructions by choosing the link for your code from the list of action required codes in <a
-     *        href
-     *        ="https://docs.aws.amazon.com//latest/developer-guide/troubleshooting-action-required-codes.html">Amazon
-     *        MQ action required codes</a>. Each code references a topic with detailed information, instructions, and
-     *        recommendations for how to resolve the issue and prevent future occurrences.
+     *        The code you can use to find instructions on the action required to resolve your broker issue.
      */
 
     public void setActionRequiredCode(String actionRequiredCode) {
@@ -70,19 +56,10 @@ public class ActionRequired implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The code you can use to resolve your broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state. You can
-     * find instructions by choosing the link for your code from the list of action required codes in <a
-     * href="https://docs.aws.amazon.com//latest/developer-guide/troubleshooting-action-required-codes.html">Amazon MQ
-     * action required codes</a>. Each code references a topic with detailed information, instructions, and
-     * recommendations for how to resolve the issue and prevent future occurrences.
+     * The code you can use to find instructions on the action required to resolve your broker issue.
      * </p>
      * 
-     * @return The code you can use to resolve your broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state.
-     *         You can find instructions by choosing the link for your code from the list of action required codes in <a
-     *         href
-     *         ="https://docs.aws.amazon.com//latest/developer-guide/troubleshooting-action-required-codes.html">Amazon
-     *         MQ action required codes</a>. Each code references a topic with detailed information, instructions, and
-     *         recommendations for how to resolve the issue and prevent future occurrences.
+     * @return The code you can use to find instructions on the action required to resolve your broker issue.
      */
 
     public String getActionRequiredCode() {
@@ -91,20 +68,11 @@ public class ActionRequired implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The code you can use to resolve your broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state. You can
-     * find instructions by choosing the link for your code from the list of action required codes in <a
-     * href="https://docs.aws.amazon.com//latest/developer-guide/troubleshooting-action-required-codes.html">Amazon MQ
-     * action required codes</a>. Each code references a topic with detailed information, instructions, and
-     * recommendations for how to resolve the issue and prevent future occurrences.
+     * The code you can use to find instructions on the action required to resolve your broker issue.
      * </p>
      * 
      * @param actionRequiredCode
-     *        The code you can use to resolve your broker issue when the broker is in a CRITICAL_ACTION_REQUIRED state.
-     *        You can find instructions by choosing the link for your code from the list of action required codes in <a
-     *        href
-     *        ="https://docs.aws.amazon.com//latest/developer-guide/troubleshooting-action-required-codes.html">Amazon
-     *        MQ action required codes</a>. Each code references a topic with detailed information, instructions, and
-     *        recommendations for how to resolve the issue and prevent future occurrences.
+     *        The code you can use to find instructions on the action required to resolve your broker issue.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -115,13 +83,11 @@ public class ActionRequired implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the action required to resolve your broker issue when the broker is in a
-     * CRITICAL_ACTION_REQUIRED state.
+     * Information about the action required to resolve your broker issue.
      * </p>
      * 
      * @param actionRequiredInfo
-     *        Information about the action required to resolve your broker issue when the broker is in a
-     *        CRITICAL_ACTION_REQUIRED state.
+     *        Information about the action required to resolve your broker issue.
      */
 
     public void setActionRequiredInfo(String actionRequiredInfo) {
@@ -130,12 +96,10 @@ public class ActionRequired implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the action required to resolve your broker issue when the broker is in a
-     * CRITICAL_ACTION_REQUIRED state.
+     * Information about the action required to resolve your broker issue.
      * </p>
      * 
-     * @return Information about the action required to resolve your broker issue when the broker is in a
-     *         CRITICAL_ACTION_REQUIRED state.
+     * @return Information about the action required to resolve your broker issue.
      */
 
     public String getActionRequiredInfo() {
@@ -144,13 +108,11 @@ public class ActionRequired implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the action required to resolve your broker issue when the broker is in a
-     * CRITICAL_ACTION_REQUIRED state.
+     * Information about the action required to resolve your broker issue.
      * </p>
      * 
      * @param actionRequiredInfo
-     *        Information about the action required to resolve your broker issue when the broker is in a
-     *        CRITICAL_ACTION_REQUIRED state.
+     *        Information about the action required to resolve your broker issue.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,14 @@ public class CampaignEmailMessage implements Serializable, Cloneable, Structured
      * </p>
      */
     private String fromAddress;
+    /**
+     * <p>
+     * The list of <a href=
+     * "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id.html#apps-application-id-campaigns-campaign-id-model-messageheader"
+     * >MessageHeaders</a> for the email. You can have up to 15 MessageHeaders for each email.
+     * </p>
+     */
+    private java.util.List<MessageHeader> headers;
     /**
      * <p>
      * The body of the email, in HTML format, for recipients whose email clients render HTML content.
@@ -142,6 +150,92 @@ public class CampaignEmailMessage implements Serializable, Cloneable, Structured
 
     /**
      * <p>
+     * The list of <a href=
+     * "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id.html#apps-application-id-campaigns-campaign-id-model-messageheader"
+     * >MessageHeaders</a> for the email. You can have up to 15 MessageHeaders for each email.
+     * </p>
+     * 
+     * @return The list of <a href=
+     *         "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id.html#apps-application-id-campaigns-campaign-id-model-messageheader"
+     *         >MessageHeaders</a> for the email. You can have up to 15 MessageHeaders for each email.
+     */
+
+    public java.util.List<MessageHeader> getHeaders() {
+        return headers;
+    }
+
+    /**
+     * <p>
+     * The list of <a href=
+     * "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id.html#apps-application-id-campaigns-campaign-id-model-messageheader"
+     * >MessageHeaders</a> for the email. You can have up to 15 MessageHeaders for each email.
+     * </p>
+     * 
+     * @param headers
+     *        The list of <a href=
+     *        "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id.html#apps-application-id-campaigns-campaign-id-model-messageheader"
+     *        >MessageHeaders</a> for the email. You can have up to 15 MessageHeaders for each email.
+     */
+
+    public void setHeaders(java.util.Collection<MessageHeader> headers) {
+        if (headers == null) {
+            this.headers = null;
+            return;
+        }
+
+        this.headers = new java.util.ArrayList<MessageHeader>(headers);
+    }
+
+    /**
+     * <p>
+     * The list of <a href=
+     * "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id.html#apps-application-id-campaigns-campaign-id-model-messageheader"
+     * >MessageHeaders</a> for the email. You can have up to 15 MessageHeaders for each email.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setHeaders(java.util.Collection)} or {@link #withHeaders(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param headers
+     *        The list of <a href=
+     *        "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id.html#apps-application-id-campaigns-campaign-id-model-messageheader"
+     *        >MessageHeaders</a> for the email. You can have up to 15 MessageHeaders for each email.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CampaignEmailMessage withHeaders(MessageHeader... headers) {
+        if (this.headers == null) {
+            setHeaders(new java.util.ArrayList<MessageHeader>(headers.length));
+        }
+        for (MessageHeader ele : headers) {
+            this.headers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of <a href=
+     * "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id.html#apps-application-id-campaigns-campaign-id-model-messageheader"
+     * >MessageHeaders</a> for the email. You can have up to 15 MessageHeaders for each email.
+     * </p>
+     * 
+     * @param headers
+     *        The list of <a href=
+     *        "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-campaigns-campaign-id.html#apps-application-id-campaigns-campaign-id-model-messageheader"
+     *        >MessageHeaders</a> for the email. You can have up to 15 MessageHeaders for each email.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CampaignEmailMessage withHeaders(java.util.Collection<MessageHeader> headers) {
+        setHeaders(headers);
+        return this;
+    }
+
+    /**
+     * <p>
      * The body of the email, in HTML format, for recipients whose email clients render HTML content.
      * </p>
      * 
@@ -236,6 +330,8 @@ public class CampaignEmailMessage implements Serializable, Cloneable, Structured
             sb.append("Body: ").append(getBody()).append(",");
         if (getFromAddress() != null)
             sb.append("FromAddress: ").append(getFromAddress()).append(",");
+        if (getHeaders() != null)
+            sb.append("Headers: ").append(getHeaders()).append(",");
         if (getHtmlBody() != null)
             sb.append("HtmlBody: ").append(getHtmlBody()).append(",");
         if (getTitle() != null)
@@ -262,6 +358,10 @@ public class CampaignEmailMessage implements Serializable, Cloneable, Structured
             return false;
         if (other.getFromAddress() != null && other.getFromAddress().equals(this.getFromAddress()) == false)
             return false;
+        if (other.getHeaders() == null ^ this.getHeaders() == null)
+            return false;
+        if (other.getHeaders() != null && other.getHeaders().equals(this.getHeaders()) == false)
+            return false;
         if (other.getHtmlBody() == null ^ this.getHtmlBody() == null)
             return false;
         if (other.getHtmlBody() != null && other.getHtmlBody().equals(this.getHtmlBody()) == false)
@@ -280,6 +380,7 @@ public class CampaignEmailMessage implements Serializable, Cloneable, Structured
 
         hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode());
         hashCode = prime * hashCode + ((getFromAddress() == null) ? 0 : getFromAddress().hashCode());
+        hashCode = prime * hashCode + ((getHeaders() == null) ? 0 : getHeaders().hashCode());
         hashCode = prime * hashCode + ((getHtmlBody() == null) ? 0 : getHtmlBody().hashCode());
         hashCode = prime * hashCode + ((getTitle() == null) ? 0 : getTitle().hashCode());
         return hashCode;

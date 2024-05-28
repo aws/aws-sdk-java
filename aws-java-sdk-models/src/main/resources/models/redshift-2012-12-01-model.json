@@ -47,7 +47,8 @@
       "errors":[
         {"shape":"PartnerNotFoundFault"},
         {"shape":"ClusterNotFoundFault"},
-        {"shape":"UnauthorizedPartnerIntegrationFault"}
+        {"shape":"UnauthorizedPartnerIntegrationFault"},
+        {"shape":"UnsupportedOperationFault"}
       ],
       "documentation":"<p>Adds a partner integration to a cluster. This operation authorizes a partner to push status updates for the specified database. To complete the integration, you also set up the integration on the partner website.</p>"
     },
@@ -210,6 +211,7 @@
         "resultWrapper":"CopyClusterSnapshotResult"
       },
       "errors":[
+        {"shape":"ClusterNotFoundFault"},
         {"shape":"ClusterSnapshotAlreadyExistsFault"},
         {"shape":"ClusterSnapshotNotFoundFault"},
         {"shape":"InvalidClusterSnapshotStateFault"},
@@ -269,7 +271,10 @@
         {"shape":"DependentServiceRequestThrottlingFault"},
         {"shape":"InvalidClusterTrackFault"},
         {"shape":"SnapshotScheduleNotFoundFault"},
-        {"shape":"InvalidRetentionPeriodFault"}
+        {"shape":"InvalidRetentionPeriodFault"},
+        {"shape":"Ipv6CidrBlockNotFoundFault"},
+        {"shape":"UnsupportedOperationFault"},
+        {"shape":"RedshiftIdcApplicationNotExistsFault"}
       ],
       "documentation":"<p>Creates a new cluster with the specified parameters.</p> <p>To create a cluster in Virtual Private Cloud (VPC), you must provide a cluster subnet group name. The cluster subnet group identifies the subnets of your VPC that Amazon Redshift uses when creating the cluster. For more information about managing clusters, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html\">Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>"
     },
@@ -355,6 +360,24 @@
         {"shape":"DependentServiceRequestThrottlingFault"}
       ],
       "documentation":"<p>Creates a new Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing Amazon Virtual Private Cloud (Amazon VPC) when creating Amazon Redshift subnet group.</p> <p> For information about subnet groups, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html\">Amazon Redshift Cluster Subnet Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>"
+    },
+    "CreateCustomDomainAssociation":{
+      "name":"CreateCustomDomainAssociation",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateCustomDomainAssociationMessage"},
+      "output":{
+        "shape":"CreateCustomDomainAssociationResult",
+        "resultWrapper":"CreateCustomDomainAssociationResult"
+      },
+      "errors":[
+        {"shape":"UnsupportedOperationFault"},
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"CustomCnameAssociationFault"}
+      ],
+      "documentation":"<p>Used to create a custom domain name for a cluster. Properties include the custom domain name, the cluster the custom domain is associated with, and the certificate Amazon Resource Name (ARN).</p>"
     },
     "CreateEndpointAccess":{
       "name":"CreateEndpointAccess",
@@ -445,6 +468,26 @@
       ],
       "documentation":"<p>Creates an HSM configuration that contains the information required by an Amazon Redshift cluster to store and use database encryption keys in a Hardware Security Module (HSM). After creating the HSM configuration, you can specify it as a parameter when creating a cluster. The cluster will then store its encryption keys in the HSM.</p> <p>In addition to creating an HSM configuration, you must also create an HSM client certificate. For more information, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html\">Hardware Security Modules</a> in the Amazon Redshift Cluster Management Guide.</p>"
     },
+    "CreateRedshiftIdcApplication":{
+      "name":"CreateRedshiftIdcApplication",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateRedshiftIdcApplicationMessage"},
+      "output":{
+        "shape":"CreateRedshiftIdcApplicationResult",
+        "resultWrapper":"CreateRedshiftIdcApplicationResult"
+      },
+      "errors":[
+        {"shape":"RedshiftIdcApplicationAlreadyExistsFault"},
+        {"shape":"DependentServiceUnavailableFault"},
+        {"shape":"UnsupportedOperationFault"},
+        {"shape":"DependentServiceAccessDeniedFault"},
+        {"shape":"RedshiftIdcApplicationQuotaExceededFault"}
+      ],
+      "documentation":"<p>Creates an Amazon Redshift application for use with IAM Identity Center.</p>"
+    },
     "CreateScheduledAction":{
       "name":"CreateScheduledAction",
       "http":{
@@ -457,12 +500,14 @@
         "resultWrapper":"CreateScheduledActionResult"
       },
       "errors":[
+        {"shape":"ClusterNotFoundFault"},
         {"shape":"ScheduledActionAlreadyExistsFault"},
         {"shape":"ScheduledActionQuotaExceededFault"},
         {"shape":"ScheduledActionTypeUnsupportedFault"},
         {"shape":"InvalidScheduleFault"},
         {"shape":"InvalidScheduledActionFault"},
-        {"shape":"UnauthorizedOperation"}
+        {"shape":"UnauthorizedOperation"},
+        {"shape":"UnsupportedOperationFault"}
       ],
       "documentation":"<p>Creates a scheduled action. A scheduled action contains a schedule and an Amazon Redshift API action. For example, you can create a schedule of when to run the <code>ResizeCluster</code> API operation. </p>"
     },
@@ -655,6 +700,21 @@
       ],
       "documentation":"<p>Deletes the specified cluster subnet group.</p>"
     },
+    "DeleteCustomDomainAssociation":{
+      "name":"DeleteCustomDomainAssociation",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteCustomDomainAssociationMessage"},
+      "errors":[
+        {"shape":"UnsupportedOperationFault"},
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"CustomCnameAssociationFault"},
+        {"shape":"CustomDomainAssociationNotFoundFault"}
+      ],
+      "documentation":"<p>Contains information about deleting a custom domain association for a cluster.</p>"
+    },
     "DeleteEndpointAccess":{
       "name":"DeleteEndpointAccess",
       "http":{
@@ -728,9 +788,38 @@
       "errors":[
         {"shape":"PartnerNotFoundFault"},
         {"shape":"ClusterNotFoundFault"},
-        {"shape":"UnauthorizedPartnerIntegrationFault"}
+        {"shape":"UnauthorizedPartnerIntegrationFault"},
+        {"shape":"UnsupportedOperationFault"}
       ],
       "documentation":"<p>Deletes a partner integration from a cluster. Data can still flow to the cluster until the integration is deleted at the partner's website.</p>"
+    },
+    "DeleteRedshiftIdcApplication":{
+      "name":"DeleteRedshiftIdcApplication",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteRedshiftIdcApplicationMessage"},
+      "errors":[
+        {"shape":"RedshiftIdcApplicationNotExistsFault"},
+        {"shape":"DependentServiceUnavailableFault"},
+        {"shape":"UnsupportedOperationFault"},
+        {"shape":"DependentServiceAccessDeniedFault"}
+      ],
+      "documentation":"<p>Deletes an Amazon Redshift IAM Identity Center application.</p>"
+    },
+    "DeleteResourcePolicy":{
+      "name":"DeleteResourcePolicy",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteResourcePolicyMessage"},
+      "errors":[
+        {"shape":"ResourceNotFoundFault"},
+        {"shape":"UnsupportedOperationFault"}
+      ],
+      "documentation":"<p>Deletes the resource policy for a specified resource.</p>"
     },
     "DeleteScheduledAction":{
       "name":"DeleteScheduledAction",
@@ -977,6 +1066,23 @@
       ],
       "documentation":"<p>Returns properties of provisioned clusters including general cluster properties, cluster database properties, maintenance and backup properties, and security and access properties. This operation supports pagination. For more information about managing clusters, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html\">Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p> <p>If you specify both tag keys and tag values in the same request, Amazon Redshift returns all clusters that match any combination of the specified keys and values. For example, if you have <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code> and <code>test</code> for tag values, all clusters that have any combination of those values are returned.</p> <p>If both tag keys and values are omitted from the request, clusters are returned regardless of whether they have tag keys or values associated with them.</p>"
     },
+    "DescribeCustomDomainAssociations":{
+      "name":"DescribeCustomDomainAssociations",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeCustomDomainAssociationsMessage"},
+      "output":{
+        "shape":"CustomDomainAssociationsMessage",
+        "resultWrapper":"DescribeCustomDomainAssociationsResult"
+      },
+      "errors":[
+        {"shape":"CustomDomainAssociationNotFoundFault"},
+        {"shape":"UnsupportedOperationFault"}
+      ],
+      "documentation":"<p>Contains information about custom domain associations for a cluster.</p>"
+    },
     "DescribeDataShares":{
       "name":"DescribeDataShares",
       "http":{
@@ -1150,6 +1256,24 @@
       ],
       "documentation":"<p>Returns information about the specified Amazon Redshift HSM configuration. If no configuration ID is specified, returns information about all the HSM configurations owned by your Amazon Web Services account.</p> <p>If you specify both tag keys and tag values in the same request, Amazon Redshift returns all HSM connections that match any combination of the specified keys and values. For example, if you have <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code> and <code>test</code> for tag values, all HSM connections that have any combination of those values are returned.</p> <p>If both tag keys and values are omitted from the request, HSM connections are returned regardless of whether they have tag keys or values associated with them.</p>"
     },
+    "DescribeInboundIntegrations":{
+      "name":"DescribeInboundIntegrations",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeInboundIntegrationsMessage"},
+      "output":{
+        "shape":"InboundIntegrationsMessage",
+        "resultWrapper":"DescribeInboundIntegrationsResult"
+      },
+      "errors":[
+        {"shape":"IntegrationNotFoundFault"},
+        {"shape":"InvalidNamespaceFault"},
+        {"shape":"UnsupportedOperationFault"}
+      ],
+      "documentation":"<p>Returns a list of inbound integrations.</p>"
+    },
     "DescribeLoggingStatus":{
       "name":"DescribeLoggingStatus",
       "http":{
@@ -1162,7 +1286,8 @@
         "resultWrapper":"DescribeLoggingStatusResult"
       },
       "errors":[
-        {"shape":"ClusterNotFoundFault"}
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"UnsupportedOperationFault"}
       ],
       "documentation":"<p>Describes whether information, such as queries and connection attempts, is being logged for the specified Amazon Redshift cluster.</p>"
     },
@@ -1212,9 +1337,29 @@
       },
       "errors":[
         {"shape":"ClusterNotFoundFault"},
-        {"shape":"UnauthorizedPartnerIntegrationFault"}
+        {"shape":"UnauthorizedPartnerIntegrationFault"},
+        {"shape":"UnsupportedOperationFault"}
       ],
       "documentation":"<p>Returns information about the partner integrations defined for a cluster.</p>"
+    },
+    "DescribeRedshiftIdcApplications":{
+      "name":"DescribeRedshiftIdcApplications",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeRedshiftIdcApplicationsMessage"},
+      "output":{
+        "shape":"DescribeRedshiftIdcApplicationsResult",
+        "resultWrapper":"DescribeRedshiftIdcApplicationsResult"
+      },
+      "errors":[
+        {"shape":"RedshiftIdcApplicationNotExistsFault"},
+        {"shape":"DependentServiceUnavailableFault"},
+        {"shape":"UnsupportedOperationFault"},
+        {"shape":"DependentServiceAccessDeniedFault"}
+      ],
+      "documentation":"<p>Lists the Amazon Redshift IAM Identity Center applications.</p>"
     },
     "DescribeReservedNodeExchangeStatus":{
       "name":"DescribeReservedNodeExchangeStatus",
@@ -1282,7 +1427,8 @@
       },
       "errors":[
         {"shape":"ClusterNotFoundFault"},
-        {"shape":"ResizeNotFoundFault"}
+        {"shape":"ResizeNotFoundFault"},
+        {"shape":"UnsupportedOperationFault"}
       ],
       "documentation":"<p>Returns information about the last resize operation for the specified cluster. If no resize operation has ever been initiated for the specified cluster, a <code>HTTP 404</code> error is returned. If a resize operation was initiated and completed, the status of the resize remains as <code>SUCCEEDED</code> until the next resize. </p> <p>A resize operation can be requested using <a>ModifyCluster</a> and specifying a different number or type of nodes for the cluster. </p>"
     },
@@ -1409,7 +1555,8 @@
       },
       "errors":[
         {"shape":"ClusterNotFoundFault"},
-        {"shape":"InvalidClusterStateFault"}
+        {"shape":"InvalidClusterStateFault"},
+        {"shape":"UnsupportedOperationFault"}
       ],
       "documentation":"<p>Stops logging information, such as queries and connection attempts, for the specified Amazon Redshift cluster.</p>"
     },
@@ -1428,7 +1575,8 @@
         {"shape":"ClusterNotFoundFault"},
         {"shape":"SnapshotCopyAlreadyDisabledFault"},
         {"shape":"InvalidClusterStateFault"},
-        {"shape":"UnauthorizedOperation"}
+        {"shape":"UnauthorizedOperation"},
+        {"shape":"UnsupportedOperationFault"}
       ],
       "documentation":"<p>Disables the automatic copying of snapshots from one region to another region for a specified cluster.</p> <p>If your cluster and its snapshots are encrypted using an encrypted symmetric key from Key Management Service, use <a>DeleteSnapshotCopyGrant</a> to delete the grant that grants Amazon Redshift permission to the key in the destination region. </p>"
     },
@@ -1466,7 +1614,8 @@
         {"shape":"InsufficientS3BucketPolicyFault"},
         {"shape":"InvalidS3KeyPrefixFault"},
         {"shape":"InvalidS3BucketNameFault"},
-        {"shape":"InvalidClusterStateFault"}
+        {"shape":"InvalidClusterStateFault"},
+        {"shape":"UnsupportedOperationFault"}
       ],
       "documentation":"<p>Starts logging information, such as queries and connection attempts, for the specified Amazon Redshift cluster.</p>"
     },
@@ -1495,6 +1644,25 @@
         {"shape":"InvalidRetentionPeriodFault"}
       ],
       "documentation":"<p>Enables the automatic copy of snapshots from one region to another region for a specified cluster.</p>"
+    },
+    "FailoverPrimaryCompute":{
+      "name":"FailoverPrimaryCompute",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"FailoverPrimaryComputeInputMessage"},
+      "output":{
+        "shape":"FailoverPrimaryComputeResult",
+        "resultWrapper":"FailoverPrimaryComputeResult"
+      },
+      "errors":[
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"UnsupportedOperationFault"},
+        {"shape":"UnauthorizedOperation"},
+        {"shape":"InvalidClusterStateFault"}
+      ],
+      "documentation":"<p>Fails over the primary compute unit of the specified Multi-AZ cluster to another Availability Zone.</p>"
     },
     "GetClusterCredentials":{
       "name":"GetClusterCredentials",
@@ -1574,6 +1742,41 @@
       ],
       "documentation":"<p>Returns an array of DC2 ReservedNodeOfferings that matches the payment type, term, and usage price of the given DC1 reserved node.</p>"
     },
+    "GetResourcePolicy":{
+      "name":"GetResourcePolicy",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetResourcePolicyMessage"},
+      "output":{
+        "shape":"GetResourcePolicyResult",
+        "resultWrapper":"GetResourcePolicyResult"
+      },
+      "errors":[
+        {"shape":"ResourceNotFoundFault"},
+        {"shape":"InvalidPolicyFault"},
+        {"shape":"UnsupportedOperationFault"}
+      ],
+      "documentation":"<p>Get the resource policy for a specified resource.</p>"
+    },
+    "ListRecommendations":{
+      "name":"ListRecommendations",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListRecommendationsMessage"},
+      "output":{
+        "shape":"ListRecommendationsResult",
+        "resultWrapper":"ListRecommendationsResult"
+      },
+      "errors":[
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"UnsupportedOperationFault"}
+      ],
+      "documentation":"<p>List the Amazon Redshift Advisor recommendations for one or multiple Amazon Redshift clusters in an Amazon Web Services account.</p>"
+    },
     "ModifyAquaConfiguration":{
       "name":"ModifyAquaConfiguration",
       "http":{
@@ -1640,7 +1843,10 @@
         {"shape":"InvalidElasticIpFault"},
         {"shape":"TableLimitExceededFault"},
         {"shape":"InvalidClusterTrackFault"},
-        {"shape":"InvalidRetentionPeriodFault"}
+        {"shape":"InvalidRetentionPeriodFault"},
+        {"shape":"UnsupportedOperationFault"},
+        {"shape":"CustomCnameAssociationFault"},
+        {"shape":"Ipv6CidrBlockNotFoundFault"}
       ],
       "documentation":"<p>Modifies the settings for a cluster.</p> <p>You can also change node type and the number of nodes to scale up or down the cluster. When resizing a cluster, you must specify both the number of nodes and the node type even if one of the parameters does not change.</p> <p>You can add another security or parameter group, or change the admin user password. Resetting a cluster password or modifying the security groups associated with a cluster do not need a reboot. However, modifying a parameter group requires a reboot for parameters to take effect. For more information about managing clusters, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html\">Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>"
     },
@@ -1658,7 +1864,8 @@
       "errors":[
         {"shape":"ClusterNotFoundFault"},
         {"shape":"ClusterOnLatestRevisionFault"},
-        {"shape":"InvalidClusterStateFault"}
+        {"shape":"InvalidClusterStateFault"},
+        {"shape":"UnsupportedOperationFault"}
       ],
       "documentation":"<p>Modifies the database revision of a cluster. The database revision is a unique revision of the database running in a cluster.</p>"
     },
@@ -1766,6 +1973,25 @@
       ],
       "documentation":"<p>Modifies a cluster subnet group to include the specified list of VPC subnets. The operation replaces the existing list of subnets with the new list of subnets.</p>"
     },
+    "ModifyCustomDomainAssociation":{
+      "name":"ModifyCustomDomainAssociation",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ModifyCustomDomainAssociationMessage"},
+      "output":{
+        "shape":"ModifyCustomDomainAssociationResult",
+        "resultWrapper":"ModifyCustomDomainAssociationResult"
+      },
+      "errors":[
+        {"shape":"UnsupportedOperationFault"},
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"CustomCnameAssociationFault"},
+        {"shape":"CustomDomainAssociationNotFoundFault"}
+      ],
+      "documentation":"<p>Contains information for changing a custom domain association.</p>"
+    },
     "ModifyEndpointAccess":{
       "name":"ModifyEndpointAccess",
       "http":{
@@ -1811,6 +2037,25 @@
       ],
       "documentation":"<p>Modifies an existing Amazon Redshift event notification subscription.</p>"
     },
+    "ModifyRedshiftIdcApplication":{
+      "name":"ModifyRedshiftIdcApplication",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ModifyRedshiftIdcApplicationMessage"},
+      "output":{
+        "shape":"ModifyRedshiftIdcApplicationResult",
+        "resultWrapper":"ModifyRedshiftIdcApplicationResult"
+      },
+      "errors":[
+        {"shape":"RedshiftIdcApplicationNotExistsFault"},
+        {"shape":"DependentServiceUnavailableFault"},
+        {"shape":"UnsupportedOperationFault"},
+        {"shape":"DependentServiceAccessDeniedFault"}
+      ],
+      "documentation":"<p>Changes an existing Amazon Redshift IAM Identity Center application.</p>"
+    },
     "ModifyScheduledAction":{
       "name":"ModifyScheduledAction",
       "http":{
@@ -1823,11 +2068,13 @@
         "resultWrapper":"ModifyScheduledActionResult"
       },
       "errors":[
+        {"shape":"ClusterNotFoundFault"},
         {"shape":"ScheduledActionNotFoundFault"},
         {"shape":"ScheduledActionTypeUnsupportedFault"},
         {"shape":"InvalidScheduleFault"},
         {"shape":"InvalidScheduledActionFault"},
-        {"shape":"UnauthorizedOperation"}
+        {"shape":"UnauthorizedOperation"},
+        {"shape":"UnsupportedOperationFault"}
       ],
       "documentation":"<p>Modifies a scheduled action. </p>"
     },
@@ -1900,7 +2147,8 @@
       },
       "errors":[
         {"shape":"ClusterNotFoundFault"},
-        {"shape":"InvalidClusterStateFault"}
+        {"shape":"InvalidClusterStateFault"},
+        {"shape":"UnsupportedOperationFault"}
       ],
       "documentation":"<p>Pauses a cluster.</p>"
     },
@@ -1922,6 +2170,25 @@
         {"shape":"UnsupportedOperationFault"}
       ],
       "documentation":"<p>Allows you to purchase reserved nodes. Amazon Redshift offers a predefined set of reserved node offerings. You can purchase one or more of the offerings. You can call the <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved node offerings. You can call this API by providing a specific reserved node offering and the number of nodes you want to reserve. </p> <p> For more information about reserved node offerings, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/purchase-reserved-node-instance.html\">Purchasing Reserved Nodes</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>"
+    },
+    "PutResourcePolicy":{
+      "name":"PutResourcePolicy",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"PutResourcePolicyMessage"},
+      "output":{
+        "shape":"PutResourcePolicyResult",
+        "resultWrapper":"PutResourcePolicyResult"
+      },
+      "errors":[
+        {"shape":"ResourceNotFoundFault"},
+        {"shape":"InvalidPolicyFault"},
+        {"shape":"ConflictPolicyUpdateFault"},
+        {"shape":"UnsupportedOperationFault"}
+      ],
+      "documentation":"<p>Updates the resource policy for a specified resource.</p>"
     },
     "RebootCluster":{
       "name":"RebootCluster",
@@ -2046,7 +2313,8 @@
         {"shape":"ReservedNodeOfferingNotFoundFault"},
         {"shape":"DependentServiceUnavailableFault"},
         {"shape":"ReservedNodeAlreadyExistsFault"},
-        {"shape":"UnsupportedOperationFault"}
+        {"shape":"UnsupportedOperationFault"},
+        {"shape":"Ipv6CidrBlockNotFoundFault"}
       ],
       "documentation":"<p>Creates a new cluster from a snapshot. By default, Amazon Redshift creates the resulting cluster with the same configuration as the original cluster from which the snapshot was created, except that the new cluster is created with the default cluster security and parameter groups. After Amazon Redshift creates the cluster, you can use the <a>ModifyCluster</a> API to associate a different security group and different parameter group with the restored cluster. If you are using a DS node type, you can also choose to change to another DS node type of the same size during restore.</p> <p>If you restore a cluster into a VPC, you must provide a cluster subnet group where you want the cluster restored.</p> <p> For more information about working with snapshots, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html\">Amazon Redshift Snapshots</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>"
     },
@@ -2070,7 +2338,7 @@
         {"shape":"InvalidClusterStateFault"},
         {"shape":"UnsupportedOperationFault"}
       ],
-      "documentation":"<p>Creates a new table from a table in an Amazon Redshift cluster snapshot. You must create the new table within the Amazon Redshift cluster that the snapshot was taken from.</p> <p>You cannot use <code>RestoreTableFromClusterSnapshot</code> to restore a table with the same name as an existing table in an Amazon Redshift cluster. That is, you cannot overwrite an existing table in a cluster with a restored table. If you want to replace your original table with a new, restored table, then rename or drop your original table before you call <code>RestoreTableFromClusterSnapshot</code>. When you have renamed your original table, then you can pass the original name of the table as the <code>NewTableName</code> parameter value in the call to <code>RestoreTableFromClusterSnapshot</code>. This way, you can replace the original table with the table created from the snapshot.</p>"
+      "documentation":"<p>Creates a new table from a table in an Amazon Redshift cluster snapshot. You must create the new table within the Amazon Redshift cluster that the snapshot was taken from.</p> <p>You cannot use <code>RestoreTableFromClusterSnapshot</code> to restore a table with the same name as an existing table in an Amazon Redshift cluster. That is, you cannot overwrite an existing table in a cluster with a restored table. If you want to replace your original table with a new, restored table, then rename or drop your original table before you call <code>RestoreTableFromClusterSnapshot</code>. When you have renamed your original table, then you can pass the original name of the table as the <code>NewTableName</code> parameter value in the call to <code>RestoreTableFromClusterSnapshot</code>. This way, you can replace the original table with the table created from the snapshot.</p> <p>You can't use this operation to restore tables with <a href=\"https://docs.aws.amazon.com/redshift/latest/dg/t_Sorting_data.html#t_Sorting_data-interleaved\">interleaved sort keys</a>.</p>"
     },
     "ResumeCluster":{
       "name":"ResumeCluster",
@@ -2086,7 +2354,8 @@
       "errors":[
         {"shape":"ClusterNotFoundFault"},
         {"shape":"InvalidClusterStateFault"},
-        {"shape":"InsufficientClusterCapacityFault"}
+        {"shape":"InsufficientClusterCapacityFault"},
+        {"shape":"UnsupportedOperationFault"}
       ],
       "documentation":"<p>Resumes a paused cluster.</p>"
     },
@@ -2163,7 +2432,8 @@
       "errors":[
         {"shape":"ClusterNotFoundFault"},
         {"shape":"InvalidClusterStateFault"},
-        {"shape":"DependentServiceRequestThrottlingFault"}
+        {"shape":"DependentServiceRequestThrottlingFault"},
+        {"shape":"UnsupportedOperationFault"}
       ],
       "documentation":"<p>Rotates the encryption keys for a cluster.</p>"
     },
@@ -2181,7 +2451,8 @@
       "errors":[
         {"shape":"PartnerNotFoundFault"},
         {"shape":"ClusterNotFoundFault"},
-        {"shape":"UnauthorizedPartnerIntegrationFault"}
+        {"shape":"UnauthorizedPartnerIntegrationFault"},
+        {"shape":"UnsupportedOperationFault"}
       ],
       "documentation":"<p>Updates the status of a partner integration.</p>"
     }
@@ -2325,7 +2596,7 @@
       "members":{
         "DataShareArn":{
           "shape":"String",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use with the account or the namespace.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use.</p>"
         },
         "AssociateEntireAccount":{
           "shape":"BooleanOptional",
@@ -2333,11 +2604,15 @@
         },
         "ConsumerArn":{
           "shape":"String",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the consumer that is associated with the datashare.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the consumer namespace associated with the datashare.</p>"
         },
         "ConsumerRegion":{
           "shape":"String",
           "documentation":"<p>From a datashare consumer account, associates a datashare with all existing and future namespaces in the specified Amazon Web Services Region.</p>"
+        },
+        "AllowWrites":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>If set to true, allows write operations for a datashare.</p>"
         }
       }
     },
@@ -2346,6 +2621,32 @@
       "member":{
         "shape":"ClusterAssociatedToSchedule",
         "locationName":"ClusterAssociatedToSchedule"
+      }
+    },
+    "Association":{
+      "type":"structure",
+      "members":{
+        "CustomDomainCertificateArn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN) for the certificate associated with the custom domain.</p>"
+        },
+        "CustomDomainCertificateExpiryDate":{
+          "shape":"TStamp",
+          "documentation":"<p>The expiration date for the certificate.</p>"
+        },
+        "CertificateAssociations":{
+          "shape":"CertificateAssociationList",
+          "documentation":"<p>A list of all associated clusters and domain names tied to a specific certificate.</p>"
+        }
+      },
+      "documentation":"<p>Contains information about the custom domain name association.</p>",
+      "wrapper":true
+    },
+    "AssociationList":{
+      "type":"list",
+      "member":{
+        "shape":"Association",
+        "locationName":"Association"
       }
     },
     "AttributeList":{
@@ -2519,11 +2820,15 @@
       "members":{
         "DataShareArn":{
           "shape":"String",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the datashare that producers are to authorize sharing for.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the datashare namespace that producers are to authorize sharing for.</p>"
         },
         "ConsumerIdentifier":{
           "shape":"String",
           "documentation":"<p>The identifier of the data consumer that is authorized to access the datashare. This identifier is an Amazon Web Services account ID or a keyword, such as ADX.</p>"
+        },
+        "AllowWrites":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>If set to true, allows write operations for a datashare.</p>"
         }
       }
     },
@@ -2559,7 +2864,7 @@
         },
         "SnapshotClusterIdentifier":{
           "shape":"String",
-          "documentation":"<p>The identifier of the cluster the snapshot was created from. This parameter is required if your IAM user has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>"
+          "documentation":"<p>The identifier of the cluster the snapshot was created from.</p> <ul> <li> <p> <i>If the snapshot to access doesn't exist and the associated IAM policy doesn't allow access to all (*) snapshots</i> - This parameter is required. Otherwise, permissions aren't available to check if the snapshot exists.</p> </li> <li> <p> <i>If the snapshot to access exists</i> - This parameter isn't required. Redshift can retrieve the cluster identifier and use it to validate snapshot authorization.</p> </li> </ul>"
         },
         "AccountWithRestoreAccess":{
           "shape":"String",
@@ -2573,6 +2878,28 @@
       "members":{
         "Snapshot":{"shape":"Snapshot"}
       }
+    },
+    "AuthorizedAudienceList":{
+      "type":"list",
+      "member":{"shape":"String"}
+    },
+    "AuthorizedTokenIssuer":{
+      "type":"structure",
+      "members":{
+        "TrustedTokenIssuerArn":{
+          "shape":"String",
+          "documentation":"<p>The ARN for the authorized token issuer for integrating Amazon Redshift with IDC Identity Center.</p>"
+        },
+        "AuthorizedAudiencesList":{
+          "shape":"AuthorizedAudienceList",
+          "documentation":"<p>The list of audiences for the authorized token issuer for integrating Amazon Redshift with IDC Identity Center.</p>"
+        }
+      },
+      "documentation":"<p>The authorized token issuer for the Amazon Redshift IAM Identity Center application.</p>"
+    },
+    "AuthorizedTokenIssuerList":{
+      "type":"list",
+      "member":{"shape":"AuthorizedTokenIssuer"}
     },
     "AvailabilityZone":{
       "type":"structure",
@@ -2710,6 +3037,27 @@
           "shape":"String",
           "documentation":"<p>The unique identifier for the cluster that you want to cancel a resize operation for.</p>"
         }
+      }
+    },
+    "CertificateAssociation":{
+      "type":"structure",
+      "members":{
+        "CustomDomainName":{
+          "shape":"String",
+          "documentation":"<p>The custom domain name for the certificate association.</p>"
+        },
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The cluster identifier for the certificate association.</p>"
+        }
+      },
+      "documentation":"<p>A cluster ID and custom domain name tied to a specific certificate. These are typically returned in a list.</p>"
+    },
+    "CertificateAssociationList":{
+      "type":"list",
+      "member":{
+        "shape":"CertificateAssociation",
+        "locationName":"CertificateAssociation"
       }
     },
     "Cluster":{
@@ -2922,6 +3270,38 @@
         "ReservedNodeExchangeStatus":{
           "shape":"ReservedNodeExchangeStatus",
           "documentation":"<p>The status of the reserved-node exchange request. Statuses include in-progress and requested.</p>"
+        },
+        "CustomDomainName":{
+          "shape":"String",
+          "documentation":"<p>The custom domain name associated with the cluster.</p>"
+        },
+        "CustomDomainCertificateArn":{
+          "shape":"String",
+          "documentation":"<p>The certificate Amazon Resource Name (ARN) for the custom domain name.</p>"
+        },
+        "CustomDomainCertificateExpiryDate":{
+          "shape":"TStamp",
+          "documentation":"<p>The expiration date for the certificate associated with the custom domain name.</p>"
+        },
+        "MasterPasswordSecretArn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN) for the cluster's admin user credentials secret.</p>"
+        },
+        "MasterPasswordSecretKmsKeyId":{
+          "shape":"String",
+          "documentation":"<p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret.</p>"
+        },
+        "IpAddressType":{
+          "shape":"String",
+          "documentation":"<p>The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>"
+        },
+        "MultiAZ":{
+          "shape":"String",
+          "documentation":"<p>A boolean value that, if true, indicates that the cluster is deployed in two Availability Zones.</p>"
+        },
+        "MultiAZSecondary":{
+          "shape":"SecondaryClusterInfo",
+          "documentation":"<p>The secondary compute unit of a cluster, if Multi-AZ deployment is turned on.</p>"
         }
       },
       "documentation":"<p>Describes a cluster.</p>",
@@ -3464,6 +3844,10 @@
         "Tags":{
           "shape":"TagList",
           "documentation":"<p>The list of tags for the cluster subnet group.</p>"
+        },
+        "SupportedClusterIpAddressTypes":{
+          "shape":"ValueStringList",
+          "documentation":"<p>The IP address types supported by this cluster subnet group. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>"
         }
       },
       "documentation":"<p>Describes a subnet group.</p>",
@@ -3591,6 +3975,18 @@
       },
       "documentation":"<p>Contains the output from the <a>DescribeClusters</a> action. </p>"
     },
+    "ConflictPolicyUpdateFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>There is a conflict while updating the resource policy.</p>",
+      "error":{
+        "code":"ConflictPolicyUpdateFault",
+        "httpStatusCode":409,
+        "senderFault":true
+      },
+      "exception":true
+    },
     "CopyClusterSnapshotMessage":{
       "type":"structure",
       "required":[
@@ -3670,8 +4066,7 @@
       "required":[
         "ClusterIdentifier",
         "NodeType",
-        "MasterUsername",
-        "MasterUserPassword"
+        "MasterUsername"
       ],
       "members":{
         "DBName":{
@@ -3692,11 +4087,11 @@
         },
         "MasterUsername":{
           "shape":"String",
-          "documentation":"<p>The user name associated with the admin user account for the cluster that is being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric characters. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href=\"https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html\">Reserved Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>"
+          "documentation":"<p>The user name associated with the admin user account for the cluster that is being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 - 128 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.</p> </li> <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li> <p>Must not contain a colon (:) or a slash (/).</p> </li> <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href=\"https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html\">Reserved Words</a> in the Amazon Redshift Database Developer Guide. </p> </li> </ul>"
         },
         "MasterUserPassword":{
-          "shape":"String",
-          "documentation":"<p>The password associated with the admin user account for the cluster that is being created.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li> <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>\"</code> (double quote), <code>\\</code>, <code>/</code>, or <code>@</code>.</p> </li> </ul>"
+          "shape":"SensitiveString",
+          "documentation":"<p>The password associated with the admin user account for the cluster that is being created.</p> <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li> <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>\"</code> (double quote), <code>\\</code>, <code>/</code>, or <code>@</code>.</p> </li> </ul>"
         },
         "ClusterSecurityGroups":{
           "shape":"ClusterSecurityGroupNameList",
@@ -3732,7 +4127,7 @@
         },
         "Port":{
           "shape":"IntegerOptional",
-          "documentation":"<p>The port number on which the cluster accepts incoming connections.</p> <p>The cluster is accessible only via the JDBC and ODBC connection strings. Part of the connection string requires the port on which the cluster will listen for incoming connections.</p> <p>Default: <code>5439</code> </p> <p>Valid Values: <code>1150-65535</code> </p>"
+          "documentation":"<p>The port number on which the cluster accepts incoming connections.</p> <p>The cluster is accessible only via the JDBC and ODBC connection strings. Part of the connection string requires the port on which the cluster will listen for incoming connections.</p> <p>Default: <code>5439</code> </p> <p>Valid Values: </p> <ul> <li> <p>For clusters with ra3 nodes - Select a port within the ranges <code>5431-5455</code> or <code>8191-8215</code>. (If you have an existing cluster with ra3 nodes, it isn't required that you change the port to these ranges.)</p> </li> <li> <p>For clusters with ds2 or dc2 nodes - Select a port within the range <code>1150-65535</code>.</p> </li> </ul>"
         },
         "ClusterVersion":{
           "shape":"String",
@@ -3809,6 +4204,26 @@
         "LoadSampleData":{
           "shape":"String",
           "documentation":"<p>A flag that specifies whether to load sample data once the cluster is created.</p>"
+        },
+        "ManageMasterPassword":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password. </p>"
+        },
+        "MasterPasswordSecretKmsKeyId":{
+          "shape":"String",
+          "documentation":"<p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>"
+        },
+        "IpAddressType":{
+          "shape":"String",
+          "documentation":"<p>The IP address types that the cluster supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>"
+        },
+        "MultiAZ":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>If true, Amazon Redshift will deploy the cluster in two Availability Zones (AZ).</p>"
+        },
+        "RedshiftIdcApplicationArn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon resource name (ARN) of the Amazon Redshift IAM Identity Center application.</p>"
         }
       },
       "documentation":"<p/>"
@@ -3943,6 +4358,49 @@
       "type":"structure",
       "members":{
         "ClusterSubnetGroup":{"shape":"ClusterSubnetGroup"}
+      }
+    },
+    "CreateCustomDomainAssociationMessage":{
+      "type":"structure",
+      "required":[
+        "CustomDomainName",
+        "CustomDomainCertificateArn",
+        "ClusterIdentifier"
+      ],
+      "members":{
+        "CustomDomainName":{
+          "shape":"CustomDomainNameString",
+          "documentation":"<p>The custom domain name for a custom domain association.</p>"
+        },
+        "CustomDomainCertificateArn":{
+          "shape":"CustomDomainCertificateArnString",
+          "documentation":"<p>The certificate Amazon Resource Name (ARN) for the custom domain name association.</p>"
+        },
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The cluster identifier that the custom domain is associated with.</p>"
+        }
+      }
+    },
+    "CreateCustomDomainAssociationResult":{
+      "type":"structure",
+      "members":{
+        "CustomDomainName":{
+          "shape":"CustomDomainNameString",
+          "documentation":"<p>The custom domain name for the association result.</p>"
+        },
+        "CustomDomainCertificateArn":{
+          "shape":"CustomDomainCertificateArnString",
+          "documentation":"<p>The Amazon Resource Name (ARN) for the certificate associated with the custom domain name.</p>"
+        },
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The identifier of the cluster that the custom domain is associated with.</p>"
+        },
+        "CustomDomainCertExpiryTime":{
+          "shape":"String",
+          "documentation":"<p>The expiration time for the certificate for the custom domain.</p>"
+        }
       }
     },
     "CreateEndpointAccessMessage":{
@@ -4089,6 +4547,51 @@
       "type":"structure",
       "members":{
         "HsmConfiguration":{"shape":"HsmConfiguration"}
+      }
+    },
+    "CreateRedshiftIdcApplicationMessage":{
+      "type":"structure",
+      "required":[
+        "IdcInstanceArn",
+        "RedshiftIdcApplicationName",
+        "IdcDisplayName",
+        "IamRoleArn"
+      ],
+      "members":{
+        "IdcInstanceArn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon resource name (ARN) of the IAM Identity Center instance where Amazon Redshift creates a new managed application.</p>"
+        },
+        "RedshiftIdcApplicationName":{
+          "shape":"RedshiftIdcApplicationName",
+          "documentation":"<p>The name of the Redshift application in IAM Identity Center.</p>"
+        },
+        "IdentityNamespace":{
+          "shape":"IdentityNamespaceString",
+          "documentation":"<p>The namespace for the Amazon Redshift IAM Identity Center application instance. It determines which managed application verifies the connection token.</p>"
+        },
+        "IdcDisplayName":{
+          "shape":"IdcDisplayNameString",
+          "documentation":"<p>The display name for the Amazon Redshift IAM Identity Center application instance. It appears in the console.</p>"
+        },
+        "IamRoleArn":{
+          "shape":"String",
+          "documentation":"<p>The IAM role ARN for the Amazon Redshift IAM Identity Center application instance. It has the required permissions to be assumed and invoke the IDC Identity Center API.</p>"
+        },
+        "AuthorizedTokenIssuerList":{
+          "shape":"AuthorizedTokenIssuerList",
+          "documentation":"<p>The token issuer list for the Amazon Redshift IAM Identity Center application instance.</p>"
+        },
+        "ServiceIntegrations":{
+          "shape":"ServiceIntegrationList",
+          "documentation":"<p>A collection of service integrations for the Redshift IAM Identity Center application.</p>"
+        }
+      }
+    },
+    "CreateRedshiftIdcApplicationResult":{
+      "type":"structure",
+      "members":{
+        "RedshiftIdcApplication":{"shape":"RedshiftIdcApplication"}
       }
     },
     "CreateScheduledActionMessage":{
@@ -4245,6 +4748,55 @@
         }
       }
     },
+    "CustomCnameAssociationFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>An error occurred when an attempt was made to change the custom domain association.</p>",
+      "error":{
+        "code":"CustomCnameAssociationFault",
+        "httpStatusCode":400,
+        "senderFault":true
+      },
+      "exception":true
+    },
+    "CustomDomainAssociationNotFoundFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>An error occurred. The custom domain name couldn't be found.</p>",
+      "error":{
+        "code":"CustomDomainAssociationNotFoundFault",
+        "httpStatusCode":404,
+        "senderFault":true
+      },
+      "exception":true
+    },
+    "CustomDomainAssociationsMessage":{
+      "type":"structure",
+      "members":{
+        "Marker":{
+          "shape":"String",
+          "documentation":"<p>The marker for the custom domain association.</p>"
+        },
+        "Associations":{
+          "shape":"AssociationList",
+          "documentation":"<p>The associations for the custom domain.</p>"
+        }
+      }
+    },
+    "CustomDomainCertificateArnString":{
+      "type":"string",
+      "max":2048,
+      "min":20,
+      "pattern":"arn:[\\w+=/,.@-]+:acm:[\\w+=/,.@-]*:[0-9]+:[\\w+=,.@-]+(/[\\w+=,.@-]+)*"
+    },
+    "CustomDomainNameString":{
+      "type":"string",
+      "max":253,
+      "min":1,
+      "pattern":"^(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$"
+    },
     "CustomerStorageMessage":{
       "type":"structure",
       "members":{
@@ -4263,11 +4815,11 @@
       "members":{
         "DataShareArn":{
           "shape":"String",
-          "documentation":"<p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the datashare that the consumer is to use.</p>"
         },
         "ProducerArn":{
           "shape":"String",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the producer.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the producer namespace.</p>"
         },
         "AllowPubliclyAccessibleConsumers":{
           "shape":"Boolean",
@@ -4305,6 +4857,14 @@
         "StatusChangeDate":{
           "shape":"TStamp",
           "documentation":"<p>The status change data of the datashare that is associated.</p>"
+        },
+        "ProducerAllowedWrites":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>Specifies whether write operations were allowed during data share authorization.</p>"
+        },
+        "ConsumerAcceptedWrites":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>Specifies whether write operations were allowed during data share association.</p>"
         }
       },
       "documentation":"<p>The association of a datashare from a producer account with a data consumer. </p>"
@@ -4391,7 +4951,7 @@
       "members":{
         "DataShareArn":{
           "shape":"String",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the datashare to remove authorization from.</p>"
+          "documentation":"<p>The namespace Amazon Resource Name (ARN) of the datashare to remove authorization from.</p>"
         },
         "ConsumerIdentifier":{
           "shape":"String",
@@ -4552,6 +5112,23 @@
       },
       "documentation":"<p/>"
     },
+    "DeleteCustomDomainAssociationMessage":{
+      "type":"structure",
+      "required":[
+        "ClusterIdentifier",
+        "CustomDomainName"
+      ],
+      "members":{
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The identifier of the cluster to delete a custom domain association for.</p>"
+        },
+        "CustomDomainName":{
+          "shape":"CustomDomainNameString",
+          "documentation":"<p>The custom domain name for the custom domain association.</p>"
+        }
+      }
+    },
     "DeleteEndpointAccessMessage":{
       "type":"structure",
       "required":["EndpointName"],
@@ -4594,6 +5171,26 @@
         }
       },
       "documentation":"<p/>"
+    },
+    "DeleteRedshiftIdcApplicationMessage":{
+      "type":"structure",
+      "required":["RedshiftIdcApplicationArn"],
+      "members":{
+        "RedshiftIdcApplicationArn":{
+          "shape":"String",
+          "documentation":"<p>The ARN for a deleted Amazon Redshift IAM Identity Center application.</p>"
+        }
+      }
+    },
+    "DeleteResourcePolicyMessage":{
+      "type":"structure",
+      "required":["ResourceArn"],
+      "members":{
+        "ResourceArn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the resource of which its resource policy is deleted.</p>"
+        }
+      }
     },
     "DeleteScheduledActionMessage":{
       "type":"structure",
@@ -4653,6 +5250,18 @@
           "documentation":"<p>The identifier of the usage limit to delete.</p>"
         }
       }
+    },
+    "DependentServiceAccessDeniedFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>A dependent service denied access for the integration.</p>",
+      "error":{
+        "code":"DependentServiceAccessDenied",
+        "httpStatusCode":403,
+        "senderFault":true
+      },
+      "exception":true
     },
     "DependentServiceRequestThrottlingFault":{
       "type":"structure",
@@ -4776,7 +5385,7 @@
       "members":{
         "ClusterSecurityGroupName":{
           "shape":"String",
-          "documentation":"<p>The name of a cluster security group for which you are requesting details. You can specify either the <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter, but not both. </p> <p> Example: <code>securitygroup1</code> </p>"
+          "documentation":"<p>The name of a cluster security group for which you are requesting details. You must specify either the <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter, but not both. </p> <p> Example: <code>securitygroup1</code> </p>"
         },
         "MaxRecords":{
           "shape":"IntegerOptional",
@@ -4784,7 +5393,7 @@
         },
         "Marker":{
           "shape":"String",
-          "documentation":"<p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusterSecurityGroups</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p> <p>Constraints: You can specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b> parameter, but not both. </p>"
+          "documentation":"<p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeClusterSecurityGroups</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p> <p>Constraints: You must specify either the <b>ClusterSecurityGroupName</b> parameter or the <b>Marker</b> parameter, but not both. </p>"
         },
         "TagKeys":{
           "shape":"TagKeyList",
@@ -4946,12 +5555,33 @@
       },
       "documentation":"<p/>"
     },
+    "DescribeCustomDomainAssociationsMessage":{
+      "type":"structure",
+      "members":{
+        "CustomDomainName":{
+          "shape":"CustomDomainNameString",
+          "documentation":"<p>The custom domain name for the custom domain association.</p>"
+        },
+        "CustomDomainCertificateArn":{
+          "shape":"CustomDomainCertificateArnString",
+          "documentation":"<p>The certificate Amazon Resource Name (ARN) for the custom domain association.</p>"
+        },
+        "MaxRecords":{
+          "shape":"IntegerOptional",
+          "documentation":"<p>The maximum records setting for the associated custom domain.</p>"
+        },
+        "Marker":{
+          "shape":"String",
+          "documentation":"<p>The marker for the custom domain association.</p>"
+        }
+      }
+    },
     "DescribeDataSharesForConsumerMessage":{
       "type":"structure",
       "members":{
         "ConsumerArn":{
           "shape":"String",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the consumer that returns in the list of datashares.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the consumer namespace that returns in the list of datashares.</p>"
         },
         "Status":{
           "shape":"DataShareStatusForConsumer",
@@ -4985,7 +5615,7 @@
       "members":{
         "ProducerArn":{
           "shape":"String",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the producer that returns in the list of datashares.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the producer namespace that returns in the list of datashares.</p>"
         },
         "Status":{
           "shape":"DataShareStatusForProducer",
@@ -5019,7 +5649,7 @@
       "members":{
         "DataShareArn":{
           "shape":"String",
-          "documentation":"<p>The identifier of the datashare to describe details of.</p>"
+          "documentation":"<p>The Amazon resource name (ARN) of the datashare to describe details of.</p>"
         },
         "MaxRecords":{
           "shape":"IntegerOptional",
@@ -5107,7 +5737,7 @@
         },
         "Account":{
           "shape":"String",
-          "documentation":"<p>The AAmazon Web Services account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p>"
+          "documentation":"<p>The Amazon Web Services account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p>"
         },
         "Grantee":{
           "shape":"BooleanOptional",
@@ -5245,6 +5875,27 @@
       },
       "documentation":"<p/>"
     },
+    "DescribeInboundIntegrationsMessage":{
+      "type":"structure",
+      "members":{
+        "IntegrationArn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the inbound integration.</p>"
+        },
+        "TargetArn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the target of an inbound integration.</p>"
+        },
+        "MaxRecords":{
+          "shape":"IntegerOptional",
+          "documentation":"<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20, maximum 100.</p>"
+        },
+        "Marker":{
+          "shape":"String",
+          "documentation":"<p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeInboundIntegrations</a> request exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>"
+        }
+      }
+    },
     "DescribeLoggingStatusMessage":{
       "type":"structure",
       "required":["ClusterIdentifier"],
@@ -5348,6 +5999,36 @@
         "PartnerIntegrationInfoList":{
           "shape":"PartnerIntegrationInfoList",
           "documentation":"<p>A list of partner integrations.</p>"
+        }
+      }
+    },
+    "DescribeRedshiftIdcApplicationsMessage":{
+      "type":"structure",
+      "members":{
+        "RedshiftIdcApplicationArn":{
+          "shape":"String",
+          "documentation":"<p>The ARN for the Redshift application that integrates with IAM Identity Center.</p>"
+        },
+        "MaxRecords":{
+          "shape":"IntegerOptional",
+          "documentation":"<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified MaxRecords value, a value is returned in a marker field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>"
+        },
+        "Marker":{
+          "shape":"String",
+          "documentation":"<p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the Marker parameter and retrying the command. If the Marker field is empty, all response records have been retrieved for the request. </p>"
+        }
+      }
+    },
+    "DescribeRedshiftIdcApplicationsResult":{
+      "type":"structure",
+      "members":{
+        "RedshiftIdcApplications":{
+          "shape":"RedshiftIdcApplicationList",
+          "documentation":"<p>The list of Amazon Redshift IAM Identity Center applications.</p>"
+        },
+        "Marker":{
+          "shape":"String",
+          "documentation":"<p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the Marker parameter and retrying the command. If the Marker field is empty, all response records have been retrieved for the request. </p>"
         }
       }
     },
@@ -5656,7 +6337,7 @@
       "members":{
         "DataShareArn":{
           "shape":"String",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the datashare to remove association for. </p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the datashare to remove association for.</p>"
         },
         "DisassociateEntireAccount":{
           "shape":"BooleanOptional",
@@ -5664,7 +6345,7 @@
         },
         "ConsumerArn":{
           "shape":"String",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the consumer that association for the datashare is removed from.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the consumer namespace that association for the datashare is removed from.</p>"
         },
         "ConsumerRegion":{
           "shape":"String",
@@ -5746,7 +6427,7 @@
         },
         "LogExports":{
           "shape":"LogTypeList",
-          "documentation":"<p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>"
+          "documentation":"<p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>"
         }
       },
       "documentation":"<p/>"
@@ -6216,12 +6897,25 @@
       },
       "documentation":"<p/>"
     },
+    "FailoverPrimaryComputeInputMessage":{
+      "type":"structure",
+      "required":["ClusterIdentifier"],
+      "members":{
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The unique identifier of the cluster for which the primary compute unit will be failed over to another Availability Zone.</p>"
+        }
+      }
+    },
+    "FailoverPrimaryComputeResult":{
+      "type":"structure",
+      "members":{
+        "Cluster":{"shape":"Cluster"}
+      }
+    },
     "GetClusterCredentialsMessage":{
       "type":"structure",
-      "required":[
-        "DbUser",
-        "ClusterIdentifier"
-      ],
+      "required":["DbUser"],
       "members":{
         "DbUser":{
           "shape":"String",
@@ -6246,13 +6940,16 @@
         "DbGroups":{
           "shape":"DbGroupList",
           "documentation":"<p>A list of the names of existing database groups that the user named in <code>DbUser</code> will join for the current session, in addition to any group memberships for an existing user. If not specified, a new user is added only to PUBLIC.</p> <p>Database group name constraints</p> <ul> <li> <p>Must be 1 to 64 alphanumeric characters or hyphens</p> </li> <li> <p>Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.</p> </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Must not contain a colon ( : ) or slash ( / ). </p> </li> <li> <p>Cannot be a reserved word. A list of reserved words can be found in <a href=\"http://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html\">Reserved Words</a> in the Amazon Redshift Database Developer Guide.</p> </li> </ul>"
+        },
+        "CustomDomainName":{
+          "shape":"String",
+          "documentation":"<p>The custom domain name for the cluster credentials.</p>"
         }
       },
       "documentation":"<p>The request parameters to get cluster credentials.</p>"
     },
     "GetClusterCredentialsWithIAMMessage":{
       "type":"structure",
-      "required":["ClusterIdentifier"],
       "members":{
         "DbName":{
           "shape":"String",
@@ -6265,6 +6962,10 @@
         "DurationSeconds":{
           "shape":"IntegerOptional",
           "documentation":"<p>The number of seconds until the returned temporary password expires.</p> <p>Range: 900-3600. Default: 900.</p>"
+        },
+        "CustomDomainName":{
+          "shape":"String",
+          "documentation":"<p>The custom domain name for the IAM message cluster credentials.</p>"
         }
       }
     },
@@ -6336,6 +7037,25 @@
         "ReservedNodeOfferings":{
           "shape":"ReservedNodeOfferingList",
           "documentation":"<p>Returns an array of <a>ReservedNodeOffering</a> objects.</p>"
+        }
+      }
+    },
+    "GetResourcePolicyMessage":{
+      "type":"structure",
+      "required":["ResourceArn"],
+      "members":{
+        "ResourceArn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the resource of which its resource policy is fetched.</p>"
+        }
+      }
+    },
+    "GetResourcePolicyResult":{
+      "type":"structure",
+      "members":{
+        "ResourcePolicy":{
+          "shape":"ResourcePolicy",
+          "documentation":"<p>The content of the resource policy.</p>"
         }
       }
     },
@@ -6549,6 +7269,26 @@
         "locationName":"IamRoleArn"
       }
     },
+    "IdcDisplayNameString":{
+      "type":"string",
+      "max":127,
+      "min":1,
+      "pattern":"[\\w+=,.@-]+"
+    },
+    "IdentityNamespaceString":{
+      "type":"string",
+      "max":127,
+      "min":1,
+      "pattern":"^[a-zA-Z0-9_+.#@$-]+$"
+    },
+    "ImpactRankingType":{
+      "type":"string",
+      "enum":[
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ]
+    },
     "ImportTablesCompleted":{
       "type":"list",
       "member":{"shape":"String"}
@@ -6572,6 +7312,56 @@
         "senderFault":true
       },
       "exception":true
+    },
+    "InboundIntegration":{
+      "type":"structure",
+      "members":{
+        "IntegrationArn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN) of an inbound integration.</p>"
+        },
+        "SourceArn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the source of an inbound integration.</p>"
+        },
+        "TargetArn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the target of an inbound integration.</p>"
+        },
+        "Status":{
+          "shape":"ZeroETLIntegrationStatus",
+          "documentation":"<p>The status of an inbound integration.</p>"
+        },
+        "Errors":{
+          "shape":"IntegrationErrorList",
+          "documentation":"<p>The outstanding errors of an inbound integration. Each item is an \"IntegrationError\". This is null if there is no error.</p>"
+        },
+        "CreateTime":{
+          "shape":"TStamp",
+          "documentation":"<p>The creation time of an inbound integration.</p>"
+        }
+      },
+      "documentation":"<p>The content of an inbound integration.</p>"
+    },
+    "InboundIntegrationList":{
+      "type":"list",
+      "member":{
+        "shape":"InboundIntegration",
+        "locationName":"InboundIntegration"
+      }
+    },
+    "InboundIntegrationsMessage":{
+      "type":"structure",
+      "members":{
+        "Marker":{
+          "shape":"String",
+          "documentation":"<p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the <code>Marker</code> parameter and retrying the command. If the <code>Marker</code> field is empty, all response records have been retrieved for the request. </p>"
+        },
+        "InboundIntegrations":{
+          "shape":"InboundIntegrationList",
+          "documentation":"<p>A list of <a>InboundIntegration</a> instances.</p>"
+        }
+      }
     },
     "IncompatibleOrderableOptions":{
       "type":"structure",
@@ -6611,6 +7401,40 @@
     },
     "Integer":{"type":"integer"},
     "IntegerOptional":{"type":"integer"},
+    "IntegrationError":{
+      "type":"structure",
+      "required":["ErrorCode"],
+      "members":{
+        "ErrorCode":{
+          "shape":"String",
+          "documentation":"<p>The error code of an inbound integration error.</p>"
+        },
+        "ErrorMessage":{
+          "shape":"String",
+          "documentation":"<p>The error message of an inbound integration error.</p>"
+        }
+      },
+      "documentation":"<p>The error of an inbound integration.</p>"
+    },
+    "IntegrationErrorList":{
+      "type":"list",
+      "member":{
+        "shape":"IntegrationError",
+        "locationName":"IntegrationError"
+      }
+    },
+    "IntegrationNotFoundFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The integration can't be found.</p>",
+      "error":{
+        "code":"IntegrationNotFoundFault",
+        "httpStatusCode":404,
+        "senderFault":true
+      },
+      "exception":true
+    },
     "InvalidAuthenticationProfileRequestFault":{
       "type":"structure",
       "members":{
@@ -6803,6 +7627,18 @@
       },
       "exception":true
     },
+    "InvalidPolicyFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The resource policy isn't valid.</p>",
+      "error":{
+        "code":"InvalidPolicyFault",
+        "httpStatusCode":400,
+        "senderFault":true
+      },
+      "exception":true
+    },
     "InvalidReservedNodeStateFault":{
       "type":"structure",
       "members":{
@@ -6971,6 +7807,44 @@
       },
       "exception":true
     },
+    "Ipv6CidrBlockNotFoundFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>There are no subnets in your VPC with associated IPv6 CIDR blocks. To use dual-stack mode, associate an IPv6 CIDR block with each subnet in your VPC.</p>",
+      "error":{
+        "code":"Ipv6CidrBlockNotFoundFault",
+        "httpStatusCode":400,
+        "senderFault":true
+      },
+      "exception":true
+    },
+    "LakeFormationQuery":{
+      "type":"structure",
+      "required":["Authorization"],
+      "members":{
+        "Authorization":{
+          "shape":"ServiceAuthorization",
+          "documentation":"<p>Determines whether the query scope is enabled or disabled.</p>"
+        }
+      },
+      "documentation":"<p>The Lake Formation scope.</p>"
+    },
+    "LakeFormationScopeUnion":{
+      "type":"structure",
+      "members":{
+        "LakeFormationQuery":{
+          "shape":"LakeFormationQuery",
+          "documentation":"<p>The Lake Formation scope.</p>"
+        }
+      },
+      "documentation":"<p>A list of scopes set up for Lake Formation integration.</p>",
+      "union":true
+    },
+    "LakeFormationServiceIntegrations":{
+      "type":"list",
+      "member":{"shape":"LakeFormationScopeUnion"}
+    },
     "LimitExceededFault":{
       "type":"structure",
       "members":{
@@ -6982,6 +7856,40 @@
         "senderFault":true
       },
       "exception":true
+    },
+    "ListRecommendationsMessage":{
+      "type":"structure",
+      "members":{
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The unique identifier of the Amazon Redshift cluster for which the list of Advisor recommendations is returned. If the neither the cluster identifier and the cluster namespace ARN parameters are specified, then recommendations for all clusters in the account are returned.</p>"
+        },
+        "NamespaceArn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Redshift cluster namespace Amazon Resource Name (ARN) for which the list of Advisor recommendations is returned. If the neither the cluster identifier and the cluster namespace ARN parameters are specified, then recommendations for all clusters in the account are returned.</p>"
+        },
+        "MaxRecords":{
+          "shape":"IntegerOptional",
+          "documentation":"<p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified MaxRecords value, a value is returned in a marker field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.</p>"
+        },
+        "Marker":{
+          "shape":"String",
+          "documentation":"<p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the Marker parameter and retrying the command. If the Marker field is empty, all response records have been retrieved for the request. </p>"
+        }
+      }
+    },
+    "ListRecommendationsResult":{
+      "type":"structure",
+      "members":{
+        "Recommendations":{
+          "shape":"RecommendationList",
+          "documentation":"<p>The Advisor recommendations for action on the Amazon Redshift cluster.</p>"
+        },
+        "Marker":{
+          "shape":"String",
+          "documentation":"<p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the Marker parameter and retrying the command. If the Marker field is empty, all response records have been retrieved for the request. </p>"
+        }
+      }
     },
     "LogDestinationType":{
       "type":"string",
@@ -7027,7 +7935,7 @@
         },
         "LogExports":{
           "shape":"LogTypeList",
-          "documentation":"<p>The collection of exported log types. Log types include the connection log, user log and user activity log.</p>"
+          "documentation":"<p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>"
         }
       },
       "documentation":"<p>Describes the status of logging for a cluster.</p>"
@@ -7229,8 +8137,8 @@
           "documentation":"<p>A list of virtual private cloud (VPC) security groups to be associated with the cluster. This change is asynchronously applied as soon as possible.</p>"
         },
         "MasterUserPassword":{
-          "shape":"String",
-          "documentation":"<p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <note> <p>Operations never return the password, so this operation provides a way to regain access to the admin user account for a cluster if the password is lost.</p> </note> <p>Default: Uses existing setting.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li> <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>\"</code> (double quote), <code>\\</code>, <code>/</code>, or <code>@</code>.</p> </li> </ul>"
+          "shape":"SensitiveString",
+          "documentation":"<p>The new password for the cluster admin user. This change is asynchronously applied as soon as possible. Between the time of the request and the completion of the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code> element of the operation response. </p> <p>You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is <code>true</code>.</p> <note> <p>Operations never return the password, so this operation provides a way to regain access to the admin user account for a cluster if the password is lost.</p> </note> <p>Default: Uses existing setting.</p> <p>Constraints:</p> <ul> <li> <p>Must be between 8 and 64 characters in length.</p> </li> <li> <p>Must contain at least one uppercase letter.</p> </li> <li> <p>Must contain at least one lowercase letter.</p> </li> <li> <p>Must contain one number.</p> </li> <li> <p>Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single quote), <code>\"</code> (double quote), <code>\\</code>, <code>/</code>, or <code>@</code>.</p> </li> </ul>"
         },
         "ClusterParameterGroupName":{
           "shape":"String",
@@ -7302,7 +8210,23 @@
         },
         "Port":{
           "shape":"IntegerOptional",
-          "documentation":"<p>The option to change the port of an Amazon Redshift cluster.</p>"
+          "documentation":"<p>The option to change the port of an Amazon Redshift cluster.</p> <p>Valid Values: </p> <ul> <li> <p>For clusters with ra3 nodes - Select a port within the ranges <code>5431-5455</code> or <code>8191-8215</code>. (If you have an existing cluster with ra3 nodes, it isn't required that you change the port to these ranges.)</p> </li> <li> <p>For clusters with ds2 or dc2 nodes - Select a port within the range <code>1150-65535</code>.</p> </li> </ul>"
+        },
+        "ManageMasterPassword":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code> is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses <code>MasterUserPassword</code> for the admin user account's password. </p>"
+        },
+        "MasterPasswordSecretKmsKeyId":{
+          "shape":"String",
+          "documentation":"<p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>"
+        },
+        "IpAddressType":{
+          "shape":"String",
+          "documentation":"<p>The IP address types that the cluster supports. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>"
+        },
+        "MultiAZ":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>If true and the cluster is currently only deployed in a single Availability Zone, the cluster will be modified to be deployed in two Availability Zones.</p>"
         }
       },
       "documentation":"<p/>"
@@ -7401,6 +8325,49 @@
         "ClusterSubnetGroup":{"shape":"ClusterSubnetGroup"}
       }
     },
+    "ModifyCustomDomainAssociationMessage":{
+      "type":"structure",
+      "required":[
+        "CustomDomainName",
+        "CustomDomainCertificateArn",
+        "ClusterIdentifier"
+      ],
+      "members":{
+        "CustomDomainName":{
+          "shape":"CustomDomainNameString",
+          "documentation":"<p>The custom domain name for a changed custom domain association.</p>"
+        },
+        "CustomDomainCertificateArn":{
+          "shape":"CustomDomainCertificateArnString",
+          "documentation":"<p>The certificate Amazon Resource Name (ARN) for the changed custom domain association.</p>"
+        },
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The identifier of the cluster to change a custom domain association for.</p>"
+        }
+      }
+    },
+    "ModifyCustomDomainAssociationResult":{
+      "type":"structure",
+      "members":{
+        "CustomDomainName":{
+          "shape":"CustomDomainNameString",
+          "documentation":"<p>The custom domain name associated with the result for the changed custom domain association.</p>"
+        },
+        "CustomDomainCertificateArn":{
+          "shape":"CustomDomainCertificateArnString",
+          "documentation":"<p>The certificate Amazon Resource Name (ARN) associated with the result for the changed custom domain association.</p>"
+        },
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The identifier of the cluster associated with the result for the changed custom domain association.</p>"
+        },
+        "CustomDomainCertExpiryTime":{
+          "shape":"String",
+          "documentation":"<p>The certificate expiration time associated with the result for the changed custom domain association.</p>"
+        }
+      }
+    },
     "ModifyEndpointAccessMessage":{
       "type":"structure",
       "required":["EndpointName"],
@@ -7454,6 +8421,42 @@
       "type":"structure",
       "members":{
         "EventSubscription":{"shape":"EventSubscription"}
+      }
+    },
+    "ModifyRedshiftIdcApplicationMessage":{
+      "type":"structure",
+      "required":["RedshiftIdcApplicationArn"],
+      "members":{
+        "RedshiftIdcApplicationArn":{
+          "shape":"String",
+          "documentation":"<p>The ARN for the Redshift application that integrates with IAM Identity Center.</p>"
+        },
+        "IdentityNamespace":{
+          "shape":"IdentityNamespaceString",
+          "documentation":"<p>The namespace for the Amazon Redshift IAM Identity Center application to change. It determines which managed application verifies the connection token.</p>"
+        },
+        "IamRoleArn":{
+          "shape":"String",
+          "documentation":"<p>The IAM role ARN associated with the Amazon Redshift IAM Identity Center application to change. It has the required permissions to be assumed and invoke the IDC Identity Center API.</p>"
+        },
+        "IdcDisplayName":{
+          "shape":"IdcDisplayNameString",
+          "documentation":"<p>The display name for the Amazon Redshift IAM Identity Center application to change. It appears on the console.</p>"
+        },
+        "AuthorizedTokenIssuerList":{
+          "shape":"AuthorizedTokenIssuerList",
+          "documentation":"<p>The authorized token issuer list for the Amazon Redshift IAM Identity Center application to change.</p>"
+        },
+        "ServiceIntegrations":{
+          "shape":"ServiceIntegrationList",
+          "documentation":"<p>A collection of service integrations associated with the application.</p>"
+        }
+      }
+    },
+    "ModifyRedshiftIdcApplicationResult":{
+      "type":"structure",
+      "members":{
+        "RedshiftIdcApplication":{"shape":"RedshiftIdcApplication"}
       }
     },
     "ModifyScheduledActionMessage":{
@@ -7575,6 +8578,10 @@
         "AvailabilityZone":{
           "shape":"String",
           "documentation":"<p>The Availability Zone. </p>"
+        },
+        "Ipv6Address":{
+          "shape":"String",
+          "documentation":"<p>The IPv6 address of the network interface within the subnet. </p>"
         }
       },
       "documentation":"<p>Describes a network interface. </p>"
@@ -7955,7 +8962,7 @@
       "type":"structure",
       "members":{
         "MasterUserPassword":{
-          "shape":"String",
+          "shape":"SensitiveString",
           "documentation":"<p>The pending or in-progress change of the admin user password for the cluster.</p>"
         },
         "NodeType":{
@@ -8022,6 +9029,32 @@
         "ReservedNode":{"shape":"ReservedNode"}
       }
     },
+    "PutResourcePolicyMessage":{
+      "type":"structure",
+      "required":[
+        "ResourceArn",
+        "Policy"
+      ],
+      "members":{
+        "ResourceArn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the resource of which its resource policy is updated.</p>"
+        },
+        "Policy":{
+          "shape":"String",
+          "documentation":"<p>The content of the resource policy being updated.</p>"
+        }
+      }
+    },
+    "PutResourcePolicyResult":{
+      "type":"structure",
+      "members":{
+        "ResourcePolicy":{
+          "shape":"ResourcePolicy",
+          "documentation":"<p>The content of the updated resource policy.</p>"
+        }
+      }
+    },
     "RebootClusterMessage":{
       "type":"structure",
       "required":["ClusterIdentifier"],
@@ -8038,6 +9071,103 @@
       "members":{
         "Cluster":{"shape":"Cluster"}
       }
+    },
+    "Recommendation":{
+      "type":"structure",
+      "members":{
+        "Id":{
+          "shape":"String",
+          "documentation":"<p>A unique identifier of the Advisor recommendation.</p>"
+        },
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The unique identifier of the cluster for which the recommendation is returned.</p>"
+        },
+        "NamespaceArn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Redshift cluster namespace ARN for which the recommendations is returned.</p>"
+        },
+        "CreatedAt":{
+          "shape":"TStamp",
+          "documentation":"<p>The date and time (UTC) that the recommendation was created.</p>"
+        },
+        "RecommendationType":{
+          "shape":"String",
+          "documentation":"<p>The type of Advisor recommendation.</p>"
+        },
+        "Title":{
+          "shape":"String",
+          "documentation":"<p>The title of the recommendation.</p>"
+        },
+        "Description":{
+          "shape":"String",
+          "documentation":"<p>The description of the recommendation.</p>"
+        },
+        "Observation":{
+          "shape":"String",
+          "documentation":"<p>The description of what was observed about your cluster.</p>"
+        },
+        "ImpactRanking":{
+          "shape":"ImpactRankingType",
+          "documentation":"<p>The scale of the impact that the Advisor recommendation has to the performance and cost of the cluster.</p>"
+        },
+        "RecommendationText":{
+          "shape":"String",
+          "documentation":"<p>The description of the recommendation.</p>"
+        },
+        "RecommendedActions":{
+          "shape":"RecommendedActionList",
+          "documentation":"<p>List of Amazon Redshift recommended actions.</p>"
+        },
+        "ReferenceLinks":{
+          "shape":"ReferenceLinkList",
+          "documentation":"<p>List of helpful links for more information about the Advisor recommendation.</p>"
+        }
+      },
+      "documentation":"<p>An Amazon Redshift Advisor recommended action on the Amazon Redshift cluster.</p>"
+    },
+    "RecommendationList":{
+      "type":"list",
+      "member":{
+        "shape":"Recommendation",
+        "locationName":"Recommendation"
+      }
+    },
+    "RecommendedAction":{
+      "type":"structure",
+      "members":{
+        "Text":{
+          "shape":"String",
+          "documentation":"<p>The specific instruction about the command.</p>"
+        },
+        "Database":{
+          "shape":"String",
+          "documentation":"<p>The database name to perform the action on. Only applicable if the type of command is SQL.</p>"
+        },
+        "Command":{
+          "shape":"String",
+          "documentation":"<p>The command to run.</p>"
+        },
+        "Type":{
+          "shape":"RecommendedActionType",
+          "documentation":"<p>The type of command.</p>"
+        }
+      },
+      "documentation":"<p>The recommended action from the Amazon Redshift Advisor recommendation.</p>"
+    },
+    "RecommendedActionList":{
+      "type":"list",
+      "member":{
+        "shape":"RecommendedAction",
+        "locationName":"RecommendedAction"
+      }
+    },
+    "RecommendedActionType":{
+      "type":"string",
+      "enum":[
+        "SQL",
+        "CLI"
+      ]
     },
     "RecurringCharge":{
       "type":"structure",
@@ -8059,6 +9189,120 @@
       "member":{
         "shape":"RecurringCharge",
         "locationName":"RecurringCharge"
+      }
+    },
+    "RedshiftIdcApplication":{
+      "type":"structure",
+      "members":{
+        "IdcInstanceArn":{
+          "shape":"String",
+          "documentation":"<p>The ARN for the IAM Identity Center instance that Redshift integrates with.</p>"
+        },
+        "RedshiftIdcApplicationName":{
+          "shape":"RedshiftIdcApplicationName",
+          "documentation":"<p>The name of the Redshift application in IAM Identity Center.</p>"
+        },
+        "RedshiftIdcApplicationArn":{
+          "shape":"String",
+          "documentation":"<p>The ARN for the Redshift application that integrates with IAM Identity Center.</p>"
+        },
+        "IdentityNamespace":{
+          "shape":"IdentityNamespaceString",
+          "documentation":"<p>The identity namespace for the Amazon Redshift IAM Identity Center application. It determines which managed application verifies the connection token.</p>"
+        },
+        "IdcDisplayName":{
+          "shape":"IdcDisplayNameString",
+          "documentation":"<p>The display name for the Amazon Redshift IAM Identity Center application. It appears on the console.</p>"
+        },
+        "IamRoleArn":{
+          "shape":"String",
+          "documentation":"<p>The ARN for the Amazon Redshift IAM Identity Center application. It has the required permissions to be assumed and invoke the IDC Identity Center API.</p>"
+        },
+        "IdcManagedApplicationArn":{
+          "shape":"String",
+          "documentation":"<p>The ARN for the Amazon Redshift IAM Identity Center application.</p>"
+        },
+        "IdcOnboardStatus":{
+          "shape":"String",
+          "documentation":"<p>The onboarding status for the Amazon Redshift IAM Identity Center application.</p>"
+        },
+        "AuthorizedTokenIssuerList":{
+          "shape":"AuthorizedTokenIssuerList",
+          "documentation":"<p>The authorized token issuer list for the Amazon Redshift IAM Identity Center application.</p>"
+        },
+        "ServiceIntegrations":{
+          "shape":"ServiceIntegrationList",
+          "documentation":"<p>A list of service integrations for the Redshift IAM Identity Center application.</p>"
+        }
+      },
+      "documentation":"<p>Contains properties for the Redshift IDC application.</p>",
+      "wrapper":true
+    },
+    "RedshiftIdcApplicationAlreadyExistsFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The application you attempted to add already exists.</p>",
+      "error":{
+        "code":"RedshiftIdcApplicationAlreadyExists",
+        "httpStatusCode":400,
+        "senderFault":true
+      },
+      "exception":true
+    },
+    "RedshiftIdcApplicationList":{
+      "type":"list",
+      "member":{"shape":"RedshiftIdcApplication"}
+    },
+    "RedshiftIdcApplicationName":{
+      "type":"string",
+      "max":63,
+      "min":1,
+      "pattern":"[a-z][a-z0-9]*(-[a-z0-9]+)*"
+    },
+    "RedshiftIdcApplicationNotExistsFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The application you attempted to find doesn't exist.</p>",
+      "error":{
+        "code":"RedshiftIdcApplicationNotExists",
+        "httpStatusCode":404,
+        "senderFault":true
+      },
+      "exception":true
+    },
+    "RedshiftIdcApplicationQuotaExceededFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The maximum number of Redshift IAM Identity Center applications was exceeded.</p>",
+      "error":{
+        "code":"RedshiftIdcApplicationQuotaExceeded",
+        "httpStatusCode":400,
+        "senderFault":true
+      },
+      "exception":true
+    },
+    "ReferenceLink":{
+      "type":"structure",
+      "members":{
+        "Text":{
+          "shape":"String",
+          "documentation":"<p>The hyperlink text that describes the link to more information.</p>"
+        },
+        "Link":{
+          "shape":"String",
+          "documentation":"<p>The URL address to find more information.</p>"
+        }
+      },
+      "documentation":"<p>A link to an Amazon Redshift Advisor reference for more information about a recommendation.</p>"
+    },
+    "ReferenceLinkList":{
+      "type":"list",
+      "member":{
+        "shape":"ReferenceLink",
+        "locationName":"ReferenceLink"
       }
     },
     "RejectDataShareMessage":{
@@ -8550,6 +9794,20 @@
       },
       "exception":true
     },
+    "ResourcePolicy":{
+      "type":"structure",
+      "members":{
+        "ResourceArn":{
+          "shape":"String",
+          "documentation":"<p>The resources that a policy is attached to.</p>"
+        },
+        "Policy":{
+          "shape":"String",
+          "documentation":"<p>The content of a resource policy.</p>"
+        }
+      },
+      "documentation":"<p>The policy that is attached to a resource.</p>"
+    },
     "RestorableNodeTypeList":{
       "type":"list",
       "member":{
@@ -8567,11 +9825,11 @@
         },
         "SnapshotIdentifier":{
           "shape":"String",
-          "documentation":"<p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You can specify this parameter or <code>snapshotArn</code>, but not both.</p> <p>Example: <code>my-snapshot-id</code> </p>"
+          "documentation":"<p>The name of the snapshot from which to create the new cluster. This parameter isn't case sensitive. You must specify this parameter or <code>snapshotArn</code>, but not both.</p> <p>Example: <code>my-snapshot-id</code> </p>"
         },
         "SnapshotArn":{
           "shape":"String",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster. You can specify this parameter or <code>snapshotIdentifier</code>, but not both.</p>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the snapshot associated with the message to restore from a cluster. You must specify this parameter or <code>snapshotIdentifier</code>, but not both.</p>"
         },
         "SnapshotClusterIdentifier":{
           "shape":"String",
@@ -8579,7 +9837,7 @@
         },
         "Port":{
           "shape":"IntegerOptional",
-          "documentation":"<p>The port number on which the cluster accepts connections.</p> <p>Default: The same port as the original cluster.</p> <p>Constraints: Must be between <code>1115</code> and <code>65535</code>.</p>"
+          "documentation":"<p>The port number on which the cluster accepts connections.</p> <p>Default: The same port as the original cluster.</p> <p>Valid values: For clusters with ds2 or dc2 nodes, must be within the range <code>1150</code>-<code>65535</code>. For clusters with ra3 nodes, must be within the ranges <code>5431</code>-<code>5455</code> or <code>8191</code>-<code>8215</code>.</p>"
         },
         "AvailabilityZone":{
           "shape":"String",
@@ -8692,6 +9950,22 @@
         "Encrypted":{
           "shape":"BooleanOptional",
           "documentation":"<p>Enables support for restoring an unencrypted snapshot to a cluster encrypted with Key Management Service (KMS) and a customer managed key.</p>"
+        },
+        "ManageMasterPassword":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored cluster's admin credentials. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift uses the admin credentials the cluster had at the time the snapshot was taken.</p>"
+        },
+        "MasterPasswordSecretKmsKeyId":{
+          "shape":"String",
+          "documentation":"<p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code> is true.</p>"
+        },
+        "IpAddressType":{
+          "shape":"String",
+          "documentation":"<p>The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.</p>"
+        },
+        "MultiAZ":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>If true, the snapshot will be restored to a cluster deployed in two Availability Zones.</p>"
         }
       },
       "documentation":"<p/>"
@@ -9177,9 +10451,45 @@
         "locationName":"SnapshotTime"
       }
     },
+    "SecondaryClusterInfo":{
+      "type":"structure",
+      "members":{
+        "AvailabilityZone":{
+          "shape":"String",
+          "documentation":"<p>The name of the Availability Zone in which the secondary compute unit of the cluster is located.</p>"
+        },
+        "ClusterNodes":{
+          "shape":"ClusterNodesList",
+          "documentation":"<p>The nodes in the secondary compute unit.</p>"
+        }
+      },
+      "documentation":"<p>The AvailabilityZone and ClusterNodes information of the secondary compute unit.</p>"
+    },
     "SensitiveString":{
       "type":"string",
       "sensitive":true
+    },
+    "ServiceAuthorization":{
+      "type":"string",
+      "enum":[
+        "Enabled",
+        "Disabled"
+      ]
+    },
+    "ServiceIntegrationList":{
+      "type":"list",
+      "member":{"shape":"ServiceIntegrationsUnion"}
+    },
+    "ServiceIntegrationsUnion":{
+      "type":"structure",
+      "members":{
+        "LakeFormation":{
+          "shape":"LakeFormationServiceIntegrations",
+          "documentation":"<p>A list of scopes set up for Lake Formation integration.</p>"
+        }
+      },
+      "documentation":"<p>A list of service integrations.</p>",
+      "union":true
     },
     "Snapshot":{
       "type":"structure",
@@ -9319,6 +10629,18 @@
         "SnapshotRetentionStartTime":{
           "shape":"TStamp",
           "documentation":"<p>A timestamp representing the start of the retention period for the snapshot.</p>"
+        },
+        "MasterPasswordSecretArn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN) for the cluster's admin user credentials secret.</p>"
+        },
+        "MasterPasswordSecretKmsKeyId":{
+          "shape":"String",
+          "documentation":"<p>The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's admin credentials secret.</p>"
+        },
+        "SnapshotArn":{
+          "shape":"String",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the snapshot.</p>"
         }
       },
       "documentation":"<p>Describes a snapshot.</p>",
@@ -10299,6 +11621,18 @@
         "shape":"VpcSecurityGroupMembership",
         "locationName":"VpcSecurityGroup"
       }
+    },
+    "ZeroETLIntegrationStatus":{
+      "type":"string",
+      "enum":[
+        "creating",
+        "active",
+        "modifying",
+        "failed",
+        "deleting",
+        "syncing",
+        "needs_attention"
+      ]
     }
   },
   "documentation":"<fullname>Amazon Redshift</fullname> <p> <b>Overview</b> </p> <p>This is an interface reference for Amazon Redshift. It contains documentation for one of the programming or command line interfaces you can use to manage Amazon Redshift clusters. Note that Amazon Redshift is asynchronous, which means that some interfaces may require techniques, such as polling or asynchronous callback handlers, to determine when a command has been applied. In this reference, the parameter descriptions indicate whether a change is applied immediately, on the next instance reboot, or during the next maintenance window. For a summary of the Amazon Redshift cluster management interfaces, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/using-aws-sdk.html\">Using the Amazon Redshift Management Interfaces</a>.</p> <p>Amazon Redshift manages all the work of setting up, operating, and scaling a data warehouse: provisioning capacity, monitoring and backing up the cluster, and applying patches and upgrades to the Amazon Redshift engine. You can focus on using your data to acquire new insights for your business and customers.</p> <p>If you are a first-time user of Amazon Redshift, we recommend that you begin by reading the <a href=\"https://docs.aws.amazon.com/redshift/latest/gsg/getting-started.html\">Amazon Redshift Getting Started Guide</a>.</p> <p>If you are a database developer, the <a href=\"https://docs.aws.amazon.com/redshift/latest/dg/welcome.html\">Amazon Redshift Database Developer Guide</a> explains how to design, build, query, and maintain the databases that make up your data warehouse. </p>"

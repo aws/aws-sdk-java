@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,7 +23,13 @@ public enum ComputeType {
     BUILD_GENERAL1_SMALL("BUILD_GENERAL1_SMALL"),
     BUILD_GENERAL1_MEDIUM("BUILD_GENERAL1_MEDIUM"),
     BUILD_GENERAL1_LARGE("BUILD_GENERAL1_LARGE"),
-    BUILD_GENERAL1_2XLARGE("BUILD_GENERAL1_2XLARGE");
+    BUILD_GENERAL1_XLARGE("BUILD_GENERAL1_XLARGE"),
+    BUILD_GENERAL1_2XLARGE("BUILD_GENERAL1_2XLARGE"),
+    BUILD_LAMBDA_1GB("BUILD_LAMBDA_1GB"),
+    BUILD_LAMBDA_2GB("BUILD_LAMBDA_2GB"),
+    BUILD_LAMBDA_4GB("BUILD_LAMBDA_4GB"),
+    BUILD_LAMBDA_8GB("BUILD_LAMBDA_8GB"),
+    BUILD_LAMBDA_10GB("BUILD_LAMBDA_10GB");
 
     private String value;
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,27 @@ public class DescribeParametersRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * Lists parameters that are shared with you.
+     * </p>
+     * <note>
+     * <p>
+     * By default when using this option, the command returns parameters that have been shared using a standard Resource
+     * Access Manager Resource Share. In order for a parameter that was shared using the <a>PutResourcePolicy</a>
+     * command to be returned, the associated <code>RAM Resource Share Created From Policy</code> must have been
+     * promoted to a standard Resource Share using the RAM <a
+     * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html"
+     * >PromoteResourceShareCreatedFromPolicy</a> API operation.
+     * </p>
+     * <p>
+     * For more information about sharing parameters, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html"
+     * >Working with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * </p>
+     * </note>
+     */
+    private Boolean shared;
 
     /**
      * <p>
@@ -284,6 +305,174 @@ public class DescribeParametersRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Lists parameters that are shared with you.
+     * </p>
+     * <note>
+     * <p>
+     * By default when using this option, the command returns parameters that have been shared using a standard Resource
+     * Access Manager Resource Share. In order for a parameter that was shared using the <a>PutResourcePolicy</a>
+     * command to be returned, the associated <code>RAM Resource Share Created From Policy</code> must have been
+     * promoted to a standard Resource Share using the RAM <a
+     * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html"
+     * >PromoteResourceShareCreatedFromPolicy</a> API operation.
+     * </p>
+     * <p>
+     * For more information about sharing parameters, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html"
+     * >Working with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param shared
+     *        Lists parameters that are shared with you.</p> <note>
+     *        <p>
+     *        By default when using this option, the command returns parameters that have been shared using a standard
+     *        Resource Access Manager Resource Share. In order for a parameter that was shared using the
+     *        <a>PutResourcePolicy</a> command to be returned, the associated
+     *        <code>RAM Resource Share Created From Policy</code> must have been promoted to a standard Resource Share
+     *        using the RAM <a href=
+     *        "https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html"
+     *        >PromoteResourceShareCreatedFromPolicy</a> API operation.
+     *        </p>
+     *        <p>
+     *        For more information about sharing parameters, see <a href=
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html"
+     *        >Working with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     *        </p>
+     */
+
+    public void setShared(Boolean shared) {
+        this.shared = shared;
+    }
+
+    /**
+     * <p>
+     * Lists parameters that are shared with you.
+     * </p>
+     * <note>
+     * <p>
+     * By default when using this option, the command returns parameters that have been shared using a standard Resource
+     * Access Manager Resource Share. In order for a parameter that was shared using the <a>PutResourcePolicy</a>
+     * command to be returned, the associated <code>RAM Resource Share Created From Policy</code> must have been
+     * promoted to a standard Resource Share using the RAM <a
+     * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html"
+     * >PromoteResourceShareCreatedFromPolicy</a> API operation.
+     * </p>
+     * <p>
+     * For more information about sharing parameters, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html"
+     * >Working with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @return Lists parameters that are shared with you.</p> <note>
+     *         <p>
+     *         By default when using this option, the command returns parameters that have been shared using a standard
+     *         Resource Access Manager Resource Share. In order for a parameter that was shared using the
+     *         <a>PutResourcePolicy</a> command to be returned, the associated
+     *         <code>RAM Resource Share Created From Policy</code> must have been promoted to a standard Resource Share
+     *         using the RAM <a href=
+     *         "https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html"
+     *         >PromoteResourceShareCreatedFromPolicy</a> API operation.
+     *         </p>
+     *         <p>
+     *         For more information about sharing parameters, see <a href=
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html"
+     *         >Working with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     *         </p>
+     */
+
+    public Boolean getShared() {
+        return this.shared;
+    }
+
+    /**
+     * <p>
+     * Lists parameters that are shared with you.
+     * </p>
+     * <note>
+     * <p>
+     * By default when using this option, the command returns parameters that have been shared using a standard Resource
+     * Access Manager Resource Share. In order for a parameter that was shared using the <a>PutResourcePolicy</a>
+     * command to be returned, the associated <code>RAM Resource Share Created From Policy</code> must have been
+     * promoted to a standard Resource Share using the RAM <a
+     * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html"
+     * >PromoteResourceShareCreatedFromPolicy</a> API operation.
+     * </p>
+     * <p>
+     * For more information about sharing parameters, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html"
+     * >Working with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param shared
+     *        Lists parameters that are shared with you.</p> <note>
+     *        <p>
+     *        By default when using this option, the command returns parameters that have been shared using a standard
+     *        Resource Access Manager Resource Share. In order for a parameter that was shared using the
+     *        <a>PutResourcePolicy</a> command to be returned, the associated
+     *        <code>RAM Resource Share Created From Policy</code> must have been promoted to a standard Resource Share
+     *        using the RAM <a href=
+     *        "https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html"
+     *        >PromoteResourceShareCreatedFromPolicy</a> API operation.
+     *        </p>
+     *        <p>
+     *        For more information about sharing parameters, see <a href=
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html"
+     *        >Working with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeParametersRequest withShared(Boolean shared) {
+        setShared(shared);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Lists parameters that are shared with you.
+     * </p>
+     * <note>
+     * <p>
+     * By default when using this option, the command returns parameters that have been shared using a standard Resource
+     * Access Manager Resource Share. In order for a parameter that was shared using the <a>PutResourcePolicy</a>
+     * command to be returned, the associated <code>RAM Resource Share Created From Policy</code> must have been
+     * promoted to a standard Resource Share using the RAM <a
+     * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html"
+     * >PromoteResourceShareCreatedFromPolicy</a> API operation.
+     * </p>
+     * <p>
+     * For more information about sharing parameters, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html"
+     * >Working with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @return Lists parameters that are shared with you.</p> <note>
+     *         <p>
+     *         By default when using this option, the command returns parameters that have been shared using a standard
+     *         Resource Access Manager Resource Share. In order for a parameter that was shared using the
+     *         <a>PutResourcePolicy</a> command to be returned, the associated
+     *         <code>RAM Resource Share Created From Policy</code> must have been promoted to a standard Resource Share
+     *         using the RAM <a href=
+     *         "https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html"
+     *         >PromoteResourceShareCreatedFromPolicy</a> API operation.
+     *         </p>
+     *         <p>
+     *         For more information about sharing parameters, see <a href=
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html"
+     *         >Working with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+     *         </p>
+     */
+
+    public Boolean isShared() {
+        return this.shared;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -302,7 +491,9 @@ public class DescribeParametersRequest extends com.amazonaws.AmazonWebServiceReq
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getShared() != null)
+            sb.append("Shared: ").append(getShared());
         sb.append("}");
         return sb.toString();
     }
@@ -333,6 +524,10 @@ public class DescribeParametersRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getShared() == null ^ this.getShared() == null)
+            return false;
+        if (other.getShared() != null && other.getShared().equals(this.getShared()) == false)
+            return false;
         return true;
     }
 
@@ -345,6 +540,7 @@ public class DescribeParametersRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getParameterFilters() == null) ? 0 : getParameterFilters().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getShared() == null) ? 0 : getShared().hashCode());
         return hashCode;
     }
 

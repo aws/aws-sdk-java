@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,7 +51,7 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
     private String instanceType;
     /**
      * <p>
-     * The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.
+     * The network platform of the modified Reserved Instances.
      * </p>
      */
     private String platform;
@@ -241,11 +241,11 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.
+     * The network platform of the modified Reserved Instances.
      * </p>
      * 
      * @param platform
-     *        The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.
+     *        The network platform of the modified Reserved Instances.
      */
 
     public void setPlatform(String platform) {
@@ -254,10 +254,10 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.
+     * The network platform of the modified Reserved Instances.
      * </p>
      * 
-     * @return The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.
+     * @return The network platform of the modified Reserved Instances.
      */
 
     public String getPlatform() {
@@ -266,11 +266,11 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.
+     * The network platform of the modified Reserved Instances.
      * </p>
      * 
      * @param platform
-     *        The network platform of the modified Reserved Instances, which is either EC2-Classic or EC2-VPC.
+     *        The network platform of the modified Reserved Instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

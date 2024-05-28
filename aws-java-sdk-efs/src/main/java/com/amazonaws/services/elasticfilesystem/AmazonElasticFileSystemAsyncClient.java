@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1275,6 +1275,39 @@ public class AmazonElasticFileSystemAsyncClient extends AmazonElasticFileSystemC
 
                 try {
                     result = executeUpdateFileSystem(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFileSystemProtectionResult> updateFileSystemProtectionAsync(UpdateFileSystemProtectionRequest request) {
+
+        return updateFileSystemProtectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFileSystemProtectionResult> updateFileSystemProtectionAsync(final UpdateFileSystemProtectionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateFileSystemProtectionRequest, UpdateFileSystemProtectionResult> asyncHandler) {
+        final UpdateFileSystemProtectionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateFileSystemProtectionResult>() {
+            @Override
+            public UpdateFileSystemProtectionResult call() throws Exception {
+                UpdateFileSystemProtectionResult result = null;
+
+                try {
+                    result = executeUpdateFileSystemProtection(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

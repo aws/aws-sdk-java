@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,7 +38,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </p>
  * <note>
  * <p>
- * KMS is replacing the term <i>customer master key (CMK)</i> with <i>KMS key</i> and <i>KMS key</i>. The concept has
+ * KMS has replaced the term <i>customer master key (CMK)</i> with <i>KMS key</i> and <i>KMS key</i>. The concept has
  * not changed. To prevent breaking changes, KMS is keeping some variations of this term.
  * </p>
  * <p>
@@ -69,14 +69,14 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <b>Signing Requests</b>
  * </p>
  * <p>
- * Requests must be signed by using an access key ID and a secret access key. We strongly recommend that you <i>do
- * not</i> use your Amazon Web Services account (root) access key ID and secret key for everyday work with KMS. Instead,
- * use the access key ID and secret access key for an IAM user. You can also use the Amazon Web Services Security Token
- * Service to generate temporary security credentials that you can use to sign requests.
+ * Requests must be signed using an access key ID and a secret access key. We strongly recommend that you do not use
+ * your Amazon Web Services account root access key ID and secret access key for everyday work. You can use the access
+ * key ID and secret access key for an IAM user or you can use the Security Token Service (STS) to generate temporary
+ * security credentials and use those to sign requests.
  * </p>
  * <p>
- * All KMS operations require <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
- * Version 4</a>.
+ * All KMS requests must be signed with <a
+ * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.
  * </p>
  * <p>
  * <b>Logging API Requests</b>
@@ -1497,6 +1497,39 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListKeyRotationsResult> listKeyRotationsAsync(ListKeyRotationsRequest request) {
+
+        return listKeyRotationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListKeyRotationsResult> listKeyRotationsAsync(final ListKeyRotationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListKeyRotationsRequest, ListKeyRotationsResult> asyncHandler) {
+        final ListKeyRotationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListKeyRotationsResult>() {
+            @Override
+            public ListKeyRotationsResult call() throws Exception {
+                ListKeyRotationsResult result = null;
+
+                try {
+                    result = executeListKeyRotations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListKeysResult> listKeysAsync(ListKeysRequest request) {
 
         return listKeysAsync(request, null);
@@ -1790,6 +1823,39 @@ public class AWSKMSAsyncClient extends AWSKMSClient implements AWSKMSAsync {
 
                 try {
                     result = executeRevokeGrant(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RotateKeyOnDemandResult> rotateKeyOnDemandAsync(RotateKeyOnDemandRequest request) {
+
+        return rotateKeyOnDemandAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RotateKeyOnDemandResult> rotateKeyOnDemandAsync(final RotateKeyOnDemandRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RotateKeyOnDemandRequest, RotateKeyOnDemandResult> asyncHandler) {
+        final RotateKeyOnDemandRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RotateKeyOnDemandResult>() {
+            @Override
+            public RotateKeyOnDemandResult call() throws Exception {
+                RotateKeyOnDemandResult result = null;
+
+                try {
+                    result = executeRotateKeyOnDemand(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

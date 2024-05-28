@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,6 +58,20 @@ public class UpdateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
     private java.util.List<String> wirelessGatewaysToRemove;
 
     private String description;
+    /**
+     * <p>
+     * Multicast group resources to add to the network analyzer configuration. Provide the <code>MulticastGroupId</code>
+     * of the resource to add in the input array.
+     * </p>
+     */
+    private java.util.List<String> multicastGroupsToAdd;
+    /**
+     * <p>
+     * Multicast group resources to remove from the network analyzer configuration. Provide the
+     * <code>MulticastGroupId</code> of the resources to remove in the input array.
+     * </p>
+     */
+    private java.util.List<String> multicastGroupsToRemove;
 
     /**
      * @param configurationName
@@ -450,6 +464,162 @@ public class UpdateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
     }
 
     /**
+     * <p>
+     * Multicast group resources to add to the network analyzer configuration. Provide the <code>MulticastGroupId</code>
+     * of the resource to add in the input array.
+     * </p>
+     * 
+     * @return Multicast group resources to add to the network analyzer configuration. Provide the
+     *         <code>MulticastGroupId</code> of the resource to add in the input array.
+     */
+
+    public java.util.List<String> getMulticastGroupsToAdd() {
+        return multicastGroupsToAdd;
+    }
+
+    /**
+     * <p>
+     * Multicast group resources to add to the network analyzer configuration. Provide the <code>MulticastGroupId</code>
+     * of the resource to add in the input array.
+     * </p>
+     * 
+     * @param multicastGroupsToAdd
+     *        Multicast group resources to add to the network analyzer configuration. Provide the
+     *        <code>MulticastGroupId</code> of the resource to add in the input array.
+     */
+
+    public void setMulticastGroupsToAdd(java.util.Collection<String> multicastGroupsToAdd) {
+        if (multicastGroupsToAdd == null) {
+            this.multicastGroupsToAdd = null;
+            return;
+        }
+
+        this.multicastGroupsToAdd = new java.util.ArrayList<String>(multicastGroupsToAdd);
+    }
+
+    /**
+     * <p>
+     * Multicast group resources to add to the network analyzer configuration. Provide the <code>MulticastGroupId</code>
+     * of the resource to add in the input array.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMulticastGroupsToAdd(java.util.Collection)} or {@link #withMulticastGroupsToAdd(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param multicastGroupsToAdd
+     *        Multicast group resources to add to the network analyzer configuration. Provide the
+     *        <code>MulticastGroupId</code> of the resource to add in the input array.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateNetworkAnalyzerConfigurationRequest withMulticastGroupsToAdd(String... multicastGroupsToAdd) {
+        if (this.multicastGroupsToAdd == null) {
+            setMulticastGroupsToAdd(new java.util.ArrayList<String>(multicastGroupsToAdd.length));
+        }
+        for (String ele : multicastGroupsToAdd) {
+            this.multicastGroupsToAdd.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Multicast group resources to add to the network analyzer configuration. Provide the <code>MulticastGroupId</code>
+     * of the resource to add in the input array.
+     * </p>
+     * 
+     * @param multicastGroupsToAdd
+     *        Multicast group resources to add to the network analyzer configuration. Provide the
+     *        <code>MulticastGroupId</code> of the resource to add in the input array.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateNetworkAnalyzerConfigurationRequest withMulticastGroupsToAdd(java.util.Collection<String> multicastGroupsToAdd) {
+        setMulticastGroupsToAdd(multicastGroupsToAdd);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Multicast group resources to remove from the network analyzer configuration. Provide the
+     * <code>MulticastGroupId</code> of the resources to remove in the input array.
+     * </p>
+     * 
+     * @return Multicast group resources to remove from the network analyzer configuration. Provide the
+     *         <code>MulticastGroupId</code> of the resources to remove in the input array.
+     */
+
+    public java.util.List<String> getMulticastGroupsToRemove() {
+        return multicastGroupsToRemove;
+    }
+
+    /**
+     * <p>
+     * Multicast group resources to remove from the network analyzer configuration. Provide the
+     * <code>MulticastGroupId</code> of the resources to remove in the input array.
+     * </p>
+     * 
+     * @param multicastGroupsToRemove
+     *        Multicast group resources to remove from the network analyzer configuration. Provide the
+     *        <code>MulticastGroupId</code> of the resources to remove in the input array.
+     */
+
+    public void setMulticastGroupsToRemove(java.util.Collection<String> multicastGroupsToRemove) {
+        if (multicastGroupsToRemove == null) {
+            this.multicastGroupsToRemove = null;
+            return;
+        }
+
+        this.multicastGroupsToRemove = new java.util.ArrayList<String>(multicastGroupsToRemove);
+    }
+
+    /**
+     * <p>
+     * Multicast group resources to remove from the network analyzer configuration. Provide the
+     * <code>MulticastGroupId</code> of the resources to remove in the input array.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMulticastGroupsToRemove(java.util.Collection)} or
+     * {@link #withMulticastGroupsToRemove(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param multicastGroupsToRemove
+     *        Multicast group resources to remove from the network analyzer configuration. Provide the
+     *        <code>MulticastGroupId</code> of the resources to remove in the input array.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateNetworkAnalyzerConfigurationRequest withMulticastGroupsToRemove(String... multicastGroupsToRemove) {
+        if (this.multicastGroupsToRemove == null) {
+            setMulticastGroupsToRemove(new java.util.ArrayList<String>(multicastGroupsToRemove.length));
+        }
+        for (String ele : multicastGroupsToRemove) {
+            this.multicastGroupsToRemove.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Multicast group resources to remove from the network analyzer configuration. Provide the
+     * <code>MulticastGroupId</code> of the resources to remove in the input array.
+     * </p>
+     * 
+     * @param multicastGroupsToRemove
+     *        Multicast group resources to remove from the network analyzer configuration. Provide the
+     *        <code>MulticastGroupId</code> of the resources to remove in the input array.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateNetworkAnalyzerConfigurationRequest withMulticastGroupsToRemove(java.util.Collection<String> multicastGroupsToRemove) {
+        setMulticastGroupsToRemove(multicastGroupsToRemove);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -474,7 +644,11 @@ public class UpdateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
         if (getWirelessGatewaysToRemove() != null)
             sb.append("WirelessGatewaysToRemove: ").append(getWirelessGatewaysToRemove()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getMulticastGroupsToAdd() != null)
+            sb.append("MulticastGroupsToAdd: ").append(getMulticastGroupsToAdd()).append(",");
+        if (getMulticastGroupsToRemove() != null)
+            sb.append("MulticastGroupsToRemove: ").append(getMulticastGroupsToRemove());
         sb.append("}");
         return sb.toString();
     }
@@ -517,6 +691,14 @@ public class UpdateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getMulticastGroupsToAdd() == null ^ this.getMulticastGroupsToAdd() == null)
+            return false;
+        if (other.getMulticastGroupsToAdd() != null && other.getMulticastGroupsToAdd().equals(this.getMulticastGroupsToAdd()) == false)
+            return false;
+        if (other.getMulticastGroupsToRemove() == null ^ this.getMulticastGroupsToRemove() == null)
+            return false;
+        if (other.getMulticastGroupsToRemove() != null && other.getMulticastGroupsToRemove().equals(this.getMulticastGroupsToRemove()) == false)
+            return false;
         return true;
     }
 
@@ -532,6 +714,8 @@ public class UpdateNetworkAnalyzerConfigurationRequest extends com.amazonaws.Ama
         hashCode = prime * hashCode + ((getWirelessGatewaysToAdd() == null) ? 0 : getWirelessGatewaysToAdd().hashCode());
         hashCode = prime * hashCode + ((getWirelessGatewaysToRemove() == null) ? 0 : getWirelessGatewaysToRemove().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getMulticastGroupsToAdd() == null) ? 0 : getMulticastGroupsToAdd().hashCode());
+        hashCode = prime * hashCode + ((getMulticastGroupsToRemove() == null) ? 0 : getMulticastGroupsToRemove().hashCode());
         return hashCode;
     }
 

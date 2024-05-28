@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,6 +70,12 @@ public class ConnectPeerSummary implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * The subnet ARN for the Connect peer summary.
+     * </p>
+     */
+    private String subnetArn;
 
     /**
      * <p>
@@ -401,6 +407,46 @@ public class ConnectPeerSummary implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The subnet ARN for the Connect peer summary.
+     * </p>
+     * 
+     * @param subnetArn
+     *        The subnet ARN for the Connect peer summary.
+     */
+
+    public void setSubnetArn(String subnetArn) {
+        this.subnetArn = subnetArn;
+    }
+
+    /**
+     * <p>
+     * The subnet ARN for the Connect peer summary.
+     * </p>
+     * 
+     * @return The subnet ARN for the Connect peer summary.
+     */
+
+    public String getSubnetArn() {
+        return this.subnetArn;
+    }
+
+    /**
+     * <p>
+     * The subnet ARN for the Connect peer summary.
+     * </p>
+     * 
+     * @param subnetArn
+     *        The subnet ARN for the Connect peer summary.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConnectPeerSummary withSubnetArn(String subnetArn) {
+        setSubnetArn(subnetArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -425,7 +471,9 @@ public class ConnectPeerSummary implements Serializable, Cloneable, StructuredPo
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getSubnetArn() != null)
+            sb.append("SubnetArn: ").append(getSubnetArn());
         sb.append("}");
         return sb.toString();
     }
@@ -468,6 +516,10 @@ public class ConnectPeerSummary implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getSubnetArn() == null ^ this.getSubnetArn() == null)
+            return false;
+        if (other.getSubnetArn() != null && other.getSubnetArn().equals(this.getSubnetArn()) == false)
+            return false;
         return true;
     }
 
@@ -483,6 +535,7 @@ public class ConnectPeerSummary implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getConnectPeerState() == null) ? 0 : getConnectPeerState().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getSubnetArn() == null) ? 0 : getSubnetArn().hashCode());
         return hashCode;
     }
 

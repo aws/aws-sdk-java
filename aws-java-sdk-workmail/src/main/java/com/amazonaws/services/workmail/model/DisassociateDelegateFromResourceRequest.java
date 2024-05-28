@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,12 +35,53 @@ public class DisassociateDelegateFromResourceRequest extends com.amazonaws.Amazo
      * <p>
      * The identifier of the resource from which delegates' set members are removed.
      * </p>
+     * <p>
+     * The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats
+     * are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Resource ID: r-0123456789a0123456789b0123456789
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: resource@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Resource name: resource
+     * </p>
+     * </li>
+     * </ul>
      */
     private String resourceId;
     /**
      * <p>
      * The identifier for the member (user, group) to be removed from the resource's delegates.
      * </p>
+     * <p>
+     * The entity ID can accept <i>UserId or GroupID</i>, <i>Username or Groupname</i>, or <i>email</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Entity: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: entity@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Entity: entity
+     * </p>
+     * </li>
+     * </ul>
      */
     private String entityId;
 
@@ -88,9 +129,50 @@ public class DisassociateDelegateFromResourceRequest extends com.amazonaws.Amazo
      * <p>
      * The identifier of the resource from which delegates' set members are removed.
      * </p>
+     * <p>
+     * The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats
+     * are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Resource ID: r-0123456789a0123456789b0123456789
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: resource@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Resource name: resource
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceId
-     *        The identifier of the resource from which delegates' set members are removed.
+     *        The identifier of the resource from which delegates' set members are removed. </p>
+     *        <p>
+     *        The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity
+     *        formats are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Resource ID: r-0123456789a0123456789b0123456789
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Email address: resource@domain.tld
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Resource name: resource
+     *        </p>
+     *        </li>
      */
 
     public void setResourceId(String resourceId) {
@@ -101,8 +183,49 @@ public class DisassociateDelegateFromResourceRequest extends com.amazonaws.Amazo
      * <p>
      * The identifier of the resource from which delegates' set members are removed.
      * </p>
+     * <p>
+     * The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats
+     * are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Resource ID: r-0123456789a0123456789b0123456789
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: resource@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Resource name: resource
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The identifier of the resource from which delegates' set members are removed.
+     * @return The identifier of the resource from which delegates' set members are removed. </p>
+     *         <p>
+     *         The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity
+     *         formats are available:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Resource ID: r-0123456789a0123456789b0123456789
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Email address: resource@domain.tld
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Resource name: resource
+     *         </p>
+     *         </li>
      */
 
     public String getResourceId() {
@@ -113,9 +236,50 @@ public class DisassociateDelegateFromResourceRequest extends com.amazonaws.Amazo
      * <p>
      * The identifier of the resource from which delegates' set members are removed.
      * </p>
+     * <p>
+     * The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity formats
+     * are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Resource ID: r-0123456789a0123456789b0123456789
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: resource@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Resource name: resource
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resourceId
-     *        The identifier of the resource from which delegates' set members are removed.
+     *        The identifier of the resource from which delegates' set members are removed. </p>
+     *        <p>
+     *        The identifier can accept <i>ResourceId</i>, <i>Resourcename</i>, or <i>email</i>. The following identity
+     *        formats are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Resource ID: r-0123456789a0123456789b0123456789
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Email address: resource@domain.tld
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Resource name: resource
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -128,9 +292,48 @@ public class DisassociateDelegateFromResourceRequest extends com.amazonaws.Amazo
      * <p>
      * The identifier for the member (user, group) to be removed from the resource's delegates.
      * </p>
+     * <p>
+     * The entity ID can accept <i>UserId or GroupID</i>, <i>Username or Groupname</i>, or <i>email</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Entity: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: entity@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Entity: entity
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param entityId
-     *        The identifier for the member (user, group) to be removed from the resource's delegates.
+     *        The identifier for the member (user, group) to be removed from the resource's delegates.</p>
+     *        <p>
+     *        The entity ID can accept <i>UserId or GroupID</i>, <i>Username or Groupname</i>, or <i>email</i>.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Entity: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Email address: entity@domain.tld
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Entity: entity
+     *        </p>
+     *        </li>
      */
 
     public void setEntityId(String entityId) {
@@ -141,8 +344,47 @@ public class DisassociateDelegateFromResourceRequest extends com.amazonaws.Amazo
      * <p>
      * The identifier for the member (user, group) to be removed from the resource's delegates.
      * </p>
+     * <p>
+     * The entity ID can accept <i>UserId or GroupID</i>, <i>Username or Groupname</i>, or <i>email</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Entity: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: entity@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Entity: entity
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The identifier for the member (user, group) to be removed from the resource's delegates.
+     * @return The identifier for the member (user, group) to be removed from the resource's delegates.</p>
+     *         <p>
+     *         The entity ID can accept <i>UserId or GroupID</i>, <i>Username or Groupname</i>, or <i>email</i>.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Entity: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Email address: entity@domain.tld
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Entity: entity
+     *         </p>
+     *         </li>
      */
 
     public String getEntityId() {
@@ -153,9 +395,48 @@ public class DisassociateDelegateFromResourceRequest extends com.amazonaws.Amazo
      * <p>
      * The identifier for the member (user, group) to be removed from the resource's delegates.
      * </p>
+     * <p>
+     * The entity ID can accept <i>UserId or GroupID</i>, <i>Username or Groupname</i>, or <i>email</i>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Entity: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Email address: entity@domain.tld
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Entity: entity
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param entityId
-     *        The identifier for the member (user, group) to be removed from the resource's delegates.
+     *        The identifier for the member (user, group) to be removed from the resource's delegates.</p>
+     *        <p>
+     *        The entity ID can accept <i>UserId or GroupID</i>, <i>Username or Groupname</i>, or <i>email</i>.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Entity: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Email address: entity@domain.tld
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Entity: entity
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

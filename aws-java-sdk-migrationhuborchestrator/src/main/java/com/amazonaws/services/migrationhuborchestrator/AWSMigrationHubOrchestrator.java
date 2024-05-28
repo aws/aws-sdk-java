@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,9 +28,9 @@ import com.amazonaws.services.migrationhuborchestrator.model.*;
  * <p>
  * <p>
  * This API reference provides descriptions, syntax, and other details about each of the actions and data types for AWS
- * Migration Hub Orchestrator. he topic for each action shows the API request parameters and the response.
- * Alternatively, you can use one of the AWS SDKs to access an API that is tailored to the programming language or
- * platform that you're using.
+ * Migration Hub Orchestrator. The topic for each action shows the API request parameters and responses. Alternatively,
+ * you can use one of the AWS SDKs to access an API that is tailored to the programming language or platform that you're
+ * using.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -43,6 +43,30 @@ public interface AWSMigrationHubOrchestrator {
      * @see RegionUtils#getRegionsForService(String)
      */
     String ENDPOINT_PREFIX = "migrationhub-orchestrator";
+
+    /**
+     * <p>
+     * Creates a migration workflow template.
+     * </p>
+     * 
+     * @param createTemplateRequest
+     * @return Result of the CreateTemplate operation returned by the service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ConflictException
+     *         This exception is thrown when an attempt to update or delete a resource would cause an inconsistent
+     *         state.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @sample AWSMigrationHubOrchestrator.CreateTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/CreateTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateTemplateResult createTemplate(CreateTemplateRequest createTemplateRequest);
 
     /**
      * <p>
@@ -106,6 +130,29 @@ public interface AWSMigrationHubOrchestrator {
      *      target="_top">AWS API Documentation</a>
      */
     CreateWorkflowStepGroupResult createWorkflowStepGroup(CreateWorkflowStepGroupRequest createWorkflowStepGroupRequest);
+
+    /**
+     * <p>
+     * Deletes a migration workflow template.
+     * </p>
+     * 
+     * @param deleteTemplateRequest
+     * @return Result of the DeleteTemplate operation returned by the service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         The resource is not available.
+     * @sample AWSMigrationHubOrchestrator.DeleteTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/DeleteTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteTemplateResult deleteTemplate(DeleteTemplateRequest deleteTemplateRequest);
 
     /**
      * <p>
@@ -577,6 +624,29 @@ public interface AWSMigrationHubOrchestrator {
      *      target="_top">AWS API Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Updates a migration workflow template.
+     * </p>
+     * 
+     * @param updateTemplateRequest
+     * @return Result of the UpdateTemplate operation returned by the service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         An internal error has occurred.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         The resource is not available.
+     * @sample AWSMigrationHubOrchestrator.UpdateTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/UpdateTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateTemplateResult updateTemplate(UpdateTemplateRequest updateTemplateRequest);
 
     /**
      * <p>

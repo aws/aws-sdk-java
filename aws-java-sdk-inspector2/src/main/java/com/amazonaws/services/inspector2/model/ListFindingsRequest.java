@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,15 +33,18 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
     private FilterCriteria filterCriteria;
     /**
      * <p>
-     * The maximum number of results to return in the response.
+     * The maximum number of results the response can return. If your request would return more than the maximum the
+     * response will return a <code>nextToken</code> value, use this value when you call the action again to get the
+     * remaining results.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
      * A token to use for paginating results that are returned in the response. Set the value of this parameter to null
-     * for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from
-     * the previous request to continue listing results after the first page.
+     * for the first request to a list action. If your response returns more than the <code>maxResults</code> maximum
+     * value it will also return a <code>nextToken</code> value. For subsequent calls, use the <code>nextToken</code>
+     * value returned from the previous request to continue listing results after the first page.
      * </p>
      */
     private String nextToken;
@@ -94,11 +97,15 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The maximum number of results to return in the response.
+     * The maximum number of results the response can return. If your request would return more than the maximum the
+     * response will return a <code>nextToken</code> value, use this value when you call the action again to get the
+     * remaining results.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in the response.
+     *        The maximum number of results the response can return. If your request would return more than the maximum
+     *        the response will return a <code>nextToken</code> value, use this value when you call the action again to
+     *        get the remaining results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -107,10 +114,14 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The maximum number of results to return in the response.
+     * The maximum number of results the response can return. If your request would return more than the maximum the
+     * response will return a <code>nextToken</code> value, use this value when you call the action again to get the
+     * remaining results.
      * </p>
      * 
-     * @return The maximum number of results to return in the response.
+     * @return The maximum number of results the response can return. If your request would return more than the maximum
+     *         the response will return a <code>nextToken</code> value, use this value when you call the action again to
+     *         get the remaining results.
      */
 
     public Integer getMaxResults() {
@@ -119,11 +130,15 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The maximum number of results to return in the response.
+     * The maximum number of results the response can return. If your request would return more than the maximum the
+     * response will return a <code>nextToken</code> value, use this value when you call the action again to get the
+     * remaining results.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in the response.
+     *        The maximum number of results the response can return. If your request would return more than the maximum
+     *        the response will return a <code>nextToken</code> value, use this value when you call the action again to
+     *        get the remaining results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,14 +150,17 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A token to use for paginating results that are returned in the response. Set the value of this parameter to null
-     * for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from
-     * the previous request to continue listing results after the first page.
+     * for the first request to a list action. If your response returns more than the <code>maxResults</code> maximum
+     * value it will also return a <code>nextToken</code> value. For subsequent calls, use the <code>nextToken</code>
+     * value returned from the previous request to continue listing results after the first page.
      * </p>
      * 
      * @param nextToken
      *        A token to use for paginating results that are returned in the response. Set the value of this parameter
-     *        to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value
-     *        returned from the previous request to continue listing results after the first page.
+     *        to null for the first request to a list action. If your response returns more than the
+     *        <code>maxResults</code> maximum value it will also return a <code>nextToken</code> value. For subsequent
+     *        calls, use the <code>nextToken</code> value returned from the previous request to continue listing results
+     *        after the first page.
      */
 
     public void setNextToken(String nextToken) {
@@ -152,13 +170,16 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A token to use for paginating results that are returned in the response. Set the value of this parameter to null
-     * for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from
-     * the previous request to continue listing results after the first page.
+     * for the first request to a list action. If your response returns more than the <code>maxResults</code> maximum
+     * value it will also return a <code>nextToken</code> value. For subsequent calls, use the <code>nextToken</code>
+     * value returned from the previous request to continue listing results after the first page.
      * </p>
      * 
      * @return A token to use for paginating results that are returned in the response. Set the value of this parameter
-     *         to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code>
-     *         value returned from the previous request to continue listing results after the first page.
+     *         to null for the first request to a list action. If your response returns more than the
+     *         <code>maxResults</code> maximum value it will also return a <code>nextToken</code> value. For subsequent
+     *         calls, use the <code>nextToken</code> value returned from the previous request to continue listing
+     *         results after the first page.
      */
 
     public String getNextToken() {
@@ -168,14 +189,17 @@ public class ListFindingsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A token to use for paginating results that are returned in the response. Set the value of this parameter to null
-     * for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from
-     * the previous request to continue listing results after the first page.
+     * for the first request to a list action. If your response returns more than the <code>maxResults</code> maximum
+     * value it will also return a <code>nextToken</code> value. For subsequent calls, use the <code>nextToken</code>
+     * value returned from the previous request to continue listing results after the first page.
      * </p>
      * 
      * @param nextToken
      *        A token to use for paginating results that are returned in the response. Set the value of this parameter
-     *        to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value
-     *        returned from the previous request to continue listing results after the first page.
+     *        to null for the first request to a list action. If your response returns more than the
+     *        <code>maxResults</code> maximum value it will also return a <code>nextToken</code> value. For subsequent
+     *        calls, use the <code>nextToken</code> value returned from the previous request to continue listing results
+     *        after the first page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

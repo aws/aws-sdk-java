@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,12 @@ public class ListSignalCatalogNodesRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * The type of node in the signal catalog.
+     * </p>
+     */
+    private String signalNodeType;
 
     /**
      * <p>
@@ -204,6 +210,65 @@ public class ListSignalCatalogNodesRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The type of node in the signal catalog.
+     * </p>
+     * 
+     * @param signalNodeType
+     *        The type of node in the signal catalog.
+     * @see SignalNodeType
+     */
+
+    public void setSignalNodeType(String signalNodeType) {
+        this.signalNodeType = signalNodeType;
+    }
+
+    /**
+     * <p>
+     * The type of node in the signal catalog.
+     * </p>
+     * 
+     * @return The type of node in the signal catalog.
+     * @see SignalNodeType
+     */
+
+    public String getSignalNodeType() {
+        return this.signalNodeType;
+    }
+
+    /**
+     * <p>
+     * The type of node in the signal catalog.
+     * </p>
+     * 
+     * @param signalNodeType
+     *        The type of node in the signal catalog.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SignalNodeType
+     */
+
+    public ListSignalCatalogNodesRequest withSignalNodeType(String signalNodeType) {
+        setSignalNodeType(signalNodeType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of node in the signal catalog.
+     * </p>
+     * 
+     * @param signalNodeType
+     *        The type of node in the signal catalog.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SignalNodeType
+     */
+
+    public ListSignalCatalogNodesRequest withSignalNodeType(SignalNodeType signalNodeType) {
+        this.signalNodeType = signalNodeType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -220,7 +285,9 @@ public class ListSignalCatalogNodesRequest extends com.amazonaws.AmazonWebServic
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getSignalNodeType() != null)
+            sb.append("SignalNodeType: ").append(getSignalNodeType());
         sb.append("}");
         return sb.toString();
     }
@@ -247,6 +314,10 @@ public class ListSignalCatalogNodesRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getSignalNodeType() == null ^ this.getSignalNodeType() == null)
+            return false;
+        if (other.getSignalNodeType() != null && other.getSignalNodeType().equals(this.getSignalNodeType()) == false)
+            return false;
         return true;
     }
 
@@ -258,6 +329,7 @@ public class ListSignalCatalogNodesRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getSignalNodeType() == null) ? 0 : getSignalNodeType().hashCode());
         return hashCode;
     }
 

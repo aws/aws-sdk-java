@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -203,8 +203,10 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     private RuntimePlatform runtimePlatform;
     /**
      * <p>
-     * The task launch types the task definition was validated against. To determine which task launch types the task
-     * definition is validated for, see the <a>TaskDefinition$compatibilities</a> parameter.
+     * The task launch types the task definition was validated against. The valid values are <code>EC2</code>,
+     * <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> requiresCompatibilities;
@@ -337,21 +339,34 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The process namespace to use for the containers in the task. The valid values are <code>host</code> or
-     * <code>task</code>. If <code>host</code> is specified, then all containers within the tasks that specified the
-     * <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon
-     * EC2 instance. If <code>task</code> is specified, all containers within the specified task share the same process
-     * namespace. If no value is specified, the default is a private namespace. For more information, see <a
+     * <code>task</code>. On Fargate for Linux containers, the only valid value is <code>task</code>. For example,
+     * monitoring sidecars might need <code>pidMode</code> to access information about other containers running in the
+     * same task.
+     * </p>
+     * <p>
+     * If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code> PID mode
+     * on the same container instance share the same process namespace with the host Amazon EC2 instance.
+     * </p>
+     * <p>
+     * If <code>task</code> is specified, all containers within the specified task share the same process namespace.
+     * </p>
+     * <p>
+     * If no value is specified, the default is a private namespace for each container. For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the <i>Docker run
      * reference</i>.
      * </p>
      * <p>
-     * If the <code>host</code> PID mode is used, be aware that there is a heightened risk of undesired process
-     * namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
-     * security</a>.
+     * If the <code>host</code> PID mode is used, there's a heightened risk of undesired process namespace exposure. For
+     * more information, see <a href="https://docs.docker.com/engine/security/security/">Docker security</a>.
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks run on Fargate.
+     * This parameter is not supported for Windows containers.
+     * </p>
+     * </note> <note>
+     * <p>
+     * This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform version
+     * <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.
      * </p>
      * </note>
      */
@@ -1960,12 +1975,16 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The task launch types the task definition was validated against. To determine which task launch types the task
-     * definition is validated for, see the <a>TaskDefinition$compatibilities</a> parameter.
+     * The task launch types the task definition was validated against. The valid values are <code>EC2</code>,
+     * <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The task launch types the task definition was validated against. To determine which task launch types the
-     *         task definition is validated for, see the <a>TaskDefinition$compatibilities</a> parameter.
+     * @return The task launch types the task definition was validated against. The valid values are <code>EC2</code>,
+     *         <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *         types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @see Compatibility
      */
 
@@ -1978,13 +1997,17 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The task launch types the task definition was validated against. To determine which task launch types the task
-     * definition is validated for, see the <a>TaskDefinition$compatibilities</a> parameter.
+     * The task launch types the task definition was validated against. The valid values are <code>EC2</code>,
+     * <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param requiresCompatibilities
-     *        The task launch types the task definition was validated against. To determine which task launch types the
-     *        task definition is validated for, see the <a>TaskDefinition$compatibilities</a> parameter.
+     *        The task launch types the task definition was validated against. The valid values are <code>EC2</code>,
+     *        <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *        types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @see Compatibility
      */
 
@@ -1999,8 +2022,10 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The task launch types the task definition was validated against. To determine which task launch types the task
-     * definition is validated for, see the <a>TaskDefinition$compatibilities</a> parameter.
+     * The task launch types the task definition was validated against. The valid values are <code>EC2</code>,
+     * <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2009,8 +2034,10 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param requiresCompatibilities
-     *        The task launch types the task definition was validated against. To determine which task launch types the
-     *        task definition is validated for, see the <a>TaskDefinition$compatibilities</a> parameter.
+     *        The task launch types the task definition was validated against. The valid values are <code>EC2</code>,
+     *        <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *        types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Compatibility
      */
@@ -2027,13 +2054,17 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The task launch types the task definition was validated against. To determine which task launch types the task
-     * definition is validated for, see the <a>TaskDefinition$compatibilities</a> parameter.
+     * The task launch types the task definition was validated against. The valid values are <code>EC2</code>,
+     * <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param requiresCompatibilities
-     *        The task launch types the task definition was validated against. To determine which task launch types the
-     *        task definition is validated for, see the <a>TaskDefinition$compatibilities</a> parameter.
+     *        The task launch types the task definition was validated against. The valid values are <code>EC2</code>,
+     *        <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *        types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Compatibility
      */
@@ -2045,13 +2076,17 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The task launch types the task definition was validated against. To determine which task launch types the task
-     * definition is validated for, see the <a>TaskDefinition$compatibilities</a> parameter.
+     * The task launch types the task definition was validated against. The valid values are <code>EC2</code>,
+     * <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
+     * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param requiresCompatibilities
-     *        The task launch types the task definition was validated against. To determine which task launch types the
-     *        task definition is validated for, see the <a>TaskDefinition$compatibilities</a> parameter.
+     *        The task launch types the task definition was validated against. The valid values are <code>EC2</code>,
+     *        <code>FARGATE</code>, and <code>EXTERNAL</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *        types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Compatibility
      */
@@ -2874,40 +2909,69 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The process namespace to use for the containers in the task. The valid values are <code>host</code> or
-     * <code>task</code>. If <code>host</code> is specified, then all containers within the tasks that specified the
-     * <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon
-     * EC2 instance. If <code>task</code> is specified, all containers within the specified task share the same process
-     * namespace. If no value is specified, the default is a private namespace. For more information, see <a
+     * <code>task</code>. On Fargate for Linux containers, the only valid value is <code>task</code>. For example,
+     * monitoring sidecars might need <code>pidMode</code> to access information about other containers running in the
+     * same task.
+     * </p>
+     * <p>
+     * If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code> PID mode
+     * on the same container instance share the same process namespace with the host Amazon EC2 instance.
+     * </p>
+     * <p>
+     * If <code>task</code> is specified, all containers within the specified task share the same process namespace.
+     * </p>
+     * <p>
+     * If no value is specified, the default is a private namespace for each container. For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the <i>Docker run
      * reference</i>.
      * </p>
      * <p>
-     * If the <code>host</code> PID mode is used, be aware that there is a heightened risk of undesired process
-     * namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
-     * security</a>.
+     * If the <code>host</code> PID mode is used, there's a heightened risk of undesired process namespace exposure. For
+     * more information, see <a href="https://docs.docker.com/engine/security/security/">Docker security</a>.
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks run on Fargate.
+     * This parameter is not supported for Windows containers.
+     * </p>
+     * </note> <note>
+     * <p>
+     * This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform version
+     * <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.
      * </p>
      * </note>
      * 
      * @param pidMode
      *        The process namespace to use for the containers in the task. The valid values are <code>host</code> or
-     *        <code>task</code>. If <code>host</code> is specified, then all containers within the tasks that specified
-     *        the <code>host</code> PID mode on the same container instance share the same process namespace with the
-     *        host Amazon EC2 instance. If <code>task</code> is specified, all containers within the specified task
-     *        share the same process namespace. If no value is specified, the default is a private namespace. For more
-     *        information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID
-     *        settings</a> in the <i>Docker run reference</i>.</p>
+     *        <code>task</code>. On Fargate for Linux containers, the only valid value is <code>task</code>. For
+     *        example, monitoring sidecars might need <code>pidMode</code> to access information about other containers
+     *        running in the same task.</p>
      *        <p>
-     *        If the <code>host</code> PID mode is used, be aware that there is a heightened risk of undesired process
-     *        namespace expose. For more information, see <a
-     *        href="https://docs.docker.com/engine/security/security/">Docker security</a>.
+     *        If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code>
+     *        PID mode on the same container instance share the same process namespace with the host Amazon EC2
+     *        instance.
+     *        </p>
+     *        <p>
+     *        If <code>task</code> is specified, all containers within the specified task share the same process
+     *        namespace.
+     *        </p>
+     *        <p>
+     *        If no value is specified, the default is a private namespace for each container. For more information, see
+     *        <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the
+     *        <i>Docker run reference</i>.
+     *        </p>
+     *        <p>
+     *        If the <code>host</code> PID mode is used, there's a heightened risk of undesired process namespace
+     *        exposure. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
+     *        security</a>.
      *        </p>
      *        <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks run on Fargate.
+     *        This parameter is not supported for Windows containers.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform
+     *        version <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.
      *        </p>
      * @see PidMode
      */
@@ -2919,39 +2983,68 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The process namespace to use for the containers in the task. The valid values are <code>host</code> or
-     * <code>task</code>. If <code>host</code> is specified, then all containers within the tasks that specified the
-     * <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon
-     * EC2 instance. If <code>task</code> is specified, all containers within the specified task share the same process
-     * namespace. If no value is specified, the default is a private namespace. For more information, see <a
+     * <code>task</code>. On Fargate for Linux containers, the only valid value is <code>task</code>. For example,
+     * monitoring sidecars might need <code>pidMode</code> to access information about other containers running in the
+     * same task.
+     * </p>
+     * <p>
+     * If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code> PID mode
+     * on the same container instance share the same process namespace with the host Amazon EC2 instance.
+     * </p>
+     * <p>
+     * If <code>task</code> is specified, all containers within the specified task share the same process namespace.
+     * </p>
+     * <p>
+     * If no value is specified, the default is a private namespace for each container. For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the <i>Docker run
      * reference</i>.
      * </p>
      * <p>
-     * If the <code>host</code> PID mode is used, be aware that there is a heightened risk of undesired process
-     * namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
-     * security</a>.
+     * If the <code>host</code> PID mode is used, there's a heightened risk of undesired process namespace exposure. For
+     * more information, see <a href="https://docs.docker.com/engine/security/security/">Docker security</a>.
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks run on Fargate.
+     * This parameter is not supported for Windows containers.
+     * </p>
+     * </note> <note>
+     * <p>
+     * This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform version
+     * <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.
      * </p>
      * </note>
      * 
      * @return The process namespace to use for the containers in the task. The valid values are <code>host</code> or
-     *         <code>task</code>. If <code>host</code> is specified, then all containers within the tasks that specified
-     *         the <code>host</code> PID mode on the same container instance share the same process namespace with the
-     *         host Amazon EC2 instance. If <code>task</code> is specified, all containers within the specified task
-     *         share the same process namespace. If no value is specified, the default is a private namespace. For more
-     *         information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID
-     *         settings</a> in the <i>Docker run reference</i>.</p>
+     *         <code>task</code>. On Fargate for Linux containers, the only valid value is <code>task</code>. For
+     *         example, monitoring sidecars might need <code>pidMode</code> to access information about other containers
+     *         running in the same task.</p>
      *         <p>
-     *         If the <code>host</code> PID mode is used, be aware that there is a heightened risk of undesired process
-     *         namespace expose. For more information, see <a
-     *         href="https://docs.docker.com/engine/security/security/">Docker security</a>.
+     *         If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code>
+     *         PID mode on the same container instance share the same process namespace with the host Amazon EC2
+     *         instance.
+     *         </p>
+     *         <p>
+     *         If <code>task</code> is specified, all containers within the specified task share the same process
+     *         namespace.
+     *         </p>
+     *         <p>
+     *         If no value is specified, the default is a private namespace for each container. For more information,
+     *         see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the
+     *         <i>Docker run reference</i>.
+     *         </p>
+     *         <p>
+     *         If the <code>host</code> PID mode is used, there's a heightened risk of undesired process namespace
+     *         exposure. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
+     *         security</a>.
      *         </p>
      *         <note>
      *         <p>
-     *         This parameter is not supported for Windows containers or tasks run on Fargate.
+     *         This parameter is not supported for Windows containers.
+     *         </p>
+     *         </note> <note>
+     *         <p>
+     *         This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform
+     *         version <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.
      *         </p>
      * @see PidMode
      */
@@ -2963,40 +3056,69 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The process namespace to use for the containers in the task. The valid values are <code>host</code> or
-     * <code>task</code>. If <code>host</code> is specified, then all containers within the tasks that specified the
-     * <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon
-     * EC2 instance. If <code>task</code> is specified, all containers within the specified task share the same process
-     * namespace. If no value is specified, the default is a private namespace. For more information, see <a
+     * <code>task</code>. On Fargate for Linux containers, the only valid value is <code>task</code>. For example,
+     * monitoring sidecars might need <code>pidMode</code> to access information about other containers running in the
+     * same task.
+     * </p>
+     * <p>
+     * If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code> PID mode
+     * on the same container instance share the same process namespace with the host Amazon EC2 instance.
+     * </p>
+     * <p>
+     * If <code>task</code> is specified, all containers within the specified task share the same process namespace.
+     * </p>
+     * <p>
+     * If no value is specified, the default is a private namespace for each container. For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the <i>Docker run
      * reference</i>.
      * </p>
      * <p>
-     * If the <code>host</code> PID mode is used, be aware that there is a heightened risk of undesired process
-     * namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
-     * security</a>.
+     * If the <code>host</code> PID mode is used, there's a heightened risk of undesired process namespace exposure. For
+     * more information, see <a href="https://docs.docker.com/engine/security/security/">Docker security</a>.
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks run on Fargate.
+     * This parameter is not supported for Windows containers.
+     * </p>
+     * </note> <note>
+     * <p>
+     * This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform version
+     * <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.
      * </p>
      * </note>
      * 
      * @param pidMode
      *        The process namespace to use for the containers in the task. The valid values are <code>host</code> or
-     *        <code>task</code>. If <code>host</code> is specified, then all containers within the tasks that specified
-     *        the <code>host</code> PID mode on the same container instance share the same process namespace with the
-     *        host Amazon EC2 instance. If <code>task</code> is specified, all containers within the specified task
-     *        share the same process namespace. If no value is specified, the default is a private namespace. For more
-     *        information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID
-     *        settings</a> in the <i>Docker run reference</i>.</p>
+     *        <code>task</code>. On Fargate for Linux containers, the only valid value is <code>task</code>. For
+     *        example, monitoring sidecars might need <code>pidMode</code> to access information about other containers
+     *        running in the same task.</p>
      *        <p>
-     *        If the <code>host</code> PID mode is used, be aware that there is a heightened risk of undesired process
-     *        namespace expose. For more information, see <a
-     *        href="https://docs.docker.com/engine/security/security/">Docker security</a>.
+     *        If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code>
+     *        PID mode on the same container instance share the same process namespace with the host Amazon EC2
+     *        instance.
+     *        </p>
+     *        <p>
+     *        If <code>task</code> is specified, all containers within the specified task share the same process
+     *        namespace.
+     *        </p>
+     *        <p>
+     *        If no value is specified, the default is a private namespace for each container. For more information, see
+     *        <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the
+     *        <i>Docker run reference</i>.
+     *        </p>
+     *        <p>
+     *        If the <code>host</code> PID mode is used, there's a heightened risk of undesired process namespace
+     *        exposure. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
+     *        security</a>.
      *        </p>
      *        <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks run on Fargate.
+     *        This parameter is not supported for Windows containers.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform
+     *        version <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PidMode
@@ -3010,40 +3132,69 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The process namespace to use for the containers in the task. The valid values are <code>host</code> or
-     * <code>task</code>. If <code>host</code> is specified, then all containers within the tasks that specified the
-     * <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon
-     * EC2 instance. If <code>task</code> is specified, all containers within the specified task share the same process
-     * namespace. If no value is specified, the default is a private namespace. For more information, see <a
+     * <code>task</code>. On Fargate for Linux containers, the only valid value is <code>task</code>. For example,
+     * monitoring sidecars might need <code>pidMode</code> to access information about other containers running in the
+     * same task.
+     * </p>
+     * <p>
+     * If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code> PID mode
+     * on the same container instance share the same process namespace with the host Amazon EC2 instance.
+     * </p>
+     * <p>
+     * If <code>task</code> is specified, all containers within the specified task share the same process namespace.
+     * </p>
+     * <p>
+     * If no value is specified, the default is a private namespace for each container. For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the <i>Docker run
      * reference</i>.
      * </p>
      * <p>
-     * If the <code>host</code> PID mode is used, be aware that there is a heightened risk of undesired process
-     * namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
-     * security</a>.
+     * If the <code>host</code> PID mode is used, there's a heightened risk of undesired process namespace exposure. For
+     * more information, see <a href="https://docs.docker.com/engine/security/security/">Docker security</a>.
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks run on Fargate.
+     * This parameter is not supported for Windows containers.
+     * </p>
+     * </note> <note>
+     * <p>
+     * This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform version
+     * <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.
      * </p>
      * </note>
      * 
      * @param pidMode
      *        The process namespace to use for the containers in the task. The valid values are <code>host</code> or
-     *        <code>task</code>. If <code>host</code> is specified, then all containers within the tasks that specified
-     *        the <code>host</code> PID mode on the same container instance share the same process namespace with the
-     *        host Amazon EC2 instance. If <code>task</code> is specified, all containers within the specified task
-     *        share the same process namespace. If no value is specified, the default is a private namespace. For more
-     *        information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID
-     *        settings</a> in the <i>Docker run reference</i>.</p>
+     *        <code>task</code>. On Fargate for Linux containers, the only valid value is <code>task</code>. For
+     *        example, monitoring sidecars might need <code>pidMode</code> to access information about other containers
+     *        running in the same task.</p>
      *        <p>
-     *        If the <code>host</code> PID mode is used, be aware that there is a heightened risk of undesired process
-     *        namespace expose. For more information, see <a
-     *        href="https://docs.docker.com/engine/security/security/">Docker security</a>.
+     *        If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code>
+     *        PID mode on the same container instance share the same process namespace with the host Amazon EC2
+     *        instance.
+     *        </p>
+     *        <p>
+     *        If <code>task</code> is specified, all containers within the specified task share the same process
+     *        namespace.
+     *        </p>
+     *        <p>
+     *        If no value is specified, the default is a private namespace for each container. For more information, see
+     *        <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the
+     *        <i>Docker run reference</i>.
+     *        </p>
+     *        <p>
+     *        If the <code>host</code> PID mode is used, there's a heightened risk of undesired process namespace
+     *        exposure. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
+     *        security</a>.
      *        </p>
      *        <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks run on Fargate.
+     *        This parameter is not supported for Windows containers.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform
+     *        version <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.
      *        </p>
      * @see PidMode
      */
@@ -3055,40 +3206,69 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The process namespace to use for the containers in the task. The valid values are <code>host</code> or
-     * <code>task</code>. If <code>host</code> is specified, then all containers within the tasks that specified the
-     * <code>host</code> PID mode on the same container instance share the same process namespace with the host Amazon
-     * EC2 instance. If <code>task</code> is specified, all containers within the specified task share the same process
-     * namespace. If no value is specified, the default is a private namespace. For more information, see <a
+     * <code>task</code>. On Fargate for Linux containers, the only valid value is <code>task</code>. For example,
+     * monitoring sidecars might need <code>pidMode</code> to access information about other containers running in the
+     * same task.
+     * </p>
+     * <p>
+     * If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code> PID mode
+     * on the same container instance share the same process namespace with the host Amazon EC2 instance.
+     * </p>
+     * <p>
+     * If <code>task</code> is specified, all containers within the specified task share the same process namespace.
+     * </p>
+     * <p>
+     * If no value is specified, the default is a private namespace for each container. For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the <i>Docker run
      * reference</i>.
      * </p>
      * <p>
-     * If the <code>host</code> PID mode is used, be aware that there is a heightened risk of undesired process
-     * namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
-     * security</a>.
+     * If the <code>host</code> PID mode is used, there's a heightened risk of undesired process namespace exposure. For
+     * more information, see <a href="https://docs.docker.com/engine/security/security/">Docker security</a>.
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for Windows containers or tasks run on Fargate.
+     * This parameter is not supported for Windows containers.
+     * </p>
+     * </note> <note>
+     * <p>
+     * This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform version
+     * <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.
      * </p>
      * </note>
      * 
      * @param pidMode
      *        The process namespace to use for the containers in the task. The valid values are <code>host</code> or
-     *        <code>task</code>. If <code>host</code> is specified, then all containers within the tasks that specified
-     *        the <code>host</code> PID mode on the same container instance share the same process namespace with the
-     *        host Amazon EC2 instance. If <code>task</code> is specified, all containers within the specified task
-     *        share the same process namespace. If no value is specified, the default is a private namespace. For more
-     *        information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID
-     *        settings</a> in the <i>Docker run reference</i>.</p>
+     *        <code>task</code>. On Fargate for Linux containers, the only valid value is <code>task</code>. For
+     *        example, monitoring sidecars might need <code>pidMode</code> to access information about other containers
+     *        running in the same task.</p>
      *        <p>
-     *        If the <code>host</code> PID mode is used, be aware that there is a heightened risk of undesired process
-     *        namespace expose. For more information, see <a
-     *        href="https://docs.docker.com/engine/security/security/">Docker security</a>.
+     *        If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code>
+     *        PID mode on the same container instance share the same process namespace with the host Amazon EC2
+     *        instance.
+     *        </p>
+     *        <p>
+     *        If <code>task</code> is specified, all containers within the specified task share the same process
+     *        namespace.
+     *        </p>
+     *        <p>
+     *        If no value is specified, the default is a private namespace for each container. For more information, see
+     *        <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the
+     *        <i>Docker run reference</i>.
+     *        </p>
+     *        <p>
+     *        If the <code>host</code> PID mode is used, there's a heightened risk of undesired process namespace
+     *        exposure. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
+     *        security</a>.
      *        </p>
      *        <note>
      *        <p>
-     *        This parameter is not supported for Windows containers or tasks run on Fargate.
+     *        This parameter is not supported for Windows containers.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        This parameter is only supported for tasks that are hosted on Fargate if the tasks are using platform
+     *        version <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers on Fargate.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PidMode

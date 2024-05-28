@@ -1,0 +1,155 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.ecs.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * Use this parameter to set a default Service Connect namespace. After you set a default Service Connect namespace, any
+ * new services with Service Connect turned on that are created in the cluster are added as client services in the
+ * namespace. This setting only applies to new services that set the <code>enabled</code> parameter to <code>true</code>
+ * in the <code>ServiceConnectConfiguration</code>. You can set the namespace of each service individually in the
+ * <code>ServiceConnectConfiguration</code> to override this default parameter.
+ * </p>
+ * <p>
+ * Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to
+ * services across all of the clusters in the namespace. Tasks connect through a managed proxy container that collects
+ * logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported with Service
+ * Connect. For more information, see <a
+ * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the
+ * <i>Amazon Elastic Container Service Developer Guide</i>.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ClusterServiceConnectDefaults" target="_top">AWS
+ *      API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ClusterServiceConnectDefaults implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace. When you create a service and
+     * don't specify a Service Connect configuration, this namespace is used.
+     * </p>
+     */
+    private String namespace;
+
+    /**
+     * <p>
+     * The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace. When you create a service and
+     * don't specify a Service Connect configuration, this namespace is used.
+     * </p>
+     * 
+     * @param namespace
+     *        The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace. When you create a
+     *        service and don't specify a Service Connect configuration, this namespace is used.
+     */
+
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
+    }
+
+    /**
+     * <p>
+     * The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace. When you create a service and
+     * don't specify a Service Connect configuration, this namespace is used.
+     * </p>
+     * 
+     * @return The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace. When you create a
+     *         service and don't specify a Service Connect configuration, this namespace is used.
+     */
+
+    public String getNamespace() {
+        return this.namespace;
+    }
+
+    /**
+     * <p>
+     * The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace. When you create a service and
+     * don't specify a Service Connect configuration, this namespace is used.
+     * </p>
+     * 
+     * @param namespace
+     *        The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace. When you create a
+     *        service and don't specify a Service Connect configuration, this namespace is used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClusterServiceConnectDefaults withNamespace(String namespace) {
+        setNamespace(namespace);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getNamespace() != null)
+            sb.append("Namespace: ").append(getNamespace());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ClusterServiceConnectDefaults == false)
+            return false;
+        ClusterServiceConnectDefaults other = (ClusterServiceConnectDefaults) obj;
+        if (other.getNamespace() == null ^ this.getNamespace() == null)
+            return false;
+        if (other.getNamespace() != null && other.getNamespace().equals(this.getNamespace()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public ClusterServiceConnectDefaults clone() {
+        try {
+            return (ClusterServiceConnectDefaults) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.ecs.model.transform.ClusterServiceConnectDefaultsMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -103,19 +103,21 @@ public class XpathUtils {
      * context!
      */
     private static void speedUpDTMManager() throws Exception {
-        // https://github.com/aws/aws-sdk-java/issues/238
-        // http://stackoverflow.com/questions/6340802/java-xpath-apache-jaxp-implementation-performance
-        if (System.getProperty(DTM_MANAGER_DEFAULT_PROP_NAME) == null) {
-            Class<?> XPathContextClass = Class.forName(XPATH_CONTEXT_CLASS_NAME);
-            Method getDTMManager = XPathContextClass.getMethod("getDTMManager");
-            Object XPathContext = XPathContextClass.newInstance();
-            Object dtmManager = getDTMManager.invoke(XPathContext);
+        if (System.getProperty("java.version").startsWith("1.")) {
+            // https://github.com/aws/aws-sdk-java/issues/238
+            // http://stackoverflow.com/questions/6340802/java-xpath-apache-jaxp-implementation-performance
+            if (System.getProperty(DTM_MANAGER_DEFAULT_PROP_NAME) == null) {
+                Class<?> XPathContextClass = Class.forName(XPATH_CONTEXT_CLASS_NAME);
+                Method getDTMManager = XPathContextClass.getMethod("getDTMManager");
+                Object XPathContext = XPathContextClass.newInstance();
+                Object dtmManager = getDTMManager.invoke(XPathContext);
 
-            if (DTM_MANAGER_IMPL_CLASS_NAME.equals(dtmManager.getClass().getName())) {
-                // This would avoid the file system to be accessed every time
-                // the internal XPathContext is instantiated.
-                System.setProperty(DTM_MANAGER_DEFAULT_PROP_NAME,
-                        DTM_MANAGER_IMPL_CLASS_NAME);
+                if (DTM_MANAGER_IMPL_CLASS_NAME.equals(dtmManager.getClass().getName())) {
+                    // This would avoid the file system to be accessed every time
+                    // the internal XPathContext is instantiated.
+                    System.setProperty(DTM_MANAGER_DEFAULT_PROP_NAME,
+                            DTM_MANAGER_IMPL_CLASS_NAME);
+                }
             }
         }
     }
@@ -143,12 +145,12 @@ public class XpathUtils {
         try {
             speedUpDcoumentBuilderFactory();
         } catch(Throwable t) {
-            log.debug("Ingore failure in speeding up DocumentBuilderFactory", t);
+            log.debug("Ignore failure in speeding up DocumentBuilderFactory", t);
         }
         try {
             speedUpDTMManager();
         } catch(Throwable t) {
-            log.debug("Ingore failure in speeding up DTMManager", t);
+            log.debug("Ignore failure in speeding up DTMManager", t);
         }
     }
 

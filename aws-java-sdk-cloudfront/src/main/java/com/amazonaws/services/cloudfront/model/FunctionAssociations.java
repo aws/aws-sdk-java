@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A list of CloudFront functions that are associated with a cache behavior in a CloudFront distribution. CloudFront
- * functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.
+ * A list of CloudFront functions that are associated with a cache behavior in a CloudFront distribution. Your functions
+ * must be published to the <code>LIVE</code> stage to associate them with a cache behavior.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/FunctionAssociations" target="_top">AWS
@@ -35,8 +35,8 @@ public class FunctionAssociations implements Serializable, Cloneable {
     private Integer quantity;
     /**
      * <p>
-     * The CloudFront functions that are associated with a cache behavior in a CloudFront distribution. CloudFront
-     * functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.
+     * The CloudFront functions that are associated with a cache behavior in a CloudFront distribution. Your functions
+     * must be published to the <code>LIVE</code> stage to associate them with a cache behavior.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<FunctionAssociation> items;
@@ -83,13 +83,12 @@ public class FunctionAssociations implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CloudFront functions that are associated with a cache behavior in a CloudFront distribution. CloudFront
-     * functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.
+     * The CloudFront functions that are associated with a cache behavior in a CloudFront distribution. Your functions
+     * must be published to the <code>LIVE</code> stage to associate them with a cache behavior.
      * </p>
      * 
-     * @return The CloudFront functions that are associated with a cache behavior in a CloudFront distribution.
-     *         CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache
-     *         behavior.
+     * @return The CloudFront functions that are associated with a cache behavior in a CloudFront distribution. Your
+     *         functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.
      */
 
     public java.util.List<FunctionAssociation> getItems() {
@@ -101,14 +100,13 @@ public class FunctionAssociations implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CloudFront functions that are associated with a cache behavior in a CloudFront distribution. CloudFront
-     * functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.
+     * The CloudFront functions that are associated with a cache behavior in a CloudFront distribution. Your functions
+     * must be published to the <code>LIVE</code> stage to associate them with a cache behavior.
      * </p>
      * 
      * @param items
-     *        The CloudFront functions that are associated with a cache behavior in a CloudFront distribution.
-     *        CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache
-     *        behavior.
+     *        The CloudFront functions that are associated with a cache behavior in a CloudFront distribution. Your
+     *        functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.
      */
 
     public void setItems(java.util.Collection<FunctionAssociation> items) {
@@ -122,8 +120,8 @@ public class FunctionAssociations implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CloudFront functions that are associated with a cache behavior in a CloudFront distribution. CloudFront
-     * functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.
+     * The CloudFront functions that are associated with a cache behavior in a CloudFront distribution. Your functions
+     * must be published to the <code>LIVE</code> stage to associate them with a cache behavior.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -132,9 +130,8 @@ public class FunctionAssociations implements Serializable, Cloneable {
      * </p>
      * 
      * @param items
-     *        The CloudFront functions that are associated with a cache behavior in a CloudFront distribution.
-     *        CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache
-     *        behavior.
+     *        The CloudFront functions that are associated with a cache behavior in a CloudFront distribution. Your
+     *        functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,14 +147,13 @@ public class FunctionAssociations implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The CloudFront functions that are associated with a cache behavior in a CloudFront distribution. CloudFront
-     * functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.
+     * The CloudFront functions that are associated with a cache behavior in a CloudFront distribution. Your functions
+     * must be published to the <code>LIVE</code> stage to associate them with a cache behavior.
      * </p>
      * 
      * @param items
-     *        The CloudFront functions that are associated with a cache behavior in a CloudFront distribution.
-     *        CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache
-     *        behavior.
+     *        The CloudFront functions that are associated with a cache behavior in a CloudFront distribution. Your
+     *        functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

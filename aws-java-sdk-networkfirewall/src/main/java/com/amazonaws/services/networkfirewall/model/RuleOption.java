@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,15 +28,38 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RuleOption implements Serializable, Cloneable, StructuredPojo {
 
-    /** <p/> */
+    /**
+     * <p>
+     * The keyword for the Suricata compatible rule option. You must include a <code>sid</code> (signature ID), and can
+     * optionally include other keywords. For information about Suricata compatible keywords, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule options</a> in the
+     * Suricata documentation.
+     * </p>
+     */
     private String keyword;
-    /** <p/> */
+    /**
+     * <p>
+     * The settings of the Suricata compatible rule option. Rule options have zero or more setting values, and the
+     * number of possible and required settings depends on the <code>Keyword</code>. For more information about the
+     * settings for specific options, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule options</a>.
+     * </p>
+     */
     private java.util.List<String> settings;
 
     /**
-     * <p/>
+     * <p>
+     * The keyword for the Suricata compatible rule option. You must include a <code>sid</code> (signature ID), and can
+     * optionally include other keywords. For information about Suricata compatible keywords, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule options</a> in the
+     * Suricata documentation.
+     * </p>
      * 
      * @param keyword
+     *        The keyword for the Suricata compatible rule option. You must include a <code>sid</code> (signature ID),
+     *        and can optionally include other keywords. For information about Suricata compatible keywords, see <a
+     *        href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule options</a> in
+     *        the Suricata documentation.
      */
 
     public void setKeyword(String keyword) {
@@ -44,9 +67,17 @@ public class RuleOption implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * The keyword for the Suricata compatible rule option. You must include a <code>sid</code> (signature ID), and can
+     * optionally include other keywords. For information about Suricata compatible keywords, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule options</a> in the
+     * Suricata documentation.
+     * </p>
      * 
-     * @return
+     * @return The keyword for the Suricata compatible rule option. You must include a <code>sid</code> (signature ID),
+     *         and can optionally include other keywords. For information about Suricata compatible keywords, see <a
+     *         href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule options</a>
+     *         in the Suricata documentation.
      */
 
     public String getKeyword() {
@@ -54,9 +85,18 @@ public class RuleOption implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * The keyword for the Suricata compatible rule option. You must include a <code>sid</code> (signature ID), and can
+     * optionally include other keywords. For information about Suricata compatible keywords, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule options</a> in the
+     * Suricata documentation.
+     * </p>
      * 
      * @param keyword
+     *        The keyword for the Suricata compatible rule option. You must include a <code>sid</code> (signature ID),
+     *        and can optionally include other keywords. For information about Suricata compatible keywords, see <a
+     *        href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule options</a> in
+     *        the Suricata documentation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,9 +106,17 @@ public class RuleOption implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * The settings of the Suricata compatible rule option. Rule options have zero or more setting values, and the
+     * number of possible and required settings depends on the <code>Keyword</code>. For more information about the
+     * settings for specific options, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule options</a>.
+     * </p>
      * 
-     * @return
+     * @return The settings of the Suricata compatible rule option. Rule options have zero or more setting values, and
+     *         the number of possible and required settings depends on the <code>Keyword</code>. For more information
+     *         about the settings for specific options, see <a
+     *         href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule options</a>.
      */
 
     public java.util.List<String> getSettings() {
@@ -76,9 +124,18 @@ public class RuleOption implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * The settings of the Suricata compatible rule option. Rule options have zero or more setting values, and the
+     * number of possible and required settings depends on the <code>Keyword</code>. For more information about the
+     * settings for specific options, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule options</a>.
+     * </p>
      * 
      * @param settings
+     *        The settings of the Suricata compatible rule option. Rule options have zero or more setting values, and
+     *        the number of possible and required settings depends on the <code>Keyword</code>. For more information
+     *        about the settings for specific options, see <a
+     *        href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule options</a>.
      */
 
     public void setSettings(java.util.Collection<String> settings) {
@@ -91,7 +148,12 @@ public class RuleOption implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * The settings of the Suricata compatible rule option. Rule options have zero or more setting values, and the
+     * number of possible and required settings depends on the <code>Keyword</code>. For more information about the
+     * settings for specific options, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule options</a>.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSettings(java.util.Collection)} or {@link #withSettings(java.util.Collection)} if you want to override
@@ -99,6 +161,10 @@ public class RuleOption implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param settings
+     *        The settings of the Suricata compatible rule option. Rule options have zero or more setting values, and
+     *        the number of possible and required settings depends on the <code>Keyword</code>. For more information
+     *        about the settings for specific options, see <a
+     *        href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule options</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,9 +179,18 @@ public class RuleOption implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * The settings of the Suricata compatible rule option. Rule options have zero or more setting values, and the
+     * number of possible and required settings depends on the <code>Keyword</code>. For more information about the
+     * settings for specific options, see <a
+     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule options</a>.
+     * </p>
      * 
      * @param settings
+     *        The settings of the Suricata compatible rule option. Rule options have zero or more setting values, and
+     *        the number of possible and required settings depends on the <code>Keyword</code>. For more information
+     *        about the settings for specific options, see <a
+     *        href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html#rule-options">Rule options</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

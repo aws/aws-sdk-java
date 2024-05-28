@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,18 @@ public class AnonymousUserEmbeddingExperienceConfiguration implements Serializab
      * </p>
      */
     private AnonymousUserDashboardVisualEmbeddingConfiguration dashboardVisual;
+    /**
+     * <p>
+     * The Q search bar that you want to use for anonymous user embedding.
+     * </p>
+     */
+    private AnonymousUserQSearchBarEmbeddingConfiguration qSearchBar;
+    /**
+     * <p>
+     * The Generative Q&amp;A experience that you want to use for anonymous user embedding.
+     * </p>
+     */
+    private AnonymousUserGenerativeQnAEmbeddingConfiguration generativeQnA;
 
     /**
      * <p>
@@ -123,6 +135,86 @@ public class AnonymousUserEmbeddingExperienceConfiguration implements Serializab
     }
 
     /**
+     * <p>
+     * The Q search bar that you want to use for anonymous user embedding.
+     * </p>
+     * 
+     * @param qSearchBar
+     *        The Q search bar that you want to use for anonymous user embedding.
+     */
+
+    public void setQSearchBar(AnonymousUserQSearchBarEmbeddingConfiguration qSearchBar) {
+        this.qSearchBar = qSearchBar;
+    }
+
+    /**
+     * <p>
+     * The Q search bar that you want to use for anonymous user embedding.
+     * </p>
+     * 
+     * @return The Q search bar that you want to use for anonymous user embedding.
+     */
+
+    public AnonymousUserQSearchBarEmbeddingConfiguration getQSearchBar() {
+        return this.qSearchBar;
+    }
+
+    /**
+     * <p>
+     * The Q search bar that you want to use for anonymous user embedding.
+     * </p>
+     * 
+     * @param qSearchBar
+     *        The Q search bar that you want to use for anonymous user embedding.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnonymousUserEmbeddingExperienceConfiguration withQSearchBar(AnonymousUserQSearchBarEmbeddingConfiguration qSearchBar) {
+        setQSearchBar(qSearchBar);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Generative Q&amp;A experience that you want to use for anonymous user embedding.
+     * </p>
+     * 
+     * @param generativeQnA
+     *        The Generative Q&amp;A experience that you want to use for anonymous user embedding.
+     */
+
+    public void setGenerativeQnA(AnonymousUserGenerativeQnAEmbeddingConfiguration generativeQnA) {
+        this.generativeQnA = generativeQnA;
+    }
+
+    /**
+     * <p>
+     * The Generative Q&amp;A experience that you want to use for anonymous user embedding.
+     * </p>
+     * 
+     * @return The Generative Q&amp;A experience that you want to use for anonymous user embedding.
+     */
+
+    public AnonymousUserGenerativeQnAEmbeddingConfiguration getGenerativeQnA() {
+        return this.generativeQnA;
+    }
+
+    /**
+     * <p>
+     * The Generative Q&amp;A experience that you want to use for anonymous user embedding.
+     * </p>
+     * 
+     * @param generativeQnA
+     *        The Generative Q&amp;A experience that you want to use for anonymous user embedding.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnonymousUserEmbeddingExperienceConfiguration withGenerativeQnA(AnonymousUserGenerativeQnAEmbeddingConfiguration generativeQnA) {
+        setGenerativeQnA(generativeQnA);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -137,7 +229,11 @@ public class AnonymousUserEmbeddingExperienceConfiguration implements Serializab
         if (getDashboard() != null)
             sb.append("Dashboard: ").append(getDashboard()).append(",");
         if (getDashboardVisual() != null)
-            sb.append("DashboardVisual: ").append(getDashboardVisual());
+            sb.append("DashboardVisual: ").append(getDashboardVisual()).append(",");
+        if (getQSearchBar() != null)
+            sb.append("QSearchBar: ").append(getQSearchBar()).append(",");
+        if (getGenerativeQnA() != null)
+            sb.append("GenerativeQnA: ").append(getGenerativeQnA());
         sb.append("}");
         return sb.toString();
     }
@@ -160,6 +256,14 @@ public class AnonymousUserEmbeddingExperienceConfiguration implements Serializab
             return false;
         if (other.getDashboardVisual() != null && other.getDashboardVisual().equals(this.getDashboardVisual()) == false)
             return false;
+        if (other.getQSearchBar() == null ^ this.getQSearchBar() == null)
+            return false;
+        if (other.getQSearchBar() != null && other.getQSearchBar().equals(this.getQSearchBar()) == false)
+            return false;
+        if (other.getGenerativeQnA() == null ^ this.getGenerativeQnA() == null)
+            return false;
+        if (other.getGenerativeQnA() != null && other.getGenerativeQnA().equals(this.getGenerativeQnA()) == false)
+            return false;
         return true;
     }
 
@@ -170,6 +274,8 @@ public class AnonymousUserEmbeddingExperienceConfiguration implements Serializab
 
         hashCode = prime * hashCode + ((getDashboard() == null) ? 0 : getDashboard().hashCode());
         hashCode = prime * hashCode + ((getDashboardVisual() == null) ? 0 : getDashboardVisual().hashCode());
+        hashCode = prime * hashCode + ((getQSearchBar() == null) ? 0 : getQSearchBar().hashCode());
+        hashCode = prime * hashCode + ((getGenerativeQnA() == null) ? 0 : getGenerativeQnA().hashCode());
         return hashCode;
     }
 

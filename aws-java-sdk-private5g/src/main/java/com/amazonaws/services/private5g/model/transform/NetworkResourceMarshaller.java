@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,8 @@ public class NetworkResourceMarshaller {
 
     private static final MarshallingInfo<List> ATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("attributes").build();
+    private static final MarshallingInfo<StructuredPojo> COMMITMENTINFORMATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("commitmentInformation").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("iso8601").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -48,6 +50,8 @@ public class NetworkResourceMarshaller {
             .marshallLocationName("orderArn").build();
     private static final MarshallingInfo<StructuredPojo> POSITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("position").build();
+    private static final MarshallingInfo<StructuredPojo> RETURNINFORMATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("returnInformation").build();
     private static final MarshallingInfo<String> SERIALNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serialNumber").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -76,6 +80,7 @@ public class NetworkResourceMarshaller {
 
         try {
             protocolMarshaller.marshall(networkResource.getAttributes(), ATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(networkResource.getCommitmentInformation(), COMMITMENTINFORMATION_BINDING);
             protocolMarshaller.marshall(networkResource.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(networkResource.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(networkResource.getHealth(), HEALTH_BINDING);
@@ -85,6 +90,7 @@ public class NetworkResourceMarshaller {
             protocolMarshaller.marshall(networkResource.getNetworkSiteArn(), NETWORKSITEARN_BINDING);
             protocolMarshaller.marshall(networkResource.getOrderArn(), ORDERARN_BINDING);
             protocolMarshaller.marshall(networkResource.getPosition(), POSITION_BINDING);
+            protocolMarshaller.marshall(networkResource.getReturnInformation(), RETURNINFORMATION_BINDING);
             protocolMarshaller.marshall(networkResource.getSerialNumber(), SERIALNUMBER_BINDING);
             protocolMarshaller.marshall(networkResource.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(networkResource.getStatusReason(), STATUSREASON_BINDING);

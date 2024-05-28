@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class FulfillmentStartResponseSpecification implements Serializable, Clon
     private Integer delayInSeconds;
     /**
      * <p>
-     * One to 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the user.
+     * 1 - 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the user.
      * </p>
      */
     private java.util.List<MessageGroup> messageGroups;
@@ -96,11 +96,11 @@ public class FulfillmentStartResponseSpecification implements Serializable, Clon
 
     /**
      * <p>
-     * One to 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the user.
+     * 1 - 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the user.
      * </p>
      * 
-     * @return One to 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to
-     *         the user.
+     * @return 1 - 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the
+     *         user.
      */
 
     public java.util.List<MessageGroup> getMessageGroups() {
@@ -109,11 +109,11 @@ public class FulfillmentStartResponseSpecification implements Serializable, Clon
 
     /**
      * <p>
-     * One to 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the user.
+     * 1 - 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the user.
      * </p>
      * 
      * @param messageGroups
-     *        One to 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the
+     *        1 - 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the
      *        user.
      */
 
@@ -128,7 +128,7 @@ public class FulfillmentStartResponseSpecification implements Serializable, Clon
 
     /**
      * <p>
-     * One to 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the user.
+     * 1 - 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the user.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -137,7 +137,7 @@ public class FulfillmentStartResponseSpecification implements Serializable, Clon
      * </p>
      * 
      * @param messageGroups
-     *        One to 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the
+     *        1 - 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the
      *        user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -154,11 +154,11 @@ public class FulfillmentStartResponseSpecification implements Serializable, Clon
 
     /**
      * <p>
-     * One to 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the user.
+     * 1 - 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the user.
      * </p>
      * 
      * @param messageGroups
-     *        One to 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the
+     *        1 - 5 message groups that contain start messages. Amazon Lex chooses one of the messages to play to the
      *        user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

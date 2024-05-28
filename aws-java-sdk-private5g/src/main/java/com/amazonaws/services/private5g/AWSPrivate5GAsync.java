@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -498,13 +498,9 @@ public interface AWSPrivate5GAsync extends AWSPrivate5G {
      * match the Amazon Resource Name (ARN) of an order, the status of device identifiers, or the ARN of the traffic
      * group.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;If you specify multiple filters, filters are joined with an OR, and the request </code>
-     * </pre>
      * <p>
-     * returns results that match all of the specified filters.
-     * </p>
+     * If you specify multiple filters, filters are joined with an OR, and the request returns results that match all of
+     * the specified filters.
      * </p>
      * 
      * @param listDeviceIdentifiersRequest
@@ -521,13 +517,9 @@ public interface AWSPrivate5GAsync extends AWSPrivate5G {
      * match the Amazon Resource Name (ARN) of an order, the status of device identifiers, or the ARN of the traffic
      * group.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;If you specify multiple filters, filters are joined with an OR, and the request </code>
-     * </pre>
      * <p>
-     * returns results that match all of the specified filters.
-     * </p>
+     * If you specify multiple filters, filters are joined with an OR, and the request returns results that match all of
+     * the specified filters.
      * </p>
      * 
      * @param listDeviceIdentifiersRequest
@@ -751,6 +743,91 @@ public interface AWSPrivate5GAsync extends AWSPrivate5G {
      *      Documentation</a>
      */
     java.util.concurrent.Future<PingResult> pingAsync(PingRequest pingRequest, com.amazonaws.handlers.AsyncHandler<PingRequest, PingResult> asyncHandler);
+
+    /**
+     * <p>
+     * Use this action to do the following tasks:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Update the duration and renewal status of the commitment period for a radio unit. The update goes into effect
+     * immediately.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Request a replacement for a network resource.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Request that you return a network resource.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * After you submit a request to replace or return a network resource, the status of the network resource changes to
+     * <code>CREATING_SHIPPING_LABEL</code>. The shipping label is available when the status of the network resource is
+     * <code>PENDING_RETURN</code>. After the network resource is successfully returned, its status changes to
+     * <code>DELETED</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/private-networks/latest/userguide/radio-units.html#return-radio-unit">Return a
+     * radio unit</a>.
+     * </p>
+     * 
+     * @param startNetworkResourceUpdateRequest
+     * @return A Java Future containing the result of the StartNetworkResourceUpdate operation returned by the service.
+     * @sample AWSPrivate5GAsync.StartNetworkResourceUpdate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/privatenetworks-2021-12-03/StartNetworkResourceUpdate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartNetworkResourceUpdateResult> startNetworkResourceUpdateAsync(
+            StartNetworkResourceUpdateRequest startNetworkResourceUpdateRequest);
+
+    /**
+     * <p>
+     * Use this action to do the following tasks:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Update the duration and renewal status of the commitment period for a radio unit. The update goes into effect
+     * immediately.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Request a replacement for a network resource.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Request that you return a network resource.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * After you submit a request to replace or return a network resource, the status of the network resource changes to
+     * <code>CREATING_SHIPPING_LABEL</code>. The shipping label is available when the status of the network resource is
+     * <code>PENDING_RETURN</code>. After the network resource is successfully returned, its status changes to
+     * <code>DELETED</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/private-networks/latest/userguide/radio-units.html#return-radio-unit">Return a
+     * radio unit</a>.
+     * </p>
+     * 
+     * @param startNetworkResourceUpdateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartNetworkResourceUpdate operation returned by the service.
+     * @sample AWSPrivate5GAsyncHandler.StartNetworkResourceUpdate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/privatenetworks-2021-12-03/StartNetworkResourceUpdate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartNetworkResourceUpdateResult> startNetworkResourceUpdateAsync(
+            StartNetworkResourceUpdateRequest startNetworkResourceUpdateRequest,
+            com.amazonaws.handlers.AsyncHandler<StartNetworkResourceUpdateRequest, StartNetworkResourceUpdateResult> asyncHandler);
 
     /**
      * <p>

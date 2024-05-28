@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A summary of the properties of a trial component. To get all the properties, call the <a>DescribeTrialComponent</a>
- * API and provide the <code>TrialComponentName</code>.
+ * A summary of the properties of a trial component. To get all the properties, call the <a
+ * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrialComponent.html"
+ * >DescribeTrialComponent</a> API and provide the <code>TrialComponentName</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TrialComponentSummary" target="_top">AWS
@@ -37,7 +38,7 @@ public class TrialComponentSummary implements Serializable, Cloneable, Structure
     private String trialComponentName;
     /**
      * <p>
-     * The ARN of the trial component.
+     * The Amazon Resource Name (ARN) of the trial component.
      * </p>
      */
     private String trialComponentArn;
@@ -152,11 +153,11 @@ public class TrialComponentSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ARN of the trial component.
+     * The Amazon Resource Name (ARN) of the trial component.
      * </p>
      * 
      * @param trialComponentArn
-     *        The ARN of the trial component.
+     *        The Amazon Resource Name (ARN) of the trial component.
      */
 
     public void setTrialComponentArn(String trialComponentArn) {
@@ -165,10 +166,10 @@ public class TrialComponentSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ARN of the trial component.
+     * The Amazon Resource Name (ARN) of the trial component.
      * </p>
      * 
-     * @return The ARN of the trial component.
+     * @return The Amazon Resource Name (ARN) of the trial component.
      */
 
     public String getTrialComponentArn() {
@@ -177,11 +178,11 @@ public class TrialComponentSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ARN of the trial component.
+     * The Amazon Resource Name (ARN) of the trial component.
      * </p>
      * 
      * @param trialComponentArn
-     *        The ARN of the trial component.
+     *        The Amazon Resource Name (ARN) of the trial component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

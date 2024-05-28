@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,16 +27,18 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      */
     private String instanceId;
     /**
      * <p>
-     * The identifier of the flow for initiating the chat. To see the ContactFlowId in the Amazon Connect console user
-     * interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page,
-     * under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of
-     * the ARN, shown here in bold:
+     * The identifier of the flow for initiating the chat. To see the ContactFlowId in the Amazon Connect admin website,
+     * on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the
+     * name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN,
+     * shown here in bold:
      * </p>
      * <p>
      * arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>
@@ -63,7 +65,8 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
     private ParticipantDetails participantDetails;
     /**
      * <p>
-     * The initial message to be sent to the newly created chat.
+     * The initial message to be sent to the newly created chat. If you have a Lex bot in your flow, the initial message
+     * is not delivered to the Lex bot.
      * </p>
      */
     private ChatMessage initialMessage;
@@ -79,24 +82,81 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25
-     * hour. The minumum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).
+     * hour. The minimum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).
      * </p>
      */
     private Integer chatDurationInMinutes;
     /**
      * <p>
-     * The supported chat message content types. Content types can be text/plain or both text/plain and text/markdown.
+     * The supported chat message content types. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, <code>application/vnd.amazonaws.connect.message.interactive</code>, and
+     * <code>application/vnd.amazonaws.connect.message.interactive.response</code>.
      * </p>
+     * <p>
+     * Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list.
+     * For example, all the following lists are valid because they contain <code>text/plain</code>:
+     * <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>,
+     * <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>.
+     * </p>
+     * <note>
+     * <p>
+     * The type <code>application/vnd.amazonaws.connect.message.interactive</code> is required to use the <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show view</a> flow block.
+     * </p>
+     * </note>
      */
     private java.util.List<String> supportedMessagingContentTypes;
+    /**
+     * <p>
+     * Enable persistent chats. For more information about enabling persistent chat, and for example use cases and how
+     * to configure for them, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent chat</a>.
+     * </p>
+     */
+    private PersistentChat persistentChat;
+    /**
+     * <p>
+     * The unique identifier for an Amazon Connect contact. This identifier is related to the chat starting.
+     * </p>
+     * <note>
+     * <p>
+     * You cannot provide data for both RelatedContactId and PersistentChat.
+     * </p>
+     * </note>
+     */
+    private String relatedContactId;
+    /**
+     * <p>
+     * A set of system defined key-value pairs stored on individual contact segments using an attribute map. The
+     * attributes are standard Amazon Connect attributes. They can be accessed in flows.
+     * </p>
+     * <p>
+     * Attribute keys can include only alphanumeric, -, and _.
+     * </p>
+     * <p>
+     * This field can be used to show channel subtype, such as <code>connect:Guide</code>.
+     * </p>
+     * <note>
+     * <p>
+     * The types <code>application/vnd.amazonaws.connect.message.interactive</code> and
+     * <code>application/vnd.amazonaws.connect.message.interactive.response</code> must be present in the
+     * SupportedMessagingContentTypes field of this API in order to set <code>SegmentAttributes</code> as {
+     * <code> "connect:Subtype": {"valueString" : "connect:Guide" }}</code>.
+     * </p>
+     * </note>
+     */
+    private java.util.Map<String, SegmentAttributeValue> segmentAttributes;
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     *        The identifier of the Amazon Connect instance. You can <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *        ID</a> in the Amazon Resource Name (ARN) of the instance.
      */
 
     public void setInstanceId(String instanceId) {
@@ -105,10 +165,14 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
-     * @return The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * @return The identifier of the Amazon Connect instance. You can <a
+     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *         ID</a> in the Amazon Resource Name (ARN) of the instance.
      */
 
     public String getInstanceId() {
@@ -117,11 +181,15 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     * The identifier of the Amazon Connect instance. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in
+     * the Amazon Resource Name (ARN) of the instance.
      * </p>
      * 
      * @param instanceId
-     *        The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+     *        The identifier of the Amazon Connect instance. You can <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance
+     *        ID</a> in the Amazon Resource Name (ARN) of the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,10 +200,10 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the flow for initiating the chat. To see the ContactFlowId in the Amazon Connect console user
-     * interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page,
-     * under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of
-     * the ARN, shown here in bold:
+     * The identifier of the flow for initiating the chat. To see the ContactFlowId in the Amazon Connect admin website,
+     * on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the
+     * name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN,
+     * shown here in bold:
      * </p>
      * <p>
      * arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>
@@ -143,10 +211,10 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param contactFlowId
-     *        The identifier of the flow for initiating the chat. To see the ContactFlowId in the Amazon Connect console
-     *        user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the
-     *        flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId
-     *        is the last part of the ARN, shown here in bold: </p>
+     *        The identifier of the flow for initiating the chat. To see the ContactFlowId in the Amazon Connect admin
+     *        website, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow
+     *        page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the
+     *        last part of the ARN, shown here in bold: </p>
      *        <p>
      *        arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>
      *        846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
@@ -158,20 +226,20 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the flow for initiating the chat. To see the ContactFlowId in the Amazon Connect console user
-     * interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page,
-     * under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of
-     * the ARN, shown here in bold:
+     * The identifier of the flow for initiating the chat. To see the ContactFlowId in the Amazon Connect admin website,
+     * on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the
+     * name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN,
+     * shown here in bold:
      * </p>
      * <p>
      * arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>
      * 846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
      * </p>
      * 
-     * @return The identifier of the flow for initiating the chat. To see the ContactFlowId in the Amazon Connect
-     *         console user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the
-     *         flow. On the flow page, under the name of the flow, choose <b>Show additional flow information</b>. The
-     *         ContactFlowId is the last part of the ARN, shown here in bold: </p>
+     * @return The identifier of the flow for initiating the chat. To see the ContactFlowId in the Amazon Connect admin
+     *         website, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow
+     *         page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is
+     *         the last part of the ARN, shown here in bold: </p>
      *         <p>
      *         arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>
      *         846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
@@ -183,10 +251,10 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the flow for initiating the chat. To see the ContactFlowId in the Amazon Connect console user
-     * interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page,
-     * under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of
-     * the ARN, shown here in bold:
+     * The identifier of the flow for initiating the chat. To see the ContactFlowId in the Amazon Connect admin website,
+     * on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under the
+     * name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the last part of the ARN,
+     * shown here in bold:
      * </p>
      * <p>
      * arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>
@@ -194,10 +262,10 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param contactFlowId
-     *        The identifier of the flow for initiating the chat. To see the ContactFlowId in the Amazon Connect console
-     *        user interface, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the
-     *        flow page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId
-     *        is the last part of the ARN, shown here in bold: </p>
+     *        The identifier of the flow for initiating the chat. To see the ContactFlowId in the Amazon Connect admin
+     *        website, on the navigation menu go to <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow
+     *        page, under the name of the flow, choose <b>Show additional flow information</b>. The ContactFlowId is the
+     *        last part of the ARN, shown here in bold: </p>
      *        <p>
      *        arn:aws:connect:us-west-2:xxxxxxxxxxxx:instance/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/contact-flow/<b>
      *        846ec553-a005-41c0-8341-xxxxxxxxxxxx</b>
@@ -346,11 +414,13 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The initial message to be sent to the newly created chat.
+     * The initial message to be sent to the newly created chat. If you have a Lex bot in your flow, the initial message
+     * is not delivered to the Lex bot.
      * </p>
      * 
      * @param initialMessage
-     *        The initial message to be sent to the newly created chat.
+     *        The initial message to be sent to the newly created chat. If you have a Lex bot in your flow, the initial
+     *        message is not delivered to the Lex bot.
      */
 
     public void setInitialMessage(ChatMessage initialMessage) {
@@ -359,10 +429,12 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The initial message to be sent to the newly created chat.
+     * The initial message to be sent to the newly created chat. If you have a Lex bot in your flow, the initial message
+     * is not delivered to the Lex bot.
      * </p>
      * 
-     * @return The initial message to be sent to the newly created chat.
+     * @return The initial message to be sent to the newly created chat. If you have a Lex bot in your flow, the initial
+     *         message is not delivered to the Lex bot.
      */
 
     public ChatMessage getInitialMessage() {
@@ -371,11 +443,13 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The initial message to be sent to the newly created chat.
+     * The initial message to be sent to the newly created chat. If you have a Lex bot in your flow, the initial message
+     * is not delivered to the Lex bot.
      * </p>
      * 
      * @param initialMessage
-     *        The initial message to be sent to the newly created chat.
+     *        The initial message to be sent to the newly created chat. If you have a Lex bot in your flow, the initial
+     *        message is not delivered to the Lex bot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -445,12 +519,12 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25
-     * hour. The minumum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).
+     * hour. The minimum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).
      * </p>
      * 
      * @param chatDurationInMinutes
      *        The total duration of the newly started chat session. If not specified, the chat session duration defaults
-     *        to 25 hour. The minumum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes
+     *        to 25 hour. The minimum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes
      *        (7 days).
      */
 
@@ -461,11 +535,11 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25
-     * hour. The minumum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).
+     * hour. The minimum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).
      * </p>
      * 
      * @return The total duration of the newly started chat session. If not specified, the chat session duration
-     *         defaults to 25 hour. The minumum configurable time is 60 minutes. The maximum configurable time is 10,080
+     *         defaults to 25 hour. The minimum configurable time is 60 minutes. The maximum configurable time is 10,080
      *         minutes (7 days).
      */
 
@@ -476,12 +550,12 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25
-     * hour. The minumum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).
+     * hour. The minimum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).
      * </p>
      * 
      * @param chatDurationInMinutes
      *        The total duration of the newly started chat session. If not specified, the chat session duration defaults
-     *        to 25 hour. The minumum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes
+     *        to 25 hour. The minimum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes
      *        (7 days).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -493,11 +567,39 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The supported chat message content types. Content types can be text/plain or both text/plain and text/markdown.
+     * The supported chat message content types. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, <code>application/vnd.amazonaws.connect.message.interactive</code>, and
+     * <code>application/vnd.amazonaws.connect.message.interactive.response</code>.
      * </p>
+     * <p>
+     * Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list.
+     * For example, all the following lists are valid because they contain <code>text/plain</code>:
+     * <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>,
+     * <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>.
+     * </p>
+     * <note>
+     * <p>
+     * The type <code>application/vnd.amazonaws.connect.message.interactive</code> is required to use the <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show view</a> flow block.
+     * </p>
+     * </note>
      * 
-     * @return The supported chat message content types. Content types can be text/plain or both text/plain and
-     *         text/markdown.
+     * @return The supported chat message content types. Supported types are <code>text/plain</code>,
+     *         <code>text/markdown</code>, <code>application/json</code>,
+     *         <code>application/vnd.amazonaws.connect.message.interactive</code>, and
+     *         <code>application/vnd.amazonaws.connect.message.interactive.response</code>. </p>
+     *         <p>
+     *         Content types must always contain <code>text/plain</code>. You can then put any other supported type in
+     *         the list. For example, all the following lists are valid because they contain <code>text/plain</code>:
+     *         <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>,
+     *         <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>
+     *         .
+     *         </p>
+     *         <note>
+     *         <p>
+     *         The type <code>application/vnd.amazonaws.connect.message.interactive</code> is required to use the <a
+     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show view</a> flow
+     *         block.
+     *         </p>
      */
 
     public java.util.List<String> getSupportedMessagingContentTypes() {
@@ -506,12 +608,40 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The supported chat message content types. Content types can be text/plain or both text/plain and text/markdown.
+     * The supported chat message content types. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, <code>application/vnd.amazonaws.connect.message.interactive</code>, and
+     * <code>application/vnd.amazonaws.connect.message.interactive.response</code>.
      * </p>
+     * <p>
+     * Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list.
+     * For example, all the following lists are valid because they contain <code>text/plain</code>:
+     * <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>,
+     * <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>.
+     * </p>
+     * <note>
+     * <p>
+     * The type <code>application/vnd.amazonaws.connect.message.interactive</code> is required to use the <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show view</a> flow block.
+     * </p>
+     * </note>
      * 
      * @param supportedMessagingContentTypes
-     *        The supported chat message content types. Content types can be text/plain or both text/plain and
-     *        text/markdown.
+     *        The supported chat message content types. Supported types are <code>text/plain</code>,
+     *        <code>text/markdown</code>, <code>application/json</code>,
+     *        <code>application/vnd.amazonaws.connect.message.interactive</code>, and
+     *        <code>application/vnd.amazonaws.connect.message.interactive.response</code>. </p>
+     *        <p>
+     *        Content types must always contain <code>text/plain</code>. You can then put any other supported type in
+     *        the list. For example, all the following lists are valid because they contain <code>text/plain</code>:
+     *        <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>,
+     *        <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>
+     *        .
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The type <code>application/vnd.amazonaws.connect.message.interactive</code> is required to use the <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show view</a> flow
+     *        block.
+     *        </p>
      */
 
     public void setSupportedMessagingContentTypes(java.util.Collection<String> supportedMessagingContentTypes) {
@@ -525,8 +655,21 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The supported chat message content types. Content types can be text/plain or both text/plain and text/markdown.
+     * The supported chat message content types. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, <code>application/vnd.amazonaws.connect.message.interactive</code>, and
+     * <code>application/vnd.amazonaws.connect.message.interactive.response</code>.
      * </p>
+     * <p>
+     * Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list.
+     * For example, all the following lists are valid because they contain <code>text/plain</code>:
+     * <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>,
+     * <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>.
+     * </p>
+     * <note>
+     * <p>
+     * The type <code>application/vnd.amazonaws.connect.message.interactive</code> is required to use the <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show view</a> flow block.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSupportedMessagingContentTypes(java.util.Collection)} or
@@ -534,8 +677,23 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param supportedMessagingContentTypes
-     *        The supported chat message content types. Content types can be text/plain or both text/plain and
-     *        text/markdown.
+     *        The supported chat message content types. Supported types are <code>text/plain</code>,
+     *        <code>text/markdown</code>, <code>application/json</code>,
+     *        <code>application/vnd.amazonaws.connect.message.interactive</code>, and
+     *        <code>application/vnd.amazonaws.connect.message.interactive.response</code>. </p>
+     *        <p>
+     *        Content types must always contain <code>text/plain</code>. You can then put any other supported type in
+     *        the list. For example, all the following lists are valid because they contain <code>text/plain</code>:
+     *        <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>,
+     *        <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>
+     *        .
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The type <code>application/vnd.amazonaws.connect.message.interactive</code> is required to use the <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show view</a> flow
+     *        block.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -551,17 +709,322 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The supported chat message content types. Content types can be text/plain or both text/plain and text/markdown.
+     * The supported chat message content types. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, <code>application/vnd.amazonaws.connect.message.interactive</code>, and
+     * <code>application/vnd.amazonaws.connect.message.interactive.response</code>.
      * </p>
+     * <p>
+     * Content types must always contain <code>text/plain</code>. You can then put any other supported type in the list.
+     * For example, all the following lists are valid because they contain <code>text/plain</code>:
+     * <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>,
+     * <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>.
+     * </p>
+     * <note>
+     * <p>
+     * The type <code>application/vnd.amazonaws.connect.message.interactive</code> is required to use the <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show view</a> flow block.
+     * </p>
+     * </note>
      * 
      * @param supportedMessagingContentTypes
-     *        The supported chat message content types. Content types can be text/plain or both text/plain and
-     *        text/markdown.
+     *        The supported chat message content types. Supported types are <code>text/plain</code>,
+     *        <code>text/markdown</code>, <code>application/json</code>,
+     *        <code>application/vnd.amazonaws.connect.message.interactive</code>, and
+     *        <code>application/vnd.amazonaws.connect.message.interactive.response</code>. </p>
+     *        <p>
+     *        Content types must always contain <code>text/plain</code>. You can then put any other supported type in
+     *        the list. For example, all the following lists are valid because they contain <code>text/plain</code>:
+     *        <code>[text/plain, text/markdown, application/json]</code>, <code>[text/markdown, text/plain]</code>,
+     *        <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>
+     *        .
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The type <code>application/vnd.amazonaws.connect.message.interactive</code> is required to use the <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show view</a> flow
+     *        block.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StartChatContactRequest withSupportedMessagingContentTypes(java.util.Collection<String> supportedMessagingContentTypes) {
         setSupportedMessagingContentTypes(supportedMessagingContentTypes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enable persistent chats. For more information about enabling persistent chat, and for example use cases and how
+     * to configure for them, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent chat</a>.
+     * </p>
+     * 
+     * @param persistentChat
+     *        Enable persistent chats. For more information about enabling persistent chat, and for example use cases
+     *        and how to configure for them, see <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent
+     *        chat</a>.
+     */
+
+    public void setPersistentChat(PersistentChat persistentChat) {
+        this.persistentChat = persistentChat;
+    }
+
+    /**
+     * <p>
+     * Enable persistent chats. For more information about enabling persistent chat, and for example use cases and how
+     * to configure for them, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent chat</a>.
+     * </p>
+     * 
+     * @return Enable persistent chats. For more information about enabling persistent chat, and for example use cases
+     *         and how to configure for them, see <a
+     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent
+     *         chat</a>.
+     */
+
+    public PersistentChat getPersistentChat() {
+        return this.persistentChat;
+    }
+
+    /**
+     * <p>
+     * Enable persistent chats. For more information about enabling persistent chat, and for example use cases and how
+     * to configure for them, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent chat</a>.
+     * </p>
+     * 
+     * @param persistentChat
+     *        Enable persistent chats. For more information about enabling persistent chat, and for example use cases
+     *        and how to configure for them, see <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent
+     *        chat</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartChatContactRequest withPersistentChat(PersistentChat persistentChat) {
+        setPersistentChat(persistentChat);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for an Amazon Connect contact. This identifier is related to the chat starting.
+     * </p>
+     * <note>
+     * <p>
+     * You cannot provide data for both RelatedContactId and PersistentChat.
+     * </p>
+     * </note>
+     * 
+     * @param relatedContactId
+     *        The unique identifier for an Amazon Connect contact. This identifier is related to the chat starting.</p>
+     *        <note>
+     *        <p>
+     *        You cannot provide data for both RelatedContactId and PersistentChat.
+     *        </p>
+     */
+
+    public void setRelatedContactId(String relatedContactId) {
+        this.relatedContactId = relatedContactId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for an Amazon Connect contact. This identifier is related to the chat starting.
+     * </p>
+     * <note>
+     * <p>
+     * You cannot provide data for both RelatedContactId and PersistentChat.
+     * </p>
+     * </note>
+     * 
+     * @return The unique identifier for an Amazon Connect contact. This identifier is related to the chat starting.</p>
+     *         <note>
+     *         <p>
+     *         You cannot provide data for both RelatedContactId and PersistentChat.
+     *         </p>
+     */
+
+    public String getRelatedContactId() {
+        return this.relatedContactId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for an Amazon Connect contact. This identifier is related to the chat starting.
+     * </p>
+     * <note>
+     * <p>
+     * You cannot provide data for both RelatedContactId and PersistentChat.
+     * </p>
+     * </note>
+     * 
+     * @param relatedContactId
+     *        The unique identifier for an Amazon Connect contact. This identifier is related to the chat starting.</p>
+     *        <note>
+     *        <p>
+     *        You cannot provide data for both RelatedContactId and PersistentChat.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartChatContactRequest withRelatedContactId(String relatedContactId) {
+        setRelatedContactId(relatedContactId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A set of system defined key-value pairs stored on individual contact segments using an attribute map. The
+     * attributes are standard Amazon Connect attributes. They can be accessed in flows.
+     * </p>
+     * <p>
+     * Attribute keys can include only alphanumeric, -, and _.
+     * </p>
+     * <p>
+     * This field can be used to show channel subtype, such as <code>connect:Guide</code>.
+     * </p>
+     * <note>
+     * <p>
+     * The types <code>application/vnd.amazonaws.connect.message.interactive</code> and
+     * <code>application/vnd.amazonaws.connect.message.interactive.response</code> must be present in the
+     * SupportedMessagingContentTypes field of this API in order to set <code>SegmentAttributes</code> as {
+     * <code> "connect:Subtype": {"valueString" : "connect:Guide" }}</code>.
+     * </p>
+     * </note>
+     * 
+     * @return A set of system defined key-value pairs stored on individual contact segments using an attribute map. The
+     *         attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
+     *         <p>
+     *         Attribute keys can include only alphanumeric, -, and _.
+     *         </p>
+     *         <p>
+     *         This field can be used to show channel subtype, such as <code>connect:Guide</code>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         The types <code>application/vnd.amazonaws.connect.message.interactive</code> and
+     *         <code>application/vnd.amazonaws.connect.message.interactive.response</code> must be present in the
+     *         SupportedMessagingContentTypes field of this API in order to set <code>SegmentAttributes</code> as {
+     *         <code> "connect:Subtype": {"valueString" : "connect:Guide" }}</code>.
+     *         </p>
+     */
+
+    public java.util.Map<String, SegmentAttributeValue> getSegmentAttributes() {
+        return segmentAttributes;
+    }
+
+    /**
+     * <p>
+     * A set of system defined key-value pairs stored on individual contact segments using an attribute map. The
+     * attributes are standard Amazon Connect attributes. They can be accessed in flows.
+     * </p>
+     * <p>
+     * Attribute keys can include only alphanumeric, -, and _.
+     * </p>
+     * <p>
+     * This field can be used to show channel subtype, such as <code>connect:Guide</code>.
+     * </p>
+     * <note>
+     * <p>
+     * The types <code>application/vnd.amazonaws.connect.message.interactive</code> and
+     * <code>application/vnd.amazonaws.connect.message.interactive.response</code> must be present in the
+     * SupportedMessagingContentTypes field of this API in order to set <code>SegmentAttributes</code> as {
+     * <code> "connect:Subtype": {"valueString" : "connect:Guide" }}</code>.
+     * </p>
+     * </note>
+     * 
+     * @param segmentAttributes
+     *        A set of system defined key-value pairs stored on individual contact segments using an attribute map. The
+     *        attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
+     *        <p>
+     *        Attribute keys can include only alphanumeric, -, and _.
+     *        </p>
+     *        <p>
+     *        This field can be used to show channel subtype, such as <code>connect:Guide</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The types <code>application/vnd.amazonaws.connect.message.interactive</code> and
+     *        <code>application/vnd.amazonaws.connect.message.interactive.response</code> must be present in the
+     *        SupportedMessagingContentTypes field of this API in order to set <code>SegmentAttributes</code> as {
+     *        <code> "connect:Subtype": {"valueString" : "connect:Guide" }}</code>.
+     *        </p>
+     */
+
+    public void setSegmentAttributes(java.util.Map<String, SegmentAttributeValue> segmentAttributes) {
+        this.segmentAttributes = segmentAttributes;
+    }
+
+    /**
+     * <p>
+     * A set of system defined key-value pairs stored on individual contact segments using an attribute map. The
+     * attributes are standard Amazon Connect attributes. They can be accessed in flows.
+     * </p>
+     * <p>
+     * Attribute keys can include only alphanumeric, -, and _.
+     * </p>
+     * <p>
+     * This field can be used to show channel subtype, such as <code>connect:Guide</code>.
+     * </p>
+     * <note>
+     * <p>
+     * The types <code>application/vnd.amazonaws.connect.message.interactive</code> and
+     * <code>application/vnd.amazonaws.connect.message.interactive.response</code> must be present in the
+     * SupportedMessagingContentTypes field of this API in order to set <code>SegmentAttributes</code> as {
+     * <code> "connect:Subtype": {"valueString" : "connect:Guide" }}</code>.
+     * </p>
+     * </note>
+     * 
+     * @param segmentAttributes
+     *        A set of system defined key-value pairs stored on individual contact segments using an attribute map. The
+     *        attributes are standard Amazon Connect attributes. They can be accessed in flows.</p>
+     *        <p>
+     *        Attribute keys can include only alphanumeric, -, and _.
+     *        </p>
+     *        <p>
+     *        This field can be used to show channel subtype, such as <code>connect:Guide</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The types <code>application/vnd.amazonaws.connect.message.interactive</code> and
+     *        <code>application/vnd.amazonaws.connect.message.interactive.response</code> must be present in the
+     *        SupportedMessagingContentTypes field of this API in order to set <code>SegmentAttributes</code> as {
+     *        <code> "connect:Subtype": {"valueString" : "connect:Guide" }}</code>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartChatContactRequest withSegmentAttributes(java.util.Map<String, SegmentAttributeValue> segmentAttributes) {
+        setSegmentAttributes(segmentAttributes);
+        return this;
+    }
+
+    /**
+     * Add a single SegmentAttributes entry
+     *
+     * @see StartChatContactRequest#withSegmentAttributes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartChatContactRequest addSegmentAttributesEntry(String key, SegmentAttributeValue value) {
+        if (null == this.segmentAttributes) {
+            this.segmentAttributes = new java.util.HashMap<String, SegmentAttributeValue>();
+        }
+        if (this.segmentAttributes.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.segmentAttributes.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into SegmentAttributes.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartChatContactRequest clearSegmentAttributesEntries() {
+        this.segmentAttributes = null;
         return this;
     }
 
@@ -592,7 +1055,13 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
         if (getChatDurationInMinutes() != null)
             sb.append("ChatDurationInMinutes: ").append(getChatDurationInMinutes()).append(",");
         if (getSupportedMessagingContentTypes() != null)
-            sb.append("SupportedMessagingContentTypes: ").append(getSupportedMessagingContentTypes());
+            sb.append("SupportedMessagingContentTypes: ").append(getSupportedMessagingContentTypes()).append(",");
+        if (getPersistentChat() != null)
+            sb.append("PersistentChat: ").append(getPersistentChat()).append(",");
+        if (getRelatedContactId() != null)
+            sb.append("RelatedContactId: ").append(getRelatedContactId()).append(",");
+        if (getSegmentAttributes() != null)
+            sb.append("SegmentAttributes: ").append(getSegmentAttributes());
         sb.append("}");
         return sb.toString();
     }
@@ -640,6 +1109,18 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
         if (other.getSupportedMessagingContentTypes() != null
                 && other.getSupportedMessagingContentTypes().equals(this.getSupportedMessagingContentTypes()) == false)
             return false;
+        if (other.getPersistentChat() == null ^ this.getPersistentChat() == null)
+            return false;
+        if (other.getPersistentChat() != null && other.getPersistentChat().equals(this.getPersistentChat()) == false)
+            return false;
+        if (other.getRelatedContactId() == null ^ this.getRelatedContactId() == null)
+            return false;
+        if (other.getRelatedContactId() != null && other.getRelatedContactId().equals(this.getRelatedContactId()) == false)
+            return false;
+        if (other.getSegmentAttributes() == null ^ this.getSegmentAttributes() == null)
+            return false;
+        if (other.getSegmentAttributes() != null && other.getSegmentAttributes().equals(this.getSegmentAttributes()) == false)
+            return false;
         return true;
     }
 
@@ -656,6 +1137,9 @@ public class StartChatContactRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getChatDurationInMinutes() == null) ? 0 : getChatDurationInMinutes().hashCode());
         hashCode = prime * hashCode + ((getSupportedMessagingContentTypes() == null) ? 0 : getSupportedMessagingContentTypes().hashCode());
+        hashCode = prime * hashCode + ((getPersistentChat() == null) ? 0 : getPersistentChat().hashCode());
+        hashCode = prime * hashCode + ((getRelatedContactId() == null) ? 0 : getRelatedContactId().hashCode());
+        hashCode = prime * hashCode + ((getSegmentAttributes() == null) ? 0 : getSegmentAttributes().hashCode());
         return hashCode;
     }
 

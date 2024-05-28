@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,22 +27,29 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on your character set,
-     * this may be fewer than 5,000 characters.
+     * The text to translate. The text string can be a maximum of 10,000 bytes long. Depending on your character set,
+     * this may be fewer than 10,000 characters.
      * </p>
      */
     private String text;
     /**
      * <p>
-     * The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology list at
-     * most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256 terms.
+     * The name of a terminology list file to add to the translation job. This file provides source terms and the
+     * desired translation for each term. A terminology list can contain a maximum of 256 terms. You can use one custom
+     * terminology resource in your translation request.
+     * </p>
+     * <p>
+     * Use the <a>ListTerminologies</a> operation to get the available terminology lists.
+     * </p>
+     * <p>
+     * For more information about custom terminology lists, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.
      * </p>
      */
     private java.util.List<String> terminologyNames;
     /**
      * <p>
-     * The language code for the language of the source text. The language must be a language supported by Amazon
-     * Translate. For a list of language codes, see <a
+     * The language code for the language of the source text. For a list of language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * </p>
      * <p>
@@ -61,28 +68,44 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String sourceLanguageCode;
     /**
      * <p>
-     * The language code requested for the language of the target text. The language must be a language supported by
-     * Amazon Translate.
+     * The language code requested for the language of the target text. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * </p>
      */
     private String targetLanguageCode;
     /**
      * <p>
-     * Settings to configure your translation output, including the option to set the formality level of the output text
-     * and the option to mask profane words and phrases.
+     * Settings to configure your translation output. You can configure the following options:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Brevity: reduces the length of the translated output for most translations.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Formality: sets the formality level of the output text.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Profanity: masks profane words and phrases in your translation output.
+     * </p>
+     * </li>
+     * </ul>
      */
     private TranslationSettings settings;
 
     /**
      * <p>
-     * The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on your character set,
-     * this may be fewer than 5,000 characters.
+     * The text to translate. The text string can be a maximum of 10,000 bytes long. Depending on your character set,
+     * this may be fewer than 10,000 characters.
      * </p>
      * 
      * @param text
-     *        The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on your character
-     *        set, this may be fewer than 5,000 characters.
+     *        The text to translate. The text string can be a maximum of 10,000 bytes long. Depending on your character
+     *        set, this may be fewer than 10,000 characters.
      */
 
     public void setText(String text) {
@@ -91,12 +114,12 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on your character set,
-     * this may be fewer than 5,000 characters.
+     * The text to translate. The text string can be a maximum of 10,000 bytes long. Depending on your character set,
+     * this may be fewer than 10,000 characters.
      * </p>
      * 
-     * @return The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on your character
-     *         set, this may be fewer than 5,000 characters.
+     * @return The text to translate. The text string can be a maximum of 10,000 bytes long. Depending on your character
+     *         set, this may be fewer than 10,000 characters.
      */
 
     public String getText() {
@@ -105,13 +128,13 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on your character set,
-     * this may be fewer than 5,000 characters.
+     * The text to translate. The text string can be a maximum of 10,000 bytes long. Depending on your character set,
+     * this may be fewer than 10,000 characters.
      * </p>
      * 
      * @param text
-     *        The text to translate. The text string can be a maximum of 5,000 bytes long. Depending on your character
-     *        set, this may be fewer than 5,000 characters.
+     *        The text to translate. The text string can be a maximum of 10,000 bytes long. Depending on your character
+     *        set, this may be fewer than 10,000 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,13 +145,28 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology list at
-     * most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256 terms.
+     * The name of a terminology list file to add to the translation job. This file provides source terms and the
+     * desired translation for each term. A terminology list can contain a maximum of 256 terms. You can use one custom
+     * terminology resource in your translation request.
+     * </p>
+     * <p>
+     * Use the <a>ListTerminologies</a> operation to get the available terminology lists.
+     * </p>
+     * <p>
+     * For more information about custom terminology lists, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.
      * </p>
      * 
-     * @return The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology
-     *         list at most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256
-     *         terms.
+     * @return The name of a terminology list file to add to the translation job. This file provides source terms and
+     *         the desired translation for each term. A terminology list can contain a maximum of 256 terms. You can use
+     *         one custom terminology resource in your translation request.</p>
+     *         <p>
+     *         Use the <a>ListTerminologies</a> operation to get the available terminology lists.
+     *         </p>
+     *         <p>
+     *         For more information about custom terminology lists, see <a
+     *         href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom
+     *         terminology</a>.
      */
 
     public java.util.List<String> getTerminologyNames() {
@@ -137,14 +175,28 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology list at
-     * most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256 terms.
+     * The name of a terminology list file to add to the translation job. This file provides source terms and the
+     * desired translation for each term. A terminology list can contain a maximum of 256 terms. You can use one custom
+     * terminology resource in your translation request.
+     * </p>
+     * <p>
+     * Use the <a>ListTerminologies</a> operation to get the available terminology lists.
+     * </p>
+     * <p>
+     * For more information about custom terminology lists, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.
      * </p>
      * 
      * @param terminologyNames
-     *        The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology
-     *        list at most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256
-     *        terms.
+     *        The name of a terminology list file to add to the translation job. This file provides source terms and the
+     *        desired translation for each term. A terminology list can contain a maximum of 256 terms. You can use one
+     *        custom terminology resource in your translation request.</p>
+     *        <p>
+     *        Use the <a>ListTerminologies</a> operation to get the available terminology lists.
+     *        </p>
+     *        <p>
+     *        For more information about custom terminology lists, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.
      */
 
     public void setTerminologyNames(java.util.Collection<String> terminologyNames) {
@@ -158,8 +210,16 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology list at
-     * most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256 terms.
+     * The name of a terminology list file to add to the translation job. This file provides source terms and the
+     * desired translation for each term. A terminology list can contain a maximum of 256 terms. You can use one custom
+     * terminology resource in your translation request.
+     * </p>
+     * <p>
+     * Use the <a>ListTerminologies</a> operation to get the available terminology lists.
+     * </p>
+     * <p>
+     * For more information about custom terminology lists, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -168,9 +228,15 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param terminologyNames
-     *        The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology
-     *        list at most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256
-     *        terms.
+     *        The name of a terminology list file to add to the translation job. This file provides source terms and the
+     *        desired translation for each term. A terminology list can contain a maximum of 256 terms. You can use one
+     *        custom terminology resource in your translation request.</p>
+     *        <p>
+     *        Use the <a>ListTerminologies</a> operation to get the available terminology lists.
+     *        </p>
+     *        <p>
+     *        For more information about custom terminology lists, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -186,14 +252,28 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology list at
-     * most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256 terms.
+     * The name of a terminology list file to add to the translation job. This file provides source terms and the
+     * desired translation for each term. A terminology list can contain a maximum of 256 terms. You can use one custom
+     * terminology resource in your translation request.
+     * </p>
+     * <p>
+     * Use the <a>ListTerminologies</a> operation to get the available terminology lists.
+     * </p>
+     * <p>
+     * For more information about custom terminology lists, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.
      * </p>
      * 
      * @param terminologyNames
-     *        The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology
-     *        list at most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256
-     *        terms.
+     *        The name of a terminology list file to add to the translation job. This file provides source terms and the
+     *        desired translation for each term. A terminology list can contain a maximum of 256 terms. You can use one
+     *        custom terminology resource in your translation request.</p>
+     *        <p>
+     *        Use the <a>ListTerminologies</a> operation to get the available terminology lists.
+     *        </p>
+     *        <p>
+     *        For more information about custom terminology lists, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,8 +284,7 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The language code for the language of the source text. The language must be a language supported by Amazon
-     * Translate. For a list of language codes, see <a
+     * The language code for the language of the source text. For a list of language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * </p>
      * <p>
@@ -222,8 +301,7 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </note>
      * 
      * @param sourceLanguageCode
-     *        The language code for the language of the source text. The language must be a language supported by Amazon
-     *        Translate. For a list of language codes, see <a
+     *        The language code for the language of the source text. For a list of language codes, see <a
      *        href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
      *        <p>
      *        To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in
@@ -245,8 +323,7 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The language code for the language of the source text. The language must be a language supported by Amazon
-     * Translate. For a list of language codes, see <a
+     * The language code for the language of the source text. For a list of language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * </p>
      * <p>
@@ -262,8 +339,7 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * </note>
      * 
-     * @return The language code for the language of the source text. The language must be a language supported by
-     *         Amazon Translate. For a list of language codes, see <a
+     * @return The language code for the language of the source text. For a list of language codes, see <a
      *         href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
      *         languages</a>.</p>
      *         <p>
@@ -286,8 +362,7 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The language code for the language of the source text. The language must be a language supported by Amazon
-     * Translate. For a list of language codes, see <a
+     * The language code for the language of the source text. For a list of language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * </p>
      * <p>
@@ -304,8 +379,7 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </note>
      * 
      * @param sourceLanguageCode
-     *        The language code for the language of the source text. The language must be a language supported by Amazon
-     *        Translate. For a list of language codes, see <a
+     *        The language code for the language of the source text. For a list of language codes, see <a
      *        href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
      *        <p>
      *        To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in
@@ -329,13 +403,13 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The language code requested for the language of the target text. The language must be a language supported by
-     * Amazon Translate.
+     * The language code requested for the language of the target text. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * </p>
      * 
      * @param targetLanguageCode
-     *        The language code requested for the language of the target text. The language must be a language supported
-     *        by Amazon Translate.
+     *        The language code requested for the language of the target text. For a list of language codes, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      */
 
     public void setTargetLanguageCode(String targetLanguageCode) {
@@ -344,12 +418,12 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The language code requested for the language of the target text. The language must be a language supported by
-     * Amazon Translate.
+     * The language code requested for the language of the target text. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * </p>
      * 
-     * @return The language code requested for the language of the target text. The language must be a language
-     *         supported by Amazon Translate.
+     * @return The language code requested for the language of the target text. For a list of language codes, see <a
+     *         href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      */
 
     public String getTargetLanguageCode() {
@@ -358,13 +432,13 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The language code requested for the language of the target text. The language must be a language supported by
-     * Amazon Translate.
+     * The language code requested for the language of the target text. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * </p>
      * 
      * @param targetLanguageCode
-     *        The language code requested for the language of the target text. The language must be a language supported
-     *        by Amazon Translate.
+     *        The language code requested for the language of the target text. For a list of language codes, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -375,13 +449,44 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Settings to configure your translation output, including the option to set the formality level of the output text
-     * and the option to mask profane words and phrases.
+     * Settings to configure your translation output. You can configure the following options:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Brevity: reduces the length of the translated output for most translations.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Formality: sets the formality level of the output text.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Profanity: masks profane words and phrases in your translation output.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param settings
-     *        Settings to configure your translation output, including the option to set the formality level of the
-     *        output text and the option to mask profane words and phrases.
+     *        Settings to configure your translation output. You can configure the following options:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Brevity: reduces the length of the translated output for most translations.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Formality: sets the formality level of the output text.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Profanity: masks profane words and phrases in your translation output.
+     *        </p>
+     *        </li>
      */
 
     public void setSettings(TranslationSettings settings) {
@@ -390,12 +495,43 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Settings to configure your translation output, including the option to set the formality level of the output text
-     * and the option to mask profane words and phrases.
+     * Settings to configure your translation output. You can configure the following options:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Brevity: reduces the length of the translated output for most translations.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Formality: sets the formality level of the output text.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Profanity: masks profane words and phrases in your translation output.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Settings to configure your translation output, including the option to set the formality level of the
-     *         output text and the option to mask profane words and phrases.
+     * @return Settings to configure your translation output. You can configure the following options:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Brevity: reduces the length of the translated output for most translations.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Formality: sets the formality level of the output text.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Profanity: masks profane words and phrases in your translation output.
+     *         </p>
+     *         </li>
      */
 
     public TranslationSettings getSettings() {
@@ -404,13 +540,44 @@ public class TranslateTextRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Settings to configure your translation output, including the option to set the formality level of the output text
-     * and the option to mask profane words and phrases.
+     * Settings to configure your translation output. You can configure the following options:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Brevity: reduces the length of the translated output for most translations.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Formality: sets the formality level of the output text.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Profanity: masks profane words and phrases in your translation output.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param settings
-     *        Settings to configure your translation output, including the option to set the formality level of the
-     *        output text and the option to mask profane words and phrases.
+     *        Settings to configure your translation output. You can configure the following options:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Brevity: reduces the length of the translated output for most translations.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Formality: sets the formality level of the output text.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Profanity: masks profane words and phrases in your translation output.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

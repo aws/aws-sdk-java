@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -157,6 +157,18 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private java.util.Map<String, String> attributes;
+    /**
+     * <p>
+     * An alternative to <code>PartyType</code> which accepts any string as input.
+     * </p>
+     */
+    private String partyTypeString;
+    /**
+     * <p>
+     * An alternative to <code>Gender</code> which accepts any string as input.
+     * </p>
+     */
+    private String genderString;
 
     /**
      * <p>
@@ -287,7 +299,7 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        The type of profile used to describe the customer.
      * @see PartyType
      */
-
+    @Deprecated
     public void setPartyType(String partyType) {
         this.partyType = partyType;
     }
@@ -300,7 +312,7 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @return The type of profile used to describe the customer.
      * @see PartyType
      */
-
+    @Deprecated
     public String getPartyType() {
         return this.partyType;
     }
@@ -315,7 +327,7 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PartyType
      */
-
+    @Deprecated
     public CreateProfileRequest withPartyType(String partyType) {
         setPartyType(partyType);
         return this;
@@ -331,7 +343,7 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PartyType
      */
-
+    @Deprecated
     public CreateProfileRequest withPartyType(PartyType partyType) {
         this.partyType = partyType.toString();
         return this;
@@ -546,7 +558,7 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        The gender with which the customer identifies.
      * @see Gender
      */
-
+    @Deprecated
     public void setGender(String gender) {
         this.gender = gender;
     }
@@ -559,7 +571,7 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @return The gender with which the customer identifies.
      * @see Gender
      */
-
+    @Deprecated
     public String getGender() {
         return this.gender;
     }
@@ -574,7 +586,7 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Gender
      */
-
+    @Deprecated
     public CreateProfileRequest withGender(String gender) {
         setGender(gender);
         return this;
@@ -590,7 +602,7 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Gender
      */
-
+    @Deprecated
     public CreateProfileRequest withGender(Gender gender) {
         this.gender = gender.toString();
         return this;
@@ -1105,6 +1117,86 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * An alternative to <code>PartyType</code> which accepts any string as input.
+     * </p>
+     * 
+     * @param partyTypeString
+     *        An alternative to <code>PartyType</code> which accepts any string as input.
+     */
+
+    public void setPartyTypeString(String partyTypeString) {
+        this.partyTypeString = partyTypeString;
+    }
+
+    /**
+     * <p>
+     * An alternative to <code>PartyType</code> which accepts any string as input.
+     * </p>
+     * 
+     * @return An alternative to <code>PartyType</code> which accepts any string as input.
+     */
+
+    public String getPartyTypeString() {
+        return this.partyTypeString;
+    }
+
+    /**
+     * <p>
+     * An alternative to <code>PartyType</code> which accepts any string as input.
+     * </p>
+     * 
+     * @param partyTypeString
+     *        An alternative to <code>PartyType</code> which accepts any string as input.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateProfileRequest withPartyTypeString(String partyTypeString) {
+        setPartyTypeString(partyTypeString);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An alternative to <code>Gender</code> which accepts any string as input.
+     * </p>
+     * 
+     * @param genderString
+     *        An alternative to <code>Gender</code> which accepts any string as input.
+     */
+
+    public void setGenderString(String genderString) {
+        this.genderString = genderString;
+    }
+
+    /**
+     * <p>
+     * An alternative to <code>Gender</code> which accepts any string as input.
+     * </p>
+     * 
+     * @return An alternative to <code>Gender</code> which accepts any string as input.
+     */
+
+    public String getGenderString() {
+        return this.genderString;
+    }
+
+    /**
+     * <p>
+     * An alternative to <code>Gender</code> which accepts any string as input.
+     * </p>
+     * 
+     * @param genderString
+     *        An alternative to <code>Gender</code> which accepts any string as input.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateProfileRequest withGenderString(String genderString) {
+        setGenderString(genderString);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1119,47 +1211,51 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getDomainName() != null)
             sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getAccountNumber() != null)
-            sb.append("AccountNumber: ").append(getAccountNumber()).append(",");
+            sb.append("AccountNumber: ").append("***Sensitive Data Redacted***").append(",");
         if (getAdditionalInformation() != null)
-            sb.append("AdditionalInformation: ").append(getAdditionalInformation()).append(",");
+            sb.append("AdditionalInformation: ").append("***Sensitive Data Redacted***").append(",");
         if (getPartyType() != null)
-            sb.append("PartyType: ").append(getPartyType()).append(",");
+            sb.append("PartyType: ").append("***Sensitive Data Redacted***").append(",");
         if (getBusinessName() != null)
-            sb.append("BusinessName: ").append(getBusinessName()).append(",");
+            sb.append("BusinessName: ").append("***Sensitive Data Redacted***").append(",");
         if (getFirstName() != null)
-            sb.append("FirstName: ").append(getFirstName()).append(",");
+            sb.append("FirstName: ").append("***Sensitive Data Redacted***").append(",");
         if (getMiddleName() != null)
-            sb.append("MiddleName: ").append(getMiddleName()).append(",");
+            sb.append("MiddleName: ").append("***Sensitive Data Redacted***").append(",");
         if (getLastName() != null)
-            sb.append("LastName: ").append(getLastName()).append(",");
+            sb.append("LastName: ").append("***Sensitive Data Redacted***").append(",");
         if (getBirthDate() != null)
-            sb.append("BirthDate: ").append(getBirthDate()).append(",");
+            sb.append("BirthDate: ").append("***Sensitive Data Redacted***").append(",");
         if (getGender() != null)
-            sb.append("Gender: ").append(getGender()).append(",");
+            sb.append("Gender: ").append("***Sensitive Data Redacted***").append(",");
         if (getPhoneNumber() != null)
-            sb.append("PhoneNumber: ").append(getPhoneNumber()).append(",");
+            sb.append("PhoneNumber: ").append("***Sensitive Data Redacted***").append(",");
         if (getMobilePhoneNumber() != null)
-            sb.append("MobilePhoneNumber: ").append(getMobilePhoneNumber()).append(",");
+            sb.append("MobilePhoneNumber: ").append("***Sensitive Data Redacted***").append(",");
         if (getHomePhoneNumber() != null)
-            sb.append("HomePhoneNumber: ").append(getHomePhoneNumber()).append(",");
+            sb.append("HomePhoneNumber: ").append("***Sensitive Data Redacted***").append(",");
         if (getBusinessPhoneNumber() != null)
-            sb.append("BusinessPhoneNumber: ").append(getBusinessPhoneNumber()).append(",");
+            sb.append("BusinessPhoneNumber: ").append("***Sensitive Data Redacted***").append(",");
         if (getEmailAddress() != null)
-            sb.append("EmailAddress: ").append(getEmailAddress()).append(",");
+            sb.append("EmailAddress: ").append("***Sensitive Data Redacted***").append(",");
         if (getPersonalEmailAddress() != null)
-            sb.append("PersonalEmailAddress: ").append(getPersonalEmailAddress()).append(",");
+            sb.append("PersonalEmailAddress: ").append("***Sensitive Data Redacted***").append(",");
         if (getBusinessEmailAddress() != null)
-            sb.append("BusinessEmailAddress: ").append(getBusinessEmailAddress()).append(",");
+            sb.append("BusinessEmailAddress: ").append("***Sensitive Data Redacted***").append(",");
         if (getAddress() != null)
-            sb.append("Address: ").append(getAddress()).append(",");
+            sb.append("Address: ").append("***Sensitive Data Redacted***").append(",");
         if (getShippingAddress() != null)
-            sb.append("ShippingAddress: ").append(getShippingAddress()).append(",");
+            sb.append("ShippingAddress: ").append("***Sensitive Data Redacted***").append(",");
         if (getMailingAddress() != null)
-            sb.append("MailingAddress: ").append(getMailingAddress()).append(",");
+            sb.append("MailingAddress: ").append("***Sensitive Data Redacted***").append(",");
         if (getBillingAddress() != null)
-            sb.append("BillingAddress: ").append(getBillingAddress()).append(",");
+            sb.append("BillingAddress: ").append("***Sensitive Data Redacted***").append(",");
         if (getAttributes() != null)
-            sb.append("Attributes: ").append(getAttributes());
+            sb.append("Attributes: ").append("***Sensitive Data Redacted***").append(",");
+        if (getPartyTypeString() != null)
+            sb.append("PartyTypeString: ").append("***Sensitive Data Redacted***").append(",");
+        if (getGenderString() != null)
+            sb.append("GenderString: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -1262,6 +1358,14 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
             return false;
+        if (other.getPartyTypeString() == null ^ this.getPartyTypeString() == null)
+            return false;
+        if (other.getPartyTypeString() != null && other.getPartyTypeString().equals(this.getPartyTypeString()) == false)
+            return false;
+        if (other.getGenderString() == null ^ this.getGenderString() == null)
+            return false;
+        if (other.getGenderString() != null && other.getGenderString().equals(this.getGenderString()) == false)
+            return false;
         return true;
     }
 
@@ -1292,6 +1396,8 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getMailingAddress() == null) ? 0 : getMailingAddress().hashCode());
         hashCode = prime * hashCode + ((getBillingAddress() == null) ? 0 : getBillingAddress().hashCode());
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
+        hashCode = prime * hashCode + ((getPartyTypeString() == null) ? 0 : getPartyTypeString().hashCode());
+        hashCode = prime * hashCode + ((getGenderString() == null) ? 0 : getGenderString().hashCode());
         return hashCode;
     }
 

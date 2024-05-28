@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class ImportSshPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
     private String sshPublicKeyBody;
     /**
      * <p>
-     * The name of the user account that is assigned to one or more servers.
+     * The name of the Transfer Family user that is assigned to one or more servers.
      * </p>
      */
     private String userName;
@@ -144,11 +144,11 @@ public class ImportSshPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the user account that is assigned to one or more servers.
+     * The name of the Transfer Family user that is assigned to one or more servers.
      * </p>
      * 
      * @param userName
-     *        The name of the user account that is assigned to one or more servers.
+     *        The name of the Transfer Family user that is assigned to one or more servers.
      */
 
     public void setUserName(String userName) {
@@ -157,10 +157,10 @@ public class ImportSshPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the user account that is assigned to one or more servers.
+     * The name of the Transfer Family user that is assigned to one or more servers.
      * </p>
      * 
-     * @return The name of the user account that is assigned to one or more servers.
+     * @return The name of the Transfer Family user that is assigned to one or more servers.
      */
 
     public String getUserName() {
@@ -169,11 +169,11 @@ public class ImportSshPublicKeyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the user account that is assigned to one or more servers.
+     * The name of the Transfer Family user that is assigned to one or more servers.
      * </p>
      * 
      * @param userName
-     *        The name of the user account that is assigned to one or more servers.
+     *        The name of the Transfer Family user that is assigned to one or more servers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

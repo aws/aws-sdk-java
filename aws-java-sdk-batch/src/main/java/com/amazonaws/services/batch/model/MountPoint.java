@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,8 +21,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Details for a Docker volume mount point that's used in a job's container properties. This parameter maps to
  * <code>Volumes</code> in the <a
- * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.19/#create-a-container">Create a
- * container</a> section of the <i>Docker Remote API</i> and the <code>--volume</code> option to docker run.
+ * href="https://docs.docker.com/engine/api/v1.43/#tag/Container/operation/ContainerCreate">Create a container</a>
+ * section of the <i>Docker Remote API</i> and the <code>--volume</code> option to docker run.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/MountPoint" target="_top">AWS API

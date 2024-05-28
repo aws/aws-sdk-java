@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -320,6 +320,52 @@ public class CreateLaunchTemplateVersionRequestMarshaller implements
                         request.addParameter("LaunchTemplateData.NetworkInterface." + networkInterfacesListIndex + ".Ipv6PrefixCount",
                                 StringUtils.fromInteger(requestLaunchTemplateDataNetworkInterfacesListValue.getIpv6PrefixCount()));
                     }
+
+                    if (requestLaunchTemplateDataNetworkInterfacesListValue.getPrimaryIpv6() != null) {
+                        request.addParameter("LaunchTemplateData.NetworkInterface." + networkInterfacesListIndex + ".PrimaryIpv6",
+                                StringUtils.fromBoolean(requestLaunchTemplateDataNetworkInterfacesListValue.getPrimaryIpv6()));
+                    }
+
+                    EnaSrdSpecificationRequest enaSrdSpecification = requestLaunchTemplateDataNetworkInterfacesListValue.getEnaSrdSpecification();
+                    if (enaSrdSpecification != null) {
+
+                        if (enaSrdSpecification.getEnaSrdEnabled() != null) {
+                            request.addParameter("LaunchTemplateData.NetworkInterface." + networkInterfacesListIndex + ".EnaSrdSpecification.EnaSrdEnabled",
+                                    StringUtils.fromBoolean(enaSrdSpecification.getEnaSrdEnabled()));
+                        }
+
+                        EnaSrdUdpSpecificationRequest enaSrdUdpSpecification = enaSrdSpecification.getEnaSrdUdpSpecification();
+                        if (enaSrdUdpSpecification != null) {
+
+                            if (enaSrdUdpSpecification.getEnaSrdUdpEnabled() != null) {
+                                request.addParameter("LaunchTemplateData.NetworkInterface." + networkInterfacesListIndex
+                                        + ".EnaSrdSpecification.EnaSrdUdpSpecification.EnaSrdUdpEnabled",
+                                        StringUtils.fromBoolean(enaSrdUdpSpecification.getEnaSrdUdpEnabled()));
+                            }
+                        }
+                    }
+
+                    ConnectionTrackingSpecificationRequest connectionTrackingSpecification = requestLaunchTemplateDataNetworkInterfacesListValue
+                            .getConnectionTrackingSpecification();
+                    if (connectionTrackingSpecification != null) {
+
+                        if (connectionTrackingSpecification.getTcpEstablishedTimeout() != null) {
+                            request.addParameter("LaunchTemplateData.NetworkInterface." + networkInterfacesListIndex
+                                    + ".ConnectionTrackingSpecification.TcpEstablishedTimeout",
+                                    StringUtils.fromInteger(connectionTrackingSpecification.getTcpEstablishedTimeout()));
+                        }
+
+                        if (connectionTrackingSpecification.getUdpStreamTimeout() != null) {
+                            request.addParameter("LaunchTemplateData.NetworkInterface." + networkInterfacesListIndex
+                                    + ".ConnectionTrackingSpecification.UdpStreamTimeout",
+                                    StringUtils.fromInteger(connectionTrackingSpecification.getUdpStreamTimeout()));
+                        }
+
+                        if (connectionTrackingSpecification.getUdpTimeout() != null) {
+                            request.addParameter("LaunchTemplateData.NetworkInterface." + networkInterfacesListIndex
+                                    + ".ConnectionTrackingSpecification.UdpTimeout", StringUtils.fromInteger(connectionTrackingSpecification.getUdpTimeout()));
+                        }
+                    }
                     networkInterfacesListIndex++;
                 }
             }
@@ -377,6 +423,10 @@ public class CreateLaunchTemplateVersionRequestMarshaller implements
 
                 if (placement.getPartitionNumber() != null) {
                     request.addParameter("LaunchTemplateData.Placement.PartitionNumber", StringUtils.fromInteger(placement.getPartitionNumber()));
+                }
+
+                if (placement.getGroupId() != null) {
+                    request.addParameter("LaunchTemplateData.Placement.GroupId", StringUtils.fromString(placement.getGroupId()));
                 }
             }
 
@@ -549,6 +599,10 @@ public class CreateLaunchTemplateVersionRequestMarshaller implements
 
                 if (cpuOptions.getThreadsPerCore() != null) {
                     request.addParameter("LaunchTemplateData.CpuOptions.ThreadsPerCore", StringUtils.fromInteger(cpuOptions.getThreadsPerCore()));
+                }
+
+                if (cpuOptions.getAmdSevSnp() != null) {
+                    request.addParameter("LaunchTemplateData.CpuOptions.AmdSevSnp", StringUtils.fromString(cpuOptions.getAmdSevSnp()));
                 }
             }
 
@@ -866,6 +920,39 @@ public class CreateLaunchTemplateVersionRequestMarshaller implements
                                 StringUtils.fromInteger(acceleratorTotalMemoryMiB.getMax()));
                     }
                 }
+
+                NetworkBandwidthGbpsRequest networkBandwidthGbps = instanceRequirements.getNetworkBandwidthGbps();
+                if (networkBandwidthGbps != null) {
+
+                    if (networkBandwidthGbps.getMin() != null) {
+                        request.addParameter("LaunchTemplateData.InstanceRequirements.NetworkBandwidthGbps.Min",
+                                StringUtils.fromDouble(networkBandwidthGbps.getMin()));
+                    }
+
+                    if (networkBandwidthGbps.getMax() != null) {
+                        request.addParameter("LaunchTemplateData.InstanceRequirements.NetworkBandwidthGbps.Max",
+                                StringUtils.fromDouble(networkBandwidthGbps.getMax()));
+                    }
+                }
+
+                com.amazonaws.internal.SdkInternalList<String> instanceRequirementsRequestAllowedInstanceTypesList = (com.amazonaws.internal.SdkInternalList<String>) instanceRequirements
+                        .getAllowedInstanceTypes();
+                if (!instanceRequirementsRequestAllowedInstanceTypesList.isEmpty() || !instanceRequirementsRequestAllowedInstanceTypesList.isAutoConstruct()) {
+                    int allowedInstanceTypesListIndex = 1;
+
+                    for (String instanceRequirementsRequestAllowedInstanceTypesListValue : instanceRequirementsRequestAllowedInstanceTypesList) {
+                        if (instanceRequirementsRequestAllowedInstanceTypesListValue != null) {
+                            request.addParameter("LaunchTemplateData.InstanceRequirements.AllowedInstanceType." + allowedInstanceTypesListIndex,
+                                    StringUtils.fromString(instanceRequirementsRequestAllowedInstanceTypesListValue));
+                        }
+                        allowedInstanceTypesListIndex++;
+                    }
+                }
+
+                if (instanceRequirements.getMaxSpotPriceAsPercentageOfOptimalOnDemandPrice() != null) {
+                    request.addParameter("LaunchTemplateData.InstanceRequirements.MaxSpotPriceAsPercentageOfOptimalOnDemandPrice",
+                            StringUtils.fromInteger(instanceRequirements.getMaxSpotPriceAsPercentageOfOptimalOnDemandPrice()));
+                }
             }
 
             LaunchTemplatePrivateDnsNameOptionsRequest privateDnsNameOptions = launchTemplateData.getPrivateDnsNameOptions();
@@ -898,6 +985,10 @@ public class CreateLaunchTemplateVersionRequestMarshaller implements
             if (launchTemplateData.getDisableApiStop() != null) {
                 request.addParameter("LaunchTemplateData.DisableApiStop", StringUtils.fromBoolean(launchTemplateData.getDisableApiStop()));
             }
+        }
+
+        if (createLaunchTemplateVersionRequest.getResolveAlias() != null) {
+            request.addParameter("ResolveAlias", StringUtils.fromBoolean(createLaunchTemplateVersionRequest.getResolveAlias()));
         }
 
         return request;

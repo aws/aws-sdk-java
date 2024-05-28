@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,22 +25,12 @@ import java.util.concurrent.ExecutorService;
  * object representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
- * <fullname>Amazon OpenSearch Configuration Service</fullname>
  * <p>
- * Use the Amazon OpenSearch configuration API to create, configure, and manage Amazon OpenSearch Service domains.
- * </p>
- * <p>
- * For sample code that uses the configuration API, see the <a
- * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/opensearch-configuration-samples.html">
- * Amazon OpenSearch Service Developer Guide</a>. The guide also contains <a
- * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/request-signing.html"> sample code for
- * sending signed HTTP requests to the OpenSearch APIs</a>.
- * </p>
- * <p>
- * The endpoint for configuration service requests is region-specific: es.<i>region</i>.amazonaws.com. For example,
- * es.us-east-1.amazonaws.com. For a current list of supported regions and endpoints, see <a
- * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#service-regions" target="_blank">Regions and
- * Endpoints</a>.
+ * Use the Amazon OpenSearch Service configuration API to create, configure, and manage OpenSearch Service domains. The
+ * endpoint for configuration service requests is Region specific: es.<i>region</i>.amazonaws.com. For example,
+ * es.us-east-1.amazonaws.com. For a current list of supported Regions and endpoints, see <a
+ * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#service-regions">Amazon Web Services service
+ * endpoints</a>.
  * </p>
  */
 @ThreadSafe
@@ -123,6 +113,39 @@ public class AmazonOpenSearchAsyncClient extends AmazonOpenSearchClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<AddDataSourceResult> addDataSourceAsync(AddDataSourceRequest request) {
+
+        return addDataSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddDataSourceResult> addDataSourceAsync(final AddDataSourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AddDataSourceRequest, AddDataSourceResult> asyncHandler) {
+        final AddDataSourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AddDataSourceResult>() {
+            @Override
+            public AddDataSourceResult call() throws Exception {
+                AddDataSourceResult result = null;
+
+                try {
+                    result = executeAddDataSource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AddTagsResult> addTagsAsync(AddTagsRequest request) {
 
         return addTagsAsync(request, null);
@@ -173,6 +196,72 @@ public class AmazonOpenSearchAsyncClient extends AmazonOpenSearchClient implemen
 
                 try {
                     result = executeAssociatePackage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AuthorizeVpcEndpointAccessResult> authorizeVpcEndpointAccessAsync(AuthorizeVpcEndpointAccessRequest request) {
+
+        return authorizeVpcEndpointAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AuthorizeVpcEndpointAccessResult> authorizeVpcEndpointAccessAsync(final AuthorizeVpcEndpointAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AuthorizeVpcEndpointAccessRequest, AuthorizeVpcEndpointAccessResult> asyncHandler) {
+        final AuthorizeVpcEndpointAccessRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AuthorizeVpcEndpointAccessResult>() {
+            @Override
+            public AuthorizeVpcEndpointAccessResult call() throws Exception {
+                AuthorizeVpcEndpointAccessResult result = null;
+
+                try {
+                    result = executeAuthorizeVpcEndpointAccess(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelDomainConfigChangeResult> cancelDomainConfigChangeAsync(CancelDomainConfigChangeRequest request) {
+
+        return cancelDomainConfigChangeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelDomainConfigChangeResult> cancelDomainConfigChangeAsync(final CancelDomainConfigChangeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CancelDomainConfigChangeRequest, CancelDomainConfigChangeResult> asyncHandler) {
+        final CancelDomainConfigChangeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CancelDomainConfigChangeResult>() {
+            @Override
+            public CancelDomainConfigChangeResult call() throws Exception {
+                CancelDomainConfigChangeResult result = null;
+
+                try {
+                    result = executeCancelDomainConfigChange(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -321,6 +410,72 @@ public class AmazonOpenSearchAsyncClient extends AmazonOpenSearchClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateVpcEndpointResult> createVpcEndpointAsync(CreateVpcEndpointRequest request) {
+
+        return createVpcEndpointAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVpcEndpointResult> createVpcEndpointAsync(final CreateVpcEndpointRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateVpcEndpointRequest, CreateVpcEndpointResult> asyncHandler) {
+        final CreateVpcEndpointRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateVpcEndpointResult>() {
+            @Override
+            public CreateVpcEndpointResult call() throws Exception {
+                CreateVpcEndpointResult result = null;
+
+                try {
+                    result = executeCreateVpcEndpoint(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDataSourceResult> deleteDataSourceAsync(DeleteDataSourceRequest request) {
+
+        return deleteDataSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDataSourceResult> deleteDataSourceAsync(final DeleteDataSourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDataSourceRequest, DeleteDataSourceResult> asyncHandler) {
+        final DeleteDataSourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDataSourceResult>() {
+            @Override
+            public DeleteDataSourceResult call() throws Exception {
+                DeleteDataSourceResult result = null;
+
+                try {
+                    result = executeDeleteDataSource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDomainResult> deleteDomainAsync(DeleteDomainRequest request) {
 
         return deleteDomainAsync(request, null);
@@ -437,6 +592,39 @@ public class AmazonOpenSearchAsyncClient extends AmazonOpenSearchClient implemen
 
                 try {
                     result = executeDeletePackage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVpcEndpointResult> deleteVpcEndpointAsync(DeleteVpcEndpointRequest request) {
+
+        return deleteVpcEndpointAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVpcEndpointResult> deleteVpcEndpointAsync(final DeleteVpcEndpointRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteVpcEndpointRequest, DeleteVpcEndpointResult> asyncHandler) {
+        final DeleteVpcEndpointRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteVpcEndpointResult>() {
+            @Override
+            public DeleteVpcEndpointResult call() throws Exception {
+                DeleteVpcEndpointResult result = null;
+
+                try {
+                    result = executeDeleteVpcEndpoint(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -585,6 +773,72 @@ public class AmazonOpenSearchAsyncClient extends AmazonOpenSearchClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeDomainHealthResult> describeDomainHealthAsync(DescribeDomainHealthRequest request) {
+
+        return describeDomainHealthAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDomainHealthResult> describeDomainHealthAsync(final DescribeDomainHealthRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeDomainHealthRequest, DescribeDomainHealthResult> asyncHandler) {
+        final DescribeDomainHealthRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeDomainHealthResult>() {
+            @Override
+            public DescribeDomainHealthResult call() throws Exception {
+                DescribeDomainHealthResult result = null;
+
+                try {
+                    result = executeDescribeDomainHealth(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDomainNodesResult> describeDomainNodesAsync(DescribeDomainNodesRequest request) {
+
+        return describeDomainNodesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDomainNodesResult> describeDomainNodesAsync(final DescribeDomainNodesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeDomainNodesRequest, DescribeDomainNodesResult> asyncHandler) {
+        final DescribeDomainNodesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeDomainNodesResult>() {
+            @Override
+            public DescribeDomainNodesResult call() throws Exception {
+                DescribeDomainNodesResult result = null;
+
+                try {
+                    result = executeDescribeDomainNodes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeDomainsResult> describeDomainsAsync(DescribeDomainsRequest request) {
 
         return describeDomainsAsync(request, null);
@@ -602,6 +856,39 @@ public class AmazonOpenSearchAsyncClient extends AmazonOpenSearchClient implemen
 
                 try {
                     result = executeDescribeDomains(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDryRunProgressResult> describeDryRunProgressAsync(DescribeDryRunProgressRequest request) {
+
+        return describeDryRunProgressAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDryRunProgressResult> describeDryRunProgressAsync(final DescribeDryRunProgressRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeDryRunProgressRequest, DescribeDryRunProgressResult> asyncHandler) {
+        final DescribeDryRunProgressRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeDryRunProgressResult>() {
+            @Override
+            public DescribeDryRunProgressResult call() throws Exception {
+                DescribeDryRunProgressResult result = null;
+
+                try {
+                    result = executeDescribeDryRunProgress(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -818,6 +1105,39 @@ public class AmazonOpenSearchAsyncClient extends AmazonOpenSearchClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeVpcEndpointsResult> describeVpcEndpointsAsync(DescribeVpcEndpointsRequest request) {
+
+        return describeVpcEndpointsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeVpcEndpointsResult> describeVpcEndpointsAsync(final DescribeVpcEndpointsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeVpcEndpointsRequest, DescribeVpcEndpointsResult> asyncHandler) {
+        final DescribeVpcEndpointsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeVpcEndpointsResult>() {
+            @Override
+            public DescribeVpcEndpointsResult call() throws Exception {
+                DescribeVpcEndpointsResult result = null;
+
+                try {
+                    result = executeDescribeVpcEndpoints(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DissociatePackageResult> dissociatePackageAsync(DissociatePackageRequest request) {
 
         return dissociatePackageAsync(request, null);
@@ -868,6 +1188,72 @@ public class AmazonOpenSearchAsyncClient extends AmazonOpenSearchClient implemen
 
                 try {
                     result = executeGetCompatibleVersions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDataSourceResult> getDataSourceAsync(GetDataSourceRequest request) {
+
+        return getDataSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDataSourceResult> getDataSourceAsync(final GetDataSourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDataSourceRequest, GetDataSourceResult> asyncHandler) {
+        final GetDataSourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDataSourceResult>() {
+            @Override
+            public GetDataSourceResult call() throws Exception {
+                GetDataSourceResult result = null;
+
+                try {
+                    result = executeGetDataSource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDomainMaintenanceStatusResult> getDomainMaintenanceStatusAsync(GetDomainMaintenanceStatusRequest request) {
+
+        return getDomainMaintenanceStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDomainMaintenanceStatusResult> getDomainMaintenanceStatusAsync(final GetDomainMaintenanceStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDomainMaintenanceStatusRequest, GetDomainMaintenanceStatusResult> asyncHandler) {
+        final GetDomainMaintenanceStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDomainMaintenanceStatusResult>() {
+            @Override
+            public GetDomainMaintenanceStatusResult call() throws Exception {
+                GetDomainMaintenanceStatusResult result = null;
+
+                try {
+                    result = executeGetDomainMaintenanceStatus(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -967,6 +1353,72 @@ public class AmazonOpenSearchAsyncClient extends AmazonOpenSearchClient implemen
 
                 try {
                     result = executeGetUpgradeStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataSourcesResult> listDataSourcesAsync(ListDataSourcesRequest request) {
+
+        return listDataSourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataSourcesResult> listDataSourcesAsync(final ListDataSourcesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDataSourcesRequest, ListDataSourcesResult> asyncHandler) {
+        final ListDataSourcesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListDataSourcesResult>() {
+            @Override
+            public ListDataSourcesResult call() throws Exception {
+                ListDataSourcesResult result = null;
+
+                try {
+                    result = executeListDataSources(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDomainMaintenancesResult> listDomainMaintenancesAsync(ListDomainMaintenancesRequest request) {
+
+        return listDomainMaintenancesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDomainMaintenancesResult> listDomainMaintenancesAsync(final ListDomainMaintenancesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDomainMaintenancesRequest, ListDomainMaintenancesResult> asyncHandler) {
+        final ListDomainMaintenancesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListDomainMaintenancesResult>() {
+            @Override
+            public ListDomainMaintenancesResult call() throws Exception {
+                ListDomainMaintenancesResult result = null;
+
+                try {
+                    result = executeListDomainMaintenances(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1115,6 +1567,39 @@ public class AmazonOpenSearchAsyncClient extends AmazonOpenSearchClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListScheduledActionsResult> listScheduledActionsAsync(ListScheduledActionsRequest request) {
+
+        return listScheduledActionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListScheduledActionsResult> listScheduledActionsAsync(final ListScheduledActionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListScheduledActionsRequest, ListScheduledActionsResult> asyncHandler) {
+        final ListScheduledActionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListScheduledActionsResult>() {
+            @Override
+            public ListScheduledActionsResult call() throws Exception {
+                ListScheduledActionsResult result = null;
+
+                try {
+                    result = executeListScheduledActions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest request) {
 
         return listTagsAsync(request, null);
@@ -1165,6 +1650,105 @@ public class AmazonOpenSearchAsyncClient extends AmazonOpenSearchClient implemen
 
                 try {
                     result = executeListVersions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVpcEndpointAccessResult> listVpcEndpointAccessAsync(ListVpcEndpointAccessRequest request) {
+
+        return listVpcEndpointAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVpcEndpointAccessResult> listVpcEndpointAccessAsync(final ListVpcEndpointAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListVpcEndpointAccessRequest, ListVpcEndpointAccessResult> asyncHandler) {
+        final ListVpcEndpointAccessRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListVpcEndpointAccessResult>() {
+            @Override
+            public ListVpcEndpointAccessResult call() throws Exception {
+                ListVpcEndpointAccessResult result = null;
+
+                try {
+                    result = executeListVpcEndpointAccess(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVpcEndpointsResult> listVpcEndpointsAsync(ListVpcEndpointsRequest request) {
+
+        return listVpcEndpointsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVpcEndpointsResult> listVpcEndpointsAsync(final ListVpcEndpointsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListVpcEndpointsRequest, ListVpcEndpointsResult> asyncHandler) {
+        final ListVpcEndpointsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListVpcEndpointsResult>() {
+            @Override
+            public ListVpcEndpointsResult call() throws Exception {
+                ListVpcEndpointsResult result = null;
+
+                try {
+                    result = executeListVpcEndpoints(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVpcEndpointsForDomainResult> listVpcEndpointsForDomainAsync(ListVpcEndpointsForDomainRequest request) {
+
+        return listVpcEndpointsForDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVpcEndpointsForDomainResult> listVpcEndpointsForDomainAsync(final ListVpcEndpointsForDomainRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListVpcEndpointsForDomainRequest, ListVpcEndpointsForDomainResult> asyncHandler) {
+        final ListVpcEndpointsForDomainRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListVpcEndpointsForDomainResult>() {
+            @Override
+            public ListVpcEndpointsForDomainResult call() throws Exception {
+                ListVpcEndpointsForDomainResult result = null;
+
+                try {
+                    result = executeListVpcEndpointsForDomain(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1282,6 +1866,72 @@ public class AmazonOpenSearchAsyncClient extends AmazonOpenSearchClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<RevokeVpcEndpointAccessResult> revokeVpcEndpointAccessAsync(RevokeVpcEndpointAccessRequest request) {
+
+        return revokeVpcEndpointAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RevokeVpcEndpointAccessResult> revokeVpcEndpointAccessAsync(final RevokeVpcEndpointAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RevokeVpcEndpointAccessRequest, RevokeVpcEndpointAccessResult> asyncHandler) {
+        final RevokeVpcEndpointAccessRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RevokeVpcEndpointAccessResult>() {
+            @Override
+            public RevokeVpcEndpointAccessResult call() throws Exception {
+                RevokeVpcEndpointAccessResult result = null;
+
+                try {
+                    result = executeRevokeVpcEndpointAccess(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartDomainMaintenanceResult> startDomainMaintenanceAsync(StartDomainMaintenanceRequest request) {
+
+        return startDomainMaintenanceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartDomainMaintenanceResult> startDomainMaintenanceAsync(final StartDomainMaintenanceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartDomainMaintenanceRequest, StartDomainMaintenanceResult> asyncHandler) {
+        final StartDomainMaintenanceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartDomainMaintenanceResult>() {
+            @Override
+            public StartDomainMaintenanceResult call() throws Exception {
+                StartDomainMaintenanceResult result = null;
+
+                try {
+                    result = executeStartDomainMaintenance(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartServiceSoftwareUpdateResult> startServiceSoftwareUpdateAsync(StartServiceSoftwareUpdateRequest request) {
 
         return startServiceSoftwareUpdateAsync(request, null);
@@ -1299,6 +1949,39 @@ public class AmazonOpenSearchAsyncClient extends AmazonOpenSearchClient implemen
 
                 try {
                     result = executeStartServiceSoftwareUpdate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDataSourceResult> updateDataSourceAsync(UpdateDataSourceRequest request) {
+
+        return updateDataSourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDataSourceResult> updateDataSourceAsync(final UpdateDataSourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateDataSourceRequest, UpdateDataSourceResult> asyncHandler) {
+        final UpdateDataSourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateDataSourceResult>() {
+            @Override
+            public UpdateDataSourceResult call() throws Exception {
+                UpdateDataSourceResult result = null;
+
+                try {
+                    result = executeUpdateDataSource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1365,6 +2048,72 @@ public class AmazonOpenSearchAsyncClient extends AmazonOpenSearchClient implemen
 
                 try {
                     result = executeUpdatePackage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateScheduledActionResult> updateScheduledActionAsync(UpdateScheduledActionRequest request) {
+
+        return updateScheduledActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateScheduledActionResult> updateScheduledActionAsync(final UpdateScheduledActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateScheduledActionRequest, UpdateScheduledActionResult> asyncHandler) {
+        final UpdateScheduledActionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateScheduledActionResult>() {
+            @Override
+            public UpdateScheduledActionResult call() throws Exception {
+                UpdateScheduledActionResult result = null;
+
+                try {
+                    result = executeUpdateScheduledAction(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVpcEndpointResult> updateVpcEndpointAsync(UpdateVpcEndpointRequest request) {
+
+        return updateVpcEndpointAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVpcEndpointResult> updateVpcEndpointAsync(final UpdateVpcEndpointRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateVpcEndpointRequest, UpdateVpcEndpointResult> asyncHandler) {
+        final UpdateVpcEndpointRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateVpcEndpointResult>() {
+            @Override
+            public UpdateVpcEndpointResult call() throws Exception {
+                UpdateVpcEndpointResult result = null;
+
+                try {
+                    result = executeUpdateVpcEndpoint(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,14 +37,15 @@ public class ListVocabulariesRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The maximum number of custom vocabularies to return in each page of results. If there are fewer results than the
-     * value you specify, only the actual results are returned. If you don't specify a value, a default of 5 is used.
+     * value that you specify, only the actual results are returned. If you do not specify a value, a default of 5 is
+     * used.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
      * Returns only custom vocabularies with the specified state. Vocabularies are ordered by creation date, with the
-     * newest vocabulary first. If you don't include <code>StateEquals</code>, all custom medical vocabularies are
+     * newest vocabulary first. If you do not include <code>StateEquals</code>, all custom medical vocabularies are
      * returned.
      * </p>
      */
@@ -117,13 +118,14 @@ public class ListVocabulariesRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The maximum number of custom vocabularies to return in each page of results. If there are fewer results than the
-     * value you specify, only the actual results are returned. If you don't specify a value, a default of 5 is used.
+     * value that you specify, only the actual results are returned. If you do not specify a value, a default of 5 is
+     * used.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of custom vocabularies to return in each page of results. If there are fewer results
-     *        than the value you specify, only the actual results are returned. If you don't specify a value, a default
-     *        of 5 is used.
+     *        than the value that you specify, only the actual results are returned. If you do not specify a value, a
+     *        default of 5 is used.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -133,12 +135,13 @@ public class ListVocabulariesRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The maximum number of custom vocabularies to return in each page of results. If there are fewer results than the
-     * value you specify, only the actual results are returned. If you don't specify a value, a default of 5 is used.
+     * value that you specify, only the actual results are returned. If you do not specify a value, a default of 5 is
+     * used.
      * </p>
      * 
      * @return The maximum number of custom vocabularies to return in each page of results. If there are fewer results
-     *         than the value you specify, only the actual results are returned. If you don't specify a value, a default
-     *         of 5 is used.
+     *         than the value that you specify, only the actual results are returned. If you do not specify a value, a
+     *         default of 5 is used.
      */
 
     public Integer getMaxResults() {
@@ -148,13 +151,14 @@ public class ListVocabulariesRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The maximum number of custom vocabularies to return in each page of results. If there are fewer results than the
-     * value you specify, only the actual results are returned. If you don't specify a value, a default of 5 is used.
+     * value that you specify, only the actual results are returned. If you do not specify a value, a default of 5 is
+     * used.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of custom vocabularies to return in each page of results. If there are fewer results
-     *        than the value you specify, only the actual results are returned. If you don't specify a value, a default
-     *        of 5 is used.
+     *        than the value that you specify, only the actual results are returned. If you do not specify a value, a
+     *        default of 5 is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,13 +170,13 @@ public class ListVocabulariesRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * Returns only custom vocabularies with the specified state. Vocabularies are ordered by creation date, with the
-     * newest vocabulary first. If you don't include <code>StateEquals</code>, all custom medical vocabularies are
+     * newest vocabulary first. If you do not include <code>StateEquals</code>, all custom medical vocabularies are
      * returned.
      * </p>
      * 
      * @param stateEquals
      *        Returns only custom vocabularies with the specified state. Vocabularies are ordered by creation date, with
-     *        the newest vocabulary first. If you don't include <code>StateEquals</code>, all custom medical
+     *        the newest vocabulary first. If you do not include <code>StateEquals</code>, all custom medical
      *        vocabularies are returned.
      * @see VocabularyState
      */
@@ -184,12 +188,12 @@ public class ListVocabulariesRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * Returns only custom vocabularies with the specified state. Vocabularies are ordered by creation date, with the
-     * newest vocabulary first. If you don't include <code>StateEquals</code>, all custom medical vocabularies are
+     * newest vocabulary first. If you do not include <code>StateEquals</code>, all custom medical vocabularies are
      * returned.
      * </p>
      * 
      * @return Returns only custom vocabularies with the specified state. Vocabularies are ordered by creation date,
-     *         with the newest vocabulary first. If you don't include <code>StateEquals</code>, all custom medical
+     *         with the newest vocabulary first. If you do not include <code>StateEquals</code>, all custom medical
      *         vocabularies are returned.
      * @see VocabularyState
      */
@@ -201,13 +205,13 @@ public class ListVocabulariesRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * Returns only custom vocabularies with the specified state. Vocabularies are ordered by creation date, with the
-     * newest vocabulary first. If you don't include <code>StateEquals</code>, all custom medical vocabularies are
+     * newest vocabulary first. If you do not include <code>StateEquals</code>, all custom medical vocabularies are
      * returned.
      * </p>
      * 
      * @param stateEquals
      *        Returns only custom vocabularies with the specified state. Vocabularies are ordered by creation date, with
-     *        the newest vocabulary first. If you don't include <code>StateEquals</code>, all custom medical
+     *        the newest vocabulary first. If you do not include <code>StateEquals</code>, all custom medical
      *        vocabularies are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VocabularyState
@@ -221,13 +225,13 @@ public class ListVocabulariesRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * Returns only custom vocabularies with the specified state. Vocabularies are ordered by creation date, with the
-     * newest vocabulary first. If you don't include <code>StateEquals</code>, all custom medical vocabularies are
+     * newest vocabulary first. If you do not include <code>StateEquals</code>, all custom medical vocabularies are
      * returned.
      * </p>
      * 
      * @param stateEquals
      *        Returns only custom vocabularies with the specified state. Vocabularies are ordered by creation date, with
-     *        the newest vocabulary first. If you don't include <code>StateEquals</code>, all custom medical
+     *        the newest vocabulary first. If you do not include <code>StateEquals</code>, all custom medical
      *        vocabularies are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VocabularyState

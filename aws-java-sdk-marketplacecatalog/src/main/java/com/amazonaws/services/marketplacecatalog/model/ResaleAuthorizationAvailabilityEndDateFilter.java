@@ -1,0 +1,221 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.marketplacecatalog.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * Allows filtering on <code>AvailabilityEndDate</code> of a ResaleAuthorization.
+ * </p>
+ * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/ResaleAuthorizationAvailabilityEndDateFilter"
+ *      target="_top">AWS API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ResaleAuthorizationAvailabilityEndDateFilter implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * Allows filtering on <code>AvailabilityEndDate</code> of a ResaleAuthorization with date range as input
+     * </p>
+     */
+    private ResaleAuthorizationAvailabilityEndDateFilterDateRange dateRange;
+    /**
+     * <p>
+     * Allows filtering on <code>AvailabilityEndDate</code> of a ResaleAuthorization with date value as input.
+     * </p>
+     */
+    private java.util.List<String> valueList;
+
+    /**
+     * <p>
+     * Allows filtering on <code>AvailabilityEndDate</code> of a ResaleAuthorization with date range as input
+     * </p>
+     * 
+     * @param dateRange
+     *        Allows filtering on <code>AvailabilityEndDate</code> of a ResaleAuthorization with date range as input
+     */
+
+    public void setDateRange(ResaleAuthorizationAvailabilityEndDateFilterDateRange dateRange) {
+        this.dateRange = dateRange;
+    }
+
+    /**
+     * <p>
+     * Allows filtering on <code>AvailabilityEndDate</code> of a ResaleAuthorization with date range as input
+     * </p>
+     * 
+     * @return Allows filtering on <code>AvailabilityEndDate</code> of a ResaleAuthorization with date range as input
+     */
+
+    public ResaleAuthorizationAvailabilityEndDateFilterDateRange getDateRange() {
+        return this.dateRange;
+    }
+
+    /**
+     * <p>
+     * Allows filtering on <code>AvailabilityEndDate</code> of a ResaleAuthorization with date range as input
+     * </p>
+     * 
+     * @param dateRange
+     *        Allows filtering on <code>AvailabilityEndDate</code> of a ResaleAuthorization with date range as input
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResaleAuthorizationAvailabilityEndDateFilter withDateRange(ResaleAuthorizationAvailabilityEndDateFilterDateRange dateRange) {
+        setDateRange(dateRange);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Allows filtering on <code>AvailabilityEndDate</code> of a ResaleAuthorization with date value as input.
+     * </p>
+     * 
+     * @return Allows filtering on <code>AvailabilityEndDate</code> of a ResaleAuthorization with date value as input.
+     */
+
+    public java.util.List<String> getValueList() {
+        return valueList;
+    }
+
+    /**
+     * <p>
+     * Allows filtering on <code>AvailabilityEndDate</code> of a ResaleAuthorization with date value as input.
+     * </p>
+     * 
+     * @param valueList
+     *        Allows filtering on <code>AvailabilityEndDate</code> of a ResaleAuthorization with date value as input.
+     */
+
+    public void setValueList(java.util.Collection<String> valueList) {
+        if (valueList == null) {
+            this.valueList = null;
+            return;
+        }
+
+        this.valueList = new java.util.ArrayList<String>(valueList);
+    }
+
+    /**
+     * <p>
+     * Allows filtering on <code>AvailabilityEndDate</code> of a ResaleAuthorization with date value as input.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setValueList(java.util.Collection)} or {@link #withValueList(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param valueList
+     *        Allows filtering on <code>AvailabilityEndDate</code> of a ResaleAuthorization with date value as input.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResaleAuthorizationAvailabilityEndDateFilter withValueList(String... valueList) {
+        if (this.valueList == null) {
+            setValueList(new java.util.ArrayList<String>(valueList.length));
+        }
+        for (String ele : valueList) {
+            this.valueList.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Allows filtering on <code>AvailabilityEndDate</code> of a ResaleAuthorization with date value as input.
+     * </p>
+     * 
+     * @param valueList
+     *        Allows filtering on <code>AvailabilityEndDate</code> of a ResaleAuthorization with date value as input.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResaleAuthorizationAvailabilityEndDateFilter withValueList(java.util.Collection<String> valueList) {
+        setValueList(valueList);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getDateRange() != null)
+            sb.append("DateRange: ").append(getDateRange()).append(",");
+        if (getValueList() != null)
+            sb.append("ValueList: ").append(getValueList());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ResaleAuthorizationAvailabilityEndDateFilter == false)
+            return false;
+        ResaleAuthorizationAvailabilityEndDateFilter other = (ResaleAuthorizationAvailabilityEndDateFilter) obj;
+        if (other.getDateRange() == null ^ this.getDateRange() == null)
+            return false;
+        if (other.getDateRange() != null && other.getDateRange().equals(this.getDateRange()) == false)
+            return false;
+        if (other.getValueList() == null ^ this.getValueList() == null)
+            return false;
+        if (other.getValueList() != null && other.getValueList().equals(this.getValueList()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getDateRange() == null) ? 0 : getDateRange().hashCode());
+        hashCode = prime * hashCode + ((getValueList() == null) ? 0 : getValueList().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public ResaleAuthorizationAvailabilityEndDateFilter clone() {
+        try {
+            return (ResaleAuthorizationAvailabilityEndDateFilter) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.marketplacecatalog.model.transform.ResaleAuthorizationAvailabilityEndDateFilterMarshaller.getInstance().marshall(this,
+                protocolMarshaller);
+    }
+}

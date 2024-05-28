@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class UpdateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the cluster.
+     * The name of your cluster.
      * </p>
      */
     private String clusterName;
@@ -91,18 +91,25 @@ public class UpdateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String resolveConflicts;
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      */
     private String clientRequestToken;
+    /**
+     * <p>
+     * The set of configuration values for the add-on that's created. The values that you provide are validated against
+     * the schema returned by <code>DescribeAddonConfiguration</code>.
+     * </p>
+     */
+    private String configurationValues;
 
     /**
      * <p>
-     * The name of the cluster.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The name of the cluster.
+     *        The name of your cluster.
      */
 
     public void setClusterName(String clusterName) {
@@ -111,10 +118,10 @@ public class UpdateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the cluster.
+     * The name of your cluster.
      * </p>
      * 
-     * @return The name of the cluster.
+     * @return The name of your cluster.
      */
 
     public String getClusterName() {
@@ -123,11 +130,11 @@ public class UpdateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the cluster.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The name of the cluster.
+     *        The name of your cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -556,11 +563,11 @@ public class UpdateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
      * @param clientRequestToken
-     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -569,10 +576,10 @@ public class UpdateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
-     * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      */
 
     public String getClientRequestToken() {
@@ -581,16 +588,62 @@ public class UpdateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
      * @param clientRequestToken
-     *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateAddonRequest withClientRequestToken(String clientRequestToken) {
         setClientRequestToken(clientRequestToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The set of configuration values for the add-on that's created. The values that you provide are validated against
+     * the schema returned by <code>DescribeAddonConfiguration</code>.
+     * </p>
+     * 
+     * @param configurationValues
+     *        The set of configuration values for the add-on that's created. The values that you provide are validated
+     *        against the schema returned by <code>DescribeAddonConfiguration</code>.
+     */
+
+    public void setConfigurationValues(String configurationValues) {
+        this.configurationValues = configurationValues;
+    }
+
+    /**
+     * <p>
+     * The set of configuration values for the add-on that's created. The values that you provide are validated against
+     * the schema returned by <code>DescribeAddonConfiguration</code>.
+     * </p>
+     * 
+     * @return The set of configuration values for the add-on that's created. The values that you provide are validated
+     *         against the schema returned by <code>DescribeAddonConfiguration</code>.
+     */
+
+    public String getConfigurationValues() {
+        return this.configurationValues;
+    }
+
+    /**
+     * <p>
+     * The set of configuration values for the add-on that's created. The values that you provide are validated against
+     * the schema returned by <code>DescribeAddonConfiguration</code>.
+     * </p>
+     * 
+     * @param configurationValues
+     *        The set of configuration values for the add-on that's created. The values that you provide are validated
+     *        against the schema returned by <code>DescribeAddonConfiguration</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAddonRequest withConfigurationValues(String configurationValues) {
+        setConfigurationValues(configurationValues);
         return this;
     }
 
@@ -617,7 +670,9 @@ public class UpdateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getResolveConflicts() != null)
             sb.append("ResolveConflicts: ").append(getResolveConflicts()).append(",");
         if (getClientRequestToken() != null)
-            sb.append("ClientRequestToken: ").append(getClientRequestToken());
+            sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
+        if (getConfigurationValues() != null)
+            sb.append("ConfigurationValues: ").append(getConfigurationValues());
         sb.append("}");
         return sb.toString();
     }
@@ -656,6 +711,10 @@ public class UpdateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
             return false;
+        if (other.getConfigurationValues() == null ^ this.getConfigurationValues() == null)
+            return false;
+        if (other.getConfigurationValues() != null && other.getConfigurationValues().equals(this.getConfigurationValues()) == false)
+            return false;
         return true;
     }
 
@@ -670,6 +729,7 @@ public class UpdateAddonRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getServiceAccountRoleArn() == null) ? 0 : getServiceAccountRoleArn().hashCode());
         hashCode = prime * hashCode + ((getResolveConflicts() == null) ? 0 : getResolveConflicts().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
+        hashCode = prime * hashCode + ((getConfigurationValues() == null) ? 0 : getConfigurationValues().hashCode());
         return hashCode;
     }
 

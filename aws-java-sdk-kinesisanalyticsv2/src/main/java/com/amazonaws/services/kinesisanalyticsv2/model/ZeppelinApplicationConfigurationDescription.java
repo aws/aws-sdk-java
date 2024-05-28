@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The configuration of a Kinesis Data Analytics Studio notebook.
+ * The configuration of a Managed Service for Apache Flink Studio notebook.
  * </p>
  * 
  * @see <a
@@ -31,19 +31,20 @@ public class ZeppelinApplicationConfigurationDescription implements Serializable
 
     /**
      * <p>
-     * The monitoring configuration of a Kinesis Data Analytics Studio notebook.
+     * The monitoring configuration of a Managed Service for Apache Flink Studio notebook.
      * </p>
      */
     private ZeppelinMonitoringConfigurationDescription monitoringConfigurationDescription;
     /**
      * <p>
-     * The Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics Studio notebook.
+     * The Amazon Glue Data Catalog that is associated with the Managed Service for Apache Flink Studio notebook.
      * </p>
      */
     private CatalogConfigurationDescription catalogConfigurationDescription;
     /**
      * <p>
-     * The parameters required to deploy a Kinesis Data Analytics Studio notebook as an application with durable state.
+     * The parameters required to deploy a Managed Service for Apache Flink Studio notebook as an application with
+     * durable state.
      * </p>
      */
     private DeployAsApplicationConfigurationDescription deployAsApplicationConfigurationDescription;
@@ -56,11 +57,11 @@ public class ZeppelinApplicationConfigurationDescription implements Serializable
 
     /**
      * <p>
-     * The monitoring configuration of a Kinesis Data Analytics Studio notebook.
+     * The monitoring configuration of a Managed Service for Apache Flink Studio notebook.
      * </p>
      * 
      * @param monitoringConfigurationDescription
-     *        The monitoring configuration of a Kinesis Data Analytics Studio notebook.
+     *        The monitoring configuration of a Managed Service for Apache Flink Studio notebook.
      */
 
     public void setMonitoringConfigurationDescription(ZeppelinMonitoringConfigurationDescription monitoringConfigurationDescription) {
@@ -69,10 +70,10 @@ public class ZeppelinApplicationConfigurationDescription implements Serializable
 
     /**
      * <p>
-     * The monitoring configuration of a Kinesis Data Analytics Studio notebook.
+     * The monitoring configuration of a Managed Service for Apache Flink Studio notebook.
      * </p>
      * 
-     * @return The monitoring configuration of a Kinesis Data Analytics Studio notebook.
+     * @return The monitoring configuration of a Managed Service for Apache Flink Studio notebook.
      */
 
     public ZeppelinMonitoringConfigurationDescription getMonitoringConfigurationDescription() {
@@ -81,11 +82,11 @@ public class ZeppelinApplicationConfigurationDescription implements Serializable
 
     /**
      * <p>
-     * The monitoring configuration of a Kinesis Data Analytics Studio notebook.
+     * The monitoring configuration of a Managed Service for Apache Flink Studio notebook.
      * </p>
      * 
      * @param monitoringConfigurationDescription
-     *        The monitoring configuration of a Kinesis Data Analytics Studio notebook.
+     *        The monitoring configuration of a Managed Service for Apache Flink Studio notebook.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +98,11 @@ public class ZeppelinApplicationConfigurationDescription implements Serializable
 
     /**
      * <p>
-     * The Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics Studio notebook.
+     * The Amazon Glue Data Catalog that is associated with the Managed Service for Apache Flink Studio notebook.
      * </p>
      * 
      * @param catalogConfigurationDescription
-     *        The Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics Studio notebook.
+     *        The Amazon Glue Data Catalog that is associated with the Managed Service for Apache Flink Studio notebook.
      */
 
     public void setCatalogConfigurationDescription(CatalogConfigurationDescription catalogConfigurationDescription) {
@@ -110,10 +111,11 @@ public class ZeppelinApplicationConfigurationDescription implements Serializable
 
     /**
      * <p>
-     * The Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics Studio notebook.
+     * The Amazon Glue Data Catalog that is associated with the Managed Service for Apache Flink Studio notebook.
      * </p>
      * 
-     * @return The Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics Studio notebook.
+     * @return The Amazon Glue Data Catalog that is associated with the Managed Service for Apache Flink Studio
+     *         notebook.
      */
 
     public CatalogConfigurationDescription getCatalogConfigurationDescription() {
@@ -122,11 +124,11 @@ public class ZeppelinApplicationConfigurationDescription implements Serializable
 
     /**
      * <p>
-     * The Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics Studio notebook.
+     * The Amazon Glue Data Catalog that is associated with the Managed Service for Apache Flink Studio notebook.
      * </p>
      * 
      * @param catalogConfigurationDescription
-     *        The Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics Studio notebook.
+     *        The Amazon Glue Data Catalog that is associated with the Managed Service for Apache Flink Studio notebook.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,12 +139,13 @@ public class ZeppelinApplicationConfigurationDescription implements Serializable
 
     /**
      * <p>
-     * The parameters required to deploy a Kinesis Data Analytics Studio notebook as an application with durable state.
+     * The parameters required to deploy a Managed Service for Apache Flink Studio notebook as an application with
+     * durable state.
      * </p>
      * 
      * @param deployAsApplicationConfigurationDescription
-     *        The parameters required to deploy a Kinesis Data Analytics Studio notebook as an application with durable
-     *        state.
+     *        The parameters required to deploy a Managed Service for Apache Flink Studio notebook as an application
+     *        with durable state.
      */
 
     public void setDeployAsApplicationConfigurationDescription(DeployAsApplicationConfigurationDescription deployAsApplicationConfigurationDescription) {
@@ -151,11 +154,12 @@ public class ZeppelinApplicationConfigurationDescription implements Serializable
 
     /**
      * <p>
-     * The parameters required to deploy a Kinesis Data Analytics Studio notebook as an application with durable state.
+     * The parameters required to deploy a Managed Service for Apache Flink Studio notebook as an application with
+     * durable state.
      * </p>
      * 
-     * @return The parameters required to deploy a Kinesis Data Analytics Studio notebook as an application with durable
-     *         state.
+     * @return The parameters required to deploy a Managed Service for Apache Flink Studio notebook as an application
+     *         with durable state.
      */
 
     public DeployAsApplicationConfigurationDescription getDeployAsApplicationConfigurationDescription() {
@@ -164,12 +168,13 @@ public class ZeppelinApplicationConfigurationDescription implements Serializable
 
     /**
      * <p>
-     * The parameters required to deploy a Kinesis Data Analytics Studio notebook as an application with durable state.
+     * The parameters required to deploy a Managed Service for Apache Flink Studio notebook as an application with
+     * durable state.
      * </p>
      * 
      * @param deployAsApplicationConfigurationDescription
-     *        The parameters required to deploy a Kinesis Data Analytics Studio notebook as an application with durable
-     *        state.
+     *        The parameters required to deploy a Managed Service for Apache Flink Studio notebook as an application
+     *        with durable state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

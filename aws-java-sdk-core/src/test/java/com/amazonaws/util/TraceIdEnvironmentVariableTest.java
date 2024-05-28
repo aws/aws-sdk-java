@@ -23,6 +23,7 @@ import utils.EnvironmentVariableHelper;
 public class TraceIdEnvironmentVariableTest {
     private static final String FUNCTION_NAME_ENV = "AWS_LAMBDA_FUNCTION_NAME";
     private static final String TRACE_ID_ENV = "_X_AMZN_TRACE_ID";
+    private static final String TRACE_ID_SYSTEM_PROPERTY = "com.amazonaws.xray.traceHeader";
 
     private static final EnvironmentVariableHelper helper = new EnvironmentVariableHelper();
 
@@ -30,11 +31,13 @@ public class TraceIdEnvironmentVariableTest {
     public void setup() {
         helper.remove(FUNCTION_NAME_ENV);
         helper.remove(TRACE_ID_ENV);
+        System.clearProperty(TRACE_ID_SYSTEM_PROPERTY);
     }
 
     @After
     public void restoreOriginal() {
         helper.reset();
+        System.clearProperty(TRACE_ID_SYSTEM_PROPERTY);
     }
 
     @Test
@@ -59,5 +62,20 @@ public class TraceIdEnvironmentVariableTest {
     public void noTraceIdEnv_doesNotReturnTraceId() {
         helper.set(FUNCTION_NAME_ENV, "foo");
         Assert.assertNull(RuntimeHttpUtils.getLambdaEnvironmentTraceId());
+    }
+
+    @Test
+    public void sysPropNoEnv_ReturnsTraceId() {
+        helper.set(FUNCTION_NAME_ENV, "foo");
+        System.setProperty(TRACE_ID_SYSTEM_PROPERTY, "bar");
+        Assert.assertEquals("bar", RuntimeHttpUtils.getLambdaEnvironmentTraceId());
+    }
+
+    @Test
+    public void sysPropAndEnv_ReturnsTraceIdFromSysProp() {
+        helper.set(FUNCTION_NAME_ENV, "foo");
+        helper.set(TRACE_ID_ENV, "bar");
+        System.setProperty(TRACE_ID_SYSTEM_PROPERTY, "buz");
+        Assert.assertEquals("buz", RuntimeHttpUtils.getLambdaEnvironmentTraceId());
     }
 }

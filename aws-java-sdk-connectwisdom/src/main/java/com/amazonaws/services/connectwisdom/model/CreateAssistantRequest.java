@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,10 @@ public class CreateAssistantRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>.
      * </p>
      */
     private String clientToken;
@@ -45,7 +48,19 @@ public class CreateAssistantRequest extends com.amazonaws.AmazonWebServiceReques
     private String name;
     /**
      * <p>
-     * The KMS key used for encryption.
+     * The configuration information for the customer managed key used for encryption.
+     * </p>
+     * <p>
+     * The customer managed key must have a policy that allows <code>kms:CreateGrant</code>,
+     * <code> kms:DescribeKey</code>, and <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity
+     * using the key to invoke Wisdom. To use Wisdom with chat, the key policy must also allow <code>kms:Decrypt</code>,
+     * <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the
+     * <code>connect.amazonaws.com</code> service principal.
+     * </p>
+     * <p>
+     * For more information about setting up a customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect Wisdom for
+     * your instance</a>.
      * </p>
      */
     private ServerSideEncryptionConfiguration serverSideEncryptionConfiguration;
@@ -64,11 +79,17 @@ public class CreateAssistantRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not
+     *        provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     *        href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries
+     *        safe with idempotent APIs</a>.
      */
 
     public void setClientToken(String clientToken) {
@@ -77,10 +98,16 @@ public class CreateAssistantRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>.
      * </p>
      * 
-     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not
+     *         provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see
+     *         <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     *         retries safe with idempotent APIs</a>.
      */
 
     public String getClientToken() {
@@ -89,11 +116,17 @@ public class CreateAssistantRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not
+     *        provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     *        href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries
+     *        safe with idempotent APIs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,11 +217,34 @@ public class CreateAssistantRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The KMS key used for encryption.
+     * The configuration information for the customer managed key used for encryption.
+     * </p>
+     * <p>
+     * The customer managed key must have a policy that allows <code>kms:CreateGrant</code>,
+     * <code> kms:DescribeKey</code>, and <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity
+     * using the key to invoke Wisdom. To use Wisdom with chat, the key policy must also allow <code>kms:Decrypt</code>,
+     * <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the
+     * <code>connect.amazonaws.com</code> service principal.
+     * </p>
+     * <p>
+     * For more information about setting up a customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect Wisdom for
+     * your instance</a>.
      * </p>
      * 
      * @param serverSideEncryptionConfiguration
-     *        The KMS key used for encryption.
+     *        The configuration information for the customer managed key used for encryption. </p>
+     *        <p>
+     *        The customer managed key must have a policy that allows <code>kms:CreateGrant</code>,
+     *        <code> kms:DescribeKey</code>, and <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM
+     *        identity using the key to invoke Wisdom. To use Wisdom with chat, the key policy must also allow
+     *        <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions
+     *        to the <code>connect.amazonaws.com</code> service principal.
+     *        </p>
+     *        <p>
+     *        For more information about setting up a customer managed key for Wisdom, see <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect
+     *        Wisdom for your instance</a>.
      */
 
     public void setServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration serverSideEncryptionConfiguration) {
@@ -197,10 +253,33 @@ public class CreateAssistantRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The KMS key used for encryption.
+     * The configuration information for the customer managed key used for encryption.
+     * </p>
+     * <p>
+     * The customer managed key must have a policy that allows <code>kms:CreateGrant</code>,
+     * <code> kms:DescribeKey</code>, and <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity
+     * using the key to invoke Wisdom. To use Wisdom with chat, the key policy must also allow <code>kms:Decrypt</code>,
+     * <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the
+     * <code>connect.amazonaws.com</code> service principal.
+     * </p>
+     * <p>
+     * For more information about setting up a customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect Wisdom for
+     * your instance</a>.
      * </p>
      * 
-     * @return The KMS key used for encryption.
+     * @return The configuration information for the customer managed key used for encryption. </p>
+     *         <p>
+     *         The customer managed key must have a policy that allows <code>kms:CreateGrant</code>,
+     *         <code> kms:DescribeKey</code>, and <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM
+     *         identity using the key to invoke Wisdom. To use Wisdom with chat, the key policy must also allow
+     *         <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions
+     *         to the <code>connect.amazonaws.com</code> service principal.
+     *         </p>
+     *         <p>
+     *         For more information about setting up a customer managed key for Wisdom, see <a
+     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect
+     *         Wisdom for your instance</a>.
      */
 
     public ServerSideEncryptionConfiguration getServerSideEncryptionConfiguration() {
@@ -209,11 +288,34 @@ public class CreateAssistantRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The KMS key used for encryption.
+     * The configuration information for the customer managed key used for encryption.
+     * </p>
+     * <p>
+     * The customer managed key must have a policy that allows <code>kms:CreateGrant</code>,
+     * <code> kms:DescribeKey</code>, and <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM identity
+     * using the key to invoke Wisdom. To use Wisdom with chat, the key policy must also allow <code>kms:Decrypt</code>,
+     * <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions to the
+     * <code>connect.amazonaws.com</code> service principal.
+     * </p>
+     * <p>
+     * For more information about setting up a customer managed key for Wisdom, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect Wisdom for
+     * your instance</a>.
      * </p>
      * 
      * @param serverSideEncryptionConfiguration
-     *        The KMS key used for encryption.
+     *        The configuration information for the customer managed key used for encryption. </p>
+     *        <p>
+     *        The customer managed key must have a policy that allows <code>kms:CreateGrant</code>,
+     *        <code> kms:DescribeKey</code>, and <code>kms:Decrypt/kms:GenerateDataKey</code> permissions to the IAM
+     *        identity using the key to invoke Wisdom. To use Wisdom with chat, the key policy must also allow
+     *        <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>, and <code>kms:DescribeKey</code> permissions
+     *        to the <code>connect.amazonaws.com</code> service principal.
+     *        </p>
+     *        <p>
+     *        For more information about setting up a customer managed key for Wisdom, see <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-wisdom.html">Enable Amazon Connect
+     *        Wisdom for your instance</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies change details of the domain configuration change.
+ * Container for information about a configuration change happening on a domain.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,24 +27,48 @@ public class ChangeProgressDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The unique change identifier associated with a specific domain configuration change.
+     * The ID of the configuration change.
      * </p>
      */
     private String changeId;
     /**
      * <p>
-     * Contains an optional message associated with the domain configuration change.
+     * A message corresponding to the status of the configuration change.
      * </p>
      */
     private String message;
+    /**
+     * <p>
+     * The current status of the configuration change.
+     * </p>
+     */
+    private String configChangeStatus;
+    /**
+     * <p>
+     * The IAM principal who initiated the configuration change.
+     * </p>
+     */
+    private String initiatedBy;
+    /**
+     * <p>
+     * The time that the configuration change was initiated, in Universal Coordinated Time (UTC).
+     * </p>
+     */
+    private java.util.Date startTime;
+    /**
+     * <p>
+     * The last time that the configuration change was updated.
+     * </p>
+     */
+    private java.util.Date lastUpdatedTime;
 
     /**
      * <p>
-     * The unique change identifier associated with a specific domain configuration change.
+     * The ID of the configuration change.
      * </p>
      * 
      * @param changeId
-     *        The unique change identifier associated with a specific domain configuration change.
+     *        The ID of the configuration change.
      */
 
     public void setChangeId(String changeId) {
@@ -53,10 +77,10 @@ public class ChangeProgressDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The unique change identifier associated with a specific domain configuration change.
+     * The ID of the configuration change.
      * </p>
      * 
-     * @return The unique change identifier associated with a specific domain configuration change.
+     * @return The ID of the configuration change.
      */
 
     public String getChangeId() {
@@ -65,11 +89,11 @@ public class ChangeProgressDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The unique change identifier associated with a specific domain configuration change.
+     * The ID of the configuration change.
      * </p>
      * 
      * @param changeId
-     *        The unique change identifier associated with a specific domain configuration change.
+     *        The ID of the configuration change.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +104,11 @@ public class ChangeProgressDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Contains an optional message associated with the domain configuration change.
+     * A message corresponding to the status of the configuration change.
      * </p>
      * 
      * @param message
-     *        Contains an optional message associated with the domain configuration change.
+     *        A message corresponding to the status of the configuration change.
      */
 
     public void setMessage(String message) {
@@ -93,10 +117,10 @@ public class ChangeProgressDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Contains an optional message associated with the domain configuration change.
+     * A message corresponding to the status of the configuration change.
      * </p>
      * 
-     * @return Contains an optional message associated with the domain configuration change.
+     * @return A message corresponding to the status of the configuration change.
      */
 
     public String getMessage() {
@@ -105,16 +129,214 @@ public class ChangeProgressDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Contains an optional message associated with the domain configuration change.
+     * A message corresponding to the status of the configuration change.
      * </p>
      * 
      * @param message
-     *        Contains an optional message associated with the domain configuration change.
+     *        A message corresponding to the status of the configuration change.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ChangeProgressDetails withMessage(String message) {
         setMessage(message);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current status of the configuration change.
+     * </p>
+     * 
+     * @param configChangeStatus
+     *        The current status of the configuration change.
+     * @see ConfigChangeStatus
+     */
+
+    public void setConfigChangeStatus(String configChangeStatus) {
+        this.configChangeStatus = configChangeStatus;
+    }
+
+    /**
+     * <p>
+     * The current status of the configuration change.
+     * </p>
+     * 
+     * @return The current status of the configuration change.
+     * @see ConfigChangeStatus
+     */
+
+    public String getConfigChangeStatus() {
+        return this.configChangeStatus;
+    }
+
+    /**
+     * <p>
+     * The current status of the configuration change.
+     * </p>
+     * 
+     * @param configChangeStatus
+     *        The current status of the configuration change.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConfigChangeStatus
+     */
+
+    public ChangeProgressDetails withConfigChangeStatus(String configChangeStatus) {
+        setConfigChangeStatus(configChangeStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current status of the configuration change.
+     * </p>
+     * 
+     * @param configChangeStatus
+     *        The current status of the configuration change.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConfigChangeStatus
+     */
+
+    public ChangeProgressDetails withConfigChangeStatus(ConfigChangeStatus configChangeStatus) {
+        this.configChangeStatus = configChangeStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IAM principal who initiated the configuration change.
+     * </p>
+     * 
+     * @param initiatedBy
+     *        The IAM principal who initiated the configuration change.
+     * @see InitiatedBy
+     */
+
+    public void setInitiatedBy(String initiatedBy) {
+        this.initiatedBy = initiatedBy;
+    }
+
+    /**
+     * <p>
+     * The IAM principal who initiated the configuration change.
+     * </p>
+     * 
+     * @return The IAM principal who initiated the configuration change.
+     * @see InitiatedBy
+     */
+
+    public String getInitiatedBy() {
+        return this.initiatedBy;
+    }
+
+    /**
+     * <p>
+     * The IAM principal who initiated the configuration change.
+     * </p>
+     * 
+     * @param initiatedBy
+     *        The IAM principal who initiated the configuration change.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InitiatedBy
+     */
+
+    public ChangeProgressDetails withInitiatedBy(String initiatedBy) {
+        setInitiatedBy(initiatedBy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IAM principal who initiated the configuration change.
+     * </p>
+     * 
+     * @param initiatedBy
+     *        The IAM principal who initiated the configuration change.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InitiatedBy
+     */
+
+    public ChangeProgressDetails withInitiatedBy(InitiatedBy initiatedBy) {
+        this.initiatedBy = initiatedBy.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time that the configuration change was initiated, in Universal Coordinated Time (UTC).
+     * </p>
+     * 
+     * @param startTime
+     *        The time that the configuration change was initiated, in Universal Coordinated Time (UTC).
+     */
+
+    public void setStartTime(java.util.Date startTime) {
+        this.startTime = startTime;
+    }
+
+    /**
+     * <p>
+     * The time that the configuration change was initiated, in Universal Coordinated Time (UTC).
+     * </p>
+     * 
+     * @return The time that the configuration change was initiated, in Universal Coordinated Time (UTC).
+     */
+
+    public java.util.Date getStartTime() {
+        return this.startTime;
+    }
+
+    /**
+     * <p>
+     * The time that the configuration change was initiated, in Universal Coordinated Time (UTC).
+     * </p>
+     * 
+     * @param startTime
+     *        The time that the configuration change was initiated, in Universal Coordinated Time (UTC).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ChangeProgressDetails withStartTime(java.util.Date startTime) {
+        setStartTime(startTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The last time that the configuration change was updated.
+     * </p>
+     * 
+     * @param lastUpdatedTime
+     *        The last time that the configuration change was updated.
+     */
+
+    public void setLastUpdatedTime(java.util.Date lastUpdatedTime) {
+        this.lastUpdatedTime = lastUpdatedTime;
+    }
+
+    /**
+     * <p>
+     * The last time that the configuration change was updated.
+     * </p>
+     * 
+     * @return The last time that the configuration change was updated.
+     */
+
+    public java.util.Date getLastUpdatedTime() {
+        return this.lastUpdatedTime;
+    }
+
+    /**
+     * <p>
+     * The last time that the configuration change was updated.
+     * </p>
+     * 
+     * @param lastUpdatedTime
+     *        The last time that the configuration change was updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ChangeProgressDetails withLastUpdatedTime(java.util.Date lastUpdatedTime) {
+        setLastUpdatedTime(lastUpdatedTime);
         return this;
     }
 
@@ -133,7 +355,15 @@ public class ChangeProgressDetails implements Serializable, Cloneable, Structure
         if (getChangeId() != null)
             sb.append("ChangeId: ").append(getChangeId()).append(",");
         if (getMessage() != null)
-            sb.append("Message: ").append(getMessage());
+            sb.append("Message: ").append(getMessage()).append(",");
+        if (getConfigChangeStatus() != null)
+            sb.append("ConfigChangeStatus: ").append(getConfigChangeStatus()).append(",");
+        if (getInitiatedBy() != null)
+            sb.append("InitiatedBy: ").append(getInitiatedBy()).append(",");
+        if (getStartTime() != null)
+            sb.append("StartTime: ").append(getStartTime()).append(",");
+        if (getLastUpdatedTime() != null)
+            sb.append("LastUpdatedTime: ").append(getLastUpdatedTime());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +386,22 @@ public class ChangeProgressDetails implements Serializable, Cloneable, Structure
             return false;
         if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
             return false;
+        if (other.getConfigChangeStatus() == null ^ this.getConfigChangeStatus() == null)
+            return false;
+        if (other.getConfigChangeStatus() != null && other.getConfigChangeStatus().equals(this.getConfigChangeStatus()) == false)
+            return false;
+        if (other.getInitiatedBy() == null ^ this.getInitiatedBy() == null)
+            return false;
+        if (other.getInitiatedBy() != null && other.getInitiatedBy().equals(this.getInitiatedBy()) == false)
+            return false;
+        if (other.getStartTime() == null ^ this.getStartTime() == null)
+            return false;
+        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
+            return false;
+        if (other.getLastUpdatedTime() == null ^ this.getLastUpdatedTime() == null)
+            return false;
+        if (other.getLastUpdatedTime() != null && other.getLastUpdatedTime().equals(this.getLastUpdatedTime()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +412,10 @@ public class ChangeProgressDetails implements Serializable, Cloneable, Structure
 
         hashCode = prime * hashCode + ((getChangeId() == null) ? 0 : getChangeId().hashCode());
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        hashCode = prime * hashCode + ((getConfigChangeStatus() == null) ? 0 : getConfigChangeStatus().hashCode());
+        hashCode = prime * hashCode + ((getInitiatedBy() == null) ? 0 : getInitiatedBy().hashCode());
+        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
+        hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
         return hashCode;
     }
 

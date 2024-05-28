@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -79,12 +79,12 @@ public class VolumeConfiguration implements Serializable, Cloneable, StructuredP
      * <li>
      * <p>
      * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a
-     * minimum size of 500 GiB and a maximum size of 16384 GiB.
+     * minimum size of 125 GiB and a maximum size of 16384 GiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384
+     * <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 125 GiB and a maximum size of 16384
      * GiB.
      * </p>
      * </li>
@@ -292,12 +292,12 @@ public class VolumeConfiguration implements Serializable, Cloneable, StructuredP
      * <li>
      * <p>
      * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a
-     * minimum size of 500 GiB and a maximum size of 16384 GiB.
+     * minimum size of 125 GiB and a maximum size of 16384 GiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384
+     * <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 125 GiB and a maximum size of 16384
      * GiB.
      * </p>
      * </li>
@@ -329,12 +329,12 @@ public class VolumeConfiguration implements Serializable, Cloneable, StructuredP
      *        <li>
      *        <p>
      *        <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have
-     *        a minimum size of 500 GiB and a maximum size of 16384 GiB.
+     *        a minimum size of 125 GiB and a maximum size of 16384 GiB.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of
+     *        <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 125 GiB and a maximum size of
      *        16384 GiB.
      *        </p>
      *        </li>
@@ -371,12 +371,12 @@ public class VolumeConfiguration implements Serializable, Cloneable, StructuredP
      * <li>
      * <p>
      * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a
-     * minimum size of 500 GiB and a maximum size of 16384 GiB.
+     * minimum size of 125 GiB and a maximum size of 16384 GiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384
+     * <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 125 GiB and a maximum size of 16384
      * GiB.
      * </p>
      * </li>
@@ -407,12 +407,12 @@ public class VolumeConfiguration implements Serializable, Cloneable, StructuredP
      *         <li>
      *         <p>
      *         <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have
-     *         a minimum size of 500 GiB and a maximum size of 16384 GiB.
+     *         a minimum size of 125 GiB and a maximum size of 16384 GiB.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of
+     *         <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 125 GiB and a maximum size of
      *         16384 GiB.
      *         </p>
      *         </li>
@@ -449,12 +449,12 @@ public class VolumeConfiguration implements Serializable, Cloneable, StructuredP
      * <li>
      * <p>
      * <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a
-     * minimum size of 500 GiB and a maximum size of 16384 GiB.
+     * minimum size of 125 GiB and a maximum size of 16384 GiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384
+     * <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 125 GiB and a maximum size of 16384
      * GiB.
      * </p>
      * </li>
@@ -486,12 +486,12 @@ public class VolumeConfiguration implements Serializable, Cloneable, StructuredP
      *        <li>
      *        <p>
      *        <code>st1</code> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have
-     *        a minimum size of 500 GiB and a maximum size of 16384 GiB.
+     *        a minimum size of 125 GiB and a maximum size of 16384 GiB.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of
+     *        <code>sc1</code> - Cold HDD. Cold HDD volumes must have a minimum size of 125 GiB and a maximum size of
      *        16384 GiB.
      *        </p>
      *        </li>

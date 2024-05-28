@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,7 @@ import com.amazonaws.services.kinesis.waiters.AmazonKinesisWaiters;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.kinesis.model.*;
+
 import com.amazonaws.services.kinesis.model.transform.*;
 
 /**
@@ -82,17 +83,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
                     .withSupportsCbor(true)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidArgumentException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.kinesis.model.transform.InvalidArgumentExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesis.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("KMSOptInRequired").withExceptionUnmarshaller(
-                                    com.amazonaws.services.kinesis.model.transform.KMSOptInRequiredExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.kinesis.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ExpiredIteratorException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesis.model.transform.ExpiredIteratorExceptionUnmarshaller.getInstance()))
@@ -103,11 +95,29 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
                             new JsonErrorShapeMetadata().withErrorCode("KMSInvalidStateException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesis.model.transform.KMSInvalidStateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.kinesis.model.transform.ValidationExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("KMSDisabledException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesis.model.transform.KMSDisabledExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ExpiredNextTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesis.model.transform.ExpiredNextTokenExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesis.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesis.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidArgumentException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesis.model.transform.InvalidArgumentExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("KMSOptInRequired").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesis.model.transform.KMSOptInRequiredExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesis.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesis.model.transform.ValidationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("KMSNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesis.model.transform.KMSNotFoundExceptionUnmarshaller.getInstance()))
@@ -117,12 +127,6 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("KMSThrottlingException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesis.model.transform.KMSThrottlingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ExpiredNextTokenException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.kinesis.model.transform.ExpiredNextTokenExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.kinesis.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.kinesis.model.AmazonKinesisException.class));
 
     /**
@@ -328,6 +332,12 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * <p>
      * Adds or updates tags for the specified Kinesis data stream. You can assign up to 50 tags to a data stream.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code> parameter,
+     * or both. It is recommended that you use the <code>StreamARN</code> input parameter when you invoke this API.
+     * </p>
+     * </note>
      * <p>
      * If tags have already been assigned to the stream, <code>AddTagsToStream</code> overwrites any existing tags that
      * correspond to the specified tag keys.
@@ -350,6 +360,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * @throws LimitExceededException
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed.
+     * @throws AccessDeniedException
+     *         Specifies that you do not have the permissions required to perform this operation.
      * @sample AmazonKinesis.AddTagsToStream
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/AddTagsToStream" target="_top">AWS API
      *      Documentation</a>
@@ -405,10 +417,14 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * which are uniquely identified groups of data records in a stream.
      * </p>
      * <p>
-     * You specify and control the number of shards that a stream is composed of. Each shard can support reads up to
-     * five transactions per second, up to a maximum data read total of 2 MiB per second. Each shard can support writes
-     * up to 1,000 records per second, up to a maximum data write total of 1 MiB per second. If the amount of data input
-     * increases or decreases, you can add or remove shards.
+     * You can create your data stream using either on-demand or provisioned capacity mode. Data streams with an
+     * on-demand mode require no capacity planning and automatically scale to handle gigabytes of write and read
+     * throughput per minute. With the on-demand mode, Kinesis Data Streams automatically manages the shards in order to
+     * provide the necessary throughput. For the data streams with a provisioned mode, you must specify the number of
+     * shards for the data stream. Each shard can support reads up to five transactions per second, up to a maximum data
+     * read total of 2 MiB per second. Each shard can support writes up to 1,000 records per second, up to a maximum
+     * data write total of 1 MiB per second. If the amount of data input increases or decreases, you can add or remove
+     * shards.
      * </p>
      * <p>
      * The stream name identifies the stream. The name is scoped to the Amazon Web Services account used by the
@@ -522,6 +538,12 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * Decreases the Kinesis data stream's retention period, which is the length of time data records are accessible
      * after they are added to the stream. The minimum value of a stream's retention period is 24 hours.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code> parameter,
+     * or both. It is recommended that you use the <code>StreamARN</code> input parameter when you invoke this API.
+     * </p>
+     * </note>
      * <p>
      * This operation may result in lost data. For example, if the stream's retention period is 48 hours and is
      * decreased to 24 hours, any data already in the stream that is older than 24 hours is inaccessible.
@@ -541,6 +563,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * @throws InvalidArgumentException
      *         A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information,
      *         see the returned message.
+     * @throws AccessDeniedException
+     *         Specifies that you do not have the permissions required to perform this operation.
      * @sample AmazonKinesis.DecreaseStreamRetentionPeriod
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DecreaseStreamRetentionPeriod"
      *      target="_top">AWS API Documentation</a>
@@ -593,10 +617,97 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * Delete a policy for the specified data stream or consumer. Request patterns can be one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Data stream pattern: <code>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Consumer pattern:
+     * <code>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @return Result of the DeleteResourcePolicy operation returned by the service.
+     * @throws AccessDeniedException
+     *         Specifies that you do not have the permissions required to perform this operation.
+     * @throws ResourceNotFoundException
+     *         The requested resource could not be found. The stream might not be specified correctly.
+     * @throws LimitExceededException
+     *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
+     *         exceeds the maximum number allowed.
+     * @throws InvalidArgumentException
+     *         A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information,
+     *         see the returned message.
+     * @throws ResourceInUseException
+     *         The resource is not available for this operation. For successful operation, the resource must be in the
+     *         <code>ACTIVE</code> state.
+     * @sample AmazonKinesis.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteResourcePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteResourcePolicyResult deleteResourcePolicy(DeleteResourcePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteResourcePolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteResourcePolicyResult executeDeleteResourcePolicy(DeleteResourcePolicyRequest deleteResourcePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteResourcePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteResourcePolicyRequest> request = null;
+        Response<DeleteResourcePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteResourcePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteResourcePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteResourcePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteResourcePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteResourcePolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a Kinesis data stream and all its shards and data. You must shut down any applications that are operating
      * on the stream before you delete the stream. If an application attempts to operate on a deleted stream, it
      * receives the exception <code>ResourceNotFoundException</code>.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code> parameter,
+     * or both. It is recommended that you use the <code>StreamARN</code> input parameter when you invoke this API.
+     * </p>
+     * </note>
      * <p>
      * If the stream is in the <code>ACTIVE</code> state, you can delete it. After a <code>DeleteStream</code> request,
      * the specified stream is in the <code>DELETING</code> state until Kinesis Data Streams completes the deletion.
@@ -629,6 +740,11 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * @throws ResourceInUseException
      *         The resource is not available for this operation. For successful operation, the resource must be in the
      *         <code>ACTIVE</code> state.
+     * @throws InvalidArgumentException
+     *         A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information,
+     *         see the returned message.
+     * @throws AccessDeniedException
+     *         Specifies that you do not have the permissions required to perform this operation.
      * @sample AmazonKinesis.DeleteStream
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteStream" target="_top">AWS API
      *      Documentation</a>
@@ -828,6 +944,11 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * summarized description of the specified Kinesis data stream and the <a>ListShards</a> API to list the shards in a
      * specified data stream and obtain information about each shard.
      * </p>
+     * </note> <note>
+     * <p>
+     * When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code> parameter,
+     * or both. It is recommended that you use the <code>StreamARN</code> input parameter when you invoke this API.
+     * </p>
      * </note>
      * <p>
      * The information returned includes the stream name, Amazon Resource Name (ARN), creation time, enhanced metric
@@ -857,6 +978,11 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * @throws LimitExceededException
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed.
+     * @throws InvalidArgumentException
+     *         A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information,
+     *         see the returned message.
+     * @throws AccessDeniedException
+     *         Specifies that you do not have the permissions required to perform this operation.
      * @sample AmazonKinesis.DescribeStream
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStream" target="_top">AWS API
      *      Documentation</a>
@@ -931,6 +1057,12 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * <p>
      * This operation has a limit of 20 transactions per second per stream.
      * </p>
+     * <note>
+     * <p>
+     * When making a cross-account call with <code>DescribeStreamConsumer</code>, make sure to provide the ARN of the
+     * consumer.
+     * </p>
+     * </note>
      * 
      * @param describeStreamConsumerRequest
      * @return Result of the DescribeStreamConsumer operation returned by the service.
@@ -995,6 +1127,12 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * <p>
      * Provides a summarized description of the specified Kinesis data stream without the shard list.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code> parameter,
+     * or both. It is recommended that you use the <code>StreamARN</code> input parameter when you invoke this API.
+     * </p>
+     * </note>
      * <p>
      * The information returned includes the stream name, Amazon Resource Name (ARN), status, record retention period,
      * approximate creation time, monitoring, encryption details, and open shard count.
@@ -1010,6 +1148,11 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * @throws LimitExceededException
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed.
+     * @throws InvalidArgumentException
+     *         A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information,
+     *         see the returned message.
+     * @throws AccessDeniedException
+     *         Specifies that you do not have the permissions required to perform this operation.
      * @sample AmazonKinesis.DescribeStreamSummary
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeStreamSummary" target="_top">AWS
      *      API Documentation</a>
@@ -1063,6 +1206,12 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * <p>
      * Disables enhanced monitoring.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code> parameter,
+     * or both. It is recommended that you use the <code>StreamARN</code> input parameter when you invoke this API.
+     * </p>
+     * </note>
      * 
      * @param disableEnhancedMonitoringRequest
      *        Represents the input for <a>DisableEnhancedMonitoring</a>.
@@ -1078,6 +1227,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *         <code>ACTIVE</code> state.
      * @throws ResourceNotFoundException
      *         The requested resource could not be found. The stream might not be specified correctly.
+     * @throws AccessDeniedException
+     *         Specifies that you do not have the permissions required to perform this operation.
      * @sample AmazonKinesis.DisableEnhancedMonitoring
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DisableEnhancedMonitoring"
      *      target="_top">AWS API Documentation</a>
@@ -1132,6 +1283,12 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * <p>
      * Enables enhanced Kinesis data stream monitoring for shard-level metrics.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code> parameter,
+     * or both. It is recommended that you use the <code>StreamARN</code> input parameter when you invoke this API.
+     * </p>
+     * </note>
      * 
      * @param enableEnhancedMonitoringRequest
      *        Represents the input for <a>EnableEnhancedMonitoring</a>.
@@ -1147,6 +1304,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *         <code>ACTIVE</code> state.
      * @throws ResourceNotFoundException
      *         The requested resource could not be found. The stream might not be specified correctly.
+     * @throws AccessDeniedException
+     *         Specifies that you do not have the permissions required to perform this operation.
      * @sample AmazonKinesis.EnableEnhancedMonitoring
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/EnableEnhancedMonitoring"
      *      target="_top">AWS API Documentation</a>
@@ -1201,6 +1360,12 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * <p>
      * Gets data records from a Kinesis data stream's shard.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code> parameter,
+     * or both. It is recommended that you use the <code>StreamARN</code> input parameter when you invoke this API.
+     * </p>
+     * </note>
      * <p>
      * Specify a shard iterator using the <code>ShardIterator</code> parameter. The shard iterator specifies the
      * position in the shard from which you want to start reading data records sequentially. If there are no records
@@ -1289,6 +1454,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *         The request was denied due to request throttling. For more information about throttling, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a>
      *         in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
+     * @throws AccessDeniedException
+     *         Specifies that you do not have the permissions required to perform this operation.
      * @sample AmazonKinesis.GetRecords
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetRecords" target="_top">AWS API
      *      Documentation</a>
@@ -1339,8 +1506,92 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * Returns a policy attached to the specified data stream or consumer. Request patterns can be one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Data stream pattern: <code>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Consumer pattern:
+     * <code>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getResourcePolicyRequest
+     * @return Result of the GetResourcePolicy operation returned by the service.
+     * @throws AccessDeniedException
+     *         Specifies that you do not have the permissions required to perform this operation.
+     * @throws ResourceNotFoundException
+     *         The requested resource could not be found. The stream might not be specified correctly.
+     * @throws LimitExceededException
+     *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
+     *         exceeds the maximum number allowed.
+     * @throws InvalidArgumentException
+     *         A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information,
+     *         see the returned message.
+     * @sample AmazonKinesis.GetResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetResourcePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetResourcePolicyResult getResourcePolicy(GetResourcePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetResourcePolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetResourcePolicyResult executeGetResourcePolicy(GetResourcePolicyRequest getResourcePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getResourcePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetResourcePolicyRequest> request = null;
+        Response<GetResourcePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetResourcePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getResourcePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourcePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetResourcePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetResourcePolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets an Amazon Kinesis shard iterator. A shard iterator expires 5 minutes after it is returned to the requester.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code> parameter,
+     * or both. It is recommended that you use the <code>StreamARN</code> input parameter when you invoke this API.
+     * </p>
+     * </note>
      * <p>
      * A shard iterator specifies the shard position from which to start reading data records sequentially. The position
      * is specified using the sequence number of a data record in a shard. A sequence number is the identifier
@@ -1395,6 +1646,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *         the <i>Amazon Kinesis Data Streams Developer Guide</i>, and <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/api-retries.html">Error Retries and Exponential
      *         Backoff in Amazon Web Services</a> in the <i>Amazon Web Services General Reference</i>.
+     * @throws AccessDeniedException
+     *         Specifies that you do not have the permissions required to perform this operation.
      * @sample AmazonKinesis.GetShardIterator
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/GetShardIterator" target="_top">AWS API
      *      Documentation</a>
@@ -1459,6 +1712,12 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * Increases the Kinesis data stream's retention period, which is the length of time data records are accessible
      * after they are added to the stream. The maximum value of a stream's retention period is 8760 hours (365 days).
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code> parameter,
+     * or both. It is recommended that you use the <code>StreamARN</code> input parameter when you invoke this API.
+     * </p>
+     * </note>
      * <p>
      * If you choose a longer stream retention period, this operation increases the time period during which records
      * that have not yet expired are accessible. However, it does not make previous, expired data (older than the
@@ -1481,6 +1740,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * @throws InvalidArgumentException
      *         A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information,
      *         see the returned message.
+     * @throws AccessDeniedException
+     *         Specifies that you do not have the permissions required to perform this operation.
      * @sample AmazonKinesis.IncreaseStreamRetentionPeriod
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/IncreaseStreamRetentionPeriod"
      *      target="_top">AWS API Documentation</a>
@@ -1536,6 +1797,12 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * Lists the shards in a stream and provides information about each shard. This operation has a limit of 1000
      * transactions per second per data stream.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code> parameter,
+     * or both. It is recommended that you use the <code>StreamARN</code> input parameter when you invoke this API.
+     * </p>
+     * </note>
      * <p>
      * This action does not list expired shards. For information about expired shards, see <a href=
      * "https://docs.aws.amazon.com/streams/latest/dev/kinesis-using-sdk-java-after-resharding.html#kinesis-using-sdk-java-resharding-data-routing"
@@ -1565,6 +1832,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * @throws ResourceInUseException
      *         The resource is not available for this operation. For successful operation, the resource must be in the
      *         <code>ACTIVE</code> state.
+     * @throws AccessDeniedException
+     *         Specifies that you do not have the permissions required to perform this operation.
      * @sample AmazonKinesis.ListShards
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListShards" target="_top">AWS API
      *      Documentation</a>
@@ -1711,6 +1980,11 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * @throws LimitExceededException
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed.
+     * @throws ExpiredNextTokenException
+     *         The pagination token passed to the operation is expired.
+     * @throws InvalidArgumentException
+     *         A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information,
+     *         see the returned message.
      * @sample AmazonKinesis.ListStreams
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListStreams" target="_top">AWS API
      *      Documentation</a>
@@ -1779,6 +2053,12 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * Lists the tags for the specified Kinesis data stream. This operation has a limit of five transactions per second
      * per account.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code> parameter,
+     * or both. It is recommended that you use the <code>StreamARN</code> input parameter when you invoke this API.
+     * </p>
+     * </note>
      * 
      * @param listTagsForStreamRequest
      *        Represents the input for <code>ListTagsForStream</code>.
@@ -1791,6 +2071,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * @throws LimitExceededException
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed.
+     * @throws AccessDeniedException
+     *         Specifies that you do not have the permissions required to perform this operation.
      * @sample AmazonKinesis.ListTagsForStream
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListTagsForStream" target="_top">AWS API
      *      Documentation</a>
@@ -1842,12 +2124,19 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
     /**
      * <p>
      * Merges two adjacent shards in a Kinesis data stream and combines them into a single shard to reduce the stream's
-     * capacity to ingest and transport data. Two shards are considered adjacent if the union of the hash key ranges for
-     * the two shards form a contiguous set with no gaps. For example, if you have two shards, one with a hash key range
-     * of 276...381 and the other with a hash key range of 382...454, then you could merge these two shards into a
-     * single shard that would have a hash key range of 276...454. After the merge, the single child shard receives data
-     * for all hash key values covered by the two parent shards.
+     * capacity to ingest and transport data. This API is only supported for the data streams with the provisioned
+     * capacity mode. Two shards are considered adjacent if the union of the hash key ranges for the two shards form a
+     * contiguous set with no gaps. For example, if you have two shards, one with a hash key range of 276...381 and the
+     * other with a hash key range of 382...454, then you could merge these two shards into a single shard that would
+     * have a hash key range of 276...454. After the merge, the single child shard receives data for all hash key values
+     * covered by the two parent shards.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code> parameter,
+     * or both. It is recommended that you use the <code>StreamARN</code> input parameter when you invoke this API.
+     * </p>
+     * </note>
      * <p>
      * <code>MergeShards</code> is called when there is a need to reduce the overall capacity of a stream because of
      * excess capacity that is not being used. You must specify the shard to be merged and the adjacent shard for a
@@ -1899,6 +2188,10 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed.
      * @throws ValidationException
+     *         Specifies that you tried to invoke this API for a data stream with the on-demand capacity mode. This API
+     *         is only supported for data streams with the provisioned capacity mode.
+     * @throws AccessDeniedException
+     *         Specifies that you do not have the permissions required to perform this operation.
      * @sample AmazonKinesis.MergeShards
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/MergeShards" target="_top">AWS API
      *      Documentation</a>
@@ -1958,6 +2251,12 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * stream for real-time ingestion and subsequent processing, one record at a time. Each shard can support writes up
      * to 1,000 records per second, up to a maximum data write total of 1 MiB per second.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code> parameter,
+     * or both. It is recommended that you use the <code>StreamARN</code> input parameter when you invoke this API.
+     * </p>
+     * </note>
      * <p>
      * You must specify the name of the stream that captures, stores, and transports the data; a partition key; and the
      * data blob itself.
@@ -2037,6 +2336,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *         The request was denied due to request throttling. For more information about throttling, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a>
      *         in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
+     * @throws AccessDeniedException
+     *         Specifies that you do not have the permissions required to perform this operation.
      * @sample AmazonKinesis.PutRecord
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecord" target="_top">AWS API
      *      Documentation</a>
@@ -2102,6 +2403,12 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * <code>PutRecords</code> request). Use this operation to send data into the stream for data ingestion and
      * processing.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code> parameter,
+     * or both. It is recommended that you use the <code>StreamARN</code> input parameter when you invoke this API.
+     * </p>
+     * </note>
      * <p>
      * Each <code>PutRecords</code> request can support up to 500 records. Each record in the request can be as large as
      * 1 MiB, up to a limit of 5 MiB for the entire request, including partition keys. Each shard can support writes up
@@ -2202,6 +2509,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *         The request was denied due to request throttling. For more information about throttling, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a>
      *         in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
+     * @throws AccessDeniedException
+     *         Specifies that you do not have the permissions required to perform this operation.
      * @sample AmazonKinesis.PutRecords
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutRecords" target="_top">AWS API
      *      Documentation</a>
@@ -2240,6 +2549,100 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
 
             HttpResponseHandler<AmazonWebServiceResponse<PutRecordsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutRecordsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Attaches a resource-based policy to a data stream or registered consumer. If you are using an identity other than
+     * the root user of the Amazon Web Services account that owns the resource, the calling identity must have the
+     * <code>PutResourcePolicy</code> permissions on the specified Kinesis Data Streams resource and belong to the
+     * owner's account in order to use this operation. If you don't have <code>PutResourcePolicy</code> permissions,
+     * Amazon Kinesis Data Streams returns a <code>403 Access Denied error</code>. If you receive a
+     * <code>ResourceNotFoundException</code>, check to see if you passed a valid stream or consumer resource.
+     * </p>
+     * <p>
+     * Request patterns can be one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Data stream pattern: <code>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Consumer pattern:
+     * <code>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html">Controlling Access to Amazon
+     * Kinesis Data Streams Resources Using IAM</a>.
+     * </p>
+     * 
+     * @param putResourcePolicyRequest
+     * @return Result of the PutResourcePolicy operation returned by the service.
+     * @throws AccessDeniedException
+     *         Specifies that you do not have the permissions required to perform this operation.
+     * @throws ResourceNotFoundException
+     *         The requested resource could not be found. The stream might not be specified correctly.
+     * @throws LimitExceededException
+     *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
+     *         exceeds the maximum number allowed.
+     * @throws InvalidArgumentException
+     *         A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information,
+     *         see the returned message.
+     * @throws ResourceInUseException
+     *         The resource is not available for this operation. For successful operation, the resource must be in the
+     *         <code>ACTIVE</code> state.
+     * @sample AmazonKinesis.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/PutResourcePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PutResourcePolicyResult putResourcePolicy(PutResourcePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutResourcePolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutResourcePolicyResult executePutResourcePolicy(PutResourcePolicyRequest putResourcePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putResourcePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutResourcePolicyRequest> request = null;
+        Response<PutResourcePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutResourcePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putResourcePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutResourcePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutResourcePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutResourcePolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2340,6 +2743,12 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * Removes tags from the specified Kinesis data stream. Removed tags are deleted and cannot be recovered after this
      * operation successfully completes.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code> parameter,
+     * or both. It is recommended that you use the <code>StreamARN</code> input parameter when you invoke this API.
+     * </p>
+     * </note>
      * <p>
      * If you specify a tag that does not exist, it is ignored.
      * </p>
@@ -2361,6 +2770,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * @throws LimitExceededException
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed.
+     * @throws AccessDeniedException
+     *         Specifies that you do not have the permissions required to perform this operation.
      * @sample AmazonKinesis.RemoveTagsFromStream
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/RemoveTagsFromStream" target="_top">AWS
      *      API Documentation</a>
@@ -2413,8 +2824,15 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * <p>
      * Splits a shard into two new shards in the Kinesis data stream, to increase the stream's capacity to ingest and
      * transport data. <code>SplitShard</code> is called when there is a need to increase the overall capacity of a
-     * stream because of an expected increase in the volume of data records being ingested.
+     * stream because of an expected increase in the volume of data records being ingested. This API is only supported
+     * for the data streams with the provisioned capacity mode.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code> parameter,
+     * or both. It is recommended that you use the <code>StreamARN</code> input parameter when you invoke this API.
+     * </p>
+     * </note>
      * <p>
      * You can also use <code>SplitShard</code> when a shard appears to be approaching its maximum utilization; for
      * example, the producers sending data into the specific shard are suddenly sending more than previously
@@ -2479,6 +2897,10 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed.
      * @throws ValidationException
+     *         Specifies that you tried to invoke this API for a data stream with the on-demand capacity mode. This API
+     *         is only supported for data streams with the provisioned capacity mode.
+     * @throws AccessDeniedException
+     *         Specifies that you do not have the permissions required to perform this operation.
      * @sample AmazonKinesis.SplitShard
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/SplitShard" target="_top">AWS API
      *      Documentation</a>
@@ -2536,6 +2958,12 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * <p>
      * Enables or updates server-side encryption using an Amazon Web Services KMS key for a specified stream.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code> parameter,
+     * or both. It is recommended that you use the <code>StreamARN</code> input parameter when you invoke this API.
+     * </p>
+     * </note>
      * <p>
      * Starting encryption is an asynchronous operation. Upon receiving the request, Kinesis Data Streams returns
      * immediately and sets the status of the stream to <code>UPDATING</code>. After the update is complete, Kinesis
@@ -2584,6 +3012,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *         The request was denied due to request throttling. For more information about throttling, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a>
      *         in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
+     * @throws AccessDeniedException
+     *         Specifies that you do not have the permissions required to perform this operation.
      * @sample AmazonKinesis.StartStreamEncryption
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StartStreamEncryption" target="_top">AWS
      *      API Documentation</a>
@@ -2637,6 +3067,12 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * <p>
      * Disables server-side encryption for a specified stream.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code> parameter,
+     * or both. It is recommended that you use the <code>StreamARN</code> input parameter when you invoke this API.
+     * </p>
+     * </note>
      * <p>
      * Stopping encryption is an asynchronous operation. Upon receiving the request, Kinesis Data Streams returns
      * immediately and sets the status of the stream to <code>UPDATING</code>. After the update is complete, Kinesis
@@ -2667,6 +3103,8 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      *         <code>ACTIVE</code> state.
      * @throws ResourceNotFoundException
      *         The requested resource could not be found. The stream might not be specified correctly.
+     * @throws AccessDeniedException
+     *         Specifies that you do not have the permissions required to perform this operation.
      * @sample AmazonKinesis.StopStreamEncryption
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/StopStreamEncryption" target="_top">AWS
      *      API Documentation</a>
@@ -2717,8 +3155,15 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Updates the shard count of the specified stream to the specified number of shards.
+     * Updates the shard count of the specified stream to the specified number of shards. This API is only supported for
+     * the data streams with the provisioned capacity mode.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code> parameter,
+     * or both. It is recommended that you use the <code>StreamARN</code> input parameter when you invoke this API.
+     * </p>
+     * </note>
      * <p>
      * Updating the shard count is an asynchronous operation. Upon receiving the request, Kinesis Data Streams returns
      * immediately and sets the status of the stream to <code>UPDATING</code>. After the update is complete, Kinesis
@@ -2770,6 +3215,11 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * Scale up to more than the shard limit for your account
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Make over 10 TPS. TPS over 10 will trigger the LimitExceededException
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * For the default limits for an Amazon Web Services account, see <a
@@ -2794,6 +3244,10 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
      * @throws ResourceNotFoundException
      *         The requested resource could not be found. The stream might not be specified correctly.
      * @throws ValidationException
+     *         Specifies that you tried to invoke this API for a data stream with the on-demand capacity mode. This API
+     *         is only supported for data streams with the provisioned capacity mode.
+     * @throws AccessDeniedException
+     *         Specifies that you do not have the permissions required to perform this operation.
      * @sample AmazonKinesis.UpdateShardCount
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateShardCount" target="_top">AWS API
      *      Documentation</a>

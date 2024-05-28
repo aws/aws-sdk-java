@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,12 @@ public class EksAttemptDetail implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private java.util.List<EksAttemptContainerDetail> containers;
+    /**
+     * <p>
+     * The details for the init containers.
+     * </p>
+     */
+    private java.util.List<EksAttemptContainerDetail> initContainers;
     /**
      * <p>
      * The name of the pod for this job attempt.
@@ -134,6 +140,76 @@ public class EksAttemptDetail implements Serializable, Cloneable, StructuredPojo
 
     public EksAttemptDetail withContainers(java.util.Collection<EksAttemptContainerDetail> containers) {
         setContainers(containers);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The details for the init containers.
+     * </p>
+     * 
+     * @return The details for the init containers.
+     */
+
+    public java.util.List<EksAttemptContainerDetail> getInitContainers() {
+        return initContainers;
+    }
+
+    /**
+     * <p>
+     * The details for the init containers.
+     * </p>
+     * 
+     * @param initContainers
+     *        The details for the init containers.
+     */
+
+    public void setInitContainers(java.util.Collection<EksAttemptContainerDetail> initContainers) {
+        if (initContainers == null) {
+            this.initContainers = null;
+            return;
+        }
+
+        this.initContainers = new java.util.ArrayList<EksAttemptContainerDetail>(initContainers);
+    }
+
+    /**
+     * <p>
+     * The details for the init containers.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInitContainers(java.util.Collection)} or {@link #withInitContainers(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param initContainers
+     *        The details for the init containers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EksAttemptDetail withInitContainers(EksAttemptContainerDetail... initContainers) {
+        if (this.initContainers == null) {
+            setInitContainers(new java.util.ArrayList<EksAttemptContainerDetail>(initContainers.length));
+        }
+        for (EksAttemptContainerDetail ele : initContainers) {
+            this.initContainers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The details for the init containers.
+     * </p>
+     * 
+     * @param initContainers
+     *        The details for the init containers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EksAttemptDetail withInitContainers(java.util.Collection<EksAttemptContainerDetail> initContainers) {
+        setInitContainers(initContainers);
         return this;
     }
 
@@ -366,6 +442,8 @@ public class EksAttemptDetail implements Serializable, Cloneable, StructuredPojo
         sb.append("{");
         if (getContainers() != null)
             sb.append("Containers: ").append(getContainers()).append(",");
+        if (getInitContainers() != null)
+            sb.append("InitContainers: ").append(getInitContainers()).append(",");
         if (getPodName() != null)
             sb.append("PodName: ").append(getPodName()).append(",");
         if (getNodeName() != null)
@@ -393,6 +471,10 @@ public class EksAttemptDetail implements Serializable, Cloneable, StructuredPojo
         if (other.getContainers() == null ^ this.getContainers() == null)
             return false;
         if (other.getContainers() != null && other.getContainers().equals(this.getContainers()) == false)
+            return false;
+        if (other.getInitContainers() == null ^ this.getInitContainers() == null)
+            return false;
+        if (other.getInitContainers() != null && other.getInitContainers().equals(this.getInitContainers()) == false)
             return false;
         if (other.getPodName() == null ^ this.getPodName() == null)
             return false;
@@ -423,6 +505,7 @@ public class EksAttemptDetail implements Serializable, Cloneable, StructuredPojo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getContainers() == null) ? 0 : getContainers().hashCode());
+        hashCode = prime * hashCode + ((getInitContainers() == null) ? 0 : getInitContainers().hashCode());
         hashCode = prime * hashCode + ((getPodName() == null) ? 0 : getPodName().hashCode());
         hashCode = prime * hashCode + ((getNodeName() == null) ? 0 : getNodeName().hashCode());
         hashCode = prime * hashCode + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());

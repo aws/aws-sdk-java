@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,9 +30,9 @@ public class InstanceConfig implements Serializable, Cloneable, StructuredPojo {
 
     private String connectInstanceId;
 
-    private EncryptionConfig encryptionConfig;
-
     private String serviceLinkedRoleArn;
+
+    private EncryptionConfig encryptionConfig;
 
     /**
      * @param connectInstanceId
@@ -57,32 +57,6 @@ public class InstanceConfig implements Serializable, Cloneable, StructuredPojo {
 
     public InstanceConfig withConnectInstanceId(String connectInstanceId) {
         setConnectInstanceId(connectInstanceId);
-        return this;
-    }
-
-    /**
-     * @param encryptionConfig
-     */
-
-    public void setEncryptionConfig(EncryptionConfig encryptionConfig) {
-        this.encryptionConfig = encryptionConfig;
-    }
-
-    /**
-     * @return
-     */
-
-    public EncryptionConfig getEncryptionConfig() {
-        return this.encryptionConfig;
-    }
-
-    /**
-     * @param encryptionConfig
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public InstanceConfig withEncryptionConfig(EncryptionConfig encryptionConfig) {
-        setEncryptionConfig(encryptionConfig);
         return this;
     }
 
@@ -113,6 +87,32 @@ public class InstanceConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param encryptionConfig
+     */
+
+    public void setEncryptionConfig(EncryptionConfig encryptionConfig) {
+        this.encryptionConfig = encryptionConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public EncryptionConfig getEncryptionConfig() {
+        return this.encryptionConfig;
+    }
+
+    /**
+     * @param encryptionConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceConfig withEncryptionConfig(EncryptionConfig encryptionConfig) {
+        setEncryptionConfig(encryptionConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -126,10 +126,10 @@ public class InstanceConfig implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getConnectInstanceId() != null)
             sb.append("ConnectInstanceId: ").append(getConnectInstanceId()).append(",");
-        if (getEncryptionConfig() != null)
-            sb.append("EncryptionConfig: ").append(getEncryptionConfig()).append(",");
         if (getServiceLinkedRoleArn() != null)
-            sb.append("ServiceLinkedRoleArn: ").append(getServiceLinkedRoleArn());
+            sb.append("ServiceLinkedRoleArn: ").append(getServiceLinkedRoleArn()).append(",");
+        if (getEncryptionConfig() != null)
+            sb.append("EncryptionConfig: ").append(getEncryptionConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -148,13 +148,13 @@ public class InstanceConfig implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getConnectInstanceId() != null && other.getConnectInstanceId().equals(this.getConnectInstanceId()) == false)
             return false;
-        if (other.getEncryptionConfig() == null ^ this.getEncryptionConfig() == null)
-            return false;
-        if (other.getEncryptionConfig() != null && other.getEncryptionConfig().equals(this.getEncryptionConfig()) == false)
-            return false;
         if (other.getServiceLinkedRoleArn() == null ^ this.getServiceLinkedRoleArn() == null)
             return false;
         if (other.getServiceLinkedRoleArn() != null && other.getServiceLinkedRoleArn().equals(this.getServiceLinkedRoleArn()) == false)
+            return false;
+        if (other.getEncryptionConfig() == null ^ this.getEncryptionConfig() == null)
+            return false;
+        if (other.getEncryptionConfig() != null && other.getEncryptionConfig().equals(this.getEncryptionConfig()) == false)
             return false;
         return true;
     }
@@ -165,8 +165,8 @@ public class InstanceConfig implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getConnectInstanceId() == null) ? 0 : getConnectInstanceId().hashCode());
-        hashCode = prime * hashCode + ((getEncryptionConfig() == null) ? 0 : getEncryptionConfig().hashCode());
         hashCode = prime * hashCode + ((getServiceLinkedRoleArn() == null) ? 0 : getServiceLinkedRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionConfig() == null) ? 0 : getEncryptionConfig().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -89,7 +89,7 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * a public IP address, then you need to enable the <code>auto-assign public IP address</code> setting for the
      * subnet. See <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html#subnet-public-ip">Modifying the
-     * public IPv4 addressing attribute for your subnet</a> in the <i>Amazon VPC User Guide</i>.
+     * public <code>IPv4</code> addressing attribute for your subnet</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -207,7 +207,7 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * a public IP address, then you need to enable the <code>auto-assign public IP address</code> setting for the
      * subnet. See <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html#subnet-public-ip">Modifying the
-     * public IPv4 addressing attribute for your subnet</a> in the <i>Amazon VPC User Guide</i>.
+     * public <code>IPv4</code> addressing attribute for your subnet</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -309,7 +309,7 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *        assigned a public IP address, then you need to enable the <code>auto-assign public IP address</code>
      *        setting for the subnet. See <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html#subnet-public-ip">Modifying
-     *        the public IPv4 addressing attribute for your subnet</a> in the <i>Amazon VPC User Guide</i>.
+     *        the public <code>IPv4</code> addressing attribute for your subnet</a> in the <i>Amazon VPC User Guide</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -418,7 +418,7 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * a public IP address, then you need to enable the <code>auto-assign public IP address</code> setting for the
      * subnet. See <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html#subnet-public-ip">Modifying the
-     * public IPv4 addressing attribute for your subnet</a> in the <i>Amazon VPC User Guide</i>.
+     * public <code>IPv4</code> addressing attribute for your subnet</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -519,7 +519,8 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *         assigned a public IP address, then you need to enable the <code>auto-assign public IP address</code>
      *         setting for the subnet. See <a
      *         href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html#subnet-public-ip">Modifying
-     *         the public IPv4 addressing attribute for your subnet</a> in the <i>Amazon VPC User Guide</i>.
+     *         the public <code>IPv4</code> addressing attribute for your subnet</a> in the <i>Amazon VPC User
+     *         Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -628,7 +629,7 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * a public IP address, then you need to enable the <code>auto-assign public IP address</code> setting for the
      * subnet. See <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html#subnet-public-ip">Modifying the
-     * public IPv4 addressing attribute for your subnet</a> in the <i>Amazon VPC User Guide</i>.
+     * public <code>IPv4</code> addressing attribute for your subnet</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -730,7 +731,7 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *        assigned a public IP address, then you need to enable the <code>auto-assign public IP address</code>
      *        setting for the subnet. See <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html#subnet-public-ip">Modifying
-     *        the public IPv4 addressing attribute for your subnet</a> in the <i>Amazon VPC User Guide</i>.
+     *        the public <code>IPv4</code> addressing attribute for your subnet</a> in the <i>Amazon VPC User Guide</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -841,7 +842,7 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      * a public IP address, then you need to enable the <code>auto-assign public IP address</code> setting for the
      * subnet. See <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html#subnet-public-ip">Modifying the
-     * public IPv4 addressing attribute for your subnet</a> in the <i>Amazon VPC User Guide</i>.
+     * public <code>IPv4</code> addressing attribute for your subnet</a> in the <i>Amazon VPC User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -943,7 +944,7 @@ public class Issue implements Serializable, Cloneable, StructuredPojo {
      *        assigned a public IP address, then you need to enable the <code>auto-assign public IP address</code>
      *        setting for the subnet. See <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html#subnet-public-ip">Modifying
-     *        the public IPv4 addressing attribute for your subnet</a> in the <i>Amazon VPC User Guide</i>.
+     *        the public <code>IPv4</code> addressing attribute for your subnet</a> in the <i>Amazon VPC User Guide</i>.
      *        </p>
      *        </li>
      *        <li>

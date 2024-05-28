@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,8 +44,11 @@ public class FrameworkControl implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The scope of a control. The control scope defines what the control will evaluate. Three examples of control
-     * scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans. For more
-     * information, see <a href="aws-backup/latest/devguide/API_ControlScope.html"> <code>ControlScope</code>.</a>
+     * scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ControlScope.html">
+     * <code>ControlScope</code>.</a>
      * </p>
      */
     private ControlScope controlScope;
@@ -163,14 +166,19 @@ public class FrameworkControl implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The scope of a control. The control scope defines what the control will evaluate. Three examples of control
-     * scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans. For more
-     * information, see <a href="aws-backup/latest/devguide/API_ControlScope.html"> <code>ControlScope</code>.</a>
+     * scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ControlScope.html">
+     * <code>ControlScope</code>.</a>
      * </p>
      * 
      * @param controlScope
      *        The scope of a control. The control scope defines what the control will evaluate. Three examples of
-     *        control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans. For
-     *        more information, see <a href="aws-backup/latest/devguide/API_ControlScope.html">
+     *        control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ControlScope.html">
      *        <code>ControlScope</code>.</a>
      */
 
@@ -181,13 +189,19 @@ public class FrameworkControl implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The scope of a control. The control scope defines what the control will evaluate. Three examples of control
-     * scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans. For more
-     * information, see <a href="aws-backup/latest/devguide/API_ControlScope.html"> <code>ControlScope</code>.</a>
+     * scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ControlScope.html">
+     * <code>ControlScope</code>.</a>
      * </p>
      * 
      * @return The scope of a control. The control scope defines what the control will evaluate. Three examples of
-     *         control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans.
-     *         For more information, see <a href="aws-backup/latest/devguide/API_ControlScope.html">
+     *         control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup
+     *         plans.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ControlScope.html">
      *         <code>ControlScope</code>.</a>
      */
 
@@ -198,14 +212,19 @@ public class FrameworkControl implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The scope of a control. The control scope defines what the control will evaluate. Three examples of control
-     * scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans. For more
-     * information, see <a href="aws-backup/latest/devguide/API_ControlScope.html"> <code>ControlScope</code>.</a>
+     * scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ControlScope.html">
+     * <code>ControlScope</code>.</a>
      * </p>
      * 
      * @param controlScope
      *        The scope of a control. The control scope defines what the control will evaluate. Three examples of
-     *        control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans. For
-     *        more information, see <a href="aws-backup/latest/devguide/API_ControlScope.html">
+     *        control scopes are: a specific backup plan, all backup plans with a specific tag, or all backup plans.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ControlScope.html">
      *        <code>ControlScope</code>.</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

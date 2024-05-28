@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,9 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * This setting can improve the compatibility of your output with video players on obsolete devices. It applies only to
- * DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI (UNENCRYPTED_SEI) only to correct problems with
- * playback on older devices. Otherwise, keep the default setting CENC v1 (CENC_V1). If you choose Unencrypted SEI, for
- * that output, the service will exclude the access unit delimiter and will leave the SEI NAL units unencrypted.
+ * DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI only to correct problems with playback on older
+ * devices. Otherwise, keep the default setting CENC v1. If you choose Unencrypted SEI, for that output, the service
+ * will exclude the access unit delimiter and will leave the SEI NAL units unencrypted.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DashIsoPlaybackDeviceCompatibility {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,9 +27,9 @@ import com.amazonaws.services.fis.model.*;
  * </p>
  * <p>
  * <p>
- * Fault Injection Simulator is a managed service that enables you to perform fault injection experiments on your Amazon
+ * Fault Injection Service is a managed service that enables you to perform fault injection experiments on your Amazon
  * Web Services workloads. For more information, see the <a
- * href="https://docs.aws.amazon.com/fis/latest/userguide/">Fault Injection Simulator User Guide</a>.
+ * href="https://docs.aws.amazon.com/fis/latest/userguide/">Fault Injection Service User Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -72,8 +72,8 @@ public interface AWSFIS {
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">Experiment templates</a> in the
-     * <i>Fault Injection Simulator User Guide</i>.
+     * href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">experiment templates</a> in the
+     * <i>Fault Injection Service User Guide</i>.
      * </p>
      * 
      * @param createExperimentTemplateRequest
@@ -94,6 +94,31 @@ public interface AWSFIS {
 
     /**
      * <p>
+     * Creates a target account configuration for the experiment template. A target account configuration is required
+     * when <code>accountTargeting</code> of <code>experimentOptions</code> is set to <code>multi-account</code>. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-options.html">experiment options</a> in the
+     * <i>Fault Injection Service User Guide</i>.
+     * </p>
+     * 
+     * @param createTargetAccountConfigurationRequest
+     * @return Result of the CreateTargetAccountConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The specified input is not valid, or fails to satisfy the constraints for the request.
+     * @throws ConflictException
+     *         The request could not be processed because of a conflict.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found.
+     * @throws ServiceQuotaExceededException
+     *         You have exceeded your service quota.
+     * @sample AWSFIS.CreateTargetAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/CreateTargetAccountConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateTargetAccountConfigurationResult createTargetAccountConfiguration(CreateTargetAccountConfigurationRequest createTargetAccountConfigurationRequest);
+
+    /**
+     * <p>
      * Deletes the specified experiment template.
      * </p>
      * 
@@ -108,6 +133,23 @@ public interface AWSFIS {
      *      API Documentation</a>
      */
     DeleteExperimentTemplateResult deleteExperimentTemplate(DeleteExperimentTemplateRequest deleteExperimentTemplateRequest);
+
+    /**
+     * <p>
+     * Deletes the specified target account configuration of the experiment template.
+     * </p>
+     * 
+     * @param deleteTargetAccountConfigurationRequest
+     * @return Result of the DeleteTargetAccountConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The specified input is not valid, or fails to satisfy the constraints for the request.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found.
+     * @sample AWSFIS.DeleteTargetAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/DeleteTargetAccountConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteTargetAccountConfigurationResult deleteTargetAccountConfiguration(DeleteTargetAccountConfigurationRequest deleteTargetAccountConfigurationRequest);
 
     /**
      * <p>
@@ -145,6 +187,24 @@ public interface AWSFIS {
 
     /**
      * <p>
+     * Gets information about the specified target account configuration of the experiment.
+     * </p>
+     * 
+     * @param getExperimentTargetAccountConfigurationRequest
+     * @return Result of the GetExperimentTargetAccountConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found.
+     * @throws ValidationException
+     *         The specified input is not valid, or fails to satisfy the constraints for the request.
+     * @sample AWSFIS.GetExperimentTargetAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetExperimentTargetAccountConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetExperimentTargetAccountConfigurationResult getExperimentTargetAccountConfiguration(
+            GetExperimentTargetAccountConfigurationRequest getExperimentTargetAccountConfigurationRequest);
+
+    /**
+     * <p>
      * Gets information about the specified experiment template.
      * </p>
      * 
@@ -159,6 +219,23 @@ public interface AWSFIS {
      *      Documentation</a>
      */
     GetExperimentTemplateResult getExperimentTemplate(GetExperimentTemplateRequest getExperimentTemplateRequest);
+
+    /**
+     * <p>
+     * Gets information about the specified target account configuration of the experiment template.
+     * </p>
+     * 
+     * @param getTargetAccountConfigurationRequest
+     * @return Result of the GetTargetAccountConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found.
+     * @throws ValidationException
+     *         The specified input is not valid, or fails to satisfy the constraints for the request.
+     * @sample AWSFIS.GetTargetAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/GetTargetAccountConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetTargetAccountConfigurationResult getTargetAccountConfiguration(GetTargetAccountConfigurationRequest getTargetAccountConfigurationRequest);
 
     /**
      * <p>
@@ -191,6 +268,41 @@ public interface AWSFIS {
      *      Documentation</a>
      */
     ListActionsResult listActions(ListActionsRequest listActionsRequest);
+
+    /**
+     * <p>
+     * Lists the resolved targets information of the specified experiment.
+     * </p>
+     * 
+     * @param listExperimentResolvedTargetsRequest
+     * @return Result of the ListExperimentResolvedTargets operation returned by the service.
+     * @throws ValidationException
+     *         The specified input is not valid, or fails to satisfy the constraints for the request.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found.
+     * @sample AWSFIS.ListExperimentResolvedTargets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListExperimentResolvedTargets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListExperimentResolvedTargetsResult listExperimentResolvedTargets(ListExperimentResolvedTargetsRequest listExperimentResolvedTargetsRequest);
+
+    /**
+     * <p>
+     * Lists the target account configurations of the specified experiment.
+     * </p>
+     * 
+     * @param listExperimentTargetAccountConfigurationsRequest
+     * @return Result of the ListExperimentTargetAccountConfigurations operation returned by the service.
+     * @throws ValidationException
+     *         The specified input is not valid, or fails to satisfy the constraints for the request.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found.
+     * @sample AWSFIS.ListExperimentTargetAccountConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListExperimentTargetAccountConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListExperimentTargetAccountConfigurationsResult listExperimentTargetAccountConfigurations(
+            ListExperimentTargetAccountConfigurationsRequest listExperimentTargetAccountConfigurationsRequest);
 
     /**
      * <p>
@@ -234,6 +346,23 @@ public interface AWSFIS {
      *      Documentation</a>
      */
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Lists the target account configurations of the specified experiment template.
+     * </p>
+     * 
+     * @param listTargetAccountConfigurationsRequest
+     * @return Result of the ListTargetAccountConfigurations operation returned by the service.
+     * @throws ValidationException
+     *         The specified input is not valid, or fails to satisfy the constraints for the request.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found.
+     * @sample AWSFIS.ListTargetAccountConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/ListTargetAccountConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTargetAccountConfigurationsResult listTargetAccountConfigurations(ListTargetAccountConfigurationsRequest listTargetAccountConfigurationsRequest);
 
     /**
      * <p>
@@ -332,6 +461,23 @@ public interface AWSFIS {
      *      API Documentation</a>
      */
     UpdateExperimentTemplateResult updateExperimentTemplate(UpdateExperimentTemplateRequest updateExperimentTemplateRequest);
+
+    /**
+     * <p>
+     * Updates the target account configuration for the specified experiment template.
+     * </p>
+     * 
+     * @param updateTargetAccountConfigurationRequest
+     * @return Result of the UpdateTargetAccountConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The specified input is not valid, or fails to satisfy the constraints for the request.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found.
+     * @sample AWSFIS.UpdateTargetAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/UpdateTargetAccountConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateTargetAccountConfigurationResult updateTargetAccountConfiguration(UpdateTargetAccountConfigurationRequest updateTargetAccountConfigurationRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

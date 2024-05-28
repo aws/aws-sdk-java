@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,6 +61,19 @@ public class CreateHostedConfigurationVersionResult extends com.amazonaws.Amazon
      * </p>
      */
     private String contentType;
+    /**
+     * <p>
+     * A user-defined label for an AppConfig hosted configuration version.
+     * </p>
+     */
+    private String versionLabel;
+    /**
+     * <p>
+     * The Amazon Resource Name of the Key Management Service key that was used to encrypt this specific version of the
+     * configuration data in the AppConfig hosted configuration store.
+     * </p>
+     */
+    private String kmsKeyArn;
 
     /**
      * <p>
@@ -336,6 +349,92 @@ public class CreateHostedConfigurationVersionResult extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * A user-defined label for an AppConfig hosted configuration version.
+     * </p>
+     * 
+     * @param versionLabel
+     *        A user-defined label for an AppConfig hosted configuration version.
+     */
+
+    public void setVersionLabel(String versionLabel) {
+        this.versionLabel = versionLabel;
+    }
+
+    /**
+     * <p>
+     * A user-defined label for an AppConfig hosted configuration version.
+     * </p>
+     * 
+     * @return A user-defined label for an AppConfig hosted configuration version.
+     */
+
+    public String getVersionLabel() {
+        return this.versionLabel;
+    }
+
+    /**
+     * <p>
+     * A user-defined label for an AppConfig hosted configuration version.
+     * </p>
+     * 
+     * @param versionLabel
+     *        A user-defined label for an AppConfig hosted configuration version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateHostedConfigurationVersionResult withVersionLabel(String versionLabel) {
+        setVersionLabel(versionLabel);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name of the Key Management Service key that was used to encrypt this specific version of the
+     * configuration data in the AppConfig hosted configuration store.
+     * </p>
+     * 
+     * @param kmsKeyArn
+     *        The Amazon Resource Name of the Key Management Service key that was used to encrypt this specific version
+     *        of the configuration data in the AppConfig hosted configuration store.
+     */
+
+    public void setKmsKeyArn(String kmsKeyArn) {
+        this.kmsKeyArn = kmsKeyArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name of the Key Management Service key that was used to encrypt this specific version of the
+     * configuration data in the AppConfig hosted configuration store.
+     * </p>
+     * 
+     * @return The Amazon Resource Name of the Key Management Service key that was used to encrypt this specific version
+     *         of the configuration data in the AppConfig hosted configuration store.
+     */
+
+    public String getKmsKeyArn() {
+        return this.kmsKeyArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name of the Key Management Service key that was used to encrypt this specific version of the
+     * configuration data in the AppConfig hosted configuration store.
+     * </p>
+     * 
+     * @param kmsKeyArn
+     *        The Amazon Resource Name of the Key Management Service key that was used to encrypt this specific version
+     *        of the configuration data in the AppConfig hosted configuration store.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateHostedConfigurationVersionResult withKmsKeyArn(String kmsKeyArn) {
+        setKmsKeyArn(kmsKeyArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -358,7 +457,11 @@ public class CreateHostedConfigurationVersionResult extends com.amazonaws.Amazon
         if (getContent() != null)
             sb.append("Content: ").append("***Sensitive Data Redacted***").append(",");
         if (getContentType() != null)
-            sb.append("ContentType: ").append(getContentType());
+            sb.append("ContentType: ").append(getContentType()).append(",");
+        if (getVersionLabel() != null)
+            sb.append("VersionLabel: ").append(getVersionLabel()).append(",");
+        if (getKmsKeyArn() != null)
+            sb.append("KmsKeyArn: ").append(getKmsKeyArn());
         sb.append("}");
         return sb.toString();
     }
@@ -397,6 +500,14 @@ public class CreateHostedConfigurationVersionResult extends com.amazonaws.Amazon
             return false;
         if (other.getContentType() != null && other.getContentType().equals(this.getContentType()) == false)
             return false;
+        if (other.getVersionLabel() == null ^ this.getVersionLabel() == null)
+            return false;
+        if (other.getVersionLabel() != null && other.getVersionLabel().equals(this.getVersionLabel()) == false)
+            return false;
+        if (other.getKmsKeyArn() == null ^ this.getKmsKeyArn() == null)
+            return false;
+        if (other.getKmsKeyArn() != null && other.getKmsKeyArn().equals(this.getKmsKeyArn()) == false)
+            return false;
         return true;
     }
 
@@ -411,6 +522,8 @@ public class CreateHostedConfigurationVersionResult extends com.amazonaws.Amazon
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getContent() == null) ? 0 : getContent().hashCode());
         hashCode = prime * hashCode + ((getContentType() == null) ? 0 : getContentType().hashCode());
+        hashCode = prime * hashCode + ((getVersionLabel() == null) ? 0 : getVersionLabel().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyArn() == null) ? 0 : getKmsKeyArn().hashCode());
         return hashCode;
     }
 

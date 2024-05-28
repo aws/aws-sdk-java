@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,15 @@ public class S3Parameters implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ManifestFileLocation manifestFileLocation;
+    /**
+     * <p>
+     * Use the <code>RoleArn</code> structure to override an account-wide role for a specific S3 data source. For
+     * example, say an account administrator has turned off all S3 access with an account-wide role. The administrator
+     * can then use <code>RoleArn</code> to bypass the account-wide role and allow S3 access for the single S3 data
+     * source that is specified in the structure, even if the account-wide role forbidding S3 access is still active.
+     * </p>
+     */
+    private String roleArn;
 
     /**
      * <p>
@@ -79,6 +88,67 @@ public class S3Parameters implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Use the <code>RoleArn</code> structure to override an account-wide role for a specific S3 data source. For
+     * example, say an account administrator has turned off all S3 access with an account-wide role. The administrator
+     * can then use <code>RoleArn</code> to bypass the account-wide role and allow S3 access for the single S3 data
+     * source that is specified in the structure, even if the account-wide role forbidding S3 access is still active.
+     * </p>
+     * 
+     * @param roleArn
+     *        Use the <code>RoleArn</code> structure to override an account-wide role for a specific S3 data source. For
+     *        example, say an account administrator has turned off all S3 access with an account-wide role. The
+     *        administrator can then use <code>RoleArn</code> to bypass the account-wide role and allow S3 access for
+     *        the single S3 data source that is specified in the structure, even if the account-wide role forbidding S3
+     *        access is still active.
+     */
+
+    public void setRoleArn(String roleArn) {
+        this.roleArn = roleArn;
+    }
+
+    /**
+     * <p>
+     * Use the <code>RoleArn</code> structure to override an account-wide role for a specific S3 data source. For
+     * example, say an account administrator has turned off all S3 access with an account-wide role. The administrator
+     * can then use <code>RoleArn</code> to bypass the account-wide role and allow S3 access for the single S3 data
+     * source that is specified in the structure, even if the account-wide role forbidding S3 access is still active.
+     * </p>
+     * 
+     * @return Use the <code>RoleArn</code> structure to override an account-wide role for a specific S3 data source.
+     *         For example, say an account administrator has turned off all S3 access with an account-wide role. The
+     *         administrator can then use <code>RoleArn</code> to bypass the account-wide role and allow S3 access for
+     *         the single S3 data source that is specified in the structure, even if the account-wide role forbidding S3
+     *         access is still active.
+     */
+
+    public String getRoleArn() {
+        return this.roleArn;
+    }
+
+    /**
+     * <p>
+     * Use the <code>RoleArn</code> structure to override an account-wide role for a specific S3 data source. For
+     * example, say an account administrator has turned off all S3 access with an account-wide role. The administrator
+     * can then use <code>RoleArn</code> to bypass the account-wide role and allow S3 access for the single S3 data
+     * source that is specified in the structure, even if the account-wide role forbidding S3 access is still active.
+     * </p>
+     * 
+     * @param roleArn
+     *        Use the <code>RoleArn</code> structure to override an account-wide role for a specific S3 data source. For
+     *        example, say an account administrator has turned off all S3 access with an account-wide role. The
+     *        administrator can then use <code>RoleArn</code> to bypass the account-wide role and allow S3 access for
+     *        the single S3 data source that is specified in the structure, even if the account-wide role forbidding S3
+     *        access is still active.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3Parameters withRoleArn(String roleArn) {
+        setRoleArn(roleArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -91,7 +161,9 @@ public class S3Parameters implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getManifestFileLocation() != null)
-            sb.append("ManifestFileLocation: ").append(getManifestFileLocation());
+            sb.append("ManifestFileLocation: ").append(getManifestFileLocation()).append(",");
+        if (getRoleArn() != null)
+            sb.append("RoleArn: ").append(getRoleArn());
         sb.append("}");
         return sb.toString();
     }
@@ -110,6 +182,10 @@ public class S3Parameters implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getManifestFileLocation() != null && other.getManifestFileLocation().equals(this.getManifestFileLocation()) == false)
             return false;
+        if (other.getRoleArn() == null ^ this.getRoleArn() == null)
+            return false;
+        if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
+            return false;
         return true;
     }
 
@@ -119,6 +195,7 @@ public class S3Parameters implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getManifestFileLocation() == null) ? 0 : getManifestFileLocation().hashCode());
+        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         return hashCode;
     }
 

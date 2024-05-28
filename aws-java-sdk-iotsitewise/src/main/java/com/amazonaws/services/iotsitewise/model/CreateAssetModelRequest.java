@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,10 +66,18 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
     private java.util.List<AssetModelHierarchyDefinition> assetModelHierarchies;
     /**
      * <p>
-     * The composite asset models that are part of this asset model. Composite asset models are asset models that
-     * contain specific properties. Each composite model has a type that defines the properties that the composite model
-     * supports. Use composite asset models to define alarms on this asset model.
+     * The composite models that are part of this asset model. It groups properties (such as attributes, measurements,
+     * transforms, and metrics) and child composite models that model parts of your industrial equipment. Each composite
+     * model has a type that defines the properties that the composite model supports. Use composite models to define
+     * alarms on this asset model.
      * </p>
+     * <note>
+     * <p>
+     * When creating custom composite models, you need to use <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html"
+     * >CreateAssetModelCompositeModel</a>. For more information, see &lt;LINK&gt;.
+     * </p>
+     * </note>
      */
     private java.util.List<AssetModelCompositeModelDefinition> assetModelCompositeModels;
     /**
@@ -87,6 +95,43 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The ID to assign to the asset model, if desired. IoT SiteWise automatically generates a unique ID for you, so
+     * this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here
+     * in UUID format. If you specify your own ID, it must be globally unique.
+     * </p>
+     */
+    private String assetModelId;
+    /**
+     * <p>
+     * An external ID to assign to the asset model. The external ID must be unique within your Amazon Web Services
+     * account. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     */
+    private String assetModelExternalId;
+    /**
+     * <p>
+     * The type of asset model.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String assetModelType;
 
     /**
      * <p>
@@ -422,14 +467,28 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The composite asset models that are part of this asset model. Composite asset models are asset models that
-     * contain specific properties. Each composite model has a type that defines the properties that the composite model
-     * supports. Use composite asset models to define alarms on this asset model.
+     * The composite models that are part of this asset model. It groups properties (such as attributes, measurements,
+     * transforms, and metrics) and child composite models that model parts of your industrial equipment. Each composite
+     * model has a type that defines the properties that the composite model supports. Use composite models to define
+     * alarms on this asset model.
      * </p>
+     * <note>
+     * <p>
+     * When creating custom composite models, you need to use <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html"
+     * >CreateAssetModelCompositeModel</a>. For more information, see &lt;LINK&gt;.
+     * </p>
+     * </note>
      * 
-     * @return The composite asset models that are part of this asset model. Composite asset models are asset models
-     *         that contain specific properties. Each composite model has a type that defines the properties that the
-     *         composite model supports. Use composite asset models to define alarms on this asset model.
+     * @return The composite models that are part of this asset model. It groups properties (such as attributes,
+     *         measurements, transforms, and metrics) and child composite models that model parts of your industrial
+     *         equipment. Each composite model has a type that defines the properties that the composite model supports.
+     *         Use composite models to define alarms on this asset model.</p> <note>
+     *         <p>
+     *         When creating custom composite models, you need to use <a href=
+     *         "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html"
+     *         >CreateAssetModelCompositeModel</a>. For more information, see &lt;LINK&gt;.
+     *         </p>
      */
 
     public java.util.List<AssetModelCompositeModelDefinition> getAssetModelCompositeModels() {
@@ -438,15 +497,29 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The composite asset models that are part of this asset model. Composite asset models are asset models that
-     * contain specific properties. Each composite model has a type that defines the properties that the composite model
-     * supports. Use composite asset models to define alarms on this asset model.
+     * The composite models that are part of this asset model. It groups properties (such as attributes, measurements,
+     * transforms, and metrics) and child composite models that model parts of your industrial equipment. Each composite
+     * model has a type that defines the properties that the composite model supports. Use composite models to define
+     * alarms on this asset model.
      * </p>
+     * <note>
+     * <p>
+     * When creating custom composite models, you need to use <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html"
+     * >CreateAssetModelCompositeModel</a>. For more information, see &lt;LINK&gt;.
+     * </p>
+     * </note>
      * 
      * @param assetModelCompositeModels
-     *        The composite asset models that are part of this asset model. Composite asset models are asset models that
-     *        contain specific properties. Each composite model has a type that defines the properties that the
-     *        composite model supports. Use composite asset models to define alarms on this asset model.
+     *        The composite models that are part of this asset model. It groups properties (such as attributes,
+     *        measurements, transforms, and metrics) and child composite models that model parts of your industrial
+     *        equipment. Each composite model has a type that defines the properties that the composite model supports.
+     *        Use composite models to define alarms on this asset model.</p> <note>
+     *        <p>
+     *        When creating custom composite models, you need to use <a href=
+     *        "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html"
+     *        >CreateAssetModelCompositeModel</a>. For more information, see &lt;LINK&gt;.
+     *        </p>
      */
 
     public void setAssetModelCompositeModels(java.util.Collection<AssetModelCompositeModelDefinition> assetModelCompositeModels) {
@@ -460,10 +533,18 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The composite asset models that are part of this asset model. Composite asset models are asset models that
-     * contain specific properties. Each composite model has a type that defines the properties that the composite model
-     * supports. Use composite asset models to define alarms on this asset model.
+     * The composite models that are part of this asset model. It groups properties (such as attributes, measurements,
+     * transforms, and metrics) and child composite models that model parts of your industrial equipment. Each composite
+     * model has a type that defines the properties that the composite model supports. Use composite models to define
+     * alarms on this asset model.
      * </p>
+     * <note>
+     * <p>
+     * When creating custom composite models, you need to use <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html"
+     * >CreateAssetModelCompositeModel</a>. For more information, see &lt;LINK&gt;.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAssetModelCompositeModels(java.util.Collection)} or
@@ -471,9 +552,15 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param assetModelCompositeModels
-     *        The composite asset models that are part of this asset model. Composite asset models are asset models that
-     *        contain specific properties. Each composite model has a type that defines the properties that the
-     *        composite model supports. Use composite asset models to define alarms on this asset model.
+     *        The composite models that are part of this asset model. It groups properties (such as attributes,
+     *        measurements, transforms, and metrics) and child composite models that model parts of your industrial
+     *        equipment. Each composite model has a type that defines the properties that the composite model supports.
+     *        Use composite models to define alarms on this asset model.</p> <note>
+     *        <p>
+     *        When creating custom composite models, you need to use <a href=
+     *        "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html"
+     *        >CreateAssetModelCompositeModel</a>. For more information, see &lt;LINK&gt;.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -489,15 +576,29 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The composite asset models that are part of this asset model. Composite asset models are asset models that
-     * contain specific properties. Each composite model has a type that defines the properties that the composite model
-     * supports. Use composite asset models to define alarms on this asset model.
+     * The composite models that are part of this asset model. It groups properties (such as attributes, measurements,
+     * transforms, and metrics) and child composite models that model parts of your industrial equipment. Each composite
+     * model has a type that defines the properties that the composite model supports. Use composite models to define
+     * alarms on this asset model.
      * </p>
+     * <note>
+     * <p>
+     * When creating custom composite models, you need to use <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html"
+     * >CreateAssetModelCompositeModel</a>. For more information, see &lt;LINK&gt;.
+     * </p>
+     * </note>
      * 
      * @param assetModelCompositeModels
-     *        The composite asset models that are part of this asset model. Composite asset models are asset models that
-     *        contain specific properties. Each composite model has a type that defines the properties that the
-     *        composite model supports. Use composite asset models to define alarms on this asset model.
+     *        The composite models that are part of this asset model. It groups properties (such as attributes,
+     *        measurements, transforms, and metrics) and child composite models that model parts of your industrial
+     *        equipment. Each composite model has a type that defines the properties that the composite model supports.
+     *        Use composite models to define alarms on this asset model.</p> <note>
+     *        <p>
+     *        When creating custom composite models, you need to use <a href=
+     *        "https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html"
+     *        >CreateAssetModelCompositeModel</a>. For more information, see &lt;LINK&gt;.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -633,6 +734,283 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The ID to assign to the asset model, if desired. IoT SiteWise automatically generates a unique ID for you, so
+     * this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here
+     * in UUID format. If you specify your own ID, it must be globally unique.
+     * </p>
+     * 
+     * @param assetModelId
+     *        The ID to assign to the asset model, if desired. IoT SiteWise automatically generates a unique ID for you,
+     *        so this parameter is never required. However, if you prefer to supply your own ID instead, you can specify
+     *        it here in UUID format. If you specify your own ID, it must be globally unique.
+     */
+
+    public void setAssetModelId(String assetModelId) {
+        this.assetModelId = assetModelId;
+    }
+
+    /**
+     * <p>
+     * The ID to assign to the asset model, if desired. IoT SiteWise automatically generates a unique ID for you, so
+     * this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here
+     * in UUID format. If you specify your own ID, it must be globally unique.
+     * </p>
+     * 
+     * @return The ID to assign to the asset model, if desired. IoT SiteWise automatically generates a unique ID for
+     *         you, so this parameter is never required. However, if you prefer to supply your own ID instead, you can
+     *         specify it here in UUID format. If you specify your own ID, it must be globally unique.
+     */
+
+    public String getAssetModelId() {
+        return this.assetModelId;
+    }
+
+    /**
+     * <p>
+     * The ID to assign to the asset model, if desired. IoT SiteWise automatically generates a unique ID for you, so
+     * this parameter is never required. However, if you prefer to supply your own ID instead, you can specify it here
+     * in UUID format. If you specify your own ID, it must be globally unique.
+     * </p>
+     * 
+     * @param assetModelId
+     *        The ID to assign to the asset model, if desired. IoT SiteWise automatically generates a unique ID for you,
+     *        so this parameter is never required. However, if you prefer to supply your own ID instead, you can specify
+     *        it here in UUID format. If you specify your own ID, it must be globally unique.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAssetModelRequest withAssetModelId(String assetModelId) {
+        setAssetModelId(assetModelId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An external ID to assign to the asset model. The external ID must be unique within your Amazon Web Services
+     * account. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param assetModelExternalId
+     *        An external ID to assign to the asset model. The external ID must be unique within your Amazon Web
+     *        Services account. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *        external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     */
+
+    public void setAssetModelExternalId(String assetModelExternalId) {
+        this.assetModelExternalId = assetModelExternalId;
+    }
+
+    /**
+     * <p>
+     * An external ID to assign to the asset model. The external ID must be unique within your Amazon Web Services
+     * account. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @return An external ID to assign to the asset model. The external ID must be unique within your Amazon Web
+     *         Services account. For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *         external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     */
+
+    public String getAssetModelExternalId() {
+        return this.assetModelExternalId;
+    }
+
+    /**
+     * <p>
+     * An external ID to assign to the asset model. The external ID must be unique within your Amazon Web Services
+     * account. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param assetModelExternalId
+     *        An external ID to assign to the asset model. The external ID must be unique within your Amazon Web
+     *        Services account. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *        external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAssetModelRequest withAssetModelExternalId(String assetModelExternalId) {
+        setAssetModelExternalId(assetModelExternalId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of asset model.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param assetModelType
+     *        The type of asset model.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a
+     *        component in another asset model.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset
+     *        models. You can't create assets directly from this type of asset model.
+     *        </p>
+     *        </li>
+     * @see AssetModelType
+     */
+
+    public void setAssetModelType(String assetModelType) {
+        this.assetModelType = assetModelType;
+    }
+
+    /**
+     * <p>
+     * The type of asset model.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The type of asset model.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a
+     *         component in another asset model.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset
+     *         models. You can't create assets directly from this type of asset model.
+     *         </p>
+     *         </li>
+     * @see AssetModelType
+     */
+
+    public String getAssetModelType() {
+        return this.assetModelType;
+    }
+
+    /**
+     * <p>
+     * The type of asset model.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param assetModelType
+     *        The type of asset model.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a
+     *        component in another asset model.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset
+     *        models. You can't create assets directly from this type of asset model.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssetModelType
+     */
+
+    public CreateAssetModelRequest withAssetModelType(String assetModelType) {
+        setAssetModelType(assetModelType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of asset model.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param assetModelType
+     *        The type of asset model.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a
+     *        component in another asset model.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset
+     *        models. You can't create assets directly from this type of asset model.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssetModelType
+     */
+
+    public CreateAssetModelRequest withAssetModelType(AssetModelType assetModelType) {
+        this.assetModelType = assetModelType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -657,7 +1035,13 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getAssetModelId() != null)
+            sb.append("AssetModelId: ").append(getAssetModelId()).append(",");
+        if (getAssetModelExternalId() != null)
+            sb.append("AssetModelExternalId: ").append(getAssetModelExternalId()).append(",");
+        if (getAssetModelType() != null)
+            sb.append("AssetModelType: ").append(getAssetModelType());
         sb.append("}");
         return sb.toString();
     }
@@ -700,6 +1084,18 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getAssetModelId() == null ^ this.getAssetModelId() == null)
+            return false;
+        if (other.getAssetModelId() != null && other.getAssetModelId().equals(this.getAssetModelId()) == false)
+            return false;
+        if (other.getAssetModelExternalId() == null ^ this.getAssetModelExternalId() == null)
+            return false;
+        if (other.getAssetModelExternalId() != null && other.getAssetModelExternalId().equals(this.getAssetModelExternalId()) == false)
+            return false;
+        if (other.getAssetModelType() == null ^ this.getAssetModelType() == null)
+            return false;
+        if (other.getAssetModelType() != null && other.getAssetModelType().equals(this.getAssetModelType()) == false)
+            return false;
         return true;
     }
 
@@ -715,6 +1111,9 @@ public class CreateAssetModelRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getAssetModelCompositeModels() == null) ? 0 : getAssetModelCompositeModels().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getAssetModelId() == null) ? 0 : getAssetModelId().hashCode());
+        hashCode = prime * hashCode + ((getAssetModelExternalId() == null) ? 0 : getAssetModelExternalId().hashCode());
+        hashCode = prime * hashCode + ((getAssetModelType() == null) ? 0 : getAssetModelType().hashCode());
         return hashCode;
     }
 

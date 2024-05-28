@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,11 +35,8 @@ public class CostCategoryRule implements Serializable, Cloneable, StructuredPojo
      * An <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object used to categorize costs. This supports dimensions, tags, and nested expressions. Currently the only
-     * dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>, <code>RECORD_TYPE</code>, and
-     * <code>LINKED_ACCOUNT_NAME</code>.
-     * </p>
-     * <p>
-     * Root level <code>OR</code> isn't supported. We recommend that you create a separate rule instead.
+     * dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>, <code>RECORD_TYPE</code>,
+     * <code>LINKED_ACCOUNT_NAME</code>, <code>REGION</code>, and <code>USAGE_TYPE</code>.
      * </p>
      * <p>
      * <code>RECORD_TYPE</code> is a dimension used for Cost Explorer APIs, and is also supported for Cost Category
@@ -99,11 +96,8 @@ public class CostCategoryRule implements Serializable, Cloneable, StructuredPojo
      * An <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object used to categorize costs. This supports dimensions, tags, and nested expressions. Currently the only
-     * dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>, <code>RECORD_TYPE</code>, and
-     * <code>LINKED_ACCOUNT_NAME</code>.
-     * </p>
-     * <p>
-     * Root level <code>OR</code> isn't supported. We recommend that you create a separate rule instead.
+     * dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>, <code>RECORD_TYPE</code>,
+     * <code>LINKED_ACCOUNT_NAME</code>, <code>REGION</code>, and <code>USAGE_TYPE</code>.
      * </p>
      * <p>
      * <code>RECORD_TYPE</code> is a dimension used for Cost Explorer APIs, and is also supported for Cost Category
@@ -117,10 +111,8 @@ public class CostCategoryRule implements Serializable, Cloneable, StructuredPojo
      *        An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">
      *        Expression</a> object used to categorize costs. This supports dimensions, tags, and nested expressions.
      *        Currently the only dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>,
-     *        <code>RECORD_TYPE</code>, and <code>LINKED_ACCOUNT_NAME</code>.</p>
-     *        <p>
-     *        Root level <code>OR</code> isn't supported. We recommend that you create a separate rule instead.
-     *        </p>
+     *        <code>RECORD_TYPE</code>, <code>LINKED_ACCOUNT_NAME</code>, <code>REGION</code>, and
+     *        <code>USAGE_TYPE</code>.</p>
      *        <p>
      *        <code>RECORD_TYPE</code> is a dimension used for Cost Explorer APIs, and is also supported for Cost
      *        Category expressions. This dimension uses different terms, depending on whether you're using the console
@@ -138,11 +130,8 @@ public class CostCategoryRule implements Serializable, Cloneable, StructuredPojo
      * An <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object used to categorize costs. This supports dimensions, tags, and nested expressions. Currently the only
-     * dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>, <code>RECORD_TYPE</code>, and
-     * <code>LINKED_ACCOUNT_NAME</code>.
-     * </p>
-     * <p>
-     * Root level <code>OR</code> isn't supported. We recommend that you create a separate rule instead.
+     * dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>, <code>RECORD_TYPE</code>,
+     * <code>LINKED_ACCOUNT_NAME</code>, <code>REGION</code>, and <code>USAGE_TYPE</code>.
      * </p>
      * <p>
      * <code>RECORD_TYPE</code> is a dimension used for Cost Explorer APIs, and is also supported for Cost Category
@@ -156,10 +145,8 @@ public class CostCategoryRule implements Serializable, Cloneable, StructuredPojo
      *         href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression
      *         </a> object used to categorize costs. This supports dimensions, tags, and nested expressions. Currently
      *         the only dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>,
-     *         <code>RECORD_TYPE</code>, and <code>LINKED_ACCOUNT_NAME</code>.</p>
-     *         <p>
-     *         Root level <code>OR</code> isn't supported. We recommend that you create a separate rule instead.
-     *         </p>
+     *         <code>RECORD_TYPE</code>, <code>LINKED_ACCOUNT_NAME</code>, <code>REGION</code>, and
+     *         <code>USAGE_TYPE</code>.</p>
      *         <p>
      *         <code>RECORD_TYPE</code> is a dimension used for Cost Explorer APIs, and is also supported for Cost
      *         Category expressions. This dimension uses different terms, depending on whether you're using the console
@@ -177,11 +164,8 @@ public class CostCategoryRule implements Serializable, Cloneable, StructuredPojo
      * An <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
      * object used to categorize costs. This supports dimensions, tags, and nested expressions. Currently the only
-     * dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>, <code>RECORD_TYPE</code>, and
-     * <code>LINKED_ACCOUNT_NAME</code>.
-     * </p>
-     * <p>
-     * Root level <code>OR</code> isn't supported. We recommend that you create a separate rule instead.
+     * dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>, <code>RECORD_TYPE</code>,
+     * <code>LINKED_ACCOUNT_NAME</code>, <code>REGION</code>, and <code>USAGE_TYPE</code>.
      * </p>
      * <p>
      * <code>RECORD_TYPE</code> is a dimension used for Cost Explorer APIs, and is also supported for Cost Category
@@ -195,10 +179,8 @@ public class CostCategoryRule implements Serializable, Cloneable, StructuredPojo
      *        An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">
      *        Expression</a> object used to categorize costs. This supports dimensions, tags, and nested expressions.
      *        Currently the only dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>,
-     *        <code>RECORD_TYPE</code>, and <code>LINKED_ACCOUNT_NAME</code>.</p>
-     *        <p>
-     *        Root level <code>OR</code> isn't supported. We recommend that you create a separate rule instead.
-     *        </p>
+     *        <code>RECORD_TYPE</code>, <code>LINKED_ACCOUNT_NAME</code>, <code>REGION</code>, and
+     *        <code>USAGE_TYPE</code>.</p>
      *        <p>
      *        <code>RECORD_TYPE</code> is a dimension used for Cost Explorer APIs, and is also supported for Cost
      *        Category expressions. This dimension uses different terms, depending on whether you're using the console

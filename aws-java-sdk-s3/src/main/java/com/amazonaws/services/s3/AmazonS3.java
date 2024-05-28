@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.s3;
 
+import com.amazonaws.services.s3.model.MultiObjectDeleteSlowdownException;
 import com.amazonaws.services.s3.model.WriteGetObjectResponseRequest;
 import com.amazonaws.services.s3.model.WriteGetObjectResponseResult;
 import java.io.File;
@@ -235,6 +236,16 @@ import com.amazonaws.services.s3.waiters.AmazonS3Waiters;
  * Extend {@link AbstractAmazonS3} if you are implementing AmazonS3 interface.
  * AbstractAmazonS3 provides a default implementation for all the methods in
  * this interface.
+ *
+ * <p>
+ * <b>Migrating to the AWS SDK for Java v2</b>
+ * <p>
+ * The v2 equivalent of this class is
+ * <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/s3/S3Client.html">S3Client</a>
+ *
+ * <p>
+ * See <a href="https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/migration.html">Migration Guide</a>
+ * for more information.
  */
 public interface AmazonS3 extends S3DirectSpi {
 
@@ -424,22 +435,6 @@ public interface AmazonS3 extends S3DirectSpi {
      * more results. Alternatively, use the
      * {@link AmazonS3Client#listNextBatchOfObjects(ObjectListing)} method as
      * an easy way to get the next page of object listings.
-     * </p>
-     * <p>
-     * For example, consider a bucket that contains the following keys:
-     * <ul>
-     * 	<li>"foo/bar/baz"</li>
-     * 	<li>"foo/bar/bash"</li>
-     * 	<li>"foo/bar/bang"</li>
-     * 	<li>"foo/boo"</li>
-     * </ul>
-     * If calling <code>listObjects</code> with
-     * a <code>prefix</code> value of "foo/" and a <code>delimiter</code> value of "/"
-     * on this bucket, an <code>ObjectListing</code> is returned that contains one key
-     * ("foo/boo") and one entry in the common prefixes list ("foo/bar/").
-     * To see deeper into the virtual hierarchy, make another
-     * call to <code>listObjects</code> setting the prefix parameter to any interesting
-     * common prefix to list the individual keys under that prefix.
      * </p>
      * <p>
      * The total number of keys in a bucket doesn't substantially
@@ -1149,8 +1144,8 @@ public interface AmazonS3 extends S3DirectSpi {
      * </p>
      * <p>
      * If the bucket does not exist or you do not have permission to access it, the <code>HEAD</code> request returns a
-     * generic <code>404 Not Found</code> or <code>403 Forbidden</code> code. A message body is not included, so you
-     * cannot determine the exception beyond these error codes.
+     * generic <code>400 Bad Request</code>, <code>403 Forbidden</code> or <code>404 Not Found</code> code. A message
+     * body is not included, so you cannot determine the exception beyond these error codes.
      * </p>
      * <p>
      * To use this operation, you must have permissions to perform the <code>s3:ListBucket</code> action. The bucket
@@ -1191,13 +1186,13 @@ public interface AmazonS3 extends S3DirectSpi {
 
     /**
      * <p>
-     * Returns a list of all Amazon S3 buckets that the
-     * authenticated sender of the request owns.
+     * Returns a list of all buckets owned by the authenticated sender of the request. To use this operation, you must
+     * have the <code>s3:ListAllMyBuckets</code> permission.
      * </p>
      * <p>
-     * Users must authenticate with a valid Amazon Web Services Access Key ID that is registered
-     * with Amazon S3. Anonymous requests cannot list buckets, and users cannot
-     * list buckets that they did not create.
+     * For information about Amazon S3 buckets, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html">Creating, configuring, and
+     * working with Amazon S3 buckets</a>.
      * </p>
      *
      * @return A list of all of the Amazon S3 buckets owned by the authenticated
@@ -1219,13 +1214,13 @@ public interface AmazonS3 extends S3DirectSpi {
 
     /**
      * <p>
-     * Returns a list of all Amazon S3 buckets that the
-     * authenticated sender of the request owns.
+     * Returns a list of all buckets owned by the authenticated sender of the request. To use this operation, you must
+     * have the <code>s3:ListAllMyBuckets</code> permission.
      * </p>
      * <p>
-     * Users must authenticate with a valid Amazon Web Services Access Key ID that is registered
-     * with Amazon S3. Anonymous requests cannot list buckets, and users cannot
-     * list buckets that they did not create.
+     * For information about Amazon S3 buckets, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html">Creating, configuring, and
+     * working with Amazon S3 buckets</a>.
      * </p>
      *
      * @param listBucketsRequest
@@ -1251,8 +1246,7 @@ public interface AmazonS3 extends S3DirectSpi {
 
     /**
      * <p>
-     * Gets the geographical region where Amazon S3 stores the specified
-     * bucket.
+     * Gets the geographical region where Amazon S3 stores the specified bucket.
      * </p>
      * <p>
      * To use this implementation of the operation, you must be the bucket owner.
@@ -1260,6 +1254,13 @@ public interface AmazonS3 extends S3DirectSpi {
      * <p>
      * To use this API against an access point, provide the alias of the access point in place of the bucket name.
      * </p>
+     * <note>
+     * <p>
+     * For requests made using Amazon Web Services Signature Version 4 (SigV4), we recommend that you use <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html">HeadBucket</a> to return the bucket
+     * Region instead of GetBucketLocation.
+     * </p>
+     * </note>
      * <p>
      * Use {@link Region#fromValue(String)} to get the <code>Region</code>
      * enumeration value, but be prepared to
@@ -1292,8 +1293,7 @@ public interface AmazonS3 extends S3DirectSpi {
 
     /**
      * <p>
-     * Gets the geographical region where Amazon S3 stores the specified
-     * bucket.
+     * Gets the geographical region where Amazon S3 stores the specified bucket.
      * </p>
      * <p>
      * To use this implementation of the operation, you must be the bucket owner.
@@ -1301,6 +1301,13 @@ public interface AmazonS3 extends S3DirectSpi {
      * <p>
      * To use this API against an access point, provide the alias of the access point in place of the bucket name.
      * </p>
+     * <note>
+     * <p>
+     * For requests made using Amazon Web Services Signature Version 4 (SigV4), we recommend that you use <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html">HeadBucket</a> to return the bucket
+     * Region instead of GetBucketLocation.
+     * </p>
+     * </note>
      * <p>
      * Use {@link Region#fromValue(String)} to get the <code>Region</code>
      * enumeration value, but be prepared to
@@ -2418,8 +2425,8 @@ public interface AmazonS3 extends S3DirectSpi {
      *
      * <p>A <code>HEAD</code> request has the same options as a <code>GET</code> action on an object. The response is identical
      * to the <code>GET</code> response except that there is no response body. Because of this, if the <code>HEAD</code> request
-     * generates an error, it returns a generic <code>404 Not Found</code> or <code>403 Forbidden</code> code. It is not possible
-     * to retrieve the exact exception beyond these error codes.</p>
+     * generates an error, it returns a generic <code>400 Bad Request</code>, <code>403 Forbidden</code>
+     * or <code>404 Not Found</code> code. It is not possible to retrieve the exact exception beyond these error codes.</p>
      *
      * <p>If you encrypt an object by using server-side encryption with customer-provided encryption keys (SSE-C) when you store
      * the object in Amazon S3, then when you retrieve the metadata from the object, you must use the following headers:</p>
@@ -2439,7 +2446,7 @@ public interface AmazonS3 extends S3DirectSpi {
      *     <ul>
      *         <li> <p>Encryption request headers, like <code>x-amz-server-side-encryption</code>, should not be sent for GET
      *         requests if your object uses server-side encryption  with CMKs stored in Amazon Web Services KMS (SSE-KMS) or
-     *         server-side encryption with Amazon S3–managed encryption keys (SSE-S3). If your object does use these types of
+     *         server-side encryption with Amazon S3–managed keys (SSE-S3). If your object does use these types of
      *         keys, you’ll get an HTTP 400 BadRequest error.</p> </li>
      *         <li> <p> The last modified property in this case is the creation date of the object.</p> </li>
      *     </ul>
@@ -2511,122 +2518,213 @@ public interface AmazonS3 extends S3DirectSpi {
             throws SdkClientException, AmazonServiceException;
 
     /**
-     * <p>Retrieves objects from Amazon S3. To use <code>GET</code>, you must have <code>READ</code> access to the object. If you
-     * grant <code>READ</code> access to the anonymous user, you can return the object without using an authorization header.</p>
-     *
-     * <p>An Amazon S3 bucket has no directory hierarchy such as you would find in a typical computer file system. You can, however,
-     * create a logical hierarchy by using object key names that imply a folder structure. For example, instead of naming an object
-     * <code>sample.jpg</code>, you can name it <code>photos/2006/February/sample.jpg</code>.</p>
-     *
-     * <p>To get an object from such a \ logical hierarchy, specify the full key name for the object in the <code>GET</code>
-     * operation. For a virtual hosted-style request example, if you have the object <code>photos/2006/February/sample.jpg</code>,
-     * specify the resource as <code>/photos/2006/February/sample.jpg</code>. For a path-style request example, if you have the
-     * object <code>photos/2006/February/sample.jpg</code> in the bucket named <code>examplebucket</code>, specify the resource as
-     * <code>/examplebucket/photos/2006/February/sample.jpg</code>. For more information about request types, see
-     * <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#VirtualHostingSpecifyBucket\">HTTP Host Header
-     * Bucket Specification</a>.</p>
-     *
-     * <p>To distribute large files to many people, you can save bandwidth costs by using BitTorrent. For more information, see
-     * <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/S3Torrent.html\">Amazon S3 Torrent</a>. For more information about
-     * returning the ACL of an object, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html\">
-     * GetObjectAcl</a>.</p>
-     *
-     * <p>If the object you are retrieving is stored in the S3 Glacier or S3 Glacier Deep Archive storage class, or S3 Intelligent-
-     * Tiering Archive or S3 Intelligent-Tiering Deep Archive tiers, before you can retrieve the object you must first restore a copy
-     * using <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html\">RestoreObject</a>. Otherwise, this
-     * action returns an <code>InvalidObjectStateError</code> error. For information about restoring archived objects, see
-     * <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html\">Restoring Archived Objects</a>.</p>
-     *
-     * <p>Encryption request headers, like <code>x-amz-server-side-encryption</code>, should not be sent for GET requests if your
-     * object uses server-side encryption with CMKs stored in Amazon Web Services KMS (SSE-KMS) or server-side encryption with Amazon
-     * S3–managed encryption keys (SSE-S3). If your object does use these types of keys, you’ll get an HTTP 400 BadRequest error.</p>
-     *
-     * <p>If you encrypt an object by using server-side encryption with customer-provided encryption keys (SSE-C) when you store the
-     * object in Amazon S3, then when you GET the object, you must use the following headers:</p>
-     *
+     * <p>
+     * Retrieves objects from Amazon S3. To use <code>GET</code>, you must have <code>READ</code> access to the object.
+     * If you grant <code>READ</code> access to the anonymous user, you can return the object without using an
+     * authorization header.
+     * </p>
+     * <p>
+     * An Amazon S3 bucket has no directory hierarchy such as you would find in a typical computer file system. You can,
+     * however, create a logical hierarchy by using object key names that imply a folder structure. For example, instead
+     * of naming an object <code>sample.jpg</code>, you can name it <code>photos/2006/February/sample.jpg</code>.
+     * </p>
+     * <p>
+     * To get an object from such a logical hierarchy, specify the full key name for the object in the <code>GET</code>
+     * operation. For a virtual hosted-style request example, if you have the object
+     * <code>photos/2006/February/sample.jpg</code>, specify the resource as
+     * <code>/photos/2006/February/sample.jpg</code>. For a path-style request example, if you have the object
+     * <code>photos/2006/February/sample.jpg</code> in the bucket named <code>examplebucket</code>, specify the resource
+     * as <code>/examplebucket/photos/2006/February/sample.jpg</code>. For more information about request types, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#VirtualHostingSpecifyBucket">HTTP Host
+     * Header Bucket Specification</a>.
+     * </p>
+     * <p>
+     * For more information about returning the ACL of an object, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>.
+     * </p>
+     * <p>
+     * If the object you are retrieving is stored in the S3 Glacier or S3 Glacier Deep Archive storage class, or S3
+     * Intelligent-Tiering Archive or S3 Intelligent-Tiering Deep Archive tiers, before you can retrieve the object you
+     * must first restore a copy using <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>. Otherwise, this
+     * action returns an <code>InvalidObjectState</code> error. For information about restoring archived objects, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring Archived Objects</a>.
+     * </p>
+     * <p>
+     * Encryption request headers, like <code>x-amz-server-side-encryption</code>, should not be sent for GET requests
+     * if your object uses server-side encryption with KMS keys (SSE-KMS) or server-side encryption with Amazon
+     * S3–managed encryption keys (SSE-S3). If your object does use these types of keys, you’ll get an HTTP 400
+     * BadRequest error.
+     * </p>
+     * <p>
+     * If you encrypt an object by using server-side encryption with customer-provided encryption keys (SSE-C) when you
+     * store the object in Amazon S3, then when you GET the object, you must use the following headers:
+     * </p>
      * <ul>
-     *     <li> <p>x-amz-server-side-encryption-customer-algorithm</p> </li>
-     *     <li> <p>x-amz-server-side-encryption-customer-key</p> </li>
-     *     <li> <p>x-amz-server-side-encryption-customer-key-MD5</p> </li>
+     * <li>
+     * <p>
+     * x-amz-server-side-encryption-customer-algorithm
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * x-amz-server-side-encryption-customer-key
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * x-amz-server-side-encryption-customer-key-MD5
+     * </p>
+     * </li>
      * </ul>
-     *
-     * <p>For more information about SSE-C, see
-     * <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html\">Server-Side Encryption
-     * (Using Customer-Provided Encryption Keys)</a>.</p> <p>Assuming you have the relevant permission to read object tags, the
-     * response also returns the <code>x-amz-tagging-count</code> header that provides the count of number of tags associated with
-     * the object. You can use <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html\">GetObjectTagging
-     * </a> to retrieve the tag set associated with an object.</p>
-     *
-     * <p> <b>Permissions</b> </p>
-     *
-     * <p>You need the relevant read object (or version) permission for this operation. For more information,
-     * see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html\">Specifying Permissions in a
-     * Policy</a>. If the object you request does not exist, the error Amazon S3 returns depends on whether you also have the
-     * <code>s3:ListBucket</code> permission.</p>
-     *
+     * <p>
+     * For more information about SSE-C, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
+     * Encryption (Using Customer-Provided Encryption Keys)</a>.
+     * </p>
+     * <p>
+     * Assuming you have the relevant permission to read object tags, the response also returns the
+     * <code>x-amz-tagging-count</code> header that provides the count of number of tags associated with the object. You
+     * can use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
+     * to retrieve the tag set associated with an object.
+     * </p>
+     * <p>
+     * <b>Permissions</b>
+     * </p>
+     * <p>
+     * You need the relevant read object (or version) permission for this operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying Permissions in a
+     * Policy</a>. If the object you request does not exist, the error Amazon S3 returns depends on whether you also
+     * have the <code>s3:ListBucket</code> permission.
+     * </p>
      * <ul>
-     *     <li> <p>If you have the <code>s3:ListBucket</code> permission on the bucket, Amazon S3 will return an HTTP status code
-     *     404 (\"no such key\") error.</p> </li>
-     *     <li> <p>If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 will return an HTTP status code 403
-     *     (\"access denied\") error.</p> </li>
+     * <li>
+     * <p>
+     * If you have the <code>s3:ListBucket</code> permission on the bucket, Amazon S3 will return an HTTP status code
+     * 404 ("no such key") error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 will return an HTTP status code 403
+     * ("access denied") error.
+     * </p>
+     * </li>
      * </ul>
-     *
-     * <p> <b>Versioning</b> </p>
-     *
-     * <p>By default, the GET action returns the current version of an object. To return a different version, use the
-     * <code>versionId</code> subresource.</p>
-     *
+     * <p>
+     * <b>Versioning</b>
+     * </p>
+     * <p>
+     * By default, the GET action returns the current version of an object. To return a different version, use the
+     * <code>versionId</code> subresource.
+     * </p>
      * <note>
-     *     <ul>
-     *         <li> <p>You need the <code>s3:GetObjectVersion</code> permission to access a specific version of an object. </p> </li>
-     *         <li> <p>If the current version of the object is a delete marker, Amazon S3 behaves as if the object was deleted and
-     *         includes <code>x-amz-delete-marker: true</code> in the response.</p> </li>
-     *     </ul>
-     * </note>
-     *
-     * <p>For more information about versioning, see
-     * <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html\">PutBucketVersioning</a>. </p>
-     *
-     * <p> <b>Overriding Response Header Values</b> </p>
-     *
-     *<p>There are times when you want to override certain response header values in a GET response. For example, you might
-     * override the Content-Disposition response header value in your GET request.</p> <p>You can override values for a set of
-     * response headers using the following query parameters. These response header values are sent only on a successful request,
-     * that is, when status code 200 OK is returned. The set of headers you can override using these parameters is a subset of the
-     * headers that Amazon S3 accepts when you create an object. The response headers that you can override for the GET response
-     * are <code>Content-Type</code>, <code>Content-Language</code>, <code>Expires</code>, <code>Cache-Control</code>,
-     * <code>Content-Disposition</code>, and <code>Content-Encoding</code>. To override these header values in the GET response, you
-     * use the following request parameters.</p>
-     *
-     * <note>
-     *     <p>You must sign the request, either using an Authorization header or a presigned URL, when using these parameters. They
-     *     cannot be used with an unsigned (anonymous) request.</p>
-     * </note>
-     *
      * <ul>
-     *     <li> <p> <code>response-content-type</code> </p> </li>
-     *     <li> <p> <code>response-content-language</code> </p> </li>
-     *     <li> <p> <code>response-expires</code> </p> </li>
-     *     <li> <p> <code>response-cache-control</code> </p>
-     *     </li> <li> <p> <code>response-content-disposition</code> </p> </li>
-     *     <li> <p> <code>response-content-encoding</code> </p> </li>
+     * <li>
+     * <p>
+     * If you supply a <code>versionId</code>, you need the <code>s3:GetObjectVersion</code> permission to access a
+     * specific version of an object. If you request a specific version, you do not need to have the
+     * <code>s3:GetObject</code> permission. If you request the current version without a specific version ID, only
+     * <code>s3:GetObject</code> permission is required. <code>s3:GetObjectVersion</code> permission won't be required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the current version of the object is a delete marker, Amazon S3 behaves as if the object was deleted and
+     * includes <code>x-amz-delete-marker: true</code> in the response.
+     * </p>
+     * </li>
      * </ul>
-     *
-     * <p> <b>Additional Considerations about Request Headers</b> </p>
-     *
-     * <p>If both of the <code>If-Match</code> and <code>If-Unmodified-Since</code> headers are present in the request as
-     * follows: <code>If-Match</code> condition evaluates to <code>true</code>, and; <code>If-Unmodified-Since</code> condition
-     * evaluates to <code>false</code>; then, S3 returns 200 OK and the data requested. </p>
-     *
-     * <p>If both of the <code>If-None-Match</code> and <code>If-Modified-Since</code> headers are present in the request as
-     * follows:<code> If-None-Match</code> condition evaluates to <code>false</code>, and; <code>If-Modified-Since</code> condition
-     * evaluates to <code>true</code>; then, S3 returns 304 Not Modified response code.</p> <p>For more information about conditional
-     * requests, see <a href=\"https://tools.ietf.org/html/rfc7232\">RFC 7232</a>.</p> <p>The following operations are related to
-     * <code>GetObject</code>:</p>
-     *
+     * </note>
+     * <p>
+     * For more information about versioning, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html">PutBucketVersioning</a>.
+     * </p>
+     * <p>
+     * <b>Overriding Response Header Values</b>
+     * </p>
+     * <p>
+     * There are times when you want to override certain response header values in a GET response. For example, you
+     * might override the <code>Content-Disposition</code> response header value in your GET request.
+     * </p>
+     * <p>
+     * You can override values for a set of response headers using the following query parameters. These response header
+     * values are sent only on a successful request, that is, when status code 200 OK is returned. The set of headers
+     * you can override using these parameters is a subset of the headers that Amazon S3 accepts when you create an
+     * object. The response headers that you can override for the GET response are <code>Content-Type</code>,
+     * <code>Content-Language</code>, <code>Expires</code>, <code>Cache-Control</code>, <code>Content-Disposition</code>
+     * , and <code>Content-Encoding</code>. To override these header values in the GET response, you use the following
+     * request parameters.
+     * </p>
+     * <note>
+     * <p>
+     * You must sign the request, either using an Authorization header or a presigned URL, when using these parameters.
+     * They cannot be used with an unsigned (anonymous) request.
+     * </p>
+     * </note>
      * <ul>
-     *     <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html\">ListBuckets</a> </p> </li>
-     *     <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html\">GetObjectAcl</a> </p> </li>
+     * <li>
+     * <p>
+     * <code>response-content-type</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>response-content-language</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>response-expires</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>response-cache-control</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>response-content-disposition</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>response-content-encoding</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Additional Considerations about Request Headers</b>
+     * </p>
+     * <p>
+     * If both of the <code>If-Match</code> and <code>If-Unmodified-Since</code> headers are present in the request as
+     * follows: <code>If-Match</code> condition evaluates to <code>true</code>, and; <code>If-Unmodified-Since</code>
+     * condition evaluates to <code>false</code>; then, S3 returns 200 OK and the data requested.
+     * </p>
+     * <p>
+     * If both of the <code>If-None-Match</code> and <code>If-Modified-Since</code> headers are present in the request
+     * as follows:<code> If-None-Match</code> condition evaluates to <code>false</code>, and;
+     * <code>If-Modified-Since</code> condition evaluates to <code>true</code>; then, S3 returns 304 Not Modified
+     * response code.
+     * </p>
+     * <p>
+     * For more information about conditional requests, see <a href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.
+     * </p>
+     * <p>
+     * The following operations are related to <code>GetObject</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>
+     * </p>
+     * </li>
      * </ul>
      *
      * @param bucketName
@@ -2651,122 +2749,213 @@ public interface AmazonS3 extends S3DirectSpi {
             AmazonServiceException;
 
     /**
-     * <p>Retrieves objects from Amazon S3. To use <code>GET</code>, you must have <code>READ</code> access to the object. If you
-     * grant <code>READ</code> access to the anonymous user, you can return the object without using an authorization header.</p>
-     *
-     * <p>An Amazon S3 bucket has no directory hierarchy such as you would find in a typical computer file system. You can, however,
-     * create a logical hierarchy by using object key names that imply a folder structure. For example, instead of naming an object
-     * <code>sample.jpg</code>, you can name it <code>photos/2006/February/sample.jpg</code>.</p>
-     *
-     * <p>To get an object from such a \ logical hierarchy, specify the full key name for the object in the <code>GET</code>
-     * operation. For a virtual hosted-style request example, if you have the object <code>photos/2006/February/sample.jpg</code>,
-     * specify the resource as <code>/photos/2006/February/sample.jpg</code>. For a path-style request example, if you have the
-     * object <code>photos/2006/February/sample.jpg</code> in the bucket named <code>examplebucket</code>, specify the resource as
-     * <code>/examplebucket/photos/2006/February/sample.jpg</code>. For more information about request types, see
-     * <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#VirtualHostingSpecifyBucket\">HTTP Host Header
-     * Bucket Specification</a>.</p>
-     *
-     * <p>To distribute large files to many people, you can save bandwidth costs by using BitTorrent. For more information, see
-     * <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/S3Torrent.html\">Amazon S3 Torrent</a>. For more information about
-     * returning the ACL of an object, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html\">
-     * GetObjectAcl</a>.</p>
-     *
-     * <p>If the object you are retrieving is stored in the S3 Glacier or S3 Glacier Deep Archive storage class, or S3 Intelligent-
-     * Tiering Archive or S3 Intelligent-Tiering Deep Archive tiers, before you can retrieve the object you must first restore a copy
-     * using <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html\">RestoreObject</a>. Otherwise, this
-     * action returns an <code>InvalidObjectStateError</code> error. For information about restoring archived objects, see
-     * <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html\">Restoring Archived Objects</a>.</p>
-     *
-     * <p>Encryption request headers, like <code>x-amz-server-side-encryption</code>, should not be sent for GET requests if your
-     * object uses server-side encryption with CMKs stored in Amazon Web Services KMS (SSE-KMS) or server-side encryption with Amazon
-     * S3–managed encryption keys (SSE-S3). If your object does use these types of keys, you’ll get an HTTP 400 BadRequest error.</p>
-     *
-     * <p>If you encrypt an object by using server-side encryption with customer-provided encryption keys (SSE-C) when you store the
-     * object in Amazon S3, then when you GET the object, you must use the following headers:</p>
-     *
+     * <p>
+     * Retrieves objects from Amazon S3. To use <code>GET</code>, you must have <code>READ</code> access to the object.
+     * If you grant <code>READ</code> access to the anonymous user, you can return the object without using an
+     * authorization header.
+     * </p>
+     * <p>
+     * An Amazon S3 bucket has no directory hierarchy such as you would find in a typical computer file system. You can,
+     * however, create a logical hierarchy by using object key names that imply a folder structure. For example, instead
+     * of naming an object <code>sample.jpg</code>, you can name it <code>photos/2006/February/sample.jpg</code>.
+     * </p>
+     * <p>
+     * To get an object from such a logical hierarchy, specify the full key name for the object in the <code>GET</code>
+     * operation. For a virtual hosted-style request example, if you have the object
+     * <code>photos/2006/February/sample.jpg</code>, specify the resource as
+     * <code>/photos/2006/February/sample.jpg</code>. For a path-style request example, if you have the object
+     * <code>photos/2006/February/sample.jpg</code> in the bucket named <code>examplebucket</code>, specify the resource
+     * as <code>/examplebucket/photos/2006/February/sample.jpg</code>. For more information about request types, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#VirtualHostingSpecifyBucket">HTTP Host
+     * Header Bucket Specification</a>.
+     * </p>
+     * <p>
+     * For more information about returning the ACL of an object, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>.
+     * </p>
+     * <p>
+     * If the object you are retrieving is stored in the S3 Glacier or S3 Glacier Deep Archive storage class, or S3
+     * Intelligent-Tiering Archive or S3 Intelligent-Tiering Deep Archive tiers, before you can retrieve the object you
+     * must first restore a copy using <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>. Otherwise, this
+     * action returns an <code>InvalidObjectState</code> error. For information about restoring archived objects, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring Archived Objects</a>.
+     * </p>
+     * <p>
+     * Encryption request headers, like <code>x-amz-server-side-encryption</code>, should not be sent for GET requests
+     * if your object uses server-side encryption with KMS keys (SSE-KMS) or server-side encryption with Amazon
+     * S3–managed encryption keys (SSE-S3). If your object does use these types of keys, you’ll get an HTTP 400
+     * BadRequest error.
+     * </p>
+     * <p>
+     * If you encrypt an object by using server-side encryption with customer-provided encryption keys (SSE-C) when you
+     * store the object in Amazon S3, then when you GET the object, you must use the following headers:
+     * </p>
      * <ul>
-     *     <li> <p>x-amz-server-side-encryption-customer-algorithm</p> </li>
-     *     <li> <p>x-amz-server-side-encryption-customer-key</p> </li>
-     *     <li> <p>x-amz-server-side-encryption-customer-key-MD5</p> </li>
+     * <li>
+     * <p>
+     * x-amz-server-side-encryption-customer-algorithm
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * x-amz-server-side-encryption-customer-key
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * x-amz-server-side-encryption-customer-key-MD5
+     * </p>
+     * </li>
      * </ul>
-     *
-     * <p>For more information about SSE-C, see
-     * <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html\">Server-Side Encryption
-     * (Using Customer-Provided Encryption Keys)</a>.</p> <p>Assuming you have the relevant permission to read object tags, the
-     * response also returns the <code>x-amz-tagging-count</code> header that provides the count of number of tags associated with
-     * the object. You can use <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html\">GetObjectTagging
-     * </a> to retrieve the tag set associated with an object.</p>
-     *
-     * <p> <b>Permissions</b> </p>
-     *
-     * <p>You need the relevant read object (or version) permission for this operation. For more information,
-     * see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html\">Specifying Permissions in a
-     * Policy</a>. If the object you request does not exist, the error Amazon S3 returns depends on whether you also have the
-     * <code>s3:ListBucket</code> permission.</p>
-     *
+     * <p>
+     * For more information about SSE-C, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
+     * Encryption (Using Customer-Provided Encryption Keys)</a>.
+     * </p>
+     * <p>
+     * Assuming you have the relevant permission to read object tags, the response also returns the
+     * <code>x-amz-tagging-count</code> header that provides the count of number of tags associated with the object. You
+     * can use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
+     * to retrieve the tag set associated with an object.
+     * </p>
+     * <p>
+     * <b>Permissions</b>
+     * </p>
+     * <p>
+     * You need the relevant read object (or version) permission for this operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying Permissions in a
+     * Policy</a>. If the object you request does not exist, the error Amazon S3 returns depends on whether you also
+     * have the <code>s3:ListBucket</code> permission.
+     * </p>
      * <ul>
-     *     <li> <p>If you have the <code>s3:ListBucket</code> permission on the bucket, Amazon S3 will return an HTTP status code
-     *     404 (\"no such key\") error.</p> </li>
-     *     <li> <p>If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 will return an HTTP status code 403
-     *     (\"access denied\") error.</p> </li>
+     * <li>
+     * <p>
+     * If you have the <code>s3:ListBucket</code> permission on the bucket, Amazon S3 will return an HTTP status code
+     * 404 ("no such key") error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 will return an HTTP status code 403
+     * ("access denied") error.
+     * </p>
+     * </li>
      * </ul>
-     *
-     * <p> <b>Versioning</b> </p>
-     *
-     * <p>By default, the GET action returns the current version of an object. To return a different version, use the
-     * <code>versionId</code> subresource.</p>
-     *
+     * <p>
+     * <b>Versioning</b>
+     * </p>
+     * <p>
+     * By default, the GET action returns the current version of an object. To return a different version, use the
+     * <code>versionId</code> subresource.
+     * </p>
      * <note>
-     *     <ul>
-     *         <li> <p>You need the <code>s3:GetObjectVersion</code> permission to access a specific version of an object. </p> </li>
-     *         <li> <p>If the current version of the object is a delete marker, Amazon S3 behaves as if the object was deleted and
-     *         includes <code>x-amz-delete-marker: true</code> in the response.</p> </li>
-     *     </ul>
-     * </note>
-     *
-     * <p>For more information about versioning, see
-     * <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html\">PutBucketVersioning</a>. </p>
-     *
-     * <p> <b>Overriding Response Header Values</b> </p>
-     *
-     *<p>There are times when you want to override certain response header values in a GET response. For example, you might
-     * override the Content-Disposition response header value in your GET request.</p> <p>You can override values for a set of
-     * response headers using the following query parameters. These response header values are sent only on a successful request,
-     * that is, when status code 200 OK is returned. The set of headers you can override using these parameters is a subset of the
-     * headers that Amazon S3 accepts when you create an object. The response headers that you can override for the GET response
-     * are <code>Content-Type</code>, <code>Content-Language</code>, <code>Expires</code>, <code>Cache-Control</code>,
-     * <code>Content-Disposition</code>, and <code>Content-Encoding</code>. To override these header values in the GET response, you
-     * use the following request parameters.</p>
-     *
-     * <note>
-     *     <p>You must sign the request, either using an Authorization header or a presigned URL, when using these parameters. They
-     *     cannot be used with an unsigned (anonymous) request.</p>
-     * </note>
-     *
      * <ul>
-     *     <li> <p> <code>response-content-type</code> </p> </li>
-     *     <li> <p> <code>response-content-language</code> </p> </li>
-     *     <li> <p> <code>response-expires</code> </p> </li>
-     *     <li> <p> <code>response-cache-control</code> </p>
-     *     </li> <li> <p> <code>response-content-disposition</code> </p> </li>
-     *     <li> <p> <code>response-content-encoding</code> </p> </li>
+     * <li>
+     * <p>
+     * If you supply a <code>versionId</code>, you need the <code>s3:GetObjectVersion</code> permission to access a
+     * specific version of an object. If you request a specific version, you do not need to have the
+     * <code>s3:GetObject</code> permission. If you request the current version without a specific version ID, only
+     * <code>s3:GetObject</code> permission is required. <code>s3:GetObjectVersion</code> permission won't be required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the current version of the object is a delete marker, Amazon S3 behaves as if the object was deleted and
+     * includes <code>x-amz-delete-marker: true</code> in the response.
+     * </p>
+     * </li>
      * </ul>
-     *
-     * <p> <b>Additional Considerations about Request Headers</b> </p>
-     *
-     * <p>If both of the <code>If-Match</code> and <code>If-Unmodified-Since</code> headers are present in the request as
-     * follows: <code>If-Match</code> condition evaluates to <code>true</code>, and; <code>If-Unmodified-Since</code> condition
-     * evaluates to <code>false</code>; then, S3 returns 200 OK and the data requested. </p>
-     *
-     * <p>If both of the <code>If-None-Match</code> and <code>If-Modified-Since</code> headers are present in the request as
-     * follows:<code> If-None-Match</code> condition evaluates to <code>false</code>, and; <code>If-Modified-Since</code> condition
-     * evaluates to <code>true</code>; then, S3 returns 304 Not Modified response code.</p> <p>For more information about conditional
-     * requests, see <a href=\"https://tools.ietf.org/html/rfc7232\">RFC 7232</a>.</p> <p>The following operations are related to
-     * <code>GetObject</code>:</p>
-     *
+     * </note>
+     * <p>
+     * For more information about versioning, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html">PutBucketVersioning</a>.
+     * </p>
+     * <p>
+     * <b>Overriding Response Header Values</b>
+     * </p>
+     * <p>
+     * There are times when you want to override certain response header values in a GET response. For example, you
+     * might override the <code>Content-Disposition</code> response header value in your GET request.
+     * </p>
+     * <p>
+     * You can override values for a set of response headers using the following query parameters. These response header
+     * values are sent only on a successful request, that is, when status code 200 OK is returned. The set of headers
+     * you can override using these parameters is a subset of the headers that Amazon S3 accepts when you create an
+     * object. The response headers that you can override for the GET response are <code>Content-Type</code>,
+     * <code>Content-Language</code>, <code>Expires</code>, <code>Cache-Control</code>, <code>Content-Disposition</code>
+     * , and <code>Content-Encoding</code>. To override these header values in the GET response, you use the following
+     * request parameters.
+     * </p>
+     * <note>
+     * <p>
+     * You must sign the request, either using an Authorization header or a presigned URL, when using these parameters.
+     * They cannot be used with an unsigned (anonymous) request.
+     * </p>
+     * </note>
      * <ul>
-     *     <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html\">ListBuckets</a> </p> </li>
-     *     <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html\">GetObjectAcl</a> </p> </li>
+     * <li>
+     * <p>
+     * <code>response-content-type</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>response-content-language</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>response-expires</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>response-cache-control</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>response-content-disposition</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>response-content-encoding</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Additional Considerations about Request Headers</b>
+     * </p>
+     * <p>
+     * If both of the <code>If-Match</code> and <code>If-Unmodified-Since</code> headers are present in the request as
+     * follows: <code>If-Match</code> condition evaluates to <code>true</code>, and; <code>If-Unmodified-Since</code>
+     * condition evaluates to <code>false</code>; then, S3 returns 200 OK and the data requested.
+     * </p>
+     * <p>
+     * If both of the <code>If-None-Match</code> and <code>If-Modified-Since</code> headers are present in the request
+     * as follows:<code> If-None-Match</code> condition evaluates to <code>false</code>, and;
+     * <code>If-Modified-Since</code> condition evaluates to <code>true</code>; then, S3 returns 304 Not Modified
+     * response code.
+     * </p>
+     * <p>
+     * For more information about conditional requests, see <a href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.
+     * </p>
+     * <p>
+     * The following operations are related to <code>GetObject</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>
+     * </p>
+     * </li>
      * </ul>
      *
      * @param getObjectRequest
@@ -2792,122 +2981,213 @@ public interface AmazonS3 extends S3DirectSpi {
 
 
     /**
-     * <p>Retrieves objects from Amazon S3. To use <code>GET</code>, you must have <code>READ</code> access to the object. If you
-     * grant <code>READ</code> access to the anonymous user, you can return the object without using an authorization header.</p>
-     *
-     * <p>An Amazon S3 bucket has no directory hierarchy such as you would find in a typical computer file system. You can, however,
-     * create a logical hierarchy by using object key names that imply a folder structure. For example, instead of naming an object
-     * <code>sample.jpg</code>, you can name it <code>photos/2006/February/sample.jpg</code>.</p>
-     *
-     * <p>To get an object from such a \ logical hierarchy, specify the full key name for the object in the <code>GET</code>
-     * operation. For a virtual hosted-style request example, if you have the object <code>photos/2006/February/sample.jpg</code>,
-     * specify the resource as <code>/photos/2006/February/sample.jpg</code>. For a path-style request example, if you have the
-     * object <code>photos/2006/February/sample.jpg</code> in the bucket named <code>examplebucket</code>, specify the resource as
-     * <code>/examplebucket/photos/2006/February/sample.jpg</code>. For more information about request types, see
-     * <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#VirtualHostingSpecifyBucket\">HTTP Host Header
-     * Bucket Specification</a>.</p>
-     *
-     * <p>To distribute large files to many people, you can save bandwidth costs by using BitTorrent. For more information, see
-     * <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/S3Torrent.html\">Amazon S3 Torrent</a>. For more information about
-     * returning the ACL of an object, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html\">
-     * GetObjectAcl</a>.</p>
-     *
-     * <p>If the object you are retrieving is stored in the S3 Glacier or S3 Glacier Deep Archive storage class, or S3 Intelligent-
-     * Tiering Archive or S3 Intelligent-Tiering Deep Archive tiers, before you can retrieve the object you must first restore a copy
-     * using <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html\">RestoreObject</a>. Otherwise, this
-     * action returns an <code>InvalidObjectStateError</code> error. For information about restoring archived objects, see
-     * <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html\">Restoring Archived Objects</a>.</p>
-     *
-     * <p>Encryption request headers, like <code>x-amz-server-side-encryption</code>, should not be sent for GET requests if your
-     * object uses server-side encryption with CMKs stored in Amazon Web Services KMS (SSE-KMS) or server-side encryption with Amazon
-     * S3–managed encryption keys (SSE-S3). If your object does use these types of keys, you’ll get an HTTP 400 BadRequest error.</p>
-     *
-     * <p>If you encrypt an object by using server-side encryption with customer-provided encryption keys (SSE-C) when you store the
-     * object in Amazon S3, then when you GET the object, you must use the following headers:</p>
-     *
+     * <p>
+     * Retrieves objects from Amazon S3. To use <code>GET</code>, you must have <code>READ</code> access to the object.
+     * If you grant <code>READ</code> access to the anonymous user, you can return the object without using an
+     * authorization header.
+     * </p>
+     * <p>
+     * An Amazon S3 bucket has no directory hierarchy such as you would find in a typical computer file system. You can,
+     * however, create a logical hierarchy by using object key names that imply a folder structure. For example, instead
+     * of naming an object <code>sample.jpg</code>, you can name it <code>photos/2006/February/sample.jpg</code>.
+     * </p>
+     * <p>
+     * To get an object from such a logical hierarchy, specify the full key name for the object in the <code>GET</code>
+     * operation. For a virtual hosted-style request example, if you have the object
+     * <code>photos/2006/February/sample.jpg</code>, specify the resource as
+     * <code>/photos/2006/February/sample.jpg</code>. For a path-style request example, if you have the object
+     * <code>photos/2006/February/sample.jpg</code> in the bucket named <code>examplebucket</code>, specify the resource
+     * as <code>/examplebucket/photos/2006/February/sample.jpg</code>. For more information about request types, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#VirtualHostingSpecifyBucket">HTTP Host
+     * Header Bucket Specification</a>.
+     * </p>
+     * <p>
+     * For more information about returning the ACL of an object, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>.
+     * </p>
+     * <p>
+     * If the object you are retrieving is stored in the S3 Glacier or S3 Glacier Deep Archive storage class, or S3
+     * Intelligent-Tiering Archive or S3 Intelligent-Tiering Deep Archive tiers, before you can retrieve the object you
+     * must first restore a copy using <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>. Otherwise, this
+     * action returns an <code>InvalidObjectState</code> error. For information about restoring archived objects, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring Archived Objects</a>.
+     * </p>
+     * <p>
+     * Encryption request headers, like <code>x-amz-server-side-encryption</code>, should not be sent for GET requests
+     * if your object uses server-side encryption with KMS keys (SSE-KMS) or server-side encryption with Amazon
+     * S3–managed encryption keys (SSE-S3). If your object does use these types of keys, you’ll get an HTTP 400
+     * BadRequest error.
+     * </p>
+     * <p>
+     * If you encrypt an object by using server-side encryption with customer-provided encryption keys (SSE-C) when you
+     * store the object in Amazon S3, then when you GET the object, you must use the following headers:
+     * </p>
      * <ul>
-     *     <li> <p>x-amz-server-side-encryption-customer-algorithm</p> </li>
-     *     <li> <p>x-amz-server-side-encryption-customer-key</p> </li>
-     *     <li> <p>x-amz-server-side-encryption-customer-key-MD5</p> </li>
+     * <li>
+     * <p>
+     * x-amz-server-side-encryption-customer-algorithm
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * x-amz-server-side-encryption-customer-key
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * x-amz-server-side-encryption-customer-key-MD5
+     * </p>
+     * </li>
      * </ul>
-     *
-     * <p>For more information about SSE-C, see
-     * <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html\">Server-Side Encryption
-     * (Using Customer-Provided Encryption Keys)</a>.</p> <p>Assuming you have the relevant permission to read object tags, the
-     * response also returns the <code>x-amz-tagging-count</code> header that provides the count of number of tags associated with
-     * the object. You can use <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html\">GetObjectTagging
-     * </a> to retrieve the tag set associated with an object.</p>
-     *
-     * <p> <b>Permissions</b> </p>
-     *
-     * <p>You need the relevant read object (or version) permission for this operation. For more information,
-     * see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html\">Specifying Permissions in a
-     * Policy</a>. If the object you request does not exist, the error Amazon S3 returns depends on whether you also have the
-     * <code>s3:ListBucket</code> permission.</p>
-     *
+     * <p>
+     * For more information about SSE-C, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
+     * Encryption (Using Customer-Provided Encryption Keys)</a>.
+     * </p>
+     * <p>
+     * Assuming you have the relevant permission to read object tags, the response also returns the
+     * <code>x-amz-tagging-count</code> header that provides the count of number of tags associated with the object. You
+     * can use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
+     * to retrieve the tag set associated with an object.
+     * </p>
+     * <p>
+     * <b>Permissions</b>
+     * </p>
+     * <p>
+     * You need the relevant read object (or version) permission for this operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying Permissions in a
+     * Policy</a>. If the object you request does not exist, the error Amazon S3 returns depends on whether you also
+     * have the <code>s3:ListBucket</code> permission.
+     * </p>
      * <ul>
-     *     <li> <p>If you have the <code>s3:ListBucket</code> permission on the bucket, Amazon S3 will return an HTTP status code
-     *     404 (\"no such key\") error.</p> </li>
-     *     <li> <p>If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 will return an HTTP status code 403
-     *     (\"access denied\") error.</p> </li>
+     * <li>
+     * <p>
+     * If you have the <code>s3:ListBucket</code> permission on the bucket, Amazon S3 will return an HTTP status code
+     * 404 ("no such key") error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 will return an HTTP status code 403
+     * ("access denied") error.
+     * </p>
+     * </li>
      * </ul>
-     *
-     * <p> <b>Versioning</b> </p>
-     *
-     * <p>By default, the GET action returns the current version of an object. To return a different version, use the
-     * <code>versionId</code> subresource.</p>
-     *
+     * <p>
+     * <b>Versioning</b>
+     * </p>
+     * <p>
+     * By default, the GET action returns the current version of an object. To return a different version, use the
+     * <code>versionId</code> subresource.
+     * </p>
      * <note>
-     *     <ul>
-     *         <li> <p>You need the <code>s3:GetObjectVersion</code> permission to access a specific version of an object. </p> </li>
-     *         <li> <p>If the current version of the object is a delete marker, Amazon S3 behaves as if the object was deleted and
-     *         includes <code>x-amz-delete-marker: true</code> in the response.</p> </li>
-     *     </ul>
-     * </note>
-     *
-     * <p>For more information about versioning, see
-     * <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html\">PutBucketVersioning</a>. </p>
-     *
-     * <p> <b>Overriding Response Header Values</b> </p>
-     *
-     *<p>There are times when you want to override certain response header values in a GET response. For example, you might
-     * override the Content-Disposition response header value in your GET request.</p> <p>You can override values for a set of
-     * response headers using the following query parameters. These response header values are sent only on a successful request,
-     * that is, when status code 200 OK is returned. The set of headers you can override using these parameters is a subset of the
-     * headers that Amazon S3 accepts when you create an object. The response headers that you can override for the GET response
-     * are <code>Content-Type</code>, <code>Content-Language</code>, <code>Expires</code>, <code>Cache-Control</code>,
-     * <code>Content-Disposition</code>, and <code>Content-Encoding</code>. To override these header values in the GET response, you
-     * use the following request parameters.</p>
-     *
-     * <note>
-     *     <p>You must sign the request, either using an Authorization header or a presigned URL, when using these parameters. They
-     *     cannot be used with an unsigned (anonymous) request.</p>
-     * </note>
-     *
      * <ul>
-     *     <li> <p> <code>response-content-type</code> </p> </li>
-     *     <li> <p> <code>response-content-language</code> </p> </li>
-     *     <li> <p> <code>response-expires</code> </p> </li>
-     *     <li> <p> <code>response-cache-control</code> </p>
-     *     </li> <li> <p> <code>response-content-disposition</code> </p> </li>
-     *     <li> <p> <code>response-content-encoding</code> </p> </li>
+     * <li>
+     * <p>
+     * If you supply a <code>versionId</code>, you need the <code>s3:GetObjectVersion</code> permission to access a
+     * specific version of an object. If you request a specific version, you do not need to have the
+     * <code>s3:GetObject</code> permission. If you request the current version without a specific version ID, only
+     * <code>s3:GetObject</code> permission is required. <code>s3:GetObjectVersion</code> permission won't be required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the current version of the object is a delete marker, Amazon S3 behaves as if the object was deleted and
+     * includes <code>x-amz-delete-marker: true</code> in the response.
+     * </p>
+     * </li>
      * </ul>
-     *
-     * <p> <b>Additional Considerations about Request Headers</b> </p>
-     *
-     * <p>If both of the <code>If-Match</code> and <code>If-Unmodified-Since</code> headers are present in the request as
-     * follows: <code>If-Match</code> condition evaluates to <code>true</code>, and; <code>If-Unmodified-Since</code> condition
-     * evaluates to <code>false</code>; then, S3 returns 200 OK and the data requested. </p>
-     *
-     * <p>If both of the <code>If-None-Match</code> and <code>If-Modified-Since</code> headers are present in the request as
-     * follows:<code> If-None-Match</code> condition evaluates to <code>false</code>, and; <code>If-Modified-Since</code> condition
-     * evaluates to <code>true</code>; then, S3 returns 304 Not Modified response code.</p> <p>For more information about conditional
-     * requests, see <a href=\"https://tools.ietf.org/html/rfc7232\">RFC 7232</a>.</p> <p>The following operations are related to
-     * <code>GetObject</code>:</p>
-     *
+     * </note>
+     * <p>
+     * For more information about versioning, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html">PutBucketVersioning</a>.
+     * </p>
+     * <p>
+     * <b>Overriding Response Header Values</b>
+     * </p>
+     * <p>
+     * There are times when you want to override certain response header values in a GET response. For example, you
+     * might override the <code>Content-Disposition</code> response header value in your GET request.
+     * </p>
+     * <p>
+     * You can override values for a set of response headers using the following query parameters. These response header
+     * values are sent only on a successful request, that is, when status code 200 OK is returned. The set of headers
+     * you can override using these parameters is a subset of the headers that Amazon S3 accepts when you create an
+     * object. The response headers that you can override for the GET response are <code>Content-Type</code>,
+     * <code>Content-Language</code>, <code>Expires</code>, <code>Cache-Control</code>, <code>Content-Disposition</code>
+     * , and <code>Content-Encoding</code>. To override these header values in the GET response, you use the following
+     * request parameters.
+     * </p>
+     * <note>
+     * <p>
+     * You must sign the request, either using an Authorization header or a presigned URL, when using these parameters.
+     * They cannot be used with an unsigned (anonymous) request.
+     * </p>
+     * </note>
      * <ul>
-     *     <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html\">ListBuckets</a> </p> </li>
-     *     <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html\">GetObjectAcl</a> </p> </li>
+     * <li>
+     * <p>
+     * <code>response-content-type</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>response-content-language</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>response-expires</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>response-cache-control</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>response-content-disposition</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>response-content-encoding</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Additional Considerations about Request Headers</b>
+     * </p>
+     * <p>
+     * If both of the <code>If-Match</code> and <code>If-Unmodified-Since</code> headers are present in the request as
+     * follows: <code>If-Match</code> condition evaluates to <code>true</code>, and; <code>If-Unmodified-Since</code>
+     * condition evaluates to <code>false</code>; then, S3 returns 200 OK and the data requested.
+     * </p>
+     * <p>
+     * If both of the <code>If-None-Match</code> and <code>If-Modified-Since</code> headers are present in the request
+     * as follows:<code> If-None-Match</code> condition evaluates to <code>false</code>, and;
+     * <code>If-Modified-Since</code> condition evaluates to <code>true</code>; then, S3 returns 304 Not Modified
+     * response code.
+     * </p>
+     * <p>
+     * For more information about conditional requests, see <a href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.
+     * </p>
+     * <p>
+     * The following operations are related to <code>GetObject</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>
+     * </p>
+     * </li>
      * </ul>
      *
      * @param getObjectRequest
@@ -2971,7 +3251,32 @@ public interface AmazonS3 extends S3DirectSpi {
     public SetObjectTaggingResult setObjectTagging(SetObjectTaggingRequest setObjectTaggingRequest);
 
     /**
-     * Remove the tags for the specified object.
+     * <p>
+     * Removes the entire tag set from the specified object. For more information about managing object tags, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html"> Object Tagging</a>.
+     * </p>
+     * <p>
+     * To use this operation, you must have permission to perform the <code>s3:DeleteObjectTagging</code> action.
+     * </p>
+     * <p>
+     * To delete tags of a specific object version, add the <code>versionId</code> query parameter in the request. You
+     * will need permission for the <code>s3:DeleteObjectVersionTagging</code> action.
+     * </p>
+     * <p>
+     * The following operations are related to <code>DeleteObjectTagging</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html">PutObjectTagging</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
+     * </p>
+     * </li>
+     * </ul>
      *
      * @param deleteObjectTaggingRequest
      *            The request object containing all the options for deleting
@@ -3593,13 +3898,19 @@ public interface AmazonS3 extends S3DirectSpi {
      * In some cases, some objects will be successfully deleted, while some
      * attempts will cause an error. If any object in the request cannot be
      * deleted, this method throws a {@link MultiObjectDeleteException} with
-     * details of the error.
+     * details of the error. In the exceptional case of a SlowDown error,
+     * the returned S3 response will not provide details of the progress
+     * made, and this method will throw a
+     * {@link MultiObjectDeleteSlowdownException}.
      *
      * @param deleteObjectsRequest
      *            The request object containing all options for deleting
      *            multiple objects.
      * @throws MultiObjectDeleteException
      *             if one or more of the objects couldn't be deleted.
+     * @throws MultiObjectDeleteSlowdownException
+     *             if one or more of the objects couldn't be deleted due to
+     *             a SlowDown error
      * @throws SdkClientException
      *             If any errors are encountered in the client while making the
      *             request or handling the response.
@@ -4198,22 +4509,38 @@ public interface AmazonS3 extends S3DirectSpi {
             DeleteBucketTaggingConfigurationRequest deleteBucketTaggingConfigurationRequest);
 
     /**
-     * Gets the notification configuration for the specified bucket.
      * <p>
-     * By default, new buckets have no notification configuration.
+     * Returns the notification configuration of a bucket.
+     * </p>
      * <p>
-     * The notification configuration of a bucket provides near realtime notifications
-     * of events the user is interested in, using SNS as the delivery service.
-     * Notification is turned on by enabling configuration on a bucket, specifying
-     * the events and the SNS topic. This configuration can only be turned
-     * on by the bucket owner. If a notification configuration already exists for the
-     * specified bucket, the new notification configuration will replace the existing
-     * notification configuration.  To remove the notification configuration pass in
-     * an empty request.  Currently, buckets may only have a single event and topic
-     * configuration.
+     * If notifications are not enabled on the bucket, the action returns an empty
+     * <code>NotificationConfiguration</code> element.
+     * </p>
      * <p>
-     * S3 is eventually consistent. It may take time for the notification status
-     * of a bucket to be propagated throughout the system.
+     * By default, you must be the bucket owner to read the notification configuration of a bucket. However, the bucket
+     * owner can use a bucket policy to grant permission to other users to read this configuration with the
+     * <code>s3:GetBucketNotification</code> permission.
+     * </p>
+     * <p>
+     * To use this API against an access point, provide the alias of the access point in place of the bucket name.
+     * </p>
+     * <p>
+     * For more information about setting and reading the notification configuration on a bucket, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Setting Up Notification of Bucket
+     * Events</a>. For more information about bucket policies, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using Bucket Policies</a>.
+     * </p>
+     * <p>
+     * The following action is related to <code>GetBucketNotification</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotification.html">PutBucketNotification</a>
+     * </p>
+     * </li>
+     * </ul>
      *
      * @param bucketName
      *            The bucket whose notification configuration will be retrieved.
@@ -4234,22 +4561,38 @@ public interface AmazonS3 extends S3DirectSpi {
         throws SdkClientException, AmazonServiceException;
 
     /**
-     * Gets the notification configuration for the specified bucket.
      * <p>
-     * By default, new buckets have no notification configuration.
+     * Returns the notification configuration of a bucket.
+     * </p>
      * <p>
-     * The notification configuration of a bucket provides near realtime notifications
-     * of events the user is interested in, using SNS as the delivery service.
-     * Notification is turned on by enabling configuration on a bucket, specifying
-     * the events and the SNS topic. This configuration can only be turned
-     * on by the bucket owner. If a notification configuration already exists for the
-     * specified bucket, the new notification configuration will replace the existing
-     * notification configuration.  To remove the notification configuration pass in
-     * an empty request.  Currently, buckets may only have a single event and topic
-     * configuration.
+     * If notifications are not enabled on the bucket, the action returns an empty
+     * <code>NotificationConfiguration</code> element.
+     * </p>
      * <p>
-     * S3 is eventually consistent. It may take time for the notification status
-     * of a bucket to be propagated throughout the system.
+     * By default, you must be the bucket owner to read the notification configuration of a bucket. However, the bucket
+     * owner can use a bucket policy to grant permission to other users to read this configuration with the
+     * <code>s3:GetBucketNotification</code> permission.
+     * </p>
+     * <p>
+     * To use this API against an access point, provide the alias of the access point in place of the bucket name.
+     * </p>
+     * <p>
+     * For more information about setting and reading the notification configuration on a bucket, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Setting Up Notification of Bucket
+     * Events</a>. For more information about bucket policies, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using Bucket Policies</a>.
+     * </p>
+     * <p>
+     * The following action is related to <code>GetBucketNotification</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotification.html">PutBucketNotification</a>
+     * </p>
+     * </li>
+     * </ul>
      *
      * @param getBucketNotificationConfigurationRequest
      *            The request object for retrieving the bucket notification configuration.
@@ -5103,8 +5446,9 @@ public interface AmazonS3 extends S3DirectSpi {
      * Completes a multipart upload by assembling previously uploaded parts.
      * </p>
      * <p>
-     * You first initiate the multipart upload and then upload all parts using the {@link #uploadPart(UploadPartRequest)}
-     * method. After successfully uploading all relevant parts of an upload, you call this action to complete the upload. Upon
+     * You first initiate the multipart upload and then upload all parts using the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a> operation. After
+     * successfully uploading all relevant parts of an upload, you call this action to complete the upload. Upon
      * receiving this request, Amazon S3 concatenates all the parts in ascending order by part number to create a new
      * object. In the Complete Multipart Upload request, you must provide the parts list. You must ensure that the parts
      * list is complete. This action concatenates the parts that you provide in the list. For each part in the list, you
@@ -5113,9 +5457,13 @@ public interface AmazonS3 extends S3DirectSpi {
      * <p>
      * Processing of a Complete Multipart Upload request could take several minutes to complete. After Amazon S3 begins
      * processing the request, it sends an HTTP response header that specifies a 200 OK response. While processing is in
-     * progress, Amazon S3 periodically sends white space characters to keep the connection from timing out. Because a
-     * request could fail after the initial 200 OK response has been sent, it is important that you check the response
-     * body to determine whether the request succeeded.
+     * progress, Amazon S3 periodically sends white space characters to keep the connection from timing out. A request
+     * could fail after the initial 200 OK response has been sent. This means that a <code>200 OK</code> response can
+     * contain either a success or an error. If you call the S3 API directly, make sure to design your application to
+     * parse the contents of the response and handle it appropriately. If you use Amazon Web Services SDKs, SDKs handle
+     * this condition. The SDKs detect the embedded error and apply error handling per your configuration settings
+     * (including automatically retrying the request as appropriate). If the condition persists, the SDKs throws an
+     * exception (or, for the SDKs that don't use exceptions, they return the error).
      * </p>
      * <p>
      * Note that if <code>CompleteMultipartUpload</code> fails, applications should be prepared to retry the failed
@@ -5125,9 +5473,9 @@ public interface AmazonS3 extends S3DirectSpi {
      * </p>
      * <important>
      * <p>
-     * You cannot use <code>Content-Type: application/x-www-form-urlencode</code> with Complete Multipart Upload
-     * requests. It is not allowed by Amazon S3. Also, if you do not provide a <code>Content-Type</code>
-     * header, <code>CompleteMultipartUpload</code> returns a 200 OK response.
+     * You cannot use <code>Content-Type: application/x-www-form-urlencoded</code> with Complete Multipart Upload
+     * requests. Also, if you do not provide a <code>Content-Type</code> header, <code>CompleteMultipartUpload</code>
+     * returns a 200 OK response.
      * </p>
      * </important>
      * <p>
@@ -5374,32 +5722,10 @@ public interface AmazonS3 extends S3DirectSpi {
      * Amazon S3 Resources</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <p>
-     * <b>Querying Archives with Select Requests</b>
-     * </p>
-     * <p>
-     * You use a select type of request to perform SQL queries on archived objects. The archived objects that are being
-     * queried by the select request must be formatted as uncompressed comma-separated values (CSV) files. You can run
-     * queries and custom analytics on your archived data without having to restore your data to a hotter Amazon S3
-     * tier. For an overview about select requests, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/querying-glacier-archives.html">Querying Archived
-     * Objects</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
-     * </p>
-     * <p>
-     * When making a select request, do the following:
+     * For more information about the <code>S3</code> structure in the request body, see the following:
      * </p>
      * <ul>
      * <li>
-     * <p>
-     * Define an output location for the select query's output. This must be an Amazon S3 bucket in the same Amazon Web Services
-     * Region as the bucket that contains the archive object that is being queried. The Amazon Web Services account that initiates
-     * the job must have permissions to write to the S3 bucket. You can specify the storage class and encryption for the output
-     * objects stored in the bucket. For more information about output, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/querying-glacier-archives.html">Querying Archived
-     * Objects</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
-     * </p>
-     * <p>
-     * For more information about the <code>S3</code> structure in the request body, see the following:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -5458,11 +5784,6 @@ public interface AmazonS3 extends S3DirectSpi {
      * </li>
      * </ul>
      * <p>
-     * For more information about using SQL with S3 Glacier Select restore, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-glacier-select-sql-reference.html">SQL Reference for
-     * Amazon S3 Select and S3 Glacier Select</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
-     * </p>
-     * <p>
      * When making a select request, you can also do the following:
      * </p>
      * <ul>
@@ -5506,11 +5827,14 @@ public interface AmazonS3 extends S3DirectSpi {
      * <b>Restoring Archives</b>
      * </p>
      * <p>
-     * Objects in the GLACIER and DEEP_ARCHIVE storage classes are archived. To access an archived object, you must
-     * first initiate a restore request. This restores a temporary copy of the archived object. In a restore request,
-     * you must specify the number of days that you want the restored copy to exist. After the specified period, Amazon
-     * S3 deletes the temporary copy but the object remains archived in the GLACIER or DEEP_ARCHIVE storage class that
-     * object was restored from.
+     * Objects that you archive to the S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage class, and S3
+     * Intelligent-Tiering Archive or S3 Intelligent-Tiering Deep Archive tiers, are not accessible in real time. For
+     * objects in the S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage classes, you must first initiate
+     * a restore request, and then wait until a temporary copy of the object is available. If you want a permanent copy
+     * of the object, create a copy of it in the Amazon S3 Standard storage class in your S3 bucket. To access an
+     * archived object, you must restore the object for the duration (number of days) that you specify. For objects in
+     * the Archive Access or Deep Archive Access tiers of S3 Intelligent-Tiering, you must first initiate a restore
+     * request, and then wait until the object is moved into the Frequent Access tier.
      * </p>
      * <p>
      * To restore a specific object version, you can provide a version ID. If you don't provide a version ID, Amazon S3
@@ -5521,33 +5845,39 @@ public interface AmazonS3 extends S3DirectSpi {
      * which data access tier you specify.
      * </p>
      * <p>
-     * When restoring an archived object (or using a select request), you can specify one of the following data access
-     * tier options in the <code>Tier</code> element of the request body:
+     * When restoring an archived object, you can specify one of the following data access tier options in the
+     * <code>Tier</code> element of the request body:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b> <code>Expedited</code> </b> - Expedited retrievals allow you to quickly access your data stored in the
-     * GLACIER storage class when occasional urgent requests for a subset of archives are required. For all but the
-     * largest archived objects (250 MB+), data accessed using Expedited retrievals are typically made available within
-     * 1–5 minutes. Provisioned capacity ensures that retrieval capacity for Expedited retrievals is available when you
-     * need it. Expedited retrievals and provisioned capacity are not available for the DEEP_ARCHIVE storage class.
+     * <b> <code>Expedited</code> </b> - Expedited retrievals allow you to quickly access your data stored in the S3 Glacier
+     * Flexible Retrieval storage class or S3 Intelligent-Tiering Archive tier when occasional urgent requests for a
+     * subset of archives are required. For all but the largest archived objects (250 MB+), data accessed using
+     * Expedited retrievals is typically made available within 1–5 minutes. Provisioned capacity ensures that retrieval
+     * capacity for Expedited retrievals is available when you need it. Expedited retrievals and provisioned capacity
+     * are not available for objects stored in the S3 Glacier Deep Archive storage class or S3 Intelligent-Tiering Deep
+     * Archive tier.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b> <code>Standard</code> </b> - S3 Standard retrievals allow you to access any of your archived objects within
-     * several hours. This is the default option for the GLACIER and DEEP_ARCHIVE retrieval requests that do not specify
-     * the retrieval option. S3 Standard retrievals typically complete within 3-5 hours from the GLACIER storage class
-     * and typically complete within 12 hours from the DEEP_ARCHIVE storage class.
+     * several hours. This is the default option for retrieval requests that do not specify the retrieval option. Standard
+     * retrievals typically finish within 3–5 hours for objects stored in the S3 Glacier Flexible Retrieval storage
+     * class or S3 Intelligent-Tiering Archive tier. They typically finish within 12 hours for objects stored in the S3
+     * Glacier Deep Archive storage class or S3 Intelligent-Tiering Deep Archive tier. Standard retrievals are free for
+     * objects stored in S3 Intelligent-Tiering.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b> <code>Bulk</code> </b> - Bulk retrievals are Amazon S3 Glacier’s lowest-cost retrieval option, enabling you
-     * to retrieve large amounts, even petabytes, of data inexpensively in a day. Bulk retrievals typically complete
-     * within 5-12 hours from the GLACIER storage class and typically complete within 48 hours from the DEEP_ARCHIVE
-     * storage class.
+     * <b> <code>Bulk</code> </b> - Bulk retrievals free for objects stored in the S3 Glacier Flexible Retrieval and S3
+     * Intelligent-Tiering storage classes, enabling you to retrieve large amounts, even petabytes, of data at no cost.
+     * Bulk retrievals typically finish within 5–12 hours for objects stored in the S3 Glacier Flexible Retrieval
+     * storage class or S3 Intelligent-Tiering Archive tier. Bulk retrievals are also the lowest-cost retrieval option
+     * when restoring objects from S3 Glacier Deep Archive. They typically finish within 48 hours for objects stored in
+     * the S3 Glacier Deep Archive storage class or S3 Intelligent-Tiering Deep Archive tier.
      * </p>
      * </li>
      * </ul>
@@ -5675,12 +6005,6 @@ public interface AmazonS3 extends S3DirectSpi {
      * <p>
      * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">
      * GetBucketNotificationConfiguration</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-glacier-select-sql-reference.html">SQL Reference for
-     * Amazon S3 Select and S3 Glacier Select </a> in the <i>Amazon Simple Storage Service Developer Guide</i>
      * </p>
      * </li>
      * </ul>
@@ -6783,7 +7107,38 @@ public interface AmazonS3 extends S3DirectSpi {
         throws AmazonServiceException, SdkClientException;
 
     /**
-     * Returns the server-side encryption configuration of a bucket.
+     * <p>
+     * Returns the default encryption configuration for an Amazon S3 bucket. By default, all buckets have a default
+     * encryption configuration that uses server-side encryption with Amazon S3 managed keys (SSE-S3). For information
+     * about the bucket default encryption feature, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon S3 Bucket Default
+     * Encryption</a> in the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * <p>
+     * To use this operation, you must have permission to perform the <code>s3:GetEncryptionConfiguration</code> action.
+     * The bucket owner has this permission by default. The bucket owner can grant this permission to others. For more
+     * information about permissions, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources"
+     * >Permissions Related to Bucket Subresource Operations</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing Access Permissions
+     * to Your Amazon S3 Resources</a>.
+     * </p>
+     * <p>
+     * The following operations are related to <code>GetBucketEncryption</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketEncryption.html">PutBucketEncryption</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketEncryption.html">DeleteBucketEncryption</a>
+     * </p>
+     * </li>
+     * </ul>
      *
      * @param bucketName Name of the bucket to retrieve encryption configuration for.
      * @return A {@link GetBucketEncryptionResult}.
@@ -6795,7 +7150,38 @@ public interface AmazonS3 extends S3DirectSpi {
         throws AmazonServiceException, SdkClientException;
 
     /**
-     * Returns the server-side encryption configuration of a bucket.
+     * <p>
+     * Returns the default encryption configuration for an Amazon S3 bucket. By default, all buckets have a default
+     * encryption configuration that uses server-side encryption with Amazon S3 managed keys (SSE-S3). For information
+     * about the bucket default encryption feature, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon S3 Bucket Default
+     * Encryption</a> in the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * <p>
+     * To use this operation, you must have permission to perform the <code>s3:GetEncryptionConfiguration</code> action.
+     * The bucket owner has this permission by default. The bucket owner can grant this permission to others. For more
+     * information about permissions, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources"
+     * >Permissions Related to Bucket Subresource Operations</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing Access Permissions
+     * to Your Amazon S3 Resources</a>.
+     * </p>
+     * <p>
+     * The following operations are related to <code>GetBucketEncryption</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketEncryption.html">PutBucketEncryption</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketEncryption.html">DeleteBucketEncryption</a>
+     * </p>
+     * </li>
+     * </ul>
      *
      * @return A {@link GetBucketEncryptionResult}.
      * @throws AmazonServiceException
@@ -6880,11 +7266,6 @@ public interface AmazonS3 extends S3DirectSpi {
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-glacier-select-sql-reference-select.html">SELECT
      * Command</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
-     * <p>
-     * For more information about using SQL with Amazon S3 Select, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-glacier-select-sql-reference.html"> SQL Reference for
-     * Amazon S3 Select and S3 Glacier Select</a> in the <i>Amazon S3 User Guide</i>.
-     * </p>
      * <p/>
      * <p>
      * <b>Permissions</b>
@@ -6935,9 +7316,9 @@ public interface AmazonS3 extends S3DirectSpi {
      * Encryption (Using Customer-Provided Encryption Keys)</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <p>
-     * For objects that are encrypted with Amazon S3 managed encryption keys (SSE-S3) and Amazon Web Services KMS keys
-     * (SSE-KMS), server-side encryption is handled transparently, so you don't need to specify anything. For more
-     * information about server-side encryption, including SSE-S3 and SSE-KMS, see <a
+     * For objects that are encrypted with Amazon S3 managed keys (SSE-S3) and Amazon Web Services KMS keys (SSE-KMS),
+     * server-side encryption is handled transparently, so you don't need to specify anything. For more information
+     * about server-side encryption, including SSE-S3 and SSE-KMS, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data Using
      * Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
@@ -7261,9 +7642,9 @@ public interface AmazonS3 extends S3DirectSpi {
      * to calculate it. Amazon S3 explicitly requires that the content length be
      * sent in the request headers before any of the data is sent.</li>
      * <p>
-     * Amazon S3 is a distributed system. If Amazon S3 receives multiple write
-     * requests for the same object nearly simultaneously, all of the objects might
-     * be stored. However, only one object will obtain the key.
+     * Amazon S3 is a distributed system. If it receives multiple write requests for the same object simultaneously, it
+     * overwrites all but the last object written. To prevent objects from being deleted or overwritten, you can use <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html">Amazon S3 Object Lock</a>.
      * </p>
      *
      *

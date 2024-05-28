@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,10 @@ public class SAPODataSourcePropertiesMarshaller {
 
     private static final MarshallingInfo<String> OBJECTPATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("objectPath").build();
+    private static final MarshallingInfo<StructuredPojo> PARALLELISMCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("parallelismConfig").build();
+    private static final MarshallingInfo<StructuredPojo> PAGINATIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("paginationConfig").build();
 
     private static final SAPODataSourcePropertiesMarshaller instance = new SAPODataSourcePropertiesMarshaller();
 
@@ -47,6 +51,8 @@ public class SAPODataSourcePropertiesMarshaller {
 
         try {
             protocolMarshaller.marshall(sAPODataSourceProperties.getObjectPath(), OBJECTPATH_BINDING);
+            protocolMarshaller.marshall(sAPODataSourceProperties.getParallelismConfig(), PARALLELISMCONFIG_BINDING);
+            protocolMarshaller.marshall(sAPODataSourceProperties.getPaginationConfig(), PAGINATIONCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

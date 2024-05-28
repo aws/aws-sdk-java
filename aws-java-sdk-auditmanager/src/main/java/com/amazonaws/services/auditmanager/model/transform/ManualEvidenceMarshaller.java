@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,10 @@ public class ManualEvidenceMarshaller {
 
     private static final MarshallingInfo<String> S3RESOURCEPATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("s3ResourcePath").build();
+    private static final MarshallingInfo<String> TEXTRESPONSE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("textResponse").build();
+    private static final MarshallingInfo<String> EVIDENCEFILENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("evidenceFileName").build();
 
     private static final ManualEvidenceMarshaller instance = new ManualEvidenceMarshaller();
 
@@ -47,6 +51,8 @@ public class ManualEvidenceMarshaller {
 
         try {
             protocolMarshaller.marshall(manualEvidence.getS3ResourcePath(), S3RESOURCEPATH_BINDING);
+            protocolMarshaller.marshall(manualEvidence.getTextResponse(), TEXTRESPONSE_BINDING);
+            protocolMarshaller.marshall(manualEvidence.getEvidenceFileName(), EVIDENCEFILENAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

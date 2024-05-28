@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class Transport implements Serializable, Cloneable, StructuredPojo {
      * should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
      */
     private java.util.List<String> cidrAllowList;
-    /** The smoothing max bitrate for RIST, RTP, and RTP-FEC streams. */
+    /** The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams. */
     private Integer maxBitrate;
     /**
      * The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based
@@ -61,7 +61,10 @@ public class Transport implements Serializable, Cloneable, StructuredPojo {
     private String sourceListenerAddress;
     /** Source port for SRT-caller protocol. */
     private Integer sourceListenerPort;
-    /** The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams. */
+    /**
+     * The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based
+     * streams.
+     */
     private String streamId;
 
     /**
@@ -139,10 +142,10 @@ public class Transport implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
+     * The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
      * 
      * @param maxBitrate
-     *        The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
+     *        The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
      */
 
     public void setMaxBitrate(Integer maxBitrate) {
@@ -150,9 +153,9 @@ public class Transport implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
+     * The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
      * 
-     * @return The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
+     * @return The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
      */
 
     public Integer getMaxBitrate() {
@@ -160,10 +163,10 @@ public class Transport implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
+     * The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
      * 
      * @param maxBitrate
-     *        The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
+     *        The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -554,10 +557,12 @@ public class Transport implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+     * The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based
+     * streams.
      * 
      * @param streamId
-     *        The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+     *        The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT
+     *        caller-based streams.
      */
 
     public void setStreamId(String streamId) {
@@ -565,9 +570,11 @@ public class Transport implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+     * The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based
+     * streams.
      * 
-     * @return The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+     * @return The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT
+     *         caller-based streams.
      */
 
     public String getStreamId() {
@@ -575,10 +582,12 @@ public class Transport implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+     * The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based
+     * streams.
      * 
      * @param streamId
-     *        The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+     *        The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT
+     *        caller-based streams.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,8 @@ public class PresignedUrlConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ARN of an IAM role that grants grants permission to download files from the S3 bucket where the job
-     * data/updates are stored. The role must also grant permission for IoT to download the files.
+     * The ARN of an IAM role that grants permission to download files from the S3 bucket where the job data/updates are
+     * stored. The role must also grant permission for IoT to download the files.
      * </p>
      * <important>
      * <p>
@@ -49,8 +49,8 @@ public class PresignedUrlConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ARN of an IAM role that grants grants permission to download files from the S3 bucket where the job
-     * data/updates are stored. The role must also grant permission for IoT to download the files.
+     * The ARN of an IAM role that grants permission to download files from the S3 bucket where the job data/updates are
+     * stored. The role must also grant permission for IoT to download the files.
      * </p>
      * <important>
      * <p>
@@ -61,7 +61,7 @@ public class PresignedUrlConfig implements Serializable, Cloneable, StructuredPo
      * </important>
      * 
      * @param roleArn
-     *        The ARN of an IAM role that grants grants permission to download files from the S3 bucket where the job
+     *        The ARN of an IAM role that grants permission to download files from the S3 bucket where the job
      *        data/updates are stored. The role must also grant permission for IoT to download the files.</p>
      *        <important>
      *        <p>
@@ -77,8 +77,8 @@ public class PresignedUrlConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ARN of an IAM role that grants grants permission to download files from the S3 bucket where the job
-     * data/updates are stored. The role must also grant permission for IoT to download the files.
+     * The ARN of an IAM role that grants permission to download files from the S3 bucket where the job data/updates are
+     * stored. The role must also grant permission for IoT to download the files.
      * </p>
      * <important>
      * <p>
@@ -88,7 +88,7 @@ public class PresignedUrlConfig implements Serializable, Cloneable, StructuredPo
      * </p>
      * </important>
      * 
-     * @return The ARN of an IAM role that grants grants permission to download files from the S3 bucket where the job
+     * @return The ARN of an IAM role that grants permission to download files from the S3 bucket where the job
      *         data/updates are stored. The role must also grant permission for IoT to download the files.</p>
      *         <important>
      *         <p>
@@ -104,8 +104,8 @@ public class PresignedUrlConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ARN of an IAM role that grants grants permission to download files from the S3 bucket where the job
-     * data/updates are stored. The role must also grant permission for IoT to download the files.
+     * The ARN of an IAM role that grants permission to download files from the S3 bucket where the job data/updates are
+     * stored. The role must also grant permission for IoT to download the files.
      * </p>
      * <important>
      * <p>
@@ -116,7 +116,7 @@ public class PresignedUrlConfig implements Serializable, Cloneable, StructuredPo
      * </important>
      * 
      * @param roleArn
-     *        The ARN of an IAM role that grants grants permission to download files from the S3 bucket where the job
+     *        The ARN of an IAM role that grants permission to download files from the S3 bucket where the job
      *        data/updates are stored. The role must also grant permission for IoT to download the files.</p>
      *        <important>
      *        <p>

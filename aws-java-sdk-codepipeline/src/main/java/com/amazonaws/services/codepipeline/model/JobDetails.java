@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
     private JobData data;
     /**
      * <p>
-     * The AWS account ID associated with the job.
+     * The Amazon Web Services account ID associated with the job.
      * </p>
      */
     private String accountId;
@@ -129,11 +129,11 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID associated with the job.
+     * The Amazon Web Services account ID associated with the job.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID associated with the job.
+     *        The Amazon Web Services account ID associated with the job.
      */
 
     public void setAccountId(String accountId) {
@@ -142,10 +142,10 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID associated with the job.
+     * The Amazon Web Services account ID associated with the job.
      * </p>
      * 
-     * @return The AWS account ID associated with the job.
+     * @return The Amazon Web Services account ID associated with the job.
      */
 
     public String getAccountId() {
@@ -154,11 +154,11 @@ public class JobDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID associated with the job.
+     * The Amazon Web Services account ID associated with the job.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID associated with the job.
+     *        The Amazon Web Services account ID associated with the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

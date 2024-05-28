@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -87,6 +87,18 @@ public class ListInferenceRecommendationsJobsRequest extends com.amazonaws.Amazo
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * A filter that returns only jobs that were created for this model.
+     * </p>
+     */
+    private String modelNameEquals;
+    /**
+     * <p>
+     * A filter that returns only jobs that were created for this versioned model package.
+     * </p>
+     */
+    private String modelPackageVersionArnEquals;
 
     /**
      * <p>
@@ -561,6 +573,86 @@ public class ListInferenceRecommendationsJobsRequest extends com.amazonaws.Amazo
     }
 
     /**
+     * <p>
+     * A filter that returns only jobs that were created for this model.
+     * </p>
+     * 
+     * @param modelNameEquals
+     *        A filter that returns only jobs that were created for this model.
+     */
+
+    public void setModelNameEquals(String modelNameEquals) {
+        this.modelNameEquals = modelNameEquals;
+    }
+
+    /**
+     * <p>
+     * A filter that returns only jobs that were created for this model.
+     * </p>
+     * 
+     * @return A filter that returns only jobs that were created for this model.
+     */
+
+    public String getModelNameEquals() {
+        return this.modelNameEquals;
+    }
+
+    /**
+     * <p>
+     * A filter that returns only jobs that were created for this model.
+     * </p>
+     * 
+     * @param modelNameEquals
+     *        A filter that returns only jobs that were created for this model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListInferenceRecommendationsJobsRequest withModelNameEquals(String modelNameEquals) {
+        setModelNameEquals(modelNameEquals);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A filter that returns only jobs that were created for this versioned model package.
+     * </p>
+     * 
+     * @param modelPackageVersionArnEquals
+     *        A filter that returns only jobs that were created for this versioned model package.
+     */
+
+    public void setModelPackageVersionArnEquals(String modelPackageVersionArnEquals) {
+        this.modelPackageVersionArnEquals = modelPackageVersionArnEquals;
+    }
+
+    /**
+     * <p>
+     * A filter that returns only jobs that were created for this versioned model package.
+     * </p>
+     * 
+     * @return A filter that returns only jobs that were created for this versioned model package.
+     */
+
+    public String getModelPackageVersionArnEquals() {
+        return this.modelPackageVersionArnEquals;
+    }
+
+    /**
+     * <p>
+     * A filter that returns only jobs that were created for this versioned model package.
+     * </p>
+     * 
+     * @param modelPackageVersionArnEquals
+     *        A filter that returns only jobs that were created for this versioned model package.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListInferenceRecommendationsJobsRequest withModelPackageVersionArnEquals(String modelPackageVersionArnEquals) {
+        setModelPackageVersionArnEquals(modelPackageVersionArnEquals);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -591,7 +683,11 @@ public class ListInferenceRecommendationsJobsRequest extends com.amazonaws.Amazo
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getModelNameEquals() != null)
+            sb.append("ModelNameEquals: ").append(getModelNameEquals()).append(",");
+        if (getModelPackageVersionArnEquals() != null)
+            sb.append("ModelPackageVersionArnEquals: ").append(getModelPackageVersionArnEquals());
         sb.append("}");
         return sb.toString();
     }
@@ -646,6 +742,14 @@ public class ListInferenceRecommendationsJobsRequest extends com.amazonaws.Amazo
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getModelNameEquals() == null ^ this.getModelNameEquals() == null)
+            return false;
+        if (other.getModelNameEquals() != null && other.getModelNameEquals().equals(this.getModelNameEquals()) == false)
+            return false;
+        if (other.getModelPackageVersionArnEquals() == null ^ this.getModelPackageVersionArnEquals() == null)
+            return false;
+        if (other.getModelPackageVersionArnEquals() != null && other.getModelPackageVersionArnEquals().equals(this.getModelPackageVersionArnEquals()) == false)
+            return false;
         return true;
     }
 
@@ -664,6 +768,8 @@ public class ListInferenceRecommendationsJobsRequest extends com.amazonaws.Amazo
         hashCode = prime * hashCode + ((getSortOrder() == null) ? 0 : getSortOrder().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getModelNameEquals() == null) ? 0 : getModelNameEquals().hashCode());
+        hashCode = prime * hashCode + ((getModelPackageVersionArnEquals() == null) ? 0 : getModelPackageVersionArnEquals().hashCode());
         return hashCode;
     }
 

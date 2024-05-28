@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.mgn.AWSmgnClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.mgn.model.*;
+
 import com.amazonaws.services.mgn.model.transform.*;
 
 /**
@@ -78,29 +79,29 @@ public class AWSmgnClient extends AmazonWebServiceClient implements AWSmgn {
                     .withSupportsIon(false)
                     .withContentTypeOverride("application/json")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.mgn.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UninitializedAccountException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.mgn.model.transform.UninitializedAccountExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.mgn.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
                                     com.amazonaws.services.mgn.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.mgn.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.mgn.model.transform.ConflictExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.mgn.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.mgn.model.transform.ValidationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.mgn.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UninitializedAccountException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.mgn.model.transform.UninitializedAccountExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.mgn.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.mgn.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.mgn.model.AWSmgnException.class));
 
     public static AWSmgnClientBuilder builder() {
@@ -147,6 +148,260 @@ public class AWSmgnClient extends AmazonWebServiceClient implements AWSmgn {
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/mgn/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/mgn/request.handler2s"));
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * Archive application.
+     * </p>
+     * 
+     * @param archiveApplicationRequest
+     * @return Result of the ArchiveApplication operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.ArchiveApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ArchiveApplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ArchiveApplicationResult archiveApplication(ArchiveApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeArchiveApplication(request);
+    }
+
+    @SdkInternalApi
+    final ArchiveApplicationResult executeArchiveApplication(ArchiveApplicationRequest archiveApplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(archiveApplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ArchiveApplicationRequest> request = null;
+        Response<ArchiveApplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ArchiveApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(archiveApplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ArchiveApplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ArchiveApplicationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ArchiveApplicationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Archive wave.
+     * </p>
+     * 
+     * @param archiveWaveRequest
+     * @return Result of the ArchiveWave operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.ArchiveWave
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ArchiveWave" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ArchiveWaveResult archiveWave(ArchiveWaveRequest request) {
+        request = beforeClientExecution(request);
+        return executeArchiveWave(request);
+    }
+
+    @SdkInternalApi
+    final ArchiveWaveResult executeArchiveWave(ArchiveWaveRequest archiveWaveRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(archiveWaveRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ArchiveWaveRequest> request = null;
+        Response<ArchiveWaveResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ArchiveWaveRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(archiveWaveRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ArchiveWave");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ArchiveWaveResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ArchiveWaveResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Associate applications to wave.
+     * </p>
+     * 
+     * @param associateApplicationsRequest
+     * @return Result of the AssociateApplications operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.AssociateApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/AssociateApplications" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public AssociateApplicationsResult associateApplications(AssociateApplicationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateApplications(request);
+    }
+
+    @SdkInternalApi
+    final AssociateApplicationsResult executeAssociateApplications(AssociateApplicationsRequest associateApplicationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateApplicationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateApplicationsRequest> request = null;
+        Response<AssociateApplicationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateApplicationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateApplicationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateApplications");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateApplicationsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new AssociateApplicationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Associate source servers to application.
+     * </p>
+     * 
+     * @param associateSourceServersRequest
+     * @return Result of the AssociateSourceServers operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.AssociateSourceServers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/AssociateSourceServers" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public AssociateSourceServersResult associateSourceServers(AssociateSourceServersRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateSourceServers(request);
+    }
+
+    @SdkInternalApi
+    final AssociateSourceServersResult executeAssociateSourceServers(AssociateSourceServersRequest associateSourceServersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateSourceServersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateSourceServersRequest> request = null;
+        Response<AssociateSourceServersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateSourceServersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateSourceServersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateSourceServers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateSourceServersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AssociateSourceServersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -218,7 +473,127 @@ public class AWSmgnClient extends AmazonWebServiceClient implements AWSmgn {
 
     /**
      * <p>
-     * Creates a new ReplicationConfigurationTemplate.
+     * Create application.
+     * </p>
+     * 
+     * @param createApplicationRequest
+     * @return Result of the CreateApplication operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.CreateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateApplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateApplicationResult createApplication(CreateApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateApplication(request);
+    }
+
+    @SdkInternalApi
+    final CreateApplicationResult executeCreateApplication(CreateApplicationRequest createApplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createApplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateApplicationRequest> request = null;
+        Response<CreateApplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createApplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateApplicationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateApplicationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Create Connector.
+     * </p>
+     * 
+     * @param createConnectorRequest
+     * @return Result of the CreateConnector operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @sample AWSmgn.CreateConnector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateConnector" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateConnectorResult createConnector(CreateConnectorRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateConnector(request);
+    }
+
+    @SdkInternalApi
+    final CreateConnectorResult executeCreateConnector(CreateConnectorRequest createConnectorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createConnectorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateConnectorRequest> request = null;
+        Response<CreateConnectorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateConnectorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createConnectorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConnector");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateConnectorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateConnectorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new Launch Configuration Template.
      * </p>
      * 
      * @param createLaunchConfigurationTemplateRequest
@@ -346,6 +721,189 @@ public class AWSmgnClient extends AmazonWebServiceClient implements AWSmgn {
 
     /**
      * <p>
+     * Create wave.
+     * </p>
+     * 
+     * @param createWaveRequest
+     * @return Result of the CreateWave operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.CreateWave
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateWave" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateWaveResult createWave(CreateWaveRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateWave(request);
+    }
+
+    @SdkInternalApi
+    final CreateWaveResult executeCreateWave(CreateWaveRequest createWaveRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createWaveRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateWaveRequest> request = null;
+        Response<CreateWaveResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateWaveRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createWaveRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateWave");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateWaveResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateWaveResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Delete application.
+     * </p>
+     * 
+     * @param deleteApplicationRequest
+     * @return Result of the DeleteApplication operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.DeleteApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteApplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteApplicationResult deleteApplication(DeleteApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteApplication(request);
+    }
+
+    @SdkInternalApi
+    final DeleteApplicationResult executeDeleteApplication(DeleteApplicationRequest deleteApplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteApplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteApplicationRequest> request = null;
+        Response<DeleteApplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteApplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteApplicationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteApplicationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Delete Connector.
+     * </p>
+     * 
+     * @param deleteConnectorRequest
+     * @return Result of the DeleteConnector operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @sample AWSmgn.DeleteConnector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteConnector" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteConnectorResult deleteConnector(DeleteConnectorRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteConnector(request);
+    }
+
+    @SdkInternalApi
+    final DeleteConnectorResult executeDeleteConnector(DeleteConnectorRequest deleteConnectorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteConnectorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteConnectorRequest> request = null;
+        Response<DeleteConnectorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteConnectorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteConnectorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConnector");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteConnectorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteConnectorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a single Job by ID.
      * </p>
      * 
@@ -407,7 +965,7 @@ public class AWSmgnClient extends AmazonWebServiceClient implements AWSmgn {
 
     /**
      * <p>
-     * Creates a new ReplicationConfigurationTemplate.
+     * Deletes a single Launch Configuration Template by ID.
      * </p>
      * 
      * @param deleteLaunchConfigurationTemplateRequest
@@ -657,6 +1215,67 @@ public class AWSmgnClient extends AmazonWebServiceClient implements AWSmgn {
 
     /**
      * <p>
+     * Delete wave.
+     * </p>
+     * 
+     * @param deleteWaveRequest
+     * @return Result of the DeleteWave operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.DeleteWave
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteWave" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteWaveResult deleteWave(DeleteWaveRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteWave(request);
+    }
+
+    @SdkInternalApi
+    final DeleteWaveResult executeDeleteWave(DeleteWaveRequest deleteWaveRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteWaveRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteWaveRequest> request = null;
+        Response<DeleteWaveResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteWaveRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteWaveRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteWave");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteWaveResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteWaveResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves detailed job log items with paging.
      * </p>
      * 
@@ -779,7 +1398,7 @@ public class AWSmgnClient extends AmazonWebServiceClient implements AWSmgn {
 
     /**
      * <p>
-     * Creates a new ReplicationConfigurationTemplate.
+     * Lists all Launch Configuration Templates, filtered by Launch Configuration Template IDs
      * </p>
      * 
      * @param describeLaunchConfigurationTemplatesRequest
@@ -1017,6 +1636,132 @@ public class AWSmgnClient extends AmazonWebServiceClient implements AWSmgn {
             HttpResponseHandler<AmazonWebServiceResponse<DescribeVcenterClientsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeVcenterClientsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Disassociate applications from wave.
+     * </p>
+     * 
+     * @param disassociateApplicationsRequest
+     * @return Result of the DisassociateApplications operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.DisassociateApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DisassociateApplications" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DisassociateApplicationsResult disassociateApplications(DisassociateApplicationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateApplications(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateApplicationsResult executeDisassociateApplications(DisassociateApplicationsRequest disassociateApplicationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateApplicationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateApplicationsRequest> request = null;
+        Response<DisassociateApplicationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateApplicationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateApplicationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateApplications");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateApplicationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateApplicationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Disassociate source servers from application.
+     * </p>
+     * 
+     * @param disassociateSourceServersRequest
+     * @return Result of the DisassociateSourceServers operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.DisassociateSourceServers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DisassociateSourceServers" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DisassociateSourceServersResult disassociateSourceServers(DisassociateSourceServersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateSourceServers(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateSourceServersResult executeDisassociateSourceServers(DisassociateSourceServersRequest disassociateSourceServersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateSourceServersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateSourceServersRequest> request = null;
+        Response<DisassociateSourceServersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateSourceServersRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateSourceServersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateSourceServers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateSourceServersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateSourceServersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1347,6 +2092,481 @@ public class AWSmgnClient extends AmazonWebServiceClient implements AWSmgn {
 
     /**
      * <p>
+     * Retrieves all applications or multiple applications by ID.
+     * </p>
+     * 
+     * @param listApplicationsRequest
+     * @return Result of the ListApplications operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @sample AWSmgn.ListApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListApplications" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListApplicationsResult listApplications(ListApplicationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListApplications(request);
+    }
+
+    @SdkInternalApi
+    final ListApplicationsResult executeListApplications(ListApplicationsRequest listApplicationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listApplicationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListApplicationsRequest> request = null;
+        Response<ListApplicationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListApplicationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listApplicationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApplications");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListApplicationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListApplicationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List Connectors.
+     * </p>
+     * 
+     * @param listConnectorsRequest
+     * @return Result of the ListConnectors operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @sample AWSmgn.ListConnectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListConnectors" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListConnectorsResult listConnectors(ListConnectorsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListConnectors(request);
+    }
+
+    @SdkInternalApi
+    final ListConnectorsResult executeListConnectors(ListConnectorsRequest listConnectorsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listConnectorsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListConnectorsRequest> request = null;
+        Response<ListConnectorsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListConnectorsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listConnectorsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConnectors");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListConnectorsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListConnectorsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List export errors.
+     * </p>
+     * 
+     * @param listExportErrorsRequest
+     *        List export errors request.
+     * @return Result of the ListExportErrors operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @sample AWSmgn.ListExportErrors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExportErrors" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListExportErrorsResult listExportErrors(ListExportErrorsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListExportErrors(request);
+    }
+
+    @SdkInternalApi
+    final ListExportErrorsResult executeListExportErrors(ListExportErrorsRequest listExportErrorsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listExportErrorsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListExportErrorsRequest> request = null;
+        Response<ListExportErrorsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListExportErrorsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listExportErrorsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListExportErrors");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListExportErrorsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListExportErrorsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List exports.
+     * </p>
+     * 
+     * @param listExportsRequest
+     *        List export request.
+     * @return Result of the ListExports operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @sample AWSmgn.ListExports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExports" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListExportsResult listExports(ListExportsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListExports(request);
+    }
+
+    @SdkInternalApi
+    final ListExportsResult executeListExports(ListExportsRequest listExportsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listExportsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListExportsRequest> request = null;
+        Response<ListExportsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListExportsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listExportsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListExports");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListExportsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListExportsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List import errors.
+     * </p>
+     * 
+     * @param listImportErrorsRequest
+     *        List import errors request.
+     * @return Result of the ListImportErrors operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @sample AWSmgn.ListImportErrors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImportErrors" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListImportErrorsResult listImportErrors(ListImportErrorsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListImportErrors(request);
+    }
+
+    @SdkInternalApi
+    final ListImportErrorsResult executeListImportErrors(ListImportErrorsRequest listImportErrorsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listImportErrorsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListImportErrorsRequest> request = null;
+        Response<ListImportErrorsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListImportErrorsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listImportErrorsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListImportErrors");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListImportErrorsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListImportErrorsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List imports.
+     * </p>
+     * 
+     * @param listImportsRequest
+     *        List imports request.
+     * @return Result of the ListImports operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @sample AWSmgn.ListImports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImports" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListImportsResult listImports(ListImportsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListImports(request);
+    }
+
+    @SdkInternalApi
+    final ListImportsResult executeListImports(ListImportsRequest listImportsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listImportsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListImportsRequest> request = null;
+        Response<ListImportsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListImportsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listImportsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListImports");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListImportsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListImportsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List Managed Accounts.
+     * </p>
+     * 
+     * @param listManagedAccountsRequest
+     *        List managed accounts request.
+     * @return Result of the ListManagedAccounts operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @sample AWSmgn.ListManagedAccounts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListManagedAccounts" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListManagedAccountsResult listManagedAccounts(ListManagedAccountsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListManagedAccounts(request);
+    }
+
+    @SdkInternalApi
+    final ListManagedAccountsResult executeListManagedAccounts(ListManagedAccountsRequest listManagedAccountsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listManagedAccountsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListManagedAccountsRequest> request = null;
+        Response<ListManagedAccountsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListManagedAccountsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listManagedAccountsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListManagedAccounts");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListManagedAccountsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListManagedAccountsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List source server post migration custom actions.
+     * </p>
+     * 
+     * @param listSourceServerActionsRequest
+     * @return Result of the ListSourceServerActions operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @sample AWSmgn.ListSourceServerActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListSourceServerActions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListSourceServerActionsResult listSourceServerActions(ListSourceServerActionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSourceServerActions(request);
+    }
+
+    @SdkInternalApi
+    final ListSourceServerActionsResult executeListSourceServerActions(ListSourceServerActionsRequest listSourceServerActionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSourceServerActionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSourceServerActionsRequest> request = null;
+        Response<ListSourceServerActionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSourceServerActionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listSourceServerActionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSourceServerActions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSourceServerActionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListSourceServerActionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * List all tags for your Application Migration Service resources.
      * </p>
      * 
@@ -1412,6 +2632,122 @@ public class AWSmgnClient extends AmazonWebServiceClient implements AWSmgn {
 
     /**
      * <p>
+     * List template post migration custom actions.
+     * </p>
+     * 
+     * @param listTemplateActionsRequest
+     * @return Result of the ListTemplateActions operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @sample AWSmgn.ListTemplateActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListTemplateActions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListTemplateActionsResult listTemplateActions(ListTemplateActionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTemplateActions(request);
+    }
+
+    @SdkInternalApi
+    final ListTemplateActionsResult executeListTemplateActions(ListTemplateActionsRequest listTemplateActionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTemplateActionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTemplateActionsRequest> request = null;
+        Response<ListTemplateActionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTemplateActionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTemplateActionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTemplateActions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTemplateActionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTemplateActionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves all waves or multiple waves by ID.
+     * </p>
+     * 
+     * @param listWavesRequest
+     * @return Result of the ListWaves operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @sample AWSmgn.ListWaves
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListWaves" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListWavesResult listWaves(ListWavesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListWaves(request);
+    }
+
+    @SdkInternalApi
+    final ListWavesResult executeListWaves(ListWavesRequest listWavesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listWavesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListWavesRequest> request = null;
+        Response<ListWavesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListWavesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listWavesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWaves");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListWavesResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListWavesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Archives specific Source Servers by setting the SourceServer.isArchived property to true for specified
      * SourceServers by ID. This command only works for SourceServers with a lifecycle. state which equals DISCONNECTED
      * or CUTOVER.
@@ -1463,6 +2799,387 @@ public class AWSmgnClient extends AmazonWebServiceClient implements AWSmgn {
 
             HttpResponseHandler<AmazonWebServiceResponse<MarkAsArchivedResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new MarkAsArchivedResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Pause Replication.
+     * </p>
+     * 
+     * @param pauseReplicationRequest
+     * @return Result of the PauseReplication operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.PauseReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PauseReplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PauseReplicationResult pauseReplication(PauseReplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executePauseReplication(request);
+    }
+
+    @SdkInternalApi
+    final PauseReplicationResult executePauseReplication(PauseReplicationRequest pauseReplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(pauseReplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PauseReplicationRequest> request = null;
+        Response<PauseReplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PauseReplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(pauseReplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PauseReplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PauseReplicationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PauseReplicationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Put source server post migration custom action.
+     * </p>
+     * 
+     * @param putSourceServerActionRequest
+     * @return Result of the PutSourceServerAction operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.PutSourceServerAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PutSourceServerAction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PutSourceServerActionResult putSourceServerAction(PutSourceServerActionRequest request) {
+        request = beforeClientExecution(request);
+        return executePutSourceServerAction(request);
+    }
+
+    @SdkInternalApi
+    final PutSourceServerActionResult executePutSourceServerAction(PutSourceServerActionRequest putSourceServerActionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putSourceServerActionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutSourceServerActionRequest> request = null;
+        Response<PutSourceServerActionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutSourceServerActionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putSourceServerActionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutSourceServerAction");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutSourceServerActionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new PutSourceServerActionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Put template post migration custom action.
+     * </p>
+     * 
+     * @param putTemplateActionRequest
+     * @return Result of the PutTemplateAction operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.PutTemplateAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PutTemplateAction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PutTemplateActionResult putTemplateAction(PutTemplateActionRequest request) {
+        request = beforeClientExecution(request);
+        return executePutTemplateAction(request);
+    }
+
+    @SdkInternalApi
+    final PutTemplateActionResult executePutTemplateAction(PutTemplateActionRequest putTemplateActionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putTemplateActionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutTemplateActionRequest> request = null;
+        Response<PutTemplateActionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutTemplateActionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putTemplateActionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutTemplateAction");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutTemplateActionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutTemplateActionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Remove source server post migration custom action.
+     * </p>
+     * 
+     * @param removeSourceServerActionRequest
+     * @return Result of the RemoveSourceServerAction operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @sample AWSmgn.RemoveSourceServerAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/RemoveSourceServerAction" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public RemoveSourceServerActionResult removeSourceServerAction(RemoveSourceServerActionRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveSourceServerAction(request);
+    }
+
+    @SdkInternalApi
+    final RemoveSourceServerActionResult executeRemoveSourceServerAction(RemoveSourceServerActionRequest removeSourceServerActionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(removeSourceServerActionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RemoveSourceServerActionRequest> request = null;
+        Response<RemoveSourceServerActionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemoveSourceServerActionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(removeSourceServerActionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveSourceServerAction");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RemoveSourceServerActionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new RemoveSourceServerActionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Remove template post migration custom action.
+     * </p>
+     * 
+     * @param removeTemplateActionRequest
+     * @return Result of the RemoveTemplateAction operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @sample AWSmgn.RemoveTemplateAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/RemoveTemplateAction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public RemoveTemplateActionResult removeTemplateAction(RemoveTemplateActionRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveTemplateAction(request);
+    }
+
+    @SdkInternalApi
+    final RemoveTemplateActionResult executeRemoveTemplateAction(RemoveTemplateActionRequest removeTemplateActionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(removeTemplateActionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RemoveTemplateActionRequest> request = null;
+        Response<RemoveTemplateActionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemoveTemplateActionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeTemplateActionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveTemplateAction");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RemoveTemplateActionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RemoveTemplateActionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Resume Replication.
+     * </p>
+     * 
+     * @param resumeReplicationRequest
+     * @return Result of the ResumeReplication operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.ResumeReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ResumeReplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ResumeReplicationResult resumeReplication(ResumeReplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeResumeReplication(request);
+    }
+
+    @SdkInternalApi
+    final ResumeReplicationResult executeResumeReplication(ResumeReplicationRequest resumeReplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(resumeReplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ResumeReplicationRequest> request = null;
+        Response<ResumeReplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ResumeReplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resumeReplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResumeReplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ResumeReplicationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ResumeReplicationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1600,6 +3317,134 @@ public class AWSmgnClient extends AmazonWebServiceClient implements AWSmgn {
 
     /**
      * <p>
+     * Start export.
+     * </p>
+     * 
+     * @param startExportRequest
+     *        Start export request.
+     * @return Result of the StartExport operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @sample AWSmgn.StartExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartExport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StartExportResult startExport(StartExportRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartExport(request);
+    }
+
+    @SdkInternalApi
+    final StartExportResult executeStartExport(StartExportRequest startExportRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startExportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartExportRequest> request = null;
+        Response<StartExportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartExportRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startExportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartExport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartExportResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartExportResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Start import.
+     * </p>
+     * 
+     * @param startImportRequest
+     *        Start import request.
+     * @return Result of the StartImport operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.StartImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartImport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StartImportResult startImport(StartImportRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartImport(request);
+    }
+
+    @SdkInternalApi
+    final StartImportResult executeStartImport(StartImportRequest startImportRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startImportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartImportRequest> request = null;
+        Response<StartImportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartImportRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startImportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartImport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartImportResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartImportResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Starts replication for SNAPSHOT_SHIPPING agents.
      * </p>
      * 
@@ -1715,6 +3560,71 @@ public class AWSmgnClient extends AmazonWebServiceClient implements AWSmgn {
 
             HttpResponseHandler<AmazonWebServiceResponse<StartTestResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartTestResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stop Replication.
+     * </p>
+     * 
+     * @param stopReplicationRequest
+     * @return Result of the StopReplication operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.StopReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StopReplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StopReplicationResult stopReplication(StopReplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopReplication(request);
+    }
+
+    @SdkInternalApi
+    final StopReplicationResult executeStopReplication(StopReplicationRequest stopReplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopReplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopReplicationRequest> request = null;
+        Response<StopReplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopReplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopReplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopReplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopReplicationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopReplicationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1858,6 +3768,128 @@ public class AWSmgnClient extends AmazonWebServiceClient implements AWSmgn {
 
     /**
      * <p>
+     * Unarchive application.
+     * </p>
+     * 
+     * @param unarchiveApplicationRequest
+     * @return Result of the UnarchiveApplication operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @sample AWSmgn.UnarchiveApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UnarchiveApplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UnarchiveApplicationResult unarchiveApplication(UnarchiveApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUnarchiveApplication(request);
+    }
+
+    @SdkInternalApi
+    final UnarchiveApplicationResult executeUnarchiveApplication(UnarchiveApplicationRequest unarchiveApplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(unarchiveApplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UnarchiveApplicationRequest> request = null;
+        Response<UnarchiveApplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UnarchiveApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(unarchiveApplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UnarchiveApplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UnarchiveApplicationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UnarchiveApplicationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Unarchive wave.
+     * </p>
+     * 
+     * @param unarchiveWaveRequest
+     * @return Result of the UnarchiveWave operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @sample AWSmgn.UnarchiveWave
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UnarchiveWave" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UnarchiveWaveResult unarchiveWave(UnarchiveWaveRequest request) {
+        request = beforeClientExecution(request);
+        return executeUnarchiveWave(request);
+    }
+
+    @SdkInternalApi
+    final UnarchiveWaveResult executeUnarchiveWave(UnarchiveWaveRequest unarchiveWaveRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(unarchiveWaveRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UnarchiveWaveRequest> request = null;
+        Response<UnarchiveWaveResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UnarchiveWaveRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(unarchiveWaveRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UnarchiveWave");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UnarchiveWaveResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UnarchiveWaveResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified set of tags from the specified set of Application Migration Service resources.
      * </p>
      * 
@@ -1923,8 +3955,135 @@ public class AWSmgnClient extends AmazonWebServiceClient implements AWSmgn {
 
     /**
      * <p>
+     * Update application.
+     * </p>
+     * 
+     * @param updateApplicationRequest
+     * @return Result of the UpdateApplication operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.UpdateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateApplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateApplicationResult updateApplication(UpdateApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateApplication(request);
+    }
+
+    @SdkInternalApi
+    final UpdateApplicationResult executeUpdateApplication(UpdateApplicationRequest updateApplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateApplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateApplicationRequest> request = null;
+        Response<UpdateApplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateApplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateApplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateApplicationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateApplicationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Update Connector.
+     * </p>
+     * 
+     * @param updateConnectorRequest
+     * @return Result of the UpdateConnector operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @sample AWSmgn.UpdateConnector
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateConnector" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateConnectorResult updateConnector(UpdateConnectorRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateConnector(request);
+    }
+
+    @SdkInternalApi
+    final UpdateConnectorResult executeUpdateConnector(UpdateConnectorRequest updateConnectorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateConnectorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateConnectorRequest> request = null;
+        Response<UpdateConnectorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateConnectorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateConnectorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConnector");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateConnectorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateConnectorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates multiple LaunchConfigurations by Source Server ID.
      * </p>
+     * <note>
+     * <p>
+     * bootMode valid values are <code>LEGACY_BIOS | UEFI</code>
+     * </p>
+     * </note>
      * 
      * @param updateLaunchConfigurationRequest
      * @return Result of the UpdateLaunchConfiguration operation returned by the service.
@@ -1988,7 +4147,7 @@ public class AWSmgnClient extends AmazonWebServiceClient implements AWSmgn {
 
     /**
      * <p>
-     * Creates a new ReplicationConfigurationTemplate.
+     * Updates an existing Launch Configuration Template by ID.
      * </p>
      * 
      * @param updateLaunchConfigurationTemplateRequest
@@ -2187,6 +4346,67 @@ public class AWSmgnClient extends AmazonWebServiceClient implements AWSmgn {
 
     /**
      * <p>
+     * Update Source Server.
+     * </p>
+     * 
+     * @param updateSourceServerRequest
+     * @return Result of the UpdateSourceServer operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.UpdateSourceServer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateSourceServer" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateSourceServerResult updateSourceServer(UpdateSourceServerRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateSourceServer(request);
+    }
+
+    @SdkInternalApi
+    final UpdateSourceServerResult executeUpdateSourceServer(UpdateSourceServerRequest updateSourceServerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateSourceServerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateSourceServerRequest> request = null;
+        Response<UpdateSourceServerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateSourceServerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateSourceServerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSourceServer");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateSourceServerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateSourceServerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Allows you to change between the AGENT_BASED replication type and the SNAPSHOT_SHIPPING replication type.
      * </p>
      * 
@@ -2241,6 +4461,67 @@ public class AWSmgnClient extends AmazonWebServiceClient implements AWSmgn {
             HttpResponseHandler<AmazonWebServiceResponse<UpdateSourceServerReplicationTypeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateSourceServerReplicationTypeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Update wave.
+     * </p>
+     * 
+     * @param updateWaveRequest
+     * @return Result of the UpdateWave operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.UpdateWave
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateWave" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateWaveResult updateWave(UpdateWaveRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateWave(request);
+    }
+
+    @SdkInternalApi
+    final UpdateWaveResult executeUpdateWave(UpdateWaveRequest updateWaveRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateWaveRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateWaveRequest> request = null;
+        Response<UpdateWaveResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateWaveRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateWaveRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "mgn");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateWave");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateWaveResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateWaveResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

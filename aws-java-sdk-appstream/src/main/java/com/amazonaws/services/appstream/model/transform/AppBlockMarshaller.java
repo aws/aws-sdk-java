@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.appstream.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -41,6 +42,14 @@ public class AppBlockMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SetupScriptDetails").build();
     private static final MarshallingInfo<java.util.Date> CREATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<StructuredPojo> POSTSETUPSCRIPTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PostSetupScriptDetails").build();
+    private static final MarshallingInfo<String> PACKAGINGTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PackagingType").build();
+    private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("State").build();
+    private static final MarshallingInfo<List> APPBLOCKERRORS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AppBlockErrors").build();
 
     private static final AppBlockMarshaller instance = new AppBlockMarshaller();
 
@@ -65,6 +74,10 @@ public class AppBlockMarshaller {
             protocolMarshaller.marshall(appBlock.getSourceS3Location(), SOURCES3LOCATION_BINDING);
             protocolMarshaller.marshall(appBlock.getSetupScriptDetails(), SETUPSCRIPTDETAILS_BINDING);
             protocolMarshaller.marshall(appBlock.getCreatedTime(), CREATEDTIME_BINDING);
+            protocolMarshaller.marshall(appBlock.getPostSetupScriptDetails(), POSTSETUPSCRIPTDETAILS_BINDING);
+            protocolMarshaller.marshall(appBlock.getPackagingType(), PACKAGINGTYPE_BINDING);
+            protocolMarshaller.marshall(appBlock.getState(), STATE_BINDING);
+            protocolMarshaller.marshall(appBlock.getAppBlockErrors(), APPBLOCKERRORS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

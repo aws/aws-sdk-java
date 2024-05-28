@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class AddressMarshaller {
             .marshallLocationName("company").build();
     private static final MarshallingInfo<String> COUNTRY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("country").build();
+    private static final MarshallingInfo<String> EMAILADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("emailAddress").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> PHONENUMBER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -67,6 +69,7 @@ public class AddressMarshaller {
             protocolMarshaller.marshall(address.getCity(), CITY_BINDING);
             protocolMarshaller.marshall(address.getCompany(), COMPANY_BINDING);
             protocolMarshaller.marshall(address.getCountry(), COUNTRY_BINDING);
+            protocolMarshaller.marshall(address.getEmailAddress(), EMAILADDRESS_BINDING);
             protocolMarshaller.marshall(address.getName(), NAME_BINDING);
             protocolMarshaller.marshall(address.getPhoneNumber(), PHONENUMBER_BINDING);
             protocolMarshaller.marshall(address.getPostalCode(), POSTALCODE_BINDING);

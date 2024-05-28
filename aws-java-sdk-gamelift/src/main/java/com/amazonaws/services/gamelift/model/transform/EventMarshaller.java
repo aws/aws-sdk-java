@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,8 @@ public class EventMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> PRESIGNEDLOGURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreSignedLogUrl").build();
+    private static final MarshallingInfo<Long> COUNT_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Count").build();
 
     private static final EventMarshaller instance = new EventMarshaller();
 
@@ -62,6 +64,7 @@ public class EventMarshaller {
             protocolMarshaller.marshall(event.getMessage(), MESSAGE_BINDING);
             protocolMarshaller.marshall(event.getEventTime(), EVENTTIME_BINDING);
             protocolMarshaller.marshall(event.getPreSignedLogUrl(), PRESIGNEDLOGURL_BINDING);
+            protocolMarshaller.marshall(event.getCount(), COUNT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

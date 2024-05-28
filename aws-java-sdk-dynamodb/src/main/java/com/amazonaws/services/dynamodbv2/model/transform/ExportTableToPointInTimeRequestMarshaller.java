@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,10 @@ public class ExportTableToPointInTimeRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3SseKmsKeyId").build();
     private static final MarshallingInfo<String> EXPORTFORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExportFormat").build();
+    private static final MarshallingInfo<String> EXPORTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExportType").build();
+    private static final MarshallingInfo<StructuredPojo> INCREMENTALEXPORTSPECIFICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncrementalExportSpecification").build();
 
     private static final ExportTableToPointInTimeRequestMarshaller instance = new ExportTableToPointInTimeRequestMarshaller();
 
@@ -74,6 +78,8 @@ public class ExportTableToPointInTimeRequestMarshaller {
             protocolMarshaller.marshall(exportTableToPointInTimeRequest.getS3SseAlgorithm(), S3SSEALGORITHM_BINDING);
             protocolMarshaller.marshall(exportTableToPointInTimeRequest.getS3SseKmsKeyId(), S3SSEKMSKEYID_BINDING);
             protocolMarshaller.marshall(exportTableToPointInTimeRequest.getExportFormat(), EXPORTFORMAT_BINDING);
+            protocolMarshaller.marshall(exportTableToPointInTimeRequest.getExportType(), EXPORTTYPE_BINDING);
+            protocolMarshaller.marshall(exportTableToPointInTimeRequest.getIncrementalExportSpecification(), INCREMENTALEXPORTSPECIFICATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

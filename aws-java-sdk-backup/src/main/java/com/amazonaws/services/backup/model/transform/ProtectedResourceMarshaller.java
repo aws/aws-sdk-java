@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,12 @@ public class ProtectedResourceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceType").build();
     private static final MarshallingInfo<java.util.Date> LASTBACKUPTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastBackupTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> RESOURCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceName").build();
+    private static final MarshallingInfo<String> LASTBACKUPVAULTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastBackupVaultArn").build();
+    private static final MarshallingInfo<String> LASTRECOVERYPOINTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastRecoveryPointArn").build();
 
     private static final ProtectedResourceMarshaller instance = new ProtectedResourceMarshaller();
 
@@ -53,6 +59,9 @@ public class ProtectedResourceMarshaller {
             protocolMarshaller.marshall(protectedResource.getResourceArn(), RESOURCEARN_BINDING);
             protocolMarshaller.marshall(protectedResource.getResourceType(), RESOURCETYPE_BINDING);
             protocolMarshaller.marshall(protectedResource.getLastBackupTime(), LASTBACKUPTIME_BINDING);
+            protocolMarshaller.marshall(protectedResource.getResourceName(), RESOURCENAME_BINDING);
+            protocolMarshaller.marshall(protectedResource.getLastBackupVaultArn(), LASTBACKUPVAULTARN_BINDING);
+            protocolMarshaller.marshall(protectedResource.getLastRecoveryPointArn(), LASTRECOVERYPOINTARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

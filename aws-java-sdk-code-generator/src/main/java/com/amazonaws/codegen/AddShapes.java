@@ -291,7 +291,6 @@ abstract class AddShapes {
             case EC2:
             case API_GATEWAY:
                 return TimestampFormat.ISO_8601.getFormat();
-            case ION:
             case REST_JSON:
             case AWS_JSON:
                 return TimestampFormat.UNIX_TIMESTAMP.getFormat();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,7 +41,7 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
     private java.nio.ByteBuffer body;
     /**
      * <p>
-     * The MIME type of the inference returned in the response body.
+     * The MIME type of the inference returned from the model container.
      * </p>
      */
     private String contentType;
@@ -202,11 +202,11 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The MIME type of the inference returned in the response body.
+     * The MIME type of the inference returned from the model container.
      * </p>
      * 
      * @param contentType
-     *        The MIME type of the inference returned in the response body.
+     *        The MIME type of the inference returned from the model container.
      */
 
     public void setContentType(String contentType) {
@@ -215,10 +215,10 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The MIME type of the inference returned in the response body.
+     * The MIME type of the inference returned from the model container.
      * </p>
      * 
-     * @return The MIME type of the inference returned in the response body.
+     * @return The MIME type of the inference returned from the model container.
      */
 
     public String getContentType() {
@@ -227,11 +227,11 @@ public class InvokeEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The MIME type of the inference returned in the response body.
+     * The MIME type of the inference returned from the model container.
      * </p>
      * 
      * @param contentType
-     *        The MIME type of the inference returned in the response body.
+     *        The MIME type of the inference returned from the model container.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

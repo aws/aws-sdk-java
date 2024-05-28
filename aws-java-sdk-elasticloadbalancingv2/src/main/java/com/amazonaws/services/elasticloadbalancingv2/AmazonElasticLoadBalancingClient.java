@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,7 @@ import com.amazonaws.services.elasticloadbalancingv2.waiters.AmazonElasticLoadBa
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.elasticloadbalancingv2.model.*;
+
 import com.amazonaws.services.elasticloadbalancingv2.model.transform.*;
 
 /**
@@ -320,38 +321,22 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             exceptionUnmarshallersMap.put("UnsupportedProtocol", new UnsupportedProtocolExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new UnsupportedProtocolExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("TooManyUniqueTargetGroupsPerLoadBalancer") == null) {
-            exceptionUnmarshallersMap.put("TooManyUniqueTargetGroupsPerLoadBalancer", new TooManyUniqueTargetGroupsPerLoadBalancerExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new TooManyUniqueTargetGroupsPerLoadBalancerExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("AllocationIdNotFound") == null) {
             exceptionUnmarshallersMap.put("AllocationIdNotFound", new AllocationIdNotFoundExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new AllocationIdNotFoundExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("ResourceInUse") == null) {
-            exceptionUnmarshallersMap.put("ResourceInUse", new ResourceInUseExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new ResourceInUseExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("DuplicateTargetGroupName") == null) {
             exceptionUnmarshallersMap.put("DuplicateTargetGroupName", new DuplicateTargetGroupNameExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new DuplicateTargetGroupNameExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("TooManyRules") == null) {
-            exceptionUnmarshallersMap.put("TooManyRules", new TooManyRulesExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("RevocationContentNotFound") == null) {
+            exceptionUnmarshallersMap.put("RevocationContentNotFound", new RevocationContentNotFoundExceptionUnmarshaller());
         }
-        exceptionUnmarshallers.add(new TooManyRulesExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("TooManyCertificates") == null) {
-            exceptionUnmarshallersMap.put("TooManyCertificates", new TooManyCertificatesExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new TooManyCertificatesExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new RevocationContentNotFoundExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("LoadBalancerNotFound") == null) {
             exceptionUnmarshallersMap.put("LoadBalancerNotFound", new LoadBalancerNotFoundExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new LoadBalancerNotFoundExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("TooManyTargetGroups") == null) {
-            exceptionUnmarshallersMap.put("TooManyTargetGroups", new TooManyTargetGroupsExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new TooManyTargetGroupsExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("TooManyLoadBalancers") == null) {
             exceptionUnmarshallersMap.put("TooManyLoadBalancers", new TooManyLoadBalancersExceptionUnmarshaller());
         }
@@ -360,62 +345,34 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             exceptionUnmarshallersMap.put("InvalidConfigurationRequest", new InvalidConfigurationRequestExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new InvalidConfigurationRequestExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("TargetGroupAssociationLimit") == null) {
-            exceptionUnmarshallersMap.put("TargetGroupAssociationLimit", new TargetGroupAssociationLimitExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new TargetGroupAssociationLimitExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("InvalidSecurityGroup") == null) {
-            exceptionUnmarshallersMap.put("InvalidSecurityGroup", new InvalidSecurityGroupExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new InvalidSecurityGroupExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("IncompatibleProtocols") == null) {
-            exceptionUnmarshallersMap.put("IncompatibleProtocols", new IncompatibleProtocolsExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new IncompatibleProtocolsExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("TooManyActions") == null) {
             exceptionUnmarshallersMap.put("TooManyActions", new TooManyActionsExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new TooManyActionsExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("TooManyListeners") == null) {
-            exceptionUnmarshallersMap.put("TooManyListeners", new TooManyListenersExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new TooManyListenersExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("DuplicateLoadBalancerName") == null) {
             exceptionUnmarshallersMap.put("DuplicateLoadBalancerName", new DuplicateLoadBalancerNameExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new DuplicateLoadBalancerNameExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("ALPNPolicyNotFound") == null) {
-            exceptionUnmarshallersMap.put("ALPNPolicyNotFound", new ALPNPolicyNotSupportedExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new ALPNPolicyNotSupportedExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("OperationNotPermitted") == null) {
-            exceptionUnmarshallersMap.put("OperationNotPermitted", new OperationNotPermittedExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new OperationNotPermittedExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("InvalidLoadBalancerAction") == null) {
             exceptionUnmarshallersMap.put("InvalidLoadBalancerAction", new InvalidLoadBalancerActionExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new InvalidLoadBalancerActionExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("TrustStoreInUse") == null) {
+            exceptionUnmarshallersMap.put("TrustStoreInUse", new TrustStoreInUseExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new TrustStoreInUseExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("CaCertificatesBundleNotFound") == null) {
+            exceptionUnmarshallersMap.put("CaCertificatesBundleNotFound", new CaCertificatesBundleNotFoundExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new CaCertificatesBundleNotFoundExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("CertificateNotFound") == null) {
             exceptionUnmarshallersMap.put("CertificateNotFound", new CertificateNotFoundExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new CertificateNotFoundExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("DuplicateTagKeys") == null) {
-            exceptionUnmarshallersMap.put("DuplicateTagKeys", new DuplicateTagKeysExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new DuplicateTagKeysExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("TooManyTags") == null) {
-            exceptionUnmarshallersMap.put("TooManyTags", new TooManyTagsExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new TooManyTagsExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("TargetGroupNotFound") == null) {
             exceptionUnmarshallersMap.put("TargetGroupNotFound", new TargetGroupNotFoundExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new TargetGroupNotFoundExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("TooManyRegistrationsForTargetId") == null) {
-            exceptionUnmarshallersMap.put("TooManyRegistrationsForTargetId", new TooManyRegistrationsForTargetIdExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new TooManyRegistrationsForTargetIdExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("SSLPolicyNotFound") == null) {
             exceptionUnmarshallersMap.put("SSLPolicyNotFound", new SSLPolicyNotFoundExceptionUnmarshaller());
         }
@@ -428,10 +385,114 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             exceptionUnmarshallersMap.put("PriorityInUse", new PriorityInUseExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new PriorityInUseExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("InvalidRevocationContent") == null) {
+            exceptionUnmarshallersMap.put("InvalidRevocationContent", new InvalidRevocationContentExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new InvalidRevocationContentExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("DuplicateListener") == null) {
+            exceptionUnmarshallersMap.put("DuplicateListener", new DuplicateListenerExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new DuplicateListenerExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("InvalidScheme") == null) {
+            exceptionUnmarshallersMap.put("InvalidScheme", new InvalidSchemeExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new InvalidSchemeExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("InvalidSubnet") == null) {
+            exceptionUnmarshallersMap.put("InvalidSubnet", new InvalidSubnetExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new InvalidSubnetExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("TooManyTrustStores") == null) {
+            exceptionUnmarshallersMap.put("TooManyTrustStores", new TooManyTrustStoresExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new TooManyTrustStoresExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("TooManyTargets") == null) {
+            exceptionUnmarshallersMap.put("TooManyTargets", new TooManyTargetsExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new TooManyTargetsExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("TooManyUniqueTargetGroupsPerLoadBalancer") == null) {
+            exceptionUnmarshallersMap.put("TooManyUniqueTargetGroupsPerLoadBalancer", new TooManyUniqueTargetGroupsPerLoadBalancerExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new TooManyUniqueTargetGroupsPerLoadBalancerExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("ResourceInUse") == null) {
+            exceptionUnmarshallersMap.put("ResourceInUse", new ResourceInUseExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new ResourceInUseExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("TooManyRules") == null) {
+            exceptionUnmarshallersMap.put("TooManyRules", new TooManyRulesExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new TooManyRulesExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("TooManyCertificates") == null) {
+            exceptionUnmarshallersMap.put("TooManyCertificates", new TooManyCertificatesExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new TooManyCertificatesExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("TooManyTargetGroups") == null) {
+            exceptionUnmarshallersMap.put("TooManyTargetGroups", new TooManyTargetGroupsExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new TooManyTargetGroupsExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("TargetGroupAssociationLimit") == null) {
+            exceptionUnmarshallersMap.put("TargetGroupAssociationLimit", new TargetGroupAssociationLimitExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new TargetGroupAssociationLimitExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("TrustStoreNotReady") == null) {
+            exceptionUnmarshallersMap.put("TrustStoreNotReady", new TrustStoreNotReadyExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new TrustStoreNotReadyExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("InvalidSecurityGroup") == null) {
+            exceptionUnmarshallersMap.put("InvalidSecurityGroup", new InvalidSecurityGroupExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new InvalidSecurityGroupExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("IncompatibleProtocols") == null) {
+            exceptionUnmarshallersMap.put("IncompatibleProtocols", new IncompatibleProtocolsExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new IncompatibleProtocolsExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("RevocationIdNotFound") == null) {
+            exceptionUnmarshallersMap.put("RevocationIdNotFound", new RevocationIdNotFoundExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new RevocationIdNotFoundExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("TooManyListeners") == null) {
+            exceptionUnmarshallersMap.put("TooManyListeners", new TooManyListenersExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new TooManyListenersExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("ALPNPolicyNotFound") == null) {
+            exceptionUnmarshallersMap.put("ALPNPolicyNotFound", new ALPNPolicyNotSupportedExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new ALPNPolicyNotSupportedExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("OperationNotPermitted") == null) {
+            exceptionUnmarshallersMap.put("OperationNotPermitted", new OperationNotPermittedExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new OperationNotPermittedExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("DuplicateTagKeys") == null) {
+            exceptionUnmarshallersMap.put("DuplicateTagKeys", new DuplicateTagKeysExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new DuplicateTagKeysExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("TooManyTags") == null) {
+            exceptionUnmarshallersMap.put("TooManyTags", new TooManyTagsExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new TooManyTagsExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("TooManyRegistrationsForTargetId") == null) {
+            exceptionUnmarshallersMap.put("TooManyRegistrationsForTargetId", new TooManyRegistrationsForTargetIdExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new TooManyRegistrationsForTargetIdExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("DuplicateTrustStoreName") == null) {
+            exceptionUnmarshallersMap.put("DuplicateTrustStoreName", new DuplicateTrustStoreNameExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new DuplicateTrustStoreNameExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("InvalidCaCertificatesBundle") == null) {
+            exceptionUnmarshallersMap.put("InvalidCaCertificatesBundle", new InvalidCaCertificatesBundleExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new InvalidCaCertificatesBundleExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("InvalidTarget") == null) {
             exceptionUnmarshallersMap.put("InvalidTarget", new InvalidTargetExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new InvalidTargetExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("TrustStoreNotFound") == null) {
+            exceptionUnmarshallersMap.put("TrustStoreNotFound", new TrustStoreNotFoundExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new TrustStoreNotFoundExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("TooManyTrustStoreRevocationEntries") == null) {
+            exceptionUnmarshallersMap.put("TooManyTrustStoreRevocationEntries", new TooManyTrustStoreRevocationEntriesExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new TooManyTrustStoreRevocationEntriesExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("SubnetNotFound") == null) {
             exceptionUnmarshallersMap.put("SubnetNotFound", new SubnetNotFoundExceptionUnmarshaller());
         }
@@ -444,26 +505,10 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             exceptionUnmarshallersMap.put("RuleNotFound", new RuleNotFoundExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new RuleNotFoundExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("DuplicateListener") == null) {
-            exceptionUnmarshallersMap.put("DuplicateListener", new DuplicateListenerExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new DuplicateListenerExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("InvalidScheme") == null) {
-            exceptionUnmarshallersMap.put("InvalidScheme", new InvalidSchemeExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new InvalidSchemeExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("HealthUnavailable") == null) {
             exceptionUnmarshallersMap.put("HealthUnavailable", new HealthUnavailableExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new HealthUnavailableExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("InvalidSubnet") == null) {
-            exceptionUnmarshallersMap.put("InvalidSubnet", new InvalidSubnetExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new InvalidSubnetExceptionUnmarshaller());
-        if (exceptionUnmarshallersMap.get("TooManyTargets") == null) {
-            exceptionUnmarshallersMap.put("TooManyTargets", new TooManyTargetsExceptionUnmarshaller());
-        }
-        exceptionUnmarshallers.add(new TooManyTargetsExceptionUnmarshaller());
         defaultUnmarshaller = new StandardErrorUnmarshaller(com.amazonaws.services.elasticloadbalancingv2.model.AmazonElasticLoadBalancingException.class);
         exceptionUnmarshallers
                 .add(new StandardErrorUnmarshaller(com.amazonaws.services.elasticloadbalancingv2.model.AmazonElasticLoadBalancingException.class));
@@ -554,7 +599,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
     /**
      * <p>
      * Adds the specified tags to the specified Elastic Load Balancing resource. You can tag your Application Load
-     * Balancers, Network Load Balancers, Gateway Load Balancers, target groups, listeners, and rules.
+     * Balancers, Network Load Balancers, Gateway Load Balancers, target groups, trust stores, listeners, and rules.
      * </p>
      * <p>
      * Each tag consists of a key and an optional value. If a resource already has a tag with the same key,
@@ -566,7 +611,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * @throws DuplicateTagKeysException
      *         A tag key was specified more than once.
      * @throws TooManyTagsException
-     *         You've reached the limit on the number of tags per load balancer.
+     *         You've reached the limit on the number of tags for this resource.
      * @throws LoadBalancerNotFoundException
      *         The specified load balancer does not exist.
      * @throws TargetGroupNotFoundException
@@ -575,6 +620,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *         The specified listener does not exist.
      * @throws RuleNotFoundException
      *         The specified rule does not exist.
+     * @throws TrustStoreNotFoundException
+     *         The specified trust store does not exist.
      * @sample AmazonElasticLoadBalancing.AddTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddTags" target="_top">AWS
      *      API Documentation</a>
@@ -612,6 +659,70 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             }
 
             StaxResponseHandler<AddTagsResult> responseHandler = new StaxResponseHandler<AddTagsResult>(new AddTagsResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds the specified revocation file to the specified trust store.
+     * </p>
+     * 
+     * @param addTrustStoreRevocationsRequest
+     * @return Result of the AddTrustStoreRevocations operation returned by the service.
+     * @throws TrustStoreNotFoundException
+     *         The specified trust store does not exist.
+     * @throws InvalidRevocationContentException
+     *         The provided revocation file is an invalid format, or uses an incorrect algorithm.
+     * @throws TooManyTrustStoreRevocationEntriesException
+     *         The specified trust store has too many revocation entries.
+     * @throws RevocationContentNotFoundException
+     *         The specified revocation file does not exist.
+     * @sample AmazonElasticLoadBalancing.AddTrustStoreRevocations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddTrustStoreRevocations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AddTrustStoreRevocationsResult addTrustStoreRevocations(AddTrustStoreRevocationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddTrustStoreRevocations(request);
+    }
+
+    @SdkInternalApi
+    final AddTrustStoreRevocationsResult executeAddTrustStoreRevocations(AddTrustStoreRevocationsRequest addTrustStoreRevocationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(addTrustStoreRevocationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AddTrustStoreRevocationsRequest> request = null;
+        Response<AddTrustStoreRevocationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AddTrustStoreRevocationsRequestMarshaller().marshall(super.beforeMarshalling(addTrustStoreRevocationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddTrustStoreRevocations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<AddTrustStoreRevocationsResult> responseHandler = new StaxResponseHandler<AddTrustStoreRevocationsResult>(
+                    new AddTrustStoreRevocationsResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -693,7 +804,11 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * @throws ALPNPolicyNotSupportedException
      *         The specified ALPN policy is not supported.
      * @throws TooManyTagsException
-     *         You've reached the limit on the number of tags per load balancer.
+     *         You've reached the limit on the number of tags for this resource.
+     * @throws TrustStoreNotFoundException
+     *         The specified trust store does not exist.
+     * @throws TrustStoreNotReadyException
+     *         The specified trust store is not active.
      * @sample AmazonElasticLoadBalancing.CreateListener
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateListener"
      *      target="_top">AWS API Documentation</a>
@@ -792,7 +907,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * @throws InvalidSchemeException
      *         The requested scheme is not valid.
      * @throws TooManyTagsException
-     *         You've reached the limit on the number of tags per load balancer.
+     *         You've reached the limit on the number of tags for this resource.
      * @throws DuplicateTagKeysException
      *         A tag key was specified more than once.
      * @throws ResourceInUseException
@@ -897,7 +1012,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *         You've reached the limit on the number of unique target groups per load balancer across all listeners. If
      *         a target group is used by multiple actions for a load balancer, it is counted as only one use.
      * @throws TooManyTagsException
-     *         You've reached the limit on the number of tags per load balancer.
+     *         You've reached the limit on the number of tags for this resource.
      * @sample AmazonElasticLoadBalancing.CreateRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateRule"
      *      target="_top">AWS API Documentation</a>
@@ -987,7 +1102,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * @throws InvalidConfigurationRequestException
      *         The requested configuration is not valid.
      * @throws TooManyTagsException
-     *         You've reached the limit on the number of tags per load balancer.
+     *         You've reached the limit on the number of tags for this resource.
      * @sample AmazonElasticLoadBalancing.CreateTargetGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateTargetGroup"
      *      target="_top">AWS API Documentation</a>
@@ -1026,6 +1141,74 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<CreateTargetGroupResult> responseHandler = new StaxResponseHandler<CreateTargetGroupResult>(
                     new CreateTargetGroupResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a trust store.
+     * </p>
+     * 
+     * @param createTrustStoreRequest
+     * @return Result of the CreateTrustStore operation returned by the service.
+     * @throws DuplicateTrustStoreNameException
+     *         A trust store with the specified name already exists.
+     * @throws TooManyTrustStoresException
+     *         You've reached the limit on the number of trust stores for your Amazon Web Services account.
+     * @throws InvalidCaCertificatesBundleException
+     *         The specified ca certificate bundle is in an invalid format, or corrupt.
+     * @throws CaCertificatesBundleNotFoundException
+     *         The specified ca certificate bundle does not exist.
+     * @throws TooManyTagsException
+     *         You've reached the limit on the number of tags for this resource.
+     * @throws DuplicateTagKeysException
+     *         A tag key was specified more than once.
+     * @sample AmazonElasticLoadBalancing.CreateTrustStore
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateTrustStore"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateTrustStoreResult createTrustStore(CreateTrustStoreRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTrustStore(request);
+    }
+
+    @SdkInternalApi
+    final CreateTrustStoreResult executeCreateTrustStore(CreateTrustStoreRequest createTrustStoreRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createTrustStoreRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateTrustStoreRequest> request = null;
+        Response<CreateTrustStoreResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateTrustStoreRequestMarshaller().marshall(super.beforeMarshalling(createTrustStoreRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTrustStore");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateTrustStoreResult> responseHandler = new StaxResponseHandler<CreateTrustStoreResult>(
+                    new CreateTrustStoreResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -1299,8 +1482,102 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Deletes a trust store.
+     * </p>
+     * 
+     * @param deleteTrustStoreRequest
+     * @return Result of the DeleteTrustStore operation returned by the service.
+     * @throws TrustStoreNotFoundException
+     *         The specified trust store does not exist.
+     * @throws TrustStoreInUseException
+     *         The specified trust store is currently in use.
+     * @sample AmazonElasticLoadBalancing.DeleteTrustStore
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DeleteTrustStore"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteTrustStoreResult deleteTrustStore(DeleteTrustStoreRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTrustStore(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTrustStoreResult executeDeleteTrustStore(DeleteTrustStoreRequest deleteTrustStoreRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteTrustStoreRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteTrustStoreRequest> request = null;
+        Response<DeleteTrustStoreResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteTrustStoreRequestMarshaller().marshall(super.beforeMarshalling(deleteTrustStoreRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTrustStore");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteTrustStoreResult> responseHandler = new StaxResponseHandler<DeleteTrustStoreResult>(
+                    new DeleteTrustStoreResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deregisters the specified targets from the specified target group. After the targets are deregistered, they no
      * longer receive traffic from the load balancer.
+     * </p>
+     * <p>
+     * The load balancer stops sending requests to targets that are deregistering, but uses connection draining to
+     * ensure that in-flight traffic completes on the existing connections. This deregistration delay is configured by
+     * default but can be updated for each target group.
+     * </p>
+     * <p>
+     * For more information, see the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#deregistration-delay"
+     * > Deregistration delay</a> in the <i>Application Load Balancers User Guide</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#deregistration-delay"
+     * > Deregistration delay</a> in the <i>Network Load Balancers User Guide</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/target-groups.html#deregistration-delay">
+     * Deregistration delay</a> in the <i>Gateway Load Balancers User Guide</i>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Note: If the specified target does not exist, the action returns successfully.
      * </p>
      * 
      * @param deregisterTargetsRequest
@@ -1858,6 +2135,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *         The specified listener does not exist.
      * @throws RuleNotFoundException
      *         The specified rule does not exist.
+     * @throws TrustStoreNotFoundException
+     *         The specified trust store does not exist.
      * @sample AmazonElasticLoadBalancing.DescribeTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTags"
      *      target="_top">AWS API Documentation</a>
@@ -2118,6 +2397,311 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Describes all resources associated with the specified trust store.
+     * </p>
+     * 
+     * @param describeTrustStoreAssociationsRequest
+     * @return Result of the DescribeTrustStoreAssociations operation returned by the service.
+     * @throws TrustStoreNotFoundException
+     *         The specified trust store does not exist.
+     * @sample AmazonElasticLoadBalancing.DescribeTrustStoreAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTrustStoreAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeTrustStoreAssociationsResult describeTrustStoreAssociations(DescribeTrustStoreAssociationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTrustStoreAssociations(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTrustStoreAssociationsResult executeDescribeTrustStoreAssociations(DescribeTrustStoreAssociationsRequest describeTrustStoreAssociationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeTrustStoreAssociationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeTrustStoreAssociationsRequest> request = null;
+        Response<DescribeTrustStoreAssociationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeTrustStoreAssociationsRequestMarshaller().marshall(super.beforeMarshalling(describeTrustStoreAssociationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrustStoreAssociations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeTrustStoreAssociationsResult> responseHandler = new StaxResponseHandler<DescribeTrustStoreAssociationsResult>(
+                    new DescribeTrustStoreAssociationsResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the revocation files in use by the specified trust store arn, or revocation ID.
+     * </p>
+     * 
+     * @param describeTrustStoreRevocationsRequest
+     * @return Result of the DescribeTrustStoreRevocations operation returned by the service.
+     * @throws TrustStoreNotFoundException
+     *         The specified trust store does not exist.
+     * @throws RevocationIdNotFoundException
+     *         The specified revocation ID does not exist.
+     * @sample AmazonElasticLoadBalancing.DescribeTrustStoreRevocations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTrustStoreRevocations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeTrustStoreRevocationsResult describeTrustStoreRevocations(DescribeTrustStoreRevocationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTrustStoreRevocations(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTrustStoreRevocationsResult executeDescribeTrustStoreRevocations(DescribeTrustStoreRevocationsRequest describeTrustStoreRevocationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeTrustStoreRevocationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeTrustStoreRevocationsRequest> request = null;
+        Response<DescribeTrustStoreRevocationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeTrustStoreRevocationsRequestMarshaller().marshall(super.beforeMarshalling(describeTrustStoreRevocationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrustStoreRevocations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeTrustStoreRevocationsResult> responseHandler = new StaxResponseHandler<DescribeTrustStoreRevocationsResult>(
+                    new DescribeTrustStoreRevocationsResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes all trust stores for a given account by trust store arn’s or name.
+     * </p>
+     * 
+     * @param describeTrustStoresRequest
+     * @return Result of the DescribeTrustStores operation returned by the service.
+     * @throws TrustStoreNotFoundException
+     *         The specified trust store does not exist.
+     * @sample AmazonElasticLoadBalancing.DescribeTrustStores
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTrustStores"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeTrustStoresResult describeTrustStores(DescribeTrustStoresRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTrustStores(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTrustStoresResult executeDescribeTrustStores(DescribeTrustStoresRequest describeTrustStoresRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeTrustStoresRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeTrustStoresRequest> request = null;
+        Response<DescribeTrustStoresResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeTrustStoresRequestMarshaller().marshall(super.beforeMarshalling(describeTrustStoresRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrustStores");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeTrustStoresResult> responseHandler = new StaxResponseHandler<DescribeTrustStoresResult>(
+                    new DescribeTrustStoresResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the ca certificate bundle.
+     * </p>
+     * <p>
+     * This action returns a pre-signed S3 URI which is active for ten minutes.
+     * </p>
+     * 
+     * @param getTrustStoreCaCertificatesBundleRequest
+     * @return Result of the GetTrustStoreCaCertificatesBundle operation returned by the service.
+     * @throws TrustStoreNotFoundException
+     *         The specified trust store does not exist.
+     * @sample AmazonElasticLoadBalancing.GetTrustStoreCaCertificatesBundle
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/GetTrustStoreCaCertificatesBundle"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetTrustStoreCaCertificatesBundleResult getTrustStoreCaCertificatesBundle(GetTrustStoreCaCertificatesBundleRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetTrustStoreCaCertificatesBundle(request);
+    }
+
+    @SdkInternalApi
+    final GetTrustStoreCaCertificatesBundleResult executeGetTrustStoreCaCertificatesBundle(
+            GetTrustStoreCaCertificatesBundleRequest getTrustStoreCaCertificatesBundleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getTrustStoreCaCertificatesBundleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetTrustStoreCaCertificatesBundleRequest> request = null;
+        Response<GetTrustStoreCaCertificatesBundleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetTrustStoreCaCertificatesBundleRequestMarshaller().marshall(super.beforeMarshalling(getTrustStoreCaCertificatesBundleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTrustStoreCaCertificatesBundle");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetTrustStoreCaCertificatesBundleResult> responseHandler = new StaxResponseHandler<GetTrustStoreCaCertificatesBundleResult>(
+                    new GetTrustStoreCaCertificatesBundleResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the specified revocation file.
+     * </p>
+     * <p>
+     * This action returns a pre-signed S3 URI which is active for ten minutes.
+     * </p>
+     * 
+     * @param getTrustStoreRevocationContentRequest
+     * @return Result of the GetTrustStoreRevocationContent operation returned by the service.
+     * @throws TrustStoreNotFoundException
+     *         The specified trust store does not exist.
+     * @throws RevocationIdNotFoundException
+     *         The specified revocation ID does not exist.
+     * @sample AmazonElasticLoadBalancing.GetTrustStoreRevocationContent
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/GetTrustStoreRevocationContent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetTrustStoreRevocationContentResult getTrustStoreRevocationContent(GetTrustStoreRevocationContentRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetTrustStoreRevocationContent(request);
+    }
+
+    @SdkInternalApi
+    final GetTrustStoreRevocationContentResult executeGetTrustStoreRevocationContent(GetTrustStoreRevocationContentRequest getTrustStoreRevocationContentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getTrustStoreRevocationContentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetTrustStoreRevocationContentRequest> request = null;
+        Response<GetTrustStoreRevocationContentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetTrustStoreRevocationContentRequestMarshaller().marshall(super.beforeMarshalling(getTrustStoreRevocationContentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTrustStoreRevocationContent");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetTrustStoreRevocationContentResult> responseHandler = new StaxResponseHandler<GetTrustStoreRevocationContentResult>(
+                    new GetTrustStoreRevocationContentResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Replaces the specified properties of the specified listener. Any properties that you do not specify remain
      * unchanged.
      * </p>
@@ -2168,6 +2752,10 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *         a target group is used by multiple actions for a load balancer, it is counted as only one use.
      * @throws ALPNPolicyNotSupportedException
      *         The specified ALPN policy is not supported.
+     * @throws TrustStoreNotFoundException
+     *         The specified trust store does not exist.
+     * @throws TrustStoreNotReadyException
+     *         The specified trust store is not active.
      * @sample AmazonElasticLoadBalancing.ModifyListener
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListener"
      *      target="_top">AWS API Documentation</a>
@@ -2369,10 +2957,6 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * <p>
      * Modifies the health checks used when evaluating the health state of the targets in the specified target group.
      * </p>
-     * <p>
-     * If the protocol of the target group is TCP, TLS, UDP, or TCP_UDP, you can't modify the health check protocol,
-     * interval, timeout, or success codes.
-     * </p>
      * 
      * @param modifyTargetGroupRequest
      * @return Result of the ModifyTargetGroup operation returned by the service.
@@ -2479,6 +3063,68 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
             StaxResponseHandler<ModifyTargetGroupAttributesResult> responseHandler = new StaxResponseHandler<ModifyTargetGroupAttributesResult>(
                     new ModifyTargetGroupAttributesResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Update the ca certificate bundle for a given trust store.
+     * </p>
+     * 
+     * @param modifyTrustStoreRequest
+     * @return Result of the ModifyTrustStore operation returned by the service.
+     * @throws TrustStoreNotFoundException
+     *         The specified trust store does not exist.
+     * @throws InvalidCaCertificatesBundleException
+     *         The specified ca certificate bundle is in an invalid format, or corrupt.
+     * @throws CaCertificatesBundleNotFoundException
+     *         The specified ca certificate bundle does not exist.
+     * @sample AmazonElasticLoadBalancing.ModifyTrustStore
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyTrustStore"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ModifyTrustStoreResult modifyTrustStore(ModifyTrustStoreRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyTrustStore(request);
+    }
+
+    @SdkInternalApi
+    final ModifyTrustStoreResult executeModifyTrustStore(ModifyTrustStoreRequest modifyTrustStoreRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyTrustStoreRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyTrustStoreRequest> request = null;
+        Response<ModifyTrustStoreResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyTrustStoreRequestMarshaller().marshall(super.beforeMarshalling(modifyTrustStoreRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyTrustStore");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyTrustStoreResult> responseHandler = new StaxResponseHandler<ModifyTrustStoreResult>(
+                    new ModifyTrustStoreResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -2647,7 +3293,9 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * @throws RuleNotFoundException
      *         The specified rule does not exist.
      * @throws TooManyTagsException
-     *         You've reached the limit on the number of tags per load balancer.
+     *         You've reached the limit on the number of tags for this resource.
+     * @throws TrustStoreNotFoundException
+     *         The specified trust store does not exist.
      * @sample AmazonElasticLoadBalancing.RemoveTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveTags"
      *      target="_top">AWS API Documentation</a>
@@ -2685,6 +3333,67 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             }
 
             StaxResponseHandler<RemoveTagsResult> responseHandler = new StaxResponseHandler<RemoveTagsResult>(new RemoveTagsResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes the specified revocation file from the specified trust store.
+     * </p>
+     * 
+     * @param removeTrustStoreRevocationsRequest
+     * @return Result of the RemoveTrustStoreRevocations operation returned by the service.
+     * @throws TrustStoreNotFoundException
+     *         The specified trust store does not exist.
+     * @throws RevocationIdNotFoundException
+     *         The specified revocation ID does not exist.
+     * @sample AmazonElasticLoadBalancing.RemoveTrustStoreRevocations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/RemoveTrustStoreRevocations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RemoveTrustStoreRevocationsResult removeTrustStoreRevocations(RemoveTrustStoreRevocationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveTrustStoreRevocations(request);
+    }
+
+    @SdkInternalApi
+    final RemoveTrustStoreRevocationsResult executeRemoveTrustStoreRevocations(RemoveTrustStoreRevocationsRequest removeTrustStoreRevocationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(removeTrustStoreRevocationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RemoveTrustStoreRevocationsRequest> request = null;
+        Response<RemoveTrustStoreRevocationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemoveTrustStoreRevocationsRequestMarshaller().marshall(super.beforeMarshalling(removeTrustStoreRevocationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Elastic Load Balancing v2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveTrustStoreRevocations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<RemoveTrustStoreRevocationsResult> responseHandler = new StaxResponseHandler<RemoveTrustStoreRevocationsResult>(
+                    new RemoveTrustStoreRevocationsResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -2826,11 +3535,15 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Associates the specified security groups with the specified Application Load Balancer. The specified security
-     * groups override the previously associated security groups.
+     * Associates the specified security groups with the specified Application Load Balancer or Network Load Balancer.
+     * The specified security groups override the previously associated security groups.
      * </p>
      * <p>
-     * You can't specify a security group for a Network Load Balancer or Gateway Load Balancer.
+     * You can't perform this operation on a Network Load Balancer unless you specified a security group for the load
+     * balancer when you created it.
+     * </p>
+     * <p>
+     * You can't associate a security group with a Gateway Load Balancer.
      * </p>
      * 
      * @param setSecurityGroupsRequest
@@ -2892,12 +3605,12 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Enables the Availability Zones for the specified public subnets for the specified Application Load Balancer or
-     * Network Load Balancer. The specified subnets replace the previously enabled subnets.
+     * Enables the Availability Zones for the specified public subnets for the specified Application Load Balancer,
+     * Network Load Balancer or Gateway Load Balancer. The specified subnets replace the previously enabled subnets.
      * </p>
      * <p>
-     * When you specify subnets for a Network Load Balancer, you must include all subnets that were enabled previously,
-     * with their existing configurations, plus any additional subnets.
+     * When you specify subnets for a Network Load Balancer, or Gateway Load Balancer you must include all subnets that
+     * were enabled previously, with their existing configurations, plus any additional subnets.
      * </p>
      * 
      * @param setSubnetsRequest

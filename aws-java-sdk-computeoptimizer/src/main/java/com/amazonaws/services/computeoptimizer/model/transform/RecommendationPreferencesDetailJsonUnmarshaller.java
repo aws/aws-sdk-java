@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,32 @@ public class RecommendationPreferencesDetailJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("inferredWorkloadTypes", targetDepth)) {
                     context.nextToken();
                     recommendationPreferencesDetail.setInferredWorkloadTypes(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("externalMetricsPreference", targetDepth)) {
+                    context.nextToken();
+                    recommendationPreferencesDetail.setExternalMetricsPreference(ExternalMetricsPreferenceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("lookBackPeriod", targetDepth)) {
+                    context.nextToken();
+                    recommendationPreferencesDetail.setLookBackPeriod(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("utilizationPreferences", targetDepth)) {
+                    context.nextToken();
+                    recommendationPreferencesDetail.setUtilizationPreferences(new ListUnmarshaller<UtilizationPreference>(UtilizationPreferenceJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("preferredResources", targetDepth)) {
+                    context.nextToken();
+                    recommendationPreferencesDetail.setPreferredResources(new ListUnmarshaller<EffectivePreferredResource>(
+                            EffectivePreferredResourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("savingsEstimationMode", targetDepth)) {
+                    context.nextToken();
+                    recommendationPreferencesDetail.setSavingsEstimationMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

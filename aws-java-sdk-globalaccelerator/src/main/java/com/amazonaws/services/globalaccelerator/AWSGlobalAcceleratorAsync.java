@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,7 +56,7 @@ import com.amazonaws.services.globalaccelerator.model.*;
  * <p>
  * Global Accelerator is a global service that supports endpoints in multiple Amazon Web Services Regions but you must
  * specify the US West (Oregon) Region to create, update, or otherwise work with accelerators. That is, for example,
- * specify <code>--region us-west-2</code> on AWS CLI commands.
+ * specify <code>--region us-west-2</code> on Amazon Web Services CLI commands.
  * </p>
  * </important>
  * <p>
@@ -65,7 +65,7 @@ import com.amazonaws.services.globalaccelerator.model.*;
  * static IPv4 addresses. For dual-stack, Global Accelerator provides a total of four addresses: two static IPv4
  * addresses and two static IPv6 addresses. With a standard accelerator for IPv4, instead of using the addresses that
  * Global Accelerator provides, you can configure these entry points to be IPv4 addresses from your own IP address
- * ranges that you bring toGlobal Accelerator (BYOIP).
+ * ranges that you bring to Global Accelerator (BYOIP).
  * </p>
  * <p>
  * For a standard accelerator, they distribute incoming application traffic across multiple endpoint resources in
@@ -175,21 +175,27 @@ public interface AWSGlobalAcceleratorAsync extends AWSGlobalAccelerator {
      * >UpdateEndpointGroup</a> API).
      * </p>
      * <p>
-     * There are two advantages to using <code>AddEndpoints</code> to add endpoints:
+     * There are two advantages to using <code>AddEndpoints</code> to add endpoints in Global Accelerator:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * It's faster, because Global Accelerator only has to resolve the new endpoints that you're adding.
+     * It's faster, because Global Accelerator only has to resolve the new endpoints that you're adding, rather than
+     * resolving new and existing endpoints.
      * </p>
      * </li>
      * <li>
      * <p>
-     * It's more convenient, because you don't need to specify all of the current endpoints that are already in the
-     * endpoint group in addition to the new endpoints that you want to add.
+     * It's more convenient, because you don't need to specify the current endpoints that are already in the endpoint
+     * group, in addition to the new endpoints that you want to add.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For information about endpoint types and requirements for endpoints that you can add to Global Accelerator, see
+     * <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoints.html"> Endpoints for standard
+     * accelerators</a> in the <i>Global Accelerator Developer Guide</i>.
+     * </p>
      * 
      * @param addEndpointsRequest
      * @return A Java Future containing the result of the AddEndpoints operation returned by the service.
@@ -210,21 +216,27 @@ public interface AWSGlobalAcceleratorAsync extends AWSGlobalAccelerator {
      * >UpdateEndpointGroup</a> API).
      * </p>
      * <p>
-     * There are two advantages to using <code>AddEndpoints</code> to add endpoints:
+     * There are two advantages to using <code>AddEndpoints</code> to add endpoints in Global Accelerator:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * It's faster, because Global Accelerator only has to resolve the new endpoints that you're adding.
+     * It's faster, because Global Accelerator only has to resolve the new endpoints that you're adding, rather than
+     * resolving new and existing endpoints.
      * </p>
      * </li>
      * <li>
      * <p>
-     * It's more convenient, because you don't need to specify all of the current endpoints that are already in the
-     * endpoint group in addition to the new endpoints that you want to add.
+     * It's more convenient, because you don't need to specify the current endpoints that are already in the endpoint
+     * group, in addition to the new endpoints that you want to add.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For information about endpoint types and requirements for endpoints that you can add to Global Accelerator, see
+     * <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoints.html"> Endpoints for standard
+     * accelerators</a> in the <i>Global Accelerator Developer Guide</i>.
+     * </p>
      * 
      * @param addEndpointsRequest
      * @param asyncHandler
@@ -348,7 +360,7 @@ public interface AWSGlobalAcceleratorAsync extends AWSGlobalAccelerator {
      * <p>
      * Global Accelerator is a global service that supports endpoints in multiple Amazon Web Services Regions but you
      * must specify the US West (Oregon) Region to create, update, or otherwise work with accelerators. That is, for
-     * example, specify <code>--region us-west-2</code> on AWS CLI commands.
+     * example, specify <code>--region us-west-2</code> on Amazon Web Services CLI commands.
      * </p>
      * </important>
      * 
@@ -369,7 +381,7 @@ public interface AWSGlobalAcceleratorAsync extends AWSGlobalAccelerator {
      * <p>
      * Global Accelerator is a global service that supports endpoints in multiple Amazon Web Services Regions but you
      * must specify the US West (Oregon) Region to create, update, or otherwise work with accelerators. That is, for
-     * example, specify <code>--region us-west-2</code> on AWS CLI commands.
+     * example, specify <code>--region us-west-2</code> on Amazon Web Services CLI commands.
      * </p>
      * </important>
      * 
@@ -388,6 +400,87 @@ public interface AWSGlobalAcceleratorAsync extends AWSGlobalAccelerator {
 
     /**
      * <p>
+     * Create a cross-account attachment in Global Accelerator. You create a cross-account attachment to specify the
+     * <i>principals</i> who have permission to work with <i>resources</i> in accelerators in their own account. You
+     * specify, in the same attachment, the resources that are shared.
+     * </p>
+     * <p>
+     * A principal can be an Amazon Web Services account number or the Amazon Resource Name (ARN) for an accelerator.
+     * For account numbers that are listed as principals, to work with a resource listed in the attachment, you must
+     * sign in to an account specified as a principal. Then, you can work with resources that are listed, with any of
+     * your accelerators. If an accelerator ARN is listed in the cross-account attachment as a principal, anyone with
+     * permission to make updates to the accelerator can work with resources that are listed in the attachment.
+     * </p>
+     * <p>
+     * Specify each principal and resource separately. To specify two CIDR address pools, list them individually under
+     * <code>Resources</code>, and so on. For a command line operation, for example, you might use a statement like the
+     * following:
+     * </p>
+     * <p>
+     * <code> "Resources": [{"Cidr": "169.254.60.0/24"},{"Cidr": "169.254.59.0/24"}]</code>
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/cross-account-resources.html"> Working with
+     * cross-account attachments and resources in Global Accelerator</a> in the <i> Global Accelerator Developer
+     * Guide</i>.
+     * </p>
+     * 
+     * @param createCrossAccountAttachmentRequest
+     * @return A Java Future containing the result of the CreateCrossAccountAttachment operation returned by the
+     *         service.
+     * @sample AWSGlobalAcceleratorAsync.CreateCrossAccountAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateCrossAccountAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCrossAccountAttachmentResult> createCrossAccountAttachmentAsync(
+            CreateCrossAccountAttachmentRequest createCrossAccountAttachmentRequest);
+
+    /**
+     * <p>
+     * Create a cross-account attachment in Global Accelerator. You create a cross-account attachment to specify the
+     * <i>principals</i> who have permission to work with <i>resources</i> in accelerators in their own account. You
+     * specify, in the same attachment, the resources that are shared.
+     * </p>
+     * <p>
+     * A principal can be an Amazon Web Services account number or the Amazon Resource Name (ARN) for an accelerator.
+     * For account numbers that are listed as principals, to work with a resource listed in the attachment, you must
+     * sign in to an account specified as a principal. Then, you can work with resources that are listed, with any of
+     * your accelerators. If an accelerator ARN is listed in the cross-account attachment as a principal, anyone with
+     * permission to make updates to the accelerator can work with resources that are listed in the attachment.
+     * </p>
+     * <p>
+     * Specify each principal and resource separately. To specify two CIDR address pools, list them individually under
+     * <code>Resources</code>, and so on. For a command line operation, for example, you might use a statement like the
+     * following:
+     * </p>
+     * <p>
+     * <code> "Resources": [{"Cidr": "169.254.60.0/24"},{"Cidr": "169.254.59.0/24"}]</code>
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/cross-account-resources.html"> Working with
+     * cross-account attachments and resources in Global Accelerator</a> in the <i> Global Accelerator Developer
+     * Guide</i>.
+     * </p>
+     * 
+     * @param createCrossAccountAttachmentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateCrossAccountAttachment operation returned by the
+     *         service.
+     * @sample AWSGlobalAcceleratorAsyncHandler.CreateCrossAccountAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateCrossAccountAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCrossAccountAttachmentResult> createCrossAccountAttachmentAsync(
+            CreateCrossAccountAttachmentRequest createCrossAccountAttachmentRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateCrossAccountAttachmentRequest, CreateCrossAccountAttachmentResult> asyncHandler);
+
+    /**
+     * <p>
      * Create a custom routing accelerator. A custom routing accelerator directs traffic to one of possibly thousands of
      * Amazon EC2 instance destinations running in a single or multiple virtual private clouds (VPC) subnet endpoints.
      * </p>
@@ -401,7 +494,7 @@ public interface AWSGlobalAcceleratorAsync extends AWSGlobalAccelerator {
      * <p>
      * Global Accelerator is a global service that supports endpoints in multiple Amazon Web Services Regions but you
      * must specify the US West (Oregon) Region to create, update, or otherwise work with accelerators. That is, for
-     * example, specify <code>--region us-west-2</code> on AWS CLI commands.
+     * example, specify <code>--region us-west-2</code> on Amazon Web Services CLI commands.
      * </p>
      * </important>
      * 
@@ -430,7 +523,7 @@ public interface AWSGlobalAcceleratorAsync extends AWSGlobalAccelerator {
      * <p>
      * Global Accelerator is a global service that supports endpoints in multiple Amazon Web Services Regions but you
      * must specify the US West (Oregon) Region to create, update, or otherwise work with accelerators. That is, for
-     * example, specify <code>--region us-west-2</code> on AWS CLI commands.
+     * example, specify <code>--region us-west-2</code> on Amazon Web Services CLI commands.
      * </p>
      * </important>
      * 
@@ -528,6 +621,11 @@ public interface AWSGlobalAcceleratorAsync extends AWSGlobalAccelerator {
      * Create an endpoint group for the specified listener. An endpoint group is a collection of endpoints in one Amazon
      * Web Services Region. A resource must be valid and active when you add it as an endpoint.
      * </p>
+     * <p>
+     * For more information about endpoint types and requirements for endpoints that you can add to Global Accelerator,
+     * see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoints.html"> Endpoints for
+     * standard accelerators</a> in the <i>Global Accelerator Developer Guide</i>.
+     * </p>
      * 
      * @param createEndpointGroupRequest
      * @return A Java Future containing the result of the CreateEndpointGroup operation returned by the service.
@@ -541,6 +639,11 @@ public interface AWSGlobalAcceleratorAsync extends AWSGlobalAccelerator {
      * <p>
      * Create an endpoint group for the specified listener. An endpoint group is a collection of endpoints in one Amazon
      * Web Services Region. A resource must be valid and active when you add it as an endpoint.
+     * </p>
+     * <p>
+     * For more information about endpoint types and requirements for endpoints that you can add to Global Accelerator,
+     * see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoints.html"> Endpoints for
+     * standard accelerators</a> in the <i>Global Accelerator Developer Guide</i>.
      * </p>
      * 
      * @param createEndpointGroupRequest
@@ -657,6 +760,57 @@ public interface AWSGlobalAcceleratorAsync extends AWSGlobalAccelerator {
      */
     java.util.concurrent.Future<DeleteAcceleratorResult> deleteAcceleratorAsync(DeleteAcceleratorRequest deleteAcceleratorRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAcceleratorRequest, DeleteAcceleratorResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete a cross-account attachment. When you delete an attachment, Global Accelerator revokes the permission to
+     * use the resources in the attachment from all principals in the list of principals. Global Accelerator revokes the
+     * permission for specific resources.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/cross-account-resources.html"> Working with
+     * cross-account attachments and resources in Global Accelerator</a> in the <i> Global Accelerator Developer
+     * Guide</i>.
+     * </p>
+     * 
+     * @param deleteCrossAccountAttachmentRequest
+     * @return A Java Future containing the result of the DeleteCrossAccountAttachment operation returned by the
+     *         service.
+     * @sample AWSGlobalAcceleratorAsync.DeleteCrossAccountAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteCrossAccountAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCrossAccountAttachmentResult> deleteCrossAccountAttachmentAsync(
+            DeleteCrossAccountAttachmentRequest deleteCrossAccountAttachmentRequest);
+
+    /**
+     * <p>
+     * Delete a cross-account attachment. When you delete an attachment, Global Accelerator revokes the permission to
+     * use the resources in the attachment from all principals in the list of principals. Global Accelerator revokes the
+     * permission for specific resources.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/cross-account-resources.html"> Working with
+     * cross-account attachments and resources in Global Accelerator</a> in the <i> Global Accelerator Developer
+     * Guide</i>.
+     * </p>
+     * 
+     * @param deleteCrossAccountAttachmentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCrossAccountAttachment operation returned by the
+     *         service.
+     * @sample AWSGlobalAcceleratorAsyncHandler.DeleteCrossAccountAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DeleteCrossAccountAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCrossAccountAttachmentResult> deleteCrossAccountAttachmentAsync(
+            DeleteCrossAccountAttachmentRequest deleteCrossAccountAttachmentRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteCrossAccountAttachmentRequest, DeleteCrossAccountAttachmentResult> asyncHandler);
 
     /**
      * <p>
@@ -1027,6 +1181,41 @@ public interface AWSGlobalAcceleratorAsync extends AWSGlobalAccelerator {
 
     /**
      * <p>
+     * Gets configuration information about a cross-account attachment.
+     * </p>
+     * 
+     * @param describeCrossAccountAttachmentRequest
+     * @return A Java Future containing the result of the DescribeCrossAccountAttachment operation returned by the
+     *         service.
+     * @sample AWSGlobalAcceleratorAsync.DescribeCrossAccountAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeCrossAccountAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeCrossAccountAttachmentResult> describeCrossAccountAttachmentAsync(
+            DescribeCrossAccountAttachmentRequest describeCrossAccountAttachmentRequest);
+
+    /**
+     * <p>
+     * Gets configuration information about a cross-account attachment.
+     * </p>
+     * 
+     * @param describeCrossAccountAttachmentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeCrossAccountAttachment operation returned by the
+     *         service.
+     * @sample AWSGlobalAcceleratorAsyncHandler.DescribeCrossAccountAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/DescribeCrossAccountAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeCrossAccountAttachmentResult> describeCrossAccountAttachmentAsync(
+            DescribeCrossAccountAttachmentRequest describeCrossAccountAttachmentRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeCrossAccountAttachmentRequest, DescribeCrossAccountAttachmentResult> asyncHandler);
+
+    /**
+     * <p>
      * Describe a custom routing accelerator.
      * </p>
      * 
@@ -1298,6 +1487,121 @@ public interface AWSGlobalAcceleratorAsync extends AWSGlobalAccelerator {
      */
     java.util.concurrent.Future<ListByoipCidrsResult> listByoipCidrsAsync(ListByoipCidrsRequest listByoipCidrsRequest,
             com.amazonaws.handlers.AsyncHandler<ListByoipCidrsRequest, ListByoipCidrsResult> asyncHandler);
+
+    /**
+     * <p>
+     * List the cross-account attachments that have been created in Global Accelerator.
+     * </p>
+     * 
+     * @param listCrossAccountAttachmentsRequest
+     * @return A Java Future containing the result of the ListCrossAccountAttachments operation returned by the service.
+     * @sample AWSGlobalAcceleratorAsync.ListCrossAccountAttachments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListCrossAccountAttachments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCrossAccountAttachmentsResult> listCrossAccountAttachmentsAsync(
+            ListCrossAccountAttachmentsRequest listCrossAccountAttachmentsRequest);
+
+    /**
+     * <p>
+     * List the cross-account attachments that have been created in Global Accelerator.
+     * </p>
+     * 
+     * @param listCrossAccountAttachmentsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCrossAccountAttachments operation returned by the service.
+     * @sample AWSGlobalAcceleratorAsyncHandler.ListCrossAccountAttachments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListCrossAccountAttachments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCrossAccountAttachmentsResult> listCrossAccountAttachmentsAsync(
+            ListCrossAccountAttachmentsRequest listCrossAccountAttachmentsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCrossAccountAttachmentsRequest, ListCrossAccountAttachmentsResult> asyncHandler);
+
+    /**
+     * <p>
+     * List the accounts that have cross-account resources.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/cross-account-resources.html"> Working with
+     * cross-account attachments and resources in Global Accelerator</a> in the <i> Global Accelerator Developer
+     * Guide</i>.
+     * </p>
+     * 
+     * @param listCrossAccountResourceAccountsRequest
+     * @return A Java Future containing the result of the ListCrossAccountResourceAccounts operation returned by the
+     *         service.
+     * @sample AWSGlobalAcceleratorAsync.ListCrossAccountResourceAccounts
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListCrossAccountResourceAccounts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCrossAccountResourceAccountsResult> listCrossAccountResourceAccountsAsync(
+            ListCrossAccountResourceAccountsRequest listCrossAccountResourceAccountsRequest);
+
+    /**
+     * <p>
+     * List the accounts that have cross-account resources.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/cross-account-resources.html"> Working with
+     * cross-account attachments and resources in Global Accelerator</a> in the <i> Global Accelerator Developer
+     * Guide</i>.
+     * </p>
+     * 
+     * @param listCrossAccountResourceAccountsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCrossAccountResourceAccounts operation returned by the
+     *         service.
+     * @sample AWSGlobalAcceleratorAsyncHandler.ListCrossAccountResourceAccounts
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListCrossAccountResourceAccounts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCrossAccountResourceAccountsResult> listCrossAccountResourceAccountsAsync(
+            ListCrossAccountResourceAccountsRequest listCrossAccountResourceAccountsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCrossAccountResourceAccountsRequest, ListCrossAccountResourceAccountsResult> asyncHandler);
+
+    /**
+     * <p>
+     * List the cross-account resources available to work with.
+     * </p>
+     * 
+     * @param listCrossAccountResourcesRequest
+     * @return A Java Future containing the result of the ListCrossAccountResources operation returned by the service.
+     * @sample AWSGlobalAcceleratorAsync.ListCrossAccountResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListCrossAccountResources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCrossAccountResourcesResult> listCrossAccountResourcesAsync(
+            ListCrossAccountResourcesRequest listCrossAccountResourcesRequest);
+
+    /**
+     * <p>
+     * List the cross-account resources available to work with.
+     * </p>
+     * 
+     * @param listCrossAccountResourcesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCrossAccountResources operation returned by the service.
+     * @sample AWSGlobalAcceleratorAsyncHandler.ListCrossAccountResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/ListCrossAccountResources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCrossAccountResourcesResult> listCrossAccountResourcesAsync(
+            ListCrossAccountResourcesRequest listCrossAccountResourcesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCrossAccountResourcesRequest, ListCrossAccountResourcesResult> asyncHandler);
 
     /**
      * <p>
@@ -1860,13 +2164,40 @@ public interface AWSGlobalAcceleratorAsync extends AWSGlobalAccelerator {
 
     /**
      * <p>
-     * Update an accelerator.
+     * Update an accelerator to make changes, such as the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Change the name of the accelerator.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Disable the accelerator so that it no longer accepts or routes traffic, or so that you can delete it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Enable the accelerator, if it is disabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Change the IP address type to dual-stack if it is IPv4, or change the IP address type to IPv4 if it's dual-stack.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Be aware that static IP addresses remain assigned to your accelerator for as long as it exists, even if you
+     * disable the accelerator and it no longer accepts or routes traffic. However, when you delete the accelerator, you
+     * lose the static IP addresses that are assigned to it, so you can no longer route traffic by using them.
      * </p>
      * <important>
      * <p>
      * Global Accelerator is a global service that supports endpoints in multiple Amazon Web Services Regions but you
      * must specify the US West (Oregon) Region to create, update, or otherwise work with accelerators. That is, for
-     * example, specify <code>--region us-west-2</code> on AWS CLI commands.
+     * example, specify <code>--region us-west-2</code> on Amazon Web Services CLI commands.
      * </p>
      * </important>
      * 
@@ -1880,13 +2211,40 @@ public interface AWSGlobalAcceleratorAsync extends AWSGlobalAccelerator {
 
     /**
      * <p>
-     * Update an accelerator.
+     * Update an accelerator to make changes, such as the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Change the name of the accelerator.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Disable the accelerator so that it no longer accepts or routes traffic, or so that you can delete it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Enable the accelerator, if it is disabled.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Change the IP address type to dual-stack if it is IPv4, or change the IP address type to IPv4 if it's dual-stack.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Be aware that static IP addresses remain assigned to your accelerator for as long as it exists, even if you
+     * disable the accelerator and it no longer accepts or routes traffic. However, when you delete the accelerator, you
+     * lose the static IP addresses that are assigned to it, so you can no longer route traffic by using them.
      * </p>
      * <important>
      * <p>
      * Global Accelerator is a global service that supports endpoints in multiple Amazon Web Services Regions but you
      * must specify the US West (Oregon) Region to create, update, or otherwise work with accelerators. That is, for
-     * example, specify <code>--region us-west-2</code> on AWS CLI commands.
+     * example, specify <code>--region us-west-2</code> on Amazon Web Services CLI commands.
      * </p>
      * </important>
      * 
@@ -1935,6 +2293,57 @@ public interface AWSGlobalAcceleratorAsync extends AWSGlobalAccelerator {
     java.util.concurrent.Future<UpdateAcceleratorAttributesResult> updateAcceleratorAttributesAsync(
             UpdateAcceleratorAttributesRequest updateAcceleratorAttributesRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateAcceleratorAttributesRequest, UpdateAcceleratorAttributesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update a cross-account attachment to add or remove principals or resources. When you update an attachment to
+     * remove a principal (account ID or accelerator) or a resource, Global Accelerator revokes the permission for
+     * specific resources.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/cross-account-resources.html"> Working with
+     * cross-account attachments and resources in Global Accelerator</a> in the <i> Global Accelerator Developer
+     * Guide</i>.
+     * </p>
+     * 
+     * @param updateCrossAccountAttachmentRequest
+     * @return A Java Future containing the result of the UpdateCrossAccountAttachment operation returned by the
+     *         service.
+     * @sample AWSGlobalAcceleratorAsync.UpdateCrossAccountAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateCrossAccountAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCrossAccountAttachmentResult> updateCrossAccountAttachmentAsync(
+            UpdateCrossAccountAttachmentRequest updateCrossAccountAttachmentRequest);
+
+    /**
+     * <p>
+     * Update a cross-account attachment to add or remove principals or resources. When you update an attachment to
+     * remove a principal (account ID or accelerator) or a resource, Global Accelerator revokes the permission for
+     * specific resources.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/cross-account-resources.html"> Working with
+     * cross-account attachments and resources in Global Accelerator</a> in the <i> Global Accelerator Developer
+     * Guide</i>.
+     * </p>
+     * 
+     * @param updateCrossAccountAttachmentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateCrossAccountAttachment operation returned by the
+     *         service.
+     * @sample AWSGlobalAcceleratorAsyncHandler.UpdateCrossAccountAttachment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateCrossAccountAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCrossAccountAttachmentResult> updateCrossAccountAttachmentAsync(
+            UpdateCrossAccountAttachmentRequest updateCrossAccountAttachmentRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateCrossAccountAttachmentRequest, UpdateCrossAccountAttachmentResult> asyncHandler);
 
     /**
      * <p>

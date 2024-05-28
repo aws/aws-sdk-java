@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -402,6 +402,19 @@ public class AbstractAmazonWorkMailAsync extends AbstractAmazonWorkMail implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeEntityResult> describeEntityAsync(DescribeEntityRequest request) {
+
+        return describeEntityAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEntityResult> describeEntityAsync(DescribeEntityRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeEntityRequest, DescribeEntityResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeGroupResult> describeGroupAsync(DescribeGroupRequest request) {
 
         return describeGroupAsync(request, null);
@@ -672,6 +685,19 @@ public class AbstractAmazonWorkMailAsync extends AbstractAmazonWorkMail implemen
     @Override
     public java.util.concurrent.Future<ListGroupsResult> listGroupsAsync(ListGroupsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListGroupsRequest, ListGroupsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGroupsForEntityResult> listGroupsForEntityAsync(ListGroupsForEntityRequest request) {
+
+        return listGroupsForEntityAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGroupsForEntityResult> listGroupsForEntityAsync(ListGroupsForEntityRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListGroupsForEntityRequest, ListGroupsForEntityResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1021,6 +1047,19 @@ public class AbstractAmazonWorkMailAsync extends AbstractAmazonWorkMail implemen
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateGroupResult> updateGroupAsync(UpdateGroupRequest request) {
+
+        return updateGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGroupResult> updateGroupAsync(UpdateGroupRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateGroupRequest, UpdateGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateImpersonationRoleResult> updateImpersonationRoleAsync(UpdateImpersonationRoleRequest request) {
 
         return updateImpersonationRoleAsync(request, null);
@@ -1081,6 +1120,19 @@ public class AbstractAmazonWorkMailAsync extends AbstractAmazonWorkMail implemen
     @Override
     public java.util.concurrent.Future<UpdateResourceResult> updateResourceAsync(UpdateResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateResourceRequest, UpdateResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateUserResult> updateUserAsync(UpdateUserRequest request) {
+
+        return updateUserAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateUserResult> updateUserAsync(UpdateUserRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateUserRequest, UpdateUserResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

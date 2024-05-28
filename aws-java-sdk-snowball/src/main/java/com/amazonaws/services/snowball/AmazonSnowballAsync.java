@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -110,7 +110,9 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
      * <p>
      * Creates an address for a Snow device to be shipped to. In most regions, addresses are validated at the time of
      * creation. The address you provide must be located within the serviceable area of your region. If the address is
-     * invalid or unsupported, then an exception is thrown.
+     * invalid or unsupported, then an exception is thrown. If providing an address as a JSON file through the
+     * <code>cli-input-json</code> option, include the full file path. For example,
+     * <code>--cli-input-json file://create-address.json</code>.
      * </p>
      * 
      * @param createAddressRequest
@@ -125,7 +127,9 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
      * <p>
      * Creates an address for a Snow device to be shipped to. In most regions, addresses are validated at the time of
      * creation. The address you provide must be located within the serviceable area of your region. If the address is
-     * invalid or unsupported, then an exception is thrown.
+     * invalid or unsupported, then an exception is thrown. If providing an address as a JSON file through the
+     * <code>cli-input-json</code> option, include the full file path. For example,
+     * <code>--cli-input-json file://create-address.json</code>.
      * </p>
      * 
      * @param createAddressRequest
@@ -202,7 +206,7 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
      * <ul>
      * <li>
      * <p>
-     * Snow Family device type: <b>SNC1_SSD</b>
+     * Device type: <b>SNC1_SSD</b>
      * </p>
      * <ul>
      * <li>
@@ -219,7 +223,7 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
      * <p/></li>
      * <li>
      * <p>
-     * Snow Family device type: <b>SNC1_HDD</b>
+     * Device type: <b>SNC1_HDD</b>
      * </p>
      * <ul>
      * <li>
@@ -301,23 +305,11 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
      * </p>
      * </li>
      * </ul>
-     * <p/></li>
-     * <li>
+     * <note>
      * <p>
-     * Device type: <b>V3_5C</b>
+     * This device is replaced with T98.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Capacity: T32
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Description: Snowball Edge Compute Optimized without GPU
-     * </p>
-     * </li>
-     * </ul>
+     * </note>
      * <p/></li>
      * <li>
      * <p>
@@ -361,6 +353,40 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
      * </note></li>
      * </ul>
      * <p/></li>
+     * <li>
+     * <p>
+     * Snow Family device type: <b>RACK_5U_C</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T13
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Snowblade.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Device type: <b>V3_5S</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T240
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Snowball Edge Storage Optimized 210TB
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
      * </ul>
      * 
      * @param createJobRequest
@@ -399,7 +425,7 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
      * <ul>
      * <li>
      * <p>
-     * Snow Family device type: <b>SNC1_SSD</b>
+     * Device type: <b>SNC1_SSD</b>
      * </p>
      * <ul>
      * <li>
@@ -416,7 +442,7 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
      * <p/></li>
      * <li>
      * <p>
-     * Snow Family device type: <b>SNC1_HDD</b>
+     * Device type: <b>SNC1_HDD</b>
      * </p>
      * <ul>
      * <li>
@@ -498,23 +524,11 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
      * </p>
      * </li>
      * </ul>
-     * <p/></li>
-     * <li>
+     * <note>
      * <p>
-     * Device type: <b>V3_5C</b>
+     * This device is replaced with T98.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Capacity: T32
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Description: Snowball Edge Compute Optimized without GPU
-     * </p>
-     * </li>
-     * </ul>
+     * </note>
      * <p/></li>
      * <li>
      * <p>
@@ -558,6 +572,40 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
      * </note></li>
      * </ul>
      * <p/></li>
+     * <li>
+     * <p>
+     * Snow Family device type: <b>RACK_5U_C</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T13
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Snowblade.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Device type: <b>V3_5S</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Capacity: T240
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Description: Snowball Edge Storage Optimized 210TB
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
      * </ul>
      * 
      * @param createJobRequest
@@ -1074,10 +1122,11 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
 
     /**
      * <p>
-     * This action returns a list of the different Amazon EC2 Amazon Machine Images (AMIs) that are owned by your Amazon
-     * Web Services accountthat would be supported for use on a Snow device. Currently, supported AMIs are based on the
-     * CentOS 7 (x86_64) - with Updates HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS - Xenial (HVM) images,
-     * available on the Amazon Web Services Marketplace.
+     * This action returns a list of the different Amazon EC2-compatible Amazon Machine Images (AMIs) that are owned by
+     * your Amazon Web Services accountthat would be supported for use on a Snow device. Currently, supported AMIs are
+     * based on the Amazon Linux-2, Ubuntu 20.04 LTS - Focal, or Ubuntu 22.04 LTS - Jammy images, available on the
+     * Amazon Web Services Marketplace. Ubuntu 16.04 LTS - Xenial (HVM) images are no longer supported in the Market,
+     * but still supported for use on devices through Amazon EC2 VM Import/Export and running locally in AMIs.
      * </p>
      * 
      * @param listCompatibleImagesRequest
@@ -1090,10 +1139,11 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
 
     /**
      * <p>
-     * This action returns a list of the different Amazon EC2 Amazon Machine Images (AMIs) that are owned by your Amazon
-     * Web Services accountthat would be supported for use on a Snow device. Currently, supported AMIs are based on the
-     * CentOS 7 (x86_64) - with Updates HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS - Xenial (HVM) images,
-     * available on the Amazon Web Services Marketplace.
+     * This action returns a list of the different Amazon EC2-compatible Amazon Machine Images (AMIs) that are owned by
+     * your Amazon Web Services accountthat would be supported for use on a Snow device. Currently, supported AMIs are
+     * based on the Amazon Linux-2, Ubuntu 20.04 LTS - Focal, or Ubuntu 22.04 LTS - Jammy images, available on the
+     * Amazon Web Services Marketplace. Ubuntu 16.04 LTS - Xenial (HVM) images are no longer supported in the Market,
+     * but still supported for use on devices through Amazon EC2 VM Import/Export and running locally in AMIs.
      * </p>
      * 
      * @param listCompatibleImagesRequest
@@ -1176,6 +1226,70 @@ public interface AmazonSnowballAsync extends AmazonSnowball {
      */
     java.util.concurrent.Future<ListLongTermPricingResult> listLongTermPricingAsync(ListLongTermPricingRequest listLongTermPricingRequest,
             com.amazonaws.handlers.AsyncHandler<ListLongTermPricingRequest, ListLongTermPricingResult> asyncHandler);
+
+    /**
+     * <p>
+     * A list of locations from which the customer can choose to pickup a device.
+     * </p>
+     * 
+     * @param listPickupLocationsRequest
+     * @return A Java Future containing the result of the ListPickupLocations operation returned by the service.
+     * @sample AmazonSnowballAsync.ListPickupLocations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListPickupLocations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPickupLocationsResult> listPickupLocationsAsync(ListPickupLocationsRequest listPickupLocationsRequest);
+
+    /**
+     * <p>
+     * A list of locations from which the customer can choose to pickup a device.
+     * </p>
+     * 
+     * @param listPickupLocationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListPickupLocations operation returned by the service.
+     * @sample AmazonSnowballAsyncHandler.ListPickupLocations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListPickupLocations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPickupLocationsResult> listPickupLocationsAsync(ListPickupLocationsRequest listPickupLocationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPickupLocationsRequest, ListPickupLocationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all supported versions for Snow on-device services. Returns an array of <code>ServiceVersion</code> object
+     * containing the supported versions for a particular service.
+     * </p>
+     * 
+     * @param listServiceVersionsRequest
+     * @return A Java Future containing the result of the ListServiceVersions operation returned by the service.
+     * @sample AmazonSnowballAsync.ListServiceVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListServiceVersions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListServiceVersionsResult> listServiceVersionsAsync(ListServiceVersionsRequest listServiceVersionsRequest);
+
+    /**
+     * <p>
+     * Lists all supported versions for Snow on-device services. Returns an array of <code>ServiceVersion</code> object
+     * containing the supported versions for a particular service.
+     * </p>
+     * 
+     * @param listServiceVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListServiceVersions operation returned by the service.
+     * @sample AmazonSnowballAsyncHandler.ListServiceVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListServiceVersions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListServiceVersionsResult> listServiceVersionsAsync(ListServiceVersionsRequest listServiceVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListServiceVersionsRequest, ListServiceVersionsResult> asyncHandler);
 
     /**
      * <p>

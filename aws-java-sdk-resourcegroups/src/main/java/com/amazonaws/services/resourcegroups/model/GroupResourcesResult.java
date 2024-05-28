@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,20 +25,20 @@ public class GroupResourcesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of ARNs of resources that were successfully added to the group by this operation.
+     * A list of ARNs of the resources that this operation successfully added to the group.
      * </p>
      */
     private java.util.List<String> succeeded;
     /**
      * <p>
-     * A list of ARNs of any resources that failed to be added to the group by this operation.
+     * A list of ARNs of any resources that this operation failed to add to the group.
      * </p>
      */
     private java.util.List<FailedResource> failed;
     /**
      * <p>
-     * A list of ARNs of any resources that are still in the process of being added to the group by this operation.
-     * These pending additions continue asynchronously. You can check the status of pending additions by using the
+     * A list of ARNs of any resources that this operation is still in the process adding to the group. These pending
+     * additions continue asynchronously. You can check the status of pending additions by using the
      * <code> <a>ListGroupResources</a> </code> operation, and checking the <code>Resources</code> array in the response
      * and the <code>Status</code> field of each object in that array.
      * </p>
@@ -47,10 +47,10 @@ public class GroupResourcesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of ARNs of resources that were successfully added to the group by this operation.
+     * A list of ARNs of the resources that this operation successfully added to the group.
      * </p>
      * 
-     * @return A list of ARNs of resources that were successfully added to the group by this operation.
+     * @return A list of ARNs of the resources that this operation successfully added to the group.
      */
 
     public java.util.List<String> getSucceeded() {
@@ -59,11 +59,11 @@ public class GroupResourcesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of ARNs of resources that were successfully added to the group by this operation.
+     * A list of ARNs of the resources that this operation successfully added to the group.
      * </p>
      * 
      * @param succeeded
-     *        A list of ARNs of resources that were successfully added to the group by this operation.
+     *        A list of ARNs of the resources that this operation successfully added to the group.
      */
 
     public void setSucceeded(java.util.Collection<String> succeeded) {
@@ -77,7 +77,7 @@ public class GroupResourcesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of ARNs of resources that were successfully added to the group by this operation.
+     * A list of ARNs of the resources that this operation successfully added to the group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -86,7 +86,7 @@ public class GroupResourcesResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param succeeded
-     *        A list of ARNs of resources that were successfully added to the group by this operation.
+     *        A list of ARNs of the resources that this operation successfully added to the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,11 +102,11 @@ public class GroupResourcesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of ARNs of resources that were successfully added to the group by this operation.
+     * A list of ARNs of the resources that this operation successfully added to the group.
      * </p>
      * 
      * @param succeeded
-     *        A list of ARNs of resources that were successfully added to the group by this operation.
+     *        A list of ARNs of the resources that this operation successfully added to the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,10 +117,10 @@ public class GroupResourcesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of ARNs of any resources that failed to be added to the group by this operation.
+     * A list of ARNs of any resources that this operation failed to add to the group.
      * </p>
      * 
-     * @return A list of ARNs of any resources that failed to be added to the group by this operation.
+     * @return A list of ARNs of any resources that this operation failed to add to the group.
      */
 
     public java.util.List<FailedResource> getFailed() {
@@ -129,11 +129,11 @@ public class GroupResourcesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of ARNs of any resources that failed to be added to the group by this operation.
+     * A list of ARNs of any resources that this operation failed to add to the group.
      * </p>
      * 
      * @param failed
-     *        A list of ARNs of any resources that failed to be added to the group by this operation.
+     *        A list of ARNs of any resources that this operation failed to add to the group.
      */
 
     public void setFailed(java.util.Collection<FailedResource> failed) {
@@ -147,7 +147,7 @@ public class GroupResourcesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of ARNs of any resources that failed to be added to the group by this operation.
+     * A list of ARNs of any resources that this operation failed to add to the group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -156,7 +156,7 @@ public class GroupResourcesResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param failed
-     *        A list of ARNs of any resources that failed to be added to the group by this operation.
+     *        A list of ARNs of any resources that this operation failed to add to the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,11 +172,11 @@ public class GroupResourcesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of ARNs of any resources that failed to be added to the group by this operation.
+     * A list of ARNs of any resources that this operation failed to add to the group.
      * </p>
      * 
      * @param failed
-     *        A list of ARNs of any resources that failed to be added to the group by this operation.
+     *        A list of ARNs of any resources that this operation failed to add to the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,16 +187,16 @@ public class GroupResourcesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of ARNs of any resources that are still in the process of being added to the group by this operation.
-     * These pending additions continue asynchronously. You can check the status of pending additions by using the
+     * A list of ARNs of any resources that this operation is still in the process adding to the group. These pending
+     * additions continue asynchronously. You can check the status of pending additions by using the
      * <code> <a>ListGroupResources</a> </code> operation, and checking the <code>Resources</code> array in the response
      * and the <code>Status</code> field of each object in that array.
      * </p>
      * 
-     * @return A list of ARNs of any resources that are still in the process of being added to the group by this
-     *         operation. These pending additions continue asynchronously. You can check the status of pending additions
-     *         by using the <code> <a>ListGroupResources</a> </code> operation, and checking the <code>Resources</code>
-     *         array in the response and the <code>Status</code> field of each object in that array.
+     * @return A list of ARNs of any resources that this operation is still in the process adding to the group. These
+     *         pending additions continue asynchronously. You can check the status of pending additions by using the
+     *         <code> <a>ListGroupResources</a> </code> operation, and checking the <code>Resources</code> array in the
+     *         response and the <code>Status</code> field of each object in that array.
      */
 
     public java.util.List<PendingResource> getPending() {
@@ -205,17 +205,17 @@ public class GroupResourcesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of ARNs of any resources that are still in the process of being added to the group by this operation.
-     * These pending additions continue asynchronously. You can check the status of pending additions by using the
+     * A list of ARNs of any resources that this operation is still in the process adding to the group. These pending
+     * additions continue asynchronously. You can check the status of pending additions by using the
      * <code> <a>ListGroupResources</a> </code> operation, and checking the <code>Resources</code> array in the response
      * and the <code>Status</code> field of each object in that array.
      * </p>
      * 
      * @param pending
-     *        A list of ARNs of any resources that are still in the process of being added to the group by this
-     *        operation. These pending additions continue asynchronously. You can check the status of pending additions
-     *        by using the <code> <a>ListGroupResources</a> </code> operation, and checking the <code>Resources</code>
-     *        array in the response and the <code>Status</code> field of each object in that array.
+     *        A list of ARNs of any resources that this operation is still in the process adding to the group. These
+     *        pending additions continue asynchronously. You can check the status of pending additions by using the
+     *        <code> <a>ListGroupResources</a> </code> operation, and checking the <code>Resources</code> array in the
+     *        response and the <code>Status</code> field of each object in that array.
      */
 
     public void setPending(java.util.Collection<PendingResource> pending) {
@@ -229,8 +229,8 @@ public class GroupResourcesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of ARNs of any resources that are still in the process of being added to the group by this operation.
-     * These pending additions continue asynchronously. You can check the status of pending additions by using the
+     * A list of ARNs of any resources that this operation is still in the process adding to the group. These pending
+     * additions continue asynchronously. You can check the status of pending additions by using the
      * <code> <a>ListGroupResources</a> </code> operation, and checking the <code>Resources</code> array in the response
      * and the <code>Status</code> field of each object in that array.
      * </p>
@@ -241,10 +241,10 @@ public class GroupResourcesResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param pending
-     *        A list of ARNs of any resources that are still in the process of being added to the group by this
-     *        operation. These pending additions continue asynchronously. You can check the status of pending additions
-     *        by using the <code> <a>ListGroupResources</a> </code> operation, and checking the <code>Resources</code>
-     *        array in the response and the <code>Status</code> field of each object in that array.
+     *        A list of ARNs of any resources that this operation is still in the process adding to the group. These
+     *        pending additions continue asynchronously. You can check the status of pending additions by using the
+     *        <code> <a>ListGroupResources</a> </code> operation, and checking the <code>Resources</code> array in the
+     *        response and the <code>Status</code> field of each object in that array.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -260,17 +260,17 @@ public class GroupResourcesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of ARNs of any resources that are still in the process of being added to the group by this operation.
-     * These pending additions continue asynchronously. You can check the status of pending additions by using the
+     * A list of ARNs of any resources that this operation is still in the process adding to the group. These pending
+     * additions continue asynchronously. You can check the status of pending additions by using the
      * <code> <a>ListGroupResources</a> </code> operation, and checking the <code>Resources</code> array in the response
      * and the <code>Status</code> field of each object in that array.
      * </p>
      * 
      * @param pending
-     *        A list of ARNs of any resources that are still in the process of being added to the group by this
-     *        operation. These pending additions continue asynchronously. You can check the status of pending additions
-     *        by using the <code> <a>ListGroupResources</a> </code> operation, and checking the <code>Resources</code>
-     *        array in the response and the <code>Status</code> field of each object in that array.
+     *        A list of ARNs of any resources that this operation is still in the process adding to the group. These
+     *        pending additions continue asynchronously. You can check the status of pending additions by using the
+     *        <code> <a>ListGroupResources</a> </code> operation, and checking the <code>Resources</code> array in the
+     *        response and the <code>Status</code> field of each object in that array.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class ListAssociatedResourcesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name or ID of the application.
+     * The name, ID, or ARN of the application.
      * </p>
      */
     private String application;
@@ -47,11 +47,11 @@ public class ListAssociatedResourcesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name or ID of the application.
+     * The name, ID, or ARN of the application.
      * </p>
      * 
      * @param application
-     *        The name or ID of the application.
+     *        The name, ID, or ARN of the application.
      */
 
     public void setApplication(String application) {
@@ -60,10 +60,10 @@ public class ListAssociatedResourcesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name or ID of the application.
+     * The name, ID, or ARN of the application.
      * </p>
      * 
-     * @return The name or ID of the application.
+     * @return The name, ID, or ARN of the application.
      */
 
     public String getApplication() {
@@ -72,11 +72,11 @@ public class ListAssociatedResourcesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name or ID of the application.
+     * The name, ID, or ARN of the application.
      * </p>
      * 
      * @param application
-     *        The name or ID of the application.
+     *        The name, ID, or ARN of the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,12 @@ public class ListLabelsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * <p>
      * A summary of the items in the label group.
      * </p>
+     * <note>
+     * <p>
+     * If you don't supply the <code>LabelGroupName</code> request parameter, or if you supply the name of a label group
+     * that doesn't exist, <code>ListLabels</code> returns an empty array in <code>LabelSummaries</code>.
+     * </p>
+     * </note>
      */
     private java.util.List<LabelSummary> labelSummaries;
 
@@ -80,8 +86,19 @@ public class ListLabelsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * <p>
      * A summary of the items in the label group.
      * </p>
+     * <note>
+     * <p>
+     * If you don't supply the <code>LabelGroupName</code> request parameter, or if you supply the name of a label group
+     * that doesn't exist, <code>ListLabels</code> returns an empty array in <code>LabelSummaries</code>.
+     * </p>
+     * </note>
      * 
-     * @return A summary of the items in the label group.
+     * @return A summary of the items in the label group. </p> <note>
+     *         <p>
+     *         If you don't supply the <code>LabelGroupName</code> request parameter, or if you supply the name of a
+     *         label group that doesn't exist, <code>ListLabels</code> returns an empty array in
+     *         <code>LabelSummaries</code>.
+     *         </p>
      */
 
     public java.util.List<LabelSummary> getLabelSummaries() {
@@ -92,9 +109,20 @@ public class ListLabelsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * <p>
      * A summary of the items in the label group.
      * </p>
+     * <note>
+     * <p>
+     * If you don't supply the <code>LabelGroupName</code> request parameter, or if you supply the name of a label group
+     * that doesn't exist, <code>ListLabels</code> returns an empty array in <code>LabelSummaries</code>.
+     * </p>
+     * </note>
      * 
      * @param labelSummaries
-     *        A summary of the items in the label group.
+     *        A summary of the items in the label group. </p> <note>
+     *        <p>
+     *        If you don't supply the <code>LabelGroupName</code> request parameter, or if you supply the name of a
+     *        label group that doesn't exist, <code>ListLabels</code> returns an empty array in
+     *        <code>LabelSummaries</code>.
+     *        </p>
      */
 
     public void setLabelSummaries(java.util.Collection<LabelSummary> labelSummaries) {
@@ -110,6 +138,12 @@ public class ListLabelsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * <p>
      * A summary of the items in the label group.
      * </p>
+     * <note>
+     * <p>
+     * If you don't supply the <code>LabelGroupName</code> request parameter, or if you supply the name of a label group
+     * that doesn't exist, <code>ListLabels</code> returns an empty array in <code>LabelSummaries</code>.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setLabelSummaries(java.util.Collection)} or {@link #withLabelSummaries(java.util.Collection)} if you want
@@ -117,7 +151,12 @@ public class ListLabelsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param labelSummaries
-     *        A summary of the items in the label group.
+     *        A summary of the items in the label group. </p> <note>
+     *        <p>
+     *        If you don't supply the <code>LabelGroupName</code> request parameter, or if you supply the name of a
+     *        label group that doesn't exist, <code>ListLabels</code> returns an empty array in
+     *        <code>LabelSummaries</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,9 +174,20 @@ public class ListLabelsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * <p>
      * A summary of the items in the label group.
      * </p>
+     * <note>
+     * <p>
+     * If you don't supply the <code>LabelGroupName</code> request parameter, or if you supply the name of a label group
+     * that doesn't exist, <code>ListLabels</code> returns an empty array in <code>LabelSummaries</code>.
+     * </p>
+     * </note>
      * 
      * @param labelSummaries
-     *        A summary of the items in the label group.
+     *        A summary of the items in the label group. </p> <note>
+     *        <p>
+     *        If you don't supply the <code>LabelGroupName</code> request parameter, or if you supply the name of a
+     *        label group that doesn't exist, <code>ListLabels</code> returns an empty array in
+     *        <code>LabelSummaries</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

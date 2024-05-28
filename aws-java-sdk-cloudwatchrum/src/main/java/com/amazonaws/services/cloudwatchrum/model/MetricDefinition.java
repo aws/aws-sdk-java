@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,6 +62,13 @@ public class MetricDefinition implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * If this metric definition is for a custom metric instead of an extended metric, this field displays the metric
+     * namespace that the custom metric is published to.
+     * </p>
+     */
+    private String namespace;
     /**
      * <p>
      * Use this field only if you are sending this metric to CloudWatch. It defines the CloudWatch metric unit that this
@@ -308,6 +315,52 @@ public class MetricDefinition implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * If this metric definition is for a custom metric instead of an extended metric, this field displays the metric
+     * namespace that the custom metric is published to.
+     * </p>
+     * 
+     * @param namespace
+     *        If this metric definition is for a custom metric instead of an extended metric, this field displays the
+     *        metric namespace that the custom metric is published to.
+     */
+
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
+    }
+
+    /**
+     * <p>
+     * If this metric definition is for a custom metric instead of an extended metric, this field displays the metric
+     * namespace that the custom metric is published to.
+     * </p>
+     * 
+     * @return If this metric definition is for a custom metric instead of an extended metric, this field displays the
+     *         metric namespace that the custom metric is published to.
+     */
+
+    public String getNamespace() {
+        return this.namespace;
+    }
+
+    /**
+     * <p>
+     * If this metric definition is for a custom metric instead of an extended metric, this field displays the metric
+     * namespace that the custom metric is published to.
+     * </p>
+     * 
+     * @param namespace
+     *        If this metric definition is for a custom metric instead of an extended metric, this field displays the
+     *        metric namespace that the custom metric is published to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MetricDefinition withNamespace(String namespace) {
+        setNamespace(namespace);
+        return this;
+    }
+
+    /**
+     * <p>
      * Use this field only if you are sending this metric to CloudWatch. It defines the CloudWatch metric unit that this
      * metric is measured in.
      * </p>
@@ -412,6 +465,8 @@ public class MetricDefinition implements Serializable, Cloneable, StructuredPojo
             sb.append("MetricDefinitionId: ").append(getMetricDefinitionId()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getNamespace() != null)
+            sb.append("Namespace: ").append(getNamespace()).append(",");
         if (getUnitLabel() != null)
             sb.append("UnitLabel: ").append(getUnitLabel()).append(",");
         if (getValueKey() != null)
@@ -446,6 +501,10 @@ public class MetricDefinition implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getNamespace() == null ^ this.getNamespace() == null)
+            return false;
+        if (other.getNamespace() != null && other.getNamespace().equals(this.getNamespace()) == false)
+            return false;
         if (other.getUnitLabel() == null ^ this.getUnitLabel() == null)
             return false;
         if (other.getUnitLabel() != null && other.getUnitLabel().equals(this.getUnitLabel()) == false)
@@ -466,6 +525,7 @@ public class MetricDefinition implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getEventPattern() == null) ? 0 : getEventPattern().hashCode());
         hashCode = prime * hashCode + ((getMetricDefinitionId() == null) ? 0 : getMetricDefinitionId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode());
         hashCode = prime * hashCode + ((getUnitLabel() == null) ? 0 : getUnitLabel().hashCode());
         hashCode = prime * hashCode + ((getValueKey() == null) ? 0 : getValueKey().hashCode());
         return hashCode;

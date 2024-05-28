@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The Athena engine version for running queries.
+ * The Athena engine version for running queries, or the PySpark engine version for running sessions.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/EngineVersion" target="_top">AWS API
@@ -31,7 +31,7 @@ public class EngineVersion implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The engine version requested by the user. Possible values are determined by the output of
-     * <code>ListEngineVersions</code>, including Auto. The default is Auto.
+     * <code>ListEngineVersions</code>, including AUTO. The default is AUTO.
      * </p>
      */
     private String selectedEngineVersion;
@@ -49,12 +49,12 @@ public class EngineVersion implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The engine version requested by the user. Possible values are determined by the output of
-     * <code>ListEngineVersions</code>, including Auto. The default is Auto.
+     * <code>ListEngineVersions</code>, including AUTO. The default is AUTO.
      * </p>
      * 
      * @param selectedEngineVersion
      *        The engine version requested by the user. Possible values are determined by the output of
-     *        <code>ListEngineVersions</code>, including Auto. The default is Auto.
+     *        <code>ListEngineVersions</code>, including AUTO. The default is AUTO.
      */
 
     public void setSelectedEngineVersion(String selectedEngineVersion) {
@@ -64,11 +64,11 @@ public class EngineVersion implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The engine version requested by the user. Possible values are determined by the output of
-     * <code>ListEngineVersions</code>, including Auto. The default is Auto.
+     * <code>ListEngineVersions</code>, including AUTO. The default is AUTO.
      * </p>
      * 
      * @return The engine version requested by the user. Possible values are determined by the output of
-     *         <code>ListEngineVersions</code>, including Auto. The default is Auto.
+     *         <code>ListEngineVersions</code>, including AUTO. The default is AUTO.
      */
 
     public String getSelectedEngineVersion() {
@@ -78,12 +78,12 @@ public class EngineVersion implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The engine version requested by the user. Possible values are determined by the output of
-     * <code>ListEngineVersions</code>, including Auto. The default is Auto.
+     * <code>ListEngineVersions</code>, including AUTO. The default is AUTO.
      * </p>
      * 
      * @param selectedEngineVersion
      *        The engine version requested by the user. Possible values are determined by the output of
-     *        <code>ListEngineVersions</code>, including Auto. The default is Auto.
+     *        <code>ListEngineVersions</code>, including AUTO. The default is AUTO.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

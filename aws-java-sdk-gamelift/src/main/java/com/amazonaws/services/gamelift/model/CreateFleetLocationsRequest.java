@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Represents the input for a request operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleetLocations" target="_top">AWS API
  *      Documentation</a>
@@ -36,7 +33,7 @@ public class CreateFleetLocationsRequest extends com.amazonaws.AmazonWebServiceR
     private String fleetId;
     /**
      * <p>
-     * A list of locations to deploy additional instances to and manage as part of the fleet. You can add any
+     * A list of locations to deploy additional instances to and manage as part of the fleet. You can add any Amazon
      * GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region
      * code such as <code>us-west-2</code>.
      * </p>
@@ -85,14 +82,14 @@ public class CreateFleetLocationsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of locations to deploy additional instances to and manage as part of the fleet. You can add any
+     * A list of locations to deploy additional instances to and manage as part of the fleet. You can add any Amazon
      * GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region
      * code such as <code>us-west-2</code>.
      * </p>
      * 
      * @return A list of locations to deploy additional instances to and manage as part of the fleet. You can add any
-     *         GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services
-     *         Region code such as <code>us-west-2</code>.
+     *         Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web
+     *         Services Region code such as <code>us-west-2</code>.
      */
 
     public java.util.List<LocationConfiguration> getLocations() {
@@ -101,15 +98,15 @@ public class CreateFleetLocationsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of locations to deploy additional instances to and manage as part of the fleet. You can add any
+     * A list of locations to deploy additional instances to and manage as part of the fleet. You can add any Amazon
      * GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region
      * code such as <code>us-west-2</code>.
      * </p>
      * 
      * @param locations
      *        A list of locations to deploy additional instances to and manage as part of the fleet. You can add any
-     *        GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services
-     *        Region code such as <code>us-west-2</code>.
+     *        Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web
+     *        Services Region code such as <code>us-west-2</code>.
      */
 
     public void setLocations(java.util.Collection<LocationConfiguration> locations) {
@@ -123,7 +120,7 @@ public class CreateFleetLocationsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of locations to deploy additional instances to and manage as part of the fleet. You can add any
+     * A list of locations to deploy additional instances to and manage as part of the fleet. You can add any Amazon
      * GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region
      * code such as <code>us-west-2</code>.
      * </p>
@@ -135,8 +132,8 @@ public class CreateFleetLocationsRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @param locations
      *        A list of locations to deploy additional instances to and manage as part of the fleet. You can add any
-     *        GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services
-     *        Region code such as <code>us-west-2</code>.
+     *        Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web
+     *        Services Region code such as <code>us-west-2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,15 +149,15 @@ public class CreateFleetLocationsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of locations to deploy additional instances to and manage as part of the fleet. You can add any
+     * A list of locations to deploy additional instances to and manage as part of the fleet. You can add any Amazon
      * GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services Region
      * code such as <code>us-west-2</code>.
      * </p>
      * 
      * @param locations
      *        A list of locations to deploy additional instances to and manage as part of the fleet. You can add any
-     *        GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web Services
-     *        Region code such as <code>us-west-2</code>.
+     *        Amazon GameLift-supported Amazon Web Services Region as a remote location, in the form of an Amazon Web
+     *        Services Region code such as <code>us-west-2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,12 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
+     * <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking system
+     * defaults into account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Owner</code> – The Amazon Web Services account ID of the topic's owner.
      * </p>
      * </li>
@@ -51,6 +57,32 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * <code>Policy</code> – The JSON serialization of the topic's access control policy.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SignatureVersion</code> – The signature version corresponds to the hashing algorithm used while creating
+     * the signature of the notifications, subscription confirmations, or unsubscribe confirmation messages sent by
+     * Amazon SNS.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * By default, <code>SignatureVersion</code> is set to <b>1</b>. The signature is a Base64-encoded
+     * <b>SHA1withRSA</b> signature.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS uses a Base64-encoded <b>SHA256withRSA</b>
+     * signature.
+     * </p>
+     * <note>
+     * <p>
+     * If the API response does not include the <code>SignatureVersion</code> attribute, it means that the
+     * <code>SignatureVersion</code> for the topic has value <b>1</b>.
+     * </p>
+     * </note></li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -74,8 +106,10 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking system
-     * defaults into account.
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default <code>TracingConfig</code> is set to
+     * <code>PassThrough</code>, and the topic passes through the tracing header it receives from an Amazon SNS
+     * publisher to its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray segment data to topic
+     * owner account if the sampled flag in the tracing header is true. This is only supported on standard topics.
      * </p>
      * </li>
      * </ul>
@@ -152,6 +186,12 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
+     * <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking system
+     * defaults into account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Owner</code> – The Amazon Web Services account ID of the topic's owner.
      * </p>
      * </li>
@@ -159,6 +199,32 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * <code>Policy</code> – The JSON serialization of the topic's access control policy.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SignatureVersion</code> – The signature version corresponds to the hashing algorithm used while creating
+     * the signature of the notifications, subscription confirmations, or unsubscribe confirmation messages sent by
+     * Amazon SNS.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * By default, <code>SignatureVersion</code> is set to <b>1</b>. The signature is a Base64-encoded
+     * <b>SHA1withRSA</b> signature.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS uses a Base64-encoded <b>SHA256withRSA</b>
+     * signature.
+     * </p>
+     * <note>
+     * <p>
+     * If the API response does not include the <code>SignatureVersion</code> attribute, it means that the
+     * <code>SignatureVersion</code> for the topic has value <b>1</b>.
+     * </p>
+     * </note></li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -182,8 +248,10 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking system
-     * defaults into account.
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default <code>TracingConfig</code> is set to
+     * <code>PassThrough</code>, and the topic passes through the tracing header it receives from an Amazon SNS
+     * publisher to its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray segment data to topic
+     * owner account if the sampled flag in the tracing header is true. This is only supported on standard topics.
      * </p>
      * </li>
      * </ul>
@@ -255,6 +323,12 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      *         </li>
      *         <li>
      *         <p>
+     *         <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking
+     *         system defaults into account.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>Owner</code> – The Amazon Web Services account ID of the topic's owner.
      *         </p>
      *         </li>
@@ -262,6 +336,32 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      *         <p>
      *         <code>Policy</code> – The JSON serialization of the topic's access control policy.
      *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SignatureVersion</code> – The signature version corresponds to the hashing algorithm used while
+     *         creating the signature of the notifications, subscription confirmations, or unsubscribe confirmation
+     *         messages sent by Amazon SNS.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         By default, <code>SignatureVersion</code> is set to <b>1</b>. The signature is a Base64-encoded
+     *         <b>SHA1withRSA</b> signature.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS uses a Base64-encoded
+     *         <b>SHA256withRSA</b> signature.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         If the API response does not include the <code>SignatureVersion</code> attribute, it means that the
+     *         <code>SignatureVersion</code> for the topic has value <b>1</b>.
+     *         </p>
+     *         </note></li>
+     *         </ul>
      *         </li>
      *         <li>
      *         <p>
@@ -285,8 +385,11 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      *         </li>
      *         <li>
      *         <p>
-     *         <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking
-     *         system defaults into account.
+     *         <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default <code>TracingConfig</code>
+     *         is set to <code>PassThrough</code>, and the topic passes through the tracing header it receives from an
+     *         Amazon SNS publisher to its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray
+     *         segment data to topic owner account if the sampled flag in the tracing header is true. This is only
+     *         supported on standard topics.
      *         </p>
      *         </li>
      *         </ul>
@@ -370,6 +473,12 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
+     * <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking system
+     * defaults into account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Owner</code> – The Amazon Web Services account ID of the topic's owner.
      * </p>
      * </li>
@@ -377,6 +486,32 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * <code>Policy</code> – The JSON serialization of the topic's access control policy.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SignatureVersion</code> – The signature version corresponds to the hashing algorithm used while creating
+     * the signature of the notifications, subscription confirmations, or unsubscribe confirmation messages sent by
+     * Amazon SNS.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * By default, <code>SignatureVersion</code> is set to <b>1</b>. The signature is a Base64-encoded
+     * <b>SHA1withRSA</b> signature.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS uses a Base64-encoded <b>SHA256withRSA</b>
+     * signature.
+     * </p>
+     * <note>
+     * <p>
+     * If the API response does not include the <code>SignatureVersion</code> attribute, it means that the
+     * <code>SignatureVersion</code> for the topic has value <b>1</b>.
+     * </p>
+     * </note></li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -400,8 +535,10 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking system
-     * defaults into account.
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default <code>TracingConfig</code> is set to
+     * <code>PassThrough</code>, and the topic passes through the tracing header it receives from an Amazon SNS
+     * publisher to its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray segment data to topic
+     * owner account if the sampled flag in the tracing header is true. This is only supported on standard topics.
      * </p>
      * </li>
      * </ul>
@@ -474,6 +611,12 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      *        </li>
      *        <li>
      *        <p>
+     *        <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking
+     *        system defaults into account.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>Owner</code> – The Amazon Web Services account ID of the topic's owner.
      *        </p>
      *        </li>
@@ -481,6 +624,32 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      *        <p>
      *        <code>Policy</code> – The JSON serialization of the topic's access control policy.
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SignatureVersion</code> – The signature version corresponds to the hashing algorithm used while
+     *        creating the signature of the notifications, subscription confirmations, or unsubscribe confirmation
+     *        messages sent by Amazon SNS.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        By default, <code>SignatureVersion</code> is set to <b>1</b>. The signature is a Base64-encoded
+     *        <b>SHA1withRSA</b> signature.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS uses a Base64-encoded
+     *        <b>SHA256withRSA</b> signature.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If the API response does not include the <code>SignatureVersion</code> attribute, it means that the
+     *        <code>SignatureVersion</code> for the topic has value <b>1</b>.
+     *        </p>
+     *        </note></li>
+     *        </ul>
      *        </li>
      *        <li>
      *        <p>
@@ -504,8 +673,11 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking
-     *        system defaults into account.
+     *        <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default <code>TracingConfig</code> is
+     *        set to <code>PassThrough</code>, and the topic passes through the tracing header it receives from an
+     *        Amazon SNS publisher to its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray
+     *        segment data to topic owner account if the sampled flag in the tracing header is true. This is only
+     *        supported on standard topics.
      *        </p>
      *        </li>
      *        </ul>
@@ -586,6 +758,12 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
+     * <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking system
+     * defaults into account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Owner</code> – The Amazon Web Services account ID of the topic's owner.
      * </p>
      * </li>
@@ -593,6 +771,32 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * <code>Policy</code> – The JSON serialization of the topic's access control policy.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SignatureVersion</code> – The signature version corresponds to the hashing algorithm used while creating
+     * the signature of the notifications, subscription confirmations, or unsubscribe confirmation messages sent by
+     * Amazon SNS.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * By default, <code>SignatureVersion</code> is set to <b>1</b>. The signature is a Base64-encoded
+     * <b>SHA1withRSA</b> signature.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS uses a Base64-encoded <b>SHA256withRSA</b>
+     * signature.
+     * </p>
+     * <note>
+     * <p>
+     * If the API response does not include the <code>SignatureVersion</code> attribute, it means that the
+     * <code>SignatureVersion</code> for the topic has value <b>1</b>.
+     * </p>
+     * </note></li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -616,8 +820,10 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      * </li>
      * <li>
      * <p>
-     * <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking system
-     * defaults into account.
+     * <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default <code>TracingConfig</code> is set to
+     * <code>PassThrough</code>, and the topic passes through the tracing header it receives from an Amazon SNS
+     * publisher to its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray segment data to topic
+     * owner account if the sampled flag in the tracing header is true. This is only supported on standard topics.
      * </p>
      * </li>
      * </ul>
@@ -690,6 +896,12 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      *        </li>
      *        <li>
      *        <p>
+     *        <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking
+     *        system defaults into account.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>Owner</code> – The Amazon Web Services account ID of the topic's owner.
      *        </p>
      *        </li>
@@ -697,6 +909,32 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      *        <p>
      *        <code>Policy</code> – The JSON serialization of the topic's access control policy.
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SignatureVersion</code> – The signature version corresponds to the hashing algorithm used while
+     *        creating the signature of the notifications, subscription confirmations, or unsubscribe confirmation
+     *        messages sent by Amazon SNS.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        By default, <code>SignatureVersion</code> is set to <b>1</b>. The signature is a Base64-encoded
+     *        <b>SHA1withRSA</b> signature.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When you set <code>SignatureVersion</code> to <b>2</b>. Amazon SNS uses a Base64-encoded
+     *        <b>SHA256withRSA</b> signature.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If the API response does not include the <code>SignatureVersion</code> attribute, it means that the
+     *        <code>SignatureVersion</code> for the topic has value <b>1</b>.
+     *        </p>
+     *        </note></li>
+     *        </ul>
      *        </li>
      *        <li>
      *        <p>
@@ -720,8 +958,11 @@ public class GetTopicAttributesResult extends com.amazonaws.AmazonWebServiceResu
      *        </li>
      *        <li>
      *        <p>
-     *        <code>EffectiveDeliveryPolicy</code> – The JSON serialization of the effective delivery policy, taking
-     *        system defaults into account.
+     *        <code>TracingConfig</code> – Tracing mode of an Amazon SNS topic. By default <code>TracingConfig</code> is
+     *        set to <code>PassThrough</code>, and the topic passes through the tracing header it receives from an
+     *        Amazon SNS publisher to its subscriptions. If set to <code>Active</code>, Amazon SNS will vend X-Ray
+     *        segment data to topic owner account if the sampled flag in the tracing header is true. This is only
+     *        supported on standard topics.
      *        </p>
      *        </li>
      *        </ul>

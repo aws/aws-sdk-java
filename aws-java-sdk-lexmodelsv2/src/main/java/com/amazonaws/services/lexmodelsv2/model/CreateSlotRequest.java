@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -91,7 +91,7 @@ public class CreateSlotRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Indicates whether the slot returns multiple values in one response. Multi-value slots are only available in the
-     * en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a
+     * <code>en-US</code> locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a
      * <code>ValidationException</code>.
      * </p>
      * <p>
@@ -523,7 +523,7 @@ public class CreateSlotRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Indicates whether the slot returns multiple values in one response. Multi-value slots are only available in the
-     * en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a
+     * <code>en-US</code> locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a
      * <code>ValidationException</code>.
      * </p>
      * <p>
@@ -532,8 +532,8 @@ public class CreateSlotRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param multipleValuesSetting
      *        Indicates whether the slot returns multiple values in one response. Multi-value slots are only available
-     *        in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a
-     *        <code>ValidationException</code>. </p>
+     *        in the <code>en-US</code> locale. If you set this value to <code>true</code> in any other locale, Amazon
+     *        Lex throws a <code>ValidationException</code>. </p>
      *        <p>
      *        If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.
      */
@@ -545,7 +545,7 @@ public class CreateSlotRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Indicates whether the slot returns multiple values in one response. Multi-value slots are only available in the
-     * en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a
+     * <code>en-US</code> locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a
      * <code>ValidationException</code>.
      * </p>
      * <p>
@@ -553,8 +553,8 @@ public class CreateSlotRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @return Indicates whether the slot returns multiple values in one response. Multi-value slots are only available
-     *         in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a
-     *         <code>ValidationException</code>. </p>
+     *         in the <code>en-US</code> locale. If you set this value to <code>true</code> in any other locale, Amazon
+     *         Lex throws a <code>ValidationException</code>. </p>
      *         <p>
      *         If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.
      */
@@ -566,7 +566,7 @@ public class CreateSlotRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Indicates whether the slot returns multiple values in one response. Multi-value slots are only available in the
-     * en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a
+     * <code>en-US</code> locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a
      * <code>ValidationException</code>.
      * </p>
      * <p>
@@ -575,8 +575,8 @@ public class CreateSlotRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param multipleValuesSetting
      *        Indicates whether the slot returns multiple values in one response. Multi-value slots are only available
-     *        in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a
-     *        <code>ValidationException</code>. </p>
+     *        in the <code>en-US</code> locale. If you set this value to <code>true</code> in any other locale, Amazon
+     *        Lex throws a <code>ValidationException</code>. </p>
      *        <p>
      *        If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.

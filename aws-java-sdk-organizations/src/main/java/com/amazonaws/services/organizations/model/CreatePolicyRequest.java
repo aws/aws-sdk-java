@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,11 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The policy text content to add to the new policy. The text that you supply must adhere to the rules of the policy
      * type you specify in the <code>Type</code> parameter.
+     * </p>
+     * <p>
+     * The maximum size of a policy document depends on the policy's type. For more information, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html#min-max-values"
+     * >Maximum and minimum values</a> in the <i>Organizations User Guide</i>.
      * </p>
      */
     private String content;
@@ -90,7 +95,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * If any one of the tags is invalid or if you exceed the allowed number of tags for a policy, then the entire
+     * If any one of the tags is not valid or if you exceed the allowed number of tags for a policy, then the entire
      * request fails and the policy is not created.
      * </p>
      * </note>
@@ -102,10 +107,19 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The policy text content to add to the new policy. The text that you supply must adhere to the rules of the policy
      * type you specify in the <code>Type</code> parameter.
      * </p>
+     * <p>
+     * The maximum size of a policy document depends on the policy's type. For more information, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html#min-max-values"
+     * >Maximum and minimum values</a> in the <i>Organizations User Guide</i>.
+     * </p>
      * 
      * @param content
      *        The policy text content to add to the new policy. The text that you supply must adhere to the rules of the
-     *        policy type you specify in the <code>Type</code> parameter.
+     *        policy type you specify in the <code>Type</code> parameter. </p>
+     *        <p>
+     *        The maximum size of a policy document depends on the policy's type. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html#min-max-values"
+     *        >Maximum and minimum values</a> in the <i>Organizations User Guide</i>.
      */
 
     public void setContent(String content) {
@@ -117,9 +131,18 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The policy text content to add to the new policy. The text that you supply must adhere to the rules of the policy
      * type you specify in the <code>Type</code> parameter.
      * </p>
+     * <p>
+     * The maximum size of a policy document depends on the policy's type. For more information, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html#min-max-values"
+     * >Maximum and minimum values</a> in the <i>Organizations User Guide</i>.
+     * </p>
      * 
      * @return The policy text content to add to the new policy. The text that you supply must adhere to the rules of
-     *         the policy type you specify in the <code>Type</code> parameter.
+     *         the policy type you specify in the <code>Type</code> parameter. </p>
+     *         <p>
+     *         The maximum size of a policy document depends on the policy's type. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html#min-max-values"
+     *         >Maximum and minimum values</a> in the <i>Organizations User Guide</i>.
      */
 
     public String getContent() {
@@ -131,10 +154,19 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The policy text content to add to the new policy. The text that you supply must adhere to the rules of the policy
      * type you specify in the <code>Type</code> parameter.
      * </p>
+     * <p>
+     * The maximum size of a policy document depends on the policy's type. For more information, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html#min-max-values"
+     * >Maximum and minimum values</a> in the <i>Organizations User Guide</i>.
+     * </p>
      * 
      * @param content
      *        The policy text content to add to the new policy. The text that you supply must adhere to the rules of the
-     *        policy type you specify in the <code>Type</code> parameter.
+     *        policy type you specify in the <code>Type</code> parameter. </p>
+     *        <p>
+     *        The maximum size of a policy document depends on the policy's type. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html#min-max-values"
+     *        >Maximum and minimum values</a> in the <i>Organizations User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -588,7 +620,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * If any one of the tags is invalid or if you exceed the allowed number of tags for a policy, then the entire
+     * If any one of the tags is not valid or if you exceed the allowed number of tags for a policy, then the entire
      * request fails and the policy is not created.
      * </p>
      * </note>
@@ -599,7 +631,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations
      *         resources</a> in the Organizations User Guide.</p> <note>
      *         <p>
-     *         If any one of the tags is invalid or if you exceed the allowed number of tags for a policy, then the
+     *         If any one of the tags is not valid or if you exceed the allowed number of tags for a policy, then the
      *         entire request fails and the policy is not created.
      *         </p>
      */
@@ -618,7 +650,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * If any one of the tags is invalid or if you exceed the allowed number of tags for a policy, then the entire
+     * If any one of the tags is not valid or if you exceed the allowed number of tags for a policy, then the entire
      * request fails and the policy is not created.
      * </p>
      * </note>
@@ -630,7 +662,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations
      *        resources</a> in the Organizations User Guide.</p> <note>
      *        <p>
-     *        If any one of the tags is invalid or if you exceed the allowed number of tags for a policy, then the
+     *        If any one of the tags is not valid or if you exceed the allowed number of tags for a policy, then the
      *        entire request fails and the policy is not created.
      *        </p>
      */
@@ -654,7 +686,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * If any one of the tags is invalid or if you exceed the allowed number of tags for a policy, then the entire
+     * If any one of the tags is not valid or if you exceed the allowed number of tags for a policy, then the entire
      * request fails and the policy is not created.
      * </p>
      * </note>
@@ -671,7 +703,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations
      *        resources</a> in the Organizations User Guide.</p> <note>
      *        <p>
-     *        If any one of the tags is invalid or if you exceed the allowed number of tags for a policy, then the
+     *        If any one of the tags is not valid or if you exceed the allowed number of tags for a policy, then the
      *        entire request fails and the policy is not created.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -697,7 +729,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <note>
      * <p>
-     * If any one of the tags is invalid or if you exceed the allowed number of tags for a policy, then the entire
+     * If any one of the tags is not valid or if you exceed the allowed number of tags for a policy, then the entire
      * request fails and the policy is not created.
      * </p>
      * </note>
@@ -709,7 +741,7 @@ public class CreatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging Organizations
      *        resources</a> in the Organizations User Guide.</p> <note>
      *        <p>
-     *        If any one of the tags is invalid or if you exceed the allowed number of tags for a policy, then the
+     *        If any one of the tags is not valid or if you exceed the allowed number of tags for a policy, then the
      *        entire request fails and the policy is not created.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.

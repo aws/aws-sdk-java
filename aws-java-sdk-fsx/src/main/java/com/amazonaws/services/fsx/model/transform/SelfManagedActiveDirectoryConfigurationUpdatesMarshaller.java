@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,12 @@ public class SelfManagedActiveDirectoryConfigurationUpdatesMarshaller {
             .marshallLocationName("Password").build();
     private static final MarshallingInfo<List> DNSIPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("DnsIps").build();
+    private static final MarshallingInfo<String> DOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainName").build();
+    private static final MarshallingInfo<String> ORGANIZATIONALUNITDISTINGUISHEDNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OrganizationalUnitDistinguishedName").build();
+    private static final MarshallingInfo<String> FILESYSTEMADMINISTRATORSGROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FileSystemAdministratorsGroup").build();
 
     private static final SelfManagedActiveDirectoryConfigurationUpdatesMarshaller instance = new SelfManagedActiveDirectoryConfigurationUpdatesMarshaller();
 
@@ -54,6 +60,11 @@ public class SelfManagedActiveDirectoryConfigurationUpdatesMarshaller {
             protocolMarshaller.marshall(selfManagedActiveDirectoryConfigurationUpdates.getUserName(), USERNAME_BINDING);
             protocolMarshaller.marshall(selfManagedActiveDirectoryConfigurationUpdates.getPassword(), PASSWORD_BINDING);
             protocolMarshaller.marshall(selfManagedActiveDirectoryConfigurationUpdates.getDnsIps(), DNSIPS_BINDING);
+            protocolMarshaller.marshall(selfManagedActiveDirectoryConfigurationUpdates.getDomainName(), DOMAINNAME_BINDING);
+            protocolMarshaller.marshall(selfManagedActiveDirectoryConfigurationUpdates.getOrganizationalUnitDistinguishedName(),
+                    ORGANIZATIONALUNITDISTINGUISHEDNAME_BINDING);
+            protocolMarshaller.marshall(selfManagedActiveDirectoryConfigurationUpdates.getFileSystemAdministratorsGroup(),
+                    FILESYSTEMADMINISTRATORSGROUP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

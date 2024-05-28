@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,14 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
      * <p>
      * The source of the event.
      * </p>
+     * <note>
+     * <p>
+     * <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a request that do not include each of
+     * those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of the entries have
+     * each of these properties, EventBridge fails the entire request.
+     * </p>
+     * </note>
      */
     private String source;
     /**
@@ -51,14 +59,30 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
     private java.util.List<String> resources;
     /**
      * <p>
-     * Free-form string used to decide what fields to expect in the event detail.
+     * Free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.
      * </p>
+     * <note>
+     * <p>
+     * <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a request that do not include each of
+     * those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of the entries have
+     * each of these properties, EventBridge fails the entire request.
+     * </p>
+     * </note>
      */
     private String detailType;
     /**
      * <p>
-     * A valid JSON object. There is no other schema imposed. The JSON object may contain fields and nested subobjects.
+     * A valid JSON object. There is no other schema imposed. The JSON object may contain fields and nested sub-objects.
      * </p>
+     * <note>
+     * <p>
+     * <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a request that do not include each of
+     * those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of the entries have
+     * each of these properties, EventBridge fails the entire request.
+     * </p>
+     * </note>
      */
     private String detail;
     /**
@@ -68,9 +92,10 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * If you're using a global endpoint with a custom bus, you must enter the name, not the ARN, of the event bus in
-     * either the primary or secondary Region here and the corresponding event bus in the other Region will be
-     * determined based on the endpoint referenced by the <code>EndpointId</code>.
+     * If you're using a global endpoint with a custom bus, you can enter either the name or Amazon Resource Name (ARN)
+     * of the event bus in either the primary or secondary Region here. EventBridge then determines the corresponding
+     * event bus in the other Region based on the endpoint referenced by the <code>EndpointId</code>. Specifying the
+     * event bus ARN is preferred.
      * </p>
      * </note>
      */
@@ -147,9 +172,23 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
      * <p>
      * The source of the event.
      * </p>
+     * <note>
+     * <p>
+     * <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a request that do not include each of
+     * those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of the entries have
+     * each of these properties, EventBridge fails the entire request.
+     * </p>
+     * </note>
      * 
      * @param source
-     *        The source of the event.
+     *        The source of the event.</p> <note>
+     *        <p>
+     *        <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     *        successfully send an event to an event bus. If you include event entries in a request that do not include
+     *        each of those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of
+     *        the entries have each of these properties, EventBridge fails the entire request.
+     *        </p>
      */
 
     public void setSource(String source) {
@@ -160,8 +199,22 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
      * <p>
      * The source of the event.
      * </p>
+     * <note>
+     * <p>
+     * <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a request that do not include each of
+     * those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of the entries have
+     * each of these properties, EventBridge fails the entire request.
+     * </p>
+     * </note>
      * 
-     * @return The source of the event.
+     * @return The source of the event.</p> <note>
+     *         <p>
+     *         <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     *         successfully send an event to an event bus. If you include event entries in a request that do not include
+     *         each of those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of
+     *         the entries have each of these properties, EventBridge fails the entire request.
+     *         </p>
      */
 
     public String getSource() {
@@ -172,9 +225,23 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
      * <p>
      * The source of the event.
      * </p>
+     * <note>
+     * <p>
+     * <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a request that do not include each of
+     * those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of the entries have
+     * each of these properties, EventBridge fails the entire request.
+     * </p>
+     * </note>
      * 
      * @param source
-     *        The source of the event.
+     *        The source of the event.</p> <note>
+     *        <p>
+     *        <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     *        successfully send an event to an event bus. If you include event entries in a request that do not include
+     *        each of those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of
+     *        the entries have each of these properties, EventBridge fails the entire request.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -263,11 +330,26 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Free-form string used to decide what fields to expect in the event detail.
+     * Free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.
      * </p>
+     * <note>
+     * <p>
+     * <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a request that do not include each of
+     * those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of the entries have
+     * each of these properties, EventBridge fails the entire request.
+     * </p>
+     * </note>
      * 
      * @param detailType
-     *        Free-form string used to decide what fields to expect in the event detail.
+     *        Free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event
+     *        detail.</p> <note>
+     *        <p>
+     *        <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     *        successfully send an event to an event bus. If you include event entries in a request that do not include
+     *        each of those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of
+     *        the entries have each of these properties, EventBridge fails the entire request.
+     *        </p>
      */
 
     public void setDetailType(String detailType) {
@@ -276,10 +358,25 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Free-form string used to decide what fields to expect in the event detail.
+     * Free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.
      * </p>
+     * <note>
+     * <p>
+     * <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a request that do not include each of
+     * those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of the entries have
+     * each of these properties, EventBridge fails the entire request.
+     * </p>
+     * </note>
      * 
-     * @return Free-form string used to decide what fields to expect in the event detail.
+     * @return Free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event
+     *         detail.</p> <note>
+     *         <p>
+     *         <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     *         successfully send an event to an event bus. If you include event entries in a request that do not include
+     *         each of those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of
+     *         the entries have each of these properties, EventBridge fails the entire request.
+     *         </p>
      */
 
     public String getDetailType() {
@@ -288,11 +385,26 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Free-form string used to decide what fields to expect in the event detail.
+     * Free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event detail.
      * </p>
+     * <note>
+     * <p>
+     * <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a request that do not include each of
+     * those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of the entries have
+     * each of these properties, EventBridge fails the entire request.
+     * </p>
+     * </note>
      * 
      * @param detailType
-     *        Free-form string used to decide what fields to expect in the event detail.
+     *        Free-form string, with a maximum of 128 characters, used to decide what fields to expect in the event
+     *        detail.</p> <note>
+     *        <p>
+     *        <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     *        successfully send an event to an event bus. If you include event entries in a request that do not include
+     *        each of those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of
+     *        the entries have each of these properties, EventBridge fails the entire request.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -303,12 +415,26 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A valid JSON object. There is no other schema imposed. The JSON object may contain fields and nested subobjects.
+     * A valid JSON object. There is no other schema imposed. The JSON object may contain fields and nested sub-objects.
      * </p>
+     * <note>
+     * <p>
+     * <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a request that do not include each of
+     * those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of the entries have
+     * each of these properties, EventBridge fails the entire request.
+     * </p>
+     * </note>
      * 
      * @param detail
      *        A valid JSON object. There is no other schema imposed. The JSON object may contain fields and nested
-     *        subobjects.
+     *        sub-objects.</p> <note>
+     *        <p>
+     *        <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     *        successfully send an event to an event bus. If you include event entries in a request that do not include
+     *        each of those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of
+     *        the entries have each of these properties, EventBridge fails the entire request.
+     *        </p>
      */
 
     public void setDetail(String detail) {
@@ -317,11 +443,25 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A valid JSON object. There is no other schema imposed. The JSON object may contain fields and nested subobjects.
+     * A valid JSON object. There is no other schema imposed. The JSON object may contain fields and nested sub-objects.
      * </p>
+     * <note>
+     * <p>
+     * <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a request that do not include each of
+     * those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of the entries have
+     * each of these properties, EventBridge fails the entire request.
+     * </p>
+     * </note>
      * 
      * @return A valid JSON object. There is no other schema imposed. The JSON object may contain fields and nested
-     *         subobjects.
+     *         sub-objects.</p> <note>
+     *         <p>
+     *         <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     *         successfully send an event to an event bus. If you include event entries in a request that do not include
+     *         each of those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of
+     *         the entries have each of these properties, EventBridge fails the entire request.
+     *         </p>
      */
 
     public String getDetail() {
@@ -330,12 +470,26 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A valid JSON object. There is no other schema imposed. The JSON object may contain fields and nested subobjects.
+     * A valid JSON object. There is no other schema imposed. The JSON object may contain fields and nested sub-objects.
      * </p>
+     * <note>
+     * <p>
+     * <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     * successfully send an event to an event bus. If you include event entries in a request that do not include each of
+     * those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of the entries have
+     * each of these properties, EventBridge fails the entire request.
+     * </p>
+     * </note>
      * 
      * @param detail
      *        A valid JSON object. There is no other schema imposed. The JSON object may contain fields and nested
-     *        subobjects.
+     *        sub-objects.</p> <note>
+     *        <p>
+     *        <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required for EventBridge to
+     *        successfully send an event to an event bus. If you include event entries in a request that do not include
+     *        each of those properties, EventBridge fails that entry. If you submit a request in which <i>none</i> of
+     *        the entries have each of these properties, EventBridge fails the entire request.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -351,9 +505,10 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * If you're using a global endpoint with a custom bus, you must enter the name, not the ARN, of the event bus in
-     * either the primary or secondary Region here and the corresponding event bus in the other Region will be
-     * determined based on the endpoint referenced by the <code>EndpointId</code>.
+     * If you're using a global endpoint with a custom bus, you can enter either the name or Amazon Resource Name (ARN)
+     * of the event bus in either the primary or secondary Region here. EventBridge then determines the corresponding
+     * event bus in the other Region based on the endpoint referenced by the <code>EndpointId</code>. Specifying the
+     * event bus ARN is preferred.
      * </p>
      * </note>
      * 
@@ -361,9 +516,10 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
      *        The name or ARN of the event bus to receive the event. Only the rules that are associated with this event
      *        bus are used to match the event. If you omit this, the default event bus is used.</p> <note>
      *        <p>
-     *        If you're using a global endpoint with a custom bus, you must enter the name, not the ARN, of the event
-     *        bus in either the primary or secondary Region here and the corresponding event bus in the other Region
-     *        will be determined based on the endpoint referenced by the <code>EndpointId</code>.
+     *        If you're using a global endpoint with a custom bus, you can enter either the name or Amazon Resource Name
+     *        (ARN) of the event bus in either the primary or secondary Region here. EventBridge then determines the
+     *        corresponding event bus in the other Region based on the endpoint referenced by the
+     *        <code>EndpointId</code>. Specifying the event bus ARN is preferred.
      *        </p>
      */
 
@@ -378,18 +534,20 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * If you're using a global endpoint with a custom bus, you must enter the name, not the ARN, of the event bus in
-     * either the primary or secondary Region here and the corresponding event bus in the other Region will be
-     * determined based on the endpoint referenced by the <code>EndpointId</code>.
+     * If you're using a global endpoint with a custom bus, you can enter either the name or Amazon Resource Name (ARN)
+     * of the event bus in either the primary or secondary Region here. EventBridge then determines the corresponding
+     * event bus in the other Region based on the endpoint referenced by the <code>EndpointId</code>. Specifying the
+     * event bus ARN is preferred.
      * </p>
      * </note>
      * 
      * @return The name or ARN of the event bus to receive the event. Only the rules that are associated with this event
      *         bus are used to match the event. If you omit this, the default event bus is used.</p> <note>
      *         <p>
-     *         If you're using a global endpoint with a custom bus, you must enter the name, not the ARN, of the event
-     *         bus in either the primary or secondary Region here and the corresponding event bus in the other Region
-     *         will be determined based on the endpoint referenced by the <code>EndpointId</code>.
+     *         If you're using a global endpoint with a custom bus, you can enter either the name or Amazon Resource
+     *         Name (ARN) of the event bus in either the primary or secondary Region here. EventBridge then determines
+     *         the corresponding event bus in the other Region based on the endpoint referenced by the
+     *         <code>EndpointId</code>. Specifying the event bus ARN is preferred.
      *         </p>
      */
 
@@ -404,9 +562,10 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * If you're using a global endpoint with a custom bus, you must enter the name, not the ARN, of the event bus in
-     * either the primary or secondary Region here and the corresponding event bus in the other Region will be
-     * determined based on the endpoint referenced by the <code>EndpointId</code>.
+     * If you're using a global endpoint with a custom bus, you can enter either the name or Amazon Resource Name (ARN)
+     * of the event bus in either the primary or secondary Region here. EventBridge then determines the corresponding
+     * event bus in the other Region based on the endpoint referenced by the <code>EndpointId</code>. Specifying the
+     * event bus ARN is preferred.
      * </p>
      * </note>
      * 
@@ -414,9 +573,10 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
      *        The name or ARN of the event bus to receive the event. Only the rules that are associated with this event
      *        bus are used to match the event. If you omit this, the default event bus is used.</p> <note>
      *        <p>
-     *        If you're using a global endpoint with a custom bus, you must enter the name, not the ARN, of the event
-     *        bus in either the primary or secondary Region here and the corresponding event bus in the other Region
-     *        will be determined based on the endpoint referenced by the <code>EndpointId</code>.
+     *        If you're using a global endpoint with a custom bus, you can enter either the name or Amazon Resource Name
+     *        (ARN) of the event bus in either the primary or secondary Region here. EventBridge then determines the
+     *        corresponding event bus in the other Region based on the endpoint referenced by the
+     *        <code>EndpointId</code>. Specifying the event bus ARN is preferred.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

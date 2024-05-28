@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,6 +67,15 @@ public class VehicleSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date lastModificationTime;
+    /**
+     * <p>
+     * Static information about a vehicle in a key-value pair. For example:
+     * </p>
+     * <p>
+     * <code>"engineType"</code> : <code>"1.3 L R2"</code>
+     * </p>
+     */
+    private java.util.Map<String, String> attributes;
 
     /**
      * <p>
@@ -309,6 +318,89 @@ public class VehicleSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Static information about a vehicle in a key-value pair. For example:
+     * </p>
+     * <p>
+     * <code>"engineType"</code> : <code>"1.3 L R2"</code>
+     * </p>
+     * 
+     * @return Static information about a vehicle in a key-value pair. For example:</p>
+     *         <p>
+     *         <code>"engineType"</code> : <code>"1.3 L R2"</code>
+     */
+
+    public java.util.Map<String, String> getAttributes() {
+        return attributes;
+    }
+
+    /**
+     * <p>
+     * Static information about a vehicle in a key-value pair. For example:
+     * </p>
+     * <p>
+     * <code>"engineType"</code> : <code>"1.3 L R2"</code>
+     * </p>
+     * 
+     * @param attributes
+     *        Static information about a vehicle in a key-value pair. For example:</p>
+     *        <p>
+     *        <code>"engineType"</code> : <code>"1.3 L R2"</code>
+     */
+
+    public void setAttributes(java.util.Map<String, String> attributes) {
+        this.attributes = attributes;
+    }
+
+    /**
+     * <p>
+     * Static information about a vehicle in a key-value pair. For example:
+     * </p>
+     * <p>
+     * <code>"engineType"</code> : <code>"1.3 L R2"</code>
+     * </p>
+     * 
+     * @param attributes
+     *        Static information about a vehicle in a key-value pair. For example:</p>
+     *        <p>
+     *        <code>"engineType"</code> : <code>"1.3 L R2"</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VehicleSummary withAttributes(java.util.Map<String, String> attributes) {
+        setAttributes(attributes);
+        return this;
+    }
+
+    /**
+     * Add a single Attributes entry
+     *
+     * @see VehicleSummary#withAttributes
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VehicleSummary addAttributesEntry(String key, String value) {
+        if (null == this.attributes) {
+            this.attributes = new java.util.HashMap<String, String>();
+        }
+        if (this.attributes.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.attributes.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Attributes.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VehicleSummary clearAttributesEntries() {
+        this.attributes = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -331,7 +423,9 @@ public class VehicleSummary implements Serializable, Cloneable, StructuredPojo {
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getLastModificationTime() != null)
-            sb.append("LastModificationTime: ").append(getLastModificationTime());
+            sb.append("LastModificationTime: ").append(getLastModificationTime()).append(",");
+        if (getAttributes() != null)
+            sb.append("Attributes: ").append(getAttributes());
         sb.append("}");
         return sb.toString();
     }
@@ -370,6 +464,10 @@ public class VehicleSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLastModificationTime() != null && other.getLastModificationTime().equals(this.getLastModificationTime()) == false)
             return false;
+        if (other.getAttributes() == null ^ this.getAttributes() == null)
+            return false;
+        if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
+            return false;
         return true;
     }
 
@@ -384,6 +482,7 @@ public class VehicleSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDecoderManifestArn() == null) ? 0 : getDecoderManifestArn().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastModificationTime() == null) ? 0 : getLastModificationTime().hashCode());
+        hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
         return hashCode;
     }
 

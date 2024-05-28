@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class RoutingControlMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RoutingControlName").build();
     private static final MarshallingInfo<String> ROUTINGCONTROLSTATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RoutingControlState").build();
+    private static final MarshallingInfo<String> OWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Owner").build();
 
     private static final RoutingControlMarshaller instance = new RoutingControlMarshaller();
 
@@ -59,6 +61,7 @@ public class RoutingControlMarshaller {
             protocolMarshaller.marshall(routingControl.getRoutingControlArn(), ROUTINGCONTROLARN_BINDING);
             protocolMarshaller.marshall(routingControl.getRoutingControlName(), ROUTINGCONTROLNAME_BINDING);
             protocolMarshaller.marshall(routingControl.getRoutingControlState(), ROUTINGCONTROLSTATE_BINDING);
+            protocolMarshaller.marshall(routingControl.getOwner(), OWNER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

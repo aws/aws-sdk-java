@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,18 @@ public class GetEndpointRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String certificateArn;
+    /**
+     * <p>
+     * The device role ARN of the device. This is an optional parameter.
+     * </p>
+     */
+    private String deviceRoleArn;
+    /**
+     * <p>
+     * The authentication method used during the device connection.
+     * </p>
+     */
+    private String authenticationMethod;
 
     /**
      * <p>
@@ -119,6 +131,105 @@ public class GetEndpointRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The device role ARN of the device. This is an optional parameter.
+     * </p>
+     * 
+     * @param deviceRoleArn
+     *        The device role ARN of the device. This is an optional parameter.
+     */
+
+    public void setDeviceRoleArn(String deviceRoleArn) {
+        this.deviceRoleArn = deviceRoleArn;
+    }
+
+    /**
+     * <p>
+     * The device role ARN of the device. This is an optional parameter.
+     * </p>
+     * 
+     * @return The device role ARN of the device. This is an optional parameter.
+     */
+
+    public String getDeviceRoleArn() {
+        return this.deviceRoleArn;
+    }
+
+    /**
+     * <p>
+     * The device role ARN of the device. This is an optional parameter.
+     * </p>
+     * 
+     * @param deviceRoleArn
+     *        The device role ARN of the device. This is an optional parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetEndpointRequest withDeviceRoleArn(String deviceRoleArn) {
+        setDeviceRoleArn(deviceRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The authentication method used during the device connection.
+     * </p>
+     * 
+     * @param authenticationMethod
+     *        The authentication method used during the device connection.
+     * @see AuthenticationMethod
+     */
+
+    public void setAuthenticationMethod(String authenticationMethod) {
+        this.authenticationMethod = authenticationMethod;
+    }
+
+    /**
+     * <p>
+     * The authentication method used during the device connection.
+     * </p>
+     * 
+     * @return The authentication method used during the device connection.
+     * @see AuthenticationMethod
+     */
+
+    public String getAuthenticationMethod() {
+        return this.authenticationMethod;
+    }
+
+    /**
+     * <p>
+     * The authentication method used during the device connection.
+     * </p>
+     * 
+     * @param authenticationMethod
+     *        The authentication method used during the device connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AuthenticationMethod
+     */
+
+    public GetEndpointRequest withAuthenticationMethod(String authenticationMethod) {
+        setAuthenticationMethod(authenticationMethod);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The authentication method used during the device connection.
+     * </p>
+     * 
+     * @param authenticationMethod
+     *        The authentication method used during the device connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AuthenticationMethod
+     */
+
+    public GetEndpointRequest withAuthenticationMethod(AuthenticationMethod authenticationMethod) {
+        this.authenticationMethod = authenticationMethod.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,7 +244,11 @@ public class GetEndpointRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getThingArn() != null)
             sb.append("ThingArn: ").append(getThingArn()).append(",");
         if (getCertificateArn() != null)
-            sb.append("CertificateArn: ").append(getCertificateArn());
+            sb.append("CertificateArn: ").append(getCertificateArn()).append(",");
+        if (getDeviceRoleArn() != null)
+            sb.append("DeviceRoleArn: ").append(getDeviceRoleArn()).append(",");
+        if (getAuthenticationMethod() != null)
+            sb.append("AuthenticationMethod: ").append(getAuthenticationMethod());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +271,14 @@ public class GetEndpointRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getCertificateArn() != null && other.getCertificateArn().equals(this.getCertificateArn()) == false)
             return false;
+        if (other.getDeviceRoleArn() == null ^ this.getDeviceRoleArn() == null)
+            return false;
+        if (other.getDeviceRoleArn() != null && other.getDeviceRoleArn().equals(this.getDeviceRoleArn()) == false)
+            return false;
+        if (other.getAuthenticationMethod() == null ^ this.getAuthenticationMethod() == null)
+            return false;
+        if (other.getAuthenticationMethod() != null && other.getAuthenticationMethod().equals(this.getAuthenticationMethod()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +289,8 @@ public class GetEndpointRequest extends com.amazonaws.AmazonWebServiceRequest im
 
         hashCode = prime * hashCode + ((getThingArn() == null) ? 0 : getThingArn().hashCode());
         hashCode = prime * hashCode + ((getCertificateArn() == null) ? 0 : getCertificateArn().hashCode());
+        hashCode = prime * hashCode + ((getDeviceRoleArn() == null) ? 0 : getDeviceRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getAuthenticationMethod() == null) ? 0 : getAuthenticationMethod().hashCode());
         return hashCode;
     }
 

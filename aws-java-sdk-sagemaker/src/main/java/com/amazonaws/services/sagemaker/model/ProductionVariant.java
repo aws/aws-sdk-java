@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Identifies a model that you want to host and the resources chosen to deploy for hosting it. If you are deploying
- * multiple models, tell SageMaker how to distribute traffic among the models by specifying variant weights.
+ * multiple models, tell SageMaker how to distribute traffic among the models by specifying variant weights. For more
+ * information on production variants, check <a
+ * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html"> Production variants</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProductionVariant" target="_top">AWS API
@@ -85,7 +87,7 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The size, in GB, of the ML storage volume attached to individual inference instance associated with the
-     * production variant. Currenly only Amazon EBS gp2 storage volumes are supported.
+     * production variant. Currently only Amazon EBS gp2 storage volumes are supported.
      * </p>
      */
     private Integer volumeSizeInGB;
@@ -105,6 +107,28 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private Integer containerStartupHealthCheckTimeoutInSeconds;
+    /**
+     * <p>
+     * You can use this parameter to turn on native Amazon Web Services Systems Manager (SSM) access for a production
+     * variant behind an endpoint. By default, SSM access is disabled for all production variants behind an endpoint.
+     * You can turn on or turn off SSM access for a production variant behind an existing endpoint by creating a new
+     * endpoint configuration and calling <code>UpdateEndpoint</code>.
+     * </p>
+     */
+    private Boolean enableSSMAccess;
+    /**
+     * <p>
+     * Settings that control the range in the number of instances that the endpoint provisions as it scales up or down
+     * to accommodate traffic.
+     * </p>
+     */
+    private ProductionVariantManagedInstanceScaling managedInstanceScaling;
+    /**
+     * <p>
+     * Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.
+     * </p>
+     */
+    private ProductionVariantRoutingConfig routingConfig;
 
     /**
      * <p>
@@ -508,12 +532,12 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The size, in GB, of the ML storage volume attached to individual inference instance associated with the
-     * production variant. Currenly only Amazon EBS gp2 storage volumes are supported.
+     * production variant. Currently only Amazon EBS gp2 storage volumes are supported.
      * </p>
      * 
      * @param volumeSizeInGB
      *        The size, in GB, of the ML storage volume attached to individual inference instance associated with the
-     *        production variant. Currenly only Amazon EBS gp2 storage volumes are supported.
+     *        production variant. Currently only Amazon EBS gp2 storage volumes are supported.
      */
 
     public void setVolumeSizeInGB(Integer volumeSizeInGB) {
@@ -523,11 +547,11 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The size, in GB, of the ML storage volume attached to individual inference instance associated with the
-     * production variant. Currenly only Amazon EBS gp2 storage volumes are supported.
+     * production variant. Currently only Amazon EBS gp2 storage volumes are supported.
      * </p>
      * 
      * @return The size, in GB, of the ML storage volume attached to individual inference instance associated with the
-     *         production variant. Currenly only Amazon EBS gp2 storage volumes are supported.
+     *         production variant. Currently only Amazon EBS gp2 storage volumes are supported.
      */
 
     public Integer getVolumeSizeInGB() {
@@ -537,12 +561,12 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The size, in GB, of the ML storage volume attached to individual inference instance associated with the
-     * production variant. Currenly only Amazon EBS gp2 storage volumes are supported.
+     * production variant. Currently only Amazon EBS gp2 storage volumes are supported.
      * </p>
      * 
      * @param volumeSizeInGB
      *        The size, in GB, of the ML storage volume attached to individual inference instance associated with the
-     *        production variant. Currenly only Amazon EBS gp2 storage volumes are supported.
+     *        production variant. Currently only Amazon EBS gp2 storage volumes are supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -656,6 +680,168 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * You can use this parameter to turn on native Amazon Web Services Systems Manager (SSM) access for a production
+     * variant behind an endpoint. By default, SSM access is disabled for all production variants behind an endpoint.
+     * You can turn on or turn off SSM access for a production variant behind an existing endpoint by creating a new
+     * endpoint configuration and calling <code>UpdateEndpoint</code>.
+     * </p>
+     * 
+     * @param enableSSMAccess
+     *        You can use this parameter to turn on native Amazon Web Services Systems Manager (SSM) access for a
+     *        production variant behind an endpoint. By default, SSM access is disabled for all production variants
+     *        behind an endpoint. You can turn on or turn off SSM access for a production variant behind an existing
+     *        endpoint by creating a new endpoint configuration and calling <code>UpdateEndpoint</code>.
+     */
+
+    public void setEnableSSMAccess(Boolean enableSSMAccess) {
+        this.enableSSMAccess = enableSSMAccess;
+    }
+
+    /**
+     * <p>
+     * You can use this parameter to turn on native Amazon Web Services Systems Manager (SSM) access for a production
+     * variant behind an endpoint. By default, SSM access is disabled for all production variants behind an endpoint.
+     * You can turn on or turn off SSM access for a production variant behind an existing endpoint by creating a new
+     * endpoint configuration and calling <code>UpdateEndpoint</code>.
+     * </p>
+     * 
+     * @return You can use this parameter to turn on native Amazon Web Services Systems Manager (SSM) access for a
+     *         production variant behind an endpoint. By default, SSM access is disabled for all production variants
+     *         behind an endpoint. You can turn on or turn off SSM access for a production variant behind an existing
+     *         endpoint by creating a new endpoint configuration and calling <code>UpdateEndpoint</code>.
+     */
+
+    public Boolean getEnableSSMAccess() {
+        return this.enableSSMAccess;
+    }
+
+    /**
+     * <p>
+     * You can use this parameter to turn on native Amazon Web Services Systems Manager (SSM) access for a production
+     * variant behind an endpoint. By default, SSM access is disabled for all production variants behind an endpoint.
+     * You can turn on or turn off SSM access for a production variant behind an existing endpoint by creating a new
+     * endpoint configuration and calling <code>UpdateEndpoint</code>.
+     * </p>
+     * 
+     * @param enableSSMAccess
+     *        You can use this parameter to turn on native Amazon Web Services Systems Manager (SSM) access for a
+     *        production variant behind an endpoint. By default, SSM access is disabled for all production variants
+     *        behind an endpoint. You can turn on or turn off SSM access for a production variant behind an existing
+     *        endpoint by creating a new endpoint configuration and calling <code>UpdateEndpoint</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProductionVariant withEnableSSMAccess(Boolean enableSSMAccess) {
+        setEnableSSMAccess(enableSSMAccess);
+        return this;
+    }
+
+    /**
+     * <p>
+     * You can use this parameter to turn on native Amazon Web Services Systems Manager (SSM) access for a production
+     * variant behind an endpoint. By default, SSM access is disabled for all production variants behind an endpoint.
+     * You can turn on or turn off SSM access for a production variant behind an existing endpoint by creating a new
+     * endpoint configuration and calling <code>UpdateEndpoint</code>.
+     * </p>
+     * 
+     * @return You can use this parameter to turn on native Amazon Web Services Systems Manager (SSM) access for a
+     *         production variant behind an endpoint. By default, SSM access is disabled for all production variants
+     *         behind an endpoint. You can turn on or turn off SSM access for a production variant behind an existing
+     *         endpoint by creating a new endpoint configuration and calling <code>UpdateEndpoint</code>.
+     */
+
+    public Boolean isEnableSSMAccess() {
+        return this.enableSSMAccess;
+    }
+
+    /**
+     * <p>
+     * Settings that control the range in the number of instances that the endpoint provisions as it scales up or down
+     * to accommodate traffic.
+     * </p>
+     * 
+     * @param managedInstanceScaling
+     *        Settings that control the range in the number of instances that the endpoint provisions as it scales up or
+     *        down to accommodate traffic.
+     */
+
+    public void setManagedInstanceScaling(ProductionVariantManagedInstanceScaling managedInstanceScaling) {
+        this.managedInstanceScaling = managedInstanceScaling;
+    }
+
+    /**
+     * <p>
+     * Settings that control the range in the number of instances that the endpoint provisions as it scales up or down
+     * to accommodate traffic.
+     * </p>
+     * 
+     * @return Settings that control the range in the number of instances that the endpoint provisions as it scales up
+     *         or down to accommodate traffic.
+     */
+
+    public ProductionVariantManagedInstanceScaling getManagedInstanceScaling() {
+        return this.managedInstanceScaling;
+    }
+
+    /**
+     * <p>
+     * Settings that control the range in the number of instances that the endpoint provisions as it scales up or down
+     * to accommodate traffic.
+     * </p>
+     * 
+     * @param managedInstanceScaling
+     *        Settings that control the range in the number of instances that the endpoint provisions as it scales up or
+     *        down to accommodate traffic.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProductionVariant withManagedInstanceScaling(ProductionVariantManagedInstanceScaling managedInstanceScaling) {
+        setManagedInstanceScaling(managedInstanceScaling);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.
+     * </p>
+     * 
+     * @param routingConfig
+     *        Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.
+     */
+
+    public void setRoutingConfig(ProductionVariantRoutingConfig routingConfig) {
+        this.routingConfig = routingConfig;
+    }
+
+    /**
+     * <p>
+     * Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.
+     * </p>
+     * 
+     * @return Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.
+     */
+
+    public ProductionVariantRoutingConfig getRoutingConfig() {
+        return this.routingConfig;
+    }
+
+    /**
+     * <p>
+     * Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.
+     * </p>
+     * 
+     * @param routingConfig
+     *        Settings that control how the endpoint routes incoming traffic to the instances that the endpoint hosts.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProductionVariant withRoutingConfig(ProductionVariantRoutingConfig routingConfig) {
+        setRoutingConfig(routingConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -688,7 +874,13 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
         if (getModelDataDownloadTimeoutInSeconds() != null)
             sb.append("ModelDataDownloadTimeoutInSeconds: ").append(getModelDataDownloadTimeoutInSeconds()).append(",");
         if (getContainerStartupHealthCheckTimeoutInSeconds() != null)
-            sb.append("ContainerStartupHealthCheckTimeoutInSeconds: ").append(getContainerStartupHealthCheckTimeoutInSeconds());
+            sb.append("ContainerStartupHealthCheckTimeoutInSeconds: ").append(getContainerStartupHealthCheckTimeoutInSeconds()).append(",");
+        if (getEnableSSMAccess() != null)
+            sb.append("EnableSSMAccess: ").append(getEnableSSMAccess()).append(",");
+        if (getManagedInstanceScaling() != null)
+            sb.append("ManagedInstanceScaling: ").append(getManagedInstanceScaling()).append(",");
+        if (getRoutingConfig() != null)
+            sb.append("RoutingConfig: ").append(getRoutingConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -749,6 +941,18 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
         if (other.getContainerStartupHealthCheckTimeoutInSeconds() != null
                 && other.getContainerStartupHealthCheckTimeoutInSeconds().equals(this.getContainerStartupHealthCheckTimeoutInSeconds()) == false)
             return false;
+        if (other.getEnableSSMAccess() == null ^ this.getEnableSSMAccess() == null)
+            return false;
+        if (other.getEnableSSMAccess() != null && other.getEnableSSMAccess().equals(this.getEnableSSMAccess()) == false)
+            return false;
+        if (other.getManagedInstanceScaling() == null ^ this.getManagedInstanceScaling() == null)
+            return false;
+        if (other.getManagedInstanceScaling() != null && other.getManagedInstanceScaling().equals(this.getManagedInstanceScaling()) == false)
+            return false;
+        if (other.getRoutingConfig() == null ^ this.getRoutingConfig() == null)
+            return false;
+        if (other.getRoutingConfig() != null && other.getRoutingConfig().equals(this.getRoutingConfig()) == false)
+            return false;
         return true;
     }
 
@@ -769,6 +973,9 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getModelDataDownloadTimeoutInSeconds() == null) ? 0 : getModelDataDownloadTimeoutInSeconds().hashCode());
         hashCode = prime * hashCode
                 + ((getContainerStartupHealthCheckTimeoutInSeconds() == null) ? 0 : getContainerStartupHealthCheckTimeoutInSeconds().hashCode());
+        hashCode = prime * hashCode + ((getEnableSSMAccess() == null) ? 0 : getEnableSSMAccess().hashCode());
+        hashCode = prime * hashCode + ((getManagedInstanceScaling() == null) ? 0 : getManagedInstanceScaling().hashCode());
+        hashCode = prime * hashCode + ((getRoutingConfig() == null) ? 0 : getRoutingConfig().hashCode());
         return hashCode;
     }
 

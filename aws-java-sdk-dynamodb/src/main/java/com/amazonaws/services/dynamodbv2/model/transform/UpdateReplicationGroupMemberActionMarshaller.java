@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,8 @@ public class UpdateReplicationGroupMemberActionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KMSMasterKeyId").build();
     private static final MarshallingInfo<StructuredPojo> PROVISIONEDTHROUGHPUTOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisionedThroughputOverride").build();
+    private static final MarshallingInfo<StructuredPojo> ONDEMANDTHROUGHPUTOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OnDemandThroughputOverride").build();
     private static final MarshallingInfo<List> GLOBALSECONDARYINDEXES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GlobalSecondaryIndexes").build();
     private static final MarshallingInfo<String> TABLECLASSOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -58,6 +60,7 @@ public class UpdateReplicationGroupMemberActionMarshaller {
             protocolMarshaller.marshall(updateReplicationGroupMemberAction.getRegionName(), REGIONNAME_BINDING);
             protocolMarshaller.marshall(updateReplicationGroupMemberAction.getKMSMasterKeyId(), KMSMASTERKEYID_BINDING);
             protocolMarshaller.marshall(updateReplicationGroupMemberAction.getProvisionedThroughputOverride(), PROVISIONEDTHROUGHPUTOVERRIDE_BINDING);
+            protocolMarshaller.marshall(updateReplicationGroupMemberAction.getOnDemandThroughputOverride(), ONDEMANDTHROUGHPUTOVERRIDE_BINDING);
             protocolMarshaller.marshall(updateReplicationGroupMemberAction.getGlobalSecondaryIndexes(), GLOBALSECONDARYINDEXES_BINDING);
             protocolMarshaller.marshall(updateReplicationGroupMemberAction.getTableClassOverride(), TABLECLASSOVERRIDE_BINDING);
         } catch (Exception e) {

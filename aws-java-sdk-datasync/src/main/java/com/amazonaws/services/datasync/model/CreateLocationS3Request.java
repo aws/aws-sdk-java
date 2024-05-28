@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,30 +30,63 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A subdirectory in the Amazon S3 bucket. This subdirectory in Amazon S3 is used to read data from the S3 source
-     * location or write data to the S3 destination.
+     * Specifies a prefix in the S3 bucket that DataSync reads from or writes to (depending on whether the bucket is a
+     * source or destination location).
      * </p>
+     * <note>
+     * <p>
+     * DataSync can't transfer objects with a prefix that begins with a slash (<code>/</code>) or includes
+     * <code>//</code>, <code>/./</code>, or <code>/../</code> patterns. For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>/photos</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>photos//2006/January</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>photos/./2006/February</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>photos/../2006/March</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      */
     private String subdirectory;
     /**
      * <p>
-     * The ARN of the Amazon S3 bucket. If the bucket is on an Amazon Web Services Outpost, this must be an access point
-     * ARN.
+     * Specifies the ARN of the S3 bucket that you want to use as a location. (When creating your DataSync task later,
+     * you specify whether this location is a transfer source or destination.)
+     * </p>
+     * <p>
+     * If your S3 bucket is located on an Outposts resource, you must specify an Amazon S3 access point. For more
+     * information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing data
+     * access with Amazon S3 access points</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      */
     private String s3BucketArn;
     /**
      * <p>
-     * The Amazon S3 storage class that you want to store your files in when this location is used as a task
-     * destination. For buckets in Amazon Web Services Regions, the storage class defaults to Standard. For buckets on
-     * Outposts, the storage class defaults to Amazon Web Services S3 Outposts.
+     * Specifies the storage class that you want your objects to use when Amazon S3 is a transfer destination.
      * </p>
      * <p>
-     * For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3
-     * Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed
-     * information, see <a
+     * For buckets in Amazon Web Services Regions, the storage class defaults to <code>STANDARD</code>. For buckets on
+     * Outposts, the storage class defaults to <code>OUTPOSTS</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes"
-     * >Considerations when working with S3 storage classes in DataSync</a>.
+     * >Storage class considerations with Amazon S3 transfers</a>.
      * </p>
      */
     private String s3StorageClass;
@@ -61,9 +94,10 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
     private S3Config s3Config;
     /**
      * <p>
-     * If you're using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of the
-     * DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web
-     * Services Outpost, see <a
+     * (Amazon S3 on Outposts only) Specifies the Amazon Resource Name (ARN) of the DataSync agent on your Outpost.
+     * </p>
+     * <p>
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your
      * DataSync agent on Outposts</a>.
      * </p>
@@ -71,21 +105,75 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
     private java.util.List<String> agentArns;
     /**
      * <p>
-     * The key-value pair that represents the tag that you want to add to the location. The value can be an empty
-     * string. We recommend using tags to name your resources.
+     * Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We
+     * recommend creating at least a name tag for your transfer location.
      * </p>
      */
     private java.util.List<TagListEntry> tags;
 
     /**
      * <p>
-     * A subdirectory in the Amazon S3 bucket. This subdirectory in Amazon S3 is used to read data from the S3 source
-     * location or write data to the S3 destination.
+     * Specifies a prefix in the S3 bucket that DataSync reads from or writes to (depending on whether the bucket is a
+     * source or destination location).
      * </p>
+     * <note>
+     * <p>
+     * DataSync can't transfer objects with a prefix that begins with a slash (<code>/</code>) or includes
+     * <code>//</code>, <code>/./</code>, or <code>/../</code> patterns. For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>/photos</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>photos//2006/January</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>photos/./2006/February</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>photos/../2006/March</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param subdirectory
-     *        A subdirectory in the Amazon S3 bucket. This subdirectory in Amazon S3 is used to read data from the S3
-     *        source location or write data to the S3 destination.
+     *        Specifies a prefix in the S3 bucket that DataSync reads from or writes to (depending on whether the bucket
+     *        is a source or destination location).</p> <note>
+     *        <p>
+     *        DataSync can't transfer objects with a prefix that begins with a slash (<code>/</code>) or includes
+     *        <code>//</code>, <code>/./</code>, or <code>/../</code> patterns. For example:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>/photos</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>photos//2006/January</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>photos/./2006/February</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>photos/../2006/March</code>
+     *        </p>
+     *        </li>
+     *        </ul>
      */
 
     public void setSubdirectory(String subdirectory) {
@@ -94,12 +182,66 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A subdirectory in the Amazon S3 bucket. This subdirectory in Amazon S3 is used to read data from the S3 source
-     * location or write data to the S3 destination.
+     * Specifies a prefix in the S3 bucket that DataSync reads from or writes to (depending on whether the bucket is a
+     * source or destination location).
      * </p>
+     * <note>
+     * <p>
+     * DataSync can't transfer objects with a prefix that begins with a slash (<code>/</code>) or includes
+     * <code>//</code>, <code>/./</code>, or <code>/../</code> patterns. For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>/photos</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>photos//2006/January</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>photos/./2006/February</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>photos/../2006/March</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
-     * @return A subdirectory in the Amazon S3 bucket. This subdirectory in Amazon S3 is used to read data from the S3
-     *         source location or write data to the S3 destination.
+     * @return Specifies a prefix in the S3 bucket that DataSync reads from or writes to (depending on whether the
+     *         bucket is a source or destination location).</p> <note>
+     *         <p>
+     *         DataSync can't transfer objects with a prefix that begins with a slash (<code>/</code>) or includes
+     *         <code>//</code>, <code>/./</code>, or <code>/../</code> patterns. For example:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>/photos</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>photos//2006/January</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>photos/./2006/February</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>photos/../2006/March</code>
+     *         </p>
+     *         </li>
+     *         </ul>
      */
 
     public String getSubdirectory() {
@@ -108,13 +250,67 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A subdirectory in the Amazon S3 bucket. This subdirectory in Amazon S3 is used to read data from the S3 source
-     * location or write data to the S3 destination.
+     * Specifies a prefix in the S3 bucket that DataSync reads from or writes to (depending on whether the bucket is a
+     * source or destination location).
      * </p>
+     * <note>
+     * <p>
+     * DataSync can't transfer objects with a prefix that begins with a slash (<code>/</code>) or includes
+     * <code>//</code>, <code>/./</code>, or <code>/../</code> patterns. For example:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>/photos</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>photos//2006/January</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>photos/./2006/February</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>photos/../2006/March</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param subdirectory
-     *        A subdirectory in the Amazon S3 bucket. This subdirectory in Amazon S3 is used to read data from the S3
-     *        source location or write data to the S3 destination.
+     *        Specifies a prefix in the S3 bucket that DataSync reads from or writes to (depending on whether the bucket
+     *        is a source or destination location).</p> <note>
+     *        <p>
+     *        DataSync can't transfer objects with a prefix that begins with a slash (<code>/</code>) or includes
+     *        <code>//</code>, <code>/./</code>, or <code>/../</code> patterns. For example:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>/photos</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>photos//2006/January</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>photos/./2006/February</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>photos/../2006/March</code>
+     *        </p>
+     *        </li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -125,13 +321,23 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ARN of the Amazon S3 bucket. If the bucket is on an Amazon Web Services Outpost, this must be an access point
-     * ARN.
+     * Specifies the ARN of the S3 bucket that you want to use as a location. (When creating your DataSync task later,
+     * you specify whether this location is a transfer source or destination.)
+     * </p>
+     * <p>
+     * If your S3 bucket is located on an Outposts resource, you must specify an Amazon S3 access point. For more
+     * information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing data
+     * access with Amazon S3 access points</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * 
      * @param s3BucketArn
-     *        The ARN of the Amazon S3 bucket. If the bucket is on an Amazon Web Services Outpost, this must be an
-     *        access point ARN.
+     *        Specifies the ARN of the S3 bucket that you want to use as a location. (When creating your DataSync task
+     *        later, you specify whether this location is a transfer source or destination.) </p>
+     *        <p>
+     *        If your S3 bucket is located on an Outposts resource, you must specify an Amazon S3 access point. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing data access with
+     *        Amazon S3 access points</a> in the <i>Amazon S3 User Guide</i>.
      */
 
     public void setS3BucketArn(String s3BucketArn) {
@@ -140,12 +346,22 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ARN of the Amazon S3 bucket. If the bucket is on an Amazon Web Services Outpost, this must be an access point
-     * ARN.
+     * Specifies the ARN of the S3 bucket that you want to use as a location. (When creating your DataSync task later,
+     * you specify whether this location is a transfer source or destination.)
+     * </p>
+     * <p>
+     * If your S3 bucket is located on an Outposts resource, you must specify an Amazon S3 access point. For more
+     * information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing data
+     * access with Amazon S3 access points</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * 
-     * @return The ARN of the Amazon S3 bucket. If the bucket is on an Amazon Web Services Outpost, this must be an
-     *         access point ARN.
+     * @return Specifies the ARN of the S3 bucket that you want to use as a location. (When creating your DataSync task
+     *         later, you specify whether this location is a transfer source or destination.) </p>
+     *         <p>
+     *         If your S3 bucket is located on an Outposts resource, you must specify an Amazon S3 access point. For
+     *         more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing data access with
+     *         Amazon S3 access points</a> in the <i>Amazon S3 User Guide</i>.
      */
 
     public String getS3BucketArn() {
@@ -154,13 +370,23 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ARN of the Amazon S3 bucket. If the bucket is on an Amazon Web Services Outpost, this must be an access point
-     * ARN.
+     * Specifies the ARN of the S3 bucket that you want to use as a location. (When creating your DataSync task later,
+     * you specify whether this location is a transfer source or destination.)
+     * </p>
+     * <p>
+     * If your S3 bucket is located on an Outposts resource, you must specify an Amazon S3 access point. For more
+     * information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing data
+     * access with Amazon S3 access points</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * 
      * @param s3BucketArn
-     *        The ARN of the Amazon S3 bucket. If the bucket is on an Amazon Web Services Outpost, this must be an
-     *        access point ARN.
+     *        Specifies the ARN of the S3 bucket that you want to use as a location. (When creating your DataSync task
+     *        later, you specify whether this location is a transfer source or destination.) </p>
+     *        <p>
+     *        If your S3 bucket is located on an Outposts resource, you must specify an Amazon S3 access point. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing data access with
+     *        Amazon S3 access points</a> in the <i>Amazon S3 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -171,28 +397,29 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon S3 storage class that you want to store your files in when this location is used as a task
-     * destination. For buckets in Amazon Web Services Regions, the storage class defaults to Standard. For buckets on
-     * Outposts, the storage class defaults to Amazon Web Services S3 Outposts.
+     * Specifies the storage class that you want your objects to use when Amazon S3 is a transfer destination.
      * </p>
      * <p>
-     * For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3
-     * Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed
-     * information, see <a
+     * For buckets in Amazon Web Services Regions, the storage class defaults to <code>STANDARD</code>. For buckets on
+     * Outposts, the storage class defaults to <code>OUTPOSTS</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes"
-     * >Considerations when working with S3 storage classes in DataSync</a>.
+     * >Storage class considerations with Amazon S3 transfers</a>.
      * </p>
      * 
      * @param s3StorageClass
-     *        The Amazon S3 storage class that you want to store your files in when this location is used as a task
-     *        destination. For buckets in Amazon Web Services Regions, the storage class defaults to Standard. For
-     *        buckets on Outposts, the storage class defaults to Amazon Web Services S3 Outposts.</p>
+     *        Specifies the storage class that you want your objects to use when Amazon S3 is a transfer
+     *        destination.</p>
      *        <p>
-     *        For more information about S3 storage classes, see <a
-     *        href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have
-     *        behaviors that can affect your S3 storage cost. For detailed information, see <a href=
+     *        For buckets in Amazon Web Services Regions, the storage class defaults to <code>STANDARD</code>. For
+     *        buckets on Outposts, the storage class defaults to <code>OUTPOSTS</code>.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes"
-     *        >Considerations when working with S3 storage classes in DataSync</a>.
+     *        >Storage class considerations with Amazon S3 transfers</a>.
      * @see S3StorageClass
      */
 
@@ -202,27 +429,28 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon S3 storage class that you want to store your files in when this location is used as a task
-     * destination. For buckets in Amazon Web Services Regions, the storage class defaults to Standard. For buckets on
-     * Outposts, the storage class defaults to Amazon Web Services S3 Outposts.
+     * Specifies the storage class that you want your objects to use when Amazon S3 is a transfer destination.
      * </p>
      * <p>
-     * For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3
-     * Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed
-     * information, see <a
+     * For buckets in Amazon Web Services Regions, the storage class defaults to <code>STANDARD</code>. For buckets on
+     * Outposts, the storage class defaults to <code>OUTPOSTS</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes"
-     * >Considerations when working with S3 storage classes in DataSync</a>.
+     * >Storage class considerations with Amazon S3 transfers</a>.
      * </p>
      * 
-     * @return The Amazon S3 storage class that you want to store your files in when this location is used as a task
-     *         destination. For buckets in Amazon Web Services Regions, the storage class defaults to Standard. For
-     *         buckets on Outposts, the storage class defaults to Amazon Web Services S3 Outposts.</p>
+     * @return Specifies the storage class that you want your objects to use when Amazon S3 is a transfer
+     *         destination.</p>
      *         <p>
-     *         For more information about S3 storage classes, see <a
-     *         href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have
-     *         behaviors that can affect your S3 storage cost. For detailed information, see <a href=
+     *         For buckets in Amazon Web Services Regions, the storage class defaults to <code>STANDARD</code>. For
+     *         buckets on Outposts, the storage class defaults to <code>OUTPOSTS</code>.
+     *         </p>
+     *         <p>
+     *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes"
-     *         >Considerations when working with S3 storage classes in DataSync</a>.
+     *         >Storage class considerations with Amazon S3 transfers</a>.
      * @see S3StorageClass
      */
 
@@ -232,28 +460,29 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon S3 storage class that you want to store your files in when this location is used as a task
-     * destination. For buckets in Amazon Web Services Regions, the storage class defaults to Standard. For buckets on
-     * Outposts, the storage class defaults to Amazon Web Services S3 Outposts.
+     * Specifies the storage class that you want your objects to use when Amazon S3 is a transfer destination.
      * </p>
      * <p>
-     * For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3
-     * Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed
-     * information, see <a
+     * For buckets in Amazon Web Services Regions, the storage class defaults to <code>STANDARD</code>. For buckets on
+     * Outposts, the storage class defaults to <code>OUTPOSTS</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes"
-     * >Considerations when working with S3 storage classes in DataSync</a>.
+     * >Storage class considerations with Amazon S3 transfers</a>.
      * </p>
      * 
      * @param s3StorageClass
-     *        The Amazon S3 storage class that you want to store your files in when this location is used as a task
-     *        destination. For buckets in Amazon Web Services Regions, the storage class defaults to Standard. For
-     *        buckets on Outposts, the storage class defaults to Amazon Web Services S3 Outposts.</p>
+     *        Specifies the storage class that you want your objects to use when Amazon S3 is a transfer
+     *        destination.</p>
      *        <p>
-     *        For more information about S3 storage classes, see <a
-     *        href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have
-     *        behaviors that can affect your S3 storage cost. For detailed information, see <a href=
+     *        For buckets in Amazon Web Services Regions, the storage class defaults to <code>STANDARD</code>. For
+     *        buckets on Outposts, the storage class defaults to <code>OUTPOSTS</code>.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes"
-     *        >Considerations when working with S3 storage classes in DataSync</a>.
+     *        >Storage class considerations with Amazon S3 transfers</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see S3StorageClass
      */
@@ -265,28 +494,29 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon S3 storage class that you want to store your files in when this location is used as a task
-     * destination. For buckets in Amazon Web Services Regions, the storage class defaults to Standard. For buckets on
-     * Outposts, the storage class defaults to Amazon Web Services S3 Outposts.
+     * Specifies the storage class that you want your objects to use when Amazon S3 is a transfer destination.
      * </p>
      * <p>
-     * For more information about S3 storage classes, see <a href="http://aws.amazon.com/s3/storage-classes/">Amazon S3
-     * Storage Classes</a>. Some storage classes have behaviors that can affect your S3 storage cost. For detailed
-     * information, see <a
+     * For buckets in Amazon Web Services Regions, the storage class defaults to <code>STANDARD</code>. For buckets on
+     * Outposts, the storage class defaults to <code>OUTPOSTS</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes"
-     * >Considerations when working with S3 storage classes in DataSync</a>.
+     * >Storage class considerations with Amazon S3 transfers</a>.
      * </p>
      * 
      * @param s3StorageClass
-     *        The Amazon S3 storage class that you want to store your files in when this location is used as a task
-     *        destination. For buckets in Amazon Web Services Regions, the storage class defaults to Standard. For
-     *        buckets on Outposts, the storage class defaults to Amazon Web Services S3 Outposts.</p>
+     *        Specifies the storage class that you want your objects to use when Amazon S3 is a transfer
+     *        destination.</p>
      *        <p>
-     *        For more information about S3 storage classes, see <a
-     *        href="http://aws.amazon.com/s3/storage-classes/">Amazon S3 Storage Classes</a>. Some storage classes have
-     *        behaviors that can affect your S3 storage cost. For detailed information, see <a href=
+     *        For buckets in Amazon Web Services Regions, the storage class defaults to <code>STANDARD</code>. For
+     *        buckets on Outposts, the storage class defaults to <code>OUTPOSTS</code>.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes"
-     *        >Considerations when working with S3 storage classes in DataSync</a>.
+     *        >Storage class considerations with Amazon S3 transfers</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see S3StorageClass
      */
@@ -324,16 +554,18 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * If you're using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of the
-     * DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web
-     * Services Outpost, see <a
+     * (Amazon S3 on Outposts only) Specifies the Amazon Resource Name (ARN) of the DataSync agent on your Outpost.
+     * </p>
+     * <p>
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your
      * DataSync agent on Outposts</a>.
      * </p>
      * 
-     * @return If you're using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of
-     *         the DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an
-     *         Amazon Web Services Outpost, see <a
+     * @return (Amazon S3 on Outposts only) Specifies the Amazon Resource Name (ARN) of the DataSync agent on your
+     *         Outpost.</p>
+     *         <p>
+     *         For more information, see <a
      *         href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy
      *         your DataSync agent on Outposts</a>.
      */
@@ -344,17 +576,19 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * If you're using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of the
-     * DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web
-     * Services Outpost, see <a
+     * (Amazon S3 on Outposts only) Specifies the Amazon Resource Name (ARN) of the DataSync agent on your Outpost.
+     * </p>
+     * <p>
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your
      * DataSync agent on Outposts</a>.
      * </p>
      * 
      * @param agentArns
-     *        If you're using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of
-     *        the DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an
-     *        Amazon Web Services Outpost, see <a
+     *        (Amazon S3 on Outposts only) Specifies the Amazon Resource Name (ARN) of the DataSync agent on your
+     *        Outpost.</p>
+     *        <p>
+     *        For more information, see <a
      *        href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your
      *        DataSync agent on Outposts</a>.
      */
@@ -370,9 +604,10 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * If you're using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of the
-     * DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web
-     * Services Outpost, see <a
+     * (Amazon S3 on Outposts only) Specifies the Amazon Resource Name (ARN) of the DataSync agent on your Outpost.
+     * </p>
+     * <p>
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your
      * DataSync agent on Outposts</a>.
      * </p>
@@ -383,9 +618,10 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param agentArns
-     *        If you're using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of
-     *        the DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an
-     *        Amazon Web Services Outpost, see <a
+     *        (Amazon S3 on Outposts only) Specifies the Amazon Resource Name (ARN) of the DataSync agent on your
+     *        Outpost.</p>
+     *        <p>
+     *        For more information, see <a
      *        href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your
      *        DataSync agent on Outposts</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -403,17 +639,19 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * If you're using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of the
-     * DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an Amazon Web
-     * Services Outpost, see <a
+     * (Amazon S3 on Outposts only) Specifies the Amazon Resource Name (ARN) of the DataSync agent on your Outpost.
+     * </p>
+     * <p>
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your
      * DataSync agent on Outposts</a>.
      * </p>
      * 
      * @param agentArns
-     *        If you're using DataSync on an Amazon Web Services Outpost, specify the Amazon Resource Names (ARNs) of
-     *        the DataSync agents deployed on your Outpost. For more information about launching a DataSync agent on an
-     *        Amazon Web Services Outpost, see <a
+     *        (Amazon S3 on Outposts only) Specifies the Amazon Resource Name (ARN) of the DataSync agent on your
+     *        Outpost.</p>
+     *        <p>
+     *        For more information, see <a
      *        href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your
      *        DataSync agent on Outposts</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -426,12 +664,12 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The key-value pair that represents the tag that you want to add to the location. The value can be an empty
-     * string. We recommend using tags to name your resources.
+     * Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We
+     * recommend creating at least a name tag for your transfer location.
      * </p>
      * 
-     * @return The key-value pair that represents the tag that you want to add to the location. The value can be an
-     *         empty string. We recommend using tags to name your resources.
+     * @return Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We
+     *         recommend creating at least a name tag for your transfer location.
      */
 
     public java.util.List<TagListEntry> getTags() {
@@ -440,13 +678,13 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The key-value pair that represents the tag that you want to add to the location. The value can be an empty
-     * string. We recommend using tags to name your resources.
+     * Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We
+     * recommend creating at least a name tag for your transfer location.
      * </p>
      * 
      * @param tags
-     *        The key-value pair that represents the tag that you want to add to the location. The value can be an empty
-     *        string. We recommend using tags to name your resources.
+     *        Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We
+     *        recommend creating at least a name tag for your transfer location.
      */
 
     public void setTags(java.util.Collection<TagListEntry> tags) {
@@ -460,8 +698,8 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The key-value pair that represents the tag that you want to add to the location. The value can be an empty
-     * string. We recommend using tags to name your resources.
+     * Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We
+     * recommend creating at least a name tag for your transfer location.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -470,8 +708,8 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param tags
-     *        The key-value pair that represents the tag that you want to add to the location. The value can be an empty
-     *        string. We recommend using tags to name your resources.
+     *        Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We
+     *        recommend creating at least a name tag for your transfer location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -487,13 +725,13 @@ public class CreateLocationS3Request extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The key-value pair that represents the tag that you want to add to the location. The value can be an empty
-     * string. We recommend using tags to name your resources.
+     * Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We
+     * recommend creating at least a name tag for your transfer location.
      * </p>
      * 
      * @param tags
-     *        The key-value pair that represents the tag that you want to add to the location. The value can be an empty
-     *        string. We recommend using tags to name your resources.
+     *        Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We
+     *        recommend creating at least a name tag for your transfer location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,12 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ComponentBindingPropertiesValueMarshaller {
 
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("type").build();
     private static final MarshallingInfo<StructuredPojo> BINDINGPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("bindingProperties").build();
     private static final MarshallingInfo<String> DEFAULTVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultValue").build();
-    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("type").build();
 
     private static final ComponentBindingPropertiesValueMarshaller instance = new ComponentBindingPropertiesValueMarshaller();
 
@@ -50,9 +50,9 @@ public class ComponentBindingPropertiesValueMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(componentBindingPropertiesValue.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(componentBindingPropertiesValue.getBindingProperties(), BINDINGPROPERTIES_BINDING);
             protocolMarshaller.marshall(componentBindingPropertiesValue.getDefaultValue(), DEFAULTVALUE_BINDING);
-            protocolMarshaller.marshall(componentBindingPropertiesValue.getType(), TYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

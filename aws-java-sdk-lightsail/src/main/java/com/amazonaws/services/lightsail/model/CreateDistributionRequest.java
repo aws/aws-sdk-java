@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -93,6 +93,23 @@ public class CreateDistributionRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * The name of the SSL/TLS certificate that you want to attach to the distribution.
+     * </p>
+     * <p>
+     * Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates
+     * </a> action to get a list of certificate names that you can specify.
+     * </p>
+     */
+    private String certificateName;
+    /**
+     * <p>
+     * The minimum TLS protocol version for the SSL/TLS certificate.
+     * </p>
+     */
+    private String viewerMinimumTlsProtocolVersion;
 
     /**
      * <p>
@@ -621,6 +638,130 @@ public class CreateDistributionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The name of the SSL/TLS certificate that you want to attach to the distribution.
+     * </p>
+     * <p>
+     * Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates
+     * </a> action to get a list of certificate names that you can specify.
+     * </p>
+     * 
+     * @param certificateName
+     *        The name of the SSL/TLS certificate that you want to attach to the distribution.</p>
+     *        <p>
+     *        Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">
+     *        GetCertificates</a> action to get a list of certificate names that you can specify.
+     */
+
+    public void setCertificateName(String certificateName) {
+        this.certificateName = certificateName;
+    }
+
+    /**
+     * <p>
+     * The name of the SSL/TLS certificate that you want to attach to the distribution.
+     * </p>
+     * <p>
+     * Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates
+     * </a> action to get a list of certificate names that you can specify.
+     * </p>
+     * 
+     * @return The name of the SSL/TLS certificate that you want to attach to the distribution.</p>
+     *         <p>
+     *         Use the <a
+     *         href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">
+     *         GetCertificates</a> action to get a list of certificate names that you can specify.
+     */
+
+    public String getCertificateName() {
+        return this.certificateName;
+    }
+
+    /**
+     * <p>
+     * The name of the SSL/TLS certificate that you want to attach to the distribution.
+     * </p>
+     * <p>
+     * Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates
+     * </a> action to get a list of certificate names that you can specify.
+     * </p>
+     * 
+     * @param certificateName
+     *        The name of the SSL/TLS certificate that you want to attach to the distribution.</p>
+     *        <p>
+     *        Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">
+     *        GetCertificates</a> action to get a list of certificate names that you can specify.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDistributionRequest withCertificateName(String certificateName) {
+        setCertificateName(certificateName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The minimum TLS protocol version for the SSL/TLS certificate.
+     * </p>
+     * 
+     * @param viewerMinimumTlsProtocolVersion
+     *        The minimum TLS protocol version for the SSL/TLS certificate.
+     * @see ViewerMinimumTlsProtocolVersionEnum
+     */
+
+    public void setViewerMinimumTlsProtocolVersion(String viewerMinimumTlsProtocolVersion) {
+        this.viewerMinimumTlsProtocolVersion = viewerMinimumTlsProtocolVersion;
+    }
+
+    /**
+     * <p>
+     * The minimum TLS protocol version for the SSL/TLS certificate.
+     * </p>
+     * 
+     * @return The minimum TLS protocol version for the SSL/TLS certificate.
+     * @see ViewerMinimumTlsProtocolVersionEnum
+     */
+
+    public String getViewerMinimumTlsProtocolVersion() {
+        return this.viewerMinimumTlsProtocolVersion;
+    }
+
+    /**
+     * <p>
+     * The minimum TLS protocol version for the SSL/TLS certificate.
+     * </p>
+     * 
+     * @param viewerMinimumTlsProtocolVersion
+     *        The minimum TLS protocol version for the SSL/TLS certificate.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ViewerMinimumTlsProtocolVersionEnum
+     */
+
+    public CreateDistributionRequest withViewerMinimumTlsProtocolVersion(String viewerMinimumTlsProtocolVersion) {
+        setViewerMinimumTlsProtocolVersion(viewerMinimumTlsProtocolVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The minimum TLS protocol version for the SSL/TLS certificate.
+     * </p>
+     * 
+     * @param viewerMinimumTlsProtocolVersion
+     *        The minimum TLS protocol version for the SSL/TLS certificate.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ViewerMinimumTlsProtocolVersionEnum
+     */
+
+    public CreateDistributionRequest withViewerMinimumTlsProtocolVersion(ViewerMinimumTlsProtocolVersionEnum viewerMinimumTlsProtocolVersion) {
+        this.viewerMinimumTlsProtocolVersion = viewerMinimumTlsProtocolVersion.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -647,7 +788,11 @@ public class CreateDistributionRequest extends com.amazonaws.AmazonWebServiceReq
         if (getIpAddressType() != null)
             sb.append("IpAddressType: ").append(getIpAddressType()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getCertificateName() != null)
+            sb.append("CertificateName: ").append(getCertificateName()).append(",");
+        if (getViewerMinimumTlsProtocolVersion() != null)
+            sb.append("ViewerMinimumTlsProtocolVersion: ").append(getViewerMinimumTlsProtocolVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -694,6 +839,15 @@ public class CreateDistributionRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getCertificateName() == null ^ this.getCertificateName() == null)
+            return false;
+        if (other.getCertificateName() != null && other.getCertificateName().equals(this.getCertificateName()) == false)
+            return false;
+        if (other.getViewerMinimumTlsProtocolVersion() == null ^ this.getViewerMinimumTlsProtocolVersion() == null)
+            return false;
+        if (other.getViewerMinimumTlsProtocolVersion() != null
+                && other.getViewerMinimumTlsProtocolVersion().equals(this.getViewerMinimumTlsProtocolVersion()) == false)
+            return false;
         return true;
     }
 
@@ -710,6 +864,8 @@ public class CreateDistributionRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getBundleId() == null) ? 0 : getBundleId().hashCode());
         hashCode = prime * hashCode + ((getIpAddressType() == null) ? 0 : getIpAddressType().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getCertificateName() == null) ? 0 : getCertificateName().hashCode());
+        hashCode = prime * hashCode + ((getViewerMinimumTlsProtocolVersion() == null) ? 0 : getViewerMinimumTlsProtocolVersion().hashCode());
         return hashCode;
     }
 

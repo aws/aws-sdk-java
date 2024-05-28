@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class EmailChannelRequestMarshaller {
             .marshallLocationName("Identity").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("RoleArn").build();
+    private static final MarshallingInfo<String> ORCHESTRATIONSENDINGROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OrchestrationSendingRoleArn").build();
 
     private static final EmailChannelRequestMarshaller instance = new EmailChannelRequestMarshaller();
 
@@ -59,6 +61,7 @@ public class EmailChannelRequestMarshaller {
             protocolMarshaller.marshall(emailChannelRequest.getFromAddress(), FROMADDRESS_BINDING);
             protocolMarshaller.marshall(emailChannelRequest.getIdentity(), IDENTITY_BINDING);
             protocolMarshaller.marshall(emailChannelRequest.getRoleArn(), ROLEARN_BINDING);
+            protocolMarshaller.marshall(emailChannelRequest.getOrchestrationSendingRoleArn(), ORCHESTRATIONSENDINGROLEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

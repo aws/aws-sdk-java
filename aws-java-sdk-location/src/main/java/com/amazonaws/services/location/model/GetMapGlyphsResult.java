@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,10 +25,16 @@ public class GetMapGlyphsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The blob's content type.
+     * The glyph, as binary blob.
      * </p>
      */
     private java.nio.ByteBuffer blob;
+    /**
+     * <p>
+     * The HTTP Cache-Control directive for the value.
+     * </p>
+     */
+    private String cacheControl;
     /**
      * <p>
      * The map glyph content type. For example, <code>application/octet-stream</code>.
@@ -38,7 +44,7 @@ public class GetMapGlyphsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The blob's content type.
+     * The glyph, as binary blob.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -52,7 +58,7 @@ public class GetMapGlyphsResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param blob
-     *        The blob's content type.
+     *        The glyph, as binary blob.
      */
 
     public void setBlob(java.nio.ByteBuffer blob) {
@@ -61,7 +67,7 @@ public class GetMapGlyphsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The blob's content type.
+     * The glyph, as binary blob.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -71,7 +77,7 @@ public class GetMapGlyphsResult extends com.amazonaws.AmazonWebServiceResult<com
      * {@code position}.
      * </p>
      * 
-     * @return The blob's content type.
+     * @return The glyph, as binary blob.
      */
 
     public java.nio.ByteBuffer getBlob() {
@@ -80,7 +86,7 @@ public class GetMapGlyphsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The blob's content type.
+     * The glyph, as binary blob.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -94,12 +100,52 @@ public class GetMapGlyphsResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param blob
-     *        The blob's content type.
+     *        The glyph, as binary blob.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetMapGlyphsResult withBlob(java.nio.ByteBuffer blob) {
         setBlob(blob);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The HTTP Cache-Control directive for the value.
+     * </p>
+     * 
+     * @param cacheControl
+     *        The HTTP Cache-Control directive for the value.
+     */
+
+    public void setCacheControl(String cacheControl) {
+        this.cacheControl = cacheControl;
+    }
+
+    /**
+     * <p>
+     * The HTTP Cache-Control directive for the value.
+     * </p>
+     * 
+     * @return The HTTP Cache-Control directive for the value.
+     */
+
+    public String getCacheControl() {
+        return this.cacheControl;
+    }
+
+    /**
+     * <p>
+     * The HTTP Cache-Control directive for the value.
+     * </p>
+     * 
+     * @param cacheControl
+     *        The HTTP Cache-Control directive for the value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMapGlyphsResult withCacheControl(String cacheControl) {
+        setCacheControl(cacheControl);
         return this;
     }
 
@@ -157,6 +203,8 @@ public class GetMapGlyphsResult extends com.amazonaws.AmazonWebServiceResult<com
         sb.append("{");
         if (getBlob() != null)
             sb.append("Blob: ").append(getBlob()).append(",");
+        if (getCacheControl() != null)
+            sb.append("CacheControl: ").append(getCacheControl()).append(",");
         if (getContentType() != null)
             sb.append("ContentType: ").append(getContentType());
         sb.append("}");
@@ -177,6 +225,10 @@ public class GetMapGlyphsResult extends com.amazonaws.AmazonWebServiceResult<com
             return false;
         if (other.getBlob() != null && other.getBlob().equals(this.getBlob()) == false)
             return false;
+        if (other.getCacheControl() == null ^ this.getCacheControl() == null)
+            return false;
+        if (other.getCacheControl() != null && other.getCacheControl().equals(this.getCacheControl()) == false)
+            return false;
         if (other.getContentType() == null ^ this.getContentType() == null)
             return false;
         if (other.getContentType() != null && other.getContentType().equals(this.getContentType()) == false)
@@ -190,6 +242,7 @@ public class GetMapGlyphsResult extends com.amazonaws.AmazonWebServiceResult<com
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getBlob() == null) ? 0 : getBlob().hashCode());
+        hashCode = prime * hashCode + ((getCacheControl() == null) ? 0 : getCacheControl().hashCode());
         hashCode = prime * hashCode + ((getContentType() == null) ? 0 : getContentType().hashCode());
         return hashCode;
     }

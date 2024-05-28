@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,24 +27,24 @@ public class DeleteDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique name of the disk you want to delete (e.g., <code>my-disk</code>).
+     * The unique name of the disk you want to delete (<code>my-disk</code>).
      * </p>
      */
     private String diskName;
     /**
      * <p>
-     * A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     * A Boolean value to indicate whether to delete all add-ons for the disk.
      * </p>
      */
     private Boolean forceDeleteAddOns;
 
     /**
      * <p>
-     * The unique name of the disk you want to delete (e.g., <code>my-disk</code>).
+     * The unique name of the disk you want to delete (<code>my-disk</code>).
      * </p>
      * 
      * @param diskName
-     *        The unique name of the disk you want to delete (e.g., <code>my-disk</code>).
+     *        The unique name of the disk you want to delete (<code>my-disk</code>).
      */
 
     public void setDiskName(String diskName) {
@@ -53,10 +53,10 @@ public class DeleteDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique name of the disk you want to delete (e.g., <code>my-disk</code>).
+     * The unique name of the disk you want to delete (<code>my-disk</code>).
      * </p>
      * 
-     * @return The unique name of the disk you want to delete (e.g., <code>my-disk</code>).
+     * @return The unique name of the disk you want to delete (<code>my-disk</code>).
      */
 
     public String getDiskName() {
@@ -65,11 +65,11 @@ public class DeleteDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique name of the disk you want to delete (e.g., <code>my-disk</code>).
+     * The unique name of the disk you want to delete (<code>my-disk</code>).
      * </p>
      * 
      * @param diskName
-     *        The unique name of the disk you want to delete (e.g., <code>my-disk</code>).
+     *        The unique name of the disk you want to delete (<code>my-disk</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class DeleteDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     * A Boolean value to indicate whether to delete all add-ons for the disk.
      * </p>
      * 
      * @param forceDeleteAddOns
-     *        A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     *        A Boolean value to indicate whether to delete all add-ons for the disk.
      */
 
     public void setForceDeleteAddOns(Boolean forceDeleteAddOns) {
@@ -93,10 +93,10 @@ public class DeleteDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     * A Boolean value to indicate whether to delete all add-ons for the disk.
      * </p>
      * 
-     * @return A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     * @return A Boolean value to indicate whether to delete all add-ons for the disk.
      */
 
     public Boolean getForceDeleteAddOns() {
@@ -105,11 +105,11 @@ public class DeleteDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     * A Boolean value to indicate whether to delete all add-ons for the disk.
      * </p>
      * 
      * @param forceDeleteAddOns
-     *        A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     *        A Boolean value to indicate whether to delete all add-ons for the disk.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,10 +120,10 @@ public class DeleteDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     * A Boolean value to indicate whether to delete all add-ons for the disk.
      * </p>
      * 
-     * @return A Boolean value to indicate whether to delete the enabled add-ons for the disk.
+     * @return A Boolean value to indicate whether to delete all add-ons for the disk.
      */
 
     public Boolean isForceDeleteAddOns() {

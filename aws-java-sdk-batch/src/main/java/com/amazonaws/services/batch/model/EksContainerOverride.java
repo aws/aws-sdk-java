@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Object representing any Kubernetes overrides to a job definition that's used in a <a>SubmitJob</a> API operation.
+ * Object representing any Kubernetes overrides to a job definition that's used in a <a
+ * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a> API operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/EksContainerOverride" target="_top">AWS API
@@ -28,6 +29,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class EksContainerOverride implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * A pointer to the container that you want to override. The name must match a unique container name that you wish
+     * to override.
+     * </p>
+     */
+    private String name;
     /**
      * <p>
      * The override of the Docker image that's used to start the container.
@@ -45,7 +53,7 @@ public class EksContainerOverride implements Serializable, Cloneable, Structured
      * <p>
      * The arguments to the entrypoint to send to the container that overrides the default arguments from the Docker
      * image or the job definition. For more information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile reference: CMD</a> and <a
      * href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a
      * command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.
      * </p>
@@ -75,6 +83,52 @@ public class EksContainerOverride implements Serializable, Cloneable, Structured
      * </p>
      */
     private EksContainerResourceRequirements resources;
+
+    /**
+     * <p>
+     * A pointer to the container that you want to override. The name must match a unique container name that you wish
+     * to override.
+     * </p>
+     * 
+     * @param name
+     *        A pointer to the container that you want to override. The name must match a unique container name that you
+     *        wish to override.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * A pointer to the container that you want to override. The name must match a unique container name that you wish
+     * to override.
+     * </p>
+     * 
+     * @return A pointer to the container that you want to override. The name must match a unique container name that
+     *         you wish to override.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * A pointer to the container that you want to override. The name must match a unique container name that you wish
+     * to override.
+     * </p>
+     * 
+     * @param name
+     *        A pointer to the container that you want to override. The name must match a unique container name that you
+     *        wish to override.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EksContainerOverride withName(String name) {
+        setName(name);
+        return this;
+    }
 
     /**
      * <p>
@@ -198,15 +252,14 @@ public class EksContainerOverride implements Serializable, Cloneable, Structured
      * <p>
      * The arguments to the entrypoint to send to the container that overrides the default arguments from the Docker
      * image or the job definition. For more information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile reference: CMD</a> and <a
      * href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a
      * command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.
      * </p>
      * 
      * @return The arguments to the entrypoint to send to the container that overrides the default arguments from the
      *         Docker image or the job definition. For more information, see <a
-     *         href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i>
-     *         and <a
+     *         href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile reference: CMD</a> and <a
      *         href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
      *         a command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.
      */
@@ -219,7 +272,7 @@ public class EksContainerOverride implements Serializable, Cloneable, Structured
      * <p>
      * The arguments to the entrypoint to send to the container that overrides the default arguments from the Docker
      * image or the job definition. For more information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile reference: CMD</a> and <a
      * href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a
      * command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.
      * </p>
@@ -227,9 +280,9 @@ public class EksContainerOverride implements Serializable, Cloneable, Structured
      * @param args
      *        The arguments to the entrypoint to send to the container that overrides the default arguments from the
      *        Docker image or the job definition. For more information, see <a
-     *        href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i>
-     *        and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">
-     *        Define a command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.
+     *        href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile reference: CMD</a> and <a
+     *        href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
+     *        a command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.
      */
 
     public void setArgs(java.util.Collection<String> args) {
@@ -245,7 +298,7 @@ public class EksContainerOverride implements Serializable, Cloneable, Structured
      * <p>
      * The arguments to the entrypoint to send to the container that overrides the default arguments from the Docker
      * image or the job definition. For more information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile reference: CMD</a> and <a
      * href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a
      * command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.
      * </p>
@@ -258,9 +311,9 @@ public class EksContainerOverride implements Serializable, Cloneable, Structured
      * @param args
      *        The arguments to the entrypoint to send to the container that overrides the default arguments from the
      *        Docker image or the job definition. For more information, see <a
-     *        href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i>
-     *        and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">
-     *        Define a command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.
+     *        href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile reference: CMD</a> and <a
+     *        href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
+     *        a command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -278,7 +331,7 @@ public class EksContainerOverride implements Serializable, Cloneable, Structured
      * <p>
      * The arguments to the entrypoint to send to the container that overrides the default arguments from the Docker
      * image or the job definition. For more information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i> and <a
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile reference: CMD</a> and <a
      * href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define a
      * command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.
      * </p>
@@ -286,9 +339,9 @@ public class EksContainerOverride implements Serializable, Cloneable, Structured
      * @param args
      *        The arguments to the entrypoint to send to the container that overrides the default arguments from the
      *        Docker image or the job definition. For more information, see <a
-     *        href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the <i>Dockerfile reference</i>
-     *        and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">
-     *        Define a command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.
+     *        href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile reference: CMD</a> and <a
+     *        href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
+     *        a command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -499,6 +552,8 @@ public class EksContainerOverride implements Serializable, Cloneable, Structured
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
         if (getImage() != null)
             sb.append("Image: ").append(getImage()).append(",");
         if (getCommand() != null)
@@ -523,6 +578,10 @@ public class EksContainerOverride implements Serializable, Cloneable, Structured
         if (obj instanceof EksContainerOverride == false)
             return false;
         EksContainerOverride other = (EksContainerOverride) obj;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
         if (other.getImage() == null ^ this.getImage() == null)
             return false;
         if (other.getImage() != null && other.getImage().equals(this.getImage()) == false)
@@ -551,6 +610,7 @@ public class EksContainerOverride implements Serializable, Cloneable, Structured
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getImage() == null) ? 0 : getImage().hashCode());
         hashCode = prime * hashCode + ((getCommand() == null) ? 0 : getCommand().hashCode());
         hashCode = prime * hashCode + ((getArgs() == null) ? 0 : getArgs().hashCode());

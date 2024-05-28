@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class CastColumnTypeOperationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ColumnName").build();
     private static final MarshallingInfo<String> NEWCOLUMNTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NewColumnType").build();
+    private static final MarshallingInfo<String> SUBTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SubType").build();
     private static final MarshallingInfo<String> FORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Format").build();
 
@@ -52,6 +54,7 @@ public class CastColumnTypeOperationMarshaller {
         try {
             protocolMarshaller.marshall(castColumnTypeOperation.getColumnName(), COLUMNNAME_BINDING);
             protocolMarshaller.marshall(castColumnTypeOperation.getNewColumnType(), NEWCOLUMNTYPE_BINDING);
+            protocolMarshaller.marshall(castColumnTypeOperation.getSubType(), SUBTYPE_BINDING);
             protocolMarshaller.marshall(castColumnTypeOperation.getFormat(), FORMAT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

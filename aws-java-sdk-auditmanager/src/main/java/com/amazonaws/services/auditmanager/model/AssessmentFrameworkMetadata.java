@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -84,13 +84,13 @@ public class AssessmentFrameworkMetadata implements Serializable, Cloneable, Str
     private Integer controlSetsCount;
     /**
      * <p>
-     * Specifies when the framework was created.
+     * The time when the framework was created.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * Specifies when the framework was most recently updated.
+     * The time when the framework was most recently updated.
      * </p>
      */
     private java.util.Date lastUpdatedAt;
@@ -476,11 +476,11 @@ public class AssessmentFrameworkMetadata implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specifies when the framework was created.
+     * The time when the framework was created.
      * </p>
      * 
      * @param createdAt
-     *        Specifies when the framework was created.
+     *        The time when the framework was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -489,10 +489,10 @@ public class AssessmentFrameworkMetadata implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specifies when the framework was created.
+     * The time when the framework was created.
      * </p>
      * 
-     * @return Specifies when the framework was created.
+     * @return The time when the framework was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -501,11 +501,11 @@ public class AssessmentFrameworkMetadata implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specifies when the framework was created.
+     * The time when the framework was created.
      * </p>
      * 
      * @param createdAt
-     *        Specifies when the framework was created.
+     *        The time when the framework was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -516,11 +516,11 @@ public class AssessmentFrameworkMetadata implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specifies when the framework was most recently updated.
+     * The time when the framework was most recently updated.
      * </p>
      * 
      * @param lastUpdatedAt
-     *        Specifies when the framework was most recently updated.
+     *        The time when the framework was most recently updated.
      */
 
     public void setLastUpdatedAt(java.util.Date lastUpdatedAt) {
@@ -529,10 +529,10 @@ public class AssessmentFrameworkMetadata implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specifies when the framework was most recently updated.
+     * The time when the framework was most recently updated.
      * </p>
      * 
-     * @return Specifies when the framework was most recently updated.
+     * @return The time when the framework was most recently updated.
      */
 
     public java.util.Date getLastUpdatedAt() {
@@ -541,11 +541,11 @@ public class AssessmentFrameworkMetadata implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specifies when the framework was most recently updated.
+     * The time when the framework was most recently updated.
      * </p>
      * 
      * @param lastUpdatedAt
-     *        Specifies when the framework was most recently updated.
+     *        The time when the framework was most recently updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -579,7 +579,7 @@ public class AssessmentFrameworkMetadata implements Serializable, Cloneable, Str
         if (getLogo() != null)
             sb.append("Logo: ").append(getLogo()).append(",");
         if (getComplianceType() != null)
-            sb.append("ComplianceType: ").append(getComplianceType()).append(",");
+            sb.append("ComplianceType: ").append("***Sensitive Data Redacted***").append(",");
         if (getControlsCount() != null)
             sb.append("ControlsCount: ").append(getControlsCount()).append(",");
         if (getControlSetsCount() != null)

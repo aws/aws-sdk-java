@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,7 +51,7 @@ public class DescribeMapResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String description;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.
+     * The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -264,7 +264,7 @@ public class DescribeMapResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.
+     * The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -275,7 +275,8 @@ public class DescribeMapResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </ul>
      * 
      * @param mapArn
-     *        The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
+     *        The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web
+     *        Services.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -290,7 +291,7 @@ public class DescribeMapResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.
+     * The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -300,7 +301,8 @@ public class DescribeMapResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </li>
      * </ul>
      * 
-     * @return The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
+     * @return The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web
+     *         Services.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -315,7 +317,7 @@ public class DescribeMapResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.
+     * The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -326,7 +328,8 @@ public class DescribeMapResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </ul>
      * 
      * @param mapArn
-     *        The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all AWS.</p>
+     *        The Amazon Resource Name (ARN) for the map resource. Used to specify a resource across all Amazon Web
+     *        Services.</p>
      *        <ul>
      *        <li>
      *        <p>

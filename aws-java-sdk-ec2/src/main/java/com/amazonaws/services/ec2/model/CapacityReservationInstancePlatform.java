@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,8 @@ public enum CapacityReservationInstancePlatform {
     RHELWithSQLServerWeb("RHEL with SQL Server Web"),
     RHELWithHA("RHEL with HA"),
     RHELWithHAAndSQLServerStandard("RHEL with HA and SQL Server Standard"),
-    RHELWithHAAndSQLServerEnterprise("RHEL with HA and SQL Server Enterprise");
+    RHELWithHAAndSQLServerEnterprise("RHEL with HA and SQL Server Enterprise"),
+    UbuntuPro("Ubuntu Pro");
 
     private String value;
 

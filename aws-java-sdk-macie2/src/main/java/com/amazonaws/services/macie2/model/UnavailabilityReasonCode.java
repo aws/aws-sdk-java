@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,13 @@ public enum UnavailabilityReasonCode {
     UNSUPPORTED_OBJECT_TYPE("UNSUPPORTED_OBJECT_TYPE"),
     UNSUPPORTED_FINDING_TYPE("UNSUPPORTED_FINDING_TYPE"),
     INVALID_CLASSIFICATION_RESULT("INVALID_CLASSIFICATION_RESULT"),
-    OBJECT_UNAVAILABLE("OBJECT_UNAVAILABLE");
+    OBJECT_UNAVAILABLE("OBJECT_UNAVAILABLE"),
+    ACCOUNT_NOT_IN_ORGANIZATION("ACCOUNT_NOT_IN_ORGANIZATION"),
+    MISSING_GET_MEMBER_PERMISSION("MISSING_GET_MEMBER_PERMISSION"),
+    ROLE_TOO_PERMISSIVE("ROLE_TOO_PERMISSIVE"),
+    MEMBER_ROLE_TOO_PERMISSIVE("MEMBER_ROLE_TOO_PERMISSIVE"),
+    INVALID_RESULT_SIGNATURE("INVALID_RESULT_SIGNATURE"),
+    RESULT_NOT_SIGNED("RESULT_NOT_SIGNED");
 
     private String value;
 

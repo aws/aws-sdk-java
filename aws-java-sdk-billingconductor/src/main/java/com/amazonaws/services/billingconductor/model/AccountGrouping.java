@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * The set of accounts that will be under the billing group. The set of accounts resemble the linked accounts in a
- * consolidated family.
+ * consolidated billing family.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/AccountGrouping" target="_top">AWS
@@ -36,6 +36,13 @@ public class AccountGrouping implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.List<String> linkedAccountIds;
+    /**
+     * <p>
+     * Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join
+     * your consolidated billing family.
+     * </p>
+     */
+    private Boolean autoAssociate;
 
     /**
      * <p>
@@ -116,6 +123,66 @@ public class AccountGrouping implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join
+     * your consolidated billing family.
+     * </p>
+     * 
+     * @param autoAssociate
+     *        Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that
+     *        join your consolidated billing family.
+     */
+
+    public void setAutoAssociate(Boolean autoAssociate) {
+        this.autoAssociate = autoAssociate;
+    }
+
+    /**
+     * <p>
+     * Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join
+     * your consolidated billing family.
+     * </p>
+     * 
+     * @return Specifies if this billing group will automatically associate newly added Amazon Web Services accounts
+     *         that join your consolidated billing family.
+     */
+
+    public Boolean getAutoAssociate() {
+        return this.autoAssociate;
+    }
+
+    /**
+     * <p>
+     * Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join
+     * your consolidated billing family.
+     * </p>
+     * 
+     * @param autoAssociate
+     *        Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that
+     *        join your consolidated billing family.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccountGrouping withAutoAssociate(Boolean autoAssociate) {
+        setAutoAssociate(autoAssociate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies if this billing group will automatically associate newly added Amazon Web Services accounts that join
+     * your consolidated billing family.
+     * </p>
+     * 
+     * @return Specifies if this billing group will automatically associate newly added Amazon Web Services accounts
+     *         that join your consolidated billing family.
+     */
+
+    public Boolean isAutoAssociate() {
+        return this.autoAssociate;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -128,7 +195,9 @@ public class AccountGrouping implements Serializable, Cloneable, StructuredPojo 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLinkedAccountIds() != null)
-            sb.append("LinkedAccountIds: ").append(getLinkedAccountIds());
+            sb.append("LinkedAccountIds: ").append(getLinkedAccountIds()).append(",");
+        if (getAutoAssociate() != null)
+            sb.append("AutoAssociate: ").append(getAutoAssociate());
         sb.append("}");
         return sb.toString();
     }
@@ -147,6 +216,10 @@ public class AccountGrouping implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getLinkedAccountIds() != null && other.getLinkedAccountIds().equals(this.getLinkedAccountIds()) == false)
             return false;
+        if (other.getAutoAssociate() == null ^ this.getAutoAssociate() == null)
+            return false;
+        if (other.getAutoAssociate() != null && other.getAutoAssociate().equals(this.getAutoAssociate()) == false)
+            return false;
         return true;
     }
 
@@ -156,6 +229,7 @@ public class AccountGrouping implements Serializable, Cloneable, StructuredPojo 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getLinkedAccountIds() == null) ? 0 : getLinkedAccountIds().hashCode());
+        hashCode = prime * hashCode + ((getAutoAssociate() == null) ? 0 : getAutoAssociate().hashCode());
         return hashCode;
     }
 

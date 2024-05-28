@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,117 +30,106 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to
-     * the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that
-     * path. The path should be such that it can be mounted by other SMB clients in your network.
+     * Specifies the name of the share exported by your SMB file server where DataSync will read or write data. You can
+     * include a subdirectory in the share path (for example, <code>/path/to/subdirectory</code>). Make sure that other
+     * SMB clients in your network can also mount this path.
      * </p>
-     * <note>
      * <p>
-     * <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.
-     * </p>
-     * </note>
-     * <p>
-     * To transfer all the data in the folder you specified, DataSync needs to have permissions to mount the SMB share,
-     * as well as to access all the data in that share. To ensure this, either ensure that the user/password specified
-     * belongs to the user who can mount the share, and who has the appropriate permissions for all of the files and
-     * directories that you want DataSync to access, or use credentials of a member of the Backup Operators group to
-     * mount the share. Doing either enables the agent to access the data. For the agent to access directories, you must
-     * additionally enable all execute access.
+     * To copy all data in the subdirectory, DataSync must be able to mount the SMB share and access all of its data.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions"
+     * >required permissions</a> for SMB locations.
      * </p>
      */
     private String subdirectory;
     /**
      * <p>
-     * The name of the SMB server. This value is the IP address or Domain Name Service (DNS) name of the SMB server. An
-     * agent that is installed on-premises uses this hostname to mount the SMB server in a network.
+     * Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will
+     * mount.
      * </p>
      * <note>
      * <p>
-     * This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.
+     * You can't specify an IP version 6 (IPv6) address.
      * </p>
      * </note>
      */
     private String serverHostname;
     /**
      * <p>
-     * The user who can mount the share, has the permissions to access files and folders in the SMB share.
+     * Specifies the user that can mount and access the files, folders, and file metadata in your SMB file server.
      * </p>
      * <p>
-     * For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata,
-     * see the <a href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.
+     * For information about choosing a user with the right level of access for your transfer, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions"
+     * >required permissions</a> for SMB locations.
      * </p>
      */
     private String user;
     /**
      * <p>
-     * The name of the Windows domain that the SMB server belongs to.
+     * Specifies the name of the Active Directory domain that your SMB file server belongs to.
+     * </p>
+     * <p>
+     * If you have multiple Active Directory domains in your environment, configuring this parameter makes sure that
+     * DataSync connects to the right file server.
      * </p>
      */
     private String domain;
     /**
      * <p>
-     * The password of the user who can mount the share, has the permissions to access files and folders in the SMB
-     * share.
+     * Specifies the password of the user who can mount your SMB file server and has permission to access the files and
+     * folders involved in your transfer.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions"
+     * >required permissions</a> for SMB locations.
      * </p>
      */
     private String password;
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location.
+     * Specifies the DataSync agent (or agents) which you want to connect to your SMB file server. You specify an agent
+     * by using its Amazon Resource Name (ARN).
      * </p>
      */
     private java.util.List<String> agentArns;
     /**
      * <p>
-     * The mount options used by DataSync to access the SMB server.
+     * Specifies the version of the SMB protocol that DataSync uses to access your SMB file server.
      * </p>
      */
     private SmbMountOptions mountOptions;
     /**
      * <p>
-     * The key-value pair that represents the tag that you want to add to the location. The value can be an empty
-     * string. We recommend using tags to name your resources.
+     * Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We
+     * recommend creating at least a name tag for your location.
      * </p>
      */
     private java.util.List<TagListEntry> tags;
 
     /**
      * <p>
-     * The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to
-     * the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that
-     * path. The path should be such that it can be mounted by other SMB clients in your network.
+     * Specifies the name of the share exported by your SMB file server where DataSync will read or write data. You can
+     * include a subdirectory in the share path (for example, <code>/path/to/subdirectory</code>). Make sure that other
+     * SMB clients in your network can also mount this path.
      * </p>
-     * <note>
      * <p>
-     * <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.
-     * </p>
-     * </note>
-     * <p>
-     * To transfer all the data in the folder you specified, DataSync needs to have permissions to mount the SMB share,
-     * as well as to access all the data in that share. To ensure this, either ensure that the user/password specified
-     * belongs to the user who can mount the share, and who has the appropriate permissions for all of the files and
-     * directories that you want DataSync to access, or use credentials of a member of the Backup Operators group to
-     * mount the share. Doing either enables the agent to access the data. For the agent to access directories, you must
-     * additionally enable all execute access.
+     * To copy all data in the subdirectory, DataSync must be able to mount the SMB share and access all of its data.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions"
+     * >required permissions</a> for SMB locations.
      * </p>
      * 
      * @param subdirectory
-     *        The subdirectory in the SMB file system that is used to read data from the SMB source location or write
-     *        data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a
-     *        subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your
-     *        network.</p> <note>
+     *        Specifies the name of the share exported by your SMB file server where DataSync will read or write data.
+     *        You can include a subdirectory in the share path (for example, <code>/path/to/subdirectory</code>). Make
+     *        sure that other SMB clients in your network can also mount this path.</p>
      *        <p>
-     *        <code>Subdirectory</code> must be specified with forward slashes. For example,
-     *        <code>/path/to/folder</code>.
-     *        </p>
-     *        </note>
-     *        <p>
-     *        To transfer all the data in the folder you specified, DataSync needs to have permissions to mount the SMB
-     *        share, as well as to access all the data in that share. To ensure this, either ensure that the
-     *        user/password specified belongs to the user who can mount the share, and who has the appropriate
-     *        permissions for all of the files and directories that you want DataSync to access, or use credentials of a
-     *        member of the Backup Operators group to mount the share. Doing either enables the agent to access the
-     *        data. For the agent to access directories, you must additionally enable all execute access.
+     *        To copy all data in the subdirectory, DataSync must be able to mount the SMB share and access all of its
+     *        data. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions"
+     *        >required permissions</a> for SMB locations.
      */
 
     public void setSubdirectory(String subdirectory) {
@@ -149,40 +138,25 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to
-     * the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that
-     * path. The path should be such that it can be mounted by other SMB clients in your network.
+     * Specifies the name of the share exported by your SMB file server where DataSync will read or write data. You can
+     * include a subdirectory in the share path (for example, <code>/path/to/subdirectory</code>). Make sure that other
+     * SMB clients in your network can also mount this path.
      * </p>
-     * <note>
      * <p>
-     * <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.
-     * </p>
-     * </note>
-     * <p>
-     * To transfer all the data in the folder you specified, DataSync needs to have permissions to mount the SMB share,
-     * as well as to access all the data in that share. To ensure this, either ensure that the user/password specified
-     * belongs to the user who can mount the share, and who has the appropriate permissions for all of the files and
-     * directories that you want DataSync to access, or use credentials of a member of the Backup Operators group to
-     * mount the share. Doing either enables the agent to access the data. For the agent to access directories, you must
-     * additionally enable all execute access.
+     * To copy all data in the subdirectory, DataSync must be able to mount the SMB share and access all of its data.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions"
+     * >required permissions</a> for SMB locations.
      * </p>
      * 
-     * @return The subdirectory in the SMB file system that is used to read data from the SMB source location or write
-     *         data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a
-     *         subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your
-     *         network.</p> <note>
+     * @return Specifies the name of the share exported by your SMB file server where DataSync will read or write data.
+     *         You can include a subdirectory in the share path (for example, <code>/path/to/subdirectory</code>). Make
+     *         sure that other SMB clients in your network can also mount this path.</p>
      *         <p>
-     *         <code>Subdirectory</code> must be specified with forward slashes. For example,
-     *         <code>/path/to/folder</code>.
-     *         </p>
-     *         </note>
-     *         <p>
-     *         To transfer all the data in the folder you specified, DataSync needs to have permissions to mount the SMB
-     *         share, as well as to access all the data in that share. To ensure this, either ensure that the
-     *         user/password specified belongs to the user who can mount the share, and who has the appropriate
-     *         permissions for all of the files and directories that you want DataSync to access, or use credentials of
-     *         a member of the Backup Operators group to mount the share. Doing either enables the agent to access the
-     *         data. For the agent to access directories, you must additionally enable all execute access.
+     *         To copy all data in the subdirectory, DataSync must be able to mount the SMB share and access all of its
+     *         data. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions"
+     *         >required permissions</a> for SMB locations.
      */
 
     public String getSubdirectory() {
@@ -191,41 +165,26 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The subdirectory in the SMB file system that is used to read data from the SMB source location or write data to
-     * the SMB destination. The SMB path should be a path that's exported by the SMB server, or a subdirectory of that
-     * path. The path should be such that it can be mounted by other SMB clients in your network.
+     * Specifies the name of the share exported by your SMB file server where DataSync will read or write data. You can
+     * include a subdirectory in the share path (for example, <code>/path/to/subdirectory</code>). Make sure that other
+     * SMB clients in your network can also mount this path.
      * </p>
-     * <note>
      * <p>
-     * <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.
-     * </p>
-     * </note>
-     * <p>
-     * To transfer all the data in the folder you specified, DataSync needs to have permissions to mount the SMB share,
-     * as well as to access all the data in that share. To ensure this, either ensure that the user/password specified
-     * belongs to the user who can mount the share, and who has the appropriate permissions for all of the files and
-     * directories that you want DataSync to access, or use credentials of a member of the Backup Operators group to
-     * mount the share. Doing either enables the agent to access the data. For the agent to access directories, you must
-     * additionally enable all execute access.
+     * To copy all data in the subdirectory, DataSync must be able to mount the SMB share and access all of its data.
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions"
+     * >required permissions</a> for SMB locations.
      * </p>
      * 
      * @param subdirectory
-     *        The subdirectory in the SMB file system that is used to read data from the SMB source location or write
-     *        data to the SMB destination. The SMB path should be a path that's exported by the SMB server, or a
-     *        subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your
-     *        network.</p> <note>
+     *        Specifies the name of the share exported by your SMB file server where DataSync will read or write data.
+     *        You can include a subdirectory in the share path (for example, <code>/path/to/subdirectory</code>). Make
+     *        sure that other SMB clients in your network can also mount this path.</p>
      *        <p>
-     *        <code>Subdirectory</code> must be specified with forward slashes. For example,
-     *        <code>/path/to/folder</code>.
-     *        </p>
-     *        </note>
-     *        <p>
-     *        To transfer all the data in the folder you specified, DataSync needs to have permissions to mount the SMB
-     *        share, as well as to access all the data in that share. To ensure this, either ensure that the
-     *        user/password specified belongs to the user who can mount the share, and who has the appropriate
-     *        permissions for all of the files and directories that you want DataSync to access, or use credentials of a
-     *        member of the Backup Operators group to mount the share. Doing either enables the agent to access the
-     *        data. For the agent to access directories, you must additionally enable all execute access.
+     *        To copy all data in the subdirectory, DataSync must be able to mount the SMB share and access all of its
+     *        data. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions"
+     *        >required permissions</a> for SMB locations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -236,21 +195,20 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the SMB server. This value is the IP address or Domain Name Service (DNS) name of the SMB server. An
-     * agent that is installed on-premises uses this hostname to mount the SMB server in a network.
+     * Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will
+     * mount.
      * </p>
      * <note>
      * <p>
-     * This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.
+     * You can't specify an IP version 6 (IPv6) address.
      * </p>
      * </note>
      * 
      * @param serverHostname
-     *        The name of the SMB server. This value is the IP address or Domain Name Service (DNS) name of the SMB
-     *        server. An agent that is installed on-premises uses this hostname to mount the SMB server in a
-     *        network.</p> <note>
+     *        Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent
+     *        will mount.</p> <note>
      *        <p>
-     *        This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.
+     *        You can't specify an IP version 6 (IPv6) address.
      *        </p>
      */
 
@@ -260,20 +218,19 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the SMB server. This value is the IP address or Domain Name Service (DNS) name of the SMB server. An
-     * agent that is installed on-premises uses this hostname to mount the SMB server in a network.
+     * Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will
+     * mount.
      * </p>
      * <note>
      * <p>
-     * This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.
+     * You can't specify an IP version 6 (IPv6) address.
      * </p>
      * </note>
      * 
-     * @return The name of the SMB server. This value is the IP address or Domain Name Service (DNS) name of the SMB
-     *         server. An agent that is installed on-premises uses this hostname to mount the SMB server in a
-     *         network.</p> <note>
+     * @return Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync
+     *         agent will mount.</p> <note>
      *         <p>
-     *         This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.
+     *         You can't specify an IP version 6 (IPv6) address.
      *         </p>
      */
 
@@ -283,21 +240,20 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the SMB server. This value is the IP address or Domain Name Service (DNS) name of the SMB server. An
-     * agent that is installed on-premises uses this hostname to mount the SMB server in a network.
+     * Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent will
+     * mount.
      * </p>
      * <note>
      * <p>
-     * This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.
+     * You can't specify an IP version 6 (IPv6) address.
      * </p>
      * </note>
      * 
      * @param serverHostname
-     *        The name of the SMB server. This value is the IP address or Domain Name Service (DNS) name of the SMB
-     *        server. An agent that is installed on-premises uses this hostname to mount the SMB server in a
-     *        network.</p> <note>
+     *        Specifies the Domain Name Service (DNS) name or IP address of the SMB file server that your DataSync agent
+     *        will mount.</p> <note>
      *        <p>
-     *        This name must either be DNS-compliant or must be an IP version 4 (IPv4) address.
+     *        You can't specify an IP version 6 (IPv6) address.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -309,18 +265,21 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The user who can mount the share, has the permissions to access files and folders in the SMB share.
+     * Specifies the user that can mount and access the files, folders, and file metadata in your SMB file server.
      * </p>
      * <p>
-     * For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata,
-     * see the <a href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.
+     * For information about choosing a user with the right level of access for your transfer, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions"
+     * >required permissions</a> for SMB locations.
      * </p>
      * 
      * @param user
-     *        The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
+     *        Specifies the user that can mount and access the files, folders, and file metadata in your SMB file
+     *        server.</p>
      *        <p>
-     *        For information about choosing a user name that ensures sufficient permissions to files, folders, and
-     *        metadata, see the <a href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.
+     *        For information about choosing a user with the right level of access for your transfer, see <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions"
+     *        >required permissions</a> for SMB locations.
      */
 
     public void setUser(String user) {
@@ -329,17 +288,20 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The user who can mount the share, has the permissions to access files and folders in the SMB share.
+     * Specifies the user that can mount and access the files, folders, and file metadata in your SMB file server.
      * </p>
      * <p>
-     * For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata,
-     * see the <a href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.
+     * For information about choosing a user with the right level of access for your transfer, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions"
+     * >required permissions</a> for SMB locations.
      * </p>
      * 
-     * @return The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
+     * @return Specifies the user that can mount and access the files, folders, and file metadata in your SMB file
+     *         server.</p>
      *         <p>
-     *         For information about choosing a user name that ensures sufficient permissions to files, folders, and
-     *         metadata, see the <a href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.
+     *         For information about choosing a user with the right level of access for your transfer, see <a href=
+     *         "https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions"
+     *         >required permissions</a> for SMB locations.
      */
 
     public String getUser() {
@@ -348,18 +310,21 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The user who can mount the share, has the permissions to access files and folders in the SMB share.
+     * Specifies the user that can mount and access the files, folders, and file metadata in your SMB file server.
      * </p>
      * <p>
-     * For information about choosing a user name that ensures sufficient permissions to files, folders, and metadata,
-     * see the <a href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.
+     * For information about choosing a user with the right level of access for your transfer, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions"
+     * >required permissions</a> for SMB locations.
      * </p>
      * 
      * @param user
-     *        The user who can mount the share, has the permissions to access files and folders in the SMB share.</p>
+     *        Specifies the user that can mount and access the files, folders, and file metadata in your SMB file
+     *        server.</p>
      *        <p>
-     *        For information about choosing a user name that ensures sufficient permissions to files, folders, and
-     *        metadata, see the <a href="create-smb-location.html#SMBuser">User setting</a> for SMB locations.
+     *        For information about choosing a user with the right level of access for your transfer, see <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions"
+     *        >required permissions</a> for SMB locations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -370,11 +335,18 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the Windows domain that the SMB server belongs to.
+     * Specifies the name of the Active Directory domain that your SMB file server belongs to.
+     * </p>
+     * <p>
+     * If you have multiple Active Directory domains in your environment, configuring this parameter makes sure that
+     * DataSync connects to the right file server.
      * </p>
      * 
      * @param domain
-     *        The name of the Windows domain that the SMB server belongs to.
+     *        Specifies the name of the Active Directory domain that your SMB file server belongs to. </p>
+     *        <p>
+     *        If you have multiple Active Directory domains in your environment, configuring this parameter makes sure
+     *        that DataSync connects to the right file server.
      */
 
     public void setDomain(String domain) {
@@ -383,10 +355,17 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the Windows domain that the SMB server belongs to.
+     * Specifies the name of the Active Directory domain that your SMB file server belongs to.
+     * </p>
+     * <p>
+     * If you have multiple Active Directory domains in your environment, configuring this parameter makes sure that
+     * DataSync connects to the right file server.
      * </p>
      * 
-     * @return The name of the Windows domain that the SMB server belongs to.
+     * @return Specifies the name of the Active Directory domain that your SMB file server belongs to. </p>
+     *         <p>
+     *         If you have multiple Active Directory domains in your environment, configuring this parameter makes sure
+     *         that DataSync connects to the right file server.
      */
 
     public String getDomain() {
@@ -395,11 +374,18 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the Windows domain that the SMB server belongs to.
+     * Specifies the name of the Active Directory domain that your SMB file server belongs to.
+     * </p>
+     * <p>
+     * If you have multiple Active Directory domains in your environment, configuring this parameter makes sure that
+     * DataSync connects to the right file server.
      * </p>
      * 
      * @param domain
-     *        The name of the Windows domain that the SMB server belongs to.
+     *        Specifies the name of the Active Directory domain that your SMB file server belongs to. </p>
+     *        <p>
+     *        If you have multiple Active Directory domains in your environment, configuring this parameter makes sure
+     *        that DataSync connects to the right file server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -410,13 +396,22 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The password of the user who can mount the share, has the permissions to access files and folders in the SMB
-     * share.
+     * Specifies the password of the user who can mount your SMB file server and has permission to access the files and
+     * folders involved in your transfer.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions"
+     * >required permissions</a> for SMB locations.
      * </p>
      * 
      * @param password
-     *        The password of the user who can mount the share, has the permissions to access files and folders in the
-     *        SMB share.
+     *        Specifies the password of the user who can mount your SMB file server and has permission to access the
+     *        files and folders involved in your transfer.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions"
+     *        >required permissions</a> for SMB locations.
      */
 
     public void setPassword(String password) {
@@ -425,12 +420,21 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The password of the user who can mount the share, has the permissions to access files and folders in the SMB
-     * share.
+     * Specifies the password of the user who can mount your SMB file server and has permission to access the files and
+     * folders involved in your transfer.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions"
+     * >required permissions</a> for SMB locations.
      * </p>
      * 
-     * @return The password of the user who can mount the share, has the permissions to access files and folders in the
-     *         SMB share.
+     * @return Specifies the password of the user who can mount your SMB file server and has permission to access the
+     *         files and folders involved in your transfer.</p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions"
+     *         >required permissions</a> for SMB locations.
      */
 
     public String getPassword() {
@@ -439,13 +443,22 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The password of the user who can mount the share, has the permissions to access files and folders in the SMB
-     * share.
+     * Specifies the password of the user who can mount your SMB file server and has permission to access the files and
+     * folders involved in your transfer.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions"
+     * >required permissions</a> for SMB locations.
      * </p>
      * 
      * @param password
-     *        The password of the user who can mount the share, has the permissions to access files and folders in the
-     *        SMB share.
+     *        Specifies the password of the user who can mount your SMB file server and has permission to access the
+     *        files and folders involved in your transfer.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions"
+     *        >required permissions</a> for SMB locations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -456,10 +469,12 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location.
+     * Specifies the DataSync agent (or agents) which you want to connect to your SMB file server. You specify an agent
+     * by using its Amazon Resource Name (ARN).
      * </p>
      * 
-     * @return The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location.
+     * @return Specifies the DataSync agent (or agents) which you want to connect to your SMB file server. You specify
+     *         an agent by using its Amazon Resource Name (ARN).
      */
 
     public java.util.List<String> getAgentArns() {
@@ -468,11 +483,13 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location.
+     * Specifies the DataSync agent (or agents) which you want to connect to your SMB file server. You specify an agent
+     * by using its Amazon Resource Name (ARN).
      * </p>
      * 
      * @param agentArns
-     *        The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location.
+     *        Specifies the DataSync agent (or agents) which you want to connect to your SMB file server. You specify an
+     *        agent by using its Amazon Resource Name (ARN).
      */
 
     public void setAgentArns(java.util.Collection<String> agentArns) {
@@ -486,7 +503,8 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location.
+     * Specifies the DataSync agent (or agents) which you want to connect to your SMB file server. You specify an agent
+     * by using its Amazon Resource Name (ARN).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -495,7 +513,8 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param agentArns
-     *        The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location.
+     *        Specifies the DataSync agent (or agents) which you want to connect to your SMB file server. You specify an
+     *        agent by using its Amazon Resource Name (ARN).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -511,11 +530,13 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location.
+     * Specifies the DataSync agent (or agents) which you want to connect to your SMB file server. You specify an agent
+     * by using its Amazon Resource Name (ARN).
      * </p>
      * 
      * @param agentArns
-     *        The Amazon Resource Names (ARNs) of agents to use for a Simple Message Block (SMB) location.
+     *        Specifies the DataSync agent (or agents) which you want to connect to your SMB file server. You specify an
+     *        agent by using its Amazon Resource Name (ARN).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -526,11 +547,11 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The mount options used by DataSync to access the SMB server.
+     * Specifies the version of the SMB protocol that DataSync uses to access your SMB file server.
      * </p>
      * 
      * @param mountOptions
-     *        The mount options used by DataSync to access the SMB server.
+     *        Specifies the version of the SMB protocol that DataSync uses to access your SMB file server.
      */
 
     public void setMountOptions(SmbMountOptions mountOptions) {
@@ -539,10 +560,10 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The mount options used by DataSync to access the SMB server.
+     * Specifies the version of the SMB protocol that DataSync uses to access your SMB file server.
      * </p>
      * 
-     * @return The mount options used by DataSync to access the SMB server.
+     * @return Specifies the version of the SMB protocol that DataSync uses to access your SMB file server.
      */
 
     public SmbMountOptions getMountOptions() {
@@ -551,11 +572,11 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The mount options used by DataSync to access the SMB server.
+     * Specifies the version of the SMB protocol that DataSync uses to access your SMB file server.
      * </p>
      * 
      * @param mountOptions
-     *        The mount options used by DataSync to access the SMB server.
+     *        Specifies the version of the SMB protocol that DataSync uses to access your SMB file server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -566,12 +587,12 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The key-value pair that represents the tag that you want to add to the location. The value can be an empty
-     * string. We recommend using tags to name your resources.
+     * Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We
+     * recommend creating at least a name tag for your location.
      * </p>
      * 
-     * @return The key-value pair that represents the tag that you want to add to the location. The value can be an
-     *         empty string. We recommend using tags to name your resources.
+     * @return Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We
+     *         recommend creating at least a name tag for your location.
      */
 
     public java.util.List<TagListEntry> getTags() {
@@ -580,13 +601,13 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The key-value pair that represents the tag that you want to add to the location. The value can be an empty
-     * string. We recommend using tags to name your resources.
+     * Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We
+     * recommend creating at least a name tag for your location.
      * </p>
      * 
      * @param tags
-     *        The key-value pair that represents the tag that you want to add to the location. The value can be an empty
-     *        string. We recommend using tags to name your resources.
+     *        Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We
+     *        recommend creating at least a name tag for your location.
      */
 
     public void setTags(java.util.Collection<TagListEntry> tags) {
@@ -600,8 +621,8 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The key-value pair that represents the tag that you want to add to the location. The value can be an empty
-     * string. We recommend using tags to name your resources.
+     * Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We
+     * recommend creating at least a name tag for your location.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -610,8 +631,8 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param tags
-     *        The key-value pair that represents the tag that you want to add to the location. The value can be an empty
-     *        string. We recommend using tags to name your resources.
+     *        Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We
+     *        recommend creating at least a name tag for your location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -627,13 +648,13 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The key-value pair that represents the tag that you want to add to the location. The value can be an empty
-     * string. We recommend using tags to name your resources.
+     * Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We
+     * recommend creating at least a name tag for your location.
      * </p>
      * 
      * @param tags
-     *        The key-value pair that represents the tag that you want to add to the location. The value can be an empty
-     *        string. We recommend using tags to name your resources.
+     *        Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We
+     *        recommend creating at least a name tag for your location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

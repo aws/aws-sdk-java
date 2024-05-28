@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,8 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an
- * external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For example, a
- * unique <code>GroupDisplayName</code>.
+ * external identity provider (IdP) that is associated with the user, the group, or a unique attribute.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/AlternateIdentifier" target="_top">AWS

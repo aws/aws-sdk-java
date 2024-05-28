@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,7 +22,7 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * For information about receiving email through Amazon SES, see the <a
- * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html">Amazon SES Developer Guide</a>.
+ * href="https://docs.aws.amazon.com/ses/latest/dg/receiving-email.html">Amazon SES Developer Guide</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ExtensionField" target="_top">AWS API
@@ -40,8 +40,8 @@ public class ExtensionField implements Serializable, Cloneable {
     private String name;
     /**
      * <p>
-     * The value of the header to add. Must be less than 2048 characters, and must not contain newline characters ("\r"
-     * or "\n").
+     * The value of the header to add. Must contain 2048 characters or fewer, and must not contain newline characters
+     * ("\r" or "\n").
      * </p>
      */
     private String value;
@@ -94,13 +94,13 @@ public class ExtensionField implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of the header to add. Must be less than 2048 characters, and must not contain newline characters ("\r"
-     * or "\n").
+     * The value of the header to add. Must contain 2048 characters or fewer, and must not contain newline characters
+     * ("\r" or "\n").
      * </p>
      * 
      * @param value
-     *        The value of the header to add. Must be less than 2048 characters, and must not contain newline characters
-     *        ("\r" or "\n").
+     *        The value of the header to add. Must contain 2048 characters or fewer, and must not contain newline
+     *        characters ("\r" or "\n").
      */
 
     public void setValue(String value) {
@@ -109,11 +109,11 @@ public class ExtensionField implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of the header to add. Must be less than 2048 characters, and must not contain newline characters ("\r"
-     * or "\n").
+     * The value of the header to add. Must contain 2048 characters or fewer, and must not contain newline characters
+     * ("\r" or "\n").
      * </p>
      * 
-     * @return The value of the header to add. Must be less than 2048 characters, and must not contain newline
+     * @return The value of the header to add. Must contain 2048 characters or fewer, and must not contain newline
      *         characters ("\r" or "\n").
      */
 
@@ -123,13 +123,13 @@ public class ExtensionField implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of the header to add. Must be less than 2048 characters, and must not contain newline characters ("\r"
-     * or "\n").
+     * The value of the header to add. Must contain 2048 characters or fewer, and must not contain newline characters
+     * ("\r" or "\n").
      * </p>
      * 
      * @param value
-     *        The value of the header to add. Must be less than 2048 characters, and must not contain newline characters
-     *        ("\r" or "\n").
+     *        The value of the header to add. Must contain 2048 characters or fewer, and must not contain newline
+     *        characters ("\r" or "\n").
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

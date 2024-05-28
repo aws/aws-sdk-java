@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,12 @@ public class ListPipelineExecutionsRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * The pipeline execution to filter on.
+     * </p>
+     */
+    private PipelineExecutionFilter filter;
     /**
      * <p>
      * The token that was returned from the previous <code>ListPipelineExecutions</code> call, which can be used to
@@ -144,6 +150,46 @@ public class ListPipelineExecutionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
+     * The pipeline execution to filter on.
+     * </p>
+     * 
+     * @param filter
+     *        The pipeline execution to filter on.
+     */
+
+    public void setFilter(PipelineExecutionFilter filter) {
+        this.filter = filter;
+    }
+
+    /**
+     * <p>
+     * The pipeline execution to filter on.
+     * </p>
+     * 
+     * @return The pipeline execution to filter on.
+     */
+
+    public PipelineExecutionFilter getFilter() {
+        return this.filter;
+    }
+
+    /**
+     * <p>
+     * The pipeline execution to filter on.
+     * </p>
+     * 
+     * @param filter
+     *        The pipeline execution to filter on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListPipelineExecutionsRequest withFilter(PipelineExecutionFilter filter) {
+        setFilter(filter);
+        return this;
+    }
+
+    /**
+     * <p>
      * The token that was returned from the previous <code>ListPipelineExecutions</code> call, which can be used to
      * return the next set of pipeline executions in the list.
      * </p>
@@ -204,6 +250,8 @@ public class ListPipelineExecutionsRequest extends com.amazonaws.AmazonWebServic
             sb.append("PipelineName: ").append(getPipelineName()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getFilter() != null)
+            sb.append("Filter: ").append(getFilter()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
@@ -228,6 +276,10 @@ public class ListPipelineExecutionsRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getFilter() == null ^ this.getFilter() == null)
+            return false;
+        if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
@@ -242,6 +294,7 @@ public class ListPipelineExecutionsRequest extends com.amazonaws.AmazonWebServic
 
         hashCode = prime * hashCode + ((getPipelineName() == null) ? 0 : getPipelineName().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }

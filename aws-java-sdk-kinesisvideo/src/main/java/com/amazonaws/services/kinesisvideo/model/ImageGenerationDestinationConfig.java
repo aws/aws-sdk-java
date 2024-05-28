@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,25 +30,25 @@ public class ImageGenerationDestinationConfig implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.
+     * The Uniform Resource Identifier (URI) that identifies where the images will be delivered.
      * </p>
      */
     private String uri;
     /**
      * <p>
-     * The AWS Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must match
-     * the Region where the stream is located.
+     * The Amazon Web Services Region of the S3 bucket where images will be delivered. This
+     * <code>DestinationRegion</code> must match the Region where the stream is located.
      * </p>
      */
     private String destinationRegion;
 
     /**
      * <p>
-     * The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.
+     * The Uniform Resource Identifier (URI) that identifies where the images will be delivered.
      * </p>
      * 
      * @param uri
-     *        The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.
+     *        The Uniform Resource Identifier (URI) that identifies where the images will be delivered.
      */
 
     public void setUri(String uri) {
@@ -57,10 +57,10 @@ public class ImageGenerationDestinationConfig implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.
+     * The Uniform Resource Identifier (URI) that identifies where the images will be delivered.
      * </p>
      * 
-     * @return The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.
+     * @return The Uniform Resource Identifier (URI) that identifies where the images will be delivered.
      */
 
     public String getUri() {
@@ -69,11 +69,11 @@ public class ImageGenerationDestinationConfig implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.
+     * The Uniform Resource Identifier (URI) that identifies where the images will be delivered.
      * </p>
      * 
      * @param uri
-     *        The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.
+     *        The Uniform Resource Identifier (URI) that identifies where the images will be delivered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,13 +84,13 @@ public class ImageGenerationDestinationConfig implements Serializable, Cloneable
 
     /**
      * <p>
-     * The AWS Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must match
-     * the Region where the stream is located.
+     * The Amazon Web Services Region of the S3 bucket where images will be delivered. This
+     * <code>DestinationRegion</code> must match the Region where the stream is located.
      * </p>
      * 
      * @param destinationRegion
-     *        The AWS Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must
-     *        match the Region where the stream is located.
+     *        The Amazon Web Services Region of the S3 bucket where images will be delivered. This
+     *        <code>DestinationRegion</code> must match the Region where the stream is located.
      */
 
     public void setDestinationRegion(String destinationRegion) {
@@ -99,12 +99,12 @@ public class ImageGenerationDestinationConfig implements Serializable, Cloneable
 
     /**
      * <p>
-     * The AWS Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must match
-     * the Region where the stream is located.
+     * The Amazon Web Services Region of the S3 bucket where images will be delivered. This
+     * <code>DestinationRegion</code> must match the Region where the stream is located.
      * </p>
      * 
-     * @return The AWS Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must
-     *         match the Region where the stream is located.
+     * @return The Amazon Web Services Region of the S3 bucket where images will be delivered. This
+     *         <code>DestinationRegion</code> must match the Region where the stream is located.
      */
 
     public String getDestinationRegion() {
@@ -113,13 +113,13 @@ public class ImageGenerationDestinationConfig implements Serializable, Cloneable
 
     /**
      * <p>
-     * The AWS Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must match
-     * the Region where the stream is located.
+     * The Amazon Web Services Region of the S3 bucket where images will be delivered. This
+     * <code>DestinationRegion</code> must match the Region where the stream is located.
      * </p>
      * 
      * @param destinationRegion
-     *        The AWS Region of the S3 bucket where images will be delivered. This <code>DestinationRegion</code> must
-     *        match the Region where the stream is located.
+     *        The Amazon Web Services Region of the S3 bucket where images will be delivered. This
+     *        <code>DestinationRegion</code> must match the Region where the stream is located.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

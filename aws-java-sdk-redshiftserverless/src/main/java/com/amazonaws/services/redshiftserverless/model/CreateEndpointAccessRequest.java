@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,12 @@ public class CreateEndpointAccessRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private String endpointName;
+    /**
+     * <p>
+     * The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.
+     * </p>
+     */
+    private String ownerAccount;
     /**
      * <p>
      * The unique identifers of subnets from which Amazon Redshift Serverless chooses one to deploy a VPC endpoint.
@@ -102,6 +108,46 @@ public class CreateEndpointAccessRequest extends com.amazonaws.AmazonWebServiceR
 
     public CreateEndpointAccessRequest withEndpointName(String endpointName) {
         setEndpointName(endpointName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.
+     * </p>
+     * 
+     * @param ownerAccount
+     *        The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.
+     */
+
+    public void setOwnerAccount(String ownerAccount) {
+        this.ownerAccount = ownerAccount;
+    }
+
+    /**
+     * <p>
+     * The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.
+     * </p>
+     * 
+     * @return The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.
+     */
+
+    public String getOwnerAccount() {
+        return this.ownerAccount;
+    }
+
+    /**
+     * <p>
+     * The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.
+     * </p>
+     * 
+     * @param ownerAccount
+     *        The owner Amazon Web Services account for the Amazon Redshift Serverless workgroup.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEndpointAccessRequest withOwnerAccount(String ownerAccount) {
+        setOwnerAccount(ownerAccount);
         return this;
     }
 
@@ -311,6 +357,8 @@ public class CreateEndpointAccessRequest extends com.amazonaws.AmazonWebServiceR
         sb.append("{");
         if (getEndpointName() != null)
             sb.append("EndpointName: ").append(getEndpointName()).append(",");
+        if (getOwnerAccount() != null)
+            sb.append("OwnerAccount: ").append(getOwnerAccount()).append(",");
         if (getSubnetIds() != null)
             sb.append("SubnetIds: ").append(getSubnetIds()).append(",");
         if (getVpcSecurityGroupIds() != null)
@@ -335,6 +383,10 @@ public class CreateEndpointAccessRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getEndpointName() != null && other.getEndpointName().equals(this.getEndpointName()) == false)
             return false;
+        if (other.getOwnerAccount() == null ^ this.getOwnerAccount() == null)
+            return false;
+        if (other.getOwnerAccount() != null && other.getOwnerAccount().equals(this.getOwnerAccount()) == false)
+            return false;
         if (other.getSubnetIds() == null ^ this.getSubnetIds() == null)
             return false;
         if (other.getSubnetIds() != null && other.getSubnetIds().equals(this.getSubnetIds()) == false)
@@ -356,6 +408,7 @@ public class CreateEndpointAccessRequest extends com.amazonaws.AmazonWebServiceR
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getEndpointName() == null) ? 0 : getEndpointName().hashCode());
+        hashCode = prime * hashCode + ((getOwnerAccount() == null) ? 0 : getOwnerAccount().hashCode());
         hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
         hashCode = prime * hashCode + ((getVpcSecurityGroupIds() == null) ? 0 : getVpcSecurityGroupIds().hashCode());
         hashCode = prime * hashCode + ((getWorkgroupName() == null) ? 0 : getWorkgroupName().hashCode());

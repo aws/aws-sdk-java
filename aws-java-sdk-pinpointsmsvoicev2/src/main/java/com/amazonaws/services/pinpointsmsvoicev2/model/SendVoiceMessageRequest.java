@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -100,6 +100,12 @@ public class SendVoiceMessageRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private Boolean dryRun;
+    /**
+     * <p>
+     * The unique identifier for the protect configuration.
+     * </p>
+     */
+    private String protectConfigurationId;
 
     /**
      * <p>
@@ -701,6 +707,46 @@ public class SendVoiceMessageRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The unique identifier for the protect configuration.
+     * </p>
+     * 
+     * @param protectConfigurationId
+     *        The unique identifier for the protect configuration.
+     */
+
+    public void setProtectConfigurationId(String protectConfigurationId) {
+        this.protectConfigurationId = protectConfigurationId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for the protect configuration.
+     * </p>
+     * 
+     * @return The unique identifier for the protect configuration.
+     */
+
+    public String getProtectConfigurationId() {
+        return this.protectConfigurationId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier for the protect configuration.
+     * </p>
+     * 
+     * @param protectConfigurationId
+     *        The unique identifier for the protect configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SendVoiceMessageRequest withProtectConfigurationId(String protectConfigurationId) {
+        setProtectConfigurationId(protectConfigurationId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -731,7 +777,9 @@ public class SendVoiceMessageRequest extends com.amazonaws.AmazonWebServiceReque
         if (getContext() != null)
             sb.append("Context: ").append(getContext()).append(",");
         if (getDryRun() != null)
-            sb.append("DryRun: ").append(getDryRun());
+            sb.append("DryRun: ").append(getDryRun()).append(",");
+        if (getProtectConfigurationId() != null)
+            sb.append("ProtectConfigurationId: ").append(getProtectConfigurationId());
         sb.append("}");
         return sb.toString();
     }
@@ -786,6 +834,10 @@ public class SendVoiceMessageRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getDryRun() != null && other.getDryRun().equals(this.getDryRun()) == false)
             return false;
+        if (other.getProtectConfigurationId() == null ^ this.getProtectConfigurationId() == null)
+            return false;
+        if (other.getProtectConfigurationId() != null && other.getProtectConfigurationId().equals(this.getProtectConfigurationId()) == false)
+            return false;
         return true;
     }
 
@@ -804,6 +856,7 @@ public class SendVoiceMessageRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getTimeToLive() == null) ? 0 : getTimeToLive().hashCode());
         hashCode = prime * hashCode + ((getContext() == null) ? 0 : getContext().hashCode());
         hashCode = prime * hashCode + ((getDryRun() == null) ? 0 : getDryRun().hashCode());
+        hashCode = prime * hashCode + ((getProtectConfigurationId() == null) ? 0 : getProtectConfigurationId().hashCode());
         return hashCode;
     }
 

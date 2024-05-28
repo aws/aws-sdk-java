@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,12 @@ public class InvalidSignalDecoder implements Serializable, Cloneable, Structured
      * </p>
      */
     private String reason;
+    /**
+     * <p>
+     * The possible cause for the invalid signal decoder.
+     * </p>
+     */
+    private String hint;
 
     /**
      * <p>
@@ -141,6 +147,46 @@ public class InvalidSignalDecoder implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The possible cause for the invalid signal decoder.
+     * </p>
+     * 
+     * @param hint
+     *        The possible cause for the invalid signal decoder.
+     */
+
+    public void setHint(String hint) {
+        this.hint = hint;
+    }
+
+    /**
+     * <p>
+     * The possible cause for the invalid signal decoder.
+     * </p>
+     * 
+     * @return The possible cause for the invalid signal decoder.
+     */
+
+    public String getHint() {
+        return this.hint;
+    }
+
+    /**
+     * <p>
+     * The possible cause for the invalid signal decoder.
+     * </p>
+     * 
+     * @param hint
+     *        The possible cause for the invalid signal decoder.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InvalidSignalDecoder withHint(String hint) {
+        setHint(hint);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -155,7 +201,9 @@ public class InvalidSignalDecoder implements Serializable, Cloneable, Structured
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getReason() != null)
-            sb.append("Reason: ").append(getReason());
+            sb.append("Reason: ").append(getReason()).append(",");
+        if (getHint() != null)
+            sb.append("Hint: ").append(getHint());
         sb.append("}");
         return sb.toString();
     }
@@ -178,6 +226,10 @@ public class InvalidSignalDecoder implements Serializable, Cloneable, Structured
             return false;
         if (other.getReason() != null && other.getReason().equals(this.getReason()) == false)
             return false;
+        if (other.getHint() == null ^ this.getHint() == null)
+            return false;
+        if (other.getHint() != null && other.getHint().equals(this.getHint()) == false)
+            return false;
         return true;
     }
 
@@ -188,6 +240,7 @@ public class InvalidSignalDecoder implements Serializable, Cloneable, Structured
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getReason() == null) ? 0 : getReason().hashCode());
+        hashCode = prime * hashCode + ((getHint() == null) ? 0 : getHint().hashCode());
         return hashCode;
     }
 

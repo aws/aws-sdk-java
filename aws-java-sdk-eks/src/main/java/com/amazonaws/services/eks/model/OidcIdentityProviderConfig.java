@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class OidcIdentityProviderConfig implements Serializable, Cloneable, Stru
     private String identityProviderConfigArn;
     /**
      * <p>
-     * The cluster that the configuration is associated to.
+     * The name of your cluster.
      * </p>
      */
     private String clusterName;
@@ -96,8 +96,8 @@ public class OidcIdentityProviderConfig implements Serializable, Cloneable, Stru
     private java.util.Map<String, String> requiredClaims;
     /**
      * <p>
-     * The metadata to apply to the provider configuration to assist with categorization and organization. Each tag
-     * consists of a key and an optional value. You define both.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -190,11 +190,11 @@ public class OidcIdentityProviderConfig implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The cluster that the configuration is associated to.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The cluster that the configuration is associated to.
+     *        The name of your cluster.
      */
 
     public void setClusterName(String clusterName) {
@@ -203,10 +203,10 @@ public class OidcIdentityProviderConfig implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The cluster that the configuration is associated to.
+     * The name of your cluster.
      * </p>
      * 
-     * @return The cluster that the configuration is associated to.
+     * @return The name of your cluster.
      */
 
     public String getClusterName() {
@@ -215,11 +215,11 @@ public class OidcIdentityProviderConfig implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The cluster that the configuration is associated to.
+     * The name of your cluster.
      * </p>
      * 
      * @param clusterName
-     *        The cluster that the configuration is associated to.
+     *        The name of your cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -574,12 +574,12 @@ public class OidcIdentityProviderConfig implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The metadata to apply to the provider configuration to assist with categorization and organization. Each tag
-     * consists of a key and an optional value. You define both.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * 
-     * @return The metadata to apply to the provider configuration to assist with categorization and organization. Each
-     *         tag consists of a key and an optional value. You define both.
+     * @return Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *         value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -588,13 +588,13 @@ public class OidcIdentityProviderConfig implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The metadata to apply to the provider configuration to assist with categorization and organization. Each tag
-     * consists of a key and an optional value. You define both.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * 
      * @param tags
-     *        The metadata to apply to the provider configuration to assist with categorization and organization. Each
-     *        tag consists of a key and an optional value. You define both.
+     *        Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *        value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -603,13 +603,13 @@ public class OidcIdentityProviderConfig implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The metadata to apply to the provider configuration to assist with categorization and organization. Each tag
-     * consists of a key and an optional value. You define both.
+     * Metadata that assists with categorization and organization. Each tag consists of a key and an optional value. You
+     * define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * </p>
      * 
      * @param tags
-     *        The metadata to apply to the provider configuration to assist with categorization and organization. Each
-     *        tag consists of a key and an optional value. You define both.
+     *        Metadata that assists with categorization and organization. Each tag consists of a key and an optional
+     *        value. You define both. Tags don't propagate to any other cluster or Amazon Web Services resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

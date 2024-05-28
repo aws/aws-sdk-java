@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,9 +40,9 @@ public class GcpMySQLSettings implements Serializable, Cloneable, StructuredPojo
     private String afterConnectScript;
     /**
      * <p>
-     * Adjusts the behavior of DMS when migrating from an SQL Server source database that is hosted as part of an Always
-     * On availability group cluster. If you need DMS to poll all the nodes in the Always On cluster for transaction
-     * backups, set this attribute to <code>false</code>.
+     * Cleans and recreates table metadata information on the replication instance when a mismatch occurs. For example,
+     * in a situation where running an alter DDL on the table could result in different information about the table
+     * cached in the replication instance.
      * </p>
      */
     private Boolean cleanSourceMetadataOnMismatch;
@@ -105,11 +105,15 @@ public class GcpMySQLSettings implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String password;
-    /** <p/> */
-    private Integer port;
     /**
      * <p>
      * Endpoint TCP port.
+     * </p>
+     */
+    private Integer port;
+    /**
+     * <p>
+     * The MySQL host name.
      * </p>
      */
     private String serverName;
@@ -222,15 +226,15 @@ public class GcpMySQLSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Adjusts the behavior of DMS when migrating from an SQL Server source database that is hosted as part of an Always
-     * On availability group cluster. If you need DMS to poll all the nodes in the Always On cluster for transaction
-     * backups, set this attribute to <code>false</code>.
+     * Cleans and recreates table metadata information on the replication instance when a mismatch occurs. For example,
+     * in a situation where running an alter DDL on the table could result in different information about the table
+     * cached in the replication instance.
      * </p>
      * 
      * @param cleanSourceMetadataOnMismatch
-     *        Adjusts the behavior of DMS when migrating from an SQL Server source database that is hosted as part of an
-     *        Always On availability group cluster. If you need DMS to poll all the nodes in the Always On cluster for
-     *        transaction backups, set this attribute to <code>false</code>.
+     *        Cleans and recreates table metadata information on the replication instance when a mismatch occurs. For
+     *        example, in a situation where running an alter DDL on the table could result in different information
+     *        about the table cached in the replication instance.
      */
 
     public void setCleanSourceMetadataOnMismatch(Boolean cleanSourceMetadataOnMismatch) {
@@ -239,14 +243,14 @@ public class GcpMySQLSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Adjusts the behavior of DMS when migrating from an SQL Server source database that is hosted as part of an Always
-     * On availability group cluster. If you need DMS to poll all the nodes in the Always On cluster for transaction
-     * backups, set this attribute to <code>false</code>.
+     * Cleans and recreates table metadata information on the replication instance when a mismatch occurs. For example,
+     * in a situation where running an alter DDL on the table could result in different information about the table
+     * cached in the replication instance.
      * </p>
      * 
-     * @return Adjusts the behavior of DMS when migrating from an SQL Server source database that is hosted as part of
-     *         an Always On availability group cluster. If you need DMS to poll all the nodes in the Always On cluster
-     *         for transaction backups, set this attribute to <code>false</code>.
+     * @return Cleans and recreates table metadata information on the replication instance when a mismatch occurs. For
+     *         example, in a situation where running an alter DDL on the table could result in different information
+     *         about the table cached in the replication instance.
      */
 
     public Boolean getCleanSourceMetadataOnMismatch() {
@@ -255,15 +259,15 @@ public class GcpMySQLSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Adjusts the behavior of DMS when migrating from an SQL Server source database that is hosted as part of an Always
-     * On availability group cluster. If you need DMS to poll all the nodes in the Always On cluster for transaction
-     * backups, set this attribute to <code>false</code>.
+     * Cleans and recreates table metadata information on the replication instance when a mismatch occurs. For example,
+     * in a situation where running an alter DDL on the table could result in different information about the table
+     * cached in the replication instance.
      * </p>
      * 
      * @param cleanSourceMetadataOnMismatch
-     *        Adjusts the behavior of DMS when migrating from an SQL Server source database that is hosted as part of an
-     *        Always On availability group cluster. If you need DMS to poll all the nodes in the Always On cluster for
-     *        transaction backups, set this attribute to <code>false</code>.
+     *        Cleans and recreates table metadata information on the replication instance when a mismatch occurs. For
+     *        example, in a situation where running an alter DDL on the table could result in different information
+     *        about the table cached in the replication instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -274,14 +278,14 @@ public class GcpMySQLSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Adjusts the behavior of DMS when migrating from an SQL Server source database that is hosted as part of an Always
-     * On availability group cluster. If you need DMS to poll all the nodes in the Always On cluster for transaction
-     * backups, set this attribute to <code>false</code>.
+     * Cleans and recreates table metadata information on the replication instance when a mismatch occurs. For example,
+     * in a situation where running an alter DDL on the table could result in different information about the table
+     * cached in the replication instance.
      * </p>
      * 
-     * @return Adjusts the behavior of DMS when migrating from an SQL Server source database that is hosted as part of
-     *         an Always On availability group cluster. If you need DMS to poll all the nodes in the Always On cluster
-     *         for transaction backups, set this attribute to <code>false</code>.
+     * @return Cleans and recreates table metadata information on the replication instance when a mismatch occurs. For
+     *         example, in a situation where running an alter DDL on the table could result in different information
+     *         about the table cached in the replication instance.
      */
 
     public Boolean isCleanSourceMetadataOnMismatch() {
@@ -686,48 +690,16 @@ public class GcpMySQLSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * <p/>
-     * 
-     * @param port
-     */
-
-    public void setPort(Integer port) {
-        this.port = port;
-    }
-
-    /**
-     * <p/>
-     * 
-     * @return
-     */
-
-    public Integer getPort() {
-        return this.port;
-    }
-
-    /**
-     * <p/>
-     * 
-     * @param port
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GcpMySQLSettings withPort(Integer port) {
-        setPort(port);
-        return this;
-    }
-
-    /**
      * <p>
      * Endpoint TCP port.
      * </p>
      * 
-     * @param serverName
+     * @param port
      *        Endpoint TCP port.
      */
 
-    public void setServerName(String serverName) {
-        this.serverName = serverName;
+    public void setPort(Integer port) {
+        this.port = port;
     }
 
     /**
@@ -738,8 +710,8 @@ public class GcpMySQLSettings implements Serializable, Cloneable, StructuredPojo
      * @return Endpoint TCP port.
      */
 
-    public String getServerName() {
-        return this.serverName;
+    public Integer getPort() {
+        return this.port;
     }
 
     /**
@@ -747,8 +719,48 @@ public class GcpMySQLSettings implements Serializable, Cloneable, StructuredPojo
      * Endpoint TCP port.
      * </p>
      * 
-     * @param serverName
+     * @param port
      *        Endpoint TCP port.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GcpMySQLSettings withPort(Integer port) {
+        setPort(port);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The MySQL host name.
+     * </p>
+     * 
+     * @param serverName
+     *        The MySQL host name.
+     */
+
+    public void setServerName(String serverName) {
+        this.serverName = serverName;
+    }
+
+    /**
+     * <p>
+     * The MySQL host name.
+     * </p>
+     * 
+     * @return The MySQL host name.
+     */
+
+    public String getServerName() {
+        return this.serverName;
+    }
+
+    /**
+     * <p>
+     * The MySQL host name.
+     * </p>
+     * 
+     * @param serverName
+     *        The MySQL host name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

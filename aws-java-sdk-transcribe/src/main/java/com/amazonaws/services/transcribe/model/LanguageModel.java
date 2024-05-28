@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,10 +19,50 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about a custom language model, including the base model name, when the model was created, the
- * location of the files used to train the model, when the model was last modified, the name you chose for the model,
- * its language, its processing state, and if there is an upgrade available for the base model.
+ * Provides information about a custom language model, including:
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * The base model name
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * When the model was created
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * The location of the files used to train the model
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * When the model was last modified
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * The name you chose for the model
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * The model's language
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * The model's processing state
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Any available upgrades for the base model
+ * </p>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/LanguageModel" target="_top">AWS API
  *      Documentation</a>
@@ -51,7 +91,7 @@ public class LanguageModel implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date createTime;
     /**
      * <p>
-     * The date and time the specified language model was last modified.
+     * The date and time the specified custom language model was last modified.
      * </p>
      * <p>
      * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
@@ -61,13 +101,14 @@ public class LanguageModel implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date lastModifiedTime;
     /**
      * <p>
-     * The language code used to create your custom language model. Each language model must contain terms in only one
-     * language, and the language you select for your model must match the language of your training and tuning data.
+     * The language code used to create your custom language model. Each custom language model must contain terms in
+     * only one language, and the language you select for your custom language model must match the language of your
+     * training and tuning data.
      * </p>
      * <p>
      * For a list of supported languages and their associated language codes, refer to the <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
-     * Note that U.S. English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
+     * Note that US English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
      * </p>
      */
     private String languageCode;
@@ -89,7 +130,7 @@ public class LanguageModel implements Serializable, Cloneable, StructuredPojo {
      * Shows if a more current base model is available for use with the specified custom language model.
      * </p>
      * <p>
-     * If <code>false</code>, your language model is using the most up-to-date base model.
+     * If <code>false</code>, your custom language model is using the most up-to-date base model.
      * </p>
      * <p>
      * If <code>true</code>, there is a newer base model available than the one your language model is using.
@@ -237,7 +278,7 @@ public class LanguageModel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time the specified language model was last modified.
+     * The date and time the specified custom language model was last modified.
      * </p>
      * <p>
      * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
@@ -245,7 +286,7 @@ public class LanguageModel implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param lastModifiedTime
-     *        The date and time the specified language model was last modified.</p>
+     *        The date and time the specified custom language model was last modified.</p>
      *        <p>
      *        Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
      *        <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
@@ -257,14 +298,14 @@ public class LanguageModel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time the specified language model was last modified.
+     * The date and time the specified custom language model was last modified.
      * </p>
      * <p>
      * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
      * <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      * </p>
      * 
-     * @return The date and time the specified language model was last modified.</p>
+     * @return The date and time the specified custom language model was last modified.</p>
      *         <p>
      *         Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
      *         <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
@@ -276,7 +317,7 @@ public class LanguageModel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time the specified language model was last modified.
+     * The date and time the specified custom language model was last modified.
      * </p>
      * <p>
      * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
@@ -284,7 +325,7 @@ public class LanguageModel implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param lastModifiedTime
-     *        The date and time the specified language model was last modified.</p>
+     *        The date and time the specified custom language model was last modified.</p>
      *        <p>
      *        Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
      *        <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
@@ -298,23 +339,24 @@ public class LanguageModel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The language code used to create your custom language model. Each language model must contain terms in only one
-     * language, and the language you select for your model must match the language of your training and tuning data.
+     * The language code used to create your custom language model. Each custom language model must contain terms in
+     * only one language, and the language you select for your custom language model must match the language of your
+     * training and tuning data.
      * </p>
      * <p>
      * For a list of supported languages and their associated language codes, refer to the <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
-     * Note that U.S. English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
+     * Note that US English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
      * </p>
      * 
      * @param languageCode
-     *        The language code used to create your custom language model. Each language model must contain terms in
-     *        only one language, and the language you select for your model must match the language of your training and
-     *        tuning data.</p>
+     *        The language code used to create your custom language model. Each custom language model must contain terms
+     *        in only one language, and the language you select for your custom language model must match the language
+     *        of your training and tuning data.</p>
      *        <p>
      *        For a list of supported languages and their associated language codes, refer to the <a
      *        href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>
-     *        table. Note that U.S. English (<code>en-US</code>) is the only language supported with Amazon Transcribe
+     *        table. Note that US English (<code>en-US</code>) is the only language supported with Amazon Transcribe
      *        Medical.
      * @see CLMLanguageCode
      */
@@ -325,22 +367,23 @@ public class LanguageModel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The language code used to create your custom language model. Each language model must contain terms in only one
-     * language, and the language you select for your model must match the language of your training and tuning data.
+     * The language code used to create your custom language model. Each custom language model must contain terms in
+     * only one language, and the language you select for your custom language model must match the language of your
+     * training and tuning data.
      * </p>
      * <p>
      * For a list of supported languages and their associated language codes, refer to the <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
-     * Note that U.S. English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
+     * Note that US English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
      * </p>
      * 
-     * @return The language code used to create your custom language model. Each language model must contain terms in
-     *         only one language, and the language you select for your model must match the language of your training
-     *         and tuning data.</p>
+     * @return The language code used to create your custom language model. Each custom language model must contain
+     *         terms in only one language, and the language you select for your custom language model must match the
+     *         language of your training and tuning data.</p>
      *         <p>
      *         For a list of supported languages and their associated language codes, refer to the <a
      *         href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>
-     *         table. Note that U.S. English (<code>en-US</code>) is the only language supported with Amazon Transcribe
+     *         table. Note that US English (<code>en-US</code>) is the only language supported with Amazon Transcribe
      *         Medical.
      * @see CLMLanguageCode
      */
@@ -351,23 +394,24 @@ public class LanguageModel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The language code used to create your custom language model. Each language model must contain terms in only one
-     * language, and the language you select for your model must match the language of your training and tuning data.
+     * The language code used to create your custom language model. Each custom language model must contain terms in
+     * only one language, and the language you select for your custom language model must match the language of your
+     * training and tuning data.
      * </p>
      * <p>
      * For a list of supported languages and their associated language codes, refer to the <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
-     * Note that U.S. English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
+     * Note that US English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
      * </p>
      * 
      * @param languageCode
-     *        The language code used to create your custom language model. Each language model must contain terms in
-     *        only one language, and the language you select for your model must match the language of your training and
-     *        tuning data.</p>
+     *        The language code used to create your custom language model. Each custom language model must contain terms
+     *        in only one language, and the language you select for your custom language model must match the language
+     *        of your training and tuning data.</p>
      *        <p>
      *        For a list of supported languages and their associated language codes, refer to the <a
      *        href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>
-     *        table. Note that U.S. English (<code>en-US</code>) is the only language supported with Amazon Transcribe
+     *        table. Note that US English (<code>en-US</code>) is the only language supported with Amazon Transcribe
      *        Medical.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CLMLanguageCode
@@ -380,23 +424,24 @@ public class LanguageModel implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The language code used to create your custom language model. Each language model must contain terms in only one
-     * language, and the language you select for your model must match the language of your training and tuning data.
+     * The language code used to create your custom language model. Each custom language model must contain terms in
+     * only one language, and the language you select for your custom language model must match the language of your
+     * training and tuning data.
      * </p>
      * <p>
      * For a list of supported languages and their associated language codes, refer to the <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
-     * Note that U.S. English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
+     * Note that US English (<code>en-US</code>) is the only language supported with Amazon Transcribe Medical.
      * </p>
      * 
      * @param languageCode
-     *        The language code used to create your custom language model. Each language model must contain terms in
-     *        only one language, and the language you select for your model must match the language of your training and
-     *        tuning data.</p>
+     *        The language code used to create your custom language model. Each custom language model must contain terms
+     *        in only one language, and the language you select for your custom language model must match the language
+     *        of your training and tuning data.</p>
      *        <p>
      *        For a list of supported languages and their associated language codes, refer to the <a
      *        href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a>
-     *        table. Note that U.S. English (<code>en-US</code>) is the only language supported with Amazon Transcribe
+     *        table. Note that US English (<code>en-US</code>) is the only language supported with Amazon Transcribe
      *        Medical.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CLMLanguageCode
@@ -538,7 +583,7 @@ public class LanguageModel implements Serializable, Cloneable, StructuredPojo {
      * Shows if a more current base model is available for use with the specified custom language model.
      * </p>
      * <p>
-     * If <code>false</code>, your language model is using the most up-to-date base model.
+     * If <code>false</code>, your custom language model is using the most up-to-date base model.
      * </p>
      * <p>
      * If <code>true</code>, there is a newer base model available than the one your language model is using.
@@ -551,7 +596,7 @@ public class LanguageModel implements Serializable, Cloneable, StructuredPojo {
      * @param upgradeAvailability
      *        Shows if a more current base model is available for use with the specified custom language model.</p>
      *        <p>
-     *        If <code>false</code>, your language model is using the most up-to-date base model.
+     *        If <code>false</code>, your custom language model is using the most up-to-date base model.
      *        </p>
      *        <p>
      *        If <code>true</code>, there is a newer base model available than the one your language model is using.
@@ -570,7 +615,7 @@ public class LanguageModel implements Serializable, Cloneable, StructuredPojo {
      * Shows if a more current base model is available for use with the specified custom language model.
      * </p>
      * <p>
-     * If <code>false</code>, your language model is using the most up-to-date base model.
+     * If <code>false</code>, your custom language model is using the most up-to-date base model.
      * </p>
      * <p>
      * If <code>true</code>, there is a newer base model available than the one your language model is using.
@@ -582,7 +627,7 @@ public class LanguageModel implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return Shows if a more current base model is available for use with the specified custom language model.</p>
      *         <p>
-     *         If <code>false</code>, your language model is using the most up-to-date base model.
+     *         If <code>false</code>, your custom language model is using the most up-to-date base model.
      *         </p>
      *         <p>
      *         If <code>true</code>, there is a newer base model available than the one your language model is using.
@@ -601,7 +646,7 @@ public class LanguageModel implements Serializable, Cloneable, StructuredPojo {
      * Shows if a more current base model is available for use with the specified custom language model.
      * </p>
      * <p>
-     * If <code>false</code>, your language model is using the most up-to-date base model.
+     * If <code>false</code>, your custom language model is using the most up-to-date base model.
      * </p>
      * <p>
      * If <code>true</code>, there is a newer base model available than the one your language model is using.
@@ -614,7 +659,7 @@ public class LanguageModel implements Serializable, Cloneable, StructuredPojo {
      * @param upgradeAvailability
      *        Shows if a more current base model is available for use with the specified custom language model.</p>
      *        <p>
-     *        If <code>false</code>, your language model is using the most up-to-date base model.
+     *        If <code>false</code>, your custom language model is using the most up-to-date base model.
      *        </p>
      *        <p>
      *        If <code>true</code>, there is a newer base model available than the one your language model is using.
@@ -635,7 +680,7 @@ public class LanguageModel implements Serializable, Cloneable, StructuredPojo {
      * Shows if a more current base model is available for use with the specified custom language model.
      * </p>
      * <p>
-     * If <code>false</code>, your language model is using the most up-to-date base model.
+     * If <code>false</code>, your custom language model is using the most up-to-date base model.
      * </p>
      * <p>
      * If <code>true</code>, there is a newer base model available than the one your language model is using.
@@ -647,7 +692,7 @@ public class LanguageModel implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return Shows if a more current base model is available for use with the specified custom language model.</p>
      *         <p>
-     *         If <code>false</code>, your language model is using the most up-to-date base model.
+     *         If <code>false</code>, your custom language model is using the most up-to-date base model.
      *         </p>
      *         <p>
      *         If <code>true</code>, there is a newer base model available than the one your language model is using.

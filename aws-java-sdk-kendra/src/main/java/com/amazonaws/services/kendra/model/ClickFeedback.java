@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,24 +31,24 @@ public class ClickFeedback implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier of the search result that was clicked.
+     * The identifier of the search result that was clicked.
      * </p>
      */
     private String resultId;
     /**
      * <p>
-     * The Unix timestamp of the date and time that the result was clicked.
+     * The Unix timestamp when the result was clicked.
      * </p>
      */
     private java.util.Date clickTime;
 
     /**
      * <p>
-     * The unique identifier of the search result that was clicked.
+     * The identifier of the search result that was clicked.
      * </p>
      * 
      * @param resultId
-     *        The unique identifier of the search result that was clicked.
+     *        The identifier of the search result that was clicked.
      */
 
     public void setResultId(String resultId) {
@@ -57,10 +57,10 @@ public class ClickFeedback implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier of the search result that was clicked.
+     * The identifier of the search result that was clicked.
      * </p>
      * 
-     * @return The unique identifier of the search result that was clicked.
+     * @return The identifier of the search result that was clicked.
      */
 
     public String getResultId() {
@@ -69,11 +69,11 @@ public class ClickFeedback implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier of the search result that was clicked.
+     * The identifier of the search result that was clicked.
      * </p>
      * 
      * @param resultId
-     *        The unique identifier of the search result that was clicked.
+     *        The identifier of the search result that was clicked.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,11 +84,11 @@ public class ClickFeedback implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp of the date and time that the result was clicked.
+     * The Unix timestamp when the result was clicked.
      * </p>
      * 
      * @param clickTime
-     *        The Unix timestamp of the date and time that the result was clicked.
+     *        The Unix timestamp when the result was clicked.
      */
 
     public void setClickTime(java.util.Date clickTime) {
@@ -97,10 +97,10 @@ public class ClickFeedback implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp of the date and time that the result was clicked.
+     * The Unix timestamp when the result was clicked.
      * </p>
      * 
-     * @return The Unix timestamp of the date and time that the result was clicked.
+     * @return The Unix timestamp when the result was clicked.
      */
 
     public java.util.Date getClickTime() {
@@ -109,11 +109,11 @@ public class ClickFeedback implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix timestamp of the date and time that the result was clicked.
+     * The Unix timestamp when the result was clicked.
      * </p>
      * 
      * @param clickTime
-     *        The Unix timestamp of the date and time that the result was clicked.
+     *        The Unix timestamp when the result was clicked.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

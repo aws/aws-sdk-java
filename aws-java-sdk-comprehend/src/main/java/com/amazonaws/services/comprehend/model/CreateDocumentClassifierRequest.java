@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,22 +35,21 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The version name given to the newly created classifier. Version names can have a maximum of 256 characters.
      * Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all
-     * models with the same classifier name in the account/AWS Region.
+     * models with the same classifier name in the Amazon Web Services account/Amazon Web Services Region.
      * </p>
      */
     private String versionName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read
-     * access to your input data.
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.
      * </p>
      */
     private String dataAccessRoleArn;
     /**
      * <p>
-     * Tags to be associated with the document classifier being created. A tag is a key-value pair that adds as a
-     * metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
-     * resource to indicate its use by the sales department.
+     * Tags to associate with the document classifier. A tag is a key-value pair that adds as a metadata to a resource
+     * used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate
+     * its use by the sales department.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -62,7 +61,8 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
     private DocumentClassifierInputDataConfig inputDataConfig;
     /**
      * <p>
-     * Enables the addition of output results configuration parameters for custom classifier jobs.
+     * Specifies the location for the output files from a custom classifier job. This parameter is required for a
+     * request that creates a native document model.
      * </p>
      */
     private DocumentClassifierOutputDataConfig outputDataConfig;
@@ -74,17 +74,16 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
     private String clientRequestToken;
     /**
      * <p>
-     * The language of the input documents. You can specify any of the following languages supported by Amazon
-     * Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").
-     * All documents must be in the same language.
+     * The language of the input documents. You can specify any of the languages supported by Amazon Comprehend. All
+     * documents must be in the same language.
      * </p>
      */
     private String languageCode;
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the
-     * following formats:
+     * ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on
+     * the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can
+     * be either of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -111,17 +110,17 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
     private VpcConfig vpcConfig;
     /**
      * <p>
-     * Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class mode,
-     * which identifies one and only one class for each document, or multi-label mode, which identifies one or more
-     * labels for each document. In multi-label mode, multiple labels for an individual document are separated by a
-     * delimiter. The default delimiter between labels is a pipe (|).
+     * Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class
+     * (single-label) mode or multi-label mode. Multi-class mode identifies a single class label for each document and
+     * multi-label mode identifies one or more class labels for each document. Multiple labels for an individual
+     * document are separated by a delimiter. The default delimiter between labels is a pipe (|).
      * </p>
      */
     private String mode;
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The
-     * ModelKmsKeyId can be either of the following formats:
+     * ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either
+     * of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -141,7 +140,7 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The resource-based policy to attach to your custom document classifier model. You can use this policy to allow
-     * another AWS account to import your custom model.
+     * another Amazon Web Services account to import your custom model.
      * </p>
      * <p>
      * Provide your policy as a JSON body that you enter as a UTF-8 encoded string without line breaks. To provide valid
@@ -205,13 +204,14 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The version name given to the newly created classifier. Version names can have a maximum of 256 characters.
      * Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all
-     * models with the same classifier name in the account/AWS Region.
+     * models with the same classifier name in the Amazon Web Services account/Amazon Web Services Region.
      * </p>
      * 
      * @param versionName
      *        The version name given to the newly created classifier. Version names can have a maximum of 256
      *        characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be
-     *        unique among all models with the same classifier name in the account/AWS Region.
+     *        unique among all models with the same classifier name in the Amazon Web Services account/Amazon Web
+     *        Services Region.
      */
 
     public void setVersionName(String versionName) {
@@ -222,12 +222,13 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The version name given to the newly created classifier. Version names can have a maximum of 256 characters.
      * Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all
-     * models with the same classifier name in the account/AWS Region.
+     * models with the same classifier name in the Amazon Web Services account/Amazon Web Services Region.
      * </p>
      * 
      * @return The version name given to the newly created classifier. Version names can have a maximum of 256
      *         characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must
-     *         be unique among all models with the same classifier name in the account/AWS Region.
+     *         be unique among all models with the same classifier name in the Amazon Web Services account/Amazon Web
+     *         Services Region.
      */
 
     public String getVersionName() {
@@ -238,13 +239,14 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The version name given to the newly created classifier. Version names can have a maximum of 256 characters.
      * Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be unique among all
-     * models with the same classifier name in the account/AWS Region.
+     * models with the same classifier name in the Amazon Web Services account/Amazon Web Services Region.
      * </p>
      * 
      * @param versionName
      *        The version name given to the newly created classifier. Version names can have a maximum of 256
      *        characters. Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The version name must be
-     *        unique among all models with the same classifier name in the account/AWS Region.
+     *        unique among all models with the same classifier name in the Amazon Web Services account/Amazon Web
+     *        Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -255,13 +257,12 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read
-     * access to your input data.
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend
-     *        read access to your input data.
+     *        The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input
+     *        data.
      */
 
     public void setDataAccessRoleArn(String dataAccessRoleArn) {
@@ -270,12 +271,11 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read
-     * access to your input data.
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon
-     *         Comprehend read access to your input data.
+     * @return The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input
+     *         data.
      */
 
     public String getDataAccessRoleArn() {
@@ -284,13 +284,12 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read
-     * access to your input data.
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend
-     *        read access to your input data.
+     *        The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input
+     *        data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -301,14 +300,14 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Tags to be associated with the document classifier being created. A tag is a key-value pair that adds as a
-     * metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
-     * resource to indicate its use by the sales department.
+     * Tags to associate with the document classifier. A tag is a key-value pair that adds as a metadata to a resource
+     * used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate
+     * its use by the sales department.
      * </p>
      * 
-     * @return Tags to be associated with the document classifier being created. A tag is a key-value pair that adds as
-     *         a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be
-     *         added to a resource to indicate its use by the sales department.
+     * @return Tags to associate with the document classifier. A tag is a key-value pair that adds as a metadata to a
+     *         resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     *         resource to indicate its use by the sales department.
      */
 
     public java.util.List<Tag> getTags() {
@@ -317,15 +316,15 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Tags to be associated with the document classifier being created. A tag is a key-value pair that adds as a
-     * metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
-     * resource to indicate its use by the sales department.
+     * Tags to associate with the document classifier. A tag is a key-value pair that adds as a metadata to a resource
+     * used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate
+     * its use by the sales department.
      * </p>
      * 
      * @param tags
-     *        Tags to be associated with the document classifier being created. A tag is a key-value pair that adds as a
-     *        metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be
-     *        added to a resource to indicate its use by the sales department.
+     *        Tags to associate with the document classifier. A tag is a key-value pair that adds as a metadata to a
+     *        resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     *        resource to indicate its use by the sales department.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -339,9 +338,9 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Tags to be associated with the document classifier being created. A tag is a key-value pair that adds as a
-     * metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
-     * resource to indicate its use by the sales department.
+     * Tags to associate with the document classifier. A tag is a key-value pair that adds as a metadata to a resource
+     * used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate
+     * its use by the sales department.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -350,9 +349,9 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param tags
-     *        Tags to be associated with the document classifier being created. A tag is a key-value pair that adds as a
-     *        metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be
-     *        added to a resource to indicate its use by the sales department.
+     *        Tags to associate with the document classifier. A tag is a key-value pair that adds as a metadata to a
+     *        resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     *        resource to indicate its use by the sales department.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -368,15 +367,15 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Tags to be associated with the document classifier being created. A tag is a key-value pair that adds as a
-     * metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
-     * resource to indicate its use by the sales department.
+     * Tags to associate with the document classifier. A tag is a key-value pair that adds as a metadata to a resource
+     * used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate
+     * its use by the sales department.
      * </p>
      * 
      * @param tags
-     *        Tags to be associated with the document classifier being created. A tag is a key-value pair that adds as a
-     *        metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be
-     *        added to a resource to indicate its use by the sales department.
+     *        Tags to associate with the document classifier. A tag is a key-value pair that adds as a metadata to a
+     *        resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     *        resource to indicate its use by the sales department.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -427,11 +426,13 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Enables the addition of output results configuration parameters for custom classifier jobs.
+     * Specifies the location for the output files from a custom classifier job. This parameter is required for a
+     * request that creates a native document model.
      * </p>
      * 
      * @param outputDataConfig
-     *        Enables the addition of output results configuration parameters for custom classifier jobs.
+     *        Specifies the location for the output files from a custom classifier job. This parameter is required for a
+     *        request that creates a native document model.
      */
 
     public void setOutputDataConfig(DocumentClassifierOutputDataConfig outputDataConfig) {
@@ -440,10 +441,12 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Enables the addition of output results configuration parameters for custom classifier jobs.
+     * Specifies the location for the output files from a custom classifier job. This parameter is required for a
+     * request that creates a native document model.
      * </p>
      * 
-     * @return Enables the addition of output results configuration parameters for custom classifier jobs.
+     * @return Specifies the location for the output files from a custom classifier job. This parameter is required for
+     *         a request that creates a native document model.
      */
 
     public DocumentClassifierOutputDataConfig getOutputDataConfig() {
@@ -452,11 +455,13 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Enables the addition of output results configuration parameters for custom classifier jobs.
+     * Specifies the location for the output files from a custom classifier job. This parameter is required for a
+     * request that creates a native document model.
      * </p>
      * 
      * @param outputDataConfig
-     *        Enables the addition of output results configuration parameters for custom classifier jobs.
+     *        Specifies the location for the output files from a custom classifier job. This parameter is required for a
+     *        request that creates a native document model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -510,15 +515,13 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The language of the input documents. You can specify any of the following languages supported by Amazon
-     * Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").
-     * All documents must be in the same language.
+     * The language of the input documents. You can specify any of the languages supported by Amazon Comprehend. All
+     * documents must be in the same language.
      * </p>
      * 
      * @param languageCode
-     *        The language of the input documents. You can specify any of the following languages supported by Amazon
-     *        Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese
-     *        ("pt"). All documents must be in the same language.
+     *        The language of the input documents. You can specify any of the languages supported by Amazon Comprehend.
+     *        All documents must be in the same language.
      * @see LanguageCode
      */
 
@@ -528,14 +531,12 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The language of the input documents. You can specify any of the following languages supported by Amazon
-     * Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").
-     * All documents must be in the same language.
+     * The language of the input documents. You can specify any of the languages supported by Amazon Comprehend. All
+     * documents must be in the same language.
      * </p>
      * 
-     * @return The language of the input documents. You can specify any of the following languages supported by Amazon
-     *         Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese
-     *         ("pt"). All documents must be in the same language.
+     * @return The language of the input documents. You can specify any of the languages supported by Amazon Comprehend.
+     *         All documents must be in the same language.
      * @see LanguageCode
      */
 
@@ -545,15 +546,13 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The language of the input documents. You can specify any of the following languages supported by Amazon
-     * Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").
-     * All documents must be in the same language.
+     * The language of the input documents. You can specify any of the languages supported by Amazon Comprehend. All
+     * documents must be in the same language.
      * </p>
      * 
      * @param languageCode
-     *        The language of the input documents. You can specify any of the following languages supported by Amazon
-     *        Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese
-     *        ("pt"). All documents must be in the same language.
+     *        The language of the input documents. You can specify any of the languages supported by Amazon Comprehend.
+     *        All documents must be in the same language.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -565,15 +564,13 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The language of the input documents. You can specify any of the following languages supported by Amazon
-     * Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").
-     * All documents must be in the same language.
+     * The language of the input documents. You can specify any of the languages supported by Amazon Comprehend. All
+     * documents must be in the same language.
      * </p>
      * 
      * @param languageCode
-     *        The language of the input documents. You can specify any of the following languages supported by Amazon
-     *        Comprehend: German ("de"), English ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese
-     *        ("pt"). All documents must be in the same language.
+     *        The language of the input documents. You can specify any of the languages supported by Amazon Comprehend.
+     *        All documents must be in the same language.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -585,9 +582,9 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the
-     * following formats:
+     * ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on
+     * the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can
+     * be either of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -604,9 +601,9 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
      * </ul>
      * 
      * @param volumeKmsKeyId
-     *        ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage
-     *        volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be
-     *        either of the following formats:</p>
+     *        ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+     *        data on the storage volume attached to the ML compute instance(s) that process the analysis job. The
+     *        VolumeKmsKeyId can be either of the following formats:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -627,9 +624,9 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the
-     * following formats:
+     * ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on
+     * the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can
+     * be either of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -645,9 +642,9 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * </ul>
      * 
-     * @return ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the
-     *         storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId
-     *         can be either of the following formats:</p>
+     * @return ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+     *         data on the storage volume attached to the ML compute instance(s) that process the analysis job. The
+     *         VolumeKmsKeyId can be either of the following formats:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -668,9 +665,9 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the
-     * following formats:
+     * ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on
+     * the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can
+     * be either of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -687,9 +684,9 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
      * </ul>
      * 
      * @param volumeKmsKeyId
-     *        ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage
-     *        volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be
-     *        either of the following formats:</p>
+     *        ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+     *        data on the storage volume attached to the ML compute instance(s) that process the analysis job. The
+     *        VolumeKmsKeyId can be either of the following formats:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -764,17 +761,17 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class mode,
-     * which identifies one and only one class for each document, or multi-label mode, which identifies one or more
-     * labels for each document. In multi-label mode, multiple labels for an individual document are separated by a
-     * delimiter. The default delimiter between labels is a pipe (|).
+     * Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class
+     * (single-label) mode or multi-label mode. Multi-class mode identifies a single class label for each document and
+     * multi-label mode identifies one or more class labels for each document. Multiple labels for an individual
+     * document are separated by a delimiter. The default delimiter between labels is a pipe (|).
      * </p>
      * 
      * @param mode
      *        Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class
-     *        mode, which identifies one and only one class for each document, or multi-label mode, which identifies one
-     *        or more labels for each document. In multi-label mode, multiple labels for an individual document are
-     *        separated by a delimiter. The default delimiter between labels is a pipe (|).
+     *        (single-label) mode or multi-label mode. Multi-class mode identifies a single class label for each
+     *        document and multi-label mode identifies one or more class labels for each document. Multiple labels for
+     *        an individual document are separated by a delimiter. The default delimiter between labels is a pipe (|).
      * @see DocumentClassifierMode
      */
 
@@ -784,16 +781,16 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class mode,
-     * which identifies one and only one class for each document, or multi-label mode, which identifies one or more
-     * labels for each document. In multi-label mode, multiple labels for an individual document are separated by a
-     * delimiter. The default delimiter between labels is a pipe (|).
+     * Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class
+     * (single-label) mode or multi-label mode. Multi-class mode identifies a single class label for each document and
+     * multi-label mode identifies one or more class labels for each document. Multiple labels for an individual
+     * document are separated by a delimiter. The default delimiter between labels is a pipe (|).
      * </p>
      * 
      * @return Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class
-     *         mode, which identifies one and only one class for each document, or multi-label mode, which identifies
-     *         one or more labels for each document. In multi-label mode, multiple labels for an individual document are
-     *         separated by a delimiter. The default delimiter between labels is a pipe (|).
+     *         (single-label) mode or multi-label mode. Multi-class mode identifies a single class label for each
+     *         document and multi-label mode identifies one or more class labels for each document. Multiple labels for
+     *         an individual document are separated by a delimiter. The default delimiter between labels is a pipe (|).
      * @see DocumentClassifierMode
      */
 
@@ -803,17 +800,17 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class mode,
-     * which identifies one and only one class for each document, or multi-label mode, which identifies one or more
-     * labels for each document. In multi-label mode, multiple labels for an individual document are separated by a
-     * delimiter. The default delimiter between labels is a pipe (|).
+     * Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class
+     * (single-label) mode or multi-label mode. Multi-class mode identifies a single class label for each document and
+     * multi-label mode identifies one or more class labels for each document. Multiple labels for an individual
+     * document are separated by a delimiter. The default delimiter between labels is a pipe (|).
      * </p>
      * 
      * @param mode
      *        Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class
-     *        mode, which identifies one and only one class for each document, or multi-label mode, which identifies one
-     *        or more labels for each document. In multi-label mode, multiple labels for an individual document are
-     *        separated by a delimiter. The default delimiter between labels is a pipe (|).
+     *        (single-label) mode or multi-label mode. Multi-class mode identifies a single class label for each
+     *        document and multi-label mode identifies one or more class labels for each document. Multiple labels for
+     *        an individual document are separated by a delimiter. The default delimiter between labels is a pipe (|).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DocumentClassifierMode
      */
@@ -825,17 +822,17 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class mode,
-     * which identifies one and only one class for each document, or multi-label mode, which identifies one or more
-     * labels for each document. In multi-label mode, multiple labels for an individual document are separated by a
-     * delimiter. The default delimiter between labels is a pipe (|).
+     * Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class
+     * (single-label) mode or multi-label mode. Multi-class mode identifies a single class label for each document and
+     * multi-label mode identifies one or more class labels for each document. Multiple labels for an individual
+     * document are separated by a delimiter. The default delimiter between labels is a pipe (|).
      * </p>
      * 
      * @param mode
      *        Indicates the mode in which the classifier will be trained. The classifier can be trained in multi-class
-     *        mode, which identifies one and only one class for each document, or multi-label mode, which identifies one
-     *        or more labels for each document. In multi-label mode, multiple labels for an individual document are
-     *        separated by a delimiter. The default delimiter between labels is a pipe (|).
+     *        (single-label) mode or multi-label mode. Multi-class mode identifies a single class label for each
+     *        document and multi-label mode identifies one or more class labels for each document. Multiple labels for
+     *        an individual document are separated by a delimiter. The default delimiter between labels is a pipe (|).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DocumentClassifierMode
      */
@@ -847,8 +844,8 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The
-     * ModelKmsKeyId can be either of the following formats:
+     * ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either
+     * of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -865,8 +862,8 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
      * </ul>
      * 
      * @param modelKmsKeyId
-     *        ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom
-     *        models. The ModelKmsKeyId can be either of the following formats:</p>
+     *        ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be
+     *        either of the following formats:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -887,8 +884,8 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The
-     * ModelKmsKeyId can be either of the following formats:
+     * ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either
+     * of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -904,8 +901,8 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * </ul>
      * 
-     * @return ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom
-     *         models. The ModelKmsKeyId can be either of the following formats:</p>
+     * @return ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be
+     *         either of the following formats:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -926,8 +923,8 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The
-     * ModelKmsKeyId can be either of the following formats:
+     * ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be either
+     * of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -944,8 +941,8 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
      * </ul>
      * 
      * @param modelKmsKeyId
-     *        ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom
-     *        models. The ModelKmsKeyId can be either of the following formats:</p>
+     *        ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The ModelKmsKeyId can be
+     *        either of the following formats:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -969,7 +966,7 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The resource-based policy to attach to your custom document classifier model. You can use this policy to allow
-     * another AWS account to import your custom model.
+     * another Amazon Web Services account to import your custom model.
      * </p>
      * <p>
      * Provide your policy as a JSON body that you enter as a UTF-8 encoded string without line breaks. To provide valid
@@ -989,7 +986,7 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
      * 
      * @param modelPolicy
      *        The resource-based policy to attach to your custom document classifier model. You can use this policy to
-     *        allow another AWS account to import your custom model.</p>
+     *        allow another Amazon Web Services account to import your custom model.</p>
      *        <p>
      *        Provide your policy as a JSON body that you enter as a UTF-8 encoded string without line breaks. To
      *        provide valid JSON, enclose the attribute names and values in double quotes. If the JSON body is also
@@ -1013,7 +1010,7 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The resource-based policy to attach to your custom document classifier model. You can use this policy to allow
-     * another AWS account to import your custom model.
+     * another Amazon Web Services account to import your custom model.
      * </p>
      * <p>
      * Provide your policy as a JSON body that you enter as a UTF-8 encoded string without line breaks. To provide valid
@@ -1032,7 +1029,7 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @return The resource-based policy to attach to your custom document classifier model. You can use this policy to
-     *         allow another AWS account to import your custom model.</p>
+     *         allow another Amazon Web Services account to import your custom model.</p>
      *         <p>
      *         Provide your policy as a JSON body that you enter as a UTF-8 encoded string without line breaks. To
      *         provide valid JSON, enclose the attribute names and values in double quotes. If the JSON body is also
@@ -1056,7 +1053,7 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The resource-based policy to attach to your custom document classifier model. You can use this policy to allow
-     * another AWS account to import your custom model.
+     * another Amazon Web Services account to import your custom model.
      * </p>
      * <p>
      * Provide your policy as a JSON body that you enter as a UTF-8 encoded string without line breaks. To provide valid
@@ -1076,7 +1073,7 @@ public class CreateDocumentClassifierRequest extends com.amazonaws.AmazonWebServ
      * 
      * @param modelPolicy
      *        The resource-based policy to attach to your custom document classifier model. You can use this policy to
-     *        allow another AWS account to import your custom model.</p>
+     *        allow another Amazon Web Services account to import your custom model.</p>
      *        <p>
      *        Provide your policy as a JSON body that you enter as a UTF-8 encoded string without line breaks. To
      *        provide valid JSON, enclose the attribute names and values in double quotes. If the JSON body is also

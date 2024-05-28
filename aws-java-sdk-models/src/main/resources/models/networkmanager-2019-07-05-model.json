@@ -1253,7 +1253,7 @@
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Registers a transit gateway in your global network. The transit gateway can be in any Amazon Web Services Region, but it must be owned by the same Amazon Web Services account that owns the global network. You cannot register a transit gateway in more than one global network.</p>"
+      "documentation":"<p>Registers a transit gateway in your global network. Not all Regions support transit gateways for global networks. For a list of the supported Regions, see <a href=\"https://docs.aws.amazon.com/network-manager/latest/tgwnm/what-are-global-networks.html#nm-available-regions\">Region Availability</a> in the <i>Amazon Web Services Transit Gateways for Global Networks User Guide</i>. The transit gateway can be in any of the supported Amazon Web Services Regions, but it must be owned by the same Amazon Web Services account that owns the global network. You cannot register a transit gateway in more than one global network.</p>"
     },
     "RejectAttachment":{
       "name":"RejectAttachment",
@@ -1307,7 +1307,7 @@
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Enables for the Network Manager service for an Amazon Web Services Organization. This can only be called by a management account within the organization. </p>"
+      "documentation":"<p>Enables the Network Manager service for an Amazon Web Services Organization. This can only be called by a management account within the organization. </p>"
     },
     "StartRouteAnalysis":{
       "name":"StartRouteAnalysis",
@@ -1986,6 +1986,10 @@
         "Tags":{
           "shape":"TagList",
           "documentation":"<p>The list of key-value tags associated with the Connect peer.</p>"
+        },
+        "SubnetArn":{
+          "shape":"SubnetArn",
+          "documentation":"<p>The subnet ARN for the Connect peer.</p>"
         }
       },
       "documentation":"<p>Describes a core network Connect peer.</p>"
@@ -2130,6 +2134,10 @@
         "Tags":{
           "shape":"TagList",
           "documentation":"<p>The list of key-value tags associated with the Connect peer summary.</p>"
+        },
+        "SubnetArn":{
+          "shape":"SubnetArn",
+          "documentation":"<p>The subnet ARN for the Connect peer summary.</p>"
         }
       },
       "documentation":"<p>Summary description of a Connect peer.</p>"
@@ -2721,8 +2729,7 @@
       "type":"structure",
       "required":[
         "ConnectAttachmentId",
-        "PeerAddress",
-        "InsideCidrBlocks"
+        "PeerAddress"
       ],
       "members":{
         "ConnectAttachmentId":{
@@ -2753,6 +2760,10 @@
           "shape":"ClientToken",
           "documentation":"<p>The client token associated with the request.</p>",
           "idempotencyToken":true
+        },
+        "SubnetArn":{
+          "shape":"SubnetArn",
+          "documentation":"<p>The subnet ARN for the Connect peer.</p>"
         }
       }
     },
@@ -3094,7 +3105,7 @@
         },
         "TransitGatewayRouteTableArn":{
           "shape":"TransitGatewayRouteTableArn",
-          "documentation":"<p>The ARN of the transit gateway route table for the attachment request.</p>"
+          "documentation":"<p>The ARN of the transit gateway route table for the attachment request. For example, <code>\"TransitGatewayRouteTableArn\": \"arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456\"</code>.</p>"
         },
         "Tags":{
           "shape":"TagList",
@@ -6149,7 +6160,7 @@
       "members":{
         "TransitGatewayRouteTableArn":{
           "shape":"TransitGatewayRouteTableArn",
-          "documentation":"<p>The ARN of the transit gateway route table.</p>"
+          "documentation":"<p>The ARN of the transit gateway route table for the attachment request. For example, <code>\"TransitGatewayRouteTableArn\": \"arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456\"</code>.</p>"
         },
         "CoreNetworkSegmentEdge":{
           "shape":"CoreNetworkSegmentEdgeIdentifier",
@@ -6602,14 +6613,17 @@
         },
         "TransitGatewayRouteTableArn":{
           "shape":"TransitGatewayRouteTableArn",
-          "documentation":"<p>The ARN of the transit gateway attachment route table.</p>"
+          "documentation":"<p>The ARN of the transit gateway attachment route table. For example, <code>\"TransitGatewayRouteTableArn\": \"arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456\"</code>.</p>"
         }
       },
       "documentation":"<p>Describes a transit gateway route table attachment.</p>"
     },
     "TunnelProtocol":{
       "type":"string",
-      "enum":["GRE"]
+      "enum":[
+        "GRE",
+        "NO_ENCAP"
+      ]
     },
     "UntagResourceRequest":{
       "type":"structure",
@@ -7023,6 +7037,10 @@
         "Ipv6Support":{
           "shape":"Boolean",
           "documentation":"<p>Indicates whether IPv6 is supported.</p>"
+        },
+        "ApplianceModeSupport":{
+          "shape":"Boolean",
+          "documentation":"<p>Indicates whether appliance mode is supported. If enabled, traffic flow between a source and destination use the same Availability Zone for the VPC attachment for the lifetime of that flow. The default value is <code>false</code>.</p>"
         }
       },
       "documentation":"<p>Describes the VPC options.</p>"

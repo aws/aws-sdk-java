@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,12 @@ public class AppVersionSummaryMarshaller {
 
     private static final MarshallingInfo<String> APPVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("appVersion").build();
+    private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<Long> IDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("identifier").build();
+    private static final MarshallingInfo<String> VERSIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("versionName").build();
 
     private static final AppVersionSummaryMarshaller instance = new AppVersionSummaryMarshaller();
 
@@ -47,6 +53,9 @@ public class AppVersionSummaryMarshaller {
 
         try {
             protocolMarshaller.marshall(appVersionSummary.getAppVersion(), APPVERSION_BINDING);
+            protocolMarshaller.marshall(appVersionSummary.getCreationTime(), CREATIONTIME_BINDING);
+            protocolMarshaller.marshall(appVersionSummary.getIdentifier(), IDENTIFIER_BINDING);
+            protocolMarshaller.marshall(appVersionSummary.getVersionName(), VERSIONNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

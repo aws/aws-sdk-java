@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,6 +29,8 @@ import com.amazonaws.regions.Region;
 import com.amazonaws.services.sqs.AmazonSQSAsync;
 import com.amazonaws.services.sqs.model.AddPermissionRequest;
 import com.amazonaws.services.sqs.model.AddPermissionResult;
+import com.amazonaws.services.sqs.model.CancelMessageMoveTaskRequest;
+import com.amazonaws.services.sqs.model.CancelMessageMoveTaskResult;
 import com.amazonaws.services.sqs.model.ChangeMessageVisibilityBatchRequest;
 import com.amazonaws.services.sqs.model.ChangeMessageVisibilityBatchRequestEntry;
 import com.amazonaws.services.sqs.model.ChangeMessageVisibilityBatchResult;
@@ -49,6 +51,8 @@ import com.amazonaws.services.sqs.model.GetQueueUrlRequest;
 import com.amazonaws.services.sqs.model.GetQueueUrlResult;
 import com.amazonaws.services.sqs.model.ListDeadLetterSourceQueuesRequest;
 import com.amazonaws.services.sqs.model.ListDeadLetterSourceQueuesResult;
+import com.amazonaws.services.sqs.model.ListMessageMoveTasksRequest;
+import com.amazonaws.services.sqs.model.ListMessageMoveTasksResult;
 import com.amazonaws.services.sqs.model.ListQueueTagsRequest;
 import com.amazonaws.services.sqs.model.ListQueueTagsResult;
 import com.amazonaws.services.sqs.model.ListQueuesRequest;
@@ -66,6 +70,8 @@ import com.amazonaws.services.sqs.model.SendMessageRequest;
 import com.amazonaws.services.sqs.model.SendMessageResult;
 import com.amazonaws.services.sqs.model.SetQueueAttributesRequest;
 import com.amazonaws.services.sqs.model.SetQueueAttributesResult;
+import com.amazonaws.services.sqs.model.StartMessageMoveTaskRequest;
+import com.amazonaws.services.sqs.model.StartMessageMoveTaskResult;
 import com.amazonaws.services.sqs.model.TagQueueRequest;
 import com.amazonaws.services.sqs.model.TagQueueResult;
 import com.amazonaws.services.sqs.model.UntagQueueRequest;
@@ -346,7 +352,6 @@ public class AmazonSQSBufferedAsyncClient implements AmazonSQSAsync {
                 aWSAccountIds, actions), asyncHandler);
     }
 
-
     public AddPermissionResult addPermission(AddPermissionRequest addPermissionRequest) throws AmazonServiceException,
             AmazonClientException {
         ResultConverter.appendUserAgent(addPermissionRequest, USER_AGENT);
@@ -504,6 +509,60 @@ public class AmazonSQSBufferedAsyncClient implements AmazonSQSAsync {
             com.amazonaws.handlers.AsyncHandler<SetQueueAttributesRequest, SetQueueAttributesResult> asyncHandler)
             throws AmazonServiceException, AmazonClientException {
         return realSQS.setQueueAttributesAsync(queueUrl, attributes, asyncHandler);
+    }
+
+    @Override
+    public StartMessageMoveTaskResult startMessageMoveTask(StartMessageMoveTaskRequest startMessageMoveTaskRequest) {
+        ResultConverter.appendUserAgent(startMessageMoveTaskRequest, USER_AGENT);
+        return realSQS.startMessageMoveTask(startMessageMoveTaskRequest);
+    }
+
+    @Override
+    public Future<StartMessageMoveTaskResult> startMessageMoveTaskAsync(StartMessageMoveTaskRequest startMessageMoveTaskRequest) {
+        ResultConverter.appendUserAgent(startMessageMoveTaskRequest, USER_AGENT);
+        return realSQS.startMessageMoveTaskAsync(startMessageMoveTaskRequest);
+    }
+
+    @Override
+    public Future<StartMessageMoveTaskResult> startMessageMoveTaskAsync(StartMessageMoveTaskRequest startMessageMoveTaskRequest, AsyncHandler<StartMessageMoveTaskRequest, StartMessageMoveTaskResult> asyncHandler) {
+        ResultConverter.appendUserAgent(startMessageMoveTaskRequest, USER_AGENT);
+        return realSQS.startMessageMoveTaskAsync(startMessageMoveTaskRequest, asyncHandler);
+    }
+
+    @Override
+    public CancelMessageMoveTaskResult cancelMessageMoveTask(CancelMessageMoveTaskRequest cancelMessageMoveTaskRequest) {
+        ResultConverter.appendUserAgent(cancelMessageMoveTaskRequest, USER_AGENT);
+        return realSQS.cancelMessageMoveTask(cancelMessageMoveTaskRequest);
+    }
+
+    @Override
+    public Future<CancelMessageMoveTaskResult> cancelMessageMoveTaskAsync(CancelMessageMoveTaskRequest cancelMessageMoveTaskRequest) {
+        ResultConverter.appendUserAgent(cancelMessageMoveTaskRequest, USER_AGENT);
+        return realSQS.cancelMessageMoveTaskAsync(cancelMessageMoveTaskRequest);
+    }
+
+    @Override
+    public Future<CancelMessageMoveTaskResult> cancelMessageMoveTaskAsync(CancelMessageMoveTaskRequest cancelMessageMoveTaskRequest, AsyncHandler<CancelMessageMoveTaskRequest, CancelMessageMoveTaskResult> asyncHandler) {
+        ResultConverter.appendUserAgent(cancelMessageMoveTaskRequest, USER_AGENT);
+        return realSQS.cancelMessageMoveTaskAsync(cancelMessageMoveTaskRequest, asyncHandler);
+    }
+
+    @Override
+    public ListMessageMoveTasksResult listMessageMoveTasks(ListMessageMoveTasksRequest listMessageMoveTasksRequest) {
+        ResultConverter.appendUserAgent(listMessageMoveTasksRequest, USER_AGENT);
+        return realSQS.listMessageMoveTasks(listMessageMoveTasksRequest);
+    }
+
+    @Override
+    public Future<ListMessageMoveTasksResult> listMessageMoveTasksAsync(ListMessageMoveTasksRequest listMessageMoveTasksRequest) {
+        ResultConverter.appendUserAgent(listMessageMoveTasksRequest, USER_AGENT);
+        return realSQS.listMessageMoveTasksAsync(listMessageMoveTasksRequest);
+    }
+
+    @Override
+    public Future<ListMessageMoveTasksResult> listMessageMoveTasksAsync(ListMessageMoveTasksRequest listMessageMoveTasksRequest, AsyncHandler<ListMessageMoveTasksRequest, ListMessageMoveTasksResult> asyncHandler) {
+        ResultConverter.appendUserAgent(listMessageMoveTasksRequest, USER_AGENT);
+        return realSQS.listMessageMoveTasksAsync(listMessageMoveTasksRequest, asyncHandler);
     }
 
     public Future<ChangeMessageVisibilityBatchResult> changeMessageVisibilityBatchAsync(ChangeMessageVisibilityBatchRequest changeMessageVisibilityBatchRequest,

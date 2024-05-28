@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,8 +38,8 @@ public class PolicyInformation implements Serializable, Cloneable, StructuredPoj
     private String certPolicyId;
     /**
      * <p>
-     * Modifies the given <code>CertPolicyId</code> with a qualifier. ACM Private CA supports the certification practice
-     * statement (CPS) qualifier.
+     * Modifies the given <code>CertPolicyId</code> with a qualifier. Amazon Web Services Private CA supports the
+     * certification practice statement (CPS) qualifier.
      * </p>
      */
     private java.util.List<PolicyQualifierInfo> policyQualifiers;
@@ -98,12 +98,12 @@ public class PolicyInformation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Modifies the given <code>CertPolicyId</code> with a qualifier. ACM Private CA supports the certification practice
-     * statement (CPS) qualifier.
+     * Modifies the given <code>CertPolicyId</code> with a qualifier. Amazon Web Services Private CA supports the
+     * certification practice statement (CPS) qualifier.
      * </p>
      * 
-     * @return Modifies the given <code>CertPolicyId</code> with a qualifier. ACM Private CA supports the certification
-     *         practice statement (CPS) qualifier.
+     * @return Modifies the given <code>CertPolicyId</code> with a qualifier. Amazon Web Services Private CA supports
+     *         the certification practice statement (CPS) qualifier.
      */
 
     public java.util.List<PolicyQualifierInfo> getPolicyQualifiers() {
@@ -112,13 +112,13 @@ public class PolicyInformation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Modifies the given <code>CertPolicyId</code> with a qualifier. ACM Private CA supports the certification practice
-     * statement (CPS) qualifier.
+     * Modifies the given <code>CertPolicyId</code> with a qualifier. Amazon Web Services Private CA supports the
+     * certification practice statement (CPS) qualifier.
      * </p>
      * 
      * @param policyQualifiers
-     *        Modifies the given <code>CertPolicyId</code> with a qualifier. ACM Private CA supports the certification
-     *        practice statement (CPS) qualifier.
+     *        Modifies the given <code>CertPolicyId</code> with a qualifier. Amazon Web Services Private CA supports the
+     *        certification practice statement (CPS) qualifier.
      */
 
     public void setPolicyQualifiers(java.util.Collection<PolicyQualifierInfo> policyQualifiers) {
@@ -132,8 +132,8 @@ public class PolicyInformation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Modifies the given <code>CertPolicyId</code> with a qualifier. ACM Private CA supports the certification practice
-     * statement (CPS) qualifier.
+     * Modifies the given <code>CertPolicyId</code> with a qualifier. Amazon Web Services Private CA supports the
+     * certification practice statement (CPS) qualifier.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -142,8 +142,8 @@ public class PolicyInformation implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param policyQualifiers
-     *        Modifies the given <code>CertPolicyId</code> with a qualifier. ACM Private CA supports the certification
-     *        practice statement (CPS) qualifier.
+     *        Modifies the given <code>CertPolicyId</code> with a qualifier. Amazon Web Services Private CA supports the
+     *        certification practice statement (CPS) qualifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,13 +159,13 @@ public class PolicyInformation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Modifies the given <code>CertPolicyId</code> with a qualifier. ACM Private CA supports the certification practice
-     * statement (CPS) qualifier.
+     * Modifies the given <code>CertPolicyId</code> with a qualifier. Amazon Web Services Private CA supports the
+     * certification practice statement (CPS) qualifier.
      * </p>
      * 
      * @param policyQualifiers
-     *        Modifies the given <code>CertPolicyId</code> with a qualifier. ACM Private CA supports the certification
-     *        practice statement (CPS) qualifier.
+     *        Modifies the given <code>CertPolicyId</code> with a qualifier. Amazon Web Services Private CA supports the
+     *        certification practice statement (CPS) qualifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

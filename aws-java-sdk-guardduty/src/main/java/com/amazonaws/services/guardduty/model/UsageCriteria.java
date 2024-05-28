@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,7 @@ public class UsageCriteria implements Serializable, Cloneable, StructuredPojo {
      * The data sources to aggregate usage statistics from.
      * </p>
      */
+    @Deprecated
     private java.util.List<String> dataSources;
     /**
      * <p>
@@ -46,6 +47,12 @@ public class UsageCriteria implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<String> resources;
+    /**
+     * <p>
+     * The features to aggregate usage statistics from.
+     * </p>
+     */
+    private java.util.List<String> features;
 
     /**
      * <p>
@@ -125,7 +132,7 @@ public class UsageCriteria implements Serializable, Cloneable, StructuredPojo {
      * @return The data sources to aggregate usage statistics from.
      * @see DataSource
      */
-
+    @Deprecated
     public java.util.List<String> getDataSources() {
         return dataSources;
     }
@@ -139,7 +146,7 @@ public class UsageCriteria implements Serializable, Cloneable, StructuredPojo {
      *        The data sources to aggregate usage statistics from.
      * @see DataSource
      */
-
+    @Deprecated
     public void setDataSources(java.util.Collection<String> dataSources) {
         if (dataSources == null) {
             this.dataSources = null;
@@ -164,7 +171,7 @@ public class UsageCriteria implements Serializable, Cloneable, StructuredPojo {
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSource
      */
-
+    @Deprecated
     public UsageCriteria withDataSources(String... dataSources) {
         if (this.dataSources == null) {
             setDataSources(new java.util.ArrayList<String>(dataSources.length));
@@ -185,7 +192,7 @@ public class UsageCriteria implements Serializable, Cloneable, StructuredPojo {
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSource
      */
-
+    @Deprecated
     public UsageCriteria withDataSources(java.util.Collection<String> dataSources) {
         setDataSources(dataSources);
         return this;
@@ -201,7 +208,7 @@ public class UsageCriteria implements Serializable, Cloneable, StructuredPojo {
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSource
      */
-
+    @Deprecated
     public UsageCriteria withDataSources(DataSource... dataSources) {
         java.util.ArrayList<String> dataSourcesCopy = new java.util.ArrayList<String>(dataSources.length);
         for (DataSource value : dataSources) {
@@ -286,6 +293,104 @@ public class UsageCriteria implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The features to aggregate usage statistics from.
+     * </p>
+     * 
+     * @return The features to aggregate usage statistics from.
+     * @see UsageFeature
+     */
+
+    public java.util.List<String> getFeatures() {
+        return features;
+    }
+
+    /**
+     * <p>
+     * The features to aggregate usage statistics from.
+     * </p>
+     * 
+     * @param features
+     *        The features to aggregate usage statistics from.
+     * @see UsageFeature
+     */
+
+    public void setFeatures(java.util.Collection<String> features) {
+        if (features == null) {
+            this.features = null;
+            return;
+        }
+
+        this.features = new java.util.ArrayList<String>(features);
+    }
+
+    /**
+     * <p>
+     * The features to aggregate usage statistics from.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFeatures(java.util.Collection)} or {@link #withFeatures(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param features
+     *        The features to aggregate usage statistics from.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UsageFeature
+     */
+
+    public UsageCriteria withFeatures(String... features) {
+        if (this.features == null) {
+            setFeatures(new java.util.ArrayList<String>(features.length));
+        }
+        for (String ele : features) {
+            this.features.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The features to aggregate usage statistics from.
+     * </p>
+     * 
+     * @param features
+     *        The features to aggregate usage statistics from.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UsageFeature
+     */
+
+    public UsageCriteria withFeatures(java.util.Collection<String> features) {
+        setFeatures(features);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The features to aggregate usage statistics from.
+     * </p>
+     * 
+     * @param features
+     *        The features to aggregate usage statistics from.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UsageFeature
+     */
+
+    public UsageCriteria withFeatures(UsageFeature... features) {
+        java.util.ArrayList<String> featuresCopy = new java.util.ArrayList<String>(features.length);
+        for (UsageFeature value : features) {
+            featuresCopy.add(value.toString());
+        }
+        if (getFeatures() == null) {
+            setFeatures(featuresCopy);
+        } else {
+            getFeatures().addAll(featuresCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -302,7 +407,9 @@ public class UsageCriteria implements Serializable, Cloneable, StructuredPojo {
         if (getDataSources() != null)
             sb.append("DataSources: ").append(getDataSources()).append(",");
         if (getResources() != null)
-            sb.append("Resources: ").append(getResources());
+            sb.append("Resources: ").append(getResources()).append(",");
+        if (getFeatures() != null)
+            sb.append("Features: ").append(getFeatures());
         sb.append("}");
         return sb.toString();
     }
@@ -329,6 +436,10 @@ public class UsageCriteria implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getResources() != null && other.getResources().equals(this.getResources()) == false)
             return false;
+        if (other.getFeatures() == null ^ this.getFeatures() == null)
+            return false;
+        if (other.getFeatures() != null && other.getFeatures().equals(this.getFeatures()) == false)
+            return false;
         return true;
     }
 
@@ -340,6 +451,7 @@ public class UsageCriteria implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAccountIds() == null) ? 0 : getAccountIds().hashCode());
         hashCode = prime * hashCode + ((getDataSources() == null) ? 0 : getDataSources().hashCode());
         hashCode = prime * hashCode + ((getResources() == null) ? 0 : getResources().hashCode());
+        hashCode = prime * hashCode + ((getFeatures() == null) ? 0 : getFeatures().hashCode());
         return hashCode;
     }
 

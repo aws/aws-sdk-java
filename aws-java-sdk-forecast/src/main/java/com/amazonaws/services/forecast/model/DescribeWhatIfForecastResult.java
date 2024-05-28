@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -141,7 +141,7 @@ public class DescribeWhatIfForecastResult extends com.amazonaws.AmazonWebService
     private TimeSeriesReplacementsDataSource timeSeriesReplacementsDataSource;
     /**
      * <p>
-     * The quantiles at which probabilistic forecasts are generated. You can specify up to 5 quantiles per what-if
+     * The quantiles at which probabilistic forecasts are generated. You can specify up to five quantiles per what-if
      * forecast in the <a>CreateWhatIfForecast</a> operation. If you didn't specify quantiles, the default values are
      * <code>["0.1", "0.5", "0.9"]</code>.
      * </p>
@@ -915,12 +915,12 @@ public class DescribeWhatIfForecastResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The quantiles at which probabilistic forecasts are generated. You can specify up to 5 quantiles per what-if
+     * The quantiles at which probabilistic forecasts are generated. You can specify up to five quantiles per what-if
      * forecast in the <a>CreateWhatIfForecast</a> operation. If you didn't specify quantiles, the default values are
      * <code>["0.1", "0.5", "0.9"]</code>.
      * </p>
      * 
-     * @return The quantiles at which probabilistic forecasts are generated. You can specify up to 5 quantiles per
+     * @return The quantiles at which probabilistic forecasts are generated. You can specify up to five quantiles per
      *         what-if forecast in the <a>CreateWhatIfForecast</a> operation. If you didn't specify quantiles, the
      *         default values are <code>["0.1", "0.5", "0.9"]</code>.
      */
@@ -931,13 +931,13 @@ public class DescribeWhatIfForecastResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The quantiles at which probabilistic forecasts are generated. You can specify up to 5 quantiles per what-if
+     * The quantiles at which probabilistic forecasts are generated. You can specify up to five quantiles per what-if
      * forecast in the <a>CreateWhatIfForecast</a> operation. If you didn't specify quantiles, the default values are
      * <code>["0.1", "0.5", "0.9"]</code>.
      * </p>
      * 
      * @param forecastTypes
-     *        The quantiles at which probabilistic forecasts are generated. You can specify up to 5 quantiles per
+     *        The quantiles at which probabilistic forecasts are generated. You can specify up to five quantiles per
      *        what-if forecast in the <a>CreateWhatIfForecast</a> operation. If you didn't specify quantiles, the
      *        default values are <code>["0.1", "0.5", "0.9"]</code>.
      */
@@ -953,7 +953,7 @@ public class DescribeWhatIfForecastResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The quantiles at which probabilistic forecasts are generated. You can specify up to 5 quantiles per what-if
+     * The quantiles at which probabilistic forecasts are generated. You can specify up to five quantiles per what-if
      * forecast in the <a>CreateWhatIfForecast</a> operation. If you didn't specify quantiles, the default values are
      * <code>["0.1", "0.5", "0.9"]</code>.
      * </p>
@@ -964,7 +964,7 @@ public class DescribeWhatIfForecastResult extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param forecastTypes
-     *        The quantiles at which probabilistic forecasts are generated. You can specify up to 5 quantiles per
+     *        The quantiles at which probabilistic forecasts are generated. You can specify up to five quantiles per
      *        what-if forecast in the <a>CreateWhatIfForecast</a> operation. If you didn't specify quantiles, the
      *        default values are <code>["0.1", "0.5", "0.9"]</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -982,13 +982,13 @@ public class DescribeWhatIfForecastResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The quantiles at which probabilistic forecasts are generated. You can specify up to 5 quantiles per what-if
+     * The quantiles at which probabilistic forecasts are generated. You can specify up to five quantiles per what-if
      * forecast in the <a>CreateWhatIfForecast</a> operation. If you didn't specify quantiles, the default values are
      * <code>["0.1", "0.5", "0.9"]</code>.
      * </p>
      * 
      * @param forecastTypes
-     *        The quantiles at which probabilistic forecasts are generated. You can specify up to 5 quantiles per
+     *        The quantiles at which probabilistic forecasts are generated. You can specify up to five quantiles per
      *        what-if forecast in the <a>CreateWhatIfForecast</a> operation. If you didn't specify quantiles, the
      *        default values are <code>["0.1", "0.5", "0.9"]</code>.
      * @return Returns a reference to this object so that method calls can be chained together.

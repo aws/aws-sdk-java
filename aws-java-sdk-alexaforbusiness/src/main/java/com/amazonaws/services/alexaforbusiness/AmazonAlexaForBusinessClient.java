@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.alexaforbusiness.AmazonAlexaForBusinessClientBuild
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.alexaforbusiness.model.*;
+
 import com.amazonaws.services.alexaforbusiness.model.transform.*;
 
 /**
@@ -51,13 +52,7 @@ import com.amazonaws.services.alexaforbusiness.model.transform.*;
  * until the service call completes.
  * <p>
  * <p>
- * Alexa for Business helps you use Alexa in your organization. Alexa for Business provides you with the tools to manage
- * Alexa devices, enroll your users, and assign skills, at scale. You can build your own context-aware voice skills
- * using the Alexa Skills Kit and the Alexa for Business API operations. You can also make these available as private
- * skills for your organization. Alexa for Business makes it efficient to voice-enable your products and services, thus
- * providing context-aware voice experiences for your customers. Device makers building with the Alexa Voice Service
- * (AVS) can create fully integrated solutions, register their products with Alexa for Business, and manage them as
- * shared devices in their organization.
+ * Alexa for Business has been retired and is no longer supported.
  * </p>
  */
 @ThreadSafe
@@ -194,6 +189,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public ApproveSkillResult approveSkill(ApproveSkillRequest request) {
         request = beforeClientExecution(request);
         return executeApproveSkill(request);
@@ -251,6 +247,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public AssociateContactWithAddressBookResult associateContactWithAddressBook(AssociateContactWithAddressBookRequest request) {
         request = beforeClientExecution(request);
         return executeAssociateContactWithAddressBook(request);
@@ -317,6 +314,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public AssociateDeviceWithNetworkProfileResult associateDeviceWithNetworkProfile(AssociateDeviceWithNetworkProfileRequest request) {
         request = beforeClientExecution(request);
         return executeAssociateDeviceWithNetworkProfile(request);
@@ -384,6 +382,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public AssociateDeviceWithRoomResult associateDeviceWithRoom(AssociateDeviceWithRoomRequest request) {
         request = beforeClientExecution(request);
         return executeAssociateDeviceWithRoom(request);
@@ -444,6 +443,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public AssociateSkillGroupWithRoomResult associateSkillGroupWithRoom(AssociateSkillGroupWithRoomRequest request) {
         request = beforeClientExecution(request);
         return executeAssociateSkillGroupWithRoom(request);
@@ -507,6 +507,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public AssociateSkillWithSkillGroupResult associateSkillWithSkillGroup(AssociateSkillWithSkillGroupRequest request) {
         request = beforeClientExecution(request);
         return executeAssociateSkillWithSkillGroup(request);
@@ -568,6 +569,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public AssociateSkillWithUsersResult associateSkillWithUsers(AssociateSkillWithUsersRequest request) {
         request = beforeClientExecution(request);
         return executeAssociateSkillWithUsers(request);
@@ -629,6 +631,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public CreateAddressBookResult createAddressBook(CreateAddressBookRequest request) {
         request = beforeClientExecution(request);
         return executeCreateAddressBook(request);
@@ -687,6 +690,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public CreateBusinessReportScheduleResult createBusinessReportSchedule(CreateBusinessReportScheduleRequest request) {
         request = beforeClientExecution(request);
         return executeCreateBusinessReportSchedule(request);
@@ -746,6 +750,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public CreateConferenceProviderResult createConferenceProvider(CreateConferenceProviderRequest request) {
         request = beforeClientExecution(request);
         return executeCreateConferenceProvider(request);
@@ -807,6 +812,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public CreateContactResult createContact(CreateContactRequest request) {
         request = beforeClientExecution(request);
         return executeCreateContact(request);
@@ -866,6 +872,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public CreateGatewayGroupResult createGatewayGroup(CreateGatewayGroupRequest request) {
         request = beforeClientExecution(request);
         return executeCreateGatewayGroup(request);
@@ -931,6 +938,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public CreateNetworkProfileResult createNetworkProfile(CreateNetworkProfileRequest request) {
         request = beforeClientExecution(request);
         return executeCreateNetworkProfile(request);
@@ -992,6 +1000,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public CreateProfileResult createProfile(CreateProfileRequest request) {
         request = beforeClientExecution(request);
         return executeCreateProfile(request);
@@ -1051,6 +1060,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public CreateRoomResult createRoom(CreateRoomRequest request) {
         request = beforeClientExecution(request);
         return executeCreateRoom(request);
@@ -1112,6 +1122,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public CreateSkillGroupResult createSkillGroup(CreateSkillGroupRequest request) {
         request = beforeClientExecution(request);
         return executeCreateSkillGroup(request);
@@ -1173,6 +1184,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public CreateUserResult createUser(CreateUserRequest request) {
         request = beforeClientExecution(request);
         return executeCreateUser(request);
@@ -1232,6 +1244,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteAddressBookResult deleteAddressBook(DeleteAddressBookRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteAddressBook(request);
@@ -1291,6 +1304,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteBusinessReportScheduleResult deleteBusinessReportSchedule(DeleteBusinessReportScheduleRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteBusinessReportSchedule(request);
@@ -1350,6 +1364,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteConferenceProviderResult deleteConferenceProvider(DeleteConferenceProviderRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteConferenceProvider(request);
@@ -1411,6 +1426,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteContactResult deleteContact(DeleteContactRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteContact(request);
@@ -1472,6 +1488,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteDeviceResult deleteDevice(DeleteDeviceRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteDevice(request);
@@ -1536,6 +1553,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteDeviceUsageDataResult deleteDeviceUsageData(DeleteDeviceUsageDataRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteDeviceUsageData(request);
@@ -1594,6 +1612,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteGatewayGroupResult deleteGatewayGroup(DeleteGatewayGroupRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteGatewayGroup(request);
@@ -1655,6 +1674,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteNetworkProfileResult deleteNetworkProfile(DeleteNetworkProfileRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteNetworkProfile(request);
@@ -1714,6 +1734,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteProfileResult deleteProfile(DeleteProfileRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteProfile(request);
@@ -1773,6 +1794,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteRoomResult deleteRoom(DeleteRoomRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteRoom(request);
@@ -1830,6 +1852,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteRoomSkillParameterResult deleteRoomSkillParameter(DeleteRoomSkillParameterRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteRoomSkillParameter(request);
@@ -1891,6 +1914,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteSkillAuthorizationResult deleteSkillAuthorization(DeleteSkillAuthorizationRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteSkillAuthorization(request);
@@ -1952,6 +1976,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteSkillGroupResult deleteSkillGroup(DeleteSkillGroupRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteSkillGroup(request);
@@ -2011,6 +2036,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public DeleteUserResult deleteUser(DeleteUserRequest request) {
         request = beforeClientExecution(request);
         return executeDeleteUser(request);
@@ -2067,6 +2093,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DisassociateContactFromAddressBookResult disassociateContactFromAddressBook(DisassociateContactFromAddressBookRequest request) {
         request = beforeClientExecution(request);
         return executeDisassociateContactFromAddressBook(request);
@@ -2131,6 +2158,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DisassociateDeviceFromRoomResult disassociateDeviceFromRoom(DisassociateDeviceFromRoomRequest request) {
         request = beforeClientExecution(request);
         return executeDisassociateDeviceFromRoom(request);
@@ -2192,6 +2220,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DisassociateSkillFromSkillGroupResult disassociateSkillFromSkillGroup(DisassociateSkillFromSkillGroupRequest request) {
         request = beforeClientExecution(request);
         return executeDisassociateSkillFromSkillGroup(request);
@@ -2254,6 +2283,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DisassociateSkillFromUsersResult disassociateSkillFromUsers(DisassociateSkillFromUsersRequest request) {
         request = beforeClientExecution(request);
         return executeDisassociateSkillFromUsers(request);
@@ -2314,6 +2344,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DisassociateSkillGroupFromRoomResult disassociateSkillGroupFromRoom(DisassociateSkillGroupFromRoomRequest request) {
         request = beforeClientExecution(request);
         return executeDisassociateSkillGroupFromRoom(request);
@@ -2373,6 +2404,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public ForgetSmartHomeAppliancesResult forgetSmartHomeAppliances(ForgetSmartHomeAppliancesRequest request) {
         request = beforeClientExecution(request);
         return executeForgetSmartHomeAppliances(request);
@@ -2432,6 +2464,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetAddressBookResult getAddressBook(GetAddressBookRequest request) {
         request = beforeClientExecution(request);
         return executeGetAddressBook(request);
@@ -2489,6 +2522,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetConferencePreferenceResult getConferencePreference(GetConferencePreferenceRequest request) {
         request = beforeClientExecution(request);
         return executeGetConferencePreference(request);
@@ -2548,6 +2582,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetConferenceProviderResult getConferenceProvider(GetConferenceProviderRequest request) {
         request = beforeClientExecution(request);
         return executeGetConferenceProvider(request);
@@ -2606,6 +2641,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetContactResult getContact(GetContactRequest request) {
         request = beforeClientExecution(request);
         return executeGetContact(request);
@@ -2663,6 +2699,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public GetDeviceResult getDevice(GetDeviceRequest request) {
         request = beforeClientExecution(request);
         return executeGetDevice(request);
@@ -2720,6 +2757,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetGatewayResult getGateway(GetGatewayRequest request) {
         request = beforeClientExecution(request);
         return executeGetGateway(request);
@@ -2777,6 +2815,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetGatewayGroupResult getGatewayGroup(GetGatewayGroupRequest request) {
         request = beforeClientExecution(request);
         return executeGetGatewayGroup(request);
@@ -2834,6 +2873,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetInvitationConfigurationResult getInvitationConfiguration(GetInvitationConfigurationRequest request) {
         request = beforeClientExecution(request);
         return executeGetInvitationConfiguration(request);
@@ -2895,6 +2935,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetNetworkProfileResult getNetworkProfile(GetNetworkProfileRequest request) {
         request = beforeClientExecution(request);
         return executeGetNetworkProfile(request);
@@ -2952,6 +2993,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetProfileResult getProfile(GetProfileRequest request) {
         request = beforeClientExecution(request);
         return executeGetProfile(request);
@@ -3009,6 +3051,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public GetRoomResult getRoom(GetRoomRequest request) {
         request = beforeClientExecution(request);
         return executeGetRoom(request);
@@ -3066,6 +3109,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetRoomSkillParameterResult getRoomSkillParameter(GetRoomSkillParameterRequest request) {
         request = beforeClientExecution(request);
         return executeGetRoomSkillParameter(request);
@@ -3124,6 +3168,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetSkillGroupResult getSkillGroup(GetSkillGroupRequest request) {
         request = beforeClientExecution(request);
         return executeGetSkillGroup(request);
@@ -3181,6 +3226,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public ListBusinessReportSchedulesResult listBusinessReportSchedules(ListBusinessReportSchedulesRequest request) {
         request = beforeClientExecution(request);
         return executeListBusinessReportSchedules(request);
@@ -3238,6 +3284,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public ListConferenceProvidersResult listConferenceProviders(ListConferenceProvidersRequest request) {
         request = beforeClientExecution(request);
         return executeListConferenceProviders(request);
@@ -3297,6 +3344,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public ListDeviceEventsResult listDeviceEvents(ListDeviceEventsRequest request) {
         request = beforeClientExecution(request);
         return executeListDeviceEvents(request);
@@ -3352,6 +3400,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public ListGatewayGroupsResult listGatewayGroups(ListGatewayGroupsRequest request) {
         request = beforeClientExecution(request);
         return executeListGatewayGroups(request);
@@ -3409,6 +3458,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public ListGatewaysResult listGateways(ListGatewaysRequest request) {
         request = beforeClientExecution(request);
         return executeListGateways(request);
@@ -3464,6 +3514,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public ListSkillsResult listSkills(ListSkillsRequest request) {
         request = beforeClientExecution(request);
         return executeListSkills(request);
@@ -3519,6 +3570,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public ListSkillsStoreCategoriesResult listSkillsStoreCategories(ListSkillsStoreCategoriesRequest request) {
         request = beforeClientExecution(request);
         return executeListSkillsStoreCategories(request);
@@ -3576,6 +3628,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public ListSkillsStoreSkillsByCategoryResult listSkillsStoreSkillsByCategory(ListSkillsStoreSkillsByCategoryRequest request) {
         request = beforeClientExecution(request);
         return executeListSkillsStoreSkillsByCategory(request);
@@ -3636,6 +3689,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public ListSmartHomeAppliancesResult listSmartHomeAppliances(ListSmartHomeAppliancesRequest request) {
         request = beforeClientExecution(request);
         return executeListSmartHomeAppliances(request);
@@ -3695,6 +3749,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public ListTagsResult listTags(ListTagsRequest request) {
         request = beforeClientExecution(request);
         return executeListTags(request);
@@ -3752,6 +3807,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public PutConferencePreferenceResult putConferencePreference(PutConferencePreferenceRequest request) {
         request = beforeClientExecution(request);
         return executePutConferencePreference(request);
@@ -3813,6 +3869,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public PutInvitationConfigurationResult putInvitationConfiguration(PutInvitationConfigurationRequest request) {
         request = beforeClientExecution(request);
         return executePutInvitationConfiguration(request);
@@ -3873,6 +3930,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public PutRoomSkillParameterResult putRoomSkillParameter(PutRoomSkillParameterRequest request) {
         request = beforeClientExecution(request);
         return executePutRoomSkillParameter(request);
@@ -3935,6 +3993,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public PutSkillAuthorizationResult putSkillAuthorization(PutSkillAuthorizationRequest request) {
         request = beforeClientExecution(request);
         return executePutSkillAuthorization(request);
@@ -4000,6 +4059,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public RegisterAVSDeviceResult registerAVSDevice(RegisterAVSDeviceRequest request) {
         request = beforeClientExecution(request);
         return executeRegisterAVSDevice(request);
@@ -4061,6 +4121,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public RejectSkillResult rejectSkill(RejectSkillRequest request) {
         request = beforeClientExecution(request);
         return executeRejectSkill(request);
@@ -4125,6 +4186,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public ResolveRoomResult resolveRoom(ResolveRoomRequest request) {
         request = beforeClientExecution(request);
         return executeResolveRoom(request);
@@ -4184,6 +4246,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public RevokeInvitationResult revokeInvitation(RevokeInvitationRequest request) {
         request = beforeClientExecution(request);
         return executeRevokeInvitation(request);
@@ -4239,6 +4302,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public SearchAddressBooksResult searchAddressBooks(SearchAddressBooksRequest request) {
         request = beforeClientExecution(request);
         return executeSearchAddressBooks(request);
@@ -4294,6 +4358,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public SearchContactsResult searchContacts(SearchContactsRequest request) {
         request = beforeClientExecution(request);
         return executeSearchContacts(request);
@@ -4349,6 +4414,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public SearchDevicesResult searchDevices(SearchDevicesRequest request) {
         request = beforeClientExecution(request);
         return executeSearchDevices(request);
@@ -4404,6 +4470,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public SearchNetworkProfilesResult searchNetworkProfiles(SearchNetworkProfilesRequest request) {
         request = beforeClientExecution(request);
         return executeSearchNetworkProfiles(request);
@@ -4460,6 +4527,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public SearchProfilesResult searchProfiles(SearchProfilesRequest request) {
         request = beforeClientExecution(request);
         return executeSearchProfiles(request);
@@ -4515,6 +4583,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public SearchRoomsResult searchRooms(SearchRoomsRequest request) {
         request = beforeClientExecution(request);
         return executeSearchRooms(request);
@@ -4570,6 +4639,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public SearchSkillGroupsResult searchSkillGroups(SearchSkillGroupsRequest request) {
         request = beforeClientExecution(request);
         return executeSearchSkillGroups(request);
@@ -4625,6 +4695,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public SearchUsersResult searchUsers(SearchUsersRequest request) {
         request = beforeClientExecution(request);
         return executeSearchUsers(request);
@@ -4747,6 +4818,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public SendInvitationResult sendInvitation(SendInvitationRequest request) {
         request = beforeClientExecution(request);
         return executeSendInvitation(request);
@@ -4834,6 +4906,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public StartDeviceSyncResult startDeviceSync(StartDeviceSyncRequest request) {
         request = beforeClientExecution(request);
         return executeStartDeviceSync(request);
@@ -4892,6 +4965,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public StartSmartHomeApplianceDiscoveryResult startSmartHomeApplianceDiscovery(StartSmartHomeApplianceDiscoveryRequest request) {
         request = beforeClientExecution(request);
         return executeStartSmartHomeApplianceDiscovery(request);
@@ -4952,6 +5026,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public TagResourceResult tagResource(TagResourceRequest request) {
         request = beforeClientExecution(request);
         return executeTagResource(request);
@@ -5009,6 +5084,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public UntagResourceResult untagResource(UntagResourceRequest request) {
         request = beforeClientExecution(request);
         return executeUntagResource(request);
@@ -5070,6 +5146,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public UpdateAddressBookResult updateAddressBook(UpdateAddressBookRequest request) {
         request = beforeClientExecution(request);
         return executeUpdateAddressBook(request);
@@ -5129,6 +5206,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public UpdateBusinessReportScheduleResult updateBusinessReportSchedule(UpdateBusinessReportScheduleRequest request) {
         request = beforeClientExecution(request);
         return executeUpdateBusinessReportSchedule(request);
@@ -5188,6 +5266,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public UpdateConferenceProviderResult updateConferenceProvider(UpdateConferenceProviderRequest request) {
         request = beforeClientExecution(request);
         return executeUpdateConferenceProvider(request);
@@ -5249,6 +5328,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public UpdateContactResult updateContact(UpdateContactRequest request) {
         request = beforeClientExecution(request);
         return executeUpdateContact(request);
@@ -5311,6 +5391,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public UpdateDeviceResult updateDevice(UpdateDeviceRequest request) {
         request = beforeClientExecution(request);
         return executeUpdateDevice(request);
@@ -5371,6 +5452,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public UpdateGatewayResult updateGateway(UpdateGatewayRequest request) {
         request = beforeClientExecution(request);
         return executeUpdateGateway(request);
@@ -5431,6 +5513,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public UpdateGatewayGroupResult updateGatewayGroup(UpdateGatewayGroupRequest request) {
         request = beforeClientExecution(request);
         return executeUpdateGatewayGroup(request);
@@ -5496,6 +5579,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public UpdateNetworkProfileResult updateNetworkProfile(UpdateNetworkProfileRequest request) {
         request = beforeClientExecution(request);
         return executeUpdateNetworkProfile(request);
@@ -5557,6 +5641,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public UpdateProfileResult updateProfile(UpdateProfileRequest request) {
         request = beforeClientExecution(request);
         return executeUpdateProfile(request);
@@ -5616,6 +5701,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public UpdateRoomResult updateRoom(UpdateRoomRequest request) {
         request = beforeClientExecution(request);
         return executeUpdateRoom(request);
@@ -5677,6 +5763,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public UpdateSkillGroupResult updateSkillGroup(UpdateSkillGroupRequest request) {
         request = beforeClientExecution(request);
         return executeUpdateSkillGroup(request);

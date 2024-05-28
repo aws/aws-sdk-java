@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,22 +71,25 @@ public class DeleteBucketMetricsConfigurationRequest extends AmazonWebServiceReq
     }
 
     /**
-     * Returns the ID used to identify the metrics configuration.
+     * The ID used to identify the metrics configuration. The ID has a 64 character limit and can only contain letters,
+     * numbers, periods, dashes, and underscores.
      */
     public String getId() {
         return id;
     }
 
     /**
-     * Sets the ID used to identify the metrics configuration.
+     * Sets the ID used to identify the metrics configuration. The ID has a 64 character limit and can only contain letters,
+     * numbers, periods, dashes, and underscores.
      */
     public void setId(String id) {
         this.id = id;
     }
 
     /**
-     * Sets the ID used to identify the metrics configuration
-     * and returns {@link DeleteBucketMetricsConfigurationRequest} object for method chaining.
+     * Sets the ID used to identify the metrics configuration and returns {@link DeleteBucketMetricsConfigurationRequest}
+     * object for method chaining. The ID has a 64 character limit and can only contain letters, numbers, periods,
+     * dashes, and underscores.
      */
     public DeleteBucketMetricsConfigurationRequest withId(String id) {
         setId(id);

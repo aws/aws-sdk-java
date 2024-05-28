@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class DescribeAssetModelResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The ID of the asset model.
+     * The ID of the asset model, in UUID format.
      * </p>
      */
     private String assetModelId;
@@ -71,7 +71,8 @@ public class DescribeAssetModelResult extends com.amazonaws.AmazonWebServiceResu
     private java.util.List<AssetModelHierarchy> assetModelHierarchies;
     /**
      * <p>
-     * The list of composite asset models for the asset model.
+     * The list of built-in composite models for the asset model, such as those with those of type
+     * <code>AWS/ALARMS</code>.
      * </p>
      */
     private java.util.List<AssetModelCompositeModel> assetModelCompositeModels;
@@ -93,14 +94,46 @@ public class DescribeAssetModelResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private AssetModelStatus assetModelStatus;
+    /**
+     * <p>
+     * The type of asset model.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String assetModelType;
+    /**
+     * <p>
+     * The list of the immediate child custom composite model summaries for the asset model.
+     * </p>
+     */
+    private java.util.List<AssetModelCompositeModelSummary> assetModelCompositeModelSummaries;
+    /**
+     * <p>
+     * The external ID of the asset model, if any.
+     * </p>
+     */
+    private String assetModelExternalId;
 
     /**
      * <p>
-     * The ID of the asset model.
+     * The ID of the asset model, in UUID format.
      * </p>
      * 
      * @param assetModelId
-     *        The ID of the asset model.
+     *        The ID of the asset model, in UUID format.
      */
 
     public void setAssetModelId(String assetModelId) {
@@ -109,10 +142,10 @@ public class DescribeAssetModelResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The ID of the asset model.
+     * The ID of the asset model, in UUID format.
      * </p>
      * 
-     * @return The ID of the asset model.
+     * @return The ID of the asset model, in UUID format.
      */
 
     public String getAssetModelId() {
@@ -121,11 +154,11 @@ public class DescribeAssetModelResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The ID of the asset model.
+     * The ID of the asset model, in UUID format.
      * </p>
      * 
      * @param assetModelId
-     *        The ID of the asset model.
+     *        The ID of the asset model, in UUID format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -461,10 +494,12 @@ public class DescribeAssetModelResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The list of composite asset models for the asset model.
+     * The list of built-in composite models for the asset model, such as those with those of type
+     * <code>AWS/ALARMS</code>.
      * </p>
      * 
-     * @return The list of composite asset models for the asset model.
+     * @return The list of built-in composite models for the asset model, such as those with those of type
+     *         <code>AWS/ALARMS</code>.
      */
 
     public java.util.List<AssetModelCompositeModel> getAssetModelCompositeModels() {
@@ -473,11 +508,13 @@ public class DescribeAssetModelResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The list of composite asset models for the asset model.
+     * The list of built-in composite models for the asset model, such as those with those of type
+     * <code>AWS/ALARMS</code>.
      * </p>
      * 
      * @param assetModelCompositeModels
-     *        The list of composite asset models for the asset model.
+     *        The list of built-in composite models for the asset model, such as those with those of type
+     *        <code>AWS/ALARMS</code>.
      */
 
     public void setAssetModelCompositeModels(java.util.Collection<AssetModelCompositeModel> assetModelCompositeModels) {
@@ -491,7 +528,8 @@ public class DescribeAssetModelResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The list of composite asset models for the asset model.
+     * The list of built-in composite models for the asset model, such as those with those of type
+     * <code>AWS/ALARMS</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -500,7 +538,8 @@ public class DescribeAssetModelResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param assetModelCompositeModels
-     *        The list of composite asset models for the asset model.
+     *        The list of built-in composite models for the asset model, such as those with those of type
+     *        <code>AWS/ALARMS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -516,11 +555,13 @@ public class DescribeAssetModelResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The list of composite asset models for the asset model.
+     * The list of built-in composite models for the asset model, such as those with those of type
+     * <code>AWS/ALARMS</code>.
      * </p>
      * 
      * @param assetModelCompositeModels
-     *        The list of composite asset models for the asset model.
+     *        The list of built-in composite models for the asset model, such as those with those of type
+     *        <code>AWS/ALARMS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -650,6 +691,284 @@ public class DescribeAssetModelResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The type of asset model.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param assetModelType
+     *        The type of asset model.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a
+     *        component in another asset model.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset
+     *        models. You can't create assets directly from this type of asset model.
+     *        </p>
+     *        </li>
+     * @see AssetModelType
+     */
+
+    public void setAssetModelType(String assetModelType) {
+        this.assetModelType = assetModelType;
+    }
+
+    /**
+     * <p>
+     * The type of asset model.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The type of asset model.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a
+     *         component in another asset model.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset
+     *         models. You can't create assets directly from this type of asset model.
+     *         </p>
+     *         </li>
+     * @see AssetModelType
+     */
+
+    public String getAssetModelType() {
+        return this.assetModelType;
+    }
+
+    /**
+     * <p>
+     * The type of asset model.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param assetModelType
+     *        The type of asset model.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a
+     *        component in another asset model.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset
+     *        models. You can't create assets directly from this type of asset model.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssetModelType
+     */
+
+    public DescribeAssetModelResult withAssetModelType(String assetModelType) {
+        setAssetModelType(assetModelType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of asset model.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param assetModelType
+     *        The type of asset model.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a
+     *        component in another asset model.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset
+     *        models. You can't create assets directly from this type of asset model.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssetModelType
+     */
+
+    public DescribeAssetModelResult withAssetModelType(AssetModelType assetModelType) {
+        this.assetModelType = assetModelType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of the immediate child custom composite model summaries for the asset model.
+     * </p>
+     * 
+     * @return The list of the immediate child custom composite model summaries for the asset model.
+     */
+
+    public java.util.List<AssetModelCompositeModelSummary> getAssetModelCompositeModelSummaries() {
+        return assetModelCompositeModelSummaries;
+    }
+
+    /**
+     * <p>
+     * The list of the immediate child custom composite model summaries for the asset model.
+     * </p>
+     * 
+     * @param assetModelCompositeModelSummaries
+     *        The list of the immediate child custom composite model summaries for the asset model.
+     */
+
+    public void setAssetModelCompositeModelSummaries(java.util.Collection<AssetModelCompositeModelSummary> assetModelCompositeModelSummaries) {
+        if (assetModelCompositeModelSummaries == null) {
+            this.assetModelCompositeModelSummaries = null;
+            return;
+        }
+
+        this.assetModelCompositeModelSummaries = new java.util.ArrayList<AssetModelCompositeModelSummary>(assetModelCompositeModelSummaries);
+    }
+
+    /**
+     * <p>
+     * The list of the immediate child custom composite model summaries for the asset model.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAssetModelCompositeModelSummaries(java.util.Collection)} or
+     * {@link #withAssetModelCompositeModelSummaries(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param assetModelCompositeModelSummaries
+     *        The list of the immediate child custom composite model summaries for the asset model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAssetModelResult withAssetModelCompositeModelSummaries(AssetModelCompositeModelSummary... assetModelCompositeModelSummaries) {
+        if (this.assetModelCompositeModelSummaries == null) {
+            setAssetModelCompositeModelSummaries(new java.util.ArrayList<AssetModelCompositeModelSummary>(assetModelCompositeModelSummaries.length));
+        }
+        for (AssetModelCompositeModelSummary ele : assetModelCompositeModelSummaries) {
+            this.assetModelCompositeModelSummaries.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of the immediate child custom composite model summaries for the asset model.
+     * </p>
+     * 
+     * @param assetModelCompositeModelSummaries
+     *        The list of the immediate child custom composite model summaries for the asset model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAssetModelResult withAssetModelCompositeModelSummaries(
+            java.util.Collection<AssetModelCompositeModelSummary> assetModelCompositeModelSummaries) {
+        setAssetModelCompositeModelSummaries(assetModelCompositeModelSummaries);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The external ID of the asset model, if any.
+     * </p>
+     * 
+     * @param assetModelExternalId
+     *        The external ID of the asset model, if any.
+     */
+
+    public void setAssetModelExternalId(String assetModelExternalId) {
+        this.assetModelExternalId = assetModelExternalId;
+    }
+
+    /**
+     * <p>
+     * The external ID of the asset model, if any.
+     * </p>
+     * 
+     * @return The external ID of the asset model, if any.
+     */
+
+    public String getAssetModelExternalId() {
+        return this.assetModelExternalId;
+    }
+
+    /**
+     * <p>
+     * The external ID of the asset model, if any.
+     * </p>
+     * 
+     * @param assetModelExternalId
+     *        The external ID of the asset model, if any.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAssetModelResult withAssetModelExternalId(String assetModelExternalId) {
+        setAssetModelExternalId(assetModelExternalId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -680,7 +999,13 @@ public class DescribeAssetModelResult extends com.amazonaws.AmazonWebServiceResu
         if (getAssetModelLastUpdateDate() != null)
             sb.append("AssetModelLastUpdateDate: ").append(getAssetModelLastUpdateDate()).append(",");
         if (getAssetModelStatus() != null)
-            sb.append("AssetModelStatus: ").append(getAssetModelStatus());
+            sb.append("AssetModelStatus: ").append(getAssetModelStatus()).append(",");
+        if (getAssetModelType() != null)
+            sb.append("AssetModelType: ").append(getAssetModelType()).append(",");
+        if (getAssetModelCompositeModelSummaries() != null)
+            sb.append("AssetModelCompositeModelSummaries: ").append(getAssetModelCompositeModelSummaries()).append(",");
+        if (getAssetModelExternalId() != null)
+            sb.append("AssetModelExternalId: ").append(getAssetModelExternalId());
         sb.append("}");
         return sb.toString();
     }
@@ -735,6 +1060,19 @@ public class DescribeAssetModelResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getAssetModelStatus() != null && other.getAssetModelStatus().equals(this.getAssetModelStatus()) == false)
             return false;
+        if (other.getAssetModelType() == null ^ this.getAssetModelType() == null)
+            return false;
+        if (other.getAssetModelType() != null && other.getAssetModelType().equals(this.getAssetModelType()) == false)
+            return false;
+        if (other.getAssetModelCompositeModelSummaries() == null ^ this.getAssetModelCompositeModelSummaries() == null)
+            return false;
+        if (other.getAssetModelCompositeModelSummaries() != null
+                && other.getAssetModelCompositeModelSummaries().equals(this.getAssetModelCompositeModelSummaries()) == false)
+            return false;
+        if (other.getAssetModelExternalId() == null ^ this.getAssetModelExternalId() == null)
+            return false;
+        if (other.getAssetModelExternalId() != null && other.getAssetModelExternalId().equals(this.getAssetModelExternalId()) == false)
+            return false;
         return true;
     }
 
@@ -753,6 +1091,9 @@ public class DescribeAssetModelResult extends com.amazonaws.AmazonWebServiceResu
         hashCode = prime * hashCode + ((getAssetModelCreationDate() == null) ? 0 : getAssetModelCreationDate().hashCode());
         hashCode = prime * hashCode + ((getAssetModelLastUpdateDate() == null) ? 0 : getAssetModelLastUpdateDate().hashCode());
         hashCode = prime * hashCode + ((getAssetModelStatus() == null) ? 0 : getAssetModelStatus().hashCode());
+        hashCode = prime * hashCode + ((getAssetModelType() == null) ? 0 : getAssetModelType().hashCode());
+        hashCode = prime * hashCode + ((getAssetModelCompositeModelSummaries() == null) ? 0 : getAssetModelCompositeModelSummaries().hashCode());
+        hashCode = prime * hashCode + ((getAssetModelExternalId() == null) ? 0 : getAssetModelExternalId().hashCode());
         return hashCode;
     }
 

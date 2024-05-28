@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -95,6 +95,12 @@ public class ClusterOperationInfo implements Serializable, Cloneable, Structured
      * </p>
      */
     private MutableClusterInfo targetClusterInfo;
+    /**
+     * <p>
+     * Description of the VPC connection for CreateVpcConnection and DeleteVpcConnection operations.
+     * </p>
+     */
+    private VpcConnectionInfo vpcConnectionInfo;
 
     /**
      * <p>
@@ -636,6 +642,52 @@ public class ClusterOperationInfo implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * Description of the VPC connection for CreateVpcConnection and DeleteVpcConnection operations.
+     * </p>
+     * 
+     * @param vpcConnectionInfo
+     *        <p>
+     *        Description of the VPC connection for CreateVpcConnection and DeleteVpcConnection operations.
+     *        </p>
+     */
+
+    public void setVpcConnectionInfo(VpcConnectionInfo vpcConnectionInfo) {
+        this.vpcConnectionInfo = vpcConnectionInfo;
+    }
+
+    /**
+     * <p>
+     * Description of the VPC connection for CreateVpcConnection and DeleteVpcConnection operations.
+     * </p>
+     * 
+     * @return <p>
+     *         Description of the VPC connection for CreateVpcConnection and DeleteVpcConnection operations.
+     *         </p>
+     */
+
+    public VpcConnectionInfo getVpcConnectionInfo() {
+        return this.vpcConnectionInfo;
+    }
+
+    /**
+     * <p>
+     * Description of the VPC connection for CreateVpcConnection and DeleteVpcConnection operations.
+     * </p>
+     * 
+     * @param vpcConnectionInfo
+     *        <p>
+     *        Description of the VPC connection for CreateVpcConnection and DeleteVpcConnection operations.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClusterOperationInfo withVpcConnectionInfo(VpcConnectionInfo vpcConnectionInfo) {
+        setVpcConnectionInfo(vpcConnectionInfo);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -668,7 +720,9 @@ public class ClusterOperationInfo implements Serializable, Cloneable, Structured
         if (getSourceClusterInfo() != null)
             sb.append("SourceClusterInfo: ").append(getSourceClusterInfo()).append(",");
         if (getTargetClusterInfo() != null)
-            sb.append("TargetClusterInfo: ").append(getTargetClusterInfo());
+            sb.append("TargetClusterInfo: ").append(getTargetClusterInfo()).append(",");
+        if (getVpcConnectionInfo() != null)
+            sb.append("VpcConnectionInfo: ").append(getVpcConnectionInfo());
         sb.append("}");
         return sb.toString();
     }
@@ -727,6 +781,10 @@ public class ClusterOperationInfo implements Serializable, Cloneable, Structured
             return false;
         if (other.getTargetClusterInfo() != null && other.getTargetClusterInfo().equals(this.getTargetClusterInfo()) == false)
             return false;
+        if (other.getVpcConnectionInfo() == null ^ this.getVpcConnectionInfo() == null)
+            return false;
+        if (other.getVpcConnectionInfo() != null && other.getVpcConnectionInfo().equals(this.getVpcConnectionInfo()) == false)
+            return false;
         return true;
     }
 
@@ -746,6 +804,7 @@ public class ClusterOperationInfo implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getOperationType() == null) ? 0 : getOperationType().hashCode());
         hashCode = prime * hashCode + ((getSourceClusterInfo() == null) ? 0 : getSourceClusterInfo().hashCode());
         hashCode = prime * hashCode + ((getTargetClusterInfo() == null) ? 0 : getTargetClusterInfo().hashCode());
+        hashCode = prime * hashCode + ((getVpcConnectionInfo() == null) ? 0 : getVpcConnectionInfo().hashCode());
         return hashCode;
     }
 

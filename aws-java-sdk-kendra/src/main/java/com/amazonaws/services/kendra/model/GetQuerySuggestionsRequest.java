@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,27 @@ public class GetQuerySuggestionsRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private Integer maxSuggestionsCount;
+    /**
+     * <p>
+     * The suggestions type to base query suggestions on. The suggestion types are query history or document
+     * fields/attributes. You can set one type or the other.
+     * </p>
+     * <p>
+     * If you set query history as your suggestions type, Amazon Kendra suggests queries relevant to your users based on
+     * popular queries in the query history.
+     * </p>
+     * <p>
+     * If you set document fields/attributes as your suggestions type, Amazon Kendra suggests queries relevant to your
+     * users based on the contents of document fields.
+     * </p>
+     */
+    private java.util.List<String> suggestionTypes;
+    /**
+     * <p>
+     * Configuration information for the document fields/attributes that you want to base query suggestions on.
+     * </p>
+     */
+    private AttributeSuggestionsGetConfig attributeSuggestionsConfig;
 
     /**
      * <p>
@@ -214,6 +235,229 @@ public class GetQuerySuggestionsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The suggestions type to base query suggestions on. The suggestion types are query history or document
+     * fields/attributes. You can set one type or the other.
+     * </p>
+     * <p>
+     * If you set query history as your suggestions type, Amazon Kendra suggests queries relevant to your users based on
+     * popular queries in the query history.
+     * </p>
+     * <p>
+     * If you set document fields/attributes as your suggestions type, Amazon Kendra suggests queries relevant to your
+     * users based on the contents of document fields.
+     * </p>
+     * 
+     * @return The suggestions type to base query suggestions on. The suggestion types are query history or document
+     *         fields/attributes. You can set one type or the other.</p>
+     *         <p>
+     *         If you set query history as your suggestions type, Amazon Kendra suggests queries relevant to your users
+     *         based on popular queries in the query history.
+     *         </p>
+     *         <p>
+     *         If you set document fields/attributes as your suggestions type, Amazon Kendra suggests queries relevant
+     *         to your users based on the contents of document fields.
+     * @see SuggestionType
+     */
+
+    public java.util.List<String> getSuggestionTypes() {
+        return suggestionTypes;
+    }
+
+    /**
+     * <p>
+     * The suggestions type to base query suggestions on. The suggestion types are query history or document
+     * fields/attributes. You can set one type or the other.
+     * </p>
+     * <p>
+     * If you set query history as your suggestions type, Amazon Kendra suggests queries relevant to your users based on
+     * popular queries in the query history.
+     * </p>
+     * <p>
+     * If you set document fields/attributes as your suggestions type, Amazon Kendra suggests queries relevant to your
+     * users based on the contents of document fields.
+     * </p>
+     * 
+     * @param suggestionTypes
+     *        The suggestions type to base query suggestions on. The suggestion types are query history or document
+     *        fields/attributes. You can set one type or the other.</p>
+     *        <p>
+     *        If you set query history as your suggestions type, Amazon Kendra suggests queries relevant to your users
+     *        based on popular queries in the query history.
+     *        </p>
+     *        <p>
+     *        If you set document fields/attributes as your suggestions type, Amazon Kendra suggests queries relevant to
+     *        your users based on the contents of document fields.
+     * @see SuggestionType
+     */
+
+    public void setSuggestionTypes(java.util.Collection<String> suggestionTypes) {
+        if (suggestionTypes == null) {
+            this.suggestionTypes = null;
+            return;
+        }
+
+        this.suggestionTypes = new java.util.ArrayList<String>(suggestionTypes);
+    }
+
+    /**
+     * <p>
+     * The suggestions type to base query suggestions on. The suggestion types are query history or document
+     * fields/attributes. You can set one type or the other.
+     * </p>
+     * <p>
+     * If you set query history as your suggestions type, Amazon Kendra suggests queries relevant to your users based on
+     * popular queries in the query history.
+     * </p>
+     * <p>
+     * If you set document fields/attributes as your suggestions type, Amazon Kendra suggests queries relevant to your
+     * users based on the contents of document fields.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSuggestionTypes(java.util.Collection)} or {@link #withSuggestionTypes(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param suggestionTypes
+     *        The suggestions type to base query suggestions on. The suggestion types are query history or document
+     *        fields/attributes. You can set one type or the other.</p>
+     *        <p>
+     *        If you set query history as your suggestions type, Amazon Kendra suggests queries relevant to your users
+     *        based on popular queries in the query history.
+     *        </p>
+     *        <p>
+     *        If you set document fields/attributes as your suggestions type, Amazon Kendra suggests queries relevant to
+     *        your users based on the contents of document fields.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SuggestionType
+     */
+
+    public GetQuerySuggestionsRequest withSuggestionTypes(String... suggestionTypes) {
+        if (this.suggestionTypes == null) {
+            setSuggestionTypes(new java.util.ArrayList<String>(suggestionTypes.length));
+        }
+        for (String ele : suggestionTypes) {
+            this.suggestionTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The suggestions type to base query suggestions on. The suggestion types are query history or document
+     * fields/attributes. You can set one type or the other.
+     * </p>
+     * <p>
+     * If you set query history as your suggestions type, Amazon Kendra suggests queries relevant to your users based on
+     * popular queries in the query history.
+     * </p>
+     * <p>
+     * If you set document fields/attributes as your suggestions type, Amazon Kendra suggests queries relevant to your
+     * users based on the contents of document fields.
+     * </p>
+     * 
+     * @param suggestionTypes
+     *        The suggestions type to base query suggestions on. The suggestion types are query history or document
+     *        fields/attributes. You can set one type or the other.</p>
+     *        <p>
+     *        If you set query history as your suggestions type, Amazon Kendra suggests queries relevant to your users
+     *        based on popular queries in the query history.
+     *        </p>
+     *        <p>
+     *        If you set document fields/attributes as your suggestions type, Amazon Kendra suggests queries relevant to
+     *        your users based on the contents of document fields.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SuggestionType
+     */
+
+    public GetQuerySuggestionsRequest withSuggestionTypes(java.util.Collection<String> suggestionTypes) {
+        setSuggestionTypes(suggestionTypes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The suggestions type to base query suggestions on. The suggestion types are query history or document
+     * fields/attributes. You can set one type or the other.
+     * </p>
+     * <p>
+     * If you set query history as your suggestions type, Amazon Kendra suggests queries relevant to your users based on
+     * popular queries in the query history.
+     * </p>
+     * <p>
+     * If you set document fields/attributes as your suggestions type, Amazon Kendra suggests queries relevant to your
+     * users based on the contents of document fields.
+     * </p>
+     * 
+     * @param suggestionTypes
+     *        The suggestions type to base query suggestions on. The suggestion types are query history or document
+     *        fields/attributes. You can set one type or the other.</p>
+     *        <p>
+     *        If you set query history as your suggestions type, Amazon Kendra suggests queries relevant to your users
+     *        based on popular queries in the query history.
+     *        </p>
+     *        <p>
+     *        If you set document fields/attributes as your suggestions type, Amazon Kendra suggests queries relevant to
+     *        your users based on the contents of document fields.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SuggestionType
+     */
+
+    public GetQuerySuggestionsRequest withSuggestionTypes(SuggestionType... suggestionTypes) {
+        java.util.ArrayList<String> suggestionTypesCopy = new java.util.ArrayList<String>(suggestionTypes.length);
+        for (SuggestionType value : suggestionTypes) {
+            suggestionTypesCopy.add(value.toString());
+        }
+        if (getSuggestionTypes() == null) {
+            setSuggestionTypes(suggestionTypesCopy);
+        } else {
+            getSuggestionTypes().addAll(suggestionTypesCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configuration information for the document fields/attributes that you want to base query suggestions on.
+     * </p>
+     * 
+     * @param attributeSuggestionsConfig
+     *        Configuration information for the document fields/attributes that you want to base query suggestions on.
+     */
+
+    public void setAttributeSuggestionsConfig(AttributeSuggestionsGetConfig attributeSuggestionsConfig) {
+        this.attributeSuggestionsConfig = attributeSuggestionsConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration information for the document fields/attributes that you want to base query suggestions on.
+     * </p>
+     * 
+     * @return Configuration information for the document fields/attributes that you want to base query suggestions on.
+     */
+
+    public AttributeSuggestionsGetConfig getAttributeSuggestionsConfig() {
+        return this.attributeSuggestionsConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration information for the document fields/attributes that you want to base query suggestions on.
+     * </p>
+     * 
+     * @param attributeSuggestionsConfig
+     *        Configuration information for the document fields/attributes that you want to base query suggestions on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetQuerySuggestionsRequest withAttributeSuggestionsConfig(AttributeSuggestionsGetConfig attributeSuggestionsConfig) {
+        setAttributeSuggestionsConfig(attributeSuggestionsConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -230,7 +474,11 @@ public class GetQuerySuggestionsRequest extends com.amazonaws.AmazonWebServiceRe
         if (getQueryText() != null)
             sb.append("QueryText: ").append(getQueryText()).append(",");
         if (getMaxSuggestionsCount() != null)
-            sb.append("MaxSuggestionsCount: ").append(getMaxSuggestionsCount());
+            sb.append("MaxSuggestionsCount: ").append(getMaxSuggestionsCount()).append(",");
+        if (getSuggestionTypes() != null)
+            sb.append("SuggestionTypes: ").append(getSuggestionTypes()).append(",");
+        if (getAttributeSuggestionsConfig() != null)
+            sb.append("AttributeSuggestionsConfig: ").append(getAttributeSuggestionsConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -257,6 +505,14 @@ public class GetQuerySuggestionsRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getMaxSuggestionsCount() != null && other.getMaxSuggestionsCount().equals(this.getMaxSuggestionsCount()) == false)
             return false;
+        if (other.getSuggestionTypes() == null ^ this.getSuggestionTypes() == null)
+            return false;
+        if (other.getSuggestionTypes() != null && other.getSuggestionTypes().equals(this.getSuggestionTypes()) == false)
+            return false;
+        if (other.getAttributeSuggestionsConfig() == null ^ this.getAttributeSuggestionsConfig() == null)
+            return false;
+        if (other.getAttributeSuggestionsConfig() != null && other.getAttributeSuggestionsConfig().equals(this.getAttributeSuggestionsConfig()) == false)
+            return false;
         return true;
     }
 
@@ -268,6 +524,8 @@ public class GetQuerySuggestionsRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getIndexId() == null) ? 0 : getIndexId().hashCode());
         hashCode = prime * hashCode + ((getQueryText() == null) ? 0 : getQueryText().hashCode());
         hashCode = prime * hashCode + ((getMaxSuggestionsCount() == null) ? 0 : getMaxSuggestionsCount().hashCode());
+        hashCode = prime * hashCode + ((getSuggestionTypes() == null) ? 0 : getSuggestionTypes().hashCode());
+        hashCode = prime * hashCode + ((getAttributeSuggestionsConfig() == null) ? 0 : getAttributeSuggestionsConfig().hashCode());
         return hashCode;
     }
 

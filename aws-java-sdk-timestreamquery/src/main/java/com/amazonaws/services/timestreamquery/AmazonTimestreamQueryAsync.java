@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -137,6 +137,45 @@ public interface AmazonTimestreamQueryAsync extends AmazonTimestreamQuery {
      */
     java.util.concurrent.Future<DeleteScheduledQueryResult> deleteScheduledQueryAsync(DeleteScheduledQueryRequest deleteScheduledQueryRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteScheduledQueryRequest, DeleteScheduledQueryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the settings for your account that include the query pricing model and the configured maximum TCUs the
+     * service can use for your query workload.
+     * </p>
+     * <p>
+     * You're charged only for the duration of compute units used for your workloads.
+     * </p>
+     * 
+     * @param describeAccountSettingsRequest
+     * @return A Java Future containing the result of the DescribeAccountSettings operation returned by the service.
+     * @sample AmazonTimestreamQueryAsync.DescribeAccountSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/DescribeAccountSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAccountSettingsResult> describeAccountSettingsAsync(DescribeAccountSettingsRequest describeAccountSettingsRequest);
+
+    /**
+     * <p>
+     * Describes the settings for your account that include the query pricing model and the configured maximum TCUs the
+     * service can use for your query workload.
+     * </p>
+     * <p>
+     * You're charged only for the duration of compute units used for your workloads.
+     * </p>
+     * 
+     * @param describeAccountSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAccountSettings operation returned by the service.
+     * @sample AmazonTimestreamQueryAsyncHandler.DescribeAccountSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/DescribeAccountSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAccountSettingsResult> describeAccountSettingsAsync(DescribeAccountSettingsRequest describeAccountSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAccountSettingsRequest, DescribeAccountSettingsResult> asyncHandler);
 
     /**
      * <p>
@@ -354,8 +393,7 @@ public interface AmazonTimestreamQueryAsync extends AmazonTimestreamQuery {
     /**
      * <p>
      * A synchronous operation that allows you to submit a query with parameters to be stored by Timestream for later
-     * running. Timestream only supports using this operation with the <code>PrepareQueryRequest$ValidateOnly</code> set
-     * to <code>true</code>.
+     * running. Timestream only supports using this operation with <code>ValidateOnly</code> set to <code>true</code>.
      * </p>
      * 
      * @param prepareQueryRequest
@@ -369,8 +407,7 @@ public interface AmazonTimestreamQueryAsync extends AmazonTimestreamQuery {
     /**
      * <p>
      * A synchronous operation that allows you to submit a query with parameters to be stored by Timestream for later
-     * running. Timestream only supports using this operation with the <code>PrepareQueryRequest$ValidateOnly</code> set
-     * to <code>true</code>.
+     * running. Timestream only supports using this operation with <code>ValidateOnly</code> set to <code>true</code>.
      * </p>
      * 
      * @param prepareQueryRequest
@@ -551,6 +588,53 @@ public interface AmazonTimestreamQueryAsync extends AmazonTimestreamQuery {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Transitions your account to use TCUs for query pricing and modifies the maximum query compute units that you've
+     * configured. If you reduce the value of <code>MaxQueryTCU</code> to a desired configuration, the new value can
+     * take up to 24 hours to be effective.
+     * </p>
+     * <note>
+     * <p>
+     * After you've transitioned your account to use TCUs for query pricing, you can't transition to using bytes scanned
+     * for query pricing.
+     * </p>
+     * </note>
+     * 
+     * @param updateAccountSettingsRequest
+     * @return A Java Future containing the result of the UpdateAccountSettings operation returned by the service.
+     * @sample AmazonTimestreamQueryAsync.UpdateAccountSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/UpdateAccountSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAccountSettingsResult> updateAccountSettingsAsync(UpdateAccountSettingsRequest updateAccountSettingsRequest);
+
+    /**
+     * <p>
+     * Transitions your account to use TCUs for query pricing and modifies the maximum query compute units that you've
+     * configured. If you reduce the value of <code>MaxQueryTCU</code> to a desired configuration, the new value can
+     * take up to 24 hours to be effective.
+     * </p>
+     * <note>
+     * <p>
+     * After you've transitioned your account to use TCUs for query pricing, you can't transition to using bytes scanned
+     * for query pricing.
+     * </p>
+     * </note>
+     * 
+     * @param updateAccountSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAccountSettings operation returned by the service.
+     * @sample AmazonTimestreamQueryAsyncHandler.UpdateAccountSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/UpdateAccountSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAccountSettingsResult> updateAccountSettingsAsync(UpdateAccountSettingsRequest updateAccountSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAccountSettingsRequest, UpdateAccountSettingsResult> asyncHandler);
 
     /**
      * <p>

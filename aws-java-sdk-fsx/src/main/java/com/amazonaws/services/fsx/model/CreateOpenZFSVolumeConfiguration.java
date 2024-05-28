@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -136,7 +136,7 @@ public class CreateOpenZFSVolumeConfiguration implements Serializable, Cloneable
     private java.util.List<OpenZFSNfsExport> nfsExports;
     /**
      * <p>
-     * An object specifying how much storage users or groups can use on the volume.
+     * Configures how much storage users and groups can use on the volume.
      * </p>
      */
     private java.util.List<OpenZFSUserOrGroupQuota> userAndGroupQuotas;
@@ -947,10 +947,10 @@ public class CreateOpenZFSVolumeConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * An object specifying how much storage users or groups can use on the volume.
+     * Configures how much storage users and groups can use on the volume.
      * </p>
      * 
-     * @return An object specifying how much storage users or groups can use on the volume.
+     * @return Configures how much storage users and groups can use on the volume.
      */
 
     public java.util.List<OpenZFSUserOrGroupQuota> getUserAndGroupQuotas() {
@@ -959,11 +959,11 @@ public class CreateOpenZFSVolumeConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * An object specifying how much storage users or groups can use on the volume.
+     * Configures how much storage users and groups can use on the volume.
      * </p>
      * 
      * @param userAndGroupQuotas
-     *        An object specifying how much storage users or groups can use on the volume.
+     *        Configures how much storage users and groups can use on the volume.
      */
 
     public void setUserAndGroupQuotas(java.util.Collection<OpenZFSUserOrGroupQuota> userAndGroupQuotas) {
@@ -977,7 +977,7 @@ public class CreateOpenZFSVolumeConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * An object specifying how much storage users or groups can use on the volume.
+     * Configures how much storage users and groups can use on the volume.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -986,7 +986,7 @@ public class CreateOpenZFSVolumeConfiguration implements Serializable, Cloneable
      * </p>
      * 
      * @param userAndGroupQuotas
-     *        An object specifying how much storage users or groups can use on the volume.
+     *        Configures how much storage users and groups can use on the volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1002,11 +1002,11 @@ public class CreateOpenZFSVolumeConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * An object specifying how much storage users or groups can use on the volume.
+     * Configures how much storage users and groups can use on the volume.
      * </p>
      * 
      * @param userAndGroupQuotas
-     *        An object specifying how much storage users or groups can use on the volume.
+     *        Configures how much storage users and groups can use on the volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

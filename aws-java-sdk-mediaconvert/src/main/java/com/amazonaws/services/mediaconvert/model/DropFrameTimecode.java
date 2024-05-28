@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * Applies only to 29.97 fps outputs. When this feature is enabled, the service will use drop-frame timecode on outputs.
  * If it is not possible to use drop-frame timecode, the system will fall back to non-drop-frame. This setting is
- * enabled by default when Timecode insertion (TimecodeInsertion) is enabled.
+ * enabled by default when Timecode insertion is enabled.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DropFrameTimecode {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.codestarconnections.AWSCodeStarconnectionsClientBu
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.codestarconnections.model.*;
+
 import com.amazonaws.services.codestarconnections.model.transform.*;
 
 /**
@@ -52,15 +53,16 @@ import com.amazonaws.services.codestarconnections.model.transform.*;
  * <p>
  * <fullname>AWS CodeStar Connections</fullname>
  * <p>
- * This AWS CodeStar Connections API Reference provides descriptions and usage examples of the operations and data types
- * for the AWS CodeStar Connections API. You can use the connections API to work with connections and installations.
+ * This Amazon Web Services CodeStar Connections API Reference provides descriptions and usage examples of the
+ * operations and data types for the Amazon Web Services CodeStar Connections API. You can use the connections API to
+ * work with connections and installations.
  * </p>
  * <p>
- * <i>Connections</i> are configurations that you use to connect AWS resources to external code repositories. Each
- * connection is a resource that can be given to services such as CodePipeline to connect to a third-party repository
- * such as Bitbucket. For example, you can add the connection in CodePipeline so that it triggers your pipeline when a
- * code change is made to your third-party code repository. Each connection is named and associated with a unique ARN
- * that is used to reference the connection.
+ * <i>Connections</i> are configurations that you use to connect Amazon Web Services resources to external code
+ * repositories. Each connection is a resource that can be given to services such as CodePipeline to connect to a
+ * third-party repository such as Bitbucket. For example, you can add the connection in CodePipeline so that it triggers
+ * your pipeline when a code change is made to your third-party code repository. Each connection is named and associated
+ * with a unique ARN that is used to reference the connection.
  * </p>
  * <p>
  * When you create a connection, the console initiates a third-party connection handshake. <i>Installations</i> are the
@@ -123,28 +125,28 @@ import com.amazonaws.services.codestarconnections.model.transform.*;
  * </li>
  * </ul>
  * <p>
- * You can work with tags in AWS CodeStar Connections by calling the following:
+ * You can work with tags in Amazon Web Services CodeStar Connections by calling the following:
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a>ListTagsForResource</a>, which gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS
- * CodeStar Connections.
+ * <a>ListTagsForResource</a>, which gets information about Amazon Web Services tags for a specified Amazon Resource
+ * Name (ARN) in Amazon Web Services CodeStar Connections.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>TagResource</a>, which adds or updates tags for a resource in AWS CodeStar Connections.
+ * <a>TagResource</a>, which adds or updates tags for a resource in Amazon Web Services CodeStar Connections.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>UntagResource</a>, which removes tags for a resource in AWS CodeStar Connections.
+ * <a>UntagResource</a>, which removes tags for a resource in Amazon Web Services CodeStar Connections.
  * </p>
  * </li>
  * </ul>
  * <p>
- * For information about how to use AWS CodeStar Connections, see the <a
+ * For information about how to use Amazon Web Services CodeStar Connections, see the <a
  * href="https://docs.aws.amazon.com/dtconsole/latest/userguide/welcome-connections.html">Developer Tools User
  * Guide</a>.
  * </p>
@@ -172,6 +174,15 @@ public class AWSCodeStarconnectionsClient extends AmazonWebServiceClient impleme
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codestarconnections.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codestarconnections.model.transform.ConcurrentModificationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("SyncBlockerDoesNotExistException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codestarconnections.model.transform.SyncBlockerDoesNotExistExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codestarconnections.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -181,8 +192,35 @@ public class AWSCodeStarconnectionsClient extends AmazonWebServiceClient impleme
                             new JsonErrorShapeMetadata().withErrorCode("UnsupportedOperationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codestarconnections.model.transform.UnsupportedOperationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codestarconnections.model.transform.InvalidInputExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedProviderTypeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codestarconnections.model.transform.UnsupportedProviderTypeExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceUnavailableException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codestarconnections.model.transform.ResourceUnavailableExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codestarconnections.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("SyncConfigurationStillExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codestarconnections.model.transform.SyncConfigurationStillExistsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UpdateOutOfSyncException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codestarconnections.model.transform.UpdateOutOfSyncExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("RetryLatestCommitFailedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codestarconnections.model.transform.RetryLatestCommitFailedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConditionalCheckFailedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codestarconnections.model.transform.ConditionalCheckFailedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codestarconnections.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codestarconnections.model.transform.ResourceAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codestarconnections.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
@@ -236,9 +274,9 @@ public class AWSCodeStarconnectionsClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Creates a connection that can then be given to other AWS services like CodePipeline so that it can access
-     * third-party code repositories. The connection is in pending status until the third-party connection handshake is
-     * completed from the console.
+     * Creates a connection that can then be given to other Amazon Web Services services like CodePipeline so that it
+     * can access third-party code repositories. The connection is in pending status until the third-party connection
+     * handshake is completed from the console.
      * </p>
      * 
      * @param createConnectionRequest
@@ -352,6 +390,150 @@ public class AWSCodeStarconnectionsClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateHostResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateHostResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a link to a specified external Git repository. A repository link allows Git sync to monitor and sync
+     * changes to files in a specified Git repository.
+     * </p>
+     * 
+     * @param createRepositoryLinkRequest
+     * @return Result of the CreateRepositoryLink operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
+     *         attempting to edit the same application at the same time.
+     * @throws InternalServerException
+     *         Received an internal server exception. Try again later.
+     * @throws InvalidInputException
+     *         The input is not valid. Verify that the action is typed correctly.
+     * @throws LimitExceededException
+     *         Exceeded the maximum limit for connections.
+     * @throws ResourceAlreadyExistsException
+     *         Unable to create resource. Resource already exists.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSCodeStarconnections.CreateRepositoryLink
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateRepositoryLink"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateRepositoryLinkResult createRepositoryLink(CreateRepositoryLinkRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateRepositoryLink(request);
+    }
+
+    @SdkInternalApi
+    final CreateRepositoryLinkResult executeCreateRepositoryLink(CreateRepositoryLinkRequest createRepositoryLinkRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createRepositoryLinkRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateRepositoryLinkRequest> request = null;
+        Response<CreateRepositoryLinkResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateRepositoryLinkRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRepositoryLinkRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar connections");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRepositoryLink");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateRepositoryLinkResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateRepositoryLinkResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a sync configuration which allows Amazon Web Services to sync content from a Git repository to update a
+     * specified Amazon Web Services resource. Parameters for the sync configuration are determined by the sync type.
+     * </p>
+     * 
+     * @param createSyncConfigurationRequest
+     * @return Result of the CreateSyncConfiguration operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
+     *         attempting to edit the same application at the same time.
+     * @throws InternalServerException
+     *         Received an internal server exception. Try again later.
+     * @throws InvalidInputException
+     *         The input is not valid. Verify that the action is typed correctly.
+     * @throws LimitExceededException
+     *         Exceeded the maximum limit for connections.
+     * @throws ResourceAlreadyExistsException
+     *         Unable to create resource. Resource already exists.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSCodeStarconnections.CreateSyncConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateSyncConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateSyncConfigurationResult createSyncConfiguration(CreateSyncConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSyncConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final CreateSyncConfigurationResult executeCreateSyncConfiguration(CreateSyncConfigurationRequest createSyncConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createSyncConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateSyncConfigurationRequest> request = null;
+        Response<CreateSyncConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateSyncConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createSyncConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar connections");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSyncConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateSyncConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateSyncConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -485,6 +667,148 @@ public class AWSCodeStarconnectionsClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Deletes the association between your connection and a specified external Git repository.
+     * </p>
+     * 
+     * @param deleteRepositoryLinkRequest
+     * @return Result of the DeleteRepositoryLink operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
+     *         attempting to edit the same application at the same time.
+     * @throws InternalServerException
+     *         Received an internal server exception. Try again later.
+     * @throws InvalidInputException
+     *         The input is not valid. Verify that the action is typed correctly.
+     * @throws SyncConfigurationStillExistsException
+     *         Unable to continue. The sync blocker still exists.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws UnsupportedProviderTypeException
+     *         The specified provider type is not supported for connections.
+     * @sample AWSCodeStarconnections.DeleteRepositoryLink
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteRepositoryLink"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteRepositoryLinkResult deleteRepositoryLink(DeleteRepositoryLinkRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRepositoryLink(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRepositoryLinkResult executeDeleteRepositoryLink(DeleteRepositoryLinkRequest deleteRepositoryLinkRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteRepositoryLinkRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteRepositoryLinkRequest> request = null;
+        Response<DeleteRepositoryLinkResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteRepositoryLinkRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRepositoryLinkRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar connections");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRepositoryLink");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteRepositoryLinkResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteRepositoryLinkResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the sync configuration for a specified repository and connection.
+     * </p>
+     * 
+     * @param deleteSyncConfigurationRequest
+     * @return Result of the DeleteSyncConfiguration operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
+     *         attempting to edit the same application at the same time.
+     * @throws InternalServerException
+     *         Received an internal server exception. Try again later.
+     * @throws InvalidInputException
+     *         The input is not valid. Verify that the action is typed correctly.
+     * @throws LimitExceededException
+     *         Exceeded the maximum limit for connections.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSCodeStarconnections.DeleteSyncConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteSyncConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteSyncConfigurationResult deleteSyncConfiguration(DeleteSyncConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSyncConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSyncConfigurationResult executeDeleteSyncConfiguration(DeleteSyncConfigurationRequest deleteSyncConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteSyncConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteSyncConfigurationRequest> request = null;
+        Response<DeleteSyncConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteSyncConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteSyncConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar connections");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSyncConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteSyncConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteSyncConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns the connection ARN and details such as status, owner, and provider type.
      * </p>
      * 
@@ -604,11 +928,349 @@ public class AWSCodeStarconnectionsClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Returns details about a repository link. A repository link allows Git sync to monitor and sync changes from files
+     * in a specified Git repository.
+     * </p>
+     * 
+     * @param getRepositoryLinkRequest
+     * @return Result of the GetRepositoryLink operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
+     *         attempting to edit the same application at the same time.
+     * @throws InternalServerException
+     *         Received an internal server exception. Try again later.
+     * @throws InvalidInputException
+     *         The input is not valid. Verify that the action is typed correctly.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSCodeStarconnections.GetRepositoryLink
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetRepositoryLink"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetRepositoryLinkResult getRepositoryLink(GetRepositoryLinkRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetRepositoryLink(request);
+    }
+
+    @SdkInternalApi
+    final GetRepositoryLinkResult executeGetRepositoryLink(GetRepositoryLinkRequest getRepositoryLinkRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getRepositoryLinkRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetRepositoryLinkRequest> request = null;
+        Response<GetRepositoryLinkResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetRepositoryLinkRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRepositoryLinkRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar connections");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRepositoryLink");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetRepositoryLinkResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetRepositoryLinkResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns details about the sync status for a repository. A repository sync uses Git sync to push and pull changes
+     * from your remote repository.
+     * </p>
+     * 
+     * @param getRepositorySyncStatusRequest
+     * @return Result of the GetRepositorySyncStatus operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         Received an internal server exception. Try again later.
+     * @throws InvalidInputException
+     *         The input is not valid. Verify that the action is typed correctly.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSCodeStarconnections.GetRepositorySyncStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetRepositorySyncStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetRepositorySyncStatusResult getRepositorySyncStatus(GetRepositorySyncStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetRepositorySyncStatus(request);
+    }
+
+    @SdkInternalApi
+    final GetRepositorySyncStatusResult executeGetRepositorySyncStatus(GetRepositorySyncStatusRequest getRepositorySyncStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getRepositorySyncStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetRepositorySyncStatusRequest> request = null;
+        Response<GetRepositorySyncStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetRepositorySyncStatusRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getRepositorySyncStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar connections");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRepositorySyncStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetRepositorySyncStatusResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetRepositorySyncStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the status of the sync with the Git repository for a specific Amazon Web Services resource.
+     * </p>
+     * 
+     * @param getResourceSyncStatusRequest
+     * @return Result of the GetResourceSyncStatus operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         Received an internal server exception. Try again later.
+     * @throws InvalidInputException
+     *         The input is not valid. Verify that the action is typed correctly.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSCodeStarconnections.GetResourceSyncStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetResourceSyncStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetResourceSyncStatusResult getResourceSyncStatus(GetResourceSyncStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetResourceSyncStatus(request);
+    }
+
+    @SdkInternalApi
+    final GetResourceSyncStatusResult executeGetResourceSyncStatus(GetResourceSyncStatusRequest getResourceSyncStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getResourceSyncStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetResourceSyncStatusRequest> request = null;
+        Response<GetResourceSyncStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetResourceSyncStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getResourceSyncStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar connections");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourceSyncStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetResourceSyncStatusResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new GetResourceSyncStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of the most recent sync blockers.
+     * </p>
+     * 
+     * @param getSyncBlockerSummaryRequest
+     * @return Result of the GetSyncBlockerSummary operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         Received an internal server exception. Try again later.
+     * @throws InvalidInputException
+     *         The input is not valid. Verify that the action is typed correctly.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSCodeStarconnections.GetSyncBlockerSummary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetSyncBlockerSummary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetSyncBlockerSummaryResult getSyncBlockerSummary(GetSyncBlockerSummaryRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSyncBlockerSummary(request);
+    }
+
+    @SdkInternalApi
+    final GetSyncBlockerSummaryResult executeGetSyncBlockerSummary(GetSyncBlockerSummaryRequest getSyncBlockerSummaryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSyncBlockerSummaryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSyncBlockerSummaryRequest> request = null;
+        Response<GetSyncBlockerSummaryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSyncBlockerSummaryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSyncBlockerSummaryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar connections");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSyncBlockerSummary");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSyncBlockerSummaryResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new GetSyncBlockerSummaryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns details about a sync configuration, including the sync type and resource name. A sync configuration
+     * allows the configuration to sync (push and pull) changes from the remote repository for a specified branch in a
+     * Git repository.
+     * </p>
+     * 
+     * @param getSyncConfigurationRequest
+     * @return Result of the GetSyncConfiguration operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         Received an internal server exception. Try again later.
+     * @throws InvalidInputException
+     *         The input is not valid. Verify that the action is typed correctly.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSCodeStarconnections.GetSyncConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetSyncConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetSyncConfigurationResult getSyncConfiguration(GetSyncConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSyncConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetSyncConfigurationResult executeGetSyncConfiguration(GetSyncConfigurationRequest getSyncConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSyncConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSyncConfigurationRequest> request = null;
+        Response<GetSyncConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSyncConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSyncConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar connections");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSyncConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSyncConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSyncConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the connections associated with your account.
      * </p>
      * 
      * @param listConnectionsRequest
      * @return Result of the ListConnections operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
      * @sample AWSCodeStarconnections.ListConnections
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListConnections"
      *      target="_top">AWS API Documentation</a>
@@ -702,6 +1364,208 @@ public class AWSCodeStarconnectionsClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<ListHostsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListHostsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the repository links created for connections in your account.
+     * </p>
+     * 
+     * @param listRepositoryLinksRequest
+     * @return Result of the ListRepositoryLinks operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
+     *         attempting to edit the same application at the same time.
+     * @throws InternalServerException
+     *         Received an internal server exception. Try again later.
+     * @throws InvalidInputException
+     *         The input is not valid. Verify that the action is typed correctly.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSCodeStarconnections.ListRepositoryLinks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListRepositoryLinks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListRepositoryLinksResult listRepositoryLinks(ListRepositoryLinksRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRepositoryLinks(request);
+    }
+
+    @SdkInternalApi
+    final ListRepositoryLinksResult executeListRepositoryLinks(ListRepositoryLinksRequest listRepositoryLinksRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listRepositoryLinksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListRepositoryLinksRequest> request = null;
+        Response<ListRepositoryLinksResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListRepositoryLinksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRepositoryLinksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar connections");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRepositoryLinks");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListRepositoryLinksResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListRepositoryLinksResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the repository sync definitions for repository links in your account.
+     * </p>
+     * 
+     * @param listRepositorySyncDefinitionsRequest
+     * @return Result of the ListRepositorySyncDefinitions operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         Received an internal server exception. Try again later.
+     * @throws InvalidInputException
+     *         The input is not valid. Verify that the action is typed correctly.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSCodeStarconnections.ListRepositorySyncDefinitions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListRepositorySyncDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListRepositorySyncDefinitionsResult listRepositorySyncDefinitions(ListRepositorySyncDefinitionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRepositorySyncDefinitions(request);
+    }
+
+    @SdkInternalApi
+    final ListRepositorySyncDefinitionsResult executeListRepositorySyncDefinitions(ListRepositorySyncDefinitionsRequest listRepositorySyncDefinitionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listRepositorySyncDefinitionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListRepositorySyncDefinitionsRequest> request = null;
+        Response<ListRepositorySyncDefinitionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListRepositorySyncDefinitionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listRepositorySyncDefinitionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar connections");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRepositorySyncDefinitions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListRepositorySyncDefinitionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListRepositorySyncDefinitionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of sync configurations for a specified repository.
+     * </p>
+     * 
+     * @param listSyncConfigurationsRequest
+     * @return Result of the ListSyncConfigurations operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         Received an internal server exception. Try again later.
+     * @throws InvalidInputException
+     *         The input is not valid. Verify that the action is typed correctly.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSCodeStarconnections.ListSyncConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListSyncConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListSyncConfigurationsResult listSyncConfigurations(ListSyncConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSyncConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final ListSyncConfigurationsResult executeListSyncConfigurations(ListSyncConfigurationsRequest listSyncConfigurationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSyncConfigurationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSyncConfigurationsRequest> request = null;
+        Response<ListSyncConfigurationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSyncConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSyncConfigurationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar connections");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSyncConfigurations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSyncConfigurationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListSyncConfigurationsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -830,7 +1694,7 @@ public class AWSCodeStarconnectionsClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Removes tags from an AWS resource.
+     * Removes tags from an Amazon Web Services resource.
      * </p>
      * 
      * @param untagResourceRequest
@@ -938,6 +1802,217 @@ public class AWSCodeStarconnectionsClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateHostResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateHostResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the association between your connection and a specified external Git repository. A repository link allows
+     * Git sync to monitor and sync changes to files in a specified Git repository.
+     * </p>
+     * 
+     * @param updateRepositoryLinkRequest
+     * @return Result of the UpdateRepositoryLink operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConditionalCheckFailedException
+     *         The conditional check failed. Try again later.
+     * @throws InternalServerException
+     *         Received an internal server exception. Try again later.
+     * @throws InvalidInputException
+     *         The input is not valid. Verify that the action is typed correctly.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws UpdateOutOfSyncException
+     *         The update is out of sync. Try syncing again.
+     * @sample AWSCodeStarconnections.UpdateRepositoryLink
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateRepositoryLink"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateRepositoryLinkResult updateRepositoryLink(UpdateRepositoryLinkRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateRepositoryLink(request);
+    }
+
+    @SdkInternalApi
+    final UpdateRepositoryLinkResult executeUpdateRepositoryLink(UpdateRepositoryLinkRequest updateRepositoryLinkRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateRepositoryLinkRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateRepositoryLinkRequest> request = null;
+        Response<UpdateRepositoryLinkResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateRepositoryLinkRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRepositoryLinkRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar connections");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRepositoryLink");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateRepositoryLinkResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateRepositoryLinkResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Allows you to update the status of a sync blocker, resolving the blocker and allowing syncing to continue.
+     * </p>
+     * 
+     * @param updateSyncBlockerRequest
+     * @return Result of the UpdateSyncBlocker operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InternalServerException
+     *         Received an internal server exception. Try again later.
+     * @throws InvalidInputException
+     *         The input is not valid. Verify that the action is typed correctly.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws RetryLatestCommitFailedException
+     *         Retrying the latest commit failed. Try again later.
+     * @throws SyncBlockerDoesNotExistException
+     *         Unable to continue. The sync blocker does not exist.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSCodeStarconnections.UpdateSyncBlocker
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateSyncBlocker"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateSyncBlockerResult updateSyncBlocker(UpdateSyncBlockerRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateSyncBlocker(request);
+    }
+
+    @SdkInternalApi
+    final UpdateSyncBlockerResult executeUpdateSyncBlocker(UpdateSyncBlockerRequest updateSyncBlockerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateSyncBlockerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateSyncBlockerRequest> request = null;
+        Response<UpdateSyncBlockerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateSyncBlockerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateSyncBlockerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar connections");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSyncBlocker");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateSyncBlockerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateSyncBlockerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the sync configuration for your connection and a specified external Git repository.
+     * </p>
+     * 
+     * @param updateSyncConfigurationRequest
+     * @return Result of the UpdateSyncConfiguration operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modification to an application. For example, two individuals
+     *         attempting to edit the same application at the same time.
+     * @throws InternalServerException
+     *         Received an internal server exception. Try again later.
+     * @throws InvalidInputException
+     *         The input is not valid. Verify that the action is typed correctly.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws UpdateOutOfSyncException
+     *         The update is out of sync. Try syncing again.
+     * @sample AWSCodeStarconnections.UpdateSyncConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateSyncConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateSyncConfigurationResult updateSyncConfiguration(UpdateSyncConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateSyncConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final UpdateSyncConfigurationResult executeUpdateSyncConfiguration(UpdateSyncConfigurationRequest updateSyncConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateSyncConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateSyncConfigurationRequest> request = null;
+        Response<UpdateSyncConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateSyncConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateSyncConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar connections");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSyncConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateSyncConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateSyncConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

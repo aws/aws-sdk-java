@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -13,7 +13,7 @@
 package com.amazonaws.services.chimesdkmessaging.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -52,6 +52,10 @@ public class SendChannelMessageRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MessageAttributes").build();
     private static final MarshallingInfo<String> SUBCHANNELID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SubChannelId").build();
+    private static final MarshallingInfo<String> CONTENTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContentType").build();
+    private static final MarshallingInfo<List> TARGET_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Target").build();
 
     private static final SendChannelMessageRequestMarshaller instance = new SendChannelMessageRequestMarshaller();
 
@@ -79,6 +83,8 @@ public class SendChannelMessageRequestMarshaller {
             protocolMarshaller.marshall(sendChannelMessageRequest.getPushNotification(), PUSHNOTIFICATION_BINDING);
             protocolMarshaller.marshall(sendChannelMessageRequest.getMessageAttributes(), MESSAGEATTRIBUTES_BINDING);
             protocolMarshaller.marshall(sendChannelMessageRequest.getSubChannelId(), SUBCHANNELID_BINDING);
+            protocolMarshaller.marshall(sendChannelMessageRequest.getContentType(), CONTENTTYPE_BINDING);
+            protocolMarshaller.marshall(sendChannelMessageRequest.getTarget(), TARGET_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

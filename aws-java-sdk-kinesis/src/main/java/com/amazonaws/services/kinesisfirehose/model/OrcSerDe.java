@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,8 +38,8 @@ public class OrcSerDe implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Hadoop Distributed File System (HDFS) block size. This is useful if you intend to copy the data from Amazon
-     * S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose uses this
-     * value for padding calculations.
+     * S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Firehose uses this value for
+     * padding calculations.
      * </p>
      */
     private Integer blockSizeBytes;
@@ -69,7 +69,7 @@ public class OrcSerDe implements Serializable, Cloneable, StructuredPojo {
      * that no stripe crosses block boundaries and causes remote reads within a node-local task.
      * </p>
      * <p>
-     * Kinesis Data Firehose ignores this parameter when <a>OrcSerDe$EnablePadding</a> is <code>false</code>.
+     * Firehose ignores this parameter when <a>OrcSerDe$EnablePadding</a> is <code>false</code>.
      * </p>
      */
     private Double paddingTolerance;
@@ -81,8 +81,7 @@ public class OrcSerDe implements Serializable, Cloneable, StructuredPojo {
     private String compression;
     /**
      * <p>
-     * The column names for which you want Kinesis Data Firehose to create bloom filters. The default is
-     * <code>null</code>.
+     * The column names for which you want Firehose to create bloom filters. The default is <code>null</code>.
      * </p>
      */
     private java.util.List<String> bloomFilterColumns;
@@ -152,14 +151,14 @@ public class OrcSerDe implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Hadoop Distributed File System (HDFS) block size. This is useful if you intend to copy the data from Amazon
-     * S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose uses this
-     * value for padding calculations.
+     * S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Firehose uses this value for
+     * padding calculations.
      * </p>
      * 
      * @param blockSizeBytes
      *        The Hadoop Distributed File System (HDFS) block size. This is useful if you intend to copy the data from
-     *        Amazon S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose
-     *        uses this value for padding calculations.
+     *        Amazon S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Firehose uses this
+     *        value for padding calculations.
      */
 
     public void setBlockSizeBytes(Integer blockSizeBytes) {
@@ -169,13 +168,13 @@ public class OrcSerDe implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Hadoop Distributed File System (HDFS) block size. This is useful if you intend to copy the data from Amazon
-     * S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose uses this
-     * value for padding calculations.
+     * S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Firehose uses this value for
+     * padding calculations.
      * </p>
      * 
      * @return The Hadoop Distributed File System (HDFS) block size. This is useful if you intend to copy the data from
-     *         Amazon S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Kinesis Data
-     *         Firehose uses this value for padding calculations.
+     *         Amazon S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Firehose uses this
+     *         value for padding calculations.
      */
 
     public Integer getBlockSizeBytes() {
@@ -185,14 +184,14 @@ public class OrcSerDe implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Hadoop Distributed File System (HDFS) block size. This is useful if you intend to copy the data from Amazon
-     * S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose uses this
-     * value for padding calculations.
+     * S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Firehose uses this value for
+     * padding calculations.
      * </p>
      * 
      * @param blockSizeBytes
      *        The Hadoop Distributed File System (HDFS) block size. This is useful if you intend to copy the data from
-     *        Amazon S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose
-     *        uses this value for padding calculations.
+     *        Amazon S3 to HDFS before querying. The default is 256 MiB and the minimum is 64 MiB. Firehose uses this
+     *        value for padding calculations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -321,7 +320,7 @@ public class OrcSerDe implements Serializable, Cloneable, StructuredPojo {
      * that no stripe crosses block boundaries and causes remote reads within a node-local task.
      * </p>
      * <p>
-     * Kinesis Data Firehose ignores this parameter when <a>OrcSerDe$EnablePadding</a> is <code>false</code>.
+     * Firehose ignores this parameter when <a>OrcSerDe$EnablePadding</a> is <code>false</code>.
      * </p>
      * 
      * @param paddingTolerance
@@ -335,7 +334,7 @@ public class OrcSerDe implements Serializable, Cloneable, StructuredPojo {
      *        task.
      *        </p>
      *        <p>
-     *        Kinesis Data Firehose ignores this parameter when <a>OrcSerDe$EnablePadding</a> is <code>false</code>.
+     *        Firehose ignores this parameter when <a>OrcSerDe$EnablePadding</a> is <code>false</code>.
      */
 
     public void setPaddingTolerance(Double paddingTolerance) {
@@ -354,7 +353,7 @@ public class OrcSerDe implements Serializable, Cloneable, StructuredPojo {
      * that no stripe crosses block boundaries and causes remote reads within a node-local task.
      * </p>
      * <p>
-     * Kinesis Data Firehose ignores this parameter when <a>OrcSerDe$EnablePadding</a> is <code>false</code>.
+     * Firehose ignores this parameter when <a>OrcSerDe$EnablePadding</a> is <code>false</code>.
      * </p>
      * 
      * @return A number between 0 and 1 that defines the tolerance for block padding as a decimal fraction of stripe
@@ -367,7 +366,7 @@ public class OrcSerDe implements Serializable, Cloneable, StructuredPojo {
      *         node-local task.
      *         </p>
      *         <p>
-     *         Kinesis Data Firehose ignores this parameter when <a>OrcSerDe$EnablePadding</a> is <code>false</code>.
+     *         Firehose ignores this parameter when <a>OrcSerDe$EnablePadding</a> is <code>false</code>.
      */
 
     public Double getPaddingTolerance() {
@@ -386,7 +385,7 @@ public class OrcSerDe implements Serializable, Cloneable, StructuredPojo {
      * that no stripe crosses block boundaries and causes remote reads within a node-local task.
      * </p>
      * <p>
-     * Kinesis Data Firehose ignores this parameter when <a>OrcSerDe$EnablePadding</a> is <code>false</code>.
+     * Firehose ignores this parameter when <a>OrcSerDe$EnablePadding</a> is <code>false</code>.
      * </p>
      * 
      * @param paddingTolerance
@@ -400,7 +399,7 @@ public class OrcSerDe implements Serializable, Cloneable, StructuredPojo {
      *        task.
      *        </p>
      *        <p>
-     *        Kinesis Data Firehose ignores this parameter when <a>OrcSerDe$EnablePadding</a> is <code>false</code>.
+     *        Firehose ignores this parameter when <a>OrcSerDe$EnablePadding</a> is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -470,12 +469,10 @@ public class OrcSerDe implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The column names for which you want Kinesis Data Firehose to create bloom filters. The default is
-     * <code>null</code>.
+     * The column names for which you want Firehose to create bloom filters. The default is <code>null</code>.
      * </p>
      * 
-     * @return The column names for which you want Kinesis Data Firehose to create bloom filters. The default is
-     *         <code>null</code>.
+     * @return The column names for which you want Firehose to create bloom filters. The default is <code>null</code>.
      */
 
     public java.util.List<String> getBloomFilterColumns() {
@@ -484,13 +481,11 @@ public class OrcSerDe implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The column names for which you want Kinesis Data Firehose to create bloom filters. The default is
-     * <code>null</code>.
+     * The column names for which you want Firehose to create bloom filters. The default is <code>null</code>.
      * </p>
      * 
      * @param bloomFilterColumns
-     *        The column names for which you want Kinesis Data Firehose to create bloom filters. The default is
-     *        <code>null</code>.
+     *        The column names for which you want Firehose to create bloom filters. The default is <code>null</code>.
      */
 
     public void setBloomFilterColumns(java.util.Collection<String> bloomFilterColumns) {
@@ -504,8 +499,7 @@ public class OrcSerDe implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The column names for which you want Kinesis Data Firehose to create bloom filters. The default is
-     * <code>null</code>.
+     * The column names for which you want Firehose to create bloom filters. The default is <code>null</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -514,8 +508,7 @@ public class OrcSerDe implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param bloomFilterColumns
-     *        The column names for which you want Kinesis Data Firehose to create bloom filters. The default is
-     *        <code>null</code>.
+     *        The column names for which you want Firehose to create bloom filters. The default is <code>null</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -531,13 +524,11 @@ public class OrcSerDe implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The column names for which you want Kinesis Data Firehose to create bloom filters. The default is
-     * <code>null</code>.
+     * The column names for which you want Firehose to create bloom filters. The default is <code>null</code>.
      * </p>
      * 
      * @param bloomFilterColumns
-     *        The column names for which you want Kinesis Data Firehose to create bloom filters. The default is
-     *        <code>null</code>.
+     *        The column names for which you want Firehose to create bloom filters. The default is <code>null</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class GetCredentialsRequestMarshaller {
 
+    private static final MarshallingInfo<String> CUSTOMDOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customDomainName").build();
     private static final MarshallingInfo<String> DBNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("dbName").build();
     private static final MarshallingInfo<Integer> DURATIONSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -50,6 +52,7 @@ public class GetCredentialsRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(getCredentialsRequest.getCustomDomainName(), CUSTOMDOMAINNAME_BINDING);
             protocolMarshaller.marshall(getCredentialsRequest.getDbName(), DBNAME_BINDING);
             protocolMarshaller.marshall(getCredentialsRequest.getDurationSeconds(), DURATIONSECONDS_BINDING);
             protocolMarshaller.marshall(getCredentialsRequest.getWorkgroupName(), WORKGROUPNAME_BINDING);

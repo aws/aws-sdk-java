@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -117,6 +117,11 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
      * <p>
      * The type of hardware or software platform on which the gateway is running.
      * </p>
+     * <note>
+     * <p>
+     * Tape Gateway is no longer available on Snow Family devices.
+     * </p>
+     * </note>
      */
     private String hostEnvironment;
     /**
@@ -159,6 +164,12 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private String hostEnvironmentId;
+    /**
+     * <p>
+     * The version number of the software running on the gateway appliance.
+     * </p>
+     */
+    private String softwareVersion;
 
     /**
      * @param gatewayARN
@@ -828,9 +839,17 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
      * <p>
      * The type of hardware or software platform on which the gateway is running.
      * </p>
+     * <note>
+     * <p>
+     * Tape Gateway is no longer available on Snow Family devices.
+     * </p>
+     * </note>
      * 
      * @param hostEnvironment
-     *        The type of hardware or software platform on which the gateway is running.
+     *        The type of hardware or software platform on which the gateway is running.</p> <note>
+     *        <p>
+     *        Tape Gateway is no longer available on Snow Family devices.
+     *        </p>
      * @see HostEnvironment
      */
 
@@ -842,8 +861,16 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
      * <p>
      * The type of hardware or software platform on which the gateway is running.
      * </p>
+     * <note>
+     * <p>
+     * Tape Gateway is no longer available on Snow Family devices.
+     * </p>
+     * </note>
      * 
-     * @return The type of hardware or software platform on which the gateway is running.
+     * @return The type of hardware or software platform on which the gateway is running.</p> <note>
+     *         <p>
+     *         Tape Gateway is no longer available on Snow Family devices.
+     *         </p>
      * @see HostEnvironment
      */
 
@@ -855,9 +882,17 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
      * <p>
      * The type of hardware or software platform on which the gateway is running.
      * </p>
+     * <note>
+     * <p>
+     * Tape Gateway is no longer available on Snow Family devices.
+     * </p>
+     * </note>
      * 
      * @param hostEnvironment
-     *        The type of hardware or software platform on which the gateway is running.
+     *        The type of hardware or software platform on which the gateway is running.</p> <note>
+     *        <p>
+     *        Tape Gateway is no longer available on Snow Family devices.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HostEnvironment
      */
@@ -871,9 +906,17 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
      * <p>
      * The type of hardware or software platform on which the gateway is running.
      * </p>
+     * <note>
+     * <p>
+     * Tape Gateway is no longer available on Snow Family devices.
+     * </p>
+     * </note>
      * 
      * @param hostEnvironment
-     *        The type of hardware or software platform on which the gateway is running.
+     *        The type of hardware or software platform on which the gateway is running.</p> <note>
+     *        <p>
+     *        Tape Gateway is no longer available on Snow Family devices.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HostEnvironment
      */
@@ -1231,6 +1274,46 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * The version number of the software running on the gateway appliance.
+     * </p>
+     * 
+     * @param softwareVersion
+     *        The version number of the software running on the gateway appliance.
+     */
+
+    public void setSoftwareVersion(String softwareVersion) {
+        this.softwareVersion = softwareVersion;
+    }
+
+    /**
+     * <p>
+     * The version number of the software running on the gateway appliance.
+     * </p>
+     * 
+     * @return The version number of the software running on the gateway appliance.
+     */
+
+    public String getSoftwareVersion() {
+        return this.softwareVersion;
+    }
+
+    /**
+     * <p>
+     * The version number of the software running on the gateway appliance.
+     * </p>
+     * 
+     * @param softwareVersion
+     *        The version number of the software running on the gateway appliance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeGatewayInformationResult withSoftwareVersion(String softwareVersion) {
+        setSoftwareVersion(softwareVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1253,7 +1336,7 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
         if (getGatewayState() != null)
             sb.append("GatewayState: ").append(getGatewayState()).append(",");
         if (getGatewayNetworkInterfaces() != null)
-            sb.append("GatewayNetworkInterfaces: ").append(getGatewayNetworkInterfaces()).append(",");
+            sb.append("GatewayNetworkInterfaces: ").append("***Sensitive Data Redacted***").append(",");
         if (getGatewayType() != null)
             sb.append("GatewayType: ").append(getGatewayType()).append(",");
         if (getNextUpdateAvailabilityDate() != null)
@@ -1283,7 +1366,9 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
         if (getSupportedGatewayCapacities() != null)
             sb.append("SupportedGatewayCapacities: ").append(getSupportedGatewayCapacities()).append(",");
         if (getHostEnvironmentId() != null)
-            sb.append("HostEnvironmentId: ").append(getHostEnvironmentId());
+            sb.append("HostEnvironmentId: ").append(getHostEnvironmentId()).append(",");
+        if (getSoftwareVersion() != null)
+            sb.append("SoftwareVersion: ").append(getSoftwareVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -1382,6 +1467,10 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getHostEnvironmentId() != null && other.getHostEnvironmentId().equals(this.getHostEnvironmentId()) == false)
             return false;
+        if (other.getSoftwareVersion() == null ^ this.getSoftwareVersion() == null)
+            return false;
+        if (other.getSoftwareVersion() != null && other.getSoftwareVersion().equals(this.getSoftwareVersion()) == false)
+            return false;
         return true;
     }
 
@@ -1411,6 +1500,7 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getGatewayCapacity() == null) ? 0 : getGatewayCapacity().hashCode());
         hashCode = prime * hashCode + ((getSupportedGatewayCapacities() == null) ? 0 : getSupportedGatewayCapacities().hashCode());
         hashCode = prime * hashCode + ((getHostEnvironmentId() == null) ? 0 : getHostEnvironmentId().hashCode());
+        hashCode = prime * hashCode + ((getSoftwareVersion() == null) ? 0 : getSoftwareVersion().hashCode());
         return hashCode;
     }
 

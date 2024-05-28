@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,8 +30,8 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Web Services account that created the file system. If the file system was created by an Identity and
-     * Access Management (IAM) user, the Amazon Web Services account to which the IAM user belongs is the owner.
+     * The Amazon Web Services account that created the file system. If the file system was created by a user in IAM
+     * Identity Center, the Amazon Web Services account to which the IAM user belongs is the owner.
      * </p>
      */
     private String ownerId;
@@ -104,6 +104,10 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The storage capacity of the file system in gibibytes (GiB).
+     * </p>
+     * <p>
+     * Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of <code>StorageCapacity</code> is
+     * outside of the minimum or maximum values.
      * </p>
      */
     private Integer storageCapacity;
@@ -196,8 +200,8 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The tags to associate with the file system. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2 resources</a>
-     * in the <i>Amazon EC2 User Guide</i>.
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/tag-resources.html">Tagging your Amazon FSx
+     * resources</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -225,7 +229,8 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
     private OntapFileSystemConfiguration ontapConfiguration;
     /**
      * <p>
-     * The Lustre version of the Amazon FSx for Lustre file system, either <code>2.10</code> or <code>2.12</code>.
+     * The Lustre version of the Amazon FSx for Lustre file system, which can be <code>2.10</code>, <code>2.12</code>,
+     * or <code>2.15</code>.
      * </p>
      */
     private String fileSystemTypeVersion;
@@ -238,14 +243,13 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Web Services account that created the file system. If the file system was created by an Identity and
-     * Access Management (IAM) user, the Amazon Web Services account to which the IAM user belongs is the owner.
+     * The Amazon Web Services account that created the file system. If the file system was created by a user in IAM
+     * Identity Center, the Amazon Web Services account to which the IAM user belongs is the owner.
      * </p>
      * 
      * @param ownerId
-     *        The Amazon Web Services account that created the file system. If the file system was created by an
-     *        Identity and Access Management (IAM) user, the Amazon Web Services account to which the IAM user belongs
-     *        is the owner.
+     *        The Amazon Web Services account that created the file system. If the file system was created by a user in
+     *        IAM Identity Center, the Amazon Web Services account to which the IAM user belongs is the owner.
      */
 
     public void setOwnerId(String ownerId) {
@@ -254,13 +258,12 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Web Services account that created the file system. If the file system was created by an Identity and
-     * Access Management (IAM) user, the Amazon Web Services account to which the IAM user belongs is the owner.
+     * The Amazon Web Services account that created the file system. If the file system was created by a user in IAM
+     * Identity Center, the Amazon Web Services account to which the IAM user belongs is the owner.
      * </p>
      * 
-     * @return The Amazon Web Services account that created the file system. If the file system was created by an
-     *         Identity and Access Management (IAM) user, the Amazon Web Services account to which the IAM user belongs
-     *         is the owner.
+     * @return The Amazon Web Services account that created the file system. If the file system was created by a user in
+     *         IAM Identity Center, the Amazon Web Services account to which the IAM user belongs is the owner.
      */
 
     public String getOwnerId() {
@@ -269,14 +272,13 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Web Services account that created the file system. If the file system was created by an Identity and
-     * Access Management (IAM) user, the Amazon Web Services account to which the IAM user belongs is the owner.
+     * The Amazon Web Services account that created the file system. If the file system was created by a user in IAM
+     * Identity Center, the Amazon Web Services account to which the IAM user belongs is the owner.
      * </p>
      * 
      * @param ownerId
-     *        The Amazon Web Services account that created the file system. If the file system was created by an
-     *        Identity and Access Management (IAM) user, the Amazon Web Services account to which the IAM user belongs
-     *        is the owner.
+     *        The Amazon Web Services account that created the file system. If the file system was created by a user in
+     *        IAM Identity Center, the Amazon Web Services account to which the IAM user belongs is the owner.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -832,9 +834,16 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The storage capacity of the file system in gibibytes (GiB).
      * </p>
+     * <p>
+     * Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of <code>StorageCapacity</code> is
+     * outside of the minimum or maximum values.
+     * </p>
      * 
      * @param storageCapacity
-     *        The storage capacity of the file system in gibibytes (GiB).
+     *        The storage capacity of the file system in gibibytes (GiB).</p>
+     *        <p>
+     *        Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of
+     *        <code>StorageCapacity</code> is outside of the minimum or maximum values.
      */
 
     public void setStorageCapacity(Integer storageCapacity) {
@@ -845,8 +854,15 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The storage capacity of the file system in gibibytes (GiB).
      * </p>
+     * <p>
+     * Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of <code>StorageCapacity</code> is
+     * outside of the minimum or maximum values.
+     * </p>
      * 
-     * @return The storage capacity of the file system in gibibytes (GiB).
+     * @return The storage capacity of the file system in gibibytes (GiB).</p>
+     *         <p>
+     *         Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of
+     *         <code>StorageCapacity</code> is outside of the minimum or maximum values.
      */
 
     public Integer getStorageCapacity() {
@@ -857,9 +873,16 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The storage capacity of the file system in gibibytes (GiB).
      * </p>
+     * <p>
+     * Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of <code>StorageCapacity</code> is
+     * outside of the minimum or maximum values.
+     * </p>
      * 
      * @param storageCapacity
-     *        The storage capacity of the file system in gibibytes (GiB).
+     *        The storage capacity of the file system in gibibytes (GiB).</p>
+     *        <p>
+     *        Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of
+     *        <code>StorageCapacity</code> is outside of the minimum or maximum values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1517,13 +1540,13 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The tags to associate with the file system. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2 resources</a>
-     * in the <i>Amazon EC2 User Guide</i>.
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/tag-resources.html">Tagging your Amazon FSx
+     * resources</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      * </p>
      * 
      * @return The tags to associate with the file system. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2
-     *         resources</a> in the <i>Amazon EC2 User Guide</i>.
+     *         href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/tag-resources.html">Tagging your Amazon FSx
+     *         resources</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -1533,14 +1556,14 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The tags to associate with the file system. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2 resources</a>
-     * in the <i>Amazon EC2 User Guide</i>.
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/tag-resources.html">Tagging your Amazon FSx
+     * resources</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      * </p>
      * 
      * @param tags
      *        The tags to associate with the file system. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2
-     *        resources</a> in the <i>Amazon EC2 User Guide</i>.
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/tag-resources.html">Tagging your Amazon FSx
+     *        resources</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -1555,8 +1578,8 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The tags to associate with the file system. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2 resources</a>
-     * in the <i>Amazon EC2 User Guide</i>.
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/tag-resources.html">Tagging your Amazon FSx
+     * resources</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1566,8 +1589,8 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param tags
      *        The tags to associate with the file system. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2
-     *        resources</a> in the <i>Amazon EC2 User Guide</i>.
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/tag-resources.html">Tagging your Amazon FSx
+     *        resources</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1584,14 +1607,14 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The tags to associate with the file system. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2 resources</a>
-     * in the <i>Amazon EC2 User Guide</i>.
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/tag-resources.html">Tagging your Amazon FSx
+     * resources</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      * </p>
      * 
      * @param tags
      *        The tags to associate with the file system. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2
-     *        resources</a> in the <i>Amazon EC2 User Guide</i>.
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/tag-resources.html">Tagging your Amazon FSx
+     *        resources</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1794,12 +1817,13 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Lustre version of the Amazon FSx for Lustre file system, either <code>2.10</code> or <code>2.12</code>.
+     * The Lustre version of the Amazon FSx for Lustre file system, which can be <code>2.10</code>, <code>2.12</code>,
+     * or <code>2.15</code>.
      * </p>
      * 
      * @param fileSystemTypeVersion
-     *        The Lustre version of the Amazon FSx for Lustre file system, either <code>2.10</code> or <code>2.12</code>
-     *        .
+     *        The Lustre version of the Amazon FSx for Lustre file system, which can be <code>2.10</code>,
+     *        <code>2.12</code>, or <code>2.15</code>.
      */
 
     public void setFileSystemTypeVersion(String fileSystemTypeVersion) {
@@ -1808,11 +1832,12 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Lustre version of the Amazon FSx for Lustre file system, either <code>2.10</code> or <code>2.12</code>.
+     * The Lustre version of the Amazon FSx for Lustre file system, which can be <code>2.10</code>, <code>2.12</code>,
+     * or <code>2.15</code>.
      * </p>
      * 
-     * @return The Lustre version of the Amazon FSx for Lustre file system, either <code>2.10</code> or
-     *         <code>2.12</code>.
+     * @return The Lustre version of the Amazon FSx for Lustre file system, which can be <code>2.10</code>,
+     *         <code>2.12</code>, or <code>2.15</code>.
      */
 
     public String getFileSystemTypeVersion() {
@@ -1821,12 +1846,13 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Lustre version of the Amazon FSx for Lustre file system, either <code>2.10</code> or <code>2.12</code>.
+     * The Lustre version of the Amazon FSx for Lustre file system, which can be <code>2.10</code>, <code>2.12</code>,
+     * or <code>2.15</code>.
      * </p>
      * 
      * @param fileSystemTypeVersion
-     *        The Lustre version of the Amazon FSx for Lustre file system, either <code>2.10</code> or <code>2.12</code>
-     *        .
+     *        The Lustre version of the Amazon FSx for Lustre file system, which can be <code>2.10</code>,
+     *        <code>2.12</code>, or <code>2.15</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

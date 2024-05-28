@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,6 +65,8 @@ public class CreateBranchRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pullRequestEnvironmentName").build();
     private static final MarshallingInfo<String> BACKENDENVIRONMENTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("backendEnvironmentArn").build();
+    private static final MarshallingInfo<StructuredPojo> BACKEND_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("backend").build();
 
     private static final CreateBranchRequestMarshaller instance = new CreateBranchRequestMarshaller();
 
@@ -100,6 +102,7 @@ public class CreateBranchRequestMarshaller {
             protocolMarshaller.marshall(createBranchRequest.getEnablePullRequestPreview(), ENABLEPULLREQUESTPREVIEW_BINDING);
             protocolMarshaller.marshall(createBranchRequest.getPullRequestEnvironmentName(), PULLREQUESTENVIRONMENTNAME_BINDING);
             protocolMarshaller.marshall(createBranchRequest.getBackendEnvironmentArn(), BACKENDENVIRONMENTARN_BINDING);
+            protocolMarshaller.marshall(createBranchRequest.getBackend(), BACKEND_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

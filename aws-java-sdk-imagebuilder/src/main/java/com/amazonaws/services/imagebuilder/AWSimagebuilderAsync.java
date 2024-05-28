@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,6 +66,37 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
      */
     java.util.concurrent.Future<CancelImageCreationResult> cancelImageCreationAsync(CancelImageCreationRequest cancelImageCreationRequest,
             com.amazonaws.handlers.AsyncHandler<CancelImageCreationRequest, CancelImageCreationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Cancel a specific image lifecycle policy runtime instance.
+     * </p>
+     * 
+     * @param cancelLifecycleExecutionRequest
+     * @return A Java Future containing the result of the CancelLifecycleExecution operation returned by the service.
+     * @sample AWSimagebuilderAsync.CancelLifecycleExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CancelLifecycleExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelLifecycleExecutionResult> cancelLifecycleExecutionAsync(CancelLifecycleExecutionRequest cancelLifecycleExecutionRequest);
+
+    /**
+     * <p>
+     * Cancel a specific image lifecycle policy runtime instance.
+     * </p>
+     * 
+     * @param cancelLifecycleExecutionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelLifecycleExecution operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.CancelLifecycleExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CancelLifecycleExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelLifecycleExecutionResult> cancelLifecycleExecutionAsync(CancelLifecycleExecutionRequest cancelLifecycleExecutionRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelLifecycleExecutionRequest, CancelLifecycleExecutionResult> asyncHandler);
 
     /**
      * <p>
@@ -327,6 +358,68 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
     java.util.concurrent.Future<CreateInfrastructureConfigurationResult> createInfrastructureConfigurationAsync(
             CreateInfrastructureConfigurationRequest createInfrastructureConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<CreateInfrastructureConfigurationRequest, CreateInfrastructureConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Create a lifecycle policy resource.
+     * </p>
+     * 
+     * @param createLifecyclePolicyRequest
+     * @return A Java Future containing the result of the CreateLifecyclePolicy operation returned by the service.
+     * @sample AWSimagebuilderAsync.CreateLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLifecyclePolicyResult> createLifecyclePolicyAsync(CreateLifecyclePolicyRequest createLifecyclePolicyRequest);
+
+    /**
+     * <p>
+     * Create a lifecycle policy resource.
+     * </p>
+     * 
+     * @param createLifecyclePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateLifecyclePolicy operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.CreateLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLifecyclePolicyResult> createLifecyclePolicyAsync(CreateLifecyclePolicyRequest createLifecyclePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateLifecyclePolicyRequest, CreateLifecyclePolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Create a new workflow or a new version of an existing workflow.
+     * </p>
+     * 
+     * @param createWorkflowRequest
+     * @return A Java Future containing the result of the CreateWorkflow operation returned by the service.
+     * @sample AWSimagebuilderAsync.CreateWorkflow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateWorkflow" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateWorkflowResult> createWorkflowAsync(CreateWorkflowRequest createWorkflowRequest);
+
+    /**
+     * <p>
+     * Create a new workflow or a new version of an existing workflow.
+     * </p>
+     * 
+     * @param createWorkflowRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateWorkflow operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.CreateWorkflow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateWorkflow" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateWorkflowResult> createWorkflowAsync(CreateWorkflowRequest createWorkflowRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateWorkflowRequest, CreateWorkflowResult> asyncHandler);
 
     /**
      * <p>
@@ -602,6 +695,68 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
     java.util.concurrent.Future<DeleteInfrastructureConfigurationResult> deleteInfrastructureConfigurationAsync(
             DeleteInfrastructureConfigurationRequest deleteInfrastructureConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteInfrastructureConfigurationRequest, DeleteInfrastructureConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete the specified lifecycle policy resource.
+     * </p>
+     * 
+     * @param deleteLifecyclePolicyRequest
+     * @return A Java Future containing the result of the DeleteLifecyclePolicy operation returned by the service.
+     * @sample AWSimagebuilderAsync.DeleteLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLifecyclePolicyResult> deleteLifecyclePolicyAsync(DeleteLifecyclePolicyRequest deleteLifecyclePolicyRequest);
+
+    /**
+     * <p>
+     * Delete the specified lifecycle policy resource.
+     * </p>
+     * 
+     * @param deleteLifecyclePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteLifecyclePolicy operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.DeleteLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLifecyclePolicyResult> deleteLifecyclePolicyAsync(DeleteLifecyclePolicyRequest deleteLifecyclePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteLifecyclePolicyRequest, DeleteLifecyclePolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a specific workflow resource.
+     * </p>
+     * 
+     * @param deleteWorkflowRequest
+     * @return A Java Future containing the result of the DeleteWorkflow operation returned by the service.
+     * @sample AWSimagebuilderAsync.DeleteWorkflow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteWorkflow" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteWorkflowResult> deleteWorkflowAsync(DeleteWorkflowRequest deleteWorkflowRequest);
+
+    /**
+     * <p>
+     * Deletes a specific workflow resource.
+     * </p>
+     * 
+     * @param deleteWorkflowRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteWorkflow operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.DeleteWorkflow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteWorkflow" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteWorkflowResult> deleteWorkflowAsync(DeleteWorkflowRequest deleteWorkflowRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteWorkflowRequest, DeleteWorkflowResult> asyncHandler);
 
     /**
      * <p>
@@ -956,6 +1111,161 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
 
     /**
      * <p>
+     * Get the runtime information that was logged for a specific runtime instance of the lifecycle policy.
+     * </p>
+     * 
+     * @param getLifecycleExecutionRequest
+     * @return A Java Future containing the result of the GetLifecycleExecution operation returned by the service.
+     * @sample AWSimagebuilderAsync.GetLifecycleExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetLifecycleExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetLifecycleExecutionResult> getLifecycleExecutionAsync(GetLifecycleExecutionRequest getLifecycleExecutionRequest);
+
+    /**
+     * <p>
+     * Get the runtime information that was logged for a specific runtime instance of the lifecycle policy.
+     * </p>
+     * 
+     * @param getLifecycleExecutionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetLifecycleExecution operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.GetLifecycleExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetLifecycleExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetLifecycleExecutionResult> getLifecycleExecutionAsync(GetLifecycleExecutionRequest getLifecycleExecutionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetLifecycleExecutionRequest, GetLifecycleExecutionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get details for the specified image lifecycle policy.
+     * </p>
+     * 
+     * @param getLifecyclePolicyRequest
+     * @return A Java Future containing the result of the GetLifecyclePolicy operation returned by the service.
+     * @sample AWSimagebuilderAsync.GetLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetLifecyclePolicyResult> getLifecyclePolicyAsync(GetLifecyclePolicyRequest getLifecyclePolicyRequest);
+
+    /**
+     * <p>
+     * Get details for the specified image lifecycle policy.
+     * </p>
+     * 
+     * @param getLifecyclePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetLifecyclePolicy operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.GetLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetLifecyclePolicyResult> getLifecyclePolicyAsync(GetLifecyclePolicyRequest getLifecyclePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetLifecyclePolicyRequest, GetLifecyclePolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get a workflow resource object.
+     * </p>
+     * 
+     * @param getWorkflowRequest
+     * @return A Java Future containing the result of the GetWorkflow operation returned by the service.
+     * @sample AWSimagebuilderAsync.GetWorkflow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetWorkflow" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetWorkflowResult> getWorkflowAsync(GetWorkflowRequest getWorkflowRequest);
+
+    /**
+     * <p>
+     * Get a workflow resource object.
+     * </p>
+     * 
+     * @param getWorkflowRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetWorkflow operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.GetWorkflow
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetWorkflow" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetWorkflowResult> getWorkflowAsync(GetWorkflowRequest getWorkflowRequest,
+            com.amazonaws.handlers.AsyncHandler<GetWorkflowRequest, GetWorkflowResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get the runtime information that was logged for a specific runtime instance of the workflow.
+     * </p>
+     * 
+     * @param getWorkflowExecutionRequest
+     * @return A Java Future containing the result of the GetWorkflowExecution operation returned by the service.
+     * @sample AWSimagebuilderAsync.GetWorkflowExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetWorkflowExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetWorkflowExecutionResult> getWorkflowExecutionAsync(GetWorkflowExecutionRequest getWorkflowExecutionRequest);
+
+    /**
+     * <p>
+     * Get the runtime information that was logged for a specific runtime instance of the workflow.
+     * </p>
+     * 
+     * @param getWorkflowExecutionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetWorkflowExecution operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.GetWorkflowExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetWorkflowExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetWorkflowExecutionResult> getWorkflowExecutionAsync(GetWorkflowExecutionRequest getWorkflowExecutionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetWorkflowExecutionRequest, GetWorkflowExecutionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get the runtime information that was logged for a specific runtime instance of the workflow step.
+     * </p>
+     * 
+     * @param getWorkflowStepExecutionRequest
+     * @return A Java Future containing the result of the GetWorkflowStepExecution operation returned by the service.
+     * @sample AWSimagebuilderAsync.GetWorkflowStepExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetWorkflowStepExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetWorkflowStepExecutionResult> getWorkflowStepExecutionAsync(GetWorkflowStepExecutionRequest getWorkflowStepExecutionRequest);
+
+    /**
+     * <p>
+     * Get the runtime information that was logged for a specific runtime instance of the workflow step.
+     * </p>
+     * 
+     * @param getWorkflowStepExecutionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetWorkflowStepExecution operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.GetWorkflowStepExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetWorkflowStepExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetWorkflowStepExecutionResult> getWorkflowStepExecutionAsync(GetWorkflowStepExecutionRequest getWorkflowStepExecutionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetWorkflowStepExecutionRequest, GetWorkflowStepExecutionResult> asyncHandler);
+
+    /**
+     * <p>
      * Imports a component and transforms its data into a component document.
      * </p>
      * 
@@ -1089,7 +1399,9 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
 
     /**
      * <p>
-     * Returns the list of component build versions for the specified semantic version.
+     * Returns the list of components that can be filtered by name, or by using the listed <code>filters</code> to
+     * streamline results. Newly created components can take up to two minutes to appear in the ListComponents API
+     * Results.
      * </p>
      * <note>
      * <p>
@@ -1113,7 +1425,9 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
 
     /**
      * <p>
-     * Returns the list of component build versions for the specified semantic version.
+     * Returns the list of components that can be filtered by name, or by using the listed <code>filters</code> to
+     * streamline results. Newly created components can take up to two minutes to appear in the ListComponents API
+     * Results.
      * </p>
      * <note>
      * <p>
@@ -1365,7 +1679,130 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
 
     /**
      * <p>
-     * Returns the list of images that you have access to.
+     * Returns a list of image scan aggregations for your account. You can filter by the type of key that Image Builder
+     * uses to group results. For example, if you want to get a list of findings by severity level for one of your
+     * pipelines, you might specify your pipeline with the <code>imagePipelineArn</code> filter. If you don't specify a
+     * filter, Image Builder returns an aggregation for your account.
+     * </p>
+     * <p>
+     * To streamline results, you can use the following filters in your request:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>accountId</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>imageBuildVersionArn</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>imagePipelineArn</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>vulnerabilityId</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param listImageScanFindingAggregationsRequest
+     * @return A Java Future containing the result of the ListImageScanFindingAggregations operation returned by the
+     *         service.
+     * @sample AWSimagebuilderAsync.ListImageScanFindingAggregations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageScanFindingAggregations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListImageScanFindingAggregationsResult> listImageScanFindingAggregationsAsync(
+            ListImageScanFindingAggregationsRequest listImageScanFindingAggregationsRequest);
+
+    /**
+     * <p>
+     * Returns a list of image scan aggregations for your account. You can filter by the type of key that Image Builder
+     * uses to group results. For example, if you want to get a list of findings by severity level for one of your
+     * pipelines, you might specify your pipeline with the <code>imagePipelineArn</code> filter. If you don't specify a
+     * filter, Image Builder returns an aggregation for your account.
+     * </p>
+     * <p>
+     * To streamline results, you can use the following filters in your request:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>accountId</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>imageBuildVersionArn</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>imagePipelineArn</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>vulnerabilityId</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param listImageScanFindingAggregationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListImageScanFindingAggregations operation returned by the
+     *         service.
+     * @sample AWSimagebuilderAsyncHandler.ListImageScanFindingAggregations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageScanFindingAggregations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListImageScanFindingAggregationsResult> listImageScanFindingAggregationsAsync(
+            ListImageScanFindingAggregationsRequest listImageScanFindingAggregationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListImageScanFindingAggregationsRequest, ListImageScanFindingAggregationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of image scan findings for your account.
+     * </p>
+     * 
+     * @param listImageScanFindingsRequest
+     * @return A Java Future containing the result of the ListImageScanFindings operation returned by the service.
+     * @sample AWSimagebuilderAsync.ListImageScanFindings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageScanFindings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListImageScanFindingsResult> listImageScanFindingsAsync(ListImageScanFindingsRequest listImageScanFindingsRequest);
+
+    /**
+     * <p>
+     * Returns a list of image scan findings for your account.
+     * </p>
+     * 
+     * @param listImageScanFindingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListImageScanFindings operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.ListImageScanFindings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageScanFindings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListImageScanFindingsResult> listImageScanFindingsAsync(ListImageScanFindingsRequest listImageScanFindingsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListImageScanFindingsRequest, ListImageScanFindingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the list of images that you have access to. Newly created images can take up to two minutes to appear in
+     * the ListImages API Results.
      * </p>
      * 
      * @param listImagesRequest
@@ -1378,7 +1815,8 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
 
     /**
      * <p>
-     * Returns the list of images that you have access to.
+     * Returns the list of images that you have access to. Newly created images can take up to two minutes to appear in
+     * the ListImages API Results.
      * </p>
      * 
      * @param listImagesRequest
@@ -1431,6 +1869,103 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
 
     /**
      * <p>
+     * List resources that the runtime instance of the image lifecycle identified for lifecycle actions.
+     * </p>
+     * 
+     * @param listLifecycleExecutionResourcesRequest
+     * @return A Java Future containing the result of the ListLifecycleExecutionResources operation returned by the
+     *         service.
+     * @sample AWSimagebuilderAsync.ListLifecycleExecutionResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecycleExecutionResources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLifecycleExecutionResourcesResult> listLifecycleExecutionResourcesAsync(
+            ListLifecycleExecutionResourcesRequest listLifecycleExecutionResourcesRequest);
+
+    /**
+     * <p>
+     * List resources that the runtime instance of the image lifecycle identified for lifecycle actions.
+     * </p>
+     * 
+     * @param listLifecycleExecutionResourcesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListLifecycleExecutionResources operation returned by the
+     *         service.
+     * @sample AWSimagebuilderAsyncHandler.ListLifecycleExecutionResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecycleExecutionResources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLifecycleExecutionResourcesResult> listLifecycleExecutionResourcesAsync(
+            ListLifecycleExecutionResourcesRequest listLifecycleExecutionResourcesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListLifecycleExecutionResourcesRequest, ListLifecycleExecutionResourcesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get the lifecycle runtime history for the specified resource.
+     * </p>
+     * 
+     * @param listLifecycleExecutionsRequest
+     * @return A Java Future containing the result of the ListLifecycleExecutions operation returned by the service.
+     * @sample AWSimagebuilderAsync.ListLifecycleExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecycleExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLifecycleExecutionsResult> listLifecycleExecutionsAsync(ListLifecycleExecutionsRequest listLifecycleExecutionsRequest);
+
+    /**
+     * <p>
+     * Get the lifecycle runtime history for the specified resource.
+     * </p>
+     * 
+     * @param listLifecycleExecutionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListLifecycleExecutions operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.ListLifecycleExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecycleExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLifecycleExecutionsResult> listLifecycleExecutionsAsync(ListLifecycleExecutionsRequest listLifecycleExecutionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListLifecycleExecutionsRequest, ListLifecycleExecutionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get a list of lifecycle policies in your Amazon Web Services account.
+     * </p>
+     * 
+     * @param listLifecyclePoliciesRequest
+     * @return A Java Future containing the result of the ListLifecyclePolicies operation returned by the service.
+     * @sample AWSimagebuilderAsync.ListLifecyclePolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecyclePolicies"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLifecyclePoliciesResult> listLifecyclePoliciesAsync(ListLifecyclePoliciesRequest listLifecyclePoliciesRequest);
+
+    /**
+     * <p>
+     * Get a list of lifecycle policies in your Amazon Web Services account.
+     * </p>
+     * 
+     * @param listLifecyclePoliciesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListLifecyclePolicies operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.ListLifecyclePolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListLifecyclePolicies"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLifecyclePoliciesResult> listLifecyclePoliciesAsync(ListLifecyclePoliciesRequest listLifecyclePoliciesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListLifecyclePoliciesRequest, ListLifecyclePoliciesResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the list of tags for the specified resource.
      * </p>
      * 
@@ -1459,6 +1994,165 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get a list of workflow steps that are waiting for action for workflows in your Amazon Web Services account.
+     * </p>
+     * 
+     * @param listWaitingWorkflowStepsRequest
+     * @return A Java Future containing the result of the ListWaitingWorkflowSteps operation returned by the service.
+     * @sample AWSimagebuilderAsync.ListWaitingWorkflowSteps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWaitingWorkflowSteps"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListWaitingWorkflowStepsResult> listWaitingWorkflowStepsAsync(ListWaitingWorkflowStepsRequest listWaitingWorkflowStepsRequest);
+
+    /**
+     * <p>
+     * Get a list of workflow steps that are waiting for action for workflows in your Amazon Web Services account.
+     * </p>
+     * 
+     * @param listWaitingWorkflowStepsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListWaitingWorkflowSteps operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.ListWaitingWorkflowSteps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWaitingWorkflowSteps"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListWaitingWorkflowStepsResult> listWaitingWorkflowStepsAsync(ListWaitingWorkflowStepsRequest listWaitingWorkflowStepsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListWaitingWorkflowStepsRequest, ListWaitingWorkflowStepsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of build versions for a specific workflow resource.
+     * </p>
+     * 
+     * @param listWorkflowBuildVersionsRequest
+     * @return A Java Future containing the result of the ListWorkflowBuildVersions operation returned by the service.
+     * @sample AWSimagebuilderAsync.ListWorkflowBuildVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflowBuildVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListWorkflowBuildVersionsResult> listWorkflowBuildVersionsAsync(
+            ListWorkflowBuildVersionsRequest listWorkflowBuildVersionsRequest);
+
+    /**
+     * <p>
+     * Returns a list of build versions for a specific workflow resource.
+     * </p>
+     * 
+     * @param listWorkflowBuildVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListWorkflowBuildVersions operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.ListWorkflowBuildVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflowBuildVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListWorkflowBuildVersionsResult> listWorkflowBuildVersionsAsync(
+            ListWorkflowBuildVersionsRequest listWorkflowBuildVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListWorkflowBuildVersionsRequest, ListWorkflowBuildVersionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of workflow runtime instance metadata objects for a specific image build version.
+     * </p>
+     * 
+     * @param listWorkflowExecutionsRequest
+     * @return A Java Future containing the result of the ListWorkflowExecutions operation returned by the service.
+     * @sample AWSimagebuilderAsync.ListWorkflowExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflowExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListWorkflowExecutionsResult> listWorkflowExecutionsAsync(ListWorkflowExecutionsRequest listWorkflowExecutionsRequest);
+
+    /**
+     * <p>
+     * Returns a list of workflow runtime instance metadata objects for a specific image build version.
+     * </p>
+     * 
+     * @param listWorkflowExecutionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListWorkflowExecutions operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.ListWorkflowExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflowExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListWorkflowExecutionsResult> listWorkflowExecutionsAsync(ListWorkflowExecutionsRequest listWorkflowExecutionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListWorkflowExecutionsRequest, ListWorkflowExecutionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns runtime data for each step in a runtime instance of the workflow that you specify in the request.
+     * </p>
+     * 
+     * @param listWorkflowStepExecutionsRequest
+     * @return A Java Future containing the result of the ListWorkflowStepExecutions operation returned by the service.
+     * @sample AWSimagebuilderAsync.ListWorkflowStepExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflowStepExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListWorkflowStepExecutionsResult> listWorkflowStepExecutionsAsync(
+            ListWorkflowStepExecutionsRequest listWorkflowStepExecutionsRequest);
+
+    /**
+     * <p>
+     * Returns runtime data for each step in a runtime instance of the workflow that you specify in the request.
+     * </p>
+     * 
+     * @param listWorkflowStepExecutionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListWorkflowStepExecutions operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.ListWorkflowStepExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflowStepExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListWorkflowStepExecutionsResult> listWorkflowStepExecutionsAsync(
+            ListWorkflowStepExecutionsRequest listWorkflowStepExecutionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListWorkflowStepExecutionsRequest, ListWorkflowStepExecutionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists workflow build versions based on filtering parameters.
+     * </p>
+     * 
+     * @param listWorkflowsRequest
+     * @return A Java Future containing the result of the ListWorkflows operation returned by the service.
+     * @sample AWSimagebuilderAsync.ListWorkflows
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflows" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListWorkflowsResult> listWorkflowsAsync(ListWorkflowsRequest listWorkflowsRequest);
+
+    /**
+     * <p>
+     * Lists workflow build versions based on filtering parameters.
+     * </p>
+     * 
+     * @param listWorkflowsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListWorkflows operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.ListWorkflows
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflows" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListWorkflowsResult> listWorkflowsAsync(ListWorkflowsRequest listWorkflowsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListWorkflowsRequest, ListWorkflowsResult> asyncHandler);
 
     /**
      * <p>
@@ -1628,6 +2322,37 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
 
     /**
      * <p>
+     * Pauses or resumes image creation when the associated workflow runs a <code>WaitForAction</code> step.
+     * </p>
+     * 
+     * @param sendWorkflowStepActionRequest
+     * @return A Java Future containing the result of the SendWorkflowStepAction operation returned by the service.
+     * @sample AWSimagebuilderAsync.SendWorkflowStepAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/SendWorkflowStepAction"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SendWorkflowStepActionResult> sendWorkflowStepActionAsync(SendWorkflowStepActionRequest sendWorkflowStepActionRequest);
+
+    /**
+     * <p>
+     * Pauses or resumes image creation when the associated workflow runs a <code>WaitForAction</code> step.
+     * </p>
+     * 
+     * @param sendWorkflowStepActionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SendWorkflowStepAction operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.SendWorkflowStepAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/SendWorkflowStepAction"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SendWorkflowStepActionResult> sendWorkflowStepActionAsync(SendWorkflowStepActionRequest sendWorkflowStepActionRequest,
+            com.amazonaws.handlers.AsyncHandler<SendWorkflowStepActionRequest, SendWorkflowStepActionResult> asyncHandler);
+
+    /**
+     * <p>
      * Manually triggers a pipeline to create an image.
      * </p>
      * 
@@ -1658,6 +2383,37 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
     java.util.concurrent.Future<StartImagePipelineExecutionResult> startImagePipelineExecutionAsync(
             StartImagePipelineExecutionRequest startImagePipelineExecutionRequest,
             com.amazonaws.handlers.AsyncHandler<StartImagePipelineExecutionRequest, StartImagePipelineExecutionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Begin asynchronous resource state update for lifecycle changes to the specified image resources.
+     * </p>
+     * 
+     * @param startResourceStateUpdateRequest
+     * @return A Java Future containing the result of the StartResourceStateUpdate operation returned by the service.
+     * @sample AWSimagebuilderAsync.StartResourceStateUpdate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/StartResourceStateUpdate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartResourceStateUpdateResult> startResourceStateUpdateAsync(StartResourceStateUpdateRequest startResourceStateUpdateRequest);
+
+    /**
+     * <p>
+     * Begin asynchronous resource state update for lifecycle changes to the specified image resources.
+     * </p>
+     * 
+     * @param startResourceStateUpdateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartResourceStateUpdate operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.StartResourceStateUpdate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/StartResourceStateUpdate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartResourceStateUpdateResult> startResourceStateUpdateAsync(StartResourceStateUpdateRequest startResourceStateUpdateRequest,
+            com.amazonaws.handlers.AsyncHandler<StartResourceStateUpdateRequest, StartResourceStateUpdateResult> asyncHandler);
 
     /**
      * <p>
@@ -1760,7 +2516,9 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
 
     /**
      * <p>
-     * Updates an image pipeline. Image pipelines enable you to automate the creation and distribution of images.
+     * Updates an image pipeline. Image pipelines enable you to automate the creation and distribution of images. You
+     * must specify exactly one recipe for your image, using either a <code>containerRecipeArn</code> or an
+     * <code>imageRecipeArn</code>.
      * </p>
      * <note>
      * <p>
@@ -1779,7 +2537,9 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
 
     /**
      * <p>
-     * Updates an image pipeline. Image pipelines enable you to automate the creation and distribution of images.
+     * Updates an image pipeline. Image pipelines enable you to automate the creation and distribution of images. You
+     * must specify exactly one recipe for your image, using either a <code>containerRecipeArn</code> or an
+     * <code>imageRecipeArn</code>.
      * </p>
      * <note>
      * <p>
@@ -1837,5 +2597,36 @@ public interface AWSimagebuilderAsync extends AWSimagebuilder {
     java.util.concurrent.Future<UpdateInfrastructureConfigurationResult> updateInfrastructureConfigurationAsync(
             UpdateInfrastructureConfigurationRequest updateInfrastructureConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateInfrastructureConfigurationRequest, UpdateInfrastructureConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update the specified lifecycle policy.
+     * </p>
+     * 
+     * @param updateLifecyclePolicyRequest
+     * @return A Java Future containing the result of the UpdateLifecyclePolicy operation returned by the service.
+     * @sample AWSimagebuilderAsync.UpdateLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateLifecyclePolicyResult> updateLifecyclePolicyAsync(UpdateLifecyclePolicyRequest updateLifecyclePolicyRequest);
+
+    /**
+     * <p>
+     * Update the specified lifecycle policy.
+     * </p>
+     * 
+     * @param updateLifecyclePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateLifecyclePolicy operation returned by the service.
+     * @sample AWSimagebuilderAsyncHandler.UpdateLifecyclePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateLifecyclePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateLifecyclePolicyResult> updateLifecyclePolicyAsync(UpdateLifecyclePolicyRequest updateLifecyclePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateLifecyclePolicyRequest, UpdateLifecyclePolicyResult> asyncHandler);
 
 }

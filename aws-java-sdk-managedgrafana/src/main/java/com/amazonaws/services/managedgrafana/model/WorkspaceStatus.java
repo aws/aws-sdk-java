@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,9 @@ public enum WorkspaceStatus {
     CREATION_FAILED("CREATION_FAILED"),
     UPDATE_FAILED("UPDATE_FAILED"),
     UPGRADE_FAILED("UPGRADE_FAILED"),
-    LICENSE_REMOVAL_FAILED("LICENSE_REMOVAL_FAILED");
+    LICENSE_REMOVAL_FAILED("LICENSE_REMOVAL_FAILED"),
+    VERSION_UPDATING("VERSION_UPDATING"),
+    VERSION_UPDATE_FAILED("VERSION_UPDATE_FAILED");
 
     private String value;
 

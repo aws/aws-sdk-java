@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,13 +30,14 @@ public class ServiceQuota implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The service identifier.
+     * Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the
+     * <a>ListServices</a> operation.
      * </p>
      */
     private String serviceCode;
     /**
      * <p>
-     * The service name.
+     * Specifies the service name.
      * </p>
      */
     private String serviceName;
@@ -48,13 +49,14 @@ public class ServiceQuota implements Serializable, Cloneable, StructuredPojo {
     private String quotaArn;
     /**
      * <p>
-     * The quota identifier.
+     * Specifies the quota identifier. To find the quota code for a specific quota, use the <a>ListServiceQuotas</a>
+     * operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.
      * </p>
      */
     private String quotaCode;
     /**
      * <p>
-     * The quota name.
+     * Specifies the quota name.
      * </p>
      */
     private String quotaName;
@@ -100,14 +102,28 @@ public class ServiceQuota implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ErrorReason errorReason;
+    /**
+     * <p>
+     * Specifies at which level of granularity that the quota value is applied.
+     * </p>
+     */
+    private String quotaAppliedAtLevel;
+    /**
+     * <p>
+     * The context for this service quota.
+     * </p>
+     */
+    private QuotaContextInfo quotaContext;
 
     /**
      * <p>
-     * The service identifier.
+     * Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the
+     * <a>ListServices</a> operation.
      * </p>
      * 
      * @param serviceCode
-     *        The service identifier.
+     *        Specifies the service identifier. To find the service code value for an Amazon Web Services service, use
+     *        the <a>ListServices</a> operation.
      */
 
     public void setServiceCode(String serviceCode) {
@@ -116,10 +132,12 @@ public class ServiceQuota implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The service identifier.
+     * Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the
+     * <a>ListServices</a> operation.
      * </p>
      * 
-     * @return The service identifier.
+     * @return Specifies the service identifier. To find the service code value for an Amazon Web Services service, use
+     *         the <a>ListServices</a> operation.
      */
 
     public String getServiceCode() {
@@ -128,11 +146,13 @@ public class ServiceQuota implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The service identifier.
+     * Specifies the service identifier. To find the service code value for an Amazon Web Services service, use the
+     * <a>ListServices</a> operation.
      * </p>
      * 
      * @param serviceCode
-     *        The service identifier.
+     *        Specifies the service identifier. To find the service code value for an Amazon Web Services service, use
+     *        the <a>ListServices</a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,11 +163,11 @@ public class ServiceQuota implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The service name.
+     * Specifies the service name.
      * </p>
      * 
      * @param serviceName
-     *        The service name.
+     *        Specifies the service name.
      */
 
     public void setServiceName(String serviceName) {
@@ -156,10 +176,10 @@ public class ServiceQuota implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The service name.
+     * Specifies the service name.
      * </p>
      * 
-     * @return The service name.
+     * @return Specifies the service name.
      */
 
     public String getServiceName() {
@@ -168,11 +188,11 @@ public class ServiceQuota implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The service name.
+     * Specifies the service name.
      * </p>
      * 
      * @param serviceName
-     *        The service name.
+     *        Specifies the service name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -223,11 +243,14 @@ public class ServiceQuota implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The quota identifier.
+     * Specifies the quota identifier. To find the quota code for a specific quota, use the <a>ListServiceQuotas</a>
+     * operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.
      * </p>
      * 
      * @param quotaCode
-     *        The quota identifier.
+     *        Specifies the quota identifier. To find the quota code for a specific quota, use the
+     *        <a>ListServiceQuotas</a> operation, and look for the <code>QuotaCode</code> response in the output for the
+     *        quota you want.
      */
 
     public void setQuotaCode(String quotaCode) {
@@ -236,10 +259,13 @@ public class ServiceQuota implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The quota identifier.
+     * Specifies the quota identifier. To find the quota code for a specific quota, use the <a>ListServiceQuotas</a>
+     * operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.
      * </p>
      * 
-     * @return The quota identifier.
+     * @return Specifies the quota identifier. To find the quota code for a specific quota, use the
+     *         <a>ListServiceQuotas</a> operation, and look for the <code>QuotaCode</code> response in the output for
+     *         the quota you want.
      */
 
     public String getQuotaCode() {
@@ -248,11 +274,14 @@ public class ServiceQuota implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The quota identifier.
+     * Specifies the quota identifier. To find the quota code for a specific quota, use the <a>ListServiceQuotas</a>
+     * operation, and look for the <code>QuotaCode</code> response in the output for the quota you want.
      * </p>
      * 
      * @param quotaCode
-     *        The quota identifier.
+     *        Specifies the quota identifier. To find the quota code for a specific quota, use the
+     *        <a>ListServiceQuotas</a> operation, and look for the <code>QuotaCode</code> response in the output for the
+     *        quota you want.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -263,11 +292,11 @@ public class ServiceQuota implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The quota name.
+     * Specifies the quota name.
      * </p>
      * 
      * @param quotaName
-     *        The quota name.
+     *        Specifies the quota name.
      */
 
     public void setQuotaName(String quotaName) {
@@ -276,10 +305,10 @@ public class ServiceQuota implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The quota name.
+     * Specifies the quota name.
      * </p>
      * 
-     * @return The quota name.
+     * @return Specifies the quota name.
      */
 
     public String getQuotaName() {
@@ -288,11 +317,11 @@ public class ServiceQuota implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The quota name.
+     * Specifies the quota name.
      * </p>
      * 
      * @param quotaName
-     *        The quota name.
+     *        Specifies the quota name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -606,6 +635,105 @@ public class ServiceQuota implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies at which level of granularity that the quota value is applied.
+     * </p>
+     * 
+     * @param quotaAppliedAtLevel
+     *        Specifies at which level of granularity that the quota value is applied.
+     * @see AppliedLevelEnum
+     */
+
+    public void setQuotaAppliedAtLevel(String quotaAppliedAtLevel) {
+        this.quotaAppliedAtLevel = quotaAppliedAtLevel;
+    }
+
+    /**
+     * <p>
+     * Specifies at which level of granularity that the quota value is applied.
+     * </p>
+     * 
+     * @return Specifies at which level of granularity that the quota value is applied.
+     * @see AppliedLevelEnum
+     */
+
+    public String getQuotaAppliedAtLevel() {
+        return this.quotaAppliedAtLevel;
+    }
+
+    /**
+     * <p>
+     * Specifies at which level of granularity that the quota value is applied.
+     * </p>
+     * 
+     * @param quotaAppliedAtLevel
+     *        Specifies at which level of granularity that the quota value is applied.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AppliedLevelEnum
+     */
+
+    public ServiceQuota withQuotaAppliedAtLevel(String quotaAppliedAtLevel) {
+        setQuotaAppliedAtLevel(quotaAppliedAtLevel);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies at which level of granularity that the quota value is applied.
+     * </p>
+     * 
+     * @param quotaAppliedAtLevel
+     *        Specifies at which level of granularity that the quota value is applied.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AppliedLevelEnum
+     */
+
+    public ServiceQuota withQuotaAppliedAtLevel(AppliedLevelEnum quotaAppliedAtLevel) {
+        this.quotaAppliedAtLevel = quotaAppliedAtLevel.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The context for this service quota.
+     * </p>
+     * 
+     * @param quotaContext
+     *        The context for this service quota.
+     */
+
+    public void setQuotaContext(QuotaContextInfo quotaContext) {
+        this.quotaContext = quotaContext;
+    }
+
+    /**
+     * <p>
+     * The context for this service quota.
+     * </p>
+     * 
+     * @return The context for this service quota.
+     */
+
+    public QuotaContextInfo getQuotaContext() {
+        return this.quotaContext;
+    }
+
+    /**
+     * <p>
+     * The context for this service quota.
+     * </p>
+     * 
+     * @param quotaContext
+     *        The context for this service quota.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceQuota withQuotaContext(QuotaContextInfo quotaContext) {
+        setQuotaContext(quotaContext);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -640,7 +768,11 @@ public class ServiceQuota implements Serializable, Cloneable, StructuredPojo {
         if (getPeriod() != null)
             sb.append("Period: ").append(getPeriod()).append(",");
         if (getErrorReason() != null)
-            sb.append("ErrorReason: ").append(getErrorReason());
+            sb.append("ErrorReason: ").append(getErrorReason()).append(",");
+        if (getQuotaAppliedAtLevel() != null)
+            sb.append("QuotaAppliedAtLevel: ").append(getQuotaAppliedAtLevel()).append(",");
+        if (getQuotaContext() != null)
+            sb.append("QuotaContext: ").append(getQuotaContext());
         sb.append("}");
         return sb.toString();
     }
@@ -703,6 +835,14 @@ public class ServiceQuota implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getErrorReason() != null && other.getErrorReason().equals(this.getErrorReason()) == false)
             return false;
+        if (other.getQuotaAppliedAtLevel() == null ^ this.getQuotaAppliedAtLevel() == null)
+            return false;
+        if (other.getQuotaAppliedAtLevel() != null && other.getQuotaAppliedAtLevel().equals(this.getQuotaAppliedAtLevel()) == false)
+            return false;
+        if (other.getQuotaContext() == null ^ this.getQuotaContext() == null)
+            return false;
+        if (other.getQuotaContext() != null && other.getQuotaContext().equals(this.getQuotaContext()) == false)
+            return false;
         return true;
     }
 
@@ -723,6 +863,8 @@ public class ServiceQuota implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getUsageMetric() == null) ? 0 : getUsageMetric().hashCode());
         hashCode = prime * hashCode + ((getPeriod() == null) ? 0 : getPeriod().hashCode());
         hashCode = prime * hashCode + ((getErrorReason() == null) ? 0 : getErrorReason().hashCode());
+        hashCode = prime * hashCode + ((getQuotaAppliedAtLevel() == null) ? 0 : getQuotaAppliedAtLevel().hashCode());
+        hashCode = prime * hashCode + ((getQuotaContext() == null) ? 0 : getQuotaContext().hashCode());
         return hashCode;
     }
 

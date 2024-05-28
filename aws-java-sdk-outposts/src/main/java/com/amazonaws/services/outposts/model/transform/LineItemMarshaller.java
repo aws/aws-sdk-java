@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,10 @@ public class LineItemMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ShipmentInformation").build();
     private static final MarshallingInfo<List> ASSETINFORMATIONLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssetInformationList").build();
+    private static final MarshallingInfo<String> PREVIOUSLINEITEMID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreviousLineItemId").build();
+    private static final MarshallingInfo<String> PREVIOUSORDERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreviousOrderId").build();
 
     private static final LineItemMarshaller instance = new LineItemMarshaller();
 
@@ -63,6 +67,8 @@ public class LineItemMarshaller {
             protocolMarshaller.marshall(lineItem.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(lineItem.getShipmentInformation(), SHIPMENTINFORMATION_BINDING);
             protocolMarshaller.marshall(lineItem.getAssetInformationList(), ASSETINFORMATIONLIST_BINDING);
+            protocolMarshaller.marshall(lineItem.getPreviousLineItemId(), PREVIOUSLINEITEMID_BINDING);
+            protocolMarshaller.marshall(lineItem.getPreviousOrderId(), PREVIOUSORDERID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

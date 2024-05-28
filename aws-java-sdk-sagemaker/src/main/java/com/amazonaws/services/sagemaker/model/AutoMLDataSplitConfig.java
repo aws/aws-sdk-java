@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * This structure specifies how to split the data into train and validation datasets. The validation and training
- * datasets must contain the same headers. The validation dataset must be less than 2 GB in size.
+ * This structure specifies how to split the data into train and validation datasets.
+ * </p>
+ * <p>
+ * The validation and training datasets must contain the same headers. For jobs created by calling
+ * <code>CreateAutoMLJob</code>, the validation dataset must be less than 2 GB in size.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLDataSplitConfig" target="_top">AWS

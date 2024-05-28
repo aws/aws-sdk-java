@@ -1,5 +1,5 @@
 /*
- * Copyright 2021-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2021-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -974,7 +974,7 @@ public class WriteGetObjectResponseRequest extends AmazonWebServiceRequest imple
 
     /**
      * Set the server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256,
-     * aws:kms).
+     * <code>aws:kms</code>)).
      *
      * @return This object for method chaining.
      */
@@ -985,7 +985,7 @@ public class WriteGetObjectResponseRequest extends AmazonWebServiceRequest imple
 
     /**
      * Set the server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256,
-     * aws:kms).
+     * <code>aws:kms</code>)).
      */
     public void setServerSideEncryption(String serverSideEncryption) {
         withServerSideEncryption(serverSideEncryption);
@@ -993,7 +993,7 @@ public class WriteGetObjectResponseRequest extends AmazonWebServiceRequest imple
 
     /**
      * The server-side encryption algorithm used when storing requested object in Amazon S3 (for example, AES256,
-     * aws:kms).
+     * <code>aws:kms</code>)).
      */
     public String getServerSideEncryption() {
         return serverSideEncryption;
@@ -1027,8 +1027,8 @@ public class WriteGetObjectResponseRequest extends AmazonWebServiceRequest imple
     }
 
     /**
-     * Specify the ID of the Amazon Web Services Key Management Service (KMS) symmetric customer managed customer
-     * master key (CMK) that was used for stored in Amazon S3 object.
+     * Specify the ID of the Amazon Web Services Key Management Service (KMS) symmetric encryption customer managed
+     * key that was used for the object.
      *
      * @return this object for method chaining.
      */
@@ -1037,16 +1037,16 @@ public class WriteGetObjectResponseRequest extends AmazonWebServiceRequest imple
         return this;
     }
     /**
-     * Specify the ID of the Amazon Web Services Key Management Service (KMS) symmetric customer managed customer
-     * master key (CMK) that was used for stored in Amazon S3 object.
+     * Specify the ID of the Amazon Web Services Key Management Service (KMS) symmetric encryption customer managed
+     * key that was used for the object.
      */
     public void setSSEKMSKeyId(String sSEKMSKeyId) {
         withSSEKMSKeyId(sSEKMSKeyId);
     }
 
     /**
-     * If present, specifies the ID of the Amazon Web Services Key Management Service (KMS) symmetric customer managed customer
-     * master key (CMK) that was used for stored in Amazon S3 object.
+     * If present, specifies the ID of the Amazon Web Services Key Management Service (KMS) symmetric encryption customer
+     * managed key that was used for the object.
      */
     public String getSSEKMSKeyId() {
         return sseKMSKeyId;

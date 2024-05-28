@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,8 @@ public class InvokeEndpointRequestMarshaller {
             .marshallLocation(MarshallLocation.HEADER).marshallLocationName("X-Amzn-SageMaker-Inference-Id").build();
     private static final MarshallingInfo<String> ENABLEEXPLANATIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.HEADER).marshallLocationName("X-Amzn-SageMaker-Enable-Explanations").build();
+    private static final MarshallingInfo<String> INFERENCECOMPONENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("X-Amzn-SageMaker-Inference-Component").build();
 
     private static final InvokeEndpointRequestMarshaller instance = new InvokeEndpointRequestMarshaller();
 
@@ -74,6 +76,7 @@ public class InvokeEndpointRequestMarshaller {
             protocolMarshaller.marshall(invokeEndpointRequest.getTargetContainerHostname(), TARGETCONTAINERHOSTNAME_BINDING);
             protocolMarshaller.marshall(invokeEndpointRequest.getInferenceId(), INFERENCEID_BINDING);
             protocolMarshaller.marshall(invokeEndpointRequest.getEnableExplanations(), ENABLEEXPLANATIONS_BINDING);
+            protocolMarshaller.marshall(invokeEndpointRequest.getInferenceComponentName(), INFERENCECOMPONENTNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class GetEventDataStoreResult extends com.amazonaws.AmazonWebServiceResul
     private String name;
     /**
      * <p>
-     * The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.
+     * The status of an event data store.
      * </p>
      */
     private String status;
@@ -49,7 +49,7 @@ public class GetEventDataStoreResult extends com.amazonaws.AmazonWebServiceResul
     private com.amazonaws.internal.SdkInternalList<AdvancedEventSelector> advancedEventSelectors;
     /**
      * <p>
-     * Indicates whether the event data store includes events from all regions, or only from the region in which it was
+     * Indicates whether the event data store includes events from all Regions, or only from the Region in which it was
      * created.
      * </p>
      */
@@ -85,6 +85,38 @@ public class GetEventDataStoreResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private java.util.Date updatedTimestamp;
+    /**
+     * <p>
+     * Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to
+     * a KMS key in the following format.
+     * </p>
+     * <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     */
+    private String kmsKeyId;
+    /**
+     * <p>
+     * The billing mode for the event data store.
+     * </p>
+     */
+    private String billingMode;
+    /**
+     * <p>
+     * Indicates the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html">Lake
+     * query federation</a> status. The status is <code>ENABLED</code> if Lake query federation is enabled, or
+     * <code>DISABLED</code> if Lake query federation is disabled. You cannot delete an event data store if the
+     * <code>FederationStatus</code> is <code>ENABLED</code>.
+     * </p>
+     */
+    private String federationStatus;
+    /**
+     * <p>
+     * If Lake query federation is enabled, provides the ARN of the federation role used to access the resources for the
+     * federated event data store.
+     * </p>
+     */
+    private String federationRoleArn;
 
     /**
      * <p>
@@ -168,11 +200,11 @@ public class GetEventDataStoreResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.
+     * The status of an event data store.
      * </p>
      * 
      * @param status
-     *        The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.
+     *        The status of an event data store.
      * @see EventDataStoreStatus
      */
 
@@ -182,10 +214,10 @@ public class GetEventDataStoreResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.
+     * The status of an event data store.
      * </p>
      * 
-     * @return The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.
+     * @return The status of an event data store.
      * @see EventDataStoreStatus
      */
 
@@ -195,11 +227,11 @@ public class GetEventDataStoreResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.
+     * The status of an event data store.
      * </p>
      * 
      * @param status
-     *        The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.
+     *        The status of an event data store.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventDataStoreStatus
      */
@@ -211,11 +243,11 @@ public class GetEventDataStoreResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.
+     * The status of an event data store.
      * </p>
      * 
      * @param status
-     *        The status of an event data store. Values can be <code>ENABLED</code> and <code>PENDING_DELETION</code>.
+     *        The status of an event data store.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventDataStoreStatus
      */
@@ -300,12 +332,12 @@ public class GetEventDataStoreResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Indicates whether the event data store includes events from all regions, or only from the region in which it was
+     * Indicates whether the event data store includes events from all Regions, or only from the Region in which it was
      * created.
      * </p>
      * 
      * @param multiRegionEnabled
-     *        Indicates whether the event data store includes events from all regions, or only from the region in which
+     *        Indicates whether the event data store includes events from all Regions, or only from the Region in which
      *        it was created.
      */
 
@@ -315,11 +347,11 @@ public class GetEventDataStoreResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Indicates whether the event data store includes events from all regions, or only from the region in which it was
+     * Indicates whether the event data store includes events from all Regions, or only from the Region in which it was
      * created.
      * </p>
      * 
-     * @return Indicates whether the event data store includes events from all regions, or only from the region in which
+     * @return Indicates whether the event data store includes events from all Regions, or only from the Region in which
      *         it was created.
      */
 
@@ -329,12 +361,12 @@ public class GetEventDataStoreResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Indicates whether the event data store includes events from all regions, or only from the region in which it was
+     * Indicates whether the event data store includes events from all Regions, or only from the Region in which it was
      * created.
      * </p>
      * 
      * @param multiRegionEnabled
-     *        Indicates whether the event data store includes events from all regions, or only from the region in which
+     *        Indicates whether the event data store includes events from all Regions, or only from the Region in which
      *        it was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -346,11 +378,11 @@ public class GetEventDataStoreResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Indicates whether the event data store includes events from all regions, or only from the region in which it was
+     * Indicates whether the event data store includes events from all Regions, or only from the Region in which it was
      * created.
      * </p>
      * 
-     * @return Indicates whether the event data store includes events from all regions, or only from the region in which
+     * @return Indicates whether the event data store includes events from all Regions, or only from the Region in which
      *         it was created.
      */
 
@@ -589,6 +621,259 @@ public class GetEventDataStoreResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to
+     * a KMS key in the following format.
+     * </p>
+     * <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified
+     *        ARN to a KMS key in the following format.</p>
+     *        <p>
+     *        <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to
+     * a KMS key in the following format.
+     * </p>
+     * <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * 
+     * @return Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified
+     *         ARN to a KMS key in the following format.</p>
+     *         <p>
+     *         <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to
+     * a KMS key in the following format.
+     * </p>
+     * <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified
+     *        ARN to a KMS key in the following format.</p>
+     *        <p>
+     *        <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetEventDataStoreResult withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The billing mode for the event data store.
+     * </p>
+     * 
+     * @param billingMode
+     *        The billing mode for the event data store.
+     * @see BillingMode
+     */
+
+    public void setBillingMode(String billingMode) {
+        this.billingMode = billingMode;
+    }
+
+    /**
+     * <p>
+     * The billing mode for the event data store.
+     * </p>
+     * 
+     * @return The billing mode for the event data store.
+     * @see BillingMode
+     */
+
+    public String getBillingMode() {
+        return this.billingMode;
+    }
+
+    /**
+     * <p>
+     * The billing mode for the event data store.
+     * </p>
+     * 
+     * @param billingMode
+     *        The billing mode for the event data store.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BillingMode
+     */
+
+    public GetEventDataStoreResult withBillingMode(String billingMode) {
+        setBillingMode(billingMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The billing mode for the event data store.
+     * </p>
+     * 
+     * @param billingMode
+     *        The billing mode for the event data store.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BillingMode
+     */
+
+    public GetEventDataStoreResult withBillingMode(BillingMode billingMode) {
+        this.billingMode = billingMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html">Lake
+     * query federation</a> status. The status is <code>ENABLED</code> if Lake query federation is enabled, or
+     * <code>DISABLED</code> if Lake query federation is disabled. You cannot delete an event data store if the
+     * <code>FederationStatus</code> is <code>ENABLED</code>.
+     * </p>
+     * 
+     * @param federationStatus
+     *        Indicates the <a
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html">Lake query
+     *        federation</a> status. The status is <code>ENABLED</code> if Lake query federation is enabled, or
+     *        <code>DISABLED</code> if Lake query federation is disabled. You cannot delete an event data store if the
+     *        <code>FederationStatus</code> is <code>ENABLED</code>.
+     * @see FederationStatus
+     */
+
+    public void setFederationStatus(String federationStatus) {
+        this.federationStatus = federationStatus;
+    }
+
+    /**
+     * <p>
+     * Indicates the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html">Lake
+     * query federation</a> status. The status is <code>ENABLED</code> if Lake query federation is enabled, or
+     * <code>DISABLED</code> if Lake query federation is disabled. You cannot delete an event data store if the
+     * <code>FederationStatus</code> is <code>ENABLED</code>.
+     * </p>
+     * 
+     * @return Indicates the <a
+     *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html">Lake query
+     *         federation</a> status. The status is <code>ENABLED</code> if Lake query federation is enabled, or
+     *         <code>DISABLED</code> if Lake query federation is disabled. You cannot delete an event data store if the
+     *         <code>FederationStatus</code> is <code>ENABLED</code>.
+     * @see FederationStatus
+     */
+
+    public String getFederationStatus() {
+        return this.federationStatus;
+    }
+
+    /**
+     * <p>
+     * Indicates the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html">Lake
+     * query federation</a> status. The status is <code>ENABLED</code> if Lake query federation is enabled, or
+     * <code>DISABLED</code> if Lake query federation is disabled. You cannot delete an event data store if the
+     * <code>FederationStatus</code> is <code>ENABLED</code>.
+     * </p>
+     * 
+     * @param federationStatus
+     *        Indicates the <a
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html">Lake query
+     *        federation</a> status. The status is <code>ENABLED</code> if Lake query federation is enabled, or
+     *        <code>DISABLED</code> if Lake query federation is disabled. You cannot delete an event data store if the
+     *        <code>FederationStatus</code> is <code>ENABLED</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FederationStatus
+     */
+
+    public GetEventDataStoreResult withFederationStatus(String federationStatus) {
+        setFederationStatus(federationStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html">Lake
+     * query federation</a> status. The status is <code>ENABLED</code> if Lake query federation is enabled, or
+     * <code>DISABLED</code> if Lake query federation is disabled. You cannot delete an event data store if the
+     * <code>FederationStatus</code> is <code>ENABLED</code>.
+     * </p>
+     * 
+     * @param federationStatus
+     *        Indicates the <a
+     *        href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html">Lake query
+     *        federation</a> status. The status is <code>ENABLED</code> if Lake query federation is enabled, or
+     *        <code>DISABLED</code> if Lake query federation is disabled. You cannot delete an event data store if the
+     *        <code>FederationStatus</code> is <code>ENABLED</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FederationStatus
+     */
+
+    public GetEventDataStoreResult withFederationStatus(FederationStatus federationStatus) {
+        this.federationStatus = federationStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * If Lake query federation is enabled, provides the ARN of the federation role used to access the resources for the
+     * federated event data store.
+     * </p>
+     * 
+     * @param federationRoleArn
+     *        If Lake query federation is enabled, provides the ARN of the federation role used to access the resources
+     *        for the federated event data store.
+     */
+
+    public void setFederationRoleArn(String federationRoleArn) {
+        this.federationRoleArn = federationRoleArn;
+    }
+
+    /**
+     * <p>
+     * If Lake query federation is enabled, provides the ARN of the federation role used to access the resources for the
+     * federated event data store.
+     * </p>
+     * 
+     * @return If Lake query federation is enabled, provides the ARN of the federation role used to access the resources
+     *         for the federated event data store.
+     */
+
+    public String getFederationRoleArn() {
+        return this.federationRoleArn;
+    }
+
+    /**
+     * <p>
+     * If Lake query federation is enabled, provides the ARN of the federation role used to access the resources for the
+     * federated event data store.
+     * </p>
+     * 
+     * @param federationRoleArn
+     *        If Lake query federation is enabled, provides the ARN of the federation role used to access the resources
+     *        for the federated event data store.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetEventDataStoreResult withFederationRoleArn(String federationRoleArn) {
+        setFederationRoleArn(federationRoleArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -619,7 +904,15 @@ public class GetEventDataStoreResult extends com.amazonaws.AmazonWebServiceResul
         if (getCreatedTimestamp() != null)
             sb.append("CreatedTimestamp: ").append(getCreatedTimestamp()).append(",");
         if (getUpdatedTimestamp() != null)
-            sb.append("UpdatedTimestamp: ").append(getUpdatedTimestamp());
+            sb.append("UpdatedTimestamp: ").append(getUpdatedTimestamp()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
+        if (getBillingMode() != null)
+            sb.append("BillingMode: ").append(getBillingMode()).append(",");
+        if (getFederationStatus() != null)
+            sb.append("FederationStatus: ").append(getFederationStatus()).append(",");
+        if (getFederationRoleArn() != null)
+            sb.append("FederationRoleArn: ").append(getFederationRoleArn());
         sb.append("}");
         return sb.toString();
     }
@@ -674,6 +967,22 @@ public class GetEventDataStoreResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getUpdatedTimestamp() != null && other.getUpdatedTimestamp().equals(this.getUpdatedTimestamp()) == false)
             return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
+        if (other.getBillingMode() == null ^ this.getBillingMode() == null)
+            return false;
+        if (other.getBillingMode() != null && other.getBillingMode().equals(this.getBillingMode()) == false)
+            return false;
+        if (other.getFederationStatus() == null ^ this.getFederationStatus() == null)
+            return false;
+        if (other.getFederationStatus() != null && other.getFederationStatus().equals(this.getFederationStatus()) == false)
+            return false;
+        if (other.getFederationRoleArn() == null ^ this.getFederationRoleArn() == null)
+            return false;
+        if (other.getFederationRoleArn() != null && other.getFederationRoleArn().equals(this.getFederationRoleArn()) == false)
+            return false;
         return true;
     }
 
@@ -692,6 +1001,10 @@ public class GetEventDataStoreResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getTerminationProtectionEnabled() == null) ? 0 : getTerminationProtectionEnabled().hashCode());
         hashCode = prime * hashCode + ((getCreatedTimestamp() == null) ? 0 : getCreatedTimestamp().hashCode());
         hashCode = prime * hashCode + ((getUpdatedTimestamp() == null) ? 0 : getUpdatedTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getBillingMode() == null) ? 0 : getBillingMode().hashCode());
+        hashCode = prime * hashCode + ((getFederationStatus() == null) ? 0 : getFederationStatus().hashCode());
+        hashCode = prime * hashCode + ((getFederationRoleArn() == null) ? 0 : getFederationRoleArn().hashCode());
         return hashCode;
     }
 

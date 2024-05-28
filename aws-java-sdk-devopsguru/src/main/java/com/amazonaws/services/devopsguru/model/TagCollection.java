@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * tagging, so you can assign the same tag to resources from different services to indicate that the resources are
  * related. For example, you can assign the same tag to an Amazon DynamoDB table resource that you assign to an Lambda
  * function. For more information about using tags, see the <a
- * href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging best practices</a> whitepaper.
+ * href="https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html">Tagging best
+ * practices</a> whitepaper.
  * </p>
  * <p>
  * Each Amazon Web Services tag has two parts.

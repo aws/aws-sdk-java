@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,12 @@ public class LoRaWANDeviceMetadata implements Serializable, Cloneable, Structure
      * </p>
      */
     private java.util.List<LoRaWANGatewayMetadata> gateways;
+    /**
+     * <p>
+     * Information about the LoRaWAN public network accessed by the device.
+     * </p>
+     */
+    private java.util.List<LoRaWANPublicGatewayMetadata> publicGateways;
 
     /**
      * <p>
@@ -336,6 +342,76 @@ public class LoRaWANDeviceMetadata implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * Information about the LoRaWAN public network accessed by the device.
+     * </p>
+     * 
+     * @return Information about the LoRaWAN public network accessed by the device.
+     */
+
+    public java.util.List<LoRaWANPublicGatewayMetadata> getPublicGateways() {
+        return publicGateways;
+    }
+
+    /**
+     * <p>
+     * Information about the LoRaWAN public network accessed by the device.
+     * </p>
+     * 
+     * @param publicGateways
+     *        Information about the LoRaWAN public network accessed by the device.
+     */
+
+    public void setPublicGateways(java.util.Collection<LoRaWANPublicGatewayMetadata> publicGateways) {
+        if (publicGateways == null) {
+            this.publicGateways = null;
+            return;
+        }
+
+        this.publicGateways = new java.util.ArrayList<LoRaWANPublicGatewayMetadata>(publicGateways);
+    }
+
+    /**
+     * <p>
+     * Information about the LoRaWAN public network accessed by the device.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPublicGateways(java.util.Collection)} or {@link #withPublicGateways(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param publicGateways
+     *        Information about the LoRaWAN public network accessed by the device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoRaWANDeviceMetadata withPublicGateways(LoRaWANPublicGatewayMetadata... publicGateways) {
+        if (this.publicGateways == null) {
+            setPublicGateways(new java.util.ArrayList<LoRaWANPublicGatewayMetadata>(publicGateways.length));
+        }
+        for (LoRaWANPublicGatewayMetadata ele : publicGateways) {
+            this.publicGateways.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the LoRaWAN public network accessed by the device.
+     * </p>
+     * 
+     * @param publicGateways
+     *        Information about the LoRaWAN public network accessed by the device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoRaWANDeviceMetadata withPublicGateways(java.util.Collection<LoRaWANPublicGatewayMetadata> publicGateways) {
+        setPublicGateways(publicGateways);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -358,7 +434,9 @@ public class LoRaWANDeviceMetadata implements Serializable, Cloneable, Structure
         if (getTimestamp() != null)
             sb.append("Timestamp: ").append(getTimestamp()).append(",");
         if (getGateways() != null)
-            sb.append("Gateways: ").append(getGateways());
+            sb.append("Gateways: ").append(getGateways()).append(",");
+        if (getPublicGateways() != null)
+            sb.append("PublicGateways: ").append(getPublicGateways());
         sb.append("}");
         return sb.toString();
     }
@@ -397,6 +475,10 @@ public class LoRaWANDeviceMetadata implements Serializable, Cloneable, Structure
             return false;
         if (other.getGateways() != null && other.getGateways().equals(this.getGateways()) == false)
             return false;
+        if (other.getPublicGateways() == null ^ this.getPublicGateways() == null)
+            return false;
+        if (other.getPublicGateways() != null && other.getPublicGateways().equals(this.getPublicGateways()) == false)
+            return false;
         return true;
     }
 
@@ -411,6 +493,7 @@ public class LoRaWANDeviceMetadata implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getFrequency() == null) ? 0 : getFrequency().hashCode());
         hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
         hashCode = prime * hashCode + ((getGateways() == null) ? 0 : getGateways().hashCode());
+        hashCode = prime * hashCode + ((getPublicGateways() == null) ? 0 : getPublicGateways().hashCode());
         return hashCode;
     }
 

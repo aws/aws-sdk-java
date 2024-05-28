@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -80,6 +80,10 @@ public class ModifyTransitGatewayVpcAttachmentRequestMarshaller implements
 
             if (options.getDnsSupport() != null) {
                 request.addParameter("Options.DnsSupport", StringUtils.fromString(options.getDnsSupport()));
+            }
+
+            if (options.getSecurityGroupReferencingSupport() != null) {
+                request.addParameter("Options.SecurityGroupReferencingSupport", StringUtils.fromString(options.getSecurityGroupReferencingSupport()));
             }
 
             if (options.getIpv6Support() != null) {

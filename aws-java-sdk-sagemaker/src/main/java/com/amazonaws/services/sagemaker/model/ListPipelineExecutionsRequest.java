@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class ListPipelineExecutionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the pipeline.
+     * The name or Amazon Resource Name (ARN) of the pipeline.
      * </p>
      */
     private String pipelineName;
@@ -71,11 +71,11 @@ public class ListPipelineExecutionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the pipeline.
+     * The name or Amazon Resource Name (ARN) of the pipeline.
      * </p>
      * 
      * @param pipelineName
-     *        The name of the pipeline.
+     *        The name or Amazon Resource Name (ARN) of the pipeline.
      */
 
     public void setPipelineName(String pipelineName) {
@@ -84,10 +84,10 @@ public class ListPipelineExecutionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the pipeline.
+     * The name or Amazon Resource Name (ARN) of the pipeline.
      * </p>
      * 
-     * @return The name of the pipeline.
+     * @return The name or Amazon Resource Name (ARN) of the pipeline.
      */
 
     public String getPipelineName() {
@@ -96,11 +96,11 @@ public class ListPipelineExecutionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the pipeline.
+     * The name or Amazon Resource Name (ARN) of the pipeline.
      * </p>
      * 
      * @param pipelineName
-     *        The name of the pipeline.
+     *        The name or Amazon Resource Name (ARN) of the pipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

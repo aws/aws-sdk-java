@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,15 +42,8 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
-     * <code>resource-type</code> - The resource type (<code>customer-gateway</code> | <code>dedicated-host</code> |
-     * <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> | <code>fpga-image</code> |
-     * <code>host-reservation</code> | <code>image</code> | <code>instance</code> | <code>internet-gateway</code> |
-     * <code>key-pair</code> | <code>launch-template</code> | <code>natgateway</code> | <code>network-acl</code> |
-     * <code>network-interface</code> | <code>placement-group</code> | <code>reserved-instances</code> |
-     * <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
-     * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code> | <code>vpc</code> |
-     * <code>vpc-endpoint</code> | <code>vpc-endpoint-service</code> | <code>vpc-peering-connection</code> |
-     * <code>vpn-connection</code> | <code>vpn-gateway</code>).
+     * <code>resource-type</code> - The resource type. For a list of possible values, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TagSpecification.html">TagSpecification</a>.
      * </p>
      * </li>
      * <li>
@@ -69,14 +62,16 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * The maximum number of results to return in a single call. This value can be between 5 and 1000. To retrieve the
-     * remaining results, make another call with the returned <code>NextToken</code> value.
+     * The maximum number of items to return for this request. This value can be between 5 and 1000. To get the next
+     * page of items, make another request with the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      */
     private String nextToken;
@@ -107,16 +102,9 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      *        </li>
      *        <li>
      *        <p>
-     *        <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
-     *        <code>dedicated-host</code> | <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> |
-     *        <code>fpga-image</code> | <code>host-reservation</code> | <code>image</code> | <code>instance</code> |
-     *        <code>internet-gateway</code> | <code>key-pair</code> | <code>launch-template</code> |
-     *        <code>natgateway</code> | <code>network-acl</code> | <code>network-interface</code> |
-     *        <code>placement-group</code> | <code>reserved-instances</code> | <code>route-table</code> |
-     *        <code>security-group</code> | <code>snapshot</code> | <code>spot-instances-request</code> |
-     *        <code>subnet</code> | <code>volume</code> | <code>vpc</code> | <code>vpc-endpoint</code> |
-     *        <code>vpc-endpoint-service</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code> |
-     *        <code>vpn-gateway</code>).
+     *        <code>resource-type</code> - The resource type. For a list of possible values, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TagSpecification.html"
+     *        >TagSpecification</a>.
      *        </p>
      *        </li>
      *        <li>
@@ -152,15 +140,8 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
-     * <code>resource-type</code> - The resource type (<code>customer-gateway</code> | <code>dedicated-host</code> |
-     * <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> | <code>fpga-image</code> |
-     * <code>host-reservation</code> | <code>image</code> | <code>instance</code> | <code>internet-gateway</code> |
-     * <code>key-pair</code> | <code>launch-template</code> | <code>natgateway</code> | <code>network-acl</code> |
-     * <code>network-interface</code> | <code>placement-group</code> | <code>reserved-instances</code> |
-     * <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
-     * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code> | <code>vpc</code> |
-     * <code>vpc-endpoint</code> | <code>vpc-endpoint-service</code> | <code>vpc-peering-connection</code> |
-     * <code>vpn-connection</code> | <code>vpn-gateway</code>).
+     * <code>resource-type</code> - The resource type. For a list of possible values, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TagSpecification.html">TagSpecification</a>.
      * </p>
      * </li>
      * <li>
@@ -190,16 +171,9 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      *         </li>
      *         <li>
      *         <p>
-     *         <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
-     *         <code>dedicated-host</code> | <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> |
-     *         <code>fpga-image</code> | <code>host-reservation</code> | <code>image</code> | <code>instance</code> |
-     *         <code>internet-gateway</code> | <code>key-pair</code> | <code>launch-template</code> |
-     *         <code>natgateway</code> | <code>network-acl</code> | <code>network-interface</code> |
-     *         <code>placement-group</code> | <code>reserved-instances</code> | <code>route-table</code> |
-     *         <code>security-group</code> | <code>snapshot</code> | <code>spot-instances-request</code> |
-     *         <code>subnet</code> | <code>volume</code> | <code>vpc</code> | <code>vpc-endpoint</code> |
-     *         <code>vpc-endpoint-service</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code> |
-     *         <code>vpn-gateway</code>).
+     *         <code>resource-type</code> - The resource type. For a list of possible values, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TagSpecification.html"
+     *         >TagSpecification</a>.
      *         </p>
      *         </li>
      *         <li>
@@ -239,15 +213,8 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
-     * <code>resource-type</code> - The resource type (<code>customer-gateway</code> | <code>dedicated-host</code> |
-     * <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> | <code>fpga-image</code> |
-     * <code>host-reservation</code> | <code>image</code> | <code>instance</code> | <code>internet-gateway</code> |
-     * <code>key-pair</code> | <code>launch-template</code> | <code>natgateway</code> | <code>network-acl</code> |
-     * <code>network-interface</code> | <code>placement-group</code> | <code>reserved-instances</code> |
-     * <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
-     * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code> | <code>vpc</code> |
-     * <code>vpc-endpoint</code> | <code>vpc-endpoint-service</code> | <code>vpc-peering-connection</code> |
-     * <code>vpn-connection</code> | <code>vpn-gateway</code>).
+     * <code>resource-type</code> - The resource type. For a list of possible values, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TagSpecification.html">TagSpecification</a>.
      * </p>
      * </li>
      * <li>
@@ -278,16 +245,9 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      *        </li>
      *        <li>
      *        <p>
-     *        <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
-     *        <code>dedicated-host</code> | <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> |
-     *        <code>fpga-image</code> | <code>host-reservation</code> | <code>image</code> | <code>instance</code> |
-     *        <code>internet-gateway</code> | <code>key-pair</code> | <code>launch-template</code> |
-     *        <code>natgateway</code> | <code>network-acl</code> | <code>network-interface</code> |
-     *        <code>placement-group</code> | <code>reserved-instances</code> | <code>route-table</code> |
-     *        <code>security-group</code> | <code>snapshot</code> | <code>spot-instances-request</code> |
-     *        <code>subnet</code> | <code>volume</code> | <code>vpc</code> | <code>vpc-endpoint</code> |
-     *        <code>vpc-endpoint-service</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code> |
-     *        <code>vpn-gateway</code>).
+     *        <code>resource-type</code> - The resource type. For a list of possible values, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TagSpecification.html"
+     *        >TagSpecification</a>.
      *        </p>
      *        </li>
      *        <li>
@@ -329,15 +289,8 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
-     * <code>resource-type</code> - The resource type (<code>customer-gateway</code> | <code>dedicated-host</code> |
-     * <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> | <code>fpga-image</code> |
-     * <code>host-reservation</code> | <code>image</code> | <code>instance</code> | <code>internet-gateway</code> |
-     * <code>key-pair</code> | <code>launch-template</code> | <code>natgateway</code> | <code>network-acl</code> |
-     * <code>network-interface</code> | <code>placement-group</code> | <code>reserved-instances</code> |
-     * <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
-     * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code> | <code>vpc</code> |
-     * <code>vpc-endpoint</code> | <code>vpc-endpoint-service</code> | <code>vpc-peering-connection</code> |
-     * <code>vpn-connection</code> | <code>vpn-gateway</code>).
+     * <code>resource-type</code> - The resource type. For a list of possible values, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TagSpecification.html">TagSpecification</a>.
      * </p>
      * </li>
      * <li>
@@ -373,16 +326,9 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      *        </li>
      *        <li>
      *        <p>
-     *        <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
-     *        <code>dedicated-host</code> | <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> |
-     *        <code>fpga-image</code> | <code>host-reservation</code> | <code>image</code> | <code>instance</code> |
-     *        <code>internet-gateway</code> | <code>key-pair</code> | <code>launch-template</code> |
-     *        <code>natgateway</code> | <code>network-acl</code> | <code>network-interface</code> |
-     *        <code>placement-group</code> | <code>reserved-instances</code> | <code>route-table</code> |
-     *        <code>security-group</code> | <code>snapshot</code> | <code>spot-instances-request</code> |
-     *        <code>subnet</code> | <code>volume</code> | <code>vpc</code> | <code>vpc-endpoint</code> |
-     *        <code>vpc-endpoint-service</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code> |
-     *        <code>vpn-gateway</code>).
+     *        <code>resource-type</code> - The resource type. For a list of possible values, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TagSpecification.html"
+     *        >TagSpecification</a>.
      *        </p>
      *        </li>
      *        <li>
@@ -426,15 +372,8 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
-     * <code>resource-type</code> - The resource type (<code>customer-gateway</code> | <code>dedicated-host</code> |
-     * <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> | <code>fpga-image</code> |
-     * <code>host-reservation</code> | <code>image</code> | <code>instance</code> | <code>internet-gateway</code> |
-     * <code>key-pair</code> | <code>launch-template</code> | <code>natgateway</code> | <code>network-acl</code> |
-     * <code>network-interface</code> | <code>placement-group</code> | <code>reserved-instances</code> |
-     * <code>route-table</code> | <code>security-group</code> | <code>snapshot</code> |
-     * <code>spot-instances-request</code> | <code>subnet</code> | <code>volume</code> | <code>vpc</code> |
-     * <code>vpc-endpoint</code> | <code>vpc-endpoint-service</code> | <code>vpc-peering-connection</code> |
-     * <code>vpn-connection</code> | <code>vpn-gateway</code>).
+     * <code>resource-type</code> - The resource type. For a list of possible values, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TagSpecification.html">TagSpecification</a>.
      * </p>
      * </li>
      * <li>
@@ -465,16 +404,9 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
      *        </li>
      *        <li>
      *        <p>
-     *        <code>resource-type</code> - The resource type (<code>customer-gateway</code> |
-     *        <code>dedicated-host</code> | <code>dhcp-options</code> | <code>elastic-ip</code> | <code>fleet</code> |
-     *        <code>fpga-image</code> | <code>host-reservation</code> | <code>image</code> | <code>instance</code> |
-     *        <code>internet-gateway</code> | <code>key-pair</code> | <code>launch-template</code> |
-     *        <code>natgateway</code> | <code>network-acl</code> | <code>network-interface</code> |
-     *        <code>placement-group</code> | <code>reserved-instances</code> | <code>route-table</code> |
-     *        <code>security-group</code> | <code>snapshot</code> | <code>spot-instances-request</code> |
-     *        <code>subnet</code> | <code>volume</code> | <code>vpc</code> | <code>vpc-endpoint</code> |
-     *        <code>vpc-endpoint-service</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code> |
-     *        <code>vpn-gateway</code>).
+     *        <code>resource-type</code> - The resource type. For a list of possible values, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TagSpecification.html"
+     *        >TagSpecification</a>.
      *        </p>
      *        </li>
      *        <li>
@@ -498,13 +430,16 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. This value can be between 5 and 1000. To retrieve the
-     * remaining results, make another call with the returned <code>NextToken</code> value.
+     * The maximum number of items to return for this request. This value can be between 5 and 1000. To get the next
+     * page of items, make another request with the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. This value can be between 5 and 1000. To
-     *        retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
+     *        The maximum number of items to return for this request. This value can be between 5 and 1000. To get the
+     *        next page of items, make another request with the token returned in the output. For more information, see
+     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">
+     *        Pagination</a>.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -513,12 +448,15 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. This value can be between 5 and 1000. To retrieve the
-     * remaining results, make another call with the returned <code>NextToken</code> value.
+     * The maximum number of items to return for this request. This value can be between 5 and 1000. To get the next
+     * page of items, make another request with the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
-     * @return The maximum number of results to return in a single call. This value can be between 5 and 1000. To
-     *         retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
+     * @return The maximum number of items to return for this request. This value can be between 5 and 1000. To get the
+     *         next page of items, make another request with the token returned in the output. For more information, see
+     *         <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">
+     *         Pagination</a>.
      */
 
     public Integer getMaxResults() {
@@ -527,13 +465,16 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. This value can be between 5 and 1000. To retrieve the
-     * remaining results, make another call with the returned <code>NextToken</code> value.
+     * The maximum number of items to return for this request. This value can be between 5 and 1000. To get the next
+     * page of items, make another request with the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. This value can be between 5 and 1000. To
-     *        retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
+     *        The maximum number of items to return for this request. This value can be between 5 and 1000. To get the
+     *        next page of items, make another request with the token returned in the output. For more information, see
+     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">
+     *        Pagination</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -544,11 +485,13 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
      * @param nextToken
-     *        The token to retrieve the next page of results.
+     *        The token returned from a previous paginated request. Pagination continues from the end of the items
+     *        returned by the previous request.
      */
 
     public void setNextToken(String nextToken) {
@@ -557,10 +500,12 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
-     * @return The token to retrieve the next page of results.
+     * @return The token returned from a previous paginated request. Pagination continues from the end of the items
+     *         returned by the previous request.
      */
 
     public String getNextToken() {
@@ -569,11 +514,13 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
      * @param nextToken
-     *        The token to retrieve the next page of results.
+     *        The token returned from a previous paginated request. Pagination continues from the end of the items
+     *        returned by the previous request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class InstanceDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ElastiCacheInstanceDetails").build();
     private static final MarshallingInfo<StructuredPojo> ESINSTANCEDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ESInstanceDetails").build();
+    private static final MarshallingInfo<StructuredPojo> MEMORYDBINSTANCEDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MemoryDBInstanceDetails").build();
 
     private static final InstanceDetailsMarshaller instance = new InstanceDetailsMarshaller();
 
@@ -59,6 +61,7 @@ public class InstanceDetailsMarshaller {
             protocolMarshaller.marshall(instanceDetails.getRedshiftInstanceDetails(), REDSHIFTINSTANCEDETAILS_BINDING);
             protocolMarshaller.marshall(instanceDetails.getElastiCacheInstanceDetails(), ELASTICACHEINSTANCEDETAILS_BINDING);
             protocolMarshaller.marshall(instanceDetails.getESInstanceDetails(), ESINSTANCEDETAILS_BINDING);
+            protocolMarshaller.marshall(instanceDetails.getMemoryDBInstanceDetails(), MEMORYDBINSTANCEDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

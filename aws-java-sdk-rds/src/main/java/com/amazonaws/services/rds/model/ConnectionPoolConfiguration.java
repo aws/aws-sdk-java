@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,19 +37,26 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      * If you specify <code>MaxIdleConnectionsPercent</code>, then you must also include a value for this parameter.
      * </p>
      * <p>
-     * Default: 10 for RDS for Microsoft SQL Server, and 100 for all other engines
+     * Default: <code>10</code> for RDS for Microsoft SQL Server, and <code>100</code> for all other engines
      * </p>
      * <p>
-     * Constraints: Must be between 1 and 100.
+     * Constraints:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be between 1 and 100.
+     * </p>
+     * </li>
+     * </ul>
      */
     private Integer maxConnectionsPercent;
     /**
      * <p>
-     * Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed
-     * as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by
-     * the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low
-     * value causes the proxy to close more idle connections and return them to the database.
+     * A value that controls how actively the proxy closes idle database connections in the connection pool. The value
+     * is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB
+     * cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database
+     * connections open. A low value causes the proxy to close more idle connections and return them to the database.
      * </p>
      * <p>
      * If you specify this parameter, then you must also include a value for <code>MaxConnectionsPercent</code>.
@@ -58,25 +65,40 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      * Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if
      * <code>MaxConnectionsPercent</code> is 80, then the default value of <code>MaxIdleConnectionsPercent</code> is 40.
      * If the value of <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server,
-     * <code>MaxIdleConnectionsPercent</code> is 5, and for all other engines, the default is 50.
+     * <code>MaxIdleConnectionsPercent</code> is <code>5</code>, and for all other engines, the default is
+     * <code>50</code>.
      * </p>
      * <p>
-     * Constraints: Must be between 0 and the value of <code>MaxConnectionsPercent</code>.
+     * Constraints:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be between 0 and the value of <code>MaxConnectionsPercent</code>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private Integer maxIdleConnectionsPercent;
     /**
      * <p>
-     * The number of seconds for a proxy to wait for a connection to become available in the connection pool. Only
-     * applies when the proxy has opened its maximum number of connections and all connections are busy with client
-     * sessions.
+     * The number of seconds for a proxy to wait for a connection to become available in the connection pool. This
+     * setting only applies when the proxy has opened its maximum number of connections and all connections are busy
+     * with client sessions. For an unlimited wait time, specify <code>0</code>.
      * </p>
      * <p>
-     * Default: 120
+     * Default: <code>120</code>
      * </p>
      * <p>
-     * Constraints: between 1 and 3600, or 0 representing unlimited
+     * Constraints:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be between 0 and 3600.
+     * </p>
+     * </li>
+     * </ul>
      */
     private Integer connectionBorrowTimeout;
     /**
@@ -113,11 +135,18 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      * If you specify <code>MaxIdleConnectionsPercent</code>, then you must also include a value for this parameter.
      * </p>
      * <p>
-     * Default: 10 for RDS for Microsoft SQL Server, and 100 for all other engines
+     * Default: <code>10</code> for RDS for Microsoft SQL Server, and <code>100</code> for all other engines
      * </p>
      * <p>
-     * Constraints: Must be between 1 and 100.
+     * Constraints:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be between 1 and 100.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param maxConnectionsPercent
      *        The maximum size of the connection pool for each target in a target group. The value is expressed as a
@@ -128,10 +157,17 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      *        parameter.
      *        </p>
      *        <p>
-     *        Default: 10 for RDS for Microsoft SQL Server, and 100 for all other engines
+     *        Default: <code>10</code> for RDS for Microsoft SQL Server, and <code>100</code> for all other engines
      *        </p>
      *        <p>
-     *        Constraints: Must be between 1 and 100.
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must be between 1 and 100.
+     *        </p>
+     *        </li>
      */
 
     public void setMaxConnectionsPercent(Integer maxConnectionsPercent) {
@@ -148,11 +184,18 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      * If you specify <code>MaxIdleConnectionsPercent</code>, then you must also include a value for this parameter.
      * </p>
      * <p>
-     * Default: 10 for RDS for Microsoft SQL Server, and 100 for all other engines
+     * Default: <code>10</code> for RDS for Microsoft SQL Server, and <code>100</code> for all other engines
      * </p>
      * <p>
-     * Constraints: Must be between 1 and 100.
+     * Constraints:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be between 1 and 100.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The maximum size of the connection pool for each target in a target group. The value is expressed as a
      *         percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used
@@ -162,10 +205,17 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      *         parameter.
      *         </p>
      *         <p>
-     *         Default: 10 for RDS for Microsoft SQL Server, and 100 for all other engines
+     *         Default: <code>10</code> for RDS for Microsoft SQL Server, and <code>100</code> for all other engines
      *         </p>
      *         <p>
-     *         Constraints: Must be between 1 and 100.
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Must be between 1 and 100.
+     *         </p>
+     *         </li>
      */
 
     public Integer getMaxConnectionsPercent() {
@@ -182,11 +232,18 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      * If you specify <code>MaxIdleConnectionsPercent</code>, then you must also include a value for this parameter.
      * </p>
      * <p>
-     * Default: 10 for RDS for Microsoft SQL Server, and 100 for all other engines
+     * Default: <code>10</code> for RDS for Microsoft SQL Server, and <code>100</code> for all other engines
      * </p>
      * <p>
-     * Constraints: Must be between 1 and 100.
+     * Constraints:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be between 1 and 100.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param maxConnectionsPercent
      *        The maximum size of the connection pool for each target in a target group. The value is expressed as a
@@ -197,10 +254,17 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      *        parameter.
      *        </p>
      *        <p>
-     *        Default: 10 for RDS for Microsoft SQL Server, and 100 for all other engines
+     *        Default: <code>10</code> for RDS for Microsoft SQL Server, and <code>100</code> for all other engines
      *        </p>
      *        <p>
-     *        Constraints: Must be between 1 and 100.
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must be between 1 and 100.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -211,10 +275,10 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed
-     * as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by
-     * the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low
-     * value causes the proxy to close more idle connections and return them to the database.
+     * A value that controls how actively the proxy closes idle database connections in the connection pool. The value
+     * is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB
+     * cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database
+     * connections open. A low value causes the proxy to close more idle connections and return them to the database.
      * </p>
      * <p>
      * If you specify this parameter, then you must also include a value for <code>MaxConnectionsPercent</code>.
@@ -223,18 +287,26 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      * Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if
      * <code>MaxConnectionsPercent</code> is 80, then the default value of <code>MaxIdleConnectionsPercent</code> is 40.
      * If the value of <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server,
-     * <code>MaxIdleConnectionsPercent</code> is 5, and for all other engines, the default is 50.
+     * <code>MaxIdleConnectionsPercent</code> is <code>5</code>, and for all other engines, the default is
+     * <code>50</code>.
      * </p>
      * <p>
-     * Constraints: Must be between 0 and the value of <code>MaxConnectionsPercent</code>.
+     * Constraints:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be between 0 and the value of <code>MaxConnectionsPercent</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param maxIdleConnectionsPercent
-     *        Controls how actively the proxy closes idle database connections in the connection pool. The value is
-     *        expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB
-     *        cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database
-     *        connections open. A low value causes the proxy to close more idle connections and return them to the
-     *        database.</p>
+     *        A value that controls how actively the proxy closes idle database connections in the connection pool. The
+     *        value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or
+     *        Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle
+     *        database connections open. A low value causes the proxy to close more idle connections and return them to
+     *        the database.</p>
      *        <p>
      *        If you specify this parameter, then you must also include a value for <code>MaxConnectionsPercent</code>.
      *        </p>
@@ -242,10 +314,18 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      *        Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if
      *        <code>MaxConnectionsPercent</code> is 80, then the default value of <code>MaxIdleConnectionsPercent</code>
      *        is 40. If the value of <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server,
-     *        <code>MaxIdleConnectionsPercent</code> is 5, and for all other engines, the default is 50.
+     *        <code>MaxIdleConnectionsPercent</code> is <code>5</code>, and for all other engines, the default is
+     *        <code>50</code>.
      *        </p>
      *        <p>
-     *        Constraints: Must be between 0 and the value of <code>MaxConnectionsPercent</code>.
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must be between 0 and the value of <code>MaxConnectionsPercent</code>.
+     *        </p>
+     *        </li>
      */
 
     public void setMaxIdleConnectionsPercent(Integer maxIdleConnectionsPercent) {
@@ -254,10 +334,10 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed
-     * as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by
-     * the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low
-     * value causes the proxy to close more idle connections and return them to the database.
+     * A value that controls how actively the proxy closes idle database connections in the connection pool. The value
+     * is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB
+     * cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database
+     * connections open. A low value causes the proxy to close more idle connections and return them to the database.
      * </p>
      * <p>
      * If you specify this parameter, then you must also include a value for <code>MaxConnectionsPercent</code>.
@@ -266,15 +346,23 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      * Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if
      * <code>MaxConnectionsPercent</code> is 80, then the default value of <code>MaxIdleConnectionsPercent</code> is 40.
      * If the value of <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server,
-     * <code>MaxIdleConnectionsPercent</code> is 5, and for all other engines, the default is 50.
+     * <code>MaxIdleConnectionsPercent</code> is <code>5</code>, and for all other engines, the default is
+     * <code>50</code>.
      * </p>
      * <p>
-     * Constraints: Must be between 0 and the value of <code>MaxConnectionsPercent</code>.
+     * Constraints:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be between 0 and the value of <code>MaxConnectionsPercent</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Controls how actively the proxy closes idle database connections in the connection pool. The value is
-     *         expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora
-     *         DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle
+     * @return A value that controls how actively the proxy closes idle database connections in the connection pool. The
+     *         value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or
+     *         Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle
      *         database connections open. A low value causes the proxy to close more idle connections and return them to
      *         the database.</p>
      *         <p>
@@ -284,11 +372,18 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      *         Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if
      *         <code>MaxConnectionsPercent</code> is 80, then the default value of
      *         <code>MaxIdleConnectionsPercent</code> is 40. If the value of <code>MaxConnectionsPercent</code> isn't
-     *         specified, then for SQL Server, <code>MaxIdleConnectionsPercent</code> is 5, and for all other engines,
-     *         the default is 50.
+     *         specified, then for SQL Server, <code>MaxIdleConnectionsPercent</code> is <code>5</code>, and for all
+     *         other engines, the default is <code>50</code>.
      *         </p>
      *         <p>
-     *         Constraints: Must be between 0 and the value of <code>MaxConnectionsPercent</code>.
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Must be between 0 and the value of <code>MaxConnectionsPercent</code>.
+     *         </p>
+     *         </li>
      */
 
     public Integer getMaxIdleConnectionsPercent() {
@@ -297,10 +392,10 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Controls how actively the proxy closes idle database connections in the connection pool. The value is expressed
-     * as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by
-     * the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low
-     * value causes the proxy to close more idle connections and return them to the database.
+     * A value that controls how actively the proxy closes idle database connections in the connection pool. The value
+     * is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB
+     * cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database
+     * connections open. A low value causes the proxy to close more idle connections and return them to the database.
      * </p>
      * <p>
      * If you specify this parameter, then you must also include a value for <code>MaxConnectionsPercent</code>.
@@ -309,18 +404,26 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      * Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if
      * <code>MaxConnectionsPercent</code> is 80, then the default value of <code>MaxIdleConnectionsPercent</code> is 40.
      * If the value of <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server,
-     * <code>MaxIdleConnectionsPercent</code> is 5, and for all other engines, the default is 50.
+     * <code>MaxIdleConnectionsPercent</code> is <code>5</code>, and for all other engines, the default is
+     * <code>50</code>.
      * </p>
      * <p>
-     * Constraints: Must be between 0 and the value of <code>MaxConnectionsPercent</code>.
+     * Constraints:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be between 0 and the value of <code>MaxConnectionsPercent</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param maxIdleConnectionsPercent
-     *        Controls how actively the proxy closes idle database connections in the connection pool. The value is
-     *        expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB
-     *        cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database
-     *        connections open. A low value causes the proxy to close more idle connections and return them to the
-     *        database.</p>
+     *        A value that controls how actively the proxy closes idle database connections in the connection pool. The
+     *        value is expressed as a percentage of the <code>max_connections</code> setting for the RDS DB instance or
+     *        Aurora DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle
+     *        database connections open. A low value causes the proxy to close more idle connections and return them to
+     *        the database.</p>
      *        <p>
      *        If you specify this parameter, then you must also include a value for <code>MaxConnectionsPercent</code>.
      *        </p>
@@ -328,10 +431,18 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      *        Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if
      *        <code>MaxConnectionsPercent</code> is 80, then the default value of <code>MaxIdleConnectionsPercent</code>
      *        is 40. If the value of <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server,
-     *        <code>MaxIdleConnectionsPercent</code> is 5, and for all other engines, the default is 50.
+     *        <code>MaxIdleConnectionsPercent</code> is <code>5</code>, and for all other engines, the default is
+     *        <code>50</code>.
      *        </p>
      *        <p>
-     *        Constraints: Must be between 0 and the value of <code>MaxConnectionsPercent</code>.
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must be between 0 and the value of <code>MaxConnectionsPercent</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -342,26 +453,40 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of seconds for a proxy to wait for a connection to become available in the connection pool. Only
-     * applies when the proxy has opened its maximum number of connections and all connections are busy with client
-     * sessions.
+     * The number of seconds for a proxy to wait for a connection to become available in the connection pool. This
+     * setting only applies when the proxy has opened its maximum number of connections and all connections are busy
+     * with client sessions. For an unlimited wait time, specify <code>0</code>.
      * </p>
      * <p>
-     * Default: 120
+     * Default: <code>120</code>
      * </p>
      * <p>
-     * Constraints: between 1 and 3600, or 0 representing unlimited
+     * Constraints:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be between 0 and 3600.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param connectionBorrowTimeout
      *        The number of seconds for a proxy to wait for a connection to become available in the connection pool.
-     *        Only applies when the proxy has opened its maximum number of connections and all connections are busy with
-     *        client sessions.</p>
+     *        This setting only applies when the proxy has opened its maximum number of connections and all connections
+     *        are busy with client sessions. For an unlimited wait time, specify <code>0</code>.</p>
      *        <p>
-     *        Default: 120
+     *        Default: <code>120</code>
      *        </p>
      *        <p>
-     *        Constraints: between 1 and 3600, or 0 representing unlimited
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must be between 0 and 3600.
+     *        </p>
+     *        </li>
      */
 
     public void setConnectionBorrowTimeout(Integer connectionBorrowTimeout) {
@@ -370,25 +495,39 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of seconds for a proxy to wait for a connection to become available in the connection pool. Only
-     * applies when the proxy has opened its maximum number of connections and all connections are busy with client
-     * sessions.
+     * The number of seconds for a proxy to wait for a connection to become available in the connection pool. This
+     * setting only applies when the proxy has opened its maximum number of connections and all connections are busy
+     * with client sessions. For an unlimited wait time, specify <code>0</code>.
      * </p>
      * <p>
-     * Default: 120
+     * Default: <code>120</code>
      * </p>
      * <p>
-     * Constraints: between 1 and 3600, or 0 representing unlimited
+     * Constraints:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be between 0 and 3600.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The number of seconds for a proxy to wait for a connection to become available in the connection pool.
-     *         Only applies when the proxy has opened its maximum number of connections and all connections are busy
-     *         with client sessions.</p>
+     *         This setting only applies when the proxy has opened its maximum number of connections and all connections
+     *         are busy with client sessions. For an unlimited wait time, specify <code>0</code>.</p>
      *         <p>
-     *         Default: 120
+     *         Default: <code>120</code>
      *         </p>
      *         <p>
-     *         Constraints: between 1 and 3600, or 0 representing unlimited
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Must be between 0 and 3600.
+     *         </p>
+     *         </li>
      */
 
     public Integer getConnectionBorrowTimeout() {
@@ -397,26 +536,40 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of seconds for a proxy to wait for a connection to become available in the connection pool. Only
-     * applies when the proxy has opened its maximum number of connections and all connections are busy with client
-     * sessions.
+     * The number of seconds for a proxy to wait for a connection to become available in the connection pool. This
+     * setting only applies when the proxy has opened its maximum number of connections and all connections are busy
+     * with client sessions. For an unlimited wait time, specify <code>0</code>.
      * </p>
      * <p>
-     * Default: 120
+     * Default: <code>120</code>
      * </p>
      * <p>
-     * Constraints: between 1 and 3600, or 0 representing unlimited
+     * Constraints:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be between 0 and 3600.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param connectionBorrowTimeout
      *        The number of seconds for a proxy to wait for a connection to become available in the connection pool.
-     *        Only applies when the proxy has opened its maximum number of connections and all connections are busy with
-     *        client sessions.</p>
+     *        This setting only applies when the proxy has opened its maximum number of connections and all connections
+     *        are busy with client sessions. For an unlimited wait time, specify <code>0</code>.</p>
      *        <p>
-     *        Default: 120
+     *        Default: <code>120</code>
      *        </p>
      *        <p>
-     *        Constraints: between 1 and 3600, or 0 representing unlimited
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must be between 0 and 3600.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

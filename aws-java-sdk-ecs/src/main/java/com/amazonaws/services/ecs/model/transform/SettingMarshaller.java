@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class SettingMarshaller {
             .marshallLocationName("value").build();
     private static final MarshallingInfo<String> PRINCIPALARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("principalArn").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("type").build();
 
     private static final SettingMarshaller instance = new SettingMarshaller();
 
@@ -53,6 +55,7 @@ public class SettingMarshaller {
             protocolMarshaller.marshall(setting.getName(), NAME_BINDING);
             protocolMarshaller.marshall(setting.getValue(), VALUE_BINDING);
             protocolMarshaller.marshall(setting.getPrincipalArn(), PRINCIPALARN_BINDING);
+            protocolMarshaller.marshall(setting.getType(), TYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

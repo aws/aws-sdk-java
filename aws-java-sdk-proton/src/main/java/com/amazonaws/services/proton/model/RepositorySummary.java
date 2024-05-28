@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,12 @@ public class RepositorySummary implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String arn;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the of your connection that connects Proton to your repository.
+     * </p>
+     */
+    private String connectionArn;
     /**
      * <p>
      * The repository name.
@@ -84,6 +90,46 @@ public class RepositorySummary implements Serializable, Cloneable, StructuredPoj
 
     public RepositorySummary withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the of your connection that connects Proton to your repository.
+     * </p>
+     * 
+     * @param connectionArn
+     *        The Amazon Resource Name (ARN) of the of your connection that connects Proton to your repository.
+     */
+
+    public void setConnectionArn(String connectionArn) {
+        this.connectionArn = connectionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the of your connection that connects Proton to your repository.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the of your connection that connects Proton to your repository.
+     */
+
+    public String getConnectionArn() {
+        return this.connectionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the of your connection that connects Proton to your repository.
+     * </p>
+     * 
+     * @param connectionArn
+     *        The Amazon Resource Name (ARN) of the of your connection that connects Proton to your repository.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RepositorySummary withConnectionArn(String connectionArn) {
+        setConnectionArn(connectionArn);
         return this;
     }
 
@@ -200,6 +246,8 @@ public class RepositorySummary implements Serializable, Cloneable, StructuredPoj
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getConnectionArn() != null)
+            sb.append("ConnectionArn: ").append(getConnectionArn()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getProvider() != null)
@@ -222,6 +270,10 @@ public class RepositorySummary implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
+        if (other.getConnectionArn() == null ^ this.getConnectionArn() == null)
+            return false;
+        if (other.getConnectionArn() != null && other.getConnectionArn().equals(this.getConnectionArn()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -239,6 +291,7 @@ public class RepositorySummary implements Serializable, Cloneable, StructuredPoj
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getConnectionArn() == null) ? 0 : getConnectionArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getProvider() == null) ? 0 : getProvider().hashCode());
         return hashCode;

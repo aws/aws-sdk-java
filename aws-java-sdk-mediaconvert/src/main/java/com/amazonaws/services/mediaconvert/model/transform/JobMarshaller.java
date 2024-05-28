@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class JobMarshaller {
             .marshallLocationName("arn").build();
     private static final MarshallingInfo<String> BILLINGTAGSSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("billingTagsSource").build();
+    private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientRequestToken").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> CURRENTPHASE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -79,6 +81,8 @@ public class JobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timing").build();
     private static final MarshallingInfo<Map> USERMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("userMetadata").build();
+    private static final MarshallingInfo<List> WARNINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("warnings").build();
 
     private static final JobMarshaller instance = new JobMarshaller();
 
@@ -100,6 +104,7 @@ public class JobMarshaller {
             protocolMarshaller.marshall(job.getAccelerationStatus(), ACCELERATIONSTATUS_BINDING);
             protocolMarshaller.marshall(job.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(job.getBillingTagsSource(), BILLINGTAGSSOURCE_BINDING);
+            protocolMarshaller.marshall(job.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(job.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(job.getCurrentPhase(), CURRENTPHASE_BINDING);
             protocolMarshaller.marshall(job.getErrorCode(), ERRORCODE_BINDING);
@@ -121,6 +126,7 @@ public class JobMarshaller {
             protocolMarshaller.marshall(job.getStatusUpdateInterval(), STATUSUPDATEINTERVAL_BINDING);
             protocolMarshaller.marshall(job.getTiming(), TIMING_BINDING);
             protocolMarshaller.marshall(job.getUserMetadata(), USERMETADATA_BINDING);
+            protocolMarshaller.marshall(job.getWarnings(), WARNINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

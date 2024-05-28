@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,8 @@ public class IndexingFilterMarshaller {
 
     private static final MarshallingInfo<List> NAMEDSHADOWNAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("namedShadowNames").build();
+    private static final MarshallingInfo<List> GEOLOCATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("geoLocations").build();
 
     private static final IndexingFilterMarshaller instance = new IndexingFilterMarshaller();
 
@@ -48,6 +50,7 @@ public class IndexingFilterMarshaller {
 
         try {
             protocolMarshaller.marshall(indexingFilter.getNamedShadowNames(), NAMEDSHADOWNAMES_BINDING);
+            protocolMarshaller.marshall(indexingFilter.getGeoLocations(), GEOLOCATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

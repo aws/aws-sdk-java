@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -125,6 +125,18 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The configuration of the retry policy that the job runs on.
+     * </p>
+     */
+    private RetryPolicyConfiguration retryPolicyConfiguration;
+    /**
+     * <p>
+     * The current status of the retry policy executed on the job.
+     * </p>
+     */
+    private RetryPolicyExecution retryPolicyExecution;
 
     /**
      * <p>
@@ -833,6 +845,86 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The configuration of the retry policy that the job runs on.
+     * </p>
+     * 
+     * @param retryPolicyConfiguration
+     *        The configuration of the retry policy that the job runs on.
+     */
+
+    public void setRetryPolicyConfiguration(RetryPolicyConfiguration retryPolicyConfiguration) {
+        this.retryPolicyConfiguration = retryPolicyConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration of the retry policy that the job runs on.
+     * </p>
+     * 
+     * @return The configuration of the retry policy that the job runs on.
+     */
+
+    public RetryPolicyConfiguration getRetryPolicyConfiguration() {
+        return this.retryPolicyConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration of the retry policy that the job runs on.
+     * </p>
+     * 
+     * @param retryPolicyConfiguration
+     *        The configuration of the retry policy that the job runs on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobRun withRetryPolicyConfiguration(RetryPolicyConfiguration retryPolicyConfiguration) {
+        setRetryPolicyConfiguration(retryPolicyConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current status of the retry policy executed on the job.
+     * </p>
+     * 
+     * @param retryPolicyExecution
+     *        The current status of the retry policy executed on the job.
+     */
+
+    public void setRetryPolicyExecution(RetryPolicyExecution retryPolicyExecution) {
+        this.retryPolicyExecution = retryPolicyExecution;
+    }
+
+    /**
+     * <p>
+     * The current status of the retry policy executed on the job.
+     * </p>
+     * 
+     * @return The current status of the retry policy executed on the job.
+     */
+
+    public RetryPolicyExecution getRetryPolicyExecution() {
+        return this.retryPolicyExecution;
+    }
+
+    /**
+     * <p>
+     * The current status of the retry policy executed on the job.
+     * </p>
+     * 
+     * @param retryPolicyExecution
+     *        The current status of the retry policy executed on the job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobRun withRetryPolicyExecution(RetryPolicyExecution retryPolicyExecution) {
+        setRetryPolicyExecution(retryPolicyExecution);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -875,7 +967,11 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
         if (getFailureReason() != null)
             sb.append("FailureReason: ").append(getFailureReason()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getRetryPolicyConfiguration() != null)
+            sb.append("RetryPolicyConfiguration: ").append(getRetryPolicyConfiguration()).append(",");
+        if (getRetryPolicyExecution() != null)
+            sb.append("RetryPolicyExecution: ").append(getRetryPolicyExecution());
         sb.append("}");
         return sb.toString();
     }
@@ -954,6 +1050,14 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getRetryPolicyConfiguration() == null ^ this.getRetryPolicyConfiguration() == null)
+            return false;
+        if (other.getRetryPolicyConfiguration() != null && other.getRetryPolicyConfiguration().equals(this.getRetryPolicyConfiguration()) == false)
+            return false;
+        if (other.getRetryPolicyExecution() == null ^ this.getRetryPolicyExecution() == null)
+            return false;
+        if (other.getRetryPolicyExecution() != null && other.getRetryPolicyExecution().equals(this.getRetryPolicyExecution()) == false)
+            return false;
         return true;
     }
 
@@ -978,6 +1082,8 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStateDetails() == null) ? 0 : getStateDetails().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getRetryPolicyConfiguration() == null) ? 0 : getRetryPolicyConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getRetryPolicyExecution() == null) ? 0 : getRetryPolicyExecution().hashCode());
         return hashCode;
     }
 

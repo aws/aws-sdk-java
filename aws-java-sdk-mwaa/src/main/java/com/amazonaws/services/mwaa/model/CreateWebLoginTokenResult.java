@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,16 +25,69 @@ public class CreateWebLoginTokenResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
+     * An Airflow web server login token.
+     * </p>
+     */
+    private String webToken;
+    /**
+     * <p>
      * The Airflow web server hostname for the environment.
      * </p>
      */
     private String webServerHostname;
     /**
      * <p>
-     * An Airflow web server login token.
+     * The name of the IAM identity creating the web login token. This might be an IAM user, or an assumed or federated
+     * identity. For example, <code>assumed-role/Admin/your-name</code>.
      * </p>
      */
-    private String webToken;
+    private String iamIdentity;
+    /**
+     * <p>
+     * The user name of the Apache Airflow identity creating the web login token.
+     * </p>
+     */
+    private String airflowIdentity;
+
+    /**
+     * <p>
+     * An Airflow web server login token.
+     * </p>
+     * 
+     * @param webToken
+     *        An Airflow web server login token.
+     */
+
+    public void setWebToken(String webToken) {
+        this.webToken = webToken;
+    }
+
+    /**
+     * <p>
+     * An Airflow web server login token.
+     * </p>
+     * 
+     * @return An Airflow web server login token.
+     */
+
+    public String getWebToken() {
+        return this.webToken;
+    }
+
+    /**
+     * <p>
+     * An Airflow web server login token.
+     * </p>
+     * 
+     * @param webToken
+     *        An Airflow web server login token.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWebLoginTokenResult withWebToken(String webToken) {
+        setWebToken(webToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -78,41 +131,87 @@ public class CreateWebLoginTokenResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An Airflow web server login token.
+     * The name of the IAM identity creating the web login token. This might be an IAM user, or an assumed or federated
+     * identity. For example, <code>assumed-role/Admin/your-name</code>.
      * </p>
      * 
-     * @param webToken
-     *        An Airflow web server login token.
+     * @param iamIdentity
+     *        The name of the IAM identity creating the web login token. This might be an IAM user, or an assumed or
+     *        federated identity. For example, <code>assumed-role/Admin/your-name</code>.
      */
 
-    public void setWebToken(String webToken) {
-        this.webToken = webToken;
+    public void setIamIdentity(String iamIdentity) {
+        this.iamIdentity = iamIdentity;
     }
 
     /**
      * <p>
-     * An Airflow web server login token.
+     * The name of the IAM identity creating the web login token. This might be an IAM user, or an assumed or federated
+     * identity. For example, <code>assumed-role/Admin/your-name</code>.
      * </p>
      * 
-     * @return An Airflow web server login token.
+     * @return The name of the IAM identity creating the web login token. This might be an IAM user, or an assumed or
+     *         federated identity. For example, <code>assumed-role/Admin/your-name</code>.
      */
 
-    public String getWebToken() {
-        return this.webToken;
+    public String getIamIdentity() {
+        return this.iamIdentity;
     }
 
     /**
      * <p>
-     * An Airflow web server login token.
+     * The name of the IAM identity creating the web login token. This might be an IAM user, or an assumed or federated
+     * identity. For example, <code>assumed-role/Admin/your-name</code>.
      * </p>
      * 
-     * @param webToken
-     *        An Airflow web server login token.
+     * @param iamIdentity
+     *        The name of the IAM identity creating the web login token. This might be an IAM user, or an assumed or
+     *        federated identity. For example, <code>assumed-role/Admin/your-name</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateWebLoginTokenResult withWebToken(String webToken) {
-        setWebToken(webToken);
+    public CreateWebLoginTokenResult withIamIdentity(String iamIdentity) {
+        setIamIdentity(iamIdentity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user name of the Apache Airflow identity creating the web login token.
+     * </p>
+     * 
+     * @param airflowIdentity
+     *        The user name of the Apache Airflow identity creating the web login token.
+     */
+
+    public void setAirflowIdentity(String airflowIdentity) {
+        this.airflowIdentity = airflowIdentity;
+    }
+
+    /**
+     * <p>
+     * The user name of the Apache Airflow identity creating the web login token.
+     * </p>
+     * 
+     * @return The user name of the Apache Airflow identity creating the web login token.
+     */
+
+    public String getAirflowIdentity() {
+        return this.airflowIdentity;
+    }
+
+    /**
+     * <p>
+     * The user name of the Apache Airflow identity creating the web login token.
+     * </p>
+     * 
+     * @param airflowIdentity
+     *        The user name of the Apache Airflow identity creating the web login token.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWebLoginTokenResult withAirflowIdentity(String airflowIdentity) {
+        setAirflowIdentity(airflowIdentity);
         return this;
     }
 
@@ -128,10 +227,14 @@ public class CreateWebLoginTokenResult extends com.amazonaws.AmazonWebServiceRes
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getWebToken() != null)
+            sb.append("WebToken: ").append("***Sensitive Data Redacted***").append(",");
         if (getWebServerHostname() != null)
             sb.append("WebServerHostname: ").append(getWebServerHostname()).append(",");
-        if (getWebToken() != null)
-            sb.append("WebToken: ").append("***Sensitive Data Redacted***");
+        if (getIamIdentity() != null)
+            sb.append("IamIdentity: ").append(getIamIdentity()).append(",");
+        if (getAirflowIdentity() != null)
+            sb.append("AirflowIdentity: ").append(getAirflowIdentity());
         sb.append("}");
         return sb.toString();
     }
@@ -146,13 +249,21 @@ public class CreateWebLoginTokenResult extends com.amazonaws.AmazonWebServiceRes
         if (obj instanceof CreateWebLoginTokenResult == false)
             return false;
         CreateWebLoginTokenResult other = (CreateWebLoginTokenResult) obj;
+        if (other.getWebToken() == null ^ this.getWebToken() == null)
+            return false;
+        if (other.getWebToken() != null && other.getWebToken().equals(this.getWebToken()) == false)
+            return false;
         if (other.getWebServerHostname() == null ^ this.getWebServerHostname() == null)
             return false;
         if (other.getWebServerHostname() != null && other.getWebServerHostname().equals(this.getWebServerHostname()) == false)
             return false;
-        if (other.getWebToken() == null ^ this.getWebToken() == null)
+        if (other.getIamIdentity() == null ^ this.getIamIdentity() == null)
             return false;
-        if (other.getWebToken() != null && other.getWebToken().equals(this.getWebToken()) == false)
+        if (other.getIamIdentity() != null && other.getIamIdentity().equals(this.getIamIdentity()) == false)
+            return false;
+        if (other.getAirflowIdentity() == null ^ this.getAirflowIdentity() == null)
+            return false;
+        if (other.getAirflowIdentity() != null && other.getAirflowIdentity().equals(this.getAirflowIdentity()) == false)
             return false;
         return true;
     }
@@ -162,8 +273,10 @@ public class CreateWebLoginTokenResult extends com.amazonaws.AmazonWebServiceRes
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getWebServerHostname() == null) ? 0 : getWebServerHostname().hashCode());
         hashCode = prime * hashCode + ((getWebToken() == null) ? 0 : getWebToken().hashCode());
+        hashCode = prime * hashCode + ((getWebServerHostname() == null) ? 0 : getWebServerHostname().hashCode());
+        hashCode = prime * hashCode + ((getIamIdentity() == null) ? 0 : getIamIdentity().hashCode());
+        hashCode = prime * hashCode + ((getAirflowIdentity() == null) ? 0 : getAirflowIdentity().hashCode());
         return hashCode;
     }
 

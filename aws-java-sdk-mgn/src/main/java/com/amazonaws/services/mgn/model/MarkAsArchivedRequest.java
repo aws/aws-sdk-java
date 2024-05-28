@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,10 +27,56 @@ public class MarkAsArchivedRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * Mark as archived by Account ID.
+     * </p>
+     */
+    private String accountID;
+    /**
+     * <p>
      * Mark as archived by Source Server ID.
      * </p>
      */
     private String sourceServerID;
+
+    /**
+     * <p>
+     * Mark as archived by Account ID.
+     * </p>
+     * 
+     * @param accountID
+     *        Mark as archived by Account ID.
+     */
+
+    public void setAccountID(String accountID) {
+        this.accountID = accountID;
+    }
+
+    /**
+     * <p>
+     * Mark as archived by Account ID.
+     * </p>
+     * 
+     * @return Mark as archived by Account ID.
+     */
+
+    public String getAccountID() {
+        return this.accountID;
+    }
+
+    /**
+     * <p>
+     * Mark as archived by Account ID.
+     * </p>
+     * 
+     * @param accountID
+     *        Mark as archived by Account ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MarkAsArchivedRequest withAccountID(String accountID) {
+        setAccountID(accountID);
+        return this;
+    }
 
     /**
      * <p>
@@ -84,6 +130,8 @@ public class MarkAsArchivedRequest extends com.amazonaws.AmazonWebServiceRequest
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccountID() != null)
+            sb.append("AccountID: ").append(getAccountID()).append(",");
         if (getSourceServerID() != null)
             sb.append("SourceServerID: ").append(getSourceServerID());
         sb.append("}");
@@ -100,6 +148,10 @@ public class MarkAsArchivedRequest extends com.amazonaws.AmazonWebServiceRequest
         if (obj instanceof MarkAsArchivedRequest == false)
             return false;
         MarkAsArchivedRequest other = (MarkAsArchivedRequest) obj;
+        if (other.getAccountID() == null ^ this.getAccountID() == null)
+            return false;
+        if (other.getAccountID() != null && other.getAccountID().equals(this.getAccountID()) == false)
+            return false;
         if (other.getSourceServerID() == null ^ this.getSourceServerID() == null)
             return false;
         if (other.getSourceServerID() != null && other.getSourceServerID().equals(this.getSourceServerID()) == false)
@@ -112,6 +164,7 @@ public class MarkAsArchivedRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccountID() == null) ? 0 : getAccountID().hashCode());
         hashCode = prime * hashCode + ((getSourceServerID() == null) ? 0 : getSourceServerID().hashCode());
         return hashCode;
     }

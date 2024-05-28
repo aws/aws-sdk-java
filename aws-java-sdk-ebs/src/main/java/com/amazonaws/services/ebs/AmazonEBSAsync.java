@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,6 +59,14 @@ public interface AmazonEBSAsync extends AmazonEBS {
      * snapshot changes the status to <code>completed</code>. You cannot write new blocks to a snapshot after it has
      * been completed.
      * </p>
+     * <note>
+     * <p>
+     * You should always retry requests that receive server (<code>5xx</code>) error responses, and
+     * <code>ThrottlingException</code> and <code>RequestThrottledException</code> client error responses. For more
+     * information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+     * retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param completeSnapshotRequest
      * @return A Java Future containing the result of the CompleteSnapshot operation returned by the service.
@@ -74,6 +82,14 @@ public interface AmazonEBSAsync extends AmazonEBS {
      * snapshot changes the status to <code>completed</code>. You cannot write new blocks to a snapshot after it has
      * been completed.
      * </p>
+     * <note>
+     * <p>
+     * You should always retry requests that receive server (<code>5xx</code>) error responses, and
+     * <code>ThrottlingException</code> and <code>RequestThrottledException</code> client error responses. For more
+     * information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+     * retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param completeSnapshotRequest
      * @param asyncHandler
@@ -92,6 +108,14 @@ public interface AmazonEBSAsync extends AmazonEBS {
      * <p>
      * Returns the data in a block in an Amazon Elastic Block Store snapshot.
      * </p>
+     * <note>
+     * <p>
+     * You should always retry requests that receive server (<code>5xx</code>) error responses, and
+     * <code>ThrottlingException</code> and <code>RequestThrottledException</code> client error responses. For more
+     * information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+     * retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param getSnapshotBlockRequest
      * @return A Java Future containing the result of the GetSnapshotBlock operation returned by the service.
@@ -105,6 +129,14 @@ public interface AmazonEBSAsync extends AmazonEBS {
      * <p>
      * Returns the data in a block in an Amazon Elastic Block Store snapshot.
      * </p>
+     * <note>
+     * <p>
+     * You should always retry requests that receive server (<code>5xx</code>) error responses, and
+     * <code>ThrottlingException</code> and <code>RequestThrottledException</code> client error responses. For more
+     * information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+     * retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param getSnapshotBlockRequest
      * @param asyncHandler
@@ -124,6 +156,14 @@ public interface AmazonEBSAsync extends AmazonEBS {
      * Returns information about the blocks that are different between two Amazon Elastic Block Store snapshots of the
      * same volume/snapshot lineage.
      * </p>
+     * <note>
+     * <p>
+     * You should always retry requests that receive server (<code>5xx</code>) error responses, and
+     * <code>ThrottlingException</code> and <code>RequestThrottledException</code> client error responses. For more
+     * information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+     * retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param listChangedBlocksRequest
      * @return A Java Future containing the result of the ListChangedBlocks operation returned by the service.
@@ -138,6 +178,14 @@ public interface AmazonEBSAsync extends AmazonEBS {
      * Returns information about the blocks that are different between two Amazon Elastic Block Store snapshots of the
      * same volume/snapshot lineage.
      * </p>
+     * <note>
+     * <p>
+     * You should always retry requests that receive server (<code>5xx</code>) error responses, and
+     * <code>ThrottlingException</code> and <code>RequestThrottledException</code> client error responses. For more
+     * information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+     * retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param listChangedBlocksRequest
      * @param asyncHandler
@@ -156,6 +204,14 @@ public interface AmazonEBSAsync extends AmazonEBS {
      * <p>
      * Returns information about the blocks in an Amazon Elastic Block Store snapshot.
      * </p>
+     * <note>
+     * <p>
+     * You should always retry requests that receive server (<code>5xx</code>) error responses, and
+     * <code>ThrottlingException</code> and <code>RequestThrottledException</code> client error responses. For more
+     * information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+     * retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param listSnapshotBlocksRequest
      * @return A Java Future containing the result of the ListSnapshotBlocks operation returned by the service.
@@ -169,6 +225,14 @@ public interface AmazonEBSAsync extends AmazonEBS {
      * <p>
      * Returns information about the blocks in an Amazon Elastic Block Store snapshot.
      * </p>
+     * <note>
+     * <p>
+     * You should always retry requests that receive server (<code>5xx</code>) error responses, and
+     * <code>ThrottlingException</code> and <code>RequestThrottledException</code> client error responses. For more
+     * information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+     * retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param listSnapshotBlocksRequest
      * @param asyncHandler
@@ -191,6 +255,14 @@ public interface AmazonEBSAsync extends AmazonEBS {
      * <p>
      * Data written to a snapshot must be aligned with 512-KiB sectors.
      * </p>
+     * <note>
+     * <p>
+     * You should always retry requests that receive server (<code>5xx</code>) error responses, and
+     * <code>ThrottlingException</code> and <code>RequestThrottledException</code> client error responses. For more
+     * information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+     * retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param putSnapshotBlockRequest
      * @return A Java Future containing the result of the PutSnapshotBlock operation returned by the service.
@@ -208,6 +280,14 @@ public interface AmazonEBSAsync extends AmazonEBS {
      * <p>
      * Data written to a snapshot must be aligned with 512-KiB sectors.
      * </p>
+     * <note>
+     * <p>
+     * You should always retry requests that receive server (<code>5xx</code>) error responses, and
+     * <code>ThrottlingException</code> and <code>RequestThrottledException</code> client error responses. For more
+     * information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+     * retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param putSnapshotBlockRequest
      * @param asyncHandler
@@ -232,6 +312,14 @@ public interface AmazonEBSAsync extends AmazonEBS {
      * href="https://docs.aws.amazon.com/ebs/latest/APIReference/API_PutSnapshotBlock.html"> PutSnapshotBlock</a> to
      * write blocks of data to the snapshot.
      * </p>
+     * <note>
+     * <p>
+     * You should always retry requests that receive server (<code>5xx</code>) error responses, and
+     * <code>ThrottlingException</code> and <code>RequestThrottledException</code> client error responses. For more
+     * information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+     * retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param startSnapshotRequest
      * @return A Java Future containing the result of the StartSnapshot operation returned by the service.
@@ -251,6 +339,14 @@ public interface AmazonEBSAsync extends AmazonEBS {
      * href="https://docs.aws.amazon.com/ebs/latest/APIReference/API_PutSnapshotBlock.html"> PutSnapshotBlock</a> to
      * write blocks of data to the snapshot.
      * </p>
+     * <note>
+     * <p>
+     * You should always retry requests that receive server (<code>5xx</code>) error responses, and
+     * <code>ThrottlingException</code> and <code>RequestThrottledException</code> client error responses. For more
+     * information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+     * retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param startSnapshotRequest
      * @param asyncHandler

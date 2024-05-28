@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,10 @@ public class UpdateAssetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the asset to update.
+     * The ID of the asset to update. This can be either the actual ID in UUID format, or else <code>externalId:</code>
+     * followed by the external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     * >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      */
     private String assetId;
@@ -50,14 +53,29 @@ public class UpdateAssetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String assetDescription;
+    /**
+     * <p>
+     * An external ID to assign to the asset. The asset must not already have an external ID. The external ID must be
+     * unique within your Amazon Web Services account. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     */
+    private String assetExternalId;
 
     /**
      * <p>
-     * The ID of the asset to update.
+     * The ID of the asset to update. This can be either the actual ID in UUID format, or else <code>externalId:</code>
+     * followed by the external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     * >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param assetId
-     *        The ID of the asset to update.
+     *        The ID of the asset to update. This can be either the actual ID in UUID format, or else
+     *        <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     *        >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public void setAssetId(String assetId) {
@@ -66,10 +84,16 @@ public class UpdateAssetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the asset to update.
+     * The ID of the asset to update. This can be either the actual ID in UUID format, or else <code>externalId:</code>
+     * followed by the external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     * >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
-     * @return The ID of the asset to update.
+     * @return The ID of the asset to update. This can be either the actual ID in UUID format, or else
+     *         <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     *         >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      */
 
     public String getAssetId() {
@@ -78,11 +102,17 @@ public class UpdateAssetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the asset to update.
+     * The ID of the asset to update. This can be either the actual ID in UUID format, or else <code>externalId:</code>
+     * followed by the external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     * >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param assetId
-     *        The ID of the asset to update.
+     *        The ID of the asset to update. This can be either the actual ID in UUID format, or else
+     *        <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references"
+     *        >Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -218,6 +248,64 @@ public class UpdateAssetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * An external ID to assign to the asset. The asset must not already have an external ID. The external ID must be
+     * unique within your Amazon Web Services account. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param assetExternalId
+     *        An external ID to assign to the asset. The asset must not already have an external ID. The external ID
+     *        must be unique within your Amazon Web Services account. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *        external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     */
+
+    public void setAssetExternalId(String assetExternalId) {
+        this.assetExternalId = assetExternalId;
+    }
+
+    /**
+     * <p>
+     * An external ID to assign to the asset. The asset must not already have an external ID. The external ID must be
+     * unique within your Amazon Web Services account. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @return An external ID to assign to the asset. The asset must not already have an external ID. The external ID
+     *         must be unique within your Amazon Web Services account. For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *         external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     */
+
+    public String getAssetExternalId() {
+        return this.assetExternalId;
+    }
+
+    /**
+     * <p>
+     * An external ID to assign to the asset. The asset must not already have an external ID. The external ID must be
+     * unique within your Amazon Web Services account. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param assetExternalId
+     *        An external ID to assign to the asset. The asset must not already have an external ID. The external ID
+     *        must be unique within your Amazon Web Services account. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *        external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAssetRequest withAssetExternalId(String assetExternalId) {
+        setAssetExternalId(assetExternalId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -236,7 +324,9 @@ public class UpdateAssetRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getAssetDescription() != null)
-            sb.append("AssetDescription: ").append(getAssetDescription());
+            sb.append("AssetDescription: ").append(getAssetDescription()).append(",");
+        if (getAssetExternalId() != null)
+            sb.append("AssetExternalId: ").append(getAssetExternalId());
         sb.append("}");
         return sb.toString();
     }
@@ -267,6 +357,10 @@ public class UpdateAssetRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getAssetDescription() != null && other.getAssetDescription().equals(this.getAssetDescription()) == false)
             return false;
+        if (other.getAssetExternalId() == null ^ this.getAssetExternalId() == null)
+            return false;
+        if (other.getAssetExternalId() != null && other.getAssetExternalId().equals(this.getAssetExternalId()) == false)
+            return false;
         return true;
     }
 
@@ -279,6 +373,7 @@ public class UpdateAssetRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getAssetName() == null) ? 0 : getAssetName().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getAssetDescription() == null) ? 0 : getAssetDescription().hashCode());
+        hashCode = prime * hashCode + ((getAssetExternalId() == null) ? 0 : getAssetExternalId().hashCode());
         return hashCode;
     }
 

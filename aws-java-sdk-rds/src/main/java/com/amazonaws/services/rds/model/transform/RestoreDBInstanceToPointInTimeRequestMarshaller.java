@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -166,6 +166,32 @@ public class RestoreDBInstanceToPointInTimeRequestMarshaller implements
             request.addParameter("DomainIAMRoleName", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getDomainIAMRoleName()));
         }
 
+        if (restoreDBInstanceToPointInTimeRequest.getDomainFqdn() != null) {
+            request.addParameter("DomainFqdn", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getDomainFqdn()));
+        }
+
+        if (restoreDBInstanceToPointInTimeRequest.getDomainOu() != null) {
+            request.addParameter("DomainOu", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getDomainOu()));
+        }
+
+        if (restoreDBInstanceToPointInTimeRequest.getDomainAuthSecretArn() != null) {
+            request.addParameter("DomainAuthSecretArn", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getDomainAuthSecretArn()));
+        }
+
+        if (!restoreDBInstanceToPointInTimeRequest.getDomainDnsIps().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) restoreDBInstanceToPointInTimeRequest.getDomainDnsIps()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> domainDnsIpsList = (com.amazonaws.internal.SdkInternalList<String>) restoreDBInstanceToPointInTimeRequest
+                    .getDomainDnsIps();
+            int domainDnsIpsListIndex = 1;
+
+            for (String domainDnsIpsListValue : domainDnsIpsList) {
+                if (domainDnsIpsListValue != null) {
+                    request.addParameter("DomainDnsIps.member." + domainDnsIpsListIndex, StringUtils.fromString(domainDnsIpsListValue));
+                }
+                domainDnsIpsListIndex++;
+            }
+        }
+
         if (restoreDBInstanceToPointInTimeRequest.getEnableIAMDatabaseAuthentication() != null) {
             request.addParameter("EnableIAMDatabaseAuthentication",
                     StringUtils.fromBoolean(restoreDBInstanceToPointInTimeRequest.getEnableIAMDatabaseAuthentication()));
@@ -252,6 +278,22 @@ public class RestoreDBInstanceToPointInTimeRequestMarshaller implements
 
         if (restoreDBInstanceToPointInTimeRequest.getStorageThroughput() != null) {
             request.addParameter("StorageThroughput", StringUtils.fromInteger(restoreDBInstanceToPointInTimeRequest.getStorageThroughput()));
+        }
+
+        if (restoreDBInstanceToPointInTimeRequest.getAllocatedStorage() != null) {
+            request.addParameter("AllocatedStorage", StringUtils.fromInteger(restoreDBInstanceToPointInTimeRequest.getAllocatedStorage()));
+        }
+
+        if (restoreDBInstanceToPointInTimeRequest.getDedicatedLogVolume() != null) {
+            request.addParameter("DedicatedLogVolume", StringUtils.fromBoolean(restoreDBInstanceToPointInTimeRequest.getDedicatedLogVolume()));
+        }
+
+        if (restoreDBInstanceToPointInTimeRequest.getCACertificateIdentifier() != null) {
+            request.addParameter("CACertificateIdentifier", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getCACertificateIdentifier()));
+        }
+
+        if (restoreDBInstanceToPointInTimeRequest.getEngineLifecycleSupport() != null) {
+            request.addParameter("EngineLifecycleSupport", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getEngineLifecycleSupport()));
         }
 
         return request;

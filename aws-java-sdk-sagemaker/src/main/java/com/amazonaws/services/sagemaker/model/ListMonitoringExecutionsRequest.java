@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,8 +39,8 @@ public class ListMonitoringExecutionsRequest extends com.amazonaws.AmazonWebServ
     private String endpointName;
     /**
      * <p>
-     * Whether to sort results by <code>Status</code>, <code>CreationTime</code>, <code>ScheduledTime</code> field. The
-     * default is <code>CreationTime</code>.
+     * Whether to sort the results by the <code>Status</code>, <code>CreationTime</code>, or <code>ScheduledTime</code>
+     * field. The default is <code>CreationTime</code>.
      * </p>
      */
     private String sortBy;
@@ -201,13 +201,13 @@ public class ListMonitoringExecutionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Whether to sort results by <code>Status</code>, <code>CreationTime</code>, <code>ScheduledTime</code> field. The
-     * default is <code>CreationTime</code>.
+     * Whether to sort the results by the <code>Status</code>, <code>CreationTime</code>, or <code>ScheduledTime</code>
+     * field. The default is <code>CreationTime</code>.
      * </p>
      * 
      * @param sortBy
-     *        Whether to sort results by <code>Status</code>, <code>CreationTime</code>, <code>ScheduledTime</code>
-     *        field. The default is <code>CreationTime</code>.
+     *        Whether to sort the results by the <code>Status</code>, <code>CreationTime</code>, or
+     *        <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.
      * @see MonitoringExecutionSortKey
      */
 
@@ -217,12 +217,12 @@ public class ListMonitoringExecutionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Whether to sort results by <code>Status</code>, <code>CreationTime</code>, <code>ScheduledTime</code> field. The
-     * default is <code>CreationTime</code>.
+     * Whether to sort the results by the <code>Status</code>, <code>CreationTime</code>, or <code>ScheduledTime</code>
+     * field. The default is <code>CreationTime</code>.
      * </p>
      * 
-     * @return Whether to sort results by <code>Status</code>, <code>CreationTime</code>, <code>ScheduledTime</code>
-     *         field. The default is <code>CreationTime</code>.
+     * @return Whether to sort the results by the <code>Status</code>, <code>CreationTime</code>, or
+     *         <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.
      * @see MonitoringExecutionSortKey
      */
 
@@ -232,13 +232,13 @@ public class ListMonitoringExecutionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Whether to sort results by <code>Status</code>, <code>CreationTime</code>, <code>ScheduledTime</code> field. The
-     * default is <code>CreationTime</code>.
+     * Whether to sort the results by the <code>Status</code>, <code>CreationTime</code>, or <code>ScheduledTime</code>
+     * field. The default is <code>CreationTime</code>.
      * </p>
      * 
      * @param sortBy
-     *        Whether to sort results by <code>Status</code>, <code>CreationTime</code>, <code>ScheduledTime</code>
-     *        field. The default is <code>CreationTime</code>.
+     *        Whether to sort the results by the <code>Status</code>, <code>CreationTime</code>, or
+     *        <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MonitoringExecutionSortKey
      */
@@ -250,13 +250,13 @@ public class ListMonitoringExecutionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Whether to sort results by <code>Status</code>, <code>CreationTime</code>, <code>ScheduledTime</code> field. The
-     * default is <code>CreationTime</code>.
+     * Whether to sort the results by the <code>Status</code>, <code>CreationTime</code>, or <code>ScheduledTime</code>
+     * field. The default is <code>CreationTime</code>.
      * </p>
      * 
      * @param sortBy
-     *        Whether to sort results by <code>Status</code>, <code>CreationTime</code>, <code>ScheduledTime</code>
-     *        field. The default is <code>CreationTime</code>.
+     *        Whether to sort the results by the <code>Status</code>, <code>CreationTime</code>, or
+     *        <code>ScheduledTime</code> field. The default is <code>CreationTime</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MonitoringExecutionSortKey
      */

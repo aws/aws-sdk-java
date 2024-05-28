@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1089,6 +1089,37 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
+     * Returns basic details about an entity in WorkMail.
+     * </p>
+     * 
+     * @param describeEntityRequest
+     * @return A Java Future containing the result of the DescribeEntity operation returned by the service.
+     * @sample AmazonWorkMailAsync.DescribeEntity
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeEntity" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEntityResult> describeEntityAsync(DescribeEntityRequest describeEntityRequest);
+
+    /**
+     * <p>
+     * Returns basic details about an entity in WorkMail.
+     * </p>
+     * 
+     * @param describeEntityRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeEntity operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.DescribeEntity
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeEntity" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEntityResult> describeEntityAsync(DescribeEntityRequest describeEntityRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeEntityRequest, DescribeEntityResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the data available for the group.
      * </p>
      * 
@@ -1771,6 +1802,37 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
      */
     java.util.concurrent.Future<ListGroupsResult> listGroupsAsync(ListGroupsRequest listGroupsRequest,
             com.amazonaws.handlers.AsyncHandler<ListGroupsRequest, ListGroupsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns all the groups to which an entity belongs.
+     * </p>
+     * 
+     * @param listGroupsForEntityRequest
+     * @return A Java Future containing the result of the ListGroupsForEntity operation returned by the service.
+     * @sample AmazonWorkMailAsync.ListGroupsForEntity
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListGroupsForEntity" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListGroupsForEntityResult> listGroupsForEntityAsync(ListGroupsForEntityRequest listGroupsForEntityRequest);
+
+    /**
+     * <p>
+     * Returns all the groups to which an entity belongs.
+     * </p>
+     * 
+     * @param listGroupsForEntityRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListGroupsForEntity operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.ListGroupsForEntity
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListGroupsForEntity" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListGroupsForEntityResult> listGroupsForEntityAsync(ListGroupsForEntityRequest listGroupsForEntityRequest,
+            com.amazonaws.handlers.AsyncHandler<ListGroupsForEntityRequest, ListGroupsForEntityResult> asyncHandler);
 
     /**
      * <p>
@@ -2656,6 +2718,37 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
+     * Updates attibutes in a group.
+     * </p>
+     * 
+     * @param updateGroupRequest
+     * @return A Java Future containing the result of the UpdateGroup operation returned by the service.
+     * @sample AmazonWorkMailAsync.UpdateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateGroupResult> updateGroupAsync(UpdateGroupRequest updateGroupRequest);
+
+    /**
+     * <p>
+     * Updates attibutes in a group.
+     * </p>
+     * 
+     * @param updateGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateGroup operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.UpdateGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateGroupResult> updateGroupAsync(UpdateGroupRequest updateGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateGroupRequest, UpdateGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates an impersonation role for the given WorkMail organization.
      * </p>
      * 
@@ -2822,5 +2915,38 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
      */
     java.util.concurrent.Future<UpdateResourceResult> updateResourceAsync(UpdateResourceRequest updateResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateResourceRequest, UpdateResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates data for the user. To have the latest information, it must be preceded by a <a>DescribeUser</a> call. The
+     * dataset in the request should be the one expected when performing another <code>DescribeUser</code> call.
+     * </p>
+     * 
+     * @param updateUserRequest
+     * @return A Java Future containing the result of the UpdateUser operation returned by the service.
+     * @sample AmazonWorkMailAsync.UpdateUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateUserResult> updateUserAsync(UpdateUserRequest updateUserRequest);
+
+    /**
+     * <p>
+     * Updates data for the user. To have the latest information, it must be preceded by a <a>DescribeUser</a> call. The
+     * dataset in the request should be the one expected when performing another <code>DescribeUser</code> call.
+     * </p>
+     * 
+     * @param updateUserRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateUser operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.UpdateUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateUser" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateUserResult> updateUserAsync(UpdateUserRequest updateUserRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateUserRequest, UpdateUserResult> asyncHandler);
 
 }

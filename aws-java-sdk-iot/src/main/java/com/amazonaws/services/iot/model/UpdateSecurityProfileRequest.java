@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -93,6 +93,18 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private Long expectedVersion;
+    /**
+     * <p>
+     * Specifies the MQTT topic and role ARN required for metric export.
+     * </p>
+     */
+    private MetricsExportConfig metricsExportConfig;
+    /**
+     * <p>
+     * Set the value as true to delete metrics export related configurations.
+     * </p>
+     */
+    private Boolean deleteMetricsExportConfig;
 
     /**
      * <p>
@@ -737,6 +749,98 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * Specifies the MQTT topic and role ARN required for metric export.
+     * </p>
+     * 
+     * @param metricsExportConfig
+     *        Specifies the MQTT topic and role ARN required for metric export.
+     */
+
+    public void setMetricsExportConfig(MetricsExportConfig metricsExportConfig) {
+        this.metricsExportConfig = metricsExportConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies the MQTT topic and role ARN required for metric export.
+     * </p>
+     * 
+     * @return Specifies the MQTT topic and role ARN required for metric export.
+     */
+
+    public MetricsExportConfig getMetricsExportConfig() {
+        return this.metricsExportConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies the MQTT topic and role ARN required for metric export.
+     * </p>
+     * 
+     * @param metricsExportConfig
+     *        Specifies the MQTT topic and role ARN required for metric export.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSecurityProfileRequest withMetricsExportConfig(MetricsExportConfig metricsExportConfig) {
+        setMetricsExportConfig(metricsExportConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set the value as true to delete metrics export related configurations.
+     * </p>
+     * 
+     * @param deleteMetricsExportConfig
+     *        Set the value as true to delete metrics export related configurations.
+     */
+
+    public void setDeleteMetricsExportConfig(Boolean deleteMetricsExportConfig) {
+        this.deleteMetricsExportConfig = deleteMetricsExportConfig;
+    }
+
+    /**
+     * <p>
+     * Set the value as true to delete metrics export related configurations.
+     * </p>
+     * 
+     * @return Set the value as true to delete metrics export related configurations.
+     */
+
+    public Boolean getDeleteMetricsExportConfig() {
+        return this.deleteMetricsExportConfig;
+    }
+
+    /**
+     * <p>
+     * Set the value as true to delete metrics export related configurations.
+     * </p>
+     * 
+     * @param deleteMetricsExportConfig
+     *        Set the value as true to delete metrics export related configurations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSecurityProfileRequest withDeleteMetricsExportConfig(Boolean deleteMetricsExportConfig) {
+        setDeleteMetricsExportConfig(deleteMetricsExportConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set the value as true to delete metrics export related configurations.
+     * </p>
+     * 
+     * @return Set the value as true to delete metrics export related configurations.
+     */
+
+    public Boolean isDeleteMetricsExportConfig() {
+        return this.deleteMetricsExportConfig;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -767,7 +871,11 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
         if (getDeleteAdditionalMetricsToRetain() != null)
             sb.append("DeleteAdditionalMetricsToRetain: ").append(getDeleteAdditionalMetricsToRetain()).append(",");
         if (getExpectedVersion() != null)
-            sb.append("ExpectedVersion: ").append(getExpectedVersion());
+            sb.append("ExpectedVersion: ").append(getExpectedVersion()).append(",");
+        if (getMetricsExportConfig() != null)
+            sb.append("MetricsExportConfig: ").append(getMetricsExportConfig()).append(",");
+        if (getDeleteMetricsExportConfig() != null)
+            sb.append("DeleteMetricsExportConfig: ").append(getDeleteMetricsExportConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -823,6 +931,14 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getExpectedVersion() != null && other.getExpectedVersion().equals(this.getExpectedVersion()) == false)
             return false;
+        if (other.getMetricsExportConfig() == null ^ this.getMetricsExportConfig() == null)
+            return false;
+        if (other.getMetricsExportConfig() != null && other.getMetricsExportConfig().equals(this.getMetricsExportConfig()) == false)
+            return false;
+        if (other.getDeleteMetricsExportConfig() == null ^ this.getDeleteMetricsExportConfig() == null)
+            return false;
+        if (other.getDeleteMetricsExportConfig() != null && other.getDeleteMetricsExportConfig().equals(this.getDeleteMetricsExportConfig()) == false)
+            return false;
         return true;
     }
 
@@ -841,6 +957,8 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getDeleteAlertTargets() == null) ? 0 : getDeleteAlertTargets().hashCode());
         hashCode = prime * hashCode + ((getDeleteAdditionalMetricsToRetain() == null) ? 0 : getDeleteAdditionalMetricsToRetain().hashCode());
         hashCode = prime * hashCode + ((getExpectedVersion() == null) ? 0 : getExpectedVersion().hashCode());
+        hashCode = prime * hashCode + ((getMetricsExportConfig() == null) ? 0 : getMetricsExportConfig().hashCode());
+        hashCode = prime * hashCode + ((getDeleteMetricsExportConfig() == null) ? 0 : getDeleteMetricsExportConfig().hashCode());
         return hashCode;
     }
 

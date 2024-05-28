@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,10 @@ public class UpdateTableRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicaUpdates").build();
     private static final MarshallingInfo<String> TABLECLASS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TableClass").build();
+    private static final MarshallingInfo<Boolean> DELETIONPROTECTIONENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeletionProtectionEnabled").build();
+    private static final MarshallingInfo<StructuredPojo> ONDEMANDTHROUGHPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OnDemandThroughput").build();
 
     private static final UpdateTableRequestMarshaller instance = new UpdateTableRequestMarshaller();
 
@@ -72,6 +76,8 @@ public class UpdateTableRequestMarshaller {
             protocolMarshaller.marshall(updateTableRequest.getSSESpecification(), SSESPECIFICATION_BINDING);
             protocolMarshaller.marshall(updateTableRequest.getReplicaUpdates(), REPLICAUPDATES_BINDING);
             protocolMarshaller.marshall(updateTableRequest.getTableClass(), TABLECLASS_BINDING);
+            protocolMarshaller.marshall(updateTableRequest.getDeletionProtectionEnabled(), DELETIONPROTECTIONENABLED_BINDING);
+            protocolMarshaller.marshall(updateTableRequest.getOnDemandThroughput(), ONDEMANDTHROUGHPUT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,13 +15,12 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not generate
- * any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame
- * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. MediaConvert
- * creates a child manifest for each set of images that you generate and adds corresponding entries to the parent
- * manifest. A common application for these images is Roku trick mode. The thumbnails and full-frame images that
- * MediaConvert creates with this feature are compatible with this Roku specification:
- * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+ * Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any
+ * images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled thumbnails
+ * and full-resolution images of single frames. MediaConvert creates a child manifest for each set of images that you
+ * generate and adds corresponding entries to the parent manifest. A common application for these images is Roku trick
+ * mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku
+ * specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum HlsImageBasedTrickPlay {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -83,9 +83,17 @@ public class CodeGenConfigurationNode implements Serializable, Cloneable, Struct
      * </p>
      */
     private S3ParquetSource s3ParquetSource;
-
+    /**
+     * <p>
+     * Specifies a relational catalog data store in the Glue Data Catalog.
+     * </p>
+     */
     private RelationalCatalogSource relationalCatalogSource;
-
+    /**
+     * <p>
+     * Specifies a DynamoDBC Catalog data store in the Glue Data Catalog.
+     * </p>
+     */
     private DynamoDBCatalogSource dynamoDBCatalogSource;
     /**
      * <p>
@@ -334,6 +342,131 @@ public class CodeGenConfigurationNode implements Serializable, Cloneable, Struct
      * </p>
      */
     private PostgreSQLCatalogTarget postgreSQLCatalogTarget;
+    /**
+     * <p>
+     * Specifies a custom visual transform created by a user.
+     * </p>
+     */
+    private DynamicTransform dynamicTransform;
+    /**
+     * <p>
+     * Specifies your data quality evaluation criteria.
+     * </p>
+     */
+    private EvaluateDataQuality evaluateDataQuality;
+    /**
+     * <p>
+     * Specifies a Hudi data source that is registered in the Glue Data Catalog. The data source must be stored in
+     * Amazon S3.
+     * </p>
+     */
+    private S3CatalogHudiSource s3CatalogHudiSource;
+    /**
+     * <p>
+     * Specifies a Hudi data source that is registered in the Glue Data Catalog.
+     * </p>
+     */
+    private CatalogHudiSource catalogHudiSource;
+    /**
+     * <p>
+     * Specifies a Hudi data source stored in Amazon S3.
+     * </p>
+     */
+    private S3HudiSource s3HudiSource;
+    /**
+     * <p>
+     * Specifies a target that writes to a Hudi data source in the Glue Data Catalog.
+     * </p>
+     */
+    private S3HudiCatalogTarget s3HudiCatalogTarget;
+    /**
+     * <p>
+     * Specifies a target that writes to a Hudi data source in Amazon S3.
+     * </p>
+     */
+    private S3HudiDirectTarget s3HudiDirectTarget;
+
+    private DirectJDBCSource directJDBCSource;
+    /**
+     * <p>
+     * Specifies a Delta Lake data source that is registered in the Glue Data Catalog. The data source must be stored in
+     * Amazon S3.
+     * </p>
+     */
+    private S3CatalogDeltaSource s3CatalogDeltaSource;
+    /**
+     * <p>
+     * Specifies a Delta Lake data source that is registered in the Glue Data Catalog.
+     * </p>
+     */
+    private CatalogDeltaSource catalogDeltaSource;
+    /**
+     * <p>
+     * Specifies a Delta Lake data source stored in Amazon S3.
+     * </p>
+     */
+    private S3DeltaSource s3DeltaSource;
+    /**
+     * <p>
+     * Specifies a target that writes to a Delta Lake data source in the Glue Data Catalog.
+     * </p>
+     */
+    private S3DeltaCatalogTarget s3DeltaCatalogTarget;
+    /**
+     * <p>
+     * Specifies a target that writes to a Delta Lake data source in Amazon S3.
+     * </p>
+     */
+    private S3DeltaDirectTarget s3DeltaDirectTarget;
+    /**
+     * <p>
+     * Specifies a target that writes to a data source in Amazon Redshift.
+     * </p>
+     */
+    private AmazonRedshiftSource amazonRedshiftSource;
+    /**
+     * <p>
+     * Specifies a target that writes to a data target in Amazon Redshift.
+     * </p>
+     */
+    private AmazonRedshiftTarget amazonRedshiftTarget;
+    /**
+     * <p>
+     * Specifies your data quality evaluation criteria. Allows multiple input data and returns a collection of Dynamic
+     * Frames.
+     * </p>
+     */
+    private EvaluateDataQualityMultiFrame evaluateDataQualityMultiFrame;
+    /**
+     * <p>
+     * Specifies a Glue DataBrew recipe node.
+     * </p>
+     */
+    private Recipe recipe;
+    /**
+     * <p>
+     * Specifies a Snowflake data source.
+     * </p>
+     */
+    private SnowflakeSource snowflakeSource;
+    /**
+     * <p>
+     * Specifies a target that writes to a Snowflake data source.
+     * </p>
+     */
+    private SnowflakeTarget snowflakeTarget;
+    /**
+     * <p>
+     * Specifies a source generated with standard connection options.
+     * </p>
+     */
+    private ConnectorDataSource connectorDataSource;
+    /**
+     * <p>
+     * Specifies a target generated with standard connection options.
+     * </p>
+     */
+    private ConnectorDataTarget connectorDataTarget;
 
     /**
      * <p>
@@ -696,7 +829,12 @@ public class CodeGenConfigurationNode implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * Specifies a relational catalog data store in the Glue Data Catalog.
+     * </p>
+     * 
      * @param relationalCatalogSource
+     *        Specifies a relational catalog data store in the Glue Data Catalog.
      */
 
     public void setRelationalCatalogSource(RelationalCatalogSource relationalCatalogSource) {
@@ -704,7 +842,11 @@ public class CodeGenConfigurationNode implements Serializable, Cloneable, Struct
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies a relational catalog data store in the Glue Data Catalog.
+     * </p>
+     * 
+     * @return Specifies a relational catalog data store in the Glue Data Catalog.
      */
 
     public RelationalCatalogSource getRelationalCatalogSource() {
@@ -712,7 +854,12 @@ public class CodeGenConfigurationNode implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * Specifies a relational catalog data store in the Glue Data Catalog.
+     * </p>
+     * 
      * @param relationalCatalogSource
+     *        Specifies a relational catalog data store in the Glue Data Catalog.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -722,7 +869,12 @@ public class CodeGenConfigurationNode implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * Specifies a DynamoDBC Catalog data store in the Glue Data Catalog.
+     * </p>
+     * 
      * @param dynamoDBCatalogSource
+     *        Specifies a DynamoDBC Catalog data store in the Glue Data Catalog.
      */
 
     public void setDynamoDBCatalogSource(DynamoDBCatalogSource dynamoDBCatalogSource) {
@@ -730,7 +882,11 @@ public class CodeGenConfigurationNode implements Serializable, Cloneable, Struct
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies a DynamoDBC Catalog data store in the Glue Data Catalog.
+     * </p>
+     * 
+     * @return Specifies a DynamoDBC Catalog data store in the Glue Data Catalog.
      */
 
     public DynamoDBCatalogSource getDynamoDBCatalogSource() {
@@ -738,7 +894,12 @@ public class CodeGenConfigurationNode implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * Specifies a DynamoDBC Catalog data store in the Glue Data Catalog.
+     * </p>
+     * 
      * @param dynamoDBCatalogSource
+     *        Specifies a DynamoDBC Catalog data store in the Glue Data Catalog.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2392,6 +2553,850 @@ public class CodeGenConfigurationNode implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * Specifies a custom visual transform created by a user.
+     * </p>
+     * 
+     * @param dynamicTransform
+     *        Specifies a custom visual transform created by a user.
+     */
+
+    public void setDynamicTransform(DynamicTransform dynamicTransform) {
+        this.dynamicTransform = dynamicTransform;
+    }
+
+    /**
+     * <p>
+     * Specifies a custom visual transform created by a user.
+     * </p>
+     * 
+     * @return Specifies a custom visual transform created by a user.
+     */
+
+    public DynamicTransform getDynamicTransform() {
+        return this.dynamicTransform;
+    }
+
+    /**
+     * <p>
+     * Specifies a custom visual transform created by a user.
+     * </p>
+     * 
+     * @param dynamicTransform
+     *        Specifies a custom visual transform created by a user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeGenConfigurationNode withDynamicTransform(DynamicTransform dynamicTransform) {
+        setDynamicTransform(dynamicTransform);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies your data quality evaluation criteria.
+     * </p>
+     * 
+     * @param evaluateDataQuality
+     *        Specifies your data quality evaluation criteria.
+     */
+
+    public void setEvaluateDataQuality(EvaluateDataQuality evaluateDataQuality) {
+        this.evaluateDataQuality = evaluateDataQuality;
+    }
+
+    /**
+     * <p>
+     * Specifies your data quality evaluation criteria.
+     * </p>
+     * 
+     * @return Specifies your data quality evaluation criteria.
+     */
+
+    public EvaluateDataQuality getEvaluateDataQuality() {
+        return this.evaluateDataQuality;
+    }
+
+    /**
+     * <p>
+     * Specifies your data quality evaluation criteria.
+     * </p>
+     * 
+     * @param evaluateDataQuality
+     *        Specifies your data quality evaluation criteria.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeGenConfigurationNode withEvaluateDataQuality(EvaluateDataQuality evaluateDataQuality) {
+        setEvaluateDataQuality(evaluateDataQuality);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a Hudi data source that is registered in the Glue Data Catalog. The data source must be stored in
+     * Amazon S3.
+     * </p>
+     * 
+     * @param s3CatalogHudiSource
+     *        Specifies a Hudi data source that is registered in the Glue Data Catalog. The data source must be stored
+     *        in Amazon S3.
+     */
+
+    public void setS3CatalogHudiSource(S3CatalogHudiSource s3CatalogHudiSource) {
+        this.s3CatalogHudiSource = s3CatalogHudiSource;
+    }
+
+    /**
+     * <p>
+     * Specifies a Hudi data source that is registered in the Glue Data Catalog. The data source must be stored in
+     * Amazon S3.
+     * </p>
+     * 
+     * @return Specifies a Hudi data source that is registered in the Glue Data Catalog. The data source must be stored
+     *         in Amazon S3.
+     */
+
+    public S3CatalogHudiSource getS3CatalogHudiSource() {
+        return this.s3CatalogHudiSource;
+    }
+
+    /**
+     * <p>
+     * Specifies a Hudi data source that is registered in the Glue Data Catalog. The data source must be stored in
+     * Amazon S3.
+     * </p>
+     * 
+     * @param s3CatalogHudiSource
+     *        Specifies a Hudi data source that is registered in the Glue Data Catalog. The data source must be stored
+     *        in Amazon S3.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeGenConfigurationNode withS3CatalogHudiSource(S3CatalogHudiSource s3CatalogHudiSource) {
+        setS3CatalogHudiSource(s3CatalogHudiSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a Hudi data source that is registered in the Glue Data Catalog.
+     * </p>
+     * 
+     * @param catalogHudiSource
+     *        Specifies a Hudi data source that is registered in the Glue Data Catalog.
+     */
+
+    public void setCatalogHudiSource(CatalogHudiSource catalogHudiSource) {
+        this.catalogHudiSource = catalogHudiSource;
+    }
+
+    /**
+     * <p>
+     * Specifies a Hudi data source that is registered in the Glue Data Catalog.
+     * </p>
+     * 
+     * @return Specifies a Hudi data source that is registered in the Glue Data Catalog.
+     */
+
+    public CatalogHudiSource getCatalogHudiSource() {
+        return this.catalogHudiSource;
+    }
+
+    /**
+     * <p>
+     * Specifies a Hudi data source that is registered in the Glue Data Catalog.
+     * </p>
+     * 
+     * @param catalogHudiSource
+     *        Specifies a Hudi data source that is registered in the Glue Data Catalog.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeGenConfigurationNode withCatalogHudiSource(CatalogHudiSource catalogHudiSource) {
+        setCatalogHudiSource(catalogHudiSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a Hudi data source stored in Amazon S3.
+     * </p>
+     * 
+     * @param s3HudiSource
+     *        Specifies a Hudi data source stored in Amazon S3.
+     */
+
+    public void setS3HudiSource(S3HudiSource s3HudiSource) {
+        this.s3HudiSource = s3HudiSource;
+    }
+
+    /**
+     * <p>
+     * Specifies a Hudi data source stored in Amazon S3.
+     * </p>
+     * 
+     * @return Specifies a Hudi data source stored in Amazon S3.
+     */
+
+    public S3HudiSource getS3HudiSource() {
+        return this.s3HudiSource;
+    }
+
+    /**
+     * <p>
+     * Specifies a Hudi data source stored in Amazon S3.
+     * </p>
+     * 
+     * @param s3HudiSource
+     *        Specifies a Hudi data source stored in Amazon S3.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeGenConfigurationNode withS3HudiSource(S3HudiSource s3HudiSource) {
+        setS3HudiSource(s3HudiSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a target that writes to a Hudi data source in the Glue Data Catalog.
+     * </p>
+     * 
+     * @param s3HudiCatalogTarget
+     *        Specifies a target that writes to a Hudi data source in the Glue Data Catalog.
+     */
+
+    public void setS3HudiCatalogTarget(S3HudiCatalogTarget s3HudiCatalogTarget) {
+        this.s3HudiCatalogTarget = s3HudiCatalogTarget;
+    }
+
+    /**
+     * <p>
+     * Specifies a target that writes to a Hudi data source in the Glue Data Catalog.
+     * </p>
+     * 
+     * @return Specifies a target that writes to a Hudi data source in the Glue Data Catalog.
+     */
+
+    public S3HudiCatalogTarget getS3HudiCatalogTarget() {
+        return this.s3HudiCatalogTarget;
+    }
+
+    /**
+     * <p>
+     * Specifies a target that writes to a Hudi data source in the Glue Data Catalog.
+     * </p>
+     * 
+     * @param s3HudiCatalogTarget
+     *        Specifies a target that writes to a Hudi data source in the Glue Data Catalog.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeGenConfigurationNode withS3HudiCatalogTarget(S3HudiCatalogTarget s3HudiCatalogTarget) {
+        setS3HudiCatalogTarget(s3HudiCatalogTarget);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a target that writes to a Hudi data source in Amazon S3.
+     * </p>
+     * 
+     * @param s3HudiDirectTarget
+     *        Specifies a target that writes to a Hudi data source in Amazon S3.
+     */
+
+    public void setS3HudiDirectTarget(S3HudiDirectTarget s3HudiDirectTarget) {
+        this.s3HudiDirectTarget = s3HudiDirectTarget;
+    }
+
+    /**
+     * <p>
+     * Specifies a target that writes to a Hudi data source in Amazon S3.
+     * </p>
+     * 
+     * @return Specifies a target that writes to a Hudi data source in Amazon S3.
+     */
+
+    public S3HudiDirectTarget getS3HudiDirectTarget() {
+        return this.s3HudiDirectTarget;
+    }
+
+    /**
+     * <p>
+     * Specifies a target that writes to a Hudi data source in Amazon S3.
+     * </p>
+     * 
+     * @param s3HudiDirectTarget
+     *        Specifies a target that writes to a Hudi data source in Amazon S3.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeGenConfigurationNode withS3HudiDirectTarget(S3HudiDirectTarget s3HudiDirectTarget) {
+        setS3HudiDirectTarget(s3HudiDirectTarget);
+        return this;
+    }
+
+    /**
+     * @param directJDBCSource
+     */
+
+    public void setDirectJDBCSource(DirectJDBCSource directJDBCSource) {
+        this.directJDBCSource = directJDBCSource;
+    }
+
+    /**
+     * @return
+     */
+
+    public DirectJDBCSource getDirectJDBCSource() {
+        return this.directJDBCSource;
+    }
+
+    /**
+     * @param directJDBCSource
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeGenConfigurationNode withDirectJDBCSource(DirectJDBCSource directJDBCSource) {
+        setDirectJDBCSource(directJDBCSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a Delta Lake data source that is registered in the Glue Data Catalog. The data source must be stored in
+     * Amazon S3.
+     * </p>
+     * 
+     * @param s3CatalogDeltaSource
+     *        Specifies a Delta Lake data source that is registered in the Glue Data Catalog. The data source must be
+     *        stored in Amazon S3.
+     */
+
+    public void setS3CatalogDeltaSource(S3CatalogDeltaSource s3CatalogDeltaSource) {
+        this.s3CatalogDeltaSource = s3CatalogDeltaSource;
+    }
+
+    /**
+     * <p>
+     * Specifies a Delta Lake data source that is registered in the Glue Data Catalog. The data source must be stored in
+     * Amazon S3.
+     * </p>
+     * 
+     * @return Specifies a Delta Lake data source that is registered in the Glue Data Catalog. The data source must be
+     *         stored in Amazon S3.
+     */
+
+    public S3CatalogDeltaSource getS3CatalogDeltaSource() {
+        return this.s3CatalogDeltaSource;
+    }
+
+    /**
+     * <p>
+     * Specifies a Delta Lake data source that is registered in the Glue Data Catalog. The data source must be stored in
+     * Amazon S3.
+     * </p>
+     * 
+     * @param s3CatalogDeltaSource
+     *        Specifies a Delta Lake data source that is registered in the Glue Data Catalog. The data source must be
+     *        stored in Amazon S3.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeGenConfigurationNode withS3CatalogDeltaSource(S3CatalogDeltaSource s3CatalogDeltaSource) {
+        setS3CatalogDeltaSource(s3CatalogDeltaSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a Delta Lake data source that is registered in the Glue Data Catalog.
+     * </p>
+     * 
+     * @param catalogDeltaSource
+     *        Specifies a Delta Lake data source that is registered in the Glue Data Catalog.
+     */
+
+    public void setCatalogDeltaSource(CatalogDeltaSource catalogDeltaSource) {
+        this.catalogDeltaSource = catalogDeltaSource;
+    }
+
+    /**
+     * <p>
+     * Specifies a Delta Lake data source that is registered in the Glue Data Catalog.
+     * </p>
+     * 
+     * @return Specifies a Delta Lake data source that is registered in the Glue Data Catalog.
+     */
+
+    public CatalogDeltaSource getCatalogDeltaSource() {
+        return this.catalogDeltaSource;
+    }
+
+    /**
+     * <p>
+     * Specifies a Delta Lake data source that is registered in the Glue Data Catalog.
+     * </p>
+     * 
+     * @param catalogDeltaSource
+     *        Specifies a Delta Lake data source that is registered in the Glue Data Catalog.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeGenConfigurationNode withCatalogDeltaSource(CatalogDeltaSource catalogDeltaSource) {
+        setCatalogDeltaSource(catalogDeltaSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a Delta Lake data source stored in Amazon S3.
+     * </p>
+     * 
+     * @param s3DeltaSource
+     *        Specifies a Delta Lake data source stored in Amazon S3.
+     */
+
+    public void setS3DeltaSource(S3DeltaSource s3DeltaSource) {
+        this.s3DeltaSource = s3DeltaSource;
+    }
+
+    /**
+     * <p>
+     * Specifies a Delta Lake data source stored in Amazon S3.
+     * </p>
+     * 
+     * @return Specifies a Delta Lake data source stored in Amazon S3.
+     */
+
+    public S3DeltaSource getS3DeltaSource() {
+        return this.s3DeltaSource;
+    }
+
+    /**
+     * <p>
+     * Specifies a Delta Lake data source stored in Amazon S3.
+     * </p>
+     * 
+     * @param s3DeltaSource
+     *        Specifies a Delta Lake data source stored in Amazon S3.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeGenConfigurationNode withS3DeltaSource(S3DeltaSource s3DeltaSource) {
+        setS3DeltaSource(s3DeltaSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a target that writes to a Delta Lake data source in the Glue Data Catalog.
+     * </p>
+     * 
+     * @param s3DeltaCatalogTarget
+     *        Specifies a target that writes to a Delta Lake data source in the Glue Data Catalog.
+     */
+
+    public void setS3DeltaCatalogTarget(S3DeltaCatalogTarget s3DeltaCatalogTarget) {
+        this.s3DeltaCatalogTarget = s3DeltaCatalogTarget;
+    }
+
+    /**
+     * <p>
+     * Specifies a target that writes to a Delta Lake data source in the Glue Data Catalog.
+     * </p>
+     * 
+     * @return Specifies a target that writes to a Delta Lake data source in the Glue Data Catalog.
+     */
+
+    public S3DeltaCatalogTarget getS3DeltaCatalogTarget() {
+        return this.s3DeltaCatalogTarget;
+    }
+
+    /**
+     * <p>
+     * Specifies a target that writes to a Delta Lake data source in the Glue Data Catalog.
+     * </p>
+     * 
+     * @param s3DeltaCatalogTarget
+     *        Specifies a target that writes to a Delta Lake data source in the Glue Data Catalog.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeGenConfigurationNode withS3DeltaCatalogTarget(S3DeltaCatalogTarget s3DeltaCatalogTarget) {
+        setS3DeltaCatalogTarget(s3DeltaCatalogTarget);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a target that writes to a Delta Lake data source in Amazon S3.
+     * </p>
+     * 
+     * @param s3DeltaDirectTarget
+     *        Specifies a target that writes to a Delta Lake data source in Amazon S3.
+     */
+
+    public void setS3DeltaDirectTarget(S3DeltaDirectTarget s3DeltaDirectTarget) {
+        this.s3DeltaDirectTarget = s3DeltaDirectTarget;
+    }
+
+    /**
+     * <p>
+     * Specifies a target that writes to a Delta Lake data source in Amazon S3.
+     * </p>
+     * 
+     * @return Specifies a target that writes to a Delta Lake data source in Amazon S3.
+     */
+
+    public S3DeltaDirectTarget getS3DeltaDirectTarget() {
+        return this.s3DeltaDirectTarget;
+    }
+
+    /**
+     * <p>
+     * Specifies a target that writes to a Delta Lake data source in Amazon S3.
+     * </p>
+     * 
+     * @param s3DeltaDirectTarget
+     *        Specifies a target that writes to a Delta Lake data source in Amazon S3.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeGenConfigurationNode withS3DeltaDirectTarget(S3DeltaDirectTarget s3DeltaDirectTarget) {
+        setS3DeltaDirectTarget(s3DeltaDirectTarget);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a target that writes to a data source in Amazon Redshift.
+     * </p>
+     * 
+     * @param amazonRedshiftSource
+     *        Specifies a target that writes to a data source in Amazon Redshift.
+     */
+
+    public void setAmazonRedshiftSource(AmazonRedshiftSource amazonRedshiftSource) {
+        this.amazonRedshiftSource = amazonRedshiftSource;
+    }
+
+    /**
+     * <p>
+     * Specifies a target that writes to a data source in Amazon Redshift.
+     * </p>
+     * 
+     * @return Specifies a target that writes to a data source in Amazon Redshift.
+     */
+
+    public AmazonRedshiftSource getAmazonRedshiftSource() {
+        return this.amazonRedshiftSource;
+    }
+
+    /**
+     * <p>
+     * Specifies a target that writes to a data source in Amazon Redshift.
+     * </p>
+     * 
+     * @param amazonRedshiftSource
+     *        Specifies a target that writes to a data source in Amazon Redshift.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeGenConfigurationNode withAmazonRedshiftSource(AmazonRedshiftSource amazonRedshiftSource) {
+        setAmazonRedshiftSource(amazonRedshiftSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a target that writes to a data target in Amazon Redshift.
+     * </p>
+     * 
+     * @param amazonRedshiftTarget
+     *        Specifies a target that writes to a data target in Amazon Redshift.
+     */
+
+    public void setAmazonRedshiftTarget(AmazonRedshiftTarget amazonRedshiftTarget) {
+        this.amazonRedshiftTarget = amazonRedshiftTarget;
+    }
+
+    /**
+     * <p>
+     * Specifies a target that writes to a data target in Amazon Redshift.
+     * </p>
+     * 
+     * @return Specifies a target that writes to a data target in Amazon Redshift.
+     */
+
+    public AmazonRedshiftTarget getAmazonRedshiftTarget() {
+        return this.amazonRedshiftTarget;
+    }
+
+    /**
+     * <p>
+     * Specifies a target that writes to a data target in Amazon Redshift.
+     * </p>
+     * 
+     * @param amazonRedshiftTarget
+     *        Specifies a target that writes to a data target in Amazon Redshift.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeGenConfigurationNode withAmazonRedshiftTarget(AmazonRedshiftTarget amazonRedshiftTarget) {
+        setAmazonRedshiftTarget(amazonRedshiftTarget);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies your data quality evaluation criteria. Allows multiple input data and returns a collection of Dynamic
+     * Frames.
+     * </p>
+     * 
+     * @param evaluateDataQualityMultiFrame
+     *        Specifies your data quality evaluation criteria. Allows multiple input data and returns a collection of
+     *        Dynamic Frames.
+     */
+
+    public void setEvaluateDataQualityMultiFrame(EvaluateDataQualityMultiFrame evaluateDataQualityMultiFrame) {
+        this.evaluateDataQualityMultiFrame = evaluateDataQualityMultiFrame;
+    }
+
+    /**
+     * <p>
+     * Specifies your data quality evaluation criteria. Allows multiple input data and returns a collection of Dynamic
+     * Frames.
+     * </p>
+     * 
+     * @return Specifies your data quality evaluation criteria. Allows multiple input data and returns a collection of
+     *         Dynamic Frames.
+     */
+
+    public EvaluateDataQualityMultiFrame getEvaluateDataQualityMultiFrame() {
+        return this.evaluateDataQualityMultiFrame;
+    }
+
+    /**
+     * <p>
+     * Specifies your data quality evaluation criteria. Allows multiple input data and returns a collection of Dynamic
+     * Frames.
+     * </p>
+     * 
+     * @param evaluateDataQualityMultiFrame
+     *        Specifies your data quality evaluation criteria. Allows multiple input data and returns a collection of
+     *        Dynamic Frames.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeGenConfigurationNode withEvaluateDataQualityMultiFrame(EvaluateDataQualityMultiFrame evaluateDataQualityMultiFrame) {
+        setEvaluateDataQualityMultiFrame(evaluateDataQualityMultiFrame);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a Glue DataBrew recipe node.
+     * </p>
+     * 
+     * @param recipe
+     *        Specifies a Glue DataBrew recipe node.
+     */
+
+    public void setRecipe(Recipe recipe) {
+        this.recipe = recipe;
+    }
+
+    /**
+     * <p>
+     * Specifies a Glue DataBrew recipe node.
+     * </p>
+     * 
+     * @return Specifies a Glue DataBrew recipe node.
+     */
+
+    public Recipe getRecipe() {
+        return this.recipe;
+    }
+
+    /**
+     * <p>
+     * Specifies a Glue DataBrew recipe node.
+     * </p>
+     * 
+     * @param recipe
+     *        Specifies a Glue DataBrew recipe node.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeGenConfigurationNode withRecipe(Recipe recipe) {
+        setRecipe(recipe);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a Snowflake data source.
+     * </p>
+     * 
+     * @param snowflakeSource
+     *        Specifies a Snowflake data source.
+     */
+
+    public void setSnowflakeSource(SnowflakeSource snowflakeSource) {
+        this.snowflakeSource = snowflakeSource;
+    }
+
+    /**
+     * <p>
+     * Specifies a Snowflake data source.
+     * </p>
+     * 
+     * @return Specifies a Snowflake data source.
+     */
+
+    public SnowflakeSource getSnowflakeSource() {
+        return this.snowflakeSource;
+    }
+
+    /**
+     * <p>
+     * Specifies a Snowflake data source.
+     * </p>
+     * 
+     * @param snowflakeSource
+     *        Specifies a Snowflake data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeGenConfigurationNode withSnowflakeSource(SnowflakeSource snowflakeSource) {
+        setSnowflakeSource(snowflakeSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a target that writes to a Snowflake data source.
+     * </p>
+     * 
+     * @param snowflakeTarget
+     *        Specifies a target that writes to a Snowflake data source.
+     */
+
+    public void setSnowflakeTarget(SnowflakeTarget snowflakeTarget) {
+        this.snowflakeTarget = snowflakeTarget;
+    }
+
+    /**
+     * <p>
+     * Specifies a target that writes to a Snowflake data source.
+     * </p>
+     * 
+     * @return Specifies a target that writes to a Snowflake data source.
+     */
+
+    public SnowflakeTarget getSnowflakeTarget() {
+        return this.snowflakeTarget;
+    }
+
+    /**
+     * <p>
+     * Specifies a target that writes to a Snowflake data source.
+     * </p>
+     * 
+     * @param snowflakeTarget
+     *        Specifies a target that writes to a Snowflake data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeGenConfigurationNode withSnowflakeTarget(SnowflakeTarget snowflakeTarget) {
+        setSnowflakeTarget(snowflakeTarget);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a source generated with standard connection options.
+     * </p>
+     * 
+     * @param connectorDataSource
+     *        Specifies a source generated with standard connection options.
+     */
+
+    public void setConnectorDataSource(ConnectorDataSource connectorDataSource) {
+        this.connectorDataSource = connectorDataSource;
+    }
+
+    /**
+     * <p>
+     * Specifies a source generated with standard connection options.
+     * </p>
+     * 
+     * @return Specifies a source generated with standard connection options.
+     */
+
+    public ConnectorDataSource getConnectorDataSource() {
+        return this.connectorDataSource;
+    }
+
+    /**
+     * <p>
+     * Specifies a source generated with standard connection options.
+     * </p>
+     * 
+     * @param connectorDataSource
+     *        Specifies a source generated with standard connection options.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeGenConfigurationNode withConnectorDataSource(ConnectorDataSource connectorDataSource) {
+        setConnectorDataSource(connectorDataSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a target generated with standard connection options.
+     * </p>
+     * 
+     * @param connectorDataTarget
+     *        Specifies a target generated with standard connection options.
+     */
+
+    public void setConnectorDataTarget(ConnectorDataTarget connectorDataTarget) {
+        this.connectorDataTarget = connectorDataTarget;
+    }
+
+    /**
+     * <p>
+     * Specifies a target generated with standard connection options.
+     * </p>
+     * 
+     * @return Specifies a target generated with standard connection options.
+     */
+
+    public ConnectorDataTarget getConnectorDataTarget() {
+        return this.connectorDataTarget;
+    }
+
+    /**
+     * <p>
+     * Specifies a target generated with standard connection options.
+     * </p>
+     * 
+     * @param connectorDataTarget
+     *        Specifies a target generated with standard connection options.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeGenConfigurationNode withConnectorDataTarget(ConnectorDataTarget connectorDataTarget) {
+        setConnectorDataTarget(connectorDataTarget);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2502,7 +3507,49 @@ public class CodeGenConfigurationNode implements Serializable, Cloneable, Struct
         if (getOracleSQLCatalogTarget() != null)
             sb.append("OracleSQLCatalogTarget: ").append(getOracleSQLCatalogTarget()).append(",");
         if (getPostgreSQLCatalogTarget() != null)
-            sb.append("PostgreSQLCatalogTarget: ").append(getPostgreSQLCatalogTarget());
+            sb.append("PostgreSQLCatalogTarget: ").append(getPostgreSQLCatalogTarget()).append(",");
+        if (getDynamicTransform() != null)
+            sb.append("DynamicTransform: ").append(getDynamicTransform()).append(",");
+        if (getEvaluateDataQuality() != null)
+            sb.append("EvaluateDataQuality: ").append(getEvaluateDataQuality()).append(",");
+        if (getS3CatalogHudiSource() != null)
+            sb.append("S3CatalogHudiSource: ").append(getS3CatalogHudiSource()).append(",");
+        if (getCatalogHudiSource() != null)
+            sb.append("CatalogHudiSource: ").append(getCatalogHudiSource()).append(",");
+        if (getS3HudiSource() != null)
+            sb.append("S3HudiSource: ").append(getS3HudiSource()).append(",");
+        if (getS3HudiCatalogTarget() != null)
+            sb.append("S3HudiCatalogTarget: ").append(getS3HudiCatalogTarget()).append(",");
+        if (getS3HudiDirectTarget() != null)
+            sb.append("S3HudiDirectTarget: ").append(getS3HudiDirectTarget()).append(",");
+        if (getDirectJDBCSource() != null)
+            sb.append("DirectJDBCSource: ").append(getDirectJDBCSource()).append(",");
+        if (getS3CatalogDeltaSource() != null)
+            sb.append("S3CatalogDeltaSource: ").append(getS3CatalogDeltaSource()).append(",");
+        if (getCatalogDeltaSource() != null)
+            sb.append("CatalogDeltaSource: ").append(getCatalogDeltaSource()).append(",");
+        if (getS3DeltaSource() != null)
+            sb.append("S3DeltaSource: ").append(getS3DeltaSource()).append(",");
+        if (getS3DeltaCatalogTarget() != null)
+            sb.append("S3DeltaCatalogTarget: ").append(getS3DeltaCatalogTarget()).append(",");
+        if (getS3DeltaDirectTarget() != null)
+            sb.append("S3DeltaDirectTarget: ").append(getS3DeltaDirectTarget()).append(",");
+        if (getAmazonRedshiftSource() != null)
+            sb.append("AmazonRedshiftSource: ").append(getAmazonRedshiftSource()).append(",");
+        if (getAmazonRedshiftTarget() != null)
+            sb.append("AmazonRedshiftTarget: ").append(getAmazonRedshiftTarget()).append(",");
+        if (getEvaluateDataQualityMultiFrame() != null)
+            sb.append("EvaluateDataQualityMultiFrame: ").append(getEvaluateDataQualityMultiFrame()).append(",");
+        if (getRecipe() != null)
+            sb.append("Recipe: ").append(getRecipe()).append(",");
+        if (getSnowflakeSource() != null)
+            sb.append("SnowflakeSource: ").append(getSnowflakeSource()).append(",");
+        if (getSnowflakeTarget() != null)
+            sb.append("SnowflakeTarget: ").append(getSnowflakeTarget()).append(",");
+        if (getConnectorDataSource() != null)
+            sb.append("ConnectorDataSource: ").append(getConnectorDataSource()).append(",");
+        if (getConnectorDataTarget() != null)
+            sb.append("ConnectorDataTarget: ").append(getConnectorDataTarget());
         sb.append("}");
         return sb.toString();
     }
@@ -2719,6 +3766,91 @@ public class CodeGenConfigurationNode implements Serializable, Cloneable, Struct
             return false;
         if (other.getPostgreSQLCatalogTarget() != null && other.getPostgreSQLCatalogTarget().equals(this.getPostgreSQLCatalogTarget()) == false)
             return false;
+        if (other.getDynamicTransform() == null ^ this.getDynamicTransform() == null)
+            return false;
+        if (other.getDynamicTransform() != null && other.getDynamicTransform().equals(this.getDynamicTransform()) == false)
+            return false;
+        if (other.getEvaluateDataQuality() == null ^ this.getEvaluateDataQuality() == null)
+            return false;
+        if (other.getEvaluateDataQuality() != null && other.getEvaluateDataQuality().equals(this.getEvaluateDataQuality()) == false)
+            return false;
+        if (other.getS3CatalogHudiSource() == null ^ this.getS3CatalogHudiSource() == null)
+            return false;
+        if (other.getS3CatalogHudiSource() != null && other.getS3CatalogHudiSource().equals(this.getS3CatalogHudiSource()) == false)
+            return false;
+        if (other.getCatalogHudiSource() == null ^ this.getCatalogHudiSource() == null)
+            return false;
+        if (other.getCatalogHudiSource() != null && other.getCatalogHudiSource().equals(this.getCatalogHudiSource()) == false)
+            return false;
+        if (other.getS3HudiSource() == null ^ this.getS3HudiSource() == null)
+            return false;
+        if (other.getS3HudiSource() != null && other.getS3HudiSource().equals(this.getS3HudiSource()) == false)
+            return false;
+        if (other.getS3HudiCatalogTarget() == null ^ this.getS3HudiCatalogTarget() == null)
+            return false;
+        if (other.getS3HudiCatalogTarget() != null && other.getS3HudiCatalogTarget().equals(this.getS3HudiCatalogTarget()) == false)
+            return false;
+        if (other.getS3HudiDirectTarget() == null ^ this.getS3HudiDirectTarget() == null)
+            return false;
+        if (other.getS3HudiDirectTarget() != null && other.getS3HudiDirectTarget().equals(this.getS3HudiDirectTarget()) == false)
+            return false;
+        if (other.getDirectJDBCSource() == null ^ this.getDirectJDBCSource() == null)
+            return false;
+        if (other.getDirectJDBCSource() != null && other.getDirectJDBCSource().equals(this.getDirectJDBCSource()) == false)
+            return false;
+        if (other.getS3CatalogDeltaSource() == null ^ this.getS3CatalogDeltaSource() == null)
+            return false;
+        if (other.getS3CatalogDeltaSource() != null && other.getS3CatalogDeltaSource().equals(this.getS3CatalogDeltaSource()) == false)
+            return false;
+        if (other.getCatalogDeltaSource() == null ^ this.getCatalogDeltaSource() == null)
+            return false;
+        if (other.getCatalogDeltaSource() != null && other.getCatalogDeltaSource().equals(this.getCatalogDeltaSource()) == false)
+            return false;
+        if (other.getS3DeltaSource() == null ^ this.getS3DeltaSource() == null)
+            return false;
+        if (other.getS3DeltaSource() != null && other.getS3DeltaSource().equals(this.getS3DeltaSource()) == false)
+            return false;
+        if (other.getS3DeltaCatalogTarget() == null ^ this.getS3DeltaCatalogTarget() == null)
+            return false;
+        if (other.getS3DeltaCatalogTarget() != null && other.getS3DeltaCatalogTarget().equals(this.getS3DeltaCatalogTarget()) == false)
+            return false;
+        if (other.getS3DeltaDirectTarget() == null ^ this.getS3DeltaDirectTarget() == null)
+            return false;
+        if (other.getS3DeltaDirectTarget() != null && other.getS3DeltaDirectTarget().equals(this.getS3DeltaDirectTarget()) == false)
+            return false;
+        if (other.getAmazonRedshiftSource() == null ^ this.getAmazonRedshiftSource() == null)
+            return false;
+        if (other.getAmazonRedshiftSource() != null && other.getAmazonRedshiftSource().equals(this.getAmazonRedshiftSource()) == false)
+            return false;
+        if (other.getAmazonRedshiftTarget() == null ^ this.getAmazonRedshiftTarget() == null)
+            return false;
+        if (other.getAmazonRedshiftTarget() != null && other.getAmazonRedshiftTarget().equals(this.getAmazonRedshiftTarget()) == false)
+            return false;
+        if (other.getEvaluateDataQualityMultiFrame() == null ^ this.getEvaluateDataQualityMultiFrame() == null)
+            return false;
+        if (other.getEvaluateDataQualityMultiFrame() != null
+                && other.getEvaluateDataQualityMultiFrame().equals(this.getEvaluateDataQualityMultiFrame()) == false)
+            return false;
+        if (other.getRecipe() == null ^ this.getRecipe() == null)
+            return false;
+        if (other.getRecipe() != null && other.getRecipe().equals(this.getRecipe()) == false)
+            return false;
+        if (other.getSnowflakeSource() == null ^ this.getSnowflakeSource() == null)
+            return false;
+        if (other.getSnowflakeSource() != null && other.getSnowflakeSource().equals(this.getSnowflakeSource()) == false)
+            return false;
+        if (other.getSnowflakeTarget() == null ^ this.getSnowflakeTarget() == null)
+            return false;
+        if (other.getSnowflakeTarget() != null && other.getSnowflakeTarget().equals(this.getSnowflakeTarget()) == false)
+            return false;
+        if (other.getConnectorDataSource() == null ^ this.getConnectorDataSource() == null)
+            return false;
+        if (other.getConnectorDataSource() != null && other.getConnectorDataSource().equals(this.getConnectorDataSource()) == false)
+            return false;
+        if (other.getConnectorDataTarget() == null ^ this.getConnectorDataTarget() == null)
+            return false;
+        if (other.getConnectorDataTarget() != null && other.getConnectorDataTarget().equals(this.getConnectorDataTarget()) == false)
+            return false;
         return true;
     }
 
@@ -2777,6 +3909,27 @@ public class CodeGenConfigurationNode implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getMySQLCatalogTarget() == null) ? 0 : getMySQLCatalogTarget().hashCode());
         hashCode = prime * hashCode + ((getOracleSQLCatalogTarget() == null) ? 0 : getOracleSQLCatalogTarget().hashCode());
         hashCode = prime * hashCode + ((getPostgreSQLCatalogTarget() == null) ? 0 : getPostgreSQLCatalogTarget().hashCode());
+        hashCode = prime * hashCode + ((getDynamicTransform() == null) ? 0 : getDynamicTransform().hashCode());
+        hashCode = prime * hashCode + ((getEvaluateDataQuality() == null) ? 0 : getEvaluateDataQuality().hashCode());
+        hashCode = prime * hashCode + ((getS3CatalogHudiSource() == null) ? 0 : getS3CatalogHudiSource().hashCode());
+        hashCode = prime * hashCode + ((getCatalogHudiSource() == null) ? 0 : getCatalogHudiSource().hashCode());
+        hashCode = prime * hashCode + ((getS3HudiSource() == null) ? 0 : getS3HudiSource().hashCode());
+        hashCode = prime * hashCode + ((getS3HudiCatalogTarget() == null) ? 0 : getS3HudiCatalogTarget().hashCode());
+        hashCode = prime * hashCode + ((getS3HudiDirectTarget() == null) ? 0 : getS3HudiDirectTarget().hashCode());
+        hashCode = prime * hashCode + ((getDirectJDBCSource() == null) ? 0 : getDirectJDBCSource().hashCode());
+        hashCode = prime * hashCode + ((getS3CatalogDeltaSource() == null) ? 0 : getS3CatalogDeltaSource().hashCode());
+        hashCode = prime * hashCode + ((getCatalogDeltaSource() == null) ? 0 : getCatalogDeltaSource().hashCode());
+        hashCode = prime * hashCode + ((getS3DeltaSource() == null) ? 0 : getS3DeltaSource().hashCode());
+        hashCode = prime * hashCode + ((getS3DeltaCatalogTarget() == null) ? 0 : getS3DeltaCatalogTarget().hashCode());
+        hashCode = prime * hashCode + ((getS3DeltaDirectTarget() == null) ? 0 : getS3DeltaDirectTarget().hashCode());
+        hashCode = prime * hashCode + ((getAmazonRedshiftSource() == null) ? 0 : getAmazonRedshiftSource().hashCode());
+        hashCode = prime * hashCode + ((getAmazonRedshiftTarget() == null) ? 0 : getAmazonRedshiftTarget().hashCode());
+        hashCode = prime * hashCode + ((getEvaluateDataQualityMultiFrame() == null) ? 0 : getEvaluateDataQualityMultiFrame().hashCode());
+        hashCode = prime * hashCode + ((getRecipe() == null) ? 0 : getRecipe().hashCode());
+        hashCode = prime * hashCode + ((getSnowflakeSource() == null) ? 0 : getSnowflakeSource().hashCode());
+        hashCode = prime * hashCode + ((getSnowflakeTarget() == null) ? 0 : getSnowflakeTarget().hashCode());
+        hashCode = prime * hashCode + ((getConnectorDataSource() == null) ? 0 : getConnectorDataSource().hashCode());
+        hashCode = prime * hashCode + ((getConnectorDataTarget() == null) ? 0 : getConnectorDataTarget().hashCode());
         return hashCode;
     }
 

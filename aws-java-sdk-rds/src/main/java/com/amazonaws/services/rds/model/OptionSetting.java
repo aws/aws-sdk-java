@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,13 +72,13 @@ public class OptionSetting implements Serializable, Cloneable {
     private String allowedValues;
     /**
      * <p>
-     * A Boolean value that, when true, indicates the option setting can be modified from the default.
+     * Indicates whether the option setting can be modified from the default.
      * </p>
      */
     private Boolean isModifiable;
     /**
      * <p>
-     * Indicates if the option setting is part of a collection.
+     * Indicates whether the option setting is part of a collection.
      * </p>
      */
     private Boolean isCollection;
@@ -365,11 +365,11 @@ public class OptionSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value that, when true, indicates the option setting can be modified from the default.
+     * Indicates whether the option setting can be modified from the default.
      * </p>
      * 
      * @param isModifiable
-     *        A Boolean value that, when true, indicates the option setting can be modified from the default.
+     *        Indicates whether the option setting can be modified from the default.
      */
 
     public void setIsModifiable(Boolean isModifiable) {
@@ -378,10 +378,10 @@ public class OptionSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value that, when true, indicates the option setting can be modified from the default.
+     * Indicates whether the option setting can be modified from the default.
      * </p>
      * 
-     * @return A Boolean value that, when true, indicates the option setting can be modified from the default.
+     * @return Indicates whether the option setting can be modified from the default.
      */
 
     public Boolean getIsModifiable() {
@@ -390,11 +390,11 @@ public class OptionSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value that, when true, indicates the option setting can be modified from the default.
+     * Indicates whether the option setting can be modified from the default.
      * </p>
      * 
      * @param isModifiable
-     *        A Boolean value that, when true, indicates the option setting can be modified from the default.
+     *        Indicates whether the option setting can be modified from the default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -405,10 +405,10 @@ public class OptionSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A Boolean value that, when true, indicates the option setting can be modified from the default.
+     * Indicates whether the option setting can be modified from the default.
      * </p>
      * 
-     * @return A Boolean value that, when true, indicates the option setting can be modified from the default.
+     * @return Indicates whether the option setting can be modified from the default.
      */
 
     public Boolean isModifiable() {
@@ -417,11 +417,11 @@ public class OptionSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the option setting is part of a collection.
+     * Indicates whether the option setting is part of a collection.
      * </p>
      * 
      * @param isCollection
-     *        Indicates if the option setting is part of a collection.
+     *        Indicates whether the option setting is part of a collection.
      */
 
     public void setIsCollection(Boolean isCollection) {
@@ -430,10 +430,10 @@ public class OptionSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the option setting is part of a collection.
+     * Indicates whether the option setting is part of a collection.
      * </p>
      * 
-     * @return Indicates if the option setting is part of a collection.
+     * @return Indicates whether the option setting is part of a collection.
      */
 
     public Boolean getIsCollection() {
@@ -442,11 +442,11 @@ public class OptionSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the option setting is part of a collection.
+     * Indicates whether the option setting is part of a collection.
      * </p>
      * 
      * @param isCollection
-     *        Indicates if the option setting is part of a collection.
+     *        Indicates whether the option setting is part of a collection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -457,10 +457,10 @@ public class OptionSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the option setting is part of a collection.
+     * Indicates whether the option setting is part of a collection.
      * </p>
      * 
-     * @return Indicates if the option setting is part of a collection.
+     * @return Indicates whether the option setting is part of a collection.
      */
 
     public Boolean isCollection() {

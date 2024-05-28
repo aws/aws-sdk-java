@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,8 +15,8 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for
- * progressive downloading. Otherwise it is placed normally at the end.
+ * To place the MOOV atom at the beginning of your output, which is useful for progressive downloading: Leave blank or
+ * choose Progressive download. To place the MOOV at the end of your output: Choose Normal.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Mp4MoovPlacement {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,18 @@ public class LogicalResourceId implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The identifier of the resource.
+     * Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter accepts values in "eks-cluster/namespace" format.
+     * </p>
+     * </note>
+     */
+    private String eksSourceName;
+    /**
+     * <p>
+     * Identifier of the resource.
      * </p>
      */
     private String identifier;
@@ -55,11 +66,75 @@ public class LogicalResourceId implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The identifier of the resource.
+     * Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter accepts values in "eks-cluster/namespace" format.
+     * </p>
+     * </note>
+     * 
+     * @param eksSourceName
+     *        Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
+     *        <p>
+     *        This parameter accepts values in "eks-cluster/namespace" format.
+     *        </p>
+     */
+
+    public void setEksSourceName(String eksSourceName) {
+        this.eksSourceName = eksSourceName;
+    }
+
+    /**
+     * <p>
+     * Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter accepts values in "eks-cluster/namespace" format.
+     * </p>
+     * </note>
+     * 
+     * @return Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
+     *         <p>
+     *         This parameter accepts values in "eks-cluster/namespace" format.
+     *         </p>
+     */
+
+    public String getEksSourceName() {
+        return this.eksSourceName;
+    }
+
+    /**
+     * <p>
+     * Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter accepts values in "eks-cluster/namespace" format.
+     * </p>
+     * </note>
+     * 
+     * @param eksSourceName
+     *        Name of the Amazon Elastic Kubernetes Service cluster and namespace this resource belongs to.</p> <note>
+     *        <p>
+     *        This parameter accepts values in "eks-cluster/namespace" format.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LogicalResourceId withEksSourceName(String eksSourceName) {
+        setEksSourceName(eksSourceName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Identifier of the resource.
      * </p>
      * 
      * @param identifier
-     *        The identifier of the resource.
+     *        Identifier of the resource.
      */
 
     public void setIdentifier(String identifier) {
@@ -68,10 +143,10 @@ public class LogicalResourceId implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The identifier of the resource.
+     * Identifier of the resource.
      * </p>
      * 
-     * @return The identifier of the resource.
+     * @return Identifier of the resource.
      */
 
     public String getIdentifier() {
@@ -80,11 +155,11 @@ public class LogicalResourceId implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The identifier of the resource.
+     * Identifier of the resource.
      * </p>
      * 
      * @param identifier
-     *        The identifier of the resource.
+     *        Identifier of the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,6 +300,8 @@ public class LogicalResourceId implements Serializable, Cloneable, StructuredPoj
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getEksSourceName() != null)
+            sb.append("EksSourceName: ").append(getEksSourceName()).append(",");
         if (getIdentifier() != null)
             sb.append("Identifier: ").append(getIdentifier()).append(",");
         if (getLogicalStackName() != null)
@@ -247,6 +324,10 @@ public class LogicalResourceId implements Serializable, Cloneable, StructuredPoj
         if (obj instanceof LogicalResourceId == false)
             return false;
         LogicalResourceId other = (LogicalResourceId) obj;
+        if (other.getEksSourceName() == null ^ this.getEksSourceName() == null)
+            return false;
+        if (other.getEksSourceName() != null && other.getEksSourceName().equals(this.getEksSourceName()) == false)
+            return false;
         if (other.getIdentifier() == null ^ this.getIdentifier() == null)
             return false;
         if (other.getIdentifier() != null && other.getIdentifier().equals(this.getIdentifier()) == false)
@@ -271,6 +352,7 @@ public class LogicalResourceId implements Serializable, Cloneable, StructuredPoj
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getEksSourceName() == null) ? 0 : getEksSourceName().hashCode());
         hashCode = prime * hashCode + ((getIdentifier() == null) ? 0 : getIdentifier().hashCode());
         hashCode = prime * hashCode + ((getLogicalStackName() == null) ? 0 : getLogicalStackName().hashCode());
         hashCode = prime * hashCode + ((getResourceGroupName() == null) ? 0 : getResourceGroupName().hashCode());

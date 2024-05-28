@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -127,6 +127,48 @@ public class CodeGenConfigurationNodeMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OracleSQLCatalogTarget").build();
     private static final MarshallingInfo<StructuredPojo> POSTGRESQLCATALOGTARGET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PostgreSQLCatalogTarget").build();
+    private static final MarshallingInfo<StructuredPojo> DYNAMICTRANSFORM_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DynamicTransform").build();
+    private static final MarshallingInfo<StructuredPojo> EVALUATEDATAQUALITY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EvaluateDataQuality").build();
+    private static final MarshallingInfo<StructuredPojo> S3CATALOGHUDISOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3CatalogHudiSource").build();
+    private static final MarshallingInfo<StructuredPojo> CATALOGHUDISOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CatalogHudiSource").build();
+    private static final MarshallingInfo<StructuredPojo> S3HUDISOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3HudiSource").build();
+    private static final MarshallingInfo<StructuredPojo> S3HUDICATALOGTARGET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3HudiCatalogTarget").build();
+    private static final MarshallingInfo<StructuredPojo> S3HUDIDIRECTTARGET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3HudiDirectTarget").build();
+    private static final MarshallingInfo<StructuredPojo> DIRECTJDBCSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DirectJDBCSource").build();
+    private static final MarshallingInfo<StructuredPojo> S3CATALOGDELTASOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3CatalogDeltaSource").build();
+    private static final MarshallingInfo<StructuredPojo> CATALOGDELTASOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CatalogDeltaSource").build();
+    private static final MarshallingInfo<StructuredPojo> S3DELTASOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3DeltaSource").build();
+    private static final MarshallingInfo<StructuredPojo> S3DELTACATALOGTARGET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3DeltaCatalogTarget").build();
+    private static final MarshallingInfo<StructuredPojo> S3DELTADIRECTTARGET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3DeltaDirectTarget").build();
+    private static final MarshallingInfo<StructuredPojo> AMAZONREDSHIFTSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AmazonRedshiftSource").build();
+    private static final MarshallingInfo<StructuredPojo> AMAZONREDSHIFTTARGET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AmazonRedshiftTarget").build();
+    private static final MarshallingInfo<StructuredPojo> EVALUATEDATAQUALITYMULTIFRAME_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EvaluateDataQualityMultiFrame").build();
+    private static final MarshallingInfo<StructuredPojo> RECIPE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Recipe").build();
+    private static final MarshallingInfo<StructuredPojo> SNOWFLAKESOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnowflakeSource").build();
+    private static final MarshallingInfo<StructuredPojo> SNOWFLAKETARGET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnowflakeTarget").build();
+    private static final MarshallingInfo<StructuredPojo> CONNECTORDATASOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConnectorDataSource").build();
+    private static final MarshallingInfo<StructuredPojo> CONNECTORDATATARGET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConnectorDataTarget").build();
 
     private static final CodeGenConfigurationNodeMarshaller instance = new CodeGenConfigurationNodeMarshaller();
 
@@ -194,6 +236,27 @@ public class CodeGenConfigurationNodeMarshaller {
             protocolMarshaller.marshall(codeGenConfigurationNode.getMySQLCatalogTarget(), MYSQLCATALOGTARGET_BINDING);
             protocolMarshaller.marshall(codeGenConfigurationNode.getOracleSQLCatalogTarget(), ORACLESQLCATALOGTARGET_BINDING);
             protocolMarshaller.marshall(codeGenConfigurationNode.getPostgreSQLCatalogTarget(), POSTGRESQLCATALOGTARGET_BINDING);
+            protocolMarshaller.marshall(codeGenConfigurationNode.getDynamicTransform(), DYNAMICTRANSFORM_BINDING);
+            protocolMarshaller.marshall(codeGenConfigurationNode.getEvaluateDataQuality(), EVALUATEDATAQUALITY_BINDING);
+            protocolMarshaller.marshall(codeGenConfigurationNode.getS3CatalogHudiSource(), S3CATALOGHUDISOURCE_BINDING);
+            protocolMarshaller.marshall(codeGenConfigurationNode.getCatalogHudiSource(), CATALOGHUDISOURCE_BINDING);
+            protocolMarshaller.marshall(codeGenConfigurationNode.getS3HudiSource(), S3HUDISOURCE_BINDING);
+            protocolMarshaller.marshall(codeGenConfigurationNode.getS3HudiCatalogTarget(), S3HUDICATALOGTARGET_BINDING);
+            protocolMarshaller.marshall(codeGenConfigurationNode.getS3HudiDirectTarget(), S3HUDIDIRECTTARGET_BINDING);
+            protocolMarshaller.marshall(codeGenConfigurationNode.getDirectJDBCSource(), DIRECTJDBCSOURCE_BINDING);
+            protocolMarshaller.marshall(codeGenConfigurationNode.getS3CatalogDeltaSource(), S3CATALOGDELTASOURCE_BINDING);
+            protocolMarshaller.marshall(codeGenConfigurationNode.getCatalogDeltaSource(), CATALOGDELTASOURCE_BINDING);
+            protocolMarshaller.marshall(codeGenConfigurationNode.getS3DeltaSource(), S3DELTASOURCE_BINDING);
+            protocolMarshaller.marshall(codeGenConfigurationNode.getS3DeltaCatalogTarget(), S3DELTACATALOGTARGET_BINDING);
+            protocolMarshaller.marshall(codeGenConfigurationNode.getS3DeltaDirectTarget(), S3DELTADIRECTTARGET_BINDING);
+            protocolMarshaller.marshall(codeGenConfigurationNode.getAmazonRedshiftSource(), AMAZONREDSHIFTSOURCE_BINDING);
+            protocolMarshaller.marshall(codeGenConfigurationNode.getAmazonRedshiftTarget(), AMAZONREDSHIFTTARGET_BINDING);
+            protocolMarshaller.marshall(codeGenConfigurationNode.getEvaluateDataQualityMultiFrame(), EVALUATEDATAQUALITYMULTIFRAME_BINDING);
+            protocolMarshaller.marshall(codeGenConfigurationNode.getRecipe(), RECIPE_BINDING);
+            protocolMarshaller.marshall(codeGenConfigurationNode.getSnowflakeSource(), SNOWFLAKESOURCE_BINDING);
+            protocolMarshaller.marshall(codeGenConfigurationNode.getSnowflakeTarget(), SNOWFLAKETARGET_BINDING);
+            protocolMarshaller.marshall(codeGenConfigurationNode.getConnectorDataSource(), CONNECTORDATASOURCE_BINDING);
+            protocolMarshaller.marshall(codeGenConfigurationNode.getConnectorDataTarget(), CONNECTORDATATARGET_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

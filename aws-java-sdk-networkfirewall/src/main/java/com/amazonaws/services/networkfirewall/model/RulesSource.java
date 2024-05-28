@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,13 +31,19 @@ public class RulesSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Stateful inspection criteria, provided in Suricata compatible intrusion prevention system (IPS) rules. Suricata
-     * is an open-source network IPS that includes a standard rule-based language for network traffic inspection.
+     * Stateful inspection criteria, provided in Suricata compatible rules. Suricata is an open-source threat detection
+     * framework that includes a standard rule-based language for network traffic inspection.
      * </p>
      * <p>
      * These rules contain the inspection criteria and the action to take for traffic that matches the criteria, so this
      * type of rule group doesn't have a separate action setting.
      * </p>
+     * <note>
+     * <p>
+     * You can't use the <code>priority</code> keyword if the <code>RuleOrder</code> option in
+     * <a>StatefulRuleOptions</a> is set to <code>STRICT_ORDER</code>.
+     * </p>
+     * </note>
      */
     private String rulesString;
     /**
@@ -51,7 +57,7 @@ public class RulesSource implements Serializable, Cloneable, StructuredPojo {
      * An array of individual stateful rules inspection criteria to be used together in a stateful rule group. Use this
      * option to specify simple Suricata rules with protocol, source and destination, ports, direction, and rule
      * options. For information about the Suricata <code>Rules</code> format, see <a
-     * href="https://suricata.readthedocs.io/rules/intro.html#">Rules Format</a>.
+     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html">Rules Format</a>.
      * </p>
      */
     private java.util.List<StatefulRule> statefulRules;
@@ -64,21 +70,32 @@ public class RulesSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Stateful inspection criteria, provided in Suricata compatible intrusion prevention system (IPS) rules. Suricata
-     * is an open-source network IPS that includes a standard rule-based language for network traffic inspection.
+     * Stateful inspection criteria, provided in Suricata compatible rules. Suricata is an open-source threat detection
+     * framework that includes a standard rule-based language for network traffic inspection.
      * </p>
      * <p>
      * These rules contain the inspection criteria and the action to take for traffic that matches the criteria, so this
      * type of rule group doesn't have a separate action setting.
      * </p>
+     * <note>
+     * <p>
+     * You can't use the <code>priority</code> keyword if the <code>RuleOrder</code> option in
+     * <a>StatefulRuleOptions</a> is set to <code>STRICT_ORDER</code>.
+     * </p>
+     * </note>
      * 
      * @param rulesString
-     *        Stateful inspection criteria, provided in Suricata compatible intrusion prevention system (IPS) rules.
-     *        Suricata is an open-source network IPS that includes a standard rule-based language for network traffic
-     *        inspection.</p>
+     *        Stateful inspection criteria, provided in Suricata compatible rules. Suricata is an open-source threat
+     *        detection framework that includes a standard rule-based language for network traffic inspection.</p>
      *        <p>
      *        These rules contain the inspection criteria and the action to take for traffic that matches the criteria,
      *        so this type of rule group doesn't have a separate action setting.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        You can't use the <code>priority</code> keyword if the <code>RuleOrder</code> option in
+     *        <a>StatefulRuleOptions</a> is set to <code>STRICT_ORDER</code>.
+     *        </p>
      */
 
     public void setRulesString(String rulesString) {
@@ -87,20 +104,31 @@ public class RulesSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Stateful inspection criteria, provided in Suricata compatible intrusion prevention system (IPS) rules. Suricata
-     * is an open-source network IPS that includes a standard rule-based language for network traffic inspection.
+     * Stateful inspection criteria, provided in Suricata compatible rules. Suricata is an open-source threat detection
+     * framework that includes a standard rule-based language for network traffic inspection.
      * </p>
      * <p>
      * These rules contain the inspection criteria and the action to take for traffic that matches the criteria, so this
      * type of rule group doesn't have a separate action setting.
      * </p>
+     * <note>
+     * <p>
+     * You can't use the <code>priority</code> keyword if the <code>RuleOrder</code> option in
+     * <a>StatefulRuleOptions</a> is set to <code>STRICT_ORDER</code>.
+     * </p>
+     * </note>
      * 
-     * @return Stateful inspection criteria, provided in Suricata compatible intrusion prevention system (IPS) rules.
-     *         Suricata is an open-source network IPS that includes a standard rule-based language for network traffic
-     *         inspection.</p>
+     * @return Stateful inspection criteria, provided in Suricata compatible rules. Suricata is an open-source threat
+     *         detection framework that includes a standard rule-based language for network traffic inspection.</p>
      *         <p>
      *         These rules contain the inspection criteria and the action to take for traffic that matches the criteria,
      *         so this type of rule group doesn't have a separate action setting.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         You can't use the <code>priority</code> keyword if the <code>RuleOrder</code> option in
+     *         <a>StatefulRuleOptions</a> is set to <code>STRICT_ORDER</code>.
+     *         </p>
      */
 
     public String getRulesString() {
@@ -109,21 +137,32 @@ public class RulesSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Stateful inspection criteria, provided in Suricata compatible intrusion prevention system (IPS) rules. Suricata
-     * is an open-source network IPS that includes a standard rule-based language for network traffic inspection.
+     * Stateful inspection criteria, provided in Suricata compatible rules. Suricata is an open-source threat detection
+     * framework that includes a standard rule-based language for network traffic inspection.
      * </p>
      * <p>
      * These rules contain the inspection criteria and the action to take for traffic that matches the criteria, so this
      * type of rule group doesn't have a separate action setting.
      * </p>
+     * <note>
+     * <p>
+     * You can't use the <code>priority</code> keyword if the <code>RuleOrder</code> option in
+     * <a>StatefulRuleOptions</a> is set to <code>STRICT_ORDER</code>.
+     * </p>
+     * </note>
      * 
      * @param rulesString
-     *        Stateful inspection criteria, provided in Suricata compatible intrusion prevention system (IPS) rules.
-     *        Suricata is an open-source network IPS that includes a standard rule-based language for network traffic
-     *        inspection.</p>
+     *        Stateful inspection criteria, provided in Suricata compatible rules. Suricata is an open-source threat
+     *        detection framework that includes a standard rule-based language for network traffic inspection.</p>
      *        <p>
      *        These rules contain the inspection criteria and the action to take for traffic that matches the criteria,
      *        so this type of rule group doesn't have a separate action setting.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        You can't use the <code>priority</code> keyword if the <code>RuleOrder</code> option in
+     *        <a>StatefulRuleOptions</a> is set to <code>STRICT_ORDER</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -177,13 +216,13 @@ public class RulesSource implements Serializable, Cloneable, StructuredPojo {
      * An array of individual stateful rules inspection criteria to be used together in a stateful rule group. Use this
      * option to specify simple Suricata rules with protocol, source and destination, ports, direction, and rule
      * options. For information about the Suricata <code>Rules</code> format, see <a
-     * href="https://suricata.readthedocs.io/rules/intro.html#">Rules Format</a>.
+     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html">Rules Format</a>.
      * </p>
      * 
      * @return An array of individual stateful rules inspection criteria to be used together in a stateful rule group.
      *         Use this option to specify simple Suricata rules with protocol, source and destination, ports, direction,
      *         and rule options. For information about the Suricata <code>Rules</code> format, see <a
-     *         href="https://suricata.readthedocs.io/rules/intro.html#">Rules Format</a>.
+     *         href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html">Rules Format</a>.
      */
 
     public java.util.List<StatefulRule> getStatefulRules() {
@@ -195,14 +234,14 @@ public class RulesSource implements Serializable, Cloneable, StructuredPojo {
      * An array of individual stateful rules inspection criteria to be used together in a stateful rule group. Use this
      * option to specify simple Suricata rules with protocol, source and destination, ports, direction, and rule
      * options. For information about the Suricata <code>Rules</code> format, see <a
-     * href="https://suricata.readthedocs.io/rules/intro.html#">Rules Format</a>.
+     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html">Rules Format</a>.
      * </p>
      * 
      * @param statefulRules
      *        An array of individual stateful rules inspection criteria to be used together in a stateful rule group.
      *        Use this option to specify simple Suricata rules with protocol, source and destination, ports, direction,
      *        and rule options. For information about the Suricata <code>Rules</code> format, see <a
-     *        href="https://suricata.readthedocs.io/rules/intro.html#">Rules Format</a>.
+     *        href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html">Rules Format</a>.
      */
 
     public void setStatefulRules(java.util.Collection<StatefulRule> statefulRules) {
@@ -219,7 +258,7 @@ public class RulesSource implements Serializable, Cloneable, StructuredPojo {
      * An array of individual stateful rules inspection criteria to be used together in a stateful rule group. Use this
      * option to specify simple Suricata rules with protocol, source and destination, ports, direction, and rule
      * options. For information about the Suricata <code>Rules</code> format, see <a
-     * href="https://suricata.readthedocs.io/rules/intro.html#">Rules Format</a>.
+     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html">Rules Format</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -231,7 +270,7 @@ public class RulesSource implements Serializable, Cloneable, StructuredPojo {
      *        An array of individual stateful rules inspection criteria to be used together in a stateful rule group.
      *        Use this option to specify simple Suricata rules with protocol, source and destination, ports, direction,
      *        and rule options. For information about the Suricata <code>Rules</code> format, see <a
-     *        href="https://suricata.readthedocs.io/rules/intro.html#">Rules Format</a>.
+     *        href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html">Rules Format</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -250,14 +289,14 @@ public class RulesSource implements Serializable, Cloneable, StructuredPojo {
      * An array of individual stateful rules inspection criteria to be used together in a stateful rule group. Use this
      * option to specify simple Suricata rules with protocol, source and destination, ports, direction, and rule
      * options. For information about the Suricata <code>Rules</code> format, see <a
-     * href="https://suricata.readthedocs.io/rules/intro.html#">Rules Format</a>.
+     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html">Rules Format</a>.
      * </p>
      * 
      * @param statefulRules
      *        An array of individual stateful rules inspection criteria to be used together in a stateful rule group.
      *        Use this option to specify simple Suricata rules with protocol, source and destination, ports, direction,
      *        and rule options. For information about the Suricata <code>Rules</code> format, see <a
-     *        href="https://suricata.readthedocs.io/rules/intro.html#">Rules Format</a>.
+     *        href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html">Rules Format</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

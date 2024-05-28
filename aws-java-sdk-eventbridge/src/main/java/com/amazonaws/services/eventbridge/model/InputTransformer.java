@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,7 +47,7 @@ public class InputTransformer implements Serializable, Cloneable, StructuredPojo
      * <p>
      * Input template where you specify placeholders that will be filled with the values of the keys from
      * <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code>
-     * value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.
+     * value in brackets: &lt;<i>value</i>&gt;
      * </p>
      * <p>
      * If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:
@@ -235,7 +235,7 @@ public class InputTransformer implements Serializable, Cloneable, StructuredPojo
      * <p>
      * Input template where you specify placeholders that will be filled with the values of the keys from
      * <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code>
-     * value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.
+     * value in brackets: &lt;<i>value</i>&gt;
      * </p>
      * <p>
      * If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:
@@ -307,8 +307,7 @@ public class InputTransformer implements Serializable, Cloneable, StructuredPojo
      * @param inputTemplate
      *        Input template where you specify placeholders that will be filled with the values of the keys from
      *        <code>InputPathsMap</code> to customize the data sent to the target. Enclose each
-     *        <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid
-     *        JSON.</p>
+     *        <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; </p>
      *        <p>
      *        If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions
      *        apply:
@@ -386,7 +385,7 @@ public class InputTransformer implements Serializable, Cloneable, StructuredPojo
      * <p>
      * Input template where you specify placeholders that will be filled with the values of the keys from
      * <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code>
-     * value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.
+     * value in brackets: &lt;<i>value</i>&gt;
      * </p>
      * <p>
      * If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:
@@ -457,8 +456,7 @@ public class InputTransformer implements Serializable, Cloneable, StructuredPojo
      * 
      * @return Input template where you specify placeholders that will be filled with the values of the keys from
      *         <code>InputPathsMap</code> to customize the data sent to the target. Enclose each
-     *         <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid
-     *         JSON.</p>
+     *         <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; </p>
      *         <p>
      *         If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions
      *         apply:
@@ -536,7 +534,7 @@ public class InputTransformer implements Serializable, Cloneable, StructuredPojo
      * <p>
      * Input template where you specify placeholders that will be filled with the values of the keys from
      * <code>InputPathsMap</code> to customize the data sent to the target. Enclose each <code>InputPathsMaps</code>
-     * value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid JSON.
+     * value in brackets: &lt;<i>value</i>&gt;
      * </p>
      * <p>
      * If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions apply:
@@ -608,8 +606,7 @@ public class InputTransformer implements Serializable, Cloneable, StructuredPojo
      * @param inputTemplate
      *        Input template where you specify placeholders that will be filled with the values of the keys from
      *        <code>InputPathsMap</code> to customize the data sent to the target. Enclose each
-     *        <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; The InputTemplate must be valid
-     *        JSON.</p>
+     *        <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; </p>
      *        <p>
      *        If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following restrictions
      *        apply:

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,14 +43,14 @@ public class SendBounceRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String bounceSender;
     /**
      * <p>
-     * Human-readable text for the bounce message to explain the failure. If not specified, the text will be
-     * auto-generated based on the bounced recipient information.
+     * Human-readable text for the bounce message to explain the failure. If not specified, the text is auto-generated
+     * based on the bounced recipient information.
      * </p>
      */
     private String explanation;
     /**
      * <p>
-     * Message-related DSN fields. If not specified, Amazon SES will choose the values.
+     * Message-related DSN fields. If not specified, Amazon SES chooses the values.
      * </p>
      */
     private MessageDsn messageDsn;
@@ -67,8 +67,7 @@ public class SendBounceRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the
      * sending authorization policy that permits you to use the address in the "From" header of the bounce. For more
      * information about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-     * Guide</a>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer Guide</a>.
      * </p>
      */
     private String bounceSenderArn;
@@ -161,12 +160,12 @@ public class SendBounceRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Human-readable text for the bounce message to explain the failure. If not specified, the text will be
-     * auto-generated based on the bounced recipient information.
+     * Human-readable text for the bounce message to explain the failure. If not specified, the text is auto-generated
+     * based on the bounced recipient information.
      * </p>
      * 
      * @param explanation
-     *        Human-readable text for the bounce message to explain the failure. If not specified, the text will be
+     *        Human-readable text for the bounce message to explain the failure. If not specified, the text is
      *        auto-generated based on the bounced recipient information.
      */
 
@@ -176,11 +175,11 @@ public class SendBounceRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Human-readable text for the bounce message to explain the failure. If not specified, the text will be
-     * auto-generated based on the bounced recipient information.
+     * Human-readable text for the bounce message to explain the failure. If not specified, the text is auto-generated
+     * based on the bounced recipient information.
      * </p>
      * 
-     * @return Human-readable text for the bounce message to explain the failure. If not specified, the text will be
+     * @return Human-readable text for the bounce message to explain the failure. If not specified, the text is
      *         auto-generated based on the bounced recipient information.
      */
 
@@ -190,12 +189,12 @@ public class SendBounceRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Human-readable text for the bounce message to explain the failure. If not specified, the text will be
-     * auto-generated based on the bounced recipient information.
+     * Human-readable text for the bounce message to explain the failure. If not specified, the text is auto-generated
+     * based on the bounced recipient information.
      * </p>
      * 
      * @param explanation
-     *        Human-readable text for the bounce message to explain the failure. If not specified, the text will be
+     *        Human-readable text for the bounce message to explain the failure. If not specified, the text is
      *        auto-generated based on the bounced recipient information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -207,11 +206,11 @@ public class SendBounceRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Message-related DSN fields. If not specified, Amazon SES will choose the values.
+     * Message-related DSN fields. If not specified, Amazon SES chooses the values.
      * </p>
      * 
      * @param messageDsn
-     *        Message-related DSN fields. If not specified, Amazon SES will choose the values.
+     *        Message-related DSN fields. If not specified, Amazon SES chooses the values.
      */
 
     public void setMessageDsn(MessageDsn messageDsn) {
@@ -220,10 +219,10 @@ public class SendBounceRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Message-related DSN fields. If not specified, Amazon SES will choose the values.
+     * Message-related DSN fields. If not specified, Amazon SES chooses the values.
      * </p>
      * 
-     * @return Message-related DSN fields. If not specified, Amazon SES will choose the values.
+     * @return Message-related DSN fields. If not specified, Amazon SES chooses the values.
      */
 
     public MessageDsn getMessageDsn() {
@@ -232,11 +231,11 @@ public class SendBounceRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Message-related DSN fields. If not specified, Amazon SES will choose the values.
+     * Message-related DSN fields. If not specified, Amazon SES chooses the values.
      * </p>
      * 
      * @param messageDsn
-     *        Message-related DSN fields. If not specified, Amazon SES will choose the values.
+     *        Message-related DSN fields. If not specified, Amazon SES chooses the values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -339,16 +338,15 @@ public class SendBounceRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the
      * sending authorization policy that permits you to use the address in the "From" header of the bounce. For more
      * information about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-     * Guide</a>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer Guide</a>.
      * </p>
      * 
      * @param bounceSenderArn
      *        This parameter is used only for sending authorization. It is the ARN of the identity that is associated
      *        with the sending authorization policy that permits you to use the address in the "From" header of the
      *        bounce. For more information about sending authorization, see the <a
-     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
-     *        Developer Guide</a>.
+     *        href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer
+     *        Guide</a>.
      */
 
     public void setBounceSenderArn(String bounceSenderArn) {
@@ -360,15 +358,14 @@ public class SendBounceRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the
      * sending authorization policy that permits you to use the address in the "From" header of the bounce. For more
      * information about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-     * Guide</a>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer Guide</a>.
      * </p>
      * 
      * @return This parameter is used only for sending authorization. It is the ARN of the identity that is associated
      *         with the sending authorization policy that permits you to use the address in the "From" header of the
      *         bounce. For more information about sending authorization, see the <a
-     *         href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
-     *         Developer Guide</a>.
+     *         href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer
+     *         Guide</a>.
      */
 
     public String getBounceSenderArn() {
@@ -380,16 +377,15 @@ public class SendBounceRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the
      * sending authorization policy that permits you to use the address in the "From" header of the bounce. For more
      * information about sending authorization, see the <a
-     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
-     * Guide</a>.
+     * href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer Guide</a>.
      * </p>
      * 
      * @param bounceSenderArn
      *        This parameter is used only for sending authorization. It is the ARN of the identity that is associated
      *        with the sending authorization policy that permits you to use the address in the "From" header of the
      *        bounce. For more information about sending authorization, see the <a
-     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
-     *        Developer Guide</a>.
+     *        href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html">Amazon SES Developer
+     *        Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

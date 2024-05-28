@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,18 @@ public class ShareInvitation implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String lensArn;
+    /**
+     * <p>
+     * The profile ARN.
+     * </p>
+     */
+    private String profileArn;
+    /**
+     * <p>
+     * The review template ARN.
+     * </p>
+     */
+    private String templateArn;
 
     /**
      * <p>
@@ -243,6 +255,86 @@ public class ShareInvitation implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The profile ARN.
+     * </p>
+     * 
+     * @param profileArn
+     *        The profile ARN.
+     */
+
+    public void setProfileArn(String profileArn) {
+        this.profileArn = profileArn;
+    }
+
+    /**
+     * <p>
+     * The profile ARN.
+     * </p>
+     * 
+     * @return The profile ARN.
+     */
+
+    public String getProfileArn() {
+        return this.profileArn;
+    }
+
+    /**
+     * <p>
+     * The profile ARN.
+     * </p>
+     * 
+     * @param profileArn
+     *        The profile ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ShareInvitation withProfileArn(String profileArn) {
+        setProfileArn(profileArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The review template ARN.
+     * </p>
+     * 
+     * @param templateArn
+     *        The review template ARN.
+     */
+
+    public void setTemplateArn(String templateArn) {
+        this.templateArn = templateArn;
+    }
+
+    /**
+     * <p>
+     * The review template ARN.
+     * </p>
+     * 
+     * @return The review template ARN.
+     */
+
+    public String getTemplateArn() {
+        return this.templateArn;
+    }
+
+    /**
+     * <p>
+     * The review template ARN.
+     * </p>
+     * 
+     * @param templateArn
+     *        The review template ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ShareInvitation withTemplateArn(String templateArn) {
+        setTemplateArn(templateArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -263,7 +355,11 @@ public class ShareInvitation implements Serializable, Cloneable, StructuredPojo 
         if (getLensAlias() != null)
             sb.append("LensAlias: ").append(getLensAlias()).append(",");
         if (getLensArn() != null)
-            sb.append("LensArn: ").append(getLensArn());
+            sb.append("LensArn: ").append(getLensArn()).append(",");
+        if (getProfileArn() != null)
+            sb.append("ProfileArn: ").append(getProfileArn()).append(",");
+        if (getTemplateArn() != null)
+            sb.append("TemplateArn: ").append(getTemplateArn());
         sb.append("}");
         return sb.toString();
     }
@@ -298,6 +394,14 @@ public class ShareInvitation implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getLensArn() != null && other.getLensArn().equals(this.getLensArn()) == false)
             return false;
+        if (other.getProfileArn() == null ^ this.getProfileArn() == null)
+            return false;
+        if (other.getProfileArn() != null && other.getProfileArn().equals(this.getProfileArn()) == false)
+            return false;
+        if (other.getTemplateArn() == null ^ this.getTemplateArn() == null)
+            return false;
+        if (other.getTemplateArn() != null && other.getTemplateArn().equals(this.getTemplateArn()) == false)
+            return false;
         return true;
     }
 
@@ -311,6 +415,8 @@ public class ShareInvitation implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getWorkloadId() == null) ? 0 : getWorkloadId().hashCode());
         hashCode = prime * hashCode + ((getLensAlias() == null) ? 0 : getLensAlias().hashCode());
         hashCode = prime * hashCode + ((getLensArn() == null) ? 0 : getLensArn().hashCode());
+        hashCode = prime * hashCode + ((getProfileArn() == null) ? 0 : getProfileArn().hashCode());
+        hashCode = prime * hashCode + ((getTemplateArn() == null) ? 0 : getTemplateArn().hashCode());
         return hashCode;
     }
 

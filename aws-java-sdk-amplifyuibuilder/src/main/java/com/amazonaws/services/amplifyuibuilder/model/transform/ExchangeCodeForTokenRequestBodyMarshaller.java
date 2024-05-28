@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class ExchangeCodeForTokenRequestBodyMarshaller {
             .marshallLocationName("code").build();
     private static final MarshallingInfo<String> REDIRECTURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("redirectUri").build();
+    private static final MarshallingInfo<String> CLIENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("clientId").build();
 
     private static final ExchangeCodeForTokenRequestBodyMarshaller instance = new ExchangeCodeForTokenRequestBodyMarshaller();
 
@@ -50,6 +52,7 @@ public class ExchangeCodeForTokenRequestBodyMarshaller {
         try {
             protocolMarshaller.marshall(exchangeCodeForTokenRequestBody.getCode(), CODE_BINDING);
             protocolMarshaller.marshall(exchangeCodeForTokenRequestBody.getRedirectUri(), REDIRECTURI_BINDING);
+            protocolMarshaller.marshall(exchangeCodeForTokenRequestBody.getClientId(), CLIENTID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

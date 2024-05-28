@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,7 +51,7 @@ public class TransactWriteItemsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * Although multiple identical calls using the same client request token produce the same result on the server (no
-     * side effects), the responses to the calls might not be the same. If the <code>ReturnConsumedCapacity&gt;</code>
+     * side effects), the responses to the calls might not be the same. If the <code>ReturnConsumedCapacity</code>
      * parameter is set, then the initial <code>TransactWriteItems</code> call returns the amount of write capacity
      * units consumed in making the changes. Subsequent <code>TransactWriteItems</code> calls with the same client token
      * return the number of read capacity units consumed in reading the item.
@@ -284,7 +284,7 @@ public class TransactWriteItemsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * Although multiple identical calls using the same client request token produce the same result on the server (no
-     * side effects), the responses to the calls might not be the same. If the <code>ReturnConsumedCapacity&gt;</code>
+     * side effects), the responses to the calls might not be the same. If the <code>ReturnConsumedCapacity</code>
      * parameter is set, then the initial <code>TransactWriteItems</code> call returns the amount of write capacity
      * units consumed in making the changes. Subsequent <code>TransactWriteItems</code> calls with the same client token
      * return the number of read capacity units consumed in reading the item.
@@ -305,7 +305,7 @@ public class TransactWriteItemsRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        Although multiple identical calls using the same client request token produce the same result on the
      *        server (no side effects), the responses to the calls might not be the same. If the
-     *        <code>ReturnConsumedCapacity&gt;</code> parameter is set, then the initial <code>TransactWriteItems</code>
+     *        <code>ReturnConsumedCapacity</code> parameter is set, then the initial <code>TransactWriteItems</code>
      *        call returns the amount of write capacity units consumed in making the changes. Subsequent
      *        <code>TransactWriteItems</code> calls with the same client token return the number of read capacity units
      *        consumed in reading the item.
@@ -331,7 +331,7 @@ public class TransactWriteItemsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * Although multiple identical calls using the same client request token produce the same result on the server (no
-     * side effects), the responses to the calls might not be the same. If the <code>ReturnConsumedCapacity&gt;</code>
+     * side effects), the responses to the calls might not be the same. If the <code>ReturnConsumedCapacity</code>
      * parameter is set, then the initial <code>TransactWriteItems</code> call returns the amount of write capacity
      * units consumed in making the changes. Subsequent <code>TransactWriteItems</code> calls with the same client token
      * return the number of read capacity units consumed in reading the item.
@@ -351,10 +351,10 @@ public class TransactWriteItemsRequest extends com.amazonaws.AmazonWebServiceReq
      *         <p>
      *         Although multiple identical calls using the same client request token produce the same result on the
      *         server (no side effects), the responses to the calls might not be the same. If the
-     *         <code>ReturnConsumedCapacity&gt;</code> parameter is set, then the initial
-     *         <code>TransactWriteItems</code> call returns the amount of write capacity units consumed in making the
-     *         changes. Subsequent <code>TransactWriteItems</code> calls with the same client token return the number of
-     *         read capacity units consumed in reading the item.
+     *         <code>ReturnConsumedCapacity</code> parameter is set, then the initial <code>TransactWriteItems</code>
+     *         call returns the amount of write capacity units consumed in making the changes. Subsequent
+     *         <code>TransactWriteItems</code> calls with the same client token return the number of read capacity units
+     *         consumed in reading the item.
      *         </p>
      *         <p>
      *         A client request token is valid for 10 minutes after the first request that uses it is completed. After
@@ -377,7 +377,7 @@ public class TransactWriteItemsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * Although multiple identical calls using the same client request token produce the same result on the server (no
-     * side effects), the responses to the calls might not be the same. If the <code>ReturnConsumedCapacity&gt;</code>
+     * side effects), the responses to the calls might not be the same. If the <code>ReturnConsumedCapacity</code>
      * parameter is set, then the initial <code>TransactWriteItems</code> call returns the amount of write capacity
      * units consumed in making the changes. Subsequent <code>TransactWriteItems</code> calls with the same client token
      * return the number of read capacity units consumed in reading the item.
@@ -398,7 +398,7 @@ public class TransactWriteItemsRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        Although multiple identical calls using the same client request token produce the same result on the
      *        server (no side effects), the responses to the calls might not be the same. If the
-     *        <code>ReturnConsumedCapacity&gt;</code> parameter is set, then the initial <code>TransactWriteItems</code>
+     *        <code>ReturnConsumedCapacity</code> parameter is set, then the initial <code>TransactWriteItems</code>
      *        call returns the amount of write capacity units consumed in making the changes. Subsequent
      *        <code>TransactWriteItems</code> calls with the same client token return the number of read capacity units
      *        consumed in reading the item.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,9 @@ public class CreateUserPoolDomainResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain Name
-     * Service (DNS) provider.
+     * Service (DNS) provider. Amazon Cognito returns this value if you set a custom domain with
+     * <code>CustomDomainConfig</code>. If you set an Amazon Cognito prefix domain, this operation returns a blank
+     * response.
      * </p>
      */
     private String cloudFrontDomain;
@@ -34,12 +36,16 @@ public class CreateUserPoolDomainResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain Name
-     * Service (DNS) provider.
+     * Service (DNS) provider. Amazon Cognito returns this value if you set a custom domain with
+     * <code>CustomDomainConfig</code>. If you set an Amazon Cognito prefix domain, this operation returns a blank
+     * response.
      * </p>
      * 
      * @param cloudFrontDomain
      *        The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain
-     *        Name Service (DNS) provider.
+     *        Name Service (DNS) provider. Amazon Cognito returns this value if you set a custom domain with
+     *        <code>CustomDomainConfig</code>. If you set an Amazon Cognito prefix domain, this operation returns a
+     *        blank response.
      */
 
     public void setCloudFrontDomain(String cloudFrontDomain) {
@@ -49,11 +55,15 @@ public class CreateUserPoolDomainResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain Name
-     * Service (DNS) provider.
+     * Service (DNS) provider. Amazon Cognito returns this value if you set a custom domain with
+     * <code>CustomDomainConfig</code>. If you set an Amazon Cognito prefix domain, this operation returns a blank
+     * response.
      * </p>
      * 
      * @return The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain
-     *         Name Service (DNS) provider.
+     *         Name Service (DNS) provider. Amazon Cognito returns this value if you set a custom domain with
+     *         <code>CustomDomainConfig</code>. If you set an Amazon Cognito prefix domain, this operation returns a
+     *         blank response.
      */
 
     public String getCloudFrontDomain() {
@@ -63,12 +73,16 @@ public class CreateUserPoolDomainResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain Name
-     * Service (DNS) provider.
+     * Service (DNS) provider. Amazon Cognito returns this value if you set a custom domain with
+     * <code>CustomDomainConfig</code>. If you set an Amazon Cognito prefix domain, this operation returns a blank
+     * response.
      * </p>
      * 
      * @param cloudFrontDomain
      *        The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain
-     *        Name Service (DNS) provider.
+     *        Name Service (DNS) provider. Amazon Cognito returns this value if you set a custom domain with
+     *        <code>CustomDomainConfig</code>. If you set an Amazon Cognito prefix domain, this operation returns a
+     *        blank response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

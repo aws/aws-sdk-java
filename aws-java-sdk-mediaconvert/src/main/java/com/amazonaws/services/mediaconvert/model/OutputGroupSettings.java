@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,36 +28,27 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * Settings related to your CMAF output package. For more information, see
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job
-     * specification, include this object and any required children when you set Type, under OutputGroupSettings, to
-     * CMAF_GROUP_SETTINGS.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
      */
     private CmafGroupSettings cmafGroupSettings;
     /**
      * Settings related to your DASH output package. For more information, see
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job
-     * specification, include this object and any required children when you set Type, under OutputGroupSettings, to
-     * DASH_ISO_GROUP_SETTINGS.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
      */
     private DashIsoGroupSettings dashIsoGroupSettings;
     /**
      * Settings related to your File output group. MediaConvert uses this group of settings to generate a single
-     * standalone file, rather than a streaming package. When you work directly in your JSON job specification, include
-     * this object and any required children when you set Type, under OutputGroupSettings, to FILE_GROUP_SETTINGS.
+     * standalone file, rather than a streaming package.
      */
     private FileGroupSettings fileGroupSettings;
     /**
      * Settings related to your HLS output package. For more information, see
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job
-     * specification, include this object and any required children when you set Type, under OutputGroupSettings, to
-     * HLS_GROUP_SETTINGS.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
      */
     private HlsGroupSettings hlsGroupSettings;
     /**
      * Settings related to your Microsoft Smooth Streaming output package. For more information, see
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job
-     * specification, include this object and any required children when you set Type, under OutputGroupSettings, to
-     * MS_SMOOTH_GROUP_SETTINGS.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
      */
     private MsSmoothGroupSettings msSmoothGroupSettings;
     /** Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF) */
@@ -65,15 +56,11 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * Settings related to your CMAF output package. For more information, see
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job
-     * specification, include this object and any required children when you set Type, under OutputGroupSettings, to
-     * CMAF_GROUP_SETTINGS.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
      * 
      * @param cmafGroupSettings
      *        Settings related to your CMAF output package. For more information, see
-     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your
-     *        JSON job specification, include this object and any required children when you set Type, under
-     *        OutputGroupSettings, to CMAF_GROUP_SETTINGS.
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
      */
 
     public void setCmafGroupSettings(CmafGroupSettings cmafGroupSettings) {
@@ -82,14 +69,10 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * Settings related to your CMAF output package. For more information, see
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job
-     * specification, include this object and any required children when you set Type, under OutputGroupSettings, to
-     * CMAF_GROUP_SETTINGS.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
      * 
      * @return Settings related to your CMAF output package. For more information, see
-     *         https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your
-     *         JSON job specification, include this object and any required children when you set Type, under
-     *         OutputGroupSettings, to CMAF_GROUP_SETTINGS.
+     *         https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
      */
 
     public CmafGroupSettings getCmafGroupSettings() {
@@ -98,15 +81,11 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * Settings related to your CMAF output package. For more information, see
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job
-     * specification, include this object and any required children when you set Type, under OutputGroupSettings, to
-     * CMAF_GROUP_SETTINGS.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
      * 
      * @param cmafGroupSettings
      *        Settings related to your CMAF output package. For more information, see
-     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your
-     *        JSON job specification, include this object and any required children when you set Type, under
-     *        OutputGroupSettings, to CMAF_GROUP_SETTINGS.
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,15 +96,11 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * Settings related to your DASH output package. For more information, see
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job
-     * specification, include this object and any required children when you set Type, under OutputGroupSettings, to
-     * DASH_ISO_GROUP_SETTINGS.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
      * 
      * @param dashIsoGroupSettings
      *        Settings related to your DASH output package. For more information, see
-     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your
-     *        JSON job specification, include this object and any required children when you set Type, under
-     *        OutputGroupSettings, to DASH_ISO_GROUP_SETTINGS.
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
      */
 
     public void setDashIsoGroupSettings(DashIsoGroupSettings dashIsoGroupSettings) {
@@ -134,14 +109,10 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * Settings related to your DASH output package. For more information, see
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job
-     * specification, include this object and any required children when you set Type, under OutputGroupSettings, to
-     * DASH_ISO_GROUP_SETTINGS.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
      * 
      * @return Settings related to your DASH output package. For more information, see
-     *         https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your
-     *         JSON job specification, include this object and any required children when you set Type, under
-     *         OutputGroupSettings, to DASH_ISO_GROUP_SETTINGS.
+     *         https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
      */
 
     public DashIsoGroupSettings getDashIsoGroupSettings() {
@@ -150,15 +121,11 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * Settings related to your DASH output package. For more information, see
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job
-     * specification, include this object and any required children when you set Type, under OutputGroupSettings, to
-     * DASH_ISO_GROUP_SETTINGS.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
      * 
      * @param dashIsoGroupSettings
      *        Settings related to your DASH output package. For more information, see
-     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your
-     *        JSON job specification, include this object and any required children when you set Type, under
-     *        OutputGroupSettings, to DASH_ISO_GROUP_SETTINGS.
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,14 +136,11 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * Settings related to your File output group. MediaConvert uses this group of settings to generate a single
-     * standalone file, rather than a streaming package. When you work directly in your JSON job specification, include
-     * this object and any required children when you set Type, under OutputGroupSettings, to FILE_GROUP_SETTINGS.
+     * standalone file, rather than a streaming package.
      * 
      * @param fileGroupSettings
      *        Settings related to your File output group. MediaConvert uses this group of settings to generate a single
-     *        standalone file, rather than a streaming package. When you work directly in your JSON job specification,
-     *        include this object and any required children when you set Type, under OutputGroupSettings, to
-     *        FILE_GROUP_SETTINGS.
+     *        standalone file, rather than a streaming package.
      */
 
     public void setFileGroupSettings(FileGroupSettings fileGroupSettings) {
@@ -185,13 +149,10 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * Settings related to your File output group. MediaConvert uses this group of settings to generate a single
-     * standalone file, rather than a streaming package. When you work directly in your JSON job specification, include
-     * this object and any required children when you set Type, under OutputGroupSettings, to FILE_GROUP_SETTINGS.
+     * standalone file, rather than a streaming package.
      * 
      * @return Settings related to your File output group. MediaConvert uses this group of settings to generate a single
-     *         standalone file, rather than a streaming package. When you work directly in your JSON job specification,
-     *         include this object and any required children when you set Type, under OutputGroupSettings, to
-     *         FILE_GROUP_SETTINGS.
+     *         standalone file, rather than a streaming package.
      */
 
     public FileGroupSettings getFileGroupSettings() {
@@ -200,14 +161,11 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * Settings related to your File output group. MediaConvert uses this group of settings to generate a single
-     * standalone file, rather than a streaming package. When you work directly in your JSON job specification, include
-     * this object and any required children when you set Type, under OutputGroupSettings, to FILE_GROUP_SETTINGS.
+     * standalone file, rather than a streaming package.
      * 
      * @param fileGroupSettings
      *        Settings related to your File output group. MediaConvert uses this group of settings to generate a single
-     *        standalone file, rather than a streaming package. When you work directly in your JSON job specification,
-     *        include this object and any required children when you set Type, under OutputGroupSettings, to
-     *        FILE_GROUP_SETTINGS.
+     *        standalone file, rather than a streaming package.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -218,15 +176,11 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * Settings related to your HLS output package. For more information, see
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job
-     * specification, include this object and any required children when you set Type, under OutputGroupSettings, to
-     * HLS_GROUP_SETTINGS.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
      * 
      * @param hlsGroupSettings
      *        Settings related to your HLS output package. For more information, see
-     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your
-     *        JSON job specification, include this object and any required children when you set Type, under
-     *        OutputGroupSettings, to HLS_GROUP_SETTINGS.
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
      */
 
     public void setHlsGroupSettings(HlsGroupSettings hlsGroupSettings) {
@@ -235,14 +189,10 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * Settings related to your HLS output package. For more information, see
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job
-     * specification, include this object and any required children when you set Type, under OutputGroupSettings, to
-     * HLS_GROUP_SETTINGS.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
      * 
      * @return Settings related to your HLS output package. For more information, see
-     *         https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your
-     *         JSON job specification, include this object and any required children when you set Type, under
-     *         OutputGroupSettings, to HLS_GROUP_SETTINGS.
+     *         https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
      */
 
     public HlsGroupSettings getHlsGroupSettings() {
@@ -251,15 +201,11 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * Settings related to your HLS output package. For more information, see
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job
-     * specification, include this object and any required children when you set Type, under OutputGroupSettings, to
-     * HLS_GROUP_SETTINGS.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
      * 
      * @param hlsGroupSettings
      *        Settings related to your HLS output package. For more information, see
-     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your
-     *        JSON job specification, include this object and any required children when you set Type, under
-     *        OutputGroupSettings, to HLS_GROUP_SETTINGS.
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -270,15 +216,11 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * Settings related to your Microsoft Smooth Streaming output package. For more information, see
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job
-     * specification, include this object and any required children when you set Type, under OutputGroupSettings, to
-     * MS_SMOOTH_GROUP_SETTINGS.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
      * 
      * @param msSmoothGroupSettings
      *        Settings related to your Microsoft Smooth Streaming output package. For more information, see
-     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your
-     *        JSON job specification, include this object and any required children when you set Type, under
-     *        OutputGroupSettings, to MS_SMOOTH_GROUP_SETTINGS.
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
      */
 
     public void setMsSmoothGroupSettings(MsSmoothGroupSettings msSmoothGroupSettings) {
@@ -287,14 +229,10 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * Settings related to your Microsoft Smooth Streaming output package. For more information, see
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job
-     * specification, include this object and any required children when you set Type, under OutputGroupSettings, to
-     * MS_SMOOTH_GROUP_SETTINGS.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
      * 
      * @return Settings related to your Microsoft Smooth Streaming output package. For more information, see
-     *         https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your
-     *         JSON job specification, include this object and any required children when you set Type, under
-     *         OutputGroupSettings, to MS_SMOOTH_GROUP_SETTINGS.
+     *         https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
      */
 
     public MsSmoothGroupSettings getMsSmoothGroupSettings() {
@@ -303,15 +241,11 @@ public class OutputGroupSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * Settings related to your Microsoft Smooth Streaming output package. For more information, see
-     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job
-     * specification, include this object and any required children when you set Type, under OutputGroupSettings, to
-     * MS_SMOOTH_GROUP_SETTINGS.
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
      * 
      * @param msSmoothGroupSettings
      *        Settings related to your Microsoft Smooth Streaming output package. For more information, see
-     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your
-     *        JSON job specification, include this object and any required children when you set Type, under
-     *        OutputGroupSettings, to MS_SMOOTH_GROUP_SETTINGS.
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

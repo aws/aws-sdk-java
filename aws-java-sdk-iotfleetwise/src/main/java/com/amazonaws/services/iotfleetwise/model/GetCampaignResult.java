@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -136,6 +136,21 @@ public class GetCampaignResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private java.util.Date lastModificationTime;
+    /**
+     * <p>
+     * The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon
+     * Timestream.
+     * </p>
+     * <p>
+     * Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data
+     * lakes, centralized data storage, data processing pipelines, and analytics.
+     * </p>
+     * <p>
+     * You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so
+     * that you can identify trends and patterns.
+     * </p>
+     */
+    private java.util.List<DataDestinationConfig> dataDestinationConfigs;
 
     /**
      * <p>
@@ -1034,6 +1049,144 @@ public class GetCampaignResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon
+     * Timestream.
+     * </p>
+     * <p>
+     * Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data
+     * lakes, centralized data storage, data processing pipelines, and analytics.
+     * </p>
+     * <p>
+     * You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so
+     * that you can identify trends and patterns.
+     * </p>
+     * 
+     * @return The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or
+     *         Amazon Timestream.</p>
+     *         <p>
+     *         Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such
+     *         as data lakes, centralized data storage, data processing pipelines, and analytics.
+     *         </p>
+     *         <p>
+     *         You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle
+     *         data so that you can identify trends and patterns.
+     */
+
+    public java.util.List<DataDestinationConfig> getDataDestinationConfigs() {
+        return dataDestinationConfigs;
+    }
+
+    /**
+     * <p>
+     * The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon
+     * Timestream.
+     * </p>
+     * <p>
+     * Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data
+     * lakes, centralized data storage, data processing pipelines, and analytics.
+     * </p>
+     * <p>
+     * You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so
+     * that you can identify trends and patterns.
+     * </p>
+     * 
+     * @param dataDestinationConfigs
+     *        The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or
+     *        Amazon Timestream.</p>
+     *        <p>
+     *        Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such
+     *        as data lakes, centralized data storage, data processing pipelines, and analytics.
+     *        </p>
+     *        <p>
+     *        You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data
+     *        so that you can identify trends and patterns.
+     */
+
+    public void setDataDestinationConfigs(java.util.Collection<DataDestinationConfig> dataDestinationConfigs) {
+        if (dataDestinationConfigs == null) {
+            this.dataDestinationConfigs = null;
+            return;
+        }
+
+        this.dataDestinationConfigs = new java.util.ArrayList<DataDestinationConfig>(dataDestinationConfigs);
+    }
+
+    /**
+     * <p>
+     * The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon
+     * Timestream.
+     * </p>
+     * <p>
+     * Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data
+     * lakes, centralized data storage, data processing pipelines, and analytics.
+     * </p>
+     * <p>
+     * You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so
+     * that you can identify trends and patterns.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDataDestinationConfigs(java.util.Collection)} or
+     * {@link #withDataDestinationConfigs(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param dataDestinationConfigs
+     *        The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or
+     *        Amazon Timestream.</p>
+     *        <p>
+     *        Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such
+     *        as data lakes, centralized data storage, data processing pipelines, and analytics.
+     *        </p>
+     *        <p>
+     *        You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data
+     *        so that you can identify trends and patterns.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetCampaignResult withDataDestinationConfigs(DataDestinationConfig... dataDestinationConfigs) {
+        if (this.dataDestinationConfigs == null) {
+            setDataDestinationConfigs(new java.util.ArrayList<DataDestinationConfig>(dataDestinationConfigs.length));
+        }
+        for (DataDestinationConfig ele : dataDestinationConfigs) {
+            this.dataDestinationConfigs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or Amazon
+     * Timestream.
+     * </p>
+     * <p>
+     * Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such as data
+     * lakes, centralized data storage, data processing pipelines, and analytics.
+     * </p>
+     * <p>
+     * You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data so
+     * that you can identify trends and patterns.
+     * </p>
+     * 
+     * @param dataDestinationConfigs
+     *        The destination where the campaign sends data. You can choose to send data to be stored in Amazon S3 or
+     *        Amazon Timestream.</p>
+     *        <p>
+     *        Amazon S3 optimizes the cost of data storage and provides additional mechanisms to use vehicle data, such
+     *        as data lakes, centralized data storage, data processing pipelines, and analytics.
+     *        </p>
+     *        <p>
+     *        You can use Amazon Timestream to access and analyze time series data, and Timestream to query vehicle data
+     *        so that you can identify trends and patterns.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetCampaignResult withDataDestinationConfigs(java.util.Collection<DataDestinationConfig> dataDestinationConfigs) {
+        setDataDestinationConfigs(dataDestinationConfigs);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1080,7 +1233,9 @@ public class GetCampaignResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getLastModificationTime() != null)
-            sb.append("LastModificationTime: ").append(getLastModificationTime());
+            sb.append("LastModificationTime: ").append(getLastModificationTime()).append(",");
+        if (getDataDestinationConfigs() != null)
+            sb.append("DataDestinationConfigs: ").append(getDataDestinationConfigs());
         sb.append("}");
         return sb.toString();
     }
@@ -1168,6 +1323,10 @@ public class GetCampaignResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getLastModificationTime() != null && other.getLastModificationTime().equals(this.getLastModificationTime()) == false)
             return false;
+        if (other.getDataDestinationConfigs() == null ^ this.getDataDestinationConfigs() == null)
+            return false;
+        if (other.getDataDestinationConfigs() != null && other.getDataDestinationConfigs().equals(this.getDataDestinationConfigs()) == false)
+            return false;
         return true;
     }
 
@@ -1194,6 +1353,7 @@ public class GetCampaignResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getDataExtraDimensions() == null) ? 0 : getDataExtraDimensions().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastModificationTime() == null) ? 0 : getLastModificationTime().hashCode());
+        hashCode = prime * hashCode + ((getDataDestinationConfigs() == null) ? 0 : getDataDestinationConfigs().hashCode());
         return hashCode;
     }
 

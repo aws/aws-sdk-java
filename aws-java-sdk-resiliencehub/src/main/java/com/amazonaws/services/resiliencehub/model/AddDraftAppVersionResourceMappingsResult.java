@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,10 +26,10 @@ public class AddDraftAppVersionResourceMappingsResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     * :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     * <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more
+     * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      */
     private String appArn;
@@ -41,27 +41,26 @@ public class AddDraftAppVersionResourceMappingsResult extends com.amazonaws.Amaz
     private String appVersion;
     /**
      * <p>
-     * Mappings used to map logical resources from the template to physical resources. You can use the mapping type
-     * <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources
-     * by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if
-     * the application is backed by a CloudFormation stack.
+     * List of sources that are used to map a logical resource from the template to a physical resource. You can use
+     * sources such as CloudFormation, Terraform state files, AppRegistry applications, or Amazon EKS.
      * </p>
      */
     private java.util.List<ResourceMapping> resourceMappings;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     * :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     * <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more
+     * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
      * @param appArn
-     *        The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     *        :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information
-     *        about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     *        Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     *        <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For
+     *        more information about ARNs, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      */
 
     public void setAppArn(String appArn) {
@@ -70,16 +69,17 @@ public class AddDraftAppVersionResourceMappingsResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     * :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     * <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more
+     * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     *         :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information
-     *         about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     *         Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     * @return Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     *         <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+     *         For more information about ARNs, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     *         (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      */
 
     public String getAppArn() {
@@ -88,17 +88,18 @@ public class AddDraftAppVersionResourceMappingsResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     * :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs,
-     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
-     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     * <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more
+     * information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * </p>
      * 
      * @param appArn
-     *        The Amazon Resource Name (ARN) of the application. The format for this ARN is: arn:<code>partition</code>
-     *        :resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information
-     *        about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     *        Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     *        Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:
+     *        <code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For
+     *        more information about ARNs, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names
+     *        (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -149,16 +150,12 @@ public class AddDraftAppVersionResourceMappingsResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Mappings used to map logical resources from the template to physical resources. You can use the mapping type
-     * <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources
-     * by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if
-     * the application is backed by a CloudFormation stack.
+     * List of sources that are used to map a logical resource from the template to a physical resource. You can use
+     * sources such as CloudFormation, Terraform state files, AppRegistry applications, or Amazon EKS.
      * </p>
      * 
-     * @return Mappings used to map logical resources from the template to physical resources. You can use the mapping
-     *         type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map
-     *         individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type
-     *         <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.
+     * @return List of sources that are used to map a logical resource from the template to a physical resource. You can
+     *         use sources such as CloudFormation, Terraform state files, AppRegistry applications, or Amazon EKS.
      */
 
     public java.util.List<ResourceMapping> getResourceMappings() {
@@ -167,17 +164,13 @@ public class AddDraftAppVersionResourceMappingsResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Mappings used to map logical resources from the template to physical resources. You can use the mapping type
-     * <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources
-     * by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if
-     * the application is backed by a CloudFormation stack.
+     * List of sources that are used to map a logical resource from the template to a physical resource. You can use
+     * sources such as CloudFormation, Terraform state files, AppRegistry applications, or Amazon EKS.
      * </p>
      * 
      * @param resourceMappings
-     *        Mappings used to map logical resources from the template to physical resources. You can use the mapping
-     *        type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map
-     *        individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type
-     *        <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.
+     *        List of sources that are used to map a logical resource from the template to a physical resource. You can
+     *        use sources such as CloudFormation, Terraform state files, AppRegistry applications, or Amazon EKS.
      */
 
     public void setResourceMappings(java.util.Collection<ResourceMapping> resourceMappings) {
@@ -191,10 +184,8 @@ public class AddDraftAppVersionResourceMappingsResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Mappings used to map logical resources from the template to physical resources. You can use the mapping type
-     * <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources
-     * by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if
-     * the application is backed by a CloudFormation stack.
+     * List of sources that are used to map a logical resource from the template to a physical resource. You can use
+     * sources such as CloudFormation, Terraform state files, AppRegistry applications, or Amazon EKS.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -203,10 +194,8 @@ public class AddDraftAppVersionResourceMappingsResult extends com.amazonaws.Amaz
      * </p>
      * 
      * @param resourceMappings
-     *        Mappings used to map logical resources from the template to physical resources. You can use the mapping
-     *        type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map
-     *        individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type
-     *        <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.
+     *        List of sources that are used to map a logical resource from the template to a physical resource. You can
+     *        use sources such as CloudFormation, Terraform state files, AppRegistry applications, or Amazon EKS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -222,17 +211,13 @@ public class AddDraftAppVersionResourceMappingsResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Mappings used to map logical resources from the template to physical resources. You can use the mapping type
-     * <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map individual resources
-     * by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type <code>CFN_STACK</code> if
-     * the application is backed by a CloudFormation stack.
+     * List of sources that are used to map a logical resource from the template to a physical resource. You can use
+     * sources such as CloudFormation, Terraform state files, AppRegistry applications, or Amazon EKS.
      * </p>
      * 
      * @param resourceMappings
-     *        Mappings used to map logical resources from the template to physical resources. You can use the mapping
-     *        type <code>CFN_STACK</code> if the application template uses a logical stack name. Or you can map
-     *        individual resources by using the mapping type <code>RESOURCE</code>. We recommend using the mapping type
-     *        <code>CFN_STACK</code> if the application is backed by a CloudFormation stack.
+     *        List of sources that are used to map a logical resource from the template to a physical resource. You can
+     *        use sources such as CloudFormation, Terraform state files, AppRegistry applications, or Amazon EKS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

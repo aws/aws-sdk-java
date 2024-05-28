@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the output of a ListWorkspaces operation.
+ * Represents the output of a <code>ListWorkspaces</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ListWorkspaces" target="_top">AWS API
@@ -28,24 +28,27 @@ public class ListWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Pagination token to use when requesting the next page in this list.
+     * A token indicating that there are more results to retrieve. You can use this token as part of your next
+     * <code>ListWorkspaces</code> request to retrieve those results.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The list of existing workspaces, including those undergoing creation or deletion.
+     * An array of <code>WorkspaceSummary</code> structures containing information about the workspaces requested.
      * </p>
      */
     private java.util.List<WorkspaceSummary> workspaces;
 
     /**
      * <p>
-     * Pagination token to use when requesting the next page in this list.
+     * A token indicating that there are more results to retrieve. You can use this token as part of your next
+     * <code>ListWorkspaces</code> request to retrieve those results.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token to use when requesting the next page in this list.
+     *        A token indicating that there are more results to retrieve. You can use this token as part of your next
+     *        <code>ListWorkspaces</code> request to retrieve those results.
      */
 
     public void setNextToken(String nextToken) {
@@ -54,10 +57,12 @@ public class ListWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Pagination token to use when requesting the next page in this list.
+     * A token indicating that there are more results to retrieve. You can use this token as part of your next
+     * <code>ListWorkspaces</code> request to retrieve those results.
      * </p>
      * 
-     * @return Pagination token to use when requesting the next page in this list.
+     * @return A token indicating that there are more results to retrieve. You can use this token as part of your next
+     *         <code>ListWorkspaces</code> request to retrieve those results.
      */
 
     public String getNextToken() {
@@ -66,11 +71,13 @@ public class ListWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Pagination token to use when requesting the next page in this list.
+     * A token indicating that there are more results to retrieve. You can use this token as part of your next
+     * <code>ListWorkspaces</code> request to retrieve those results.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token to use when requesting the next page in this list.
+     *        A token indicating that there are more results to retrieve. You can use this token as part of your next
+     *        <code>ListWorkspaces</code> request to retrieve those results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,10 +88,11 @@ public class ListWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The list of existing workspaces, including those undergoing creation or deletion.
+     * An array of <code>WorkspaceSummary</code> structures containing information about the workspaces requested.
      * </p>
      * 
-     * @return The list of existing workspaces, including those undergoing creation or deletion.
+     * @return An array of <code>WorkspaceSummary</code> structures containing information about the workspaces
+     *         requested.
      */
 
     public java.util.List<WorkspaceSummary> getWorkspaces() {
@@ -93,11 +101,12 @@ public class ListWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The list of existing workspaces, including those undergoing creation or deletion.
+     * An array of <code>WorkspaceSummary</code> structures containing information about the workspaces requested.
      * </p>
      * 
      * @param workspaces
-     *        The list of existing workspaces, including those undergoing creation or deletion.
+     *        An array of <code>WorkspaceSummary</code> structures containing information about the workspaces
+     *        requested.
      */
 
     public void setWorkspaces(java.util.Collection<WorkspaceSummary> workspaces) {
@@ -111,7 +120,7 @@ public class ListWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The list of existing workspaces, including those undergoing creation or deletion.
+     * An array of <code>WorkspaceSummary</code> structures containing information about the workspaces requested.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -120,7 +129,8 @@ public class ListWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param workspaces
-     *        The list of existing workspaces, including those undergoing creation or deletion.
+     *        An array of <code>WorkspaceSummary</code> structures containing information about the workspaces
+     *        requested.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,11 +146,12 @@ public class ListWorkspacesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The list of existing workspaces, including those undergoing creation or deletion.
+     * An array of <code>WorkspaceSummary</code> structures containing information about the workspaces requested.
      * </p>
      * 
      * @param workspaces
-     *        The list of existing workspaces, including those undergoing creation or deletion.
+     *        An array of <code>WorkspaceSummary</code> structures containing information about the workspaces
+     *        requested.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

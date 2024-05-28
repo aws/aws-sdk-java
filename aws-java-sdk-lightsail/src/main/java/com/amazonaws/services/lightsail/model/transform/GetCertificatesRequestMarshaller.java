@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,8 @@ public class GetCertificatesRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("includeCertificateDetails").build();
     private static final MarshallingInfo<String> CERTIFICATENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificateName").build();
+    private static final MarshallingInfo<String> PAGETOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("pageToken").build();
 
     private static final GetCertificatesRequestMarshaller instance = new GetCertificatesRequestMarshaller();
 
@@ -54,6 +56,7 @@ public class GetCertificatesRequestMarshaller {
             protocolMarshaller.marshall(getCertificatesRequest.getCertificateStatuses(), CERTIFICATESTATUSES_BINDING);
             protocolMarshaller.marshall(getCertificatesRequest.getIncludeCertificateDetails(), INCLUDECERTIFICATEDETAILS_BINDING);
             protocolMarshaller.marshall(getCertificatesRequest.getCertificateName(), CERTIFICATENAME_BINDING);
+            protocolMarshaller.marshall(getCertificatesRequest.getPageToken(), PAGETOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

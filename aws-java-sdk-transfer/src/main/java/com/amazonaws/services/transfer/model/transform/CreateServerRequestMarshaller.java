@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,6 +58,10 @@ public class CreateServerRequestMarshaller {
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<StructuredPojo> WORKFLOWDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkflowDetails").build();
+    private static final MarshallingInfo<List> STRUCTUREDLOGDESTINATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StructuredLogDestinations").build();
+    private static final MarshallingInfo<StructuredPojo> S3STORAGEOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3StorageOptions").build();
 
     private static final CreateServerRequestMarshaller instance = new CreateServerRequestMarshaller();
 
@@ -90,6 +94,8 @@ public class CreateServerRequestMarshaller {
             protocolMarshaller.marshall(createServerRequest.getSecurityPolicyName(), SECURITYPOLICYNAME_BINDING);
             protocolMarshaller.marshall(createServerRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createServerRequest.getWorkflowDetails(), WORKFLOWDETAILS_BINDING);
+            protocolMarshaller.marshall(createServerRequest.getStructuredLogDestinations(), STRUCTUREDLOGDESTINATIONS_BINDING);
+            protocolMarshaller.marshall(createServerRequest.getS3StorageOptions(), S3STORAGEOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

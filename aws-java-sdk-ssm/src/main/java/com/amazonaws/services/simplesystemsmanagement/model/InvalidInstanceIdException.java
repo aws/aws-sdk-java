@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,7 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * Amazon Web Services Systems Manager Agent(SSM Agent) isn't running. Verify that SSM Agent is running.
+ * Amazon Web Services Systems Manager Agent (SSM Agent) isn't running. Verify that SSM Agent is running.
  * </p>
  * </li>
  * <li>
@@ -36,7 +36,7 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
+ * The managed node isn't in a valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
  * <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code> and
  * <code>Terminated</code>.
  * </p>

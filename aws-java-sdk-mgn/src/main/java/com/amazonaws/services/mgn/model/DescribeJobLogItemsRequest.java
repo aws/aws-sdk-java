@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,12 @@ public class DescribeJobLogItemsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * Request to describe Job log Account ID.
+     * </p>
+     */
+    private String accountID;
+    /**
+     * <p>
      * Request to describe Job log job ID.
      * </p>
      */
@@ -43,6 +49,46 @@ public class DescribeJobLogItemsRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String nextToken;
+
+    /**
+     * <p>
+     * Request to describe Job log Account ID.
+     * </p>
+     * 
+     * @param accountID
+     *        Request to describe Job log Account ID.
+     */
+
+    public void setAccountID(String accountID) {
+        this.accountID = accountID;
+    }
+
+    /**
+     * <p>
+     * Request to describe Job log Account ID.
+     * </p>
+     * 
+     * @return Request to describe Job log Account ID.
+     */
+
+    public String getAccountID() {
+        return this.accountID;
+    }
+
+    /**
+     * <p>
+     * Request to describe Job log Account ID.
+     * </p>
+     * 
+     * @param accountID
+     *        Request to describe Job log Account ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeJobLogItemsRequest withAccountID(String accountID) {
+        setAccountID(accountID);
+        return this;
+    }
 
     /**
      * <p>
@@ -176,6 +222,8 @@ public class DescribeJobLogItemsRequest extends com.amazonaws.AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccountID() != null)
+            sb.append("AccountID: ").append(getAccountID()).append(",");
         if (getJobID() != null)
             sb.append("JobID: ").append(getJobID()).append(",");
         if (getMaxResults() != null)
@@ -196,6 +244,10 @@ public class DescribeJobLogItemsRequest extends com.amazonaws.AmazonWebServiceRe
         if (obj instanceof DescribeJobLogItemsRequest == false)
             return false;
         DescribeJobLogItemsRequest other = (DescribeJobLogItemsRequest) obj;
+        if (other.getAccountID() == null ^ this.getAccountID() == null)
+            return false;
+        if (other.getAccountID() != null && other.getAccountID().equals(this.getAccountID()) == false)
+            return false;
         if (other.getJobID() == null ^ this.getJobID() == null)
             return false;
         if (other.getJobID() != null && other.getJobID().equals(this.getJobID()) == false)
@@ -216,6 +268,7 @@ public class DescribeJobLogItemsRequest extends com.amazonaws.AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccountID() == null) ? 0 : getAccountID().hashCode());
         hashCode = prime * hashCode + ((getJobID() == null) ? 0 : getJobID().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());

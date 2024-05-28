@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -182,7 +182,14 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
     private AdminCreateUserConfigType adminCreateUserConfig;
     /**
      * <p>
-     * Enables advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value "AUDIT".
+     * User pool add-ons. Contains settings for activation of advanced security features. To log user security
+     * information but take no action, set to <code>AUDIT</code>. To configure automatic security responses to risky
+     * traffic to your user pool, set to <code>ENFORCED</code>.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"
+     * >Adding advanced security to a user pool</a>.
      * </p>
      */
     private UserPoolAddOnsType userPoolAddOns;
@@ -1426,12 +1433,24 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Enables advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value "AUDIT".
+     * User pool add-ons. Contains settings for activation of advanced security features. To log user security
+     * information but take no action, set to <code>AUDIT</code>. To configure automatic security responses to risky
+     * traffic to your user pool, set to <code>ENFORCED</code>.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"
+     * >Adding advanced security to a user pool</a>.
      * </p>
      * 
      * @param userPoolAddOns
-     *        Enables advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value
-     *        "AUDIT".
+     *        User pool add-ons. Contains settings for activation of advanced security features. To log user security
+     *        information but take no action, set to <code>AUDIT</code>. To configure automatic security responses to
+     *        risky traffic to your user pool, set to <code>ENFORCED</code>.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"
+     *        >Adding advanced security to a user pool</a>.
      */
 
     public void setUserPoolAddOns(UserPoolAddOnsType userPoolAddOns) {
@@ -1440,11 +1459,23 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Enables advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value "AUDIT".
+     * User pool add-ons. Contains settings for activation of advanced security features. To log user security
+     * information but take no action, set to <code>AUDIT</code>. To configure automatic security responses to risky
+     * traffic to your user pool, set to <code>ENFORCED</code>.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"
+     * >Adding advanced security to a user pool</a>.
      * </p>
      * 
-     * @return Enables advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value
-     *         "AUDIT".
+     * @return User pool add-ons. Contains settings for activation of advanced security features. To log user security
+     *         information but take no action, set to <code>AUDIT</code>. To configure automatic security responses to
+     *         risky traffic to your user pool, set to <code>ENFORCED</code>.</p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"
+     *         >Adding advanced security to a user pool</a>.
      */
 
     public UserPoolAddOnsType getUserPoolAddOns() {
@@ -1453,12 +1484,24 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Enables advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value "AUDIT".
+     * User pool add-ons. Contains settings for activation of advanced security features. To log user security
+     * information but take no action, set to <code>AUDIT</code>. To configure automatic security responses to risky
+     * traffic to your user pool, set to <code>ENFORCED</code>.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"
+     * >Adding advanced security to a user pool</a>.
      * </p>
      * 
      * @param userPoolAddOns
-     *        Enables advanced security risk detection. Set the key <code>AdvancedSecurityMode</code> to the value
-     *        "AUDIT".
+     *        User pool add-ons. Contains settings for activation of advanced security features. To log user security
+     *        information but take no action, set to <code>AUDIT</code>. To configure automatic security responses to
+     *        risky traffic to your user pool, set to <code>ENFORCED</code>.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html"
+     *        >Adding advanced security to a user pool</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

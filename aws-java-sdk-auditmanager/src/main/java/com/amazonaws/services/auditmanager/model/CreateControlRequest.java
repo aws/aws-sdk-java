@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -423,11 +423,11 @@ public class CreateControlRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getTestingInformation() != null)
-            sb.append("TestingInformation: ").append(getTestingInformation()).append(",");
+            sb.append("TestingInformation: ").append("***Sensitive Data Redacted***").append(",");
         if (getActionPlanTitle() != null)
-            sb.append("ActionPlanTitle: ").append(getActionPlanTitle()).append(",");
+            sb.append("ActionPlanTitle: ").append("***Sensitive Data Redacted***").append(",");
         if (getActionPlanInstructions() != null)
-            sb.append("ActionPlanInstructions: ").append(getActionPlanInstructions()).append(",");
+            sb.append("ActionPlanInstructions: ").append("***Sensitive Data Redacted***").append(",");
         if (getControlMappingSources() != null)
             sb.append("ControlMappingSources: ").append(getControlMappingSources()).append(",");
         if (getTags() != null)

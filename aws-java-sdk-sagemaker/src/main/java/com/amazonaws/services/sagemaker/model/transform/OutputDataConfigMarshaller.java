@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class OutputDataConfigMarshaller {
             .marshallLocationName("KmsKeyId").build();
     private static final MarshallingInfo<String> S3OUTPUTPATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3OutputPath").build();
+    private static final MarshallingInfo<String> COMPRESSIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CompressionType").build();
 
     private static final OutputDataConfigMarshaller instance = new OutputDataConfigMarshaller();
 
@@ -50,6 +52,7 @@ public class OutputDataConfigMarshaller {
         try {
             protocolMarshaller.marshall(outputDataConfig.getKmsKeyId(), KMSKEYID_BINDING);
             protocolMarshaller.marshall(outputDataConfig.getS3OutputPath(), S3OUTPUTPATH_BINDING);
+            protocolMarshaller.marshall(outputDataConfig.getCompressionType(), COMPRESSIONTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

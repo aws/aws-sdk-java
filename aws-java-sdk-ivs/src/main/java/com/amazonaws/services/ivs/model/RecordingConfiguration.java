@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,12 @@ public class RecordingConfiguration implements Serializable, Cloneable, Structur
     private Integer recordingReconnectWindowSeconds;
     /**
      * <p>
+     * Object that describes which renditions should be recorded for a stream.
+     * </p>
+     */
+    private RenditionConfiguration renditionConfiguration;
+    /**
+     * <p>
      * Indicates the current state of the recording configuration. When the state is <code>ACTIVE</code>, the
      * configuration is ready for recording a channel stream.
      * </p>
@@ -62,10 +68,11 @@ public class RecordingConfiguration implements Serializable, Cloneable, Structur
     private String state;
     /**
      * <p>
-     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
-     * for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon
-     * IVS has no service-specific constraints beyond what is documented there.
+     * Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See
+     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     * Resources</a> for more information, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented
+     * there.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -245,6 +252,46 @@ public class RecordingConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
+     * Object that describes which renditions should be recorded for a stream.
+     * </p>
+     * 
+     * @param renditionConfiguration
+     *        Object that describes which renditions should be recorded for a stream.
+     */
+
+    public void setRenditionConfiguration(RenditionConfiguration renditionConfiguration) {
+        this.renditionConfiguration = renditionConfiguration;
+    }
+
+    /**
+     * <p>
+     * Object that describes which renditions should be recorded for a stream.
+     * </p>
+     * 
+     * @return Object that describes which renditions should be recorded for a stream.
+     */
+
+    public RenditionConfiguration getRenditionConfiguration() {
+        return this.renditionConfiguration;
+    }
+
+    /**
+     * <p>
+     * Object that describes which renditions should be recorded for a stream.
+     * </p>
+     * 
+     * @param renditionConfiguration
+     *        Object that describes which renditions should be recorded for a stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecordingConfiguration withRenditionConfiguration(RenditionConfiguration renditionConfiguration) {
+        setRenditionConfiguration(renditionConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
      * Indicates the current state of the recording configuration. When the state is <code>ACTIVE</code>, the
      * configuration is ready for recording a channel stream.
      * </p>
@@ -312,13 +359,15 @@ public class RecordingConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
-     * for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon
-     * IVS has no service-specific constraints beyond what is documented there.
+     * Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See
+     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     * Resources</a> for more information, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented
+     * there.
      * </p>
      * 
-     * @return Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a
+     * @return Tags attached to the resource. Array of 1-50 maps, each of the form
+     *         <code>string:string (key:value)</code>. See <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
      *         Resources</a> for more information, including restrictions that apply to tags and
      *         "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is
@@ -331,15 +380,16 @@ public class RecordingConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
-     * for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon
-     * IVS has no service-specific constraints beyond what is documented there.
+     * Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See
+     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     * Resources</a> for more information, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented
+     * there.
      * </p>
      * 
      * @param tags
-     *        Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>
+     *        . See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
      *        Resources</a> for more information, including restrictions that apply to tags and
      *        "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is
      *        documented there.
@@ -351,15 +401,16 @@ public class RecordingConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a>
-     * for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon
-     * IVS has no service-specific constraints beyond what is documented there.
+     * Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See
+     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     * Resources</a> for more information, including restrictions that apply to tags and
+     * "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented
+     * there.
      * </p>
      * 
      * @param tags
-     *        Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string (key:value)</code>
+     *        . See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
      *        Resources</a> for more information, including restrictions that apply to tags and
      *        "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is
      *        documented there.
@@ -465,6 +516,8 @@ public class RecordingConfiguration implements Serializable, Cloneable, Structur
             sb.append("Name: ").append(getName()).append(",");
         if (getRecordingReconnectWindowSeconds() != null)
             sb.append("RecordingReconnectWindowSeconds: ").append(getRecordingReconnectWindowSeconds()).append(",");
+        if (getRenditionConfiguration() != null)
+            sb.append("RenditionConfiguration: ").append(getRenditionConfiguration()).append(",");
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
         if (getTags() != null)
@@ -502,6 +555,10 @@ public class RecordingConfiguration implements Serializable, Cloneable, Structur
         if (other.getRecordingReconnectWindowSeconds() != null
                 && other.getRecordingReconnectWindowSeconds().equals(this.getRecordingReconnectWindowSeconds()) == false)
             return false;
+        if (other.getRenditionConfiguration() == null ^ this.getRenditionConfiguration() == null)
+            return false;
+        if (other.getRenditionConfiguration() != null && other.getRenditionConfiguration().equals(this.getRenditionConfiguration()) == false)
+            return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
@@ -526,6 +583,7 @@ public class RecordingConfiguration implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getDestinationConfiguration() == null) ? 0 : getDestinationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getRecordingReconnectWindowSeconds() == null) ? 0 : getRecordingReconnectWindowSeconds().hashCode());
+        hashCode = prime * hashCode + ((getRenditionConfiguration() == null) ? 0 : getRenditionConfiguration().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getThumbnailConfiguration() == null) ? 0 : getThumbnailConfiguration().hashCode());

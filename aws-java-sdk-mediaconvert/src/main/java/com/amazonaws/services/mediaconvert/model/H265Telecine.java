@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,11 +15,10 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * This field applies only if the Streams > Advanced > Framerate (framerate) field is set to 29.970. This field works
- * with the Streams > Advanced > Preprocessors > Deinterlacer field (deinterlace_mode) and the Streams > Advanced >
- * Interlaced Mode field (interlace_mode) to identify the scan type for the output: Progressive, Interlaced, Hard
- * Telecine or Soft Telecine. - Hard: produces 29.97i output from 23.976 input. - Soft: produces 23.976; the player
- * converts this output to 29.97i.
+ * This field applies only if the Streams > Advanced > Framerate field is set to 29.970. This field works with the
+ * Streams > Advanced > Preprocessors > Deinterlacer field and the Streams > Advanced > Interlaced Mode field to
+ * identify the scan type for the output: Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces
+ * 29.97i output from 23.976 input. - Soft: produces 23.976; the player converts this output to 29.97i.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum H265Telecine {

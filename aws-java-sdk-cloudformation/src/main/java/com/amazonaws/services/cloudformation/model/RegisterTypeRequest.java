@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -127,9 +127,9 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * For CloudFormation to assume the specified execution role, the role must contain a trust relationship with the
-     * CloudFormation service principle (<code>resources.cloudformation.amazonaws.com</code>). For more information
-     * about adding trust relationships, see <a
-     * href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy"
+     * CloudFormation service principal (<code>resources.cloudformation.amazonaws.com</code>). For more information
+     * about adding trust relationships, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy"
      * >Modifying a role trust policy</a> in the <i>Identity and Access Management User Guide</i>.
      * </p>
      * <p>
@@ -765,9 +765,9 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * For CloudFormation to assume the specified execution role, the role must contain a trust relationship with the
-     * CloudFormation service principle (<code>resources.cloudformation.amazonaws.com</code>). For more information
-     * about adding trust relationships, see <a
-     * href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy"
+     * CloudFormation service principal (<code>resources.cloudformation.amazonaws.com</code>). For more information
+     * about adding trust relationships, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy"
      * >Modifying a role trust policy</a> in the <i>Identity and Access Management User Guide</i>.
      * </p>
      * <p>
@@ -784,9 +784,9 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        extension.</p>
      *        <p>
      *        For CloudFormation to assume the specified execution role, the role must contain a trust relationship with
-     *        the CloudFormation service principle (<code>resources.cloudformation.amazonaws.com</code>). For more
-     *        information about adding trust relationships, see <a
-     *        href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy"
+     *        the CloudFormation service principal (<code>resources.cloudformation.amazonaws.com</code>). For more
+     *        information about adding trust relationships, see <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy"
      *        >Modifying a role trust policy</a> in the <i>Identity and Access Management User Guide</i>.
      *        </p>
      *        <p>
@@ -808,9 +808,9 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * For CloudFormation to assume the specified execution role, the role must contain a trust relationship with the
-     * CloudFormation service principle (<code>resources.cloudformation.amazonaws.com</code>). For more information
-     * about adding trust relationships, see <a
-     * href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy"
+     * CloudFormation service principal (<code>resources.cloudformation.amazonaws.com</code>). For more information
+     * about adding trust relationships, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy"
      * >Modifying a role trust policy</a> in the <i>Identity and Access Management User Guide</i>.
      * </p>
      * <p>
@@ -826,9 +826,9 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         extension.</p>
      *         <p>
      *         For CloudFormation to assume the specified execution role, the role must contain a trust relationship
-     *         with the CloudFormation service principle (<code>resources.cloudformation.amazonaws.com</code>). For more
+     *         with the CloudFormation service principal (<code>resources.cloudformation.amazonaws.com</code>). For more
      *         information about adding trust relationships, see <a href=
-     *         "IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy"
+     *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy"
      *         >Modifying a role trust policy</a> in the <i>Identity and Access Management User Guide</i>.
      *         </p>
      *         <p>
@@ -850,9 +850,9 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * For CloudFormation to assume the specified execution role, the role must contain a trust relationship with the
-     * CloudFormation service principle (<code>resources.cloudformation.amazonaws.com</code>). For more information
-     * about adding trust relationships, see <a
-     * href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy"
+     * CloudFormation service principal (<code>resources.cloudformation.amazonaws.com</code>). For more information
+     * about adding trust relationships, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy"
      * >Modifying a role trust policy</a> in the <i>Identity and Access Management User Guide</i>.
      * </p>
      * <p>
@@ -869,9 +869,9 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        extension.</p>
      *        <p>
      *        For CloudFormation to assume the specified execution role, the role must contain a trust relationship with
-     *        the CloudFormation service principle (<code>resources.cloudformation.amazonaws.com</code>). For more
-     *        information about adding trust relationships, see <a
-     *        href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy"
+     *        the CloudFormation service principal (<code>resources.cloudformation.amazonaws.com</code>). For more
+     *        information about adding trust relationships, see <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy"
      *        >Modifying a role trust policy</a> in the <i>Identity and Access Management User Guide</i>.
      *        </p>
      *        <p>

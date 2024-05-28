@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,11 +33,17 @@ public class Threat implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the threat.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 128 length.
+     * </p>
      */
     private String name;
     /**
      * <p>
      * The severity of the threat.
+     * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 128 length.
      * </p>
      */
     private String severity;
@@ -51,6 +57,9 @@ public class Threat implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Provides information about the file paths that were affected by the threat.
      * </p>
+     * <p>
+     * Array Members: Minimum number of 1 item. Maximum number of 5 items.
+     * </p>
      */
     private java.util.List<FilePaths> filePaths;
 
@@ -58,9 +67,14 @@ public class Threat implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the threat.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 128 length.
+     * </p>
      * 
      * @param name
-     *        The name of the threat.
+     *        The name of the threat. </p>
+     *        <p>
+     *        Length Constraints: Minimum of 1 length. Maximum of 128 length.
      */
 
     public void setName(String name) {
@@ -71,8 +85,13 @@ public class Threat implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the threat.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 128 length.
+     * </p>
      * 
-     * @return The name of the threat.
+     * @return The name of the threat. </p>
+     *         <p>
+     *         Length Constraints: Minimum of 1 length. Maximum of 128 length.
      */
 
     public String getName() {
@@ -83,9 +102,14 @@ public class Threat implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The name of the threat.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 128 length.
+     * </p>
      * 
      * @param name
-     *        The name of the threat.
+     *        The name of the threat. </p>
+     *        <p>
+     *        Length Constraints: Minimum of 1 length. Maximum of 128 length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,9 +122,14 @@ public class Threat implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The severity of the threat.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 128 length.
+     * </p>
      * 
      * @param severity
-     *        The severity of the threat.
+     *        The severity of the threat. </p>
+     *        <p>
+     *        Length Constraints: Minimum of 1 length. Maximum of 128 length.
      */
 
     public void setSeverity(String severity) {
@@ -111,8 +140,13 @@ public class Threat implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The severity of the threat.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 128 length.
+     * </p>
      * 
-     * @return The severity of the threat.
+     * @return The severity of the threat. </p>
+     *         <p>
+     *         Length Constraints: Minimum of 1 length. Maximum of 128 length.
      */
 
     public String getSeverity() {
@@ -123,9 +157,14 @@ public class Threat implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The severity of the threat.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1 length. Maximum of 128 length.
+     * </p>
      * 
      * @param severity
-     *        The severity of the threat.
+     *        The severity of the threat. </p>
+     *        <p>
+     *        Length Constraints: Minimum of 1 length. Maximum of 128 length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,8 +217,13 @@ public class Threat implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Provides information about the file paths that were affected by the threat.
      * </p>
+     * <p>
+     * Array Members: Minimum number of 1 item. Maximum number of 5 items.
+     * </p>
      * 
-     * @return Provides information about the file paths that were affected by the threat.
+     * @return Provides information about the file paths that were affected by the threat. </p>
+     *         <p>
+     *         Array Members: Minimum number of 1 item. Maximum number of 5 items.
      */
 
     public java.util.List<FilePaths> getFilePaths() {
@@ -190,9 +234,14 @@ public class Threat implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Provides information about the file paths that were affected by the threat.
      * </p>
+     * <p>
+     * Array Members: Minimum number of 1 item. Maximum number of 5 items.
+     * </p>
      * 
      * @param filePaths
-     *        Provides information about the file paths that were affected by the threat.
+     *        Provides information about the file paths that were affected by the threat. </p>
+     *        <p>
+     *        Array Members: Minimum number of 1 item. Maximum number of 5 items.
      */
 
     public void setFilePaths(java.util.Collection<FilePaths> filePaths) {
@@ -209,13 +258,18 @@ public class Threat implements Serializable, Cloneable, StructuredPojo {
      * Provides information about the file paths that were affected by the threat.
      * </p>
      * <p>
+     * Array Members: Minimum number of 1 item. Maximum number of 5 items.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilePaths(java.util.Collection)} or {@link #withFilePaths(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param filePaths
-     *        Provides information about the file paths that were affected by the threat.
+     *        Provides information about the file paths that were affected by the threat. </p>
+     *        <p>
+     *        Array Members: Minimum number of 1 item. Maximum number of 5 items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -233,9 +287,14 @@ public class Threat implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Provides information about the file paths that were affected by the threat.
      * </p>
+     * <p>
+     * Array Members: Minimum number of 1 item. Maximum number of 5 items.
+     * </p>
      * 
      * @param filePaths
-     *        Provides information about the file paths that were affected by the threat.
+     *        Provides information about the file paths that were affected by the threat. </p>
+     *        <p>
+     *        Array Members: Minimum number of 1 item. Maximum number of 5 items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

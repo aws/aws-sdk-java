@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -83,8 +83,8 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * The platform details associated with the billing code of the AMI. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding AMI billing</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand AMI billing
+     * information</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      */
     private String platformDetails;
@@ -143,14 +143,13 @@ public class Image implements Serializable, Cloneable {
     private Boolean enaSupport;
     /**
      * <p>
-     * The hypervisor type of the image.
+     * The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code> is not supported.
      * </p>
      */
     private String hypervisor;
     /**
      * <p>
-     * The Amazon Web Services account alias (for example, <code>amazon</code>, <code>self</code>) or the Amazon Web
-     * Services account ID of the AMI owner.
+     * The owner alias (<code>amazon</code> | <code>aws-marketplace</code>).
      * </p>
      */
     private String imageOwnerAlias;
@@ -199,16 +198,16 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * The boot mode of the image. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      */
     private String bootMode;
     /**
      * <p>
      * If the image is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      */
     private String tpmSupport;
@@ -227,10 +226,37 @@ public class Image implements Serializable, Cloneable {
      * requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code>
      * is set to <code>2</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     * >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      */
     private String imdsSupport;
+    /**
+     * <p>
+     * The ID of the instance that the AMI was created from if the AMI was created using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>. This field
+     * only appears if the AMI was created using CreateImage.
+     * </p>
+     */
+    private String sourceInstanceId;
+    /**
+     * <p>
+     * Indicates whether deregistration protection is enabled for the AMI.
+     * </p>
+     */
+    private String deregistrationProtection;
+    /**
+     * <p>
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was
+     * last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before
+     * that usage is reported.
+     * </p>
+     * <note>
+     * <p>
+     * <code>lastLaunchedTime</code> data is available starting April 2017.
+     * </p>
+     * </note>
+     */
+    private String lastLaunchedTime;
 
     /**
      * <p>
@@ -718,14 +744,14 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * The platform details associated with the billing code of the AMI. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding AMI billing</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand AMI billing
+     * information</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param platformDetails
      *        The platform details associated with the billing code of the AMI. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding AMI
-     *        billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand AMI billing
+     *        information</a> in the <i>Amazon EC2 User Guide</i>.
      */
 
     public void setPlatformDetails(String platformDetails) {
@@ -735,13 +761,13 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * The platform details associated with the billing code of the AMI. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding AMI billing</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand AMI billing
+     * information</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @return The platform details associated with the billing code of the AMI. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding AMI
-     *         billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand AMI billing
+     *         information</a> in the <i>Amazon EC2 User Guide</i>.
      */
 
     public String getPlatformDetails() {
@@ -751,14 +777,14 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * The platform details associated with the billing code of the AMI. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding AMI billing</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand AMI billing
+     * information</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param platformDetails
      *        The platform details associated with the billing code of the AMI. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding AMI
-     *        billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand AMI billing
+     *        information</a> in the <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1230,11 +1256,11 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The hypervisor type of the image.
+     * The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code> is not supported.
      * </p>
      * 
      * @param hypervisor
-     *        The hypervisor type of the image.
+     *        The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code> is not supported.
      * @see HypervisorType
      */
 
@@ -1244,10 +1270,10 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The hypervisor type of the image.
+     * The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code> is not supported.
      * </p>
      * 
-     * @return The hypervisor type of the image.
+     * @return The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code> is not supported.
      * @see HypervisorType
      */
 
@@ -1257,11 +1283,11 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The hypervisor type of the image.
+     * The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code> is not supported.
      * </p>
      * 
      * @param hypervisor
-     *        The hypervisor type of the image.
+     *        The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code> is not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HypervisorType
      */
@@ -1273,11 +1299,11 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The hypervisor type of the image.
+     * The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code> is not supported.
      * </p>
      * 
      * @param hypervisor
-     *        The hypervisor type of the image.
+     *        The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code> is not supported.
      * @see HypervisorType
      */
 
@@ -1287,11 +1313,11 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The hypervisor type of the image.
+     * The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code> is not supported.
      * </p>
      * 
      * @param hypervisor
-     *        The hypervisor type of the image.
+     *        The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code> is not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HypervisorType
      */
@@ -1303,13 +1329,11 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Web Services account alias (for example, <code>amazon</code>, <code>self</code>) or the Amazon Web
-     * Services account ID of the AMI owner.
+     * The owner alias (<code>amazon</code> | <code>aws-marketplace</code>).
      * </p>
      * 
      * @param imageOwnerAlias
-     *        The Amazon Web Services account alias (for example, <code>amazon</code>, <code>self</code>) or the Amazon
-     *        Web Services account ID of the AMI owner.
+     *        The owner alias (<code>amazon</code> | <code>aws-marketplace</code>).
      */
 
     public void setImageOwnerAlias(String imageOwnerAlias) {
@@ -1318,12 +1342,10 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Web Services account alias (for example, <code>amazon</code>, <code>self</code>) or the Amazon Web
-     * Services account ID of the AMI owner.
+     * The owner alias (<code>amazon</code> | <code>aws-marketplace</code>).
      * </p>
      * 
-     * @return The Amazon Web Services account alias (for example, <code>amazon</code>, <code>self</code>) or the Amazon
-     *         Web Services account ID of the AMI owner.
+     * @return The owner alias (<code>amazon</code> | <code>aws-marketplace</code>).
      */
 
     public String getImageOwnerAlias() {
@@ -1332,13 +1354,11 @@ public class Image implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Web Services account alias (for example, <code>amazon</code>, <code>self</code>) or the Amazon Web
-     * Services account ID of the AMI owner.
+     * The owner alias (<code>amazon</code> | <code>aws-marketplace</code>).
      * </p>
      * 
      * @param imageOwnerAlias
-     *        The Amazon Web Services account alias (for example, <code>amazon</code>, <code>self</code>) or the Amazon
-     *        Web Services account ID of the AMI owner.
+     *        The owner alias (<code>amazon</code> | <code>aws-marketplace</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1730,14 +1750,14 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * The boot mode of the image. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      * 
      * @param bootMode
      *        The boot mode of the image. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
-     *        Elastic Compute Cloud User Guide</i>.
+     *        EC2 User Guide</i>.
      * @see BootModeValues
      */
 
@@ -1748,13 +1768,13 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * The boot mode of the image. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      * 
      * @return The boot mode of the image. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
-     *         Elastic Compute Cloud User Guide</i>.
+     *         EC2 User Guide</i>.
      * @see BootModeValues
      */
 
@@ -1765,14 +1785,14 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * The boot mode of the image. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      * 
      * @param bootMode
      *        The boot mode of the image. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
-     *        Elastic Compute Cloud User Guide</i>.
+     *        EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BootModeValues
      */
@@ -1785,14 +1805,14 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * The boot mode of the image. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      * 
      * @param bootMode
      *        The boot mode of the image. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
-     *        Elastic Compute Cloud User Guide</i>.
+     *        EC2 User Guide</i>.
      * @see BootModeValues
      */
 
@@ -1803,14 +1823,14 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * The boot mode of the image. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      * 
      * @param bootMode
      *        The boot mode of the image. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
-     *        Elastic Compute Cloud User Guide</i>.
+     *        EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BootModeValues
      */
@@ -1823,14 +1843,14 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * If the image is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      * 
      * @param tpmSupport
      *        If the image is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see
      *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon
-     *        Elastic Compute Cloud User Guide</i>.
+     *        EC2 User Guide</i>.
      * @see TpmSupportValues
      */
 
@@ -1841,13 +1861,13 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * If the image is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      * 
      * @return If the image is configured for NitroTPM support, the value is <code>v2.0</code>. For more information,
      *         see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the
-     *         <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         <i>Amazon EC2 User Guide</i>.
      * @see TpmSupportValues
      */
 
@@ -1858,14 +1878,14 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * If the image is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      * 
      * @param tpmSupport
      *        If the image is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see
      *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon
-     *        Elastic Compute Cloud User Guide</i>.
+     *        EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TpmSupportValues
      */
@@ -1878,14 +1898,14 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * If the image is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      * 
      * @param tpmSupport
      *        If the image is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see
      *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon
-     *        Elastic Compute Cloud User Guide</i>.
+     *        EC2 User Guide</i>.
      * @see TpmSupportValues
      */
 
@@ -1896,14 +1916,14 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * If the image is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      * 
      * @param tpmSupport
      *        If the image is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see
      *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon
-     *        Elastic Compute Cloud User Guide</i>.
+     *        EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TpmSupportValues
      */
@@ -1972,7 +1992,7 @@ public class Image implements Serializable, Cloneable {
      * requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code>
      * is set to <code>2</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     * >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param imdsSupport
@@ -1981,7 +2001,7 @@ public class Image implements Serializable, Cloneable {
      *        instance requires that IMDSv2 is used when requesting instance metadata. In addition,
      *        <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     *        >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * @see ImdsSupportValues
      */
 
@@ -1996,7 +2016,7 @@ public class Image implements Serializable, Cloneable {
      * requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code>
      * is set to <code>2</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     * >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @return If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI. Instances launched from this AMI
@@ -2004,7 +2024,7 @@ public class Image implements Serializable, Cloneable {
      *         instance requires that IMDSv2 is used when requesting instance metadata. In addition,
      *         <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href=
      *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     *         >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * @see ImdsSupportValues
      */
 
@@ -2019,7 +2039,7 @@ public class Image implements Serializable, Cloneable {
      * requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code>
      * is set to <code>2</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     * >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param imdsSupport
@@ -2028,7 +2048,7 @@ public class Image implements Serializable, Cloneable {
      *        instance requires that IMDSv2 is used when requesting instance metadata. In addition,
      *        <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     *        >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImdsSupportValues
      */
@@ -2045,7 +2065,7 @@ public class Image implements Serializable, Cloneable {
      * requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code>
      * is set to <code>2</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     * >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param imdsSupport
@@ -2054,7 +2074,7 @@ public class Image implements Serializable, Cloneable {
      *        instance requires that IMDSv2 is used when requesting instance metadata. In addition,
      *        <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     *        >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * @see ImdsSupportValues
      */
 
@@ -2069,7 +2089,7 @@ public class Image implements Serializable, Cloneable {
      * requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code>
      * is set to <code>2</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     * >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param imdsSupport
@@ -2078,13 +2098,181 @@ public class Image implements Serializable, Cloneable {
      *        instance requires that IMDSv2 is used when requesting instance metadata. In addition,
      *        <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     *        >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImdsSupportValues
      */
 
     public Image withImdsSupport(ImdsSupportValues imdsSupport) {
         this.imdsSupport = imdsSupport.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the instance that the AMI was created from if the AMI was created using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>. This field
+     * only appears if the AMI was created using CreateImage.
+     * </p>
+     * 
+     * @param sourceInstanceId
+     *        The ID of the instance that the AMI was created from if the AMI was created using <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>. This
+     *        field only appears if the AMI was created using CreateImage.
+     */
+
+    public void setSourceInstanceId(String sourceInstanceId) {
+        this.sourceInstanceId = sourceInstanceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the instance that the AMI was created from if the AMI was created using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>. This field
+     * only appears if the AMI was created using CreateImage.
+     * </p>
+     * 
+     * @return The ID of the instance that the AMI was created from if the AMI was created using <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>. This
+     *         field only appears if the AMI was created using CreateImage.
+     */
+
+    public String getSourceInstanceId() {
+        return this.sourceInstanceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the instance that the AMI was created from if the AMI was created using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>. This field
+     * only appears if the AMI was created using CreateImage.
+     * </p>
+     * 
+     * @param sourceInstanceId
+     *        The ID of the instance that the AMI was created from if the AMI was created using <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>. This
+     *        field only appears if the AMI was created using CreateImage.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Image withSourceInstanceId(String sourceInstanceId) {
+        setSourceInstanceId(sourceInstanceId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether deregistration protection is enabled for the AMI.
+     * </p>
+     * 
+     * @param deregistrationProtection
+     *        Indicates whether deregistration protection is enabled for the AMI.
+     */
+
+    public void setDeregistrationProtection(String deregistrationProtection) {
+        this.deregistrationProtection = deregistrationProtection;
+    }
+
+    /**
+     * <p>
+     * Indicates whether deregistration protection is enabled for the AMI.
+     * </p>
+     * 
+     * @return Indicates whether deregistration protection is enabled for the AMI.
+     */
+
+    public String getDeregistrationProtection() {
+        return this.deregistrationProtection;
+    }
+
+    /**
+     * <p>
+     * Indicates whether deregistration protection is enabled for the AMI.
+     * </p>
+     * 
+     * @param deregistrationProtection
+     *        Indicates whether deregistration protection is enabled for the AMI.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Image withDeregistrationProtection(String deregistrationProtection) {
+        setDeregistrationProtection(deregistrationProtection);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was
+     * last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before
+     * that usage is reported.
+     * </p>
+     * <note>
+     * <p>
+     * <code>lastLaunchedTime</code> data is available starting April 2017.
+     * </p>
+     * </note>
+     * 
+     * @param lastLaunchedTime
+     *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI
+     *        was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour
+     *        delay before that usage is reported.</p> <note>
+     *        <p>
+     *        <code>lastLaunchedTime</code> data is available starting April 2017.
+     *        </p>
+     */
+
+    public void setLastLaunchedTime(String lastLaunchedTime) {
+        this.lastLaunchedTime = lastLaunchedTime;
+    }
+
+    /**
+     * <p>
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was
+     * last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before
+     * that usage is reported.
+     * </p>
+     * <note>
+     * <p>
+     * <code>lastLaunchedTime</code> data is available starting April 2017.
+     * </p>
+     * </note>
+     * 
+     * @return The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
+     *         AMI was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a
+     *         24-hour delay before that usage is reported.</p> <note>
+     *         <p>
+     *         <code>lastLaunchedTime</code> data is available starting April 2017.
+     *         </p>
+     */
+
+    public String getLastLaunchedTime() {
+        return this.lastLaunchedTime;
+    }
+
+    /**
+     * <p>
+     * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI was
+     * last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour delay before
+     * that usage is reported.
+     * </p>
+     * <note>
+     * <p>
+     * <code>lastLaunchedTime</code> data is available starting April 2017.
+     * </p>
+     * </note>
+     * 
+     * @param lastLaunchedTime
+     *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the AMI
+     *        was last used to launch an EC2 instance. When the AMI is used to launch an instance, there is a 24-hour
+     *        delay before that usage is reported.</p> <note>
+     *        <p>
+     *        <code>lastLaunchedTime</code> data is available starting April 2017.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Image withLastLaunchedTime(String lastLaunchedTime) {
+        setLastLaunchedTime(lastLaunchedTime);
         return this;
     }
 
@@ -2159,7 +2347,13 @@ public class Image implements Serializable, Cloneable {
         if (getDeprecationTime() != null)
             sb.append("DeprecationTime: ").append(getDeprecationTime()).append(",");
         if (getImdsSupport() != null)
-            sb.append("ImdsSupport: ").append(getImdsSupport());
+            sb.append("ImdsSupport: ").append(getImdsSupport()).append(",");
+        if (getSourceInstanceId() != null)
+            sb.append("SourceInstanceId: ").append(getSourceInstanceId()).append(",");
+        if (getDeregistrationProtection() != null)
+            sb.append("DeregistrationProtection: ").append(getDeregistrationProtection()).append(",");
+        if (getLastLaunchedTime() != null)
+            sb.append("LastLaunchedTime: ").append(getLastLaunchedTime());
         sb.append("}");
         return sb.toString();
     }
@@ -2294,6 +2488,18 @@ public class Image implements Serializable, Cloneable {
             return false;
         if (other.getImdsSupport() != null && other.getImdsSupport().equals(this.getImdsSupport()) == false)
             return false;
+        if (other.getSourceInstanceId() == null ^ this.getSourceInstanceId() == null)
+            return false;
+        if (other.getSourceInstanceId() != null && other.getSourceInstanceId().equals(this.getSourceInstanceId()) == false)
+            return false;
+        if (other.getDeregistrationProtection() == null ^ this.getDeregistrationProtection() == null)
+            return false;
+        if (other.getDeregistrationProtection() != null && other.getDeregistrationProtection().equals(this.getDeregistrationProtection()) == false)
+            return false;
+        if (other.getLastLaunchedTime() == null ^ this.getLastLaunchedTime() == null)
+            return false;
+        if (other.getLastLaunchedTime() != null && other.getLastLaunchedTime().equals(this.getLastLaunchedTime()) == false)
+            return false;
         return true;
     }
 
@@ -2332,6 +2538,9 @@ public class Image implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTpmSupport() == null) ? 0 : getTpmSupport().hashCode());
         hashCode = prime * hashCode + ((getDeprecationTime() == null) ? 0 : getDeprecationTime().hashCode());
         hashCode = prime * hashCode + ((getImdsSupport() == null) ? 0 : getImdsSupport().hashCode());
+        hashCode = prime * hashCode + ((getSourceInstanceId() == null) ? 0 : getSourceInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getDeregistrationProtection() == null) ? 0 : getDeregistrationProtection().hashCode());
+        hashCode = prime * hashCode + ((getLastLaunchedTime() == null) ? 0 : getLastLaunchedTime().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,12 @@ public class DescribeLogPatternResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private String resourceGroupName;
+    /**
+     * <p>
+     * The AWS account ID for the resource group owner.
+     * </p>
+     */
+    private String accountId;
     /**
      * <p>
      * The successfully created log pattern.
@@ -73,6 +79,46 @@ public class DescribeLogPatternResult extends com.amazonaws.AmazonWebServiceResu
 
     public DescribeLogPatternResult withResourceGroupName(String resourceGroupName) {
         setResourceGroupName(resourceGroupName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID for the resource group owner.
+     * </p>
+     * 
+     * @param accountId
+     *        The AWS account ID for the resource group owner.
+     */
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID for the resource group owner.
+     * </p>
+     * 
+     * @return The AWS account ID for the resource group owner.
+     */
+
+    public String getAccountId() {
+        return this.accountId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID for the resource group owner.
+     * </p>
+     * 
+     * @param accountId
+     *        The AWS account ID for the resource group owner.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeLogPatternResult withAccountId(String accountId) {
+        setAccountId(accountId);
         return this;
     }
 
@@ -130,6 +176,8 @@ public class DescribeLogPatternResult extends com.amazonaws.AmazonWebServiceResu
         sb.append("{");
         if (getResourceGroupName() != null)
             sb.append("ResourceGroupName: ").append(getResourceGroupName()).append(",");
+        if (getAccountId() != null)
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getLogPattern() != null)
             sb.append("LogPattern: ").append(getLogPattern());
         sb.append("}");
@@ -150,6 +198,10 @@ public class DescribeLogPatternResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getResourceGroupName() != null && other.getResourceGroupName().equals(this.getResourceGroupName()) == false)
             return false;
+        if (other.getAccountId() == null ^ this.getAccountId() == null)
+            return false;
+        if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
+            return false;
         if (other.getLogPattern() == null ^ this.getLogPattern() == null)
             return false;
         if (other.getLogPattern() != null && other.getLogPattern().equals(this.getLogPattern()) == false)
@@ -163,6 +215,7 @@ public class DescribeLogPatternResult extends com.amazonaws.AmazonWebServiceResu
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getResourceGroupName() == null) ? 0 : getResourceGroupName().hashCode());
+        hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         hashCode = prime * hashCode + ((getLogPattern() == null) ? 0 : getLogPattern().hashCode());
         return hashCode;
     }

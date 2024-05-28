@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class ResourceSpecMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SageMakerImageArn").build();
     private static final MarshallingInfo<String> SAGEMAKERIMAGEVERSIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SageMakerImageVersionArn").build();
+    private static final MarshallingInfo<String> SAGEMAKERIMAGEVERSIONALIAS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SageMakerImageVersionAlias").build();
     private static final MarshallingInfo<String> INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceType").build();
     private static final MarshallingInfo<String> LIFECYCLECONFIGARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -54,6 +56,7 @@ public class ResourceSpecMarshaller {
         try {
             protocolMarshaller.marshall(resourceSpec.getSageMakerImageArn(), SAGEMAKERIMAGEARN_BINDING);
             protocolMarshaller.marshall(resourceSpec.getSageMakerImageVersionArn(), SAGEMAKERIMAGEVERSIONARN_BINDING);
+            protocolMarshaller.marshall(resourceSpec.getSageMakerImageVersionAlias(), SAGEMAKERIMAGEVERSIONALIAS_BINDING);
             protocolMarshaller.marshall(resourceSpec.getInstanceType(), INSTANCETYPE_BINDING);
             protocolMarshaller.marshall(resourceSpec.getLifecycleConfigArn(), LIFECYCLECONFIGARN_BINDING);
         } catch (Exception e) {

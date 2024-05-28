@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * If you run <code>GetInsightSelectors</code> on a trail that does not have Insights events enabled, the operation
- * throws the exception <code>InsightNotEnabledException</code>.
+ * If you run <code>GetInsightSelectors</code> on a trail or event data store that does not have Insights events
+ * enabled, the operation throws the exception <code>InsightNotEnabledException</code>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,12 @@ public class ExperimentSummary implements Serializable, Cloneable, StructuredPoj
     private String id;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the experiment.
+     * </p>
+     */
+    private String arn;
+    /**
+     * <p>
      * The ID of the experiment template.
      * </p>
      */
@@ -58,6 +64,12 @@ public class ExperimentSummary implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The experiment options for the experiment.
+     * </p>
+     */
+    private ExperimentOptions experimentOptions;
 
     /**
      * <p>
@@ -96,6 +108,46 @@ public class ExperimentSummary implements Serializable, Cloneable, StructuredPoj
 
     public ExperimentSummary withId(String id) {
         setId(id);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the experiment.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) of the experiment.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the experiment.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the experiment.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the experiment.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) of the experiment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExperimentSummary withArn(String arn) {
+        setArn(arn);
         return this;
     }
 
@@ -288,6 +340,46 @@ public class ExperimentSummary implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The experiment options for the experiment.
+     * </p>
+     * 
+     * @param experimentOptions
+     *        The experiment options for the experiment.
+     */
+
+    public void setExperimentOptions(ExperimentOptions experimentOptions) {
+        this.experimentOptions = experimentOptions;
+    }
+
+    /**
+     * <p>
+     * The experiment options for the experiment.
+     * </p>
+     * 
+     * @return The experiment options for the experiment.
+     */
+
+    public ExperimentOptions getExperimentOptions() {
+        return this.experimentOptions;
+    }
+
+    /**
+     * <p>
+     * The experiment options for the experiment.
+     * </p>
+     * 
+     * @param experimentOptions
+     *        The experiment options for the experiment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExperimentSummary withExperimentOptions(ExperimentOptions experimentOptions) {
+        setExperimentOptions(experimentOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -301,6 +393,8 @@ public class ExperimentSummary implements Serializable, Cloneable, StructuredPoj
         sb.append("{");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getExperimentTemplateId() != null)
             sb.append("ExperimentTemplateId: ").append(getExperimentTemplateId()).append(",");
         if (getState() != null)
@@ -308,7 +402,9 @@ public class ExperimentSummary implements Serializable, Cloneable, StructuredPoj
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getExperimentOptions() != null)
+            sb.append("ExperimentOptions: ").append(getExperimentOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -327,6 +423,10 @@ public class ExperimentSummary implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
         if (other.getExperimentTemplateId() == null ^ this.getExperimentTemplateId() == null)
             return false;
         if (other.getExperimentTemplateId() != null && other.getExperimentTemplateId().equals(this.getExperimentTemplateId()) == false)
@@ -343,6 +443,10 @@ public class ExperimentSummary implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getExperimentOptions() == null ^ this.getExperimentOptions() == null)
+            return false;
+        if (other.getExperimentOptions() != null && other.getExperimentOptions().equals(this.getExperimentOptions()) == false)
+            return false;
         return true;
     }
 
@@ -352,10 +456,12 @@ public class ExperimentSummary implements Serializable, Cloneable, StructuredPoj
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getExperimentTemplateId() == null) ? 0 : getExperimentTemplateId().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getExperimentOptions() == null) ? 0 : getExperimentOptions().hashCode());
         return hashCode;
     }
 

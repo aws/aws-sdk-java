@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,21 @@ public class GetGroupResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * A full description of the resource group.
+     * A structure that contains the metadata details for the specified resource group. Use <a>GetGroupQuery</a> and
+     * <a>GetGroupConfiguration</a> to get those additional details of the resource group.
      * </p>
      */
     private Group group;
 
     /**
      * <p>
-     * A full description of the resource group.
+     * A structure that contains the metadata details for the specified resource group. Use <a>GetGroupQuery</a> and
+     * <a>GetGroupConfiguration</a> to get those additional details of the resource group.
      * </p>
      * 
      * @param group
-     *        A full description of the resource group.
+     *        A structure that contains the metadata details for the specified resource group. Use <a>GetGroupQuery</a>
+     *        and <a>GetGroupConfiguration</a> to get those additional details of the resource group.
      */
 
     public void setGroup(Group group) {
@@ -45,10 +48,12 @@ public class GetGroupResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * A full description of the resource group.
+     * A structure that contains the metadata details for the specified resource group. Use <a>GetGroupQuery</a> and
+     * <a>GetGroupConfiguration</a> to get those additional details of the resource group.
      * </p>
      * 
-     * @return A full description of the resource group.
+     * @return A structure that contains the metadata details for the specified resource group. Use <a>GetGroupQuery</a>
+     *         and <a>GetGroupConfiguration</a> to get those additional details of the resource group.
      */
 
     public Group getGroup() {
@@ -57,11 +62,13 @@ public class GetGroupResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * A full description of the resource group.
+     * A structure that contains the metadata details for the specified resource group. Use <a>GetGroupQuery</a> and
+     * <a>GetGroupConfiguration</a> to get those additional details of the resource group.
      * </p>
      * 
      * @param group
-     *        A full description of the resource group.
+     *        A structure that contains the metadata details for the specified resource group. Use <a>GetGroupQuery</a>
+     *        and <a>GetGroupConfiguration</a> to get those additional details of the resource group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

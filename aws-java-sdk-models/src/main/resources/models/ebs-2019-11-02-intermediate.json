@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -35,6 +35,7 @@
     "serviceClientHoldInputStream" : false,
     "shapeModifiers" : null,
     "shapeSubstitutions" : null,
+    "shapesToSkipPruning" : [ ],
     "simpleMethods" : null,
     "skipClientMethodForOperations" : [ ],
     "skipInterfaceAdditions" : false,
@@ -49,6 +50,7 @@
     "asyncClient" : "AmazonEBSAsyncClient",
     "asyncClientBuilderClassName" : "AmazonEBSAsyncClientBuilder",
     "asyncInterface" : "AmazonEBSAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",
@@ -92,7 +94,7 @@
       "asyncReturnType" : "CompleteSnapshotResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Seals and completes the snapshot after all of the required blocks of data have been written to it. Completing the snapshot changes the status to <code>completed</code>. You cannot write new blocks to a snapshot after it has been completed.</p>",
+      "documentation" : "<p>Seals and completes the snapshot after all of the required blocks of data have been written to it. Completing the snapshot changes the status to <code>completed</code>. You cannot write new blocks to a snapshot after it has been completed.</p> <note> <p>You should always retry requests that receive server (<code>5xx</code>) error responses, and <code>ThrottlingException</code> and <code>RequestThrottledException</code> client error responses. For more information see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html\">Error retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> </note>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -111,7 +113,7 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "RequestThrottledException",
-        "documentation" : "<p>The number of API requests has exceed the maximum allowed API request throttling limit.</p>",
+        "documentation" : "<p>The number of API requests has exceeded the maximum allowed API request throttling limit for the snapshot. For more information see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html\">Error retries</a>.</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "ServiceQuotaExceededException",
@@ -119,7 +121,7 @@
         "httpStatusCode" : 402
       }, {
         "exceptionName" : "InternalServerException",
-        "documentation" : "<p>An internal error has occurred.</p>",
+        "documentation" : "<p>An internal error has occurred. For more information see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html\">Error retries</a>.</p>",
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -149,7 +151,7 @@
       "asyncReturnType" : "GetSnapshotBlockResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Returns the data in a block in an Amazon Elastic Block Store snapshot.</p>",
+      "documentation" : "<p>Returns the data in a block in an Amazon Elastic Block Store snapshot.</p> <note> <p>You should always retry requests that receive server (<code>5xx</code>) error responses, and <code>ThrottlingException</code> and <code>RequestThrottledException</code> client error responses. For more information see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html\">Error retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> </note>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -168,7 +170,7 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "RequestThrottledException",
-        "documentation" : "<p>The number of API requests has exceed the maximum allowed API request throttling limit.</p>",
+        "documentation" : "<p>The number of API requests has exceeded the maximum allowed API request throttling limit for the snapshot. For more information see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html\">Error retries</a>.</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "ServiceQuotaExceededException",
@@ -176,7 +178,7 @@
         "httpStatusCode" : 402
       }, {
         "exceptionName" : "InternalServerException",
-        "documentation" : "<p>An internal error has occurred.</p>",
+        "documentation" : "<p>An internal error has occurred. For more information see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html\">Error retries</a>.</p>",
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : true,
@@ -206,7 +208,7 @@
       "asyncReturnType" : "ListChangedBlocksResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Returns information about the blocks that are different between two Amazon Elastic Block Store snapshots of the same volume/snapshot lineage.</p>",
+      "documentation" : "<p>Returns information about the blocks that are different between two Amazon Elastic Block Store snapshots of the same volume/snapshot lineage.</p> <note> <p>You should always retry requests that receive server (<code>5xx</code>) error responses, and <code>ThrottlingException</code> and <code>RequestThrottledException</code> client error responses. For more information see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html\">Error retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> </note>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -225,7 +227,7 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "RequestThrottledException",
-        "documentation" : "<p>The number of API requests has exceed the maximum allowed API request throttling limit.</p>",
+        "documentation" : "<p>The number of API requests has exceeded the maximum allowed API request throttling limit for the snapshot. For more information see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html\">Error retries</a>.</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "ServiceQuotaExceededException",
@@ -233,7 +235,7 @@
         "httpStatusCode" : 402
       }, {
         "exceptionName" : "InternalServerException",
-        "documentation" : "<p>An internal error has occurred.</p>",
+        "documentation" : "<p>An internal error has occurred. For more information see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html\">Error retries</a>.</p>",
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -263,7 +265,7 @@
       "asyncReturnType" : "ListSnapshotBlocksResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Returns information about the blocks in an Amazon Elastic Block Store snapshot.</p>",
+      "documentation" : "<p>Returns information about the blocks in an Amazon Elastic Block Store snapshot.</p> <note> <p>You should always retry requests that receive server (<code>5xx</code>) error responses, and <code>ThrottlingException</code> and <code>RequestThrottledException</code> client error responses. For more information see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html\">Error retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> </note>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -282,7 +284,7 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "RequestThrottledException",
-        "documentation" : "<p>The number of API requests has exceed the maximum allowed API request throttling limit.</p>",
+        "documentation" : "<p>The number of API requests has exceeded the maximum allowed API request throttling limit for the snapshot. For more information see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html\">Error retries</a>.</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "ServiceQuotaExceededException",
@@ -290,7 +292,7 @@
         "httpStatusCode" : 402
       }, {
         "exceptionName" : "InternalServerException",
-        "documentation" : "<p>An internal error has occurred.</p>",
+        "documentation" : "<p>An internal error has occurred. For more information see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html\">Error retries</a>.</p>",
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -320,7 +322,7 @@
       "asyncReturnType" : "PutSnapshotBlockResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Writes a block of data to a snapshot. If the specified block contains data, the existing data is overwritten. The target snapshot must be in the <code>pending</code> state.</p> <p>Data written to a snapshot must be aligned with 512-KiB sectors.</p>",
+      "documentation" : "<p>Writes a block of data to a snapshot. If the specified block contains data, the existing data is overwritten. The target snapshot must be in the <code>pending</code> state.</p> <p>Data written to a snapshot must be aligned with 512-KiB sectors.</p> <note> <p>You should always retry requests that receive server (<code>5xx</code>) error responses, and <code>ThrottlingException</code> and <code>RequestThrottledException</code> client error responses. For more information see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html\">Error retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> </note>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -339,7 +341,7 @@
         "httpStatusCode" : 404
       }, {
         "exceptionName" : "RequestThrottledException",
-        "documentation" : "<p>The number of API requests has exceed the maximum allowed API request throttling limit.</p>",
+        "documentation" : "<p>The number of API requests has exceeded the maximum allowed API request throttling limit for the snapshot. For more information see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html\">Error retries</a>.</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "ServiceQuotaExceededException",
@@ -347,7 +349,7 @@
         "httpStatusCode" : 402
       }, {
         "exceptionName" : "InternalServerException",
-        "documentation" : "<p>An internal error has occurred.</p>",
+        "documentation" : "<p>An internal error has occurred. For more information see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html\">Error retries</a>.</p>",
         "httpStatusCode" : 500
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -377,7 +379,7 @@
       "asyncReturnType" : "StartSnapshotResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Creates a new Amazon EBS snapshot. The new snapshot enters the <code>pending</code> state after the request completes. </p> <p>After creating the snapshot, use <a href=\"https://docs.aws.amazon.com/ebs/latest/APIReference/API_PutSnapshotBlock.html\"> PutSnapshotBlock</a> to write blocks of data to the snapshot.</p>",
+      "documentation" : "<p>Creates a new Amazon EBS snapshot. The new snapshot enters the <code>pending</code> state after the request completes. </p> <p>After creating the snapshot, use <a href=\"https://docs.aws.amazon.com/ebs/latest/APIReference/API_PutSnapshotBlock.html\"> PutSnapshotBlock</a> to write blocks of data to the snapshot.</p> <note> <p>You should always retry requests that receive server (<code>5xx</code>) error responses, and <code>ThrottlingException</code> and <code>RequestThrottledException</code> client error responses. For more information see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html\">Error retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> </note>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -392,7 +394,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "RequestThrottledException",
-        "documentation" : "<p>The number of API requests has exceed the maximum allowed API request throttling limit.</p>",
+        "documentation" : "<p>The number of API requests has exceeded the maximum allowed API request throttling limit for the snapshot. For more information see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html\">Error retries</a>.</p>",
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "ResourceNotFoundException",
@@ -404,7 +406,7 @@
         "httpStatusCode" : 402
       }, {
         "exceptionName" : "InternalServerException",
-        "documentation" : "<p>An internal error has occurred.</p>",
+        "documentation" : "<p>An internal error has occurred. For more information see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html\">Error retries</a>.</p>",
         "httpStatusCode" : 500
       }, {
         "exceptionName" : "ConcurrentLimitExceededException",
@@ -3633,7 +3635,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>An internal error has occurred.</p>",
+      "documentation" : "<p>An internal error has occurred. For more information see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html\">Error retries</a>.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InternalServerException",
@@ -8184,7 +8186,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>The number of API requests has exceed the maximum allowed API request throttling limit.</p>",
+      "documentation" : "<p>The number of API requests has exceeded the maximum allowed API request throttling limit for the snapshot. For more information see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html\">Error retries</a>.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "RequestThrottledException",
@@ -8605,8 +8607,14 @@
         "name" : "SNAPSHOT_NOT_FOUND",
         "value" : "SNAPSHOT_NOT_FOUND"
       }, {
+        "name" : "GRANT_NOT_FOUND",
+        "value" : "GRANT_NOT_FOUND"
+      }, {
         "name" : "DEPENDENCY_RESOURCE_NOT_FOUND",
         "value" : "DEPENDENCY_RESOURCE_NOT_FOUND"
+      }, {
+        "name" : "IMAGE_NOT_FOUND",
+        "value" : "IMAGE_NOT_FOUND"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.ebs.enum.ResourceNotFoundExceptionReason",
@@ -8637,6 +8645,59 @@
         "documentation" : null,
         "simpleType" : "ResourceNotFoundExceptionReason",
         "variableSetterType" : "ResourceNotFoundExceptionReason"
+      },
+      "wrapper" : false
+    },
+    "SSEType" : {
+      "c2jName" : "SSEType",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "endpointDiscoveryMembers" : null,
+      "enums" : [ {
+        "name" : "SseEbs",
+        "value" : "sse-ebs"
+      }, {
+        "name" : "SseKms",
+        "value" : "sse-kms"
+      }, {
+        "name" : "None",
+        "value" : "none"
+      } ],
+      "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.ebs.enum.SSEType",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.ebs.enum",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ ],
+      "shapeName" : "SSEType",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "SSEType",
+        "variableName" : "sSEType",
+        "variableType" : "SSEType",
+        "documentation" : null,
+        "simpleType" : "SSEType",
+        "variableSetterType" : "SSEType"
       },
       "wrapper" : false
     },
@@ -10991,6 +11052,75 @@
           "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "SseType",
+        "c2jShape" : "SSEType",
+        "deprecated" : false,
+        "documentation" : "<p>Reserved for future use.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : "SSEType",
+        "fluentSetterDocumentation" : "/**<p>Reserved for future use.</p>\n@param sseType Reserved for future use.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SSEType*/",
+        "fluentSetterMethodName" : "withSseType",
+        "getterDocumentation" : "/**<p>Reserved for future use.</p>\n@return Reserved for future use.\n@see SSEType*/",
+        "getterMethodName" : "getSseType",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "SseType",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "SseType",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "SseType",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>Reserved for future use.</p>\n@param sseType Reserved for future use.\n@see SSEType*/",
+        "setterMethodName" : "setSseType",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "sseType",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Reserved for future use.</p>\n@param sseType Reserved for future use.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SSEType*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "sseType",
+          "variableType" : "String",
+          "documentation" : "<p>Reserved for future use.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "BlockSize" : {
@@ -11408,6 +11538,76 @@
             "variableName" : "snapshotId",
             "variableType" : "String",
             "documentation" : "<p>The ID of the snapshot.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "SseType" : {
+          "c2jName" : "SseType",
+          "c2jShape" : "SSEType",
+          "deprecated" : false,
+          "documentation" : "<p>Reserved for future use.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : "SSEType",
+          "fluentSetterDocumentation" : "/**<p>Reserved for future use.</p>\n@param sseType Reserved for future use.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SSEType*/",
+          "fluentSetterMethodName" : "withSseType",
+          "getterDocumentation" : "/**<p>Reserved for future use.</p>\n@return Reserved for future use.\n@see SSEType*/",
+          "getterMethodName" : "getSseType",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "SseType",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "SseType",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "SseType",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>Reserved for future use.</p>\n@param sseType Reserved for future use.\n@see SSEType*/",
+          "setterMethodName" : "setSseType",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "sseType",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Reserved for future use.</p>\n@param sseType Reserved for future use.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SSEType*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "sseType",
+            "variableType" : "String",
+            "documentation" : "<p>Reserved for future use.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -12378,6 +12578,9 @@
         "name" : "INVALID_BLOCK_TOKEN",
         "value" : "INVALID_BLOCK_TOKEN"
       }, {
+        "name" : "INVALID_GRANT_TOKEN",
+        "value" : "INVALID_GRANT_TOKEN"
+      }, {
         "name" : "INVALID_SNAPSHOT_ID",
         "value" : "INVALID_SNAPSHOT_ID"
       }, {
@@ -12404,6 +12607,12 @@
       }, {
         "name" : "CONFLICTING_BLOCK_UPDATE",
         "value" : "CONFLICTING_BLOCK_UPDATE"
+      }, {
+        "name" : "INVALID_IMAGE_ID",
+        "value" : "INVALID_IMAGE_ID"
+      }, {
+        "name" : "WRITE_REQUEST_TIMEOUT",
+        "value" : "WRITE_REQUEST_TIMEOUT"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.ebs.enum.ValidationExceptionReason",
@@ -12444,7 +12653,8 @@
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,
-  "fileHeader" : "/*\n * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "fileHeader" : "/*\n * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "hasShapes" : true,
   "hasWaiters" : false,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AmazonEBSException",

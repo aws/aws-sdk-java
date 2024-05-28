@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,12 @@ public class DeploymentConfig implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private BlueGreenUpdatePolicy blueGreenUpdatePolicy;
+    /**
+     * <p>
+     * Specifies a rolling deployment strategy for updating a SageMaker endpoint.
+     * </p>
+     */
+    private RollingUpdatePolicy rollingUpdatePolicy;
     /**
      * <p>
      * Automatic rollback configuration for handling endpoint deployment failures and recovery.
@@ -112,6 +118,46 @@ public class DeploymentConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * Specifies a rolling deployment strategy for updating a SageMaker endpoint.
+     * </p>
+     * 
+     * @param rollingUpdatePolicy
+     *        Specifies a rolling deployment strategy for updating a SageMaker endpoint.
+     */
+
+    public void setRollingUpdatePolicy(RollingUpdatePolicy rollingUpdatePolicy) {
+        this.rollingUpdatePolicy = rollingUpdatePolicy;
+    }
+
+    /**
+     * <p>
+     * Specifies a rolling deployment strategy for updating a SageMaker endpoint.
+     * </p>
+     * 
+     * @return Specifies a rolling deployment strategy for updating a SageMaker endpoint.
+     */
+
+    public RollingUpdatePolicy getRollingUpdatePolicy() {
+        return this.rollingUpdatePolicy;
+    }
+
+    /**
+     * <p>
+     * Specifies a rolling deployment strategy for updating a SageMaker endpoint.
+     * </p>
+     * 
+     * @param rollingUpdatePolicy
+     *        Specifies a rolling deployment strategy for updating a SageMaker endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeploymentConfig withRollingUpdatePolicy(RollingUpdatePolicy rollingUpdatePolicy) {
+        setRollingUpdatePolicy(rollingUpdatePolicy);
+        return this;
+    }
+
+    /**
+     * <p>
      * Automatic rollback configuration for handling endpoint deployment failures and recovery.
      * </p>
      * 
@@ -164,6 +210,8 @@ public class DeploymentConfig implements Serializable, Cloneable, StructuredPojo
         sb.append("{");
         if (getBlueGreenUpdatePolicy() != null)
             sb.append("BlueGreenUpdatePolicy: ").append(getBlueGreenUpdatePolicy()).append(",");
+        if (getRollingUpdatePolicy() != null)
+            sb.append("RollingUpdatePolicy: ").append(getRollingUpdatePolicy()).append(",");
         if (getAutoRollbackConfiguration() != null)
             sb.append("AutoRollbackConfiguration: ").append(getAutoRollbackConfiguration());
         sb.append("}");
@@ -184,6 +232,10 @@ public class DeploymentConfig implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getBlueGreenUpdatePolicy() != null && other.getBlueGreenUpdatePolicy().equals(this.getBlueGreenUpdatePolicy()) == false)
             return false;
+        if (other.getRollingUpdatePolicy() == null ^ this.getRollingUpdatePolicy() == null)
+            return false;
+        if (other.getRollingUpdatePolicy() != null && other.getRollingUpdatePolicy().equals(this.getRollingUpdatePolicy()) == false)
+            return false;
         if (other.getAutoRollbackConfiguration() == null ^ this.getAutoRollbackConfiguration() == null)
             return false;
         if (other.getAutoRollbackConfiguration() != null && other.getAutoRollbackConfiguration().equals(this.getAutoRollbackConfiguration()) == false)
@@ -197,6 +249,7 @@ public class DeploymentConfig implements Serializable, Cloneable, StructuredPojo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getBlueGreenUpdatePolicy() == null) ? 0 : getBlueGreenUpdatePolicy().hashCode());
+        hashCode = prime * hashCode + ((getRollingUpdatePolicy() == null) ? 0 : getRollingUpdatePolicy().hashCode());
         hashCode = prime * hashCode + ((getAutoRollbackConfiguration() == null) ? 0 : getAutoRollbackConfiguration().hashCode());
         return hashCode;
     }

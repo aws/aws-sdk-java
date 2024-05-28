@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,16 @@ public class GridViewConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContentShareLayout").build();
     private static final MarshallingInfo<StructuredPojo> PRESENTERONLYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PresenterOnlyConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> ACTIVESPEAKERONLYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ActiveSpeakerOnlyConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> HORIZONTALLAYOUTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HorizontalLayoutConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> VERTICALLAYOUTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VerticalLayoutConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> VIDEOATTRIBUTE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VideoAttribute").build();
+    private static final MarshallingInfo<String> CANVASORIENTATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CanvasOrientation").build();
 
     private static final GridViewConfigurationMarshaller instance = new GridViewConfigurationMarshaller();
 
@@ -50,6 +60,11 @@ public class GridViewConfigurationMarshaller {
         try {
             protocolMarshaller.marshall(gridViewConfiguration.getContentShareLayout(), CONTENTSHARELAYOUT_BINDING);
             protocolMarshaller.marshall(gridViewConfiguration.getPresenterOnlyConfiguration(), PRESENTERONLYCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(gridViewConfiguration.getActiveSpeakerOnlyConfiguration(), ACTIVESPEAKERONLYCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(gridViewConfiguration.getHorizontalLayoutConfiguration(), HORIZONTALLAYOUTCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(gridViewConfiguration.getVerticalLayoutConfiguration(), VERTICALLAYOUTCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(gridViewConfiguration.getVideoAttribute(), VIDEOATTRIBUTE_BINDING);
+            protocolMarshaller.marshall(gridViewConfiguration.getCanvasOrientation(), CANVASORIENTATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

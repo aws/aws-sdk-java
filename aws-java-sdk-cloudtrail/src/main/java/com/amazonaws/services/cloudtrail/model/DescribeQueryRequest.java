@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,7 @@ public class DescribeQueryRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The ARN (or the ID suffix of the ARN) of an event data store on which the specified query was run.
      * </p>
      */
+    @Deprecated
     private String eventDataStore;
     /**
      * <p>
@@ -37,6 +38,12 @@ public class DescribeQueryRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String queryId;
+    /**
+     * <p>
+     * The alias that identifies a query template.
+     * </p>
+     */
+    private String queryAlias;
 
     /**
      * <p>
@@ -46,7 +53,7 @@ public class DescribeQueryRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param eventDataStore
      *        The ARN (or the ID suffix of the ARN) of an event data store on which the specified query was run.
      */
-
+    @Deprecated
     public void setEventDataStore(String eventDataStore) {
         this.eventDataStore = eventDataStore;
     }
@@ -58,7 +65,7 @@ public class DescribeQueryRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @return The ARN (or the ID suffix of the ARN) of an event data store on which the specified query was run.
      */
-
+    @Deprecated
     public String getEventDataStore() {
         return this.eventDataStore;
     }
@@ -72,7 +79,7 @@ public class DescribeQueryRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        The ARN (or the ID suffix of the ARN) of an event data store on which the specified query was run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public DescribeQueryRequest withEventDataStore(String eventDataStore) {
         setEventDataStore(eventDataStore);
         return this;
@@ -119,6 +126,46 @@ public class DescribeQueryRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The alias that identifies a query template.
+     * </p>
+     * 
+     * @param queryAlias
+     *        The alias that identifies a query template.
+     */
+
+    public void setQueryAlias(String queryAlias) {
+        this.queryAlias = queryAlias;
+    }
+
+    /**
+     * <p>
+     * The alias that identifies a query template.
+     * </p>
+     * 
+     * @return The alias that identifies a query template.
+     */
+
+    public String getQueryAlias() {
+        return this.queryAlias;
+    }
+
+    /**
+     * <p>
+     * The alias that identifies a query template.
+     * </p>
+     * 
+     * @param queryAlias
+     *        The alias that identifies a query template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeQueryRequest withQueryAlias(String queryAlias) {
+        setQueryAlias(queryAlias);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,7 +180,9 @@ public class DescribeQueryRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getEventDataStore() != null)
             sb.append("EventDataStore: ").append(getEventDataStore()).append(",");
         if (getQueryId() != null)
-            sb.append("QueryId: ").append(getQueryId());
+            sb.append("QueryId: ").append(getQueryId()).append(",");
+        if (getQueryAlias() != null)
+            sb.append("QueryAlias: ").append(getQueryAlias());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +205,10 @@ public class DescribeQueryRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getQueryId() != null && other.getQueryId().equals(this.getQueryId()) == false)
             return false;
+        if (other.getQueryAlias() == null ^ this.getQueryAlias() == null)
+            return false;
+        if (other.getQueryAlias() != null && other.getQueryAlias().equals(this.getQueryAlias()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +219,7 @@ public class DescribeQueryRequest extends com.amazonaws.AmazonWebServiceRequest 
 
         hashCode = prime * hashCode + ((getEventDataStore() == null) ? 0 : getEventDataStore().hashCode());
         hashCode = prime * hashCode + ((getQueryId() == null) ? 0 : getQueryId().hashCode());
+        hashCode = prime * hashCode + ((getQueryAlias() == null) ? 0 : getQueryAlias().hashCode());
         return hashCode;
     }
 

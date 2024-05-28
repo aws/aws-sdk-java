@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,8 +45,21 @@ import org.joda.time.DateTime;
  *     <li>ProcessOutputLimit - The maximum amount of data that can be returned by the external process before an exception is
  *     raised. Default: 64000 bytes.</li>
  * </ul>
+ *
+ * <p>
+ * <b>Migrating to the AWS SDK for Java v2</b>
+ * <p>
+ * The v2 equivalent of this class is
+ * <a href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/auth/credentials/ProcessCredentialsProvider.html">ProcessCredentialsProvider</a>
+ *
+ * <p>
+ * See <a href="https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/migration-client-credentials.html">Migration Guide</a>
+ * for more information.
  */
 public final class ProcessCredentialsProvider implements AWSCredentialsProvider {
+
+    private static final String PROVIDER_NAME = "ProcessCredentialsProvider";
+
     private final List<String> command;
     private final int expirationBufferValue;
     private final TimeUnit expirationBufferUnit;
@@ -61,24 +74,30 @@ public final class ProcessCredentialsProvider implements AWSCredentialsProvider 
      * @see #builder()
      */
     private ProcessCredentialsProvider(Builder builder) {
-        List<String> cmd = new ArrayList<String>();
-
-        if (Platform.isWindows()) {
-            cmd.add("cmd.exe");
-            cmd.add("/C");
-        } else {
-            cmd.add("sh");
-            cmd.add("-c");
-        }
-
-        String builderCommand = ValidationUtils.assertNotNull(builder.command, "command");
-
-        cmd.add(builderCommand);
-
-        this.command = Collections.unmodifiableList(cmd);
+        this.command = executableCommand(builder);
         this.processOutputLimit = ValidationUtils.assertNotNull(builder.processOutputLimit, "processOutputLimit");
         this.expirationBufferValue = ValidationUtils.assertNotNull(builder.expirationBufferValue, "expirationBufferValue");
         this.expirationBufferUnit = ValidationUtils.assertNotNull(builder.expirationBufferUnit, "expirationBufferUnit");
+    }
+
+    private List<String> executableCommand(Builder builder) {
+        if (builder.commandAsListOfStrings != null) {
+            return Collections.unmodifiableList(builder.commandAsListOfStrings);
+        } else {
+            List<String> cmd = new ArrayList<String>();
+
+            if (Platform.isWindows()) {
+                cmd.add("cmd.exe");
+                cmd.add("/C");
+            } else {
+                cmd.add("sh");
+                cmd.add("-c");
+            }
+
+            String builderCommand = ValidationUtils.assertNotNull(builder.command, "command");
+            cmd.add(builderCommand);
+            return Collections.unmodifiableList(cmd);
+        }
     }
 
     /**
@@ -164,9 +183,9 @@ public final class ProcessCredentialsProvider implements AWSCredentialsProvider 
         ValidationUtils.assertStringNotEmpty(secretAccessKey, "SecretAccessKey");
 
         if (sessionToken != null) {
-            return new BasicSessionCredentials(accessKeyId, secretAccessKey, sessionToken);
+            return new BasicSessionCredentials(accessKeyId, secretAccessKey, sessionToken, null, PROVIDER_NAME);
         } else {
-            return new BasicAWSCredentials(accessKeyId, secretAccessKey);
+            return new BasicAWSCredentials(accessKeyId, secretAccessKey, null, PROVIDER_NAME);
         }
     }
 
@@ -232,6 +251,7 @@ public final class ProcessCredentialsProvider implements AWSCredentialsProvider 
      */
     public static class Builder {
         private String command;
+        private List<String> commandAsListOfStrings;
         private int expirationBufferValue = 15;
         private TimeUnit expirationBufferUnit = TimeUnit.SECONDS;
         private long processOutputLimit = 64000;
@@ -243,16 +263,44 @@ public final class ProcessCredentialsProvider implements AWSCredentialsProvider 
 
         /**
          * Configure the command that should be executed to retrieve credentials.
+         * See {@link ProcessBuilder} for details on how this command is used.
+         *
+         * @deprecated The recommended approach is to specify the command as a list of Strings, using
+         * {@link #setCommand(List)} instead, which makes it easier to programmatically add parameters to commands
+         * without needing to escape those parameters to protect against command injection.
          */
+        @Deprecated
         private void setCommand(String command) {
             this.command = command;
         }
 
         /**
-         * @see #setCommand(String)
+         * Configure the command that should be executed to retrieve credentials and return this Builder.
+         * See {@link ProcessBuilder} for details on how this command is used.
+         *
+         * @deprecated The recommended approach is to specify the command as a list of Strings, using
+         * {@link #withCommand(List)} instead, which makes it easier to programmatically add parameters to commands
+         * without needing to escape those parameters to protect against command injection.
          */
+        @Deprecated
         public Builder withCommand(String command) {
             setCommand(command);
+            return this;
+        }
+
+        /**
+         * Configure the command that should be executed to retrieve credentials, as a list of strings.
+         * See {@link ProcessBuilder} for details on how this command is used.
+         */
+        private void setCommand(List<String> commandAsListOfStrings) {
+            this.commandAsListOfStrings = commandAsListOfStrings;
+        }
+
+        /**
+         * @see #setCommand(List)
+         */
+        public Builder withCommand(List<String> commands) {
+            setCommand(commands);
             return this;
         }
 

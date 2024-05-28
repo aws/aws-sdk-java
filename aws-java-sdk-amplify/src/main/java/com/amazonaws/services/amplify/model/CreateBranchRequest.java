@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -142,6 +142,12 @@ public class CreateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String backendEnvironmentArn;
+    /**
+     * <p>
+     * The backend for a <code>Branch</code> of an Amplify app. Use for a backend created from an CloudFormation stack.
+     * </p>
+     */
+    private Backend backend;
 
     /**
      * <p>
@@ -1041,6 +1047,49 @@ public class CreateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The backend for a <code>Branch</code> of an Amplify app. Use for a backend created from an CloudFormation stack.
+     * </p>
+     * 
+     * @param backend
+     *        The backend for a <code>Branch</code> of an Amplify app. Use for a backend created from an CloudFormation
+     *        stack.
+     */
+
+    public void setBackend(Backend backend) {
+        this.backend = backend;
+    }
+
+    /**
+     * <p>
+     * The backend for a <code>Branch</code> of an Amplify app. Use for a backend created from an CloudFormation stack.
+     * </p>
+     * 
+     * @return The backend for a <code>Branch</code> of an Amplify app. Use for a backend created from an CloudFormation
+     *         stack.
+     */
+
+    public Backend getBackend() {
+        return this.backend;
+    }
+
+    /**
+     * <p>
+     * The backend for a <code>Branch</code> of an Amplify app. Use for a backend created from an CloudFormation stack.
+     * </p>
+     * 
+     * @param backend
+     *        The backend for a <code>Branch</code> of an Amplify app. Use for a backend created from an CloudFormation
+     *        stack.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateBranchRequest withBackend(Backend backend) {
+        setBackend(backend);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1087,7 +1136,9 @@ public class CreateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getPullRequestEnvironmentName() != null)
             sb.append("PullRequestEnvironmentName: ").append(getPullRequestEnvironmentName()).append(",");
         if (getBackendEnvironmentArn() != null)
-            sb.append("BackendEnvironmentArn: ").append(getBackendEnvironmentArn());
+            sb.append("BackendEnvironmentArn: ").append(getBackendEnvironmentArn()).append(",");
+        if (getBackend() != null)
+            sb.append("Backend: ").append(getBackend());
         sb.append("}");
         return sb.toString();
     }
@@ -1174,6 +1225,10 @@ public class CreateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getBackendEnvironmentArn() != null && other.getBackendEnvironmentArn().equals(this.getBackendEnvironmentArn()) == false)
             return false;
+        if (other.getBackend() == null ^ this.getBackend() == null)
+            return false;
+        if (other.getBackend() != null && other.getBackend().equals(this.getBackend()) == false)
+            return false;
         return true;
     }
 
@@ -1200,6 +1255,7 @@ public class CreateBranchRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getEnablePullRequestPreview() == null) ? 0 : getEnablePullRequestPreview().hashCode());
         hashCode = prime * hashCode + ((getPullRequestEnvironmentName() == null) ? 0 : getPullRequestEnvironmentName().hashCode());
         hashCode = prime * hashCode + ((getBackendEnvironmentArn() == null) ? 0 : getBackendEnvironmentArn().hashCode());
+        hashCode = prime * hashCode + ((getBackend() == null) ? 0 : getBackend().hashCode());
         return hashCode;
     }
 

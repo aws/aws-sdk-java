@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,9 +22,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Resource capacity settings. Fleet capacity is measured in Amazon EC2 instances. Pending and terminating counts are
  * non-zero when the fleet capacity is adjusting to a scaling event or if access to resources is temporarily affected.
  * </p>
- * <p>
- * EC2 instance counts are part of <a>FleetCapacity</a>.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/EC2InstanceCounts" target="_top">AWS API
  *      Documentation</a>
@@ -34,8 +31,9 @@ public class EC2InstanceCounts implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Ideal number of active instances. GameLift will always try to maintain the desired number of instances. Capacity
-     * is scaled up or down by changing the desired instances.
+     * Requested number of active instances. Amazon GameLift takes action as needed to maintain the desired number of
+     * instances. Capacity is scaled up or down by changing the desired instances. A change in the desired instances
+     * value can take up to 1 minute to be reflected when viewing a fleet's capacity settings.
      * </p>
      */
     private Integer dESIRED;
@@ -78,13 +76,15 @@ public class EC2InstanceCounts implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Ideal number of active instances. GameLift will always try to maintain the desired number of instances. Capacity
-     * is scaled up or down by changing the desired instances.
+     * Requested number of active instances. Amazon GameLift takes action as needed to maintain the desired number of
+     * instances. Capacity is scaled up or down by changing the desired instances. A change in the desired instances
+     * value can take up to 1 minute to be reflected when viewing a fleet's capacity settings.
      * </p>
      * 
      * @param dESIRED
-     *        Ideal number of active instances. GameLift will always try to maintain the desired number of instances.
-     *        Capacity is scaled up or down by changing the desired instances.
+     *        Requested number of active instances. Amazon GameLift takes action as needed to maintain the desired
+     *        number of instances. Capacity is scaled up or down by changing the desired instances. A change in the
+     *        desired instances value can take up to 1 minute to be reflected when viewing a fleet's capacity settings.
      */
 
     public void setDESIRED(Integer dESIRED) {
@@ -93,12 +93,14 @@ public class EC2InstanceCounts implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Ideal number of active instances. GameLift will always try to maintain the desired number of instances. Capacity
-     * is scaled up or down by changing the desired instances.
+     * Requested number of active instances. Amazon GameLift takes action as needed to maintain the desired number of
+     * instances. Capacity is scaled up or down by changing the desired instances. A change in the desired instances
+     * value can take up to 1 minute to be reflected when viewing a fleet's capacity settings.
      * </p>
      * 
-     * @return Ideal number of active instances. GameLift will always try to maintain the desired number of instances.
-     *         Capacity is scaled up or down by changing the desired instances.
+     * @return Requested number of active instances. Amazon GameLift takes action as needed to maintain the desired
+     *         number of instances. Capacity is scaled up or down by changing the desired instances. A change in the
+     *         desired instances value can take up to 1 minute to be reflected when viewing a fleet's capacity settings.
      */
 
     public Integer getDESIRED() {
@@ -107,13 +109,15 @@ public class EC2InstanceCounts implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Ideal number of active instances. GameLift will always try to maintain the desired number of instances. Capacity
-     * is scaled up or down by changing the desired instances.
+     * Requested number of active instances. Amazon GameLift takes action as needed to maintain the desired number of
+     * instances. Capacity is scaled up or down by changing the desired instances. A change in the desired instances
+     * value can take up to 1 minute to be reflected when viewing a fleet's capacity settings.
      * </p>
      * 
      * @param dESIRED
-     *        Ideal number of active instances. GameLift will always try to maintain the desired number of instances.
-     *        Capacity is scaled up or down by changing the desired instances.
+     *        Requested number of active instances. Amazon GameLift takes action as needed to maintain the desired
+     *        number of instances. Capacity is scaled up or down by changing the desired instances. A change in the
+     *        desired instances value can take up to 1 minute to be reflected when viewing a fleet's capacity settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

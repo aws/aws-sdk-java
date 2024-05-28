@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,18 @@ public class ListShareInvitationsRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * An optional string added to the beginning of each profile name returned in the results.
+     * </p>
+     */
+    private String profileNamePrefix;
+    /**
+     * <p>
+     * An optional string added to the beginning of each review template name returned in the results.
+     * </p>
+     */
+    private String templateNamePrefix;
 
     /**
      * @param workloadNamePrefix
@@ -242,6 +254,86 @@ public class ListShareInvitationsRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * An optional string added to the beginning of each profile name returned in the results.
+     * </p>
+     * 
+     * @param profileNamePrefix
+     *        An optional string added to the beginning of each profile name returned in the results.
+     */
+
+    public void setProfileNamePrefix(String profileNamePrefix) {
+        this.profileNamePrefix = profileNamePrefix;
+    }
+
+    /**
+     * <p>
+     * An optional string added to the beginning of each profile name returned in the results.
+     * </p>
+     * 
+     * @return An optional string added to the beginning of each profile name returned in the results.
+     */
+
+    public String getProfileNamePrefix() {
+        return this.profileNamePrefix;
+    }
+
+    /**
+     * <p>
+     * An optional string added to the beginning of each profile name returned in the results.
+     * </p>
+     * 
+     * @param profileNamePrefix
+     *        An optional string added to the beginning of each profile name returned in the results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListShareInvitationsRequest withProfileNamePrefix(String profileNamePrefix) {
+        setProfileNamePrefix(profileNamePrefix);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An optional string added to the beginning of each review template name returned in the results.
+     * </p>
+     * 
+     * @param templateNamePrefix
+     *        An optional string added to the beginning of each review template name returned in the results.
+     */
+
+    public void setTemplateNamePrefix(String templateNamePrefix) {
+        this.templateNamePrefix = templateNamePrefix;
+    }
+
+    /**
+     * <p>
+     * An optional string added to the beginning of each review template name returned in the results.
+     * </p>
+     * 
+     * @return An optional string added to the beginning of each review template name returned in the results.
+     */
+
+    public String getTemplateNamePrefix() {
+        return this.templateNamePrefix;
+    }
+
+    /**
+     * <p>
+     * An optional string added to the beginning of each review template name returned in the results.
+     * </p>
+     * 
+     * @param templateNamePrefix
+     *        An optional string added to the beginning of each review template name returned in the results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListShareInvitationsRequest withTemplateNamePrefix(String templateNamePrefix) {
+        setTemplateNamePrefix(templateNamePrefix);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -262,7 +354,11 @@ public class ListShareInvitationsRequest extends com.amazonaws.AmazonWebServiceR
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getProfileNamePrefix() != null)
+            sb.append("ProfileNamePrefix: ").append(getProfileNamePrefix()).append(",");
+        if (getTemplateNamePrefix() != null)
+            sb.append("TemplateNamePrefix: ").append(getTemplateNamePrefix());
         sb.append("}");
         return sb.toString();
     }
@@ -297,6 +393,14 @@ public class ListShareInvitationsRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getProfileNamePrefix() == null ^ this.getProfileNamePrefix() == null)
+            return false;
+        if (other.getProfileNamePrefix() != null && other.getProfileNamePrefix().equals(this.getProfileNamePrefix()) == false)
+            return false;
+        if (other.getTemplateNamePrefix() == null ^ this.getTemplateNamePrefix() == null)
+            return false;
+        if (other.getTemplateNamePrefix() != null && other.getTemplateNamePrefix().equals(this.getTemplateNamePrefix()) == false)
+            return false;
         return true;
     }
 
@@ -310,6 +414,8 @@ public class ListShareInvitationsRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getShareResourceType() == null) ? 0 : getShareResourceType().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getProfileNamePrefix() == null) ? 0 : getProfileNamePrefix().hashCode());
+        hashCode = prime * hashCode + ((getTemplateNamePrefix() == null) ? 0 : getTemplateNamePrefix().hashCode());
         return hashCode;
     }
 

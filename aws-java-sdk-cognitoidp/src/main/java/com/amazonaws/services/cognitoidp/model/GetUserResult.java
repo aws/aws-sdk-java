@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The user name of the user you want to retrieve from the get user request.
+     * The username of the user that you requested.
      * </p>
      */
     private String username;
@@ -65,11 +65,11 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The user name of the user you want to retrieve from the get user request.
+     * The username of the user that you requested.
      * </p>
      * 
      * @param username
-     *        The user name of the user you want to retrieve from the get user request.
+     *        The username of the user that you requested.
      */
 
     public void setUsername(String username) {
@@ -78,10 +78,10 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The user name of the user you want to retrieve from the get user request.
+     * The username of the user that you requested.
      * </p>
      * 
-     * @return The user name of the user you want to retrieve from the get user request.
+     * @return The username of the user that you requested.
      */
 
     public String getUsername() {
@@ -90,11 +90,11 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
 
     /**
      * <p>
-     * The user name of the user you want to retrieve from the get user request.
+     * The username of the user that you requested.
      * </p>
      * 
      * @param username
-     *        The user name of the user you want to retrieve from the get user request.
+     *        The username of the user that you requested.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

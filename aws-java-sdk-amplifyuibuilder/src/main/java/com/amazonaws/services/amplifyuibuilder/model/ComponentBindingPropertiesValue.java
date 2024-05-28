@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,12 @@ public class ComponentBindingPropertiesValue implements Serializable, Cloneable,
 
     /**
      * <p>
+     * The property type.
+     * </p>
+     */
+    private String type;
+    /**
+     * <p>
      * Describes the properties to customize with data at runtime.
      * </p>
      */
@@ -42,12 +48,46 @@ public class ComponentBindingPropertiesValue implements Serializable, Cloneable,
      * </p>
      */
     private String defaultValue;
+
     /**
      * <p>
      * The property type.
      * </p>
+     * 
+     * @param type
+     *        The property type.
      */
-    private String type;
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The property type.
+     * </p>
+     * 
+     * @return The property type.
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The property type.
+     * </p>
+     * 
+     * @param type
+     *        The property type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentBindingPropertiesValue withType(String type) {
+        setType(type);
+        return this;
+    }
 
     /**
      * <p>
@@ -130,46 +170,6 @@ public class ComponentBindingPropertiesValue implements Serializable, Cloneable,
     }
 
     /**
-     * <p>
-     * The property type.
-     * </p>
-     * 
-     * @param type
-     *        The property type.
-     */
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    /**
-     * <p>
-     * The property type.
-     * </p>
-     * 
-     * @return The property type.
-     */
-
-    public String getType() {
-        return this.type;
-    }
-
-    /**
-     * <p>
-     * The property type.
-     * </p>
-     * 
-     * @param type
-     *        The property type.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ComponentBindingPropertiesValue withType(String type) {
-        setType(type);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -181,12 +181,12 @@ public class ComponentBindingPropertiesValue implements Serializable, Cloneable,
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
         if (getBindingProperties() != null)
             sb.append("BindingProperties: ").append(getBindingProperties()).append(",");
         if (getDefaultValue() != null)
-            sb.append("DefaultValue: ").append(getDefaultValue()).append(",");
-        if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("DefaultValue: ").append(getDefaultValue());
         sb.append("}");
         return sb.toString();
     }
@@ -201,6 +201,10 @@ public class ComponentBindingPropertiesValue implements Serializable, Cloneable,
         if (obj instanceof ComponentBindingPropertiesValue == false)
             return false;
         ComponentBindingPropertiesValue other = (ComponentBindingPropertiesValue) obj;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
         if (other.getBindingProperties() == null ^ this.getBindingProperties() == null)
             return false;
         if (other.getBindingProperties() != null && other.getBindingProperties().equals(this.getBindingProperties()) == false)
@@ -208,10 +212,6 @@ public class ComponentBindingPropertiesValue implements Serializable, Cloneable,
         if (other.getDefaultValue() == null ^ this.getDefaultValue() == null)
             return false;
         if (other.getDefaultValue() != null && other.getDefaultValue().equals(this.getDefaultValue()) == false)
-            return false;
-        if (other.getType() == null ^ this.getType() == null)
-            return false;
-        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         return true;
     }
@@ -221,9 +221,9 @@ public class ComponentBindingPropertiesValue implements Serializable, Cloneable,
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getBindingProperties() == null) ? 0 : getBindingProperties().hashCode());
         hashCode = prime * hashCode + ((getDefaultValue() == null) ? 0 : getDefaultValue().hashCode());
-        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,16 +72,43 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
     private java.util.List<String> agentArns;
     /**
      * <p>
-     * Specifies a certificate to authenticate with an object storage system that uses a private or self-signed
-     * certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example,
-     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes
-     * (before Base64 encoding).
+     * Specifies a certificate chain for DataSync to authenticate with your object storage system if the system uses a
+     * private or self-signed certificate authority (CA). You must specify a single <code>.pem</code> file with a full
+     * certificate chain (for example, <code>file:///home/user/.ssh/object_storage_certificates.pem</code>).
+     * </p>
+     * <p>
+     * The certificate chain might include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The object storage system's certificate
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * All intermediate certificates (if there are any)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The root certificate of the signing CA
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can concatenate your certificates into a <code>.pem</code> file (which can be up to 32768 bytes before base64
+     * encoding). The following example <code>cat</code> command creates an <code>object_storage_certificates.pem</code>
+     * file that includes three certificates:
+     * </p>
+     * <p>
+     * <code>cat object_server_certificate.pem intermediate_certificate.pem ca_root_certificate.pem &gt; object_storage_certificates.pem</code>
      * </p>
      * <p>
      * To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.
      * </p>
      * <p>
-     * Updating the certificate doesn't interfere with tasks that you have in progress.
+     * Updating this parameter doesn't interfere with tasks that you have in progress.
      * </p>
      */
     private java.nio.ByteBuffer serverCertificate;
@@ -445,16 +472,43 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specifies a certificate to authenticate with an object storage system that uses a private or self-signed
-     * certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example,
-     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes
-     * (before Base64 encoding).
+     * Specifies a certificate chain for DataSync to authenticate with your object storage system if the system uses a
+     * private or self-signed certificate authority (CA). You must specify a single <code>.pem</code> file with a full
+     * certificate chain (for example, <code>file:///home/user/.ssh/object_storage_certificates.pem</code>).
+     * </p>
+     * <p>
+     * The certificate chain might include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The object storage system's certificate
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * All intermediate certificates (if there are any)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The root certificate of the signing CA
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can concatenate your certificates into a <code>.pem</code> file (which can be up to 32768 bytes before base64
+     * encoding). The following example <code>cat</code> command creates an <code>object_storage_certificates.pem</code>
+     * file that includes three certificates:
+     * </p>
+     * <p>
+     * <code>cat object_server_certificate.pem intermediate_certificate.pem ca_root_certificate.pem &gt; object_storage_certificates.pem</code>
      * </p>
      * <p>
      * To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.
      * </p>
      * <p>
-     * Updating the certificate doesn't interfere with tasks that you have in progress.
+     * Updating this parameter doesn't interfere with tasks that you have in progress.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -468,15 +522,43 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param serverCertificate
-     *        Specifies a certificate to authenticate with an object storage system that uses a private or self-signed
-     *        certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example,
-     *        <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes
-     *        (before Base64 encoding).</p>
+     *        Specifies a certificate chain for DataSync to authenticate with your object storage system if the system
+     *        uses a private or self-signed certificate authority (CA). You must specify a single <code>.pem</code> file
+     *        with a full certificate chain (for example,
+     *        <code>file:///home/user/.ssh/object_storage_certificates.pem</code>).</p>
+     *        <p>
+     *        The certificate chain might include:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The object storage system's certificate
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        All intermediate certificates (if there are any)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The root certificate of the signing CA
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        You can concatenate your certificates into a <code>.pem</code> file (which can be up to 32768 bytes before
+     *        base64 encoding). The following example <code>cat</code> command creates an
+     *        <code>object_storage_certificates.pem</code> file that includes three certificates:
+     *        </p>
+     *        <p>
+     *        <code>cat object_server_certificate.pem intermediate_certificate.pem ca_root_certificate.pem &gt; object_storage_certificates.pem</code>
+     *        </p>
      *        <p>
      *        To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.
      *        </p>
      *        <p>
-     *        Updating the certificate doesn't interfere with tasks that you have in progress.
+     *        Updating this parameter doesn't interfere with tasks that you have in progress.
      */
 
     public void setServerCertificate(java.nio.ByteBuffer serverCertificate) {
@@ -485,16 +567,43 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specifies a certificate to authenticate with an object storage system that uses a private or self-signed
-     * certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example,
-     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes
-     * (before Base64 encoding).
+     * Specifies a certificate chain for DataSync to authenticate with your object storage system if the system uses a
+     * private or self-signed certificate authority (CA). You must specify a single <code>.pem</code> file with a full
+     * certificate chain (for example, <code>file:///home/user/.ssh/object_storage_certificates.pem</code>).
+     * </p>
+     * <p>
+     * The certificate chain might include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The object storage system's certificate
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * All intermediate certificates (if there are any)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The root certificate of the signing CA
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can concatenate your certificates into a <code>.pem</code> file (which can be up to 32768 bytes before base64
+     * encoding). The following example <code>cat</code> command creates an <code>object_storage_certificates.pem</code>
+     * file that includes three certificates:
+     * </p>
+     * <p>
+     * <code>cat object_server_certificate.pem intermediate_certificate.pem ca_root_certificate.pem &gt; object_storage_certificates.pem</code>
      * </p>
      * <p>
      * To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.
      * </p>
      * <p>
-     * Updating the certificate doesn't interfere with tasks that you have in progress.
+     * Updating this parameter doesn't interfere with tasks that you have in progress.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -504,15 +613,43 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
      * {@code position}.
      * </p>
      * 
-     * @return Specifies a certificate to authenticate with an object storage system that uses a private or self-signed
-     *         certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example,
-     *         <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768
-     *         bytes (before Base64 encoding).</p>
+     * @return Specifies a certificate chain for DataSync to authenticate with your object storage system if the system
+     *         uses a private or self-signed certificate authority (CA). You must specify a single <code>.pem</code>
+     *         file with a full certificate chain (for example,
+     *         <code>file:///home/user/.ssh/object_storage_certificates.pem</code>).</p>
+     *         <p>
+     *         The certificate chain might include:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The object storage system's certificate
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         All intermediate certificates (if there are any)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The root certificate of the signing CA
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         You can concatenate your certificates into a <code>.pem</code> file (which can be up to 32768 bytes
+     *         before base64 encoding). The following example <code>cat</code> command creates an
+     *         <code>object_storage_certificates.pem</code> file that includes three certificates:
+     *         </p>
+     *         <p>
+     *         <code>cat object_server_certificate.pem intermediate_certificate.pem ca_root_certificate.pem &gt; object_storage_certificates.pem</code>
+     *         </p>
      *         <p>
      *         To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.
      *         </p>
      *         <p>
-     *         Updating the certificate doesn't interfere with tasks that you have in progress.
+     *         Updating this parameter doesn't interfere with tasks that you have in progress.
      */
 
     public java.nio.ByteBuffer getServerCertificate() {
@@ -521,16 +658,43 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specifies a certificate to authenticate with an object storage system that uses a private or self-signed
-     * certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example,
-     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes
-     * (before Base64 encoding).
+     * Specifies a certificate chain for DataSync to authenticate with your object storage system if the system uses a
+     * private or self-signed certificate authority (CA). You must specify a single <code>.pem</code> file with a full
+     * certificate chain (for example, <code>file:///home/user/.ssh/object_storage_certificates.pem</code>).
+     * </p>
+     * <p>
+     * The certificate chain might include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The object storage system's certificate
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * All intermediate certificates (if there are any)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The root certificate of the signing CA
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can concatenate your certificates into a <code>.pem</code> file (which can be up to 32768 bytes before base64
+     * encoding). The following example <code>cat</code> command creates an <code>object_storage_certificates.pem</code>
+     * file that includes three certificates:
+     * </p>
+     * <p>
+     * <code>cat object_server_certificate.pem intermediate_certificate.pem ca_root_certificate.pem &gt; object_storage_certificates.pem</code>
      * </p>
      * <p>
      * To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.
      * </p>
      * <p>
-     * Updating the certificate doesn't interfere with tasks that you have in progress.
+     * Updating this parameter doesn't interfere with tasks that you have in progress.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -544,15 +708,43 @@ public class UpdateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param serverCertificate
-     *        Specifies a certificate to authenticate with an object storage system that uses a private or self-signed
-     *        certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example,
-     *        <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes
-     *        (before Base64 encoding).</p>
+     *        Specifies a certificate chain for DataSync to authenticate with your object storage system if the system
+     *        uses a private or self-signed certificate authority (CA). You must specify a single <code>.pem</code> file
+     *        with a full certificate chain (for example,
+     *        <code>file:///home/user/.ssh/object_storage_certificates.pem</code>).</p>
+     *        <p>
+     *        The certificate chain might include:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The object storage system's certificate
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        All intermediate certificates (if there are any)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The root certificate of the signing CA
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        You can concatenate your certificates into a <code>.pem</code> file (which can be up to 32768 bytes before
+     *        base64 encoding). The following example <code>cat</code> command creates an
+     *        <code>object_storage_certificates.pem</code> file that includes three certificates:
+     *        </p>
+     *        <p>
+     *        <code>cat object_server_certificate.pem intermediate_certificate.pem ca_root_certificate.pem &gt; object_storage_certificates.pem</code>
+     *        </p>
      *        <p>
      *        To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.
      *        </p>
      *        <p>
-     *        Updating the certificate doesn't interfere with tasks that you have in progress.
+     *        Updating this parameter doesn't interfere with tasks that you have in progress.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

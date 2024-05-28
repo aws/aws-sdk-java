@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -117,7 +117,8 @@ public class ContainerRecipe implements Serializable, Cloneable, StructuredPojo 
     private String version;
     /**
      * <p>
-     * Components for build and test that are included in the container recipe.
+     * Build and test components that are included in the container recipe. Recipes require a minimum of one build
+     * component, and can have a maximum of 20 build and test components in any combination.
      * </p>
      */
     private java.util.List<ComponentConfiguration> components;
@@ -757,10 +758,12 @@ public class ContainerRecipe implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Components for build and test that are included in the container recipe.
+     * Build and test components that are included in the container recipe. Recipes require a minimum of one build
+     * component, and can have a maximum of 20 build and test components in any combination.
      * </p>
      * 
-     * @return Components for build and test that are included in the container recipe.
+     * @return Build and test components that are included in the container recipe. Recipes require a minimum of one
+     *         build component, and can have a maximum of 20 build and test components in any combination.
      */
 
     public java.util.List<ComponentConfiguration> getComponents() {
@@ -769,11 +772,13 @@ public class ContainerRecipe implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Components for build and test that are included in the container recipe.
+     * Build and test components that are included in the container recipe. Recipes require a minimum of one build
+     * component, and can have a maximum of 20 build and test components in any combination.
      * </p>
      * 
      * @param components
-     *        Components for build and test that are included in the container recipe.
+     *        Build and test components that are included in the container recipe. Recipes require a minimum of one
+     *        build component, and can have a maximum of 20 build and test components in any combination.
      */
 
     public void setComponents(java.util.Collection<ComponentConfiguration> components) {
@@ -787,7 +792,8 @@ public class ContainerRecipe implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Components for build and test that are included in the container recipe.
+     * Build and test components that are included in the container recipe. Recipes require a minimum of one build
+     * component, and can have a maximum of 20 build and test components in any combination.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -796,7 +802,8 @@ public class ContainerRecipe implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param components
-     *        Components for build and test that are included in the container recipe.
+     *        Build and test components that are included in the container recipe. Recipes require a minimum of one
+     *        build component, and can have a maximum of 20 build and test components in any combination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -812,11 +819,13 @@ public class ContainerRecipe implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Components for build and test that are included in the container recipe.
+     * Build and test components that are included in the container recipe. Recipes require a minimum of one build
+     * component, and can have a maximum of 20 build and test components in any combination.
      * </p>
      * 
      * @param components
-     *        Components for build and test that are included in the container recipe.
+     *        Build and test components that are included in the container recipe. Recipes require a minimum of one
+     *        build component, and can have a maximum of 20 build and test components in any combination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

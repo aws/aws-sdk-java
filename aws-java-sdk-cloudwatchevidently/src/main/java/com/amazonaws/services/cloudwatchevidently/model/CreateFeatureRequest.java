@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,10 @@ public class CreateFeatureRequest extends com.amazonaws.AmazonWebServiceRequest 
      * key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier.
      * For the value, specify the name of the variation that they are to be served.
      * </p>
+     * <p>
+     * This parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit includes an overhead of 6 bytes
+     * per override.
+     * </p>
      */
     private java.util.Map<String, String> entityOverrides;
     /**
@@ -84,10 +88,13 @@ public class CreateFeatureRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of
      * characters.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;You can associate as many as 50 tags with a feature.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * You can associate as many as 50 tags with a feature.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon
+     * Web Services resources</a>.
+     * </p>
      */
     private java.util.Map<String, String> tags;
     /**
@@ -228,10 +235,17 @@ public class CreateFeatureRequest extends com.amazonaws.AmazonWebServiceRequest 
      * key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier.
      * For the value, specify the name of the variation that they are to be served.
      * </p>
+     * <p>
+     * This parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit includes an overhead of 6 bytes
+     * per override.
+     * </p>
      * 
      * @return Specify users that should always be served a specific variation of a feature. Each user is specified by a
      *         key-value pair . For each key, specify a user by entering their user ID, account ID, or some other
-     *         identifier. For the value, specify the name of the variation that they are to be served.
+     *         identifier. For the value, specify the name of the variation that they are to be served.</p>
+     *         <p>
+     *         This parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit includes an overhead of 6
+     *         bytes per override.
      */
 
     public java.util.Map<String, String> getEntityOverrides() {
@@ -244,11 +258,18 @@ public class CreateFeatureRequest extends com.amazonaws.AmazonWebServiceRequest 
      * key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier.
      * For the value, specify the name of the variation that they are to be served.
      * </p>
+     * <p>
+     * This parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit includes an overhead of 6 bytes
+     * per override.
+     * </p>
      * 
      * @param entityOverrides
      *        Specify users that should always be served a specific variation of a feature. Each user is specified by a
      *        key-value pair . For each key, specify a user by entering their user ID, account ID, or some other
-     *        identifier. For the value, specify the name of the variation that they are to be served.
+     *        identifier. For the value, specify the name of the variation that they are to be served.</p>
+     *        <p>
+     *        This parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit includes an overhead of 6
+     *        bytes per override.
      */
 
     public void setEntityOverrides(java.util.Map<String, String> entityOverrides) {
@@ -261,11 +282,18 @@ public class CreateFeatureRequest extends com.amazonaws.AmazonWebServiceRequest 
      * key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier.
      * For the value, specify the name of the variation that they are to be served.
      * </p>
+     * <p>
+     * This parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit includes an overhead of 6 bytes
+     * per override.
+     * </p>
      * 
      * @param entityOverrides
      *        Specify users that should always be served a specific variation of a feature. Each user is specified by a
      *        key-value pair . For each key, specify a user by entering their user ID, account ID, or some other
-     *        identifier. For the value, specify the name of the variation that they are to be served.
+     *        identifier. For the value, specify the name of the variation that they are to be served.</p>
+     *        <p>
+     *        This parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit includes an overhead of 6
+     *        bytes per override.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -461,10 +489,13 @@ public class CreateFeatureRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of
      * characters.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;You can associate as many as 50 tags with a feature.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * You can associate as many as 50 tags with a feature.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon
+     * Web Services resources</a>.
+     * </p>
      * 
      * @return Assigns one or more tags (key-value pairs) to the feature.</p>
      *         <p>
@@ -475,8 +506,13 @@ public class CreateFeatureRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of
      *         characters.
      *         </p>
-     * 
-     * <pre><code> &lt;p&gt;You can associate as many as 50 tags with a feature.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code>
+     *         <p>
+     *         You can associate as many as 50 tags with a feature.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *         resources</a>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -495,10 +531,13 @@ public class CreateFeatureRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of
      * characters.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;You can associate as many as 50 tags with a feature.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * You can associate as many as 50 tags with a feature.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon
+     * Web Services resources</a>.
+     * </p>
      * 
      * @param tags
      *        Assigns one or more tags (key-value pairs) to the feature.</p>
@@ -510,8 +549,12 @@ public class CreateFeatureRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of
      *        characters.
      *        </p>
-     * 
-     * <pre><code> &lt;p&gt;You can associate as many as 50 tags with a feature.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code>
+     *        <p>
+     *        You can associate as many as 50 tags with a feature.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     *        Amazon Web Services resources</a>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -530,10 +573,13 @@ public class CreateFeatureRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of
      * characters.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;You can associate as many as 50 tags with a feature.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * You can associate as many as 50 tags with a feature.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon
+     * Web Services resources</a>.
+     * </p>
      * 
      * @param tags
      *        Assigns one or more tags (key-value pairs) to the feature.</p>
@@ -545,9 +591,12 @@ public class CreateFeatureRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of
      *        characters.
      *        </p>
-     * 
-     *        <pre>
-     * <code> &lt;p&gt;You can associate as many as 50 tags with a feature.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code>
+     *        <p>
+     *        You can associate as many as 50 tags with a feature.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     *        Amazon Web Services resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

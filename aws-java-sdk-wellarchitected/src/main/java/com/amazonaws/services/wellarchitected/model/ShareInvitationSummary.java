@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,6 +58,30 @@ public class ShareInvitationSummary implements Serializable, Cloneable, Structur
      * </p>
      */
     private String lensArn;
+    /**
+     * <p>
+     * The profile name.
+     * </p>
+     */
+    private String profileName;
+    /**
+     * <p>
+     * The profile ARN.
+     * </p>
+     */
+    private String profileArn;
+    /**
+     * <p>
+     * The name of the review template.
+     * </p>
+     */
+    private String templateName;
+    /**
+     * <p>
+     * The review template ARN.
+     * </p>
+     */
+    private String templateArn;
 
     /**
      * <p>
@@ -369,6 +393,166 @@ public class ShareInvitationSummary implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The profile name.
+     * </p>
+     * 
+     * @param profileName
+     *        The profile name.
+     */
+
+    public void setProfileName(String profileName) {
+        this.profileName = profileName;
+    }
+
+    /**
+     * <p>
+     * The profile name.
+     * </p>
+     * 
+     * @return The profile name.
+     */
+
+    public String getProfileName() {
+        return this.profileName;
+    }
+
+    /**
+     * <p>
+     * The profile name.
+     * </p>
+     * 
+     * @param profileName
+     *        The profile name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ShareInvitationSummary withProfileName(String profileName) {
+        setProfileName(profileName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The profile ARN.
+     * </p>
+     * 
+     * @param profileArn
+     *        The profile ARN.
+     */
+
+    public void setProfileArn(String profileArn) {
+        this.profileArn = profileArn;
+    }
+
+    /**
+     * <p>
+     * The profile ARN.
+     * </p>
+     * 
+     * @return The profile ARN.
+     */
+
+    public String getProfileArn() {
+        return this.profileArn;
+    }
+
+    /**
+     * <p>
+     * The profile ARN.
+     * </p>
+     * 
+     * @param profileArn
+     *        The profile ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ShareInvitationSummary withProfileArn(String profileArn) {
+        setProfileArn(profileArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the review template.
+     * </p>
+     * 
+     * @param templateName
+     *        The name of the review template.
+     */
+
+    public void setTemplateName(String templateName) {
+        this.templateName = templateName;
+    }
+
+    /**
+     * <p>
+     * The name of the review template.
+     * </p>
+     * 
+     * @return The name of the review template.
+     */
+
+    public String getTemplateName() {
+        return this.templateName;
+    }
+
+    /**
+     * <p>
+     * The name of the review template.
+     * </p>
+     * 
+     * @param templateName
+     *        The name of the review template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ShareInvitationSummary withTemplateName(String templateName) {
+        setTemplateName(templateName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The review template ARN.
+     * </p>
+     * 
+     * @param templateArn
+     *        The review template ARN.
+     */
+
+    public void setTemplateArn(String templateArn) {
+        this.templateArn = templateArn;
+    }
+
+    /**
+     * <p>
+     * The review template ARN.
+     * </p>
+     * 
+     * @return The review template ARN.
+     */
+
+    public String getTemplateArn() {
+        return this.templateArn;
+    }
+
+    /**
+     * <p>
+     * The review template ARN.
+     * </p>
+     * 
+     * @param templateArn
+     *        The review template ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ShareInvitationSummary withTemplateArn(String templateArn) {
+        setTemplateArn(templateArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -397,7 +581,15 @@ public class ShareInvitationSummary implements Serializable, Cloneable, Structur
         if (getLensName() != null)
             sb.append("LensName: ").append(getLensName()).append(",");
         if (getLensArn() != null)
-            sb.append("LensArn: ").append(getLensArn());
+            sb.append("LensArn: ").append(getLensArn()).append(",");
+        if (getProfileName() != null)
+            sb.append("ProfileName: ").append(getProfileName()).append(",");
+        if (getProfileArn() != null)
+            sb.append("ProfileArn: ").append(getProfileArn()).append(",");
+        if (getTemplateName() != null)
+            sb.append("TemplateName: ").append(getTemplateName()).append(",");
+        if (getTemplateArn() != null)
+            sb.append("TemplateArn: ").append(getTemplateArn());
         sb.append("}");
         return sb.toString();
     }
@@ -448,6 +640,22 @@ public class ShareInvitationSummary implements Serializable, Cloneable, Structur
             return false;
         if (other.getLensArn() != null && other.getLensArn().equals(this.getLensArn()) == false)
             return false;
+        if (other.getProfileName() == null ^ this.getProfileName() == null)
+            return false;
+        if (other.getProfileName() != null && other.getProfileName().equals(this.getProfileName()) == false)
+            return false;
+        if (other.getProfileArn() == null ^ this.getProfileArn() == null)
+            return false;
+        if (other.getProfileArn() != null && other.getProfileArn().equals(this.getProfileArn()) == false)
+            return false;
+        if (other.getTemplateName() == null ^ this.getTemplateName() == null)
+            return false;
+        if (other.getTemplateName() != null && other.getTemplateName().equals(this.getTemplateName()) == false)
+            return false;
+        if (other.getTemplateArn() == null ^ this.getTemplateArn() == null)
+            return false;
+        if (other.getTemplateArn() != null && other.getTemplateArn().equals(this.getTemplateArn()) == false)
+            return false;
         return true;
     }
 
@@ -465,6 +673,10 @@ public class ShareInvitationSummary implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getWorkloadId() == null) ? 0 : getWorkloadId().hashCode());
         hashCode = prime * hashCode + ((getLensName() == null) ? 0 : getLensName().hashCode());
         hashCode = prime * hashCode + ((getLensArn() == null) ? 0 : getLensArn().hashCode());
+        hashCode = prime * hashCode + ((getProfileName() == null) ? 0 : getProfileName().hashCode());
+        hashCode = prime * hashCode + ((getProfileArn() == null) ? 0 : getProfileArn().hashCode());
+        hashCode = prime * hashCode + ((getTemplateName() == null) ? 0 : getTemplateName().hashCode());
+        hashCode = prime * hashCode + ((getTemplateArn() == null) ? 0 : getTemplateArn().hashCode());
         return hashCode;
     }
 

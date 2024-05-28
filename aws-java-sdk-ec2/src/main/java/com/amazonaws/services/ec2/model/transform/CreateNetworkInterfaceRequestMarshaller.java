@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,6 +72,11 @@ public class CreateNetworkInterfaceRequestMarshaller implements Marshaller<Reque
                 if (createNetworkInterfaceRequestIpv6AddressesListValue.getIpv6Address() != null) {
                     request.addParameter("Ipv6Addresses." + ipv6AddressesListIndex + ".Ipv6Address",
                             StringUtils.fromString(createNetworkInterfaceRequestIpv6AddressesListValue.getIpv6Address()));
+                }
+
+                if (createNetworkInterfaceRequestIpv6AddressesListValue.getIsPrimaryIpv6() != null) {
+                    request.addParameter("Ipv6Addresses." + ipv6AddressesListIndex + ".IsPrimaryIpv6",
+                            StringUtils.fromBoolean(createNetworkInterfaceRequestIpv6AddressesListValue.getIsPrimaryIpv6()));
                 }
                 ipv6AddressesListIndex++;
             }
@@ -187,6 +192,28 @@ public class CreateNetworkInterfaceRequestMarshaller implements Marshaller<Reque
         }
 
         request.addParameter("ClientToken", IdempotentUtils.resolveString(createNetworkInterfaceRequest.getClientToken()));
+
+        if (createNetworkInterfaceRequest.getEnablePrimaryIpv6() != null) {
+            request.addParameter("EnablePrimaryIpv6", StringUtils.fromBoolean(createNetworkInterfaceRequest.getEnablePrimaryIpv6()));
+        }
+
+        ConnectionTrackingSpecificationRequest connectionTrackingSpecification = createNetworkInterfaceRequest.getConnectionTrackingSpecification();
+        if (connectionTrackingSpecification != null) {
+
+            if (connectionTrackingSpecification.getTcpEstablishedTimeout() != null) {
+                request.addParameter("ConnectionTrackingSpecification.TcpEstablishedTimeout",
+                        StringUtils.fromInteger(connectionTrackingSpecification.getTcpEstablishedTimeout()));
+            }
+
+            if (connectionTrackingSpecification.getUdpStreamTimeout() != null) {
+                request.addParameter("ConnectionTrackingSpecification.UdpStreamTimeout",
+                        StringUtils.fromInteger(connectionTrackingSpecification.getUdpStreamTimeout()));
+            }
+
+            if (connectionTrackingSpecification.getUdpTimeout() != null) {
+                request.addParameter("ConnectionTrackingSpecification.UdpTimeout", StringUtils.fromInteger(connectionTrackingSpecification.getUdpTimeout()));
+            }
+        }
 
         return request;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,6 +71,22 @@ public class DescribeTargetHealthRequestMarshaller implements Marshaller<Request
                         }
                     }
                     targetsListIndex++;
+                }
+            }
+        }
+
+        if (describeTargetHealthRequest.getInclude() != null) {
+            java.util.List<String> includeList = describeTargetHealthRequest.getInclude();
+            if (includeList.isEmpty()) {
+                request.addParameter("Include", "");
+            } else {
+                int includeListIndex = 1;
+
+                for (String includeListValue : includeList) {
+                    if (includeListValue != null) {
+                        request.addParameter("Include.member." + includeListIndex, StringUtils.fromString(includeListValue));
+                    }
+                    includeListIndex++;
                 }
             }
         }

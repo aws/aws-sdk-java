@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,7 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource
-     * across all AWS.
+     * across all Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -59,8 +59,14 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
     private String description;
     /**
      * <p>
-     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS
-     * customer managed key</a> assigned to the Amazon Location resource
+     * The number of geofences in the geofence collection.
+     * </p>
+     */
+    private Integer geofenceCount;
+    /**
+     * <p>
+     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a> assigned to the Amazon Location resource
      * </p>
      */
     private String kmsKeyId;
@@ -96,7 +102,7 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource
-     * across all AWS.
+     * across all Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -108,7 +114,7 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
      * 
      * @param collectionArn
      *        The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a
-     *        resource across all AWS. </p>
+     *        resource across all Amazon Web Services. </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -124,7 +130,7 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource
-     * across all AWS.
+     * across all Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -135,7 +141,7 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
      * </ul>
      * 
      * @return The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a
-     *         resource across all AWS. </p>
+     *         resource across all Amazon Web Services. </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -151,7 +157,7 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource
-     * across all AWS.
+     * across all Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -163,7 +169,7 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
      * 
      * @param collectionArn
      *        The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a
-     *        resource across all AWS. </p>
+     *        resource across all Amazon Web Services. </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -312,14 +318,54 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS
-     * customer managed key</a> assigned to the Amazon Location resource
+     * The number of geofences in the geofence collection.
+     * </p>
+     * 
+     * @param geofenceCount
+     *        The number of geofences in the geofence collection.
+     */
+
+    public void setGeofenceCount(Integer geofenceCount) {
+        this.geofenceCount = geofenceCount;
+    }
+
+    /**
+     * <p>
+     * The number of geofences in the geofence collection.
+     * </p>
+     * 
+     * @return The number of geofences in the geofence collection.
+     */
+
+    public Integer getGeofenceCount() {
+        return this.geofenceCount;
+    }
+
+    /**
+     * <p>
+     * The number of geofences in the geofence collection.
+     * </p>
+     * 
+     * @param geofenceCount
+     *        The number of geofences in the geofence collection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeGeofenceCollectionResult withGeofenceCount(Integer geofenceCount) {
+        setGeofenceCount(geofenceCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a> assigned to the Amazon Location resource
      * </p>
      * 
      * @param kmsKeyId
      *        A key identifier for an <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed
-     *        key</a> assigned to the Amazon Location resource
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS
+     *        customer managed key</a> assigned to the Amazon Location resource
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -328,13 +374,13 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS
-     * customer managed key</a> assigned to the Amazon Location resource
+     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a> assigned to the Amazon Location resource
      * </p>
      * 
      * @return A key identifier for an <a
-     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed
-     *         key</a> assigned to the Amazon Location resource
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS
+     *         customer managed key</a> assigned to the Amazon Location resource
      */
 
     public String getKmsKeyId() {
@@ -343,14 +389,14 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS
-     * customer managed key</a> assigned to the Amazon Location resource
+     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a> assigned to the Amazon Location resource
      * </p>
      * 
      * @param kmsKeyId
      *        A key identifier for an <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed
-     *        key</a> assigned to the Amazon Location resource
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS
+     *        customer managed key</a> assigned to the Amazon Location resource
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -598,6 +644,8 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
             sb.append("CreateTime: ").append(getCreateTime()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getGeofenceCount() != null)
+            sb.append("GeofenceCount: ").append(getGeofenceCount()).append(",");
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getPricingPlan() != null)
@@ -638,6 +686,10 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getGeofenceCount() == null ^ this.getGeofenceCount() == null)
+            return false;
+        if (other.getGeofenceCount() != null && other.getGeofenceCount().equals(this.getGeofenceCount()) == false)
+            return false;
         if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
@@ -670,6 +722,7 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getCollectionName() == null) ? 0 : getCollectionName().hashCode());
         hashCode = prime * hashCode + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getGeofenceCount() == null) ? 0 : getGeofenceCount().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getPricingPlan() == null) ? 0 : getPricingPlan().hashCode());
         hashCode = prime * hashCode + ((getPricingPlanDataSource() == null) ? 0 : getPricingPlanDataSource().hashCode());

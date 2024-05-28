@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,12 @@ public class SessionData implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * The configuration information for the session integration.
+     * </p>
+     */
+    private SessionIntegrationConfiguration integrationConfiguration;
     /**
      * <p>
      * The name of the session.
@@ -96,6 +102,46 @@ public class SessionData implements Serializable, Cloneable, StructuredPojo {
 
     public SessionData withDescription(String description) {
         setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration information for the session integration.
+     * </p>
+     * 
+     * @param integrationConfiguration
+     *        The configuration information for the session integration.
+     */
+
+    public void setIntegrationConfiguration(SessionIntegrationConfiguration integrationConfiguration) {
+        this.integrationConfiguration = integrationConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration information for the session integration.
+     * </p>
+     * 
+     * @return The configuration information for the session integration.
+     */
+
+    public SessionIntegrationConfiguration getIntegrationConfiguration() {
+        return this.integrationConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration information for the session integration.
+     * </p>
+     * 
+     * @param integrationConfiguration
+     *        The configuration information for the session integration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SessionData withIntegrationConfiguration(SessionIntegrationConfiguration integrationConfiguration) {
+        setIntegrationConfiguration(integrationConfiguration);
         return this;
     }
 
@@ -301,6 +347,8 @@ public class SessionData implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getIntegrationConfiguration() != null)
+            sb.append("IntegrationConfiguration: ").append(getIntegrationConfiguration()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getSessionArn() != null)
@@ -327,6 +375,10 @@ public class SessionData implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getIntegrationConfiguration() == null ^ this.getIntegrationConfiguration() == null)
+            return false;
+        if (other.getIntegrationConfiguration() != null && other.getIntegrationConfiguration().equals(this.getIntegrationConfiguration()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -352,6 +404,7 @@ public class SessionData implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getIntegrationConfiguration() == null) ? 0 : getIntegrationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getSessionArn() == null) ? 0 : getSessionArn().hashCode());
         hashCode = prime * hashCode + ((getSessionId() == null) ? 0 : getSessionId().hashCode());

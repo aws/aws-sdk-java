@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,13 @@ public class CastColumnTypeOperation implements Serializable, Cloneable, Structu
      * </p>
      */
     private String newColumnType;
+    /**
+     * <p>
+     * The sub data type of the new column. Sub types are only available for decimal columns that are part of a SPICE
+     * dataset.
+     * </p>
+     */
+    private String subType;
     /**
      * <p>
      * When casting a column from string to datetime type, you can supply a string in a format supported by Amazon
@@ -149,6 +156,73 @@ public class CastColumnTypeOperation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
+     * The sub data type of the new column. Sub types are only available for decimal columns that are part of a SPICE
+     * dataset.
+     * </p>
+     * 
+     * @param subType
+     *        The sub data type of the new column. Sub types are only available for decimal columns that are part of a
+     *        SPICE dataset.
+     * @see ColumnDataSubType
+     */
+
+    public void setSubType(String subType) {
+        this.subType = subType;
+    }
+
+    /**
+     * <p>
+     * The sub data type of the new column. Sub types are only available for decimal columns that are part of a SPICE
+     * dataset.
+     * </p>
+     * 
+     * @return The sub data type of the new column. Sub types are only available for decimal columns that are part of a
+     *         SPICE dataset.
+     * @see ColumnDataSubType
+     */
+
+    public String getSubType() {
+        return this.subType;
+    }
+
+    /**
+     * <p>
+     * The sub data type of the new column. Sub types are only available for decimal columns that are part of a SPICE
+     * dataset.
+     * </p>
+     * 
+     * @param subType
+     *        The sub data type of the new column. Sub types are only available for decimal columns that are part of a
+     *        SPICE dataset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ColumnDataSubType
+     */
+
+    public CastColumnTypeOperation withSubType(String subType) {
+        setSubType(subType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The sub data type of the new column. Sub types are only available for decimal columns that are part of a SPICE
+     * dataset.
+     * </p>
+     * 
+     * @param subType
+     *        The sub data type of the new column. Sub types are only available for decimal columns that are part of a
+     *        SPICE dataset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ColumnDataSubType
+     */
+
+    public CastColumnTypeOperation withSubType(ColumnDataSubType subType) {
+        this.subType = subType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * When casting a column from string to datetime type, you can supply a string in a format supported by Amazon
      * QuickSight to denote the source data format.
      * </p>
@@ -209,6 +283,8 @@ public class CastColumnTypeOperation implements Serializable, Cloneable, Structu
             sb.append("ColumnName: ").append(getColumnName()).append(",");
         if (getNewColumnType() != null)
             sb.append("NewColumnType: ").append(getNewColumnType()).append(",");
+        if (getSubType() != null)
+            sb.append("SubType: ").append(getSubType()).append(",");
         if (getFormat() != null)
             sb.append("Format: ").append(getFormat());
         sb.append("}");
@@ -233,6 +309,10 @@ public class CastColumnTypeOperation implements Serializable, Cloneable, Structu
             return false;
         if (other.getNewColumnType() != null && other.getNewColumnType().equals(this.getNewColumnType()) == false)
             return false;
+        if (other.getSubType() == null ^ this.getSubType() == null)
+            return false;
+        if (other.getSubType() != null && other.getSubType().equals(this.getSubType()) == false)
+            return false;
         if (other.getFormat() == null ^ this.getFormat() == null)
             return false;
         if (other.getFormat() != null && other.getFormat().equals(this.getFormat()) == false)
@@ -247,6 +327,7 @@ public class CastColumnTypeOperation implements Serializable, Cloneable, Structu
 
         hashCode = prime * hashCode + ((getColumnName() == null) ? 0 : getColumnName().hashCode());
         hashCode = prime * hashCode + ((getNewColumnType() == null) ? 0 : getNewColumnType().hashCode());
+        hashCode = prime * hashCode + ((getSubType() == null) ? 0 : getSubType().hashCode());
         hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode());
         return hashCode;
     }

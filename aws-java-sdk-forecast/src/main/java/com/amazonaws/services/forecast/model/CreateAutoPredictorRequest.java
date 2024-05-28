@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,9 +70,46 @@ public class CreateAutoPredictorRequest extends com.amazonaws.AmazonWebServiceRe
      * The frequency of predictions in a forecast.
      * </p>
      * <p>
-     * Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes),
-     * 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min"
-     * indicates every five minutes.
+     * Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute).
+     * For example, "1D" indicates every day and "15min" indicates every 15 minutes. You cannot specify a value that
+     * would overlap with the next larger frequency. That means, for example, you cannot specify a frequency of 60
+     * minutes, because that is equivalent to 1 hour. The valid values for each frequency are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Minute - 1-59
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Hour - 1-23
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Day - 1-6
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Week - 1-4
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Month - 1-11
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Year - 1
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you specify
+     * "3M".
      * </p>
      * <p>
      * The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.
@@ -516,9 +553,46 @@ public class CreateAutoPredictorRequest extends com.amazonaws.AmazonWebServiceRe
      * The frequency of predictions in a forecast.
      * </p>
      * <p>
-     * Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes),
-     * 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min"
-     * indicates every five minutes.
+     * Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute).
+     * For example, "1D" indicates every day and "15min" indicates every 15 minutes. You cannot specify a value that
+     * would overlap with the next larger frequency. That means, for example, you cannot specify a frequency of 60
+     * minutes, because that is equivalent to 1 hour. The valid values for each frequency are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Minute - 1-59
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Hour - 1-23
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Day - 1-6
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Week - 1-4
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Month - 1-11
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Year - 1
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you specify
+     * "3M".
      * </p>
      * <p>
      * The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.
@@ -531,9 +605,47 @@ public class CreateAutoPredictorRequest extends com.amazonaws.AmazonWebServiceRe
      * @param forecastFrequency
      *        The frequency of predictions in a forecast.</p>
      *        <p>
-     *        Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15
-     *        minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year
-     *        and "5min" indicates every five minutes.
+     *        Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min
+     *        (Minute). For example, "1D" indicates every day and "15min" indicates every 15 minutes. You cannot specify
+     *        a value that would overlap with the next larger frequency. That means, for example, you cannot specify a
+     *        frequency of 60 minutes, because that is equivalent to 1 hour. The valid values for each frequency are the
+     *        following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Minute - 1-59
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Hour - 1-23
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Day - 1-6
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Week - 1-4
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Month - 1-11
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Year - 1
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you
+     *        specify "3M".
      *        </p>
      *        <p>
      *        The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.
@@ -552,9 +664,46 @@ public class CreateAutoPredictorRequest extends com.amazonaws.AmazonWebServiceRe
      * The frequency of predictions in a forecast.
      * </p>
      * <p>
-     * Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes),
-     * 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min"
-     * indicates every five minutes.
+     * Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute).
+     * For example, "1D" indicates every day and "15min" indicates every 15 minutes. You cannot specify a value that
+     * would overlap with the next larger frequency. That means, for example, you cannot specify a frequency of 60
+     * minutes, because that is equivalent to 1 hour. The valid values for each frequency are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Minute - 1-59
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Hour - 1-23
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Day - 1-6
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Week - 1-4
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Month - 1-11
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Year - 1
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you specify
+     * "3M".
      * </p>
      * <p>
      * The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.
@@ -566,9 +715,47 @@ public class CreateAutoPredictorRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @return The frequency of predictions in a forecast.</p>
      *         <p>
-     *         Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15
-     *         minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every
-     *         year and "5min" indicates every five minutes.
+     *         Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min
+     *         (Minute). For example, "1D" indicates every day and "15min" indicates every 15 minutes. You cannot
+     *         specify a value that would overlap with the next larger frequency. That means, for example, you cannot
+     *         specify a frequency of 60 minutes, because that is equivalent to 1 hour. The valid values for each
+     *         frequency are the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Minute - 1-59
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Hour - 1-23
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Day - 1-6
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Week - 1-4
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Month - 1-11
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Year - 1
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you
+     *         specify "3M".
      *         </p>
      *         <p>
      *         The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.
@@ -587,9 +774,46 @@ public class CreateAutoPredictorRequest extends com.amazonaws.AmazonWebServiceRe
      * The frequency of predictions in a forecast.
      * </p>
      * <p>
-     * Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes),
-     * 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year and "5min"
-     * indicates every five minutes.
+     * Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute).
+     * For example, "1D" indicates every day and "15min" indicates every 15 minutes. You cannot specify a value that
+     * would overlap with the next larger frequency. That means, for example, you cannot specify a frequency of 60
+     * minutes, because that is equivalent to 1 hour. The valid values for each frequency are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Minute - 1-59
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Hour - 1-23
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Day - 1-6
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Week - 1-4
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Month - 1-11
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Year - 1
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you specify
+     * "3M".
      * </p>
      * <p>
      * The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.
@@ -602,9 +826,47 @@ public class CreateAutoPredictorRequest extends com.amazonaws.AmazonWebServiceRe
      * @param forecastFrequency
      *        The frequency of predictions in a forecast.</p>
      *        <p>
-     *        Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15
-     *        minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "Y" indicates every year
-     *        and "5min" indicates every five minutes.
+     *        Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min
+     *        (Minute). For example, "1D" indicates every day and "15min" indicates every 15 minutes. You cannot specify
+     *        a value that would overlap with the next larger frequency. That means, for example, you cannot specify a
+     *        frequency of 60 minutes, because that is equivalent to 1 hour. The valid values for each frequency are the
+     *        following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Minute - 1-59
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Hour - 1-23
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Day - 1-6
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Week - 1-4
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Month - 1-11
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Year - 1
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you
+     *        specify "3M".
      *        </p>
      *        <p>
      *        The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.

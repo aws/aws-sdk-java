@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,11 +15,9 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Specify how the transcoding service applies the denoise and deblock filters. You must also enable the filters
- * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding service
- * determines whether to apply filtering, depending on input type and quality. * Disable - The input is not filtered.
- * This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force - The
- * input is filtered regardless of input type.
+ * Specify whether to apply input filtering to improve the video quality of your input. To apply filtering depending on
+ * your input type and quality: Choose Auto. To apply no filtering: Choose Disable. To apply filtering regardless of
+ * your input type and quality: Choose Force. When you do, you must also specify a value for Filter strength.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum InputFilterEnable {

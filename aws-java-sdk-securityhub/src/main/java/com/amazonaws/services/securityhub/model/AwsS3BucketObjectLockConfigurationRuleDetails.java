@@ -1,0 +1,146 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.securityhub.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * Specifies the S3 Object Lock rule for the specified object. In Amazon S3, Object Lock can help prevent objects from
+ * being deleted or overwritten for a fixed amount of time or indefinitely.
+ * </p>
+ * 
+ * @see <a
+ *      href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsS3BucketObjectLockConfigurationRuleDetails"
+ *      target="_top">AWS API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class AwsS3BucketObjectLockConfigurationRuleDetails implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * The default Object Lock retention mode and period that you want to apply to new objects placed in the specified
+     * bucket.
+     * </p>
+     */
+    private AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails defaultRetention;
+
+    /**
+     * <p>
+     * The default Object Lock retention mode and period that you want to apply to new objects placed in the specified
+     * bucket.
+     * </p>
+     * 
+     * @param defaultRetention
+     *        The default Object Lock retention mode and period that you want to apply to new objects placed in the
+     *        specified bucket.
+     */
+
+    public void setDefaultRetention(AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails defaultRetention) {
+        this.defaultRetention = defaultRetention;
+    }
+
+    /**
+     * <p>
+     * The default Object Lock retention mode and period that you want to apply to new objects placed in the specified
+     * bucket.
+     * </p>
+     * 
+     * @return The default Object Lock retention mode and period that you want to apply to new objects placed in the
+     *         specified bucket.
+     */
+
+    public AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails getDefaultRetention() {
+        return this.defaultRetention;
+    }
+
+    /**
+     * <p>
+     * The default Object Lock retention mode and period that you want to apply to new objects placed in the specified
+     * bucket.
+     * </p>
+     * 
+     * @param defaultRetention
+     *        The default Object Lock retention mode and period that you want to apply to new objects placed in the
+     *        specified bucket.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsS3BucketObjectLockConfigurationRuleDetails withDefaultRetention(AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails defaultRetention) {
+        setDefaultRetention(defaultRetention);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getDefaultRetention() != null)
+            sb.append("DefaultRetention: ").append(getDefaultRetention());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof AwsS3BucketObjectLockConfigurationRuleDetails == false)
+            return false;
+        AwsS3BucketObjectLockConfigurationRuleDetails other = (AwsS3BucketObjectLockConfigurationRuleDetails) obj;
+        if (other.getDefaultRetention() == null ^ this.getDefaultRetention() == null)
+            return false;
+        if (other.getDefaultRetention() != null && other.getDefaultRetention().equals(this.getDefaultRetention()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getDefaultRetention() == null) ? 0 : getDefaultRetention().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public AwsS3BucketObjectLockConfigurationRuleDetails clone() {
+        try {
+            return (AwsS3BucketObjectLockConfigurationRuleDetails) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.securityhub.model.transform.AwsS3BucketObjectLockConfigurationRuleDetailsMarshaller.getInstance().marshall(this,
+                protocolMarshaller);
+    }
+}

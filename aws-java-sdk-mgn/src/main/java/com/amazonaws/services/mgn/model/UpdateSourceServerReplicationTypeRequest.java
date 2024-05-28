@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,12 @@ public class UpdateSourceServerReplicationTypeRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
+     * Account ID on which to update replication type.
+     * </p>
+     */
+    private String accountID;
+    /**
+     * <p>
      * Replication type to which to update source server.
      * </p>
      */
@@ -37,6 +43,46 @@ public class UpdateSourceServerReplicationTypeRequest extends com.amazonaws.Amaz
      * </p>
      */
     private String sourceServerID;
+
+    /**
+     * <p>
+     * Account ID on which to update replication type.
+     * </p>
+     * 
+     * @param accountID
+     *        Account ID on which to update replication type.
+     */
+
+    public void setAccountID(String accountID) {
+        this.accountID = accountID;
+    }
+
+    /**
+     * <p>
+     * Account ID on which to update replication type.
+     * </p>
+     * 
+     * @return Account ID on which to update replication type.
+     */
+
+    public String getAccountID() {
+        return this.accountID;
+    }
+
+    /**
+     * <p>
+     * Account ID on which to update replication type.
+     * </p>
+     * 
+     * @param accountID
+     *        Account ID on which to update replication type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSourceServerReplicationTypeRequest withAccountID(String accountID) {
+        setAccountID(accountID);
+        return this;
+    }
 
     /**
      * <p>
@@ -149,6 +195,8 @@ public class UpdateSourceServerReplicationTypeRequest extends com.amazonaws.Amaz
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccountID() != null)
+            sb.append("AccountID: ").append(getAccountID()).append(",");
         if (getReplicationType() != null)
             sb.append("ReplicationType: ").append(getReplicationType()).append(",");
         if (getSourceServerID() != null)
@@ -167,6 +215,10 @@ public class UpdateSourceServerReplicationTypeRequest extends com.amazonaws.Amaz
         if (obj instanceof UpdateSourceServerReplicationTypeRequest == false)
             return false;
         UpdateSourceServerReplicationTypeRequest other = (UpdateSourceServerReplicationTypeRequest) obj;
+        if (other.getAccountID() == null ^ this.getAccountID() == null)
+            return false;
+        if (other.getAccountID() != null && other.getAccountID().equals(this.getAccountID()) == false)
+            return false;
         if (other.getReplicationType() == null ^ this.getReplicationType() == null)
             return false;
         if (other.getReplicationType() != null && other.getReplicationType().equals(this.getReplicationType()) == false)
@@ -183,6 +235,7 @@ public class UpdateSourceServerReplicationTypeRequest extends com.amazonaws.Amaz
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccountID() == null) ? 0 : getAccountID().hashCode());
         hashCode = prime * hashCode + ((getReplicationType() == null) ? 0 : getReplicationType().hashCode());
         hashCode = prime * hashCode + ((getSourceServerID() == null) ? 0 : getSourceServerID().hashCode());
         return hashCode;

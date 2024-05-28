@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,38 +31,42 @@ public class RegisteredUserQSearchBarEmbeddingConfiguration implements Serializa
 
     /**
      * <p>
-     * The ID of the Q topic that you want to make the starting topic in the Q search bar. You can find a topic ID by
-     * navigating to the Topics pane in the Amazon QuickSight application and opening a topic. The ID is in the URL for
-     * the topic that you open.
+     * The ID of the legacy Q topic that you want to use as the starting topic in the Q search bar. To locate the topic
+     * ID of the topic that you want to use, open the <a href="https://quicksight.aws.amazon.com/">Amazon QuickSight
+     * console</a>, navigate to the <b>Topics</b> pane, and choose thre topic that you want to use. The
+     * <code>TopicID</code> is located in the URL of the topic that opens. When you select an initial topic, you can
+     * specify whether or not readers are allowed to select other topics from the list of available topics.
      * </p>
      * <p>
-     * If you don't specify an initial topic, a list of all shared topics is shown in the Q bar for your readers. When
-     * you select an initial topic, you can specify whether or not readers are allowed to select other topics from the
-     * available ones in the list.
+     * If you don't specify an initial topic or if you specify a new reader experience topic, a list of all shared
+     * legacy topics is shown in the Q bar.
      * </p>
      */
     private String initialTopicId;
 
     /**
      * <p>
-     * The ID of the Q topic that you want to make the starting topic in the Q search bar. You can find a topic ID by
-     * navigating to the Topics pane in the Amazon QuickSight application and opening a topic. The ID is in the URL for
-     * the topic that you open.
+     * The ID of the legacy Q topic that you want to use as the starting topic in the Q search bar. To locate the topic
+     * ID of the topic that you want to use, open the <a href="https://quicksight.aws.amazon.com/">Amazon QuickSight
+     * console</a>, navigate to the <b>Topics</b> pane, and choose thre topic that you want to use. The
+     * <code>TopicID</code> is located in the URL of the topic that opens. When you select an initial topic, you can
+     * specify whether or not readers are allowed to select other topics from the list of available topics.
      * </p>
      * <p>
-     * If you don't specify an initial topic, a list of all shared topics is shown in the Q bar for your readers. When
-     * you select an initial topic, you can specify whether or not readers are allowed to select other topics from the
-     * available ones in the list.
+     * If you don't specify an initial topic or if you specify a new reader experience topic, a list of all shared
+     * legacy topics is shown in the Q bar.
      * </p>
      * 
      * @param initialTopicId
-     *        The ID of the Q topic that you want to make the starting topic in the Q search bar. You can find a topic
-     *        ID by navigating to the Topics pane in the Amazon QuickSight application and opening a topic. The ID is in
-     *        the URL for the topic that you open.</p>
+     *        The ID of the legacy Q topic that you want to use as the starting topic in the Q search bar. To locate the
+     *        topic ID of the topic that you want to use, open the <a href="https://quicksight.aws.amazon.com/">Amazon
+     *        QuickSight console</a>, navigate to the <b>Topics</b> pane, and choose thre topic that you want to use.
+     *        The <code>TopicID</code> is located in the URL of the topic that opens. When you select an initial topic,
+     *        you can specify whether or not readers are allowed to select other topics from the list of available
+     *        topics.</p>
      *        <p>
-     *        If you don't specify an initial topic, a list of all shared topics is shown in the Q bar for your readers.
-     *        When you select an initial topic, you can specify whether or not readers are allowed to select other
-     *        topics from the available ones in the list.
+     *        If you don't specify an initial topic or if you specify a new reader experience topic, a list of all
+     *        shared legacy topics is shown in the Q bar.
      */
 
     public void setInitialTopicId(String initialTopicId) {
@@ -71,23 +75,26 @@ public class RegisteredUserQSearchBarEmbeddingConfiguration implements Serializa
 
     /**
      * <p>
-     * The ID of the Q topic that you want to make the starting topic in the Q search bar. You can find a topic ID by
-     * navigating to the Topics pane in the Amazon QuickSight application and opening a topic. The ID is in the URL for
-     * the topic that you open.
+     * The ID of the legacy Q topic that you want to use as the starting topic in the Q search bar. To locate the topic
+     * ID of the topic that you want to use, open the <a href="https://quicksight.aws.amazon.com/">Amazon QuickSight
+     * console</a>, navigate to the <b>Topics</b> pane, and choose thre topic that you want to use. The
+     * <code>TopicID</code> is located in the URL of the topic that opens. When you select an initial topic, you can
+     * specify whether or not readers are allowed to select other topics from the list of available topics.
      * </p>
      * <p>
-     * If you don't specify an initial topic, a list of all shared topics is shown in the Q bar for your readers. When
-     * you select an initial topic, you can specify whether or not readers are allowed to select other topics from the
-     * available ones in the list.
+     * If you don't specify an initial topic or if you specify a new reader experience topic, a list of all shared
+     * legacy topics is shown in the Q bar.
      * </p>
      * 
-     * @return The ID of the Q topic that you want to make the starting topic in the Q search bar. You can find a topic
-     *         ID by navigating to the Topics pane in the Amazon QuickSight application and opening a topic. The ID is
-     *         in the URL for the topic that you open.</p>
+     * @return The ID of the legacy Q topic that you want to use as the starting topic in the Q search bar. To locate
+     *         the topic ID of the topic that you want to use, open the <a
+     *         href="https://quicksight.aws.amazon.com/">Amazon QuickSight console</a>, navigate to the <b>Topics</b>
+     *         pane, and choose thre topic that you want to use. The <code>TopicID</code> is located in the URL of the
+     *         topic that opens. When you select an initial topic, you can specify whether or not readers are allowed to
+     *         select other topics from the list of available topics.</p>
      *         <p>
-     *         If you don't specify an initial topic, a list of all shared topics is shown in the Q bar for your
-     *         readers. When you select an initial topic, you can specify whether or not readers are allowed to select
-     *         other topics from the available ones in the list.
+     *         If you don't specify an initial topic or if you specify a new reader experience topic, a list of all
+     *         shared legacy topics is shown in the Q bar.
      */
 
     public String getInitialTopicId() {
@@ -96,24 +103,27 @@ public class RegisteredUserQSearchBarEmbeddingConfiguration implements Serializa
 
     /**
      * <p>
-     * The ID of the Q topic that you want to make the starting topic in the Q search bar. You can find a topic ID by
-     * navigating to the Topics pane in the Amazon QuickSight application and opening a topic. The ID is in the URL for
-     * the topic that you open.
+     * The ID of the legacy Q topic that you want to use as the starting topic in the Q search bar. To locate the topic
+     * ID of the topic that you want to use, open the <a href="https://quicksight.aws.amazon.com/">Amazon QuickSight
+     * console</a>, navigate to the <b>Topics</b> pane, and choose thre topic that you want to use. The
+     * <code>TopicID</code> is located in the URL of the topic that opens. When you select an initial topic, you can
+     * specify whether or not readers are allowed to select other topics from the list of available topics.
      * </p>
      * <p>
-     * If you don't specify an initial topic, a list of all shared topics is shown in the Q bar for your readers. When
-     * you select an initial topic, you can specify whether or not readers are allowed to select other topics from the
-     * available ones in the list.
+     * If you don't specify an initial topic or if you specify a new reader experience topic, a list of all shared
+     * legacy topics is shown in the Q bar.
      * </p>
      * 
      * @param initialTopicId
-     *        The ID of the Q topic that you want to make the starting topic in the Q search bar. You can find a topic
-     *        ID by navigating to the Topics pane in the Amazon QuickSight application and opening a topic. The ID is in
-     *        the URL for the topic that you open.</p>
+     *        The ID of the legacy Q topic that you want to use as the starting topic in the Q search bar. To locate the
+     *        topic ID of the topic that you want to use, open the <a href="https://quicksight.aws.amazon.com/">Amazon
+     *        QuickSight console</a>, navigate to the <b>Topics</b> pane, and choose thre topic that you want to use.
+     *        The <code>TopicID</code> is located in the URL of the topic that opens. When you select an initial topic,
+     *        you can specify whether or not readers are allowed to select other topics from the list of available
+     *        topics.</p>
      *        <p>
-     *        If you don't specify an initial topic, a list of all shared topics is shown in the Q bar for your readers.
-     *        When you select an initial topic, you can specify whether or not readers are allowed to select other
-     *        topics from the available ones in the list.
+     *        If you don't specify an initial topic or if you specify a new reader experience topic, a list of all
+     *        shared legacy topics is shown in the Q bar.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

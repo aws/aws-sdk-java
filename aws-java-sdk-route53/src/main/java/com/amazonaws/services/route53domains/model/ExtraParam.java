@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -726,39 +726,6 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * </dd>
-     * <dt>.fr</dt>
-     * <dd>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>BIRTH_CITY</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BIRTH_COUNTRY</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BIRTH_DATE_IN_YYYY_MM_DD</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the department where the contact was
-     * born. If the contact was born somewhere other than France or its overseas departments, specify <code>99</code>.
-     * For more information, including a list of departments and the corresponding INSEE numbers, see the Wikipedia
-     * entry <a href="https://en.wikipedia.org/wiki/Departments_of_France">Departments of France</a>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BRAND_NUMBER</code>
-     * </p>
-     * </li>
-     * </ul>
-     * </dd>
      * <dt>.it</dt>
      * <dd>
      * <ul>
@@ -854,7 +821,7 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * </dd>
-     * <dt>.co.uk, .me.uk, and .org.uk</dt>
+     * <dt>.uk, .co.uk, .me.uk, and .org.uk</dt>
      * <dd>
      * <ul>
      * <li>
@@ -1665,39 +1632,6 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * </dd>
-     * <dt>.fr</dt>
-     * <dd>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>BIRTH_CITY</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BIRTH_COUNTRY</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BIRTH_DATE_IN_YYYY_MM_DD</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the department where the contact was
-     * born. If the contact was born somewhere other than France or its overseas departments, specify <code>99</code>.
-     * For more information, including a list of departments and the corresponding INSEE numbers, see the Wikipedia
-     * entry <a href="https://en.wikipedia.org/wiki/Departments_of_France">Departments of France</a>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BRAND_NUMBER</code>
-     * </p>
-     * </li>
-     * </ul>
-     * </dd>
      * <dt>.it</dt>
      * <dd>
      * <ul>
@@ -1793,7 +1727,7 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * </dd>
-     * <dt>.co.uk, .me.uk, and .org.uk</dt>
+     * <dt>.uk, .co.uk, .me.uk, and .org.uk</dt>
      * <dd>
      * <ul>
      * <li>
@@ -2596,40 +2530,6 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        </dd>
-     *        <dt>.fr</dt>
-     *        <dd>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>BIRTH_CITY</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>BIRTH_COUNTRY</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>BIRTH_DATE_IN_YYYY_MM_DD</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the department where the
-     *        contact was born. If the contact was born somewhere other than France or its overseas departments, specify
-     *        <code>99</code>. For more information, including a list of departments and the corresponding INSEE
-     *        numbers, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Departments_of_France">Departments
-     *        of France</a>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>BRAND_NUMBER</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        </dd>
      *        <dt>.it</dt>
      *        <dd>
      *        <ul>
@@ -2725,7 +2625,7 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        </dd>
-     *        <dt>.co.uk, .me.uk, and .org.uk</dt>
+     *        <dt>.uk, .co.uk, .me.uk, and .org.uk</dt>
      *        <dd>
      *        <ul>
      *        <li>
@@ -3533,39 +3433,6 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * </dd>
-     * <dt>.fr</dt>
-     * <dd>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>BIRTH_CITY</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BIRTH_COUNTRY</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BIRTH_DATE_IN_YYYY_MM_DD</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the department where the contact was
-     * born. If the contact was born somewhere other than France or its overseas departments, specify <code>99</code>.
-     * For more information, including a list of departments and the corresponding INSEE numbers, see the Wikipedia
-     * entry <a href="https://en.wikipedia.org/wiki/Departments_of_France">Departments of France</a>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BRAND_NUMBER</code>
-     * </p>
-     * </li>
-     * </ul>
-     * </dd>
      * <dt>.it</dt>
      * <dd>
      * <ul>
@@ -3661,7 +3528,7 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * </dd>
-     * <dt>.co.uk, .me.uk, and .org.uk</dt>
+     * <dt>.uk, .co.uk, .me.uk, and .org.uk</dt>
      * <dd>
      * <ul>
      * <li>
@@ -4463,40 +4330,6 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         </ul>
      *         </dd>
-     *         <dt>.fr</dt>
-     *         <dd>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>BIRTH_CITY</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>BIRTH_COUNTRY</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>BIRTH_DATE_IN_YYYY_MM_DD</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the department where the
-     *         contact was born. If the contact was born somewhere other than France or its overseas departments,
-     *         specify <code>99</code>. For more information, including a list of departments and the corresponding
-     *         INSEE numbers, see the Wikipedia entry <a
-     *         href="https://en.wikipedia.org/wiki/Departments_of_France">Departments of France</a>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>BRAND_NUMBER</code>
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         </dd>
      *         <dt>.it</dt>
      *         <dd>
      *         <ul>
@@ -4592,7 +4425,7 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         </ul>
      *         </dd>
-     *         <dt>.co.uk, .me.uk, and .org.uk</dt>
+     *         <dt>.uk, .co.uk, .me.uk, and .org.uk</dt>
      *         <dd>
      *         <ul>
      *         <li>
@@ -5400,39 +5233,6 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * </dd>
-     * <dt>.fr</dt>
-     * <dd>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>BIRTH_CITY</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BIRTH_COUNTRY</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BIRTH_DATE_IN_YYYY_MM_DD</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the department where the contact was
-     * born. If the contact was born somewhere other than France or its overseas departments, specify <code>99</code>.
-     * For more information, including a list of departments and the corresponding INSEE numbers, see the Wikipedia
-     * entry <a href="https://en.wikipedia.org/wiki/Departments_of_France">Departments of France</a>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BRAND_NUMBER</code>
-     * </p>
-     * </li>
-     * </ul>
-     * </dd>
      * <dt>.it</dt>
      * <dd>
      * <ul>
@@ -5528,7 +5328,7 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * </dd>
-     * <dt>.co.uk, .me.uk, and .org.uk</dt>
+     * <dt>.uk, .co.uk, .me.uk, and .org.uk</dt>
      * <dd>
      * <ul>
      * <li>
@@ -6331,40 +6131,6 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        </dd>
-     *        <dt>.fr</dt>
-     *        <dd>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>BIRTH_CITY</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>BIRTH_COUNTRY</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>BIRTH_DATE_IN_YYYY_MM_DD</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the department where the
-     *        contact was born. If the contact was born somewhere other than France or its overseas departments, specify
-     *        <code>99</code>. For more information, including a list of departments and the corresponding INSEE
-     *        numbers, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Departments_of_France">Departments
-     *        of France</a>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>BRAND_NUMBER</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        </dd>
      *        <dt>.it</dt>
      *        <dd>
      *        <ul>
@@ -6460,7 +6226,7 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        </dd>
-     *        <dt>.co.uk, .me.uk, and .org.uk</dt>
+     *        <dt>.uk, .co.uk, .me.uk, and .org.uk</dt>
      *        <dd>
      *        <ul>
      *        <li>
@@ -7270,39 +7036,6 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * </dd>
-     * <dt>.fr</dt>
-     * <dd>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>BIRTH_CITY</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BIRTH_COUNTRY</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BIRTH_DATE_IN_YYYY_MM_DD</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the department where the contact was
-     * born. If the contact was born somewhere other than France or its overseas departments, specify <code>99</code>.
-     * For more information, including a list of departments and the corresponding INSEE numbers, see the Wikipedia
-     * entry <a href="https://en.wikipedia.org/wiki/Departments_of_France">Departments of France</a>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BRAND_NUMBER</code>
-     * </p>
-     * </li>
-     * </ul>
-     * </dd>
      * <dt>.it</dt>
      * <dd>
      * <ul>
@@ -7398,7 +7131,7 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * </dd>
-     * <dt>.co.uk, .me.uk, and .org.uk</dt>
+     * <dt>.uk, .co.uk, .me.uk, and .org.uk</dt>
      * <dd>
      * <ul>
      * <li>
@@ -8201,40 +7934,6 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        </dd>
-     *        <dt>.fr</dt>
-     *        <dd>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>BIRTH_CITY</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>BIRTH_COUNTRY</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>BIRTH_DATE_IN_YYYY_MM_DD</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the department where the
-     *        contact was born. If the contact was born somewhere other than France or its overseas departments, specify
-     *        <code>99</code>. For more information, including a list of departments and the corresponding INSEE
-     *        numbers, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Departments_of_France">Departments
-     *        of France</a>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>BRAND_NUMBER</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        </dd>
      *        <dt>.it</dt>
      *        <dd>
      *        <ul>
@@ -8330,7 +8029,7 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        </dd>
-     *        <dt>.co.uk, .me.uk, and .org.uk</dt>
+     *        <dt>.uk, .co.uk, .me.uk, and .org.uk</dt>
      *        <dd>
      *        <ul>
      *        <li>
@@ -9138,39 +8837,6 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * </dd>
-     * <dt>.fr</dt>
-     * <dd>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>BIRTH_CITY</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BIRTH_COUNTRY</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BIRTH_DATE_IN_YYYY_MM_DD</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the department where the contact was
-     * born. If the contact was born somewhere other than France or its overseas departments, specify <code>99</code>.
-     * For more information, including a list of departments and the corresponding INSEE numbers, see the Wikipedia
-     * entry <a href="https://en.wikipedia.org/wiki/Departments_of_France">Departments of France</a>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>BRAND_NUMBER</code>
-     * </p>
-     * </li>
-     * </ul>
-     * </dd>
      * <dt>.it</dt>
      * <dd>
      * <ul>
@@ -9266,7 +8932,7 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * </dd>
-     * <dt>.co.uk, .me.uk, and .org.uk</dt>
+     * <dt>.uk, .co.uk, .me.uk, and .org.uk</dt>
      * <dd>
      * <ul>
      * <li>
@@ -10069,40 +9735,6 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        </dd>
-     *        <dt>.fr</dt>
-     *        <dd>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>BIRTH_CITY</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>BIRTH_COUNTRY</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>BIRTH_DATE_IN_YYYY_MM_DD</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the department where the
-     *        contact was born. If the contact was born somewhere other than France or its overseas departments, specify
-     *        <code>99</code>. For more information, including a list of departments and the corresponding INSEE
-     *        numbers, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Departments_of_France">Departments
-     *        of France</a>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>BRAND_NUMBER</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        </dd>
      *        <dt>.it</dt>
      *        <dd>
      *        <ul>
@@ -10198,7 +9830,7 @@ public class ExtraParam implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        </dd>
-     *        <dt>.co.uk, .me.uk, and .org.uk</dt>
+     *        <dt>.uk, .co.uk, .me.uk, and .org.uk</dt>
      *        <dd>
      *        <ul>
      *        <li>

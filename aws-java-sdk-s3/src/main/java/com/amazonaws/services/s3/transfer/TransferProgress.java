@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -83,7 +83,7 @@ public final class TransferProgress {
         &&  this.bytesTransferred > this.totalBytesToTransfer) {
             this.bytesTransferred = this.totalBytesToTransfer;
             if (log.isDebugEnabled()) {
-                log.debug("Number of bytes transfered is more than the actual total bytes to transfer. Total number of bytes to Transfer : "
+                log.debug("Number of bytes transferred is more than the actual total bytes to transfer. Total number of bytes to Transfer : "
                         + totalBytesToTransfer
                         + ". Bytes Transferred : "
                         + (bytesTransferred + bytes));

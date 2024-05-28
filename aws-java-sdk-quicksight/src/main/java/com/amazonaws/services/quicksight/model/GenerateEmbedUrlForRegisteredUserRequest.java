@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,8 +45,9 @@ public class GenerateEmbedUrlForRegisteredUserRequest extends com.amazonaws.Amaz
     private String userArn;
     /**
      * <p>
-     * The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards, Amazon
-     * QuickSight visuals, the Amazon QuickSight Q search bar, or the entire Amazon QuickSight console.
+     * The experience that you want to embed. For registered users, you can embed Amazon QuickSight dashboards, Amazon
+     * QuickSight visuals, the Amazon QuickSight Q search bar, the Amazon QuickSight Generative Q&amp;A experience, or
+     * the entire Amazon QuickSight console.
      * </p>
      */
     private RegisteredUserEmbeddingExperienceConfiguration experienceConfiguration;
@@ -186,13 +187,15 @@ public class GenerateEmbedUrlForRegisteredUserRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards, Amazon
-     * QuickSight visuals, the Amazon QuickSight Q search bar, or the entire Amazon QuickSight console.
+     * The experience that you want to embed. For registered users, you can embed Amazon QuickSight dashboards, Amazon
+     * QuickSight visuals, the Amazon QuickSight Q search bar, the Amazon QuickSight Generative Q&amp;A experience, or
+     * the entire Amazon QuickSight console.
      * </p>
      * 
      * @param experienceConfiguration
-     *        The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards, Amazon
-     *        QuickSight visuals, the Amazon QuickSight Q search bar, or the entire Amazon QuickSight console.
+     *        The experience that you want to embed. For registered users, you can embed Amazon QuickSight dashboards,
+     *        Amazon QuickSight visuals, the Amazon QuickSight Q search bar, the Amazon QuickSight Generative Q&amp;A
+     *        experience, or the entire Amazon QuickSight console.
      */
 
     public void setExperienceConfiguration(RegisteredUserEmbeddingExperienceConfiguration experienceConfiguration) {
@@ -201,12 +204,14 @@ public class GenerateEmbedUrlForRegisteredUserRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards, Amazon
-     * QuickSight visuals, the Amazon QuickSight Q search bar, or the entire Amazon QuickSight console.
+     * The experience that you want to embed. For registered users, you can embed Amazon QuickSight dashboards, Amazon
+     * QuickSight visuals, the Amazon QuickSight Q search bar, the Amazon QuickSight Generative Q&amp;A experience, or
+     * the entire Amazon QuickSight console.
      * </p>
      * 
-     * @return The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards,
-     *         Amazon QuickSight visuals, the Amazon QuickSight Q search bar, or the entire Amazon QuickSight console.
+     * @return The experience that you want to embed. For registered users, you can embed Amazon QuickSight dashboards,
+     *         Amazon QuickSight visuals, the Amazon QuickSight Q search bar, the Amazon QuickSight Generative Q&amp;A
+     *         experience, or the entire Amazon QuickSight console.
      */
 
     public RegisteredUserEmbeddingExperienceConfiguration getExperienceConfiguration() {
@@ -215,13 +220,15 @@ public class GenerateEmbedUrlForRegisteredUserRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards, Amazon
-     * QuickSight visuals, the Amazon QuickSight Q search bar, or the entire Amazon QuickSight console.
+     * The experience that you want to embed. For registered users, you can embed Amazon QuickSight dashboards, Amazon
+     * QuickSight visuals, the Amazon QuickSight Q search bar, the Amazon QuickSight Generative Q&amp;A experience, or
+     * the entire Amazon QuickSight console.
      * </p>
      * 
      * @param experienceConfiguration
-     *        The experience you are embedding. For registered users, you can embed Amazon QuickSight dashboards, Amazon
-     *        QuickSight visuals, the Amazon QuickSight Q search bar, or the entire Amazon QuickSight console.
+     *        The experience that you want to embed. For registered users, you can embed Amazon QuickSight dashboards,
+     *        Amazon QuickSight visuals, the Amazon QuickSight Q search bar, the Amazon QuickSight Generative Q&amp;A
+     *        experience, or the entire Amazon QuickSight console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

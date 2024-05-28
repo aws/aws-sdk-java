@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -48,6 +48,12 @@ public class S3ObjectSummary implements Serializable {
      * permission to view object ownership information
      */
     protected Owner owner;
+
+    /**
+     * The restore status of this object - can be null if the requester doesn't provide
+     * OptionalObjectAttribute header in the request
+     */
+    protected RestoreStatus restoreStatus;
 
 
     /**
@@ -225,6 +231,28 @@ public class S3ObjectSummary implements Serializable {
         this.storageClass = storageClass;
     }
 
+    /**
+     * Gets restore status of an object.
+     *
+     * @return restoreStatus of an object.
+     *
+     * @see S3ObjectSummary#setRestoreStatus(RestoreStatus)
+     */
+    public RestoreStatus getRestoreStatus() {
+        return restoreStatus;
+    }
+
+    /**
+     * Sets restore status of an object.
+     *
+     * @param restoreStatus of an object.
+     *
+     * @see S3ObjectSummary#getRestoreStatus() ()
+     */
+    public void setRestoreStatus(RestoreStatus restoreStatus) {
+        this.restoreStatus = restoreStatus;
+    }
+
     @Override
     public String toString() {
         return "S3ObjectSummary{" +
@@ -234,7 +262,8 @@ public class S3ObjectSummary implements Serializable {
                 ", size=" + size +
                 ", lastModified=" + lastModified +
                 ", storageClass='" + storageClass + '\'' +
-                ", owner=" + owner +
+                ", owner=" + owner + '\'' +
+                ", restoreStatus=" + restoreStatus  +
                 '}';
     }
 }

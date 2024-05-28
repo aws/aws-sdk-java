@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * <b>[Snapshot and AMI policies only]</b> Specifies a schedule for a snapshot or AMI lifecycle policy.
+ * <b>[Custom snapshot and AMI policies only]</b> Specifies a schedule for a snapshot or AMI lifecycle policy.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/Schedule" target="_top">AWS API Documentation</a>
@@ -69,7 +69,7 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     private RetainRule retainRule;
     /**
      * <p>
-     * <b>[Snapshot policies only]</b> The rule for enabling fast snapshot restore.
+     * <b>[Custom snapshot policies only]</b> The rule for enabling fast snapshot restore.
      * </p>
      */
     private FastRestoreRule fastRestoreRule;
@@ -87,19 +87,19 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<CrossRegionCopyRule> crossRegionCopyRules;
     /**
      * <p>
-     * <b>[Snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services accounts.
+     * <b>[Custom snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services accounts.
      * </p>
      */
     private java.util.List<ShareRule> shareRules;
     /**
      * <p>
-     * <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.
+     * <b>[Custom AMI policies only]</b> The AMI deprecation rule for the schedule.
      * </p>
      */
     private DeprecateRule deprecateRule;
     /**
      * <p>
-     * <b>[Snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule. When you
+     * <b>[Custom snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule. When you
      * specify an archiving rule, snapshots are automatically moved from the standard tier to the archive tier once the
      * schedule's retention threshold is met. Snapshots are then retained in the archive tier for the archive retention
      * period that you specify.
@@ -458,11 +458,11 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[Snapshot policies only]</b> The rule for enabling fast snapshot restore.
+     * <b>[Custom snapshot policies only]</b> The rule for enabling fast snapshot restore.
      * </p>
      * 
      * @param fastRestoreRule
-     *        <b>[Snapshot policies only]</b> The rule for enabling fast snapshot restore.
+     *        <b>[Custom snapshot policies only]</b> The rule for enabling fast snapshot restore.
      */
 
     public void setFastRestoreRule(FastRestoreRule fastRestoreRule) {
@@ -471,10 +471,10 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[Snapshot policies only]</b> The rule for enabling fast snapshot restore.
+     * <b>[Custom snapshot policies only]</b> The rule for enabling fast snapshot restore.
      * </p>
      * 
-     * @return <b>[Snapshot policies only]</b> The rule for enabling fast snapshot restore.
+     * @return <b>[Custom snapshot policies only]</b> The rule for enabling fast snapshot restore.
      */
 
     public FastRestoreRule getFastRestoreRule() {
@@ -483,11 +483,11 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[Snapshot policies only]</b> The rule for enabling fast snapshot restore.
+     * <b>[Custom snapshot policies only]</b> The rule for enabling fast snapshot restore.
      * </p>
      * 
      * @param fastRestoreRule
-     *        <b>[Snapshot policies only]</b> The rule for enabling fast snapshot restore.
+     *        <b>[Custom snapshot policies only]</b> The rule for enabling fast snapshot restore.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -608,10 +608,11 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[Snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services accounts.
+     * <b>[Custom snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services accounts.
      * </p>
      * 
-     * @return <b>[Snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services accounts.
+     * @return <b>[Custom snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services
+     *         accounts.
      */
 
     public java.util.List<ShareRule> getShareRules() {
@@ -620,11 +621,12 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[Snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services accounts.
+     * <b>[Custom snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services accounts.
      * </p>
      * 
      * @param shareRules
-     *        <b>[Snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services accounts.
+     *        <b>[Custom snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services
+     *        accounts.
      */
 
     public void setShareRules(java.util.Collection<ShareRule> shareRules) {
@@ -638,7 +640,7 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[Snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services accounts.
+     * <b>[Custom snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services accounts.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -647,7 +649,8 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param shareRules
-     *        <b>[Snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services accounts.
+     *        <b>[Custom snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services
+     *        accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -663,11 +666,12 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[Snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services accounts.
+     * <b>[Custom snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services accounts.
      * </p>
      * 
      * @param shareRules
-     *        <b>[Snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services accounts.
+     *        <b>[Custom snapshot policies only]</b> The rule for sharing snapshots with other Amazon Web Services
+     *        accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -678,11 +682,11 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.
+     * <b>[Custom AMI policies only]</b> The AMI deprecation rule for the schedule.
      * </p>
      * 
      * @param deprecateRule
-     *        <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.
+     *        <b>[Custom AMI policies only]</b> The AMI deprecation rule for the schedule.
      */
 
     public void setDeprecateRule(DeprecateRule deprecateRule) {
@@ -691,10 +695,10 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.
+     * <b>[Custom AMI policies only]</b> The AMI deprecation rule for the schedule.
      * </p>
      * 
-     * @return <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.
+     * @return <b>[Custom AMI policies only]</b> The AMI deprecation rule for the schedule.
      */
 
     public DeprecateRule getDeprecateRule() {
@@ -703,11 +707,11 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.
+     * <b>[Custom AMI policies only]</b> The AMI deprecation rule for the schedule.
      * </p>
      * 
      * @param deprecateRule
-     *        <b>[AMI policies only]</b> The AMI deprecation rule for the schedule.
+     *        <b>[Custom AMI policies only]</b> The AMI deprecation rule for the schedule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -718,7 +722,7 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[Snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule. When you
+     * <b>[Custom snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule. When you
      * specify an archiving rule, snapshots are automatically moved from the standard tier to the archive tier once the
      * schedule's retention threshold is met. Snapshots are then retained in the archive tier for the archive retention
      * period that you specify.
@@ -730,10 +734,10 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param archiveRule
-     *        <b>[Snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule. When you
-     *        specify an archiving rule, snapshots are automatically moved from the standard tier to the archive tier
-     *        once the schedule's retention threshold is met. Snapshots are then retained in the archive tier for the
-     *        archive retention period that you specify. </p>
+     *        <b>[Custom snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule.
+     *        When you specify an archiving rule, snapshots are automatically moved from the standard tier to the
+     *        archive tier once the schedule's retention threshold is met. Snapshots are then retained in the archive
+     *        tier for the archive retention period that you specify. </p>
      *        <p>
      *        For more information about using snapshot archiving, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive"
@@ -746,7 +750,7 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[Snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule. When you
+     * <b>[Custom snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule. When you
      * specify an archiving rule, snapshots are automatically moved from the standard tier to the archive tier once the
      * schedule's retention threshold is met. Snapshots are then retained in the archive tier for the archive retention
      * period that you specify.
@@ -757,10 +761,10 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * for snapshot lifecycle policies</a>.
      * </p>
      * 
-     * @return <b>[Snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule. When
-     *         you specify an archiving rule, snapshots are automatically moved from the standard tier to the archive
-     *         tier once the schedule's retention threshold is met. Snapshots are then retained in the archive tier for
-     *         the archive retention period that you specify. </p>
+     * @return <b>[Custom snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule.
+     *         When you specify an archiving rule, snapshots are automatically moved from the standard tier to the
+     *         archive tier once the schedule's retention threshold is met. Snapshots are then retained in the archive
+     *         tier for the archive retention period that you specify. </p>
      *         <p>
      *         For more information about using snapshot archiving, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive"
@@ -773,7 +777,7 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * <b>[Snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule. When you
+     * <b>[Custom snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule. When you
      * specify an archiving rule, snapshots are automatically moved from the standard tier to the archive tier once the
      * schedule's retention threshold is met. Snapshots are then retained in the archive tier for the archive retention
      * period that you specify.
@@ -785,10 +789,10 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param archiveRule
-     *        <b>[Snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule. When you
-     *        specify an archiving rule, snapshots are automatically moved from the standard tier to the archive tier
-     *        once the schedule's retention threshold is met. Snapshots are then retained in the archive tier for the
-     *        archive retention period that you specify. </p>
+     *        <b>[Custom snapshot policies that target volumes only]</b> The snapshot archiving rule for the schedule.
+     *        When you specify an archiving rule, snapshots are automatically moved from the standard tier to the
+     *        archive tier once the schedule's retention threshold is met. Snapshots are then retained in the archive
+     *        tier for the archive retention period that you specify. </p>
      *        <p>
      *        For more information about using snapshot archiving, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-ami-policy.html#dlm-archive"

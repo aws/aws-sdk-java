@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,8 +30,8 @@ public class ShutdownEventConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before shutting down
-     * an instance.
+     * The time, in seconds, that OpsWorks Stacks waits after triggering a Shutdown event before shutting down an
+     * instance.
      * </p>
      */
     private Integer executionTimeout;
@@ -46,13 +46,13 @@ public class ShutdownEventConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before shutting down
-     * an instance.
+     * The time, in seconds, that OpsWorks Stacks waits after triggering a Shutdown event before shutting down an
+     * instance.
      * </p>
      * 
      * @param executionTimeout
-     *        The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before shutting
-     *        down an instance.
+     *        The time, in seconds, that OpsWorks Stacks waits after triggering a Shutdown event before shutting down an
+     *        instance.
      */
 
     public void setExecutionTimeout(Integer executionTimeout) {
@@ -61,12 +61,12 @@ public class ShutdownEventConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before shutting down
-     * an instance.
+     * The time, in seconds, that OpsWorks Stacks waits after triggering a Shutdown event before shutting down an
+     * instance.
      * </p>
      * 
-     * @return The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before
-     *         shutting down an instance.
+     * @return The time, in seconds, that OpsWorks Stacks waits after triggering a Shutdown event before shutting down
+     *         an instance.
      */
 
     public Integer getExecutionTimeout() {
@@ -75,13 +75,13 @@ public class ShutdownEventConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before shutting down
-     * an instance.
+     * The time, in seconds, that OpsWorks Stacks waits after triggering a Shutdown event before shutting down an
+     * instance.
      * </p>
      * 
      * @param executionTimeout
-     *        The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before shutting
-     *        down an instance.
+     *        The time, in seconds, that OpsWorks Stacks waits after triggering a Shutdown event before shutting down an
+     *        instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

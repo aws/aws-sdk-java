@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of a CreateAlertManagerDefinition operation.
+ * Represents the input of a <code>CreateAlertManagerDefinition</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateAlertManagerDefinition" target="_top">AWS
@@ -30,30 +30,35 @@ public class CreateAlertManagerDefinitionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      * </p>
      */
     private String clientToken;
     /**
      * <p>
-     * The alert manager definition data.
+     * The alert manager definition to add. A base64-encoded version of the YAML alert manager definition file.
+     * </p>
+     * <p>
+     * For details about the alert manager definition, see <a
+     * href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html"
+     * >AlertManagedDefinitionData</a>.
      * </p>
      */
     private java.nio.ByteBuffer data;
     /**
      * <p>
-     * The ID of the workspace in which to create the alert manager definition.
+     * The ID of the workspace to add the alert manager definition to.
      * </p>
      */
     private String workspaceId;
 
     /**
      * <p>
-     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      * </p>
      * 
      * @param clientToken
-     *        Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     *        A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      */
 
     public void setClientToken(String clientToken) {
@@ -62,10 +67,10 @@ public class CreateAlertManagerDefinitionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      * </p>
      * 
-     * @return Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * @return A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      */
 
     public String getClientToken() {
@@ -74,11 +79,11 @@ public class CreateAlertManagerDefinitionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      * </p>
      * 
      * @param clientToken
-     *        Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     *        A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,7 +94,12 @@ public class CreateAlertManagerDefinitionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The alert manager definition data.
+     * The alert manager definition to add. A base64-encoded version of the YAML alert manager definition file.
+     * </p>
+     * <p>
+     * For details about the alert manager definition, see <a
+     * href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html"
+     * >AlertManagedDefinitionData</a>.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -103,7 +113,12 @@ public class CreateAlertManagerDefinitionRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param data
-     *        The alert manager definition data.
+     *        The alert manager definition to add. A base64-encoded version of the YAML alert manager definition
+     *        file.</p>
+     *        <p>
+     *        For details about the alert manager definition, see <a
+     *        href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html"
+     *        >AlertManagedDefinitionData</a>.
      */
 
     public void setData(java.nio.ByteBuffer data) {
@@ -112,7 +127,12 @@ public class CreateAlertManagerDefinitionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The alert manager definition data.
+     * The alert manager definition to add. A base64-encoded version of the YAML alert manager definition file.
+     * </p>
+     * <p>
+     * For details about the alert manager definition, see <a
+     * href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html"
+     * >AlertManagedDefinitionData</a>.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -122,7 +142,12 @@ public class CreateAlertManagerDefinitionRequest extends com.amazonaws.AmazonWeb
      * {@code position}.
      * </p>
      * 
-     * @return The alert manager definition data.
+     * @return The alert manager definition to add. A base64-encoded version of the YAML alert manager definition
+     *         file.</p>
+     *         <p>
+     *         For details about the alert manager definition, see <a
+     *         href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html"
+     *         >AlertManagedDefinitionData</a>.
      */
 
     public java.nio.ByteBuffer getData() {
@@ -131,7 +156,12 @@ public class CreateAlertManagerDefinitionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The alert manager definition data.
+     * The alert manager definition to add. A base64-encoded version of the YAML alert manager definition file.
+     * </p>
+     * <p>
+     * For details about the alert manager definition, see <a
+     * href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html"
+     * >AlertManagedDefinitionData</a>.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -145,7 +175,12 @@ public class CreateAlertManagerDefinitionRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param data
-     *        The alert manager definition data.
+     *        The alert manager definition to add. A base64-encoded version of the YAML alert manager definition
+     *        file.</p>
+     *        <p>
+     *        For details about the alert manager definition, see <a
+     *        href="https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html"
+     *        >AlertManagedDefinitionData</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,11 +191,11 @@ public class CreateAlertManagerDefinitionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ID of the workspace in which to create the alert manager definition.
+     * The ID of the workspace to add the alert manager definition to.
      * </p>
      * 
      * @param workspaceId
-     *        The ID of the workspace in which to create the alert manager definition.
+     *        The ID of the workspace to add the alert manager definition to.
      */
 
     public void setWorkspaceId(String workspaceId) {
@@ -169,10 +204,10 @@ public class CreateAlertManagerDefinitionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ID of the workspace in which to create the alert manager definition.
+     * The ID of the workspace to add the alert manager definition to.
      * </p>
      * 
-     * @return The ID of the workspace in which to create the alert manager definition.
+     * @return The ID of the workspace to add the alert manager definition to.
      */
 
     public String getWorkspaceId() {
@@ -181,11 +216,11 @@ public class CreateAlertManagerDefinitionRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ID of the workspace in which to create the alert manager definition.
+     * The ID of the workspace to add the alert manager definition to.
      * </p>
      * 
      * @param workspaceId
-     *        The ID of the workspace in which to create the alert manager definition.
+     *        The ID of the workspace to add the alert manager definition to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

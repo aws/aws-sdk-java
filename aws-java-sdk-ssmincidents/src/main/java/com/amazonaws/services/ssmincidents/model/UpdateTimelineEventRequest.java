@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class UpdateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A token ensuring that the operation is called only once with the specified details.
+     * A token that ensures that a client calls the operation only once with the specified details.
      * </p>
      */
     private String clientToken;
@@ -39,19 +39,35 @@ public class UpdateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
     private String eventData;
     /**
      * <p>
-     * The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.
+     * The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.
      * </p>
      */
     private String eventId;
     /**
      * <p>
-     * The time that the event occurred.
+     * Updates all existing references in a <code>TimelineEvent</code>. A reference is an Amazon Web Services resource
+     * involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can
+     * also specify a related item associated with that resource. For example, to specify an Amazon DynamoDB (DynamoDB)
+     * table as a resource, use its ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB
+     * table as a related item.
+     * </p>
+     * <important>
+     * <p>
+     * This update action overrides all existing references. If you want to keep existing references, you must specify
+     * them in the call. If you don't, this action removes any existing references and enters only new references.
+     * </p>
+     * </important>
+     */
+    private java.util.List<EventReference> eventReferences;
+    /**
+     * <p>
+     * The timestamp for when the event occurred.
      * </p>
      */
     private java.util.Date eventTime;
     /**
      * <p>
-     * The type of the event. You can update events of type <code>Custom Event</code>.
+     * The type of event. You can update events of type <code>Custom Event</code> and <code>Note</code>.
      * </p>
      */
     private String eventType;
@@ -64,11 +80,11 @@ public class UpdateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A token ensuring that the operation is called only once with the specified details.
+     * A token that ensures that a client calls the operation only once with the specified details.
      * </p>
      * 
      * @param clientToken
-     *        A token ensuring that the operation is called only once with the specified details.
+     *        A token that ensures that a client calls the operation only once with the specified details.
      */
 
     public void setClientToken(String clientToken) {
@@ -77,10 +93,10 @@ public class UpdateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A token ensuring that the operation is called only once with the specified details.
+     * A token that ensures that a client calls the operation only once with the specified details.
      * </p>
      * 
-     * @return A token ensuring that the operation is called only once with the specified details.
+     * @return A token that ensures that a client calls the operation only once with the specified details.
      */
 
     public String getClientToken() {
@@ -89,11 +105,11 @@ public class UpdateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A token ensuring that the operation is called only once with the specified details.
+     * A token that ensures that a client calls the operation only once with the specified details.
      * </p>
      * 
      * @param clientToken
-     *        A token ensuring that the operation is called only once with the specified details.
+     *        A token that ensures that a client calls the operation only once with the specified details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,11 +160,11 @@ public class UpdateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.
+     * The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.
      * </p>
      * 
      * @param eventId
-     *        The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.
+     *        The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.
      */
 
     public void setEventId(String eventId) {
@@ -157,10 +173,10 @@ public class UpdateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.
+     * The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.
      * </p>
      * 
-     * @return The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.
+     * @return The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.
      */
 
     public String getEventId() {
@@ -169,11 +185,11 @@ public class UpdateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.
+     * The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.
      * </p>
      * 
      * @param eventId
-     *        The ID of the event you are updating. You can find this by using <code>ListTimelineEvents</code>.
+     *        The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,11 +200,157 @@ public class UpdateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The time that the event occurred.
+     * Updates all existing references in a <code>TimelineEvent</code>. A reference is an Amazon Web Services resource
+     * involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can
+     * also specify a related item associated with that resource. For example, to specify an Amazon DynamoDB (DynamoDB)
+     * table as a resource, use its ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB
+     * table as a related item.
+     * </p>
+     * <important>
+     * <p>
+     * This update action overrides all existing references. If you want to keep existing references, you must specify
+     * them in the call. If you don't, this action removes any existing references and enters only new references.
+     * </p>
+     * </important>
+     * 
+     * @return Updates all existing references in a <code>TimelineEvent</code>. A reference is an Amazon Web Services
+     *         resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name
+     *         (ARN). You can also specify a related item associated with that resource. For example, to specify an
+     *         Amazon DynamoDB (DynamoDB) table as a resource, use its ARN. You can also specify an Amazon CloudWatch
+     *         metric associated with the DynamoDB table as a related item.</p> <important>
+     *         <p>
+     *         This update action overrides all existing references. If you want to keep existing references, you must
+     *         specify them in the call. If you don't, this action removes any existing references and enters only new
+     *         references.
+     *         </p>
+     */
+
+    public java.util.List<EventReference> getEventReferences() {
+        return eventReferences;
+    }
+
+    /**
+     * <p>
+     * Updates all existing references in a <code>TimelineEvent</code>. A reference is an Amazon Web Services resource
+     * involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can
+     * also specify a related item associated with that resource. For example, to specify an Amazon DynamoDB (DynamoDB)
+     * table as a resource, use its ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB
+     * table as a related item.
+     * </p>
+     * <important>
+     * <p>
+     * This update action overrides all existing references. If you want to keep existing references, you must specify
+     * them in the call. If you don't, this action removes any existing references and enters only new references.
+     * </p>
+     * </important>
+     * 
+     * @param eventReferences
+     *        Updates all existing references in a <code>TimelineEvent</code>. A reference is an Amazon Web Services
+     *        resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name
+     *        (ARN). You can also specify a related item associated with that resource. For example, to specify an
+     *        Amazon DynamoDB (DynamoDB) table as a resource, use its ARN. You can also specify an Amazon CloudWatch
+     *        metric associated with the DynamoDB table as a related item.</p> <important>
+     *        <p>
+     *        This update action overrides all existing references. If you want to keep existing references, you must
+     *        specify them in the call. If you don't, this action removes any existing references and enters only new
+     *        references.
+     *        </p>
+     */
+
+    public void setEventReferences(java.util.Collection<EventReference> eventReferences) {
+        if (eventReferences == null) {
+            this.eventReferences = null;
+            return;
+        }
+
+        this.eventReferences = new java.util.ArrayList<EventReference>(eventReferences);
+    }
+
+    /**
+     * <p>
+     * Updates all existing references in a <code>TimelineEvent</code>. A reference is an Amazon Web Services resource
+     * involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can
+     * also specify a related item associated with that resource. For example, to specify an Amazon DynamoDB (DynamoDB)
+     * table as a resource, use its ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB
+     * table as a related item.
+     * </p>
+     * <important>
+     * <p>
+     * This update action overrides all existing references. If you want to keep existing references, you must specify
+     * them in the call. If you don't, this action removes any existing references and enters only new references.
+     * </p>
+     * </important>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEventReferences(java.util.Collection)} or {@link #withEventReferences(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param eventReferences
+     *        Updates all existing references in a <code>TimelineEvent</code>. A reference is an Amazon Web Services
+     *        resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name
+     *        (ARN). You can also specify a related item associated with that resource. For example, to specify an
+     *        Amazon DynamoDB (DynamoDB) table as a resource, use its ARN. You can also specify an Amazon CloudWatch
+     *        metric associated with the DynamoDB table as a related item.</p> <important>
+     *        <p>
+     *        This update action overrides all existing references. If you want to keep existing references, you must
+     *        specify them in the call. If you don't, this action removes any existing references and enters only new
+     *        references.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateTimelineEventRequest withEventReferences(EventReference... eventReferences) {
+        if (this.eventReferences == null) {
+            setEventReferences(new java.util.ArrayList<EventReference>(eventReferences.length));
+        }
+        for (EventReference ele : eventReferences) {
+            this.eventReferences.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Updates all existing references in a <code>TimelineEvent</code>. A reference is an Amazon Web Services resource
+     * involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can
+     * also specify a related item associated with that resource. For example, to specify an Amazon DynamoDB (DynamoDB)
+     * table as a resource, use its ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB
+     * table as a related item.
+     * </p>
+     * <important>
+     * <p>
+     * This update action overrides all existing references. If you want to keep existing references, you must specify
+     * them in the call. If you don't, this action removes any existing references and enters only new references.
+     * </p>
+     * </important>
+     * 
+     * @param eventReferences
+     *        Updates all existing references in a <code>TimelineEvent</code>. A reference is an Amazon Web Services
+     *        resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name
+     *        (ARN). You can also specify a related item associated with that resource. For example, to specify an
+     *        Amazon DynamoDB (DynamoDB) table as a resource, use its ARN. You can also specify an Amazon CloudWatch
+     *        metric associated with the DynamoDB table as a related item.</p> <important>
+     *        <p>
+     *        This update action overrides all existing references. If you want to keep existing references, you must
+     *        specify them in the call. If you don't, this action removes any existing references and enters only new
+     *        references.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateTimelineEventRequest withEventReferences(java.util.Collection<EventReference> eventReferences) {
+        setEventReferences(eventReferences);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The timestamp for when the event occurred.
      * </p>
      * 
      * @param eventTime
-     *        The time that the event occurred.
+     *        The timestamp for when the event occurred.
      */
 
     public void setEventTime(java.util.Date eventTime) {
@@ -197,10 +359,10 @@ public class UpdateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The time that the event occurred.
+     * The timestamp for when the event occurred.
      * </p>
      * 
-     * @return The time that the event occurred.
+     * @return The timestamp for when the event occurred.
      */
 
     public java.util.Date getEventTime() {
@@ -209,11 +371,11 @@ public class UpdateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The time that the event occurred.
+     * The timestamp for when the event occurred.
      * </p>
      * 
      * @param eventTime
-     *        The time that the event occurred.
+     *        The timestamp for when the event occurred.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -224,11 +386,11 @@ public class UpdateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The type of the event. You can update events of type <code>Custom Event</code>.
+     * The type of event. You can update events of type <code>Custom Event</code> and <code>Note</code>.
      * </p>
      * 
      * @param eventType
-     *        The type of the event. You can update events of type <code>Custom Event</code>.
+     *        The type of event. You can update events of type <code>Custom Event</code> and <code>Note</code>.
      */
 
     public void setEventType(String eventType) {
@@ -237,10 +399,10 @@ public class UpdateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The type of the event. You can update events of type <code>Custom Event</code>.
+     * The type of event. You can update events of type <code>Custom Event</code> and <code>Note</code>.
      * </p>
      * 
-     * @return The type of the event. You can update events of type <code>Custom Event</code>.
+     * @return The type of event. You can update events of type <code>Custom Event</code> and <code>Note</code>.
      */
 
     public String getEventType() {
@@ -249,11 +411,11 @@ public class UpdateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The type of the event. You can update events of type <code>Custom Event</code>.
+     * The type of event. You can update events of type <code>Custom Event</code> and <code>Note</code>.
      * </p>
      * 
      * @param eventType
-     *        The type of the event. You can update events of type <code>Custom Event</code>.
+     *        The type of event. You can update events of type <code>Custom Event</code> and <code>Note</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -320,6 +482,8 @@ public class UpdateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
             sb.append("EventData: ").append(getEventData()).append(",");
         if (getEventId() != null)
             sb.append("EventId: ").append(getEventId()).append(",");
+        if (getEventReferences() != null)
+            sb.append("EventReferences: ").append(getEventReferences()).append(",");
         if (getEventTime() != null)
             sb.append("EventTime: ").append(getEventTime()).append(",");
         if (getEventType() != null)
@@ -352,6 +516,10 @@ public class UpdateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getEventId() != null && other.getEventId().equals(this.getEventId()) == false)
             return false;
+        if (other.getEventReferences() == null ^ this.getEventReferences() == null)
+            return false;
+        if (other.getEventReferences() != null && other.getEventReferences().equals(this.getEventReferences()) == false)
+            return false;
         if (other.getEventTime() == null ^ this.getEventTime() == null)
             return false;
         if (other.getEventTime() != null && other.getEventTime().equals(this.getEventTime()) == false)
@@ -375,6 +543,7 @@ public class UpdateTimelineEventRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getEventData() == null) ? 0 : getEventData().hashCode());
         hashCode = prime * hashCode + ((getEventId() == null) ? 0 : getEventId().hashCode());
+        hashCode = prime * hashCode + ((getEventReferences() == null) ? 0 : getEventReferences().hashCode());
         hashCode = prime * hashCode + ((getEventTime() == null) ? 0 : getEventTime().hashCode());
         hashCode = prime * hashCode + ((getEventType() == null) ? 0 : getEventType().hashCode());
         hashCode = prime * hashCode + ((getIncidentRecordArn() == null) ? 0 : getIncidentRecordArn().hashCode());

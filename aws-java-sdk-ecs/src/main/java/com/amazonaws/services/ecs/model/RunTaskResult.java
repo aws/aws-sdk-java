@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,11 +27,19 @@ public class RunTaskResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * A full description of the tasks that were run. The tasks that were successfully placed on your cluster are
      * described here.
      * </p>
+     * <p/>
      */
     private com.amazonaws.internal.SdkInternalList<Task> tasks;
     /**
      * <p>
      * Any failures associated with the call.
+     * </p>
+     * <p>
+     * For information about how to address failures, see <a href=
+     * "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages.html#service-event-messages-list"
+     * >Service event messages</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API failure
+     * reasons</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Failure> failures;
@@ -41,9 +49,11 @@ public class RunTaskResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * A full description of the tasks that were run. The tasks that were successfully placed on your cluster are
      * described here.
      * </p>
+     * <p/>
      * 
      * @return A full description of the tasks that were run. The tasks that were successfully placed on your cluster
      *         are described here.
+     *         </p>
      */
 
     public java.util.List<Task> getTasks() {
@@ -58,10 +68,12 @@ public class RunTaskResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * A full description of the tasks that were run. The tasks that were successfully placed on your cluster are
      * described here.
      * </p>
+     * <p/>
      * 
      * @param tasks
      *        A full description of the tasks that were run. The tasks that were successfully placed on your cluster are
      *        described here.
+     *        </p>
      */
 
     public void setTasks(java.util.Collection<Task> tasks) {
@@ -78,6 +90,7 @@ public class RunTaskResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * A full description of the tasks that were run. The tasks that were successfully placed on your cluster are
      * described here.
      * </p>
+     * <p/>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTasks(java.util.Collection)} or {@link #withTasks(java.util.Collection)} if you want to override the
@@ -86,7 +99,7 @@ public class RunTaskResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * 
      * @param tasks
      *        A full description of the tasks that were run. The tasks that were successfully placed on your cluster are
-     *        described here.
+     *        described here.</p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,10 +118,12 @@ public class RunTaskResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * A full description of the tasks that were run. The tasks that were successfully placed on your cluster are
      * described here.
      * </p>
+     * <p/>
      * 
      * @param tasks
      *        A full description of the tasks that were run. The tasks that were successfully placed on your cluster are
      *        described here.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,8 +136,21 @@ public class RunTaskResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * <p>
      * Any failures associated with the call.
      * </p>
+     * <p>
+     * For information about how to address failures, see <a href=
+     * "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages.html#service-event-messages-list"
+     * >Service event messages</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API failure
+     * reasons</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
      * 
-     * @return Any failures associated with the call.
+     * @return Any failures associated with the call.</p>
+     *         <p>
+     *         For information about how to address failures, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages.html#service-event-messages-list"
+     *         >Service event messages</a> and <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API failure
+     *         reasons</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public java.util.List<Failure> getFailures() {
@@ -136,9 +164,22 @@ public class RunTaskResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * <p>
      * Any failures associated with the call.
      * </p>
+     * <p>
+     * For information about how to address failures, see <a href=
+     * "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages.html#service-event-messages-list"
+     * >Service event messages</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API failure
+     * reasons</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
      * 
      * @param failures
-     *        Any failures associated with the call.
+     *        Any failures associated with the call.</p>
+     *        <p>
+     *        For information about how to address failures, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages.html#service-event-messages-list"
+     *        >Service event messages</a> and <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API failure
+     *        reasons</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public void setFailures(java.util.Collection<Failure> failures) {
@@ -155,13 +196,26 @@ public class RunTaskResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * Any failures associated with the call.
      * </p>
      * <p>
+     * For information about how to address failures, see <a href=
+     * "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages.html#service-event-messages-list"
+     * >Service event messages</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API failure
+     * reasons</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFailures(java.util.Collection)} or {@link #withFailures(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param failures
-     *        Any failures associated with the call.
+     *        Any failures associated with the call.</p>
+     *        <p>
+     *        For information about how to address failures, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages.html#service-event-messages-list"
+     *        >Service event messages</a> and <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API failure
+     *        reasons</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,9 +233,22 @@ public class RunTaskResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * <p>
      * Any failures associated with the call.
      * </p>
+     * <p>
+     * For information about how to address failures, see <a href=
+     * "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages.html#service-event-messages-list"
+     * >Service event messages</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API failure
+     * reasons</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
      * 
      * @param failures
-     *        Any failures associated with the call.
+     *        Any failures associated with the call.</p>
+     *        <p>
+     *        For information about how to address failures, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-event-messages.html#service-event-messages-list"
+     *        >Service event messages</a> and <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API failure
+     *        reasons</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

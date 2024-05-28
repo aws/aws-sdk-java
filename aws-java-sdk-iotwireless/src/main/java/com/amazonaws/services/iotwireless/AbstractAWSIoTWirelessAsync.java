@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -386,6 +386,19 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteWirelessDeviceImportTaskResult> deleteWirelessDeviceImportTaskAsync(DeleteWirelessDeviceImportTaskRequest request) {
+
+        return deleteWirelessDeviceImportTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWirelessDeviceImportTaskResult> deleteWirelessDeviceImportTaskAsync(DeleteWirelessDeviceImportTaskRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteWirelessDeviceImportTaskRequest, DeleteWirelessDeviceImportTaskResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteWirelessGatewayResult> deleteWirelessGatewayAsync(DeleteWirelessGatewayRequest request) {
 
         return deleteWirelessGatewayAsync(request, null);
@@ -422,6 +435,19 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     public java.util.concurrent.Future<DeleteWirelessGatewayTaskDefinitionResult> deleteWirelessGatewayTaskDefinitionAsync(
             DeleteWirelessGatewayTaskDefinitionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteWirelessGatewayTaskDefinitionRequest, DeleteWirelessGatewayTaskDefinitionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterWirelessDeviceResult> deregisterWirelessDeviceAsync(DeregisterWirelessDeviceRequest request) {
+
+        return deregisterWirelessDeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterWirelessDeviceResult> deregisterWirelessDeviceAsync(DeregisterWirelessDeviceRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeregisterWirelessDeviceRequest, DeregisterWirelessDeviceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -599,6 +625,32 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetMetricConfigurationResult> getMetricConfigurationAsync(GetMetricConfigurationRequest request) {
+
+        return getMetricConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMetricConfigurationResult> getMetricConfigurationAsync(GetMetricConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetMetricConfigurationRequest, GetMetricConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMetricsResult> getMetricsAsync(GetMetricsRequest request) {
+
+        return getMetricsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMetricsResult> getMetricsAsync(GetMetricsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetMetricsRequest, GetMetricsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetMulticastGroupResult> getMulticastGroupAsync(GetMulticastGroupRequest request) {
 
         return getMulticastGroupAsync(request, null);
@@ -653,12 +705,14 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetPositionResult> getPositionAsync(GetPositionRequest request) {
 
         return getPositionAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetPositionResult> getPositionAsync(GetPositionRequest request,
             com.amazonaws.handlers.AsyncHandler<GetPositionRequest, GetPositionResult> asyncHandler) {
 
@@ -666,14 +720,29 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetPositionConfigurationResult> getPositionConfigurationAsync(GetPositionConfigurationRequest request) {
 
         return getPositionConfigurationAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetPositionConfigurationResult> getPositionConfigurationAsync(GetPositionConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<GetPositionConfigurationRequest, GetPositionConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPositionEstimateResult> getPositionEstimateAsync(GetPositionEstimateRequest request) {
+
+        return getPositionEstimateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPositionEstimateResult> getPositionEstimateAsync(GetPositionEstimateRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetPositionEstimateRequest, GetPositionEstimateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -700,6 +769,19 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     @Override
     public java.util.concurrent.Future<GetResourceLogLevelResult> getResourceLogLevelAsync(GetResourceLogLevelRequest request,
             com.amazonaws.handlers.AsyncHandler<GetResourceLogLevelRequest, GetResourceLogLevelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourcePositionResult> getResourcePositionAsync(GetResourcePositionRequest request) {
+
+        return getResourcePositionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourcePositionResult> getResourcePositionAsync(GetResourcePositionRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetResourcePositionRequest, GetResourcePositionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -739,6 +821,19 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     @Override
     public java.util.concurrent.Future<GetWirelessDeviceResult> getWirelessDeviceAsync(GetWirelessDeviceRequest request,
             com.amazonaws.handlers.AsyncHandler<GetWirelessDeviceRequest, GetWirelessDeviceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWirelessDeviceImportTaskResult> getWirelessDeviceImportTaskAsync(GetWirelessDeviceImportTaskRequest request) {
+
+        return getWirelessDeviceImportTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWirelessDeviceImportTaskResult> getWirelessDeviceImportTaskAsync(GetWirelessDeviceImportTaskRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetWirelessDeviceImportTaskRequest, GetWirelessDeviceImportTaskResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -865,6 +960,21 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListDevicesForWirelessDeviceImportTaskResult> listDevicesForWirelessDeviceImportTaskAsync(
+            ListDevicesForWirelessDeviceImportTaskRequest request) {
+
+        return listDevicesForWirelessDeviceImportTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDevicesForWirelessDeviceImportTaskResult> listDevicesForWirelessDeviceImportTaskAsync(
+            ListDevicesForWirelessDeviceImportTaskRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDevicesForWirelessDeviceImportTaskRequest, ListDevicesForWirelessDeviceImportTaskResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListEventConfigurationsResult> listEventConfigurationsAsync(ListEventConfigurationsRequest request) {
 
         return listEventConfigurationsAsync(request, null);
@@ -945,12 +1055,14 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListPositionConfigurationsResult> listPositionConfigurationsAsync(ListPositionConfigurationsRequest request) {
 
         return listPositionConfigurationsAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListPositionConfigurationsResult> listPositionConfigurationsAsync(ListPositionConfigurationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPositionConfigurationsRequest, ListPositionConfigurationsResult> asyncHandler) {
 
@@ -997,6 +1109,19 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListWirelessDeviceImportTasksResult> listWirelessDeviceImportTasksAsync(ListWirelessDeviceImportTasksRequest request) {
+
+        return listWirelessDeviceImportTasksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWirelessDeviceImportTasksResult> listWirelessDeviceImportTasksAsync(ListWirelessDeviceImportTasksRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListWirelessDeviceImportTasksRequest, ListWirelessDeviceImportTasksResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListWirelessDevicesResult> listWirelessDevicesAsync(ListWirelessDevicesRequest request) {
 
         return listWirelessDevicesAsync(request, null);
@@ -1038,12 +1163,14 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<PutPositionConfigurationResult> putPositionConfigurationAsync(PutPositionConfigurationRequest request) {
 
         return putPositionConfigurationAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<PutPositionConfigurationResult> putPositionConfigurationAsync(PutPositionConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<PutPositionConfigurationRequest, PutPositionConfigurationResult> asyncHandler) {
 
@@ -1172,6 +1299,34 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     }
 
     @Override
+    public java.util.concurrent.Future<StartSingleWirelessDeviceImportTaskResult> startSingleWirelessDeviceImportTaskAsync(
+            StartSingleWirelessDeviceImportTaskRequest request) {
+
+        return startSingleWirelessDeviceImportTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSingleWirelessDeviceImportTaskResult> startSingleWirelessDeviceImportTaskAsync(
+            StartSingleWirelessDeviceImportTaskRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartSingleWirelessDeviceImportTaskRequest, StartSingleWirelessDeviceImportTaskResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartWirelessDeviceImportTaskResult> startWirelessDeviceImportTaskAsync(StartWirelessDeviceImportTaskRequest request) {
+
+        return startWirelessDeviceImportTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartWirelessDeviceImportTaskResult> startWirelessDeviceImportTaskAsync(StartWirelessDeviceImportTaskRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartWirelessDeviceImportTaskRequest, StartWirelessDeviceImportTaskResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);
@@ -1265,6 +1420,19 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateMetricConfigurationResult> updateMetricConfigurationAsync(UpdateMetricConfigurationRequest request) {
+
+        return updateMetricConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMetricConfigurationResult> updateMetricConfigurationAsync(UpdateMetricConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateMetricConfigurationRequest, UpdateMetricConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateMulticastGroupResult> updateMulticastGroupAsync(UpdateMulticastGroupRequest request) {
 
         return updateMulticastGroupAsync(request, null);
@@ -1306,12 +1474,14 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdatePositionResult> updatePositionAsync(UpdatePositionRequest request) {
 
         return updatePositionAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdatePositionResult> updatePositionAsync(UpdatePositionRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdatePositionRequest, UpdatePositionResult> asyncHandler) {
 
@@ -1334,6 +1504,19 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateResourcePositionResult> updateResourcePositionAsync(UpdateResourcePositionRequest request) {
+
+        return updateResourcePositionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateResourcePositionResult> updateResourcePositionAsync(UpdateResourcePositionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateResourcePositionRequest, UpdateResourcePositionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateWirelessDeviceResult> updateWirelessDeviceAsync(UpdateWirelessDeviceRequest request) {
 
         return updateWirelessDeviceAsync(request, null);
@@ -1342,6 +1525,19 @@ public class AbstractAWSIoTWirelessAsync extends AbstractAWSIoTWireless implemen
     @Override
     public java.util.concurrent.Future<UpdateWirelessDeviceResult> updateWirelessDeviceAsync(UpdateWirelessDeviceRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateWirelessDeviceRequest, UpdateWirelessDeviceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWirelessDeviceImportTaskResult> updateWirelessDeviceImportTaskAsync(UpdateWirelessDeviceImportTaskRequest request) {
+
+        return updateWirelessDeviceImportTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWirelessDeviceImportTaskResult> updateWirelessDeviceImportTaskAsync(UpdateWirelessDeviceImportTaskRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateWirelessDeviceImportTaskRequest, UpdateWirelessDeviceImportTaskResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

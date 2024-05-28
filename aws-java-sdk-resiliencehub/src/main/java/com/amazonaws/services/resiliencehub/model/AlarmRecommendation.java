@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,25 +30,33 @@ public class AlarmRecommendation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The application component for the CloudWatch alarm recommendation.
+     * Application Component name for the CloudWatch alarm recommendation. This name is saved as the first item in the
+     * <code>appComponentNames</code> list.
      * </p>
      */
+    @Deprecated
     private String appComponentName;
     /**
      * <p>
-     * The description of the recommendation.
+     * List of Application Component names for the CloudWatch alarm recommendation.
+     * </p>
+     */
+    private java.util.List<String> appComponentNames;
+    /**
+     * <p>
+     * Description of the alarm recommendation.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The list of CloudWatch alarm recommendations.
+     * List of CloudWatch alarm recommendations.
      * </p>
      */
     private java.util.List<RecommendationItem> items;
     /**
      * <p>
-     * The name of the alarm recommendation.
+     * Name of the alarm recommendation.
      * </p>
      */
     private String name;
@@ -60,58 +68,70 @@ public class AlarmRecommendation implements Serializable, Cloneable, StructuredP
     private String prerequisite;
     /**
      * <p>
-     * The identifier of the alarm recommendation.
+     * Identifier of the alarm recommendation.
      * </p>
      */
     private String recommendationId;
     /**
      * <p>
-     * The reference identifier of the alarm recommendation.
+     * Status of the recommended Amazon CloudWatch alarm.
+     * </p>
+     */
+    private String recommendationStatus;
+    /**
+     * <p>
+     * Reference identifier of the alarm recommendation.
      * </p>
      */
     private String referenceId;
     /**
      * <p>
-     * The type of alarm recommendation.
+     * Type of alarm recommendation.
      * </p>
      */
     private String type;
 
     /**
      * <p>
-     * The application component for the CloudWatch alarm recommendation.
+     * Application Component name for the CloudWatch alarm recommendation. This name is saved as the first item in the
+     * <code>appComponentNames</code> list.
      * </p>
      * 
      * @param appComponentName
-     *        The application component for the CloudWatch alarm recommendation.
+     *        Application Component name for the CloudWatch alarm recommendation. This name is saved as the first item
+     *        in the <code>appComponentNames</code> list.
      */
-
+    @Deprecated
     public void setAppComponentName(String appComponentName) {
         this.appComponentName = appComponentName;
     }
 
     /**
      * <p>
-     * The application component for the CloudWatch alarm recommendation.
+     * Application Component name for the CloudWatch alarm recommendation. This name is saved as the first item in the
+     * <code>appComponentNames</code> list.
      * </p>
      * 
-     * @return The application component for the CloudWatch alarm recommendation.
+     * @return Application Component name for the CloudWatch alarm recommendation. This name is saved as the first item
+     *         in the <code>appComponentNames</code> list.
      */
-
+    @Deprecated
     public String getAppComponentName() {
         return this.appComponentName;
     }
 
     /**
      * <p>
-     * The application component for the CloudWatch alarm recommendation.
+     * Application Component name for the CloudWatch alarm recommendation. This name is saved as the first item in the
+     * <code>appComponentNames</code> list.
      * </p>
      * 
      * @param appComponentName
-     *        The application component for the CloudWatch alarm recommendation.
+     *        Application Component name for the CloudWatch alarm recommendation. This name is saved as the first item
+     *        in the <code>appComponentNames</code> list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public AlarmRecommendation withAppComponentName(String appComponentName) {
         setAppComponentName(appComponentName);
         return this;
@@ -119,11 +139,81 @@ public class AlarmRecommendation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The description of the recommendation.
+     * List of Application Component names for the CloudWatch alarm recommendation.
+     * </p>
+     * 
+     * @return List of Application Component names for the CloudWatch alarm recommendation.
+     */
+
+    public java.util.List<String> getAppComponentNames() {
+        return appComponentNames;
+    }
+
+    /**
+     * <p>
+     * List of Application Component names for the CloudWatch alarm recommendation.
+     * </p>
+     * 
+     * @param appComponentNames
+     *        List of Application Component names for the CloudWatch alarm recommendation.
+     */
+
+    public void setAppComponentNames(java.util.Collection<String> appComponentNames) {
+        if (appComponentNames == null) {
+            this.appComponentNames = null;
+            return;
+        }
+
+        this.appComponentNames = new java.util.ArrayList<String>(appComponentNames);
+    }
+
+    /**
+     * <p>
+     * List of Application Component names for the CloudWatch alarm recommendation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAppComponentNames(java.util.Collection)} or {@link #withAppComponentNames(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param appComponentNames
+     *        List of Application Component names for the CloudWatch alarm recommendation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AlarmRecommendation withAppComponentNames(String... appComponentNames) {
+        if (this.appComponentNames == null) {
+            setAppComponentNames(new java.util.ArrayList<String>(appComponentNames.length));
+        }
+        for (String ele : appComponentNames) {
+            this.appComponentNames.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * List of Application Component names for the CloudWatch alarm recommendation.
+     * </p>
+     * 
+     * @param appComponentNames
+     *        List of Application Component names for the CloudWatch alarm recommendation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AlarmRecommendation withAppComponentNames(java.util.Collection<String> appComponentNames) {
+        setAppComponentNames(appComponentNames);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Description of the alarm recommendation.
      * </p>
      * 
      * @param description
-     *        The description of the recommendation.
+     *        Description of the alarm recommendation.
      */
 
     public void setDescription(String description) {
@@ -132,10 +222,10 @@ public class AlarmRecommendation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The description of the recommendation.
+     * Description of the alarm recommendation.
      * </p>
      * 
-     * @return The description of the recommendation.
+     * @return Description of the alarm recommendation.
      */
 
     public String getDescription() {
@@ -144,11 +234,11 @@ public class AlarmRecommendation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The description of the recommendation.
+     * Description of the alarm recommendation.
      * </p>
      * 
      * @param description
-     *        The description of the recommendation.
+     *        Description of the alarm recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,10 +249,10 @@ public class AlarmRecommendation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The list of CloudWatch alarm recommendations.
+     * List of CloudWatch alarm recommendations.
      * </p>
      * 
-     * @return The list of CloudWatch alarm recommendations.
+     * @return List of CloudWatch alarm recommendations.
      */
 
     public java.util.List<RecommendationItem> getItems() {
@@ -171,11 +261,11 @@ public class AlarmRecommendation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The list of CloudWatch alarm recommendations.
+     * List of CloudWatch alarm recommendations.
      * </p>
      * 
      * @param items
-     *        The list of CloudWatch alarm recommendations.
+     *        List of CloudWatch alarm recommendations.
      */
 
     public void setItems(java.util.Collection<RecommendationItem> items) {
@@ -189,7 +279,7 @@ public class AlarmRecommendation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The list of CloudWatch alarm recommendations.
+     * List of CloudWatch alarm recommendations.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -198,7 +288,7 @@ public class AlarmRecommendation implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param items
-     *        The list of CloudWatch alarm recommendations.
+     *        List of CloudWatch alarm recommendations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,11 +304,11 @@ public class AlarmRecommendation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The list of CloudWatch alarm recommendations.
+     * List of CloudWatch alarm recommendations.
      * </p>
      * 
      * @param items
-     *        The list of CloudWatch alarm recommendations.
+     *        List of CloudWatch alarm recommendations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -229,11 +319,11 @@ public class AlarmRecommendation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the alarm recommendation.
+     * Name of the alarm recommendation.
      * </p>
      * 
      * @param name
-     *        The name of the alarm recommendation.
+     *        Name of the alarm recommendation.
      */
 
     public void setName(String name) {
@@ -242,10 +332,10 @@ public class AlarmRecommendation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the alarm recommendation.
+     * Name of the alarm recommendation.
      * </p>
      * 
-     * @return The name of the alarm recommendation.
+     * @return Name of the alarm recommendation.
      */
 
     public String getName() {
@@ -254,11 +344,11 @@ public class AlarmRecommendation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the alarm recommendation.
+     * Name of the alarm recommendation.
      * </p>
      * 
      * @param name
-     *        The name of the alarm recommendation.
+     *        Name of the alarm recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -309,11 +399,11 @@ public class AlarmRecommendation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The identifier of the alarm recommendation.
+     * Identifier of the alarm recommendation.
      * </p>
      * 
      * @param recommendationId
-     *        The identifier of the alarm recommendation.
+     *        Identifier of the alarm recommendation.
      */
 
     public void setRecommendationId(String recommendationId) {
@@ -322,10 +412,10 @@ public class AlarmRecommendation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The identifier of the alarm recommendation.
+     * Identifier of the alarm recommendation.
      * </p>
      * 
-     * @return The identifier of the alarm recommendation.
+     * @return Identifier of the alarm recommendation.
      */
 
     public String getRecommendationId() {
@@ -334,11 +424,11 @@ public class AlarmRecommendation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The identifier of the alarm recommendation.
+     * Identifier of the alarm recommendation.
      * </p>
      * 
      * @param recommendationId
-     *        The identifier of the alarm recommendation.
+     *        Identifier of the alarm recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -349,11 +439,70 @@ public class AlarmRecommendation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The reference identifier of the alarm recommendation.
+     * Status of the recommended Amazon CloudWatch alarm.
+     * </p>
+     * 
+     * @param recommendationStatus
+     *        Status of the recommended Amazon CloudWatch alarm.
+     * @see RecommendationStatus
+     */
+
+    public void setRecommendationStatus(String recommendationStatus) {
+        this.recommendationStatus = recommendationStatus;
+    }
+
+    /**
+     * <p>
+     * Status of the recommended Amazon CloudWatch alarm.
+     * </p>
+     * 
+     * @return Status of the recommended Amazon CloudWatch alarm.
+     * @see RecommendationStatus
+     */
+
+    public String getRecommendationStatus() {
+        return this.recommendationStatus;
+    }
+
+    /**
+     * <p>
+     * Status of the recommended Amazon CloudWatch alarm.
+     * </p>
+     * 
+     * @param recommendationStatus
+     *        Status of the recommended Amazon CloudWatch alarm.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RecommendationStatus
+     */
+
+    public AlarmRecommendation withRecommendationStatus(String recommendationStatus) {
+        setRecommendationStatus(recommendationStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Status of the recommended Amazon CloudWatch alarm.
+     * </p>
+     * 
+     * @param recommendationStatus
+     *        Status of the recommended Amazon CloudWatch alarm.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RecommendationStatus
+     */
+
+    public AlarmRecommendation withRecommendationStatus(RecommendationStatus recommendationStatus) {
+        this.recommendationStatus = recommendationStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Reference identifier of the alarm recommendation.
      * </p>
      * 
      * @param referenceId
-     *        The reference identifier of the alarm recommendation.
+     *        Reference identifier of the alarm recommendation.
      */
 
     public void setReferenceId(String referenceId) {
@@ -362,10 +511,10 @@ public class AlarmRecommendation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The reference identifier of the alarm recommendation.
+     * Reference identifier of the alarm recommendation.
      * </p>
      * 
-     * @return The reference identifier of the alarm recommendation.
+     * @return Reference identifier of the alarm recommendation.
      */
 
     public String getReferenceId() {
@@ -374,11 +523,11 @@ public class AlarmRecommendation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The reference identifier of the alarm recommendation.
+     * Reference identifier of the alarm recommendation.
      * </p>
      * 
      * @param referenceId
-     *        The reference identifier of the alarm recommendation.
+     *        Reference identifier of the alarm recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -389,11 +538,11 @@ public class AlarmRecommendation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The type of alarm recommendation.
+     * Type of alarm recommendation.
      * </p>
      * 
      * @param type
-     *        The type of alarm recommendation.
+     *        Type of alarm recommendation.
      * @see AlarmType
      */
 
@@ -403,10 +552,10 @@ public class AlarmRecommendation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The type of alarm recommendation.
+     * Type of alarm recommendation.
      * </p>
      * 
-     * @return The type of alarm recommendation.
+     * @return Type of alarm recommendation.
      * @see AlarmType
      */
 
@@ -416,11 +565,11 @@ public class AlarmRecommendation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The type of alarm recommendation.
+     * Type of alarm recommendation.
      * </p>
      * 
      * @param type
-     *        The type of alarm recommendation.
+     *        Type of alarm recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AlarmType
      */
@@ -432,11 +581,11 @@ public class AlarmRecommendation implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The type of alarm recommendation.
+     * Type of alarm recommendation.
      * </p>
      * 
      * @param type
-     *        The type of alarm recommendation.
+     *        Type of alarm recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AlarmType
      */
@@ -460,6 +609,8 @@ public class AlarmRecommendation implements Serializable, Cloneable, StructuredP
         sb.append("{");
         if (getAppComponentName() != null)
             sb.append("AppComponentName: ").append(getAppComponentName()).append(",");
+        if (getAppComponentNames() != null)
+            sb.append("AppComponentNames: ").append(getAppComponentNames()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getItems() != null)
@@ -470,6 +621,8 @@ public class AlarmRecommendation implements Serializable, Cloneable, StructuredP
             sb.append("Prerequisite: ").append(getPrerequisite()).append(",");
         if (getRecommendationId() != null)
             sb.append("RecommendationId: ").append(getRecommendationId()).append(",");
+        if (getRecommendationStatus() != null)
+            sb.append("RecommendationStatus: ").append(getRecommendationStatus()).append(",");
         if (getReferenceId() != null)
             sb.append("ReferenceId: ").append(getReferenceId()).append(",");
         if (getType() != null)
@@ -492,6 +645,10 @@ public class AlarmRecommendation implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getAppComponentName() != null && other.getAppComponentName().equals(this.getAppComponentName()) == false)
             return false;
+        if (other.getAppComponentNames() == null ^ this.getAppComponentNames() == null)
+            return false;
+        if (other.getAppComponentNames() != null && other.getAppComponentNames().equals(this.getAppComponentNames()) == false)
+            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
@@ -512,6 +669,10 @@ public class AlarmRecommendation implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getRecommendationId() != null && other.getRecommendationId().equals(this.getRecommendationId()) == false)
             return false;
+        if (other.getRecommendationStatus() == null ^ this.getRecommendationStatus() == null)
+            return false;
+        if (other.getRecommendationStatus() != null && other.getRecommendationStatus().equals(this.getRecommendationStatus()) == false)
+            return false;
         if (other.getReferenceId() == null ^ this.getReferenceId() == null)
             return false;
         if (other.getReferenceId() != null && other.getReferenceId().equals(this.getReferenceId()) == false)
@@ -529,11 +690,13 @@ public class AlarmRecommendation implements Serializable, Cloneable, StructuredP
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAppComponentName() == null) ? 0 : getAppComponentName().hashCode());
+        hashCode = prime * hashCode + ((getAppComponentNames() == null) ? 0 : getAppComponentNames().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getItems() == null) ? 0 : getItems().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getPrerequisite() == null) ? 0 : getPrerequisite().hashCode());
         hashCode = prime * hashCode + ((getRecommendationId() == null) ? 0 : getRecommendationId().hashCode());
+        hashCode = prime * hashCode + ((getRecommendationStatus() == null) ? 0 : getRecommendationStatus().hashCode());
         hashCode = prime * hashCode + ((getReferenceId() == null) ? 0 : getReferenceId().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;

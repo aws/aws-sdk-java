@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,16 @@ public class AbstractAmazonManagedGrafana implements AmazonManagedGrafana {
     }
 
     @Override
+    public CreateWorkspaceServiceAccountResult createWorkspaceServiceAccount(CreateWorkspaceServiceAccountRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateWorkspaceServiceAccountTokenResult createWorkspaceServiceAccountToken(CreateWorkspaceServiceAccountTokenRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteWorkspaceResult deleteWorkspace(DeleteWorkspaceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -53,12 +63,27 @@ public class AbstractAmazonManagedGrafana implements AmazonManagedGrafana {
     }
 
     @Override
+    public DeleteWorkspaceServiceAccountResult deleteWorkspaceServiceAccount(DeleteWorkspaceServiceAccountRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteWorkspaceServiceAccountTokenResult deleteWorkspaceServiceAccountToken(DeleteWorkspaceServiceAccountTokenRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeWorkspaceResult describeWorkspace(DescribeWorkspaceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DescribeWorkspaceAuthenticationResult describeWorkspaceAuthentication(DescribeWorkspaceAuthenticationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeWorkspaceConfigurationResult describeWorkspaceConfiguration(DescribeWorkspaceConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -74,6 +99,21 @@ public class AbstractAmazonManagedGrafana implements AmazonManagedGrafana {
 
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListVersionsResult listVersions(ListVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListWorkspaceServiceAccountTokensResult listWorkspaceServiceAccountTokens(ListWorkspaceServiceAccountTokensRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListWorkspaceServiceAccountsResult listWorkspaceServiceAccounts(ListWorkspaceServiceAccountsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -104,6 +144,11 @@ public class AbstractAmazonManagedGrafana implements AmazonManagedGrafana {
 
     @Override
     public UpdateWorkspaceAuthenticationResult updateWorkspaceAuthentication(UpdateWorkspaceAuthenticationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateWorkspaceConfigurationResult updateWorkspaceConfiguration(UpdateWorkspaceConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

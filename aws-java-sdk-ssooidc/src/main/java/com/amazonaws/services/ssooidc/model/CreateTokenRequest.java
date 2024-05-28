@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique identifier string for each client. This value should come from the persisted result of the
+     * The unique identifier string for the client or application. This value comes from the result of the
      * <a>RegisterClient</a> API.
      * </p>
      */
@@ -41,11 +41,14 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String clientSecret;
     /**
      * <p>
-     * Supports grant types for the authorization code, refresh token, and device code request. For device code
-     * requests, specify the following value:
+     * Supports the following OAuth grant types: Device Code and Refresh Token. Specify either of the following values,
+     * depending on the grant type that you want:
      * </p>
      * <p>
-     * <code>urn:ietf:params:oauth:grant-type:<i>device_code</i> </code>
+     * * Device Code - <code>urn:ietf:params:oauth:grant-type:device_code</code>
+     * </p>
+     * <p>
+     * * Refresh Token - <code>refresh_token</code>
      * </p>
      * <p>
      * For information about how to obtain the device code, see the <a>StartDeviceAuthorization</a> topic.
@@ -54,54 +57,62 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String grantType;
     /**
      * <p>
-     * Used only when calling this API for the device code grant type. This short-term code is used to identify this
-     * authentication attempt. This should come from an in-memory reference to the result of the
-     * <a>StartDeviceAuthorization</a> API.
+     * Used only when calling this API for the Device Code grant type. This short-term code is used to identify this
+     * authorization request. This comes from the result of the <a>StartDeviceAuthorization</a> API.
      * </p>
      */
     private String deviceCode;
     /**
      * <p>
-     * The authorization code received from the authorization service. This parameter is required to perform an
-     * authorization grant request to get access to a token.
+     * Used only when calling this API for the Authorization Code grant type. The short-term code is used to identify
+     * this authorization request. This grant type is currently unsupported for the <a>CreateToken</a> API.
      * </p>
      */
     private String code;
     /**
      * <p>
-     * Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the
-     * features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using
-     * this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
-     * Identity Center OIDC API Reference</a>.
+     * Used only when calling this API for the Refresh Token grant type. This token is used to refresh short-term
+     * tokens, such as the access token, that might expire.
      * </p>
      * <p>
-     * The token used to obtain an access token in the event that the access token is invalid or expired.
+     * For more information about the features and limitations of the current IAM Identity Center OIDC implementation,
+     * see <i>Considerations for Using this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API
+     * Reference</a>.
      * </p>
      */
     private String refreshToken;
     /**
      * <p>
-     * The list of scopes that is defined by the client. Upon authorization, this list is used to restrict permissions
-     * when granting an access token.
+     * The list of scopes for which authorization is requested. The access token that is issued is limited to the scopes
+     * that are granted. If this value is not specified, IAM Identity Center authorizes all scopes that are configured
+     * for the client during the call to <a>RegisterClient</a>.
      * </p>
      */
     private java.util.List<String> scope;
     /**
      * <p>
-     * The location of the application that will receive the authorization code. Users authorize the service to send the
-     * request to this location.
+     * Used only when calling this API for the Authorization Code grant type. This value specifies the location of the
+     * client or application that has registered to receive the authorization code.
      * </p>
      */
     private String redirectUri;
+    /**
+     * <p>
+     * Used only when calling this API for the Authorization Code grant type. This value is generated by the client and
+     * presented to validate the original code challenge value the client passed at authorization time.
+     * </p>
+     */
+    private String codeVerifier;
 
     /**
      * <p>
-     * The unique identifier string for each client. This value should come from the persisted result of the
+     * The unique identifier string for the client or application. This value comes from the result of the
      * <a>RegisterClient</a> API.
      * </p>
      * 
      * @param clientId
-     *        The unique identifier string for each client. This value should come from the persisted result of the
+     *        The unique identifier string for the client or application. This value comes from the result of the
      *        <a>RegisterClient</a> API.
      */
 
@@ -111,11 +122,11 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique identifier string for each client. This value should come from the persisted result of the
+     * The unique identifier string for the client or application. This value comes from the result of the
      * <a>RegisterClient</a> API.
      * </p>
      * 
-     * @return The unique identifier string for each client. This value should come from the persisted result of the
+     * @return The unique identifier string for the client or application. This value comes from the result of the
      *         <a>RegisterClient</a> API.
      */
 
@@ -125,12 +136,12 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique identifier string for each client. This value should come from the persisted result of the
+     * The unique identifier string for the client or application. This value comes from the result of the
      * <a>RegisterClient</a> API.
      * </p>
      * 
      * @param clientId
-     *        The unique identifier string for each client. This value should come from the persisted result of the
+     *        The unique identifier string for the client or application. This value comes from the result of the
      *        <a>RegisterClient</a> API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -188,21 +199,27 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Supports grant types for the authorization code, refresh token, and device code request. For device code
-     * requests, specify the following value:
+     * Supports the following OAuth grant types: Device Code and Refresh Token. Specify either of the following values,
+     * depending on the grant type that you want:
      * </p>
      * <p>
-     * <code>urn:ietf:params:oauth:grant-type:<i>device_code</i> </code>
+     * * Device Code - <code>urn:ietf:params:oauth:grant-type:device_code</code>
+     * </p>
+     * <p>
+     * * Refresh Token - <code>refresh_token</code>
      * </p>
      * <p>
      * For information about how to obtain the device code, see the <a>StartDeviceAuthorization</a> topic.
      * </p>
      * 
      * @param grantType
-     *        Supports grant types for the authorization code, refresh token, and device code request. For device code
-     *        requests, specify the following value:</p>
+     *        Supports the following OAuth grant types: Device Code and Refresh Token. Specify either of the following
+     *        values, depending on the grant type that you want:</p>
      *        <p>
-     *        <code>urn:ietf:params:oauth:grant-type:<i>device_code</i> </code>
+     *        Device Code - <code>urn:ietf:params:oauth:grant-type:device_code</code>
+     *        </p>
+     *        <p>
+     *        Refresh Token - <code>refresh_token</code>
      *        </p>
      *        <p>
      *        For information about how to obtain the device code, see the <a>StartDeviceAuthorization</a> topic.
@@ -214,20 +231,26 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Supports grant types for the authorization code, refresh token, and device code request. For device code
-     * requests, specify the following value:
+     * Supports the following OAuth grant types: Device Code and Refresh Token. Specify either of the following values,
+     * depending on the grant type that you want:
      * </p>
      * <p>
-     * <code>urn:ietf:params:oauth:grant-type:<i>device_code</i> </code>
+     * * Device Code - <code>urn:ietf:params:oauth:grant-type:device_code</code>
+     * </p>
+     * <p>
+     * * Refresh Token - <code>refresh_token</code>
      * </p>
      * <p>
      * For information about how to obtain the device code, see the <a>StartDeviceAuthorization</a> topic.
      * </p>
      * 
-     * @return Supports grant types for the authorization code, refresh token, and device code request. For device code
-     *         requests, specify the following value:</p>
+     * @return Supports the following OAuth grant types: Device Code and Refresh Token. Specify either of the following
+     *         values, depending on the grant type that you want:</p>
      *         <p>
-     *         <code>urn:ietf:params:oauth:grant-type:<i>device_code</i> </code>
+     *         Device Code - <code>urn:ietf:params:oauth:grant-type:device_code</code>
+     *         </p>
+     *         <p>
+     *         Refresh Token - <code>refresh_token</code>
      *         </p>
      *         <p>
      *         For information about how to obtain the device code, see the <a>StartDeviceAuthorization</a> topic.
@@ -239,21 +262,27 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Supports grant types for the authorization code, refresh token, and device code request. For device code
-     * requests, specify the following value:
+     * Supports the following OAuth grant types: Device Code and Refresh Token. Specify either of the following values,
+     * depending on the grant type that you want:
      * </p>
      * <p>
-     * <code>urn:ietf:params:oauth:grant-type:<i>device_code</i> </code>
+     * * Device Code - <code>urn:ietf:params:oauth:grant-type:device_code</code>
+     * </p>
+     * <p>
+     * * Refresh Token - <code>refresh_token</code>
      * </p>
      * <p>
      * For information about how to obtain the device code, see the <a>StartDeviceAuthorization</a> topic.
      * </p>
      * 
      * @param grantType
-     *        Supports grant types for the authorization code, refresh token, and device code request. For device code
-     *        requests, specify the following value:</p>
+     *        Supports the following OAuth grant types: Device Code and Refresh Token. Specify either of the following
+     *        values, depending on the grant type that you want:</p>
      *        <p>
-     *        <code>urn:ietf:params:oauth:grant-type:<i>device_code</i> </code>
+     *        Device Code - <code>urn:ietf:params:oauth:grant-type:device_code</code>
+     *        </p>
+     *        <p>
+     *        Refresh Token - <code>refresh_token</code>
      *        </p>
      *        <p>
      *        For information about how to obtain the device code, see the <a>StartDeviceAuthorization</a> topic.
@@ -267,15 +296,13 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Used only when calling this API for the device code grant type. This short-term code is used to identify this
-     * authentication attempt. This should come from an in-memory reference to the result of the
-     * <a>StartDeviceAuthorization</a> API.
+     * Used only when calling this API for the Device Code grant type. This short-term code is used to identify this
+     * authorization request. This comes from the result of the <a>StartDeviceAuthorization</a> API.
      * </p>
      * 
      * @param deviceCode
-     *        Used only when calling this API for the device code grant type. This short-term code is used to identify
-     *        this authentication attempt. This should come from an in-memory reference to the result of the
-     *        <a>StartDeviceAuthorization</a> API.
+     *        Used only when calling this API for the Device Code grant type. This short-term code is used to identify
+     *        this authorization request. This comes from the result of the <a>StartDeviceAuthorization</a> API.
      */
 
     public void setDeviceCode(String deviceCode) {
@@ -284,14 +311,12 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Used only when calling this API for the device code grant type. This short-term code is used to identify this
-     * authentication attempt. This should come from an in-memory reference to the result of the
-     * <a>StartDeviceAuthorization</a> API.
+     * Used only when calling this API for the Device Code grant type. This short-term code is used to identify this
+     * authorization request. This comes from the result of the <a>StartDeviceAuthorization</a> API.
      * </p>
      * 
-     * @return Used only when calling this API for the device code grant type. This short-term code is used to identify
-     *         this authentication attempt. This should come from an in-memory reference to the result of the
-     *         <a>StartDeviceAuthorization</a> API.
+     * @return Used only when calling this API for the Device Code grant type. This short-term code is used to identify
+     *         this authorization request. This comes from the result of the <a>StartDeviceAuthorization</a> API.
      */
 
     public String getDeviceCode() {
@@ -300,15 +325,13 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Used only when calling this API for the device code grant type. This short-term code is used to identify this
-     * authentication attempt. This should come from an in-memory reference to the result of the
-     * <a>StartDeviceAuthorization</a> API.
+     * Used only when calling this API for the Device Code grant type. This short-term code is used to identify this
+     * authorization request. This comes from the result of the <a>StartDeviceAuthorization</a> API.
      * </p>
      * 
      * @param deviceCode
-     *        Used only when calling this API for the device code grant type. This short-term code is used to identify
-     *        this authentication attempt. This should come from an in-memory reference to the result of the
-     *        <a>StartDeviceAuthorization</a> API.
+     *        Used only when calling this API for the Device Code grant type. This short-term code is used to identify
+     *        this authorization request. This comes from the result of the <a>StartDeviceAuthorization</a> API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -319,13 +342,14 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The authorization code received from the authorization service. This parameter is required to perform an
-     * authorization grant request to get access to a token.
+     * Used only when calling this API for the Authorization Code grant type. The short-term code is used to identify
+     * this authorization request. This grant type is currently unsupported for the <a>CreateToken</a> API.
      * </p>
      * 
      * @param code
-     *        The authorization code received from the authorization service. This parameter is required to perform an
-     *        authorization grant request to get access to a token.
+     *        Used only when calling this API for the Authorization Code grant type. The short-term code is used to
+     *        identify this authorization request. This grant type is currently unsupported for the <a>CreateToken</a>
+     *        API.
      */
 
     public void setCode(String code) {
@@ -334,12 +358,13 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The authorization code received from the authorization service. This parameter is required to perform an
-     * authorization grant request to get access to a token.
+     * Used only when calling this API for the Authorization Code grant type. The short-term code is used to identify
+     * this authorization request. This grant type is currently unsupported for the <a>CreateToken</a> API.
      * </p>
      * 
-     * @return The authorization code received from the authorization service. This parameter is required to perform an
-     *         authorization grant request to get access to a token.
+     * @return Used only when calling this API for the Authorization Code grant type. The short-term code is used to
+     *         identify this authorization request. This grant type is currently unsupported for the <a>CreateToken</a>
+     *         API.
      */
 
     public String getCode() {
@@ -348,13 +373,14 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The authorization code received from the authorization service. This parameter is required to perform an
-     * authorization grant request to get access to a token.
+     * Used only when calling this API for the Authorization Code grant type. The short-term code is used to identify
+     * this authorization request. This grant type is currently unsupported for the <a>CreateToken</a> API.
      * </p>
      * 
      * @param code
-     *        The authorization code received from the authorization service. This parameter is required to perform an
-     *        authorization grant request to get access to a token.
+     *        Used only when calling this API for the Authorization Code grant type. The short-term code is used to
+     *        identify this authorization request. This grant type is currently unsupported for the <a>CreateToken</a>
+     *        API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -365,23 +391,24 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the
-     * features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using
-     * this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
-     * Identity Center OIDC API Reference</a>.
+     * Used only when calling this API for the Refresh Token grant type. This token is used to refresh short-term
+     * tokens, such as the access token, that might expire.
      * </p>
      * <p>
-     * The token used to obtain an access token in the event that the access token is invalid or expired.
+     * For more information about the features and limitations of the current IAM Identity Center OIDC implementation,
+     * see <i>Considerations for Using this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API
+     * Reference</a>.
      * </p>
      * 
      * @param refreshToken
-     *        Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information
-     *        about the features and limitations of the current IAM Identity Center OIDC implementation, see
-     *        <i>Considerations for Using this Guide</i> in the <a
-     *        href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center
-     *        OIDC API Reference</a>.</p>
+     *        Used only when calling this API for the Refresh Token grant type. This token is used to refresh short-term
+     *        tokens, such as the access token, that might expire.</p>
      *        <p>
-     *        The token used to obtain an access token in the event that the access token is invalid or expired.
+     *        For more information about the features and limitations of the current IAM Identity Center OIDC
+     *        implementation, see <i>Considerations for Using this Guide</i> in the <a
+     *        href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center
+     *        OIDC API Reference</a>.
      */
 
     public void setRefreshToken(String refreshToken) {
@@ -390,22 +417,23 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the
-     * features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using
-     * this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
-     * Identity Center OIDC API Reference</a>.
+     * Used only when calling this API for the Refresh Token grant type. This token is used to refresh short-term
+     * tokens, such as the access token, that might expire.
      * </p>
      * <p>
-     * The token used to obtain an access token in the event that the access token is invalid or expired.
+     * For more information about the features and limitations of the current IAM Identity Center OIDC implementation,
+     * see <i>Considerations for Using this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API
+     * Reference</a>.
      * </p>
      * 
-     * @return Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information
-     *         about the features and limitations of the current IAM Identity Center OIDC implementation, see
-     *         <i>Considerations for Using this Guide</i> in the <a
-     *         href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center
-     *         OIDC API Reference</a>.</p>
+     * @return Used only when calling this API for the Refresh Token grant type. This token is used to refresh
+     *         short-term tokens, such as the access token, that might expire.</p>
      *         <p>
-     *         The token used to obtain an access token in the event that the access token is invalid or expired.
+     *         For more information about the features and limitations of the current IAM Identity Center OIDC
+     *         implementation, see <i>Considerations for Using this Guide</i> in the <a
+     *         href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center
+     *         OIDC API Reference</a>.
      */
 
     public String getRefreshToken() {
@@ -414,23 +442,24 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information about the
-     * features and limitations of the current IAM Identity Center OIDC implementation, see <i>Considerations for Using
-     * this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
-     * Identity Center OIDC API Reference</a>.
+     * Used only when calling this API for the Refresh Token grant type. This token is used to refresh short-term
+     * tokens, such as the access token, that might expire.
      * </p>
      * <p>
-     * The token used to obtain an access token in the event that the access token is invalid or expired.
+     * For more information about the features and limitations of the current IAM Identity Center OIDC implementation,
+     * see <i>Considerations for Using this Guide</i> in the <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center OIDC API
+     * Reference</a>.
      * </p>
      * 
      * @param refreshToken
-     *        Currently, <code>refreshToken</code> is not yet implemented and is not supported. For more information
-     *        about the features and limitations of the current IAM Identity Center OIDC implementation, see
-     *        <i>Considerations for Using this Guide</i> in the <a
-     *        href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center
-     *        OIDC API Reference</a>.</p>
+     *        Used only when calling this API for the Refresh Token grant type. This token is used to refresh short-term
+     *        tokens, such as the access token, that might expire.</p>
      *        <p>
-     *        The token used to obtain an access token in the event that the access token is invalid or expired.
+     *        For more information about the features and limitations of the current IAM Identity Center OIDC
+     *        implementation, see <i>Considerations for Using this Guide</i> in the <a
+     *        href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM Identity Center
+     *        OIDC API Reference</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -441,12 +470,14 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of scopes that is defined by the client. Upon authorization, this list is used to restrict permissions
-     * when granting an access token.
+     * The list of scopes for which authorization is requested. The access token that is issued is limited to the scopes
+     * that are granted. If this value is not specified, IAM Identity Center authorizes all scopes that are configured
+     * for the client during the call to <a>RegisterClient</a>.
      * </p>
      * 
-     * @return The list of scopes that is defined by the client. Upon authorization, this list is used to restrict
-     *         permissions when granting an access token.
+     * @return The list of scopes for which authorization is requested. The access token that is issued is limited to
+     *         the scopes that are granted. If this value is not specified, IAM Identity Center authorizes all scopes
+     *         that are configured for the client during the call to <a>RegisterClient</a>.
      */
 
     public java.util.List<String> getScope() {
@@ -455,13 +486,15 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of scopes that is defined by the client. Upon authorization, this list is used to restrict permissions
-     * when granting an access token.
+     * The list of scopes for which authorization is requested. The access token that is issued is limited to the scopes
+     * that are granted. If this value is not specified, IAM Identity Center authorizes all scopes that are configured
+     * for the client during the call to <a>RegisterClient</a>.
      * </p>
      * 
      * @param scope
-     *        The list of scopes that is defined by the client. Upon authorization, this list is used to restrict
-     *        permissions when granting an access token.
+     *        The list of scopes for which authorization is requested. The access token that is issued is limited to the
+     *        scopes that are granted. If this value is not specified, IAM Identity Center authorizes all scopes that
+     *        are configured for the client during the call to <a>RegisterClient</a>.
      */
 
     public void setScope(java.util.Collection<String> scope) {
@@ -475,8 +508,9 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of scopes that is defined by the client. Upon authorization, this list is used to restrict permissions
-     * when granting an access token.
+     * The list of scopes for which authorization is requested. The access token that is issued is limited to the scopes
+     * that are granted. If this value is not specified, IAM Identity Center authorizes all scopes that are configured
+     * for the client during the call to <a>RegisterClient</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -485,8 +519,9 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param scope
-     *        The list of scopes that is defined by the client. Upon authorization, this list is used to restrict
-     *        permissions when granting an access token.
+     *        The list of scopes for which authorization is requested. The access token that is issued is limited to the
+     *        scopes that are granted. If this value is not specified, IAM Identity Center authorizes all scopes that
+     *        are configured for the client during the call to <a>RegisterClient</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -502,13 +537,15 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of scopes that is defined by the client. Upon authorization, this list is used to restrict permissions
-     * when granting an access token.
+     * The list of scopes for which authorization is requested. The access token that is issued is limited to the scopes
+     * that are granted. If this value is not specified, IAM Identity Center authorizes all scopes that are configured
+     * for the client during the call to <a>RegisterClient</a>.
      * </p>
      * 
      * @param scope
-     *        The list of scopes that is defined by the client. Upon authorization, this list is used to restrict
-     *        permissions when granting an access token.
+     *        The list of scopes for which authorization is requested. The access token that is issued is limited to the
+     *        scopes that are granted. If this value is not specified, IAM Identity Center authorizes all scopes that
+     *        are configured for the client during the call to <a>RegisterClient</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -519,13 +556,13 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The location of the application that will receive the authorization code. Users authorize the service to send the
-     * request to this location.
+     * Used only when calling this API for the Authorization Code grant type. This value specifies the location of the
+     * client or application that has registered to receive the authorization code.
      * </p>
      * 
      * @param redirectUri
-     *        The location of the application that will receive the authorization code. Users authorize the service to
-     *        send the request to this location.
+     *        Used only when calling this API for the Authorization Code grant type. This value specifies the location
+     *        of the client or application that has registered to receive the authorization code.
      */
 
     public void setRedirectUri(String redirectUri) {
@@ -534,12 +571,12 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The location of the application that will receive the authorization code. Users authorize the service to send the
-     * request to this location.
+     * Used only when calling this API for the Authorization Code grant type. This value specifies the location of the
+     * client or application that has registered to receive the authorization code.
      * </p>
      * 
-     * @return The location of the application that will receive the authorization code. Users authorize the service to
-     *         send the request to this location.
+     * @return Used only when calling this API for the Authorization Code grant type. This value specifies the location
+     *         of the client or application that has registered to receive the authorization code.
      */
 
     public String getRedirectUri() {
@@ -548,18 +585,67 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The location of the application that will receive the authorization code. Users authorize the service to send the
-     * request to this location.
+     * Used only when calling this API for the Authorization Code grant type. This value specifies the location of the
+     * client or application that has registered to receive the authorization code.
      * </p>
      * 
      * @param redirectUri
-     *        The location of the application that will receive the authorization code. Users authorize the service to
-     *        send the request to this location.
+     *        Used only when calling this API for the Authorization Code grant type. This value specifies the location
+     *        of the client or application that has registered to receive the authorization code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateTokenRequest withRedirectUri(String redirectUri) {
         setRedirectUri(redirectUri);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Used only when calling this API for the Authorization Code grant type. This value is generated by the client and
+     * presented to validate the original code challenge value the client passed at authorization time.
+     * </p>
+     * 
+     * @param codeVerifier
+     *        Used only when calling this API for the Authorization Code grant type. This value is generated by the
+     *        client and presented to validate the original code challenge value the client passed at authorization
+     *        time.
+     */
+
+    public void setCodeVerifier(String codeVerifier) {
+        this.codeVerifier = codeVerifier;
+    }
+
+    /**
+     * <p>
+     * Used only when calling this API for the Authorization Code grant type. This value is generated by the client and
+     * presented to validate the original code challenge value the client passed at authorization time.
+     * </p>
+     * 
+     * @return Used only when calling this API for the Authorization Code grant type. This value is generated by the
+     *         client and presented to validate the original code challenge value the client passed at authorization
+     *         time.
+     */
+
+    public String getCodeVerifier() {
+        return this.codeVerifier;
+    }
+
+    /**
+     * <p>
+     * Used only when calling this API for the Authorization Code grant type. This value is generated by the client and
+     * presented to validate the original code challenge value the client passed at authorization time.
+     * </p>
+     * 
+     * @param codeVerifier
+     *        Used only when calling this API for the Authorization Code grant type. This value is generated by the
+     *        client and presented to validate the original code challenge value the client passed at authorization
+     *        time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTokenRequest withCodeVerifier(String codeVerifier) {
+        setCodeVerifier(codeVerifier);
         return this;
     }
 
@@ -578,7 +664,7 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getClientId() != null)
             sb.append("ClientId: ").append(getClientId()).append(",");
         if (getClientSecret() != null)
-            sb.append("ClientSecret: ").append(getClientSecret()).append(",");
+            sb.append("ClientSecret: ").append("***Sensitive Data Redacted***").append(",");
         if (getGrantType() != null)
             sb.append("GrantType: ").append(getGrantType()).append(",");
         if (getDeviceCode() != null)
@@ -586,11 +672,13 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getCode() != null)
             sb.append("Code: ").append(getCode()).append(",");
         if (getRefreshToken() != null)
-            sb.append("RefreshToken: ").append(getRefreshToken()).append(",");
+            sb.append("RefreshToken: ").append("***Sensitive Data Redacted***").append(",");
         if (getScope() != null)
             sb.append("Scope: ").append(getScope()).append(",");
         if (getRedirectUri() != null)
-            sb.append("RedirectUri: ").append(getRedirectUri());
+            sb.append("RedirectUri: ").append(getRedirectUri()).append(",");
+        if (getCodeVerifier() != null)
+            sb.append("CodeVerifier: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -637,6 +725,10 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getRedirectUri() != null && other.getRedirectUri().equals(this.getRedirectUri()) == false)
             return false;
+        if (other.getCodeVerifier() == null ^ this.getCodeVerifier() == null)
+            return false;
+        if (other.getCodeVerifier() != null && other.getCodeVerifier().equals(this.getCodeVerifier()) == false)
+            return false;
         return true;
     }
 
@@ -653,6 +745,7 @@ public class CreateTokenRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getRefreshToken() == null) ? 0 : getRefreshToken().hashCode());
         hashCode = prime * hashCode + ((getScope() == null) ? 0 : getScope().hashCode());
         hashCode = prime * hashCode + ((getRedirectUri() == null) ? 0 : getRedirectUri().hashCode());
+        hashCode = prime * hashCode + ((getCodeVerifier() == null) ? 0 : getCodeVerifier().hashCode());
         return hashCode;
     }
 

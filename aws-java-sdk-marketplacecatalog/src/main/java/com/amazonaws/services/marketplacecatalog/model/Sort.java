@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,8 +30,9 @@ public class Sort implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code> (default),
-     * <code>Visibility</code>, <code>EntityId</code>, and <code>Name</code>.
+     * For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code> (default) and
+     * <code>EntityId</code>. In addition to <code>LastModifiedDate</code> and <code>EntityId</code>, each
+     * <code>EntityType</code> might support additional fields.
      * </p>
      * <p>
      * For <code>ListChangeSets</code>, supported attributes include <code>StartTime</code> and <code>EndTime</code>.
@@ -48,16 +49,18 @@ public class Sort implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code> (default),
-     * <code>Visibility</code>, <code>EntityId</code>, and <code>Name</code>.
+     * For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code> (default) and
+     * <code>EntityId</code>. In addition to <code>LastModifiedDate</code> and <code>EntityId</code>, each
+     * <code>EntityType</code> might support additional fields.
      * </p>
      * <p>
      * For <code>ListChangeSets</code>, supported attributes include <code>StartTime</code> and <code>EndTime</code>.
      * </p>
      * 
      * @param sortBy
-     *        For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code> (default),
-     *        <code>Visibility</code>, <code>EntityId</code>, and <code>Name</code>.</p>
+     *        For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code> (default) and
+     *        <code>EntityId</code>. In addition to <code>LastModifiedDate</code> and <code>EntityId</code>, each
+     *        <code>EntityType</code> might support additional fields.</p>
      *        <p>
      *        For <code>ListChangeSets</code>, supported attributes include <code>StartTime</code> and
      *        <code>EndTime</code>.
@@ -69,15 +72,17 @@ public class Sort implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code> (default),
-     * <code>Visibility</code>, <code>EntityId</code>, and <code>Name</code>.
+     * For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code> (default) and
+     * <code>EntityId</code>. In addition to <code>LastModifiedDate</code> and <code>EntityId</code>, each
+     * <code>EntityType</code> might support additional fields.
      * </p>
      * <p>
      * For <code>ListChangeSets</code>, supported attributes include <code>StartTime</code> and <code>EndTime</code>.
      * </p>
      * 
-     * @return For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code> (default),
-     *         <code>Visibility</code>, <code>EntityId</code>, and <code>Name</code>.</p>
+     * @return For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code> (default) and
+     *         <code>EntityId</code>. In addition to <code>LastModifiedDate</code> and <code>EntityId</code>, each
+     *         <code>EntityType</code> might support additional fields.</p>
      *         <p>
      *         For <code>ListChangeSets</code>, supported attributes include <code>StartTime</code> and
      *         <code>EndTime</code>.
@@ -89,16 +94,18 @@ public class Sort implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code> (default),
-     * <code>Visibility</code>, <code>EntityId</code>, and <code>Name</code>.
+     * For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code> (default) and
+     * <code>EntityId</code>. In addition to <code>LastModifiedDate</code> and <code>EntityId</code>, each
+     * <code>EntityType</code> might support additional fields.
      * </p>
      * <p>
      * For <code>ListChangeSets</code>, supported attributes include <code>StartTime</code> and <code>EndTime</code>.
      * </p>
      * 
      * @param sortBy
-     *        For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code> (default),
-     *        <code>Visibility</code>, <code>EntityId</code>, and <code>Name</code>.</p>
+     *        For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code> (default) and
+     *        <code>EntityId</code>. In addition to <code>LastModifiedDate</code> and <code>EntityId</code>, each
+     *        <code>EntityType</code> might support additional fields.</p>
      *        <p>
      *        For <code>ListChangeSets</code>, supported attributes include <code>StartTime</code> and
      *        <code>EndTime</code>.

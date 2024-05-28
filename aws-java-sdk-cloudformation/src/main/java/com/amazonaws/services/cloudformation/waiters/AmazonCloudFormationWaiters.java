@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,7 +64,12 @@ public class AmazonCloudFormationWaiters {
 
         return new WaiterBuilder<DescribeStacksRequest, DescribeStacksResult>()
                 .withSdkFunction(new DescribeStacksFunction(client))
-                .withAcceptors(new StackCreateComplete.IsCREATE_COMPLETEMatcher(), new StackCreateComplete.IsCREATE_FAILEDMatcher(),
+                .withAcceptors(new StackCreateComplete.IsCREATE_COMPLETEMatcher(), new StackCreateComplete.IsUPDATE_COMPLETEMatcher(),
+                        new StackCreateComplete.IsUPDATE_IN_PROGRESSMatcher(), new StackCreateComplete.IsUPDATE_COMPLETE_CLEANUP_IN_PROGRESSMatcher(),
+                        new StackCreateComplete.IsUPDATE_FAILEDMatcher(), new StackCreateComplete.IsUPDATE_ROLLBACK_IN_PROGRESSMatcher(),
+                        new StackCreateComplete.IsUPDATE_ROLLBACK_FAILEDMatcher(),
+                        new StackCreateComplete.IsUPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESSMatcher(),
+                        new StackCreateComplete.IsUPDATE_ROLLBACK_COMPLETEMatcher(), new StackCreateComplete.IsCREATE_FAILEDMatcher(),
                         new StackCreateComplete.IsDELETE_COMPLETEMatcher(), new StackCreateComplete.IsDELETE_FAILEDMatcher(),
                         new StackCreateComplete.IsROLLBACK_FAILEDMatcher(), new StackCreateComplete.IsROLLBACK_COMPLETEMatcher(),
                         new StackCreateComplete.IsValidationErrorMatcher())
@@ -148,7 +153,8 @@ public class AmazonCloudFormationWaiters {
                 .withAcceptors(new StackDeleteComplete.IsDELETE_COMPLETEMatcher(), new StackDeleteComplete.IsValidationErrorMatcher(),
                         new StackDeleteComplete.IsDELETE_FAILEDMatcher(), new StackDeleteComplete.IsCREATE_FAILEDMatcher(),
                         new StackDeleteComplete.IsROLLBACK_FAILEDMatcher(), new StackDeleteComplete.IsUPDATE_ROLLBACK_IN_PROGRESSMatcher(),
-                        new StackDeleteComplete.IsUPDATE_ROLLBACK_FAILEDMatcher(), new StackDeleteComplete.IsUPDATE_ROLLBACK_COMPLETEMatcher())
+                        new StackDeleteComplete.IsUPDATE_ROLLBACK_FAILEDMatcher(), new StackDeleteComplete.IsUPDATE_ROLLBACK_COMPLETEMatcher(),
+                        new StackDeleteComplete.IsUPDATE_COMPLETEMatcher())
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(120), new FixedDelayStrategy(30)))
                 .withExecutorService(executorService).build();
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,8 +39,7 @@ public class StartEventsDetectionJobRequest extends com.amazonaws.AmazonWebServi
     private OutputDataConfig outputDataConfig;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend
-     * read access to your input data.
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.
      * </p>
      */
     private String dataAccessRoleArn;
@@ -70,9 +69,9 @@ public class StartEventsDetectionJobRequest extends com.amazonaws.AmazonWebServi
     private java.util.List<String> targetEventTypes;
     /**
      * <p>
-     * Tags to be associated with the events detection job. A tag is a key-value pair that adds metadata to a resource
-     * used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate
-     * its use by the sales department.
+     * Tags to associate with the events detection job. A tag is a key-value pair that adds metadata to a resource used
+     * by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use
+     * by the sales department.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -159,13 +158,12 @@ public class StartEventsDetectionJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend
-     * read access to your input data.
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon
-     *        Comprehend read access to your input data.
+     *        The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input
+     *        data.
      */
 
     public void setDataAccessRoleArn(String dataAccessRoleArn) {
@@ -174,12 +172,11 @@ public class StartEventsDetectionJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend
-     * read access to your input data.
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon
-     *         Comprehend read access to your input data.
+     * @return The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input
+     *         data.
      */
 
     public String getDataAccessRoleArn() {
@@ -188,13 +185,12 @@ public class StartEventsDetectionJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend
-     * read access to your input data.
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon
-     *        Comprehend read access to your input data.
+     *        The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input
+     *        data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -417,12 +413,12 @@ public class StartEventsDetectionJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Tags to be associated with the events detection job. A tag is a key-value pair that adds metadata to a resource
-     * used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate
-     * its use by the sales department.
+     * Tags to associate with the events detection job. A tag is a key-value pair that adds metadata to a resource used
+     * by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use
+     * by the sales department.
      * </p>
      * 
-     * @return Tags to be associated with the events detection job. A tag is a key-value pair that adds metadata to a
+     * @return Tags to associate with the events detection job. A tag is a key-value pair that adds metadata to a
      *         resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
      *         resource to indicate its use by the sales department.
      */
@@ -433,13 +429,13 @@ public class StartEventsDetectionJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Tags to be associated with the events detection job. A tag is a key-value pair that adds metadata to a resource
-     * used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate
-     * its use by the sales department.
+     * Tags to associate with the events detection job. A tag is a key-value pair that adds metadata to a resource used
+     * by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use
+     * by the sales department.
      * </p>
      * 
      * @param tags
-     *        Tags to be associated with the events detection job. A tag is a key-value pair that adds metadata to a
+     *        Tags to associate with the events detection job. A tag is a key-value pair that adds metadata to a
      *        resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
      *        resource to indicate its use by the sales department.
      */
@@ -455,9 +451,9 @@ public class StartEventsDetectionJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Tags to be associated with the events detection job. A tag is a key-value pair that adds metadata to a resource
-     * used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate
-     * its use by the sales department.
+     * Tags to associate with the events detection job. A tag is a key-value pair that adds metadata to a resource used
+     * by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use
+     * by the sales department.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -466,7 +462,7 @@ public class StartEventsDetectionJobRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param tags
-     *        Tags to be associated with the events detection job. A tag is a key-value pair that adds metadata to a
+     *        Tags to associate with the events detection job. A tag is a key-value pair that adds metadata to a
      *        resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
      *        resource to indicate its use by the sales department.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -484,13 +480,13 @@ public class StartEventsDetectionJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Tags to be associated with the events detection job. A tag is a key-value pair that adds metadata to a resource
-     * used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate
-     * its use by the sales department.
+     * Tags to associate with the events detection job. A tag is a key-value pair that adds metadata to a resource used
+     * by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use
+     * by the sales department.
      * </p>
      * 
      * @param tags
-     *        Tags to be associated with the events detection job. A tag is a key-value pair that adds metadata to a
+     *        Tags to associate with the events detection job. A tag is a key-value pair that adds metadata to a
      *        resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
      *        resource to indicate its use by the sales department.
      * @return Returns a reference to this object so that method calls can be chained together.

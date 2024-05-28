@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -102,20 +102,39 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<Column> partitionKeys;
     /**
      * <p>
-     * If the table is a view, the original text of the view; otherwise <code>null</code>.
+     * Included for Apache Hive compatibility. Not used in the normal course of Glue operations. If the table is a
+     * <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded in base64.
      * </p>
      */
     private String viewOriginalText;
     /**
      * <p>
-     * If the table is a view, the expanded text of the view; otherwise <code>null</code>.
+     * Included for Apache Hive compatibility. Not used in the normal course of Glue operations.
      * </p>
      */
     private String viewExpandedText;
     /**
      * <p>
-     * The type of this table (<code>EXTERNAL_TABLE</code>, <code>VIRTUAL_VIEW</code>, etc.).
+     * The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services, such
+     * as Athena, may create tables with additional table types.
      * </p>
+     * <p>
+     * Glue related table types:
+     * </p>
+     * <dl>
+     * <dt>EXTERNAL_TABLE</dt>
+     * <dd>
+     * <p>
+     * Hive compatible attribute - indicates a non-Hive managed table.
+     * </p>
+     * </dd>
+     * <dt>GOVERNED</dt>
+     * <dd>
+     * <p>
+     * Used by Lake Formation. The Glue Data Catalog understands <code>GOVERNED</code>.
+     * </p>
+     * </dd>
+     * </dl>
      */
     private String tableType;
     /**
@@ -154,6 +173,26 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String versionId;
+    /**
+     * <p>
+     * A <code>FederatedTable</code> structure that references an entity outside the Glue Data Catalog.
+     * </p>
+     */
+    private FederatedTable federatedTable;
+    /**
+     * <p>
+     * A structure that contains all the information that defines the view, including the dialect or dialects for the
+     * view, and the query.
+     * </p>
+     */
+    private ViewDefinition viewDefinition;
+    /**
+     * <p>
+     * Specifies whether the view supports the SQL dialects of one or more different query engines and can therefore be
+     * read by those engines.
+     * </p>
+     */
+    private Boolean isMultiDialectView;
 
     /**
      * <p>
@@ -686,11 +725,13 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the table is a view, the original text of the view; otherwise <code>null</code>.
+     * Included for Apache Hive compatibility. Not used in the normal course of Glue operations. If the table is a
+     * <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded in base64.
      * </p>
      * 
      * @param viewOriginalText
-     *        If the table is a view, the original text of the view; otherwise <code>null</code>.
+     *        Included for Apache Hive compatibility. Not used in the normal course of Glue operations. If the table is
+     *        a <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded in base64.
      */
 
     public void setViewOriginalText(String viewOriginalText) {
@@ -699,10 +740,12 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the table is a view, the original text of the view; otherwise <code>null</code>.
+     * Included for Apache Hive compatibility. Not used in the normal course of Glue operations. If the table is a
+     * <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded in base64.
      * </p>
      * 
-     * @return If the table is a view, the original text of the view; otherwise <code>null</code>.
+     * @return Included for Apache Hive compatibility. Not used in the normal course of Glue operations. If the table is
+     *         a <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded in base64.
      */
 
     public String getViewOriginalText() {
@@ -711,11 +754,13 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the table is a view, the original text of the view; otherwise <code>null</code>.
+     * Included for Apache Hive compatibility. Not used in the normal course of Glue operations. If the table is a
+     * <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded in base64.
      * </p>
      * 
      * @param viewOriginalText
-     *        If the table is a view, the original text of the view; otherwise <code>null</code>.
+     *        Included for Apache Hive compatibility. Not used in the normal course of Glue operations. If the table is
+     *        a <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded in base64.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -726,11 +771,11 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the table is a view, the expanded text of the view; otherwise <code>null</code>.
+     * Included for Apache Hive compatibility. Not used in the normal course of Glue operations.
      * </p>
      * 
      * @param viewExpandedText
-     *        If the table is a view, the expanded text of the view; otherwise <code>null</code>.
+     *        Included for Apache Hive compatibility. Not used in the normal course of Glue operations.
      */
 
     public void setViewExpandedText(String viewExpandedText) {
@@ -739,10 +784,10 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the table is a view, the expanded text of the view; otherwise <code>null</code>.
+     * Included for Apache Hive compatibility. Not used in the normal course of Glue operations.
      * </p>
      * 
-     * @return If the table is a view, the expanded text of the view; otherwise <code>null</code>.
+     * @return Included for Apache Hive compatibility. Not used in the normal course of Glue operations.
      */
 
     public String getViewExpandedText() {
@@ -751,11 +796,11 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If the table is a view, the expanded text of the view; otherwise <code>null</code>.
+     * Included for Apache Hive compatibility. Not used in the normal course of Glue operations.
      * </p>
      * 
      * @param viewExpandedText
-     *        If the table is a view, the expanded text of the view; otherwise <code>null</code>.
+     *        Included for Apache Hive compatibility. Not used in the normal course of Glue operations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -766,11 +811,46 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of this table (<code>EXTERNAL_TABLE</code>, <code>VIRTUAL_VIEW</code>, etc.).
+     * The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services, such
+     * as Athena, may create tables with additional table types.
      * </p>
+     * <p>
+     * Glue related table types:
+     * </p>
+     * <dl>
+     * <dt>EXTERNAL_TABLE</dt>
+     * <dd>
+     * <p>
+     * Hive compatible attribute - indicates a non-Hive managed table.
+     * </p>
+     * </dd>
+     * <dt>GOVERNED</dt>
+     * <dd>
+     * <p>
+     * Used by Lake Formation. The Glue Data Catalog understands <code>GOVERNED</code>.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @param tableType
-     *        The type of this table (<code>EXTERNAL_TABLE</code>, <code>VIRTUAL_VIEW</code>, etc.).
+     *        The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services,
+     *        such as Athena, may create tables with additional table types. </p>
+     *        <p>
+     *        Glue related table types:
+     *        </p>
+     *        <dl>
+     *        <dt>EXTERNAL_TABLE</dt>
+     *        <dd>
+     *        <p>
+     *        Hive compatible attribute - indicates a non-Hive managed table.
+     *        </p>
+     *        </dd>
+     *        <dt>GOVERNED</dt>
+     *        <dd>
+     *        <p>
+     *        Used by Lake Formation. The Glue Data Catalog understands <code>GOVERNED</code>.
+     *        </p>
+     *        </dd>
      */
 
     public void setTableType(String tableType) {
@@ -779,10 +859,45 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of this table (<code>EXTERNAL_TABLE</code>, <code>VIRTUAL_VIEW</code>, etc.).
+     * The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services, such
+     * as Athena, may create tables with additional table types.
      * </p>
+     * <p>
+     * Glue related table types:
+     * </p>
+     * <dl>
+     * <dt>EXTERNAL_TABLE</dt>
+     * <dd>
+     * <p>
+     * Hive compatible attribute - indicates a non-Hive managed table.
+     * </p>
+     * </dd>
+     * <dt>GOVERNED</dt>
+     * <dd>
+     * <p>
+     * Used by Lake Formation. The Glue Data Catalog understands <code>GOVERNED</code>.
+     * </p>
+     * </dd>
+     * </dl>
      * 
-     * @return The type of this table (<code>EXTERNAL_TABLE</code>, <code>VIRTUAL_VIEW</code>, etc.).
+     * @return The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other
+     *         services, such as Athena, may create tables with additional table types. </p>
+     *         <p>
+     *         Glue related table types:
+     *         </p>
+     *         <dl>
+     *         <dt>EXTERNAL_TABLE</dt>
+     *         <dd>
+     *         <p>
+     *         Hive compatible attribute - indicates a non-Hive managed table.
+     *         </p>
+     *         </dd>
+     *         <dt>GOVERNED</dt>
+     *         <dd>
+     *         <p>
+     *         Used by Lake Formation. The Glue Data Catalog understands <code>GOVERNED</code>.
+     *         </p>
+     *         </dd>
      */
 
     public String getTableType() {
@@ -791,11 +906,46 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of this table (<code>EXTERNAL_TABLE</code>, <code>VIRTUAL_VIEW</code>, etc.).
+     * The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services, such
+     * as Athena, may create tables with additional table types.
      * </p>
+     * <p>
+     * Glue related table types:
+     * </p>
+     * <dl>
+     * <dt>EXTERNAL_TABLE</dt>
+     * <dd>
+     * <p>
+     * Hive compatible attribute - indicates a non-Hive managed table.
+     * </p>
+     * </dd>
+     * <dt>GOVERNED</dt>
+     * <dd>
+     * <p>
+     * Used by Lake Formation. The Glue Data Catalog understands <code>GOVERNED</code>.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @param tableType
-     *        The type of this table (<code>EXTERNAL_TABLE</code>, <code>VIRTUAL_VIEW</code>, etc.).
+     *        The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code> type. Other services,
+     *        such as Athena, may create tables with additional table types. </p>
+     *        <p>
+     *        Glue related table types:
+     *        </p>
+     *        <dl>
+     *        <dt>EXTERNAL_TABLE</dt>
+     *        <dd>
+     *        <p>
+     *        Hive compatible attribute - indicates a non-Hive managed table.
+     *        </p>
+     *        </dd>
+     *        <dt>GOVERNED</dt>
+     *        <dd>
+     *        <p>
+     *        Used by Lake Formation. The Glue Data Catalog understands <code>GOVERNED</code>.
+     *        </p>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1085,6 +1235,152 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A <code>FederatedTable</code> structure that references an entity outside the Glue Data Catalog.
+     * </p>
+     * 
+     * @param federatedTable
+     *        A <code>FederatedTable</code> structure that references an entity outside the Glue Data Catalog.
+     */
+
+    public void setFederatedTable(FederatedTable federatedTable) {
+        this.federatedTable = federatedTable;
+    }
+
+    /**
+     * <p>
+     * A <code>FederatedTable</code> structure that references an entity outside the Glue Data Catalog.
+     * </p>
+     * 
+     * @return A <code>FederatedTable</code> structure that references an entity outside the Glue Data Catalog.
+     */
+
+    public FederatedTable getFederatedTable() {
+        return this.federatedTable;
+    }
+
+    /**
+     * <p>
+     * A <code>FederatedTable</code> structure that references an entity outside the Glue Data Catalog.
+     * </p>
+     * 
+     * @param federatedTable
+     *        A <code>FederatedTable</code> structure that references an entity outside the Glue Data Catalog.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Table withFederatedTable(FederatedTable federatedTable) {
+        setFederatedTable(federatedTable);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A structure that contains all the information that defines the view, including the dialect or dialects for the
+     * view, and the query.
+     * </p>
+     * 
+     * @param viewDefinition
+     *        A structure that contains all the information that defines the view, including the dialect or dialects for
+     *        the view, and the query.
+     */
+
+    public void setViewDefinition(ViewDefinition viewDefinition) {
+        this.viewDefinition = viewDefinition;
+    }
+
+    /**
+     * <p>
+     * A structure that contains all the information that defines the view, including the dialect or dialects for the
+     * view, and the query.
+     * </p>
+     * 
+     * @return A structure that contains all the information that defines the view, including the dialect or dialects
+     *         for the view, and the query.
+     */
+
+    public ViewDefinition getViewDefinition() {
+        return this.viewDefinition;
+    }
+
+    /**
+     * <p>
+     * A structure that contains all the information that defines the view, including the dialect or dialects for the
+     * view, and the query.
+     * </p>
+     * 
+     * @param viewDefinition
+     *        A structure that contains all the information that defines the view, including the dialect or dialects for
+     *        the view, and the query.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Table withViewDefinition(ViewDefinition viewDefinition) {
+        setViewDefinition(viewDefinition);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the view supports the SQL dialects of one or more different query engines and can therefore be
+     * read by those engines.
+     * </p>
+     * 
+     * @param isMultiDialectView
+     *        Specifies whether the view supports the SQL dialects of one or more different query engines and can
+     *        therefore be read by those engines.
+     */
+
+    public void setIsMultiDialectView(Boolean isMultiDialectView) {
+        this.isMultiDialectView = isMultiDialectView;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the view supports the SQL dialects of one or more different query engines and can therefore be
+     * read by those engines.
+     * </p>
+     * 
+     * @return Specifies whether the view supports the SQL dialects of one or more different query engines and can
+     *         therefore be read by those engines.
+     */
+
+    public Boolean getIsMultiDialectView() {
+        return this.isMultiDialectView;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the view supports the SQL dialects of one or more different query engines and can therefore be
+     * read by those engines.
+     * </p>
+     * 
+     * @param isMultiDialectView
+     *        Specifies whether the view supports the SQL dialects of one or more different query engines and can
+     *        therefore be read by those engines.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Table withIsMultiDialectView(Boolean isMultiDialectView) {
+        setIsMultiDialectView(isMultiDialectView);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the view supports the SQL dialects of one or more different query engines and can therefore be
+     * read by those engines.
+     * </p>
+     * 
+     * @return Specifies whether the view supports the SQL dialects of one or more different query engines and can
+     *         therefore be read by those engines.
+     */
+
+    public Boolean isMultiDialectView() {
+        return this.isMultiDialectView;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1135,7 +1431,13 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
         if (getCatalogId() != null)
             sb.append("CatalogId: ").append(getCatalogId()).append(",");
         if (getVersionId() != null)
-            sb.append("VersionId: ").append(getVersionId());
+            sb.append("VersionId: ").append(getVersionId()).append(",");
+        if (getFederatedTable() != null)
+            sb.append("FederatedTable: ").append(getFederatedTable()).append(",");
+        if (getViewDefinition() != null)
+            sb.append("ViewDefinition: ").append(getViewDefinition()).append(",");
+        if (getIsMultiDialectView() != null)
+            sb.append("IsMultiDialectView: ").append(getIsMultiDialectView());
         sb.append("}");
         return sb.toString();
     }
@@ -1231,6 +1533,18 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getVersionId() != null && other.getVersionId().equals(this.getVersionId()) == false)
             return false;
+        if (other.getFederatedTable() == null ^ this.getFederatedTable() == null)
+            return false;
+        if (other.getFederatedTable() != null && other.getFederatedTable().equals(this.getFederatedTable()) == false)
+            return false;
+        if (other.getViewDefinition() == null ^ this.getViewDefinition() == null)
+            return false;
+        if (other.getViewDefinition() != null && other.getViewDefinition().equals(this.getViewDefinition()) == false)
+            return false;
+        if (other.getIsMultiDialectView() == null ^ this.getIsMultiDialectView() == null)
+            return false;
+        if (other.getIsMultiDialectView() != null && other.getIsMultiDialectView().equals(this.getIsMultiDialectView()) == false)
+            return false;
         return true;
     }
 
@@ -1259,6 +1573,9 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTargetTable() == null) ? 0 : getTargetTable().hashCode());
         hashCode = prime * hashCode + ((getCatalogId() == null) ? 0 : getCatalogId().hashCode());
         hashCode = prime * hashCode + ((getVersionId() == null) ? 0 : getVersionId().hashCode());
+        hashCode = prime * hashCode + ((getFederatedTable() == null) ? 0 : getFederatedTable().hashCode());
+        hashCode = prime * hashCode + ((getViewDefinition() == null) ? 0 : getViewDefinition().hashCode());
+        hashCode = prime * hashCode + ((getIsMultiDialectView() == null) ? 0 : getIsMultiDialectView().hashCode());
         return hashCode;
     }
 

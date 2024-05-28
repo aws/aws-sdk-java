@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,7 +23,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <note>
  * <p>
- * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
+ * The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.
  * </p>
  * </note>
  * 
@@ -35,7 +35,7 @@ public class InstanceTypeSpecification implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The EC2 instance type, for example <code>m3.xlarge</code>.
+     * The Amazon EC2 instance type, for example <code>m3.xlarge</code>.
      * </p>
      */
     private String instanceType;
@@ -49,13 +49,13 @@ public class InstanceTypeSpecification implements Serializable, Cloneable, Struc
     private Integer weightedCapacity;
     /**
      * <p>
-     * The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.
+     * The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.
      * </p>
      */
     private String bidPrice;
     /**
      * <p>
-     * The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined by
+     * The bid price, as a percentage of On-Demand price, for each Amazon EC2 Spot Instance as defined by
      * <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%).
      * </p>
      */
@@ -89,11 +89,11 @@ public class InstanceTypeSpecification implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The EC2 instance type, for example <code>m3.xlarge</code>.
+     * The Amazon EC2 instance type, for example <code>m3.xlarge</code>.
      * </p>
      * 
      * @param instanceType
-     *        The EC2 instance type, for example <code>m3.xlarge</code>.
+     *        The Amazon EC2 instance type, for example <code>m3.xlarge</code>.
      */
 
     public void setInstanceType(String instanceType) {
@@ -102,10 +102,10 @@ public class InstanceTypeSpecification implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The EC2 instance type, for example <code>m3.xlarge</code>.
+     * The Amazon EC2 instance type, for example <code>m3.xlarge</code>.
      * </p>
      * 
-     * @return The EC2 instance type, for example <code>m3.xlarge</code>.
+     * @return The Amazon EC2 instance type, for example <code>m3.xlarge</code>.
      */
 
     public String getInstanceType() {
@@ -114,11 +114,11 @@ public class InstanceTypeSpecification implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The EC2 instance type, for example <code>m3.xlarge</code>.
+     * The Amazon EC2 instance type, for example <code>m3.xlarge</code>.
      * </p>
      * 
      * @param instanceType
-     *        The EC2 instance type, for example <code>m3.xlarge</code>.
+     *        The Amazon EC2 instance type, for example <code>m3.xlarge</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,11 +181,12 @@ public class InstanceTypeSpecification implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.
+     * The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.
      * </p>
      * 
      * @param bidPrice
-     *        The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.
+     *        The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in
+     *        USD.
      */
 
     public void setBidPrice(String bidPrice) {
@@ -194,10 +195,11 @@ public class InstanceTypeSpecification implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.
+     * The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.
      * </p>
      * 
-     * @return The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.
+     * @return The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed
+     *         in USD.
      */
 
     public String getBidPrice() {
@@ -206,11 +208,12 @@ public class InstanceTypeSpecification implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.
+     * The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.
      * </p>
      * 
      * @param bidPrice
-     *        The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.
+     *        The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in
+     *        USD.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,12 +224,12 @@ public class InstanceTypeSpecification implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined by
+     * The bid price, as a percentage of On-Demand price, for each Amazon EC2 Spot Instance as defined by
      * <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%).
      * </p>
      * 
      * @param bidPriceAsPercentageOfOnDemandPrice
-     *        The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined by
+     *        The bid price, as a percentage of On-Demand price, for each Amazon EC2 Spot Instance as defined by
      *        <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%).
      */
 
@@ -236,11 +239,11 @@ public class InstanceTypeSpecification implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined by
+     * The bid price, as a percentage of On-Demand price, for each Amazon EC2 Spot Instance as defined by
      * <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%).
      * </p>
      * 
-     * @return The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined by
+     * @return The bid price, as a percentage of On-Demand price, for each Amazon EC2 Spot Instance as defined by
      *         <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%).
      */
 
@@ -250,12 +253,12 @@ public class InstanceTypeSpecification implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined by
+     * The bid price, as a percentage of On-Demand price, for each Amazon EC2 Spot Instance as defined by
      * <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%).
      * </p>
      * 
      * @param bidPriceAsPercentageOfOnDemandPrice
-     *        The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined by
+     *        The bid price, as a percentage of On-Demand price, for each Amazon EC2 Spot Instance as defined by
      *        <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%).
      * @return Returns a reference to this object so that method calls can be chained together.
      */

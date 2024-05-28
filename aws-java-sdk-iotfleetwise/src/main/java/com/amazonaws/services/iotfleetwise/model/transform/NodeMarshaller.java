@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,10 @@ public class NodeMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("actuator").build();
     private static final MarshallingInfo<StructuredPojo> ATTRIBUTE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("attribute").build();
+    private static final MarshallingInfo<StructuredPojo> STRUCT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("struct").build();
+    private static final MarshallingInfo<StructuredPojo> PROPERTY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("property").build();
 
     private static final NodeMarshaller instance = new NodeMarshaller();
 
@@ -56,6 +60,8 @@ public class NodeMarshaller {
             protocolMarshaller.marshall(node.getSensor(), SENSOR_BINDING);
             protocolMarshaller.marshall(node.getActuator(), ACTUATOR_BINDING);
             protocolMarshaller.marshall(node.getAttribute(), ATTRIBUTE_BINDING);
+            protocolMarshaller.marshall(node.getStruct(), STRUCT_BINDING);
+            protocolMarshaller.marshall(node.getProperty(), PROPERTY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

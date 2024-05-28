@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class Phase implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies how many concurrent users to start with.
+     * Specifies how many concurrent users to start with. The value should be between 1 and 3.
      * </p>
      */
     private Integer initialNumberOfUsers;
@@ -42,18 +42,19 @@ public class Phase implements Serializable, Cloneable, StructuredPojo {
     private Integer spawnRate;
     /**
      * <p>
-     * Specifies how long traffic phase should be.
+     * Specifies how long a traffic phase should be. For custom load tests, the value should be between 120 and 3600.
+     * This value should not exceed <code>JobDurationInSeconds</code>.
      * </p>
      */
     private Integer durationInSeconds;
 
     /**
      * <p>
-     * Specifies how many concurrent users to start with.
+     * Specifies how many concurrent users to start with. The value should be between 1 and 3.
      * </p>
      * 
      * @param initialNumberOfUsers
-     *        Specifies how many concurrent users to start with.
+     *        Specifies how many concurrent users to start with. The value should be between 1 and 3.
      */
 
     public void setInitialNumberOfUsers(Integer initialNumberOfUsers) {
@@ -62,10 +63,10 @@ public class Phase implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies how many concurrent users to start with.
+     * Specifies how many concurrent users to start with. The value should be between 1 and 3.
      * </p>
      * 
-     * @return Specifies how many concurrent users to start with.
+     * @return Specifies how many concurrent users to start with. The value should be between 1 and 3.
      */
 
     public Integer getInitialNumberOfUsers() {
@@ -74,11 +75,11 @@ public class Phase implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies how many concurrent users to start with.
+     * Specifies how many concurrent users to start with. The value should be between 1 and 3.
      * </p>
      * 
      * @param initialNumberOfUsers
-     *        Specifies how many concurrent users to start with.
+     *        Specifies how many concurrent users to start with. The value should be between 1 and 3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +130,13 @@ public class Phase implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies how long traffic phase should be.
+     * Specifies how long a traffic phase should be. For custom load tests, the value should be between 120 and 3600.
+     * This value should not exceed <code>JobDurationInSeconds</code>.
      * </p>
      * 
      * @param durationInSeconds
-     *        Specifies how long traffic phase should be.
+     *        Specifies how long a traffic phase should be. For custom load tests, the value should be between 120 and
+     *        3600. This value should not exceed <code>JobDurationInSeconds</code>.
      */
 
     public void setDurationInSeconds(Integer durationInSeconds) {
@@ -142,10 +145,12 @@ public class Phase implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies how long traffic phase should be.
+     * Specifies how long a traffic phase should be. For custom load tests, the value should be between 120 and 3600.
+     * This value should not exceed <code>JobDurationInSeconds</code>.
      * </p>
      * 
-     * @return Specifies how long traffic phase should be.
+     * @return Specifies how long a traffic phase should be. For custom load tests, the value should be between 120 and
+     *         3600. This value should not exceed <code>JobDurationInSeconds</code>.
      */
 
     public Integer getDurationInSeconds() {
@@ -154,11 +159,13 @@ public class Phase implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies how long traffic phase should be.
+     * Specifies how long a traffic phase should be. For custom load tests, the value should be between 120 and 3600.
+     * This value should not exceed <code>JobDurationInSeconds</code>.
      * </p>
      * 
      * @param durationInSeconds
-     *        Specifies how long traffic phase should be.
+     *        Specifies how long a traffic phase should be. For custom load tests, the value should be between 120 and
+     *        3600. This value should not exceed <code>JobDurationInSeconds</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

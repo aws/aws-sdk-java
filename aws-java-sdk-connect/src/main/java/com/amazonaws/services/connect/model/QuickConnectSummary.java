@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,11 +48,23 @@ public class QuickConnectSummary implements Serializable, Cloneable, StructuredP
     private String name;
     /**
      * <p>
-     * The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to
-     * assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
+     * The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted
+     * to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
      * </p>
      */
     private String quickConnectType;
+    /**
+     * <p>
+     * The timestamp when this resource was last modified.
+     * </p>
+     */
+    private java.util.Date lastModifiedTime;
+    /**
+     * <p>
+     * The Amazon Web Services Region where this resource was last modified.
+     * </p>
+     */
+    private String lastModifiedRegion;
 
     /**
      * <p>
@@ -176,12 +188,12 @@ public class QuickConnectSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to
-     * assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
+     * The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted
+     * to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
      * </p>
      * 
      * @param quickConnectType
-     *        The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are
+     *        The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are
      *        prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
      * @see QuickConnectType
      */
@@ -192,11 +204,11 @@ public class QuickConnectSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to
-     * assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
+     * The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted
+     * to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
      * </p>
      * 
-     * @return The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are
+     * @return The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are
      *         prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
      * @see QuickConnectType
      */
@@ -207,12 +219,12 @@ public class QuickConnectSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to
-     * assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
+     * The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted
+     * to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
      * </p>
      * 
      * @param quickConnectType
-     *        The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are
+     *        The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are
      *        prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see QuickConnectType
@@ -225,12 +237,12 @@ public class QuickConnectSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to
-     * assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
+     * The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are prompted
+     * to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
      * </p>
      * 
      * @param quickConnectType
-     *        The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are
+     *        The type of quick connect. In the Amazon Connect admin website, when you create a quick connect, you are
      *        prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see QuickConnectType
@@ -238,6 +250,86 @@ public class QuickConnectSummary implements Serializable, Cloneable, StructuredP
 
     public QuickConnectSummary withQuickConnectType(QuickConnectType quickConnectType) {
         this.quickConnectType = quickConnectType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The timestamp when this resource was last modified.
+     * </p>
+     * 
+     * @param lastModifiedTime
+     *        The timestamp when this resource was last modified.
+     */
+
+    public void setLastModifiedTime(java.util.Date lastModifiedTime) {
+        this.lastModifiedTime = lastModifiedTime;
+    }
+
+    /**
+     * <p>
+     * The timestamp when this resource was last modified.
+     * </p>
+     * 
+     * @return The timestamp when this resource was last modified.
+     */
+
+    public java.util.Date getLastModifiedTime() {
+        return this.lastModifiedTime;
+    }
+
+    /**
+     * <p>
+     * The timestamp when this resource was last modified.
+     * </p>
+     * 
+     * @param lastModifiedTime
+     *        The timestamp when this resource was last modified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public QuickConnectSummary withLastModifiedTime(java.util.Date lastModifiedTime) {
+        setLastModifiedTime(lastModifiedTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services Region where this resource was last modified.
+     * </p>
+     * 
+     * @param lastModifiedRegion
+     *        The Amazon Web Services Region where this resource was last modified.
+     */
+
+    public void setLastModifiedRegion(String lastModifiedRegion) {
+        this.lastModifiedRegion = lastModifiedRegion;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services Region where this resource was last modified.
+     * </p>
+     * 
+     * @return The Amazon Web Services Region where this resource was last modified.
+     */
+
+    public String getLastModifiedRegion() {
+        return this.lastModifiedRegion;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services Region where this resource was last modified.
+     * </p>
+     * 
+     * @param lastModifiedRegion
+     *        The Amazon Web Services Region where this resource was last modified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public QuickConnectSummary withLastModifiedRegion(String lastModifiedRegion) {
+        setLastModifiedRegion(lastModifiedRegion);
         return this;
     }
 
@@ -260,7 +352,11 @@ public class QuickConnectSummary implements Serializable, Cloneable, StructuredP
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getQuickConnectType() != null)
-            sb.append("QuickConnectType: ").append(getQuickConnectType());
+            sb.append("QuickConnectType: ").append(getQuickConnectType()).append(",");
+        if (getLastModifiedTime() != null)
+            sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
+        if (getLastModifiedRegion() != null)
+            sb.append("LastModifiedRegion: ").append(getLastModifiedRegion());
         sb.append("}");
         return sb.toString();
     }
@@ -291,6 +387,14 @@ public class QuickConnectSummary implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getQuickConnectType() != null && other.getQuickConnectType().equals(this.getQuickConnectType()) == false)
             return false;
+        if (other.getLastModifiedTime() == null ^ this.getLastModifiedTime() == null)
+            return false;
+        if (other.getLastModifiedTime() != null && other.getLastModifiedTime().equals(this.getLastModifiedTime()) == false)
+            return false;
+        if (other.getLastModifiedRegion() == null ^ this.getLastModifiedRegion() == null)
+            return false;
+        if (other.getLastModifiedRegion() != null && other.getLastModifiedRegion().equals(this.getLastModifiedRegion()) == false)
+            return false;
         return true;
     }
 
@@ -303,6 +407,8 @@ public class QuickConnectSummary implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getQuickConnectType() == null) ? 0 : getQuickConnectType().hashCode());
+        hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
+        hashCode = prime * hashCode + ((getLastModifiedRegion() == null) ? 0 : getLastModifiedRegion().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,8 @@ public class EventsDetectionJobProperties implements Serializable, Cloneable, St
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the
-     * job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:
+     * job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the
+     * ARN is as follows:
      * </p>
      * <p>
      * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:events-detection-job/&lt;job-id&gt;</code>
@@ -100,8 +101,7 @@ public class EventsDetectionJobProperties implements Serializable, Cloneable, St
     private String languageCode;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identify and Access Management (IAM) role that grants Amazon Comprehend
-     * read access to your input data.
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.
      * </p>
      */
     private String dataAccessRoleArn;
@@ -155,7 +155,8 @@ public class EventsDetectionJobProperties implements Serializable, Cloneable, St
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the
-     * job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:
+     * job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the
+     * ARN is as follows:
      * </p>
      * <p>
      * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:events-detection-job/&lt;job-id&gt;</code>
@@ -169,7 +170,8 @@ public class EventsDetectionJobProperties implements Serializable, Cloneable, St
      * 
      * @param jobArn
      *        The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for
-     *        the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+     *        the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The
+     *        format of the ARN is as follows:</p>
      *        <p>
      *        <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:events-detection-job/&lt;job-id&gt;</code>
      *        </p>
@@ -187,7 +189,8 @@ public class EventsDetectionJobProperties implements Serializable, Cloneable, St
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the
-     * job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:
+     * job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the
+     * ARN is as follows:
      * </p>
      * <p>
      * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:events-detection-job/&lt;job-id&gt;</code>
@@ -200,8 +203,8 @@ public class EventsDetectionJobProperties implements Serializable, Cloneable, St
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier
-     *         for the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as
-     *         follows:</p>
+     *         for the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The
+     *         format of the ARN is as follows:</p>
      *         <p>
      *         <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:events-detection-job/&lt;job-id&gt;</code>
      *         </p>
@@ -219,7 +222,8 @@ public class EventsDetectionJobProperties implements Serializable, Cloneable, St
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for the
-     * job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:
+     * job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The format of the
+     * ARN is as follows:
      * </p>
      * <p>
      * <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:events-detection-job/&lt;job-id&gt;</code>
@@ -233,7 +237,8 @@ public class EventsDetectionJobProperties implements Serializable, Cloneable, St
      * 
      * @param jobArn
      *        The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully qualified identifier for
-     *        the job. It includes the AWS account, Region, and the job ID. The format of the ARN is as follows:</p>
+     *        the job. It includes the Amazon Web Services account, Amazon Web Services Region, and the job ID. The
+     *        format of the ARN is as follows:</p>
      *        <p>
      *        <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:events-detection-job/&lt;job-id&gt;</code>
      *        </p>
@@ -610,13 +615,12 @@ public class EventsDetectionJobProperties implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identify and Access Management (IAM) role that grants Amazon Comprehend
-     * read access to your input data.
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) of the AWS Identify and Access Management (IAM) role that grants Amazon
-     *        Comprehend read access to your input data.
+     *        The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input
+     *        data.
      */
 
     public void setDataAccessRoleArn(String dataAccessRoleArn) {
@@ -625,12 +629,11 @@ public class EventsDetectionJobProperties implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identify and Access Management (IAM) role that grants Amazon Comprehend
-     * read access to your input data.
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS Identify and Access Management (IAM) role that grants Amazon
-     *         Comprehend read access to your input data.
+     * @return The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input
+     *         data.
      */
 
     public String getDataAccessRoleArn() {
@@ -639,13 +642,12 @@ public class EventsDetectionJobProperties implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identify and Access Management (IAM) role that grants Amazon Comprehend
-     * read access to your input data.
+     * The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) of the AWS Identify and Access Management (IAM) role that grants Amazon
-     *        Comprehend read access to your input data.
+     *        The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input
+     *        data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

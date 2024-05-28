@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,18 +28,18 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class MetricDatumMarshaller {
 
-    private static final MarshallingInfo<List> DIMENSIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("Dimensions").build();
     private static final MarshallingInfo<String> METRICNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MetricName").build();
-    private static final MarshallingInfo<StructuredPojo> STATISTICVALUES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatisticValues").build();
     private static final MarshallingInfo<java.util.Date> TIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Timestamp").timestampFormat("unixTimestamp").build();
-    private static final MarshallingInfo<String> UNIT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("Unit").build();
+    private static final MarshallingInfo<List> DIMENSIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Dimensions").build();
     private static final MarshallingInfo<Double> VALUE_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Value").build();
+    private static final MarshallingInfo<String> UNIT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Unit").build();
+    private static final MarshallingInfo<StructuredPojo> STATISTICVALUES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatisticValues").build();
 
     private static final MetricDatumMarshaller instance = new MetricDatumMarshaller();
 
@@ -57,12 +57,12 @@ public class MetricDatumMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(metricDatum.getDimensions(), DIMENSIONS_BINDING);
             protocolMarshaller.marshall(metricDatum.getMetricName(), METRICNAME_BINDING);
-            protocolMarshaller.marshall(metricDatum.getStatisticValues(), STATISTICVALUES_BINDING);
             protocolMarshaller.marshall(metricDatum.getTimestamp(), TIMESTAMP_BINDING);
-            protocolMarshaller.marshall(metricDatum.getUnit(), UNIT_BINDING);
+            protocolMarshaller.marshall(metricDatum.getDimensions(), DIMENSIONS_BINDING);
             protocolMarshaller.marshall(metricDatum.getValue(), VALUE_BINDING);
+            protocolMarshaller.marshall(metricDatum.getUnit(), UNIT_BINDING);
+            protocolMarshaller.marshall(metricDatum.getStatisticValues(), STATISTICVALUES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

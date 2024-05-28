@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The properties of a trial as returned by the <a>Search</a> API.
+ * The properties of a trial as returned by the <a
+ * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Trial" target="_top">AWS API
@@ -79,7 +80,9 @@ public class Trial implements Serializable, Cloneable, StructuredPojo {
     private MetadataProperties metadataProperties;
     /**
      * <p>
-     * The list of tags that are associated with the trial. You can use <a>Search</a> API to search on the tags.
+     * The list of tags that are associated with the trial. You can use <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the
+     * tags.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -457,10 +460,14 @@ public class Trial implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of tags that are associated with the trial. You can use <a>Search</a> API to search on the tags.
+     * The list of tags that are associated with the trial. You can use <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the
+     * tags.
      * </p>
      * 
-     * @return The list of tags that are associated with the trial. You can use <a>Search</a> API to search on the tags.
+     * @return The list of tags that are associated with the trial. You can use <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search
+     *         on the tags.
      */
 
     public java.util.List<Tag> getTags() {
@@ -469,11 +476,15 @@ public class Trial implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of tags that are associated with the trial. You can use <a>Search</a> API to search on the tags.
+     * The list of tags that are associated with the trial. You can use <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the
+     * tags.
      * </p>
      * 
      * @param tags
-     *        The list of tags that are associated with the trial. You can use <a>Search</a> API to search on the tags.
+     *        The list of tags that are associated with the trial. You can use <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search
+     *        on the tags.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -487,7 +498,9 @@ public class Trial implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of tags that are associated with the trial. You can use <a>Search</a> API to search on the tags.
+     * The list of tags that are associated with the trial. You can use <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the
+     * tags.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -496,7 +509,9 @@ public class Trial implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param tags
-     *        The list of tags that are associated with the trial. You can use <a>Search</a> API to search on the tags.
+     *        The list of tags that are associated with the trial. You can use <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search
+     *        on the tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -512,11 +527,15 @@ public class Trial implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The list of tags that are associated with the trial. You can use <a>Search</a> API to search on the tags.
+     * The list of tags that are associated with the trial. You can use <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the
+     * tags.
      * </p>
      * 
      * @param tags
-     *        The list of tags that are associated with the trial. You can use <a>Search</a> API to search on the tags.
+     *        The list of tags that are associated with the trial. You can use <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search
+     *        on the tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

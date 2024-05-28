@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,10 +33,14 @@ public class UpdateLaunchConfigurationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("copyTags").build();
     private static final MarshallingInfo<String> LAUNCHDISPOSITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("launchDisposition").build();
+    private static final MarshallingInfo<StructuredPojo> LAUNCHINTOINSTANCEPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("launchIntoInstanceProperties").build();
     private static final MarshallingInfo<StructuredPojo> LICENSING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("licensing").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<Boolean> POSTLAUNCHENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("postLaunchEnabled").build();
     private static final MarshallingInfo<String> SOURCESERVERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceServerID").build();
     private static final MarshallingInfo<String> TARGETINSTANCETYPERIGHTSIZINGMETHOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -61,8 +65,10 @@ public class UpdateLaunchConfigurationRequestMarshaller {
             protocolMarshaller.marshall(updateLaunchConfigurationRequest.getCopyPrivateIp(), COPYPRIVATEIP_BINDING);
             protocolMarshaller.marshall(updateLaunchConfigurationRequest.getCopyTags(), COPYTAGS_BINDING);
             protocolMarshaller.marshall(updateLaunchConfigurationRequest.getLaunchDisposition(), LAUNCHDISPOSITION_BINDING);
+            protocolMarshaller.marshall(updateLaunchConfigurationRequest.getLaunchIntoInstanceProperties(), LAUNCHINTOINSTANCEPROPERTIES_BINDING);
             protocolMarshaller.marshall(updateLaunchConfigurationRequest.getLicensing(), LICENSING_BINDING);
             protocolMarshaller.marshall(updateLaunchConfigurationRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(updateLaunchConfigurationRequest.getPostLaunchEnabled(), POSTLAUNCHENABLED_BINDING);
             protocolMarshaller.marshall(updateLaunchConfigurationRequest.getSourceServerID(), SOURCESERVERID_BINDING);
             protocolMarshaller.marshall(updateLaunchConfigurationRequest.getTargetInstanceTypeRightSizingMethod(), TARGETINSTANCETYPERIGHTSIZINGMETHOD_BINDING);
         } catch (Exception e) {

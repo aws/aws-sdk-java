@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details of a package version.
+ * Details about a package version.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -33,16 +33,22 @@ public class PackageVersionHistory implements Serializable, Cloneable, Structure
     private String packageVersion;
     /**
      * <p>
-     * A message associated with the package version.
+     * A message associated with the package version when it was uploaded.
      * </p>
      */
     private String commitMessage;
     /**
      * <p>
-     * The timestamp of when the package was created.
+     * The date and time when the package was created.
      * </p>
      */
     private java.util.Date createdAt;
+    /**
+     * <p>
+     * Additional information about plugin properties if the package is a <code>ZIP-PLUGIN</code> package.
+     * </p>
+     */
+    private PluginProperties pluginProperties;
 
     /**
      * <p>
@@ -86,11 +92,11 @@ public class PackageVersionHistory implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A message associated with the package version.
+     * A message associated with the package version when it was uploaded.
      * </p>
      * 
      * @param commitMessage
-     *        A message associated with the package version.
+     *        A message associated with the package version when it was uploaded.
      */
 
     public void setCommitMessage(String commitMessage) {
@@ -99,10 +105,10 @@ public class PackageVersionHistory implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A message associated with the package version.
+     * A message associated with the package version when it was uploaded.
      * </p>
      * 
-     * @return A message associated with the package version.
+     * @return A message associated with the package version when it was uploaded.
      */
 
     public String getCommitMessage() {
@@ -111,11 +117,11 @@ public class PackageVersionHistory implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A message associated with the package version.
+     * A message associated with the package version when it was uploaded.
      * </p>
      * 
      * @param commitMessage
-     *        A message associated with the package version.
+     *        A message associated with the package version when it was uploaded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +132,11 @@ public class PackageVersionHistory implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The timestamp of when the package was created.
+     * The date and time when the package was created.
      * </p>
      * 
      * @param createdAt
-     *        The timestamp of when the package was created.
+     *        The date and time when the package was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -139,10 +145,10 @@ public class PackageVersionHistory implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The timestamp of when the package was created.
+     * The date and time when the package was created.
      * </p>
      * 
-     * @return The timestamp of when the package was created.
+     * @return The date and time when the package was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -151,16 +157,56 @@ public class PackageVersionHistory implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The timestamp of when the package was created.
+     * The date and time when the package was created.
      * </p>
      * 
      * @param createdAt
-     *        The timestamp of when the package was created.
+     *        The date and time when the package was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PackageVersionHistory withCreatedAt(java.util.Date createdAt) {
         setCreatedAt(createdAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Additional information about plugin properties if the package is a <code>ZIP-PLUGIN</code> package.
+     * </p>
+     * 
+     * @param pluginProperties
+     *        Additional information about plugin properties if the package is a <code>ZIP-PLUGIN</code> package.
+     */
+
+    public void setPluginProperties(PluginProperties pluginProperties) {
+        this.pluginProperties = pluginProperties;
+    }
+
+    /**
+     * <p>
+     * Additional information about plugin properties if the package is a <code>ZIP-PLUGIN</code> package.
+     * </p>
+     * 
+     * @return Additional information about plugin properties if the package is a <code>ZIP-PLUGIN</code> package.
+     */
+
+    public PluginProperties getPluginProperties() {
+        return this.pluginProperties;
+    }
+
+    /**
+     * <p>
+     * Additional information about plugin properties if the package is a <code>ZIP-PLUGIN</code> package.
+     * </p>
+     * 
+     * @param pluginProperties
+     *        Additional information about plugin properties if the package is a <code>ZIP-PLUGIN</code> package.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PackageVersionHistory withPluginProperties(PluginProperties pluginProperties) {
+        setPluginProperties(pluginProperties);
         return this;
     }
 
@@ -181,7 +227,9 @@ public class PackageVersionHistory implements Serializable, Cloneable, Structure
         if (getCommitMessage() != null)
             sb.append("CommitMessage: ").append(getCommitMessage()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: ").append(getCreatedAt());
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
+        if (getPluginProperties() != null)
+            sb.append("PluginProperties: ").append(getPluginProperties());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +256,10 @@ public class PackageVersionHistory implements Serializable, Cloneable, Structure
             return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
+        if (other.getPluginProperties() == null ^ this.getPluginProperties() == null)
+            return false;
+        if (other.getPluginProperties() != null && other.getPluginProperties().equals(this.getPluginProperties()) == false)
+            return false;
         return true;
     }
 
@@ -219,6 +271,7 @@ public class PackageVersionHistory implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getPackageVersion() == null) ? 0 : getPackageVersion().hashCode());
         hashCode = prime * hashCode + ((getCommitMessage() == null) ? 0 : getCommitMessage().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getPluginProperties() == null) ? 0 : getPluginProperties().hashCode());
         return hashCode;
     }
 

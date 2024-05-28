@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,18 +30,18 @@ public class DeleteDeploymentConfigRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of a deployment configuration associated with the IAM user or Amazon Web Services account.
+     * The name of a deployment configuration associated with the user or Amazon Web Services account.
      * </p>
      */
     private String deploymentConfigName;
 
     /**
      * <p>
-     * The name of a deployment configuration associated with the IAM user or Amazon Web Services account.
+     * The name of a deployment configuration associated with the user or Amazon Web Services account.
      * </p>
      * 
      * @param deploymentConfigName
-     *        The name of a deployment configuration associated with the IAM user or Amazon Web Services account.
+     *        The name of a deployment configuration associated with the user or Amazon Web Services account.
      */
 
     public void setDeploymentConfigName(String deploymentConfigName) {
@@ -50,10 +50,10 @@ public class DeleteDeploymentConfigRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of a deployment configuration associated with the IAM user or Amazon Web Services account.
+     * The name of a deployment configuration associated with the user or Amazon Web Services account.
      * </p>
      * 
-     * @return The name of a deployment configuration associated with the IAM user or Amazon Web Services account.
+     * @return The name of a deployment configuration associated with the user or Amazon Web Services account.
      */
 
     public String getDeploymentConfigName() {
@@ -62,11 +62,11 @@ public class DeleteDeploymentConfigRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of a deployment configuration associated with the IAM user or Amazon Web Services account.
+     * The name of a deployment configuration associated with the user or Amazon Web Services account.
      * </p>
      * 
      * @param deploymentConfigName
-     *        The name of a deployment configuration associated with the IAM user or Amazon Web Services account.
+     *        The name of a deployment configuration associated with the user or Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

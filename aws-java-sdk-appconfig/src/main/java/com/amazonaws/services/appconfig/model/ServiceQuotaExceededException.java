@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,26 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The number of hosted configuration versions exceeds the limit for the AppConfig hosted configuration store. Delete
- * one or more versions and try again.
+ * The number of one more AppConfig resources exceeds the maximum allowed. Verify that your environment doesn't exceed
+ * the following service quotas:
+ * </p>
+ * <p>
+ * Applications: 100 max
+ * </p>
+ * <p>
+ * Deployment strategies: 20 max
+ * </p>
+ * <p>
+ * Configuration profiles: 100 max per application
+ * </p>
+ * <p>
+ * Environments: 20 max per application
+ * </p>
+ * <p>
+ * To resolve this issue, you can delete one or more resources and try again. Or, you can request a quota increase. For
+ * more information about quotas and to request an increase, see <a
+ * href="https://docs.aws.amazon.com/general/latest/gr/appconfig.html#limits_appconfig">Service quotas for AppConfig</a>
+ * in the Amazon Web Services General Reference.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

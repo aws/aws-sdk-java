@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents the status of a workspace.
+ * The status of the workspace.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/WorkspaceStatus" target="_top">AWS API
@@ -30,18 +30,18 @@ public class WorkspaceStatus implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Status code of this workspace.
+     * The current status of the workspace.
      * </p>
      */
     private String statusCode;
 
     /**
      * <p>
-     * Status code of this workspace.
+     * The current status of the workspace.
      * </p>
      * 
      * @param statusCode
-     *        Status code of this workspace.
+     *        The current status of the workspace.
      * @see WorkspaceStatusCode
      */
 
@@ -51,10 +51,10 @@ public class WorkspaceStatus implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Status code of this workspace.
+     * The current status of the workspace.
      * </p>
      * 
-     * @return Status code of this workspace.
+     * @return The current status of the workspace.
      * @see WorkspaceStatusCode
      */
 
@@ -64,11 +64,11 @@ public class WorkspaceStatus implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Status code of this workspace.
+     * The current status of the workspace.
      * </p>
      * 
      * @param statusCode
-     *        Status code of this workspace.
+     *        The current status of the workspace.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WorkspaceStatusCode
      */
@@ -80,11 +80,11 @@ public class WorkspaceStatus implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Status code of this workspace.
+     * The current status of the workspace.
      * </p>
      * 
      * @param statusCode
-     *        Status code of this workspace.
+     *        The current status of the workspace.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WorkspaceStatusCode
      */

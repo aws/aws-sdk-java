@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,7 +65,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      * <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of
      * operations, the operation is queued to be performed. For more information, see the <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes"
-     * >stack set operation status codes</a> in the CloudFormation User Guide.
+     * >stack set operation status codes</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -113,7 +113,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      * <p>
      * Use customized administrator roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions
      * for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      */
@@ -162,7 +162,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged
-     * Changes in Stack Sets</a> in the CloudFormation User Guide.
+     * Changes in Stack Sets</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      */
     private StackSetDriftDetectionDetails stackSetDriftDetectionDetails;
@@ -376,7 +376,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      * <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of
      * operations, the operation is queued to be performed. For more information, see the <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes"
-     * >stack set operation status codes</a> in the CloudFormation User Guide.
+     * >stack set operation status codes</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -419,7 +419,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      *        <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of
      *        operations, the operation is queued to be performed. For more information, see the <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes"
-     *        >stack set operation status codes</a> in the CloudFormation User Guide.
+     *        >stack set operation status codes</a> in the <i>CloudFormation User Guide</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -469,7 +469,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      * <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of
      * operations, the operation is queued to be performed. For more information, see the <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes"
-     * >stack set operation status codes</a> in the CloudFormation User Guide.
+     * >stack set operation status codes</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -511,7 +511,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      *         <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of
      *         operations, the operation is queued to be performed. For more information, see the <a href=
      *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes"
-     *         >stack set operation status codes</a> in the CloudFormation User Guide.
+     *         >stack set operation status codes</a> in the <i>CloudFormation User Guide</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -561,7 +561,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      * <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of
      * operations, the operation is queued to be performed. For more information, see the <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes"
-     * >stack set operation status codes</a> in the CloudFormation User Guide.
+     * >stack set operation status codes</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -604,7 +604,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      *        <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of
      *        operations, the operation is queued to be performed. For more information, see the <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes"
-     *        >stack set operation status codes</a> in the CloudFormation User Guide.
+     *        >stack set operation status codes</a> in the <i>CloudFormation User Guide</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -656,7 +656,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      * <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of
      * operations, the operation is queued to be performed. For more information, see the <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes"
-     * >stack set operation status codes</a> in the CloudFormation User Guide.
+     * >stack set operation status codes</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -699,7 +699,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      *        <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of
      *        operations, the operation is queued to be performed. For more information, see the <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes"
-     *        >stack set operation status codes</a> in the CloudFormation User Guide.
+     *        >stack set operation status codes</a> in the <i>CloudFormation User Guide</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -749,7 +749,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      * <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of
      * operations, the operation is queued to be performed. For more information, see the <a href=
      * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes"
-     * >stack set operation status codes</a> in the CloudFormation User Guide.
+     * >stack set operation status codes</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * </li>
      * <li>
@@ -792,7 +792,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      *        <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that require a sequence of
      *        operations, the operation is queued to be performed. For more information, see the <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes"
-     *        >stack set operation status codes</a> in the CloudFormation User Guide.
+     *        >stack set operation status codes</a> in the <i>CloudFormation User Guide</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -940,7 +940,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      * <p>
      * Use customized administrator roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions
      * for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
@@ -949,7 +949,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      *        <p>
      *        Use customized administrator roles to control which users or groups can manage specific stack sets within
      *        the same administrator account. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
      *        Permissions for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.
      */
 
@@ -964,7 +964,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      * <p>
      * Use customized administrator roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions
      * for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
@@ -972,7 +972,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      *         <p>
      *         Use customized administrator roles to control which users or groups can manage specific stack sets within
      *         the same administrator account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
      *         Permissions for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.
      */
 
@@ -987,7 +987,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      * <p>
      * Use customized administrator roles to control which users or groups can manage specific stack sets within the
      * same administrator account. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define Permissions
      * for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
@@ -996,7 +996,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      *        <p>
      *        Use customized administrator roles to control which users or groups can manage specific stack sets within
      *        the same administrator account. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Define
      *        Permissions for Multiple Administrators</a> in the <i>CloudFormation User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1226,7 +1226,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged
-     * Changes in Stack Sets</a> in the CloudFormation User Guide.
+     * Changes in Stack Sets</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param stackSetDriftDetectionDetails
@@ -1239,7 +1239,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
-     *        Unmanaged Changes in Stack Sets</a> in the CloudFormation User Guide.
+     *        Unmanaged Changes in Stack Sets</a> in the <i>CloudFormation User Guide</i>.
      */
 
     public void setStackSetDriftDetectionDetails(StackSetDriftDetectionDetails stackSetDriftDetectionDetails) {
@@ -1258,7 +1258,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged
-     * Changes in Stack Sets</a> in the CloudFormation User Guide.
+     * Changes in Stack Sets</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @return Detailed information about the drift status of the stack set. This includes information about drift
@@ -1270,7 +1270,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
-     *         Unmanaged Changes in Stack Sets</a> in the CloudFormation User Guide.
+     *         Unmanaged Changes in Stack Sets</a> in the <i>CloudFormation User Guide</i>.
      */
 
     public StackSetDriftDetectionDetails getStackSetDriftDetectionDetails() {
@@ -1289,7 +1289,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting Unmanaged
-     * Changes in Stack Sets</a> in the CloudFormation User Guide.
+     * Changes in Stack Sets</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * 
      * @param stackSetDriftDetectionDetails
@@ -1302,7 +1302,7 @@ public class StackSetOperation implements Serializable, Cloneable {
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
-     *        Unmanaged Changes in Stack Sets</a> in the CloudFormation User Guide.
+     *        Unmanaged Changes in Stack Sets</a> in the <i>CloudFormation User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

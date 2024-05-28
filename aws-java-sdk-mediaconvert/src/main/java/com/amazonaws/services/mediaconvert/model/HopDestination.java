@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class HopDestination implements Serializable, Cloneable, StructuredPojo {
     private String queue;
     /**
      * Required for setting up a job to use queue hopping. Minimum wait time in minutes until the job can hop to the
-     * destination queue. Valid range is 1 to 1440 minutes, inclusive.
+     * destination queue. Valid range is 1 to 4320 minutes, inclusive.
      */
     private Integer waitMinutes;
 
@@ -146,11 +146,11 @@ public class HopDestination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Required for setting up a job to use queue hopping. Minimum wait time in minutes until the job can hop to the
-     * destination queue. Valid range is 1 to 1440 minutes, inclusive.
+     * destination queue. Valid range is 1 to 4320 minutes, inclusive.
      * 
      * @param waitMinutes
      *        Required for setting up a job to use queue hopping. Minimum wait time in minutes until the job can hop to
-     *        the destination queue. Valid range is 1 to 1440 minutes, inclusive.
+     *        the destination queue. Valid range is 1 to 4320 minutes, inclusive.
      */
 
     public void setWaitMinutes(Integer waitMinutes) {
@@ -159,10 +159,10 @@ public class HopDestination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Required for setting up a job to use queue hopping. Minimum wait time in minutes until the job can hop to the
-     * destination queue. Valid range is 1 to 1440 minutes, inclusive.
+     * destination queue. Valid range is 1 to 4320 minutes, inclusive.
      * 
      * @return Required for setting up a job to use queue hopping. Minimum wait time in minutes until the job can hop to
-     *         the destination queue. Valid range is 1 to 1440 minutes, inclusive.
+     *         the destination queue. Valid range is 1 to 4320 minutes, inclusive.
      */
 
     public Integer getWaitMinutes() {
@@ -171,11 +171,11 @@ public class HopDestination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Required for setting up a job to use queue hopping. Minimum wait time in minutes until the job can hop to the
-     * destination queue. Valid range is 1 to 1440 minutes, inclusive.
+     * destination queue. Valid range is 1 to 4320 minutes, inclusive.
      * 
      * @param waitMinutes
      *        Required for setting up a job to use queue hopping. Minimum wait time in minutes until the job can hop to
-     *        the destination queue. Valid range is 1 to 1440 minutes, inclusive.
+     *        the destination queue. Valid range is 1 to 4320 minutes, inclusive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

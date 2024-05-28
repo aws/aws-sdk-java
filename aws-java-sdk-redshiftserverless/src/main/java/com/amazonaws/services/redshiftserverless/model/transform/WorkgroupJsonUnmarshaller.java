@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,6 +62,24 @@ public class WorkgroupJsonUnmarshaller implements Unmarshaller<Workgroup, JsonUn
                     context.nextToken();
                     workgroup.setCreationDate(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
+                if (context.testExpression("crossAccountVpcs", targetDepth)) {
+                    context.nextToken();
+                    workgroup.setCrossAccountVpcs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("customDomainCertificateArn", targetDepth)) {
+                    context.nextToken();
+                    workgroup.setCustomDomainCertificateArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("customDomainCertificateExpiryTime", targetDepth)) {
+                    context.nextToken();
+                    workgroup.setCustomDomainCertificateExpiryTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
+                if (context.testExpression("customDomainName", targetDepth)) {
+                    context.nextToken();
+                    workgroup.setCustomDomainName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("endpoint", targetDepth)) {
                     context.nextToken();
                     workgroup.setEndpoint(EndpointJsonUnmarshaller.getInstance().unmarshall(context));
@@ -70,9 +88,21 @@ public class WorkgroupJsonUnmarshaller implements Unmarshaller<Workgroup, JsonUn
                     context.nextToken();
                     workgroup.setEnhancedVpcRouting(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("maxCapacity", targetDepth)) {
+                    context.nextToken();
+                    workgroup.setMaxCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("namespaceName", targetDepth)) {
                     context.nextToken();
                     workgroup.setNamespaceName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("patchVersion", targetDepth)) {
+                    context.nextToken();
+                    workgroup.setPatchVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("port", targetDepth)) {
+                    context.nextToken();
+                    workgroup.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("publiclyAccessible", targetDepth)) {
                     context.nextToken();
@@ -105,6 +135,10 @@ public class WorkgroupJsonUnmarshaller implements Unmarshaller<Workgroup, JsonUn
                 if (context.testExpression("workgroupName", targetDepth)) {
                     context.nextToken();
                     workgroup.setWorkgroupName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("workgroupVersion", targetDepth)) {
+                    context.nextToken();
+                    workgroup.setWorkgroupVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

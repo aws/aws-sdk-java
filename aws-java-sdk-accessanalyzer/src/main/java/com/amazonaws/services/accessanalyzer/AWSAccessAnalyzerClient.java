@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.accessanalyzer.AWSAccessAnalyzerClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.accessanalyzer.model.*;
+
 import com.amazonaws.services.accessanalyzer.model.transform.*;
 
 /**
@@ -51,18 +52,34 @@ import com.amazonaws.services.accessanalyzer.model.transform.*;
  * until the service call completes.
  * <p>
  * <p>
- * Identity and Access Management Access Analyzer helps identify potential resource-access risks by enabling you to
- * identify any policies that grant access to an external principal. It does this by using logic-based reasoning to
- * analyze resource-based policies in your Amazon Web Services environment. An external principal can be another Amazon
- * Web Services account, a root user, an IAM user or role, a federated user, an Amazon Web Services service, or an
- * anonymous user. You can also use IAM Access Analyzer to preview and validate public and cross-account access to your
- * resources before deploying permissions changes. This guide describes the Identity and Access Management Access
- * Analyzer operations that you can call programmatically. For general information about IAM Access Analyzer, see <a
- * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html">Identity and Access Management
- * Access Analyzer</a> in the <b>IAM User Guide</b>.
+ * Identity and Access Management Access Analyzer helps you to set, verify, and refine your IAM policies by providing a
+ * suite of capabilities. Its features include findings for external and unused access, basic and custom policy checks
+ * for validating policies, and policy generation to generate fine-grained policies. To start using IAM Access Analyzer
+ * to identify external or unused access, you first need to create an analyzer.
  * </p>
  * <p>
- * To start using IAM Access Analyzer, you first need to create an analyzer.
+ * <b>External access analyzers</b> help identify potential risks of accessing resources by enabling you to identify any
+ * resource policies that grant access to an external principal. It does this by using logic-based reasoning to analyze
+ * resource-based policies in your Amazon Web Services environment. An external principal can be another Amazon Web
+ * Services account, a root user, an IAM user or role, a federated user, an Amazon Web Services service, or an anonymous
+ * user. You can also use IAM Access Analyzer to preview public and cross-account access to your resources before
+ * deploying permissions changes.
+ * </p>
+ * <p>
+ * <b>Unused access analyzers</b> help identify potential identity access risks by enabling you to identify unused IAM
+ * roles, unused access keys, unused console passwords, and IAM principals with unused service and action-level
+ * permissions.
+ * </p>
+ * <p>
+ * Beyond findings, IAM Access Analyzer provides basic and custom policy checks to validate IAM policies before
+ * deploying permissions changes. You can use policy generation to refine permissions by attaching a policy generated
+ * using access activity logged in CloudTrail logs.
+ * </p>
+ * <p>
+ * This guide describes the IAM Access Analyzer operations that you can call programmatically. For general information
+ * about IAM Access Analyzer, see <a
+ * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html">Identity and Access Management
+ * Access Analyzer</a> in the <b>IAM User Guide</b>.
  * </p>
  */
 @ThreadSafe
@@ -89,6 +106,9 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
                     .withSupportsIon(false)
                     .withContentTypeOverride("application/json")
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.accessanalyzer.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
                                     com.amazonaws.services.accessanalyzer.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -106,6 +126,9 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.accessanalyzer.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnprocessableEntityException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.accessanalyzer.model.transform.UnprocessableEntityExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.accessanalyzer.model.transform.ValidationExceptionUnmarshaller.getInstance()))
@@ -277,6 +300,147 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
             HttpResponseHandler<AmazonWebServiceResponse<CancelPolicyGenerationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CancelPolicyGenerationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Checks whether the specified access isn't allowed by a policy.
+     * </p>
+     * 
+     * @param checkAccessNotGrantedRequest
+     * @return Result of the CheckAccessNotGranted operation returned by the service.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws InternalServerException
+     *         Internal server error.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid.
+     * @throws UnprocessableEntityException
+     *         The specified entity could not be processed.
+     * @throws ThrottlingException
+     *         Throttling limit exceeded error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSAccessAnalyzer.CheckAccessNotGranted
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CheckAccessNotGranted"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CheckAccessNotGrantedResult checkAccessNotGranted(CheckAccessNotGrantedRequest request) {
+        request = beforeClientExecution(request);
+        return executeCheckAccessNotGranted(request);
+    }
+
+    @SdkInternalApi
+    final CheckAccessNotGrantedResult executeCheckAccessNotGranted(CheckAccessNotGrantedRequest checkAccessNotGrantedRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(checkAccessNotGrantedRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CheckAccessNotGrantedRequest> request = null;
+        Response<CheckAccessNotGrantedResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CheckAccessNotGrantedRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(checkAccessNotGrantedRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CheckAccessNotGranted");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CheckAccessNotGrantedResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new CheckAccessNotGrantedResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Checks whether new access is allowed for an updated policy when compared to the existing policy.
+     * </p>
+     * <p>
+     * You can find examples for reference policies and learn how to set up and run a custom policy check for new access
+     * in the <a href="https://github.com/aws-samples/iam-access-analyzer-custom-policy-check-samples">IAM Access
+     * Analyzer custom policy checks samples</a> repository on GitHub. The reference policies in this repository are
+     * meant to be passed to the <code>existingPolicyDocument</code> request parameter.
+     * </p>
+     * 
+     * @param checkNoNewAccessRequest
+     * @return Result of the CheckNoNewAccess operation returned by the service.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws InternalServerException
+     *         Internal server error.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid.
+     * @throws UnprocessableEntityException
+     *         The specified entity could not be processed.
+     * @throws ThrottlingException
+     *         Throttling limit exceeded error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSAccessAnalyzer.CheckNoNewAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CheckNoNewAccess"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CheckNoNewAccessResult checkNoNewAccess(CheckNoNewAccessRequest request) {
+        request = beforeClientExecution(request);
+        return executeCheckNoNewAccess(request);
+    }
+
+    @SdkInternalApi
+    final CheckNoNewAccessResult executeCheckNoNewAccess(CheckNoNewAccessRequest checkNoNewAccessRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(checkNoNewAccessRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CheckNoNewAccessRequest> request = null;
+        Response<CheckNoNewAccessResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CheckNoNewAccessRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(checkNoNewAccessRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CheckNoNewAccess");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CheckNoNewAccessResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CheckNoNewAccessResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -905,7 +1069,9 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Retrieves information about the specified finding.
+     * Retrieves information about the specified finding. GetFinding and GetFindingV2 both use
+     * <code>access-analyzer:GetFinding</code> in the <code>Action</code> element of an IAM policy statement. You must
+     * have permission to perform the <code>access-analyzer:GetFinding</code> action.
      * </p>
      * 
      * @param getFindingRequest
@@ -959,6 +1125,73 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<GetFindingResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetFindingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves information about the specified finding. GetFinding and GetFindingV2 both use
+     * <code>access-analyzer:GetFinding</code> in the <code>Action</code> element of an IAM policy statement. You must
+     * have permission to perform the <code>access-analyzer:GetFinding</code> action.
+     * </p>
+     * 
+     * @param getFindingV2Request
+     * @return Result of the GetFindingV2 operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws InternalServerException
+     *         Internal server error.
+     * @throws ThrottlingException
+     *         Throttling limit exceeded error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSAccessAnalyzer.GetFindingV2
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetFindingV2" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetFindingV2Result getFindingV2(GetFindingV2Request request) {
+        request = beforeClientExecution(request);
+        return executeGetFindingV2(request);
+    }
+
+    @SdkInternalApi
+    final GetFindingV2Result executeGetFindingV2(GetFindingV2Request getFindingV2Request) {
+
+        ExecutionContext executionContext = createExecutionContext(getFindingV2Request);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetFindingV2Request> request = null;
+        Response<GetFindingV2Result> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetFindingV2RequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getFindingV2Request));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFindingV2");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetFindingV2Result>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetFindingV2ResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1168,7 +1401,8 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Retrieves a list of resources of the specified type that have been analyzed by the specified analyzer..
+     * Retrieves a list of resources of the specified type that have been analyzed by the specified external access
+     * analyzer. This action is not supported for unused access analyzers.
      * </p>
      * 
      * @param listAnalyzedResourcesRequest
@@ -1363,7 +1597,9 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Retrieves a list of findings generated by the specified analyzer.
+     * Retrieves a list of findings generated by the specified analyzer. ListFindings and ListFindingsV2 both use
+     * <code>access-analyzer:ListFindings</code> in the <code>Action</code> element of an IAM policy statement. You must
+     * have permission to perform the <code>access-analyzer:ListFindings</code> action.
      * </p>
      * <p>
      * To learn about filter keys that you can use to retrieve a list of findings, see <a
@@ -1422,6 +1658,78 @@ public class AWSAccessAnalyzerClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<ListFindingsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListFindingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a list of findings generated by the specified analyzer. ListFindings and ListFindingsV2 both use
+     * <code>access-analyzer:ListFindings</code> in the <code>Action</code> element of an IAM policy statement. You must
+     * have permission to perform the <code>access-analyzer:ListFindings</code> action.
+     * </p>
+     * <p>
+     * To learn about filter keys that you can use to retrieve a list of findings, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">IAM Access
+     * Analyzer filter keys</a> in the <b>IAM User Guide</b>.
+     * </p>
+     * 
+     * @param listFindingsV2Request
+     * @return Result of the ListFindingsV2 operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws InternalServerException
+     *         Internal server error.
+     * @throws ThrottlingException
+     *         Throttling limit exceeded error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSAccessAnalyzer.ListFindingsV2
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListFindingsV2" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListFindingsV2Result listFindingsV2(ListFindingsV2Request request) {
+        request = beforeClientExecution(request);
+        return executeListFindingsV2(request);
+    }
+
+    @SdkInternalApi
+    final ListFindingsV2Result executeListFindingsV2(ListFindingsV2Request listFindingsV2Request) {
+
+        ExecutionContext executionContext = createExecutionContext(listFindingsV2Request);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListFindingsV2Request> request = null;
+        Response<ListFindingsV2Result> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListFindingsV2RequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFindingsV2Request));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AccessAnalyzer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFindingsV2");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListFindingsV2Result>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListFindingsV2ResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

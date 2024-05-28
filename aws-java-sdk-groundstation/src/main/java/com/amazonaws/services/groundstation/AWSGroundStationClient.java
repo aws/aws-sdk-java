@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,10 +40,12 @@ import com.amazonaws.client.AwsSyncClientParams;
 import com.amazonaws.client.builder.AdvancedConfig;
 
 import com.amazonaws.services.groundstation.AWSGroundStationClientBuilder;
+import com.amazonaws.services.groundstation.waiters.AWSGroundStationWaiters;
 
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.groundstation.model.*;
+
 import com.amazonaws.services.groundstation.model.transform.*;
 
 /**
@@ -67,6 +69,8 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
 
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "groundstation";
+
+    private volatile AWSGroundStationWaiters waiters;
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
@@ -340,6 +344,67 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Creates an Ephemeris with the specified <code>EphemerisData</code>.
+     * </p>
+     * 
+     * @param createEphemerisRequest
+     * @return Result of the CreateEphemeris operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
+     * @throws ResourceNotFoundException
+     *         Resource was not found.
+     * @sample AWSGroundStation.CreateEphemeris
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateEphemeris" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateEphemerisResult createEphemeris(CreateEphemerisRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateEphemeris(request);
+    }
+
+    @SdkInternalApi
+    final CreateEphemerisResult executeCreateEphemeris(CreateEphemerisRequest createEphemerisRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createEphemerisRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateEphemerisRequest> request = null;
+        Response<CreateEphemerisResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateEphemerisRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createEphemerisRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEphemeris");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateEphemerisResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateEphemerisResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a mission profile.
      * </p>
      * <p>
@@ -529,6 +594,67 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Deletes an ephemeris
+     * </p>
+     * 
+     * @param deleteEphemerisRequest
+     * @return Result of the DeleteEphemeris operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
+     * @throws ResourceNotFoundException
+     *         Resource was not found.
+     * @sample AWSGroundStation.DeleteEphemeris
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DeleteEphemeris" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteEphemerisResult deleteEphemeris(DeleteEphemerisRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteEphemeris(request);
+    }
+
+    @SdkInternalApi
+    final DeleteEphemerisResult executeDeleteEphemeris(DeleteEphemerisRequest deleteEphemerisRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteEphemerisRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteEphemerisRequest> request = null;
+        Response<DeleteEphemerisResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteEphemerisRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteEphemerisRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEphemeris");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteEphemerisResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteEphemerisResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a mission profile.
      * </p>
      * 
@@ -639,6 +765,134 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeContactResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeContactResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes an existing ephemeris.
+     * </p>
+     * 
+     * @param describeEphemerisRequest
+     * @return Result of the DescribeEphemeris operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
+     * @throws ResourceNotFoundException
+     *         Resource was not found.
+     * @sample AWSGroundStation.DescribeEphemeris
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DescribeEphemeris"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeEphemerisResult describeEphemeris(DescribeEphemerisRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEphemeris(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEphemerisResult executeDescribeEphemeris(DescribeEphemerisRequest describeEphemerisRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeEphemerisRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeEphemerisRequest> request = null;
+        Response<DescribeEphemerisResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeEphemerisRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEphemerisRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEphemeris");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeEphemerisResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeEphemerisResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <note>
+     * <p>
+     * For use by AWS Ground Station Agent and shouldn't be called directly.
+     * </p>
+     * </note>
+     * <p>
+     * Gets the latest configuration information for a registered agent.
+     * </p>
+     * 
+     * @param getAgentConfigurationRequest
+     * @return Result of the GetAgentConfiguration operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
+     * @throws ResourceNotFoundException
+     *         Resource was not found.
+     * @sample AWSGroundStation.GetAgentConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetAgentConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetAgentConfigurationResult getAgentConfiguration(GetAgentConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAgentConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetAgentConfigurationResult executeGetAgentConfiguration(GetAgentConfigurationRequest getAgentConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAgentConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAgentConfigurationRequest> request = null;
+        Response<GetAgentConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAgentConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAgentConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAgentConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAgentConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new GetAgentConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -778,7 +1032,7 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Returns the number of minutes used by account.
+     * Returns the number of reserved minutes used by account.
      * </p>
      * 
      * @param getMinuteUsageRequest
@@ -1150,6 +1404,67 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * List existing ephemerides.
+     * </p>
+     * 
+     * @param listEphemeridesRequest
+     * @return Result of the ListEphemerides operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
+     * @throws ResourceNotFoundException
+     *         Resource was not found.
+     * @sample AWSGroundStation.ListEphemerides
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListEphemerides" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListEphemeridesResult listEphemerides(ListEphemeridesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListEphemerides(request);
+    }
+
+    @SdkInternalApi
+    final ListEphemeridesResult executeListEphemerides(ListEphemeridesRequest listEphemeridesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listEphemeridesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListEphemeridesRequest> request = null;
+        Response<ListEphemeridesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListEphemeridesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listEphemeridesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEphemerides");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListEphemeridesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListEphemeridesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of ground stations.
      * </p>
      * 
@@ -1393,6 +1708,72 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
     }
 
     /**
+     * <note>
+     * <p>
+     * For use by AWS Ground Station Agent and shouldn't be called directly.
+     * </p>
+     * </note>
+     * <p>
+     * Registers a new agent with AWS Ground Station.
+     * </p>
+     * 
+     * @param registerAgentRequest
+     * @return Result of the RegisterAgent operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
+     * @throws ResourceNotFoundException
+     *         Resource was not found.
+     * @sample AWSGroundStation.RegisterAgent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/RegisterAgent" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public RegisterAgentResult registerAgent(RegisterAgentRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterAgent(request);
+    }
+
+    @SdkInternalApi
+    final RegisterAgentResult executeRegisterAgent(RegisterAgentRequest registerAgentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(registerAgentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RegisterAgentRequest> request = null;
+        Response<RegisterAgentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RegisterAgentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerAgentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterAgent");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RegisterAgentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RegisterAgentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Reserves a contact using specified parameters.
      * </p>
@@ -1576,6 +1957,72 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
     }
 
     /**
+     * <note>
+     * <p>
+     * For use by AWS Ground Station Agent and shouldn't be called directly.
+     * </p>
+     * </note>
+     * <p>
+     * Update the status of the agent.
+     * </p>
+     * 
+     * @param updateAgentStatusRequest
+     * @return Result of the UpdateAgentStatus operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
+     * @throws ResourceNotFoundException
+     *         Resource was not found.
+     * @sample AWSGroundStation.UpdateAgentStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateAgentStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateAgentStatusResult updateAgentStatus(UpdateAgentStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAgentStatus(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAgentStatusResult executeUpdateAgentStatus(UpdateAgentStatusRequest updateAgentStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAgentStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAgentStatusRequest> request = null;
+        Response<UpdateAgentStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAgentStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAgentStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAgentStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAgentStatusResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateAgentStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Updates the <code>Config</code> used when scheduling contacts.
      * </p>
@@ -1630,6 +2077,67 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateConfigResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateConfigResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an existing ephemeris
+     * </p>
+     * 
+     * @param updateEphemerisRequest
+     * @return Result of the UpdateEphemeris operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
+     * @throws ResourceNotFoundException
+     *         Resource was not found.
+     * @sample AWSGroundStation.UpdateEphemeris
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateEphemeris" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateEphemerisResult updateEphemeris(UpdateEphemerisRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateEphemeris(request);
+    }
+
+    @SdkInternalApi
+    final UpdateEphemerisResult executeUpdateEphemeris(UpdateEphemerisRequest updateEphemerisRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateEphemerisRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateEphemerisRequest> request = null;
+        Response<UpdateEphemerisResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateEphemerisRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateEphemerisRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GroundStation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateEphemeris");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateEphemerisResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateEphemerisResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1781,8 +2289,23 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
     }
 
     @Override
+    public AWSGroundStationWaiters waiters() {
+        if (waiters == null) {
+            synchronized (this) {
+                if (waiters == null) {
+                    waiters = new AWSGroundStationWaiters(this);
+                }
+            }
+        }
+        return waiters;
+    }
+
+    @Override
     public void shutdown() {
         super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

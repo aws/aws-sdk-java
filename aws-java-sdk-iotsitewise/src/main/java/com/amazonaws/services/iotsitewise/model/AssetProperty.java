@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,6 +76,20 @@ public class AssetProperty implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String unit;
+    /**
+     * <p>
+     * The structured path to the property from the root of the asset.
+     * </p>
+     */
+    private java.util.List<AssetPropertyPathSegment> path;
+    /**
+     * <p>
+     * The external ID of the asset property. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     */
+    private String externalId;
 
     /**
      * <p>
@@ -413,6 +427,128 @@ public class AssetProperty implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The structured path to the property from the root of the asset.
+     * </p>
+     * 
+     * @return The structured path to the property from the root of the asset.
+     */
+
+    public java.util.List<AssetPropertyPathSegment> getPath() {
+        return path;
+    }
+
+    /**
+     * <p>
+     * The structured path to the property from the root of the asset.
+     * </p>
+     * 
+     * @param path
+     *        The structured path to the property from the root of the asset.
+     */
+
+    public void setPath(java.util.Collection<AssetPropertyPathSegment> path) {
+        if (path == null) {
+            this.path = null;
+            return;
+        }
+
+        this.path = new java.util.ArrayList<AssetPropertyPathSegment>(path);
+    }
+
+    /**
+     * <p>
+     * The structured path to the property from the root of the asset.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPath(java.util.Collection)} or {@link #withPath(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param path
+     *        The structured path to the property from the root of the asset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetProperty withPath(AssetPropertyPathSegment... path) {
+        if (this.path == null) {
+            setPath(new java.util.ArrayList<AssetPropertyPathSegment>(path.length));
+        }
+        for (AssetPropertyPathSegment ele : path) {
+            this.path.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The structured path to the property from the root of the asset.
+     * </p>
+     * 
+     * @param path
+     *        The structured path to the property from the root of the asset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetProperty withPath(java.util.Collection<AssetPropertyPathSegment> path) {
+        setPath(path);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The external ID of the asset property. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param externalId
+     *        The external ID of the asset property. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *        external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     */
+
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
+    }
+
+    /**
+     * <p>
+     * The external ID of the asset property. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @return The external ID of the asset property. For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *         external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     */
+
+    public String getExternalId() {
+        return this.externalId;
+    }
+
+    /**
+     * <p>
+     * The external ID of the asset property. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param externalId
+     *        The external ID of the asset property. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *        external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetProperty withExternalId(String externalId) {
+        setExternalId(externalId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -437,7 +573,11 @@ public class AssetProperty implements Serializable, Cloneable, StructuredPojo {
         if (getDataTypeSpec() != null)
             sb.append("DataTypeSpec: ").append(getDataTypeSpec()).append(",");
         if (getUnit() != null)
-            sb.append("Unit: ").append(getUnit());
+            sb.append("Unit: ").append(getUnit()).append(",");
+        if (getPath() != null)
+            sb.append("Path: ").append(getPath()).append(",");
+        if (getExternalId() != null)
+            sb.append("ExternalId: ").append(getExternalId());
         sb.append("}");
         return sb.toString();
     }
@@ -480,6 +620,14 @@ public class AssetProperty implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getUnit() != null && other.getUnit().equals(this.getUnit()) == false)
             return false;
+        if (other.getPath() == null ^ this.getPath() == null)
+            return false;
+        if (other.getPath() != null && other.getPath().equals(this.getPath()) == false)
+            return false;
+        if (other.getExternalId() == null ^ this.getExternalId() == null)
+            return false;
+        if (other.getExternalId() != null && other.getExternalId().equals(this.getExternalId()) == false)
+            return false;
         return true;
     }
 
@@ -495,6 +643,8 @@ public class AssetProperty implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDataType() == null) ? 0 : getDataType().hashCode());
         hashCode = prime * hashCode + ((getDataTypeSpec() == null) ? 0 : getDataTypeSpec().hashCode());
         hashCode = prime * hashCode + ((getUnit() == null) ? 0 : getUnit().hashCode());
+        hashCode = prime * hashCode + ((getPath() == null) ? 0 : getPath().hashCode());
+        hashCode = prime * hashCode + ((getExternalId() == null) ? 0 : getExternalId().hashCode());
         return hashCode;
     }
 

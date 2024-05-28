@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,8 @@ public class TrainingSpecificationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrainingChannels").build();
     private static final MarshallingInfo<List> SUPPORTEDTUNINGJOBOBJECTIVEMETRICS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SupportedTuningJobObjectiveMetrics").build();
+    private static final MarshallingInfo<StructuredPojo> ADDITIONALS3DATASOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdditionalS3DataSource").build();
 
     private static final TrainingSpecificationMarshaller instance = new TrainingSpecificationMarshaller();
 
@@ -69,6 +71,7 @@ public class TrainingSpecificationMarshaller {
             protocolMarshaller.marshall(trainingSpecification.getMetricDefinitions(), METRICDEFINITIONS_BINDING);
             protocolMarshaller.marshall(trainingSpecification.getTrainingChannels(), TRAININGCHANNELS_BINDING);
             protocolMarshaller.marshall(trainingSpecification.getSupportedTuningJobObjectiveMetrics(), SUPPORTEDTUNINGJOBOBJECTIVEMETRICS_BINDING);
+            protocolMarshaller.marshall(trainingSpecification.getAdditionalS3DataSource(), ADDITIONALS3DATASOURCE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

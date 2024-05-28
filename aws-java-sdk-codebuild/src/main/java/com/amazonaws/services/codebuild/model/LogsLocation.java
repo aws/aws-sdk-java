@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,8 @@ public class LogsLocation implements Serializable, Cloneable, StructuredPojo {
     private String streamName;
     /**
      * <p>
-     * The URL to an individual build log in CloudWatch Logs.
+     * The URL to an individual build log in CloudWatch Logs. The log stream is created during the PROVISIONING phase of
+     * a build and the <code>deeplink</code> will not be valid until it is created.
      * </p>
      */
     private String deepLink;
@@ -54,9 +55,10 @@ public class LogsLocation implements Serializable, Cloneable, StructuredPojo {
     private String s3DeepLink;
     /**
      * <p>
-     * The ARN of CloudWatch Logs for a build project. Its format is
+     * The ARN of the CloudWatch Logs stream for a build execution. Its format is
      * <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
-     * For more information, see <a href=
+     * The CloudWatch Logs stream is created during the PROVISIONING phase of a build and the ARN will not be valid
+     * until it is created. For more information, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies"
      * >Resources Defined by CloudWatch Logs</a>.
      * </p>
@@ -166,11 +168,13 @@ public class LogsLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL to an individual build log in CloudWatch Logs.
+     * The URL to an individual build log in CloudWatch Logs. The log stream is created during the PROVISIONING phase of
+     * a build and the <code>deeplink</code> will not be valid until it is created.
      * </p>
      * 
      * @param deepLink
-     *        The URL to an individual build log in CloudWatch Logs.
+     *        The URL to an individual build log in CloudWatch Logs. The log stream is created during the PROVISIONING
+     *        phase of a build and the <code>deeplink</code> will not be valid until it is created.
      */
 
     public void setDeepLink(String deepLink) {
@@ -179,10 +183,12 @@ public class LogsLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL to an individual build log in CloudWatch Logs.
+     * The URL to an individual build log in CloudWatch Logs. The log stream is created during the PROVISIONING phase of
+     * a build and the <code>deeplink</code> will not be valid until it is created.
      * </p>
      * 
-     * @return The URL to an individual build log in CloudWatch Logs.
+     * @return The URL to an individual build log in CloudWatch Logs. The log stream is created during the PROVISIONING
+     *         phase of a build and the <code>deeplink</code> will not be valid until it is created.
      */
 
     public String getDeepLink() {
@@ -191,11 +197,13 @@ public class LogsLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL to an individual build log in CloudWatch Logs.
+     * The URL to an individual build log in CloudWatch Logs. The log stream is created during the PROVISIONING phase of
+     * a build and the <code>deeplink</code> will not be valid until it is created.
      * </p>
      * 
      * @param deepLink
-     *        The URL to an individual build log in CloudWatch Logs.
+     *        The URL to an individual build log in CloudWatch Logs. The log stream is created during the PROVISIONING
+     *        phase of a build and the <code>deeplink</code> will not be valid until it is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -246,17 +254,19 @@ public class LogsLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of CloudWatch Logs for a build project. Its format is
+     * The ARN of the CloudWatch Logs stream for a build execution. Its format is
      * <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
-     * For more information, see <a href=
+     * The CloudWatch Logs stream is created during the PROVISIONING phase of a build and the ARN will not be valid
+     * until it is created. For more information, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies"
      * >Resources Defined by CloudWatch Logs</a>.
      * </p>
      * 
      * @param cloudWatchLogsArn
-     *        The ARN of CloudWatch Logs for a build project. Its format is
+     *        The ARN of the CloudWatch Logs stream for a build execution. Its format is
      *        <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>
-     *        . For more information, see <a href=
+     *        . The CloudWatch Logs stream is created during the PROVISIONING phase of a build and the ARN will not be
+     *        valid until it is created. For more information, see <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies"
      *        >Resources Defined by CloudWatch Logs</a>.
      */
@@ -267,16 +277,18 @@ public class LogsLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of CloudWatch Logs for a build project. Its format is
+     * The ARN of the CloudWatch Logs stream for a build execution. Its format is
      * <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
-     * For more information, see <a href=
+     * The CloudWatch Logs stream is created during the PROVISIONING phase of a build and the ARN will not be valid
+     * until it is created. For more information, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies"
      * >Resources Defined by CloudWatch Logs</a>.
      * </p>
      * 
-     * @return The ARN of CloudWatch Logs for a build project. Its format is
+     * @return The ARN of the CloudWatch Logs stream for a build execution. Its format is
      *         <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>
-     *         . For more information, see <a href=
+     *         . The CloudWatch Logs stream is created during the PROVISIONING phase of a build and the ARN will not be
+     *         valid until it is created. For more information, see <a href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies"
      *         >Resources Defined by CloudWatch Logs</a>.
      */
@@ -287,17 +299,19 @@ public class LogsLocation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of CloudWatch Logs for a build project. Its format is
+     * The ARN of the CloudWatch Logs stream for a build execution. Its format is
      * <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
-     * For more information, see <a href=
+     * The CloudWatch Logs stream is created during the PROVISIONING phase of a build and the ARN will not be valid
+     * until it is created. For more information, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies"
      * >Resources Defined by CloudWatch Logs</a>.
      * </p>
      * 
      * @param cloudWatchLogsArn
-     *        The ARN of CloudWatch Logs for a build project. Its format is
+     *        The ARN of the CloudWatch Logs stream for a build execution. Its format is
      *        <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>
-     *        . For more information, see <a href=
+     *        . The CloudWatch Logs stream is created during the PROVISIONING phase of a build and the ARN will not be
+     *        valid until it is created. For more information, see <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies"
      *        >Resources Defined by CloudWatch Logs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

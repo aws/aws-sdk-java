@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,11 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     }
 
     @Override
+    public ActivateOrganizationsAccessResult activateOrganizationsAccess(ActivateOrganizationsAccessRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ActivateTypeResult activateType(ActivateTypeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -64,6 +69,11 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     }
 
     @Override
+    public CreateGeneratedTemplateResult createGeneratedTemplate(CreateGeneratedTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateStackResult createStack(CreateStackRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -79,12 +89,22 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     }
 
     @Override
+    public DeactivateOrganizationsAccessResult deactivateOrganizationsAccess(DeactivateOrganizationsAccessRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeactivateTypeResult deactivateType(DeactivateTypeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteChangeSetResult deleteChangeSet(DeleteChangeSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteGeneratedTemplateResult deleteGeneratedTemplate(DeleteGeneratedTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -124,7 +144,22 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     }
 
     @Override
+    public DescribeGeneratedTemplateResult describeGeneratedTemplate(DescribeGeneratedTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeOrganizationsAccessResult describeOrganizationsAccess(DescribeOrganizationsAccessRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribePublisherResult describePublisher(DescribePublisherRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeResourceScanResult describeResourceScan(DescribeResourceScanRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -219,6 +254,11 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     }
 
     @Override
+    public GetGeneratedTemplateResult getGeneratedTemplate(GetGeneratedTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetStackPolicyResult getStackPolicy(GetStackPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -254,7 +294,32 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     }
 
     @Override
+    public ListGeneratedTemplatesResult listGeneratedTemplates(ListGeneratedTemplatesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListImportsResult listImports(ListImportsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListResourceScanRelatedResourcesResult listResourceScanRelatedResources(ListResourceScanRelatedResourcesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListResourceScanResourcesResult listResourceScanResources(ListResourceScanResourcesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListResourceScansResult listResourceScans(ListResourceScansRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListStackInstanceResourceDriftsResult listStackInstanceResourceDrifts(ListStackInstanceResourceDriftsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -265,6 +330,11 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
 
     @Override
     public ListStackResourcesResult listStackResources(ListStackResourcesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListStackSetAutoDeploymentTargetsResult listStackSetAutoDeploymentTargets(ListStackSetAutoDeploymentTargetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -354,12 +424,22 @@ public class AbstractAmazonCloudFormation implements AmazonCloudFormation {
     }
 
     @Override
+    public StartResourceScanResult startResourceScan(StartResourceScanRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StopStackSetOperationResult stopStackSetOperation(StopStackSetOperationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public TestTypeResult testType(TestTypeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateGeneratedTemplateResult updateGeneratedTemplate(UpdateGeneratedTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

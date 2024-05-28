@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Settings for the Esam
+ * Esam
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Esam" target="_top">AWS API
  *      Documentation</a>
@@ -33,21 +33,14 @@ public class Esam implements Serializable, Cloneable, StructuredPojo {
      * embedded SCTE 104/35 messages and does not apply to OOB messages.
      */
     private Integer adAvailOffset;
-    /**
-     * Password if credentials are required to access the POIS endpoint. This is a reference to an AWS parameter store
-     * name from which the password can be retrieved. AWS Parameter store format: "ssm://<parameter name>"
-     */
+    /** Documentation update needed */
     private String passwordParam;
     /**
      * The URL of the signal conditioner endpoint on the Placement Opportunity Information System (POIS). MediaLive
      * sends SignalProcessingEvents here when SCTE-35 messages are read.
      */
     private String poisEndpoint;
-    /**
-     * Username if credentials are required to access the POIS endpoint. This can be either a plaintext username, or a
-     * reference to an AWS parameter store name from which the username can be retrieved. AWS Parameter store format:
-     * "ssm://<parameter name>"
-     */
+    /** Documentation update needed */
     private String username;
     /** Optional data sent as zoneIdentity to identify the MediaLive channel to the POIS. */
     private String zoneIdentity;
@@ -127,12 +120,10 @@ public class Esam implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Password if credentials are required to access the POIS endpoint. This is a reference to an AWS parameter store
-     * name from which the password can be retrieved. AWS Parameter store format: "ssm://<parameter name>"
+     * Documentation update needed
      * 
      * @param passwordParam
-     *        Password if credentials are required to access the POIS endpoint. This is a reference to an AWS parameter
-     *        store name from which the password can be retrieved. AWS Parameter store format: "ssm://<parameter name>"
+     *        Documentation update needed
      */
 
     public void setPasswordParam(String passwordParam) {
@@ -140,11 +131,9 @@ public class Esam implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Password if credentials are required to access the POIS endpoint. This is a reference to an AWS parameter store
-     * name from which the password can be retrieved. AWS Parameter store format: "ssm://<parameter name>"
+     * Documentation update needed
      * 
-     * @return Password if credentials are required to access the POIS endpoint. This is a reference to an AWS parameter
-     *         store name from which the password can be retrieved. AWS Parameter store format: "ssm://<parameter name>"
+     * @return Documentation update needed
      */
 
     public String getPasswordParam() {
@@ -152,12 +141,10 @@ public class Esam implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Password if credentials are required to access the POIS endpoint. This is a reference to an AWS parameter store
-     * name from which the password can be retrieved. AWS Parameter store format: "ssm://<parameter name>"
+     * Documentation update needed
      * 
      * @param passwordParam
-     *        Password if credentials are required to access the POIS endpoint. This is a reference to an AWS parameter
-     *        store name from which the password can be retrieved. AWS Parameter store format: "ssm://<parameter name>"
+     *        Documentation update needed
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -207,14 +194,10 @@ public class Esam implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Username if credentials are required to access the POIS endpoint. This can be either a plaintext username, or a
-     * reference to an AWS parameter store name from which the username can be retrieved. AWS Parameter store format:
-     * "ssm://<parameter name>"
+     * Documentation update needed
      * 
      * @param username
-     *        Username if credentials are required to access the POIS endpoint. This can be either a plaintext username,
-     *        or a reference to an AWS parameter store name from which the username can be retrieved. AWS Parameter
-     *        store format: "ssm://<parameter name>"
+     *        Documentation update needed
      */
 
     public void setUsername(String username) {
@@ -222,13 +205,9 @@ public class Esam implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Username if credentials are required to access the POIS endpoint. This can be either a plaintext username, or a
-     * reference to an AWS parameter store name from which the username can be retrieved. AWS Parameter store format:
-     * "ssm://<parameter name>"
+     * Documentation update needed
      * 
-     * @return Username if credentials are required to access the POIS endpoint. This can be either a plaintext
-     *         username, or a reference to an AWS parameter store name from which the username can be retrieved. AWS
-     *         Parameter store format: "ssm://<parameter name>"
+     * @return Documentation update needed
      */
 
     public String getUsername() {
@@ -236,14 +215,10 @@ public class Esam implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Username if credentials are required to access the POIS endpoint. This can be either a plaintext username, or a
-     * reference to an AWS parameter store name from which the username can be retrieved. AWS Parameter store format:
-     * "ssm://<parameter name>"
+     * Documentation update needed
      * 
      * @param username
-     *        Username if credentials are required to access the POIS endpoint. This can be either a plaintext username,
-     *        or a reference to an AWS parameter store name from which the username can be retrieved. AWS Parameter
-     *        store format: "ssm://<parameter name>"
+     *        Documentation update needed
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

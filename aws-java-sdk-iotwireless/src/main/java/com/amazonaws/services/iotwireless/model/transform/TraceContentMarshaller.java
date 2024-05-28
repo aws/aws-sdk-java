@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class TraceContentMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WirelessDeviceFrameInfo").build();
     private static final MarshallingInfo<String> LOGLEVEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("LogLevel").build();
+    private static final MarshallingInfo<String> MULTICASTFRAMEINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MulticastFrameInfo").build();
 
     private static final TraceContentMarshaller instance = new TraceContentMarshaller();
 
@@ -50,6 +52,7 @@ public class TraceContentMarshaller {
         try {
             protocolMarshaller.marshall(traceContent.getWirelessDeviceFrameInfo(), WIRELESSDEVICEFRAMEINFO_BINDING);
             protocolMarshaller.marshall(traceContent.getLogLevel(), LOGLEVEL_BINDING);
+            protocolMarshaller.marshall(traceContent.getMulticastFrameInfo(), MULTICASTFRAMEINFO_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

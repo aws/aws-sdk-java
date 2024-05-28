@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,7 +38,8 @@ public class LogicalTable implements Serializable, Cloneable, StructuredPojo {
     private String alias;
     /**
      * <p>
-     * Transform operations that act on this logical table.
+     * Transform operations that act on this logical table. For this structure to be valid, only one of the attributes
+     * can be non-null.
      * </p>
      */
     private java.util.List<TransformOperation> dataTransforms;
@@ -91,10 +92,12 @@ public class LogicalTable implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Transform operations that act on this logical table.
+     * Transform operations that act on this logical table. For this structure to be valid, only one of the attributes
+     * can be non-null.
      * </p>
      * 
-     * @return Transform operations that act on this logical table.
+     * @return Transform operations that act on this logical table. For this structure to be valid, only one of the
+     *         attributes can be non-null.
      */
 
     public java.util.List<TransformOperation> getDataTransforms() {
@@ -103,11 +106,13 @@ public class LogicalTable implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Transform operations that act on this logical table.
+     * Transform operations that act on this logical table. For this structure to be valid, only one of the attributes
+     * can be non-null.
      * </p>
      * 
      * @param dataTransforms
-     *        Transform operations that act on this logical table.
+     *        Transform operations that act on this logical table. For this structure to be valid, only one of the
+     *        attributes can be non-null.
      */
 
     public void setDataTransforms(java.util.Collection<TransformOperation> dataTransforms) {
@@ -121,7 +126,8 @@ public class LogicalTable implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Transform operations that act on this logical table.
+     * Transform operations that act on this logical table. For this structure to be valid, only one of the attributes
+     * can be non-null.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -130,7 +136,8 @@ public class LogicalTable implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param dataTransforms
-     *        Transform operations that act on this logical table.
+     *        Transform operations that act on this logical table. For this structure to be valid, only one of the
+     *        attributes can be non-null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,11 +153,13 @@ public class LogicalTable implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Transform operations that act on this logical table.
+     * Transform operations that act on this logical table. For this structure to be valid, only one of the attributes
+     * can be non-null.
      * </p>
      * 
      * @param dataTransforms
-     *        Transform operations that act on this logical table.
+     *        Transform operations that act on this logical table. For this structure to be valid, only one of the
+     *        attributes can be non-null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

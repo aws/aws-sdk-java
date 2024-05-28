@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,16 @@ public class UsageStatistics implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<UsageAccountResult> sumByAccount;
     /**
      * <p>
+     * Lists the top 50 accounts by feature that have generated the most GuardDuty usage, in the order from most to
+     * least expensive.
+     * </p>
+     * <p>
+     * Currently, this doesn't support <code>RDS_LOGIN_EVENTS</code>.
+     * </p>
+     */
+    private java.util.List<UsageTopAccountsResult> topAccountsByFeature;
+    /**
+     * <p>
      * The usage statistic sum organized by on data source.
      * </p>
      */
@@ -52,6 +62,12 @@ public class UsageStatistics implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.List<UsageResourceResult> topResources;
+    /**
+     * <p>
+     * The usage statistic sum organized by feature.
+     * </p>
+     */
+    private java.util.List<UsageFeatureResult> sumByFeature;
 
     /**
      * <p>
@@ -120,6 +136,104 @@ public class UsageStatistics implements Serializable, Cloneable, StructuredPojo 
 
     public UsageStatistics withSumByAccount(java.util.Collection<UsageAccountResult> sumByAccount) {
         setSumByAccount(sumByAccount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Lists the top 50 accounts by feature that have generated the most GuardDuty usage, in the order from most to
+     * least expensive.
+     * </p>
+     * <p>
+     * Currently, this doesn't support <code>RDS_LOGIN_EVENTS</code>.
+     * </p>
+     * 
+     * @return Lists the top 50 accounts by feature that have generated the most GuardDuty usage, in the order from most
+     *         to least expensive.</p>
+     *         <p>
+     *         Currently, this doesn't support <code>RDS_LOGIN_EVENTS</code>.
+     */
+
+    public java.util.List<UsageTopAccountsResult> getTopAccountsByFeature() {
+        return topAccountsByFeature;
+    }
+
+    /**
+     * <p>
+     * Lists the top 50 accounts by feature that have generated the most GuardDuty usage, in the order from most to
+     * least expensive.
+     * </p>
+     * <p>
+     * Currently, this doesn't support <code>RDS_LOGIN_EVENTS</code>.
+     * </p>
+     * 
+     * @param topAccountsByFeature
+     *        Lists the top 50 accounts by feature that have generated the most GuardDuty usage, in the order from most
+     *        to least expensive.</p>
+     *        <p>
+     *        Currently, this doesn't support <code>RDS_LOGIN_EVENTS</code>.
+     */
+
+    public void setTopAccountsByFeature(java.util.Collection<UsageTopAccountsResult> topAccountsByFeature) {
+        if (topAccountsByFeature == null) {
+            this.topAccountsByFeature = null;
+            return;
+        }
+
+        this.topAccountsByFeature = new java.util.ArrayList<UsageTopAccountsResult>(topAccountsByFeature);
+    }
+
+    /**
+     * <p>
+     * Lists the top 50 accounts by feature that have generated the most GuardDuty usage, in the order from most to
+     * least expensive.
+     * </p>
+     * <p>
+     * Currently, this doesn't support <code>RDS_LOGIN_EVENTS</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTopAccountsByFeature(java.util.Collection)} or {@link #withTopAccountsByFeature(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param topAccountsByFeature
+     *        Lists the top 50 accounts by feature that have generated the most GuardDuty usage, in the order from most
+     *        to least expensive.</p>
+     *        <p>
+     *        Currently, this doesn't support <code>RDS_LOGIN_EVENTS</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UsageStatistics withTopAccountsByFeature(UsageTopAccountsResult... topAccountsByFeature) {
+        if (this.topAccountsByFeature == null) {
+            setTopAccountsByFeature(new java.util.ArrayList<UsageTopAccountsResult>(topAccountsByFeature.length));
+        }
+        for (UsageTopAccountsResult ele : topAccountsByFeature) {
+            this.topAccountsByFeature.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Lists the top 50 accounts by feature that have generated the most GuardDuty usage, in the order from most to
+     * least expensive.
+     * </p>
+     * <p>
+     * Currently, this doesn't support <code>RDS_LOGIN_EVENTS</code>.
+     * </p>
+     * 
+     * @param topAccountsByFeature
+     *        Lists the top 50 accounts by feature that have generated the most GuardDuty usage, in the order from most
+     *        to least expensive.</p>
+     *        <p>
+     *        Currently, this doesn't support <code>RDS_LOGIN_EVENTS</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UsageStatistics withTopAccountsByFeature(java.util.Collection<UsageTopAccountsResult> topAccountsByFeature) {
+        setTopAccountsByFeature(topAccountsByFeature);
         return this;
     }
 
@@ -338,6 +452,76 @@ public class UsageStatistics implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The usage statistic sum organized by feature.
+     * </p>
+     * 
+     * @return The usage statistic sum organized by feature.
+     */
+
+    public java.util.List<UsageFeatureResult> getSumByFeature() {
+        return sumByFeature;
+    }
+
+    /**
+     * <p>
+     * The usage statistic sum organized by feature.
+     * </p>
+     * 
+     * @param sumByFeature
+     *        The usage statistic sum organized by feature.
+     */
+
+    public void setSumByFeature(java.util.Collection<UsageFeatureResult> sumByFeature) {
+        if (sumByFeature == null) {
+            this.sumByFeature = null;
+            return;
+        }
+
+        this.sumByFeature = new java.util.ArrayList<UsageFeatureResult>(sumByFeature);
+    }
+
+    /**
+     * <p>
+     * The usage statistic sum organized by feature.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSumByFeature(java.util.Collection)} or {@link #withSumByFeature(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param sumByFeature
+     *        The usage statistic sum organized by feature.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UsageStatistics withSumByFeature(UsageFeatureResult... sumByFeature) {
+        if (this.sumByFeature == null) {
+            setSumByFeature(new java.util.ArrayList<UsageFeatureResult>(sumByFeature.length));
+        }
+        for (UsageFeatureResult ele : sumByFeature) {
+            this.sumByFeature.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The usage statistic sum organized by feature.
+     * </p>
+     * 
+     * @param sumByFeature
+     *        The usage statistic sum organized by feature.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UsageStatistics withSumByFeature(java.util.Collection<UsageFeatureResult> sumByFeature) {
+        setSumByFeature(sumByFeature);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -351,12 +535,16 @@ public class UsageStatistics implements Serializable, Cloneable, StructuredPojo 
         sb.append("{");
         if (getSumByAccount() != null)
             sb.append("SumByAccount: ").append(getSumByAccount()).append(",");
+        if (getTopAccountsByFeature() != null)
+            sb.append("TopAccountsByFeature: ").append(getTopAccountsByFeature()).append(",");
         if (getSumByDataSource() != null)
             sb.append("SumByDataSource: ").append(getSumByDataSource()).append(",");
         if (getSumByResource() != null)
             sb.append("SumByResource: ").append(getSumByResource()).append(",");
         if (getTopResources() != null)
-            sb.append("TopResources: ").append(getTopResources());
+            sb.append("TopResources: ").append(getTopResources()).append(",");
+        if (getSumByFeature() != null)
+            sb.append("SumByFeature: ").append(getSumByFeature());
         sb.append("}");
         return sb.toString();
     }
@@ -375,6 +563,10 @@ public class UsageStatistics implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getSumByAccount() != null && other.getSumByAccount().equals(this.getSumByAccount()) == false)
             return false;
+        if (other.getTopAccountsByFeature() == null ^ this.getTopAccountsByFeature() == null)
+            return false;
+        if (other.getTopAccountsByFeature() != null && other.getTopAccountsByFeature().equals(this.getTopAccountsByFeature()) == false)
+            return false;
         if (other.getSumByDataSource() == null ^ this.getSumByDataSource() == null)
             return false;
         if (other.getSumByDataSource() != null && other.getSumByDataSource().equals(this.getSumByDataSource()) == false)
@@ -387,6 +579,10 @@ public class UsageStatistics implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getTopResources() != null && other.getTopResources().equals(this.getTopResources()) == false)
             return false;
+        if (other.getSumByFeature() == null ^ this.getSumByFeature() == null)
+            return false;
+        if (other.getSumByFeature() != null && other.getSumByFeature().equals(this.getSumByFeature()) == false)
+            return false;
         return true;
     }
 
@@ -396,9 +592,11 @@ public class UsageStatistics implements Serializable, Cloneable, StructuredPojo 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getSumByAccount() == null) ? 0 : getSumByAccount().hashCode());
+        hashCode = prime * hashCode + ((getTopAccountsByFeature() == null) ? 0 : getTopAccountsByFeature().hashCode());
         hashCode = prime * hashCode + ((getSumByDataSource() == null) ? 0 : getSumByDataSource().hashCode());
         hashCode = prime * hashCode + ((getSumByResource() == null) ? 0 : getSumByResource().hashCode());
         hashCode = prime * hashCode + ((getTopResources() == null) ? 0 : getTopResources().hashCode());
+        hashCode = prime * hashCode + ((getSumByFeature() == null) ? 0 : getSumByFeature().hashCode());
         return hashCode;
     }
 

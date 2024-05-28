@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,13 +28,13 @@ public class CreateMediaLiveConnectorPipelineRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The media pipeline's data sources.
+     * The media live connector pipeline's data sources.
      * </p>
      */
     private java.util.List<LiveConnectorSourceConfiguration> sources;
     /**
      * <p>
-     * The media pipeline's data sinks.
+     * The media live connector pipeline's data sinks.
      * </p>
      */
     private java.util.List<LiveConnectorSinkConfiguration> sinks;
@@ -46,17 +46,17 @@ public class CreateMediaLiveConnectorPipelineRequest extends com.amazonaws.Amazo
     private String clientRequestToken;
     /**
      * <p>
-     * The tags associated with the media pipeline.
+     * The tags associated with the media live connector pipeline.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * The media pipeline's data sources.
+     * The media live connector pipeline's data sources.
      * </p>
      * 
-     * @return The media pipeline's data sources.
+     * @return The media live connector pipeline's data sources.
      */
 
     public java.util.List<LiveConnectorSourceConfiguration> getSources() {
@@ -65,11 +65,11 @@ public class CreateMediaLiveConnectorPipelineRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The media pipeline's data sources.
+     * The media live connector pipeline's data sources.
      * </p>
      * 
      * @param sources
-     *        The media pipeline's data sources.
+     *        The media live connector pipeline's data sources.
      */
 
     public void setSources(java.util.Collection<LiveConnectorSourceConfiguration> sources) {
@@ -83,7 +83,7 @@ public class CreateMediaLiveConnectorPipelineRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The media pipeline's data sources.
+     * The media live connector pipeline's data sources.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -92,7 +92,7 @@ public class CreateMediaLiveConnectorPipelineRequest extends com.amazonaws.Amazo
      * </p>
      * 
      * @param sources
-     *        The media pipeline's data sources.
+     *        The media live connector pipeline's data sources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,11 +108,11 @@ public class CreateMediaLiveConnectorPipelineRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The media pipeline's data sources.
+     * The media live connector pipeline's data sources.
      * </p>
      * 
      * @param sources
-     *        The media pipeline's data sources.
+     *        The media live connector pipeline's data sources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,10 +123,10 @@ public class CreateMediaLiveConnectorPipelineRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The media pipeline's data sinks.
+     * The media live connector pipeline's data sinks.
      * </p>
      * 
-     * @return The media pipeline's data sinks.
+     * @return The media live connector pipeline's data sinks.
      */
 
     public java.util.List<LiveConnectorSinkConfiguration> getSinks() {
@@ -135,11 +135,11 @@ public class CreateMediaLiveConnectorPipelineRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The media pipeline's data sinks.
+     * The media live connector pipeline's data sinks.
      * </p>
      * 
      * @param sinks
-     *        The media pipeline's data sinks.
+     *        The media live connector pipeline's data sinks.
      */
 
     public void setSinks(java.util.Collection<LiveConnectorSinkConfiguration> sinks) {
@@ -153,7 +153,7 @@ public class CreateMediaLiveConnectorPipelineRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The media pipeline's data sinks.
+     * The media live connector pipeline's data sinks.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -162,7 +162,7 @@ public class CreateMediaLiveConnectorPipelineRequest extends com.amazonaws.Amazo
      * </p>
      * 
      * @param sinks
-     *        The media pipeline's data sinks.
+     *        The media live connector pipeline's data sinks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,11 +178,11 @@ public class CreateMediaLiveConnectorPipelineRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The media pipeline's data sinks.
+     * The media live connector pipeline's data sinks.
      * </p>
      * 
      * @param sinks
-     *        The media pipeline's data sinks.
+     *        The media live connector pipeline's data sinks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -233,10 +233,10 @@ public class CreateMediaLiveConnectorPipelineRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The tags associated with the media pipeline.
+     * The tags associated with the media live connector pipeline.
      * </p>
      * 
-     * @return The tags associated with the media pipeline.
+     * @return The tags associated with the media live connector pipeline.
      */
 
     public java.util.List<Tag> getTags() {
@@ -245,11 +245,11 @@ public class CreateMediaLiveConnectorPipelineRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The tags associated with the media pipeline.
+     * The tags associated with the media live connector pipeline.
      * </p>
      * 
      * @param tags
-     *        The tags associated with the media pipeline.
+     *        The tags associated with the media live connector pipeline.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -263,7 +263,7 @@ public class CreateMediaLiveConnectorPipelineRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The tags associated with the media pipeline.
+     * The tags associated with the media live connector pipeline.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -272,7 +272,7 @@ public class CreateMediaLiveConnectorPipelineRequest extends com.amazonaws.Amazo
      * </p>
      * 
      * @param tags
-     *        The tags associated with the media pipeline.
+     *        The tags associated with the media live connector pipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -288,11 +288,11 @@ public class CreateMediaLiveConnectorPipelineRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The tags associated with the media pipeline.
+     * The tags associated with the media live connector pipeline.
      * </p>
      * 
      * @param tags
-     *        The tags associated with the media pipeline.
+     *        The tags associated with the media live connector pipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

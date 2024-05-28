@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,18 +28,18 @@ public class CreateLocationNfsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source NFS file system location that is created.
+     * The ARN of the transfer location that you created for your NFS file server.
      * </p>
      */
     private String locationArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source NFS file system location that is created.
+     * The ARN of the transfer location that you created for your NFS file server.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the source NFS file system location that is created.
+     *        The ARN of the transfer location that you created for your NFS file server.
      */
 
     public void setLocationArn(String locationArn) {
@@ -48,10 +48,10 @@ public class CreateLocationNfsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source NFS file system location that is created.
+     * The ARN of the transfer location that you created for your NFS file server.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the source NFS file system location that is created.
+     * @return The ARN of the transfer location that you created for your NFS file server.
      */
 
     public String getLocationArn() {
@@ -60,11 +60,11 @@ public class CreateLocationNfsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source NFS file system location that is created.
+     * The ARN of the transfer location that you created for your NFS file server.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the source NFS file system location that is created.
+     *        The ARN of the transfer location that you created for your NFS file server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

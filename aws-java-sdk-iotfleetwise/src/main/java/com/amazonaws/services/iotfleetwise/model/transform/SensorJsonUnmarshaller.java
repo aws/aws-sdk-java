@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -77,6 +77,18 @@ public class SensorJsonUnmarshaller implements Unmarshaller<Sensor, JsonUnmarsha
                 if (context.testExpression("max", targetDepth)) {
                     context.nextToken();
                     sensor.setMax(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
+                if (context.testExpression("deprecationMessage", targetDepth)) {
+                    context.nextToken();
+                    sensor.setDeprecationMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("comment", targetDepth)) {
+                    context.nextToken();
+                    sensor.setComment(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("structFullyQualifiedName", targetDepth)) {
+                    context.nextToken();
+                    sensor.setStructFullyQualifiedName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

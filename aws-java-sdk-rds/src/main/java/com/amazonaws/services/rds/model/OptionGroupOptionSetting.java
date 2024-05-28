@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,14 +59,13 @@ public class OptionGroupOptionSetting implements Serializable, Cloneable {
     private String allowedValues;
     /**
      * <p>
-     * Boolean value where true indicates that this option group option can be changed from the default value.
+     * Indicates whether this option group option can be changed from the default value.
      * </p>
      */
     private Boolean isModifiable;
     /**
      * <p>
-     * Boolean value where true indicates that a value must be specified for this option setting of the option group
-     * option.
+     * Indicates whether a value must be specified for this option setting of the option group option.
      * </p>
      */
     private Boolean isRequired;
@@ -279,11 +278,11 @@ public class OptionGroupOptionSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Boolean value where true indicates that this option group option can be changed from the default value.
+     * Indicates whether this option group option can be changed from the default value.
      * </p>
      * 
      * @param isModifiable
-     *        Boolean value where true indicates that this option group option can be changed from the default value.
+     *        Indicates whether this option group option can be changed from the default value.
      */
 
     public void setIsModifiable(Boolean isModifiable) {
@@ -292,10 +291,10 @@ public class OptionGroupOptionSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Boolean value where true indicates that this option group option can be changed from the default value.
+     * Indicates whether this option group option can be changed from the default value.
      * </p>
      * 
-     * @return Boolean value where true indicates that this option group option can be changed from the default value.
+     * @return Indicates whether this option group option can be changed from the default value.
      */
 
     public Boolean getIsModifiable() {
@@ -304,11 +303,11 @@ public class OptionGroupOptionSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Boolean value where true indicates that this option group option can be changed from the default value.
+     * Indicates whether this option group option can be changed from the default value.
      * </p>
      * 
      * @param isModifiable
-     *        Boolean value where true indicates that this option group option can be changed from the default value.
+     *        Indicates whether this option group option can be changed from the default value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -319,10 +318,10 @@ public class OptionGroupOptionSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Boolean value where true indicates that this option group option can be changed from the default value.
+     * Indicates whether this option group option can be changed from the default value.
      * </p>
      * 
-     * @return Boolean value where true indicates that this option group option can be changed from the default value.
+     * @return Indicates whether this option group option can be changed from the default value.
      */
 
     public Boolean isModifiable() {
@@ -331,13 +330,11 @@ public class OptionGroupOptionSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Boolean value where true indicates that a value must be specified for this option setting of the option group
-     * option.
+     * Indicates whether a value must be specified for this option setting of the option group option.
      * </p>
      * 
      * @param isRequired
-     *        Boolean value where true indicates that a value must be specified for this option setting of the option
-     *        group option.
+     *        Indicates whether a value must be specified for this option setting of the option group option.
      */
 
     public void setIsRequired(Boolean isRequired) {
@@ -346,12 +343,10 @@ public class OptionGroupOptionSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Boolean value where true indicates that a value must be specified for this option setting of the option group
-     * option.
+     * Indicates whether a value must be specified for this option setting of the option group option.
      * </p>
      * 
-     * @return Boolean value where true indicates that a value must be specified for this option setting of the option
-     *         group option.
+     * @return Indicates whether a value must be specified for this option setting of the option group option.
      */
 
     public Boolean getIsRequired() {
@@ -360,13 +355,11 @@ public class OptionGroupOptionSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Boolean value where true indicates that a value must be specified for this option setting of the option group
-     * option.
+     * Indicates whether a value must be specified for this option setting of the option group option.
      * </p>
      * 
      * @param isRequired
-     *        Boolean value where true indicates that a value must be specified for this option setting of the option
-     *        group option.
+     *        Indicates whether a value must be specified for this option setting of the option group option.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -377,12 +370,10 @@ public class OptionGroupOptionSetting implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Boolean value where true indicates that a value must be specified for this option setting of the option group
-     * option.
+     * Indicates whether a value must be specified for this option setting of the option group option.
      * </p>
      * 
-     * @return Boolean value where true indicates that a value must be specified for this option setting of the option
-     *         group option.
+     * @return Indicates whether a value must be specified for this option setting of the option group option.
      */
 
     public Boolean isRequired() {

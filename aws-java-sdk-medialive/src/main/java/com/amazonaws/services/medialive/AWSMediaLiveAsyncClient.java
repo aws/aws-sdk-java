@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -336,6 +336,144 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
     }
 
     @Override
+    public java.util.concurrent.Future<CreateCloudWatchAlarmTemplateResult> createCloudWatchAlarmTemplateAsync(CreateCloudWatchAlarmTemplateRequest request) {
+
+        return createCloudWatchAlarmTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCloudWatchAlarmTemplateResult> createCloudWatchAlarmTemplateAsync(
+            final CreateCloudWatchAlarmTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateCloudWatchAlarmTemplateRequest, CreateCloudWatchAlarmTemplateResult> asyncHandler) {
+        final CreateCloudWatchAlarmTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateCloudWatchAlarmTemplateResult>() {
+            @Override
+            public CreateCloudWatchAlarmTemplateResult call() throws Exception {
+                CreateCloudWatchAlarmTemplateResult result = null;
+
+                try {
+                    result = executeCreateCloudWatchAlarmTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCloudWatchAlarmTemplateGroupResult> createCloudWatchAlarmTemplateGroupAsync(
+            CreateCloudWatchAlarmTemplateGroupRequest request) {
+
+        return createCloudWatchAlarmTemplateGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCloudWatchAlarmTemplateGroupResult> createCloudWatchAlarmTemplateGroupAsync(
+            final CreateCloudWatchAlarmTemplateGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateCloudWatchAlarmTemplateGroupRequest, CreateCloudWatchAlarmTemplateGroupResult> asyncHandler) {
+        final CreateCloudWatchAlarmTemplateGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateCloudWatchAlarmTemplateGroupResult>() {
+            @Override
+            public CreateCloudWatchAlarmTemplateGroupResult call() throws Exception {
+                CreateCloudWatchAlarmTemplateGroupResult result = null;
+
+                try {
+                    result = executeCreateCloudWatchAlarmTemplateGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEventBridgeRuleTemplateResult> createEventBridgeRuleTemplateAsync(CreateEventBridgeRuleTemplateRequest request) {
+
+        return createEventBridgeRuleTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEventBridgeRuleTemplateResult> createEventBridgeRuleTemplateAsync(
+            final CreateEventBridgeRuleTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateEventBridgeRuleTemplateRequest, CreateEventBridgeRuleTemplateResult> asyncHandler) {
+        final CreateEventBridgeRuleTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateEventBridgeRuleTemplateResult>() {
+            @Override
+            public CreateEventBridgeRuleTemplateResult call() throws Exception {
+                CreateEventBridgeRuleTemplateResult result = null;
+
+                try {
+                    result = executeCreateEventBridgeRuleTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEventBridgeRuleTemplateGroupResult> createEventBridgeRuleTemplateGroupAsync(
+            CreateEventBridgeRuleTemplateGroupRequest request) {
+
+        return createEventBridgeRuleTemplateGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEventBridgeRuleTemplateGroupResult> createEventBridgeRuleTemplateGroupAsync(
+            final CreateEventBridgeRuleTemplateGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateEventBridgeRuleTemplateGroupRequest, CreateEventBridgeRuleTemplateGroupResult> asyncHandler) {
+        final CreateEventBridgeRuleTemplateGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateEventBridgeRuleTemplateGroupResult>() {
+            @Override
+            public CreateEventBridgeRuleTemplateGroupResult call() throws Exception {
+                CreateEventBridgeRuleTemplateGroupResult result = null;
+
+                try {
+                    result = executeCreateEventBridgeRuleTemplateGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateInputResult> createInputAsync(CreateInputRequest request) {
 
         return createInputAsync(request, null);
@@ -501,6 +639,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSignalMapResult> createSignalMapAsync(CreateSignalMapRequest request) {
+
+        return createSignalMapAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSignalMapResult> createSignalMapAsync(final CreateSignalMapRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateSignalMapRequest, CreateSignalMapResult> asyncHandler) {
+        final CreateSignalMapRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateSignalMapResult>() {
+            @Override
+            public CreateSignalMapResult call() throws Exception {
+                CreateSignalMapResult result = null;
+
+                try {
+                    result = executeCreateSignalMap(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTagsResult> createTagsAsync(CreateTagsRequest request) {
 
         return createTagsAsync(request, null);
@@ -551,6 +722,144 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
 
                 try {
                     result = executeDeleteChannel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCloudWatchAlarmTemplateResult> deleteCloudWatchAlarmTemplateAsync(DeleteCloudWatchAlarmTemplateRequest request) {
+
+        return deleteCloudWatchAlarmTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCloudWatchAlarmTemplateResult> deleteCloudWatchAlarmTemplateAsync(
+            final DeleteCloudWatchAlarmTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteCloudWatchAlarmTemplateRequest, DeleteCloudWatchAlarmTemplateResult> asyncHandler) {
+        final DeleteCloudWatchAlarmTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteCloudWatchAlarmTemplateResult>() {
+            @Override
+            public DeleteCloudWatchAlarmTemplateResult call() throws Exception {
+                DeleteCloudWatchAlarmTemplateResult result = null;
+
+                try {
+                    result = executeDeleteCloudWatchAlarmTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCloudWatchAlarmTemplateGroupResult> deleteCloudWatchAlarmTemplateGroupAsync(
+            DeleteCloudWatchAlarmTemplateGroupRequest request) {
+
+        return deleteCloudWatchAlarmTemplateGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCloudWatchAlarmTemplateGroupResult> deleteCloudWatchAlarmTemplateGroupAsync(
+            final DeleteCloudWatchAlarmTemplateGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteCloudWatchAlarmTemplateGroupRequest, DeleteCloudWatchAlarmTemplateGroupResult> asyncHandler) {
+        final DeleteCloudWatchAlarmTemplateGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteCloudWatchAlarmTemplateGroupResult>() {
+            @Override
+            public DeleteCloudWatchAlarmTemplateGroupResult call() throws Exception {
+                DeleteCloudWatchAlarmTemplateGroupResult result = null;
+
+                try {
+                    result = executeDeleteCloudWatchAlarmTemplateGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEventBridgeRuleTemplateResult> deleteEventBridgeRuleTemplateAsync(DeleteEventBridgeRuleTemplateRequest request) {
+
+        return deleteEventBridgeRuleTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEventBridgeRuleTemplateResult> deleteEventBridgeRuleTemplateAsync(
+            final DeleteEventBridgeRuleTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteEventBridgeRuleTemplateRequest, DeleteEventBridgeRuleTemplateResult> asyncHandler) {
+        final DeleteEventBridgeRuleTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteEventBridgeRuleTemplateResult>() {
+            @Override
+            public DeleteEventBridgeRuleTemplateResult call() throws Exception {
+                DeleteEventBridgeRuleTemplateResult result = null;
+
+                try {
+                    result = executeDeleteEventBridgeRuleTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEventBridgeRuleTemplateGroupResult> deleteEventBridgeRuleTemplateGroupAsync(
+            DeleteEventBridgeRuleTemplateGroupRequest request) {
+
+        return deleteEventBridgeRuleTemplateGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEventBridgeRuleTemplateGroupResult> deleteEventBridgeRuleTemplateGroupAsync(
+            final DeleteEventBridgeRuleTemplateGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteEventBridgeRuleTemplateGroupRequest, DeleteEventBridgeRuleTemplateGroupResult> asyncHandler) {
+        final DeleteEventBridgeRuleTemplateGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteEventBridgeRuleTemplateGroupResult>() {
+            @Override
+            public DeleteEventBridgeRuleTemplateGroupResult call() throws Exception {
+                DeleteEventBridgeRuleTemplateGroupResult result = null;
+
+                try {
+                    result = executeDeleteEventBridgeRuleTemplateGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -765,6 +1074,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteSignalMapResult> deleteSignalMapAsync(DeleteSignalMapRequest request) {
+
+        return deleteSignalMapAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSignalMapResult> deleteSignalMapAsync(final DeleteSignalMapRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteSignalMapRequest, DeleteSignalMapResult> asyncHandler) {
+        final DeleteSignalMapRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteSignalMapResult>() {
+            @Override
+            public DeleteSignalMapResult call() throws Exception {
+                DeleteSignalMapResult result = null;
+
+                try {
+                    result = executeDeleteSignalMap(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteTagsResult> deleteTagsAsync(DeleteTagsRequest request) {
 
         return deleteTagsAsync(request, null);
@@ -782,6 +1124,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
 
                 try {
                     result = executeDeleteTags(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccountConfigurationResult> describeAccountConfigurationAsync(DescribeAccountConfigurationRequest request) {
+
+        return describeAccountConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccountConfigurationResult> describeAccountConfigurationAsync(final DescribeAccountConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAccountConfigurationRequest, DescribeAccountConfigurationResult> asyncHandler) {
+        final DescribeAccountConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAccountConfigurationResult>() {
+            @Override
+            public DescribeAccountConfigurationResult call() throws Exception {
+                DescribeAccountConfigurationResult result = null;
+
+                try {
+                    result = executeDescribeAccountConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1128,6 +1503,208 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeThumbnailsResult> describeThumbnailsAsync(DescribeThumbnailsRequest request) {
+
+        return describeThumbnailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeThumbnailsResult> describeThumbnailsAsync(final DescribeThumbnailsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeThumbnailsRequest, DescribeThumbnailsResult> asyncHandler) {
+        final DescribeThumbnailsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeThumbnailsResult>() {
+            @Override
+            public DescribeThumbnailsResult call() throws Exception {
+                DescribeThumbnailsResult result = null;
+
+                try {
+                    result = executeDescribeThumbnails(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCloudWatchAlarmTemplateResult> getCloudWatchAlarmTemplateAsync(GetCloudWatchAlarmTemplateRequest request) {
+
+        return getCloudWatchAlarmTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCloudWatchAlarmTemplateResult> getCloudWatchAlarmTemplateAsync(final GetCloudWatchAlarmTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCloudWatchAlarmTemplateRequest, GetCloudWatchAlarmTemplateResult> asyncHandler) {
+        final GetCloudWatchAlarmTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCloudWatchAlarmTemplateResult>() {
+            @Override
+            public GetCloudWatchAlarmTemplateResult call() throws Exception {
+                GetCloudWatchAlarmTemplateResult result = null;
+
+                try {
+                    result = executeGetCloudWatchAlarmTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCloudWatchAlarmTemplateGroupResult> getCloudWatchAlarmTemplateGroupAsync(
+            GetCloudWatchAlarmTemplateGroupRequest request) {
+
+        return getCloudWatchAlarmTemplateGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCloudWatchAlarmTemplateGroupResult> getCloudWatchAlarmTemplateGroupAsync(
+            final GetCloudWatchAlarmTemplateGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCloudWatchAlarmTemplateGroupRequest, GetCloudWatchAlarmTemplateGroupResult> asyncHandler) {
+        final GetCloudWatchAlarmTemplateGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCloudWatchAlarmTemplateGroupResult>() {
+            @Override
+            public GetCloudWatchAlarmTemplateGroupResult call() throws Exception {
+                GetCloudWatchAlarmTemplateGroupResult result = null;
+
+                try {
+                    result = executeGetCloudWatchAlarmTemplateGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEventBridgeRuleTemplateResult> getEventBridgeRuleTemplateAsync(GetEventBridgeRuleTemplateRequest request) {
+
+        return getEventBridgeRuleTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEventBridgeRuleTemplateResult> getEventBridgeRuleTemplateAsync(final GetEventBridgeRuleTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetEventBridgeRuleTemplateRequest, GetEventBridgeRuleTemplateResult> asyncHandler) {
+        final GetEventBridgeRuleTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetEventBridgeRuleTemplateResult>() {
+            @Override
+            public GetEventBridgeRuleTemplateResult call() throws Exception {
+                GetEventBridgeRuleTemplateResult result = null;
+
+                try {
+                    result = executeGetEventBridgeRuleTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEventBridgeRuleTemplateGroupResult> getEventBridgeRuleTemplateGroupAsync(
+            GetEventBridgeRuleTemplateGroupRequest request) {
+
+        return getEventBridgeRuleTemplateGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEventBridgeRuleTemplateGroupResult> getEventBridgeRuleTemplateGroupAsync(
+            final GetEventBridgeRuleTemplateGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetEventBridgeRuleTemplateGroupRequest, GetEventBridgeRuleTemplateGroupResult> asyncHandler) {
+        final GetEventBridgeRuleTemplateGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetEventBridgeRuleTemplateGroupResult>() {
+            @Override
+            public GetEventBridgeRuleTemplateGroupResult call() throws Exception {
+                GetEventBridgeRuleTemplateGroupResult result = null;
+
+                try {
+                    result = executeGetEventBridgeRuleTemplateGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSignalMapResult> getSignalMapAsync(GetSignalMapRequest request) {
+
+        return getSignalMapAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSignalMapResult> getSignalMapAsync(final GetSignalMapRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSignalMapRequest, GetSignalMapResult> asyncHandler) {
+        final GetSignalMapRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSignalMapResult>() {
+            @Override
+            public GetSignalMapResult call() throws Exception {
+                GetSignalMapResult result = null;
+
+                try {
+                    result = executeGetSignalMap(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListChannelsResult> listChannelsAsync(ListChannelsRequest request) {
 
         return listChannelsAsync(request, null);
@@ -1145,6 +1722,142 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
 
                 try {
                     result = executeListChannels(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCloudWatchAlarmTemplateGroupsResult> listCloudWatchAlarmTemplateGroupsAsync(
+            ListCloudWatchAlarmTemplateGroupsRequest request) {
+
+        return listCloudWatchAlarmTemplateGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCloudWatchAlarmTemplateGroupsResult> listCloudWatchAlarmTemplateGroupsAsync(
+            final ListCloudWatchAlarmTemplateGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCloudWatchAlarmTemplateGroupsRequest, ListCloudWatchAlarmTemplateGroupsResult> asyncHandler) {
+        final ListCloudWatchAlarmTemplateGroupsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCloudWatchAlarmTemplateGroupsResult>() {
+            @Override
+            public ListCloudWatchAlarmTemplateGroupsResult call() throws Exception {
+                ListCloudWatchAlarmTemplateGroupsResult result = null;
+
+                try {
+                    result = executeListCloudWatchAlarmTemplateGroups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCloudWatchAlarmTemplatesResult> listCloudWatchAlarmTemplatesAsync(ListCloudWatchAlarmTemplatesRequest request) {
+
+        return listCloudWatchAlarmTemplatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCloudWatchAlarmTemplatesResult> listCloudWatchAlarmTemplatesAsync(final ListCloudWatchAlarmTemplatesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCloudWatchAlarmTemplatesRequest, ListCloudWatchAlarmTemplatesResult> asyncHandler) {
+        final ListCloudWatchAlarmTemplatesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCloudWatchAlarmTemplatesResult>() {
+            @Override
+            public ListCloudWatchAlarmTemplatesResult call() throws Exception {
+                ListCloudWatchAlarmTemplatesResult result = null;
+
+                try {
+                    result = executeListCloudWatchAlarmTemplates(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEventBridgeRuleTemplateGroupsResult> listEventBridgeRuleTemplateGroupsAsync(
+            ListEventBridgeRuleTemplateGroupsRequest request) {
+
+        return listEventBridgeRuleTemplateGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEventBridgeRuleTemplateGroupsResult> listEventBridgeRuleTemplateGroupsAsync(
+            final ListEventBridgeRuleTemplateGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListEventBridgeRuleTemplateGroupsRequest, ListEventBridgeRuleTemplateGroupsResult> asyncHandler) {
+        final ListEventBridgeRuleTemplateGroupsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListEventBridgeRuleTemplateGroupsResult>() {
+            @Override
+            public ListEventBridgeRuleTemplateGroupsResult call() throws Exception {
+                ListEventBridgeRuleTemplateGroupsResult result = null;
+
+                try {
+                    result = executeListEventBridgeRuleTemplateGroups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEventBridgeRuleTemplatesResult> listEventBridgeRuleTemplatesAsync(ListEventBridgeRuleTemplatesRequest request) {
+
+        return listEventBridgeRuleTemplatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEventBridgeRuleTemplatesResult> listEventBridgeRuleTemplatesAsync(final ListEventBridgeRuleTemplatesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListEventBridgeRuleTemplatesRequest, ListEventBridgeRuleTemplatesResult> asyncHandler) {
+        final ListEventBridgeRuleTemplatesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListEventBridgeRuleTemplatesResult>() {
+            @Override
+            public ListEventBridgeRuleTemplatesResult call() throws Exception {
+                ListEventBridgeRuleTemplatesResult result = null;
+
+                try {
+                    result = executeListEventBridgeRuleTemplates(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1425,6 +2138,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
     }
 
     @Override
+    public java.util.concurrent.Future<ListSignalMapsResult> listSignalMapsAsync(ListSignalMapsRequest request) {
+
+        return listSignalMapsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSignalMapsResult> listSignalMapsAsync(final ListSignalMapsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSignalMapsRequest, ListSignalMapsResult> asyncHandler) {
+        final ListSignalMapsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSignalMapsResult>() {
+            @Override
+            public ListSignalMapsResult call() throws Exception {
+                ListSignalMapsResult result = null;
+
+                try {
+                    result = executeListSignalMaps(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -1557,6 +2303,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
     }
 
     @Override
+    public java.util.concurrent.Future<RestartChannelPipelinesResult> restartChannelPipelinesAsync(RestartChannelPipelinesRequest request) {
+
+        return restartChannelPipelinesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestartChannelPipelinesResult> restartChannelPipelinesAsync(final RestartChannelPipelinesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RestartChannelPipelinesRequest, RestartChannelPipelinesResult> asyncHandler) {
+        final RestartChannelPipelinesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RestartChannelPipelinesResult>() {
+            @Override
+            public RestartChannelPipelinesResult call() throws Exception {
+                RestartChannelPipelinesResult result = null;
+
+                try {
+                    result = executeRestartChannelPipelines(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartChannelResult> startChannelAsync(StartChannelRequest request) {
 
         return startChannelAsync(request, null);
@@ -1574,6 +2353,72 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
 
                 try {
                     result = executeStartChannel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartDeleteMonitorDeploymentResult> startDeleteMonitorDeploymentAsync(StartDeleteMonitorDeploymentRequest request) {
+
+        return startDeleteMonitorDeploymentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartDeleteMonitorDeploymentResult> startDeleteMonitorDeploymentAsync(final StartDeleteMonitorDeploymentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartDeleteMonitorDeploymentRequest, StartDeleteMonitorDeploymentResult> asyncHandler) {
+        final StartDeleteMonitorDeploymentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartDeleteMonitorDeploymentResult>() {
+            @Override
+            public StartDeleteMonitorDeploymentResult call() throws Exception {
+                StartDeleteMonitorDeploymentResult result = null;
+
+                try {
+                    result = executeStartDeleteMonitorDeployment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartInputDeviceResult> startInputDeviceAsync(StartInputDeviceRequest request) {
+
+        return startInputDeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartInputDeviceResult> startInputDeviceAsync(final StartInputDeviceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartInputDeviceRequest, StartInputDeviceResult> asyncHandler) {
+        final StartInputDeviceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartInputDeviceResult>() {
+            @Override
+            public StartInputDeviceResult call() throws Exception {
+                StartInputDeviceResult result = null;
+
+                try {
+                    result = executeStartInputDevice(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1625,6 +2470,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
     }
 
     @Override
+    public java.util.concurrent.Future<StartMonitorDeploymentResult> startMonitorDeploymentAsync(StartMonitorDeploymentRequest request) {
+
+        return startMonitorDeploymentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMonitorDeploymentResult> startMonitorDeploymentAsync(final StartMonitorDeploymentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartMonitorDeploymentRequest, StartMonitorDeploymentResult> asyncHandler) {
+        final StartMonitorDeploymentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartMonitorDeploymentResult>() {
+            @Override
+            public StartMonitorDeploymentResult call() throws Exception {
+                StartMonitorDeploymentResult result = null;
+
+                try {
+                    result = executeStartMonitorDeployment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartMultiplexResult> startMultiplexAsync(StartMultiplexRequest request) {
 
         return startMultiplexAsync(request, null);
@@ -1658,6 +2536,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
     }
 
     @Override
+    public java.util.concurrent.Future<StartUpdateSignalMapResult> startUpdateSignalMapAsync(StartUpdateSignalMapRequest request) {
+
+        return startUpdateSignalMapAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartUpdateSignalMapResult> startUpdateSignalMapAsync(final StartUpdateSignalMapRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartUpdateSignalMapRequest, StartUpdateSignalMapResult> asyncHandler) {
+        final StartUpdateSignalMapRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartUpdateSignalMapResult>() {
+            @Override
+            public StartUpdateSignalMapResult call() throws Exception {
+                StartUpdateSignalMapResult result = null;
+
+                try {
+                    result = executeStartUpdateSignalMap(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StopChannelResult> stopChannelAsync(StopChannelRequest request) {
 
         return stopChannelAsync(request, null);
@@ -1675,6 +2586,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
 
                 try {
                     result = executeStopChannel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopInputDeviceResult> stopInputDeviceAsync(StopInputDeviceRequest request) {
+
+        return stopInputDeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopInputDeviceResult> stopInputDeviceAsync(final StopInputDeviceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopInputDeviceRequest, StopInputDeviceResult> asyncHandler) {
+        final StopInputDeviceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopInputDeviceResult>() {
+            @Override
+            public StopInputDeviceResult call() throws Exception {
+                StopInputDeviceResult result = null;
+
+                try {
+                    result = executeStopInputDevice(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1757,6 +2701,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateAccountConfigurationResult> updateAccountConfigurationAsync(UpdateAccountConfigurationRequest request) {
+
+        return updateAccountConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAccountConfigurationResult> updateAccountConfigurationAsync(final UpdateAccountConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAccountConfigurationRequest, UpdateAccountConfigurationResult> asyncHandler) {
+        final UpdateAccountConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateAccountConfigurationResult>() {
+            @Override
+            public UpdateAccountConfigurationResult call() throws Exception {
+                UpdateAccountConfigurationResult result = null;
+
+                try {
+                    result = executeUpdateAccountConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateChannelResult> updateChannelAsync(UpdateChannelRequest request) {
 
         return updateChannelAsync(request, null);
@@ -1807,6 +2784,144 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
 
                 try {
                     result = executeUpdateChannelClass(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCloudWatchAlarmTemplateResult> updateCloudWatchAlarmTemplateAsync(UpdateCloudWatchAlarmTemplateRequest request) {
+
+        return updateCloudWatchAlarmTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCloudWatchAlarmTemplateResult> updateCloudWatchAlarmTemplateAsync(
+            final UpdateCloudWatchAlarmTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateCloudWatchAlarmTemplateRequest, UpdateCloudWatchAlarmTemplateResult> asyncHandler) {
+        final UpdateCloudWatchAlarmTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateCloudWatchAlarmTemplateResult>() {
+            @Override
+            public UpdateCloudWatchAlarmTemplateResult call() throws Exception {
+                UpdateCloudWatchAlarmTemplateResult result = null;
+
+                try {
+                    result = executeUpdateCloudWatchAlarmTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCloudWatchAlarmTemplateGroupResult> updateCloudWatchAlarmTemplateGroupAsync(
+            UpdateCloudWatchAlarmTemplateGroupRequest request) {
+
+        return updateCloudWatchAlarmTemplateGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCloudWatchAlarmTemplateGroupResult> updateCloudWatchAlarmTemplateGroupAsync(
+            final UpdateCloudWatchAlarmTemplateGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateCloudWatchAlarmTemplateGroupRequest, UpdateCloudWatchAlarmTemplateGroupResult> asyncHandler) {
+        final UpdateCloudWatchAlarmTemplateGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateCloudWatchAlarmTemplateGroupResult>() {
+            @Override
+            public UpdateCloudWatchAlarmTemplateGroupResult call() throws Exception {
+                UpdateCloudWatchAlarmTemplateGroupResult result = null;
+
+                try {
+                    result = executeUpdateCloudWatchAlarmTemplateGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEventBridgeRuleTemplateResult> updateEventBridgeRuleTemplateAsync(UpdateEventBridgeRuleTemplateRequest request) {
+
+        return updateEventBridgeRuleTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEventBridgeRuleTemplateResult> updateEventBridgeRuleTemplateAsync(
+            final UpdateEventBridgeRuleTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateEventBridgeRuleTemplateRequest, UpdateEventBridgeRuleTemplateResult> asyncHandler) {
+        final UpdateEventBridgeRuleTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateEventBridgeRuleTemplateResult>() {
+            @Override
+            public UpdateEventBridgeRuleTemplateResult call() throws Exception {
+                UpdateEventBridgeRuleTemplateResult result = null;
+
+                try {
+                    result = executeUpdateEventBridgeRuleTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEventBridgeRuleTemplateGroupResult> updateEventBridgeRuleTemplateGroupAsync(
+            UpdateEventBridgeRuleTemplateGroupRequest request) {
+
+        return updateEventBridgeRuleTemplateGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEventBridgeRuleTemplateGroupResult> updateEventBridgeRuleTemplateGroupAsync(
+            final UpdateEventBridgeRuleTemplateGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateEventBridgeRuleTemplateGroupRequest, UpdateEventBridgeRuleTemplateGroupResult> asyncHandler) {
+        final UpdateEventBridgeRuleTemplateGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateEventBridgeRuleTemplateGroupResult>() {
+            @Override
+            public UpdateEventBridgeRuleTemplateGroupResult call() throws Exception {
+                UpdateEventBridgeRuleTemplateGroupResult result = null;
+
+                try {
+                    result = executeUpdateEventBridgeRuleTemplateGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

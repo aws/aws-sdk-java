@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An exception for trying to create or access sub-resource that is either invalid or not supported. Gives http status
- * code of 409.
+ * An exception for trying to create or access a sub-resource that's either invalid or not supported.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -106,7 +106,7 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically,
-     * these are the IP addresses of DNS resolvers on your network. Specify IPv4 addresses. IPv6 is not supported.
+     * these are the IP addresses of DNS resolvers on your network.
      * </p>
      */
     private java.util.List<TargetAddress> targetIps;
@@ -630,12 +630,11 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically,
-     * these are the IP addresses of DNS resolvers on your network. Specify IPv4 addresses. IPv6 is not supported.
+     * these are the IP addresses of DNS resolvers on your network.
      * </p>
      * 
      * @return An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to.
-     *         Typically, these are the IP addresses of DNS resolvers on your network. Specify IPv4 addresses. IPv6 is
-     *         not supported.
+     *         Typically, these are the IP addresses of DNS resolvers on your network.
      */
 
     public java.util.List<TargetAddress> getTargetIps() {
@@ -645,13 +644,12 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically,
-     * these are the IP addresses of DNS resolvers on your network. Specify IPv4 addresses. IPv6 is not supported.
+     * these are the IP addresses of DNS resolvers on your network.
      * </p>
      * 
      * @param targetIps
      *        An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to.
-     *        Typically, these are the IP addresses of DNS resolvers on your network. Specify IPv4 addresses. IPv6 is
-     *        not supported.
+     *        Typically, these are the IP addresses of DNS resolvers on your network.
      */
 
     public void setTargetIps(java.util.Collection<TargetAddress> targetIps) {
@@ -666,7 +664,7 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically,
-     * these are the IP addresses of DNS resolvers on your network. Specify IPv4 addresses. IPv6 is not supported.
+     * these are the IP addresses of DNS resolvers on your network.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -676,8 +674,7 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param targetIps
      *        An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to.
-     *        Typically, these are the IP addresses of DNS resolvers on your network. Specify IPv4 addresses. IPv6 is
-     *        not supported.
+     *        Typically, these are the IP addresses of DNS resolvers on your network.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -694,13 +691,12 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically,
-     * these are the IP addresses of DNS resolvers on your network. Specify IPv4 addresses. IPv6 is not supported.
+     * these are the IP addresses of DNS resolvers on your network.
      * </p>
      * 
      * @param targetIps
      *        An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to.
-     *        Typically, these are the IP addresses of DNS resolvers on your network. Specify IPv4 addresses. IPv6 is
-     *        not supported.
+     *        Typically, these are the IP addresses of DNS resolvers on your network.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

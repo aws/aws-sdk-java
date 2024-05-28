@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,12 @@ public class ListExperimentsRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * The ID of the experiment template.
+     * </p>
+     */
+    private String experimentTemplateId;
 
     /**
      * <p>
@@ -126,6 +132,46 @@ public class ListExperimentsRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The ID of the experiment template.
+     * </p>
+     * 
+     * @param experimentTemplateId
+     *        The ID of the experiment template.
+     */
+
+    public void setExperimentTemplateId(String experimentTemplateId) {
+        this.experimentTemplateId = experimentTemplateId;
+    }
+
+    /**
+     * <p>
+     * The ID of the experiment template.
+     * </p>
+     * 
+     * @return The ID of the experiment template.
+     */
+
+    public String getExperimentTemplateId() {
+        return this.experimentTemplateId;
+    }
+
+    /**
+     * <p>
+     * The ID of the experiment template.
+     * </p>
+     * 
+     * @param experimentTemplateId
+     *        The ID of the experiment template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListExperimentsRequest withExperimentTemplateId(String experimentTemplateId) {
+        setExperimentTemplateId(experimentTemplateId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -140,7 +186,9 @@ public class ListExperimentsRequest extends com.amazonaws.AmazonWebServiceReques
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getExperimentTemplateId() != null)
+            sb.append("ExperimentTemplateId: ").append(getExperimentTemplateId());
         sb.append("}");
         return sb.toString();
     }
@@ -163,6 +211,10 @@ public class ListExperimentsRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getExperimentTemplateId() == null ^ this.getExperimentTemplateId() == null)
+            return false;
+        if (other.getExperimentTemplateId() != null && other.getExperimentTemplateId().equals(this.getExperimentTemplateId()) == false)
+            return false;
         return true;
     }
 
@@ -173,6 +225,7 @@ public class ListExperimentsRequest extends com.amazonaws.AmazonWebServiceReques
 
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getExperimentTemplateId() == null) ? 0 : getExperimentTemplateId().hashCode());
         return hashCode;
     }
 

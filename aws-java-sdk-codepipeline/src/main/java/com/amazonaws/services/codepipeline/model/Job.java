@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,14 +42,14 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     private JobData data;
     /**
      * <p>
-     * A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one
-     * job worker. Use this number in an <a>AcknowledgeJob</a> request.
+     * A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job
+     * worker. Use this number in an <a>AcknowledgeJob</a> request.
      * </p>
      */
     private String nonce;
     /**
      * <p>
-     * The ID of the AWS account to use when performing the job.
+     * The ID of the Amazon Web Services account to use when performing the job.
      * </p>
      */
     private String accountId;
@@ -136,13 +136,13 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one
-     * job worker. Use this number in an <a>AcknowledgeJob</a> request.
+     * A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job
+     * worker. Use this number in an <a>AcknowledgeJob</a> request.
      * </p>
      * 
      * @param nonce
-     *        A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by
-     *        only one job worker. Use this number in an <a>AcknowledgeJob</a> request.
+     *        A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only
+     *        one job worker. Use this number in an <a>AcknowledgeJob</a> request.
      */
 
     public void setNonce(String nonce) {
@@ -151,12 +151,12 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one
-     * job worker. Use this number in an <a>AcknowledgeJob</a> request.
+     * A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job
+     * worker. Use this number in an <a>AcknowledgeJob</a> request.
      * </p>
      * 
-     * @return A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by
-     *         only one job worker. Use this number in an <a>AcknowledgeJob</a> request.
+     * @return A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only
+     *         one job worker. Use this number in an <a>AcknowledgeJob</a> request.
      */
 
     public String getNonce() {
@@ -165,13 +165,13 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one
-     * job worker. Use this number in an <a>AcknowledgeJob</a> request.
+     * A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job
+     * worker. Use this number in an <a>AcknowledgeJob</a> request.
      * </p>
      * 
      * @param nonce
-     *        A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by
-     *        only one job worker. Use this number in an <a>AcknowledgeJob</a> request.
+     *        A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only
+     *        one job worker. Use this number in an <a>AcknowledgeJob</a> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,11 +182,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS account to use when performing the job.
+     * The ID of the Amazon Web Services account to use when performing the job.
      * </p>
      * 
      * @param accountId
-     *        The ID of the AWS account to use when performing the job.
+     *        The ID of the Amazon Web Services account to use when performing the job.
      */
 
     public void setAccountId(String accountId) {
@@ -195,10 +195,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS account to use when performing the job.
+     * The ID of the Amazon Web Services account to use when performing the job.
      * </p>
      * 
-     * @return The ID of the AWS account to use when performing the job.
+     * @return The ID of the Amazon Web Services account to use when performing the job.
      */
 
     public String getAccountId() {
@@ -207,11 +207,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS account to use when performing the job.
+     * The ID of the Amazon Web Services account to use when performing the job.
      * </p>
      * 
      * @param accountId
-     *        The ID of the AWS account to use when performing the job.
+     *        The ID of the Amazon Web Services account to use when performing the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

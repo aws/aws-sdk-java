@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -79,11 +79,29 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
     private BatchInferenceJobConfig batchInferenceJobConfig;
     /**
      * <p>
-     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply
-     * to the batch inference job.
+     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to
+     * the batch inference job.
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * The mode of the batch inference job. To generate descriptive themes for groups of similar items, set the job mode
+     * to <code>THEME_GENERATION</code>. If you don't want to generate themes, use the default
+     * <code>BATCH_INFERENCE</code>.
+     * </p>
+     * <p>
+     * When you get batch recommendations with themes, you will incur additional costs. For more information, see <a
+     * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.
+     * </p>
+     */
+    private String batchInferenceJobMode;
+    /**
+     * <p>
+     * For theme generation jobs, specify the name of the column in your Items dataset that contains each item's name.
+     * </p>
+     */
+    private ThemeGenerationConfig themeGenerationConfig;
 
     /**
      * <p>
@@ -434,11 +452,11 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply
-     * to the batch inference job.
+     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to
+     * the batch inference job.
      * </p>
      * 
-     * @return A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to
+     * @return A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to
      *         apply to the batch inference job.
      */
 
@@ -448,12 +466,12 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply
-     * to the batch inference job.
+     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to
+     * the batch inference job.
      * </p>
      * 
      * @param tags
-     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to
+     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to
      *        apply to the batch inference job.
      */
 
@@ -468,8 +486,8 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply
-     * to the batch inference job.
+     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to
+     * the batch inference job.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -478,7 +496,7 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param tags
-     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to
+     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to
      *        apply to the batch inference job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -495,18 +513,164 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply
-     * to the batch inference job.
+     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to
+     * the batch inference job.
      * </p>
      * 
      * @param tags
-     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to
+     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to
      *        apply to the batch inference job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateBatchInferenceJobRequest withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The mode of the batch inference job. To generate descriptive themes for groups of similar items, set the job mode
+     * to <code>THEME_GENERATION</code>. If you don't want to generate themes, use the default
+     * <code>BATCH_INFERENCE</code>.
+     * </p>
+     * <p>
+     * When you get batch recommendations with themes, you will incur additional costs. For more information, see <a
+     * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.
+     * </p>
+     * 
+     * @param batchInferenceJobMode
+     *        The mode of the batch inference job. To generate descriptive themes for groups of similar items, set the
+     *        job mode to <code>THEME_GENERATION</code>. If you don't want to generate themes, use the default
+     *        <code>BATCH_INFERENCE</code>.</p>
+     *        <p>
+     *        When you get batch recommendations with themes, you will incur additional costs. For more information, see
+     *        <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.
+     * @see BatchInferenceJobMode
+     */
+
+    public void setBatchInferenceJobMode(String batchInferenceJobMode) {
+        this.batchInferenceJobMode = batchInferenceJobMode;
+    }
+
+    /**
+     * <p>
+     * The mode of the batch inference job. To generate descriptive themes for groups of similar items, set the job mode
+     * to <code>THEME_GENERATION</code>. If you don't want to generate themes, use the default
+     * <code>BATCH_INFERENCE</code>.
+     * </p>
+     * <p>
+     * When you get batch recommendations with themes, you will incur additional costs. For more information, see <a
+     * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.
+     * </p>
+     * 
+     * @return The mode of the batch inference job. To generate descriptive themes for groups of similar items, set the
+     *         job mode to <code>THEME_GENERATION</code>. If you don't want to generate themes, use the default
+     *         <code>BATCH_INFERENCE</code>.</p>
+     *         <p>
+     *         When you get batch recommendations with themes, you will incur additional costs. For more information,
+     *         see <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.
+     * @see BatchInferenceJobMode
+     */
+
+    public String getBatchInferenceJobMode() {
+        return this.batchInferenceJobMode;
+    }
+
+    /**
+     * <p>
+     * The mode of the batch inference job. To generate descriptive themes for groups of similar items, set the job mode
+     * to <code>THEME_GENERATION</code>. If you don't want to generate themes, use the default
+     * <code>BATCH_INFERENCE</code>.
+     * </p>
+     * <p>
+     * When you get batch recommendations with themes, you will incur additional costs. For more information, see <a
+     * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.
+     * </p>
+     * 
+     * @param batchInferenceJobMode
+     *        The mode of the batch inference job. To generate descriptive themes for groups of similar items, set the
+     *        job mode to <code>THEME_GENERATION</code>. If you don't want to generate themes, use the default
+     *        <code>BATCH_INFERENCE</code>.</p>
+     *        <p>
+     *        When you get batch recommendations with themes, you will incur additional costs. For more information, see
+     *        <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BatchInferenceJobMode
+     */
+
+    public CreateBatchInferenceJobRequest withBatchInferenceJobMode(String batchInferenceJobMode) {
+        setBatchInferenceJobMode(batchInferenceJobMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The mode of the batch inference job. To generate descriptive themes for groups of similar items, set the job mode
+     * to <code>THEME_GENERATION</code>. If you don't want to generate themes, use the default
+     * <code>BATCH_INFERENCE</code>.
+     * </p>
+     * <p>
+     * When you get batch recommendations with themes, you will incur additional costs. For more information, see <a
+     * href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.
+     * </p>
+     * 
+     * @param batchInferenceJobMode
+     *        The mode of the batch inference job. To generate descriptive themes for groups of similar items, set the
+     *        job mode to <code>THEME_GENERATION</code>. If you don't want to generate themes, use the default
+     *        <code>BATCH_INFERENCE</code>.</p>
+     *        <p>
+     *        When you get batch recommendations with themes, you will incur additional costs. For more information, see
+     *        <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize pricing</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BatchInferenceJobMode
+     */
+
+    public CreateBatchInferenceJobRequest withBatchInferenceJobMode(BatchInferenceJobMode batchInferenceJobMode) {
+        this.batchInferenceJobMode = batchInferenceJobMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * For theme generation jobs, specify the name of the column in your Items dataset that contains each item's name.
+     * </p>
+     * 
+     * @param themeGenerationConfig
+     *        For theme generation jobs, specify the name of the column in your Items dataset that contains each item's
+     *        name.
+     */
+
+    public void setThemeGenerationConfig(ThemeGenerationConfig themeGenerationConfig) {
+        this.themeGenerationConfig = themeGenerationConfig;
+    }
+
+    /**
+     * <p>
+     * For theme generation jobs, specify the name of the column in your Items dataset that contains each item's name.
+     * </p>
+     * 
+     * @return For theme generation jobs, specify the name of the column in your Items dataset that contains each item's
+     *         name.
+     */
+
+    public ThemeGenerationConfig getThemeGenerationConfig() {
+        return this.themeGenerationConfig;
+    }
+
+    /**
+     * <p>
+     * For theme generation jobs, specify the name of the column in your Items dataset that contains each item's name.
+     * </p>
+     * 
+     * @param themeGenerationConfig
+     *        For theme generation jobs, specify the name of the column in your Items dataset that contains each item's
+     *        name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateBatchInferenceJobRequest withThemeGenerationConfig(ThemeGenerationConfig themeGenerationConfig) {
+        setThemeGenerationConfig(themeGenerationConfig);
         return this;
     }
 
@@ -539,7 +703,11 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
         if (getBatchInferenceJobConfig() != null)
             sb.append("BatchInferenceJobConfig: ").append(getBatchInferenceJobConfig()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getBatchInferenceJobMode() != null)
+            sb.append("BatchInferenceJobMode: ").append(getBatchInferenceJobMode()).append(",");
+        if (getThemeGenerationConfig() != null)
+            sb.append("ThemeGenerationConfig: ").append(getThemeGenerationConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -590,6 +758,14 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getBatchInferenceJobMode() == null ^ this.getBatchInferenceJobMode() == null)
+            return false;
+        if (other.getBatchInferenceJobMode() != null && other.getBatchInferenceJobMode().equals(this.getBatchInferenceJobMode()) == false)
+            return false;
+        if (other.getThemeGenerationConfig() == null ^ this.getThemeGenerationConfig() == null)
+            return false;
+        if (other.getThemeGenerationConfig() != null && other.getThemeGenerationConfig().equals(this.getThemeGenerationConfig()) == false)
+            return false;
         return true;
     }
 
@@ -607,6 +783,8 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getBatchInferenceJobConfig() == null) ? 0 : getBatchInferenceJobConfig().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getBatchInferenceJobMode() == null) ? 0 : getBatchInferenceJobMode().hashCode());
+        hashCode = prime * hashCode + ((getThemeGenerationConfig() == null) ? 0 : getThemeGenerationConfig().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,7 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
     private String extension;
     /**
      * <p>
-     * The full key (name) that's assigned to the object.
+     * The full name (<i>key</i>) of the object, including the object's prefix if applicable.
      * </p>
      */
     private String key;
@@ -62,7 +62,7 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date lastModified;
     /**
      * <p>
-     * The path to the object, including the full key (name).
+     * The full path to the affected object, including the name of the affected bucket and the object's name (key).
      * </p>
      */
     private String path;
@@ -75,7 +75,7 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
     private Boolean publicAccess;
     /**
      * <p>
-     * The type of server-side encryption that's used to encrypt the object.
+     * The type of server-side encryption that was used to encrypt the object.
      * </p>
      */
     private ServerSideEncryption serverSideEncryption;
@@ -239,11 +239,11 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The full key (name) that's assigned to the object.
+     * The full name (<i>key</i>) of the object, including the object's prefix if applicable.
      * </p>
      * 
      * @param key
-     *        The full key (name) that's assigned to the object.
+     *        The full name (<i>key</i>) of the object, including the object's prefix if applicable.
      */
 
     public void setKey(String key) {
@@ -252,10 +252,10 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The full key (name) that's assigned to the object.
+     * The full name (<i>key</i>) of the object, including the object's prefix if applicable.
      * </p>
      * 
-     * @return The full key (name) that's assigned to the object.
+     * @return The full name (<i>key</i>) of the object, including the object's prefix if applicable.
      */
 
     public String getKey() {
@@ -264,11 +264,11 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The full key (name) that's assigned to the object.
+     * The full name (<i>key</i>) of the object, including the object's prefix if applicable.
      * </p>
      * 
      * @param key
-     *        The full key (name) that's assigned to the object.
+     *        The full name (<i>key</i>) of the object, including the object's prefix if applicable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -319,11 +319,12 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The path to the object, including the full key (name).
+     * The full path to the affected object, including the name of the affected bucket and the object's name (key).
      * </p>
      * 
      * @param path
-     *        The path to the object, including the full key (name).
+     *        The full path to the affected object, including the name of the affected bucket and the object's name
+     *        (key).
      */
 
     public void setPath(String path) {
@@ -332,10 +333,11 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The path to the object, including the full key (name).
+     * The full path to the affected object, including the name of the affected bucket and the object's name (key).
      * </p>
      * 
-     * @return The path to the object, including the full key (name).
+     * @return The full path to the affected object, including the name of the affected bucket and the object's name
+     *         (key).
      */
 
     public String getPath() {
@@ -344,11 +346,12 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The path to the object, including the full key (name).
+     * The full path to the affected object, including the name of the affected bucket and the object's name (key).
      * </p>
      * 
      * @param path
-     *        The path to the object, including the full key (name).
+     *        The full path to the affected object, including the name of the affected bucket and the object's name
+     *        (key).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -419,11 +422,11 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of server-side encryption that's used to encrypt the object.
+     * The type of server-side encryption that was used to encrypt the object.
      * </p>
      * 
      * @param serverSideEncryption
-     *        The type of server-side encryption that's used to encrypt the object.
+     *        The type of server-side encryption that was used to encrypt the object.
      */
 
     public void setServerSideEncryption(ServerSideEncryption serverSideEncryption) {
@@ -432,10 +435,10 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of server-side encryption that's used to encrypt the object.
+     * The type of server-side encryption that was used to encrypt the object.
      * </p>
      * 
-     * @return The type of server-side encryption that's used to encrypt the object.
+     * @return The type of server-side encryption that was used to encrypt the object.
      */
 
     public ServerSideEncryption getServerSideEncryption() {
@@ -444,11 +447,11 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of server-side encryption that's used to encrypt the object.
+     * The type of server-side encryption that was used to encrypt the object.
      * </p>
      * 
      * @param serverSideEncryption
-     *        The type of server-side encryption that's used to encrypt the object.
+     *        The type of server-side encryption that was used to encrypt the object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

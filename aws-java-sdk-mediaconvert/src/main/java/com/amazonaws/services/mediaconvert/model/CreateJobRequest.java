@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,7 +38,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * appear on the billing report unsorted.
      */
     private String billingTagsSource;
-    /** Optional. Idempotency token for CreateJob operation. */
+    /**
+     * Prevent duplicate jobs from being created and ensure idempotency for your requests. A client request token can be
+     * any string that includes up to 64 ASCII characters. If you reuse a client request token within one minute of a
+     * successful request, the API returns the job details of the original request instead. For more information see
+     * https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
+     */
     private String clientRequestToken;
     /**
      * Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to.
@@ -217,10 +222,16 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Optional. Idempotency token for CreateJob operation.
+     * Prevent duplicate jobs from being created and ensure idempotency for your requests. A client request token can be
+     * any string that includes up to 64 ASCII characters. If you reuse a client request token within one minute of a
+     * successful request, the API returns the job details of the original request instead. For more information see
+     * https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
      * 
      * @param clientRequestToken
-     *        Optional. Idempotency token for CreateJob operation.
+     *        Prevent duplicate jobs from being created and ensure idempotency for your requests. A client request token
+     *        can be any string that includes up to 64 ASCII characters. If you reuse a client request token within one
+     *        minute of a successful request, the API returns the job details of the original request instead. For more
+     *        information see https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -228,9 +239,16 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Optional. Idempotency token for CreateJob operation.
+     * Prevent duplicate jobs from being created and ensure idempotency for your requests. A client request token can be
+     * any string that includes up to 64 ASCII characters. If you reuse a client request token within one minute of a
+     * successful request, the API returns the job details of the original request instead. For more information see
+     * https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
      * 
-     * @return Optional. Idempotency token for CreateJob operation.
+     * @return Prevent duplicate jobs from being created and ensure idempotency for your requests. A client request
+     *         token can be any string that includes up to 64 ASCII characters. If you reuse a client request token
+     *         within one minute of a successful request, the API returns the job details of the original request
+     *         instead. For more information see
+     *         https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
      */
 
     public String getClientRequestToken() {
@@ -238,10 +256,16 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * Optional. Idempotency token for CreateJob operation.
+     * Prevent duplicate jobs from being created and ensure idempotency for your requests. A client request token can be
+     * any string that includes up to 64 ASCII characters. If you reuse a client request token within one minute of a
+     * successful request, the API returns the job details of the original request instead. For more information see
+     * https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
      * 
      * @param clientRequestToken
-     *        Optional. Idempotency token for CreateJob operation.
+     *        Prevent duplicate jobs from being created and ensure idempotency for your requests. A client request token
+     *        can be any string that includes up to 64 ASCII characters. If you reuse a client request token within one
+     *        minute of a successful request, the API returns the job details of the original request instead. For more
+     *        information see https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

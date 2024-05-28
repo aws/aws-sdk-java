@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -90,6 +90,12 @@ public class EventType implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String arn;
+    /**
+     * <p>
+     * The event orchestration status.
+     * </p>
+     */
+    private EventOrchestration eventOrchestration;
 
     /**
      * <p>
@@ -617,6 +623,46 @@ public class EventType implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The event orchestration status.
+     * </p>
+     * 
+     * @param eventOrchestration
+     *        The event orchestration status.
+     */
+
+    public void setEventOrchestration(EventOrchestration eventOrchestration) {
+        this.eventOrchestration = eventOrchestration;
+    }
+
+    /**
+     * <p>
+     * The event orchestration status.
+     * </p>
+     * 
+     * @return The event orchestration status.
+     */
+
+    public EventOrchestration getEventOrchestration() {
+        return this.eventOrchestration;
+    }
+
+    /**
+     * <p>
+     * The event orchestration status.
+     * </p>
+     * 
+     * @param eventOrchestration
+     *        The event orchestration status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EventType withEventOrchestration(EventOrchestration eventOrchestration) {
+        setEventOrchestration(eventOrchestration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -647,7 +693,9 @@ public class EventType implements Serializable, Cloneable, StructuredPojo {
         if (getCreatedTime() != null)
             sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
         if (getArn() != null)
-            sb.append("Arn: ").append(getArn());
+            sb.append("Arn: ").append(getArn()).append(",");
+        if (getEventOrchestration() != null)
+            sb.append("EventOrchestration: ").append(getEventOrchestration());
         sb.append("}");
         return sb.toString();
     }
@@ -702,6 +750,10 @@ public class EventType implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
+        if (other.getEventOrchestration() == null ^ this.getEventOrchestration() == null)
+            return false;
+        if (other.getEventOrchestration() != null && other.getEventOrchestration().equals(this.getEventOrchestration()) == false)
+            return false;
         return true;
     }
 
@@ -720,6 +772,7 @@ public class EventType implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getEventOrchestration() == null) ? 0 : getEventOrchestration().hashCode());
         return hashCode;
     }
 

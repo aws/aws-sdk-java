@@ -2,14 +2,13 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      java: "$JAVA_RUNTIME"
     commands:
-    - apt-get update
-    - apt-get install python3 python3-pip -y
-    - update-alternatives --install /usr/bin/python python /usr/bin/python3 10
-    - update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 10
-    - pip install awscli==1.19.34 --upgrade --user
-    - pip install rsa
-    - pip install typing
+      - apt-get update
+      - pip install awscli --upgrade --user
+      - pip install rsa
+      - pip install typing
 
   pre_build:
     commands:
@@ -32,7 +31,7 @@ phases:
         SDK_SIGNING_GPG_KEYNAME=`aws secretsmanager get-secret-value --secret-id $SDK_SIGNING_GPG_KEYNAME_ARN --query SecretString --output text`
         SDK_SIGNING_GPG_PASSPHRASE=`aws secretsmanager get-secret-value --secret-id $SDK_SIGNING_GPG_PASSPHRASE_ARN --query SecretString --output text`
         aws secretsmanager get-secret-value --secret-id  $SDK_SIGNING_GPG_SECRING_ARN --query SecretBinary --output text | base64 -d > $SDK_SIGNING_GPG_SECRING
-        gpg --passphrase $SDK_SIGNING_GPG_PASSPHRASE --import $SDK_SIGNING_GPG_SECRING
+        gpg --passphrase $SDK_SIGNING_GPG_PASSPHRASE --batch --import $SDK_SIGNING_GPG_SECRING
 
         cat $SETTINGS_XML_TEMPLATE | \
           awk 'BEGIN { var=ENVIRON["SONATYPE_PASSWORD"] } { gsub("\\$SONATYPE_PASSWORD", var, $0); print }' | \
@@ -40,7 +39,7 @@ phases:
           awk 'BEGIN { var=ENVIRON["SDK_SIGNING_GPG_KEYNAME"] } { gsub("\\$SDK_SIGNING_GPG_KEYNAME", var, $0); print }' > \
           $SETTINGS_XML
 
-        mvn clean deploy -B -s $SETTINGS_XML -Ppublishing -DperformRelease -Dfindbugs.skip -DskipTests -Dcheckstyle.skip -Ddoclint=none -Dadditionalparam=--allow-script-in-comments -DautoReleaseAfterClose=true -DstagingProgressTimeoutMinutes=30
+        mvn clean -U deploy -B -s $SETTINGS_XML -Ppublishing -DperformRelease -Dfindbugs.skip -DskipTests -Dcheckstyle.skip -DadditionalJOption=-Xdoclint:none -DadditionalJOption=--allow-script-in-comments -DautoReleaseAfterClose=true -DstagingProgressTimeoutMinutes=30 -Dmaven.wagon.httpconnectionManager.ttlSeconds=120 -Dmaven.wagon.http.retryHandler.requestSentEnabled=true
       else
         echo "This version was already released."
       fi

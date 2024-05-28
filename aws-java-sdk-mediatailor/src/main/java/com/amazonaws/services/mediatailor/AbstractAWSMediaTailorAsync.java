@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,19 @@ import com.amazonaws.services.mediatailor.model.*;
 public class AbstractAWSMediaTailorAsync extends AbstractAWSMediaTailor implements AWSMediaTailorAsync {
 
     protected AbstractAWSMediaTailorAsync() {
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConfigureLogsForChannelResult> configureLogsForChannelAsync(ConfigureLogsForChannelRequest request) {
+
+        return configureLogsForChannelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConfigureLogsForChannelResult> configureLogsForChannelAsync(ConfigureLogsForChannelRequest request,
+            com.amazonaws.handlers.AsyncHandler<ConfigureLogsForChannelRequest, ConfigureLogsForChannelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -545,6 +558,19 @@ public class AbstractAWSMediaTailorAsync extends AbstractAWSMediaTailor implemen
     @Override
     public java.util.concurrent.Future<UpdateLiveSourceResult> updateLiveSourceAsync(UpdateLiveSourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateLiveSourceRequest, UpdateLiveSourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProgramResult> updateProgramAsync(UpdateProgramRequest request) {
+
+        return updateProgramAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateProgramResult> updateProgramAsync(UpdateProgramRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateProgramRequest, UpdateProgramResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

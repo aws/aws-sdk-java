@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,8 +35,8 @@ public class ListRepositoriesResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for
-     * list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records
-     * is retrieved.
+     * list repository operations. When the client sends the token back to CodeCommit, another page of 1,000 records is
+     * retrieved.
      * </p>
      */
     private String nextToken;
@@ -114,14 +114,14 @@ public class ListRepositoriesResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for
-     * list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records
-     * is retrieved.
+     * list repository operations. When the client sends the token back to CodeCommit, another page of 1,000 records is
+     * retrieved.
      * </p>
      * 
      * @param nextToken
      *        An enumeration token that allows the operation to batch the results of the operation. Batch sizes are
-     *        1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page
-     *        of 1,000 records is retrieved.
+     *        1,000 for list repository operations. When the client sends the token back to CodeCommit, another page of
+     *        1,000 records is retrieved.
      */
 
     public void setNextToken(String nextToken) {
@@ -131,13 +131,13 @@ public class ListRepositoriesResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for
-     * list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records
-     * is retrieved.
+     * list repository operations. When the client sends the token back to CodeCommit, another page of 1,000 records is
+     * retrieved.
      * </p>
      * 
      * @return An enumeration token that allows the operation to batch the results of the operation. Batch sizes are
-     *         1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another
-     *         page of 1,000 records is retrieved.
+     *         1,000 for list repository operations. When the client sends the token back to CodeCommit, another page of
+     *         1,000 records is retrieved.
      */
 
     public String getNextToken() {
@@ -147,14 +147,14 @@ public class ListRepositoriesResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for
-     * list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records
-     * is retrieved.
+     * list repository operations. When the client sends the token back to CodeCommit, another page of 1,000 records is
+     * retrieved.
      * </p>
      * 
      * @param nextToken
      *        An enumeration token that allows the operation to batch the results of the operation. Batch sizes are
-     *        1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page
-     *        of 1,000 records is retrieved.
+     *        1,000 for list repository operations. When the client sends the token back to CodeCommit, another page of
+     *        1,000 records is retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

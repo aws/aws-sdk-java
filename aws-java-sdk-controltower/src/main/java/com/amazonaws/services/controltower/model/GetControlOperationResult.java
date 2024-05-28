@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,13 +23,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetControlOperationResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
-    /** <p/> */
+    /**
+     * <p>
+     * An operation performed by the control.
+     * </p>
+     */
     private ControlOperation controlOperation;
 
     /**
-     * <p/>
+     * <p>
+     * An operation performed by the control.
+     * </p>
      * 
      * @param controlOperation
+     *        An operation performed by the control.
      */
 
     public void setControlOperation(ControlOperation controlOperation) {
@@ -37,9 +44,11 @@ public class GetControlOperationResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * <p/>
+     * <p>
+     * An operation performed by the control.
+     * </p>
      * 
-     * @return
+     * @return An operation performed by the control.
      */
 
     public ControlOperation getControlOperation() {
@@ -47,9 +56,12 @@ public class GetControlOperationResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * <p/>
+     * <p>
+     * An operation performed by the control.
+     * </p>
      * 
      * @param controlOperation
+     *        An operation performed by the control.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

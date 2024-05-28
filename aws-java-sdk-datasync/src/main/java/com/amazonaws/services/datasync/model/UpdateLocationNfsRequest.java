@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,35 +27,19 @@ public class UpdateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the NFS location to update.
+     * Specifies the Amazon Resource Name (ARN) of the NFS transfer location that you want to update.
      * </p>
      */
     private String locationArn;
     /**
      * <p>
-     * The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to
-     * the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that
-     * path. The path should be such that it can be mounted by other NFS clients in your network.
+     * Specifies the export path in your NFS file server that you want DataSync to mount.
      * </p>
      * <p>
-     * To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS
-     * client that has access to your server. You can specify any directory that appears in the results, and any
-     * subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication.
-     * </p>
-     * <p>
-     * To transfer all the data in the folder that you specified, DataSync must have permissions to read all the data.
-     * To ensure this, either configure the NFS export with <code>no_root_squash</code>, or ensure that the files you
-     * want DataSync to access have permissions that allow read access for all users. Doing either option enables the
-     * agent to read the files. For the agent to access directories, you must additionally enable all execute access.
-     * </p>
-     * <p>
-     * If you are copying data to or from your Snowcone device, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server
-     * on Snowcone</a> for more information.
-     * </p>
-     * <p>
-     * For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red Hat
-     * Enterprise Linux documentation.
+     * This path (or a subdirectory of the path) is where DataSync transfers data to or from. For information on
+     * configuring an export for DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing NFS
+     * file servers</a>.
      * </p>
      */
     private String subdirectory;
@@ -66,11 +50,11 @@ public class UpdateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the NFS location to update.
+     * Specifies the Amazon Resource Name (ARN) of the NFS transfer location that you want to update.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the NFS location to update.
+     *        Specifies the Amazon Resource Name (ARN) of the NFS transfer location that you want to update.
      */
 
     public void setLocationArn(String locationArn) {
@@ -79,10 +63,10 @@ public class UpdateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the NFS location to update.
+     * Specifies the Amazon Resource Name (ARN) of the NFS transfer location that you want to update.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the NFS location to update.
+     * @return Specifies the Amazon Resource Name (ARN) of the NFS transfer location that you want to update.
      */
 
     public String getLocationArn() {
@@ -91,11 +75,11 @@ public class UpdateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the NFS location to update.
+     * Specifies the Amazon Resource Name (ARN) of the NFS transfer location that you want to update.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the NFS location to update.
+     *        Specifies the Amazon Resource Name (ARN) of the NFS transfer location that you want to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,57 +90,22 @@ public class UpdateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to
-     * the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that
-     * path. The path should be such that it can be mounted by other NFS clients in your network.
+     * Specifies the export path in your NFS file server that you want DataSync to mount.
      * </p>
      * <p>
-     * To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS
-     * client that has access to your server. You can specify any directory that appears in the results, and any
-     * subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication.
-     * </p>
-     * <p>
-     * To transfer all the data in the folder that you specified, DataSync must have permissions to read all the data.
-     * To ensure this, either configure the NFS export with <code>no_root_squash</code>, or ensure that the files you
-     * want DataSync to access have permissions that allow read access for all users. Doing either option enables the
-     * agent to read the files. For the agent to access directories, you must additionally enable all execute access.
-     * </p>
-     * <p>
-     * If you are copying data to or from your Snowcone device, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server
-     * on Snowcone</a> for more information.
-     * </p>
-     * <p>
-     * For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red Hat
-     * Enterprise Linux documentation.
+     * This path (or a subdirectory of the path) is where DataSync transfers data to or from. For information on
+     * configuring an export for DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing NFS
+     * file servers</a>.
      * </p>
      * 
      * @param subdirectory
-     *        The subdirectory in the NFS file system that is used to read data from the NFS source location or write
-     *        data to the NFS destination. The NFS path should be a path that's exported by the NFS server, or a
-     *        subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your
-     *        network.</p>
+     *        Specifies the export path in your NFS file server that you want DataSync to mount.</p>
      *        <p>
-     *        To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an
-     *        NFS client that has access to your server. You can specify any directory that appears in the results, and
-     *        any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos
-     *        authentication.
-     *        </p>
-     *        <p>
-     *        To transfer all the data in the folder that you specified, DataSync must have permissions to read all the
-     *        data. To ensure this, either configure the NFS export with <code>no_root_squash</code>, or ensure that the
-     *        files you want DataSync to access have permissions that allow read access for all users. Doing either
-     *        option enables the agent to read the files. For the agent to access directories, you must additionally
-     *        enable all execute access.
-     *        </p>
-     *        <p>
-     *        If you are copying data to or from your Snowcone device, see <a
-     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     *        Server on Snowcone</a> for more information.
-     *        </p>
-     *        <p>
-     *        For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red
-     *        Hat Enterprise Linux documentation.
+     *        This path (or a subdirectory of the path) is where DataSync transfers data to or from. For information on
+     *        configuring an export for DataSync, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs"
+     *        >Accessing NFS file servers</a>.
      */
 
     public void setSubdirectory(String subdirectory) {
@@ -165,56 +114,21 @@ public class UpdateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to
-     * the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that
-     * path. The path should be such that it can be mounted by other NFS clients in your network.
+     * Specifies the export path in your NFS file server that you want DataSync to mount.
      * </p>
      * <p>
-     * To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS
-     * client that has access to your server. You can specify any directory that appears in the results, and any
-     * subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication.
-     * </p>
-     * <p>
-     * To transfer all the data in the folder that you specified, DataSync must have permissions to read all the data.
-     * To ensure this, either configure the NFS export with <code>no_root_squash</code>, or ensure that the files you
-     * want DataSync to access have permissions that allow read access for all users. Doing either option enables the
-     * agent to read the files. For the agent to access directories, you must additionally enable all execute access.
-     * </p>
-     * <p>
-     * If you are copying data to or from your Snowcone device, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server
-     * on Snowcone</a> for more information.
-     * </p>
-     * <p>
-     * For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red Hat
-     * Enterprise Linux documentation.
+     * This path (or a subdirectory of the path) is where DataSync transfers data to or from. For information on
+     * configuring an export for DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing NFS
+     * file servers</a>.
      * </p>
      * 
-     * @return The subdirectory in the NFS file system that is used to read data from the NFS source location or write
-     *         data to the NFS destination. The NFS path should be a path that's exported by the NFS server, or a
-     *         subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your
-     *         network.</p>
+     * @return Specifies the export path in your NFS file server that you want DataSync to mount.</p>
      *         <p>
-     *         To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an
-     *         NFS client that has access to your server. You can specify any directory that appears in the results, and
-     *         any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos
-     *         authentication.
-     *         </p>
-     *         <p>
-     *         To transfer all the data in the folder that you specified, DataSync must have permissions to read all the
-     *         data. To ensure this, either configure the NFS export with <code>no_root_squash</code>, or ensure that
-     *         the files you want DataSync to access have permissions that allow read access for all users. Doing either
-     *         option enables the agent to read the files. For the agent to access directories, you must additionally
-     *         enable all execute access.
-     *         </p>
-     *         <p>
-     *         If you are copying data to or from your Snowcone device, see <a
-     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     *         Server on Snowcone</a> for more information.
-     *         </p>
-     *         <p>
-     *         For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red
-     *         Hat Enterprise Linux documentation.
+     *         This path (or a subdirectory of the path) is where DataSync transfers data to or from. For information on
+     *         configuring an export for DataSync, see <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs"
+     *         >Accessing NFS file servers</a>.
      */
 
     public String getSubdirectory() {
@@ -223,57 +137,22 @@ public class UpdateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to
-     * the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that
-     * path. The path should be such that it can be mounted by other NFS clients in your network.
+     * Specifies the export path in your NFS file server that you want DataSync to mount.
      * </p>
      * <p>
-     * To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS
-     * client that has access to your server. You can specify any directory that appears in the results, and any
-     * subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos authentication.
-     * </p>
-     * <p>
-     * To transfer all the data in the folder that you specified, DataSync must have permissions to read all the data.
-     * To ensure this, either configure the NFS export with <code>no_root_squash</code>, or ensure that the files you
-     * want DataSync to access have permissions that allow read access for all users. Doing either option enables the
-     * agent to read the files. For the agent to access directories, you must additionally enable all execute access.
-     * </p>
-     * <p>
-     * If you are copying data to or from your Snowcone device, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server
-     * on Snowcone</a> for more information.
-     * </p>
-     * <p>
-     * For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red Hat
-     * Enterprise Linux documentation.
+     * This path (or a subdirectory of the path) is where DataSync transfers data to or from. For information on
+     * configuring an export for DataSync, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs">Accessing NFS
+     * file servers</a>.
      * </p>
      * 
      * @param subdirectory
-     *        The subdirectory in the NFS file system that is used to read data from the NFS source location or write
-     *        data to the NFS destination. The NFS path should be a path that's exported by the NFS server, or a
-     *        subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your
-     *        network.</p>
+     *        Specifies the export path in your NFS file server that you want DataSync to mount.</p>
      *        <p>
-     *        To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an
-     *        NFS client that has access to your server. You can specify any directory that appears in the results, and
-     *        any subdirectory of that directory. Ensure that the NFS export is accessible without Kerberos
-     *        authentication.
-     *        </p>
-     *        <p>
-     *        To transfer all the data in the folder that you specified, DataSync must have permissions to read all the
-     *        data. To ensure this, either configure the NFS export with <code>no_root_squash</code>, or ensure that the
-     *        files you want DataSync to access have permissions that allow read access for all users. Doing either
-     *        option enables the agent to read the files. For the agent to access directories, you must additionally
-     *        enable all execute access.
-     *        </p>
-     *        <p>
-     *        If you are copying data to or from your Snowcone device, see <a
-     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
-     *        Server on Snowcone</a> for more information.
-     *        </p>
-     *        <p>
-     *        For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red
-     *        Hat Enterprise Linux documentation.
+     *        This path (or a subdirectory of the path) is where DataSync transfers data to or from. For information on
+     *        configuring an export for DataSync, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#accessing-nfs"
+     *        >Accessing NFS file servers</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class BlockDeviceMapping implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The device name that is exposed to the instance, such as <code>/dev/sdh</code>. For the root device, you can use
-     * the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks Stacks will
+     * the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and OpsWorks Stacks will
      * provide the correct device name.
      * </p>
      */
@@ -61,14 +61,14 @@ public class BlockDeviceMapping implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The device name that is exposed to the instance, such as <code>/dev/sdh</code>. For the root device, you can use
-     * the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks Stacks will
+     * the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and OpsWorks Stacks will
      * provide the correct device name.
      * </p>
      * 
      * @param deviceName
      *        The device name that is exposed to the instance, such as <code>/dev/sdh</code>. For the root device, you
-     *        can use the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and AWS
-     *        OpsWorks Stacks will provide the correct device name.
+     *        can use the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and OpsWorks
+     *        Stacks will provide the correct device name.
      */
 
     public void setDeviceName(String deviceName) {
@@ -78,13 +78,13 @@ public class BlockDeviceMapping implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The device name that is exposed to the instance, such as <code>/dev/sdh</code>. For the root device, you can use
-     * the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks Stacks will
+     * the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and OpsWorks Stacks will
      * provide the correct device name.
      * </p>
      * 
      * @return The device name that is exposed to the instance, such as <code>/dev/sdh</code>. For the root device, you
-     *         can use the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and AWS
-     *         OpsWorks Stacks will provide the correct device name.
+     *         can use the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and OpsWorks
+     *         Stacks will provide the correct device name.
      */
 
     public String getDeviceName() {
@@ -94,14 +94,14 @@ public class BlockDeviceMapping implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The device name that is exposed to the instance, such as <code>/dev/sdh</code>. For the root device, you can use
-     * the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and AWS OpsWorks Stacks will
+     * the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and OpsWorks Stacks will
      * provide the correct device name.
      * </p>
      * 
      * @param deviceName
      *        The device name that is exposed to the instance, such as <code>/dev/sdh</code>. For the root device, you
-     *        can use the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and AWS
-     *        OpsWorks Stacks will provide the correct device name.
+     *        can use the explicit device name or you can set this parameter to <code>ROOT_DEVICE</code> and OpsWorks
+     *        Stacks will provide the correct device name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

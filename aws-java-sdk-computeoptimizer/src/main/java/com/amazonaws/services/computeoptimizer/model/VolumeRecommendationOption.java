@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,6 +66,13 @@ public class VolumeRecommendationOption implements Serializable, Cloneable, Stru
      * </p>
      */
     private SavingsOpportunity savingsOpportunity;
+    /**
+     * <p>
+     * An object that describes the savings opportunity for the Amazon EBS volume recommendation option with specific
+     * discounts. Savings opportunity includes the estimated monthly savings and percentage.
+     * </p>
+     */
+    private EBSSavingsOpportunityAfterDiscounts savingsOpportunityAfterDiscounts;
 
     /**
      * <p>
@@ -306,6 +313,52 @@ public class VolumeRecommendationOption implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * An object that describes the savings opportunity for the Amazon EBS volume recommendation option with specific
+     * discounts. Savings opportunity includes the estimated monthly savings and percentage.
+     * </p>
+     * 
+     * @param savingsOpportunityAfterDiscounts
+     *        An object that describes the savings opportunity for the Amazon EBS volume recommendation option with
+     *        specific discounts. Savings opportunity includes the estimated monthly savings and percentage.
+     */
+
+    public void setSavingsOpportunityAfterDiscounts(EBSSavingsOpportunityAfterDiscounts savingsOpportunityAfterDiscounts) {
+        this.savingsOpportunityAfterDiscounts = savingsOpportunityAfterDiscounts;
+    }
+
+    /**
+     * <p>
+     * An object that describes the savings opportunity for the Amazon EBS volume recommendation option with specific
+     * discounts. Savings opportunity includes the estimated monthly savings and percentage.
+     * </p>
+     * 
+     * @return An object that describes the savings opportunity for the Amazon EBS volume recommendation option with
+     *         specific discounts. Savings opportunity includes the estimated monthly savings and percentage.
+     */
+
+    public EBSSavingsOpportunityAfterDiscounts getSavingsOpportunityAfterDiscounts() {
+        return this.savingsOpportunityAfterDiscounts;
+    }
+
+    /**
+     * <p>
+     * An object that describes the savings opportunity for the Amazon EBS volume recommendation option with specific
+     * discounts. Savings opportunity includes the estimated monthly savings and percentage.
+     * </p>
+     * 
+     * @param savingsOpportunityAfterDiscounts
+     *        An object that describes the savings opportunity for the Amazon EBS volume recommendation option with
+     *        specific discounts. Savings opportunity includes the estimated monthly savings and percentage.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VolumeRecommendationOption withSavingsOpportunityAfterDiscounts(EBSSavingsOpportunityAfterDiscounts savingsOpportunityAfterDiscounts) {
+        setSavingsOpportunityAfterDiscounts(savingsOpportunityAfterDiscounts);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -324,7 +377,9 @@ public class VolumeRecommendationOption implements Serializable, Cloneable, Stru
         if (getRank() != null)
             sb.append("Rank: ").append(getRank()).append(",");
         if (getSavingsOpportunity() != null)
-            sb.append("SavingsOpportunity: ").append(getSavingsOpportunity());
+            sb.append("SavingsOpportunity: ").append(getSavingsOpportunity()).append(",");
+        if (getSavingsOpportunityAfterDiscounts() != null)
+            sb.append("SavingsOpportunityAfterDiscounts: ").append(getSavingsOpportunityAfterDiscounts());
         sb.append("}");
         return sb.toString();
     }
@@ -355,6 +410,11 @@ public class VolumeRecommendationOption implements Serializable, Cloneable, Stru
             return false;
         if (other.getSavingsOpportunity() != null && other.getSavingsOpportunity().equals(this.getSavingsOpportunity()) == false)
             return false;
+        if (other.getSavingsOpportunityAfterDiscounts() == null ^ this.getSavingsOpportunityAfterDiscounts() == null)
+            return false;
+        if (other.getSavingsOpportunityAfterDiscounts() != null
+                && other.getSavingsOpportunityAfterDiscounts().equals(this.getSavingsOpportunityAfterDiscounts()) == false)
+            return false;
         return true;
     }
 
@@ -367,6 +427,7 @@ public class VolumeRecommendationOption implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getPerformanceRisk() == null) ? 0 : getPerformanceRisk().hashCode());
         hashCode = prime * hashCode + ((getRank() == null) ? 0 : getRank().hashCode());
         hashCode = prime * hashCode + ((getSavingsOpportunity() == null) ? 0 : getSavingsOpportunity().hashCode());
+        hashCode = prime * hashCode + ((getSavingsOpportunityAfterDiscounts() == null) ? 0 : getSavingsOpportunityAfterDiscounts().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,8 @@ public class ClusterOperationInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceClusterInfo").build();
     private static final MarshallingInfo<StructuredPojo> TARGETCLUSTERINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("targetClusterInfo").build();
+    private static final MarshallingInfo<StructuredPojo> VPCCONNECTIONINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vpcConnectionInfo").build();
 
     private static final ClusterOperationInfoMarshaller instance = new ClusterOperationInfoMarshaller();
 
@@ -78,6 +80,7 @@ public class ClusterOperationInfoMarshaller {
             protocolMarshaller.marshall(clusterOperationInfo.getOperationType(), OPERATIONTYPE_BINDING);
             protocolMarshaller.marshall(clusterOperationInfo.getSourceClusterInfo(), SOURCECLUSTERINFO_BINDING);
             protocolMarshaller.marshall(clusterOperationInfo.getTargetClusterInfo(), TARGETCLUSTERINFO_BINDING);
+            protocolMarshaller.marshall(clusterOperationInfo.getVpcConnectionInfo(), VPCCONNECTIONINFO_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

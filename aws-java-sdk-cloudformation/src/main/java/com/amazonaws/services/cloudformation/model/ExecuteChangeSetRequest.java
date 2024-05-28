@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,13 +52,44 @@ public class ExecuteChangeSetRequest extends com.amazonaws.AmazonWebServiceReque
     private String clientRequestToken;
     /**
      * <p>
-     * Preserves the state of previously provisioned resources when an operation fails.
+     * Preserves the state of previously provisioned resources when an operation fails. This parameter can't be
+     * specified when the <code>OnStackFailure</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html"
+     * >CreateChangeSet</a> API operation was specified.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>True</code> - if the stack creation fails, do nothing. This is equivalent to specifying
+     * <code>DO_NOTHING</code> for the <code>OnStackFailure</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html"
+     * >CreateChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>False</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying
+     * <code>ROLLBACK</code> for the <code>OnStackFailure</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html"
+     * >CreateChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Default: <code>True</code>
      * </p>
      */
     private Boolean disableRollback;
+    /**
+     * <p>
+     * When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes
+     * newly created resources marked with a deletion policy of <code>Retain</code>.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     */
+    private Boolean retainExceptOnCreate;
 
     /**
      * <p>
@@ -206,14 +237,56 @@ public class ExecuteChangeSetRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Preserves the state of previously provisioned resources when an operation fails.
+     * Preserves the state of previously provisioned resources when an operation fails. This parameter can't be
+     * specified when the <code>OnStackFailure</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html"
+     * >CreateChangeSet</a> API operation was specified.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>True</code> - if the stack creation fails, do nothing. This is equivalent to specifying
+     * <code>DO_NOTHING</code> for the <code>OnStackFailure</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html"
+     * >CreateChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>False</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying
+     * <code>ROLLBACK</code> for the <code>OnStackFailure</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html"
+     * >CreateChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Default: <code>True</code>
      * </p>
      * 
      * @param disableRollback
-     *        Preserves the state of previously provisioned resources when an operation fails.</p>
+     *        Preserves the state of previously provisioned resources when an operation fails. This parameter can't be
+     *        specified when the <code>OnStackFailure</code> parameter to the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html"
+     *        >CreateChangeSet</a> API operation was specified.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>True</code> - if the stack creation fails, do nothing. This is equivalent to specifying
+     *        <code>DO_NOTHING</code> for the <code>OnStackFailure</code> parameter to the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html"
+     *        >CreateChangeSet</a> API operation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>False</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying
+     *        <code>ROLLBACK</code> for the <code>OnStackFailure</code> parameter to the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html"
+     *        >CreateChangeSet</a> API operation.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        Default: <code>True</code>
      */
@@ -224,13 +297,55 @@ public class ExecuteChangeSetRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Preserves the state of previously provisioned resources when an operation fails.
+     * Preserves the state of previously provisioned resources when an operation fails. This parameter can't be
+     * specified when the <code>OnStackFailure</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html"
+     * >CreateChangeSet</a> API operation was specified.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>True</code> - if the stack creation fails, do nothing. This is equivalent to specifying
+     * <code>DO_NOTHING</code> for the <code>OnStackFailure</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html"
+     * >CreateChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>False</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying
+     * <code>ROLLBACK</code> for the <code>OnStackFailure</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html"
+     * >CreateChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Default: <code>True</code>
      * </p>
      * 
-     * @return Preserves the state of previously provisioned resources when an operation fails.</p>
+     * @return Preserves the state of previously provisioned resources when an operation fails. This parameter can't be
+     *         specified when the <code>OnStackFailure</code> parameter to the <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html"
+     *         >CreateChangeSet</a> API operation was specified.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>True</code> - if the stack creation fails, do nothing. This is equivalent to specifying
+     *         <code>DO_NOTHING</code> for the <code>OnStackFailure</code> parameter to the <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html"
+     *         >CreateChangeSet</a> API operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>False</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying
+     *         <code>ROLLBACK</code> for the <code>OnStackFailure</code> parameter to the <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html"
+     *         >CreateChangeSet</a> API operation.
+     *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
      *         Default: <code>True</code>
      */
@@ -241,14 +356,56 @@ public class ExecuteChangeSetRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Preserves the state of previously provisioned resources when an operation fails.
+     * Preserves the state of previously provisioned resources when an operation fails. This parameter can't be
+     * specified when the <code>OnStackFailure</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html"
+     * >CreateChangeSet</a> API operation was specified.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>True</code> - if the stack creation fails, do nothing. This is equivalent to specifying
+     * <code>DO_NOTHING</code> for the <code>OnStackFailure</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html"
+     * >CreateChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>False</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying
+     * <code>ROLLBACK</code> for the <code>OnStackFailure</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html"
+     * >CreateChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Default: <code>True</code>
      * </p>
      * 
      * @param disableRollback
-     *        Preserves the state of previously provisioned resources when an operation fails.</p>
+     *        Preserves the state of previously provisioned resources when an operation fails. This parameter can't be
+     *        specified when the <code>OnStackFailure</code> parameter to the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html"
+     *        >CreateChangeSet</a> API operation was specified.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>True</code> - if the stack creation fails, do nothing. This is equivalent to specifying
+     *        <code>DO_NOTHING</code> for the <code>OnStackFailure</code> parameter to the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html"
+     *        >CreateChangeSet</a> API operation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>False</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying
+     *        <code>ROLLBACK</code> for the <code>OnStackFailure</code> parameter to the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html"
+     *        >CreateChangeSet</a> API operation.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        Default: <code>True</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -261,19 +418,141 @@ public class ExecuteChangeSetRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Preserves the state of previously provisioned resources when an operation fails.
+     * Preserves the state of previously provisioned resources when an operation fails. This parameter can't be
+     * specified when the <code>OnStackFailure</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html"
+     * >CreateChangeSet</a> API operation was specified.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>True</code> - if the stack creation fails, do nothing. This is equivalent to specifying
+     * <code>DO_NOTHING</code> for the <code>OnStackFailure</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html"
+     * >CreateChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>False</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying
+     * <code>ROLLBACK</code> for the <code>OnStackFailure</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html"
+     * >CreateChangeSet</a> API operation.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * Default: <code>True</code>
      * </p>
      * 
-     * @return Preserves the state of previously provisioned resources when an operation fails.</p>
+     * @return Preserves the state of previously provisioned resources when an operation fails. This parameter can't be
+     *         specified when the <code>OnStackFailure</code> parameter to the <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html"
+     *         >CreateChangeSet</a> API operation was specified.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>True</code> - if the stack creation fails, do nothing. This is equivalent to specifying
+     *         <code>DO_NOTHING</code> for the <code>OnStackFailure</code> parameter to the <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html"
+     *         >CreateChangeSet</a> API operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>False</code> - if the stack creation fails, roll back the stack. This is equivalent to specifying
+     *         <code>ROLLBACK</code> for the <code>OnStackFailure</code> parameter to the <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html"
+     *         >CreateChangeSet</a> API operation.
+     *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
      *         Default: <code>True</code>
      */
 
     public Boolean isDisableRollback() {
         return this.disableRollback;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes
+     * newly created resources marked with a deletion policy of <code>Retain</code>.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @param retainExceptOnCreate
+     *        When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This
+     *        includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
+     *        <p>
+     *        Default: <code>false</code>
+     */
+
+    public void setRetainExceptOnCreate(Boolean retainExceptOnCreate) {
+        this.retainExceptOnCreate = retainExceptOnCreate;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes
+     * newly created resources marked with a deletion policy of <code>Retain</code>.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @return When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This
+     *         includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
+     *         <p>
+     *         Default: <code>false</code>
+     */
+
+    public Boolean getRetainExceptOnCreate() {
+        return this.retainExceptOnCreate;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes
+     * newly created resources marked with a deletion policy of <code>Retain</code>.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @param retainExceptOnCreate
+     *        When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This
+     *        includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
+     *        <p>
+     *        Default: <code>false</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExecuteChangeSetRequest withRetainExceptOnCreate(Boolean retainExceptOnCreate) {
+        setRetainExceptOnCreate(retainExceptOnCreate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This includes
+     * newly created resources marked with a deletion policy of <code>Retain</code>.
+     * </p>
+     * <p>
+     * Default: <code>false</code>
+     * </p>
+     * 
+     * @return When set to <code>true</code>, newly created resources are deleted when the operation rolls back. This
+     *         includes newly created resources marked with a deletion policy of <code>Retain</code>.</p>
+     *         <p>
+     *         Default: <code>false</code>
+     */
+
+    public Boolean isRetainExceptOnCreate() {
+        return this.retainExceptOnCreate;
     }
 
     /**
@@ -295,7 +574,9 @@ public class ExecuteChangeSetRequest extends com.amazonaws.AmazonWebServiceReque
         if (getClientRequestToken() != null)
             sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
         if (getDisableRollback() != null)
-            sb.append("DisableRollback: ").append(getDisableRollback());
+            sb.append("DisableRollback: ").append(getDisableRollback()).append(",");
+        if (getRetainExceptOnCreate() != null)
+            sb.append("RetainExceptOnCreate: ").append(getRetainExceptOnCreate());
         sb.append("}");
         return sb.toString();
     }
@@ -326,6 +607,10 @@ public class ExecuteChangeSetRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getDisableRollback() != null && other.getDisableRollback().equals(this.getDisableRollback()) == false)
             return false;
+        if (other.getRetainExceptOnCreate() == null ^ this.getRetainExceptOnCreate() == null)
+            return false;
+        if (other.getRetainExceptOnCreate() != null && other.getRetainExceptOnCreate().equals(this.getRetainExceptOnCreate()) == false)
+            return false;
         return true;
     }
 
@@ -338,6 +623,7 @@ public class ExecuteChangeSetRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getStackName() == null) ? 0 : getStackName().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         hashCode = prime * hashCode + ((getDisableRollback() == null) ? 0 : getDisableRollback().hashCode());
+        hashCode = prime * hashCode + ((getRetainExceptOnCreate() == null) ? 0 : getRetainExceptOnCreate().hashCode());
         return hashCode;
     }
 

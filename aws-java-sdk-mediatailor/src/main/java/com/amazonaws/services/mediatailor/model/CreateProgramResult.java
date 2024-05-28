@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,16 +37,34 @@ public class CreateProgramResult extends com.amazonaws.AmazonWebServiceResult<co
     private String arn;
     /**
      * <p>
+     * The list of AudienceMedia defined in program.
+     * </p>
+     */
+    private java.util.List<AudienceMedia> audienceMedia;
+    /**
+     * <p>
      * The name to assign to the channel for this program.
      * </p>
      */
     private String channelName;
     /**
      * <p>
+     * The clip range configuration settings.
+     * </p>
+     */
+    private ClipRange clipRange;
+    /**
+     * <p>
      * The time the program was created.
      * </p>
      */
     private java.util.Date creationTime;
+    /**
+     * <p>
+     * The duration of the live program in milliseconds.
+     * </p>
+     */
+    private Long durationMillis;
     /**
      * <p>
      * The name of the LiveSource for this Program.
@@ -190,6 +208,76 @@ public class CreateProgramResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
+     * The list of AudienceMedia defined in program.
+     * </p>
+     * 
+     * @return The list of AudienceMedia defined in program.
+     */
+
+    public java.util.List<AudienceMedia> getAudienceMedia() {
+        return audienceMedia;
+    }
+
+    /**
+     * <p>
+     * The list of AudienceMedia defined in program.
+     * </p>
+     * 
+     * @param audienceMedia
+     *        The list of AudienceMedia defined in program.
+     */
+
+    public void setAudienceMedia(java.util.Collection<AudienceMedia> audienceMedia) {
+        if (audienceMedia == null) {
+            this.audienceMedia = null;
+            return;
+        }
+
+        this.audienceMedia = new java.util.ArrayList<AudienceMedia>(audienceMedia);
+    }
+
+    /**
+     * <p>
+     * The list of AudienceMedia defined in program.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAudienceMedia(java.util.Collection)} or {@link #withAudienceMedia(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param audienceMedia
+     *        The list of AudienceMedia defined in program.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateProgramResult withAudienceMedia(AudienceMedia... audienceMedia) {
+        if (this.audienceMedia == null) {
+            setAudienceMedia(new java.util.ArrayList<AudienceMedia>(audienceMedia.length));
+        }
+        for (AudienceMedia ele : audienceMedia) {
+            this.audienceMedia.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of AudienceMedia defined in program.
+     * </p>
+     * 
+     * @param audienceMedia
+     *        The list of AudienceMedia defined in program.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateProgramResult withAudienceMedia(java.util.Collection<AudienceMedia> audienceMedia) {
+        setAudienceMedia(audienceMedia);
+        return this;
+    }
+
+    /**
+     * <p>
      * The name to assign to the channel for this program.
      * </p>
      * 
@@ -230,6 +318,46 @@ public class CreateProgramResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
+     * The clip range configuration settings.
+     * </p>
+     * 
+     * @param clipRange
+     *        The clip range configuration settings.
+     */
+
+    public void setClipRange(ClipRange clipRange) {
+        this.clipRange = clipRange;
+    }
+
+    /**
+     * <p>
+     * The clip range configuration settings.
+     * </p>
+     * 
+     * @return The clip range configuration settings.
+     */
+
+    public ClipRange getClipRange() {
+        return this.clipRange;
+    }
+
+    /**
+     * <p>
+     * The clip range configuration settings.
+     * </p>
+     * 
+     * @param clipRange
+     *        The clip range configuration settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateProgramResult withClipRange(ClipRange clipRange) {
+        setClipRange(clipRange);
+        return this;
+    }
+
+    /**
+     * <p>
      * The time the program was created.
      * </p>
      * 
@@ -265,6 +393,46 @@ public class CreateProgramResult extends com.amazonaws.AmazonWebServiceResult<co
 
     public CreateProgramResult withCreationTime(java.util.Date creationTime) {
         setCreationTime(creationTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The duration of the live program in milliseconds.
+     * </p>
+     * 
+     * @param durationMillis
+     *        The duration of the live program in milliseconds.
+     */
+
+    public void setDurationMillis(Long durationMillis) {
+        this.durationMillis = durationMillis;
+    }
+
+    /**
+     * <p>
+     * The duration of the live program in milliseconds.
+     * </p>
+     * 
+     * @return The duration of the live program in milliseconds.
+     */
+
+    public Long getDurationMillis() {
+        return this.durationMillis;
+    }
+
+    /**
+     * <p>
+     * The duration of the live program in milliseconds.
+     * </p>
+     * 
+     * @param durationMillis
+     *        The duration of the live program in milliseconds.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateProgramResult withDurationMillis(Long durationMillis) {
+        setDurationMillis(durationMillis);
         return this;
     }
 
@@ -484,10 +652,16 @@ public class CreateProgramResult extends com.amazonaws.AmazonWebServiceResult<co
             sb.append("AdBreaks: ").append(getAdBreaks()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getAudienceMedia() != null)
+            sb.append("AudienceMedia: ").append(getAudienceMedia()).append(",");
         if (getChannelName() != null)
             sb.append("ChannelName: ").append(getChannelName()).append(",");
+        if (getClipRange() != null)
+            sb.append("ClipRange: ").append(getClipRange()).append(",");
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
+        if (getDurationMillis() != null)
+            sb.append("DurationMillis: ").append(getDurationMillis()).append(",");
         if (getLiveSourceName() != null)
             sb.append("LiveSourceName: ").append(getLiveSourceName()).append(",");
         if (getProgramName() != null)
@@ -520,13 +694,25 @@ public class CreateProgramResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
+        if (other.getAudienceMedia() == null ^ this.getAudienceMedia() == null)
+            return false;
+        if (other.getAudienceMedia() != null && other.getAudienceMedia().equals(this.getAudienceMedia()) == false)
+            return false;
         if (other.getChannelName() == null ^ this.getChannelName() == null)
             return false;
         if (other.getChannelName() != null && other.getChannelName().equals(this.getChannelName()) == false)
             return false;
+        if (other.getClipRange() == null ^ this.getClipRange() == null)
+            return false;
+        if (other.getClipRange() != null && other.getClipRange().equals(this.getClipRange()) == false)
+            return false;
         if (other.getCreationTime() == null ^ this.getCreationTime() == null)
             return false;
         if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
+            return false;
+        if (other.getDurationMillis() == null ^ this.getDurationMillis() == null)
+            return false;
+        if (other.getDurationMillis() != null && other.getDurationMillis().equals(this.getDurationMillis()) == false)
             return false;
         if (other.getLiveSourceName() == null ^ this.getLiveSourceName() == null)
             return false;
@@ -558,8 +744,11 @@ public class CreateProgramResult extends com.amazonaws.AmazonWebServiceResult<co
 
         hashCode = prime * hashCode + ((getAdBreaks() == null) ? 0 : getAdBreaks().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getAudienceMedia() == null) ? 0 : getAudienceMedia().hashCode());
         hashCode = prime * hashCode + ((getChannelName() == null) ? 0 : getChannelName().hashCode());
+        hashCode = prime * hashCode + ((getClipRange() == null) ? 0 : getClipRange().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getDurationMillis() == null) ? 0 : getDurationMillis().hashCode());
         hashCode = prime * hashCode + ((getLiveSourceName() == null) ? 0 : getLiveSourceName().hashCode());
         hashCode = prime * hashCode + ((getProgramName() == null) ? 0 : getProgramName().hashCode());
         hashCode = prime * hashCode + ((getScheduledStartTime() == null) ? 0 : getScheduledStartTime().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -119,7 +119,7 @@ public class S3RequestEndpointResolver {
             request.setResourcePath(SdkHttpUtils.urlEncode(getHostStyleResourcePath(), true));
         } else {
             request.setEndpoint(endpoint);
-            request.setResourcePath(SdkHttpUtils.urlEncode(getPathStyleResourcePath(), true));
+            request.setResourcePath(getPathStyleResourcePath());
         }
     }
 
@@ -129,23 +129,29 @@ public class S3RequestEndpointResolver {
     }
 
     private String getHostStyleResourcePath() {
-        String resourcePath = key;
-        /*
-         * If the key name starts with a slash character, in order to prevent it being treated as a
-         * path delimiter, we need to add another slash before the key name. {@see
-         * com.amazonaws.http.HttpRequestFactory#createHttpRequest}
-         */
-        if (key != null && key.startsWith("/")) {
-            resourcePath = "/" + key;
-        }
-        return resourcePath;
+        return keyForBaseOfPath();
     }
 
     private String getPathStyleResourcePath() {
         if (bucketName == null) {
-            return key;
+            return SdkHttpUtils.urlEncode(keyForBaseOfPath(), true);
         }
 
-        return bucketName + "/" + (key != null ? key : "");
+        String encodedBucketName = SdkHttpUtils.urlEncode(bucketName, false);
+        return encodedBucketName + "/" + SdkHttpUtils.urlEncode(key == null ? "" : key, true);
+    }
+
+    private String keyForBaseOfPath() {
+        if (key == null) {
+            return "";
+        }
+
+        // If the key name starts with a slash, prepend it with "/" so that it doesn't get treated as a redundant slash and get
+        // pruned out in later path normalization logic.
+        if (key.startsWith("/")) {
+            return "/" + key;
+        }
+
+        return key;
     }
 }

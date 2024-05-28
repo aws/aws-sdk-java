@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,13 +26,7 @@ import com.amazonaws.services.alexaforbusiness.model.*;
  * </p>
  * <p>
  * <p>
- * Alexa for Business helps you use Alexa in your organization. Alexa for Business provides you with the tools to manage
- * Alexa devices, enroll your users, and assign skills, at scale. You can build your own context-aware voice skills
- * using the Alexa Skills Kit and the Alexa for Business API operations. You can also make these available as private
- * skills for your organization. Alexa for Business makes it efficient to voice-enable your products and services, thus
- * providing context-aware voice experiences for your customers. Device makers building with the Alexa Voice Service
- * (AVS) can create fully integrated solutions, register their products with Alexa for Business, and manage them as
- * shared devices in their organization.
+ * Alexa for Business has been retired and is no longer supported.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -50,6 +44,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ApproveSkill" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ApproveSkillResult> approveSkillAsync(ApproveSkillRequest approveSkillRequest);
 
     /**
@@ -68,6 +63,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ApproveSkill" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ApproveSkillResult> approveSkillAsync(ApproveSkillRequest approveSkillRequest,
             com.amazonaws.handlers.AsyncHandler<ApproveSkillRequest, ApproveSkillResult> asyncHandler);
 
@@ -83,6 +79,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateContactWithAddressBook"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<AssociateContactWithAddressBookResult> associateContactWithAddressBookAsync(
             AssociateContactWithAddressBookRequest associateContactWithAddressBookRequest);
 
@@ -102,6 +99,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateContactWithAddressBook"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<AssociateContactWithAddressBookResult> associateContactWithAddressBookAsync(
             AssociateContactWithAddressBookRequest associateContactWithAddressBookRequest,
             com.amazonaws.handlers.AsyncHandler<AssociateContactWithAddressBookRequest, AssociateContactWithAddressBookResult> asyncHandler);
@@ -119,6 +117,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      *      href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithNetworkProfile"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<AssociateDeviceWithNetworkProfileResult> associateDeviceWithNetworkProfileAsync(
             AssociateDeviceWithNetworkProfileRequest associateDeviceWithNetworkProfileRequest);
 
@@ -139,6 +138,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      *      href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithNetworkProfile"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<AssociateDeviceWithNetworkProfileResult> associateDeviceWithNetworkProfileAsync(
             AssociateDeviceWithNetworkProfileRequest associateDeviceWithNetworkProfileRequest,
             com.amazonaws.handlers.AsyncHandler<AssociateDeviceWithNetworkProfileRequest, AssociateDeviceWithNetworkProfileResult> asyncHandler);
@@ -156,6 +156,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithRoom"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<AssociateDeviceWithRoomResult> associateDeviceWithRoomAsync(AssociateDeviceWithRoomRequest associateDeviceWithRoomRequest);
 
     /**
@@ -175,6 +176,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithRoom"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<AssociateDeviceWithRoomResult> associateDeviceWithRoomAsync(AssociateDeviceWithRoomRequest associateDeviceWithRoomRequest,
             com.amazonaws.handlers.AsyncHandler<AssociateDeviceWithRoomRequest, AssociateDeviceWithRoomResult> asyncHandler);
 
@@ -190,6 +192,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillGroupWithRoom"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<AssociateSkillGroupWithRoomResult> associateSkillGroupWithRoomAsync(
             AssociateSkillGroupWithRoomRequest associateSkillGroupWithRoomRequest);
 
@@ -209,6 +212,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillGroupWithRoom"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<AssociateSkillGroupWithRoomResult> associateSkillGroupWithRoomAsync(
             AssociateSkillGroupWithRoomRequest associateSkillGroupWithRoomRequest,
             com.amazonaws.handlers.AsyncHandler<AssociateSkillGroupWithRoomRequest, AssociateSkillGroupWithRoomResult> asyncHandler);
@@ -225,6 +229,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithSkillGroup"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<AssociateSkillWithSkillGroupResult> associateSkillWithSkillGroupAsync(
             AssociateSkillWithSkillGroupRequest associateSkillWithSkillGroupRequest);
 
@@ -244,6 +249,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithSkillGroup"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<AssociateSkillWithSkillGroupResult> associateSkillWithSkillGroupAsync(
             AssociateSkillWithSkillGroupRequest associateSkillWithSkillGroupRequest,
             com.amazonaws.handlers.AsyncHandler<AssociateSkillWithSkillGroupRequest, AssociateSkillWithSkillGroupResult> asyncHandler);
@@ -259,6 +265,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithUsers"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<AssociateSkillWithUsersResult> associateSkillWithUsersAsync(AssociateSkillWithUsersRequest associateSkillWithUsersRequest);
 
     /**
@@ -276,6 +283,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithUsers"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<AssociateSkillWithUsersResult> associateSkillWithUsersAsync(AssociateSkillWithUsersRequest associateSkillWithUsersRequest,
             com.amazonaws.handlers.AsyncHandler<AssociateSkillWithUsersRequest, AssociateSkillWithUsersResult> asyncHandler);
 
@@ -290,6 +298,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateAddressBook"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<CreateAddressBookResult> createAddressBookAsync(CreateAddressBookRequest createAddressBookRequest);
 
     /**
@@ -307,6 +316,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateAddressBook"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<CreateAddressBookResult> createAddressBookAsync(CreateAddressBookRequest createAddressBookRequest,
             com.amazonaws.handlers.AsyncHandler<CreateAddressBookRequest, CreateAddressBookResult> asyncHandler);
 
@@ -323,6 +333,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateBusinessReportSchedule"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<CreateBusinessReportScheduleResult> createBusinessReportScheduleAsync(
             CreateBusinessReportScheduleRequest createBusinessReportScheduleRequest);
 
@@ -343,6 +354,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateBusinessReportSchedule"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<CreateBusinessReportScheduleResult> createBusinessReportScheduleAsync(
             CreateBusinessReportScheduleRequest createBusinessReportScheduleRequest,
             com.amazonaws.handlers.AsyncHandler<CreateBusinessReportScheduleRequest, CreateBusinessReportScheduleResult> asyncHandler);
@@ -358,6 +370,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateConferenceProvider"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<CreateConferenceProviderResult> createConferenceProviderAsync(CreateConferenceProviderRequest createConferenceProviderRequest);
 
     /**
@@ -375,6 +388,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateConferenceProvider"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<CreateConferenceProviderResult> createConferenceProviderAsync(CreateConferenceProviderRequest createConferenceProviderRequest,
             com.amazonaws.handlers.AsyncHandler<CreateConferenceProviderRequest, CreateConferenceProviderResult> asyncHandler);
 
@@ -389,6 +403,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateContact" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<CreateContactResult> createContactAsync(CreateContactRequest createContactRequest);
 
     /**
@@ -406,6 +421,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateContact" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<CreateContactResult> createContactAsync(CreateContactRequest createContactRequest,
             com.amazonaws.handlers.AsyncHandler<CreateContactRequest, CreateContactResult> asyncHandler);
 
@@ -420,6 +436,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateGatewayGroup"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<CreateGatewayGroupResult> createGatewayGroupAsync(CreateGatewayGroupRequest createGatewayGroupRequest);
 
     /**
@@ -437,6 +454,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateGatewayGroup"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<CreateGatewayGroupResult> createGatewayGroupAsync(CreateGatewayGroupRequest createGatewayGroupRequest,
             com.amazonaws.handlers.AsyncHandler<CreateGatewayGroupRequest, CreateGatewayGroupResult> asyncHandler);
 
@@ -451,6 +469,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateNetworkProfile"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<CreateNetworkProfileResult> createNetworkProfileAsync(CreateNetworkProfileRequest createNetworkProfileRequest);
 
     /**
@@ -468,6 +487,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateNetworkProfile"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<CreateNetworkProfileResult> createNetworkProfileAsync(CreateNetworkProfileRequest createNetworkProfileRequest,
             com.amazonaws.handlers.AsyncHandler<CreateNetworkProfileRequest, CreateNetworkProfileResult> asyncHandler);
 
@@ -482,6 +502,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateProfile" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<CreateProfileResult> createProfileAsync(CreateProfileRequest createProfileRequest);
 
     /**
@@ -499,6 +520,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateProfile" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<CreateProfileResult> createProfileAsync(CreateProfileRequest createProfileRequest,
             com.amazonaws.handlers.AsyncHandler<CreateProfileRequest, CreateProfileResult> asyncHandler);
 
@@ -513,6 +535,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateRoom" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<CreateRoomResult> createRoomAsync(CreateRoomRequest createRoomRequest);
 
     /**
@@ -530,6 +553,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateRoom" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<CreateRoomResult> createRoomAsync(CreateRoomRequest createRoomRequest,
             com.amazonaws.handlers.AsyncHandler<CreateRoomRequest, CreateRoomResult> asyncHandler);
 
@@ -544,6 +568,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateSkillGroup"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<CreateSkillGroupResult> createSkillGroupAsync(CreateSkillGroupRequest createSkillGroupRequest);
 
     /**
@@ -561,6 +586,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateSkillGroup"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<CreateSkillGroupResult> createSkillGroupAsync(CreateSkillGroupRequest createSkillGroupRequest,
             com.amazonaws.handlers.AsyncHandler<CreateSkillGroupRequest, CreateSkillGroupResult> asyncHandler);
 
@@ -575,6 +601,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateUser" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<CreateUserResult> createUserAsync(CreateUserRequest createUserRequest);
 
     /**
@@ -592,6 +619,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateUser" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<CreateUserResult> createUserAsync(CreateUserRequest createUserRequest,
             com.amazonaws.handlers.AsyncHandler<CreateUserRequest, CreateUserResult> asyncHandler);
 
@@ -606,6 +634,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteAddressBook"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteAddressBookResult> deleteAddressBookAsync(DeleteAddressBookRequest deleteAddressBookRequest);
 
     /**
@@ -623,6 +652,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteAddressBook"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteAddressBookResult> deleteAddressBookAsync(DeleteAddressBookRequest deleteAddressBookRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAddressBookRequest, DeleteAddressBookResult> asyncHandler);
 
@@ -638,6 +668,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteBusinessReportSchedule"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteBusinessReportScheduleResult> deleteBusinessReportScheduleAsync(
             DeleteBusinessReportScheduleRequest deleteBusinessReportScheduleRequest);
 
@@ -657,6 +688,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteBusinessReportSchedule"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteBusinessReportScheduleResult> deleteBusinessReportScheduleAsync(
             DeleteBusinessReportScheduleRequest deleteBusinessReportScheduleRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteBusinessReportScheduleRequest, DeleteBusinessReportScheduleResult> asyncHandler);
@@ -672,6 +704,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteConferenceProvider"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteConferenceProviderResult> deleteConferenceProviderAsync(DeleteConferenceProviderRequest deleteConferenceProviderRequest);
 
     /**
@@ -689,6 +722,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteConferenceProvider"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteConferenceProviderResult> deleteConferenceProviderAsync(DeleteConferenceProviderRequest deleteConferenceProviderRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteConferenceProviderRequest, DeleteConferenceProviderResult> asyncHandler);
 
@@ -703,6 +737,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteContact" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteContactResult> deleteContactAsync(DeleteContactRequest deleteContactRequest);
 
     /**
@@ -720,6 +755,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteContact" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteContactResult> deleteContactAsync(DeleteContactRequest deleteContactRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteContactRequest, DeleteContactResult> asyncHandler);
 
@@ -734,6 +770,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDevice" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteDeviceResult> deleteDeviceAsync(DeleteDeviceRequest deleteDeviceRequest);
 
     /**
@@ -751,6 +788,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDevice" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteDeviceResult> deleteDeviceAsync(DeleteDeviceRequest deleteDeviceRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteDeviceRequest, DeleteDeviceResult> asyncHandler);
 
@@ -767,6 +805,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDeviceUsageData"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteDeviceUsageDataResult> deleteDeviceUsageDataAsync(DeleteDeviceUsageDataRequest deleteDeviceUsageDataRequest);
 
     /**
@@ -786,6 +825,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDeviceUsageData"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteDeviceUsageDataResult> deleteDeviceUsageDataAsync(DeleteDeviceUsageDataRequest deleteDeviceUsageDataRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteDeviceUsageDataRequest, DeleteDeviceUsageDataResult> asyncHandler);
 
@@ -800,6 +840,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteGatewayGroup"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteGatewayGroupResult> deleteGatewayGroupAsync(DeleteGatewayGroupRequest deleteGatewayGroupRequest);
 
     /**
@@ -817,6 +858,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteGatewayGroup"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteGatewayGroupResult> deleteGatewayGroupAsync(DeleteGatewayGroupRequest deleteGatewayGroupRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteGatewayGroupRequest, DeleteGatewayGroupResult> asyncHandler);
 
@@ -831,6 +873,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteNetworkProfile"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteNetworkProfileResult> deleteNetworkProfileAsync(DeleteNetworkProfileRequest deleteNetworkProfileRequest);
 
     /**
@@ -848,6 +891,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteNetworkProfile"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteNetworkProfileResult> deleteNetworkProfileAsync(DeleteNetworkProfileRequest deleteNetworkProfileRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteNetworkProfileRequest, DeleteNetworkProfileResult> asyncHandler);
 
@@ -862,6 +906,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteProfile" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteProfileResult> deleteProfileAsync(DeleteProfileRequest deleteProfileRequest);
 
     /**
@@ -879,6 +924,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteProfile" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteProfileResult> deleteProfileAsync(DeleteProfileRequest deleteProfileRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteProfileRequest, DeleteProfileResult> asyncHandler);
 
@@ -893,6 +939,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteRoom" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteRoomResult> deleteRoomAsync(DeleteRoomRequest deleteRoomRequest);
 
     /**
@@ -910,6 +957,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteRoom" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteRoomResult> deleteRoomAsync(DeleteRoomRequest deleteRoomRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteRoomRequest, DeleteRoomResult> asyncHandler);
 
@@ -924,6 +972,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteRoomSkillParameter"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteRoomSkillParameterResult> deleteRoomSkillParameterAsync(DeleteRoomSkillParameterRequest deleteRoomSkillParameterRequest);
 
     /**
@@ -941,6 +990,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteRoomSkillParameter"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteRoomSkillParameterResult> deleteRoomSkillParameterAsync(DeleteRoomSkillParameterRequest deleteRoomSkillParameterRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteRoomSkillParameterRequest, DeleteRoomSkillParameterResult> asyncHandler);
 
@@ -955,6 +1005,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillAuthorization"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteSkillAuthorizationResult> deleteSkillAuthorizationAsync(DeleteSkillAuthorizationRequest deleteSkillAuthorizationRequest);
 
     /**
@@ -972,6 +1023,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillAuthorization"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteSkillAuthorizationResult> deleteSkillAuthorizationAsync(DeleteSkillAuthorizationRequest deleteSkillAuthorizationRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteSkillAuthorizationRequest, DeleteSkillAuthorizationResult> asyncHandler);
 
@@ -986,6 +1038,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillGroup"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteSkillGroupResult> deleteSkillGroupAsync(DeleteSkillGroupRequest deleteSkillGroupRequest);
 
     /**
@@ -1003,6 +1056,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillGroup"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteSkillGroupResult> deleteSkillGroupAsync(DeleteSkillGroupRequest deleteSkillGroupRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteSkillGroupRequest, DeleteSkillGroupResult> asyncHandler);
 
@@ -1017,6 +1071,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteUser" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(DeleteUserRequest deleteUserRequest);
 
     /**
@@ -1034,6 +1089,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteUser" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(DeleteUserRequest deleteUserRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteUserRequest, DeleteUserResult> asyncHandler);
 
@@ -1050,6 +1106,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      *      href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateContactFromAddressBook"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DisassociateContactFromAddressBookResult> disassociateContactFromAddressBookAsync(
             DisassociateContactFromAddressBookRequest disassociateContactFromAddressBookRequest);
 
@@ -1070,6 +1127,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      *      href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateContactFromAddressBook"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DisassociateContactFromAddressBookResult> disassociateContactFromAddressBookAsync(
             DisassociateContactFromAddressBookRequest disassociateContactFromAddressBookRequest,
             com.amazonaws.handlers.AsyncHandler<DisassociateContactFromAddressBookRequest, DisassociateContactFromAddressBookResult> asyncHandler);
@@ -1086,6 +1144,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateDeviceFromRoom"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DisassociateDeviceFromRoomResult> disassociateDeviceFromRoomAsync(
             DisassociateDeviceFromRoomRequest disassociateDeviceFromRoomRequest);
 
@@ -1105,6 +1164,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateDeviceFromRoom"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DisassociateDeviceFromRoomResult> disassociateDeviceFromRoomAsync(
             DisassociateDeviceFromRoomRequest disassociateDeviceFromRoomRequest,
             com.amazonaws.handlers.AsyncHandler<DisassociateDeviceFromRoomRequest, DisassociateDeviceFromRoomResult> asyncHandler);
@@ -1121,6 +1181,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromSkillGroup"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DisassociateSkillFromSkillGroupResult> disassociateSkillFromSkillGroupAsync(
             DisassociateSkillFromSkillGroupRequest disassociateSkillFromSkillGroupRequest);
 
@@ -1140,6 +1201,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromSkillGroup"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DisassociateSkillFromSkillGroupResult> disassociateSkillFromSkillGroupAsync(
             DisassociateSkillFromSkillGroupRequest disassociateSkillFromSkillGroupRequest,
             com.amazonaws.handlers.AsyncHandler<DisassociateSkillFromSkillGroupRequest, DisassociateSkillFromSkillGroupResult> asyncHandler);
@@ -1155,6 +1217,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromUsers"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DisassociateSkillFromUsersResult> disassociateSkillFromUsersAsync(
             DisassociateSkillFromUsersRequest disassociateSkillFromUsersRequest);
 
@@ -1173,6 +1236,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromUsers"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DisassociateSkillFromUsersResult> disassociateSkillFromUsersAsync(
             DisassociateSkillFromUsersRequest disassociateSkillFromUsersRequest,
             com.amazonaws.handlers.AsyncHandler<DisassociateSkillFromUsersRequest, DisassociateSkillFromUsersResult> asyncHandler);
@@ -1190,6 +1254,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillGroupFromRoom"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DisassociateSkillGroupFromRoomResult> disassociateSkillGroupFromRoomAsync(
             DisassociateSkillGroupFromRoomRequest disassociateSkillGroupFromRoomRequest);
 
@@ -1210,6 +1275,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillGroupFromRoom"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DisassociateSkillGroupFromRoomResult> disassociateSkillGroupFromRoomAsync(
             DisassociateSkillGroupFromRoomRequest disassociateSkillGroupFromRoomRequest,
             com.amazonaws.handlers.AsyncHandler<DisassociateSkillGroupFromRoomRequest, DisassociateSkillGroupFromRoomResult> asyncHandler);
@@ -1225,6 +1291,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ForgetSmartHomeAppliances"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ForgetSmartHomeAppliancesResult> forgetSmartHomeAppliancesAsync(
             ForgetSmartHomeAppliancesRequest forgetSmartHomeAppliancesRequest);
 
@@ -1243,6 +1310,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ForgetSmartHomeAppliances"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ForgetSmartHomeAppliancesResult> forgetSmartHomeAppliancesAsync(
             ForgetSmartHomeAppliancesRequest forgetSmartHomeAppliancesRequest,
             com.amazonaws.handlers.AsyncHandler<ForgetSmartHomeAppliancesRequest, ForgetSmartHomeAppliancesResult> asyncHandler);
@@ -1258,6 +1326,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetAddressBook"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetAddressBookResult> getAddressBookAsync(GetAddressBookRequest getAddressBookRequest);
 
     /**
@@ -1275,6 +1344,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetAddressBook"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetAddressBookResult> getAddressBookAsync(GetAddressBookRequest getAddressBookRequest,
             com.amazonaws.handlers.AsyncHandler<GetAddressBookRequest, GetAddressBookResult> asyncHandler);
 
@@ -1289,6 +1359,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferencePreference"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetConferencePreferenceResult> getConferencePreferenceAsync(GetConferencePreferenceRequest getConferencePreferenceRequest);
 
     /**
@@ -1306,6 +1377,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferencePreference"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetConferencePreferenceResult> getConferencePreferenceAsync(GetConferencePreferenceRequest getConferencePreferenceRequest,
             com.amazonaws.handlers.AsyncHandler<GetConferencePreferenceRequest, GetConferencePreferenceResult> asyncHandler);
 
@@ -1320,6 +1392,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferenceProvider"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetConferenceProviderResult> getConferenceProviderAsync(GetConferenceProviderRequest getConferenceProviderRequest);
 
     /**
@@ -1337,6 +1410,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferenceProvider"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetConferenceProviderResult> getConferenceProviderAsync(GetConferenceProviderRequest getConferenceProviderRequest,
             com.amazonaws.handlers.AsyncHandler<GetConferenceProviderRequest, GetConferenceProviderResult> asyncHandler);
 
@@ -1351,6 +1425,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetContact" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetContactResult> getContactAsync(GetContactRequest getContactRequest);
 
     /**
@@ -1368,6 +1443,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetContact" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetContactResult> getContactAsync(GetContactRequest getContactRequest,
             com.amazonaws.handlers.AsyncHandler<GetContactRequest, GetContactResult> asyncHandler);
 
@@ -1382,6 +1458,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetDevice" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetDeviceResult> getDeviceAsync(GetDeviceRequest getDeviceRequest);
 
     /**
@@ -1399,6 +1476,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetDevice" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetDeviceResult> getDeviceAsync(GetDeviceRequest getDeviceRequest,
             com.amazonaws.handlers.AsyncHandler<GetDeviceRequest, GetDeviceResult> asyncHandler);
 
@@ -1413,6 +1491,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGateway" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetGatewayResult> getGatewayAsync(GetGatewayRequest getGatewayRequest);
 
     /**
@@ -1430,6 +1509,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGateway" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetGatewayResult> getGatewayAsync(GetGatewayRequest getGatewayRequest,
             com.amazonaws.handlers.AsyncHandler<GetGatewayRequest, GetGatewayResult> asyncHandler);
 
@@ -1444,6 +1524,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGatewayGroup"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetGatewayGroupResult> getGatewayGroupAsync(GetGatewayGroupRequest getGatewayGroupRequest);
 
     /**
@@ -1461,6 +1542,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGatewayGroup"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetGatewayGroupResult> getGatewayGroupAsync(GetGatewayGroupRequest getGatewayGroupRequest,
             com.amazonaws.handlers.AsyncHandler<GetGatewayGroupRequest, GetGatewayGroupResult> asyncHandler);
 
@@ -1475,6 +1557,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetInvitationConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetInvitationConfigurationResult> getInvitationConfigurationAsync(
             GetInvitationConfigurationRequest getInvitationConfigurationRequest);
 
@@ -1493,6 +1576,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetInvitationConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetInvitationConfigurationResult> getInvitationConfigurationAsync(
             GetInvitationConfigurationRequest getInvitationConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<GetInvitationConfigurationRequest, GetInvitationConfigurationResult> asyncHandler);
@@ -1508,6 +1592,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetNetworkProfile"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetNetworkProfileResult> getNetworkProfileAsync(GetNetworkProfileRequest getNetworkProfileRequest);
 
     /**
@@ -1525,6 +1610,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetNetworkProfile"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetNetworkProfileResult> getNetworkProfileAsync(GetNetworkProfileRequest getNetworkProfileRequest,
             com.amazonaws.handlers.AsyncHandler<GetNetworkProfileRequest, GetNetworkProfileResult> asyncHandler);
 
@@ -1539,6 +1625,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetProfile" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetProfileResult> getProfileAsync(GetProfileRequest getProfileRequest);
 
     /**
@@ -1556,6 +1643,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetProfile" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetProfileResult> getProfileAsync(GetProfileRequest getProfileRequest,
             com.amazonaws.handlers.AsyncHandler<GetProfileRequest, GetProfileResult> asyncHandler);
 
@@ -1570,6 +1658,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetRoom" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetRoomResult> getRoomAsync(GetRoomRequest getRoomRequest);
 
     /**
@@ -1587,6 +1676,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetRoom" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetRoomResult> getRoomAsync(GetRoomRequest getRoomRequest,
             com.amazonaws.handlers.AsyncHandler<GetRoomRequest, GetRoomResult> asyncHandler);
 
@@ -1601,6 +1691,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetRoomSkillParameter"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetRoomSkillParameterResult> getRoomSkillParameterAsync(GetRoomSkillParameterRequest getRoomSkillParameterRequest);
 
     /**
@@ -1618,6 +1709,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetRoomSkillParameter"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetRoomSkillParameterResult> getRoomSkillParameterAsync(GetRoomSkillParameterRequest getRoomSkillParameterRequest,
             com.amazonaws.handlers.AsyncHandler<GetRoomSkillParameterRequest, GetRoomSkillParameterResult> asyncHandler);
 
@@ -1632,6 +1724,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetSkillGroup" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetSkillGroupResult> getSkillGroupAsync(GetSkillGroupRequest getSkillGroupRequest);
 
     /**
@@ -1649,6 +1742,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetSkillGroup" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetSkillGroupResult> getSkillGroupAsync(GetSkillGroupRequest getSkillGroupRequest,
             com.amazonaws.handlers.AsyncHandler<GetSkillGroupRequest, GetSkillGroupResult> asyncHandler);
 
@@ -1665,6 +1759,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListBusinessReportSchedules"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListBusinessReportSchedulesResult> listBusinessReportSchedulesAsync(
             ListBusinessReportSchedulesRequest listBusinessReportSchedulesRequest);
 
@@ -1685,6 +1780,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListBusinessReportSchedules"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListBusinessReportSchedulesResult> listBusinessReportSchedulesAsync(
             ListBusinessReportSchedulesRequest listBusinessReportSchedulesRequest,
             com.amazonaws.handlers.AsyncHandler<ListBusinessReportSchedulesRequest, ListBusinessReportSchedulesResult> asyncHandler);
@@ -1700,6 +1796,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListConferenceProviders"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListConferenceProvidersResult> listConferenceProvidersAsync(ListConferenceProvidersRequest listConferenceProvidersRequest);
 
     /**
@@ -1717,6 +1814,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListConferenceProviders"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListConferenceProvidersResult> listConferenceProvidersAsync(ListConferenceProvidersRequest listConferenceProvidersRequest,
             com.amazonaws.handlers.AsyncHandler<ListConferenceProvidersRequest, ListConferenceProvidersResult> asyncHandler);
 
@@ -1731,6 +1829,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListDeviceEvents"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListDeviceEventsResult> listDeviceEventsAsync(ListDeviceEventsRequest listDeviceEventsRequest);
 
     /**
@@ -1748,6 +1847,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListDeviceEvents"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListDeviceEventsResult> listDeviceEventsAsync(ListDeviceEventsRequest listDeviceEventsRequest,
             com.amazonaws.handlers.AsyncHandler<ListDeviceEventsRequest, ListDeviceEventsResult> asyncHandler);
 
@@ -1762,6 +1862,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGatewayGroups"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListGatewayGroupsResult> listGatewayGroupsAsync(ListGatewayGroupsRequest listGatewayGroupsRequest);
 
     /**
@@ -1779,6 +1880,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGatewayGroups"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListGatewayGroupsResult> listGatewayGroupsAsync(ListGatewayGroupsRequest listGatewayGroupsRequest,
             com.amazonaws.handlers.AsyncHandler<ListGatewayGroupsRequest, ListGatewayGroupsResult> asyncHandler);
 
@@ -1795,6 +1897,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGateways" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListGatewaysResult> listGatewaysAsync(ListGatewaysRequest listGatewaysRequest);
 
     /**
@@ -1814,6 +1917,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGateways" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListGatewaysResult> listGatewaysAsync(ListGatewaysRequest listGatewaysRequest,
             com.amazonaws.handlers.AsyncHandler<ListGatewaysRequest, ListGatewaysResult> asyncHandler);
 
@@ -1828,6 +1932,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkills" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListSkillsResult> listSkillsAsync(ListSkillsRequest listSkillsRequest);
 
     /**
@@ -1845,6 +1950,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkills" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListSkillsResult> listSkillsAsync(ListSkillsRequest listSkillsRequest,
             com.amazonaws.handlers.AsyncHandler<ListSkillsRequest, ListSkillsResult> asyncHandler);
 
@@ -1859,6 +1965,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreCategories"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListSkillsStoreCategoriesResult> listSkillsStoreCategoriesAsync(
             ListSkillsStoreCategoriesRequest listSkillsStoreCategoriesRequest);
 
@@ -1877,6 +1984,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreCategories"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListSkillsStoreCategoriesResult> listSkillsStoreCategoriesAsync(
             ListSkillsStoreCategoriesRequest listSkillsStoreCategoriesRequest,
             com.amazonaws.handlers.AsyncHandler<ListSkillsStoreCategoriesRequest, ListSkillsStoreCategoriesResult> asyncHandler);
@@ -1893,6 +2001,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreSkillsByCategory"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListSkillsStoreSkillsByCategoryResult> listSkillsStoreSkillsByCategoryAsync(
             ListSkillsStoreSkillsByCategoryRequest listSkillsStoreSkillsByCategoryRequest);
 
@@ -1912,6 +2021,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreSkillsByCategory"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListSkillsStoreSkillsByCategoryResult> listSkillsStoreSkillsByCategoryAsync(
             ListSkillsStoreSkillsByCategoryRequest listSkillsStoreSkillsByCategoryRequest,
             com.amazonaws.handlers.AsyncHandler<ListSkillsStoreSkillsByCategoryRequest, ListSkillsStoreSkillsByCategoryResult> asyncHandler);
@@ -1927,6 +2037,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSmartHomeAppliances"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListSmartHomeAppliancesResult> listSmartHomeAppliancesAsync(ListSmartHomeAppliancesRequest listSmartHomeAppliancesRequest);
 
     /**
@@ -1944,6 +2055,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSmartHomeAppliances"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListSmartHomeAppliancesResult> listSmartHomeAppliancesAsync(ListSmartHomeAppliancesRequest listSmartHomeAppliancesRequest,
             com.amazonaws.handlers.AsyncHandler<ListSmartHomeAppliancesRequest, ListSmartHomeAppliancesResult> asyncHandler);
 
@@ -1958,6 +2070,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListTags" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest listTagsRequest);
 
     /**
@@ -1975,6 +2088,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListTags" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest listTagsRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsRequest, ListTagsResult> asyncHandler);
 
@@ -1989,6 +2103,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutConferencePreference"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<PutConferencePreferenceResult> putConferencePreferenceAsync(PutConferencePreferenceRequest putConferencePreferenceRequest);
 
     /**
@@ -2006,6 +2121,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutConferencePreference"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<PutConferencePreferenceResult> putConferencePreferenceAsync(PutConferencePreferenceRequest putConferencePreferenceRequest,
             com.amazonaws.handlers.AsyncHandler<PutConferencePreferenceRequest, PutConferencePreferenceResult> asyncHandler);
 
@@ -2020,6 +2136,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutInvitationConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<PutInvitationConfigurationResult> putInvitationConfigurationAsync(
             PutInvitationConfigurationRequest putInvitationConfigurationRequest);
 
@@ -2038,6 +2155,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutInvitationConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<PutInvitationConfigurationResult> putInvitationConfigurationAsync(
             PutInvitationConfigurationRequest putInvitationConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<PutInvitationConfigurationRequest, PutInvitationConfigurationResult> asyncHandler);
@@ -2054,6 +2172,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutRoomSkillParameter"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<PutRoomSkillParameterResult> putRoomSkillParameterAsync(PutRoomSkillParameterRequest putRoomSkillParameterRequest);
 
     /**
@@ -2072,6 +2191,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutRoomSkillParameter"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<PutRoomSkillParameterResult> putRoomSkillParameterAsync(PutRoomSkillParameterRequest putRoomSkillParameterRequest,
             com.amazonaws.handlers.AsyncHandler<PutRoomSkillParameterRequest, PutRoomSkillParameterResult> asyncHandler);
 
@@ -2088,6 +2208,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutSkillAuthorization"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<PutSkillAuthorizationResult> putSkillAuthorizationAsync(PutSkillAuthorizationRequest putSkillAuthorizationRequest);
 
     /**
@@ -2107,6 +2228,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutSkillAuthorization"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<PutSkillAuthorizationResult> putSkillAuthorizationAsync(PutSkillAuthorizationRequest putSkillAuthorizationRequest,
             com.amazonaws.handlers.AsyncHandler<PutSkillAuthorizationRequest, PutSkillAuthorizationResult> asyncHandler);
 
@@ -2122,6 +2244,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RegisterAVSDevice"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<RegisterAVSDeviceResult> registerAVSDeviceAsync(RegisterAVSDeviceRequest registerAVSDeviceRequest);
 
     /**
@@ -2140,6 +2263,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RegisterAVSDevice"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<RegisterAVSDeviceResult> registerAVSDeviceAsync(RegisterAVSDeviceRequest registerAVSDeviceRequest,
             com.amazonaws.handlers.AsyncHandler<RegisterAVSDeviceRequest, RegisterAVSDeviceResult> asyncHandler);
 
@@ -2156,6 +2280,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RejectSkill" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<RejectSkillResult> rejectSkillAsync(RejectSkillRequest rejectSkillRequest);
 
     /**
@@ -2175,6 +2300,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RejectSkill" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<RejectSkillResult> rejectSkillAsync(RejectSkillRequest rejectSkillRequest,
             com.amazonaws.handlers.AsyncHandler<RejectSkillRequest, RejectSkillResult> asyncHandler);
 
@@ -2196,6 +2322,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ResolveRoom" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ResolveRoomResult> resolveRoomAsync(ResolveRoomRequest resolveRoomRequest);
 
     /**
@@ -2220,6 +2347,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ResolveRoom" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ResolveRoomResult> resolveRoomAsync(ResolveRoomRequest resolveRoomRequest,
             com.amazonaws.handlers.AsyncHandler<ResolveRoomRequest, ResolveRoomResult> asyncHandler);
 
@@ -2234,6 +2362,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RevokeInvitation"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<RevokeInvitationResult> revokeInvitationAsync(RevokeInvitationRequest revokeInvitationRequest);
 
     /**
@@ -2251,6 +2380,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RevokeInvitation"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<RevokeInvitationResult> revokeInvitationAsync(RevokeInvitationRequest revokeInvitationRequest,
             com.amazonaws.handlers.AsyncHandler<RevokeInvitationRequest, RevokeInvitationResult> asyncHandler);
 
@@ -2265,6 +2395,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchAddressBooks"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<SearchAddressBooksResult> searchAddressBooksAsync(SearchAddressBooksRequest searchAddressBooksRequest);
 
     /**
@@ -2282,6 +2413,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchAddressBooks"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<SearchAddressBooksResult> searchAddressBooksAsync(SearchAddressBooksRequest searchAddressBooksRequest,
             com.amazonaws.handlers.AsyncHandler<SearchAddressBooksRequest, SearchAddressBooksResult> asyncHandler);
 
@@ -2296,6 +2428,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchContacts"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<SearchContactsResult> searchContactsAsync(SearchContactsRequest searchContactsRequest);
 
     /**
@@ -2313,6 +2446,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchContacts"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<SearchContactsResult> searchContactsAsync(SearchContactsRequest searchContactsRequest,
             com.amazonaws.handlers.AsyncHandler<SearchContactsRequest, SearchContactsResult> asyncHandler);
 
@@ -2327,6 +2461,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchDevices" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<SearchDevicesResult> searchDevicesAsync(SearchDevicesRequest searchDevicesRequest);
 
     /**
@@ -2344,6 +2479,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchDevices" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<SearchDevicesResult> searchDevicesAsync(SearchDevicesRequest searchDevicesRequest,
             com.amazonaws.handlers.AsyncHandler<SearchDevicesRequest, SearchDevicesResult> asyncHandler);
 
@@ -2358,6 +2494,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchNetworkProfiles"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<SearchNetworkProfilesResult> searchNetworkProfilesAsync(SearchNetworkProfilesRequest searchNetworkProfilesRequest);
 
     /**
@@ -2375,6 +2512,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchNetworkProfiles"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<SearchNetworkProfilesResult> searchNetworkProfilesAsync(SearchNetworkProfilesRequest searchNetworkProfilesRequest,
             com.amazonaws.handlers.AsyncHandler<SearchNetworkProfilesRequest, SearchNetworkProfilesResult> asyncHandler);
 
@@ -2389,6 +2527,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchProfiles"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<SearchProfilesResult> searchProfilesAsync(SearchProfilesRequest searchProfilesRequest);
 
     /**
@@ -2406,6 +2545,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchProfiles"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<SearchProfilesResult> searchProfilesAsync(SearchProfilesRequest searchProfilesRequest,
             com.amazonaws.handlers.AsyncHandler<SearchProfilesRequest, SearchProfilesResult> asyncHandler);
 
@@ -2420,6 +2560,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchRooms" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<SearchRoomsResult> searchRoomsAsync(SearchRoomsRequest searchRoomsRequest);
 
     /**
@@ -2437,6 +2578,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchRooms" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<SearchRoomsResult> searchRoomsAsync(SearchRoomsRequest searchRoomsRequest,
             com.amazonaws.handlers.AsyncHandler<SearchRoomsRequest, SearchRoomsResult> asyncHandler);
 
@@ -2451,6 +2593,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchSkillGroups"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<SearchSkillGroupsResult> searchSkillGroupsAsync(SearchSkillGroupsRequest searchSkillGroupsRequest);
 
     /**
@@ -2468,6 +2611,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchSkillGroups"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<SearchSkillGroupsResult> searchSkillGroupsAsync(SearchSkillGroupsRequest searchSkillGroupsRequest,
             com.amazonaws.handlers.AsyncHandler<SearchSkillGroupsRequest, SearchSkillGroupsResult> asyncHandler);
 
@@ -2482,6 +2626,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchUsers" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<SearchUsersResult> searchUsersAsync(SearchUsersRequest searchUsersRequest);
 
     /**
@@ -2499,6 +2644,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchUsers" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<SearchUsersResult> searchUsersAsync(SearchUsersRequest searchUsersRequest,
             com.amazonaws.handlers.AsyncHandler<SearchUsersRequest, SearchUsersResult> asyncHandler);
 
@@ -2547,6 +2693,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SendInvitation"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<SendInvitationResult> sendInvitationAsync(SendInvitationRequest sendInvitationRequest);
 
     /**
@@ -2565,6 +2712,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SendInvitation"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<SendInvitationResult> sendInvitationAsync(SendInvitationRequest sendInvitationRequest,
             com.amazonaws.handlers.AsyncHandler<SendInvitationRequest, SendInvitationResult> asyncHandler);
 
@@ -2608,6 +2756,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartDeviceSync"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<StartDeviceSyncResult> startDeviceSyncAsync(StartDeviceSyncRequest startDeviceSyncRequest);
 
     /**
@@ -2654,6 +2803,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartDeviceSync"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<StartDeviceSyncResult> startDeviceSyncAsync(StartDeviceSyncRequest startDeviceSyncRequest,
             com.amazonaws.handlers.AsyncHandler<StartDeviceSyncRequest, StartDeviceSyncResult> asyncHandler);
 
@@ -2670,6 +2820,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      *      href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartSmartHomeApplianceDiscovery"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<StartSmartHomeApplianceDiscoveryResult> startSmartHomeApplianceDiscoveryAsync(
             StartSmartHomeApplianceDiscoveryRequest startSmartHomeApplianceDiscoveryRequest);
 
@@ -2690,6 +2841,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      *      href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartSmartHomeApplianceDiscovery"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<StartSmartHomeApplianceDiscoveryResult> startSmartHomeApplianceDiscoveryAsync(
             StartSmartHomeApplianceDiscoveryRequest startSmartHomeApplianceDiscoveryRequest,
             com.amazonaws.handlers.AsyncHandler<StartSmartHomeApplianceDiscoveryRequest, StartSmartHomeApplianceDiscoveryResult> asyncHandler);
@@ -2705,6 +2857,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/TagResource" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
 
     /**
@@ -2722,6 +2875,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/TagResource" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
 
@@ -2736,6 +2890,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UntagResource" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
 
     /**
@@ -2753,6 +2908,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UntagResource" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
@@ -2767,6 +2923,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateAddressBook"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UpdateAddressBookResult> updateAddressBookAsync(UpdateAddressBookRequest updateAddressBookRequest);
 
     /**
@@ -2784,6 +2941,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateAddressBook"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UpdateAddressBookResult> updateAddressBookAsync(UpdateAddressBookRequest updateAddressBookRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateAddressBookRequest, UpdateAddressBookResult> asyncHandler);
 
@@ -2799,6 +2957,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateBusinessReportSchedule"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UpdateBusinessReportScheduleResult> updateBusinessReportScheduleAsync(
             UpdateBusinessReportScheduleRequest updateBusinessReportScheduleRequest);
 
@@ -2818,6 +2977,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateBusinessReportSchedule"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UpdateBusinessReportScheduleResult> updateBusinessReportScheduleAsync(
             UpdateBusinessReportScheduleRequest updateBusinessReportScheduleRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateBusinessReportScheduleRequest, UpdateBusinessReportScheduleResult> asyncHandler);
@@ -2833,6 +2993,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateConferenceProvider"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UpdateConferenceProviderResult> updateConferenceProviderAsync(UpdateConferenceProviderRequest updateConferenceProviderRequest);
 
     /**
@@ -2850,6 +3011,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateConferenceProvider"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UpdateConferenceProviderResult> updateConferenceProviderAsync(UpdateConferenceProviderRequest updateConferenceProviderRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateConferenceProviderRequest, UpdateConferenceProviderResult> asyncHandler);
 
@@ -2864,6 +3026,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateContact" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UpdateContactResult> updateContactAsync(UpdateContactRequest updateContactRequest);
 
     /**
@@ -2881,6 +3044,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateContact" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UpdateContactResult> updateContactAsync(UpdateContactRequest updateContactRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateContactRequest, UpdateContactResult> asyncHandler);
 
@@ -2895,6 +3059,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateDevice" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UpdateDeviceResult> updateDeviceAsync(UpdateDeviceRequest updateDeviceRequest);
 
     /**
@@ -2912,6 +3077,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateDevice" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UpdateDeviceResult> updateDeviceAsync(UpdateDeviceRequest updateDeviceRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateDeviceRequest, UpdateDeviceResult> asyncHandler);
 
@@ -2927,6 +3093,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGateway" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UpdateGatewayResult> updateGatewayAsync(UpdateGatewayRequest updateGatewayRequest);
 
     /**
@@ -2945,6 +3112,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGateway" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UpdateGatewayResult> updateGatewayAsync(UpdateGatewayRequest updateGatewayRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateGatewayRequest, UpdateGatewayResult> asyncHandler);
 
@@ -2960,6 +3128,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGatewayGroup"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UpdateGatewayGroupResult> updateGatewayGroupAsync(UpdateGatewayGroupRequest updateGatewayGroupRequest);
 
     /**
@@ -2978,6 +3147,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGatewayGroup"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UpdateGatewayGroupResult> updateGatewayGroupAsync(UpdateGatewayGroupRequest updateGatewayGroupRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateGatewayGroupRequest, UpdateGatewayGroupResult> asyncHandler);
 
@@ -2992,6 +3162,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateNetworkProfile"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UpdateNetworkProfileResult> updateNetworkProfileAsync(UpdateNetworkProfileRequest updateNetworkProfileRequest);
 
     /**
@@ -3009,6 +3180,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateNetworkProfile"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UpdateNetworkProfileResult> updateNetworkProfileAsync(UpdateNetworkProfileRequest updateNetworkProfileRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateNetworkProfileRequest, UpdateNetworkProfileResult> asyncHandler);
 
@@ -3023,6 +3195,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateProfile" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UpdateProfileResult> updateProfileAsync(UpdateProfileRequest updateProfileRequest);
 
     /**
@@ -3040,6 +3213,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateProfile" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UpdateProfileResult> updateProfileAsync(UpdateProfileRequest updateProfileRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateProfileRequest, UpdateProfileResult> asyncHandler);
 
@@ -3054,6 +3228,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateRoom" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UpdateRoomResult> updateRoomAsync(UpdateRoomRequest updateRoomRequest);
 
     /**
@@ -3071,6 +3246,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateRoom" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UpdateRoomResult> updateRoomAsync(UpdateRoomRequest updateRoomRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateRoomRequest, UpdateRoomResult> asyncHandler);
 
@@ -3085,6 +3261,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateSkillGroup"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UpdateSkillGroupResult> updateSkillGroupAsync(UpdateSkillGroupRequest updateSkillGroupRequest);
 
     /**
@@ -3102,6 +3279,7 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateSkillGroup"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UpdateSkillGroupResult> updateSkillGroupAsync(UpdateSkillGroupRequest updateSkillGroupRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateSkillGroupRequest, UpdateSkillGroupResult> asyncHandler);
 

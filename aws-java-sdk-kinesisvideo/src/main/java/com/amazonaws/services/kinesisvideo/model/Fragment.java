@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,7 +48,7 @@ public class Fragment implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date producerTimestamp;
     /**
      * <p>
-     * The timestamp from the AWS server corresponding to the fragment.
+     * The timestamp from the Amazon Web Services server corresponding to the fragment.
      * </p>
      */
     private java.util.Date serverTimestamp;
@@ -181,11 +181,11 @@ public class Fragment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp from the AWS server corresponding to the fragment.
+     * The timestamp from the Amazon Web Services server corresponding to the fragment.
      * </p>
      * 
      * @param serverTimestamp
-     *        The timestamp from the AWS server corresponding to the fragment.
+     *        The timestamp from the Amazon Web Services server corresponding to the fragment.
      */
 
     public void setServerTimestamp(java.util.Date serverTimestamp) {
@@ -194,10 +194,10 @@ public class Fragment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp from the AWS server corresponding to the fragment.
+     * The timestamp from the Amazon Web Services server corresponding to the fragment.
      * </p>
      * 
-     * @return The timestamp from the AWS server corresponding to the fragment.
+     * @return The timestamp from the Amazon Web Services server corresponding to the fragment.
      */
 
     public java.util.Date getServerTimestamp() {
@@ -206,11 +206,11 @@ public class Fragment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp from the AWS server corresponding to the fragment.
+     * The timestamp from the Amazon Web Services server corresponding to the fragment.
      * </p>
      * 
      * @param serverTimestamp
-     *        The timestamp from the AWS server corresponding to the fragment.
+     *        The timestamp from the Amazon Web Services server corresponding to the fragment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class DeleteRecordRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the feature group to delete the record from.
+     * The name or Amazon Resource Name (ARN) of the feature group to delete the record from.
      * </p>
      */
     private String featureGroupName;
@@ -44,14 +44,28 @@ public class DeleteRecordRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String eventTime;
+    /**
+     * <p>
+     * A list of stores from which you're deleting the record. By default, Feature Store deletes the record from all of
+     * the stores that you're using for the <code>FeatureGroup</code>.
+     * </p>
+     */
+    private java.util.List<String> targetStores;
+    /**
+     * <p>
+     * The name of the deletion mode for deleting the record. By default, the deletion mode is set to
+     * <code>SoftDelete</code>.
+     * </p>
+     */
+    private String deletionMode;
 
     /**
      * <p>
-     * The name of the feature group to delete the record from.
+     * The name or Amazon Resource Name (ARN) of the feature group to delete the record from.
      * </p>
      * 
      * @param featureGroupName
-     *        The name of the feature group to delete the record from.
+     *        The name or Amazon Resource Name (ARN) of the feature group to delete the record from.
      */
 
     public void setFeatureGroupName(String featureGroupName) {
@@ -60,10 +74,10 @@ public class DeleteRecordRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the feature group to delete the record from.
+     * The name or Amazon Resource Name (ARN) of the feature group to delete the record from.
      * </p>
      * 
-     * @return The name of the feature group to delete the record from.
+     * @return The name or Amazon Resource Name (ARN) of the feature group to delete the record from.
      */
 
     public String getFeatureGroupName() {
@@ -72,11 +86,11 @@ public class DeleteRecordRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the feature group to delete the record from.
+     * The name or Amazon Resource Name (ARN) of the feature group to delete the record from.
      * </p>
      * 
      * @param featureGroupName
-     *        The name of the feature group to delete the record from.
+     *        The name or Amazon Resource Name (ARN) of the feature group to delete the record from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,6 +186,181 @@ public class DeleteRecordRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * A list of stores from which you're deleting the record. By default, Feature Store deletes the record from all of
+     * the stores that you're using for the <code>FeatureGroup</code>.
+     * </p>
+     * 
+     * @return A list of stores from which you're deleting the record. By default, Feature Store deletes the record from
+     *         all of the stores that you're using for the <code>FeatureGroup</code>.
+     * @see TargetStore
+     */
+
+    public java.util.List<String> getTargetStores() {
+        return targetStores;
+    }
+
+    /**
+     * <p>
+     * A list of stores from which you're deleting the record. By default, Feature Store deletes the record from all of
+     * the stores that you're using for the <code>FeatureGroup</code>.
+     * </p>
+     * 
+     * @param targetStores
+     *        A list of stores from which you're deleting the record. By default, Feature Store deletes the record from
+     *        all of the stores that you're using for the <code>FeatureGroup</code>.
+     * @see TargetStore
+     */
+
+    public void setTargetStores(java.util.Collection<String> targetStores) {
+        if (targetStores == null) {
+            this.targetStores = null;
+            return;
+        }
+
+        this.targetStores = new java.util.ArrayList<String>(targetStores);
+    }
+
+    /**
+     * <p>
+     * A list of stores from which you're deleting the record. By default, Feature Store deletes the record from all of
+     * the stores that you're using for the <code>FeatureGroup</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTargetStores(java.util.Collection)} or {@link #withTargetStores(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param targetStores
+     *        A list of stores from which you're deleting the record. By default, Feature Store deletes the record from
+     *        all of the stores that you're using for the <code>FeatureGroup</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TargetStore
+     */
+
+    public DeleteRecordRequest withTargetStores(String... targetStores) {
+        if (this.targetStores == null) {
+            setTargetStores(new java.util.ArrayList<String>(targetStores.length));
+        }
+        for (String ele : targetStores) {
+            this.targetStores.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of stores from which you're deleting the record. By default, Feature Store deletes the record from all of
+     * the stores that you're using for the <code>FeatureGroup</code>.
+     * </p>
+     * 
+     * @param targetStores
+     *        A list of stores from which you're deleting the record. By default, Feature Store deletes the record from
+     *        all of the stores that you're using for the <code>FeatureGroup</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TargetStore
+     */
+
+    public DeleteRecordRequest withTargetStores(java.util.Collection<String> targetStores) {
+        setTargetStores(targetStores);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of stores from which you're deleting the record. By default, Feature Store deletes the record from all of
+     * the stores that you're using for the <code>FeatureGroup</code>.
+     * </p>
+     * 
+     * @param targetStores
+     *        A list of stores from which you're deleting the record. By default, Feature Store deletes the record from
+     *        all of the stores that you're using for the <code>FeatureGroup</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TargetStore
+     */
+
+    public DeleteRecordRequest withTargetStores(TargetStore... targetStores) {
+        java.util.ArrayList<String> targetStoresCopy = new java.util.ArrayList<String>(targetStores.length);
+        for (TargetStore value : targetStores) {
+            targetStoresCopy.add(value.toString());
+        }
+        if (getTargetStores() == null) {
+            setTargetStores(targetStoresCopy);
+        } else {
+            getTargetStores().addAll(targetStoresCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the deletion mode for deleting the record. By default, the deletion mode is set to
+     * <code>SoftDelete</code>.
+     * </p>
+     * 
+     * @param deletionMode
+     *        The name of the deletion mode for deleting the record. By default, the deletion mode is set to
+     *        <code>SoftDelete</code>.
+     * @see DeletionMode
+     */
+
+    public void setDeletionMode(String deletionMode) {
+        this.deletionMode = deletionMode;
+    }
+
+    /**
+     * <p>
+     * The name of the deletion mode for deleting the record. By default, the deletion mode is set to
+     * <code>SoftDelete</code>.
+     * </p>
+     * 
+     * @return The name of the deletion mode for deleting the record. By default, the deletion mode is set to
+     *         <code>SoftDelete</code>.
+     * @see DeletionMode
+     */
+
+    public String getDeletionMode() {
+        return this.deletionMode;
+    }
+
+    /**
+     * <p>
+     * The name of the deletion mode for deleting the record. By default, the deletion mode is set to
+     * <code>SoftDelete</code>.
+     * </p>
+     * 
+     * @param deletionMode
+     *        The name of the deletion mode for deleting the record. By default, the deletion mode is set to
+     *        <code>SoftDelete</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeletionMode
+     */
+
+    public DeleteRecordRequest withDeletionMode(String deletionMode) {
+        setDeletionMode(deletionMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the deletion mode for deleting the record. By default, the deletion mode is set to
+     * <code>SoftDelete</code>.
+     * </p>
+     * 
+     * @param deletionMode
+     *        The name of the deletion mode for deleting the record. By default, the deletion mode is set to
+     *        <code>SoftDelete</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeletionMode
+     */
+
+    public DeleteRecordRequest withDeletionMode(DeletionMode deletionMode) {
+        this.deletionMode = deletionMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -188,7 +377,11 @@ public class DeleteRecordRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getRecordIdentifierValueAsString() != null)
             sb.append("RecordIdentifierValueAsString: ").append(getRecordIdentifierValueAsString()).append(",");
         if (getEventTime() != null)
-            sb.append("EventTime: ").append(getEventTime());
+            sb.append("EventTime: ").append(getEventTime()).append(",");
+        if (getTargetStores() != null)
+            sb.append("TargetStores: ").append(getTargetStores()).append(",");
+        if (getDeletionMode() != null)
+            sb.append("DeletionMode: ").append(getDeletionMode());
         sb.append("}");
         return sb.toString();
     }
@@ -216,6 +409,14 @@ public class DeleteRecordRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getEventTime() != null && other.getEventTime().equals(this.getEventTime()) == false)
             return false;
+        if (other.getTargetStores() == null ^ this.getTargetStores() == null)
+            return false;
+        if (other.getTargetStores() != null && other.getTargetStores().equals(this.getTargetStores()) == false)
+            return false;
+        if (other.getDeletionMode() == null ^ this.getDeletionMode() == null)
+            return false;
+        if (other.getDeletionMode() != null && other.getDeletionMode().equals(this.getDeletionMode()) == false)
+            return false;
         return true;
     }
 
@@ -227,6 +428,8 @@ public class DeleteRecordRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getFeatureGroupName() == null) ? 0 : getFeatureGroupName().hashCode());
         hashCode = prime * hashCode + ((getRecordIdentifierValueAsString() == null) ? 0 : getRecordIdentifierValueAsString().hashCode());
         hashCode = prime * hashCode + ((getEventTime() == null) ? 0 : getEventTime().hashCode());
+        hashCode = prime * hashCode + ((getTargetStores() == null) ? 0 : getTargetStores().hashCode());
+        hashCode = prime * hashCode + ((getDeletionMode() == null) ? 0 : getDeletionMode().hashCode());
         return hashCode;
     }
 

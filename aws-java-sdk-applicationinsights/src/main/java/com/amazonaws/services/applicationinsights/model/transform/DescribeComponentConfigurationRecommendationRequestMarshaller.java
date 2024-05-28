@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,10 @@ public class DescribeComponentConfigurationRecommendationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ComponentName").build();
     private static final MarshallingInfo<String> TIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tier").build();
+    private static final MarshallingInfo<String> WORKLOADNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkloadName").build();
+    private static final MarshallingInfo<String> RECOMMENDATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecommendationType").build();
 
     private static final DescribeComponentConfigurationRecommendationRequestMarshaller instance = new DescribeComponentConfigurationRecommendationRequestMarshaller();
 
@@ -54,6 +58,8 @@ public class DescribeComponentConfigurationRecommendationRequestMarshaller {
             protocolMarshaller.marshall(describeComponentConfigurationRecommendationRequest.getResourceGroupName(), RESOURCEGROUPNAME_BINDING);
             protocolMarshaller.marshall(describeComponentConfigurationRecommendationRequest.getComponentName(), COMPONENTNAME_BINDING);
             protocolMarshaller.marshall(describeComponentConfigurationRecommendationRequest.getTier(), TIER_BINDING);
+            protocolMarshaller.marshall(describeComponentConfigurationRecommendationRequest.getWorkloadName(), WORKLOADNAME_BINDING);
+            protocolMarshaller.marshall(describeComponentConfigurationRecommendationRequest.getRecommendationType(), RECOMMENDATIONTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

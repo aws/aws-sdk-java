@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,11 @@ import java.util.concurrent.ExecutorService;
  * downlink message to devices in the group. By using Firmware Updates Over-The-Air (FUOTA) API operations, you can
  * create a FUOTA task and schedule a session to update the firmware of individual devices or an entire group of devices
  * in a multicast group.
+ * </p>
+ * <p>
+ * To connect to the AWS IoT Wireless Service, use the Service endpoints as described in <a
+ * href="https://docs.aws.amazon.com/general/latest/gr/iot-lorawan.html#iot-wireless_region">IoT Wireless Service
+ * endpoints</a> in the <i>AWS General Reference</i>.
  * </p>
  */
 @ThreadSafe
@@ -967,6 +972,40 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteWirelessDeviceImportTaskResult> deleteWirelessDeviceImportTaskAsync(DeleteWirelessDeviceImportTaskRequest request) {
+
+        return deleteWirelessDeviceImportTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWirelessDeviceImportTaskResult> deleteWirelessDeviceImportTaskAsync(
+            final DeleteWirelessDeviceImportTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteWirelessDeviceImportTaskRequest, DeleteWirelessDeviceImportTaskResult> asyncHandler) {
+        final DeleteWirelessDeviceImportTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteWirelessDeviceImportTaskResult>() {
+            @Override
+            public DeleteWirelessDeviceImportTaskResult call() throws Exception {
+                DeleteWirelessDeviceImportTaskResult result = null;
+
+                try {
+                    result = executeDeleteWirelessDeviceImportTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteWirelessGatewayResult> deleteWirelessGatewayAsync(DeleteWirelessGatewayRequest request) {
 
         return deleteWirelessGatewayAsync(request, null);
@@ -1052,6 +1091,39 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
 
                 try {
                     result = executeDeleteWirelessGatewayTaskDefinition(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterWirelessDeviceResult> deregisterWirelessDeviceAsync(DeregisterWirelessDeviceRequest request) {
+
+        return deregisterWirelessDeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterWirelessDeviceResult> deregisterWirelessDeviceAsync(final DeregisterWirelessDeviceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeregisterWirelessDeviceRequest, DeregisterWirelessDeviceResult> asyncHandler) {
+        final DeregisterWirelessDeviceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeregisterWirelessDeviceResult>() {
+            @Override
+            public DeregisterWirelessDeviceResult call() throws Exception {
+                DeregisterWirelessDeviceResult result = null;
+
+                try {
+                    result = executeDeregisterWirelessDevice(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1480,6 +1552,72 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetMetricConfigurationResult> getMetricConfigurationAsync(GetMetricConfigurationRequest request) {
+
+        return getMetricConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMetricConfigurationResult> getMetricConfigurationAsync(final GetMetricConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetMetricConfigurationRequest, GetMetricConfigurationResult> asyncHandler) {
+        final GetMetricConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetMetricConfigurationResult>() {
+            @Override
+            public GetMetricConfigurationResult call() throws Exception {
+                GetMetricConfigurationResult result = null;
+
+                try {
+                    result = executeGetMetricConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMetricsResult> getMetricsAsync(GetMetricsRequest request) {
+
+        return getMetricsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMetricsResult> getMetricsAsync(final GetMetricsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetMetricsRequest, GetMetricsResult> asyncHandler) {
+        final GetMetricsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetMetricsResult>() {
+            @Override
+            public GetMetricsResult call() throws Exception {
+                GetMetricsResult result = null;
+
+                try {
+                    result = executeGetMetrics(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetMulticastGroupResult> getMulticastGroupAsync(GetMulticastGroupRequest request) {
 
         return getMulticastGroupAsync(request, null);
@@ -1614,12 +1752,14 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetPositionResult> getPositionAsync(GetPositionRequest request) {
 
         return getPositionAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetPositionResult> getPositionAsync(final GetPositionRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetPositionRequest, GetPositionResult> asyncHandler) {
         final GetPositionRequest finalRequest = beforeClientExecution(request);
@@ -1647,12 +1787,14 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetPositionConfigurationResult> getPositionConfigurationAsync(GetPositionConfigurationRequest request) {
 
         return getPositionConfigurationAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetPositionConfigurationResult> getPositionConfigurationAsync(final GetPositionConfigurationRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetPositionConfigurationRequest, GetPositionConfigurationResult> asyncHandler) {
         final GetPositionConfigurationRequest finalRequest = beforeClientExecution(request);
@@ -1664,6 +1806,39 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
 
                 try {
                     result = executeGetPositionConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPositionEstimateResult> getPositionEstimateAsync(GetPositionEstimateRequest request) {
+
+        return getPositionEstimateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPositionEstimateResult> getPositionEstimateAsync(final GetPositionEstimateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetPositionEstimateRequest, GetPositionEstimateResult> asyncHandler) {
+        final GetPositionEstimateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetPositionEstimateResult>() {
+            @Override
+            public GetPositionEstimateResult call() throws Exception {
+                GetPositionEstimateResult result = null;
+
+                try {
+                    result = executeGetPositionEstimate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1731,6 +1906,39 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
 
                 try {
                     result = executeGetResourceLogLevel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourcePositionResult> getResourcePositionAsync(GetResourcePositionRequest request) {
+
+        return getResourcePositionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourcePositionResult> getResourcePositionAsync(final GetResourcePositionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetResourcePositionRequest, GetResourcePositionResult> asyncHandler) {
+        final GetResourcePositionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetResourcePositionResult>() {
+            @Override
+            public GetResourcePositionResult call() throws Exception {
+                GetResourcePositionResult result = null;
+
+                try {
+                    result = executeGetResourcePosition(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1830,6 +2038,39 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
 
                 try {
                     result = executeGetWirelessDevice(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWirelessDeviceImportTaskResult> getWirelessDeviceImportTaskAsync(GetWirelessDeviceImportTaskRequest request) {
+
+        return getWirelessDeviceImportTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWirelessDeviceImportTaskResult> getWirelessDeviceImportTaskAsync(final GetWirelessDeviceImportTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetWirelessDeviceImportTaskRequest, GetWirelessDeviceImportTaskResult> asyncHandler) {
+        final GetWirelessDeviceImportTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetWirelessDeviceImportTaskResult>() {
+            @Override
+            public GetWirelessDeviceImportTaskResult call() throws Exception {
+                GetWirelessDeviceImportTaskResult result = null;
+
+                try {
+                    result = executeGetWirelessDeviceImportTask(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2148,6 +2389,41 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<ListDevicesForWirelessDeviceImportTaskResult> listDevicesForWirelessDeviceImportTaskAsync(
+            ListDevicesForWirelessDeviceImportTaskRequest request) {
+
+        return listDevicesForWirelessDeviceImportTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDevicesForWirelessDeviceImportTaskResult> listDevicesForWirelessDeviceImportTaskAsync(
+            final ListDevicesForWirelessDeviceImportTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDevicesForWirelessDeviceImportTaskRequest, ListDevicesForWirelessDeviceImportTaskResult> asyncHandler) {
+        final ListDevicesForWirelessDeviceImportTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListDevicesForWirelessDeviceImportTaskResult>() {
+            @Override
+            public ListDevicesForWirelessDeviceImportTaskResult call() throws Exception {
+                ListDevicesForWirelessDeviceImportTaskResult result = null;
+
+                try {
+                    result = executeListDevicesForWirelessDeviceImportTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListEventConfigurationsResult> listEventConfigurationsAsync(ListEventConfigurationsRequest request) {
 
         return listEventConfigurationsAsync(request, null);
@@ -2349,12 +2625,14 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListPositionConfigurationsResult> listPositionConfigurationsAsync(ListPositionConfigurationsRequest request) {
 
         return listPositionConfigurationsAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListPositionConfigurationsResult> listPositionConfigurationsAsync(final ListPositionConfigurationsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListPositionConfigurationsRequest, ListPositionConfigurationsResult> asyncHandler) {
         final ListPositionConfigurationsRequest finalRequest = beforeClientExecution(request);
@@ -2481,6 +2759,40 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<ListWirelessDeviceImportTasksResult> listWirelessDeviceImportTasksAsync(ListWirelessDeviceImportTasksRequest request) {
+
+        return listWirelessDeviceImportTasksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWirelessDeviceImportTasksResult> listWirelessDeviceImportTasksAsync(
+            final ListWirelessDeviceImportTasksRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListWirelessDeviceImportTasksRequest, ListWirelessDeviceImportTasksResult> asyncHandler) {
+        final ListWirelessDeviceImportTasksRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListWirelessDeviceImportTasksResult>() {
+            @Override
+            public ListWirelessDeviceImportTasksResult call() throws Exception {
+                ListWirelessDeviceImportTasksResult result = null;
+
+                try {
+                    result = executeListWirelessDeviceImportTasks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListWirelessDevicesResult> listWirelessDevicesAsync(ListWirelessDevicesRequest request) {
 
         return listWirelessDevicesAsync(request, null);
@@ -2582,12 +2894,14 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<PutPositionConfigurationResult> putPositionConfigurationAsync(PutPositionConfigurationRequest request) {
 
         return putPositionConfigurationAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<PutPositionConfigurationResult> putPositionConfigurationAsync(final PutPositionConfigurationRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutPositionConfigurationRequest, PutPositionConfigurationResult> asyncHandler) {
         final PutPositionConfigurationRequest finalRequest = beforeClientExecution(request);
@@ -2916,6 +3230,75 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<StartSingleWirelessDeviceImportTaskResult> startSingleWirelessDeviceImportTaskAsync(
+            StartSingleWirelessDeviceImportTaskRequest request) {
+
+        return startSingleWirelessDeviceImportTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSingleWirelessDeviceImportTaskResult> startSingleWirelessDeviceImportTaskAsync(
+            final StartSingleWirelessDeviceImportTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartSingleWirelessDeviceImportTaskRequest, StartSingleWirelessDeviceImportTaskResult> asyncHandler) {
+        final StartSingleWirelessDeviceImportTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartSingleWirelessDeviceImportTaskResult>() {
+            @Override
+            public StartSingleWirelessDeviceImportTaskResult call() throws Exception {
+                StartSingleWirelessDeviceImportTaskResult result = null;
+
+                try {
+                    result = executeStartSingleWirelessDeviceImportTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartWirelessDeviceImportTaskResult> startWirelessDeviceImportTaskAsync(StartWirelessDeviceImportTaskRequest request) {
+
+        return startWirelessDeviceImportTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartWirelessDeviceImportTaskResult> startWirelessDeviceImportTaskAsync(
+            final StartWirelessDeviceImportTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartWirelessDeviceImportTaskRequest, StartWirelessDeviceImportTaskResult> asyncHandler) {
+        final StartWirelessDeviceImportTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartWirelessDeviceImportTaskResult>() {
+            @Override
+            public StartWirelessDeviceImportTaskResult call() throws Exception {
+                StartWirelessDeviceImportTaskResult result = null;
+
+                try {
+                    result = executeStartWirelessDeviceImportTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);
@@ -3150,6 +3533,39 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateMetricConfigurationResult> updateMetricConfigurationAsync(UpdateMetricConfigurationRequest request) {
+
+        return updateMetricConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMetricConfigurationResult> updateMetricConfigurationAsync(final UpdateMetricConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateMetricConfigurationRequest, UpdateMetricConfigurationResult> asyncHandler) {
+        final UpdateMetricConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateMetricConfigurationResult>() {
+            @Override
+            public UpdateMetricConfigurationResult call() throws Exception {
+                UpdateMetricConfigurationResult result = null;
+
+                try {
+                    result = executeUpdateMetricConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateMulticastGroupResult> updateMulticastGroupAsync(UpdateMulticastGroupRequest request) {
 
         return updateMulticastGroupAsync(request, null);
@@ -3251,12 +3667,14 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdatePositionResult> updatePositionAsync(UpdatePositionRequest request) {
 
         return updatePositionAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdatePositionResult> updatePositionAsync(final UpdatePositionRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdatePositionRequest, UpdatePositionResult> asyncHandler) {
         final UpdatePositionRequest finalRequest = beforeClientExecution(request);
@@ -3319,6 +3737,39 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateResourcePositionResult> updateResourcePositionAsync(UpdateResourcePositionRequest request) {
+
+        return updateResourcePositionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateResourcePositionResult> updateResourcePositionAsync(final UpdateResourcePositionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateResourcePositionRequest, UpdateResourcePositionResult> asyncHandler) {
+        final UpdateResourcePositionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateResourcePositionResult>() {
+            @Override
+            public UpdateResourcePositionResult call() throws Exception {
+                UpdateResourcePositionResult result = null;
+
+                try {
+                    result = executeUpdateResourcePosition(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateWirelessDeviceResult> updateWirelessDeviceAsync(UpdateWirelessDeviceRequest request) {
 
         return updateWirelessDeviceAsync(request, null);
@@ -3336,6 +3787,40 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
 
                 try {
                     result = executeUpdateWirelessDevice(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWirelessDeviceImportTaskResult> updateWirelessDeviceImportTaskAsync(UpdateWirelessDeviceImportTaskRequest request) {
+
+        return updateWirelessDeviceImportTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWirelessDeviceImportTaskResult> updateWirelessDeviceImportTaskAsync(
+            final UpdateWirelessDeviceImportTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateWirelessDeviceImportTaskRequest, UpdateWirelessDeviceImportTaskResult> asyncHandler) {
+        final UpdateWirelessDeviceImportTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateWirelessDeviceImportTaskResult>() {
+            @Override
+            public UpdateWirelessDeviceImportTaskResult call() throws Exception {
+                UpdateWirelessDeviceImportTaskResult result = null;
+
+                try {
+                    result = executeUpdateWirelessDeviceImportTask(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

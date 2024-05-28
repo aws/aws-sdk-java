@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,13 +31,13 @@ public class CancelImageCreationResult extends com.amazonaws.AmazonWebServiceRes
     private String requestId;
     /**
      * <p>
-     * The idempotency token that was used for this request.
+     * The client token that uniquely identifies the request.
      * </p>
      */
     private String clientToken;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image whose creation has been cancelled.
+     * The ARN of the image whose creation this request canceled.
      * </p>
      */
     private String imageBuildVersionArn;
@@ -84,11 +84,11 @@ public class CancelImageCreationResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The idempotency token that was used for this request.
+     * The client token that uniquely identifies the request.
      * </p>
      * 
      * @param clientToken
-     *        The idempotency token that was used for this request.
+     *        The client token that uniquely identifies the request.
      */
 
     public void setClientToken(String clientToken) {
@@ -97,10 +97,10 @@ public class CancelImageCreationResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The idempotency token that was used for this request.
+     * The client token that uniquely identifies the request.
      * </p>
      * 
-     * @return The idempotency token that was used for this request.
+     * @return The client token that uniquely identifies the request.
      */
 
     public String getClientToken() {
@@ -109,11 +109,11 @@ public class CancelImageCreationResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The idempotency token that was used for this request.
+     * The client token that uniquely identifies the request.
      * </p>
      * 
      * @param clientToken
-     *        The idempotency token that was used for this request.
+     *        The client token that uniquely identifies the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,11 +124,11 @@ public class CancelImageCreationResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image whose creation has been cancelled.
+     * The ARN of the image whose creation this request canceled.
      * </p>
      * 
      * @param imageBuildVersionArn
-     *        The Amazon Resource Name (ARN) of the image whose creation has been cancelled.
+     *        The ARN of the image whose creation this request canceled.
      */
 
     public void setImageBuildVersionArn(String imageBuildVersionArn) {
@@ -137,10 +137,10 @@ public class CancelImageCreationResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image whose creation has been cancelled.
+     * The ARN of the image whose creation this request canceled.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the image whose creation has been cancelled.
+     * @return The ARN of the image whose creation this request canceled.
      */
 
     public String getImageBuildVersionArn() {
@@ -149,11 +149,11 @@ public class CancelImageCreationResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image whose creation has been cancelled.
+     * The ARN of the image whose creation this request canceled.
      * </p>
      * 
      * @param imageBuildVersionArn
-     *        The Amazon Resource Name (ARN) of the image whose creation has been cancelled.
+     *        The ARN of the image whose creation this request canceled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

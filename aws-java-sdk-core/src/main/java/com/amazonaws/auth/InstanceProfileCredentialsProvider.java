@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -27,10 +27,18 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Credentials provider implementation that loads credentials from the Amazon EC2 Instance Metadata Service.
+ * Credentials provider implementation that loads credentials from the Amazon EC2 Instance Metadata Service (IMDS).
  *
  * <p>When using {@link InstanceProfileCredentialsProvider} with asynchronous refreshing it is
  * <b>strongly</b> recommended to explicitly call {@link #close()} to release the async thread.</p>
+ *
+ * <p>The provider is configured with the default Instance Metadata Service endpoint. You can override the endpoint value
+ * by setting a valid URI as the value of the
+ * <ol>
+ *     <li><i>com.amazonaws.sdk.ec2MetadataServiceEndpointOverride</i> system property or</li>
+ *     <li><i>AWS_EC2_METADATA_SERVICE_ENDPOINT</i> environment value</li>
+ * </ol>
+ * </p>
  */
 public class InstanceProfileCredentialsProvider implements AWSCredentialsProvider, Closeable {
 

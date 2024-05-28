@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -100,9 +100,46 @@ public class ContactJsonUnmarshaller implements Unmarshaller<Contact, JsonUnmars
                     context.nextToken();
                     contact.setLastUpdateTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("LastPausedTimestamp", targetDepth)) {
+                    context.nextToken();
+                    contact.setLastPausedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("LastResumedTimestamp", targetDepth)) {
+                    context.nextToken();
+                    contact.setLastResumedTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("TotalPauseCount", targetDepth)) {
+                    context.nextToken();
+                    contact.setTotalPauseCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("TotalPauseDurationInSeconds", targetDepth)) {
+                    context.nextToken();
+                    contact.setTotalPauseDurationInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("ScheduledTimestamp", targetDepth)) {
                     context.nextToken();
                     contact.setScheduledTimestamp(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("RelatedContactId", targetDepth)) {
+                    context.nextToken();
+                    contact.setRelatedContactId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("WisdomInfo", targetDepth)) {
+                    context.nextToken();
+                    contact.setWisdomInfo(WisdomInfoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("QueueTimeAdjustmentSeconds", targetDepth)) {
+                    context.nextToken();
+                    contact.setQueueTimeAdjustmentSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("QueuePriority", targetDepth)) {
+                    context.nextToken();
+                    contact.setQueuePriority(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("Tags", targetDepth)) {
+                    context.nextToken();
+                    contact.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

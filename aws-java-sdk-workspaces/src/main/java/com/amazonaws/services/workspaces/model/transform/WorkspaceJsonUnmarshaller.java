@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -100,6 +100,10 @@ public class WorkspaceJsonUnmarshaller implements Unmarshaller<Workspace, JsonUn
                     context.nextToken();
                     workspace.setRootVolumeEncryptionEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("WorkspaceName", targetDepth)) {
+                    context.nextToken();
+                    workspace.setWorkspaceName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("WorkspaceProperties", targetDepth)) {
                     context.nextToken();
                     workspace.setWorkspaceProperties(WorkspacePropertiesJsonUnmarshaller.getInstance().unmarshall(context));
@@ -107,6 +111,23 @@ public class WorkspaceJsonUnmarshaller implements Unmarshaller<Workspace, JsonUn
                 if (context.testExpression("ModificationStates", targetDepth)) {
                     context.nextToken();
                     workspace.setModificationStates(new ListUnmarshaller<ModificationState>(ModificationStateJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("RelatedWorkspaces", targetDepth)) {
+                    context.nextToken();
+                    workspace.setRelatedWorkspaces(new ListUnmarshaller<RelatedWorkspaceProperties>(RelatedWorkspacePropertiesJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("DataReplicationSettings", targetDepth)) {
+                    context.nextToken();
+                    workspace.setDataReplicationSettings(DataReplicationSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("StandbyWorkspacesProperties", targetDepth)) {
+                    context.nextToken();
+                    workspace.setStandbyWorkspacesProperties(new ListUnmarshaller<StandbyWorkspacesProperties>(StandbyWorkspacesPropertiesJsonUnmarshaller
+                            .getInstance())
 
                     .unmarshall(context));
                 }

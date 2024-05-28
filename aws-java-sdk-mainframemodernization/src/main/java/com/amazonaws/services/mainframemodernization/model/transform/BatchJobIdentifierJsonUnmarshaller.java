@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,14 @@ public class BatchJobIdentifierJsonUnmarshaller implements Unmarshaller<BatchJob
                 if (context.testExpression("fileBatchJobIdentifier", targetDepth)) {
                     context.nextToken();
                     batchJobIdentifier.setFileBatchJobIdentifier(FileBatchJobIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("restartBatchJobIdentifier", targetDepth)) {
+                    context.nextToken();
+                    batchJobIdentifier.setRestartBatchJobIdentifier(RestartBatchJobIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("s3BatchJobIdentifier", targetDepth)) {
+                    context.nextToken();
+                    batchJobIdentifier.setS3BatchJobIdentifier(S3BatchJobIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("scriptBatchJobIdentifier", targetDepth)) {
                     context.nextToken();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,9 @@ public class NetworkConnectionAction implements Serializable, Cloneable, Structu
     /**
      * <p>
      * The protocol used to make the network connection request.
+     * </p>
+     * <p>
+     * Length Constraints: Minimum length of 1. Maximum length of 64.
      * </p>
      */
     private String protocol;
@@ -230,9 +233,14 @@ public class NetworkConnectionAction implements Serializable, Cloneable, Structu
      * <p>
      * The protocol used to make the network connection request.
      * </p>
+     * <p>
+     * Length Constraints: Minimum length of 1. Maximum length of 64.
+     * </p>
      * 
      * @param protocol
-     *        The protocol used to make the network connection request.
+     *        The protocol used to make the network connection request.</p>
+     *        <p>
+     *        Length Constraints: Minimum length of 1. Maximum length of 64.
      */
 
     public void setProtocol(String protocol) {
@@ -243,8 +251,13 @@ public class NetworkConnectionAction implements Serializable, Cloneable, Structu
      * <p>
      * The protocol used to make the network connection request.
      * </p>
+     * <p>
+     * Length Constraints: Minimum length of 1. Maximum length of 64.
+     * </p>
      * 
-     * @return The protocol used to make the network connection request.
+     * @return The protocol used to make the network connection request.</p>
+     *         <p>
+     *         Length Constraints: Minimum length of 1. Maximum length of 64.
      */
 
     public String getProtocol() {
@@ -255,9 +268,14 @@ public class NetworkConnectionAction implements Serializable, Cloneable, Structu
      * <p>
      * The protocol used to make the network connection request.
      * </p>
+     * <p>
+     * Length Constraints: Minimum length of 1. Maximum length of 64.
+     * </p>
      * 
      * @param protocol
-     *        The protocol used to make the network connection request.
+     *        The protocol used to make the network connection request.</p>
+     *        <p>
+     *        Length Constraints: Minimum length of 1. Maximum length of 64.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

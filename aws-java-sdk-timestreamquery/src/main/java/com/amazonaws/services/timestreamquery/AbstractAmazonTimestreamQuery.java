@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,11 @@ public class AbstractAmazonTimestreamQuery implements AmazonTimestreamQuery {
 
     @Override
     public DeleteScheduledQueryResult deleteScheduledQuery(DeleteScheduledQueryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAccountSettingsResult describeAccountSettings(DescribeAccountSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -84,6 +89,11 @@ public class AbstractAmazonTimestreamQuery implements AmazonTimestreamQuery {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAccountSettingsResult updateAccountSettings(UpdateAccountSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

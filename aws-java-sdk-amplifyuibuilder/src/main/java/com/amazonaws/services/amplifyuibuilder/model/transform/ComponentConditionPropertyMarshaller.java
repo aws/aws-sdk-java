@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,20 +27,20 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ComponentConditionPropertyMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> ELSE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("else").build();
-    private static final MarshallingInfo<String> FIELD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("field").build();
-    private static final MarshallingInfo<String> OPERAND_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("operand").build();
-    private static final MarshallingInfo<String> OPERANDTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("operandType").build();
-    private static final MarshallingInfo<String> OPERATOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("operator").build();
     private static final MarshallingInfo<String> PROPERTY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("property").build();
+    private static final MarshallingInfo<String> FIELD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("field").build();
+    private static final MarshallingInfo<String> OPERATOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("operator").build();
+    private static final MarshallingInfo<String> OPERAND_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("operand").build();
     private static final MarshallingInfo<StructuredPojo> THEN_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("then").build();
+    private static final MarshallingInfo<StructuredPojo> ELSE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("else").build();
+    private static final MarshallingInfo<String> OPERANDTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("operandType").build();
 
     private static final ComponentConditionPropertyMarshaller instance = new ComponentConditionPropertyMarshaller();
 
@@ -58,13 +58,13 @@ public class ComponentConditionPropertyMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(componentConditionProperty.getElse(), ELSE_BINDING);
-            protocolMarshaller.marshall(componentConditionProperty.getField(), FIELD_BINDING);
-            protocolMarshaller.marshall(componentConditionProperty.getOperand(), OPERAND_BINDING);
-            protocolMarshaller.marshall(componentConditionProperty.getOperandType(), OPERANDTYPE_BINDING);
-            protocolMarshaller.marshall(componentConditionProperty.getOperator(), OPERATOR_BINDING);
             protocolMarshaller.marshall(componentConditionProperty.getProperty(), PROPERTY_BINDING);
+            protocolMarshaller.marshall(componentConditionProperty.getField(), FIELD_BINDING);
+            protocolMarshaller.marshall(componentConditionProperty.getOperator(), OPERATOR_BINDING);
+            protocolMarshaller.marshall(componentConditionProperty.getOperand(), OPERAND_BINDING);
             protocolMarshaller.marshall(componentConditionProperty.getThen(), THEN_BINDING);
+            protocolMarshaller.marshall(componentConditionProperty.getElse(), ELSE_BINDING);
+            protocolMarshaller.marshall(componentConditionProperty.getOperandType(), OPERANDTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

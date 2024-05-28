@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,17 +28,17 @@ public class DeleteVpcEndpointConnectionNotificationsRequest extends AmazonWebSe
 
     /**
      * <p>
-     * One or more notification IDs.
+     * The IDs of the notifications.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> connectionNotificationIds;
 
     /**
      * <p>
-     * One or more notification IDs.
+     * The IDs of the notifications.
      * </p>
      * 
-     * @return One or more notification IDs.
+     * @return The IDs of the notifications.
      */
 
     public java.util.List<String> getConnectionNotificationIds() {
@@ -50,11 +50,11 @@ public class DeleteVpcEndpointConnectionNotificationsRequest extends AmazonWebSe
 
     /**
      * <p>
-     * One or more notification IDs.
+     * The IDs of the notifications.
      * </p>
      * 
      * @param connectionNotificationIds
-     *        One or more notification IDs.
+     *        The IDs of the notifications.
      */
 
     public void setConnectionNotificationIds(java.util.Collection<String> connectionNotificationIds) {
@@ -68,7 +68,7 @@ public class DeleteVpcEndpointConnectionNotificationsRequest extends AmazonWebSe
 
     /**
      * <p>
-     * One or more notification IDs.
+     * The IDs of the notifications.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class DeleteVpcEndpointConnectionNotificationsRequest extends AmazonWebSe
      * </p>
      * 
      * @param connectionNotificationIds
-     *        One or more notification IDs.
+     *        The IDs of the notifications.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class DeleteVpcEndpointConnectionNotificationsRequest extends AmazonWebSe
 
     /**
      * <p>
-     * One or more notification IDs.
+     * The IDs of the notifications.
      * </p>
      * 
      * @param connectionNotificationIds
-     *        One or more notification IDs.
+     *        The IDs of the notifications.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

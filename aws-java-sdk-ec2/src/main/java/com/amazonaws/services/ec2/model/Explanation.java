@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -346,6 +346,18 @@ public class Explanation implements Serializable, Cloneable {
      * </p>
      */
     private String componentRegion;
+    /**
+     * <p>
+     * The Network Firewall stateless rule.
+     * </p>
+     */
+    private FirewallStatelessRule firewallStatelessRule;
+    /**
+     * <p>
+     * The Network Firewall stateful rule.
+     * </p>
+     */
+    private FirewallStatefulRule firewallStatefulRule;
 
     /**
      * <p>
@@ -2688,6 +2700,86 @@ public class Explanation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Network Firewall stateless rule.
+     * </p>
+     * 
+     * @param firewallStatelessRule
+     *        The Network Firewall stateless rule.
+     */
+
+    public void setFirewallStatelessRule(FirewallStatelessRule firewallStatelessRule) {
+        this.firewallStatelessRule = firewallStatelessRule;
+    }
+
+    /**
+     * <p>
+     * The Network Firewall stateless rule.
+     * </p>
+     * 
+     * @return The Network Firewall stateless rule.
+     */
+
+    public FirewallStatelessRule getFirewallStatelessRule() {
+        return this.firewallStatelessRule;
+    }
+
+    /**
+     * <p>
+     * The Network Firewall stateless rule.
+     * </p>
+     * 
+     * @param firewallStatelessRule
+     *        The Network Firewall stateless rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Explanation withFirewallStatelessRule(FirewallStatelessRule firewallStatelessRule) {
+        setFirewallStatelessRule(firewallStatelessRule);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Network Firewall stateful rule.
+     * </p>
+     * 
+     * @param firewallStatefulRule
+     *        The Network Firewall stateful rule.
+     */
+
+    public void setFirewallStatefulRule(FirewallStatefulRule firewallStatefulRule) {
+        this.firewallStatefulRule = firewallStatefulRule;
+    }
+
+    /**
+     * <p>
+     * The Network Firewall stateful rule.
+     * </p>
+     * 
+     * @return The Network Firewall stateful rule.
+     */
+
+    public FirewallStatefulRule getFirewallStatefulRule() {
+        return this.firewallStatefulRule;
+    }
+
+    /**
+     * <p>
+     * The Network Firewall stateful rule.
+     * </p>
+     * 
+     * @param firewallStatefulRule
+     *        The Network Firewall stateful rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Explanation withFirewallStatefulRule(FirewallStatefulRule firewallStatefulRule) {
+        setFirewallStatefulRule(firewallStatefulRule);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2800,7 +2892,11 @@ public class Explanation implements Serializable, Cloneable {
         if (getComponentAccount() != null)
             sb.append("ComponentAccount: ").append(getComponentAccount()).append(",");
         if (getComponentRegion() != null)
-            sb.append("ComponentRegion: ").append(getComponentRegion());
+            sb.append("ComponentRegion: ").append(getComponentRegion()).append(",");
+        if (getFirewallStatelessRule() != null)
+            sb.append("FirewallStatelessRule: ").append(getFirewallStatelessRule()).append(",");
+        if (getFirewallStatefulRule() != null)
+            sb.append("FirewallStatefulRule: ").append(getFirewallStatefulRule());
         sb.append("}");
         return sb.toString();
     }
@@ -3020,6 +3116,14 @@ public class Explanation implements Serializable, Cloneable {
             return false;
         if (other.getComponentRegion() != null && other.getComponentRegion().equals(this.getComponentRegion()) == false)
             return false;
+        if (other.getFirewallStatelessRule() == null ^ this.getFirewallStatelessRule() == null)
+            return false;
+        if (other.getFirewallStatelessRule() != null && other.getFirewallStatelessRule().equals(this.getFirewallStatelessRule()) == false)
+            return false;
+        if (other.getFirewallStatefulRule() == null ^ this.getFirewallStatefulRule() == null)
+            return false;
+        if (other.getFirewallStatefulRule() != null && other.getFirewallStatefulRule().equals(this.getFirewallStatefulRule()) == false)
+            return false;
         return true;
     }
 
@@ -3079,6 +3183,8 @@ public class Explanation implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTransitGatewayAttachment() == null) ? 0 : getTransitGatewayAttachment().hashCode());
         hashCode = prime * hashCode + ((getComponentAccount() == null) ? 0 : getComponentAccount().hashCode());
         hashCode = prime * hashCode + ((getComponentRegion() == null) ? 0 : getComponentRegion().hashCode());
+        hashCode = prime * hashCode + ((getFirewallStatelessRule() == null) ? 0 : getFirewallStatelessRule().hashCode());
+        hashCode = prime * hashCode + ((getFirewallStatefulRule() == null) ? 0 : getFirewallStatefulRule().hashCode());
         return hashCode;
     }
 

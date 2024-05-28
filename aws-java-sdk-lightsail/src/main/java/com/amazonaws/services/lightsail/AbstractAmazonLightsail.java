@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -144,6 +144,11 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
 
     @Override
     public CreateDomainEntryResult createDomainEntry(CreateDomainEntryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateGUISessionAccessDetailsResult createGUISessionAccessDetails(CreateGUISessionAccessDetailsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -433,6 +438,11 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
     }
 
     @Override
+    public GetCostEstimateResult getCostEstimate(GetCostEstimateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetDiskResult getDisk(GetDiskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -643,6 +653,11 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
     }
 
     @Override
+    public GetSetupHistoryResult getSetupHistory(GetSetupHistoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetStaticIpResult getStaticIp(GetStaticIpRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -723,12 +738,27 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
     }
 
     @Override
+    public SetupInstanceHttpsResult setupInstanceHttps(SetupInstanceHttpsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartGUISessionResult startGUISession(StartGUISessionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartInstanceResult startInstance(StartInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public StartRelationalDatabaseResult startRelationalDatabase(StartRelationalDatabaseRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopGUISessionResult stopGUISession(StopGUISessionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

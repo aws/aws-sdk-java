@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,70 +12,54 @@
  */
 package com.amazonaws.services.sqs.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.sqs.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.StringUtils;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * AddPermissionRequest Marshaller
+ * AddPermissionRequestMarshaller
  */
-
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AddPermissionRequestMarshaller implements Marshaller<Request<AddPermissionRequest>, AddPermissionRequest> {
+@SdkInternalApi
+public class AddPermissionRequestMarshaller {
 
-    public Request<AddPermissionRequest> marshall(AddPermissionRequest addPermissionRequest) {
+    private static final MarshallingInfo<String> QUEUEURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("QueueUrl").build();
+    private static final MarshallingInfo<String> LABEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Label").build();
+    private static final MarshallingInfo<List> AWSACCOUNTIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AWSAccountIds").build();
+    private static final MarshallingInfo<List> ACTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Actions").build();
+
+    private static final AddPermissionRequestMarshaller instance = new AddPermissionRequestMarshaller();
+
+    public static AddPermissionRequestMarshaller getInstance() {
+        return instance;
+    }
+
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(AddPermissionRequest addPermissionRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (addPermissionRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<AddPermissionRequest> request = new DefaultRequest<AddPermissionRequest>(addPermissionRequest, "AmazonSQS");
-        request.addParameter("Action", "AddPermission");
-        request.addParameter("Version", "2012-11-05");
-        request.setHttpMethod(HttpMethodName.POST);
-
-        if (addPermissionRequest.getQueueUrl() != null) {
-            request.addParameter("QueueUrl", StringUtils.fromString(addPermissionRequest.getQueueUrl()));
+        try {
+            protocolMarshaller.marshall(addPermissionRequest.getQueueUrl(), QUEUEURL_BINDING);
+            protocolMarshaller.marshall(addPermissionRequest.getLabel(), LABEL_BINDING);
+            protocolMarshaller.marshall(addPermissionRequest.getAWSAccountIds(), AWSACCOUNTIDS_BINDING);
+            protocolMarshaller.marshall(addPermissionRequest.getActions(), ACTIONS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (addPermissionRequest.getLabel() != null) {
-            request.addParameter("Label", StringUtils.fromString(addPermissionRequest.getLabel()));
-        }
-
-        if (!addPermissionRequest.getAWSAccountIds().isEmpty()
-                || !((com.amazonaws.internal.SdkInternalList<String>) addPermissionRequest.getAWSAccountIds()).isAutoConstruct()) {
-            com.amazonaws.internal.SdkInternalList<String> aWSAccountIdsList = (com.amazonaws.internal.SdkInternalList<String>) addPermissionRequest
-                    .getAWSAccountIds();
-            int aWSAccountIdsListIndex = 1;
-
-            for (String aWSAccountIdsListValue : aWSAccountIdsList) {
-                if (aWSAccountIdsListValue != null) {
-                    request.addParameter("AWSAccountId." + aWSAccountIdsListIndex, StringUtils.fromString(aWSAccountIdsListValue));
-                }
-                aWSAccountIdsListIndex++;
-            }
-        }
-
-        if (!addPermissionRequest.getActions().isEmpty()
-                || !((com.amazonaws.internal.SdkInternalList<String>) addPermissionRequest.getActions()).isAutoConstruct()) {
-            com.amazonaws.internal.SdkInternalList<String> actionsList = (com.amazonaws.internal.SdkInternalList<String>) addPermissionRequest.getActions();
-            int actionsListIndex = 1;
-
-            for (String actionsListValue : actionsList) {
-                if (actionsListValue != null) {
-                    request.addParameter("ActionName." + actionsListIndex, StringUtils.fromString(actionsListValue));
-                }
-                actionsListIndex++;
-            }
-        }
-
-        return request;
     }
 
 }

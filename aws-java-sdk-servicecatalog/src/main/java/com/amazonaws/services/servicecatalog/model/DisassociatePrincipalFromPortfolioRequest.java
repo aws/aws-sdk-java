@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,11 +32,6 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -56,21 +51,24 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
     private String portfolioId;
     /**
      * <p>
-     * The ARN of the principal (IAM user, role, or group).
+     * The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> with or
+     * without wildcard characters if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
      * </p>
      */
     private String principalARN;
+    /**
+     * <p>
+     * The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you
+     * specify an <code>IAM</code> ARN with no AccountId, with or without wildcard characters.
+     * </p>
+     */
+    private String principalType;
 
     /**
      * <p>
      * The language code.
      * </p>
      * <ul>
-     * <li>
-     * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
      * <li>
      * <p>
      * <code>jp</code> - Japanese
@@ -86,11 +84,6 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
      * @param acceptLanguage
      *        The language code.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>en</code> - English (default)
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>jp</code> - Japanese
@@ -114,11 +107,6 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -131,11 +119,6 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
      * 
      * @return The language code.</p>
      *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>en</code> - English (default)
-     *         </p>
-     *         </li>
      *         <li>
      *         <p>
      *         <code>jp</code> - Japanese
@@ -159,11 +142,6 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -177,11 +155,6 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
      * @param acceptLanguage
      *        The language code.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>en</code> - English (default)
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>jp</code> - Japanese
@@ -242,11 +215,13 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ARN of the principal (IAM user, role, or group).
+     * The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> with or
+     * without wildcard characters if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
      * </p>
      * 
      * @param principalARN
-     *        The ARN of the principal (IAM user, role, or group).
+     *        The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code>
+     *        with or without wildcard characters if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
      */
 
     public void setPrincipalARN(String principalARN) {
@@ -255,10 +230,12 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ARN of the principal (IAM user, role, or group).
+     * The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> with or
+     * without wildcard characters if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
      * </p>
      * 
-     * @return The ARN of the principal (IAM user, role, or group).
+     * @return The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code>
+     *         with or without wildcard characters if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
      */
 
     public String getPrincipalARN() {
@@ -267,16 +244,85 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ARN of the principal (IAM user, role, or group).
+     * The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> with or
+     * without wildcard characters if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
      * </p>
      * 
      * @param principalARN
-     *        The ARN of the principal (IAM user, role, or group).
+     *        The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code>
+     *        with or without wildcard characters if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DisassociatePrincipalFromPortfolioRequest withPrincipalARN(String principalARN) {
         setPrincipalARN(principalARN);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you
+     * specify an <code>IAM</code> ARN with no AccountId, with or without wildcard characters.
+     * </p>
+     * 
+     * @param principalType
+     *        The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you
+     *        specify an <code>IAM</code> ARN with no AccountId, with or without wildcard characters.
+     * @see PrincipalType
+     */
+
+    public void setPrincipalType(String principalType) {
+        this.principalType = principalType;
+    }
+
+    /**
+     * <p>
+     * The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you
+     * specify an <code>IAM</code> ARN with no AccountId, with or without wildcard characters.
+     * </p>
+     * 
+     * @return The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if
+     *         you specify an <code>IAM</code> ARN with no AccountId, with or without wildcard characters.
+     * @see PrincipalType
+     */
+
+    public String getPrincipalType() {
+        return this.principalType;
+    }
+
+    /**
+     * <p>
+     * The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you
+     * specify an <code>IAM</code> ARN with no AccountId, with or without wildcard characters.
+     * </p>
+     * 
+     * @param principalType
+     *        The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you
+     *        specify an <code>IAM</code> ARN with no AccountId, with or without wildcard characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PrincipalType
+     */
+
+    public DisassociatePrincipalFromPortfolioRequest withPrincipalType(String principalType) {
+        setPrincipalType(principalType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you
+     * specify an <code>IAM</code> ARN with no AccountId, with or without wildcard characters.
+     * </p>
+     * 
+     * @param principalType
+     *        The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code> if you
+     *        specify an <code>IAM</code> ARN with no AccountId, with or without wildcard characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PrincipalType
+     */
+
+    public DisassociatePrincipalFromPortfolioRequest withPrincipalType(PrincipalType principalType) {
+        this.principalType = principalType.toString();
         return this;
     }
 
@@ -297,7 +343,9 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
         if (getPortfolioId() != null)
             sb.append("PortfolioId: ").append(getPortfolioId()).append(",");
         if (getPrincipalARN() != null)
-            sb.append("PrincipalARN: ").append(getPrincipalARN());
+            sb.append("PrincipalARN: ").append(getPrincipalARN()).append(",");
+        if (getPrincipalType() != null)
+            sb.append("PrincipalType: ").append(getPrincipalType());
         sb.append("}");
         return sb.toString();
     }
@@ -324,6 +372,10 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
             return false;
         if (other.getPrincipalARN() != null && other.getPrincipalARN().equals(this.getPrincipalARN()) == false)
             return false;
+        if (other.getPrincipalType() == null ^ this.getPrincipalType() == null)
+            return false;
+        if (other.getPrincipalType() != null && other.getPrincipalType().equals(this.getPrincipalType()) == false)
+            return false;
         return true;
     }
 
@@ -335,6 +387,7 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
         hashCode = prime * hashCode + ((getAcceptLanguage() == null) ? 0 : getAcceptLanguage().hashCode());
         hashCode = prime * hashCode + ((getPortfolioId() == null) ? 0 : getPortfolioId().hashCode());
         hashCode = prime * hashCode + ((getPrincipalARN() == null) ? 0 : getPrincipalARN().hashCode());
+        hashCode = prime * hashCode + ((getPrincipalType() == null) ? 0 : getPrincipalType().hashCode());
         return hashCode;
     }
 

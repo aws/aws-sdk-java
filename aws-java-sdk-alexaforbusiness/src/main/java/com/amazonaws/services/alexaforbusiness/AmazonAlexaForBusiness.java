@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,13 +27,7 @@ import com.amazonaws.services.alexaforbusiness.model.*;
  * </p>
  * <p>
  * <p>
- * Alexa for Business helps you use Alexa in your organization. Alexa for Business provides you with the tools to manage
- * Alexa devices, enroll your users, and assign skills, at scale. You can build your own context-aware voice skills
- * using the Alexa Skills Kit and the Alexa for Business API operations. You can also make these available as private
- * skills for your organization. Alexa for Business makes it efficient to voice-enable your products and services, thus
- * providing context-aware voice experiences for your customers. Device makers building with the Alexa Voice Service
- * (AVS) can create fully integrated solutions, register their products with Alexa for Business, and manage them as
- * shared devices in their organization.
+ * Alexa for Business has been retired and is no longer supported.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -65,6 +59,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ApproveSkill" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     ApproveSkillResult approveSkill(ApproveSkillRequest approveSkillRequest);
 
     /**
@@ -80,6 +75,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateContactWithAddressBook"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     AssociateContactWithAddressBookResult associateContactWithAddressBook(AssociateContactWithAddressBookRequest associateContactWithAddressBookRequest);
 
     /**
@@ -101,6 +97,7 @@ public interface AmazonAlexaForBusiness {
      *      href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithNetworkProfile"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     AssociateDeviceWithNetworkProfileResult associateDeviceWithNetworkProfile(AssociateDeviceWithNetworkProfileRequest associateDeviceWithNetworkProfileRequest);
 
     /**
@@ -123,6 +120,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithRoom"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     AssociateDeviceWithRoomResult associateDeviceWithRoom(AssociateDeviceWithRoomRequest associateDeviceWithRoomRequest);
 
     /**
@@ -139,6 +137,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillGroupWithRoom"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     AssociateSkillGroupWithRoomResult associateSkillGroupWithRoom(AssociateSkillGroupWithRoomRequest associateSkillGroupWithRoomRequest);
 
     /**
@@ -158,6 +157,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithSkillGroup"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     AssociateSkillWithSkillGroupResult associateSkillWithSkillGroup(AssociateSkillWithSkillGroupRequest associateSkillWithSkillGroupRequest);
 
     /**
@@ -175,6 +175,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithUsers"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     AssociateSkillWithUsersResult associateSkillWithUsers(AssociateSkillWithUsersRequest associateSkillWithUsersRequest);
 
     /**
@@ -192,6 +193,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateAddressBook"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     CreateAddressBookResult createAddressBook(CreateAddressBookRequest createAddressBookRequest);
 
     /**
@@ -208,6 +210,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateBusinessReportSchedule"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     CreateBusinessReportScheduleResult createBusinessReportSchedule(CreateBusinessReportScheduleRequest createBusinessReportScheduleRequest);
 
     /**
@@ -223,6 +226,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateConferenceProvider"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     CreateConferenceProviderResult createConferenceProvider(CreateConferenceProviderRequest createConferenceProviderRequest);
 
     /**
@@ -240,6 +244,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateContact" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     CreateContactResult createContact(CreateContactRequest createContactRequest);
 
     /**
@@ -257,6 +262,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateGatewayGroup"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     CreateGatewayGroupResult createGatewayGroup(CreateGatewayGroupRequest createGatewayGroupRequest);
 
     /**
@@ -280,6 +286,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateNetworkProfile"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     CreateNetworkProfileResult createNetworkProfile(CreateNetworkProfileRequest createNetworkProfileRequest);
 
     /**
@@ -299,6 +306,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateProfile" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     CreateProfileResult createProfile(CreateProfileRequest createProfileRequest);
 
     /**
@@ -316,6 +324,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateRoom" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     CreateRoomResult createRoom(CreateRoomRequest createRoomRequest);
 
     /**
@@ -335,6 +344,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateSkillGroup"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     CreateSkillGroupResult createSkillGroup(CreateSkillGroupRequest createSkillGroupRequest);
 
     /**
@@ -354,6 +364,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateUser" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     CreateUserResult createUser(CreateUserRequest createUserRequest);
 
     /**
@@ -371,6 +382,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteAddressBook"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     DeleteAddressBookResult deleteAddressBook(DeleteAddressBookRequest deleteAddressBookRequest);
 
     /**
@@ -388,6 +400,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteBusinessReportSchedule"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     DeleteBusinessReportScheduleResult deleteBusinessReportSchedule(DeleteBusinessReportScheduleRequest deleteBusinessReportScheduleRequest);
 
     /**
@@ -403,6 +416,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteConferenceProvider"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     DeleteConferenceProviderResult deleteConferenceProvider(DeleteConferenceProviderRequest deleteConferenceProviderRequest);
 
     /**
@@ -420,6 +434,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteContact" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     DeleteContactResult deleteContact(DeleteContactRequest deleteContactRequest);
 
     /**
@@ -439,6 +454,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDevice" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     DeleteDeviceResult deleteDevice(DeleteDeviceRequest deleteDeviceRequest);
 
     /**
@@ -461,6 +477,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDeviceUsageData"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     DeleteDeviceUsageDataResult deleteDeviceUsageData(DeleteDeviceUsageDataRequest deleteDeviceUsageDataRequest);
 
     /**
@@ -476,6 +493,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteGatewayGroup"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     DeleteGatewayGroupResult deleteGatewayGroup(DeleteGatewayGroupRequest deleteGatewayGroupRequest);
 
     /**
@@ -495,6 +513,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteNetworkProfile"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     DeleteNetworkProfileResult deleteNetworkProfile(DeleteNetworkProfileRequest deleteNetworkProfileRequest);
 
     /**
@@ -512,6 +531,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteProfile" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     DeleteProfileResult deleteProfile(DeleteProfileRequest deleteProfileRequest);
 
     /**
@@ -529,6 +549,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteRoom" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     DeleteRoomResult deleteRoom(DeleteRoomRequest deleteRoomRequest);
 
     /**
@@ -544,6 +565,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteRoomSkillParameter"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     DeleteRoomSkillParameterResult deleteRoomSkillParameter(DeleteRoomSkillParameterRequest deleteRoomSkillParameterRequest);
 
     /**
@@ -561,6 +583,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillAuthorization"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     DeleteSkillAuthorizationResult deleteSkillAuthorization(DeleteSkillAuthorizationRequest deleteSkillAuthorizationRequest);
 
     /**
@@ -578,6 +601,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillGroup"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     DeleteSkillGroupResult deleteSkillGroup(DeleteSkillGroupRequest deleteSkillGroupRequest);
 
     /**
@@ -595,6 +619,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteUser" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     DeleteUserResult deleteUser(DeleteUserRequest deleteUserRequest);
 
     /**
@@ -609,6 +634,7 @@ public interface AmazonAlexaForBusiness {
      *      href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateContactFromAddressBook"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     DisassociateContactFromAddressBookResult disassociateContactFromAddressBook(
             DisassociateContactFromAddressBookRequest disassociateContactFromAddressBookRequest);
 
@@ -629,6 +655,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateDeviceFromRoom"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     DisassociateDeviceFromRoomResult disassociateDeviceFromRoom(DisassociateDeviceFromRoomRequest disassociateDeviceFromRoomRequest);
 
     /**
@@ -646,6 +673,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromSkillGroup"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     DisassociateSkillFromSkillGroupResult disassociateSkillFromSkillGroup(DisassociateSkillFromSkillGroupRequest disassociateSkillFromSkillGroupRequest);
 
     /**
@@ -663,6 +691,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromUsers"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     DisassociateSkillFromUsersResult disassociateSkillFromUsers(DisassociateSkillFromUsersRequest disassociateSkillFromUsersRequest);
 
     /**
@@ -679,6 +708,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillGroupFromRoom"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     DisassociateSkillGroupFromRoomResult disassociateSkillGroupFromRoom(DisassociateSkillGroupFromRoomRequest disassociateSkillGroupFromRoomRequest);
 
     /**
@@ -694,6 +724,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ForgetSmartHomeAppliances"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     ForgetSmartHomeAppliancesResult forgetSmartHomeAppliances(ForgetSmartHomeAppliancesRequest forgetSmartHomeAppliancesRequest);
 
     /**
@@ -709,6 +740,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetAddressBook"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     GetAddressBookResult getAddressBook(GetAddressBookRequest getAddressBookRequest);
 
     /**
@@ -724,6 +756,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferencePreference"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     GetConferencePreferenceResult getConferencePreference(GetConferencePreferenceRequest getConferencePreferenceRequest);
 
     /**
@@ -739,6 +772,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferenceProvider"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     GetConferenceProviderResult getConferenceProvider(GetConferenceProviderRequest getConferenceProviderRequest);
 
     /**
@@ -754,6 +788,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetContact" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     GetContactResult getContact(GetContactRequest getContactRequest);
 
     /**
@@ -769,6 +804,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetDevice" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     GetDeviceResult getDevice(GetDeviceRequest getDeviceRequest);
 
     /**
@@ -784,6 +820,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGateway" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     GetGatewayResult getGateway(GetGatewayRequest getGatewayRequest);
 
     /**
@@ -799,6 +836,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGatewayGroup"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     GetGatewayGroupResult getGatewayGroup(GetGatewayGroupRequest getGatewayGroupRequest);
 
     /**
@@ -814,6 +852,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetInvitationConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     GetInvitationConfigurationResult getInvitationConfiguration(GetInvitationConfigurationRequest getInvitationConfigurationRequest);
 
     /**
@@ -831,6 +870,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetNetworkProfile"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     GetNetworkProfileResult getNetworkProfile(GetNetworkProfileRequest getNetworkProfileRequest);
 
     /**
@@ -846,6 +886,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetProfile" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     GetProfileResult getProfile(GetProfileRequest getProfileRequest);
 
     /**
@@ -861,6 +902,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetRoom" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     GetRoomResult getRoom(GetRoomRequest getRoomRequest);
 
     /**
@@ -876,6 +918,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetRoomSkillParameter"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     GetRoomSkillParameterResult getRoomSkillParameter(GetRoomSkillParameterRequest getRoomSkillParameterRequest);
 
     /**
@@ -891,6 +934,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetSkillGroup" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     GetSkillGroupResult getSkillGroup(GetSkillGroupRequest getSkillGroupRequest);
 
     /**
@@ -906,6 +950,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListBusinessReportSchedules"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     ListBusinessReportSchedulesResult listBusinessReportSchedules(ListBusinessReportSchedulesRequest listBusinessReportSchedulesRequest);
 
     /**
@@ -919,6 +964,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListConferenceProviders"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     ListConferenceProvidersResult listConferenceProviders(ListConferenceProvidersRequest listConferenceProvidersRequest);
 
     /**
@@ -934,6 +980,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListDeviceEvents"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     ListDeviceEventsResult listDeviceEvents(ListDeviceEventsRequest listDeviceEventsRequest);
 
     /**
@@ -947,6 +994,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGatewayGroups"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     ListGatewayGroupsResult listGatewayGroups(ListGatewayGroupsRequest listGatewayGroupsRequest);
 
     /**
@@ -962,6 +1010,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGateways" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     ListGatewaysResult listGateways(ListGatewaysRequest listGatewaysRequest);
 
     /**
@@ -975,6 +1024,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkills" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     ListSkillsResult listSkills(ListSkillsRequest listSkillsRequest);
 
     /**
@@ -988,6 +1038,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreCategories"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     ListSkillsStoreCategoriesResult listSkillsStoreCategories(ListSkillsStoreCategoriesRequest listSkillsStoreCategoriesRequest);
 
     /**
@@ -1001,6 +1052,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreSkillsByCategory"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     ListSkillsStoreSkillsByCategoryResult listSkillsStoreSkillsByCategory(ListSkillsStoreSkillsByCategoryRequest listSkillsStoreSkillsByCategoryRequest);
 
     /**
@@ -1016,6 +1068,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSmartHomeAppliances"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     ListSmartHomeAppliancesResult listSmartHomeAppliances(ListSmartHomeAppliancesRequest listSmartHomeAppliancesRequest);
 
     /**
@@ -1031,6 +1084,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListTags" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     ListTagsResult listTags(ListTagsRequest listTagsRequest);
 
     /**
@@ -1046,6 +1100,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutConferencePreference"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     PutConferencePreferenceResult putConferencePreference(PutConferencePreferenceRequest putConferencePreferenceRequest);
 
     /**
@@ -1063,6 +1118,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutInvitationConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     PutInvitationConfigurationResult putInvitationConfiguration(PutInvitationConfigurationRequest putInvitationConfigurationRequest);
 
     /**
@@ -1079,6 +1135,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutRoomSkillParameter"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     PutRoomSkillParameterResult putRoomSkillParameter(PutRoomSkillParameterRequest putRoomSkillParameterRequest);
 
     /**
@@ -1098,6 +1155,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutSkillAuthorization"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     PutSkillAuthorizationResult putSkillAuthorization(PutSkillAuthorizationRequest putSkillAuthorizationRequest);
 
     /**
@@ -1120,6 +1178,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RegisterAVSDevice"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     RegisterAVSDeviceResult registerAVSDevice(RegisterAVSDeviceRequest registerAVSDeviceRequest);
 
     /**
@@ -1139,6 +1198,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RejectSkill" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     RejectSkillResult rejectSkill(RejectSkillRequest rejectSkillRequest);
 
     /**
@@ -1161,6 +1221,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ResolveRoom" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     ResolveRoomResult resolveRoom(ResolveRoomRequest resolveRoomRequest);
 
     /**
@@ -1178,6 +1239,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RevokeInvitation"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     RevokeInvitationResult revokeInvitation(RevokeInvitationRequest revokeInvitationRequest);
 
     /**
@@ -1191,6 +1253,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchAddressBooks"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     SearchAddressBooksResult searchAddressBooks(SearchAddressBooksRequest searchAddressBooksRequest);
 
     /**
@@ -1204,6 +1267,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchContacts"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     SearchContactsResult searchContacts(SearchContactsRequest searchContactsRequest);
 
     /**
@@ -1217,6 +1281,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchDevices" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     SearchDevicesResult searchDevices(SearchDevicesRequest searchDevicesRequest);
 
     /**
@@ -1230,6 +1295,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchNetworkProfiles"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     SearchNetworkProfilesResult searchNetworkProfiles(SearchNetworkProfilesRequest searchNetworkProfilesRequest);
 
     /**
@@ -1243,6 +1309,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchProfiles"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     SearchProfilesResult searchProfiles(SearchProfilesRequest searchProfilesRequest);
 
     /**
@@ -1256,6 +1323,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchRooms" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     SearchRoomsResult searchRooms(SearchRoomsRequest searchRoomsRequest);
 
     /**
@@ -1269,6 +1337,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchSkillGroups"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     SearchSkillGroupsResult searchSkillGroups(SearchSkillGroupsRequest searchSkillGroupsRequest);
 
     /**
@@ -1282,6 +1351,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchUsers" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     SearchUsersResult searchUsers(SearchUsersRequest searchUsersRequest);
 
     /**
@@ -1320,6 +1390,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SendInvitation"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     SendInvitationResult sendInvitation(SendInvitationRequest sendInvitationRequest);
 
     /**
@@ -1365,6 +1436,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartDeviceSync"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     StartDeviceSyncResult startDeviceSync(StartDeviceSyncRequest startDeviceSyncRequest);
 
     /**
@@ -1381,6 +1453,7 @@ public interface AmazonAlexaForBusiness {
      *      href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartSmartHomeApplianceDiscovery"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     StartSmartHomeApplianceDiscoveryResult startSmartHomeApplianceDiscovery(StartSmartHomeApplianceDiscoveryRequest startSmartHomeApplianceDiscoveryRequest);
 
     /**
@@ -1396,6 +1469,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/TagResource" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
 
     /**
@@ -1411,6 +1485,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UntagResource" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
@@ -1430,6 +1505,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateAddressBook"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     UpdateAddressBookResult updateAddressBook(UpdateAddressBookRequest updateAddressBookRequest);
 
     /**
@@ -1447,6 +1523,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateBusinessReportSchedule"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     UpdateBusinessReportScheduleResult updateBusinessReportSchedule(UpdateBusinessReportScheduleRequest updateBusinessReportScheduleRequest);
 
     /**
@@ -1462,6 +1539,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateConferenceProvider"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     UpdateConferenceProviderResult updateConferenceProvider(UpdateConferenceProviderRequest updateConferenceProviderRequest);
 
     /**
@@ -1479,6 +1557,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateContact" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     UpdateContactResult updateContact(UpdateContactRequest updateContactRequest);
 
     /**
@@ -1499,6 +1578,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateDevice" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     UpdateDeviceResult updateDevice(UpdateDeviceRequest updateDeviceRequest);
 
     /**
@@ -1517,6 +1597,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGateway" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     UpdateGatewayResult updateGateway(UpdateGatewayRequest updateGatewayRequest);
 
     /**
@@ -1535,6 +1616,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGatewayGroup"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     UpdateGatewayGroupResult updateGatewayGroup(UpdateGatewayGroupRequest updateGatewayGroupRequest);
 
     /**
@@ -1558,6 +1640,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateNetworkProfile"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     UpdateNetworkProfileResult updateNetworkProfile(UpdateNetworkProfileRequest updateNetworkProfileRequest);
 
     /**
@@ -1577,6 +1660,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateProfile" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     UpdateProfileResult updateProfile(UpdateProfileRequest updateProfileRequest);
 
     /**
@@ -1594,6 +1678,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateRoom" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     UpdateRoomResult updateRoom(UpdateRoomRequest updateRoomRequest);
 
     /**
@@ -1613,6 +1698,7 @@ public interface AmazonAlexaForBusiness {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateSkillGroup"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     UpdateSkillGroupResult updateSkillGroup(UpdateSkillGroupRequest updateSkillGroupRequest);
 
     /**

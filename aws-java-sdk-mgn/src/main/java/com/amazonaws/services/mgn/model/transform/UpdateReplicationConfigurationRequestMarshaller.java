@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateReplicationConfigurationRequestMarshaller {
 
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("accountID").build();
     private static final MarshallingInfo<Boolean> ASSOCIATEDEFAULTSECURITYGROUP_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("associateDefaultSecurityGroup").build();
     private static final MarshallingInfo<Long> BANDWIDTHTHROTTLING_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
@@ -59,6 +61,8 @@ public class UpdateReplicationConfigurationRequestMarshaller {
             .marshallLocationName("stagingAreaTags").build();
     private static final MarshallingInfo<Boolean> USEDEDICATEDREPLICATIONSERVER_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("useDedicatedReplicationServer").build();
+    private static final MarshallingInfo<Boolean> USEFIPSENDPOINT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("useFipsEndpoint").build();
 
     private static final UpdateReplicationConfigurationRequestMarshaller instance = new UpdateReplicationConfigurationRequestMarshaller();
 
@@ -76,6 +80,7 @@ public class UpdateReplicationConfigurationRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(updateReplicationConfigurationRequest.getAccountID(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(updateReplicationConfigurationRequest.getAssociateDefaultSecurityGroup(), ASSOCIATEDEFAULTSECURITYGROUP_BINDING);
             protocolMarshaller.marshall(updateReplicationConfigurationRequest.getBandwidthThrottling(), BANDWIDTHTHROTTLING_BINDING);
             protocolMarshaller.marshall(updateReplicationConfigurationRequest.getCreatePublicIP(), CREATEPUBLICIP_BINDING);
@@ -92,6 +97,7 @@ public class UpdateReplicationConfigurationRequestMarshaller {
             protocolMarshaller.marshall(updateReplicationConfigurationRequest.getStagingAreaSubnetId(), STAGINGAREASUBNETID_BINDING);
             protocolMarshaller.marshall(updateReplicationConfigurationRequest.getStagingAreaTags(), STAGINGAREATAGS_BINDING);
             protocolMarshaller.marshall(updateReplicationConfigurationRequest.getUseDedicatedReplicationServer(), USEDEDICATEDREPLICATIONSERVER_BINDING);
+            protocolMarshaller.marshall(updateReplicationConfigurationRequest.getUseFipsEndpoint(), USEFIPSENDPOINT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

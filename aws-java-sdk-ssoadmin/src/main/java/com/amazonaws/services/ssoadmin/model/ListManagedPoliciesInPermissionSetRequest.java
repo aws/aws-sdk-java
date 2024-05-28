@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,17 +28,11 @@ public class ListManagedPoliciesInPermissionSetRequest extends com.amazonaws.Ama
     /**
      * <p>
      * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     private String instanceArn;
-    /**
-     * <p>
-     * The ARN of the <a>PermissionSet</a> whose managed policies will be listed.
-     * </p>
-     */
-    private String permissionSetArn;
     /**
      * <p>
      * The maximum number of results to display for the <a>PermissionSet</a>.
@@ -52,18 +46,25 @@ public class ListManagedPoliciesInPermissionSetRequest extends com.amazonaws.Ama
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * The ARN of the <a>PermissionSet</a> whose managed policies will be listed.
+     * </p>
+     */
+    private String permissionSetArn;
 
     /**
      * <p>
      * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param instanceArn
      *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
      *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *        Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *        Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     *        Reference</i>.
      */
 
     public void setInstanceArn(String instanceArn) {
@@ -73,13 +74,14 @@ public class ListManagedPoliciesInPermissionSetRequest extends com.amazonaws.Ama
     /**
      * <p>
      * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @return The ARN of the IAM Identity Center instance under which the operation will be executed. For more
      *         information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *         Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *         Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     *         Reference</i>.
      */
 
     public String getInstanceArn() {
@@ -89,59 +91,20 @@ public class ListManagedPoliciesInPermissionSetRequest extends com.amazonaws.Ama
     /**
      * <p>
      * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param instanceArn
      *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
      *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *        Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *        Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     *        Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListManagedPoliciesInPermissionSetRequest withInstanceArn(String instanceArn) {
         setInstanceArn(instanceArn);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The ARN of the <a>PermissionSet</a> whose managed policies will be listed.
-     * </p>
-     * 
-     * @param permissionSetArn
-     *        The ARN of the <a>PermissionSet</a> whose managed policies will be listed.
-     */
-
-    public void setPermissionSetArn(String permissionSetArn) {
-        this.permissionSetArn = permissionSetArn;
-    }
-
-    /**
-     * <p>
-     * The ARN of the <a>PermissionSet</a> whose managed policies will be listed.
-     * </p>
-     * 
-     * @return The ARN of the <a>PermissionSet</a> whose managed policies will be listed.
-     */
-
-    public String getPermissionSetArn() {
-        return this.permissionSetArn;
-    }
-
-    /**
-     * <p>
-     * The ARN of the <a>PermissionSet</a> whose managed policies will be listed.
-     * </p>
-     * 
-     * @param permissionSetArn
-     *        The ARN of the <a>PermissionSet</a> whose managed policies will be listed.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListManagedPoliciesInPermissionSetRequest withPermissionSetArn(String permissionSetArn) {
-        setPermissionSetArn(permissionSetArn);
         return this;
     }
 
@@ -232,6 +195,46 @@ public class ListManagedPoliciesInPermissionSetRequest extends com.amazonaws.Ama
     }
 
     /**
+     * <p>
+     * The ARN of the <a>PermissionSet</a> whose managed policies will be listed.
+     * </p>
+     * 
+     * @param permissionSetArn
+     *        The ARN of the <a>PermissionSet</a> whose managed policies will be listed.
+     */
+
+    public void setPermissionSetArn(String permissionSetArn) {
+        this.permissionSetArn = permissionSetArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the <a>PermissionSet</a> whose managed policies will be listed.
+     * </p>
+     * 
+     * @return The ARN of the <a>PermissionSet</a> whose managed policies will be listed.
+     */
+
+    public String getPermissionSetArn() {
+        return this.permissionSetArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the <a>PermissionSet</a> whose managed policies will be listed.
+     * </p>
+     * 
+     * @param permissionSetArn
+     *        The ARN of the <a>PermissionSet</a> whose managed policies will be listed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListManagedPoliciesInPermissionSetRequest withPermissionSetArn(String permissionSetArn) {
+        setPermissionSetArn(permissionSetArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -245,12 +248,12 @@ public class ListManagedPoliciesInPermissionSetRequest extends com.amazonaws.Ama
         sb.append("{");
         if (getInstanceArn() != null)
             sb.append("InstanceArn: ").append(getInstanceArn()).append(",");
-        if (getPermissionSetArn() != null)
-            sb.append("PermissionSetArn: ").append(getPermissionSetArn()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getPermissionSetArn() != null)
+            sb.append("PermissionSetArn: ").append(getPermissionSetArn());
         sb.append("}");
         return sb.toString();
     }
@@ -269,10 +272,6 @@ public class ListManagedPoliciesInPermissionSetRequest extends com.amazonaws.Ama
             return false;
         if (other.getInstanceArn() != null && other.getInstanceArn().equals(this.getInstanceArn()) == false)
             return false;
-        if (other.getPermissionSetArn() == null ^ this.getPermissionSetArn() == null)
-            return false;
-        if (other.getPermissionSetArn() != null && other.getPermissionSetArn().equals(this.getPermissionSetArn()) == false)
-            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -280,6 +279,10 @@ public class ListManagedPoliciesInPermissionSetRequest extends com.amazonaws.Ama
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getPermissionSetArn() == null ^ this.getPermissionSetArn() == null)
+            return false;
+        if (other.getPermissionSetArn() != null && other.getPermissionSetArn().equals(this.getPermissionSetArn()) == false)
             return false;
         return true;
     }
@@ -290,9 +293,9 @@ public class ListManagedPoliciesInPermissionSetRequest extends com.amazonaws.Ama
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getInstanceArn() == null) ? 0 : getInstanceArn().hashCode());
-        hashCode = prime * hashCode + ((getPermissionSetArn() == null) ? 0 : getPermissionSetArn().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getPermissionSetArn() == null) ? 0 : getPermissionSetArn().hashCode());
         return hashCode;
     }
 

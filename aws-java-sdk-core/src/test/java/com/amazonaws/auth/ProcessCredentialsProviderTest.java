@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
 
 package com.amazonaws.auth;
 
+import com.amazonaws.SdkClientException;
 import com.amazonaws.util.IOUtils;
 import com.amazonaws.util.Platform;
 import java.io.File;
@@ -22,6 +23,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 import org.joda.time.DateTime;
@@ -54,6 +56,20 @@ public class ProcessCredentialsProviderTest {
                                           .withCommand(scriptLocation + " accessKeyId secretAccessKey")
                                           .build()
                                           .getCredentials();
+
+        Assert.assertFalse(credentials instanceof BasicSessionCredentials);
+        Assert.assertEquals("accessKeyId", credentials.getAWSAccessKeyId());
+        Assert.assertEquals("secretAccessKey", credentials.getAWSSecretKey());
+        Assert.assertEquals("ProcessCredentialsProvider", ((BasicAWSCredentials) credentials).getProviderName());
+    }
+
+    @Test
+    public void staticCredentials_commandAsListOfStrings_CanBeLoaded() {
+        AWSCredentials credentials =
+                ProcessCredentialsProvider.builder()
+                        .withCommand(Arrays.asList(scriptLocation, "accessKeyId", "secretAccessKey"))
+                        .build()
+                        .getCredentials();
 
         Assert.assertFalse(credentials instanceof AWSSessionCredentials);
         Assert.assertEquals("accessKeyId", credentials.getAWSAccessKeyId());
@@ -144,6 +160,35 @@ public class ProcessCredentialsProviderTest {
 
         Assert.assertEquals(sessionCredentials.getAWSAccessKeyId(),"accessKeyId");
         Assert.assertEquals(LONG_SESSION_TOKEN, sessionCredentials.getSessionToken());
+    }
+
+    @Test
+    public void commandAsListOfStrings_isNotExecutedInAShell() {
+        ProcessCredentialsProvider providerWithSingleStringCommand =
+                ProcessCredentialsProvider.builder()
+                        .withCommand("echo \"Hello, World!\" > output.txt; rm output.txt")
+                        .build();
+
+        try {
+            providerWithSingleStringCommand.getCredentials();
+        } catch (IllegalStateException e) {
+            // executed in a shell
+            Assert.assertTrue(e.getCause() instanceof SdkClientException);
+            Assert.assertEquals(e.getMessage(), "Failed to refresh process-based credentials.");
+        }
+
+        ProcessCredentialsProvider providerWithCommandAsListOfStrings =
+                ProcessCredentialsProvider.builder()
+                        .withCommand(Arrays.asList("echo \"Hello, World!\" > output.txt; rm output.txt"))
+                        .build();
+
+        try {
+            providerWithCommandAsListOfStrings.getCredentials();
+        } catch (IllegalStateException e) {
+            // executed not in a shell
+            Assert.assertTrue(e.getCause() instanceof IOException);
+            Assert.assertTrue(e.getCause().getMessage().contains("error=2, No such file or directory"));
+        }
     }
 
     public static String copyCredentialsScript() throws IOException {

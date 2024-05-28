@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,9 +26,9 @@ import java.util.concurrent.ExecutorService;
  * asynchronous operation completes.
  * <p>
  * <p>
- * Fault Injection Simulator is a managed service that enables you to perform fault injection experiments on your Amazon
+ * Fault Injection Service is a managed service that enables you to perform fault injection experiments on your Amazon
  * Web Services workloads. For more information, see the <a
- * href="https://docs.aws.amazon.com/fis/latest/userguide/">Fault Injection Simulator User Guide</a>.
+ * href="https://docs.aws.amazon.com/fis/latest/userguide/">Fault Injection Service User Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -109,6 +109,41 @@ public class AWSFISAsyncClient extends AWSFISClient implements AWSFISAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateTargetAccountConfigurationResult> createTargetAccountConfigurationAsync(
+            CreateTargetAccountConfigurationRequest request) {
+
+        return createTargetAccountConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTargetAccountConfigurationResult> createTargetAccountConfigurationAsync(
+            final CreateTargetAccountConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateTargetAccountConfigurationRequest, CreateTargetAccountConfigurationResult> asyncHandler) {
+        final CreateTargetAccountConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateTargetAccountConfigurationResult>() {
+            @Override
+            public CreateTargetAccountConfigurationResult call() throws Exception {
+                CreateTargetAccountConfigurationResult result = null;
+
+                try {
+                    result = executeCreateTargetAccountConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteExperimentTemplateResult> deleteExperimentTemplateAsync(DeleteExperimentTemplateRequest request) {
 
         return deleteExperimentTemplateAsync(request, null);
@@ -126,6 +161,41 @@ public class AWSFISAsyncClient extends AWSFISClient implements AWSFISAsync {
 
                 try {
                     result = executeDeleteExperimentTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTargetAccountConfigurationResult> deleteTargetAccountConfigurationAsync(
+            DeleteTargetAccountConfigurationRequest request) {
+
+        return deleteTargetAccountConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTargetAccountConfigurationResult> deleteTargetAccountConfigurationAsync(
+            final DeleteTargetAccountConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteTargetAccountConfigurationRequest, DeleteTargetAccountConfigurationResult> asyncHandler) {
+        final DeleteTargetAccountConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteTargetAccountConfigurationResult>() {
+            @Override
+            public DeleteTargetAccountConfigurationResult call() throws Exception {
+                DeleteTargetAccountConfigurationResult result = null;
+
+                try {
+                    result = executeDeleteTargetAccountConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -208,6 +278,41 @@ public class AWSFISAsyncClient extends AWSFISClient implements AWSFISAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetExperimentTargetAccountConfigurationResult> getExperimentTargetAccountConfigurationAsync(
+            GetExperimentTargetAccountConfigurationRequest request) {
+
+        return getExperimentTargetAccountConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExperimentTargetAccountConfigurationResult> getExperimentTargetAccountConfigurationAsync(
+            final GetExperimentTargetAccountConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetExperimentTargetAccountConfigurationRequest, GetExperimentTargetAccountConfigurationResult> asyncHandler) {
+        final GetExperimentTargetAccountConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetExperimentTargetAccountConfigurationResult>() {
+            @Override
+            public GetExperimentTargetAccountConfigurationResult call() throws Exception {
+                GetExperimentTargetAccountConfigurationResult result = null;
+
+                try {
+                    result = executeGetExperimentTargetAccountConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetExperimentTemplateResult> getExperimentTemplateAsync(GetExperimentTemplateRequest request) {
 
         return getExperimentTemplateAsync(request, null);
@@ -225,6 +330,40 @@ public class AWSFISAsyncClient extends AWSFISClient implements AWSFISAsync {
 
                 try {
                     result = executeGetExperimentTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTargetAccountConfigurationResult> getTargetAccountConfigurationAsync(GetTargetAccountConfigurationRequest request) {
+
+        return getTargetAccountConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTargetAccountConfigurationResult> getTargetAccountConfigurationAsync(
+            final GetTargetAccountConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetTargetAccountConfigurationRequest, GetTargetAccountConfigurationResult> asyncHandler) {
+        final GetTargetAccountConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetTargetAccountConfigurationResult>() {
+            @Override
+            public GetTargetAccountConfigurationResult call() throws Exception {
+                GetTargetAccountConfigurationResult result = null;
+
+                try {
+                    result = executeGetTargetAccountConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -291,6 +430,75 @@ public class AWSFISAsyncClient extends AWSFISClient implements AWSFISAsync {
 
                 try {
                     result = executeListActions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExperimentResolvedTargetsResult> listExperimentResolvedTargetsAsync(ListExperimentResolvedTargetsRequest request) {
+
+        return listExperimentResolvedTargetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExperimentResolvedTargetsResult> listExperimentResolvedTargetsAsync(
+            final ListExperimentResolvedTargetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListExperimentResolvedTargetsRequest, ListExperimentResolvedTargetsResult> asyncHandler) {
+        final ListExperimentResolvedTargetsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListExperimentResolvedTargetsResult>() {
+            @Override
+            public ListExperimentResolvedTargetsResult call() throws Exception {
+                ListExperimentResolvedTargetsResult result = null;
+
+                try {
+                    result = executeListExperimentResolvedTargets(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExperimentTargetAccountConfigurationsResult> listExperimentTargetAccountConfigurationsAsync(
+            ListExperimentTargetAccountConfigurationsRequest request) {
+
+        return listExperimentTargetAccountConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExperimentTargetAccountConfigurationsResult> listExperimentTargetAccountConfigurationsAsync(
+            final ListExperimentTargetAccountConfigurationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListExperimentTargetAccountConfigurationsRequest, ListExperimentTargetAccountConfigurationsResult> asyncHandler) {
+        final ListExperimentTargetAccountConfigurationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListExperimentTargetAccountConfigurationsResult>() {
+            @Override
+            public ListExperimentTargetAccountConfigurationsResult call() throws Exception {
+                ListExperimentTargetAccountConfigurationsResult result = null;
+
+                try {
+                    result = executeListExperimentTargetAccountConfigurations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -390,6 +598,41 @@ public class AWSFISAsyncClient extends AWSFISClient implements AWSFISAsync {
 
                 try {
                     result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTargetAccountConfigurationsResult> listTargetAccountConfigurationsAsync(
+            ListTargetAccountConfigurationsRequest request) {
+
+        return listTargetAccountConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTargetAccountConfigurationsResult> listTargetAccountConfigurationsAsync(
+            final ListTargetAccountConfigurationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTargetAccountConfigurationsRequest, ListTargetAccountConfigurationsResult> asyncHandler) {
+        final ListTargetAccountConfigurationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTargetAccountConfigurationsResult>() {
+            @Override
+            public ListTargetAccountConfigurationsResult call() throws Exception {
+                ListTargetAccountConfigurationsResult result = null;
+
+                try {
+                    result = executeListTargetAccountConfigurations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -588,6 +831,41 @@ public class AWSFISAsyncClient extends AWSFISClient implements AWSFISAsync {
 
                 try {
                     result = executeUpdateExperimentTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTargetAccountConfigurationResult> updateTargetAccountConfigurationAsync(
+            UpdateTargetAccountConfigurationRequest request) {
+
+        return updateTargetAccountConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTargetAccountConfigurationResult> updateTargetAccountConfigurationAsync(
+            final UpdateTargetAccountConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateTargetAccountConfigurationRequest, UpdateTargetAccountConfigurationResult> asyncHandler) {
+        final UpdateTargetAccountConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateTargetAccountConfigurationResult>() {
+            @Override
+            public UpdateTargetAccountConfigurationResult call() throws Exception {
+                UpdateTargetAccountConfigurationResult result = null;
+
+                try {
+                    result = executeUpdateTargetAccountConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

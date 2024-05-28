@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Portions copyright 2006-2009 James Murty. Please see LICENSE.txt
  * for applicable license terms and NOTICE.txt for applicable notices.
@@ -254,6 +254,7 @@ public class DateUtils {
         if (dateString == null)
             return null;
         try {
+            validateTimestampLength(dateString);
             BigDecimal dateValue = new BigDecimal(dateString);
             return new Date(dateValue.scaleByPowerOfTen(
                     AWS_DATE_MILLI_SECOND_PRECISION).longValue());
@@ -267,6 +268,7 @@ public class DateUtils {
         if (dateString == null)
             return null;
         try {
+            validateTimestampLength(dateString);
             BigDecimal dateValue = new BigDecimal(dateString);
             return new Date(dateValue.longValue());
         } catch (NumberFormatException nfe) {
@@ -306,5 +308,14 @@ public class DateUtils {
      */
     public static long numberOfDaysSinceEpoch(long milliSinceEpoch) {
         return TimeUnit.MILLISECONDS.toDays(milliSinceEpoch);
+    }
+
+    private static void validateTimestampLength(String timestamp) {
+        // Helps avoid BigDecimal parsing unnecessarily large numbers, since it's unbounded
+        // Long has a max value of 9,223,372,036,854,775,807, which is 19 digits. Assume that a valid timestamp is no
+        // no longer than 20 characters long (+1 for decimal)
+        if (timestamp.length() > 20) {
+            throw new RuntimeException("Input timestamp string must be no longer than 20 characters");
+        }
     }
 }

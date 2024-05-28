@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -83,7 +83,7 @@ public class PutEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For
      * more information about advanced event selectors, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html"
-     * >Logging data events for trails</a> in the <i>CloudTrail User Guide</i>.
+     * >Logging data events</a> in the <i>CloudTrail User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AdvancedEventSelector> advancedEventSelectors;
@@ -440,7 +440,7 @@ public class PutEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For
      * more information about advanced event selectors, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html"
-     * >Logging data events for trails</a> in the <i>CloudTrail User Guide</i>.
+     * >Logging data events</a> in the <i>CloudTrail User Guide</i>.
      * </p>
      * 
      * @return Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions
@@ -450,7 +450,7 @@ public class PutEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
      *         <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a
      *         href
      *         ="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html"
-     *         >Logging data events for trails</a> in the <i>CloudTrail User Guide</i>.
+     *         >Logging data events</a> in the <i>CloudTrail User Guide</i>.
      */
 
     public java.util.List<AdvancedEventSelector> getAdvancedEventSelectors() {
@@ -468,7 +468,7 @@ public class PutEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For
      * more information about advanced event selectors, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html"
-     * >Logging data events for trails</a> in the <i>CloudTrail User Guide</i>.
+     * >Logging data events</a> in the <i>CloudTrail User Guide</i>.
      * </p>
      * 
      * @param advancedEventSelectors
@@ -479,7 +479,7 @@ public class PutEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a
      *        href
      *        ="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">
-     *        Logging data events for trails</a> in the <i>CloudTrail User Guide</i>.
+     *        Logging data events</a> in the <i>CloudTrail User Guide</i>.
      */
 
     public void setAdvancedEventSelectors(java.util.Collection<AdvancedEventSelector> advancedEventSelectors) {
@@ -499,7 +499,7 @@ public class PutEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For
      * more information about advanced event selectors, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html"
-     * >Logging data events for trails</a> in the <i>CloudTrail User Guide</i>.
+     * >Logging data events</a> in the <i>CloudTrail User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -515,7 +515,7 @@ public class PutEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a
      *        href
      *        ="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">
-     *        Logging data events for trails</a> in the <i>CloudTrail User Guide</i>.
+     *        Logging data events</a> in the <i>CloudTrail User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -537,7 +537,7 @@ public class PutEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For
      * more information about advanced event selectors, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html"
-     * >Logging data events for trails</a> in the <i>CloudTrail User Guide</i>.
+     * >Logging data events</a> in the <i>CloudTrail User Guide</i>.
      * </p>
      * 
      * @param advancedEventSelectors
@@ -548,7 +548,7 @@ public class PutEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a
      *        href
      *        ="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">
-     *        Logging data events for trails</a> in the <i>CloudTrail User Guide</i>.
+     *        Logging data events</a> in the <i>CloudTrail User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

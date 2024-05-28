@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetChannelScheduleRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The single audience for GetChannelScheduleRequest.
+     * </p>
+     */
+    private String audience;
     /**
      * <p>
      * The name of the channel associated with this Channel Schedule.
@@ -63,6 +69,46 @@ public class GetChannelScheduleRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String nextToken;
+
+    /**
+     * <p>
+     * The single audience for GetChannelScheduleRequest.
+     * </p>
+     * 
+     * @param audience
+     *        The single audience for GetChannelScheduleRequest.
+     */
+
+    public void setAudience(String audience) {
+        this.audience = audience;
+    }
+
+    /**
+     * <p>
+     * The single audience for GetChannelScheduleRequest.
+     * </p>
+     * 
+     * @return The single audience for GetChannelScheduleRequest.
+     */
+
+    public String getAudience() {
+        return this.audience;
+    }
+
+    /**
+     * <p>
+     * The single audience for GetChannelScheduleRequest.
+     * </p>
+     * 
+     * @param audience
+     *        The single audience for GetChannelScheduleRequest.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetChannelScheduleRequest withAudience(String audience) {
+        setAudience(audience);
+        return this;
+    }
 
     /**
      * <p>
@@ -317,6 +363,8 @@ public class GetChannelScheduleRequest extends com.amazonaws.AmazonWebServiceReq
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAudience() != null)
+            sb.append("Audience: ").append(getAudience()).append(",");
         if (getChannelName() != null)
             sb.append("ChannelName: ").append(getChannelName()).append(",");
         if (getDurationMinutes() != null)
@@ -339,6 +387,10 @@ public class GetChannelScheduleRequest extends com.amazonaws.AmazonWebServiceReq
         if (obj instanceof GetChannelScheduleRequest == false)
             return false;
         GetChannelScheduleRequest other = (GetChannelScheduleRequest) obj;
+        if (other.getAudience() == null ^ this.getAudience() == null)
+            return false;
+        if (other.getAudience() != null && other.getAudience().equals(this.getAudience()) == false)
+            return false;
         if (other.getChannelName() == null ^ this.getChannelName() == null)
             return false;
         if (other.getChannelName() != null && other.getChannelName().equals(this.getChannelName()) == false)
@@ -363,6 +415,7 @@ public class GetChannelScheduleRequest extends com.amazonaws.AmazonWebServiceReq
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAudience() == null) ? 0 : getAudience().hashCode());
         hashCode = prime * hashCode + ((getChannelName() == null) ? 0 : getChannelName().hashCode());
         hashCode = prime * hashCode + ((getDurationMinutes() == null) ? 0 : getDurationMinutes().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());

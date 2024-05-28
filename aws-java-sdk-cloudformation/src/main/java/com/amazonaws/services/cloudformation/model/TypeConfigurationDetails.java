@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,11 +17,11 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Detailed information concerning the specification of a CloudFormation extension in a given account and region.
+ * Detailed information concerning the specification of a CloudFormation extension in a given account and Region.
  * </p>
  * <p>
  * For more information, see <a href=
- * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration"
+ * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration"
  * >Configuring extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
  * </p>
  * 
@@ -33,7 +33,7 @@ public class TypeConfigurationDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the configuration data, in this account and region.
+     * The Amazon Resource Name (ARN) for the configuration data, in this account and Region.
      * </p>
      */
     private String arn;
@@ -45,7 +45,7 @@ public class TypeConfigurationDetails implements Serializable, Cloneable {
     private String alias;
     /**
      * <p>
-     * A JSON string specifying the configuration data for the extension, in this account and region.
+     * A JSON string specifying the configuration data for the extension, in this account and Region.
      * </p>
      * <p>
      * If a configuration hasn't been set for a specified extension, CloudFormation returns <code>{}</code>.
@@ -63,14 +63,15 @@ public class TypeConfigurationDetails implements Serializable, Cloneable {
     private java.util.Date lastUpdated;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the extension, in this account and region.
+     * The Amazon Resource Name (ARN) for the extension, in this account and Region.
      * </p>
      * <p>
-     * For public extensions, this will be the ARN assigned when you <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the
-     * type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the
-     * type</a> in this account and region.
+     * For public extensions, this will be the ARN assigned when you call the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+     * API operation in this account and Region. For private extensions, this will be the ARN assigned when you call the
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>
+     * API operation in this account and Region.
      * </p>
      */
     private String typeArn;
@@ -89,11 +90,11 @@ public class TypeConfigurationDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the configuration data, in this account and region.
+     * The Amazon Resource Name (ARN) for the configuration data, in this account and Region.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) for the configuration data, in this account and region.
+     *        The Amazon Resource Name (ARN) for the configuration data, in this account and Region.
      */
 
     public void setArn(String arn) {
@@ -102,10 +103,10 @@ public class TypeConfigurationDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the configuration data, in this account and region.
+     * The Amazon Resource Name (ARN) for the configuration data, in this account and Region.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the configuration data, in this account and region.
+     * @return The Amazon Resource Name (ARN) for the configuration data, in this account and Region.
      */
 
     public String getArn() {
@@ -114,11 +115,11 @@ public class TypeConfigurationDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the configuration data, in this account and region.
+     * The Amazon Resource Name (ARN) for the configuration data, in this account and Region.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) for the configuration data, in this account and region.
+     *        The Amazon Resource Name (ARN) for the configuration data, in this account and Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,14 +170,14 @@ public class TypeConfigurationDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A JSON string specifying the configuration data for the extension, in this account and region.
+     * A JSON string specifying the configuration data for the extension, in this account and Region.
      * </p>
      * <p>
      * If a configuration hasn't been set for a specified extension, CloudFormation returns <code>{}</code>.
      * </p>
      * 
      * @param configuration
-     *        A JSON string specifying the configuration data for the extension, in this account and region.</p>
+     *        A JSON string specifying the configuration data for the extension, in this account and Region.</p>
      *        <p>
      *        If a configuration hasn't been set for a specified extension, CloudFormation returns <code>{}</code>.
      */
@@ -187,13 +188,13 @@ public class TypeConfigurationDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A JSON string specifying the configuration data for the extension, in this account and region.
+     * A JSON string specifying the configuration data for the extension, in this account and Region.
      * </p>
      * <p>
      * If a configuration hasn't been set for a specified extension, CloudFormation returns <code>{}</code>.
      * </p>
      * 
-     * @return A JSON string specifying the configuration data for the extension, in this account and region.</p>
+     * @return A JSON string specifying the configuration data for the extension, in this account and Region.</p>
      *         <p>
      *         If a configuration hasn't been set for a specified extension, CloudFormation returns <code>{}</code>.
      */
@@ -204,14 +205,14 @@ public class TypeConfigurationDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A JSON string specifying the configuration data for the extension, in this account and region.
+     * A JSON string specifying the configuration data for the extension, in this account and Region.
      * </p>
      * <p>
      * If a configuration hasn't been set for a specified extension, CloudFormation returns <code>{}</code>.
      * </p>
      * 
      * @param configuration
-     *        A JSON string specifying the configuration data for the extension, in this account and region.</p>
+     *        A JSON string specifying the configuration data for the extension, in this account and Region.</p>
      *        <p>
      *        If a configuration hasn't been set for a specified extension, CloudFormation returns <code>{}</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -279,24 +280,26 @@ public class TypeConfigurationDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the extension, in this account and region.
+     * The Amazon Resource Name (ARN) for the extension, in this account and Region.
      * </p>
      * <p>
-     * For public extensions, this will be the ARN assigned when you <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the
-     * type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the
-     * type</a> in this account and region.
+     * For public extensions, this will be the ARN assigned when you call the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+     * API operation in this account and Region. For private extensions, this will be the ARN assigned when you call the
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>
+     * API operation in this account and Region.
      * </p>
      * 
      * @param typeArn
-     *        The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
+     *        The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
      *        <p>
-     *        For public extensions, this will be the ARN assigned when you <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate
-     *        the type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-     *        the type</a> in this account and region.
+     *        For public extensions, this will be the ARN assigned when you call the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html"
+     *        >ActivateType</a> API operation in this account and Region. For private extensions, this will be the ARN
+     *        assigned when you call the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"
+     *        >RegisterType</a> API operation in this account and Region.
      */
 
     public void setTypeArn(String typeArn) {
@@ -305,24 +308,25 @@ public class TypeConfigurationDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the extension, in this account and region.
+     * The Amazon Resource Name (ARN) for the extension, in this account and Region.
      * </p>
      * <p>
-     * For public extensions, this will be the ARN assigned when you <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the
-     * type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the
-     * type</a> in this account and region.
+     * For public extensions, this will be the ARN assigned when you call the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+     * API operation in this account and Region. For private extensions, this will be the ARN assigned when you call the
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>
+     * API operation in this account and Region.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
+     * @return The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
      *         <p>
-     *         For public extensions, this will be the ARN assigned when you <a
-     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate
-     *         the type</a> in this account and region. For private extensions, this will be the ARN assigned when you
-     *         <a
-     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-     *         the type</a> in this account and region.
+     *         For public extensions, this will be the ARN assigned when you call the <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html"
+     *         >ActivateType</a> API operation in this account and Region. For private extensions, this will be the ARN
+     *         assigned when you call the <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"
+     *         >RegisterType</a> API operation in this account and Region.
      */
 
     public String getTypeArn() {
@@ -331,24 +335,26 @@ public class TypeConfigurationDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the extension, in this account and region.
+     * The Amazon Resource Name (ARN) for the extension, in this account and Region.
      * </p>
      * <p>
-     * For public extensions, this will be the ARN assigned when you <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the
-     * type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the
-     * type</a> in this account and region.
+     * For public extensions, this will be the ARN assigned when you call the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+     * API operation in this account and Region. For private extensions, this will be the ARN assigned when you call the
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>
+     * API operation in this account and Region.
      * </p>
      * 
      * @param typeArn
-     *        The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
+     *        The Amazon Resource Name (ARN) for the extension, in this account and Region.</p>
      *        <p>
-     *        For public extensions, this will be the ARN assigned when you <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate
-     *        the type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a
-     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-     *        the type</a> in this account and region.
+     *        For public extensions, this will be the ARN assigned when you call the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html"
+     *        >ActivateType</a> API operation in this account and Region. For private extensions, this will be the ARN
+     *        assigned when you call the <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html"
+     *        >RegisterType</a> API operation in this account and Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

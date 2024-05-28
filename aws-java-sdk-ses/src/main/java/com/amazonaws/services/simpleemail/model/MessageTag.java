@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,8 +23,7 @@ import javax.annotation.Generated;
  * <p>
  * Message tags, which you use with configuration sets, enable you to publish email sending events. For information
  * about using configuration sets, see the <a
- * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer
- * Guide</a>.
+ * href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity.html">Amazon SES Developer Guide</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/MessageTag" target="_top">AWS API
@@ -35,17 +34,17 @@ public class MessageTag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the tag. The name must:
+     * The name of the tag. The name must meet the following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Contain less than 256 characters.
+     * Contain 256 characters or fewer.
      * </p>
      * </li>
      * </ul>
@@ -53,17 +52,17 @@ public class MessageTag implements Serializable, Cloneable {
     private String name;
     /**
      * <p>
-     * The value of the tag. The value must:
+     * The value of the tag. The value must meet the following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Contain less than 256 characters.
+     * Contain 256 characters or fewer.
      * </p>
      * </li>
      * </ul>
@@ -72,32 +71,32 @@ public class MessageTag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the tag. The name must:
+     * The name of the tag. The name must meet the following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Contain less than 256 characters.
+     * Contain 256 characters or fewer.
      * </p>
      * </li>
      * </ul>
      * 
      * @param name
-     *        The name of the tag. The name must:</p>
+     *        The name of the tag. The name must meet the following requirements:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Contain less than 256 characters.
+     *        Contain 256 characters or fewer.
      *        </p>
      *        </li>
      */
@@ -108,31 +107,31 @@ public class MessageTag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the tag. The name must:
+     * The name of the tag. The name must meet the following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Contain less than 256 characters.
+     * Contain 256 characters or fewer.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The name of the tag. The name must:</p>
+     * @return The name of the tag. The name must meet the following requirements:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Contain less than 256 characters.
+     *         Contain 256 characters or fewer.
      *         </p>
      *         </li>
      */
@@ -143,32 +142,32 @@ public class MessageTag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the tag. The name must:
+     * The name of the tag. The name must meet the following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Contain less than 256 characters.
+     * Contain 256 characters or fewer.
      * </p>
      * </li>
      * </ul>
      * 
      * @param name
-     *        The name of the tag. The name must:</p>
+     *        The name of the tag. The name must meet the following requirements:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Contain less than 256 characters.
+     *        Contain 256 characters or fewer.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -181,32 +180,32 @@ public class MessageTag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of the tag. The value must:
+     * The value of the tag. The value must meet the following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Contain less than 256 characters.
+     * Contain 256 characters or fewer.
      * </p>
      * </li>
      * </ul>
      * 
      * @param value
-     *        The value of the tag. The value must:</p>
+     *        The value of the tag. The value must meet the following requirements:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Contain less than 256 characters.
+     *        Contain 256 characters or fewer.
      *        </p>
      *        </li>
      */
@@ -217,31 +216,31 @@ public class MessageTag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of the tag. The value must:
+     * The value of the tag. The value must meet the following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Contain less than 256 characters.
+     * Contain 256 characters or fewer.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The value of the tag. The value must:</p>
+     * @return The value of the tag. The value must meet the following requirements:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     *         Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Contain less than 256 characters.
+     *         Contain 256 characters or fewer.
      *         </p>
      *         </li>
      */
@@ -252,32 +251,32 @@ public class MessageTag implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of the tag. The value must:
+     * The value of the tag. The value must meet the following requirements:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     * Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      * </p>
      * </li>
      * <li>
      * <p>
-     * Contain less than 256 characters.
+     * Contain 256 characters or fewer.
      * </p>
      * </li>
      * </ul>
      * 
      * @param value
-     *        The value of the tag. The value must:</p>
+     *        The value of the tag. The value must meet the following requirements:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
+     *        Contain only ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Contain less than 256 characters.
+     *        Contain 256 characters or fewer.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

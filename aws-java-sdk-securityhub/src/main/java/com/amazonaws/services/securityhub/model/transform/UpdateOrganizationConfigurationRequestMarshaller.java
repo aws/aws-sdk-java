@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class UpdateOrganizationConfigurationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoEnable").build();
     private static final MarshallingInfo<String> AUTOENABLESTANDARDS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoEnableStandards").build();
+    private static final MarshallingInfo<StructuredPojo> ORGANIZATIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OrganizationConfiguration").build();
 
     private static final UpdateOrganizationConfigurationRequestMarshaller instance = new UpdateOrganizationConfigurationRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class UpdateOrganizationConfigurationRequestMarshaller {
         try {
             protocolMarshaller.marshall(updateOrganizationConfigurationRequest.getAutoEnable(), AUTOENABLE_BINDING);
             protocolMarshaller.marshall(updateOrganizationConfigurationRequest.getAutoEnableStandards(), AUTOENABLESTANDARDS_BINDING);
+            protocolMarshaller.marshall(updateOrganizationConfigurationRequest.getOrganizationConfiguration(), ORGANIZATIONCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

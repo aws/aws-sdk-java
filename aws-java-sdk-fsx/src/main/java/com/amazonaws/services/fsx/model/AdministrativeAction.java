@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes a specific Amazon FSx administrative action for the current Windows, Lustre, or OpenZFS file system.
+ * Describes a specific Amazon FSx administrative action for the current Windows, Lustre, OpenZFS, or ONTAP file system
+ * or volume.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/AdministrativeAction" target="_top">AWS API
@@ -44,7 +45,7 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
     private java.util.Date requestTime;
     /**
      * <p>
-     * Describes the status of the administrative action, as follows:
+     * The status of the administrative action, as follows:
      * </p>
      * <ul>
      * <li>
@@ -78,8 +79,8 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
     private String status;
     /**
      * <p>
-     * Describes the target value for the administration action, provided in the <code>UpdateFileSystem</code>
-     * operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions.
+     * The target value for the administration action, provided in the <code>UpdateFileSystem</code> operation. Returned
+     * for <code>FILE_SYSTEM_UPDATE</code> administrative actions.
      * </p>
      */
     private FileSystem targetFileSystemValues;
@@ -89,6 +90,18 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
     private Volume targetVolumeValues;
 
     private Snapshot targetSnapshotValues;
+    /**
+     * <p>
+     * The number of bytes that have transferred for the FSx for OpenZFS snapshot that you're copying.
+     * </p>
+     */
+    private Long totalTransferBytes;
+    /**
+     * <p>
+     * The remaining bytes to transfer for the FSx for OpenZFS snapshot that you're copying.
+     * </p>
+     */
+    private Long remainingTransferBytes;
 
     /**
      * @param administrativeActionType
@@ -218,7 +231,7 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Describes the status of the administrative action, as follows:
+     * The status of the administrative action, as follows:
      * </p>
      * <ul>
      * <li>
@@ -250,7 +263,7 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
      * </ul>
      * 
      * @param status
-     *        Describes the status of the administrative action, as follows:</p>
+     *        The status of the administrative action, as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -287,7 +300,7 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Describes the status of the administrative action, as follows:
+     * The status of the administrative action, as follows:
      * </p>
      * <ul>
      * <li>
@@ -318,7 +331,7 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
      * </li>
      * </ul>
      * 
-     * @return Describes the status of the administrative action, as follows:</p>
+     * @return The status of the administrative action, as follows:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -355,7 +368,7 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Describes the status of the administrative action, as follows:
+     * The status of the administrative action, as follows:
      * </p>
      * <ul>
      * <li>
@@ -387,7 +400,7 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
      * </ul>
      * 
      * @param status
-     *        Describes the status of the administrative action, as follows:</p>
+     *        The status of the administrative action, as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -426,7 +439,7 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Describes the status of the administrative action, as follows:
+     * The status of the administrative action, as follows:
      * </p>
      * <ul>
      * <li>
@@ -458,7 +471,7 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
      * </ul>
      * 
      * @param status
-     *        Describes the status of the administrative action, as follows:</p>
+     *        The status of the administrative action, as follows:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -497,13 +510,13 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Describes the target value for the administration action, provided in the <code>UpdateFileSystem</code>
-     * operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions.
+     * The target value for the administration action, provided in the <code>UpdateFileSystem</code> operation. Returned
+     * for <code>FILE_SYSTEM_UPDATE</code> administrative actions.
      * </p>
      * 
      * @param targetFileSystemValues
-     *        Describes the target value for the administration action, provided in the <code>UpdateFileSystem</code>
-     *        operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions.
+     *        The target value for the administration action, provided in the <code>UpdateFileSystem</code> operation.
+     *        Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions.
      */
 
     public void setTargetFileSystemValues(FileSystem targetFileSystemValues) {
@@ -512,12 +525,12 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Describes the target value for the administration action, provided in the <code>UpdateFileSystem</code>
-     * operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions.
+     * The target value for the administration action, provided in the <code>UpdateFileSystem</code> operation. Returned
+     * for <code>FILE_SYSTEM_UPDATE</code> administrative actions.
      * </p>
      * 
-     * @return Describes the target value for the administration action, provided in the <code>UpdateFileSystem</code>
-     *         operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions.
+     * @return The target value for the administration action, provided in the <code>UpdateFileSystem</code> operation.
+     *         Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions.
      */
 
     public FileSystem getTargetFileSystemValues() {
@@ -526,13 +539,13 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Describes the target value for the administration action, provided in the <code>UpdateFileSystem</code>
-     * operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions.
+     * The target value for the administration action, provided in the <code>UpdateFileSystem</code> operation. Returned
+     * for <code>FILE_SYSTEM_UPDATE</code> administrative actions.
      * </p>
      * 
      * @param targetFileSystemValues
-     *        Describes the target value for the administration action, provided in the <code>UpdateFileSystem</code>
-     *        operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions.
+     *        The target value for the administration action, provided in the <code>UpdateFileSystem</code> operation.
+     *        Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -620,6 +633,86 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The number of bytes that have transferred for the FSx for OpenZFS snapshot that you're copying.
+     * </p>
+     * 
+     * @param totalTransferBytes
+     *        The number of bytes that have transferred for the FSx for OpenZFS snapshot that you're copying.
+     */
+
+    public void setTotalTransferBytes(Long totalTransferBytes) {
+        this.totalTransferBytes = totalTransferBytes;
+    }
+
+    /**
+     * <p>
+     * The number of bytes that have transferred for the FSx for OpenZFS snapshot that you're copying.
+     * </p>
+     * 
+     * @return The number of bytes that have transferred for the FSx for OpenZFS snapshot that you're copying.
+     */
+
+    public Long getTotalTransferBytes() {
+        return this.totalTransferBytes;
+    }
+
+    /**
+     * <p>
+     * The number of bytes that have transferred for the FSx for OpenZFS snapshot that you're copying.
+     * </p>
+     * 
+     * @param totalTransferBytes
+     *        The number of bytes that have transferred for the FSx for OpenZFS snapshot that you're copying.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AdministrativeAction withTotalTransferBytes(Long totalTransferBytes) {
+        setTotalTransferBytes(totalTransferBytes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The remaining bytes to transfer for the FSx for OpenZFS snapshot that you're copying.
+     * </p>
+     * 
+     * @param remainingTransferBytes
+     *        The remaining bytes to transfer for the FSx for OpenZFS snapshot that you're copying.
+     */
+
+    public void setRemainingTransferBytes(Long remainingTransferBytes) {
+        this.remainingTransferBytes = remainingTransferBytes;
+    }
+
+    /**
+     * <p>
+     * The remaining bytes to transfer for the FSx for OpenZFS snapshot that you're copying.
+     * </p>
+     * 
+     * @return The remaining bytes to transfer for the FSx for OpenZFS snapshot that you're copying.
+     */
+
+    public Long getRemainingTransferBytes() {
+        return this.remainingTransferBytes;
+    }
+
+    /**
+     * <p>
+     * The remaining bytes to transfer for the FSx for OpenZFS snapshot that you're copying.
+     * </p>
+     * 
+     * @param remainingTransferBytes
+     *        The remaining bytes to transfer for the FSx for OpenZFS snapshot that you're copying.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AdministrativeAction withRemainingTransferBytes(Long remainingTransferBytes) {
+        setRemainingTransferBytes(remainingTransferBytes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -646,7 +739,11 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
         if (getTargetVolumeValues() != null)
             sb.append("TargetVolumeValues: ").append(getTargetVolumeValues()).append(",");
         if (getTargetSnapshotValues() != null)
-            sb.append("TargetSnapshotValues: ").append(getTargetSnapshotValues());
+            sb.append("TargetSnapshotValues: ").append(getTargetSnapshotValues()).append(",");
+        if (getTotalTransferBytes() != null)
+            sb.append("TotalTransferBytes: ").append(getTotalTransferBytes()).append(",");
+        if (getRemainingTransferBytes() != null)
+            sb.append("RemainingTransferBytes: ").append(getRemainingTransferBytes());
         sb.append("}");
         return sb.toString();
     }
@@ -693,6 +790,14 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
             return false;
         if (other.getTargetSnapshotValues() != null && other.getTargetSnapshotValues().equals(this.getTargetSnapshotValues()) == false)
             return false;
+        if (other.getTotalTransferBytes() == null ^ this.getTotalTransferBytes() == null)
+            return false;
+        if (other.getTotalTransferBytes() != null && other.getTotalTransferBytes().equals(this.getTotalTransferBytes()) == false)
+            return false;
+        if (other.getRemainingTransferBytes() == null ^ this.getRemainingTransferBytes() == null)
+            return false;
+        if (other.getRemainingTransferBytes() != null && other.getRemainingTransferBytes().equals(this.getRemainingTransferBytes()) == false)
+            return false;
         return true;
     }
 
@@ -709,6 +814,8 @@ public class AdministrativeAction implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getFailureDetails() == null) ? 0 : getFailureDetails().hashCode());
         hashCode = prime * hashCode + ((getTargetVolumeValues() == null) ? 0 : getTargetVolumeValues().hashCode());
         hashCode = prime * hashCode + ((getTargetSnapshotValues() == null) ? 0 : getTargetSnapshotValues().hashCode());
+        hashCode = prime * hashCode + ((getTotalTransferBytes() == null) ? 0 : getTotalTransferBytes().hashCode());
+        hashCode = prime * hashCode + ((getRemainingTransferBytes() == null) ? 0 : getRemainingTransferBytes().hashCode());
         return hashCode;
     }
 

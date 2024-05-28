@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,7 @@ public class AmazonAppStreamWaiters {
     public Waiter<DescribeFleetsRequest> fleetStarted() {
 
         return new WaiterBuilder<DescribeFleetsRequest, DescribeFleetsResult>().withSdkFunction(new DescribeFleetsFunction(client))
-                .withAcceptors(new FleetStarted.IsACTIVEMatcher(), new FleetStarted.IsPENDING_DEACTIVATEMatcher(), new FleetStarted.IsINACTIVEMatcher())
+                .withAcceptors(new FleetStarted.IsRUNNINGMatcher(), new FleetStarted.IsSTOPPINGMatcher(), new FleetStarted.IsSTOPPEDMatcher())
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(40), new FixedDelayStrategy(30)))
                 .withExecutorService(executorService).build();
     }
@@ -63,7 +63,7 @@ public class AmazonAppStreamWaiters {
     public Waiter<DescribeFleetsRequest> fleetStopped() {
 
         return new WaiterBuilder<DescribeFleetsRequest, DescribeFleetsResult>().withSdkFunction(new DescribeFleetsFunction(client))
-                .withAcceptors(new FleetStopped.IsINACTIVEMatcher(), new FleetStopped.IsPENDING_ACTIVATEMatcher(), new FleetStopped.IsACTIVEMatcher())
+                .withAcceptors(new FleetStopped.IsSTOPPEDMatcher(), new FleetStopped.IsSTARTINGMatcher(), new FleetStopped.IsRUNNINGMatcher())
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(40), new FixedDelayStrategy(30)))
                 .withExecutorService(executorService).build();
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * Filter values. Filter values are case-sensitive.
+     * The value of the filter, which is case-sensitive. You can only specify one value for the filter.
      * </p>
      */
     private java.util.List<String> values;
@@ -84,10 +84,10 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Filter values. Filter values are case-sensitive.
+     * The value of the filter, which is case-sensitive. You can only specify one value for the filter.
      * </p>
      * 
-     * @return Filter values. Filter values are case-sensitive.
+     * @return The value of the filter, which is case-sensitive. You can only specify one value for the filter.
      */
 
     public java.util.List<String> getValues() {
@@ -96,11 +96,11 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Filter values. Filter values are case-sensitive.
+     * The value of the filter, which is case-sensitive. You can only specify one value for the filter.
      * </p>
      * 
      * @param values
-     *        Filter values. Filter values are case-sensitive.
+     *        The value of the filter, which is case-sensitive. You can only specify one value for the filter.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -114,7 +114,7 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Filter values. Filter values are case-sensitive.
+     * The value of the filter, which is case-sensitive. You can only specify one value for the filter.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -123,7 +123,7 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param values
-     *        Filter values. Filter values are case-sensitive.
+     *        The value of the filter, which is case-sensitive. You can only specify one value for the filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,11 +139,11 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Filter values. Filter values are case-sensitive.
+     * The value of the filter, which is case-sensitive. You can only specify one value for the filter.
      * </p>
      * 
      * @param values
-     *        Filter values. Filter values are case-sensitive.
+     *        The value of the filter, which is case-sensitive. You can only specify one value for the filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

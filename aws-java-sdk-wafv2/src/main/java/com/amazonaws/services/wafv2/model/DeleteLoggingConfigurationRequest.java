@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,32 @@ public class DeleteLoggingConfigurationRequest extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private String resourceArn;
+    /**
+     * <p>
+     * Used to distinguish between various logging options. Currently, there is one option.
+     * </p>
+     * <p>
+     * Default: <code>WAF_LOGS</code>
+     * </p>
+     */
+    private String logType;
+    /**
+     * <p>
+     * The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations that
+     * you manage.
+     * </p>
+     * <p>
+     * The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security Lake.
+     * You can use Security Lake to collect log and event data from various sources for normalization, analysis, and
+     * management. For information, see <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data from
+     * Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>CUSTOMER</code>
+     * </p>
+     */
+    private String logScope;
 
     /**
      * <p>
@@ -76,6 +102,228 @@ public class DeleteLoggingConfigurationRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * Used to distinguish between various logging options. Currently, there is one option.
+     * </p>
+     * <p>
+     * Default: <code>WAF_LOGS</code>
+     * </p>
+     * 
+     * @param logType
+     *        Used to distinguish between various logging options. Currently, there is one option.</p>
+     *        <p>
+     *        Default: <code>WAF_LOGS</code>
+     * @see LogType
+     */
+
+    public void setLogType(String logType) {
+        this.logType = logType;
+    }
+
+    /**
+     * <p>
+     * Used to distinguish between various logging options. Currently, there is one option.
+     * </p>
+     * <p>
+     * Default: <code>WAF_LOGS</code>
+     * </p>
+     * 
+     * @return Used to distinguish between various logging options. Currently, there is one option.</p>
+     *         <p>
+     *         Default: <code>WAF_LOGS</code>
+     * @see LogType
+     */
+
+    public String getLogType() {
+        return this.logType;
+    }
+
+    /**
+     * <p>
+     * Used to distinguish between various logging options. Currently, there is one option.
+     * </p>
+     * <p>
+     * Default: <code>WAF_LOGS</code>
+     * </p>
+     * 
+     * @param logType
+     *        Used to distinguish between various logging options. Currently, there is one option.</p>
+     *        <p>
+     *        Default: <code>WAF_LOGS</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LogType
+     */
+
+    public DeleteLoggingConfigurationRequest withLogType(String logType) {
+        setLogType(logType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Used to distinguish between various logging options. Currently, there is one option.
+     * </p>
+     * <p>
+     * Default: <code>WAF_LOGS</code>
+     * </p>
+     * 
+     * @param logType
+     *        Used to distinguish between various logging options. Currently, there is one option.</p>
+     *        <p>
+     *        Default: <code>WAF_LOGS</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LogType
+     */
+
+    public DeleteLoggingConfigurationRequest withLogType(LogType logType) {
+        this.logType = logType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations that
+     * you manage.
+     * </p>
+     * <p>
+     * The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security Lake.
+     * You can use Security Lake to collect log and event data from various sources for normalization, analysis, and
+     * management. For information, see <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data from
+     * Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>CUSTOMER</code>
+     * </p>
+     * 
+     * @param logScope
+     *        The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations
+     *        that you manage. </p>
+     *        <p>
+     *        The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security
+     *        Lake. You can use Security Lake to collect log and event data from various sources for normalization,
+     *        analysis, and management. For information, see <a
+     *        href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data
+     *        from Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.
+     *        </p>
+     *        <p>
+     *        Default: <code>CUSTOMER</code>
+     * @see LogScope
+     */
+
+    public void setLogScope(String logScope) {
+        this.logScope = logScope;
+    }
+
+    /**
+     * <p>
+     * The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations that
+     * you manage.
+     * </p>
+     * <p>
+     * The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security Lake.
+     * You can use Security Lake to collect log and event data from various sources for normalization, analysis, and
+     * management. For information, see <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data from
+     * Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>CUSTOMER</code>
+     * </p>
+     * 
+     * @return The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations
+     *         that you manage. </p>
+     *         <p>
+     *         The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon
+     *         Security Lake. You can use Security Lake to collect log and event data from various sources for
+     *         normalization, analysis, and management. For information, see <a
+     *         href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data
+     *         from Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.
+     *         </p>
+     *         <p>
+     *         Default: <code>CUSTOMER</code>
+     * @see LogScope
+     */
+
+    public String getLogScope() {
+        return this.logScope;
+    }
+
+    /**
+     * <p>
+     * The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations that
+     * you manage.
+     * </p>
+     * <p>
+     * The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security Lake.
+     * You can use Security Lake to collect log and event data from various sources for normalization, analysis, and
+     * management. For information, see <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data from
+     * Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>CUSTOMER</code>
+     * </p>
+     * 
+     * @param logScope
+     *        The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations
+     *        that you manage. </p>
+     *        <p>
+     *        The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security
+     *        Lake. You can use Security Lake to collect log and event data from various sources for normalization,
+     *        analysis, and management. For information, see <a
+     *        href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data
+     *        from Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.
+     *        </p>
+     *        <p>
+     *        Default: <code>CUSTOMER</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LogScope
+     */
+
+    public DeleteLoggingConfigurationRequest withLogScope(String logScope) {
+        setLogScope(logScope);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations that
+     * you manage.
+     * </p>
+     * <p>
+     * The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security Lake.
+     * You can use Security Lake to collect log and event data from various sources for normalization, analysis, and
+     * management. For information, see <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data from
+     * Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.
+     * </p>
+     * <p>
+     * Default: <code>CUSTOMER</code>
+     * </p>
+     * 
+     * @param logScope
+     *        The owner of the logging configuration, which must be set to <code>CUSTOMER</code> for the configurations
+     *        that you manage. </p>
+     *        <p>
+     *        The log scope <code>SECURITY_LAKE</code> indicates a configuration that is managed through Amazon Security
+     *        Lake. You can use Security Lake to collect log and event data from various sources for normalization,
+     *        analysis, and management. For information, see <a
+     *        href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Collecting data
+     *        from Amazon Web Services services</a> in the <i>Amazon Security Lake user guide</i>.
+     *        </p>
+     *        <p>
+     *        Default: <code>CUSTOMER</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LogScope
+     */
+
+    public DeleteLoggingConfigurationRequest withLogScope(LogScope logScope) {
+        this.logScope = logScope.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +336,11 @@ public class DeleteLoggingConfigurationRequest extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getResourceArn() != null)
-            sb.append("ResourceArn: ").append(getResourceArn());
+            sb.append("ResourceArn: ").append(getResourceArn()).append(",");
+        if (getLogType() != null)
+            sb.append("LogType: ").append(getLogType()).append(",");
+        if (getLogScope() != null)
+            sb.append("LogScope: ").append(getLogScope());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +359,14 @@ public class DeleteLoggingConfigurationRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
             return false;
+        if (other.getLogType() == null ^ this.getLogType() == null)
+            return false;
+        if (other.getLogType() != null && other.getLogType().equals(this.getLogType()) == false)
+            return false;
+        if (other.getLogScope() == null ^ this.getLogScope() == null)
+            return false;
+        if (other.getLogScope() != null && other.getLogScope().equals(this.getLogScope()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +376,8 @@ public class DeleteLoggingConfigurationRequest extends com.amazonaws.AmazonWebSe
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
+        hashCode = prime * hashCode + ((getLogType() == null) ? 0 : getLogType().hashCode());
+        hashCode = prime * hashCode + ((getLogScope() == null) ? 0 : getLogScope().hashCode());
         return hashCode;
     }
 

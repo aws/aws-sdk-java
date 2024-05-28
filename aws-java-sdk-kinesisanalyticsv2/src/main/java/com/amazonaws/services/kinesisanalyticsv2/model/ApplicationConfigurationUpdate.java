@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,19 +42,19 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
     private ApplicationCodeConfigurationUpdate applicationCodeConfigurationUpdate;
     /**
      * <p>
-     * Describes updates to a Flink-based Kinesis Data Analytics application's configuration.
+     * Describes updates to a Managed Service for Apache Flink application's configuration.
      * </p>
      */
     private FlinkApplicationConfigurationUpdate flinkApplicationConfigurationUpdate;
     /**
      * <p>
-     * Describes updates to the environment properties for a Flink-based Kinesis Data Analytics application.
+     * Describes updates to the environment properties for a Managed Service for Apache Flink application.
      * </p>
      */
     private EnvironmentPropertyUpdates environmentPropertyUpdates;
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Managed Service for Apache Flink application.
      * </p>
      */
     private ApplicationSnapshotConfigurationUpdate applicationSnapshotConfigurationUpdate;
@@ -66,7 +66,7 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
     private java.util.List<VpcConfigurationUpdate> vpcConfigurationUpdates;
     /**
      * <p>
-     * Updates to the configuration of a Kinesis Data Analytics Studio notebook.
+     * Updates to the configuration of a Managed Service for Apache Flink Studio notebook.
      * </p>
      */
     private ZeppelinApplicationConfigurationUpdate zeppelinApplicationConfigurationUpdate;
@@ -153,11 +153,11 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes updates to a Flink-based Kinesis Data Analytics application's configuration.
+     * Describes updates to a Managed Service for Apache Flink application's configuration.
      * </p>
      * 
      * @param flinkApplicationConfigurationUpdate
-     *        Describes updates to a Flink-based Kinesis Data Analytics application's configuration.
+     *        Describes updates to a Managed Service for Apache Flink application's configuration.
      */
 
     public void setFlinkApplicationConfigurationUpdate(FlinkApplicationConfigurationUpdate flinkApplicationConfigurationUpdate) {
@@ -166,10 +166,10 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes updates to a Flink-based Kinesis Data Analytics application's configuration.
+     * Describes updates to a Managed Service for Apache Flink application's configuration.
      * </p>
      * 
-     * @return Describes updates to a Flink-based Kinesis Data Analytics application's configuration.
+     * @return Describes updates to a Managed Service for Apache Flink application's configuration.
      */
 
     public FlinkApplicationConfigurationUpdate getFlinkApplicationConfigurationUpdate() {
@@ -178,11 +178,11 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes updates to a Flink-based Kinesis Data Analytics application's configuration.
+     * Describes updates to a Managed Service for Apache Flink application's configuration.
      * </p>
      * 
      * @param flinkApplicationConfigurationUpdate
-     *        Describes updates to a Flink-based Kinesis Data Analytics application's configuration.
+     *        Describes updates to a Managed Service for Apache Flink application's configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,11 +193,11 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes updates to the environment properties for a Flink-based Kinesis Data Analytics application.
+     * Describes updates to the environment properties for a Managed Service for Apache Flink application.
      * </p>
      * 
      * @param environmentPropertyUpdates
-     *        Describes updates to the environment properties for a Flink-based Kinesis Data Analytics application.
+     *        Describes updates to the environment properties for a Managed Service for Apache Flink application.
      */
 
     public void setEnvironmentPropertyUpdates(EnvironmentPropertyUpdates environmentPropertyUpdates) {
@@ -206,10 +206,10 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes updates to the environment properties for a Flink-based Kinesis Data Analytics application.
+     * Describes updates to the environment properties for a Managed Service for Apache Flink application.
      * </p>
      * 
-     * @return Describes updates to the environment properties for a Flink-based Kinesis Data Analytics application.
+     * @return Describes updates to the environment properties for a Managed Service for Apache Flink application.
      */
 
     public EnvironmentPropertyUpdates getEnvironmentPropertyUpdates() {
@@ -218,11 +218,11 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes updates to the environment properties for a Flink-based Kinesis Data Analytics application.
+     * Describes updates to the environment properties for a Managed Service for Apache Flink application.
      * </p>
      * 
      * @param environmentPropertyUpdates
-     *        Describes updates to the environment properties for a Flink-based Kinesis Data Analytics application.
+     *        Describes updates to the environment properties for a Managed Service for Apache Flink application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -233,11 +233,11 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Managed Service for Apache Flink application.
      * </p>
      * 
      * @param applicationSnapshotConfigurationUpdate
-     *        Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+     *        Describes whether snapshots are enabled for a Managed Service for Apache Flink application.
      */
 
     public void setApplicationSnapshotConfigurationUpdate(ApplicationSnapshotConfigurationUpdate applicationSnapshotConfigurationUpdate) {
@@ -246,10 +246,10 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Managed Service for Apache Flink application.
      * </p>
      * 
-     * @return Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+     * @return Describes whether snapshots are enabled for a Managed Service for Apache Flink application.
      */
 
     public ApplicationSnapshotConfigurationUpdate getApplicationSnapshotConfigurationUpdate() {
@@ -258,11 +258,11 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Managed Service for Apache Flink application.
      * </p>
      * 
      * @param applicationSnapshotConfigurationUpdate
-     *        Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+     *        Describes whether snapshots are enabled for a Managed Service for Apache Flink application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -344,11 +344,11 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Updates to the configuration of a Kinesis Data Analytics Studio notebook.
+     * Updates to the configuration of a Managed Service for Apache Flink Studio notebook.
      * </p>
      * 
      * @param zeppelinApplicationConfigurationUpdate
-     *        Updates to the configuration of a Kinesis Data Analytics Studio notebook.
+     *        Updates to the configuration of a Managed Service for Apache Flink Studio notebook.
      */
 
     public void setZeppelinApplicationConfigurationUpdate(ZeppelinApplicationConfigurationUpdate zeppelinApplicationConfigurationUpdate) {
@@ -357,10 +357,10 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Updates to the configuration of a Kinesis Data Analytics Studio notebook.
+     * Updates to the configuration of a Managed Service for Apache Flink Studio notebook.
      * </p>
      * 
-     * @return Updates to the configuration of a Kinesis Data Analytics Studio notebook.
+     * @return Updates to the configuration of a Managed Service for Apache Flink Studio notebook.
      */
 
     public ZeppelinApplicationConfigurationUpdate getZeppelinApplicationConfigurationUpdate() {
@@ -369,11 +369,11 @@ public class ApplicationConfigurationUpdate implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Updates to the configuration of a Kinesis Data Analytics Studio notebook.
+     * Updates to the configuration of a Managed Service for Apache Flink Studio notebook.
      * </p>
      * 
      * @param zeppelinApplicationConfigurationUpdate
-     *        Updates to the configuration of a Kinesis Data Analytics Studio notebook.
+     *        Updates to the configuration of a Managed Service for Apache Flink Studio notebook.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

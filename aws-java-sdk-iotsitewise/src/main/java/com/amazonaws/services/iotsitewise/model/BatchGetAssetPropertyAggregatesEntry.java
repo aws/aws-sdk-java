@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,7 +62,7 @@ public class BatchGetAssetPropertyAggregatesEntry implements Serializable, Clone
     private String assetId;
     /**
      * <p>
-     * The ID of the asset property.
+     * The ID of the asset property, in UUID format.
      * </p>
      */
     private String propertyId;
@@ -197,11 +197,11 @@ public class BatchGetAssetPropertyAggregatesEntry implements Serializable, Clone
 
     /**
      * <p>
-     * The ID of the asset property.
+     * The ID of the asset property, in UUID format.
      * </p>
      * 
      * @param propertyId
-     *        The ID of the asset property.
+     *        The ID of the asset property, in UUID format.
      */
 
     public void setPropertyId(String propertyId) {
@@ -210,10 +210,10 @@ public class BatchGetAssetPropertyAggregatesEntry implements Serializable, Clone
 
     /**
      * <p>
-     * The ID of the asset property.
+     * The ID of the asset property, in UUID format.
      * </p>
      * 
-     * @return The ID of the asset property.
+     * @return The ID of the asset property, in UUID format.
      */
 
     public String getPropertyId() {
@@ -222,11 +222,11 @@ public class BatchGetAssetPropertyAggregatesEntry implements Serializable, Clone
 
     /**
      * <p>
-     * The ID of the asset property.
+     * The ID of the asset property, in UUID format.
      * </p>
      * 
      * @param propertyId
-     *        The ID of the asset property.
+     *        The ID of the asset property, in UUID format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

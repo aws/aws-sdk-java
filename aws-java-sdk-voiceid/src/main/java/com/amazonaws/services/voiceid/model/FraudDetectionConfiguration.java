@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,12 @@ public class FraudDetectionConfiguration implements Serializable, Cloneable, Str
      * </p>
      */
     private Integer riskThreshold;
+    /**
+     * <p>
+     * The identifier of the watchlist against which fraud detection is performed.
+     * </p>
+     */
+    private String watchlistId;
 
     /**
      * <p>
@@ -83,6 +89,46 @@ public class FraudDetectionConfiguration implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * The identifier of the watchlist against which fraud detection is performed.
+     * </p>
+     * 
+     * @param watchlistId
+     *        The identifier of the watchlist against which fraud detection is performed.
+     */
+
+    public void setWatchlistId(String watchlistId) {
+        this.watchlistId = watchlistId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the watchlist against which fraud detection is performed.
+     * </p>
+     * 
+     * @return The identifier of the watchlist against which fraud detection is performed.
+     */
+
+    public String getWatchlistId() {
+        return this.watchlistId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the watchlist against which fraud detection is performed.
+     * </p>
+     * 
+     * @param watchlistId
+     *        The identifier of the watchlist against which fraud detection is performed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FraudDetectionConfiguration withWatchlistId(String watchlistId) {
+        setWatchlistId(watchlistId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -95,7 +141,9 @@ public class FraudDetectionConfiguration implements Serializable, Cloneable, Str
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getRiskThreshold() != null)
-            sb.append("RiskThreshold: ").append(getRiskThreshold());
+            sb.append("RiskThreshold: ").append(getRiskThreshold()).append(",");
+        if (getWatchlistId() != null)
+            sb.append("WatchlistId: ").append(getWatchlistId());
         sb.append("}");
         return sb.toString();
     }
@@ -114,6 +162,10 @@ public class FraudDetectionConfiguration implements Serializable, Cloneable, Str
             return false;
         if (other.getRiskThreshold() != null && other.getRiskThreshold().equals(this.getRiskThreshold()) == false)
             return false;
+        if (other.getWatchlistId() == null ^ this.getWatchlistId() == null)
+            return false;
+        if (other.getWatchlistId() != null && other.getWatchlistId().equals(this.getWatchlistId()) == false)
+            return false;
         return true;
     }
 
@@ -123,6 +175,7 @@ public class FraudDetectionConfiguration implements Serializable, Cloneable, Str
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getRiskThreshold() == null) ? 0 : getRiskThreshold().hashCode());
+        hashCode = prime * hashCode + ((getWatchlistId() == null) ? 0 : getWatchlistId().hashCode());
         return hashCode;
     }
 

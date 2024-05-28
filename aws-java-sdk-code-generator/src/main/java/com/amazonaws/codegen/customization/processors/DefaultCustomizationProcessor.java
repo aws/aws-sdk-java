@@ -36,7 +36,7 @@ public final class DefaultCustomizationProcessor {
                 new SendEmptyAutoConstructedListAsEmptyListProcessor(config.getSendEmptyAutoConstructedListAsEmptyList()),
                 new SendEmptyNonAutoConstructedListAsEmptyListProcessor(config),
                 new EmitLegacyEnumSetterProcessor(config),
-                new PruneUnsupportedShapesProcessor()
+                new PruneUnsupportedShapesProcessor(config)
         );
     }
 }

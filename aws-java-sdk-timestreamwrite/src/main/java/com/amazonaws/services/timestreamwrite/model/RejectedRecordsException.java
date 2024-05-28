@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,7 +45,7 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * Records with timestamps that lie outside the retention duration of the memory store
+ * Records with timestamps that lie outside the retention duration of the memory store.
  * </p>
  * </li>
  * <li>
@@ -56,14 +56,18 @@ import javax.annotation.Generated;
  * </ul>
  * <p>
  * For more information, see <a
- * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Quotas</a> in the Timestream
- * Developer Guide.
+ * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Quotas</a> in the Amazon
+ * Timestream Developer Guide.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RejectedRecordsException extends com.amazonaws.services.timestreamwrite.model.AmazonTimestreamWriteException {
     private static final long serialVersionUID = 1L;
 
+    /**
+     * <p>
+     * </p>
+     */
     private java.util.List<RejectedRecord> rejectedRecords;
 
     /**
@@ -77,6 +81,9 @@ public class RejectedRecordsException extends com.amazonaws.services.timestreamw
     }
 
     /**
+     * <p>
+     * </p>
+     * 
      * @return
      */
 
@@ -86,6 +93,9 @@ public class RejectedRecordsException extends com.amazonaws.services.timestreamw
     }
 
     /**
+     * <p>
+     * </p>
+     * 
      * @param rejectedRecords
      */
 
@@ -100,6 +110,8 @@ public class RejectedRecordsException extends com.amazonaws.services.timestreamw
     }
 
     /**
+     * <p>
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setRejectedRecords(java.util.Collection)} or {@link #withRejectedRecords(java.util.Collection)} if you
@@ -121,6 +133,9 @@ public class RejectedRecordsException extends com.amazonaws.services.timestreamw
     }
 
     /**
+     * <p>
+     * </p>
+     * 
      * @param rejectedRecords
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,61 +12,48 @@
  */
 package com.amazonaws.services.sqs.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.sqs.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.StringUtils;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * DeleteMessageBatchRequest Marshaller
+ * DeleteMessageBatchRequestMarshaller
  */
-
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteMessageBatchRequestMarshaller implements Marshaller<Request<DeleteMessageBatchRequest>, DeleteMessageBatchRequest> {
+@SdkInternalApi
+public class DeleteMessageBatchRequestMarshaller {
 
-    public Request<DeleteMessageBatchRequest> marshall(DeleteMessageBatchRequest deleteMessageBatchRequest) {
+    private static final MarshallingInfo<String> QUEUEURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("QueueUrl").build();
+    private static final MarshallingInfo<List> ENTRIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Entries").build();
+
+    private static final DeleteMessageBatchRequestMarshaller instance = new DeleteMessageBatchRequestMarshaller();
+
+    public static DeleteMessageBatchRequestMarshaller getInstance() {
+        return instance;
+    }
+
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(DeleteMessageBatchRequest deleteMessageBatchRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (deleteMessageBatchRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<DeleteMessageBatchRequest> request = new DefaultRequest<DeleteMessageBatchRequest>(deleteMessageBatchRequest, "AmazonSQS");
-        request.addParameter("Action", "DeleteMessageBatch");
-        request.addParameter("Version", "2012-11-05");
-        request.setHttpMethod(HttpMethodName.POST);
-
-        if (deleteMessageBatchRequest.getQueueUrl() != null) {
-            request.addParameter("QueueUrl", StringUtils.fromString(deleteMessageBatchRequest.getQueueUrl()));
+        try {
+            protocolMarshaller.marshall(deleteMessageBatchRequest.getQueueUrl(), QUEUEURL_BINDING);
+            protocolMarshaller.marshall(deleteMessageBatchRequest.getEntries(), ENTRIES_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (!deleteMessageBatchRequest.getEntries().isEmpty()
-                || !((com.amazonaws.internal.SdkInternalList<DeleteMessageBatchRequestEntry>) deleteMessageBatchRequest.getEntries()).isAutoConstruct()) {
-            com.amazonaws.internal.SdkInternalList<DeleteMessageBatchRequestEntry> entriesList = (com.amazonaws.internal.SdkInternalList<DeleteMessageBatchRequestEntry>) deleteMessageBatchRequest
-                    .getEntries();
-            int entriesListIndex = 1;
-
-            for (DeleteMessageBatchRequestEntry entriesListValue : entriesList) {
-                if (entriesListValue != null) {
-
-                    if (entriesListValue.getId() != null) {
-                        request.addParameter("DeleteMessageBatchRequestEntry." + entriesListIndex + ".Id", StringUtils.fromString(entriesListValue.getId()));
-                    }
-
-                    if (entriesListValue.getReceiptHandle() != null) {
-                        request.addParameter("DeleteMessageBatchRequestEntry." + entriesListIndex + ".ReceiptHandle",
-                                StringUtils.fromString(entriesListValue.getReceiptHandle()));
-                    }
-                }
-                entriesListIndex++;
-            }
-        }
-
-        return request;
     }
 
 }

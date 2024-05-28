@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,17 @@ public class ListNotificationsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * The ARN for the related resource for the notification.
+     * </p>
+     * <note>
+     * <p>
+     * Only one of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.
+     * </p>
+     * </note>
+     */
+    private String resourceArn;
 
     /**
      * @param workloadId
@@ -128,6 +139,70 @@ public class ListNotificationsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The ARN for the related resource for the notification.
+     * </p>
+     * <note>
+     * <p>
+     * Only one of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.
+     * </p>
+     * </note>
+     * 
+     * @param resourceArn
+     *        The ARN for the related resource for the notification.</p> <note>
+     *        <p>
+     *        Only one of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.
+     *        </p>
+     */
+
+    public void setResourceArn(String resourceArn) {
+        this.resourceArn = resourceArn;
+    }
+
+    /**
+     * <p>
+     * The ARN for the related resource for the notification.
+     * </p>
+     * <note>
+     * <p>
+     * Only one of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.
+     * </p>
+     * </note>
+     * 
+     * @return The ARN for the related resource for the notification.</p> <note>
+     *         <p>
+     *         Only one of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.
+     *         </p>
+     */
+
+    public String getResourceArn() {
+        return this.resourceArn;
+    }
+
+    /**
+     * <p>
+     * The ARN for the related resource for the notification.
+     * </p>
+     * <note>
+     * <p>
+     * Only one of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.
+     * </p>
+     * </note>
+     * 
+     * @param resourceArn
+     *        The ARN for the related resource for the notification.</p> <note>
+     *        <p>
+     *        Only one of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListNotificationsRequest withResourceArn(String resourceArn) {
+        setResourceArn(resourceArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -144,7 +219,9 @@ public class ListNotificationsRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getResourceArn() != null)
+            sb.append("ResourceArn: ").append(getResourceArn());
         sb.append("}");
         return sb.toString();
     }
@@ -171,6 +248,10 @@ public class ListNotificationsRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getResourceArn() == null ^ this.getResourceArn() == null)
+            return false;
+        if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
+            return false;
         return true;
     }
 
@@ -182,6 +263,7 @@ public class ListNotificationsRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getWorkloadId() == null) ? 0 : getWorkloadId().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,8 @@ public class CreateCsvClassifierRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomDatatypeConfigured").build();
     private static final MarshallingInfo<List> CUSTOMDATATYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomDatatypes").build();
+    private static final MarshallingInfo<String> SERDE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Serde").build();
 
     private static final CreateCsvClassifierRequestMarshaller instance = new CreateCsvClassifierRequestMarshaller();
 
@@ -72,6 +74,7 @@ public class CreateCsvClassifierRequestMarshaller {
             protocolMarshaller.marshall(createCsvClassifierRequest.getAllowSingleColumn(), ALLOWSINGLECOLUMN_BINDING);
             protocolMarshaller.marshall(createCsvClassifierRequest.getCustomDatatypeConfigured(), CUSTOMDATATYPECONFIGURED_BINDING);
             protocolMarshaller.marshall(createCsvClassifierRequest.getCustomDatatypes(), CUSTOMDATATYPES_BINDING);
+            protocolMarshaller.marshall(createCsvClassifierRequest.getSerde(), SERDE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,13 +58,13 @@ public class DeletePrincipalMappingRequest extends com.amazonaws.AmazonWebServic
      * IDs from possibly overriding the latest action.
      * </p>
      * <p>
-     * The ordering ID can be the UNIX time of the last update you made to a group members list. You would then provide
+     * The ordering ID can be the Unix time of the last update you made to a group members list. You would then provide
      * this list when calling <code>PutPrincipalMapping</code>. This ensures your <code>DELETE</code> action for that
      * updated group with the latest members list doesn't get overwritten by earlier <code>DELETE</code> actions for the
      * same group which are yet to be processed.
      * </p>
      * <p>
-     * The default ordering ID is the current UNIX time in milliseconds that the action was received by Amazon Kendra.
+     * The default ordering ID is the current Unix time in milliseconds that the action was received by Amazon Kendra.
      * </p>
      */
     private Long orderingId;
@@ -239,13 +239,13 @@ public class DeletePrincipalMappingRequest extends com.amazonaws.AmazonWebServic
      * IDs from possibly overriding the latest action.
      * </p>
      * <p>
-     * The ordering ID can be the UNIX time of the last update you made to a group members list. You would then provide
+     * The ordering ID can be the Unix time of the last update you made to a group members list. You would then provide
      * this list when calling <code>PutPrincipalMapping</code>. This ensures your <code>DELETE</code> action for that
      * updated group with the latest members list doesn't get overwritten by earlier <code>DELETE</code> actions for the
      * same group which are yet to be processed.
      * </p>
      * <p>
-     * The default ordering ID is the current UNIX time in milliseconds that the action was received by Amazon Kendra.
+     * The default ordering ID is the current Unix time in milliseconds that the action was received by Amazon Kendra.
      * </p>
      * 
      * @param orderingId
@@ -254,13 +254,13 @@ public class DeletePrincipalMappingRequest extends com.amazonaws.AmazonWebServic
      *        latest action you want to process and apply on top of other actions with lower number IDs. This prevents
      *        previous actions with lower number IDs from possibly overriding the latest action.</p>
      *        <p>
-     *        The ordering ID can be the UNIX time of the last update you made to a group members list. You would then
+     *        The ordering ID can be the Unix time of the last update you made to a group members list. You would then
      *        provide this list when calling <code>PutPrincipalMapping</code>. This ensures your <code>DELETE</code>
      *        action for that updated group with the latest members list doesn't get overwritten by earlier
      *        <code>DELETE</code> actions for the same group which are yet to be processed.
      *        </p>
      *        <p>
-     *        The default ordering ID is the current UNIX time in milliseconds that the action was received by Amazon
+     *        The default ordering ID is the current Unix time in milliseconds that the action was received by Amazon
      *        Kendra.
      */
 
@@ -276,13 +276,13 @@ public class DeletePrincipalMappingRequest extends com.amazonaws.AmazonWebServic
      * IDs from possibly overriding the latest action.
      * </p>
      * <p>
-     * The ordering ID can be the UNIX time of the last update you made to a group members list. You would then provide
+     * The ordering ID can be the Unix time of the last update you made to a group members list. You would then provide
      * this list when calling <code>PutPrincipalMapping</code>. This ensures your <code>DELETE</code> action for that
      * updated group with the latest members list doesn't get overwritten by earlier <code>DELETE</code> actions for the
      * same group which are yet to be processed.
      * </p>
      * <p>
-     * The default ordering ID is the current UNIX time in milliseconds that the action was received by Amazon Kendra.
+     * The default ordering ID is the current Unix time in milliseconds that the action was received by Amazon Kendra.
      * </p>
      * 
      * @return The timestamp identifier you specify to ensure Amazon Kendra does not override the latest
@@ -290,13 +290,13 @@ public class DeletePrincipalMappingRequest extends com.amazonaws.AmazonWebServic
      *         latest action you want to process and apply on top of other actions with lower number IDs. This prevents
      *         previous actions with lower number IDs from possibly overriding the latest action.</p>
      *         <p>
-     *         The ordering ID can be the UNIX time of the last update you made to a group members list. You would then
+     *         The ordering ID can be the Unix time of the last update you made to a group members list. You would then
      *         provide this list when calling <code>PutPrincipalMapping</code>. This ensures your <code>DELETE</code>
      *         action for that updated group with the latest members list doesn't get overwritten by earlier
      *         <code>DELETE</code> actions for the same group which are yet to be processed.
      *         </p>
      *         <p>
-     *         The default ordering ID is the current UNIX time in milliseconds that the action was received by Amazon
+     *         The default ordering ID is the current Unix time in milliseconds that the action was received by Amazon
      *         Kendra.
      */
 
@@ -312,13 +312,13 @@ public class DeletePrincipalMappingRequest extends com.amazonaws.AmazonWebServic
      * IDs from possibly overriding the latest action.
      * </p>
      * <p>
-     * The ordering ID can be the UNIX time of the last update you made to a group members list. You would then provide
+     * The ordering ID can be the Unix time of the last update you made to a group members list. You would then provide
      * this list when calling <code>PutPrincipalMapping</code>. This ensures your <code>DELETE</code> action for that
      * updated group with the latest members list doesn't get overwritten by earlier <code>DELETE</code> actions for the
      * same group which are yet to be processed.
      * </p>
      * <p>
-     * The default ordering ID is the current UNIX time in milliseconds that the action was received by Amazon Kendra.
+     * The default ordering ID is the current Unix time in milliseconds that the action was received by Amazon Kendra.
      * </p>
      * 
      * @param orderingId
@@ -327,13 +327,13 @@ public class DeletePrincipalMappingRequest extends com.amazonaws.AmazonWebServic
      *        latest action you want to process and apply on top of other actions with lower number IDs. This prevents
      *        previous actions with lower number IDs from possibly overriding the latest action.</p>
      *        <p>
-     *        The ordering ID can be the UNIX time of the last update you made to a group members list. You would then
+     *        The ordering ID can be the Unix time of the last update you made to a group members list. You would then
      *        provide this list when calling <code>PutPrincipalMapping</code>. This ensures your <code>DELETE</code>
      *        action for that updated group with the latest members list doesn't get overwritten by earlier
      *        <code>DELETE</code> actions for the same group which are yet to be processed.
      *        </p>
      *        <p>
-     *        The default ordering ID is the current UNIX time in milliseconds that the action was received by Amazon
+     *        The default ordering ID is the current Unix time in milliseconds that the action was received by Amazon
      *        Kendra.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

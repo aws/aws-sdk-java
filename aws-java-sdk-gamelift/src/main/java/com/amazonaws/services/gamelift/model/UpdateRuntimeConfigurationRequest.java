@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Represents the input for a request operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateRuntimeConfiguration"
  *      target="_top">AWS API Documentation</a>
@@ -37,9 +34,9 @@ public class UpdateRuntimeConfigurationRequest extends com.amazonaws.AmazonWebSe
     private String fleetId;
     /**
      * <p>
-     * Instructions for launching server processes on each instance in the fleet. Server processes run either a custom
-     * game build executable or a Realtime Servers script. The runtime configuration lists the types of server processes
-     * to run on an instance, how to launch them, and the number of processes to run concurrently.
+     * Instructions for launching server processes on fleet computes. Server processes run either a custom game build
+     * executable or a Realtime Servers script. The runtime configuration lists the types of server processes to run,
+     * how to launch them, and the number of processes to run concurrently.
      * </p>
      */
     private RuntimeConfiguration runtimeConfiguration;
@@ -92,16 +89,15 @@ public class UpdateRuntimeConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Instructions for launching server processes on each instance in the fleet. Server processes run either a custom
-     * game build executable or a Realtime Servers script. The runtime configuration lists the types of server processes
-     * to run on an instance, how to launch them, and the number of processes to run concurrently.
+     * Instructions for launching server processes on fleet computes. Server processes run either a custom game build
+     * executable or a Realtime Servers script. The runtime configuration lists the types of server processes to run,
+     * how to launch them, and the number of processes to run concurrently.
      * </p>
      * 
      * @param runtimeConfiguration
-     *        Instructions for launching server processes on each instance in the fleet. Server processes run either a
-     *        custom game build executable or a Realtime Servers script. The runtime configuration lists the types of
-     *        server processes to run on an instance, how to launch them, and the number of processes to run
-     *        concurrently.
+     *        Instructions for launching server processes on fleet computes. Server processes run either a custom game
+     *        build executable or a Realtime Servers script. The runtime configuration lists the types of server
+     *        processes to run, how to launch them, and the number of processes to run concurrently.
      */
 
     public void setRuntimeConfiguration(RuntimeConfiguration runtimeConfiguration) {
@@ -110,15 +106,14 @@ public class UpdateRuntimeConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Instructions for launching server processes on each instance in the fleet. Server processes run either a custom
-     * game build executable or a Realtime Servers script. The runtime configuration lists the types of server processes
-     * to run on an instance, how to launch them, and the number of processes to run concurrently.
+     * Instructions for launching server processes on fleet computes. Server processes run either a custom game build
+     * executable or a Realtime Servers script. The runtime configuration lists the types of server processes to run,
+     * how to launch them, and the number of processes to run concurrently.
      * </p>
      * 
-     * @return Instructions for launching server processes on each instance in the fleet. Server processes run either a
-     *         custom game build executable or a Realtime Servers script. The runtime configuration lists the types of
-     *         server processes to run on an instance, how to launch them, and the number of processes to run
-     *         concurrently.
+     * @return Instructions for launching server processes on fleet computes. Server processes run either a custom game
+     *         build executable or a Realtime Servers script. The runtime configuration lists the types of server
+     *         processes to run, how to launch them, and the number of processes to run concurrently.
      */
 
     public RuntimeConfiguration getRuntimeConfiguration() {
@@ -127,16 +122,15 @@ public class UpdateRuntimeConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Instructions for launching server processes on each instance in the fleet. Server processes run either a custom
-     * game build executable or a Realtime Servers script. The runtime configuration lists the types of server processes
-     * to run on an instance, how to launch them, and the number of processes to run concurrently.
+     * Instructions for launching server processes on fleet computes. Server processes run either a custom game build
+     * executable or a Realtime Servers script. The runtime configuration lists the types of server processes to run,
+     * how to launch them, and the number of processes to run concurrently.
      * </p>
      * 
      * @param runtimeConfiguration
-     *        Instructions for launching server processes on each instance in the fleet. Server processes run either a
-     *        custom game build executable or a Realtime Servers script. The runtime configuration lists the types of
-     *        server processes to run on an instance, how to launch them, and the number of processes to run
-     *        concurrently.
+     *        Instructions for launching server processes on fleet computes. Server processes run either a custom game
+     *        build executable or a Realtime Servers script. The runtime configuration lists the types of server
+     *        processes to run, how to launch them, and the number of processes to run concurrently.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

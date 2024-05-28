@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,9 +70,9 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
     private String lifecycleState;
     /**
      * <p>
-     * The last reported health status of this instance. "Healthy" means that the instance is healthy and should remain
-     * in service. "Unhealthy" means that the instance is unhealthy and Amazon EC2 Auto Scaling should terminate and
-     * replace it.
+     * The last reported health status of this instance. <code>Healthy</code> means that the instance is healthy and
+     * should remain in service. <code>Unhealthy</code> means that the instance is unhealthy and Amazon EC2 Auto Scaling
+     * should terminate and replace it.
      * </p>
      */
     private String healthStatus;
@@ -379,15 +379,15 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The last reported health status of this instance. "Healthy" means that the instance is healthy and should remain
-     * in service. "Unhealthy" means that the instance is unhealthy and Amazon EC2 Auto Scaling should terminate and
-     * replace it.
+     * The last reported health status of this instance. <code>Healthy</code> means that the instance is healthy and
+     * should remain in service. <code>Unhealthy</code> means that the instance is unhealthy and Amazon EC2 Auto Scaling
+     * should terminate and replace it.
      * </p>
      * 
      * @param healthStatus
-     *        The last reported health status of this instance. "Healthy" means that the instance is healthy and should
-     *        remain in service. "Unhealthy" means that the instance is unhealthy and Amazon EC2 Auto Scaling should
-     *        terminate and replace it.
+     *        The last reported health status of this instance. <code>Healthy</code> means that the instance is healthy
+     *        and should remain in service. <code>Unhealthy</code> means that the instance is unhealthy and Amazon EC2
+     *        Auto Scaling should terminate and replace it.
      */
 
     public void setHealthStatus(String healthStatus) {
@@ -396,14 +396,14 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The last reported health status of this instance. "Healthy" means that the instance is healthy and should remain
-     * in service. "Unhealthy" means that the instance is unhealthy and Amazon EC2 Auto Scaling should terminate and
-     * replace it.
+     * The last reported health status of this instance. <code>Healthy</code> means that the instance is healthy and
+     * should remain in service. <code>Unhealthy</code> means that the instance is unhealthy and Amazon EC2 Auto Scaling
+     * should terminate and replace it.
      * </p>
      * 
-     * @return The last reported health status of this instance. "Healthy" means that the instance is healthy and should
-     *         remain in service. "Unhealthy" means that the instance is unhealthy and Amazon EC2 Auto Scaling should
-     *         terminate and replace it.
+     * @return The last reported health status of this instance. <code>Healthy</code> means that the instance is healthy
+     *         and should remain in service. <code>Unhealthy</code> means that the instance is unhealthy and Amazon EC2
+     *         Auto Scaling should terminate and replace it.
      */
 
     public String getHealthStatus() {
@@ -412,15 +412,15 @@ public class AutoScalingInstanceDetails implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The last reported health status of this instance. "Healthy" means that the instance is healthy and should remain
-     * in service. "Unhealthy" means that the instance is unhealthy and Amazon EC2 Auto Scaling should terminate and
-     * replace it.
+     * The last reported health status of this instance. <code>Healthy</code> means that the instance is healthy and
+     * should remain in service. <code>Unhealthy</code> means that the instance is unhealthy and Amazon EC2 Auto Scaling
+     * should terminate and replace it.
      * </p>
      * 
      * @param healthStatus
-     *        The last reported health status of this instance. "Healthy" means that the instance is healthy and should
-     *        remain in service. "Unhealthy" means that the instance is unhealthy and Amazon EC2 Auto Scaling should
-     *        terminate and replace it.
+     *        The last reported health status of this instance. <code>Healthy</code> means that the instance is healthy
+     *        and should remain in service. <code>Unhealthy</code> means that the instance is unhealthy and Amazon EC2
+     *        Auto Scaling should terminate and replace it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

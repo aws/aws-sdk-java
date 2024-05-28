@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,7 +40,7 @@ public class AddOutputRequest implements Serializable, Cloneable, StructuredPojo
     private String destination;
     /**
      * The type of key used for the encryption. If no keyType is provided, the service will use the default setting
-     * (static-key).
+     * (static-key). Allowable encryption types: static-key.
      */
     private Encryption encryption;
     /**
@@ -69,7 +69,10 @@ public class AddOutputRequest implements Serializable, Cloneable, StructuredPojo
     private Integer senderControlPort;
     /** The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams. */
     private Integer smoothingLatency;
-    /** The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams. */
+    /**
+     * The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based
+     * streams.
+     */
     private String streamId;
     /** The name of the VPC interface attachment to use for this output. */
     private VpcInterfaceAttachment vpcInterfaceAttachment;
@@ -224,11 +227,11 @@ public class AddOutputRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * The type of key used for the encryption. If no keyType is provided, the service will use the default setting
-     * (static-key).
+     * (static-key). Allowable encryption types: static-key.
      * 
      * @param encryption
      *        The type of key used for the encryption. If no keyType is provided, the service will use the default
-     *        setting (static-key).
+     *        setting (static-key). Allowable encryption types: static-key.
      */
 
     public void setEncryption(Encryption encryption) {
@@ -237,10 +240,10 @@ public class AddOutputRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * The type of key used for the encryption. If no keyType is provided, the service will use the default setting
-     * (static-key).
+     * (static-key). Allowable encryption types: static-key.
      * 
      * @return The type of key used for the encryption. If no keyType is provided, the service will use the default
-     *         setting (static-key).
+     *         setting (static-key). Allowable encryption types: static-key.
      */
 
     public Encryption getEncryption() {
@@ -249,11 +252,11 @@ public class AddOutputRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * The type of key used for the encryption. If no keyType is provided, the service will use the default setting
-     * (static-key).
+     * (static-key). Allowable encryption types: static-key.
      * 
      * @param encryption
      *        The type of key used for the encryption. If no keyType is provided, the service will use the default
-     *        setting (static-key).
+     *        setting (static-key). Allowable encryption types: static-key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -638,10 +641,12 @@ public class AddOutputRequest implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+     * The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based
+     * streams.
      * 
      * @param streamId
-     *        The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+     *        The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT
+     *        caller-based streams.
      */
 
     public void setStreamId(String streamId) {
@@ -649,9 +654,11 @@ public class AddOutputRequest implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+     * The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based
+     * streams.
      * 
-     * @return The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+     * @return The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT
+     *         caller-based streams.
      */
 
     public String getStreamId() {
@@ -659,10 +666,12 @@ public class AddOutputRequest implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+     * The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based
+     * streams.
      * 
      * @param streamId
-     *        The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams.
+     *        The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT
+     *        caller-based streams.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

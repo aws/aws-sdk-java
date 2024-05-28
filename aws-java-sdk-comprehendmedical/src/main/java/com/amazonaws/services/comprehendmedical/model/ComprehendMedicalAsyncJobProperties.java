@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -94,7 +94,7 @@ public class ComprehendMedicalAsyncJobProperties implements Serializable, Clonea
     private String languageCode;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that gives Comprehend Medical; read access to your input data.
+     * The Amazon Resource Name (ARN) that gives Amazon Comprehend Medical read access to your input data.
      * </p>
      */
     private String dataAccessRoleArn;
@@ -578,11 +578,11 @@ public class ComprehendMedicalAsyncJobProperties implements Serializable, Clonea
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that gives Comprehend Medical; read access to your input data.
+     * The Amazon Resource Name (ARN) that gives Amazon Comprehend Medical read access to your input data.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) that gives Comprehend Medical; read access to your input data.
+     *        The Amazon Resource Name (ARN) that gives Amazon Comprehend Medical read access to your input data.
      */
 
     public void setDataAccessRoleArn(String dataAccessRoleArn) {
@@ -591,10 +591,10 @@ public class ComprehendMedicalAsyncJobProperties implements Serializable, Clonea
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that gives Comprehend Medical; read access to your input data.
+     * The Amazon Resource Name (ARN) that gives Amazon Comprehend Medical read access to your input data.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that gives Comprehend Medical; read access to your input data.
+     * @return The Amazon Resource Name (ARN) that gives Amazon Comprehend Medical read access to your input data.
      */
 
     public String getDataAccessRoleArn() {
@@ -603,11 +603,11 @@ public class ComprehendMedicalAsyncJobProperties implements Serializable, Clonea
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that gives Comprehend Medical; read access to your input data.
+     * The Amazon Resource Name (ARN) that gives Amazon Comprehend Medical read access to your input data.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) that gives Comprehend Medical; read access to your input data.
+     *        The Amazon Resource Name (ARN) that gives Amazon Comprehend Medical read access to your input data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

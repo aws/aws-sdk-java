@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -93,6 +93,12 @@ public class DescribeBotAliasResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private java.util.Date lastUpdatedDateTime;
+    /**
+     * <p>
+     * A list of the networks to which the bot alias you described belongs.
+     * </p>
+     */
+    private java.util.List<ParentBotNetwork> parentBotNetworks;
 
     /**
      * <p>
@@ -654,6 +660,76 @@ public class DescribeBotAliasResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * A list of the networks to which the bot alias you described belongs.
+     * </p>
+     * 
+     * @return A list of the networks to which the bot alias you described belongs.
+     */
+
+    public java.util.List<ParentBotNetwork> getParentBotNetworks() {
+        return parentBotNetworks;
+    }
+
+    /**
+     * <p>
+     * A list of the networks to which the bot alias you described belongs.
+     * </p>
+     * 
+     * @param parentBotNetworks
+     *        A list of the networks to which the bot alias you described belongs.
+     */
+
+    public void setParentBotNetworks(java.util.Collection<ParentBotNetwork> parentBotNetworks) {
+        if (parentBotNetworks == null) {
+            this.parentBotNetworks = null;
+            return;
+        }
+
+        this.parentBotNetworks = new java.util.ArrayList<ParentBotNetwork>(parentBotNetworks);
+    }
+
+    /**
+     * <p>
+     * A list of the networks to which the bot alias you described belongs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setParentBotNetworks(java.util.Collection)} or {@link #withParentBotNetworks(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param parentBotNetworks
+     *        A list of the networks to which the bot alias you described belongs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBotAliasResult withParentBotNetworks(ParentBotNetwork... parentBotNetworks) {
+        if (this.parentBotNetworks == null) {
+            setParentBotNetworks(new java.util.ArrayList<ParentBotNetwork>(parentBotNetworks.length));
+        }
+        for (ParentBotNetwork ele : parentBotNetworks) {
+            this.parentBotNetworks.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the networks to which the bot alias you described belongs.
+     * </p>
+     * 
+     * @param parentBotNetworks
+     *        A list of the networks to which the bot alias you described belongs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBotAliasResult withParentBotNetworks(java.util.Collection<ParentBotNetwork> parentBotNetworks) {
+        setParentBotNetworks(parentBotNetworks);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -688,7 +764,9 @@ public class DescribeBotAliasResult extends com.amazonaws.AmazonWebServiceResult
         if (getCreationDateTime() != null)
             sb.append("CreationDateTime: ").append(getCreationDateTime()).append(",");
         if (getLastUpdatedDateTime() != null)
-            sb.append("LastUpdatedDateTime: ").append(getLastUpdatedDateTime());
+            sb.append("LastUpdatedDateTime: ").append(getLastUpdatedDateTime()).append(",");
+        if (getParentBotNetworks() != null)
+            sb.append("ParentBotNetworks: ").append(getParentBotNetworks());
         sb.append("}");
         return sb.toString();
     }
@@ -751,6 +829,10 @@ public class DescribeBotAliasResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getLastUpdatedDateTime() != null && other.getLastUpdatedDateTime().equals(this.getLastUpdatedDateTime()) == false)
             return false;
+        if (other.getParentBotNetworks() == null ^ this.getParentBotNetworks() == null)
+            return false;
+        if (other.getParentBotNetworks() != null && other.getParentBotNetworks().equals(this.getParentBotNetworks()) == false)
+            return false;
         return true;
     }
 
@@ -771,6 +853,7 @@ public class DescribeBotAliasResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getBotId() == null) ? 0 : getBotId().hashCode());
         hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedDateTime() == null) ? 0 : getLastUpdatedDateTime().hashCode());
+        hashCode = prime * hashCode + ((getParentBotNetworks() == null) ? 0 : getParentBotNetworks().hashCode());
         return hashCode;
     }
 

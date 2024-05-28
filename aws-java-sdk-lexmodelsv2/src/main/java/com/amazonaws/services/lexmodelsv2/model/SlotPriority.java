@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class SlotPriority implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The priority that a slot should be elicited.
+     * The priority that Amazon Lex should apply to the slot.
      * </p>
      */
     private Integer priority;
@@ -43,11 +43,11 @@ public class SlotPriority implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The priority that a slot should be elicited.
+     * The priority that Amazon Lex should apply to the slot.
      * </p>
      * 
      * @param priority
-     *        The priority that a slot should be elicited.
+     *        The priority that Amazon Lex should apply to the slot.
      */
 
     public void setPriority(Integer priority) {
@@ -56,10 +56,10 @@ public class SlotPriority implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The priority that a slot should be elicited.
+     * The priority that Amazon Lex should apply to the slot.
      * </p>
      * 
-     * @return The priority that a slot should be elicited.
+     * @return The priority that Amazon Lex should apply to the slot.
      */
 
     public Integer getPriority() {
@@ -68,11 +68,11 @@ public class SlotPriority implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The priority that a slot should be elicited.
+     * The priority that Amazon Lex should apply to the slot.
      * </p>
      * 
      * @param priority
-     *        The priority that a slot should be elicited.
+     *        The priority that Amazon Lex should apply to the slot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

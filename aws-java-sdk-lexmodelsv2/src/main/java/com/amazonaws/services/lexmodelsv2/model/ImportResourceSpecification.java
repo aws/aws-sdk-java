@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,12 @@ public class ImportResourceSpecification implements Serializable, Cloneable, Str
     private BotLocaleImportSpecification botLocaleImportSpecification;
 
     private CustomVocabularyImportSpecification customVocabularyImportSpecification;
+    /**
+     * <p>
+     * Specifications for the test set that is imported.
+     * </p>
+     */
+    private TestSetImportResourceSpecification testSetImportResourceSpecification;
 
     /**
      * <p>
@@ -151,6 +157,46 @@ public class ImportResourceSpecification implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * Specifications for the test set that is imported.
+     * </p>
+     * 
+     * @param testSetImportResourceSpecification
+     *        Specifications for the test set that is imported.
+     */
+
+    public void setTestSetImportResourceSpecification(TestSetImportResourceSpecification testSetImportResourceSpecification) {
+        this.testSetImportResourceSpecification = testSetImportResourceSpecification;
+    }
+
+    /**
+     * <p>
+     * Specifications for the test set that is imported.
+     * </p>
+     * 
+     * @return Specifications for the test set that is imported.
+     */
+
+    public TestSetImportResourceSpecification getTestSetImportResourceSpecification() {
+        return this.testSetImportResourceSpecification;
+    }
+
+    /**
+     * <p>
+     * Specifications for the test set that is imported.
+     * </p>
+     * 
+     * @param testSetImportResourceSpecification
+     *        Specifications for the test set that is imported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportResourceSpecification withTestSetImportResourceSpecification(TestSetImportResourceSpecification testSetImportResourceSpecification) {
+        setTestSetImportResourceSpecification(testSetImportResourceSpecification);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -167,7 +213,9 @@ public class ImportResourceSpecification implements Serializable, Cloneable, Str
         if (getBotLocaleImportSpecification() != null)
             sb.append("BotLocaleImportSpecification: ").append(getBotLocaleImportSpecification()).append(",");
         if (getCustomVocabularyImportSpecification() != null)
-            sb.append("CustomVocabularyImportSpecification: ").append(getCustomVocabularyImportSpecification());
+            sb.append("CustomVocabularyImportSpecification: ").append(getCustomVocabularyImportSpecification()).append(",");
+        if (getTestSetImportResourceSpecification() != null)
+            sb.append("TestSetImportResourceSpecification: ").append(getTestSetImportResourceSpecification());
         sb.append("}");
         return sb.toString();
     }
@@ -195,6 +243,11 @@ public class ImportResourceSpecification implements Serializable, Cloneable, Str
         if (other.getCustomVocabularyImportSpecification() != null
                 && other.getCustomVocabularyImportSpecification().equals(this.getCustomVocabularyImportSpecification()) == false)
             return false;
+        if (other.getTestSetImportResourceSpecification() == null ^ this.getTestSetImportResourceSpecification() == null)
+            return false;
+        if (other.getTestSetImportResourceSpecification() != null
+                && other.getTestSetImportResourceSpecification().equals(this.getTestSetImportResourceSpecification()) == false)
+            return false;
         return true;
     }
 
@@ -206,6 +259,7 @@ public class ImportResourceSpecification implements Serializable, Cloneable, Str
         hashCode = prime * hashCode + ((getBotImportSpecification() == null) ? 0 : getBotImportSpecification().hashCode());
         hashCode = prime * hashCode + ((getBotLocaleImportSpecification() == null) ? 0 : getBotLocaleImportSpecification().hashCode());
         hashCode = prime * hashCode + ((getCustomVocabularyImportSpecification() == null) ? 0 : getCustomVocabularyImportSpecification().hashCode());
+        hashCode = prime * hashCode + ((getTestSetImportResourceSpecification() == null) ? 0 : getTestSetImportResourceSpecification().hashCode());
         return hashCode;
     }
 

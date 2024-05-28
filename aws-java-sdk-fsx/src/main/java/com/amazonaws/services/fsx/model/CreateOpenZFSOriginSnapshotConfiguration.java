@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The snapshot configuration to use when creating an OpenZFS volume from a snapshot.
+ * The snapshot configuration to use when creating an Amazon FSx for OpenZFS volume from a snapshot.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateOpenZFSOriginSnapshotConfiguration"
@@ -31,7 +31,7 @@ public class CreateOpenZFSOriginSnapshotConfiguration implements Serializable, C
     private String snapshotARN;
     /**
      * <p>
-     * The strategy used when copying data from the snapshot to the new volume.
+     * Specifies the strategy used when copying data from the snapshot to the new volume.
      * </p>
      * <ul>
      * <li>
@@ -45,8 +45,19 @@ public class CreateOpenZFSOriginSnapshotConfiguration implements Serializable, C
      * <p>
      * <code>FULL_COPY</code> - Copies all data from the snapshot to the new volume.
      * </p>
+     * <p>
+     * Specify this option to create the volume from a snapshot on another FSx for OpenZFS file system.
+     * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * The <code>INCREMENTAL_COPY</code> option is only for updating an existing volume by using a snapshot from another
+     * FSx for OpenZFS file system. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html"
+     * >CopySnapshotAndUpdateVolume</a>.
+     * </p>
+     * </note>
      */
     private String copyStrategy;
 
@@ -78,7 +89,7 @@ public class CreateOpenZFSOriginSnapshotConfiguration implements Serializable, C
 
     /**
      * <p>
-     * The strategy used when copying data from the snapshot to the new volume.
+     * Specifies the strategy used when copying data from the snapshot to the new volume.
      * </p>
      * <ul>
      * <li>
@@ -92,11 +103,22 @@ public class CreateOpenZFSOriginSnapshotConfiguration implements Serializable, C
      * <p>
      * <code>FULL_COPY</code> - Copies all data from the snapshot to the new volume.
      * </p>
+     * <p>
+     * Specify this option to create the volume from a snapshot on another FSx for OpenZFS file system.
+     * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * The <code>INCREMENTAL_COPY</code> option is only for updating an existing volume by using a snapshot from another
+     * FSx for OpenZFS file system. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html"
+     * >CopySnapshotAndUpdateVolume</a>.
+     * </p>
+     * </note>
      * 
      * @param copyStrategy
-     *        The strategy used when copying data from the snapshot to the new volume. </p>
+     *        Specifies the strategy used when copying data from the snapshot to the new volume. </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -109,7 +131,18 @@ public class CreateOpenZFSOriginSnapshotConfiguration implements Serializable, C
      *        <p>
      *        <code>FULL_COPY</code> - Copies all data from the snapshot to the new volume.
      *        </p>
+     *        <p>
+     *        Specify this option to create the volume from a snapshot on another FSx for OpenZFS file system.
+     *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The <code>INCREMENTAL_COPY</code> option is only for updating an existing volume by using a snapshot from
+     *        another FSx for OpenZFS file system. For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html"
+     *        >CopySnapshotAndUpdateVolume</a>.
+     *        </p>
      * @see OpenZFSCopyStrategy
      */
 
@@ -119,7 +152,7 @@ public class CreateOpenZFSOriginSnapshotConfiguration implements Serializable, C
 
     /**
      * <p>
-     * The strategy used when copying data from the snapshot to the new volume.
+     * Specifies the strategy used when copying data from the snapshot to the new volume.
      * </p>
      * <ul>
      * <li>
@@ -133,10 +166,21 @@ public class CreateOpenZFSOriginSnapshotConfiguration implements Serializable, C
      * <p>
      * <code>FULL_COPY</code> - Copies all data from the snapshot to the new volume.
      * </p>
+     * <p>
+     * Specify this option to create the volume from a snapshot on another FSx for OpenZFS file system.
+     * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * The <code>INCREMENTAL_COPY</code> option is only for updating an existing volume by using a snapshot from another
+     * FSx for OpenZFS file system. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html"
+     * >CopySnapshotAndUpdateVolume</a>.
+     * </p>
+     * </note>
      * 
-     * @return The strategy used when copying data from the snapshot to the new volume. </p>
+     * @return Specifies the strategy used when copying data from the snapshot to the new volume. </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -149,7 +193,18 @@ public class CreateOpenZFSOriginSnapshotConfiguration implements Serializable, C
      *         <p>
      *         <code>FULL_COPY</code> - Copies all data from the snapshot to the new volume.
      *         </p>
+     *         <p>
+     *         Specify this option to create the volume from a snapshot on another FSx for OpenZFS file system.
+     *         </p>
      *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         The <code>INCREMENTAL_COPY</code> option is only for updating an existing volume by using a snapshot from
+     *         another FSx for OpenZFS file system. For more information, see <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html"
+     *         >CopySnapshotAndUpdateVolume</a>.
+     *         </p>
      * @see OpenZFSCopyStrategy
      */
 
@@ -159,7 +214,7 @@ public class CreateOpenZFSOriginSnapshotConfiguration implements Serializable, C
 
     /**
      * <p>
-     * The strategy used when copying data from the snapshot to the new volume.
+     * Specifies the strategy used when copying data from the snapshot to the new volume.
      * </p>
      * <ul>
      * <li>
@@ -173,11 +228,22 @@ public class CreateOpenZFSOriginSnapshotConfiguration implements Serializable, C
      * <p>
      * <code>FULL_COPY</code> - Copies all data from the snapshot to the new volume.
      * </p>
+     * <p>
+     * Specify this option to create the volume from a snapshot on another FSx for OpenZFS file system.
+     * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * The <code>INCREMENTAL_COPY</code> option is only for updating an existing volume by using a snapshot from another
+     * FSx for OpenZFS file system. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html"
+     * >CopySnapshotAndUpdateVolume</a>.
+     * </p>
+     * </note>
      * 
      * @param copyStrategy
-     *        The strategy used when copying data from the snapshot to the new volume. </p>
+     *        Specifies the strategy used when copying data from the snapshot to the new volume. </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -190,7 +256,18 @@ public class CreateOpenZFSOriginSnapshotConfiguration implements Serializable, C
      *        <p>
      *        <code>FULL_COPY</code> - Copies all data from the snapshot to the new volume.
      *        </p>
+     *        <p>
+     *        Specify this option to create the volume from a snapshot on another FSx for OpenZFS file system.
+     *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The <code>INCREMENTAL_COPY</code> option is only for updating an existing volume by using a snapshot from
+     *        another FSx for OpenZFS file system. For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html"
+     *        >CopySnapshotAndUpdateVolume</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpenZFSCopyStrategy
      */
@@ -202,7 +279,7 @@ public class CreateOpenZFSOriginSnapshotConfiguration implements Serializable, C
 
     /**
      * <p>
-     * The strategy used when copying data from the snapshot to the new volume.
+     * Specifies the strategy used when copying data from the snapshot to the new volume.
      * </p>
      * <ul>
      * <li>
@@ -216,11 +293,22 @@ public class CreateOpenZFSOriginSnapshotConfiguration implements Serializable, C
      * <p>
      * <code>FULL_COPY</code> - Copies all data from the snapshot to the new volume.
      * </p>
+     * <p>
+     * Specify this option to create the volume from a snapshot on another FSx for OpenZFS file system.
+     * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * The <code>INCREMENTAL_COPY</code> option is only for updating an existing volume by using a snapshot from another
+     * FSx for OpenZFS file system. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html"
+     * >CopySnapshotAndUpdateVolume</a>.
+     * </p>
+     * </note>
      * 
      * @param copyStrategy
-     *        The strategy used when copying data from the snapshot to the new volume. </p>
+     *        Specifies the strategy used when copying data from the snapshot to the new volume. </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -233,7 +321,18 @@ public class CreateOpenZFSOriginSnapshotConfiguration implements Serializable, C
      *        <p>
      *        <code>FULL_COPY</code> - Copies all data from the snapshot to the new volume.
      *        </p>
+     *        <p>
+     *        Specify this option to create the volume from a snapshot on another FSx for OpenZFS file system.
+     *        </p>
      *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The <code>INCREMENTAL_COPY</code> option is only for updating an existing volume by using a snapshot from
+     *        another FSx for OpenZFS file system. For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html"
+     *        >CopySnapshotAndUpdateVolume</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpenZFSCopyStrategy
      */

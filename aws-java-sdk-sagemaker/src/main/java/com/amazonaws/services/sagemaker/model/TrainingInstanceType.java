@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,8 @@ public enum TrainingInstanceType {
     MlP316xlarge("ml.p3.16xlarge"),
     MlP3dn24xlarge("ml.p3dn.24xlarge"),
     MlP4d24xlarge("ml.p4d.24xlarge"),
+    MlP4de24xlarge("ml.p4de.24xlarge"),
+    MlP548xlarge("ml.p5.48xlarge"),
     MlC5Xlarge("ml.c5.xlarge"),
     MlC52xlarge("ml.c5.2xlarge"),
     MlC54xlarge("ml.c5.4xlarge"),
@@ -66,7 +68,27 @@ public enum TrainingInstanceType {
     MlG516xlarge("ml.g5.16xlarge"),
     MlG512xlarge("ml.g5.12xlarge"),
     MlG524xlarge("ml.g5.24xlarge"),
-    MlG548xlarge("ml.g5.48xlarge");
+    MlG548xlarge("ml.g5.48xlarge"),
+    MlTrn12xlarge("ml.trn1.2xlarge"),
+    MlTrn132xlarge("ml.trn1.32xlarge"),
+    MlTrn1n32xlarge("ml.trn1n.32xlarge"),
+    MlM6iLarge("ml.m6i.large"),
+    MlM6iXlarge("ml.m6i.xlarge"),
+    MlM6i2xlarge("ml.m6i.2xlarge"),
+    MlM6i4xlarge("ml.m6i.4xlarge"),
+    MlM6i8xlarge("ml.m6i.8xlarge"),
+    MlM6i12xlarge("ml.m6i.12xlarge"),
+    MlM6i16xlarge("ml.m6i.16xlarge"),
+    MlM6i24xlarge("ml.m6i.24xlarge"),
+    MlM6i32xlarge("ml.m6i.32xlarge"),
+    MlC6iXlarge("ml.c6i.xlarge"),
+    MlC6i2xlarge("ml.c6i.2xlarge"),
+    MlC6i8xlarge("ml.c6i.8xlarge"),
+    MlC6i4xlarge("ml.c6i.4xlarge"),
+    MlC6i12xlarge("ml.c6i.12xlarge"),
+    MlC6i16xlarge("ml.c6i.16xlarge"),
+    MlC6i24xlarge("ml.c6i.24xlarge"),
+    MlC6i32xlarge("ml.c6i.32xlarge");
 
     private String value;
 

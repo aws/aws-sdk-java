@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,20 @@ public class GetRetainedMessageResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private Long lastModifiedTime;
+    /**
+     * <p>
+     * A base64-encoded JSON string that includes an array of JSON objects, or null if the retained message doesn't
+     * include any user properties.
+     * </p>
+     * <p>
+     * The following example <code>userProperties</code> parameter is a JSON string that represents two user properties.
+     * Note that it will be base64-encoded:
+     * </p>
+     * <p>
+     * <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code>
+     * </p>
+     */
+    private java.nio.ByteBuffer userProperties;
 
     /**
      * <p>
@@ -239,6 +253,118 @@ public class GetRetainedMessageResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * A base64-encoded JSON string that includes an array of JSON objects, or null if the retained message doesn't
+     * include any user properties.
+     * </p>
+     * <p>
+     * The following example <code>userProperties</code> parameter is a JSON string that represents two user properties.
+     * Note that it will be base64-encoded:
+     * </p>
+     * <p>
+     * <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code>
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
+     * </p>
+     * 
+     * @param userProperties
+     *        A base64-encoded JSON string that includes an array of JSON objects, or null if the retained message
+     *        doesn't include any user properties.</p>
+     *        <p>
+     *        The following example <code>userProperties</code> parameter is a JSON string that represents two user
+     *        properties. Note that it will be base64-encoded:
+     *        </p>
+     *        <p>
+     *        <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code>
+     */
+
+    public void setUserProperties(java.nio.ByteBuffer userProperties) {
+        this.userProperties = userProperties;
+    }
+
+    /**
+     * <p>
+     * A base64-encoded JSON string that includes an array of JSON objects, or null if the retained message doesn't
+     * include any user properties.
+     * </p>
+     * <p>
+     * The following example <code>userProperties</code> parameter is a JSON string that represents two user properties.
+     * Note that it will be base64-encoded:
+     * </p>
+     * <p>
+     * <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code>
+     * </p>
+     * <p>
+     * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
+     * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
+     * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}.
+     * Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the
+     * {@code position}.
+     * </p>
+     * 
+     * @return A base64-encoded JSON string that includes an array of JSON objects, or null if the retained message
+     *         doesn't include any user properties.</p>
+     *         <p>
+     *         The following example <code>userProperties</code> parameter is a JSON string that represents two user
+     *         properties. Note that it will be base64-encoded:
+     *         </p>
+     *         <p>
+     *         <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code>
+     */
+
+    public java.nio.ByteBuffer getUserProperties() {
+        return this.userProperties;
+    }
+
+    /**
+     * <p>
+     * A base64-encoded JSON string that includes an array of JSON objects, or null if the retained message doesn't
+     * include any user properties.
+     * </p>
+     * <p>
+     * The following example <code>userProperties</code> parameter is a JSON string that represents two user properties.
+     * Note that it will be base64-encoded:
+     * </p>
+     * <p>
+     * <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code>
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
+     * </p>
+     * 
+     * @param userProperties
+     *        A base64-encoded JSON string that includes an array of JSON objects, or null if the retained message
+     *        doesn't include any user properties.</p>
+     *        <p>
+     *        The following example <code>userProperties</code> parameter is a JSON string that represents two user
+     *        properties. Note that it will be base64-encoded:
+     *        </p>
+     *        <p>
+     *        <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetRetainedMessageResult withUserProperties(java.nio.ByteBuffer userProperties) {
+        setUserProperties(userProperties);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -257,7 +383,9 @@ public class GetRetainedMessageResult extends com.amazonaws.AmazonWebServiceResu
         if (getQos() != null)
             sb.append("Qos: ").append(getQos()).append(",");
         if (getLastModifiedTime() != null)
-            sb.append("LastModifiedTime: ").append(getLastModifiedTime());
+            sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
+        if (getUserProperties() != null)
+            sb.append("UserProperties: ").append(getUserProperties());
         sb.append("}");
         return sb.toString();
     }
@@ -288,6 +416,10 @@ public class GetRetainedMessageResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getLastModifiedTime() != null && other.getLastModifiedTime().equals(this.getLastModifiedTime()) == false)
             return false;
+        if (other.getUserProperties() == null ^ this.getUserProperties() == null)
+            return false;
+        if (other.getUserProperties() != null && other.getUserProperties().equals(this.getUserProperties()) == false)
+            return false;
         return true;
     }
 
@@ -300,6 +432,7 @@ public class GetRetainedMessageResult extends com.amazonaws.AmazonWebServiceResu
         hashCode = prime * hashCode + ((getPayload() == null) ? 0 : getPayload().hashCode());
         hashCode = prime * hashCode + ((getQos() == null) ? 0 : getQos().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
+        hashCode = prime * hashCode + ((getUserProperties() == null) ? 0 : getUserProperties().hashCode());
         return hashCode;
     }
 

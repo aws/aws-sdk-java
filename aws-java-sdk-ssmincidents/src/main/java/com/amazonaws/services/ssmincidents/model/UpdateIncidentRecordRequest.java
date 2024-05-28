@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,42 +39,42 @@ public class UpdateIncidentRecordRequest extends com.amazonaws.AmazonWebServiceR
     private ChatChannel chatChannel;
     /**
      * <p>
-     * A token that ensures that the operation is called only once with the specified details.
+     * A token that ensures that a client calls the operation only once with the specified details.
      * </p>
      */
     private String clientToken;
     /**
      * <p>
-     * Defines the impact of the incident to customers and applications. Providing an impact overwrites the impact
-     * provided by the response plan.
+     * Defines the impact of the incident to customers and applications. If you provide an impact for an incident, it
+     * overwrites the impact provided by the response plan.
      * </p>
      * <p class="title">
-     * <b>Possible impacts:</b>
+     * <b>Supported impact codes</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>1</code> - Critical impact, full application failure that impacts many to all customers.
+     * <code>1</code> - Critical
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>2</code> - High impact, partial application failure with impact to many customers.
+     * <code>2</code> - High
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>3</code> - Medium impact, the application is providing reduced service to customers.
+     * <code>3</code> - Medium
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>4</code> - Low impact, customer aren't impacted by the problem yet.
+     * <code>4</code> - Low
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.
+     * <code>5</code> - No Impact
      * </p>
      * </li>
      * </ul>
@@ -82,7 +82,7 @@ public class UpdateIncidentRecordRequest extends com.amazonaws.AmazonWebServiceR
     private Integer impact;
     /**
      * <p>
-     * The Amazon SNS targets that are notified when updates are made to an incident.
+     * The Amazon SNS targets that Incident Manager notifies when a client updates an incident.
      * </p>
      * <p>
      * Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.
@@ -91,7 +91,7 @@ public class UpdateIncidentRecordRequest extends com.amazonaws.AmazonWebServiceR
     private java.util.List<NotificationTargetItem> notificationTargets;
     /**
      * <p>
-     * The status of the incident. An incident can be <code>Open</code> or <code>Resolved</code>.
+     * The status of the incident. Possible statuses are <code>Open</code> or <code>Resolved</code>.
      * </p>
      */
     private String status;
@@ -190,11 +190,11 @@ public class UpdateIncidentRecordRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A token that ensures that the operation is called only once with the specified details.
+     * A token that ensures that a client calls the operation only once with the specified details.
      * </p>
      * 
      * @param clientToken
-     *        A token that ensures that the operation is called only once with the specified details.
+     *        A token that ensures that a client calls the operation only once with the specified details.
      */
 
     public void setClientToken(String clientToken) {
@@ -203,10 +203,10 @@ public class UpdateIncidentRecordRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A token that ensures that the operation is called only once with the specified details.
+     * A token that ensures that a client calls the operation only once with the specified details.
      * </p>
      * 
-     * @return A token that ensures that the operation is called only once with the specified details.
+     * @return A token that ensures that a client calls the operation only once with the specified details.
      */
 
     public String getClientToken() {
@@ -215,11 +215,11 @@ public class UpdateIncidentRecordRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A token that ensures that the operation is called only once with the specified details.
+     * A token that ensures that a client calls the operation only once with the specified details.
      * </p>
      * 
      * @param clientToken
-     *        A token that ensures that the operation is called only once with the specified details.
+     *        A token that ensures that a client calls the operation only once with the specified details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -230,71 +230,70 @@ public class UpdateIncidentRecordRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Defines the impact of the incident to customers and applications. Providing an impact overwrites the impact
-     * provided by the response plan.
+     * Defines the impact of the incident to customers and applications. If you provide an impact for an incident, it
+     * overwrites the impact provided by the response plan.
      * </p>
      * <p class="title">
-     * <b>Possible impacts:</b>
+     * <b>Supported impact codes</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>1</code> - Critical impact, full application failure that impacts many to all customers.
+     * <code>1</code> - Critical
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>2</code> - High impact, partial application failure with impact to many customers.
+     * <code>2</code> - High
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>3</code> - Medium impact, the application is providing reduced service to customers.
+     * <code>3</code> - Medium
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>4</code> - Low impact, customer aren't impacted by the problem yet.
+     * <code>4</code> - Low
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.
+     * <code>5</code> - No Impact
      * </p>
      * </li>
      * </ul>
      * 
      * @param impact
-     *        Defines the impact of the incident to customers and applications. Providing an impact overwrites the
-     *        impact provided by the response plan.</p>
+     *        Defines the impact of the incident to customers and applications. If you provide an impact for an
+     *        incident, it overwrites the impact provided by the response plan.</p>
      *        <p class="title">
-     *        <b>Possible impacts:</b>
+     *        <b>Supported impact codes</b>
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>1</code> - Critical impact, full application failure that impacts many to all customers.
+     *        <code>1</code> - Critical
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>2</code> - High impact, partial application failure with impact to many customers.
+     *        <code>2</code> - High
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>3</code> - Medium impact, the application is providing reduced service to customers.
+     *        <code>3</code> - Medium
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>4</code> - Low impact, customer aren't impacted by the problem yet.
+     *        <code>4</code> - Low
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid
-     *        impact.
+     *        <code>5</code> - No Impact
      *        </p>
      *        </li>
      */
@@ -305,70 +304,69 @@ public class UpdateIncidentRecordRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Defines the impact of the incident to customers and applications. Providing an impact overwrites the impact
-     * provided by the response plan.
+     * Defines the impact of the incident to customers and applications. If you provide an impact for an incident, it
+     * overwrites the impact provided by the response plan.
      * </p>
      * <p class="title">
-     * <b>Possible impacts:</b>
+     * <b>Supported impact codes</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>1</code> - Critical impact, full application failure that impacts many to all customers.
+     * <code>1</code> - Critical
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>2</code> - High impact, partial application failure with impact to many customers.
+     * <code>2</code> - High
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>3</code> - Medium impact, the application is providing reduced service to customers.
+     * <code>3</code> - Medium
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>4</code> - Low impact, customer aren't impacted by the problem yet.
+     * <code>4</code> - Low
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.
+     * <code>5</code> - No Impact
      * </p>
      * </li>
      * </ul>
      * 
-     * @return Defines the impact of the incident to customers and applications. Providing an impact overwrites the
-     *         impact provided by the response plan.</p>
+     * @return Defines the impact of the incident to customers and applications. If you provide an impact for an
+     *         incident, it overwrites the impact provided by the response plan.</p>
      *         <p class="title">
-     *         <b>Possible impacts:</b>
+     *         <b>Supported impact codes</b>
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>1</code> - Critical impact, full application failure that impacts many to all customers.
+     *         <code>1</code> - Critical
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>2</code> - High impact, partial application failure with impact to many customers.
+     *         <code>2</code> - High
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>3</code> - Medium impact, the application is providing reduced service to customers.
+     *         <code>3</code> - Medium
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>4</code> - Low impact, customer aren't impacted by the problem yet.
+     *         <code>4</code> - Low
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid
-     *         impact.
+     *         <code>5</code> - No Impact
      *         </p>
      *         </li>
      */
@@ -379,71 +377,70 @@ public class UpdateIncidentRecordRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Defines the impact of the incident to customers and applications. Providing an impact overwrites the impact
-     * provided by the response plan.
+     * Defines the impact of the incident to customers and applications. If you provide an impact for an incident, it
+     * overwrites the impact provided by the response plan.
      * </p>
      * <p class="title">
-     * <b>Possible impacts:</b>
+     * <b>Supported impact codes</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>1</code> - Critical impact, full application failure that impacts many to all customers.
+     * <code>1</code> - Critical
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>2</code> - High impact, partial application failure with impact to many customers.
+     * <code>2</code> - High
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>3</code> - Medium impact, the application is providing reduced service to customers.
+     * <code>3</code> - Medium
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>4</code> - Low impact, customer aren't impacted by the problem yet.
+     * <code>4</code> - Low
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.
+     * <code>5</code> - No Impact
      * </p>
      * </li>
      * </ul>
      * 
      * @param impact
-     *        Defines the impact of the incident to customers and applications. Providing an impact overwrites the
-     *        impact provided by the response plan.</p>
+     *        Defines the impact of the incident to customers and applications. If you provide an impact for an
+     *        incident, it overwrites the impact provided by the response plan.</p>
      *        <p class="title">
-     *        <b>Possible impacts:</b>
+     *        <b>Supported impact codes</b>
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>1</code> - Critical impact, full application failure that impacts many to all customers.
+     *        <code>1</code> - Critical
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>2</code> - High impact, partial application failure with impact to many customers.
+     *        <code>2</code> - High
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>3</code> - Medium impact, the application is providing reduced service to customers.
+     *        <code>3</code> - Medium
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>4</code> - Low impact, customer aren't impacted by the problem yet.
+     *        <code>4</code> - Low
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid
-     *        impact.
+     *        <code>5</code> - No Impact
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -456,13 +453,13 @@ public class UpdateIncidentRecordRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon SNS targets that are notified when updates are made to an incident.
+     * The Amazon SNS targets that Incident Manager notifies when a client updates an incident.
      * </p>
      * <p>
      * Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.
      * </p>
      * 
-     * @return The Amazon SNS targets that are notified when updates are made to an incident.</p>
+     * @return The Amazon SNS targets that Incident Manager notifies when a client updates an incident.</p>
      *         <p>
      *         Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.
      */
@@ -473,14 +470,14 @@ public class UpdateIncidentRecordRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon SNS targets that are notified when updates are made to an incident.
+     * The Amazon SNS targets that Incident Manager notifies when a client updates an incident.
      * </p>
      * <p>
      * Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.
      * </p>
      * 
      * @param notificationTargets
-     *        The Amazon SNS targets that are notified when updates are made to an incident.</p>
+     *        The Amazon SNS targets that Incident Manager notifies when a client updates an incident.</p>
      *        <p>
      *        Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.
      */
@@ -496,7 +493,7 @@ public class UpdateIncidentRecordRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon SNS targets that are notified when updates are made to an incident.
+     * The Amazon SNS targets that Incident Manager notifies when a client updates an incident.
      * </p>
      * <p>
      * Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.
@@ -508,7 +505,7 @@ public class UpdateIncidentRecordRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param notificationTargets
-     *        The Amazon SNS targets that are notified when updates are made to an incident.</p>
+     *        The Amazon SNS targets that Incident Manager notifies when a client updates an incident.</p>
      *        <p>
      *        Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -526,14 +523,14 @@ public class UpdateIncidentRecordRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon SNS targets that are notified when updates are made to an incident.
+     * The Amazon SNS targets that Incident Manager notifies when a client updates an incident.
      * </p>
      * <p>
      * Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.
      * </p>
      * 
      * @param notificationTargets
-     *        The Amazon SNS targets that are notified when updates are made to an incident.</p>
+     *        The Amazon SNS targets that Incident Manager notifies when a client updates an incident.</p>
      *        <p>
      *        Using multiple SNS topics creates redundancy in the event that a Region is down during the incident.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -546,11 +543,11 @@ public class UpdateIncidentRecordRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The status of the incident. An incident can be <code>Open</code> or <code>Resolved</code>.
+     * The status of the incident. Possible statuses are <code>Open</code> or <code>Resolved</code>.
      * </p>
      * 
      * @param status
-     *        The status of the incident. An incident can be <code>Open</code> or <code>Resolved</code>.
+     *        The status of the incident. Possible statuses are <code>Open</code> or <code>Resolved</code>.
      * @see IncidentRecordStatus
      */
 
@@ -560,10 +557,10 @@ public class UpdateIncidentRecordRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The status of the incident. An incident can be <code>Open</code> or <code>Resolved</code>.
+     * The status of the incident. Possible statuses are <code>Open</code> or <code>Resolved</code>.
      * </p>
      * 
-     * @return The status of the incident. An incident can be <code>Open</code> or <code>Resolved</code>.
+     * @return The status of the incident. Possible statuses are <code>Open</code> or <code>Resolved</code>.
      * @see IncidentRecordStatus
      */
 
@@ -573,11 +570,11 @@ public class UpdateIncidentRecordRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The status of the incident. An incident can be <code>Open</code> or <code>Resolved</code>.
+     * The status of the incident. Possible statuses are <code>Open</code> or <code>Resolved</code>.
      * </p>
      * 
      * @param status
-     *        The status of the incident. An incident can be <code>Open</code> or <code>Resolved</code>.
+     *        The status of the incident. Possible statuses are <code>Open</code> or <code>Resolved</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IncidentRecordStatus
      */
@@ -589,11 +586,11 @@ public class UpdateIncidentRecordRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The status of the incident. An incident can be <code>Open</code> or <code>Resolved</code>.
+     * The status of the incident. Possible statuses are <code>Open</code> or <code>Resolved</code>.
      * </p>
      * 
      * @param status
-     *        The status of the incident. An incident can be <code>Open</code> or <code>Resolved</code>.
+     *        The status of the incident. Possible statuses are <code>Open</code> or <code>Resolved</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IncidentRecordStatus
      */

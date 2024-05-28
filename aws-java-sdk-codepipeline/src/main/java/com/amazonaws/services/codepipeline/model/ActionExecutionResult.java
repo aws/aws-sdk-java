@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,8 @@ public class ActionExecutionResult implements Serializable, Cloneable, Structure
      * </p>
      */
     private String externalExecutionUrl;
+
+    private ErrorDetails errorDetails;
 
     /**
      * <p>
@@ -175,6 +177,32 @@ public class ActionExecutionResult implements Serializable, Cloneable, Structure
     }
 
     /**
+     * @param errorDetails
+     */
+
+    public void setErrorDetails(ErrorDetails errorDetails) {
+        this.errorDetails = errorDetails;
+    }
+
+    /**
+     * @return
+     */
+
+    public ErrorDetails getErrorDetails() {
+        return this.errorDetails;
+    }
+
+    /**
+     * @param errorDetails
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActionExecutionResult withErrorDetails(ErrorDetails errorDetails) {
+        setErrorDetails(errorDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -191,7 +219,9 @@ public class ActionExecutionResult implements Serializable, Cloneable, Structure
         if (getExternalExecutionSummary() != null)
             sb.append("ExternalExecutionSummary: ").append(getExternalExecutionSummary()).append(",");
         if (getExternalExecutionUrl() != null)
-            sb.append("ExternalExecutionUrl: ").append(getExternalExecutionUrl());
+            sb.append("ExternalExecutionUrl: ").append(getExternalExecutionUrl()).append(",");
+        if (getErrorDetails() != null)
+            sb.append("ErrorDetails: ").append(getErrorDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -218,6 +248,10 @@ public class ActionExecutionResult implements Serializable, Cloneable, Structure
             return false;
         if (other.getExternalExecutionUrl() != null && other.getExternalExecutionUrl().equals(this.getExternalExecutionUrl()) == false)
             return false;
+        if (other.getErrorDetails() == null ^ this.getErrorDetails() == null)
+            return false;
+        if (other.getErrorDetails() != null && other.getErrorDetails().equals(this.getErrorDetails()) == false)
+            return false;
         return true;
     }
 
@@ -229,6 +263,7 @@ public class ActionExecutionResult implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getExternalExecutionId() == null) ? 0 : getExternalExecutionId().hashCode());
         hashCode = prime * hashCode + ((getExternalExecutionSummary() == null) ? 0 : getExternalExecutionSummary().hashCode());
         hashCode = prime * hashCode + ((getExternalExecutionUrl() == null) ? 0 : getExternalExecutionUrl().hashCode());
+        hashCode = prime * hashCode + ((getErrorDetails() == null) ? 0 : getErrorDetails().hashCode());
         return hashCode;
     }
 

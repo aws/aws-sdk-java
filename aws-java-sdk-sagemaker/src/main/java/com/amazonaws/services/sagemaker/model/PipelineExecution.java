@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -88,6 +88,12 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private ParallelismConfiguration parallelismConfiguration;
+    /**
+     * <p>
+     * The selective execution configuration applied to the pipeline run.
+     * </p>
+     */
+    private SelectiveExecutionConfig selectiveExecutionConfig;
     /**
      * <p>
      * Contains a list of pipeline parameters. This list can be empty.
@@ -554,6 +560,46 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
+     * The selective execution configuration applied to the pipeline run.
+     * </p>
+     * 
+     * @param selectiveExecutionConfig
+     *        The selective execution configuration applied to the pipeline run.
+     */
+
+    public void setSelectiveExecutionConfig(SelectiveExecutionConfig selectiveExecutionConfig) {
+        this.selectiveExecutionConfig = selectiveExecutionConfig;
+    }
+
+    /**
+     * <p>
+     * The selective execution configuration applied to the pipeline run.
+     * </p>
+     * 
+     * @return The selective execution configuration applied to the pipeline run.
+     */
+
+    public SelectiveExecutionConfig getSelectiveExecutionConfig() {
+        return this.selectiveExecutionConfig;
+    }
+
+    /**
+     * <p>
+     * The selective execution configuration applied to the pipeline run.
+     * </p>
+     * 
+     * @param selectiveExecutionConfig
+     *        The selective execution configuration applied to the pipeline run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PipelineExecution withSelectiveExecutionConfig(SelectiveExecutionConfig selectiveExecutionConfig) {
+        setSelectiveExecutionConfig(selectiveExecutionConfig);
+        return this;
+    }
+
+    /**
+     * <p>
      * Contains a list of pipeline parameters. This list can be empty.
      * </p>
      * 
@@ -658,6 +704,8 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
             sb.append("LastModifiedBy: ").append(getLastModifiedBy()).append(",");
         if (getParallelismConfiguration() != null)
             sb.append("ParallelismConfiguration: ").append(getParallelismConfiguration()).append(",");
+        if (getSelectiveExecutionConfig() != null)
+            sb.append("SelectiveExecutionConfig: ").append(getSelectiveExecutionConfig()).append(",");
         if (getPipelineParameters() != null)
             sb.append("PipelineParameters: ").append(getPipelineParameters());
         sb.append("}");
@@ -722,6 +770,10 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getParallelismConfiguration() != null && other.getParallelismConfiguration().equals(this.getParallelismConfiguration()) == false)
             return false;
+        if (other.getSelectiveExecutionConfig() == null ^ this.getSelectiveExecutionConfig() == null)
+            return false;
+        if (other.getSelectiveExecutionConfig() != null && other.getSelectiveExecutionConfig().equals(this.getSelectiveExecutionConfig()) == false)
+            return false;
         if (other.getPipelineParameters() == null ^ this.getPipelineParameters() == null)
             return false;
         if (other.getPipelineParameters() != null && other.getPipelineParameters().equals(this.getPipelineParameters()) == false)
@@ -746,6 +798,7 @@ public class PipelineExecution implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getCreatedBy() == null) ? 0 : getCreatedBy().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedBy() == null) ? 0 : getLastModifiedBy().hashCode());
         hashCode = prime * hashCode + ((getParallelismConfiguration() == null) ? 0 : getParallelismConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getSelectiveExecutionConfig() == null) ? 0 : getSelectiveExecutionConfig().hashCode());
         hashCode = prime * hashCode + ((getPipelineParameters() == null) ? 0 : getPipelineParameters().hashCode());
         return hashCode;
     }

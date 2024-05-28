@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,8 +22,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * The severity of the finding.
  * </p>
  * <p>
- * The finding provider can provide the initial severity. The finding provider can only update the severity if it has
- * not been updated using <code>BatchUpdateFindings</code>.
+ * The finding provider can provide the initial severity. The finding provider can only update the severity if it hasn't
+ * been updated using <code>BatchUpdateFindings</code>.
  * </p>
  * <p>
  * The finding must have either <code>Label</code> or <code>Normalized</code> populated. If only one of these attributes
@@ -39,7 +39,7 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Deprecated. This attribute is being deprecated. Instead of providing <code>Product</code>, provide
+     * Deprecated. This attribute isn't included in findings. Instead of providing <code>Product</code>, provide
      * <code>Original</code>.
      * </p>
      * <p>
@@ -114,8 +114,11 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
     private String label;
     /**
      * <p>
-     * Deprecated. The normalized severity of a finding. This attribute is being deprecated. Instead of providing
-     * <code>Normalized</code>, provide <code>Label</code>.
+     * Deprecated. The normalized severity of a finding. Instead of providing <code>Normalized</code>, provide
+     * <code>Label</code>.
+     * </p>
+     * <p>
+     * The value of <code>Normalized</code> can be an integer between <code>0</code> and <code>100</code>.
      * </p>
      * <p>
      * If you provide <code>Label</code> and do not provide <code>Normalized</code>, then <code>Normalized</code> is set
@@ -154,12 +157,15 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The native severity from the finding product that generated the finding.
      * </p>
+     * <p>
+     * Length Constraints: Minimum length of 1. Maximum length of 64.
+     * </p>
      */
     private String original;
 
     /**
      * <p>
-     * Deprecated. This attribute is being deprecated. Instead of providing <code>Product</code>, provide
+     * Deprecated. This attribute isn't included in findings. Instead of providing <code>Product</code>, provide
      * <code>Original</code>.
      * </p>
      * <p>
@@ -168,7 +174,7 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param product
-     *        Deprecated. This attribute is being deprecated. Instead of providing <code>Product</code>, provide
+     *        Deprecated. This attribute isn't included in findings. Instead of providing <code>Product</code>, provide
      *        <code>Original</code>.</p>
      *        <p>
      *        The native severity as defined by the Amazon Web Services service or integrated partner product that
@@ -181,7 +187,7 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Deprecated. This attribute is being deprecated. Instead of providing <code>Product</code>, provide
+     * Deprecated. This attribute isn't included in findings. Instead of providing <code>Product</code>, provide
      * <code>Original</code>.
      * </p>
      * <p>
@@ -189,7 +195,7 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
      * the finding.
      * </p>
      * 
-     * @return Deprecated. This attribute is being deprecated. Instead of providing <code>Product</code>, provide
+     * @return Deprecated. This attribute isn't included in findings. Instead of providing <code>Product</code>, provide
      *         <code>Original</code>.</p>
      *         <p>
      *         The native severity as defined by the Amazon Web Services service or integrated partner product that
@@ -202,7 +208,7 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Deprecated. This attribute is being deprecated. Instead of providing <code>Product</code>, provide
+     * Deprecated. This attribute isn't included in findings. Instead of providing <code>Product</code>, provide
      * <code>Original</code>.
      * </p>
      * <p>
@@ -211,7 +217,7 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param product
-     *        Deprecated. This attribute is being deprecated. Instead of providing <code>Product</code>, provide
+     *        Deprecated. This attribute isn't included in findings. Instead of providing <code>Product</code>, provide
      *        <code>Original</code>.</p>
      *        <p>
      *        The native severity as defined by the Amazon Web Services service or integrated partner product that
@@ -745,8 +751,11 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Deprecated. The normalized severity of a finding. This attribute is being deprecated. Instead of providing
-     * <code>Normalized</code>, provide <code>Label</code>.
+     * Deprecated. The normalized severity of a finding. Instead of providing <code>Normalized</code>, provide
+     * <code>Label</code>.
+     * </p>
+     * <p>
+     * The value of <code>Normalized</code> can be an integer between <code>0</code> and <code>100</code>.
      * </p>
      * <p>
      * If you provide <code>Label</code> and do not provide <code>Normalized</code>, then <code>Normalized</code> is set
@@ -781,8 +790,11 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param normalized
-     *        Deprecated. The normalized severity of a finding. This attribute is being deprecated. Instead of providing
-     *        <code>Normalized</code>, provide <code>Label</code>.</p>
+     *        Deprecated. The normalized severity of a finding. Instead of providing <code>Normalized</code>, provide
+     *        <code>Label</code>.</p>
+     *        <p>
+     *        The value of <code>Normalized</code> can be an integer between <code>0</code> and <code>100</code>.
+     *        </p>
      *        <p>
      *        If you provide <code>Label</code> and do not provide <code>Normalized</code>, then <code>Normalized</code>
      *        is set automatically as follows.
@@ -821,8 +833,11 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Deprecated. The normalized severity of a finding. This attribute is being deprecated. Instead of providing
-     * <code>Normalized</code>, provide <code>Label</code>.
+     * Deprecated. The normalized severity of a finding. Instead of providing <code>Normalized</code>, provide
+     * <code>Label</code>.
+     * </p>
+     * <p>
+     * The value of <code>Normalized</code> can be an integer between <code>0</code> and <code>100</code>.
      * </p>
      * <p>
      * If you provide <code>Label</code> and do not provide <code>Normalized</code>, then <code>Normalized</code> is set
@@ -856,8 +871,11 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return Deprecated. The normalized severity of a finding. This attribute is being deprecated. Instead of
-     *         providing <code>Normalized</code>, provide <code>Label</code>.</p>
+     * @return Deprecated. The normalized severity of a finding. Instead of providing <code>Normalized</code>, provide
+     *         <code>Label</code>.</p>
+     *         <p>
+     *         The value of <code>Normalized</code> can be an integer between <code>0</code> and <code>100</code>.
+     *         </p>
      *         <p>
      *         If you provide <code>Label</code> and do not provide <code>Normalized</code>, then
      *         <code>Normalized</code> is set automatically as follows.
@@ -896,8 +914,11 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Deprecated. The normalized severity of a finding. This attribute is being deprecated. Instead of providing
-     * <code>Normalized</code>, provide <code>Label</code>.
+     * Deprecated. The normalized severity of a finding. Instead of providing <code>Normalized</code>, provide
+     * <code>Label</code>.
+     * </p>
+     * <p>
+     * The value of <code>Normalized</code> can be an integer between <code>0</code> and <code>100</code>.
      * </p>
      * <p>
      * If you provide <code>Label</code> and do not provide <code>Normalized</code>, then <code>Normalized</code> is set
@@ -932,8 +953,11 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param normalized
-     *        Deprecated. The normalized severity of a finding. This attribute is being deprecated. Instead of providing
-     *        <code>Normalized</code>, provide <code>Label</code>.</p>
+     *        Deprecated. The normalized severity of a finding. Instead of providing <code>Normalized</code>, provide
+     *        <code>Label</code>.</p>
+     *        <p>
+     *        The value of <code>Normalized</code> can be an integer between <code>0</code> and <code>100</code>.
+     *        </p>
      *        <p>
      *        If you provide <code>Label</code> and do not provide <code>Normalized</code>, then <code>Normalized</code>
      *        is set automatically as follows.
@@ -976,9 +1000,14 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The native severity from the finding product that generated the finding.
      * </p>
+     * <p>
+     * Length Constraints: Minimum length of 1. Maximum length of 64.
+     * </p>
      * 
      * @param original
-     *        The native severity from the finding product that generated the finding.
+     *        The native severity from the finding product that generated the finding.</p>
+     *        <p>
+     *        Length Constraints: Minimum length of 1. Maximum length of 64.
      */
 
     public void setOriginal(String original) {
@@ -989,8 +1018,13 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The native severity from the finding product that generated the finding.
      * </p>
+     * <p>
+     * Length Constraints: Minimum length of 1. Maximum length of 64.
+     * </p>
      * 
-     * @return The native severity from the finding product that generated the finding.
+     * @return The native severity from the finding product that generated the finding.</p>
+     *         <p>
+     *         Length Constraints: Minimum length of 1. Maximum length of 64.
      */
 
     public String getOriginal() {
@@ -1001,9 +1035,14 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The native severity from the finding product that generated the finding.
      * </p>
+     * <p>
+     * Length Constraints: Minimum length of 1. Maximum length of 64.
+     * </p>
      * 
      * @param original
-     *        The native severity from the finding product that generated the finding.
+     *        The native severity from the finding product that generated the finding.</p>
+     *        <p>
+     *        Length Constraints: Minimum length of 1. Maximum length of 64.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

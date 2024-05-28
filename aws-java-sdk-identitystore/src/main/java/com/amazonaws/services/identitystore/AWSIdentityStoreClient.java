@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.identitystore.AWSIdentityStoreClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.identitystore.model.*;
+
 import com.amazonaws.services.identitystore.model.transform.*;
 
 /**
@@ -51,14 +52,19 @@ import com.amazonaws.services.identitystore.model.transform.*;
  * the service call completes.
  * <p>
  * <p>
- * The Identity Store service used by AWS IAM Identity Center (successor to AWS Single Sign-On) provides a single place
- * to retrieve all of your identities (users and groups). For more information, see the <a
+ * The Identity Store service used by IAM Identity Center provides a single place to retrieve all of your identities
+ * (users and groups). For more information, see the <a
  * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">IAM Identity Center User Guide</a>.
  * </p>
- * 
- * <pre>
- * <code> &lt;note&gt; &lt;p&gt;Although AWS Single Sign-On was renamed, the &lt;code&gt;sso&lt;/code&gt; and &lt;code&gt;identitystore&lt;/code&gt; API namespaces will continue to retain their original name for backward compatibility purposes. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed&quot;&gt;IAM Identity Center rename&lt;/a&gt;.&lt;/p&gt; &lt;/note&gt; &lt;p&gt;This reference guide describes the identity store operations that you can call programatically and includes detailed information on data types and errors.&lt;/p&gt; </code>
- * </pre>
+ * <p>
+ * This reference guide describes the identity store operations that you can call programmatically and includes detailed
+ * information about data types and errors.
+ * </p>
+ * <note>
+ * <p>
+ * IAM Identity Center uses the <code>sso</code> and <code>identitystore</code> API namespaces.
+ * </p>
+ * </note>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -321,7 +327,7 @@ public class AWSIdentityStoreClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Creates a new user within the specified identity store.
+     * Creates a user within the specified identity store.
      * </p>
      * 
      * @param createUserRequest
@@ -647,6 +653,13 @@ public class AWSIdentityStoreClient extends AmazonWebServiceClient implements AW
      * <p>
      * Retrieves the group metadata and attributes from <code>GroupId</code> in an identity store.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param describeGroupRequest
      * @return Result of the DescribeGroup operation returned by the service.
@@ -713,6 +726,13 @@ public class AWSIdentityStoreClient extends AmazonWebServiceClient implements AW
      * <p>
      * Retrieves membership metadata and attributes from <code>MembershipId</code> in an identity store.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param describeGroupMembershipRequest
      * @return Result of the DescribeGroupMembership operation returned by the service.
@@ -781,6 +801,13 @@ public class AWSIdentityStoreClient extends AmazonWebServiceClient implements AW
      * <p>
      * Retrieves the user metadata and attributes from the <code>UserId</code> in an identity store.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param describeUserRequest
      * @return Result of the DescribeUser operation returned by the service.
@@ -847,6 +874,13 @@ public class AWSIdentityStoreClient extends AmazonWebServiceClient implements AW
      * <p>
      * Retrieves <code>GroupId</code> in an identity store.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param getGroupIdRequest
      * @return Result of the GetGroupId operation returned by the service.
@@ -913,6 +947,13 @@ public class AWSIdentityStoreClient extends AmazonWebServiceClient implements AW
      * <p>
      * Retrieves the <code>MembershipId</code> in an identity store.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param getGroupMembershipIdRequest
      * @return Result of the GetGroupMembershipId operation returned by the service.
@@ -979,6 +1020,13 @@ public class AWSIdentityStoreClient extends AmazonWebServiceClient implements AW
      * <p>
      * Retrieves the <code>UserId</code> in an identity store.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param getUserIdRequest
      * @return Result of the GetUserId operation returned by the service.
@@ -1045,6 +1093,13 @@ public class AWSIdentityStoreClient extends AmazonWebServiceClient implements AW
      * <p>
      * Checks the user's membership in all requested groups and returns if the member exists in all queried groups.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param isMemberInGroupsRequest
      * @return Result of the IsMemberInGroups operation returned by the service.
@@ -1112,6 +1167,13 @@ public class AWSIdentityStoreClient extends AmazonWebServiceClient implements AW
      * For the specified group in the specified identity store, returns the list of all <code>GroupMembership</code>
      * objects and returns results in paginated form.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param listGroupMembershipsRequest
      * @return Result of the ListGroupMemberships operation returned by the service.
@@ -1179,6 +1241,13 @@ public class AWSIdentityStoreClient extends AmazonWebServiceClient implements AW
      * For the specified member in the specified identity store, returns the list of all <code>GroupMembership</code>
      * objects and returns results in paginated form.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param listGroupMembershipsForMemberRequest
      * @return Result of the ListGroupMembershipsForMember operation returned by the service.
@@ -1249,6 +1318,13 @@ public class AWSIdentityStoreClient extends AmazonWebServiceClient implements AW
      * Filtering for a <code>Group</code> by the <code>DisplayName</code> attribute is deprecated. Instead, use the
      * <code>GetGroupId</code> API action.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param listGroupsRequest
      * @return Result of the ListGroups operation returned by the service.
@@ -1317,6 +1393,13 @@ public class AWSIdentityStoreClient extends AmazonWebServiceClient implements AW
      * for a <code>User</code> by the <code>UserName</code> attribute is deprecated. Instead, use the
      * <code>GetUserId</code> API action.
      * </p>
+     * <note>
+     * <p>
+     * If you have administrator access to a member account, you can use this API from the member account. Read about <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html">member
+     * accounts</a> in the <i>Organizations User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param listUsersRequest
      * @return Result of the ListUsers operation returned by the service.

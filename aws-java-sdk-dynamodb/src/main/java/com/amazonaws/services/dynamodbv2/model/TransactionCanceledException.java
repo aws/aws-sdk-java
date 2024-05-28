@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,13 @@ import javax.annotation.Generated;
  * <li>
  * <p>
  * There is a user error, such as an invalid data format.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * There is an ongoing <code>TransactWriteItems</code> operation that conflicts with a concurrent
+ * <code>TransactWriteItems</code> request. In this case the <code>TransactWriteItems</code> operation fails with a
+ * <code>TransactionCanceledException</code>.
  * </p>
  * </li>
  * </ul>
@@ -234,8 +241,7 @@ import javax.annotation.Generated;
  * </p>
  * <note>
  * <p>
- * This message is returned when when writes get throttled on an On-Demand GSI as DynamoDB is automatically scaling the
- * GSI.
+ * This message is returned when writes get throttled on an On-Demand GSI as DynamoDB is automatically scaling the GSI.
  * </p>
  * </note></li>
  * </ul>

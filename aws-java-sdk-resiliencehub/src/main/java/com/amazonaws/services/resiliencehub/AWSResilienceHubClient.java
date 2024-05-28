@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.resiliencehub.AWSResilienceHubClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.resiliencehub.model.*;
+
 import com.amazonaws.services.resiliencehub.model.transform.*;
 
 /**
@@ -51,10 +52,10 @@ import com.amazonaws.services.resiliencehub.model.transform.*;
  * until the service call completes.
  * <p>
  * <p>
- * AWS Resilience Hub helps you proactively prepare and protect your Amazon Web Services applications from disruptions.
- * Resilience Hub offers continuous resiliency assessment and validation that integrates into your software development
- * lifecycle. This enables you to uncover resiliency weaknesses, ensure recovery time objective (RTO) and recovery point
- * objective (RPO) targets for your applications are met, and resolve issues before they are released into production.
+ * Resilience Hub helps you proactively prepare and protect your Amazon Web Services applications from disruptions. It
+ * offers continual resiliency assessment and validation that integrates into your software development lifecycle. This
+ * enables you to uncover resiliency weaknesses, ensure recovery time objective (RTO) and recovery point objective (RPO)
+ * targets for your applications are met, and resolve issues before they are released into production.
  * </p>
  */
 @ThreadSafe
@@ -81,26 +82,26 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
                     .withSupportsIon(false)
                     .withContentTypeOverride("application/json")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.resiliencehub.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.resiliencehub.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
                                     com.amazonaws.services.resiliencehub.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.resiliencehub.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.resiliencehub.model.transform.ConflictExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.resiliencehub.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.resiliencehub.model.transform.ValidationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.resiliencehub.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.resiliencehub.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.resiliencehub.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.resiliencehub.model.AWSResilienceHubException.class));
 
     public static AWSResilienceHubClientBuilder builder() {
@@ -151,23 +152,27 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Adds the resource mapping for the draft application version.
+     * Adds the source of resource-maps to the draft version of an application. During assessment, Resilience Hub will
+     * use these resource-maps to resolve the latest physical ID for each resource in the application template. For more
+     * information about different types of resources suported by Resilience Hub and how to add them in your
+     * application, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/how-app-manage.html">Step
+     * 2: How is your application managed?</a> in the Resilience Hub User Guide.
      * </p>
      * 
      * @param addDraftAppVersionResourceMappingsRequest
      * @return Result of the AddDraftAppVersionResourceMappings operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ConflictException
-     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
-     *         previous write did not have time to propagate to the host serving the current request. A retry (with
-     *         appropriate backoff logic) is the recommended response to this exception.
+     *         This exception occurs when a conflict with a previous successful write is detected. This generally occurs
+     *         when the previous write did not have time to propagate to the host serving the current request. A retry
+     *         (with appropriate backoff logic) is the recommended response to this exception.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -224,13 +229,85 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Creates a Resilience Hub application. A Resilience Hub application is a collection of Amazon Web Services
+     * Enables you to include or exclude one or more operational recommendations.
+     * </p>
+     * 
+     * @param batchUpdateRecommendationStatusRequest
+     * @return Result of the BatchUpdateRecommendationStatus operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
+     * @throws ResourceNotFoundException
+     *         This exception occurs when the specified resource could not be found.
+     * @throws ThrottlingException
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
+     * @throws ValidationException
+     *         This exception occurs when a request is not valid.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions.
+     * @sample AWSResilienceHub.BatchUpdateRecommendationStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/BatchUpdateRecommendationStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchUpdateRecommendationStatusResult batchUpdateRecommendationStatus(BatchUpdateRecommendationStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchUpdateRecommendationStatus(request);
+    }
+
+    @SdkInternalApi
+    final BatchUpdateRecommendationStatusResult executeBatchUpdateRecommendationStatus(
+            BatchUpdateRecommendationStatusRequest batchUpdateRecommendationStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchUpdateRecommendationStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchUpdateRecommendationStatusRequest> request = null;
+        Response<BatchUpdateRecommendationStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchUpdateRecommendationStatusRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(batchUpdateRecommendationStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "resiliencehub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchUpdateRecommendationStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchUpdateRecommendationStatusResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new BatchUpdateRecommendationStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an Resilience Hub application. An Resilience Hub application is a collection of Amazon Web Services
      * resources structured to prevent and recover Amazon Web Services application disruptions. To describe a Resilience
-     * Hub application, you provide an application name, resources from one or more–up to five–CloudFormation stacks,
-     * and an appropriate resiliency policy.
+     * Hub application, you provide an application name, resources from one or more CloudFormation stacks, Resource
+     * Groups, Terraform state files, AppRegistry applications, and an appropriate resiliency policy. In addition, you
+     * can also add resources that are located on Amazon Elastic Kubernetes Service (Amazon EKS) clusters as optional
+     * resources. For more information about the number of resources supported per application, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/resiliencehub.html#limits_resiliencehub">Service quotas</a>.
      * </p>
      * <p>
-     * After you create a Resilience Hub application, you publish it so that you can run a resiliency assessment on it.
+     * After you create an Resilience Hub application, you publish it so that you can run a resiliency assessment on it.
      * You can then use recommendations from the assessment to improve resiliency by running another assessment,
      * comparing results, and then iterating the process until you achieve your goals for recovery time objective (RTO)
      * and recovery point objective (RPO).
@@ -239,20 +316,20 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
      * @param createAppRequest
      * @return Result of the CreateApp operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ConflictException
-     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
-     *         previous write did not have time to propagate to the host serving the current request. A retry (with
-     *         appropriate backoff logic) is the recommended response to this exception.
+     *         This exception occurs when a conflict with a previous successful write is detected. This generally occurs
+     *         when the previous write did not have time to propagate to the host serving the current request. A retry
+     *         (with appropriate backoff logic) is the recommended response to this exception.
      * @throws ServiceQuotaExceededException
-     *         You have exceeded your service quota. To perform the requested action, remove some of the relevant
-     *         resources, or use Service Quotas to request a service quota increase.
+     *         This exception occurs when you have exceeded your service quota. To perform the requested action, remove
+     *         some of the relevant resources, or use Service Quotas to request a service quota increase.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -306,23 +383,204 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Creates a new recommendation template.
+     * Creates a new Application Component in the Resilience Hub application.
+     * </p>
+     * <note>
+     * <p>
+     * This API updates the Resilience Hub application draft version. To use this Application Component for running
+     * assessments, you must publish the Resilience Hub application using the <code>PublishAppVersion</code> API.
+     * </p>
+     * </note>
+     * 
+     * @param createAppVersionAppComponentRequest
+     * @return Result of the CreateAppVersionAppComponent operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
+     * @throws ResourceNotFoundException
+     *         This exception occurs when the specified resource could not be found.
+     * @throws ConflictException
+     *         This exception occurs when a conflict with a previous successful write is detected. This generally occurs
+     *         when the previous write did not have time to propagate to the host serving the current request. A retry
+     *         (with appropriate backoff logic) is the recommended response to this exception.
+     * @throws ServiceQuotaExceededException
+     *         This exception occurs when you have exceeded your service quota. To perform the requested action, remove
+     *         some of the relevant resources, or use Service Quotas to request a service quota increase.
+     * @throws ThrottlingException
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
+     * @throws ValidationException
+     *         This exception occurs when a request is not valid.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions.
+     * @sample AWSResilienceHub.CreateAppVersionAppComponent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/CreateAppVersionAppComponent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateAppVersionAppComponentResult createAppVersionAppComponent(CreateAppVersionAppComponentRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAppVersionAppComponent(request);
+    }
+
+    @SdkInternalApi
+    final CreateAppVersionAppComponentResult executeCreateAppVersionAppComponent(CreateAppVersionAppComponentRequest createAppVersionAppComponentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createAppVersionAppComponentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateAppVersionAppComponentRequest> request = null;
+        Response<CreateAppVersionAppComponentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAppVersionAppComponentRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createAppVersionAppComponentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "resiliencehub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAppVersionAppComponent");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAppVersionAppComponentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateAppVersionAppComponentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds a resource to the Resilience Hub application and assigns it to the specified Application Components. If you
+     * specify a new Application Component, Resilience Hub will automatically create the Application Component.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * This action has no effect outside Resilience Hub.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This API updates the Resilience Hub application draft version. To use this resource for running resiliency
+     * assessments, you must publish the Resilience Hub application using the <code>PublishAppVersion</code> API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To update application version with new <code>physicalResourceID</code>, you must call
+     * <code>ResolveAppVersionResources</code> API.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param createAppVersionResourceRequest
+     * @return Result of the CreateAppVersionResource operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
+     * @throws ResourceNotFoundException
+     *         This exception occurs when the specified resource could not be found.
+     * @throws ConflictException
+     *         This exception occurs when a conflict with a previous successful write is detected. This generally occurs
+     *         when the previous write did not have time to propagate to the host serving the current request. A retry
+     *         (with appropriate backoff logic) is the recommended response to this exception.
+     * @throws ServiceQuotaExceededException
+     *         This exception occurs when you have exceeded your service quota. To perform the requested action, remove
+     *         some of the relevant resources, or use Service Quotas to request a service quota increase.
+     * @throws ThrottlingException
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
+     * @throws ValidationException
+     *         This exception occurs when a request is not valid.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions.
+     * @sample AWSResilienceHub.CreateAppVersionResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/CreateAppVersionResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateAppVersionResourceResult createAppVersionResource(CreateAppVersionResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAppVersionResource(request);
+    }
+
+    @SdkInternalApi
+    final CreateAppVersionResourceResult executeCreateAppVersionResource(CreateAppVersionResourceRequest createAppVersionResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createAppVersionResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateAppVersionResourceRequest> request = null;
+        Response<CreateAppVersionResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAppVersionResourceRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createAppVersionResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "resiliencehub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAppVersionResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAppVersionResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateAppVersionResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new recommendation template for the Resilience Hub application.
      * </p>
      * 
      * @param createRecommendationTemplateRequest
      * @return Result of the CreateRecommendationTemplate operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ConflictException
-     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
-     *         previous write did not have time to propagate to the host serving the current request. A retry (with
-     *         appropriate backoff logic) is the recommended response to this exception.
+     *         This exception occurs when a conflict with a previous successful write is detected. This generally occurs
+     *         when the previous write did not have time to propagate to the host serving the current request. A retry
+     *         (with appropriate backoff logic) is the recommended response to this exception.
+     * @throws ServiceQuotaExceededException
+     *         This exception occurs when you have exceeded your service quota. To perform the requested action, remove
+     *         some of the relevant resources, or use Service Quotas to request a service quota increase.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -380,22 +638,31 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
      * <p>
      * Creates a resiliency policy for an application.
      * </p>
+     * <note>
+     * <p>
+     * Resilience Hub allows you to provide a value of zero for <code>rtoInSecs</code> and <code>rpoInSecs</code> of
+     * your resiliency policy. But, while assessing your application, the lowest possible assessment result is near
+     * zero. Hence, if you provide value zero for <code>rtoInSecs</code> and <code>rpoInSecs</code>, the estimated
+     * workload RTO and estimated workload RPO result will be near zero and the <b>Compliance status</b> for your
+     * application will be set to <b>Policy breached</b>.
+     * </p>
+     * </note>
      * 
      * @param createResiliencyPolicyRequest
      * @return Result of the CreateResiliencyPolicy operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ConflictException
-     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
-     *         previous write did not have time to propagate to the host serving the current request. A retry (with
-     *         appropriate backoff logic) is the recommended response to this exception.
+     *         This exception occurs when a conflict with a previous successful write is detected. This generally occurs
+     *         when the previous write did not have time to propagate to the host serving the current request. A retry
+     *         (with appropriate backoff logic) is the recommended response to this exception.
      * @throws ServiceQuotaExceededException
-     *         You have exceeded your service quota. To perform the requested action, remove some of the relevant
-     *         resources, or use Service Quotas to request a service quota increase.
+     *         This exception occurs when you have exceeded your service quota. To perform the requested action, remove
+     *         some of the relevant resources, or use Service Quotas to request a service quota increase.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -450,23 +717,23 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Deletes an AWS Resilience Hub application. This is a destructive action that can't be undone.
+     * Deletes an Resilience Hub application. This is a destructive action that can't be undone.
      * </p>
      * 
      * @param deleteAppRequest
      * @return Result of the DeleteApp operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ConflictException
-     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
-     *         previous write did not have time to propagate to the host serving the current request. A retry (with
-     *         appropriate backoff logic) is the recommended response to this exception.
+     *         This exception occurs when a conflict with a previous successful write is detected. This generally occurs
+     *         when the previous write did not have time to propagate to the host serving the current request. A retry
+     *         (with appropriate backoff logic) is the recommended response to this exception.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @sample AWSResilienceHub.DeleteApp
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteApp" target="_top">AWS API
      *      Documentation</a>
@@ -517,23 +784,23 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Deletes an AWS Resilience Hub application assessment. This is a destructive action that can't be undone.
+     * Deletes an Resilience Hub application assessment. This is a destructive action that can't be undone.
      * </p>
      * 
      * @param deleteAppAssessmentRequest
      * @return Result of the DeleteAppAssessment operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ConflictException
-     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
-     *         previous write did not have time to propagate to the host serving the current request. A retry (with
-     *         appropriate backoff logic) is the recommended response to this exception.
+     *         This exception occurs when a conflict with a previous successful write is detected. This generally occurs
+     *         when the previous write did not have time to propagate to the host serving the current request. A retry
+     *         (with appropriate backoff logic) is the recommended response to this exception.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -587,19 +854,269 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Deletes the input source and all of its imported resources from the Resilience Hub application.
+     * </p>
+     * 
+     * @param deleteAppInputSourceRequest
+     * @return Result of the DeleteAppInputSource operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
+     * @throws ResourceNotFoundException
+     *         This exception occurs when the specified resource could not be found.
+     * @throws ConflictException
+     *         This exception occurs when a conflict with a previous successful write is detected. This generally occurs
+     *         when the previous write did not have time to propagate to the host serving the current request. A retry
+     *         (with appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
+     * @throws ValidationException
+     *         This exception occurs when a request is not valid.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions.
+     * @sample AWSResilienceHub.DeleteAppInputSource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteAppInputSource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteAppInputSourceResult deleteAppInputSource(DeleteAppInputSourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAppInputSource(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAppInputSourceResult executeDeleteAppInputSource(DeleteAppInputSourceRequest deleteAppInputSourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAppInputSourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAppInputSourceRequest> request = null;
+        Response<DeleteAppInputSourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAppInputSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAppInputSourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "resiliencehub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAppInputSource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAppInputSourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteAppInputSourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an Application Component from the Resilience Hub application.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * This API updates the Resilience Hub application draft version. To use this Application Component for running
+     * assessments, you must publish the Resilience Hub application using the <code>PublishAppVersion</code> API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You will not be able to delete an Application Component if it has resources associated with it.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param deleteAppVersionAppComponentRequest
+     * @return Result of the DeleteAppVersionAppComponent operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
+     * @throws ResourceNotFoundException
+     *         This exception occurs when the specified resource could not be found.
+     * @throws ConflictException
+     *         This exception occurs when a conflict with a previous successful write is detected. This generally occurs
+     *         when the previous write did not have time to propagate to the host serving the current request. A retry
+     *         (with appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
+     * @throws ValidationException
+     *         This exception occurs when a request is not valid.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions.
+     * @sample AWSResilienceHub.DeleteAppVersionAppComponent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteAppVersionAppComponent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteAppVersionAppComponentResult deleteAppVersionAppComponent(DeleteAppVersionAppComponentRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAppVersionAppComponent(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAppVersionAppComponentResult executeDeleteAppVersionAppComponent(DeleteAppVersionAppComponentRequest deleteAppVersionAppComponentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAppVersionAppComponentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAppVersionAppComponentRequest> request = null;
+        Response<DeleteAppVersionAppComponentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAppVersionAppComponentRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteAppVersionAppComponentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "resiliencehub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAppVersionAppComponent");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAppVersionAppComponentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteAppVersionAppComponentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a resource from the Resilience Hub application.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * You can only delete a manually added resource. To exclude non-manually added resources, use the
+     * <code>UpdateAppVersionResource</code> API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This action has no effect outside Resilience Hub.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This API updates the Resilience Hub application draft version. To use this resource for running resiliency
+     * assessments, you must publish the Resilience Hub application using the <code>PublishAppVersion</code> API.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param deleteAppVersionResourceRequest
+     * @return Result of the DeleteAppVersionResource operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
+     * @throws ResourceNotFoundException
+     *         This exception occurs when the specified resource could not be found.
+     * @throws ConflictException
+     *         This exception occurs when a conflict with a previous successful write is detected. This generally occurs
+     *         when the previous write did not have time to propagate to the host serving the current request. A retry
+     *         (with appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
+     * @throws ValidationException
+     *         This exception occurs when a request is not valid.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions.
+     * @sample AWSResilienceHub.DeleteAppVersionResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteAppVersionResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteAppVersionResourceResult deleteAppVersionResource(DeleteAppVersionResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAppVersionResource(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAppVersionResourceResult executeDeleteAppVersionResource(DeleteAppVersionResourceRequest deleteAppVersionResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAppVersionResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAppVersionResourceRequest> request = null;
+        Response<DeleteAppVersionResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAppVersionResourceRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteAppVersionResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "resiliencehub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAppVersionResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAppVersionResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteAppVersionResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a recommendation template. This is a destructive action that can't be undone.
      * </p>
      * 
      * @param deleteRecommendationTemplateRequest
      * @return Result of the DeleteRecommendationTemplate operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -661,17 +1178,17 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
      * @param deleteResiliencyPolicyRequest
      * @return Result of the DeleteResiliencyPolicy operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ConflictException
-     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
-     *         previous write did not have time to propagate to the host serving the current request. A retry (with
-     *         appropriate backoff logic) is the recommended response to this exception.
+     *         This exception occurs when a conflict with a previous successful write is detected. This generally occurs
+     *         when the previous write did not have time to propagate to the host serving the current request. A retry
+     *         (with appropriate backoff logic) is the recommended response to this exception.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -726,19 +1243,19 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Describes an AWS Resilience Hub application.
+     * Describes an Resilience Hub application.
      * </p>
      * 
      * @param describeAppRequest
      * @return Result of the DescribeApp operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -792,19 +1309,19 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Describes an assessment for an AWS Resilience Hub application.
+     * Describes an assessment for an Resilience Hub application.
      * </p>
      * 
      * @param describeAppAssessmentRequest
      * @return Result of the DescribeAppAssessment operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -859,6 +1376,239 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Describes the Resilience Hub application version.
+     * </p>
+     * 
+     * @param describeAppVersionRequest
+     * @return Result of the DescribeAppVersion operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
+     * @throws ResourceNotFoundException
+     *         This exception occurs when the specified resource could not be found.
+     * @throws ThrottlingException
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
+     * @throws ValidationException
+     *         This exception occurs when a request is not valid.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions.
+     * @sample AWSResilienceHub.DescribeAppVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeAppVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeAppVersionResult describeAppVersion(DescribeAppVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAppVersion(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAppVersionResult executeDescribeAppVersion(DescribeAppVersionRequest describeAppVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAppVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAppVersionRequest> request = null;
+        Response<DescribeAppVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAppVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAppVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "resiliencehub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAppVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAppVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeAppVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes an Application Component in the Resilience Hub application.
+     * </p>
+     * 
+     * @param describeAppVersionAppComponentRequest
+     * @return Result of the DescribeAppVersionAppComponent operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
+     * @throws ResourceNotFoundException
+     *         This exception occurs when the specified resource could not be found.
+     * @throws ConflictException
+     *         This exception occurs when a conflict with a previous successful write is detected. This generally occurs
+     *         when the previous write did not have time to propagate to the host serving the current request. A retry
+     *         (with appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
+     * @throws ValidationException
+     *         This exception occurs when a request is not valid.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions.
+     * @sample AWSResilienceHub.DescribeAppVersionAppComponent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeAppVersionAppComponent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeAppVersionAppComponentResult describeAppVersionAppComponent(DescribeAppVersionAppComponentRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAppVersionAppComponent(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAppVersionAppComponentResult executeDescribeAppVersionAppComponent(DescribeAppVersionAppComponentRequest describeAppVersionAppComponentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAppVersionAppComponentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAppVersionAppComponentRequest> request = null;
+        Response<DescribeAppVersionAppComponentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAppVersionAppComponentRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAppVersionAppComponentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "resiliencehub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAppVersionAppComponent");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAppVersionAppComponentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeAppVersionAppComponentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes a resource of the Resilience Hub application.
+     * </p>
+     * <note>
+     * <p>
+     * This API accepts only one of the following parameters to descibe the resource:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>resourceName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>logicalResourceId</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>physicalResourceId</code> (Along with <code>physicalResourceId</code>, you can also provide
+     * <code>awsAccountId</code>, and <code>awsRegion</code>)
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param describeAppVersionResourceRequest
+     * @return Result of the DescribeAppVersionResource operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
+     * @throws ResourceNotFoundException
+     *         This exception occurs when the specified resource could not be found.
+     * @throws ConflictException
+     *         This exception occurs when a conflict with a previous successful write is detected. This generally occurs
+     *         when the previous write did not have time to propagate to the host serving the current request. A retry
+     *         (with appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
+     * @throws ValidationException
+     *         This exception occurs when a request is not valid.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions.
+     * @sample AWSResilienceHub.DescribeAppVersionResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeAppVersionResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeAppVersionResourceResult describeAppVersionResource(DescribeAppVersionResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAppVersionResource(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAppVersionResourceResult executeDescribeAppVersionResource(DescribeAppVersionResourceRequest describeAppVersionResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAppVersionResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAppVersionResourceRequest> request = null;
+        Response<DescribeAppVersionResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAppVersionResourceRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAppVersionResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "resiliencehub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAppVersionResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAppVersionResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeAppVersionResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns the resolution status for the specified resolution identifier for an application version. If
      * <code>resolutionId</code> is not specified, the current resolution status is returned.
      * </p>
@@ -866,13 +1616,13 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
      * @param describeAppVersionResourcesResolutionStatusRequest
      * @return Result of the DescribeAppVersionResourcesResolutionStatus operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -931,19 +1681,19 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Describes details about an AWS Resilience Hub
+     * Describes details about an Resilience Hub application.
      * </p>
      * 
      * @param describeAppVersionTemplateRequest
      * @return Result of the DescribeAppVersionTemplate operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -1001,17 +1751,24 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
      * <p>
      * Describes the status of importing resources to an application version.
      * </p>
+     * <note>
+     * <p>
+     * If you get a 404 error with <code>ResourceImportStatusNotFoundAppMetadataException</code>, you must call
+     * <code>importResourcesToDraftAppVersion</code> after creating the application and before calling
+     * <code>describeDraftAppVersionResourcesImportStatus</code> to obtain the status.
+     * </p>
+     * </note>
      * 
      * @param describeDraftAppVersionResourcesImportStatusRequest
      * @return Result of the DescribeDraftAppVersionResourcesImportStatus operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -1070,21 +1827,20 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Describes a specified resiliency policy for an AWS Resilience Hub application. The returned policy object
-     * includes creation time, data location constraints, the Amazon Resource Name (ARN) for the policy, tags, tier, and
-     * more.
+     * Describes a specified resiliency policy for an Resilience Hub application. The returned policy object includes
+     * creation time, data location constraints, the Amazon Resource Name (ARN) for the policy, tags, tier, and more.
      * </p>
      * 
      * @param describeResiliencyPolicyRequest
      * @return Result of the DescribeResiliencyPolicy operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -1140,24 +1896,29 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Imports resources from sources such as a CloudFormation stack, resource-groups, or application registry app to a
-     * draft application version.
+     * Imports resources to Resilience Hub application draft version from different input sources. For more information
+     * about the input sources supported by Resilience Hub, see <a
+     * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/discover-structure.html">Discover the structure
+     * and describe your Resilience Hub application</a>.
      * </p>
      * 
      * @param importResourcesToDraftAppVersionRequest
      * @return Result of the ImportResourcesToDraftAppVersion operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ConflictException
-     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
-     *         previous write did not have time to propagate to the host serving the current request. A retry (with
-     *         appropriate backoff logic) is the recommended response to this exception.
+     *         This exception occurs when a conflict with a previous successful write is detected. This generally occurs
+     *         when the previous write did not have time to propagate to the host serving the current request. A retry
+     *         (with appropriate backoff logic) is the recommended response to this exception.
+     * @throws ServiceQuotaExceededException
+     *         This exception occurs when you have exceeded your service quota. To perform the requested action, remove
+     *         some of the relevant resources, or use Service Quotas to request a service quota increase.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -1214,19 +1975,19 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Lists the alarm recommendations for a AWS Resilience Hub application.
+     * Lists the alarm recommendations for an Resilience Hub application.
      * </p>
      * 
      * @param listAlarmRecommendationsRequest
      * @return Result of the ListAlarmRecommendations operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -1282,20 +2043,154 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Lists the assessments for an AWS Resilience Hub application. You can use request parameters to refine the results
-     * for the response object.
+     * List of compliance drifts that were detected while running an assessment.
+     * </p>
+     * 
+     * @param listAppAssessmentComplianceDriftsRequest
+     * @return Result of the ListAppAssessmentComplianceDrifts operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
+     * @throws ThrottlingException
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
+     * @throws ValidationException
+     *         This exception occurs when a request is not valid.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions.
+     * @sample AWSResilienceHub.ListAppAssessmentComplianceDrifts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppAssessmentComplianceDrifts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListAppAssessmentComplianceDriftsResult listAppAssessmentComplianceDrifts(ListAppAssessmentComplianceDriftsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAppAssessmentComplianceDrifts(request);
+    }
+
+    @SdkInternalApi
+    final ListAppAssessmentComplianceDriftsResult executeListAppAssessmentComplianceDrifts(
+            ListAppAssessmentComplianceDriftsRequest listAppAssessmentComplianceDriftsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAppAssessmentComplianceDriftsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAppAssessmentComplianceDriftsRequest> request = null;
+        Response<ListAppAssessmentComplianceDriftsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAppAssessmentComplianceDriftsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listAppAssessmentComplianceDriftsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "resiliencehub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAppAssessmentComplianceDrifts");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAppAssessmentComplianceDriftsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListAppAssessmentComplianceDriftsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Indicates the list of resource drifts that were detected while running an assessment.
+     * </p>
+     * 
+     * @param listAppAssessmentResourceDriftsRequest
+     * @return Result of the ListAppAssessmentResourceDrifts operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
+     * @throws ThrottlingException
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
+     * @throws ValidationException
+     *         This exception occurs when a request is not valid.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions.
+     * @sample AWSResilienceHub.ListAppAssessmentResourceDrifts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppAssessmentResourceDrifts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListAppAssessmentResourceDriftsResult listAppAssessmentResourceDrifts(ListAppAssessmentResourceDriftsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAppAssessmentResourceDrifts(request);
+    }
+
+    @SdkInternalApi
+    final ListAppAssessmentResourceDriftsResult executeListAppAssessmentResourceDrifts(
+            ListAppAssessmentResourceDriftsRequest listAppAssessmentResourceDriftsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAppAssessmentResourceDriftsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAppAssessmentResourceDriftsRequest> request = null;
+        Response<ListAppAssessmentResourceDriftsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAppAssessmentResourceDriftsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listAppAssessmentResourceDriftsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "resiliencehub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAppAssessmentResourceDrifts");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAppAssessmentResourceDriftsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListAppAssessmentResourceDriftsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the assessments for an Resilience Hub application. You can use request parameters to refine the results for
+     * the response object.
      * </p>
      * 
      * @param listAppAssessmentsRequest
      * @return Result of the ListAppAssessments operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -1349,19 +2244,19 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Lists the compliances for an AWS Resilience Hub component.
+     * Lists the compliances for an Resilience Hub Application Component.
      * </p>
      * 
      * @param listAppComponentCompliancesRequest
      * @return Result of the ListAppComponentCompliances operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -1417,19 +2312,19 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Lists the recommendations for an AWS Resilience Hub component.
+     * Lists the recommendations for an Resilience Hub Application Component.
      * </p>
      * 
      * @param listAppComponentRecommendationsRequest
      * @return Result of the ListAppComponentRecommendations operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -1486,6 +2381,147 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Lists all the input sources of the Resilience Hub application. For more information about the input sources
+     * supported by Resilience Hub, see <a
+     * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/discover-structure.html">Discover the structure
+     * and describe your Resilience Hub application</a>.
+     * </p>
+     * 
+     * @param listAppInputSourcesRequest
+     * @return Result of the ListAppInputSources operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
+     * @throws ResourceNotFoundException
+     *         This exception occurs when the specified resource could not be found.
+     * @throws ThrottlingException
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
+     * @throws ValidationException
+     *         This exception occurs when a request is not valid.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions.
+     * @sample AWSResilienceHub.ListAppInputSources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppInputSources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListAppInputSourcesResult listAppInputSources(ListAppInputSourcesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAppInputSources(request);
+    }
+
+    @SdkInternalApi
+    final ListAppInputSourcesResult executeListAppInputSources(ListAppInputSourcesRequest listAppInputSourcesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAppInputSourcesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAppInputSourcesRequest> request = null;
+        Response<ListAppInputSourcesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAppInputSourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAppInputSourcesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "resiliencehub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAppInputSources");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAppInputSourcesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAppInputSourcesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all the Application Components in the Resilience Hub application.
+     * </p>
+     * 
+     * @param listAppVersionAppComponentsRequest
+     * @return Result of the ListAppVersionAppComponents operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
+     * @throws ResourceNotFoundException
+     *         This exception occurs when the specified resource could not be found.
+     * @throws ConflictException
+     *         This exception occurs when a conflict with a previous successful write is detected. This generally occurs
+     *         when the previous write did not have time to propagate to the host serving the current request. A retry
+     *         (with appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
+     * @throws ValidationException
+     *         This exception occurs when a request is not valid.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions.
+     * @sample AWSResilienceHub.ListAppVersionAppComponents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppVersionAppComponents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListAppVersionAppComponentsResult listAppVersionAppComponents(ListAppVersionAppComponentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAppVersionAppComponents(request);
+    }
+
+    @SdkInternalApi
+    final ListAppVersionAppComponentsResult executeListAppVersionAppComponents(ListAppVersionAppComponentsRequest listAppVersionAppComponentsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAppVersionAppComponentsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAppVersionAppComponentsRequest> request = null;
+        Response<ListAppVersionAppComponentsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAppVersionAppComponentsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listAppVersionAppComponentsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "resiliencehub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAppVersionAppComponents");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAppVersionAppComponentsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListAppVersionAppComponentsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists how the resources in an application version are mapped/sourced from. Mappings can be physical resource
      * identifiers, CloudFormation stacks, resource-groups, or an application registry app.
      * </p>
@@ -1493,13 +2529,13 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
      * @param listAppVersionResourceMappingsRequest
      * @return Result of the ListAppVersionResourceMappings operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -1555,23 +2591,23 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Lists all the resources in an application version.
+     * Lists all the resources in an Resilience Hub application.
      * </p>
      * 
      * @param listAppVersionResourcesRequest
      * @return Result of the ListAppVersionResources operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ConflictException
-     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
-     *         previous write did not have time to propagate to the host serving the current request. A retry (with
-     *         appropriate backoff logic) is the recommended response to this exception.
+     *         This exception occurs when a conflict with a previous successful write is detected. This generally occurs
+     *         when the previous write did not have time to propagate to the host serving the current request. A retry
+     *         (with appropriate backoff logic) is the recommended response to this exception.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -1633,11 +2669,11 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
      * @param listAppVersionsRequest
      * @return Result of the ListAppVersions operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -1693,15 +2729,24 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
      * <p>
      * Lists your Resilience Hub applications.
      * </p>
+     * <note>
+     * <p>
+     * You can filter applications using only one filter at a time or without using any filter. If you try to filter
+     * applications using multiple filters, you will get the following error:
+     * </p>
+     * <p>
+     * <code>An error occurred (ValidationException) when calling the ListApps operation: Only one filter is supported for this operation.</code>
+     * </p>
+     * </note>
      * 
      * @param listAppsRequest
      * @return Result of the ListApps operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -1761,11 +2806,11 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
      * @param listRecommendationTemplatesRequest
      * @return Result of the ListRecommendationTemplates operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -1827,13 +2872,13 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
      * @param listResiliencyPoliciesRequest
      * @return Result of the ListResiliencyPolicies operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -1894,17 +2939,17 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
      * @param listSopRecommendationsRequest
      * @return Result of the ListSopRecommendations operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ConflictException
-     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
-     *         previous write did not have time to propagate to the host serving the current request. A retry (with
-     *         appropriate backoff logic) is the recommended response to this exception.
+     *         This exception occurs when a conflict with a previous successful write is detected. This generally occurs
+     *         when the previous write did not have time to propagate to the host serving the current request. A retry
+     *         (with appropriate backoff logic) is the recommended response to this exception.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -1965,13 +3010,13 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
      * @param listSuggestedResiliencyPoliciesRequest
      * @return Result of the ListSuggestedResiliencyPolicies operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -2034,13 +3079,13 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -2100,17 +3145,17 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
      * @param listTestRecommendationsRequest
      * @return Result of the ListTestRecommendations operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ConflictException
-     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
-     *         previous write did not have time to propagate to the host serving the current request. A retry (with
-     *         appropriate backoff logic) is the recommended response to this exception.
+     *         This exception occurs when a conflict with a previous successful write is detected. This generally occurs
+     *         when the previous write did not have time to propagate to the host serving the current request. A retry
+     *         (with appropriate backoff logic) is the recommended response to this exception.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -2166,24 +3211,24 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Lists the resources that are not currently supported in AWS Resilience Hub. An unsupported resource is a resource
+     * Lists the resources that are not currently supported in Resilience Hub. An unsupported resource is a resource
      * that exists in the object that was used to create an app, but is not supported by Resilience Hub.
      * </p>
      * 
      * @param listUnsupportedAppVersionResourcesRequest
      * @return Result of the ListUnsupportedAppVersionResources operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ConflictException
-     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
-     *         previous write did not have time to propagate to the host serving the current request. A retry (with
-     *         appropriate backoff logic) is the recommended response to this exception.
+     *         This exception occurs when a conflict with a previous successful write is detected. This generally occurs
+     *         when the previous write did not have time to propagate to the host serving the current request. A retry
+     *         (with appropriate backoff logic) is the recommended response to this exception.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -2246,17 +3291,17 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
      * @param publishAppVersionRequest
      * @return Result of the PublishAppVersion operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ConflictException
-     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
-     *         previous write did not have time to propagate to the host serving the current request. A retry (with
-     *         appropriate backoff logic) is the recommended response to this exception.
+     *         This exception occurs when a conflict with a previous successful write is detected. This generally occurs
+     *         when the previous write did not have time to propagate to the host serving the current request. A retry
+     *         (with appropriate backoff logic) is the recommended response to this exception.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -2310,23 +3355,23 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Adds or updates the app template for a draft version of a Resilience Hub app.
+     * Adds or updates the app template for an Resilience Hub application draft version.
      * </p>
      * 
      * @param putDraftAppVersionTemplateRequest
      * @return Result of the PutDraftAppVersionTemplate operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ConflictException
-     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
-     *         previous write did not have time to propagate to the host serving the current request. A retry (with
-     *         appropriate backoff logic) is the recommended response to this exception.
+     *         This exception occurs when a conflict with a previous successful write is detected. This generally occurs
+     *         when the previous write did not have time to propagate to the host serving the current request. A retry
+     *         (with appropriate backoff logic) is the recommended response to this exception.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -2388,17 +3433,17 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
      * @param removeDraftAppVersionResourceMappingsRequest
      * @return Result of the RemoveDraftAppVersionResourceMappings operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ConflictException
-     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
-     *         previous write did not have time to propagate to the host serving the current request. A retry (with
-     *         appropriate backoff logic) is the recommended response to this exception.
+     *         This exception occurs when a conflict with a previous successful write is detected. This generally occurs
+     *         when the previous write did not have time to propagate to the host serving the current request. A retry
+     *         (with appropriate backoff logic) is the recommended response to this exception.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -2462,17 +3507,17 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
      * @param resolveAppVersionResourcesRequest
      * @return Result of the ResolveAppVersionResources operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ConflictException
-     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
-     *         previous write did not have time to propagate to the host serving the current request. A retry (with
-     *         appropriate backoff logic) is the recommended response to this exception.
+     *         This exception occurs when a conflict with a previous successful write is detected. This generally occurs
+     *         when the previous write did not have time to propagate to the host serving the current request. A retry
+     *         (with appropriate backoff logic) is the recommended response to this exception.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -2534,20 +3579,20 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
      * @param startAppAssessmentRequest
      * @return Result of the StartAppAssessment operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ConflictException
-     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
-     *         previous write did not have time to propagate to the host serving the current request. A retry (with
-     *         appropriate backoff logic) is the recommended response to this exception.
+     *         This exception occurs when a conflict with a previous successful write is detected. This generally occurs
+     *         when the previous write did not have time to propagate to the host serving the current request. A retry
+     *         (with appropriate backoff logic) is the recommended response to this exception.
      * @throws ServiceQuotaExceededException
-     *         You have exceeded your service quota. To perform the requested action, remove some of the relevant
-     *         resources, or use Service Quotas to request a service quota increase.
+     *         This exception occurs when you have exceeded your service quota. To perform the requested action, remove
+     *         some of the relevant resources, or use Service Quotas to request a service quota increase.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -2607,13 +3652,13 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -2673,13 +3718,13 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -2739,17 +3784,17 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
      * @param updateAppRequest
      * @return Result of the UpdateApp operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ConflictException
-     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
-     *         previous write did not have time to propagate to the host serving the current request. A retry (with
-     *         appropriate backoff logic) is the recommended response to this exception.
+     *         This exception occurs when a conflict with a previous successful write is detected. This generally occurs
+     *         when the previous write did not have time to propagate to the host serving the current request. A retry
+     *         (with appropriate backoff logic) is the recommended response to this exception.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.
@@ -2803,23 +3848,282 @@ public class AWSResilienceHubClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Updates the Resilience Hub application version.
+     * </p>
+     * <note>
+     * <p>
+     * This API updates the Resilience Hub application draft version. To use this information for running resiliency
+     * assessments, you must publish the Resilience Hub application using the <code>PublishAppVersion</code> API.
+     * </p>
+     * </note>
+     * 
+     * @param updateAppVersionRequest
+     * @return Result of the UpdateAppVersion operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
+     * @throws ResourceNotFoundException
+     *         This exception occurs when the specified resource could not be found.
+     * @throws ConflictException
+     *         This exception occurs when a conflict with a previous successful write is detected. This generally occurs
+     *         when the previous write did not have time to propagate to the host serving the current request. A retry
+     *         (with appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
+     * @throws ValidationException
+     *         This exception occurs when a request is not valid.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions.
+     * @sample AWSResilienceHub.UpdateAppVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/UpdateAppVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateAppVersionResult updateAppVersion(UpdateAppVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAppVersion(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAppVersionResult executeUpdateAppVersion(UpdateAppVersionRequest updateAppVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAppVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAppVersionRequest> request = null;
+        Response<UpdateAppVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAppVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAppVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "resiliencehub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAppVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAppVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateAppVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an existing Application Component in the Resilience Hub application.
+     * </p>
+     * <note>
+     * <p>
+     * This API updates the Resilience Hub application draft version. To use this Application Component for running
+     * assessments, you must publish the Resilience Hub application using the <code>PublishAppVersion</code> API.
+     * </p>
+     * </note>
+     * 
+     * @param updateAppVersionAppComponentRequest
+     * @return Result of the UpdateAppVersionAppComponent operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
+     * @throws ResourceNotFoundException
+     *         This exception occurs when the specified resource could not be found.
+     * @throws ConflictException
+     *         This exception occurs when a conflict with a previous successful write is detected. This generally occurs
+     *         when the previous write did not have time to propagate to the host serving the current request. A retry
+     *         (with appropriate backoff logic) is the recommended response to this exception.
+     * @throws ThrottlingException
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
+     * @throws ValidationException
+     *         This exception occurs when a request is not valid.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions.
+     * @sample AWSResilienceHub.UpdateAppVersionAppComponent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/UpdateAppVersionAppComponent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateAppVersionAppComponentResult updateAppVersionAppComponent(UpdateAppVersionAppComponentRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAppVersionAppComponent(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAppVersionAppComponentResult executeUpdateAppVersionAppComponent(UpdateAppVersionAppComponentRequest updateAppVersionAppComponentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAppVersionAppComponentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAppVersionAppComponentRequest> request = null;
+        Response<UpdateAppVersionAppComponentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAppVersionAppComponentRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateAppVersionAppComponentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "resiliencehub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAppVersionAppComponent");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAppVersionAppComponentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateAppVersionAppComponentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the resource details in the Resilience Hub application.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * This action has no effect outside Resilience Hub.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This API updates the Resilience Hub application draft version. To use this resource for running resiliency
+     * assessments, you must publish the Resilience Hub application using the <code>PublishAppVersion</code> API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To update application version with new <code>physicalResourceID</code>, you must call
+     * <code>ResolveAppVersionResources</code> API.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param updateAppVersionResourceRequest
+     * @return Result of the UpdateAppVersionResource operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
+     * @throws ResourceNotFoundException
+     *         This exception occurs when the specified resource could not be found.
+     * @throws ConflictException
+     *         This exception occurs when a conflict with a previous successful write is detected. This generally occurs
+     *         when the previous write did not have time to propagate to the host serving the current request. A retry
+     *         (with appropriate backoff logic) is the recommended response to this exception.
+     * @throws ServiceQuotaExceededException
+     *         This exception occurs when you have exceeded your service quota. To perform the requested action, remove
+     *         some of the relevant resources, or use Service Quotas to request a service quota increase.
+     * @throws ThrottlingException
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
+     * @throws ValidationException
+     *         This exception occurs when a request is not valid.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions.
+     * @sample AWSResilienceHub.UpdateAppVersionResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/UpdateAppVersionResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateAppVersionResourceResult updateAppVersionResource(UpdateAppVersionResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAppVersionResource(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAppVersionResourceResult executeUpdateAppVersionResource(UpdateAppVersionResourceRequest updateAppVersionResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAppVersionResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAppVersionResourceRequest> request = null;
+        Response<UpdateAppVersionResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAppVersionResourceRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateAppVersionResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "resiliencehub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAppVersionResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAppVersionResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateAppVersionResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates a resiliency policy.
      * </p>
+     * <note>
+     * <p>
+     * Resilience Hub allows you to provide a value of zero for <code>rtoInSecs</code> and <code>rpoInSecs</code> of
+     * your resiliency policy. But, while assessing your application, the lowest possible assessment result is near
+     * zero. Hence, if you provide value zero for <code>rtoInSecs</code> and <code>rpoInSecs</code>, the estimated
+     * workload RTO and estimated workload RPO result will be near zero and the <b>Compliance status</b> for your
+     * application will be set to <b>Policy breached</b>.
+     * </p>
+     * </note>
      * 
      * @param updateResiliencyPolicyRequest
      * @return Result of the UpdateResiliencyPolicy operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the AWS Resilience Hub service.
+     *         This exception occurs when there is an internal failure in the Resilience Hub service.
      * @throws ResourceNotFoundException
-     *         The specified resource could not be found.
+     *         This exception occurs when the specified resource could not be found.
      * @throws ConflictException
-     *         Occurs when a conflict with a previous successful write is detected. This generally occurs when the
-     *         previous write did not have time to propagate to the host serving the current request. A retry (with
-     *         appropriate backoff logic) is the recommended response to this exception.
+     *         This exception occurs when a conflict with a previous successful write is detected. This generally occurs
+     *         when the previous write did not have time to propagate to the host serving the current request. A retry
+     *         (with appropriate backoff logic) is the recommended response to this exception.
      * @throws ThrottlingException
-     *         The limit on the number of requests per second was exceeded.
+     *         This exception occurs when you have exceeded the limit on the number of requests per second.
      * @throws ValidationException
-     *         Indicates that a request was not valid.
+     *         This exception occurs when a request is not valid.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation. The user or role that is making the
      *         request must have at least one IAM permissions policy attached that grants the required permissions.

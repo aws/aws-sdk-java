@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,36 +27,90 @@ public class CreateSolutionVersionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
+     * The name of the solution version.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the solution containing the training configuration information.
      * </p>
      */
     private String solutionArn;
     /**
      * <p>
-     * The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the
-     * solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code>
-     * option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code>
-     * when you want to incrementally update your solution version instead of creating an entirely new one.
+     * The scope of training to be performed when creating the solution version. The default is <code>FULL</code>. This
+     * creates a completely new model based on the entirety of the training data from the datasets in your dataset
+     * group.
      * </p>
-     * <important>
+     * <p>
+     * If you use <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     * >User-Personalization</a>, you can specify a training mode of <code>UPDATE</code>. This updates the model to
+     * consider new items for recommendations. It is not a full retraining. You should still complete a full retraining
+     * weekly. If you specify <code>UPDATE</code>, Amazon Personalize will stop automatic updates for the solution
+     * version. To resume updates, create a new solution with training mode set to <code>FULL</code> and deploy it in a
+     * campaign. For more information about automatic updates, see <a href=
+     * "https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#maintaining-with-automatic-updates"
+     * >Automatic updates</a>.
+     * </p>
      * <p>
      * The <code>UPDATE</code> option can only be used when you already have an active solution version created from the
      * input solution using the <code>FULL</code> option and the input solution was trained with the <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
-     * >User-Personalization</a> recipe or the <a
+     * >User-Personalization</a> recipe or the legacy <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
      * recipe.
      * </p>
-     * </important>
      */
     private String trainingMode;
     /**
      * <p>
-     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply
-     * to the solution version.
+     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to
+     * the solution version.
      * </p>
      */
     private java.util.List<Tag> tags;
+
+    /**
+     * <p>
+     * The name of the solution version.
+     * </p>
+     * 
+     * @param name
+     *        The name of the solution version.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The name of the solution version.
+     * </p>
+     * 
+     * @return The name of the solution version.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of the solution version.
+     * </p>
+     * 
+     * @param name
+     *        The name of the solution version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSolutionVersionRequest withName(String name) {
+        setName(name);
+        return this;
+    }
 
     /**
      * <p>
@@ -100,36 +154,52 @@ public class CreateSolutionVersionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the
-     * solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code>
-     * option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code>
-     * when you want to incrementally update your solution version instead of creating an entirely new one.
+     * The scope of training to be performed when creating the solution version. The default is <code>FULL</code>. This
+     * creates a completely new model based on the entirety of the training data from the datasets in your dataset
+     * group.
      * </p>
-     * <important>
+     * <p>
+     * If you use <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     * >User-Personalization</a>, you can specify a training mode of <code>UPDATE</code>. This updates the model to
+     * consider new items for recommendations. It is not a full retraining. You should still complete a full retraining
+     * weekly. If you specify <code>UPDATE</code>, Amazon Personalize will stop automatic updates for the solution
+     * version. To resume updates, create a new solution with training mode set to <code>FULL</code> and deploy it in a
+     * campaign. For more information about automatic updates, see <a href=
+     * "https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#maintaining-with-automatic-updates"
+     * >Automatic updates</a>.
+     * </p>
      * <p>
      * The <code>UPDATE</code> option can only be used when you already have an active solution version created from the
      * input solution using the <code>FULL</code> option and the input solution was trained with the <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
-     * >User-Personalization</a> recipe or the <a
+     * >User-Personalization</a> recipe or the legacy <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
      * recipe.
      * </p>
-     * </important>
      * 
      * @param trainingMode
-     *        The scope of training to be performed when creating the solution version. The <code>FULL</code> option
-     *        trains the solution version based on the entirety of the input solution's training data, while the
-     *        <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution.
-     *        Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating
-     *        an entirely new one.</p> <important>
+     *        The scope of training to be performed when creating the solution version. The default is <code>FULL</code>
+     *        . This creates a completely new model based on the entirety of the training data from the datasets in your
+     *        dataset group. </p>
+     *        <p>
+     *        If you use <a href=
+     *        "https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     *        >User-Personalization</a>, you can specify a training mode of <code>UPDATE</code>. This updates the model
+     *        to consider new items for recommendations. It is not a full retraining. You should still complete a full
+     *        retraining weekly. If you specify <code>UPDATE</code>, Amazon Personalize will stop automatic updates for
+     *        the solution version. To resume updates, create a new solution with training mode set to <code>FULL</code>
+     *        and deploy it in a campaign. For more information about automatic updates, see <a href=
+     *        "https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#maintaining-with-automatic-updates"
+     *        >Automatic updates</a>.
+     *        </p>
      *        <p>
      *        The <code>UPDATE</code> option can only be used when you already have an active solution version created
      *        from the input solution using the <code>FULL</code> option and the input solution was trained with the <a
      *        href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">
-     *        User-Personalization</a> recipe or the <a
+     *        User-Personalization</a> recipe or the legacy <a
      *        href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html"
      *        >HRNN-Coldstart</a> recipe.
-     *        </p>
      * @see TrainingMode
      */
 
@@ -139,36 +209,52 @@ public class CreateSolutionVersionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the
-     * solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code>
-     * option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code>
-     * when you want to incrementally update your solution version instead of creating an entirely new one.
+     * The scope of training to be performed when creating the solution version. The default is <code>FULL</code>. This
+     * creates a completely new model based on the entirety of the training data from the datasets in your dataset
+     * group.
      * </p>
-     * <important>
+     * <p>
+     * If you use <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     * >User-Personalization</a>, you can specify a training mode of <code>UPDATE</code>. This updates the model to
+     * consider new items for recommendations. It is not a full retraining. You should still complete a full retraining
+     * weekly. If you specify <code>UPDATE</code>, Amazon Personalize will stop automatic updates for the solution
+     * version. To resume updates, create a new solution with training mode set to <code>FULL</code> and deploy it in a
+     * campaign. For more information about automatic updates, see <a href=
+     * "https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#maintaining-with-automatic-updates"
+     * >Automatic updates</a>.
+     * </p>
      * <p>
      * The <code>UPDATE</code> option can only be used when you already have an active solution version created from the
      * input solution using the <code>FULL</code> option and the input solution was trained with the <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
-     * >User-Personalization</a> recipe or the <a
+     * >User-Personalization</a> recipe or the legacy <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
      * recipe.
      * </p>
-     * </important>
      * 
-     * @return The scope of training to be performed when creating the solution version. The <code>FULL</code> option
-     *         trains the solution version based on the entirety of the input solution's training data, while the
-     *         <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution.
-     *         Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of
-     *         creating an entirely new one.</p> <important>
+     * @return The scope of training to be performed when creating the solution version. The default is
+     *         <code>FULL</code>. This creates a completely new model based on the entirety of the training data from
+     *         the datasets in your dataset group. </p>
+     *         <p>
+     *         If you use <a href=
+     *         "https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     *         >User-Personalization</a>, you can specify a training mode of <code>UPDATE</code>. This updates the model
+     *         to consider new items for recommendations. It is not a full retraining. You should still complete a full
+     *         retraining weekly. If you specify <code>UPDATE</code>, Amazon Personalize will stop automatic updates for
+     *         the solution version. To resume updates, create a new solution with training mode set to
+     *         <code>FULL</code> and deploy it in a campaign. For more information about automatic updates, see <a href=
+     *         "https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#maintaining-with-automatic-updates"
+     *         >Automatic updates</a>.
+     *         </p>
      *         <p>
      *         The <code>UPDATE</code> option can only be used when you already have an active solution version created
      *         from the input solution using the <code>FULL</code> option and the input solution was trained with the <a
      *         href
      *         ="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">
-     *         User-Personalization</a> recipe or the <a
+     *         User-Personalization</a> recipe or the legacy <a
      *         href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html"
      *         >HRNN-Coldstart</a> recipe.
-     *         </p>
      * @see TrainingMode
      */
 
@@ -178,36 +264,52 @@ public class CreateSolutionVersionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the
-     * solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code>
-     * option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code>
-     * when you want to incrementally update your solution version instead of creating an entirely new one.
+     * The scope of training to be performed when creating the solution version. The default is <code>FULL</code>. This
+     * creates a completely new model based on the entirety of the training data from the datasets in your dataset
+     * group.
      * </p>
-     * <important>
+     * <p>
+     * If you use <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     * >User-Personalization</a>, you can specify a training mode of <code>UPDATE</code>. This updates the model to
+     * consider new items for recommendations. It is not a full retraining. You should still complete a full retraining
+     * weekly. If you specify <code>UPDATE</code>, Amazon Personalize will stop automatic updates for the solution
+     * version. To resume updates, create a new solution with training mode set to <code>FULL</code> and deploy it in a
+     * campaign. For more information about automatic updates, see <a href=
+     * "https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#maintaining-with-automatic-updates"
+     * >Automatic updates</a>.
+     * </p>
      * <p>
      * The <code>UPDATE</code> option can only be used when you already have an active solution version created from the
      * input solution using the <code>FULL</code> option and the input solution was trained with the <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
-     * >User-Personalization</a> recipe or the <a
+     * >User-Personalization</a> recipe or the legacy <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
      * recipe.
      * </p>
-     * </important>
      * 
      * @param trainingMode
-     *        The scope of training to be performed when creating the solution version. The <code>FULL</code> option
-     *        trains the solution version based on the entirety of the input solution's training data, while the
-     *        <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution.
-     *        Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating
-     *        an entirely new one.</p> <important>
+     *        The scope of training to be performed when creating the solution version. The default is <code>FULL</code>
+     *        . This creates a completely new model based on the entirety of the training data from the datasets in your
+     *        dataset group. </p>
+     *        <p>
+     *        If you use <a href=
+     *        "https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     *        >User-Personalization</a>, you can specify a training mode of <code>UPDATE</code>. This updates the model
+     *        to consider new items for recommendations. It is not a full retraining. You should still complete a full
+     *        retraining weekly. If you specify <code>UPDATE</code>, Amazon Personalize will stop automatic updates for
+     *        the solution version. To resume updates, create a new solution with training mode set to <code>FULL</code>
+     *        and deploy it in a campaign. For more information about automatic updates, see <a href=
+     *        "https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#maintaining-with-automatic-updates"
+     *        >Automatic updates</a>.
+     *        </p>
      *        <p>
      *        The <code>UPDATE</code> option can only be used when you already have an active solution version created
      *        from the input solution using the <code>FULL</code> option and the input solution was trained with the <a
      *        href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">
-     *        User-Personalization</a> recipe or the <a
+     *        User-Personalization</a> recipe or the legacy <a
      *        href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html"
      *        >HRNN-Coldstart</a> recipe.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrainingMode
      */
@@ -219,36 +321,52 @@ public class CreateSolutionVersionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the
-     * solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code>
-     * option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code>
-     * when you want to incrementally update your solution version instead of creating an entirely new one.
+     * The scope of training to be performed when creating the solution version. The default is <code>FULL</code>. This
+     * creates a completely new model based on the entirety of the training data from the datasets in your dataset
+     * group.
      * </p>
-     * <important>
+     * <p>
+     * If you use <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     * >User-Personalization</a>, you can specify a training mode of <code>UPDATE</code>. This updates the model to
+     * consider new items for recommendations. It is not a full retraining. You should still complete a full retraining
+     * weekly. If you specify <code>UPDATE</code>, Amazon Personalize will stop automatic updates for the solution
+     * version. To resume updates, create a new solution with training mode set to <code>FULL</code> and deploy it in a
+     * campaign. For more information about automatic updates, see <a href=
+     * "https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#maintaining-with-automatic-updates"
+     * >Automatic updates</a>.
+     * </p>
      * <p>
      * The <code>UPDATE</code> option can only be used when you already have an active solution version created from the
      * input solution using the <code>FULL</code> option and the input solution was trained with the <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
-     * >User-Personalization</a> recipe or the <a
+     * >User-Personalization</a> recipe or the legacy <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
      * recipe.
      * </p>
-     * </important>
      * 
      * @param trainingMode
-     *        The scope of training to be performed when creating the solution version. The <code>FULL</code> option
-     *        trains the solution version based on the entirety of the input solution's training data, while the
-     *        <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution.
-     *        Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating
-     *        an entirely new one.</p> <important>
+     *        The scope of training to be performed when creating the solution version. The default is <code>FULL</code>
+     *        . This creates a completely new model based on the entirety of the training data from the datasets in your
+     *        dataset group. </p>
+     *        <p>
+     *        If you use <a href=
+     *        "https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     *        >User-Personalization</a>, you can specify a training mode of <code>UPDATE</code>. This updates the model
+     *        to consider new items for recommendations. It is not a full retraining. You should still complete a full
+     *        retraining weekly. If you specify <code>UPDATE</code>, Amazon Personalize will stop automatic updates for
+     *        the solution version. To resume updates, create a new solution with training mode set to <code>FULL</code>
+     *        and deploy it in a campaign. For more information about automatic updates, see <a href=
+     *        "https://docs.aws.amazon.com/personalize/latest/dg/use-case-recipe-features.html#maintaining-with-automatic-updates"
+     *        >Automatic updates</a>.
+     *        </p>
      *        <p>
      *        The <code>UPDATE</code> option can only be used when you already have an active solution version created
      *        from the input solution using the <code>FULL</code> option and the input solution was trained with the <a
      *        href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">
-     *        User-Personalization</a> recipe or the <a
+     *        User-Personalization</a> recipe or the legacy <a
      *        href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html"
      *        >HRNN-Coldstart</a> recipe.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrainingMode
      */
@@ -260,11 +378,11 @@ public class CreateSolutionVersionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply
-     * to the solution version.
+     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to
+     * the solution version.
      * </p>
      * 
-     * @return A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to
+     * @return A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to
      *         apply to the solution version.
      */
 
@@ -274,12 +392,12 @@ public class CreateSolutionVersionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply
-     * to the solution version.
+     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to
+     * the solution version.
      * </p>
      * 
      * @param tags
-     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to
+     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to
      *        apply to the solution version.
      */
 
@@ -294,8 +412,8 @@ public class CreateSolutionVersionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply
-     * to the solution version.
+     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to
+     * the solution version.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -304,7 +422,7 @@ public class CreateSolutionVersionRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param tags
-     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to
+     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to
      *        apply to the solution version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -321,12 +439,12 @@ public class CreateSolutionVersionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply
-     * to the solution version.
+     * A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to apply to
+     * the solution version.
      * </p>
      * 
      * @param tags
-     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to
+     *        A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a> to
      *        apply to the solution version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -348,6 +466,8 @@ public class CreateSolutionVersionRequest extends com.amazonaws.AmazonWebService
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
         if (getSolutionArn() != null)
             sb.append("SolutionArn: ").append(getSolutionArn()).append(",");
         if (getTrainingMode() != null)
@@ -368,6 +488,10 @@ public class CreateSolutionVersionRequest extends com.amazonaws.AmazonWebService
         if (obj instanceof CreateSolutionVersionRequest == false)
             return false;
         CreateSolutionVersionRequest other = (CreateSolutionVersionRequest) obj;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
         if (other.getSolutionArn() == null ^ this.getSolutionArn() == null)
             return false;
         if (other.getSolutionArn() != null && other.getSolutionArn().equals(this.getSolutionArn()) == false)
@@ -388,6 +512,7 @@ public class CreateSolutionVersionRequest extends com.amazonaws.AmazonWebService
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getSolutionArn() == null) ? 0 : getSolutionArn().hashCode());
         hashCode = prime * hashCode + ((getTrainingMode() == null) ? 0 : getTrainingMode().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,8 @@ public class StageStateMarshaller {
             .marshallLocationName("stageName").build();
     private static final MarshallingInfo<StructuredPojo> INBOUNDEXECUTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inboundExecution").build();
+    private static final MarshallingInfo<List> INBOUNDEXECUTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inboundExecutions").build();
     private static final MarshallingInfo<StructuredPojo> INBOUNDTRANSITIONSTATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inboundTransitionState").build();
     private static final MarshallingInfo<List> ACTIONSTATES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -57,6 +59,7 @@ public class StageStateMarshaller {
         try {
             protocolMarshaller.marshall(stageState.getStageName(), STAGENAME_BINDING);
             protocolMarshaller.marshall(stageState.getInboundExecution(), INBOUNDEXECUTION_BINDING);
+            protocolMarshaller.marshall(stageState.getInboundExecutions(), INBOUNDEXECUTIONS_BINDING);
             protocolMarshaller.marshall(stageState.getInboundTransitionState(), INBOUNDTRANSITIONSTATE_BINDING);
             protocolMarshaller.marshall(stageState.getActionStates(), ACTIONSTATES_BINDING);
             protocolMarshaller.marshall(stageState.getLatestExecution(), LATESTEXECUTION_BINDING);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class GetEnvironmentResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The number of instances included in the runtime environment. A standalone runtime environment has a maxiumum of
+     * The number of instances included in the runtime environment. A standalone runtime environment has a maximum of
      * one instance. Currently, a high availability runtime environment has a maximum of two instances.
      * </p>
      */
@@ -80,13 +80,19 @@ public class GetEnvironmentResult extends com.amazonaws.AmazonWebServiceResult<c
     private String instanceType;
     /**
      * <p>
+     * The identifier of a customer managed key.
+     * </p>
+     */
+    private String kmsKeyId;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) for the load balancer used with the runtime environment.
      * </p>
      */
     private String loadBalancerArn;
     /**
      * <p>
-     * The name of the runtime environment.
+     * The name of the runtime environment. Must be unique within the account.
      * </p>
      */
     private String name;
@@ -98,8 +104,8 @@ public class GetEnvironmentResult extends com.amazonaws.AmazonWebServiceResult<c
     private PendingMaintenance pendingMaintenance;
     /**
      * <p>
-     * Configures a desired maintenance window for the environment. If you do not provide a value, a random
-     * system-generated value will be assigned.
+     * The maintenance window for the runtime environment. If you don't provide a value for the maintenance window, the
+     * service assigns a random value.
      * </p>
      */
     private String preferredMaintenanceWindow;
@@ -154,13 +160,13 @@ public class GetEnvironmentResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The number of instances included in the runtime environment. A standalone runtime environment has a maxiumum of
+     * The number of instances included in the runtime environment. A standalone runtime environment has a maximum of
      * one instance. Currently, a high availability runtime environment has a maximum of two instances.
      * </p>
      * 
      * @param actualCapacity
      *        The number of instances included in the runtime environment. A standalone runtime environment has a
-     *        maxiumum of one instance. Currently, a high availability runtime environment has a maximum of two
+     *        maximum of one instance. Currently, a high availability runtime environment has a maximum of two
      *        instances.
      */
 
@@ -170,12 +176,12 @@ public class GetEnvironmentResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The number of instances included in the runtime environment. A standalone runtime environment has a maxiumum of
+     * The number of instances included in the runtime environment. A standalone runtime environment has a maximum of
      * one instance. Currently, a high availability runtime environment has a maximum of two instances.
      * </p>
      * 
      * @return The number of instances included in the runtime environment. A standalone runtime environment has a
-     *         maxiumum of one instance. Currently, a high availability runtime environment has a maximum of two
+     *         maximum of one instance. Currently, a high availability runtime environment has a maximum of two
      *         instances.
      */
 
@@ -185,13 +191,13 @@ public class GetEnvironmentResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The number of instances included in the runtime environment. A standalone runtime environment has a maxiumum of
+     * The number of instances included in the runtime environment. A standalone runtime environment has a maximum of
      * one instance. Currently, a high availability runtime environment has a maximum of two instances.
      * </p>
      * 
      * @param actualCapacity
      *        The number of instances included in the runtime environment. A standalone runtime environment has a
-     *        maxiumum of one instance. Currently, a high availability runtime environment has a maximum of two
+     *        maximum of one instance. Currently, a high availability runtime environment has a maximum of two
      *        instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -542,6 +548,46 @@ public class GetEnvironmentResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
+     * The identifier of a customer managed key.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The identifier of a customer managed key.
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The identifier of a customer managed key.
+     * </p>
+     * 
+     * @return The identifier of a customer managed key.
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The identifier of a customer managed key.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The identifier of a customer managed key.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetEnvironmentResult withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) for the load balancer used with the runtime environment.
      * </p>
      * 
@@ -582,11 +628,11 @@ public class GetEnvironmentResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The name of the runtime environment.
+     * The name of the runtime environment. Must be unique within the account.
      * </p>
      * 
      * @param name
-     *        The name of the runtime environment.
+     *        The name of the runtime environment. Must be unique within the account.
      */
 
     public void setName(String name) {
@@ -595,10 +641,10 @@ public class GetEnvironmentResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The name of the runtime environment.
+     * The name of the runtime environment. Must be unique within the account.
      * </p>
      * 
-     * @return The name of the runtime environment.
+     * @return The name of the runtime environment. Must be unique within the account.
      */
 
     public String getName() {
@@ -607,11 +653,11 @@ public class GetEnvironmentResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The name of the runtime environment.
+     * The name of the runtime environment. Must be unique within the account.
      * </p>
      * 
      * @param name
-     *        The name of the runtime environment.
+     *        The name of the runtime environment. Must be unique within the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -662,13 +708,13 @@ public class GetEnvironmentResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Configures a desired maintenance window for the environment. If you do not provide a value, a random
-     * system-generated value will be assigned.
+     * The maintenance window for the runtime environment. If you don't provide a value for the maintenance window, the
+     * service assigns a random value.
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        Configures a desired maintenance window for the environment. If you do not provide a value, a random
-     *        system-generated value will be assigned.
+     *        The maintenance window for the runtime environment. If you don't provide a value for the maintenance
+     *        window, the service assigns a random value.
      */
 
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
@@ -677,12 +723,12 @@ public class GetEnvironmentResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Configures a desired maintenance window for the environment. If you do not provide a value, a random
-     * system-generated value will be assigned.
+     * The maintenance window for the runtime environment. If you don't provide a value for the maintenance window, the
+     * service assigns a random value.
      * </p>
      * 
-     * @return Configures a desired maintenance window for the environment. If you do not provide a value, a random
-     *         system-generated value will be assigned.
+     * @return The maintenance window for the runtime environment. If you don't provide a value for the maintenance
+     *         window, the service assigns a random value.
      */
 
     public String getPreferredMaintenanceWindow() {
@@ -691,13 +737,13 @@ public class GetEnvironmentResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Configures a desired maintenance window for the environment. If you do not provide a value, a random
-     * system-generated value will be assigned.
+     * The maintenance window for the runtime environment. If you don't provide a value for the maintenance window, the
+     * service assigns a random value.
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        Configures a desired maintenance window for the environment. If you do not provide a value, a random
-     *        system-generated value will be assigned.
+     *        The maintenance window for the runtime environment. If you don't provide a value for the maintenance
+     *        window, the service assigns a random value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1205,6 +1251,8 @@ public class GetEnvironmentResult extends com.amazonaws.AmazonWebServiceResult<c
             sb.append("HighAvailabilityConfig: ").append(getHighAvailabilityConfig()).append(",");
         if (getInstanceType() != null)
             sb.append("InstanceType: ").append(getInstanceType()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getLoadBalancerArn() != null)
             sb.append("LoadBalancerArn: ").append(getLoadBalancerArn()).append(",");
         if (getName() != null)
@@ -1279,6 +1327,10 @@ public class GetEnvironmentResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false)
             return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
         if (other.getLoadBalancerArn() == null ^ this.getLoadBalancerArn() == null)
             return false;
         if (other.getLoadBalancerArn() != null && other.getLoadBalancerArn().equals(this.getLoadBalancerArn()) == false)
@@ -1344,6 +1396,7 @@ public class GetEnvironmentResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getEnvironmentId() == null) ? 0 : getEnvironmentId().hashCode());
         hashCode = prime * hashCode + ((getHighAvailabilityConfig() == null) ? 0 : getHighAvailabilityConfig().hashCode());
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getLoadBalancerArn() == null) ? 0 : getLoadBalancerArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getPendingMaintenance() == null) ? 0 : getPendingMaintenance().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,8 +26,8 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Amazon Connect Voice ID provides real-time caller authentication and fraud screening. This guide describes the APIs
- * used for this service.
+ * Amazon Connect Voice ID provides real-time caller authentication and fraud risk detection, which make voice
+ * interactions in contact centers more secure and efficient.
  * </p>
  */
 @ThreadSafe
@@ -75,6 +75,39 @@ public class AmazonVoiceIDAsyncClient extends AmazonVoiceIDClient implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateFraudsterResult> associateFraudsterAsync(AssociateFraudsterRequest request) {
+
+        return associateFraudsterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateFraudsterResult> associateFraudsterAsync(final AssociateFraudsterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateFraudsterRequest, AssociateFraudsterResult> asyncHandler) {
+        final AssociateFraudsterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateFraudsterResult>() {
+            @Override
+            public AssociateFraudsterResult call() throws Exception {
+                AssociateFraudsterResult result = null;
+
+                try {
+                    result = executeAssociateFraudster(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDomainResult> createDomainAsync(CreateDomainRequest request) {
 
         return createDomainAsync(request, null);
@@ -92,6 +125,39 @@ public class AmazonVoiceIDAsyncClient extends AmazonVoiceIDClient implements Ama
 
                 try {
                     result = executeCreateDomain(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWatchlistResult> createWatchlistAsync(CreateWatchlistRequest request) {
+
+        return createWatchlistAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWatchlistResult> createWatchlistAsync(final CreateWatchlistRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateWatchlistRequest, CreateWatchlistResult> asyncHandler) {
+        final CreateWatchlistRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateWatchlistResult>() {
+            @Override
+            public CreateWatchlistResult call() throws Exception {
+                CreateWatchlistResult result = null;
+
+                try {
+                    result = executeCreateWatchlist(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -191,6 +257,39 @@ public class AmazonVoiceIDAsyncClient extends AmazonVoiceIDClient implements Ama
 
                 try {
                     result = executeDeleteSpeaker(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWatchlistResult> deleteWatchlistAsync(DeleteWatchlistRequest request) {
+
+        return deleteWatchlistAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWatchlistResult> deleteWatchlistAsync(final DeleteWatchlistRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteWatchlistRequest, DeleteWatchlistResult> asyncHandler) {
+        final DeleteWatchlistRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteWatchlistResult>() {
+            @Override
+            public DeleteWatchlistResult call() throws Exception {
+                DeleteWatchlistResult result = null;
+
+                try {
+                    result = executeDeleteWatchlist(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -374,6 +473,72 @@ public class AmazonVoiceIDAsyncClient extends AmazonVoiceIDClient implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeWatchlistResult> describeWatchlistAsync(DescribeWatchlistRequest request) {
+
+        return describeWatchlistAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeWatchlistResult> describeWatchlistAsync(final DescribeWatchlistRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeWatchlistRequest, DescribeWatchlistResult> asyncHandler) {
+        final DescribeWatchlistRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeWatchlistResult>() {
+            @Override
+            public DescribeWatchlistResult call() throws Exception {
+                DescribeWatchlistResult result = null;
+
+                try {
+                    result = executeDescribeWatchlist(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateFraudsterResult> disassociateFraudsterAsync(DisassociateFraudsterRequest request) {
+
+        return disassociateFraudsterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateFraudsterResult> disassociateFraudsterAsync(final DisassociateFraudsterRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateFraudsterRequest, DisassociateFraudsterResult> asyncHandler) {
+        final DisassociateFraudsterRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateFraudsterResult>() {
+            @Override
+            public DisassociateFraudsterResult call() throws Exception {
+                DisassociateFraudsterResult result = null;
+
+                try {
+                    result = executeDisassociateFraudster(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<EvaluateSessionResult> evaluateSessionAsync(EvaluateSessionRequest request) {
 
         return evaluateSessionAsync(request, null);
@@ -474,6 +639,39 @@ public class AmazonVoiceIDAsyncClient extends AmazonVoiceIDClient implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<ListFraudstersResult> listFraudstersAsync(ListFraudstersRequest request) {
+
+        return listFraudstersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFraudstersResult> listFraudstersAsync(final ListFraudstersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListFraudstersRequest, ListFraudstersResult> asyncHandler) {
+        final ListFraudstersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListFraudstersResult>() {
+            @Override
+            public ListFraudstersResult call() throws Exception {
+                ListFraudstersResult result = null;
+
+                try {
+                    result = executeListFraudsters(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSpeakerEnrollmentJobsResult> listSpeakerEnrollmentJobsAsync(ListSpeakerEnrollmentJobsRequest request) {
 
         return listSpeakerEnrollmentJobsAsync(request, null);
@@ -557,6 +755,39 @@ public class AmazonVoiceIDAsyncClient extends AmazonVoiceIDClient implements Ama
 
                 try {
                     result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWatchlistsResult> listWatchlistsAsync(ListWatchlistsRequest request) {
+
+        return listWatchlistsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWatchlistsResult> listWatchlistsAsync(final ListWatchlistsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListWatchlistsRequest, ListWatchlistsResult> asyncHandler) {
+        final ListWatchlistsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListWatchlistsResult>() {
+            @Override
+            public ListWatchlistsResult call() throws Exception {
+                ListWatchlistsResult result = null;
+
+                try {
+                    result = executeListWatchlists(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -756,6 +987,39 @@ public class AmazonVoiceIDAsyncClient extends AmazonVoiceIDClient implements Ama
 
                 try {
                     result = executeUpdateDomain(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWatchlistResult> updateWatchlistAsync(UpdateWatchlistRequest request) {
+
+        return updateWatchlistAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWatchlistResult> updateWatchlistAsync(final UpdateWatchlistRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateWatchlistRequest, UpdateWatchlistResult> asyncHandler) {
+        final UpdateWatchlistRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateWatchlistResult>() {
+            @Override
+            public UpdateWatchlistResult call() throws Exception {
+                UpdateWatchlistResult result = null;
+
+                try {
+                    result = executeUpdateWatchlist(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

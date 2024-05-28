@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,6 +71,14 @@ public class LoggingConfigurationJsonUnmarshaller implements Unmarshaller<Loggin
                 if (context.testExpression("LoggingFilter", targetDepth)) {
                     context.nextToken();
                     loggingConfiguration.setLoggingFilter(LoggingFilterJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("LogType", targetDepth)) {
+                    context.nextToken();
+                    loggingConfiguration.setLogType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LogScope", targetDepth)) {
+                    context.nextToken();
+                    loggingConfiguration.setLogScope(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

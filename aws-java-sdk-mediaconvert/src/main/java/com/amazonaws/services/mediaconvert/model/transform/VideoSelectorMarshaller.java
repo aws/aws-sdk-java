@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class VideoSelectorMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("embeddedTimecodeOverride").build();
     private static final MarshallingInfo<StructuredPojo> HDR10METADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hdr10Metadata").build();
+    private static final MarshallingInfo<Integer> MAXLUMINANCE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxLuminance").build();
     private static final MarshallingInfo<String> PADVIDEO_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("padVideo").build();
     private static final MarshallingInfo<Integer> PID_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
@@ -69,6 +71,7 @@ public class VideoSelectorMarshaller {
             protocolMarshaller.marshall(videoSelector.getColorSpaceUsage(), COLORSPACEUSAGE_BINDING);
             protocolMarshaller.marshall(videoSelector.getEmbeddedTimecodeOverride(), EMBEDDEDTIMECODEOVERRIDE_BINDING);
             protocolMarshaller.marshall(videoSelector.getHdr10Metadata(), HDR10METADATA_BINDING);
+            protocolMarshaller.marshall(videoSelector.getMaxLuminance(), MAXLUMINANCE_BINDING);
             protocolMarshaller.marshall(videoSelector.getPadVideo(), PADVIDEO_BINDING);
             protocolMarshaller.marshall(videoSelector.getPid(), PID_BINDING);
             protocolMarshaller.marshall(videoSelector.getProgramNumber(), PROGRAMNUMBER_BINDING);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,12 +31,13 @@ public class ResultConfigurationUpdates implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The location in Amazon S3 where your query results are stored, such as <code>s3://path/to/query/bucket/</code>.
-     * For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>
-     * If workgroup settings override client-side settings, then the query uses the location for the query results and
-     * the encryption configuration that are specified for the workgroup. The "workgroup settings override" is specified
-     * in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See
-     * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
+     * The location in Amazon S3 where your query and calculation results are stored, such as
+     * <code>s3://path/to/query/bucket/</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with query results, recent queries, and
+     * output files</a>. If workgroup settings override client-side settings, then the query uses the location for the
+     * query results and the encryption configuration that are specified for the workgroup. The
+     * "workgroup settings override" is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+     * <code>WorkGroupConfiguration</code>. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
      * </p>
      */
     private String outputLocation;
@@ -54,7 +55,7 @@ public class ResultConfigurationUpdates implements Serializable, Cloneable, Stru
     private Boolean removeOutputLocation;
     /**
      * <p>
-     * The encryption configuration for the query results.
+     * The encryption configuration for query and calculation results.
      * </p>
      */
     private EncryptionConfiguration encryptionConfiguration;
@@ -119,21 +120,23 @@ public class ResultConfigurationUpdates implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The location in Amazon S3 where your query results are stored, such as <code>s3://path/to/query/bucket/</code>.
-     * For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>
-     * If workgroup settings override client-side settings, then the query uses the location for the query results and
-     * the encryption configuration that are specified for the workgroup. The "workgroup settings override" is specified
-     * in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See
-     * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
+     * The location in Amazon S3 where your query and calculation results are stored, such as
+     * <code>s3://path/to/query/bucket/</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with query results, recent queries, and
+     * output files</a>. If workgroup settings override client-side settings, then the query uses the location for the
+     * query results and the encryption configuration that are specified for the workgroup. The
+     * "workgroup settings override" is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+     * <code>WorkGroupConfiguration</code>. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
      * </p>
      * 
      * @param outputLocation
-     *        The location in Amazon S3 where your query results are stored, such as
+     *        The location in Amazon S3 where your query and calculation results are stored, such as
      *        <code>s3://path/to/query/bucket/</code>. For more information, see <a
-     *        href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a> If workgroup settings
-     *        override client-side settings, then the query uses the location for the query results and the encryption
-     *        configuration that are specified for the workgroup. The "workgroup settings override" is specified in
-     *        <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See
+     *        href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with query results, recent
+     *        queries, and output files</a>. If workgroup settings override client-side settings, then the query uses
+     *        the location for the query results and the encryption configuration that are specified for the workgroup.
+     *        The "workgroup settings override" is specified in <code>EnforceWorkGroupConfiguration</code> (true/false)
+     *        in the <code>WorkGroupConfiguration</code>. See
      *        <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
      */
 
@@ -143,20 +146,22 @@ public class ResultConfigurationUpdates implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The location in Amazon S3 where your query results are stored, such as <code>s3://path/to/query/bucket/</code>.
-     * For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>
-     * If workgroup settings override client-side settings, then the query uses the location for the query results and
-     * the encryption configuration that are specified for the workgroup. The "workgroup settings override" is specified
-     * in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See
-     * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
+     * The location in Amazon S3 where your query and calculation results are stored, such as
+     * <code>s3://path/to/query/bucket/</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with query results, recent queries, and
+     * output files</a>. If workgroup settings override client-side settings, then the query uses the location for the
+     * query results and the encryption configuration that are specified for the workgroup. The
+     * "workgroup settings override" is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+     * <code>WorkGroupConfiguration</code>. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
      * </p>
      * 
-     * @return The location in Amazon S3 where your query results are stored, such as
+     * @return The location in Amazon S3 where your query and calculation results are stored, such as
      *         <code>s3://path/to/query/bucket/</code>. For more information, see <a
-     *         href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a> If workgroup settings
-     *         override client-side settings, then the query uses the location for the query results and the encryption
-     *         configuration that are specified for the workgroup. The "workgroup settings override" is specified in
-     *         <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See
+     *         href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with query results, recent
+     *         queries, and output files</a>. If workgroup settings override client-side settings, then the query uses
+     *         the location for the query results and the encryption configuration that are specified for the workgroup.
+     *         The "workgroup settings override" is specified in <code>EnforceWorkGroupConfiguration</code> (true/false)
+     *         in the <code>WorkGroupConfiguration</code>. See
      *         <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
      */
 
@@ -166,21 +171,23 @@ public class ResultConfigurationUpdates implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The location in Amazon S3 where your query results are stored, such as <code>s3://path/to/query/bucket/</code>.
-     * For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>
-     * If workgroup settings override client-side settings, then the query uses the location for the query results and
-     * the encryption configuration that are specified for the workgroup. The "workgroup settings override" is specified
-     * in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See
-     * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
+     * The location in Amazon S3 where your query and calculation results are stored, such as
+     * <code>s3://path/to/query/bucket/</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with query results, recent queries, and
+     * output files</a>. If workgroup settings override client-side settings, then the query uses the location for the
+     * query results and the encryption configuration that are specified for the workgroup. The
+     * "workgroup settings override" is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+     * <code>WorkGroupConfiguration</code>. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
      * </p>
      * 
      * @param outputLocation
-     *        The location in Amazon S3 where your query results are stored, such as
+     *        The location in Amazon S3 where your query and calculation results are stored, such as
      *        <code>s3://path/to/query/bucket/</code>. For more information, see <a
-     *        href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a> If workgroup settings
-     *        override client-side settings, then the query uses the location for the query results and the encryption
-     *        configuration that are specified for the workgroup. The "workgroup settings override" is specified in
-     *        <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See
+     *        href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with query results, recent
+     *        queries, and output files</a>. If workgroup settings override client-side settings, then the query uses
+     *        the location for the query results and the encryption configuration that are specified for the workgroup.
+     *        The "workgroup settings override" is specified in <code>EnforceWorkGroupConfiguration</code> (true/false)
+     *        in the <code>WorkGroupConfiguration</code>. See
      *        <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -292,11 +299,11 @@ public class ResultConfigurationUpdates implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The encryption configuration for the query results.
+     * The encryption configuration for query and calculation results.
      * </p>
      * 
      * @param encryptionConfiguration
-     *        The encryption configuration for the query results.
+     *        The encryption configuration for query and calculation results.
      */
 
     public void setEncryptionConfiguration(EncryptionConfiguration encryptionConfiguration) {
@@ -305,10 +312,10 @@ public class ResultConfigurationUpdates implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The encryption configuration for the query results.
+     * The encryption configuration for query and calculation results.
      * </p>
      * 
-     * @return The encryption configuration for the query results.
+     * @return The encryption configuration for query and calculation results.
      */
 
     public EncryptionConfiguration getEncryptionConfiguration() {
@@ -317,11 +324,11 @@ public class ResultConfigurationUpdates implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The encryption configuration for the query results.
+     * The encryption configuration for query and calculation results.
      * </p>
      * 
      * @param encryptionConfiguration
-     *        The encryption configuration for the query results.
+     *        The encryption configuration for query and calculation results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,13 +27,44 @@ import com.amazonaws.services.migrationhuborchestrator.model.*;
  * <p>
  * <p>
  * This API reference provides descriptions, syntax, and other details about each of the actions and data types for AWS
- * Migration Hub Orchestrator. he topic for each action shows the API request parameters and the response.
- * Alternatively, you can use one of the AWS SDKs to access an API that is tailored to the programming language or
- * platform that you're using.
+ * Migration Hub Orchestrator. The topic for each action shows the API request parameters and responses. Alternatively,
+ * you can use one of the AWS SDKs to access an API that is tailored to the programming language or platform that you're
+ * using.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSMigrationHubOrchestratorAsync extends AWSMigrationHubOrchestrator {
+
+    /**
+     * <p>
+     * Creates a migration workflow template.
+     * </p>
+     * 
+     * @param createTemplateRequest
+     * @return A Java Future containing the result of the CreateTemplate operation returned by the service.
+     * @sample AWSMigrationHubOrchestratorAsync.CreateTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/CreateTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTemplateResult> createTemplateAsync(CreateTemplateRequest createTemplateRequest);
+
+    /**
+     * <p>
+     * Creates a migration workflow template.
+     * </p>
+     * 
+     * @param createTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTemplate operation returned by the service.
+     * @sample AWSMigrationHubOrchestratorAsyncHandler.CreateTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/CreateTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTemplateResult> createTemplateAsync(CreateTemplateRequest createTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateTemplateRequest, CreateTemplateResult> asyncHandler);
 
     /**
      * <p>
@@ -127,6 +158,37 @@ public interface AWSMigrationHubOrchestratorAsync extends AWSMigrationHubOrchest
      */
     java.util.concurrent.Future<CreateWorkflowStepGroupResult> createWorkflowStepGroupAsync(CreateWorkflowStepGroupRequest createWorkflowStepGroupRequest,
             com.amazonaws.handlers.AsyncHandler<CreateWorkflowStepGroupRequest, CreateWorkflowStepGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a migration workflow template.
+     * </p>
+     * 
+     * @param deleteTemplateRequest
+     * @return A Java Future containing the result of the DeleteTemplate operation returned by the service.
+     * @sample AWSMigrationHubOrchestratorAsync.DeleteTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/DeleteTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTemplateResult> deleteTemplateAsync(DeleteTemplateRequest deleteTemplateRequest);
+
+    /**
+     * <p>
+     * Deletes a migration workflow template.
+     * </p>
+     * 
+     * @param deleteTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTemplate operation returned by the service.
+     * @sample AWSMigrationHubOrchestratorAsyncHandler.DeleteTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/DeleteTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTemplateResult> deleteTemplateAsync(DeleteTemplateRequest deleteTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTemplateRequest, DeleteTemplateResult> asyncHandler);
 
     /**
      * <p>
@@ -811,6 +873,37 @@ public interface AWSMigrationHubOrchestratorAsync extends AWSMigrationHubOrchest
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a migration workflow template.
+     * </p>
+     * 
+     * @param updateTemplateRequest
+     * @return A Java Future containing the result of the UpdateTemplate operation returned by the service.
+     * @sample AWSMigrationHubOrchestratorAsync.UpdateTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/UpdateTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTemplateResult> updateTemplateAsync(UpdateTemplateRequest updateTemplateRequest);
+
+    /**
+     * <p>
+     * Updates a migration workflow template.
+     * </p>
+     * 
+     * @param updateTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateTemplate operation returned by the service.
+     * @sample AWSMigrationHubOrchestratorAsyncHandler.UpdateTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/migrationhuborchestrator-2021-08-28/UpdateTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTemplateResult> updateTemplateAsync(UpdateTemplateRequest updateTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateTemplateRequest, UpdateTemplateResult> asyncHandler);
 
     /**
      * <p>

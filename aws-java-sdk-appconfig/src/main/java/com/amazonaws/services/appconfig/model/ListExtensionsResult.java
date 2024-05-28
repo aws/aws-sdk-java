@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class ListExtensionsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The list of available extensions. The list includes Amazon Web Services-authored and user-created extensions.
+     * The list of available extensions. The list includes Amazon Web Services authored and user-created extensions.
      * </p>
      */
     private java.util.List<ExtensionSummary> items;
@@ -38,10 +38,10 @@ public class ListExtensionsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The list of available extensions. The list includes Amazon Web Services-authored and user-created extensions.
+     * The list of available extensions. The list includes Amazon Web Services authored and user-created extensions.
      * </p>
      * 
-     * @return The list of available extensions. The list includes Amazon Web Services-authored and user-created
+     * @return The list of available extensions. The list includes Amazon Web Services authored and user-created
      *         extensions.
      */
 
@@ -51,11 +51,11 @@ public class ListExtensionsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The list of available extensions. The list includes Amazon Web Services-authored and user-created extensions.
+     * The list of available extensions. The list includes Amazon Web Services authored and user-created extensions.
      * </p>
      * 
      * @param items
-     *        The list of available extensions. The list includes Amazon Web Services-authored and user-created
+     *        The list of available extensions. The list includes Amazon Web Services authored and user-created
      *        extensions.
      */
 
@@ -70,7 +70,7 @@ public class ListExtensionsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The list of available extensions. The list includes Amazon Web Services-authored and user-created extensions.
+     * The list of available extensions. The list includes Amazon Web Services authored and user-created extensions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -79,7 +79,7 @@ public class ListExtensionsResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param items
-     *        The list of available extensions. The list includes Amazon Web Services-authored and user-created
+     *        The list of available extensions. The list includes Amazon Web Services authored and user-created
      *        extensions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -96,11 +96,11 @@ public class ListExtensionsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The list of available extensions. The list includes Amazon Web Services-authored and user-created extensions.
+     * The list of available extensions. The list includes Amazon Web Services authored and user-created extensions.
      * </p>
      * 
      * @param items
-     *        The list of available extensions. The list includes Amazon Web Services-authored and user-created
+     *        The list of available extensions. The list includes Amazon Web Services authored and user-created
      *        extensions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

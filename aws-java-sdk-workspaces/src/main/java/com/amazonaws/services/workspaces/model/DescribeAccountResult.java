@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,12 @@ public class DescribeAccountResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      */
     private String dedicatedTenancyManagementCidrRange;
+    /**
+     * <p>
+     * The type of linked account.
+     * </p>
+     */
+    private String dedicatedTenancyAccountType;
 
     /**
      * <p>
@@ -168,6 +174,65 @@ public class DescribeAccountResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
+     * <p>
+     * The type of linked account.
+     * </p>
+     * 
+     * @param dedicatedTenancyAccountType
+     *        The type of linked account.
+     * @see DedicatedTenancyAccountType
+     */
+
+    public void setDedicatedTenancyAccountType(String dedicatedTenancyAccountType) {
+        this.dedicatedTenancyAccountType = dedicatedTenancyAccountType;
+    }
+
+    /**
+     * <p>
+     * The type of linked account.
+     * </p>
+     * 
+     * @return The type of linked account.
+     * @see DedicatedTenancyAccountType
+     */
+
+    public String getDedicatedTenancyAccountType() {
+        return this.dedicatedTenancyAccountType;
+    }
+
+    /**
+     * <p>
+     * The type of linked account.
+     * </p>
+     * 
+     * @param dedicatedTenancyAccountType
+     *        The type of linked account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DedicatedTenancyAccountType
+     */
+
+    public DescribeAccountResult withDedicatedTenancyAccountType(String dedicatedTenancyAccountType) {
+        setDedicatedTenancyAccountType(dedicatedTenancyAccountType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of linked account.
+     * </p>
+     * 
+     * @param dedicatedTenancyAccountType
+     *        The type of linked account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DedicatedTenancyAccountType
+     */
+
+    public DescribeAccountResult withDedicatedTenancyAccountType(DedicatedTenancyAccountType dedicatedTenancyAccountType) {
+        this.dedicatedTenancyAccountType = dedicatedTenancyAccountType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -182,7 +247,9 @@ public class DescribeAccountResult extends com.amazonaws.AmazonWebServiceResult<
         if (getDedicatedTenancySupport() != null)
             sb.append("DedicatedTenancySupport: ").append(getDedicatedTenancySupport()).append(",");
         if (getDedicatedTenancyManagementCidrRange() != null)
-            sb.append("DedicatedTenancyManagementCidrRange: ").append(getDedicatedTenancyManagementCidrRange());
+            sb.append("DedicatedTenancyManagementCidrRange: ").append(getDedicatedTenancyManagementCidrRange()).append(",");
+        if (getDedicatedTenancyAccountType() != null)
+            sb.append("DedicatedTenancyAccountType: ").append(getDedicatedTenancyAccountType());
         sb.append("}");
         return sb.toString();
     }
@@ -206,6 +273,10 @@ public class DescribeAccountResult extends com.amazonaws.AmazonWebServiceResult<
         if (other.getDedicatedTenancyManagementCidrRange() != null
                 && other.getDedicatedTenancyManagementCidrRange().equals(this.getDedicatedTenancyManagementCidrRange()) == false)
             return false;
+        if (other.getDedicatedTenancyAccountType() == null ^ this.getDedicatedTenancyAccountType() == null)
+            return false;
+        if (other.getDedicatedTenancyAccountType() != null && other.getDedicatedTenancyAccountType().equals(this.getDedicatedTenancyAccountType()) == false)
+            return false;
         return true;
     }
 
@@ -216,6 +287,7 @@ public class DescribeAccountResult extends com.amazonaws.AmazonWebServiceResult<
 
         hashCode = prime * hashCode + ((getDedicatedTenancySupport() == null) ? 0 : getDedicatedTenancySupport().hashCode());
         hashCode = prime * hashCode + ((getDedicatedTenancyManagementCidrRange() == null) ? 0 : getDedicatedTenancyManagementCidrRange().hashCode());
+        hashCode = prime * hashCode + ((getDedicatedTenancyAccountType() == null) ? 0 : getDedicatedTenancyAccountType().hashCode());
         return hashCode;
     }
 

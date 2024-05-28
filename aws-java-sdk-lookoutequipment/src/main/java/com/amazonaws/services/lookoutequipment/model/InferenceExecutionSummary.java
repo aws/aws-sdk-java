@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,13 +31,13 @@ public class InferenceExecutionSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The name of the ML model being used for the inference execution.
+     * The name of the machine learning model being used for the inference execution.
      * </p>
      */
     private String modelName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the ML model used for the inference execution.
+     * The Amazon Resource Name (ARN) of the machine learning model used for the inference execution.
      * </p>
      */
     private String modelArn;
@@ -87,6 +87,7 @@ public class InferenceExecutionSummary implements Serializable, Cloneable, Struc
     private InferenceOutputConfiguration dataOutputConfiguration;
     /**
      * <p>
+     * The S3 object that the inference execution results were uploaded to.
      * </p>
      */
     private S3Object customerResultObject;
@@ -102,14 +103,26 @@ public class InferenceExecutionSummary implements Serializable, Cloneable, Struc
      * </p>
      */
     private String failedReason;
+    /**
+     * <p>
+     * The model version used for the inference execution.
+     * </p>
+     */
+    private Long modelVersion;
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the model version used for the inference execution.
+     * </p>
+     */
+    private String modelVersionArn;
 
     /**
      * <p>
-     * The name of the ML model being used for the inference execution.
+     * The name of the machine learning model being used for the inference execution.
      * </p>
      * 
      * @param modelName
-     *        The name of the ML model being used for the inference execution.
+     *        The name of the machine learning model being used for the inference execution.
      */
 
     public void setModelName(String modelName) {
@@ -118,10 +131,10 @@ public class InferenceExecutionSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The name of the ML model being used for the inference execution.
+     * The name of the machine learning model being used for the inference execution.
      * </p>
      * 
-     * @return The name of the ML model being used for the inference execution.
+     * @return The name of the machine learning model being used for the inference execution.
      */
 
     public String getModelName() {
@@ -130,11 +143,11 @@ public class InferenceExecutionSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The name of the ML model being used for the inference execution.
+     * The name of the machine learning model being used for the inference execution.
      * </p>
      * 
      * @param modelName
-     *        The name of the ML model being used for the inference execution.
+     *        The name of the machine learning model being used for the inference execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,11 +158,11 @@ public class InferenceExecutionSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the ML model used for the inference execution.
+     * The Amazon Resource Name (ARN) of the machine learning model used for the inference execution.
      * </p>
      * 
      * @param modelArn
-     *        The Amazon Resource Name (ARN) of the ML model used for the inference execution.
+     *        The Amazon Resource Name (ARN) of the machine learning model used for the inference execution.
      */
 
     public void setModelArn(String modelArn) {
@@ -158,10 +171,10 @@ public class InferenceExecutionSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the ML model used for the inference execution.
+     * The Amazon Resource Name (ARN) of the machine learning model used for the inference execution.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the ML model used for the inference execution.
+     * @return The Amazon Resource Name (ARN) of the machine learning model used for the inference execution.
      */
 
     public String getModelArn() {
@@ -170,11 +183,11 @@ public class InferenceExecutionSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the ML model used for the inference execution.
+     * The Amazon Resource Name (ARN) of the machine learning model used for the inference execution.
      * </p>
      * 
      * @param modelArn
-     *        The Amazon Resource Name (ARN) of the ML model used for the inference execution.
+     *        The Amazon Resource Name (ARN) of the machine learning model used for the inference execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -477,9 +490,11 @@ public class InferenceExecutionSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
+     * The S3 object that the inference execution results were uploaded to.
      * </p>
      * 
      * @param customerResultObject
+     *        The S3 object that the inference execution results were uploaded to.
      */
 
     public void setCustomerResultObject(S3Object customerResultObject) {
@@ -488,9 +503,10 @@ public class InferenceExecutionSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
+     * The S3 object that the inference execution results were uploaded to.
      * </p>
      * 
-     * @return
+     * @return The S3 object that the inference execution results were uploaded to.
      */
 
     public S3Object getCustomerResultObject() {
@@ -499,9 +515,11 @@ public class InferenceExecutionSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
+     * The S3 object that the inference execution results were uploaded to.
      * </p>
      * 
      * @param customerResultObject
+     *        The S3 object that the inference execution results were uploaded to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -610,6 +628,86 @@ public class InferenceExecutionSummary implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The model version used for the inference execution.
+     * </p>
+     * 
+     * @param modelVersion
+     *        The model version used for the inference execution.
+     */
+
+    public void setModelVersion(Long modelVersion) {
+        this.modelVersion = modelVersion;
+    }
+
+    /**
+     * <p>
+     * The model version used for the inference execution.
+     * </p>
+     * 
+     * @return The model version used for the inference execution.
+     */
+
+    public Long getModelVersion() {
+        return this.modelVersion;
+    }
+
+    /**
+     * <p>
+     * The model version used for the inference execution.
+     * </p>
+     * 
+     * @param modelVersion
+     *        The model version used for the inference execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InferenceExecutionSummary withModelVersion(Long modelVersion) {
+        setModelVersion(modelVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the model version used for the inference execution.
+     * </p>
+     * 
+     * @param modelVersionArn
+     *        The Amazon Resource Number (ARN) of the model version used for the inference execution.
+     */
+
+    public void setModelVersionArn(String modelVersionArn) {
+        this.modelVersionArn = modelVersionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the model version used for the inference execution.
+     * </p>
+     * 
+     * @return The Amazon Resource Number (ARN) of the model version used for the inference execution.
+     */
+
+    public String getModelVersionArn() {
+        return this.modelVersionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the model version used for the inference execution.
+     * </p>
+     * 
+     * @param modelVersionArn
+     *        The Amazon Resource Number (ARN) of the model version used for the inference execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InferenceExecutionSummary withModelVersionArn(String modelVersionArn) {
+        setModelVersionArn(modelVersionArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -644,7 +742,11 @@ public class InferenceExecutionSummary implements Serializable, Cloneable, Struc
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getFailedReason() != null)
-            sb.append("FailedReason: ").append(getFailedReason());
+            sb.append("FailedReason: ").append(getFailedReason()).append(",");
+        if (getModelVersion() != null)
+            sb.append("ModelVersion: ").append(getModelVersion()).append(",");
+        if (getModelVersionArn() != null)
+            sb.append("ModelVersionArn: ").append(getModelVersionArn());
         sb.append("}");
         return sb.toString();
     }
@@ -707,6 +809,14 @@ public class InferenceExecutionSummary implements Serializable, Cloneable, Struc
             return false;
         if (other.getFailedReason() != null && other.getFailedReason().equals(this.getFailedReason()) == false)
             return false;
+        if (other.getModelVersion() == null ^ this.getModelVersion() == null)
+            return false;
+        if (other.getModelVersion() != null && other.getModelVersion().equals(this.getModelVersion()) == false)
+            return false;
+        if (other.getModelVersionArn() == null ^ this.getModelVersionArn() == null)
+            return false;
+        if (other.getModelVersionArn() != null && other.getModelVersionArn().equals(this.getModelVersionArn()) == false)
+            return false;
         return true;
     }
 
@@ -727,6 +837,8 @@ public class InferenceExecutionSummary implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getCustomerResultObject() == null) ? 0 : getCustomerResultObject().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getFailedReason() == null) ? 0 : getFailedReason().hashCode());
+        hashCode = prime * hashCode + ((getModelVersion() == null) ? 0 : getModelVersion().hashCode());
+        hashCode = prime * hashCode + ((getModelVersionArn() == null) ? 0 : getModelVersionArn().hashCode());
         return hashCode;
     }
 

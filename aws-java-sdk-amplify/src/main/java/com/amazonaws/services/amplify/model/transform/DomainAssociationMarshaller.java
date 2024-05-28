@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,12 +40,16 @@ public class DomainAssociationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoSubDomainIAMRole").build();
     private static final MarshallingInfo<String> DOMAINSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("domainStatus").build();
+    private static final MarshallingInfo<String> UPDATESTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updateStatus").build();
     private static final MarshallingInfo<String> STATUSREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusReason").build();
     private static final MarshallingInfo<String> CERTIFICATEVERIFICATIONDNSRECORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificateVerificationDNSRecord").build();
     private static final MarshallingInfo<List> SUBDOMAINS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("subDomains").build();
+    private static final MarshallingInfo<StructuredPojo> CERTIFICATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificate").build();
 
     private static final DomainAssociationMarshaller instance = new DomainAssociationMarshaller();
 
@@ -69,9 +73,11 @@ public class DomainAssociationMarshaller {
             protocolMarshaller.marshall(domainAssociation.getAutoSubDomainCreationPatterns(), AUTOSUBDOMAINCREATIONPATTERNS_BINDING);
             protocolMarshaller.marshall(domainAssociation.getAutoSubDomainIAMRole(), AUTOSUBDOMAINIAMROLE_BINDING);
             protocolMarshaller.marshall(domainAssociation.getDomainStatus(), DOMAINSTATUS_BINDING);
+            protocolMarshaller.marshall(domainAssociation.getUpdateStatus(), UPDATESTATUS_BINDING);
             protocolMarshaller.marshall(domainAssociation.getStatusReason(), STATUSREASON_BINDING);
             protocolMarshaller.marshall(domainAssociation.getCertificateVerificationDNSRecord(), CERTIFICATEVERIFICATIONDNSRECORD_BINDING);
             protocolMarshaller.marshall(domainAssociation.getSubDomains(), SUBDOMAINS_BINDING);
+            protocolMarshaller.marshall(domainAssociation.getCertificate(), CERTIFICATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

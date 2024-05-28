@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,16 +29,16 @@ public class DeleteAccountAssignmentRequestMarshaller {
 
     private static final MarshallingInfo<String> INSTANCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceArn").build();
+    private static final MarshallingInfo<String> PERMISSIONSETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PermissionSetArn").build();
+    private static final MarshallingInfo<String> PRINCIPALID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrincipalId").build();
+    private static final MarshallingInfo<String> PRINCIPALTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrincipalType").build();
     private static final MarshallingInfo<String> TARGETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("TargetId").build();
     private static final MarshallingInfo<String> TARGETTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetType").build();
-    private static final MarshallingInfo<String> PERMISSIONSETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PermissionSetArn").build();
-    private static final MarshallingInfo<String> PRINCIPALTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrincipalType").build();
-    private static final MarshallingInfo<String> PRINCIPALID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrincipalId").build();
 
     private static final DeleteAccountAssignmentRequestMarshaller instance = new DeleteAccountAssignmentRequestMarshaller();
 
@@ -57,11 +57,11 @@ public class DeleteAccountAssignmentRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(deleteAccountAssignmentRequest.getInstanceArn(), INSTANCEARN_BINDING);
+            protocolMarshaller.marshall(deleteAccountAssignmentRequest.getPermissionSetArn(), PERMISSIONSETARN_BINDING);
+            protocolMarshaller.marshall(deleteAccountAssignmentRequest.getPrincipalId(), PRINCIPALID_BINDING);
+            protocolMarshaller.marshall(deleteAccountAssignmentRequest.getPrincipalType(), PRINCIPALTYPE_BINDING);
             protocolMarshaller.marshall(deleteAccountAssignmentRequest.getTargetId(), TARGETID_BINDING);
             protocolMarshaller.marshall(deleteAccountAssignmentRequest.getTargetType(), TARGETTYPE_BINDING);
-            protocolMarshaller.marshall(deleteAccountAssignmentRequest.getPermissionSetArn(), PERMISSIONSETARN_BINDING);
-            protocolMarshaller.marshall(deleteAccountAssignmentRequest.getPrincipalType(), PRINCIPALTYPE_BINDING);
-            protocolMarshaller.marshall(deleteAccountAssignmentRequest.getPrincipalId(), PRINCIPALID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

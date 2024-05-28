@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,6 +70,16 @@ public class NetworkInsightsPathStaxUnmarshaller implements Unmarshaller<Network
                     continue;
                 }
 
+                if (context.testExpression("sourceArn", targetDepth)) {
+                    networkInsightsPath.setSourceArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("destinationArn", targetDepth)) {
+                    networkInsightsPath.setDestinationArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("sourceIp", targetDepth)) {
                     networkInsightsPath.setSourceIp(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -100,6 +110,15 @@ public class NetworkInsightsPathStaxUnmarshaller implements Unmarshaller<Network
                     continue;
                 }
 
+                if (context.testExpression("filterAtSource", targetDepth)) {
+                    networkInsightsPath.setFilterAtSource(PathFilterStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("filterAtDestination", targetDepth)) {
+                    networkInsightsPath.setFilterAtDestination(PathFilterStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return networkInsightsPath;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class ListControlsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The list of control metadata objects that the <code>ListControls</code> API returned.
+     * A list of metadata that the <code>ListControls</code> API returns for each control.
      * </p>
      */
     private java.util.List<ControlMetadata> controlMetadataList;
@@ -38,10 +38,10 @@ public class ListControlsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The list of control metadata objects that the <code>ListControls</code> API returned.
+     * A list of metadata that the <code>ListControls</code> API returns for each control.
      * </p>
      * 
-     * @return The list of control metadata objects that the <code>ListControls</code> API returned.
+     * @return A list of metadata that the <code>ListControls</code> API returns for each control.
      */
 
     public java.util.List<ControlMetadata> getControlMetadataList() {
@@ -50,11 +50,11 @@ public class ListControlsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The list of control metadata objects that the <code>ListControls</code> API returned.
+     * A list of metadata that the <code>ListControls</code> API returns for each control.
      * </p>
      * 
      * @param controlMetadataList
-     *        The list of control metadata objects that the <code>ListControls</code> API returned.
+     *        A list of metadata that the <code>ListControls</code> API returns for each control.
      */
 
     public void setControlMetadataList(java.util.Collection<ControlMetadata> controlMetadataList) {
@@ -68,7 +68,7 @@ public class ListControlsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The list of control metadata objects that the <code>ListControls</code> API returned.
+     * A list of metadata that the <code>ListControls</code> API returns for each control.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListControlsResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param controlMetadataList
-     *        The list of control metadata objects that the <code>ListControls</code> API returned.
+     *        A list of metadata that the <code>ListControls</code> API returns for each control.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListControlsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The list of control metadata objects that the <code>ListControls</code> API returned.
+     * A list of metadata that the <code>ListControls</code> API returns for each control.
      * </p>
      * 
      * @param controlMetadataList
-     *        The list of control metadata objects that the <code>ListControls</code> API returned.
+     *        A list of metadata that the <code>ListControls</code> API returns for each control.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

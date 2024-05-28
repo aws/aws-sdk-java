@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,8 +46,7 @@ public class CompletionReport implements Serializable, Cloneable, StructuredPojo
      * system's linked S3 data repository. An absolute path that defines where the completion report will be stored in
      * the destination location. The <code>Path</code> you provide must be located within the file system’s ExportPath.
      * An example <code>Path</code> value is "s3://myBucket/myExportPath/optionalPrefix". The report provides the
-     * following information for each file in the report: FilePath, FileStatus, and ErrorCode. To learn more about a
-     * file system's <code>ExportPath</code>, see .
+     * following information for each file in the report: FilePath, FileStatus, and ErrorCode.
      * </p>
      */
     private String path;
@@ -152,8 +151,7 @@ public class CompletionReport implements Serializable, Cloneable, StructuredPojo
      * system's linked S3 data repository. An absolute path that defines where the completion report will be stored in
      * the destination location. The <code>Path</code> you provide must be located within the file system’s ExportPath.
      * An example <code>Path</code> value is "s3://myBucket/myExportPath/optionalPrefix". The report provides the
-     * following information for each file in the report: FilePath, FileStatus, and ErrorCode. To learn more about a
-     * file system's <code>ExportPath</code>, see .
+     * following information for each file in the report: FilePath, FileStatus, and ErrorCode.
      * </p>
      * 
      * @param path
@@ -162,7 +160,7 @@ public class CompletionReport implements Serializable, Cloneable, StructuredPojo
      *        stored in the destination location. The <code>Path</code> you provide must be located within the file
      *        system’s ExportPath. An example <code>Path</code> value is "s3://myBucket/myExportPath/optionalPrefix".
      *        The report provides the following information for each file in the report: FilePath, FileStatus, and
-     *        ErrorCode. To learn more about a file system's <code>ExportPath</code>, see .
+     *        ErrorCode.
      */
 
     public void setPath(String path) {
@@ -175,8 +173,7 @@ public class CompletionReport implements Serializable, Cloneable, StructuredPojo
      * system's linked S3 data repository. An absolute path that defines where the completion report will be stored in
      * the destination location. The <code>Path</code> you provide must be located within the file system’s ExportPath.
      * An example <code>Path</code> value is "s3://myBucket/myExportPath/optionalPrefix". The report provides the
-     * following information for each file in the report: FilePath, FileStatus, and ErrorCode. To learn more about a
-     * file system's <code>ExportPath</code>, see .
+     * following information for each file in the report: FilePath, FileStatus, and ErrorCode.
      * </p>
      * 
      * @return Required if <code>Enabled</code> is set to <code>true</code>. Specifies the location of the report on the
@@ -184,7 +181,7 @@ public class CompletionReport implements Serializable, Cloneable, StructuredPojo
      *         be stored in the destination location. The <code>Path</code> you provide must be located within the file
      *         system’s ExportPath. An example <code>Path</code> value is "s3://myBucket/myExportPath/optionalPrefix".
      *         The report provides the following information for each file in the report: FilePath, FileStatus, and
-     *         ErrorCode. To learn more about a file system's <code>ExportPath</code>, see .
+     *         ErrorCode.
      */
 
     public String getPath() {
@@ -197,8 +194,7 @@ public class CompletionReport implements Serializable, Cloneable, StructuredPojo
      * system's linked S3 data repository. An absolute path that defines where the completion report will be stored in
      * the destination location. The <code>Path</code> you provide must be located within the file system’s ExportPath.
      * An example <code>Path</code> value is "s3://myBucket/myExportPath/optionalPrefix". The report provides the
-     * following information for each file in the report: FilePath, FileStatus, and ErrorCode. To learn more about a
-     * file system's <code>ExportPath</code>, see .
+     * following information for each file in the report: FilePath, FileStatus, and ErrorCode.
      * </p>
      * 
      * @param path
@@ -207,7 +203,7 @@ public class CompletionReport implements Serializable, Cloneable, StructuredPojo
      *        stored in the destination location. The <code>Path</code> you provide must be located within the file
      *        system’s ExportPath. An example <code>Path</code> value is "s3://myBucket/myExportPath/optionalPrefix".
      *        The report provides the following information for each file in the report: FilePath, FileStatus, and
-     *        ErrorCode. To learn more about a file system's <code>ExportPath</code>, see .
+     *        ErrorCode.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

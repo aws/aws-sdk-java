@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.amplifyuibuilder.AWSAmplifyUIBuilderClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.amplifyuibuilder.model.*;
+
 import com.amazonaws.services.amplifyuibuilder.model.transform.*;
 
 /**
@@ -93,6 +94,9 @@ public class AWSAmplifyUIBuilderClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
                                     com.amazonaws.services.amplifyuibuilder.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.amplifyuibuilder.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("UnauthorizedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.amplifyuibuilder.model.transform.UnauthorizedExceptionUnmarshaller.getInstance()))
@@ -532,8 +536,13 @@ public class AWSAmplifyUIBuilderClient extends AmazonWebServiceClient implements
     }
 
     /**
+     * <note>
      * <p>
-     * Exchanges an access code for a token.
+     * This is for internal use.
+     * </p>
+     * </note>
+     * <p>
+     * Amplify uses this action to exchange an access code for a token.
      * </p>
      * 
      * @param exchangeCodeForTokenRequest
@@ -755,6 +764,69 @@ public class AWSAmplifyUIBuilderClient extends AmazonWebServiceClient implements
 
             HttpResponseHandler<AmazonWebServiceResponse<ExportThemesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ExportThemesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns an existing code generation job.
+     * </p>
+     * 
+     * @param getCodegenJobRequest
+     * @return Result of the GetCodegenJob operation returned by the service.
+     * @throws InternalServerException
+     *         An internal error has occurred. Please retry your request.
+     * @throws InvalidParameterException
+     *         An invalid or out-of-range value was supplied for the input parameter.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         The requested resource does not exist, or access was denied.
+     * @sample AWSAmplifyUIBuilder.GetCodegenJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetCodegenJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetCodegenJobResult getCodegenJob(GetCodegenJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCodegenJob(request);
+    }
+
+    @SdkInternalApi
+    final GetCodegenJobResult executeGetCodegenJob(GetCodegenJobRequest getCodegenJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCodegenJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCodegenJobRequest> request = null;
+        Response<GetCodegenJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCodegenJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCodegenJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AmplifyUIBuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCodegenJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCodegenJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetCodegenJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1009,6 +1081,67 @@ public class AWSAmplifyUIBuilderClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Retrieves a list of code generation jobs for a specified Amplify app and backend environment.
+     * </p>
+     * 
+     * @param listCodegenJobsRequest
+     * @return Result of the ListCodegenJobs operation returned by the service.
+     * @throws InternalServerException
+     *         An internal error has occurred. Please retry your request.
+     * @throws InvalidParameterException
+     *         An invalid or out-of-range value was supplied for the input parameter.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSAmplifyUIBuilder.ListCodegenJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListCodegenJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListCodegenJobsResult listCodegenJobs(ListCodegenJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCodegenJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListCodegenJobsResult executeListCodegenJobs(ListCodegenJobsRequest listCodegenJobsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCodegenJobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCodegenJobsRequest> request = null;
+        Response<ListCodegenJobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCodegenJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCodegenJobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AmplifyUIBuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCodegenJobs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListCodegenJobsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListCodegenJobsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves a list of components for a specified Amplify app and backend environment.
      * </p>
      * 
@@ -1127,6 +1260,71 @@ public class AWSAmplifyUIBuilderClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Returns a list of tags for a specified Amazon Resource Name (ARN).
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws UnauthorizedException
+     *         You don't have permission to perform this operation.
+     * @throws InternalServerException
+     *         An internal error has occurred. Please retry your request.
+     * @throws InvalidParameterException
+     *         An invalid or out-of-range value was supplied for the input parameter.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         The requested resource does not exist, or access was denied.
+     * @sample AWSAmplifyUIBuilder.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AmplifyUIBuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves a list of themes for a specified Amplify app and backend environment.
      * </p>
      * 
@@ -1186,7 +1384,7 @@ public class AWSAmplifyUIBuilderClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Stores the metadata information about a feature on a form or view.
+     * Stores the metadata information about a feature on a form.
      * </p>
      * 
      * @param putMetadataFlagRequest
@@ -1244,8 +1442,13 @@ public class AWSAmplifyUIBuilderClient extends AmazonWebServiceClient implements
     }
 
     /**
+     * <note>
      * <p>
-     * Refreshes a previously issued access token that might have expired.
+     * This is for internal use.
+     * </p>
+     * </note>
+     * <p>
+     * Amplify uses this action to refresh a previously issued access token that might have expired.
      * </p>
      * 
      * @param refreshTokenRequest
@@ -1290,6 +1493,197 @@ public class AWSAmplifyUIBuilderClient extends AmazonWebServiceClient implements
 
             HttpResponseHandler<AmazonWebServiceResponse<RefreshTokenResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RefreshTokenResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts a code generation job for a specified Amplify app and backend environment.
+     * </p>
+     * 
+     * @param startCodegenJobRequest
+     * @return Result of the StartCodegenJob operation returned by the service.
+     * @throws InternalServerException
+     *         An internal error has occurred. Please retry your request.
+     * @throws InvalidParameterException
+     *         An invalid or out-of-range value was supplied for the input parameter.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSAmplifyUIBuilder.StartCodegenJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/StartCodegenJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartCodegenJobResult startCodegenJob(StartCodegenJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartCodegenJob(request);
+    }
+
+    @SdkInternalApi
+    final StartCodegenJobResult executeStartCodegenJob(StartCodegenJobRequest startCodegenJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startCodegenJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartCodegenJobRequest> request = null;
+        Response<StartCodegenJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartCodegenJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startCodegenJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AmplifyUIBuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartCodegenJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartCodegenJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartCodegenJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Tags the resource with a tag key and value.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws UnauthorizedException
+     *         You don't have permission to perform this operation.
+     * @throws InternalServerException
+     *         An internal error has occurred. Please retry your request.
+     * @throws InvalidParameterException
+     *         An invalid or out-of-range value was supplied for the input parameter.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         The requested resource does not exist, or access was denied.
+     * @sample AWSAmplifyUIBuilder.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/TagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AmplifyUIBuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Untags a resource with a specified Amazon Resource Name (ARN).
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws UnauthorizedException
+     *         You don't have permission to perform this operation.
+     * @throws InternalServerException
+     *         An internal error has occurred. Please retry your request.
+     * @throws InvalidParameterException
+     *         An invalid or out-of-range value was supplied for the input parameter.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         The requested resource does not exist, or access was denied.
+     * @sample AWSAmplifyUIBuilder.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/UntagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AmplifyUIBuilder");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

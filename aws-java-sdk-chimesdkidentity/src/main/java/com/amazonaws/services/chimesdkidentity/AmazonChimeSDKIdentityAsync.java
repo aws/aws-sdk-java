@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -77,8 +77,8 @@ public interface AmazonChimeSDKIdentityAsync extends AmazonChimeSDKIdentity {
 
     /**
      * <p>
-     * Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>. The promoted user can perform the
-     * following actions.
+     * Promotes an <code>AppInstanceUser</code> or <code>AppInstanceBot</code> to an <code>AppInstanceAdmin</code>. The
+     * promoted entity can perform the following actions.
      * </p>
      * <ul>
      * <li>
@@ -93,7 +93,8 @@ public interface AmazonChimeSDKIdentityAsync extends AmazonChimeSDKIdentity {
      * </li>
      * </ul>
      * <p>
-     * Only an <code>AppInstanceUser</code> can be promoted to an <code>AppInstanceAdmin</code> role.
+     * Only an <code>AppInstanceUser</code> and <code>AppInstanceBot</code> can be promoted to an
+     * <code>AppInstanceAdmin</code> role.
      * </p>
      * 
      * @param createAppInstanceAdminRequest
@@ -106,8 +107,8 @@ public interface AmazonChimeSDKIdentityAsync extends AmazonChimeSDKIdentity {
 
     /**
      * <p>
-     * Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>. The promoted user can perform the
-     * following actions.
+     * Promotes an <code>AppInstanceUser</code> or <code>AppInstanceBot</code> to an <code>AppInstanceAdmin</code>. The
+     * promoted entity can perform the following actions.
      * </p>
      * <ul>
      * <li>
@@ -122,7 +123,8 @@ public interface AmazonChimeSDKIdentityAsync extends AmazonChimeSDKIdentity {
      * </li>
      * </ul>
      * <p>
-     * Only an <code>AppInstanceUser</code> can be promoted to an <code>AppInstanceAdmin</code> role.
+     * Only an <code>AppInstanceUser</code> and <code>AppInstanceBot</code> can be promoted to an
+     * <code>AppInstanceAdmin</code> role.
      * </p>
      * 
      * @param createAppInstanceAdminRequest
@@ -137,6 +139,39 @@ public interface AmazonChimeSDKIdentityAsync extends AmazonChimeSDKIdentity {
      */
     java.util.concurrent.Future<CreateAppInstanceAdminResult> createAppInstanceAdminAsync(CreateAppInstanceAdminRequest createAppInstanceAdminRequest,
             com.amazonaws.handlers.AsyncHandler<CreateAppInstanceAdminRequest, CreateAppInstanceAdminResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a bot under an Amazon Chime <code>AppInstance</code>. The request consists of a unique
+     * <code>Configuration</code> and <code>Name</code> for that bot.
+     * </p>
+     * 
+     * @param createAppInstanceBotRequest
+     * @return A Java Future containing the result of the CreateAppInstanceBot operation returned by the service.
+     * @sample AmazonChimeSDKIdentityAsync.CreateAppInstanceBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/CreateAppInstanceBot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAppInstanceBotResult> createAppInstanceBotAsync(CreateAppInstanceBotRequest createAppInstanceBotRequest);
+
+    /**
+     * <p>
+     * Creates a bot under an Amazon Chime <code>AppInstance</code>. The request consists of a unique
+     * <code>Configuration</code> and <code>Name</code> for that bot.
+     * </p>
+     * 
+     * @param createAppInstanceBotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAppInstanceBot operation returned by the service.
+     * @sample AmazonChimeSDKIdentityAsyncHandler.CreateAppInstanceBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/CreateAppInstanceBot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAppInstanceBotResult> createAppInstanceBotAsync(CreateAppInstanceBotRequest createAppInstanceBotRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAppInstanceBotRequest, CreateAppInstanceBotResult> asyncHandler);
 
     /**
      * <p>
@@ -204,8 +239,8 @@ public interface AmazonChimeSDKIdentityAsync extends AmazonChimeSDKIdentity {
 
     /**
      * <p>
-     * Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code>. This action does not delete the
-     * user.
+     * Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code> or <code>AppInstanceBot</code>. This
+     * action does not delete the user.
      * </p>
      * 
      * @param deleteAppInstanceAdminRequest
@@ -218,8 +253,8 @@ public interface AmazonChimeSDKIdentityAsync extends AmazonChimeSDKIdentity {
 
     /**
      * <p>
-     * Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code>. This action does not delete the
-     * user.
+     * Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code> or <code>AppInstanceBot</code>. This
+     * action does not delete the user.
      * </p>
      * 
      * @param deleteAppInstanceAdminRequest
@@ -234,6 +269,37 @@ public interface AmazonChimeSDKIdentityAsync extends AmazonChimeSDKIdentity {
      */
     java.util.concurrent.Future<DeleteAppInstanceAdminResult> deleteAppInstanceAdminAsync(DeleteAppInstanceAdminRequest deleteAppInstanceAdminRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAppInstanceAdminRequest, DeleteAppInstanceAdminResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an <code>AppInstanceBot</code>.
+     * </p>
+     * 
+     * @param deleteAppInstanceBotRequest
+     * @return A Java Future containing the result of the DeleteAppInstanceBot operation returned by the service.
+     * @sample AmazonChimeSDKIdentityAsync.DeleteAppInstanceBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DeleteAppInstanceBot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAppInstanceBotResult> deleteAppInstanceBotAsync(DeleteAppInstanceBotRequest deleteAppInstanceBotRequest);
+
+    /**
+     * <p>
+     * Deletes an <code>AppInstanceBot</code>.
+     * </p>
+     * 
+     * @param deleteAppInstanceBotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAppInstanceBot operation returned by the service.
+     * @sample AmazonChimeSDKIdentityAsyncHandler.DeleteAppInstanceBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DeleteAppInstanceBot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAppInstanceBotResult> deleteAppInstanceBotAsync(DeleteAppInstanceBotRequest deleteAppInstanceBotRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAppInstanceBotRequest, DeleteAppInstanceBotResult> asyncHandler);
 
     /**
      * <p>
@@ -364,6 +430,37 @@ public interface AmazonChimeSDKIdentityAsync extends AmazonChimeSDKIdentity {
      */
     java.util.concurrent.Future<DescribeAppInstanceAdminResult> describeAppInstanceAdminAsync(DescribeAppInstanceAdminRequest describeAppInstanceAdminRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeAppInstanceAdminRequest, DescribeAppInstanceAdminResult> asyncHandler);
+
+    /**
+     * <p>
+     * The <code>AppInstanceBot's</code> information.
+     * </p>
+     * 
+     * @param describeAppInstanceBotRequest
+     * @return A Java Future containing the result of the DescribeAppInstanceBot operation returned by the service.
+     * @sample AmazonChimeSDKIdentityAsync.DescribeAppInstanceBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DescribeAppInstanceBot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAppInstanceBotResult> describeAppInstanceBotAsync(DescribeAppInstanceBotRequest describeAppInstanceBotRequest);
+
+    /**
+     * <p>
+     * The <code>AppInstanceBot's</code> information.
+     * </p>
+     * 
+     * @param describeAppInstanceBotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAppInstanceBot operation returned by the service.
+     * @sample AmazonChimeSDKIdentityAsyncHandler.DescribeAppInstanceBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DescribeAppInstanceBot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAppInstanceBotResult> describeAppInstanceBotAsync(DescribeAppInstanceBotRequest describeAppInstanceBotRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAppInstanceBotRequest, DescribeAppInstanceBotResult> asyncHandler);
 
     /**
      * <p>
@@ -500,6 +597,37 @@ public interface AmazonChimeSDKIdentityAsync extends AmazonChimeSDKIdentity {
      */
     java.util.concurrent.Future<ListAppInstanceAdminsResult> listAppInstanceAdminsAsync(ListAppInstanceAdminsRequest listAppInstanceAdminsRequest,
             com.amazonaws.handlers.AsyncHandler<ListAppInstanceAdminsRequest, ListAppInstanceAdminsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all <code>AppInstanceBots</code> created under a single <code>AppInstance</code>.
+     * </p>
+     * 
+     * @param listAppInstanceBotsRequest
+     * @return A Java Future containing the result of the ListAppInstanceBots operation returned by the service.
+     * @sample AmazonChimeSDKIdentityAsync.ListAppInstanceBots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/ListAppInstanceBots"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAppInstanceBotsResult> listAppInstanceBotsAsync(ListAppInstanceBotsRequest listAppInstanceBotsRequest);
+
+    /**
+     * <p>
+     * Lists all <code>AppInstanceBots</code> created under a single <code>AppInstance</code>.
+     * </p>
+     * 
+     * @param listAppInstanceBotsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAppInstanceBots operation returned by the service.
+     * @sample AmazonChimeSDKIdentityAsyncHandler.ListAppInstanceBots
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/ListAppInstanceBots"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAppInstanceBotsResult> listAppInstanceBotsAsync(ListAppInstanceBotsRequest listAppInstanceBotsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAppInstanceBotsRequest, ListAppInstanceBotsResult> asyncHandler);
 
     /**
      * <p>
@@ -668,6 +796,63 @@ public interface AmazonChimeSDKIdentityAsync extends AmazonChimeSDKIdentity {
 
     /**
      * <p>
+     * Sets the number of days before the <code>AppInstanceUser</code> is automatically deleted.
+     * </p>
+     * <note>
+     * <p>
+     * A background process deletes expired <code>AppInstanceUsers</code> within 6 hours of expiration. Actual deletion
+     * times may vary.
+     * </p>
+     * <p>
+     * Expired <code>AppInstanceUsers</code> that have not yet been deleted appear as active, and you can update their
+     * expiration settings. The system honors the new settings.
+     * </p>
+     * </note>
+     * 
+     * @param putAppInstanceUserExpirationSettingsRequest
+     * @return A Java Future containing the result of the PutAppInstanceUserExpirationSettings operation returned by the
+     *         service.
+     * @sample AmazonChimeSDKIdentityAsync.PutAppInstanceUserExpirationSettings
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/PutAppInstanceUserExpirationSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutAppInstanceUserExpirationSettingsResult> putAppInstanceUserExpirationSettingsAsync(
+            PutAppInstanceUserExpirationSettingsRequest putAppInstanceUserExpirationSettingsRequest);
+
+    /**
+     * <p>
+     * Sets the number of days before the <code>AppInstanceUser</code> is automatically deleted.
+     * </p>
+     * <note>
+     * <p>
+     * A background process deletes expired <code>AppInstanceUsers</code> within 6 hours of expiration. Actual deletion
+     * times may vary.
+     * </p>
+     * <p>
+     * Expired <code>AppInstanceUsers</code> that have not yet been deleted appear as active, and you can update their
+     * expiration settings. The system honors the new settings.
+     * </p>
+     * </note>
+     * 
+     * @param putAppInstanceUserExpirationSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutAppInstanceUserExpirationSettings operation returned by the
+     *         service.
+     * @sample AmazonChimeSDKIdentityAsyncHandler.PutAppInstanceUserExpirationSettings
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/PutAppInstanceUserExpirationSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutAppInstanceUserExpirationSettingsResult> putAppInstanceUserExpirationSettingsAsync(
+            PutAppInstanceUserExpirationSettingsRequest putAppInstanceUserExpirationSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<PutAppInstanceUserExpirationSettingsRequest, PutAppInstanceUserExpirationSettingsResult> asyncHandler);
+
+    /**
+     * <p>
      * Registers an endpoint under an Amazon Chime <code>AppInstanceUser</code>. The endpoint receives messages for a
      * user. For push notifications, the endpoint is a mobile device used to receive mobile push notifications for a
      * user.
@@ -799,6 +984,37 @@ public interface AmazonChimeSDKIdentityAsync extends AmazonChimeSDKIdentity {
      */
     java.util.concurrent.Future<UpdateAppInstanceResult> updateAppInstanceAsync(UpdateAppInstanceRequest updateAppInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateAppInstanceRequest, UpdateAppInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the name and metadata of an <code>AppInstanceBot</code>.
+     * </p>
+     * 
+     * @param updateAppInstanceBotRequest
+     * @return A Java Future containing the result of the UpdateAppInstanceBot operation returned by the service.
+     * @sample AmazonChimeSDKIdentityAsync.UpdateAppInstanceBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/UpdateAppInstanceBot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAppInstanceBotResult> updateAppInstanceBotAsync(UpdateAppInstanceBotRequest updateAppInstanceBotRequest);
+
+    /**
+     * <p>
+     * Updates the name and metadata of an <code>AppInstanceBot</code>.
+     * </p>
+     * 
+     * @param updateAppInstanceBotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAppInstanceBot operation returned by the service.
+     * @sample AmazonChimeSDKIdentityAsyncHandler.UpdateAppInstanceBot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/UpdateAppInstanceBot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAppInstanceBotResult> updateAppInstanceBotAsync(UpdateAppInstanceBotRequest updateAppInstanceBotRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAppInstanceBotRequest, UpdateAppInstanceBotResult> asyncHandler);
 
     /**
      * <p>

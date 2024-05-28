@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.iottwinmaker.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -27,16 +28,18 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class WorkspaceSummaryMarshaller {
 
-    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("arn").build();
-    private static final MarshallingInfo<java.util.Date> CREATIONDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationDateTime").timestampFormat("unixTimestamp").build();
-    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
-    private static final MarshallingInfo<java.util.Date> UPDATEDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updateDateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> WORKSPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("workspaceId").build();
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("arn").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<List> LINKEDSERVICES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("linkedServices").build();
+    private static final MarshallingInfo<java.util.Date> CREATIONDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationDateTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> UPDATEDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updateDateTime").timestampFormat("unixTimestamp").build();
 
     private static final WorkspaceSummaryMarshaller instance = new WorkspaceSummaryMarshaller();
 
@@ -54,11 +57,12 @@ public class WorkspaceSummaryMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(workspaceSummary.getArn(), ARN_BINDING);
-            protocolMarshaller.marshall(workspaceSummary.getCreationDateTime(), CREATIONDATETIME_BINDING);
-            protocolMarshaller.marshall(workspaceSummary.getDescription(), DESCRIPTION_BINDING);
-            protocolMarshaller.marshall(workspaceSummary.getUpdateDateTime(), UPDATEDATETIME_BINDING);
             protocolMarshaller.marshall(workspaceSummary.getWorkspaceId(), WORKSPACEID_BINDING);
+            protocolMarshaller.marshall(workspaceSummary.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(workspaceSummary.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(workspaceSummary.getLinkedServices(), LINKEDSERVICES_BINDING);
+            protocolMarshaller.marshall(workspaceSummary.getCreationDateTime(), CREATIONDATETIME_BINDING);
+            protocolMarshaller.marshall(workspaceSummary.getUpdateDateTime(), UPDATEDATETIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

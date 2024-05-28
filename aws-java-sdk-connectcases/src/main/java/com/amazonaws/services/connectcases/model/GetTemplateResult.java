@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,10 +25,28 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
+     * Timestamp at which the resource was created.
+     * </p>
+     */
+    private java.util.Date createdTime;
+    /**
+     * <p>
+     * Denotes whether or not the resource has been deleted.
+     * </p>
+     */
+    private Boolean deleted;
+    /**
+     * <p>
      * A brief description of the template.
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * Timestamp at which the resource was created or last modified.
+     * </p>
+     */
+    private java.util.Date lastModifiedTime;
     /**
      * <p>
      * Configuration of layouts associated to the template.
@@ -49,6 +67,12 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
     private java.util.List<RequiredField> requiredFields;
     /**
      * <p>
+     * The status of the template.
+     * </p>
+     */
+    private String status;
+    /**
+     * <p>
      * A map of of key-value pairs that represent tags on a resource. Tags are used to organize, track, or control
      * access for this resource.
      * </p>
@@ -66,6 +90,98 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private String templateId;
+
+    /**
+     * <p>
+     * Timestamp at which the resource was created.
+     * </p>
+     * 
+     * @param createdTime
+     *        Timestamp at which the resource was created.
+     */
+
+    public void setCreatedTime(java.util.Date createdTime) {
+        this.createdTime = createdTime;
+    }
+
+    /**
+     * <p>
+     * Timestamp at which the resource was created.
+     * </p>
+     * 
+     * @return Timestamp at which the resource was created.
+     */
+
+    public java.util.Date getCreatedTime() {
+        return this.createdTime;
+    }
+
+    /**
+     * <p>
+     * Timestamp at which the resource was created.
+     * </p>
+     * 
+     * @param createdTime
+     *        Timestamp at which the resource was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTemplateResult withCreatedTime(java.util.Date createdTime) {
+        setCreatedTime(createdTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Denotes whether or not the resource has been deleted.
+     * </p>
+     * 
+     * @param deleted
+     *        Denotes whether or not the resource has been deleted.
+     */
+
+    public void setDeleted(Boolean deleted) {
+        this.deleted = deleted;
+    }
+
+    /**
+     * <p>
+     * Denotes whether or not the resource has been deleted.
+     * </p>
+     * 
+     * @return Denotes whether or not the resource has been deleted.
+     */
+
+    public Boolean getDeleted() {
+        return this.deleted;
+    }
+
+    /**
+     * <p>
+     * Denotes whether or not the resource has been deleted.
+     * </p>
+     * 
+     * @param deleted
+     *        Denotes whether or not the resource has been deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTemplateResult withDeleted(Boolean deleted) {
+        setDeleted(deleted);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Denotes whether or not the resource has been deleted.
+     * </p>
+     * 
+     * @return Denotes whether or not the resource has been deleted.
+     */
+
+    public Boolean isDeleted() {
+        return this.deleted;
+    }
 
     /**
      * <p>
@@ -104,6 +220,46 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     public GetTemplateResult withDescription(String description) {
         setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Timestamp at which the resource was created or last modified.
+     * </p>
+     * 
+     * @param lastModifiedTime
+     *        Timestamp at which the resource was created or last modified.
+     */
+
+    public void setLastModifiedTime(java.util.Date lastModifiedTime) {
+        this.lastModifiedTime = lastModifiedTime;
+    }
+
+    /**
+     * <p>
+     * Timestamp at which the resource was created or last modified.
+     * </p>
+     * 
+     * @return Timestamp at which the resource was created or last modified.
+     */
+
+    public java.util.Date getLastModifiedTime() {
+        return this.lastModifiedTime;
+    }
+
+    /**
+     * <p>
+     * Timestamp at which the resource was created or last modified.
+     * </p>
+     * 
+     * @param lastModifiedTime
+     *        Timestamp at which the resource was created or last modified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTemplateResult withLastModifiedTime(java.util.Date lastModifiedTime) {
+        setLastModifiedTime(lastModifiedTime);
         return this;
     }
 
@@ -254,6 +410,65 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     public GetTemplateResult withRequiredFields(java.util.Collection<RequiredField> requiredFields) {
         setRequiredFields(requiredFields);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the template.
+     * </p>
+     * 
+     * @param status
+     *        The status of the template.
+     * @see TemplateStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The status of the template.
+     * </p>
+     * 
+     * @return The status of the template.
+     * @see TemplateStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The status of the template.
+     * </p>
+     * 
+     * @param status
+     *        The status of the template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TemplateStatus
+     */
+
+    public GetTemplateResult withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the template.
+     * </p>
+     * 
+     * @param status
+     *        The status of the template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TemplateStatus
+     */
+
+    public GetTemplateResult withStatus(TemplateStatus status) {
+        this.status = status.toString();
         return this;
     }
 
@@ -423,14 +638,22 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCreatedTime() != null)
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
+        if (getDeleted() != null)
+            sb.append("Deleted: ").append(getDeleted()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getLastModifiedTime() != null)
+            sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
         if (getLayoutConfiguration() != null)
             sb.append("LayoutConfiguration: ").append(getLayoutConfiguration()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getRequiredFields() != null)
             sb.append("RequiredFields: ").append(getRequiredFields()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getTemplateArn() != null)
@@ -451,9 +674,21 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (obj instanceof GetTemplateResult == false)
             return false;
         GetTemplateResult other = (GetTemplateResult) obj;
+        if (other.getCreatedTime() == null ^ this.getCreatedTime() == null)
+            return false;
+        if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
+            return false;
+        if (other.getDeleted() == null ^ this.getDeleted() == null)
+            return false;
+        if (other.getDeleted() != null && other.getDeleted().equals(this.getDeleted()) == false)
+            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getLastModifiedTime() == null ^ this.getLastModifiedTime() == null)
+            return false;
+        if (other.getLastModifiedTime() != null && other.getLastModifiedTime().equals(this.getLastModifiedTime()) == false)
             return false;
         if (other.getLayoutConfiguration() == null ^ this.getLayoutConfiguration() == null)
             return false;
@@ -466,6 +701,10 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (other.getRequiredFields() == null ^ this.getRequiredFields() == null)
             return false;
         if (other.getRequiredFields() != null && other.getRequiredFields().equals(this.getRequiredFields()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
@@ -487,10 +726,14 @@ public class GetTemplateResult extends com.amazonaws.AmazonWebServiceResult<com.
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
+        hashCode = prime * hashCode + ((getDeleted() == null) ? 0 : getDeleted().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getLayoutConfiguration() == null) ? 0 : getLayoutConfiguration().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getRequiredFields() == null) ? 0 : getRequiredFields().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getTemplateArn() == null) ? 0 : getTemplateArn().hashCode());
         hashCode = prime * hashCode + ((getTemplateId() == null) ? 0 : getTemplateId().hashCode());

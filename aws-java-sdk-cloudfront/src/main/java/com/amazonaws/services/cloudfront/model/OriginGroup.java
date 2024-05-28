@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import javax.annotation.Generated;
  * <p>
  * An origin group includes two origins (a primary origin and a second origin to failover to) and a failover criteria
  * that you specify. You create an origin group to support origin failover in CloudFront. When you create or update a
- * distribution, you can specifiy the origin group instead of a single origin, and CloudFront will failover from the
+ * distribution, you can specify the origin group instead of a single origin, and CloudFront will failover from the
  * primary origin to the second origin under the failover conditions that you've chosen.
  * </p>
  * 

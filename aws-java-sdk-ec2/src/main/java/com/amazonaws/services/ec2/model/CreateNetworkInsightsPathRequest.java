@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,25 +28,25 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IP address of the Amazon Web Services resource that is the source of the path.
+     * The IP address of the source.
      * </p>
      */
     private String sourceIp;
     /**
      * <p>
-     * The IP address of the Amazon Web Services resource that is the destination of the path.
+     * The IP address of the destination.
      * </p>
      */
     private String destinationIp;
     /**
      * <p>
-     * The Amazon Web Services resource that is the source of the path.
+     * The ID or ARN of the source. If the resource is in another account, you must specify an ARN.
      * </p>
      */
     private String source;
     /**
      * <p>
-     * The Amazon Web Services resource that is the destination of the path.
+     * The ID or ARN of the destination. If the resource is in another account, you must specify an ARN.
      * </p>
      */
     private String destination;
@@ -77,14 +77,28 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
      * </p>
      */
     private String clientToken;
+    /**
+     * <p>
+     * Scopes the analysis to network paths that match specific filters at the source. If you specify this parameter,
+     * you can't specify the parameters for the source IP address or the destination port.
+     * </p>
+     */
+    private PathRequestFilter filterAtSource;
+    /**
+     * <p>
+     * Scopes the analysis to network paths that match specific filters at the destination. If you specify this
+     * parameter, you can't specify the parameter for the destination IP address.
+     * </p>
+     */
+    private PathRequestFilter filterAtDestination;
 
     /**
      * <p>
-     * The IP address of the Amazon Web Services resource that is the source of the path.
+     * The IP address of the source.
      * </p>
      * 
      * @param sourceIp
-     *        The IP address of the Amazon Web Services resource that is the source of the path.
+     *        The IP address of the source.
      */
 
     public void setSourceIp(String sourceIp) {
@@ -93,10 +107,10 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IP address of the Amazon Web Services resource that is the source of the path.
+     * The IP address of the source.
      * </p>
      * 
-     * @return The IP address of the Amazon Web Services resource that is the source of the path.
+     * @return The IP address of the source.
      */
 
     public String getSourceIp() {
@@ -105,11 +119,11 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IP address of the Amazon Web Services resource that is the source of the path.
+     * The IP address of the source.
      * </p>
      * 
      * @param sourceIp
-     *        The IP address of the Amazon Web Services resource that is the source of the path.
+     *        The IP address of the source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,11 +134,11 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IP address of the Amazon Web Services resource that is the destination of the path.
+     * The IP address of the destination.
      * </p>
      * 
      * @param destinationIp
-     *        The IP address of the Amazon Web Services resource that is the destination of the path.
+     *        The IP address of the destination.
      */
 
     public void setDestinationIp(String destinationIp) {
@@ -133,10 +147,10 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IP address of the Amazon Web Services resource that is the destination of the path.
+     * The IP address of the destination.
      * </p>
      * 
-     * @return The IP address of the Amazon Web Services resource that is the destination of the path.
+     * @return The IP address of the destination.
      */
 
     public String getDestinationIp() {
@@ -145,11 +159,11 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The IP address of the Amazon Web Services resource that is the destination of the path.
+     * The IP address of the destination.
      * </p>
      * 
      * @param destinationIp
-     *        The IP address of the Amazon Web Services resource that is the destination of the path.
+     *        The IP address of the destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,11 +174,11 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Web Services resource that is the source of the path.
+     * The ID or ARN of the source. If the resource is in another account, you must specify an ARN.
      * </p>
      * 
      * @param source
-     *        The Amazon Web Services resource that is the source of the path.
+     *        The ID or ARN of the source. If the resource is in another account, you must specify an ARN.
      */
 
     public void setSource(String source) {
@@ -173,10 +187,10 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Web Services resource that is the source of the path.
+     * The ID or ARN of the source. If the resource is in another account, you must specify an ARN.
      * </p>
      * 
-     * @return The Amazon Web Services resource that is the source of the path.
+     * @return The ID or ARN of the source. If the resource is in another account, you must specify an ARN.
      */
 
     public String getSource() {
@@ -185,11 +199,11 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Web Services resource that is the source of the path.
+     * The ID or ARN of the source. If the resource is in another account, you must specify an ARN.
      * </p>
      * 
      * @param source
-     *        The Amazon Web Services resource that is the source of the path.
+     *        The ID or ARN of the source. If the resource is in another account, you must specify an ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,11 +214,11 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Web Services resource that is the destination of the path.
+     * The ID or ARN of the destination. If the resource is in another account, you must specify an ARN.
      * </p>
      * 
      * @param destination
-     *        The Amazon Web Services resource that is the destination of the path.
+     *        The ID or ARN of the destination. If the resource is in another account, you must specify an ARN.
      */
 
     public void setDestination(String destination) {
@@ -213,10 +227,10 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Web Services resource that is the destination of the path.
+     * The ID or ARN of the destination. If the resource is in another account, you must specify an ARN.
      * </p>
      * 
-     * @return The Amazon Web Services resource that is the destination of the path.
+     * @return The ID or ARN of the destination. If the resource is in another account, you must specify an ARN.
      */
 
     public String getDestination() {
@@ -225,11 +239,11 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Web Services resource that is the destination of the path.
+     * The ID or ARN of the destination. If the resource is in another account, you must specify an ARN.
      * </p>
      * 
      * @param destination
-     *        The Amazon Web Services resource that is the destination of the path.
+     *        The ID or ARN of the destination. If the resource is in another account, you must specify an ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -469,6 +483,98 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * Scopes the analysis to network paths that match specific filters at the source. If you specify this parameter,
+     * you can't specify the parameters for the source IP address or the destination port.
+     * </p>
+     * 
+     * @param filterAtSource
+     *        Scopes the analysis to network paths that match specific filters at the source. If you specify this
+     *        parameter, you can't specify the parameters for the source IP address or the destination port.
+     */
+
+    public void setFilterAtSource(PathRequestFilter filterAtSource) {
+        this.filterAtSource = filterAtSource;
+    }
+
+    /**
+     * <p>
+     * Scopes the analysis to network paths that match specific filters at the source. If you specify this parameter,
+     * you can't specify the parameters for the source IP address or the destination port.
+     * </p>
+     * 
+     * @return Scopes the analysis to network paths that match specific filters at the source. If you specify this
+     *         parameter, you can't specify the parameters for the source IP address or the destination port.
+     */
+
+    public PathRequestFilter getFilterAtSource() {
+        return this.filterAtSource;
+    }
+
+    /**
+     * <p>
+     * Scopes the analysis to network paths that match specific filters at the source. If you specify this parameter,
+     * you can't specify the parameters for the source IP address or the destination port.
+     * </p>
+     * 
+     * @param filterAtSource
+     *        Scopes the analysis to network paths that match specific filters at the source. If you specify this
+     *        parameter, you can't specify the parameters for the source IP address or the destination port.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNetworkInsightsPathRequest withFilterAtSource(PathRequestFilter filterAtSource) {
+        setFilterAtSource(filterAtSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Scopes the analysis to network paths that match specific filters at the destination. If you specify this
+     * parameter, you can't specify the parameter for the destination IP address.
+     * </p>
+     * 
+     * @param filterAtDestination
+     *        Scopes the analysis to network paths that match specific filters at the destination. If you specify this
+     *        parameter, you can't specify the parameter for the destination IP address.
+     */
+
+    public void setFilterAtDestination(PathRequestFilter filterAtDestination) {
+        this.filterAtDestination = filterAtDestination;
+    }
+
+    /**
+     * <p>
+     * Scopes the analysis to network paths that match specific filters at the destination. If you specify this
+     * parameter, you can't specify the parameter for the destination IP address.
+     * </p>
+     * 
+     * @return Scopes the analysis to network paths that match specific filters at the destination. If you specify this
+     *         parameter, you can't specify the parameter for the destination IP address.
+     */
+
+    public PathRequestFilter getFilterAtDestination() {
+        return this.filterAtDestination;
+    }
+
+    /**
+     * <p>
+     * Scopes the analysis to network paths that match specific filters at the destination. If you specify this
+     * parameter, you can't specify the parameter for the destination IP address.
+     * </p>
+     * 
+     * @param filterAtDestination
+     *        Scopes the analysis to network paths that match specific filters at the destination. If you specify this
+     *        parameter, you can't specify the parameter for the destination IP address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNetworkInsightsPathRequest withFilterAtDestination(PathRequestFilter filterAtDestination) {
+        setFilterAtDestination(filterAtDestination);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -506,7 +612,11 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
         if (getTagSpecifications() != null)
             sb.append("TagSpecifications: ").append(getTagSpecifications()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getFilterAtSource() != null)
+            sb.append("FilterAtSource: ").append(getFilterAtSource()).append(",");
+        if (getFilterAtDestination() != null)
+            sb.append("FilterAtDestination: ").append(getFilterAtDestination());
         sb.append("}");
         return sb.toString();
     }
@@ -553,6 +663,14 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
+        if (other.getFilterAtSource() == null ^ this.getFilterAtSource() == null)
+            return false;
+        if (other.getFilterAtSource() != null && other.getFilterAtSource().equals(this.getFilterAtSource()) == false)
+            return false;
+        if (other.getFilterAtDestination() == null ^ this.getFilterAtDestination() == null)
+            return false;
+        if (other.getFilterAtDestination() != null && other.getFilterAtDestination().equals(this.getFilterAtDestination()) == false)
+            return false;
         return true;
     }
 
@@ -569,6 +687,8 @@ public class CreateNetworkInsightsPathRequest extends AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getDestinationPort() == null) ? 0 : getDestinationPort().hashCode());
         hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getFilterAtSource() == null) ? 0 : getFilterAtSource().hashCode());
+        hashCode = prime * hashCode + ((getFilterAtDestination() == null) ? 0 : getFilterAtDestination().hashCode());
         return hashCode;
     }
 

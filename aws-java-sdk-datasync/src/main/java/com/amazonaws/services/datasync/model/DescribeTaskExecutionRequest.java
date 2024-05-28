@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,18 +30,18 @@ public class DescribeTaskExecutionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task that is being executed.
+     * Specifies the Amazon Resource Name (ARN) of the task execution that you want information about.
      * </p>
      */
     private String taskExecutionArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task that is being executed.
+     * Specifies the Amazon Resource Name (ARN) of the task execution that you want information about.
      * </p>
      * 
      * @param taskExecutionArn
-     *        The Amazon Resource Name (ARN) of the task that is being executed.
+     *        Specifies the Amazon Resource Name (ARN) of the task execution that you want information about.
      */
 
     public void setTaskExecutionArn(String taskExecutionArn) {
@@ -50,10 +50,10 @@ public class DescribeTaskExecutionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task that is being executed.
+     * Specifies the Amazon Resource Name (ARN) of the task execution that you want information about.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the task that is being executed.
+     * @return Specifies the Amazon Resource Name (ARN) of the task execution that you want information about.
      */
 
     public String getTaskExecutionArn() {
@@ -62,11 +62,11 @@ public class DescribeTaskExecutionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task that is being executed.
+     * Specifies the Amazon Resource Name (ARN) of the task execution that you want information about.
      * </p>
      * 
      * @param taskExecutionArn
-     *        The Amazon Resource Name (ARN) of the task that is being executed.
+     *        Specifies the Amazon Resource Name (ARN) of the task execution that you want information about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

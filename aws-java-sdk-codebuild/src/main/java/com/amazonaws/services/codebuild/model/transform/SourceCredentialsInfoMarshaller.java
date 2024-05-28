@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class SourceCredentialsInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serverType").build();
     private static final MarshallingInfo<String> AUTHTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("authType").build();
+    private static final MarshallingInfo<String> RESOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("resource").build();
 
     private static final SourceCredentialsInfoMarshaller instance = new SourceCredentialsInfoMarshaller();
 
@@ -53,6 +55,7 @@ public class SourceCredentialsInfoMarshaller {
             protocolMarshaller.marshall(sourceCredentialsInfo.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(sourceCredentialsInfo.getServerType(), SERVERTYPE_BINDING);
             protocolMarshaller.marshall(sourceCredentialsInfo.getAuthType(), AUTHTYPE_BINDING);
+            protocolMarshaller.marshall(sourceCredentialsInfo.getResource(), RESOURCE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

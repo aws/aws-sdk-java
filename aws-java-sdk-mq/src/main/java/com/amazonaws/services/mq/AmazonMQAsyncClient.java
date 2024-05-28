@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -656,6 +656,39 @@ public class AmazonMQAsyncClient extends AmazonMQClient implements AmazonMQAsync
 
                 try {
                     result = executeListUsers(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PromoteResult> promoteAsync(PromoteRequest request) {
+
+        return promoteAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PromoteResult> promoteAsync(final PromoteRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PromoteRequest, PromoteResult> asyncHandler) {
+        final PromoteRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PromoteResult>() {
+            @Override
+            public PromoteResult call() throws Exception {
+                PromoteResult result = null;
+
+                try {
+                    result = executePromote(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

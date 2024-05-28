@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,8 +23,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <note>
  * <p>
- * Alfresco data source connector is currently in preview mode. Basic authentication is currently supported. If you
- * would like to use Alfresco connector in production, contact <a href="http://aws.amazon.com/contact-us/">Support</a>.
+ * Support for <code>AlfrescoConfiguration</code> ended May 2023. We recommend migrating to or using the Alfresco data
+ * source template schema / <a
+ * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html"
+ * >TemplateConfiguration</a> API.
  * </p>
  * </note>
  * 

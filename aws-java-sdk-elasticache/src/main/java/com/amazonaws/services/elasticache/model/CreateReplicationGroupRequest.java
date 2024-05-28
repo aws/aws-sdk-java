@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -191,10 +191,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * Current generation:
      * </p>
      * <p>
-     * <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
-     * 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
-     * <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
-     * <code>cache.m6g.16xlarge</code>
+     * <b>M7g node types</b>: <code>cache.m7g.large</code>, <code>cache.m7g.xlarge</code>,
+     * <code>cache.m7g.2xlarge</code>, <code>cache.m7g.4xlarge</code>, <code>cache.m7g.8xlarge</code>,
+     * <code>cache.m7g.12xlarge</code>, <code>cache.m7g.16xlarge</code>
      * </p>
      * <note>
      * <p>
@@ -203,6 +202,12 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * >Supported Node Types</a>
      * </p>
      * </note>
+     * <p>
+     * <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
+     * 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
+     * <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     * <code>cache.m6g.16xlarge</code>
+     * </p>
      * <p>
      * <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
      * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code>
@@ -259,25 +264,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Memory optimized with data tiering:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Current generation:
-     * </p>
-     * <p>
-     * <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
-     * </p>
-     * <p>
-     * <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
-     * </p>
-     * </li>
-     * </ul>
-     * </li>
-     * <li>
-     * <p>
      * Memory optimized:
      * </p>
      * <ul>
@@ -286,13 +272,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * Current generation:
      * </p>
      * <p>
-     * <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
-     * 1.5.16 onward).
-     * </p>
-     * <p>
-     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
-     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
-     * <code>cache.r6g.16xlarge</code>
+     * <b>R7g node types</b>: <code>cache.r7g.large</code>, <code>cache.r7g.xlarge</code>,
+     * <code>cache.r7g.2xlarge</code>, <code>cache.r7g.4xlarge</code>, <code>cache.r7g.8xlarge</code>,
+     * <code>cache.r7g.12xlarge</code>, <code>cache.r7g.16xlarge</code>
      * </p>
      * <note>
      * <p>
@@ -301,6 +283,12 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * >Supported Node Types</a>
      * </p>
      * </note>
+     * <p>
+     * <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
+     * 1.5.16 onward): <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     * <code>cache.r6g.16xlarge</code>
+     * </p>
      * <p>
      * <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
      * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code>
@@ -356,7 +344,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     private String cacheNodeType;
     /**
      * <p>
-     * The name of the cache engine to be used for the clusters in this replication group. Must be Redis.
+     * The name of the cache engine to be used for the clusters in this replication group. The value must be set to
+     * <code>Redis</code>.
      * </p>
      */
     private String engine;
@@ -459,11 +448,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      */
     private String snapshotName;
     /**
-     * <p>
-     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
-     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
-     * Valid values for <code>ddd</code> are:
-     * </p>
      * <p>
      * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
      * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
@@ -607,11 +591,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * A flag that enables in-transit encryption when set to <code>true</code>.
      * </p>
      * <p>
-     * You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To enable
-     * in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to <code>true</code> when
-     * you create a cluster.
-     * </p>
-     * <p>
      * This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
      * <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is being
      * created in an Amazon VPC.
@@ -678,6 +657,57 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private Boolean dataTieringEnabled;
+    /**
+     * <p>
+     * Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads
+     * using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
+     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     */
+    private String networkType;
+    /**
+     * <p>
+     * The network type you choose when creating a replication group, either <code>ipv4</code> | <code>ipv6</code>. IPv6
+     * is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     */
+    private String ipDiscovery;
+    /**
+     * <p>
+     * A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.
+     * </p>
+     * <p>
+     * When setting <code>TransitEncryptionEnabled</code> to <code>true</code>, you can set your
+     * <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request, to allow both encrypted and
+     * unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted connections
+     * you can modify the value to <code>required</code> to allow encrypted connections only.
+     * </p>
+     * <p>
+     * Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to
+     * first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set
+     * <code>TransitEncryptionMode</code> to <code>required</code>.
+     * </p>
+     * <p>
+     * This process will not trigger the replacement of the replication group.
+     * </p>
+     */
+    private String transitEncryptionMode;
+    /**
+     * <p>
+     * Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to
+     * Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode
+     * disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode
+     * configuration and set the cluster mode to Enabled.
+     * </p>
+     */
+    private String clusterMode;
+    /**
+     * <p>
+     * The name of the snapshot used to create a replication group. Available for Redis only.
+     * </p>
+     */
+    private String serverlessCacheSnapshotName;
 
     /**
      * <p>
@@ -1746,10 +1776,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * Current generation:
      * </p>
      * <p>
-     * <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
-     * 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
-     * <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
-     * <code>cache.m6g.16xlarge</code>
+     * <b>M7g node types</b>: <code>cache.m7g.large</code>, <code>cache.m7g.xlarge</code>,
+     * <code>cache.m7g.2xlarge</code>, <code>cache.m7g.4xlarge</code>, <code>cache.m7g.8xlarge</code>,
+     * <code>cache.m7g.12xlarge</code>, <code>cache.m7g.16xlarge</code>
      * </p>
      * <note>
      * <p>
@@ -1758,6 +1787,12 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * >Supported Node Types</a>
      * </p>
      * </note>
+     * <p>
+     * <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
+     * 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
+     * <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     * <code>cache.m6g.16xlarge</code>
+     * </p>
      * <p>
      * <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
      * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code>
@@ -1814,25 +1849,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Memory optimized with data tiering:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Current generation:
-     * </p>
-     * <p>
-     * <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
-     * </p>
-     * <p>
-     * <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
-     * </p>
-     * </li>
-     * </ul>
-     * </li>
-     * <li>
-     * <p>
      * Memory optimized:
      * </p>
      * <ul>
@@ -1841,13 +1857,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * Current generation:
      * </p>
      * <p>
-     * <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
-     * 1.5.16 onward).
-     * </p>
-     * <p>
-     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
-     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
-     * <code>cache.r6g.16xlarge</code>
+     * <b>R7g node types</b>: <code>cache.r7g.large</code>, <code>cache.r7g.xlarge</code>,
+     * <code>cache.r7g.2xlarge</code>, <code>cache.r7g.4xlarge</code>, <code>cache.r7g.8xlarge</code>,
+     * <code>cache.r7g.12xlarge</code>, <code>cache.r7g.16xlarge</code>
      * </p>
      * <note>
      * <p>
@@ -1856,6 +1868,12 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * >Supported Node Types</a>
      * </p>
      * </note>
+     * <p>
+     * <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
+     * 1.5.16 onward): <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     * <code>cache.r6g.16xlarge</code>
+     * </p>
      * <p>
      * <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
      * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code>
@@ -1926,10 +1944,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        Current generation:
      *        </p>
      *        <p>
-     *        <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
-     *        version 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
-     *        <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>,
-     *        <code>cache.m6g.12xlarge</code>, <code>cache.m6g.16xlarge</code>
+     *        <b>M7g node types</b>: <code>cache.m7g.large</code>, <code>cache.m7g.xlarge</code>,
+     *        <code>cache.m7g.2xlarge</code>, <code>cache.m7g.4xlarge</code>, <code>cache.m7g.8xlarge</code>,
+     *        <code>cache.m7g.12xlarge</code>, <code>cache.m7g.16xlarge</code>
      *        </p>
      *        <note>
      *        <p>
@@ -1938,6 +1955,12 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        >Supported Node Types</a>
      *        </p>
      *        </note>
+     *        <p>
+     *        <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     *        version 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
+     *        <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>,
+     *        <code>cache.m6g.12xlarge</code>, <code>cache.m6g.16xlarge</code>
+     *        </p>
      *        <p>
      *        <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
      *        <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
@@ -1997,25 +2020,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        Memory optimized with data tiering:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Current generation:
-     *        </p>
-     *        <p>
-     *        <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
-     *        </p>
-     *        <p>
-     *        <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     *        <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        </li>
-     *        <li>
-     *        <p>
      *        Memory optimized:
      *        </p>
      *        <ul>
@@ -2024,13 +2028,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        Current generation:
      *        </p>
      *        <p>
-     *        <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
-     *        version 1.5.16 onward).
-     *        </p>
-     *        <p>
-     *        <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
-     *        <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
-     *        <code>cache.r6g.16xlarge</code>
+     *        <b>R7g node types</b>: <code>cache.r7g.large</code>, <code>cache.r7g.xlarge</code>,
+     *        <code>cache.r7g.2xlarge</code>, <code>cache.r7g.4xlarge</code>, <code>cache.r7g.8xlarge</code>,
+     *        <code>cache.r7g.12xlarge</code>, <code>cache.r7g.16xlarge</code>
      *        </p>
      *        <note>
      *        <p>
@@ -2039,6 +2039,12 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        >Supported Node Types</a>
      *        </p>
      *        </note>
+     *        <p>
+     *        <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     *        version 1.5.16 onward): <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
+     *        <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>,
+     *        <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code>
+     *        </p>
      *        <p>
      *        <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
      *        <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
@@ -2118,10 +2124,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * Current generation:
      * </p>
      * <p>
-     * <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
-     * 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
-     * <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
-     * <code>cache.m6g.16xlarge</code>
+     * <b>M7g node types</b>: <code>cache.m7g.large</code>, <code>cache.m7g.xlarge</code>,
+     * <code>cache.m7g.2xlarge</code>, <code>cache.m7g.4xlarge</code>, <code>cache.m7g.8xlarge</code>,
+     * <code>cache.m7g.12xlarge</code>, <code>cache.m7g.16xlarge</code>
      * </p>
      * <note>
      * <p>
@@ -2130,6 +2135,12 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * >Supported Node Types</a>
      * </p>
      * </note>
+     * <p>
+     * <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
+     * 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
+     * <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     * <code>cache.m6g.16xlarge</code>
+     * </p>
      * <p>
      * <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
      * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code>
@@ -2186,25 +2197,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Memory optimized with data tiering:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Current generation:
-     * </p>
-     * <p>
-     * <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
-     * </p>
-     * <p>
-     * <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
-     * </p>
-     * </li>
-     * </ul>
-     * </li>
-     * <li>
-     * <p>
      * Memory optimized:
      * </p>
      * <ul>
@@ -2213,13 +2205,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * Current generation:
      * </p>
      * <p>
-     * <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
-     * 1.5.16 onward).
-     * </p>
-     * <p>
-     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
-     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
-     * <code>cache.r6g.16xlarge</code>
+     * <b>R7g node types</b>: <code>cache.r7g.large</code>, <code>cache.r7g.xlarge</code>,
+     * <code>cache.r7g.2xlarge</code>, <code>cache.r7g.4xlarge</code>, <code>cache.r7g.8xlarge</code>,
+     * <code>cache.r7g.12xlarge</code>, <code>cache.r7g.16xlarge</code>
      * </p>
      * <note>
      * <p>
@@ -2228,6 +2216,12 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * >Supported Node Types</a>
      * </p>
      * </note>
+     * <p>
+     * <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
+     * 1.5.16 onward): <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     * <code>cache.r6g.16xlarge</code>
+     * </p>
      * <p>
      * <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
      * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code>
@@ -2297,10 +2291,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         Current generation:
      *         </p>
      *         <p>
-     *         <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
-     *         version 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
-     *         <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>,
-     *         <code>cache.m6g.12xlarge</code>, <code>cache.m6g.16xlarge</code>
+     *         <b>M7g node types</b>: <code>cache.m7g.large</code>, <code>cache.m7g.xlarge</code>,
+     *         <code>cache.m7g.2xlarge</code>, <code>cache.m7g.4xlarge</code>, <code>cache.m7g.8xlarge</code>,
+     *         <code>cache.m7g.12xlarge</code>, <code>cache.m7g.16xlarge</code>
      *         </p>
      *         <note>
      *         <p>
@@ -2309,6 +2302,12 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         >Supported Node Types</a>
      *         </p>
      *         </note>
+     *         <p>
+     *         <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     *         version 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
+     *         <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>,
+     *         <code>cache.m6g.12xlarge</code>, <code>cache.m6g.16xlarge</code>
+     *         </p>
      *         <p>
      *         <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
      *         <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
@@ -2368,25 +2367,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         </li>
      *         <li>
      *         <p>
-     *         Memory optimized with data tiering:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Current generation:
-     *         </p>
-     *         <p>
-     *         <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
-     *         </p>
-     *         <p>
-     *         <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     *         <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         </li>
-     *         <li>
-     *         <p>
      *         Memory optimized:
      *         </p>
      *         <ul>
@@ -2395,13 +2375,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         Current generation:
      *         </p>
      *         <p>
-     *         <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
-     *         version 1.5.16 onward).
-     *         </p>
-     *         <p>
-     *         <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
-     *         <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
-     *         <code>cache.r6g.16xlarge</code>
+     *         <b>R7g node types</b>: <code>cache.r7g.large</code>, <code>cache.r7g.xlarge</code>,
+     *         <code>cache.r7g.2xlarge</code>, <code>cache.r7g.4xlarge</code>, <code>cache.r7g.8xlarge</code>,
+     *         <code>cache.r7g.12xlarge</code>, <code>cache.r7g.16xlarge</code>
      *         </p>
      *         <note>
      *         <p>
@@ -2410,6 +2386,12 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         >Supported Node Types</a>
      *         </p>
      *         </note>
+     *         <p>
+     *         <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     *         version 1.5.16 onward): <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
+     *         <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>,
+     *         <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code>
+     *         </p>
      *         <p>
      *         <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
      *         <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
@@ -2489,10 +2471,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * Current generation:
      * </p>
      * <p>
-     * <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
-     * 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
-     * <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
-     * <code>cache.m6g.16xlarge</code>
+     * <b>M7g node types</b>: <code>cache.m7g.large</code>, <code>cache.m7g.xlarge</code>,
+     * <code>cache.m7g.2xlarge</code>, <code>cache.m7g.4xlarge</code>, <code>cache.m7g.8xlarge</code>,
+     * <code>cache.m7g.12xlarge</code>, <code>cache.m7g.16xlarge</code>
      * </p>
      * <note>
      * <p>
@@ -2501,6 +2482,12 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * >Supported Node Types</a>
      * </p>
      * </note>
+     * <p>
+     * <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
+     * 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>, <code>cache.m6g.2xlarge</code>,
+     * <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>, <code>cache.m6g.12xlarge</code>,
+     * <code>cache.m6g.16xlarge</code>
+     * </p>
      * <p>
      * <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>, <code>cache.m5.2xlarge</code>,
      * <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>, <code>cache.m5.24xlarge</code>
@@ -2557,25 +2544,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Memory optimized with data tiering:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Current generation:
-     * </p>
-     * <p>
-     * <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
-     * </p>
-     * <p>
-     * <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
-     * </p>
-     * </li>
-     * </ul>
-     * </li>
-     * <li>
-     * <p>
      * Memory optimized:
      * </p>
      * <ul>
@@ -2584,13 +2552,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * Current generation:
      * </p>
      * <p>
-     * <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
-     * 1.5.16 onward).
-     * </p>
-     * <p>
-     * <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
-     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
-     * <code>cache.r6g.16xlarge</code>
+     * <b>R7g node types</b>: <code>cache.r7g.large</code>, <code>cache.r7g.xlarge</code>,
+     * <code>cache.r7g.2xlarge</code>, <code>cache.r7g.4xlarge</code>, <code>cache.r7g.8xlarge</code>,
+     * <code>cache.r7g.12xlarge</code>, <code>cache.r7g.16xlarge</code>
      * </p>
      * <note>
      * <p>
@@ -2599,6 +2563,12 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * >Supported Node Types</a>
      * </p>
      * </note>
+     * <p>
+     * <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version
+     * 1.5.16 onward): <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
+     * <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
+     * <code>cache.r6g.16xlarge</code>
+     * </p>
      * <p>
      * <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>, <code>cache.r5.2xlarge</code>,
      * <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>, <code>cache.r5.24xlarge</code>
@@ -2669,10 +2639,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        Current generation:
      *        </p>
      *        <p>
-     *        <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
-     *        version 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
-     *        <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>,
-     *        <code>cache.m6g.12xlarge</code>, <code>cache.m6g.16xlarge</code>
+     *        <b>M7g node types</b>: <code>cache.m7g.large</code>, <code>cache.m7g.xlarge</code>,
+     *        <code>cache.m7g.2xlarge</code>, <code>cache.m7g.4xlarge</code>, <code>cache.m7g.8xlarge</code>,
+     *        <code>cache.m7g.12xlarge</code>, <code>cache.m7g.16xlarge</code>
      *        </p>
      *        <note>
      *        <p>
@@ -2681,6 +2650,12 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        >Supported Node Types</a>
      *        </p>
      *        </note>
+     *        <p>
+     *        <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     *        version 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
+     *        <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>,
+     *        <code>cache.m6g.12xlarge</code>, <code>cache.m6g.16xlarge</code>
+     *        </p>
      *        <p>
      *        <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
      *        <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
@@ -2740,25 +2715,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        Memory optimized with data tiering:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Current generation:
-     *        </p>
-     *        <p>
-     *        <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
-     *        </p>
-     *        <p>
-     *        <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     *        <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        </li>
-     *        <li>
-     *        <p>
      *        Memory optimized:
      *        </p>
      *        <ul>
@@ -2767,13 +2723,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        Current generation:
      *        </p>
      *        <p>
-     *        <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
-     *        version 1.5.16 onward).
-     *        </p>
-     *        <p>
-     *        <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>, <code>cache.r6g.2xlarge</code>,
-     *        <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>, <code>cache.r6g.12xlarge</code>,
-     *        <code>cache.r6g.16xlarge</code>
+     *        <b>R7g node types</b>: <code>cache.r7g.large</code>, <code>cache.r7g.xlarge</code>,
+     *        <code>cache.r7g.2xlarge</code>, <code>cache.r7g.4xlarge</code>, <code>cache.r7g.8xlarge</code>,
+     *        <code>cache.r7g.12xlarge</code>, <code>cache.r7g.16xlarge</code>
      *        </p>
      *        <note>
      *        <p>
@@ -2782,6 +2734,12 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        >Supported Node Types</a>
      *        </p>
      *        </note>
+     *        <p>
+     *        <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine
+     *        version 1.5.16 onward): <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
+     *        <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>,
+     *        <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code>
+     *        </p>
      *        <p>
      *        <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
      *        <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
@@ -2845,11 +2803,13 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the cache engine to be used for the clusters in this replication group. Must be Redis.
+     * The name of the cache engine to be used for the clusters in this replication group. The value must be set to
+     * <code>Redis</code>.
      * </p>
      * 
      * @param engine
-     *        The name of the cache engine to be used for the clusters in this replication group. Must be Redis.
+     *        The name of the cache engine to be used for the clusters in this replication group. The value must be set
+     *        to <code>Redis</code>.
      */
 
     public void setEngine(String engine) {
@@ -2858,10 +2818,12 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the cache engine to be used for the clusters in this replication group. Must be Redis.
+     * The name of the cache engine to be used for the clusters in this replication group. The value must be set to
+     * <code>Redis</code>.
      * </p>
      * 
-     * @return The name of the cache engine to be used for the clusters in this replication group. Must be Redis.
+     * @return The name of the cache engine to be used for the clusters in this replication group. The value must be set
+     *         to <code>Redis</code>.
      */
 
     public String getEngine() {
@@ -2870,11 +2832,13 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the cache engine to be used for the clusters in this replication group. Must be Redis.
+     * The name of the cache engine to be used for the clusters in this replication group. The value must be set to
+     * <code>Redis</code>.
      * </p>
      * 
      * @param engine
-     *        The name of the cache engine to be used for the clusters in this replication group. Must be Redis.
+     *        The name of the cache engine to be used for the clusters in this replication group. The value must be set
+     *        to <code>Redis</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3647,11 +3611,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
      * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
-     * Valid values for <code>ddd</code> are:
-     * </p>
-     * <p>
-     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
-     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
      * </p>
      * <p>
      * Valid values for <code>ddd</code> are:
@@ -3700,12 +3659,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * @param preferredMaintenanceWindow
      *        Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a
      *        range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
-     *        period. Valid values for <code>ddd</code> are:</p>
-     *        <p>
-     *        Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a
-     *        range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
-     *        period.
-     *        </p>
+     *        period.</p>
      *        <p>
      *        Valid values for <code>ddd</code> are:
      *        </p>
@@ -3758,11 +3712,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
      * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
-     * Valid values for <code>ddd</code> are:
-     * </p>
-     * <p>
-     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
-     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
      * </p>
      * <p>
      * Valid values for <code>ddd</code> are:
@@ -3810,12 +3759,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * 
      * @return Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as
      *         a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60
-     *         minute period. Valid values for <code>ddd</code> are:</p>
-     *         <p>
-     *         Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as
-     *         a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60
-     *         minute period.
-     *         </p>
+     *         minute period.</p>
      *         <p>
      *         Valid values for <code>ddd</code> are:
      *         </p>
@@ -3868,11 +3812,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
      * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
-     * Valid values for <code>ddd</code> are:
-     * </p>
-     * <p>
-     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
-     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
      * </p>
      * <p>
      * Valid values for <code>ddd</code> are:
@@ -3921,12 +3860,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * @param preferredMaintenanceWindow
      *        Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a
      *        range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
-     *        period. Valid values for <code>ddd</code> are:</p>
-     *        <p>
-     *        Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a
-     *        range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
-     *        period.
-     *        </p>
+     *        period.</p>
      *        <p>
      *        Valid values for <code>ddd</code> are:
      *        </p>
@@ -4542,11 +4476,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * A flag that enables in-transit encryption when set to <code>true</code>.
      * </p>
      * <p>
-     * You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To enable
-     * in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to <code>true</code> when
-     * you create a cluster.
-     * </p>
-     * <p>
      * This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
      * <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is being
      * created in an Amazon VPC.
@@ -4570,11 +4499,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param transitEncryptionEnabled
      *        A flag that enables in-transit encryption when set to <code>true</code>.</p>
-     *        <p>
-     *        You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To
-     *        enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to
-     *        <code>true</code> when you create a cluster.
-     *        </p>
      *        <p>
      *        This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
      *        <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is
@@ -4606,11 +4530,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * A flag that enables in-transit encryption when set to <code>true</code>.
      * </p>
      * <p>
-     * You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To enable
-     * in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to <code>true</code> when
-     * you create a cluster.
-     * </p>
-     * <p>
      * This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
      * <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is being
      * created in an Amazon VPC.
@@ -4633,11 +4552,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </important>
      * 
      * @return A flag that enables in-transit encryption when set to <code>true</code>.</p>
-     *         <p>
-     *         You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To
-     *         enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to
-     *         <code>true</code> when you create a cluster.
-     *         </p>
      *         <p>
      *         This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
      *         <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is
@@ -4669,11 +4583,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * A flag that enables in-transit encryption when set to <code>true</code>.
      * </p>
      * <p>
-     * You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To enable
-     * in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to <code>true</code> when
-     * you create a cluster.
-     * </p>
-     * <p>
      * This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
      * <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is being
      * created in an Amazon VPC.
@@ -4697,11 +4606,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param transitEncryptionEnabled
      *        A flag that enables in-transit encryption when set to <code>true</code>.</p>
-     *        <p>
-     *        You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To
-     *        enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to
-     *        <code>true</code> when you create a cluster.
-     *        </p>
      *        <p>
      *        This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
      *        <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is
@@ -4735,11 +4639,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * A flag that enables in-transit encryption when set to <code>true</code>.
      * </p>
      * <p>
-     * You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To enable
-     * in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to <code>true</code> when
-     * you create a cluster.
-     * </p>
-     * <p>
      * This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
      * <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is being
      * created in an Amazon VPC.
@@ -4762,11 +4661,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </important>
      * 
      * @return A flag that enables in-transit encryption when set to <code>true</code>.</p>
-     *         <p>
-     *         You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To
-     *         enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to
-     *         <code>true</code> when you create a cluster.
-     *         </p>
      *         <p>
      *         This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
      *         <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is
@@ -5192,6 +5086,450 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads
+     * using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
+     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @param networkType
+     *        Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for
+     *        workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built
+     *        on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * @see NetworkType
+     */
+
+    public void setNetworkType(String networkType) {
+        this.networkType = networkType;
+    }
+
+    /**
+     * <p>
+     * Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads
+     * using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
+     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @return Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for
+     *         workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built
+     *         on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * @see NetworkType
+     */
+
+    public String getNetworkType() {
+        return this.networkType;
+    }
+
+    /**
+     * <p>
+     * Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads
+     * using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
+     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @param networkType
+     *        Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for
+     *        workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built
+     *        on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see NetworkType
+     */
+
+    public CreateReplicationGroupRequest withNetworkType(String networkType) {
+        setNetworkType(networkType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads
+     * using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
+     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @param networkType
+     *        Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for
+     *        workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built
+     *        on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see NetworkType
+     */
+
+    public CreateReplicationGroupRequest withNetworkType(NetworkType networkType) {
+        this.networkType = networkType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The network type you choose when creating a replication group, either <code>ipv4</code> | <code>ipv6</code>. IPv6
+     * is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @param ipDiscovery
+     *        The network type you choose when creating a replication group, either <code>ipv4</code> |
+     *        <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached
+     *        engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
+     *        system</a>.
+     * @see IpDiscovery
+     */
+
+    public void setIpDiscovery(String ipDiscovery) {
+        this.ipDiscovery = ipDiscovery;
+    }
+
+    /**
+     * <p>
+     * The network type you choose when creating a replication group, either <code>ipv4</code> | <code>ipv6</code>. IPv6
+     * is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @return The network type you choose when creating a replication group, either <code>ipv4</code> |
+     *         <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached
+     *         engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
+     *         system</a>.
+     * @see IpDiscovery
+     */
+
+    public String getIpDiscovery() {
+        return this.ipDiscovery;
+    }
+
+    /**
+     * <p>
+     * The network type you choose when creating a replication group, either <code>ipv4</code> | <code>ipv6</code>. IPv6
+     * is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @param ipDiscovery
+     *        The network type you choose when creating a replication group, either <code>ipv4</code> |
+     *        <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached
+     *        engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
+     *        system</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpDiscovery
+     */
+
+    public CreateReplicationGroupRequest withIpDiscovery(String ipDiscovery) {
+        setIpDiscovery(ipDiscovery);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The network type you choose when creating a replication group, either <code>ipv4</code> | <code>ipv6</code>. IPv6
+     * is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @param ipDiscovery
+     *        The network type you choose when creating a replication group, either <code>ipv4</code> |
+     *        <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached
+     *        engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
+     *        system</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpDiscovery
+     */
+
+    public CreateReplicationGroupRequest withIpDiscovery(IpDiscovery ipDiscovery) {
+        this.ipDiscovery = ipDiscovery.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.
+     * </p>
+     * <p>
+     * When setting <code>TransitEncryptionEnabled</code> to <code>true</code>, you can set your
+     * <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request, to allow both encrypted and
+     * unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted connections
+     * you can modify the value to <code>required</code> to allow encrypted connections only.
+     * </p>
+     * <p>
+     * Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to
+     * first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set
+     * <code>TransitEncryptionMode</code> to <code>required</code>.
+     * </p>
+     * <p>
+     * This process will not trigger the replacement of the replication group.
+     * </p>
+     * 
+     * @param transitEncryptionMode
+     *        A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
+     *        <p>
+     *        When setting <code>TransitEncryptionEnabled</code> to <code>true</code>, you can set your
+     *        <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request, to allow both encrypted
+     *        and unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted
+     *        connections you can modify the value to <code>required</code> to allow encrypted connections only.
+     *        </p>
+     *        <p>
+     *        Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires
+     *        you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set
+     *        <code>TransitEncryptionMode</code> to <code>required</code>.
+     *        </p>
+     *        <p>
+     *        This process will not trigger the replacement of the replication group.
+     * @see TransitEncryptionMode
+     */
+
+    public void setTransitEncryptionMode(String transitEncryptionMode) {
+        this.transitEncryptionMode = transitEncryptionMode;
+    }
+
+    /**
+     * <p>
+     * A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.
+     * </p>
+     * <p>
+     * When setting <code>TransitEncryptionEnabled</code> to <code>true</code>, you can set your
+     * <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request, to allow both encrypted and
+     * unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted connections
+     * you can modify the value to <code>required</code> to allow encrypted connections only.
+     * </p>
+     * <p>
+     * Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to
+     * first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set
+     * <code>TransitEncryptionMode</code> to <code>required</code>.
+     * </p>
+     * <p>
+     * This process will not trigger the replacement of the replication group.
+     * </p>
+     * 
+     * @return A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
+     *         <p>
+     *         When setting <code>TransitEncryptionEnabled</code> to <code>true</code>, you can set your
+     *         <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request, to allow both encrypted
+     *         and unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted
+     *         connections you can modify the value to <code>required</code> to allow encrypted connections only.
+     *         </p>
+     *         <p>
+     *         Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires
+     *         you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set
+     *         <code>TransitEncryptionMode</code> to <code>required</code>.
+     *         </p>
+     *         <p>
+     *         This process will not trigger the replacement of the replication group.
+     * @see TransitEncryptionMode
+     */
+
+    public String getTransitEncryptionMode() {
+        return this.transitEncryptionMode;
+    }
+
+    /**
+     * <p>
+     * A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.
+     * </p>
+     * <p>
+     * When setting <code>TransitEncryptionEnabled</code> to <code>true</code>, you can set your
+     * <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request, to allow both encrypted and
+     * unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted connections
+     * you can modify the value to <code>required</code> to allow encrypted connections only.
+     * </p>
+     * <p>
+     * Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to
+     * first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set
+     * <code>TransitEncryptionMode</code> to <code>required</code>.
+     * </p>
+     * <p>
+     * This process will not trigger the replacement of the replication group.
+     * </p>
+     * 
+     * @param transitEncryptionMode
+     *        A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
+     *        <p>
+     *        When setting <code>TransitEncryptionEnabled</code> to <code>true</code>, you can set your
+     *        <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request, to allow both encrypted
+     *        and unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted
+     *        connections you can modify the value to <code>required</code> to allow encrypted connections only.
+     *        </p>
+     *        <p>
+     *        Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires
+     *        you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set
+     *        <code>TransitEncryptionMode</code> to <code>required</code>.
+     *        </p>
+     *        <p>
+     *        This process will not trigger the replacement of the replication group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TransitEncryptionMode
+     */
+
+    public CreateReplicationGroupRequest withTransitEncryptionMode(String transitEncryptionMode) {
+        setTransitEncryptionMode(transitEncryptionMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.
+     * </p>
+     * <p>
+     * When setting <code>TransitEncryptionEnabled</code> to <code>true</code>, you can set your
+     * <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request, to allow both encrypted and
+     * unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted connections
+     * you can modify the value to <code>required</code> to allow encrypted connections only.
+     * </p>
+     * <p>
+     * Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to
+     * first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set
+     * <code>TransitEncryptionMode</code> to <code>required</code>.
+     * </p>
+     * <p>
+     * This process will not trigger the replacement of the replication group.
+     * </p>
+     * 
+     * @param transitEncryptionMode
+     *        A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
+     *        <p>
+     *        When setting <code>TransitEncryptionEnabled</code> to <code>true</code>, you can set your
+     *        <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request, to allow both encrypted
+     *        and unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted
+     *        connections you can modify the value to <code>required</code> to allow encrypted connections only.
+     *        </p>
+     *        <p>
+     *        Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires
+     *        you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can set
+     *        <code>TransitEncryptionMode</code> to <code>required</code>.
+     *        </p>
+     *        <p>
+     *        This process will not trigger the replacement of the replication group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TransitEncryptionMode
+     */
+
+    public CreateReplicationGroupRequest withTransitEncryptionMode(TransitEncryptionMode transitEncryptionMode) {
+        this.transitEncryptionMode = transitEncryptionMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to
+     * Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode
+     * disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode
+     * configuration and set the cluster mode to Enabled.
+     * </p>
+     * 
+     * @param clusterMode
+     *        Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode
+     *        to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and
+     *        cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then
+     *        complete cluster mode configuration and set the cluster mode to Enabled.
+     * @see ClusterMode
+     */
+
+    public void setClusterMode(String clusterMode) {
+        this.clusterMode = clusterMode;
+    }
+
+    /**
+     * <p>
+     * Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to
+     * Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode
+     * disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode
+     * configuration and set the cluster mode to Enabled.
+     * </p>
+     * 
+     * @return Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode
+     *         to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and
+     *         cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then
+     *         complete cluster mode configuration and set the cluster mode to Enabled.
+     * @see ClusterMode
+     */
+
+    public String getClusterMode() {
+        return this.clusterMode;
+    }
+
+    /**
+     * <p>
+     * Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to
+     * Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode
+     * disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode
+     * configuration and set the cluster mode to Enabled.
+     * </p>
+     * 
+     * @param clusterMode
+     *        Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode
+     *        to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and
+     *        cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then
+     *        complete cluster mode configuration and set the cluster mode to Enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ClusterMode
+     */
+
+    public CreateReplicationGroupRequest withClusterMode(String clusterMode) {
+        setClusterMode(clusterMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode to
+     * Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and cluster mode
+     * disabled. After you migrate all Redis clients to use cluster mode enabled, you can then complete cluster mode
+     * configuration and set the cluster mode to Enabled.
+     * </p>
+     * 
+     * @param clusterMode
+     *        Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first set the cluster mode
+     *        to Compatible. Compatible mode allows your Redis clients to connect using both cluster mode enabled and
+     *        cluster mode disabled. After you migrate all Redis clients to use cluster mode enabled, you can then
+     *        complete cluster mode configuration and set the cluster mode to Enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ClusterMode
+     */
+
+    public CreateReplicationGroupRequest withClusterMode(ClusterMode clusterMode) {
+        this.clusterMode = clusterMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the snapshot used to create a replication group. Available for Redis only.
+     * </p>
+     * 
+     * @param serverlessCacheSnapshotName
+     *        The name of the snapshot used to create a replication group. Available for Redis only.
+     */
+
+    public void setServerlessCacheSnapshotName(String serverlessCacheSnapshotName) {
+        this.serverlessCacheSnapshotName = serverlessCacheSnapshotName;
+    }
+
+    /**
+     * <p>
+     * The name of the snapshot used to create a replication group. Available for Redis only.
+     * </p>
+     * 
+     * @return The name of the snapshot used to create a replication group. Available for Redis only.
+     */
+
+    public String getServerlessCacheSnapshotName() {
+        return this.serverlessCacheSnapshotName;
+    }
+
+    /**
+     * <p>
+     * The name of the snapshot used to create a replication group. Available for Redis only.
+     * </p>
+     * 
+     * @param serverlessCacheSnapshotName
+     *        The name of the snapshot used to create a replication group. Available for Redis only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateReplicationGroupRequest withServerlessCacheSnapshotName(String serverlessCacheSnapshotName) {
+        setServerlessCacheSnapshotName(serverlessCacheSnapshotName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -5270,7 +5608,17 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         if (getLogDeliveryConfigurations() != null)
             sb.append("LogDeliveryConfigurations: ").append(getLogDeliveryConfigurations()).append(",");
         if (getDataTieringEnabled() != null)
-            sb.append("DataTieringEnabled: ").append(getDataTieringEnabled());
+            sb.append("DataTieringEnabled: ").append(getDataTieringEnabled()).append(",");
+        if (getNetworkType() != null)
+            sb.append("NetworkType: ").append(getNetworkType()).append(",");
+        if (getIpDiscovery() != null)
+            sb.append("IpDiscovery: ").append(getIpDiscovery()).append(",");
+        if (getTransitEncryptionMode() != null)
+            sb.append("TransitEncryptionMode: ").append(getTransitEncryptionMode()).append(",");
+        if (getClusterMode() != null)
+            sb.append("ClusterMode: ").append(getClusterMode()).append(",");
+        if (getServerlessCacheSnapshotName() != null)
+            sb.append("ServerlessCacheSnapshotName: ").append(getServerlessCacheSnapshotName());
         sb.append("}");
         return sb.toString();
     }
@@ -5421,6 +5769,26 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getDataTieringEnabled() != null && other.getDataTieringEnabled().equals(this.getDataTieringEnabled()) == false)
             return false;
+        if (other.getNetworkType() == null ^ this.getNetworkType() == null)
+            return false;
+        if (other.getNetworkType() != null && other.getNetworkType().equals(this.getNetworkType()) == false)
+            return false;
+        if (other.getIpDiscovery() == null ^ this.getIpDiscovery() == null)
+            return false;
+        if (other.getIpDiscovery() != null && other.getIpDiscovery().equals(this.getIpDiscovery()) == false)
+            return false;
+        if (other.getTransitEncryptionMode() == null ^ this.getTransitEncryptionMode() == null)
+            return false;
+        if (other.getTransitEncryptionMode() != null && other.getTransitEncryptionMode().equals(this.getTransitEncryptionMode()) == false)
+            return false;
+        if (other.getClusterMode() == null ^ this.getClusterMode() == null)
+            return false;
+        if (other.getClusterMode() != null && other.getClusterMode().equals(this.getClusterMode()) == false)
+            return false;
+        if (other.getServerlessCacheSnapshotName() == null ^ this.getServerlessCacheSnapshotName() == null)
+            return false;
+        if (other.getServerlessCacheSnapshotName() != null && other.getServerlessCacheSnapshotName().equals(this.getServerlessCacheSnapshotName()) == false)
+            return false;
         return true;
     }
 
@@ -5463,6 +5831,11 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getUserGroupIds() == null) ? 0 : getUserGroupIds().hashCode());
         hashCode = prime * hashCode + ((getLogDeliveryConfigurations() == null) ? 0 : getLogDeliveryConfigurations().hashCode());
         hashCode = prime * hashCode + ((getDataTieringEnabled() == null) ? 0 : getDataTieringEnabled().hashCode());
+        hashCode = prime * hashCode + ((getNetworkType() == null) ? 0 : getNetworkType().hashCode());
+        hashCode = prime * hashCode + ((getIpDiscovery() == null) ? 0 : getIpDiscovery().hashCode());
+        hashCode = prime * hashCode + ((getTransitEncryptionMode() == null) ? 0 : getTransitEncryptionMode().hashCode());
+        hashCode = prime * hashCode + ((getClusterMode() == null) ? 0 : getClusterMode().hashCode());
+        hashCode = prime * hashCode + ((getServerlessCacheSnapshotName() == null) ? 0 : getServerlessCacheSnapshotName().hashCode());
         return hashCode;
     }
 

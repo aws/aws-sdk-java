@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -78,6 +78,16 @@
  * </li>
  * <li>
  * <p>
+ * Amazon SageMaker Serverless endpoint provisioned concurrency
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Amazon SageMaker inference components
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * Spot Fleets (Amazon EC2)
  * </p>
  * </li>
@@ -87,6 +97,11 @@
  * </p>
  * </li>
  * </ul>
+ * <p>
+ * To learn more about Application Auto Scaling, see the <a
+ * href="https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html"
+ * >Application Auto Scaling User Guide</a>.
+ * </p>
  * <p>
  * <b>API Summary</b>
  * </p>
@@ -117,12 +132,6 @@
  * </p>
  * </li>
  * </ul>
- * <p>
- * To learn more about Application Auto Scaling, including information about granting IAM users required permissions for
- * Application Auto Scaling actions, see the <a
- * href="https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html"
- * >Application Auto Scaling User Guide</a>.
- * </p>
  */
 package com.amazonaws.services.applicationautoscaling;
 

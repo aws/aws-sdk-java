@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,19 @@ public class AbstractAmazonVoiceIDAsync extends AbstractAmazonVoiceID implements
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateFraudsterResult> associateFraudsterAsync(AssociateFraudsterRequest request) {
+
+        return associateFraudsterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateFraudsterResult> associateFraudsterAsync(AssociateFraudsterRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateFraudsterRequest, AssociateFraudsterResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDomainResult> createDomainAsync(CreateDomainRequest request) {
 
         return createDomainAsync(request, null);
@@ -36,6 +49,19 @@ public class AbstractAmazonVoiceIDAsync extends AbstractAmazonVoiceID implements
     @Override
     public java.util.concurrent.Future<CreateDomainResult> createDomainAsync(CreateDomainRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateDomainRequest, CreateDomainResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWatchlistResult> createWatchlistAsync(CreateWatchlistRequest request) {
+
+        return createWatchlistAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWatchlistResult> createWatchlistAsync(CreateWatchlistRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateWatchlistRequest, CreateWatchlistResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -75,6 +101,19 @@ public class AbstractAmazonVoiceIDAsync extends AbstractAmazonVoiceID implements
     @Override
     public java.util.concurrent.Future<DeleteSpeakerResult> deleteSpeakerAsync(DeleteSpeakerRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteSpeakerRequest, DeleteSpeakerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWatchlistResult> deleteWatchlistAsync(DeleteWatchlistRequest request) {
+
+        return deleteWatchlistAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWatchlistResult> deleteWatchlistAsync(DeleteWatchlistRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteWatchlistRequest, DeleteWatchlistResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -147,6 +186,32 @@ public class AbstractAmazonVoiceIDAsync extends AbstractAmazonVoiceID implements
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeWatchlistResult> describeWatchlistAsync(DescribeWatchlistRequest request) {
+
+        return describeWatchlistAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeWatchlistResult> describeWatchlistAsync(DescribeWatchlistRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeWatchlistRequest, DescribeWatchlistResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateFraudsterResult> disassociateFraudsterAsync(DisassociateFraudsterRequest request) {
+
+        return disassociateFraudsterAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateFraudsterResult> disassociateFraudsterAsync(DisassociateFraudsterRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateFraudsterRequest, DisassociateFraudsterResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<EvaluateSessionResult> evaluateSessionAsync(EvaluateSessionRequest request) {
 
         return evaluateSessionAsync(request, null);
@@ -186,6 +251,19 @@ public class AbstractAmazonVoiceIDAsync extends AbstractAmazonVoiceID implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListFraudstersResult> listFraudstersAsync(ListFraudstersRequest request) {
+
+        return listFraudstersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFraudstersResult> listFraudstersAsync(ListFraudstersRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListFraudstersRequest, ListFraudstersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSpeakerEnrollmentJobsResult> listSpeakerEnrollmentJobsAsync(ListSpeakerEnrollmentJobsRequest request) {
 
         return listSpeakerEnrollmentJobsAsync(request, null);
@@ -220,6 +298,19 @@ public class AbstractAmazonVoiceIDAsync extends AbstractAmazonVoiceID implements
     @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWatchlistsResult> listWatchlistsAsync(ListWatchlistsRequest request) {
+
+        return listWatchlistsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWatchlistsResult> listWatchlistsAsync(ListWatchlistsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListWatchlistsRequest, ListWatchlistsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -298,6 +389,19 @@ public class AbstractAmazonVoiceIDAsync extends AbstractAmazonVoiceID implements
     @Override
     public java.util.concurrent.Future<UpdateDomainResult> updateDomainAsync(UpdateDomainRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateDomainRequest, UpdateDomainResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWatchlistResult> updateWatchlistAsync(UpdateWatchlistRequest request) {
+
+        return updateWatchlistAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWatchlistResult> updateWatchlistAsync(UpdateWatchlistRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateWatchlistRequest, UpdateWatchlistResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -408,6 +408,39 @@ public class AmazonLocationAsyncClient extends AmazonLocationClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CreateKeyResult> createKeyAsync(CreateKeyRequest request) {
+
+        return createKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateKeyResult> createKeyAsync(final CreateKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateKeyRequest, CreateKeyResult> asyncHandler) {
+        final CreateKeyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateKeyResult>() {
+            @Override
+            public CreateKeyResult call() throws Exception {
+                CreateKeyResult result = null;
+
+                try {
+                    result = executeCreateKey(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateMapResult> createMapAsync(CreateMapRequest request) {
 
         return createMapAsync(request, null);
@@ -573,6 +606,39 @@ public class AmazonLocationAsyncClient extends AmazonLocationClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteKeyResult> deleteKeyAsync(DeleteKeyRequest request) {
+
+        return deleteKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteKeyResult> deleteKeyAsync(final DeleteKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteKeyRequest, DeleteKeyResult> asyncHandler) {
+        final DeleteKeyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteKeyResult>() {
+            @Override
+            public DeleteKeyResult call() throws Exception {
+                DeleteKeyResult result = null;
+
+                try {
+                    result = executeDeleteKey(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteMapResult> deleteMapAsync(DeleteMapRequest request) {
 
         return deleteMapAsync(request, null);
@@ -722,6 +788,39 @@ public class AmazonLocationAsyncClient extends AmazonLocationClient implements A
 
                 try {
                     result = executeDescribeGeofenceCollection(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeKeyResult> describeKeyAsync(DescribeKeyRequest request) {
+
+        return describeKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeKeyResult> describeKeyAsync(final DescribeKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeKeyRequest, DescribeKeyResult> asyncHandler) {
+        final DescribeKeyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeKeyResult>() {
+            @Override
+            public DescribeKeyResult call() throws Exception {
+                DescribeKeyResult result = null;
+
+                try {
+                    result = executeDescribeKey(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1266,6 +1365,39 @@ public class AmazonLocationAsyncClient extends AmazonLocationClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<ListKeysResult> listKeysAsync(ListKeysRequest request) {
+
+        return listKeysAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListKeysResult> listKeysAsync(final ListKeysRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListKeysRequest, ListKeysResult> asyncHandler) {
+        final ListKeysRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListKeysResult>() {
+            @Override
+            public ListKeysResult call() throws Exception {
+                ListKeysResult result = null;
+
+                try {
+                    result = executeListKeys(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListMapsResult> listMapsAsync(ListMapsRequest request) {
 
         return listMapsAsync(request, null);
@@ -1680,6 +1812,39 @@ public class AmazonLocationAsyncClient extends AmazonLocationClient implements A
 
                 try {
                     result = executeUpdateGeofenceCollection(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateKeyResult> updateKeyAsync(UpdateKeyRequest request) {
+
+        return updateKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateKeyResult> updateKeyAsync(final UpdateKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateKeyRequest, UpdateKeyResult> asyncHandler) {
+        final UpdateKeyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateKeyResult>() {
+            @Override
+            public UpdateKeyResult call() throws Exception {
+                UpdateKeyResult result = null;
+
+                try {
+                    result = executeUpdateKey(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

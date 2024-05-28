@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateChannelRequestMarshaller {
 
+    private static final MarshallingInfo<List> AUDIENCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Audiences").build();
     private static final MarshallingInfo<String> CHANNELNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("ChannelName").build();
     private static final MarshallingInfo<StructuredPojo> FILLERSLATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -41,6 +43,8 @@ public class CreateChannelRequestMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> TIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tier").build();
+    private static final MarshallingInfo<StructuredPojo> TIMESHIFTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimeShiftConfiguration").build();
 
     private static final CreateChannelRequestMarshaller instance = new CreateChannelRequestMarshaller();
 
@@ -58,12 +62,14 @@ public class CreateChannelRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(createChannelRequest.getAudiences(), AUDIENCES_BINDING);
             protocolMarshaller.marshall(createChannelRequest.getChannelName(), CHANNELNAME_BINDING);
             protocolMarshaller.marshall(createChannelRequest.getFillerSlate(), FILLERSLATE_BINDING);
             protocolMarshaller.marshall(createChannelRequest.getOutputs(), OUTPUTS_BINDING);
             protocolMarshaller.marshall(createChannelRequest.getPlaybackMode(), PLAYBACKMODE_BINDING);
             protocolMarshaller.marshall(createChannelRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createChannelRequest.getTier(), TIER_BINDING);
+            protocolMarshaller.marshall(createChannelRequest.getTimeShiftConfiguration(), TIMESHIFTCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

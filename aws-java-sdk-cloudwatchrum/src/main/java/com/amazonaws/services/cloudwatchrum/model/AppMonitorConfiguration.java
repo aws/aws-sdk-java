@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,6 +68,33 @@ public class AppMonitorConfiguration implements Serializable, Cloneable, Structu
      * The ARN of the guest IAM role that is attached to the Amazon Cognito identity pool that is used to authorize the
      * sending of data to RUM.
      * </p>
+     * <note>
+     * <p>
+     * It is possible that an app monitor does not have a value for <code>GuestRoleArn</code>. For example, this can
+     * happen when you use the console to create an app monitor and you allow CloudWatch RUM to create a new identity
+     * pool for Authorization. In this case, <code>GuestRoleArn</code> is not present in the <a
+     * href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_GetAppMonitor.html">GetAppMonitor</a>
+     * response because it is not stored by the service.
+     * </p>
+     * <p>
+     * If this issue affects you, you can take one of the following steps:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the Cloud Development Kit (CDK) to create an identity pool and the associated IAM role, and use that for your
+     * app monitor.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Make a separate <a
+     * href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetIdentityPoolRoles.html"
+     * >GetIdentityPoolRoles</a> call to Amazon Cognito to retrieve the <code>GuestRoleArn</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      */
     private String guestRoleArn;
     /**
@@ -81,10 +108,9 @@ public class AppMonitorConfiguration implements Serializable, Cloneable, Structu
      * If this app monitor is to collect data from only certain pages in your application, this structure lists those
      * pages.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;You can't include both &lt;code&gt;ExcludedPages&lt;/code&gt; and &lt;code&gt;IncludedPages&lt;/code&gt; in the same operation.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.
+     * </p>
      */
     private java.util.List<String> includedPages;
     /**
@@ -460,10 +486,62 @@ public class AppMonitorConfiguration implements Serializable, Cloneable, Structu
      * The ARN of the guest IAM role that is attached to the Amazon Cognito identity pool that is used to authorize the
      * sending of data to RUM.
      * </p>
+     * <note>
+     * <p>
+     * It is possible that an app monitor does not have a value for <code>GuestRoleArn</code>. For example, this can
+     * happen when you use the console to create an app monitor and you allow CloudWatch RUM to create a new identity
+     * pool for Authorization. In this case, <code>GuestRoleArn</code> is not present in the <a
+     * href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_GetAppMonitor.html">GetAppMonitor</a>
+     * response because it is not stored by the service.
+     * </p>
+     * <p>
+     * If this issue affects you, you can take one of the following steps:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the Cloud Development Kit (CDK) to create an identity pool and the associated IAM role, and use that for your
+     * app monitor.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Make a separate <a
+     * href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetIdentityPoolRoles.html"
+     * >GetIdentityPoolRoles</a> call to Amazon Cognito to retrieve the <code>GuestRoleArn</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param guestRoleArn
      *        The ARN of the guest IAM role that is attached to the Amazon Cognito identity pool that is used to
-     *        authorize the sending of data to RUM.
+     *        authorize the sending of data to RUM.</p> <note>
+     *        <p>
+     *        It is possible that an app monitor does not have a value for <code>GuestRoleArn</code>. For example, this
+     *        can happen when you use the console to create an app monitor and you allow CloudWatch RUM to create a new
+     *        identity pool for Authorization. In this case, <code>GuestRoleArn</code> is not present in the <a
+     *        href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_GetAppMonitor.html"
+     *        >GetAppMonitor</a> response because it is not stored by the service.
+     *        </p>
+     *        <p>
+     *        If this issue affects you, you can take one of the following steps:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Use the Cloud Development Kit (CDK) to create an identity pool and the associated IAM role, and use that
+     *        for your app monitor.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Make a separate <a
+     *        href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetIdentityPoolRoles.html"
+     *        >GetIdentityPoolRoles</a> call to Amazon Cognito to retrieve the <code>GuestRoleArn</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
      */
 
     public void setGuestRoleArn(String guestRoleArn) {
@@ -475,9 +553,61 @@ public class AppMonitorConfiguration implements Serializable, Cloneable, Structu
      * The ARN of the guest IAM role that is attached to the Amazon Cognito identity pool that is used to authorize the
      * sending of data to RUM.
      * </p>
+     * <note>
+     * <p>
+     * It is possible that an app monitor does not have a value for <code>GuestRoleArn</code>. For example, this can
+     * happen when you use the console to create an app monitor and you allow CloudWatch RUM to create a new identity
+     * pool for Authorization. In this case, <code>GuestRoleArn</code> is not present in the <a
+     * href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_GetAppMonitor.html">GetAppMonitor</a>
+     * response because it is not stored by the service.
+     * </p>
+     * <p>
+     * If this issue affects you, you can take one of the following steps:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the Cloud Development Kit (CDK) to create an identity pool and the associated IAM role, and use that for your
+     * app monitor.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Make a separate <a
+     * href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetIdentityPoolRoles.html"
+     * >GetIdentityPoolRoles</a> call to Amazon Cognito to retrieve the <code>GuestRoleArn</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @return The ARN of the guest IAM role that is attached to the Amazon Cognito identity pool that is used to
-     *         authorize the sending of data to RUM.
+     *         authorize the sending of data to RUM.</p> <note>
+     *         <p>
+     *         It is possible that an app monitor does not have a value for <code>GuestRoleArn</code>. For example, this
+     *         can happen when you use the console to create an app monitor and you allow CloudWatch RUM to create a new
+     *         identity pool for Authorization. In this case, <code>GuestRoleArn</code> is not present in the <a
+     *         href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_GetAppMonitor.html"
+     *         >GetAppMonitor</a> response because it is not stored by the service.
+     *         </p>
+     *         <p>
+     *         If this issue affects you, you can take one of the following steps:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Use the Cloud Development Kit (CDK) to create an identity pool and the associated IAM role, and use that
+     *         for your app monitor.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Make a separate <a
+     *         href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetIdentityPoolRoles.html"
+     *         >GetIdentityPoolRoles</a> call to Amazon Cognito to retrieve the <code>GuestRoleArn</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
      */
 
     public String getGuestRoleArn() {
@@ -489,10 +619,62 @@ public class AppMonitorConfiguration implements Serializable, Cloneable, Structu
      * The ARN of the guest IAM role that is attached to the Amazon Cognito identity pool that is used to authorize the
      * sending of data to RUM.
      * </p>
+     * <note>
+     * <p>
+     * It is possible that an app monitor does not have a value for <code>GuestRoleArn</code>. For example, this can
+     * happen when you use the console to create an app monitor and you allow CloudWatch RUM to create a new identity
+     * pool for Authorization. In this case, <code>GuestRoleArn</code> is not present in the <a
+     * href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_GetAppMonitor.html">GetAppMonitor</a>
+     * response because it is not stored by the service.
+     * </p>
+     * <p>
+     * If this issue affects you, you can take one of the following steps:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use the Cloud Development Kit (CDK) to create an identity pool and the associated IAM role, and use that for your
+     * app monitor.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Make a separate <a
+     * href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetIdentityPoolRoles.html"
+     * >GetIdentityPoolRoles</a> call to Amazon Cognito to retrieve the <code>GuestRoleArn</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param guestRoleArn
      *        The ARN of the guest IAM role that is attached to the Amazon Cognito identity pool that is used to
-     *        authorize the sending of data to RUM.
+     *        authorize the sending of data to RUM.</p> <note>
+     *        <p>
+     *        It is possible that an app monitor does not have a value for <code>GuestRoleArn</code>. For example, this
+     *        can happen when you use the console to create an app monitor and you allow CloudWatch RUM to create a new
+     *        identity pool for Authorization. In this case, <code>GuestRoleArn</code> is not present in the <a
+     *        href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_GetAppMonitor.html"
+     *        >GetAppMonitor</a> response because it is not stored by the service.
+     *        </p>
+     *        <p>
+     *        If this issue affects you, you can take one of the following steps:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Use the Cloud Development Kit (CDK) to create an identity pool and the associated IAM role, and use that
+     *        for your app monitor.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Make a separate <a
+     *        href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetIdentityPoolRoles.html"
+     *        >GetIdentityPoolRoles</a> call to Amazon Cognito to retrieve the <code>GuestRoleArn</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -546,15 +728,14 @@ public class AppMonitorConfiguration implements Serializable, Cloneable, Structu
      * If this app monitor is to collect data from only certain pages in your application, this structure lists those
      * pages.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;You can't include both &lt;code&gt;ExcludedPages&lt;/code&gt; and &lt;code&gt;IncludedPages&lt;/code&gt; in the same operation.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.
+     * </p>
      * 
      * @return If this app monitor is to collect data from only certain pages in your application, this structure lists
      *         those pages. </p>
-     * 
-     * <pre><code> &lt;p&gt;You can't include both &lt;code&gt;ExcludedPages&lt;/code&gt; and &lt;code&gt;IncludedPages&lt;/code&gt; in the same operation.&lt;/p&gt; </code>
+     *         <p>
+     *         You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.
      */
 
     public java.util.List<String> getIncludedPages() {
@@ -566,16 +747,15 @@ public class AppMonitorConfiguration implements Serializable, Cloneable, Structu
      * If this app monitor is to collect data from only certain pages in your application, this structure lists those
      * pages.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;You can't include both &lt;code&gt;ExcludedPages&lt;/code&gt; and &lt;code&gt;IncludedPages&lt;/code&gt; in the same operation.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.
+     * </p>
      * 
      * @param includedPages
      *        If this app monitor is to collect data from only certain pages in your application, this structure lists
      *        those pages. </p>
-     * 
-     * <pre><code> &lt;p&gt;You can't include both &lt;code&gt;ExcludedPages&lt;/code&gt; and &lt;code&gt;IncludedPages&lt;/code&gt; in the same operation.&lt;/p&gt; </code>
+     *        <p>
+     *        You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.
      */
 
     public void setIncludedPages(java.util.Collection<String> includedPages) {
@@ -592,10 +772,9 @@ public class AppMonitorConfiguration implements Serializable, Cloneable, Structu
      * If this app monitor is to collect data from only certain pages in your application, this structure lists those
      * pages.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;You can't include both &lt;code&gt;ExcludedPages&lt;/code&gt; and &lt;code&gt;IncludedPages&lt;/code&gt; in the same operation.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setIncludedPages(java.util.Collection)} or {@link #withIncludedPages(java.util.Collection)} if you want
@@ -605,9 +784,8 @@ public class AppMonitorConfiguration implements Serializable, Cloneable, Structu
      * @param includedPages
      *        If this app monitor is to collect data from only certain pages in your application, this structure lists
      *        those pages. </p>
-     * 
-     *        <pre>
-     * <code> &lt;p&gt;You can't include both &lt;code&gt;ExcludedPages&lt;/code&gt; and &lt;code&gt;IncludedPages&lt;/code&gt; in the same operation.&lt;/p&gt; </code>
+     *        <p>
+     *        You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -626,17 +804,15 @@ public class AppMonitorConfiguration implements Serializable, Cloneable, Structu
      * If this app monitor is to collect data from only certain pages in your application, this structure lists those
      * pages.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;You can't include both &lt;code&gt;ExcludedPages&lt;/code&gt; and &lt;code&gt;IncludedPages&lt;/code&gt; in the same operation.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.
+     * </p>
      * 
      * @param includedPages
      *        If this app monitor is to collect data from only certain pages in your application, this structure lists
      *        those pages. </p>
-     * 
-     *        <pre>
-     * <code> &lt;p&gt;You can't include both &lt;code&gt;ExcludedPages&lt;/code&gt; and &lt;code&gt;IncludedPages&lt;/code&gt; in the same operation.&lt;/p&gt; </code>
+     *        <p>
+     *        You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

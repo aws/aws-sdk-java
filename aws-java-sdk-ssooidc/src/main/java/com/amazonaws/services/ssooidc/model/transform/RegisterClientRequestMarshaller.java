@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,14 @@ public class RegisterClientRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientType").build();
     private static final MarshallingInfo<List> SCOPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("scopes").build();
+    private static final MarshallingInfo<List> REDIRECTURIS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("redirectUris").build();
+    private static final MarshallingInfo<List> GRANTTYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("grantTypes").build();
+    private static final MarshallingInfo<String> ISSUERURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("issuerUrl").build();
+    private static final MarshallingInfo<String> ENTITLEDAPPLICATIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("entitledApplicationArn").build();
 
     private static final RegisterClientRequestMarshaller instance = new RegisterClientRequestMarshaller();
 
@@ -54,6 +62,10 @@ public class RegisterClientRequestMarshaller {
             protocolMarshaller.marshall(registerClientRequest.getClientName(), CLIENTNAME_BINDING);
             protocolMarshaller.marshall(registerClientRequest.getClientType(), CLIENTTYPE_BINDING);
             protocolMarshaller.marshall(registerClientRequest.getScopes(), SCOPES_BINDING);
+            protocolMarshaller.marshall(registerClientRequest.getRedirectUris(), REDIRECTURIS_BINDING);
+            protocolMarshaller.marshall(registerClientRequest.getGrantTypes(), GRANTTYPES_BINDING);
+            protocolMarshaller.marshall(registerClientRequest.getIssuerUrl(), ISSUERURL_BINDING);
+            protocolMarshaller.marshall(registerClientRequest.getEntitledApplicationArn(), ENTITLEDAPPLICATIONARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

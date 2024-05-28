@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,19 +67,19 @@ public class ActivateTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String typeName;
     /**
      * <p>
-     * An alias to assign to the public extension, in this account and region. If you specify an alias for the
-     * extension, CloudFormation treats the alias as the extension type name within this account and region. You must
+     * An alias to assign to the public extension, in this account and Region. If you specify an alias for the
+     * extension, CloudFormation treats the alias as the extension type name within this account and Region. You must
      * use the alias to refer to the extension in your templates, API calls, and CloudFormation console.
      * </p>
      * <p>
-     * An extension alias must be unique within a given account and region. You can activate the same public resource
-     * multiple times in the same account and region, using different type name aliases.
+     * An extension alias must be unique within a given account and Region. You can activate the same public resource
+     * multiple times in the same account and Region, using different type name aliases.
      * </p>
      */
     private String typeNameAlias;
     /**
      * <p>
-     * Whether to automatically update the extension in this account and region when a new <i>minor</i> version is
+     * Whether to automatically update the extension in this account and Region when a new <i>minor</i> version is
      * published by the extension publisher. Major versions released by the publisher must be manually updated.
      * </p>
      * <p>
@@ -87,7 +87,11 @@ public class ActivateTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private Boolean autoUpdate;
-
+    /**
+     * <p>
+     * Contains logging configuration information for an extension.
+     * </p>
+     */
     private LoggingConfig loggingConfig;
     /**
      * <p>
@@ -398,22 +402,22 @@ public class ActivateTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * An alias to assign to the public extension, in this account and region. If you specify an alias for the
-     * extension, CloudFormation treats the alias as the extension type name within this account and region. You must
+     * An alias to assign to the public extension, in this account and Region. If you specify an alias for the
+     * extension, CloudFormation treats the alias as the extension type name within this account and Region. You must
      * use the alias to refer to the extension in your templates, API calls, and CloudFormation console.
      * </p>
      * <p>
-     * An extension alias must be unique within a given account and region. You can activate the same public resource
-     * multiple times in the same account and region, using different type name aliases.
+     * An extension alias must be unique within a given account and Region. You can activate the same public resource
+     * multiple times in the same account and Region, using different type name aliases.
      * </p>
      * 
      * @param typeNameAlias
-     *        An alias to assign to the public extension, in this account and region. If you specify an alias for the
-     *        extension, CloudFormation treats the alias as the extension type name within this account and region. You
+     *        An alias to assign to the public extension, in this account and Region. If you specify an alias for the
+     *        extension, CloudFormation treats the alias as the extension type name within this account and Region. You
      *        must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
      *        <p>
-     *        An extension alias must be unique within a given account and region. You can activate the same public
-     *        resource multiple times in the same account and region, using different type name aliases.
+     *        An extension alias must be unique within a given account and Region. You can activate the same public
+     *        resource multiple times in the same account and Region, using different type name aliases.
      */
 
     public void setTypeNameAlias(String typeNameAlias) {
@@ -422,22 +426,22 @@ public class ActivateTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * An alias to assign to the public extension, in this account and region. If you specify an alias for the
-     * extension, CloudFormation treats the alias as the extension type name within this account and region. You must
+     * An alias to assign to the public extension, in this account and Region. If you specify an alias for the
+     * extension, CloudFormation treats the alias as the extension type name within this account and Region. You must
      * use the alias to refer to the extension in your templates, API calls, and CloudFormation console.
      * </p>
      * <p>
-     * An extension alias must be unique within a given account and region. You can activate the same public resource
-     * multiple times in the same account and region, using different type name aliases.
+     * An extension alias must be unique within a given account and Region. You can activate the same public resource
+     * multiple times in the same account and Region, using different type name aliases.
      * </p>
      * 
-     * @return An alias to assign to the public extension, in this account and region. If you specify an alias for the
-     *         extension, CloudFormation treats the alias as the extension type name within this account and region. You
+     * @return An alias to assign to the public extension, in this account and Region. If you specify an alias for the
+     *         extension, CloudFormation treats the alias as the extension type name within this account and Region. You
      *         must use the alias to refer to the extension in your templates, API calls, and CloudFormation
      *         console.</p>
      *         <p>
-     *         An extension alias must be unique within a given account and region. You can activate the same public
-     *         resource multiple times in the same account and region, using different type name aliases.
+     *         An extension alias must be unique within a given account and Region. You can activate the same public
+     *         resource multiple times in the same account and Region, using different type name aliases.
      */
 
     public String getTypeNameAlias() {
@@ -446,22 +450,22 @@ public class ActivateTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * An alias to assign to the public extension, in this account and region. If you specify an alias for the
-     * extension, CloudFormation treats the alias as the extension type name within this account and region. You must
+     * An alias to assign to the public extension, in this account and Region. If you specify an alias for the
+     * extension, CloudFormation treats the alias as the extension type name within this account and Region. You must
      * use the alias to refer to the extension in your templates, API calls, and CloudFormation console.
      * </p>
      * <p>
-     * An extension alias must be unique within a given account and region. You can activate the same public resource
-     * multiple times in the same account and region, using different type name aliases.
+     * An extension alias must be unique within a given account and Region. You can activate the same public resource
+     * multiple times in the same account and Region, using different type name aliases.
      * </p>
      * 
      * @param typeNameAlias
-     *        An alias to assign to the public extension, in this account and region. If you specify an alias for the
-     *        extension, CloudFormation treats the alias as the extension type name within this account and region. You
+     *        An alias to assign to the public extension, in this account and Region. If you specify an alias for the
+     *        extension, CloudFormation treats the alias as the extension type name within this account and Region. You
      *        must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
      *        <p>
-     *        An extension alias must be unique within a given account and region. You can activate the same public
-     *        resource multiple times in the same account and region, using different type name aliases.
+     *        An extension alias must be unique within a given account and Region. You can activate the same public
+     *        resource multiple times in the same account and Region, using different type name aliases.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -472,7 +476,7 @@ public class ActivateTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Whether to automatically update the extension in this account and region when a new <i>minor</i> version is
+     * Whether to automatically update the extension in this account and Region when a new <i>minor</i> version is
      * published by the extension publisher. Major versions released by the publisher must be manually updated.
      * </p>
      * <p>
@@ -480,7 +484,7 @@ public class ActivateTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param autoUpdate
-     *        Whether to automatically update the extension in this account and region when a new <i>minor</i> version
+     *        Whether to automatically update the extension in this account and Region when a new <i>minor</i> version
      *        is published by the extension publisher. Major versions released by the publisher must be manually
      *        updated.</p>
      *        <p>
@@ -493,14 +497,14 @@ public class ActivateTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Whether to automatically update the extension in this account and region when a new <i>minor</i> version is
+     * Whether to automatically update the extension in this account and Region when a new <i>minor</i> version is
      * published by the extension publisher. Major versions released by the publisher must be manually updated.
      * </p>
      * <p>
      * The default is <code>true</code>.
      * </p>
      * 
-     * @return Whether to automatically update the extension in this account and region when a new <i>minor</i> version
+     * @return Whether to automatically update the extension in this account and Region when a new <i>minor</i> version
      *         is published by the extension publisher. Major versions released by the publisher must be manually
      *         updated.</p>
      *         <p>
@@ -513,7 +517,7 @@ public class ActivateTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Whether to automatically update the extension in this account and region when a new <i>minor</i> version is
+     * Whether to automatically update the extension in this account and Region when a new <i>minor</i> version is
      * published by the extension publisher. Major versions released by the publisher must be manually updated.
      * </p>
      * <p>
@@ -521,7 +525,7 @@ public class ActivateTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param autoUpdate
-     *        Whether to automatically update the extension in this account and region when a new <i>minor</i> version
+     *        Whether to automatically update the extension in this account and Region when a new <i>minor</i> version
      *        is published by the extension publisher. Major versions released by the publisher must be manually
      *        updated.</p>
      *        <p>
@@ -536,14 +540,14 @@ public class ActivateTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Whether to automatically update the extension in this account and region when a new <i>minor</i> version is
+     * Whether to automatically update the extension in this account and Region when a new <i>minor</i> version is
      * published by the extension publisher. Major versions released by the publisher must be manually updated.
      * </p>
      * <p>
      * The default is <code>true</code>.
      * </p>
      * 
-     * @return Whether to automatically update the extension in this account and region when a new <i>minor</i> version
+     * @return Whether to automatically update the extension in this account and Region when a new <i>minor</i> version
      *         is published by the extension publisher. Major versions released by the publisher must be manually
      *         updated.</p>
      *         <p>
@@ -555,7 +559,12 @@ public class ActivateTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * Contains logging configuration information for an extension.
+     * </p>
+     * 
      * @param loggingConfig
+     *        Contains logging configuration information for an extension.
      */
 
     public void setLoggingConfig(LoggingConfig loggingConfig) {
@@ -563,7 +572,11 @@ public class ActivateTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * @return
+     * <p>
+     * Contains logging configuration information for an extension.
+     * </p>
+     * 
+     * @return Contains logging configuration information for an extension.
      */
 
     public LoggingConfig getLoggingConfig() {
@@ -571,7 +584,12 @@ public class ActivateTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * Contains logging configuration information for an extension.
+     * </p>
+     * 
      * @param loggingConfig
+     *        Contains logging configuration information for an extension.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

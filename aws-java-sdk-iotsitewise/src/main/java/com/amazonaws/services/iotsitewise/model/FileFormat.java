@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The file format of the data.
+ * The file format of the data in S3.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/FileFormat" target="_top">AWS API
@@ -30,18 +30,24 @@ public class FileFormat implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The .csv file format.
+     * The file is in .CSV format.
      * </p>
      */
     private Csv csv;
+    /**
+     * <p>
+     * The file is in parquet format.
+     * </p>
+     */
+    private Parquet parquet;
 
     /**
      * <p>
-     * The .csv file format.
+     * The file is in .CSV format.
      * </p>
      * 
      * @param csv
-     *        The .csv file format.
+     *        The file is in .CSV format.
      */
 
     public void setCsv(Csv csv) {
@@ -50,10 +56,10 @@ public class FileFormat implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The .csv file format.
+     * The file is in .CSV format.
      * </p>
      * 
-     * @return The .csv file format.
+     * @return The file is in .CSV format.
      */
 
     public Csv getCsv() {
@@ -62,16 +68,56 @@ public class FileFormat implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The .csv file format.
+     * The file is in .CSV format.
      * </p>
      * 
      * @param csv
-     *        The .csv file format.
+     *        The file is in .CSV format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FileFormat withCsv(Csv csv) {
         setCsv(csv);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The file is in parquet format.
+     * </p>
+     * 
+     * @param parquet
+     *        The file is in parquet format.
+     */
+
+    public void setParquet(Parquet parquet) {
+        this.parquet = parquet;
+    }
+
+    /**
+     * <p>
+     * The file is in parquet format.
+     * </p>
+     * 
+     * @return The file is in parquet format.
+     */
+
+    public Parquet getParquet() {
+        return this.parquet;
+    }
+
+    /**
+     * <p>
+     * The file is in parquet format.
+     * </p>
+     * 
+     * @param parquet
+     *        The file is in parquet format.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FileFormat withParquet(Parquet parquet) {
+        setParquet(parquet);
         return this;
     }
 
@@ -88,7 +134,9 @@ public class FileFormat implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCsv() != null)
-            sb.append("Csv: ").append(getCsv());
+            sb.append("Csv: ").append(getCsv()).append(",");
+        if (getParquet() != null)
+            sb.append("Parquet: ").append(getParquet());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +155,10 @@ public class FileFormat implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCsv() != null && other.getCsv().equals(this.getCsv()) == false)
             return false;
+        if (other.getParquet() == null ^ this.getParquet() == null)
+            return false;
+        if (other.getParquet() != null && other.getParquet().equals(this.getParquet()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +168,7 @@ public class FileFormat implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCsv() == null) ? 0 : getCsv().hashCode());
+        hashCode = prime * hashCode + ((getParquet() == null) ? 0 : getParquet().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class GetComponentResult extends com.amazonaws.AmazonWebServiceResult<com
     private String requestId;
     /**
      * <p>
-     * The component object associated with the specified ARN.
+     * The component object specified in the request.
      * </p>
      */
     private Component component;
@@ -78,11 +78,11 @@ public class GetComponentResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The component object associated with the specified ARN.
+     * The component object specified in the request.
      * </p>
      * 
      * @param component
-     *        The component object associated with the specified ARN.
+     *        The component object specified in the request.
      */
 
     public void setComponent(Component component) {
@@ -91,10 +91,10 @@ public class GetComponentResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The component object associated with the specified ARN.
+     * The component object specified in the request.
      * </p>
      * 
-     * @return The component object associated with the specified ARN.
+     * @return The component object specified in the request.
      */
 
     public Component getComponent() {
@@ -103,11 +103,11 @@ public class GetComponentResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The component object associated with the specified ARN.
+     * The component object specified in the request.
      * </p>
      * 
      * @param component
-     *        The component object associated with the specified ARN.
+     *        The component object specified in the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

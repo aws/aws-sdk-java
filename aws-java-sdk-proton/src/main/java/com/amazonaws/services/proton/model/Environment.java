@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,13 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String arn;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using
+     * CodeBuild-based provisioning on your behalf.
+     * </p>
+     */
+    private String codebuildRoleArn;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined
@@ -90,6 +97,12 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     private String environmentAccountId;
     /**
      * <p>
+     * The ID of the last attempted deployment of this environment.
+     * </p>
+     */
+    private String lastAttemptedDeploymentId;
+    /**
+     * <p>
      * The time when a deployment of the environment was last attempted.
      * </p>
      */
@@ -100,6 +113,12 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date lastDeploymentSucceededAt;
+    /**
+     * <p>
+     * The ID of the last successful deployment of this environment.
+     * </p>
+     */
+    private String lastSucceededDeploymentId;
     /**
      * <p>
      * The name of the environment.
@@ -122,8 +141,8 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning.
-     * A linked repository is a repository that has been registered with Proton. For more information, see
-     * <a>CreateRepository</a>.
+     * A linked repository is a repository that has been registered with Proton. For more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateRepository.html">CreateRepository</a>.
      * </p>
      */
     private RepositoryBranch provisioningRepository;
@@ -189,6 +208,52 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     public Environment withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using
+     * CodeBuild-based provisioning on your behalf.
+     * </p>
+     * 
+     * @param codebuildRoleArn
+     *        The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure
+     *        using CodeBuild-based provisioning on your behalf.
+     */
+
+    public void setCodebuildRoleArn(String codebuildRoleArn) {
+        this.codebuildRoleArn = codebuildRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using
+     * CodeBuild-based provisioning on your behalf.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure
+     *         using CodeBuild-based provisioning on your behalf.
+     */
+
+    public String getCodebuildRoleArn() {
+        return this.codebuildRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using
+     * CodeBuild-based provisioning on your behalf.
+     * </p>
+     * 
+     * @param codebuildRoleArn
+     *        The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure
+     *        using CodeBuild-based provisioning on your behalf.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Environment withCodebuildRoleArn(String codebuildRoleArn) {
+        setCodebuildRoleArn(codebuildRoleArn);
         return this;
     }
 
@@ -559,6 +624,46 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The ID of the last attempted deployment of this environment.
+     * </p>
+     * 
+     * @param lastAttemptedDeploymentId
+     *        The ID of the last attempted deployment of this environment.
+     */
+
+    public void setLastAttemptedDeploymentId(String lastAttemptedDeploymentId) {
+        this.lastAttemptedDeploymentId = lastAttemptedDeploymentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the last attempted deployment of this environment.
+     * </p>
+     * 
+     * @return The ID of the last attempted deployment of this environment.
+     */
+
+    public String getLastAttemptedDeploymentId() {
+        return this.lastAttemptedDeploymentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the last attempted deployment of this environment.
+     * </p>
+     * 
+     * @param lastAttemptedDeploymentId
+     *        The ID of the last attempted deployment of this environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Environment withLastAttemptedDeploymentId(String lastAttemptedDeploymentId) {
+        setLastAttemptedDeploymentId(lastAttemptedDeploymentId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The time when a deployment of the environment was last attempted.
      * </p>
      * 
@@ -634,6 +739,46 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     public Environment withLastDeploymentSucceededAt(java.util.Date lastDeploymentSucceededAt) {
         setLastDeploymentSucceededAt(lastDeploymentSucceededAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the last successful deployment of this environment.
+     * </p>
+     * 
+     * @param lastSucceededDeploymentId
+     *        The ID of the last successful deployment of this environment.
+     */
+
+    public void setLastSucceededDeploymentId(String lastSucceededDeploymentId) {
+        this.lastSucceededDeploymentId = lastSucceededDeploymentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the last successful deployment of this environment.
+     * </p>
+     * 
+     * @return The ID of the last successful deployment of this environment.
+     */
+
+    public String getLastSucceededDeploymentId() {
+        return this.lastSucceededDeploymentId;
+    }
+
+    /**
+     * <p>
+     * The ID of the last successful deployment of this environment.
+     * </p>
+     * 
+     * @param lastSucceededDeploymentId
+     *        The ID of the last successful deployment of this environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Environment withLastSucceededDeploymentId(String lastSucceededDeploymentId) {
+        setLastSucceededDeploymentId(lastSucceededDeploymentId);
         return this;
     }
 
@@ -789,14 +934,16 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning.
-     * A linked repository is a repository that has been registered with Proton. For more information, see
-     * <a>CreateRepository</a>.
+     * A linked repository is a repository that has been registered with Proton. For more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateRepository.html">CreateRepository</a>.
      * </p>
      * 
      * @param provisioningRepository
      *        The linked repository that you use to host your rendered infrastructure templates for self-managed
      *        provisioning. A linked repository is a repository that has been registered with Proton. For more
-     *        information, see <a>CreateRepository</a>.
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateRepository.html"
+     *        >CreateRepository</a>.
      */
 
     public void setProvisioningRepository(RepositoryBranch provisioningRepository) {
@@ -806,13 +953,15 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning.
-     * A linked repository is a repository that has been registered with Proton. For more information, see
-     * <a>CreateRepository</a>.
+     * A linked repository is a repository that has been registered with Proton. For more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateRepository.html">CreateRepository</a>.
      * </p>
      * 
      * @return The linked repository that you use to host your rendered infrastructure templates for self-managed
      *         provisioning. A linked repository is a repository that has been registered with Proton. For more
-     *         information, see <a>CreateRepository</a>.
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateRepository.html"
+     *         >CreateRepository</a>.
      */
 
     public RepositoryBranch getProvisioningRepository() {
@@ -822,14 +971,16 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The linked repository that you use to host your rendered infrastructure templates for self-managed provisioning.
-     * A linked repository is a repository that has been registered with Proton. For more information, see
-     * <a>CreateRepository</a>.
+     * A linked repository is a repository that has been registered with Proton. For more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateRepository.html">CreateRepository</a>.
      * </p>
      * 
      * @param provisioningRepository
      *        The linked repository that you use to host your rendered infrastructure templates for self-managed
      *        provisioning. A linked repository is a repository that has been registered with Proton. For more
-     *        information, see <a>CreateRepository</a>.
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateRepository.html"
+     *        >CreateRepository</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1012,6 +1163,8 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getCodebuildRoleArn() != null)
+            sb.append("CodebuildRoleArn: ").append(getCodebuildRoleArn()).append(",");
         if (getComponentRoleArn() != null)
             sb.append("ComponentRoleArn: ").append(getComponentRoleArn()).append(",");
         if (getCreatedAt() != null)
@@ -1026,10 +1179,14 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
             sb.append("EnvironmentAccountConnectionId: ").append(getEnvironmentAccountConnectionId()).append(",");
         if (getEnvironmentAccountId() != null)
             sb.append("EnvironmentAccountId: ").append(getEnvironmentAccountId()).append(",");
+        if (getLastAttemptedDeploymentId() != null)
+            sb.append("LastAttemptedDeploymentId: ").append(getLastAttemptedDeploymentId()).append(",");
         if (getLastDeploymentAttemptedAt() != null)
             sb.append("LastDeploymentAttemptedAt: ").append(getLastDeploymentAttemptedAt()).append(",");
         if (getLastDeploymentSucceededAt() != null)
             sb.append("LastDeploymentSucceededAt: ").append(getLastDeploymentSucceededAt()).append(",");
+        if (getLastSucceededDeploymentId() != null)
+            sb.append("LastSucceededDeploymentId: ").append(getLastSucceededDeploymentId()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getProtonServiceRoleArn() != null)
@@ -1064,6 +1221,10 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
+        if (other.getCodebuildRoleArn() == null ^ this.getCodebuildRoleArn() == null)
+            return false;
+        if (other.getCodebuildRoleArn() != null && other.getCodebuildRoleArn().equals(this.getCodebuildRoleArn()) == false)
+            return false;
         if (other.getComponentRoleArn() == null ^ this.getComponentRoleArn() == null)
             return false;
         if (other.getComponentRoleArn() != null && other.getComponentRoleArn().equals(this.getComponentRoleArn()) == false)
@@ -1093,6 +1254,10 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEnvironmentAccountId() != null && other.getEnvironmentAccountId().equals(this.getEnvironmentAccountId()) == false)
             return false;
+        if (other.getLastAttemptedDeploymentId() == null ^ this.getLastAttemptedDeploymentId() == null)
+            return false;
+        if (other.getLastAttemptedDeploymentId() != null && other.getLastAttemptedDeploymentId().equals(this.getLastAttemptedDeploymentId()) == false)
+            return false;
         if (other.getLastDeploymentAttemptedAt() == null ^ this.getLastDeploymentAttemptedAt() == null)
             return false;
         if (other.getLastDeploymentAttemptedAt() != null && other.getLastDeploymentAttemptedAt().equals(this.getLastDeploymentAttemptedAt()) == false)
@@ -1100,6 +1265,10 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
         if (other.getLastDeploymentSucceededAt() == null ^ this.getLastDeploymentSucceededAt() == null)
             return false;
         if (other.getLastDeploymentSucceededAt() != null && other.getLastDeploymentSucceededAt().equals(this.getLastDeploymentSucceededAt()) == false)
+            return false;
+        if (other.getLastSucceededDeploymentId() == null ^ this.getLastSucceededDeploymentId() == null)
+            return false;
+        if (other.getLastSucceededDeploymentId() != null && other.getLastSucceededDeploymentId().equals(this.getLastSucceededDeploymentId()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
@@ -1142,6 +1311,7 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getCodebuildRoleArn() == null) ? 0 : getCodebuildRoleArn().hashCode());
         hashCode = prime * hashCode + ((getComponentRoleArn() == null) ? 0 : getComponentRoleArn().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getDeploymentStatus() == null) ? 0 : getDeploymentStatus().hashCode());
@@ -1149,8 +1319,10 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentAccountConnectionId() == null) ? 0 : getEnvironmentAccountConnectionId().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentAccountId() == null) ? 0 : getEnvironmentAccountId().hashCode());
+        hashCode = prime * hashCode + ((getLastAttemptedDeploymentId() == null) ? 0 : getLastAttemptedDeploymentId().hashCode());
         hashCode = prime * hashCode + ((getLastDeploymentAttemptedAt() == null) ? 0 : getLastDeploymentAttemptedAt().hashCode());
         hashCode = prime * hashCode + ((getLastDeploymentSucceededAt() == null) ? 0 : getLastDeploymentSucceededAt().hashCode());
+        hashCode = prime * hashCode + ((getLastSucceededDeploymentId() == null) ? 0 : getLastSucceededDeploymentId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getProtonServiceRoleArn() == null) ? 0 : getProtonServiceRoleArn().hashCode());
         hashCode = prime * hashCode + ((getProvisioning() == null) ? 0 : getProvisioning().hashCode());

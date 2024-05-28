@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,14 +50,7 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of resource protected by or in scope of the policy. This is in the format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
-     * Web Services Resource Types Reference</a>. For WAF and Shield Advanced, examples include
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>. For a
-     * security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and
-     * <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
-     * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
-     * <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS Firewall policy, the value is
-     * <code>AWS::EC2::VPC</code>.
+     * Web Services Resource Types Reference</a>.
      * </p>
      */
     private String resourceType;
@@ -89,6 +82,26 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Boolean deleteUnusedFMManagedResources;
+    /**
+     * <p>
+     * Indicates whether the policy is in or out of an admin's policy or Region scope.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code> - The administrator can manage and delete the policy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the
+     * policy. Existing policy protections stay in place. Any new resources that come into scope of the policy won't be
+     * protected.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String policyStatus;
 
     /**
      * <p>
@@ -214,27 +227,13 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of resource protected by or in scope of the policy. This is in the format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
-     * Web Services Resource Types Reference</a>. For WAF and Shield Advanced, examples include
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>. For a
-     * security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and
-     * <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
-     * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
-     * <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS Firewall policy, the value is
-     * <code>AWS::EC2::VPC</code>.
+     * Web Services Resource Types Reference</a>.
      * </p>
      * 
      * @param resourceType
      *        The type of resource protected by or in scope of the policy. This is in the format shown in the <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     *        >Amazon Web Services Resource Types Reference</a>. For WAF and Shield Advanced, examples include
-     *        <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>. For
-     *        a security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and
-     *        <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
-     *        <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
-     *        <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
-     *        <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS Firewall policy, the value is
-     *        <code>AWS::EC2::VPC</code>.
+     *        >Amazon Web Services Resource Types Reference</a>.
      */
 
     public void setResourceType(String resourceType) {
@@ -245,26 +244,12 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of resource protected by or in scope of the policy. This is in the format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
-     * Web Services Resource Types Reference</a>. For WAF and Shield Advanced, examples include
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>. For a
-     * security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and
-     * <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
-     * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
-     * <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS Firewall policy, the value is
-     * <code>AWS::EC2::VPC</code>.
+     * Web Services Resource Types Reference</a>.
      * </p>
      * 
      * @return The type of resource protected by or in scope of the policy. This is in the format shown in the <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     *         >Amazon Web Services Resource Types Reference</a>. For WAF and Shield Advanced, examples include
-     *         <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>.
-     *         For a security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and
-     *         <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
-     *         <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
-     *         <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
-     *         <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS Firewall policy, the value is
-     *         <code>AWS::EC2::VPC</code>.
+     *         >Amazon Web Services Resource Types Reference</a>.
      */
 
     public String getResourceType() {
@@ -275,27 +260,13 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of resource protected by or in scope of the policy. This is in the format shown in the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
-     * Web Services Resource Types Reference</a>. For WAF and Shield Advanced, examples include
-     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>. For a
-     * security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and
-     * <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
-     * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
-     * <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS Firewall policy, the value is
-     * <code>AWS::EC2::VPC</code>.
+     * Web Services Resource Types Reference</a>.
      * </p>
      * 
      * @param resourceType
      *        The type of resource protected by or in scope of the policy. This is in the format shown in the <a href=
      *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     *        >Amazon Web Services Resource Types Reference</a>. For WAF and Shield Advanced, examples include
-     *        <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>. For
-     *        a security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code> and
-     *        <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
-     *        <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
-     *        <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
-     *        <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS Firewall policy, the value is
-     *        <code>AWS::EC2::VPC</code>.
+     *        >Amazon Web Services Resource Types Reference</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -544,6 +515,173 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Indicates whether the policy is in or out of an admin's policy or Region scope.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code> - The administrator can manage and delete the policy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the
+     * policy. Existing policy protections stay in place. Any new resources that come into scope of the policy won't be
+     * protected.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param policyStatus
+     *        Indicates whether the policy is in or out of an admin's policy or Region scope.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVE</code> - The administrator can manage and delete the policy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the
+     *        policy. Existing policy protections stay in place. Any new resources that come into scope of the policy
+     *        won't be protected.
+     *        </p>
+     *        </li>
+     * @see CustomerPolicyStatus
+     */
+
+    public void setPolicyStatus(String policyStatus) {
+        this.policyStatus = policyStatus;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the policy is in or out of an admin's policy or Region scope.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code> - The administrator can manage and delete the policy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the
+     * policy. Existing policy protections stay in place. Any new resources that come into scope of the policy won't be
+     * protected.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Indicates whether the policy is in or out of an admin's policy or Region scope.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ACTIVE</code> - The administrator can manage and delete the policy.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete
+     *         the policy. Existing policy protections stay in place. Any new resources that come into scope of the
+     *         policy won't be protected.
+     *         </p>
+     *         </li>
+     * @see CustomerPolicyStatus
+     */
+
+    public String getPolicyStatus() {
+        return this.policyStatus;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the policy is in or out of an admin's policy or Region scope.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code> - The administrator can manage and delete the policy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the
+     * policy. Existing policy protections stay in place. Any new resources that come into scope of the policy won't be
+     * protected.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param policyStatus
+     *        Indicates whether the policy is in or out of an admin's policy or Region scope.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVE</code> - The administrator can manage and delete the policy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the
+     *        policy. Existing policy protections stay in place. Any new resources that come into scope of the policy
+     *        won't be protected.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CustomerPolicyStatus
+     */
+
+    public PolicySummary withPolicyStatus(String policyStatus) {
+        setPolicyStatus(policyStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the policy is in or out of an admin's policy or Region scope.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code> - The administrator can manage and delete the policy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the
+     * policy. Existing policy protections stay in place. Any new resources that come into scope of the policy won't be
+     * protected.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param policyStatus
+     *        Indicates whether the policy is in or out of an admin's policy or Region scope.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVE</code> - The administrator can manage and delete the policy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they can't edit or delete the
+     *        policy. Existing policy protections stay in place. Any new resources that come into scope of the policy
+     *        won't be protected.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CustomerPolicyStatus
+     */
+
+    public PolicySummary withPolicyStatus(CustomerPolicyStatus policyStatus) {
+        this.policyStatus = policyStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -568,7 +706,9 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
         if (getRemediationEnabled() != null)
             sb.append("RemediationEnabled: ").append(getRemediationEnabled()).append(",");
         if (getDeleteUnusedFMManagedResources() != null)
-            sb.append("DeleteUnusedFMManagedResources: ").append(getDeleteUnusedFMManagedResources());
+            sb.append("DeleteUnusedFMManagedResources: ").append(getDeleteUnusedFMManagedResources()).append(",");
+        if (getPolicyStatus() != null)
+            sb.append("PolicyStatus: ").append(getPolicyStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -612,6 +752,10 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
         if (other.getDeleteUnusedFMManagedResources() != null
                 && other.getDeleteUnusedFMManagedResources().equals(this.getDeleteUnusedFMManagedResources()) == false)
             return false;
+        if (other.getPolicyStatus() == null ^ this.getPolicyStatus() == null)
+            return false;
+        if (other.getPolicyStatus() != null && other.getPolicyStatus().equals(this.getPolicyStatus()) == false)
+            return false;
         return true;
     }
 
@@ -627,6 +771,7 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSecurityServiceType() == null) ? 0 : getSecurityServiceType().hashCode());
         hashCode = prime * hashCode + ((getRemediationEnabled() == null) ? 0 : getRemediationEnabled().hashCode());
         hashCode = prime * hashCode + ((getDeleteUnusedFMManagedResources() == null) ? 0 : getDeleteUnusedFMManagedResources().hashCode());
+        hashCode = prime * hashCode + ((getPolicyStatus() == null) ? 0 : getPolicyStatus().hashCode());
         return hashCode;
     }
 

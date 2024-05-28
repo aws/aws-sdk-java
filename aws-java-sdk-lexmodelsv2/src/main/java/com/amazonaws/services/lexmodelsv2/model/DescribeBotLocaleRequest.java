@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class DescribeBotLocaleRequest extends com.amazonaws.AmazonWebServiceRequ
     private String botId;
     /**
      * <p>
-     * The identifier of the version of the bot associated with the locale.
+     * The version of the bot associated with the locale.
      * </p>
      */
     private String botVersion;
@@ -88,11 +88,11 @@ public class DescribeBotLocaleRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The identifier of the version of the bot associated with the locale.
+     * The version of the bot associated with the locale.
      * </p>
      * 
      * @param botVersion
-     *        The identifier of the version of the bot associated with the locale.
+     *        The version of the bot associated with the locale.
      */
 
     public void setBotVersion(String botVersion) {
@@ -101,10 +101,10 @@ public class DescribeBotLocaleRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The identifier of the version of the bot associated with the locale.
+     * The version of the bot associated with the locale.
      * </p>
      * 
-     * @return The identifier of the version of the bot associated with the locale.
+     * @return The version of the bot associated with the locale.
      */
 
     public String getBotVersion() {
@@ -113,11 +113,11 @@ public class DescribeBotLocaleRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The identifier of the version of the bot associated with the locale.
+     * The version of the bot associated with the locale.
      * </p>
      * 
      * @param botVersion
-     *        The identifier of the version of the bot associated with the locale.
+     *        The version of the bot associated with the locale.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

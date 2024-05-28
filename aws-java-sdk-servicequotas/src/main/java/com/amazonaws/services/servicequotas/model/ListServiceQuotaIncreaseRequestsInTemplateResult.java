@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,8 +33,9 @@ public class ListServiceQuotaIncreaseRequestsInTemplateResult extends com.amazon
     private java.util.List<ServiceQuotaIncreaseRequestInTemplate> serviceQuotaIncreaseRequestInTemplateList;
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is null when there are no more results to
-     * return.
+     * If present, indicates that more output is available than is included in the current response. Use this value in
+     * the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the
+     * output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.
      * </p>
      */
     private String nextToken;
@@ -117,13 +118,16 @@ public class ListServiceQuotaIncreaseRequestsInTemplateResult extends com.amazon
 
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is null when there are no more results to
-     * return.
+     * If present, indicates that more output is available than is included in the current response. Use this value in
+     * the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the
+     * output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.
      * </p>
      * 
      * @param nextToken
-     *        The token to use to retrieve the next page of results. This value is null when there are no more results
-     *        to return.
+     *        If present, indicates that more output is available than is included in the current response. Use this
+     *        value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the
+     *        next part of the output. You should repeat this until the <code>NextToken</code> response element comes
+     *        back as <code>null</code>.
      */
 
     public void setNextToken(String nextToken) {
@@ -132,12 +136,15 @@ public class ListServiceQuotaIncreaseRequestsInTemplateResult extends com.amazon
 
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is null when there are no more results to
-     * return.
+     * If present, indicates that more output is available than is included in the current response. Use this value in
+     * the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the
+     * output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.
      * </p>
      * 
-     * @return The token to use to retrieve the next page of results. This value is null when there are no more results
-     *         to return.
+     * @return If present, indicates that more output is available than is included in the current response. Use this
+     *         value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the
+     *         next part of the output. You should repeat this until the <code>NextToken</code> response element comes
+     *         back as <code>null</code>.
      */
 
     public String getNextToken() {
@@ -146,13 +153,16 @@ public class ListServiceQuotaIncreaseRequestsInTemplateResult extends com.amazon
 
     /**
      * <p>
-     * The token to use to retrieve the next page of results. This value is null when there are no more results to
-     * return.
+     * If present, indicates that more output is available than is included in the current response. Use this value in
+     * the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the
+     * output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.
      * </p>
      * 
      * @param nextToken
-     *        The token to use to retrieve the next page of results. This value is null when there are no more results
-     *        to return.
+     *        If present, indicates that more output is available than is included in the current response. Use this
+     *        value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the
+     *        next part of the output. You should repeat this until the <code>NextToken</code> response element comes
+     *        back as <code>null</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

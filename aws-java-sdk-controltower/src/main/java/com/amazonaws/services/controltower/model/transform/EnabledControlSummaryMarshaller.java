@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class EnabledControlSummaryMarshaller {
 
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("arn").build();
     private static final MarshallingInfo<String> CONTROLIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("controlIdentifier").build();
+    private static final MarshallingInfo<StructuredPojo> DRIFTSTATUSSUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("driftStatusSummary").build();
+    private static final MarshallingInfo<StructuredPojo> STATUSSUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusSummary").build();
+    private static final MarshallingInfo<String> TARGETIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("targetIdentifier").build();
 
     private static final EnabledControlSummaryMarshaller instance = new EnabledControlSummaryMarshaller();
 
@@ -46,7 +54,11 @@ public class EnabledControlSummaryMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(enabledControlSummary.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(enabledControlSummary.getControlIdentifier(), CONTROLIDENTIFIER_BINDING);
+            protocolMarshaller.marshall(enabledControlSummary.getDriftStatusSummary(), DRIFTSTATUSSUMMARY_BINDING);
+            protocolMarshaller.marshall(enabledControlSummary.getStatusSummary(), STATUSSUMMARY_BINDING);
+            protocolMarshaller.marshall(enabledControlSummary.getTargetIdentifier(), TARGETIDENTIFIER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

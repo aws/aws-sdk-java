@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.wafv2.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,12 +30,16 @@ public class RateBasedStatementMarshaller {
 
     private static final MarshallingInfo<Long> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Limit").build();
+    private static final MarshallingInfo<Long> EVALUATIONWINDOWSEC_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EvaluationWindowSec").build();
     private static final MarshallingInfo<String> AGGREGATEKEYTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AggregateKeyType").build();
     private static final MarshallingInfo<StructuredPojo> SCOPEDOWNSTATEMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScopeDownStatement").build();
     private static final MarshallingInfo<StructuredPojo> FORWARDEDIPCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ForwardedIPConfig").build();
+    private static final MarshallingInfo<List> CUSTOMKEYS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("CustomKeys").build();
 
     private static final RateBasedStatementMarshaller instance = new RateBasedStatementMarshaller();
 
@@ -53,9 +58,11 @@ public class RateBasedStatementMarshaller {
 
         try {
             protocolMarshaller.marshall(rateBasedStatement.getLimit(), LIMIT_BINDING);
+            protocolMarshaller.marshall(rateBasedStatement.getEvaluationWindowSec(), EVALUATIONWINDOWSEC_BINDING);
             protocolMarshaller.marshall(rateBasedStatement.getAggregateKeyType(), AGGREGATEKEYTYPE_BINDING);
             protocolMarshaller.marshall(rateBasedStatement.getScopeDownStatement(), SCOPEDOWNSTATEMENT_BINDING);
             protocolMarshaller.marshall(rateBasedStatement.getForwardedIPConfig(), FORWARDEDIPCONFIG_BINDING);
+            protocolMarshaller.marshall(rateBasedStatement.getCustomKeys(), CUSTOMKEYS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

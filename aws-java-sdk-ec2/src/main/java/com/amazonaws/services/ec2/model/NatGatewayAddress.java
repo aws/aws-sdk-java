@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,30 @@ public class NatGatewayAddress implements Serializable, Cloneable {
      * </p>
      */
     private String publicIp;
+    /**
+     * <p>
+     * [Public NAT gateway only] The association ID of the Elastic IP address that's associated with the NAT gateway.
+     * </p>
+     */
+    private String associationId;
+    /**
+     * <p>
+     * Defines if the IP address is the primary address.
+     * </p>
+     */
+    private Boolean isPrimary;
+    /**
+     * <p>
+     * The address failure message.
+     * </p>
+     */
+    private String failureMessage;
+    /**
+     * <p>
+     * The address status.
+     * </p>
+     */
+    private String status;
 
     /**
      * <p>
@@ -215,6 +239,200 @@ public class NatGatewayAddress implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * [Public NAT gateway only] The association ID of the Elastic IP address that's associated with the NAT gateway.
+     * </p>
+     * 
+     * @param associationId
+     *        [Public NAT gateway only] The association ID of the Elastic IP address that's associated with the NAT
+     *        gateway.
+     */
+
+    public void setAssociationId(String associationId) {
+        this.associationId = associationId;
+    }
+
+    /**
+     * <p>
+     * [Public NAT gateway only] The association ID of the Elastic IP address that's associated with the NAT gateway.
+     * </p>
+     * 
+     * @return [Public NAT gateway only] The association ID of the Elastic IP address that's associated with the NAT
+     *         gateway.
+     */
+
+    public String getAssociationId() {
+        return this.associationId;
+    }
+
+    /**
+     * <p>
+     * [Public NAT gateway only] The association ID of the Elastic IP address that's associated with the NAT gateway.
+     * </p>
+     * 
+     * @param associationId
+     *        [Public NAT gateway only] The association ID of the Elastic IP address that's associated with the NAT
+     *        gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NatGatewayAddress withAssociationId(String associationId) {
+        setAssociationId(associationId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Defines if the IP address is the primary address.
+     * </p>
+     * 
+     * @param isPrimary
+     *        Defines if the IP address is the primary address.
+     */
+
+    public void setIsPrimary(Boolean isPrimary) {
+        this.isPrimary = isPrimary;
+    }
+
+    /**
+     * <p>
+     * Defines if the IP address is the primary address.
+     * </p>
+     * 
+     * @return Defines if the IP address is the primary address.
+     */
+
+    public Boolean getIsPrimary() {
+        return this.isPrimary;
+    }
+
+    /**
+     * <p>
+     * Defines if the IP address is the primary address.
+     * </p>
+     * 
+     * @param isPrimary
+     *        Defines if the IP address is the primary address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NatGatewayAddress withIsPrimary(Boolean isPrimary) {
+        setIsPrimary(isPrimary);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Defines if the IP address is the primary address.
+     * </p>
+     * 
+     * @return Defines if the IP address is the primary address.
+     */
+
+    public Boolean isPrimary() {
+        return this.isPrimary;
+    }
+
+    /**
+     * <p>
+     * The address failure message.
+     * </p>
+     * 
+     * @param failureMessage
+     *        The address failure message.
+     */
+
+    public void setFailureMessage(String failureMessage) {
+        this.failureMessage = failureMessage;
+    }
+
+    /**
+     * <p>
+     * The address failure message.
+     * </p>
+     * 
+     * @return The address failure message.
+     */
+
+    public String getFailureMessage() {
+        return this.failureMessage;
+    }
+
+    /**
+     * <p>
+     * The address failure message.
+     * </p>
+     * 
+     * @param failureMessage
+     *        The address failure message.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NatGatewayAddress withFailureMessage(String failureMessage) {
+        setFailureMessage(failureMessage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The address status.
+     * </p>
+     * 
+     * @param status
+     *        The address status.
+     * @see NatGatewayAddressStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The address status.
+     * </p>
+     * 
+     * @return The address status.
+     * @see NatGatewayAddressStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The address status.
+     * </p>
+     * 
+     * @param status
+     *        The address status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see NatGatewayAddressStatus
+     */
+
+    public NatGatewayAddress withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The address status.
+     * </p>
+     * 
+     * @param status
+     *        The address status.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see NatGatewayAddressStatus
+     */
+
+    public NatGatewayAddress withStatus(NatGatewayAddressStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -233,7 +451,15 @@ public class NatGatewayAddress implements Serializable, Cloneable {
         if (getPrivateIp() != null)
             sb.append("PrivateIp: ").append(getPrivateIp()).append(",");
         if (getPublicIp() != null)
-            sb.append("PublicIp: ").append(getPublicIp());
+            sb.append("PublicIp: ").append(getPublicIp()).append(",");
+        if (getAssociationId() != null)
+            sb.append("AssociationId: ").append(getAssociationId()).append(",");
+        if (getIsPrimary() != null)
+            sb.append("IsPrimary: ").append(getIsPrimary()).append(",");
+        if (getFailureMessage() != null)
+            sb.append("FailureMessage: ").append(getFailureMessage()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -264,6 +490,22 @@ public class NatGatewayAddress implements Serializable, Cloneable {
             return false;
         if (other.getPublicIp() != null && other.getPublicIp().equals(this.getPublicIp()) == false)
             return false;
+        if (other.getAssociationId() == null ^ this.getAssociationId() == null)
+            return false;
+        if (other.getAssociationId() != null && other.getAssociationId().equals(this.getAssociationId()) == false)
+            return false;
+        if (other.getIsPrimary() == null ^ this.getIsPrimary() == null)
+            return false;
+        if (other.getIsPrimary() != null && other.getIsPrimary().equals(this.getIsPrimary()) == false)
+            return false;
+        if (other.getFailureMessage() == null ^ this.getFailureMessage() == null)
+            return false;
+        if (other.getFailureMessage() != null && other.getFailureMessage().equals(this.getFailureMessage()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
         return true;
     }
 
@@ -276,6 +518,10 @@ public class NatGatewayAddress implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
         hashCode = prime * hashCode + ((getPrivateIp() == null) ? 0 : getPrivateIp().hashCode());
         hashCode = prime * hashCode + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode());
+        hashCode = prime * hashCode + ((getAssociationId() == null) ? 0 : getAssociationId().hashCode());
+        hashCode = prime * hashCode + ((getIsPrimary() == null) ? 0 : getIsPrimary().hashCode());
+        hashCode = prime * hashCode + ((getFailureMessage() == null) ? 0 : getFailureMessage().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,6 +68,32 @@ public class AbstractAWSRAMAsync extends AbstractAWSRAM implements AWSRAMAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreatePermissionResult> createPermissionAsync(CreatePermissionRequest request) {
+
+        return createPermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePermissionResult> createPermissionAsync(CreatePermissionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreatePermissionRequest, CreatePermissionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePermissionVersionResult> createPermissionVersionAsync(CreatePermissionVersionRequest request) {
+
+        return createPermissionVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePermissionVersionResult> createPermissionVersionAsync(CreatePermissionVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreatePermissionVersionRequest, CreatePermissionVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateResourceShareResult> createResourceShareAsync(CreateResourceShareRequest request) {
 
         return createResourceShareAsync(request, null);
@@ -76,6 +102,32 @@ public class AbstractAWSRAMAsync extends AbstractAWSRAM implements AWSRAMAsync {
     @Override
     public java.util.concurrent.Future<CreateResourceShareResult> createResourceShareAsync(CreateResourceShareRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateResourceShareRequest, CreateResourceShareResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePermissionResult> deletePermissionAsync(DeletePermissionRequest request) {
+
+        return deletePermissionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePermissionResult> deletePermissionAsync(DeletePermissionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeletePermissionRequest, DeletePermissionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePermissionVersionResult> deletePermissionVersionAsync(DeletePermissionVersionRequest request) {
+
+        return deletePermissionVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePermissionVersionResult> deletePermissionVersionAsync(DeletePermissionVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeletePermissionVersionRequest, DeletePermissionVersionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -215,6 +267,19 @@ public class AbstractAWSRAMAsync extends AbstractAWSRAM implements AWSRAMAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListPermissionAssociationsResult> listPermissionAssociationsAsync(ListPermissionAssociationsRequest request) {
+
+        return listPermissionAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPermissionAssociationsResult> listPermissionAssociationsAsync(ListPermissionAssociationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListPermissionAssociationsRequest, ListPermissionAssociationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPermissionVersionsResult> listPermissionVersionsAsync(ListPermissionVersionsRequest request) {
 
         return listPermissionVersionsAsync(request, null);
@@ -249,6 +314,21 @@ public class AbstractAWSRAMAsync extends AbstractAWSRAM implements AWSRAMAsync {
     @Override
     public java.util.concurrent.Future<ListPrincipalsResult> listPrincipalsAsync(ListPrincipalsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPrincipalsRequest, ListPrincipalsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListReplacePermissionAssociationsWorkResult> listReplacePermissionAssociationsWorkAsync(
+            ListReplacePermissionAssociationsWorkRequest request) {
+
+        return listReplacePermissionAssociationsWorkAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListReplacePermissionAssociationsWorkResult> listReplacePermissionAssociationsWorkAsync(
+            ListReplacePermissionAssociationsWorkRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListReplacePermissionAssociationsWorkRequest, ListReplacePermissionAssociationsWorkResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -293,6 +373,21 @@ public class AbstractAWSRAMAsync extends AbstractAWSRAM implements AWSRAMAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<PromotePermissionCreatedFromPolicyResult> promotePermissionCreatedFromPolicyAsync(
+            PromotePermissionCreatedFromPolicyRequest request) {
+
+        return promotePermissionCreatedFromPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PromotePermissionCreatedFromPolicyResult> promotePermissionCreatedFromPolicyAsync(
+            PromotePermissionCreatedFromPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<PromotePermissionCreatedFromPolicyRequest, PromotePermissionCreatedFromPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<PromoteResourceShareCreatedFromPolicyResult> promoteResourceShareCreatedFromPolicyAsync(
             PromoteResourceShareCreatedFromPolicyRequest request) {
 
@@ -316,6 +411,32 @@ public class AbstractAWSRAMAsync extends AbstractAWSRAM implements AWSRAMAsync {
     @Override
     public java.util.concurrent.Future<RejectResourceShareInvitationResult> rejectResourceShareInvitationAsync(RejectResourceShareInvitationRequest request,
             com.amazonaws.handlers.AsyncHandler<RejectResourceShareInvitationRequest, RejectResourceShareInvitationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReplacePermissionAssociationsResult> replacePermissionAssociationsAsync(ReplacePermissionAssociationsRequest request) {
+
+        return replacePermissionAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReplacePermissionAssociationsResult> replacePermissionAssociationsAsync(ReplacePermissionAssociationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ReplacePermissionAssociationsRequest, ReplacePermissionAssociationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetDefaultPermissionVersionResult> setDefaultPermissionVersionAsync(SetDefaultPermissionVersionRequest request) {
+
+        return setDefaultPermissionVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetDefaultPermissionVersionResult> setDefaultPermissionVersionAsync(SetDefaultPermissionVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<SetDefaultPermissionVersionRequest, SetDefaultPermissionVersionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

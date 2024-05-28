@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -108,6 +108,11 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     @Override
     public DeleteItemResult deleteItem(String tableName, java.util.Map<String, AttributeValue> key, String returnValues) {
         return deleteItem(new DeleteItemRequest().withTableName(tableName).withKey(key).withReturnValues(returnValues));
+    }
+
+    @Override
+    public DeleteResourcePolicyResult deleteResourcePolicy(DeleteResourcePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -231,6 +236,11 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     }
 
     @Override
+    public GetResourcePolicyResult getResourcePolicy(GetResourcePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ImportTableResult importTable(ImportTableRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -303,6 +313,11 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     @Override
     public PutItemResult putItem(String tableName, java.util.Map<String, AttributeValue> item, String returnValues) {
         return putItem(new PutItemRequest().withTableName(tableName).withItem(item).withReturnValues(returnValues));
+    }
+
+    @Override
+    public PutResourcePolicyResult putResourcePolicy(PutResourcePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -394,6 +409,11 @@ public class AbstractAmazonDynamoDB implements AmazonDynamoDB {
     public UpdateItemResult updateItem(String tableName, java.util.Map<String, AttributeValue> key,
             java.util.Map<String, AttributeValueUpdate> attributeUpdates, String returnValues) {
         return updateItem(new UpdateItemRequest().withTableName(tableName).withKey(key).withAttributeUpdates(attributeUpdates).withReturnValues(returnValues));
+    }
+
+    @Override
+    public UpdateKinesisStreamingDestinationResult updateKinesisStreamingDestination(UpdateKinesisStreamingDestinationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class Speaker implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A timestamp showing when the speaker is created.
+     * A timestamp of when the speaker was created.
      * </p>
      */
     private java.util.Date createdAt;
@@ -54,7 +54,7 @@ public class Speaker implements Serializable, Cloneable, StructuredPojo {
     private String generatedSpeakerId;
     /**
      * <p>
-     * The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful authentication.
+     * The timestamp of when the speaker was last accessed for enrollment, re-enrollment or a successful authentication.
      * This timestamp is accurate to one hour.
      * </p>
      */
@@ -67,18 +67,18 @@ public class Speaker implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * A timestamp showing the speaker's last update.
+     * A timestamp of the speaker's last update.
      * </p>
      */
     private java.util.Date updatedAt;
 
     /**
      * <p>
-     * A timestamp showing when the speaker is created.
+     * A timestamp of when the speaker was created.
      * </p>
      * 
      * @param createdAt
-     *        A timestamp showing when the speaker is created.
+     *        A timestamp of when the speaker was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -87,10 +87,10 @@ public class Speaker implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A timestamp showing when the speaker is created.
+     * A timestamp of when the speaker was created.
      * </p>
      * 
-     * @return A timestamp showing when the speaker is created.
+     * @return A timestamp of when the speaker was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -99,11 +99,11 @@ public class Speaker implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A timestamp showing when the speaker is created.
+     * A timestamp of when the speaker was created.
      * </p>
      * 
      * @param createdAt
-     *        A timestamp showing when the speaker is created.
+     *        A timestamp of when the speaker was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -234,12 +234,12 @@ public class Speaker implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful authentication.
+     * The timestamp of when the speaker was last accessed for enrollment, re-enrollment or a successful authentication.
      * This timestamp is accurate to one hour.
      * </p>
      * 
      * @param lastAccessedAt
-     *        The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful
+     *        The timestamp of when the speaker was last accessed for enrollment, re-enrollment or a successful
      *        authentication. This timestamp is accurate to one hour.
      */
 
@@ -249,11 +249,11 @@ public class Speaker implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful authentication.
+     * The timestamp of when the speaker was last accessed for enrollment, re-enrollment or a successful authentication.
      * This timestamp is accurate to one hour.
      * </p>
      * 
-     * @return The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful
+     * @return The timestamp of when the speaker was last accessed for enrollment, re-enrollment or a successful
      *         authentication. This timestamp is accurate to one hour.
      */
 
@@ -263,12 +263,12 @@ public class Speaker implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful authentication.
+     * The timestamp of when the speaker was last accessed for enrollment, re-enrollment or a successful authentication.
      * This timestamp is accurate to one hour.
      * </p>
      * 
      * @param lastAccessedAt
-     *        The timestamp when the speaker was last accessed for enrollment, re-enrollment or a successful
+     *        The timestamp of when the speaker was last accessed for enrollment, re-enrollment or a successful
      *        authentication. This timestamp is accurate to one hour.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -339,11 +339,11 @@ public class Speaker implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A timestamp showing the speaker's last update.
+     * A timestamp of the speaker's last update.
      * </p>
      * 
      * @param updatedAt
-     *        A timestamp showing the speaker's last update.
+     *        A timestamp of the speaker's last update.
      */
 
     public void setUpdatedAt(java.util.Date updatedAt) {
@@ -352,10 +352,10 @@ public class Speaker implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A timestamp showing the speaker's last update.
+     * A timestamp of the speaker's last update.
      * </p>
      * 
-     * @return A timestamp showing the speaker's last update.
+     * @return A timestamp of the speaker's last update.
      */
 
     public java.util.Date getUpdatedAt() {
@@ -364,11 +364,11 @@ public class Speaker implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A timestamp showing the speaker's last update.
+     * A timestamp of the speaker's last update.
      * </p>
      * 
      * @param updatedAt
-     *        A timestamp showing the speaker's last update.
+     *        A timestamp of the speaker's last update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,9 @@ public class Network implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The protocol of network-related information about a finding.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 16.
+     * </p>
      */
     private String protocol;
     /**
@@ -68,6 +71,9 @@ public class Network implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The source domain of network-related information about a finding.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 128.
+     * </p>
      */
     private String sourceDomain;
     /**
@@ -97,6 +103,9 @@ public class Network implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The destination domain of network-related information about a finding.
+     * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 128.
      * </p>
      */
     private String destinationDomain;
@@ -164,9 +173,14 @@ public class Network implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The protocol of network-related information about a finding.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 16.
+     * </p>
      * 
      * @param protocol
-     *        The protocol of network-related information about a finding.
+     *        The protocol of network-related information about a finding.</p>
+     *        <p>
+     *        Length Constraints: Minimum of 1. Maximum of 16.
      */
 
     public void setProtocol(String protocol) {
@@ -177,8 +191,13 @@ public class Network implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The protocol of network-related information about a finding.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 16.
+     * </p>
      * 
-     * @return The protocol of network-related information about a finding.
+     * @return The protocol of network-related information about a finding.</p>
+     *         <p>
+     *         Length Constraints: Minimum of 1. Maximum of 16.
      */
 
     public String getProtocol() {
@@ -189,9 +208,14 @@ public class Network implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The protocol of network-related information about a finding.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 16.
+     * </p>
      * 
      * @param protocol
-     *        The protocol of network-related information about a finding.
+     *        The protocol of network-related information about a finding.</p>
+     *        <p>
+     *        Length Constraints: Minimum of 1. Maximum of 16.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -364,9 +388,14 @@ public class Network implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The source domain of network-related information about a finding.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 128.
+     * </p>
      * 
      * @param sourceDomain
-     *        The source domain of network-related information about a finding.
+     *        The source domain of network-related information about a finding.</p>
+     *        <p>
+     *        Length Constraints: Minimum of 1. Maximum of 128.
      */
 
     public void setSourceDomain(String sourceDomain) {
@@ -377,8 +406,13 @@ public class Network implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The source domain of network-related information about a finding.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 128.
+     * </p>
      * 
-     * @return The source domain of network-related information about a finding.
+     * @return The source domain of network-related information about a finding.</p>
+     *         <p>
+     *         Length Constraints: Minimum of 1. Maximum of 128.
      */
 
     public String getSourceDomain() {
@@ -389,9 +423,14 @@ public class Network implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The source domain of network-related information about a finding.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 128.
+     * </p>
      * 
      * @param sourceDomain
-     *        The source domain of network-related information about a finding.
+     *        The source domain of network-related information about a finding.</p>
+     *        <p>
+     *        Length Constraints: Minimum of 1. Maximum of 128.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -564,9 +603,14 @@ public class Network implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The destination domain of network-related information about a finding.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 128.
+     * </p>
      * 
      * @param destinationDomain
-     *        The destination domain of network-related information about a finding.
+     *        The destination domain of network-related information about a finding.</p>
+     *        <p>
+     *        Length Constraints: Minimum of 1. Maximum of 128.
      */
 
     public void setDestinationDomain(String destinationDomain) {
@@ -577,8 +621,13 @@ public class Network implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The destination domain of network-related information about a finding.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 128.
+     * </p>
      * 
-     * @return The destination domain of network-related information about a finding.
+     * @return The destination domain of network-related information about a finding.</p>
+     *         <p>
+     *         Length Constraints: Minimum of 1. Maximum of 128.
      */
 
     public String getDestinationDomain() {
@@ -589,9 +638,14 @@ public class Network implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The destination domain of network-related information about a finding.
      * </p>
+     * <p>
+     * Length Constraints: Minimum of 1. Maximum of 128.
+     * </p>
      * 
      * @param destinationDomain
-     *        The destination domain of network-related information about a finding.
+     *        The destination domain of network-related information about a finding.</p>
+     *        <p>
+     *        Length Constraints: Minimum of 1. Maximum of 128.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

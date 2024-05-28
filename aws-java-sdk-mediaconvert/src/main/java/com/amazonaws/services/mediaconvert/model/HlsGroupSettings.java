@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * Settings related to your HLS output package. For more information, see
- * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job
- * specification, include this object and any required children when you set Type, under OutputGroupSettings, to
- * HLS_GROUP_SETTINGS.
+ * https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/HlsGroupSettings" target="_top">AWS API
  *      Documentation</a>
@@ -42,8 +40,8 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     private java.util.List<HlsAdditionalManifest> additionalManifests;
     /**
      * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues. Keep the
-     * default value, Include (INCLUDE), to output audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only
-     * headers from your audio segments.
+     * default value, Include, to output audio-only headers. Choose Exclude to remove the audio-only headers from your
+     * audio segments.
      */
     private String audioOnlyHeader;
     /**
@@ -63,24 +61,24 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
      */
     private String captionLanguageSetting;
     /**
-     * Set Caption segment length control (CaptionSegmentLengthControl) to Match video (MATCH_VIDEO) to create caption
-     * segments that align with the video segments from the first video output in this output group. For example, if the
-     * video segments are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the default setting,
-     * Large segments (LARGE_SEGMENTS) to create caption segments that are 300 seconds long.
+     * Set Caption segment length control to Match video to create caption segments that align with the video segments
+     * from the first video output in this output group. For example, if the video segments are 2 seconds long, your
+     * WebVTT segments will also be 2 seconds long. Keep the default setting, Large segments to create caption segments
+     * that are 300 seconds long.
      */
     private String captionSegmentLengthControl;
     /**
      * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default
-     * value Enabled (ENABLED) and control caching in your video distribution set up. For example, use the Cache-Control
-     * http header.
+     * value Enabled and control caching in your video distribution set up. For example, use the Cache-Control http
+     * header.
      */
     private String clientCache;
     /** Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation. */
     private String codecSpecification;
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output filename base. Destination accepts
-     * format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the
-     * input file. If your job has multiple inputs, the service uses the filename of the first input file.
+     * Use Destination to specify the S3 output location and the output filename base. Destination accepts format
+     * identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input
+     * file. If your job has multiple inputs, the service uses the filename of the first input file.
      */
     private String destination;
     /** Settings associated with the destination. Will vary based on the type of destination */
@@ -90,12 +88,12 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     /** DRM settings. */
     private HlsEncryptionSettings encryption;
     /**
-     * Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not
-     * generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame
-     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. MediaConvert
-     * creates a child manifest for each set of images that you generate and adds corresponding entries to the parent
-     * manifest. A common application for these images is Roku trick mode. The thumbnails and full-frame images that
-     * MediaConvert creates with this feature are compatible with this Roku specification:
+     * Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any
+     * images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled
+     * thumbnails and full-resolution images of single frames. MediaConvert creates a child manifest for each set of
+     * images that you generate and adds corresponding entries to the parent manifest. A common application for these
+     * images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are
+     * compatible with this Roku specification:
      * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      */
     private String imageBasedTrickPlay;
@@ -132,27 +130,36 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     /** Period of insertion of EXT-X-PROGRAM-DATE-TIME entry, in seconds. */
     private Integer programDateTimePeriod;
     /**
+     * Specify whether MediaConvert generates HLS manifests while your job is running or when your job is complete. To
+     * generate HLS manifests while your job is running: Choose Enabled. Use if you want to play back your content as
+     * soon as it's available. MediaConvert writes the parent and child manifests after the first three media segments
+     * are written to your destination S3 bucket. It then writes new updated manifests after each additional segment is
+     * written. The parent manifest includes the latest BANDWIDTH and AVERAGE-BANDWIDTH attributes, and child manifests
+     * include the latest available media segment. When your job completes, the final child playlists include an
+     * EXT-X-ENDLIST tag. To generate HLS manifests only when your job completes: Choose Disabled.
+     */
+    private String progressiveWriteHlsManifest;
+    /**
      * When set to SINGLE_FILE, emits program as a single media resource (.ts) file, uses #EXT-X-BYTERANGE tags to index
      * segment for playback.
      */
     private String segmentControl;
     /**
      * Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert defaults to
-     * 10. Related settings: Use Segment length control (SegmentLengthControl) to specify whether the encoder enforces
-     * this value strictly. Use Segment control (HlsSegmentControl) to specify whether MediaConvert creates separate
-     * segment files or one content file that has metadata to mark the segment boundaries.
+     * 10. Related settings: Use Segment length control to specify whether the encoder enforces this value strictly. Use
+     * Segment control to specify whether MediaConvert creates separate segment files or one content file that has
+     * metadata to mark the segment boundaries.
      */
     private Integer segmentLength;
     /**
-     * Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the encoder use
-     * the exact length that you specify with the setting Segment length (SegmentLength). This might result in extra
-     * I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next
-     * GOP boundary.
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact to have the encoder use the exact
+     * length that you specify with the setting Segment length. This might result in extra I-frames. Choose Multiple of
+     * GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      */
     private String segmentLengthControl;
     /**
-     * Number of segments to write to a subdirectory before starting a new one. directoryStructure must be
-     * SINGLE_DIRECTORY for this setting to have an effect.
+     * Specify the number of segments to write to a subdirectory before starting a new one. You must also set Directory
+     * structure to Subdirectory per stream for this setting to have an effect.
      */
     private Integer segmentsPerSubdirectory;
     /** Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest. */
@@ -167,17 +174,16 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
      */
     private String targetDurationCompatibilityMode;
     /**
-     * Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3 timestamps (timedMetadataId3Period) in
-     * your output. To include ID3 timestamps: Specify PRIV (PRIV) or TDRL (TDRL) and set ID3 metadata (timedMetadata)
-     * to Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3 timestamp frame type to None (NONE).
+     * Specify the type of the ID3 frame to use for ID3 timestamps in your output. To include ID3 timestamps: Specify
+     * PRIV or TDRL and set ID3 metadata to Passthrough. To exclude ID3 timestamps: Set ID3 timestamp frame type to
+     * None.
      */
     private String timedMetadataId3Frame;
     /**
      * Specify the interval in seconds to write ID3 timestamps in your output. The first timestamp starts at the output
      * timecode and date, and increases incrementally with each ID3 timestamp. To use the default interval of 10
-     * seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp frame type
-     * (timedMetadataId3Frame) to PRIV (PRIV) or TDRL (TDRL), and set ID3 metadata (timedMetadata) to Passthrough
-     * (PASSTHROUGH).
+     * seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp frame type to PRIV or TDRL, and
+     * set ID3 metadata to Passthrough.
      */
     private Integer timedMetadataId3Period;
     /** Provides an extra millisecond delta offset to fine tune the timestamps. */
@@ -361,13 +367,13 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues. Keep the
-     * default value, Include (INCLUDE), to output audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only
-     * headers from your audio segments.
+     * default value, Include, to output audio-only headers. Choose Exclude to remove the audio-only headers from your
+     * audio segments.
      * 
      * @param audioOnlyHeader
      *        Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues.
-     *        Keep the default value, Include (INCLUDE), to output audio-only headers. Choose Exclude (EXCLUDE) to
-     *        remove the audio-only headers from your audio segments.
+     *        Keep the default value, Include, to output audio-only headers. Choose Exclude to remove the audio-only
+     *        headers from your audio segments.
      * @see HlsAudioOnlyHeader
      */
 
@@ -377,12 +383,12 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues. Keep the
-     * default value, Include (INCLUDE), to output audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only
-     * headers from your audio segments.
+     * default value, Include, to output audio-only headers. Choose Exclude to remove the audio-only headers from your
+     * audio segments.
      * 
      * @return Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues.
-     *         Keep the default value, Include (INCLUDE), to output audio-only headers. Choose Exclude (EXCLUDE) to
-     *         remove the audio-only headers from your audio segments.
+     *         Keep the default value, Include, to output audio-only headers. Choose Exclude to remove the audio-only
+     *         headers from your audio segments.
      * @see HlsAudioOnlyHeader
      */
 
@@ -392,13 +398,13 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues. Keep the
-     * default value, Include (INCLUDE), to output audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only
-     * headers from your audio segments.
+     * default value, Include, to output audio-only headers. Choose Exclude to remove the audio-only headers from your
+     * audio segments.
      * 
      * @param audioOnlyHeader
      *        Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues.
-     *        Keep the default value, Include (INCLUDE), to output audio-only headers. Choose Exclude (EXCLUDE) to
-     *        remove the audio-only headers from your audio segments.
+     *        Keep the default value, Include, to output audio-only headers. Choose Exclude to remove the audio-only
+     *        headers from your audio segments.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsAudioOnlyHeader
      */
@@ -410,13 +416,13 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues. Keep the
-     * default value, Include (INCLUDE), to output audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only
-     * headers from your audio segments.
+     * default value, Include, to output audio-only headers. Choose Exclude to remove the audio-only headers from your
+     * audio segments.
      * 
      * @param audioOnlyHeader
      *        Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues.
-     *        Keep the default value, Include (INCLUDE), to output audio-only headers. Choose Exclude (EXCLUDE) to
-     *        remove the audio-only headers from your audio segments.
+     *        Keep the default value, Include, to output audio-only headers. Choose Exclude to remove the audio-only
+     *        headers from your audio segments.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsAudioOnlyHeader
      */
@@ -624,16 +630,16 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Set Caption segment length control (CaptionSegmentLengthControl) to Match video (MATCH_VIDEO) to create caption
-     * segments that align with the video segments from the first video output in this output group. For example, if the
-     * video segments are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the default setting,
-     * Large segments (LARGE_SEGMENTS) to create caption segments that are 300 seconds long.
+     * Set Caption segment length control to Match video to create caption segments that align with the video segments
+     * from the first video output in this output group. For example, if the video segments are 2 seconds long, your
+     * WebVTT segments will also be 2 seconds long. Keep the default setting, Large segments to create caption segments
+     * that are 300 seconds long.
      * 
      * @param captionSegmentLengthControl
-     *        Set Caption segment length control (CaptionSegmentLengthControl) to Match video (MATCH_VIDEO) to create
-     *        caption segments that align with the video segments from the first video output in this output group. For
-     *        example, if the video segments are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep
-     *        the default setting, Large segments (LARGE_SEGMENTS) to create caption segments that are 300 seconds long.
+     *        Set Caption segment length control to Match video to create caption segments that align with the video
+     *        segments from the first video output in this output group. For example, if the video segments are 2
+     *        seconds long, your WebVTT segments will also be 2 seconds long. Keep the default setting, Large segments
+     *        to create caption segments that are 300 seconds long.
      * @see HlsCaptionSegmentLengthControl
      */
 
@@ -642,16 +648,15 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Set Caption segment length control (CaptionSegmentLengthControl) to Match video (MATCH_VIDEO) to create caption
-     * segments that align with the video segments from the first video output in this output group. For example, if the
-     * video segments are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the default setting,
-     * Large segments (LARGE_SEGMENTS) to create caption segments that are 300 seconds long.
+     * Set Caption segment length control to Match video to create caption segments that align with the video segments
+     * from the first video output in this output group. For example, if the video segments are 2 seconds long, your
+     * WebVTT segments will also be 2 seconds long. Keep the default setting, Large segments to create caption segments
+     * that are 300 seconds long.
      * 
-     * @return Set Caption segment length control (CaptionSegmentLengthControl) to Match video (MATCH_VIDEO) to create
-     *         caption segments that align with the video segments from the first video output in this output group. For
-     *         example, if the video segments are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep
-     *         the default setting, Large segments (LARGE_SEGMENTS) to create caption segments that are 300 seconds
-     *         long.
+     * @return Set Caption segment length control to Match video to create caption segments that align with the video
+     *         segments from the first video output in this output group. For example, if the video segments are 2
+     *         seconds long, your WebVTT segments will also be 2 seconds long. Keep the default setting, Large segments
+     *         to create caption segments that are 300 seconds long.
      * @see HlsCaptionSegmentLengthControl
      */
 
@@ -660,16 +665,16 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Set Caption segment length control (CaptionSegmentLengthControl) to Match video (MATCH_VIDEO) to create caption
-     * segments that align with the video segments from the first video output in this output group. For example, if the
-     * video segments are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the default setting,
-     * Large segments (LARGE_SEGMENTS) to create caption segments that are 300 seconds long.
+     * Set Caption segment length control to Match video to create caption segments that align with the video segments
+     * from the first video output in this output group. For example, if the video segments are 2 seconds long, your
+     * WebVTT segments will also be 2 seconds long. Keep the default setting, Large segments to create caption segments
+     * that are 300 seconds long.
      * 
      * @param captionSegmentLengthControl
-     *        Set Caption segment length control (CaptionSegmentLengthControl) to Match video (MATCH_VIDEO) to create
-     *        caption segments that align with the video segments from the first video output in this output group. For
-     *        example, if the video segments are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep
-     *        the default setting, Large segments (LARGE_SEGMENTS) to create caption segments that are 300 seconds long.
+     *        Set Caption segment length control to Match video to create caption segments that align with the video
+     *        segments from the first video output in this output group. For example, if the video segments are 2
+     *        seconds long, your WebVTT segments will also be 2 seconds long. Keep the default setting, Large segments
+     *        to create caption segments that are 300 seconds long.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsCaptionSegmentLengthControl
      */
@@ -680,16 +685,16 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Set Caption segment length control (CaptionSegmentLengthControl) to Match video (MATCH_VIDEO) to create caption
-     * segments that align with the video segments from the first video output in this output group. For example, if the
-     * video segments are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep the default setting,
-     * Large segments (LARGE_SEGMENTS) to create caption segments that are 300 seconds long.
+     * Set Caption segment length control to Match video to create caption segments that align with the video segments
+     * from the first video output in this output group. For example, if the video segments are 2 seconds long, your
+     * WebVTT segments will also be 2 seconds long. Keep the default setting, Large segments to create caption segments
+     * that are 300 seconds long.
      * 
      * @param captionSegmentLengthControl
-     *        Set Caption segment length control (CaptionSegmentLengthControl) to Match video (MATCH_VIDEO) to create
-     *        caption segments that align with the video segments from the first video output in this output group. For
-     *        example, if the video segments are 2 seconds long, your WebVTT segments will also be 2 seconds long. Keep
-     *        the default setting, Large segments (LARGE_SEGMENTS) to create caption segments that are 300 seconds long.
+     *        Set Caption segment length control to Match video to create caption segments that align with the video
+     *        segments from the first video output in this output group. For example, if the video segments are 2
+     *        seconds long, your WebVTT segments will also be 2 seconds long. Keep the default setting, Large segments
+     *        to create caption segments that are 300 seconds long.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsCaptionSegmentLengthControl
      */
@@ -701,13 +706,13 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default
-     * value Enabled (ENABLED) and control caching in your video distribution set up. For example, use the Cache-Control
-     * http header.
+     * value Enabled and control caching in your video distribution set up. For example, use the Cache-Control http
+     * header.
      * 
      * @param clientCache
      *        Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the
-     *        default value Enabled (ENABLED) and control caching in your video distribution set up. For example, use
-     *        the Cache-Control http header.
+     *        default value Enabled and control caching in your video distribution set up. For example, use the
+     *        Cache-Control http header.
      * @see HlsClientCache
      */
 
@@ -717,12 +722,12 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default
-     * value Enabled (ENABLED) and control caching in your video distribution set up. For example, use the Cache-Control
-     * http header.
+     * value Enabled and control caching in your video distribution set up. For example, use the Cache-Control http
+     * header.
      * 
      * @return Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the
-     *         default value Enabled (ENABLED) and control caching in your video distribution set up. For example, use
-     *         the Cache-Control http header.
+     *         default value Enabled and control caching in your video distribution set up. For example, use the
+     *         Cache-Control http header.
      * @see HlsClientCache
      */
 
@@ -732,13 +737,13 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default
-     * value Enabled (ENABLED) and control caching in your video distribution set up. For example, use the Cache-Control
-     * http header.
+     * value Enabled and control caching in your video distribution set up. For example, use the Cache-Control http
+     * header.
      * 
      * @param clientCache
      *        Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the
-     *        default value Enabled (ENABLED) and control caching in your video distribution set up. For example, use
-     *        the Cache-Control http header.
+     *        default value Enabled and control caching in your video distribution set up. For example, use the
+     *        Cache-Control http header.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsClientCache
      */
@@ -750,13 +755,13 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the default
-     * value Enabled (ENABLED) and control caching in your video distribution set up. For example, use the Cache-Control
-     * http header.
+     * value Enabled and control caching in your video distribution set up. For example, use the Cache-Control http
+     * header.
      * 
      * @param clientCache
      *        Disable this setting only when your workflow requires the #EXT-X-ALLOW-CACHE:no tag. Otherwise, keep the
-     *        default value Enabled (ENABLED) and control caching in your video distribution set up. For example, use
-     *        the Cache-Control http header.
+     *        default value Enabled and control caching in your video distribution set up. For example, use the
+     *        Cache-Control http header.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsClientCache
      */
@@ -818,15 +823,14 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output filename base. Destination accepts
-     * format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the
-     * input file. If your job has multiple inputs, the service uses the filename of the first input file.
+     * Use Destination to specify the S3 output location and the output filename base. Destination accepts format
+     * identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input
+     * file. If your job has multiple inputs, the service uses the filename of the first input file.
      * 
      * @param destination
-     *        Use Destination (Destination) to specify the S3 output location and the output filename base. Destination
-     *        accepts format identifiers. If you do not specify the base filename in the URI, the service will use the
-     *        filename of the input file. If your job has multiple inputs, the service uses the filename of the first
-     *        input file.
+     *        Use Destination to specify the S3 output location and the output filename base. Destination accepts format
+     *        identifiers. If you do not specify the base filename in the URI, the service will use the filename of the
+     *        input file. If your job has multiple inputs, the service uses the filename of the first input file.
      */
 
     public void setDestination(String destination) {
@@ -834,14 +838,14 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output filename base. Destination accepts
-     * format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the
-     * input file. If your job has multiple inputs, the service uses the filename of the first input file.
+     * Use Destination to specify the S3 output location and the output filename base. Destination accepts format
+     * identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input
+     * file. If your job has multiple inputs, the service uses the filename of the first input file.
      * 
-     * @return Use Destination (Destination) to specify the S3 output location and the output filename base. Destination
-     *         accepts format identifiers. If you do not specify the base filename in the URI, the service will use the
-     *         filename of the input file. If your job has multiple inputs, the service uses the filename of the first
-     *         input file.
+     * @return Use Destination to specify the S3 output location and the output filename base. Destination accepts
+     *         format identifiers. If you do not specify the base filename in the URI, the service will use the filename
+     *         of the input file. If your job has multiple inputs, the service uses the filename of the first input
+     *         file.
      */
 
     public String getDestination() {
@@ -849,15 +853,14 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Use Destination (Destination) to specify the S3 output location and the output filename base. Destination accepts
-     * format identifiers. If you do not specify the base filename in the URI, the service will use the filename of the
-     * input file. If your job has multiple inputs, the service uses the filename of the first input file.
+     * Use Destination to specify the S3 output location and the output filename base. Destination accepts format
+     * identifiers. If you do not specify the base filename in the URI, the service will use the filename of the input
+     * file. If your job has multiple inputs, the service uses the filename of the first input file.
      * 
      * @param destination
-     *        Use Destination (Destination) to specify the S3 output location and the output filename base. Destination
-     *        accepts format identifiers. If you do not specify the base filename in the URI, the service will use the
-     *        filename of the input file. If your job has multiple inputs, the service uses the filename of the first
-     *        input file.
+     *        Use Destination to specify the S3 output location and the output filename base. Destination accepts format
+     *        identifiers. If you do not specify the base filename in the URI, the service will use the filename of the
+     *        input file. If your job has multiple inputs, the service uses the filename of the first input file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -986,22 +989,22 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not
-     * generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame
-     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. MediaConvert
-     * creates a child manifest for each set of images that you generate and adds corresponding entries to the parent
-     * manifest. A common application for these images is Roku trick mode. The thumbnails and full-frame images that
-     * MediaConvert creates with this feature are compatible with this Roku specification:
+     * Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any
+     * images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled
+     * thumbnails and full-resolution images of single frames. MediaConvert creates a child manifest for each set of
+     * images that you generate and adds corresponding entries to the parent manifest. A common application for these
+     * images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are
+     * compatible with this Roku specification:
      * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      * 
      * @param imageBasedTrickPlay
-     *        Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not
-     *        generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full
-     *        frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames.
-     *        MediaConvert creates a child manifest for each set of images that you generate and adds corresponding
-     *        entries to the parent manifest. A common application for these images is Roku trick mode. The thumbnails
-     *        and full-frame images that MediaConvert creates with this feature are compatible with this Roku
-     *        specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     *        Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not
+     *        generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to
+     *        generate tiled thumbnails and full-resolution images of single frames. MediaConvert creates a child
+     *        manifest for each set of images that you generate and adds corresponding entries to the parent manifest. A
+     *        common application for these images is Roku trick mode. The thumbnails and full-frame images that
+     *        MediaConvert creates with this feature are compatible with this Roku specification:
+     *        https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      * @see HlsImageBasedTrickPlay
      */
 
@@ -1010,21 +1013,20 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not
-     * generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame
-     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. MediaConvert
-     * creates a child manifest for each set of images that you generate and adds corresponding entries to the parent
-     * manifest. A common application for these images is Roku trick mode. The thumbnails and full-frame images that
-     * MediaConvert creates with this feature are compatible with this Roku specification:
+     * Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any
+     * images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled
+     * thumbnails and full-resolution images of single frames. MediaConvert creates a child manifest for each set of
+     * images that you generate and adds corresponding entries to the parent manifest. A common application for these
+     * images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are
+     * compatible with this Roku specification:
      * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      * 
-     * @return Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not
-     *         generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full
-     *         frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames.
-     *         MediaConvert creates a child manifest for each set of images that you generate and adds corresponding
-     *         entries to the parent manifest. A common application for these images is Roku trick mode. The thumbnails
-     *         and full-frame images that MediaConvert creates with this feature are compatible with this Roku
-     *         specification:
+     * @return Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not
+     *         generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to
+     *         generate tiled thumbnails and full-resolution images of single frames. MediaConvert creates a child
+     *         manifest for each set of images that you generate and adds corresponding entries to the parent manifest.
+     *         A common application for these images is Roku trick mode. The thumbnails and full-frame images that
+     *         MediaConvert creates with this feature are compatible with this Roku specification:
      *         https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      * @see HlsImageBasedTrickPlay
      */
@@ -1034,22 +1036,22 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not
-     * generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame
-     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. MediaConvert
-     * creates a child manifest for each set of images that you generate and adds corresponding entries to the parent
-     * manifest. A common application for these images is Roku trick mode. The thumbnails and full-frame images that
-     * MediaConvert creates with this feature are compatible with this Roku specification:
+     * Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any
+     * images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled
+     * thumbnails and full-resolution images of single frames. MediaConvert creates a child manifest for each set of
+     * images that you generate and adds corresponding entries to the parent manifest. A common application for these
+     * images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are
+     * compatible with this Roku specification:
      * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      * 
      * @param imageBasedTrickPlay
-     *        Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not
-     *        generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full
-     *        frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames.
-     *        MediaConvert creates a child manifest for each set of images that you generate and adds corresponding
-     *        entries to the parent manifest. A common application for these images is Roku trick mode. The thumbnails
-     *        and full-frame images that MediaConvert creates with this feature are compatible with this Roku
-     *        specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     *        Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not
+     *        generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to
+     *        generate tiled thumbnails and full-resolution images of single frames. MediaConvert creates a child
+     *        manifest for each set of images that you generate and adds corresponding entries to the parent manifest. A
+     *        common application for these images is Roku trick mode. The thumbnails and full-frame images that
+     *        MediaConvert creates with this feature are compatible with this Roku specification:
+     *        https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsImageBasedTrickPlay
      */
@@ -1060,22 +1062,22 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not
-     * generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame
-     * (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. MediaConvert
-     * creates a child manifest for each set of images that you generate and adds corresponding entries to the parent
-     * manifest. A common application for these images is Roku trick mode. The thumbnails and full-frame images that
-     * MediaConvert creates with this feature are compatible with this Roku specification:
+     * Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not generate any
+     * images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to generate tiled
+     * thumbnails and full-resolution images of single frames. MediaConvert creates a child manifest for each set of
+     * images that you generate and adds corresponding entries to the parent manifest. A common application for these
+     * images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are
+     * compatible with this Roku specification:
      * https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      * 
      * @param imageBasedTrickPlay
-     *        Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not
-     *        generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full
-     *        frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames.
-     *        MediaConvert creates a child manifest for each set of images that you generate and adds corresponding
-     *        entries to the parent manifest. A common application for these images is Roku trick mode. The thumbnails
-     *        and full-frame images that MediaConvert creates with this feature are compatible with this Roku
-     *        specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+     *        Specify whether MediaConvert generates images for trick play. Keep the default value, None, to not
+     *        generate any images. Choose Thumbnail to generate tiled thumbnails. Choose Thumbnail and full frame to
+     *        generate tiled thumbnails and full-resolution images of single frames. MediaConvert creates a child
+     *        manifest for each set of images that you generate and adds corresponding entries to the parent manifest. A
+     *        common application for these images is Roku trick mode. The thumbnails and full-frame images that
+     *        MediaConvert creates with this feature are compatible with this Roku specification:
+     *        https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsImageBasedTrickPlay
      */
@@ -1490,6 +1492,109 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Specify whether MediaConvert generates HLS manifests while your job is running or when your job is complete. To
+     * generate HLS manifests while your job is running: Choose Enabled. Use if you want to play back your content as
+     * soon as it's available. MediaConvert writes the parent and child manifests after the first three media segments
+     * are written to your destination S3 bucket. It then writes new updated manifests after each additional segment is
+     * written. The parent manifest includes the latest BANDWIDTH and AVERAGE-BANDWIDTH attributes, and child manifests
+     * include the latest available media segment. When your job completes, the final child playlists include an
+     * EXT-X-ENDLIST tag. To generate HLS manifests only when your job completes: Choose Disabled.
+     * 
+     * @param progressiveWriteHlsManifest
+     *        Specify whether MediaConvert generates HLS manifests while your job is running or when your job is
+     *        complete. To generate HLS manifests while your job is running: Choose Enabled. Use if you want to play
+     *        back your content as soon as it's available. MediaConvert writes the parent and child manifests after the
+     *        first three media segments are written to your destination S3 bucket. It then writes new updated manifests
+     *        after each additional segment is written. The parent manifest includes the latest BANDWIDTH and
+     *        AVERAGE-BANDWIDTH attributes, and child manifests include the latest available media segment. When your
+     *        job completes, the final child playlists include an EXT-X-ENDLIST tag. To generate HLS manifests only when
+     *        your job completes: Choose Disabled.
+     * @see HlsProgressiveWriteHlsManifest
+     */
+
+    public void setProgressiveWriteHlsManifest(String progressiveWriteHlsManifest) {
+        this.progressiveWriteHlsManifest = progressiveWriteHlsManifest;
+    }
+
+    /**
+     * Specify whether MediaConvert generates HLS manifests while your job is running or when your job is complete. To
+     * generate HLS manifests while your job is running: Choose Enabled. Use if you want to play back your content as
+     * soon as it's available. MediaConvert writes the parent and child manifests after the first three media segments
+     * are written to your destination S3 bucket. It then writes new updated manifests after each additional segment is
+     * written. The parent manifest includes the latest BANDWIDTH and AVERAGE-BANDWIDTH attributes, and child manifests
+     * include the latest available media segment. When your job completes, the final child playlists include an
+     * EXT-X-ENDLIST tag. To generate HLS manifests only when your job completes: Choose Disabled.
+     * 
+     * @return Specify whether MediaConvert generates HLS manifests while your job is running or when your job is
+     *         complete. To generate HLS manifests while your job is running: Choose Enabled. Use if you want to play
+     *         back your content as soon as it's available. MediaConvert writes the parent and child manifests after the
+     *         first three media segments are written to your destination S3 bucket. It then writes new updated
+     *         manifests after each additional segment is written. The parent manifest includes the latest BANDWIDTH and
+     *         AVERAGE-BANDWIDTH attributes, and child manifests include the latest available media segment. When your
+     *         job completes, the final child playlists include an EXT-X-ENDLIST tag. To generate HLS manifests only
+     *         when your job completes: Choose Disabled.
+     * @see HlsProgressiveWriteHlsManifest
+     */
+
+    public String getProgressiveWriteHlsManifest() {
+        return this.progressiveWriteHlsManifest;
+    }
+
+    /**
+     * Specify whether MediaConvert generates HLS manifests while your job is running or when your job is complete. To
+     * generate HLS manifests while your job is running: Choose Enabled. Use if you want to play back your content as
+     * soon as it's available. MediaConvert writes the parent and child manifests after the first three media segments
+     * are written to your destination S3 bucket. It then writes new updated manifests after each additional segment is
+     * written. The parent manifest includes the latest BANDWIDTH and AVERAGE-BANDWIDTH attributes, and child manifests
+     * include the latest available media segment. When your job completes, the final child playlists include an
+     * EXT-X-ENDLIST tag. To generate HLS manifests only when your job completes: Choose Disabled.
+     * 
+     * @param progressiveWriteHlsManifest
+     *        Specify whether MediaConvert generates HLS manifests while your job is running or when your job is
+     *        complete. To generate HLS manifests while your job is running: Choose Enabled. Use if you want to play
+     *        back your content as soon as it's available. MediaConvert writes the parent and child manifests after the
+     *        first three media segments are written to your destination S3 bucket. It then writes new updated manifests
+     *        after each additional segment is written. The parent manifest includes the latest BANDWIDTH and
+     *        AVERAGE-BANDWIDTH attributes, and child manifests include the latest available media segment. When your
+     *        job completes, the final child playlists include an EXT-X-ENDLIST tag. To generate HLS manifests only when
+     *        your job completes: Choose Disabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HlsProgressiveWriteHlsManifest
+     */
+
+    public HlsGroupSettings withProgressiveWriteHlsManifest(String progressiveWriteHlsManifest) {
+        setProgressiveWriteHlsManifest(progressiveWriteHlsManifest);
+        return this;
+    }
+
+    /**
+     * Specify whether MediaConvert generates HLS manifests while your job is running or when your job is complete. To
+     * generate HLS manifests while your job is running: Choose Enabled. Use if you want to play back your content as
+     * soon as it's available. MediaConvert writes the parent and child manifests after the first three media segments
+     * are written to your destination S3 bucket. It then writes new updated manifests after each additional segment is
+     * written. The parent manifest includes the latest BANDWIDTH and AVERAGE-BANDWIDTH attributes, and child manifests
+     * include the latest available media segment. When your job completes, the final child playlists include an
+     * EXT-X-ENDLIST tag. To generate HLS manifests only when your job completes: Choose Disabled.
+     * 
+     * @param progressiveWriteHlsManifest
+     *        Specify whether MediaConvert generates HLS manifests while your job is running or when your job is
+     *        complete. To generate HLS manifests while your job is running: Choose Enabled. Use if you want to play
+     *        back your content as soon as it's available. MediaConvert writes the parent and child manifests after the
+     *        first three media segments are written to your destination S3 bucket. It then writes new updated manifests
+     *        after each additional segment is written. The parent manifest includes the latest BANDWIDTH and
+     *        AVERAGE-BANDWIDTH attributes, and child manifests include the latest available media segment. When your
+     *        job completes, the final child playlists include an EXT-X-ENDLIST tag. To generate HLS manifests only when
+     *        your job completes: Choose Disabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HlsProgressiveWriteHlsManifest
+     */
+
+    public HlsGroupSettings withProgressiveWriteHlsManifest(HlsProgressiveWriteHlsManifest progressiveWriteHlsManifest) {
+        this.progressiveWriteHlsManifest = progressiveWriteHlsManifest.toString();
+        return this;
+    }
+
+    /**
      * When set to SINGLE_FILE, emits program as a single media resource (.ts) file, uses #EXT-X-BYTERANGE tags to index
      * segment for playback.
      * 
@@ -1550,16 +1655,15 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert defaults to
-     * 10. Related settings: Use Segment length control (SegmentLengthControl) to specify whether the encoder enforces
-     * this value strictly. Use Segment control (HlsSegmentControl) to specify whether MediaConvert creates separate
-     * segment files or one content file that has metadata to mark the segment boundaries.
+     * 10. Related settings: Use Segment length control to specify whether the encoder enforces this value strictly. Use
+     * Segment control to specify whether MediaConvert creates separate segment files or one content file that has
+     * metadata to mark the segment boundaries.
      * 
      * @param segmentLength
      *        Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert
-     *        defaults to 10. Related settings: Use Segment length control (SegmentLengthControl) to specify whether the
-     *        encoder enforces this value strictly. Use Segment control (HlsSegmentControl) to specify whether
-     *        MediaConvert creates separate segment files or one content file that has metadata to mark the segment
-     *        boundaries.
+     *        defaults to 10. Related settings: Use Segment length control to specify whether the encoder enforces this
+     *        value strictly. Use Segment control to specify whether MediaConvert creates separate segment files or one
+     *        content file that has metadata to mark the segment boundaries.
      */
 
     public void setSegmentLength(Integer segmentLength) {
@@ -1568,15 +1672,14 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert defaults to
-     * 10. Related settings: Use Segment length control (SegmentLengthControl) to specify whether the encoder enforces
-     * this value strictly. Use Segment control (HlsSegmentControl) to specify whether MediaConvert creates separate
-     * segment files or one content file that has metadata to mark the segment boundaries.
+     * 10. Related settings: Use Segment length control to specify whether the encoder enforces this value strictly. Use
+     * Segment control to specify whether MediaConvert creates separate segment files or one content file that has
+     * metadata to mark the segment boundaries.
      * 
      * @return Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert
-     *         defaults to 10. Related settings: Use Segment length control (SegmentLengthControl) to specify whether
-     *         the encoder enforces this value strictly. Use Segment control (HlsSegmentControl) to specify whether
-     *         MediaConvert creates separate segment files or one content file that has metadata to mark the segment
-     *         boundaries.
+     *         defaults to 10. Related settings: Use Segment length control to specify whether the encoder enforces this
+     *         value strictly. Use Segment control to specify whether MediaConvert creates separate segment files or one
+     *         content file that has metadata to mark the segment boundaries.
      */
 
     public Integer getSegmentLength() {
@@ -1585,16 +1688,15 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
 
     /**
      * Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert defaults to
-     * 10. Related settings: Use Segment length control (SegmentLengthControl) to specify whether the encoder enforces
-     * this value strictly. Use Segment control (HlsSegmentControl) to specify whether MediaConvert creates separate
-     * segment files or one content file that has metadata to mark the segment boundaries.
+     * 10. Related settings: Use Segment length control to specify whether the encoder enforces this value strictly. Use
+     * Segment control to specify whether MediaConvert creates separate segment files or one content file that has
+     * metadata to mark the segment boundaries.
      * 
      * @param segmentLength
      *        Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert
-     *        defaults to 10. Related settings: Use Segment length control (SegmentLengthControl) to specify whether the
-     *        encoder enforces this value strictly. Use Segment control (HlsSegmentControl) to specify whether
-     *        MediaConvert creates separate segment files or one content file that has metadata to mark the segment
-     *        boundaries.
+     *        defaults to 10. Related settings: Use Segment length control to specify whether the encoder enforces this
+     *        value strictly. Use Segment control to specify whether MediaConvert creates separate segment files or one
+     *        content file that has metadata to mark the segment boundaries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1604,16 +1706,14 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the encoder use
-     * the exact length that you specify with the setting Segment length (SegmentLength). This might result in extra
-     * I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next
-     * GOP boundary.
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact to have the encoder use the exact
+     * length that you specify with the setting Segment length. This might result in extra I-frames. Choose Multiple of
+     * GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      * 
      * @param segmentLengthControl
-     *        Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the
-     *        encoder use the exact length that you specify with the setting Segment length (SegmentLength). This might
-     *        result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
-     *        lengths to match the next GOP boundary.
+     *        Specify how you want MediaConvert to determine the segment length. Choose Exact to have the encoder use
+     *        the exact length that you specify with the setting Segment length. This might result in extra I-frames.
+     *        Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      * @see HlsSegmentLengthControl
      */
 
@@ -1622,15 +1722,13 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the encoder use
-     * the exact length that you specify with the setting Segment length (SegmentLength). This might result in extra
-     * I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next
-     * GOP boundary.
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact to have the encoder use the exact
+     * length that you specify with the setting Segment length. This might result in extra I-frames. Choose Multiple of
+     * GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      * 
-     * @return Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the
-     *         encoder use the exact length that you specify with the setting Segment length (SegmentLength). This might
-     *         result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
-     *         lengths to match the next GOP boundary.
+     * @return Specify how you want MediaConvert to determine the segment length. Choose Exact to have the encoder use
+     *         the exact length that you specify with the setting Segment length. This might result in extra I-frames.
+     *         Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      * @see HlsSegmentLengthControl
      */
 
@@ -1639,16 +1737,14 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the encoder use
-     * the exact length that you specify with the setting Segment length (SegmentLength). This might result in extra
-     * I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next
-     * GOP boundary.
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact to have the encoder use the exact
+     * length that you specify with the setting Segment length. This might result in extra I-frames. Choose Multiple of
+     * GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      * 
      * @param segmentLengthControl
-     *        Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the
-     *        encoder use the exact length that you specify with the setting Segment length (SegmentLength). This might
-     *        result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
-     *        lengths to match the next GOP boundary.
+     *        Specify how you want MediaConvert to determine the segment length. Choose Exact to have the encoder use
+     *        the exact length that you specify with the setting Segment length. This might result in extra I-frames.
+     *        Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsSegmentLengthControl
      */
@@ -1659,16 +1755,14 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the encoder use
-     * the exact length that you specify with the setting Segment length (SegmentLength). This might result in extra
-     * I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next
-     * GOP boundary.
+     * Specify how you want MediaConvert to determine the segment length. Choose Exact to have the encoder use the exact
+     * length that you specify with the setting Segment length. This might result in extra I-frames. Choose Multiple of
+     * GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      * 
      * @param segmentLengthControl
-     *        Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the
-     *        encoder use the exact length that you specify with the setting Segment length (SegmentLength). This might
-     *        result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment
-     *        lengths to match the next GOP boundary.
+     *        Specify how you want MediaConvert to determine the segment length. Choose Exact to have the encoder use
+     *        the exact length that you specify with the setting Segment length. This might result in extra I-frames.
+     *        Choose Multiple of GOP to have the encoder round up the segment lengths to match the next GOP boundary.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsSegmentLengthControl
      */
@@ -1679,12 +1773,12 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Number of segments to write to a subdirectory before starting a new one. directoryStructure must be
-     * SINGLE_DIRECTORY for this setting to have an effect.
+     * Specify the number of segments to write to a subdirectory before starting a new one. You must also set Directory
+     * structure to Subdirectory per stream for this setting to have an effect.
      * 
      * @param segmentsPerSubdirectory
-     *        Number of segments to write to a subdirectory before starting a new one. directoryStructure must be
-     *        SINGLE_DIRECTORY for this setting to have an effect.
+     *        Specify the number of segments to write to a subdirectory before starting a new one. You must also set
+     *        Directory structure to Subdirectory per stream for this setting to have an effect.
      */
 
     public void setSegmentsPerSubdirectory(Integer segmentsPerSubdirectory) {
@@ -1692,11 +1786,11 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Number of segments to write to a subdirectory before starting a new one. directoryStructure must be
-     * SINGLE_DIRECTORY for this setting to have an effect.
+     * Specify the number of segments to write to a subdirectory before starting a new one. You must also set Directory
+     * structure to Subdirectory per stream for this setting to have an effect.
      * 
-     * @return Number of segments to write to a subdirectory before starting a new one. directoryStructure must be
-     *         SINGLE_DIRECTORY for this setting to have an effect.
+     * @return Specify the number of segments to write to a subdirectory before starting a new one. You must also set
+     *         Directory structure to Subdirectory per stream for this setting to have an effect.
      */
 
     public Integer getSegmentsPerSubdirectory() {
@@ -1704,12 +1798,12 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Number of segments to write to a subdirectory before starting a new one. directoryStructure must be
-     * SINGLE_DIRECTORY for this setting to have an effect.
+     * Specify the number of segments to write to a subdirectory before starting a new one. You must also set Directory
+     * structure to Subdirectory per stream for this setting to have an effect.
      * 
      * @param segmentsPerSubdirectory
-     *        Number of segments to write to a subdirectory before starting a new one. directoryStructure must be
-     *        SINGLE_DIRECTORY for this setting to have an effect.
+     *        Specify the number of segments to write to a subdirectory before starting a new one. You must also set
+     *        Directory structure to Subdirectory per stream for this setting to have an effect.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1861,15 +1955,14 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3 timestamps (timedMetadataId3Period) in
-     * your output. To include ID3 timestamps: Specify PRIV (PRIV) or TDRL (TDRL) and set ID3 metadata (timedMetadata)
-     * to Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3 timestamp frame type to None (NONE).
+     * Specify the type of the ID3 frame to use for ID3 timestamps in your output. To include ID3 timestamps: Specify
+     * PRIV or TDRL and set ID3 metadata to Passthrough. To exclude ID3 timestamps: Set ID3 timestamp frame type to
+     * None.
      * 
      * @param timedMetadataId3Frame
-     *        Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3 timestamps
-     *        (timedMetadataId3Period) in your output. To include ID3 timestamps: Specify PRIV (PRIV) or TDRL (TDRL) and
-     *        set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3
-     *        timestamp frame type to None (NONE).
+     *        Specify the type of the ID3 frame to use for ID3 timestamps in your output. To include ID3 timestamps:
+     *        Specify PRIV or TDRL and set ID3 metadata to Passthrough. To exclude ID3 timestamps: Set ID3 timestamp
+     *        frame type to None.
      * @see HlsTimedMetadataId3Frame
      */
 
@@ -1878,14 +1971,13 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3 timestamps (timedMetadataId3Period) in
-     * your output. To include ID3 timestamps: Specify PRIV (PRIV) or TDRL (TDRL) and set ID3 metadata (timedMetadata)
-     * to Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3 timestamp frame type to None (NONE).
+     * Specify the type of the ID3 frame to use for ID3 timestamps in your output. To include ID3 timestamps: Specify
+     * PRIV or TDRL and set ID3 metadata to Passthrough. To exclude ID3 timestamps: Set ID3 timestamp frame type to
+     * None.
      * 
-     * @return Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3 timestamps
-     *         (timedMetadataId3Period) in your output. To include ID3 timestamps: Specify PRIV (PRIV) or TDRL (TDRL)
-     *         and set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3
-     *         timestamp frame type to None (NONE).
+     * @return Specify the type of the ID3 frame to use for ID3 timestamps in your output. To include ID3 timestamps:
+     *         Specify PRIV or TDRL and set ID3 metadata to Passthrough. To exclude ID3 timestamps: Set ID3 timestamp
+     *         frame type to None.
      * @see HlsTimedMetadataId3Frame
      */
 
@@ -1894,15 +1986,14 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3 timestamps (timedMetadataId3Period) in
-     * your output. To include ID3 timestamps: Specify PRIV (PRIV) or TDRL (TDRL) and set ID3 metadata (timedMetadata)
-     * to Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3 timestamp frame type to None (NONE).
+     * Specify the type of the ID3 frame to use for ID3 timestamps in your output. To include ID3 timestamps: Specify
+     * PRIV or TDRL and set ID3 metadata to Passthrough. To exclude ID3 timestamps: Set ID3 timestamp frame type to
+     * None.
      * 
      * @param timedMetadataId3Frame
-     *        Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3 timestamps
-     *        (timedMetadataId3Period) in your output. To include ID3 timestamps: Specify PRIV (PRIV) or TDRL (TDRL) and
-     *        set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3
-     *        timestamp frame type to None (NONE).
+     *        Specify the type of the ID3 frame to use for ID3 timestamps in your output. To include ID3 timestamps:
+     *        Specify PRIV or TDRL and set ID3 metadata to Passthrough. To exclude ID3 timestamps: Set ID3 timestamp
+     *        frame type to None.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsTimedMetadataId3Frame
      */
@@ -1913,15 +2004,14 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3 timestamps (timedMetadataId3Period) in
-     * your output. To include ID3 timestamps: Specify PRIV (PRIV) or TDRL (TDRL) and set ID3 metadata (timedMetadata)
-     * to Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3 timestamp frame type to None (NONE).
+     * Specify the type of the ID3 frame to use for ID3 timestamps in your output. To include ID3 timestamps: Specify
+     * PRIV or TDRL and set ID3 metadata to Passthrough. To exclude ID3 timestamps: Set ID3 timestamp frame type to
+     * None.
      * 
      * @param timedMetadataId3Frame
-     *        Specify the type of the ID3 frame (timedMetadataId3Frame) to use for ID3 timestamps
-     *        (timedMetadataId3Period) in your output. To include ID3 timestamps: Specify PRIV (PRIV) or TDRL (TDRL) and
-     *        set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH). To exclude ID3 timestamps: Set ID3
-     *        timestamp frame type to None (NONE).
+     *        Specify the type of the ID3 frame to use for ID3 timestamps in your output. To include ID3 timestamps:
+     *        Specify PRIV or TDRL and set ID3 metadata to Passthrough. To exclude ID3 timestamps: Set ID3 timestamp
+     *        frame type to None.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HlsTimedMetadataId3Frame
      */
@@ -1934,16 +2024,14 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     /**
      * Specify the interval in seconds to write ID3 timestamps in your output. The first timestamp starts at the output
      * timecode and date, and increases incrementally with each ID3 timestamp. To use the default interval of 10
-     * seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp frame type
-     * (timedMetadataId3Frame) to PRIV (PRIV) or TDRL (TDRL), and set ID3 metadata (timedMetadata) to Passthrough
-     * (PASSTHROUGH).
+     * seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp frame type to PRIV or TDRL, and
+     * set ID3 metadata to Passthrough.
      * 
      * @param timedMetadataId3Period
      *        Specify the interval in seconds to write ID3 timestamps in your output. The first timestamp starts at the
      *        output timecode and date, and increases incrementally with each ID3 timestamp. To use the default interval
-     *        of 10 seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp frame type
-     *        (timedMetadataId3Frame) to PRIV (PRIV) or TDRL (TDRL), and set ID3 metadata (timedMetadata) to Passthrough
-     *        (PASSTHROUGH).
+     *        of 10 seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp frame type to PRIV
+     *        or TDRL, and set ID3 metadata to Passthrough.
      */
 
     public void setTimedMetadataId3Period(Integer timedMetadataId3Period) {
@@ -1953,15 +2041,13 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     /**
      * Specify the interval in seconds to write ID3 timestamps in your output. The first timestamp starts at the output
      * timecode and date, and increases incrementally with each ID3 timestamp. To use the default interval of 10
-     * seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp frame type
-     * (timedMetadataId3Frame) to PRIV (PRIV) or TDRL (TDRL), and set ID3 metadata (timedMetadata) to Passthrough
-     * (PASSTHROUGH).
+     * seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp frame type to PRIV or TDRL, and
+     * set ID3 metadata to Passthrough.
      * 
      * @return Specify the interval in seconds to write ID3 timestamps in your output. The first timestamp starts at the
      *         output timecode and date, and increases incrementally with each ID3 timestamp. To use the default
      *         interval of 10 seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp frame
-     *         type (timedMetadataId3Frame) to PRIV (PRIV) or TDRL (TDRL), and set ID3 metadata (timedMetadata) to
-     *         Passthrough (PASSTHROUGH).
+     *         type to PRIV or TDRL, and set ID3 metadata to Passthrough.
      */
 
     public Integer getTimedMetadataId3Period() {
@@ -1971,16 +2057,14 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     /**
      * Specify the interval in seconds to write ID3 timestamps in your output. The first timestamp starts at the output
      * timecode and date, and increases incrementally with each ID3 timestamp. To use the default interval of 10
-     * seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp frame type
-     * (timedMetadataId3Frame) to PRIV (PRIV) or TDRL (TDRL), and set ID3 metadata (timedMetadata) to Passthrough
-     * (PASSTHROUGH).
+     * seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp frame type to PRIV or TDRL, and
+     * set ID3 metadata to Passthrough.
      * 
      * @param timedMetadataId3Period
      *        Specify the interval in seconds to write ID3 timestamps in your output. The first timestamp starts at the
      *        output timecode and date, and increases incrementally with each ID3 timestamp. To use the default interval
-     *        of 10 seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp frame type
-     *        (timedMetadataId3Frame) to PRIV (PRIV) or TDRL (TDRL), and set ID3 metadata (timedMetadata) to Passthrough
-     *        (PASSTHROUGH).
+     *        of 10 seconds: Leave blank. To include this metadata in your output: Set ID3 timestamp frame type to PRIV
+     *        or TDRL, and set ID3 metadata to Passthrough.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2079,6 +2163,8 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
             sb.append("ProgramDateTime: ").append(getProgramDateTime()).append(",");
         if (getProgramDateTimePeriod() != null)
             sb.append("ProgramDateTimePeriod: ").append(getProgramDateTimePeriod()).append(",");
+        if (getProgressiveWriteHlsManifest() != null)
+            sb.append("ProgressiveWriteHlsManifest: ").append(getProgressiveWriteHlsManifest()).append(",");
         if (getSegmentControl() != null)
             sb.append("SegmentControl: ").append(getSegmentControl()).append(",");
         if (getSegmentLength() != null)
@@ -2199,6 +2285,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getProgramDateTimePeriod() != null && other.getProgramDateTimePeriod().equals(this.getProgramDateTimePeriod()) == false)
             return false;
+        if (other.getProgressiveWriteHlsManifest() == null ^ this.getProgressiveWriteHlsManifest() == null)
+            return false;
+        if (other.getProgressiveWriteHlsManifest() != null && other.getProgressiveWriteHlsManifest().equals(this.getProgressiveWriteHlsManifest()) == false)
+            return false;
         if (other.getSegmentControl() == null ^ this.getSegmentControl() == null)
             return false;
         if (other.getSegmentControl() != null && other.getSegmentControl().equals(this.getSegmentControl()) == false)
@@ -2266,6 +2356,7 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getOutputSelection() == null) ? 0 : getOutputSelection().hashCode());
         hashCode = prime * hashCode + ((getProgramDateTime() == null) ? 0 : getProgramDateTime().hashCode());
         hashCode = prime * hashCode + ((getProgramDateTimePeriod() == null) ? 0 : getProgramDateTimePeriod().hashCode());
+        hashCode = prime * hashCode + ((getProgressiveWriteHlsManifest() == null) ? 0 : getProgressiveWriteHlsManifest().hashCode());
         hashCode = prime * hashCode + ((getSegmentControl() == null) ? 0 : getSegmentControl().hashCode());
         hashCode = prime * hashCode + ((getSegmentLength() == null) ? 0 : getSegmentLength().hashCode());
         hashCode = prime * hashCode + ((getSegmentLengthControl() == null) ? 0 : getSegmentLengthControl().hashCode());

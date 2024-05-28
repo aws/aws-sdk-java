@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,15 +48,30 @@ public class PhysicalResourceJsonUnmarshaller implements Unmarshaller<PhysicalRe
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("additionalInfo", targetDepth)) {
+                    context.nextToken();
+                    physicalResource.setAdditionalInfo(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
+                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    ).unmarshall(context));
+                }
                 if (context.testExpression("appComponents", targetDepth)) {
                     context.nextToken();
                     physicalResource.setAppComponents(new ListUnmarshaller<AppComponent>(AppComponentJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("excluded", targetDepth)) {
+                    context.nextToken();
+                    physicalResource.setExcluded(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("logicalResourceId", targetDepth)) {
                     context.nextToken();
                     physicalResource.setLogicalResourceId(LogicalResourceIdJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("parentResourceName", targetDepth)) {
+                    context.nextToken();
+                    physicalResource.setParentResourceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("physicalResourceId", targetDepth)) {
                     context.nextToken();
@@ -69,6 +84,10 @@ public class PhysicalResourceJsonUnmarshaller implements Unmarshaller<PhysicalRe
                 if (context.testExpression("resourceType", targetDepth)) {
                     context.nextToken();
                     physicalResource.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("sourceType", targetDepth)) {
+                    context.nextToken();
+                    physicalResource.setSourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

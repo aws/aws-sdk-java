@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,12 @@ public class DescribeProblemObservationsRequest extends com.amazonaws.AmazonWebS
      * </p>
      */
     private String problemId;
+    /**
+     * <p>
+     * The AWS account ID for the resource group owner.
+     * </p>
+     */
+    private String accountId;
 
     /**
      * <p>
@@ -73,6 +79,46 @@ public class DescribeProblemObservationsRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * The AWS account ID for the resource group owner.
+     * </p>
+     * 
+     * @param accountId
+     *        The AWS account ID for the resource group owner.
+     */
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID for the resource group owner.
+     * </p>
+     * 
+     * @return The AWS account ID for the resource group owner.
+     */
+
+    public String getAccountId() {
+        return this.accountId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID for the resource group owner.
+     * </p>
+     * 
+     * @param accountId
+     *        The AWS account ID for the resource group owner.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProblemObservationsRequest withAccountId(String accountId) {
+        setAccountId(accountId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -85,7 +131,9 @@ public class DescribeProblemObservationsRequest extends com.amazonaws.AmazonWebS
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProblemId() != null)
-            sb.append("ProblemId: ").append(getProblemId());
+            sb.append("ProblemId: ").append(getProblemId()).append(",");
+        if (getAccountId() != null)
+            sb.append("AccountId: ").append(getAccountId());
         sb.append("}");
         return sb.toString();
     }
@@ -104,6 +152,10 @@ public class DescribeProblemObservationsRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getProblemId() != null && other.getProblemId().equals(this.getProblemId()) == false)
             return false;
+        if (other.getAccountId() == null ^ this.getAccountId() == null)
+            return false;
+        if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
+            return false;
         return true;
     }
 
@@ -113,6 +165,7 @@ public class DescribeProblemObservationsRequest extends com.amazonaws.AmazonWebS
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getProblemId() == null) ? 0 : getProblemId().hashCode());
+        hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         return hashCode;
     }
 

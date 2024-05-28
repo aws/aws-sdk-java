@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,6 +72,18 @@ public class DescribeDomainConfigurationResult extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private java.util.Date lastStatusChangeDate;
+    /**
+     * <p>
+     * An object that specifies the TLS configuration for a domain.
+     * </p>
+     */
+    private TlsConfig tlsConfig;
+    /**
+     * <p>
+     * The server certificate configuration.
+     * </p>
+     */
+    private ServerCertificateConfig serverCertificateConfig;
 
     /**
      * <p>
@@ -521,6 +533,86 @@ public class DescribeDomainConfigurationResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * An object that specifies the TLS configuration for a domain.
+     * </p>
+     * 
+     * @param tlsConfig
+     *        An object that specifies the TLS configuration for a domain.
+     */
+
+    public void setTlsConfig(TlsConfig tlsConfig) {
+        this.tlsConfig = tlsConfig;
+    }
+
+    /**
+     * <p>
+     * An object that specifies the TLS configuration for a domain.
+     * </p>
+     * 
+     * @return An object that specifies the TLS configuration for a domain.
+     */
+
+    public TlsConfig getTlsConfig() {
+        return this.tlsConfig;
+    }
+
+    /**
+     * <p>
+     * An object that specifies the TLS configuration for a domain.
+     * </p>
+     * 
+     * @param tlsConfig
+     *        An object that specifies the TLS configuration for a domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDomainConfigurationResult withTlsConfig(TlsConfig tlsConfig) {
+        setTlsConfig(tlsConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The server certificate configuration.
+     * </p>
+     * 
+     * @param serverCertificateConfig
+     *        The server certificate configuration.
+     */
+
+    public void setServerCertificateConfig(ServerCertificateConfig serverCertificateConfig) {
+        this.serverCertificateConfig = serverCertificateConfig;
+    }
+
+    /**
+     * <p>
+     * The server certificate configuration.
+     * </p>
+     * 
+     * @return The server certificate configuration.
+     */
+
+    public ServerCertificateConfig getServerCertificateConfig() {
+        return this.serverCertificateConfig;
+    }
+
+    /**
+     * <p>
+     * The server certificate configuration.
+     * </p>
+     * 
+     * @param serverCertificateConfig
+     *        The server certificate configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDomainConfigurationResult withServerCertificateConfig(ServerCertificateConfig serverCertificateConfig) {
+        setServerCertificateConfig(serverCertificateConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -549,7 +641,11 @@ public class DescribeDomainConfigurationResult extends com.amazonaws.AmazonWebSe
         if (getDomainType() != null)
             sb.append("DomainType: ").append(getDomainType()).append(",");
         if (getLastStatusChangeDate() != null)
-            sb.append("LastStatusChangeDate: ").append(getLastStatusChangeDate());
+            sb.append("LastStatusChangeDate: ").append(getLastStatusChangeDate()).append(",");
+        if (getTlsConfig() != null)
+            sb.append("TlsConfig: ").append(getTlsConfig()).append(",");
+        if (getServerCertificateConfig() != null)
+            sb.append("ServerCertificateConfig: ").append(getServerCertificateConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -600,6 +696,14 @@ public class DescribeDomainConfigurationResult extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getLastStatusChangeDate() != null && other.getLastStatusChangeDate().equals(this.getLastStatusChangeDate()) == false)
             return false;
+        if (other.getTlsConfig() == null ^ this.getTlsConfig() == null)
+            return false;
+        if (other.getTlsConfig() != null && other.getTlsConfig().equals(this.getTlsConfig()) == false)
+            return false;
+        if (other.getServerCertificateConfig() == null ^ this.getServerCertificateConfig() == null)
+            return false;
+        if (other.getServerCertificateConfig() != null && other.getServerCertificateConfig().equals(this.getServerCertificateConfig()) == false)
+            return false;
         return true;
     }
 
@@ -617,6 +721,8 @@ public class DescribeDomainConfigurationResult extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getServiceType() == null) ? 0 : getServiceType().hashCode());
         hashCode = prime * hashCode + ((getDomainType() == null) ? 0 : getDomainType().hashCode());
         hashCode = prime * hashCode + ((getLastStatusChangeDate() == null) ? 0 : getLastStatusChangeDate().hashCode());
+        hashCode = prime * hashCode + ((getTlsConfig() == null) ? 0 : getTlsConfig().hashCode());
+        hashCode = prime * hashCode + ((getServerCertificateConfig() == null) ? 0 : getServerCertificateConfig().hashCode());
         return hashCode;
     }
 

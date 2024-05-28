@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,13 +21,44 @@ import javax.annotation.Generated;
  * with these attributes.
  * </p>
  * <p>
+ * You must specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other attributes are optional. Any
+ * unspecified optional attribute is set to its default.
+ * </p>
+ * <p>
  * When you specify multiple attributes, you get instance types that satisfy all of the specified attributes. If you
  * specify multiple values for an attribute, you get instance types that satisfy any of the specified values.
  * </p>
+ * <p>
+ * To limit the list of instance types from which Amazon EC2 can identify matching instance types, you can use one of
+ * the following parameters, but not both in the same request:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>AllowedInstanceTypes</code> - The instance types to include in the list. All other instance types are ignored,
+ * even if they match your specified attributes.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ExcludedInstanceTypes</code> - The instance types to exclude from the list, even if they match your specified
+ * attributes.
+ * </p>
+ * </li>
+ * </ul>
  * <note>
  * <p>
- * You must specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other attributes are optional. Any
- * unspecified optional attribute is set to its default.
+ * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
+ * </p>
+ * <p>
+ * Attribute-based instance type selection is only supported when using Auto Scaling groups, EC2 Fleet, and Spot Fleet
+ * to launch instances. If you plan to use the launch template in the <a
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-instance-wizard.html">launch instance
+ * wizard</a>, or with the <a
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a> API or <a
+ * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html"
+ * >AWS::EC2::Instance</a> Amazon Web Services CloudFormation resource, you can't specify
+ * <code>InstanceRequirements</code>.
  * </p>
  * </note>
  * <p>
@@ -113,6 +144,11 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 will exclude all the M5a
      * instance types, but not the M5n instance types.
      * </p>
+     * <note>
+     * <p>
+     * If you specify <code>ExcludedInstanceTypes</code>, you can't specify <code>AllowedInstanceTypes</code>.
+     * </p>
+     * </note>
      * <p>
      * Default: No excluded instance types
      * </p>
@@ -139,16 +175,20 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> instanceGenerations;
     /**
      * <p>
-     * The price protection threshold for Spot Instance. This is the maximum you’ll pay for an Spot Instance, expressed
-     * as a percentage above the least expensive current generation M, C, or R instance type with your specified
-     * attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above
-     * your threshold.
+     * [Price protection] The price protection threshold for Spot Instances, as a percentage higher than an identified
+     * Spot price. The identified Spot price is the Spot price of the lowest priced current generation C, M, or R
+     * instance type with your specified attributes. If no current generation C, M, or R instance type matches your
+     * attributes, then the identified Spot price is from the lowest priced current generation instance types, and
+     * failing that, from the lowest priced previous generation instance types that match your attributes. When Amazon
+     * EC2 selects instance types with your attributes, it will exclude instance types whose Spot price exceeds your
+     * specified threshold.
      * </p>
      * <p>
      * The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      * </p>
      * <p>
-     * To turn off price protection, specify a high value, such as <code>999999</code>.
+     * If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
+     * protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance price.
      * </p>
      * <p>
      * This parameter is not supported for <a
@@ -159,8 +199,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
-     * protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance price.
+     * Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
+     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either, Amazon
+     * EC2 will automatically apply optimal price protection to consistently select from a wide range of instance types.
+     * To indicate no price protection threshold for Spot Instances, meaning you want to consider all instance types
+     * that match your attributes, include one of these parameters and specify a high value, such as <code>999999</code>
+     * .
      * </p>
      * </note>
      * <p>
@@ -170,16 +214,16 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
     private Integer spotMaxPricePercentageOverLowestPrice;
     /**
      * <p>
-     * The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance,
-     * expressed as a percentage above the least expensive current generation M, C, or R instance type with your
-     * specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types
-     * priced above your threshold.
+     * [Price protection] The price protection threshold for On-Demand Instances, as a percentage higher than an
+     * identified On-Demand price. The identified On-Demand price is the price of the lowest priced current generation
+     * C, M, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your
+     * attributes, it will exclude instance types whose price exceeds your specified threshold.
      * </p>
      * <p>
      * The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      * </p>
      * <p>
-     * To turn off price protection, specify a high value, such as <code>999999</code>.
+     * To indicate no price protection threshold, specify a high value, such as <code>999999</code>.
      * </p>
      * <p>
      * This parameter is not supported for <a
@@ -392,7 +436,7 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * For instance types with NVIDIA devices, specify <code>nvidia</code>.
+     * For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.
      * </p>
      * </li>
      * <li>
@@ -402,7 +446,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.
+     * For instance types with Habana devices, specify <code>habana</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For instance types with NVIDIA devices, specify <code>nvidia</code>.
      * </p>
      * </li>
      * <li>
@@ -423,22 +472,32 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
+     * For instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.
+     * For instance types with NVIDIA H100 GPUs, specify <code>h100</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.
      * </p>
      * </li>
      * <li>
@@ -453,17 +512,22 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.
+     * For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     * For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
+     * For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.
      * </p>
      * </li>
      * </ul>
@@ -481,6 +545,71 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * </p>
      */
     private AcceleratorTotalMemoryMiBRequest acceleratorTotalMemoryMiB;
+    /**
+     * <p>
+     * The minimum and maximum amount of baseline network bandwidth, in gigabits per second (Gbps). For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html">Amazon EC2
+     * instance network bandwidth</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * <p>
+     * Default: No minimum or maximum limits
+     * </p>
+     */
+    private NetworkBandwidthGbpsRequest networkBandwidthGbps;
+    /**
+     * <p>
+     * The instance types to apply your specified attributes against. All other instance types are ignored, even if they
+     * match your specified attributes.
+     * </p>
+     * <p>
+     * You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to allow an
+     * instance type, size, or generation. The following are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>,
+     * <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
+     * </p>
+     * <p>
+     * For example, if you specify <code>c5*</code>,Amazon EC2 will allow the entire C5 instance family, which includes
+     * all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 will allow all the M5a instance
+     * types, but not the M5n instance types.
+     * </p>
+     * <note>
+     * <p>
+     * If you specify <code>AllowedInstanceTypes</code>, you can't specify <code>ExcludedInstanceTypes</code>.
+     * </p>
+     * </note>
+     * <p>
+     * Default: All instance types
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> allowedInstanceTypes;
+    /**
+     * <p>
+     * [Price protection] The price protection threshold for Spot Instances, as a percentage of an identified On-Demand
+     * price. The identified On-Demand price is the price of the lowest priced current generation C, M, or R instance
+     * type with your specified attributes. If no current generation C, M, or R instance type matches your attributes,
+     * then the identified price is from the lowest priced current generation instance types, and failing that, from the
+     * lowest priced previous generation instance types that match your attributes. When Amazon EC2 selects instance
+     * types with your attributes, it will exclude instance types whose price exceeds your specified threshold.
+     * </p>
+     * <p>
+     * The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
+     * </p>
+     * <p>
+     * If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection
+     * threshold is based on the per vCPU or per memory price instead of the per instance price.
+     * </p>
+     * <note>
+     * <p>
+     * Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
+     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either, Amazon
+     * EC2 will automatically apply optimal price protection to consistently select from a wide range of instance types.
+     * To indicate no price protection threshold for Spot Instances, meaning you want to consider all instance types
+     * that match your attributes, include one of these parameters and specify a high value, such as <code>999999</code>
+     * .
+     * </p>
+     * </note>
+     */
+    private Integer maxSpotPriceAsPercentageOfOptimalOnDemandPrice;
 
     /**
      * <p>
@@ -988,6 +1117,11 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 will exclude all the M5a
      * instance types, but not the M5n instance types.
      * </p>
+     * <note>
+     * <p>
+     * If you specify <code>ExcludedInstanceTypes</code>, you can't specify <code>AllowedInstanceTypes</code>.
+     * </p>
+     * </note>
      * <p>
      * Default: No excluded instance types
      * </p>
@@ -1003,6 +1137,11 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *         includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 will exclude all
      *         the M5a instance types, but not the M5n instance types.
      *         </p>
+     *         <note>
+     *         <p>
+     *         If you specify <code>ExcludedInstanceTypes</code>, you can't specify <code>AllowedInstanceTypes</code>.
+     *         </p>
+     *         </note>
      *         <p>
      *         Default: No excluded instance types
      */
@@ -1028,6 +1167,11 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 will exclude all the M5a
      * instance types, but not the M5n instance types.
      * </p>
+     * <note>
+     * <p>
+     * If you specify <code>ExcludedInstanceTypes</code>, you can't specify <code>AllowedInstanceTypes</code>.
+     * </p>
+     * </note>
      * <p>
      * Default: No excluded instance types
      * </p>
@@ -1044,6 +1188,11 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *        includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 will exclude all
      *        the M5a instance types, but not the M5n instance types.
      *        </p>
+     *        <note>
+     *        <p>
+     *        If you specify <code>ExcludedInstanceTypes</code>, you can't specify <code>AllowedInstanceTypes</code>.
+     *        </p>
+     *        </note>
      *        <p>
      *        Default: No excluded instance types
      */
@@ -1071,6 +1220,11 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 will exclude all the M5a
      * instance types, but not the M5n instance types.
      * </p>
+     * <note>
+     * <p>
+     * If you specify <code>ExcludedInstanceTypes</code>, you can't specify <code>AllowedInstanceTypes</code>.
+     * </p>
+     * </note>
      * <p>
      * Default: No excluded instance types
      * </p>
@@ -1092,6 +1246,11 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *        includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 will exclude all
      *        the M5a instance types, but not the M5n instance types.
      *        </p>
+     *        <note>
+     *        <p>
+     *        If you specify <code>ExcludedInstanceTypes</code>, you can't specify <code>AllowedInstanceTypes</code>.
+     *        </p>
+     *        </note>
      *        <p>
      *        Default: No excluded instance types
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1121,6 +1280,11 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 will exclude all the M5a
      * instance types, but not the M5n instance types.
      * </p>
+     * <note>
+     * <p>
+     * If you specify <code>ExcludedInstanceTypes</code>, you can't specify <code>AllowedInstanceTypes</code>.
+     * </p>
+     * </note>
      * <p>
      * Default: No excluded instance types
      * </p>
@@ -1137,6 +1301,11 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *        includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 will exclude all
      *        the M5a instance types, but not the M5n instance types.
      *        </p>
+     *        <note>
+     *        <p>
+     *        If you specify <code>ExcludedInstanceTypes</code>, you can't specify <code>AllowedInstanceTypes</code>.
+     *        </p>
+     *        </note>
      *        <p>
      *        Default: No excluded instance types
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1375,16 +1544,20 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The price protection threshold for Spot Instance. This is the maximum you’ll pay for an Spot Instance, expressed
-     * as a percentage above the least expensive current generation M, C, or R instance type with your specified
-     * attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above
-     * your threshold.
+     * [Price protection] The price protection threshold for Spot Instances, as a percentage higher than an identified
+     * Spot price. The identified Spot price is the Spot price of the lowest priced current generation C, M, or R
+     * instance type with your specified attributes. If no current generation C, M, or R instance type matches your
+     * attributes, then the identified Spot price is from the lowest priced current generation instance types, and
+     * failing that, from the lowest priced previous generation instance types that match your attributes. When Amazon
+     * EC2 selects instance types with your attributes, it will exclude instance types whose Spot price exceeds your
+     * specified threshold.
      * </p>
      * <p>
      * The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      * </p>
      * <p>
-     * To turn off price protection, specify a high value, such as <code>999999</code>.
+     * If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
+     * protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance price.
      * </p>
      * <p>
      * This parameter is not supported for <a
@@ -1395,8 +1568,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
-     * protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance price.
+     * Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
+     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either, Amazon
+     * EC2 will automatically apply optimal price protection to consistently select from a wide range of instance types.
+     * To indicate no price protection threshold for Spot Instances, meaning you want to consider all instance types
+     * that match your attributes, include one of these parameters and specify a high value, such as <code>999999</code>
+     * .
      * </p>
      * </note>
      * <p>
@@ -1404,15 +1581,20 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * </p>
      * 
      * @param spotMaxPricePercentageOverLowestPrice
-     *        The price protection threshold for Spot Instance. This is the maximum you’ll pay for an Spot Instance,
-     *        expressed as a percentage above the least expensive current generation M, C, or R instance type with your
-     *        specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance
-     *        types priced above your threshold.</p>
+     *        [Price protection] The price protection threshold for Spot Instances, as a percentage higher than an
+     *        identified Spot price. The identified Spot price is the Spot price of the lowest priced current generation
+     *        C, M, or R instance type with your specified attributes. If no current generation C, M, or R instance type
+     *        matches your attributes, then the identified Spot price is from the lowest priced current generation
+     *        instance types, and failing that, from the lowest priced previous generation instance types that match
+     *        your attributes. When Amazon EC2 selects instance types with your attributes, it will exclude instance
+     *        types whose Spot price exceeds your specified threshold.</p>
      *        <p>
      *        The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      *        </p>
      *        <p>
-     *        To turn off price protection, specify a high value, such as <code>999999</code>.
+     *        If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
+     *        protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance
+     *        price.
      *        </p>
      *        <p>
      *        This parameter is not supported for <a
@@ -1423,9 +1605,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *        </p>
      *        <note>
      *        <p>
-     *        If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
-     *        protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance
-     *        price.
+     *        Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
+     *        <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either,
+     *        Amazon EC2 will automatically apply optimal price protection to consistently select from a wide range of
+     *        instance types. To indicate no price protection threshold for Spot Instances, meaning you want to consider
+     *        all instance types that match your attributes, include one of these parameters and specify a high value,
+     *        such as <code>999999</code>.
      *        </p>
      *        </note>
      *        <p>
@@ -1438,16 +1623,20 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The price protection threshold for Spot Instance. This is the maximum you’ll pay for an Spot Instance, expressed
-     * as a percentage above the least expensive current generation M, C, or R instance type with your specified
-     * attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above
-     * your threshold.
+     * [Price protection] The price protection threshold for Spot Instances, as a percentage higher than an identified
+     * Spot price. The identified Spot price is the Spot price of the lowest priced current generation C, M, or R
+     * instance type with your specified attributes. If no current generation C, M, or R instance type matches your
+     * attributes, then the identified Spot price is from the lowest priced current generation instance types, and
+     * failing that, from the lowest priced previous generation instance types that match your attributes. When Amazon
+     * EC2 selects instance types with your attributes, it will exclude instance types whose Spot price exceeds your
+     * specified threshold.
      * </p>
      * <p>
      * The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      * </p>
      * <p>
-     * To turn off price protection, specify a high value, such as <code>999999</code>.
+     * If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
+     * protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance price.
      * </p>
      * <p>
      * This parameter is not supported for <a
@@ -1458,23 +1647,32 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
-     * protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance price.
+     * Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
+     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either, Amazon
+     * EC2 will automatically apply optimal price protection to consistently select from a wide range of instance types.
+     * To indicate no price protection threshold for Spot Instances, meaning you want to consider all instance types
+     * that match your attributes, include one of these parameters and specify a high value, such as <code>999999</code>
+     * .
      * </p>
      * </note>
      * <p>
      * Default: <code>100</code>
      * </p>
      * 
-     * @return The price protection threshold for Spot Instance. This is the maximum you’ll pay for an Spot Instance,
-     *         expressed as a percentage above the least expensive current generation M, C, or R instance type with your
-     *         specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance
-     *         types priced above your threshold.</p>
+     * @return [Price protection] The price protection threshold for Spot Instances, as a percentage higher than an
+     *         identified Spot price. The identified Spot price is the Spot price of the lowest priced current
+     *         generation C, M, or R instance type with your specified attributes. If no current generation C, M, or R
+     *         instance type matches your attributes, then the identified Spot price is from the lowest priced current
+     *         generation instance types, and failing that, from the lowest priced previous generation instance types
+     *         that match your attributes. When Amazon EC2 selects instance types with your attributes, it will exclude
+     *         instance types whose Spot price exceeds your specified threshold.</p>
      *         <p>
      *         The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      *         </p>
      *         <p>
-     *         To turn off price protection, specify a high value, such as <code>999999</code>.
+     *         If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
+     *         protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance
+     *         price.
      *         </p>
      *         <p>
      *         This parameter is not supported for <a
@@ -1485,9 +1683,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *         </p>
      *         <note>
      *         <p>
-     *         If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
-     *         protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance
-     *         price.
+     *         Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
+     *         <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify
+     *         either, Amazon EC2 will automatically apply optimal price protection to consistently select from a wide
+     *         range of instance types. To indicate no price protection threshold for Spot Instances, meaning you want
+     *         to consider all instance types that match your attributes, include one of these parameters and specify a
+     *         high value, such as <code>999999</code>.
      *         </p>
      *         </note>
      *         <p>
@@ -1500,16 +1701,20 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The price protection threshold for Spot Instance. This is the maximum you’ll pay for an Spot Instance, expressed
-     * as a percentage above the least expensive current generation M, C, or R instance type with your specified
-     * attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above
-     * your threshold.
+     * [Price protection] The price protection threshold for Spot Instances, as a percentage higher than an identified
+     * Spot price. The identified Spot price is the Spot price of the lowest priced current generation C, M, or R
+     * instance type with your specified attributes. If no current generation C, M, or R instance type matches your
+     * attributes, then the identified Spot price is from the lowest priced current generation instance types, and
+     * failing that, from the lowest priced previous generation instance types that match your attributes. When Amazon
+     * EC2 selects instance types with your attributes, it will exclude instance types whose Spot price exceeds your
+     * specified threshold.
      * </p>
      * <p>
      * The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      * </p>
      * <p>
-     * To turn off price protection, specify a high value, such as <code>999999</code>.
+     * If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
+     * protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance price.
      * </p>
      * <p>
      * This parameter is not supported for <a
@@ -1520,8 +1725,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
-     * protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance price.
+     * Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
+     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either, Amazon
+     * EC2 will automatically apply optimal price protection to consistently select from a wide range of instance types.
+     * To indicate no price protection threshold for Spot Instances, meaning you want to consider all instance types
+     * that match your attributes, include one of these parameters and specify a high value, such as <code>999999</code>
+     * .
      * </p>
      * </note>
      * <p>
@@ -1529,15 +1738,20 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * </p>
      * 
      * @param spotMaxPricePercentageOverLowestPrice
-     *        The price protection threshold for Spot Instance. This is the maximum you’ll pay for an Spot Instance,
-     *        expressed as a percentage above the least expensive current generation M, C, or R instance type with your
-     *        specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance
-     *        types priced above your threshold.</p>
+     *        [Price protection] The price protection threshold for Spot Instances, as a percentage higher than an
+     *        identified Spot price. The identified Spot price is the Spot price of the lowest priced current generation
+     *        C, M, or R instance type with your specified attributes. If no current generation C, M, or R instance type
+     *        matches your attributes, then the identified Spot price is from the lowest priced current generation
+     *        instance types, and failing that, from the lowest priced previous generation instance types that match
+     *        your attributes. When Amazon EC2 selects instance types with your attributes, it will exclude instance
+     *        types whose Spot price exceeds your specified threshold.</p>
      *        <p>
      *        The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      *        </p>
      *        <p>
-     *        To turn off price protection, specify a high value, such as <code>999999</code>.
+     *        If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
+     *        protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance
+     *        price.
      *        </p>
      *        <p>
      *        This parameter is not supported for <a
@@ -1548,9 +1762,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *        </p>
      *        <note>
      *        <p>
-     *        If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
-     *        protection threshold is applied based on the per-vCPU or per-memory price instead of the per-instance
-     *        price.
+     *        Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
+     *        <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either,
+     *        Amazon EC2 will automatically apply optimal price protection to consistently select from a wide range of
+     *        instance types. To indicate no price protection threshold for Spot Instances, meaning you want to consider
+     *        all instance types that match your attributes, include one of these parameters and specify a high value,
+     *        such as <code>999999</code>.
      *        </p>
      *        </note>
      *        <p>
@@ -1565,16 +1782,16 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance,
-     * expressed as a percentage above the least expensive current generation M, C, or R instance type with your
-     * specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types
-     * priced above your threshold.
+     * [Price protection] The price protection threshold for On-Demand Instances, as a percentage higher than an
+     * identified On-Demand price. The identified On-Demand price is the price of the lowest priced current generation
+     * C, M, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your
+     * attributes, it will exclude instance types whose price exceeds your specified threshold.
      * </p>
      * <p>
      * The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      * </p>
      * <p>
-     * To turn off price protection, specify a high value, such as <code>999999</code>.
+     * To indicate no price protection threshold, specify a high value, such as <code>999999</code>.
      * </p>
      * <p>
      * This parameter is not supported for <a
@@ -1594,15 +1811,15 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * </p>
      * 
      * @param onDemandMaxPricePercentageOverLowestPrice
-     *        The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand
-     *        Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type
-     *        with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes
-     *        instance types priced above your threshold.</p>
+     *        [Price protection] The price protection threshold for On-Demand Instances, as a percentage higher than an
+     *        identified On-Demand price. The identified On-Demand price is the price of the lowest priced current
+     *        generation C, M, or R instance type with your specified attributes. When Amazon EC2 selects instance types
+     *        with your attributes, it will exclude instance types whose price exceeds your specified threshold.</p>
      *        <p>
      *        The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      *        </p>
      *        <p>
-     *        To turn off price protection, specify a high value, such as <code>999999</code>.
+     *        To indicate no price protection threshold, specify a high value, such as <code>999999</code>.
      *        </p>
      *        <p>
      *        This parameter is not supported for <a
@@ -1628,16 +1845,16 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance,
-     * expressed as a percentage above the least expensive current generation M, C, or R instance type with your
-     * specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types
-     * priced above your threshold.
+     * [Price protection] The price protection threshold for On-Demand Instances, as a percentage higher than an
+     * identified On-Demand price. The identified On-Demand price is the price of the lowest priced current generation
+     * C, M, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your
+     * attributes, it will exclude instance types whose price exceeds your specified threshold.
      * </p>
      * <p>
      * The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      * </p>
      * <p>
-     * To turn off price protection, specify a high value, such as <code>999999</code>.
+     * To indicate no price protection threshold, specify a high value, such as <code>999999</code>.
      * </p>
      * <p>
      * This parameter is not supported for <a
@@ -1656,15 +1873,16 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * Default: <code>20</code>
      * </p>
      * 
-     * @return The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand
-     *         Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type
-     *         with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes
-     *         instance types priced above your threshold.</p>
+     * @return [Price protection] The price protection threshold for On-Demand Instances, as a percentage higher than an
+     *         identified On-Demand price. The identified On-Demand price is the price of the lowest priced current
+     *         generation C, M, or R instance type with your specified attributes. When Amazon EC2 selects instance
+     *         types with your attributes, it will exclude instance types whose price exceeds your specified
+     *         threshold.</p>
      *         <p>
      *         The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      *         </p>
      *         <p>
-     *         To turn off price protection, specify a high value, such as <code>999999</code>.
+     *         To indicate no price protection threshold, specify a high value, such as <code>999999</code>.
      *         </p>
      *         <p>
      *         This parameter is not supported for <a
@@ -1690,16 +1908,16 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand Instance,
-     * expressed as a percentage above the least expensive current generation M, C, or R instance type with your
-     * specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types
-     * priced above your threshold.
+     * [Price protection] The price protection threshold for On-Demand Instances, as a percentage higher than an
+     * identified On-Demand price. The identified On-Demand price is the price of the lowest priced current generation
+     * C, M, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your
+     * attributes, it will exclude instance types whose price exceeds your specified threshold.
      * </p>
      * <p>
      * The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      * </p>
      * <p>
-     * To turn off price protection, specify a high value, such as <code>999999</code>.
+     * To indicate no price protection threshold, specify a high value, such as <code>999999</code>.
      * </p>
      * <p>
      * This parameter is not supported for <a
@@ -1719,15 +1937,15 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * </p>
      * 
      * @param onDemandMaxPricePercentageOverLowestPrice
-     *        The price protection threshold for On-Demand Instances. This is the maximum you’ll pay for an On-Demand
-     *        Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type
-     *        with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes
-     *        instance types priced above your threshold.</p>
+     *        [Price protection] The price protection threshold for On-Demand Instances, as a percentage higher than an
+     *        identified On-Demand price. The identified On-Demand price is the price of the lowest priced current
+     *        generation C, M, or R instance type with your specified attributes. When Amazon EC2 selects instance types
+     *        with your attributes, it will exclude instance types whose price exceeds your specified threshold.</p>
      *        <p>
      *        The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
      *        </p>
      *        <p>
-     *        To turn off price protection, specify a high value, such as <code>999999</code>.
+     *        To indicate no price protection threshold, specify a high value, such as <code>999999</code>.
      *        </p>
      *        <p>
      *        This parameter is not supported for <a
@@ -3356,7 +3574,7 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * For instance types with NVIDIA devices, specify <code>nvidia</code>.
+     * For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.
      * </p>
      * </li>
      * <li>
@@ -3366,7 +3584,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.
+     * For instance types with Habana devices, specify <code>habana</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For instance types with NVIDIA devices, specify <code>nvidia</code>.
      * </p>
      * </li>
      * <li>
@@ -3383,7 +3606,7 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         For instance types with NVIDIA devices, specify <code>nvidia</code>.
+     *         For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -3393,7 +3616,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.
+     *         For instance types with Habana devices, specify <code>habana</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For instance types with NVIDIA devices, specify <code>nvidia</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -3421,7 +3649,7 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * For instance types with NVIDIA devices, specify <code>nvidia</code>.
+     * For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.
      * </p>
      * </li>
      * <li>
@@ -3431,7 +3659,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.
+     * For instance types with Habana devices, specify <code>habana</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For instance types with NVIDIA devices, specify <code>nvidia</code>.
      * </p>
      * </li>
      * <li>
@@ -3449,7 +3682,7 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        For instance types with NVIDIA devices, specify <code>nvidia</code>.
+     *        For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -3459,7 +3692,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.
+     *        For instance types with Habana devices, specify <code>habana</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For instance types with NVIDIA devices, specify <code>nvidia</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -3489,7 +3727,7 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * For instance types with NVIDIA devices, specify <code>nvidia</code>.
+     * For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.
      * </p>
      * </li>
      * <li>
@@ -3499,7 +3737,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.
+     * For instance types with Habana devices, specify <code>habana</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For instance types with NVIDIA devices, specify <code>nvidia</code>.
      * </p>
      * </li>
      * <li>
@@ -3522,7 +3765,7 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        For instance types with NVIDIA devices, specify <code>nvidia</code>.
+     *        For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -3532,7 +3775,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.
+     *        For instance types with Habana devices, specify <code>habana</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For instance types with NVIDIA devices, specify <code>nvidia</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -3564,7 +3812,7 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * For instance types with NVIDIA devices, specify <code>nvidia</code>.
+     * For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.
      * </p>
      * </li>
      * <li>
@@ -3574,7 +3822,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.
+     * For instance types with Habana devices, specify <code>habana</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For instance types with NVIDIA devices, specify <code>nvidia</code>.
      * </p>
      * </li>
      * <li>
@@ -3592,7 +3845,7 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        For instance types with NVIDIA devices, specify <code>nvidia</code>.
+     *        For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -3602,7 +3855,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.
+     *        For instance types with Habana devices, specify <code>habana</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For instance types with NVIDIA devices, specify <code>nvidia</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -3629,7 +3887,7 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * For instance types with NVIDIA devices, specify <code>nvidia</code>.
+     * For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.
      * </p>
      * </li>
      * <li>
@@ -3639,7 +3897,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.
+     * For instance types with Habana devices, specify <code>habana</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For instance types with NVIDIA devices, specify <code>nvidia</code>.
      * </p>
      * </li>
      * <li>
@@ -3657,7 +3920,7 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        For instance types with NVIDIA devices, specify <code>nvidia</code>.
+     *        For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -3667,7 +3930,12 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.
+     *        For instance types with Habana devices, specify <code>habana</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For instance types with NVIDIA devices, specify <code>nvidia</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -3703,22 +3971,32 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
+     * For instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.
+     * For instance types with NVIDIA H100 GPUs, specify <code>h100</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.
      * </p>
      * </li>
      * <li>
@@ -3733,17 +4011,22 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.
+     * For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     * For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
+     * For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.
      * </p>
      * </li>
      * </ul>
@@ -3755,22 +4038,32 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
+     *         For instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.
+     *         For instance types with NVIDIA H100 GPUs, specify <code>h100</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -3785,17 +4078,22 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.
+     *         For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     *         For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
+     *         For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.
      *         </p>
      *         </li>
      *         </ul>
@@ -3818,22 +4116,32 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
+     * For instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.
+     * For instance types with NVIDIA H100 GPUs, specify <code>h100</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.
      * </p>
      * </li>
      * <li>
@@ -3848,17 +4156,22 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.
+     * For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     * For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
+     * For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.
      * </p>
      * </li>
      * </ul>
@@ -3871,22 +4184,32 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
+     *        For instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.
+     *        For instance types with NVIDIA H100 GPUs, specify <code>h100</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -3901,17 +4224,22 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.
+     *        For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     *        For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
+     *        For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -3936,22 +4264,32 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
+     * For instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.
+     * For instance types with NVIDIA H100 GPUs, specify <code>h100</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.
      * </p>
      * </li>
      * <li>
@@ -3966,17 +4304,22 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.
+     * For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     * For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
+     * For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.
      * </p>
      * </li>
      * </ul>
@@ -3994,22 +4337,32 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
+     *        For instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.
+     *        For instance types with NVIDIA H100 GPUs, specify <code>h100</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -4024,17 +4377,22 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.
+     *        For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     *        For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
+     *        For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -4061,22 +4419,32 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
+     * For instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.
+     * For instance types with NVIDIA H100 GPUs, specify <code>h100</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.
      * </p>
      * </li>
      * <li>
@@ -4091,17 +4459,22 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.
+     * For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     * For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
+     * For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.
      * </p>
      * </li>
      * </ul>
@@ -4114,22 +4487,32 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
+     *        For instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.
+     *        For instance types with NVIDIA H100 GPUs, specify <code>h100</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -4144,17 +4527,22 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.
+     *        For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     *        For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
+     *        For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -4176,22 +4564,32 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
+     * For instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.
+     * For instance types with NVIDIA H100 GPUs, specify <code>h100</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.
      * </p>
      * </li>
      * <li>
@@ -4206,17 +4604,22 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.
+     * For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     * For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
+     * For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.
      * </p>
      * </li>
      * </ul>
@@ -4229,22 +4632,32 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
+     *        For instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.
+     *        For instance types with NVIDIA H100 GPUs, specify <code>h100</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -4259,17 +4672,22 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.
+     *        For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For instance types with Amazon Web Services Inferentia chips, specify <code>inferentia</code>.
+     *        For instance types with NVIDIA T4G GPUs, specify <code>t4g</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.
+     *        For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -4348,6 +4766,472 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The minimum and maximum amount of baseline network bandwidth, in gigabits per second (Gbps). For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html">Amazon EC2
+     * instance network bandwidth</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * <p>
+     * Default: No minimum or maximum limits
+     * </p>
+     * 
+     * @param networkBandwidthGbps
+     *        The minimum and maximum amount of baseline network bandwidth, in gigabits per second (Gbps). For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html">Amazon EC2
+     *        instance network bandwidth</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     *        <p>
+     *        Default: No minimum or maximum limits
+     */
+
+    public void setNetworkBandwidthGbps(NetworkBandwidthGbpsRequest networkBandwidthGbps) {
+        this.networkBandwidthGbps = networkBandwidthGbps;
+    }
+
+    /**
+     * <p>
+     * The minimum and maximum amount of baseline network bandwidth, in gigabits per second (Gbps). For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html">Amazon EC2
+     * instance network bandwidth</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * <p>
+     * Default: No minimum or maximum limits
+     * </p>
+     * 
+     * @return The minimum and maximum amount of baseline network bandwidth, in gigabits per second (Gbps). For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html">Amazon EC2
+     *         instance network bandwidth</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     *         <p>
+     *         Default: No minimum or maximum limits
+     */
+
+    public NetworkBandwidthGbpsRequest getNetworkBandwidthGbps() {
+        return this.networkBandwidthGbps;
+    }
+
+    /**
+     * <p>
+     * The minimum and maximum amount of baseline network bandwidth, in gigabits per second (Gbps). For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html">Amazon EC2
+     * instance network bandwidth</a> in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * <p>
+     * Default: No minimum or maximum limits
+     * </p>
+     * 
+     * @param networkBandwidthGbps
+     *        The minimum and maximum amount of baseline network bandwidth, in gigabits per second (Gbps). For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-network-bandwidth.html">Amazon EC2
+     *        instance network bandwidth</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     *        <p>
+     *        Default: No minimum or maximum limits
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceRequirementsRequest withNetworkBandwidthGbps(NetworkBandwidthGbpsRequest networkBandwidthGbps) {
+        setNetworkBandwidthGbps(networkBandwidthGbps);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance types to apply your specified attributes against. All other instance types are ignored, even if they
+     * match your specified attributes.
+     * </p>
+     * <p>
+     * You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to allow an
+     * instance type, size, or generation. The following are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>,
+     * <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
+     * </p>
+     * <p>
+     * For example, if you specify <code>c5*</code>,Amazon EC2 will allow the entire C5 instance family, which includes
+     * all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 will allow all the M5a instance
+     * types, but not the M5n instance types.
+     * </p>
+     * <note>
+     * <p>
+     * If you specify <code>AllowedInstanceTypes</code>, you can't specify <code>ExcludedInstanceTypes</code>.
+     * </p>
+     * </note>
+     * <p>
+     * Default: All instance types
+     * </p>
+     * 
+     * @return The instance types to apply your specified attributes against. All other instance types are ignored, even
+     *         if they match your specified attributes.</p>
+     *         <p>
+     *         You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to allow an
+     *         instance type, size, or generation. The following are examples: <code>m5.8xlarge</code>,
+     *         <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
+     *         </p>
+     *         <p>
+     *         For example, if you specify <code>c5*</code>,Amazon EC2 will allow the entire C5 instance family, which
+     *         includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 will allow all the
+     *         M5a instance types, but not the M5n instance types.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         If you specify <code>AllowedInstanceTypes</code>, you can't specify <code>ExcludedInstanceTypes</code>.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         Default: All instance types
+     */
+
+    public java.util.List<String> getAllowedInstanceTypes() {
+        if (allowedInstanceTypes == null) {
+            allowedInstanceTypes = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return allowedInstanceTypes;
+    }
+
+    /**
+     * <p>
+     * The instance types to apply your specified attributes against. All other instance types are ignored, even if they
+     * match your specified attributes.
+     * </p>
+     * <p>
+     * You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to allow an
+     * instance type, size, or generation. The following are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>,
+     * <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
+     * </p>
+     * <p>
+     * For example, if you specify <code>c5*</code>,Amazon EC2 will allow the entire C5 instance family, which includes
+     * all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 will allow all the M5a instance
+     * types, but not the M5n instance types.
+     * </p>
+     * <note>
+     * <p>
+     * If you specify <code>AllowedInstanceTypes</code>, you can't specify <code>ExcludedInstanceTypes</code>.
+     * </p>
+     * </note>
+     * <p>
+     * Default: All instance types
+     * </p>
+     * 
+     * @param allowedInstanceTypes
+     *        The instance types to apply your specified attributes against. All other instance types are ignored, even
+     *        if they match your specified attributes.</p>
+     *        <p>
+     *        You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to allow an
+     *        instance type, size, or generation. The following are examples: <code>m5.8xlarge</code>,
+     *        <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
+     *        </p>
+     *        <p>
+     *        For example, if you specify <code>c5*</code>,Amazon EC2 will allow the entire C5 instance family, which
+     *        includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 will allow all the
+     *        M5a instance types, but not the M5n instance types.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you specify <code>AllowedInstanceTypes</code>, you can't specify <code>ExcludedInstanceTypes</code>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        Default: All instance types
+     */
+
+    public void setAllowedInstanceTypes(java.util.Collection<String> allowedInstanceTypes) {
+        if (allowedInstanceTypes == null) {
+            this.allowedInstanceTypes = null;
+            return;
+        }
+
+        this.allowedInstanceTypes = new com.amazonaws.internal.SdkInternalList<String>(allowedInstanceTypes);
+    }
+
+    /**
+     * <p>
+     * The instance types to apply your specified attributes against. All other instance types are ignored, even if they
+     * match your specified attributes.
+     * </p>
+     * <p>
+     * You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to allow an
+     * instance type, size, or generation. The following are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>,
+     * <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
+     * </p>
+     * <p>
+     * For example, if you specify <code>c5*</code>,Amazon EC2 will allow the entire C5 instance family, which includes
+     * all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 will allow all the M5a instance
+     * types, but not the M5n instance types.
+     * </p>
+     * <note>
+     * <p>
+     * If you specify <code>AllowedInstanceTypes</code>, you can't specify <code>ExcludedInstanceTypes</code>.
+     * </p>
+     * </note>
+     * <p>
+     * Default: All instance types
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAllowedInstanceTypes(java.util.Collection)} or {@link #withAllowedInstanceTypes(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param allowedInstanceTypes
+     *        The instance types to apply your specified attributes against. All other instance types are ignored, even
+     *        if they match your specified attributes.</p>
+     *        <p>
+     *        You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to allow an
+     *        instance type, size, or generation. The following are examples: <code>m5.8xlarge</code>,
+     *        <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
+     *        </p>
+     *        <p>
+     *        For example, if you specify <code>c5*</code>,Amazon EC2 will allow the entire C5 instance family, which
+     *        includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 will allow all the
+     *        M5a instance types, but not the M5n instance types.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you specify <code>AllowedInstanceTypes</code>, you can't specify <code>ExcludedInstanceTypes</code>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        Default: All instance types
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceRequirementsRequest withAllowedInstanceTypes(String... allowedInstanceTypes) {
+        if (this.allowedInstanceTypes == null) {
+            setAllowedInstanceTypes(new com.amazonaws.internal.SdkInternalList<String>(allowedInstanceTypes.length));
+        }
+        for (String ele : allowedInstanceTypes) {
+            this.allowedInstanceTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance types to apply your specified attributes against. All other instance types are ignored, even if they
+     * match your specified attributes.
+     * </p>
+     * <p>
+     * You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to allow an
+     * instance type, size, or generation. The following are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>,
+     * <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
+     * </p>
+     * <p>
+     * For example, if you specify <code>c5*</code>,Amazon EC2 will allow the entire C5 instance family, which includes
+     * all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 will allow all the M5a instance
+     * types, but not the M5n instance types.
+     * </p>
+     * <note>
+     * <p>
+     * If you specify <code>AllowedInstanceTypes</code>, you can't specify <code>ExcludedInstanceTypes</code>.
+     * </p>
+     * </note>
+     * <p>
+     * Default: All instance types
+     * </p>
+     * 
+     * @param allowedInstanceTypes
+     *        The instance types to apply your specified attributes against. All other instance types are ignored, even
+     *        if they match your specified attributes.</p>
+     *        <p>
+     *        You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to allow an
+     *        instance type, size, or generation. The following are examples: <code>m5.8xlarge</code>,
+     *        <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
+     *        </p>
+     *        <p>
+     *        For example, if you specify <code>c5*</code>,Amazon EC2 will allow the entire C5 instance family, which
+     *        includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 will allow all the
+     *        M5a instance types, but not the M5n instance types.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you specify <code>AllowedInstanceTypes</code>, you can't specify <code>ExcludedInstanceTypes</code>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        Default: All instance types
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceRequirementsRequest withAllowedInstanceTypes(java.util.Collection<String> allowedInstanceTypes) {
+        setAllowedInstanceTypes(allowedInstanceTypes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * [Price protection] The price protection threshold for Spot Instances, as a percentage of an identified On-Demand
+     * price. The identified On-Demand price is the price of the lowest priced current generation C, M, or R instance
+     * type with your specified attributes. If no current generation C, M, or R instance type matches your attributes,
+     * then the identified price is from the lowest priced current generation instance types, and failing that, from the
+     * lowest priced previous generation instance types that match your attributes. When Amazon EC2 selects instance
+     * types with your attributes, it will exclude instance types whose price exceeds your specified threshold.
+     * </p>
+     * <p>
+     * The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
+     * </p>
+     * <p>
+     * If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection
+     * threshold is based on the per vCPU or per memory price instead of the per instance price.
+     * </p>
+     * <note>
+     * <p>
+     * Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
+     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either, Amazon
+     * EC2 will automatically apply optimal price protection to consistently select from a wide range of instance types.
+     * To indicate no price protection threshold for Spot Instances, meaning you want to consider all instance types
+     * that match your attributes, include one of these parameters and specify a high value, such as <code>999999</code>
+     * .
+     * </p>
+     * </note>
+     * 
+     * @param maxSpotPriceAsPercentageOfOptimalOnDemandPrice
+     *        [Price protection] The price protection threshold for Spot Instances, as a percentage of an identified
+     *        On-Demand price. The identified On-Demand price is the price of the lowest priced current generation C, M,
+     *        or R instance type with your specified attributes. If no current generation C, M, or R instance type
+     *        matches your attributes, then the identified price is from the lowest priced current generation instance
+     *        types, and failing that, from the lowest priced previous generation instance types that match your
+     *        attributes. When Amazon EC2 selects instance types with your attributes, it will exclude instance types
+     *        whose price exceeds your specified threshold.</p>
+     *        <p>
+     *        The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
+     *        </p>
+     *        <p>
+     *        If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
+     *        protection threshold is based on the per vCPU or per memory price instead of the per instance price.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
+     *        <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either,
+     *        Amazon EC2 will automatically apply optimal price protection to consistently select from a wide range of
+     *        instance types. To indicate no price protection threshold for Spot Instances, meaning you want to consider
+     *        all instance types that match your attributes, include one of these parameters and specify a high value,
+     *        such as <code>999999</code>.
+     *        </p>
+     */
+
+    public void setMaxSpotPriceAsPercentageOfOptimalOnDemandPrice(Integer maxSpotPriceAsPercentageOfOptimalOnDemandPrice) {
+        this.maxSpotPriceAsPercentageOfOptimalOnDemandPrice = maxSpotPriceAsPercentageOfOptimalOnDemandPrice;
+    }
+
+    /**
+     * <p>
+     * [Price protection] The price protection threshold for Spot Instances, as a percentage of an identified On-Demand
+     * price. The identified On-Demand price is the price of the lowest priced current generation C, M, or R instance
+     * type with your specified attributes. If no current generation C, M, or R instance type matches your attributes,
+     * then the identified price is from the lowest priced current generation instance types, and failing that, from the
+     * lowest priced previous generation instance types that match your attributes. When Amazon EC2 selects instance
+     * types with your attributes, it will exclude instance types whose price exceeds your specified threshold.
+     * </p>
+     * <p>
+     * The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
+     * </p>
+     * <p>
+     * If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection
+     * threshold is based on the per vCPU or per memory price instead of the per instance price.
+     * </p>
+     * <note>
+     * <p>
+     * Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
+     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either, Amazon
+     * EC2 will automatically apply optimal price protection to consistently select from a wide range of instance types.
+     * To indicate no price protection threshold for Spot Instances, meaning you want to consider all instance types
+     * that match your attributes, include one of these parameters and specify a high value, such as <code>999999</code>
+     * .
+     * </p>
+     * </note>
+     * 
+     * @return [Price protection] The price protection threshold for Spot Instances, as a percentage of an identified
+     *         On-Demand price. The identified On-Demand price is the price of the lowest priced current generation C,
+     *         M, or R instance type with your specified attributes. If no current generation C, M, or R instance type
+     *         matches your attributes, then the identified price is from the lowest priced current generation instance
+     *         types, and failing that, from the lowest priced previous generation instance types that match your
+     *         attributes. When Amazon EC2 selects instance types with your attributes, it will exclude instance types
+     *         whose price exceeds your specified threshold.</p>
+     *         <p>
+     *         The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
+     *         </p>
+     *         <p>
+     *         If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
+     *         protection threshold is based on the per vCPU or per memory price instead of the per instance price.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
+     *         <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify
+     *         either, Amazon EC2 will automatically apply optimal price protection to consistently select from a wide
+     *         range of instance types. To indicate no price protection threshold for Spot Instances, meaning you want
+     *         to consider all instance types that match your attributes, include one of these parameters and specify a
+     *         high value, such as <code>999999</code>.
+     *         </p>
+     */
+
+    public Integer getMaxSpotPriceAsPercentageOfOptimalOnDemandPrice() {
+        return this.maxSpotPriceAsPercentageOfOptimalOnDemandPrice;
+    }
+
+    /**
+     * <p>
+     * [Price protection] The price protection threshold for Spot Instances, as a percentage of an identified On-Demand
+     * price. The identified On-Demand price is the price of the lowest priced current generation C, M, or R instance
+     * type with your specified attributes. If no current generation C, M, or R instance type matches your attributes,
+     * then the identified price is from the lowest priced current generation instance types, and failing that, from the
+     * lowest priced previous generation instance types that match your attributes. When Amazon EC2 selects instance
+     * types with your attributes, it will exclude instance types whose price exceeds your specified threshold.
+     * </p>
+     * <p>
+     * The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
+     * </p>
+     * <p>
+     * If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price protection
+     * threshold is based on the per vCPU or per memory price instead of the per instance price.
+     * </p>
+     * <note>
+     * <p>
+     * Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
+     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either, Amazon
+     * EC2 will automatically apply optimal price protection to consistently select from a wide range of instance types.
+     * To indicate no price protection threshold for Spot Instances, meaning you want to consider all instance types
+     * that match your attributes, include one of these parameters and specify a high value, such as <code>999999</code>
+     * .
+     * </p>
+     * </note>
+     * 
+     * @param maxSpotPriceAsPercentageOfOptimalOnDemandPrice
+     *        [Price protection] The price protection threshold for Spot Instances, as a percentage of an identified
+     *        On-Demand price. The identified On-Demand price is the price of the lowest priced current generation C, M,
+     *        or R instance type with your specified attributes. If no current generation C, M, or R instance type
+     *        matches your attributes, then the identified price is from the lowest priced current generation instance
+     *        types, and failing that, from the lowest priced previous generation instance types that match your
+     *        attributes. When Amazon EC2 selects instance types with your attributes, it will exclude instance types
+     *        whose price exceeds your specified threshold.</p>
+     *        <p>
+     *        The parameter accepts an integer, which Amazon EC2 interprets as a percentage.
+     *        </p>
+     *        <p>
+     *        If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>, the price
+     *        protection threshold is based on the per vCPU or per memory price instead of the per instance price.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
+     *        <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If you don't specify either,
+     *        Amazon EC2 will automatically apply optimal price protection to consistently select from a wide range of
+     *        instance types. To indicate no price protection threshold for Spot Instances, meaning you want to consider
+     *        all instance types that match your attributes, include one of these parameters and specify a high value,
+     *        such as <code>999999</code>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceRequirementsRequest withMaxSpotPriceAsPercentageOfOptimalOnDemandPrice(Integer maxSpotPriceAsPercentageOfOptimalOnDemandPrice) {
+        setMaxSpotPriceAsPercentageOfOptimalOnDemandPrice(maxSpotPriceAsPercentageOfOptimalOnDemandPrice);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -4400,7 +5284,13 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
         if (getAcceleratorNames() != null)
             sb.append("AcceleratorNames: ").append(getAcceleratorNames()).append(",");
         if (getAcceleratorTotalMemoryMiB() != null)
-            sb.append("AcceleratorTotalMemoryMiB: ").append(getAcceleratorTotalMemoryMiB());
+            sb.append("AcceleratorTotalMemoryMiB: ").append(getAcceleratorTotalMemoryMiB()).append(",");
+        if (getNetworkBandwidthGbps() != null)
+            sb.append("NetworkBandwidthGbps: ").append(getNetworkBandwidthGbps()).append(",");
+        if (getAllowedInstanceTypes() != null)
+            sb.append("AllowedInstanceTypes: ").append(getAllowedInstanceTypes()).append(",");
+        if (getMaxSpotPriceAsPercentageOfOptimalOnDemandPrice() != null)
+            sb.append("MaxSpotPriceAsPercentageOfOptimalOnDemandPrice: ").append(getMaxSpotPriceAsPercentageOfOptimalOnDemandPrice());
         sb.append("}");
         return sb.toString();
     }
@@ -4501,6 +5391,19 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
             return false;
         if (other.getAcceleratorTotalMemoryMiB() != null && other.getAcceleratorTotalMemoryMiB().equals(this.getAcceleratorTotalMemoryMiB()) == false)
             return false;
+        if (other.getNetworkBandwidthGbps() == null ^ this.getNetworkBandwidthGbps() == null)
+            return false;
+        if (other.getNetworkBandwidthGbps() != null && other.getNetworkBandwidthGbps().equals(this.getNetworkBandwidthGbps()) == false)
+            return false;
+        if (other.getAllowedInstanceTypes() == null ^ this.getAllowedInstanceTypes() == null)
+            return false;
+        if (other.getAllowedInstanceTypes() != null && other.getAllowedInstanceTypes().equals(this.getAllowedInstanceTypes()) == false)
+            return false;
+        if (other.getMaxSpotPriceAsPercentageOfOptimalOnDemandPrice() == null ^ this.getMaxSpotPriceAsPercentageOfOptimalOnDemandPrice() == null)
+            return false;
+        if (other.getMaxSpotPriceAsPercentageOfOptimalOnDemandPrice() != null
+                && other.getMaxSpotPriceAsPercentageOfOptimalOnDemandPrice().equals(this.getMaxSpotPriceAsPercentageOfOptimalOnDemandPrice()) == false)
+            return false;
         return true;
     }
 
@@ -4531,6 +5434,10 @@ public class InstanceRequirementsRequest implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAcceleratorManufacturers() == null) ? 0 : getAcceleratorManufacturers().hashCode());
         hashCode = prime * hashCode + ((getAcceleratorNames() == null) ? 0 : getAcceleratorNames().hashCode());
         hashCode = prime * hashCode + ((getAcceleratorTotalMemoryMiB() == null) ? 0 : getAcceleratorTotalMemoryMiB().hashCode());
+        hashCode = prime * hashCode + ((getNetworkBandwidthGbps() == null) ? 0 : getNetworkBandwidthGbps().hashCode());
+        hashCode = prime * hashCode + ((getAllowedInstanceTypes() == null) ? 0 : getAllowedInstanceTypes().hashCode());
+        hashCode = prime * hashCode
+                + ((getMaxSpotPriceAsPercentageOfOptimalOnDemandPrice() == null) ? 0 : getMaxSpotPriceAsPercentageOfOptimalOnDemandPrice().hashCode());
         return hashCode;
     }
 

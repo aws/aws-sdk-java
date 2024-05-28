@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,8 @@ public class ServiceNameAndResourceType implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The type of the resource.
+     * The type of the resource. This takes the form of: <code>service-code</code>:<code>resource-code</code>, and is
+     * case-insensitive. For example, an Amazon EC2 Subnet would be represented by the string <code>ec2:subnet</code>.
      * </p>
      */
     private String resourceType;
@@ -63,11 +64,14 @@ public class ServiceNameAndResourceType implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The type of the resource.
+     * The type of the resource. This takes the form of: <code>service-code</code>:<code>resource-code</code>, and is
+     * case-insensitive. For example, an Amazon EC2 Subnet would be represented by the string <code>ec2:subnet</code>.
      * </p>
      * 
      * @param resourceType
-     *        The type of the resource.
+     *        The type of the resource. This takes the form of: <code>service-code</code>:<code>resource-code</code>,
+     *        and is case-insensitive. For example, an Amazon EC2 Subnet would be represented by the string
+     *        <code>ec2:subnet</code>.
      */
 
     public void setResourceType(String resourceType) {
@@ -76,10 +80,13 @@ public class ServiceNameAndResourceType implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The type of the resource.
+     * The type of the resource. This takes the form of: <code>service-code</code>:<code>resource-code</code>, and is
+     * case-insensitive. For example, an Amazon EC2 Subnet would be represented by the string <code>ec2:subnet</code>.
      * </p>
      * 
-     * @return The type of the resource.
+     * @return The type of the resource. This takes the form of: <code>service-code</code>:<code>resource-code</code>,
+     *         and is case-insensitive. For example, an Amazon EC2 Subnet would be represented by the string
+     *         <code>ec2:subnet</code>.
      */
 
     public String getResourceType() {
@@ -88,11 +95,14 @@ public class ServiceNameAndResourceType implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The type of the resource.
+     * The type of the resource. This takes the form of: <code>service-code</code>:<code>resource-code</code>, and is
+     * case-insensitive. For example, an Amazon EC2 Subnet would be represented by the string <code>ec2:subnet</code>.
      * </p>
      * 
      * @param resourceType
-     *        The type of the resource.
+     *        The type of the resource. This takes the form of: <code>service-code</code>:<code>resource-code</code>,
+     *        and is case-insensitive. For example, an Amazon EC2 Subnet would be represented by the string
+     *        <code>ec2:subnet</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

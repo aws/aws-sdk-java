@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -101,12 +101,19 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
     private String imageUrl;
     /**
      * <p>
-     * para>normal - The notification might be delayed. Delivery is optimized for battery usage on the recipient's
+     * The preferred authentication method, with valid values "KEY" or "TOKEN". If a value isn't provided then the
+     * <b>DefaultAuthenticationMethod</b> is used.
+     * </p>
+     */
+    private String preferredAuthenticationMethod;
+    /**
+     * <p>
+     * para>normal – The notification might be delayed. Delivery is optimized for battery usage on the recipient's
      * device. Use this value unless immediate delivery is required.
      * </p>
      * /listitem> <li>
      * <p>
-     * high - The notification is sent immediately and might wake a sleeping device.
+     * high – The notification is sent immediately and might wake a sleeping device.
      * </p>
      * </li>/para>
      * <p>
@@ -765,12 +772,58 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * para>normal - The notification might be delayed. Delivery is optimized for battery usage on the recipient's
+     * The preferred authentication method, with valid values "KEY" or "TOKEN". If a value isn't provided then the
+     * <b>DefaultAuthenticationMethod</b> is used.
+     * </p>
+     * 
+     * @param preferredAuthenticationMethod
+     *        The preferred authentication method, with valid values "KEY" or "TOKEN". If a value isn't provided then
+     *        the <b>DefaultAuthenticationMethod</b> is used.
+     */
+
+    public void setPreferredAuthenticationMethod(String preferredAuthenticationMethod) {
+        this.preferredAuthenticationMethod = preferredAuthenticationMethod;
+    }
+
+    /**
+     * <p>
+     * The preferred authentication method, with valid values "KEY" or "TOKEN". If a value isn't provided then the
+     * <b>DefaultAuthenticationMethod</b> is used.
+     * </p>
+     * 
+     * @return The preferred authentication method, with valid values "KEY" or "TOKEN". If a value isn't provided then
+     *         the <b>DefaultAuthenticationMethod</b> is used.
+     */
+
+    public String getPreferredAuthenticationMethod() {
+        return this.preferredAuthenticationMethod;
+    }
+
+    /**
+     * <p>
+     * The preferred authentication method, with valid values "KEY" or "TOKEN". If a value isn't provided then the
+     * <b>DefaultAuthenticationMethod</b> is used.
+     * </p>
+     * 
+     * @param preferredAuthenticationMethod
+     *        The preferred authentication method, with valid values "KEY" or "TOKEN". If a value isn't provided then
+     *        the <b>DefaultAuthenticationMethod</b> is used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GCMMessage withPreferredAuthenticationMethod(String preferredAuthenticationMethod) {
+        setPreferredAuthenticationMethod(preferredAuthenticationMethod);
+        return this;
+    }
+
+    /**
+     * <p>
+     * para>normal – The notification might be delayed. Delivery is optimized for battery usage on the recipient's
      * device. Use this value unless immediate delivery is required.
      * </p>
      * /listitem> <li>
      * <p>
-     * high - The notification is sent immediately and might wake a sleeping device.
+     * high – The notification is sent immediately and might wake a sleeping device.
      * </p>
      * </li>/para>
      * <p>
@@ -783,10 +836,10 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param priority
-     *        para>normal - The notification might be delayed. Delivery is optimized for battery usage on the
+     *        para>normal – The notification might be delayed. Delivery is optimized for battery usage on the
      *        recipient's device. Use this value unless immediate delivery is required.</p>/listitem> <li>
      *        <p>
-     *        high - The notification is sent immediately and might wake a sleeping device.
+     *        high – The notification is sent immediately and might wake a sleeping device.
      *        </p>
      *        </li>/para>
      *        <p>
@@ -805,12 +858,12 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * para>normal - The notification might be delayed. Delivery is optimized for battery usage on the recipient's
+     * para>normal – The notification might be delayed. Delivery is optimized for battery usage on the recipient's
      * device. Use this value unless immediate delivery is required.
      * </p>
      * /listitem> <li>
      * <p>
-     * high - The notification is sent immediately and might wake a sleeping device.
+     * high – The notification is sent immediately and might wake a sleeping device.
      * </p>
      * </li>/para>
      * <p>
@@ -822,10 +875,10 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
      * value.
      * </p>
      * 
-     * @return para>normal - The notification might be delayed. Delivery is optimized for battery usage on the
+     * @return para>normal – The notification might be delayed. Delivery is optimized for battery usage on the
      *         recipient's device. Use this value unless immediate delivery is required.</p>/listitem> <li>
      *         <p>
-     *         high - The notification is sent immediately and might wake a sleeping device.
+     *         high – The notification is sent immediately and might wake a sleeping device.
      *         </p>
      *         </li>/para>
      *         <p>
@@ -844,12 +897,12 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * para>normal - The notification might be delayed. Delivery is optimized for battery usage on the recipient's
+     * para>normal – The notification might be delayed. Delivery is optimized for battery usage on the recipient's
      * device. Use this value unless immediate delivery is required.
      * </p>
      * /listitem> <li>
      * <p>
-     * high - The notification is sent immediately and might wake a sleeping device.
+     * high – The notification is sent immediately and might wake a sleeping device.
      * </p>
      * </li>/para>
      * <p>
@@ -862,10 +915,10 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param priority
-     *        para>normal - The notification might be delayed. Delivery is optimized for battery usage on the
+     *        para>normal – The notification might be delayed. Delivery is optimized for battery usage on the
      *        recipient's device. Use this value unless immediate delivery is required.</p>/listitem> <li>
      *        <p>
-     *        high - The notification is sent immediately and might wake a sleeping device.
+     *        high – The notification is sent immediately and might wake a sleeping device.
      *        </p>
      *        </li>/para>
      *        <p>
@@ -1398,6 +1451,8 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
             sb.append("ImageIconUrl: ").append(getImageIconUrl()).append(",");
         if (getImageUrl() != null)
             sb.append("ImageUrl: ").append(getImageUrl()).append(",");
+        if (getPreferredAuthenticationMethod() != null)
+            sb.append("PreferredAuthenticationMethod: ").append(getPreferredAuthenticationMethod()).append(",");
         if (getPriority() != null)
             sb.append("Priority: ").append(getPriority()).append(",");
         if (getRawContent() != null)
@@ -1460,6 +1515,11 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getImageUrl() != null && other.getImageUrl().equals(this.getImageUrl()) == false)
             return false;
+        if (other.getPreferredAuthenticationMethod() == null ^ this.getPreferredAuthenticationMethod() == null)
+            return false;
+        if (other.getPreferredAuthenticationMethod() != null
+                && other.getPreferredAuthenticationMethod().equals(this.getPreferredAuthenticationMethod()) == false)
+            return false;
         if (other.getPriority() == null ^ this.getPriority() == null)
             return false;
         if (other.getPriority() != null && other.getPriority().equals(this.getPriority()) == false)
@@ -1515,6 +1575,7 @@ public class GCMMessage implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getIconReference() == null) ? 0 : getIconReference().hashCode());
         hashCode = prime * hashCode + ((getImageIconUrl() == null) ? 0 : getImageIconUrl().hashCode());
         hashCode = prime * hashCode + ((getImageUrl() == null) ? 0 : getImageUrl().hashCode());
+        hashCode = prime * hashCode + ((getPreferredAuthenticationMethod() == null) ? 0 : getPreferredAuthenticationMethod().hashCode());
         hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
         hashCode = prime * hashCode + ((getRawContent() == null) ? 0 : getRawContent().hashCode());
         hashCode = prime * hashCode + ((getRestrictedPackageName() == null) ? 0 : getRestrictedPackageName().hashCode());

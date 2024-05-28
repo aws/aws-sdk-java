@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,8 @@ public class InstanceTypeDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WarmEnabled").build();
     private static final MarshallingInfo<List> INSTANCEROLE_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("InstanceRole").build();
+    private static final MarshallingInfo<List> AVAILABILITYZONES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AvailabilityZones").build();
 
     private static final InstanceTypeDetailsMarshaller instance = new InstanceTypeDetailsMarshaller();
 
@@ -66,6 +68,7 @@ public class InstanceTypeDetailsMarshaller {
             protocolMarshaller.marshall(instanceTypeDetails.getAdvancedSecurityEnabled(), ADVANCEDSECURITYENABLED_BINDING);
             protocolMarshaller.marshall(instanceTypeDetails.getWarmEnabled(), WARMENABLED_BINDING);
             protocolMarshaller.marshall(instanceTypeDetails.getInstanceRole(), INSTANCEROLE_BINDING);
+            protocolMarshaller.marshall(instanceTypeDetails.getAvailabilityZones(), AVAILABILITYZONES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

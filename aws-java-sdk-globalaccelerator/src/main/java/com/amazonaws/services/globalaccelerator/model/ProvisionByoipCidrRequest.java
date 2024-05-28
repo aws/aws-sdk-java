@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,13 @@ public class ProvisionByoipCidrRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24. The
-     * address range cannot overlap with another address range that you've brought to this or another Region.
+     * address range cannot overlap with another address range that you've brought to this Amazon Web Services Region or
+     * another Region.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses
+     * (BYOIP)</a> in the Global Accelerator Developer Guide.
      * </p>
      */
     private String cidr;
@@ -43,12 +49,23 @@ public class ProvisionByoipCidrRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24. The
-     * address range cannot overlap with another address range that you've brought to this or another Region.
+     * address range cannot overlap with another address range that you've brought to this Amazon Web Services Region or
+     * another Region.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses
+     * (BYOIP)</a> in the Global Accelerator Developer Guide.
      * </p>
      * 
      * @param cidr
      *        The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24.
-     *        The address range cannot overlap with another address range that you've brought to this or another Region.
+     *        The address range cannot overlap with another address range that you've brought to this Amazon Web
+     *        Services Region or another Region.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP
+     *        addresses (BYOIP)</a> in the Global Accelerator Developer Guide.
      */
 
     public void setCidr(String cidr) {
@@ -58,12 +75,22 @@ public class ProvisionByoipCidrRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24. The
-     * address range cannot overlap with another address range that you've brought to this or another Region.
+     * address range cannot overlap with another address range that you've brought to this Amazon Web Services Region or
+     * another Region.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses
+     * (BYOIP)</a> in the Global Accelerator Developer Guide.
      * </p>
      * 
      * @return The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24.
-     *         The address range cannot overlap with another address range that you've brought to this or another
-     *         Region.
+     *         The address range cannot overlap with another address range that you've brought to this Amazon Web
+     *         Services Region or another Region.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP
+     *         addresses (BYOIP)</a> in the Global Accelerator Developer Guide.
      */
 
     public String getCidr() {
@@ -73,12 +100,23 @@ public class ProvisionByoipCidrRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24. The
-     * address range cannot overlap with another address range that you've brought to this or another Region.
+     * address range cannot overlap with another address range that you've brought to this Amazon Web Services Region or
+     * another Region.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP addresses
+     * (BYOIP)</a> in the Global Accelerator Developer Guide.
      * </p>
      * 
      * @param cidr
      *        The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24.
-     *        The address range cannot overlap with another address range that you've brought to this or another Region.
+     *        The address range cannot overlap with another address range that you've brought to this Amazon Web
+     *        Services Region or another Region.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring your own IP
+     *        addresses (BYOIP)</a> in the Global Accelerator Developer Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

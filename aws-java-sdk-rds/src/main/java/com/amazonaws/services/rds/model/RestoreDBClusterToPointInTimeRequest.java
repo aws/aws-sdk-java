@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,10 +72,6 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </li>
      * </ul>
      * <p>
-     * Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster is
-     * earlier than 1.11.
-     * </p>
-     * <p>
      * If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the
      * source DB cluster.
      * </p>
@@ -145,8 +141,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     private java.util.Date restoreToTime;
     /**
      * <p>
-     * A value that indicates whether to restore the DB cluster to the latest restorable backup time. By default, the DB
-     * cluster isn't restored to the latest restorable backup time.
+     * Specifies whether to restore the DB cluster to the latest restorable backup time. By default, the DB cluster
+     * isn't restored to the latest restorable backup time.
      * </p>
      * <p>
      * Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
@@ -247,8 +243,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     private String kmsKeyId;
     /**
      * <p>
-     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts. By default, mapping isn't enabled.
+     * Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     * database accounts. By default, mapping isn't enabled.
      * </p>
      * <p>
      * For more information, see <a
@@ -328,8 +324,11 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     private com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExports;
     /**
      * <p>
-     * The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted, the
-     * default DB cluster parameter group for the specified engine is used.
+     * The name of the custom DB cluster parameter group to associate with this DB cluster.
+     * </p>
+     * <p>
+     * If the <code>DBClusterParameterGroupName</code> parameter is omitted, the default DB cluster parameter group for
+     * the specified engine is used.
      * </p>
      * <p>
      * Constraints:
@@ -363,8 +362,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     private String dBClusterParameterGroupName;
     /**
      * <p>
-     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
-     * deletion protection is enabled. By default, deletion protection isn't enabled.
+     * Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion
+     * protection is enabled. By default, deletion protection isn't enabled.
      * </p>
      * <p>
      * Valid for: Aurora DB clusters and Multi-AZ DB clusters
@@ -373,8 +372,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     private Boolean deletionProtection;
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB
-     * cluster. The default is not to copy them.
+     * Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The
+     * default is not to copy them.
      * </p>
      * <p>
      * Valid for: Aurora DB clusters and Multi-AZ DB clusters
@@ -383,7 +382,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     private Boolean copyTagsToSnapshot;
     /**
      * <p>
-     * Specify the Active Directory directory ID to restore the DB cluster in. The domain must be created prior to this
+     * The Active Directory directory ID to restore the DB cluster in. The domain must be created prior to this
      * operation.
      * </p>
      * <p>
@@ -399,7 +398,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     private String domain;
     /**
      * <p>
-     * Specify the name of the IAM role to be used when making API calls to the Directory Service.
+     * The name of the IAM role to be used when making API calls to the Directory Service.
      * </p>
      * <p>
      * Valid for: Aurora DB clusters only
@@ -435,7 +434,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * <p>
      * For the full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a>
-     * in the <i>Amazon RDS User Guide.</i>
+     * in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * Valid for: Multi-AZ DB clusters only
@@ -444,25 +443,26 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     private String dBClusterInstanceClass;
     /**
      * <p>
-     * Specifies the storage type to be associated with the each DB instance in the Multi-AZ DB cluster.
+     * Specifies the storage type to be associated with the DB cluster.
      * </p>
      * <p>
-     * Valid values: <code>io1</code>
+     * When specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter is required.
      * </p>
      * <p>
-     * When specified, a value for the <code>Iops</code> parameter is required.
+     * Valid Values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
+     * clusters)
      * </p>
      * <p>
-     * Default: <code>io1</code>
+     * Default: <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)
      * </p>
      * <p>
-     * Valid for: Multi-AZ DB clusters only
+     * Valid for: Aurora DB clusters and Multi-AZ DB clusters
      * </p>
      */
     private String storageType;
     /**
      * <p>
-     * A value that indicates whether the DB cluster is publicly accessible.
+     * Specifies whether the DB cluster is publicly accessible.
      * </p>
      * <p>
      * When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP
@@ -540,7 +540,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * The network type of the DB cluster.
      * </p>
      * <p>
-     * Valid values:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -569,6 +569,62 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      */
     private String networkType;
+    /**
+     * <p>
+     * The resource ID of the source DB cluster from which to restore.
+     * </p>
+     */
+    private String sourceDbClusterResourceId;
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     */
+    private RdsCustomClusterConfiguration rdsCustomClusterConfiguration;
+    /**
+     * <p>
+     * The life cycle type for this DB cluster.
+     * </p>
+     * <note>
+     * <p>
+     * By default, this value is set to <code>open-source-rds-extended-support</code>, which enrolls your DB cluster
+     * into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for Extended Support by
+     * setting the value to <code>open-source-rds-extended-support-disabled</code>. In this case, RDS automatically
+     * upgrades your restored DB cluster to a higher engine version, if the major engine version is past its end of
+     * standard support date.
+     * </p>
+     * </note>
+     * <p>
+     * You can use this setting to enroll your DB cluster into Amazon RDS Extended Support. With RDS Extended Support,
+     * you can run the selected major engine version on your DB cluster past the end of standard support for that engine
+     * version. For more information, see the following sections:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Amazon Aurora (PostgreSQL only) - <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using Amazon RDS
+     * Extended Support</a> in the <i>Amazon Aurora User Guide</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon RDS - <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using Amazon
+     * RDS Extended Support</a> in the <i>Amazon RDS User Guide</i>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
+     * </p>
+     * <p>
+     * Valid Values: <code>open-source-rds-extended-support | open-source-rds-extended-support-disabled</code>
+     * </p>
+     * <p>
+     * Default: <code>open-source-rds-extended-support</code>
+     * </p>
+     */
+    private String engineLifecycleSupport;
 
     /**
      * <p>
@@ -762,10 +818,6 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </li>
      * </ul>
      * <p>
-     * Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster is
-     * earlier than 1.11.
-     * </p>
-     * <p>
      * If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the
      * source DB cluster.
      * </p>
@@ -787,10 +839,6 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        </p>
      *        </li>
      *        </ul>
-     *        <p>
-     *        Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster
-     *        is earlier than 1.11.
-     *        </p>
      *        <p>
      *        If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy
      *        of the source DB cluster.
@@ -820,10 +868,6 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </li>
      * </ul>
      * <p>
-     * Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster is
-     * earlier than 1.11.
-     * </p>
-     * <p>
      * If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the
      * source DB cluster.
      * </p>
@@ -844,10 +888,6 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *         </p>
      *         </li>
      *         </ul>
-     *         <p>
-     *         Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster
-     *         is earlier than 1.11.
-     *         </p>
      *         <p>
      *         If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy
      *         of the source DB cluster.
@@ -877,10 +917,6 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </li>
      * </ul>
      * <p>
-     * Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster is
-     * earlier than 1.11.
-     * </p>
-     * <p>
      * If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy of the
      * source DB cluster.
      * </p>
@@ -902,10 +938,6 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        </p>
      *        </li>
      *        </ul>
-     *        <p>
-     *        Constraints: You can't specify <code>copy-on-write</code> if the engine version of the source DB cluster
-     *        is earlier than 1.11.
-     *        </p>
      *        <p>
      *        If you don't specify a <code>RestoreType</code> value, then the new DB cluster is restored as a full copy
      *        of the source DB cluster.
@@ -1278,8 +1310,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that indicates whether to restore the DB cluster to the latest restorable backup time. By default, the DB
-     * cluster isn't restored to the latest restorable backup time.
+     * Specifies whether to restore the DB cluster to the latest restorable backup time. By default, the DB cluster
+     * isn't restored to the latest restorable backup time.
      * </p>
      * <p>
      * Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
@@ -1289,8 +1321,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param useLatestRestorableTime
-     *        A value that indicates whether to restore the DB cluster to the latest restorable backup time. By default,
-     *        the DB cluster isn't restored to the latest restorable backup time.</p>
+     *        Specifies whether to restore the DB cluster to the latest restorable backup time. By default, the DB
+     *        cluster isn't restored to the latest restorable backup time.</p>
      *        <p>
      *        Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
      *        </p>
@@ -1304,8 +1336,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that indicates whether to restore the DB cluster to the latest restorable backup time. By default, the DB
-     * cluster isn't restored to the latest restorable backup time.
+     * Specifies whether to restore the DB cluster to the latest restorable backup time. By default, the DB cluster
+     * isn't restored to the latest restorable backup time.
      * </p>
      * <p>
      * Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
@@ -1314,8 +1346,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * Valid for: Aurora DB clusters and Multi-AZ DB clusters
      * </p>
      * 
-     * @return A value that indicates whether to restore the DB cluster to the latest restorable backup time. By
-     *         default, the DB cluster isn't restored to the latest restorable backup time.</p>
+     * @return Specifies whether to restore the DB cluster to the latest restorable backup time. By default, the DB
+     *         cluster isn't restored to the latest restorable backup time.</p>
      *         <p>
      *         Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
      *         </p>
@@ -1329,8 +1361,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that indicates whether to restore the DB cluster to the latest restorable backup time. By default, the DB
-     * cluster isn't restored to the latest restorable backup time.
+     * Specifies whether to restore the DB cluster to the latest restorable backup time. By default, the DB cluster
+     * isn't restored to the latest restorable backup time.
      * </p>
      * <p>
      * Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
@@ -1340,8 +1372,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param useLatestRestorableTime
-     *        A value that indicates whether to restore the DB cluster to the latest restorable backup time. By default,
-     *        the DB cluster isn't restored to the latest restorable backup time.</p>
+     *        Specifies whether to restore the DB cluster to the latest restorable backup time. By default, the DB
+     *        cluster isn't restored to the latest restorable backup time.</p>
      *        <p>
      *        Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
      *        </p>
@@ -1357,8 +1389,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that indicates whether to restore the DB cluster to the latest restorable backup time. By default, the DB
-     * cluster isn't restored to the latest restorable backup time.
+     * Specifies whether to restore the DB cluster to the latest restorable backup time. By default, the DB cluster
+     * isn't restored to the latest restorable backup time.
      * </p>
      * <p>
      * Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
@@ -1367,8 +1399,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * Valid for: Aurora DB clusters and Multi-AZ DB clusters
      * </p>
      * 
-     * @return A value that indicates whether to restore the DB cluster to the latest restorable backup time. By
-     *         default, the DB cluster isn't restored to the latest restorable backup time.</p>
+     * @return Specifies whether to restore the DB cluster to the latest restorable backup time. By default, the DB
+     *         cluster isn't restored to the latest restorable backup time.</p>
      *         <p>
      *         Constraints: Can't be specified if <code>RestoreToTime</code> parameter is provided.
      *         </p>
@@ -2002,8 +2034,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts. By default, mapping isn't enabled.
+     * Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     * database accounts. By default, mapping isn't enabled.
      * </p>
      * <p>
      * For more information, see <a
@@ -2015,8 +2047,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
-     *        (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
+     *        Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts
+     *        to database accounts. By default, mapping isn't enabled.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
@@ -2032,8 +2064,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts. By default, mapping isn't enabled.
+     * Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     * database accounts. By default, mapping isn't enabled.
      * </p>
      * <p>
      * For more information, see <a
@@ -2044,8 +2076,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * Valid for: Aurora DB clusters only
      * </p>
      * 
-     * @return A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
-     *         (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
+     * @return Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts
+     *         to database accounts. By default, mapping isn't enabled.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
@@ -2061,8 +2093,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts. By default, mapping isn't enabled.
+     * Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     * database accounts. By default, mapping isn't enabled.
      * </p>
      * <p>
      * For more information, see <a
@@ -2074,8 +2106,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
-     *        (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
+     *        Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts
+     *        to database accounts. By default, mapping isn't enabled.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
@@ -2093,8 +2125,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts. By default, mapping isn't enabled.
+     * Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to
+     * database accounts. By default, mapping isn't enabled.
      * </p>
      * <p>
      * For more information, see <a
@@ -2105,8 +2137,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * Valid for: Aurora DB clusters only
      * </p>
      * 
-     * @return A value that indicates whether to enable mapping of Amazon Web Services Identity and Access Management
-     *         (IAM) accounts to database accounts. By default, mapping isn't enabled.</p>
+     * @return Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts
+     *         to database accounts. By default, mapping isn't enabled.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
@@ -2632,8 +2664,11 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted, the
-     * default DB cluster parameter group for the specified engine is used.
+     * The name of the custom DB cluster parameter group to associate with this DB cluster.
+     * </p>
+     * <p>
+     * If the <code>DBClusterParameterGroupName</code> parameter is omitted, the default DB cluster parameter group for
+     * the specified engine is used.
      * </p>
      * <p>
      * Constraints:
@@ -2665,8 +2700,11 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param dBClusterParameterGroupName
-     *        The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted,
-     *        the default DB cluster parameter group for the specified engine is used.</p>
+     *        The name of the custom DB cluster parameter group to associate with this DB cluster.</p>
+     *        <p>
+     *        If the <code>DBClusterParameterGroupName</code> parameter is omitted, the default DB cluster parameter
+     *        group for the specified engine is used.
+     *        </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -2702,8 +2740,11 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted, the
-     * default DB cluster parameter group for the specified engine is used.
+     * The name of the custom DB cluster parameter group to associate with this DB cluster.
+     * </p>
+     * <p>
+     * If the <code>DBClusterParameterGroupName</code> parameter is omitted, the default DB cluster parameter group for
+     * the specified engine is used.
      * </p>
      * <p>
      * Constraints:
@@ -2734,8 +2775,11 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * Valid for: Aurora DB clusters and Multi-AZ DB clusters
      * </p>
      * 
-     * @return The name of the DB cluster parameter group to associate with this DB cluster. If this argument is
-     *         omitted, the default DB cluster parameter group for the specified engine is used.</p>
+     * @return The name of the custom DB cluster parameter group to associate with this DB cluster.</p>
+     *         <p>
+     *         If the <code>DBClusterParameterGroupName</code> parameter is omitted, the default DB cluster parameter
+     *         group for the specified engine is used.
+     *         </p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -2771,8 +2815,11 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted, the
-     * default DB cluster parameter group for the specified engine is used.
+     * The name of the custom DB cluster parameter group to associate with this DB cluster.
+     * </p>
+     * <p>
+     * If the <code>DBClusterParameterGroupName</code> parameter is omitted, the default DB cluster parameter group for
+     * the specified engine is used.
      * </p>
      * <p>
      * Constraints:
@@ -2804,8 +2851,11 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param dBClusterParameterGroupName
-     *        The name of the DB cluster parameter group to associate with this DB cluster. If this argument is omitted,
-     *        the default DB cluster parameter group for the specified engine is used.</p>
+     *        The name of the custom DB cluster parameter group to associate with this DB cluster.</p>
+     *        <p>
+     *        If the <code>DBClusterParameterGroupName</code> parameter is omitted, the default DB cluster parameter
+     *        group for the specified engine is used.
+     *        </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -2843,16 +2893,16 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
-     * deletion protection is enabled. By default, deletion protection isn't enabled.
+     * Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion
+     * protection is enabled. By default, deletion protection isn't enabled.
      * </p>
      * <p>
      * Valid for: Aurora DB clusters and Multi-AZ DB clusters
      * </p>
      * 
      * @param deletionProtection
-     *        A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
-     *        deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
+     *        Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when
+     *        deletion protection is enabled. By default, deletion protection isn't enabled.</p>
      *        <p>
      *        Valid for: Aurora DB clusters and Multi-AZ DB clusters
      */
@@ -2863,15 +2913,15 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
-     * deletion protection is enabled. By default, deletion protection isn't enabled.
+     * Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion
+     * protection is enabled. By default, deletion protection isn't enabled.
      * </p>
      * <p>
      * Valid for: Aurora DB clusters and Multi-AZ DB clusters
      * </p>
      * 
-     * @return A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
-     *         deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
+     * @return Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when
+     *         deletion protection is enabled. By default, deletion protection isn't enabled.</p>
      *         <p>
      *         Valid for: Aurora DB clusters and Multi-AZ DB clusters
      */
@@ -2882,16 +2932,16 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
-     * deletion protection is enabled. By default, deletion protection isn't enabled.
+     * Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion
+     * protection is enabled. By default, deletion protection isn't enabled.
      * </p>
      * <p>
      * Valid for: Aurora DB clusters and Multi-AZ DB clusters
      * </p>
      * 
      * @param deletionProtection
-     *        A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
-     *        deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
+     *        Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when
+     *        deletion protection is enabled. By default, deletion protection isn't enabled.</p>
      *        <p>
      *        Valid for: Aurora DB clusters and Multi-AZ DB clusters
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2904,15 +2954,15 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when
-     * deletion protection is enabled. By default, deletion protection isn't enabled.
+     * Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when deletion
+     * protection is enabled. By default, deletion protection isn't enabled.
      * </p>
      * <p>
      * Valid for: Aurora DB clusters and Multi-AZ DB clusters
      * </p>
      * 
-     * @return A value that indicates whether the DB cluster has deletion protection enabled. The database can't be
-     *         deleted when deletion protection is enabled. By default, deletion protection isn't enabled.</p>
+     * @return Specifies whether to enable deletion protection for the DB cluster. The database can't be deleted when
+     *         deletion protection is enabled. By default, deletion protection isn't enabled.</p>
      *         <p>
      *         Valid for: Aurora DB clusters and Multi-AZ DB clusters
      */
@@ -2923,16 +2973,16 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB
-     * cluster. The default is not to copy them.
+     * Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The
+     * default is not to copy them.
      * </p>
      * <p>
      * Valid for: Aurora DB clusters and Multi-AZ DB clusters
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored
-     *        DB cluster. The default is not to copy them.</p>
+     *        Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster.
+     *        The default is not to copy them.</p>
      *        <p>
      *        Valid for: Aurora DB clusters and Multi-AZ DB clusters
      */
@@ -2943,15 +2993,15 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB
-     * cluster. The default is not to copy them.
+     * Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The
+     * default is not to copy them.
      * </p>
      * <p>
      * Valid for: Aurora DB clusters and Multi-AZ DB clusters
      * </p>
      * 
-     * @return A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored
-     *         DB cluster. The default is not to copy them.</p>
+     * @return Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster.
+     *         The default is not to copy them.</p>
      *         <p>
      *         Valid for: Aurora DB clusters and Multi-AZ DB clusters
      */
@@ -2962,16 +3012,16 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB
-     * cluster. The default is not to copy them.
+     * Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The
+     * default is not to copy them.
      * </p>
      * <p>
      * Valid for: Aurora DB clusters and Multi-AZ DB clusters
      * </p>
      * 
      * @param copyTagsToSnapshot
-     *        A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored
-     *        DB cluster. The default is not to copy them.</p>
+     *        Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster.
+     *        The default is not to copy them.</p>
      *        <p>
      *        Valid for: Aurora DB clusters and Multi-AZ DB clusters
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2984,15 +3034,15 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored DB
-     * cluster. The default is not to copy them.
+     * Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster. The
+     * default is not to copy them.
      * </p>
      * <p>
      * Valid for: Aurora DB clusters and Multi-AZ DB clusters
      * </p>
      * 
-     * @return A value that indicates whether to copy all tags from the restored DB cluster to snapshots of the restored
-     *         DB cluster. The default is not to copy them.</p>
+     * @return Specifies whether to copy all tags from the restored DB cluster to snapshots of the restored DB cluster.
+     *         The default is not to copy them.</p>
      *         <p>
      *         Valid for: Aurora DB clusters and Multi-AZ DB clusters
      */
@@ -3003,7 +3053,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Specify the Active Directory directory ID to restore the DB cluster in. The domain must be created prior to this
+     * The Active Directory directory ID to restore the DB cluster in. The domain must be created prior to this
      * operation.
      * </p>
      * <p>
@@ -3017,8 +3067,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param domain
-     *        Specify the Active Directory directory ID to restore the DB cluster in. The domain must be created prior
-     *        to this operation.</p>
+     *        The Active Directory directory ID to restore the DB cluster in. The domain must be created prior to this
+     *        operation.</p>
      *        <p>
      *        For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      *        connect to the DB cluster. For more information, see <a
@@ -3035,7 +3085,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Specify the Active Directory directory ID to restore the DB cluster in. The domain must be created prior to this
+     * The Active Directory directory ID to restore the DB cluster in. The domain must be created prior to this
      * operation.
      * </p>
      * <p>
@@ -3048,8 +3098,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * Valid for: Aurora DB clusters only
      * </p>
      * 
-     * @return Specify the Active Directory directory ID to restore the DB cluster in. The domain must be created prior
-     *         to this operation.</p>
+     * @return The Active Directory directory ID to restore the DB cluster in. The domain must be created prior to this
+     *         operation.</p>
      *         <p>
      *         For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      *         connect to the DB cluster. For more information, see <a
@@ -3066,7 +3116,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Specify the Active Directory directory ID to restore the DB cluster in. The domain must be created prior to this
+     * The Active Directory directory ID to restore the DB cluster in. The domain must be created prior to this
      * operation.
      * </p>
      * <p>
@@ -3080,8 +3130,8 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param domain
-     *        Specify the Active Directory directory ID to restore the DB cluster in. The domain must be created prior
-     *        to this operation.</p>
+     *        The Active Directory directory ID to restore the DB cluster in. The domain must be created prior to this
+     *        operation.</p>
      *        <p>
      *        For Amazon Aurora DB clusters, Amazon RDS can use Kerberos Authentication to authenticate users that
      *        connect to the DB cluster. For more information, see <a
@@ -3100,14 +3150,14 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Specify the name of the IAM role to be used when making API calls to the Directory Service.
+     * The name of the IAM role to be used when making API calls to the Directory Service.
      * </p>
      * <p>
      * Valid for: Aurora DB clusters only
      * </p>
      * 
      * @param domainIAMRoleName
-     *        Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+     *        The name of the IAM role to be used when making API calls to the Directory Service.</p>
      *        <p>
      *        Valid for: Aurora DB clusters only
      */
@@ -3118,13 +3168,13 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Specify the name of the IAM role to be used when making API calls to the Directory Service.
+     * The name of the IAM role to be used when making API calls to the Directory Service.
      * </p>
      * <p>
      * Valid for: Aurora DB clusters only
      * </p>
      * 
-     * @return Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+     * @return The name of the IAM role to be used when making API calls to the Directory Service.</p>
      *         <p>
      *         Valid for: Aurora DB clusters only
      */
@@ -3135,14 +3185,14 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Specify the name of the IAM role to be used when making API calls to the Directory Service.
+     * The name of the IAM role to be used when making API calls to the Directory Service.
      * </p>
      * <p>
      * Valid for: Aurora DB clusters only
      * </p>
      * 
      * @param domainIAMRoleName
-     *        Specify the name of the IAM role to be used when making API calls to the Directory Service.</p>
+     *        The name of the IAM role to be used when making API calls to the Directory Service.</p>
      *        <p>
      *        Valid for: Aurora DB clusters only
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -3292,7 +3342,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * <p>
      * For the full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a>
-     * in the <i>Amazon RDS User Guide.</i>
+     * in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * Valid for: Multi-AZ DB clusters only
@@ -3305,7 +3355,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        <p>
      *        For the full list of DB instance classes, and availability for your engine, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance
-     *        class</a> in the <i>Amazon RDS User Guide.</i>
+     *        class</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        <p>
      *        Valid for: Multi-AZ DB clusters only
@@ -3323,7 +3373,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * <p>
      * For the full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a>
-     * in the <i>Amazon RDS User Guide.</i>
+     * in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * Valid for: Multi-AZ DB clusters only
@@ -3335,7 +3385,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *         <p>
      *         For the full list of DB instance classes, and availability for your engine, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance
-     *         class</a> in the <i>Amazon RDS User Guide.</i>
+     *         class</a> in the <i>Amazon RDS User Guide</i>.
      *         </p>
      *         <p>
      *         Valid for: Multi-AZ DB clusters only
@@ -3353,7 +3403,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * <p>
      * For the full list of DB instance classes, and availability for your engine, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance class</a>
-     * in the <i>Amazon RDS User Guide.</i>
+     * in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * Valid for: Multi-AZ DB clusters only
@@ -3366,7 +3416,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        <p>
      *        For the full list of DB instance classes, and availability for your engine, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance
-     *        class</a> in the <i>Amazon RDS User Guide.</i>
+     *        class</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        <p>
      *        Valid for: Multi-AZ DB clusters only
@@ -3380,34 +3430,36 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Specifies the storage type to be associated with the each DB instance in the Multi-AZ DB cluster.
+     * Specifies the storage type to be associated with the DB cluster.
      * </p>
      * <p>
-     * Valid values: <code>io1</code>
+     * When specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter is required.
      * </p>
      * <p>
-     * When specified, a value for the <code>Iops</code> parameter is required.
+     * Valid Values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
+     * clusters)
      * </p>
      * <p>
-     * Default: <code>io1</code>
+     * Default: <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)
      * </p>
      * <p>
-     * Valid for: Multi-AZ DB clusters only
+     * Valid for: Aurora DB clusters and Multi-AZ DB clusters
      * </p>
      * 
      * @param storageType
-     *        Specifies the storage type to be associated with the each DB instance in the Multi-AZ DB cluster.</p>
+     *        Specifies the storage type to be associated with the DB cluster.</p>
      *        <p>
-     *        Valid values: <code>io1</code>
+     *        When specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter is required.
      *        </p>
      *        <p>
-     *        When specified, a value for the <code>Iops</code> parameter is required.
+     *        Valid Values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters); <code>io1</code>
+     *        (Multi-AZ DB clusters)
      *        </p>
      *        <p>
-     *        Default: <code>io1</code>
+     *        Default: <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)
      *        </p>
      *        <p>
-     *        Valid for: Multi-AZ DB clusters only
+     *        Valid for: Aurora DB clusters and Multi-AZ DB clusters
      */
 
     public void setStorageType(String storageType) {
@@ -3416,33 +3468,35 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Specifies the storage type to be associated with the each DB instance in the Multi-AZ DB cluster.
+     * Specifies the storage type to be associated with the DB cluster.
      * </p>
      * <p>
-     * Valid values: <code>io1</code>
+     * When specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter is required.
      * </p>
      * <p>
-     * When specified, a value for the <code>Iops</code> parameter is required.
+     * Valid Values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
+     * clusters)
      * </p>
      * <p>
-     * Default: <code>io1</code>
+     * Default: <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)
      * </p>
      * <p>
-     * Valid for: Multi-AZ DB clusters only
+     * Valid for: Aurora DB clusters and Multi-AZ DB clusters
      * </p>
      * 
-     * @return Specifies the storage type to be associated with the each DB instance in the Multi-AZ DB cluster.</p>
+     * @return Specifies the storage type to be associated with the DB cluster.</p>
      *         <p>
-     *         Valid values: <code>io1</code>
+     *         When specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter is required.
      *         </p>
      *         <p>
-     *         When specified, a value for the <code>Iops</code> parameter is required.
+     *         Valid Values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters); <code>io1</code>
+     *         (Multi-AZ DB clusters)
      *         </p>
      *         <p>
-     *         Default: <code>io1</code>
+     *         Default: <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)
      *         </p>
      *         <p>
-     *         Valid for: Multi-AZ DB clusters only
+     *         Valid for: Aurora DB clusters and Multi-AZ DB clusters
      */
 
     public String getStorageType() {
@@ -3451,34 +3505,36 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Specifies the storage type to be associated with the each DB instance in the Multi-AZ DB cluster.
+     * Specifies the storage type to be associated with the DB cluster.
      * </p>
      * <p>
-     * Valid values: <code>io1</code>
+     * When specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter is required.
      * </p>
      * <p>
-     * When specified, a value for the <code>Iops</code> parameter is required.
+     * Valid Values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
+     * clusters)
      * </p>
      * <p>
-     * Default: <code>io1</code>
+     * Default: <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)
      * </p>
      * <p>
-     * Valid for: Multi-AZ DB clusters only
+     * Valid for: Aurora DB clusters and Multi-AZ DB clusters
      * </p>
      * 
      * @param storageType
-     *        Specifies the storage type to be associated with the each DB instance in the Multi-AZ DB cluster.</p>
+     *        Specifies the storage type to be associated with the DB cluster.</p>
      *        <p>
-     *        Valid values: <code>io1</code>
+     *        When specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter is required.
      *        </p>
      *        <p>
-     *        When specified, a value for the <code>Iops</code> parameter is required.
+     *        Valid Values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters); <code>io1</code>
+     *        (Multi-AZ DB clusters)
      *        </p>
      *        <p>
-     *        Default: <code>io1</code>
+     *        Default: <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)
      *        </p>
      *        <p>
-     *        Valid for: Multi-AZ DB clusters only
+     *        Valid for: Aurora DB clusters and Multi-AZ DB clusters
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3489,7 +3545,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that indicates whether the DB cluster is publicly accessible.
+     * Specifies whether the DB cluster is publicly accessible.
      * </p>
      * <p>
      * When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP
@@ -3542,7 +3598,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param publiclyAccessible
-     *        A value that indicates whether the DB cluster is publicly accessible.</p>
+     *        Specifies whether the DB cluster is publicly accessible.</p>
      *        <p>
      *        When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private
      *        IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address
@@ -3601,7 +3657,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that indicates whether the DB cluster is publicly accessible.
+     * Specifies whether the DB cluster is publicly accessible.
      * </p>
      * <p>
      * When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP
@@ -3653,7 +3709,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * Valid for: Multi-AZ DB clusters only
      * </p>
      * 
-     * @return A value that indicates whether the DB cluster is publicly accessible.</p>
+     * @return Specifies whether the DB cluster is publicly accessible.</p>
      *         <p>
      *         When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private
      *         IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address
@@ -3712,7 +3768,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that indicates whether the DB cluster is publicly accessible.
+     * Specifies whether the DB cluster is publicly accessible.
      * </p>
      * <p>
      * When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP
@@ -3765,7 +3821,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param publiclyAccessible
-     *        A value that indicates whether the DB cluster is publicly accessible.</p>
+     *        Specifies whether the DB cluster is publicly accessible.</p>
      *        <p>
      *        When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private
      *        IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address
@@ -3826,7 +3882,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A value that indicates whether the DB cluster is publicly accessible.
+     * Specifies whether the DB cluster is publicly accessible.
      * </p>
      * <p>
      * When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP
@@ -3878,7 +3934,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * Valid for: Multi-AZ DB clusters only
      * </p>
      * 
-     * @return A value that indicates whether the DB cluster is publicly accessible.</p>
+     * @return Specifies whether the DB cluster is publicly accessible.</p>
      *         <p>
      *         When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private
      *         IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address
@@ -4075,7 +4131,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * The network type of the DB cluster.
      * </p>
      * <p>
-     * Valid values:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -4106,7 +4162,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * @param networkType
      *        The network type of the DB cluster.</p>
      *        <p>
-     *        Valid values:
+     *        Valid Values:
      *        </p>
      *        <ul>
      *        <li>
@@ -4143,7 +4199,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * The network type of the DB cluster.
      * </p>
      * <p>
-     * Valid values:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -4173,7 +4229,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * 
      * @return The network type of the DB cluster.</p>
      *         <p>
-     *         Valid values:
+     *         Valid Values:
      *         </p>
      *         <ul>
      *         <li>
@@ -4210,7 +4266,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * The network type of the DB cluster.
      * </p>
      * <p>
-     * Valid values:
+     * Valid Values:
      * </p>
      * <ul>
      * <li>
@@ -4241,7 +4297,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * @param networkType
      *        The network type of the DB cluster.</p>
      *        <p>
-     *        Valid values:
+     *        Valid Values:
      *        </p>
      *        <ul>
      *        <li>
@@ -4272,6 +4328,348 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     public RestoreDBClusterToPointInTimeRequest withNetworkType(String networkType) {
         setNetworkType(networkType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The resource ID of the source DB cluster from which to restore.
+     * </p>
+     * 
+     * @param sourceDbClusterResourceId
+     *        The resource ID of the source DB cluster from which to restore.
+     */
+
+    public void setSourceDbClusterResourceId(String sourceDbClusterResourceId) {
+        this.sourceDbClusterResourceId = sourceDbClusterResourceId;
+    }
+
+    /**
+     * <p>
+     * The resource ID of the source DB cluster from which to restore.
+     * </p>
+     * 
+     * @return The resource ID of the source DB cluster from which to restore.
+     */
+
+    public String getSourceDbClusterResourceId() {
+        return this.sourceDbClusterResourceId;
+    }
+
+    /**
+     * <p>
+     * The resource ID of the source DB cluster from which to restore.
+     * </p>
+     * 
+     * @param sourceDbClusterResourceId
+     *        The resource ID of the source DB cluster from which to restore.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBClusterToPointInTimeRequest withSourceDbClusterResourceId(String sourceDbClusterResourceId) {
+        setSourceDbClusterResourceId(sourceDbClusterResourceId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @param rdsCustomClusterConfiguration
+     *        Reserved for future use.
+     */
+
+    public void setRdsCustomClusterConfiguration(RdsCustomClusterConfiguration rdsCustomClusterConfiguration) {
+        this.rdsCustomClusterConfiguration = rdsCustomClusterConfiguration;
+    }
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @return Reserved for future use.
+     */
+
+    public RdsCustomClusterConfiguration getRdsCustomClusterConfiguration() {
+        return this.rdsCustomClusterConfiguration;
+    }
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @param rdsCustomClusterConfiguration
+     *        Reserved for future use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBClusterToPointInTimeRequest withRdsCustomClusterConfiguration(RdsCustomClusterConfiguration rdsCustomClusterConfiguration) {
+        setRdsCustomClusterConfiguration(rdsCustomClusterConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The life cycle type for this DB cluster.
+     * </p>
+     * <note>
+     * <p>
+     * By default, this value is set to <code>open-source-rds-extended-support</code>, which enrolls your DB cluster
+     * into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for Extended Support by
+     * setting the value to <code>open-source-rds-extended-support-disabled</code>. In this case, RDS automatically
+     * upgrades your restored DB cluster to a higher engine version, if the major engine version is past its end of
+     * standard support date.
+     * </p>
+     * </note>
+     * <p>
+     * You can use this setting to enroll your DB cluster into Amazon RDS Extended Support. With RDS Extended Support,
+     * you can run the selected major engine version on your DB cluster past the end of standard support for that engine
+     * version. For more information, see the following sections:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Amazon Aurora (PostgreSQL only) - <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using Amazon RDS
+     * Extended Support</a> in the <i>Amazon Aurora User Guide</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon RDS - <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using Amazon
+     * RDS Extended Support</a> in the <i>Amazon RDS User Guide</i>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
+     * </p>
+     * <p>
+     * Valid Values: <code>open-source-rds-extended-support | open-source-rds-extended-support-disabled</code>
+     * </p>
+     * <p>
+     * Default: <code>open-source-rds-extended-support</code>
+     * </p>
+     * 
+     * @param engineLifecycleSupport
+     *        The life cycle type for this DB cluster.</p> <note>
+     *        <p>
+     *        By default, this value is set to <code>open-source-rds-extended-support</code>, which enrolls your DB
+     *        cluster into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for
+     *        Extended Support by setting the value to <code>open-source-rds-extended-support-disabled</code>. In this
+     *        case, RDS automatically upgrades your restored DB cluster to a higher engine version, if the major engine
+     *        version is past its end of standard support date.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        You can use this setting to enroll your DB cluster into Amazon RDS Extended Support. With RDS Extended
+     *        Support, you can run the selected major engine version on your DB cluster past the end of standard support
+     *        for that engine version. For more information, see the following sections:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Amazon Aurora (PostgreSQL only) - <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using Amazon RDS
+     *        Extended Support</a> in the <i>Amazon Aurora User Guide</i>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon RDS - <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using
+     *        Amazon RDS Extended Support</a> in the <i>Amazon RDS User Guide</i>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
+     *        </p>
+     *        <p>
+     *        Valid Values: <code>open-source-rds-extended-support | open-source-rds-extended-support-disabled</code>
+     *        </p>
+     *        <p>
+     *        Default: <code>open-source-rds-extended-support</code>
+     */
+
+    public void setEngineLifecycleSupport(String engineLifecycleSupport) {
+        this.engineLifecycleSupport = engineLifecycleSupport;
+    }
+
+    /**
+     * <p>
+     * The life cycle type for this DB cluster.
+     * </p>
+     * <note>
+     * <p>
+     * By default, this value is set to <code>open-source-rds-extended-support</code>, which enrolls your DB cluster
+     * into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for Extended Support by
+     * setting the value to <code>open-source-rds-extended-support-disabled</code>. In this case, RDS automatically
+     * upgrades your restored DB cluster to a higher engine version, if the major engine version is past its end of
+     * standard support date.
+     * </p>
+     * </note>
+     * <p>
+     * You can use this setting to enroll your DB cluster into Amazon RDS Extended Support. With RDS Extended Support,
+     * you can run the selected major engine version on your DB cluster past the end of standard support for that engine
+     * version. For more information, see the following sections:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Amazon Aurora (PostgreSQL only) - <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using Amazon RDS
+     * Extended Support</a> in the <i>Amazon Aurora User Guide</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon RDS - <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using Amazon
+     * RDS Extended Support</a> in the <i>Amazon RDS User Guide</i>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
+     * </p>
+     * <p>
+     * Valid Values: <code>open-source-rds-extended-support | open-source-rds-extended-support-disabled</code>
+     * </p>
+     * <p>
+     * Default: <code>open-source-rds-extended-support</code>
+     * </p>
+     * 
+     * @return The life cycle type for this DB cluster.</p> <note>
+     *         <p>
+     *         By default, this value is set to <code>open-source-rds-extended-support</code>, which enrolls your DB
+     *         cluster into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for
+     *         Extended Support by setting the value to <code>open-source-rds-extended-support-disabled</code>. In this
+     *         case, RDS automatically upgrades your restored DB cluster to a higher engine version, if the major engine
+     *         version is past its end of standard support date.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         You can use this setting to enroll your DB cluster into Amazon RDS Extended Support. With RDS Extended
+     *         Support, you can run the selected major engine version on your DB cluster past the end of standard
+     *         support for that engine version. For more information, see the following sections:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Amazon Aurora (PostgreSQL only) - <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using Amazon
+     *         RDS Extended Support</a> in the <i>Amazon Aurora User Guide</i>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon RDS - <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using
+     *         Amazon RDS Extended Support</a> in the <i>Amazon RDS User Guide</i>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
+     *         </p>
+     *         <p>
+     *         Valid Values: <code>open-source-rds-extended-support | open-source-rds-extended-support-disabled</code>
+     *         </p>
+     *         <p>
+     *         Default: <code>open-source-rds-extended-support</code>
+     */
+
+    public String getEngineLifecycleSupport() {
+        return this.engineLifecycleSupport;
+    }
+
+    /**
+     * <p>
+     * The life cycle type for this DB cluster.
+     * </p>
+     * <note>
+     * <p>
+     * By default, this value is set to <code>open-source-rds-extended-support</code>, which enrolls your DB cluster
+     * into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for Extended Support by
+     * setting the value to <code>open-source-rds-extended-support-disabled</code>. In this case, RDS automatically
+     * upgrades your restored DB cluster to a higher engine version, if the major engine version is past its end of
+     * standard support date.
+     * </p>
+     * </note>
+     * <p>
+     * You can use this setting to enroll your DB cluster into Amazon RDS Extended Support. With RDS Extended Support,
+     * you can run the selected major engine version on your DB cluster past the end of standard support for that engine
+     * version. For more information, see the following sections:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Amazon Aurora (PostgreSQL only) - <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using Amazon RDS
+     * Extended Support</a> in the <i>Amazon Aurora User Guide</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon RDS - <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using Amazon
+     * RDS Extended Support</a> in the <i>Amazon RDS User Guide</i>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
+     * </p>
+     * <p>
+     * Valid Values: <code>open-source-rds-extended-support | open-source-rds-extended-support-disabled</code>
+     * </p>
+     * <p>
+     * Default: <code>open-source-rds-extended-support</code>
+     * </p>
+     * 
+     * @param engineLifecycleSupport
+     *        The life cycle type for this DB cluster.</p> <note>
+     *        <p>
+     *        By default, this value is set to <code>open-source-rds-extended-support</code>, which enrolls your DB
+     *        cluster into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for
+     *        Extended Support by setting the value to <code>open-source-rds-extended-support-disabled</code>. In this
+     *        case, RDS automatically upgrades your restored DB cluster to a higher engine version, if the major engine
+     *        version is past its end of standard support date.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        You can use this setting to enroll your DB cluster into Amazon RDS Extended Support. With RDS Extended
+     *        Support, you can run the selected major engine version on your DB cluster past the end of standard support
+     *        for that engine version. For more information, see the following sections:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Amazon Aurora (PostgreSQL only) - <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html">Using Amazon RDS
+     *        Extended Support</a> in the <i>Amazon Aurora User Guide</i>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon RDS - <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html">Using
+     *        Amazon RDS Extended Support</a> in the <i>Amazon RDS User Guide</i>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
+     *        </p>
+     *        <p>
+     *        Valid Values: <code>open-source-rds-extended-support | open-source-rds-extended-support-disabled</code>
+     *        </p>
+     *        <p>
+     *        Default: <code>open-source-rds-extended-support</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBClusterToPointInTimeRequest withEngineLifecycleSupport(String engineLifecycleSupport) {
+        setEngineLifecycleSupport(engineLifecycleSupport);
         return this;
     }
 
@@ -4340,7 +4738,13 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
         if (getServerlessV2ScalingConfiguration() != null)
             sb.append("ServerlessV2ScalingConfiguration: ").append(getServerlessV2ScalingConfiguration()).append(",");
         if (getNetworkType() != null)
-            sb.append("NetworkType: ").append(getNetworkType());
+            sb.append("NetworkType: ").append(getNetworkType()).append(",");
+        if (getSourceDbClusterResourceId() != null)
+            sb.append("SourceDbClusterResourceId: ").append(getSourceDbClusterResourceId()).append(",");
+        if (getRdsCustomClusterConfiguration() != null)
+            sb.append("RdsCustomClusterConfiguration: ").append(getRdsCustomClusterConfiguration()).append(",");
+        if (getEngineLifecycleSupport() != null)
+            sb.append("EngineLifecycleSupport: ").append(getEngineLifecycleSupport());
         sb.append("}");
         return sb.toString();
     }
@@ -4465,6 +4869,19 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
             return false;
         if (other.getNetworkType() != null && other.getNetworkType().equals(this.getNetworkType()) == false)
             return false;
+        if (other.getSourceDbClusterResourceId() == null ^ this.getSourceDbClusterResourceId() == null)
+            return false;
+        if (other.getSourceDbClusterResourceId() != null && other.getSourceDbClusterResourceId().equals(this.getSourceDbClusterResourceId()) == false)
+            return false;
+        if (other.getRdsCustomClusterConfiguration() == null ^ this.getRdsCustomClusterConfiguration() == null)
+            return false;
+        if (other.getRdsCustomClusterConfiguration() != null
+                && other.getRdsCustomClusterConfiguration().equals(this.getRdsCustomClusterConfiguration()) == false)
+            return false;
+        if (other.getEngineLifecycleSupport() == null ^ this.getEngineLifecycleSupport() == null)
+            return false;
+        if (other.getEngineLifecycleSupport() != null && other.getEngineLifecycleSupport().equals(this.getEngineLifecycleSupport()) == false)
+            return false;
         return true;
     }
 
@@ -4500,6 +4917,9 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
         hashCode = prime * hashCode + ((getServerlessV2ScalingConfiguration() == null) ? 0 : getServerlessV2ScalingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getNetworkType() == null) ? 0 : getNetworkType().hashCode());
+        hashCode = prime * hashCode + ((getSourceDbClusterResourceId() == null) ? 0 : getSourceDbClusterResourceId().hashCode());
+        hashCode = prime * hashCode + ((getRdsCustomClusterConfiguration() == null) ? 0 : getRdsCustomClusterConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getEngineLifecycleSupport() == null) ? 0 : getEngineLifecycleSupport().hashCode());
         return hashCode;
     }
 

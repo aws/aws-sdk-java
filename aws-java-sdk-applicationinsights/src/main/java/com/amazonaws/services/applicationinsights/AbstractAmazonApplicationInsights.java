@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,11 @@ import com.amazonaws.*;
 public class AbstractAmazonApplicationInsights implements AmazonApplicationInsights {
 
     protected AbstractAmazonApplicationInsights() {
+    }
+
+    @Override
+    public AddWorkloadResult addWorkload(AddWorkloadRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -99,6 +104,11 @@ public class AbstractAmazonApplicationInsights implements AmazonApplicationInsig
     }
 
     @Override
+    public DescribeWorkloadResult describeWorkload(DescribeWorkloadRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListApplicationsResult listApplications(ListApplicationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -134,6 +144,16 @@ public class AbstractAmazonApplicationInsights implements AmazonApplicationInsig
     }
 
     @Override
+    public ListWorkloadsResult listWorkloads(ListWorkloadsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RemoveWorkloadResult removeWorkload(RemoveWorkloadRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -160,6 +180,16 @@ public class AbstractAmazonApplicationInsights implements AmazonApplicationInsig
 
     @Override
     public UpdateLogPatternResult updateLogPattern(UpdateLogPatternRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateProblemResult updateProblem(UpdateProblemRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateWorkloadResult updateWorkload(UpdateWorkloadRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

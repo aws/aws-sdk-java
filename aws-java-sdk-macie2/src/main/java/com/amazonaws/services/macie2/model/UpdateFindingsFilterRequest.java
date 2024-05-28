@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,25 @@ public class UpdateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE,
+     * The action to perform on findings that match the filter criteria (findingCriteria). Valid values are: ARCHIVE,
      * suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.
      * </p>
      */
     private String action;
     /**
      * <p>
+     * A unique, case-sensitive token that you provide to ensure the idempotency of the request.
+     * </p>
+     */
+    private String clientToken;
+    /**
+     * <p>
      * A custom description of the filter. The description can contain as many as 512 characters.
      * </p>
      * <p>
-     * We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users
-     * might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.
+     * We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of
+     * your account might be able to see this description, depending on the actions that they're allowed to perform in
+     * Amazon Macie.
      * </p>
      */
     private String description;
@@ -60,8 +67,8 @@ public class UpdateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
      * characters.
      * </p>
      * <p>
-     * We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users might be
-     * able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.
+     * We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your
+     * account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.
      * </p>
      */
     private String name;
@@ -73,21 +80,15 @@ public class UpdateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private Integer position;
-    /**
-     * <p>
-     * A unique, case-sensitive token that you provide to ensure the idempotency of the request.
-     * </p>
-     */
-    private String clientToken;
 
     /**
      * <p>
-     * The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE,
+     * The action to perform on findings that match the filter criteria (findingCriteria). Valid values are: ARCHIVE,
      * suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.
      * </p>
      * 
      * @param action
-     *        The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are:
+     *        The action to perform on findings that match the filter criteria (findingCriteria). Valid values are:
      *        ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the
      *        findings.
      * @see FindingsFilterAction
@@ -99,11 +100,11 @@ public class UpdateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE,
+     * The action to perform on findings that match the filter criteria (findingCriteria). Valid values are: ARCHIVE,
      * suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.
      * </p>
      * 
-     * @return The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are:
+     * @return The action to perform on findings that match the filter criteria (findingCriteria). Valid values are:
      *         ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the
      *         findings.
      * @see FindingsFilterAction
@@ -115,12 +116,12 @@ public class UpdateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE,
+     * The action to perform on findings that match the filter criteria (findingCriteria). Valid values are: ARCHIVE,
      * suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.
      * </p>
      * 
      * @param action
-     *        The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are:
+     *        The action to perform on findings that match the filter criteria (findingCriteria). Valid values are:
      *        ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the
      *        findings.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -134,12 +135,12 @@ public class UpdateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE,
+     * The action to perform on findings that match the filter criteria (findingCriteria). Valid values are: ARCHIVE,
      * suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.
      * </p>
      * 
      * @param action
-     *        The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are:
+     *        The action to perform on findings that match the filter criteria (findingCriteria). Valid values are:
      *        ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the
      *        findings.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -153,19 +154,60 @@ public class UpdateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
+     * A unique, case-sensitive token that you provide to ensure the idempotency of the request.
+     * </p>
+     * 
+     * @param clientToken
+     *        A unique, case-sensitive token that you provide to ensure the idempotency of the request.
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * <p>
+     * A unique, case-sensitive token that you provide to ensure the idempotency of the request.
+     * </p>
+     * 
+     * @return A unique, case-sensitive token that you provide to ensure the idempotency of the request.
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * <p>
+     * A unique, case-sensitive token that you provide to ensure the idempotency of the request.
+     * </p>
+     * 
+     * @param clientToken
+     *        A unique, case-sensitive token that you provide to ensure the idempotency of the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFindingsFilterRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
+        return this;
+    }
+
+    /**
+     * <p>
      * A custom description of the filter. The description can contain as many as 512 characters.
      * </p>
      * <p>
-     * We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users
-     * might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.
+     * We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of
+     * your account might be able to see this description, depending on the actions that they're allowed to perform in
+     * Amazon Macie.
      * </p>
      * 
      * @param description
      *        A custom description of the filter. The description can contain as many as 512 characters.</p>
      *        <p>
      *        We strongly recommend that you avoid including any sensitive data in the description of a filter. Other
-     *        users might be able to see this description, depending on the actions that they're allowed to perform in
-     *        Amazon Macie.
+     *        users of your account might be able to see this description, depending on the actions that they're allowed
+     *        to perform in Amazon Macie.
      */
 
     public void setDescription(String description) {
@@ -177,15 +219,16 @@ public class UpdateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
      * A custom description of the filter. The description can contain as many as 512 characters.
      * </p>
      * <p>
-     * We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users
-     * might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.
+     * We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of
+     * your account might be able to see this description, depending on the actions that they're allowed to perform in
+     * Amazon Macie.
      * </p>
      * 
      * @return A custom description of the filter. The description can contain as many as 512 characters.</p>
      *         <p>
      *         We strongly recommend that you avoid including any sensitive data in the description of a filter. Other
-     *         users might be able to see this description, depending on the actions that they're allowed to perform in
-     *         Amazon Macie.
+     *         users of your account might be able to see this description, depending on the actions that they're
+     *         allowed to perform in Amazon Macie.
      */
 
     public String getDescription() {
@@ -197,16 +240,17 @@ public class UpdateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
      * A custom description of the filter. The description can contain as many as 512 characters.
      * </p>
      * <p>
-     * We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users
-     * might be able to see this description, depending on the actions that they're allowed to perform in Amazon Macie.
+     * We strongly recommend that you avoid including any sensitive data in the description of a filter. Other users of
+     * your account might be able to see this description, depending on the actions that they're allowed to perform in
+     * Amazon Macie.
      * </p>
      * 
      * @param description
      *        A custom description of the filter. The description can contain as many as 512 characters.</p>
      *        <p>
      *        We strongly recommend that you avoid including any sensitive data in the description of a filter. Other
-     *        users might be able to see this description, depending on the actions that they're allowed to perform in
-     *        Amazon Macie.
+     *        users of your account might be able to see this description, depending on the actions that they're allowed
+     *        to perform in Amazon Macie.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -301,16 +345,17 @@ public class UpdateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
      * characters.
      * </p>
      * <p>
-     * We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users might be
-     * able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.
+     * We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your
+     * account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.
      * </p>
      * 
      * @param name
      *        A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64
      *        characters.</p>
      *        <p>
-     *        We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users
-     *        might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.
+     *        We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of
+     *        your account might be able to see this name, depending on the actions that they're allowed to perform in
+     *        Amazon Macie.
      */
 
     public void setName(String name) {
@@ -323,15 +368,16 @@ public class UpdateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
      * characters.
      * </p>
      * <p>
-     * We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users might be
-     * able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.
+     * We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your
+     * account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.
      * </p>
      * 
      * @return A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64
      *         characters.</p>
      *         <p>
-     *         We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users
-     *         might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.
+     *         We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of
+     *         your account might be able to see this name, depending on the actions that they're allowed to perform in
+     *         Amazon Macie.
      */
 
     public String getName() {
@@ -344,16 +390,17 @@ public class UpdateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
      * characters.
      * </p>
      * <p>
-     * We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users might be
-     * able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.
+     * We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of your
+     * account might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.
      * </p>
      * 
      * @param name
      *        A custom name for the filter. The name must contain at least 3 characters and can contain as many as 64
      *        characters.</p>
      *        <p>
-     *        We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users
-     *        might be able to see this name, depending on the actions that they're allowed to perform in Amazon Macie.
+     *        We strongly recommend that you avoid including any sensitive data in the name of a filter. Other users of
+     *        your account might be able to see this name, depending on the actions that they're allowed to perform in
+     *        Amazon Macie.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -415,46 +462,6 @@ public class UpdateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * <p>
-     * A unique, case-sensitive token that you provide to ensure the idempotency of the request.
-     * </p>
-     * 
-     * @param clientToken
-     *        A unique, case-sensitive token that you provide to ensure the idempotency of the request.
-     */
-
-    public void setClientToken(String clientToken) {
-        this.clientToken = clientToken;
-    }
-
-    /**
-     * <p>
-     * A unique, case-sensitive token that you provide to ensure the idempotency of the request.
-     * </p>
-     * 
-     * @return A unique, case-sensitive token that you provide to ensure the idempotency of the request.
-     */
-
-    public String getClientToken() {
-        return this.clientToken;
-    }
-
-    /**
-     * <p>
-     * A unique, case-sensitive token that you provide to ensure the idempotency of the request.
-     * </p>
-     * 
-     * @param clientToken
-     *        A unique, case-sensitive token that you provide to ensure the idempotency of the request.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateFindingsFilterRequest withClientToken(String clientToken) {
-        setClientToken(clientToken);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -468,6 +475,8 @@ public class UpdateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
         sb.append("{");
         if (getAction() != null)
             sb.append("Action: ").append(getAction()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getFindingCriteria() != null)
@@ -477,9 +486,7 @@ public class UpdateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getPosition() != null)
-            sb.append("Position: ").append(getPosition()).append(",");
-        if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+            sb.append("Position: ").append(getPosition());
         sb.append("}");
         return sb.toString();
     }
@@ -497,6 +504,10 @@ public class UpdateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
         if (other.getAction() == null ^ this.getAction() == null)
             return false;
         if (other.getAction() != null && other.getAction().equals(this.getAction()) == false)
+            return false;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
@@ -518,10 +529,6 @@ public class UpdateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getPosition() != null && other.getPosition().equals(this.getPosition()) == false)
             return false;
-        if (other.getClientToken() == null ^ this.getClientToken() == null)
-            return false;
-        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
-            return false;
         return true;
     }
 
@@ -531,12 +538,12 @@ public class UpdateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getFindingCriteria() == null) ? 0 : getFindingCriteria().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getPosition() == null) ? 0 : getPosition().hashCode());
-        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }
 

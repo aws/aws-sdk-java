@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -115,6 +115,13 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
      * </p>
      */
     private String roleArn;
+    /**
+     * <p>
+     * The ARN of an IAM role for Amazon Pinpoint to use to send email from your campaigns or journeys through Amazon
+     * SES.
+     * </p>
+     */
+    private String orchestrationSendingRoleArn;
     /**
      * <p>
      * The current version of the email channel.
@@ -756,6 +763,52 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
 
     /**
      * <p>
+     * The ARN of an IAM role for Amazon Pinpoint to use to send email from your campaigns or journeys through Amazon
+     * SES.
+     * </p>
+     * 
+     * @param orchestrationSendingRoleArn
+     *        The ARN of an IAM role for Amazon Pinpoint to use to send email from your campaigns or journeys through
+     *        Amazon SES.
+     */
+
+    public void setOrchestrationSendingRoleArn(String orchestrationSendingRoleArn) {
+        this.orchestrationSendingRoleArn = orchestrationSendingRoleArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of an IAM role for Amazon Pinpoint to use to send email from your campaigns or journeys through Amazon
+     * SES.
+     * </p>
+     * 
+     * @return The ARN of an IAM role for Amazon Pinpoint to use to send email from your campaigns or journeys through
+     *         Amazon SES.
+     */
+
+    public String getOrchestrationSendingRoleArn() {
+        return this.orchestrationSendingRoleArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of an IAM role for Amazon Pinpoint to use to send email from your campaigns or journeys through Amazon
+     * SES.
+     * </p>
+     * 
+     * @param orchestrationSendingRoleArn
+     *        The ARN of an IAM role for Amazon Pinpoint to use to send email from your campaigns or journeys through
+     *        Amazon SES.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EmailChannelResponse withOrchestrationSendingRoleArn(String orchestrationSendingRoleArn) {
+        setOrchestrationSendingRoleArn(orchestrationSendingRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * The current version of the email channel.
      * </p>
      * 
@@ -834,6 +887,8 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
             sb.append("Platform: ").append(getPlatform()).append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getOrchestrationSendingRoleArn() != null)
+            sb.append("OrchestrationSendingRoleArn: ").append(getOrchestrationSendingRoleArn()).append(",");
         if (getVersion() != null)
             sb.append("Version: ").append(getVersion());
         sb.append("}");
@@ -906,6 +961,10 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
+        if (other.getOrchestrationSendingRoleArn() == null ^ this.getOrchestrationSendingRoleArn() == null)
+            return false;
+        if (other.getOrchestrationSendingRoleArn() != null && other.getOrchestrationSendingRoleArn().equals(this.getOrchestrationSendingRoleArn()) == false)
+            return false;
         if (other.getVersion() == null ^ this.getVersion() == null)
             return false;
         if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
@@ -932,6 +991,7 @@ public class EmailChannelResponse implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getMessagesPerSecond() == null) ? 0 : getMessagesPerSecond().hashCode());
         hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getOrchestrationSendingRoleArn() == null) ? 0 : getOrchestrationSendingRoleArn().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         return hashCode;
     }

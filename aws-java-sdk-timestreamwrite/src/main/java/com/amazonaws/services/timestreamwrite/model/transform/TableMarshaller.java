@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,8 @@ public class TableMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdatedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<StructuredPojo> MAGNETICSTOREWRITEPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MagneticStoreWriteProperties").build();
+    private static final MarshallingInfo<StructuredPojo> SCHEMA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Schema").build();
 
     private static final TableMarshaller instance = new TableMarshaller();
 
@@ -68,6 +70,7 @@ public class TableMarshaller {
             protocolMarshaller.marshall(table.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(table.getLastUpdatedTime(), LASTUPDATEDTIME_BINDING);
             protocolMarshaller.marshall(table.getMagneticStoreWriteProperties(), MAGNETICSTOREWRITEPROPERTIES_BINDING);
+            protocolMarshaller.marshall(table.getSchema(), SCHEMA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

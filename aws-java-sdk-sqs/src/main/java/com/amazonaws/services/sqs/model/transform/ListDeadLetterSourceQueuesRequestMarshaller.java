@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,45 +15,47 @@ package com.amazonaws.services.sqs.model.transform;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
-import com.amazonaws.Request;
-import com.amazonaws.DefaultRequest;
-import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.sqs.model.*;
-import com.amazonaws.transform.Marshaller;
-import com.amazonaws.util.StringUtils;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * ListDeadLetterSourceQueuesRequest Marshaller
+ * ListDeadLetterSourceQueuesRequestMarshaller
  */
-
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListDeadLetterSourceQueuesRequestMarshaller implements Marshaller<Request<ListDeadLetterSourceQueuesRequest>, ListDeadLetterSourceQueuesRequest> {
+@SdkInternalApi
+public class ListDeadLetterSourceQueuesRequestMarshaller {
 
-    public Request<ListDeadLetterSourceQueuesRequest> marshall(ListDeadLetterSourceQueuesRequest listDeadLetterSourceQueuesRequest) {
+    private static final MarshallingInfo<String> QUEUEURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("QueueUrl").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
+
+    private static final ListDeadLetterSourceQueuesRequestMarshaller instance = new ListDeadLetterSourceQueuesRequestMarshaller();
+
+    public static ListDeadLetterSourceQueuesRequestMarshaller getInstance() {
+        return instance;
+    }
+
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(ListDeadLetterSourceQueuesRequest listDeadLetterSourceQueuesRequest, ProtocolMarshaller protocolMarshaller) {
 
         if (listDeadLetterSourceQueuesRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
-        Request<ListDeadLetterSourceQueuesRequest> request = new DefaultRequest<ListDeadLetterSourceQueuesRequest>(listDeadLetterSourceQueuesRequest,
-                "AmazonSQS");
-        request.addParameter("Action", "ListDeadLetterSourceQueues");
-        request.addParameter("Version", "2012-11-05");
-        request.setHttpMethod(HttpMethodName.POST);
-
-        if (listDeadLetterSourceQueuesRequest.getQueueUrl() != null) {
-            request.addParameter("QueueUrl", StringUtils.fromString(listDeadLetterSourceQueuesRequest.getQueueUrl()));
+        try {
+            protocolMarshaller.marshall(listDeadLetterSourceQueuesRequest.getQueueUrl(), QUEUEURL_BINDING);
+            protocolMarshaller.marshall(listDeadLetterSourceQueuesRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(listDeadLetterSourceQueuesRequest.getMaxResults(), MAXRESULTS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
-
-        if (listDeadLetterSourceQueuesRequest.getNextToken() != null) {
-            request.addParameter("NextToken", StringUtils.fromString(listDeadLetterSourceQueuesRequest.getNextToken()));
-        }
-
-        if (listDeadLetterSourceQueuesRequest.getMaxResults() != null) {
-            request.addParameter("MaxResults", StringUtils.fromInteger(listDeadLetterSourceQueuesRequest.getMaxResults()));
-        }
-
-        return request;
     }
 
 }

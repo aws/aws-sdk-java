@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,10 +19,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A single query to be processed. You must provide the metric to query. If no other parameters are specified,
- * Performance Insights returns all data points for the specified metric. Optionally, you can request that the data
- * points be aggregated by dimension group (<code>GroupBy</code>), and return only those data points that match your
- * criteria (<code>Filter</code>).
+ * A single query to be processed. You must provide the metric to query and append an aggregate function to the metric.
+ * For example, to find the average for the metric <code>db.load</code> you must use <code>db.load.avg</code>. Valid
+ * values for aggregate functions include <code>.avg</code>, <code>.min</code>, <code>.max</code>, and <code>.sum</code>
+ * . If no other parameters are specified, Performance Insights returns all data points for the specified metric.
+ * Optionally, you can request that the data points be aggregated by dimension group (<code>GroupBy</code>), and return
+ * only those data points that match your criteria (<code>Filter</code>).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/MetricQuery" target="_top">AWS API
@@ -54,6 +56,13 @@ public class MetricQuery implements Serializable, Cloneable, StructuredPojo {
      * The counter metrics listed in <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS"
      * >Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The counter metrics listed in <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS"
+     * >Performance Insights operating system counters</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -120,6 +129,13 @@ public class MetricQuery implements Serializable, Cloneable, StructuredPojo {
      * >Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The counter metrics listed in <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS"
+     * >Performance Insights operating system counters</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If the number of active sessions is less than an internal Performance Insights threshold,
@@ -152,6 +168,13 @@ public class MetricQuery implements Serializable, Cloneable, StructuredPojo {
      *        The counter metrics listed in <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS"
      *        >Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The counter metrics listed in <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS"
+     *        >Performance Insights operating system counters</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        </li>
      *        </ul>
@@ -193,6 +216,13 @@ public class MetricQuery implements Serializable, Cloneable, StructuredPojo {
      * >Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The counter metrics listed in <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS"
+     * >Performance Insights operating system counters</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If the number of active sessions is less than an internal Performance Insights threshold,
@@ -224,6 +254,13 @@ public class MetricQuery implements Serializable, Cloneable, StructuredPojo {
      *         The counter metrics listed in <a href=
      *         "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS"
      *         >Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The counter metrics listed in <a href=
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS"
+     *         >Performance Insights operating system counters</a> in the <i>Amazon RDS User Guide</i>.
      *         </p>
      *         </li>
      *         </ul>
@@ -265,6 +302,13 @@ public class MetricQuery implements Serializable, Cloneable, StructuredPojo {
      * >Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The counter metrics listed in <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS"
+     * >Performance Insights operating system counters</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * If the number of active sessions is less than an internal Performance Insights threshold,
@@ -297,6 +341,13 @@ public class MetricQuery implements Serializable, Cloneable, StructuredPojo {
      *        The counter metrics listed in <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS"
      *        >Performance Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The counter metrics listed in <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS"
+     *        >Performance Insights operating system counters</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        </li>
      *        </ul>

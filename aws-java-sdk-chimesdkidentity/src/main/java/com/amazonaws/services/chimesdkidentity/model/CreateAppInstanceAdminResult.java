@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,8 @@ public class CreateAppInstanceAdminResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name and ARN of the admin for the <code>AppInstance</code>.
+     * The ARN and name of the administrator, the ARN of the <code>AppInstance</code>, and the created and last-updated
+     * timestamps. All timestamps use epoch milliseconds.
      * </p>
      */
     private Identity appInstanceAdmin;
@@ -38,11 +39,13 @@ public class CreateAppInstanceAdminResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name and ARN of the admin for the <code>AppInstance</code>.
+     * The ARN and name of the administrator, the ARN of the <code>AppInstance</code>, and the created and last-updated
+     * timestamps. All timestamps use epoch milliseconds.
      * </p>
      * 
      * @param appInstanceAdmin
-     *        The name and ARN of the admin for the <code>AppInstance</code>.
+     *        The ARN and name of the administrator, the ARN of the <code>AppInstance</code>, and the created and
+     *        last-updated timestamps. All timestamps use epoch milliseconds.
      */
 
     public void setAppInstanceAdmin(Identity appInstanceAdmin) {
@@ -51,10 +54,12 @@ public class CreateAppInstanceAdminResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name and ARN of the admin for the <code>AppInstance</code>.
+     * The ARN and name of the administrator, the ARN of the <code>AppInstance</code>, and the created and last-updated
+     * timestamps. All timestamps use epoch milliseconds.
      * </p>
      * 
-     * @return The name and ARN of the admin for the <code>AppInstance</code>.
+     * @return The ARN and name of the administrator, the ARN of the <code>AppInstance</code>, and the created and
+     *         last-updated timestamps. All timestamps use epoch milliseconds.
      */
 
     public Identity getAppInstanceAdmin() {
@@ -63,11 +68,13 @@ public class CreateAppInstanceAdminResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name and ARN of the admin for the <code>AppInstance</code>.
+     * The ARN and name of the administrator, the ARN of the <code>AppInstance</code>, and the created and last-updated
+     * timestamps. All timestamps use epoch milliseconds.
      * </p>
      * 
      * @param appInstanceAdmin
-     *        The name and ARN of the admin for the <code>AppInstance</code>.
+     *        The ARN and name of the administrator, the ARN of the <code>AppInstance</code>, and the created and
+     *        last-updated timestamps. All timestamps use epoch milliseconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

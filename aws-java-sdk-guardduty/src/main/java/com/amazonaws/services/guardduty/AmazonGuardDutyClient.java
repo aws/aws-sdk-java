@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.guardduty.AmazonGuardDutyClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.guardduty.model.*;
+
 import com.amazonaws.services.guardduty.model.transform.*;
 
 /**
@@ -51,22 +52,24 @@ import com.amazonaws.services.guardduty.model.transform.*;
  * until the service call completes.
  * <p>
  * <p>
- * Amazon GuardDuty is a continuous security monitoring service that analyzes and processes the following data sources:
- * VPC flow logs, Amazon Web Services CloudTrail management event logs, CloudTrail S3 data event logs, EKS audit logs,
- * and DNS logs. It uses threat intelligence feeds (such as lists of malicious IPs and domains) and machine learning to
- * identify unexpected, potentially unauthorized, and malicious activity within your Amazon Web Services environment.
- * This can include issues like escalations of privileges, uses of exposed credentials, or communication with malicious
- * IPs, URLs, or domains. For example, GuardDuty can detect compromised EC2 instances that serve malware or mine
- * bitcoin.
+ * Amazon GuardDuty is a continuous security monitoring service that analyzes and processes the following foundational
+ * data sources - VPC flow logs, Amazon Web Services CloudTrail management event logs, CloudTrail S3 data event logs,
+ * EKS audit logs, DNS logs, Amazon EBS volume data, runtime activity belonging to container workloads, such as Amazon
+ * EKS, Amazon ECS (including Amazon Web Services Fargate), and Amazon EC2 instances. It uses threat intelligence feeds,
+ * such as lists of malicious IPs and domains, and machine learning to identify unexpected, potentially unauthorized,
+ * and malicious activity within your Amazon Web Services environment. This can include issues like escalations of
+ * privileges, uses of exposed credentials, or communication with malicious IPs, domains, or presence of malware on your
+ * Amazon EC2 instances and container workloads. For example, GuardDuty can detect compromised EC2 instances and
+ * container workloads serving malware, or mining bitcoin.
  * </p>
  * <p>
- * GuardDuty also monitors Amazon Web Services account access behavior for signs of compromise. Some examples of this
- * are unauthorized infrastructure deployments such as EC2 instances deployed in a Region that has never been used, or
- * unusual API calls like a password policy change to reduce password strength.
+ * GuardDuty also monitors Amazon Web Services account access behavior for signs of compromise, such as unauthorized
+ * infrastructure deployments like EC2 instances deployed in a Region that has never been used, or unusual API calls
+ * like a password policy change to reduce password strength.
  * </p>
  * <p>
- * GuardDuty informs you of the status of your Amazon Web Services environment by producing security findings that you
- * can view in the GuardDuty console or through Amazon CloudWatch events. For more information, see the <i> <a
+ * GuardDuty informs you about the status of your Amazon Web Services environment by producing security findings that
+ * you can view in the GuardDuty console or through Amazon EventBridge. For more information, see the <i> <a
  * href="https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html">Amazon GuardDuty User Guide</a> </i>.
  * </p>
  */
@@ -93,6 +96,12 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .withContentTypeOverride("application/json")
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.guardduty.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.guardduty.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.guardduty.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
@@ -336,9 +345,34 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Creates a single Amazon GuardDuty detector. A detector is a resource that represents the GuardDuty service. To
-     * start using GuardDuty, you must create a detector in each Region where you enable the service. You can have only
-     * one detector per account per Region. All data sources are enabled in a new detector by default.
+     * Creates a single GuardDuty detector. A detector is a resource that represents the GuardDuty service. To start
+     * using GuardDuty, you must create a detector in each Region where you enable the service. You can have only one
+     * detector per account per Region. All data sources are enabled in a new detector by default.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When you don't specify any <code>features</code>, with an exception to <code>RUNTIME_MONITORING</code>, all the
+     * optional features are enabled by default.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When you specify some of the <code>features</code>, any feature that is not specified in the API call gets
+     * enabled by default, with an exception to <code>RUNTIME_MONITORING</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Specifying both EKS Runtime Monitoring (<code>EKS_RUNTIME_MONITORING</code>) and Runtime Monitoring (
+     * <code>RUNTIME_MONITORING</code>) will cause an error. You can add only one of these two features because Runtime
+     * Monitoring already includes the threat detection for Amazon EKS resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html">Runtime Monitoring</a>.
+     * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
      * </p>
      * 
      * @param createDetectorRequest
@@ -397,7 +431,9 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Creates a filter using the specified finding criteria.
+     * Creates a filter using the specified finding criteria. The maximum number of saved filters per Amazon Web
+     * Services account per Region is 100. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_limits.html">Quotas for GuardDuty</a>.
      * </p>
      * 
      * @param createFilterRequest
@@ -523,15 +559,30 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
      * through an organization.
      * </p>
      * <p>
-     * When using <code>Create Members</code> as an organizations delegated administrator this action will enable
-     * GuardDuty in the added member accounts, with the exception of the organization delegated administrator account,
-     * which must enable GuardDuty prior to being added as a member.
+     * As a delegated administrator, using <code>CreateMembers</code> will enable GuardDuty in the added member
+     * accounts, with the exception of the organization delegated administrator account. A delegated administrator must
+     * enable GuardDuty prior to being added as a member.
      * </p>
      * <p>
-     * If you are adding accounts by invitation use this action after GuardDuty has been enabled in potential member
-     * accounts and before using <a
-     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">
-     * <code>Invite Members</code> </a>.
+     * When you use CreateMembers as an Organizations delegated administrator, GuardDuty applies your organization's
+     * auto-enable settings to the member accounts in this request, irrespective of the accounts being new or existing
+     * members. For more information about the existing auto-enable settings for your organization, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DescribeOrganizationConfiguration.html"
+     * >DescribeOrganizationConfiguration</a>.
+     * </p>
+     * <p>
+     * If you disassociate a member account that was added by invitation, the member account details obtained from this
+     * API, including the associated email addresses, will be retained. This is done so that the delegated administrator
+     * can invoke the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a> API
+     * without the need to invoke the CreateMembers API again. To remove the details associated with a member account,
+     * the delegated administrator must invoke the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a> API.
+     * </p>
+     * <p>
+     * When the member accounts added through Organizations are later disassociated, you (administrator) can't invite
+     * them by calling the InviteMembers API. You can create an association with these member accounts again only by
+     * calling the CreateMembers API.
      * </p>
      * 
      * @param createMembersRequest
@@ -652,8 +703,8 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Generates example findings of types specified by the list of finding types. If 'NULL' is specified for
-     * <code>findingTypes</code>, the API generates example findings of all supported finding types.
+     * Generates sample findings of types specified by the list of finding types. If 'NULL' is specified for
+     * <code>findingTypes</code>, the API generates sample findings of all supported finding types.
      * </p>
      * 
      * @param createSampleFindingsRequest
@@ -1072,6 +1123,10 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
      * <p>
      * Deletes GuardDuty member accounts (to the current GuardDuty administrator account) specified by the account IDs.
      * </p>
+     * <p>
+     * With <code>autoEnableOrganizationMembers</code> configuration for your organization set to <code>ALL</code>,
+     * you'll receive an error if you attempt to disable GuardDuty for a member account in your organization.
+     * </p>
      * 
      * @param deleteMembersRequest
      * @return Result of the DeleteMembers operation returned by the service.
@@ -1252,6 +1307,11 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
      * Returns a list of malware scans. Each member account can view the malware scans for their own accounts. An
      * administrator can view the malware scans for all the member accounts.
      * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
+     * </p>
      * 
      * @param describeMalwareScansRequest
      * @return Result of the DescribeMalwareScans operation returned by the service.
@@ -1310,6 +1370,11 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     /**
      * <p>
      * Returns information about the account selected as the delegated administrator for GuardDuty.
+     * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
      * </p>
      * 
      * @param describeOrganizationConfigurationRequest
@@ -1432,7 +1497,8 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Disables an Amazon Web Services account within the Organization as the GuardDuty delegated administrator.
+     * Removes the existing GuardDuty delegated administrator of the organization. Only the organization's management
+     * account can run this API operation.
      * </p>
      * 
      * @param disableOrganizationAdminAccountRequest
@@ -1496,6 +1562,21 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
      * <p>
      * Disassociates the current GuardDuty member account from its administrator account.
      * </p>
+     * <p>
+     * When you disassociate an invited member from a GuardDuty delegated administrator, the member account details
+     * obtained from the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">CreateMembers</a> API,
+     * including the associated email addresses, are retained. This is done so that the delegated administrator can
+     * invoke the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a> API
+     * without the need to invoke the CreateMembers API again. To remove the details associated with a member account,
+     * the delegated administrator must invoke the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a> API.
+     * </p>
+     * <p>
+     * With <code>autoEnableOrganizationMembers</code> configuration for your organization set to <code>ALL</code>,
+     * you'll receive an error if you attempt to disable GuardDuty in a member account.
+     * </p>
      * 
      * @param disassociateFromAdministratorAccountRequest
      * @return Result of the DisassociateFromAdministratorAccount operation returned by the service.
@@ -1558,6 +1639,17 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
      * <p>
      * Disassociates the current GuardDuty member account from its administrator account.
      * </p>
+     * <p>
+     * When you disassociate an invited member from a GuardDuty delegated administrator, the member account details
+     * obtained from the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">CreateMembers</a> API,
+     * including the associated email addresses, are retained. This is done so that the delegated administrator can
+     * invoke the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a> API
+     * without the need to invoke the CreateMembers API again. To remove the details associated with a member account,
+     * the delegated administrator must invoke the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a> API.
+     * </p>
      * 
      * @param disassociateFromMasterAccountRequest
      * @return Result of the DisassociateFromMasterAccount operation returned by the service.
@@ -1618,7 +1710,37 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Disassociates GuardDuty member accounts (to the current administrator account) specified by the account IDs.
+     * Disassociates GuardDuty member accounts (from the current administrator account) specified by the account IDs.
+     * </p>
+     * <p>
+     * When you disassociate an invited member from a GuardDuty delegated administrator, the member account details
+     * obtained from the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">CreateMembers</a> API,
+     * including the associated email addresses, are retained. This is done so that the delegated administrator can
+     * invoke the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a> API
+     * without the need to invoke the CreateMembers API again. To remove the details associated with a member account,
+     * the delegated administrator must invoke the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a> API.
+     * </p>
+     * <p>
+     * With <code>autoEnableOrganizationMembers</code> configuration for your organization set to <code>ALL</code>,
+     * you'll receive an error if you attempt to disassociate a member account before removing them from your
+     * organization.
+     * </p>
+     * <p>
+     * If you disassociate a member account that was added by invitation, the member account details obtained from this
+     * API, including the associated email addresses, will be retained. This is done so that the delegated administrator
+     * can invoke the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a> API
+     * without the need to invoke the CreateMembers API again. To remove the details associated with a member account,
+     * the delegated administrator must invoke the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a> API.
+     * </p>
+     * <p>
+     * When the member accounts added through Organizations are later disassociated, you (administrator) can't invite
+     * them by calling the InviteMembers API. You can create an association with these member accounts again only by
+     * calling the CreateMembers API.
      * </p>
      * 
      * @param disassociateMembersRequest
@@ -1677,7 +1799,8 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Enables an Amazon Web Services account within the organization as the GuardDuty delegated administrator.
+     * Designates an Amazon Web Services account within the organization as your GuardDuty delegated administrator. Only
+     * the organization's management account can run this API operation.
      * </p>
      * 
      * @param enableOrganizationAdminAccountRequest
@@ -1738,9 +1861,14 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Provides the details for the GuardDuty administrator account associated with the current GuardDuty member
-     * account.
+     * Provides the details of the GuardDuty administrator account associated with the current GuardDuty member account.
      * </p>
+     * <note>
+     * <p>
+     * If the organization's management account or a delegated administrator runs this API, it will return success (
+     * <code>HTTP 200</code>) but no content.
+     * </p>
+     * </note>
      * 
      * @param getAdministratorAccountRequest
      * @return Result of the GetAdministratorAccount operation returned by the service.
@@ -1800,7 +1928,74 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Retrieves aggregated statistics for your account. If you are a GuardDuty administrator, you can retrieve the
+     * statistics for all the resources associated with the active member accounts in your organization who have enabled
+     * Runtime Monitoring and have the GuardDuty security agent running on their resources.
+     * </p>
+     * 
+     * @param getCoverageStatisticsRequest
+     * @return Result of the GetCoverageStatistics operation returned by the service.
+     * @throws BadRequestException
+     *         A bad request exception object.
+     * @throws InternalServerErrorException
+     *         An internal server error exception object.
+     * @sample AmazonGuardDuty.GetCoverageStatistics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetCoverageStatistics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetCoverageStatisticsResult getCoverageStatistics(GetCoverageStatisticsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCoverageStatistics(request);
+    }
+
+    @SdkInternalApi
+    final GetCoverageStatisticsResult executeGetCoverageStatistics(GetCoverageStatisticsRequest getCoverageStatisticsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCoverageStatisticsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCoverageStatisticsRequest> request = null;
+        Response<GetCoverageStatisticsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCoverageStatisticsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCoverageStatisticsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCoverageStatistics");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCoverageStatisticsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new GetCoverageStatisticsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves an Amazon GuardDuty detector specified by the detectorId.
+     * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
      * </p>
      * 
      * @param getDetectorRequest
@@ -1978,6 +2173,11 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     /**
      * <p>
      * Lists Amazon GuardDuty findings statistics for the specified detector ID.
+     * </p>
+     * <p>
+     * There might be regional differences because some flags might not be available in all the Regions where GuardDuty
+     * is currently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
      * </p>
      * 
      * @param getFindingsStatisticsRequest
@@ -2158,6 +2358,11 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
      * <p>
      * Returns the details of the malware scan settings.
      * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
+     * </p>
      * 
      * @param getMalwareScanSettingsRequest
      * @return Result of the GetMalwareScanSettings operation returned by the service.
@@ -2279,6 +2484,11 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
      * <p>
      * Describes which data sources are enabled for the member account's detector.
      * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
+     * </p>
      * 
      * @param getMemberDetectorsRequest
      * @return Result of the GetMemberDetectors operation returned by the service.
@@ -2384,6 +2594,72 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<GetMembersResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetMembersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves how many active member accounts have each feature enabled within GuardDuty. Only a delegated GuardDuty
+     * administrator of an organization can run this API.
+     * </p>
+     * <p>
+     * When you create a new organization, it might take up to 24 hours to generate the statistics for the entire
+     * organization.
+     * </p>
+     * 
+     * @param getOrganizationStatisticsRequest
+     * @return Result of the GetOrganizationStatistics operation returned by the service.
+     * @throws BadRequestException
+     *         A bad request exception object.
+     * @throws InternalServerErrorException
+     *         An internal server error exception object.
+     * @sample AmazonGuardDuty.GetOrganizationStatistics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetOrganizationStatistics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetOrganizationStatisticsResult getOrganizationStatistics(GetOrganizationStatisticsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetOrganizationStatistics(request);
+    }
+
+    @SdkInternalApi
+    final GetOrganizationStatisticsResult executeGetOrganizationStatistics(GetOrganizationStatisticsRequest getOrganizationStatisticsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getOrganizationStatisticsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetOrganizationStatisticsRequest> request = null;
+        Response<GetOrganizationStatisticsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetOrganizationStatisticsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getOrganizationStatisticsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOrganizationStatistics");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetOrganizationStatisticsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetOrganizationStatisticsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2580,9 +2856,44 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Invites other Amazon Web Services accounts (created as members of the current Amazon Web Services account by
-     * CreateMembers) to enable GuardDuty, and allow the current Amazon Web Services account to view and manage these
-     * accounts' findings on their behalf as the GuardDuty administrator account.
+     * Invites Amazon Web Services accounts to become members of an organization administered by the Amazon Web Services
+     * account that invokes this API. If you are using Amazon Web Services Organizations to manage your GuardDuty
+     * environment, this step is not needed. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_organizations.html">Managing accounts with
+     * organizations</a>.
+     * </p>
+     * <p>
+     * To invite Amazon Web Services accounts, the first step is to ensure that GuardDuty has been enabled in the
+     * potential member accounts. You can now invoke this API to add accounts by invitation. The invited accounts can
+     * either accept or decline the invitation from their GuardDuty accounts. Each invited Amazon Web Services account
+     * can choose to accept the invitation from only one Amazon Web Services account. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_invitations.html">Managing GuardDuty accounts by
+     * invitation</a>.
+     * </p>
+     * <p>
+     * After the invite has been accepted and you choose to disassociate a member account (by using <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DisassociateMembers.html"
+     * >DisassociateMembers</a>) from your account, the details of the member account obtained by invoking <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">CreateMembers</a>,
+     * including the associated email addresses, will be retained. This is done so that you can invoke InviteMembers
+     * without the need to invoke <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">CreateMembers</a> again.
+     * To remove the details associated with a member account, you must also invoke <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a>.
+     * </p>
+     * <p>
+     * If you disassociate a member account that was added by invitation, the member account details obtained from this
+     * API, including the associated email addresses, will be retained. This is done so that the delegated administrator
+     * can invoke the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a> API
+     * without the need to invoke the CreateMembers API again. To remove the details associated with a member account,
+     * the delegated administrator must invoke the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a> API.
+     * </p>
+     * <p>
+     * When the member accounts added through Organizations are later disassociated, you (administrator) can't invite
+     * them by calling the InviteMembers API. You can create an association with these member accounts again only by
+     * calling the CreateMembers API.
      * </p>
      * 
      * @param inviteMembersRequest
@@ -2629,6 +2940,69 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<InviteMembersResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new InviteMembersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists coverage details for your GuardDuty account. If you're a GuardDuty administrator, you can retrieve all
+     * resources associated with the active member accounts in your organization.
+     * </p>
+     * <p>
+     * Make sure the accounts have Runtime Monitoring enabled and GuardDuty agent running on their resources.
+     * </p>
+     * 
+     * @param listCoverageRequest
+     * @return Result of the ListCoverage operation returned by the service.
+     * @throws BadRequestException
+     *         A bad request exception object.
+     * @throws InternalServerErrorException
+     *         An internal server error exception object.
+     * @sample AmazonGuardDuty.ListCoverage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListCoverage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListCoverageResult listCoverage(ListCoverageRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCoverage(request);
+    }
+
+    @SdkInternalApi
+    final ListCoverageResult executeListCoverage(ListCoverageRequest listCoverageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCoverageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCoverageRequest> request = null;
+        Response<ListCoverageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCoverageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCoverageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCoverage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListCoverageResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListCoverageResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2759,7 +3133,12 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Lists Amazon GuardDuty findings for the specified detector ID.
+     * Lists GuardDuty findings for the specified detector ID.
+     * </p>
+     * <p>
+     * There might be regional differences because some flags might not be available in all the Regions where GuardDuty
+     * is currently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
      * </p>
      * 
      * @param listFindingsRequest
@@ -2996,7 +3375,8 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Lists the accounts configured as GuardDuty delegated administrators.
+     * Lists the accounts designated as GuardDuty delegated administrators. Only the organization's management account
+     * can run this API operation.
      * </p>
      * 
      * @param listOrganizationAdminAccountsRequest
@@ -3118,15 +3498,17 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Lists tags for a resource. Tagging is currently supported for detectors, finding filters, IP sets, and threat
-     * intel sets, with a limit of 50 tags per resource. When invoked, this operation returns all assigned tags for a
-     * given resource.
+     * Lists tags for a resource. Tagging is currently supported for detectors, finding filters, IP sets, threat intel
+     * sets, and publishing destination, with a limit of 50 tags per resource. When invoked, this operation returns all
+     * assigned tags for a given resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
      * @throws BadRequestException
      *         A bad request exception object.
+     * @throws AccessDeniedException
+     *         An access denied exception object.
      * @throws InternalServerErrorException
      *         An internal server error exception object.
      * @sample AmazonGuardDuty.ListTagsForResource
@@ -3239,8 +3621,79 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Initiates the malware scan. Invoking this API will automatically create the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/slr-permissions-malware-protection.html">Service-linked
+     * role</a> in the corresponding account.
+     * </p>
+     * <p>
+     * When the malware scan starts, you can use the associated scan ID to track the status of the scan. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DescribeMalwareScans.html"
+     * >DescribeMalwareScans</a>.
+     * </p>
+     * 
+     * @param startMalwareScanRequest
+     * @return Result of the StartMalwareScan operation returned by the service.
+     * @throws BadRequestException
+     *         A bad request exception object.
+     * @throws ConflictException
+     *         A request conflict exception object.
+     * @throws InternalServerErrorException
+     *         An internal server error exception object.
+     * @sample AmazonGuardDuty.StartMalwareScan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StartMalwareScan" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StartMalwareScanResult startMalwareScan(StartMalwareScanRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartMalwareScan(request);
+    }
+
+    @SdkInternalApi
+    final StartMalwareScanResult executeStartMalwareScan(StartMalwareScanRequest startMalwareScanRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startMalwareScanRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartMalwareScanRequest> request = null;
+        Response<StartMalwareScanResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartMalwareScanRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startMalwareScanRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartMalwareScan");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartMalwareScanResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartMalwareScanResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Turns on GuardDuty monitoring of the specified member accounts. Use this operation to restart monitoring of
-     * accounts that you stopped monitoring with the <code>StopMonitoringMembers</code> operation.
+     * accounts that you stopped monitoring with the <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_StopMonitoringMembers.html"
+     * >StopMonitoringMembers</a> operation.
      * </p>
      * 
      * @param startMonitoringMembersRequest
@@ -3302,6 +3755,10 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
      * <p>
      * Stops GuardDuty monitoring for the specified member accounts. Use the <code>StartMonitoringMembers</code>
      * operation to restart monitoring for those accounts.
+     * </p>
+     * <p>
+     * With <code>autoEnableOrganizationMembers</code> configuration for your organization set to <code>ALL</code>,
+     * you'll receive an error if you attempt to stop monitoring the member accounts in your organization.
      * </p>
      * 
      * @param stopMonitoringMembersRequest
@@ -3368,6 +3825,8 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
      * @return Result of the TagResource operation returned by the service.
      * @throws BadRequestException
      *         A bad request exception object.
+     * @throws AccessDeniedException
+     *         An access denied exception object.
      * @throws InternalServerErrorException
      *         An internal server error exception object.
      * @sample AmazonGuardDuty.TagResource
@@ -3486,6 +3945,8 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
      * @return Result of the UntagResource operation returned by the service.
      * @throws BadRequestException
      *         A bad request exception object.
+     * @throws AccessDeniedException
+     *         An access denied exception object.
      * @throws InternalServerErrorException
      *         An internal server error exception object.
      * @sample AmazonGuardDuty.UntagResource
@@ -3538,7 +3999,18 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Updates the Amazon GuardDuty detector specified by the detectorId.
+     * Updates the GuardDuty detector specified by the detector ID.
+     * </p>
+     * <p>
+     * Specifying both EKS Runtime Monitoring (<code>EKS_RUNTIME_MONITORING</code>) and Runtime Monitoring (
+     * <code>RUNTIME_MONITORING</code>) will cause an error. You can add only one of these two features because Runtime
+     * Monitoring already includes the threat detection for Amazon EKS resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html">Runtime Monitoring</a>.
+     * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
      * </p>
      * 
      * @param updateDetectorRequest
@@ -3777,6 +4249,11 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
      * <p>
      * Updates the malware scan settings.
      * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
+     * </p>
      * 
      * @param updateMalwareScanSettingsRequest
      * @return Result of the UpdateMalwareScanSettings operation returned by the service.
@@ -3838,6 +4315,17 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
      * <p>
      * Contains information on member accounts to be updated.
      * </p>
+     * <p>
+     * Specifying both EKS Runtime Monitoring (<code>EKS_RUNTIME_MONITORING</code>) and Runtime Monitoring (
+     * <code>RUNTIME_MONITORING</code>) will cause an error. You can add only one of these two features because Runtime
+     * Monitoring already includes the threat detection for Amazon EKS resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html">Runtime Monitoring</a>.
+     * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
+     * </p>
      * 
      * @param updateMemberDetectorsRequest
      * @return Result of the UpdateMemberDetectors operation returned by the service.
@@ -3896,7 +4384,19 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Updates the delegated administrator account with the values provided.
+     * Configures the delegated administrator account with the provided values. You must provide a value for either
+     * <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>, but not both.
+     * </p>
+     * <p>
+     * Specifying both EKS Runtime Monitoring (<code>EKS_RUNTIME_MONITORING</code>) and Runtime Monitoring (
+     * <code>RUNTIME_MONITORING</code>) will cause an error. You can add only one of these two features because Runtime
+     * Monitoring already includes the threat detection for Amazon EKS resources. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html">Runtime Monitoring</a>.
+     * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
      * </p>
      * 
      * @param updateOrganizationConfigurationRequest

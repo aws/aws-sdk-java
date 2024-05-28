@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,18 @@ public class DescribeFHIRDatastoreRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS-generated Data Store id. This is part of the ‘CreateFHIRDatastore’ output.
+     * The AWS-generated data store ID.
      * </p>
      */
     private String datastoreId;
 
     /**
      * <p>
-     * The AWS-generated Data Store id. This is part of the ‘CreateFHIRDatastore’ output.
+     * The AWS-generated data store ID.
      * </p>
      * 
      * @param datastoreId
-     *        The AWS-generated Data Store id. This is part of the ‘CreateFHIRDatastore’ output.
+     *        The AWS-generated data store ID.
      */
 
     public void setDatastoreId(String datastoreId) {
@@ -47,10 +47,10 @@ public class DescribeFHIRDatastoreRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS-generated Data Store id. This is part of the ‘CreateFHIRDatastore’ output.
+     * The AWS-generated data store ID.
      * </p>
      * 
-     * @return The AWS-generated Data Store id. This is part of the ‘CreateFHIRDatastore’ output.
+     * @return The AWS-generated data store ID.
      */
 
     public String getDatastoreId() {
@@ -59,11 +59,11 @@ public class DescribeFHIRDatastoreRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS-generated Data Store id. This is part of the ‘CreateFHIRDatastore’ output.
+     * The AWS-generated data store ID.
      * </p>
      * 
      * @param datastoreId
-     *        The AWS-generated Data Store id. This is part of the ‘CreateFHIRDatastore’ output.
+     *        The AWS-generated data store ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -147,6 +147,118 @@ public class PutStorageLensConfigurationRequestMarshaller implements
                                                         }
                                                         xmlWriter.endElement();
                                                     }
+                                                }
+                                                xmlWriter.endElement();
+                                            }
+                                        }
+
+                                        {
+                                            AdvancedCostOptimizationMetrics advancedCostOptimizationMetrics = bucketLevel.getAdvancedCostOptimizationMetrics();
+                                            if (advancedCostOptimizationMetrics != null) {
+                                                xmlWriter.startElement("AdvancedCostOptimizationMetrics");
+
+                                                if (advancedCostOptimizationMetrics.getIsEnabled() != null) {
+                                                    xmlWriter.startElement("IsEnabled").value(advancedCostOptimizationMetrics.getIsEnabled()).endElement();
+                                                }
+                                                xmlWriter.endElement();
+                                            }
+                                        }
+
+                                        {
+                                            AdvancedDataProtectionMetrics advancedDataProtectionMetrics = bucketLevel.getAdvancedDataProtectionMetrics();
+                                            if (advancedDataProtectionMetrics != null) {
+                                                xmlWriter.startElement("AdvancedDataProtectionMetrics");
+
+                                                if (advancedDataProtectionMetrics.getIsEnabled() != null) {
+                                                    xmlWriter.startElement("IsEnabled").value(advancedDataProtectionMetrics.getIsEnabled()).endElement();
+                                                }
+                                                xmlWriter.endElement();
+                                            }
+                                        }
+
+                                        {
+                                            DetailedStatusCodesMetrics detailedStatusCodesMetrics = bucketLevel.getDetailedStatusCodesMetrics();
+                                            if (detailedStatusCodesMetrics != null) {
+                                                xmlWriter.startElement("DetailedStatusCodesMetrics");
+
+                                                if (detailedStatusCodesMetrics.getIsEnabled() != null) {
+                                                    xmlWriter.startElement("IsEnabled").value(detailedStatusCodesMetrics.getIsEnabled()).endElement();
+                                                }
+                                                xmlWriter.endElement();
+                                            }
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                }
+
+                                {
+                                    AdvancedCostOptimizationMetrics advancedCostOptimizationMetrics = accountLevel.getAdvancedCostOptimizationMetrics();
+                                    if (advancedCostOptimizationMetrics != null) {
+                                        xmlWriter.startElement("AdvancedCostOptimizationMetrics");
+
+                                        if (advancedCostOptimizationMetrics.getIsEnabled() != null) {
+                                            xmlWriter.startElement("IsEnabled").value(advancedCostOptimizationMetrics.getIsEnabled()).endElement();
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                }
+
+                                {
+                                    AdvancedDataProtectionMetrics advancedDataProtectionMetrics = accountLevel.getAdvancedDataProtectionMetrics();
+                                    if (advancedDataProtectionMetrics != null) {
+                                        xmlWriter.startElement("AdvancedDataProtectionMetrics");
+
+                                        if (advancedDataProtectionMetrics.getIsEnabled() != null) {
+                                            xmlWriter.startElement("IsEnabled").value(advancedDataProtectionMetrics.getIsEnabled()).endElement();
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                }
+
+                                {
+                                    DetailedStatusCodesMetrics detailedStatusCodesMetrics = accountLevel.getDetailedStatusCodesMetrics();
+                                    if (detailedStatusCodesMetrics != null) {
+                                        xmlWriter.startElement("DetailedStatusCodesMetrics");
+
+                                        if (detailedStatusCodesMetrics.getIsEnabled() != null) {
+                                            xmlWriter.startElement("IsEnabled").value(detailedStatusCodesMetrics.getIsEnabled()).endElement();
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                }
+
+                                {
+                                    StorageLensGroupLevel storageLensGroupLevel = accountLevel.getStorageLensGroupLevel();
+                                    if (storageLensGroupLevel != null) {
+                                        xmlWriter.startElement("StorageLensGroupLevel");
+
+                                        {
+                                            StorageLensGroupLevelSelectionCriteria selectionCriteria = storageLensGroupLevel.getSelectionCriteria();
+                                            if (selectionCriteria != null) {
+                                                xmlWriter.startElement("SelectionCriteria");
+
+                                                java.util.List<String> storageLensGroupLevelSelectionCriteriaIncludeList = selectionCriteria.getInclude();
+                                                if (storageLensGroupLevelSelectionCriteriaIncludeList != null) {
+                                                    xmlWriter.startElement("Include");
+
+                                                    for (String storageLensGroupLevelSelectionCriteriaIncludeListValue : storageLensGroupLevelSelectionCriteriaIncludeList) {
+                                                        xmlWriter.startElement("Arn");
+                                                        xmlWriter.value(storageLensGroupLevelSelectionCriteriaIncludeListValue);
+                                                        xmlWriter.endElement();
+                                                    }
+                                                    xmlWriter.endElement();
+                                                }
+
+                                                java.util.List<String> storageLensGroupLevelSelectionCriteriaExcludeList = selectionCriteria.getExclude();
+                                                if (storageLensGroupLevelSelectionCriteriaExcludeList != null) {
+                                                    xmlWriter.startElement("Exclude");
+
+                                                    for (String storageLensGroupLevelSelectionCriteriaExcludeListValue : storageLensGroupLevelSelectionCriteriaExcludeList) {
+                                                        xmlWriter.startElement("Arn");
+                                                        xmlWriter.value(storageLensGroupLevelSelectionCriteriaExcludeListValue);
+                                                        xmlWriter.endElement();
+                                                    }
+                                                    xmlWriter.endElement();
                                                 }
                                                 xmlWriter.endElement();
                                             }

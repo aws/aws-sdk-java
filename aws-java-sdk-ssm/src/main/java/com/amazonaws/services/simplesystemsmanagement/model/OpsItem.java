@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,8 +32,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Amazon Web Services resource that generated the OpsItem, alarm or event details, alarm history, and an alarm timeline
  * graph. For the Amazon Web Services resource, OpsCenter aggregates information from Config, CloudTrail logs, and
  * EventBridge, so you don't have to navigate across multiple console pages during your investigation. For more
- * information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a>
- * in the <i>Amazon Web Services Systems Manager User Guide</i>.
+ * information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">Amazon Web
+ * Services Systems Manager OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/OpsItem" target="_top">AWS API Documentation</a>
@@ -49,9 +49,34 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
     private String createdBy;
     /**
      * <p>
-     * The type of OpsItem. Currently, the only valid values are <code>/aws/changerequest</code> and
-     * <code>/aws/issue</code>.
+     * The type of OpsItem. Systems Manager supports the following types of OpsItems:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>/aws/issue</code>
+     * </p>
+     * <p>
+     * This type of OpsItem is used for default OpsItems created by OpsCenter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/aws/changerequest</code>
+     * </p>
+     * <p>
+     * This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/aws/insight</code>
+     * </p>
+     * <p>
+     * This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String opsItemType;
     /**
@@ -155,8 +180,8 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the
      * <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view
-     * Amazon Web Services CLI example commands that use these keys, see <a href=
-     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     * Amazon Web Services CLI example commands that use these keys, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html"
      * >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      */
@@ -200,6 +225,12 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date plannedEndTime;
+    /**
+     * <p>
+     * The OpsItem Amazon Resource Name (ARN).
+     * </p>
+     */
+    private String opsItemArn;
 
     /**
      * <p>
@@ -243,13 +274,62 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of OpsItem. Currently, the only valid values are <code>/aws/changerequest</code> and
-     * <code>/aws/issue</code>.
+     * The type of OpsItem. Systems Manager supports the following types of OpsItems:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>/aws/issue</code>
+     * </p>
+     * <p>
+     * This type of OpsItem is used for default OpsItems created by OpsCenter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/aws/changerequest</code>
+     * </p>
+     * <p>
+     * This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/aws/insight</code>
+     * </p>
+     * <p>
+     * This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param opsItemType
-     *        The type of OpsItem. Currently, the only valid values are <code>/aws/changerequest</code> and
-     *        <code>/aws/issue</code>.
+     *        The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>/aws/issue</code>
+     *        </p>
+     *        <p>
+     *        This type of OpsItem is used for default OpsItems created by OpsCenter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>/aws/changerequest</code>
+     *        </p>
+     *        <p>
+     *        This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>/aws/insight</code>
+     *        </p>
+     *        <p>
+     *        This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.
+     *        </p>
+     *        </li>
      */
 
     public void setOpsItemType(String opsItemType) {
@@ -258,12 +338,61 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of OpsItem. Currently, the only valid values are <code>/aws/changerequest</code> and
-     * <code>/aws/issue</code>.
+     * The type of OpsItem. Systems Manager supports the following types of OpsItems:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>/aws/issue</code>
+     * </p>
+     * <p>
+     * This type of OpsItem is used for default OpsItems created by OpsCenter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/aws/changerequest</code>
+     * </p>
+     * <p>
+     * This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/aws/insight</code>
+     * </p>
+     * <p>
+     * This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The type of OpsItem. Currently, the only valid values are <code>/aws/changerequest</code> and
-     *         <code>/aws/issue</code>.
+     * @return The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>/aws/issue</code>
+     *         </p>
+     *         <p>
+     *         This type of OpsItem is used for default OpsItems created by OpsCenter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>/aws/changerequest</code>
+     *         </p>
+     *         <p>
+     *         This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>/aws/insight</code>
+     *         </p>
+     *         <p>
+     *         This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.
+     *         </p>
+     *         </li>
      */
 
     public String getOpsItemType() {
@@ -272,13 +401,62 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of OpsItem. Currently, the only valid values are <code>/aws/changerequest</code> and
-     * <code>/aws/issue</code>.
+     * The type of OpsItem. Systems Manager supports the following types of OpsItems:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>/aws/issue</code>
+     * </p>
+     * <p>
+     * This type of OpsItem is used for default OpsItems created by OpsCenter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/aws/changerequest</code>
+     * </p>
+     * <p>
+     * This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/aws/insight</code>
+     * </p>
+     * <p>
+     * This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param opsItemType
-     *        The type of OpsItem. Currently, the only valid values are <code>/aws/changerequest</code> and
-     *        <code>/aws/issue</code>.
+     *        The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>/aws/issue</code>
+     *        </p>
+     *        <p>
+     *        This type of OpsItem is used for default OpsItems created by OpsCenter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>/aws/changerequest</code>
+     *        </p>
+     *        <p>
+     *        This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>/aws/insight</code>
+     *        </p>
+     *        <p>
+     *        This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -923,8 +1101,8 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the
      * <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view
-     * Amazon Web Services CLI example commands that use these keys, see <a href=
-     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     * Amazon Web Services CLI example commands that use these keys, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html"
      * >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
@@ -949,7 +1127,7 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      *         Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request.
      *         Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the
      *         OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href=
-     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html"
      *         >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
@@ -981,8 +1159,8 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the
      * <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view
-     * Amazon Web Services CLI example commands that use these keys, see <a href=
-     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     * Amazon Web Services CLI example commands that use these keys, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html"
      * >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
@@ -1008,7 +1186,7 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      *        Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request.
      *        Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the
      *        OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href=
-     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html"
      *        >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      */
 
@@ -1040,8 +1218,8 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request. Use the
      * <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the OpsItem. To view
-     * Amazon Web Services CLI example commands that use these keys, see <a href=
-     * "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     * Amazon Web Services CLI example commands that use these keys, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html"
      * >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
      * 
@@ -1067,7 +1245,7 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
      *        Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in the request.
      *        Use the <code>/aws/automations</code> key in OperationalData to associate an Automation runbook with the
      *        OpsItem. To view Amazon Web Services CLI example commands that use these keys, see <a href=
-     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems"
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html"
      *        >Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1367,6 +1545,46 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The OpsItem Amazon Resource Name (ARN).
+     * </p>
+     * 
+     * @param opsItemArn
+     *        The OpsItem Amazon Resource Name (ARN).
+     */
+
+    public void setOpsItemArn(String opsItemArn) {
+        this.opsItemArn = opsItemArn;
+    }
+
+    /**
+     * <p>
+     * The OpsItem Amazon Resource Name (ARN).
+     * </p>
+     * 
+     * @return The OpsItem Amazon Resource Name (ARN).
+     */
+
+    public String getOpsItemArn() {
+        return this.opsItemArn;
+    }
+
+    /**
+     * <p>
+     * The OpsItem Amazon Resource Name (ARN).
+     * </p>
+     * 
+     * @param opsItemArn
+     *        The OpsItem Amazon Resource Name (ARN).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OpsItem withOpsItemArn(String opsItemArn) {
+        setOpsItemArn(opsItemArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1419,7 +1637,9 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
         if (getPlannedStartTime() != null)
             sb.append("PlannedStartTime: ").append(getPlannedStartTime()).append(",");
         if (getPlannedEndTime() != null)
-            sb.append("PlannedEndTime: ").append(getPlannedEndTime());
+            sb.append("PlannedEndTime: ").append(getPlannedEndTime()).append(",");
+        if (getOpsItemArn() != null)
+            sb.append("OpsItemArn: ").append(getOpsItemArn());
         sb.append("}");
         return sb.toString();
     }
@@ -1518,6 +1738,10 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPlannedEndTime() != null && other.getPlannedEndTime().equals(this.getPlannedEndTime()) == false)
             return false;
+        if (other.getOpsItemArn() == null ^ this.getOpsItemArn() == null)
+            return false;
+        if (other.getOpsItemArn() != null && other.getOpsItemArn().equals(this.getOpsItemArn()) == false)
+            return false;
         return true;
     }
 
@@ -1547,6 +1771,7 @@ public class OpsItem implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getActualEndTime() == null) ? 0 : getActualEndTime().hashCode());
         hashCode = prime * hashCode + ((getPlannedStartTime() == null) ? 0 : getPlannedStartTime().hashCode());
         hashCode = prime * hashCode + ((getPlannedEndTime() == null) ? 0 : getPlannedEndTime().hashCode());
+        hashCode = prime * hashCode + ((getOpsItemArn() == null) ? 0 : getOpsItemArn().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,18 @@ public class UpdateDomainConfigurationRequest extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private Boolean removeAuthorizerConfig;
+    /**
+     * <p>
+     * An object that specifies the TLS configuration for a domain.
+     * </p>
+     */
+    private TlsConfig tlsConfig;
+    /**
+     * <p>
+     * The server certificate configuration.
+     * </p>
+     */
+    private ServerCertificateConfig serverCertificateConfig;
 
     /**
      * <p>
@@ -237,6 +249,86 @@ public class UpdateDomainConfigurationRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * An object that specifies the TLS configuration for a domain.
+     * </p>
+     * 
+     * @param tlsConfig
+     *        An object that specifies the TLS configuration for a domain.
+     */
+
+    public void setTlsConfig(TlsConfig tlsConfig) {
+        this.tlsConfig = tlsConfig;
+    }
+
+    /**
+     * <p>
+     * An object that specifies the TLS configuration for a domain.
+     * </p>
+     * 
+     * @return An object that specifies the TLS configuration for a domain.
+     */
+
+    public TlsConfig getTlsConfig() {
+        return this.tlsConfig;
+    }
+
+    /**
+     * <p>
+     * An object that specifies the TLS configuration for a domain.
+     * </p>
+     * 
+     * @param tlsConfig
+     *        An object that specifies the TLS configuration for a domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDomainConfigurationRequest withTlsConfig(TlsConfig tlsConfig) {
+        setTlsConfig(tlsConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The server certificate configuration.
+     * </p>
+     * 
+     * @param serverCertificateConfig
+     *        The server certificate configuration.
+     */
+
+    public void setServerCertificateConfig(ServerCertificateConfig serverCertificateConfig) {
+        this.serverCertificateConfig = serverCertificateConfig;
+    }
+
+    /**
+     * <p>
+     * The server certificate configuration.
+     * </p>
+     * 
+     * @return The server certificate configuration.
+     */
+
+    public ServerCertificateConfig getServerCertificateConfig() {
+        return this.serverCertificateConfig;
+    }
+
+    /**
+     * <p>
+     * The server certificate configuration.
+     * </p>
+     * 
+     * @param serverCertificateConfig
+     *        The server certificate configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDomainConfigurationRequest withServerCertificateConfig(ServerCertificateConfig serverCertificateConfig) {
+        setServerCertificateConfig(serverCertificateConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -255,7 +347,11 @@ public class UpdateDomainConfigurationRequest extends com.amazonaws.AmazonWebSer
         if (getDomainConfigurationStatus() != null)
             sb.append("DomainConfigurationStatus: ").append(getDomainConfigurationStatus()).append(",");
         if (getRemoveAuthorizerConfig() != null)
-            sb.append("RemoveAuthorizerConfig: ").append(getRemoveAuthorizerConfig());
+            sb.append("RemoveAuthorizerConfig: ").append(getRemoveAuthorizerConfig()).append(",");
+        if (getTlsConfig() != null)
+            sb.append("TlsConfig: ").append(getTlsConfig()).append(",");
+        if (getServerCertificateConfig() != null)
+            sb.append("ServerCertificateConfig: ").append(getServerCertificateConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -286,6 +382,14 @@ public class UpdateDomainConfigurationRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getRemoveAuthorizerConfig() != null && other.getRemoveAuthorizerConfig().equals(this.getRemoveAuthorizerConfig()) == false)
             return false;
+        if (other.getTlsConfig() == null ^ this.getTlsConfig() == null)
+            return false;
+        if (other.getTlsConfig() != null && other.getTlsConfig().equals(this.getTlsConfig()) == false)
+            return false;
+        if (other.getServerCertificateConfig() == null ^ this.getServerCertificateConfig() == null)
+            return false;
+        if (other.getServerCertificateConfig() != null && other.getServerCertificateConfig().equals(this.getServerCertificateConfig()) == false)
+            return false;
         return true;
     }
 
@@ -298,6 +402,8 @@ public class UpdateDomainConfigurationRequest extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getAuthorizerConfig() == null) ? 0 : getAuthorizerConfig().hashCode());
         hashCode = prime * hashCode + ((getDomainConfigurationStatus() == null) ? 0 : getDomainConfigurationStatus().hashCode());
         hashCode = prime * hashCode + ((getRemoveAuthorizerConfig() == null) ? 0 : getRemoveAuthorizerConfig().hashCode());
+        hashCode = prime * hashCode + ((getTlsConfig() == null) ? 0 : getTlsConfig().hashCode());
+        hashCode = prime * hashCode + ((getServerCertificateConfig() == null) ? 0 : getServerCertificateConfig().hashCode());
         return hashCode;
     }
 

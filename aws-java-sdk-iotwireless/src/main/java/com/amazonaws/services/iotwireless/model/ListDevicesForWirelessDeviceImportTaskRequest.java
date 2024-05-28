@@ -1,0 +1,291 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.iotwireless.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+import com.amazonaws.AmazonWebServiceRequest;
+
+/**
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListDevicesForWirelessDeviceImportTask"
+ *      target="_top">AWS API Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ListDevicesForWirelessDeviceImportTaskRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * The identifier of the import task for which wireless devices are listed.
+     * </p>
+     */
+    private String id;
+
+    private Integer maxResults;
+    /**
+     * <p>
+     * To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise
+     * <code>null</code> to receive the first set of results.
+     * </p>
+     */
+    private String nextToken;
+    /**
+     * <p>
+     * The status of the devices in the import task.
+     * </p>
+     */
+    private String status;
+
+    /**
+     * <p>
+     * The identifier of the import task for which wireless devices are listed.
+     * </p>
+     * 
+     * @param id
+     *        The identifier of the import task for which wireless devices are listed.
+     */
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    /**
+     * <p>
+     * The identifier of the import task for which wireless devices are listed.
+     * </p>
+     * 
+     * @return The identifier of the import task for which wireless devices are listed.
+     */
+
+    public String getId() {
+        return this.id;
+    }
+
+    /**
+     * <p>
+     * The identifier of the import task for which wireless devices are listed.
+     * </p>
+     * 
+     * @param id
+     *        The identifier of the import task for which wireless devices are listed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListDevicesForWirelessDeviceImportTaskRequest withId(String id) {
+        setId(id);
+        return this;
+    }
+
+    /**
+     * @param maxResults
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * @return
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * @param maxResults
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListDevicesForWirelessDeviceImportTaskRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
+     * <p>
+     * To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise
+     * <code>null</code> to receive the first set of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise
+     *        <code>null</code> to receive the first set of results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise
+     * <code>null</code> to receive the first set of results.
+     * </p>
+     * 
+     * @return To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise
+     *         <code>null</code> to receive the first set of results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise
+     * <code>null</code> to receive the first set of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise
+     *        <code>null</code> to receive the first set of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListDevicesForWirelessDeviceImportTaskRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the devices in the import task.
+     * </p>
+     * 
+     * @param status
+     *        The status of the devices in the import task.
+     * @see OnboardStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The status of the devices in the import task.
+     * </p>
+     * 
+     * @return The status of the devices in the import task.
+     * @see OnboardStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The status of the devices in the import task.
+     * </p>
+     * 
+     * @param status
+     *        The status of the devices in the import task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OnboardStatus
+     */
+
+    public ListDevicesForWirelessDeviceImportTaskRequest withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the devices in the import task.
+     * </p>
+     * 
+     * @param status
+     *        The status of the devices in the import task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OnboardStatus
+     */
+
+    public ListDevicesForWirelessDeviceImportTaskRequest withStatus(OnboardStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getId() != null)
+            sb.append("Id: ").append(getId()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ListDevicesForWirelessDeviceImportTaskRequest == false)
+            return false;
+        ListDevicesForWirelessDeviceImportTaskRequest other = (ListDevicesForWirelessDeviceImportTaskRequest) obj;
+        if (other.getId() == null ^ this.getId() == null)
+            return false;
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
+            return false;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public ListDevicesForWirelessDeviceImportTaskRequest clone() {
+        return (ListDevicesForWirelessDeviceImportTaskRequest) super.clone();
+    }
+
+}

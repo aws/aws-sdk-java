@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,8 @@ public class StartExportTaskRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> ENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<StructuredPojo> PREFERENCES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("preferences").build();
 
     private static final StartExportTaskRequestMarshaller instance = new StartExportTaskRequestMarshaller();
 
@@ -57,6 +59,7 @@ public class StartExportTaskRequestMarshaller {
             protocolMarshaller.marshall(startExportTaskRequest.getFilters(), FILTERS_BINDING);
             protocolMarshaller.marshall(startExportTaskRequest.getStartTime(), STARTTIME_BINDING);
             protocolMarshaller.marshall(startExportTaskRequest.getEndTime(), ENDTIME_BINDING);
+            protocolMarshaller.marshall(startExportTaskRequest.getPreferences(), PREFERENCES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

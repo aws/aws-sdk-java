@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,9 +32,9 @@ import com.amazonaws.services.fms.model.*;
  * Guide</a>.
  * </p>
  * <p>
- * Some API actions require explicit resource permissions. For information, see the developer guide topic <a
- * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall Manager required
- * permissions for API actions</a>.
+ * Some API actions require explicit resource permissions. For information, see the developer guide topic <a href=
+ * "https://docs.aws.amazon.com/waf/latest/developerguide/fms-security_iam_service-with-iam.html#fms-security_iam_service-with-iam-roles-service"
+ * >Service roles for Firewall Manager</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -42,12 +42,15 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Sets the Firewall Manager administrator account. The account must be a member of the organization in
-     * Organizations whose resources you want to protect. Firewall Manager sets the permissions that allow the account
-     * to administer your Firewall Manager policies.
+     * Sets a Firewall Manager default administrator account. The Firewall Manager default administrator account can
+     * manage third-party firewalls and has full administrative scope that allows administration of all policy types,
+     * accounts, organizational units, and Regions. This account must be a member account of the organization in
+     * Organizations whose resources you want to protect.
      * </p>
      * <p>
-     * The account that you associate with Firewall Manager is called the Firewall Manager administrator account.
+     * For information about working with Firewall Manager administrator accounts, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/fms-administrators.html">Managing Firewall
+     * Manager administrators</a> in the <i>Firewall Manager Developer Guide</i>.
      * </p>
      * 
      * @param associateAdminAccountRequest
@@ -60,12 +63,15 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Sets the Firewall Manager administrator account. The account must be a member of the organization in
-     * Organizations whose resources you want to protect. Firewall Manager sets the permissions that allow the account
-     * to administer your Firewall Manager policies.
+     * Sets a Firewall Manager default administrator account. The Firewall Manager default administrator account can
+     * manage third-party firewalls and has full administrative scope that allows administration of all policy types,
+     * accounts, organizational units, and Regions. This account must be a member account of the organization in
+     * Organizations whose resources you want to protect.
      * </p>
      * <p>
-     * The account that you associate with Firewall Manager is called the Firewall Manager administrator account.
+     * For information about working with Firewall Manager administrator accounts, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/fms-administrators.html">Managing Firewall
+     * Manager administrators</a> in the <i>Firewall Manager Developer Guide</i>.
      * </p>
      * 
      * @param associateAdminAccountRequest
@@ -117,6 +123,70 @@ public interface AWSFMSAsync extends AWSFMS {
     java.util.concurrent.Future<AssociateThirdPartyFirewallResult> associateThirdPartyFirewallAsync(
             AssociateThirdPartyFirewallRequest associateThirdPartyFirewallRequest,
             com.amazonaws.handlers.AsyncHandler<AssociateThirdPartyFirewallRequest, AssociateThirdPartyFirewallResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associate resources to a Firewall Manager resource set.
+     * </p>
+     * 
+     * @param batchAssociateResourceRequest
+     * @return A Java Future containing the result of the BatchAssociateResource operation returned by the service.
+     * @sample AWSFMSAsync.BatchAssociateResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/BatchAssociateResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<BatchAssociateResourceResult> batchAssociateResourceAsync(BatchAssociateResourceRequest batchAssociateResourceRequest);
+
+    /**
+     * <p>
+     * Associate resources to a Firewall Manager resource set.
+     * </p>
+     * 
+     * @param batchAssociateResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchAssociateResource operation returned by the service.
+     * @sample AWSFMSAsyncHandler.BatchAssociateResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/BatchAssociateResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<BatchAssociateResourceResult> batchAssociateResourceAsync(BatchAssociateResourceRequest batchAssociateResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchAssociateResourceRequest, BatchAssociateResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociates resources from a Firewall Manager resource set.
+     * </p>
+     * 
+     * @param batchDisassociateResourceRequest
+     * @return A Java Future containing the result of the BatchDisassociateResource operation returned by the service.
+     * @sample AWSFMSAsync.BatchDisassociateResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/BatchDisassociateResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDisassociateResourceResult> batchDisassociateResourceAsync(
+            BatchDisassociateResourceRequest batchDisassociateResourceRequest);
+
+    /**
+     * <p>
+     * Disassociates resources from a Firewall Manager resource set.
+     * </p>
+     * 
+     * @param batchDisassociateResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchDisassociateResource operation returned by the service.
+     * @sample AWSFMSAsyncHandler.BatchDisassociateResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/BatchDisassociateResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDisassociateResourceResult> batchDisassociateResourceAsync(
+            BatchDisassociateResourceRequest batchDisassociateResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchDisassociateResourceRequest, BatchDisassociateResourceResult> asyncHandler);
 
     /**
      * <p>
@@ -248,8 +318,45 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Disassociates the account that has been set as the Firewall Manager administrator account. To set a different
-     * account as the administrator account, you must submit an <code>AssociateAdminAccount</code> request.
+     * Deletes the specified <a>ResourceSet</a>.
+     * </p>
+     * 
+     * @param deleteResourceSetRequest
+     * @return A Java Future containing the result of the DeleteResourceSet operation returned by the service.
+     * @sample AWSFMSAsync.DeleteResourceSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteResourceSet" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResourceSetResult> deleteResourceSetAsync(DeleteResourceSetRequest deleteResourceSetRequest);
+
+    /**
+     * <p>
+     * Deletes the specified <a>ResourceSet</a>.
+     * </p>
+     * 
+     * @param deleteResourceSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteResourceSet operation returned by the service.
+     * @sample AWSFMSAsyncHandler.DeleteResourceSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteResourceSet" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResourceSetResult> deleteResourceSetAsync(DeleteResourceSetRequest deleteResourceSetRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteResourceSetRequest, DeleteResourceSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociates an Firewall Manager administrator account. To set a different account as an Firewall Manager
+     * administrator, submit a <a>PutAdminAccount</a> request. To set an account as a default administrator account, you
+     * must submit an <a>AssociateAdminAccount</a> request.
+     * </p>
+     * <p>
+     * Disassociation of the default administrator account follows the first in, last out principle. If you are the
+     * default administrator, all Firewall Manager administrators within the organization must first disassociate their
+     * accounts before you can disassociate your account.
      * </p>
      * 
      * @param disassociateAdminAccountRequest
@@ -262,8 +369,14 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Disassociates the account that has been set as the Firewall Manager administrator account. To set a different
-     * account as the administrator account, you must submit an <code>AssociateAdminAccount</code> request.
+     * Disassociates an Firewall Manager administrator account. To set a different account as an Firewall Manager
+     * administrator, submit a <a>PutAdminAccount</a> request. To set an account as a default administrator account, you
+     * must submit an <a>AssociateAdminAccount</a> request.
+     * </p>
+     * <p>
+     * Disassociation of the default administrator account follows the first in, last out principle. If you are the
+     * default administrator, all Firewall Manager administrators within the organization must first disassociate their
+     * accounts before you can disassociate your account.
      * </p>
      * 
      * @param disassociateAdminAccountRequest
@@ -320,7 +433,8 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Returns the Organizations account that is associated with Firewall Manager as the Firewall Manager administrator.
+     * Returns the Organizations account that is associated with Firewall Manager as the Firewall Manager default
+     * administrator.
      * </p>
      * 
      * @param getAdminAccountRequest
@@ -333,7 +447,8 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Returns the Organizations account that is associated with Firewall Manager as the Firewall Manager administrator.
+     * Returns the Organizations account that is associated with Firewall Manager as the Firewall Manager default
+     * administrator.
      * </p>
      * 
      * @param getAdminAccountRequest
@@ -348,6 +463,39 @@ public interface AWSFMSAsync extends AWSFMS {
      */
     java.util.concurrent.Future<GetAdminAccountResult> getAdminAccountAsync(GetAdminAccountRequest getAdminAccountRequest,
             com.amazonaws.handlers.AsyncHandler<GetAdminAccountRequest, GetAdminAccountResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about the specified account's administrative scope. The administrative scope defines the
+     * resources that an Firewall Manager administrator can manage.
+     * </p>
+     * 
+     * @param getAdminScopeRequest
+     * @return A Java Future containing the result of the GetAdminScope operation returned by the service.
+     * @sample AWSFMSAsync.GetAdminScope
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAdminScope" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetAdminScopeResult> getAdminScopeAsync(GetAdminScopeRequest getAdminScopeRequest);
+
+    /**
+     * <p>
+     * Returns information about the specified account's administrative scope. The administrative scope defines the
+     * resources that an Firewall Manager administrator can manage.
+     * </p>
+     * 
+     * @param getAdminScopeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAdminScope operation returned by the service.
+     * @sample AWSFMSAsyncHandler.GetAdminScope
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAdminScope" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetAdminScopeResult> getAdminScopeAsync(GetAdminScopeRequest getAdminScopeRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAdminScopeRequest, GetAdminScopeResult> asyncHandler);
 
     /**
      * <p>
@@ -385,34 +533,9 @@ public interface AWSFMSAsync extends AWSFMS {
      * Returns detailed compliance information about the specified member account. Details include resources that are in
      * and out of compliance with the specified policy.
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * Resources are considered noncompliant for WAF and Shield Advanced policies if the specified policy has not been
-     * applied to them.
+     * The reasons for resources being considered compliant depend on the Firewall Manager policy type.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Resources are considered noncompliant for security group policies if they are in scope of the policy, they
-     * violate one or more of the policy rules, and remediation is disabled or not possible.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Resources are considered noncompliant for Network Firewall policies if a firewall is missing in the VPC, if the
-     * firewall endpoint isn't set up in an expected Availability Zone and subnet, if a subnet created by the Firewall
-     * Manager doesn't have the expected route table, and for modifications to a firewall policy that violate the
-     * Firewall Manager policy's rules.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Resources are considered noncompliant for DNS Firewall policies if a DNS Firewall rule group is missing from the
-     * rule group associations for the VPC.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param getComplianceDetailRequest
      * @return A Java Future containing the result of the GetComplianceDetail operation returned by the service.
@@ -427,34 +550,9 @@ public interface AWSFMSAsync extends AWSFMS {
      * Returns detailed compliance information about the specified member account. Details include resources that are in
      * and out of compliance with the specified policy.
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * Resources are considered noncompliant for WAF and Shield Advanced policies if the specified policy has not been
-     * applied to them.
+     * The reasons for resources being considered compliant depend on the Firewall Manager policy type.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Resources are considered noncompliant for security group policies if they are in scope of the policy, they
-     * violate one or more of the policy rules, and remediation is disabled or not possible.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Resources are considered noncompliant for Network Firewall policies if a firewall is missing in the VPC, if the
-     * firewall endpoint isn't set up in an expected Availability Zone and subnet, if a subnet created by the Firewall
-     * Manager doesn't have the expected route table, and for modifications to a firewall policy that violate the
-     * Firewall Manager policy's rules.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Resources are considered noncompliant for DNS Firewall policies if a DNS Firewall rule group is missing from the
-     * rule group associations for the VPC.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param getComplianceDetailRequest
      * @param asyncHandler
@@ -599,6 +697,37 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
+     * Gets information about a specific resource set.
+     * </p>
+     * 
+     * @param getResourceSetRequest
+     * @return A Java Future containing the result of the GetResourceSet operation returned by the service.
+     * @sample AWSFMSAsync.GetResourceSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetResourceSet" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourceSetResult> getResourceSetAsync(GetResourceSetRequest getResourceSetRequest);
+
+    /**
+     * <p>
+     * Gets information about a specific resource set.
+     * </p>
+     * 
+     * @param getResourceSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetResourceSet operation returned by the service.
+     * @sample AWSFMSAsyncHandler.GetResourceSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetResourceSet" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourceSetResult> getResourceSetAsync(GetResourceSetRequest getResourceSetRequest,
+            com.amazonaws.handlers.AsyncHandler<GetResourceSetRequest, GetResourceSetResult> asyncHandler);
+
+    /**
+     * <p>
      * The onboarding status of a Firewall Manager admin account to third-party firewall vendor tenant.
      * </p>
      * 
@@ -667,6 +796,86 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
+     * Returns a <code>AdminAccounts</code> object that lists the Firewall Manager administrators within the
+     * organization that are onboarded to Firewall Manager by <a>AssociateAdminAccount</a>.
+     * </p>
+     * <p>
+     * This operation can be called only from the organization's management account.
+     * </p>
+     * 
+     * @param listAdminAccountsForOrganizationRequest
+     * @return A Java Future containing the result of the ListAdminAccountsForOrganization operation returned by the
+     *         service.
+     * @sample AWSFMSAsync.ListAdminAccountsForOrganization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAdminAccountsForOrganization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAdminAccountsForOrganizationResult> listAdminAccountsForOrganizationAsync(
+            ListAdminAccountsForOrganizationRequest listAdminAccountsForOrganizationRequest);
+
+    /**
+     * <p>
+     * Returns a <code>AdminAccounts</code> object that lists the Firewall Manager administrators within the
+     * organization that are onboarded to Firewall Manager by <a>AssociateAdminAccount</a>.
+     * </p>
+     * <p>
+     * This operation can be called only from the organization's management account.
+     * </p>
+     * 
+     * @param listAdminAccountsForOrganizationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAdminAccountsForOrganization operation returned by the
+     *         service.
+     * @sample AWSFMSAsyncHandler.ListAdminAccountsForOrganization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAdminAccountsForOrganization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAdminAccountsForOrganizationResult> listAdminAccountsForOrganizationAsync(
+            ListAdminAccountsForOrganizationRequest listAdminAccountsForOrganizationRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAdminAccountsForOrganizationRequest, ListAdminAccountsForOrganizationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the accounts that are managing the specified Organizations member account. This is useful for any member
+     * account so that they can view the accounts who are managing their account. This operation only returns the
+     * managing administrators that have the requested account within their <a>AdminScope</a>.
+     * </p>
+     * 
+     * @param listAdminsManagingAccountRequest
+     * @return A Java Future containing the result of the ListAdminsManagingAccount operation returned by the service.
+     * @sample AWSFMSAsync.ListAdminsManagingAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAdminsManagingAccount" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAdminsManagingAccountResult> listAdminsManagingAccountAsync(
+            ListAdminsManagingAccountRequest listAdminsManagingAccountRequest);
+
+    /**
+     * <p>
+     * Lists the accounts that are managing the specified Organizations member account. This is useful for any member
+     * account so that they can view the accounts who are managing their account. This operation only returns the
+     * managing administrators that have the requested account within their <a>AdminScope</a>.
+     * </p>
+     * 
+     * @param listAdminsManagingAccountRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAdminsManagingAccount operation returned by the service.
+     * @sample AWSFMSAsyncHandler.ListAdminsManagingAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAdminsManagingAccount" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAdminsManagingAccountResult> listAdminsManagingAccountAsync(
+            ListAdminsManagingAccountRequest listAdminsManagingAccountRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAdminsManagingAccountRequest, ListAdminsManagingAccountResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns an array of <code>AppsListDataSummary</code> objects.
      * </p>
      * 
@@ -731,12 +940,44 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
+     * Returns an array of resources in the organization's accounts that are available to be associated with a resource
+     * set.
+     * </p>
+     * 
+     * @param listDiscoveredResourcesRequest
+     * @return A Java Future containing the result of the ListDiscoveredResources operation returned by the service.
+     * @sample AWSFMSAsync.ListDiscoveredResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListDiscoveredResources" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDiscoveredResourcesResult> listDiscoveredResourcesAsync(ListDiscoveredResourcesRequest listDiscoveredResourcesRequest);
+
+    /**
+     * <p>
+     * Returns an array of resources in the organization's accounts that are available to be associated with a resource
+     * set.
+     * </p>
+     * 
+     * @param listDiscoveredResourcesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDiscoveredResources operation returned by the service.
+     * @sample AWSFMSAsyncHandler.ListDiscoveredResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListDiscoveredResources" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDiscoveredResourcesResult> listDiscoveredResourcesAsync(ListDiscoveredResourcesRequest listDiscoveredResourcesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDiscoveredResourcesRequest, ListDiscoveredResourcesResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a <code>MemberAccounts</code> object that lists the member accounts in the administrator's Amazon Web
      * Services organization.
      * </p>
      * <p>
-     * The <code>ListMemberAccounts</code> must be submitted by the account that is set as the Firewall Manager
-     * administrator.
+     * Either an Firewall Manager administrator or the organization's management account can make this request.
      * </p>
      * 
      * @param listMemberAccountsRequest
@@ -753,8 +994,7 @@ public interface AWSFMSAsync extends AWSFMS {
      * Services organization.
      * </p>
      * <p>
-     * The <code>ListMemberAccounts</code> must be submitted by the account that is set as the Firewall Manager
-     * administrator.
+     * Either an Firewall Manager administrator or the organization's management account can make this request.
      * </p>
      * 
      * @param listMemberAccountsRequest
@@ -834,6 +1074,68 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
+     * Returns an array of resources that are currently associated to a resource set.
+     * </p>
+     * 
+     * @param listResourceSetResourcesRequest
+     * @return A Java Future containing the result of the ListResourceSetResources operation returned by the service.
+     * @sample AWSFMSAsync.ListResourceSetResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListResourceSetResources" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceSetResourcesResult> listResourceSetResourcesAsync(ListResourceSetResourcesRequest listResourceSetResourcesRequest);
+
+    /**
+     * <p>
+     * Returns an array of resources that are currently associated to a resource set.
+     * </p>
+     * 
+     * @param listResourceSetResourcesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListResourceSetResources operation returned by the service.
+     * @sample AWSFMSAsyncHandler.ListResourceSetResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListResourceSetResources" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceSetResourcesResult> listResourceSetResourcesAsync(ListResourceSetResourcesRequest listResourceSetResourcesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListResourceSetResourcesRequest, ListResourceSetResourcesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns an array of <code>ResourceSetSummary</code> objects.
+     * </p>
+     * 
+     * @param listResourceSetsRequest
+     * @return A Java Future containing the result of the ListResourceSets operation returned by the service.
+     * @sample AWSFMSAsync.ListResourceSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListResourceSets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceSetsResult> listResourceSetsAsync(ListResourceSetsRequest listResourceSetsRequest);
+
+    /**
+     * <p>
+     * Returns an array of <code>ResourceSetSummary</code> objects.
+     * </p>
+     * 
+     * @param listResourceSetsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListResourceSets operation returned by the service.
+     * @sample AWSFMSAsyncHandler.ListResourceSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListResourceSets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceSetsResult> listResourceSetsAsync(ListResourceSetsRequest listResourceSetsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListResourceSetsRequest, ListResourceSetsResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves the list of tags for the specified Amazon Web Services resource.
      * </p>
      * 
@@ -902,6 +1204,51 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
+     * Creates or updates an Firewall Manager administrator account. The account must be a member of the organization
+     * that was onboarded to Firewall Manager by <a>AssociateAdminAccount</a>. Only the organization's management
+     * account can create an Firewall Manager administrator account. When you create an Firewall Manager administrator
+     * account, the service checks to see if the account is already a delegated administrator within Organizations. If
+     * the account isn't a delegated administrator, Firewall Manager calls Organizations to delegate the account within
+     * Organizations. For more information about administrator accounts within Organizations, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon
+     * Web Services Accounts in Your Organization</a>.
+     * </p>
+     * 
+     * @param putAdminAccountRequest
+     * @return A Java Future containing the result of the PutAdminAccount operation returned by the service.
+     * @sample AWSFMSAsync.PutAdminAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutAdminAccount" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutAdminAccountResult> putAdminAccountAsync(PutAdminAccountRequest putAdminAccountRequest);
+
+    /**
+     * <p>
+     * Creates or updates an Firewall Manager administrator account. The account must be a member of the organization
+     * that was onboarded to Firewall Manager by <a>AssociateAdminAccount</a>. Only the organization's management
+     * account can create an Firewall Manager administrator account. When you create an Firewall Manager administrator
+     * account, the service checks to see if the account is already a delegated administrator within Organizations. If
+     * the account isn't a delegated administrator, Firewall Manager calls Organizations to delegate the account within
+     * Organizations. For more information about administrator accounts within Organizations, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon
+     * Web Services Accounts in Your Organization</a>.
+     * </p>
+     * 
+     * @param putAdminAccountRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutAdminAccount operation returned by the service.
+     * @sample AWSFMSAsyncHandler.PutAdminAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutAdminAccount" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutAdminAccountResult> putAdminAccountAsync(PutAdminAccountRequest putAdminAccountRequest,
+            com.amazonaws.handlers.AsyncHandler<PutAdminAccountRequest, PutAdminAccountResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an Firewall Manager applications list.
      * </p>
      * 
@@ -937,10 +1284,13 @@ public interface AWSFMSAsync extends AWSFMS {
      * SNS logs.
      * </p>
      * <p>
-     * To perform this action outside of the console, you must configure the SNS topic to allow the Firewall Manager
-     * role <code>AWSServiceRoleForFMS</code> to publish SNS logs. For more information, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall Manager
-     * required permissions for API actions</a> in the <i>Firewall Manager Developer Guide</i>.
+     * To perform this action outside of the console, you must first configure the SNS topic's access policy to allow
+     * the <code>SnsRoleName</code> to publish SNS logs. If the <code>SnsRoleName</code> provided is a role other than
+     * the <code>AWSServiceRoleForFMS</code> service-linked role, this role must have a trust relationship configured to
+     * allow the Firewall Manager service principal <code>fms.amazonaws.com</code> to assume this role. For information
+     * about configuring an SNS access policy, see <a href=
+     * "https://docs.aws.amazon.com/waf/latest/developerguide/fms-security_iam_service-with-iam.html#fms-security_iam_service-with-iam-roles-service"
+     * >Service roles for Firewall Manager</a> in the <i>Firewall Manager Developer Guide</i>.
      * </p>
      * 
      * @param putNotificationChannelRequest
@@ -957,10 +1307,13 @@ public interface AWSFMSAsync extends AWSFMS {
      * SNS logs.
      * </p>
      * <p>
-     * To perform this action outside of the console, you must configure the SNS topic to allow the Firewall Manager
-     * role <code>AWSServiceRoleForFMS</code> to publish SNS logs. For more information, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall Manager
-     * required permissions for API actions</a> in the <i>Firewall Manager Developer Guide</i>.
+     * To perform this action outside of the console, you must first configure the SNS topic's access policy to allow
+     * the <code>SnsRoleName</code> to publish SNS logs. If the <code>SnsRoleName</code> provided is a role other than
+     * the <code>AWSServiceRoleForFMS</code> service-linked role, this role must have a trust relationship configured to
+     * allow the Firewall Manager service principal <code>fms.amazonaws.com</code> to assume this role. For information
+     * about configuring an SNS access policy, see <a href=
+     * "https://docs.aws.amazon.com/waf/latest/developerguide/fms-security_iam_service-with-iam.html#fms-security_iam_service-with-iam-roles-service"
+     * >Service roles for Firewall Manager</a> in the <i>Firewall Manager Developer Guide</i>.
      * </p>
      * 
      * @param putNotificationChannelRequest
@@ -981,52 +1334,76 @@ public interface AWSFMSAsync extends AWSFMS {
      * Creates an Firewall Manager policy.
      * </p>
      * <p>
+     * A Firewall Manager policy is specific to the individual policy type. If you want to enforce multiple policy types
+     * across accounts, you can create multiple policies. You can create more than one policy for each type.
+     * </p>
+     * <p>
+     * If you add a new account to an organization that you created with Organizations, Firewall Manager automatically
+     * applies the policy to the resources in that account that are within scope of the policy.
+     * </p>
+     * <p>
      * Firewall Manager provides the following types of policies:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * An WAF policy (type WAFV2), which defines rule groups to run first in the corresponding WAF web ACL and rule
-     * groups to run last in the web ACL.
+     * <b>WAF policy</b> - This policy applies WAF web ACL protections to specified accounts and resources.
      * </p>
      * </li>
      * <li>
      * <p>
-     * An WAF Classic policy (type WAF), which defines a rule group.
+     * <b>Shield Advanced policy</b> - This policy applies Shield Advanced protection to specified accounts and
+     * resources.
      * </p>
      * </li>
      * <li>
      * <p>
-     * A Shield Advanced policy, which applies Shield Advanced protection to specified accounts and resources.
+     * <b>Security Groups policy</b> - This type of policy gives you control over security groups that are in use
+     * throughout your organization in Organizations and lets you enforce a baseline set of rules across your
+     * organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * A security group policy, which manages VPC security groups across your Amazon Web Services organization.
+     * <b>Network ACL policy</b> - This type of policy gives you control over the network ACLs that are in use
+     * throughout your organization in Organizations and lets you enforce a baseline set of first and last network ACL
+     * rules across your organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * An Network Firewall policy, which provides firewall rules to filter network traffic in specified Amazon VPCs.
+     * <b>Network Firewall policy</b> - This policy applies Network Firewall protection to your organization's VPCs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * A DNS Firewall policy, which provides Route 53 Resolver DNS Firewall rules to filter DNS queries for specified
-     * VPCs.
+     * <b>DNS Firewall policy</b> - This policy applies Amazon Route 53 Resolver DNS Firewall protections to your
+     * organization's VPCs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Third-party firewall policy</b> - This policy applies third-party firewall protections. Third-party firewalls
+     * are available by subscription through the Amazon Web Services Marketplace console at <a
+     * href="http://aws.amazon.com/marketplace">Amazon Web Services Marketplace</a>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Palo Alto Networks Cloud NGFW policy</b> - This policy applies Palo Alto Networks Cloud Next Generation
+     * Firewall (NGFW) protections and Palo Alto Networks Cloud NGFW rulestacks to your organization's VPCs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Fortigate CNF policy</b> - This policy applies Fortigate Cloud Native Firewall (CNF) protections. Fortigate
+     * CNF is a cloud-centered solution that blocks Zero-Day threats and secures cloud infrastructures with
+     * industry-leading advanced threat prevention, smart web application firewalls (WAF), and API protection.
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * Each policy is specific to one of the types. If you want to enforce more than one policy type across accounts,
-     * create multiple policies. You can create multiple policies for each type.
-     * </p>
-     * <p>
-     * You must be subscribed to Shield Advanced to create a Shield Advanced policy. For more information about
-     * subscribing to Shield Advanced, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateSubscription.html"
-     * >CreateSubscription</a>.
-     * </p>
+     * </li>
+     * </ul>
      * 
      * @param putPolicyRequest
      * @return A Java Future containing the result of the PutPolicy operation returned by the service.
@@ -1041,52 +1418,76 @@ public interface AWSFMSAsync extends AWSFMS {
      * Creates an Firewall Manager policy.
      * </p>
      * <p>
+     * A Firewall Manager policy is specific to the individual policy type. If you want to enforce multiple policy types
+     * across accounts, you can create multiple policies. You can create more than one policy for each type.
+     * </p>
+     * <p>
+     * If you add a new account to an organization that you created with Organizations, Firewall Manager automatically
+     * applies the policy to the resources in that account that are within scope of the policy.
+     * </p>
+     * <p>
      * Firewall Manager provides the following types of policies:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * An WAF policy (type WAFV2), which defines rule groups to run first in the corresponding WAF web ACL and rule
-     * groups to run last in the web ACL.
+     * <b>WAF policy</b> - This policy applies WAF web ACL protections to specified accounts and resources.
      * </p>
      * </li>
      * <li>
      * <p>
-     * An WAF Classic policy (type WAF), which defines a rule group.
+     * <b>Shield Advanced policy</b> - This policy applies Shield Advanced protection to specified accounts and
+     * resources.
      * </p>
      * </li>
      * <li>
      * <p>
-     * A Shield Advanced policy, which applies Shield Advanced protection to specified accounts and resources.
+     * <b>Security Groups policy</b> - This type of policy gives you control over security groups that are in use
+     * throughout your organization in Organizations and lets you enforce a baseline set of rules across your
+     * organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * A security group policy, which manages VPC security groups across your Amazon Web Services organization.
+     * <b>Network ACL policy</b> - This type of policy gives you control over the network ACLs that are in use
+     * throughout your organization in Organizations and lets you enforce a baseline set of first and last network ACL
+     * rules across your organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * An Network Firewall policy, which provides firewall rules to filter network traffic in specified Amazon VPCs.
+     * <b>Network Firewall policy</b> - This policy applies Network Firewall protection to your organization's VPCs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * A DNS Firewall policy, which provides Route 53 Resolver DNS Firewall rules to filter DNS queries for specified
-     * VPCs.
+     * <b>DNS Firewall policy</b> - This policy applies Amazon Route 53 Resolver DNS Firewall protections to your
+     * organization's VPCs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Third-party firewall policy</b> - This policy applies third-party firewall protections. Third-party firewalls
+     * are available by subscription through the Amazon Web Services Marketplace console at <a
+     * href="http://aws.amazon.com/marketplace">Amazon Web Services Marketplace</a>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Palo Alto Networks Cloud NGFW policy</b> - This policy applies Palo Alto Networks Cloud Next Generation
+     * Firewall (NGFW) protections and Palo Alto Networks Cloud NGFW rulestacks to your organization's VPCs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Fortigate CNF policy</b> - This policy applies Fortigate Cloud Native Firewall (CNF) protections. Fortigate
+     * CNF is a cloud-centered solution that blocks Zero-Day threats and secures cloud infrastructures with
+     * industry-leading advanced threat prevention, smart web application firewalls (WAF), and API protection.
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * Each policy is specific to one of the types. If you want to enforce more than one policy type across accounts,
-     * create multiple policies. You can create multiple policies for each type.
-     * </p>
-     * <p>
-     * You must be subscribed to Shield Advanced to create a Shield Advanced policy. For more information about
-     * subscribing to Shield Advanced, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateSubscription.html"
-     * >CreateSubscription</a>.
-     * </p>
+     * </li>
+     * </ul>
      * 
      * @param putPolicyRequest
      * @param asyncHandler
@@ -1131,6 +1532,45 @@ public interface AWSFMSAsync extends AWSFMS {
      */
     java.util.concurrent.Future<PutProtocolsListResult> putProtocolsListAsync(PutProtocolsListRequest putProtocolsListRequest,
             com.amazonaws.handlers.AsyncHandler<PutProtocolsListRequest, PutProtocolsListResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates the resource set.
+     * </p>
+     * <p>
+     * An Firewall Manager resource set defines the resources to import into an Firewall Manager policy from another
+     * Amazon Web Services service.
+     * </p>
+     * 
+     * @param putResourceSetRequest
+     * @return A Java Future containing the result of the PutResourceSet operation returned by the service.
+     * @sample AWSFMSAsync.PutResourceSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutResourceSet" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutResourceSetResult> putResourceSetAsync(PutResourceSetRequest putResourceSetRequest);
+
+    /**
+     * <p>
+     * Creates the resource set.
+     * </p>
+     * <p>
+     * An Firewall Manager resource set defines the resources to import into an Firewall Manager policy from another
+     * Amazon Web Services service.
+     * </p>
+     * 
+     * @param putResourceSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutResourceSet operation returned by the service.
+     * @sample AWSFMSAsyncHandler.PutResourceSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutResourceSet" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutResourceSetResult> putResourceSetAsync(PutResourceSetRequest putResourceSetRequest,
+            com.amazonaws.handlers.AsyncHandler<PutResourceSetRequest, PutResourceSetResult> asyncHandler);
 
     /**
      * <p>

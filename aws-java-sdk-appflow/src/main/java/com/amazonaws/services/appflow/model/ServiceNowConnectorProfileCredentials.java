@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,12 @@ public class ServiceNowConnectorProfileCredentials implements Serializable, Clon
      * </p>
      */
     private String password;
+    /**
+     * <p>
+     * The OAuth 2.0 credentials required to authenticate the user.
+     * </p>
+     */
+    private OAuth2Credentials oAuth2Credentials;
 
     /**
      * <p>
@@ -122,6 +128,46 @@ public class ServiceNowConnectorProfileCredentials implements Serializable, Clon
     }
 
     /**
+     * <p>
+     * The OAuth 2.0 credentials required to authenticate the user.
+     * </p>
+     * 
+     * @param oAuth2Credentials
+     *        The OAuth 2.0 credentials required to authenticate the user.
+     */
+
+    public void setOAuth2Credentials(OAuth2Credentials oAuth2Credentials) {
+        this.oAuth2Credentials = oAuth2Credentials;
+    }
+
+    /**
+     * <p>
+     * The OAuth 2.0 credentials required to authenticate the user.
+     * </p>
+     * 
+     * @return The OAuth 2.0 credentials required to authenticate the user.
+     */
+
+    public OAuth2Credentials getOAuth2Credentials() {
+        return this.oAuth2Credentials;
+    }
+
+    /**
+     * <p>
+     * The OAuth 2.0 credentials required to authenticate the user.
+     * </p>
+     * 
+     * @param oAuth2Credentials
+     *        The OAuth 2.0 credentials required to authenticate the user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceNowConnectorProfileCredentials withOAuth2Credentials(OAuth2Credentials oAuth2Credentials) {
+        setOAuth2Credentials(oAuth2Credentials);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +182,9 @@ public class ServiceNowConnectorProfileCredentials implements Serializable, Clon
         if (getUsername() != null)
             sb.append("Username: ").append(getUsername()).append(",");
         if (getPassword() != null)
-            sb.append("Password: ").append("***Sensitive Data Redacted***");
+            sb.append("Password: ").append("***Sensitive Data Redacted***").append(",");
+        if (getOAuth2Credentials() != null)
+            sb.append("OAuth2Credentials: ").append(getOAuth2Credentials());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +207,10 @@ public class ServiceNowConnectorProfileCredentials implements Serializable, Clon
             return false;
         if (other.getPassword() != null && other.getPassword().equals(this.getPassword()) == false)
             return false;
+        if (other.getOAuth2Credentials() == null ^ this.getOAuth2Credentials() == null)
+            return false;
+        if (other.getOAuth2Credentials() != null && other.getOAuth2Credentials().equals(this.getOAuth2Credentials()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +221,7 @@ public class ServiceNowConnectorProfileCredentials implements Serializable, Clon
 
         hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());
         hashCode = prime * hashCode + ((getPassword() == null) ? 0 : getPassword().hashCode());
+        hashCode = prime * hashCode + ((getOAuth2Credentials() == null) ? 0 : getOAuth2Credentials().hashCode());
         return hashCode;
     }
 

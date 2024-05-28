@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A resource that is used to connect third-party source providers with services like AWS CodePipeline.
+ * A resource that is used to connect third-party source providers with services like CodePipeline.
  * </p>
  * <p>
  * Note: A connection created through CloudFormation, the CLI, or the SDK is in `PENDING` status by default. You can
@@ -34,14 +34,14 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the connection. Connection names must be unique in an AWS user account.
+     * The name of the connection. Connection names must be unique in an Amazon Web Services account.
      * </p>
      */
     private String connectionName;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the connection. The ARN is used as the connection reference when the connection
-     * is shared between AWS services.
+     * is shared between Amazon Web Services.
      * </p>
      * <note>
      * <p>
@@ -78,11 +78,11 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the connection. Connection names must be unique in an AWS user account.
+     * The name of the connection. Connection names must be unique in an Amazon Web Services account.
      * </p>
      * 
      * @param connectionName
-     *        The name of the connection. Connection names must be unique in an AWS user account.
+     *        The name of the connection. Connection names must be unique in an Amazon Web Services account.
      */
 
     public void setConnectionName(String connectionName) {
@@ -91,10 +91,10 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the connection. Connection names must be unique in an AWS user account.
+     * The name of the connection. Connection names must be unique in an Amazon Web Services account.
      * </p>
      * 
-     * @return The name of the connection. Connection names must be unique in an AWS user account.
+     * @return The name of the connection. Connection names must be unique in an Amazon Web Services account.
      */
 
     public String getConnectionName() {
@@ -103,11 +103,11 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the connection. Connection names must be unique in an AWS user account.
+     * The name of the connection. Connection names must be unique in an Amazon Web Services account.
      * </p>
      * 
      * @param connectionName
-     *        The name of the connection. Connection names must be unique in an AWS user account.
+     *        The name of the connection. Connection names must be unique in an Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,7 +119,7 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the connection. The ARN is used as the connection reference when the connection
-     * is shared between AWS services.
+     * is shared between Amazon Web Services.
      * </p>
      * <note>
      * <p>
@@ -129,7 +129,7 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param connectionArn
      *        The Amazon Resource Name (ARN) of the connection. The ARN is used as the connection reference when the
-     *        connection is shared between AWS services.</p> <note>
+     *        connection is shared between Amazon Web Services.</p> <note>
      *        <p>
      *        The ARN is never reused if the connection is deleted.
      *        </p>
@@ -142,7 +142,7 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the connection. The ARN is used as the connection reference when the connection
-     * is shared between AWS services.
+     * is shared between Amazon Web Services.
      * </p>
      * <note>
      * <p>
@@ -151,7 +151,7 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * 
      * @return The Amazon Resource Name (ARN) of the connection. The ARN is used as the connection reference when the
-     *         connection is shared between AWS services.</p> <note>
+     *         connection is shared between Amazon Web Services.</p> <note>
      *         <p>
      *         The ARN is never reused if the connection is deleted.
      *         </p>
@@ -164,7 +164,7 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the connection. The ARN is used as the connection reference when the connection
-     * is shared between AWS services.
+     * is shared between Amazon Web Services.
      * </p>
      * <note>
      * <p>
@@ -174,7 +174,7 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param connectionArn
      *        The Amazon Resource Name (ARN) of the connection. The ARN is used as the connection reference when the
-     *        connection is shared between AWS services.</p> <note>
+     *        connection is shared between Amazon Web Services.</p> <note>
      *        <p>
      *        The ARN is never reused if the connection is deleted.
      *        </p>

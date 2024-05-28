@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,6 +53,11 @@ public class AbstractAmazonLookoutEquipment implements AmazonLookoutEquipment {
     }
 
     @Override
+    public CreateRetrainingSchedulerResult createRetrainingScheduler(CreateRetrainingSchedulerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteDatasetResult deleteDataset(DeleteDatasetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -74,6 +79,16 @@ public class AbstractAmazonLookoutEquipment implements AmazonLookoutEquipment {
 
     @Override
     public DeleteModelResult deleteModel(DeleteModelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteResourcePolicyResult deleteResourcePolicy(DeleteResourcePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteRetrainingSchedulerResult deleteRetrainingScheduler(DeleteRetrainingSchedulerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -104,6 +119,31 @@ public class AbstractAmazonLookoutEquipment implements AmazonLookoutEquipment {
 
     @Override
     public DescribeModelResult describeModel(DescribeModelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeModelVersionResult describeModelVersion(DescribeModelVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeResourcePolicyResult describeResourcePolicy(DescribeResourcePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeRetrainingSchedulerResult describeRetrainingScheduler(DescribeRetrainingSchedulerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ImportDatasetResult importDataset(ImportDatasetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ImportModelVersionResult importModelVersion(ImportModelVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -143,7 +183,17 @@ public class AbstractAmazonLookoutEquipment implements AmazonLookoutEquipment {
     }
 
     @Override
+    public ListModelVersionsResult listModelVersions(ListModelVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListModelsResult listModels(ListModelsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListRetrainingSchedulersResult listRetrainingSchedulers(ListRetrainingSchedulersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -158,6 +208,11 @@ public class AbstractAmazonLookoutEquipment implements AmazonLookoutEquipment {
     }
 
     @Override
+    public PutResourcePolicyResult putResourcePolicy(PutResourcePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartDataIngestionJobResult startDataIngestionJob(StartDataIngestionJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -168,7 +223,17 @@ public class AbstractAmazonLookoutEquipment implements AmazonLookoutEquipment {
     }
 
     @Override
+    public StartRetrainingSchedulerResult startRetrainingScheduler(StartRetrainingSchedulerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StopInferenceSchedulerResult stopInferenceScheduler(StopInferenceSchedulerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopRetrainingSchedulerResult stopRetrainingScheduler(StopRetrainingSchedulerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -183,12 +248,27 @@ public class AbstractAmazonLookoutEquipment implements AmazonLookoutEquipment {
     }
 
     @Override
+    public UpdateActiveModelVersionResult updateActiveModelVersion(UpdateActiveModelVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateInferenceSchedulerResult updateInferenceScheduler(UpdateInferenceSchedulerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public UpdateLabelGroupResult updateLabelGroup(UpdateLabelGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateModelResult updateModel(UpdateModelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateRetrainingSchedulerResult updateRetrainingScheduler(UpdateRetrainingSchedulerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

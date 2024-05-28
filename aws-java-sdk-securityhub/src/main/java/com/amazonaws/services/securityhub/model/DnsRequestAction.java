@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,11 +33,17 @@ public class DnsRequestAction implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The DNS domain that is associated with the DNS request.
      * </p>
+     * <p>
+     * Length Constraints: 128.
+     * </p>
      */
     private String domain;
     /**
      * <p>
      * The protocol that was used for the DNS request.
+     * </p>
+     * <p>
+     * Length Constraints: Minimum length of 1. Maximum length of 64.
      * </p>
      */
     private String protocol;
@@ -52,9 +58,14 @@ public class DnsRequestAction implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The DNS domain that is associated with the DNS request.
      * </p>
+     * <p>
+     * Length Constraints: 128.
+     * </p>
      * 
      * @param domain
-     *        The DNS domain that is associated with the DNS request.
+     *        The DNS domain that is associated with the DNS request.</p>
+     *        <p>
+     *        Length Constraints: 128.
      */
 
     public void setDomain(String domain) {
@@ -65,8 +76,13 @@ public class DnsRequestAction implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The DNS domain that is associated with the DNS request.
      * </p>
+     * <p>
+     * Length Constraints: 128.
+     * </p>
      * 
-     * @return The DNS domain that is associated with the DNS request.
+     * @return The DNS domain that is associated with the DNS request.</p>
+     *         <p>
+     *         Length Constraints: 128.
      */
 
     public String getDomain() {
@@ -77,9 +93,14 @@ public class DnsRequestAction implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The DNS domain that is associated with the DNS request.
      * </p>
+     * <p>
+     * Length Constraints: 128.
+     * </p>
      * 
      * @param domain
-     *        The DNS domain that is associated with the DNS request.
+     *        The DNS domain that is associated with the DNS request.</p>
+     *        <p>
+     *        Length Constraints: 128.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,9 +113,14 @@ public class DnsRequestAction implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The protocol that was used for the DNS request.
      * </p>
+     * <p>
+     * Length Constraints: Minimum length of 1. Maximum length of 64.
+     * </p>
      * 
      * @param protocol
-     *        The protocol that was used for the DNS request.
+     *        The protocol that was used for the DNS request.</p>
+     *        <p>
+     *        Length Constraints: Minimum length of 1. Maximum length of 64.
      */
 
     public void setProtocol(String protocol) {
@@ -105,8 +131,13 @@ public class DnsRequestAction implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The protocol that was used for the DNS request.
      * </p>
+     * <p>
+     * Length Constraints: Minimum length of 1. Maximum length of 64.
+     * </p>
      * 
-     * @return The protocol that was used for the DNS request.
+     * @return The protocol that was used for the DNS request.</p>
+     *         <p>
+     *         Length Constraints: Minimum length of 1. Maximum length of 64.
      */
 
     public String getProtocol() {
@@ -117,9 +148,14 @@ public class DnsRequestAction implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The protocol that was used for the DNS request.
      * </p>
+     * <p>
+     * Length Constraints: Minimum length of 1. Maximum length of 64.
+     * </p>
      * 
      * @param protocol
-     *        The protocol that was used for the DNS request.
+     *        The protocol that was used for the DNS request.</p>
+     *        <p>
+     *        Length Constraints: Minimum length of 1. Maximum length of 64.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

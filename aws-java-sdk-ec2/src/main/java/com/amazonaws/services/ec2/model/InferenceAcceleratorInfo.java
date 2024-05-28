@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,12 @@ public class InferenceAcceleratorInfo implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InferenceDeviceInfo> accelerators;
+    /**
+     * <p>
+     * The total size of the memory for the inference accelerators for the instance type, in MiB.
+     * </p>
+     */
+    private Integer totalInferenceMemoryInMiB;
 
     /**
      * <p>
@@ -107,6 +113,46 @@ public class InferenceAcceleratorInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The total size of the memory for the inference accelerators for the instance type, in MiB.
+     * </p>
+     * 
+     * @param totalInferenceMemoryInMiB
+     *        The total size of the memory for the inference accelerators for the instance type, in MiB.
+     */
+
+    public void setTotalInferenceMemoryInMiB(Integer totalInferenceMemoryInMiB) {
+        this.totalInferenceMemoryInMiB = totalInferenceMemoryInMiB;
+    }
+
+    /**
+     * <p>
+     * The total size of the memory for the inference accelerators for the instance type, in MiB.
+     * </p>
+     * 
+     * @return The total size of the memory for the inference accelerators for the instance type, in MiB.
+     */
+
+    public Integer getTotalInferenceMemoryInMiB() {
+        return this.totalInferenceMemoryInMiB;
+    }
+
+    /**
+     * <p>
+     * The total size of the memory for the inference accelerators for the instance type, in MiB.
+     * </p>
+     * 
+     * @param totalInferenceMemoryInMiB
+     *        The total size of the memory for the inference accelerators for the instance type, in MiB.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InferenceAcceleratorInfo withTotalInferenceMemoryInMiB(Integer totalInferenceMemoryInMiB) {
+        setTotalInferenceMemoryInMiB(totalInferenceMemoryInMiB);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -119,7 +165,9 @@ public class InferenceAcceleratorInfo implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccelerators() != null)
-            sb.append("Accelerators: ").append(getAccelerators());
+            sb.append("Accelerators: ").append(getAccelerators()).append(",");
+        if (getTotalInferenceMemoryInMiB() != null)
+            sb.append("TotalInferenceMemoryInMiB: ").append(getTotalInferenceMemoryInMiB());
         sb.append("}");
         return sb.toString();
     }
@@ -138,6 +186,10 @@ public class InferenceAcceleratorInfo implements Serializable, Cloneable {
             return false;
         if (other.getAccelerators() != null && other.getAccelerators().equals(this.getAccelerators()) == false)
             return false;
+        if (other.getTotalInferenceMemoryInMiB() == null ^ this.getTotalInferenceMemoryInMiB() == null)
+            return false;
+        if (other.getTotalInferenceMemoryInMiB() != null && other.getTotalInferenceMemoryInMiB().equals(this.getTotalInferenceMemoryInMiB()) == false)
+            return false;
         return true;
     }
 
@@ -147,6 +199,7 @@ public class InferenceAcceleratorInfo implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAccelerators() == null) ? 0 : getAccelerators().hashCode());
+        hashCode = prime * hashCode + ((getTotalInferenceMemoryInMiB() == null) ? 0 : getTotalInferenceMemoryInMiB().hashCode());
         return hashCode;
     }
 

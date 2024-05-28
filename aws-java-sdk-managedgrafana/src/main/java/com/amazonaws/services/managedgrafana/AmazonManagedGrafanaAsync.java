@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,8 +42,9 @@ public interface AmazonManagedGrafanaAsync extends AmazonManagedGrafana {
 
     /**
      * <p>
-     * Assigns a Grafana Enterprise license to a workspace. Upgrading to Grafana Enterprise incurs additional fees. For
-     * more information, see <a
+     * Assigns a Grafana Enterprise license to a workspace. To upgrade, you must use <code>ENTERPRISE</code> for the
+     * <code>licenseType</code>, and pass in a valid Grafana Labs token for the <code>grafanaToken</code>. Upgrading to
+     * Grafana Enterprise incurs additional fees. For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html">Upgrade a
      * workspace to Grafana Enterprise</a>.
      * </p>
@@ -58,8 +59,9 @@ public interface AmazonManagedGrafanaAsync extends AmazonManagedGrafana {
 
     /**
      * <p>
-     * Assigns a Grafana Enterprise license to a workspace. Upgrading to Grafana Enterprise incurs additional fees. For
-     * more information, see <a
+     * Assigns a Grafana Enterprise license to a workspace. To upgrade, you must use <code>ENTERPRISE</code> for the
+     * <code>licenseType</code>, and pass in a valid Grafana Labs token for the <code>grafanaToken</code>. Upgrading to
+     * Grafana Enterprise incurs additional fees. For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html">Upgrade a
      * workspace to Grafana Enterprise</a>.
      * </p>
@@ -120,11 +122,18 @@ public interface AmazonManagedGrafanaAsync extends AmazonManagedGrafana {
 
     /**
      * <p>
-     * Creates an API key for the workspace. This key can be used to authenticate requests sent to the workspace's HTTP
-     * API. See <a href=" https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">
-     * https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a> for available APIs and example
+     * Creates a Grafana API key for the workspace. This key can be used to authenticate requests sent to the
+     * workspace's HTTP API. See <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">https
+     * ://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a> for available APIs and example
      * requests.
      * </p>
+     * <note>
+     * <p>
+     * In workspaces compatible with Grafana version 9 or above, use workspace service accounts instead of API keys. API
+     * keys will be removed in a future release.
+     * </p>
+     * </note>
      * 
      * @param createWorkspaceApiKeyRequest
      * @return A Java Future containing the result of the CreateWorkspaceApiKey operation returned by the service.
@@ -136,11 +145,18 @@ public interface AmazonManagedGrafanaAsync extends AmazonManagedGrafana {
 
     /**
      * <p>
-     * Creates an API key for the workspace. This key can be used to authenticate requests sent to the workspace's HTTP
-     * API. See <a href=" https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">
-     * https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a> for available APIs and example
+     * Creates a Grafana API key for the workspace. This key can be used to authenticate requests sent to the
+     * workspace's HTTP API. See <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">https
+     * ://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a> for available APIs and example
      * requests.
      * </p>
+     * <note>
+     * <p>
+     * In workspaces compatible with Grafana version 9 or above, use workspace service accounts instead of API keys. API
+     * keys will be removed in a future release.
+     * </p>
+     * </note>
      * 
      * @param createWorkspaceApiKeyRequest
      * @param asyncHandler
@@ -154,6 +170,142 @@ public interface AmazonManagedGrafanaAsync extends AmazonManagedGrafana {
      */
     java.util.concurrent.Future<CreateWorkspaceApiKeyResult> createWorkspaceApiKeyAsync(CreateWorkspaceApiKeyRequest createWorkspaceApiKeyRequest,
             com.amazonaws.handlers.AsyncHandler<CreateWorkspaceApiKeyRequest, CreateWorkspaceApiKeyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a service account for the workspace. A service account can be used to call Grafana HTTP APIs, and run
+     * automated workloads. After creating the service account with the correct <code>GrafanaRole</code> for your use
+     * case, use <code>CreateWorkspaceServiceAccountToken</code> to create a token that can be used to authenticate and
+     * authorize Grafana HTTP API calls.
+     * </p>
+     * <p>
+     * You can only create service accounts for workspaces that are compatible with Grafana version 9 and above.
+     * </p>
+     * <note>
+     * <p>
+     * For more information about service accounts, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/service-accounts.html">Service accounts</a> in the
+     * <i>Amazon Managed Grafana User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about the Grafana HTTP APIs, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">Using Grafana HTTP APIs</a>
+     * in the <i>Amazon Managed Grafana User Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param createWorkspaceServiceAccountRequest
+     * @return A Java Future containing the result of the CreateWorkspaceServiceAccount operation returned by the
+     *         service.
+     * @sample AmazonManagedGrafanaAsync.CreateWorkspaceServiceAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/CreateWorkspaceServiceAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateWorkspaceServiceAccountResult> createWorkspaceServiceAccountAsync(
+            CreateWorkspaceServiceAccountRequest createWorkspaceServiceAccountRequest);
+
+    /**
+     * <p>
+     * Creates a service account for the workspace. A service account can be used to call Grafana HTTP APIs, and run
+     * automated workloads. After creating the service account with the correct <code>GrafanaRole</code> for your use
+     * case, use <code>CreateWorkspaceServiceAccountToken</code> to create a token that can be used to authenticate and
+     * authorize Grafana HTTP API calls.
+     * </p>
+     * <p>
+     * You can only create service accounts for workspaces that are compatible with Grafana version 9 and above.
+     * </p>
+     * <note>
+     * <p>
+     * For more information about service accounts, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/service-accounts.html">Service accounts</a> in the
+     * <i>Amazon Managed Grafana User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about the Grafana HTTP APIs, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">Using Grafana HTTP APIs</a>
+     * in the <i>Amazon Managed Grafana User Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param createWorkspaceServiceAccountRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateWorkspaceServiceAccount operation returned by the
+     *         service.
+     * @sample AmazonManagedGrafanaAsyncHandler.CreateWorkspaceServiceAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/CreateWorkspaceServiceAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateWorkspaceServiceAccountResult> createWorkspaceServiceAccountAsync(
+            CreateWorkspaceServiceAccountRequest createWorkspaceServiceAccountRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateWorkspaceServiceAccountRequest, CreateWorkspaceServiceAccountResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a token that can be used to authenticate and authorize Grafana HTTP API operations for the given <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/service-accounts.html">workspace service account</a>.
+     * The service account acts as a user for the API operations, and defines the permissions that are used by the API.
+     * </p>
+     * <important>
+     * <p>
+     * When you create the service account token, you will receive a key that is used when calling Grafana APIs. Do not
+     * lose this key, as it will not be retrievable again.
+     * </p>
+     * <p>
+     * If you do lose the key, you can delete the token and recreate it to receive a new key. This will disable the
+     * initial key.
+     * </p>
+     * </important>
+     * <p>
+     * Service accounts are only available for workspaces that are compatible with Grafana version 9 and above.
+     * </p>
+     * 
+     * @param createWorkspaceServiceAccountTokenRequest
+     * @return A Java Future containing the result of the CreateWorkspaceServiceAccountToken operation returned by the
+     *         service.
+     * @sample AmazonManagedGrafanaAsync.CreateWorkspaceServiceAccountToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/CreateWorkspaceServiceAccountToken"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateWorkspaceServiceAccountTokenResult> createWorkspaceServiceAccountTokenAsync(
+            CreateWorkspaceServiceAccountTokenRequest createWorkspaceServiceAccountTokenRequest);
+
+    /**
+     * <p>
+     * Creates a token that can be used to authenticate and authorize Grafana HTTP API operations for the given <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/service-accounts.html">workspace service account</a>.
+     * The service account acts as a user for the API operations, and defines the permissions that are used by the API.
+     * </p>
+     * <important>
+     * <p>
+     * When you create the service account token, you will receive a key that is used when calling Grafana APIs. Do not
+     * lose this key, as it will not be retrievable again.
+     * </p>
+     * <p>
+     * If you do lose the key, you can delete the token and recreate it to receive a new key. This will disable the
+     * initial key.
+     * </p>
+     * </important>
+     * <p>
+     * Service accounts are only available for workspaces that are compatible with Grafana version 9 and above.
+     * </p>
+     * 
+     * @param createWorkspaceServiceAccountTokenRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateWorkspaceServiceAccountToken operation returned by the
+     *         service.
+     * @sample AmazonManagedGrafanaAsyncHandler.CreateWorkspaceServiceAccountToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/CreateWorkspaceServiceAccountToken"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateWorkspaceServiceAccountTokenResult> createWorkspaceServiceAccountTokenAsync(
+            CreateWorkspaceServiceAccountTokenRequest createWorkspaceServiceAccountTokenRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateWorkspaceServiceAccountTokenRequest, CreateWorkspaceServiceAccountTokenResult> asyncHandler);
 
     /**
      * <p>
@@ -188,8 +340,14 @@ public interface AmazonManagedGrafanaAsync extends AmazonManagedGrafana {
 
     /**
      * <p>
-     * Deletes an API key for a workspace.
+     * Deletes a Grafana API key for the workspace.
      * </p>
+     * <note>
+     * <p>
+     * In workspaces compatible with Grafana version 9 or above, use workspace service accounts instead of API keys. API
+     * keys will be removed in a future release.
+     * </p>
+     * </note>
      * 
      * @param deleteWorkspaceApiKeyRequest
      * @return A Java Future containing the result of the DeleteWorkspaceApiKey operation returned by the service.
@@ -201,8 +359,14 @@ public interface AmazonManagedGrafanaAsync extends AmazonManagedGrafana {
 
     /**
      * <p>
-     * Deletes an API key for a workspace.
+     * Deletes a Grafana API key for the workspace.
      * </p>
+     * <note>
+     * <p>
+     * In workspaces compatible with Grafana version 9 or above, use workspace service accounts instead of API keys. API
+     * keys will be removed in a future release.
+     * </p>
+     * </note>
      * 
      * @param deleteWorkspaceApiKeyRequest
      * @param asyncHandler
@@ -216,6 +380,104 @@ public interface AmazonManagedGrafanaAsync extends AmazonManagedGrafana {
      */
     java.util.concurrent.Future<DeleteWorkspaceApiKeyResult> deleteWorkspaceApiKeyAsync(DeleteWorkspaceApiKeyRequest deleteWorkspaceApiKeyRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteWorkspaceApiKeyRequest, DeleteWorkspaceApiKeyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a workspace service account from the workspace.
+     * </p>
+     * <p>
+     * This will delete any tokens created for the service account, as well. If the tokens are currently in use, the
+     * will fail to authenticate / authorize after they are deleted.
+     * </p>
+     * <p>
+     * Service accounts are only available for workspaces that are compatible with Grafana version 9 and above.
+     * </p>
+     * 
+     * @param deleteWorkspaceServiceAccountRequest
+     * @return A Java Future containing the result of the DeleteWorkspaceServiceAccount operation returned by the
+     *         service.
+     * @sample AmazonManagedGrafanaAsync.DeleteWorkspaceServiceAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DeleteWorkspaceServiceAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteWorkspaceServiceAccountResult> deleteWorkspaceServiceAccountAsync(
+            DeleteWorkspaceServiceAccountRequest deleteWorkspaceServiceAccountRequest);
+
+    /**
+     * <p>
+     * Deletes a workspace service account from the workspace.
+     * </p>
+     * <p>
+     * This will delete any tokens created for the service account, as well. If the tokens are currently in use, the
+     * will fail to authenticate / authorize after they are deleted.
+     * </p>
+     * <p>
+     * Service accounts are only available for workspaces that are compatible with Grafana version 9 and above.
+     * </p>
+     * 
+     * @param deleteWorkspaceServiceAccountRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteWorkspaceServiceAccount operation returned by the
+     *         service.
+     * @sample AmazonManagedGrafanaAsyncHandler.DeleteWorkspaceServiceAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DeleteWorkspaceServiceAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteWorkspaceServiceAccountResult> deleteWorkspaceServiceAccountAsync(
+            DeleteWorkspaceServiceAccountRequest deleteWorkspaceServiceAccountRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteWorkspaceServiceAccountRequest, DeleteWorkspaceServiceAccountResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a token for the workspace service account.
+     * </p>
+     * <p>
+     * This will disable the key associated with the token. If any automation is currently using the key, it will no
+     * longer be authenticated or authorized to perform actions with the Grafana HTTP APIs.
+     * </p>
+     * <p>
+     * Service accounts are only available for workspaces that are compatible with Grafana version 9 and above.
+     * </p>
+     * 
+     * @param deleteWorkspaceServiceAccountTokenRequest
+     * @return A Java Future containing the result of the DeleteWorkspaceServiceAccountToken operation returned by the
+     *         service.
+     * @sample AmazonManagedGrafanaAsync.DeleteWorkspaceServiceAccountToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DeleteWorkspaceServiceAccountToken"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteWorkspaceServiceAccountTokenResult> deleteWorkspaceServiceAccountTokenAsync(
+            DeleteWorkspaceServiceAccountTokenRequest deleteWorkspaceServiceAccountTokenRequest);
+
+    /**
+     * <p>
+     * Deletes a token for the workspace service account.
+     * </p>
+     * <p>
+     * This will disable the key associated with the token. If any automation is currently using the key, it will no
+     * longer be authenticated or authorized to perform actions with the Grafana HTTP APIs.
+     * </p>
+     * <p>
+     * Service accounts are only available for workspaces that are compatible with Grafana version 9 and above.
+     * </p>
+     * 
+     * @param deleteWorkspaceServiceAccountTokenRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteWorkspaceServiceAccountToken operation returned by the
+     *         service.
+     * @sample AmazonManagedGrafanaAsyncHandler.DeleteWorkspaceServiceAccountToken
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DeleteWorkspaceServiceAccountToken"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteWorkspaceServiceAccountTokenResult> deleteWorkspaceServiceAccountTokenAsync(
+            DeleteWorkspaceServiceAccountTokenRequest deleteWorkspaceServiceAccountTokenRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteWorkspaceServiceAccountTokenRequest, DeleteWorkspaceServiceAccountTokenResult> asyncHandler);
 
     /**
      * <p>
@@ -282,6 +544,41 @@ public interface AmazonManagedGrafanaAsync extends AmazonManagedGrafana {
     java.util.concurrent.Future<DescribeWorkspaceAuthenticationResult> describeWorkspaceAuthenticationAsync(
             DescribeWorkspaceAuthenticationRequest describeWorkspaceAuthenticationRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeWorkspaceAuthenticationRequest, DescribeWorkspaceAuthenticationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the current configuration string for the given workspace.
+     * </p>
+     * 
+     * @param describeWorkspaceConfigurationRequest
+     * @return A Java Future containing the result of the DescribeWorkspaceConfiguration operation returned by the
+     *         service.
+     * @sample AmazonManagedGrafanaAsync.DescribeWorkspaceConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DescribeWorkspaceConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeWorkspaceConfigurationResult> describeWorkspaceConfigurationAsync(
+            DescribeWorkspaceConfigurationRequest describeWorkspaceConfigurationRequest);
+
+    /**
+     * <p>
+     * Gets the current configuration string for the given workspace.
+     * </p>
+     * 
+     * @param describeWorkspaceConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeWorkspaceConfiguration operation returned by the
+     *         service.
+     * @sample AmazonManagedGrafanaAsyncHandler.DescribeWorkspaceConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DescribeWorkspaceConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeWorkspaceConfigurationResult> describeWorkspaceConfigurationAsync(
+            DescribeWorkspaceConfigurationRequest describeWorkspaceConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeWorkspaceConfigurationRequest, DescribeWorkspaceConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -387,6 +684,133 @@ public interface AmazonManagedGrafanaAsync extends AmazonManagedGrafana {
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists available versions of Grafana. These are available when calling <code>CreateWorkspace</code>. Optionally,
+     * include a workspace to list the versions to which it can be upgraded.
+     * </p>
+     * 
+     * @param listVersionsRequest
+     * @return A Java Future containing the result of the ListVersions operation returned by the service.
+     * @sample AmazonManagedGrafanaAsync.ListVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListVersions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListVersionsResult> listVersionsAsync(ListVersionsRequest listVersionsRequest);
+
+    /**
+     * <p>
+     * Lists available versions of Grafana. These are available when calling <code>CreateWorkspace</code>. Optionally,
+     * include a workspace to list the versions to which it can be upgraded.
+     * </p>
+     * 
+     * @param listVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListVersions operation returned by the service.
+     * @sample AmazonManagedGrafanaAsyncHandler.ListVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListVersions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListVersionsResult> listVersionsAsync(ListVersionsRequest listVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListVersionsRequest, ListVersionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of tokens for a workspace service account.
+     * </p>
+     * <note>
+     * <p>
+     * This does not return the key for each token. You cannot access keys after they are created. To create a new key,
+     * delete the token and recreate it.
+     * </p>
+     * </note>
+     * <p>
+     * Service accounts are only available for workspaces that are compatible with Grafana version 9 and above.
+     * </p>
+     * 
+     * @param listWorkspaceServiceAccountTokensRequest
+     * @return A Java Future containing the result of the ListWorkspaceServiceAccountTokens operation returned by the
+     *         service.
+     * @sample AmazonManagedGrafanaAsync.ListWorkspaceServiceAccountTokens
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListWorkspaceServiceAccountTokens"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListWorkspaceServiceAccountTokensResult> listWorkspaceServiceAccountTokensAsync(
+            ListWorkspaceServiceAccountTokensRequest listWorkspaceServiceAccountTokensRequest);
+
+    /**
+     * <p>
+     * Returns a list of tokens for a workspace service account.
+     * </p>
+     * <note>
+     * <p>
+     * This does not return the key for each token. You cannot access keys after they are created. To create a new key,
+     * delete the token and recreate it.
+     * </p>
+     * </note>
+     * <p>
+     * Service accounts are only available for workspaces that are compatible with Grafana version 9 and above.
+     * </p>
+     * 
+     * @param listWorkspaceServiceAccountTokensRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListWorkspaceServiceAccountTokens operation returned by the
+     *         service.
+     * @sample AmazonManagedGrafanaAsyncHandler.ListWorkspaceServiceAccountTokens
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListWorkspaceServiceAccountTokens"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListWorkspaceServiceAccountTokensResult> listWorkspaceServiceAccountTokensAsync(
+            ListWorkspaceServiceAccountTokensRequest listWorkspaceServiceAccountTokensRequest,
+            com.amazonaws.handlers.AsyncHandler<ListWorkspaceServiceAccountTokensRequest, ListWorkspaceServiceAccountTokensResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of service accounts for a workspace.
+     * </p>
+     * <p>
+     * Service accounts are only available for workspaces that are compatible with Grafana version 9 and above.
+     * </p>
+     * 
+     * @param listWorkspaceServiceAccountsRequest
+     * @return A Java Future containing the result of the ListWorkspaceServiceAccounts operation returned by the
+     *         service.
+     * @sample AmazonManagedGrafanaAsync.ListWorkspaceServiceAccounts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListWorkspaceServiceAccounts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListWorkspaceServiceAccountsResult> listWorkspaceServiceAccountsAsync(
+            ListWorkspaceServiceAccountsRequest listWorkspaceServiceAccountsRequest);
+
+    /**
+     * <p>
+     * Returns a list of service accounts for a workspace.
+     * </p>
+     * <p>
+     * Service accounts are only available for workspaces that are compatible with Grafana version 9 and above.
+     * </p>
+     * 
+     * @param listWorkspaceServiceAccountsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListWorkspaceServiceAccounts operation returned by the
+     *         service.
+     * @sample AmazonManagedGrafanaAsyncHandler.ListWorkspaceServiceAccounts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/ListWorkspaceServiceAccounts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListWorkspaceServiceAccountsResult> listWorkspaceServiceAccountsAsync(
+            ListWorkspaceServiceAccountsRequest listWorkspaceServiceAccountsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListWorkspaceServiceAccountsRequest, ListWorkspaceServiceAccountsResult> asyncHandler);
 
     /**
      * <p>
@@ -536,8 +960,8 @@ public interface AmazonManagedGrafanaAsync extends AmazonManagedGrafana {
      * parameters, the existing values of those parameters are not changed.
      * </p>
      * <p>
-     * To modify the user authentication methods that the workspace uses, such as SAML or Amazon Web Services SSO, use
-     * <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspaceAuthentication.html">
+     * To modify the user authentication methods that the workspace uses, such as SAML or IAM Identity Center, use <a
+     * href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspaceAuthentication.html">
      * UpdateWorkspaceAuthentication</a>.
      * </p>
      * <p>
@@ -559,8 +983,8 @@ public interface AmazonManagedGrafanaAsync extends AmazonManagedGrafana {
      * parameters, the existing values of those parameters are not changed.
      * </p>
      * <p>
-     * To modify the user authentication methods that the workspace uses, such as SAML or Amazon Web Services SSO, use
-     * <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspaceAuthentication.html">
+     * To modify the user authentication methods that the workspace uses, such as SAML or IAM Identity Center, use <a
+     * href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspaceAuthentication.html">
      * UpdateWorkspaceAuthentication</a>.
      * </p>
      * <p>
@@ -587,6 +1011,11 @@ public interface AmazonManagedGrafanaAsync extends AmazonManagedGrafana {
      * SAML. You can also map SAML assertion attributes to workspace user information and define which groups in the
      * assertion attribute are to have the <code>Admin</code> and <code>Editor</code> roles in the workspace.
      * </p>
+     * <note>
+     * <p>
+     * Changes to the authentication method for a workspace may take a few minutes to take effect.
+     * </p>
+     * </note>
      * 
      * @param updateWorkspaceAuthenticationRequest
      * @return A Java Future containing the result of the UpdateWorkspaceAuthentication operation returned by the
@@ -604,6 +1033,11 @@ public interface AmazonManagedGrafanaAsync extends AmazonManagedGrafana {
      * SAML. You can also map SAML assertion attributes to workspace user information and define which groups in the
      * assertion attribute are to have the <code>Admin</code> and <code>Editor</code> roles in the workspace.
      * </p>
+     * <note>
+     * <p>
+     * Changes to the authentication method for a workspace may take a few minutes to take effect.
+     * </p>
+     * </note>
      * 
      * @param updateWorkspaceAuthenticationRequest
      * @param asyncHandler
@@ -619,5 +1053,40 @@ public interface AmazonManagedGrafanaAsync extends AmazonManagedGrafana {
     java.util.concurrent.Future<UpdateWorkspaceAuthenticationResult> updateWorkspaceAuthenticationAsync(
             UpdateWorkspaceAuthenticationRequest updateWorkspaceAuthenticationRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateWorkspaceAuthenticationRequest, UpdateWorkspaceAuthenticationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the configuration string for the given workspace
+     * </p>
+     * 
+     * @param updateWorkspaceConfigurationRequest
+     * @return A Java Future containing the result of the UpdateWorkspaceConfiguration operation returned by the
+     *         service.
+     * @sample AmazonManagedGrafanaAsync.UpdateWorkspaceConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/UpdateWorkspaceConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateWorkspaceConfigurationResult> updateWorkspaceConfigurationAsync(
+            UpdateWorkspaceConfigurationRequest updateWorkspaceConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates the configuration string for the given workspace
+     * </p>
+     * 
+     * @param updateWorkspaceConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateWorkspaceConfiguration operation returned by the
+     *         service.
+     * @sample AmazonManagedGrafanaAsyncHandler.UpdateWorkspaceConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/UpdateWorkspaceConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateWorkspaceConfigurationResult> updateWorkspaceConfigurationAsync(
+            UpdateWorkspaceConfigurationRequest updateWorkspaceConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateWorkspaceConfigurationRequest, UpdateWorkspaceConfigurationResult> asyncHandler);
 
 }

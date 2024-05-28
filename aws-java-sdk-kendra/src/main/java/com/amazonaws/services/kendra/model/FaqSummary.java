@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class FaqSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier of the FAQ.
+     * The identifier of the FAQ.
      * </p>
      */
     private String id;
@@ -48,13 +48,13 @@ public class FaqSummary implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * The UNIX datetime that the FAQ was added to the index.
+     * The Unix timestamp when the FAQ was created.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * The UNIX datetime that the FAQ was last updated.
+     * The Unix timestamp when the FAQ was last updated.
      * </p>
      */
     private java.util.Date updatedAt;
@@ -76,11 +76,11 @@ public class FaqSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier of the FAQ.
+     * The identifier of the FAQ.
      * </p>
      * 
      * @param id
-     *        The unique identifier of the FAQ.
+     *        The identifier of the FAQ.
      */
 
     public void setId(String id) {
@@ -89,10 +89,10 @@ public class FaqSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier of the FAQ.
+     * The identifier of the FAQ.
      * </p>
      * 
-     * @return The unique identifier of the FAQ.
+     * @return The identifier of the FAQ.
      */
 
     public String getId() {
@@ -101,11 +101,11 @@ public class FaqSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier of the FAQ.
+     * The identifier of the FAQ.
      * </p>
      * 
      * @param id
-     *        The unique identifier of the FAQ.
+     *        The identifier of the FAQ.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -215,11 +215,11 @@ public class FaqSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The UNIX datetime that the FAQ was added to the index.
+     * The Unix timestamp when the FAQ was created.
      * </p>
      * 
      * @param createdAt
-     *        The UNIX datetime that the FAQ was added to the index.
+     *        The Unix timestamp when the FAQ was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -228,10 +228,10 @@ public class FaqSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The UNIX datetime that the FAQ was added to the index.
+     * The Unix timestamp when the FAQ was created.
      * </p>
      * 
-     * @return The UNIX datetime that the FAQ was added to the index.
+     * @return The Unix timestamp when the FAQ was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -240,11 +240,11 @@ public class FaqSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The UNIX datetime that the FAQ was added to the index.
+     * The Unix timestamp when the FAQ was created.
      * </p>
      * 
      * @param createdAt
-     *        The UNIX datetime that the FAQ was added to the index.
+     *        The Unix timestamp when the FAQ was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -255,11 +255,11 @@ public class FaqSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The UNIX datetime that the FAQ was last updated.
+     * The Unix timestamp when the FAQ was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        The UNIX datetime that the FAQ was last updated.
+     *        The Unix timestamp when the FAQ was last updated.
      */
 
     public void setUpdatedAt(java.util.Date updatedAt) {
@@ -268,10 +268,10 @@ public class FaqSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The UNIX datetime that the FAQ was last updated.
+     * The Unix timestamp when the FAQ was last updated.
      * </p>
      * 
-     * @return The UNIX datetime that the FAQ was last updated.
+     * @return The Unix timestamp when the FAQ was last updated.
      */
 
     public java.util.Date getUpdatedAt() {
@@ -280,11 +280,11 @@ public class FaqSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The UNIX datetime that the FAQ was last updated.
+     * The Unix timestamp when the FAQ was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        The UNIX datetime that the FAQ was last updated.
+     *        The Unix timestamp when the FAQ was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

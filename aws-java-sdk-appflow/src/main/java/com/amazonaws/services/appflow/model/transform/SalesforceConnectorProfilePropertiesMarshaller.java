@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class SalesforceConnectorProfilePropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceUrl").build();
     private static final MarshallingInfo<Boolean> ISSANDBOXENVIRONMENT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isSandboxEnvironment").build();
+    private static final MarshallingInfo<Boolean> USEPRIVATELINKFORMETADATAANDAUTHORIZATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("usePrivateLinkForMetadataAndAuthorization").build();
 
     private static final SalesforceConnectorProfilePropertiesMarshaller instance = new SalesforceConnectorProfilePropertiesMarshaller();
 
@@ -50,6 +52,8 @@ public class SalesforceConnectorProfilePropertiesMarshaller {
         try {
             protocolMarshaller.marshall(salesforceConnectorProfileProperties.getInstanceUrl(), INSTANCEURL_BINDING);
             protocolMarshaller.marshall(salesforceConnectorProfileProperties.getIsSandboxEnvironment(), ISSANDBOXENVIRONMENT_BINDING);
+            protocolMarshaller.marshall(salesforceConnectorProfileProperties.getUsePrivateLinkForMetadataAndAuthorization(),
+                    USEPRIVATELINKFORMETADATAANDAUTHORIZATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

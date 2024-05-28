@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3.
+ * Required when you set Codec to the value EAC3.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Eac3Settings" target="_top">AWS API
  *      Documentation</a>
@@ -28,7 +28,13 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /** If set to ATTENUATE_3_DB, applies a 3 dB attenuation to the surround channels. Only used for 3/2 coding mode. */
     private String attenuationControl;
-    /** Specify the average bitrate in bits per second. Valid bitrates depend on the coding mode. */
+    /**
+     * Specify the average bitrate in bits per second. The bitrate that you specify must be a multiple of 8000 within
+     * the allowed minimum and maximum values. Leave blank to use the default bitrate for the coding mode you select
+     * according ETSI TS 102 366. Valid bitrates for coding mode 1/0: Default: 96000. Minimum: 32000. Maximum: 3024000.
+     * Valid bitrates for coding mode 2/0: Default: 192000. Minimum: 96000. Maximum: 3024000. Valid bitrates for coding
+     * mode 3/2: Default: 384000. Minimum: 192000. Maximum: 3024000.
+     */
     private Integer bitrate;
     /**
      * Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For more information about the EAC3
@@ -47,17 +53,17 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
      * the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert
-     * ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For
-     * information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
-     * Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+     * ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC
+     * operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      */
     private String dynamicRangeCompressionLine;
     /**
      * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
      * the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert
-     * ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For
-     * information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
-     * Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+     * ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC
+     * operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      */
     private String dynamicRangeCompressionRf;
     /** When encoding 3/2 audio, controls whether the LFE channel is enabled */
@@ -65,39 +71,35 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     /** Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode. */
     private String lfeFilter;
     /**
-     * Specify a value for the following Dolby Digital Plus setting: Left only/Right only center mix (Lo/Ro center).
-     * MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you choose
-     * for Stereo downmix (Eac3StereoDownmix). Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, -6.0, and -60. The value
-     * -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs
-     * (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding mode,
-     * the service ignores Left only/Right only center (loRoCenterMixLevel).
+     * Specify a value for the following Dolby Digital Plus setting: Left only/Right only center mix. MediaConvert uses
+     * this value for downmixing. How the service uses this value depends on the value that you choose for Stereo
+     * downmix. Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This
+     * setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you
+     * choose a different value for Coding mode, the service ignores Left only/Right only center.
      */
     private Double loRoCenterMixLevel;
     /**
-     * Specify a value for the following Dolby Digital Plus setting: Left only/Right only (Lo/Ro surround). MediaConvert
-     * uses this value for downmixing. How the service uses this value depends on the value that you choose for Stereo
-     * downmix (Eac3StereoDownmix). Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This
-     * setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting
-     * Coding mode (Eac3CodingMode). If you choose a different value for Coding mode, the service ignores Left only/Right
-     * only surround (loRoSurroundMixLevel).
+     * Specify a value for the following Dolby Digital Plus setting: Left only/Right only. MediaConvert uses this value
+     * for downmixing. How the service uses this value depends on the value that you choose for Stereo downmix. Valid
+     * values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies only if you keep
+     * the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you choose a different value for Coding
+     * mode, the service ignores Left only/Right only surround.
      */
     private Double loRoSurroundMixLevel;
     /**
-     * Specify a value for the following Dolby Digital Plus setting: Left total/Right total center mix (Lt/Rt center).
-     * MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you choose
-     * for Stereo downmix (Eac3StereoDownmix). Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, -6.0, and -60. The value
-     * -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs
-     * (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding mode,
-     * the service ignores Left total/Right total center (ltRtCenterMixLevel).
+     * Specify a value for the following Dolby Digital Plus setting: Left total/Right total center mix. MediaConvert
+     * uses this value for downmixing. How the service uses this value depends on the value that you choose for Stereo
+     * downmix. Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This
+     * setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you
+     * choose a different value for Coding mode, the service ignores Left total/Right total center.
      */
     private Double ltRtCenterMixLevel;
     /**
-     * Specify a value for the following Dolby Digital Plus setting: Left total/Right total surround mix (Lt/Rt
-     * surround). MediaConvert uses this value for downmixing. How the service uses this value depends on the value that
-     * you choose for Stereo downmix (Eac3StereoDownmix). Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60
-     * mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs
-     * (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding mode,
-     * the service ignores Left total/Right total surround (ltRtSurroundMixLevel).
+     * Specify a value for the following Dolby Digital Plus setting: Left total/Right total surround mix. MediaConvert
+     * uses this value for downmixing. How the service uses this value depends on the value that you choose for Stereo
+     * downmix. Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies only
+     * if you keep the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you choose a different
+     * value for Coding mode, the service ignores Left total/Right total surround.
      */
     private Double ltRtSurroundMixLevel;
     /**
@@ -117,8 +119,8 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     private Integer sampleRate;
     /**
      * Choose how the service does stereo downmixing. This setting only applies if you keep the default value of 3/2 -
-     * L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value
-     * for Coding mode, the service ignores Stereo downmix (Eac3StereoDownmix).
+     * L, R, C, Ls, Rs for the setting Coding mode. If you choose a different value for Coding mode, the service ignores
+     * Stereo downmix.
      */
     private String stereoDownmix;
     /**
@@ -185,10 +187,18 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the average bitrate in bits per second. Valid bitrates depend on the coding mode.
+     * Specify the average bitrate in bits per second. The bitrate that you specify must be a multiple of 8000 within
+     * the allowed minimum and maximum values. Leave blank to use the default bitrate for the coding mode you select
+     * according ETSI TS 102 366. Valid bitrates for coding mode 1/0: Default: 96000. Minimum: 32000. Maximum: 3024000.
+     * Valid bitrates for coding mode 2/0: Default: 192000. Minimum: 96000. Maximum: 3024000. Valid bitrates for coding
+     * mode 3/2: Default: 384000. Minimum: 192000. Maximum: 3024000.
      * 
      * @param bitrate
-     *        Specify the average bitrate in bits per second. Valid bitrates depend on the coding mode.
+     *        Specify the average bitrate in bits per second. The bitrate that you specify must be a multiple of 8000
+     *        within the allowed minimum and maximum values. Leave blank to use the default bitrate for the coding mode
+     *        you select according ETSI TS 102 366. Valid bitrates for coding mode 1/0: Default: 96000. Minimum: 32000.
+     *        Maximum: 3024000. Valid bitrates for coding mode 2/0: Default: 192000. Minimum: 96000. Maximum: 3024000.
+     *        Valid bitrates for coding mode 3/2: Default: 384000. Minimum: 192000. Maximum: 3024000.
      */
 
     public void setBitrate(Integer bitrate) {
@@ -196,9 +206,17 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the average bitrate in bits per second. Valid bitrates depend on the coding mode.
+     * Specify the average bitrate in bits per second. The bitrate that you specify must be a multiple of 8000 within
+     * the allowed minimum and maximum values. Leave blank to use the default bitrate for the coding mode you select
+     * according ETSI TS 102 366. Valid bitrates for coding mode 1/0: Default: 96000. Minimum: 32000. Maximum: 3024000.
+     * Valid bitrates for coding mode 2/0: Default: 192000. Minimum: 96000. Maximum: 3024000. Valid bitrates for coding
+     * mode 3/2: Default: 384000. Minimum: 192000. Maximum: 3024000.
      * 
-     * @return Specify the average bitrate in bits per second. Valid bitrates depend on the coding mode.
+     * @return Specify the average bitrate in bits per second. The bitrate that you specify must be a multiple of 8000
+     *         within the allowed minimum and maximum values. Leave blank to use the default bitrate for the coding mode
+     *         you select according ETSI TS 102 366. Valid bitrates for coding mode 1/0: Default: 96000. Minimum: 32000.
+     *         Maximum: 3024000. Valid bitrates for coding mode 2/0: Default: 192000. Minimum: 96000. Maximum: 3024000.
+     *         Valid bitrates for coding mode 3/2: Default: 384000. Minimum: 192000. Maximum: 3024000.
      */
 
     public Integer getBitrate() {
@@ -206,10 +224,18 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the average bitrate in bits per second. Valid bitrates depend on the coding mode.
+     * Specify the average bitrate in bits per second. The bitrate that you specify must be a multiple of 8000 within
+     * the allowed minimum and maximum values. Leave blank to use the default bitrate for the coding mode you select
+     * according ETSI TS 102 366. Valid bitrates for coding mode 1/0: Default: 96000. Minimum: 32000. Maximum: 3024000.
+     * Valid bitrates for coding mode 2/0: Default: 192000. Minimum: 96000. Maximum: 3024000. Valid bitrates for coding
+     * mode 3/2: Default: 384000. Minimum: 192000. Maximum: 3024000.
      * 
      * @param bitrate
-     *        Specify the average bitrate in bits per second. Valid bitrates depend on the coding mode.
+     *        Specify the average bitrate in bits per second. The bitrate that you specify must be a multiple of 8000
+     *        within the allowed minimum and maximum values. Leave blank to use the default bitrate for the coding mode
+     *        you select according ETSI TS 102 366. Valid bitrates for coding mode 1/0: Default: 96000. Minimum: 32000.
+     *        Maximum: 3024000. Valid bitrates for coding mode 2/0: Default: 192000. Minimum: 96000. Maximum: 3024000.
+     *        Valid bitrates for coding mode 3/2: Default: 384000. Minimum: 192000. Maximum: 3024000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -422,16 +448,16 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
      * the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert
-     * ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For
-     * information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
-     * Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+     * ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC
+     * operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * 
      * @param dynamicRangeCompressionLine
      *        Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the
      *        metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this
-     *        setting, MediaConvert ignores any value you provide for Dynamic range compression profile
-     *        (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and
-     *        profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     *        setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information
+     *        about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
+     *        Dolby Metadata Guide at
      *        https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * @see Eac3DynamicRangeCompressionLine
      */
@@ -443,15 +469,15 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
      * the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert
-     * ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For
-     * information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
-     * Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+     * ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC
+     * operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * 
      * @return Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the
      *         metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this
-     *         setting, MediaConvert ignores any value you provide for Dynamic range compression profile
-     *         (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and
-     *         profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     *         setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For
+     *         information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control
+     *         chapter of the Dolby Metadata Guide at
      *         https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * @see Eac3DynamicRangeCompressionLine
      */
@@ -463,16 +489,16 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
      * the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert
-     * ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For
-     * information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
-     * Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+     * ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC
+     * operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * 
      * @param dynamicRangeCompressionLine
      *        Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the
      *        metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this
-     *        setting, MediaConvert ignores any value you provide for Dynamic range compression profile
-     *        (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and
-     *        profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     *        setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information
+     *        about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
+     *        Dolby Metadata Guide at
      *        https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3DynamicRangeCompressionLine
@@ -486,16 +512,16 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
      * the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert
-     * ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For
-     * information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
-     * Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+     * ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC
+     * operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * 
      * @param dynamicRangeCompressionLine
      *        Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the
      *        metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this
-     *        setting, MediaConvert ignores any value you provide for Dynamic range compression profile
-     *        (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and
-     *        profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     *        setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information
+     *        about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
+     *        Dolby Metadata Guide at
      *        https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3DynamicRangeCompressionLine
@@ -509,16 +535,16 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
      * the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert
-     * ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For
-     * information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
-     * Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+     * ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC
+     * operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * 
      * @param dynamicRangeCompressionRf
      *        Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the
      *        metadata in the Dolby Digital stream for the RF operating mode. Related setting: When you use this
-     *        setting, MediaConvert ignores any value you provide for Dynamic range compression profile
-     *        (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and
-     *        profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     *        setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information
+     *        about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
+     *        Dolby Metadata Guide at
      *        https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * @see Eac3DynamicRangeCompressionRf
      */
@@ -530,15 +556,15 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
      * the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert
-     * ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For
-     * information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
-     * Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+     * ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC
+     * operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * 
      * @return Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the
      *         metadata in the Dolby Digital stream for the RF operating mode. Related setting: When you use this
-     *         setting, MediaConvert ignores any value you provide for Dynamic range compression profile
-     *         (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and
-     *         profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     *         setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For
+     *         information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control
+     *         chapter of the Dolby Metadata Guide at
      *         https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * @see Eac3DynamicRangeCompressionRf
      */
@@ -550,16 +576,16 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
      * the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert
-     * ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For
-     * information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
-     * Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+     * ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC
+     * operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * 
      * @param dynamicRangeCompressionRf
      *        Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the
      *        metadata in the Dolby Digital stream for the RF operating mode. Related setting: When you use this
-     *        setting, MediaConvert ignores any value you provide for Dynamic range compression profile
-     *        (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and
-     *        profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     *        setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information
+     *        about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
+     *        Dolby Metadata Guide at
      *        https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3DynamicRangeCompressionRf
@@ -573,16 +599,16 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     /**
      * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
      * the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert
-     * ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For
-     * information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
-     * Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+     * ignores any value you provide for Dynamic range compression profile. For information about the Dolby Digital DRC
+     * operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     * https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * 
      * @param dynamicRangeCompressionRf
      *        Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the
      *        metadata in the Dolby Digital stream for the RF operating mode. Related setting: When you use this
-     *        setting, MediaConvert ignores any value you provide for Dynamic range compression profile
-     *        (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and
-     *        profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     *        setting, MediaConvert ignores any value you provide for Dynamic range compression profile. For information
+     *        about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
+     *        Dolby Metadata Guide at
      *        https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3DynamicRangeCompressionRf
@@ -696,20 +722,19 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify a value for the following Dolby Digital Plus setting: Left only/Right only center mix (Lo/Ro center).
-     * MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you choose
-     * for Stereo downmix (Eac3StereoDownmix). Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, -6.0, and -60. The value
-     * -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs
-     * (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding mode,
-     * the service ignores Left only/Right only center (loRoCenterMixLevel).
+     * Specify a value for the following Dolby Digital Plus setting: Left only/Right only center mix. MediaConvert uses
+     * this value for downmixing. How the service uses this value depends on the value that you choose for Stereo
+     * downmix. Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This
+     * setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you
+     * choose a different value for Coding mode, the service ignores Left only/Right only center.
      * 
      * @param loRoCenterMixLevel
-     *        Specify a value for the following Dolby Digital Plus setting: Left only/Right only center mix (Lo/Ro
-     *        center). MediaConvert uses this value for downmixing. How the service uses this value depends on the value
-     *        that you choose for Stereo downmix (Eac3StereoDownmix). Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5,
-     *        -6.0, and -60. The value -60 mutes the channel. This setting applies only if you keep the default value of
-     *        3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a
-     *        different value for Coding mode, the service ignores Left only/Right only center (loRoCenterMixLevel).
+     *        Specify a value for the following Dolby Digital Plus setting: Left only/Right only center mix.
+     *        MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you
+     *        choose for Stereo downmix. Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, -6.0, and -60. The value -60
+     *        mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs for
+     *        the setting Coding mode. If you choose a different value for Coding mode, the service ignores Left
+     *        only/Right only center.
      */
 
     public void setLoRoCenterMixLevel(Double loRoCenterMixLevel) {
@@ -717,20 +742,18 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify a value for the following Dolby Digital Plus setting: Left only/Right only center mix (Lo/Ro center).
-     * MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you choose
-     * for Stereo downmix (Eac3StereoDownmix). Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, -6.0, and -60. The value
-     * -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs
-     * (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding mode,
-     * the service ignores Left only/Right only center (loRoCenterMixLevel).
+     * Specify a value for the following Dolby Digital Plus setting: Left only/Right only center mix. MediaConvert uses
+     * this value for downmixing. How the service uses this value depends on the value that you choose for Stereo
+     * downmix. Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This
+     * setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you
+     * choose a different value for Coding mode, the service ignores Left only/Right only center.
      * 
-     * @return Specify a value for the following Dolby Digital Plus setting: Left only/Right only center mix (Lo/Ro
-     *         center). MediaConvert uses this value for downmixing. How the service uses this value depends on the
-     *         value that you choose for Stereo downmix (Eac3StereoDownmix). Valid values: 3.0, 1.5, 0.0, -1.5, -3.0,
-     *         -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies only if you keep the default
-     *         value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you
-     *         choose a different value for Coding mode, the service ignores Left only/Right only center
-     *         (loRoCenterMixLevel).
+     * @return Specify a value for the following Dolby Digital Plus setting: Left only/Right only center mix.
+     *         MediaConvert uses this value for downmixing. How the service uses this value depends on the value that
+     *         you choose for Stereo downmix. Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, -6.0, and -60. The value
+     *         -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs
+     *         for the setting Coding mode. If you choose a different value for Coding mode, the service ignores Left
+     *         only/Right only center.
      */
 
     public Double getLoRoCenterMixLevel() {
@@ -738,20 +761,19 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify a value for the following Dolby Digital Plus setting: Left only/Right only center mix (Lo/Ro center).
-     * MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you choose
-     * for Stereo downmix (Eac3StereoDownmix). Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, -6.0, and -60. The value
-     * -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs
-     * (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding mode,
-     * the service ignores Left only/Right only center (loRoCenterMixLevel).
+     * Specify a value for the following Dolby Digital Plus setting: Left only/Right only center mix. MediaConvert uses
+     * this value for downmixing. How the service uses this value depends on the value that you choose for Stereo
+     * downmix. Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This
+     * setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you
+     * choose a different value for Coding mode, the service ignores Left only/Right only center.
      * 
      * @param loRoCenterMixLevel
-     *        Specify a value for the following Dolby Digital Plus setting: Left only/Right only center mix (Lo/Ro
-     *        center). MediaConvert uses this value for downmixing. How the service uses this value depends on the value
-     *        that you choose for Stereo downmix (Eac3StereoDownmix). Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5,
-     *        -6.0, and -60. The value -60 mutes the channel. This setting applies only if you keep the default value of
-     *        3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a
-     *        different value for Coding mode, the service ignores Left only/Right only center (loRoCenterMixLevel).
+     *        Specify a value for the following Dolby Digital Plus setting: Left only/Right only center mix.
+     *        MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you
+     *        choose for Stereo downmix. Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, -6.0, and -60. The value -60
+     *        mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs for
+     *        the setting Coding mode. If you choose a different value for Coding mode, the service ignores Left
+     *        only/Right only center.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -761,20 +783,18 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify a value for the following Dolby Digital Plus setting: Left only/Right only (Lo/Ro surround). MediaConvert
-     * uses this value for downmixing. How the service uses this value depends on the value that you choose for Stereo
-     * downmix (Eac3StereoDownmix). Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This
-     * setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting
-     * Coding mode (Eac3CodingMode). If you choose a different value for Coding mode, the service ignores Left only/Right
-     * only surround (loRoSurroundMixLevel).
+     * Specify a value for the following Dolby Digital Plus setting: Left only/Right only. MediaConvert uses this value
+     * for downmixing. How the service uses this value depends on the value that you choose for Stereo downmix. Valid
+     * values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies only if you keep
+     * the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you choose a different value for Coding
+     * mode, the service ignores Left only/Right only surround.
      * 
      * @param loRoSurroundMixLevel
-     *        Specify a value for the following Dolby Digital Plus setting: Left only/Right only (Lo/Ro surround).
-     *        MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you
-     *        choose for Stereo downmix (Eac3StereoDownmix). Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value
-     *        -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs
-     *        (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding
-     *        mode, the service ignores Left only/Right only surround (loRoSurroundMixLevel).
+     *        Specify a value for the following Dolby Digital Plus setting: Left only/Right only. MediaConvert uses this
+     *        value for downmixing. How the service uses this value depends on the value that you choose for Stereo
+     *        downmix. Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting
+     *        applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you
+     *        choose a different value for Coding mode, the service ignores Left only/Right only surround.
      */
 
     public void setLoRoSurroundMixLevel(Double loRoSurroundMixLevel) {
@@ -782,19 +802,17 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify a value for the following Dolby Digital Plus setting: Left only/Right only (Lo/Ro surround). MediaConvert
-     * uses this value for downmixing. How the service uses this value depends on the value that you choose for Stereo
-     * downmix (Eac3StereoDownmix). Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This
-     * setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting
-     * Coding mode (Eac3CodingMode). If you choose a different value for Coding mode, the service ignores Left only/Right
-     * only surround (loRoSurroundMixLevel).
+     * Specify a value for the following Dolby Digital Plus setting: Left only/Right only. MediaConvert uses this value
+     * for downmixing. How the service uses this value depends on the value that you choose for Stereo downmix. Valid
+     * values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies only if you keep
+     * the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you choose a different value for Coding
+     * mode, the service ignores Left only/Right only surround.
      * 
-     * @return Specify a value for the following Dolby Digital Plus setting: Left only/Right only (Lo/Ro surround).
-     *         MediaConvert uses this value for downmixing. How the service uses this value depends on the value that
-     *         you choose for Stereo downmix (Eac3StereoDownmix). Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The
-     *         value -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C,
-     *         Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value
-     *         for Coding mode, the service ignores Left only/Right only surround (loRoSurroundMixLevel).
+     * @return Specify a value for the following Dolby Digital Plus setting: Left only/Right only. MediaConvert uses
+     *         this value for downmixing. How the service uses this value depends on the value that you choose for
+     *         Stereo downmix. Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This
+     *         setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode.
+     *         If you choose a different value for Coding mode, the service ignores Left only/Right only surround.
      */
 
     public Double getLoRoSurroundMixLevel() {
@@ -802,20 +820,18 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify a value for the following Dolby Digital Plus setting: Left only/Right only (Lo/Ro surround). MediaConvert
-     * uses this value for downmixing. How the service uses this value depends on the value that you choose for Stereo
-     * downmix (Eac3StereoDownmix). Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This
-     * setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting
-     * Coding mode (Eac3CodingMode). If you choose a different value for Coding mode, the service ignores Left only/Right
-     * only surround (loRoSurroundMixLevel).
+     * Specify a value for the following Dolby Digital Plus setting: Left only/Right only. MediaConvert uses this value
+     * for downmixing. How the service uses this value depends on the value that you choose for Stereo downmix. Valid
+     * values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies only if you keep
+     * the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you choose a different value for Coding
+     * mode, the service ignores Left only/Right only surround.
      * 
      * @param loRoSurroundMixLevel
-     *        Specify a value for the following Dolby Digital Plus setting: Left only/Right only (Lo/Ro surround).
-     *        MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you
-     *        choose for Stereo downmix (Eac3StereoDownmix). Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value
-     *        -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs
-     *        (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding
-     *        mode, the service ignores Left only/Right only surround (loRoSurroundMixLevel).
+     *        Specify a value for the following Dolby Digital Plus setting: Left only/Right only. MediaConvert uses this
+     *        value for downmixing. How the service uses this value depends on the value that you choose for Stereo
+     *        downmix. Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting
+     *        applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you
+     *        choose a different value for Coding mode, the service ignores Left only/Right only surround.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -825,20 +841,19 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify a value for the following Dolby Digital Plus setting: Left total/Right total center mix (Lt/Rt center).
-     * MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you choose
-     * for Stereo downmix (Eac3StereoDownmix). Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, -6.0, and -60. The value
-     * -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs
-     * (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding mode,
-     * the service ignores Left total/Right total center (ltRtCenterMixLevel).
+     * Specify a value for the following Dolby Digital Plus setting: Left total/Right total center mix. MediaConvert
+     * uses this value for downmixing. How the service uses this value depends on the value that you choose for Stereo
+     * downmix. Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This
+     * setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you
+     * choose a different value for Coding mode, the service ignores Left total/Right total center.
      * 
      * @param ltRtCenterMixLevel
-     *        Specify a value for the following Dolby Digital Plus setting: Left total/Right total center mix (Lt/Rt
-     *        center). MediaConvert uses this value for downmixing. How the service uses this value depends on the value
-     *        that you choose for Stereo downmix (Eac3StereoDownmix). Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5,
-     *        -6.0, and -60. The value -60 mutes the channel. This setting applies only if you keep the default value of
-     *        3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a
-     *        different value for Coding mode, the service ignores Left total/Right total center (ltRtCenterMixLevel).
+     *        Specify a value for the following Dolby Digital Plus setting: Left total/Right total center mix.
+     *        MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you
+     *        choose for Stereo downmix. Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, -6.0, and -60. The value -60
+     *        mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs for
+     *        the setting Coding mode. If you choose a different value for Coding mode, the service ignores Left
+     *        total/Right total center.
      */
 
     public void setLtRtCenterMixLevel(Double ltRtCenterMixLevel) {
@@ -846,20 +861,18 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify a value for the following Dolby Digital Plus setting: Left total/Right total center mix (Lt/Rt center).
-     * MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you choose
-     * for Stereo downmix (Eac3StereoDownmix). Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, -6.0, and -60. The value
-     * -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs
-     * (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding mode,
-     * the service ignores Left total/Right total center (ltRtCenterMixLevel).
+     * Specify a value for the following Dolby Digital Plus setting: Left total/Right total center mix. MediaConvert
+     * uses this value for downmixing. How the service uses this value depends on the value that you choose for Stereo
+     * downmix. Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This
+     * setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you
+     * choose a different value for Coding mode, the service ignores Left total/Right total center.
      * 
-     * @return Specify a value for the following Dolby Digital Plus setting: Left total/Right total center mix (Lt/Rt
-     *         center). MediaConvert uses this value for downmixing. How the service uses this value depends on the
-     *         value that you choose for Stereo downmix (Eac3StereoDownmix). Valid values: 3.0, 1.5, 0.0, -1.5, -3.0,
-     *         -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies only if you keep the default
-     *         value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you
-     *         choose a different value for Coding mode, the service ignores Left total/Right total center
-     *         (ltRtCenterMixLevel).
+     * @return Specify a value for the following Dolby Digital Plus setting: Left total/Right total center mix.
+     *         MediaConvert uses this value for downmixing. How the service uses this value depends on the value that
+     *         you choose for Stereo downmix. Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, -6.0, and -60. The value
+     *         -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs
+     *         for the setting Coding mode. If you choose a different value for Coding mode, the service ignores Left
+     *         total/Right total center.
      */
 
     public Double getLtRtCenterMixLevel() {
@@ -867,20 +880,19 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify a value for the following Dolby Digital Plus setting: Left total/Right total center mix (Lt/Rt center).
-     * MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you choose
-     * for Stereo downmix (Eac3StereoDownmix). Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, -6.0, and -60. The value
-     * -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs
-     * (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding mode,
-     * the service ignores Left total/Right total center (ltRtCenterMixLevel).
+     * Specify a value for the following Dolby Digital Plus setting: Left total/Right total center mix. MediaConvert
+     * uses this value for downmixing. How the service uses this value depends on the value that you choose for Stereo
+     * downmix. Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This
+     * setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you
+     * choose a different value for Coding mode, the service ignores Left total/Right total center.
      * 
      * @param ltRtCenterMixLevel
-     *        Specify a value for the following Dolby Digital Plus setting: Left total/Right total center mix (Lt/Rt
-     *        center). MediaConvert uses this value for downmixing. How the service uses this value depends on the value
-     *        that you choose for Stereo downmix (Eac3StereoDownmix). Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5,
-     *        -6.0, and -60. The value -60 mutes the channel. This setting applies only if you keep the default value of
-     *        3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a
-     *        different value for Coding mode, the service ignores Left total/Right total center (ltRtCenterMixLevel).
+     *        Specify a value for the following Dolby Digital Plus setting: Left total/Right total center mix.
+     *        MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you
+     *        choose for Stereo downmix. Valid values: 3.0, 1.5, 0.0, -1.5, -3.0, -4.5, -6.0, and -60. The value -60
+     *        mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs for
+     *        the setting Coding mode. If you choose a different value for Coding mode, the service ignores Left
+     *        total/Right total center.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -890,20 +902,19 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify a value for the following Dolby Digital Plus setting: Left total/Right total surround mix (Lt/Rt
-     * surround). MediaConvert uses this value for downmixing. How the service uses this value depends on the value that
-     * you choose for Stereo downmix (Eac3StereoDownmix). Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60
-     * mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs
-     * (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding mode,
-     * the service ignores Left total/Right total surround (ltRtSurroundMixLevel).
+     * Specify a value for the following Dolby Digital Plus setting: Left total/Right total surround mix. MediaConvert
+     * uses this value for downmixing. How the service uses this value depends on the value that you choose for Stereo
+     * downmix. Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies only
+     * if you keep the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you choose a different
+     * value for Coding mode, the service ignores Left total/Right total surround.
      * 
      * @param ltRtSurroundMixLevel
-     *        Specify a value for the following Dolby Digital Plus setting: Left total/Right total surround mix (Lt/Rt
-     *        surround). MediaConvert uses this value for downmixing. How the service uses this value depends on the
-     *        value that you choose for Stereo downmix (Eac3StereoDownmix). Valid values: -1.5, -3.0, -4.5, -6.0, and
-     *        -60. The value -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L,
-     *        R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different
-     *        value for Coding mode, the service ignores Left total/Right total surround (ltRtSurroundMixLevel).
+     *        Specify a value for the following Dolby Digital Plus setting: Left total/Right total surround mix.
+     *        MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you
+     *        choose for Stereo downmix. Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel.
+     *        This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding
+     *        mode. If you choose a different value for Coding mode, the service ignores Left total/Right total
+     *        surround.
      */
 
     public void setLtRtSurroundMixLevel(Double ltRtSurroundMixLevel) {
@@ -911,19 +922,18 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify a value for the following Dolby Digital Plus setting: Left total/Right total surround mix (Lt/Rt
-     * surround). MediaConvert uses this value for downmixing. How the service uses this value depends on the value that
-     * you choose for Stereo downmix (Eac3StereoDownmix). Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60
-     * mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs
-     * (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding mode,
-     * the service ignores Left total/Right total surround (ltRtSurroundMixLevel).
+     * Specify a value for the following Dolby Digital Plus setting: Left total/Right total surround mix. MediaConvert
+     * uses this value for downmixing. How the service uses this value depends on the value that you choose for Stereo
+     * downmix. Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies only
+     * if you keep the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you choose a different
+     * value for Coding mode, the service ignores Left total/Right total surround.
      * 
-     * @return Specify a value for the following Dolby Digital Plus setting: Left total/Right total surround mix (Lt/Rt
-     *         surround). MediaConvert uses this value for downmixing. How the service uses this value depends on the
-     *         value that you choose for Stereo downmix (Eac3StereoDownmix). Valid values: -1.5, -3.0, -4.5, -6.0, and
-     *         -60. The value -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L,
-     *         R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different
-     *         value for Coding mode, the service ignores Left total/Right total surround (ltRtSurroundMixLevel).
+     * @return Specify a value for the following Dolby Digital Plus setting: Left total/Right total surround mix.
+     *         MediaConvert uses this value for downmixing. How the service uses this value depends on the value that
+     *         you choose for Stereo downmix. Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the
+     *         channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs for the setting
+     *         Coding mode. If you choose a different value for Coding mode, the service ignores Left total/Right total
+     *         surround.
      */
 
     public Double getLtRtSurroundMixLevel() {
@@ -931,20 +941,19 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify a value for the following Dolby Digital Plus setting: Left total/Right total surround mix (Lt/Rt
-     * surround). MediaConvert uses this value for downmixing. How the service uses this value depends on the value that
-     * you choose for Stereo downmix (Eac3StereoDownmix). Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60
-     * mutes the channel. This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs
-     * (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding mode,
-     * the service ignores Left total/Right total surround (ltRtSurroundMixLevel).
+     * Specify a value for the following Dolby Digital Plus setting: Left total/Right total surround mix. MediaConvert
+     * uses this value for downmixing. How the service uses this value depends on the value that you choose for Stereo
+     * downmix. Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel. This setting applies only
+     * if you keep the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you choose a different
+     * value for Coding mode, the service ignores Left total/Right total surround.
      * 
      * @param ltRtSurroundMixLevel
-     *        Specify a value for the following Dolby Digital Plus setting: Left total/Right total surround mix (Lt/Rt
-     *        surround). MediaConvert uses this value for downmixing. How the service uses this value depends on the
-     *        value that you choose for Stereo downmix (Eac3StereoDownmix). Valid values: -1.5, -3.0, -4.5, -6.0, and
-     *        -60. The value -60 mutes the channel. This setting applies only if you keep the default value of 3/2 - L,
-     *        R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different
-     *        value for Coding mode, the service ignores Left total/Right total surround (ltRtSurroundMixLevel).
+     *        Specify a value for the following Dolby Digital Plus setting: Left total/Right total surround mix.
+     *        MediaConvert uses this value for downmixing. How the service uses this value depends on the value that you
+     *        choose for Stereo downmix. Valid values: -1.5, -3.0, -4.5, -6.0, and -60. The value -60 mutes the channel.
+     *        This setting applies only if you keep the default value of 3/2 - L, R, C, Ls, Rs for the setting Coding
+     *        mode. If you choose a different value for Coding mode, the service ignores Left total/Right total
+     *        surround.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1170,13 +1179,13 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Choose how the service does stereo downmixing. This setting only applies if you keep the default value of 3/2 -
-     * L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value
-     * for Coding mode, the service ignores Stereo downmix (Eac3StereoDownmix).
+     * L, R, C, Ls, Rs for the setting Coding mode. If you choose a different value for Coding mode, the service ignores
+     * Stereo downmix.
      * 
      * @param stereoDownmix
      *        Choose how the service does stereo downmixing. This setting only applies if you keep the default value of
-     *        3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a
-     *        different value for Coding mode, the service ignores Stereo downmix (Eac3StereoDownmix).
+     *        3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you choose a different value for Coding mode, the
+     *        service ignores Stereo downmix.
      * @see Eac3StereoDownmix
      */
 
@@ -1186,12 +1195,12 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Choose how the service does stereo downmixing. This setting only applies if you keep the default value of 3/2 -
-     * L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value
-     * for Coding mode, the service ignores Stereo downmix (Eac3StereoDownmix).
+     * L, R, C, Ls, Rs for the setting Coding mode. If you choose a different value for Coding mode, the service ignores
+     * Stereo downmix.
      * 
      * @return Choose how the service does stereo downmixing. This setting only applies if you keep the default value of
-     *         3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a
-     *         different value for Coding mode, the service ignores Stereo downmix (Eac3StereoDownmix).
+     *         3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you choose a different value for Coding mode, the
+     *         service ignores Stereo downmix.
      * @see Eac3StereoDownmix
      */
 
@@ -1201,13 +1210,13 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Choose how the service does stereo downmixing. This setting only applies if you keep the default value of 3/2 -
-     * L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value
-     * for Coding mode, the service ignores Stereo downmix (Eac3StereoDownmix).
+     * L, R, C, Ls, Rs for the setting Coding mode. If you choose a different value for Coding mode, the service ignores
+     * Stereo downmix.
      * 
      * @param stereoDownmix
      *        Choose how the service does stereo downmixing. This setting only applies if you keep the default value of
-     *        3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a
-     *        different value for Coding mode, the service ignores Stereo downmix (Eac3StereoDownmix).
+     *        3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you choose a different value for Coding mode, the
+     *        service ignores Stereo downmix.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3StereoDownmix
      */
@@ -1219,13 +1228,13 @@ public class Eac3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Choose how the service does stereo downmixing. This setting only applies if you keep the default value of 3/2 -
-     * L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value
-     * for Coding mode, the service ignores Stereo downmix (Eac3StereoDownmix).
+     * L, R, C, Ls, Rs for the setting Coding mode. If you choose a different value for Coding mode, the service ignores
+     * Stereo downmix.
      * 
      * @param stereoDownmix
      *        Choose how the service does stereo downmixing. This setting only applies if you keep the default value of
-     *        3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a
-     *        different value for Coding mode, the service ignores Stereo downmix (Eac3StereoDownmix).
+     *        3/2 - L, R, C, Ls, Rs for the setting Coding mode. If you choose a different value for Coding mode, the
+     *        service ignores Stereo downmix.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Eac3StereoDownmix
      */

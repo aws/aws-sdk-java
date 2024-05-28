@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,18 @@ public class CreateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String type;
+    /**
+     * <p>
+     * Resource description.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
+     * If this parameter is enabled, the resource will be hidden from the address book.
+     * </p>
+     */
+    private Boolean hiddenFromGlobalAddressList;
 
     /**
      * <p>
@@ -184,6 +196,98 @@ public class CreateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Resource description.
+     * </p>
+     * 
+     * @param description
+     *        Resource description.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * Resource description.
+     * </p>
+     * 
+     * @return Resource description.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * Resource description.
+     * </p>
+     * 
+     * @param description
+     *        Resource description.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateResourceRequest withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If this parameter is enabled, the resource will be hidden from the address book.
+     * </p>
+     * 
+     * @param hiddenFromGlobalAddressList
+     *        If this parameter is enabled, the resource will be hidden from the address book.
+     */
+
+    public void setHiddenFromGlobalAddressList(Boolean hiddenFromGlobalAddressList) {
+        this.hiddenFromGlobalAddressList = hiddenFromGlobalAddressList;
+    }
+
+    /**
+     * <p>
+     * If this parameter is enabled, the resource will be hidden from the address book.
+     * </p>
+     * 
+     * @return If this parameter is enabled, the resource will be hidden from the address book.
+     */
+
+    public Boolean getHiddenFromGlobalAddressList() {
+        return this.hiddenFromGlobalAddressList;
+    }
+
+    /**
+     * <p>
+     * If this parameter is enabled, the resource will be hidden from the address book.
+     * </p>
+     * 
+     * @param hiddenFromGlobalAddressList
+     *        If this parameter is enabled, the resource will be hidden from the address book.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateResourceRequest withHiddenFromGlobalAddressList(Boolean hiddenFromGlobalAddressList) {
+        setHiddenFromGlobalAddressList(hiddenFromGlobalAddressList);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If this parameter is enabled, the resource will be hidden from the address book.
+     * </p>
+     * 
+     * @return If this parameter is enabled, the resource will be hidden from the address book.
+     */
+
+    public Boolean isHiddenFromGlobalAddressList() {
+        return this.hiddenFromGlobalAddressList;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -200,7 +304,11 @@ public class CreateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getHiddenFromGlobalAddressList() != null)
+            sb.append("HiddenFromGlobalAddressList: ").append(getHiddenFromGlobalAddressList());
         sb.append("}");
         return sb.toString();
     }
@@ -227,6 +335,14 @@ public class CreateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getHiddenFromGlobalAddressList() == null ^ this.getHiddenFromGlobalAddressList() == null)
+            return false;
+        if (other.getHiddenFromGlobalAddressList() != null && other.getHiddenFromGlobalAddressList().equals(this.getHiddenFromGlobalAddressList()) == false)
+            return false;
         return true;
     }
 
@@ -238,6 +354,8 @@ public class CreateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getOrganizationId() == null) ? 0 : getOrganizationId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getHiddenFromGlobalAddressList() == null) ? 0 : getHiddenFromGlobalAddressList().hashCode());
         return hashCode;
     }
 

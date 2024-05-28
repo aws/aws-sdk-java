@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,8 +64,20 @@ public class GetInsightSelectorsRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
+     * <p>
+     * You cannot use this parameter with the <code>EventDataStore</code> parameter.
+     * </p>
      */
     private String trailName;
+    /**
+     * <p>
+     * Specifies the ARN (or ID suffix of the ARN) of the event data store for which you want to get Insights selectors.
+     * </p>
+     * <p>
+     * You cannot use this parameter with the <code>TrailName</code> parameter.
+     * </p>
+     */
+    private String eventDataStore;
 
     /**
      * <p>
@@ -106,6 +118,9 @@ public class GetInsightSelectorsRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
+     * <p>
+     * You cannot use this parameter with the <code>EventDataStore</code> parameter.
+     * </p>
      * 
      * @param trailName
      *        Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the
@@ -143,6 +158,9 @@ public class GetInsightSelectorsRequest extends com.amazonaws.AmazonWebServiceRe
      *        </p>
      *        <p>
      *        <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+     *        </p>
+     *        <p>
+     *        You cannot use this parameter with the <code>EventDataStore</code> parameter.
      */
 
     public void setTrailName(String trailName) {
@@ -188,6 +206,9 @@ public class GetInsightSelectorsRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
+     * <p>
+     * You cannot use this parameter with the <code>EventDataStore</code> parameter.
+     * </p>
      * 
      * @return Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the
      *         following requirements:</p>
@@ -224,6 +245,9 @@ public class GetInsightSelectorsRequest extends com.amazonaws.AmazonWebServiceRe
      *         </p>
      *         <p>
      *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+     *         </p>
+     *         <p>
+     *         You cannot use this parameter with the <code>EventDataStore</code> parameter.
      */
 
     public String getTrailName() {
@@ -269,6 +293,9 @@ public class GetInsightSelectorsRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * </p>
+     * <p>
+     * You cannot use this parameter with the <code>EventDataStore</code> parameter.
+     * </p>
      * 
      * @param trailName
      *        Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the
@@ -306,11 +333,72 @@ public class GetInsightSelectorsRequest extends com.amazonaws.AmazonWebServiceRe
      *        </p>
      *        <p>
      *        <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+     *        </p>
+     *        <p>
+     *        You cannot use this parameter with the <code>EventDataStore</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetInsightSelectorsRequest withTrailName(String trailName) {
         setTrailName(trailName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the ARN (or ID suffix of the ARN) of the event data store for which you want to get Insights selectors.
+     * </p>
+     * <p>
+     * You cannot use this parameter with the <code>TrailName</code> parameter.
+     * </p>
+     * 
+     * @param eventDataStore
+     *        Specifies the ARN (or ID suffix of the ARN) of the event data store for which you want to get Insights
+     *        selectors. </p>
+     *        <p>
+     *        You cannot use this parameter with the <code>TrailName</code> parameter.
+     */
+
+    public void setEventDataStore(String eventDataStore) {
+        this.eventDataStore = eventDataStore;
+    }
+
+    /**
+     * <p>
+     * Specifies the ARN (or ID suffix of the ARN) of the event data store for which you want to get Insights selectors.
+     * </p>
+     * <p>
+     * You cannot use this parameter with the <code>TrailName</code> parameter.
+     * </p>
+     * 
+     * @return Specifies the ARN (or ID suffix of the ARN) of the event data store for which you want to get Insights
+     *         selectors. </p>
+     *         <p>
+     *         You cannot use this parameter with the <code>TrailName</code> parameter.
+     */
+
+    public String getEventDataStore() {
+        return this.eventDataStore;
+    }
+
+    /**
+     * <p>
+     * Specifies the ARN (or ID suffix of the ARN) of the event data store for which you want to get Insights selectors.
+     * </p>
+     * <p>
+     * You cannot use this parameter with the <code>TrailName</code> parameter.
+     * </p>
+     * 
+     * @param eventDataStore
+     *        Specifies the ARN (or ID suffix of the ARN) of the event data store for which you want to get Insights
+     *        selectors. </p>
+     *        <p>
+     *        You cannot use this parameter with the <code>TrailName</code> parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetInsightSelectorsRequest withEventDataStore(String eventDataStore) {
+        setEventDataStore(eventDataStore);
         return this;
     }
 
@@ -327,7 +415,9 @@ public class GetInsightSelectorsRequest extends com.amazonaws.AmazonWebServiceRe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTrailName() != null)
-            sb.append("TrailName: ").append(getTrailName());
+            sb.append("TrailName: ").append(getTrailName()).append(",");
+        if (getEventDataStore() != null)
+            sb.append("EventDataStore: ").append(getEventDataStore());
         sb.append("}");
         return sb.toString();
     }
@@ -346,6 +436,10 @@ public class GetInsightSelectorsRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getTrailName() != null && other.getTrailName().equals(this.getTrailName()) == false)
             return false;
+        if (other.getEventDataStore() == null ^ this.getEventDataStore() == null)
+            return false;
+        if (other.getEventDataStore() != null && other.getEventDataStore().equals(this.getEventDataStore()) == false)
+            return false;
         return true;
     }
 
@@ -355,6 +449,7 @@ public class GetInsightSelectorsRequest extends com.amazonaws.AmazonWebServiceRe
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getTrailName() == null) ? 0 : getTrailName().hashCode());
+        hashCode = prime * hashCode + ((getEventDataStore() == null) ? 0 : getEventDataStore().hashCode());
         return hashCode;
     }
 

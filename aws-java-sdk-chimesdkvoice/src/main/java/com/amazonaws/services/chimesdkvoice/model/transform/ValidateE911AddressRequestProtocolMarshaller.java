@@ -1,0 +1,62 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.chimesdkvoice.model.transform;
+
+import javax.annotation.Generated;
+
+import com.amazonaws.SdkClientException;
+import com.amazonaws.Request;
+
+import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.services.chimesdkvoice.model.*;
+import com.amazonaws.transform.Marshaller;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.protocol.Protocol;
+import com.amazonaws.annotation.SdkInternalApi;
+
+/**
+ * ValidateE911AddressRequest Marshaller
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class ValidateE911AddressRequestProtocolMarshaller implements Marshaller<Request<ValidateE911AddressRequest>, ValidateE911AddressRequest> {
+
+    private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/emergency-calling/address")
+            .httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false).hasPayloadMembers(true).serviceName("AmazonChimeSDKVoice").build();
+
+    private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
+
+    public ValidateE911AddressRequestProtocolMarshaller(com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory) {
+        this.protocolFactory = protocolFactory;
+    }
+
+    public Request<ValidateE911AddressRequest> marshall(ValidateE911AddressRequest validateE911AddressRequest) {
+
+        if (validateE911AddressRequest == null) {
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
+        }
+
+        try {
+            final ProtocolRequestMarshaller<ValidateE911AddressRequest> protocolMarshaller = protocolFactory.createProtocolMarshaller(SDK_OPERATION_BINDING,
+                    validateE911AddressRequest);
+
+            protocolMarshaller.startMarshalling();
+            ValidateE911AddressRequestMarshaller.getInstance().marshall(validateE911AddressRequest, protocolMarshaller);
+            return protocolMarshaller.finishMarshalling();
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
+        }
+    }
+
+}

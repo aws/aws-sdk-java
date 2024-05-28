@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,24 @@ public class PullThroughCacheRule implements Serializable, Cloneable, Structured
      * </p>
      */
     private String registryId;
+    /**
+     * <p>
+     * The ARN of the Secrets Manager secret associated with the pull through cache rule.
+     * </p>
+     */
+    private String credentialArn;
+    /**
+     * <p>
+     * The name of the upstream source registry associated with the pull through cache rule.
+     * </p>
+     */
+    private String upstreamRegistry;
+    /**
+     * <p>
+     * The date and time, in JavaScript date format, when the pull through cache rule was last updated.
+     * </p>
+     */
+    private java.util.Date updatedAt;
 
     /**
      * <p>
@@ -217,6 +235,145 @@ public class PullThroughCacheRule implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The ARN of the Secrets Manager secret associated with the pull through cache rule.
+     * </p>
+     * 
+     * @param credentialArn
+     *        The ARN of the Secrets Manager secret associated with the pull through cache rule.
+     */
+
+    public void setCredentialArn(String credentialArn) {
+        this.credentialArn = credentialArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the Secrets Manager secret associated with the pull through cache rule.
+     * </p>
+     * 
+     * @return The ARN of the Secrets Manager secret associated with the pull through cache rule.
+     */
+
+    public String getCredentialArn() {
+        return this.credentialArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the Secrets Manager secret associated with the pull through cache rule.
+     * </p>
+     * 
+     * @param credentialArn
+     *        The ARN of the Secrets Manager secret associated with the pull through cache rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PullThroughCacheRule withCredentialArn(String credentialArn) {
+        setCredentialArn(credentialArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the upstream source registry associated with the pull through cache rule.
+     * </p>
+     * 
+     * @param upstreamRegistry
+     *        The name of the upstream source registry associated with the pull through cache rule.
+     * @see UpstreamRegistry
+     */
+
+    public void setUpstreamRegistry(String upstreamRegistry) {
+        this.upstreamRegistry = upstreamRegistry;
+    }
+
+    /**
+     * <p>
+     * The name of the upstream source registry associated with the pull through cache rule.
+     * </p>
+     * 
+     * @return The name of the upstream source registry associated with the pull through cache rule.
+     * @see UpstreamRegistry
+     */
+
+    public String getUpstreamRegistry() {
+        return this.upstreamRegistry;
+    }
+
+    /**
+     * <p>
+     * The name of the upstream source registry associated with the pull through cache rule.
+     * </p>
+     * 
+     * @param upstreamRegistry
+     *        The name of the upstream source registry associated with the pull through cache rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UpstreamRegistry
+     */
+
+    public PullThroughCacheRule withUpstreamRegistry(String upstreamRegistry) {
+        setUpstreamRegistry(upstreamRegistry);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the upstream source registry associated with the pull through cache rule.
+     * </p>
+     * 
+     * @param upstreamRegistry
+     *        The name of the upstream source registry associated with the pull through cache rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UpstreamRegistry
+     */
+
+    public PullThroughCacheRule withUpstreamRegistry(UpstreamRegistry upstreamRegistry) {
+        this.upstreamRegistry = upstreamRegistry.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time, in JavaScript date format, when the pull through cache rule was last updated.
+     * </p>
+     * 
+     * @param updatedAt
+     *        The date and time, in JavaScript date format, when the pull through cache rule was last updated.
+     */
+
+    public void setUpdatedAt(java.util.Date updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    /**
+     * <p>
+     * The date and time, in JavaScript date format, when the pull through cache rule was last updated.
+     * </p>
+     * 
+     * @return The date and time, in JavaScript date format, when the pull through cache rule was last updated.
+     */
+
+    public java.util.Date getUpdatedAt() {
+        return this.updatedAt;
+    }
+
+    /**
+     * <p>
+     * The date and time, in JavaScript date format, when the pull through cache rule was last updated.
+     * </p>
+     * 
+     * @param updatedAt
+     *        The date and time, in JavaScript date format, when the pull through cache rule was last updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PullThroughCacheRule withUpdatedAt(java.util.Date updatedAt) {
+        setUpdatedAt(updatedAt);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -235,7 +392,13 @@ public class PullThroughCacheRule implements Serializable, Cloneable, Structured
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getRegistryId() != null)
-            sb.append("RegistryId: ").append(getRegistryId());
+            sb.append("RegistryId: ").append(getRegistryId()).append(",");
+        if (getCredentialArn() != null)
+            sb.append("CredentialArn: ").append(getCredentialArn()).append(",");
+        if (getUpstreamRegistry() != null)
+            sb.append("UpstreamRegistry: ").append(getUpstreamRegistry()).append(",");
+        if (getUpdatedAt() != null)
+            sb.append("UpdatedAt: ").append(getUpdatedAt());
         sb.append("}");
         return sb.toString();
     }
@@ -266,6 +429,18 @@ public class PullThroughCacheRule implements Serializable, Cloneable, Structured
             return false;
         if (other.getRegistryId() != null && other.getRegistryId().equals(this.getRegistryId()) == false)
             return false;
+        if (other.getCredentialArn() == null ^ this.getCredentialArn() == null)
+            return false;
+        if (other.getCredentialArn() != null && other.getCredentialArn().equals(this.getCredentialArn()) == false)
+            return false;
+        if (other.getUpstreamRegistry() == null ^ this.getUpstreamRegistry() == null)
+            return false;
+        if (other.getUpstreamRegistry() != null && other.getUpstreamRegistry().equals(this.getUpstreamRegistry()) == false)
+            return false;
+        if (other.getUpdatedAt() == null ^ this.getUpdatedAt() == null)
+            return false;
+        if (other.getUpdatedAt() != null && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
+            return false;
         return true;
     }
 
@@ -278,6 +453,9 @@ public class PullThroughCacheRule implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getUpstreamRegistryUrl() == null) ? 0 : getUpstreamRegistryUrl().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getRegistryId() == null) ? 0 : getRegistryId().hashCode());
+        hashCode = prime * hashCode + ((getCredentialArn() == null) ? 0 : getCredentialArn().hashCode());
+        hashCode = prime * hashCode + ((getUpstreamRegistry() == null) ? 0 : getUpstreamRegistry().hashCode());
+        hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,17 +30,17 @@ public class ActionTypePermissions implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A list of AWS account IDs with access to use the action type in their pipelines.
+     * A list of Amazon Web Services account IDs with access to use the action type in their pipelines.
      * </p>
      */
     private java.util.List<String> allowedAccounts;
 
     /**
      * <p>
-     * A list of AWS account IDs with access to use the action type in their pipelines.
+     * A list of Amazon Web Services account IDs with access to use the action type in their pipelines.
      * </p>
      * 
-     * @return A list of AWS account IDs with access to use the action type in their pipelines.
+     * @return A list of Amazon Web Services account IDs with access to use the action type in their pipelines.
      */
 
     public java.util.List<String> getAllowedAccounts() {
@@ -49,11 +49,11 @@ public class ActionTypePermissions implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A list of AWS account IDs with access to use the action type in their pipelines.
+     * A list of Amazon Web Services account IDs with access to use the action type in their pipelines.
      * </p>
      * 
      * @param allowedAccounts
-     *        A list of AWS account IDs with access to use the action type in their pipelines.
+     *        A list of Amazon Web Services account IDs with access to use the action type in their pipelines.
      */
 
     public void setAllowedAccounts(java.util.Collection<String> allowedAccounts) {
@@ -67,7 +67,7 @@ public class ActionTypePermissions implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A list of AWS account IDs with access to use the action type in their pipelines.
+     * A list of Amazon Web Services account IDs with access to use the action type in their pipelines.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -76,7 +76,7 @@ public class ActionTypePermissions implements Serializable, Cloneable, Structure
      * </p>
      * 
      * @param allowedAccounts
-     *        A list of AWS account IDs with access to use the action type in their pipelines.
+     *        A list of Amazon Web Services account IDs with access to use the action type in their pipelines.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class ActionTypePermissions implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A list of AWS account IDs with access to use the action type in their pipelines.
+     * A list of Amazon Web Services account IDs with access to use the action type in their pipelines.
      * </p>
      * 
      * @param allowedAccounts
-     *        A list of AWS account IDs with access to use the action type in their pipelines.
+     *        A list of Amazon Web Services account IDs with access to use the action type in their pipelines.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,14 @@ public class ListDistributionsByWebACLIdRequest extends com.amazonaws.AmazonWebS
      * <p>
      * The ID of the WAF web ACL that you want to list the associated distributions. If you specify "null" for the ID,
      * the request returns a list of the distributions that aren't associated with a web ACL.
+     * </p>
+     * <p>
+     * For WAFV2, this is the ARN of the web ACL, such as
+     * <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>
+     * .
+     * </p>
+     * <p>
+     * For WAF Classic, this is the ID of the web ACL, such as <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.
      * </p>
      */
     private String webACLId;
@@ -164,10 +172,25 @@ public class ListDistributionsByWebACLIdRequest extends com.amazonaws.AmazonWebS
      * The ID of the WAF web ACL that you want to list the associated distributions. If you specify "null" for the ID,
      * the request returns a list of the distributions that aren't associated with a web ACL.
      * </p>
+     * <p>
+     * For WAFV2, this is the ARN of the web ACL, such as
+     * <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>
+     * .
+     * </p>
+     * <p>
+     * For WAF Classic, this is the ID of the web ACL, such as <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.
+     * </p>
      * 
      * @param webACLId
      *        The ID of the WAF web ACL that you want to list the associated distributions. If you specify "null" for
-     *        the ID, the request returns a list of the distributions that aren't associated with a web ACL.
+     *        the ID, the request returns a list of the distributions that aren't associated with a web ACL. </p>
+     *        <p>
+     *        For WAFV2, this is the ARN of the web ACL, such as
+     *        <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>
+     *        .
+     *        </p>
+     *        <p>
+     *        For WAF Classic, this is the ID of the web ACL, such as <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.
      */
 
     public void setWebACLId(String webACLId) {
@@ -179,9 +202,24 @@ public class ListDistributionsByWebACLIdRequest extends com.amazonaws.AmazonWebS
      * The ID of the WAF web ACL that you want to list the associated distributions. If you specify "null" for the ID,
      * the request returns a list of the distributions that aren't associated with a web ACL.
      * </p>
+     * <p>
+     * For WAFV2, this is the ARN of the web ACL, such as
+     * <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>
+     * .
+     * </p>
+     * <p>
+     * For WAF Classic, this is the ID of the web ACL, such as <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.
+     * </p>
      * 
      * @return The ID of the WAF web ACL that you want to list the associated distributions. If you specify "null" for
-     *         the ID, the request returns a list of the distributions that aren't associated with a web ACL.
+     *         the ID, the request returns a list of the distributions that aren't associated with a web ACL. </p>
+     *         <p>
+     *         For WAFV2, this is the ARN of the web ACL, such as
+     *         <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>
+     *         .
+     *         </p>
+     *         <p>
+     *         For WAF Classic, this is the ID of the web ACL, such as <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.
      */
 
     public String getWebACLId() {
@@ -193,10 +231,25 @@ public class ListDistributionsByWebACLIdRequest extends com.amazonaws.AmazonWebS
      * The ID of the WAF web ACL that you want to list the associated distributions. If you specify "null" for the ID,
      * the request returns a list of the distributions that aren't associated with a web ACL.
      * </p>
+     * <p>
+     * For WAFV2, this is the ARN of the web ACL, such as
+     * <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>
+     * .
+     * </p>
+     * <p>
+     * For WAF Classic, this is the ID of the web ACL, such as <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.
+     * </p>
      * 
      * @param webACLId
      *        The ID of the WAF web ACL that you want to list the associated distributions. If you specify "null" for
-     *        the ID, the request returns a list of the distributions that aren't associated with a web ACL.
+     *        the ID, the request returns a list of the distributions that aren't associated with a web ACL. </p>
+     *        <p>
+     *        For WAFV2, this is the ARN of the web ACL, such as
+     *        <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>
+     *        .
+     *        </p>
+     *        <p>
+     *        For WAF Classic, this is the ID of the web ACL, such as <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

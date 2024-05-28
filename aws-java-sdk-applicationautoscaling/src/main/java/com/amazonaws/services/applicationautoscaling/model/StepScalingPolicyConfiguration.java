@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,6 +20,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Represents a step scaling policy configuration to use with Application Auto Scaling.
+ * </p>
+ * <p>
+ * For more information, see <a href=
+ * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html"
+ * >Step scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.
  * </p>
  * 
  * @see <a
@@ -62,101 +67,11 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
     private Integer minAdjustmentMagnitude;
     /**
      * <p>
-     * The amount of time, in seconds, to wait for a previous scaling activity to take effect.
+     * The amount of time, in seconds, to wait for a previous scaling activity to take effect. If not specified, the
+     * default value is 300. For more information, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/step-scaling-policy-overview.html#step-scaling-cooldown"
+     * >Cooldown period</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
-     * <p>
-     * With scale-out policies, the intention is to continuously (but not excessively) scale out. After Application Auto
-     * Scaling successfully scales out using a step scaling policy, it starts to calculate the cooldown time. The
-     * scaling policy won't increase the desired capacity again unless either a larger scale out is triggered or the
-     * cooldown period ends. While the cooldown period is in effect, capacity added by the initiating scale-out activity
-     * is calculated as part of the desired capacity for the next scale-out activity. For example, when an alarm
-     * triggers a step scaling policy to increase the capacity by 2, the scaling activity completes successfully, and a
-     * cooldown period starts. If the alarm triggers again during the cooldown period but at a more aggressive step
-     * adjustment of 3, the previous increase of 2 is considered part of the current capacity. Therefore, only 1 is
-     * added to the capacity.
-     * </p>
-     * <p>
-     * With scale-in policies, the intention is to scale in conservatively to protect your application’s availability,
-     * so scale-in activities are blocked until the cooldown period has expired. However, if another alarm triggers a
-     * scale-out activity during the cooldown period after a scale-in activity, Application Auto Scaling scales out the
-     * target immediately. In this case, the cooldown period for the scale-in activity stops and doesn't complete.
-     * </p>
-     * <p>
-     * Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups and a default
-     * value of 300 for the following scalable targets:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * AppStream 2.0 fleets
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Aurora DB clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ECS services
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EMR clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Neptune clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * SageMaker endpoint variants
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spot Fleets
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Custom resources
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For all other scalable targets, the default value is 0:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Amazon Comprehend document classification and entity recognizer endpoints
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * DynamoDB tables and global secondary indexes
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Amazon Keyspaces tables
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Lambda provisioned concurrency
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Amazon MSK broker storage
-     * </p>
-     * </li>
-     * </ul>
      */
     private Integer cooldown;
     /**
@@ -452,197 +367,17 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The amount of time, in seconds, to wait for a previous scaling activity to take effect.
+     * The amount of time, in seconds, to wait for a previous scaling activity to take effect. If not specified, the
+     * default value is 300. For more information, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/step-scaling-policy-overview.html#step-scaling-cooldown"
+     * >Cooldown period</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
-     * <p>
-     * With scale-out policies, the intention is to continuously (but not excessively) scale out. After Application Auto
-     * Scaling successfully scales out using a step scaling policy, it starts to calculate the cooldown time. The
-     * scaling policy won't increase the desired capacity again unless either a larger scale out is triggered or the
-     * cooldown period ends. While the cooldown period is in effect, capacity added by the initiating scale-out activity
-     * is calculated as part of the desired capacity for the next scale-out activity. For example, when an alarm
-     * triggers a step scaling policy to increase the capacity by 2, the scaling activity completes successfully, and a
-     * cooldown period starts. If the alarm triggers again during the cooldown period but at a more aggressive step
-     * adjustment of 3, the previous increase of 2 is considered part of the current capacity. Therefore, only 1 is
-     * added to the capacity.
-     * </p>
-     * <p>
-     * With scale-in policies, the intention is to scale in conservatively to protect your application’s availability,
-     * so scale-in activities are blocked until the cooldown period has expired. However, if another alarm triggers a
-     * scale-out activity during the cooldown period after a scale-in activity, Application Auto Scaling scales out the
-     * target immediately. In this case, the cooldown period for the scale-in activity stops and doesn't complete.
-     * </p>
-     * <p>
-     * Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups and a default
-     * value of 300 for the following scalable targets:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * AppStream 2.0 fleets
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Aurora DB clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ECS services
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EMR clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Neptune clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * SageMaker endpoint variants
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spot Fleets
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Custom resources
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For all other scalable targets, the default value is 0:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Amazon Comprehend document classification and entity recognizer endpoints
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * DynamoDB tables and global secondary indexes
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Amazon Keyspaces tables
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Lambda provisioned concurrency
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Amazon MSK broker storage
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param cooldown
-     *        The amount of time, in seconds, to wait for a previous scaling activity to take effect. </p>
-     *        <p>
-     *        With scale-out policies, the intention is to continuously (but not excessively) scale out. After
-     *        Application Auto Scaling successfully scales out using a step scaling policy, it starts to calculate the
-     *        cooldown time. The scaling policy won't increase the desired capacity again unless either a larger scale
-     *        out is triggered or the cooldown period ends. While the cooldown period is in effect, capacity added by
-     *        the initiating scale-out activity is calculated as part of the desired capacity for the next scale-out
-     *        activity. For example, when an alarm triggers a step scaling policy to increase the capacity by 2, the
-     *        scaling activity completes successfully, and a cooldown period starts. If the alarm triggers again during
-     *        the cooldown period but at a more aggressive step adjustment of 3, the previous increase of 2 is
-     *        considered part of the current capacity. Therefore, only 1 is added to the capacity.
-     *        </p>
-     *        <p>
-     *        With scale-in policies, the intention is to scale in conservatively to protect your application’s
-     *        availability, so scale-in activities are blocked until the cooldown period has expired. However, if
-     *        another alarm triggers a scale-out activity during the cooldown period after a scale-in activity,
-     *        Application Auto Scaling scales out the target immediately. In this case, the cooldown period for the
-     *        scale-in activity stops and doesn't complete.
-     *        </p>
-     *        <p>
-     *        Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups and a
-     *        default value of 300 for the following scalable targets:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        AppStream 2.0 fleets
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Aurora DB clusters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        ECS services
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        EMR clusters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Neptune clusters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        SageMaker endpoint variants
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Spot Fleets
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Custom resources
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        For all other scalable targets, the default value is 0:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Amazon Comprehend document classification and entity recognizer endpoints
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        DynamoDB tables and global secondary indexes
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Amazon Keyspaces tables
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Lambda provisioned concurrency
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Amazon MSK broker storage
-     *        </p>
-     *        </li>
+     *        The amount of time, in seconds, to wait for a previous scaling activity to take effect. If not specified,
+     *        the default value is 300. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/autoscaling/application/userguide/step-scaling-policy-overview.html#step-scaling-cooldown"
+     *        >Cooldown period</a> in the <i>Application Auto Scaling User Guide</i>.
      */
 
     public void setCooldown(Integer cooldown) {
@@ -651,196 +386,16 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The amount of time, in seconds, to wait for a previous scaling activity to take effect.
+     * The amount of time, in seconds, to wait for a previous scaling activity to take effect. If not specified, the
+     * default value is 300. For more information, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/step-scaling-policy-overview.html#step-scaling-cooldown"
+     * >Cooldown period</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
-     * <p>
-     * With scale-out policies, the intention is to continuously (but not excessively) scale out. After Application Auto
-     * Scaling successfully scales out using a step scaling policy, it starts to calculate the cooldown time. The
-     * scaling policy won't increase the desired capacity again unless either a larger scale out is triggered or the
-     * cooldown period ends. While the cooldown period is in effect, capacity added by the initiating scale-out activity
-     * is calculated as part of the desired capacity for the next scale-out activity. For example, when an alarm
-     * triggers a step scaling policy to increase the capacity by 2, the scaling activity completes successfully, and a
-     * cooldown period starts. If the alarm triggers again during the cooldown period but at a more aggressive step
-     * adjustment of 3, the previous increase of 2 is considered part of the current capacity. Therefore, only 1 is
-     * added to the capacity.
-     * </p>
-     * <p>
-     * With scale-in policies, the intention is to scale in conservatively to protect your application’s availability,
-     * so scale-in activities are blocked until the cooldown period has expired. However, if another alarm triggers a
-     * scale-out activity during the cooldown period after a scale-in activity, Application Auto Scaling scales out the
-     * target immediately. In this case, the cooldown period for the scale-in activity stops and doesn't complete.
-     * </p>
-     * <p>
-     * Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups and a default
-     * value of 300 for the following scalable targets:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * AppStream 2.0 fleets
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Aurora DB clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ECS services
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EMR clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Neptune clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * SageMaker endpoint variants
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spot Fleets
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Custom resources
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For all other scalable targets, the default value is 0:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Amazon Comprehend document classification and entity recognizer endpoints
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * DynamoDB tables and global secondary indexes
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Amazon Keyspaces tables
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Lambda provisioned concurrency
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Amazon MSK broker storage
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The amount of time, in seconds, to wait for a previous scaling activity to take effect. </p>
-     *         <p>
-     *         With scale-out policies, the intention is to continuously (but not excessively) scale out. After
-     *         Application Auto Scaling successfully scales out using a step scaling policy, it starts to calculate the
-     *         cooldown time. The scaling policy won't increase the desired capacity again unless either a larger scale
-     *         out is triggered or the cooldown period ends. While the cooldown period is in effect, capacity added by
-     *         the initiating scale-out activity is calculated as part of the desired capacity for the next scale-out
-     *         activity. For example, when an alarm triggers a step scaling policy to increase the capacity by 2, the
-     *         scaling activity completes successfully, and a cooldown period starts. If the alarm triggers again during
-     *         the cooldown period but at a more aggressive step adjustment of 3, the previous increase of 2 is
-     *         considered part of the current capacity. Therefore, only 1 is added to the capacity.
-     *         </p>
-     *         <p>
-     *         With scale-in policies, the intention is to scale in conservatively to protect your application’s
-     *         availability, so scale-in activities are blocked until the cooldown period has expired. However, if
-     *         another alarm triggers a scale-out activity during the cooldown period after a scale-in activity,
-     *         Application Auto Scaling scales out the target immediately. In this case, the cooldown period for the
-     *         scale-in activity stops and doesn't complete.
-     *         </p>
-     *         <p>
-     *         Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups and a
-     *         default value of 300 for the following scalable targets:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         AppStream 2.0 fleets
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Aurora DB clusters
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         ECS services
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         EMR clusters
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Neptune clusters
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         SageMaker endpoint variants
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Spot Fleets
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Custom resources
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         For all other scalable targets, the default value is 0:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Amazon Comprehend document classification and entity recognizer endpoints
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         DynamoDB tables and global secondary indexes
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Amazon Keyspaces tables
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Lambda provisioned concurrency
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Amazon MSK broker storage
-     *         </p>
-     *         </li>
+     * @return The amount of time, in seconds, to wait for a previous scaling activity to take effect. If not specified,
+     *         the default value is 300. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/autoscaling/application/userguide/step-scaling-policy-overview.html#step-scaling-cooldown"
+     *         >Cooldown period</a> in the <i>Application Auto Scaling User Guide</i>.
      */
 
     public Integer getCooldown() {
@@ -849,197 +404,17 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The amount of time, in seconds, to wait for a previous scaling activity to take effect.
+     * The amount of time, in seconds, to wait for a previous scaling activity to take effect. If not specified, the
+     * default value is 300. For more information, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/step-scaling-policy-overview.html#step-scaling-cooldown"
+     * >Cooldown period</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
-     * <p>
-     * With scale-out policies, the intention is to continuously (but not excessively) scale out. After Application Auto
-     * Scaling successfully scales out using a step scaling policy, it starts to calculate the cooldown time. The
-     * scaling policy won't increase the desired capacity again unless either a larger scale out is triggered or the
-     * cooldown period ends. While the cooldown period is in effect, capacity added by the initiating scale-out activity
-     * is calculated as part of the desired capacity for the next scale-out activity. For example, when an alarm
-     * triggers a step scaling policy to increase the capacity by 2, the scaling activity completes successfully, and a
-     * cooldown period starts. If the alarm triggers again during the cooldown period but at a more aggressive step
-     * adjustment of 3, the previous increase of 2 is considered part of the current capacity. Therefore, only 1 is
-     * added to the capacity.
-     * </p>
-     * <p>
-     * With scale-in policies, the intention is to scale in conservatively to protect your application’s availability,
-     * so scale-in activities are blocked until the cooldown period has expired. However, if another alarm triggers a
-     * scale-out activity during the cooldown period after a scale-in activity, Application Auto Scaling scales out the
-     * target immediately. In this case, the cooldown period for the scale-in activity stops and doesn't complete.
-     * </p>
-     * <p>
-     * Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups and a default
-     * value of 300 for the following scalable targets:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * AppStream 2.0 fleets
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Aurora DB clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * ECS services
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * EMR clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Neptune clusters
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * SageMaker endpoint variants
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Spot Fleets
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Custom resources
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For all other scalable targets, the default value is 0:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Amazon Comprehend document classification and entity recognizer endpoints
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * DynamoDB tables and global secondary indexes
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Amazon Keyspaces tables
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Lambda provisioned concurrency
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Amazon MSK broker storage
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param cooldown
-     *        The amount of time, in seconds, to wait for a previous scaling activity to take effect. </p>
-     *        <p>
-     *        With scale-out policies, the intention is to continuously (but not excessively) scale out. After
-     *        Application Auto Scaling successfully scales out using a step scaling policy, it starts to calculate the
-     *        cooldown time. The scaling policy won't increase the desired capacity again unless either a larger scale
-     *        out is triggered or the cooldown period ends. While the cooldown period is in effect, capacity added by
-     *        the initiating scale-out activity is calculated as part of the desired capacity for the next scale-out
-     *        activity. For example, when an alarm triggers a step scaling policy to increase the capacity by 2, the
-     *        scaling activity completes successfully, and a cooldown period starts. If the alarm triggers again during
-     *        the cooldown period but at a more aggressive step adjustment of 3, the previous increase of 2 is
-     *        considered part of the current capacity. Therefore, only 1 is added to the capacity.
-     *        </p>
-     *        <p>
-     *        With scale-in policies, the intention is to scale in conservatively to protect your application’s
-     *        availability, so scale-in activities are blocked until the cooldown period has expired. However, if
-     *        another alarm triggers a scale-out activity during the cooldown period after a scale-in activity,
-     *        Application Auto Scaling scales out the target immediately. In this case, the cooldown period for the
-     *        scale-in activity stops and doesn't complete.
-     *        </p>
-     *        <p>
-     *        Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups and a
-     *        default value of 300 for the following scalable targets:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        AppStream 2.0 fleets
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Aurora DB clusters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        ECS services
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        EMR clusters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Neptune clusters
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        SageMaker endpoint variants
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Spot Fleets
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Custom resources
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        For all other scalable targets, the default value is 0:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Amazon Comprehend document classification and entity recognizer endpoints
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        DynamoDB tables and global secondary indexes
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Amazon Keyspaces tables
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Lambda provisioned concurrency
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Amazon MSK broker storage
-     *        </p>
-     *        </li>
+     *        The amount of time, in seconds, to wait for a previous scaling activity to take effect. If not specified,
+     *        the default value is 300. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/autoscaling/application/userguide/step-scaling-policy-overview.html#step-scaling-cooldown"
+     *        >Cooldown period</a> in the <i>Application Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

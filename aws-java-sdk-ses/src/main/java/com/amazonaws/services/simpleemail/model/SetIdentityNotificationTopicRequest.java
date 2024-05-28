@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,10 +19,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents a request to specify the Amazon SNS topic to which Amazon SES will publish bounce, complaint, or delivery
- * notifications for emails sent with that identity as the Source. For information about Amazon SES notifications, see
- * the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/notifications-via-sns.html">Amazon SES Developer
- * Guide</a>.
+ * Represents a request to specify the Amazon SNS topic to which Amazon SES publishes bounce, complaint, or delivery
+ * notifications for emails sent with that identity as the source. For information about Amazon SES notifications, see
+ * the <a href="https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity-using-notifications-sns.html">Amazon
+ * SES Developer Guide</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SetIdentityNotificationTopic" target="_top">AWS
@@ -33,7 +33,7 @@ public class SetIdentityNotificationTopicRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The identity (email address or domain) that you want to set the Amazon SNS topic for.
+     * The identity (email address or domain) for the Amazon SNS topic.
      * </p>
      * <important>
      * <p>
@@ -49,7 +49,7 @@ public class SetIdentityNotificationTopicRequest extends com.amazonaws.AmazonWeb
     private String identity;
     /**
      * <p>
-     * The type of notifications that will be published to the specified Amazon SNS topic.
+     * The type of notifications that are published to the specified Amazon SNS topic.
      * </p>
      */
     private String notificationType;
@@ -63,7 +63,7 @@ public class SetIdentityNotificationTopicRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The identity (email address or domain) that you want to set the Amazon SNS topic for.
+     * The identity (email address or domain) for the Amazon SNS topic.
      * </p>
      * <important>
      * <p>
@@ -77,7 +77,7 @@ public class SetIdentityNotificationTopicRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param identity
-     *        The identity (email address or domain) that you want to set the Amazon SNS topic for.</p> <important>
+     *        The identity (email address or domain) for the Amazon SNS topic.</p> <important>
      *        <p>
      *        You can only specify a verified identity for this parameter.
      *        </p>
@@ -94,7 +94,7 @@ public class SetIdentityNotificationTopicRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The identity (email address or domain) that you want to set the Amazon SNS topic for.
+     * The identity (email address or domain) for the Amazon SNS topic.
      * </p>
      * <important>
      * <p>
@@ -107,7 +107,7 @@ public class SetIdentityNotificationTopicRequest extends com.amazonaws.AmazonWeb
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
      * </p>
      * 
-     * @return The identity (email address or domain) that you want to set the Amazon SNS topic for.</p> <important>
+     * @return The identity (email address or domain) for the Amazon SNS topic.</p> <important>
      *         <p>
      *         You can only specify a verified identity for this parameter.
      *         </p>
@@ -124,7 +124,7 @@ public class SetIdentityNotificationTopicRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The identity (email address or domain) that you want to set the Amazon SNS topic for.
+     * The identity (email address or domain) for the Amazon SNS topic.
      * </p>
      * <important>
      * <p>
@@ -138,7 +138,7 @@ public class SetIdentityNotificationTopicRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param identity
-     *        The identity (email address or domain) that you want to set the Amazon SNS topic for.</p> <important>
+     *        The identity (email address or domain) for the Amazon SNS topic.</p> <important>
      *        <p>
      *        You can only specify a verified identity for this parameter.
      *        </p>
@@ -157,11 +157,11 @@ public class SetIdentityNotificationTopicRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The type of notifications that will be published to the specified Amazon SNS topic.
+     * The type of notifications that are published to the specified Amazon SNS topic.
      * </p>
      * 
      * @param notificationType
-     *        The type of notifications that will be published to the specified Amazon SNS topic.
+     *        The type of notifications that are published to the specified Amazon SNS topic.
      * @see NotificationType
      */
 
@@ -171,10 +171,10 @@ public class SetIdentityNotificationTopicRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The type of notifications that will be published to the specified Amazon SNS topic.
+     * The type of notifications that are published to the specified Amazon SNS topic.
      * </p>
      * 
-     * @return The type of notifications that will be published to the specified Amazon SNS topic.
+     * @return The type of notifications that are published to the specified Amazon SNS topic.
      * @see NotificationType
      */
 
@@ -184,11 +184,11 @@ public class SetIdentityNotificationTopicRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The type of notifications that will be published to the specified Amazon SNS topic.
+     * The type of notifications that are published to the specified Amazon SNS topic.
      * </p>
      * 
      * @param notificationType
-     *        The type of notifications that will be published to the specified Amazon SNS topic.
+     *        The type of notifications that are published to the specified Amazon SNS topic.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NotificationType
      */
@@ -200,11 +200,11 @@ public class SetIdentityNotificationTopicRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The type of notifications that will be published to the specified Amazon SNS topic.
+     * The type of notifications that are published to the specified Amazon SNS topic.
      * </p>
      * 
      * @param notificationType
-     *        The type of notifications that will be published to the specified Amazon SNS topic.
+     *        The type of notifications that are published to the specified Amazon SNS topic.
      * @see NotificationType
      */
 
@@ -214,11 +214,11 @@ public class SetIdentityNotificationTopicRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The type of notifications that will be published to the specified Amazon SNS topic.
+     * The type of notifications that are published to the specified Amazon SNS topic.
      * </p>
      * 
      * @param notificationType
-     *        The type of notifications that will be published to the specified Amazon SNS topic.
+     *        The type of notifications that are published to the specified Amazon SNS topic.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NotificationType
      */

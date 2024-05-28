@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -161,6 +161,14 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
      * </p>
      */
     private WindowsAuditLogConfiguration auditLogConfiguration;
+    /**
+     * <p>
+     * The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for Windows file system. By
+     * default, Amazon FSx automatically provisions 3 IOPS per GiB of storage capacity. You can provision additional
+     * IOPS per GiB of storage, up to the maximum limit associated with your chosen throughput capacity.
+     * </p>
+     */
+    private DiskIopsConfiguration diskIopsConfiguration;
 
     /**
      * <p>
@@ -1204,6 +1212,61 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
     }
 
     /**
+     * <p>
+     * The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for Windows file system. By
+     * default, Amazon FSx automatically provisions 3 IOPS per GiB of storage capacity. You can provision additional
+     * IOPS per GiB of storage, up to the maximum limit associated with your chosen throughput capacity.
+     * </p>
+     * 
+     * @param diskIopsConfiguration
+     *        The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for Windows file system.
+     *        By default, Amazon FSx automatically provisions 3 IOPS per GiB of storage capacity. You can provision
+     *        additional IOPS per GiB of storage, up to the maximum limit associated with your chosen throughput
+     *        capacity.
+     */
+
+    public void setDiskIopsConfiguration(DiskIopsConfiguration diskIopsConfiguration) {
+        this.diskIopsConfiguration = diskIopsConfiguration;
+    }
+
+    /**
+     * <p>
+     * The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for Windows file system. By
+     * default, Amazon FSx automatically provisions 3 IOPS per GiB of storage capacity. You can provision additional
+     * IOPS per GiB of storage, up to the maximum limit associated with your chosen throughput capacity.
+     * </p>
+     * 
+     * @return The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for Windows file
+     *         system. By default, Amazon FSx automatically provisions 3 IOPS per GiB of storage capacity. You can
+     *         provision additional IOPS per GiB of storage, up to the maximum limit associated with your chosen
+     *         throughput capacity.
+     */
+
+    public DiskIopsConfiguration getDiskIopsConfiguration() {
+        return this.diskIopsConfiguration;
+    }
+
+    /**
+     * <p>
+     * The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for Windows file system. By
+     * default, Amazon FSx automatically provisions 3 IOPS per GiB of storage capacity. You can provision additional
+     * IOPS per GiB of storage, up to the maximum limit associated with your chosen throughput capacity.
+     * </p>
+     * 
+     * @param diskIopsConfiguration
+     *        The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for Windows file system.
+     *        By default, Amazon FSx automatically provisions 3 IOPS per GiB of storage capacity. You can provision
+     *        additional IOPS per GiB of storage, up to the maximum limit associated with your chosen throughput
+     *        capacity.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WindowsFileSystemConfiguration withDiskIopsConfiguration(DiskIopsConfiguration diskIopsConfiguration) {
+        setDiskIopsConfiguration(diskIopsConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1242,7 +1305,9 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
         if (getAliases() != null)
             sb.append("Aliases: ").append(getAliases()).append(",");
         if (getAuditLogConfiguration() != null)
-            sb.append("AuditLogConfiguration: ").append(getAuditLogConfiguration());
+            sb.append("AuditLogConfiguration: ").append(getAuditLogConfiguration()).append(",");
+        if (getDiskIopsConfiguration() != null)
+            sb.append("DiskIopsConfiguration: ").append(getDiskIopsConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1316,6 +1381,10 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
             return false;
         if (other.getAuditLogConfiguration() != null && other.getAuditLogConfiguration().equals(this.getAuditLogConfiguration()) == false)
             return false;
+        if (other.getDiskIopsConfiguration() == null ^ this.getDiskIopsConfiguration() == null)
+            return false;
+        if (other.getDiskIopsConfiguration() != null && other.getDiskIopsConfiguration().equals(this.getDiskIopsConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1338,6 +1407,7 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
         hashCode = prime * hashCode + ((getCopyTagsToBackups() == null) ? 0 : getCopyTagsToBackups().hashCode());
         hashCode = prime * hashCode + ((getAliases() == null) ? 0 : getAliases().hashCode());
         hashCode = prime * hashCode + ((getAuditLogConfiguration() == null) ? 0 : getAuditLogConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getDiskIopsConfiguration() == null) ? 0 : getDiskIopsConfiguration().hashCode());
         return hashCode;
     }
 

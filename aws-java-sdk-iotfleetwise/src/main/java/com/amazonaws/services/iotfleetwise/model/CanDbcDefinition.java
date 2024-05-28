@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class CanDbcDefinition implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * A list of DBC files. You can upload only one DBC file for each network interface and specify up to five
-     * (inclusive) files in the list.
+     * (inclusive) files in the list. The DBC file can be a maximum size of 200 MB.
      * </p>
      */
     private java.util.List<java.nio.ByteBuffer> canDbcFiles;
@@ -91,11 +91,11 @@ public class CanDbcDefinition implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * A list of DBC files. You can upload only one DBC file for each network interface and specify up to five
-     * (inclusive) files in the list.
+     * (inclusive) files in the list. The DBC file can be a maximum size of 200 MB.
      * </p>
      * 
      * @return A list of DBC files. You can upload only one DBC file for each network interface and specify up to five
-     *         (inclusive) files in the list.
+     *         (inclusive) files in the list. The DBC file can be a maximum size of 200 MB.
      */
 
     public java.util.List<java.nio.ByteBuffer> getCanDbcFiles() {
@@ -105,12 +105,12 @@ public class CanDbcDefinition implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * A list of DBC files. You can upload only one DBC file for each network interface and specify up to five
-     * (inclusive) files in the list.
+     * (inclusive) files in the list. The DBC file can be a maximum size of 200 MB.
      * </p>
      * 
      * @param canDbcFiles
      *        A list of DBC files. You can upload only one DBC file for each network interface and specify up to five
-     *        (inclusive) files in the list.
+     *        (inclusive) files in the list. The DBC file can be a maximum size of 200 MB.
      */
 
     public void setCanDbcFiles(java.util.Collection<java.nio.ByteBuffer> canDbcFiles) {
@@ -125,7 +125,7 @@ public class CanDbcDefinition implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * A list of DBC files. You can upload only one DBC file for each network interface and specify up to five
-     * (inclusive) files in the list.
+     * (inclusive) files in the list. The DBC file can be a maximum size of 200 MB.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -135,7 +135,7 @@ public class CanDbcDefinition implements Serializable, Cloneable, StructuredPojo
      * 
      * @param canDbcFiles
      *        A list of DBC files. You can upload only one DBC file for each network interface and specify up to five
-     *        (inclusive) files in the list.
+     *        (inclusive) files in the list. The DBC file can be a maximum size of 200 MB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,12 +152,12 @@ public class CanDbcDefinition implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * A list of DBC files. You can upload only one DBC file for each network interface and specify up to five
-     * (inclusive) files in the list.
+     * (inclusive) files in the list. The DBC file can be a maximum size of 200 MB.
      * </p>
      * 
      * @param canDbcFiles
      *        A list of DBC files. You can upload only one DBC file for each network interface and specify up to five
-     *        (inclusive) files in the list.
+     *        (inclusive) files in the list. The DBC file can be a maximum size of 200 MB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

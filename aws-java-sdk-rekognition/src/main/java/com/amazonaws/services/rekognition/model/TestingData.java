@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The dataset used for testing. Optionally, if <code>AutoCreate</code> is set, Amazon Rekognition Custom Labels uses
- * the training dataset to create a test dataset with a temporary split of the training dataset.
+ * The dataset used for testing. Optionally, if <code>AutoCreate</code> is set, Amazon Rekognition uses the training
+ * dataset to create a test dataset with a temporary split of the training dataset.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -34,9 +34,7 @@ public class TestingData implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<Asset> assets;
     /**
      * <p>
-     * If specified, Amazon Rekognition Custom Labels temporarily splits the training dataset (80%) to create a test
-     * dataset (20%) for the training job. After training completes, the test dataset is not stored and the training
-     * dataset reverts to its previous size.
+     * If specified, Rekognition splits training dataset to create a test dataset for the training job.
      * </p>
      */
     private Boolean autoCreate;
@@ -113,15 +111,11 @@ public class TestingData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If specified, Amazon Rekognition Custom Labels temporarily splits the training dataset (80%) to create a test
-     * dataset (20%) for the training job. After training completes, the test dataset is not stored and the training
-     * dataset reverts to its previous size.
+     * If specified, Rekognition splits training dataset to create a test dataset for the training job.
      * </p>
      * 
      * @param autoCreate
-     *        If specified, Amazon Rekognition Custom Labels temporarily splits the training dataset (80%) to create a
-     *        test dataset (20%) for the training job. After training completes, the test dataset is not stored and the
-     *        training dataset reverts to its previous size.
+     *        If specified, Rekognition splits training dataset to create a test dataset for the training job.
      */
 
     public void setAutoCreate(Boolean autoCreate) {
@@ -130,14 +124,10 @@ public class TestingData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If specified, Amazon Rekognition Custom Labels temporarily splits the training dataset (80%) to create a test
-     * dataset (20%) for the training job. After training completes, the test dataset is not stored and the training
-     * dataset reverts to its previous size.
+     * If specified, Rekognition splits training dataset to create a test dataset for the training job.
      * </p>
      * 
-     * @return If specified, Amazon Rekognition Custom Labels temporarily splits the training dataset (80%) to create a
-     *         test dataset (20%) for the training job. After training completes, the test dataset is not stored and the
-     *         training dataset reverts to its previous size.
+     * @return If specified, Rekognition splits training dataset to create a test dataset for the training job.
      */
 
     public Boolean getAutoCreate() {
@@ -146,15 +136,11 @@ public class TestingData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If specified, Amazon Rekognition Custom Labels temporarily splits the training dataset (80%) to create a test
-     * dataset (20%) for the training job. After training completes, the test dataset is not stored and the training
-     * dataset reverts to its previous size.
+     * If specified, Rekognition splits training dataset to create a test dataset for the training job.
      * </p>
      * 
      * @param autoCreate
-     *        If specified, Amazon Rekognition Custom Labels temporarily splits the training dataset (80%) to create a
-     *        test dataset (20%) for the training job. After training completes, the test dataset is not stored and the
-     *        training dataset reverts to its previous size.
+     *        If specified, Rekognition splits training dataset to create a test dataset for the training job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,14 +151,10 @@ public class TestingData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If specified, Amazon Rekognition Custom Labels temporarily splits the training dataset (80%) to create a test
-     * dataset (20%) for the training job. After training completes, the test dataset is not stored and the training
-     * dataset reverts to its previous size.
+     * If specified, Rekognition splits training dataset to create a test dataset for the training job.
      * </p>
      * 
-     * @return If specified, Amazon Rekognition Custom Labels temporarily splits the training dataset (80%) to create a
-     *         test dataset (20%) for the training job. After training completes, the test dataset is not stored and the
-     *         training dataset reverts to its previous size.
+     * @return If specified, Rekognition splits training dataset to create a test dataset for the training job.
      */
 
     public Boolean isAutoCreate() {

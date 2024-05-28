@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,10 +45,16 @@ public class ListInferenceSchedulersRequest extends com.amazonaws.AmazonWebServi
     private String inferenceSchedulerNameBeginsWith;
     /**
      * <p>
-     * The name of the ML model used by the inference scheduler to be listed.
+     * The name of the machine learning model used by the inference scheduler to be listed.
      * </p>
      */
     private String modelName;
+    /**
+     * <p>
+     * Specifies the current status of the inference schedulers.
+     * </p>
+     */
+    private String status;
 
     /**
      * <p>
@@ -172,11 +178,11 @@ public class ListInferenceSchedulersRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the ML model used by the inference scheduler to be listed.
+     * The name of the machine learning model used by the inference scheduler to be listed.
      * </p>
      * 
      * @param modelName
-     *        The name of the ML model used by the inference scheduler to be listed.
+     *        The name of the machine learning model used by the inference scheduler to be listed.
      */
 
     public void setModelName(String modelName) {
@@ -185,10 +191,10 @@ public class ListInferenceSchedulersRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the ML model used by the inference scheduler to be listed.
+     * The name of the machine learning model used by the inference scheduler to be listed.
      * </p>
      * 
-     * @return The name of the ML model used by the inference scheduler to be listed.
+     * @return The name of the machine learning model used by the inference scheduler to be listed.
      */
 
     public String getModelName() {
@@ -197,16 +203,75 @@ public class ListInferenceSchedulersRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the ML model used by the inference scheduler to be listed.
+     * The name of the machine learning model used by the inference scheduler to be listed.
      * </p>
      * 
      * @param modelName
-     *        The name of the ML model used by the inference scheduler to be listed.
+     *        The name of the machine learning model used by the inference scheduler to be listed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListInferenceSchedulersRequest withModelName(String modelName) {
         setModelName(modelName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the current status of the inference schedulers.
+     * </p>
+     * 
+     * @param status
+     *        Specifies the current status of the inference schedulers.
+     * @see InferenceSchedulerStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * Specifies the current status of the inference schedulers.
+     * </p>
+     * 
+     * @return Specifies the current status of the inference schedulers.
+     * @see InferenceSchedulerStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * Specifies the current status of the inference schedulers.
+     * </p>
+     * 
+     * @param status
+     *        Specifies the current status of the inference schedulers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InferenceSchedulerStatus
+     */
+
+    public ListInferenceSchedulersRequest withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the current status of the inference schedulers.
+     * </p>
+     * 
+     * @param status
+     *        Specifies the current status of the inference schedulers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InferenceSchedulerStatus
+     */
+
+    public ListInferenceSchedulersRequest withStatus(InferenceSchedulerStatus status) {
+        this.status = status.toString();
         return this;
     }
 
@@ -229,7 +294,9 @@ public class ListInferenceSchedulersRequest extends com.amazonaws.AmazonWebServi
         if (getInferenceSchedulerNameBeginsWith() != null)
             sb.append("InferenceSchedulerNameBeginsWith: ").append(getInferenceSchedulerNameBeginsWith()).append(",");
         if (getModelName() != null)
-            sb.append("ModelName: ").append(getModelName());
+            sb.append("ModelName: ").append(getModelName()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -261,6 +328,10 @@ public class ListInferenceSchedulersRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getModelName() != null && other.getModelName().equals(this.getModelName()) == false)
             return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
         return true;
     }
 
@@ -273,6 +344,7 @@ public class ListInferenceSchedulersRequest extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getInferenceSchedulerNameBeginsWith() == null) ? 0 : getInferenceSchedulerNameBeginsWith().hashCode());
         hashCode = prime * hashCode + ((getModelName() == null) ? 0 : getModelName().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,12 @@ public class TableIdentifier implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * Region of the target table.
+     * </p>
+     */
+    private String region;
 
     /**
      * <p>
@@ -168,6 +174,46 @@ public class TableIdentifier implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Region of the target table.
+     * </p>
+     * 
+     * @param region
+     *        Region of the target table.
+     */
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    /**
+     * <p>
+     * Region of the target table.
+     * </p>
+     * 
+     * @return Region of the target table.
+     */
+
+    public String getRegion() {
+        return this.region;
+    }
+
+    /**
+     * <p>
+     * Region of the target table.
+     * </p>
+     * 
+     * @param region
+     *        Region of the target table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TableIdentifier withRegion(String region) {
+        setRegion(region);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -184,7 +230,9 @@ public class TableIdentifier implements Serializable, Cloneable, StructuredPojo 
         if (getDatabaseName() != null)
             sb.append("DatabaseName: ").append(getDatabaseName()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getRegion() != null)
+            sb.append("Region: ").append(getRegion());
         sb.append("}");
         return sb.toString();
     }
@@ -211,6 +259,10 @@ public class TableIdentifier implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getRegion() == null ^ this.getRegion() == null)
+            return false;
+        if (other.getRegion() != null && other.getRegion().equals(this.getRegion()) == false)
+            return false;
         return true;
     }
 
@@ -222,6 +274,7 @@ public class TableIdentifier implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getCatalogId() == null) ? 0 : getCatalogId().hashCode());
         hashCode = prime * hashCode + ((getDatabaseName() == null) ? 0 : getDatabaseName().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
         return hashCode;
     }
 

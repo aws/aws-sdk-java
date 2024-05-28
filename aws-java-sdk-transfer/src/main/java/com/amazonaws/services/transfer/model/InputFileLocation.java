@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the location for the file being copied. Only applicable for the Copy type of workflow steps.
+ * Specifies the location for the file that's being processed.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/InputFileLocation" target="_top">AWS API
@@ -30,24 +30,24 @@ public class InputFileLocation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Specifies the details for the S3 file being copied.
+     * Specifies the details for the Amazon S3 file that's being copied or decrypted.
      * </p>
      */
     private S3InputFileLocation s3FileLocation;
     /**
      * <p>
-     * Reserved for future use.
+     * Specifies the details for the Amazon Elastic File System (Amazon EFS) file that's being decrypted.
      * </p>
      */
     private EfsFileLocation efsFileLocation;
 
     /**
      * <p>
-     * Specifies the details for the S3 file being copied.
+     * Specifies the details for the Amazon S3 file that's being copied or decrypted.
      * </p>
      * 
      * @param s3FileLocation
-     *        Specifies the details for the S3 file being copied.
+     *        Specifies the details for the Amazon S3 file that's being copied or decrypted.
      */
 
     public void setS3FileLocation(S3InputFileLocation s3FileLocation) {
@@ -56,10 +56,10 @@ public class InputFileLocation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Specifies the details for the S3 file being copied.
+     * Specifies the details for the Amazon S3 file that's being copied or decrypted.
      * </p>
      * 
-     * @return Specifies the details for the S3 file being copied.
+     * @return Specifies the details for the Amazon S3 file that's being copied or decrypted.
      */
 
     public S3InputFileLocation getS3FileLocation() {
@@ -68,11 +68,11 @@ public class InputFileLocation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Specifies the details for the S3 file being copied.
+     * Specifies the details for the Amazon S3 file that's being copied or decrypted.
      * </p>
      * 
      * @param s3FileLocation
-     *        Specifies the details for the S3 file being copied.
+     *        Specifies the details for the Amazon S3 file that's being copied or decrypted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class InputFileLocation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Reserved for future use.
+     * Specifies the details for the Amazon Elastic File System (Amazon EFS) file that's being decrypted.
      * </p>
      * 
      * @param efsFileLocation
-     *        Reserved for future use.
+     *        Specifies the details for the Amazon Elastic File System (Amazon EFS) file that's being decrypted.
      */
 
     public void setEfsFileLocation(EfsFileLocation efsFileLocation) {
@@ -96,10 +96,10 @@ public class InputFileLocation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Reserved for future use.
+     * Specifies the details for the Amazon Elastic File System (Amazon EFS) file that's being decrypted.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return Specifies the details for the Amazon Elastic File System (Amazon EFS) file that's being decrypted.
      */
 
     public EfsFileLocation getEfsFileLocation() {
@@ -108,11 +108,11 @@ public class InputFileLocation implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Reserved for future use.
+     * Specifies the details for the Amazon Elastic File System (Amazon EFS) file that's being decrypted.
      * </p>
      * 
      * @param efsFileLocation
-     *        Reserved for future use.
+     *        Specifies the details for the Amazon Elastic File System (Amazon EFS) file that's being decrypted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

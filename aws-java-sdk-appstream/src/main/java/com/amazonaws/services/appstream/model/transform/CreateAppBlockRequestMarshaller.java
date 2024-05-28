@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,10 @@ public class CreateAppBlockRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SetupScriptDetails").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<StructuredPojo> POSTSETUPSCRIPTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PostSetupScriptDetails").build();
+    private static final MarshallingInfo<String> PACKAGINGTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PackagingType").build();
 
     private static final CreateAppBlockRequestMarshaller instance = new CreateAppBlockRequestMarshaller();
 
@@ -64,6 +68,8 @@ public class CreateAppBlockRequestMarshaller {
             protocolMarshaller.marshall(createAppBlockRequest.getSourceS3Location(), SOURCES3LOCATION_BINDING);
             protocolMarshaller.marshall(createAppBlockRequest.getSetupScriptDetails(), SETUPSCRIPTDETAILS_BINDING);
             protocolMarshaller.marshall(createAppBlockRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createAppBlockRequest.getPostSetupScriptDetails(), POSTSETUPSCRIPTDETAILS_BINDING);
+            protocolMarshaller.marshall(createAppBlockRequest.getPackagingType(), PACKAGINGTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

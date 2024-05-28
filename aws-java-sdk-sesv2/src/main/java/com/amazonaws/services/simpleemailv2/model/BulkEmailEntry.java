@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,42 @@ public class BulkEmailEntry implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ReplacementEmailContent replacementEmailContent;
+    /**
+     * <p>
+     * The list of message headers associated with the <code>BulkEmailEntry</code> data type.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Headers Not Present in <code>BulkEmailEntry</code>: If a header is specified in <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html"> <code>Template</code> </a> but
+     * not in <code>BulkEmailEntry</code>, the header from <code>Template</code> will be added to the outgoing email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Headers Present in <code>BulkEmailEntry</code>: If a header is specified in <code>BulkEmailEntry</code>, it takes
+     * precedence over any header of the same name specified in <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html"> <code>Template</code> </a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the header is also defined within <code>Template</code>, the value from <code>BulkEmailEntry</code> will
+     * replace the header's value in the email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the header is not defined within <code>Template</code>, it will simply be added to the email as specified in
+     * <code>BulkEmailEntry</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
+     */
+    private java.util.List<MessageHeader> replacementHeaders;
 
     /**
      * <p>
@@ -277,6 +313,320 @@ public class BulkEmailEntry implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The list of message headers associated with the <code>BulkEmailEntry</code> data type.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Headers Not Present in <code>BulkEmailEntry</code>: If a header is specified in <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html"> <code>Template</code> </a> but
+     * not in <code>BulkEmailEntry</code>, the header from <code>Template</code> will be added to the outgoing email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Headers Present in <code>BulkEmailEntry</code>: If a header is specified in <code>BulkEmailEntry</code>, it takes
+     * precedence over any header of the same name specified in <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html"> <code>Template</code> </a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the header is also defined within <code>Template</code>, the value from <code>BulkEmailEntry</code> will
+     * replace the header's value in the email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the header is not defined within <code>Template</code>, it will simply be added to the email as specified in
+     * <code>BulkEmailEntry</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
+     * 
+     * @return The list of message headers associated with the <code>BulkEmailEntry</code> data type.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Headers Not Present in <code>BulkEmailEntry</code>: If a header is specified in <a
+     *         href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html"> <code>Template</code>
+     *         </a> but not in <code>BulkEmailEntry</code>, the header from <code>Template</code> will be added to the
+     *         outgoing email.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Headers Present in <code>BulkEmailEntry</code>: If a header is specified in <code>BulkEmailEntry</code>,
+     *         it takes precedence over any header of the same name specified in <a
+     *         href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html"> <code>Template</code>
+     *         </a>:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If the header is also defined within <code>Template</code>, the value from <code>BulkEmailEntry</code>
+     *         will replace the header's value in the email.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the header is not defined within <code>Template</code>, it will simply be added to the email as
+     *         specified in <code>BulkEmailEntry</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     */
+
+    public java.util.List<MessageHeader> getReplacementHeaders() {
+        return replacementHeaders;
+    }
+
+    /**
+     * <p>
+     * The list of message headers associated with the <code>BulkEmailEntry</code> data type.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Headers Not Present in <code>BulkEmailEntry</code>: If a header is specified in <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html"> <code>Template</code> </a> but
+     * not in <code>BulkEmailEntry</code>, the header from <code>Template</code> will be added to the outgoing email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Headers Present in <code>BulkEmailEntry</code>: If a header is specified in <code>BulkEmailEntry</code>, it takes
+     * precedence over any header of the same name specified in <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html"> <code>Template</code> </a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the header is also defined within <code>Template</code>, the value from <code>BulkEmailEntry</code> will
+     * replace the header's value in the email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the header is not defined within <code>Template</code>, it will simply be added to the email as specified in
+     * <code>BulkEmailEntry</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
+     * 
+     * @param replacementHeaders
+     *        The list of message headers associated with the <code>BulkEmailEntry</code> data type.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Headers Not Present in <code>BulkEmailEntry</code>: If a header is specified in <a
+     *        href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html"> <code>Template</code>
+     *        </a> but not in <code>BulkEmailEntry</code>, the header from <code>Template</code> will be added to the
+     *        outgoing email.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Headers Present in <code>BulkEmailEntry</code>: If a header is specified in <code>BulkEmailEntry</code>,
+     *        it takes precedence over any header of the same name specified in <a
+     *        href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html"> <code>Template</code>
+     *        </a>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the header is also defined within <code>Template</code>, the value from <code>BulkEmailEntry</code>
+     *        will replace the header's value in the email.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the header is not defined within <code>Template</code>, it will simply be added to the email as
+     *        specified in <code>BulkEmailEntry</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     */
+
+    public void setReplacementHeaders(java.util.Collection<MessageHeader> replacementHeaders) {
+        if (replacementHeaders == null) {
+            this.replacementHeaders = null;
+            return;
+        }
+
+        this.replacementHeaders = new java.util.ArrayList<MessageHeader>(replacementHeaders);
+    }
+
+    /**
+     * <p>
+     * The list of message headers associated with the <code>BulkEmailEntry</code> data type.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Headers Not Present in <code>BulkEmailEntry</code>: If a header is specified in <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html"> <code>Template</code> </a> but
+     * not in <code>BulkEmailEntry</code>, the header from <code>Template</code> will be added to the outgoing email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Headers Present in <code>BulkEmailEntry</code>: If a header is specified in <code>BulkEmailEntry</code>, it takes
+     * precedence over any header of the same name specified in <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html"> <code>Template</code> </a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the header is also defined within <code>Template</code>, the value from <code>BulkEmailEntry</code> will
+     * replace the header's value in the email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the header is not defined within <code>Template</code>, it will simply be added to the email as specified in
+     * <code>BulkEmailEntry</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setReplacementHeaders(java.util.Collection)} or {@link #withReplacementHeaders(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param replacementHeaders
+     *        The list of message headers associated with the <code>BulkEmailEntry</code> data type.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Headers Not Present in <code>BulkEmailEntry</code>: If a header is specified in <a
+     *        href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html"> <code>Template</code>
+     *        </a> but not in <code>BulkEmailEntry</code>, the header from <code>Template</code> will be added to the
+     *        outgoing email.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Headers Present in <code>BulkEmailEntry</code>: If a header is specified in <code>BulkEmailEntry</code>,
+     *        it takes precedence over any header of the same name specified in <a
+     *        href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html"> <code>Template</code>
+     *        </a>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the header is also defined within <code>Template</code>, the value from <code>BulkEmailEntry</code>
+     *        will replace the header's value in the email.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the header is not defined within <code>Template</code>, it will simply be added to the email as
+     *        specified in <code>BulkEmailEntry</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BulkEmailEntry withReplacementHeaders(MessageHeader... replacementHeaders) {
+        if (this.replacementHeaders == null) {
+            setReplacementHeaders(new java.util.ArrayList<MessageHeader>(replacementHeaders.length));
+        }
+        for (MessageHeader ele : replacementHeaders) {
+            this.replacementHeaders.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of message headers associated with the <code>BulkEmailEntry</code> data type.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Headers Not Present in <code>BulkEmailEntry</code>: If a header is specified in <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html"> <code>Template</code> </a> but
+     * not in <code>BulkEmailEntry</code>, the header from <code>Template</code> will be added to the outgoing email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Headers Present in <code>BulkEmailEntry</code>: If a header is specified in <code>BulkEmailEntry</code>, it takes
+     * precedence over any header of the same name specified in <a
+     * href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html"> <code>Template</code> </a>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the header is also defined within <code>Template</code>, the value from <code>BulkEmailEntry</code> will
+     * replace the header's value in the email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the header is not defined within <code>Template</code>, it will simply be added to the email as specified in
+     * <code>BulkEmailEntry</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
+     * 
+     * @param replacementHeaders
+     *        The list of message headers associated with the <code>BulkEmailEntry</code> data type.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Headers Not Present in <code>BulkEmailEntry</code>: If a header is specified in <a
+     *        href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html"> <code>Template</code>
+     *        </a> but not in <code>BulkEmailEntry</code>, the header from <code>Template</code> will be added to the
+     *        outgoing email.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Headers Present in <code>BulkEmailEntry</code>: If a header is specified in <code>BulkEmailEntry</code>,
+     *        it takes precedence over any header of the same name specified in <a
+     *        href="https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_Template.html"> <code>Template</code>
+     *        </a>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the header is also defined within <code>Template</code>, the value from <code>BulkEmailEntry</code>
+     *        will replace the header's value in the email.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the header is not defined within <code>Template</code>, it will simply be added to the email as
+     *        specified in <code>BulkEmailEntry</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BulkEmailEntry withReplacementHeaders(java.util.Collection<MessageHeader> replacementHeaders) {
+        setReplacementHeaders(replacementHeaders);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -293,7 +643,9 @@ public class BulkEmailEntry implements Serializable, Cloneable, StructuredPojo {
         if (getReplacementTags() != null)
             sb.append("ReplacementTags: ").append(getReplacementTags()).append(",");
         if (getReplacementEmailContent() != null)
-            sb.append("ReplacementEmailContent: ").append(getReplacementEmailContent());
+            sb.append("ReplacementEmailContent: ").append(getReplacementEmailContent()).append(",");
+        if (getReplacementHeaders() != null)
+            sb.append("ReplacementHeaders: ").append(getReplacementHeaders());
         sb.append("}");
         return sb.toString();
     }
@@ -320,6 +672,10 @@ public class BulkEmailEntry implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getReplacementEmailContent() != null && other.getReplacementEmailContent().equals(this.getReplacementEmailContent()) == false)
             return false;
+        if (other.getReplacementHeaders() == null ^ this.getReplacementHeaders() == null)
+            return false;
+        if (other.getReplacementHeaders() != null && other.getReplacementHeaders().equals(this.getReplacementHeaders()) == false)
+            return false;
         return true;
     }
 
@@ -331,6 +687,7 @@ public class BulkEmailEntry implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDestination() == null) ? 0 : getDestination().hashCode());
         hashCode = prime * hashCode + ((getReplacementTags() == null) ? 0 : getReplacementTags().hashCode());
         hashCode = prime * hashCode + ((getReplacementEmailContent() == null) ? 0 : getReplacementEmailContent().hashCode());
+        hashCode = prime * hashCode + ((getReplacementHeaders() == null) ? 0 : getReplacementHeaders().hashCode());
         return hashCode;
     }
 

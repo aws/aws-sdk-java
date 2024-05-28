@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,19 +56,20 @@ public class DescribeLedgerResult extends com.amazonaws.AmazonWebServiceResult<c
     private String permissionsMode;
     /**
      * <p>
-     * The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature
-     * is enabled (<code>true</code>) by default.
+     * Specifies whether the ledger is protected from being deleted by any user. If not defined during ledger creation,
+     * this feature is enabled (<code>true</code>) by default.
      * </p>
      * <p>
      * If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it
-     * by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.
+     * by calling the <code>UpdateLedger</code> operation to set this parameter to <code>false</code>.
      * </p>
      */
     private Boolean deletionProtection;
     /**
      * <p>
      * Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key,
-     * and when the key became inaccessible (in the case of an error).
+     * and when the key became inaccessible (in the case of an error). If this parameter is undefined, the ledger uses
+     * an Amazon Web Services owned KMS key for encryption.
      * </p>
      */
     private LedgerEncryptionDescription encryptionDescription;
@@ -319,20 +320,20 @@ public class DescribeLedgerResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature
-     * is enabled (<code>true</code>) by default.
+     * Specifies whether the ledger is protected from being deleted by any user. If not defined during ledger creation,
+     * this feature is enabled (<code>true</code>) by default.
      * </p>
      * <p>
      * If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it
-     * by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.
+     * by calling the <code>UpdateLedger</code> operation to set this parameter to <code>false</code>.
      * </p>
      * 
      * @param deletionProtection
-     *        The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this
-     *        feature is enabled (<code>true</code>) by default.</p>
+     *        Specifies whether the ledger is protected from being deleted by any user. If not defined during ledger
+     *        creation, this feature is enabled (<code>true</code>) by default.</p>
      *        <p>
      *        If deletion protection is enabled, you must first disable it before you can delete the ledger. You can
-     *        disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.
+     *        disable it by calling the <code>UpdateLedger</code> operation to set this parameter to <code>false</code>.
      */
 
     public void setDeletionProtection(Boolean deletionProtection) {
@@ -341,19 +342,19 @@ public class DescribeLedgerResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature
-     * is enabled (<code>true</code>) by default.
+     * Specifies whether the ledger is protected from being deleted by any user. If not defined during ledger creation,
+     * this feature is enabled (<code>true</code>) by default.
      * </p>
      * <p>
      * If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it
-     * by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.
+     * by calling the <code>UpdateLedger</code> operation to set this parameter to <code>false</code>.
      * </p>
      * 
-     * @return The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this
-     *         feature is enabled (<code>true</code>) by default.</p>
+     * @return Specifies whether the ledger is protected from being deleted by any user. If not defined during ledger
+     *         creation, this feature is enabled (<code>true</code>) by default.</p>
      *         <p>
      *         If deletion protection is enabled, you must first disable it before you can delete the ledger. You can
-     *         disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.
+     *         disable it by calling the <code>UpdateLedger</code> operation to set this parameter to <code>false</code>.
      */
 
     public Boolean getDeletionProtection() {
@@ -362,20 +363,20 @@ public class DescribeLedgerResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature
-     * is enabled (<code>true</code>) by default.
+     * Specifies whether the ledger is protected from being deleted by any user. If not defined during ledger creation,
+     * this feature is enabled (<code>true</code>) by default.
      * </p>
      * <p>
      * If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it
-     * by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.
+     * by calling the <code>UpdateLedger</code> operation to set this parameter to <code>false</code>.
      * </p>
      * 
      * @param deletionProtection
-     *        The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this
-     *        feature is enabled (<code>true</code>) by default.</p>
+     *        Specifies whether the ledger is protected from being deleted by any user. If not defined during ledger
+     *        creation, this feature is enabled (<code>true</code>) by default.</p>
      *        <p>
      *        If deletion protection is enabled, you must first disable it before you can delete the ledger. You can
-     *        disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.
+     *        disable it by calling the <code>UpdateLedger</code> operation to set this parameter to <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -386,19 +387,19 @@ public class DescribeLedgerResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature
-     * is enabled (<code>true</code>) by default.
+     * Specifies whether the ledger is protected from being deleted by any user. If not defined during ledger creation,
+     * this feature is enabled (<code>true</code>) by default.
      * </p>
      * <p>
      * If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it
-     * by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.
+     * by calling the <code>UpdateLedger</code> operation to set this parameter to <code>false</code>.
      * </p>
      * 
-     * @return The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this
-     *         feature is enabled (<code>true</code>) by default.</p>
+     * @return Specifies whether the ledger is protected from being deleted by any user. If not defined during ledger
+     *         creation, this feature is enabled (<code>true</code>) by default.</p>
      *         <p>
      *         If deletion protection is enabled, you must first disable it before you can delete the ledger. You can
-     *         disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.
+     *         disable it by calling the <code>UpdateLedger</code> operation to set this parameter to <code>false</code>.
      */
 
     public Boolean isDeletionProtection() {
@@ -408,12 +409,14 @@ public class DescribeLedgerResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key,
-     * and when the key became inaccessible (in the case of an error).
+     * and when the key became inaccessible (in the case of an error). If this parameter is undefined, the ledger uses
+     * an Amazon Web Services owned KMS key for encryption.
      * </p>
      * 
      * @param encryptionDescription
      *        Information about the encryption of data at rest in the ledger. This includes the current status, the KMS
-     *        key, and when the key became inaccessible (in the case of an error).
+     *        key, and when the key became inaccessible (in the case of an error). If this parameter is undefined, the
+     *        ledger uses an Amazon Web Services owned KMS key for encryption.
      */
 
     public void setEncryptionDescription(LedgerEncryptionDescription encryptionDescription) {
@@ -423,11 +426,13 @@ public class DescribeLedgerResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key,
-     * and when the key became inaccessible (in the case of an error).
+     * and when the key became inaccessible (in the case of an error). If this parameter is undefined, the ledger uses
+     * an Amazon Web Services owned KMS key for encryption.
      * </p>
      * 
      * @return Information about the encryption of data at rest in the ledger. This includes the current status, the KMS
-     *         key, and when the key became inaccessible (in the case of an error).
+     *         key, and when the key became inaccessible (in the case of an error). If this parameter is undefined, the
+     *         ledger uses an Amazon Web Services owned KMS key for encryption.
      */
 
     public LedgerEncryptionDescription getEncryptionDescription() {
@@ -437,12 +442,14 @@ public class DescribeLedgerResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key,
-     * and when the key became inaccessible (in the case of an error).
+     * and when the key became inaccessible (in the case of an error). If this parameter is undefined, the ledger uses
+     * an Amazon Web Services owned KMS key for encryption.
      * </p>
      * 
      * @param encryptionDescription
      *        Information about the encryption of data at rest in the ledger. This includes the current status, the KMS
-     *        key, and when the key became inaccessible (in the case of an error).
+     *        key, and when the key became inaccessible (in the case of an error). If this parameter is undefined, the
+     *        ledger uses an Amazon Web Services owned KMS key for encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

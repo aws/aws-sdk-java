@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,6 +67,42 @@ public class EntitySummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String visibility;
+    /**
+     * <p>
+     * An object that contains summary information about the AMI product.
+     * </p>
+     */
+    private AmiProductSummary amiProductSummary;
+    /**
+     * <p>
+     * An object that contains summary information about the container product.
+     * </p>
+     */
+    private ContainerProductSummary containerProductSummary;
+    /**
+     * <p>
+     * An object that contains summary information about the data product.
+     * </p>
+     */
+    private DataProductSummary dataProductSummary;
+    /**
+     * <p>
+     * An object that contains summary information about the SaaS product.
+     * </p>
+     */
+    private SaaSProductSummary saaSProductSummary;
+    /**
+     * <p>
+     * An object that contains summary information about the offer.
+     * </p>
+     */
+    private OfferSummary offerSummary;
+    /**
+     * <p>
+     * An object that contains summary information about the Resale Authorization.
+     * </p>
+     */
+    private ResaleAuthorizationSummary resaleAuthorizationSummary;
 
     /**
      * <p>
@@ -324,6 +360,246 @@ public class EntitySummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An object that contains summary information about the AMI product.
+     * </p>
+     * 
+     * @param amiProductSummary
+     *        An object that contains summary information about the AMI product.
+     */
+
+    public void setAmiProductSummary(AmiProductSummary amiProductSummary) {
+        this.amiProductSummary = amiProductSummary;
+    }
+
+    /**
+     * <p>
+     * An object that contains summary information about the AMI product.
+     * </p>
+     * 
+     * @return An object that contains summary information about the AMI product.
+     */
+
+    public AmiProductSummary getAmiProductSummary() {
+        return this.amiProductSummary;
+    }
+
+    /**
+     * <p>
+     * An object that contains summary information about the AMI product.
+     * </p>
+     * 
+     * @param amiProductSummary
+     *        An object that contains summary information about the AMI product.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EntitySummary withAmiProductSummary(AmiProductSummary amiProductSummary) {
+        setAmiProductSummary(amiProductSummary);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object that contains summary information about the container product.
+     * </p>
+     * 
+     * @param containerProductSummary
+     *        An object that contains summary information about the container product.
+     */
+
+    public void setContainerProductSummary(ContainerProductSummary containerProductSummary) {
+        this.containerProductSummary = containerProductSummary;
+    }
+
+    /**
+     * <p>
+     * An object that contains summary information about the container product.
+     * </p>
+     * 
+     * @return An object that contains summary information about the container product.
+     */
+
+    public ContainerProductSummary getContainerProductSummary() {
+        return this.containerProductSummary;
+    }
+
+    /**
+     * <p>
+     * An object that contains summary information about the container product.
+     * </p>
+     * 
+     * @param containerProductSummary
+     *        An object that contains summary information about the container product.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EntitySummary withContainerProductSummary(ContainerProductSummary containerProductSummary) {
+        setContainerProductSummary(containerProductSummary);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object that contains summary information about the data product.
+     * </p>
+     * 
+     * @param dataProductSummary
+     *        An object that contains summary information about the data product.
+     */
+
+    public void setDataProductSummary(DataProductSummary dataProductSummary) {
+        this.dataProductSummary = dataProductSummary;
+    }
+
+    /**
+     * <p>
+     * An object that contains summary information about the data product.
+     * </p>
+     * 
+     * @return An object that contains summary information about the data product.
+     */
+
+    public DataProductSummary getDataProductSummary() {
+        return this.dataProductSummary;
+    }
+
+    /**
+     * <p>
+     * An object that contains summary information about the data product.
+     * </p>
+     * 
+     * @param dataProductSummary
+     *        An object that contains summary information about the data product.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EntitySummary withDataProductSummary(DataProductSummary dataProductSummary) {
+        setDataProductSummary(dataProductSummary);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object that contains summary information about the SaaS product.
+     * </p>
+     * 
+     * @param saaSProductSummary
+     *        An object that contains summary information about the SaaS product.
+     */
+
+    public void setSaaSProductSummary(SaaSProductSummary saaSProductSummary) {
+        this.saaSProductSummary = saaSProductSummary;
+    }
+
+    /**
+     * <p>
+     * An object that contains summary information about the SaaS product.
+     * </p>
+     * 
+     * @return An object that contains summary information about the SaaS product.
+     */
+
+    public SaaSProductSummary getSaaSProductSummary() {
+        return this.saaSProductSummary;
+    }
+
+    /**
+     * <p>
+     * An object that contains summary information about the SaaS product.
+     * </p>
+     * 
+     * @param saaSProductSummary
+     *        An object that contains summary information about the SaaS product.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EntitySummary withSaaSProductSummary(SaaSProductSummary saaSProductSummary) {
+        setSaaSProductSummary(saaSProductSummary);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object that contains summary information about the offer.
+     * </p>
+     * 
+     * @param offerSummary
+     *        An object that contains summary information about the offer.
+     */
+
+    public void setOfferSummary(OfferSummary offerSummary) {
+        this.offerSummary = offerSummary;
+    }
+
+    /**
+     * <p>
+     * An object that contains summary information about the offer.
+     * </p>
+     * 
+     * @return An object that contains summary information about the offer.
+     */
+
+    public OfferSummary getOfferSummary() {
+        return this.offerSummary;
+    }
+
+    /**
+     * <p>
+     * An object that contains summary information about the offer.
+     * </p>
+     * 
+     * @param offerSummary
+     *        An object that contains summary information about the offer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EntitySummary withOfferSummary(OfferSummary offerSummary) {
+        setOfferSummary(offerSummary);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object that contains summary information about the Resale Authorization.
+     * </p>
+     * 
+     * @param resaleAuthorizationSummary
+     *        An object that contains summary information about the Resale Authorization.
+     */
+
+    public void setResaleAuthorizationSummary(ResaleAuthorizationSummary resaleAuthorizationSummary) {
+        this.resaleAuthorizationSummary = resaleAuthorizationSummary;
+    }
+
+    /**
+     * <p>
+     * An object that contains summary information about the Resale Authorization.
+     * </p>
+     * 
+     * @return An object that contains summary information about the Resale Authorization.
+     */
+
+    public ResaleAuthorizationSummary getResaleAuthorizationSummary() {
+        return this.resaleAuthorizationSummary;
+    }
+
+    /**
+     * <p>
+     * An object that contains summary information about the Resale Authorization.
+     * </p>
+     * 
+     * @param resaleAuthorizationSummary
+     *        An object that contains summary information about the Resale Authorization.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EntitySummary withResaleAuthorizationSummary(ResaleAuthorizationSummary resaleAuthorizationSummary) {
+        setResaleAuthorizationSummary(resaleAuthorizationSummary);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -346,7 +622,19 @@ public class EntitySummary implements Serializable, Cloneable, StructuredPojo {
         if (getLastModifiedDate() != null)
             sb.append("LastModifiedDate: ").append(getLastModifiedDate()).append(",");
         if (getVisibility() != null)
-            sb.append("Visibility: ").append(getVisibility());
+            sb.append("Visibility: ").append(getVisibility()).append(",");
+        if (getAmiProductSummary() != null)
+            sb.append("AmiProductSummary: ").append(getAmiProductSummary()).append(",");
+        if (getContainerProductSummary() != null)
+            sb.append("ContainerProductSummary: ").append(getContainerProductSummary()).append(",");
+        if (getDataProductSummary() != null)
+            sb.append("DataProductSummary: ").append(getDataProductSummary()).append(",");
+        if (getSaaSProductSummary() != null)
+            sb.append("SaaSProductSummary: ").append(getSaaSProductSummary()).append(",");
+        if (getOfferSummary() != null)
+            sb.append("OfferSummary: ").append(getOfferSummary()).append(",");
+        if (getResaleAuthorizationSummary() != null)
+            sb.append("ResaleAuthorizationSummary: ").append(getResaleAuthorizationSummary());
         sb.append("}");
         return sb.toString();
     }
@@ -385,6 +673,30 @@ public class EntitySummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getVisibility() != null && other.getVisibility().equals(this.getVisibility()) == false)
             return false;
+        if (other.getAmiProductSummary() == null ^ this.getAmiProductSummary() == null)
+            return false;
+        if (other.getAmiProductSummary() != null && other.getAmiProductSummary().equals(this.getAmiProductSummary()) == false)
+            return false;
+        if (other.getContainerProductSummary() == null ^ this.getContainerProductSummary() == null)
+            return false;
+        if (other.getContainerProductSummary() != null && other.getContainerProductSummary().equals(this.getContainerProductSummary()) == false)
+            return false;
+        if (other.getDataProductSummary() == null ^ this.getDataProductSummary() == null)
+            return false;
+        if (other.getDataProductSummary() != null && other.getDataProductSummary().equals(this.getDataProductSummary()) == false)
+            return false;
+        if (other.getSaaSProductSummary() == null ^ this.getSaaSProductSummary() == null)
+            return false;
+        if (other.getSaaSProductSummary() != null && other.getSaaSProductSummary().equals(this.getSaaSProductSummary()) == false)
+            return false;
+        if (other.getOfferSummary() == null ^ this.getOfferSummary() == null)
+            return false;
+        if (other.getOfferSummary() != null && other.getOfferSummary().equals(this.getOfferSummary()) == false)
+            return false;
+        if (other.getResaleAuthorizationSummary() == null ^ this.getResaleAuthorizationSummary() == null)
+            return false;
+        if (other.getResaleAuthorizationSummary() != null && other.getResaleAuthorizationSummary().equals(this.getResaleAuthorizationSummary()) == false)
+            return false;
         return true;
     }
 
@@ -399,6 +711,12 @@ public class EntitySummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEntityArn() == null) ? 0 : getEntityArn().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedDate() == null) ? 0 : getLastModifiedDate().hashCode());
         hashCode = prime * hashCode + ((getVisibility() == null) ? 0 : getVisibility().hashCode());
+        hashCode = prime * hashCode + ((getAmiProductSummary() == null) ? 0 : getAmiProductSummary().hashCode());
+        hashCode = prime * hashCode + ((getContainerProductSummary() == null) ? 0 : getContainerProductSummary().hashCode());
+        hashCode = prime * hashCode + ((getDataProductSummary() == null) ? 0 : getDataProductSummary().hashCode());
+        hashCode = prime * hashCode + ((getSaaSProductSummary() == null) ? 0 : getSaaSProductSummary().hashCode());
+        hashCode = prime * hashCode + ((getOfferSummary() == null) ? 0 : getOfferSummary().hashCode());
+        hashCode = prime * hashCode + ((getResaleAuthorizationSummary() == null) ? 0 : getResaleAuthorizationSummary().hashCode());
         return hashCode;
     }
 

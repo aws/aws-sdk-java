@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,14 @@ public class LensUpgradeSummary implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String latestLensVersion;
+    /**
+     * <p>
+     * <code>ResourceArn</code> of the lens being upgraded
+     * </p>
+     */
+    private String resourceArn;
+
+    private String resourceName;
 
     /**
      * @param workloadId
@@ -251,6 +259,72 @@ public class LensUpgradeSummary implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * <code>ResourceArn</code> of the lens being upgraded
+     * </p>
+     * 
+     * @param resourceArn
+     *        <code>ResourceArn</code> of the lens being upgraded
+     */
+
+    public void setResourceArn(String resourceArn) {
+        this.resourceArn = resourceArn;
+    }
+
+    /**
+     * <p>
+     * <code>ResourceArn</code> of the lens being upgraded
+     * </p>
+     * 
+     * @return <code>ResourceArn</code> of the lens being upgraded
+     */
+
+    public String getResourceArn() {
+        return this.resourceArn;
+    }
+
+    /**
+     * <p>
+     * <code>ResourceArn</code> of the lens being upgraded
+     * </p>
+     * 
+     * @param resourceArn
+     *        <code>ResourceArn</code> of the lens being upgraded
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LensUpgradeSummary withResourceArn(String resourceArn) {
+        setResourceArn(resourceArn);
+        return this;
+    }
+
+    /**
+     * @param resourceName
+     */
+
+    public void setResourceName(String resourceName) {
+        this.resourceName = resourceName;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getResourceName() {
+        return this.resourceName;
+    }
+
+    /**
+     * @param resourceName
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LensUpgradeSummary withResourceName(String resourceName) {
+        setResourceName(resourceName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -273,7 +347,11 @@ public class LensUpgradeSummary implements Serializable, Cloneable, StructuredPo
         if (getCurrentLensVersion() != null)
             sb.append("CurrentLensVersion: ").append(getCurrentLensVersion()).append(",");
         if (getLatestLensVersion() != null)
-            sb.append("LatestLensVersion: ").append(getLatestLensVersion());
+            sb.append("LatestLensVersion: ").append(getLatestLensVersion()).append(",");
+        if (getResourceArn() != null)
+            sb.append("ResourceArn: ").append(getResourceArn()).append(",");
+        if (getResourceName() != null)
+            sb.append("ResourceName: ").append(getResourceName());
         sb.append("}");
         return sb.toString();
     }
@@ -312,6 +390,14 @@ public class LensUpgradeSummary implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getLatestLensVersion() != null && other.getLatestLensVersion().equals(this.getLatestLensVersion()) == false)
             return false;
+        if (other.getResourceArn() == null ^ this.getResourceArn() == null)
+            return false;
+        if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
+            return false;
+        if (other.getResourceName() == null ^ this.getResourceName() == null)
+            return false;
+        if (other.getResourceName() != null && other.getResourceName().equals(this.getResourceName()) == false)
+            return false;
         return true;
     }
 
@@ -326,6 +412,8 @@ public class LensUpgradeSummary implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getLensArn() == null) ? 0 : getLensArn().hashCode());
         hashCode = prime * hashCode + ((getCurrentLensVersion() == null) ? 0 : getCurrentLensVersion().hashCode());
         hashCode = prime * hashCode + ((getLatestLensVersion() == null) ? 0 : getLatestLensVersion().hashCode());
+        hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
+        hashCode = prime * hashCode + ((getResourceName() == null) ? 0 : getResourceName().hashCode());
         return hashCode;
     }
 

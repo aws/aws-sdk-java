@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,6 +24,53 @@ import javax.annotation.Generated;
 public class UpdateEndpointResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
     /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the new model.
+     * </p>
+     */
+    private String desiredModelArn;
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the new model.
+     * </p>
+     * 
+     * @param desiredModelArn
+     *        The Amazon Resource Number (ARN) of the new model.
+     */
+
+    public void setDesiredModelArn(String desiredModelArn) {
+        this.desiredModelArn = desiredModelArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the new model.
+     * </p>
+     * 
+     * @return The Amazon Resource Number (ARN) of the new model.
+     */
+
+    public String getDesiredModelArn() {
+        return this.desiredModelArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the new model.
+     * </p>
+     * 
+     * @param desiredModelArn
+     *        The Amazon Resource Number (ARN) of the new model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateEndpointResult withDesiredModelArn(String desiredModelArn) {
+        setDesiredModelArn(desiredModelArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -35,6 +82,8 @@ public class UpdateEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getDesiredModelArn() != null)
+            sb.append("DesiredModelArn: ").append(getDesiredModelArn());
         sb.append("}");
         return sb.toString();
     }
@@ -49,6 +98,10 @@ public class UpdateEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
         if (obj instanceof UpdateEndpointResult == false)
             return false;
         UpdateEndpointResult other = (UpdateEndpointResult) obj;
+        if (other.getDesiredModelArn() == null ^ this.getDesiredModelArn() == null)
+            return false;
+        if (other.getDesiredModelArn() != null && other.getDesiredModelArn().equals(this.getDesiredModelArn()) == false)
+            return false;
         return true;
     }
 
@@ -57,6 +110,7 @@ public class UpdateEndpointResult extends com.amazonaws.AmazonWebServiceResult<c
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getDesiredModelArn() == null) ? 0 : getDesiredModelArn().hashCode());
         return hashCode;
     }
 

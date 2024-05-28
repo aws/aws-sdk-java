@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,6 +59,39 @@ public class DashboardPublishOptionsJsonUnmarshaller implements Unmarshaller<Das
                 if (context.testExpression("SheetControlsOption", targetDepth)) {
                     context.nextToken();
                     dashboardPublishOptions.setSheetControlsOption(SheetControlsOptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("VisualPublishOptions", targetDepth)) {
+                    context.nextToken();
+                    dashboardPublishOptions.setVisualPublishOptions(DashboardVisualPublishOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SheetLayoutElementMaximizationOption", targetDepth)) {
+                    context.nextToken();
+                    dashboardPublishOptions.setSheetLayoutElementMaximizationOption(SheetLayoutElementMaximizationOptionJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
+                if (context.testExpression("VisualMenuOption", targetDepth)) {
+                    context.nextToken();
+                    dashboardPublishOptions.setVisualMenuOption(VisualMenuOptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("VisualAxisSortOption", targetDepth)) {
+                    context.nextToken();
+                    dashboardPublishOptions.setVisualAxisSortOption(VisualAxisSortOptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ExportWithHiddenFieldsOption", targetDepth)) {
+                    context.nextToken();
+                    dashboardPublishOptions.setExportWithHiddenFieldsOption(ExportWithHiddenFieldsOptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DataPointDrillUpDownOption", targetDepth)) {
+                    context.nextToken();
+                    dashboardPublishOptions.setDataPointDrillUpDownOption(DataPointDrillUpDownOptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DataPointMenuLabelOption", targetDepth)) {
+                    context.nextToken();
+                    dashboardPublishOptions.setDataPointMenuLabelOption(DataPointMenuLabelOptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DataPointTooltipOption", targetDepth)) {
+                    context.nextToken();
+                    dashboardPublishOptions.setDataPointTooltipOption(DataPointTooltipOptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

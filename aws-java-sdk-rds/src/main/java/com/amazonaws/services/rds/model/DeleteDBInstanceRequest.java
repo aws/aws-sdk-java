@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,9 +44,9 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String dBInstanceIdentifier;
     /**
      * <p>
-     * A value that indicates whether to skip the creation of a final DB snapshot before deleting the instance. If you
-     * enable this parameter, RDS doesn't create a DB snapshot. If you don't enable this parameter, RDS creates a DB
-     * snapshot before the DB instance is deleted. By default, skip isn't enabled, and the DB snapshot is created.
+     * Specifies whether to skip the creation of a final DB snapshot before deleting the instance. If you enable this
+     * parameter, RDS doesn't create a DB snapshot. If you don't enable this parameter, RDS creates a DB snapshot before
+     * the DB instance is deleted. By default, skip isn't enabled, and the DB snapshot is created.
      * </p>
      * <note>
      * <p>
@@ -108,9 +108,8 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String finalDBSnapshotIdentifier;
     /**
      * <p>
-     * A value that indicates whether to remove automated backups immediately after the DB instance is deleted. This
-     * parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB instance is
-     * deleted.
+     * Specifies whether to remove automated backups immediately after the DB instance is deleted. This parameter isn't
+     * case-sensitive. The default is to remove automated backups immediately after the DB instance is deleted.
      * </p>
      */
     private Boolean deleteAutomatedBackups;
@@ -241,9 +240,9 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A value that indicates whether to skip the creation of a final DB snapshot before deleting the instance. If you
-     * enable this parameter, RDS doesn't create a DB snapshot. If you don't enable this parameter, RDS creates a DB
-     * snapshot before the DB instance is deleted. By default, skip isn't enabled, and the DB snapshot is created.
+     * Specifies whether to skip the creation of a final DB snapshot before deleting the instance. If you enable this
+     * parameter, RDS doesn't create a DB snapshot. If you don't enable this parameter, RDS creates a DB snapshot before
+     * the DB instance is deleted. By default, skip isn't enabled, and the DB snapshot is created.
      * </p>
      * <note>
      * <p>
@@ -263,10 +262,10 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param skipFinalSnapshot
-     *        A value that indicates whether to skip the creation of a final DB snapshot before deleting the instance.
-     *        If you enable this parameter, RDS doesn't create a DB snapshot. If you don't enable this parameter, RDS
-     *        creates a DB snapshot before the DB instance is deleted. By default, skip isn't enabled, and the DB
-     *        snapshot is created.</p> <note>
+     *        Specifies whether to skip the creation of a final DB snapshot before deleting the instance. If you enable
+     *        this parameter, RDS doesn't create a DB snapshot. If you don't enable this parameter, RDS creates a DB
+     *        snapshot before the DB instance is deleted. By default, skip isn't enabled, and the DB snapshot is
+     *        created.</p> <note>
      *        <p>
      *        If you don't enable this parameter, you must specify the <code>FinalDBSnapshotIdentifier</code> parameter.
      *        </p>
@@ -289,9 +288,9 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A value that indicates whether to skip the creation of a final DB snapshot before deleting the instance. If you
-     * enable this parameter, RDS doesn't create a DB snapshot. If you don't enable this parameter, RDS creates a DB
-     * snapshot before the DB instance is deleted. By default, skip isn't enabled, and the DB snapshot is created.
+     * Specifies whether to skip the creation of a final DB snapshot before deleting the instance. If you enable this
+     * parameter, RDS doesn't create a DB snapshot. If you don't enable this parameter, RDS creates a DB snapshot before
+     * the DB instance is deleted. By default, skip isn't enabled, and the DB snapshot is created.
      * </p>
      * <note>
      * <p>
@@ -310,10 +309,10 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * This setting is required for RDS Custom.
      * </p>
      * 
-     * @return A value that indicates whether to skip the creation of a final DB snapshot before deleting the instance.
-     *         If you enable this parameter, RDS doesn't create a DB snapshot. If you don't enable this parameter, RDS
-     *         creates a DB snapshot before the DB instance is deleted. By default, skip isn't enabled, and the DB
-     *         snapshot is created.</p> <note>
+     * @return Specifies whether to skip the creation of a final DB snapshot before deleting the instance. If you enable
+     *         this parameter, RDS doesn't create a DB snapshot. If you don't enable this parameter, RDS creates a DB
+     *         snapshot before the DB instance is deleted. By default, skip isn't enabled, and the DB snapshot is
+     *         created.</p> <note>
      *         <p>
      *         If you don't enable this parameter, you must specify the <code>FinalDBSnapshotIdentifier</code>
      *         parameter.
@@ -337,9 +336,9 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A value that indicates whether to skip the creation of a final DB snapshot before deleting the instance. If you
-     * enable this parameter, RDS doesn't create a DB snapshot. If you don't enable this parameter, RDS creates a DB
-     * snapshot before the DB instance is deleted. By default, skip isn't enabled, and the DB snapshot is created.
+     * Specifies whether to skip the creation of a final DB snapshot before deleting the instance. If you enable this
+     * parameter, RDS doesn't create a DB snapshot. If you don't enable this parameter, RDS creates a DB snapshot before
+     * the DB instance is deleted. By default, skip isn't enabled, and the DB snapshot is created.
      * </p>
      * <note>
      * <p>
@@ -359,10 +358,10 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param skipFinalSnapshot
-     *        A value that indicates whether to skip the creation of a final DB snapshot before deleting the instance.
-     *        If you enable this parameter, RDS doesn't create a DB snapshot. If you don't enable this parameter, RDS
-     *        creates a DB snapshot before the DB instance is deleted. By default, skip isn't enabled, and the DB
-     *        snapshot is created.</p> <note>
+     *        Specifies whether to skip the creation of a final DB snapshot before deleting the instance. If you enable
+     *        this parameter, RDS doesn't create a DB snapshot. If you don't enable this parameter, RDS creates a DB
+     *        snapshot before the DB instance is deleted. By default, skip isn't enabled, and the DB snapshot is
+     *        created.</p> <note>
      *        <p>
      *        If you don't enable this parameter, you must specify the <code>FinalDBSnapshotIdentifier</code> parameter.
      *        </p>
@@ -387,9 +386,9 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A value that indicates whether to skip the creation of a final DB snapshot before deleting the instance. If you
-     * enable this parameter, RDS doesn't create a DB snapshot. If you don't enable this parameter, RDS creates a DB
-     * snapshot before the DB instance is deleted. By default, skip isn't enabled, and the DB snapshot is created.
+     * Specifies whether to skip the creation of a final DB snapshot before deleting the instance. If you enable this
+     * parameter, RDS doesn't create a DB snapshot. If you don't enable this parameter, RDS creates a DB snapshot before
+     * the DB instance is deleted. By default, skip isn't enabled, and the DB snapshot is created.
      * </p>
      * <note>
      * <p>
@@ -408,10 +407,10 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * This setting is required for RDS Custom.
      * </p>
      * 
-     * @return A value that indicates whether to skip the creation of a final DB snapshot before deleting the instance.
-     *         If you enable this parameter, RDS doesn't create a DB snapshot. If you don't enable this parameter, RDS
-     *         creates a DB snapshot before the DB instance is deleted. By default, skip isn't enabled, and the DB
-     *         snapshot is created.</p> <note>
+     * @return Specifies whether to skip the creation of a final DB snapshot before deleting the instance. If you enable
+     *         this parameter, RDS doesn't create a DB snapshot. If you don't enable this parameter, RDS creates a DB
+     *         snapshot before the DB instance is deleted. By default, skip isn't enabled, and the DB snapshot is
+     *         created.</p> <note>
      *         <p>
      *         If you don't enable this parameter, you must specify the <code>FinalDBSnapshotIdentifier</code>
      *         parameter.
@@ -673,15 +672,14 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A value that indicates whether to remove automated backups immediately after the DB instance is deleted. This
-     * parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB instance is
-     * deleted.
+     * Specifies whether to remove automated backups immediately after the DB instance is deleted. This parameter isn't
+     * case-sensitive. The default is to remove automated backups immediately after the DB instance is deleted.
      * </p>
      * 
      * @param deleteAutomatedBackups
-     *        A value that indicates whether to remove automated backups immediately after the DB instance is deleted.
-     *        This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB
-     *        instance is deleted.
+     *        Specifies whether to remove automated backups immediately after the DB instance is deleted. This parameter
+     *        isn't case-sensitive. The default is to remove automated backups immediately after the DB instance is
+     *        deleted.
      */
 
     public void setDeleteAutomatedBackups(Boolean deleteAutomatedBackups) {
@@ -690,13 +688,12 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A value that indicates whether to remove automated backups immediately after the DB instance is deleted. This
-     * parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB instance is
-     * deleted.
+     * Specifies whether to remove automated backups immediately after the DB instance is deleted. This parameter isn't
+     * case-sensitive. The default is to remove automated backups immediately after the DB instance is deleted.
      * </p>
      * 
-     * @return A value that indicates whether to remove automated backups immediately after the DB instance is deleted.
-     *         This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB
+     * @return Specifies whether to remove automated backups immediately after the DB instance is deleted. This
+     *         parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB
      *         instance is deleted.
      */
 
@@ -706,15 +703,14 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A value that indicates whether to remove automated backups immediately after the DB instance is deleted. This
-     * parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB instance is
-     * deleted.
+     * Specifies whether to remove automated backups immediately after the DB instance is deleted. This parameter isn't
+     * case-sensitive. The default is to remove automated backups immediately after the DB instance is deleted.
      * </p>
      * 
      * @param deleteAutomatedBackups
-     *        A value that indicates whether to remove automated backups immediately after the DB instance is deleted.
-     *        This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB
-     *        instance is deleted.
+     *        Specifies whether to remove automated backups immediately after the DB instance is deleted. This parameter
+     *        isn't case-sensitive. The default is to remove automated backups immediately after the DB instance is
+     *        deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -725,13 +721,12 @@ public class DeleteDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A value that indicates whether to remove automated backups immediately after the DB instance is deleted. This
-     * parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB instance is
-     * deleted.
+     * Specifies whether to remove automated backups immediately after the DB instance is deleted. This parameter isn't
+     * case-sensitive. The default is to remove automated backups immediately after the DB instance is deleted.
      * </p>
      * 
-     * @return A value that indicates whether to remove automated backups immediately after the DB instance is deleted.
-     *         This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB
+     * @return Specifies whether to remove automated backups immediately after the DB instance is deleted. This
+     *         parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB
      *         instance is deleted.
      */
 

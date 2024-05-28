@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,15 +26,35 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Amazon Web Services Price List API is a centralized and convenient way to programmatically query Amazon Web Services
- * for services, products, and pricing information. The Amazon Web Services Price List uses standardized product
- * attributes such as <code>Location</code>, <code>Storage Class</code>, and <code>Operating System</code>, and provides
- * prices at the SKU level. You can use the Amazon Web Services Price List to build cost control and scenario planning
- * tools, reconcile billing data, forecast future spend for budgeting purposes, and provide cost benefit analysis that
- * compare your internal workloads with Amazon Web Services.
+ * The Amazon Web Services Price List API is a centralized and convenient way to programmatically query Amazon Web
+ * Services for services, products, and pricing information. The Amazon Web Services Price List uses standardized
+ * product attributes such as <code>Location</code>, <code>Storage Class</code>, and <code>Operating System</code>, and
+ * provides prices at the SKU level. You can use the Amazon Web Services Price List to do the following:
  * </p>
+ * <ul>
+ * <li>
  * <p>
- * Use <code>GetServices</code> without a service code to retrieve the service codes for all AWS services, then
+ * Build cost control and scenario planning tools
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Reconcile billing data
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Forecast future spend for budgeting purposes
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Provide cost benefit analysis that compare your internal workloads with Amazon Web Services
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * Use <code>GetServices</code> without a service code to retrieve the service codes for all Amazon Web Services, then
  * <code>GetServices</code> with a service code to retrieve the attribute names for that service. After you have the
  * service code and attribute names, you can use <code>GetAttributeValues</code> to see what values are available for an
  * attribute. With the service code and an attribute name and value, you can use <code>GetProducts</code> to find
@@ -42,23 +62,10 @@ import java.util.concurrent.ExecutorService;
  * <code>Provisioned IOPS</code> <code>volumeType</code>.
  * </p>
  * <p>
- * Service Endpoint
+ * For more information, see <a
+ * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">Using the Amazon Web Services
+ * Price List API</a> in the <i>Billing User Guide</i>.
  * </p>
- * <p>
- * Amazon Web Services Price List service API provides the following two endpoints:
- * </p>
- * <ul>
- * <li>
- * <p>
- * https://api.pricing.us-east-1.amazonaws.com
- * </p>
- * </li>
- * <li>
- * <p>
- * https://api.pricing.ap-south-1.amazonaws.com
- * </p>
- * </li>
- * </ul>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -171,6 +178,39 @@ public class AWSPricingAsyncClient extends AWSPricingClient implements AWSPricin
     }
 
     @Override
+    public java.util.concurrent.Future<GetPriceListFileUrlResult> getPriceListFileUrlAsync(GetPriceListFileUrlRequest request) {
+
+        return getPriceListFileUrlAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPriceListFileUrlResult> getPriceListFileUrlAsync(final GetPriceListFileUrlRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetPriceListFileUrlRequest, GetPriceListFileUrlResult> asyncHandler) {
+        final GetPriceListFileUrlRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetPriceListFileUrlResult>() {
+            @Override
+            public GetPriceListFileUrlResult call() throws Exception {
+                GetPriceListFileUrlResult result = null;
+
+                try {
+                    result = executeGetPriceListFileUrl(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetProductsResult> getProductsAsync(GetProductsRequest request) {
 
         return getProductsAsync(request, null);
@@ -188,6 +228,39 @@ public class AWSPricingAsyncClient extends AWSPricingClient implements AWSPricin
 
                 try {
                     result = executeGetProducts(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPriceListsResult> listPriceListsAsync(ListPriceListsRequest request) {
+
+        return listPriceListsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPriceListsResult> listPriceListsAsync(final ListPriceListsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPriceListsRequest, ListPriceListsResult> asyncHandler) {
+        final ListPriceListsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPriceListsResult>() {
+            @Override
+            public ListPriceListsResult call() throws Exception {
+                ListPriceListsResult result = null;
+
+                try {
+                    result = executeListPriceLists(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

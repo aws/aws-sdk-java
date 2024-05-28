@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Maps a column or attribute in the data source to an index field. You must first create the fields in the index using
- * the <code>UpdateIndex</code> API.
+ * Maps attributes or field names of the documents synced from the data source to Amazon Kendra index field names. You
+ * can set up field mappings for each data source when calling <a
+ * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_CreateDataSource.html">CreateDataSource</a> or <a
+ * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_UpdateDataSource.html">UpdateDataSource</a> API. To
+ * create custom fields, use the <code>UpdateIndex</code> API to first create an index field and then map to the data
+ * source field. For more information, see <a
+ * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DataSourceToIndexFieldMapping"
@@ -31,30 +36,35 @@ public class DataSourceToIndexFieldMapping implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The name of the column or attribute in the data source.
+     * The name of the field in the data source. You must first create the index field using the
+     * <code>UpdateIndex</code> API.
      * </p>
      */
     private String dataSourceFieldName;
     /**
      * <p>
-     * The type of data stored in the column or attribute.
+     * The format for date fields in the data source. If the field specified in <code>DataSourceFieldName</code> is a
+     * date field, you must specify the date format. If the field is not a date field, an exception is thrown.
      * </p>
      */
     private String dateFieldFormat;
     /**
      * <p>
-     * The name of the field in the index.
+     * The name of the index field to map to the data source field. The index field type must match the data source
+     * field type.
      * </p>
      */
     private String indexFieldName;
 
     /**
      * <p>
-     * The name of the column or attribute in the data source.
+     * The name of the field in the data source. You must first create the index field using the
+     * <code>UpdateIndex</code> API.
      * </p>
      * 
      * @param dataSourceFieldName
-     *        The name of the column or attribute in the data source.
+     *        The name of the field in the data source. You must first create the index field using the
+     *        <code>UpdateIndex</code> API.
      */
 
     public void setDataSourceFieldName(String dataSourceFieldName) {
@@ -63,10 +73,12 @@ public class DataSourceToIndexFieldMapping implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The name of the column or attribute in the data source.
+     * The name of the field in the data source. You must first create the index field using the
+     * <code>UpdateIndex</code> API.
      * </p>
      * 
-     * @return The name of the column or attribute in the data source.
+     * @return The name of the field in the data source. You must first create the index field using the
+     *         <code>UpdateIndex</code> API.
      */
 
     public String getDataSourceFieldName() {
@@ -75,11 +87,13 @@ public class DataSourceToIndexFieldMapping implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The name of the column or attribute in the data source.
+     * The name of the field in the data source. You must first create the index field using the
+     * <code>UpdateIndex</code> API.
      * </p>
      * 
      * @param dataSourceFieldName
-     *        The name of the column or attribute in the data source.
+     *        The name of the field in the data source. You must first create the index field using the
+     *        <code>UpdateIndex</code> API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +104,14 @@ public class DataSourceToIndexFieldMapping implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The type of data stored in the column or attribute.
+     * The format for date fields in the data source. If the field specified in <code>DataSourceFieldName</code> is a
+     * date field, you must specify the date format. If the field is not a date field, an exception is thrown.
      * </p>
      * 
      * @param dateFieldFormat
-     *        The type of data stored in the column or attribute.
+     *        The format for date fields in the data source. If the field specified in <code>DataSourceFieldName</code>
+     *        is a date field, you must specify the date format. If the field is not a date field, an exception is
+     *        thrown.
      */
 
     public void setDateFieldFormat(String dateFieldFormat) {
@@ -103,10 +120,13 @@ public class DataSourceToIndexFieldMapping implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The type of data stored in the column or attribute.
+     * The format for date fields in the data source. If the field specified in <code>DataSourceFieldName</code> is a
+     * date field, you must specify the date format. If the field is not a date field, an exception is thrown.
      * </p>
      * 
-     * @return The type of data stored in the column or attribute.
+     * @return The format for date fields in the data source. If the field specified in <code>DataSourceFieldName</code>
+     *         is a date field, you must specify the date format. If the field is not a date field, an exception is
+     *         thrown.
      */
 
     public String getDateFieldFormat() {
@@ -115,11 +135,14 @@ public class DataSourceToIndexFieldMapping implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The type of data stored in the column or attribute.
+     * The format for date fields in the data source. If the field specified in <code>DataSourceFieldName</code> is a
+     * date field, you must specify the date format. If the field is not a date field, an exception is thrown.
      * </p>
      * 
      * @param dateFieldFormat
-     *        The type of data stored in the column or attribute.
+     *        The format for date fields in the data source. If the field specified in <code>DataSourceFieldName</code>
+     *        is a date field, you must specify the date format. If the field is not a date field, an exception is
+     *        thrown.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,11 +153,13 @@ public class DataSourceToIndexFieldMapping implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The name of the field in the index.
+     * The name of the index field to map to the data source field. The index field type must match the data source
+     * field type.
      * </p>
      * 
      * @param indexFieldName
-     *        The name of the field in the index.
+     *        The name of the index field to map to the data source field. The index field type must match the data
+     *        source field type.
      */
 
     public void setIndexFieldName(String indexFieldName) {
@@ -143,10 +168,12 @@ public class DataSourceToIndexFieldMapping implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The name of the field in the index.
+     * The name of the index field to map to the data source field. The index field type must match the data source
+     * field type.
      * </p>
      * 
-     * @return The name of the field in the index.
+     * @return The name of the index field to map to the data source field. The index field type must match the data
+     *         source field type.
      */
 
     public String getIndexFieldName() {
@@ -155,11 +182,13 @@ public class DataSourceToIndexFieldMapping implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The name of the field in the index.
+     * The name of the index field to map to the data source field. The index field type must match the data source
+     * field type.
      * </p>
      * 
      * @param indexFieldName
-     *        The name of the field in the index.
+     *        The name of the index field to map to the data source field. The index field type must match the data
+     *        source field type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

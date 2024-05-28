@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,14 @@ public class ShareInvitationSummaryMarshaller {
             .marshallLocationName("LensName").build();
     private static final MarshallingInfo<String> LENSARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("LensArn").build();
+    private static final MarshallingInfo<String> PROFILENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProfileName").build();
+    private static final MarshallingInfo<String> PROFILEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProfileArn").build();
+    private static final MarshallingInfo<String> TEMPLATENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemplateName").build();
+    private static final MarshallingInfo<String> TEMPLATEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemplateArn").build();
 
     private static final ShareInvitationSummaryMarshaller instance = new ShareInvitationSummaryMarshaller();
 
@@ -71,6 +79,10 @@ public class ShareInvitationSummaryMarshaller {
             protocolMarshaller.marshall(shareInvitationSummary.getWorkloadId(), WORKLOADID_BINDING);
             protocolMarshaller.marshall(shareInvitationSummary.getLensName(), LENSNAME_BINDING);
             protocolMarshaller.marshall(shareInvitationSummary.getLensArn(), LENSARN_BINDING);
+            protocolMarshaller.marshall(shareInvitationSummary.getProfileName(), PROFILENAME_BINDING);
+            protocolMarshaller.marshall(shareInvitationSummary.getProfileArn(), PROFILEARN_BINDING);
+            protocolMarshaller.marshall(shareInvitationSummary.getTemplateName(), TEMPLATENAME_BINDING);
+            protocolMarshaller.marshall(shareInvitationSummary.getTemplateArn(), TEMPLATEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

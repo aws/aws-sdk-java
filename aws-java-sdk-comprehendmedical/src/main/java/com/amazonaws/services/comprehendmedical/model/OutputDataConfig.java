@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,8 +38,8 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
     private String s3Bucket;
     /**
      * <p>
-     * The path to the output data files in the S3 bucket. Comprehend Medical; creates an output directory using the job
-     * ID so that the output from one job does not overwrite the output of another.
+     * The path to the output data files in the S3 bucket. Amazon Comprehend Medical creates an output directory using
+     * the job ID so that the output from one job does not overwrite the output of another.
      * </p>
      */
     private String s3Key;
@@ -98,13 +98,13 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The path to the output data files in the S3 bucket. Comprehend Medical; creates an output directory using the job
-     * ID so that the output from one job does not overwrite the output of another.
+     * The path to the output data files in the S3 bucket. Amazon Comprehend Medical creates an output directory using
+     * the job ID so that the output from one job does not overwrite the output of another.
      * </p>
      * 
      * @param s3Key
-     *        The path to the output data files in the S3 bucket. Comprehend Medical; creates an output directory using
-     *        the job ID so that the output from one job does not overwrite the output of another.
+     *        The path to the output data files in the S3 bucket. Amazon Comprehend Medical creates an output directory
+     *        using the job ID so that the output from one job does not overwrite the output of another.
      */
 
     public void setS3Key(String s3Key) {
@@ -113,12 +113,12 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The path to the output data files in the S3 bucket. Comprehend Medical; creates an output directory using the job
-     * ID so that the output from one job does not overwrite the output of another.
+     * The path to the output data files in the S3 bucket. Amazon Comprehend Medical creates an output directory using
+     * the job ID so that the output from one job does not overwrite the output of another.
      * </p>
      * 
-     * @return The path to the output data files in the S3 bucket. Comprehend Medical; creates an output directory using
-     *         the job ID so that the output from one job does not overwrite the output of another.
+     * @return The path to the output data files in the S3 bucket. Amazon Comprehend Medical creates an output directory
+     *         using the job ID so that the output from one job does not overwrite the output of another.
      */
 
     public String getS3Key() {
@@ -127,13 +127,13 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The path to the output data files in the S3 bucket. Comprehend Medical; creates an output directory using the job
-     * ID so that the output from one job does not overwrite the output of another.
+     * The path to the output data files in the S3 bucket. Amazon Comprehend Medical creates an output directory using
+     * the job ID so that the output from one job does not overwrite the output of another.
      * </p>
      * 
      * @param s3Key
-     *        The path to the output data files in the S3 bucket. Comprehend Medical; creates an output directory using
-     *        the job ID so that the output from one job does not overwrite the output of another.
+     *        The path to the output data files in the S3 bucket. Amazon Comprehend Medical creates an output directory
+     *        using the job ID so that the output from one job does not overwrite the output of another.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

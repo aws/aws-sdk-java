@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,13 +64,13 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
     private DataSourceVpcConfiguration vpcConfiguration;
     /**
      * <p>
-     * The Unix timestamp of when the data source connector was created.
+     * The Unix timestamp when the data source connector was created.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * The Unix timestamp of when the data source connector was last updated.
+     * The Unix timestamp when the data source connector was last updated.
      * </p>
      */
     private java.util.Date updatedAt;
@@ -409,11 +409,11 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The Unix timestamp of when the data source connector was created.
+     * The Unix timestamp when the data source connector was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix timestamp of when the data source connector was created.
+     *        The Unix timestamp when the data source connector was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -422,10 +422,10 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The Unix timestamp of when the data source connector was created.
+     * The Unix timestamp when the data source connector was created.
      * </p>
      * 
-     * @return The Unix timestamp of when the data source connector was created.
+     * @return The Unix timestamp when the data source connector was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -434,11 +434,11 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The Unix timestamp of when the data source connector was created.
+     * The Unix timestamp when the data source connector was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix timestamp of when the data source connector was created.
+     *        The Unix timestamp when the data source connector was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -449,11 +449,11 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The Unix timestamp of when the data source connector was last updated.
+     * The Unix timestamp when the data source connector was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        The Unix timestamp of when the data source connector was last updated.
+     *        The Unix timestamp when the data source connector was last updated.
      */
 
     public void setUpdatedAt(java.util.Date updatedAt) {
@@ -462,10 +462,10 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The Unix timestamp of when the data source connector was last updated.
+     * The Unix timestamp when the data source connector was last updated.
      * </p>
      * 
-     * @return The Unix timestamp of when the data source connector was last updated.
+     * @return The Unix timestamp when the data source connector was last updated.
      */
 
     public java.util.Date getUpdatedAt() {
@@ -474,11 +474,11 @@ public class DescribeDataSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The Unix timestamp of when the data source connector was last updated.
+     * The Unix timestamp when the data source connector was last updated.
      * </p>
      * 
      * @param updatedAt
-     *        The Unix timestamp of when the data source connector was last updated.
+     *        The Unix timestamp when the data source connector was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

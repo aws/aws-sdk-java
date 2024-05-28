@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,12 @@ public class UpdateDistributionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cacheBehaviors").build();
     private static final MarshallingInfo<Boolean> ISENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isEnabled").build();
+    private static final MarshallingInfo<String> VIEWERMINIMUMTLSPROTOCOLVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("viewerMinimumTlsProtocolVersion").build();
+    private static final MarshallingInfo<String> CERTIFICATENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificateName").build();
+    private static final MarshallingInfo<Boolean> USEDEFAULTCERTIFICATE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("useDefaultCertificate").build();
 
     private static final UpdateDistributionRequestMarshaller instance = new UpdateDistributionRequestMarshaller();
 
@@ -63,6 +69,9 @@ public class UpdateDistributionRequestMarshaller {
             protocolMarshaller.marshall(updateDistributionRequest.getCacheBehaviorSettings(), CACHEBEHAVIORSETTINGS_BINDING);
             protocolMarshaller.marshall(updateDistributionRequest.getCacheBehaviors(), CACHEBEHAVIORS_BINDING);
             protocolMarshaller.marshall(updateDistributionRequest.getIsEnabled(), ISENABLED_BINDING);
+            protocolMarshaller.marshall(updateDistributionRequest.getViewerMinimumTlsProtocolVersion(), VIEWERMINIMUMTLSPROTOCOLVERSION_BINDING);
+            protocolMarshaller.marshall(updateDistributionRequest.getCertificateName(), CERTIFICATENAME_BINDING);
+            protocolMarshaller.marshall(updateDistributionRequest.getUseDefaultCertificate(), USEDEFAULTCERTIFICATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,13 +33,13 @@ public class UpdateScriptRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String scriptId;
     /**
      * <p>
-     * A descriptive label that is associated with a script. Script names do not need to be unique.
+     * A descriptive label that is associated with a script. Script names don't need to be unique.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Version information that is associated with a build or script. Version strings do not need to be unique.
+     * Version information associated with a build or script. Version strings don't need to be unique.
      * </p>
      */
     private String version;
@@ -108,11 +108,11 @@ public class UpdateScriptRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A descriptive label that is associated with a script. Script names do not need to be unique.
+     * A descriptive label that is associated with a script. Script names don't need to be unique.
      * </p>
      * 
      * @param name
-     *        A descriptive label that is associated with a script. Script names do not need to be unique.
+     *        A descriptive label that is associated with a script. Script names don't need to be unique.
      */
 
     public void setName(String name) {
@@ -121,10 +121,10 @@ public class UpdateScriptRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A descriptive label that is associated with a script. Script names do not need to be unique.
+     * A descriptive label that is associated with a script. Script names don't need to be unique.
      * </p>
      * 
-     * @return A descriptive label that is associated with a script. Script names do not need to be unique.
+     * @return A descriptive label that is associated with a script. Script names don't need to be unique.
      */
 
     public String getName() {
@@ -133,11 +133,11 @@ public class UpdateScriptRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A descriptive label that is associated with a script. Script names do not need to be unique.
+     * A descriptive label that is associated with a script. Script names don't need to be unique.
      * </p>
      * 
      * @param name
-     *        A descriptive label that is associated with a script. Script names do not need to be unique.
+     *        A descriptive label that is associated with a script. Script names don't need to be unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,11 +148,11 @@ public class UpdateScriptRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Version information that is associated with a build or script. Version strings do not need to be unique.
+     * Version information associated with a build or script. Version strings don't need to be unique.
      * </p>
      * 
      * @param version
-     *        Version information that is associated with a build or script. Version strings do not need to be unique.
+     *        Version information associated with a build or script. Version strings don't need to be unique.
      */
 
     public void setVersion(String version) {
@@ -161,10 +161,10 @@ public class UpdateScriptRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Version information that is associated with a build or script. Version strings do not need to be unique.
+     * Version information associated with a build or script. Version strings don't need to be unique.
      * </p>
      * 
-     * @return Version information that is associated with a build or script. Version strings do not need to be unique.
+     * @return Version information associated with a build or script. Version strings don't need to be unique.
      */
 
     public String getVersion() {
@@ -173,11 +173,11 @@ public class UpdateScriptRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Version information that is associated with a build or script. Version strings do not need to be unique.
+     * Version information associated with a build or script. Version strings don't need to be unique.
      * </p>
      * 
      * @param version
-     *        Version information that is associated with a build or script. Version strings do not need to be unique.
+     *        Version information associated with a build or script. Version strings don't need to be unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,15 +33,35 @@ import com.amazonaws.services.pinpointsmsvoicev2.model.*;
  * <p>
  * Amazon Pinpoint is an Amazon Web Services service that you can use to engage with your recipients across multiple
  * messaging channels. The Amazon Pinpoint SMS and Voice, version 2 API provides programmatic access to options that are
- * unique to the SMS and voice channels and supplements the resources provided by the Amazon Pinpoint API.
+ * unique to the SMS and voice channels. Amazon Pinpoint SMS and Voice, version 2 resources such as phone numbers,
+ * sender IDs, and opt-out lists can be used by the Amazon Pinpoint API.
  * </p>
  * <p>
- * If you're new to Amazon Pinpoint, it's also helpful to review the <a
- * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html"> Amazon Pinpoint Developer Guide</a>.
- * The <i>Amazon Pinpoint Developer Guide</i> provides tutorials, code samples, and procedures that demonstrate how to
- * use Amazon Pinpoint features programmatically and how to integrate Amazon Pinpoint functionality into mobile apps and
- * other types of applications. The guide also provides key information, such as Amazon Pinpoint integration with other
- * Amazon Web Services services, and the quotas that apply to use of the service.
+ * If you're new to Amazon Pinpoint SMS, it's also helpful to review the <a
+ * href="https://docs.aws.amazon.com/sms-voice/latest/userguide/what-is-service.html"> Amazon Pinpoint SMS User
+ * Guide</a>. The <i>Amazon Pinpoint Developer Guide</i> provides tutorials, code samples, and procedures that
+ * demonstrate how to use Amazon Pinpoint SMS features programmatically and how to integrate Amazon Pinpoint
+ * functionality into mobile apps and other types of applications. The guide also provides key information, such as
+ * Amazon Pinpoint integration with other Amazon Web Services services, and the quotas that apply to use of the service.
+ * </p>
+ * <p>
+ * <b>Regional availability</b>
+ * </p>
+ * <p>
+ * The <i>Amazon Pinpoint SMS and Voice, version 2 API Reference</i> is available in several Amazon Web Services Regions
+ * and it provides an endpoint for each of these Regions. For a list of all the Regions and endpoints where the API is
+ * currently available, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#pinpoint_region">Amazon
+ * Web Services Service Endpoints</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/pinpoint.html">Amazon
+ * Pinpoint endpoints and quotas</a> in the Amazon Web Services General Reference. To learn more about Amazon Web
+ * Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html">Managing Amazon Web
+ * Services Regions</a> in the Amazon Web Services General Reference.
+ * </p>
+ * <p>
+ * In each Region, Amazon Web Services maintains multiple Availability Zones. These Availability Zones are physically
+ * isolated from each other, but are united by private, low-latency, high-throughput, and highly redundant network
+ * connections. These Availability Zones enable us to provide very high levels of availability and redundancy, while
+ * also minimizing latency. To learn more about the number of Availability Zones that are available in each Region, see
+ * <a href="https://aws.amazon.com/about-aws/global-infrastructure/">Amazon Web Services Global Infrastructure.</a>
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -60,11 +80,11 @@ public interface AmazonPinpointSMSVoiceV2 {
      * Associates the specified origination identity with a pool.
      * </p>
      * <p>
-     * If the origination identity is a phone number and is already associated with another pool, an Error is returned.
+     * If the origination identity is a phone number and is already associated with another pool, an error is returned.
      * A sender ID can be associated with multiple pools.
      * </p>
      * <p>
-     * If the origination identity configuration doesn't match the pool's configuration, an Error is returned.
+     * If the origination identity configuration doesn't match the pool's configuration, an error is returned.
      * </p>
      * 
      * @param associateOriginationIdentityRequest
@@ -92,6 +112,37 @@ public interface AmazonPinpointSMSVoiceV2 {
      *      target="_top">AWS API Documentation</a>
      */
     AssociateOriginationIdentityResult associateOriginationIdentity(AssociateOriginationIdentityRequest associateOriginationIdentityRequest);
+
+    /**
+     * <p>
+     * Associate a protect configuration with a configuration set. This replaces the configuration sets current protect
+     * configuration. A configuration set can only be associated with one protect configuration at a time. A protect
+     * configuration can be associated with multiple configuration sets.
+     * </p>
+     * 
+     * @param associateProtectConfigurationRequest
+     * @return Result of the AssociateProtectConfiguration operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.AssociateProtectConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/AssociateProtectConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateProtectConfigurationResult associateProtectConfiguration(AssociateProtectConfigurationRequest associateProtectConfigurationRequest);
 
     /**
      * <p>
@@ -173,7 +224,7 @@ public interface AmazonPinpointSMSVoiceV2 {
      * Creates a new opt-out list.
      * </p>
      * <p>
-     * If the opt-out list name already exists, an Error is returned.
+     * If the opt-out list name already exists, an error is returned.
      * </p>
      * <p>
      * An opt-out list is a list of phone numbers that are opted out, meaning you can't send SMS or voice messages to
@@ -218,7 +269,7 @@ public interface AmazonPinpointSMSVoiceV2 {
      * inherited from the origination identity and defaults to false.
      * </p>
      * <p>
-     * If the origination identity is a phone number and is already associated with another pool, an Error is returned.
+     * If the origination identity is a phone number and is already associated with another pool, an error is returned.
      * A sender ID can be associated with multiple pools.
      * </p>
      * 
@@ -246,6 +297,210 @@ public interface AmazonPinpointSMSVoiceV2 {
      *      target="_top">AWS API Documentation</a>
      */
     CreatePoolResult createPool(CreatePoolRequest createPoolRequest);
+
+    /**
+     * <p>
+     * Create a new protect configuration. By default all country rule sets for each capability are set to
+     * <code>ALLOW</code>. Update the country rule sets using <code>UpdateProtectConfigurationCountryRuleSet</code>. A
+     * protect configurations name is stored as a Tag with the key set to <code>Name</code> and value as the name of the
+     * protect configuration.
+     * </p>
+     * 
+     * @param createProtectConfigurationRequest
+     * @return Result of the CreateProtectConfiguration operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause a service quota to be exceeded.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.CreateProtectConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateProtectConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateProtectConfigurationResult createProtectConfiguration(CreateProtectConfigurationRequest createProtectConfigurationRequest);
+
+    /**
+     * <p>
+     * Creates a new registration based on the <b>RegistrationType</b> field.
+     * </p>
+     * 
+     * @param createRegistrationRequest
+     * @return Result of the CreateRegistration operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause a service quota to be exceeded.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.CreateRegistration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateRegistration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateRegistrationResult createRegistration(CreateRegistrationRequest createRegistrationRequest);
+
+    /**
+     * <p>
+     * Associate the registration with an origination identity such as a phone number or sender ID.
+     * </p>
+     * 
+     * @param createRegistrationAssociationRequest
+     * @return Result of the CreateRegistrationAssociation operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause a service quota to be exceeded.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.CreateRegistrationAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateRegistrationAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateRegistrationAssociationResult createRegistrationAssociation(CreateRegistrationAssociationRequest createRegistrationAssociationRequest);
+
+    /**
+     * <p>
+     * Create a new registration attachment to use for uploading a file or a URL to a file. The maximum file size is
+     * 1MiB and valid file extensions are PDF, JPEG and PNG. For example, many sender ID registrations require a signed
+     * “letter of authorization” (LOA) to be submitted.
+     * </p>
+     * 
+     * @param createRegistrationAttachmentRequest
+     * @return Result of the CreateRegistrationAttachment operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause a service quota to be exceeded.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.CreateRegistrationAttachment
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateRegistrationAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateRegistrationAttachmentResult createRegistrationAttachment(CreateRegistrationAttachmentRequest createRegistrationAttachmentRequest);
+
+    /**
+     * <p>
+     * Create a new version of the registration and increase the <b>VersionNumber</b>. The previous version of the
+     * registration becomes read-only.
+     * </p>
+     * 
+     * @param createRegistrationVersionRequest
+     * @return Result of the CreateRegistrationVersion operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause a service quota to be exceeded.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.CreateRegistrationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateRegistrationVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateRegistrationVersionResult createRegistrationVersion(CreateRegistrationVersionRequest createRegistrationVersionRequest);
+
+    /**
+     * <p>
+     * You can only send messages to verified destination numbers when your account is in the sandbox. You can add up to
+     * 10 verified destination numbers.
+     * </p>
+     * 
+     * @param createVerifiedDestinationNumberRequest
+     * @return Result of the CreateVerifiedDestinationNumber operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause a service quota to be exceeded.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.CreateVerifiedDestinationNumber
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/CreateVerifiedDestinationNumber"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateVerifiedDestinationNumberResult createVerifiedDestinationNumber(CreateVerifiedDestinationNumberRequest createVerifiedDestinationNumberRequest);
+
+    /**
+     * <p>
+     * Removes the current account default protect configuration.
+     * </p>
+     * 
+     * @param deleteAccountDefaultProtectConfigurationRequest
+     * @return Result of the DeleteAccountDefaultProtectConfiguration operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DeleteAccountDefaultProtectConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteAccountDefaultProtectConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteAccountDefaultProtectConfigurationResult deleteAccountDefaultProtectConfiguration(
+            DeleteAccountDefaultProtectConfigurationRequest deleteAccountDefaultProtectConfigurationRequest);
 
     /**
      * <p>
@@ -401,10 +656,38 @@ public interface AmazonPinpointSMSVoiceV2 {
 
     /**
      * <p>
+     * Deletes an account-level monthly spending limit override for sending multimedia messages (MMS). Deleting a spend
+     * limit override will set the <code>EnforcedLimit</code> to equal the <code>MaxLimit</code>, which is controlled by
+     * Amazon Web Services. For more information on spend limits (quotas) see <a
+     * href="https://docs.aws.amazon.com/sms-voice/latest/userguide/quotas.html">Quotas for Server Migration Service</a>
+     * in the <i>Server Migration Service User Guide</i>.
+     * </p>
+     * 
+     * @param deleteMediaMessageSpendLimitOverrideRequest
+     * @return Result of the DeleteMediaMessageSpendLimitOverride operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DeleteMediaMessageSpendLimitOverride
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteMediaMessageSpendLimitOverride"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteMediaMessageSpendLimitOverrideResult deleteMediaMessageSpendLimitOverride(
+            DeleteMediaMessageSpendLimitOverrideRequest deleteMediaMessageSpendLimitOverrideRequest);
+
+    /**
+     * <p>
      * Deletes an existing opt-out list. All opted out phone numbers in the opt-out list are deleted.
      * </p>
      * <p>
-     * If the specified opt-out list name doesn't exist or is in-use by an origination phone number or pool, an Error is
+     * If the specified opt-out list name doesn't exist or is in-use by an origination phone number or pool, an error is
      * returned.
      * </p>
      * 
@@ -439,7 +722,7 @@ public interface AmazonPinpointSMSVoiceV2 {
      * Each destination phone number can only be deleted once every 30 days.
      * </p>
      * <p>
-     * If the specified destination phone number doesn't exist or if the opt-out list doesn't exist, an Error is
+     * If the specified destination phone number doesn't exist or if the opt-out list doesn't exist, an error is
      * returned.
      * </p>
      * 
@@ -471,7 +754,7 @@ public interface AmazonPinpointSMSVoiceV2 {
      * Deletes an existing pool. Deleting a pool disassociates all origination identities from that pool.
      * </p>
      * <p>
-     * If the pool status isn't active or if deletion protection is enabled, an Error is returned.
+     * If the pool status isn't active or if deletion protection is enabled, an error is returned.
      * </p>
      * <p>
      * A pool is a collection of phone numbers and SenderIds. A pool can include one or more phone numbers and SenderIds
@@ -503,6 +786,121 @@ public interface AmazonPinpointSMSVoiceV2 {
 
     /**
      * <p>
+     * Permanently delete the protect configuration. The protect configuration must have deletion protection disabled
+     * and must not be associated as the account default protect configuration or associated with a configuration set.
+     * </p>
+     * 
+     * @param deleteProtectConfigurationRequest
+     * @return Result of the DeleteProtectConfiguration operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DeleteProtectConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteProtectConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteProtectConfigurationResult deleteProtectConfiguration(DeleteProtectConfigurationRequest deleteProtectConfigurationRequest);
+
+    /**
+     * <p>
+     * Permanently delete an existing registration from your account.
+     * </p>
+     * 
+     * @param deleteRegistrationRequest
+     * @return Result of the DeleteRegistration operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DeleteRegistration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteRegistration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteRegistrationResult deleteRegistration(DeleteRegistrationRequest deleteRegistrationRequest);
+
+    /**
+     * <p>
+     * Permanently delete the specified registration attachment.
+     * </p>
+     * 
+     * @param deleteRegistrationAttachmentRequest
+     * @return Result of the DeleteRegistrationAttachment operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DeleteRegistrationAttachment
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteRegistrationAttachment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteRegistrationAttachmentResult deleteRegistrationAttachment(DeleteRegistrationAttachmentRequest deleteRegistrationAttachmentRequest);
+
+    /**
+     * <p>
+     * Delete the value in a registration form field.
+     * </p>
+     * 
+     * @param deleteRegistrationFieldValueRequest
+     * @return Result of the DeleteRegistrationFieldValue operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DeleteRegistrationFieldValue
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteRegistrationFieldValue"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteRegistrationFieldValueResult deleteRegistrationFieldValue(DeleteRegistrationFieldValueRequest deleteRegistrationFieldValueRequest);
+
+    /**
+     * <p>
      * Deletes an account-level monthly spending limit override for sending text messages. Deleting a spend limit
      * override will set the <code>EnforcedLimit</code> to equal the <code>MaxLimit</code>, which is controlled by
      * Amazon Web Services. For more information on spend limits (quotas) see <a
@@ -528,6 +926,35 @@ public interface AmazonPinpointSMSVoiceV2 {
      */
     DeleteTextMessageSpendLimitOverrideResult deleteTextMessageSpendLimitOverride(
             DeleteTextMessageSpendLimitOverrideRequest deleteTextMessageSpendLimitOverrideRequest);
+
+    /**
+     * <p>
+     * Delete a verified destination phone number.
+     * </p>
+     * 
+     * @param deleteVerifiedDestinationNumberRequest
+     * @return Result of the DeleteVerifiedDestinationNumber operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DeleteVerifiedDestinationNumber
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DeleteVerifiedDestinationNumber"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteVerifiedDestinationNumberResult deleteVerifiedDestinationNumber(DeleteVerifiedDestinationNumberRequest deleteVerifiedDestinationNumberRequest);
 
     /**
      * <p>
@@ -658,7 +1085,7 @@ public interface AmazonPinpointSMSVoiceV2 {
      * customizable message.
      * </p>
      * <p>
-     * If you specify a keyword that isn't valid, an Error is returned.
+     * If you specify a keyword that isn't valid, an error is returned.
      * </p>
      * 
      * @param describeKeywordsRequest
@@ -690,7 +1117,7 @@ public interface AmazonPinpointSMSVoiceV2 {
      * output includes information for all opt-out lists.
      * </p>
      * <p>
-     * If you specify an opt-out list name that isn't valid, an Error is returned.
+     * If you specify an opt-out list name that isn't valid, an error is returned.
      * </p>
      * 
      * @param describeOptOutListsRequest
@@ -723,7 +1150,7 @@ public interface AmazonPinpointSMSVoiceV2 {
      * destination numbers in your opt-out list.
      * </p>
      * <p>
-     * If you specify an opted out number that isn't valid, an Error is returned.
+     * If you specify an opted out number that isn't valid, an error is returned.
      * </p>
      * 
      * @param describeOptedOutNumbersRequest
@@ -755,7 +1182,7 @@ public interface AmazonPinpointSMSVoiceV2 {
      * you don't specify phone number IDs or filters, the output includes information for all phone numbers.
      * </p>
      * <p>
-     * If you specify a phone number ID that isn't valid, an Error is returned.
+     * If you specify a phone number ID that isn't valid, an error is returned.
      * </p>
      * 
      * @param describePhoneNumbersRequest
@@ -787,7 +1214,7 @@ public interface AmazonPinpointSMSVoiceV2 {
      * or filters, the output includes information for all pools.
      * </p>
      * <p>
-     * If you specify a pool ID that isn't valid, an Error is returned.
+     * If you specify a pool ID that isn't valid, an error is returned.
      * </p>
      * <p>
      * A pool is a collection of phone numbers and SenderIds. A pool can include one or more phone numbers and SenderIds
@@ -815,6 +1242,207 @@ public interface AmazonPinpointSMSVoiceV2 {
 
     /**
      * <p>
+     * Retrieves the protect configurations that match any of filters. If a filter isn’t provided then all protect
+     * configurations are returned.
+     * </p>
+     * 
+     * @param describeProtectConfigurationsRequest
+     * @return Result of the DescribeProtectConfigurations operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DescribeProtectConfigurations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeProtectConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeProtectConfigurationsResult describeProtectConfigurations(DescribeProtectConfigurationsRequest describeProtectConfigurationsRequest);
+
+    /**
+     * <p>
+     * Retrieves the specified registration attachments or all registration attachments associated with your Amazon Web
+     * Services account.
+     * </p>
+     * 
+     * @param describeRegistrationAttachmentsRequest
+     * @return Result of the DescribeRegistrationAttachments operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DescribeRegistrationAttachments
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationAttachments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeRegistrationAttachmentsResult describeRegistrationAttachments(DescribeRegistrationAttachmentsRequest describeRegistrationAttachmentsRequest);
+
+    /**
+     * <p>
+     * Retrieves the specified registration type field definitions. You can use DescribeRegistrationFieldDefinitions to
+     * view the requirements for creating, filling out, and submitting each registration type.
+     * </p>
+     * 
+     * @param describeRegistrationFieldDefinitionsRequest
+     * @return Result of the DescribeRegistrationFieldDefinitions operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DescribeRegistrationFieldDefinitions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationFieldDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeRegistrationFieldDefinitionsResult describeRegistrationFieldDefinitions(
+            DescribeRegistrationFieldDefinitionsRequest describeRegistrationFieldDefinitionsRequest);
+
+    /**
+     * <p>
+     * Retrieves the specified registration field values.
+     * </p>
+     * 
+     * @param describeRegistrationFieldValuesRequest
+     * @return Result of the DescribeRegistrationFieldValues operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DescribeRegistrationFieldValues
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationFieldValues"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeRegistrationFieldValuesResult describeRegistrationFieldValues(DescribeRegistrationFieldValuesRequest describeRegistrationFieldValuesRequest);
+
+    /**
+     * <p>
+     * Retrieves the specified registration section definitions. You can use DescribeRegistrationSectionDefinitions to
+     * view the requirements for creating, filling out, and submitting each registration type.
+     * </p>
+     * 
+     * @param describeRegistrationSectionDefinitionsRequest
+     * @return Result of the DescribeRegistrationSectionDefinitions operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DescribeRegistrationSectionDefinitions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationSectionDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeRegistrationSectionDefinitionsResult describeRegistrationSectionDefinitions(
+            DescribeRegistrationSectionDefinitionsRequest describeRegistrationSectionDefinitionsRequest);
+
+    /**
+     * <p>
+     * Retrieves the specified registration type definitions. You can use DescribeRegistrationTypeDefinitions to view
+     * the requirements for creating, filling out, and submitting each registration type.
+     * </p>
+     * 
+     * @param describeRegistrationTypeDefinitionsRequest
+     * @return Result of the DescribeRegistrationTypeDefinitions operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DescribeRegistrationTypeDefinitions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationTypeDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeRegistrationTypeDefinitionsResult describeRegistrationTypeDefinitions(
+            DescribeRegistrationTypeDefinitionsRequest describeRegistrationTypeDefinitionsRequest);
+
+    /**
+     * <p>
+     * Retrieves the specified registration version.
+     * </p>
+     * 
+     * @param describeRegistrationVersionsRequest
+     * @return Result of the DescribeRegistrationVersions operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DescribeRegistrationVersions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrationVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeRegistrationVersionsResult describeRegistrationVersions(DescribeRegistrationVersionsRequest describeRegistrationVersionsRequest);
+
+    /**
+     * <p>
+     * Retrieves the specified registrations.
+     * </p>
+     * 
+     * @param describeRegistrationsRequest
+     * @return Result of the DescribeRegistrations operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DescribeRegistrations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeRegistrations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeRegistrationsResult describeRegistrations(DescribeRegistrationsRequest describeRegistrationsRequest);
+
+    /**
+     * <p>
      * Describes the specified SenderIds or all SenderIds associated with your Amazon Web Services account.
      * </p>
      * <p>
@@ -823,7 +1451,7 @@ public interface AmazonPinpointSMSVoiceV2 {
      * specify SenderIds or filters, the output includes information for all SenderIds.
      * </p>
      * <p>
-     * f you specify a sender ID that isn't valid, an Error is returned.
+     * f you specify a sender ID that isn't valid, an error is returned.
      * </p>
      * 
      * @param describeSenderIdsRequest
@@ -876,10 +1504,36 @@ public interface AmazonPinpointSMSVoiceV2 {
 
     /**
      * <p>
+     * Retrieves the specified verified destiona numbers.
+     * </p>
+     * 
+     * @param describeVerifiedDestinationNumbersRequest
+     * @return Result of the DescribeVerifiedDestinationNumbers operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DescribeVerifiedDestinationNumbers
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DescribeVerifiedDestinationNumbers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeVerifiedDestinationNumbersResult describeVerifiedDestinationNumbers(
+            DescribeVerifiedDestinationNumbersRequest describeVerifiedDestinationNumbersRequest);
+
+    /**
+     * <p>
      * Removes the specified origination identity from an existing pool.
      * </p>
      * <p>
-     * If the origination identity isn't associated with the specified pool, an Error is returned.
+     * If the origination identity isn't associated with the specified pool, an error is returned.
      * </p>
      * 
      * @param disassociateOriginationIdentityRequest
@@ -905,6 +1559,89 @@ public interface AmazonPinpointSMSVoiceV2 {
      *      target="_top">AWS API Documentation</a>
      */
     DisassociateOriginationIdentityResult disassociateOriginationIdentity(DisassociateOriginationIdentityRequest disassociateOriginationIdentityRequest);
+
+    /**
+     * <p>
+     * Disassociate a protect configuration from a configuration set.
+     * </p>
+     * 
+     * @param disassociateProtectConfigurationRequest
+     * @return Result of the DisassociateProtectConfiguration operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DisassociateProtectConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DisassociateProtectConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateProtectConfigurationResult disassociateProtectConfiguration(DisassociateProtectConfigurationRequest disassociateProtectConfigurationRequest);
+
+    /**
+     * <p>
+     * Discard the current version of the registration.
+     * </p>
+     * 
+     * @param discardRegistrationVersionRequest
+     * @return Result of the DiscardRegistrationVersion operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.DiscardRegistrationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/DiscardRegistrationVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DiscardRegistrationVersionResult discardRegistrationVersion(DiscardRegistrationVersionRequest discardRegistrationVersionRequest);
+
+    /**
+     * <p>
+     * Retrieve the CountryRuleSet for the specified NumberCapability from a protect configuration.
+     * </p>
+     * 
+     * @param getProtectConfigurationCountryRuleSetRequest
+     * @return Result of the GetProtectConfigurationCountryRuleSet operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.GetProtectConfigurationCountryRuleSet
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/GetProtectConfigurationCountryRuleSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetProtectConfigurationCountryRuleSetResult getProtectConfigurationCountryRuleSet(
+            GetProtectConfigurationCountryRuleSetRequest getProtectConfigurationCountryRuleSetRequest);
 
     /**
      * <p>
@@ -934,6 +1671,31 @@ public interface AmazonPinpointSMSVoiceV2 {
      *      target="_top">AWS API Documentation</a>
      */
     ListPoolOriginationIdentitiesResult listPoolOriginationIdentities(ListPoolOriginationIdentitiesRequest listPoolOriginationIdentitiesRequest);
+
+    /**
+     * <p>
+     * Retreive all of the origination identies that are associated with a registration.
+     * </p>
+     * 
+     * @param listRegistrationAssociationsRequest
+     * @return Result of the ListRegistrationAssociations operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.ListRegistrationAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/ListRegistrationAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListRegistrationAssociationsResult listRegistrationAssociations(ListRegistrationAssociationsRequest listRegistrationAssociationsRequest);
 
     /**
      * <p>
@@ -970,7 +1732,7 @@ public interface AmazonPinpointSMSVoiceV2 {
      * customizable message.
      * </p>
      * <p>
-     * If you specify a keyword that isn't valid, an Error is returned.
+     * If you specify a keyword that isn't valid, an error is returned.
      * </p>
      * 
      * @param putKeywordRequest
@@ -1003,7 +1765,7 @@ public interface AmazonPinpointSMSVoiceV2 {
      * Creates an opted out destination phone number in the opt-out list.
      * </p>
      * <p>
-     * If the destination phone number isn't valid or if the specified opt-out list doesn't exist, an Error is returned.
+     * If the destination phone number isn't valid or if the specified opt-out list doesn't exist, an error is returned.
      * </p>
      * 
      * @param putOptedOutNumberRequest
@@ -1027,11 +1789,39 @@ public interface AmazonPinpointSMSVoiceV2 {
 
     /**
      * <p>
+     * Creates or updates a field value for a registration.
+     * </p>
+     * 
+     * @param putRegistrationFieldValueRequest
+     * @return Result of the PutRegistrationFieldValue operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.PutRegistrationFieldValue
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/PutRegistrationFieldValue"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutRegistrationFieldValueResult putRegistrationFieldValue(PutRegistrationFieldValueRequest putRegistrationFieldValueRequest);
+
+    /**
+     * <p>
      * Releases an existing origination phone number in your account. Once released, a phone number is no longer
      * available for sending messages.
      * </p>
      * <p>
-     * If the origination phone number has deletion protection enabled or is associated with a pool, an Error is
+     * If the origination phone number has deletion protection enabled or is associated with a pool, an error is
      * returned.
      * </p>
      * 
@@ -1057,6 +1847,34 @@ public interface AmazonPinpointSMSVoiceV2 {
      *      target="_top">AWS API Documentation</a>
      */
     ReleasePhoneNumberResult releasePhoneNumber(ReleasePhoneNumberRequest releasePhoneNumberRequest);
+
+    /**
+     * <p>
+     * Releases an existing sender ID in your account.
+     * </p>
+     * 
+     * @param releaseSenderIdRequest
+     * @return Result of the ReleaseSenderId operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.ReleaseSenderId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/ReleaseSenderId"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ReleaseSenderIdResult releaseSenderId(ReleaseSenderIdRequest releaseSenderIdRequest);
 
     /**
      * <p>
@@ -1089,6 +1907,99 @@ public interface AmazonPinpointSMSVoiceV2 {
      *      target="_top">AWS API Documentation</a>
      */
     RequestPhoneNumberResult requestPhoneNumber(RequestPhoneNumberRequest requestPhoneNumberRequest);
+
+    /**
+     * <p>
+     * Request a new sender ID that doesn't require registration.
+     * </p>
+     * 
+     * @param requestSenderIdRequest
+     * @return Result of the RequestSenderId operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause a service quota to be exceeded.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.RequestSenderId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/RequestSenderId"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RequestSenderIdResult requestSenderId(RequestSenderIdRequest requestSenderIdRequest);
+
+    /**
+     * <p>
+     * Before you can send test messages to a verified destination phone number you need to opt-in the verified
+     * destination phone number. Creates a new text message with a verification code and send it to a verified
+     * destination phone number. Once you have the verification code use <a>VerifyDestinationNumber</a> to opt-in the
+     * verified destination phone number to receive messages.
+     * </p>
+     * 
+     * @param sendDestinationNumberVerificationCodeRequest
+     * @return Result of the SendDestinationNumberVerificationCode operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause a service quota to be exceeded.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.SendDestinationNumberVerificationCode
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SendDestinationNumberVerificationCode"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SendDestinationNumberVerificationCodeResult sendDestinationNumberVerificationCode(
+            SendDestinationNumberVerificationCodeRequest sendDestinationNumberVerificationCodeRequest);
+
+    /**
+     * <p>
+     * Creates a new multimedia message (MMS) and sends it to a recipient's phone number.
+     * </p>
+     * 
+     * @param sendMediaMessageRequest
+     * @return Result of the SendMediaMessage operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause a service quota to be exceeded.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.SendMediaMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SendMediaMessage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SendMediaMessageResult sendMediaMessage(SendMediaMessageRequest sendMediaMessageRequest);
 
     /**
      * <p>
@@ -1129,7 +2040,7 @@ public interface AmazonPinpointSMSVoiceV2 {
 
     /**
      * <p>
-     * Allows you to send a request that sends a text message through Amazon Pinpoint. This operation uses <a
+     * Allows you to send a request that sends a voice message through Amazon Pinpoint. This operation uses <a
      * href="http://aws.amazon.com/polly/">Amazon Polly</a> to convert a text script into a voice message.
      * </p>
      * 
@@ -1157,6 +2068,33 @@ public interface AmazonPinpointSMSVoiceV2 {
      *      target="_top">AWS API Documentation</a>
      */
     SendVoiceMessageResult sendVoiceMessage(SendVoiceMessageRequest sendVoiceMessageRequest);
+
+    /**
+     * <p>
+     * Set a protect configuration as your account default. You can only have one account default protect configuration
+     * at a time. The current account default protect configuration is replaced with the provided protect configuration.
+     * </p>
+     * 
+     * @param setAccountDefaultProtectConfigurationRequest
+     * @return Result of the SetAccountDefaultProtectConfiguration operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.SetAccountDefaultProtectConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SetAccountDefaultProtectConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SetAccountDefaultProtectConfigurationResult setAccountDefaultProtectConfiguration(
+            SetAccountDefaultProtectConfigurationRequest setAccountDefaultProtectConfigurationRequest);
 
     /**
      * <p>
@@ -1219,6 +2157,30 @@ public interface AmazonPinpointSMSVoiceV2 {
 
     /**
      * <p>
+     * Sets an account level monthly spend limit override for sending MMS messages. The requested spend limit must be
+     * less than or equal to the <code>MaxLimit</code>, which is set by Amazon Web Services.
+     * </p>
+     * 
+     * @param setMediaMessageSpendLimitOverrideRequest
+     * @return Result of the SetMediaMessageSpendLimitOverride operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.SetMediaMessageSpendLimitOverride
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SetMediaMessageSpendLimitOverride"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SetMediaMessageSpendLimitOverrideResult setMediaMessageSpendLimitOverride(SetMediaMessageSpendLimitOverrideRequest setMediaMessageSpendLimitOverrideRequest);
+
+    /**
+     * <p>
      * Sets an account level monthly spend limit override for sending text messages. The requested spend limit must be
      * less than or equal to the <code>MaxLimit</code>, which is set by Amazon Web Services.
      * </p>
@@ -1264,6 +2226,34 @@ public interface AmazonPinpointSMSVoiceV2 {
      *      target="_top">AWS API Documentation</a>
      */
     SetVoiceMessageSpendLimitOverrideResult setVoiceMessageSpendLimitOverride(SetVoiceMessageSpendLimitOverrideRequest setVoiceMessageSpendLimitOverrideRequest);
+
+    /**
+     * <p>
+     * Submit the specified registration for review and approval.
+     * </p>
+     * 
+     * @param submitRegistrationVersionRequest
+     * @return Result of the SubmitRegistrationVersion operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.SubmitRegistrationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/SubmitRegistrationVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SubmitRegistrationVersionResult submitRegistrationVersion(SubmitRegistrationVersionRequest submitRegistrationVersionRequest);
 
     /**
      * <p>
@@ -1363,7 +2353,7 @@ public interface AmazonPinpointSMSVoiceV2 {
      * disable deletion protection.
      * </p>
      * <p>
-     * If the origination phone number is associated with a pool, an Error is returned.
+     * If the origination phone number is associated with a pool, an error is returned.
      * </p>
      * 
      * @param updatePhoneNumberRequest
@@ -1418,6 +2408,111 @@ public interface AmazonPinpointSMSVoiceV2 {
      *      target="_top">AWS API Documentation</a>
      */
     UpdatePoolResult updatePool(UpdatePoolRequest updatePoolRequest);
+
+    /**
+     * <p>
+     * Update the setting for an existing protect configuration.
+     * </p>
+     * 
+     * @param updateProtectConfigurationRequest
+     * @return Result of the UpdateProtectConfiguration operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.UpdateProtectConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/UpdateProtectConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateProtectConfigurationResult updateProtectConfiguration(UpdateProtectConfigurationRequest updateProtectConfigurationRequest);
+
+    /**
+     * <p>
+     * Update a country rule set to <code>ALLOW</code> or <code>BLOCK</code> messages to be sent to the specified
+     * destination counties. You can update one or multiple countries at a time. The updates are only applied to the
+     * specified NumberCapability type.
+     * </p>
+     * 
+     * @param updateProtectConfigurationCountryRuleSetRequest
+     * @return Result of the UpdateProtectConfigurationCountryRuleSet operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.UpdateProtectConfigurationCountryRuleSet
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/UpdateProtectConfigurationCountryRuleSet"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateProtectConfigurationCountryRuleSetResult updateProtectConfigurationCountryRuleSet(
+            UpdateProtectConfigurationCountryRuleSetRequest updateProtectConfigurationCountryRuleSetRequest);
+
+    /**
+     * <p>
+     * Updates the configuration of an existing sender ID.
+     * </p>
+     * 
+     * @param updateSenderIdRequest
+     * @return Result of the UpdateSenderId operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.UpdateSenderId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/UpdateSenderId"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateSenderIdResult updateSenderId(UpdateSenderIdRequest updateSenderIdRequest);
+
+    /**
+     * <p>
+     * Use the verification code that was received by the verified destination phone number to opt-in the verified
+     * destination phone number to receive more messages.
+     * </p>
+     * 
+     * @param verifyDestinationNumberRequest
+     * @return Result of the VerifyDestinationNumber operation returned by the service.
+     * @throws ThrottlingException
+     *         An error that occurred because too many requests were sent during a certain amount of time.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient permissions to access the resource.
+     * @throws ResourceNotFoundException
+     *         A requested resource couldn't be found.
+     * @throws ValidationException
+     *         A validation exception for a field.
+     * @throws ConflictException
+     *         Your request has conflicting operations. This can occur if you're trying to perform more than one
+     *         operation on the same resource at the same time or it could be that the requested action isn't valid for
+     *         the current state or configuration of the resource.
+     * @throws InternalServerException
+     *         The API encountered an unexpected error and couldn't complete the request. You might be able to
+     *         successfully issue the request again in the future.
+     * @sample AmazonPinpointSMSVoiceV2.VerifyDestinationNumber
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-v2-2022-03-31/VerifyDestinationNumber"
+     *      target="_top">AWS API Documentation</a>
+     */
+    VerifyDestinationNumberResult verifyDestinationNumber(VerifyDestinationNumberRequest verifyDestinationNumberRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

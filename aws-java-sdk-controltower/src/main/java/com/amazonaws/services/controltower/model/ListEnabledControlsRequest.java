@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,13 @@ public class ListEnabledControlsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * An input filter for the <code>ListCEnabledControls</code> API that lets you select the types of control
+     * operations to view.
+     * </p>
+     */
+    private EnabledControlFilter filter;
+    /**
+     * <p>
      * How many results to return per API call.
      * </p>
      */
@@ -39,10 +46,57 @@ public class ListEnabledControlsRequest extends com.amazonaws.AmazonWebServiceRe
     private String nextToken;
     /**
      * <p>
-     * The ARN of the organizational unit.
+     * The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a
+     * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.
      * </p>
      */
     private String targetIdentifier;
+
+    /**
+     * <p>
+     * An input filter for the <code>ListCEnabledControls</code> API that lets you select the types of control
+     * operations to view.
+     * </p>
+     * 
+     * @param filter
+     *        An input filter for the <code>ListCEnabledControls</code> API that lets you select the types of control
+     *        operations to view.
+     */
+
+    public void setFilter(EnabledControlFilter filter) {
+        this.filter = filter;
+    }
+
+    /**
+     * <p>
+     * An input filter for the <code>ListCEnabledControls</code> API that lets you select the types of control
+     * operations to view.
+     * </p>
+     * 
+     * @return An input filter for the <code>ListCEnabledControls</code> API that lets you select the types of control
+     *         operations to view.
+     */
+
+    public EnabledControlFilter getFilter() {
+        return this.filter;
+    }
+
+    /**
+     * <p>
+     * An input filter for the <code>ListCEnabledControls</code> API that lets you select the types of control
+     * operations to view.
+     * </p>
+     * 
+     * @param filter
+     *        An input filter for the <code>ListCEnabledControls</code> API that lets you select the types of control
+     *        operations to view.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListEnabledControlsRequest withFilter(EnabledControlFilter filter) {
+        setFilter(filter);
+        return this;
+    }
 
     /**
      * <p>
@@ -126,11 +180,13 @@ public class ListEnabledControlsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the organizational unit.
+     * The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a
+     * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.
      * </p>
      * 
      * @param targetIdentifier
-     *        The ARN of the organizational unit.
+     *        The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see
+     *        <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.
      */
 
     public void setTargetIdentifier(String targetIdentifier) {
@@ -139,10 +195,13 @@ public class ListEnabledControlsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the organizational unit.
+     * The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a
+     * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.
      * </p>
      * 
-     * @return The ARN of the organizational unit.
+     * @return The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see
+     *         <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview
+     *         page</a>.
      */
 
     public String getTargetIdentifier() {
@@ -151,11 +210,13 @@ public class ListEnabledControlsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the organizational unit.
+     * The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a
+     * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.
      * </p>
      * 
      * @param targetIdentifier
-     *        The ARN of the organizational unit.
+     *        The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see
+     *        <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -176,6 +237,8 @@ public class ListEnabledControlsRequest extends com.amazonaws.AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getFilter() != null)
+            sb.append("Filter: ").append(getFilter()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
@@ -196,6 +259,10 @@ public class ListEnabledControlsRequest extends com.amazonaws.AmazonWebServiceRe
         if (obj instanceof ListEnabledControlsRequest == false)
             return false;
         ListEnabledControlsRequest other = (ListEnabledControlsRequest) obj;
+        if (other.getFilter() == null ^ this.getFilter() == null)
+            return false;
+        if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
+            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -216,6 +283,7 @@ public class ListEnabledControlsRequest extends com.amazonaws.AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getTargetIdentifier() == null) ? 0 : getTargetIdentifier().hashCode());

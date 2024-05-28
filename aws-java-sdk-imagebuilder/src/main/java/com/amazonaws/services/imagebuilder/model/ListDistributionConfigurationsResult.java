@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,8 +38,8 @@ public class ListDistributionConfigurationsResult extends com.amazonaws.AmazonWe
     private java.util.List<DistributionConfigurationSummary> distributionConfigurationSummaryList;
     /**
      * <p>
-     * The next token used for paginated responses. When this is not empty, there are additional elements that the
-     * service has not included in this request. Use this token with the next request to retrieve additional objects.
+     * The next token used for paginated responses. When this field isn't empty, there are additional elements that the
+     * service hasn't included in this request. Use this token with the next request to retrieve additional objects.
      * </p>
      */
     private String nextToken;
@@ -159,14 +159,14 @@ public class ListDistributionConfigurationsResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The next token used for paginated responses. When this is not empty, there are additional elements that the
-     * service has not included in this request. Use this token with the next request to retrieve additional objects.
+     * The next token used for paginated responses. When this field isn't empty, there are additional elements that the
+     * service hasn't included in this request. Use this token with the next request to retrieve additional objects.
      * </p>
      * 
      * @param nextToken
-     *        The next token used for paginated responses. When this is not empty, there are additional elements that
-     *        the service has not included in this request. Use this token with the next request to retrieve additional
-     *        objects.
+     *        The next token used for paginated responses. When this field isn't empty, there are additional elements
+     *        that the service hasn't included in this request. Use this token with the next request to retrieve
+     *        additional objects.
      */
 
     public void setNextToken(String nextToken) {
@@ -175,13 +175,13 @@ public class ListDistributionConfigurationsResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The next token used for paginated responses. When this is not empty, there are additional elements that the
-     * service has not included in this request. Use this token with the next request to retrieve additional objects.
+     * The next token used for paginated responses. When this field isn't empty, there are additional elements that the
+     * service hasn't included in this request. Use this token with the next request to retrieve additional objects.
      * </p>
      * 
-     * @return The next token used for paginated responses. When this is not empty, there are additional elements that
-     *         the service has not included in this request. Use this token with the next request to retrieve additional
-     *         objects.
+     * @return The next token used for paginated responses. When this field isn't empty, there are additional elements
+     *         that the service hasn't included in this request. Use this token with the next request to retrieve
+     *         additional objects.
      */
 
     public String getNextToken() {
@@ -190,14 +190,14 @@ public class ListDistributionConfigurationsResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The next token used for paginated responses. When this is not empty, there are additional elements that the
-     * service has not included in this request. Use this token with the next request to retrieve additional objects.
+     * The next token used for paginated responses. When this field isn't empty, there are additional elements that the
+     * service hasn't included in this request. Use this token with the next request to retrieve additional objects.
      * </p>
      * 
      * @param nextToken
-     *        The next token used for paginated responses. When this is not empty, there are additional elements that
-     *        the service has not included in this request. Use this token with the next request to retrieve additional
-     *        objects.
+     *        The next token used for paginated responses. When this field isn't empty, there are additional elements
+     *        that the service hasn't included in this request. Use this token with the next request to retrieve
+     *        additional objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

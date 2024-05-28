@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Represents the input for a request operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSessionQueue" target="_top">AWS
  *      API Documentation</a>
@@ -38,7 +35,8 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The maximum time, in seconds, that a new game session placement request remains in the queue. When a request
-     * exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     * exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status. By default, this
+     * property is set to <code>600</code>.
      * </p>
      */
     private Integer timeoutInSeconds;
@@ -141,12 +139,14 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The maximum time, in seconds, that a new game session placement request remains in the queue. When a request
-     * exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     * exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status. By default, this
+     * property is set to <code>600</code>.
      * </p>
      * 
      * @param timeoutInSeconds
      *        The maximum time, in seconds, that a new game session placement request remains in the queue. When a
-     *        request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     *        request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status. By
+     *        default, this property is set to <code>600</code>.
      */
 
     public void setTimeoutInSeconds(Integer timeoutInSeconds) {
@@ -156,11 +156,13 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The maximum time, in seconds, that a new game session placement request remains in the queue. When a request
-     * exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     * exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status. By default, this
+     * property is set to <code>600</code>.
      * </p>
      * 
      * @return The maximum time, in seconds, that a new game session placement request remains in the queue. When a
-     *         request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     *         request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status. By
+     *         default, this property is set to <code>600</code>.
      */
 
     public Integer getTimeoutInSeconds() {
@@ -170,12 +172,14 @@ public class UpdateGameSessionQueueRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The maximum time, in seconds, that a new game session placement request remains in the queue. When a request
-     * exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     * exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status. By default, this
+     * property is set to <code>600</code>.
      * </p>
      * 
      * @param timeoutInSeconds
      *        The maximum time, in seconds, that a new game session placement request remains in the queue. When a
-     *        request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status.
+     *        request exceeds this time, the game session placement changes to a <code>TIMED_OUT</code> status. By
+     *        default, this property is set to <code>600</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

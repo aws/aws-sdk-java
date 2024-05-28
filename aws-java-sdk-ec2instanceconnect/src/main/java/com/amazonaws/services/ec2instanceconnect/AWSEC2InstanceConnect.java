@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,18 @@ import com.amazonaws.services.ec2instanceconnect.model.*;
  * </p>
  * <p>
  * <p>
- * Amazon EC2 Instance Connect enables system administrators to publish one-time use SSH public keys to EC2, providing
- * users a simple and secure way to connect to their instances.
+ * This is the <i> Amazon EC2 Instance Connect API Reference</i>. It provides descriptions, syntax, and usage examples
+ * for each of the actions for Amazon EC2 Instance Connect. Amazon EC2 Instance Connect enables system administrators to
+ * publish one-time use SSH public keys to EC2, providing users a simple and secure way to connect to their instances.
+ * </p>
+ * <p>
+ * To view the Amazon EC2 Instance Connect content in the <i> Amazon EC2 User Guide</i>, see <a
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect.html">Connect to your
+ * Linux instance using EC2 Instance Connect</a>.
+ * </p>
+ * <p>
+ * For Amazon EC2 APIs, see the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Welcome.html">Amazon EC2
+ * API Reference</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -112,6 +122,9 @@ public interface AWSEC2InstanceConnect {
      *         instance is not supported. If the instance is stopped, start your instance, and try to connect again.
      * @throws EC2InstanceUnavailableException
      *         The instance is currently unavailable. Wait a few minutes and try again.
+     * @throws SerialConsoleSessionUnsupportedException
+     *         Your instance's BIOS version is unsupported for serial console connection. Reboot your instance to update
+     *         its BIOS, and then try again to connect.
      * @sample AWSEC2InstanceConnect.SendSerialConsoleSSHPublicKey
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-instance-connect-2018-04-02/SendSerialConsoleSSHPublicKey"

@@ -22,7 +22,6 @@ import static com.github.tomakehurst.wiremock.client.WireMock.stubFor;
 import static com.github.tomakehurst.wiremock.client.WireMock.urlPathEqualTo;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.hasItem;
-import static org.hamcrest.Matchers.hasProperty;
 import static org.junit.Assert.assertThat;
 
 import com.amazonaws.AmazonServiceException;
@@ -39,7 +38,6 @@ import java.util.Map;
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.log4j.Level;
 import org.apache.log4j.spi.LoggingEvent;
-import org.hamcrest.Matcher;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -80,8 +78,8 @@ public class DefaultErrorResponseHandlerIntegrationTest extends WireMockTestBase
 
         executeRequest();
 
-        Matcher<Iterable<? super LoggingEvent>> matcher = hasItem(hasEventWithContent("Invocation Id"));
-        assertThat(debugEvents(), matcher);
+        List<String> debugMessages = debugMessages();
+        assertThat(debugMessages, hasItem(containsString("Invocation Id")));
     }
 
     @Test
@@ -106,10 +104,7 @@ public class DefaultErrorResponseHandlerIntegrationTest extends WireMockTestBase
 
         client.requestExecutionBuilder().errorResponseHandler(sutWithMap).request(newGetRequest(RESOURCE)).execute();
 
-
-
-        Matcher<Iterable<? super LoggingEvent>> matcher = hasItem(hasEventWithContent("Invocation Id"));
-        assertThat(debugEvents(), matcher);
+        assertThat(debugMessages(), hasItem(containsString("Invocation Id")));
     }
 
     @Test
@@ -131,8 +126,6 @@ public class DefaultErrorResponseHandlerIntegrationTest extends WireMockTestBase
                         + "</Response>\n")
                 .withStatus(418)));
         client.requestExecutionBuilder().errorResponseHandler(sutWithMap).request(newGetRequest(RESOURCE)).execute();
-        Matcher<Iterable<? super LoggingEvent>> matcher = hasItem(hasEventWithContent("Invocation Id"));
-        assertThat(debugEvents(), matcher);
     }
 
     @Test
@@ -154,8 +147,6 @@ public class DefaultErrorResponseHandlerIntegrationTest extends WireMockTestBase
                         + "</Response>\n")
                 .withStatus(418)));
         client.requestExecutionBuilder().errorResponseHandler(sutWithMap).request(newGetRequest(RESOURCE)).execute();
-        Matcher<Iterable<? super LoggingEvent>> matcher = hasItem(hasEventWithContent("Invocation Id"));
-        assertThat(debugEvents(), matcher);
     }
 
 
@@ -167,8 +158,7 @@ public class DefaultErrorResponseHandlerIntegrationTest extends WireMockTestBase
 
         executeRequest();
 
-        Matcher<Iterable<? super LoggingEvent>> matcher = hasItem(hasEventWithContent(content));
-        assertThat(debugEvents(), matcher);
+        assertThat(debugMessages(), hasItem(containsString(content)));
     }
 
     @Test
@@ -179,8 +169,7 @@ public class DefaultErrorResponseHandlerIntegrationTest extends WireMockTestBase
 
         executeRequest();
 
-        Matcher<Iterable<? super LoggingEvent>> matcher = hasItem(hasEventWithContent(requestId));
-        assertThat(debugEvents(), matcher);
+        assertThat(debugMessages(), hasItem(containsString(requestId)));
     }
 
     private void executeRequest() {
@@ -212,10 +201,13 @@ public class DefaultErrorResponseHandlerIntegrationTest extends WireMockTestBase
         return events;
     }
 
-    private org.hamcrest.Matcher<? super LoggingEvent> hasEventWithContent(String content) {
-        return hasProperty("message", containsString(content));
+    private List<String> debugMessages() {
+        List<String> messages = new ArrayList<String>();
+        for (LoggingEvent e : debugEvents()) {
+            messages.add(e.getMessage().toString());
+        }
+        return messages;
     }
-
 
     public static class CustomException extends AmazonServiceException {
 
@@ -266,6 +258,5 @@ public class DefaultErrorResponseHandlerIntegrationTest extends WireMockTestBase
             return e;
         }
     }
-
 }
 

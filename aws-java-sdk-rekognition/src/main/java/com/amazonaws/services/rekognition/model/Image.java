@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,7 +54,8 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Blob of image bytes up to 5 MBs.
+     * Blob of image bytes up to 5 MBs. Note that the maximum image size you can pass to <code>DetectCustomLabels</code>
+     * is 4MB.
      * </p>
      */
     private java.nio.ByteBuffer bytes;
@@ -67,7 +68,8 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Blob of image bytes up to 5 MBs.
+     * Blob of image bytes up to 5 MBs. Note that the maximum image size you can pass to <code>DetectCustomLabels</code>
+     * is 4MB.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -81,7 +83,8 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param bytes
-     *        Blob of image bytes up to 5 MBs.
+     *        Blob of image bytes up to 5 MBs. Note that the maximum image size you can pass to
+     *        <code>DetectCustomLabels</code> is 4MB.
      */
 
     public void setBytes(java.nio.ByteBuffer bytes) {
@@ -90,7 +93,8 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Blob of image bytes up to 5 MBs.
+     * Blob of image bytes up to 5 MBs. Note that the maximum image size you can pass to <code>DetectCustomLabels</code>
+     * is 4MB.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -100,7 +104,8 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
      * {@code position}.
      * </p>
      * 
-     * @return Blob of image bytes up to 5 MBs.
+     * @return Blob of image bytes up to 5 MBs. Note that the maximum image size you can pass to
+     *         <code>DetectCustomLabels</code> is 4MB.
      */
 
     public java.nio.ByteBuffer getBytes() {
@@ -109,7 +114,8 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Blob of image bytes up to 5 MBs.
+     * Blob of image bytes up to 5 MBs. Note that the maximum image size you can pass to <code>DetectCustomLabels</code>
+     * is 4MB.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -123,7 +129,8 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param bytes
-     *        Blob of image bytes up to 5 MBs.
+     *        Blob of image bytes up to 5 MBs. Note that the maximum image size you can pass to
+     *        <code>DetectCustomLabels</code> is 4MB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

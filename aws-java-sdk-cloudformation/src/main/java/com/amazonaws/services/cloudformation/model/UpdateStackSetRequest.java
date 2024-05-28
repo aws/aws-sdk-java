@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * The structure that contains the template body, with a minimum length of 1 byte and a maximum length of 51,200
      * bytes. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-     * in the CloudFormation User Guide.
+     * in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
      * Conditional: You must specify only one of the following parameters: <code>TemplateBody</code> or
@@ -55,7 +55,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * The location of the file that contains the template body. The URL must point to a template (maximum size: 460,800
      * bytes) that is located in an Amazon S3 bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-     * in the CloudFormation User Guide.
+     * in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
      * Conditional: You must specify only one of the following parameters: <code>TemplateBody</code> or
@@ -123,38 +123,41 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * AWS::IAM::AccessKey</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::
+     * IAM::AccessKey</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * AWS::IAM::Group</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::
+     * Group</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     * AWS::IAM::InstanceProfile</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS
+     * ::IAM::InstanceProfile</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * AWS::IAM::Policy</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::
+     * Policy</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * AWS::IAM::Role</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role
+     * </a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * AWS::IAM::User</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::
+     * User</a>
      * </p>
      * </li>
      * <li>
@@ -166,7 +169,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in CloudFormation Templates</a>.
      * </p>
      * </li>
@@ -178,16 +181,16 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * Some templates reference macros. If your stack set template references one or more macros, you must update the
      * stack set directly from the processed template, without first reviewing the resulting changes in a change set. To
      * update the stack set directly, you must acknowledge this capability. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
      * Macros to Perform Custom Processing on Templates</a>.
      * </p>
      * <important>
      * <p>
      * Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
      * includes the <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability
      * for a stack set with service-managed permissions, if you reference a macro in your template the stack set
      * operation will fail.
@@ -249,7 +252,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Specify an IAM role only if you are using customized administrator roles to control which users or groups can
      * manage specific stack sets within the same administrator account. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting Permissions
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting Permissions
      * for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
@@ -503,7 +506,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * The structure that contains the template body, with a minimum length of 1 byte and a maximum length of 51,200
      * bytes. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-     * in the CloudFormation User Guide.
+     * in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
      * Conditional: You must specify only one of the following parameters: <code>TemplateBody</code> or
@@ -514,7 +517,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        The structure that contains the template body, with a minimum length of 1 byte and a maximum length of
      *        51,200 bytes. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *        Anatomy</a> in the CloudFormation User Guide.</p>
+     *        Anatomy</a> in the <i>CloudFormation User Guide</i>.</p>
      *        <p>
      *        Conditional: You must specify only one of the following parameters: <code>TemplateBody</code> or
      *        <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true.
@@ -529,7 +532,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * The structure that contains the template body, with a minimum length of 1 byte and a maximum length of 51,200
      * bytes. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-     * in the CloudFormation User Guide.
+     * in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
      * Conditional: You must specify only one of the following parameters: <code>TemplateBody</code> or
@@ -539,7 +542,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * @return The structure that contains the template body, with a minimum length of 1 byte and a maximum length of
      *         51,200 bytes. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *         Anatomy</a> in the CloudFormation User Guide.</p>
+     *         Anatomy</a> in the <i>CloudFormation User Guide</i>.</p>
      *         <p>
      *         Conditional: You must specify only one of the following parameters: <code>TemplateBody</code> or
      *         <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true.
@@ -554,7 +557,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * The structure that contains the template body, with a minimum length of 1 byte and a maximum length of 51,200
      * bytes. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-     * in the CloudFormation User Guide.
+     * in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
      * Conditional: You must specify only one of the following parameters: <code>TemplateBody</code> or
@@ -565,7 +568,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        The structure that contains the template body, with a minimum length of 1 byte and a maximum length of
      *        51,200 bytes. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *        Anatomy</a> in the CloudFormation User Guide.</p>
+     *        Anatomy</a> in the <i>CloudFormation User Guide</i>.</p>
      *        <p>
      *        Conditional: You must specify only one of the following parameters: <code>TemplateBody</code> or
      *        <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true.
@@ -582,7 +585,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * The location of the file that contains the template body. The URL must point to a template (maximum size: 460,800
      * bytes) that is located in an Amazon S3 bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-     * in the CloudFormation User Guide.
+     * in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
      * Conditional: You must specify only one of the following parameters: <code>TemplateBody</code> or
@@ -594,7 +597,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        460,800 bytes) that is located in an Amazon S3 bucket or a Systems Manager document. For more information,
      *        see <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *        Anatomy</a> in the CloudFormation User Guide.</p>
+     *        Anatomy</a> in the <i>CloudFormation User Guide</i>.</p>
      *        <p>
      *        Conditional: You must specify only one of the following parameters: <code>TemplateBody</code> or
      *        <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true.
@@ -609,7 +612,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * The location of the file that contains the template body. The URL must point to a template (maximum size: 460,800
      * bytes) that is located in an Amazon S3 bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-     * in the CloudFormation User Guide.
+     * in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
      * Conditional: You must specify only one of the following parameters: <code>TemplateBody</code> or
@@ -620,7 +623,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *         460,800 bytes) that is located in an Amazon S3 bucket or a Systems Manager document. For more
      *         information, see <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *         Anatomy</a> in the CloudFormation User Guide.</p>
+     *         Anatomy</a> in the <i>CloudFormation User Guide</i>.</p>
      *         <p>
      *         Conditional: You must specify only one of the following parameters: <code>TemplateBody</code> or
      *         <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true.
@@ -635,7 +638,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * The location of the file that contains the template body. The URL must point to a template (maximum size: 460,800
      * bytes) that is located in an Amazon S3 bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-     * in the CloudFormation User Guide.
+     * in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
      * Conditional: You must specify only one of the following parameters: <code>TemplateBody</code> or
@@ -647,7 +650,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        460,800 bytes) that is located in an Amazon S3 bucket or a Systems Manager document. For more information,
      *        see <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *        Anatomy</a> in the CloudFormation User Guide.</p>
+     *        Anatomy</a> in the <i>CloudFormation User Guide</i>.</p>
      *        <p>
      *        Conditional: You must specify only one of the following parameters: <code>TemplateBody</code> or
      *        <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true.
@@ -856,38 +859,41 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * AWS::IAM::AccessKey</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::
+     * IAM::AccessKey</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * AWS::IAM::Group</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::
+     * Group</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     * AWS::IAM::InstanceProfile</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS
+     * ::IAM::InstanceProfile</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * AWS::IAM::Policy</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::
+     * Policy</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * AWS::IAM::Role</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role
+     * </a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * AWS::IAM::User</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::
+     * User</a>
      * </p>
      * </li>
      * <li>
@@ -899,7 +905,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in CloudFormation Templates</a>.
      * </p>
      * </li>
@@ -911,16 +917,16 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * Some templates reference macros. If your stack set template references one or more macros, you must update the
      * stack set directly from the processed template, without first reviewing the resulting changes in a change set. To
      * update the stack set directly, you must acknowledge this capability. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
      * Macros to Perform Custom Processing on Templates</a>.
      * </p>
      * <important>
      * <p>
      * Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
      * includes the <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability
      * for a stack set with service-managed permissions, if you reference a macro in your template the stack set
      * operation will fail.
@@ -970,21 +976,22 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <li>
      *         <p>
      *         <a
-     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     *         AWS::IAM::AccessKey</a>
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html"
+     *         >AWS::IAM::AccessKey</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     *         AWS::IAM::Group</a>
+     *         <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS
+     *         ::IAM::Group</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <a href=
-     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     *         AWS::IAM::InstanceProfile</a>
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"
+     *         >AWS::IAM::InstanceProfile</a>
      *         </p>
      *         </li>
      *         <li>
@@ -995,27 +1002,27 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
-     *         <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     *         AWS::IAM::Role</a>
+     *         <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::
+     *         IAM::Role</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     *         AWS::IAM::User</a>
+     *         <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS
+     *         ::IAM::User</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <a href=
-     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-     *         AWS::IAM::UserToGroupAddition</a>
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
+     *         >AWS::IAM::UserToGroupAddition</a>
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *         >Acknowledging IAM Resources in CloudFormation Templates</a>.
      *         </p>
      *         </li>
@@ -1028,16 +1035,16 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *         update the stack set directly from the processed template, without first reviewing the resulting changes
      *         in a change set. To update the stack set directly, you must acknowledge this capability. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      *         CloudFormation Macros to Perform Custom Processing on Templates</a>.
      *         </p>
      *         <important>
      *         <p>
      *         Stack sets with service-managed permissions do not currently support the use of macros in templates.
      *         (This includes the <a href=
-     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      *         >AWS::Include</a> and <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *         >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this
      *         capability for a stack set with service-managed permissions, if you reference a macro in your template
      *         the stack set operation will fail.
@@ -1097,38 +1104,41 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * AWS::IAM::AccessKey</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::
+     * IAM::AccessKey</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * AWS::IAM::Group</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::
+     * Group</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     * AWS::IAM::InstanceProfile</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS
+     * ::IAM::InstanceProfile</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * AWS::IAM::Policy</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::
+     * Policy</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * AWS::IAM::Role</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role
+     * </a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * AWS::IAM::User</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::
+     * User</a>
      * </p>
      * </li>
      * <li>
@@ -1140,7 +1150,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in CloudFormation Templates</a>.
      * </p>
      * </li>
@@ -1152,16 +1162,16 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * Some templates reference macros. If your stack set template references one or more macros, you must update the
      * stack set directly from the processed template, without first reviewing the resulting changes in a change set. To
      * update the stack set directly, you must acknowledge this capability. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
      * Macros to Perform Custom Processing on Templates</a>.
      * </p>
      * <important>
      * <p>
      * Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
      * includes the <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability
      * for a stack set with service-managed permissions, if you reference a macro in your template the stack set
      * operation will fail.
@@ -1218,46 +1228,48 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     *        AWS::IAM::Group</a>
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS
+     *        ::IAM::Group</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     *        AWS::IAM::InstanceProfile</a>
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"
+     *        >AWS::IAM::InstanceProfile</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     *        AWS::IAM::Policy</a>
+     *        <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS
+     *        ::IAM::Policy</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     *        AWS::IAM::Role</a>
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::
+     *        IAM::Role</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     *        AWS::IAM::User</a>
+     *        <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::
+     *        IAM::User</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-     *        AWS::IAM::UserToGroupAddition</a>
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
+     *        >AWS::IAM::UserToGroupAddition</a>
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *        >Acknowledging IAM Resources in CloudFormation Templates</a>.
      *        </p>
      *        </li>
@@ -1269,16 +1281,16 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Some templates reference macros. If your stack set template references one or more macros, you must update
      *        the stack set directly from the processed template, without first reviewing the resulting changes in a
      *        change set. To update the stack set directly, you must acknowledge this capability. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     *        see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      *        CloudFormation Macros to Perform Custom Processing on Templates</a>.
      *        </p>
      *        <important>
      *        <p>
      *        Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
      *        includes the <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      *        >AWS::Include</a> and <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *        >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this
      *        capability for a stack set with service-managed permissions, if you reference a macro in your template the
      *        stack set operation will fail.
@@ -1340,38 +1352,41 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * AWS::IAM::AccessKey</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::
+     * IAM::AccessKey</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * AWS::IAM::Group</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::
+     * Group</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     * AWS::IAM::InstanceProfile</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS
+     * ::IAM::InstanceProfile</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * AWS::IAM::Policy</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::
+     * Policy</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * AWS::IAM::Role</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role
+     * </a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * AWS::IAM::User</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::
+     * User</a>
      * </p>
      * </li>
      * <li>
@@ -1383,7 +1398,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in CloudFormation Templates</a>.
      * </p>
      * </li>
@@ -1395,16 +1410,16 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * Some templates reference macros. If your stack set template references one or more macros, you must update the
      * stack set directly from the processed template, without first reviewing the resulting changes in a change set. To
      * update the stack set directly, you must acknowledge this capability. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
      * Macros to Perform Custom Processing on Templates</a>.
      * </p>
      * <important>
      * <p>
      * Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
      * includes the <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability
      * for a stack set with service-managed permissions, if you reference a macro in your template the stack set
      * operation will fail.
@@ -1466,46 +1481,48 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     *        AWS::IAM::Group</a>
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS
+     *        ::IAM::Group</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     *        AWS::IAM::InstanceProfile</a>
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"
+     *        >AWS::IAM::InstanceProfile</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     *        AWS::IAM::Policy</a>
+     *        <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS
+     *        ::IAM::Policy</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     *        AWS::IAM::Role</a>
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::
+     *        IAM::Role</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     *        AWS::IAM::User</a>
+     *        <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::
+     *        IAM::User</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-     *        AWS::IAM::UserToGroupAddition</a>
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
+     *        >AWS::IAM::UserToGroupAddition</a>
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *        >Acknowledging IAM Resources in CloudFormation Templates</a>.
      *        </p>
      *        </li>
@@ -1517,16 +1534,16 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Some templates reference macros. If your stack set template references one or more macros, you must update
      *        the stack set directly from the processed template, without first reviewing the resulting changes in a
      *        change set. To update the stack set directly, you must acknowledge this capability. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     *        see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      *        CloudFormation Macros to Perform Custom Processing on Templates</a>.
      *        </p>
      *        <important>
      *        <p>
      *        Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
      *        includes the <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      *        >AWS::Include</a> and <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *        >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this
      *        capability for a stack set with service-managed permissions, if you reference a macro in your template the
      *        stack set operation will fail.
@@ -1590,38 +1607,41 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * AWS::IAM::AccessKey</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::
+     * IAM::AccessKey</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * AWS::IAM::Group</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::
+     * Group</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     * AWS::IAM::InstanceProfile</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS
+     * ::IAM::InstanceProfile</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * AWS::IAM::Policy</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::
+     * Policy</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * AWS::IAM::Role</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role
+     * </a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * AWS::IAM::User</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::
+     * User</a>
      * </p>
      * </li>
      * <li>
@@ -1633,7 +1653,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in CloudFormation Templates</a>.
      * </p>
      * </li>
@@ -1645,16 +1665,16 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * Some templates reference macros. If your stack set template references one or more macros, you must update the
      * stack set directly from the processed template, without first reviewing the resulting changes in a change set. To
      * update the stack set directly, you must acknowledge this capability. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
      * Macros to Perform Custom Processing on Templates</a>.
      * </p>
      * <important>
      * <p>
      * Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
      * includes the <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability
      * for a stack set with service-managed permissions, if you reference a macro in your template the stack set
      * operation will fail.
@@ -1711,46 +1731,48 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     *        AWS::IAM::Group</a>
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS
+     *        ::IAM::Group</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     *        AWS::IAM::InstanceProfile</a>
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"
+     *        >AWS::IAM::InstanceProfile</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     *        AWS::IAM::Policy</a>
+     *        <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS
+     *        ::IAM::Policy</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     *        AWS::IAM::Role</a>
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::
+     *        IAM::Role</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     *        AWS::IAM::User</a>
+     *        <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::
+     *        IAM::User</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-     *        AWS::IAM::UserToGroupAddition</a>
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
+     *        >AWS::IAM::UserToGroupAddition</a>
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *        >Acknowledging IAM Resources in CloudFormation Templates</a>.
      *        </p>
      *        </li>
@@ -1762,16 +1784,16 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Some templates reference macros. If your stack set template references one or more macros, you must update
      *        the stack set directly from the processed template, without first reviewing the resulting changes in a
      *        change set. To update the stack set directly, you must acknowledge this capability. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     *        see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      *        CloudFormation Macros to Perform Custom Processing on Templates</a>.
      *        </p>
      *        <important>
      *        <p>
      *        Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
      *        includes the <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      *        >AWS::Include</a> and <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *        >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this
      *        capability for a stack set with service-managed permissions, if you reference a macro in your template the
      *        stack set operation will fail.
@@ -1830,38 +1852,41 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * AWS::IAM::AccessKey</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::
+     * IAM::AccessKey</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * AWS::IAM::Group</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::
+     * Group</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     * AWS::IAM::InstanceProfile</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS
+     * ::IAM::InstanceProfile</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * AWS::IAM::Policy</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::
+     * Policy</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * AWS::IAM::Role</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role
+     * </a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * AWS::IAM::User</a>
+     * <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::
+     * User</a>
      * </p>
      * </li>
      * <li>
@@ -1873,7 +1898,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in CloudFormation Templates</a>.
      * </p>
      * </li>
@@ -1885,16 +1910,16 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * Some templates reference macros. If your stack set template references one or more macros, you must update the
      * stack set directly from the processed template, without first reviewing the resulting changes in a change set. To
      * update the stack set directly, you must acknowledge this capability. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation
      * Macros to Perform Custom Processing on Templates</a>.
      * </p>
      * <important>
      * <p>
      * Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
      * includes the <a href=
-     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      * >AWS::Include</a> and <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability
      * for a stack set with service-managed permissions, if you reference a macro in your template the stack set
      * operation will fail.
@@ -1951,46 +1976,48 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     *        AWS::IAM::Group</a>
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS
+     *        ::IAM::Group</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     *        AWS::IAM::InstanceProfile</a>
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"
+     *        >AWS::IAM::InstanceProfile</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     *        AWS::IAM::Policy</a>
+     *        <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS
+     *        ::IAM::Policy</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     *        AWS::IAM::Role</a>
+     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::
+     *        IAM::Role</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     *        AWS::IAM::User</a>
+     *        <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::
+     *        IAM::User</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-     *        AWS::IAM::UserToGroupAddition</a>
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"
+     *        >AWS::IAM::UserToGroupAddition</a>
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *        >Acknowledging IAM Resources in CloudFormation Templates</a>.
      *        </p>
      *        </li>
@@ -2002,16 +2029,16 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Some templates reference macros. If your stack set template references one or more macros, you must update
      *        the stack set directly from the processed template, without first reviewing the resulting changes in a
      *        change set. To update the stack set directly, you must acknowledge this capability. For more information,
-     *        see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+     *        see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      *        CloudFormation Macros to Perform Custom Processing on Templates</a>.
      *        </p>
      *        <important>
      *        <p>
      *        Stack sets with service-managed permissions do not currently support the use of macros in templates. (This
      *        includes the <a href=
-     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
      *        >AWS::Include</a> and <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *        >AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this
      *        capability for a stack set with service-managed permissions, if you reference a macro in your template the
      *        stack set operation will fail.
@@ -2422,7 +2449,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Specify an IAM role only if you are using customized administrator roles to control which users or groups can
      * manage specific stack sets within the same administrator account. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting Permissions
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting Permissions
      * for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
@@ -2435,7 +2462,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        Specify an IAM role only if you are using customized administrator roles to control which users or groups
      *        can manage specific stack sets within the same administrator account. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting
      *        Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.
      *        </p>
      *        <p>
@@ -2455,7 +2482,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Specify an IAM role only if you are using customized administrator roles to control which users or groups can
      * manage specific stack sets within the same administrator account. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting Permissions
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting Permissions
      * for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
@@ -2467,7 +2494,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <p>
      *         Specify an IAM role only if you are using customized administrator roles to control which users or groups
      *         can manage specific stack sets within the same administrator account. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting
      *         Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.
      *         </p>
      *         <p>
@@ -2487,7 +2514,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Specify an IAM role only if you are using customized administrator roles to control which users or groups can
      * manage specific stack sets within the same administrator account. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting Permissions
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting Permissions
      * for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
@@ -2500,7 +2527,7 @@ public class UpdateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        Specify an IAM role only if you are using customized administrator roles to control which users or groups
      *        can manage specific stack sets within the same administrator account. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting
      *        Permissions for Stack Set Operations</a> in the <i>CloudFormation User Guide</i>.
      *        </p>
      *        <p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -295,6 +295,19 @@ public class AbstractAWSPrivate5GAsync extends AbstractAWSPrivate5G implements A
 
     @Override
     public java.util.concurrent.Future<PingResult> pingAsync(PingRequest request, com.amazonaws.handlers.AsyncHandler<PingRequest, PingResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartNetworkResourceUpdateResult> startNetworkResourceUpdateAsync(StartNetworkResourceUpdateRequest request) {
+
+        return startNetworkResourceUpdateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartNetworkResourceUpdateResult> startNetworkResourceUpdateAsync(StartNetworkResourceUpdateRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartNetworkResourceUpdateRequest, StartNetworkResourceUpdateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

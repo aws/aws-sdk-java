@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RecoveryInstance implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The version of the DRS agent installed on the recovery instance
+     * </p>
+     */
+    private String agentVersion;
     /**
      * <p>
      * The ARN of the Recovery Instance.
@@ -72,6 +78,18 @@ public class RecoveryInstance implements Serializable, Cloneable, StructuredPojo
     private String jobID;
     /**
      * <p>
+     * AWS availability zone associated with the recovery instance.
+     * </p>
+     */
+    private String originAvailabilityZone;
+    /**
+     * <p>
+     * Environment (On Premises / AWS) of the instance that the recovery instance originated from.
+     * </p>
+     */
+    private String originEnvironment;
+    /**
+     * <p>
      * The date and time of the Point in Time (PIT) snapshot that this Recovery Instance was launched from.
      * </p>
      */
@@ -90,6 +108,12 @@ public class RecoveryInstance implements Serializable, Cloneable, StructuredPojo
     private RecoveryInstanceProperties recoveryInstanceProperties;
     /**
      * <p>
+     * The ARN of the source Outpost
+     * </p>
+     */
+    private String sourceOutpostArn;
+    /**
+     * <p>
      * The Source Server ID that this Recovery Instance is associated with.
      * </p>
      */
@@ -100,6 +124,46 @@ public class RecoveryInstance implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private java.util.Map<String, String> tags;
+
+    /**
+     * <p>
+     * The version of the DRS agent installed on the recovery instance
+     * </p>
+     * 
+     * @param agentVersion
+     *        The version of the DRS agent installed on the recovery instance
+     */
+
+    public void setAgentVersion(String agentVersion) {
+        this.agentVersion = agentVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the DRS agent installed on the recovery instance
+     * </p>
+     * 
+     * @return The version of the DRS agent installed on the recovery instance
+     */
+
+    public String getAgentVersion() {
+        return this.agentVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the DRS agent installed on the recovery instance
+     * </p>
+     * 
+     * @param agentVersion
+     *        The version of the DRS agent installed on the recovery instance
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecoveryInstance withAgentVersion(String agentVersion) {
+        setAgentVersion(agentVersion);
+        return this;
+    }
 
     /**
      * <p>
@@ -414,6 +478,105 @@ public class RecoveryInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * AWS availability zone associated with the recovery instance.
+     * </p>
+     * 
+     * @param originAvailabilityZone
+     *        AWS availability zone associated with the recovery instance.
+     */
+
+    public void setOriginAvailabilityZone(String originAvailabilityZone) {
+        this.originAvailabilityZone = originAvailabilityZone;
+    }
+
+    /**
+     * <p>
+     * AWS availability zone associated with the recovery instance.
+     * </p>
+     * 
+     * @return AWS availability zone associated with the recovery instance.
+     */
+
+    public String getOriginAvailabilityZone() {
+        return this.originAvailabilityZone;
+    }
+
+    /**
+     * <p>
+     * AWS availability zone associated with the recovery instance.
+     * </p>
+     * 
+     * @param originAvailabilityZone
+     *        AWS availability zone associated with the recovery instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecoveryInstance withOriginAvailabilityZone(String originAvailabilityZone) {
+        setOriginAvailabilityZone(originAvailabilityZone);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Environment (On Premises / AWS) of the instance that the recovery instance originated from.
+     * </p>
+     * 
+     * @param originEnvironment
+     *        Environment (On Premises / AWS) of the instance that the recovery instance originated from.
+     * @see OriginEnvironment
+     */
+
+    public void setOriginEnvironment(String originEnvironment) {
+        this.originEnvironment = originEnvironment;
+    }
+
+    /**
+     * <p>
+     * Environment (On Premises / AWS) of the instance that the recovery instance originated from.
+     * </p>
+     * 
+     * @return Environment (On Premises / AWS) of the instance that the recovery instance originated from.
+     * @see OriginEnvironment
+     */
+
+    public String getOriginEnvironment() {
+        return this.originEnvironment;
+    }
+
+    /**
+     * <p>
+     * Environment (On Premises / AWS) of the instance that the recovery instance originated from.
+     * </p>
+     * 
+     * @param originEnvironment
+     *        Environment (On Premises / AWS) of the instance that the recovery instance originated from.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OriginEnvironment
+     */
+
+    public RecoveryInstance withOriginEnvironment(String originEnvironment) {
+        setOriginEnvironment(originEnvironment);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Environment (On Premises / AWS) of the instance that the recovery instance originated from.
+     * </p>
+     * 
+     * @param originEnvironment
+     *        Environment (On Premises / AWS) of the instance that the recovery instance originated from.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OriginEnvironment
+     */
+
+    public RecoveryInstance withOriginEnvironment(OriginEnvironment originEnvironment) {
+        this.originEnvironment = originEnvironment.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The date and time of the Point in Time (PIT) snapshot that this Recovery Instance was launched from.
      * </p>
      * 
@@ -529,6 +692,46 @@ public class RecoveryInstance implements Serializable, Cloneable, StructuredPojo
 
     public RecoveryInstance withRecoveryInstanceProperties(RecoveryInstanceProperties recoveryInstanceProperties) {
         setRecoveryInstanceProperties(recoveryInstanceProperties);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the source Outpost
+     * </p>
+     * 
+     * @param sourceOutpostArn
+     *        The ARN of the source Outpost
+     */
+
+    public void setSourceOutpostArn(String sourceOutpostArn) {
+        this.sourceOutpostArn = sourceOutpostArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the source Outpost
+     * </p>
+     * 
+     * @return The ARN of the source Outpost
+     */
+
+    public String getSourceOutpostArn() {
+        return this.sourceOutpostArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the source Outpost
+     * </p>
+     * 
+     * @param sourceOutpostArn
+     *        The ARN of the source Outpost
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecoveryInstance withSourceOutpostArn(String sourceOutpostArn) {
+        setSourceOutpostArn(sourceOutpostArn);
         return this;
     }
 
@@ -652,6 +855,8 @@ public class RecoveryInstance implements Serializable, Cloneable, StructuredPojo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAgentVersion() != null)
+            sb.append("AgentVersion: ").append(getAgentVersion()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getDataReplicationInfo() != null)
@@ -666,12 +871,18 @@ public class RecoveryInstance implements Serializable, Cloneable, StructuredPojo
             sb.append("IsDrill: ").append(getIsDrill()).append(",");
         if (getJobID() != null)
             sb.append("JobID: ").append(getJobID()).append(",");
+        if (getOriginAvailabilityZone() != null)
+            sb.append("OriginAvailabilityZone: ").append(getOriginAvailabilityZone()).append(",");
+        if (getOriginEnvironment() != null)
+            sb.append("OriginEnvironment: ").append(getOriginEnvironment()).append(",");
         if (getPointInTimeSnapshotDateTime() != null)
             sb.append("PointInTimeSnapshotDateTime: ").append(getPointInTimeSnapshotDateTime()).append(",");
         if (getRecoveryInstanceID() != null)
             sb.append("RecoveryInstanceID: ").append(getRecoveryInstanceID()).append(",");
         if (getRecoveryInstanceProperties() != null)
             sb.append("RecoveryInstanceProperties: ").append(getRecoveryInstanceProperties()).append(",");
+        if (getSourceOutpostArn() != null)
+            sb.append("SourceOutpostArn: ").append(getSourceOutpostArn()).append(",");
         if (getSourceServerID() != null)
             sb.append("SourceServerID: ").append(getSourceServerID()).append(",");
         if (getTags() != null)
@@ -690,6 +901,10 @@ public class RecoveryInstance implements Serializable, Cloneable, StructuredPojo
         if (obj instanceof RecoveryInstance == false)
             return false;
         RecoveryInstance other = (RecoveryInstance) obj;
+        if (other.getAgentVersion() == null ^ this.getAgentVersion() == null)
+            return false;
+        if (other.getAgentVersion() != null && other.getAgentVersion().equals(this.getAgentVersion()) == false)
+            return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
@@ -718,6 +933,14 @@ public class RecoveryInstance implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getJobID() != null && other.getJobID().equals(this.getJobID()) == false)
             return false;
+        if (other.getOriginAvailabilityZone() == null ^ this.getOriginAvailabilityZone() == null)
+            return false;
+        if (other.getOriginAvailabilityZone() != null && other.getOriginAvailabilityZone().equals(this.getOriginAvailabilityZone()) == false)
+            return false;
+        if (other.getOriginEnvironment() == null ^ this.getOriginEnvironment() == null)
+            return false;
+        if (other.getOriginEnvironment() != null && other.getOriginEnvironment().equals(this.getOriginEnvironment()) == false)
+            return false;
         if (other.getPointInTimeSnapshotDateTime() == null ^ this.getPointInTimeSnapshotDateTime() == null)
             return false;
         if (other.getPointInTimeSnapshotDateTime() != null && other.getPointInTimeSnapshotDateTime().equals(this.getPointInTimeSnapshotDateTime()) == false)
@@ -729,6 +952,10 @@ public class RecoveryInstance implements Serializable, Cloneable, StructuredPojo
         if (other.getRecoveryInstanceProperties() == null ^ this.getRecoveryInstanceProperties() == null)
             return false;
         if (other.getRecoveryInstanceProperties() != null && other.getRecoveryInstanceProperties().equals(this.getRecoveryInstanceProperties()) == false)
+            return false;
+        if (other.getSourceOutpostArn() == null ^ this.getSourceOutpostArn() == null)
+            return false;
+        if (other.getSourceOutpostArn() != null && other.getSourceOutpostArn().equals(this.getSourceOutpostArn()) == false)
             return false;
         if (other.getSourceServerID() == null ^ this.getSourceServerID() == null)
             return false;
@@ -746,6 +973,7 @@ public class RecoveryInstance implements Serializable, Cloneable, StructuredPojo
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAgentVersion() == null) ? 0 : getAgentVersion().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getDataReplicationInfo() == null) ? 0 : getDataReplicationInfo().hashCode());
         hashCode = prime * hashCode + ((getEc2InstanceID() == null) ? 0 : getEc2InstanceID().hashCode());
@@ -753,9 +981,12 @@ public class RecoveryInstance implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getFailback() == null) ? 0 : getFailback().hashCode());
         hashCode = prime * hashCode + ((getIsDrill() == null) ? 0 : getIsDrill().hashCode());
         hashCode = prime * hashCode + ((getJobID() == null) ? 0 : getJobID().hashCode());
+        hashCode = prime * hashCode + ((getOriginAvailabilityZone() == null) ? 0 : getOriginAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getOriginEnvironment() == null) ? 0 : getOriginEnvironment().hashCode());
         hashCode = prime * hashCode + ((getPointInTimeSnapshotDateTime() == null) ? 0 : getPointInTimeSnapshotDateTime().hashCode());
         hashCode = prime * hashCode + ((getRecoveryInstanceID() == null) ? 0 : getRecoveryInstanceID().hashCode());
         hashCode = prime * hashCode + ((getRecoveryInstanceProperties() == null) ? 0 : getRecoveryInstanceProperties().hashCode());
+        hashCode = prime * hashCode + ((getSourceOutpostArn() == null) ? 0 : getSourceOutpostArn().hashCode());
         hashCode = prime * hashCode + ((getSourceServerID() == null) ? 0 : getSourceServerID().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;

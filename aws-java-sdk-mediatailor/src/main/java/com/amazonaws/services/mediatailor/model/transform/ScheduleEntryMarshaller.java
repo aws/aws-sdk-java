@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,8 @@ public class ScheduleEntryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApproximateStartTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Arn").build();
+    private static final MarshallingInfo<List> AUDIENCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Audiences").build();
     private static final MarshallingInfo<String> CHANNELNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChannelName").build();
     private static final MarshallingInfo<String> LIVESOURCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -68,6 +70,7 @@ public class ScheduleEntryMarshaller {
             protocolMarshaller.marshall(scheduleEntry.getApproximateDurationSeconds(), APPROXIMATEDURATIONSECONDS_BINDING);
             protocolMarshaller.marshall(scheduleEntry.getApproximateStartTime(), APPROXIMATESTARTTIME_BINDING);
             protocolMarshaller.marshall(scheduleEntry.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(scheduleEntry.getAudiences(), AUDIENCES_BINDING);
             protocolMarshaller.marshall(scheduleEntry.getChannelName(), CHANNELNAME_BINDING);
             protocolMarshaller.marshall(scheduleEntry.getLiveSourceName(), LIVESOURCENAME_BINDING);
             protocolMarshaller.marshall(scheduleEntry.getProgramName(), PROGRAMNAME_BINDING);

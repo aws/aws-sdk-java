@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      * Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For
      * more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a>
-     * in the CloudFormation User Guide.
+     * in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
      * Conditional: You must specify only one of the following parameters: <code>StackName</code>,
@@ -46,7 +46,8 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      * Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that's
      * located in an Amazon S3 bucket or a Systems Manager document. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a>
-     * in the CloudFormation User Guide.
+     * in the <i>CloudFormation User Guide</i>. The location for an Amazon S3 bucket must start with
+     * <code>https://</code>.
      * </p>
      * <p>
      * Conditional: You must specify only one of the following parameters: <code>StackName</code>,
@@ -104,13 +105,19 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      */
     private String callAs;
+    /**
+     * <p>
+     * Specifies options for the <code>GetTemplateSummary</code> API action.
+     * </p>
+     */
+    private TemplateSummaryConfig templateSummaryConfig;
 
     /**
      * <p>
      * Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For
      * more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a>
-     * in the CloudFormation User Guide.
+     * in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
      * Conditional: You must specify only one of the following parameters: <code>StackName</code>,
@@ -121,7 +128,7 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      *        Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200
      *        bytes. For more information about templates, see <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *        anatomy</a> in the CloudFormation User Guide.</p>
+     *        anatomy</a> in the <i>CloudFormation User Guide</i>.</p>
      *        <p>
      *        Conditional: You must specify only one of the following parameters: <code>StackName</code>,
      *        <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
@@ -136,7 +143,7 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      * Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For
      * more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a>
-     * in the CloudFormation User Guide.
+     * in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
      * Conditional: You must specify only one of the following parameters: <code>StackName</code>,
@@ -146,7 +153,7 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      * @return Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200
      *         bytes. For more information about templates, see <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *         anatomy</a> in the CloudFormation User Guide.</p>
+     *         anatomy</a> in the <i>CloudFormation User Guide</i>.</p>
      *         <p>
      *         Conditional: You must specify only one of the following parameters: <code>StackName</code>,
      *         <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
@@ -161,7 +168,7 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      * Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200 bytes. For
      * more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a>
-     * in the CloudFormation User Guide.
+     * in the <i>CloudFormation User Guide</i>.
      * </p>
      * <p>
      * Conditional: You must specify only one of the following parameters: <code>StackName</code>,
@@ -172,7 +179,7 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      *        Structure containing the template body with a minimum length of 1 byte and a maximum length of 51,200
      *        bytes. For more information about templates, see <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *        anatomy</a> in the CloudFormation User Guide.</p>
+     *        anatomy</a> in the <i>CloudFormation User Guide</i>.</p>
      *        <p>
      *        Conditional: You must specify only one of the following parameters: <code>StackName</code>,
      *        <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
@@ -189,7 +196,8 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      * Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that's
      * located in an Amazon S3 bucket or a Systems Manager document. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a>
-     * in the CloudFormation User Guide.
+     * in the <i>CloudFormation User Guide</i>. The location for an Amazon S3 bucket must start with
+     * <code>https://</code>.
      * </p>
      * <p>
      * Conditional: You must specify only one of the following parameters: <code>StackName</code>,
@@ -201,7 +209,8 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      *        that's located in an Amazon S3 bucket or a Systems Manager document. For more information about templates,
      *        see <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *        anatomy</a> in the CloudFormation User Guide.</p>
+     *        anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon S3 bucket must start with
+     *        <code>https://</code>.</p>
      *        <p>
      *        Conditional: You must specify only one of the following parameters: <code>StackName</code>,
      *        <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
@@ -216,7 +225,8 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      * Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that's
      * located in an Amazon S3 bucket or a Systems Manager document. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a>
-     * in the CloudFormation User Guide.
+     * in the <i>CloudFormation User Guide</i>. The location for an Amazon S3 bucket must start with
+     * <code>https://</code>.
      * </p>
      * <p>
      * Conditional: You must specify only one of the following parameters: <code>StackName</code>,
@@ -227,7 +237,8 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      *         that's located in an Amazon S3 bucket or a Systems Manager document. For more information about
      *         templates, see <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *         anatomy</a> in the CloudFormation User Guide.</p>
+     *         anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon S3 bucket must start with
+     *         <code>https://</code>.</p>
      *         <p>
      *         Conditional: You must specify only one of the following parameters: <code>StackName</code>,
      *         <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
@@ -242,7 +253,8 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      * Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that's
      * located in an Amazon S3 bucket or a Systems Manager document. For more information about templates, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template anatomy</a>
-     * in the CloudFormation User Guide.
+     * in the <i>CloudFormation User Guide</i>. The location for an Amazon S3 bucket must start with
+     * <code>https://</code>.
      * </p>
      * <p>
      * Conditional: You must specify only one of the following parameters: <code>StackName</code>,
@@ -254,7 +266,8 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
      *        that's located in an Amazon S3 bucket or a Systems Manager document. For more information about templates,
      *        see <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     *        anatomy</a> in the CloudFormation User Guide.</p>
+     *        anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon S3 bucket must start with
+     *        <code>https://</code>.</p>
      *        <p>
      *        Conditional: You must specify only one of the following parameters: <code>StackName</code>,
      *        <code>StackSetName</code>, <code>TemplateBody</code>, or <code>TemplateURL</code>.
@@ -636,6 +649,46 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Specifies options for the <code>GetTemplateSummary</code> API action.
+     * </p>
+     * 
+     * @param templateSummaryConfig
+     *        Specifies options for the <code>GetTemplateSummary</code> API action.
+     */
+
+    public void setTemplateSummaryConfig(TemplateSummaryConfig templateSummaryConfig) {
+        this.templateSummaryConfig = templateSummaryConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies options for the <code>GetTemplateSummary</code> API action.
+     * </p>
+     * 
+     * @return Specifies options for the <code>GetTemplateSummary</code> API action.
+     */
+
+    public TemplateSummaryConfig getTemplateSummaryConfig() {
+        return this.templateSummaryConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies options for the <code>GetTemplateSummary</code> API action.
+     * </p>
+     * 
+     * @param templateSummaryConfig
+     *        Specifies options for the <code>GetTemplateSummary</code> API action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTemplateSummaryRequest withTemplateSummaryConfig(TemplateSummaryConfig templateSummaryConfig) {
+        setTemplateSummaryConfig(templateSummaryConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -656,7 +709,9 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
         if (getStackSetName() != null)
             sb.append("StackSetName: ").append(getStackSetName()).append(",");
         if (getCallAs() != null)
-            sb.append("CallAs: ").append(getCallAs());
+            sb.append("CallAs: ").append(getCallAs()).append(",");
+        if (getTemplateSummaryConfig() != null)
+            sb.append("TemplateSummaryConfig: ").append(getTemplateSummaryConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -691,6 +746,10 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getCallAs() != null && other.getCallAs().equals(this.getCallAs()) == false)
             return false;
+        if (other.getTemplateSummaryConfig() == null ^ this.getTemplateSummaryConfig() == null)
+            return false;
+        if (other.getTemplateSummaryConfig() != null && other.getTemplateSummaryConfig().equals(this.getTemplateSummaryConfig()) == false)
+            return false;
         return true;
     }
 
@@ -704,6 +763,7 @@ public class GetTemplateSummaryRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getStackName() == null) ? 0 : getStackName().hashCode());
         hashCode = prime * hashCode + ((getStackSetName() == null) ? 0 : getStackSetName().hashCode());
         hashCode = prime * hashCode + ((getCallAs() == null) ? 0 : getCallAs().hashCode());
+        hashCode = prime * hashCode + ((getTemplateSummaryConfig() == null) ? 0 : getTemplateSummaryConfig().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,18 +30,18 @@ public class MonitoringJsonDatasetFormat implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Indicates if the file should be read as a json object per line.
+     * Indicates if the file should be read as a JSON object per line.
      * </p>
      */
     private Boolean line;
 
     /**
      * <p>
-     * Indicates if the file should be read as a json object per line.
+     * Indicates if the file should be read as a JSON object per line.
      * </p>
      * 
      * @param line
-     *        Indicates if the file should be read as a json object per line.
+     *        Indicates if the file should be read as a JSON object per line.
      */
 
     public void setLine(Boolean line) {
@@ -50,10 +50,10 @@ public class MonitoringJsonDatasetFormat implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Indicates if the file should be read as a json object per line.
+     * Indicates if the file should be read as a JSON object per line.
      * </p>
      * 
-     * @return Indicates if the file should be read as a json object per line.
+     * @return Indicates if the file should be read as a JSON object per line.
      */
 
     public Boolean getLine() {
@@ -62,11 +62,11 @@ public class MonitoringJsonDatasetFormat implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Indicates if the file should be read as a json object per line.
+     * Indicates if the file should be read as a JSON object per line.
      * </p>
      * 
      * @param line
-     *        Indicates if the file should be read as a json object per line.
+     *        Indicates if the file should be read as a JSON object per line.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -77,10 +77,10 @@ public class MonitoringJsonDatasetFormat implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Indicates if the file should be read as a json object per line.
+     * Indicates if the file should be read as a JSON object per line.
      * </p>
      * 
-     * @return Indicates if the file should be read as a json object per line.
+     * @return Indicates if the file should be read as a JSON object per line.
      */
 
     public Boolean isLine() {

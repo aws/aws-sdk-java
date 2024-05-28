@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,13 @@ public class CreateAttendeeError implements Serializable, Cloneable, StructuredP
      * The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a
      * builder application.
      * </p>
+     * <p>
+     * Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code>
+     * </p>
+     * <p>
+     * Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case
+     * insensitive.
+     * </p>
      */
     private String externalUserId;
     /**
@@ -54,10 +61,23 @@ public class CreateAttendeeError implements Serializable, Cloneable, StructuredP
      * The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a
      * builder application.
      * </p>
+     * <p>
+     * Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code>
+     * </p>
+     * <p>
+     * Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case
+     * insensitive.
+     * </p>
      * 
      * @param externalUserId
      *        The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by
-     *        a builder application.
+     *        a builder application.</p>
+     *        <p>
+     *        Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code>
+     *        </p>
+     *        <p>
+     *        Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix.
+     *        Case insensitive.
      */
 
     public void setExternalUserId(String externalUserId) {
@@ -69,9 +89,22 @@ public class CreateAttendeeError implements Serializable, Cloneable, StructuredP
      * The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a
      * builder application.
      * </p>
+     * <p>
+     * Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code>
+     * </p>
+     * <p>
+     * Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case
+     * insensitive.
+     * </p>
      * 
      * @return The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by
-     *         a builder application.
+     *         a builder application.</p>
+     *         <p>
+     *         Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code>
+     *         </p>
+     *         <p>
+     *         Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix.
+     *         Case insensitive.
      */
 
     public String getExternalUserId() {
@@ -83,10 +116,23 @@ public class CreateAttendeeError implements Serializable, Cloneable, StructuredP
      * The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by a
      * builder application.
      * </p>
+     * <p>
+     * Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code>
+     * </p>
+     * <p>
+     * Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case
+     * insensitive.
+     * </p>
      * 
      * @param externalUserId
      *        The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to an identity managed by
-     *        a builder application.
+     *        a builder application.</p>
+     *        <p>
+     *        Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code>
+     *        </p>
+     *        <p>
+     *        Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix.
+     *        Case insensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

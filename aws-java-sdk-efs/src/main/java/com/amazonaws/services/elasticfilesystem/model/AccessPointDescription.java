@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -73,14 +73,14 @@ public class AccessPointDescription implements Serializable, Cloneable, Structur
     private PosixUser posixUser;
     /**
      * <p>
-     * The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients
-     * using the access point.
+     * The directory on the EFS file system that the access point exposes as the root directory to NFS clients using the
+     * access point.
      * </p>
      */
     private RootDirectory rootDirectory;
     /**
      * <p>
-     * Identified the Amazon Web Services account that owns the access point resource.
+     * Identifies the Amazon Web Services account that owns the access point resource.
      * </p>
      */
     private String ownerId;
@@ -412,13 +412,13 @@ public class AccessPointDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients
-     * using the access point.
+     * The directory on the EFS file system that the access point exposes as the root directory to NFS clients using the
+     * access point.
      * </p>
      * 
      * @param rootDirectory
-     *        The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS
-     *        clients using the access point.
+     *        The directory on the EFS file system that the access point exposes as the root directory to NFS clients
+     *        using the access point.
      */
 
     public void setRootDirectory(RootDirectory rootDirectory) {
@@ -427,12 +427,12 @@ public class AccessPointDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients
-     * using the access point.
+     * The directory on the EFS file system that the access point exposes as the root directory to NFS clients using the
+     * access point.
      * </p>
      * 
-     * @return The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS
-     *         clients using the access point.
+     * @return The directory on the EFS file system that the access point exposes as the root directory to NFS clients
+     *         using the access point.
      */
 
     public RootDirectory getRootDirectory() {
@@ -441,13 +441,13 @@ public class AccessPointDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients
-     * using the access point.
+     * The directory on the EFS file system that the access point exposes as the root directory to NFS clients using the
+     * access point.
      * </p>
      * 
      * @param rootDirectory
-     *        The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS
-     *        clients using the access point.
+     *        The directory on the EFS file system that the access point exposes as the root directory to NFS clients
+     *        using the access point.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -458,11 +458,11 @@ public class AccessPointDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Identified the Amazon Web Services account that owns the access point resource.
+     * Identifies the Amazon Web Services account that owns the access point resource.
      * </p>
      * 
      * @param ownerId
-     *        Identified the Amazon Web Services account that owns the access point resource.
+     *        Identifies the Amazon Web Services account that owns the access point resource.
      */
 
     public void setOwnerId(String ownerId) {
@@ -471,10 +471,10 @@ public class AccessPointDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Identified the Amazon Web Services account that owns the access point resource.
+     * Identifies the Amazon Web Services account that owns the access point resource.
      * </p>
      * 
-     * @return Identified the Amazon Web Services account that owns the access point resource.
+     * @return Identifies the Amazon Web Services account that owns the access point resource.
      */
 
     public String getOwnerId() {
@@ -483,11 +483,11 @@ public class AccessPointDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Identified the Amazon Web Services account that owns the access point resource.
+     * Identifies the Amazon Web Services account that owns the access point resource.
      * </p>
      * 
      * @param ownerId
-     *        Identified the Amazon Web Services account that owns the access point resource.
+     *        Identifies the Amazon Web Services account that owns the access point resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

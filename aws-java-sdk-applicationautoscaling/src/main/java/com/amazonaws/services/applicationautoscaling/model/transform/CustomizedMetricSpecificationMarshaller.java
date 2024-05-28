@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,8 @@ public class CustomizedMetricSpecificationMarshaller {
             .marshallLocationName("Statistic").build();
     private static final MarshallingInfo<String> UNIT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Unit").build();
+    private static final MarshallingInfo<List> METRICS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Metrics").build();
 
     private static final CustomizedMetricSpecificationMarshaller instance = new CustomizedMetricSpecificationMarshaller();
 
@@ -60,6 +62,7 @@ public class CustomizedMetricSpecificationMarshaller {
             protocolMarshaller.marshall(customizedMetricSpecification.getDimensions(), DIMENSIONS_BINDING);
             protocolMarshaller.marshall(customizedMetricSpecification.getStatistic(), STATISTIC_BINDING);
             protocolMarshaller.marshall(customizedMetricSpecification.getUnit(), UNIT_BINDING);
+            protocolMarshaller.marshall(customizedMetricSpecification.getMetrics(), METRICS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,10 +20,16 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Provides statistical data and other information about an S3 bucket that Amazon Macie monitors and analyzes for your
- * account. If an error occurs when Macie attempts to retrieve and process information about the bucket or the bucket's
- * objects, the value for the versioning property is false and the value for most other properties is null. Exceptions
- * are accountId, bucketArn, bucketCreatedAt, bucketName, lastUpdated, and region. To identify the cause of the error,
- * refer to the errorCode and errorMessage values.
+ * account. By default, object count and storage size values include data for object parts that are the result of
+ * incomplete multipart uploads. For more information, see <a
+ * href="https://docs.aws.amazon.com/macie/latest/user/monitoring-s3-how-it-works.html">How Macie monitors Amazon S3
+ * data security</a> in the <i>Amazon Macie User Guide</i>.
+ * </p>
+ * <p>
+ * If an error occurs when Macie attempts to retrieve and process metadata from Amazon S3 for the bucket or the bucket's
+ * objects, the value for the versioning property is false and the value for most other properties is null. Key
+ * exceptions are accountId, bucketArn, bucketCreatedAt, bucketName, lastUpdated, and region. To identify the cause of
+ * the error, refer to the errorCode and errorMessage values.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketMetadata" target="_top">AWS API
@@ -41,20 +47,20 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects are
-     * uploaded to the bucket. Possible values are:
+     * added to the bucket. Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include the
-     * x-amz-server-side-encryption header and the value for that header must be AES256 or aws:kms.
+     * FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include a valid
+     * server-side encryption header.
      * </p>
      * </li>
      * <li>
      * <p>
      * TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side
-     * encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include the
-     * x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or aws:kms.
+     * encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include a valid
+     * server-side encryption header.
      * </p>
      * </li>
      * <li>
@@ -63,6 +69,10 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Valid server-side encryption headers are: x-amz-server-side-encryption with a value of AES256 or aws:kms, and
+     * x-amz-server-side-encryption-customer-algorithm with a value of AES256.
+     * </p>
      */
     private String allowsUnencryptedObjectUploads;
     /**
@@ -73,7 +83,8 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     private String bucketArn;
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the bucket was created.
+     * The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also indicate
+     * when changes such as edits to the bucket's policy were most recently made to the bucket.
      * </p>
      */
     private java.util.Date bucketCreatedAt;
@@ -104,10 +115,10 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     private Long classifiableSizeInBytes;
     /**
      * <p>
-     * Specifies the error code for an error that prevented Amazon Macie from retrieving and processing information
-     * about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
-     * retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the
-     * request. If this value is null, Macie was able to retrieve and process the information.
+     * The error code for an error that prevented Amazon Macie from retrieving and processing information about the
+     * bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
+     * information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this
+     * value is null, Macie was able to retrieve and process the information.
      * </p>
      */
     private String errorCode;
@@ -128,7 +139,15 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     private JobDetails jobDetails;
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in the
+     * bucket while performing automated sensitive data discovery for your account. This value is null if automated
+     * sensitive data discovery is currently disabled for your account.
+     * </p>
+     */
+    private java.util.Date lastAutomatedDiscoveryTime;
+    /**
+     * <p>
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket or
      * object metadata from Amazon S3 for the bucket.
      * </p>
      */
@@ -141,8 +160,8 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     private Long objectCount;
     /**
      * <p>
-     * The total number of objects that are in the bucket, grouped by server-side encryption type. This includes a
-     * grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
+     * The total number of objects in the bucket, grouped by server-side encryption type. This includes a grouping that
+     * reports the total number of objects that aren't encrypted or use client-side encryption.
      * </p>
      */
     private ObjectCountByEncryptionType objectCountByEncryptionType;
@@ -168,31 +187,40 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     private ReplicationDetails replicationDetails;
     /**
      * <p>
-     * Specifies whether the bucket encrypts new objects by default and, if so, the type of server-side encryption
-     * that's used.
+     * The sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This value is
+     * null if automated sensitive data discovery is currently disabled for your account.
+     * </p>
+     */
+    private Integer sensitivityScore;
+    /**
+     * <p>
+     * The default server-side encryption settings for the bucket.
      * </p>
      */
     private BucketServerSideEncryption serverSideEncryption;
     /**
      * <p>
-     * Specifies whether the bucket is shared with another Amazon Web Services account. Possible values are:
+     * Specifies whether the bucket is shared with another Amazon Web Services account, an Amazon CloudFront origin
+     * access identity (OAI), or a CloudFront origin access control (OAC). Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * EXTERNAL - The bucket is shared with an Amazon Web Services account that isn't part of the same Amazon Macie
+     * EXTERNAL - The bucket is shared with one or more of the following or any combination of the following: a
+     * CloudFront OAI, a CloudFront OAC, or an Amazon Web Services account that isn't part of your Amazon Macie
      * organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INTERNAL - The bucket is shared with an Amazon Web Services account that's part of the same Amazon Macie
-     * organization.
+     * INTERNAL - The bucket is shared with one or more Amazon Web Services accounts that are part of your Amazon Macie
+     * organization. It isn't shared with a CloudFront OAI or OAC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NOT_SHARED - The bucket isn't shared with other Amazon Web Services accounts.
+     * NOT_SHARED - The bucket isn't shared with another Amazon Web Services account, a CloudFront OAI, or a CloudFront
+     * OAC.
      * </p>
      * </li>
      * <li>
@@ -201,6 +229,10 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * An <i>Amazon Macie organization</i> is a set of Macie accounts that are centrally managed as a group of related
+     * accounts through Organizations or by Macie invitation.
+     * </p>
      */
     private String sharedAccess;
     /**
@@ -295,20 +327,20 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects are
-     * uploaded to the bucket. Possible values are:
+     * added to the bucket. Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include the
-     * x-amz-server-side-encryption header and the value for that header must be AES256 or aws:kms.
+     * FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include a valid
+     * server-side encryption header.
      * </p>
      * </li>
      * <li>
      * <p>
      * TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side
-     * encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include the
-     * x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or aws:kms.
+     * encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include a valid
+     * server-side encryption header.
      * </p>
      * </li>
      * <li>
@@ -317,23 +349,26 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Valid server-side encryption headers are: x-amz-server-side-encryption with a value of AES256 or aws:kms, and
+     * x-amz-server-side-encryption-customer-algorithm with a value of AES256.
+     * </p>
      * 
      * @param allowsUnencryptedObjectUploads
      *        Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects
-     *        are uploaded to the bucket. Possible values are:</p>
+     *        are added to the bucket. Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>
      *        FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include
-     *        the x-amz-server-side-encryption header and the value for that header must be AES256 or aws:kms.
+     *        a valid server-side encryption header.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side
-     *        encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include the
-     *        x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or
-     *        aws:kms.
+     *        encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include a
+     *        valid server-side encryption header.
      *        </p>
      *        </li>
      *        <li>
@@ -342,6 +377,10 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      *        objects.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Valid server-side encryption headers are: x-amz-server-side-encryption with a value of AES256 or aws:kms,
+     *        and x-amz-server-side-encryption-customer-algorithm with a value of AES256.
      * @see AllowsUnencryptedObjectUploads
      */
 
@@ -352,20 +391,20 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects are
-     * uploaded to the bucket. Possible values are:
+     * added to the bucket. Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include the
-     * x-amz-server-side-encryption header and the value for that header must be AES256 or aws:kms.
+     * FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include a valid
+     * server-side encryption header.
      * </p>
      * </li>
      * <li>
      * <p>
      * TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side
-     * encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include the
-     * x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or aws:kms.
+     * encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include a valid
+     * server-side encryption header.
      * </p>
      * </li>
      * <li>
@@ -374,22 +413,25 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Valid server-side encryption headers are: x-amz-server-side-encryption with a value of AES256 or aws:kms, and
+     * x-amz-server-side-encryption-customer-algorithm with a value of AES256.
+     * </p>
      * 
      * @return Specifies whether the bucket policy for the bucket requires server-side encryption of objects when
-     *         objects are uploaded to the bucket. Possible values are:</p>
+     *         objects are added to the bucket. Possible values are:</p>
      *         <ul>
      *         <li>
      *         <p>
      *         FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include
-     *         the x-amz-server-side-encryption header and the value for that header must be AES256 or aws:kms.
+     *         a valid server-side encryption header.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side
-     *         encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include
-     *         the x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or
-     *         aws:kms.
+     *         encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include a
+     *         valid server-side encryption header.
      *         </p>
      *         </li>
      *         <li>
@@ -398,6 +440,10 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      *         objects.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         Valid server-side encryption headers are: x-amz-server-side-encryption with a value of AES256 or aws:kms,
+     *         and x-amz-server-side-encryption-customer-algorithm with a value of AES256.
      * @see AllowsUnencryptedObjectUploads
      */
 
@@ -408,20 +454,20 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects are
-     * uploaded to the bucket. Possible values are:
+     * added to the bucket. Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include the
-     * x-amz-server-side-encryption header and the value for that header must be AES256 or aws:kms.
+     * FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include a valid
+     * server-side encryption header.
      * </p>
      * </li>
      * <li>
      * <p>
      * TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side
-     * encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include the
-     * x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or aws:kms.
+     * encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include a valid
+     * server-side encryption header.
      * </p>
      * </li>
      * <li>
@@ -430,23 +476,26 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Valid server-side encryption headers are: x-amz-server-side-encryption with a value of AES256 or aws:kms, and
+     * x-amz-server-side-encryption-customer-algorithm with a value of AES256.
+     * </p>
      * 
      * @param allowsUnencryptedObjectUploads
      *        Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects
-     *        are uploaded to the bucket. Possible values are:</p>
+     *        are added to the bucket. Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>
      *        FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include
-     *        the x-amz-server-side-encryption header and the value for that header must be AES256 or aws:kms.
+     *        a valid server-side encryption header.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side
-     *        encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include the
-     *        x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or
-     *        aws:kms.
+     *        encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include a
+     *        valid server-side encryption header.
      *        </p>
      *        </li>
      *        <li>
@@ -455,6 +504,10 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      *        objects.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Valid server-side encryption headers are: x-amz-server-side-encryption with a value of AES256 or aws:kms,
+     *        and x-amz-server-side-encryption-customer-algorithm with a value of AES256.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AllowsUnencryptedObjectUploads
      */
@@ -467,20 +520,20 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects are
-     * uploaded to the bucket. Possible values are:
+     * added to the bucket. Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include the
-     * x-amz-server-side-encryption header and the value for that header must be AES256 or aws:kms.
+     * FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include a valid
+     * server-side encryption header.
      * </p>
      * </li>
      * <li>
      * <p>
      * TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side
-     * encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include the
-     * x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or aws:kms.
+     * encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include a valid
+     * server-side encryption header.
      * </p>
      * </li>
      * <li>
@@ -489,23 +542,26 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Valid server-side encryption headers are: x-amz-server-side-encryption with a value of AES256 or aws:kms, and
+     * x-amz-server-side-encryption-customer-algorithm with a value of AES256.
+     * </p>
      * 
      * @param allowsUnencryptedObjectUploads
      *        Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects
-     *        are uploaded to the bucket. Possible values are:</p>
+     *        are added to the bucket. Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>
      *        FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include
-     *        the x-amz-server-side-encryption header and the value for that header must be AES256 or aws:kms.
+     *        a valid server-side encryption header.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side
-     *        encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include the
-     *        x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or
-     *        aws:kms.
+     *        encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include a
+     *        valid server-side encryption header.
      *        </p>
      *        </li>
      *        <li>
@@ -514,6 +570,10 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      *        objects.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Valid server-side encryption headers are: x-amz-server-side-encryption with a value of AES256 or aws:kms,
+     *        and x-amz-server-side-encryption-customer-algorithm with a value of AES256.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AllowsUnencryptedObjectUploads
      */
@@ -565,11 +625,13 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the bucket was created.
+     * The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also indicate
+     * when changes such as edits to the bucket's policy were most recently made to the bucket.
      * </p>
      * 
      * @param bucketCreatedAt
-     *        The date and time, in UTC and extended ISO 8601 format, when the bucket was created.
+     *        The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also
+     *        indicate when changes such as edits to the bucket's policy were most recently made to the bucket.
      */
 
     public void setBucketCreatedAt(java.util.Date bucketCreatedAt) {
@@ -578,10 +640,12 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the bucket was created.
+     * The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also indicate
+     * when changes such as edits to the bucket's policy were most recently made to the bucket.
      * </p>
      * 
-     * @return The date and time, in UTC and extended ISO 8601 format, when the bucket was created.
+     * @return The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also
+     *         indicate when changes such as edits to the bucket's policy were most recently made to the bucket.
      */
 
     public java.util.Date getBucketCreatedAt() {
@@ -590,11 +654,13 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the bucket was created.
+     * The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also indicate
+     * when changes such as edits to the bucket's policy were most recently made to the bucket.
      * </p>
      * 
      * @param bucketCreatedAt
-     *        The date and time, in UTC and extended ISO 8601 format, when the bucket was created.
+     *        The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also
+     *        indicate when changes such as edits to the bucket's policy were most recently made to the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -767,17 +833,17 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the error code for an error that prevented Amazon Macie from retrieving and processing information
-     * about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
-     * retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the
-     * request. If this value is null, Macie was able to retrieve and process the information.
+     * The error code for an error that prevented Amazon Macie from retrieving and processing information about the
+     * bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
+     * information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this
+     * value is null, Macie was able to retrieve and process the information.
      * </p>
      * 
      * @param errorCode
-     *        Specifies the error code for an error that prevented Amazon Macie from retrieving and processing
-     *        information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have
-     *        permission to retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon
-     *        S3 denied the request. If this value is null, Macie was able to retrieve and process the information.
+     *        The error code for an error that prevented Amazon Macie from retrieving and processing information about
+     *        the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
+     *        retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the
+     *        request. If this value is null, Macie was able to retrieve and process the information.
      * @see BucketMetadataErrorCode
      */
 
@@ -787,17 +853,16 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the error code for an error that prevented Amazon Macie from retrieving and processing information
-     * about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
-     * retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the
-     * request. If this value is null, Macie was able to retrieve and process the information.
+     * The error code for an error that prevented Amazon Macie from retrieving and processing information about the
+     * bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
+     * information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this
+     * value is null, Macie was able to retrieve and process the information.
      * </p>
      * 
-     * @return Specifies the error code for an error that prevented Amazon Macie from retrieving and processing
-     *         information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have
-     *         permission to retrieve the information. For example, the bucket has a restrictive bucket policy and
-     *         Amazon S3 denied the request. If this value is null, Macie was able to retrieve and process the
-     *         information.
+     * @return The error code for an error that prevented Amazon Macie from retrieving and processing information about
+     *         the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
+     *         retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied
+     *         the request. If this value is null, Macie was able to retrieve and process the information.
      * @see BucketMetadataErrorCode
      */
 
@@ -807,17 +872,17 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the error code for an error that prevented Amazon Macie from retrieving and processing information
-     * about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
-     * retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the
-     * request. If this value is null, Macie was able to retrieve and process the information.
+     * The error code for an error that prevented Amazon Macie from retrieving and processing information about the
+     * bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
+     * information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this
+     * value is null, Macie was able to retrieve and process the information.
      * </p>
      * 
      * @param errorCode
-     *        Specifies the error code for an error that prevented Amazon Macie from retrieving and processing
-     *        information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have
-     *        permission to retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon
-     *        S3 denied the request. If this value is null, Macie was able to retrieve and process the information.
+     *        The error code for an error that prevented Amazon Macie from retrieving and processing information about
+     *        the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
+     *        retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the
+     *        request. If this value is null, Macie was able to retrieve and process the information.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BucketMetadataErrorCode
      */
@@ -829,17 +894,17 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the error code for an error that prevented Amazon Macie from retrieving and processing information
-     * about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
-     * retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the
-     * request. If this value is null, Macie was able to retrieve and process the information.
+     * The error code for an error that prevented Amazon Macie from retrieving and processing information about the
+     * bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
+     * information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this
+     * value is null, Macie was able to retrieve and process the information.
      * </p>
      * 
      * @param errorCode
-     *        Specifies the error code for an error that prevented Amazon Macie from retrieving and processing
-     *        information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have
-     *        permission to retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon
-     *        S3 denied the request. If this value is null, Macie was able to retrieve and process the information.
+     *        The error code for an error that prevented Amazon Macie from retrieving and processing information about
+     *        the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
+     *        retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the
+     *        request. If this value is null, Macie was able to retrieve and process the information.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BucketMetadataErrorCode
      */
@@ -949,13 +1014,65 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in the
+     * bucket while performing automated sensitive data discovery for your account. This value is null if automated
+     * sensitive data discovery is currently disabled for your account.
+     * </p>
+     * 
+     * @param lastAutomatedDiscoveryTime
+     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in
+     *        the bucket while performing automated sensitive data discovery for your account. This value is null if
+     *        automated sensitive data discovery is currently disabled for your account.
+     */
+
+    public void setLastAutomatedDiscoveryTime(java.util.Date lastAutomatedDiscoveryTime) {
+        this.lastAutomatedDiscoveryTime = lastAutomatedDiscoveryTime;
+    }
+
+    /**
+     * <p>
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in the
+     * bucket while performing automated sensitive data discovery for your account. This value is null if automated
+     * sensitive data discovery is currently disabled for your account.
+     * </p>
+     * 
+     * @return The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in
+     *         the bucket while performing automated sensitive data discovery for your account. This value is null if
+     *         automated sensitive data discovery is currently disabled for your account.
+     */
+
+    public java.util.Date getLastAutomatedDiscoveryTime() {
+        return this.lastAutomatedDiscoveryTime;
+    }
+
+    /**
+     * <p>
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in the
+     * bucket while performing automated sensitive data discovery for your account. This value is null if automated
+     * sensitive data discovery is currently disabled for your account.
+     * </p>
+     * 
+     * @param lastAutomatedDiscoveryTime
+     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in
+     *        the bucket while performing automated sensitive data discovery for your account. This value is null if
+     *        automated sensitive data discovery is currently disabled for your account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BucketMetadata withLastAutomatedDiscoveryTime(java.util.Date lastAutomatedDiscoveryTime) {
+        setLastAutomatedDiscoveryTime(lastAutomatedDiscoveryTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket or
      * object metadata from Amazon S3 for the bucket.
      * </p>
      * 
      * @param lastUpdated
-     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both
-     *        bucket and object metadata from Amazon S3 for the bucket.
+     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket
+     *        or object metadata from Amazon S3 for the bucket.
      */
 
     public void setLastUpdated(java.util.Date lastUpdated) {
@@ -964,12 +1081,12 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket or
      * object metadata from Amazon S3 for the bucket.
      * </p>
      * 
-     * @return The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both
-     *         bucket and object metadata from Amazon S3 for the bucket.
+     * @return The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket
+     *         or object metadata from Amazon S3 for the bucket.
      */
 
     public java.util.Date getLastUpdated() {
@@ -978,13 +1095,13 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket or
      * object metadata from Amazon S3 for the bucket.
      * </p>
      * 
      * @param lastUpdated
-     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both
-     *        bucket and object metadata from Amazon S3 for the bucket.
+     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket
+     *        or object metadata from Amazon S3 for the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1035,13 +1152,13 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total number of objects that are in the bucket, grouped by server-side encryption type. This includes a
-     * grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
+     * The total number of objects in the bucket, grouped by server-side encryption type. This includes a grouping that
+     * reports the total number of objects that aren't encrypted or use client-side encryption.
      * </p>
      * 
      * @param objectCountByEncryptionType
-     *        The total number of objects that are in the bucket, grouped by server-side encryption type. This includes
-     *        a grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
+     *        The total number of objects in the bucket, grouped by server-side encryption type. This includes a
+     *        grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
      */
 
     public void setObjectCountByEncryptionType(ObjectCountByEncryptionType objectCountByEncryptionType) {
@@ -1050,12 +1167,12 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total number of objects that are in the bucket, grouped by server-side encryption type. This includes a
-     * grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
+     * The total number of objects in the bucket, grouped by server-side encryption type. This includes a grouping that
+     * reports the total number of objects that aren't encrypted or use client-side encryption.
      * </p>
      * 
-     * @return The total number of objects that are in the bucket, grouped by server-side encryption type. This includes
-     *         a grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
+     * @return The total number of objects in the bucket, grouped by server-side encryption type. This includes a
+     *         grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
      */
 
     public ObjectCountByEncryptionType getObjectCountByEncryptionType() {
@@ -1064,13 +1181,13 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total number of objects that are in the bucket, grouped by server-side encryption type. This includes a
-     * grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
+     * The total number of objects in the bucket, grouped by server-side encryption type. This includes a grouping that
+     * reports the total number of objects that aren't encrypted or use client-side encryption.
      * </p>
      * 
      * @param objectCountByEncryptionType
-     *        The total number of objects that are in the bucket, grouped by server-side encryption type. This includes
-     *        a grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
+     *        The total number of objects in the bucket, grouped by server-side encryption type. This includes a
+     *        grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1213,13 +1330,57 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket encrypts new objects by default and, if so, the type of server-side encryption
-     * that's used.
+     * The sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This value is
+     * null if automated sensitive data discovery is currently disabled for your account.
+     * </p>
+     * 
+     * @param sensitivityScore
+     *        The sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This
+     *        value is null if automated sensitive data discovery is currently disabled for your account.
+     */
+
+    public void setSensitivityScore(Integer sensitivityScore) {
+        this.sensitivityScore = sensitivityScore;
+    }
+
+    /**
+     * <p>
+     * The sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This value is
+     * null if automated sensitive data discovery is currently disabled for your account.
+     * </p>
+     * 
+     * @return The sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This
+     *         value is null if automated sensitive data discovery is currently disabled for your account.
+     */
+
+    public Integer getSensitivityScore() {
+        return this.sensitivityScore;
+    }
+
+    /**
+     * <p>
+     * The sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This value is
+     * null if automated sensitive data discovery is currently disabled for your account.
+     * </p>
+     * 
+     * @param sensitivityScore
+     *        The sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This
+     *        value is null if automated sensitive data discovery is currently disabled for your account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BucketMetadata withSensitivityScore(Integer sensitivityScore) {
+        setSensitivityScore(sensitivityScore);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The default server-side encryption settings for the bucket.
      * </p>
      * 
      * @param serverSideEncryption
-     *        Specifies whether the bucket encrypts new objects by default and, if so, the type of server-side
-     *        encryption that's used.
+     *        The default server-side encryption settings for the bucket.
      */
 
     public void setServerSideEncryption(BucketServerSideEncryption serverSideEncryption) {
@@ -1228,12 +1389,10 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket encrypts new objects by default and, if so, the type of server-side encryption
-     * that's used.
+     * The default server-side encryption settings for the bucket.
      * </p>
      * 
-     * @return Specifies whether the bucket encrypts new objects by default and, if so, the type of server-side
-     *         encryption that's used.
+     * @return The default server-side encryption settings for the bucket.
      */
 
     public BucketServerSideEncryption getServerSideEncryption() {
@@ -1242,13 +1401,11 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket encrypts new objects by default and, if so, the type of server-side encryption
-     * that's used.
+     * The default server-side encryption settings for the bucket.
      * </p>
      * 
      * @param serverSideEncryption
-     *        Specifies whether the bucket encrypts new objects by default and, if so, the type of server-side
-     *        encryption that's used.
+     *        The default server-side encryption settings for the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1259,24 +1416,27 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is shared with another Amazon Web Services account. Possible values are:
+     * Specifies whether the bucket is shared with another Amazon Web Services account, an Amazon CloudFront origin
+     * access identity (OAI), or a CloudFront origin access control (OAC). Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * EXTERNAL - The bucket is shared with an Amazon Web Services account that isn't part of the same Amazon Macie
+     * EXTERNAL - The bucket is shared with one or more of the following or any combination of the following: a
+     * CloudFront OAI, a CloudFront OAC, or an Amazon Web Services account that isn't part of your Amazon Macie
      * organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INTERNAL - The bucket is shared with an Amazon Web Services account that's part of the same Amazon Macie
-     * organization.
+     * INTERNAL - The bucket is shared with one or more Amazon Web Services accounts that are part of your Amazon Macie
+     * organization. It isn't shared with a CloudFront OAI or OAC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NOT_SHARED - The bucket isn't shared with other Amazon Web Services accounts.
+     * NOT_SHARED - The bucket isn't shared with another Amazon Web Services account, a CloudFront OAI, or a CloudFront
+     * OAC.
      * </p>
      * </li>
      * <li>
@@ -1285,27 +1445,32 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * An <i>Amazon Macie organization</i> is a set of Macie accounts that are centrally managed as a group of related
+     * accounts through Organizations or by Macie invitation.
+     * </p>
      * 
      * @param sharedAccess
-     *        <p>
-     *        Specifies whether the bucket is shared with another Amazon Web Services account. Possible values are:
-     *        </p>
+     *        Specifies whether the bucket is shared with another Amazon Web Services account, an Amazon CloudFront
+     *        origin access identity (OAI), or a CloudFront origin access control (OAC). Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        EXTERNAL - The bucket is shared with an Amazon Web Services account that isn't part of the same Amazon
-     *        Macie organization.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        INTERNAL - The bucket is shared with an Amazon Web Services account that's part of the same Amazon Macie
+     *        EXTERNAL - The bucket is shared with one or more of the following or any combination of the following: a
+     *        CloudFront OAI, a CloudFront OAC, or an Amazon Web Services account that isn't part of your Amazon Macie
      *        organization.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        NOT_SHARED - The bucket isn't shared with other Amazon Web Services accounts.
+     *        INTERNAL - The bucket is shared with one or more Amazon Web Services accounts that are part of your Amazon
+     *        Macie organization. It isn't shared with a CloudFront OAI or OAC.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NOT_SHARED - The bucket isn't shared with another Amazon Web Services account, a CloudFront OAI, or a
+     *        CloudFront OAC.
      *        </p>
      *        </li>
      *        <li>
@@ -1314,6 +1479,9 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </li>
      *        </ul>
+     *        <p>
+     *        An <i>Amazon Macie organization</i> is a set of Macie accounts that are centrally managed as a group of
+     *        related accounts through Organizations or by Macie invitation.
      * @see SharedAccess
      */
 
@@ -1323,24 +1491,27 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is shared with another Amazon Web Services account. Possible values are:
+     * Specifies whether the bucket is shared with another Amazon Web Services account, an Amazon CloudFront origin
+     * access identity (OAI), or a CloudFront origin access control (OAC). Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * EXTERNAL - The bucket is shared with an Amazon Web Services account that isn't part of the same Amazon Macie
+     * EXTERNAL - The bucket is shared with one or more of the following or any combination of the following: a
+     * CloudFront OAI, a CloudFront OAC, or an Amazon Web Services account that isn't part of your Amazon Macie
      * organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INTERNAL - The bucket is shared with an Amazon Web Services account that's part of the same Amazon Macie
-     * organization.
+     * INTERNAL - The bucket is shared with one or more Amazon Web Services accounts that are part of your Amazon Macie
+     * organization. It isn't shared with a CloudFront OAI or OAC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NOT_SHARED - The bucket isn't shared with other Amazon Web Services accounts.
+     * NOT_SHARED - The bucket isn't shared with another Amazon Web Services account, a CloudFront OAI, or a CloudFront
+     * OAC.
      * </p>
      * </li>
      * <li>
@@ -1349,26 +1520,31 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * An <i>Amazon Macie organization</i> is a set of Macie accounts that are centrally managed as a group of related
+     * accounts through Organizations or by Macie invitation.
+     * </p>
      * 
-     * @return <p>
-     *         Specifies whether the bucket is shared with another Amazon Web Services account. Possible values are:
-     *         </p>
+     * @return Specifies whether the bucket is shared with another Amazon Web Services account, an Amazon CloudFront
+     *         origin access identity (OAI), or a CloudFront origin access control (OAC). Possible values are:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         EXTERNAL - The bucket is shared with an Amazon Web Services account that isn't part of the same Amazon
-     *         Macie organization.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         INTERNAL - The bucket is shared with an Amazon Web Services account that's part of the same Amazon Macie
+     *         EXTERNAL - The bucket is shared with one or more of the following or any combination of the following: a
+     *         CloudFront OAI, a CloudFront OAC, or an Amazon Web Services account that isn't part of your Amazon Macie
      *         organization.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         NOT_SHARED - The bucket isn't shared with other Amazon Web Services accounts.
+     *         INTERNAL - The bucket is shared with one or more Amazon Web Services accounts that are part of your
+     *         Amazon Macie organization. It isn't shared with a CloudFront OAI or OAC.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         NOT_SHARED - The bucket isn't shared with another Amazon Web Services account, a CloudFront OAI, or a
+     *         CloudFront OAC.
      *         </p>
      *         </li>
      *         <li>
@@ -1377,6 +1553,9 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         </li>
      *         </ul>
+     *         <p>
+     *         An <i>Amazon Macie organization</i> is a set of Macie accounts that are centrally managed as a group of
+     *         related accounts through Organizations or by Macie invitation.
      * @see SharedAccess
      */
 
@@ -1386,24 +1565,27 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is shared with another Amazon Web Services account. Possible values are:
+     * Specifies whether the bucket is shared with another Amazon Web Services account, an Amazon CloudFront origin
+     * access identity (OAI), or a CloudFront origin access control (OAC). Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * EXTERNAL - The bucket is shared with an Amazon Web Services account that isn't part of the same Amazon Macie
+     * EXTERNAL - The bucket is shared with one or more of the following or any combination of the following: a
+     * CloudFront OAI, a CloudFront OAC, or an Amazon Web Services account that isn't part of your Amazon Macie
      * organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INTERNAL - The bucket is shared with an Amazon Web Services account that's part of the same Amazon Macie
-     * organization.
+     * INTERNAL - The bucket is shared with one or more Amazon Web Services accounts that are part of your Amazon Macie
+     * organization. It isn't shared with a CloudFront OAI or OAC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NOT_SHARED - The bucket isn't shared with other Amazon Web Services accounts.
+     * NOT_SHARED - The bucket isn't shared with another Amazon Web Services account, a CloudFront OAI, or a CloudFront
+     * OAC.
      * </p>
      * </li>
      * <li>
@@ -1412,27 +1594,32 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * An <i>Amazon Macie organization</i> is a set of Macie accounts that are centrally managed as a group of related
+     * accounts through Organizations or by Macie invitation.
+     * </p>
      * 
      * @param sharedAccess
-     *        <p>
-     *        Specifies whether the bucket is shared with another Amazon Web Services account. Possible values are:
-     *        </p>
+     *        Specifies whether the bucket is shared with another Amazon Web Services account, an Amazon CloudFront
+     *        origin access identity (OAI), or a CloudFront origin access control (OAC). Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        EXTERNAL - The bucket is shared with an Amazon Web Services account that isn't part of the same Amazon
-     *        Macie organization.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        INTERNAL - The bucket is shared with an Amazon Web Services account that's part of the same Amazon Macie
+     *        EXTERNAL - The bucket is shared with one or more of the following or any combination of the following: a
+     *        CloudFront OAI, a CloudFront OAC, or an Amazon Web Services account that isn't part of your Amazon Macie
      *        organization.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        NOT_SHARED - The bucket isn't shared with other Amazon Web Services accounts.
+     *        INTERNAL - The bucket is shared with one or more Amazon Web Services accounts that are part of your Amazon
+     *        Macie organization. It isn't shared with a CloudFront OAI or OAC.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NOT_SHARED - The bucket isn't shared with another Amazon Web Services account, a CloudFront OAI, or a
+     *        CloudFront OAC.
      *        </p>
      *        </li>
      *        <li>
@@ -1441,6 +1628,9 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </li>
      *        </ul>
+     *        <p>
+     *        An <i>Amazon Macie organization</i> is a set of Macie accounts that are centrally managed as a group of
+     *        related accounts through Organizations or by Macie invitation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SharedAccess
      */
@@ -1452,24 +1642,27 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is shared with another Amazon Web Services account. Possible values are:
+     * Specifies whether the bucket is shared with another Amazon Web Services account, an Amazon CloudFront origin
+     * access identity (OAI), or a CloudFront origin access control (OAC). Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * EXTERNAL - The bucket is shared with an Amazon Web Services account that isn't part of the same Amazon Macie
+     * EXTERNAL - The bucket is shared with one or more of the following or any combination of the following: a
+     * CloudFront OAI, a CloudFront OAC, or an Amazon Web Services account that isn't part of your Amazon Macie
      * organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INTERNAL - The bucket is shared with an Amazon Web Services account that's part of the same Amazon Macie
-     * organization.
+     * INTERNAL - The bucket is shared with one or more Amazon Web Services accounts that are part of your Amazon Macie
+     * organization. It isn't shared with a CloudFront OAI or OAC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NOT_SHARED - The bucket isn't shared with other Amazon Web Services accounts.
+     * NOT_SHARED - The bucket isn't shared with another Amazon Web Services account, a CloudFront OAI, or a CloudFront
+     * OAC.
      * </p>
      * </li>
      * <li>
@@ -1478,27 +1671,32 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * An <i>Amazon Macie organization</i> is a set of Macie accounts that are centrally managed as a group of related
+     * accounts through Organizations or by Macie invitation.
+     * </p>
      * 
      * @param sharedAccess
-     *        <p>
-     *        Specifies whether the bucket is shared with another Amazon Web Services account. Possible values are:
-     *        </p>
+     *        Specifies whether the bucket is shared with another Amazon Web Services account, an Amazon CloudFront
+     *        origin access identity (OAI), or a CloudFront origin access control (OAC). Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        EXTERNAL - The bucket is shared with an Amazon Web Services account that isn't part of the same Amazon
-     *        Macie organization.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        INTERNAL - The bucket is shared with an Amazon Web Services account that's part of the same Amazon Macie
+     *        EXTERNAL - The bucket is shared with one or more of the following or any combination of the following: a
+     *        CloudFront OAI, a CloudFront OAC, or an Amazon Web Services account that isn't part of your Amazon Macie
      *        organization.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        NOT_SHARED - The bucket isn't shared with other Amazon Web Services accounts.
+     *        INTERNAL - The bucket is shared with one or more Amazon Web Services accounts that are part of your Amazon
+     *        Macie organization. It isn't shared with a CloudFront OAI or OAC.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        NOT_SHARED - The bucket isn't shared with another Amazon Web Services account, a CloudFront OAI, or a
+     *        CloudFront OAC.
      *        </p>
      *        </li>
      *        <li>
@@ -1507,6 +1705,9 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </li>
      *        </ul>
+     *        <p>
+     *        An <i>Amazon Macie organization</i> is a set of Macie accounts that are centrally managed as a group of
+     *        related accounts through Organizations or by Macie invitation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SharedAccess
      */
@@ -1902,6 +2103,8 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
             sb.append("ErrorMessage: ").append(getErrorMessage()).append(",");
         if (getJobDetails() != null)
             sb.append("JobDetails: ").append(getJobDetails()).append(",");
+        if (getLastAutomatedDiscoveryTime() != null)
+            sb.append("LastAutomatedDiscoveryTime: ").append(getLastAutomatedDiscoveryTime()).append(",");
         if (getLastUpdated() != null)
             sb.append("LastUpdated: ").append(getLastUpdated()).append(",");
         if (getObjectCount() != null)
@@ -1914,6 +2117,8 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
             sb.append("Region: ").append(getRegion()).append(",");
         if (getReplicationDetails() != null)
             sb.append("ReplicationDetails: ").append(getReplicationDetails()).append(",");
+        if (getSensitivityScore() != null)
+            sb.append("SensitivityScore: ").append(getSensitivityScore()).append(",");
         if (getServerSideEncryption() != null)
             sb.append("ServerSideEncryption: ").append(getServerSideEncryption()).append(",");
         if (getSharedAccess() != null)
@@ -1985,6 +2190,10 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getJobDetails() != null && other.getJobDetails().equals(this.getJobDetails()) == false)
             return false;
+        if (other.getLastAutomatedDiscoveryTime() == null ^ this.getLastAutomatedDiscoveryTime() == null)
+            return false;
+        if (other.getLastAutomatedDiscoveryTime() != null && other.getLastAutomatedDiscoveryTime().equals(this.getLastAutomatedDiscoveryTime()) == false)
+            return false;
         if (other.getLastUpdated() == null ^ this.getLastUpdated() == null)
             return false;
         if (other.getLastUpdated() != null && other.getLastUpdated().equals(this.getLastUpdated()) == false)
@@ -2008,6 +2217,10 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
         if (other.getReplicationDetails() == null ^ this.getReplicationDetails() == null)
             return false;
         if (other.getReplicationDetails() != null && other.getReplicationDetails().equals(this.getReplicationDetails()) == false)
+            return false;
+        if (other.getSensitivityScore() == null ^ this.getSensitivityScore() == null)
+            return false;
+        if (other.getSensitivityScore() != null && other.getSensitivityScore().equals(this.getSensitivityScore()) == false)
             return false;
         if (other.getServerSideEncryption() == null ^ this.getServerSideEncryption() == null)
             return false;
@@ -2060,12 +2273,14 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getErrorCode() == null) ? 0 : getErrorCode().hashCode());
         hashCode = prime * hashCode + ((getErrorMessage() == null) ? 0 : getErrorMessage().hashCode());
         hashCode = prime * hashCode + ((getJobDetails() == null) ? 0 : getJobDetails().hashCode());
+        hashCode = prime * hashCode + ((getLastAutomatedDiscoveryTime() == null) ? 0 : getLastAutomatedDiscoveryTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdated() == null) ? 0 : getLastUpdated().hashCode());
         hashCode = prime * hashCode + ((getObjectCount() == null) ? 0 : getObjectCount().hashCode());
         hashCode = prime * hashCode + ((getObjectCountByEncryptionType() == null) ? 0 : getObjectCountByEncryptionType().hashCode());
         hashCode = prime * hashCode + ((getPublicAccess() == null) ? 0 : getPublicAccess().hashCode());
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
         hashCode = prime * hashCode + ((getReplicationDetails() == null) ? 0 : getReplicationDetails().hashCode());
+        hashCode = prime * hashCode + ((getSensitivityScore() == null) ? 0 : getSensitivityScore().hashCode());
         hashCode = prime * hashCode + ((getServerSideEncryption() == null) ? 0 : getServerSideEncryption().hashCode());
         hashCode = prime * hashCode + ((getSharedAccess() == null) ? 0 : getSharedAccess().hashCode());
         hashCode = prime * hashCode + ((getSizeInBytes() == null) ? 0 : getSizeInBytes().hashCode());

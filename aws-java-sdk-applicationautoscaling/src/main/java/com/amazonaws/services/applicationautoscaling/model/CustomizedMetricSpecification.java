@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * For information about the available metrics for a service, see <a
  * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html">Amazon Web
- * Services Services That Publish CloudWatch Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
+ * Services services that publish CloudWatch metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
  * </p>
  * <p>
  * To create your customized metric specification:
@@ -35,8 +35,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Add values for each required parameter from CloudWatch. You can use an existing metric, or a new metric that you
  * create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see <a
- * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publish Custom
- * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
+ * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publish custom
+ * metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
  * </p>
  * </li>
  * <li>
@@ -48,9 +48,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * </ul>
  * <p>
- * For more information about CloudWatch, see <a
+ * For more information about the CloudWatch terminology below, see <a
  * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch
- * Concepts</a>.
+ * concepts</a> in the <i>Amazon CloudWatch User Guide</i>.
  * </p>
  * 
  * @see <a
@@ -62,7 +62,10 @@ public class CustomizedMetricSpecification implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The name of the metric.
+     * The name of the metric. To get the exact metric name, namespace, and dimensions, inspect the <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a> object that's
+     * returned by a call to <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.
      * </p>
      */
     private String metricName;
@@ -90,18 +93,34 @@ public class CustomizedMetricSpecification implements Serializable, Cloneable, S
     private String statistic;
     /**
      * <p>
-     * The unit of the metric.
+     * The unit of the metric. For a complete list of the units that CloudWatch supports, see the <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">MetricDatum</a> data
+     * type in the <i>Amazon CloudWatch API Reference</i>.
      * </p>
      */
     private String unit;
+    /**
+     * <p>
+     * The metrics to include in the target tracking scaling policy, as a metric data query. This can include both raw
+     * metric and metric math expressions.
+     * </p>
+     */
+    private java.util.List<TargetTrackingMetricDataQuery> metrics;
 
     /**
      * <p>
-     * The name of the metric.
+     * The name of the metric. To get the exact metric name, namespace, and dimensions, inspect the <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a> object that's
+     * returned by a call to <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.
      * </p>
      * 
      * @param metricName
-     *        The name of the metric.
+     *        The name of the metric. To get the exact metric name, namespace, and dimensions, inspect the <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a> object
+     *        that's returned by a call to <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html"
+     *        >ListMetrics</a>.
      */
 
     public void setMetricName(String metricName) {
@@ -110,10 +129,17 @@ public class CustomizedMetricSpecification implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The name of the metric.
+     * The name of the metric. To get the exact metric name, namespace, and dimensions, inspect the <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a> object that's
+     * returned by a call to <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.
      * </p>
      * 
-     * @return The name of the metric.
+     * @return The name of the metric. To get the exact metric name, namespace, and dimensions, inspect the <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a> object
+     *         that's returned by a call to <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html"
+     *         >ListMetrics</a>.
      */
 
     public String getMetricName() {
@@ -122,11 +148,18 @@ public class CustomizedMetricSpecification implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The name of the metric.
+     * The name of the metric. To get the exact metric name, namespace, and dimensions, inspect the <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a> object that's
+     * returned by a call to <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.
      * </p>
      * 
      * @param metricName
-     *        The name of the metric.
+     *        The name of the metric. To get the exact metric name, namespace, and dimensions, inspect the <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_Metric.html">Metric</a> object
+     *        that's returned by a call to <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html"
+     *        >ListMetrics</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -348,11 +381,15 @@ public class CustomizedMetricSpecification implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The unit of the metric.
+     * The unit of the metric. For a complete list of the units that CloudWatch supports, see the <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">MetricDatum</a> data
+     * type in the <i>Amazon CloudWatch API Reference</i>.
      * </p>
      * 
      * @param unit
-     *        The unit of the metric.
+     *        The unit of the metric. For a complete list of the units that CloudWatch supports, see the <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html"
+     *        >MetricDatum</a> data type in the <i>Amazon CloudWatch API Reference</i>.
      */
 
     public void setUnit(String unit) {
@@ -361,10 +398,14 @@ public class CustomizedMetricSpecification implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The unit of the metric.
+     * The unit of the metric. For a complete list of the units that CloudWatch supports, see the <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">MetricDatum</a> data
+     * type in the <i>Amazon CloudWatch API Reference</i>.
      * </p>
      * 
-     * @return The unit of the metric.
+     * @return The unit of the metric. For a complete list of the units that CloudWatch supports, see the <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html"
+     *         >MetricDatum</a> data type in the <i>Amazon CloudWatch API Reference</i>.
      */
 
     public String getUnit() {
@@ -373,16 +414,98 @@ public class CustomizedMetricSpecification implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The unit of the metric.
+     * The unit of the metric. For a complete list of the units that CloudWatch supports, see the <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">MetricDatum</a> data
+     * type in the <i>Amazon CloudWatch API Reference</i>.
      * </p>
      * 
      * @param unit
-     *        The unit of the metric.
+     *        The unit of the metric. For a complete list of the units that CloudWatch supports, see the <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html"
+     *        >MetricDatum</a> data type in the <i>Amazon CloudWatch API Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CustomizedMetricSpecification withUnit(String unit) {
         setUnit(unit);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The metrics to include in the target tracking scaling policy, as a metric data query. This can include both raw
+     * metric and metric math expressions.
+     * </p>
+     * 
+     * @return The metrics to include in the target tracking scaling policy, as a metric data query. This can include
+     *         both raw metric and metric math expressions.
+     */
+
+    public java.util.List<TargetTrackingMetricDataQuery> getMetrics() {
+        return metrics;
+    }
+
+    /**
+     * <p>
+     * The metrics to include in the target tracking scaling policy, as a metric data query. This can include both raw
+     * metric and metric math expressions.
+     * </p>
+     * 
+     * @param metrics
+     *        The metrics to include in the target tracking scaling policy, as a metric data query. This can include
+     *        both raw metric and metric math expressions.
+     */
+
+    public void setMetrics(java.util.Collection<TargetTrackingMetricDataQuery> metrics) {
+        if (metrics == null) {
+            this.metrics = null;
+            return;
+        }
+
+        this.metrics = new java.util.ArrayList<TargetTrackingMetricDataQuery>(metrics);
+    }
+
+    /**
+     * <p>
+     * The metrics to include in the target tracking scaling policy, as a metric data query. This can include both raw
+     * metric and metric math expressions.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMetrics(java.util.Collection)} or {@link #withMetrics(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param metrics
+     *        The metrics to include in the target tracking scaling policy, as a metric data query. This can include
+     *        both raw metric and metric math expressions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CustomizedMetricSpecification withMetrics(TargetTrackingMetricDataQuery... metrics) {
+        if (this.metrics == null) {
+            setMetrics(new java.util.ArrayList<TargetTrackingMetricDataQuery>(metrics.length));
+        }
+        for (TargetTrackingMetricDataQuery ele : metrics) {
+            this.metrics.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The metrics to include in the target tracking scaling policy, as a metric data query. This can include both raw
+     * metric and metric math expressions.
+     * </p>
+     * 
+     * @param metrics
+     *        The metrics to include in the target tracking scaling policy, as a metric data query. This can include
+     *        both raw metric and metric math expressions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CustomizedMetricSpecification withMetrics(java.util.Collection<TargetTrackingMetricDataQuery> metrics) {
+        setMetrics(metrics);
         return this;
     }
 
@@ -407,7 +530,9 @@ public class CustomizedMetricSpecification implements Serializable, Cloneable, S
         if (getStatistic() != null)
             sb.append("Statistic: ").append(getStatistic()).append(",");
         if (getUnit() != null)
-            sb.append("Unit: ").append(getUnit());
+            sb.append("Unit: ").append(getUnit()).append(",");
+        if (getMetrics() != null)
+            sb.append("Metrics: ").append(getMetrics());
         sb.append("}");
         return sb.toString();
     }
@@ -442,6 +567,10 @@ public class CustomizedMetricSpecification implements Serializable, Cloneable, S
             return false;
         if (other.getUnit() != null && other.getUnit().equals(this.getUnit()) == false)
             return false;
+        if (other.getMetrics() == null ^ this.getMetrics() == null)
+            return false;
+        if (other.getMetrics() != null && other.getMetrics().equals(this.getMetrics()) == false)
+            return false;
         return true;
     }
 
@@ -455,6 +584,7 @@ public class CustomizedMetricSpecification implements Serializable, Cloneable, S
         hashCode = prime * hashCode + ((getDimensions() == null) ? 0 : getDimensions().hashCode());
         hashCode = prime * hashCode + ((getStatistic() == null) ? 0 : getStatistic().hashCode());
         hashCode = prime * hashCode + ((getUnit() == null) ? 0 : getUnit().hashCode());
+        hashCode = prime * hashCode + ((getMetrics() == null) ? 0 : getMetrics().hashCode());
         return hashCode;
     }
 

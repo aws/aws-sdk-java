@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,18 @@ public class DeleteActionTargetRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ARN of the custom action target to delete.
+     * The Amazon Resource Name (ARN) of the custom action target to delete.
      * </p>
      */
     private String actionTargetArn;
 
     /**
      * <p>
-     * The ARN of the custom action target to delete.
+     * The Amazon Resource Name (ARN) of the custom action target to delete.
      * </p>
      * 
      * @param actionTargetArn
-     *        The ARN of the custom action target to delete.
+     *        The Amazon Resource Name (ARN) of the custom action target to delete.
      */
 
     public void setActionTargetArn(String actionTargetArn) {
@@ -47,10 +47,10 @@ public class DeleteActionTargetRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ARN of the custom action target to delete.
+     * The Amazon Resource Name (ARN) of the custom action target to delete.
      * </p>
      * 
-     * @return The ARN of the custom action target to delete.
+     * @return The Amazon Resource Name (ARN) of the custom action target to delete.
      */
 
     public String getActionTargetArn() {
@@ -59,11 +59,11 @@ public class DeleteActionTargetRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ARN of the custom action target to delete.
+     * The Amazon Resource Name (ARN) of the custom action target to delete.
      * </p>
      * 
      * @param actionTargetArn
-     *        The ARN of the custom action target to delete.
+     *        The Amazon Resource Name (ARN) of the custom action target to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

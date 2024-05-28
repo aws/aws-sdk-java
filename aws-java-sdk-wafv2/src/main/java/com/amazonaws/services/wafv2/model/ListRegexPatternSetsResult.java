@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,12 @@ public class ListRegexPatternSetsResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String nextMarker;
-    /** <p/> */
+    /**
+     * <p>
+     * Array of regex pattern sets. If you specified a <code>Limit</code> in your request, this might not be the full
+     * list.
+     * </p>
+     */
     private java.util.List<RegexPatternSetSummary> regexPatternSets;
 
     /**
@@ -90,9 +95,13 @@ public class ListRegexPatternSetsResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p/>
+     * <p>
+     * Array of regex pattern sets. If you specified a <code>Limit</code> in your request, this might not be the full
+     * list.
+     * </p>
      * 
-     * @return
+     * @return Array of regex pattern sets. If you specified a <code>Limit</code> in your request, this might not be the
+     *         full list.
      */
 
     public java.util.List<RegexPatternSetSummary> getRegexPatternSets() {
@@ -100,9 +109,14 @@ public class ListRegexPatternSetsResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p/>
+     * <p>
+     * Array of regex pattern sets. If you specified a <code>Limit</code> in your request, this might not be the full
+     * list.
+     * </p>
      * 
      * @param regexPatternSets
+     *        Array of regex pattern sets. If you specified a <code>Limit</code> in your request, this might not be the
+     *        full list.
      */
 
     public void setRegexPatternSets(java.util.Collection<RegexPatternSetSummary> regexPatternSets) {
@@ -115,7 +129,10 @@ public class ListRegexPatternSetsResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p/>
+     * <p>
+     * Array of regex pattern sets. If you specified a <code>Limit</code> in your request, this might not be the full
+     * list.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setRegexPatternSets(java.util.Collection)} or {@link #withRegexPatternSets(java.util.Collection)} if you
@@ -123,6 +140,8 @@ public class ListRegexPatternSetsResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param regexPatternSets
+     *        Array of regex pattern sets. If you specified a <code>Limit</code> in your request, this might not be the
+     *        full list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,9 +156,14 @@ public class ListRegexPatternSetsResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p/>
+     * <p>
+     * Array of regex pattern sets. If you specified a <code>Limit</code> in your request, this might not be the full
+     * list.
+     * </p>
      * 
      * @param regexPatternSets
+     *        Array of regex pattern sets. If you specified a <code>Limit</code> in your request, this might not be the
+     *        full list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class MonitoringJobDefinition implements Serializable, Cloneable, Structu
     private java.util.List<MonitoringInput> monitoringInputs;
     /**
      * <p>
-     * The array of outputs from the monitoring job to be uploaded to Amazon Simple Storage Service (Amazon S3).
+     * The array of outputs from the monitoring job to be uploaded to Amazon S3.
      * </p>
      */
     private MonitoringOutputConfig monitoringOutputConfig;
@@ -197,11 +197,11 @@ public class MonitoringJobDefinition implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The array of outputs from the monitoring job to be uploaded to Amazon Simple Storage Service (Amazon S3).
+     * The array of outputs from the monitoring job to be uploaded to Amazon S3.
      * </p>
      * 
      * @param monitoringOutputConfig
-     *        The array of outputs from the monitoring job to be uploaded to Amazon Simple Storage Service (Amazon S3).
+     *        The array of outputs from the monitoring job to be uploaded to Amazon S3.
      */
 
     public void setMonitoringOutputConfig(MonitoringOutputConfig monitoringOutputConfig) {
@@ -210,10 +210,10 @@ public class MonitoringJobDefinition implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The array of outputs from the monitoring job to be uploaded to Amazon Simple Storage Service (Amazon S3).
+     * The array of outputs from the monitoring job to be uploaded to Amazon S3.
      * </p>
      * 
-     * @return The array of outputs from the monitoring job to be uploaded to Amazon Simple Storage Service (Amazon S3).
+     * @return The array of outputs from the monitoring job to be uploaded to Amazon S3.
      */
 
     public MonitoringOutputConfig getMonitoringOutputConfig() {
@@ -222,11 +222,11 @@ public class MonitoringJobDefinition implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The array of outputs from the monitoring job to be uploaded to Amazon Simple Storage Service (Amazon S3).
+     * The array of outputs from the monitoring job to be uploaded to Amazon S3.
      * </p>
      * 
      * @param monitoringOutputConfig
-     *        The array of outputs from the monitoring job to be uploaded to Amazon Simple Storage Service (Amazon S3).
+     *        The array of outputs from the monitoring job to be uploaded to Amazon S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

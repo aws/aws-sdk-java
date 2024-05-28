@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.iotsitewise.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -41,6 +42,10 @@ public class AssetModelPropertySummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("type").build();
     private static final MarshallingInfo<String> ASSETMODELCOMPOSITEMODELID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assetModelCompositeModelId").build();
+    private static final MarshallingInfo<List> PATH_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("path").build();
+    private static final MarshallingInfo<String> EXTERNALID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("externalId").build();
 
     private static final AssetModelPropertySummaryMarshaller instance = new AssetModelPropertySummaryMarshaller();
 
@@ -65,6 +70,8 @@ public class AssetModelPropertySummaryMarshaller {
             protocolMarshaller.marshall(assetModelPropertySummary.getUnit(), UNIT_BINDING);
             protocolMarshaller.marshall(assetModelPropertySummary.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(assetModelPropertySummary.getAssetModelCompositeModelId(), ASSETMODELCOMPOSITEMODELID_BINDING);
+            protocolMarshaller.marshall(assetModelPropertySummary.getPath(), PATH_BINDING);
+            protocolMarshaller.marshall(assetModelPropertySummary.getExternalId(), EXTERNALID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

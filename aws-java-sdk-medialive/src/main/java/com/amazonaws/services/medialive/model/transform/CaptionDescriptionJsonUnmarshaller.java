@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,6 +71,16 @@ public class CaptionDescriptionJsonUnmarshaller implements Unmarshaller<CaptionD
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     captionDescription.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("captionDashRoles", targetDepth)) {
+                    context.nextToken();
+                    captionDescription.setCaptionDashRoles(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("dvbDashAccessibility", targetDepth)) {
+                    context.nextToken();
+                    captionDescription.setDvbDashAccessibility(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

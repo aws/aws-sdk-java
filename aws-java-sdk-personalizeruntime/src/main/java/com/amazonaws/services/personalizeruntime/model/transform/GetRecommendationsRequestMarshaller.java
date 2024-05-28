@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,8 @@ public class GetRecommendationsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("recommenderArn").build();
     private static final MarshallingInfo<List> PROMOTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("promotions").build();
+    private static final MarshallingInfo<Map> METADATACOLUMNS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("metadataColumns").build();
 
     private static final GetRecommendationsRequestMarshaller instance = new GetRecommendationsRequestMarshaller();
 
@@ -73,6 +75,7 @@ public class GetRecommendationsRequestMarshaller {
             protocolMarshaller.marshall(getRecommendationsRequest.getFilterValues(), FILTERVALUES_BINDING);
             protocolMarshaller.marshall(getRecommendationsRequest.getRecommenderArn(), RECOMMENDERARN_BINDING);
             protocolMarshaller.marshall(getRecommendationsRequest.getPromotions(), PROMOTIONS_BINDING);
+            protocolMarshaller.marshall(getRecommendationsRequest.getMetadataColumns(), METADATACOLUMNS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

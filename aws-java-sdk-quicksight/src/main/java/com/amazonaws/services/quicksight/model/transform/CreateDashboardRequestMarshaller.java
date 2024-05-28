@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,16 @@ public class CreateDashboardRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DashboardPublishOptions").build();
     private static final MarshallingInfo<String> THEMEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ThemeArn").build();
+    private static final MarshallingInfo<StructuredPojo> DEFINITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Definition").build();
+    private static final MarshallingInfo<StructuredPojo> VALIDATIONSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ValidationStrategy").build();
+    private static final MarshallingInfo<List> FOLDERARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("FolderArns").build();
+    private static final MarshallingInfo<StructuredPojo> LINKSHARINGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LinkSharingConfiguration").build();
+    private static final MarshallingInfo<List> LINKENTITIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("LinkEntities").build();
 
     private static final CreateDashboardRequestMarshaller instance = new CreateDashboardRequestMarshaller();
 
@@ -75,6 +85,11 @@ public class CreateDashboardRequestMarshaller {
             protocolMarshaller.marshall(createDashboardRequest.getVersionDescription(), VERSIONDESCRIPTION_BINDING);
             protocolMarshaller.marshall(createDashboardRequest.getDashboardPublishOptions(), DASHBOARDPUBLISHOPTIONS_BINDING);
             protocolMarshaller.marshall(createDashboardRequest.getThemeArn(), THEMEARN_BINDING);
+            protocolMarshaller.marshall(createDashboardRequest.getDefinition(), DEFINITION_BINDING);
+            protocolMarshaller.marshall(createDashboardRequest.getValidationStrategy(), VALIDATIONSTRATEGY_BINDING);
+            protocolMarshaller.marshall(createDashboardRequest.getFolderArns(), FOLDERARNS_BINDING);
+            protocolMarshaller.marshall(createDashboardRequest.getLinkSharingConfiguration(), LINKSHARINGCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createDashboardRequest.getLinkEntities(), LINKENTITIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

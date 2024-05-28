@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,13 +25,13 @@ public class DeleteRepositoryPolicyResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The registry ID associated with the request.
+     * The registry ID that's associated with the request.
      * </p>
      */
     private String registryId;
     /**
      * <p>
-     * The repository name associated with the request.
+     * The repository name that's associated with the request.
      * </p>
      */
     private String repositoryName;
@@ -44,11 +44,11 @@ public class DeleteRepositoryPolicyResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The registry ID associated with the request.
+     * The registry ID that's associated with the request.
      * </p>
      * 
      * @param registryId
-     *        The registry ID associated with the request.
+     *        The registry ID that's associated with the request.
      */
 
     public void setRegistryId(String registryId) {
@@ -57,10 +57,10 @@ public class DeleteRepositoryPolicyResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The registry ID associated with the request.
+     * The registry ID that's associated with the request.
      * </p>
      * 
-     * @return The registry ID associated with the request.
+     * @return The registry ID that's associated with the request.
      */
 
     public String getRegistryId() {
@@ -69,11 +69,11 @@ public class DeleteRepositoryPolicyResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The registry ID associated with the request.
+     * The registry ID that's associated with the request.
      * </p>
      * 
      * @param registryId
-     *        The registry ID associated with the request.
+     *        The registry ID that's associated with the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,11 +84,11 @@ public class DeleteRepositoryPolicyResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The repository name associated with the request.
+     * The repository name that's associated with the request.
      * </p>
      * 
      * @param repositoryName
-     *        The repository name associated with the request.
+     *        The repository name that's associated with the request.
      */
 
     public void setRepositoryName(String repositoryName) {
@@ -97,10 +97,10 @@ public class DeleteRepositoryPolicyResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The repository name associated with the request.
+     * The repository name that's associated with the request.
      * </p>
      * 
-     * @return The repository name associated with the request.
+     * @return The repository name that's associated with the request.
      */
 
     public String getRepositoryName() {
@@ -109,11 +109,11 @@ public class DeleteRepositoryPolicyResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The repository name associated with the request.
+     * The repository name that's associated with the request.
      * </p>
      * 
      * @param repositoryName
-     *        The repository name associated with the request.
+     *        The repository name that's associated with the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

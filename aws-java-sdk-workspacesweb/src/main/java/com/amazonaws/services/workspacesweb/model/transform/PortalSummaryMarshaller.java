@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class PortalSummaryMarshaller {
 
+    private static final MarshallingInfo<String> AUTHENTICATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authenticationType").build();
     private static final MarshallingInfo<String> BROWSERSETTINGSARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("browserSettingsArn").build();
     private static final MarshallingInfo<String> BROWSERTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -35,6 +37,12 @@ public class PortalSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("displayName").build();
+    private static final MarshallingInfo<String> INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceType").build();
+    private static final MarshallingInfo<String> IPACCESSSETTINGSARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ipAccessSettingsArn").build();
+    private static final MarshallingInfo<Integer> MAXCONCURRENTSESSIONS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxConcurrentSessions").build();
     private static final MarshallingInfo<String> NETWORKSETTINGSARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkSettingsArn").build();
     private static final MarshallingInfo<String> PORTALARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -68,10 +76,14 @@ public class PortalSummaryMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(portalSummary.getAuthenticationType(), AUTHENTICATIONTYPE_BINDING);
             protocolMarshaller.marshall(portalSummary.getBrowserSettingsArn(), BROWSERSETTINGSARN_BINDING);
             protocolMarshaller.marshall(portalSummary.getBrowserType(), BROWSERTYPE_BINDING);
             protocolMarshaller.marshall(portalSummary.getCreationDate(), CREATIONDATE_BINDING);
             protocolMarshaller.marshall(portalSummary.getDisplayName(), DISPLAYNAME_BINDING);
+            protocolMarshaller.marshall(portalSummary.getInstanceType(), INSTANCETYPE_BINDING);
+            protocolMarshaller.marshall(portalSummary.getIpAccessSettingsArn(), IPACCESSSETTINGSARN_BINDING);
+            protocolMarshaller.marshall(portalSummary.getMaxConcurrentSessions(), MAXCONCURRENTSESSIONS_BINDING);
             protocolMarshaller.marshall(portalSummary.getNetworkSettingsArn(), NETWORKSETTINGSARN_BINDING);
             protocolMarshaller.marshall(portalSummary.getPortalArn(), PORTALARN_BINDING);
             protocolMarshaller.marshall(portalSummary.getPortalEndpoint(), PORTALENDPOINT_BINDING);

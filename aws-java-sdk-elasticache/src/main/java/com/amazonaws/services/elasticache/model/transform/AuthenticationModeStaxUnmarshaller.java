@@ -1,0 +1,78 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.elasticache.model.transform;
+
+import java.util.ArrayList;
+
+import javax.xml.stream.events.XMLEvent;
+import javax.annotation.Generated;
+
+import com.amazonaws.services.elasticache.model.*;
+import com.amazonaws.transform.Unmarshaller;
+
+import com.amazonaws.transform.StaxUnmarshallerContext;
+import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
+
+/**
+ * AuthenticationMode StAX Unmarshaller
+ */
+
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class AuthenticationModeStaxUnmarshaller implements Unmarshaller<AuthenticationMode, StaxUnmarshallerContext> {
+
+    public AuthenticationMode unmarshall(StaxUnmarshallerContext context) throws Exception {
+        AuthenticationMode authenticationMode = new AuthenticationMode();
+        int originalDepth = context.getCurrentDepth();
+        int targetDepth = originalDepth + 1;
+
+        if (context.isStartOfDocument())
+            targetDepth += 1;
+
+        while (true) {
+            XMLEvent xmlEvent = context.nextEvent();
+            if (xmlEvent.isEndDocument())
+                return authenticationMode;
+
+            if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+
+                if (context.testExpression("Type", targetDepth)) {
+                    authenticationMode.setType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("Passwords", targetDepth)) {
+                    authenticationMode.withPasswords(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("Passwords/member", targetDepth)) {
+                    authenticationMode.withPasswords(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+            } else if (xmlEvent.isEndElement()) {
+                if (context.getCurrentDepth() < originalDepth) {
+                    return authenticationMode;
+                }
+            }
+        }
+    }
+
+    private static AuthenticationModeStaxUnmarshaller instance;
+
+    public static AuthenticationModeStaxUnmarshaller getInstance() {
+        if (instance == null)
+            instance = new AuthenticationModeStaxUnmarshaller();
+        return instance;
+    }
+}

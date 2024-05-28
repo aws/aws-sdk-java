@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,7 +35,11 @@ public class ResourceInUseException extends com.amazonaws.services.eks.model.Ama
      * </p>
      */
     private String nodegroupName;
-
+    /**
+     * <p>
+     * The specified add-on name is in use.
+     * </p>
+     */
     private String addonName;
 
     /**
@@ -133,7 +137,12 @@ public class ResourceInUseException extends com.amazonaws.services.eks.model.Ama
     }
 
     /**
+     * <p>
+     * The specified add-on name is in use.
+     * </p>
+     * 
      * @param addonName
+     *        The specified add-on name is in use.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("addonName")
@@ -142,7 +151,11 @@ public class ResourceInUseException extends com.amazonaws.services.eks.model.Ama
     }
 
     /**
-     * @return
+     * <p>
+     * The specified add-on name is in use.
+     * </p>
+     * 
+     * @return The specified add-on name is in use.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("addonName")
@@ -151,7 +164,12 @@ public class ResourceInUseException extends com.amazonaws.services.eks.model.Ama
     }
 
     /**
+     * <p>
+     * The specified add-on name is in use.
+     * </p>
+     * 
      * @param addonName
+     *        The specified add-on name is in use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

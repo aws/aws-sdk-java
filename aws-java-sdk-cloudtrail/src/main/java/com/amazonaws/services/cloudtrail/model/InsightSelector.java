@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A JSON string that contains a list of insight types that are logged on a trail.
+ * A JSON string that contains a list of Insights types that are logged on a trail or event data store.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/InsightSelector" target="_top">AWS API
@@ -30,21 +30,44 @@ public class InsightSelector implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of insights to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are
-     * valid insight types.
+     * The type of Insights events to log on a trail or event data store. <code>ApiCallRateInsight</code> and
+     * <code>ApiErrorRateInsight</code> are valid Insight types.
+     * </p>
+     * <p>
+     * The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated
+     * per minute against a baseline API call volume.
+     * </p>
+     * <p>
+     * The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The
+     * error is shown if the API call is unsuccessful.
      * </p>
      */
     private String insightType;
 
     /**
      * <p>
-     * The type of insights to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are
-     * valid insight types.
+     * The type of Insights events to log on a trail or event data store. <code>ApiCallRateInsight</code> and
+     * <code>ApiErrorRateInsight</code> are valid Insight types.
+     * </p>
+     * <p>
+     * The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated
+     * per minute against a baseline API call volume.
+     * </p>
+     * <p>
+     * The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The
+     * error is shown if the API call is unsuccessful.
      * </p>
      * 
      * @param insightType
-     *        The type of insights to log on a trail. <code>ApiCallRateInsight</code> and
-     *        <code>ApiErrorRateInsight</code> are valid insight types.
+     *        The type of Insights events to log on a trail or event data store. <code>ApiCallRateInsight</code> and
+     *        <code>ApiErrorRateInsight</code> are valid Insight types.</p>
+     *        <p>
+     *        The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are
+     *        aggregated per minute against a baseline API call volume.
+     *        </p>
+     *        <p>
+     *        The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error
+     *        codes. The error is shown if the API call is unsuccessful.
      * @see InsightType
      */
 
@@ -54,12 +77,27 @@ public class InsightSelector implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of insights to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are
-     * valid insight types.
+     * The type of Insights events to log on a trail or event data store. <code>ApiCallRateInsight</code> and
+     * <code>ApiErrorRateInsight</code> are valid Insight types.
+     * </p>
+     * <p>
+     * The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated
+     * per minute against a baseline API call volume.
+     * </p>
+     * <p>
+     * The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The
+     * error is shown if the API call is unsuccessful.
      * </p>
      * 
-     * @return The type of insights to log on a trail. <code>ApiCallRateInsight</code> and
-     *         <code>ApiErrorRateInsight</code> are valid insight types.
+     * @return The type of Insights events to log on a trail or event data store. <code>ApiCallRateInsight</code> and
+     *         <code>ApiErrorRateInsight</code> are valid Insight types.</p>
+     *         <p>
+     *         The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are
+     *         aggregated per minute against a baseline API call volume.
+     *         </p>
+     *         <p>
+     *         The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error
+     *         codes. The error is shown if the API call is unsuccessful.
      * @see InsightType
      */
 
@@ -69,13 +107,28 @@ public class InsightSelector implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of insights to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are
-     * valid insight types.
+     * The type of Insights events to log on a trail or event data store. <code>ApiCallRateInsight</code> and
+     * <code>ApiErrorRateInsight</code> are valid Insight types.
+     * </p>
+     * <p>
+     * The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated
+     * per minute against a baseline API call volume.
+     * </p>
+     * <p>
+     * The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The
+     * error is shown if the API call is unsuccessful.
      * </p>
      * 
      * @param insightType
-     *        The type of insights to log on a trail. <code>ApiCallRateInsight</code> and
-     *        <code>ApiErrorRateInsight</code> are valid insight types.
+     *        The type of Insights events to log on a trail or event data store. <code>ApiCallRateInsight</code> and
+     *        <code>ApiErrorRateInsight</code> are valid Insight types.</p>
+     *        <p>
+     *        The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are
+     *        aggregated per minute against a baseline API call volume.
+     *        </p>
+     *        <p>
+     *        The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error
+     *        codes. The error is shown if the API call is unsuccessful.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InsightType
      */
@@ -87,13 +140,28 @@ public class InsightSelector implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of insights to log on a trail. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are
-     * valid insight types.
+     * The type of Insights events to log on a trail or event data store. <code>ApiCallRateInsight</code> and
+     * <code>ApiErrorRateInsight</code> are valid Insight types.
+     * </p>
+     * <p>
+     * The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are aggregated
+     * per minute against a baseline API call volume.
+     * </p>
+     * <p>
+     * The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error codes. The
+     * error is shown if the API call is unsuccessful.
      * </p>
      * 
      * @param insightType
-     *        The type of insights to log on a trail. <code>ApiCallRateInsight</code> and
-     *        <code>ApiErrorRateInsight</code> are valid insight types.
+     *        The type of Insights events to log on a trail or event data store. <code>ApiCallRateInsight</code> and
+     *        <code>ApiErrorRateInsight</code> are valid Insight types.</p>
+     *        <p>
+     *        The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API calls that are
+     *        aggregated per minute against a baseline API call volume.
+     *        </p>
+     *        <p>
+     *        The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that result in error
+     *        codes. The error is shown if the API call is unsuccessful.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InsightType
      */

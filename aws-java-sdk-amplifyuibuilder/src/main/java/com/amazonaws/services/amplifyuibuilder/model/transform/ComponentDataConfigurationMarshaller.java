@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,14 +28,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ComponentDataConfigurationMarshaller {
 
-    private static final MarshallingInfo<List> IDENTIFIERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("identifiers").build();
     private static final MarshallingInfo<String> MODEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("model").build();
-    private static final MarshallingInfo<StructuredPojo> PREDICATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("predicate").build();
     private static final MarshallingInfo<List> SORT_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("sort").build();
+    private static final MarshallingInfo<StructuredPojo> PREDICATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("predicate").build();
+    private static final MarshallingInfo<List> IDENTIFIERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("identifiers").build();
 
     private static final ComponentDataConfigurationMarshaller instance = new ComponentDataConfigurationMarshaller();
 
@@ -53,10 +53,10 @@ public class ComponentDataConfigurationMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(componentDataConfiguration.getIdentifiers(), IDENTIFIERS_BINDING);
             protocolMarshaller.marshall(componentDataConfiguration.getModel(), MODEL_BINDING);
-            protocolMarshaller.marshall(componentDataConfiguration.getPredicate(), PREDICATE_BINDING);
             protocolMarshaller.marshall(componentDataConfiguration.getSort(), SORT_BINDING);
+            protocolMarshaller.marshall(componentDataConfiguration.getPredicate(), PREDICATE_BINDING);
+            protocolMarshaller.marshall(componentDataConfiguration.getIdentifiers(), IDENTIFIERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

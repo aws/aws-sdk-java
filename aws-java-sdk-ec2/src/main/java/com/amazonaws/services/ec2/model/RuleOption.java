@@ -1,0 +1,215 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.ec2.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+/**
+ * <p>
+ * Describes additional settings for a stateful rule.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RuleOption" target="_top">AWS API
+ *      Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class RuleOption implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * The Suricata keyword.
+     * </p>
+     */
+    private String keyword;
+    /**
+     * <p>
+     * The settings for the keyword.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> settings;
+
+    /**
+     * <p>
+     * The Suricata keyword.
+     * </p>
+     * 
+     * @param keyword
+     *        The Suricata keyword.
+     */
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
+    }
+
+    /**
+     * <p>
+     * The Suricata keyword.
+     * </p>
+     * 
+     * @return The Suricata keyword.
+     */
+
+    public String getKeyword() {
+        return this.keyword;
+    }
+
+    /**
+     * <p>
+     * The Suricata keyword.
+     * </p>
+     * 
+     * @param keyword
+     *        The Suricata keyword.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleOption withKeyword(String keyword) {
+        setKeyword(keyword);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The settings for the keyword.
+     * </p>
+     * 
+     * @return The settings for the keyword.
+     */
+
+    public java.util.List<String> getSettings() {
+        if (settings == null) {
+            settings = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return settings;
+    }
+
+    /**
+     * <p>
+     * The settings for the keyword.
+     * </p>
+     * 
+     * @param settings
+     *        The settings for the keyword.
+     */
+
+    public void setSettings(java.util.Collection<String> settings) {
+        if (settings == null) {
+            this.settings = null;
+            return;
+        }
+
+        this.settings = new com.amazonaws.internal.SdkInternalList<String>(settings);
+    }
+
+    /**
+     * <p>
+     * The settings for the keyword.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSettings(java.util.Collection)} or {@link #withSettings(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param settings
+     *        The settings for the keyword.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleOption withSettings(String... settings) {
+        if (this.settings == null) {
+            setSettings(new com.amazonaws.internal.SdkInternalList<String>(settings.length));
+        }
+        for (String ele : settings) {
+            this.settings.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The settings for the keyword.
+     * </p>
+     * 
+     * @param settings
+     *        The settings for the keyword.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleOption withSettings(java.util.Collection<String> settings) {
+        setSettings(settings);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getKeyword() != null)
+            sb.append("Keyword: ").append(getKeyword()).append(",");
+        if (getSettings() != null)
+            sb.append("Settings: ").append(getSettings());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof RuleOption == false)
+            return false;
+        RuleOption other = (RuleOption) obj;
+        if (other.getKeyword() == null ^ this.getKeyword() == null)
+            return false;
+        if (other.getKeyword() != null && other.getKeyword().equals(this.getKeyword()) == false)
+            return false;
+        if (other.getSettings() == null ^ this.getSettings() == null)
+            return false;
+        if (other.getSettings() != null && other.getSettings().equals(this.getSettings()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getKeyword() == null) ? 0 : getKeyword().hashCode());
+        hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public RuleOption clone() {
+        try {
+            return (RuleOption) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+}

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,12 @@ public class SnapshotDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.Date snapshotCreationTimestamp;
+    /**
+     * <p>
+     * The Flink Runtime for the application snapshot.
+     * </p>
+     */
+    private String runtimeEnvironment;
 
     /**
      * <p>
@@ -233,6 +239,65 @@ public class SnapshotDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The Flink Runtime for the application snapshot.
+     * </p>
+     * 
+     * @param runtimeEnvironment
+     *        The Flink Runtime for the application snapshot.
+     * @see RuntimeEnvironment
+     */
+
+    public void setRuntimeEnvironment(String runtimeEnvironment) {
+        this.runtimeEnvironment = runtimeEnvironment;
+    }
+
+    /**
+     * <p>
+     * The Flink Runtime for the application snapshot.
+     * </p>
+     * 
+     * @return The Flink Runtime for the application snapshot.
+     * @see RuntimeEnvironment
+     */
+
+    public String getRuntimeEnvironment() {
+        return this.runtimeEnvironment;
+    }
+
+    /**
+     * <p>
+     * The Flink Runtime for the application snapshot.
+     * </p>
+     * 
+     * @param runtimeEnvironment
+     *        The Flink Runtime for the application snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RuntimeEnvironment
+     */
+
+    public SnapshotDetails withRuntimeEnvironment(String runtimeEnvironment) {
+        setRuntimeEnvironment(runtimeEnvironment);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Flink Runtime for the application snapshot.
+     * </p>
+     * 
+     * @param runtimeEnvironment
+     *        The Flink Runtime for the application snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RuntimeEnvironment
+     */
+
+    public SnapshotDetails withRuntimeEnvironment(RuntimeEnvironment runtimeEnvironment) {
+        this.runtimeEnvironment = runtimeEnvironment.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -251,7 +316,9 @@ public class SnapshotDetails implements Serializable, Cloneable, StructuredPojo 
         if (getApplicationVersionId() != null)
             sb.append("ApplicationVersionId: ").append(getApplicationVersionId()).append(",");
         if (getSnapshotCreationTimestamp() != null)
-            sb.append("SnapshotCreationTimestamp: ").append(getSnapshotCreationTimestamp());
+            sb.append("SnapshotCreationTimestamp: ").append(getSnapshotCreationTimestamp()).append(",");
+        if (getRuntimeEnvironment() != null)
+            sb.append("RuntimeEnvironment: ").append(getRuntimeEnvironment());
         sb.append("}");
         return sb.toString();
     }
@@ -282,6 +349,10 @@ public class SnapshotDetails implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getSnapshotCreationTimestamp() != null && other.getSnapshotCreationTimestamp().equals(this.getSnapshotCreationTimestamp()) == false)
             return false;
+        if (other.getRuntimeEnvironment() == null ^ this.getRuntimeEnvironment() == null)
+            return false;
+        if (other.getRuntimeEnvironment() != null && other.getRuntimeEnvironment().equals(this.getRuntimeEnvironment()) == false)
+            return false;
         return true;
     }
 
@@ -294,6 +365,7 @@ public class SnapshotDetails implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getSnapshotStatus() == null) ? 0 : getSnapshotStatus().hashCode());
         hashCode = prime * hashCode + ((getApplicationVersionId() == null) ? 0 : getApplicationVersionId().hashCode());
         hashCode = prime * hashCode + ((getSnapshotCreationTimestamp() == null) ? 0 : getSnapshotCreationTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getRuntimeEnvironment() == null) ? 0 : getRuntimeEnvironment().hashCode());
         return hashCode;
     }
 

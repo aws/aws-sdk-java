@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -119,6 +119,22 @@ public class StudioJsonUnmarshaller implements Unmarshaller<Studio, JsonUnmarsha
                     studio.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
+                }
+                if (context.testExpression("IdcInstanceArn", targetDepth)) {
+                    context.nextToken();
+                    studio.setIdcInstanceArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TrustedIdentityPropagationEnabled", targetDepth)) {
+                    context.nextToken();
+                    studio.setTrustedIdentityPropagationEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("IdcUserAssignment", targetDepth)) {
+                    context.nextToken();
+                    studio.setIdcUserAssignment(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("EncryptionKeyArn", targetDepth)) {
+                    context.nextToken();
+                    studio.setEncryptionKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

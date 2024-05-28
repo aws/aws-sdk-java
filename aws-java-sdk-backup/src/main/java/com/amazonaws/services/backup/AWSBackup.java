@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,31 @@ public interface AWSBackup {
      * @see RegionUtils#getRegionsForService(String)
      */
     String ENDPOINT_PREFIX = "backup";
+
+    /**
+     * <p>
+     * This action removes the specified legal hold on a recovery point. This action can only be performed by a user
+     * with sufficient permissions.
+     * </p>
+     * 
+     * @param cancelLegalHoldRequest
+     * @return Result of the CancelLegalHold operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws InvalidResourceStateException
+     *         Backup is already performing an action on this recovery point. It can't perform the action you requested
+     *         until the first action finishes. Try again later.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @sample AWSBackup.CancelLegalHold
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CancelLegalHold" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CancelLegalHoldResult cancelLegalHold(CancelLegalHoldRequest cancelLegalHoldRequest);
 
     /**
      * <p>
@@ -153,6 +178,65 @@ public interface AWSBackup {
 
     /**
      * <p>
+     * This action creates a legal hold on a recovery point (backup). A legal hold is a restraint on altering or
+     * deleting a backup until an authorized user cancels the legal hold. Any actions to delete or disassociate a
+     * recovery point will fail with an error if one or more active legal holds are on the recovery point.
+     * </p>
+     * 
+     * @param createLegalHoldRequest
+     * @return Result of the CreateLegalHold operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @throws LimitExceededException
+     *         A limit in the request has been exceeded; for example, a maximum number of items allowed in a request.
+     * @sample AWSBackup.CreateLegalHold
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateLegalHold" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateLegalHoldResult createLegalHold(CreateLegalHoldRequest createLegalHoldRequest);
+
+    /**
+     * <p>
+     * This request creates a logical container to where backups may be copied.
+     * </p>
+     * <p>
+     * This request includes a name, the Region, the maximum number of retention days, the minimum number of retention
+     * days, and optionally can include tags and a creator request ID.
+     * </p>
+     * <note>
+     * <p>
+     * Do not include sensitive data, such as passport numbers, in the name of a backup vault.
+     * </p>
+     * </note>
+     * 
+     * @param createLogicallyAirGappedBackupVaultRequest
+     * @return Result of the CreateLogicallyAirGappedBackupVault operation returned by the service.
+     * @throws AlreadyExistsException
+     *         The required resource already exists.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws LimitExceededException
+     *         A limit in the request has been exceeded; for example, a maximum number of items allowed in a request.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong
+     *         type.
+     * @sample AWSBackup.CreateLogicallyAirGappedBackupVault
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateLogicallyAirGappedBackupVault"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateLogicallyAirGappedBackupVaultResult createLogicallyAirGappedBackupVault(
+            CreateLogicallyAirGappedBackupVaultRequest createLogicallyAirGappedBackupVaultRequest);
+
+    /**
+     * <p>
      * Creates a report plan. A report plan is a document that contains information about the contents of the report and
      * where Backup will deliver it.
      * </p>
@@ -178,6 +262,89 @@ public interface AWSBackup {
      *      Documentation</a>
      */
     CreateReportPlanResult createReportPlan(CreateReportPlanRequest createReportPlanRequest);
+
+    /**
+     * <p>
+     * This is the first of two steps to create a restore testing plan; once this request is successful, finish the
+     * procedure with request CreateRestoreTestingSelection.
+     * </p>
+     * <p>
+     * You must include the parameter RestoreTestingPlan. You may optionally include CreatorRequestId and Tags.
+     * </p>
+     * 
+     * @param createRestoreTestingPlanRequest
+     * @return Result of the CreateRestoreTestingPlan operation returned by the service.
+     * @throws AlreadyExistsException
+     *         The required resource already exists.
+     * @throws ConflictException
+     *         Backup can't perform the action that you requested until it finishes performing a previous action. Try
+     *         again later.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws LimitExceededException
+     *         A limit in the request has been exceeded; for example, a maximum number of items allowed in a request.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.CreateRestoreTestingPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateRestoreTestingPlan"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateRestoreTestingPlanResult createRestoreTestingPlan(CreateRestoreTestingPlanRequest createRestoreTestingPlanRequest);
+
+    /**
+     * <p>
+     * This request can be sent after CreateRestoreTestingPlan request returns successfully. This is the second part of
+     * creating a resource testing plan, and it must be completed sequentially.
+     * </p>
+     * <p>
+     * This consists of <code>RestoreTestingSelectionName</code>, <code>ProtectedResourceType</code>, and one of the
+     * following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ProtectedResourceArns</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ProtectedResourceConditions</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Each protected resource type can have one single value.
+     * </p>
+     * <p>
+     * A restore testing selection can include a wildcard value ("*") for <code>ProtectedResourceArns</code> along with
+     * <code>ProtectedResourceConditions</code>. Alternatively, you can include up to 30 specific protected resource
+     * ARNs in <code>ProtectedResourceArns</code>.
+     * </p>
+     * <p>
+     * Cannot select by both protected resource types AND specific ARNs. Request will fail if both are included.
+     * </p>
+     * 
+     * @param createRestoreTestingSelectionRequest
+     * @return Result of the CreateRestoreTestingSelection operation returned by the service.
+     * @throws AlreadyExistsException
+     *         The required resource already exists.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws LimitExceededException
+     *         A limit in the request has been exceeded; for example, a maximum number of items allowed in a request.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.CreateRestoreTestingSelection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateRestoreTestingSelection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateRestoreTestingSelectionResult createRestoreTestingSelection(CreateRestoreTestingSelectionRequest createRestoreTestingSelectionRequest);
 
     /**
      * <p>
@@ -355,6 +522,20 @@ public interface AWSBackup {
      * If the recovery point ID belongs to a continuous backup, calling this endpoint deletes the existing continuous
      * backup and stops future continuous backup.
      * </p>
+     * <p>
+     * When an IAM role's permissions are insufficient to call this API, the service sends back an HTTP 200 response
+     * with an empty HTTP body, but the recovery point is not deleted. Instead, it enters an <code>EXPIRED</code> state.
+     * </p>
+     * <p>
+     * <code>EXPIRED</code> recovery points can be deleted with this API once the IAM role has the
+     * <code>iam:CreateServiceLinkedRole</code> action. To learn more about adding this role, see <a href=
+     * "https://docs.aws.amazon.com/aws-backup/latest/devguide/deleting-backups.html#deleting-backups-troubleshooting">
+     * Troubleshooting manual deletions</a>.
+     * </p>
+     * <p>
+     * If the user or role is deleted or the permission within the role is removed, the deletion will not be successful
+     * and will enter an <code>EXPIRED</code> state.
+     * </p>
      * 
      * @param deleteRecoveryPointRequest
      * @return Result of the DeleteRecoveryPoint operation returned by the service.
@@ -401,6 +582,48 @@ public interface AWSBackup {
      *      Documentation</a>
      */
     DeleteReportPlanResult deleteReportPlan(DeleteReportPlanRequest deleteReportPlanRequest);
+
+    /**
+     * <p>
+     * This request deletes the specified restore testing plan.
+     * </p>
+     * <p>
+     * Deletion can only successfully occur if all associated restore testing selections are deleted first.
+     * </p>
+     * 
+     * @param deleteRestoreTestingPlanRequest
+     * @return Result of the DeleteRestoreTestingPlan operation returned by the service.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong
+     *         type.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.DeleteRestoreTestingPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteRestoreTestingPlan"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteRestoreTestingPlanResult deleteRestoreTestingPlan(DeleteRestoreTestingPlanRequest deleteRestoreTestingPlanRequest);
+
+    /**
+     * <p>
+     * Input the Restore Testing Plan name and Restore Testing Selection name.
+     * </p>
+     * <p>
+     * All testing selections associated with a restore testing plan must be deleted before the restore testing plan can
+     * be deleted.
+     * </p>
+     * 
+     * @param deleteRestoreTestingSelectionRequest
+     * @return Result of the DeleteRestoreTestingSelection operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.DeleteRestoreTestingSelection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteRestoreTestingSelection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteRestoreTestingSelectionResult deleteRestoreTestingSelection(DeleteRestoreTestingSelectionRequest deleteRestoreTestingSelectionRequest);
 
     /**
      * <p>
@@ -667,6 +890,32 @@ public interface AWSBackup {
 
     /**
      * <p>
+     * This action to a specific child (nested) recovery point removes the relationship between the specified recovery
+     * point and its parent (composite) recovery point.
+     * </p>
+     * 
+     * @param disassociateRecoveryPointFromParentRequest
+     * @return Result of the DisassociateRecoveryPointFromParent operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong
+     *         type.
+     * @sample AWSBackup.DisassociateRecoveryPointFromParent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DisassociateRecoveryPointFromParent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateRecoveryPointFromParentResult disassociateRecoveryPointFromParent(
+            DisassociateRecoveryPointFromParentRequest disassociateRecoveryPointFromParentRequest);
+
+    /**
+     * <p>
      * Returns the backup plan that is specified by the plan ID as a backup template.
      * </p>
      * 
@@ -819,6 +1068,28 @@ public interface AWSBackup {
 
     /**
      * <p>
+     * This action returns details for a specified legal hold. The details are the body of a legal hold in JSON format,
+     * in addition to metadata.
+     * </p>
+     * 
+     * @param getLegalHoldRequest
+     * @return Result of the GetLegalHold operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @sample AWSBackup.GetLegalHold
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetLegalHold" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetLegalHoldResult getLegalHold(GetLegalHoldRequest getLegalHoldRequest);
+
+    /**
+     * <p>
      * Returns a set of metadata key-value pairs that were used to create the backup.
      * </p>
      * 
@@ -840,6 +1111,85 @@ public interface AWSBackup {
 
     /**
      * <p>
+     * This request returns the metadata for the specified restore job.
+     * </p>
+     * 
+     * @param getRestoreJobMetadataRequest
+     * @return Result of the GetRestoreJobMetadata operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.GetRestoreJobMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRestoreJobMetadata" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetRestoreJobMetadataResult getRestoreJobMetadata(GetRestoreJobMetadataRequest getRestoreJobMetadataRequest);
+
+    /**
+     * <p>
+     * This request returns the minimal required set of metadata needed to start a restore job with secure default
+     * settings. <code>BackupVaultName</code> and <code>RecoveryPointArn</code> are required parameters.
+     * <code>BackupVaultAccountId</code> is an optional parameter.
+     * </p>
+     * 
+     * @param getRestoreTestingInferredMetadataRequest
+     * @return Result of the GetRestoreTestingInferredMetadata operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.GetRestoreTestingInferredMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRestoreTestingInferredMetadata"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetRestoreTestingInferredMetadataResult getRestoreTestingInferredMetadata(GetRestoreTestingInferredMetadataRequest getRestoreTestingInferredMetadataRequest);
+
+    /**
+     * <p>
+     * Returns <code>RestoreTestingPlan</code> details for the specified <code>RestoreTestingPlanName</code>. The
+     * details are the body of a restore testing plan in JSON format, in addition to plan metadata.
+     * </p>
+     * 
+     * @param getRestoreTestingPlanRequest
+     * @return Result of the GetRestoreTestingPlan operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.GetRestoreTestingPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRestoreTestingPlan" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetRestoreTestingPlanResult getRestoreTestingPlan(GetRestoreTestingPlanRequest getRestoreTestingPlanRequest);
+
+    /**
+     * <p>
+     * Returns RestoreTestingSelection, which displays resources and elements of the restore testing plan.
+     * </p>
+     * 
+     * @param getRestoreTestingSelectionRequest
+     * @return Result of the GetRestoreTestingSelection operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.GetRestoreTestingSelection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetRestoreTestingSelection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetRestoreTestingSelectionResult getRestoreTestingSelection(GetRestoreTestingSelectionRequest getRestoreTestingSelectionRequest);
+
+    /**
+     * <p>
      * Returns the Amazon Web Services resource types supported by Backup.
      * </p>
      * 
@@ -852,6 +1202,29 @@ public interface AWSBackup {
      *      target="_top">AWS API Documentation</a>
      */
     GetSupportedResourceTypesResult getSupportedResourceTypes(GetSupportedResourceTypesRequest getSupportedResourceTypesRequest);
+
+    /**
+     * <p>
+     * This is a request for a summary of backup jobs created or running within the most recent 30 days. You can include
+     * parameters AccountID, State, ResourceType, MessageCategory, AggregationPeriod, MaxResults, or NextToken to filter
+     * results.
+     * </p>
+     * <p>
+     * This request returns a summary that contains Region, Account, State, ResourceType, MessageCategory, StartTime,
+     * EndTime, and Count of included jobs.
+     * </p>
+     * 
+     * @param listBackupJobSummariesRequest
+     * @return Result of the ListBackupJobSummaries operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.ListBackupJobSummaries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupJobSummaries" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListBackupJobSummariesResult listBackupJobSummaries(ListBackupJobSummariesRequest listBackupJobSummariesRequest);
 
     /**
      * <p>
@@ -983,6 +1356,29 @@ public interface AWSBackup {
 
     /**
      * <p>
+     * This request obtains a list of copy jobs created or running within the the most recent 30 days. You can include
+     * parameters AccountID, State, ResourceType, MessageCategory, AggregationPeriod, MaxResults, or NextToken to filter
+     * results.
+     * </p>
+     * <p>
+     * This request returns a summary that contains Region, Account, State, RestourceType, MessageCategory, StartTime,
+     * EndTime, and Count of included jobs.
+     * </p>
+     * 
+     * @param listCopyJobSummariesRequest
+     * @return Result of the ListCopyJobSummaries operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.ListCopyJobSummaries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListCopyJobSummaries" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListCopyJobSummariesResult listCopyJobSummaries(ListCopyJobSummariesRequest listCopyJobSummariesRequest);
+
+    /**
+     * <p>
      * Returns metadata about your copy jobs.
      * </p>
      * 
@@ -1017,6 +1413,23 @@ public interface AWSBackup {
 
     /**
      * <p>
+     * This action returns metadata about active and previous legal holds.
+     * </p>
+     * 
+     * @param listLegalHoldsRequest
+     * @return Result of the ListLegalHolds operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.ListLegalHolds
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListLegalHolds" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListLegalHoldsResult listLegalHolds(ListLegalHoldsRequest listLegalHoldsRequest);
+
+    /**
+     * <p>
      * Returns an array of resources successfully backed up by Backup, including the time the resource was saved, an
      * Amazon Resource Name (ARN) of the resource, and a resource type.
      * </p>
@@ -1032,6 +1445,26 @@ public interface AWSBackup {
      *      API Documentation</a>
      */
     ListProtectedResourcesResult listProtectedResources(ListProtectedResourcesRequest listProtectedResourcesRequest);
+
+    /**
+     * <p>
+     * This request lists the protected resources corresponding to each backup vault.
+     * </p>
+     * 
+     * @param listProtectedResourcesByBackupVaultRequest
+     * @return Result of the ListProtectedResourcesByBackupVault operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.ListProtectedResourcesByBackupVault
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListProtectedResourcesByBackupVault"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListProtectedResourcesByBackupVaultResult listProtectedResourcesByBackupVault(
+            ListProtectedResourcesByBackupVaultRequest listProtectedResourcesByBackupVaultRequest);
 
     /**
      * <p>
@@ -1053,6 +1486,25 @@ public interface AWSBackup {
      *      target="_top">AWS API Documentation</a>
      */
     ListRecoveryPointsByBackupVaultResult listRecoveryPointsByBackupVault(ListRecoveryPointsByBackupVaultRequest listRecoveryPointsByBackupVaultRequest);
+
+    /**
+     * <p>
+     * This action returns recovery point ARNs (Amazon Resource Names) of the specified legal hold.
+     * </p>
+     * 
+     * @param listRecoveryPointsByLegalHoldRequest
+     * @return Result of the ListRecoveryPointsByLegalHold operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.ListRecoveryPointsByLegalHold
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRecoveryPointsByLegalHold"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListRecoveryPointsByLegalHoldResult listRecoveryPointsByLegalHold(ListRecoveryPointsByLegalHoldRequest listRecoveryPointsByLegalHoldRequest);
 
     /**
      * <p>
@@ -1092,6 +1544,8 @@ public interface AWSBackup {
      *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
      * @throws ServiceUnavailableException
      *         The request failed due to a temporary failure of the server.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
      * @sample AWSBackup.ListReportJobs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListReportJobs" target="_top">AWS API
      *      Documentation</a>
@@ -1118,6 +1572,28 @@ public interface AWSBackup {
 
     /**
      * <p>
+     * This request obtains a summary of restore jobs created or running within the the most recent 30 days. You can
+     * include parameters AccountID, State, ResourceType, AggregationPeriod, MaxResults, or NextToken to filter results.
+     * </p>
+     * <p>
+     * This request returns a summary that contains Region, Account, State, RestourceType, MessageCategory, StartTime,
+     * EndTime, and Count of included jobs.
+     * </p>
+     * 
+     * @param listRestoreJobSummariesRequest
+     * @return Result of the ListRestoreJobSummaries operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.ListRestoreJobSummaries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreJobSummaries" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListRestoreJobSummariesResult listRestoreJobSummaries(ListRestoreJobSummariesRequest listRestoreJobSummariesRequest);
+
+    /**
+     * <p>
      * Returns a list of jobs that Backup initiated to restore a saved resource, including details about the recovery
      * process.
      * </p>
@@ -1137,6 +1613,70 @@ public interface AWSBackup {
      *      Documentation</a>
      */
     ListRestoreJobsResult listRestoreJobs(ListRestoreJobsRequest listRestoreJobsRequest);
+
+    /**
+     * <p>
+     * This returns restore jobs that contain the specified protected resource.
+     * </p>
+     * <p>
+     * You must include <code>ResourceArn</code>. You can optionally include <code>NextToken</code>,
+     * <code>ByStatus</code>, <code>MaxResults</code>, <code>ByRecoveryPointCreationDateAfter</code> , and
+     * <code>ByRecoveryPointCreationDateBefore</code>.
+     * </p>
+     * 
+     * @param listRestoreJobsByProtectedResourceRequest
+     * @return Result of the ListRestoreJobsByProtectedResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.ListRestoreJobsByProtectedResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreJobsByProtectedResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListRestoreJobsByProtectedResourceResult listRestoreJobsByProtectedResource(
+            ListRestoreJobsByProtectedResourceRequest listRestoreJobsByProtectedResourceRequest);
+
+    /**
+     * <p>
+     * Returns a list of restore testing plans.
+     * </p>
+     * 
+     * @param listRestoreTestingPlansRequest
+     * @return Result of the ListRestoreTestingPlans operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.ListRestoreTestingPlans
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreTestingPlans" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListRestoreTestingPlansResult listRestoreTestingPlans(ListRestoreTestingPlansRequest listRestoreTestingPlansRequest);
+
+    /**
+     * <p>
+     * Returns a list of restore testing selections. Can be filtered by <code>MaxResults</code> and
+     * <code>RestoreTestingPlanName</code>.
+     * </p>
+     * 
+     * @param listRestoreTestingSelectionsRequest
+     * @return Result of the ListRestoreTestingSelections operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.ListRestoreTestingSelections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRestoreTestingSelections"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListRestoreTestingSelectionsResult listRestoreTestingSelections(ListRestoreTestingSelectionsRequest listRestoreTestingSelectionsRequest);
 
     /**
      * <p>
@@ -1196,7 +1736,9 @@ public interface AWSBackup {
      * </p>
      * <note>
      * <p>
-     * Backup Vault Lock has yet to receive a third-party assessment for SEC 17a-4(f) and CFTC.
+     * Backup Vault Lock has been assessed by Cohasset Associates for use in environments that are subject to SEC 17a-4,
+     * CFTC, and FINRA regulations. For more information about how Backup Vault Lock relates to these regulations, see
+     * the <a href="samples/cohassetreport.zip">Cohasset Associates Compliance Assessment.</a>
      * </p>
      * </note>
      * 
@@ -1239,6 +1781,32 @@ public interface AWSBackup {
      *      target="_top">AWS API Documentation</a>
      */
     PutBackupVaultNotificationsResult putBackupVaultNotifications(PutBackupVaultNotificationsRequest putBackupVaultNotificationsRequest);
+
+    /**
+     * <p>
+     * This request allows you to send your independent self-run restore test validation results.
+     * <code>RestoreJobId</code> and <code>ValidationStatus</code> are required. Optionally, you can input a
+     * <code>ValidationStatusMessage</code>.
+     * </p>
+     * 
+     * @param putRestoreValidationResultRequest
+     * @return Result of the PutRestoreValidationResult operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong
+     *         type.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.PutRestoreValidationResult
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/PutRestoreValidationResult"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutRestoreValidationResultResult putRestoreValidationResult(PutRestoreValidationResultRequest putRestoreValidationResultRequest);
 
     /**
      * <p>
@@ -1331,6 +1899,9 @@ public interface AWSBackup {
      *         Indicates that a required parameter is missing.
      * @throws ServiceUnavailableException
      *         The request failed due to a temporary failure of the server.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong
+     *         type.
      * @sample AWSBackup.StartRestoreJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartRestoreJob" target="_top">AWS API
      *      Documentation</a>
@@ -1340,6 +1911,11 @@ public interface AWSBackup {
     /**
      * <p>
      * Attempts to cancel a job to create a one-time backup of a resource.
+     * </p>
+     * <p>
+     * This action is not supported for the following services: Amazon FSx for Windows File Server, Amazon FSx for
+     * Lustre, Amazon FSx for NetApp ONTAP , Amazon FSx for OpenZFS, Amazon DocumentDB (with MongoDB compatibility),
+     * Amazon RDS, Amazon Aurora, and Amazon Neptune.
      * </p>
      * 
      * @param stopBackupJobRequest
@@ -1526,10 +2102,10 @@ public interface AWSBackup {
 
     /**
      * <p>
-     * Updates the current service opt-in settings for the Region. If service-opt-in is enabled for a service, Backup
-     * tries to protect that service's resources in this Region, when the resource is included in an on-demand backup or
-     * scheduled backup plan. Otherwise, Backup does not try to protect that service's resources in this Region. Use the
-     * <code>DescribeRegionSettings</code> API to determine the resource types that are supported.
+     * Updates the current service opt-in settings for the Region.
+     * </p>
+     * <p>
+     * Use the <code>DescribeRegionSettings</code> API to determine the resource types that are supported.
      * </p>
      * 
      * @param updateRegionSettingsRequest
@@ -1570,6 +2146,90 @@ public interface AWSBackup {
      *      Documentation</a>
      */
     UpdateReportPlanResult updateReportPlan(UpdateReportPlanRequest updateReportPlanRequest);
+
+    /**
+     * <p>
+     * This request will send changes to your specified restore testing plan. <code>RestoreTestingPlanName</code> cannot
+     * be updated after it is created.
+     * </p>
+     * <p>
+     * <code>RecoveryPointSelection</code> can contain:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Algorithm</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ExcludeVaults</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IncludeVaults</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RecoveryPointTypes</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SelectionWindowDays</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param updateRestoreTestingPlanRequest
+     * @return Result of the UpdateRestoreTestingPlan operation returned by the service.
+     * @throws ConflictException
+     *         Backup can't perform the action that you requested until it finishes performing a previous action. Try
+     *         again later.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.UpdateRestoreTestingPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRestoreTestingPlan"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateRestoreTestingPlanResult updateRestoreTestingPlan(UpdateRestoreTestingPlanRequest updateRestoreTestingPlanRequest);
+
+    /**
+     * <p>
+     * Most elements except the <code>RestoreTestingSelectionName</code> can be updated with this request.
+     * </p>
+     * <p>
+     * <code>RestoreTestingSelection</code> can use either protected resource ARNs or conditions, but not both. That is,
+     * if your selection has <code>ProtectedResourceArns</code>, requesting an update with the parameter
+     * <code>ProtectedResourceConditions</code> will be unsuccessful.
+     * </p>
+     * 
+     * @param updateRestoreTestingSelectionRequest
+     * @return Result of the UpdateRestoreTestingSelection operation returned by the service.
+     * @throws ConflictException
+     *         Backup can't perform the action that you requested until it finishes performing a previous action. Try
+     *         again later.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.UpdateRestoreTestingSelection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateRestoreTestingSelection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateRestoreTestingSelectionResult updateRestoreTestingSelection(UpdateRestoreTestingSelectionRequest updateRestoreTestingSelectionRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

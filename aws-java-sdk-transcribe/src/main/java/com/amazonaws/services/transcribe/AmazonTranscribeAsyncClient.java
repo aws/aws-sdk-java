@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -360,6 +360,39 @@ public class AmazonTranscribeAsyncClient extends AmazonTranscribeClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteMedicalScribeJobResult> deleteMedicalScribeJobAsync(DeleteMedicalScribeJobRequest request) {
+
+        return deleteMedicalScribeJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMedicalScribeJobResult> deleteMedicalScribeJobAsync(final DeleteMedicalScribeJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteMedicalScribeJobRequest, DeleteMedicalScribeJobResult> asyncHandler) {
+        final DeleteMedicalScribeJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteMedicalScribeJobResult>() {
+            @Override
+            public DeleteMedicalScribeJobResult call() throws Exception {
+                DeleteMedicalScribeJobResult result = null;
+
+                try {
+                    result = executeDeleteMedicalScribeJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteMedicalTranscriptionJobResult> deleteMedicalTranscriptionJobAsync(DeleteMedicalTranscriptionJobRequest request) {
 
         return deleteMedicalTranscriptionJobAsync(request, null);
@@ -609,6 +642,39 @@ public class AmazonTranscribeAsyncClient extends AmazonTranscribeClient implemen
 
                 try {
                     result = executeGetCallAnalyticsJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMedicalScribeJobResult> getMedicalScribeJobAsync(GetMedicalScribeJobRequest request) {
+
+        return getMedicalScribeJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMedicalScribeJobResult> getMedicalScribeJobAsync(final GetMedicalScribeJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetMedicalScribeJobRequest, GetMedicalScribeJobResult> asyncHandler) {
+        final GetMedicalScribeJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetMedicalScribeJobResult>() {
+            @Override
+            public GetMedicalScribeJobResult call() throws Exception {
+                GetMedicalScribeJobResult result = null;
+
+                try {
+                    result = executeGetMedicalScribeJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -889,6 +955,39 @@ public class AmazonTranscribeAsyncClient extends AmazonTranscribeClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListMedicalScribeJobsResult> listMedicalScribeJobsAsync(ListMedicalScribeJobsRequest request) {
+
+        return listMedicalScribeJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMedicalScribeJobsResult> listMedicalScribeJobsAsync(final ListMedicalScribeJobsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListMedicalScribeJobsRequest, ListMedicalScribeJobsResult> asyncHandler) {
+        final ListMedicalScribeJobsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListMedicalScribeJobsResult>() {
+            @Override
+            public ListMedicalScribeJobsResult call() throws Exception {
+                ListMedicalScribeJobsResult result = null;
+
+                try {
+                    result = executeListMedicalScribeJobs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListMedicalTranscriptionJobsResult> listMedicalTranscriptionJobsAsync(ListMedicalTranscriptionJobsRequest request) {
 
         return listMedicalTranscriptionJobsAsync(request, null);
@@ -1104,6 +1203,39 @@ public class AmazonTranscribeAsyncClient extends AmazonTranscribeClient implemen
 
                 try {
                     result = executeStartCallAnalyticsJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMedicalScribeJobResult> startMedicalScribeJobAsync(StartMedicalScribeJobRequest request) {
+
+        return startMedicalScribeJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMedicalScribeJobResult> startMedicalScribeJobAsync(final StartMedicalScribeJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartMedicalScribeJobRequest, StartMedicalScribeJobResult> asyncHandler) {
+        final StartMedicalScribeJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartMedicalScribeJobResult>() {
+            @Override
+            public StartMedicalScribeJobResult call() throws Exception {
+                StartMedicalScribeJobResult result = null;
+
+                try {
+                    result = executeStartMedicalScribeJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

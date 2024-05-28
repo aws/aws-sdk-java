@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,10 +16,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Indicates that the provided Amazon S3 bucket or AWS KMS encryption key is invalid, or that Amazon SES could not
- * publish to the bucket, possibly due to permissions issues. For information about giving permissions, see the <a
- * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES Developer
- * Guide</a>.
+ * Indicates that the provided Amazon S3 bucket or Amazon Web Services KMS encryption key is invalid, or that Amazon SES
+ * could not publish to the bucket, possibly due to permissions issues. For information about giving permissions, see
+ * the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-permissions.html">Amazon SES
+ * Developer Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

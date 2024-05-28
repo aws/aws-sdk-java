@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,10 @@ public class SidewalkListDeviceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SidewalkManufacturingSn").build();
     private static final MarshallingInfo<List> DEVICECERTIFICATES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeviceCertificates").build();
+    private static final MarshallingInfo<String> DEVICEPROFILEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeviceProfileId").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Status").build();
 
     private static final SidewalkListDeviceMarshaller instance = new SidewalkListDeviceMarshaller();
 
@@ -57,6 +61,8 @@ public class SidewalkListDeviceMarshaller {
             protocolMarshaller.marshall(sidewalkListDevice.getSidewalkId(), SIDEWALKID_BINDING);
             protocolMarshaller.marshall(sidewalkListDevice.getSidewalkManufacturingSn(), SIDEWALKMANUFACTURINGSN_BINDING);
             protocolMarshaller.marshall(sidewalkListDevice.getDeviceCertificates(), DEVICECERTIFICATES_BINDING);
+            protocolMarshaller.marshall(sidewalkListDevice.getDeviceProfileId(), DEVICEPROFILEID_BINDING);
+            protocolMarshaller.marshall(sidewalkListDevice.getStatus(), STATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class SetIpAddressTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * The resource type.
      * </p>
      * <p>
-     * The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.
+     * The resource values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.
      * </p>
      * <note>
      * <p>
@@ -52,17 +52,36 @@ public class SetIpAddressTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * The IP address type to set for the specified resource.
      * </p>
      * <p>
-     * The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     * <code>dualstack</code> for IPv4 and IPv6.
      * </p>
      */
     private String ipAddressType;
+    /**
+     * <p>
+     * Required parameter to accept the instance bundle update when changing to, and from, IPv6-only.
+     * </p>
+     * <note>
+     * <p>
+     * An instance bundle will change when switching from <code>dual-stack</code> or <code>ipv4</code>, to
+     * <code>ipv6</code>. It also changes when switching from <code>ipv6</code>, to <code>dual-stack</code> or
+     * <code>ipv4</code>.
+     * </p>
+     * <p>
+     * You must include this parameter in the command to update the bundle. For example, if you switch from
+     * <code>dual-stack</code> to <code>ipv6</code>, the bundle will be updated, and billing for the IPv6-only instance
+     * bundle begins immediately.
+     * </p>
+     * </note>
+     */
+    private Boolean acceptBundleUpdate;
 
     /**
      * <p>
      * The resource type.
      * </p>
      * <p>
-     * The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.
+     * The resource values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.
      * </p>
      * <note>
      * <p>
@@ -75,7 +94,7 @@ public class SetIpAddressTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * @param resourceType
      *        The resource type.</p>
      *        <p>
-     *        The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.
+     *        The resource values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.
      *        </p>
      *        <note>
      *        <p>
@@ -95,7 +114,7 @@ public class SetIpAddressTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * The resource type.
      * </p>
      * <p>
-     * The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.
+     * The resource values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.
      * </p>
      * <note>
      * <p>
@@ -107,7 +126,7 @@ public class SetIpAddressTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @return The resource type.</p>
      *         <p>
-     *         The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.
+     *         The resource values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.
      *         </p>
      *         <note>
      *         <p>
@@ -127,7 +146,7 @@ public class SetIpAddressTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * The resource type.
      * </p>
      * <p>
-     * The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.
+     * The resource values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.
      * </p>
      * <note>
      * <p>
@@ -140,7 +159,7 @@ public class SetIpAddressTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * @param resourceType
      *        The resource type.</p>
      *        <p>
-     *        The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.
+     *        The resource values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.
      *        </p>
      *        <note>
      *        <p>
@@ -162,7 +181,7 @@ public class SetIpAddressTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * The resource type.
      * </p>
      * <p>
-     * The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.
+     * The resource values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.
      * </p>
      * <note>
      * <p>
@@ -175,7 +194,7 @@ public class SetIpAddressTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * @param resourceType
      *        The resource type.</p>
      *        <p>
-     *        The possible values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.
+     *        The resource values are <code>Distribution</code>, <code>Instance</code>, and <code>LoadBalancer</code>.
      *        </p>
      *        <note>
      *        <p>
@@ -237,13 +256,15 @@ public class SetIpAddressTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * The IP address type to set for the specified resource.
      * </p>
      * <p>
-     * The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     * <code>dualstack</code> for IPv4 and IPv6.
      * </p>
      * 
      * @param ipAddressType
      *        The IP address type to set for the specified resource.</p>
      *        <p>
-     *        The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     *        The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     *        <code>dualstack</code> for IPv4 and IPv6.
      * @see IpAddressType
      */
 
@@ -256,12 +277,14 @@ public class SetIpAddressTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * The IP address type to set for the specified resource.
      * </p>
      * <p>
-     * The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     * <code>dualstack</code> for IPv4 and IPv6.
      * </p>
      * 
      * @return The IP address type to set for the specified resource.</p>
      *         <p>
-     *         The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     *         The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     *         <code>dualstack</code> for IPv4 and IPv6.
      * @see IpAddressType
      */
 
@@ -274,13 +297,15 @@ public class SetIpAddressTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * The IP address type to set for the specified resource.
      * </p>
      * <p>
-     * The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     * <code>dualstack</code> for IPv4 and IPv6.
      * </p>
      * 
      * @param ipAddressType
      *        The IP address type to set for the specified resource.</p>
      *        <p>
-     *        The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     *        The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     *        <code>dualstack</code> for IPv4 and IPv6.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpAddressType
      */
@@ -295,13 +320,15 @@ public class SetIpAddressTypeRequest extends com.amazonaws.AmazonWebServiceReque
      * The IP address type to set for the specified resource.
      * </p>
      * <p>
-     * The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     * <code>dualstack</code> for IPv4 and IPv6.
      * </p>
      * 
      * @param ipAddressType
      *        The IP address type to set for the specified resource.</p>
      *        <p>
-     *        The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     *        The possible values are <code>ipv4</code> for IPv4 only, <code>ipv6</code> for IPv6 only, and
+     *        <code>dualstack</code> for IPv4 and IPv6.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IpAddressType
      */
@@ -309,6 +336,146 @@ public class SetIpAddressTypeRequest extends com.amazonaws.AmazonWebServiceReque
     public SetIpAddressTypeRequest withIpAddressType(IpAddressType ipAddressType) {
         this.ipAddressType = ipAddressType.toString();
         return this;
+    }
+
+    /**
+     * <p>
+     * Required parameter to accept the instance bundle update when changing to, and from, IPv6-only.
+     * </p>
+     * <note>
+     * <p>
+     * An instance bundle will change when switching from <code>dual-stack</code> or <code>ipv4</code>, to
+     * <code>ipv6</code>. It also changes when switching from <code>ipv6</code>, to <code>dual-stack</code> or
+     * <code>ipv4</code>.
+     * </p>
+     * <p>
+     * You must include this parameter in the command to update the bundle. For example, if you switch from
+     * <code>dual-stack</code> to <code>ipv6</code>, the bundle will be updated, and billing for the IPv6-only instance
+     * bundle begins immediately.
+     * </p>
+     * </note>
+     * 
+     * @param acceptBundleUpdate
+     *        Required parameter to accept the instance bundle update when changing to, and from, IPv6-only.</p> <note>
+     *        <p>
+     *        An instance bundle will change when switching from <code>dual-stack</code> or <code>ipv4</code>, to
+     *        <code>ipv6</code>. It also changes when switching from <code>ipv6</code>, to <code>dual-stack</code> or
+     *        <code>ipv4</code>.
+     *        </p>
+     *        <p>
+     *        You must include this parameter in the command to update the bundle. For example, if you switch from
+     *        <code>dual-stack</code> to <code>ipv6</code>, the bundle will be updated, and billing for the IPv6-only
+     *        instance bundle begins immediately.
+     *        </p>
+     */
+
+    public void setAcceptBundleUpdate(Boolean acceptBundleUpdate) {
+        this.acceptBundleUpdate = acceptBundleUpdate;
+    }
+
+    /**
+     * <p>
+     * Required parameter to accept the instance bundle update when changing to, and from, IPv6-only.
+     * </p>
+     * <note>
+     * <p>
+     * An instance bundle will change when switching from <code>dual-stack</code> or <code>ipv4</code>, to
+     * <code>ipv6</code>. It also changes when switching from <code>ipv6</code>, to <code>dual-stack</code> or
+     * <code>ipv4</code>.
+     * </p>
+     * <p>
+     * You must include this parameter in the command to update the bundle. For example, if you switch from
+     * <code>dual-stack</code> to <code>ipv6</code>, the bundle will be updated, and billing for the IPv6-only instance
+     * bundle begins immediately.
+     * </p>
+     * </note>
+     * 
+     * @return Required parameter to accept the instance bundle update when changing to, and from, IPv6-only.</p> <note>
+     *         <p>
+     *         An instance bundle will change when switching from <code>dual-stack</code> or <code>ipv4</code>, to
+     *         <code>ipv6</code>. It also changes when switching from <code>ipv6</code>, to <code>dual-stack</code> or
+     *         <code>ipv4</code>.
+     *         </p>
+     *         <p>
+     *         You must include this parameter in the command to update the bundle. For example, if you switch from
+     *         <code>dual-stack</code> to <code>ipv6</code>, the bundle will be updated, and billing for the IPv6-only
+     *         instance bundle begins immediately.
+     *         </p>
+     */
+
+    public Boolean getAcceptBundleUpdate() {
+        return this.acceptBundleUpdate;
+    }
+
+    /**
+     * <p>
+     * Required parameter to accept the instance bundle update when changing to, and from, IPv6-only.
+     * </p>
+     * <note>
+     * <p>
+     * An instance bundle will change when switching from <code>dual-stack</code> or <code>ipv4</code>, to
+     * <code>ipv6</code>. It also changes when switching from <code>ipv6</code>, to <code>dual-stack</code> or
+     * <code>ipv4</code>.
+     * </p>
+     * <p>
+     * You must include this parameter in the command to update the bundle. For example, if you switch from
+     * <code>dual-stack</code> to <code>ipv6</code>, the bundle will be updated, and billing for the IPv6-only instance
+     * bundle begins immediately.
+     * </p>
+     * </note>
+     * 
+     * @param acceptBundleUpdate
+     *        Required parameter to accept the instance bundle update when changing to, and from, IPv6-only.</p> <note>
+     *        <p>
+     *        An instance bundle will change when switching from <code>dual-stack</code> or <code>ipv4</code>, to
+     *        <code>ipv6</code>. It also changes when switching from <code>ipv6</code>, to <code>dual-stack</code> or
+     *        <code>ipv4</code>.
+     *        </p>
+     *        <p>
+     *        You must include this parameter in the command to update the bundle. For example, if you switch from
+     *        <code>dual-stack</code> to <code>ipv6</code>, the bundle will be updated, and billing for the IPv6-only
+     *        instance bundle begins immediately.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SetIpAddressTypeRequest withAcceptBundleUpdate(Boolean acceptBundleUpdate) {
+        setAcceptBundleUpdate(acceptBundleUpdate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Required parameter to accept the instance bundle update when changing to, and from, IPv6-only.
+     * </p>
+     * <note>
+     * <p>
+     * An instance bundle will change when switching from <code>dual-stack</code> or <code>ipv4</code>, to
+     * <code>ipv6</code>. It also changes when switching from <code>ipv6</code>, to <code>dual-stack</code> or
+     * <code>ipv4</code>.
+     * </p>
+     * <p>
+     * You must include this parameter in the command to update the bundle. For example, if you switch from
+     * <code>dual-stack</code> to <code>ipv6</code>, the bundle will be updated, and billing for the IPv6-only instance
+     * bundle begins immediately.
+     * </p>
+     * </note>
+     * 
+     * @return Required parameter to accept the instance bundle update when changing to, and from, IPv6-only.</p> <note>
+     *         <p>
+     *         An instance bundle will change when switching from <code>dual-stack</code> or <code>ipv4</code>, to
+     *         <code>ipv6</code>. It also changes when switching from <code>ipv6</code>, to <code>dual-stack</code> or
+     *         <code>ipv4</code>.
+     *         </p>
+     *         <p>
+     *         You must include this parameter in the command to update the bundle. For example, if you switch from
+     *         <code>dual-stack</code> to <code>ipv6</code>, the bundle will be updated, and billing for the IPv6-only
+     *         instance bundle begins immediately.
+     *         </p>
+     */
+
+    public Boolean isAcceptBundleUpdate() {
+        return this.acceptBundleUpdate;
     }
 
     /**
@@ -328,7 +495,9 @@ public class SetIpAddressTypeRequest extends com.amazonaws.AmazonWebServiceReque
         if (getResourceName() != null)
             sb.append("ResourceName: ").append(getResourceName()).append(",");
         if (getIpAddressType() != null)
-            sb.append("IpAddressType: ").append(getIpAddressType());
+            sb.append("IpAddressType: ").append(getIpAddressType()).append(",");
+        if (getAcceptBundleUpdate() != null)
+            sb.append("AcceptBundleUpdate: ").append(getAcceptBundleUpdate());
         sb.append("}");
         return sb.toString();
     }
@@ -355,6 +524,10 @@ public class SetIpAddressTypeRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getIpAddressType() != null && other.getIpAddressType().equals(this.getIpAddressType()) == false)
             return false;
+        if (other.getAcceptBundleUpdate() == null ^ this.getAcceptBundleUpdate() == null)
+            return false;
+        if (other.getAcceptBundleUpdate() != null && other.getAcceptBundleUpdate().equals(this.getAcceptBundleUpdate()) == false)
+            return false;
         return true;
     }
 
@@ -366,6 +539,7 @@ public class SetIpAddressTypeRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getResourceName() == null) ? 0 : getResourceName().hashCode());
         hashCode = prime * hashCode + ((getIpAddressType() == null) ? 0 : getIpAddressType().hashCode());
+        hashCode = prime * hashCode + ((getAcceptBundleUpdate() == null) ? 0 : getAcceptBundleUpdate().hashCode());
         return hashCode;
     }
 

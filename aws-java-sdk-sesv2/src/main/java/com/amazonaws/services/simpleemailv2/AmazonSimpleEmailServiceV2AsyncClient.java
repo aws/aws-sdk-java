@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -99,6 +99,39 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
 
                 try {
                     result = executeBatchGetMetricData(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelExportJobResult> cancelExportJobAsync(CancelExportJobRequest request) {
+
+        return cancelExportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelExportJobResult> cancelExportJobAsync(final CancelExportJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CancelExportJobRequest, CancelExportJobResult> asyncHandler) {
+        final CancelExportJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CancelExportJobResult>() {
+            @Override
+            public CancelExportJobResult call() throws Exception {
+                CancelExportJobResult result = null;
+
+                try {
+                    result = executeCancelExportJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -434,6 +467,39 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
 
                 try {
                     result = executeCreateEmailTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateExportJobResult> createExportJobAsync(CreateExportJobRequest request) {
+
+        return createExportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateExportJobResult> createExportJobAsync(final CreateExportJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateExportJobRequest, CreateExportJobResult> asyncHandler) {
+        final CreateExportJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateExportJobResult>() {
+            @Override
+            public CreateExportJobResult call() throws Exception {
+                CreateExportJobResult result = null;
+
+                try {
+                    result = executeCreateExportJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1386,6 +1452,39 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
     }
 
     @Override
+    public java.util.concurrent.Future<GetExportJobResult> getExportJobAsync(GetExportJobRequest request) {
+
+        return getExportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExportJobResult> getExportJobAsync(final GetExportJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetExportJobRequest, GetExportJobResult> asyncHandler) {
+        final GetExportJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetExportJobResult>() {
+            @Override
+            public GetExportJobResult call() throws Exception {
+                GetExportJobResult result = null;
+
+                try {
+                    result = executeGetExportJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetImportJobResult> getImportJobAsync(GetImportJobRequest request) {
 
         return getImportJobAsync(request, null);
@@ -1403,6 +1502,39 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
 
                 try {
                     result = executeGetImportJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMessageInsightsResult> getMessageInsightsAsync(GetMessageInsightsRequest request) {
+
+        return getMessageInsightsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMessageInsightsResult> getMessageInsightsAsync(final GetMessageInsightsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetMessageInsightsRequest, GetMessageInsightsResult> asyncHandler) {
+        final GetMessageInsightsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetMessageInsightsResult>() {
+            @Override
+            public GetMessageInsightsResult call() throws Exception {
+                GetMessageInsightsResult result = null;
+
+                try {
+                    result = executeGetMessageInsights(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1738,6 +1870,39 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
 
                 try {
                     result = executeListEmailTemplates(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExportJobsResult> listExportJobsAsync(ListExportJobsRequest request) {
+
+        return listExportJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExportJobsResult> listExportJobsAsync(final ListExportJobsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListExportJobsRequest, ListExportJobsResult> asyncHandler) {
+        final ListExportJobsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListExportJobsResult>() {
+            @Override
+            public ListExportJobsResult call() throws Exception {
+                ListExportJobsResult result = null;
+
+                try {
+                    result = executeListExportJobs(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2281,6 +2446,41 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
 
                 try {
                     result = executePutDedicatedIpInPool(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDedicatedIpPoolScalingAttributesResult> putDedicatedIpPoolScalingAttributesAsync(
+            PutDedicatedIpPoolScalingAttributesRequest request) {
+
+        return putDedicatedIpPoolScalingAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDedicatedIpPoolScalingAttributesResult> putDedicatedIpPoolScalingAttributesAsync(
+            final PutDedicatedIpPoolScalingAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutDedicatedIpPoolScalingAttributesRequest, PutDedicatedIpPoolScalingAttributesResult> asyncHandler) {
+        final PutDedicatedIpPoolScalingAttributesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutDedicatedIpPoolScalingAttributesResult>() {
+            @Override
+            public PutDedicatedIpPoolScalingAttributesResult call() throws Exception {
+                PutDedicatedIpPoolScalingAttributesResult result = null;
+
+                try {
+                    result = executePutDedicatedIpPoolScalingAttributes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

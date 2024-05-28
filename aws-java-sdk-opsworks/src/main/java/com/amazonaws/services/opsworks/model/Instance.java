@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -106,14 +106,26 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-     * IP address </a>.
+     * IP address</a>.
      * </p>
      */
     private String elasticIp;
     /**
      * <p>
-     * The instance host name.
+     * The instance host name. The following are character limits for instance host names.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Linux-based instances: 63 characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Windows-based instances: 15 characters
+     * </p>
+     * </li>
+     * </ul>
      */
     private String hostname;
     /**
@@ -125,13 +137,13 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Whether to install operating system and package updates when the instance boots. The default value is
-     * <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by
-     * using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by manually running
+     * <code>true</code>. If this value is set to <code>false</code>, you must update instances manually by using
+     * <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by manually running
      * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.
      * </p>
      * <note>
      * <p>
-     * We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest
+     * We strongly recommend using the default value of <code>true</code> to ensure that your instances have the latest
      * security updates.
      * </p>
      * </note>
@@ -212,7 +224,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     private String registeredBy;
     /**
      * <p>
-     * The instance's reported AWS OpsWorks Stacks agent version.
+     * The instance's reported OpsWorks Stacks agent version.
      * </p>
      */
     private String reportedAgentVersion;
@@ -983,13 +995,13 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-     * IP address </a>.
+     * IP address</a>.
      * </p>
      * 
      * @param elasticIp
      *        The instance <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
-     *        address </a>.
+     *        address</a>.
      */
 
     public void setElasticIp(String elasticIp) {
@@ -999,12 +1011,12 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-     * IP address </a>.
+     * IP address</a>.
      * </p>
      * 
      * @return The instance <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
-     *         address </a>.
+     *         address</a>.
      */
 
     public String getElasticIp() {
@@ -1014,13 +1026,13 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-     * IP address </a>.
+     * IP address</a>.
      * </p>
      * 
      * @param elasticIp
      *        The instance <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP
-     *        address </a>.
+     *        address</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1031,11 +1043,34 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance host name.
+     * The instance host name. The following are character limits for instance host names.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Linux-based instances: 63 characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Windows-based instances: 15 characters
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param hostname
-     *        The instance host name.
+     *        The instance host name. The following are character limits for instance host names.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Linux-based instances: 63 characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Windows-based instances: 15 characters
+     *        </p>
+     *        </li>
      */
 
     public void setHostname(String hostname) {
@@ -1044,10 +1079,33 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance host name.
+     * The instance host name. The following are character limits for instance host names.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Linux-based instances: 63 characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Windows-based instances: 15 characters
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The instance host name.
+     * @return The instance host name. The following are character limits for instance host names.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Linux-based instances: 63 characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Windows-based instances: 15 characters
+     *         </p>
+     *         </li>
      */
 
     public String getHostname() {
@@ -1056,11 +1114,34 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance host name.
+     * The instance host name. The following are character limits for instance host names.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Linux-based instances: 63 characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Windows-based instances: 15 characters
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param hostname
-     *        The instance host name.
+     *        The instance host name. The following are character limits for instance host names.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Linux-based instances: 63 characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Windows-based instances: 15 characters
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1112,25 +1193,24 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Whether to install operating system and package updates when the instance boots. The default value is
-     * <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by
-     * using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by manually running
+     * <code>true</code>. If this value is set to <code>false</code>, you must update instances manually by using
+     * <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by manually running
      * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.
      * </p>
      * <note>
      * <p>
-     * We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest
+     * We strongly recommend using the default value of <code>true</code> to ensure that your instances have the latest
      * security updates.
      * </p>
      * </note>
      * 
      * @param installUpdatesOnBoot
      *        Whether to install operating system and package updates when the instance boots. The default value is
-     *        <code>true</code>. If this value is set to <code>false</code>, you must then update your instances
-     *        manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by
-     *        manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p>
-     *        <note>
+     *        <code>true</code>. If this value is set to <code>false</code>, you must update instances manually by using
+     *        <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by manually running
+     *        <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
      *        <p>
-     *        We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the
+     *        We strongly recommend using the default value of <code>true</code> to ensure that your instances have the
      *        latest security updates.
      *        </p>
      */
@@ -1142,25 +1222,24 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Whether to install operating system and package updates when the instance boots. The default value is
-     * <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by
-     * using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by manually running
+     * <code>true</code>. If this value is set to <code>false</code>, you must update instances manually by using
+     * <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by manually running
      * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.
      * </p>
      * <note>
      * <p>
-     * We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest
+     * We strongly recommend using the default value of <code>true</code> to ensure that your instances have the latest
      * security updates.
      * </p>
      * </note>
      * 
      * @return Whether to install operating system and package updates when the instance boots. The default value is
-     *         <code>true</code>. If this value is set to <code>false</code>, you must then update your instances
-     *         manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by
-     *         manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p>
-     *         <note>
+     *         <code>true</code>. If this value is set to <code>false</code>, you must update instances manually by
+     *         using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by manually
+     *         running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
      *         <p>
-     *         We strongly recommend using the default value of <code>true</code>, to ensure that your instances have
-     *         the latest security updates.
+     *         We strongly recommend using the default value of <code>true</code> to ensure that your instances have the
+     *         latest security updates.
      *         </p>
      */
 
@@ -1171,25 +1250,24 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Whether to install operating system and package updates when the instance boots. The default value is
-     * <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by
-     * using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by manually running
+     * <code>true</code>. If this value is set to <code>false</code>, you must update instances manually by using
+     * <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by manually running
      * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.
      * </p>
      * <note>
      * <p>
-     * We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest
+     * We strongly recommend using the default value of <code>true</code> to ensure that your instances have the latest
      * security updates.
      * </p>
      * </note>
      * 
      * @param installUpdatesOnBoot
      *        Whether to install operating system and package updates when the instance boots. The default value is
-     *        <code>true</code>. If this value is set to <code>false</code>, you must then update your instances
-     *        manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by
-     *        manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p>
-     *        <note>
+     *        <code>true</code>. If this value is set to <code>false</code>, you must update instances manually by using
+     *        <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by manually running
+     *        <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
      *        <p>
-     *        We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the
+     *        We strongly recommend using the default value of <code>true</code> to ensure that your instances have the
      *        latest security updates.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1203,25 +1281,24 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Whether to install operating system and package updates when the instance boots. The default value is
-     * <code>true</code>. If this value is set to <code>false</code>, you must then update your instances manually by
-     * using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by manually running
+     * <code>true</code>. If this value is set to <code>false</code>, you must update instances manually by using
+     * <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by manually running
      * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances.
      * </p>
      * <note>
      * <p>
-     * We strongly recommend using the default value of <code>true</code>, to ensure that your instances have the latest
+     * We strongly recommend using the default value of <code>true</code> to ensure that your instances have the latest
      * security updates.
      * </p>
      * </note>
      * 
      * @return Whether to install operating system and package updates when the instance boots. The default value is
-     *         <code>true</code>. If this value is set to <code>false</code>, you must then update your instances
-     *         manually by using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by
-     *         manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p>
-     *         <note>
+     *         <code>true</code>. If this value is set to <code>false</code>, you must update instances manually by
+     *         using <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command or by manually
+     *         running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. </p> <note>
      *         <p>
-     *         We strongly recommend using the default value of <code>true</code>, to ensure that your instances have
-     *         the latest security updates.
+     *         We strongly recommend using the default value of <code>true</code> to ensure that your instances have the
+     *         latest security updates.
      *         </p>
      */
 
@@ -1750,11 +1827,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance's reported AWS OpsWorks Stacks agent version.
+     * The instance's reported OpsWorks Stacks agent version.
      * </p>
      * 
      * @param reportedAgentVersion
-     *        The instance's reported AWS OpsWorks Stacks agent version.
+     *        The instance's reported OpsWorks Stacks agent version.
      */
 
     public void setReportedAgentVersion(String reportedAgentVersion) {
@@ -1763,10 +1840,10 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance's reported AWS OpsWorks Stacks agent version.
+     * The instance's reported OpsWorks Stacks agent version.
      * </p>
      * 
-     * @return The instance's reported AWS OpsWorks Stacks agent version.
+     * @return The instance's reported OpsWorks Stacks agent version.
      */
 
     public String getReportedAgentVersion() {
@@ -1775,11 +1852,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance's reported AWS OpsWorks Stacks agent version.
+     * The instance's reported OpsWorks Stacks agent version.
      * </p>
      * 
      * @param reportedAgentVersion
-     *        The instance's reported AWS OpsWorks Stacks agent version.
+     *        The instance's reported OpsWorks Stacks agent version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

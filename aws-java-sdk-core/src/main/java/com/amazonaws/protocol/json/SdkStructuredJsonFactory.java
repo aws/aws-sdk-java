@@ -15,7 +15,6 @@
 
 package com.amazonaws.protocol.json;
 
-import com.amazonaws.AmazonServiceException;
 import com.amazonaws.annotation.SdkProtectedApi;
 import com.amazonaws.http.JsonErrorResponseHandler;
 import com.amazonaws.http.JsonResponseHandler;
@@ -53,8 +52,15 @@ public interface SdkStructuredJsonFactory {
      * Returns the error response handler for handling a error response.
      *
      * @param errorUnmarshallers Response unmarshallers to unamrshall the error responses.
+     *
+     * @deprecated Use {@link #createErrorResponseHandler(JsonErrorResponseMetadata, List)} instead
      */
+    @Deprecated
     JsonErrorResponseHandler createErrorResponseHandler(
             List<JsonErrorUnmarshaller> errorUnmarshallers, String customErrorCodeFieldName);
 
+    JsonErrorResponseHandler createErrorResponseHandler(
+            JsonErrorResponseMetadata jsonErrorResponseMetadata,
+            List<JsonErrorUnmarshaller> errorUnmarshallers
+    );
 }

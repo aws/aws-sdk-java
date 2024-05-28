@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,8 @@ public class BrokerNodeGroupInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("storageInfo").build();
     private static final MarshallingInfo<StructuredPojo> CONNECTIVITYINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectivityInfo").build();
+    private static final MarshallingInfo<List> ZONEIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("zoneIds").build();
 
     private static final BrokerNodeGroupInfoMarshaller instance = new BrokerNodeGroupInfoMarshaller();
 
@@ -63,6 +65,7 @@ public class BrokerNodeGroupInfoMarshaller {
             protocolMarshaller.marshall(brokerNodeGroupInfo.getSecurityGroups(), SECURITYGROUPS_BINDING);
             protocolMarshaller.marshall(brokerNodeGroupInfo.getStorageInfo(), STORAGEINFO_BINDING);
             protocolMarshaller.marshall(brokerNodeGroupInfo.getConnectivityInfo(), CONNECTIVITYINFO_BINDING);
+            protocolMarshaller.marshall(brokerNodeGroupInfo.getZoneIds(), ZONEIDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

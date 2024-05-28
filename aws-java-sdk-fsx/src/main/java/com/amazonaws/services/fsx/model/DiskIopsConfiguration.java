@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,10 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP or Amazon FSx for
- * OpenZFS file system. The default is 3 IOPS per GB of storage capacity, but you can provision additional IOPS per GB
- * of storage. The configuration consists of the total number of provisioned SSD IOPS and how the amount was provisioned
- * (by the customer or by the system).
+ * The SSD IOPS (input/output operations per second) configuration for an Amazon FSx for NetApp ONTAP, Amazon FSx for
+ * Windows File Server, or FSx for OpenZFS file system. By default, Amazon FSx automatically provisions 3 IOPS per GB of
+ * storage capacity. You can provision additional IOPS per GB of storage. The configuration consists of the total number
+ * of provisioned SSD IOPS and how it is was provisioned, or the mode (by the customer or by Amazon FSx).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DiskIopsConfiguration" target="_top">AWS API
@@ -33,8 +33,8 @@ public class DiskIopsConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Specifies whether the number of IOPS for the file system is using the system default (<code>AUTOMATIC</code>) or
-     * was provisioned by the customer (<code>USER_PROVISIONED</code>).
+     * Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB of
+     * storage capacity, or if it using a <code>USER_PROVISIONED</code> value.
      * </p>
      */
     private String mode;
@@ -42,18 +42,28 @@ public class DiskIopsConfiguration implements Serializable, Cloneable, Structure
      * <p>
      * The total number of SSD IOPS provisioned for the file system.
      * </p>
+     * <p>
+     * The minimum and maximum values for this property depend on the value of <code>HAPairs</code> and
+     * <code>StorageCapacity</code>. The minimum value is calculated as <code>StorageCapacity</code> * 3 *
+     * <code>HAPairs</code> (3 IOPS per GB of <code>StorageCapacity</code>). The maximum value is calculated as 200,000
+     * * <code>HAPairs</code>.
+     * </p>
+     * <p>
+     * Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of <code>Iops</code> is outside of
+     * the minimum or maximum values.
+     * </p>
      */
     private Long iops;
 
     /**
      * <p>
-     * Specifies whether the number of IOPS for the file system is using the system default (<code>AUTOMATIC</code>) or
-     * was provisioned by the customer (<code>USER_PROVISIONED</code>).
+     * Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB of
+     * storage capacity, or if it using a <code>USER_PROVISIONED</code> value.
      * </p>
      * 
      * @param mode
-     *        Specifies whether the number of IOPS for the file system is using the system default (
-     *        <code>AUTOMATIC</code>) or was provisioned by the customer (<code>USER_PROVISIONED</code>).
+     *        Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB
+     *        of storage capacity, or if it using a <code>USER_PROVISIONED</code> value.
      * @see DiskIopsConfigurationMode
      */
 
@@ -63,12 +73,12 @@ public class DiskIopsConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Specifies whether the number of IOPS for the file system is using the system default (<code>AUTOMATIC</code>) or
-     * was provisioned by the customer (<code>USER_PROVISIONED</code>).
+     * Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB of
+     * storage capacity, or if it using a <code>USER_PROVISIONED</code> value.
      * </p>
      * 
-     * @return Specifies whether the number of IOPS for the file system is using the system default (
-     *         <code>AUTOMATIC</code>) or was provisioned by the customer (<code>USER_PROVISIONED</code>).
+     * @return Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per
+     *         GB of storage capacity, or if it using a <code>USER_PROVISIONED</code> value.
      * @see DiskIopsConfigurationMode
      */
 
@@ -78,13 +88,13 @@ public class DiskIopsConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Specifies whether the number of IOPS for the file system is using the system default (<code>AUTOMATIC</code>) or
-     * was provisioned by the customer (<code>USER_PROVISIONED</code>).
+     * Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB of
+     * storage capacity, or if it using a <code>USER_PROVISIONED</code> value.
      * </p>
      * 
      * @param mode
-     *        Specifies whether the number of IOPS for the file system is using the system default (
-     *        <code>AUTOMATIC</code>) or was provisioned by the customer (<code>USER_PROVISIONED</code>).
+     *        Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB
+     *        of storage capacity, or if it using a <code>USER_PROVISIONED</code> value.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DiskIopsConfigurationMode
      */
@@ -96,13 +106,13 @@ public class DiskIopsConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Specifies whether the number of IOPS for the file system is using the system default (<code>AUTOMATIC</code>) or
-     * was provisioned by the customer (<code>USER_PROVISIONED</code>).
+     * Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB of
+     * storage capacity, or if it using a <code>USER_PROVISIONED</code> value.
      * </p>
      * 
      * @param mode
-     *        Specifies whether the number of IOPS for the file system is using the system default (
-     *        <code>AUTOMATIC</code>) or was provisioned by the customer (<code>USER_PROVISIONED</code>).
+     *        Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD IOPS of 3 IOPS per GB
+     *        of storage capacity, or if it using a <code>USER_PROVISIONED</code> value.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DiskIopsConfigurationMode
      */
@@ -116,9 +126,28 @@ public class DiskIopsConfiguration implements Serializable, Cloneable, Structure
      * <p>
      * The total number of SSD IOPS provisioned for the file system.
      * </p>
+     * <p>
+     * The minimum and maximum values for this property depend on the value of <code>HAPairs</code> and
+     * <code>StorageCapacity</code>. The minimum value is calculated as <code>StorageCapacity</code> * 3 *
+     * <code>HAPairs</code> (3 IOPS per GB of <code>StorageCapacity</code>). The maximum value is calculated as 200,000
+     * * <code>HAPairs</code>.
+     * </p>
+     * <p>
+     * Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of <code>Iops</code> is outside of
+     * the minimum or maximum values.
+     * </p>
      * 
      * @param iops
-     *        The total number of SSD IOPS provisioned for the file system.
+     *        The total number of SSD IOPS provisioned for the file system.</p>
+     *        <p>
+     *        The minimum and maximum values for this property depend on the value of <code>HAPairs</code> and
+     *        <code>StorageCapacity</code>. The minimum value is calculated as <code>StorageCapacity</code> 3 *
+     *        <code>HAPairs</code> (3 IOPS per GB of <code>StorageCapacity</code>). The maximum value is calculated as
+     *        200,000 * <code>HAPairs</code>.
+     *        </p>
+     *        <p>
+     *        Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of <code>Iops</code> is
+     *        outside of the minimum or maximum values.
      */
 
     public void setIops(Long iops) {
@@ -129,8 +158,27 @@ public class DiskIopsConfiguration implements Serializable, Cloneable, Structure
      * <p>
      * The total number of SSD IOPS provisioned for the file system.
      * </p>
+     * <p>
+     * The minimum and maximum values for this property depend on the value of <code>HAPairs</code> and
+     * <code>StorageCapacity</code>. The minimum value is calculated as <code>StorageCapacity</code> * 3 *
+     * <code>HAPairs</code> (3 IOPS per GB of <code>StorageCapacity</code>). The maximum value is calculated as 200,000
+     * * <code>HAPairs</code>.
+     * </p>
+     * <p>
+     * Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of <code>Iops</code> is outside of
+     * the minimum or maximum values.
+     * </p>
      * 
-     * @return The total number of SSD IOPS provisioned for the file system.
+     * @return The total number of SSD IOPS provisioned for the file system.</p>
+     *         <p>
+     *         The minimum and maximum values for this property depend on the value of <code>HAPairs</code> and
+     *         <code>StorageCapacity</code>. The minimum value is calculated as <code>StorageCapacity</code> 3 *
+     *         <code>HAPairs</code> (3 IOPS per GB of <code>StorageCapacity</code>). The maximum value is calculated as
+     *         200,000 * <code>HAPairs</code>.
+     *         </p>
+     *         <p>
+     *         Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of <code>Iops</code> is
+     *         outside of the minimum or maximum values.
      */
 
     public Long getIops() {
@@ -141,9 +189,28 @@ public class DiskIopsConfiguration implements Serializable, Cloneable, Structure
      * <p>
      * The total number of SSD IOPS provisioned for the file system.
      * </p>
+     * <p>
+     * The minimum and maximum values for this property depend on the value of <code>HAPairs</code> and
+     * <code>StorageCapacity</code>. The minimum value is calculated as <code>StorageCapacity</code> * 3 *
+     * <code>HAPairs</code> (3 IOPS per GB of <code>StorageCapacity</code>). The maximum value is calculated as 200,000
+     * * <code>HAPairs</code>.
+     * </p>
+     * <p>
+     * Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of <code>Iops</code> is outside of
+     * the minimum or maximum values.
+     * </p>
      * 
      * @param iops
-     *        The total number of SSD IOPS provisioned for the file system.
+     *        The total number of SSD IOPS provisioned for the file system.</p>
+     *        <p>
+     *        The minimum and maximum values for this property depend on the value of <code>HAPairs</code> and
+     *        <code>StorageCapacity</code>. The minimum value is calculated as <code>StorageCapacity</code> 3 *
+     *        <code>HAPairs</code> (3 IOPS per GB of <code>StorageCapacity</code>). The maximum value is calculated as
+     *        200,000 * <code>HAPairs</code>.
+     *        </p>
+     *        <p>
+     *        Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of <code>Iops</code> is
+     *        outside of the minimum or maximum values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

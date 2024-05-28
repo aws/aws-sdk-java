@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -158,6 +158,39 @@ public class AmazonFSxAsyncClient extends AmazonFSxClient implements AmazonFSxAs
 
                 try {
                     result = executeCopyBackup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CopySnapshotAndUpdateVolumeResult> copySnapshotAndUpdateVolumeAsync(CopySnapshotAndUpdateVolumeRequest request) {
+
+        return copySnapshotAndUpdateVolumeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CopySnapshotAndUpdateVolumeResult> copySnapshotAndUpdateVolumeAsync(final CopySnapshotAndUpdateVolumeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CopySnapshotAndUpdateVolumeRequest, CopySnapshotAndUpdateVolumeResult> asyncHandler) {
+        final CopySnapshotAndUpdateVolumeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CopySnapshotAndUpdateVolumeResult>() {
+            @Override
+            public CopySnapshotAndUpdateVolumeResult call() throws Exception {
+                CopySnapshotAndUpdateVolumeResult result = null;
+
+                try {
+                    result = executeCopySnapshotAndUpdateVolume(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -939,6 +972,40 @@ public class AmazonFSxAsyncClient extends AmazonFSxClient implements AmazonFSxAs
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeSharedVpcConfigurationResult> describeSharedVpcConfigurationAsync(DescribeSharedVpcConfigurationRequest request) {
+
+        return describeSharedVpcConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSharedVpcConfigurationResult> describeSharedVpcConfigurationAsync(
+            final DescribeSharedVpcConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeSharedVpcConfigurationRequest, DescribeSharedVpcConfigurationResult> asyncHandler) {
+        final DescribeSharedVpcConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeSharedVpcConfigurationResult>() {
+            @Override
+            public DescribeSharedVpcConfigurationResult call() throws Exception {
+                DescribeSharedVpcConfigurationResult result = null;
+
+                try {
+                    result = executeDescribeSharedVpcConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeSnapshotsResult> describeSnapshotsAsync(DescribeSnapshotsRequest request) {
 
         return describeSnapshotsAsync(request, null);
@@ -1172,6 +1239,41 @@ public class AmazonFSxAsyncClient extends AmazonFSxClient implements AmazonFSxAs
     }
 
     @Override
+    public java.util.concurrent.Future<StartMisconfiguredStateRecoveryResult> startMisconfiguredStateRecoveryAsync(
+            StartMisconfiguredStateRecoveryRequest request) {
+
+        return startMisconfiguredStateRecoveryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMisconfiguredStateRecoveryResult> startMisconfiguredStateRecoveryAsync(
+            final StartMisconfiguredStateRecoveryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartMisconfiguredStateRecoveryRequest, StartMisconfiguredStateRecoveryResult> asyncHandler) {
+        final StartMisconfiguredStateRecoveryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartMisconfiguredStateRecoveryResult>() {
+            @Override
+            public StartMisconfiguredStateRecoveryResult call() throws Exception {
+                StartMisconfiguredStateRecoveryResult result = null;
+
+                try {
+                    result = executeStartMisconfiguredStateRecovery(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);
@@ -1323,6 +1425,39 @@ public class AmazonFSxAsyncClient extends AmazonFSxClient implements AmazonFSxAs
 
                 try {
                     result = executeUpdateFileSystem(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSharedVpcConfigurationResult> updateSharedVpcConfigurationAsync(UpdateSharedVpcConfigurationRequest request) {
+
+        return updateSharedVpcConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSharedVpcConfigurationResult> updateSharedVpcConfigurationAsync(final UpdateSharedVpcConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateSharedVpcConfigurationRequest, UpdateSharedVpcConfigurationResult> asyncHandler) {
+        final UpdateSharedVpcConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateSharedVpcConfigurationResult>() {
+            @Override
+            public UpdateSharedVpcConfigurationResult call() throws Exception {
+                UpdateSharedVpcConfigurationResult result = null;
+
+                try {
+                    result = executeUpdateSharedVpcConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

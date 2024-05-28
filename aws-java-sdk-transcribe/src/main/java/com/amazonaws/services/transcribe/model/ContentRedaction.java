@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Allows you to redact or flag specified personally identifiable information (PII) in your transcript. If you use
- * <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>,
- * <code>RedactionOutput</code>, and <code>RedactionType</code>.
+ * Makes it possible to redact or flag specified personally identifiable information (PII) in your transcript. If you
+ * use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>RedactionOutput</code> and
+ * <code>RedactionType</code>. You can optionally include <code>PiiEntityTypes</code> to choose which types of PII you
+ * want to redact.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ContentRedaction" target="_top">AWS API
@@ -33,7 +34,8 @@ public class ContentRedaction implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specify the category of information you want to redact; <code>PII</code> (personally identifiable information) is
-     * the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of PII you want to redact.
+     * the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of PII you want to redact. If
+     * you do not include <code>PiiEntityTypes</code> in your request, all PII is redacted.
      * </p>
      */
     private String redactionType;
@@ -53,7 +55,8 @@ public class ContentRedaction implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can
-     * include as many types as you'd like, or you can select <code>ALL</code>.
+     * include as many types as you'd like, or you can select <code>ALL</code>. If you do not include
+     * <code>PiiEntityTypes</code> in your request, all PII is redacted.
      * </p>
      */
     private java.util.List<String> piiEntityTypes;
@@ -61,13 +64,15 @@ public class ContentRedaction implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specify the category of information you want to redact; <code>PII</code> (personally identifiable information) is
-     * the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of PII you want to redact.
+     * the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of PII you want to redact. If
+     * you do not include <code>PiiEntityTypes</code> in your request, all PII is redacted.
      * </p>
      * 
      * @param redactionType
      *        Specify the category of information you want to redact; <code>PII</code> (personally identifiable
      *        information) is the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of PII
-     *        you want to redact.
+     *        you want to redact. If you do not include <code>PiiEntityTypes</code> in your request, all PII is
+     *        redacted.
      * @see RedactionType
      */
 
@@ -78,12 +83,14 @@ public class ContentRedaction implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specify the category of information you want to redact; <code>PII</code> (personally identifiable information) is
-     * the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of PII you want to redact.
+     * the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of PII you want to redact. If
+     * you do not include <code>PiiEntityTypes</code> in your request, all PII is redacted.
      * </p>
      * 
      * @return Specify the category of information you want to redact; <code>PII</code> (personally identifiable
      *         information) is the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of
-     *         PII you want to redact.
+     *         PII you want to redact. If you do not include <code>PiiEntityTypes</code> in your request, all PII is
+     *         redacted.
      * @see RedactionType
      */
 
@@ -94,13 +101,15 @@ public class ContentRedaction implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specify the category of information you want to redact; <code>PII</code> (personally identifiable information) is
-     * the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of PII you want to redact.
+     * the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of PII you want to redact. If
+     * you do not include <code>PiiEntityTypes</code> in your request, all PII is redacted.
      * </p>
      * 
      * @param redactionType
      *        Specify the category of information you want to redact; <code>PII</code> (personally identifiable
      *        information) is the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of PII
-     *        you want to redact.
+     *        you want to redact. If you do not include <code>PiiEntityTypes</code> in your request, all PII is
+     *        redacted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RedactionType
      */
@@ -113,13 +122,15 @@ public class ContentRedaction implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specify the category of information you want to redact; <code>PII</code> (personally identifiable information) is
-     * the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of PII you want to redact.
+     * the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of PII you want to redact. If
+     * you do not include <code>PiiEntityTypes</code> in your request, all PII is redacted.
      * </p>
      * 
      * @param redactionType
      *        Specify the category of information you want to redact; <code>PII</code> (personally identifiable
      *        information) is the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of PII
-     *        you want to redact.
+     *        you want to redact. If you do not include <code>PiiEntityTypes</code> in your request, all PII is
+     *        redacted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RedactionType
      */
@@ -247,11 +258,13 @@ public class ContentRedaction implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can
-     * include as many types as you'd like, or you can select <code>ALL</code>.
+     * include as many types as you'd like, or you can select <code>ALL</code>. If you do not include
+     * <code>PiiEntityTypes</code> in your request, all PII is redacted.
      * </p>
      * 
      * @return Specify which types of personally identifiable information (PII) you want to redact in your transcript.
-     *         You can include as many types as you'd like, or you can select <code>ALL</code>.
+     *         You can include as many types as you'd like, or you can select <code>ALL</code>. If you do not include
+     *         <code>PiiEntityTypes</code> in your request, all PII is redacted.
      * @see PiiEntityType
      */
 
@@ -262,12 +275,14 @@ public class ContentRedaction implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can
-     * include as many types as you'd like, or you can select <code>ALL</code>.
+     * include as many types as you'd like, or you can select <code>ALL</code>. If you do not include
+     * <code>PiiEntityTypes</code> in your request, all PII is redacted.
      * </p>
      * 
      * @param piiEntityTypes
      *        Specify which types of personally identifiable information (PII) you want to redact in your transcript.
-     *        You can include as many types as you'd like, or you can select <code>ALL</code>.
+     *        You can include as many types as you'd like, or you can select <code>ALL</code>. If you do not include
+     *        <code>PiiEntityTypes</code> in your request, all PII is redacted.
      * @see PiiEntityType
      */
 
@@ -283,7 +298,8 @@ public class ContentRedaction implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can
-     * include as many types as you'd like, or you can select <code>ALL</code>.
+     * include as many types as you'd like, or you can select <code>ALL</code>. If you do not include
+     * <code>PiiEntityTypes</code> in your request, all PII is redacted.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -293,7 +309,8 @@ public class ContentRedaction implements Serializable, Cloneable, StructuredPojo
      * 
      * @param piiEntityTypes
      *        Specify which types of personally identifiable information (PII) you want to redact in your transcript.
-     *        You can include as many types as you'd like, or you can select <code>ALL</code>.
+     *        You can include as many types as you'd like, or you can select <code>ALL</code>. If you do not include
+     *        <code>PiiEntityTypes</code> in your request, all PII is redacted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PiiEntityType
      */
@@ -311,12 +328,14 @@ public class ContentRedaction implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can
-     * include as many types as you'd like, or you can select <code>ALL</code>.
+     * include as many types as you'd like, or you can select <code>ALL</code>. If you do not include
+     * <code>PiiEntityTypes</code> in your request, all PII is redacted.
      * </p>
      * 
      * @param piiEntityTypes
      *        Specify which types of personally identifiable information (PII) you want to redact in your transcript.
-     *        You can include as many types as you'd like, or you can select <code>ALL</code>.
+     *        You can include as many types as you'd like, or you can select <code>ALL</code>. If you do not include
+     *        <code>PiiEntityTypes</code> in your request, all PII is redacted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PiiEntityType
      */
@@ -329,12 +348,14 @@ public class ContentRedaction implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can
-     * include as many types as you'd like, or you can select <code>ALL</code>.
+     * include as many types as you'd like, or you can select <code>ALL</code>. If you do not include
+     * <code>PiiEntityTypes</code> in your request, all PII is redacted.
      * </p>
      * 
      * @param piiEntityTypes
      *        Specify which types of personally identifiable information (PII) you want to redact in your transcript.
-     *        You can include as many types as you'd like, or you can select <code>ALL</code>.
+     *        You can include as many types as you'd like, or you can select <code>ALL</code>. If you do not include
+     *        <code>PiiEntityTypes</code> in your request, all PII is redacted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PiiEntityType
      */

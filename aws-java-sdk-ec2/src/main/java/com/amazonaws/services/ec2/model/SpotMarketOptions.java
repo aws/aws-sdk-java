@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -78,7 +78,26 @@ public class SpotMarketOptions implements Serializable, Cloneable {
     private java.util.Date validUntil;
     /**
      * <p>
-     * The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.
+     * The behavior when a Spot Instance is interrupted.
+     * </p>
+     * <p>
+     * If <code>Configured</code> (for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html">
+     * <code>HibernationOptions</code> </a>) is set to <code>true</code>, the <code>InstanceInterruptionBehavior</code>
+     * parameter is automatically set to <code>hibernate</code>. If you set it to <code>stop</code> or
+     * <code>terminate</code>, you'll get an error.
+     * </p>
+     * <p>
+     * If <code>Configured</code> (for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html">
+     * <code>HibernationOptions</code> </a>) is set to <code>false</code> or <code>null</code>, the
+     * <code>InstanceInterruptionBehavior</code> parameter is automatically set to <code>terminate</code>. You can also
+     * set it to <code>stop</code> or <code>hibernate</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/interruption-behavior.html">Interruption behavior</a>
+     * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      */
     private String instanceInterruptionBehavior;
@@ -420,11 +439,48 @@ public class SpotMarketOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.
+     * The behavior when a Spot Instance is interrupted.
+     * </p>
+     * <p>
+     * If <code>Configured</code> (for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html">
+     * <code>HibernationOptions</code> </a>) is set to <code>true</code>, the <code>InstanceInterruptionBehavior</code>
+     * parameter is automatically set to <code>hibernate</code>. If you set it to <code>stop</code> or
+     * <code>terminate</code>, you'll get an error.
+     * </p>
+     * <p>
+     * If <code>Configured</code> (for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html">
+     * <code>HibernationOptions</code> </a>) is set to <code>false</code> or <code>null</code>, the
+     * <code>InstanceInterruptionBehavior</code> parameter is automatically set to <code>terminate</code>. You can also
+     * set it to <code>stop</code> or <code>hibernate</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/interruption-behavior.html">Interruption behavior</a>
+     * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param instanceInterruptionBehavior
-     *        The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.
+     *        The behavior when a Spot Instance is interrupted.</p>
+     *        <p>
+     *        If <code>Configured</code> (for <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html">
+     *        <code>HibernationOptions</code> </a>) is set to <code>true</code>, the
+     *        <code>InstanceInterruptionBehavior</code> parameter is automatically set to <code>hibernate</code>. If you
+     *        set it to <code>stop</code> or <code>terminate</code>, you'll get an error.
+     *        </p>
+     *        <p>
+     *        If <code>Configured</code> (for <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html">
+     *        <code>HibernationOptions</code> </a>) is set to <code>false</code> or <code>null</code>, the
+     *        <code>InstanceInterruptionBehavior</code> parameter is automatically set to <code>terminate</code>. You
+     *        can also set it to <code>stop</code> or <code>hibernate</code>.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/interruption-behavior.html">Interruption
+     *        behavior</a> in the <i>Amazon EC2 User Guide</i>.
      * @see InstanceInterruptionBehavior
      */
 
@@ -434,10 +490,47 @@ public class SpotMarketOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.
+     * The behavior when a Spot Instance is interrupted.
+     * </p>
+     * <p>
+     * If <code>Configured</code> (for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html">
+     * <code>HibernationOptions</code> </a>) is set to <code>true</code>, the <code>InstanceInterruptionBehavior</code>
+     * parameter is automatically set to <code>hibernate</code>. If you set it to <code>stop</code> or
+     * <code>terminate</code>, you'll get an error.
+     * </p>
+     * <p>
+     * If <code>Configured</code> (for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html">
+     * <code>HibernationOptions</code> </a>) is set to <code>false</code> or <code>null</code>, the
+     * <code>InstanceInterruptionBehavior</code> parameter is automatically set to <code>terminate</code>. You can also
+     * set it to <code>stop</code> or <code>hibernate</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/interruption-behavior.html">Interruption behavior</a>
+     * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
-     * @return The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.
+     * @return The behavior when a Spot Instance is interrupted.</p>
+     *         <p>
+     *         If <code>Configured</code> (for <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html">
+     *         <code>HibernationOptions</code> </a>) is set to <code>true</code>, the
+     *         <code>InstanceInterruptionBehavior</code> parameter is automatically set to <code>hibernate</code>. If
+     *         you set it to <code>stop</code> or <code>terminate</code>, you'll get an error.
+     *         </p>
+     *         <p>
+     *         If <code>Configured</code> (for <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html">
+     *         <code>HibernationOptions</code> </a>) is set to <code>false</code> or <code>null</code>, the
+     *         <code>InstanceInterruptionBehavior</code> parameter is automatically set to <code>terminate</code>. You
+     *         can also set it to <code>stop</code> or <code>hibernate</code>.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/interruption-behavior.html">Interruption
+     *         behavior</a> in the <i>Amazon EC2 User Guide</i>.
      * @see InstanceInterruptionBehavior
      */
 
@@ -447,11 +540,48 @@ public class SpotMarketOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.
+     * The behavior when a Spot Instance is interrupted.
+     * </p>
+     * <p>
+     * If <code>Configured</code> (for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html">
+     * <code>HibernationOptions</code> </a>) is set to <code>true</code>, the <code>InstanceInterruptionBehavior</code>
+     * parameter is automatically set to <code>hibernate</code>. If you set it to <code>stop</code> or
+     * <code>terminate</code>, you'll get an error.
+     * </p>
+     * <p>
+     * If <code>Configured</code> (for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html">
+     * <code>HibernationOptions</code> </a>) is set to <code>false</code> or <code>null</code>, the
+     * <code>InstanceInterruptionBehavior</code> parameter is automatically set to <code>terminate</code>. You can also
+     * set it to <code>stop</code> or <code>hibernate</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/interruption-behavior.html">Interruption behavior</a>
+     * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param instanceInterruptionBehavior
-     *        The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.
+     *        The behavior when a Spot Instance is interrupted.</p>
+     *        <p>
+     *        If <code>Configured</code> (for <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html">
+     *        <code>HibernationOptions</code> </a>) is set to <code>true</code>, the
+     *        <code>InstanceInterruptionBehavior</code> parameter is automatically set to <code>hibernate</code>. If you
+     *        set it to <code>stop</code> or <code>terminate</code>, you'll get an error.
+     *        </p>
+     *        <p>
+     *        If <code>Configured</code> (for <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html">
+     *        <code>HibernationOptions</code> </a>) is set to <code>false</code> or <code>null</code>, the
+     *        <code>InstanceInterruptionBehavior</code> parameter is automatically set to <code>terminate</code>. You
+     *        can also set it to <code>stop</code> or <code>hibernate</code>.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/interruption-behavior.html">Interruption
+     *        behavior</a> in the <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceInterruptionBehavior
      */
@@ -463,11 +593,48 @@ public class SpotMarketOptions implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.
+     * The behavior when a Spot Instance is interrupted.
+     * </p>
+     * <p>
+     * If <code>Configured</code> (for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html">
+     * <code>HibernationOptions</code> </a>) is set to <code>true</code>, the <code>InstanceInterruptionBehavior</code>
+     * parameter is automatically set to <code>hibernate</code>. If you set it to <code>stop</code> or
+     * <code>terminate</code>, you'll get an error.
+     * </p>
+     * <p>
+     * If <code>Configured</code> (for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html">
+     * <code>HibernationOptions</code> </a>) is set to <code>false</code> or <code>null</code>, the
+     * <code>InstanceInterruptionBehavior</code> parameter is automatically set to <code>terminate</code>. You can also
+     * set it to <code>stop</code> or <code>hibernate</code>.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/interruption-behavior.html">Interruption behavior</a>
+     * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param instanceInterruptionBehavior
-     *        The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.
+     *        The behavior when a Spot Instance is interrupted.</p>
+     *        <p>
+     *        If <code>Configured</code> (for <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html">
+     *        <code>HibernationOptions</code> </a>) is set to <code>true</code>, the
+     *        <code>InstanceInterruptionBehavior</code> parameter is automatically set to <code>hibernate</code>. If you
+     *        set it to <code>stop</code> or <code>terminate</code>, you'll get an error.
+     *        </p>
+     *        <p>
+     *        If <code>Configured</code> (for <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html">
+     *        <code>HibernationOptions</code> </a>) is set to <code>false</code> or <code>null</code>, the
+     *        <code>InstanceInterruptionBehavior</code> parameter is automatically set to <code>terminate</code>. You
+     *        can also set it to <code>stop</code> or <code>hibernate</code>.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/interruption-behavior.html">Interruption
+     *        behavior</a> in the <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceInterruptionBehavior
      */

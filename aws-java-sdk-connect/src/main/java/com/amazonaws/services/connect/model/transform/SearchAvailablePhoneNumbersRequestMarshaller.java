@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class SearchAvailablePhoneNumbersRequestMarshaller {
 
     private static final MarshallingInfo<String> TARGETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("TargetArn").build();
+    private static final MarshallingInfo<String> INSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceId").build();
     private static final MarshallingInfo<String> PHONENUMBERCOUNTRYCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PhoneNumberCountryCode").build();
     private static final MarshallingInfo<String> PHONENUMBERTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -57,6 +59,7 @@ public class SearchAvailablePhoneNumbersRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(searchAvailablePhoneNumbersRequest.getTargetArn(), TARGETARN_BINDING);
+            protocolMarshaller.marshall(searchAvailablePhoneNumbersRequest.getInstanceId(), INSTANCEID_BINDING);
             protocolMarshaller.marshall(searchAvailablePhoneNumbersRequest.getPhoneNumberCountryCode(), PHONENUMBERCOUNTRYCODE_BINDING);
             protocolMarshaller.marshall(searchAvailablePhoneNumbersRequest.getPhoneNumberType(), PHONENUMBERTYPE_BINDING);
             protocolMarshaller.marshall(searchAvailablePhoneNumbersRequest.getPhoneNumberPrefix(), PHONENUMBERPREFIX_BINDING);

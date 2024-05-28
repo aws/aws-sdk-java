@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class DataReplicationInfoReplicatedDiskMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rescannedStorageBytes").build();
     private static final MarshallingInfo<Long> TOTALSTORAGEBYTES_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("totalStorageBytes").build();
+    private static final MarshallingInfo<String> VOLUMESTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("volumeStatus").build();
 
     private static final DataReplicationInfoReplicatedDiskMarshaller instance = new DataReplicationInfoReplicatedDiskMarshaller();
 
@@ -59,6 +61,7 @@ public class DataReplicationInfoReplicatedDiskMarshaller {
             protocolMarshaller.marshall(dataReplicationInfoReplicatedDisk.getReplicatedStorageBytes(), REPLICATEDSTORAGEBYTES_BINDING);
             protocolMarshaller.marshall(dataReplicationInfoReplicatedDisk.getRescannedStorageBytes(), RESCANNEDSTORAGEBYTES_BINDING);
             protocolMarshaller.marshall(dataReplicationInfoReplicatedDisk.getTotalStorageBytes(), TOTALSTORAGEBYTES_BINDING);
+            protocolMarshaller.marshall(dataReplicationInfoReplicatedDisk.getVolumeStatus(), VOLUMESTATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

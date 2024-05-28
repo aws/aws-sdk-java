@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,14 +16,13 @@ import javax.annotation.Generated;
 
 /**
  * Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this
- * situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In this
- * case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the default value,
- * Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing, MediaConvert performs any
- * frame rate conversion first and then interlaces the frames. When you choose Optimized interlacing and you set your
- * output frame rate to a value that isn't suitable for optimized interlacing, MediaConvert automatically falls back to
- * basic interlacing. Required settings: To use optimized interlacing, you must set Telecine (telecine) to None (NONE)
- * or Soft (SOFT). You can't use optimized interlacing for hard telecine outputs. You must also set Interlace mode
- * (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+ * situation, choose Optimized interlacing to create a better quality interlaced output. In this case, each progressive
+ * frame from the input corresponds to an interlaced field in the output. Keep the default value, Basic interlacing, for
+ * all other output frame rates. With basic interlacing, MediaConvert performs any frame rate conversion first and then
+ * interlaces the frames. When you choose Optimized interlacing and you set your output frame rate to a value that isn't
+ * suitable for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings: To
+ * use optimized interlacing, you must set Telecine to None or Soft. You can't use optimized interlacing for hard
+ * telecine outputs. You must also set Interlace mode to a value other than Progressive.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Vc3ScanTypeConversionMode {

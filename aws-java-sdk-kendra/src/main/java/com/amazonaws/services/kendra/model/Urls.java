@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * <i>When selecting websites to index, you must adhere to the <a href="https://aws.amazon.com/aup/">Amazon Acceptable
  * Use Policy</a> and all other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to index your
- * own webpages, or webpages that you have authorization to index.</i>
+ * own web pages, or web pages that you have authorization to index.</i>
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Urls" target="_top">AWS API Documentation</a>
@@ -42,7 +42,7 @@ public class Urls implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * You can choose to crawl only the website host names, or the website host names with subdomains, or the website
-     * host names with subdomains and other domains that the webpages link to.
+     * host names with subdomains and other domains that the web pages link to.
      * </p>
      * <p>
      * You can list up to 100 seed URLs.
@@ -65,7 +65,7 @@ public class Urls implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * You can choose to crawl only the website host names, or the website host names with subdomains, or the website
-     * host names with subdomains and other domains that the webpages link to.
+     * host names with subdomains and other domains that the web pages link to.
      * </p>
      * <p>
      * You can list up to 100 seed URLs.
@@ -75,7 +75,7 @@ public class Urls implements Serializable, Cloneable, StructuredPojo {
      *        Configuration of the seed or starting point URLs of the websites you want to crawl.</p>
      *        <p>
      *        You can choose to crawl only the website host names, or the website host names with subdomains, or the
-     *        website host names with subdomains and other domains that the webpages link to.
+     *        website host names with subdomains and other domains that the web pages link to.
      *        </p>
      *        <p>
      *        You can list up to 100 seed URLs.
@@ -91,7 +91,7 @@ public class Urls implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * You can choose to crawl only the website host names, or the website host names with subdomains, or the website
-     * host names with subdomains and other domains that the webpages link to.
+     * host names with subdomains and other domains that the web pages link to.
      * </p>
      * <p>
      * You can list up to 100 seed URLs.
@@ -100,7 +100,7 @@ public class Urls implements Serializable, Cloneable, StructuredPojo {
      * @return Configuration of the seed or starting point URLs of the websites you want to crawl.</p>
      *         <p>
      *         You can choose to crawl only the website host names, or the website host names with subdomains, or the
-     *         website host names with subdomains and other domains that the webpages link to.
+     *         website host names with subdomains and other domains that the web pages link to.
      *         </p>
      *         <p>
      *         You can list up to 100 seed URLs.
@@ -116,7 +116,7 @@ public class Urls implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * You can choose to crawl only the website host names, or the website host names with subdomains, or the website
-     * host names with subdomains and other domains that the webpages link to.
+     * host names with subdomains and other domains that the web pages link to.
      * </p>
      * <p>
      * You can list up to 100 seed URLs.
@@ -126,7 +126,7 @@ public class Urls implements Serializable, Cloneable, StructuredPojo {
      *        Configuration of the seed or starting point URLs of the websites you want to crawl.</p>
      *        <p>
      *        You can choose to crawl only the website host names, or the website host names with subdomains, or the
-     *        website host names with subdomains and other domains that the webpages link to.
+     *        website host names with subdomains and other domains that the web pages link to.
      *        </p>
      *        <p>
      *        You can list up to 100 seed URLs.

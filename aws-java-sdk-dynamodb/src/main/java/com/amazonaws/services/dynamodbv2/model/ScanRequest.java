@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,8 +30,11 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
 
     /**
      * <p>
-     * The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name of the
+     * The name of the table containing the requested items or if you provide <code>IndexName</code>, the name of the
      * table to which that index belongs.
+     * </p>
+     * <p>
+     * You can also provide the Amazon Resource Name (ARN) of the table in this parameter.
      * </p>
      */
     private String tableName;
@@ -86,7 +89,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * </li>
      * <li>
      * <p>
-     * <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves.
+     * <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves. Note that
+     * this uses the same quantity of read capacity units as getting the items, and is subject to the same item size
+     * calculations.
      * </p>
      * </li>
      * <li>
@@ -223,9 +228,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * </p>
      * </note>
      * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression"
-     * >Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.FilterExpression">Filter
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      */
     private String filterExpression;
@@ -371,8 +376,10 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * initialize any additional object members.
      * 
      * @param tableName
-     *        The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name
-     *        of the table to which that index belongs.
+     *        The name of the table containing the requested items or if you provide <code>IndexName</code>, the name of
+     *        the table to which that index belongs.</p>
+     *        <p>
+     *        You can also provide the Amazon Resource Name (ARN) of the table in this parameter.
      */
     public ScanRequest(String tableName) {
         setTableName(tableName);
@@ -380,13 +387,18 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
 
     /**
      * <p>
-     * The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name of the
+     * The name of the table containing the requested items or if you provide <code>IndexName</code>, the name of the
      * table to which that index belongs.
+     * </p>
+     * <p>
+     * You can also provide the Amazon Resource Name (ARN) of the table in this parameter.
      * </p>
      * 
      * @param tableName
-     *        The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name
-     *        of the table to which that index belongs.
+     *        The name of the table containing the requested items or if you provide <code>IndexName</code>, the name of
+     *        the table to which that index belongs.</p>
+     *        <p>
+     *        You can also provide the Amazon Resource Name (ARN) of the table in this parameter.
      */
 
     public void setTableName(String tableName) {
@@ -395,12 +407,17 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
 
     /**
      * <p>
-     * The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name of the
+     * The name of the table containing the requested items or if you provide <code>IndexName</code>, the name of the
      * table to which that index belongs.
      * </p>
+     * <p>
+     * You can also provide the Amazon Resource Name (ARN) of the table in this parameter.
+     * </p>
      * 
-     * @return The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name
-     *         of the table to which that index belongs.
+     * @return The name of the table containing the requested items or if you provide <code>IndexName</code>, the name
+     *         of the table to which that index belongs.</p>
+     *         <p>
+     *         You can also provide the Amazon Resource Name (ARN) of the table in this parameter.
      */
 
     public String getTableName() {
@@ -409,13 +426,18 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
 
     /**
      * <p>
-     * The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name of the
+     * The name of the table containing the requested items or if you provide <code>IndexName</code>, the name of the
      * table to which that index belongs.
+     * </p>
+     * <p>
+     * You can also provide the Amazon Resource Name (ARN) of the table in this parameter.
      * </p>
      * 
      * @param tableName
-     *        The name of the table containing the requested items; or, if you provide <code>IndexName</code>, the name
-     *        of the table to which that index belongs.
+     *        The name of the table containing the requested items or if you provide <code>IndexName</code>, the name of
+     *        the table to which that index belongs.</p>
+     *        <p>
+     *        You can also provide the Amazon Resource Name (ARN) of the table in this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -671,7 +693,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * </li>
      * <li>
      * <p>
-     * <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves.
+     * <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves. Note that
+     * this uses the same quantity of read capacity units as getting the items, and is subject to the same item size
+     * calculations.
      * </p>
      * </li>
      * <li>
@@ -728,7 +752,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *        </li>
      *        <li>
      *        <p>
-     *        <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves.
+     *        <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves. Note
+     *        that this uses the same quantity of read capacity units as getting the items, and is subject to the same
+     *        item size calculations.
      *        </p>
      *        </li>
      *        <li>
@@ -792,7 +818,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * </li>
      * <li>
      * <p>
-     * <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves.
+     * <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves. Note that
+     * this uses the same quantity of read capacity units as getting the items, and is subject to the same item size
+     * calculations.
      * </p>
      * </li>
      * <li>
@@ -849,6 +877,8 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *         <li>
      *         <p>
      *         <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves.
+     *         Note that this uses the same quantity of read capacity units as getting the items, and is subject to the
+     *         same item size calculations.
      *         </p>
      *         </li>
      *         <li>
@@ -912,7 +942,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * </li>
      * <li>
      * <p>
-     * <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves.
+     * <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves. Note that
+     * this uses the same quantity of read capacity units as getting the items, and is subject to the same item size
+     * calculations.
      * </p>
      * </li>
      * <li>
@@ -969,7 +1001,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *        </li>
      *        <li>
      *        <p>
-     *        <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves.
+     *        <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves. Note
+     *        that this uses the same quantity of read capacity units as getting the items, and is subject to the same
+     *        item size calculations.
      *        </p>
      *        </li>
      *        <li>
@@ -1035,7 +1069,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * </li>
      * <li>
      * <p>
-     * <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves.
+     * <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves. Note that
+     * this uses the same quantity of read capacity units as getting the items, and is subject to the same item size
+     * calculations.
      * </p>
      * </li>
      * <li>
@@ -1092,7 +1128,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *        </li>
      *        <li>
      *        <p>
-     *        <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves.
+     *        <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves. Note
+     *        that this uses the same quantity of read capacity units as getting the items, and is subject to the same
+     *        item size calculations.
      *        </p>
      *        </li>
      *        <li>
@@ -1156,7 +1194,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * </li>
      * <li>
      * <p>
-     * <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves.
+     * <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves. Note that
+     * this uses the same quantity of read capacity units as getting the items, and is subject to the same item size
+     * calculations.
      * </p>
      * </li>
      * <li>
@@ -1213,7 +1253,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *        </li>
      *        <li>
      *        <p>
-     *        <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves.
+     *        <code>COUNT</code> - Returns the number of matching items, rather than the matching items themselves. Note
+     *        that this uses the same quantity of read capacity units as getting the items, and is subject to the same
+     *        item size calculations.
      *        </p>
      *        </li>
      *        <li>
@@ -1958,9 +2000,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * </p>
      * </note>
      * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression"
-     * >Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.FilterExpression">Filter
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param filterExpression
@@ -1973,8 +2015,8 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *        </p>
      *        </note>
      *        <p>
-     *        For more information, see <a href=
-     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression"
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.FilterExpression"
      *        >Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -1994,9 +2036,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * </p>
      * </note>
      * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression"
-     * >Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.FilterExpression">Filter
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @return A string that contains conditions that DynamoDB applies after the <code>Scan</code> operation, but before
@@ -2008,8 +2050,8 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *         </p>
      *         </note>
      *         <p>
-     *         For more information, see <a href=
-     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression"
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.FilterExpression"
      *         >Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
 
@@ -2029,9 +2071,9 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      * </p>
      * </note>
      * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression"
-     * >Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.FilterExpression">Filter
+     * Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * 
      * @param filterExpression
@@ -2044,8 +2086,8 @@ public class ScanRequest extends com.amazonaws.AmazonWebServiceRequest implement
      *        </p>
      *        </note>
      *        <p>
-     *        For more information, see <a href=
-     *        "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression"
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.FilterExpression"
      *        >Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

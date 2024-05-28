@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,6 +60,12 @@ public class ListHostedZonesRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String delegationSetId;
+    /**
+     * <p>
+     * (Optional) Specifies if the hosted zone is private.
+     * </p>
+     */
+    private String hostedZoneType;
 
     /**
      * <p>
@@ -260,6 +266,65 @@ public class ListHostedZonesRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * (Optional) Specifies if the hosted zone is private.
+     * </p>
+     * 
+     * @param hostedZoneType
+     *        (Optional) Specifies if the hosted zone is private.
+     * @see HostedZoneType
+     */
+
+    public void setHostedZoneType(String hostedZoneType) {
+        this.hostedZoneType = hostedZoneType;
+    }
+
+    /**
+     * <p>
+     * (Optional) Specifies if the hosted zone is private.
+     * </p>
+     * 
+     * @return (Optional) Specifies if the hosted zone is private.
+     * @see HostedZoneType
+     */
+
+    public String getHostedZoneType() {
+        return this.hostedZoneType;
+    }
+
+    /**
+     * <p>
+     * (Optional) Specifies if the hosted zone is private.
+     * </p>
+     * 
+     * @param hostedZoneType
+     *        (Optional) Specifies if the hosted zone is private.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HostedZoneType
+     */
+
+    public ListHostedZonesRequest withHostedZoneType(String hostedZoneType) {
+        setHostedZoneType(hostedZoneType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Optional) Specifies if the hosted zone is private.
+     * </p>
+     * 
+     * @param hostedZoneType
+     *        (Optional) Specifies if the hosted zone is private.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HostedZoneType
+     */
+
+    public ListHostedZonesRequest withHostedZoneType(HostedZoneType hostedZoneType) {
+        this.hostedZoneType = hostedZoneType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -276,7 +341,9 @@ public class ListHostedZonesRequest extends com.amazonaws.AmazonWebServiceReques
         if (getMaxItems() != null)
             sb.append("MaxItems: ").append(getMaxItems()).append(",");
         if (getDelegationSetId() != null)
-            sb.append("DelegationSetId: ").append(getDelegationSetId());
+            sb.append("DelegationSetId: ").append(getDelegationSetId()).append(",");
+        if (getHostedZoneType() != null)
+            sb.append("HostedZoneType: ").append(getHostedZoneType());
         sb.append("}");
         return sb.toString();
     }
@@ -303,6 +370,10 @@ public class ListHostedZonesRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getDelegationSetId() != null && other.getDelegationSetId().equals(this.getDelegationSetId()) == false)
             return false;
+        if (other.getHostedZoneType() == null ^ this.getHostedZoneType() == null)
+            return false;
+        if (other.getHostedZoneType() != null && other.getHostedZoneType().equals(this.getHostedZoneType()) == false)
+            return false;
         return true;
     }
 
@@ -314,6 +385,7 @@ public class ListHostedZonesRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode());
         hashCode = prime * hashCode + ((getDelegationSetId() == null) ? 0 : getDelegationSetId().hashCode());
+        hashCode = prime * hashCode + ((getHostedZoneType() == null) ? 0 : getHostedZoneType().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,12 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * If this parameter is enabled, the group will be hidden from the address book.
+     * </p>
+     */
+    private Boolean hiddenFromGlobalAddressList;
 
     /**
      * <p>
@@ -119,6 +125,58 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * If this parameter is enabled, the group will be hidden from the address book.
+     * </p>
+     * 
+     * @param hiddenFromGlobalAddressList
+     *        If this parameter is enabled, the group will be hidden from the address book.
+     */
+
+    public void setHiddenFromGlobalAddressList(Boolean hiddenFromGlobalAddressList) {
+        this.hiddenFromGlobalAddressList = hiddenFromGlobalAddressList;
+    }
+
+    /**
+     * <p>
+     * If this parameter is enabled, the group will be hidden from the address book.
+     * </p>
+     * 
+     * @return If this parameter is enabled, the group will be hidden from the address book.
+     */
+
+    public Boolean getHiddenFromGlobalAddressList() {
+        return this.hiddenFromGlobalAddressList;
+    }
+
+    /**
+     * <p>
+     * If this parameter is enabled, the group will be hidden from the address book.
+     * </p>
+     * 
+     * @param hiddenFromGlobalAddressList
+     *        If this parameter is enabled, the group will be hidden from the address book.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateGroupRequest withHiddenFromGlobalAddressList(Boolean hiddenFromGlobalAddressList) {
+        setHiddenFromGlobalAddressList(hiddenFromGlobalAddressList);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If this parameter is enabled, the group will be hidden from the address book.
+     * </p>
+     * 
+     * @return If this parameter is enabled, the group will be hidden from the address book.
+     */
+
+    public Boolean isHiddenFromGlobalAddressList() {
+        return this.hiddenFromGlobalAddressList;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,7 +191,9 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getOrganizationId() != null)
             sb.append("OrganizationId: ").append(getOrganizationId()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getHiddenFromGlobalAddressList() != null)
+            sb.append("HiddenFromGlobalAddressList: ").append(getHiddenFromGlobalAddressList());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +216,10 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getHiddenFromGlobalAddressList() == null ^ this.getHiddenFromGlobalAddressList() == null)
+            return false;
+        if (other.getHiddenFromGlobalAddressList() != null && other.getHiddenFromGlobalAddressList().equals(this.getHiddenFromGlobalAddressList()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +230,7 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
         hashCode = prime * hashCode + ((getOrganizationId() == null) ? 0 : getOrganizationId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getHiddenFromGlobalAddressList() == null) ? 0 : getHiddenFromGlobalAddressList().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,8 +36,8 @@ public class Permission implements Serializable, Cloneable, StructuredPojo {
     private String stackId;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more information about
-     * IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * The Amazon Resource Name (ARN) for an Identity and Access Management (IAM) role. For more information about IAM
+     * ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      * </p>
      */
@@ -135,13 +135,13 @@ public class Permission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more information about
-     * IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * The Amazon Resource Name (ARN) for an Identity and Access Management (IAM) role. For more information about IAM
+     * ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      * </p>
      * 
      * @param iamUserArn
-     *        The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more information
+     *        The Amazon Resource Name (ARN) for an Identity and Access Management (IAM) role. For more information
      *        about IAM ARNs, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      */
@@ -152,12 +152,12 @@ public class Permission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more information about
-     * IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * The Amazon Resource Name (ARN) for an Identity and Access Management (IAM) role. For more information about IAM
+     * ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more information
+     * @return The Amazon Resource Name (ARN) for an Identity and Access Management (IAM) role. For more information
      *         about IAM ARNs, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      */
@@ -168,13 +168,13 @@ public class Permission implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more information about
-     * IAM ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * The Amazon Resource Name (ARN) for an Identity and Access Management (IAM) role. For more information about IAM
+     * ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      * </p>
      * 
      * @param iamUserArn
-     *        The Amazon Resource Name (ARN) for an AWS Identity and Access Management (IAM) role. For more information
+     *        The Amazon Resource Name (ARN) for an Identity and Access Management (IAM) role. For more information
      *        about IAM ARNs, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

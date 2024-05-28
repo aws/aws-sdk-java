@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class EsamSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Specifies an ESAM ManifestConfirmConditionNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses
-     * the manifest conditioning instructions that you provide in the setting MCC XML (mccXml).
+     * the manifest conditioning instructions that you provide in the setting MCC XML.
      */
     private EsamManifestConfirmConditionNotification manifestConfirmConditionNotification;
     /**
@@ -39,17 +39,17 @@ public class EsamSettings implements Serializable, Cloneable, StructuredPojo {
     private Integer responseSignalPreroll;
     /**
      * Specifies an ESAM SignalProcessingNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the
-     * signal processing instructions that you provide in the setting SCC XML (sccXml).
+     * signal processing instructions that you provide in the setting SCC XML.
      */
     private EsamSignalProcessingNotification signalProcessingNotification;
 
     /**
      * Specifies an ESAM ManifestConfirmConditionNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses
-     * the manifest conditioning instructions that you provide in the setting MCC XML (mccXml).
+     * the manifest conditioning instructions that you provide in the setting MCC XML.
      * 
      * @param manifestConfirmConditionNotification
      *        Specifies an ESAM ManifestConfirmConditionNotification XML as per OC-SP-ESAM-API-I03-131025. The
-     *        transcoder uses the manifest conditioning instructions that you provide in the setting MCC XML (mccXml).
+     *        transcoder uses the manifest conditioning instructions that you provide in the setting MCC XML.
      */
 
     public void setManifestConfirmConditionNotification(EsamManifestConfirmConditionNotification manifestConfirmConditionNotification) {
@@ -58,10 +58,10 @@ public class EsamSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Specifies an ESAM ManifestConfirmConditionNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses
-     * the manifest conditioning instructions that you provide in the setting MCC XML (mccXml).
+     * the manifest conditioning instructions that you provide in the setting MCC XML.
      * 
      * @return Specifies an ESAM ManifestConfirmConditionNotification XML as per OC-SP-ESAM-API-I03-131025. The
-     *         transcoder uses the manifest conditioning instructions that you provide in the setting MCC XML (mccXml).
+     *         transcoder uses the manifest conditioning instructions that you provide in the setting MCC XML.
      */
 
     public EsamManifestConfirmConditionNotification getManifestConfirmConditionNotification() {
@@ -70,11 +70,11 @@ public class EsamSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Specifies an ESAM ManifestConfirmConditionNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses
-     * the manifest conditioning instructions that you provide in the setting MCC XML (mccXml).
+     * the manifest conditioning instructions that you provide in the setting MCC XML.
      * 
      * @param manifestConfirmConditionNotification
      *        Specifies an ESAM ManifestConfirmConditionNotification XML as per OC-SP-ESAM-API-I03-131025. The
-     *        transcoder uses the manifest conditioning instructions that you provide in the setting MCC XML (mccXml).
+     *        transcoder uses the manifest conditioning instructions that you provide in the setting MCC XML.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,11 +134,11 @@ public class EsamSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Specifies an ESAM SignalProcessingNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the
-     * signal processing instructions that you provide in the setting SCC XML (sccXml).
+     * signal processing instructions that you provide in the setting SCC XML.
      * 
      * @param signalProcessingNotification
      *        Specifies an ESAM SignalProcessingNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses
-     *        the signal processing instructions that you provide in the setting SCC XML (sccXml).
+     *        the signal processing instructions that you provide in the setting SCC XML.
      */
 
     public void setSignalProcessingNotification(EsamSignalProcessingNotification signalProcessingNotification) {
@@ -147,10 +147,10 @@ public class EsamSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Specifies an ESAM SignalProcessingNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the
-     * signal processing instructions that you provide in the setting SCC XML (sccXml).
+     * signal processing instructions that you provide in the setting SCC XML.
      * 
      * @return Specifies an ESAM SignalProcessingNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses
-     *         the signal processing instructions that you provide in the setting SCC XML (sccXml).
+     *         the signal processing instructions that you provide in the setting SCC XML.
      */
 
     public EsamSignalProcessingNotification getSignalProcessingNotification() {
@@ -159,11 +159,11 @@ public class EsamSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Specifies an ESAM SignalProcessingNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses the
-     * signal processing instructions that you provide in the setting SCC XML (sccXml).
+     * signal processing instructions that you provide in the setting SCC XML.
      * 
      * @param signalProcessingNotification
      *        Specifies an ESAM SignalProcessingNotification XML as per OC-SP-ESAM-API-I03-131025. The transcoder uses
-     *        the signal processing instructions that you provide in the setting SCC XML (sccXml).
+     *        the signal processing instructions that you provide in the setting SCC XML.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

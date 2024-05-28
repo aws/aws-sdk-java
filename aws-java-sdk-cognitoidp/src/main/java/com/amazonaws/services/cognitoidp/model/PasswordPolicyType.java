@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,7 +65,9 @@ public class PasswordPolicyType implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The number of days a temporary password is valid in the password policy. If the user doesn't sign in during this
-     * time, an administrator must reset their password.
+     * time, an administrator must reset their password. Defaults to <code>7</code>. If you submit a value of
+     * <code>0</code>, Amazon Cognito treats it as a null value and sets <code>TemporaryPasswordValidityDays</code> to
+     * its default value.
      * </p>
      * <note>
      * <p>
@@ -359,7 +361,9 @@ public class PasswordPolicyType implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The number of days a temporary password is valid in the password policy. If the user doesn't sign in during this
-     * time, an administrator must reset their password.
+     * time, an administrator must reset their password. Defaults to <code>7</code>. If you submit a value of
+     * <code>0</code>, Amazon Cognito treats it as a null value and sets <code>TemporaryPasswordValidityDays</code> to
+     * its default value.
      * </p>
      * <note>
      * <p>
@@ -370,7 +374,9 @@ public class PasswordPolicyType implements Serializable, Cloneable, StructuredPo
      * 
      * @param temporaryPasswordValidityDays
      *        The number of days a temporary password is valid in the password policy. If the user doesn't sign in
-     *        during this time, an administrator must reset their password.</p> <note>
+     *        during this time, an administrator must reset their password. Defaults to <code>7</code>. If you submit a
+     *        value of <code>0</code>, Amazon Cognito treats it as a null value and sets
+     *        <code>TemporaryPasswordValidityDays</code> to its default value.</p> <note>
      *        <p>
      *        When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you can no longer set a value for
      *        the legacy <code>UnusedAccountValidityDays</code> parameter in that user pool.
@@ -384,7 +390,9 @@ public class PasswordPolicyType implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The number of days a temporary password is valid in the password policy. If the user doesn't sign in during this
-     * time, an administrator must reset their password.
+     * time, an administrator must reset their password. Defaults to <code>7</code>. If you submit a value of
+     * <code>0</code>, Amazon Cognito treats it as a null value and sets <code>TemporaryPasswordValidityDays</code> to
+     * its default value.
      * </p>
      * <note>
      * <p>
@@ -394,7 +402,9 @@ public class PasswordPolicyType implements Serializable, Cloneable, StructuredPo
      * </note>
      * 
      * @return The number of days a temporary password is valid in the password policy. If the user doesn't sign in
-     *         during this time, an administrator must reset their password.</p> <note>
+     *         during this time, an administrator must reset their password. Defaults to <code>7</code>. If you submit a
+     *         value of <code>0</code>, Amazon Cognito treats it as a null value and sets
+     *         <code>TemporaryPasswordValidityDays</code> to its default value.</p> <note>
      *         <p>
      *         When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you can no longer set a value
      *         for the legacy <code>UnusedAccountValidityDays</code> parameter in that user pool.
@@ -408,7 +418,9 @@ public class PasswordPolicyType implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The number of days a temporary password is valid in the password policy. If the user doesn't sign in during this
-     * time, an administrator must reset their password.
+     * time, an administrator must reset their password. Defaults to <code>7</code>. If you submit a value of
+     * <code>0</code>, Amazon Cognito treats it as a null value and sets <code>TemporaryPasswordValidityDays</code> to
+     * its default value.
      * </p>
      * <note>
      * <p>
@@ -419,7 +431,9 @@ public class PasswordPolicyType implements Serializable, Cloneable, StructuredPo
      * 
      * @param temporaryPasswordValidityDays
      *        The number of days a temporary password is valid in the password policy. If the user doesn't sign in
-     *        during this time, an administrator must reset their password.</p> <note>
+     *        during this time, an administrator must reset their password. Defaults to <code>7</code>. If you submit a
+     *        value of <code>0</code>, Amazon Cognito treats it as a null value and sets
+     *        <code>TemporaryPasswordValidityDays</code> to its default value.</p> <note>
      *        <p>
      *        When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you can no longer set a value for
      *        the legacy <code>UnusedAccountValidityDays</code> parameter in that user pool.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the output of a PutAlertManagerDefinition operation.
+ * Represents the output of a <code>PutAlertManagerDefinition</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/PutAlertManagerDefinition" target="_top">AWS API
@@ -28,18 +28,18 @@ public class PutAlertManagerDefinitionResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The status of alert manager definition.
+     * A structure that returns the current status of the alert manager definition.
      * </p>
      */
     private AlertManagerDefinitionStatus status;
 
     /**
      * <p>
-     * The status of alert manager definition.
+     * A structure that returns the current status of the alert manager definition.
      * </p>
      * 
      * @param status
-     *        The status of alert manager definition.
+     *        A structure that returns the current status of the alert manager definition.
      */
 
     public void setStatus(AlertManagerDefinitionStatus status) {
@@ -48,10 +48,10 @@ public class PutAlertManagerDefinitionResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The status of alert manager definition.
+     * A structure that returns the current status of the alert manager definition.
      * </p>
      * 
-     * @return The status of alert manager definition.
+     * @return A structure that returns the current status of the alert manager definition.
      */
 
     public AlertManagerDefinitionStatus getStatus() {
@@ -60,11 +60,11 @@ public class PutAlertManagerDefinitionResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The status of alert manager definition.
+     * A structure that returns the current status of the alert manager definition.
      * </p>
      * 
      * @param status
-     *        The status of alert manager definition.
+     *        A structure that returns the current status of the alert manager definition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

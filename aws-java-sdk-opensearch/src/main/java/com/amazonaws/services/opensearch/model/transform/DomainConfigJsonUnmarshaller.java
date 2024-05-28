@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,10 @@ public class DomainConfigJsonUnmarshaller implements Unmarshaller<DomainConfig, 
                     context.nextToken();
                     domainConfig.setAccessPolicies(AccessPoliciesStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("IPAddressType", targetDepth)) {
+                    context.nextToken();
+                    domainConfig.setIPAddressType(IPAddressTypeStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("SnapshotOptions", targetDepth)) {
                     context.nextToken();
                     domainConfig.setSnapshotOptions(SnapshotOptionsStatusJsonUnmarshaller.getInstance().unmarshall(context));
@@ -107,6 +111,20 @@ public class DomainConfigJsonUnmarshaller implements Unmarshaller<DomainConfig, 
                 if (context.testExpression("ChangeProgressDetails", targetDepth)) {
                     context.nextToken();
                     domainConfig.setChangeProgressDetails(ChangeProgressDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("OffPeakWindowOptions", targetDepth)) {
+                    context.nextToken();
+                    domainConfig.setOffPeakWindowOptions(OffPeakWindowOptionsStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SoftwareUpdateOptions", targetDepth)) {
+                    context.nextToken();
+                    domainConfig.setSoftwareUpdateOptions(SoftwareUpdateOptionsStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ModifyingProperties", targetDepth)) {
+                    context.nextToken();
+                    domainConfig.setModifyingProperties(new ListUnmarshaller<ModifyingProperties>(ModifyingPropertiesJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

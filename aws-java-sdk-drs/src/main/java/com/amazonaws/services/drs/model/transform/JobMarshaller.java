@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,8 @@ public class JobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("initiatedBy").build();
     private static final MarshallingInfo<String> JOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("jobID").build();
+    private static final MarshallingInfo<List> PARTICIPATINGRESOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("participatingResources").build();
     private static final MarshallingInfo<List> PARTICIPATINGSERVERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("participatingServers").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -69,6 +71,7 @@ public class JobMarshaller {
             protocolMarshaller.marshall(job.getEndDateTime(), ENDDATETIME_BINDING);
             protocolMarshaller.marshall(job.getInitiatedBy(), INITIATEDBY_BINDING);
             protocolMarshaller.marshall(job.getJobID(), JOBID_BINDING);
+            protocolMarshaller.marshall(job.getParticipatingResources(), PARTICIPATINGRESOURCES_BINDING);
             protocolMarshaller.marshall(job.getParticipatingServers(), PARTICIPATINGSERVERS_BINDING);
             protocolMarshaller.marshall(job.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(job.getTags(), TAGS_BINDING);

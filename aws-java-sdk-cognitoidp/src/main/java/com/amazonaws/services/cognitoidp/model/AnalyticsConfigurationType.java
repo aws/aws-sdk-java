@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,7 +23,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <note>
  * <p>
- * In Regions where Amazon Pinpointisn't available, user pools only support sending events to Amazon Pinpoint projects
+ * In Regions where Amazon Pinpoint isn't available, user pools only support sending events to Amazon Pinpoint projects
  * in us-east-1. In Regions where Amazon Pinpoint is available, user pools support sending events to Amazon Pinpoint
  * projects within that same Region.
  * </p>

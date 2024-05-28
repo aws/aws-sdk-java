@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,6 +57,14 @@ public class KafkaStreamingSourceOptionsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxOffsetsPerTrigger").build();
     private static final MarshallingInfo<Integer> MINPARTITIONS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MinPartitions").build();
+    private static final MarshallingInfo<Boolean> INCLUDEHEADERS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeHeaders").build();
+    private static final MarshallingInfo<String> ADDRECORDTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AddRecordTimestamp").build();
+    private static final MarshallingInfo<String> EMITCONSUMERLAGMETRICS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EmitConsumerLagMetrics").build();
+    private static final MarshallingInfo<java.util.Date> STARTINGTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartingTimestamp").timestampFormat("iso8601").build();
 
     private static final KafkaStreamingSourceOptionsMarshaller instance = new KafkaStreamingSourceOptionsMarshaller();
 
@@ -89,6 +97,10 @@ public class KafkaStreamingSourceOptionsMarshaller {
             protocolMarshaller.marshall(kafkaStreamingSourceOptions.getRetryIntervalMs(), RETRYINTERVALMS_BINDING);
             protocolMarshaller.marshall(kafkaStreamingSourceOptions.getMaxOffsetsPerTrigger(), MAXOFFSETSPERTRIGGER_BINDING);
             protocolMarshaller.marshall(kafkaStreamingSourceOptions.getMinPartitions(), MINPARTITIONS_BINDING);
+            protocolMarshaller.marshall(kafkaStreamingSourceOptions.getIncludeHeaders(), INCLUDEHEADERS_BINDING);
+            protocolMarshaller.marshall(kafkaStreamingSourceOptions.getAddRecordTimestamp(), ADDRECORDTIMESTAMP_BINDING);
+            protocolMarshaller.marshall(kafkaStreamingSourceOptions.getEmitConsumerLagMetrics(), EMITCONSUMERLAGMETRICS_BINDING);
+            protocolMarshaller.marshall(kafkaStreamingSourceOptions.getStartingTimestamp(), STARTINGTIMESTAMP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

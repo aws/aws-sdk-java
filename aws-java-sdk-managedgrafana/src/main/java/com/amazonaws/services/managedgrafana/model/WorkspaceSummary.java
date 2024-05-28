@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,6 +54,14 @@ public class WorkspaceSummary implements Serializable, Cloneable, StructuredPojo
     private String endpoint;
     /**
      * <p>
+     * The token that ties this workspace to a Grafana Labs account. For more information, see <a href=
+     * "https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise"
+     * >Link your account with Grafana Labs</a>.
+     * </p>
+     */
+    private String grafanaToken;
+    /**
+     * <p>
      * The Grafana version that the workspace is running.
      * </p>
      */
@@ -64,6 +72,17 @@ public class WorkspaceSummary implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String id;
+    /**
+     * <p>
+     * Specifies whether this workspace has a full Grafana Enterprise license.
+     * </p>
+     * <note>
+     * <p>
+     * Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     * </p>
+     * </note>
+     */
+    private String licenseType;
     /**
      * <p>
      * The most recent date that the workspace was modified.
@@ -258,6 +277,58 @@ public class WorkspaceSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * The token that ties this workspace to a Grafana Labs account. For more information, see <a href=
+     * "https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise"
+     * >Link your account with Grafana Labs</a>.
+     * </p>
+     * 
+     * @param grafanaToken
+     *        The token that ties this workspace to a Grafana Labs account. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise"
+     *        >Link your account with Grafana Labs</a>.
+     */
+
+    public void setGrafanaToken(String grafanaToken) {
+        this.grafanaToken = grafanaToken;
+    }
+
+    /**
+     * <p>
+     * The token that ties this workspace to a Grafana Labs account. For more information, see <a href=
+     * "https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise"
+     * >Link your account with Grafana Labs</a>.
+     * </p>
+     * 
+     * @return The token that ties this workspace to a Grafana Labs account. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise"
+     *         >Link your account with Grafana Labs</a>.
+     */
+
+    public String getGrafanaToken() {
+        return this.grafanaToken;
+    }
+
+    /**
+     * <p>
+     * The token that ties this workspace to a Grafana Labs account. For more information, see <a href=
+     * "https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise"
+     * >Link your account with Grafana Labs</a>.
+     * </p>
+     * 
+     * @param grafanaToken
+     *        The token that ties this workspace to a Grafana Labs account. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise"
+     *        >Link your account with Grafana Labs</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkspaceSummary withGrafanaToken(String grafanaToken) {
+        setGrafanaToken(grafanaToken);
+        return this;
+    }
+
+    /**
+     * <p>
      * The Grafana version that the workspace is running.
      * </p>
      * 
@@ -333,6 +404,97 @@ public class WorkspaceSummary implements Serializable, Cloneable, StructuredPojo
 
     public WorkspaceSummary withId(String id) {
         setId(id);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether this workspace has a full Grafana Enterprise license.
+     * </p>
+     * <note>
+     * <p>
+     * Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     * </p>
+     * </note>
+     * 
+     * @param licenseType
+     *        Specifies whether this workspace has a full Grafana Enterprise license.</p> <note>
+     *        <p>
+     *        Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     *        </p>
+     * @see LicenseType
+     */
+
+    public void setLicenseType(String licenseType) {
+        this.licenseType = licenseType;
+    }
+
+    /**
+     * <p>
+     * Specifies whether this workspace has a full Grafana Enterprise license.
+     * </p>
+     * <note>
+     * <p>
+     * Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     * </p>
+     * </note>
+     * 
+     * @return Specifies whether this workspace has a full Grafana Enterprise license.</p> <note>
+     *         <p>
+     *         Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     *         </p>
+     * @see LicenseType
+     */
+
+    public String getLicenseType() {
+        return this.licenseType;
+    }
+
+    /**
+     * <p>
+     * Specifies whether this workspace has a full Grafana Enterprise license.
+     * </p>
+     * <note>
+     * <p>
+     * Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     * </p>
+     * </note>
+     * 
+     * @param licenseType
+     *        Specifies whether this workspace has a full Grafana Enterprise license.</p> <note>
+     *        <p>
+     *        Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LicenseType
+     */
+
+    public WorkspaceSummary withLicenseType(String licenseType) {
+        setLicenseType(licenseType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether this workspace has a full Grafana Enterprise license.
+     * </p>
+     * <note>
+     * <p>
+     * Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     * </p>
+     * </note>
+     * 
+     * @param licenseType
+     *        Specifies whether this workspace has a full Grafana Enterprise license.</p> <note>
+     *        <p>
+     *        Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LicenseType
+     */
+
+    public WorkspaceSummary withLicenseType(LicenseType licenseType) {
+        this.licenseType = licenseType.toString();
         return this;
     }
 
@@ -671,10 +833,14 @@ public class WorkspaceSummary implements Serializable, Cloneable, StructuredPojo
             sb.append("Description: ").append("***Sensitive Data Redacted***").append(",");
         if (getEndpoint() != null)
             sb.append("Endpoint: ").append(getEndpoint()).append(",");
+        if (getGrafanaToken() != null)
+            sb.append("GrafanaToken: ").append(getGrafanaToken()).append(",");
         if (getGrafanaVersion() != null)
             sb.append("GrafanaVersion: ").append(getGrafanaVersion()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
+        if (getLicenseType() != null)
+            sb.append("LicenseType: ").append(getLicenseType()).append(",");
         if (getModified() != null)
             sb.append("Modified: ").append(getModified()).append(",");
         if (getName() != null)
@@ -715,6 +881,10 @@ public class WorkspaceSummary implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getEndpoint() != null && other.getEndpoint().equals(this.getEndpoint()) == false)
             return false;
+        if (other.getGrafanaToken() == null ^ this.getGrafanaToken() == null)
+            return false;
+        if (other.getGrafanaToken() != null && other.getGrafanaToken().equals(this.getGrafanaToken()) == false)
+            return false;
         if (other.getGrafanaVersion() == null ^ this.getGrafanaVersion() == null)
             return false;
         if (other.getGrafanaVersion() != null && other.getGrafanaVersion().equals(this.getGrafanaVersion()) == false)
@@ -722,6 +892,10 @@ public class WorkspaceSummary implements Serializable, Cloneable, StructuredPojo
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
+            return false;
+        if (other.getLicenseType() == null ^ this.getLicenseType() == null)
+            return false;
+        if (other.getLicenseType() != null && other.getLicenseType().equals(this.getLicenseType()) == false)
             return false;
         if (other.getModified() == null ^ this.getModified() == null)
             return false;
@@ -755,8 +929,10 @@ public class WorkspaceSummary implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getCreated() == null) ? 0 : getCreated().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getGrafanaToken() == null) ? 0 : getGrafanaToken().hashCode());
         hashCode = prime * hashCode + ((getGrafanaVersion() == null) ? 0 : getGrafanaVersion().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getLicenseType() == null) ? 0 : getLicenseType().hashCode());
         hashCode = prime * hashCode + ((getModified() == null) ? 0 : getModified().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getNotificationDestinations() == null) ? 0 : getNotificationDestinations().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,18 @@ public class TargetHealthDescription implements Serializable, Cloneable {
      * </p>
      */
     private TargetHealth targetHealth;
+    /**
+     * <p>
+     * The anomaly detection result for the target.
+     * </p>
+     * <p>
+     * If no anomalies were detected, the result is <code>normal</code>.
+     * </p>
+     * <p>
+     * If anomalies were detected, the result is <code>anomalous</code>.
+     * </p>
+     */
+    private AnomalyDetection anomalyDetection;
 
     /**
      * <p>
@@ -166,6 +178,79 @@ public class TargetHealthDescription implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The anomaly detection result for the target.
+     * </p>
+     * <p>
+     * If no anomalies were detected, the result is <code>normal</code>.
+     * </p>
+     * <p>
+     * If anomalies were detected, the result is <code>anomalous</code>.
+     * </p>
+     * 
+     * @param anomalyDetection
+     *        The anomaly detection result for the target.</p>
+     *        <p>
+     *        If no anomalies were detected, the result is <code>normal</code>.
+     *        </p>
+     *        <p>
+     *        If anomalies were detected, the result is <code>anomalous</code>.
+     */
+
+    public void setAnomalyDetection(AnomalyDetection anomalyDetection) {
+        this.anomalyDetection = anomalyDetection;
+    }
+
+    /**
+     * <p>
+     * The anomaly detection result for the target.
+     * </p>
+     * <p>
+     * If no anomalies were detected, the result is <code>normal</code>.
+     * </p>
+     * <p>
+     * If anomalies were detected, the result is <code>anomalous</code>.
+     * </p>
+     * 
+     * @return The anomaly detection result for the target.</p>
+     *         <p>
+     *         If no anomalies were detected, the result is <code>normal</code>.
+     *         </p>
+     *         <p>
+     *         If anomalies were detected, the result is <code>anomalous</code>.
+     */
+
+    public AnomalyDetection getAnomalyDetection() {
+        return this.anomalyDetection;
+    }
+
+    /**
+     * <p>
+     * The anomaly detection result for the target.
+     * </p>
+     * <p>
+     * If no anomalies were detected, the result is <code>normal</code>.
+     * </p>
+     * <p>
+     * If anomalies were detected, the result is <code>anomalous</code>.
+     * </p>
+     * 
+     * @param anomalyDetection
+     *        The anomaly detection result for the target.</p>
+     *        <p>
+     *        If no anomalies were detected, the result is <code>normal</code>.
+     *        </p>
+     *        <p>
+     *        If anomalies were detected, the result is <code>anomalous</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TargetHealthDescription withAnomalyDetection(AnomalyDetection anomalyDetection) {
+        setAnomalyDetection(anomalyDetection);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -182,7 +267,9 @@ public class TargetHealthDescription implements Serializable, Cloneable {
         if (getHealthCheckPort() != null)
             sb.append("HealthCheckPort: ").append(getHealthCheckPort()).append(",");
         if (getTargetHealth() != null)
-            sb.append("TargetHealth: ").append(getTargetHealth());
+            sb.append("TargetHealth: ").append(getTargetHealth()).append(",");
+        if (getAnomalyDetection() != null)
+            sb.append("AnomalyDetection: ").append(getAnomalyDetection());
         sb.append("}");
         return sb.toString();
     }
@@ -209,6 +296,10 @@ public class TargetHealthDescription implements Serializable, Cloneable {
             return false;
         if (other.getTargetHealth() != null && other.getTargetHealth().equals(this.getTargetHealth()) == false)
             return false;
+        if (other.getAnomalyDetection() == null ^ this.getAnomalyDetection() == null)
+            return false;
+        if (other.getAnomalyDetection() != null && other.getAnomalyDetection().equals(this.getAnomalyDetection()) == false)
+            return false;
         return true;
     }
 
@@ -220,6 +311,7 @@ public class TargetHealthDescription implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTarget() == null) ? 0 : getTarget().hashCode());
         hashCode = prime * hashCode + ((getHealthCheckPort() == null) ? 0 : getHealthCheckPort().hashCode());
         hashCode = prime * hashCode + ((getTargetHealth() == null) ? 0 : getTargetHealth().hashCode());
+        hashCode = prime * hashCode + ((getAnomalyDetection() == null) ? 0 : getAnomalyDetection().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,12 @@ public class UpdateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     private String launchDisposition;
     /**
      * <p>
+     * Launch into existing instance properties.
+     * </p>
+     */
+    private LaunchIntoInstanceProperties launchIntoInstanceProperties;
+    /**
+     * <p>
      * The licensing configuration to be used for this launch configuration.
      * </p>
      */
@@ -55,6 +61,12 @@ public class UpdateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * Whether we want to enable post-launch actions for the Source Server.
+     * </p>
+     */
+    private Boolean postLaunchEnabled;
     /**
      * <p>
      * The ID of the Source Server that we want to retrieve a Launch Configuration for.
@@ -234,6 +246,46 @@ public class UpdateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
+     * Launch into existing instance properties.
+     * </p>
+     * 
+     * @param launchIntoInstanceProperties
+     *        Launch into existing instance properties.
+     */
+
+    public void setLaunchIntoInstanceProperties(LaunchIntoInstanceProperties launchIntoInstanceProperties) {
+        this.launchIntoInstanceProperties = launchIntoInstanceProperties;
+    }
+
+    /**
+     * <p>
+     * Launch into existing instance properties.
+     * </p>
+     * 
+     * @return Launch into existing instance properties.
+     */
+
+    public LaunchIntoInstanceProperties getLaunchIntoInstanceProperties() {
+        return this.launchIntoInstanceProperties;
+    }
+
+    /**
+     * <p>
+     * Launch into existing instance properties.
+     * </p>
+     * 
+     * @param launchIntoInstanceProperties
+     *        Launch into existing instance properties.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateLaunchConfigurationRequest withLaunchIntoInstanceProperties(LaunchIntoInstanceProperties launchIntoInstanceProperties) {
+        setLaunchIntoInstanceProperties(launchIntoInstanceProperties);
+        return this;
+    }
+
+    /**
+     * <p>
      * The licensing configuration to be used for this launch configuration.
      * </p>
      * 
@@ -310,6 +362,58 @@ public class UpdateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
     public UpdateLaunchConfigurationRequest withName(String name) {
         setName(name);
         return this;
+    }
+
+    /**
+     * <p>
+     * Whether we want to enable post-launch actions for the Source Server.
+     * </p>
+     * 
+     * @param postLaunchEnabled
+     *        Whether we want to enable post-launch actions for the Source Server.
+     */
+
+    public void setPostLaunchEnabled(Boolean postLaunchEnabled) {
+        this.postLaunchEnabled = postLaunchEnabled;
+    }
+
+    /**
+     * <p>
+     * Whether we want to enable post-launch actions for the Source Server.
+     * </p>
+     * 
+     * @return Whether we want to enable post-launch actions for the Source Server.
+     */
+
+    public Boolean getPostLaunchEnabled() {
+        return this.postLaunchEnabled;
+    }
+
+    /**
+     * <p>
+     * Whether we want to enable post-launch actions for the Source Server.
+     * </p>
+     * 
+     * @param postLaunchEnabled
+     *        Whether we want to enable post-launch actions for the Source Server.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateLaunchConfigurationRequest withPostLaunchEnabled(Boolean postLaunchEnabled) {
+        setPostLaunchEnabled(postLaunchEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether we want to enable post-launch actions for the Source Server.
+     * </p>
+     * 
+     * @return Whether we want to enable post-launch actions for the Source Server.
+     */
+
+    public Boolean isPostLaunchEnabled() {
+        return this.postLaunchEnabled;
     }
 
     /**
@@ -437,10 +541,14 @@ public class UpdateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
             sb.append("CopyTags: ").append(getCopyTags()).append(",");
         if (getLaunchDisposition() != null)
             sb.append("LaunchDisposition: ").append(getLaunchDisposition()).append(",");
+        if (getLaunchIntoInstanceProperties() != null)
+            sb.append("LaunchIntoInstanceProperties: ").append(getLaunchIntoInstanceProperties()).append(",");
         if (getLicensing() != null)
             sb.append("Licensing: ").append(getLicensing()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getPostLaunchEnabled() != null)
+            sb.append("PostLaunchEnabled: ").append(getPostLaunchEnabled()).append(",");
         if (getSourceServerID() != null)
             sb.append("SourceServerID: ").append(getSourceServerID()).append(",");
         if (getTargetInstanceTypeRightSizingMethod() != null)
@@ -471,6 +579,10 @@ public class UpdateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getLaunchDisposition() != null && other.getLaunchDisposition().equals(this.getLaunchDisposition()) == false)
             return false;
+        if (other.getLaunchIntoInstanceProperties() == null ^ this.getLaunchIntoInstanceProperties() == null)
+            return false;
+        if (other.getLaunchIntoInstanceProperties() != null && other.getLaunchIntoInstanceProperties().equals(this.getLaunchIntoInstanceProperties()) == false)
+            return false;
         if (other.getLicensing() == null ^ this.getLicensing() == null)
             return false;
         if (other.getLicensing() != null && other.getLicensing().equals(this.getLicensing()) == false)
@@ -478,6 +590,10 @@ public class UpdateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getPostLaunchEnabled() == null ^ this.getPostLaunchEnabled() == null)
+            return false;
+        if (other.getPostLaunchEnabled() != null && other.getPostLaunchEnabled().equals(this.getPostLaunchEnabled()) == false)
             return false;
         if (other.getSourceServerID() == null ^ this.getSourceServerID() == null)
             return false;
@@ -499,8 +615,10 @@ public class UpdateLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getCopyPrivateIp() == null) ? 0 : getCopyPrivateIp().hashCode());
         hashCode = prime * hashCode + ((getCopyTags() == null) ? 0 : getCopyTags().hashCode());
         hashCode = prime * hashCode + ((getLaunchDisposition() == null) ? 0 : getLaunchDisposition().hashCode());
+        hashCode = prime * hashCode + ((getLaunchIntoInstanceProperties() == null) ? 0 : getLaunchIntoInstanceProperties().hashCode());
         hashCode = prime * hashCode + ((getLicensing() == null) ? 0 : getLicensing().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getPostLaunchEnabled() == null) ? 0 : getPostLaunchEnabled().hashCode());
         hashCode = prime * hashCode + ((getSourceServerID() == null) ? 0 : getSourceServerID().hashCode());
         hashCode = prime * hashCode + ((getTargetInstanceTypeRightSizingMethod() == null) ? 0 : getTargetInstanceTypeRightSizingMethod().hashCode());
         return hashCode;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,27 @@ public class FilterCriteria implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<StringFilter> awsAccountId;
+    /**
+     * <p>
+     * The name of the detector used to identify a code vulnerability in a Lambda function used to filter findings.
+     * </p>
+     */
+    private java.util.List<StringFilter> codeVulnerabilityDetectorName;
+    /**
+     * <p>
+     * The detector type tag associated with the vulnerability used to filter findings. Detector tags group related
+     * vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a
+     * href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a
+     * href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>.
+     * </p>
+     */
+    private java.util.List<StringFilter> codeVulnerabilityDetectorTags;
+    /**
+     * <p>
+     * The file path to the file in a Lambda function that contains a code vulnerability used to filter findings.
+     * </p>
+     */
+    private java.util.List<StringFilter> codeVulnerabilityFilePath;
     /**
      * <p>
      * Details of the component IDs used to filter findings.
@@ -102,6 +123,18 @@ public class FilterCriteria implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<StringFilter> ecrImageTags;
     /**
      * <p>
+     * The EPSS score used to filter findings.
+     * </p>
+     */
+    private java.util.List<NumberFilter> epssScore;
+    /**
+     * <p>
+     * Filters the list of Amazon Web Services Lambda findings by the availability of exploits.
+     * </p>
+     */
+    private java.util.List<StringFilter> exploitAvailable;
+    /**
+     * <p>
      * Details on the finding ARNs used to filter findings.
      * </p>
      */
@@ -140,13 +173,46 @@ public class FilterCriteria implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<NumberFilter> inspectorScore;
     /**
      * <p>
+     * Filters the list of Amazon Web Services Lambda functions by execution role.
+     * </p>
+     */
+    private java.util.List<StringFilter> lambdaFunctionExecutionRoleArn;
+    /**
+     * <p>
+     * Filters the list of Amazon Web Services Lambda functions by the date and time that a user last updated the
+     * configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>
+     * </p>
+     */
+    private java.util.List<DateFilter> lambdaFunctionLastModifiedAt;
+    /**
+     * <p>
+     * Filters the list of Amazon Web Services Lambda functions by the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda function can
+     * have up to five layers.
+     * </p>
+     */
+    private java.util.List<StringFilter> lambdaFunctionLayers;
+    /**
+     * <p>
+     * Filters the list of Amazon Web Services Lambda functions by the name of the function.
+     * </p>
+     */
+    private java.util.List<StringFilter> lambdaFunctionName;
+    /**
+     * <p>
+     * Filters the list of Amazon Web Services Lambda functions by the runtime environment for the Lambda function.
+     * </p>
+     */
+    private java.util.List<StringFilter> lambdaFunctionRuntime;
+    /**
+     * <p>
      * Details on the date and time a finding was last seen used to filter findings.
      * </p>
      */
     private java.util.List<DateFilter> lastObservedAt;
     /**
      * <p>
-     * Details on the ingress source addresses used to filter findings.
+     * Details on network protocol used to filter findings.
      * </p>
      */
     private java.util.List<StringFilter> networkProtocol;
@@ -290,6 +356,245 @@ public class FilterCriteria implements Serializable, Cloneable, StructuredPojo {
 
     public FilterCriteria withAwsAccountId(java.util.Collection<StringFilter> awsAccountId) {
         setAwsAccountId(awsAccountId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the detector used to identify a code vulnerability in a Lambda function used to filter findings.
+     * </p>
+     * 
+     * @return The name of the detector used to identify a code vulnerability in a Lambda function used to filter
+     *         findings.
+     */
+
+    public java.util.List<StringFilter> getCodeVulnerabilityDetectorName() {
+        return codeVulnerabilityDetectorName;
+    }
+
+    /**
+     * <p>
+     * The name of the detector used to identify a code vulnerability in a Lambda function used to filter findings.
+     * </p>
+     * 
+     * @param codeVulnerabilityDetectorName
+     *        The name of the detector used to identify a code vulnerability in a Lambda function used to filter
+     *        findings.
+     */
+
+    public void setCodeVulnerabilityDetectorName(java.util.Collection<StringFilter> codeVulnerabilityDetectorName) {
+        if (codeVulnerabilityDetectorName == null) {
+            this.codeVulnerabilityDetectorName = null;
+            return;
+        }
+
+        this.codeVulnerabilityDetectorName = new java.util.ArrayList<StringFilter>(codeVulnerabilityDetectorName);
+    }
+
+    /**
+     * <p>
+     * The name of the detector used to identify a code vulnerability in a Lambda function used to filter findings.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCodeVulnerabilityDetectorName(java.util.Collection)} or
+     * {@link #withCodeVulnerabilityDetectorName(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param codeVulnerabilityDetectorName
+     *        The name of the detector used to identify a code vulnerability in a Lambda function used to filter
+     *        findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FilterCriteria withCodeVulnerabilityDetectorName(StringFilter... codeVulnerabilityDetectorName) {
+        if (this.codeVulnerabilityDetectorName == null) {
+            setCodeVulnerabilityDetectorName(new java.util.ArrayList<StringFilter>(codeVulnerabilityDetectorName.length));
+        }
+        for (StringFilter ele : codeVulnerabilityDetectorName) {
+            this.codeVulnerabilityDetectorName.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the detector used to identify a code vulnerability in a Lambda function used to filter findings.
+     * </p>
+     * 
+     * @param codeVulnerabilityDetectorName
+     *        The name of the detector used to identify a code vulnerability in a Lambda function used to filter
+     *        findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FilterCriteria withCodeVulnerabilityDetectorName(java.util.Collection<StringFilter> codeVulnerabilityDetectorName) {
+        setCodeVulnerabilityDetectorName(codeVulnerabilityDetectorName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The detector type tag associated with the vulnerability used to filter findings. Detector tags group related
+     * vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a
+     * href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a
+     * href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>.
+     * </p>
+     * 
+     * @return The detector type tag associated with the vulnerability used to filter findings. Detector tags group
+     *         related vulnerabilities by common themes or tactics. For a list of available tags by programming
+     *         language, see <a href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>,
+     *         or <a href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>.
+     */
+
+    public java.util.List<StringFilter> getCodeVulnerabilityDetectorTags() {
+        return codeVulnerabilityDetectorTags;
+    }
+
+    /**
+     * <p>
+     * The detector type tag associated with the vulnerability used to filter findings. Detector tags group related
+     * vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a
+     * href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a
+     * href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>.
+     * </p>
+     * 
+     * @param codeVulnerabilityDetectorTags
+     *        The detector type tag associated with the vulnerability used to filter findings. Detector tags group
+     *        related vulnerabilities by common themes or tactics. For a list of available tags by programming language,
+     *        see <a href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a
+     *        href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>.
+     */
+
+    public void setCodeVulnerabilityDetectorTags(java.util.Collection<StringFilter> codeVulnerabilityDetectorTags) {
+        if (codeVulnerabilityDetectorTags == null) {
+            this.codeVulnerabilityDetectorTags = null;
+            return;
+        }
+
+        this.codeVulnerabilityDetectorTags = new java.util.ArrayList<StringFilter>(codeVulnerabilityDetectorTags);
+    }
+
+    /**
+     * <p>
+     * The detector type tag associated with the vulnerability used to filter findings. Detector tags group related
+     * vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a
+     * href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a
+     * href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCodeVulnerabilityDetectorTags(java.util.Collection)} or
+     * {@link #withCodeVulnerabilityDetectorTags(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param codeVulnerabilityDetectorTags
+     *        The detector type tag associated with the vulnerability used to filter findings. Detector tags group
+     *        related vulnerabilities by common themes or tactics. For a list of available tags by programming language,
+     *        see <a href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a
+     *        href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FilterCriteria withCodeVulnerabilityDetectorTags(StringFilter... codeVulnerabilityDetectorTags) {
+        if (this.codeVulnerabilityDetectorTags == null) {
+            setCodeVulnerabilityDetectorTags(new java.util.ArrayList<StringFilter>(codeVulnerabilityDetectorTags.length));
+        }
+        for (StringFilter ele : codeVulnerabilityDetectorTags) {
+            this.codeVulnerabilityDetectorTags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The detector type tag associated with the vulnerability used to filter findings. Detector tags group related
+     * vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a
+     * href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a
+     * href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>.
+     * </p>
+     * 
+     * @param codeVulnerabilityDetectorTags
+     *        The detector type tag associated with the vulnerability used to filter findings. Detector tags group
+     *        related vulnerabilities by common themes or tactics. For a list of available tags by programming language,
+     *        see <a href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a
+     *        href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FilterCriteria withCodeVulnerabilityDetectorTags(java.util.Collection<StringFilter> codeVulnerabilityDetectorTags) {
+        setCodeVulnerabilityDetectorTags(codeVulnerabilityDetectorTags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The file path to the file in a Lambda function that contains a code vulnerability used to filter findings.
+     * </p>
+     * 
+     * @return The file path to the file in a Lambda function that contains a code vulnerability used to filter
+     *         findings.
+     */
+
+    public java.util.List<StringFilter> getCodeVulnerabilityFilePath() {
+        return codeVulnerabilityFilePath;
+    }
+
+    /**
+     * <p>
+     * The file path to the file in a Lambda function that contains a code vulnerability used to filter findings.
+     * </p>
+     * 
+     * @param codeVulnerabilityFilePath
+     *        The file path to the file in a Lambda function that contains a code vulnerability used to filter findings.
+     */
+
+    public void setCodeVulnerabilityFilePath(java.util.Collection<StringFilter> codeVulnerabilityFilePath) {
+        if (codeVulnerabilityFilePath == null) {
+            this.codeVulnerabilityFilePath = null;
+            return;
+        }
+
+        this.codeVulnerabilityFilePath = new java.util.ArrayList<StringFilter>(codeVulnerabilityFilePath);
+    }
+
+    /**
+     * <p>
+     * The file path to the file in a Lambda function that contains a code vulnerability used to filter findings.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCodeVulnerabilityFilePath(java.util.Collection)} or
+     * {@link #withCodeVulnerabilityFilePath(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param codeVulnerabilityFilePath
+     *        The file path to the file in a Lambda function that contains a code vulnerability used to filter findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FilterCriteria withCodeVulnerabilityFilePath(StringFilter... codeVulnerabilityFilePath) {
+        if (this.codeVulnerabilityFilePath == null) {
+            setCodeVulnerabilityFilePath(new java.util.ArrayList<StringFilter>(codeVulnerabilityFilePath.length));
+        }
+        for (StringFilter ele : codeVulnerabilityFilePath) {
+            this.codeVulnerabilityFilePath.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The file path to the file in a Lambda function that contains a code vulnerability used to filter findings.
+     * </p>
+     * 
+     * @param codeVulnerabilityFilePath
+     *        The file path to the file in a Lambda function that contains a code vulnerability used to filter findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FilterCriteria withCodeVulnerabilityFilePath(java.util.Collection<StringFilter> codeVulnerabilityFilePath) {
+        setCodeVulnerabilityFilePath(codeVulnerabilityFilePath);
         return this;
     }
 
@@ -1065,6 +1370,146 @@ public class FilterCriteria implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The EPSS score used to filter findings.
+     * </p>
+     * 
+     * @return The EPSS score used to filter findings.
+     */
+
+    public java.util.List<NumberFilter> getEpssScore() {
+        return epssScore;
+    }
+
+    /**
+     * <p>
+     * The EPSS score used to filter findings.
+     * </p>
+     * 
+     * @param epssScore
+     *        The EPSS score used to filter findings.
+     */
+
+    public void setEpssScore(java.util.Collection<NumberFilter> epssScore) {
+        if (epssScore == null) {
+            this.epssScore = null;
+            return;
+        }
+
+        this.epssScore = new java.util.ArrayList<NumberFilter>(epssScore);
+    }
+
+    /**
+     * <p>
+     * The EPSS score used to filter findings.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEpssScore(java.util.Collection)} or {@link #withEpssScore(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param epssScore
+     *        The EPSS score used to filter findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FilterCriteria withEpssScore(NumberFilter... epssScore) {
+        if (this.epssScore == null) {
+            setEpssScore(new java.util.ArrayList<NumberFilter>(epssScore.length));
+        }
+        for (NumberFilter ele : epssScore) {
+            this.epssScore.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The EPSS score used to filter findings.
+     * </p>
+     * 
+     * @param epssScore
+     *        The EPSS score used to filter findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FilterCriteria withEpssScore(java.util.Collection<NumberFilter> epssScore) {
+        setEpssScore(epssScore);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filters the list of Amazon Web Services Lambda findings by the availability of exploits.
+     * </p>
+     * 
+     * @return Filters the list of Amazon Web Services Lambda findings by the availability of exploits.
+     */
+
+    public java.util.List<StringFilter> getExploitAvailable() {
+        return exploitAvailable;
+    }
+
+    /**
+     * <p>
+     * Filters the list of Amazon Web Services Lambda findings by the availability of exploits.
+     * </p>
+     * 
+     * @param exploitAvailable
+     *        Filters the list of Amazon Web Services Lambda findings by the availability of exploits.
+     */
+
+    public void setExploitAvailable(java.util.Collection<StringFilter> exploitAvailable) {
+        if (exploitAvailable == null) {
+            this.exploitAvailable = null;
+            return;
+        }
+
+        this.exploitAvailable = new java.util.ArrayList<StringFilter>(exploitAvailable);
+    }
+
+    /**
+     * <p>
+     * Filters the list of Amazon Web Services Lambda findings by the availability of exploits.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setExploitAvailable(java.util.Collection)} or {@link #withExploitAvailable(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param exploitAvailable
+     *        Filters the list of Amazon Web Services Lambda findings by the availability of exploits.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FilterCriteria withExploitAvailable(StringFilter... exploitAvailable) {
+        if (this.exploitAvailable == null) {
+            setExploitAvailable(new java.util.ArrayList<StringFilter>(exploitAvailable.length));
+        }
+        for (StringFilter ele : exploitAvailable) {
+            this.exploitAvailable.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filters the list of Amazon Web Services Lambda findings by the availability of exploits.
+     * </p>
+     * 
+     * @param exploitAvailable
+     *        Filters the list of Amazon Web Services Lambda findings by the availability of exploits.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FilterCriteria withExploitAvailable(java.util.Collection<StringFilter> exploitAvailable) {
+        setExploitAvailable(exploitAvailable);
+        return this;
+    }
+
+    /**
+     * <p>
      * Details on the finding ARNs used to filter findings.
      * </p>
      * 
@@ -1501,6 +1946,385 @@ public class FilterCriteria implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Filters the list of Amazon Web Services Lambda functions by execution role.
+     * </p>
+     * 
+     * @return Filters the list of Amazon Web Services Lambda functions by execution role.
+     */
+
+    public java.util.List<StringFilter> getLambdaFunctionExecutionRoleArn() {
+        return lambdaFunctionExecutionRoleArn;
+    }
+
+    /**
+     * <p>
+     * Filters the list of Amazon Web Services Lambda functions by execution role.
+     * </p>
+     * 
+     * @param lambdaFunctionExecutionRoleArn
+     *        Filters the list of Amazon Web Services Lambda functions by execution role.
+     */
+
+    public void setLambdaFunctionExecutionRoleArn(java.util.Collection<StringFilter> lambdaFunctionExecutionRoleArn) {
+        if (lambdaFunctionExecutionRoleArn == null) {
+            this.lambdaFunctionExecutionRoleArn = null;
+            return;
+        }
+
+        this.lambdaFunctionExecutionRoleArn = new java.util.ArrayList<StringFilter>(lambdaFunctionExecutionRoleArn);
+    }
+
+    /**
+     * <p>
+     * Filters the list of Amazon Web Services Lambda functions by execution role.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLambdaFunctionExecutionRoleArn(java.util.Collection)} or
+     * {@link #withLambdaFunctionExecutionRoleArn(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param lambdaFunctionExecutionRoleArn
+     *        Filters the list of Amazon Web Services Lambda functions by execution role.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FilterCriteria withLambdaFunctionExecutionRoleArn(StringFilter... lambdaFunctionExecutionRoleArn) {
+        if (this.lambdaFunctionExecutionRoleArn == null) {
+            setLambdaFunctionExecutionRoleArn(new java.util.ArrayList<StringFilter>(lambdaFunctionExecutionRoleArn.length));
+        }
+        for (StringFilter ele : lambdaFunctionExecutionRoleArn) {
+            this.lambdaFunctionExecutionRoleArn.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filters the list of Amazon Web Services Lambda functions by execution role.
+     * </p>
+     * 
+     * @param lambdaFunctionExecutionRoleArn
+     *        Filters the list of Amazon Web Services Lambda functions by execution role.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FilterCriteria withLambdaFunctionExecutionRoleArn(java.util.Collection<StringFilter> lambdaFunctionExecutionRoleArn) {
+        setLambdaFunctionExecutionRoleArn(lambdaFunctionExecutionRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filters the list of Amazon Web Services Lambda functions by the date and time that a user last updated the
+     * configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>
+     * </p>
+     * 
+     * @return Filters the list of Amazon Web Services Lambda functions by the date and time that a user last updated
+     *         the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601
+     *         format</a>
+     */
+
+    public java.util.List<DateFilter> getLambdaFunctionLastModifiedAt() {
+        return lambdaFunctionLastModifiedAt;
+    }
+
+    /**
+     * <p>
+     * Filters the list of Amazon Web Services Lambda functions by the date and time that a user last updated the
+     * configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>
+     * </p>
+     * 
+     * @param lambdaFunctionLastModifiedAt
+     *        Filters the list of Amazon Web Services Lambda functions by the date and time that a user last updated the
+     *        configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>
+     */
+
+    public void setLambdaFunctionLastModifiedAt(java.util.Collection<DateFilter> lambdaFunctionLastModifiedAt) {
+        if (lambdaFunctionLastModifiedAt == null) {
+            this.lambdaFunctionLastModifiedAt = null;
+            return;
+        }
+
+        this.lambdaFunctionLastModifiedAt = new java.util.ArrayList<DateFilter>(lambdaFunctionLastModifiedAt);
+    }
+
+    /**
+     * <p>
+     * Filters the list of Amazon Web Services Lambda functions by the date and time that a user last updated the
+     * configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLambdaFunctionLastModifiedAt(java.util.Collection)} or
+     * {@link #withLambdaFunctionLastModifiedAt(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param lambdaFunctionLastModifiedAt
+     *        Filters the list of Amazon Web Services Lambda functions by the date and time that a user last updated the
+     *        configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FilterCriteria withLambdaFunctionLastModifiedAt(DateFilter... lambdaFunctionLastModifiedAt) {
+        if (this.lambdaFunctionLastModifiedAt == null) {
+            setLambdaFunctionLastModifiedAt(new java.util.ArrayList<DateFilter>(lambdaFunctionLastModifiedAt.length));
+        }
+        for (DateFilter ele : lambdaFunctionLastModifiedAt) {
+            this.lambdaFunctionLastModifiedAt.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filters the list of Amazon Web Services Lambda functions by the date and time that a user last updated the
+     * configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>
+     * </p>
+     * 
+     * @param lambdaFunctionLastModifiedAt
+     *        Filters the list of Amazon Web Services Lambda functions by the date and time that a user last updated the
+     *        configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FilterCriteria withLambdaFunctionLastModifiedAt(java.util.Collection<DateFilter> lambdaFunctionLastModifiedAt) {
+        setLambdaFunctionLastModifiedAt(lambdaFunctionLastModifiedAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filters the list of Amazon Web Services Lambda functions by the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda function can
+     * have up to five layers.
+     * </p>
+     * 
+     * @return Filters the list of Amazon Web Services Lambda functions by the function's <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda
+     *         function can have up to five layers.
+     */
+
+    public java.util.List<StringFilter> getLambdaFunctionLayers() {
+        return lambdaFunctionLayers;
+    }
+
+    /**
+     * <p>
+     * Filters the list of Amazon Web Services Lambda functions by the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda function can
+     * have up to five layers.
+     * </p>
+     * 
+     * @param lambdaFunctionLayers
+     *        Filters the list of Amazon Web Services Lambda functions by the function's <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda
+     *        function can have up to five layers.
+     */
+
+    public void setLambdaFunctionLayers(java.util.Collection<StringFilter> lambdaFunctionLayers) {
+        if (lambdaFunctionLayers == null) {
+            this.lambdaFunctionLayers = null;
+            return;
+        }
+
+        this.lambdaFunctionLayers = new java.util.ArrayList<StringFilter>(lambdaFunctionLayers);
+    }
+
+    /**
+     * <p>
+     * Filters the list of Amazon Web Services Lambda functions by the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda function can
+     * have up to five layers.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLambdaFunctionLayers(java.util.Collection)} or {@link #withLambdaFunctionLayers(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param lambdaFunctionLayers
+     *        Filters the list of Amazon Web Services Lambda functions by the function's <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda
+     *        function can have up to five layers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FilterCriteria withLambdaFunctionLayers(StringFilter... lambdaFunctionLayers) {
+        if (this.lambdaFunctionLayers == null) {
+            setLambdaFunctionLayers(new java.util.ArrayList<StringFilter>(lambdaFunctionLayers.length));
+        }
+        for (StringFilter ele : lambdaFunctionLayers) {
+            this.lambdaFunctionLayers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filters the list of Amazon Web Services Lambda functions by the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda function can
+     * have up to five layers.
+     * </p>
+     * 
+     * @param lambdaFunctionLayers
+     *        Filters the list of Amazon Web Services Lambda functions by the function's <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda
+     *        function can have up to five layers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FilterCriteria withLambdaFunctionLayers(java.util.Collection<StringFilter> lambdaFunctionLayers) {
+        setLambdaFunctionLayers(lambdaFunctionLayers);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filters the list of Amazon Web Services Lambda functions by the name of the function.
+     * </p>
+     * 
+     * @return Filters the list of Amazon Web Services Lambda functions by the name of the function.
+     */
+
+    public java.util.List<StringFilter> getLambdaFunctionName() {
+        return lambdaFunctionName;
+    }
+
+    /**
+     * <p>
+     * Filters the list of Amazon Web Services Lambda functions by the name of the function.
+     * </p>
+     * 
+     * @param lambdaFunctionName
+     *        Filters the list of Amazon Web Services Lambda functions by the name of the function.
+     */
+
+    public void setLambdaFunctionName(java.util.Collection<StringFilter> lambdaFunctionName) {
+        if (lambdaFunctionName == null) {
+            this.lambdaFunctionName = null;
+            return;
+        }
+
+        this.lambdaFunctionName = new java.util.ArrayList<StringFilter>(lambdaFunctionName);
+    }
+
+    /**
+     * <p>
+     * Filters the list of Amazon Web Services Lambda functions by the name of the function.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLambdaFunctionName(java.util.Collection)} or {@link #withLambdaFunctionName(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param lambdaFunctionName
+     *        Filters the list of Amazon Web Services Lambda functions by the name of the function.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FilterCriteria withLambdaFunctionName(StringFilter... lambdaFunctionName) {
+        if (this.lambdaFunctionName == null) {
+            setLambdaFunctionName(new java.util.ArrayList<StringFilter>(lambdaFunctionName.length));
+        }
+        for (StringFilter ele : lambdaFunctionName) {
+            this.lambdaFunctionName.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filters the list of Amazon Web Services Lambda functions by the name of the function.
+     * </p>
+     * 
+     * @param lambdaFunctionName
+     *        Filters the list of Amazon Web Services Lambda functions by the name of the function.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FilterCriteria withLambdaFunctionName(java.util.Collection<StringFilter> lambdaFunctionName) {
+        setLambdaFunctionName(lambdaFunctionName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filters the list of Amazon Web Services Lambda functions by the runtime environment for the Lambda function.
+     * </p>
+     * 
+     * @return Filters the list of Amazon Web Services Lambda functions by the runtime environment for the Lambda
+     *         function.
+     */
+
+    public java.util.List<StringFilter> getLambdaFunctionRuntime() {
+        return lambdaFunctionRuntime;
+    }
+
+    /**
+     * <p>
+     * Filters the list of Amazon Web Services Lambda functions by the runtime environment for the Lambda function.
+     * </p>
+     * 
+     * @param lambdaFunctionRuntime
+     *        Filters the list of Amazon Web Services Lambda functions by the runtime environment for the Lambda
+     *        function.
+     */
+
+    public void setLambdaFunctionRuntime(java.util.Collection<StringFilter> lambdaFunctionRuntime) {
+        if (lambdaFunctionRuntime == null) {
+            this.lambdaFunctionRuntime = null;
+            return;
+        }
+
+        this.lambdaFunctionRuntime = new java.util.ArrayList<StringFilter>(lambdaFunctionRuntime);
+    }
+
+    /**
+     * <p>
+     * Filters the list of Amazon Web Services Lambda functions by the runtime environment for the Lambda function.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLambdaFunctionRuntime(java.util.Collection)} or
+     * {@link #withLambdaFunctionRuntime(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param lambdaFunctionRuntime
+     *        Filters the list of Amazon Web Services Lambda functions by the runtime environment for the Lambda
+     *        function.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FilterCriteria withLambdaFunctionRuntime(StringFilter... lambdaFunctionRuntime) {
+        if (this.lambdaFunctionRuntime == null) {
+            setLambdaFunctionRuntime(new java.util.ArrayList<StringFilter>(lambdaFunctionRuntime.length));
+        }
+        for (StringFilter ele : lambdaFunctionRuntime) {
+            this.lambdaFunctionRuntime.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Filters the list of Amazon Web Services Lambda functions by the runtime environment for the Lambda function.
+     * </p>
+     * 
+     * @param lambdaFunctionRuntime
+     *        Filters the list of Amazon Web Services Lambda functions by the runtime environment for the Lambda
+     *        function.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FilterCriteria withLambdaFunctionRuntime(java.util.Collection<StringFilter> lambdaFunctionRuntime) {
+        setLambdaFunctionRuntime(lambdaFunctionRuntime);
+        return this;
+    }
+
+    /**
+     * <p>
      * Details on the date and time a finding was last seen used to filter findings.
      * </p>
      * 
@@ -1571,10 +2395,10 @@ public class FilterCriteria implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Details on the ingress source addresses used to filter findings.
+     * Details on network protocol used to filter findings.
      * </p>
      * 
-     * @return Details on the ingress source addresses used to filter findings.
+     * @return Details on network protocol used to filter findings.
      */
 
     public java.util.List<StringFilter> getNetworkProtocol() {
@@ -1583,11 +2407,11 @@ public class FilterCriteria implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Details on the ingress source addresses used to filter findings.
+     * Details on network protocol used to filter findings.
      * </p>
      * 
      * @param networkProtocol
-     *        Details on the ingress source addresses used to filter findings.
+     *        Details on network protocol used to filter findings.
      */
 
     public void setNetworkProtocol(java.util.Collection<StringFilter> networkProtocol) {
@@ -1601,7 +2425,7 @@ public class FilterCriteria implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Details on the ingress source addresses used to filter findings.
+     * Details on network protocol used to filter findings.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1610,7 +2434,7 @@ public class FilterCriteria implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param networkProtocol
-     *        Details on the ingress source addresses used to filter findings.
+     *        Details on network protocol used to filter findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1626,11 +2450,11 @@ public class FilterCriteria implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Details on the ingress source addresses used to filter findings.
+     * Details on network protocol used to filter findings.
      * </p>
      * 
      * @param networkProtocol
-     *        Details on the ingress source addresses used to filter findings.
+     *        Details on network protocol used to filter findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2493,6 +3317,12 @@ public class FilterCriteria implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getAwsAccountId() != null)
             sb.append("AwsAccountId: ").append(getAwsAccountId()).append(",");
+        if (getCodeVulnerabilityDetectorName() != null)
+            sb.append("CodeVulnerabilityDetectorName: ").append(getCodeVulnerabilityDetectorName()).append(",");
+        if (getCodeVulnerabilityDetectorTags() != null)
+            sb.append("CodeVulnerabilityDetectorTags: ").append(getCodeVulnerabilityDetectorTags()).append(",");
+        if (getCodeVulnerabilityFilePath() != null)
+            sb.append("CodeVulnerabilityFilePath: ").append(getCodeVulnerabilityFilePath()).append(",");
         if (getComponentId() != null)
             sb.append("ComponentId: ").append(getComponentId()).append(",");
         if (getComponentType() != null)
@@ -2515,6 +3345,10 @@ public class FilterCriteria implements Serializable, Cloneable, StructuredPojo {
             sb.append("EcrImageRepositoryName: ").append(getEcrImageRepositoryName()).append(",");
         if (getEcrImageTags() != null)
             sb.append("EcrImageTags: ").append(getEcrImageTags()).append(",");
+        if (getEpssScore() != null)
+            sb.append("EpssScore: ").append(getEpssScore()).append(",");
+        if (getExploitAvailable() != null)
+            sb.append("ExploitAvailable: ").append(getExploitAvailable()).append(",");
         if (getFindingArn() != null)
             sb.append("FindingArn: ").append(getFindingArn()).append(",");
         if (getFindingStatus() != null)
@@ -2527,6 +3361,16 @@ public class FilterCriteria implements Serializable, Cloneable, StructuredPojo {
             sb.append("FixAvailable: ").append(getFixAvailable()).append(",");
         if (getInspectorScore() != null)
             sb.append("InspectorScore: ").append(getInspectorScore()).append(",");
+        if (getLambdaFunctionExecutionRoleArn() != null)
+            sb.append("LambdaFunctionExecutionRoleArn: ").append(getLambdaFunctionExecutionRoleArn()).append(",");
+        if (getLambdaFunctionLastModifiedAt() != null)
+            sb.append("LambdaFunctionLastModifiedAt: ").append(getLambdaFunctionLastModifiedAt()).append(",");
+        if (getLambdaFunctionLayers() != null)
+            sb.append("LambdaFunctionLayers: ").append(getLambdaFunctionLayers()).append(",");
+        if (getLambdaFunctionName() != null)
+            sb.append("LambdaFunctionName: ").append(getLambdaFunctionName()).append(",");
+        if (getLambdaFunctionRuntime() != null)
+            sb.append("LambdaFunctionRuntime: ").append(getLambdaFunctionRuntime()).append(",");
         if (getLastObservedAt() != null)
             sb.append("LastObservedAt: ").append(getLastObservedAt()).append(",");
         if (getNetworkProtocol() != null)
@@ -2573,6 +3417,20 @@ public class FilterCriteria implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAwsAccountId() != null && other.getAwsAccountId().equals(this.getAwsAccountId()) == false)
             return false;
+        if (other.getCodeVulnerabilityDetectorName() == null ^ this.getCodeVulnerabilityDetectorName() == null)
+            return false;
+        if (other.getCodeVulnerabilityDetectorName() != null
+                && other.getCodeVulnerabilityDetectorName().equals(this.getCodeVulnerabilityDetectorName()) == false)
+            return false;
+        if (other.getCodeVulnerabilityDetectorTags() == null ^ this.getCodeVulnerabilityDetectorTags() == null)
+            return false;
+        if (other.getCodeVulnerabilityDetectorTags() != null
+                && other.getCodeVulnerabilityDetectorTags().equals(this.getCodeVulnerabilityDetectorTags()) == false)
+            return false;
+        if (other.getCodeVulnerabilityFilePath() == null ^ this.getCodeVulnerabilityFilePath() == null)
+            return false;
+        if (other.getCodeVulnerabilityFilePath() != null && other.getCodeVulnerabilityFilePath().equals(this.getCodeVulnerabilityFilePath()) == false)
+            return false;
         if (other.getComponentId() == null ^ this.getComponentId() == null)
             return false;
         if (other.getComponentId() != null && other.getComponentId().equals(this.getComponentId()) == false)
@@ -2617,6 +3475,14 @@ public class FilterCriteria implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEcrImageTags() != null && other.getEcrImageTags().equals(this.getEcrImageTags()) == false)
             return false;
+        if (other.getEpssScore() == null ^ this.getEpssScore() == null)
+            return false;
+        if (other.getEpssScore() != null && other.getEpssScore().equals(this.getEpssScore()) == false)
+            return false;
+        if (other.getExploitAvailable() == null ^ this.getExploitAvailable() == null)
+            return false;
+        if (other.getExploitAvailable() != null && other.getExploitAvailable().equals(this.getExploitAvailable()) == false)
+            return false;
         if (other.getFindingArn() == null ^ this.getFindingArn() == null)
             return false;
         if (other.getFindingArn() != null && other.getFindingArn().equals(this.getFindingArn()) == false)
@@ -2640,6 +3506,27 @@ public class FilterCriteria implements Serializable, Cloneable, StructuredPojo {
         if (other.getInspectorScore() == null ^ this.getInspectorScore() == null)
             return false;
         if (other.getInspectorScore() != null && other.getInspectorScore().equals(this.getInspectorScore()) == false)
+            return false;
+        if (other.getLambdaFunctionExecutionRoleArn() == null ^ this.getLambdaFunctionExecutionRoleArn() == null)
+            return false;
+        if (other.getLambdaFunctionExecutionRoleArn() != null
+                && other.getLambdaFunctionExecutionRoleArn().equals(this.getLambdaFunctionExecutionRoleArn()) == false)
+            return false;
+        if (other.getLambdaFunctionLastModifiedAt() == null ^ this.getLambdaFunctionLastModifiedAt() == null)
+            return false;
+        if (other.getLambdaFunctionLastModifiedAt() != null && other.getLambdaFunctionLastModifiedAt().equals(this.getLambdaFunctionLastModifiedAt()) == false)
+            return false;
+        if (other.getLambdaFunctionLayers() == null ^ this.getLambdaFunctionLayers() == null)
+            return false;
+        if (other.getLambdaFunctionLayers() != null && other.getLambdaFunctionLayers().equals(this.getLambdaFunctionLayers()) == false)
+            return false;
+        if (other.getLambdaFunctionName() == null ^ this.getLambdaFunctionName() == null)
+            return false;
+        if (other.getLambdaFunctionName() != null && other.getLambdaFunctionName().equals(this.getLambdaFunctionName()) == false)
+            return false;
+        if (other.getLambdaFunctionRuntime() == null ^ this.getLambdaFunctionRuntime() == null)
+            return false;
+        if (other.getLambdaFunctionRuntime() != null && other.getLambdaFunctionRuntime().equals(this.getLambdaFunctionRuntime()) == false)
             return false;
         if (other.getLastObservedAt() == null ^ this.getLastObservedAt() == null)
             return false;
@@ -2706,6 +3593,9 @@ public class FilterCriteria implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAwsAccountId() == null) ? 0 : getAwsAccountId().hashCode());
+        hashCode = prime * hashCode + ((getCodeVulnerabilityDetectorName() == null) ? 0 : getCodeVulnerabilityDetectorName().hashCode());
+        hashCode = prime * hashCode + ((getCodeVulnerabilityDetectorTags() == null) ? 0 : getCodeVulnerabilityDetectorTags().hashCode());
+        hashCode = prime * hashCode + ((getCodeVulnerabilityFilePath() == null) ? 0 : getCodeVulnerabilityFilePath().hashCode());
         hashCode = prime * hashCode + ((getComponentId() == null) ? 0 : getComponentId().hashCode());
         hashCode = prime * hashCode + ((getComponentType() == null) ? 0 : getComponentType().hashCode());
         hashCode = prime * hashCode + ((getEc2InstanceImageId() == null) ? 0 : getEc2InstanceImageId().hashCode());
@@ -2717,12 +3607,19 @@ public class FilterCriteria implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEcrImageRegistry() == null) ? 0 : getEcrImageRegistry().hashCode());
         hashCode = prime * hashCode + ((getEcrImageRepositoryName() == null) ? 0 : getEcrImageRepositoryName().hashCode());
         hashCode = prime * hashCode + ((getEcrImageTags() == null) ? 0 : getEcrImageTags().hashCode());
+        hashCode = prime * hashCode + ((getEpssScore() == null) ? 0 : getEpssScore().hashCode());
+        hashCode = prime * hashCode + ((getExploitAvailable() == null) ? 0 : getExploitAvailable().hashCode());
         hashCode = prime * hashCode + ((getFindingArn() == null) ? 0 : getFindingArn().hashCode());
         hashCode = prime * hashCode + ((getFindingStatus() == null) ? 0 : getFindingStatus().hashCode());
         hashCode = prime * hashCode + ((getFindingType() == null) ? 0 : getFindingType().hashCode());
         hashCode = prime * hashCode + ((getFirstObservedAt() == null) ? 0 : getFirstObservedAt().hashCode());
         hashCode = prime * hashCode + ((getFixAvailable() == null) ? 0 : getFixAvailable().hashCode());
         hashCode = prime * hashCode + ((getInspectorScore() == null) ? 0 : getInspectorScore().hashCode());
+        hashCode = prime * hashCode + ((getLambdaFunctionExecutionRoleArn() == null) ? 0 : getLambdaFunctionExecutionRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getLambdaFunctionLastModifiedAt() == null) ? 0 : getLambdaFunctionLastModifiedAt().hashCode());
+        hashCode = prime * hashCode + ((getLambdaFunctionLayers() == null) ? 0 : getLambdaFunctionLayers().hashCode());
+        hashCode = prime * hashCode + ((getLambdaFunctionName() == null) ? 0 : getLambdaFunctionName().hashCode());
+        hashCode = prime * hashCode + ((getLambdaFunctionRuntime() == null) ? 0 : getLambdaFunctionRuntime().hashCode());
         hashCode = prime * hashCode + ((getLastObservedAt() == null) ? 0 : getLastObservedAt().hashCode());
         hashCode = prime * hashCode + ((getNetworkProtocol() == null) ? 0 : getNetworkProtocol().hashCode());
         hashCode = prime * hashCode + ((getPortRange() == null) ? 0 : getPortRange().hashCode());

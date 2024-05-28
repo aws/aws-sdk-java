@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,7 +21,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * An assertion rule enforces that, when you change a routing control state, that the criteria that you set in the rule
  * configuration is met. Otherwise, the change to the routing control is not accepted. For example, the criteria might
- * be that at least one routing control state is On after the transation so that traffic continues to flow to at least
+ * be that at least one routing control state is On after the transaction so that traffic continues to flow to at least
  * one cell for the application. This ensures that you avoid a fail-open scenario.
  * </p>
  * 
@@ -55,7 +55,7 @@ public class AssertionRule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The criteria that you set for specific assertion routing controls (AssertedControls) that designate how many
      * routing control states must be ON as the result of a transaction. For example, if you have three assertion
-     * routing controls, you might specify atleast 2 for your rule configuration. This means that at least two assertion
+     * routing controls, you might specify ATLEAST 2 for your rule configuration. This means that at least two assertion
      * routing control states must be ON, so that at least two Amazon Web Services Regions have traffic flowing to them.
      * </p>
      */
@@ -81,6 +81,12 @@ public class AssertionRule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Integer waitPeriodMs;
+    /**
+     * <p>
+     * The Amazon Web Services account ID of the assertion rule owner.
+     * </p>
+     */
+    private String owner;
 
     /**
      * <p>
@@ -252,14 +258,14 @@ public class AssertionRule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The criteria that you set for specific assertion routing controls (AssertedControls) that designate how many
      * routing control states must be ON as the result of a transaction. For example, if you have three assertion
-     * routing controls, you might specify atleast 2 for your rule configuration. This means that at least two assertion
+     * routing controls, you might specify ATLEAST 2 for your rule configuration. This means that at least two assertion
      * routing control states must be ON, so that at least two Amazon Web Services Regions have traffic flowing to them.
      * </p>
      * 
      * @param ruleConfig
      *        The criteria that you set for specific assertion routing controls (AssertedControls) that designate how
      *        many routing control states must be ON as the result of a transaction. For example, if you have three
-     *        assertion routing controls, you might specify atleast 2 for your rule configuration. This means that at
+     *        assertion routing controls, you might specify ATLEAST 2 for your rule configuration. This means that at
      *        least two assertion routing control states must be ON, so that at least two Amazon Web Services Regions
      *        have traffic flowing to them.
      */
@@ -272,13 +278,13 @@ public class AssertionRule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The criteria that you set for specific assertion routing controls (AssertedControls) that designate how many
      * routing control states must be ON as the result of a transaction. For example, if you have three assertion
-     * routing controls, you might specify atleast 2 for your rule configuration. This means that at least two assertion
+     * routing controls, you might specify ATLEAST 2 for your rule configuration. This means that at least two assertion
      * routing control states must be ON, so that at least two Amazon Web Services Regions have traffic flowing to them.
      * </p>
      * 
      * @return The criteria that you set for specific assertion routing controls (AssertedControls) that designate how
      *         many routing control states must be ON as the result of a transaction. For example, if you have three
-     *         assertion routing controls, you might specify atleast 2 for your rule configuration. This means that at
+     *         assertion routing controls, you might specify ATLEAST 2 for your rule configuration. This means that at
      *         least two assertion routing control states must be ON, so that at least two Amazon Web Services Regions
      *         have traffic flowing to them.
      */
@@ -291,14 +297,14 @@ public class AssertionRule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The criteria that you set for specific assertion routing controls (AssertedControls) that designate how many
      * routing control states must be ON as the result of a transaction. For example, if you have three assertion
-     * routing controls, you might specify atleast 2 for your rule configuration. This means that at least two assertion
+     * routing controls, you might specify ATLEAST 2 for your rule configuration. This means that at least two assertion
      * routing control states must be ON, so that at least two Amazon Web Services Regions have traffic flowing to them.
      * </p>
      * 
      * @param ruleConfig
      *        The criteria that you set for specific assertion routing controls (AssertedControls) that designate how
      *        many routing control states must be ON as the result of a transaction. For example, if you have three
-     *        assertion routing controls, you might specify atleast 2 for your rule configuration. This means that at
+     *        assertion routing controls, you might specify ATLEAST 2 for your rule configuration. This means that at
      *        least two assertion routing control states must be ON, so that at least two Amazon Web Services Regions
      *        have traffic flowing to them.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -469,6 +475,46 @@ public class AssertionRule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Amazon Web Services account ID of the assertion rule owner.
+     * </p>
+     * 
+     * @param owner
+     *        The Amazon Web Services account ID of the assertion rule owner.
+     */
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services account ID of the assertion rule owner.
+     * </p>
+     * 
+     * @return The Amazon Web Services account ID of the assertion rule owner.
+     */
+
+    public String getOwner() {
+        return this.owner;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services account ID of the assertion rule owner.
+     * </p>
+     * 
+     * @param owner
+     *        The Amazon Web Services account ID of the assertion rule owner.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssertionRule withOwner(String owner) {
+        setOwner(owner);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -493,7 +539,9 @@ public class AssertionRule implements Serializable, Cloneable, StructuredPojo {
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getWaitPeriodMs() != null)
-            sb.append("WaitPeriodMs: ").append(getWaitPeriodMs());
+            sb.append("WaitPeriodMs: ").append(getWaitPeriodMs()).append(",");
+        if (getOwner() != null)
+            sb.append("Owner: ").append(getOwner());
         sb.append("}");
         return sb.toString();
     }
@@ -536,6 +584,10 @@ public class AssertionRule implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getWaitPeriodMs() != null && other.getWaitPeriodMs().equals(this.getWaitPeriodMs()) == false)
             return false;
+        if (other.getOwner() == null ^ this.getOwner() == null)
+            return false;
+        if (other.getOwner() != null && other.getOwner().equals(this.getOwner()) == false)
+            return false;
         return true;
     }
 
@@ -551,6 +603,7 @@ public class AssertionRule implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSafetyRuleArn() == null) ? 0 : getSafetyRuleArn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getWaitPeriodMs() == null) ? 0 : getWaitPeriodMs().hashCode());
+        hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
         return hashCode;
     }
 

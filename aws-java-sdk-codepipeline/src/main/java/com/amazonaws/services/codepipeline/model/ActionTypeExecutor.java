@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,7 +45,7 @@ public class ActionTypeExecutor implements Serializable, Cloneable, StructuredPo
     private String type;
     /**
      * <p>
-     * The policy statement that specifies the permissions in the CodePipeline customer’s account that are needed to
+     * The policy statement that specifies the permissions in the CodePipeline customer account that are needed to
      * successfully run an action.
      * </p>
      * <p>
@@ -178,7 +178,7 @@ public class ActionTypeExecutor implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The policy statement that specifies the permissions in the CodePipeline customer’s account that are needed to
+     * The policy statement that specifies the permissions in the CodePipeline customer account that are needed to
      * successfully run an action.
      * </p>
      * <p>
@@ -192,7 +192,7 @@ public class ActionTypeExecutor implements Serializable, Cloneable, StructuredPo
      * </note>
      * 
      * @param policyStatementsTemplate
-     *        The policy statement that specifies the permissions in the CodePipeline customer’s account that are needed
+     *        The policy statement that specifies the permissions in the CodePipeline customer account that are needed
      *        to successfully run an action.</p>
      *        <p>
      *        To grant permission to another account, specify the account ID as the Principal, a domain-style identifier
@@ -210,7 +210,7 @@ public class ActionTypeExecutor implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The policy statement that specifies the permissions in the CodePipeline customer’s account that are needed to
+     * The policy statement that specifies the permissions in the CodePipeline customer account that are needed to
      * successfully run an action.
      * </p>
      * <p>
@@ -223,8 +223,8 @@ public class ActionTypeExecutor implements Serializable, Cloneable, StructuredPo
      * </p>
      * </note>
      * 
-     * @return The policy statement that specifies the permissions in the CodePipeline customer’s account that are
-     *         needed to successfully run an action.</p>
+     * @return The policy statement that specifies the permissions in the CodePipeline customer account that are needed
+     *         to successfully run an action.</p>
      *         <p>
      *         To grant permission to another account, specify the account ID as the Principal, a domain-style
      *         identifier defined by the service, for example <code>codepipeline.amazonaws.com</code>.
@@ -241,7 +241,7 @@ public class ActionTypeExecutor implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The policy statement that specifies the permissions in the CodePipeline customer’s account that are needed to
+     * The policy statement that specifies the permissions in the CodePipeline customer account that are needed to
      * successfully run an action.
      * </p>
      * <p>
@@ -255,7 +255,7 @@ public class ActionTypeExecutor implements Serializable, Cloneable, StructuredPo
      * </note>
      * 
      * @param policyStatementsTemplate
-     *        The policy statement that specifies the permissions in the CodePipeline customer’s account that are needed
+     *        The policy statement that specifies the permissions in the CodePipeline customer account that are needed
      *        to successfully run an action.</p>
      *        <p>
      *        To grant permission to another account, specify the account ID as the Principal, a domain-style identifier

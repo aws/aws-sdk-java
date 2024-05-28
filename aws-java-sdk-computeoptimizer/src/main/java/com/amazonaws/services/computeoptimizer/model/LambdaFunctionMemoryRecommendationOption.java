@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,6 +57,13 @@ public class LambdaFunctionMemoryRecommendationOption implements Serializable, C
      * </p>
      */
     private SavingsOpportunity savingsOpportunity;
+    /**
+     * <p>
+     * An object that describes the savings opportunity for the Lambda recommendation option which includes Saving Plans
+     * discounts. Savings opportunity includes the estimated monthly savings and percentage.
+     * </p>
+     */
+    private LambdaSavingsOpportunityAfterDiscounts savingsOpportunityAfterDiscounts;
 
     /**
      * <p>
@@ -272,6 +279,52 @@ public class LambdaFunctionMemoryRecommendationOption implements Serializable, C
     }
 
     /**
+     * <p>
+     * An object that describes the savings opportunity for the Lambda recommendation option which includes Saving Plans
+     * discounts. Savings opportunity includes the estimated monthly savings and percentage.
+     * </p>
+     * 
+     * @param savingsOpportunityAfterDiscounts
+     *        An object that describes the savings opportunity for the Lambda recommendation option which includes
+     *        Saving Plans discounts. Savings opportunity includes the estimated monthly savings and percentage.
+     */
+
+    public void setSavingsOpportunityAfterDiscounts(LambdaSavingsOpportunityAfterDiscounts savingsOpportunityAfterDiscounts) {
+        this.savingsOpportunityAfterDiscounts = savingsOpportunityAfterDiscounts;
+    }
+
+    /**
+     * <p>
+     * An object that describes the savings opportunity for the Lambda recommendation option which includes Saving Plans
+     * discounts. Savings opportunity includes the estimated monthly savings and percentage.
+     * </p>
+     * 
+     * @return An object that describes the savings opportunity for the Lambda recommendation option which includes
+     *         Saving Plans discounts. Savings opportunity includes the estimated monthly savings and percentage.
+     */
+
+    public LambdaSavingsOpportunityAfterDiscounts getSavingsOpportunityAfterDiscounts() {
+        return this.savingsOpportunityAfterDiscounts;
+    }
+
+    /**
+     * <p>
+     * An object that describes the savings opportunity for the Lambda recommendation option which includes Saving Plans
+     * discounts. Savings opportunity includes the estimated monthly savings and percentage.
+     * </p>
+     * 
+     * @param savingsOpportunityAfterDiscounts
+     *        An object that describes the savings opportunity for the Lambda recommendation option which includes
+     *        Saving Plans discounts. Savings opportunity includes the estimated monthly savings and percentage.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LambdaFunctionMemoryRecommendationOption withSavingsOpportunityAfterDiscounts(LambdaSavingsOpportunityAfterDiscounts savingsOpportunityAfterDiscounts) {
+        setSavingsOpportunityAfterDiscounts(savingsOpportunityAfterDiscounts);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -290,7 +343,9 @@ public class LambdaFunctionMemoryRecommendationOption implements Serializable, C
         if (getProjectedUtilizationMetrics() != null)
             sb.append("ProjectedUtilizationMetrics: ").append(getProjectedUtilizationMetrics()).append(",");
         if (getSavingsOpportunity() != null)
-            sb.append("SavingsOpportunity: ").append(getSavingsOpportunity());
+            sb.append("SavingsOpportunity: ").append(getSavingsOpportunity()).append(",");
+        if (getSavingsOpportunityAfterDiscounts() != null)
+            sb.append("SavingsOpportunityAfterDiscounts: ").append(getSavingsOpportunityAfterDiscounts());
         sb.append("}");
         return sb.toString();
     }
@@ -321,6 +376,11 @@ public class LambdaFunctionMemoryRecommendationOption implements Serializable, C
             return false;
         if (other.getSavingsOpportunity() != null && other.getSavingsOpportunity().equals(this.getSavingsOpportunity()) == false)
             return false;
+        if (other.getSavingsOpportunityAfterDiscounts() == null ^ this.getSavingsOpportunityAfterDiscounts() == null)
+            return false;
+        if (other.getSavingsOpportunityAfterDiscounts() != null
+                && other.getSavingsOpportunityAfterDiscounts().equals(this.getSavingsOpportunityAfterDiscounts()) == false)
+            return false;
         return true;
     }
 
@@ -333,6 +393,7 @@ public class LambdaFunctionMemoryRecommendationOption implements Serializable, C
         hashCode = prime * hashCode + ((getMemorySize() == null) ? 0 : getMemorySize().hashCode());
         hashCode = prime * hashCode + ((getProjectedUtilizationMetrics() == null) ? 0 : getProjectedUtilizationMetrics().hashCode());
         hashCode = prime * hashCode + ((getSavingsOpportunity() == null) ? 0 : getSavingsOpportunity().hashCode());
+        hashCode = prime * hashCode + ((getSavingsOpportunityAfterDiscounts() == null) ? 0 : getSavingsOpportunityAfterDiscounts().hashCode());
         return hashCode;
     }
 

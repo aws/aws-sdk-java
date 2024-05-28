@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -74,13 +74,18 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
     private Integer minimumQueryCount;
     /**
      * <p>
-     * The date-time query suggestions for an index was last updated.
+     * The Unix timestamp when query suggestions for an index was last updated.
+     * </p>
+     * <p>
+     * Amazon Kendra automatically updates suggestions every 24 hours, after you change a setting or after you apply a
+     * <a href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#query-suggestions-blocklist">block
+     * list</a>.
      * </p>
      */
     private java.util.Date lastSuggestionsBuildTime;
     /**
      * <p>
-     * The date-time query suggestions for an index was last cleared.
+     * The Unix timestamp when query suggestions for an index was last cleared.
      * </p>
      * <p>
      * After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log
@@ -97,8 +102,18 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
      * This count can change when you update your query suggestions settings, if you filter out certain queries from
      * suggestions using a block list, and as the query log accumulates more queries for Amazon Kendra to learn from.
      * </p>
+     * <p>
+     * If the count is much lower than you expected, it could be because Amazon Kendra needs more queries in the query
+     * history to learn from or your current query suggestions settings are too strict.
+     * </p>
      */
     private Integer totalSuggestionsCount;
+    /**
+     * <p>
+     * Configuration information for the document fields/attributes that you want to base query suggestions on.
+     * </p>
+     */
+    private AttributeSuggestionsDescribeConfig attributeSuggestionsConfig;
 
     /**
      * <p>
@@ -484,11 +499,21 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The date-time query suggestions for an index was last updated.
+     * The Unix timestamp when query suggestions for an index was last updated.
+     * </p>
+     * <p>
+     * Amazon Kendra automatically updates suggestions every 24 hours, after you change a setting or after you apply a
+     * <a href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#query-suggestions-blocklist">block
+     * list</a>.
      * </p>
      * 
      * @param lastSuggestionsBuildTime
-     *        The date-time query suggestions for an index was last updated.
+     *        The Unix timestamp when query suggestions for an index was last updated.</p>
+     *        <p>
+     *        Amazon Kendra automatically updates suggestions every 24 hours, after you change a setting or after you
+     *        apply a <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#query-suggestions-blocklist"
+     *        >block list</a>.
      */
 
     public void setLastSuggestionsBuildTime(java.util.Date lastSuggestionsBuildTime) {
@@ -497,10 +522,20 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The date-time query suggestions for an index was last updated.
+     * The Unix timestamp when query suggestions for an index was last updated.
+     * </p>
+     * <p>
+     * Amazon Kendra automatically updates suggestions every 24 hours, after you change a setting or after you apply a
+     * <a href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#query-suggestions-blocklist">block
+     * list</a>.
      * </p>
      * 
-     * @return The date-time query suggestions for an index was last updated.
+     * @return The Unix timestamp when query suggestions for an index was last updated.</p>
+     *         <p>
+     *         Amazon Kendra automatically updates suggestions every 24 hours, after you change a setting or after you
+     *         apply a <a
+     *         href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#query-suggestions-blocklist"
+     *         >block list</a>.
      */
 
     public java.util.Date getLastSuggestionsBuildTime() {
@@ -509,11 +544,21 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The date-time query suggestions for an index was last updated.
+     * The Unix timestamp when query suggestions for an index was last updated.
+     * </p>
+     * <p>
+     * Amazon Kendra automatically updates suggestions every 24 hours, after you change a setting or after you apply a
+     * <a href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#query-suggestions-blocklist">block
+     * list</a>.
      * </p>
      * 
      * @param lastSuggestionsBuildTime
-     *        The date-time query suggestions for an index was last updated.
+     *        The Unix timestamp when query suggestions for an index was last updated.</p>
+     *        <p>
+     *        Amazon Kendra automatically updates suggestions every 24 hours, after you change a setting or after you
+     *        apply a <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#query-suggestions-blocklist"
+     *        >block list</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -524,7 +569,7 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The date-time query suggestions for an index was last cleared.
+     * The Unix timestamp when query suggestions for an index was last cleared.
      * </p>
      * <p>
      * After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log
@@ -533,7 +578,7 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param lastClearTime
-     *        The date-time query suggestions for an index was last cleared.</p>
+     *        The Unix timestamp when query suggestions for an index was last cleared.</p>
      *        <p>
      *        After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query
      *        log from the time you cleared suggestions. Amazon Kendra only considers re-occurences of a query from the
@@ -546,7 +591,7 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The date-time query suggestions for an index was last cleared.
+     * The Unix timestamp when query suggestions for an index was last cleared.
      * </p>
      * <p>
      * After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log
@@ -554,7 +599,7 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
      * cleared suggestions.
      * </p>
      * 
-     * @return The date-time query suggestions for an index was last cleared.</p>
+     * @return The Unix timestamp when query suggestions for an index was last cleared.</p>
      *         <p>
      *         After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query
      *         log from the time you cleared suggestions. Amazon Kendra only considers re-occurences of a query from the
@@ -567,7 +612,7 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The date-time query suggestions for an index was last cleared.
+     * The Unix timestamp when query suggestions for an index was last cleared.
      * </p>
      * <p>
      * After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query log
@@ -576,7 +621,7 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param lastClearTime
-     *        The date-time query suggestions for an index was last cleared.</p>
+     *        The Unix timestamp when query suggestions for an index was last cleared.</p>
      *        <p>
      *        After you clear suggestions, Amazon Kendra learns new suggestions based on new queries added to the query
      *        log from the time you cleared suggestions. Amazon Kendra only considers re-occurences of a query from the
@@ -597,6 +642,10 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
      * This count can change when you update your query suggestions settings, if you filter out certain queries from
      * suggestions using a block list, and as the query log accumulates more queries for Amazon Kendra to learn from.
      * </p>
+     * <p>
+     * If the count is much lower than you expected, it could be because Amazon Kendra needs more queries in the query
+     * history to learn from or your current query suggestions settings are too strict.
+     * </p>
      * 
      * @param totalSuggestionsCount
      *        The current total count of query suggestions for an index.</p>
@@ -604,6 +653,10 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
      *        This count can change when you update your query suggestions settings, if you filter out certain queries
      *        from suggestions using a block list, and as the query log accumulates more queries for Amazon Kendra to
      *        learn from.
+     *        </p>
+     *        <p>
+     *        If the count is much lower than you expected, it could be because Amazon Kendra needs more queries in the
+     *        query history to learn from or your current query suggestions settings are too strict.
      */
 
     public void setTotalSuggestionsCount(Integer totalSuggestionsCount) {
@@ -618,12 +671,20 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
      * This count can change when you update your query suggestions settings, if you filter out certain queries from
      * suggestions using a block list, and as the query log accumulates more queries for Amazon Kendra to learn from.
      * </p>
+     * <p>
+     * If the count is much lower than you expected, it could be because Amazon Kendra needs more queries in the query
+     * history to learn from or your current query suggestions settings are too strict.
+     * </p>
      * 
      * @return The current total count of query suggestions for an index.</p>
      *         <p>
      *         This count can change when you update your query suggestions settings, if you filter out certain queries
      *         from suggestions using a block list, and as the query log accumulates more queries for Amazon Kendra to
      *         learn from.
+     *         </p>
+     *         <p>
+     *         If the count is much lower than you expected, it could be because Amazon Kendra needs more queries in the
+     *         query history to learn from or your current query suggestions settings are too strict.
      */
 
     public Integer getTotalSuggestionsCount() {
@@ -638,6 +699,10 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
      * This count can change when you update your query suggestions settings, if you filter out certain queries from
      * suggestions using a block list, and as the query log accumulates more queries for Amazon Kendra to learn from.
      * </p>
+     * <p>
+     * If the count is much lower than you expected, it could be because Amazon Kendra needs more queries in the query
+     * history to learn from or your current query suggestions settings are too strict.
+     * </p>
      * 
      * @param totalSuggestionsCount
      *        The current total count of query suggestions for an index.</p>
@@ -645,11 +710,55 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
      *        This count can change when you update your query suggestions settings, if you filter out certain queries
      *        from suggestions using a block list, and as the query log accumulates more queries for Amazon Kendra to
      *        learn from.
+     *        </p>
+     *        <p>
+     *        If the count is much lower than you expected, it could be because Amazon Kendra needs more queries in the
+     *        query history to learn from or your current query suggestions settings are too strict.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeQuerySuggestionsConfigResult withTotalSuggestionsCount(Integer totalSuggestionsCount) {
         setTotalSuggestionsCount(totalSuggestionsCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configuration information for the document fields/attributes that you want to base query suggestions on.
+     * </p>
+     * 
+     * @param attributeSuggestionsConfig
+     *        Configuration information for the document fields/attributes that you want to base query suggestions on.
+     */
+
+    public void setAttributeSuggestionsConfig(AttributeSuggestionsDescribeConfig attributeSuggestionsConfig) {
+        this.attributeSuggestionsConfig = attributeSuggestionsConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration information for the document fields/attributes that you want to base query suggestions on.
+     * </p>
+     * 
+     * @return Configuration information for the document fields/attributes that you want to base query suggestions on.
+     */
+
+    public AttributeSuggestionsDescribeConfig getAttributeSuggestionsConfig() {
+        return this.attributeSuggestionsConfig;
+    }
+
+    /**
+     * <p>
+     * Configuration information for the document fields/attributes that you want to base query suggestions on.
+     * </p>
+     * 
+     * @param attributeSuggestionsConfig
+     *        Configuration information for the document fields/attributes that you want to base query suggestions on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeQuerySuggestionsConfigResult withAttributeSuggestionsConfig(AttributeSuggestionsDescribeConfig attributeSuggestionsConfig) {
+        setAttributeSuggestionsConfig(attributeSuggestionsConfig);
         return this;
     }
 
@@ -682,7 +791,9 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
         if (getLastClearTime() != null)
             sb.append("LastClearTime: ").append(getLastClearTime()).append(",");
         if (getTotalSuggestionsCount() != null)
-            sb.append("TotalSuggestionsCount: ").append(getTotalSuggestionsCount());
+            sb.append("TotalSuggestionsCount: ").append(getTotalSuggestionsCount()).append(",");
+        if (getAttributeSuggestionsConfig() != null)
+            sb.append("AttributeSuggestionsConfig: ").append(getAttributeSuggestionsConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -734,6 +845,10 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
             return false;
         if (other.getTotalSuggestionsCount() != null && other.getTotalSuggestionsCount().equals(this.getTotalSuggestionsCount()) == false)
             return false;
+        if (other.getAttributeSuggestionsConfig() == null ^ this.getAttributeSuggestionsConfig() == null)
+            return false;
+        if (other.getAttributeSuggestionsConfig() != null && other.getAttributeSuggestionsConfig().equals(this.getAttributeSuggestionsConfig()) == false)
+            return false;
         return true;
     }
 
@@ -751,6 +866,7 @@ public class DescribeQuerySuggestionsConfigResult extends com.amazonaws.AmazonWe
         hashCode = prime * hashCode + ((getLastSuggestionsBuildTime() == null) ? 0 : getLastSuggestionsBuildTime().hashCode());
         hashCode = prime * hashCode + ((getLastClearTime() == null) ? 0 : getLastClearTime().hashCode());
         hashCode = prime * hashCode + ((getTotalSuggestionsCount() == null) ? 0 : getTotalSuggestionsCount().hashCode());
+        hashCode = prime * hashCode + ((getAttributeSuggestionsConfig() == null) ? 0 : getAttributeSuggestionsConfig().hashCode());
         return hashCode;
     }
 

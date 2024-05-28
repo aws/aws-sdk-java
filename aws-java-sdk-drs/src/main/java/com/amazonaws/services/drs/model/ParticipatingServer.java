@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,12 @@ public class ParticipatingServer implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
+     * The post-launch action runs of a participating server.
+     * </p>
+     */
+    private LaunchActionsStatus launchActionsStatus;
+    /**
+     * <p>
      * The launch status of a participating server.
      * </p>
      */
@@ -46,6 +52,46 @@ public class ParticipatingServer implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String sourceServerID;
+
+    /**
+     * <p>
+     * The post-launch action runs of a participating server.
+     * </p>
+     * 
+     * @param launchActionsStatus
+     *        The post-launch action runs of a participating server.
+     */
+
+    public void setLaunchActionsStatus(LaunchActionsStatus launchActionsStatus) {
+        this.launchActionsStatus = launchActionsStatus;
+    }
+
+    /**
+     * <p>
+     * The post-launch action runs of a participating server.
+     * </p>
+     * 
+     * @return The post-launch action runs of a participating server.
+     */
+
+    public LaunchActionsStatus getLaunchActionsStatus() {
+        return this.launchActionsStatus;
+    }
+
+    /**
+     * <p>
+     * The post-launch action runs of a participating server.
+     * </p>
+     * 
+     * @param launchActionsStatus
+     *        The post-launch action runs of a participating server.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ParticipatingServer withLaunchActionsStatus(LaunchActionsStatus launchActionsStatus) {
+        setLaunchActionsStatus(launchActionsStatus);
+        return this;
+    }
 
     /**
      * <p>
@@ -198,6 +244,8 @@ public class ParticipatingServer implements Serializable, Cloneable, StructuredP
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getLaunchActionsStatus() != null)
+            sb.append("LaunchActionsStatus: ").append(getLaunchActionsStatus()).append(",");
         if (getLaunchStatus() != null)
             sb.append("LaunchStatus: ").append(getLaunchStatus()).append(",");
         if (getRecoveryInstanceID() != null)
@@ -218,6 +266,10 @@ public class ParticipatingServer implements Serializable, Cloneable, StructuredP
         if (obj instanceof ParticipatingServer == false)
             return false;
         ParticipatingServer other = (ParticipatingServer) obj;
+        if (other.getLaunchActionsStatus() == null ^ this.getLaunchActionsStatus() == null)
+            return false;
+        if (other.getLaunchActionsStatus() != null && other.getLaunchActionsStatus().equals(this.getLaunchActionsStatus()) == false)
+            return false;
         if (other.getLaunchStatus() == null ^ this.getLaunchStatus() == null)
             return false;
         if (other.getLaunchStatus() != null && other.getLaunchStatus().equals(this.getLaunchStatus()) == false)
@@ -238,6 +290,7 @@ public class ParticipatingServer implements Serializable, Cloneable, StructuredP
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getLaunchActionsStatus() == null) ? 0 : getLaunchActionsStatus().hashCode());
         hashCode = prime * hashCode + ((getLaunchStatus() == null) ? 0 : getLaunchStatus().hashCode());
         hashCode = prime * hashCode + ((getRecoveryInstanceID() == null) ? 0 : getRecoveryInstanceID().hashCode());
         hashCode = prime * hashCode + ((getSourceServerID() == null) ? 0 : getSourceServerID().hashCode());

@@ -134,9 +134,40 @@ final class AddOperations {
         Shape outputPayloadShape = outputShape == null ? null : getPayloadShape(c2jShapes, outputShape);
 
         // We skip operations with event stream inputs or outputs
-        boolean hasEventStreamInput = inputPayloadShape != null && inputPayloadShape.isEventStream();
-        boolean hasEventStreamOutput = outputPayloadShape != null && outputPayloadShape.isEventStream();
-        return hasEventStreamInput || hasEventStreamOutput;
+        boolean hasEventStreamInput = hasEventStreamInput(operation, c2jShapes);
+        boolean hasEventStreamOutput = hasEventStreamOutput(operation, c2jShapes);
+
+        boolean hasStringPayloadInput = inputPayloadShape != null && "String".equals(inputPayloadShape.getType());
+        boolean hasStringPayloadOutput = outputPayloadShape != null && "String".equals(outputPayloadShape.getType());
+
+        return hasEventStreamInput || hasEventStreamOutput || hasStringPayloadInput || hasStringPayloadOutput;
+    }
+
+    private boolean hasEventStreamOutput(Operation operation, Map<String, Shape> c2jShapes) {
+        Output output = operation.getOutput();
+
+        if (output == null) {
+            return false;
+        }
+
+        return hasEventStreamMember(output.getShape(), c2jShapes);
+    }
+
+    private boolean hasEventStreamInput(Operation operation, Map<String, Shape> c2jShapes) {
+        Output input = operation.getOutput();
+
+        if (input == null) {
+            return false;
+        }
+
+        return hasEventStreamMember(input.getShape(), c2jShapes);
+    }
+
+    private boolean hasEventStreamMember(String shape, Map<String, Shape> c2jShapes) {
+        Shape outputShape = c2jShapes.get(shape);
+
+        return outputShape.getMembers().values().stream().map(m -> c2jShapes.get(m.getShape()))
+                .anyMatch(Shape::isEventStream);
     }
 
     /**

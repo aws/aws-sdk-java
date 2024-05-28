@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -350,6 +350,39 @@ public class GetSpotPlacementScoresRequestMarshaller implements Marshaller<Reque
                         request.addParameter("InstanceRequirementsWithMetadata.InstanceRequirements.AcceleratorTotalMemoryMiB.Max",
                                 StringUtils.fromInteger(acceleratorTotalMemoryMiB.getMax()));
                     }
+                }
+
+                NetworkBandwidthGbpsRequest networkBandwidthGbps = instanceRequirements.getNetworkBandwidthGbps();
+                if (networkBandwidthGbps != null) {
+
+                    if (networkBandwidthGbps.getMin() != null) {
+                        request.addParameter("InstanceRequirementsWithMetadata.InstanceRequirements.NetworkBandwidthGbps.Min",
+                                StringUtils.fromDouble(networkBandwidthGbps.getMin()));
+                    }
+
+                    if (networkBandwidthGbps.getMax() != null) {
+                        request.addParameter("InstanceRequirementsWithMetadata.InstanceRequirements.NetworkBandwidthGbps.Max",
+                                StringUtils.fromDouble(networkBandwidthGbps.getMax()));
+                    }
+                }
+
+                com.amazonaws.internal.SdkInternalList<String> instanceRequirementsRequestAllowedInstanceTypesList = (com.amazonaws.internal.SdkInternalList<String>) instanceRequirements
+                        .getAllowedInstanceTypes();
+                if (!instanceRequirementsRequestAllowedInstanceTypesList.isEmpty() || !instanceRequirementsRequestAllowedInstanceTypesList.isAutoConstruct()) {
+                    int allowedInstanceTypesListIndex = 1;
+
+                    for (String instanceRequirementsRequestAllowedInstanceTypesListValue : instanceRequirementsRequestAllowedInstanceTypesList) {
+                        if (instanceRequirementsRequestAllowedInstanceTypesListValue != null) {
+                            request.addParameter("InstanceRequirementsWithMetadata.InstanceRequirements.AllowedInstanceType." + allowedInstanceTypesListIndex,
+                                    StringUtils.fromString(instanceRequirementsRequestAllowedInstanceTypesListValue));
+                        }
+                        allowedInstanceTypesListIndex++;
+                    }
+                }
+
+                if (instanceRequirements.getMaxSpotPriceAsPercentageOfOptimalOnDemandPrice() != null) {
+                    request.addParameter("InstanceRequirementsWithMetadata.InstanceRequirements.MaxSpotPriceAsPercentageOfOptimalOnDemandPrice",
+                            StringUtils.fromInteger(instanceRequirements.getMaxSpotPriceAsPercentageOfOptimalOnDemandPrice()));
                 }
             }
         }

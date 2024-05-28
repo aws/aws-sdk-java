@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -87,6 +87,16 @@ public class CreateUserGroupResultStaxUnmarshaller implements Unmarshaller<Creat
 
                 if (context.testExpression("ReplicationGroups/member", targetDepth)) {
                     createUserGroupResult.withReplicationGroups(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ServerlessCaches", targetDepth)) {
+                    createUserGroupResult.withServerlessCaches(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("ServerlessCaches/member", targetDepth)) {
+                    createUserGroupResult.withServerlessCaches(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

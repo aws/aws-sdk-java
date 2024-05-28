@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,8 @@ public class DescribeParametersRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<Boolean> SHARED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Shared").build();
 
     private static final DescribeParametersRequestMarshaller instance = new DescribeParametersRequestMarshaller();
 
@@ -57,6 +59,7 @@ public class DescribeParametersRequestMarshaller {
             protocolMarshaller.marshall(describeParametersRequest.getParameterFilters(), PARAMETERFILTERS_BINDING);
             protocolMarshaller.marshall(describeParametersRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(describeParametersRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(describeParametersRequest.getShared(), SHARED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

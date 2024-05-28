@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,9 +27,15 @@ public class PutInlinePolicyToPermissionSetRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
+     * The inline policy to attach to a <a>PermissionSet</a>.
+     * </p>
+     */
+    private String inlinePolicy;
+    /**
+     * <p>
      * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     private String instanceArn;
@@ -39,24 +45,59 @@ public class PutInlinePolicyToPermissionSetRequest extends com.amazonaws.AmazonW
      * </p>
      */
     private String permissionSetArn;
+
     /**
      * <p>
      * The inline policy to attach to a <a>PermissionSet</a>.
      * </p>
+     * 
+     * @param inlinePolicy
+     *        The inline policy to attach to a <a>PermissionSet</a>.
      */
-    private String inlinePolicy;
+
+    public void setInlinePolicy(String inlinePolicy) {
+        this.inlinePolicy = inlinePolicy;
+    }
+
+    /**
+     * <p>
+     * The inline policy to attach to a <a>PermissionSet</a>.
+     * </p>
+     * 
+     * @return The inline policy to attach to a <a>PermissionSet</a>.
+     */
+
+    public String getInlinePolicy() {
+        return this.inlinePolicy;
+    }
+
+    /**
+     * <p>
+     * The inline policy to attach to a <a>PermissionSet</a>.
+     * </p>
+     * 
+     * @param inlinePolicy
+     *        The inline policy to attach to a <a>PermissionSet</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutInlinePolicyToPermissionSetRequest withInlinePolicy(String inlinePolicy) {
+        setInlinePolicy(inlinePolicy);
+        return this;
+    }
 
     /**
      * <p>
      * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param instanceArn
      *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
      *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *        Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *        Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     *        Reference</i>.
      */
 
     public void setInstanceArn(String instanceArn) {
@@ -66,13 +107,14 @@ public class PutInlinePolicyToPermissionSetRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @return The ARN of the IAM Identity Center instance under which the operation will be executed. For more
      *         information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *         Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *         Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     *         Reference</i>.
      */
 
     public String getInstanceArn() {
@@ -82,14 +124,15 @@ public class PutInlinePolicyToPermissionSetRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * The ARN of the IAM Identity Center instance under which the operation will be executed. For more information
-     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-     * Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon
+     * Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param instanceArn
      *        The ARN of the IAM Identity Center instance under which the operation will be executed. For more
      *        information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-     *        Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *        Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General
+     *        Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,46 +182,6 @@ public class PutInlinePolicyToPermissionSetRequest extends com.amazonaws.AmazonW
     }
 
     /**
-     * <p>
-     * The inline policy to attach to a <a>PermissionSet</a>.
-     * </p>
-     * 
-     * @param inlinePolicy
-     *        The inline policy to attach to a <a>PermissionSet</a>.
-     */
-
-    public void setInlinePolicy(String inlinePolicy) {
-        this.inlinePolicy = inlinePolicy;
-    }
-
-    /**
-     * <p>
-     * The inline policy to attach to a <a>PermissionSet</a>.
-     * </p>
-     * 
-     * @return The inline policy to attach to a <a>PermissionSet</a>.
-     */
-
-    public String getInlinePolicy() {
-        return this.inlinePolicy;
-    }
-
-    /**
-     * <p>
-     * The inline policy to attach to a <a>PermissionSet</a>.
-     * </p>
-     * 
-     * @param inlinePolicy
-     *        The inline policy to attach to a <a>PermissionSet</a>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PutInlinePolicyToPermissionSetRequest withInlinePolicy(String inlinePolicy) {
-        setInlinePolicy(inlinePolicy);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -190,12 +193,12 @@ public class PutInlinePolicyToPermissionSetRequest extends com.amazonaws.AmazonW
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getInlinePolicy() != null)
+            sb.append("InlinePolicy: ").append(getInlinePolicy()).append(",");
         if (getInstanceArn() != null)
             sb.append("InstanceArn: ").append(getInstanceArn()).append(",");
         if (getPermissionSetArn() != null)
-            sb.append("PermissionSetArn: ").append(getPermissionSetArn()).append(",");
-        if (getInlinePolicy() != null)
-            sb.append("InlinePolicy: ").append(getInlinePolicy());
+            sb.append("PermissionSetArn: ").append(getPermissionSetArn());
         sb.append("}");
         return sb.toString();
     }
@@ -210,6 +213,10 @@ public class PutInlinePolicyToPermissionSetRequest extends com.amazonaws.AmazonW
         if (obj instanceof PutInlinePolicyToPermissionSetRequest == false)
             return false;
         PutInlinePolicyToPermissionSetRequest other = (PutInlinePolicyToPermissionSetRequest) obj;
+        if (other.getInlinePolicy() == null ^ this.getInlinePolicy() == null)
+            return false;
+        if (other.getInlinePolicy() != null && other.getInlinePolicy().equals(this.getInlinePolicy()) == false)
+            return false;
         if (other.getInstanceArn() == null ^ this.getInstanceArn() == null)
             return false;
         if (other.getInstanceArn() != null && other.getInstanceArn().equals(this.getInstanceArn()) == false)
@@ -217,10 +224,6 @@ public class PutInlinePolicyToPermissionSetRequest extends com.amazonaws.AmazonW
         if (other.getPermissionSetArn() == null ^ this.getPermissionSetArn() == null)
             return false;
         if (other.getPermissionSetArn() != null && other.getPermissionSetArn().equals(this.getPermissionSetArn()) == false)
-            return false;
-        if (other.getInlinePolicy() == null ^ this.getInlinePolicy() == null)
-            return false;
-        if (other.getInlinePolicy() != null && other.getInlinePolicy().equals(this.getInlinePolicy()) == false)
             return false;
         return true;
     }
@@ -230,9 +233,9 @@ public class PutInlinePolicyToPermissionSetRequest extends com.amazonaws.AmazonW
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getInlinePolicy() == null) ? 0 : getInlinePolicy().hashCode());
         hashCode = prime * hashCode + ((getInstanceArn() == null) ? 0 : getInstanceArn().hashCode());
         hashCode = prime * hashCode + ((getPermissionSetArn() == null) ? 0 : getPermissionSetArn().hashCode());
-        hashCode = prime * hashCode + ((getInlinePolicy() == null) ? 0 : getInlinePolicy().hashCode());
         return hashCode;
     }
 

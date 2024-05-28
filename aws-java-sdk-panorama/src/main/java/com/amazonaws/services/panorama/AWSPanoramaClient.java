@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.panorama.AWSPanoramaClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.panorama.model.*;
+
 import com.amazonaws.services.panorama.model.transform.*;
 
 /**
@@ -218,7 +219,7 @@ public class AWSPanoramaClient extends AmazonWebServiceClient implements AWSPano
 
     /**
      * <p>
-     * Creates a job to run on one or more devices. A job can update a device's software or reboot it.
+     * Creates a job to run on a device. A job can update a device's software or reboot it.
      * </p>
      * 
      * @param createJobForDevicesRequest

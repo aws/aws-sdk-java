@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,35 +28,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DialerConfig implements Serializable, Cloneable, StructuredPojo {
 
-    private PredictiveDialerConfig predictiveDialerConfig;
-
     private ProgressiveDialerConfig progressiveDialerConfig;
 
-    /**
-     * @param predictiveDialerConfig
-     */
+    private PredictiveDialerConfig predictiveDialerConfig;
 
-    public void setPredictiveDialerConfig(PredictiveDialerConfig predictiveDialerConfig) {
-        this.predictiveDialerConfig = predictiveDialerConfig;
-    }
-
-    /**
-     * @return
-     */
-
-    public PredictiveDialerConfig getPredictiveDialerConfig() {
-        return this.predictiveDialerConfig;
-    }
-
-    /**
-     * @param predictiveDialerConfig
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DialerConfig withPredictiveDialerConfig(PredictiveDialerConfig predictiveDialerConfig) {
-        setPredictiveDialerConfig(predictiveDialerConfig);
-        return this;
-    }
+    private AgentlessDialerConfig agentlessDialerConfig;
 
     /**
      * @param progressiveDialerConfig
@@ -85,6 +61,58 @@ public class DialerConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param predictiveDialerConfig
+     */
+
+    public void setPredictiveDialerConfig(PredictiveDialerConfig predictiveDialerConfig) {
+        this.predictiveDialerConfig = predictiveDialerConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public PredictiveDialerConfig getPredictiveDialerConfig() {
+        return this.predictiveDialerConfig;
+    }
+
+    /**
+     * @param predictiveDialerConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DialerConfig withPredictiveDialerConfig(PredictiveDialerConfig predictiveDialerConfig) {
+        setPredictiveDialerConfig(predictiveDialerConfig);
+        return this;
+    }
+
+    /**
+     * @param agentlessDialerConfig
+     */
+
+    public void setAgentlessDialerConfig(AgentlessDialerConfig agentlessDialerConfig) {
+        this.agentlessDialerConfig = agentlessDialerConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public AgentlessDialerConfig getAgentlessDialerConfig() {
+        return this.agentlessDialerConfig;
+    }
+
+    /**
+     * @param agentlessDialerConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DialerConfig withAgentlessDialerConfig(AgentlessDialerConfig agentlessDialerConfig) {
+        setAgentlessDialerConfig(agentlessDialerConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -96,10 +124,12 @@ public class DialerConfig implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getProgressiveDialerConfig() != null)
+            sb.append("ProgressiveDialerConfig: ").append(getProgressiveDialerConfig()).append(",");
         if (getPredictiveDialerConfig() != null)
             sb.append("PredictiveDialerConfig: ").append(getPredictiveDialerConfig()).append(",");
-        if (getProgressiveDialerConfig() != null)
-            sb.append("ProgressiveDialerConfig: ").append(getProgressiveDialerConfig());
+        if (getAgentlessDialerConfig() != null)
+            sb.append("AgentlessDialerConfig: ").append(getAgentlessDialerConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -114,13 +144,17 @@ public class DialerConfig implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof DialerConfig == false)
             return false;
         DialerConfig other = (DialerConfig) obj;
+        if (other.getProgressiveDialerConfig() == null ^ this.getProgressiveDialerConfig() == null)
+            return false;
+        if (other.getProgressiveDialerConfig() != null && other.getProgressiveDialerConfig().equals(this.getProgressiveDialerConfig()) == false)
+            return false;
         if (other.getPredictiveDialerConfig() == null ^ this.getPredictiveDialerConfig() == null)
             return false;
         if (other.getPredictiveDialerConfig() != null && other.getPredictiveDialerConfig().equals(this.getPredictiveDialerConfig()) == false)
             return false;
-        if (other.getProgressiveDialerConfig() == null ^ this.getProgressiveDialerConfig() == null)
+        if (other.getAgentlessDialerConfig() == null ^ this.getAgentlessDialerConfig() == null)
             return false;
-        if (other.getProgressiveDialerConfig() != null && other.getProgressiveDialerConfig().equals(this.getProgressiveDialerConfig()) == false)
+        if (other.getAgentlessDialerConfig() != null && other.getAgentlessDialerConfig().equals(this.getAgentlessDialerConfig()) == false)
             return false;
         return true;
     }
@@ -130,8 +164,9 @@ public class DialerConfig implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getPredictiveDialerConfig() == null) ? 0 : getPredictiveDialerConfig().hashCode());
         hashCode = prime * hashCode + ((getProgressiveDialerConfig() == null) ? 0 : getProgressiveDialerConfig().hashCode());
+        hashCode = prime * hashCode + ((getPredictiveDialerConfig() == null) ? 0 : getPredictiveDialerConfig().hashCode());
+        hashCode = prime * hashCode + ((getAgentlessDialerConfig() == null) ? 0 : getAgentlessDialerConfig().hashCode());
         return hashCode;
     }
 

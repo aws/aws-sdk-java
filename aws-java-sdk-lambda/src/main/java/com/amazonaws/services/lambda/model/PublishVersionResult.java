@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,7 +40,14 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
     private String functionArn;
     /**
      * <p>
-     * The runtime environment for the Lambda function.
+     * The identifier of the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the
+     * deployment package is a .zip file archive.
+     * </p>
+     * <p>
+     * The following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.
      * </p>
      */
     private String runtime;
@@ -52,7 +59,7 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
     private String role;
     /**
      * <p>
-     * The function that Lambda calls to begin executing your function.
+     * The function that Lambda calls to begin running your function.
      * </p>
      */
     private String handler;
@@ -114,14 +121,18 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment
-     * variables</a>.
+     * variables</a>. Omitted from CloudTrail logs.
      * </p>
      */
     private EnvironmentResponse environment;
     /**
      * <p>
-     * The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-     * configured a customer managed key.
+     * The KMS key that's used to encrypt the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption"
+     * >environment variables</a>. When <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated,
+     * this key is also used to encrypt the function's snapshot. This key is returned only if you've configured a
+     * customer managed key.
      * </p>
      */
     private String kMSKeyArn;
@@ -145,7 +156,7 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
     private String revisionId;
     /**
      * <p>
-     * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.
+     * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Layer> layers;
@@ -229,11 +240,34 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
     private com.amazonaws.internal.SdkInternalList<String> architectures;
     /**
      * <p>
-     * The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between
-     * 512 and 10240 MB.
+     * The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole
+     * number between 512 and 10,240 MB. For more information, see <a href=
+     * "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage"
+     * >Configuring ephemeral storage (console)</a>.
      * </p>
      */
     private EphemeralStorage ephemeralStorage;
+    /**
+     * <p>
+     * Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution
+     * environment when you publish a function version. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda
+     * SnapStart</a>.
+     * </p>
+     */
+    private SnapStartResponse snapStart;
+    /**
+     * <p>
+     * The ARN of the runtime and any errors that occured.
+     * </p>
+     */
+    private RuntimeVersionConfig runtimeVersionConfig;
+    /**
+     * <p>
+     * The function's Amazon CloudWatch Logs configuration settings.
+     * </p>
+     */
+    private LoggingConfig loggingConfig;
 
     /**
      * <p>
@@ -317,11 +351,24 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The runtime environment for the Lambda function.
+     * The identifier of the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the
+     * deployment package is a .zip file archive.
+     * </p>
+     * <p>
+     * The following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.
      * </p>
      * 
      * @param runtime
-     *        The runtime environment for the Lambda function.
+     *        The identifier of the function's <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required
+     *        if the deployment package is a .zip file archive.</p>
+     *        <p>
+     *        The following list includes deprecated runtimes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     *        deprecation policy</a>.
      * @see Runtime
      */
 
@@ -331,10 +378,23 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The runtime environment for the Lambda function.
+     * The identifier of the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the
+     * deployment package is a .zip file archive.
+     * </p>
+     * <p>
+     * The following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.
      * </p>
      * 
-     * @return The runtime environment for the Lambda function.
+     * @return The identifier of the function's <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required
+     *         if the deployment package is a .zip file archive.</p>
+     *         <p>
+     *         The following list includes deprecated runtimes. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     *         deprecation policy</a>.
      * @see Runtime
      */
 
@@ -344,11 +404,24 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The runtime environment for the Lambda function.
+     * The identifier of the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the
+     * deployment package is a .zip file archive.
+     * </p>
+     * <p>
+     * The following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.
      * </p>
      * 
      * @param runtime
-     *        The runtime environment for the Lambda function.
+     *        The identifier of the function's <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required
+     *        if the deployment package is a .zip file archive.</p>
+     *        <p>
+     *        The following list includes deprecated runtimes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     *        deprecation policy</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
      */
@@ -360,11 +433,24 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The runtime environment for the Lambda function.
+     * The identifier of the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the
+     * deployment package is a .zip file archive.
+     * </p>
+     * <p>
+     * The following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.
      * </p>
      * 
      * @param runtime
-     *        The runtime environment for the Lambda function.
+     *        The identifier of the function's <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required
+     *        if the deployment package is a .zip file archive.</p>
+     *        <p>
+     *        The following list includes deprecated runtimes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     *        deprecation policy</a>.
      * @see Runtime
      */
 
@@ -374,11 +460,24 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The runtime environment for the Lambda function.
+     * The identifier of the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the
+     * deployment package is a .zip file archive.
+     * </p>
+     * <p>
+     * The following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.
      * </p>
      * 
      * @param runtime
-     *        The runtime environment for the Lambda function.
+     *        The identifier of the function's <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required
+     *        if the deployment package is a .zip file archive.</p>
+     *        <p>
+     *        The following list includes deprecated runtimes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     *        deprecation policy</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
      */
@@ -430,11 +529,11 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The function that Lambda calls to begin executing your function.
+     * The function that Lambda calls to begin running your function.
      * </p>
      * 
      * @param handler
-     *        The function that Lambda calls to begin executing your function.
+     *        The function that Lambda calls to begin running your function.
      */
 
     public void setHandler(String handler) {
@@ -443,10 +542,10 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The function that Lambda calls to begin executing your function.
+     * The function that Lambda calls to begin running your function.
      * </p>
      * 
-     * @return The function that Lambda calls to begin executing your function.
+     * @return The function that Lambda calls to begin running your function.
      */
 
     public String getHandler() {
@@ -455,11 +554,11 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The function that Lambda calls to begin executing your function.
+     * The function that Lambda calls to begin running your function.
      * </p>
      * 
      * @param handler
-     *        The function that Lambda calls to begin executing your function.
+     *        The function that Lambda calls to begin running your function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -837,12 +936,13 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment
-     * variables</a>.
+     * variables</a>. Omitted from CloudTrail logs.
      * </p>
      * 
      * @param environment
      *        The function's <a
      *        href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.
+     *        Omitted from CloudTrail logs.
      */
 
     public void setEnvironment(EnvironmentResponse environment) {
@@ -852,11 +952,12 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment
-     * variables</a>.
+     * variables</a>. Omitted from CloudTrail logs.
      * </p>
      * 
      * @return The function's <a
      *         href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.
+     *         Omitted from CloudTrail logs.
      */
 
     public EnvironmentResponse getEnvironment() {
@@ -866,12 +967,13 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment
-     * variables</a>.
+     * variables</a>. Omitted from CloudTrail logs.
      * </p>
      * 
      * @param environment
      *        The function's <a
      *        href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.
+     *        Omitted from CloudTrail logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -882,13 +984,21 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-     * configured a customer managed key.
+     * The KMS key that's used to encrypt the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption"
+     * >environment variables</a>. When <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated,
+     * this key is also used to encrypt the function's snapshot. This key is returned only if you've configured a
+     * customer managed key.
      * </p>
      * 
      * @param kMSKeyArn
-     *        The KMS key that's used to encrypt the function's environment variables. This key is only returned if
-     *        you've configured a customer managed key.
+     *        The KMS key that's used to encrypt the function's <a href=
+     *        "https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption"
+     *        >environment variables</a>. When <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is
+     *        activated, this key is also used to encrypt the function's snapshot. This key is returned only if you've
+     *        configured a customer managed key.
      */
 
     public void setKMSKeyArn(String kMSKeyArn) {
@@ -897,12 +1007,20 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-     * configured a customer managed key.
+     * The KMS key that's used to encrypt the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption"
+     * >environment variables</a>. When <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated,
+     * this key is also used to encrypt the function's snapshot. This key is returned only if you've configured a
+     * customer managed key.
      * </p>
      * 
-     * @return The KMS key that's used to encrypt the function's environment variables. This key is only returned if
-     *         you've configured a customer managed key.
+     * @return The KMS key that's used to encrypt the function's <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption"
+     *         >environment variables</a>. When <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is
+     *         activated, this key is also used to encrypt the function's snapshot. This key is returned only if you've
+     *         configured a customer managed key.
      */
 
     public String getKMSKeyArn() {
@@ -911,13 +1029,21 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
-     * configured a customer managed key.
+     * The KMS key that's used to encrypt the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption"
+     * >environment variables</a>. When <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated,
+     * this key is also used to encrypt the function's snapshot. This key is returned only if you've configured a
+     * customer managed key.
      * </p>
      * 
      * @param kMSKeyArn
-     *        The KMS key that's used to encrypt the function's environment variables. This key is only returned if
-     *        you've configured a customer managed key.
+     *        The KMS key that's used to encrypt the function's <a href=
+     *        "https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption"
+     *        >environment variables</a>. When <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is
+     *        activated, this key is also used to encrypt the function's snapshot. This key is returned only if you've
+     *        configured a customer managed key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1048,11 +1174,11 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.
+     * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.
      * </p>
      * 
-     * @return The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-     *         layers</a>.
+     * @return The function's <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.
      */
 
     public java.util.List<Layer> getLayers() {
@@ -1064,12 +1190,12 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.
+     * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.
      * </p>
      * 
      * @param layers
-     *        The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-     *        layers</a>.
+     *        The function's <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.
      */
 
     public void setLayers(java.util.Collection<Layer> layers) {
@@ -1083,7 +1209,7 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.
+     * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1092,8 +1218,8 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param layers
-     *        The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-     *        layers</a>.
+     *        The function's <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1109,12 +1235,12 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.
+     * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.
      * </p>
      * 
      * @param layers
-     *        The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-     *        layers</a>.
+     *        The function's <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">layers</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1926,13 +2052,17 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between
-     * 512 and 10240 MB.
+     * The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole
+     * number between 512 and 10,240 MB. For more information, see <a href=
+     * "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage"
+     * >Configuring ephemeral storage (console)</a>.
      * </p>
      * 
      * @param ephemeralStorage
-     *        The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number
-     *        between 512 and 10240 MB.
+     *        The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any
+     *        whole number between 512 and 10,240 MB. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage"
+     *        >Configuring ephemeral storage (console)</a>.
      */
 
     public void setEphemeralStorage(EphemeralStorage ephemeralStorage) {
@@ -1941,12 +2071,16 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between
-     * 512 and 10240 MB.
+     * The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole
+     * number between 512 and 10,240 MB. For more information, see <a href=
+     * "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage"
+     * >Configuring ephemeral storage (console)</a>.
      * </p>
      * 
-     * @return The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number
-     *         between 512 and 10240 MB.
+     * @return The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any
+     *         whole number between 512 and 10,240 MB. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage"
+     *         >Configuring ephemeral storage (console)</a>.
      */
 
     public EphemeralStorage getEphemeralStorage() {
@@ -1955,18 +2089,160 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between
-     * 512 and 10240 MB.
+     * The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole
+     * number between 512 and 10,240 MB. For more information, see <a href=
+     * "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage"
+     * >Configuring ephemeral storage (console)</a>.
      * </p>
      * 
      * @param ephemeralStorage
-     *        The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number
-     *        between 512 and 10240 MB.
+     *        The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any
+     *        whole number between 512 and 10,240 MB. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage"
+     *        >Configuring ephemeral storage (console)</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PublishVersionResult withEphemeralStorage(EphemeralStorage ephemeralStorage) {
         setEphemeralStorage(ephemeralStorage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution
+     * environment when you publish a function version. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda
+     * SnapStart</a>.
+     * </p>
+     * 
+     * @param snapStart
+     *        Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized
+     *        execution environment when you publish a function version. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with
+     *        Lambda SnapStart</a>.
+     */
+
+    public void setSnapStart(SnapStartResponse snapStart) {
+        this.snapStart = snapStart;
+    }
+
+    /**
+     * <p>
+     * Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution
+     * environment when you publish a function version. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda
+     * SnapStart</a>.
+     * </p>
+     * 
+     * @return Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized
+     *         execution environment when you publish a function version. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with
+     *         Lambda SnapStart</a>.
+     */
+
+    public SnapStartResponse getSnapStart() {
+        return this.snapStart;
+    }
+
+    /**
+     * <p>
+     * Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized execution
+     * environment when you publish a function version. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with Lambda
+     * SnapStart</a>.
+     * </p>
+     * 
+     * @param snapStart
+     *        Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of the initialized
+     *        execution environment when you publish a function version. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup performance with
+     *        Lambda SnapStart</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PublishVersionResult withSnapStart(SnapStartResponse snapStart) {
+        setSnapStart(snapStart);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the runtime and any errors that occured.
+     * </p>
+     * 
+     * @param runtimeVersionConfig
+     *        The ARN of the runtime and any errors that occured.
+     */
+
+    public void setRuntimeVersionConfig(RuntimeVersionConfig runtimeVersionConfig) {
+        this.runtimeVersionConfig = runtimeVersionConfig;
+    }
+
+    /**
+     * <p>
+     * The ARN of the runtime and any errors that occured.
+     * </p>
+     * 
+     * @return The ARN of the runtime and any errors that occured.
+     */
+
+    public RuntimeVersionConfig getRuntimeVersionConfig() {
+        return this.runtimeVersionConfig;
+    }
+
+    /**
+     * <p>
+     * The ARN of the runtime and any errors that occured.
+     * </p>
+     * 
+     * @param runtimeVersionConfig
+     *        The ARN of the runtime and any errors that occured.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PublishVersionResult withRuntimeVersionConfig(RuntimeVersionConfig runtimeVersionConfig) {
+        setRuntimeVersionConfig(runtimeVersionConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The function's Amazon CloudWatch Logs configuration settings.
+     * </p>
+     * 
+     * @param loggingConfig
+     *        The function's Amazon CloudWatch Logs configuration settings.
+     */
+
+    public void setLoggingConfig(LoggingConfig loggingConfig) {
+        this.loggingConfig = loggingConfig;
+    }
+
+    /**
+     * <p>
+     * The function's Amazon CloudWatch Logs configuration settings.
+     * </p>
+     * 
+     * @return The function's Amazon CloudWatch Logs configuration settings.
+     */
+
+    public LoggingConfig getLoggingConfig() {
+        return this.loggingConfig;
+    }
+
+    /**
+     * <p>
+     * The function's Amazon CloudWatch Logs configuration settings.
+     * </p>
+     * 
+     * @param loggingConfig
+     *        The function's Amazon CloudWatch Logs configuration settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PublishVersionResult withLoggingConfig(LoggingConfig loggingConfig) {
+        setLoggingConfig(loggingConfig);
         return this;
     }
 
@@ -2047,7 +2323,13 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getArchitectures() != null)
             sb.append("Architectures: ").append(getArchitectures()).append(",");
         if (getEphemeralStorage() != null)
-            sb.append("EphemeralStorage: ").append(getEphemeralStorage());
+            sb.append("EphemeralStorage: ").append(getEphemeralStorage()).append(",");
+        if (getSnapStart() != null)
+            sb.append("SnapStart: ").append(getSnapStart()).append(",");
+        if (getRuntimeVersionConfig() != null)
+            sb.append("RuntimeVersionConfig: ").append(getRuntimeVersionConfig()).append(",");
+        if (getLoggingConfig() != null)
+            sb.append("LoggingConfig: ").append(getLoggingConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -2194,6 +2476,18 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getEphemeralStorage() != null && other.getEphemeralStorage().equals(this.getEphemeralStorage()) == false)
             return false;
+        if (other.getSnapStart() == null ^ this.getSnapStart() == null)
+            return false;
+        if (other.getSnapStart() != null && other.getSnapStart().equals(this.getSnapStart()) == false)
+            return false;
+        if (other.getRuntimeVersionConfig() == null ^ this.getRuntimeVersionConfig() == null)
+            return false;
+        if (other.getRuntimeVersionConfig() != null && other.getRuntimeVersionConfig().equals(this.getRuntimeVersionConfig()) == false)
+            return false;
+        if (other.getLoggingConfig() == null ^ this.getLoggingConfig() == null)
+            return false;
+        if (other.getLoggingConfig() != null && other.getLoggingConfig().equals(this.getLoggingConfig()) == false)
+            return false;
         return true;
     }
 
@@ -2235,6 +2529,9 @@ public class PublishVersionResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getSigningJobArn() == null) ? 0 : getSigningJobArn().hashCode());
         hashCode = prime * hashCode + ((getArchitectures() == null) ? 0 : getArchitectures().hashCode());
         hashCode = prime * hashCode + ((getEphemeralStorage() == null) ? 0 : getEphemeralStorage().hashCode());
+        hashCode = prime * hashCode + ((getSnapStart() == null) ? 0 : getSnapStart().hashCode());
+        hashCode = prime * hashCode + ((getRuntimeVersionConfig() == null) ? 0 : getRuntimeVersionConfig().hashCode());
+        hashCode = prime * hashCode + ((getLoggingConfig() == null) ? 0 : getLoggingConfig().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,9 +27,9 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * <p>
  * This API reference provides descriptions, syntax, and other details about each of the actions and data types for AWS
- * Migration Hub Orchestrator. he topic for each action shows the API request parameters and the response.
- * Alternatively, you can use one of the AWS SDKs to access an API that is tailored to the programming language or
- * platform that you're using.
+ * Migration Hub Orchestrator. The topic for each action shows the API request parameters and responses. Alternatively,
+ * you can use one of the AWS SDKs to access an API that is tailored to the programming language or platform that you're
+ * using.
  * </p>
  */
 @ThreadSafe
@@ -76,6 +76,39 @@ public class AWSMigrationHubOrchestratorAsyncClient extends AWSMigrationHubOrche
      */
     public ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTemplateResult> createTemplateAsync(CreateTemplateRequest request) {
+
+        return createTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTemplateResult> createTemplateAsync(final CreateTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateTemplateRequest, CreateTemplateResult> asyncHandler) {
+        final CreateTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateTemplateResult>() {
+            @Override
+            public CreateTemplateResult call() throws Exception {
+                CreateTemplateResult result = null;
+
+                try {
+                    result = executeCreateTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -162,6 +195,39 @@ public class AWSMigrationHubOrchestratorAsyncClient extends AWSMigrationHubOrche
 
                 try {
                     result = executeCreateWorkflowStepGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTemplateResult> deleteTemplateAsync(DeleteTemplateRequest request) {
+
+        return deleteTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTemplateResult> deleteTemplateAsync(final DeleteTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteTemplateRequest, DeleteTemplateResult> asyncHandler) {
+        final DeleteTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteTemplateResult>() {
+            @Override
+            public DeleteTemplateResult call() throws Exception {
+                DeleteTemplateResult result = null;
+
+                try {
+                    result = executeDeleteTemplate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -888,6 +954,39 @@ public class AWSMigrationHubOrchestratorAsyncClient extends AWSMigrationHubOrche
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTemplateResult> updateTemplateAsync(UpdateTemplateRequest request) {
+
+        return updateTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTemplateResult> updateTemplateAsync(final UpdateTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateTemplateRequest, UpdateTemplateResult> asyncHandler) {
+        final UpdateTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateTemplateResult>() {
+            @Override
+            public UpdateTemplateResult call() throws Exception {
+                UpdateTemplateResult result = null;
+
+                try {
+                    result = executeUpdateTemplate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

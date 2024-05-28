@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,9 +12,9 @@
  */
 
 /**
- * <fullname>AWS Step Functions</fullname>
+ * <fullname>Step Functions</fullname>
  * <p>
- * AWS Step Functions is a service that lets you coordinate the components of distributed applications and microservices
+ * Step Functions is a service that lets you coordinate the components of distributed applications and microservices
  * using visual workflows.
  * </p>
  * <p>
@@ -26,10 +26,18 @@
  * </p>
  * <p>
  * Step Functions manages operations and underlying infrastructure to ensure your application is available at any scale.
- * You can run tasks on AWS, your own servers, or any system that has access to AWS. You can access and use Step
- * Functions using the console, the AWS SDKs, or an HTTP API. For more information about Step Functions, see the <i> <a
- * href="https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html">AWS Step Functions Developer Guide</a> </i>.
+ * You can run tasks on Amazon Web Services, your own servers, or any system that has access to Amazon Web Services. You
+ * can access and use Step Functions using the console, the Amazon Web Services SDKs, or an HTTP API. For more
+ * information about Step Functions, see the <i> <a
+ * href="https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html">Step Functions Developer Guide</a> </i>.
  * </p>
+ * <important>
+ * <p>
+ * If you use the Step Functions API actions using Amazon Web Services SDK integrations, make sure the API actions are
+ * in camel case and parameter names are in Pascal case. For example, you could use Step Functions API action
+ * <code>startSyncExecution</code> and specify its parameter as <code>StateMachineArn</code>.
+ * </p>
+ * </important>
  */
 package com.amazonaws.services.stepfunctions;
 

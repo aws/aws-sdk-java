@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class PutFunctionEventInvokeConfigRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the Lambda function, version, or alias.
+     * The name or ARN of the Lambda function, version, or alias.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -88,12 +88,12 @@ public class PutFunctionEventInvokeConfigRequest extends com.amazonaws.AmazonWeb
      * </li>
      * <li>
      * <p>
-     * <b>Queue</b> - The ARN of an SQS queue.
+     * <b>Queue</b> - The ARN of a standard SQS queue.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Topic</b> - The ARN of an SNS topic.
+     * <b>Topic</b> - The ARN of a standard SNS topic.
      * </p>
      * </li>
      * <li>
@@ -107,7 +107,7 @@ public class PutFunctionEventInvokeConfigRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the Lambda function, version, or alias.
+     * The name or ARN of the Lambda function, version, or alias.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -135,7 +135,7 @@ public class PutFunctionEventInvokeConfigRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param functionName
-     *        The name of the Lambda function, version, or alias.</p>
+     *        The name or ARN of the Lambda function, version, or alias.</p>
      *        <p class="title">
      *        <b>Name formats</b>
      *        </p>
@@ -167,7 +167,7 @@ public class PutFunctionEventInvokeConfigRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the Lambda function, version, or alias.
+     * The name or ARN of the Lambda function, version, or alias.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -194,7 +194,7 @@ public class PutFunctionEventInvokeConfigRequest extends com.amazonaws.AmazonWeb
      * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      * 
-     * @return The name of the Lambda function, version, or alias.</p>
+     * @return The name or ARN of the Lambda function, version, or alias.</p>
      *         <p class="title">
      *         <b>Name formats</b>
      *         </p>
@@ -226,7 +226,7 @@ public class PutFunctionEventInvokeConfigRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the Lambda function, version, or alias.
+     * The name or ARN of the Lambda function, version, or alias.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -254,7 +254,7 @@ public class PutFunctionEventInvokeConfigRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param functionName
-     *        The name of the Lambda function, version, or alias.</p>
+     *        The name or ARN of the Lambda function, version, or alias.</p>
      *        <p class="title">
      *        <b>Name formats</b>
      *        </p>
@@ -421,12 +421,12 @@ public class PutFunctionEventInvokeConfigRequest extends com.amazonaws.AmazonWeb
      * </li>
      * <li>
      * <p>
-     * <b>Queue</b> - The ARN of an SQS queue.
+     * <b>Queue</b> - The ARN of a standard SQS queue.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Topic</b> - The ARN of an SNS topic.
+     * <b>Topic</b> - The ARN of a standard SNS topic.
      * </p>
      * </li>
      * <li>
@@ -449,12 +449,12 @@ public class PutFunctionEventInvokeConfigRequest extends com.amazonaws.AmazonWeb
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Queue</b> - The ARN of an SQS queue.
+     *        <b>Queue</b> - The ARN of a standard SQS queue.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Topic</b> - The ARN of an SNS topic.
+     *        <b>Topic</b> - The ARN of a standard SNS topic.
      *        </p>
      *        </li>
      *        <li>
@@ -483,12 +483,12 @@ public class PutFunctionEventInvokeConfigRequest extends com.amazonaws.AmazonWeb
      * </li>
      * <li>
      * <p>
-     * <b>Queue</b> - The ARN of an SQS queue.
+     * <b>Queue</b> - The ARN of a standard SQS queue.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Topic</b> - The ARN of an SNS topic.
+     * <b>Topic</b> - The ARN of a standard SNS topic.
      * </p>
      * </li>
      * <li>
@@ -510,12 +510,12 @@ public class PutFunctionEventInvokeConfigRequest extends com.amazonaws.AmazonWeb
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Queue</b> - The ARN of an SQS queue.
+     *         <b>Queue</b> - The ARN of a standard SQS queue.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Topic</b> - The ARN of an SNS topic.
+     *         <b>Topic</b> - The ARN of a standard SNS topic.
      *         </p>
      *         </li>
      *         <li>
@@ -544,12 +544,12 @@ public class PutFunctionEventInvokeConfigRequest extends com.amazonaws.AmazonWeb
      * </li>
      * <li>
      * <p>
-     * <b>Queue</b> - The ARN of an SQS queue.
+     * <b>Queue</b> - The ARN of a standard SQS queue.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Topic</b> - The ARN of an SNS topic.
+     * <b>Topic</b> - The ARN of a standard SNS topic.
      * </p>
      * </li>
      * <li>
@@ -572,12 +572,12 @@ public class PutFunctionEventInvokeConfigRequest extends com.amazonaws.AmazonWeb
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Queue</b> - The ARN of an SQS queue.
+     *        <b>Queue</b> - The ARN of a standard SQS queue.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Topic</b> - The ARN of an SNS topic.
+     *        <b>Topic</b> - The ARN of a standard SNS topic.
      *        </p>
      *        </li>
      *        <li>

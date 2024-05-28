@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,8 @@ public class UpdateFileSystemWindowsConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelfManagedActiveDirectoryConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> AUDITLOGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AuditLogConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> DISKIOPSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DiskIopsConfiguration").build();
 
     private static final UpdateFileSystemWindowsConfigurationMarshaller instance = new UpdateFileSystemWindowsConfigurationMarshaller();
 
@@ -63,6 +65,7 @@ public class UpdateFileSystemWindowsConfigurationMarshaller {
             protocolMarshaller.marshall(updateFileSystemWindowsConfiguration.getSelfManagedActiveDirectoryConfiguration(),
                     SELFMANAGEDACTIVEDIRECTORYCONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateFileSystemWindowsConfiguration.getAuditLogConfiguration(), AUDITLOGCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(updateFileSystemWindowsConfiguration.getDiskIopsConfiguration(), DISKIOPSCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

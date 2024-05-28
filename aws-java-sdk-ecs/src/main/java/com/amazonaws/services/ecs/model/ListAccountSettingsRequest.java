@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,8 +40,8 @@ public class ListAccountSettingsRequest extends com.amazonaws.AmazonWebServiceRe
     private String value;
     /**
      * <p>
-     * The ARN of the principal, which can be an IAM user, IAM role, or the root user. If this field is omitted, the
-     * account settings are listed only for the authenticated user.
+     * The ARN of the principal, which can be a user, role, or the root user. If this field is omitted, the account
+     * settings are listed only for the authenticated user.
      * </p>
      * <note>
      * <p>
@@ -193,8 +193,8 @@ public class ListAccountSettingsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the principal, which can be an IAM user, IAM role, or the root user. If this field is omitted, the
-     * account settings are listed only for the authenticated user.
+     * The ARN of the principal, which can be a user, role, or the root user. If this field is omitted, the account
+     * settings are listed only for the authenticated user.
      * </p>
      * <note>
      * <p>
@@ -204,8 +204,8 @@ public class ListAccountSettingsRequest extends com.amazonaws.AmazonWebServiceRe
      * </note>
      * 
      * @param principalArn
-     *        The ARN of the principal, which can be an IAM user, IAM role, or the root user. If this field is omitted,
-     *        the account settings are listed only for the authenticated user.</p> <note>
+     *        The ARN of the principal, which can be a user, role, or the root user. If this field is omitted, the
+     *        account settings are listed only for the authenticated user.</p> <note>
      *        <p>
      *        Federated users assume the account setting of the root user and can't have explicit account settings set
      *        for them.
@@ -218,8 +218,8 @@ public class ListAccountSettingsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the principal, which can be an IAM user, IAM role, or the root user. If this field is omitted, the
-     * account settings are listed only for the authenticated user.
+     * The ARN of the principal, which can be a user, role, or the root user. If this field is omitted, the account
+     * settings are listed only for the authenticated user.
      * </p>
      * <note>
      * <p>
@@ -228,8 +228,8 @@ public class ListAccountSettingsRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * </note>
      * 
-     * @return The ARN of the principal, which can be an IAM user, IAM role, or the root user. If this field is omitted,
-     *         the account settings are listed only for the authenticated user.</p> <note>
+     * @return The ARN of the principal, which can be a user, role, or the root user. If this field is omitted, the
+     *         account settings are listed only for the authenticated user.</p> <note>
      *         <p>
      *         Federated users assume the account setting of the root user and can't have explicit account settings set
      *         for them.
@@ -242,8 +242,8 @@ public class ListAccountSettingsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the principal, which can be an IAM user, IAM role, or the root user. If this field is omitted, the
-     * account settings are listed only for the authenticated user.
+     * The ARN of the principal, which can be a user, role, or the root user. If this field is omitted, the account
+     * settings are listed only for the authenticated user.
      * </p>
      * <note>
      * <p>
@@ -253,8 +253,8 @@ public class ListAccountSettingsRequest extends com.amazonaws.AmazonWebServiceRe
      * </note>
      * 
      * @param principalArn
-     *        The ARN of the principal, which can be an IAM user, IAM role, or the root user. If this field is omitted,
-     *        the account settings are listed only for the authenticated user.</p> <note>
+     *        The ARN of the principal, which can be a user, role, or the root user. If this field is omitted, the
+     *        account settings are listed only for the authenticated user.</p> <note>
      *        <p>
      *        Federated users assume the account setting of the root user and can't have explicit account settings set
      *        for them.

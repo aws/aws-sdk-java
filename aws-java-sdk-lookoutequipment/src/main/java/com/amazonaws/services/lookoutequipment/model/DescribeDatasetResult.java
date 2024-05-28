@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -106,6 +106,13 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      */
     private java.util.Date dataEndTime;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the source dataset from which the current data being described was imported
+     * from.
+     * </p>
+     */
+    private String sourceDatasetArn;
 
     /**
      * <p>
@@ -700,6 +707,52 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the source dataset from which the current data being described was imported
+     * from.
+     * </p>
+     * 
+     * @param sourceDatasetArn
+     *        The Amazon Resource Name (ARN) of the source dataset from which the current data being described was
+     *        imported from.
+     */
+
+    public void setSourceDatasetArn(String sourceDatasetArn) {
+        this.sourceDatasetArn = sourceDatasetArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the source dataset from which the current data being described was imported
+     * from.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the source dataset from which the current data being described was
+     *         imported from.
+     */
+
+    public String getSourceDatasetArn() {
+        return this.sourceDatasetArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the source dataset from which the current data being described was imported
+     * from.
+     * </p>
+     * 
+     * @param sourceDatasetArn
+     *        The Amazon Resource Name (ARN) of the source dataset from which the current data being described was
+     *        imported from.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDatasetResult withSourceDatasetArn(String sourceDatasetArn) {
+        setSourceDatasetArn(sourceDatasetArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -736,7 +789,9 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
         if (getDataStartTime() != null)
             sb.append("DataStartTime: ").append(getDataStartTime()).append(",");
         if (getDataEndTime() != null)
-            sb.append("DataEndTime: ").append(getDataEndTime());
+            sb.append("DataEndTime: ").append(getDataEndTime()).append(",");
+        if (getSourceDatasetArn() != null)
+            sb.append("SourceDatasetArn: ").append(getSourceDatasetArn());
         sb.append("}");
         return sb.toString();
     }
@@ -803,6 +858,10 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getDataEndTime() != null && other.getDataEndTime().equals(this.getDataEndTime()) == false)
             return false;
+        if (other.getSourceDatasetArn() == null ^ this.getSourceDatasetArn() == null)
+            return false;
+        if (other.getSourceDatasetArn() != null && other.getSourceDatasetArn().equals(this.getSourceDatasetArn()) == false)
+            return false;
         return true;
     }
 
@@ -824,6 +883,7 @@ public class DescribeDatasetResult extends com.amazonaws.AmazonWebServiceResult<
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getDataStartTime() == null) ? 0 : getDataStartTime().hashCode());
         hashCode = prime * hashCode + ((getDataEndTime() == null) ? 0 : getDataEndTime().hashCode());
+        hashCode = prime * hashCode + ((getSourceDatasetArn() == null) ? 0 : getSourceDatasetArn().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -74,6 +74,38 @@ public class UpdateDistributionRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private Boolean isEnabled;
+    /**
+     * <p>
+     * Use this parameter to update the minimum TLS protocol version for the SSL/TLS certificate that's attached to the
+     * distribution.
+     * </p>
+     */
+    private String viewerMinimumTlsProtocolVersion;
+    /**
+     * <p>
+     * The name of the SSL/TLS certificate that you want to attach to the distribution.
+     * </p>
+     * <p>
+     * Only certificates with a status of <code>ISSUED</code> can be attached to a distribution.
+     * </p>
+     * <p>
+     * Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates
+     * </a> action to get a list of certificate names that you can specify.
+     * </p>
+     */
+    private String certificateName;
+    /**
+     * <p>
+     * Indicates whether the default SSL/TLS certificate is attached to the distribution. The default value is
+     * <code>true</code>. When <code>true</code>, the distribution uses the default domain name such as
+     * <code>d111111abcdef8.cloudfront.net</code>.
+     * </p>
+     * <p>
+     * Set this value to <code>false</code> to attach a new certificate to the distribution.
+     * </p>
+     */
+    private Boolean useDefaultCertificate;
 
     /**
      * <p>
@@ -424,6 +456,244 @@ public class UpdateDistributionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Use this parameter to update the minimum TLS protocol version for the SSL/TLS certificate that's attached to the
+     * distribution.
+     * </p>
+     * 
+     * @param viewerMinimumTlsProtocolVersion
+     *        Use this parameter to update the minimum TLS protocol version for the SSL/TLS certificate that's attached
+     *        to the distribution.
+     * @see ViewerMinimumTlsProtocolVersionEnum
+     */
+
+    public void setViewerMinimumTlsProtocolVersion(String viewerMinimumTlsProtocolVersion) {
+        this.viewerMinimumTlsProtocolVersion = viewerMinimumTlsProtocolVersion;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to update the minimum TLS protocol version for the SSL/TLS certificate that's attached to the
+     * distribution.
+     * </p>
+     * 
+     * @return Use this parameter to update the minimum TLS protocol version for the SSL/TLS certificate that's attached
+     *         to the distribution.
+     * @see ViewerMinimumTlsProtocolVersionEnum
+     */
+
+    public String getViewerMinimumTlsProtocolVersion() {
+        return this.viewerMinimumTlsProtocolVersion;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to update the minimum TLS protocol version for the SSL/TLS certificate that's attached to the
+     * distribution.
+     * </p>
+     * 
+     * @param viewerMinimumTlsProtocolVersion
+     *        Use this parameter to update the minimum TLS protocol version for the SSL/TLS certificate that's attached
+     *        to the distribution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ViewerMinimumTlsProtocolVersionEnum
+     */
+
+    public UpdateDistributionRequest withViewerMinimumTlsProtocolVersion(String viewerMinimumTlsProtocolVersion) {
+        setViewerMinimumTlsProtocolVersion(viewerMinimumTlsProtocolVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to update the minimum TLS protocol version for the SSL/TLS certificate that's attached to the
+     * distribution.
+     * </p>
+     * 
+     * @param viewerMinimumTlsProtocolVersion
+     *        Use this parameter to update the minimum TLS protocol version for the SSL/TLS certificate that's attached
+     *        to the distribution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ViewerMinimumTlsProtocolVersionEnum
+     */
+
+    public UpdateDistributionRequest withViewerMinimumTlsProtocolVersion(ViewerMinimumTlsProtocolVersionEnum viewerMinimumTlsProtocolVersion) {
+        this.viewerMinimumTlsProtocolVersion = viewerMinimumTlsProtocolVersion.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the SSL/TLS certificate that you want to attach to the distribution.
+     * </p>
+     * <p>
+     * Only certificates with a status of <code>ISSUED</code> can be attached to a distribution.
+     * </p>
+     * <p>
+     * Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates
+     * </a> action to get a list of certificate names that you can specify.
+     * </p>
+     * 
+     * @param certificateName
+     *        The name of the SSL/TLS certificate that you want to attach to the distribution.</p>
+     *        <p>
+     *        Only certificates with a status of <code>ISSUED</code> can be attached to a distribution.
+     *        </p>
+     *        <p>
+     *        Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">
+     *        GetCertificates</a> action to get a list of certificate names that you can specify.
+     */
+
+    public void setCertificateName(String certificateName) {
+        this.certificateName = certificateName;
+    }
+
+    /**
+     * <p>
+     * The name of the SSL/TLS certificate that you want to attach to the distribution.
+     * </p>
+     * <p>
+     * Only certificates with a status of <code>ISSUED</code> can be attached to a distribution.
+     * </p>
+     * <p>
+     * Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates
+     * </a> action to get a list of certificate names that you can specify.
+     * </p>
+     * 
+     * @return The name of the SSL/TLS certificate that you want to attach to the distribution.</p>
+     *         <p>
+     *         Only certificates with a status of <code>ISSUED</code> can be attached to a distribution.
+     *         </p>
+     *         <p>
+     *         Use the <a
+     *         href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">
+     *         GetCertificates</a> action to get a list of certificate names that you can specify.
+     */
+
+    public String getCertificateName() {
+        return this.certificateName;
+    }
+
+    /**
+     * <p>
+     * The name of the SSL/TLS certificate that you want to attach to the distribution.
+     * </p>
+     * <p>
+     * Only certificates with a status of <code>ISSUED</code> can be attached to a distribution.
+     * </p>
+     * <p>
+     * Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates
+     * </a> action to get a list of certificate names that you can specify.
+     * </p>
+     * 
+     * @param certificateName
+     *        The name of the SSL/TLS certificate that you want to attach to the distribution.</p>
+     *        <p>
+     *        Only certificates with a status of <code>ISSUED</code> can be attached to a distribution.
+     *        </p>
+     *        <p>
+     *        Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">
+     *        GetCertificates</a> action to get a list of certificate names that you can specify.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDistributionRequest withCertificateName(String certificateName) {
+        setCertificateName(certificateName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the default SSL/TLS certificate is attached to the distribution. The default value is
+     * <code>true</code>. When <code>true</code>, the distribution uses the default domain name such as
+     * <code>d111111abcdef8.cloudfront.net</code>.
+     * </p>
+     * <p>
+     * Set this value to <code>false</code> to attach a new certificate to the distribution.
+     * </p>
+     * 
+     * @param useDefaultCertificate
+     *        Indicates whether the default SSL/TLS certificate is attached to the distribution. The default value is
+     *        <code>true</code>. When <code>true</code>, the distribution uses the default domain name such as
+     *        <code>d111111abcdef8.cloudfront.net</code>.</p>
+     *        <p>
+     *        Set this value to <code>false</code> to attach a new certificate to the distribution.
+     */
+
+    public void setUseDefaultCertificate(Boolean useDefaultCertificate) {
+        this.useDefaultCertificate = useDefaultCertificate;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the default SSL/TLS certificate is attached to the distribution. The default value is
+     * <code>true</code>. When <code>true</code>, the distribution uses the default domain name such as
+     * <code>d111111abcdef8.cloudfront.net</code>.
+     * </p>
+     * <p>
+     * Set this value to <code>false</code> to attach a new certificate to the distribution.
+     * </p>
+     * 
+     * @return Indicates whether the default SSL/TLS certificate is attached to the distribution. The default value is
+     *         <code>true</code>. When <code>true</code>, the distribution uses the default domain name such as
+     *         <code>d111111abcdef8.cloudfront.net</code>.</p>
+     *         <p>
+     *         Set this value to <code>false</code> to attach a new certificate to the distribution.
+     */
+
+    public Boolean getUseDefaultCertificate() {
+        return this.useDefaultCertificate;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the default SSL/TLS certificate is attached to the distribution. The default value is
+     * <code>true</code>. When <code>true</code>, the distribution uses the default domain name such as
+     * <code>d111111abcdef8.cloudfront.net</code>.
+     * </p>
+     * <p>
+     * Set this value to <code>false</code> to attach a new certificate to the distribution.
+     * </p>
+     * 
+     * @param useDefaultCertificate
+     *        Indicates whether the default SSL/TLS certificate is attached to the distribution. The default value is
+     *        <code>true</code>. When <code>true</code>, the distribution uses the default domain name such as
+     *        <code>d111111abcdef8.cloudfront.net</code>.</p>
+     *        <p>
+     *        Set this value to <code>false</code> to attach a new certificate to the distribution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDistributionRequest withUseDefaultCertificate(Boolean useDefaultCertificate) {
+        setUseDefaultCertificate(useDefaultCertificate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the default SSL/TLS certificate is attached to the distribution. The default value is
+     * <code>true</code>. When <code>true</code>, the distribution uses the default domain name such as
+     * <code>d111111abcdef8.cloudfront.net</code>.
+     * </p>
+     * <p>
+     * Set this value to <code>false</code> to attach a new certificate to the distribution.
+     * </p>
+     * 
+     * @return Indicates whether the default SSL/TLS certificate is attached to the distribution. The default value is
+     *         <code>true</code>. When <code>true</code>, the distribution uses the default domain name such as
+     *         <code>d111111abcdef8.cloudfront.net</code>.</p>
+     *         <p>
+     *         Set this value to <code>false</code> to attach a new certificate to the distribution.
+     */
+
+    public Boolean isUseDefaultCertificate() {
+        return this.useDefaultCertificate;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -446,7 +716,13 @@ public class UpdateDistributionRequest extends com.amazonaws.AmazonWebServiceReq
         if (getCacheBehaviors() != null)
             sb.append("CacheBehaviors: ").append(getCacheBehaviors()).append(",");
         if (getIsEnabled() != null)
-            sb.append("IsEnabled: ").append(getIsEnabled());
+            sb.append("IsEnabled: ").append(getIsEnabled()).append(",");
+        if (getViewerMinimumTlsProtocolVersion() != null)
+            sb.append("ViewerMinimumTlsProtocolVersion: ").append(getViewerMinimumTlsProtocolVersion()).append(",");
+        if (getCertificateName() != null)
+            sb.append("CertificateName: ").append(getCertificateName()).append(",");
+        if (getUseDefaultCertificate() != null)
+            sb.append("UseDefaultCertificate: ").append(getUseDefaultCertificate());
         sb.append("}");
         return sb.toString();
     }
@@ -485,6 +761,19 @@ public class UpdateDistributionRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getIsEnabled() != null && other.getIsEnabled().equals(this.getIsEnabled()) == false)
             return false;
+        if (other.getViewerMinimumTlsProtocolVersion() == null ^ this.getViewerMinimumTlsProtocolVersion() == null)
+            return false;
+        if (other.getViewerMinimumTlsProtocolVersion() != null
+                && other.getViewerMinimumTlsProtocolVersion().equals(this.getViewerMinimumTlsProtocolVersion()) == false)
+            return false;
+        if (other.getCertificateName() == null ^ this.getCertificateName() == null)
+            return false;
+        if (other.getCertificateName() != null && other.getCertificateName().equals(this.getCertificateName()) == false)
+            return false;
+        if (other.getUseDefaultCertificate() == null ^ this.getUseDefaultCertificate() == null)
+            return false;
+        if (other.getUseDefaultCertificate() != null && other.getUseDefaultCertificate().equals(this.getUseDefaultCertificate()) == false)
+            return false;
         return true;
     }
 
@@ -499,6 +788,9 @@ public class UpdateDistributionRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getCacheBehaviorSettings() == null) ? 0 : getCacheBehaviorSettings().hashCode());
         hashCode = prime * hashCode + ((getCacheBehaviors() == null) ? 0 : getCacheBehaviors().hashCode());
         hashCode = prime * hashCode + ((getIsEnabled() == null) ? 0 : getIsEnabled().hashCode());
+        hashCode = prime * hashCode + ((getViewerMinimumTlsProtocolVersion() == null) ? 0 : getViewerMinimumTlsProtocolVersion().hashCode());
+        hashCode = prime * hashCode + ((getCertificateName() == null) ? 0 : getCertificateName().hashCode());
+        hashCode = prime * hashCode + ((getUseDefaultCertificate() == null) ? 0 : getUseDefaultCertificate().hashCode());
         return hashCode;
     }
 

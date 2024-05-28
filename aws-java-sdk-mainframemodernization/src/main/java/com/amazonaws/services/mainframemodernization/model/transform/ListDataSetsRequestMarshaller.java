@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class ListDataSetsRequestMarshaller {
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("applicationId").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
+    private static final MarshallingInfo<String> NAMEFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nameFilter").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
     private static final MarshallingInfo<String> PREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -54,6 +56,7 @@ public class ListDataSetsRequestMarshaller {
         try {
             protocolMarshaller.marshall(listDataSetsRequest.getApplicationId(), APPLICATIONID_BINDING);
             protocolMarshaller.marshall(listDataSetsRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listDataSetsRequest.getNameFilter(), NAMEFILTER_BINDING);
             protocolMarshaller.marshall(listDataSetsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listDataSetsRequest.getPrefix(), PREFIX_BINDING);
         } catch (Exception e) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,8 +39,8 @@ public class WriteRecordsRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String tableName;
     /**
      * <p>
-     * A record containing the common measure, dimension, time, and version attributes shared across all the records in
-     * the request. The measure and dimension attributes specified will be merged with the measure and dimension
+     * A record that contains the common measure, dimension, time, and version attributes shared across all the records
+     * in the request. The measure and dimension attributes specified will be merged with the measure and dimension
      * attributes in the records object when the data is written into Timestream. Dimensions may not overlap, or a
      * <code>ValidationException</code> will be thrown. In other words, a record must contain dimensions with unique
      * names.
@@ -49,7 +49,7 @@ public class WriteRecordsRequest extends com.amazonaws.AmazonWebServiceRequest i
     private Record commonAttributes;
     /**
      * <p>
-     * An array of records containing the unique measure, dimension, time, and version attributes for each time series
+     * An array of records that contain the unique measure, dimension, time, and version attributes for each time-series
      * data point.
      * </p>
      */
@@ -137,15 +137,15 @@ public class WriteRecordsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A record containing the common measure, dimension, time, and version attributes shared across all the records in
-     * the request. The measure and dimension attributes specified will be merged with the measure and dimension
+     * A record that contains the common measure, dimension, time, and version attributes shared across all the records
+     * in the request. The measure and dimension attributes specified will be merged with the measure and dimension
      * attributes in the records object when the data is written into Timestream. Dimensions may not overlap, or a
      * <code>ValidationException</code> will be thrown. In other words, a record must contain dimensions with unique
      * names.
      * </p>
      * 
      * @param commonAttributes
-     *        A record containing the common measure, dimension, time, and version attributes shared across all the
+     *        A record that contains the common measure, dimension, time, and version attributes shared across all the
      *        records in the request. The measure and dimension attributes specified will be merged with the measure and
      *        dimension attributes in the records object when the data is written into Timestream. Dimensions may not
      *        overlap, or a <code>ValidationException</code> will be thrown. In other words, a record must contain
@@ -158,14 +158,14 @@ public class WriteRecordsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A record containing the common measure, dimension, time, and version attributes shared across all the records in
-     * the request. The measure and dimension attributes specified will be merged with the measure and dimension
+     * A record that contains the common measure, dimension, time, and version attributes shared across all the records
+     * in the request. The measure and dimension attributes specified will be merged with the measure and dimension
      * attributes in the records object when the data is written into Timestream. Dimensions may not overlap, or a
      * <code>ValidationException</code> will be thrown. In other words, a record must contain dimensions with unique
      * names.
      * </p>
      * 
-     * @return A record containing the common measure, dimension, time, and version attributes shared across all the
+     * @return A record that contains the common measure, dimension, time, and version attributes shared across all the
      *         records in the request. The measure and dimension attributes specified will be merged with the measure
      *         and dimension attributes in the records object when the data is written into Timestream. Dimensions may
      *         not overlap, or a <code>ValidationException</code> will be thrown. In other words, a record must contain
@@ -178,15 +178,15 @@ public class WriteRecordsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A record containing the common measure, dimension, time, and version attributes shared across all the records in
-     * the request. The measure and dimension attributes specified will be merged with the measure and dimension
+     * A record that contains the common measure, dimension, time, and version attributes shared across all the records
+     * in the request. The measure and dimension attributes specified will be merged with the measure and dimension
      * attributes in the records object when the data is written into Timestream. Dimensions may not overlap, or a
      * <code>ValidationException</code> will be thrown. In other words, a record must contain dimensions with unique
      * names.
      * </p>
      * 
      * @param commonAttributes
-     *        A record containing the common measure, dimension, time, and version attributes shared across all the
+     *        A record that contains the common measure, dimension, time, and version attributes shared across all the
      *        records in the request. The measure and dimension attributes specified will be merged with the measure and
      *        dimension attributes in the records object when the data is written into Timestream. Dimensions may not
      *        overlap, or a <code>ValidationException</code> will be thrown. In other words, a record must contain
@@ -201,12 +201,12 @@ public class WriteRecordsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * An array of records containing the unique measure, dimension, time, and version attributes for each time series
+     * An array of records that contain the unique measure, dimension, time, and version attributes for each time-series
      * data point.
      * </p>
      * 
-     * @return An array of records containing the unique measure, dimension, time, and version attributes for each time
-     *         series data point.
+     * @return An array of records that contain the unique measure, dimension, time, and version attributes for each
+     *         time-series data point.
      */
 
     public java.util.List<Record> getRecords() {
@@ -215,13 +215,13 @@ public class WriteRecordsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * An array of records containing the unique measure, dimension, time, and version attributes for each time series
+     * An array of records that contain the unique measure, dimension, time, and version attributes for each time-series
      * data point.
      * </p>
      * 
      * @param records
-     *        An array of records containing the unique measure, dimension, time, and version attributes for each time
-     *        series data point.
+     *        An array of records that contain the unique measure, dimension, time, and version attributes for each
+     *        time-series data point.
      */
 
     public void setRecords(java.util.Collection<Record> records) {
@@ -235,7 +235,7 @@ public class WriteRecordsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * An array of records containing the unique measure, dimension, time, and version attributes for each time series
+     * An array of records that contain the unique measure, dimension, time, and version attributes for each time-series
      * data point.
      * </p>
      * <p>
@@ -245,8 +245,8 @@ public class WriteRecordsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param records
-     *        An array of records containing the unique measure, dimension, time, and version attributes for each time
-     *        series data point.
+     *        An array of records that contain the unique measure, dimension, time, and version attributes for each
+     *        time-series data point.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -262,13 +262,13 @@ public class WriteRecordsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * An array of records containing the unique measure, dimension, time, and version attributes for each time series
+     * An array of records that contain the unique measure, dimension, time, and version attributes for each time-series
      * data point.
      * </p>
      * 
      * @param records
-     *        An array of records containing the unique measure, dimension, time, and version attributes for each time
-     *        series data point.
+     *        An array of records that contain the unique measure, dimension, time, and version attributes for each
+     *        time-series data point.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

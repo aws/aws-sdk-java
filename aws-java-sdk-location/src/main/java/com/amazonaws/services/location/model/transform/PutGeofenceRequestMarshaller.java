@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -11,6 +11,8 @@
  * and limitations under the License.
  */
 package com.amazonaws.services.location.model.transform;
+
+import java.util.Map;
 
 import javax.annotation.Generated;
 
@@ -31,6 +33,8 @@ public class PutGeofenceRequestMarshaller {
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("CollectionName").build();
     private static final MarshallingInfo<String> GEOFENCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("GeofenceId").build();
+    private static final MarshallingInfo<Map> GEOFENCEPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GeofenceProperties").build();
     private static final MarshallingInfo<StructuredPojo> GEOMETRY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Geometry").build();
 
@@ -52,6 +56,7 @@ public class PutGeofenceRequestMarshaller {
         try {
             protocolMarshaller.marshall(putGeofenceRequest.getCollectionName(), COLLECTIONNAME_BINDING);
             protocolMarshaller.marshall(putGeofenceRequest.getGeofenceId(), GEOFENCEID_BINDING);
+            protocolMarshaller.marshall(putGeofenceRequest.getGeofenceProperties(), GEOFENCEPROPERTIES_BINDING);
             protocolMarshaller.marshall(putGeofenceRequest.getGeometry(), GEOMETRY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

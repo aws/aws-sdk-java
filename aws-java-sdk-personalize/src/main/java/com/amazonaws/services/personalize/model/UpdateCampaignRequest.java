@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,14 +33,28 @@ public class UpdateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
     private String campaignArn;
     /**
      * <p>
-     * The ARN of a new solution version to deploy.
+     * The Amazon Resource Name (ARN) of a new model to deploy. To specify the latest solution version of your solution,
+     * specify the ARN of your <i>solution</i> in <code>SolutionArn/$LATEST</code> format. You must use this format if
+     * you set <code>syncWithLatestSolutionVersion</code> to <code>True</code> in the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CampaignConfig.html">CampaignConfig</a>.
+     * </p>
+     * <p>
+     * To deploy a model that isn't the latest solution version of your solution, specify the ARN of the solution
+     * version.
+     * </p>
+     * <p>
+     * For more information about automatic campaign updates, see <a href=
+     * "https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update"
+     * >Enabling automatic campaign updates</a>.
      * </p>
      */
     private String solutionVersionArn;
     /**
      * <p>
      * Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize
-     * will support.
+     * will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for
+     * <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the
+     * <code>minProvisionedTPS</code> as necessary.
      * </p>
      */
     private Integer minProvisionedTPS;
@@ -93,11 +107,34 @@ public class UpdateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of a new solution version to deploy.
+     * The Amazon Resource Name (ARN) of a new model to deploy. To specify the latest solution version of your solution,
+     * specify the ARN of your <i>solution</i> in <code>SolutionArn/$LATEST</code> format. You must use this format if
+     * you set <code>syncWithLatestSolutionVersion</code> to <code>True</code> in the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CampaignConfig.html">CampaignConfig</a>.
+     * </p>
+     * <p>
+     * To deploy a model that isn't the latest solution version of your solution, specify the ARN of the solution
+     * version.
+     * </p>
+     * <p>
+     * For more information about automatic campaign updates, see <a href=
+     * "https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update"
+     * >Enabling automatic campaign updates</a>.
      * </p>
      * 
      * @param solutionVersionArn
-     *        The ARN of a new solution version to deploy.
+     *        The Amazon Resource Name (ARN) of a new model to deploy. To specify the latest solution version of your
+     *        solution, specify the ARN of your <i>solution</i> in <code>SolutionArn/$LATEST</code> format. You must use
+     *        this format if you set <code>syncWithLatestSolutionVersion</code> to <code>True</code> in the <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/API_CampaignConfig.html">CampaignConfig</a>. </p>
+     *        <p>
+     *        To deploy a model that isn't the latest solution version of your solution, specify the ARN of the solution
+     *        version.
+     *        </p>
+     *        <p>
+     *        For more information about automatic campaign updates, see <a href=
+     *        "https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update"
+     *        >Enabling automatic campaign updates</a>.
      */
 
     public void setSolutionVersionArn(String solutionVersionArn) {
@@ -106,10 +143,33 @@ public class UpdateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of a new solution version to deploy.
+     * The Amazon Resource Name (ARN) of a new model to deploy. To specify the latest solution version of your solution,
+     * specify the ARN of your <i>solution</i> in <code>SolutionArn/$LATEST</code> format. You must use this format if
+     * you set <code>syncWithLatestSolutionVersion</code> to <code>True</code> in the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CampaignConfig.html">CampaignConfig</a>.
+     * </p>
+     * <p>
+     * To deploy a model that isn't the latest solution version of your solution, specify the ARN of the solution
+     * version.
+     * </p>
+     * <p>
+     * For more information about automatic campaign updates, see <a href=
+     * "https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update"
+     * >Enabling automatic campaign updates</a>.
      * </p>
      * 
-     * @return The ARN of a new solution version to deploy.
+     * @return The Amazon Resource Name (ARN) of a new model to deploy. To specify the latest solution version of your
+     *         solution, specify the ARN of your <i>solution</i> in <code>SolutionArn/$LATEST</code> format. You must
+     *         use this format if you set <code>syncWithLatestSolutionVersion</code> to <code>True</code> in the <a
+     *         href="https://docs.aws.amazon.com/personalize/latest/dg/API_CampaignConfig.html">CampaignConfig</a>. </p>
+     *         <p>
+     *         To deploy a model that isn't the latest solution version of your solution, specify the ARN of the
+     *         solution version.
+     *         </p>
+     *         <p>
+     *         For more information about automatic campaign updates, see <a href=
+     *         "https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update"
+     *         >Enabling automatic campaign updates</a>.
      */
 
     public String getSolutionVersionArn() {
@@ -118,11 +178,34 @@ public class UpdateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of a new solution version to deploy.
+     * The Amazon Resource Name (ARN) of a new model to deploy. To specify the latest solution version of your solution,
+     * specify the ARN of your <i>solution</i> in <code>SolutionArn/$LATEST</code> format. You must use this format if
+     * you set <code>syncWithLatestSolutionVersion</code> to <code>True</code> in the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CampaignConfig.html">CampaignConfig</a>.
+     * </p>
+     * <p>
+     * To deploy a model that isn't the latest solution version of your solution, specify the ARN of the solution
+     * version.
+     * </p>
+     * <p>
+     * For more information about automatic campaign updates, see <a href=
+     * "https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update"
+     * >Enabling automatic campaign updates</a>.
      * </p>
      * 
      * @param solutionVersionArn
-     *        The ARN of a new solution version to deploy.
+     *        The Amazon Resource Name (ARN) of a new model to deploy. To specify the latest solution version of your
+     *        solution, specify the ARN of your <i>solution</i> in <code>SolutionArn/$LATEST</code> format. You must use
+     *        this format if you set <code>syncWithLatestSolutionVersion</code> to <code>True</code> in the <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/API_CampaignConfig.html">CampaignConfig</a>. </p>
+     *        <p>
+     *        To deploy a model that isn't the latest solution version of your solution, specify the ARN of the solution
+     *        version.
+     *        </p>
+     *        <p>
+     *        For more information about automatic campaign updates, see <a href=
+     *        "https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update"
+     *        >Enabling automatic campaign updates</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,12 +217,16 @@ public class UpdateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize
-     * will support.
+     * will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for
+     * <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the
+     * <code>minProvisionedTPS</code> as necessary.
      * </p>
      * 
      * @param minProvisionedTPS
      *        Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon
-     *        Personalize will support.
+     *        Personalize will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend
+     *        starting with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch
+     *        metrics, and increase the <code>minProvisionedTPS</code> as necessary.
      */
 
     public void setMinProvisionedTPS(Integer minProvisionedTPS) {
@@ -149,11 +236,15 @@ public class UpdateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize
-     * will support.
+     * will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for
+     * <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the
+     * <code>minProvisionedTPS</code> as necessary.
      * </p>
      * 
      * @return Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon
-     *         Personalize will support.
+     *         Personalize will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend
+     *         starting with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon
+     *         CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.
      */
 
     public Integer getMinProvisionedTPS() {
@@ -163,12 +254,16 @@ public class UpdateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize
-     * will support.
+     * will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting with 1 for
+     * <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch metrics, and increase the
+     * <code>minProvisionedTPS</code> as necessary.
      * </p>
      * 
      * @param minProvisionedTPS
      *        Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon
-     *        Personalize will support.
+     *        Personalize will support. A high <code>minProvisionedTPS</code> will increase your bill. We recommend
+     *        starting with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon CloudWatch
+     *        metrics, and increase the <code>minProvisionedTPS</code> as necessary.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

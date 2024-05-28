@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,8 @@ public class TimeSeriesSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeSeriesCreationDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> TIMESERIESLASTUPDATEDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeSeriesLastUpdateDate").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> TIMESERIESARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeSeriesArn").build();
 
     private static final TimeSeriesSummaryMarshaller instance = new TimeSeriesSummaryMarshaller();
 
@@ -68,6 +70,7 @@ public class TimeSeriesSummaryMarshaller {
             protocolMarshaller.marshall(timeSeriesSummary.getDataTypeSpec(), DATATYPESPEC_BINDING);
             protocolMarshaller.marshall(timeSeriesSummary.getTimeSeriesCreationDate(), TIMESERIESCREATIONDATE_BINDING);
             protocolMarshaller.marshall(timeSeriesSummary.getTimeSeriesLastUpdateDate(), TIMESERIESLASTUPDATEDATE_BINDING);
+            protocolMarshaller.marshall(timeSeriesSummary.getTimeSeriesArn(), TIMESERIESARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

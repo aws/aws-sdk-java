@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,7 +48,17 @@ public class AbstractAWSLogs implements AWSLogs {
     }
 
     @Override
+    public CreateDeliveryResult createDelivery(CreateDeliveryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateExportTaskResult createExportTask(CreateExportTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateLogAnomalyDetectorResult createLogAnomalyDetector(CreateLogAnomalyDetectorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -63,7 +73,42 @@ public class AbstractAWSLogs implements AWSLogs {
     }
 
     @Override
+    public DeleteAccountPolicyResult deleteAccountPolicy(DeleteAccountPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteDataProtectionPolicyResult deleteDataProtectionPolicy(DeleteDataProtectionPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteDeliveryResult deleteDelivery(DeleteDeliveryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteDeliveryDestinationResult deleteDeliveryDestination(DeleteDeliveryDestinationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteDeliveryDestinationPolicyResult deleteDeliveryDestinationPolicy(DeleteDeliveryDestinationPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteDeliverySourceResult deleteDeliverySource(DeleteDeliverySourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteDestinationResult deleteDestination(DeleteDestinationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteLogAnomalyDetectorResult deleteLogAnomalyDetector(DeleteLogAnomalyDetectorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -99,6 +144,26 @@ public class AbstractAWSLogs implements AWSLogs {
 
     @Override
     public DeleteSubscriptionFilterResult deleteSubscriptionFilter(DeleteSubscriptionFilterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAccountPoliciesResult describeAccountPolicies(DescribeAccountPoliciesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeDeliveriesResult describeDeliveries(DescribeDeliveriesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeDeliveryDestinationsResult describeDeliveryDestinations(DescribeDeliveryDestinationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeDeliverySourcesResult describeDeliverySources(DescribeDeliverySourcesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -168,6 +233,36 @@ public class AbstractAWSLogs implements AWSLogs {
     }
 
     @Override
+    public GetDataProtectionPolicyResult getDataProtectionPolicy(GetDataProtectionPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDeliveryResult getDelivery(GetDeliveryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDeliveryDestinationResult getDeliveryDestination(GetDeliveryDestinationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDeliveryDestinationPolicyResult getDeliveryDestinationPolicy(GetDeliveryDestinationPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDeliverySourceResult getDeliverySource(GetDeliverySourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetLogAnomalyDetectorResult getLogAnomalyDetector(GetLogAnomalyDetectorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetLogEventsResult getLogEvents(GetLogEventsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -188,6 +283,16 @@ public class AbstractAWSLogs implements AWSLogs {
     }
 
     @Override
+    public ListAnomaliesResult listAnomalies(ListAnomaliesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListLogAnomalyDetectorsResult listLogAnomalyDetectors(ListLogAnomalyDetectorsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -195,6 +300,31 @@ public class AbstractAWSLogs implements AWSLogs {
     @Override
     @Deprecated
     public ListTagsLogGroupResult listTagsLogGroup(ListTagsLogGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutAccountPolicyResult putAccountPolicy(PutAccountPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutDataProtectionPolicyResult putDataProtectionPolicy(PutDataProtectionPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutDeliveryDestinationResult putDeliveryDestination(PutDeliveryDestinationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutDeliveryDestinationPolicyResult putDeliveryDestinationPolicy(PutDeliveryDestinationPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutDeliverySourceResult putDeliverySource(PutDeliverySourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -272,6 +402,16 @@ public class AbstractAWSLogs implements AWSLogs {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAnomalyResult updateAnomaly(UpdateAnomalyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateLogAnomalyDetectorResult updateLogAnomalyDetector(UpdateLogAnomalyDetectorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

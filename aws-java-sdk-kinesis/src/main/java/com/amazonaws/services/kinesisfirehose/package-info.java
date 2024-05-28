@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,10 +12,15 @@
  */
 
 /**
- * <fullname>Amazon Kinesis Data Firehose API Reference</fullname>
+ * <fullname>Amazon Data Firehose</fullname> <note>
  * <p>
- * Amazon Kinesis Data Firehose is a fully managed service that delivers real-time streaming data to destinations such
- * as Amazon Simple Storage Service (Amazon S3), Amazon Elasticsearch Service (Amazon ES), Amazon Redshift, and Splunk.
+ * Amazon Data Firehose was previously known as Amazon Kinesis Data Firehose.
+ * </p>
+ * </note>
+ * <p>
+ * Amazon Data Firehose is a fully managed service that delivers real-time streaming data to destinations such as Amazon
+ * Simple Storage Service (Amazon S3), Amazon OpenSearch Service, Amazon Redshift, Splunk, and various other supportd
+ * destinations.
  * </p>
  */
 package com.amazonaws.services.kinesisfirehose;

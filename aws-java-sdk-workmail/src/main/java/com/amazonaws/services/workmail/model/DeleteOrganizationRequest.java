@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,12 @@ public class DeleteOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private Boolean deleteDirectory;
+    /**
+     * <p>
+     * Deletes a WorkMail organization even if the organization has enabled users.
+     * </p>
+     */
+    private Boolean forceDelete;
 
     /**
      * <p>
@@ -177,6 +183,58 @@ public class DeleteOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Deletes a WorkMail organization even if the organization has enabled users.
+     * </p>
+     * 
+     * @param forceDelete
+     *        Deletes a WorkMail organization even if the organization has enabled users.
+     */
+
+    public void setForceDelete(Boolean forceDelete) {
+        this.forceDelete = forceDelete;
+    }
+
+    /**
+     * <p>
+     * Deletes a WorkMail organization even if the organization has enabled users.
+     * </p>
+     * 
+     * @return Deletes a WorkMail organization even if the organization has enabled users.
+     */
+
+    public Boolean getForceDelete() {
+        return this.forceDelete;
+    }
+
+    /**
+     * <p>
+     * Deletes a WorkMail organization even if the organization has enabled users.
+     * </p>
+     * 
+     * @param forceDelete
+     *        Deletes a WorkMail organization even if the organization has enabled users.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteOrganizationRequest withForceDelete(Boolean forceDelete) {
+        setForceDelete(forceDelete);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Deletes a WorkMail organization even if the organization has enabled users.
+     * </p>
+     * 
+     * @return Deletes a WorkMail organization even if the organization has enabled users.
+     */
+
+    public Boolean isForceDelete() {
+        return this.forceDelete;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -193,7 +251,9 @@ public class DeleteOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
         if (getOrganizationId() != null)
             sb.append("OrganizationId: ").append(getOrganizationId()).append(",");
         if (getDeleteDirectory() != null)
-            sb.append("DeleteDirectory: ").append(getDeleteDirectory());
+            sb.append("DeleteDirectory: ").append(getDeleteDirectory()).append(",");
+        if (getForceDelete() != null)
+            sb.append("ForceDelete: ").append(getForceDelete());
         sb.append("}");
         return sb.toString();
     }
@@ -220,6 +280,10 @@ public class DeleteOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getDeleteDirectory() != null && other.getDeleteDirectory().equals(this.getDeleteDirectory()) == false)
             return false;
+        if (other.getForceDelete() == null ^ this.getForceDelete() == null)
+            return false;
+        if (other.getForceDelete() != null && other.getForceDelete().equals(this.getForceDelete()) == false)
+            return false;
         return true;
     }
 
@@ -231,6 +295,7 @@ public class DeleteOrganizationRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getOrganizationId() == null) ? 0 : getOrganizationId().hashCode());
         hashCode = prime * hashCode + ((getDeleteDirectory() == null) ? 0 : getDeleteDirectory().hashCode());
+        hashCode = prime * hashCode + ((getForceDelete() == null) ? 0 : getForceDelete().hashCode());
         return hashCode;
     }
 

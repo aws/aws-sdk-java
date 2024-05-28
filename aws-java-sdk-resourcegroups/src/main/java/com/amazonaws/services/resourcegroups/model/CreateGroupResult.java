@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,7 +47,7 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * The service configuration associated with the resource group. For details about the syntax of a service
      * configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
-     * configurations for resource groups</a>.
+     * configurations for Resource Groups</a>.
      * </p>
      */
     private GroupConfiguration groupConfiguration;
@@ -216,13 +216,13 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * The service configuration associated with the resource group. For details about the syntax of a service
      * configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
-     * configurations for resource groups</a>.
+     * configurations for Resource Groups</a>.
      * </p>
      * 
      * @param groupConfiguration
      *        The service configuration associated with the resource group. For details about the syntax of a service
      *        configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
-     *        configurations for resource groups</a>.
+     *        configurations for Resource Groups</a>.
      */
 
     public void setGroupConfiguration(GroupConfiguration groupConfiguration) {
@@ -233,12 +233,12 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * The service configuration associated with the resource group. For details about the syntax of a service
      * configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
-     * configurations for resource groups</a>.
+     * configurations for Resource Groups</a>.
      * </p>
      * 
      * @return The service configuration associated with the resource group. For details about the syntax of a service
      *         configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
-     *         configurations for resource groups</a>.
+     *         configurations for Resource Groups</a>.
      */
 
     public GroupConfiguration getGroupConfiguration() {
@@ -249,13 +249,13 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * The service configuration associated with the resource group. For details about the syntax of a service
      * configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
-     * configurations for resource groups</a>.
+     * configurations for Resource Groups</a>.
      * </p>
      * 
      * @param groupConfiguration
      *        The service configuration associated with the resource group. For details about the syntax of a service
      *        configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service
-     *        configurations for resource groups</a>.
+     *        configurations for Resource Groups</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

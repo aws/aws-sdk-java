@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,12 @@ public class TemplateError implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String message;
+    /**
+     * <p>
+     * An error path that shows which entities caused the template error.
+     * </p>
+     */
+    private java.util.List<Entity> violatedEntities;
 
     /**
      * <p>
@@ -141,6 +147,76 @@ public class TemplateError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An error path that shows which entities caused the template error.
+     * </p>
+     * 
+     * @return An error path that shows which entities caused the template error.
+     */
+
+    public java.util.List<Entity> getViolatedEntities() {
+        return violatedEntities;
+    }
+
+    /**
+     * <p>
+     * An error path that shows which entities caused the template error.
+     * </p>
+     * 
+     * @param violatedEntities
+     *        An error path that shows which entities caused the template error.
+     */
+
+    public void setViolatedEntities(java.util.Collection<Entity> violatedEntities) {
+        if (violatedEntities == null) {
+            this.violatedEntities = null;
+            return;
+        }
+
+        this.violatedEntities = new java.util.ArrayList<Entity>(violatedEntities);
+    }
+
+    /**
+     * <p>
+     * An error path that shows which entities caused the template error.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setViolatedEntities(java.util.Collection)} or {@link #withViolatedEntities(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param violatedEntities
+     *        An error path that shows which entities caused the template error.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TemplateError withViolatedEntities(Entity... violatedEntities) {
+        if (this.violatedEntities == null) {
+            setViolatedEntities(new java.util.ArrayList<Entity>(violatedEntities.length));
+        }
+        for (Entity ele : violatedEntities) {
+            this.violatedEntities.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An error path that shows which entities caused the template error.
+     * </p>
+     * 
+     * @param violatedEntities
+     *        An error path that shows which entities caused the template error.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TemplateError withViolatedEntities(java.util.Collection<Entity> violatedEntities) {
+        setViolatedEntities(violatedEntities);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -155,7 +231,9 @@ public class TemplateError implements Serializable, Cloneable, StructuredPojo {
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getMessage() != null)
-            sb.append("Message: ").append(getMessage());
+            sb.append("Message: ").append(getMessage()).append(",");
+        if (getViolatedEntities() != null)
+            sb.append("ViolatedEntities: ").append(getViolatedEntities());
         sb.append("}");
         return sb.toString();
     }
@@ -178,6 +256,10 @@ public class TemplateError implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
             return false;
+        if (other.getViolatedEntities() == null ^ this.getViolatedEntities() == null)
+            return false;
+        if (other.getViolatedEntities() != null && other.getViolatedEntities().equals(this.getViolatedEntities()) == false)
+            return false;
         return true;
     }
 
@@ -188,6 +270,7 @@ public class TemplateError implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        hashCode = prime * hashCode + ((getViolatedEntities() == null) ? 0 : getViolatedEntities().hashCode());
         return hashCode;
     }
 

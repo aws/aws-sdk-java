@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,12 @@ public class ExperimentTemplate implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String id;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the experiment template.
+     * </p>
+     */
+    private String arn;
     /**
      * <p>
      * The description for the experiment template.
@@ -88,6 +94,18 @@ public class ExperimentTemplate implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private ExperimentTemplateLogConfiguration logConfiguration;
+    /**
+     * <p>
+     * The experiment options for an experiment template.
+     * </p>
+     */
+    private ExperimentTemplateExperimentOptions experimentOptions;
+    /**
+     * <p>
+     * The count of target account configurations for the experiment template.
+     * </p>
+     */
+    private Long targetAccountConfigurationsCount;
 
     /**
      * <p>
@@ -126,6 +144,46 @@ public class ExperimentTemplate implements Serializable, Cloneable, StructuredPo
 
     public ExperimentTemplate withId(String id) {
         setId(id);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the experiment template.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) of the experiment template.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the experiment template.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the experiment template.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the experiment template.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) of the experiment template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExperimentTemplate withArn(String arn) {
+        setArn(arn);
         return this;
     }
 
@@ -604,6 +662,86 @@ public class ExperimentTemplate implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The experiment options for an experiment template.
+     * </p>
+     * 
+     * @param experimentOptions
+     *        The experiment options for an experiment template.
+     */
+
+    public void setExperimentOptions(ExperimentTemplateExperimentOptions experimentOptions) {
+        this.experimentOptions = experimentOptions;
+    }
+
+    /**
+     * <p>
+     * The experiment options for an experiment template.
+     * </p>
+     * 
+     * @return The experiment options for an experiment template.
+     */
+
+    public ExperimentTemplateExperimentOptions getExperimentOptions() {
+        return this.experimentOptions;
+    }
+
+    /**
+     * <p>
+     * The experiment options for an experiment template.
+     * </p>
+     * 
+     * @param experimentOptions
+     *        The experiment options for an experiment template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExperimentTemplate withExperimentOptions(ExperimentTemplateExperimentOptions experimentOptions) {
+        setExperimentOptions(experimentOptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The count of target account configurations for the experiment template.
+     * </p>
+     * 
+     * @param targetAccountConfigurationsCount
+     *        The count of target account configurations for the experiment template.
+     */
+
+    public void setTargetAccountConfigurationsCount(Long targetAccountConfigurationsCount) {
+        this.targetAccountConfigurationsCount = targetAccountConfigurationsCount;
+    }
+
+    /**
+     * <p>
+     * The count of target account configurations for the experiment template.
+     * </p>
+     * 
+     * @return The count of target account configurations for the experiment template.
+     */
+
+    public Long getTargetAccountConfigurationsCount() {
+        return this.targetAccountConfigurationsCount;
+    }
+
+    /**
+     * <p>
+     * The count of target account configurations for the experiment template.
+     * </p>
+     * 
+     * @param targetAccountConfigurationsCount
+     *        The count of target account configurations for the experiment template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExperimentTemplate withTargetAccountConfigurationsCount(Long targetAccountConfigurationsCount) {
+        setTargetAccountConfigurationsCount(targetAccountConfigurationsCount);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -617,6 +755,8 @@ public class ExperimentTemplate implements Serializable, Cloneable, StructuredPo
         sb.append("{");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getTargets() != null)
@@ -634,7 +774,11 @@ public class ExperimentTemplate implements Serializable, Cloneable, StructuredPo
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getLogConfiguration() != null)
-            sb.append("LogConfiguration: ").append(getLogConfiguration());
+            sb.append("LogConfiguration: ").append(getLogConfiguration()).append(",");
+        if (getExperimentOptions() != null)
+            sb.append("ExperimentOptions: ").append(getExperimentOptions()).append(",");
+        if (getTargetAccountConfigurationsCount() != null)
+            sb.append("TargetAccountConfigurationsCount: ").append(getTargetAccountConfigurationsCount());
         sb.append("}");
         return sb.toString();
     }
@@ -652,6 +796,10 @@ public class ExperimentTemplate implements Serializable, Cloneable, StructuredPo
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
+            return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
@@ -689,6 +837,15 @@ public class ExperimentTemplate implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getLogConfiguration() != null && other.getLogConfiguration().equals(this.getLogConfiguration()) == false)
             return false;
+        if (other.getExperimentOptions() == null ^ this.getExperimentOptions() == null)
+            return false;
+        if (other.getExperimentOptions() != null && other.getExperimentOptions().equals(this.getExperimentOptions()) == false)
+            return false;
+        if (other.getTargetAccountConfigurationsCount() == null ^ this.getTargetAccountConfigurationsCount() == null)
+            return false;
+        if (other.getTargetAccountConfigurationsCount() != null
+                && other.getTargetAccountConfigurationsCount().equals(this.getTargetAccountConfigurationsCount()) == false)
+            return false;
         return true;
     }
 
@@ -698,6 +855,7 @@ public class ExperimentTemplate implements Serializable, Cloneable, StructuredPo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getTargets() == null) ? 0 : getTargets().hashCode());
         hashCode = prime * hashCode + ((getActions() == null) ? 0 : getActions().hashCode());
@@ -707,6 +865,8 @@ public class ExperimentTemplate implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getLogConfiguration() == null) ? 0 : getLogConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getExperimentOptions() == null) ? 0 : getExperimentOptions().hashCode());
+        hashCode = prime * hashCode + ((getTargetAccountConfigurationsCount() == null) ? 0 : getTargetAccountConfigurationsCount().hashCode());
         return hashCode;
     }
 

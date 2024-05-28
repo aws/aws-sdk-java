@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,8 +28,8 @@ import com.amazonaws.services.apigateway.model.*;
  * <fullname>Amazon API Gateway</fullname>
  * <p>
  * Amazon API Gateway helps developers deliver robust, secure, and scalable mobile and web application back ends. API
- * Gateway allows developers to securely connect mobile and web applications to APIs that run on AWS Lambda, Amazon EC2,
- * or other publicly addressable web services that are hosted outside of AWS.
+ * Gateway allows developers to securely connect mobile and web applications to APIs that run on Lambda, Amazon EC2, or
+ * other publicly addressable web services that are hosted outside of AWS.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -3335,7 +3335,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
 
     /**
      * <p>
-     * Changes information about a model.
+     * Changes information about a model. The maximum size of the model is 400 KB.
      * </p>
      * 
      * @param updateModelRequest
@@ -3347,7 +3347,7 @@ public interface AmazonApiGatewayAsync extends AmazonApiGateway {
 
     /**
      * <p>
-     * Changes information about a model.
+     * Changes information about a model. The maximum size of the model is 400 KB.
      * </p>
      * 
      * @param updateModelRequest

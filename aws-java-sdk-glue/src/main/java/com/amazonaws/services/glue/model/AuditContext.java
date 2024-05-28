@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A structure containing information for audit.
+ * A structure containing the Lake Formation audit context.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/AuditContext" target="_top">AWS API
@@ -30,7 +30,7 @@ public class AuditContext implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The context for the audit..
+     * A string containing the additional audit context information.
      * </p>
      */
     private String additionalAuditContext;
@@ -49,11 +49,11 @@ public class AuditContext implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The context for the audit..
+     * A string containing the additional audit context information.
      * </p>
      * 
      * @param additionalAuditContext
-     *        The context for the audit..
+     *        A string containing the additional audit context information.
      */
 
     public void setAdditionalAuditContext(String additionalAuditContext) {
@@ -62,10 +62,10 @@ public class AuditContext implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The context for the audit..
+     * A string containing the additional audit context information.
      * </p>
      * 
-     * @return The context for the audit..
+     * @return A string containing the additional audit context information.
      */
 
     public String getAdditionalAuditContext() {
@@ -74,11 +74,11 @@ public class AuditContext implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The context for the audit..
+     * A string containing the additional audit context information.
      * </p>
      * 
      * @param additionalAuditContext
-     *        The context for the audit..
+     *        A string containing the additional audit context information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,22 @@ public class GetPersonTrackingResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private java.util.List<PersonDetection> persons;
+    /**
+     * <p>
+     * Job identifier for the person tracking operation for which you want to obtain results. The job identifer is
+     * returned by an initial call to StartPersonTracking.
+     * </p>
+     */
+    private String jobId;
+
+    private Video video;
+    /**
+     * <p>
+     * A job identifier specified in the call to StartCelebrityRecognition and returned in the job completion
+     * notification sent to your Amazon Simple Notification Service topic.
+     * </p>
+     */
+    private String jobTag;
 
     /**
      * <p>
@@ -322,6 +338,124 @@ public class GetPersonTrackingResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * Job identifier for the person tracking operation for which you want to obtain results. The job identifer is
+     * returned by an initial call to StartPersonTracking.
+     * </p>
+     * 
+     * @param jobId
+     *        Job identifier for the person tracking operation for which you want to obtain results. The job identifer
+     *        is returned by an initial call to StartPersonTracking.
+     */
+
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
+    }
+
+    /**
+     * <p>
+     * Job identifier for the person tracking operation for which you want to obtain results. The job identifer is
+     * returned by an initial call to StartPersonTracking.
+     * </p>
+     * 
+     * @return Job identifier for the person tracking operation for which you want to obtain results. The job identifer
+     *         is returned by an initial call to StartPersonTracking.
+     */
+
+    public String getJobId() {
+        return this.jobId;
+    }
+
+    /**
+     * <p>
+     * Job identifier for the person tracking operation for which you want to obtain results. The job identifer is
+     * returned by an initial call to StartPersonTracking.
+     * </p>
+     * 
+     * @param jobId
+     *        Job identifier for the person tracking operation for which you want to obtain results. The job identifer
+     *        is returned by an initial call to StartPersonTracking.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPersonTrackingResult withJobId(String jobId) {
+        setJobId(jobId);
+        return this;
+    }
+
+    /**
+     * @param video
+     */
+
+    public void setVideo(Video video) {
+        this.video = video;
+    }
+
+    /**
+     * @return
+     */
+
+    public Video getVideo() {
+        return this.video;
+    }
+
+    /**
+     * @param video
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPersonTrackingResult withVideo(Video video) {
+        setVideo(video);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A job identifier specified in the call to StartCelebrityRecognition and returned in the job completion
+     * notification sent to your Amazon Simple Notification Service topic.
+     * </p>
+     * 
+     * @param jobTag
+     *        A job identifier specified in the call to StartCelebrityRecognition and returned in the job completion
+     *        notification sent to your Amazon Simple Notification Service topic.
+     */
+
+    public void setJobTag(String jobTag) {
+        this.jobTag = jobTag;
+    }
+
+    /**
+     * <p>
+     * A job identifier specified in the call to StartCelebrityRecognition and returned in the job completion
+     * notification sent to your Amazon Simple Notification Service topic.
+     * </p>
+     * 
+     * @return A job identifier specified in the call to StartCelebrityRecognition and returned in the job completion
+     *         notification sent to your Amazon Simple Notification Service topic.
+     */
+
+    public String getJobTag() {
+        return this.jobTag;
+    }
+
+    /**
+     * <p>
+     * A job identifier specified in the call to StartCelebrityRecognition and returned in the job completion
+     * notification sent to your Amazon Simple Notification Service topic.
+     * </p>
+     * 
+     * @param jobTag
+     *        A job identifier specified in the call to StartCelebrityRecognition and returned in the job completion
+     *        notification sent to your Amazon Simple Notification Service topic.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPersonTrackingResult withJobTag(String jobTag) {
+        setJobTag(jobTag);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -342,7 +476,13 @@ public class GetPersonTrackingResult extends com.amazonaws.AmazonWebServiceResul
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getPersons() != null)
-            sb.append("Persons: ").append(getPersons());
+            sb.append("Persons: ").append(getPersons()).append(",");
+        if (getJobId() != null)
+            sb.append("JobId: ").append(getJobId()).append(",");
+        if (getVideo() != null)
+            sb.append("Video: ").append(getVideo()).append(",");
+        if (getJobTag() != null)
+            sb.append("JobTag: ").append(getJobTag());
         sb.append("}");
         return sb.toString();
     }
@@ -377,6 +517,18 @@ public class GetPersonTrackingResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getPersons() != null && other.getPersons().equals(this.getPersons()) == false)
             return false;
+        if (other.getJobId() == null ^ this.getJobId() == null)
+            return false;
+        if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
+            return false;
+        if (other.getVideo() == null ^ this.getVideo() == null)
+            return false;
+        if (other.getVideo() != null && other.getVideo().equals(this.getVideo()) == false)
+            return false;
+        if (other.getJobTag() == null ^ this.getJobTag() == null)
+            return false;
+        if (other.getJobTag() != null && other.getJobTag().equals(this.getJobTag()) == false)
+            return false;
         return true;
     }
 
@@ -390,6 +542,9 @@ public class GetPersonTrackingResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getVideoMetadata() == null) ? 0 : getVideoMetadata().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getPersons() == null) ? 0 : getPersons().hashCode());
+        hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
+        hashCode = prime * hashCode + ((getVideo() == null) ? 0 : getVideo().hashCode());
+        hashCode = prime * hashCode + ((getJobTag() == null) ? 0 : getJobTag().hashCode());
         return hashCode;
     }
 

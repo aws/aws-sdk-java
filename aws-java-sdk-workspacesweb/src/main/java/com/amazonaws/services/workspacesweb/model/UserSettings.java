@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,16 +31,35 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The additional encryption context of the user settings.
+     * </p>
+     */
+    private java.util.Map<String, String> additionalEncryptionContext;
+    /**
+     * <p>
      * A list of web portal ARNs that this user settings is associated with.
      * </p>
      */
     private java.util.List<String> associatedPortalArns;
     /**
      * <p>
+     * The configuration that specifies which cookies should be synchronized from the end user's local browser to the
+     * remote browser.
+     * </p>
+     */
+    private CookieSynchronizationConfiguration cookieSynchronizationConfiguration;
+    /**
+     * <p>
      * Specifies whether the user can copy text from the streaming session to the local device.
      * </p>
      */
     private String copyAllowed;
+    /**
+     * <p>
+     * The customer managed key used to encrypt sensitive information in the user settings.
+     * </p>
+     */
+    private String customerManagedKey;
     /**
      * <p>
      * The amount of time that a streaming session remains active after users disconnect.
@@ -84,6 +103,74 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String userSettingsArn;
+
+    /**
+     * <p>
+     * The additional encryption context of the user settings.
+     * </p>
+     * 
+     * @return The additional encryption context of the user settings.
+     */
+
+    public java.util.Map<String, String> getAdditionalEncryptionContext() {
+        return additionalEncryptionContext;
+    }
+
+    /**
+     * <p>
+     * The additional encryption context of the user settings.
+     * </p>
+     * 
+     * @param additionalEncryptionContext
+     *        The additional encryption context of the user settings.
+     */
+
+    public void setAdditionalEncryptionContext(java.util.Map<String, String> additionalEncryptionContext) {
+        this.additionalEncryptionContext = additionalEncryptionContext;
+    }
+
+    /**
+     * <p>
+     * The additional encryption context of the user settings.
+     * </p>
+     * 
+     * @param additionalEncryptionContext
+     *        The additional encryption context of the user settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserSettings withAdditionalEncryptionContext(java.util.Map<String, String> additionalEncryptionContext) {
+        setAdditionalEncryptionContext(additionalEncryptionContext);
+        return this;
+    }
+
+    /**
+     * Add a single AdditionalEncryptionContext entry
+     *
+     * @see UserSettings#withAdditionalEncryptionContext
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserSettings addAdditionalEncryptionContextEntry(String key, String value) {
+        if (null == this.additionalEncryptionContext) {
+            this.additionalEncryptionContext = new java.util.HashMap<String, String>();
+        }
+        if (this.additionalEncryptionContext.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.additionalEncryptionContext.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into AdditionalEncryptionContext.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserSettings clearAdditionalEncryptionContextEntries() {
+        this.additionalEncryptionContext = null;
+        return this;
+    }
 
     /**
      * <p>
@@ -157,6 +244,52 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The configuration that specifies which cookies should be synchronized from the end user's local browser to the
+     * remote browser.
+     * </p>
+     * 
+     * @param cookieSynchronizationConfiguration
+     *        The configuration that specifies which cookies should be synchronized from the end user's local browser to
+     *        the remote browser.
+     */
+
+    public void setCookieSynchronizationConfiguration(CookieSynchronizationConfiguration cookieSynchronizationConfiguration) {
+        this.cookieSynchronizationConfiguration = cookieSynchronizationConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration that specifies which cookies should be synchronized from the end user's local browser to the
+     * remote browser.
+     * </p>
+     * 
+     * @return The configuration that specifies which cookies should be synchronized from the end user's local browser
+     *         to the remote browser.
+     */
+
+    public CookieSynchronizationConfiguration getCookieSynchronizationConfiguration() {
+        return this.cookieSynchronizationConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration that specifies which cookies should be synchronized from the end user's local browser to the
+     * remote browser.
+     * </p>
+     * 
+     * @param cookieSynchronizationConfiguration
+     *        The configuration that specifies which cookies should be synchronized from the end user's local browser to
+     *        the remote browser.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserSettings withCookieSynchronizationConfiguration(CookieSynchronizationConfiguration cookieSynchronizationConfiguration) {
+        setCookieSynchronizationConfiguration(cookieSynchronizationConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies whether the user can copy text from the streaming session to the local device.
      * </p>
      * 
@@ -211,6 +344,46 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
 
     public UserSettings withCopyAllowed(EnabledType copyAllowed) {
         this.copyAllowed = copyAllowed.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The customer managed key used to encrypt sensitive information in the user settings.
+     * </p>
+     * 
+     * @param customerManagedKey
+     *        The customer managed key used to encrypt sensitive information in the user settings.
+     */
+
+    public void setCustomerManagedKey(String customerManagedKey) {
+        this.customerManagedKey = customerManagedKey;
+    }
+
+    /**
+     * <p>
+     * The customer managed key used to encrypt sensitive information in the user settings.
+     * </p>
+     * 
+     * @return The customer managed key used to encrypt sensitive information in the user settings.
+     */
+
+    public String getCustomerManagedKey() {
+        return this.customerManagedKey;
+    }
+
+    /**
+     * <p>
+     * The customer managed key used to encrypt sensitive information in the user settings.
+     * </p>
+     * 
+     * @param customerManagedKey
+     *        The customer managed key used to encrypt sensitive information in the user settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UserSettings withCustomerManagedKey(String customerManagedKey) {
+        setCustomerManagedKey(customerManagedKey);
         return this;
     }
 
@@ -588,10 +761,16 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAdditionalEncryptionContext() != null)
+            sb.append("AdditionalEncryptionContext: ").append(getAdditionalEncryptionContext()).append(",");
         if (getAssociatedPortalArns() != null)
             sb.append("AssociatedPortalArns: ").append(getAssociatedPortalArns()).append(",");
+        if (getCookieSynchronizationConfiguration() != null)
+            sb.append("CookieSynchronizationConfiguration: ").append("***Sensitive Data Redacted***").append(",");
         if (getCopyAllowed() != null)
             sb.append("CopyAllowed: ").append(getCopyAllowed()).append(",");
+        if (getCustomerManagedKey() != null)
+            sb.append("CustomerManagedKey: ").append(getCustomerManagedKey()).append(",");
         if (getDisconnectTimeoutInMinutes() != null)
             sb.append("DisconnectTimeoutInMinutes: ").append(getDisconnectTimeoutInMinutes()).append(",");
         if (getDownloadAllowed() != null)
@@ -620,13 +799,26 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof UserSettings == false)
             return false;
         UserSettings other = (UserSettings) obj;
+        if (other.getAdditionalEncryptionContext() == null ^ this.getAdditionalEncryptionContext() == null)
+            return false;
+        if (other.getAdditionalEncryptionContext() != null && other.getAdditionalEncryptionContext().equals(this.getAdditionalEncryptionContext()) == false)
+            return false;
         if (other.getAssociatedPortalArns() == null ^ this.getAssociatedPortalArns() == null)
             return false;
         if (other.getAssociatedPortalArns() != null && other.getAssociatedPortalArns().equals(this.getAssociatedPortalArns()) == false)
             return false;
+        if (other.getCookieSynchronizationConfiguration() == null ^ this.getCookieSynchronizationConfiguration() == null)
+            return false;
+        if (other.getCookieSynchronizationConfiguration() != null
+                && other.getCookieSynchronizationConfiguration().equals(this.getCookieSynchronizationConfiguration()) == false)
+            return false;
         if (other.getCopyAllowed() == null ^ this.getCopyAllowed() == null)
             return false;
         if (other.getCopyAllowed() != null && other.getCopyAllowed().equals(this.getCopyAllowed()) == false)
+            return false;
+        if (other.getCustomerManagedKey() == null ^ this.getCustomerManagedKey() == null)
+            return false;
+        if (other.getCustomerManagedKey() != null && other.getCustomerManagedKey().equals(this.getCustomerManagedKey()) == false)
             return false;
         if (other.getDisconnectTimeoutInMinutes() == null ^ this.getDisconnectTimeoutInMinutes() == null)
             return false;
@@ -665,8 +857,11 @@ public class UserSettings implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAdditionalEncryptionContext() == null) ? 0 : getAdditionalEncryptionContext().hashCode());
         hashCode = prime * hashCode + ((getAssociatedPortalArns() == null) ? 0 : getAssociatedPortalArns().hashCode());
+        hashCode = prime * hashCode + ((getCookieSynchronizationConfiguration() == null) ? 0 : getCookieSynchronizationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCopyAllowed() == null) ? 0 : getCopyAllowed().hashCode());
+        hashCode = prime * hashCode + ((getCustomerManagedKey() == null) ? 0 : getCustomerManagedKey().hashCode());
         hashCode = prime * hashCode + ((getDisconnectTimeoutInMinutes() == null) ? 0 : getDisconnectTimeoutInMinutes().hashCode());
         hashCode = prime * hashCode + ((getDownloadAllowed() == null) ? 0 : getDownloadAllowed().hashCode());
         hashCode = prime * hashCode + ((getIdleDisconnectTimeoutInMinutes() == null) ? 0 : getIdleDisconnectTimeoutInMinutes().hashCode());

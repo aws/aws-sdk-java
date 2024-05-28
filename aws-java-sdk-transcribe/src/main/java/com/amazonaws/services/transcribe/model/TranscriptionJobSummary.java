@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -150,6 +150,12 @@ public class TranscriptionJobSummary implements Serializable, Cloneable, Structu
      * </p>
      */
     private java.util.List<LanguageCodeItem> languageCodes;
+    /**
+     * <p>
+     * Indicates whether toxicity detection was enabled for the specified transcription job.
+     * </p>
+     */
+    private java.util.List<ToxicityDetectionSettings> toxicityDetection;
 
     /**
      * <p>
@@ -1081,6 +1087,76 @@ public class TranscriptionJobSummary implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * Indicates whether toxicity detection was enabled for the specified transcription job.
+     * </p>
+     * 
+     * @return Indicates whether toxicity detection was enabled for the specified transcription job.
+     */
+
+    public java.util.List<ToxicityDetectionSettings> getToxicityDetection() {
+        return toxicityDetection;
+    }
+
+    /**
+     * <p>
+     * Indicates whether toxicity detection was enabled for the specified transcription job.
+     * </p>
+     * 
+     * @param toxicityDetection
+     *        Indicates whether toxicity detection was enabled for the specified transcription job.
+     */
+
+    public void setToxicityDetection(java.util.Collection<ToxicityDetectionSettings> toxicityDetection) {
+        if (toxicityDetection == null) {
+            this.toxicityDetection = null;
+            return;
+        }
+
+        this.toxicityDetection = new java.util.ArrayList<ToxicityDetectionSettings>(toxicityDetection);
+    }
+
+    /**
+     * <p>
+     * Indicates whether toxicity detection was enabled for the specified transcription job.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setToxicityDetection(java.util.Collection)} or {@link #withToxicityDetection(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param toxicityDetection
+     *        Indicates whether toxicity detection was enabled for the specified transcription job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TranscriptionJobSummary withToxicityDetection(ToxicityDetectionSettings... toxicityDetection) {
+        if (this.toxicityDetection == null) {
+            setToxicityDetection(new java.util.ArrayList<ToxicityDetectionSettings>(toxicityDetection.length));
+        }
+        for (ToxicityDetectionSettings ele : toxicityDetection) {
+            this.toxicityDetection.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether toxicity detection was enabled for the specified transcription job.
+     * </p>
+     * 
+     * @param toxicityDetection
+     *        Indicates whether toxicity detection was enabled for the specified transcription job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TranscriptionJobSummary withToxicityDetection(java.util.Collection<ToxicityDetectionSettings> toxicityDetection) {
+        setToxicityDetection(toxicityDetection);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1119,7 +1195,9 @@ public class TranscriptionJobSummary implements Serializable, Cloneable, Structu
         if (getIdentifiedLanguageScore() != null)
             sb.append("IdentifiedLanguageScore: ").append(getIdentifiedLanguageScore()).append(",");
         if (getLanguageCodes() != null)
-            sb.append("LanguageCodes: ").append(getLanguageCodes());
+            sb.append("LanguageCodes: ").append(getLanguageCodes()).append(",");
+        if (getToxicityDetection() != null)
+            sb.append("ToxicityDetection: ").append(getToxicityDetection());
         sb.append("}");
         return sb.toString();
     }
@@ -1190,6 +1268,10 @@ public class TranscriptionJobSummary implements Serializable, Cloneable, Structu
             return false;
         if (other.getLanguageCodes() != null && other.getLanguageCodes().equals(this.getLanguageCodes()) == false)
             return false;
+        if (other.getToxicityDetection() == null ^ this.getToxicityDetection() == null)
+            return false;
+        if (other.getToxicityDetection() != null && other.getToxicityDetection().equals(this.getToxicityDetection()) == false)
+            return false;
         return true;
     }
 
@@ -1212,6 +1294,7 @@ public class TranscriptionJobSummary implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getIdentifyMultipleLanguages() == null) ? 0 : getIdentifyMultipleLanguages().hashCode());
         hashCode = prime * hashCode + ((getIdentifiedLanguageScore() == null) ? 0 : getIdentifiedLanguageScore().hashCode());
         hashCode = prime * hashCode + ((getLanguageCodes() == null) ? 0 : getLanguageCodes().hashCode());
+        hashCode = prime * hashCode + ((getToxicityDetection() == null) ? 0 : getToxicityDetection().hashCode());
         return hashCode;
     }
 

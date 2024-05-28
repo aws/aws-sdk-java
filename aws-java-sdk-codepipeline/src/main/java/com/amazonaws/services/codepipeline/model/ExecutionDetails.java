@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class ExecutionDetails implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The system-generated unique ID of this action used to identify this job worker in any external systems, such as
-     * AWS CodeDeploy.
+     * CodeDeploy.
      * </p>
      */
     private String externalExecutionId;
@@ -91,12 +91,12 @@ public class ExecutionDetails implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The system-generated unique ID of this action used to identify this job worker in any external systems, such as
-     * AWS CodeDeploy.
+     * CodeDeploy.
      * </p>
      * 
      * @param externalExecutionId
      *        The system-generated unique ID of this action used to identify this job worker in any external systems,
-     *        such as AWS CodeDeploy.
+     *        such as CodeDeploy.
      */
 
     public void setExternalExecutionId(String externalExecutionId) {
@@ -106,11 +106,11 @@ public class ExecutionDetails implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The system-generated unique ID of this action used to identify this job worker in any external systems, such as
-     * AWS CodeDeploy.
+     * CodeDeploy.
      * </p>
      * 
      * @return The system-generated unique ID of this action used to identify this job worker in any external systems,
-     *         such as AWS CodeDeploy.
+     *         such as CodeDeploy.
      */
 
     public String getExternalExecutionId() {
@@ -120,12 +120,12 @@ public class ExecutionDetails implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The system-generated unique ID of this action used to identify this job worker in any external systems, such as
-     * AWS CodeDeploy.
+     * CodeDeploy.
      * </p>
      * 
      * @param externalExecutionId
      *        The system-generated unique ID of this action used to identify this job worker in any external systems,
-     *        such as AWS CodeDeploy.
+     *        such as CodeDeploy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -79,6 +79,10 @@ public interface AmazonS3Outposts {
      *         The requested resource was not found.
      * @throws ConflictException
      *         There was a conflict with this action, and it could not be completed.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws OutpostOfflineException
+     *         The service link connection to your Outposts home Region is down. Check your connection and try again.
      * @sample AmazonS3Outposts.CreateEndpoint
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/CreateEndpoint" target="_top">AWS API
      *      Documentation</a>
@@ -121,6 +125,10 @@ public interface AmazonS3Outposts {
      *         The requested resource was not found.
      * @throws ValidationException
      *         There was an exception validating this data.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws OutpostOfflineException
+     *         The service link connection to your Outposts home Region is down. Check your connection and try again.
      * @sample AmazonS3Outposts.DeleteEndpoint
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/DeleteEndpoint" target="_top">AWS API
      *      Documentation</a>
@@ -157,11 +165,35 @@ public interface AmazonS3Outposts {
      *         Access was denied for this action.
      * @throws ValidationException
      *         There was an exception validating this data.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
      * @sample AmazonS3Outposts.ListEndpoints
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListEndpoints" target="_top">AWS API
      *      Documentation</a>
      */
     ListEndpointsResult listEndpoints(ListEndpointsRequest listEndpointsRequest);
+
+    /**
+     * <p>
+     * Lists the Outposts with S3 on Outposts capacity for your Amazon Web Services account. Includes S3 on Outposts
+     * that you have access to as the Outposts owner, or as a shared user from Resource Access Manager (RAM).
+     * </p>
+     * 
+     * @param listOutpostsWithS3Request
+     * @return Result of the ListOutpostsWithS3 operation returned by the service.
+     * @throws InternalServerException
+     *         There was an exception with the internal server.
+     * @throws AccessDeniedException
+     *         Access was denied for this action.
+     * @throws ValidationException
+     *         There was an exception validating this data.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonS3Outposts.ListOutpostsWithS3
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListOutpostsWithS3" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListOutpostsWithS3Result listOutpostsWithS3(ListOutpostsWithS3Request listOutpostsWithS3Request);
 
     /**
      * <p>
@@ -194,6 +226,8 @@ public interface AmazonS3Outposts {
      *         Access was denied for this action.
      * @throws ValidationException
      *         There was an exception validating this data.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
      * @sample AmazonS3Outposts.ListSharedEndpoints
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3outposts-2017-07-25/ListSharedEndpoints" target="_top">AWS
      *      API Documentation</a>

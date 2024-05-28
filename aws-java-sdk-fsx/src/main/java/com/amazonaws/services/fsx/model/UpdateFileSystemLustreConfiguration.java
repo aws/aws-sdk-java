@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,12 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
     private String weeklyMaintenanceStartTime;
 
     private String dailyAutomaticBackupStartTime;
-
+    /**
+     * <p>
+     * The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic
+     * backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.
+     * </p>
+     */
     private Integer automaticBackupRetentionDays;
     /**
      * <p>
@@ -75,9 +80,7 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
      * </li>
      * </ul>
      * <p>
-     * The <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems with the
-     * <code>Persistent_2</code> deployment type. Instead, use to update a data repository association on your
-     * <code>Persistent_2</code> file system.
+     * This parameter is not supported for file systems with a data repository association.
      * </p>
      */
     private String autoImportPolicy;
@@ -123,6 +126,31 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
      * </p>
      */
     private LustreRootSquashConfiguration rootSquashConfiguration;
+    /**
+     * <p>
+     * The throughput of an Amazon FSx for Lustre Persistent SSD-based file system, measured in megabytes per second per
+     * tebibyte (MB/s/TiB). You can increase or decrease your file system's throughput. Valid values depend on the
+     * deployment type of the file system, as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>PERSISTENT_1</code> SSD-based deployment types, valid values are 50, 100, and 200 MB/s/TiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>PERSISTENT_2</code> SSD-based deployment types, valid values are 125, 250, 500, and 1000 MB/s/TiB.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-throughput-capacity.html"> Managing throughput
+     * capacity</a>.
+     * </p>
+     */
+    private Integer perUnitStorageThroughput;
 
     /**
      * <p>
@@ -197,7 +225,14 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
     }
 
     /**
+     * <p>
+     * The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic
+     * backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.
+     * </p>
+     * 
      * @param automaticBackupRetentionDays
+     *        The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic
+     *        backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.
      */
 
     public void setAutomaticBackupRetentionDays(Integer automaticBackupRetentionDays) {
@@ -205,7 +240,14 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
     }
 
     /**
-     * @return
+     * <p>
+     * The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic
+     * backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.
+     * </p>
+     * 
+     * @return The number of days to retain automatic backups. Setting this property to <code>0</code> disables
+     *         automatic backups. You can retain automatic backups for a maximum of 90 days. The default is
+     *         <code>0</code>.
      */
 
     public Integer getAutomaticBackupRetentionDays() {
@@ -213,7 +255,14 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
     }
 
     /**
+     * <p>
+     * The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic
+     * backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.
+     * </p>
+     * 
      * @param automaticBackupRetentionDays
+     *        The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic
+     *        backups. You can retain automatic backups for a maximum of 90 days. The default is <code>0</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -258,9 +307,7 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
      * </li>
      * </ul>
      * <p>
-     * The <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems with the
-     * <code>Persistent_2</code> deployment type. Instead, use to update a data repository association on your
-     * <code>Persistent_2</code> file system.
+     * This parameter is not supported for file systems with a data repository association.
      * </p>
      * 
      * @param autoImportPolicy
@@ -298,9 +345,7 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
      *        </li>
      *        </ul>
      *        <p>
-     *        The <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems with the
-     *        <code>Persistent_2</code> deployment type. Instead, use to update a data repository association on your
-     *        <code>Persistent_2</code> file system.
+     *        This parameter is not supported for file systems with a data repository association.
      * @see AutoImportPolicyType
      */
 
@@ -344,9 +389,7 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
      * </li>
      * </ul>
      * <p>
-     * The <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems with the
-     * <code>Persistent_2</code> deployment type. Instead, use to update a data repository association on your
-     * <code>Persistent_2</code> file system.
+     * This parameter is not supported for file systems with a data repository association.
      * </p>
      * 
      * @return (Optional) When you create your file system, your existing S3 objects appear as file and directory
@@ -383,9 +426,7 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
      *         </li>
      *         </ul>
      *         <p>
-     *         The <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems with the
-     *         <code>Persistent_2</code> deployment type. Instead, use to update a data repository association on your
-     *         <code>Persistent_2</code> file system.
+     *         This parameter is not supported for file systems with a data repository association.
      * @see AutoImportPolicyType
      */
 
@@ -429,9 +470,7 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
      * </li>
      * </ul>
      * <p>
-     * The <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems with the
-     * <code>Persistent_2</code> deployment type. Instead, use to update a data repository association on your
-     * <code>Persistent_2</code> file system.
+     * This parameter is not supported for file systems with a data repository association.
      * </p>
      * 
      * @param autoImportPolicy
@@ -469,9 +508,7 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
      *        </li>
      *        </ul>
      *        <p>
-     *        The <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems with the
-     *        <code>Persistent_2</code> deployment type. Instead, use to update a data repository association on your
-     *        <code>Persistent_2</code> file system.
+     *        This parameter is not supported for file systems with a data repository association.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoImportPolicyType
      */
@@ -517,9 +554,7 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
      * </li>
      * </ul>
      * <p>
-     * The <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems with the
-     * <code>Persistent_2</code> deployment type. Instead, use to update a data repository association on your
-     * <code>Persistent_2</code> file system.
+     * This parameter is not supported for file systems with a data repository association.
      * </p>
      * 
      * @param autoImportPolicy
@@ -557,9 +592,7 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
      *        </li>
      *        </ul>
      *        <p>
-     *        The <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems with the
-     *        <code>Persistent_2</code> deployment type. Instead, use to update a data repository association on your
-     *        <code>Persistent_2</code> file system.
+     *        This parameter is not supported for file systems with a data repository association.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoImportPolicyType
      */
@@ -898,6 +931,160 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
     }
 
     /**
+     * <p>
+     * The throughput of an Amazon FSx for Lustre Persistent SSD-based file system, measured in megabytes per second per
+     * tebibyte (MB/s/TiB). You can increase or decrease your file system's throughput. Valid values depend on the
+     * deployment type of the file system, as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>PERSISTENT_1</code> SSD-based deployment types, valid values are 50, 100, and 200 MB/s/TiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>PERSISTENT_2</code> SSD-based deployment types, valid values are 125, 250, 500, and 1000 MB/s/TiB.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-throughput-capacity.html"> Managing throughput
+     * capacity</a>.
+     * </p>
+     * 
+     * @param perUnitStorageThroughput
+     *        The throughput of an Amazon FSx for Lustre Persistent SSD-based file system, measured in megabytes per
+     *        second per tebibyte (MB/s/TiB). You can increase or decrease your file system's throughput. Valid values
+     *        depend on the deployment type of the file system, as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For <code>PERSISTENT_1</code> SSD-based deployment types, valid values are 50, 100, and 200 MB/s/TiB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>PERSISTENT_2</code> SSD-based deployment types, valid values are 125, 250, 500, and 1000
+     *        MB/s/TiB.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-throughput-capacity.html"> Managing
+     *        throughput capacity</a>.
+     */
+
+    public void setPerUnitStorageThroughput(Integer perUnitStorageThroughput) {
+        this.perUnitStorageThroughput = perUnitStorageThroughput;
+    }
+
+    /**
+     * <p>
+     * The throughput of an Amazon FSx for Lustre Persistent SSD-based file system, measured in megabytes per second per
+     * tebibyte (MB/s/TiB). You can increase or decrease your file system's throughput. Valid values depend on the
+     * deployment type of the file system, as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>PERSISTENT_1</code> SSD-based deployment types, valid values are 50, 100, and 200 MB/s/TiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>PERSISTENT_2</code> SSD-based deployment types, valid values are 125, 250, 500, and 1000 MB/s/TiB.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-throughput-capacity.html"> Managing throughput
+     * capacity</a>.
+     * </p>
+     * 
+     * @return The throughput of an Amazon FSx for Lustre Persistent SSD-based file system, measured in megabytes per
+     *         second per tebibyte (MB/s/TiB). You can increase or decrease your file system's throughput. Valid values
+     *         depend on the deployment type of the file system, as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For <code>PERSISTENT_1</code> SSD-based deployment types, valid values are 50, 100, and 200 MB/s/TiB.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For <code>PERSISTENT_2</code> SSD-based deployment types, valid values are 125, 250, 500, and 1000
+     *         MB/s/TiB.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-throughput-capacity.html"> Managing
+     *         throughput capacity</a>.
+     */
+
+    public Integer getPerUnitStorageThroughput() {
+        return this.perUnitStorageThroughput;
+    }
+
+    /**
+     * <p>
+     * The throughput of an Amazon FSx for Lustre Persistent SSD-based file system, measured in megabytes per second per
+     * tebibyte (MB/s/TiB). You can increase or decrease your file system's throughput. Valid values depend on the
+     * deployment type of the file system, as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>PERSISTENT_1</code> SSD-based deployment types, valid values are 50, 100, and 200 MB/s/TiB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>PERSISTENT_2</code> SSD-based deployment types, valid values are 125, 250, 500, and 1000 MB/s/TiB.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-throughput-capacity.html"> Managing throughput
+     * capacity</a>.
+     * </p>
+     * 
+     * @param perUnitStorageThroughput
+     *        The throughput of an Amazon FSx for Lustre Persistent SSD-based file system, measured in megabytes per
+     *        second per tebibyte (MB/s/TiB). You can increase or decrease your file system's throughput. Valid values
+     *        depend on the deployment type of the file system, as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For <code>PERSISTENT_1</code> SSD-based deployment types, valid values are 50, 100, and 200 MB/s/TiB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>PERSISTENT_2</code> SSD-based deployment types, valid values are 125, 250, 500, and 1000
+     *        MB/s/TiB.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-throughput-capacity.html"> Managing
+     *        throughput capacity</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFileSystemLustreConfiguration withPerUnitStorageThroughput(Integer perUnitStorageThroughput) {
+        setPerUnitStorageThroughput(perUnitStorageThroughput);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -922,7 +1109,9 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
         if (getLogConfiguration() != null)
             sb.append("LogConfiguration: ").append(getLogConfiguration()).append(",");
         if (getRootSquashConfiguration() != null)
-            sb.append("RootSquashConfiguration: ").append(getRootSquashConfiguration());
+            sb.append("RootSquashConfiguration: ").append(getRootSquashConfiguration()).append(",");
+        if (getPerUnitStorageThroughput() != null)
+            sb.append("PerUnitStorageThroughput: ").append(getPerUnitStorageThroughput());
         sb.append("}");
         return sb.toString();
     }
@@ -966,6 +1155,10 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
             return false;
         if (other.getRootSquashConfiguration() != null && other.getRootSquashConfiguration().equals(this.getRootSquashConfiguration()) == false)
             return false;
+        if (other.getPerUnitStorageThroughput() == null ^ this.getPerUnitStorageThroughput() == null)
+            return false;
+        if (other.getPerUnitStorageThroughput() != null && other.getPerUnitStorageThroughput().equals(this.getPerUnitStorageThroughput()) == false)
+            return false;
         return true;
     }
 
@@ -981,6 +1174,7 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
         hashCode = prime * hashCode + ((getDataCompressionType() == null) ? 0 : getDataCompressionType().hashCode());
         hashCode = prime * hashCode + ((getLogConfiguration() == null) ? 0 : getLogConfiguration().hashCode());
         hashCode = prime * hashCode + ((getRootSquashConfiguration() == null) ? 0 : getRootSquashConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getPerUnitStorageThroughput() == null) ? 0 : getPerUnitStorageThroughput().hashCode());
         return hashCode;
     }
 

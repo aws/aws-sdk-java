@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,16 @@ public class AbstractAWSAccessAnalyzer implements AWSAccessAnalyzer {
 
     @Override
     public CancelPolicyGenerationResult cancelPolicyGeneration(CancelPolicyGenerationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CheckAccessNotGrantedResult checkAccessNotGranted(CheckAccessNotGrantedRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CheckNoNewAccessResult checkNoNewAccess(CheckNoNewAccessRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -88,6 +98,11 @@ public class AbstractAWSAccessAnalyzer implements AWSAccessAnalyzer {
     }
 
     @Override
+    public GetFindingV2Result getFindingV2(GetFindingV2Request request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetGeneratedPolicyResult getGeneratedPolicy(GetGeneratedPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -119,6 +134,11 @@ public class AbstractAWSAccessAnalyzer implements AWSAccessAnalyzer {
 
     @Override
     public ListFindingsResult listFindings(ListFindingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListFindingsV2Result listFindingsV2(ListFindingsV2Request request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

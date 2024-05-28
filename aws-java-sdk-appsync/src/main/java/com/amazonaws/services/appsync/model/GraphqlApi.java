@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -106,6 +106,91 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private LambdaAuthorizerConfig lambdaAuthorizerConfig;
+    /**
+     * <p>
+     * The DNS records for the API.
+     * </p>
+     */
+    private java.util.Map<String, String> dns;
+    /**
+     * <p>
+     * Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value
+     * is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the
+     * API has been created.
+     * </p>
+     */
+    private String visibility;
+    /**
+     * <p>
+     * The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (
+     * <code>MERGED</code>).
+     * </p>
+     */
+    private String apiType;
+    /**
+     * <p>
+     * The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on
+     * behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code>
+     * to update the merged API endpoint with the source API changes automatically.
+     * </p>
+     */
+    private String mergedApiExecutionRoleArn;
+    /**
+     * <p>
+     * The account owner of the GraphQL API.
+     * </p>
+     */
+    private String owner;
+    /**
+     * <p>
+     * The owner contact information for an API resource.
+     * </p>
+     * <p>
+     * This field accepts any string input with a length of 0 - 256 characters.
+     * </p>
+     */
+    private String ownerContact;
+    /**
+     * <p>
+     * Sets the value of the GraphQL API to enable (<code>ENABLED</code>) or disable (<code>DISABLED</code>)
+     * introspection. If no value is provided, the introspection configuration will be set to <code>ENABLED</code> by
+     * default. This field will produce an error if the operation attempts to use the introspection feature while this
+     * field is disabled.
+     * </p>
+     * <p>
+     * For more information about introspection, see <a href="https://graphql.org/learn/introspection/">GraphQL
+     * introspection</a>.
+     * </p>
+     */
+    private String introspectionConfig;
+    /**
+     * <p>
+     * The maximum depth a query can have in a single request. Depth refers to the amount of nested levels allowed in
+     * the body of query. The default value is <code>0</code> (or unspecified), which indicates there's no depth limit.
+     * If you set a limit, it can be between <code>1</code> and <code>75</code> nested levels. This field will produce a
+     * limit error if the operation falls out of bounds.
+     * </p>
+     * <p>
+     * Note that fields can still be set to nullable or non-nullable. If a non-nullable field produces an error, the
+     * error will be thrown upwards to the first nullable field available.
+     * </p>
+     */
+    private Integer queryDepthLimit;
+    /**
+     * <p>
+     * The maximum number of resolvers that can be invoked in a single request. The default value is <code>0</code> (or
+     * unspecified), which will set the limit to <code>10000</code>. When specified, the limit value can be between
+     * <code>1</code> and <code>10000</code>. This field will produce a limit error if the operation falls out of
+     * bounds.
+     * </p>
+     */
+    private Integer resolverCountLimit;
+    /**
+     * <p>
+     * The <code>enhancedMetricsConfig</code> object.
+     * </p>
+     */
+    private EnhancedMetricsConfig enhancedMetricsConfig;
 
     /**
      * <p>
@@ -745,6 +830,651 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The DNS records for the API.
+     * </p>
+     * 
+     * @return The DNS records for the API.
+     */
+
+    public java.util.Map<String, String> getDns() {
+        return dns;
+    }
+
+    /**
+     * <p>
+     * The DNS records for the API.
+     * </p>
+     * 
+     * @param dns
+     *        The DNS records for the API.
+     */
+
+    public void setDns(java.util.Map<String, String> dns) {
+        this.dns = dns;
+    }
+
+    /**
+     * <p>
+     * The DNS records for the API.
+     * </p>
+     * 
+     * @param dns
+     *        The DNS records for the API.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GraphqlApi withDns(java.util.Map<String, String> dns) {
+        setDns(dns);
+        return this;
+    }
+
+    /**
+     * Add a single Dns entry
+     *
+     * @see GraphqlApi#withDns
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GraphqlApi addDnsEntry(String key, String value) {
+        if (null == this.dns) {
+            this.dns = new java.util.HashMap<String, String>();
+        }
+        if (this.dns.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.dns.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Dns.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GraphqlApi clearDnsEntries() {
+        this.dns = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value
+     * is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the
+     * API has been created.
+     * </p>
+     * 
+     * @param visibility
+     *        Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no
+     *        value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be
+     *        changed once the API has been created.
+     * @see GraphQLApiVisibility
+     */
+
+    public void setVisibility(String visibility) {
+        this.visibility = visibility;
+    }
+
+    /**
+     * <p>
+     * Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value
+     * is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the
+     * API has been created.
+     * </p>
+     * 
+     * @return Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If
+     *         no value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be
+     *         changed once the API has been created.
+     * @see GraphQLApiVisibility
+     */
+
+    public String getVisibility() {
+        return this.visibility;
+    }
+
+    /**
+     * <p>
+     * Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value
+     * is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the
+     * API has been created.
+     * </p>
+     * 
+     * @param visibility
+     *        Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no
+     *        value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be
+     *        changed once the API has been created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see GraphQLApiVisibility
+     */
+
+    public GraphqlApi withVisibility(String visibility) {
+        setVisibility(visibility);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no value
+     * is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be changed once the
+     * API has been created.
+     * </p>
+     * 
+     * @param visibility
+     *        Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>). If no
+     *        value is provided, the visibility will be set to <code>GLOBAL</code> by default. This value cannot be
+     *        changed once the API has been created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see GraphQLApiVisibility
+     */
+
+    public GraphqlApi withVisibility(GraphQLApiVisibility visibility) {
+        this.visibility = visibility.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (
+     * <code>MERGED</code>).
+     * </p>
+     * 
+     * @param apiType
+     *        The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (
+     *        <code>MERGED</code>).
+     * @see GraphQLApiType
+     */
+
+    public void setApiType(String apiType) {
+        this.apiType = apiType;
+    }
+
+    /**
+     * <p>
+     * The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (
+     * <code>MERGED</code>).
+     * </p>
+     * 
+     * @return The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (
+     *         <code>MERGED</code>).
+     * @see GraphQLApiType
+     */
+
+    public String getApiType() {
+        return this.apiType;
+    }
+
+    /**
+     * <p>
+     * The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (
+     * <code>MERGED</code>).
+     * </p>
+     * 
+     * @param apiType
+     *        The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (
+     *        <code>MERGED</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see GraphQLApiType
+     */
+
+    public GraphqlApi withApiType(String apiType) {
+        setApiType(apiType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (
+     * <code>MERGED</code>).
+     * </p>
+     * 
+     * @param apiType
+     *        The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>) or merged API (
+     *        <code>MERGED</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see GraphQLApiType
+     */
+
+    public GraphqlApi withApiType(GraphQLApiType apiType) {
+        this.apiType = apiType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on
+     * behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code>
+     * to update the merged API endpoint with the source API changes automatically.
+     * </p>
+     * 
+     * @param mergedApiExecutionRoleArn
+     *        The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this
+     *        role on behalf of the Merged API to validate access to source APIs at runtime and to prompt the
+     *        <code>AUTO_MERGE</code> to update the merged API endpoint with the source API changes automatically.
+     */
+
+    public void setMergedApiExecutionRoleArn(String mergedApiExecutionRoleArn) {
+        this.mergedApiExecutionRoleArn = mergedApiExecutionRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on
+     * behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code>
+     * to update the merged API endpoint with the source API changes automatically.
+     * </p>
+     * 
+     * @return The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this
+     *         role on behalf of the Merged API to validate access to source APIs at runtime and to prompt the
+     *         <code>AUTO_MERGE</code> to update the merged API endpoint with the source API changes automatically.
+     */
+
+    public String getMergedApiExecutionRoleArn() {
+        return this.mergedApiExecutionRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this role on
+     * behalf of the Merged API to validate access to source APIs at runtime and to prompt the <code>AUTO_MERGE</code>
+     * to update the merged API endpoint with the source API changes automatically.
+     * </p>
+     * 
+     * @param mergedApiExecutionRoleArn
+     *        The Identity and Access Management service role ARN for a merged API. The AppSync service assumes this
+     *        role on behalf of the Merged API to validate access to source APIs at runtime and to prompt the
+     *        <code>AUTO_MERGE</code> to update the merged API endpoint with the source API changes automatically.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GraphqlApi withMergedApiExecutionRoleArn(String mergedApiExecutionRoleArn) {
+        setMergedApiExecutionRoleArn(mergedApiExecutionRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The account owner of the GraphQL API.
+     * </p>
+     * 
+     * @param owner
+     *        The account owner of the GraphQL API.
+     */
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    /**
+     * <p>
+     * The account owner of the GraphQL API.
+     * </p>
+     * 
+     * @return The account owner of the GraphQL API.
+     */
+
+    public String getOwner() {
+        return this.owner;
+    }
+
+    /**
+     * <p>
+     * The account owner of the GraphQL API.
+     * </p>
+     * 
+     * @param owner
+     *        The account owner of the GraphQL API.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GraphqlApi withOwner(String owner) {
+        setOwner(owner);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The owner contact information for an API resource.
+     * </p>
+     * <p>
+     * This field accepts any string input with a length of 0 - 256 characters.
+     * </p>
+     * 
+     * @param ownerContact
+     *        The owner contact information for an API resource.</p>
+     *        <p>
+     *        This field accepts any string input with a length of 0 - 256 characters.
+     */
+
+    public void setOwnerContact(String ownerContact) {
+        this.ownerContact = ownerContact;
+    }
+
+    /**
+     * <p>
+     * The owner contact information for an API resource.
+     * </p>
+     * <p>
+     * This field accepts any string input with a length of 0 - 256 characters.
+     * </p>
+     * 
+     * @return The owner contact information for an API resource.</p>
+     *         <p>
+     *         This field accepts any string input with a length of 0 - 256 characters.
+     */
+
+    public String getOwnerContact() {
+        return this.ownerContact;
+    }
+
+    /**
+     * <p>
+     * The owner contact information for an API resource.
+     * </p>
+     * <p>
+     * This field accepts any string input with a length of 0 - 256 characters.
+     * </p>
+     * 
+     * @param ownerContact
+     *        The owner contact information for an API resource.</p>
+     *        <p>
+     *        This field accepts any string input with a length of 0 - 256 characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GraphqlApi withOwnerContact(String ownerContact) {
+        setOwnerContact(ownerContact);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets the value of the GraphQL API to enable (<code>ENABLED</code>) or disable (<code>DISABLED</code>)
+     * introspection. If no value is provided, the introspection configuration will be set to <code>ENABLED</code> by
+     * default. This field will produce an error if the operation attempts to use the introspection feature while this
+     * field is disabled.
+     * </p>
+     * <p>
+     * For more information about introspection, see <a href="https://graphql.org/learn/introspection/">GraphQL
+     * introspection</a>.
+     * </p>
+     * 
+     * @param introspectionConfig
+     *        Sets the value of the GraphQL API to enable (<code>ENABLED</code>) or disable (<code>DISABLED</code>)
+     *        introspection. If no value is provided, the introspection configuration will be set to
+     *        <code>ENABLED</code> by default. This field will produce an error if the operation attempts to use the
+     *        introspection feature while this field is disabled.</p>
+     *        <p>
+     *        For more information about introspection, see <a href="https://graphql.org/learn/introspection/">GraphQL
+     *        introspection</a>.
+     * @see GraphQLApiIntrospectionConfig
+     */
+
+    public void setIntrospectionConfig(String introspectionConfig) {
+        this.introspectionConfig = introspectionConfig;
+    }
+
+    /**
+     * <p>
+     * Sets the value of the GraphQL API to enable (<code>ENABLED</code>) or disable (<code>DISABLED</code>)
+     * introspection. If no value is provided, the introspection configuration will be set to <code>ENABLED</code> by
+     * default. This field will produce an error if the operation attempts to use the introspection feature while this
+     * field is disabled.
+     * </p>
+     * <p>
+     * For more information about introspection, see <a href="https://graphql.org/learn/introspection/">GraphQL
+     * introspection</a>.
+     * </p>
+     * 
+     * @return Sets the value of the GraphQL API to enable (<code>ENABLED</code>) or disable (<code>DISABLED</code>)
+     *         introspection. If no value is provided, the introspection configuration will be set to
+     *         <code>ENABLED</code> by default. This field will produce an error if the operation attempts to use the
+     *         introspection feature while this field is disabled.</p>
+     *         <p>
+     *         For more information about introspection, see <a href="https://graphql.org/learn/introspection/">GraphQL
+     *         introspection</a>.
+     * @see GraphQLApiIntrospectionConfig
+     */
+
+    public String getIntrospectionConfig() {
+        return this.introspectionConfig;
+    }
+
+    /**
+     * <p>
+     * Sets the value of the GraphQL API to enable (<code>ENABLED</code>) or disable (<code>DISABLED</code>)
+     * introspection. If no value is provided, the introspection configuration will be set to <code>ENABLED</code> by
+     * default. This field will produce an error if the operation attempts to use the introspection feature while this
+     * field is disabled.
+     * </p>
+     * <p>
+     * For more information about introspection, see <a href="https://graphql.org/learn/introspection/">GraphQL
+     * introspection</a>.
+     * </p>
+     * 
+     * @param introspectionConfig
+     *        Sets the value of the GraphQL API to enable (<code>ENABLED</code>) or disable (<code>DISABLED</code>)
+     *        introspection. If no value is provided, the introspection configuration will be set to
+     *        <code>ENABLED</code> by default. This field will produce an error if the operation attempts to use the
+     *        introspection feature while this field is disabled.</p>
+     *        <p>
+     *        For more information about introspection, see <a href="https://graphql.org/learn/introspection/">GraphQL
+     *        introspection</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see GraphQLApiIntrospectionConfig
+     */
+
+    public GraphqlApi withIntrospectionConfig(String introspectionConfig) {
+        setIntrospectionConfig(introspectionConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets the value of the GraphQL API to enable (<code>ENABLED</code>) or disable (<code>DISABLED</code>)
+     * introspection. If no value is provided, the introspection configuration will be set to <code>ENABLED</code> by
+     * default. This field will produce an error if the operation attempts to use the introspection feature while this
+     * field is disabled.
+     * </p>
+     * <p>
+     * For more information about introspection, see <a href="https://graphql.org/learn/introspection/">GraphQL
+     * introspection</a>.
+     * </p>
+     * 
+     * @param introspectionConfig
+     *        Sets the value of the GraphQL API to enable (<code>ENABLED</code>) or disable (<code>DISABLED</code>)
+     *        introspection. If no value is provided, the introspection configuration will be set to
+     *        <code>ENABLED</code> by default. This field will produce an error if the operation attempts to use the
+     *        introspection feature while this field is disabled.</p>
+     *        <p>
+     *        For more information about introspection, see <a href="https://graphql.org/learn/introspection/">GraphQL
+     *        introspection</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see GraphQLApiIntrospectionConfig
+     */
+
+    public GraphqlApi withIntrospectionConfig(GraphQLApiIntrospectionConfig introspectionConfig) {
+        this.introspectionConfig = introspectionConfig.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum depth a query can have in a single request. Depth refers to the amount of nested levels allowed in
+     * the body of query. The default value is <code>0</code> (or unspecified), which indicates there's no depth limit.
+     * If you set a limit, it can be between <code>1</code> and <code>75</code> nested levels. This field will produce a
+     * limit error if the operation falls out of bounds.
+     * </p>
+     * <p>
+     * Note that fields can still be set to nullable or non-nullable. If a non-nullable field produces an error, the
+     * error will be thrown upwards to the first nullable field available.
+     * </p>
+     * 
+     * @param queryDepthLimit
+     *        The maximum depth a query can have in a single request. Depth refers to the amount of nested levels
+     *        allowed in the body of query. The default value is <code>0</code> (or unspecified), which indicates
+     *        there's no depth limit. If you set a limit, it can be between <code>1</code> and <code>75</code> nested
+     *        levels. This field will produce a limit error if the operation falls out of bounds.</p>
+     *        <p>
+     *        Note that fields can still be set to nullable or non-nullable. If a non-nullable field produces an error,
+     *        the error will be thrown upwards to the first nullable field available.
+     */
+
+    public void setQueryDepthLimit(Integer queryDepthLimit) {
+        this.queryDepthLimit = queryDepthLimit;
+    }
+
+    /**
+     * <p>
+     * The maximum depth a query can have in a single request. Depth refers to the amount of nested levels allowed in
+     * the body of query. The default value is <code>0</code> (or unspecified), which indicates there's no depth limit.
+     * If you set a limit, it can be between <code>1</code> and <code>75</code> nested levels. This field will produce a
+     * limit error if the operation falls out of bounds.
+     * </p>
+     * <p>
+     * Note that fields can still be set to nullable or non-nullable. If a non-nullable field produces an error, the
+     * error will be thrown upwards to the first nullable field available.
+     * </p>
+     * 
+     * @return The maximum depth a query can have in a single request. Depth refers to the amount of nested levels
+     *         allowed in the body of query. The default value is <code>0</code> (or unspecified), which indicates
+     *         there's no depth limit. If you set a limit, it can be between <code>1</code> and <code>75</code> nested
+     *         levels. This field will produce a limit error if the operation falls out of bounds.</p>
+     *         <p>
+     *         Note that fields can still be set to nullable or non-nullable. If a non-nullable field produces an error,
+     *         the error will be thrown upwards to the first nullable field available.
+     */
+
+    public Integer getQueryDepthLimit() {
+        return this.queryDepthLimit;
+    }
+
+    /**
+     * <p>
+     * The maximum depth a query can have in a single request. Depth refers to the amount of nested levels allowed in
+     * the body of query. The default value is <code>0</code> (or unspecified), which indicates there's no depth limit.
+     * If you set a limit, it can be between <code>1</code> and <code>75</code> nested levels. This field will produce a
+     * limit error if the operation falls out of bounds.
+     * </p>
+     * <p>
+     * Note that fields can still be set to nullable or non-nullable. If a non-nullable field produces an error, the
+     * error will be thrown upwards to the first nullable field available.
+     * </p>
+     * 
+     * @param queryDepthLimit
+     *        The maximum depth a query can have in a single request. Depth refers to the amount of nested levels
+     *        allowed in the body of query. The default value is <code>0</code> (or unspecified), which indicates
+     *        there's no depth limit. If you set a limit, it can be between <code>1</code> and <code>75</code> nested
+     *        levels. This field will produce a limit error if the operation falls out of bounds.</p>
+     *        <p>
+     *        Note that fields can still be set to nullable or non-nullable. If a non-nullable field produces an error,
+     *        the error will be thrown upwards to the first nullable field available.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GraphqlApi withQueryDepthLimit(Integer queryDepthLimit) {
+        setQueryDepthLimit(queryDepthLimit);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of resolvers that can be invoked in a single request. The default value is <code>0</code> (or
+     * unspecified), which will set the limit to <code>10000</code>. When specified, the limit value can be between
+     * <code>1</code> and <code>10000</code>. This field will produce a limit error if the operation falls out of
+     * bounds.
+     * </p>
+     * 
+     * @param resolverCountLimit
+     *        The maximum number of resolvers that can be invoked in a single request. The default value is
+     *        <code>0</code> (or unspecified), which will set the limit to <code>10000</code>. When specified, the limit
+     *        value can be between <code>1</code> and <code>10000</code>. This field will produce a limit error if the
+     *        operation falls out of bounds.
+     */
+
+    public void setResolverCountLimit(Integer resolverCountLimit) {
+        this.resolverCountLimit = resolverCountLimit;
+    }
+
+    /**
+     * <p>
+     * The maximum number of resolvers that can be invoked in a single request. The default value is <code>0</code> (or
+     * unspecified), which will set the limit to <code>10000</code>. When specified, the limit value can be between
+     * <code>1</code> and <code>10000</code>. This field will produce a limit error if the operation falls out of
+     * bounds.
+     * </p>
+     * 
+     * @return The maximum number of resolvers that can be invoked in a single request. The default value is
+     *         <code>0</code> (or unspecified), which will set the limit to <code>10000</code>. When specified, the
+     *         limit value can be between <code>1</code> and <code>10000</code>. This field will produce a limit error
+     *         if the operation falls out of bounds.
+     */
+
+    public Integer getResolverCountLimit() {
+        return this.resolverCountLimit;
+    }
+
+    /**
+     * <p>
+     * The maximum number of resolvers that can be invoked in a single request. The default value is <code>0</code> (or
+     * unspecified), which will set the limit to <code>10000</code>. When specified, the limit value can be between
+     * <code>1</code> and <code>10000</code>. This field will produce a limit error if the operation falls out of
+     * bounds.
+     * </p>
+     * 
+     * @param resolverCountLimit
+     *        The maximum number of resolvers that can be invoked in a single request. The default value is
+     *        <code>0</code> (or unspecified), which will set the limit to <code>10000</code>. When specified, the limit
+     *        value can be between <code>1</code> and <code>10000</code>. This field will produce a limit error if the
+     *        operation falls out of bounds.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GraphqlApi withResolverCountLimit(Integer resolverCountLimit) {
+        setResolverCountLimit(resolverCountLimit);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The <code>enhancedMetricsConfig</code> object.
+     * </p>
+     * 
+     * @param enhancedMetricsConfig
+     *        The <code>enhancedMetricsConfig</code> object.
+     */
+
+    public void setEnhancedMetricsConfig(EnhancedMetricsConfig enhancedMetricsConfig) {
+        this.enhancedMetricsConfig = enhancedMetricsConfig;
+    }
+
+    /**
+     * <p>
+     * The <code>enhancedMetricsConfig</code> object.
+     * </p>
+     * 
+     * @return The <code>enhancedMetricsConfig</code> object.
+     */
+
+    public EnhancedMetricsConfig getEnhancedMetricsConfig() {
+        return this.enhancedMetricsConfig;
+    }
+
+    /**
+     * <p>
+     * The <code>enhancedMetricsConfig</code> object.
+     * </p>
+     * 
+     * @param enhancedMetricsConfig
+     *        The <code>enhancedMetricsConfig</code> object.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GraphqlApi withEnhancedMetricsConfig(EnhancedMetricsConfig enhancedMetricsConfig) {
+        setEnhancedMetricsConfig(enhancedMetricsConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -781,7 +1511,27 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
         if (getWafWebAclArn() != null)
             sb.append("WafWebAclArn: ").append(getWafWebAclArn()).append(",");
         if (getLambdaAuthorizerConfig() != null)
-            sb.append("LambdaAuthorizerConfig: ").append(getLambdaAuthorizerConfig());
+            sb.append("LambdaAuthorizerConfig: ").append(getLambdaAuthorizerConfig()).append(",");
+        if (getDns() != null)
+            sb.append("Dns: ").append(getDns()).append(",");
+        if (getVisibility() != null)
+            sb.append("Visibility: ").append(getVisibility()).append(",");
+        if (getApiType() != null)
+            sb.append("ApiType: ").append(getApiType()).append(",");
+        if (getMergedApiExecutionRoleArn() != null)
+            sb.append("MergedApiExecutionRoleArn: ").append(getMergedApiExecutionRoleArn()).append(",");
+        if (getOwner() != null)
+            sb.append("Owner: ").append(getOwner()).append(",");
+        if (getOwnerContact() != null)
+            sb.append("OwnerContact: ").append(getOwnerContact()).append(",");
+        if (getIntrospectionConfig() != null)
+            sb.append("IntrospectionConfig: ").append(getIntrospectionConfig()).append(",");
+        if (getQueryDepthLimit() != null)
+            sb.append("QueryDepthLimit: ").append(getQueryDepthLimit()).append(",");
+        if (getResolverCountLimit() != null)
+            sb.append("ResolverCountLimit: ").append(getResolverCountLimit()).append(",");
+        if (getEnhancedMetricsConfig() != null)
+            sb.append("EnhancedMetricsConfig: ").append(getEnhancedMetricsConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -849,6 +1599,46 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLambdaAuthorizerConfig() != null && other.getLambdaAuthorizerConfig().equals(this.getLambdaAuthorizerConfig()) == false)
             return false;
+        if (other.getDns() == null ^ this.getDns() == null)
+            return false;
+        if (other.getDns() != null && other.getDns().equals(this.getDns()) == false)
+            return false;
+        if (other.getVisibility() == null ^ this.getVisibility() == null)
+            return false;
+        if (other.getVisibility() != null && other.getVisibility().equals(this.getVisibility()) == false)
+            return false;
+        if (other.getApiType() == null ^ this.getApiType() == null)
+            return false;
+        if (other.getApiType() != null && other.getApiType().equals(this.getApiType()) == false)
+            return false;
+        if (other.getMergedApiExecutionRoleArn() == null ^ this.getMergedApiExecutionRoleArn() == null)
+            return false;
+        if (other.getMergedApiExecutionRoleArn() != null && other.getMergedApiExecutionRoleArn().equals(this.getMergedApiExecutionRoleArn()) == false)
+            return false;
+        if (other.getOwner() == null ^ this.getOwner() == null)
+            return false;
+        if (other.getOwner() != null && other.getOwner().equals(this.getOwner()) == false)
+            return false;
+        if (other.getOwnerContact() == null ^ this.getOwnerContact() == null)
+            return false;
+        if (other.getOwnerContact() != null && other.getOwnerContact().equals(this.getOwnerContact()) == false)
+            return false;
+        if (other.getIntrospectionConfig() == null ^ this.getIntrospectionConfig() == null)
+            return false;
+        if (other.getIntrospectionConfig() != null && other.getIntrospectionConfig().equals(this.getIntrospectionConfig()) == false)
+            return false;
+        if (other.getQueryDepthLimit() == null ^ this.getQueryDepthLimit() == null)
+            return false;
+        if (other.getQueryDepthLimit() != null && other.getQueryDepthLimit().equals(this.getQueryDepthLimit()) == false)
+            return false;
+        if (other.getResolverCountLimit() == null ^ this.getResolverCountLimit() == null)
+            return false;
+        if (other.getResolverCountLimit() != null && other.getResolverCountLimit().equals(this.getResolverCountLimit()) == false)
+            return false;
+        if (other.getEnhancedMetricsConfig() == null ^ this.getEnhancedMetricsConfig() == null)
+            return false;
+        if (other.getEnhancedMetricsConfig() != null && other.getEnhancedMetricsConfig().equals(this.getEnhancedMetricsConfig()) == false)
+            return false;
         return true;
     }
 
@@ -870,6 +1660,16 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getXrayEnabled() == null) ? 0 : getXrayEnabled().hashCode());
         hashCode = prime * hashCode + ((getWafWebAclArn() == null) ? 0 : getWafWebAclArn().hashCode());
         hashCode = prime * hashCode + ((getLambdaAuthorizerConfig() == null) ? 0 : getLambdaAuthorizerConfig().hashCode());
+        hashCode = prime * hashCode + ((getDns() == null) ? 0 : getDns().hashCode());
+        hashCode = prime * hashCode + ((getVisibility() == null) ? 0 : getVisibility().hashCode());
+        hashCode = prime * hashCode + ((getApiType() == null) ? 0 : getApiType().hashCode());
+        hashCode = prime * hashCode + ((getMergedApiExecutionRoleArn() == null) ? 0 : getMergedApiExecutionRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
+        hashCode = prime * hashCode + ((getOwnerContact() == null) ? 0 : getOwnerContact().hashCode());
+        hashCode = prime * hashCode + ((getIntrospectionConfig() == null) ? 0 : getIntrospectionConfig().hashCode());
+        hashCode = prime * hashCode + ((getQueryDepthLimit() == null) ? 0 : getQueryDepthLimit().hashCode());
+        hashCode = prime * hashCode + ((getResolverCountLimit() == null) ? 0 : getResolverCountLimit().hashCode());
+        hashCode = prime * hashCode + ((getEnhancedMetricsConfig() == null) ? 0 : getEnhancedMetricsConfig().hashCode());
         return hashCode;
     }
 

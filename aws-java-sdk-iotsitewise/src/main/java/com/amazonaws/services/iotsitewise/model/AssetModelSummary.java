@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class AssetModelSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the asset model (used with IoT SiteWise APIs).
+     * The ID of the asset model (used with IoT SiteWise API operations).
      * </p>
      */
     private String id;
@@ -74,14 +74,42 @@ public class AssetModelSummary implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private AssetModelStatus status;
+    /**
+     * <p>
+     * The type of asset model.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String assetModelType;
+    /**
+     * <p>
+     * The external ID of the asset model. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     */
+    private String externalId;
 
     /**
      * <p>
-     * The ID of the asset model (used with IoT SiteWise APIs).
+     * The ID of the asset model (used with IoT SiteWise API operations).
      * </p>
      * 
      * @param id
-     *        The ID of the asset model (used with IoT SiteWise APIs).
+     *        The ID of the asset model (used with IoT SiteWise API operations).
      */
 
     public void setId(String id) {
@@ -90,10 +118,10 @@ public class AssetModelSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the asset model (used with IoT SiteWise APIs).
+     * The ID of the asset model (used with IoT SiteWise API operations).
      * </p>
      * 
-     * @return The ID of the asset model (used with IoT SiteWise APIs).
+     * @return The ID of the asset model (used with IoT SiteWise API operations).
      */
 
     public String getId() {
@@ -102,11 +130,11 @@ public class AssetModelSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the asset model (used with IoT SiteWise APIs).
+     * The ID of the asset model (used with IoT SiteWise API operations).
      * </p>
      * 
      * @param id
-     *        The ID of the asset model (used with IoT SiteWise APIs).
+     *        The ID of the asset model (used with IoT SiteWise API operations).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -377,6 +405,225 @@ public class AssetModelSummary implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The type of asset model.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param assetModelType
+     *        The type of asset model.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a
+     *        component in another asset model.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset
+     *        models. You can't create assets directly from this type of asset model.
+     *        </p>
+     *        </li>
+     * @see AssetModelType
+     */
+
+    public void setAssetModelType(String assetModelType) {
+        this.assetModelType = assetModelType;
+    }
+
+    /**
+     * <p>
+     * The type of asset model.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The type of asset model.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a
+     *         component in another asset model.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset
+     *         models. You can't create assets directly from this type of asset model.
+     *         </p>
+     *         </li>
+     * @see AssetModelType
+     */
+
+    public String getAssetModelType() {
+        return this.assetModelType;
+    }
+
+    /**
+     * <p>
+     * The type of asset model.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param assetModelType
+     *        The type of asset model.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a
+     *        component in another asset model.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset
+     *        models. You can't create assets directly from this type of asset model.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssetModelType
+     */
+
+    public AssetModelSummary withAssetModelType(String assetModelType) {
+        setAssetModelType(assetModelType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of asset model.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a component
+     * in another asset model.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset models.
+     * You can't create assets directly from this type of asset model.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param assetModelType
+     *        The type of asset model.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>ASSET_MODEL</b> – (default) An asset model that you can use to create assets. Can't be included as a
+     *        component in another asset model.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>COMPONENT_MODEL</b> – A reusable component that you can include in the composite models of other asset
+     *        models. You can't create assets directly from this type of asset model.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AssetModelType
+     */
+
+    public AssetModelSummary withAssetModelType(AssetModelType assetModelType) {
+        this.assetModelType = assetModelType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The external ID of the asset model. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param externalId
+     *        The external ID of the asset model. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *        external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     */
+
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
+    }
+
+    /**
+     * <p>
+     * The external ID of the asset model. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @return The external ID of the asset model. For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *         external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     */
+
+    public String getExternalId() {
+        return this.externalId;
+    }
+
+    /**
+     * <p>
+     * The external ID of the asset model. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using external
+     * IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * </p>
+     * 
+     * @param externalId
+     *        The external ID of the asset model. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     *        external IDs</a> in the <i>IoT SiteWise User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetModelSummary withExternalId(String externalId) {
+        setExternalId(externalId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -401,7 +648,11 @@ public class AssetModelSummary implements Serializable, Cloneable, StructuredPoj
         if (getLastUpdateDate() != null)
             sb.append("LastUpdateDate: ").append(getLastUpdateDate()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getAssetModelType() != null)
+            sb.append("AssetModelType: ").append(getAssetModelType()).append(",");
+        if (getExternalId() != null)
+            sb.append("ExternalId: ").append(getExternalId());
         sb.append("}");
         return sb.toString();
     }
@@ -444,6 +695,14 @@ public class AssetModelSummary implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getAssetModelType() == null ^ this.getAssetModelType() == null)
+            return false;
+        if (other.getAssetModelType() != null && other.getAssetModelType().equals(this.getAssetModelType()) == false)
+            return false;
+        if (other.getExternalId() == null ^ this.getExternalId() == null)
+            return false;
+        if (other.getExternalId() != null && other.getExternalId().equals(this.getExternalId()) == false)
+            return false;
         return true;
     }
 
@@ -459,6 +718,8 @@ public class AssetModelSummary implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         hashCode = prime * hashCode + ((getLastUpdateDate() == null) ? 0 : getLastUpdateDate().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getAssetModelType() == null) ? 0 : getAssetModelType().hashCode());
+        hashCode = prime * hashCode + ((getExternalId() == null) ? 0 : getExternalId().hashCode());
         return hashCode;
     }
 

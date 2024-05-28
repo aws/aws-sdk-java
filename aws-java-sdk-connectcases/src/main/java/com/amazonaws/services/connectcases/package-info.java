@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -13,14 +13,12 @@
 
 /**
  * <p>
- * Welcome to the Amazon Connect Cases API Reference. This guide provides information about the Amazon Connect Cases
- * API, which you can use to create, update, get, and list Cases domains, fields, field options, layouts, templates,
- * cases, related items, and tags.
+ * With Amazon Connect Cases, your agents can track and manage customer issues that require multiple interactions,
+ * follow-up tasks, and teams in your contact center. A case represents a customer issue. It records the issue, the
+ * steps and interactions taken to resolve the issue, and the outcome. For more information, see <a
+ * href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Amazon Connect Cases</a> in the <i>Amazon
+ * Connect Administrator Guide</i>.
  * </p>
- * 
- * <pre>
- * <code> &lt;p&gt;For more information about Amazon Connect Cases, see &lt;a href=&quot;https://docs.aws.amazon.com/connect/latest/adminguide/cases.html&quot;&gt;Amazon Connect Cases&lt;/a&gt; in the &lt;i&gt;Amazon Connect Administrator Guide&lt;/i&gt;. &lt;/p&gt; </code>
- * </pre>
  */
 package com.amazonaws.services.connectcases;
 

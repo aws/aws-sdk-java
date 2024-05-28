@@ -1,0 +1,598 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.omics.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+import com.amazonaws.protocol.StructuredPojo;
+import com.amazonaws.protocol.ProtocolMarshaller;
+
+/**
+ * <p>
+ * A filter for read sets.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ReadSetFilter" target="_top">AWS API
+ *      Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class ReadSetFilter implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * A name to filter on.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
+     * A status to filter on.
+     * </p>
+     */
+    private String status;
+    /**
+     * <p>
+     * A genome reference ARN to filter on.
+     * </p>
+     */
+    private String referenceArn;
+    /**
+     * <p>
+     * The filter's start date.
+     * </p>
+     */
+    private java.util.Date createdAfter;
+    /**
+     * <p>
+     * The filter's end date.
+     * </p>
+     */
+    private java.util.Date createdBefore;
+    /**
+     * <p>
+     * The read set source's sample ID.
+     * </p>
+     */
+    private String sampleId;
+    /**
+     * <p>
+     * The read set source's subject ID.
+     * </p>
+     */
+    private String subjectId;
+    /**
+     * <p>
+     * Where the source originated.
+     * </p>
+     */
+    private String generatedFrom;
+    /**
+     * <p>
+     * The creation type of the read set.
+     * </p>
+     */
+    private String creationType;
+
+    /**
+     * <p>
+     * A name to filter on.
+     * </p>
+     * 
+     * @param name
+     *        A name to filter on.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * A name to filter on.
+     * </p>
+     * 
+     * @return A name to filter on.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * A name to filter on.
+     * </p>
+     * 
+     * @param name
+     *        A name to filter on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReadSetFilter withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A status to filter on.
+     * </p>
+     * 
+     * @param status
+     *        A status to filter on.
+     * @see ReadSetStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * A status to filter on.
+     * </p>
+     * 
+     * @return A status to filter on.
+     * @see ReadSetStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * A status to filter on.
+     * </p>
+     * 
+     * @param status
+     *        A status to filter on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReadSetStatus
+     */
+
+    public ReadSetFilter withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A status to filter on.
+     * </p>
+     * 
+     * @param status
+     *        A status to filter on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReadSetStatus
+     */
+
+    public ReadSetFilter withStatus(ReadSetStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A genome reference ARN to filter on.
+     * </p>
+     * 
+     * @param referenceArn
+     *        A genome reference ARN to filter on.
+     */
+
+    public void setReferenceArn(String referenceArn) {
+        this.referenceArn = referenceArn;
+    }
+
+    /**
+     * <p>
+     * A genome reference ARN to filter on.
+     * </p>
+     * 
+     * @return A genome reference ARN to filter on.
+     */
+
+    public String getReferenceArn() {
+        return this.referenceArn;
+    }
+
+    /**
+     * <p>
+     * A genome reference ARN to filter on.
+     * </p>
+     * 
+     * @param referenceArn
+     *        A genome reference ARN to filter on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReadSetFilter withReferenceArn(String referenceArn) {
+        setReferenceArn(referenceArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The filter's start date.
+     * </p>
+     * 
+     * @param createdAfter
+     *        The filter's start date.
+     */
+
+    public void setCreatedAfter(java.util.Date createdAfter) {
+        this.createdAfter = createdAfter;
+    }
+
+    /**
+     * <p>
+     * The filter's start date.
+     * </p>
+     * 
+     * @return The filter's start date.
+     */
+
+    public java.util.Date getCreatedAfter() {
+        return this.createdAfter;
+    }
+
+    /**
+     * <p>
+     * The filter's start date.
+     * </p>
+     * 
+     * @param createdAfter
+     *        The filter's start date.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReadSetFilter withCreatedAfter(java.util.Date createdAfter) {
+        setCreatedAfter(createdAfter);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The filter's end date.
+     * </p>
+     * 
+     * @param createdBefore
+     *        The filter's end date.
+     */
+
+    public void setCreatedBefore(java.util.Date createdBefore) {
+        this.createdBefore = createdBefore;
+    }
+
+    /**
+     * <p>
+     * The filter's end date.
+     * </p>
+     * 
+     * @return The filter's end date.
+     */
+
+    public java.util.Date getCreatedBefore() {
+        return this.createdBefore;
+    }
+
+    /**
+     * <p>
+     * The filter's end date.
+     * </p>
+     * 
+     * @param createdBefore
+     *        The filter's end date.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReadSetFilter withCreatedBefore(java.util.Date createdBefore) {
+        setCreatedBefore(createdBefore);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The read set source's sample ID.
+     * </p>
+     * 
+     * @param sampleId
+     *        The read set source's sample ID.
+     */
+
+    public void setSampleId(String sampleId) {
+        this.sampleId = sampleId;
+    }
+
+    /**
+     * <p>
+     * The read set source's sample ID.
+     * </p>
+     * 
+     * @return The read set source's sample ID.
+     */
+
+    public String getSampleId() {
+        return this.sampleId;
+    }
+
+    /**
+     * <p>
+     * The read set source's sample ID.
+     * </p>
+     * 
+     * @param sampleId
+     *        The read set source's sample ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReadSetFilter withSampleId(String sampleId) {
+        setSampleId(sampleId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The read set source's subject ID.
+     * </p>
+     * 
+     * @param subjectId
+     *        The read set source's subject ID.
+     */
+
+    public void setSubjectId(String subjectId) {
+        this.subjectId = subjectId;
+    }
+
+    /**
+     * <p>
+     * The read set source's subject ID.
+     * </p>
+     * 
+     * @return The read set source's subject ID.
+     */
+
+    public String getSubjectId() {
+        return this.subjectId;
+    }
+
+    /**
+     * <p>
+     * The read set source's subject ID.
+     * </p>
+     * 
+     * @param subjectId
+     *        The read set source's subject ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReadSetFilter withSubjectId(String subjectId) {
+        setSubjectId(subjectId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Where the source originated.
+     * </p>
+     * 
+     * @param generatedFrom
+     *        Where the source originated.
+     */
+
+    public void setGeneratedFrom(String generatedFrom) {
+        this.generatedFrom = generatedFrom;
+    }
+
+    /**
+     * <p>
+     * Where the source originated.
+     * </p>
+     * 
+     * @return Where the source originated.
+     */
+
+    public String getGeneratedFrom() {
+        return this.generatedFrom;
+    }
+
+    /**
+     * <p>
+     * Where the source originated.
+     * </p>
+     * 
+     * @param generatedFrom
+     *        Where the source originated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReadSetFilter withGeneratedFrom(String generatedFrom) {
+        setGeneratedFrom(generatedFrom);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The creation type of the read set.
+     * </p>
+     * 
+     * @param creationType
+     *        The creation type of the read set.
+     * @see CreationType
+     */
+
+    public void setCreationType(String creationType) {
+        this.creationType = creationType;
+    }
+
+    /**
+     * <p>
+     * The creation type of the read set.
+     * </p>
+     * 
+     * @return The creation type of the read set.
+     * @see CreationType
+     */
+
+    public String getCreationType() {
+        return this.creationType;
+    }
+
+    /**
+     * <p>
+     * The creation type of the read set.
+     * </p>
+     * 
+     * @param creationType
+     *        The creation type of the read set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CreationType
+     */
+
+    public ReadSetFilter withCreationType(String creationType) {
+        setCreationType(creationType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The creation type of the read set.
+     * </p>
+     * 
+     * @param creationType
+     *        The creation type of the read set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CreationType
+     */
+
+    public ReadSetFilter withCreationType(CreationType creationType) {
+        this.creationType = creationType.toString();
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getReferenceArn() != null)
+            sb.append("ReferenceArn: ").append(getReferenceArn()).append(",");
+        if (getCreatedAfter() != null)
+            sb.append("CreatedAfter: ").append(getCreatedAfter()).append(",");
+        if (getCreatedBefore() != null)
+            sb.append("CreatedBefore: ").append(getCreatedBefore()).append(",");
+        if (getSampleId() != null)
+            sb.append("SampleId: ").append(getSampleId()).append(",");
+        if (getSubjectId() != null)
+            sb.append("SubjectId: ").append(getSubjectId()).append(",");
+        if (getGeneratedFrom() != null)
+            sb.append("GeneratedFrom: ").append(getGeneratedFrom()).append(",");
+        if (getCreationType() != null)
+            sb.append("CreationType: ").append(getCreationType());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof ReadSetFilter == false)
+            return false;
+        ReadSetFilter other = (ReadSetFilter) obj;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getReferenceArn() == null ^ this.getReferenceArn() == null)
+            return false;
+        if (other.getReferenceArn() != null && other.getReferenceArn().equals(this.getReferenceArn()) == false)
+            return false;
+        if (other.getCreatedAfter() == null ^ this.getCreatedAfter() == null)
+            return false;
+        if (other.getCreatedAfter() != null && other.getCreatedAfter().equals(this.getCreatedAfter()) == false)
+            return false;
+        if (other.getCreatedBefore() == null ^ this.getCreatedBefore() == null)
+            return false;
+        if (other.getCreatedBefore() != null && other.getCreatedBefore().equals(this.getCreatedBefore()) == false)
+            return false;
+        if (other.getSampleId() == null ^ this.getSampleId() == null)
+            return false;
+        if (other.getSampleId() != null && other.getSampleId().equals(this.getSampleId()) == false)
+            return false;
+        if (other.getSubjectId() == null ^ this.getSubjectId() == null)
+            return false;
+        if (other.getSubjectId() != null && other.getSubjectId().equals(this.getSubjectId()) == false)
+            return false;
+        if (other.getGeneratedFrom() == null ^ this.getGeneratedFrom() == null)
+            return false;
+        if (other.getGeneratedFrom() != null && other.getGeneratedFrom().equals(this.getGeneratedFrom()) == false)
+            return false;
+        if (other.getCreationType() == null ^ this.getCreationType() == null)
+            return false;
+        if (other.getCreationType() != null && other.getCreationType().equals(this.getCreationType()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getReferenceArn() == null) ? 0 : getReferenceArn().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAfter() == null) ? 0 : getCreatedAfter().hashCode());
+        hashCode = prime * hashCode + ((getCreatedBefore() == null) ? 0 : getCreatedBefore().hashCode());
+        hashCode = prime * hashCode + ((getSampleId() == null) ? 0 : getSampleId().hashCode());
+        hashCode = prime * hashCode + ((getSubjectId() == null) ? 0 : getSubjectId().hashCode());
+        hashCode = prime * hashCode + ((getGeneratedFrom() == null) ? 0 : getGeneratedFrom().hashCode());
+        hashCode = prime * hashCode + ((getCreationType() == null) ? 0 : getCreationType().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public ReadSetFilter clone() {
+        try {
+            return (ReadSetFilter) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    @Override
+    public void marshall(ProtocolMarshaller protocolMarshaller) {
+        com.amazonaws.services.omics.model.transform.ReadSetFilterMarshaller.getInstance().marshall(this, protocolMarshaller);
+    }
+}

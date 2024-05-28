@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class CustomDetection implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the custom data identifier.
+     * The unique identifier for the custom data identifier.
      * </p>
      */
     private String arn;
@@ -57,11 +57,11 @@ public class CustomDetection implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the custom data identifier.
+     * The unique identifier for the custom data identifier.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the custom data identifier.
+     *        The unique identifier for the custom data identifier.
      */
 
     public void setArn(String arn) {
@@ -70,10 +70,10 @@ public class CustomDetection implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the custom data identifier.
+     * The unique identifier for the custom data identifier.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the custom data identifier.
+     * @return The unique identifier for the custom data identifier.
      */
 
     public String getArn() {
@@ -82,11 +82,11 @@ public class CustomDetection implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the custom data identifier.
+     * The unique identifier for the custom data identifier.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the custom data identifier.
+     *        The unique identifier for the custom data identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

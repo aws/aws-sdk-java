@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,28 +20,27 @@ public class DescribeProjectVersionsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of model descriptions. The list is sorted by the creation date and time of the model versions, latest to
-     * earliest.
+     * A list of project version descriptions. The list is sorted by the creation date and time of the project versions,
+     * latest to earliest.
      * </p>
      */
     private java.util.List<ProjectVersionDescription> projectVersionDescriptions;
     /**
      * <p>
-     * If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom
-     * Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of
-     * results.
+     * If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition returns a
+     * pagination token in the response. You can use this pagination token to retrieve the next set of results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A list of model descriptions. The list is sorted by the creation date and time of the model versions, latest to
-     * earliest.
+     * A list of project version descriptions. The list is sorted by the creation date and time of the project versions,
+     * latest to earliest.
      * </p>
      * 
-     * @return A list of model descriptions. The list is sorted by the creation date and time of the model versions,
-     *         latest to earliest.
+     * @return A list of project version descriptions. The list is sorted by the creation date and time of the project
+     *         versions, latest to earliest.
      */
 
     public java.util.List<ProjectVersionDescription> getProjectVersionDescriptions() {
@@ -50,13 +49,13 @@ public class DescribeProjectVersionsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of model descriptions. The list is sorted by the creation date and time of the model versions, latest to
-     * earliest.
+     * A list of project version descriptions. The list is sorted by the creation date and time of the project versions,
+     * latest to earliest.
      * </p>
      * 
      * @param projectVersionDescriptions
-     *        A list of model descriptions. The list is sorted by the creation date and time of the model versions,
-     *        latest to earliest.
+     *        A list of project version descriptions. The list is sorted by the creation date and time of the project
+     *        versions, latest to earliest.
      */
 
     public void setProjectVersionDescriptions(java.util.Collection<ProjectVersionDescription> projectVersionDescriptions) {
@@ -70,8 +69,8 @@ public class DescribeProjectVersionsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of model descriptions. The list is sorted by the creation date and time of the model versions, latest to
-     * earliest.
+     * A list of project version descriptions. The list is sorted by the creation date and time of the project versions,
+     * latest to earliest.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -80,8 +79,8 @@ public class DescribeProjectVersionsResult extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param projectVersionDescriptions
-     *        A list of model descriptions. The list is sorted by the creation date and time of the model versions,
-     *        latest to earliest.
+     *        A list of project version descriptions. The list is sorted by the creation date and time of the project
+     *        versions, latest to earliest.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,13 +96,13 @@ public class DescribeProjectVersionsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of model descriptions. The list is sorted by the creation date and time of the model versions, latest to
-     * earliest.
+     * A list of project version descriptions. The list is sorted by the creation date and time of the project versions,
+     * latest to earliest.
      * </p>
      * 
      * @param projectVersionDescriptions
-     *        A list of model descriptions. The list is sorted by the creation date and time of the model versions,
-     *        latest to earliest.
+     *        A list of project version descriptions. The list is sorted by the creation date and time of the project
+     *        versions, latest to earliest.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,15 +113,14 @@ public class DescribeProjectVersionsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom
-     * Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of
-     * results.
+     * If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition returns a
+     * pagination token in the response. You can use this pagination token to retrieve the next set of results.
      * </p>
      * 
      * @param nextToken
      *        If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition
-     *        Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve
-     *        the next set of results.
+     *        returns a pagination token in the response. You can use this pagination token to retrieve the next set of
+     *        results.
      */
 
     public void setNextToken(String nextToken) {
@@ -131,14 +129,13 @@ public class DescribeProjectVersionsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom
-     * Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of
-     * results.
+     * If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition returns a
+     * pagination token in the response. You can use this pagination token to retrieve the next set of results.
      * </p>
      * 
      * @return If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition
-     *         Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve
-     *         the next set of results.
+     *         returns a pagination token in the response. You can use this pagination token to retrieve the next set of
+     *         results.
      */
 
     public String getNextToken() {
@@ -147,15 +144,14 @@ public class DescribeProjectVersionsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom
-     * Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of
-     * results.
+     * If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition returns a
+     * pagination token in the response. You can use this pagination token to retrieve the next set of results.
      * </p>
      * 
      * @param nextToken
      *        If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition
-     *        Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve
-     *        the next set of results.
+     *        returns a pagination token in the response. You can use this pagination token to retrieve the next set of
+     *        results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

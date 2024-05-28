@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -151,6 +151,56 @@ public interface AWSSSMContacts {
 
     /**
      * <p>
+     * Creates a rotation in an on-call schedule.
+     * </p>
+     * 
+     * @param createRotationRequest
+     * @return Result of the CreateRotation operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this operation.
+     * @throws InternalServerException
+     *         Unexpected error occurred while processing the request.
+     * @throws ResourceNotFoundException
+     *         Request references a resource that doesn't exist.
+     * @throws ServiceQuotaExceededException
+     *         Request would cause a service quota to be exceeded.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AWSSSMContacts.CreateRotation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/CreateRotation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateRotationResult createRotation(CreateRotationRequest createRotationRequest);
+
+    /**
+     * <p>
+     * Creates an override for a rotation in an on-call schedule.
+     * </p>
+     * 
+     * @param createRotationOverrideRequest
+     * @return Result of the CreateRotationOverride operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this operation.
+     * @throws InternalServerException
+     *         Unexpected error occurred while processing the request.
+     * @throws ResourceNotFoundException
+     *         Request references a resource that doesn't exist.
+     * @throws ServiceQuotaExceededException
+     *         Request would cause a service quota to be exceeded.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AWSSSMContacts.CreateRotationOverride
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/CreateRotationOverride"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateRotationOverrideResult createRotationOverride(CreateRotationOverrideRequest createRotationOverrideRequest);
+
+    /**
+     * <p>
      * To no longer receive Incident Manager engagements to a contact channel, you can deactivate the channel.
      * </p>
      * 
@@ -189,6 +239,8 @@ public interface AWSSSMContacts {
      *         Request references a resource that doesn't exist.
      * @throws ThrottlingException
      *         The request was denied due to request throttling.
+     * @throws ConflictException
+     *         Updating or deleting a resource causes an inconsistent state.
      * @throws ValidationException
      *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @sample AWSSSMContacts.DeleteContact
@@ -221,6 +273,55 @@ public interface AWSSSMContacts {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteContactChannelResult deleteContactChannel(DeleteContactChannelRequest deleteContactChannelRequest);
+
+    /**
+     * <p>
+     * Deletes a rotation from the system. If a rotation belongs to more than one on-call schedule, this operation
+     * deletes it from all of them.
+     * </p>
+     * 
+     * @param deleteRotationRequest
+     * @return Result of the DeleteRotation operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this operation.
+     * @throws ConflictException
+     *         Updating or deleting a resource causes an inconsistent state.
+     * @throws InternalServerException
+     *         Unexpected error occurred while processing the request.
+     * @throws ResourceNotFoundException
+     *         Request references a resource that doesn't exist.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AWSSSMContacts.DeleteRotation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/DeleteRotation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteRotationResult deleteRotation(DeleteRotationRequest deleteRotationRequest);
+
+    /**
+     * <p>
+     * Deletes an existing override for an on-call rotation.
+     * </p>
+     * 
+     * @param deleteRotationOverrideRequest
+     * @return Result of the DeleteRotationOverride operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this operation.
+     * @throws InternalServerException
+     *         Unexpected error occurred while processing the request.
+     * @throws ResourceNotFoundException
+     *         Request references a resource that doesn't exist.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AWSSSMContacts.DeleteRotationOverride
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/DeleteRotationOverride"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteRotationOverrideResult deleteRotationOverride(DeleteRotationOverrideRequest deleteRotationOverrideRequest);
 
     /**
      * <p>
@@ -348,6 +449,52 @@ public interface AWSSSMContacts {
 
     /**
      * <p>
+     * Retrieves information about an on-call rotation.
+     * </p>
+     * 
+     * @param getRotationRequest
+     * @return Result of the GetRotation operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this operation.
+     * @throws InternalServerException
+     *         Unexpected error occurred while processing the request.
+     * @throws ResourceNotFoundException
+     *         Request references a resource that doesn't exist.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AWSSSMContacts.GetRotation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/GetRotation" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetRotationResult getRotation(GetRotationRequest getRotationRequest);
+
+    /**
+     * <p>
+     * Retrieves information about an override to an on-call rotation.
+     * </p>
+     * 
+     * @param getRotationOverrideRequest
+     * @return Result of the GetRotationOverride operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this operation.
+     * @throws InternalServerException
+     *         Unexpected error occurred while processing the request.
+     * @throws ResourceNotFoundException
+     *         Request references a resource that doesn't exist.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AWSSSMContacts.GetRotationOverride
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/GetRotationOverride"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetRotationOverrideResult getRotationOverride(GetRotationOverrideRequest getRotationOverrideRequest);
+
+    /**
+     * <p>
      * Lists all contact channels for the specified contact.
      * </p>
      * 
@@ -438,6 +585,32 @@ public interface AWSSSMContacts {
 
     /**
      * <p>
+     * Returns the resolution path of an engagement. For example, the escalation plan engaged in an incident might
+     * target an on-call schedule that includes several contacts in a rotation, but just one contact on-call when the
+     * incident starts. The resolution path indicates the hierarchy of <i>escalation plan &gt; on-call schedule &gt;
+     * contact</i>.
+     * </p>
+     * 
+     * @param listPageResolutionsRequest
+     * @return Result of the ListPageResolutions operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this operation.
+     * @throws InternalServerException
+     *         Unexpected error occurred while processing the request.
+     * @throws ResourceNotFoundException
+     *         Request references a resource that doesn't exist.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AWSSSMContacts.ListPageResolutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListPageResolutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListPageResolutionsResult listPageResolutions(ListPageResolutionsRequest listPageResolutionsRequest);
+
+    /**
+     * <p>
      * Lists the engagements to a contact's contact channels.
      * </p>
      * 
@@ -481,6 +654,104 @@ public interface AWSSSMContacts {
      *      target="_top">AWS API Documentation</a>
      */
     ListPagesByEngagementResult listPagesByEngagement(ListPagesByEngagementRequest listPagesByEngagementRequest);
+
+    /**
+     * <p>
+     * Returns a list of shifts based on rotation configuration parameters.
+     * </p>
+     * <note>
+     * <p>
+     * The Incident Manager primarily uses this operation to populate the <b>Preview</b> calendar. It is not typically
+     * run by end users.
+     * </p>
+     * </note>
+     * 
+     * @param listPreviewRotationShiftsRequest
+     * @return Result of the ListPreviewRotationShifts operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this operation.
+     * @throws InternalServerException
+     *         Unexpected error occurred while processing the request.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AWSSSMContacts.ListPreviewRotationShifts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListPreviewRotationShifts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListPreviewRotationShiftsResult listPreviewRotationShifts(ListPreviewRotationShiftsRequest listPreviewRotationShiftsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of overrides currently specified for an on-call rotation.
+     * </p>
+     * 
+     * @param listRotationOverridesRequest
+     * @return Result of the ListRotationOverrides operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this operation.
+     * @throws InternalServerException
+     *         Unexpected error occurred while processing the request.
+     * @throws ResourceNotFoundException
+     *         Request references a resource that doesn't exist.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AWSSSMContacts.ListRotationOverrides
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListRotationOverrides"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListRotationOverridesResult listRotationOverrides(ListRotationOverridesRequest listRotationOverridesRequest);
+
+    /**
+     * <p>
+     * Returns a list of shifts generated by an existing rotation in the system.
+     * </p>
+     * 
+     * @param listRotationShiftsRequest
+     * @return Result of the ListRotationShifts operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this operation.
+     * @throws ConflictException
+     *         Updating or deleting a resource causes an inconsistent state.
+     * @throws InternalServerException
+     *         Unexpected error occurred while processing the request.
+     * @throws ResourceNotFoundException
+     *         Request references a resource that doesn't exist.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AWSSSMContacts.ListRotationShifts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListRotationShifts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListRotationShiftsResult listRotationShifts(ListRotationShiftsRequest listRotationShiftsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of on-call rotations.
+     * </p>
+     * 
+     * @param listRotationsRequest
+     * @return Result of the ListRotations operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this operation.
+     * @throws InternalServerException
+     *         Unexpected error occurred while processing the request.
+     * @throws ResourceNotFoundException
+     *         Request references a resource that doesn't exist.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AWSSSMContacts.ListRotations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListRotations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListRotationsResult listRotations(ListRotationsRequest listRotationsRequest);
 
     /**
      * <p>
@@ -714,6 +985,31 @@ public interface AWSSSMContacts {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateContactChannelResult updateContactChannel(UpdateContactChannelRequest updateContactChannelRequest);
+
+    /**
+     * <p>
+     * Updates the information specified for an on-call rotation.
+     * </p>
+     * 
+     * @param updateRotationRequest
+     * @return Result of the UpdateRotation operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this operation.
+     * @throws ConflictException
+     *         Updating or deleting a resource causes an inconsistent state.
+     * @throws InternalServerException
+     *         Unexpected error occurred while processing the request.
+     * @throws ResourceNotFoundException
+     *         Request references a resource that doesn't exist.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AWSSSMContacts.UpdateRotation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/UpdateRotation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateRotationResult updateRotation(UpdateRotationRequest updateRotationRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

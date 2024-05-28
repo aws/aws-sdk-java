@@ -1,0 +1,90 @@
+/*
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.mgn.model.transform;
+
+import java.util.Map;
+
+import javax.annotation.Generated;
+
+import com.amazonaws.SdkClientException;
+import com.amazonaws.services.mgn.model.*;
+
+import com.amazonaws.protocol.*;
+import com.amazonaws.annotation.SdkInternalApi;
+
+/**
+ * SourceServerActionDocumentMarshaller
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+@SdkInternalApi
+public class SourceServerActionDocumentMarshaller {
+
+    private static final MarshallingInfo<String> ACTIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("actionID").build();
+    private static final MarshallingInfo<String> ACTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("actionName").build();
+    private static final MarshallingInfo<Boolean> ACTIVE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("active").build();
+    private static final MarshallingInfo<String> CATEGORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("category").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<String> DOCUMENTIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("documentIdentifier").build();
+    private static final MarshallingInfo<String> DOCUMENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("documentVersion").build();
+    private static final MarshallingInfo<Map> EXTERNALPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("externalParameters").build();
+    private static final MarshallingInfo<Boolean> MUSTSUCCEEDFORCUTOVER_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mustSucceedForCutover").build();
+    private static final MarshallingInfo<Integer> ORDER_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("order").build();
+    private static final MarshallingInfo<Map> PARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("parameters").build();
+    private static final MarshallingInfo<Integer> TIMEOUTSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeoutSeconds").build();
+
+    private static final SourceServerActionDocumentMarshaller instance = new SourceServerActionDocumentMarshaller();
+
+    public static SourceServerActionDocumentMarshaller getInstance() {
+        return instance;
+    }
+
+    /**
+     * Marshall the given parameter object.
+     */
+    public void marshall(SourceServerActionDocument sourceServerActionDocument, ProtocolMarshaller protocolMarshaller) {
+
+        if (sourceServerActionDocument == null) {
+            throw new SdkClientException("Invalid argument passed to marshall(...)");
+        }
+
+        try {
+            protocolMarshaller.marshall(sourceServerActionDocument.getActionID(), ACTIONID_BINDING);
+            protocolMarshaller.marshall(sourceServerActionDocument.getActionName(), ACTIONNAME_BINDING);
+            protocolMarshaller.marshall(sourceServerActionDocument.getActive(), ACTIVE_BINDING);
+            protocolMarshaller.marshall(sourceServerActionDocument.getCategory(), CATEGORY_BINDING);
+            protocolMarshaller.marshall(sourceServerActionDocument.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(sourceServerActionDocument.getDocumentIdentifier(), DOCUMENTIDENTIFIER_BINDING);
+            protocolMarshaller.marshall(sourceServerActionDocument.getDocumentVersion(), DOCUMENTVERSION_BINDING);
+            protocolMarshaller.marshall(sourceServerActionDocument.getExternalParameters(), EXTERNALPARAMETERS_BINDING);
+            protocolMarshaller.marshall(sourceServerActionDocument.getMustSucceedForCutover(), MUSTSUCCEEDFORCUTOVER_BINDING);
+            protocolMarshaller.marshall(sourceServerActionDocument.getOrder(), ORDER_BINDING);
+            protocolMarshaller.marshall(sourceServerActionDocument.getParameters(), PARAMETERS_BINDING);
+            protocolMarshaller.marshall(sourceServerActionDocument.getTimeoutSeconds(), TIMEOUTSECONDS_BINDING);
+        } catch (Exception e) {
+            throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
+        }
+    }
+
+}

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,7 +57,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then
      * only consolidated billing functionality is available. For more information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html"
-     * >Enabling All Features in Your Organization</a> in the <i>Organizations User Guide</i>.
+     * >Enabling all features in your organization</a> in the <i>Organizations User Guide</i>.
      * </p>
      */
     private String featureSet;
@@ -240,7 +240,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then
      * only consolidated billing functionality is available. For more information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html"
-     * >Enabling All Features in Your Organization</a> in the <i>Organizations User Guide</i>.
+     * >Enabling all features in your organization</a> in the <i>Organizations User Guide</i>.
      * </p>
      * 
      * @param featureSet
@@ -249,7 +249,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      *        "CONSOLIDATED_BILLING", then only consolidated billing functionality is available. For more information,
      *        see <a href=
      *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html"
-     *        >Enabling All Features in Your Organization</a> in the <i>Organizations User Guide</i>.
+     *        >Enabling all features in your organization</a> in the <i>Organizations User Guide</i>.
      * @see OrganizationFeatureSet
      */
 
@@ -263,7 +263,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then
      * only consolidated billing functionality is available. For more information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html"
-     * >Enabling All Features in Your Organization</a> in the <i>Organizations User Guide</i>.
+     * >Enabling all features in your organization</a> in the <i>Organizations User Guide</i>.
      * </p>
      * 
      * @return Specifies the functionality that currently is available to the organization. If set to "ALL", then all
@@ -271,7 +271,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      *         "CONSOLIDATED_BILLING", then only consolidated billing functionality is available. For more information,
      *         see <a href=
      *         "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html"
-     *         >Enabling All Features in Your Organization</a> in the <i>Organizations User Guide</i>.
+     *         >Enabling all features in your organization</a> in the <i>Organizations User Guide</i>.
      * @see OrganizationFeatureSet
      */
 
@@ -285,7 +285,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then
      * only consolidated billing functionality is available. For more information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html"
-     * >Enabling All Features in Your Organization</a> in the <i>Organizations User Guide</i>.
+     * >Enabling all features in your organization</a> in the <i>Organizations User Guide</i>.
      * </p>
      * 
      * @param featureSet
@@ -294,7 +294,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      *        "CONSOLIDATED_BILLING", then only consolidated billing functionality is available. For more information,
      *        see <a href=
      *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html"
-     *        >Enabling All Features in Your Organization</a> in the <i>Organizations User Guide</i>.
+     *        >Enabling all features in your organization</a> in the <i>Organizations User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrganizationFeatureSet
      */
@@ -310,7 +310,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then
      * only consolidated billing functionality is available. For more information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html"
-     * >Enabling All Features in Your Organization</a> in the <i>Organizations User Guide</i>.
+     * >Enabling all features in your organization</a> in the <i>Organizations User Guide</i>.
      * </p>
      * 
      * @param featureSet
@@ -319,7 +319,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      *        "CONSOLIDATED_BILLING", then only consolidated billing functionality is available. For more information,
      *        see <a href=
      *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html"
-     *        >Enabling All Features in Your Organization</a> in the <i>Organizations User Guide</i>.
+     *        >Enabling all features in your organization</a> in the <i>Organizations User Guide</i>.
      * @see OrganizationFeatureSet
      */
 
@@ -333,7 +333,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then
      * only consolidated billing functionality is available. For more information, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html"
-     * >Enabling All Features in Your Organization</a> in the <i>Organizations User Guide</i>.
+     * >Enabling all features in your organization</a> in the <i>Organizations User Guide</i>.
      * </p>
      * 
      * @param featureSet
@@ -342,7 +342,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      *        "CONSOLIDATED_BILLING", then only consolidated billing functionality is available. For more information,
      *        see <a href=
      *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html"
-     *        >Enabling All Features in Your Organization</a> in the <i>Organizations User Guide</i>.
+     *        >Enabling all features in your organization</a> in the <i>Organizations User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrganizationFeatureSet
      */

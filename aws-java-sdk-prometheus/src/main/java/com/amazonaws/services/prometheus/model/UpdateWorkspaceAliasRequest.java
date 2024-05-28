@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input of an UpdateWorkspaceAlias operation.
+ * Represents the input of an <code>UpdateWorkspaceAlias</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/UpdateWorkspaceAlias" target="_top">AWS API
@@ -30,30 +30,41 @@ public class UpdateWorkspaceAliasRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The new alias of the workspace.
+     * The new alias for the workspace. It does not need to be unique.
+     * </p>
+     * <p>
+     * Amazon Managed Service for Prometheus will automatically strip any blank spaces from the beginning and end of the
+     * alias that you specify.
      * </p>
      */
     private String alias;
     /**
      * <p>
-     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      * </p>
      */
     private String clientToken;
     /**
      * <p>
-     * The ID of the workspace being updated.
+     * The ID of the workspace to update.
      * </p>
      */
     private String workspaceId;
 
     /**
      * <p>
-     * The new alias of the workspace.
+     * The new alias for the workspace. It does not need to be unique.
+     * </p>
+     * <p>
+     * Amazon Managed Service for Prometheus will automatically strip any blank spaces from the beginning and end of the
+     * alias that you specify.
      * </p>
      * 
      * @param alias
-     *        The new alias of the workspace.
+     *        The new alias for the workspace. It does not need to be unique.</p>
+     *        <p>
+     *        Amazon Managed Service for Prometheus will automatically strip any blank spaces from the beginning and end
+     *        of the alias that you specify.
      */
 
     public void setAlias(String alias) {
@@ -62,10 +73,17 @@ public class UpdateWorkspaceAliasRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The new alias of the workspace.
+     * The new alias for the workspace. It does not need to be unique.
+     * </p>
+     * <p>
+     * Amazon Managed Service for Prometheus will automatically strip any blank spaces from the beginning and end of the
+     * alias that you specify.
      * </p>
      * 
-     * @return The new alias of the workspace.
+     * @return The new alias for the workspace. It does not need to be unique.</p>
+     *         <p>
+     *         Amazon Managed Service for Prometheus will automatically strip any blank spaces from the beginning and
+     *         end of the alias that you specify.
      */
 
     public String getAlias() {
@@ -74,11 +92,18 @@ public class UpdateWorkspaceAliasRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The new alias of the workspace.
+     * The new alias for the workspace. It does not need to be unique.
+     * </p>
+     * <p>
+     * Amazon Managed Service for Prometheus will automatically strip any blank spaces from the beginning and end of the
+     * alias that you specify.
      * </p>
      * 
      * @param alias
-     *        The new alias of the workspace.
+     *        The new alias for the workspace. It does not need to be unique.</p>
+     *        <p>
+     *        Amazon Managed Service for Prometheus will automatically strip any blank spaces from the beginning and end
+     *        of the alias that you specify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +114,11 @@ public class UpdateWorkspaceAliasRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      * </p>
      * 
      * @param clientToken
-     *        Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     *        A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      */
 
     public void setClientToken(String clientToken) {
@@ -102,10 +127,10 @@ public class UpdateWorkspaceAliasRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      * </p>
      * 
-     * @return Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * @return A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      */
 
     public String getClientToken() {
@@ -114,11 +139,11 @@ public class UpdateWorkspaceAliasRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     * A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      * </p>
      * 
      * @param clientToken
-     *        Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
+     *        A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +154,11 @@ public class UpdateWorkspaceAliasRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the workspace being updated.
+     * The ID of the workspace to update.
      * </p>
      * 
      * @param workspaceId
-     *        The ID of the workspace being updated.
+     *        The ID of the workspace to update.
      */
 
     public void setWorkspaceId(String workspaceId) {
@@ -142,10 +167,10 @@ public class UpdateWorkspaceAliasRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the workspace being updated.
+     * The ID of the workspace to update.
      * </p>
      * 
-     * @return The ID of the workspace being updated.
+     * @return The ID of the workspace to update.
      */
 
     public String getWorkspaceId() {
@@ -154,11 +179,11 @@ public class UpdateWorkspaceAliasRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the workspace being updated.
+     * The ID of the workspace to update.
      * </p>
      * 
      * @param workspaceId
-     *        The ID of the workspace being updated.
+     *        The ID of the workspace to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

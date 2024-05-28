@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,6 +61,23 @@ public class ComplianceJsonUnmarshaller implements Unmarshaller<Compliance, Json
                 if (context.testExpression("StatusReasons", targetDepth)) {
                     context.nextToken();
                     compliance.setStatusReasons(new ListUnmarshaller<StatusReason>(StatusReasonJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("SecurityControlId", targetDepth)) {
+                    context.nextToken();
+                    compliance.setSecurityControlId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AssociatedStandards", targetDepth)) {
+                    context.nextToken();
+                    compliance.setAssociatedStandards(new ListUnmarshaller<AssociatedStandard>(AssociatedStandardJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("SecurityControlParameters", targetDepth)) {
+                    context.nextToken();
+                    compliance.setSecurityControlParameters(new ListUnmarshaller<SecurityControlParameter>(SecurityControlParameterJsonUnmarshaller
+                            .getInstance())
 
                     .unmarshall(context));
                 }

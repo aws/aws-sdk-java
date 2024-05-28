@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,9 +41,9 @@ public class StartDeviceAuthorizationRequest extends com.amazonaws.AmazonWebServ
     private String clientSecret;
     /**
      * <p>
-     * The URL for the AWS access portal. For more information, see <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS access
-     * portal</a> in the <i>IAM Identity Center User Guide</i>.
+     * The URL for the Amazon Web Services access portal. For more information, see <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the Amazon Web
+     * Services access portal</a> in the <i>IAM Identity Center User Guide</i>.
      * </p>
      */
     private String startUrl;
@@ -142,15 +142,15 @@ public class StartDeviceAuthorizationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The URL for the AWS access portal. For more information, see <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS access
-     * portal</a> in the <i>IAM Identity Center User Guide</i>.
+     * The URL for the Amazon Web Services access portal. For more information, see <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the Amazon Web
+     * Services access portal</a> in the <i>IAM Identity Center User Guide</i>.
      * </p>
      * 
      * @param startUrl
-     *        The URL for the AWS access portal. For more information, see <a
-     *        href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS
-     *        access portal</a> in the <i>IAM Identity Center User Guide</i>.
+     *        The URL for the Amazon Web Services access portal. For more information, see <a
+     *        href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the Amazon
+     *        Web Services access portal</a> in the <i>IAM Identity Center User Guide</i>.
      */
 
     public void setStartUrl(String startUrl) {
@@ -159,14 +159,14 @@ public class StartDeviceAuthorizationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The URL for the AWS access portal. For more information, see <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS access
-     * portal</a> in the <i>IAM Identity Center User Guide</i>.
+     * The URL for the Amazon Web Services access portal. For more information, see <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the Amazon Web
+     * Services access portal</a> in the <i>IAM Identity Center User Guide</i>.
      * </p>
      * 
-     * @return The URL for the AWS access portal. For more information, see <a
-     *         href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS
-     *         access portal</a> in the <i>IAM Identity Center User Guide</i>.
+     * @return The URL for the Amazon Web Services access portal. For more information, see <a
+     *         href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the Amazon
+     *         Web Services access portal</a> in the <i>IAM Identity Center User Guide</i>.
      */
 
     public String getStartUrl() {
@@ -175,15 +175,15 @@ public class StartDeviceAuthorizationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The URL for the AWS access portal. For more information, see <a
-     * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS access
-     * portal</a> in the <i>IAM Identity Center User Guide</i>.
+     * The URL for the Amazon Web Services access portal. For more information, see <a
+     * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the Amazon Web
+     * Services access portal</a> in the <i>IAM Identity Center User Guide</i>.
      * </p>
      * 
      * @param startUrl
-     *        The URL for the AWS access portal. For more information, see <a
-     *        href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the AWS
-     *        access portal</a> in the <i>IAM Identity Center User Guide</i>.
+     *        The URL for the Amazon Web Services access portal. For more information, see <a
+     *        href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using the Amazon
+     *        Web Services access portal</a> in the <i>IAM Identity Center User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -207,7 +207,7 @@ public class StartDeviceAuthorizationRequest extends com.amazonaws.AmazonWebServ
         if (getClientId() != null)
             sb.append("ClientId: ").append(getClientId()).append(",");
         if (getClientSecret() != null)
-            sb.append("ClientSecret: ").append(getClientSecret()).append(",");
+            sb.append("ClientSecret: ").append("***Sensitive Data Redacted***").append(",");
         if (getStartUrl() != null)
             sb.append("StartUrl: ").append(getStartUrl());
         sb.append("}");

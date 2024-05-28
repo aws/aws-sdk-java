@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -35,6 +35,7 @@
     "serviceClientHoldInputStream" : false,
     "shapeModifiers" : null,
     "shapeSubstitutions" : null,
+    "shapesToSkipPruning" : [ ],
     "simpleMethods" : null,
     "skipClientMethodForOperations" : [ ],
     "skipInterfaceAdditions" : false,
@@ -49,6 +50,7 @@
     "asyncClient" : "AmazonTimestreamQueryAsyncClient",
     "asyncClientBuilderClassName" : "AmazonTimestreamQueryAsyncClientBuilder",
     "asyncInterface" : "AmazonTimestreamQueryAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,
@@ -105,7 +107,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServerException",
-        "documentation" : "<p> Timestream was unable to fully process this request because of an internal server error. </p>",
+        "documentation" : "<p> The service was unable to fully process this request because of an internal server error. </p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ThrottlingException",
@@ -164,7 +166,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServerException",
-        "documentation" : "<p> Timestream was unable to fully process this request because of an internal server error. </p>",
+        "documentation" : "<p> The service was unable to fully process this request because of an internal server error. </p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ServiceQuotaExceededException",
@@ -223,7 +225,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServerException",
-        "documentation" : "<p> Timestream was unable to fully process this request because of an internal server error. </p>",
+        "documentation" : "<p> The service was unable to fully process this request because of an internal server error. </p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ResourceNotFoundException",
@@ -262,6 +264,57 @@
       },
       "syncReturnType" : "DeleteScheduledQueryResult"
     },
+    "DescribeAccountSettings" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<DescribeAccountSettingsResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<DescribeAccountSettingsResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DescribeAccountSettingsRequest, DescribeAccountSettingsResult>",
+      "asyncReturnType" : "DescribeAccountSettingsResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Describes the settings for your account that include the query pricing model and the configured maximum TCUs the service can use for your query workload.</p> <p>You're charged only for the duration of compute units used for your workloads.</p>",
+      "endpointCacheRequired" : false,
+      "endpointDiscovery" : {
+        "required" : true
+      },
+      "endpointOperation" : false,
+      "endpointTrait" : null,
+      "exceptions" : [ {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p> You are not authorized to perform this action. </p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InternalServerException",
+        "documentation" : "<p> The service was unable to fully process this request because of an internal server error. </p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The request was denied due to request throttling.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidEndpointException",
+        "documentation" : "<p>The requested endpoint was not valid.</p>",
+        "httpStatusCode" : null
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
+      "input" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DescribeAccountSettingsRequest",
+        "variableName" : "describeAccountSettingsRequest",
+        "variableType" : "DescribeAccountSettingsRequest",
+        "documentation" : "",
+        "simpleType" : "DescribeAccountSettingsRequest",
+        "variableSetterType" : "DescribeAccountSettingsRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "describeAccountSettings",
+      "operationName" : "DescribeAccountSettings",
+      "returnType" : {
+        "returnType" : "DescribeAccountSettingsResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "DescribeAccountSettingsResult"
+    },
     "DescribeEndpoints" : {
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeEndpointsResult>",
       "asyncFutureType" : "java.util.concurrent.Future<DescribeEndpointsResult>",
@@ -276,7 +329,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InternalServerException",
-        "documentation" : "<p> Timestream was unable to fully process this request because of an internal server error. </p>",
+        "documentation" : "<p> The service was unable to fully process this request because of an internal server error. </p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ValidationException",
@@ -327,7 +380,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServerException",
-        "documentation" : "<p> Timestream was unable to fully process this request because of an internal server error. </p>",
+        "documentation" : "<p> The service was unable to fully process this request because of an internal server error. </p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ResourceNotFoundException",
@@ -386,7 +439,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServerException",
-        "documentation" : "<p> Timestream was unable to fully process this request because of an internal server error. </p>",
+        "documentation" : "<p> The service was unable to fully process this request because of an internal server error. </p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ResourceNotFoundException",
@@ -445,7 +498,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServerException",
-        "documentation" : "<p> Timestream was unable to fully process this request because of an internal server error. </p>",
+        "documentation" : "<p> The service was unable to fully process this request because of an internal server error. </p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ThrottlingException",
@@ -538,7 +591,7 @@
       "asyncReturnType" : "PrepareQueryResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>A synchronous operation that allows you to submit a query with parameters to be stored by Timestream for later running. Timestream only supports using this operation with the <code>PrepareQueryRequest$ValidateOnly</code> set to <code>true</code>. </p>",
+      "documentation" : "<p>A synchronous operation that allows you to submit a query with parameters to be stored by Timestream for later running. Timestream only supports using this operation with <code>ValidateOnly</code> set to <code>true</code>. </p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : {
         "required" : true
@@ -551,7 +604,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServerException",
-        "documentation" : "<p> Timestream was unable to fully process this request because of an internal server error. </p>",
+        "documentation" : "<p> The service was unable to fully process this request because of an internal server error. </p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ThrottlingException",
@@ -610,7 +663,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServerException",
-        "documentation" : "<p> Timestream was unable to fully process this request because of an internal server error. </p>",
+        "documentation" : "<p> The service was unable to fully process this request because of an internal server error. </p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "QueryExecutionException",
@@ -755,6 +808,61 @@
       },
       "syncReturnType" : "UntagResourceResult"
     },
+    "UpdateAccountSettings" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<UpdateAccountSettingsResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<UpdateAccountSettingsResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<UpdateAccountSettingsRequest, UpdateAccountSettingsResult>",
+      "asyncReturnType" : "UpdateAccountSettingsResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Transitions your account to use TCUs for query pricing and modifies the maximum query compute units that you've configured. If you reduce the value of <code>MaxQueryTCU</code> to a desired configuration, the new value can take up to 24 hours to be effective.</p> <note> <p>After you've transitioned your account to use TCUs for query pricing, you can't transition to using bytes scanned for query pricing.</p> </note>",
+      "endpointCacheRequired" : false,
+      "endpointDiscovery" : {
+        "required" : true
+      },
+      "endpointOperation" : false,
+      "endpointTrait" : null,
+      "exceptions" : [ {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p> You are not authorized to perform this action. </p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InternalServerException",
+        "documentation" : "<p> The service was unable to fully process this request because of an internal server error. </p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The request was denied due to request throttling.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ValidationException",
+        "documentation" : "<p> Invalid or malformed request. </p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidEndpointException",
+        "documentation" : "<p>The requested endpoint was not valid.</p>",
+        "httpStatusCode" : null
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
+      "input" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "UpdateAccountSettingsRequest",
+        "variableName" : "updateAccountSettingsRequest",
+        "variableType" : "UpdateAccountSettingsRequest",
+        "documentation" : "",
+        "simpleType" : "UpdateAccountSettingsRequest",
+        "variableSetterType" : "UpdateAccountSettingsRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "updateAccountSettings",
+      "operationName" : "UpdateAccountSettings",
+      "returnType" : {
+        "returnType" : "UpdateAccountSettingsResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "UpdateAccountSettingsResult"
+    },
     "UpdateScheduledQuery" : {
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateScheduledQueryResult>",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateScheduledQueryResult>",
@@ -775,7 +883,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServerException",
-        "documentation" : "<p> Timestream was unable to fully process this request because of an internal server error. </p>",
+        "documentation" : "<p> The service was unable to fully process this request because of an internal server error. </p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ResourceNotFoundException",
@@ -4692,6 +4800,377 @@
       },
       "wrapper" : false
     },
+    "DescribeAccountSettingsRequest" : {
+      "c2jName" : "DescribeAccountSettingsRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.timestreamquery.request.DescribeAccountSettingsRequest",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "DescribeAccountSettings",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "Timestream_20181101.DescribeAccountSettings",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : null,
+      "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.timestreamquery.request",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ ],
+      "shapeName" : "DescribeAccountSettingsRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DescribeAccountSettingsRequest",
+        "variableName" : "describeAccountSettingsRequest",
+        "variableType" : "DescribeAccountSettingsRequest",
+        "documentation" : null,
+        "simpleType" : "DescribeAccountSettingsRequest",
+        "variableSetterType" : "DescribeAccountSettingsRequest"
+      },
+      "wrapper" : false
+    },
+    "DescribeAccountSettingsResult" : {
+      "c2jName" : "DescribeAccountSettingsResponse",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.timestreamquery.response.DescribeAccountSettingsResult",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "MaxQueryTCU",
+        "c2jShape" : "MaxQueryCapacity",
+        "deprecated" : false,
+        "documentation" : "<p>The maximum number of <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/tcu.html\">Timestream compute units</a> (TCUs) the service will use at any point in time to serve your queries.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The maximum number of <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/tcu.html\">Timestream compute units</a> (TCUs) the service will use at any point in time to serve your queries.</p>\n@param maxQueryTCU The maximum number of <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/tcu.html\">Timestream compute units</a> (TCUs) the service will use at any point in time to serve your queries.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withMaxQueryTCU",
+        "getterDocumentation" : "/**<p>The maximum number of <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/tcu.html\">Timestream compute units</a> (TCUs) the service will use at any point in time to serve your queries.</p>\n@return The maximum number of <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/tcu.html\">Timestream compute units</a> (TCUs) the service will use at any point in time to serve your queries.*/",
+        "getterMethodName" : "getMaxQueryTCU",
+        "getterModel" : {
+          "returnType" : "Integer",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "MaxQueryTCU",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "MaxQueryTCU",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Integer",
+        "marshallingType" : "INTEGER",
+        "name" : "MaxQueryTCU",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The maximum number of <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/tcu.html\">Timestream compute units</a> (TCUs) the service will use at any point in time to serve your queries.</p>\n@param maxQueryTCU The maximum number of <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/tcu.html\">Timestream compute units</a> (TCUs) the service will use at any point in time to serve your queries.*/",
+        "setterMethodName" : "setMaxQueryTCU",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Integer",
+          "variableName" : "maxQueryTCU",
+          "variableType" : "Integer",
+          "documentation" : "",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The maximum number of <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/tcu.html\">Timestream compute units</a> (TCUs) the service will use at any point in time to serve your queries.</p>\n@param maxQueryTCU The maximum number of <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/tcu.html\">Timestream compute units</a> (TCUs) the service will use at any point in time to serve your queries.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Integer",
+          "variableName" : "maxQueryTCU",
+          "variableType" : "Integer",
+          "documentation" : "<p>The maximum number of <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/tcu.html\">Timestream compute units</a> (TCUs) the service will use at any point in time to serve your queries.</p>",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "QueryPricingModel",
+        "c2jShape" : "QueryPricingModel",
+        "deprecated" : false,
+        "documentation" : "<p>The pricing model for queries in your account.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : "QueryPricingModel",
+        "fluentSetterDocumentation" : "/**<p>The pricing model for queries in your account.</p>\n@param queryPricingModel The pricing model for queries in your account.\n@return Returns a reference to this object so that method calls can be chained together.\n@see QueryPricingModel*/",
+        "fluentSetterMethodName" : "withQueryPricingModel",
+        "getterDocumentation" : "/**<p>The pricing model for queries in your account.</p>\n@return The pricing model for queries in your account.\n@see QueryPricingModel*/",
+        "getterMethodName" : "getQueryPricingModel",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "QueryPricingModel",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "QueryPricingModel",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "QueryPricingModel",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The pricing model for queries in your account.</p>\n@param queryPricingModel The pricing model for queries in your account.\n@see QueryPricingModel*/",
+        "setterMethodName" : "setQueryPricingModel",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "queryPricingModel",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The pricing model for queries in your account.</p>\n@param queryPricingModel The pricing model for queries in your account.\n@return Returns a reference to this object so that method calls can be chained together.\n@see QueryPricingModel*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "queryPricingModel",
+          "variableType" : "String",
+          "documentation" : "<p>The pricing model for queries in your account.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "MaxQueryTCU" : {
+          "c2jName" : "MaxQueryTCU",
+          "c2jShape" : "MaxQueryCapacity",
+          "deprecated" : false,
+          "documentation" : "<p>The maximum number of <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/tcu.html\">Timestream compute units</a> (TCUs) the service will use at any point in time to serve your queries.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The maximum number of <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/tcu.html\">Timestream compute units</a> (TCUs) the service will use at any point in time to serve your queries.</p>\n@param maxQueryTCU The maximum number of <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/tcu.html\">Timestream compute units</a> (TCUs) the service will use at any point in time to serve your queries.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withMaxQueryTCU",
+          "getterDocumentation" : "/**<p>The maximum number of <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/tcu.html\">Timestream compute units</a> (TCUs) the service will use at any point in time to serve your queries.</p>\n@return The maximum number of <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/tcu.html\">Timestream compute units</a> (TCUs) the service will use at any point in time to serve your queries.*/",
+          "getterMethodName" : "getMaxQueryTCU",
+          "getterModel" : {
+            "returnType" : "Integer",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "MaxQueryTCU",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "MaxQueryTCU",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Integer",
+          "marshallingType" : "INTEGER",
+          "name" : "MaxQueryTCU",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The maximum number of <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/tcu.html\">Timestream compute units</a> (TCUs) the service will use at any point in time to serve your queries.</p>\n@param maxQueryTCU The maximum number of <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/tcu.html\">Timestream compute units</a> (TCUs) the service will use at any point in time to serve your queries.*/",
+          "setterMethodName" : "setMaxQueryTCU",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Integer",
+            "variableName" : "maxQueryTCU",
+            "variableType" : "Integer",
+            "documentation" : "",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The maximum number of <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/tcu.html\">Timestream compute units</a> (TCUs) the service will use at any point in time to serve your queries.</p>\n@param maxQueryTCU The maximum number of <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/tcu.html\">Timestream compute units</a> (TCUs) the service will use at any point in time to serve your queries.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Integer",
+            "variableName" : "maxQueryTCU",
+            "variableType" : "Integer",
+            "documentation" : "<p>The maximum number of <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/tcu.html\">Timestream compute units</a> (TCUs) the service will use at any point in time to serve your queries.</p>",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "QueryPricingModel" : {
+          "c2jName" : "QueryPricingModel",
+          "c2jShape" : "QueryPricingModel",
+          "deprecated" : false,
+          "documentation" : "<p>The pricing model for queries in your account.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : "QueryPricingModel",
+          "fluentSetterDocumentation" : "/**<p>The pricing model for queries in your account.</p>\n@param queryPricingModel The pricing model for queries in your account.\n@return Returns a reference to this object so that method calls can be chained together.\n@see QueryPricingModel*/",
+          "fluentSetterMethodName" : "withQueryPricingModel",
+          "getterDocumentation" : "/**<p>The pricing model for queries in your account.</p>\n@return The pricing model for queries in your account.\n@see QueryPricingModel*/",
+          "getterMethodName" : "getQueryPricingModel",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "QueryPricingModel",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "QueryPricingModel",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "QueryPricingModel",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The pricing model for queries in your account.</p>\n@param queryPricingModel The pricing model for queries in your account.\n@see QueryPricingModel*/",
+          "setterMethodName" : "setQueryPricingModel",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "queryPricingModel",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The pricing model for queries in your account.</p>\n@param queryPricingModel The pricing model for queries in your account.\n@return Returns a reference to this object so that method calls can be chained together.\n@see QueryPricingModel*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "queryPricingModel",
+            "variableType" : "String",
+            "documentation" : "<p>The pricing model for queries in your account.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "packageName" : "com.amazonaws.services.timestreamquery.response",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ ],
+      "shapeName" : "DescribeAccountSettingsResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DescribeAccountSettingsResult",
+        "variableName" : "describeAccountSettingsResult",
+        "variableType" : "DescribeAccountSettingsResult",
+        "documentation" : null,
+        "simpleType" : "DescribeAccountSettingsResult",
+        "variableSetterType" : "DescribeAccountSettingsResult"
+      },
+      "wrapper" : false
+    },
     "DescribeEndpointsRequest" : {
       "c2jName" : "DescribeEndpointsRequest",
       "customization" : {
@@ -7263,6 +7742,75 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "CumulativeBytesScanned",
+        "c2jShape" : "Long",
+        "deprecated" : false,
+        "documentation" : "<p>Bytes scanned for a single scheduled query run.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Bytes scanned for a single scheduled query run.</p>\n@param cumulativeBytesScanned Bytes scanned for a single scheduled query run.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withCumulativeBytesScanned",
+        "getterDocumentation" : "/**<p>Bytes scanned for a single scheduled query run.</p>\n@return Bytes scanned for a single scheduled query run.*/",
+        "getterMethodName" : "getCumulativeBytesScanned",
+        "getterModel" : {
+          "returnType" : "Long",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "CumulativeBytesScanned",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "CumulativeBytesScanned",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Long",
+        "marshallingType" : "LONG",
+        "name" : "CumulativeBytesScanned",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>Bytes scanned for a single scheduled query run.</p>\n@param cumulativeBytesScanned Bytes scanned for a single scheduled query run.*/",
+        "setterMethodName" : "setCumulativeBytesScanned",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Long",
+          "variableName" : "cumulativeBytesScanned",
+          "variableType" : "Long",
+          "documentation" : "",
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Bytes scanned for a single scheduled query run.</p>\n@param cumulativeBytesScanned Bytes scanned for a single scheduled query run.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Long",
+          "variableName" : "cumulativeBytesScanned",
+          "variableType" : "Long",
+          "documentation" : "<p>Bytes scanned for a single scheduled query run.</p>",
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "RecordsIngested",
         "c2jShape" : "Long",
         "deprecated" : false,
@@ -7467,6 +8015,76 @@
             "variableName" : "bytesMetered",
             "variableType" : "Long",
             "documentation" : "<p>Bytes metered for a single scheduled query run.</p>",
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "CumulativeBytesScanned" : {
+          "c2jName" : "CumulativeBytesScanned",
+          "c2jShape" : "Long",
+          "deprecated" : false,
+          "documentation" : "<p>Bytes scanned for a single scheduled query run.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Bytes scanned for a single scheduled query run.</p>\n@param cumulativeBytesScanned Bytes scanned for a single scheduled query run.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withCumulativeBytesScanned",
+          "getterDocumentation" : "/**<p>Bytes scanned for a single scheduled query run.</p>\n@return Bytes scanned for a single scheduled query run.*/",
+          "getterMethodName" : "getCumulativeBytesScanned",
+          "getterModel" : {
+            "returnType" : "Long",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "CumulativeBytesScanned",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "CumulativeBytesScanned",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Long",
+          "marshallingType" : "LONG",
+          "name" : "CumulativeBytesScanned",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>Bytes scanned for a single scheduled query run.</p>\n@param cumulativeBytesScanned Bytes scanned for a single scheduled query run.*/",
+          "setterMethodName" : "setCumulativeBytesScanned",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Long",
+            "variableName" : "cumulativeBytesScanned",
+            "variableType" : "Long",
+            "documentation" : "",
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Bytes scanned for a single scheduled query run.</p>\n@param cumulativeBytesScanned Bytes scanned for a single scheduled query run.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Long",
+            "variableName" : "cumulativeBytesScanned",
+            "variableType" : "Long",
+            "documentation" : "<p>Bytes scanned for a single scheduled query run.</p>",
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
@@ -7784,7 +8402,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p> Timestream was unable to fully process this request because of an internal server error. </p>",
+      "documentation" : "<p> The service was unable to fully process this request because of an internal server error. </p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InternalServerException",
@@ -13222,6 +13840,56 @@
         "documentation" : null,
         "simpleType" : "QueryExecutionException",
         "variableSetterType" : "QueryExecutionException"
+      },
+      "wrapper" : false
+    },
+    "QueryPricingModel" : {
+      "c2jName" : "QueryPricingModel",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "endpointDiscoveryMembers" : null,
+      "enums" : [ {
+        "name" : "BYTES_SCANNED",
+        "value" : "BYTES_SCANNED"
+      }, {
+        "name" : "COMPUTE_UNITS",
+        "value" : "COMPUTE_UNITS"
+      } ],
+      "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.timestreamquery.enum.QueryPricingModel",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.timestreamquery.enum",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ ],
+      "shapeName" : "QueryPricingModel",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "QueryPricingModel",
+        "variableName" : "queryPricingModel",
+        "variableType" : "QueryPricingModel",
+        "documentation" : null,
+        "simpleType" : "QueryPricingModel",
+        "variableSetterType" : "QueryPricingModel"
       },
       "wrapper" : false
     },
@@ -25895,12 +26563,12 @@
         "c2jName" : "ScalarType",
         "c2jShape" : "ScalarType",
         "deprecated" : false,
-        "documentation" : "<p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. </p>",
+        "documentation" : "<p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more information, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html\">Supported data types</a>.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : "ScalarType",
-        "fluentSetterDocumentation" : "/**<p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. </p>\n@param scalarType Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ScalarType*/",
+        "fluentSetterDocumentation" : "/**<p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more information, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html\">Supported data types</a>.</p>\n@param scalarType Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more information, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html\">Supported data types</a>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ScalarType*/",
         "fluentSetterMethodName" : "withScalarType",
-        "getterDocumentation" : "/**<p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. </p>\n@return Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time.\n@see ScalarType*/",
+        "getterDocumentation" : "/**<p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more information, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html\">Supported data types</a>.</p>\n@return Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more information, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html\">Supported data types</a>.\n@see ScalarType*/",
         "getterMethodName" : "getScalarType",
         "getterModel" : {
           "returnType" : "String",
@@ -25934,7 +26602,7 @@
         "marshallingType" : "STRING",
         "name" : "ScalarType",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. </p>\n@param scalarType Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time.\n@see ScalarType*/",
+        "setterDocumentation" : "/**<p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more information, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html\">Supported data types</a>.</p>\n@param scalarType Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more information, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html\">Supported data types</a>.\n@see ScalarType*/",
         "setterMethodName" : "setScalarType",
         "setterModel" : {
           "timestampFormat" : null,
@@ -25949,13 +26617,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. </p>\n@param scalarType Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ScalarType*/",
+        "varargSetterDocumentation" : "/**<p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more information, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html\">Supported data types</a>.</p>\n@param scalarType Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more information, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html\">Supported data types</a>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ScalarType*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "scalarType",
           "variableType" : "String",
-          "documentation" : "<p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. </p>",
+          "documentation" : "<p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more information, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html\">Supported data types</a>.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -26481,12 +27149,12 @@
           "c2jName" : "ScalarType",
           "c2jShape" : "ScalarType",
           "deprecated" : false,
-          "documentation" : "<p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. </p>",
+          "documentation" : "<p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more information, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html\">Supported data types</a>.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : "ScalarType",
-          "fluentSetterDocumentation" : "/**<p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. </p>\n@param scalarType Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ScalarType*/",
+          "fluentSetterDocumentation" : "/**<p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more information, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html\">Supported data types</a>.</p>\n@param scalarType Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more information, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html\">Supported data types</a>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ScalarType*/",
           "fluentSetterMethodName" : "withScalarType",
-          "getterDocumentation" : "/**<p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. </p>\n@return Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time.\n@see ScalarType*/",
+          "getterDocumentation" : "/**<p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more information, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html\">Supported data types</a>.</p>\n@return Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more information, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html\">Supported data types</a>.\n@see ScalarType*/",
           "getterMethodName" : "getScalarType",
           "getterModel" : {
             "returnType" : "String",
@@ -26520,7 +27188,7 @@
           "marshallingType" : "STRING",
           "name" : "ScalarType",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. </p>\n@param scalarType Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time.\n@see ScalarType*/",
+          "setterDocumentation" : "/**<p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more information, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html\">Supported data types</a>.</p>\n@param scalarType Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more information, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html\">Supported data types</a>.\n@see ScalarType*/",
           "setterMethodName" : "setScalarType",
           "setterModel" : {
             "timestampFormat" : null,
@@ -26535,13 +27203,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. </p>\n@param scalarType Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ScalarType*/",
+          "varargSetterDocumentation" : "/**<p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more information, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html\">Supported data types</a>.</p>\n@param scalarType Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more information, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html\">Supported data types</a>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ScalarType*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "scalarType",
             "variableType" : "String",
-            "documentation" : "<p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. </p>",
+            "documentation" : "<p>Indicates if the column is of type string, integer, Boolean, double, timestamp, date, time. For more information, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html\">Supported data types</a>.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -27179,6 +27847,656 @@
       },
       "wrapper" : false
     },
+    "UpdateAccountSettingsRequest" : {
+      "c2jName" : "UpdateAccountSettingsRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.timestreamquery.request.UpdateAccountSettingsRequest",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "UpdateAccountSettings",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "Timestream_20181101.UpdateAccountSettings",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "MaxQueryTCU",
+        "c2jShape" : "MaxQueryCapacity",
+        "deprecated" : false,
+        "documentation" : "<p>The maximum number of compute units the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on.</p> <p>The maximum value supported for <code>MaxQueryTCU</code> is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for maxQueryTCU, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default\">Default quotas</a>.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The maximum number of compute units the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on.</p> <p>The maximum value supported for <code>MaxQueryTCU</code> is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for maxQueryTCU, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default\">Default quotas</a>.</p>\n@param maxQueryTCU The maximum number of compute units the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on.</p> <p>The maximum value supported for <code>MaxQueryTCU</code> is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for maxQueryTCU, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default\">Default quotas</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withMaxQueryTCU",
+        "getterDocumentation" : "/**<p>The maximum number of compute units the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on.</p> <p>The maximum value supported for <code>MaxQueryTCU</code> is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for maxQueryTCU, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default\">Default quotas</a>.</p>\n@return The maximum number of compute units the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on.</p> <p>The maximum value supported for <code>MaxQueryTCU</code> is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for maxQueryTCU, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default\">Default quotas</a>.*/",
+        "getterMethodName" : "getMaxQueryTCU",
+        "getterModel" : {
+          "returnType" : "Integer",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "MaxQueryTCU",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "MaxQueryTCU",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Integer",
+        "marshallingType" : "INTEGER",
+        "name" : "MaxQueryTCU",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The maximum number of compute units the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on.</p> <p>The maximum value supported for <code>MaxQueryTCU</code> is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for maxQueryTCU, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default\">Default quotas</a>.</p>\n@param maxQueryTCU The maximum number of compute units the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on.</p> <p>The maximum value supported for <code>MaxQueryTCU</code> is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for maxQueryTCU, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default\">Default quotas</a>.*/",
+        "setterMethodName" : "setMaxQueryTCU",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Integer",
+          "variableName" : "maxQueryTCU",
+          "variableType" : "Integer",
+          "documentation" : "",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The maximum number of compute units the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on.</p> <p>The maximum value supported for <code>MaxQueryTCU</code> is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for maxQueryTCU, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default\">Default quotas</a>.</p>\n@param maxQueryTCU The maximum number of compute units the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on.</p> <p>The maximum value supported for <code>MaxQueryTCU</code> is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for maxQueryTCU, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default\">Default quotas</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Integer",
+          "variableName" : "maxQueryTCU",
+          "variableType" : "Integer",
+          "documentation" : "<p>The maximum number of compute units the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on.</p> <p>The maximum value supported for <code>MaxQueryTCU</code> is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for maxQueryTCU, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default\">Default quotas</a>.</p>",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "QueryPricingModel",
+        "c2jShape" : "QueryPricingModel",
+        "deprecated" : false,
+        "documentation" : "<p>The pricing model for queries in an account.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : "QueryPricingModel",
+        "fluentSetterDocumentation" : "/**<p>The pricing model for queries in an account.</p>\n@param queryPricingModel The pricing model for queries in an account.\n@return Returns a reference to this object so that method calls can be chained together.\n@see QueryPricingModel*/",
+        "fluentSetterMethodName" : "withQueryPricingModel",
+        "getterDocumentation" : "/**<p>The pricing model for queries in an account.</p>\n@return The pricing model for queries in an account.\n@see QueryPricingModel*/",
+        "getterMethodName" : "getQueryPricingModel",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "QueryPricingModel",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "QueryPricingModel",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "QueryPricingModel",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The pricing model for queries in an account.</p>\n@param queryPricingModel The pricing model for queries in an account.\n@see QueryPricingModel*/",
+        "setterMethodName" : "setQueryPricingModel",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "queryPricingModel",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The pricing model for queries in an account.</p>\n@param queryPricingModel The pricing model for queries in an account.\n@return Returns a reference to this object so that method calls can be chained together.\n@see QueryPricingModel*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "queryPricingModel",
+          "variableType" : "String",
+          "documentation" : "<p>The pricing model for queries in an account.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "MaxQueryTCU" : {
+          "c2jName" : "MaxQueryTCU",
+          "c2jShape" : "MaxQueryCapacity",
+          "deprecated" : false,
+          "documentation" : "<p>The maximum number of compute units the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on.</p> <p>The maximum value supported for <code>MaxQueryTCU</code> is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for maxQueryTCU, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default\">Default quotas</a>.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The maximum number of compute units the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on.</p> <p>The maximum value supported for <code>MaxQueryTCU</code> is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for maxQueryTCU, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default\">Default quotas</a>.</p>\n@param maxQueryTCU The maximum number of compute units the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on.</p> <p>The maximum value supported for <code>MaxQueryTCU</code> is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for maxQueryTCU, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default\">Default quotas</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withMaxQueryTCU",
+          "getterDocumentation" : "/**<p>The maximum number of compute units the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on.</p> <p>The maximum value supported for <code>MaxQueryTCU</code> is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for maxQueryTCU, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default\">Default quotas</a>.</p>\n@return The maximum number of compute units the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on.</p> <p>The maximum value supported for <code>MaxQueryTCU</code> is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for maxQueryTCU, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default\">Default quotas</a>.*/",
+          "getterMethodName" : "getMaxQueryTCU",
+          "getterModel" : {
+            "returnType" : "Integer",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "MaxQueryTCU",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "MaxQueryTCU",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Integer",
+          "marshallingType" : "INTEGER",
+          "name" : "MaxQueryTCU",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The maximum number of compute units the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on.</p> <p>The maximum value supported for <code>MaxQueryTCU</code> is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for maxQueryTCU, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default\">Default quotas</a>.</p>\n@param maxQueryTCU The maximum number of compute units the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on.</p> <p>The maximum value supported for <code>MaxQueryTCU</code> is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for maxQueryTCU, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default\">Default quotas</a>.*/",
+          "setterMethodName" : "setMaxQueryTCU",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Integer",
+            "variableName" : "maxQueryTCU",
+            "variableType" : "Integer",
+            "documentation" : "",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The maximum number of compute units the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on.</p> <p>The maximum value supported for <code>MaxQueryTCU</code> is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for maxQueryTCU, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default\">Default quotas</a>.</p>\n@param maxQueryTCU The maximum number of compute units the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on.</p> <p>The maximum value supported for <code>MaxQueryTCU</code> is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for maxQueryTCU, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default\">Default quotas</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Integer",
+            "variableName" : "maxQueryTCU",
+            "variableType" : "Integer",
+            "documentation" : "<p>The maximum number of compute units the service will use at any point in time to serve your queries. To run queries, you must set a minimum capacity of 4 TCU. You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16, 32, and so on.</p> <p>The maximum value supported for <code>MaxQueryTCU</code> is 1000. To request an increase to this soft limit, contact Amazon Web Services Support. For information about the default quota for maxQueryTCU, see <a href=\"https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default\">Default quotas</a>.</p>",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "QueryPricingModel" : {
+          "c2jName" : "QueryPricingModel",
+          "c2jShape" : "QueryPricingModel",
+          "deprecated" : false,
+          "documentation" : "<p>The pricing model for queries in an account.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : "QueryPricingModel",
+          "fluentSetterDocumentation" : "/**<p>The pricing model for queries in an account.</p>\n@param queryPricingModel The pricing model for queries in an account.\n@return Returns a reference to this object so that method calls can be chained together.\n@see QueryPricingModel*/",
+          "fluentSetterMethodName" : "withQueryPricingModel",
+          "getterDocumentation" : "/**<p>The pricing model for queries in an account.</p>\n@return The pricing model for queries in an account.\n@see QueryPricingModel*/",
+          "getterMethodName" : "getQueryPricingModel",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "QueryPricingModel",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "QueryPricingModel",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "QueryPricingModel",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The pricing model for queries in an account.</p>\n@param queryPricingModel The pricing model for queries in an account.\n@see QueryPricingModel*/",
+          "setterMethodName" : "setQueryPricingModel",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "queryPricingModel",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The pricing model for queries in an account.</p>\n@param queryPricingModel The pricing model for queries in an account.\n@return Returns a reference to this object so that method calls can be chained together.\n@see QueryPricingModel*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "queryPricingModel",
+            "variableType" : "String",
+            "documentation" : "<p>The pricing model for queries in an account.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "packageName" : "com.amazonaws.services.timestreamquery.request",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ ],
+      "shapeName" : "UpdateAccountSettingsRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "UpdateAccountSettingsRequest",
+        "variableName" : "updateAccountSettingsRequest",
+        "variableType" : "UpdateAccountSettingsRequest",
+        "documentation" : null,
+        "simpleType" : "UpdateAccountSettingsRequest",
+        "variableSetterType" : "UpdateAccountSettingsRequest"
+      },
+      "wrapper" : false
+    },
+    "UpdateAccountSettingsResult" : {
+      "c2jName" : "UpdateAccountSettingsResponse",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.timestreamquery.response.UpdateAccountSettingsResult",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "MaxQueryTCU",
+        "c2jShape" : "MaxQueryCapacity",
+        "deprecated" : false,
+        "documentation" : "<p>The configured maximum number of compute units the service will use at any point in time to serve your queries.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The configured maximum number of compute units the service will use at any point in time to serve your queries.</p>\n@param maxQueryTCU The configured maximum number of compute units the service will use at any point in time to serve your queries.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withMaxQueryTCU",
+        "getterDocumentation" : "/**<p>The configured maximum number of compute units the service will use at any point in time to serve your queries.</p>\n@return The configured maximum number of compute units the service will use at any point in time to serve your queries.*/",
+        "getterMethodName" : "getMaxQueryTCU",
+        "getterModel" : {
+          "returnType" : "Integer",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "MaxQueryTCU",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "MaxQueryTCU",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Integer",
+        "marshallingType" : "INTEGER",
+        "name" : "MaxQueryTCU",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The configured maximum number of compute units the service will use at any point in time to serve your queries.</p>\n@param maxQueryTCU The configured maximum number of compute units the service will use at any point in time to serve your queries.*/",
+        "setterMethodName" : "setMaxQueryTCU",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Integer",
+          "variableName" : "maxQueryTCU",
+          "variableType" : "Integer",
+          "documentation" : "",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The configured maximum number of compute units the service will use at any point in time to serve your queries.</p>\n@param maxQueryTCU The configured maximum number of compute units the service will use at any point in time to serve your queries.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Integer",
+          "variableName" : "maxQueryTCU",
+          "variableType" : "Integer",
+          "documentation" : "<p>The configured maximum number of compute units the service will use at any point in time to serve your queries.</p>",
+          "simpleType" : "Integer",
+          "variableSetterType" : "Integer"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "QueryPricingModel",
+        "c2jShape" : "QueryPricingModel",
+        "deprecated" : false,
+        "documentation" : "<p>The pricing model for an account.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : "QueryPricingModel",
+        "fluentSetterDocumentation" : "/**<p>The pricing model for an account.</p>\n@param queryPricingModel The pricing model for an account.\n@return Returns a reference to this object so that method calls can be chained together.\n@see QueryPricingModel*/",
+        "fluentSetterMethodName" : "withQueryPricingModel",
+        "getterDocumentation" : "/**<p>The pricing model for an account.</p>\n@return The pricing model for an account.\n@see QueryPricingModel*/",
+        "getterMethodName" : "getQueryPricingModel",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "QueryPricingModel",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "QueryPricingModel",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "QueryPricingModel",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The pricing model for an account.</p>\n@param queryPricingModel The pricing model for an account.\n@see QueryPricingModel*/",
+        "setterMethodName" : "setQueryPricingModel",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "queryPricingModel",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The pricing model for an account.</p>\n@param queryPricingModel The pricing model for an account.\n@return Returns a reference to this object so that method calls can be chained together.\n@see QueryPricingModel*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "queryPricingModel",
+          "variableType" : "String",
+          "documentation" : "<p>The pricing model for an account.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "MaxQueryTCU" : {
+          "c2jName" : "MaxQueryTCU",
+          "c2jShape" : "MaxQueryCapacity",
+          "deprecated" : false,
+          "documentation" : "<p>The configured maximum number of compute units the service will use at any point in time to serve your queries.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The configured maximum number of compute units the service will use at any point in time to serve your queries.</p>\n@param maxQueryTCU The configured maximum number of compute units the service will use at any point in time to serve your queries.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withMaxQueryTCU",
+          "getterDocumentation" : "/**<p>The configured maximum number of compute units the service will use at any point in time to serve your queries.</p>\n@return The configured maximum number of compute units the service will use at any point in time to serve your queries.*/",
+          "getterMethodName" : "getMaxQueryTCU",
+          "getterModel" : {
+            "returnType" : "Integer",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "MaxQueryTCU",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "MaxQueryTCU",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Integer",
+          "marshallingType" : "INTEGER",
+          "name" : "MaxQueryTCU",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The configured maximum number of compute units the service will use at any point in time to serve your queries.</p>\n@param maxQueryTCU The configured maximum number of compute units the service will use at any point in time to serve your queries.*/",
+          "setterMethodName" : "setMaxQueryTCU",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Integer",
+            "variableName" : "maxQueryTCU",
+            "variableType" : "Integer",
+            "documentation" : "",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The configured maximum number of compute units the service will use at any point in time to serve your queries.</p>\n@param maxQueryTCU The configured maximum number of compute units the service will use at any point in time to serve your queries.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Integer",
+            "variableName" : "maxQueryTCU",
+            "variableType" : "Integer",
+            "documentation" : "<p>The configured maximum number of compute units the service will use at any point in time to serve your queries.</p>",
+            "simpleType" : "Integer",
+            "variableSetterType" : "Integer"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "QueryPricingModel" : {
+          "c2jName" : "QueryPricingModel",
+          "c2jShape" : "QueryPricingModel",
+          "deprecated" : false,
+          "documentation" : "<p>The pricing model for an account.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : "QueryPricingModel",
+          "fluentSetterDocumentation" : "/**<p>The pricing model for an account.</p>\n@param queryPricingModel The pricing model for an account.\n@return Returns a reference to this object so that method calls can be chained together.\n@see QueryPricingModel*/",
+          "fluentSetterMethodName" : "withQueryPricingModel",
+          "getterDocumentation" : "/**<p>The pricing model for an account.</p>\n@return The pricing model for an account.\n@see QueryPricingModel*/",
+          "getterMethodName" : "getQueryPricingModel",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "QueryPricingModel",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "QueryPricingModel",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "QueryPricingModel",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The pricing model for an account.</p>\n@param queryPricingModel The pricing model for an account.\n@see QueryPricingModel*/",
+          "setterMethodName" : "setQueryPricingModel",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "queryPricingModel",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The pricing model for an account.</p>\n@param queryPricingModel The pricing model for an account.\n@return Returns a reference to this object so that method calls can be chained together.\n@see QueryPricingModel*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "queryPricingModel",
+            "variableType" : "String",
+            "documentation" : "<p>The pricing model for an account.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "packageName" : "com.amazonaws.services.timestreamquery.response",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ ],
+      "shapeName" : "UpdateAccountSettingsResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "UpdateAccountSettingsResult",
+        "variableName" : "updateAccountSettingsResult",
+        "variableType" : "UpdateAccountSettingsResult",
+        "documentation" : null,
+        "simpleType" : "UpdateAccountSettingsResult",
+        "variableSetterType" : "UpdateAccountSettingsResult"
+      },
+      "wrapper" : false
+    },
     "UpdateScheduledQueryRequest" : {
       "c2jName" : "UpdateScheduledQueryRequest",
       "customization" : {
@@ -27598,7 +28916,8 @@
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,
-  "fileHeader" : "/*\n * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "fileHeader" : "/*\n * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "hasShapes" : true,
   "hasWaiters" : false,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AmazonTimestreamQueryException",

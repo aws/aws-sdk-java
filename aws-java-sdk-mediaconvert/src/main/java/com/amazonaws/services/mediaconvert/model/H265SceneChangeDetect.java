@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,9 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves video
- * quality and is enabled by default. If this output uses QVBR, choose Transition detection (TRANSITION_DETECTION) for
- * further video quality improvement. For more information about QVBR, see
- * https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
+ * quality and is enabled by default. If this output uses QVBR, choose Transition detection for further video quality
+ * improvement. For more information about QVBR, see https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum H265SceneChangeDetect {

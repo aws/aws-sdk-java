@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,13 @@ public class GetTableMetadataRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private String tableName;
+    /**
+     * <p>
+     * The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity Center
+     * enabled Glue Data Catalog.
+     * </p>
+     */
+    private String workGroup;
 
     /**
      * <p>
@@ -165,6 +172,52 @@ public class GetTableMetadataRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity Center
+     * enabled Glue Data Catalog.
+     * </p>
+     * 
+     * @param workGroup
+     *        The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity
+     *        Center enabled Glue Data Catalog.
+     */
+
+    public void setWorkGroup(String workGroup) {
+        this.workGroup = workGroup;
+    }
+
+    /**
+     * <p>
+     * The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity Center
+     * enabled Glue Data Catalog.
+     * </p>
+     * 
+     * @return The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity
+     *         Center enabled Glue Data Catalog.
+     */
+
+    public String getWorkGroup() {
+        return this.workGroup;
+    }
+
+    /**
+     * <p>
+     * The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity Center
+     * enabled Glue Data Catalog.
+     * </p>
+     * 
+     * @param workGroup
+     *        The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity
+     *        Center enabled Glue Data Catalog.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetTableMetadataRequest withWorkGroup(String workGroup) {
+        setWorkGroup(workGroup);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -181,7 +234,9 @@ public class GetTableMetadataRequest extends com.amazonaws.AmazonWebServiceReque
         if (getDatabaseName() != null)
             sb.append("DatabaseName: ").append(getDatabaseName()).append(",");
         if (getTableName() != null)
-            sb.append("TableName: ").append(getTableName());
+            sb.append("TableName: ").append(getTableName()).append(",");
+        if (getWorkGroup() != null)
+            sb.append("WorkGroup: ").append(getWorkGroup());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +263,10 @@ public class GetTableMetadataRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getTableName() != null && other.getTableName().equals(this.getTableName()) == false)
             return false;
+        if (other.getWorkGroup() == null ^ this.getWorkGroup() == null)
+            return false;
+        if (other.getWorkGroup() != null && other.getWorkGroup().equals(this.getWorkGroup()) == false)
+            return false;
         return true;
     }
 
@@ -219,6 +278,7 @@ public class GetTableMetadataRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getCatalogName() == null) ? 0 : getCatalogName().hashCode());
         hashCode = prime * hashCode + ((getDatabaseName() == null) ? 0 : getDatabaseName().hashCode());
         hashCode = prime * hashCode + ((getTableName() == null) ? 0 : getTableName().hashCode());
+        hashCode = prime * hashCode + ((getWorkGroup() == null) ? 0 : getWorkGroup().hashCode());
         return hashCode;
     }
 

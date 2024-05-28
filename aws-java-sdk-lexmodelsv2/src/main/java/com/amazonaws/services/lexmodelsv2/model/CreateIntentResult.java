@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -103,7 +103,7 @@ public class CreateIntentResult extends com.amazonaws.AmazonWebServiceResult<com
     private String botId;
     /**
      * <p>
-     * The identifier of the version of the bot associated with the intent.
+     * The version of the bot associated with the intent.
      * </p>
      */
     private String botVersion;
@@ -126,6 +126,12 @@ public class CreateIntentResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      */
     private InitialResponseSetting initialResponseSetting;
+    /**
+     * <p>
+     * Details about the the configuration of the built-in <code>Amazon.QnAIntent</code>.
+     * </p>
+     */
+    private QnAIntentConfiguration qnAIntentConfiguration;
 
     /**
      * <p>
@@ -739,11 +745,11 @@ public class CreateIntentResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The identifier of the version of the bot associated with the intent.
+     * The version of the bot associated with the intent.
      * </p>
      * 
      * @param botVersion
-     *        The identifier of the version of the bot associated with the intent.
+     *        The version of the bot associated with the intent.
      */
 
     public void setBotVersion(String botVersion) {
@@ -752,10 +758,10 @@ public class CreateIntentResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The identifier of the version of the bot associated with the intent.
+     * The version of the bot associated with the intent.
      * </p>
      * 
-     * @return The identifier of the version of the bot associated with the intent.
+     * @return The version of the bot associated with the intent.
      */
 
     public String getBotVersion() {
@@ -764,11 +770,11 @@ public class CreateIntentResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The identifier of the version of the bot associated with the intent.
+     * The version of the bot associated with the intent.
      * </p>
      * 
      * @param botVersion
-     *        The identifier of the version of the bot associated with the intent.
+     *        The version of the bot associated with the intent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -904,6 +910,46 @@ public class CreateIntentResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * Details about the the configuration of the built-in <code>Amazon.QnAIntent</code>.
+     * </p>
+     * 
+     * @param qnAIntentConfiguration
+     *        Details about the the configuration of the built-in <code>Amazon.QnAIntent</code>.
+     */
+
+    public void setQnAIntentConfiguration(QnAIntentConfiguration qnAIntentConfiguration) {
+        this.qnAIntentConfiguration = qnAIntentConfiguration;
+    }
+
+    /**
+     * <p>
+     * Details about the the configuration of the built-in <code>Amazon.QnAIntent</code>.
+     * </p>
+     * 
+     * @return Details about the the configuration of the built-in <code>Amazon.QnAIntent</code>.
+     */
+
+    public QnAIntentConfiguration getQnAIntentConfiguration() {
+        return this.qnAIntentConfiguration;
+    }
+
+    /**
+     * <p>
+     * Details about the the configuration of the built-in <code>Amazon.QnAIntent</code>.
+     * </p>
+     * 
+     * @param qnAIntentConfiguration
+     *        Details about the the configuration of the built-in <code>Amazon.QnAIntent</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateIntentResult withQnAIntentConfiguration(QnAIntentConfiguration qnAIntentConfiguration) {
+        setQnAIntentConfiguration(qnAIntentConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -948,7 +994,9 @@ public class CreateIntentResult extends com.amazonaws.AmazonWebServiceResult<com
         if (getCreationDateTime() != null)
             sb.append("CreationDateTime: ").append(getCreationDateTime()).append(",");
         if (getInitialResponseSetting() != null)
-            sb.append("InitialResponseSetting: ").append(getInitialResponseSetting());
+            sb.append("InitialResponseSetting: ").append(getInitialResponseSetting()).append(",");
+        if (getQnAIntentConfiguration() != null)
+            sb.append("QnAIntentConfiguration: ").append(getQnAIntentConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1031,6 +1079,10 @@ public class CreateIntentResult extends com.amazonaws.AmazonWebServiceResult<com
             return false;
         if (other.getInitialResponseSetting() != null && other.getInitialResponseSetting().equals(this.getInitialResponseSetting()) == false)
             return false;
+        if (other.getQnAIntentConfiguration() == null ^ this.getQnAIntentConfiguration() == null)
+            return false;
+        if (other.getQnAIntentConfiguration() != null && other.getQnAIntentConfiguration().equals(this.getQnAIntentConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1056,6 +1108,7 @@ public class CreateIntentResult extends com.amazonaws.AmazonWebServiceResult<com
         hashCode = prime * hashCode + ((getLocaleId() == null) ? 0 : getLocaleId().hashCode());
         hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());
         hashCode = prime * hashCode + ((getInitialResponseSetting() == null) ? 0 : getInitialResponseSetting().hashCode());
+        hashCode = prime * hashCode + ((getQnAIntentConfiguration() == null) ? 0 : getQnAIntentConfiguration().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class NotificationsConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The ARN of the AWS Lambda function in the notifications configuration.
+     * The ARN of the Amazon Web Services Lambda function in the notifications configuration.
      * </p>
      */
     private String lambdaFunctionArn;
@@ -49,11 +49,11 @@ public class NotificationsConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The ARN of the AWS Lambda function in the notifications configuration.
+     * The ARN of the Amazon Web Services Lambda function in the notifications configuration.
      * </p>
      * 
      * @param lambdaFunctionArn
-     *        The ARN of the AWS Lambda function in the notifications configuration.
+     *        The ARN of the Amazon Web Services Lambda function in the notifications configuration.
      */
 
     public void setLambdaFunctionArn(String lambdaFunctionArn) {
@@ -62,10 +62,10 @@ public class NotificationsConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The ARN of the AWS Lambda function in the notifications configuration.
+     * The ARN of the Amazon Web Services Lambda function in the notifications configuration.
      * </p>
      * 
-     * @return The ARN of the AWS Lambda function in the notifications configuration.
+     * @return The ARN of the Amazon Web Services Lambda function in the notifications configuration.
      */
 
     public String getLambdaFunctionArn() {
@@ -74,11 +74,11 @@ public class NotificationsConfiguration implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The ARN of the AWS Lambda function in the notifications configuration.
+     * The ARN of the Amazon Web Services Lambda function in the notifications configuration.
      * </p>
      * 
      * @param lambdaFunctionArn
-     *        The ARN of the AWS Lambda function in the notifications configuration.
+     *        The ARN of the Amazon Web Services Lambda function in the notifications configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

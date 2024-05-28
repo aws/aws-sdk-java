@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,7 @@ import com.amazonaws.services.dlm.AmazonDLMClientBuilder;
 import com.amazonaws.AmazonServiceException;
 
 import com.amazonaws.services.dlm.model.*;
+
 import com.amazonaws.services.dlm.model.transform.*;
 
 /**
@@ -147,9 +148,46 @@ public class AmazonDLMClient extends AmazonWebServiceClient implements AmazonDLM
 
     /**
      * <p>
-     * Creates a policy to manage the lifecycle of the specified Amazon Web Services resources. You can create up to 100
-     * lifecycle policies.
+     * Creates an Amazon Data Lifecycle Manager lifecycle policy. Amazon Data Lifecycle Manager supports the following
+     * policy types:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Custom EBS snapshot policy
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Custom EBS-backed AMI policy
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cross-account copy event policy
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Default policy for EBS snapshots
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Default policy for EBS-backed AMIs
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/policy-differences.html">
+     * Default policies vs custom policies</a>.
+     * </p>
+     * <important>
+     * <p>
+     * If you create a default policy, you can specify the request parameters either in the request body, or in the
+     * PolicyDetails request structure, but not both.
+     * </p>
+     * </important>
      * 
      * @param createLifecyclePolicyRequest
      * @return Result of the CreateLifecyclePolicy operation returned by the service.
@@ -280,7 +318,8 @@ public class AmazonDLMClient extends AmazonWebServiceClient implements AmazonDLM
      * Gets summary information about all or the specified data lifecycle policies.
      * </p>
      * <p>
-     * To get complete information about a policy, use <a>GetLifecyclePolicy</a>.
+     * To get complete information about a policy, use <a
+     * href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_GetLifecyclePolicy.html">GetLifecyclePolicy</a>.
      * </p>
      * 
      * @param getLifecyclePoliciesRequest

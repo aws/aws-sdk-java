@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * EBS volume specifications such as volume type, IOPS, size (GiB) and throughput (MiB/s) that are requested for the EBS
- * volume attached to an EC2 instance in the cluster.
+ * volume attached to an Amazon EC2 instance in the cluster.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/VolumeSpecification"
@@ -31,7 +31,7 @@ public class VolumeSpecification implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The volume type. Volume types supported are gp2, io1, and standard.
+     * The volume type. Volume types supported are gp3, gp2, io1, st1, sc1, and standard.
      * </p>
      */
     private String volumeType;
@@ -58,11 +58,11 @@ public class VolumeSpecification implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The volume type. Volume types supported are gp2, io1, and standard.
+     * The volume type. Volume types supported are gp3, gp2, io1, st1, sc1, and standard.
      * </p>
      * 
      * @param volumeType
-     *        The volume type. Volume types supported are gp2, io1, and standard.
+     *        The volume type. Volume types supported are gp3, gp2, io1, st1, sc1, and standard.
      */
 
     public void setVolumeType(String volumeType) {
@@ -71,10 +71,10 @@ public class VolumeSpecification implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The volume type. Volume types supported are gp2, io1, and standard.
+     * The volume type. Volume types supported are gp3, gp2, io1, st1, sc1, and standard.
      * </p>
      * 
-     * @return The volume type. Volume types supported are gp2, io1, and standard.
+     * @return The volume type. Volume types supported are gp3, gp2, io1, st1, sc1, and standard.
      */
 
     public String getVolumeType() {
@@ -83,11 +83,11 @@ public class VolumeSpecification implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The volume type. Volume types supported are gp2, io1, and standard.
+     * The volume type. Volume types supported are gp3, gp2, io1, st1, sc1, and standard.
      * </p>
      * 
      * @param volumeType
-     *        The volume type. Volume types supported are gp2, io1, and standard.
+     *        The volume type. Volume types supported are gp3, gp2, io1, st1, sc1, and standard.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

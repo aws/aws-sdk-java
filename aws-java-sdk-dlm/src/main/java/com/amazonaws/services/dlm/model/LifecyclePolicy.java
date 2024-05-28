@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * <b>[All policy types]</b> Detailed information about a snapshot, AMI, or event-based lifecycle policy.
+ * <b>[Custom policies only]</b> Detailed information about a snapshot, AMI, or event-based lifecycle policy.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/LifecyclePolicy" target="_top">AWS API
@@ -88,6 +88,24 @@ public class LifecyclePolicy implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String policyArn;
+    /**
+     * <p>
+     * <b>[Default policies only]</b> The type of default policy. Values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>VOLUME</code> - Default policy for EBS snapshots
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INSTANCE</code> - Default policy for EBS-backed AMIs
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private Boolean defaultPolicy;
 
     /**
      * <p>
@@ -540,6 +558,150 @@ public class LifecyclePolicy implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * <b>[Default policies only]</b> The type of default policy. Values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>VOLUME</code> - Default policy for EBS snapshots
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INSTANCE</code> - Default policy for EBS-backed AMIs
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param defaultPolicy
+     *        <b>[Default policies only]</b> The type of default policy. Values include:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>VOLUME</code> - Default policy for EBS snapshots
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INSTANCE</code> - Default policy for EBS-backed AMIs
+     *        </p>
+     *        </li>
+     */
+
+    public void setDefaultPolicy(Boolean defaultPolicy) {
+        this.defaultPolicy = defaultPolicy;
+    }
+
+    /**
+     * <p>
+     * <b>[Default policies only]</b> The type of default policy. Values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>VOLUME</code> - Default policy for EBS snapshots
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INSTANCE</code> - Default policy for EBS-backed AMIs
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return <b>[Default policies only]</b> The type of default policy. Values include:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>VOLUME</code> - Default policy for EBS snapshots
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>INSTANCE</code> - Default policy for EBS-backed AMIs
+     *         </p>
+     *         </li>
+     */
+
+    public Boolean getDefaultPolicy() {
+        return this.defaultPolicy;
+    }
+
+    /**
+     * <p>
+     * <b>[Default policies only]</b> The type of default policy. Values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>VOLUME</code> - Default policy for EBS snapshots
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INSTANCE</code> - Default policy for EBS-backed AMIs
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param defaultPolicy
+     *        <b>[Default policies only]</b> The type of default policy. Values include:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>VOLUME</code> - Default policy for EBS snapshots
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INSTANCE</code> - Default policy for EBS-backed AMIs
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LifecyclePolicy withDefaultPolicy(Boolean defaultPolicy) {
+        setDefaultPolicy(defaultPolicy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * <b>[Default policies only]</b> The type of default policy. Values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>VOLUME</code> - Default policy for EBS snapshots
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INSTANCE</code> - Default policy for EBS-backed AMIs
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return <b>[Default policies only]</b> The type of default policy. Values include:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>VOLUME</code> - Default policy for EBS snapshots
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>INSTANCE</code> - Default policy for EBS-backed AMIs
+     *         </p>
+     *         </li>
+     */
+
+    public Boolean isDefaultPolicy() {
+        return this.defaultPolicy;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -570,7 +732,9 @@ public class LifecyclePolicy implements Serializable, Cloneable, StructuredPojo 
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getPolicyArn() != null)
-            sb.append("PolicyArn: ").append(getPolicyArn());
+            sb.append("PolicyArn: ").append(getPolicyArn()).append(",");
+        if (getDefaultPolicy() != null)
+            sb.append("DefaultPolicy: ").append(getDefaultPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -625,6 +789,10 @@ public class LifecyclePolicy implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getPolicyArn() != null && other.getPolicyArn().equals(this.getPolicyArn()) == false)
             return false;
+        if (other.getDefaultPolicy() == null ^ this.getDefaultPolicy() == null)
+            return false;
+        if (other.getDefaultPolicy() != null && other.getDefaultPolicy().equals(this.getDefaultPolicy()) == false)
+            return false;
         return true;
     }
 
@@ -643,6 +811,7 @@ public class LifecyclePolicy implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getPolicyDetails() == null) ? 0 : getPolicyDetails().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getPolicyArn() == null) ? 0 : getPolicyArn().hashCode());
+        hashCode = prime * hashCode + ((getDefaultPolicy() == null) ? 0 : getDefaultPolicy().hashCode());
         return hashCode;
     }
 

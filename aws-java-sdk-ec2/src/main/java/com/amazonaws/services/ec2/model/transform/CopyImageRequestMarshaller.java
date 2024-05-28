@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,6 +70,45 @@ public class CopyImageRequestMarshaller implements Marshaller<Request<CopyImageR
 
         if (copyImageRequest.getDestinationOutpostArn() != null) {
             request.addParameter("DestinationOutpostArn", StringUtils.fromString(copyImageRequest.getDestinationOutpostArn()));
+        }
+
+        if (copyImageRequest.getCopyImageTags() != null) {
+            request.addParameter("CopyImageTags", StringUtils.fromBoolean(copyImageRequest.getCopyImageTags()));
+        }
+
+        com.amazonaws.internal.SdkInternalList<TagSpecification> copyImageRequestTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) copyImageRequest
+                .getTagSpecifications();
+        if (!copyImageRequestTagSpecificationsList.isEmpty() || !copyImageRequestTagSpecificationsList.isAutoConstruct()) {
+            int tagSpecificationsListIndex = 1;
+
+            for (TagSpecification copyImageRequestTagSpecificationsListValue : copyImageRequestTagSpecificationsList) {
+
+                if (copyImageRequestTagSpecificationsListValue.getResourceType() != null) {
+                    request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".ResourceType",
+                            StringUtils.fromString(copyImageRequestTagSpecificationsListValue.getResourceType()));
+                }
+
+                com.amazonaws.internal.SdkInternalList<Tag> tagSpecificationTagsList = (com.amazonaws.internal.SdkInternalList<Tag>) copyImageRequestTagSpecificationsListValue
+                        .getTags();
+                if (!tagSpecificationTagsList.isEmpty() || !tagSpecificationTagsList.isAutoConstruct()) {
+                    int tagsListIndex = 1;
+
+                    for (Tag tagSpecificationTagsListValue : tagSpecificationTagsList) {
+
+                        if (tagSpecificationTagsListValue.getKey() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Key",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getKey()));
+                        }
+
+                        if (tagSpecificationTagsListValue.getValue() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Value",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getValue()));
+                        }
+                        tagsListIndex++;
+                    }
+                }
+                tagSpecificationsListIndex++;
+            }
         }
 
         return request;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,9 +36,9 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * Specifies the task list to poll for decision tasks.
      * </p>
      * <p>
-     * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
+     * The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical
+     * bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.
      * </p>
      */
     private TaskList taskList;
@@ -53,8 +53,8 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * If <code>NextPageToken</code> is returned there are more results available. The value of
      * <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned
-     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60
-     * seconds. Using an expired pagination token will return a <code>400</code> error: "
+     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24
+     * hours. Using an expired pagination token will return a <code>400</code> error: "
      * <code>Specified token has exceeded its maximum lifetime</code>".
      * </p>
      * <p>
@@ -88,6 +88,14 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private Boolean reverseOrder;
+    /**
+     * <p>
+     * When set to <code>true</code>, returns the events with <code>eventTimestamp</code> greater than or equal to
+     * <code>eventTimestamp</code> of the most recent <code>DecisionTaskStarted</code> event. By default, this parameter
+     * is set to <code>false</code>.
+     * </p>
+     */
+    private Boolean startAtPreviousStartedEvent;
 
     /**
      * <p>
@@ -134,18 +142,17 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * Specifies the task list to poll for decision tasks.
      * </p>
      * <p>
-     * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
+     * The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical
+     * bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.
      * </p>
      * 
      * @param taskList
      *        Specifies the task list to poll for decision tasks.</p>
      *        <p>
-     *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
-     *        <code>arn</code>.
+     *        The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
+     *        (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also,
+     *        it must <i>not</i> be the literal string <code>arn</code>.
      */
 
     public void setTaskList(TaskList taskList) {
@@ -157,17 +164,16 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * Specifies the task list to poll for decision tasks.
      * </p>
      * <p>
-     * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
+     * The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical
+     * bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.
      * </p>
      * 
      * @return Specifies the task list to poll for decision tasks.</p>
      *         <p>
-     *         The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *         <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *         <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
-     *         <code>arn</code>.
+     *         The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
+     *         (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>).
+     *         Also, it must <i>not</i> be the literal string <code>arn</code>.
      */
 
     public TaskList getTaskList() {
@@ -179,18 +185,17 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * Specifies the task list to poll for decision tasks.
      * </p>
      * <p>
-     * The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string <code>arn</code>.
+     * The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical
+     * bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.
      * </p>
      * 
      * @param taskList
      *        Specifies the task list to poll for decision tasks.</p>
      *        <p>
-     *        The specified string must not start or end with whitespace. It must not contain a <code>:</code> (colon),
-     *        <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (
-     *        <code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
-     *        <code>arn</code>.
+     *        The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
+     *        (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also,
+     *        it must <i>not</i> be the literal string <code>arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -252,8 +257,8 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * If <code>NextPageToken</code> is returned there are more results available. The value of
      * <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned
-     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60
-     * seconds. Using an expired pagination token will return a <code>400</code> error: "
+     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24
+     * hours. Using an expired pagination token will return a <code>400</code> error: "
      * <code>Specified token has exceeded its maximum lifetime</code>".
      * </p>
      * <p>
@@ -272,7 +277,7 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
      *        If <code>NextPageToken</code> is returned there are more results available. The value of
      *        <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the
      *        returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token
-     *        expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "
+     *        expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "
      *        <code>Specified token has exceeded its maximum lifetime</code>". </p>
      *        <p>
      *        The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
@@ -294,8 +299,8 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * If <code>NextPageToken</code> is returned there are more results available. The value of
      * <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned
-     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60
-     * seconds. Using an expired pagination token will return a <code>400</code> error: "
+     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24
+     * hours. Using an expired pagination token will return a <code>400</code> error: "
      * <code>Specified token has exceeded its maximum lifetime</code>".
      * </p>
      * <p>
@@ -313,7 +318,7 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * @return If <code>NextPageToken</code> is returned there are more results available. The value of
      *         <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the
      *         returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token
-     *         expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "
+     *         expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "
      *         <code>Specified token has exceeded its maximum lifetime</code>". </p>
      *         <p>
      *         The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
@@ -335,8 +340,8 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * If <code>NextPageToken</code> is returned there are more results available. The value of
      * <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the returned
-     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60
-     * seconds. Using an expired pagination token will return a <code>400</code> error: "
+     * token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24
+     * hours. Using an expired pagination token will return a <code>400</code> error: "
      * <code>Specified token has exceeded its maximum lifetime</code>".
      * </p>
      * <p>
@@ -355,7 +360,7 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
      *        If <code>NextPageToken</code> is returned there are more results available. The value of
      *        <code>NextPageToken</code> is a unique pagination token for each page. Make the call again using the
      *        returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token
-     *        expires after 60 seconds. Using an expired pagination token will return a <code>400</code> error: "
+     *        expires after 24 hours. Using an expired pagination token will return a <code>400</code> error: "
      *        <code>Specified token has exceeded its maximum lifetime</code>". </p>
      *        <p>
      *        The configured <code>maximumPageSize</code> determines how many results can be returned in a single call.
@@ -503,6 +508,74 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * When set to <code>true</code>, returns the events with <code>eventTimestamp</code> greater than or equal to
+     * <code>eventTimestamp</code> of the most recent <code>DecisionTaskStarted</code> event. By default, this parameter
+     * is set to <code>false</code>.
+     * </p>
+     * 
+     * @param startAtPreviousStartedEvent
+     *        When set to <code>true</code>, returns the events with <code>eventTimestamp</code> greater than or equal
+     *        to <code>eventTimestamp</code> of the most recent <code>DecisionTaskStarted</code> event. By default, this
+     *        parameter is set to <code>false</code>.
+     */
+
+    public void setStartAtPreviousStartedEvent(Boolean startAtPreviousStartedEvent) {
+        this.startAtPreviousStartedEvent = startAtPreviousStartedEvent;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, returns the events with <code>eventTimestamp</code> greater than or equal to
+     * <code>eventTimestamp</code> of the most recent <code>DecisionTaskStarted</code> event. By default, this parameter
+     * is set to <code>false</code>.
+     * </p>
+     * 
+     * @return When set to <code>true</code>, returns the events with <code>eventTimestamp</code> greater than or equal
+     *         to <code>eventTimestamp</code> of the most recent <code>DecisionTaskStarted</code> event. By default,
+     *         this parameter is set to <code>false</code>.
+     */
+
+    public Boolean getStartAtPreviousStartedEvent() {
+        return this.startAtPreviousStartedEvent;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, returns the events with <code>eventTimestamp</code> greater than or equal to
+     * <code>eventTimestamp</code> of the most recent <code>DecisionTaskStarted</code> event. By default, this parameter
+     * is set to <code>false</code>.
+     * </p>
+     * 
+     * @param startAtPreviousStartedEvent
+     *        When set to <code>true</code>, returns the events with <code>eventTimestamp</code> greater than or equal
+     *        to <code>eventTimestamp</code> of the most recent <code>DecisionTaskStarted</code> event. By default, this
+     *        parameter is set to <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PollForDecisionTaskRequest withStartAtPreviousStartedEvent(Boolean startAtPreviousStartedEvent) {
+        setStartAtPreviousStartedEvent(startAtPreviousStartedEvent);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, returns the events with <code>eventTimestamp</code> greater than or equal to
+     * <code>eventTimestamp</code> of the most recent <code>DecisionTaskStarted</code> event. By default, this parameter
+     * is set to <code>false</code>.
+     * </p>
+     * 
+     * @return When set to <code>true</code>, returns the events with <code>eventTimestamp</code> greater than or equal
+     *         to <code>eventTimestamp</code> of the most recent <code>DecisionTaskStarted</code> event. By default,
+     *         this parameter is set to <code>false</code>.
+     */
+
+    public Boolean isStartAtPreviousStartedEvent() {
+        return this.startAtPreviousStartedEvent;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -525,7 +598,9 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
         if (getMaximumPageSize() != null)
             sb.append("MaximumPageSize: ").append(getMaximumPageSize()).append(",");
         if (getReverseOrder() != null)
-            sb.append("ReverseOrder: ").append(getReverseOrder());
+            sb.append("ReverseOrder: ").append(getReverseOrder()).append(",");
+        if (getStartAtPreviousStartedEvent() != null)
+            sb.append("StartAtPreviousStartedEvent: ").append(getStartAtPreviousStartedEvent());
         sb.append("}");
         return sb.toString();
     }
@@ -564,6 +639,10 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getReverseOrder() != null && other.getReverseOrder().equals(this.getReverseOrder()) == false)
             return false;
+        if (other.getStartAtPreviousStartedEvent() == null ^ this.getStartAtPreviousStartedEvent() == null)
+            return false;
+        if (other.getStartAtPreviousStartedEvent() != null && other.getStartAtPreviousStartedEvent().equals(this.getStartAtPreviousStartedEvent()) == false)
+            return false;
         return true;
     }
 
@@ -578,6 +657,7 @@ public class PollForDecisionTaskRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getNextPageToken() == null) ? 0 : getNextPageToken().hashCode());
         hashCode = prime * hashCode + ((getMaximumPageSize() == null) ? 0 : getMaximumPageSize().hashCode());
         hashCode = prime * hashCode + ((getReverseOrder() == null) ? 0 : getReverseOrder().hashCode());
+        hashCode = prime * hashCode + ((getStartAtPreviousStartedEvent() == null) ? 0 : getStartAtPreviousStartedEvent().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class ListEntitiesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Array of <code>EntitySummary</code> object.
+     * Array of <code>EntitySummary</code> objects.
      * </p>
      */
     private java.util.List<EntitySummary> entitySummaryList;
@@ -38,10 +38,10 @@ public class ListEntitiesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Array of <code>EntitySummary</code> object.
+     * Array of <code>EntitySummary</code> objects.
      * </p>
      * 
-     * @return Array of <code>EntitySummary</code> object.
+     * @return Array of <code>EntitySummary</code> objects.
      */
 
     public java.util.List<EntitySummary> getEntitySummaryList() {
@@ -50,11 +50,11 @@ public class ListEntitiesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Array of <code>EntitySummary</code> object.
+     * Array of <code>EntitySummary</code> objects.
      * </p>
      * 
      * @param entitySummaryList
-     *        Array of <code>EntitySummary</code> object.
+     *        Array of <code>EntitySummary</code> objects.
      */
 
     public void setEntitySummaryList(java.util.Collection<EntitySummary> entitySummaryList) {
@@ -68,7 +68,7 @@ public class ListEntitiesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Array of <code>EntitySummary</code> object.
+     * Array of <code>EntitySummary</code> objects.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListEntitiesResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param entitySummaryList
-     *        Array of <code>EntitySummary</code> object.
+     *        Array of <code>EntitySummary</code> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListEntitiesResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Array of <code>EntitySummary</code> object.
+     * Array of <code>EntitySummary</code> objects.
      * </p>
      * 
      * @param entitySummaryList
-     *        Array of <code>EntitySummary</code> object.
+     *        Array of <code>EntitySummary</code> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

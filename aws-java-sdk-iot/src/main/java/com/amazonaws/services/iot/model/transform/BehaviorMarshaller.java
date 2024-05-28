@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class BehaviorMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("criteria").build();
     private static final MarshallingInfo<Boolean> SUPPRESSALERTS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("suppressAlerts").build();
+    private static final MarshallingInfo<Boolean> EXPORTMETRIC_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("exportMetric").build();
 
     private static final BehaviorMarshaller instance = new BehaviorMarshaller();
 
@@ -59,6 +61,7 @@ public class BehaviorMarshaller {
             protocolMarshaller.marshall(behavior.getMetricDimension(), METRICDIMENSION_BINDING);
             protocolMarshaller.marshall(behavior.getCriteria(), CRITERIA_BINDING);
             protocolMarshaller.marshall(behavior.getSuppressAlerts(), SUPPRESSALERTS_BINDING);
+            protocolMarshaller.marshall(behavior.getExportMetric(), EXPORTMETRIC_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

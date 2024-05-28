@@ -46,7 +46,10 @@ import ${serviceBaseExceptionFqcn};
 
 
 import ${metadata.packageName}.model.*;
+
+<#if hasShapes>
 import ${transformPackage}.*;
+</#if>
 
 <#if customizationConfig.s3ArnableFields??>
 import com.amazonaws.arn.Arn;

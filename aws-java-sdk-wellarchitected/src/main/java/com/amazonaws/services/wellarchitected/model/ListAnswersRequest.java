@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,12 @@ public class ListAnswersRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * The priority of the question.
+     * </p>
+     */
+    private String questionPriority;
 
     /**
      * @param workloadId
@@ -215,6 +221,65 @@ public class ListAnswersRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The priority of the question.
+     * </p>
+     * 
+     * @param questionPriority
+     *        The priority of the question.
+     * @see QuestionPriority
+     */
+
+    public void setQuestionPriority(String questionPriority) {
+        this.questionPriority = questionPriority;
+    }
+
+    /**
+     * <p>
+     * The priority of the question.
+     * </p>
+     * 
+     * @return The priority of the question.
+     * @see QuestionPriority
+     */
+
+    public String getQuestionPriority() {
+        return this.questionPriority;
+    }
+
+    /**
+     * <p>
+     * The priority of the question.
+     * </p>
+     * 
+     * @param questionPriority
+     *        The priority of the question.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see QuestionPriority
+     */
+
+    public ListAnswersRequest withQuestionPriority(String questionPriority) {
+        setQuestionPriority(questionPriority);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The priority of the question.
+     * </p>
+     * 
+     * @param questionPriority
+     *        The priority of the question.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see QuestionPriority
+     */
+
+    public ListAnswersRequest withQuestionPriority(QuestionPriority questionPriority) {
+        this.questionPriority = questionPriority.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -237,7 +302,9 @@ public class ListAnswersRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getQuestionPriority() != null)
+            sb.append("QuestionPriority: ").append(getQuestionPriority());
         sb.append("}");
         return sb.toString();
     }
@@ -276,6 +343,10 @@ public class ListAnswersRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getQuestionPriority() == null ^ this.getQuestionPriority() == null)
+            return false;
+        if (other.getQuestionPriority() != null && other.getQuestionPriority().equals(this.getQuestionPriority()) == false)
+            return false;
         return true;
     }
 
@@ -290,6 +361,7 @@ public class ListAnswersRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getMilestoneNumber() == null) ? 0 : getMilestoneNumber().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getQuestionPriority() == null) ? 0 : getQuestionPriority().hashCode());
         return hashCode;
     }
 

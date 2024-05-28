@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,6 +23,8 @@ import javax.annotation.Generated;
 public class InvalidRequestException extends com.amazonaws.services.connect.model.AmazonConnectException {
     private static final long serialVersionUID = 1L;
 
+    private InvalidRequestExceptionReason reason;
+
     /**
      * Constructs a new InvalidRequestException with the specified error message.
      *
@@ -31,6 +33,34 @@ public class InvalidRequestException extends com.amazonaws.services.connect.mode
      */
     public InvalidRequestException(String message) {
         super(message);
+    }
+
+    /**
+     * @param reason
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("Reason")
+    public void setReason(InvalidRequestExceptionReason reason) {
+        this.reason = reason;
+    }
+
+    /**
+     * @return
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("Reason")
+    public InvalidRequestExceptionReason getReason() {
+        return this.reason;
+    }
+
+    /**
+     * @param reason
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InvalidRequestException withReason(InvalidRequestExceptionReason reason) {
+        setReason(reason);
+        return this;
     }
 
 }

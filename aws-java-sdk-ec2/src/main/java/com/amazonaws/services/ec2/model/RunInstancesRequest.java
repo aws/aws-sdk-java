@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,17 +47,14 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
      * <i>Amazon EC2 User Guide</i>.
      * </p>
-     * <p>
-     * Default: <code>m1.small</code>
-     * </p>
      */
     private String instanceType;
     /**
      * <p>
-     * [EC2-VPC] The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the
-     * IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign specific
-     * IPv6 addresses in the same request. You can specify this option if you've specified a minimum number of instances
-     * to launch.
+     * The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6
+     * addresses from the range of your subnet. You cannot specify this option and the option to assign specific IPv6
+     * addresses in the same request. You can specify this option if you've specified a minimum number of instances to
+     * launch.
      * </p>
      * <p>
      * You cannot specify this option and the network interfaces option in the same request.
@@ -66,9 +63,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private Integer ipv6AddressCount;
     /**
      * <p>
-     * [EC2-VPC] The IPv6 addresses from the range of the subnet to associate with the primary network interface. You
-     * cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot
-     * specify this option if you've specified a minimum number of instances to launch.
+     * The IPv6 addresses from the range of the subnet to associate with the primary network interface. You cannot
+     * specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot specify
+     * this option if you've specified a minimum number of instances to launch.
      * </p>
      * <p>
      * You cannot specify this option and the network interfaces option in the same request.
@@ -162,17 +159,18 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * >CreateSecurityGroup</a>.
      * </p>
      * <p>
-     * If you specify a network interface, you must specify any security groups as part of the network interface.
+     * If you specify a network interface, you must specify any security groups as part of the network interface instead
+     * of using this parameter.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> securityGroupIds;
     /**
      * <p>
-     * [EC2-Classic, default VPC] The names of the security groups. For a nondefault VPC, you must use security group
-     * IDs instead.
+     * [Default VPC] The names of the security groups.
      * </p>
      * <p>
-     * If you specify a network interface, you must specify any security groups as part of the network interface.
+     * If you specify a network interface, you must specify any security groups as part of the network interface instead
+     * of using this parameter.
      * </p>
      * <p>
      * Default: Amazon EC2 uses the default security group.
@@ -181,10 +179,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private com.amazonaws.internal.SdkInternalList<String> securityGroups;
     /**
      * <p>
-     * [EC2-VPC] The ID of the subnet to launch the instance into.
+     * The ID of the subnet to launch the instance into.
      * </p>
      * <p>
-     * If you specify a network interface, you must specify any subnets as part of the network interface.
+     * If you specify a network interface, you must specify any subnets as part of the network interface instead of
+     * using this parameter.
      * </p>
      */
     private String subnetId;
@@ -263,14 +262,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private String instanceInitiatedShutdownBehavior;
     /**
      * <p>
-     * The network interfaces to associate with the instance. If you specify a network interface, you must specify any
-     * security groups and subnets as part of the network interface.
+     * The network interfaces to associate with the instance.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification> networkInterfaces;
     /**
      * <p>
-     * [EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.
+     * The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.
      * </p>
      * <p>
      * Only one private IP address can be designated as primary. You can't specify this option if you've specified the
@@ -284,21 +282,25 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private String privateIpAddress;
     /**
      * <p>
-     * An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your
-     * Windows instance to accelerate the graphics performance of your applications. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2 Elastic GPUs</a>
-     * in the <i>Amazon EC2 User Guide</i>.
+     * An elastic GPU to associate with the instance.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Elastic Graphics reached end of life on January 8, 2024.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<ElasticGpuSpecification> elasticGpuSpecification;
     /**
      * <p>
-     * An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource
-     * you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.
+     * An elastic inference accelerator to associate with the instance.
      * </p>
+     * <note>
      * <p>
-     * You cannot specify accelerators from different generations in the same request.
+     * Amazon Elastic Inference (EI) is no longer available to new customers. For more information, see <a
+     * href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon Elastic Inference FAQs</a>.
      * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<ElasticInferenceAccelerator> elasticInferenceAccelerators;
     /**
@@ -321,11 +323,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
-     * Elastic graphics
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Spot Instance requests
      * </p>
      * </li>
@@ -343,9 +340,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
     /**
      * <p>
-     * The launch template to use to launch the instances. Any parameters that you specify in <a>RunInstances</a>
-     * override the same parameters in the launch template. You can specify either the name or ID of a launch template,
-     * but not both.
+     * The launch template. Any additional parameters that you specify for the new instance overwrite the corresponding
+     * parameters included in the launch template.
      * </p>
      */
     private LaunchTemplateSpecification launchTemplate;
@@ -394,7 +390,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private CapacityReservationSpecification capacityReservationSpecification;
     /**
      * <p>
-     * Indicates whether an instance is enabled for hibernation. For more information, see <a
+     * Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance meets the
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
+     * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
      * <i>Amazon EC2 User Guide</i>.
      * </p>
@@ -420,7 +418,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web Services Nitro
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What is Amazon Web Services Nitro
      * Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.
      * </p>
      * <p>
@@ -430,7 +428,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private EnclaveOptionsRequest enclaveOptions;
     /**
      * <p>
-     * The options for the instance hostname. The default values are inherited from the subnet.
+     * The options for the instance hostname. The default values are inherited from the subnet. Applies only if creating
+     * a network interface, not attaching an existing one.
      * </p>
      */
     private PrivateDnsNameOptionsRequest privateDnsNameOptions;
@@ -448,6 +447,20 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      */
     private Boolean disableApiStop;
+    /**
+     * <p>
+     * If you’re launching an instance into a dual-stack or IPv6-only subnet, you can enable assigning a primary IPv6
+     * address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled to use a
+     * primary IPv6 address. Use this option if an instance relies on its IPv6 address not changing. When you launch the
+     * instance, Amazon Web Services will automatically assign an IPv6 address associated with the ENI attached to your
+     * instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to be a primary IPv6, you cannot
+     * disable it. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary
+     * IPv6 address until the instance is terminated or the network interface is detached. If you have multiple IPv6
+     * addresses associated with an ENI attached to your instance and you enable a primary IPv6 address, the first IPv6
+     * GUA address associated with the ENI becomes the primary IPv6 address.
+     * </p>
+     */
+    private Boolean enablePrimaryIpv6;
 
     /**
      * Default constructor for RunInstancesRequest object. Callers should use the setter or fluent setter (with...)
@@ -637,16 +650,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
      * <i>Amazon EC2 User Guide</i>.
      * </p>
-     * <p>
-     * Default: <code>m1.small</code>
-     * </p>
      * 
      * @param instanceType
      *        The instance type. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
-     *        <i>Amazon EC2 User Guide</i>.</p>
-     *        <p>
-     *        Default: <code>m1.small</code>
+     *        <i>Amazon EC2 User Guide</i>.
      * @see InstanceType
      */
 
@@ -660,15 +668,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
      * <i>Amazon EC2 User Guide</i>.
      * </p>
-     * <p>
-     * Default: <code>m1.small</code>
-     * </p>
      * 
      * @return The instance type. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
-     *         <i>Amazon EC2 User Guide</i>.</p>
-     *         <p>
-     *         Default: <code>m1.small</code>
+     *         <i>Amazon EC2 User Guide</i>.
      * @see InstanceType
      */
 
@@ -682,16 +685,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
      * <i>Amazon EC2 User Guide</i>.
      * </p>
-     * <p>
-     * Default: <code>m1.small</code>
-     * </p>
      * 
      * @param instanceType
      *        The instance type. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
-     *        <i>Amazon EC2 User Guide</i>.</p>
-     *        <p>
-     *        Default: <code>m1.small</code>
+     *        <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
@@ -707,16 +705,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
      * <i>Amazon EC2 User Guide</i>.
      * </p>
-     * <p>
-     * Default: <code>m1.small</code>
-     * </p>
      * 
      * @param instanceType
      *        The instance type. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
-     *        <i>Amazon EC2 User Guide</i>.</p>
-     *        <p>
-     *        Default: <code>m1.small</code>
+     *        <i>Amazon EC2 User Guide</i>.
      * @see InstanceType
      */
 
@@ -730,16 +723,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
      * <i>Amazon EC2 User Guide</i>.
      * </p>
-     * <p>
-     * Default: <code>m1.small</code>
-     * </p>
      * 
      * @param instanceType
      *        The instance type. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
-     *        <i>Amazon EC2 User Guide</i>.</p>
-     *        <p>
-     *        Default: <code>m1.small</code>
+     *        <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
@@ -751,20 +739,20 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * [EC2-VPC] The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the
-     * IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign specific
-     * IPv6 addresses in the same request. You can specify this option if you've specified a minimum number of instances
-     * to launch.
+     * The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6
+     * addresses from the range of your subnet. You cannot specify this option and the option to assign specific IPv6
+     * addresses in the same request. You can specify this option if you've specified a minimum number of instances to
+     * launch.
      * </p>
      * <p>
      * You cannot specify this option and the network interfaces option in the same request.
      * </p>
      * 
      * @param ipv6AddressCount
-     *        [EC2-VPC] The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses
-     *        the IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign
-     *        specific IPv6 addresses in the same request. You can specify this option if you've specified a minimum
-     *        number of instances to launch.</p>
+     *        The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6
+     *        addresses from the range of your subnet. You cannot specify this option and the option to assign specific
+     *        IPv6 addresses in the same request. You can specify this option if you've specified a minimum number of
+     *        instances to launch.</p>
      *        <p>
      *        You cannot specify this option and the network interfaces option in the same request.
      */
@@ -775,19 +763,19 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * [EC2-VPC] The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the
-     * IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign specific
-     * IPv6 addresses in the same request. You can specify this option if you've specified a minimum number of instances
-     * to launch.
+     * The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6
+     * addresses from the range of your subnet. You cannot specify this option and the option to assign specific IPv6
+     * addresses in the same request. You can specify this option if you've specified a minimum number of instances to
+     * launch.
      * </p>
      * <p>
      * You cannot specify this option and the network interfaces option in the same request.
      * </p>
      * 
-     * @return [EC2-VPC] The number of IPv6 addresses to associate with the primary network interface. Amazon EC2
-     *         chooses the IPv6 addresses from the range of your subnet. You cannot specify this option and the option
-     *         to assign specific IPv6 addresses in the same request. You can specify this option if you've specified a
-     *         minimum number of instances to launch.</p>
+     * @return The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6
+     *         addresses from the range of your subnet. You cannot specify this option and the option to assign specific
+     *         IPv6 addresses in the same request. You can specify this option if you've specified a minimum number of
+     *         instances to launch.</p>
      *         <p>
      *         You cannot specify this option and the network interfaces option in the same request.
      */
@@ -798,20 +786,20 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * [EC2-VPC] The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the
-     * IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign specific
-     * IPv6 addresses in the same request. You can specify this option if you've specified a minimum number of instances
-     * to launch.
+     * The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6
+     * addresses from the range of your subnet. You cannot specify this option and the option to assign specific IPv6
+     * addresses in the same request. You can specify this option if you've specified a minimum number of instances to
+     * launch.
      * </p>
      * <p>
      * You cannot specify this option and the network interfaces option in the same request.
      * </p>
      * 
      * @param ipv6AddressCount
-     *        [EC2-VPC] The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses
-     *        the IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign
-     *        specific IPv6 addresses in the same request. You can specify this option if you've specified a minimum
-     *        number of instances to launch.</p>
+     *        The number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6
+     *        addresses from the range of your subnet. You cannot specify this option and the option to assign specific
+     *        IPv6 addresses in the same request. You can specify this option if you've specified a minimum number of
+     *        instances to launch.</p>
      *        <p>
      *        You cannot specify this option and the network interfaces option in the same request.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -824,17 +812,17 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * [EC2-VPC] The IPv6 addresses from the range of the subnet to associate with the primary network interface. You
-     * cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot
-     * specify this option if you've specified a minimum number of instances to launch.
+     * The IPv6 addresses from the range of the subnet to associate with the primary network interface. You cannot
+     * specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot specify
+     * this option if you've specified a minimum number of instances to launch.
      * </p>
      * <p>
      * You cannot specify this option and the network interfaces option in the same request.
      * </p>
      * 
-     * @return [EC2-VPC] The IPv6 addresses from the range of the subnet to associate with the primary network
-     *         interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same
-     *         request. You cannot specify this option if you've specified a minimum number of instances to launch.</p>
+     * @return The IPv6 addresses from the range of the subnet to associate with the primary network interface. You
+     *         cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You
+     *         cannot specify this option if you've specified a minimum number of instances to launch.</p>
      *         <p>
      *         You cannot specify this option and the network interfaces option in the same request.
      */
@@ -848,18 +836,18 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * [EC2-VPC] The IPv6 addresses from the range of the subnet to associate with the primary network interface. You
-     * cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot
-     * specify this option if you've specified a minimum number of instances to launch.
+     * The IPv6 addresses from the range of the subnet to associate with the primary network interface. You cannot
+     * specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot specify
+     * this option if you've specified a minimum number of instances to launch.
      * </p>
      * <p>
      * You cannot specify this option and the network interfaces option in the same request.
      * </p>
      * 
      * @param ipv6Addresses
-     *        [EC2-VPC] The IPv6 addresses from the range of the subnet to associate with the primary network interface.
-     *        You cannot specify this option and the option to assign a number of IPv6 addresses in the same request.
-     *        You cannot specify this option if you've specified a minimum number of instances to launch.</p>
+     *        The IPv6 addresses from the range of the subnet to associate with the primary network interface. You
+     *        cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You
+     *        cannot specify this option if you've specified a minimum number of instances to launch.</p>
      *        <p>
      *        You cannot specify this option and the network interfaces option in the same request.
      */
@@ -875,9 +863,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * [EC2-VPC] The IPv6 addresses from the range of the subnet to associate with the primary network interface. You
-     * cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot
-     * specify this option if you've specified a minimum number of instances to launch.
+     * The IPv6 addresses from the range of the subnet to associate with the primary network interface. You cannot
+     * specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot specify
+     * this option if you've specified a minimum number of instances to launch.
      * </p>
      * <p>
      * You cannot specify this option and the network interfaces option in the same request.
@@ -889,9 +877,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param ipv6Addresses
-     *        [EC2-VPC] The IPv6 addresses from the range of the subnet to associate with the primary network interface.
-     *        You cannot specify this option and the option to assign a number of IPv6 addresses in the same request.
-     *        You cannot specify this option if you've specified a minimum number of instances to launch.</p>
+     *        The IPv6 addresses from the range of the subnet to associate with the primary network interface. You
+     *        cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You
+     *        cannot specify this option if you've specified a minimum number of instances to launch.</p>
      *        <p>
      *        You cannot specify this option and the network interfaces option in the same request.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -909,18 +897,18 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * [EC2-VPC] The IPv6 addresses from the range of the subnet to associate with the primary network interface. You
-     * cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot
-     * specify this option if you've specified a minimum number of instances to launch.
+     * The IPv6 addresses from the range of the subnet to associate with the primary network interface. You cannot
+     * specify this option and the option to assign a number of IPv6 addresses in the same request. You cannot specify
+     * this option if you've specified a minimum number of instances to launch.
      * </p>
      * <p>
      * You cannot specify this option and the network interfaces option in the same request.
      * </p>
      * 
      * @param ipv6Addresses
-     *        [EC2-VPC] The IPv6 addresses from the range of the subnet to associate with the primary network interface.
-     *        You cannot specify this option and the option to assign a number of IPv6 addresses in the same request.
-     *        You cannot specify this option if you've specified a minimum number of instances to launch.</p>
+     *        The IPv6 addresses from the range of the subnet to associate with the primary network interface. You
+     *        cannot specify this option and the option to assign a number of IPv6 addresses in the same request. You
+     *        cannot specify this option if you've specified a minimum number of instances to launch.</p>
      *        <p>
      *        You cannot specify this option and the network interfaces option in the same request.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1443,15 +1431,16 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * >CreateSecurityGroup</a>.
      * </p>
      * <p>
-     * If you specify a network interface, you must specify any security groups as part of the network interface.
+     * If you specify a network interface, you must specify any security groups as part of the network interface instead
+     * of using this parameter.
      * </p>
      * 
      * @return The IDs of the security groups. You can create a security group using <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html"
      *         >CreateSecurityGroup</a>.</p>
      *         <p>
-     *         If you specify a network interface, you must specify any security groups as part of the network
-     *         interface.
+     *         If you specify a network interface, you must specify any security groups as part of the network interface
+     *         instead of using this parameter.
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -1468,7 +1457,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * >CreateSecurityGroup</a>.
      * </p>
      * <p>
-     * If you specify a network interface, you must specify any security groups as part of the network interface.
+     * If you specify a network interface, you must specify any security groups as part of the network interface instead
+     * of using this parameter.
      * </p>
      * 
      * @param securityGroupIds
@@ -1476,7 +1466,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html"
      *        >CreateSecurityGroup</a>.</p>
      *        <p>
-     *        If you specify a network interface, you must specify any security groups as part of the network interface.
+     *        If you specify a network interface, you must specify any security groups as part of the network interface
+     *        instead of using this parameter.
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -1495,7 +1486,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * >CreateSecurityGroup</a>.
      * </p>
      * <p>
-     * If you specify a network interface, you must specify any security groups as part of the network interface.
+     * If you specify a network interface, you must specify any security groups as part of the network interface instead
+     * of using this parameter.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1508,7 +1500,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html"
      *        >CreateSecurityGroup</a>.</p>
      *        <p>
-     *        If you specify a network interface, you must specify any security groups as part of the network interface.
+     *        If you specify a network interface, you must specify any security groups as part of the network interface
+     *        instead of using this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1529,7 +1522,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * >CreateSecurityGroup</a>.
      * </p>
      * <p>
-     * If you specify a network interface, you must specify any security groups as part of the network interface.
+     * If you specify a network interface, you must specify any security groups as part of the network interface instead
+     * of using this parameter.
      * </p>
      * 
      * @param securityGroupIds
@@ -1537,7 +1531,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html"
      *        >CreateSecurityGroup</a>.</p>
      *        <p>
-     *        If you specify a network interface, you must specify any security groups as part of the network interface.
+     *        If you specify a network interface, you must specify any security groups as part of the network interface
+     *        instead of using this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1548,21 +1543,20 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] The names of the security groups. For a nondefault VPC, you must use security group
-     * IDs instead.
+     * [Default VPC] The names of the security groups.
      * </p>
      * <p>
-     * If you specify a network interface, you must specify any security groups as part of the network interface.
+     * If you specify a network interface, you must specify any security groups as part of the network interface instead
+     * of using this parameter.
      * </p>
      * <p>
      * Default: Amazon EC2 uses the default security group.
      * </p>
      * 
-     * @return [EC2-Classic, default VPC] The names of the security groups. For a nondefault VPC, you must use security
-     *         group IDs instead.</p>
+     * @return [Default VPC] The names of the security groups.</p>
      *         <p>
-     *         If you specify a network interface, you must specify any security groups as part of the network
-     *         interface.
+     *         If you specify a network interface, you must specify any security groups as part of the network interface
+     *         instead of using this parameter.
      *         </p>
      *         <p>
      *         Default: Amazon EC2 uses the default security group.
@@ -1577,21 +1571,21 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] The names of the security groups. For a nondefault VPC, you must use security group
-     * IDs instead.
+     * [Default VPC] The names of the security groups.
      * </p>
      * <p>
-     * If you specify a network interface, you must specify any security groups as part of the network interface.
+     * If you specify a network interface, you must specify any security groups as part of the network interface instead
+     * of using this parameter.
      * </p>
      * <p>
      * Default: Amazon EC2 uses the default security group.
      * </p>
      * 
      * @param securityGroups
-     *        [EC2-Classic, default VPC] The names of the security groups. For a nondefault VPC, you must use security
-     *        group IDs instead.</p>
+     *        [Default VPC] The names of the security groups.</p>
      *        <p>
-     *        If you specify a network interface, you must specify any security groups as part of the network interface.
+     *        If you specify a network interface, you must specify any security groups as part of the network interface
+     *        instead of using this parameter.
      *        </p>
      *        <p>
      *        Default: Amazon EC2 uses the default security group.
@@ -1608,11 +1602,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] The names of the security groups. For a nondefault VPC, you must use security group
-     * IDs instead.
+     * [Default VPC] The names of the security groups.
      * </p>
      * <p>
-     * If you specify a network interface, you must specify any security groups as part of the network interface.
+     * If you specify a network interface, you must specify any security groups as part of the network interface instead
+     * of using this parameter.
      * </p>
      * <p>
      * Default: Amazon EC2 uses the default security group.
@@ -1624,10 +1618,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param securityGroups
-     *        [EC2-Classic, default VPC] The names of the security groups. For a nondefault VPC, you must use security
-     *        group IDs instead.</p>
+     *        [Default VPC] The names of the security groups.</p>
      *        <p>
-     *        If you specify a network interface, you must specify any security groups as part of the network interface.
+     *        If you specify a network interface, you must specify any security groups as part of the network interface
+     *        instead of using this parameter.
      *        </p>
      *        <p>
      *        Default: Amazon EC2 uses the default security group.
@@ -1646,21 +1640,21 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * [EC2-Classic, default VPC] The names of the security groups. For a nondefault VPC, you must use security group
-     * IDs instead.
+     * [Default VPC] The names of the security groups.
      * </p>
      * <p>
-     * If you specify a network interface, you must specify any security groups as part of the network interface.
+     * If you specify a network interface, you must specify any security groups as part of the network interface instead
+     * of using this parameter.
      * </p>
      * <p>
      * Default: Amazon EC2 uses the default security group.
      * </p>
      * 
      * @param securityGroups
-     *        [EC2-Classic, default VPC] The names of the security groups. For a nondefault VPC, you must use security
-     *        group IDs instead.</p>
+     *        [Default VPC] The names of the security groups.</p>
      *        <p>
-     *        If you specify a network interface, you must specify any security groups as part of the network interface.
+     *        If you specify a network interface, you must specify any security groups as part of the network interface
+     *        instead of using this parameter.
      *        </p>
      *        <p>
      *        Default: Amazon EC2 uses the default security group.
@@ -1674,16 +1668,18 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * [EC2-VPC] The ID of the subnet to launch the instance into.
+     * The ID of the subnet to launch the instance into.
      * </p>
      * <p>
-     * If you specify a network interface, you must specify any subnets as part of the network interface.
+     * If you specify a network interface, you must specify any subnets as part of the network interface instead of
+     * using this parameter.
      * </p>
      * 
      * @param subnetId
-     *        [EC2-VPC] The ID of the subnet to launch the instance into.</p>
+     *        The ID of the subnet to launch the instance into.</p>
      *        <p>
-     *        If you specify a network interface, you must specify any subnets as part of the network interface.
+     *        If you specify a network interface, you must specify any subnets as part of the network interface instead
+     *        of using this parameter.
      */
 
     public void setSubnetId(String subnetId) {
@@ -1692,15 +1688,17 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * [EC2-VPC] The ID of the subnet to launch the instance into.
+     * The ID of the subnet to launch the instance into.
      * </p>
      * <p>
-     * If you specify a network interface, you must specify any subnets as part of the network interface.
+     * If you specify a network interface, you must specify any subnets as part of the network interface instead of
+     * using this parameter.
      * </p>
      * 
-     * @return [EC2-VPC] The ID of the subnet to launch the instance into.</p>
+     * @return The ID of the subnet to launch the instance into.</p>
      *         <p>
-     *         If you specify a network interface, you must specify any subnets as part of the network interface.
+     *         If you specify a network interface, you must specify any subnets as part of the network interface instead
+     *         of using this parameter.
      */
 
     public String getSubnetId() {
@@ -1709,16 +1707,18 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * [EC2-VPC] The ID of the subnet to launch the instance into.
+     * The ID of the subnet to launch the instance into.
      * </p>
      * <p>
-     * If you specify a network interface, you must specify any subnets as part of the network interface.
+     * If you specify a network interface, you must specify any subnets as part of the network interface instead of
+     * using this parameter.
      * </p>
      * 
      * @param subnetId
-     *        [EC2-VPC] The ID of the subnet to launch the instance into.</p>
+     *        The ID of the subnet to launch the instance into.</p>
      *        <p>
-     *        If you specify a network interface, you must specify any subnets as part of the network interface.
+     *        If you specify a network interface, you must specify any subnets as part of the network interface instead
+     *        of using this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2285,12 +2285,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The network interfaces to associate with the instance. If you specify a network interface, you must specify any
-     * security groups and subnets as part of the network interface.
+     * The network interfaces to associate with the instance.
      * </p>
      * 
-     * @return The network interfaces to associate with the instance. If you specify a network interface, you must
-     *         specify any security groups and subnets as part of the network interface.
+     * @return The network interfaces to associate with the instance.
      */
 
     public java.util.List<InstanceNetworkInterfaceSpecification> getNetworkInterfaces() {
@@ -2302,13 +2300,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The network interfaces to associate with the instance. If you specify a network interface, you must specify any
-     * security groups and subnets as part of the network interface.
+     * The network interfaces to associate with the instance.
      * </p>
      * 
      * @param networkInterfaces
-     *        The network interfaces to associate with the instance. If you specify a network interface, you must
-     *        specify any security groups and subnets as part of the network interface.
+     *        The network interfaces to associate with the instance.
      */
 
     public void setNetworkInterfaces(java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
@@ -2322,8 +2318,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The network interfaces to associate with the instance. If you specify a network interface, you must specify any
-     * security groups and subnets as part of the network interface.
+     * The network interfaces to associate with the instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2332,8 +2327,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param networkInterfaces
-     *        The network interfaces to associate with the instance. If you specify a network interface, you must
-     *        specify any security groups and subnets as part of the network interface.
+     *        The network interfaces to associate with the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2349,13 +2343,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The network interfaces to associate with the instance. If you specify a network interface, you must specify any
-     * security groups and subnets as part of the network interface.
+     * The network interfaces to associate with the instance.
      * </p>
      * 
      * @param networkInterfaces
-     *        The network interfaces to associate with the instance. If you specify a network interface, you must
-     *        specify any security groups and subnets as part of the network interface.
+     *        The network interfaces to associate with the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2366,7 +2358,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * [EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.
+     * The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.
      * </p>
      * <p>
      * Only one private IP address can be designated as primary. You can't specify this option if you've specified the
@@ -2378,8 +2370,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param privateIpAddress
-     *        [EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4 address range of the
-     *        subnet.</p>
+     *        The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.</p>
      *        <p>
      *        Only one private IP address can be designated as primary. You can't specify this option if you've
      *        specified the option to designate a private IP address as the primary IP address in a network interface
@@ -2395,7 +2386,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * [EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.
+     * The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.
      * </p>
      * <p>
      * Only one private IP address can be designated as primary. You can't specify this option if you've specified the
@@ -2406,8 +2397,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * You cannot specify this option and the network interfaces option in the same request.
      * </p>
      * 
-     * @return [EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4 address range of the
-     *         subnet.</p>
+     * @return The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.</p>
      *         <p>
      *         Only one private IP address can be designated as primary. You can't specify this option if you've
      *         specified the option to designate a private IP address as the primary IP address in a network interface
@@ -2423,7 +2413,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * [EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.
+     * The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.
      * </p>
      * <p>
      * Only one private IP address can be designated as primary. You can't specify this option if you've specified the
@@ -2435,8 +2425,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param privateIpAddress
-     *        [EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4 address range of the
-     *        subnet.</p>
+     *        The primary IPv4 address. You must specify a value from the IPv4 address range of the subnet.</p>
      *        <p>
      *        Only one private IP address can be designated as primary. You can't specify this option if you've
      *        specified the option to designate a private IP address as the primary IP address in a network interface
@@ -2454,16 +2443,18 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your
-     * Windows instance to accelerate the graphics performance of your applications. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2 Elastic GPUs</a>
-     * in the <i>Amazon EC2 User Guide</i>.
+     * An elastic GPU to associate with the instance.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Elastic Graphics reached end of life on January 8, 2024.
+     * </p>
+     * </note>
      * 
-     * @return An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to
-     *         your Windows instance to accelerate the graphics performance of your applications. For more information,
-     *         see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2
-     *         Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.
+     * @return An elastic GPU to associate with the instance.</p> <note>
+     *         <p>
+     *         Amazon Elastic Graphics reached end of life on January 8, 2024.
+     *         </p>
      */
 
     public java.util.List<ElasticGpuSpecification> getElasticGpuSpecification() {
@@ -2475,17 +2466,19 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your
-     * Windows instance to accelerate the graphics performance of your applications. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2 Elastic GPUs</a>
-     * in the <i>Amazon EC2 User Guide</i>.
+     * An elastic GPU to associate with the instance.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Elastic Graphics reached end of life on January 8, 2024.
+     * </p>
+     * </note>
      * 
      * @param elasticGpuSpecification
-     *        An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to
-     *        your Windows instance to accelerate the graphics performance of your applications. For more information,
-     *        see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2
-     *        Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.
+     *        An elastic GPU to associate with the instance.</p> <note>
+     *        <p>
+     *        Amazon Elastic Graphics reached end of life on January 8, 2024.
+     *        </p>
      */
 
     public void setElasticGpuSpecification(java.util.Collection<ElasticGpuSpecification> elasticGpuSpecification) {
@@ -2499,11 +2492,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your
-     * Windows instance to accelerate the graphics performance of your applications. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2 Elastic GPUs</a>
-     * in the <i>Amazon EC2 User Guide</i>.
+     * An elastic GPU to associate with the instance.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Elastic Graphics reached end of life on January 8, 2024.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setElasticGpuSpecification(java.util.Collection)} or
@@ -2511,10 +2506,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param elasticGpuSpecification
-     *        An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to
-     *        your Windows instance to accelerate the graphics performance of your applications. For more information,
-     *        see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2
-     *        Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.
+     *        An elastic GPU to associate with the instance.</p> <note>
+     *        <p>
+     *        Amazon Elastic Graphics reached end of life on January 8, 2024.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2530,17 +2525,19 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to your
-     * Windows instance to accelerate the graphics performance of your applications. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2 Elastic GPUs</a>
-     * in the <i>Amazon EC2 User Guide</i>.
+     * An elastic GPU to associate with the instance.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Elastic Graphics reached end of life on January 8, 2024.
+     * </p>
+     * </note>
      * 
      * @param elasticGpuSpecification
-     *        An elastic GPU to associate with the instance. An Elastic GPU is a GPU resource that you can attach to
-     *        your Windows instance to accelerate the graphics performance of your applications. For more information,
-     *        see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon EC2
-     *        Elastic GPUs</a> in the <i>Amazon EC2 User Guide</i>.
+     *        An elastic GPU to associate with the instance.</p> <note>
+     *        <p>
+     *        Amazon Elastic Graphics reached end of life on January 8, 2024.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2551,18 +2548,20 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource
-     * you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.
+     * An elastic inference accelerator to associate with the instance.
      * </p>
+     * <note>
      * <p>
-     * You cannot specify accelerators from different generations in the same request.
+     * Amazon Elastic Inference (EI) is no longer available to new customers. For more information, see <a
+     * href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon Elastic Inference FAQs</a>.
      * </p>
+     * </note>
      * 
-     * @return An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a
-     *         resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference
-     *         workloads.</p>
+     * @return An elastic inference accelerator to associate with the instance.</p> <note>
      *         <p>
-     *         You cannot specify accelerators from different generations in the same request.
+     *         Amazon Elastic Inference (EI) is no longer available to new customers. For more information, see <a
+     *         href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon Elastic Inference FAQs</a>.
+     *         </p>
      */
 
     public java.util.List<ElasticInferenceAccelerator> getElasticInferenceAccelerators() {
@@ -2574,19 +2573,21 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource
-     * you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.
+     * An elastic inference accelerator to associate with the instance.
      * </p>
+     * <note>
      * <p>
-     * You cannot specify accelerators from different generations in the same request.
+     * Amazon Elastic Inference (EI) is no longer available to new customers. For more information, see <a
+     * href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon Elastic Inference FAQs</a>.
      * </p>
+     * </note>
      * 
      * @param elasticInferenceAccelerators
-     *        An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a
-     *        resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference
-     *        workloads.</p>
+     *        An elastic inference accelerator to associate with the instance.</p> <note>
      *        <p>
-     *        You cannot specify accelerators from different generations in the same request.
+     *        Amazon Elastic Inference (EI) is no longer available to new customers. For more information, see <a
+     *        href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon Elastic Inference FAQs</a>.
+     *        </p>
      */
 
     public void setElasticInferenceAccelerators(java.util.Collection<ElasticInferenceAccelerator> elasticInferenceAccelerators) {
@@ -2600,12 +2601,14 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource
-     * you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.
+     * An elastic inference accelerator to associate with the instance.
      * </p>
+     * <note>
      * <p>
-     * You cannot specify accelerators from different generations in the same request.
+     * Amazon Elastic Inference (EI) is no longer available to new customers. For more information, see <a
+     * href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon Elastic Inference FAQs</a>.
      * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setElasticInferenceAccelerators(java.util.Collection)} or
@@ -2613,11 +2616,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param elasticInferenceAccelerators
-     *        An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a
-     *        resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference
-     *        workloads.</p>
+     *        An elastic inference accelerator to associate with the instance.</p> <note>
      *        <p>
-     *        You cannot specify accelerators from different generations in the same request.
+     *        Amazon Elastic Inference (EI) is no longer available to new customers. For more information, see <a
+     *        href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon Elastic Inference FAQs</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2633,19 +2636,21 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a resource
-     * you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference workloads.
+     * An elastic inference accelerator to associate with the instance.
      * </p>
+     * <note>
      * <p>
-     * You cannot specify accelerators from different generations in the same request.
+     * Amazon Elastic Inference (EI) is no longer available to new customers. For more information, see <a
+     * href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon Elastic Inference FAQs</a>.
      * </p>
+     * </note>
      * 
      * @param elasticInferenceAccelerators
-     *        An elastic inference accelerator to associate with the instance. Elastic inference accelerators are a
-     *        resource you can attach to your Amazon EC2 instances to accelerate your Deep Learning (DL) inference
-     *        workloads.</p>
+     *        An elastic inference accelerator to associate with the instance.</p> <note>
      *        <p>
-     *        You cannot specify accelerators from different generations in the same request.
+     *        Amazon Elastic Inference (EI) is no longer available to new customers. For more information, see <a
+     *        href="http://aws.amazon.com/machine-learning/elastic-inference/faqs/">Amazon Elastic Inference FAQs</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2670,11 +2675,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <li>
      * <p>
      * Volumes
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Elastic graphics
      * </p>
      * </li>
      * <li>
@@ -2706,11 +2706,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *         <li>
      *         <p>
      *         Volumes
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Elastic graphics
      *         </p>
      *         </li>
      *         <li>
@@ -2756,11 +2751,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
-     * Elastic graphics
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Spot Instance requests
      * </p>
      * </li>
@@ -2789,11 +2779,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        <li>
      *        <p>
      *        Volumes
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Elastic graphics
      *        </p>
      *        </li>
      *        <li>
@@ -2841,11 +2826,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
-     * Elastic graphics
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Spot Instance requests
      * </p>
      * </li>
@@ -2879,11 +2859,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        <li>
      *        <p>
      *        Volumes
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Elastic graphics
      *        </p>
      *        </li>
      *        <li>
@@ -2933,11 +2908,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </li>
      * <li>
      * <p>
-     * Elastic graphics
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Spot Instance requests
      * </p>
      * </li>
@@ -2970,11 +2940,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        </li>
      *        <li>
      *        <p>
-     *        Elastic graphics
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        Spot Instance requests
      *        </p>
      *        </li>
@@ -2997,15 +2962,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The launch template to use to launch the instances. Any parameters that you specify in <a>RunInstances</a>
-     * override the same parameters in the launch template. You can specify either the name or ID of a launch template,
-     * but not both.
+     * The launch template. Any additional parameters that you specify for the new instance overwrite the corresponding
+     * parameters included in the launch template.
      * </p>
      * 
      * @param launchTemplate
-     *        The launch template to use to launch the instances. Any parameters that you specify in <a>RunInstances</a>
-     *        override the same parameters in the launch template. You can specify either the name or ID of a launch
-     *        template, but not both.
+     *        The launch template. Any additional parameters that you specify for the new instance overwrite the
+     *        corresponding parameters included in the launch template.
      */
 
     public void setLaunchTemplate(LaunchTemplateSpecification launchTemplate) {
@@ -3014,14 +2977,12 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The launch template to use to launch the instances. Any parameters that you specify in <a>RunInstances</a>
-     * override the same parameters in the launch template. You can specify either the name or ID of a launch template,
-     * but not both.
+     * The launch template. Any additional parameters that you specify for the new instance overwrite the corresponding
+     * parameters included in the launch template.
      * </p>
      * 
-     * @return The launch template to use to launch the instances. Any parameters that you specify in
-     *         <a>RunInstances</a> override the same parameters in the launch template. You can specify either the name
-     *         or ID of a launch template, but not both.
+     * @return The launch template. Any additional parameters that you specify for the new instance overwrite the
+     *         corresponding parameters included in the launch template.
      */
 
     public LaunchTemplateSpecification getLaunchTemplate() {
@@ -3030,15 +2991,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The launch template to use to launch the instances. Any parameters that you specify in <a>RunInstances</a>
-     * override the same parameters in the launch template. You can specify either the name or ID of a launch template,
-     * but not both.
+     * The launch template. Any additional parameters that you specify for the new instance overwrite the corresponding
+     * parameters included in the launch template.
      * </p>
      * 
      * @param launchTemplate
-     *        The launch template to use to launch the instances. Any parameters that you specify in <a>RunInstances</a>
-     *        override the same parameters in the launch template. You can specify either the name or ID of a launch
-     *        template, but not both.
+     *        The launch template. Any additional parameters that you specify for the new instance overwrite the
+     *        corresponding parameters included in the launch template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3317,7 +3276,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Indicates whether an instance is enabled for hibernation. For more information, see <a
+     * Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance meets the
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
+     * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
      * <i>Amazon EC2 User Guide</i>.
      * </p>
@@ -3326,7 +3287,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param hibernationOptions
-     *        Indicates whether an instance is enabled for hibernation. For more information, see <a
+     *        Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance
+     *        meets the <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
+     *        prerequisites</a>. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in
      *        the <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
@@ -3339,7 +3303,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Indicates whether an instance is enabled for hibernation. For more information, see <a
+     * Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance meets the
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
+     * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
      * <i>Amazon EC2 User Guide</i>.
      * </p>
@@ -3347,7 +3313,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * You can't enable hibernation and Amazon Web Services Nitro Enclaves on the same instance.
      * </p>
      * 
-     * @return Indicates whether an instance is enabled for hibernation. For more information, see <a
+     * @return Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance
+     *         meets the <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
+     *         prerequisites</a>. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in
      *         the <i>Amazon EC2 User Guide</i>.</p>
      *         <p>
@@ -3360,7 +3329,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Indicates whether an instance is enabled for hibernation. For more information, see <a
+     * Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance meets the
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
+     * prerequisites</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
      * <i>Amazon EC2 User Guide</i>.
      * </p>
@@ -3369,7 +3340,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param hibernationOptions
-     *        Indicates whether an instance is enabled for hibernation. For more information, see <a
+     *        Indicates whether an instance is enabled for hibernation. This parameter is valid only if the instance
+     *        meets the <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/hibernating-prerequisites.html">hibernation
+     *        prerequisites</a>. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in
      *        the <i>Amazon EC2 User Guide</i>.</p>
      *        <p>
@@ -3510,7 +3484,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web Services Nitro
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What is Amazon Web Services Nitro
      * Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.
      * </p>
      * <p>
@@ -3519,7 +3493,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @param enclaveOptions
      *        Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information,
-     *        see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web
+     *        see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What is Amazon Web
      *        Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
      *        <p>
      *        You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.
@@ -3532,7 +3506,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web Services Nitro
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What is Amazon Web Services Nitro
      * Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.
      * </p>
      * <p>
@@ -3540,7 +3514,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @return Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information,
-     *         see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web
+     *         see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What is Amazon Web
      *         Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
      *         <p>
      *         You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.
@@ -3553,7 +3527,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information, see <a
-     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web Services Nitro
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What is Amazon Web Services Nitro
      * Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.
      * </p>
      * <p>
@@ -3562,7 +3536,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @param enclaveOptions
      *        Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information,
-     *        see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is Amazon Web
+     *        see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">What is Amazon Web
      *        Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
      *        <p>
      *        You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.
@@ -3576,11 +3550,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The options for the instance hostname. The default values are inherited from the subnet.
+     * The options for the instance hostname. The default values are inherited from the subnet. Applies only if creating
+     * a network interface, not attaching an existing one.
      * </p>
      * 
      * @param privateDnsNameOptions
-     *        The options for the instance hostname. The default values are inherited from the subnet.
+     *        The options for the instance hostname. The default values are inherited from the subnet. Applies only if
+     *        creating a network interface, not attaching an existing one.
      */
 
     public void setPrivateDnsNameOptions(PrivateDnsNameOptionsRequest privateDnsNameOptions) {
@@ -3589,10 +3565,12 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The options for the instance hostname. The default values are inherited from the subnet.
+     * The options for the instance hostname. The default values are inherited from the subnet. Applies only if creating
+     * a network interface, not attaching an existing one.
      * </p>
      * 
-     * @return The options for the instance hostname. The default values are inherited from the subnet.
+     * @return The options for the instance hostname. The default values are inherited from the subnet. Applies only if
+     *         creating a network interface, not attaching an existing one.
      */
 
     public PrivateDnsNameOptionsRequest getPrivateDnsNameOptions() {
@@ -3601,11 +3579,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * The options for the instance hostname. The default values are inherited from the subnet.
+     * The options for the instance hostname. The default values are inherited from the subnet. Applies only if creating
+     * a network interface, not attaching an existing one.
      * </p>
      * 
      * @param privateDnsNameOptions
-     *        The options for the instance hostname. The default values are inherited from the subnet.
+     *        The options for the instance hostname. The default values are inherited from the subnet. Applies only if
+     *        creating a network interface, not attaching an existing one.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3723,6 +3703,126 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     }
 
     /**
+     * <p>
+     * If you’re launching an instance into a dual-stack or IPv6-only subnet, you can enable assigning a primary IPv6
+     * address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled to use a
+     * primary IPv6 address. Use this option if an instance relies on its IPv6 address not changing. When you launch the
+     * instance, Amazon Web Services will automatically assign an IPv6 address associated with the ENI attached to your
+     * instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to be a primary IPv6, you cannot
+     * disable it. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary
+     * IPv6 address until the instance is terminated or the network interface is detached. If you have multiple IPv6
+     * addresses associated with an ENI attached to your instance and you enable a primary IPv6 address, the first IPv6
+     * GUA address associated with the ENI becomes the primary IPv6 address.
+     * </p>
+     * 
+     * @param enablePrimaryIpv6
+     *        If you’re launching an instance into a dual-stack or IPv6-only subnet, you can enable assigning a primary
+     *        IPv6 address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled
+     *        to use a primary IPv6 address. Use this option if an instance relies on its IPv6 address not changing.
+     *        When you launch the instance, Amazon Web Services will automatically assign an IPv6 address associated
+     *        with the ENI attached to your instance to be the primary IPv6 address. Once you enable an IPv6 GUA address
+     *        to be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to be a primary IPv6, the
+     *        first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network
+     *        interface is detached. If you have multiple IPv6 addresses associated with an ENI attached to your
+     *        instance and you enable a primary IPv6 address, the first IPv6 GUA address associated with the ENI becomes
+     *        the primary IPv6 address.
+     */
+
+    public void setEnablePrimaryIpv6(Boolean enablePrimaryIpv6) {
+        this.enablePrimaryIpv6 = enablePrimaryIpv6;
+    }
+
+    /**
+     * <p>
+     * If you’re launching an instance into a dual-stack or IPv6-only subnet, you can enable assigning a primary IPv6
+     * address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled to use a
+     * primary IPv6 address. Use this option if an instance relies on its IPv6 address not changing. When you launch the
+     * instance, Amazon Web Services will automatically assign an IPv6 address associated with the ENI attached to your
+     * instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to be a primary IPv6, you cannot
+     * disable it. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary
+     * IPv6 address until the instance is terminated or the network interface is detached. If you have multiple IPv6
+     * addresses associated with an ENI attached to your instance and you enable a primary IPv6 address, the first IPv6
+     * GUA address associated with the ENI becomes the primary IPv6 address.
+     * </p>
+     * 
+     * @return If you’re launching an instance into a dual-stack or IPv6-only subnet, you can enable assigning a primary
+     *         IPv6 address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled
+     *         to use a primary IPv6 address. Use this option if an instance relies on its IPv6 address not changing.
+     *         When you launch the instance, Amazon Web Services will automatically assign an IPv6 address associated
+     *         with the ENI attached to your instance to be the primary IPv6 address. Once you enable an IPv6 GUA
+     *         address to be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to be a primary
+     *         IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the
+     *         network interface is detached. If you have multiple IPv6 addresses associated with an ENI attached to
+     *         your instance and you enable a primary IPv6 address, the first IPv6 GUA address associated with the ENI
+     *         becomes the primary IPv6 address.
+     */
+
+    public Boolean getEnablePrimaryIpv6() {
+        return this.enablePrimaryIpv6;
+    }
+
+    /**
+     * <p>
+     * If you’re launching an instance into a dual-stack or IPv6-only subnet, you can enable assigning a primary IPv6
+     * address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled to use a
+     * primary IPv6 address. Use this option if an instance relies on its IPv6 address not changing. When you launch the
+     * instance, Amazon Web Services will automatically assign an IPv6 address associated with the ENI attached to your
+     * instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to be a primary IPv6, you cannot
+     * disable it. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary
+     * IPv6 address until the instance is terminated or the network interface is detached. If you have multiple IPv6
+     * addresses associated with an ENI attached to your instance and you enable a primary IPv6 address, the first IPv6
+     * GUA address associated with the ENI becomes the primary IPv6 address.
+     * </p>
+     * 
+     * @param enablePrimaryIpv6
+     *        If you’re launching an instance into a dual-stack or IPv6-only subnet, you can enable assigning a primary
+     *        IPv6 address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled
+     *        to use a primary IPv6 address. Use this option if an instance relies on its IPv6 address not changing.
+     *        When you launch the instance, Amazon Web Services will automatically assign an IPv6 address associated
+     *        with the ENI attached to your instance to be the primary IPv6 address. Once you enable an IPv6 GUA address
+     *        to be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to be a primary IPv6, the
+     *        first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the network
+     *        interface is detached. If you have multiple IPv6 addresses associated with an ENI attached to your
+     *        instance and you enable a primary IPv6 address, the first IPv6 GUA address associated with the ENI becomes
+     *        the primary IPv6 address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunInstancesRequest withEnablePrimaryIpv6(Boolean enablePrimaryIpv6) {
+        setEnablePrimaryIpv6(enablePrimaryIpv6);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If you’re launching an instance into a dual-stack or IPv6-only subnet, you can enable assigning a primary IPv6
+     * address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled to use a
+     * primary IPv6 address. Use this option if an instance relies on its IPv6 address not changing. When you launch the
+     * instance, Amazon Web Services will automatically assign an IPv6 address associated with the ENI attached to your
+     * instance to be the primary IPv6 address. Once you enable an IPv6 GUA address to be a primary IPv6, you cannot
+     * disable it. When you enable an IPv6 GUA address to be a primary IPv6, the first IPv6 GUA will be made the primary
+     * IPv6 address until the instance is terminated or the network interface is detached. If you have multiple IPv6
+     * addresses associated with an ENI attached to your instance and you enable a primary IPv6 address, the first IPv6
+     * GUA address associated with the ENI becomes the primary IPv6 address.
+     * </p>
+     * 
+     * @return If you’re launching an instance into a dual-stack or IPv6-only subnet, you can enable assigning a primary
+     *         IPv6 address. A primary IPv6 address is an IPv6 GUA address associated with an ENI that you have enabled
+     *         to use a primary IPv6 address. Use this option if an instance relies on its IPv6 address not changing.
+     *         When you launch the instance, Amazon Web Services will automatically assign an IPv6 address associated
+     *         with the ENI attached to your instance to be the primary IPv6 address. Once you enable an IPv6 GUA
+     *         address to be a primary IPv6, you cannot disable it. When you enable an IPv6 GUA address to be a primary
+     *         IPv6, the first IPv6 GUA will be made the primary IPv6 address until the instance is terminated or the
+     *         network interface is detached. If you have multiple IPv6 addresses associated with an ENI attached to
+     *         your instance and you enable a primary IPv6 address, the first IPv6 GUA address associated with the ENI
+     *         becomes the primary IPv6 address.
+     */
+
+    public Boolean isEnablePrimaryIpv6() {
+        return this.enablePrimaryIpv6;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -3822,7 +3922,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         if (getMaintenanceOptions() != null)
             sb.append("MaintenanceOptions: ").append(getMaintenanceOptions()).append(",");
         if (getDisableApiStop() != null)
-            sb.append("DisableApiStop: ").append(getDisableApiStop());
+            sb.append("DisableApiStop: ").append(getDisableApiStop()).append(",");
+        if (getEnablePrimaryIpv6() != null)
+            sb.append("EnablePrimaryIpv6: ").append(getEnablePrimaryIpv6());
         sb.append("}");
         return sb.toString();
     }
@@ -3995,6 +4097,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
             return false;
         if (other.getDisableApiStop() != null && other.getDisableApiStop().equals(this.getDisableApiStop()) == false)
             return false;
+        if (other.getEnablePrimaryIpv6() == null ^ this.getEnablePrimaryIpv6() == null)
+            return false;
+        if (other.getEnablePrimaryIpv6() != null && other.getEnablePrimaryIpv6().equals(this.getEnablePrimaryIpv6()) == false)
+            return false;
         return true;
     }
 
@@ -4042,6 +4148,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
         hashCode = prime * hashCode + ((getPrivateDnsNameOptions() == null) ? 0 : getPrivateDnsNameOptions().hashCode());
         hashCode = prime * hashCode + ((getMaintenanceOptions() == null) ? 0 : getMaintenanceOptions().hashCode());
         hashCode = prime * hashCode + ((getDisableApiStop() == null) ? 0 : getDisableApiStop().hashCode());
+        hashCode = prime * hashCode + ((getEnablePrimaryIpv6() == null) ? 0 : getEnablePrimaryIpv6().hashCode());
         return hashCode;
     }
 

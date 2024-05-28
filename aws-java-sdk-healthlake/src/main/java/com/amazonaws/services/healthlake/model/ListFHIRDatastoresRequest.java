@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,30 +27,30 @@ public class ListFHIRDatastoresRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Lists all filters associated with a FHIR Data Store request.
+     * Lists all filters associated with a FHIR data store request.
      * </p>
      */
     private DatastoreFilter filter;
     /**
      * <p>
-     * Fetches the next page of Data Stores when results are paginated.
+     * Fetches the next page of data stores when results are paginated.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The maximum number of Data Stores returned in a single page of a ListFHIRDatastoresRequest call.
+     * The maximum number of data stores returned in a single page of a ListFHIRDatastoresRequest call.
      * </p>
      */
     private Integer maxResults;
 
     /**
      * <p>
-     * Lists all filters associated with a FHIR Data Store request.
+     * Lists all filters associated with a FHIR data store request.
      * </p>
      * 
      * @param filter
-     *        Lists all filters associated with a FHIR Data Store request.
+     *        Lists all filters associated with a FHIR data store request.
      */
 
     public void setFilter(DatastoreFilter filter) {
@@ -59,10 +59,10 @@ public class ListFHIRDatastoresRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Lists all filters associated with a FHIR Data Store request.
+     * Lists all filters associated with a FHIR data store request.
      * </p>
      * 
-     * @return Lists all filters associated with a FHIR Data Store request.
+     * @return Lists all filters associated with a FHIR data store request.
      */
 
     public DatastoreFilter getFilter() {
@@ -71,11 +71,11 @@ public class ListFHIRDatastoresRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Lists all filters associated with a FHIR Data Store request.
+     * Lists all filters associated with a FHIR data store request.
      * </p>
      * 
      * @param filter
-     *        Lists all filters associated with a FHIR Data Store request.
+     *        Lists all filters associated with a FHIR data store request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +86,11 @@ public class ListFHIRDatastoresRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Fetches the next page of Data Stores when results are paginated.
+     * Fetches the next page of data stores when results are paginated.
      * </p>
      * 
      * @param nextToken
-     *        Fetches the next page of Data Stores when results are paginated.
+     *        Fetches the next page of data stores when results are paginated.
      */
 
     public void setNextToken(String nextToken) {
@@ -99,10 +99,10 @@ public class ListFHIRDatastoresRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Fetches the next page of Data Stores when results are paginated.
+     * Fetches the next page of data stores when results are paginated.
      * </p>
      * 
-     * @return Fetches the next page of Data Stores when results are paginated.
+     * @return Fetches the next page of data stores when results are paginated.
      */
 
     public String getNextToken() {
@@ -111,11 +111,11 @@ public class ListFHIRDatastoresRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Fetches the next page of Data Stores when results are paginated.
+     * Fetches the next page of data stores when results are paginated.
      * </p>
      * 
      * @param nextToken
-     *        Fetches the next page of Data Stores when results are paginated.
+     *        Fetches the next page of data stores when results are paginated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class ListFHIRDatastoresRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The maximum number of Data Stores returned in a single page of a ListFHIRDatastoresRequest call.
+     * The maximum number of data stores returned in a single page of a ListFHIRDatastoresRequest call.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of Data Stores returned in a single page of a ListFHIRDatastoresRequest call.
+     *        The maximum number of data stores returned in a single page of a ListFHIRDatastoresRequest call.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -139,10 +139,10 @@ public class ListFHIRDatastoresRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The maximum number of Data Stores returned in a single page of a ListFHIRDatastoresRequest call.
+     * The maximum number of data stores returned in a single page of a ListFHIRDatastoresRequest call.
      * </p>
      * 
-     * @return The maximum number of Data Stores returned in a single page of a ListFHIRDatastoresRequest call.
+     * @return The maximum number of data stores returned in a single page of a ListFHIRDatastoresRequest call.
      */
 
     public Integer getMaxResults() {
@@ -151,11 +151,11 @@ public class ListFHIRDatastoresRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The maximum number of Data Stores returned in a single page of a ListFHIRDatastoresRequest call.
+     * The maximum number of data stores returned in a single page of a ListFHIRDatastoresRequest call.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of Data Stores returned in a single page of a ListFHIRDatastoresRequest call.
+     *        The maximum number of data stores returned in a single page of a ListFHIRDatastoresRequest call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

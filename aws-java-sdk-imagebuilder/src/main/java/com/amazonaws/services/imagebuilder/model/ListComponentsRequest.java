@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,9 +27,9 @@ public class ListComponentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The owner defines which components you want to list. By default, this request will only show components owned by
-     * your account. You can use this field to specify if you want to view components owned by yourself, by Amazon, or
-     * those components that have been shared with you by other customers.
+     * Filters results based on the type of owner for the component. By default, this request returns a list of
+     * components that your account owns. To see results for other types of owners, you can specify components that
+     * Amazon manages, third party components, or components that other accounts have shared with you.
      * </p>
      */
     private String owner;
@@ -73,7 +73,7 @@ public class ListComponentsRequest extends com.amazonaws.AmazonWebServiceRequest
     private java.util.List<Filter> filters;
     /**
      * <p>
-     * Returns the list of component build versions for the specified name.
+     * Returns the list of components for the specified name.
      * </p>
      */
     private Boolean byName;
@@ -85,22 +85,22 @@ public class ListComponentsRequest extends com.amazonaws.AmazonWebServiceRequest
     private Integer maxResults;
     /**
      * <p>
-     * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
+     * A token to specify where to start paginating. This is the nextToken from a previously truncated response.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The owner defines which components you want to list. By default, this request will only show components owned by
-     * your account. You can use this field to specify if you want to view components owned by yourself, by Amazon, or
-     * those components that have been shared with you by other customers.
+     * Filters results based on the type of owner for the component. By default, this request returns a list of
+     * components that your account owns. To see results for other types of owners, you can specify components that
+     * Amazon manages, third party components, or components that other accounts have shared with you.
      * </p>
      * 
      * @param owner
-     *        The owner defines which components you want to list. By default, this request will only show components
-     *        owned by your account. You can use this field to specify if you want to view components owned by yourself,
-     *        by Amazon, or those components that have been shared with you by other customers.
+     *        Filters results based on the type of owner for the component. By default, this request returns a list of
+     *        components that your account owns. To see results for other types of owners, you can specify components
+     *        that Amazon manages, third party components, or components that other accounts have shared with you.
      * @see Ownership
      */
 
@@ -110,14 +110,14 @@ public class ListComponentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The owner defines which components you want to list. By default, this request will only show components owned by
-     * your account. You can use this field to specify if you want to view components owned by yourself, by Amazon, or
-     * those components that have been shared with you by other customers.
+     * Filters results based on the type of owner for the component. By default, this request returns a list of
+     * components that your account owns. To see results for other types of owners, you can specify components that
+     * Amazon manages, third party components, or components that other accounts have shared with you.
      * </p>
      * 
-     * @return The owner defines which components you want to list. By default, this request will only show components
-     *         owned by your account. You can use this field to specify if you want to view components owned by
-     *         yourself, by Amazon, or those components that have been shared with you by other customers.
+     * @return Filters results based on the type of owner for the component. By default, this request returns a list of
+     *         components that your account owns. To see results for other types of owners, you can specify components
+     *         that Amazon manages, third party components, or components that other accounts have shared with you.
      * @see Ownership
      */
 
@@ -127,15 +127,15 @@ public class ListComponentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The owner defines which components you want to list. By default, this request will only show components owned by
-     * your account. You can use this field to specify if you want to view components owned by yourself, by Amazon, or
-     * those components that have been shared with you by other customers.
+     * Filters results based on the type of owner for the component. By default, this request returns a list of
+     * components that your account owns. To see results for other types of owners, you can specify components that
+     * Amazon manages, third party components, or components that other accounts have shared with you.
      * </p>
      * 
      * @param owner
-     *        The owner defines which components you want to list. By default, this request will only show components
-     *        owned by your account. You can use this field to specify if you want to view components owned by yourself,
-     *        by Amazon, or those components that have been shared with you by other customers.
+     *        Filters results based on the type of owner for the component. By default, this request returns a list of
+     *        components that your account owns. To see results for other types of owners, you can specify components
+     *        that Amazon manages, third party components, or components that other accounts have shared with you.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Ownership
      */
@@ -147,15 +147,15 @@ public class ListComponentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The owner defines which components you want to list. By default, this request will only show components owned by
-     * your account. You can use this field to specify if you want to view components owned by yourself, by Amazon, or
-     * those components that have been shared with you by other customers.
+     * Filters results based on the type of owner for the component. By default, this request returns a list of
+     * components that your account owns. To see results for other types of owners, you can specify components that
+     * Amazon manages, third party components, or components that other accounts have shared with you.
      * </p>
      * 
      * @param owner
-     *        The owner defines which components you want to list. By default, this request will only show components
-     *        owned by your account. You can use this field to specify if you want to view components owned by yourself,
-     *        by Amazon, or those components that have been shared with you by other customers.
+     *        Filters results based on the type of owner for the component. By default, this request returns a list of
+     *        components that your account owns. To see results for other types of owners, you can specify components
+     *        that Amazon manages, third party components, or components that other accounts have shared with you.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Ownership
      */
@@ -489,11 +489,11 @@ public class ListComponentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Returns the list of component build versions for the specified name.
+     * Returns the list of components for the specified name.
      * </p>
      * 
      * @param byName
-     *        Returns the list of component build versions for the specified name.
+     *        Returns the list of components for the specified name.
      */
 
     public void setByName(Boolean byName) {
@@ -502,10 +502,10 @@ public class ListComponentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Returns the list of component build versions for the specified name.
+     * Returns the list of components for the specified name.
      * </p>
      * 
-     * @return Returns the list of component build versions for the specified name.
+     * @return Returns the list of components for the specified name.
      */
 
     public Boolean getByName() {
@@ -514,11 +514,11 @@ public class ListComponentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Returns the list of component build versions for the specified name.
+     * Returns the list of components for the specified name.
      * </p>
      * 
      * @param byName
-     *        Returns the list of component build versions for the specified name.
+     *        Returns the list of components for the specified name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -529,10 +529,10 @@ public class ListComponentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Returns the list of component build versions for the specified name.
+     * Returns the list of components for the specified name.
      * </p>
      * 
-     * @return Returns the list of component build versions for the specified name.
+     * @return Returns the list of components for the specified name.
      */
 
     public Boolean isByName() {
@@ -581,11 +581,11 @@ public class ListComponentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
+     * A token to specify where to start paginating. This is the nextToken from a previously truncated response.
      * </p>
      * 
      * @param nextToken
-     *        A token to specify where to start paginating. This is the NextToken from a previously truncated response.
+     *        A token to specify where to start paginating. This is the nextToken from a previously truncated response.
      */
 
     public void setNextToken(String nextToken) {
@@ -594,10 +594,10 @@ public class ListComponentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
+     * A token to specify where to start paginating. This is the nextToken from a previously truncated response.
      * </p>
      * 
-     * @return A token to specify where to start paginating. This is the NextToken from a previously truncated response.
+     * @return A token to specify where to start paginating. This is the nextToken from a previously truncated response.
      */
 
     public String getNextToken() {
@@ -606,11 +606,11 @@ public class ListComponentsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A token to specify where to start paginating. This is the NextToken from a previously truncated response.
+     * A token to specify where to start paginating. This is the nextToken from a previously truncated response.
      * </p>
      * 
      * @param nextToken
-     *        A token to specify where to start paginating. This is the NextToken from a previously truncated response.
+     *        A token to specify where to start paginating. This is the nextToken from a previously truncated response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

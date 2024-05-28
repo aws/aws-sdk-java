@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,18 @@ public class SAPODataSourceProperties implements Serializable, Cloneable, Struct
      * </p>
      */
     private String objectPath;
+    /**
+     * <p>
+     * Sets the number of concurrent processes that transfers OData records from your SAP instance.
+     * </p>
+     */
+    private SAPODataParallelismConfig parallelismConfig;
+    /**
+     * <p>
+     * Sets the page size for each concurrent process that transfers OData records from your SAP instance.
+     * </p>
+     */
+    private SAPODataPaginationConfig paginationConfig;
 
     /**
      * <p>
@@ -76,6 +88,86 @@ public class SAPODataSourceProperties implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * Sets the number of concurrent processes that transfers OData records from your SAP instance.
+     * </p>
+     * 
+     * @param parallelismConfig
+     *        Sets the number of concurrent processes that transfers OData records from your SAP instance.
+     */
+
+    public void setParallelismConfig(SAPODataParallelismConfig parallelismConfig) {
+        this.parallelismConfig = parallelismConfig;
+    }
+
+    /**
+     * <p>
+     * Sets the number of concurrent processes that transfers OData records from your SAP instance.
+     * </p>
+     * 
+     * @return Sets the number of concurrent processes that transfers OData records from your SAP instance.
+     */
+
+    public SAPODataParallelismConfig getParallelismConfig() {
+        return this.parallelismConfig;
+    }
+
+    /**
+     * <p>
+     * Sets the number of concurrent processes that transfers OData records from your SAP instance.
+     * </p>
+     * 
+     * @param parallelismConfig
+     *        Sets the number of concurrent processes that transfers OData records from your SAP instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SAPODataSourceProperties withParallelismConfig(SAPODataParallelismConfig parallelismConfig) {
+        setParallelismConfig(parallelismConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Sets the page size for each concurrent process that transfers OData records from your SAP instance.
+     * </p>
+     * 
+     * @param paginationConfig
+     *        Sets the page size for each concurrent process that transfers OData records from your SAP instance.
+     */
+
+    public void setPaginationConfig(SAPODataPaginationConfig paginationConfig) {
+        this.paginationConfig = paginationConfig;
+    }
+
+    /**
+     * <p>
+     * Sets the page size for each concurrent process that transfers OData records from your SAP instance.
+     * </p>
+     * 
+     * @return Sets the page size for each concurrent process that transfers OData records from your SAP instance.
+     */
+
+    public SAPODataPaginationConfig getPaginationConfig() {
+        return this.paginationConfig;
+    }
+
+    /**
+     * <p>
+     * Sets the page size for each concurrent process that transfers OData records from your SAP instance.
+     * </p>
+     * 
+     * @param paginationConfig
+     *        Sets the page size for each concurrent process that transfers OData records from your SAP instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SAPODataSourceProperties withPaginationConfig(SAPODataPaginationConfig paginationConfig) {
+        setPaginationConfig(paginationConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +180,11 @@ public class SAPODataSourceProperties implements Serializable, Cloneable, Struct
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getObjectPath() != null)
-            sb.append("ObjectPath: ").append(getObjectPath());
+            sb.append("ObjectPath: ").append(getObjectPath()).append(",");
+        if (getParallelismConfig() != null)
+            sb.append("ParallelismConfig: ").append(getParallelismConfig()).append(",");
+        if (getPaginationConfig() != null)
+            sb.append("PaginationConfig: ").append(getPaginationConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +203,14 @@ public class SAPODataSourceProperties implements Serializable, Cloneable, Struct
             return false;
         if (other.getObjectPath() != null && other.getObjectPath().equals(this.getObjectPath()) == false)
             return false;
+        if (other.getParallelismConfig() == null ^ this.getParallelismConfig() == null)
+            return false;
+        if (other.getParallelismConfig() != null && other.getParallelismConfig().equals(this.getParallelismConfig()) == false)
+            return false;
+        if (other.getPaginationConfig() == null ^ this.getPaginationConfig() == null)
+            return false;
+        if (other.getPaginationConfig() != null && other.getPaginationConfig().equals(this.getPaginationConfig()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +220,8 @@ public class SAPODataSourceProperties implements Serializable, Cloneable, Struct
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getObjectPath() == null) ? 0 : getObjectPath().hashCode());
+        hashCode = prime * hashCode + ((getParallelismConfig() == null) ? 0 : getParallelismConfig().hashCode());
+        hashCode = prime * hashCode + ((getPaginationConfig() == null) ? 0 : getPaginationConfig().hashCode());
         return hashCode;
     }
 

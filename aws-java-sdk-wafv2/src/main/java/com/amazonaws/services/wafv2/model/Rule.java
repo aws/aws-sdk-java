@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2019-2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * A single rule, which you can use in a <a>WebACL</a> or <a>RuleGroup</a> to identify web requests that you want to
- * allow, block, or count. Each rule includes one top-level <a>Statement</a> that WAF uses to identify matching web
+ * manage in some way. Each rule includes one top-level <a>Statement</a> that WAF uses to identify matching web
  * requests, and parameters that govern how WAF handles them.
  * </p>
  * 
@@ -31,7 +31,12 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the rule. You can't change the name of a <code>Rule</code> after you create it.
+     * The name of the rule.
+     * </p>
+     * <p>
+     * If you change the name of a <code>Rule</code> after you create it and you want the rule's metric name to reflect
+     * the change, update the metric name in the rule's <code>VisibilityConfig</code> settings. WAF doesn't
+     * automatically update the metric name when you update the rule name.
      * </p>
      */
     private String name;
@@ -143,6 +148,10 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Defines and enables Amazon CloudWatch metrics and web request sample collection.
      * </p>
+     * <p>
+     * If you change the name of a <code>Rule</code> after you create it and you want the rule's metric name to reflect
+     * the change, update the metric name as well. WAF doesn't automatically update the metric name.
+     * </p>
      */
     private VisibilityConfig visibilityConfig;
     /**
@@ -162,11 +171,20 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the rule. You can't change the name of a <code>Rule</code> after you create it.
+     * The name of the rule.
+     * </p>
+     * <p>
+     * If you change the name of a <code>Rule</code> after you create it and you want the rule's metric name to reflect
+     * the change, update the metric name in the rule's <code>VisibilityConfig</code> settings. WAF doesn't
+     * automatically update the metric name when you update the rule name.
      * </p>
      * 
      * @param name
-     *        The name of the rule. You can't change the name of a <code>Rule</code> after you create it.
+     *        The name of the rule. </p>
+     *        <p>
+     *        If you change the name of a <code>Rule</code> after you create it and you want the rule's metric name to
+     *        reflect the change, update the metric name in the rule's <code>VisibilityConfig</code> settings. WAF
+     *        doesn't automatically update the metric name when you update the rule name.
      */
 
     public void setName(String name) {
@@ -175,10 +193,19 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the rule. You can't change the name of a <code>Rule</code> after you create it.
+     * The name of the rule.
+     * </p>
+     * <p>
+     * If you change the name of a <code>Rule</code> after you create it and you want the rule's metric name to reflect
+     * the change, update the metric name in the rule's <code>VisibilityConfig</code> settings. WAF doesn't
+     * automatically update the metric name when you update the rule name.
      * </p>
      * 
-     * @return The name of the rule. You can't change the name of a <code>Rule</code> after you create it.
+     * @return The name of the rule. </p>
+     *         <p>
+     *         If you change the name of a <code>Rule</code> after you create it and you want the rule's metric name to
+     *         reflect the change, update the metric name in the rule's <code>VisibilityConfig</code> settings. WAF
+     *         doesn't automatically update the metric name when you update the rule name.
      */
 
     public String getName() {
@@ -187,11 +214,20 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the rule. You can't change the name of a <code>Rule</code> after you create it.
+     * The name of the rule.
+     * </p>
+     * <p>
+     * If you change the name of a <code>Rule</code> after you create it and you want the rule's metric name to reflect
+     * the change, update the metric name in the rule's <code>VisibilityConfig</code> settings. WAF doesn't
+     * automatically update the metric name when you update the rule name.
      * </p>
      * 
      * @param name
-     *        The name of the rule. You can't change the name of a <code>Rule</code> after you create it.
+     *        The name of the rule. </p>
+     *        <p>
+     *        If you change the name of a <code>Rule</code> after you create it and you want the rule's metric name to
+     *        reflect the change, update the metric name in the rule's <code>VisibilityConfig</code> settings. WAF
+     *        doesn't automatically update the metric name when you update the rule name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -949,9 +985,16 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Defines and enables Amazon CloudWatch metrics and web request sample collection.
      * </p>
+     * <p>
+     * If you change the name of a <code>Rule</code> after you create it and you want the rule's metric name to reflect
+     * the change, update the metric name as well. WAF doesn't automatically update the metric name.
+     * </p>
      * 
      * @param visibilityConfig
-     *        Defines and enables Amazon CloudWatch metrics and web request sample collection.
+     *        Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
+     *        <p>
+     *        If you change the name of a <code>Rule</code> after you create it and you want the rule's metric name to
+     *        reflect the change, update the metric name as well. WAF doesn't automatically update the metric name.
      */
 
     public void setVisibilityConfig(VisibilityConfig visibilityConfig) {
@@ -962,8 +1005,15 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Defines and enables Amazon CloudWatch metrics and web request sample collection.
      * </p>
+     * <p>
+     * If you change the name of a <code>Rule</code> after you create it and you want the rule's metric name to reflect
+     * the change, update the metric name as well. WAF doesn't automatically update the metric name.
+     * </p>
      * 
-     * @return Defines and enables Amazon CloudWatch metrics and web request sample collection.
+     * @return Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
+     *         <p>
+     *         If you change the name of a <code>Rule</code> after you create it and you want the rule's metric name to
+     *         reflect the change, update the metric name as well. WAF doesn't automatically update the metric name.
      */
 
     public VisibilityConfig getVisibilityConfig() {
@@ -974,9 +1024,16 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Defines and enables Amazon CloudWatch metrics and web request sample collection.
      * </p>
+     * <p>
+     * If you change the name of a <code>Rule</code> after you create it and you want the rule's metric name to reflect
+     * the change, update the metric name as well. WAF doesn't automatically update the metric name.
+     * </p>
      * 
      * @param visibilityConfig
-     *        Defines and enables Amazon CloudWatch metrics and web request sample collection.
+     *        Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
+     *        <p>
+     *        If you change the name of a <code>Rule</code> after you create it and you want the rule's metric name to
+     *        reflect the change, update the metric name as well. WAF doesn't automatically update the metric name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
